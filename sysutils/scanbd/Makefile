@@ -1,6 +1,6 @@
 PORTNAME=	scanbd
 DISTVERSION=	1.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	trueos@norwegianrockcat.com
@@ -24,6 +24,7 @@ GL_PROJECT=	scanbd
 GL_TAGNAME=	4503640d202c06510f21848a684e221f613f324b
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CONFIGURE_ARGS+=	--with-user=saned --with-group=saned
 

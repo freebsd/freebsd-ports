@@ -7,6 +7,7 @@
     SUBDIR += blt
     SUBDIR += bwidget
     SUBDIR += color-widgets-qt5
+    SUBDIR += como
     SUBDIR += copperspice
     SUBDIR += ctk
     SUBDIR += fltk
@@ -23,6 +24,7 @@
     SUBDIR += gstreamer1-plugins-gtk
     SUBDIR += gstreamer1-plugins-pango
     SUBDIR += gtk-layer-shell
+    SUBDIR += gtk-session-lock
     SUBDIR += gtk-sharp-beans
     SUBDIR += gtk-sharp20
     SUBDIR += gtk-sharp30
@@ -105,6 +107,7 @@
     SUBDIR += neXtaw
     SUBDIR += ntk
     SUBDIR += nuklear
+    SUBDIR += ocaml-graphics
     SUBDIR += ocaml-lablgtk2
     SUBDIR += ocaml-lablgtk3
     SUBDIR += ocaml-labltk
@@ -113,7 +116,6 @@
     SUBDIR += osm-gps-map
     SUBDIR += otk
     SUBDIR += p5-Alien-wxWidgets
-    SUBDIR += p5-Glade2
     SUBDIR += p5-Gtk2
     SUBDIR += p5-Gtk2-Chmod
     SUBDIR += p5-Gtk2-Ex-Dialogs
@@ -227,7 +229,6 @@
     SUBDIR += termit
     SUBDIR += tix
     SUBDIR += tk-wrapper
-    SUBDIR += tk85
     SUBDIR += tk86
     SUBDIR += tk87
     SUBDIR += tkdnd
@@ -240,6 +241,7 @@
     SUBDIR += vte
     SUBDIR += vte3
     SUBDIR += wlroots
+    SUBDIR += wlroots-devel
     SUBDIR += wlroots015
     SUBDIR += wlroots016
     SUBDIR += wmapp

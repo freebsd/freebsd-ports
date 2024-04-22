@@ -1,7 +1,13 @@
---- CMakeLists.txt.orig	2022-04-02 10:38:20 UTC
+--- CMakeLists.txt.orig	2023-07-29 23:01:44 UTC
 +++ CMakeLists.txt
-@@ -133,7 +133,9 @@ if(NOT OPTION_DEDICATED)
-             if(NOT SDL2_FOUND)
+@@ -129,11 +129,14 @@ if(NOT OPTION_DEDICATED)
+         find_package(Allegro)
+         if(NOT APPLE)
+             find_package(Freetype)
++if(WITH_SDL2)
+             find_package(SDL2)
+-            if(NOT SDL2_FOUND)
++else()
                  find_package(SDL)
              endif()
 +if(WITH_FLUIDSYNTH)
@@ -10,7 +16,7 @@
              find_package(Fontconfig)
              find_package(ICU OPTIONAL_COMPONENTS i18n lx)
          endif()
-@@ -260,7 +262,9 @@ link_package(LIBLZMA TARGET LibLZMA::LibLZMA ENCOURAGE
+@@ -260,7 +263,9 @@ link_package(LIBLZMA TARGET LibLZMA::LibLZMA ENCOURAGE
  link_package(LZO)
  
  if(NOT OPTION_DEDICATED)

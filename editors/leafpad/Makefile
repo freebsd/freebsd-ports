@@ -1,6 +1,6 @@
 PORTNAME=	leafpad
 PORTVERSION=	0.8.19
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	SAVANNAH
 
@@ -18,6 +18,7 @@ USES=		desktop-file-utils gettext gmake gnome localbase:ldflags \
 		pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk20 intlhack
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-chooser
 LDFLAGS+=	-lpthread
 

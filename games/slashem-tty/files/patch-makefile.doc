@@ -5,7 +5,7 @@
  
  GAME    = slashem
 -MANDIR	= /usr/man/man6
-+MANDIR	= ${MANPREFIX}/man/man6
++MANDIR	= ${PREFIX}/share/man/man6
  MANEXT	= 6
  FRMANDIR= $(MANDIR:man6=fr/man6)
  

@@ -1,6 +1,6 @@
 %%ETCDIR%%/config_ndpmon.xml-dist
 sbin/ndpmon
-man/man8/ndpmon.8.gz
+share/man/man8/ndpmon.8.gz
 %%DATADIR%%/config_ndpmon.dtd
 %%DATADIR%%/demopipeprogram.pl.sample
 %%DATADIR%%/neighbor_list.dtd

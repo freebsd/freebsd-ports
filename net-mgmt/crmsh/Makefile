@@ -1,6 +1,6 @@
 PORTNAME=	crmsh
-PORTVERSION=	4.5.1
-PORTREVISION=	1
+DISTVERSION=	4.6.0
+PORTREVISION=	2
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	flo@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 # because the crmsh build uses autotools which then calls setup.py.
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 RUN_DEPENDS=	${PY_SETUPTOOLS} \
-		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-dateutil>0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}parallax>0:devel/py-parallax@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
@@ -30,6 +30,7 @@ SHEBANG_FILES=	bin/crm scripts/*/*.py test/cib-tests.sh test/evaltest.sh \
 		test/update-expected-output.sh utils/crm_clean.py \
 		utils/crm_pkg.py utils/crm_rpmcheck.py
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-ocf-root=${PREFIX}/lib/ocf
 
 CONFLICTS_INSTALL=	crm114 # bin/crm

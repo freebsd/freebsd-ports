@@ -1,11 +1,11 @@
 PORTNAME=	river
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.6
+DISTVERSION=	0.3.0
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor
-WWW=		https://github.com/riverwm/river
+WWW=		https://isaacfreund.com/software/river/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -23,10 +23,10 @@ USES=		pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	pixman
 GH_ACCOUNT=	riverwm
-GH_TUPLE=	ifreund:zig-pixman:b0a9610:zig_pixman/deps/zig-pixman \
-		ifreund:zig-wayland:b9c6fcb:zig_wayland/deps/zig-wayland \
-		ifreund:zig-xkbcommon:e93ceb0:zig_xkbcommon/deps/zig-xkbcommon \
-		swaywm:zig-wlroots:46c81cd:zig_wlroots/deps/zig-wlroots
+GH_TUPLE=	ifreund:zig-pixman:70bff91:zig_pixman/deps/zig-pixman \
+		ifreund:zig-wayland:73fed09:zig_wayland/deps/zig-wayland \
+		ifreund:zig-xkbcommon:7e09b38:zig_xkbcommon/deps/zig-xkbcommon \
+		swaywm:zig-wlroots:a579f9f:zig_wlroots/deps/zig-wlroots
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		${WITH_DEBUG:D:U-Doptimize=ReleaseFast} \
@@ -44,9 +44,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/fish/vendor_completions.d/${PORTNAME}ctl.fish \
 		share/zsh/site-functions/_${PORTNAME}ctl \
 		${NULL}
-
-# https://github.com/ziglang/zig/issues/12170 (pixman)
-MAKE_ENV+=	PKG_CONFIG_SYSTEM_LIBRARY_PATH="${LOCALBASE}/lib"
 
 OPTIONS_DEFINE=	MANPAGES X11
 OPTIONS_DEFAULT=MANPAGES X11
@@ -76,5 +73,4 @@ do-build:
 do-test:
 	@(cd ${WRKSRC} && ${TEST_ENV} zig build test ${CONFIGURE_ARGS})
 
-.include "${.CURDIR:H:H}/x11-toolkits/wlroots016/override.mk"
 .include <bsd.port.mk>

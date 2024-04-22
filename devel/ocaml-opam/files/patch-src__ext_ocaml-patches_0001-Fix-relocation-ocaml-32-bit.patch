@@ -1,6 +1,6 @@
 --- src_ext/ocaml-patches/0001-Fix-relocation-ocaml-32-bit.patch.orig	2023-05-27 13:17:37 UTC
 +++ src_ext/ocaml-patches/0001-Fix-relocation-ocaml-32-bit.patch
-@@ -0,0 +1,22 @@
+@@ -0,0 +1,43 @@
 +--- a/configure.orig	2023-05-27 13:13:22 UTC
 ++++ a/configure
 +@@ -14070,6 +14070,10 @@
@@ -14,6 +14,27 @@
 +   *) :
 +     mksharedlib="$CC -shared \$(LDFLAGS)" ;;
 + esac
++@@ -14256,12 +14260,20 @@ case $host in #(
++     arch=amd64; system=win64 ;; #(
++   powerpc64le*-*-linux*) :
++     arch=power; model=ppc64le; system=elf ;; #(
+++  powerpc64le*-*-freebsd*) :
+++    arch=power; model=ppc64le; system=bsd_elf ;; #(
++   powerpc*-*-linux*) :
++     arch=power; if $arch64; then :
++   model=ppc64
++ else
++   model=ppc
++ fi; system=elf ;; #(
+++  powerpc*-*-freebsd*) :
+++    arch=power; if $arch64; then :
+++  model=ppc64
+++else
+++  model=ppc
+++fi; system=bsd_elf ;; #(
++   s390x*-*-linux*) :
++     arch=s390x; model=z10; system=elf ;; #(
++   # expected to match "gnueabihf" as well as "musleabihf"
 +@@ -14281,6 +14285,8 @@
 +     arch=arm; model=armv6; system=linux_eabi ;; #(
 +   armv6*-*-freebsd*) :

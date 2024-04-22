@@ -1,0 +1,22 @@
+% sed -i '' 's|/etc/github-backup-utils/backup.config|%%PREFIX%%/etc/github.backup.config|g' share/github-backup-utils/ghe-backup-config
+
+--- share/github-backup-utils/ghe-backup-config.orig	2024-02-15 22:08:04 UTC
++++ share/github-backup-utils/ghe-backup-config
+@@ -59,7 +59,7 @@ for f in "$GHE_BACKUP_CONFIG" "$GHE_BACKUP_ROOT/backup
+ # first and then fall back to the backup-utils root, home directory and system.
+ config_found=false
+ for f in "$GHE_BACKUP_CONFIG" "$GHE_BACKUP_ROOT/backup.config" \
+-  "$HOME/.github-backup-utils/backup.config" "/etc/github-backup-utils/backup.config"; do
++  "$HOME/.github-backup-utils/backup.config" "%%PREFIX%%/etc/github.backup.config"; do
+   if [ -f "$f" ]; then
+     GHE_BACKUP_CONFIG="$f"
+     # shellcheck disable=SC1090 # This is a user-supplied value that can't be predicted
+@@ -259,7 +259,7 @@ if ! $config_found; then
+   [ -n "$GHE_BACKUP_CONFIG" ] && echo " - $GHE_BACKUP_CONFIG" 1>&2
+   echo " - $GHE_BACKUP_ROOT/backup.config" 1>&2
+   echo " - $HOME/.github-backup-utils/backup.config" 1>&2
+-  echo " - /etc/github-backup-utils/backup.config" 1>&2
++  echo " - %%PREFIX%%/etc/github.backup.config" 1>&2
+   exit 2
+ fi
+ 

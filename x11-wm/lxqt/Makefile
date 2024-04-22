@@ -1,5 +1,5 @@
 PORTNAME=	lxqt
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jsm@FreeBSD.org
@@ -12,15 +12,15 @@ RUN_DEPENDS=	startlxqt:x11-wm/lxqt-session \
 	lxqt-config>=${PORTVERSION}:sysutils/lxqt-config \
 	lxqt-qtplugin>=${PORTVERSION}:sysutils/lxqt-qtplugin \
 	qterminal>=${PORTVERSION}:x11/qterminal \
-	obconf-qt>=0.16.2:x11-wm/obconf-qt \
+	obconf-qt>=0.16.4:x11-wm/obconf-qt \
 	lximage-qt>=${PORTVERSION}:graphics/lximage-qt \
 	lxqt-panel>=${PORTVERSION}:x11-wm/lxqt-panel \
 	lxqt-runner>=${PORTVERSION}:x11/lxqt-runner \
 	lxqt-powermanagement>=${PORTVERSION}:sysutils/lxqt-powermanagement \
 	${PREFIX}/share/lxqt/themes/frost/lxqt-panel.qss:x11-themes/lxqt-themes \
 	pcmanfm-qt>=${PORTVERSION}:x11-fm/pcmanfm-qt \
-	screengrab>=2.6.0:x11/screengrab \
-	lxqt-archiver>=0.8.0:archivers/lxqt-archiver \
+	screengrab>=2.7.0:x11/screengrab \
+	lxqt-archiver>=0.9.0:archivers/lxqt-archiver \
 	lxqt-notificationd>=${PORTVERSION}:deskutils/lxqt-notificationd \
 	lxqt-panel>=${PORTVERSION}:x11-wm/lxqt-panel \
 	lxqt-policykit>=${PORTVERSION}:sysutils/lxqt-policykit \

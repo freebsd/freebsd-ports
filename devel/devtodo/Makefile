@@ -1,6 +1,6 @@
 PORTNAME=	devtodo
 PORTVERSION=	0.1.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://swapoff.org/files/devtodo/
 
@@ -11,6 +11,7 @@ WWW=		https://swapoff.org/devtodo.html
 CONFLICTS_INSTALL=	deforaos-todo tdl todo
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		ncurses readline
 
 OPTIONS_DEFINE=	EXAMPLES

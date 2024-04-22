@@ -1,5 +1,6 @@
 PORTNAME=	crystal
 DISTVERSION=	1.10.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/dmgk/crystal-bootstrap/releases/download/${BOOTSTRAP_VERSION}/:bootstrap \
 		LOCAL/dmgk/crystal:bootstrap
@@ -107,7 +108,7 @@ post-build-DOCS-on:
 
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/.build/crystal ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${INSTALL_WRKSRC}/man/crystal.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${INSTALL_WRKSRC}/man/crystal.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 	(cd ${INSTALL_WRKSRC}/src && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
 	${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/bash_completion.d
 	${MKDIR} ${STAGEDIR}${LOCALBASE}/share/zsh/site-functions

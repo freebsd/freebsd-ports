@@ -38,10 +38,10 @@ include/pyne/tally.h
 include/pyne/transmuters.h
 include/pyne/utils.h
 lib/libpyne.so
-%%PYTHON_SITELIBDIR%%/pyne-0.7.7-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/pyne-0.7.7-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/pyne-0.7.7-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/pyne-0.7.7-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/pyne-0.7.8-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/pyne-0.7.8-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/pyne-0.7.8-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/pyne-0.7.8-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/pyne/__init__.pxd
 %%PYTHON_SITELIBDIR%%/pyne/__init__.py
 %%PYTHON_SITELIBDIR%%/pyne/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc

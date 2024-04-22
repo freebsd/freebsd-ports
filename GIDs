@@ -269,17 +269,17 @@ dkfilter:*:325:
 smfs:*:326:
 _reticulum:*:327:
 galene:*:328:
-# free: 329
+certspotter:*:329:
 orthanc:*:330:
-# free: 331
-# free: 332
-# free: 333
+svxlink:*:331:
+keycloak:*:332:
 honeytrap:*:333:
+percona:*:334:
 # free: 335
 # free: 336
 daapd:*:337:
 murmur:*:338:
-# free: 339
+mumble-server:*:339:
 wildfire:*:340:
 stunnel:*:341:
 openfire:*:342:
@@ -404,7 +404,7 @@ inadyn:*:455:
 # free: 461
 # free: 462
 # free: 463
-# free: 464
+lpjs:*:464:
 courier:*:465:
 condor:*:466:
 netmon:*:467:
@@ -477,7 +477,7 @@ dkimproxy:*:525:
 pgbouncer:*:534:
 redis:*:535:
 keydb:*:536:
-# free: 537
+valkey:*:537:
 # free: 538
 # free: 539
 # free: 540
@@ -850,7 +850,7 @@ artifactory:*:905:
 opentsdb:*:906:
 influxd:*:907:
 riemann:*:908:
-proxy65:*:909:
+proxysql:*:909:
 bacula:*:910:
 iserv:*:911:
 _sj3:*:912:

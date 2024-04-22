@@ -19,8 +19,9 @@ sbin/pcscd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.am
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcsc_demo.c
-man/man1/pcsc-spy.1.gz
-man/man5/reader.conf.5.gz
-man/man8/pcscd.8.gz
+share/man/man1/pcsc-spy.1.gz
+share/man/man5/reader.conf.5.gz
+share/man/man8/pcscd.8.gz
+%%POLKIT%%share/polkit-1/actions/org.debian.pcsc-lite.policy
 @dir lib/pcsc/services
 @dir lib/pcsc/drivers

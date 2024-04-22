@@ -1,6 +1,6 @@
 PORTNAME=	wapanel
 DISTVERSION=	1.1.0
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -9,6 +9,8 @@ WWW=		https://firstbober.github.io/wapanel/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	https://github.com/Firstbober/wapanel/issues/39
 
 BUILD_DEPENDS=	toml11>0:devel/toml11 \
 		wayland-protocols>0:graphics/wayland-protocols

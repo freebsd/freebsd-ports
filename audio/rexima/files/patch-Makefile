@@ -1,6 +1,6 @@
 --- Makefile.orig	2003-06-30 12:45:27 UTC
 +++ Makefile
-@@ -1,13 +1,12 @@
+@@ -1,15 +1,14 @@
  # Makefile - makefile for rexima
  
 -CC=gcc
@@ -14,9 +14,12 @@
  #
 -PREFIX=/usr/local
  BINDIR=$(PREFIX)/bin
- MANDIR=$(PREFIX)/man/man1
+-MANDIR=$(PREFIX)/man/man1
++MANDIR=$(PREFIX)/share/man/man1
  
-@@ -17,14 +16,14 @@ MANDIR=$(PREFIX)/man/man1
+ # You shouldn't need to edit below this line.
+ #--------------------------------------------------------
+@@ -17,14 +16,14 @@ rexima: rexima.o
  all: rexima
  
  rexima: rexima.o

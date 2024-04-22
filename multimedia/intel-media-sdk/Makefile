@@ -1,11 +1,11 @@
 PORTNAME=	intel-media-sdk
 DISTVERSIONPREFIX=	intel-mediasdk-
-DISTVERSION=	22.4.3
+DISTVERSION=	22.5.4
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hardware video decoding/encoding/filtering on Intel GPUs
-WWW=		http://mediasdk.intel.com/
+WWW=		https://github.com/Intel-Media-SDK/MediaSDK
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

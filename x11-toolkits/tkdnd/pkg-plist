@@ -6,4 +6,4 @@ lib/%%TCL_PKG%%/tkdnd_generic.tcl
 lib/%%TCL_PKG%%/tkdnd_macosx.tcl
 lib/%%TCL_PKG%%/tkdnd_unix.tcl
 lib/%%TCL_PKG%%/tkdnd_windows.tcl
-man/mann/tkDND.n.gz
+share/man/mann/tkDND.n.gz

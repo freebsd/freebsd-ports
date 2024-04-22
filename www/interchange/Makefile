@@ -1,5 +1,6 @@
 PORTNAME=	interchange
 PORTVERSION=	5.6.3
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://ftp.icdevgroup.org/interchange/5.6/tar/
 
@@ -32,7 +33,8 @@ CONFLICTS_INSTALL=	isc-cron mcron # bin/crontab
 
 OPTIONS_DEFINE=		MYSQL PGSQL
 OPTIONS_DEFAULT=	MYSQL
-MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+MYSQL_RUN_DEPENDS=	${DBD_MYSQL}
+MYSQL_USES=		mysql
 PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 
 GROUPS=		interch

@@ -1,0 +1,18 @@
+--- autoconf/config.h.in.orig	2024-02-21 00:18:50 UTC
++++ autoconf/config.h.in
+@@ -313,13 +313,13 @@
+ #undef XVT_UTMPX_FILE
+ 
+ /* Define location of utmp */
+-#undef XVT_UTMP_FILE
++#define XVT_UTMP_FILE "/var/run/utmp"
+ 
+ /* Define location of wtmpx */
+ #undef XVT_WTMPX_FILE
+ 
+ /* Define location of wtmp */
+-#undef XVT_WTMP_FILE
++#define XVT_WTMP_FILE "/var/log/wtmp"
+ 
+ /* The size of a `char', as computed by sizeof. */
+ #undef SIZEOF_CHAR

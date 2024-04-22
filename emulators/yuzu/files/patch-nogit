@@ -19,37 +19,73 @@ thus don't contain .git subdirs.
  if (NOT GNU_MAKE)
      set(CAN_BUILD_NX_TZDB false)
  endif()
---- externals/nx_tzdb/tzdb_to_nx/externals/tz/tz/version.orig	2023-06-23 13:27:28 UTC
+--- externals/nx_tzdb/tzdb_to_nx/externals/tz/CMakeLists.txt.orig	2024-02-10 22:27:31 UTC
++++ externals/nx_tzdb/tzdb_to_nx/externals/tz/CMakeLists.txt
+@@ -13,20 +13,11 @@ endif()
+     message(FATAL_ERROR "GNU make not found")
+ endif()
+ 
+-find_program(GIT_PROGRAM git)
+-if (NOT GIT_PROGRAM)
+-    message(FATAL_ERROR "git program not found")
+-endif()
+-
+ if (NOT EXISTS "${TZ_DIR}" OR NOT EXISTS "${TZIF_LIST_FILE}")
+     if (NOT TZDB2NX_ZONEINFO_DIR) # If a custom zoneinfo directory was specified
+         # tz's makefile can only build in-tree, so copy the whole source tree to a
+         # separate directory before building.
+-        execute_process(
+-            COMMAND
+-                ${GIT_PROGRAM} clone --depth 1 "file://${TZ_SOURCE_DIR}" "${TZ_TMP_SOURCE_DIR}"
+-            COMMAND_ERROR_IS_FATAL ANY
+-        )
++        file(COPY ${TZ_SOURCE_DIR}/ DESTINATION ${TZ_TMP_SOURCE_DIR})
+ 
+         if (APPLE)
+             set(TZ_MAKEFLAGS "LDLIBS=${Intl_LIBRARY}")
+--- externals/nx_tzdb/tzdb_to_nx/externals/tz/tz/version.orig	2024-02-12 23:43:35 UTC
 +++ externals/nx_tzdb/tzdb_to_nx/externals/tz/tz/version
 @@ -0,0 +1 @@
 +2022c
---- externals/nx_tzdb/tzdb_to_nx/src/tzdb/CMakeLists.txt.orig	2023-06-23 19:37:14 UTC
+--- externals/nx_tzdb/tzdb_to_nx/src/tzdb/CMakeLists.txt.orig	2024-02-10 22:27:31 UTC
 +++ externals/nx_tzdb/tzdb_to_nx/src/tzdb/CMakeLists.txt
 @@ -1,8 +1,3 @@
 -find_program(GIT_PROGRAM git)
--if ("${GIT_PROGRAM}" STREQUAL "GIT_PROGRAM-NOTFOUND")
+-if (NOT GIT_PROGRAM)
 -    message(FATAL_ERROR "git program not found")
 -endif()
 -
  find_program(GNU_DATE date)
- if ("${GNU_DATE}" STREQUAL "GNU_DATE-NOTFOUND")
+ if (NOT GNU_DATE)
      message(FATAL_ERROR "date program not found")
-@@ -12,17 +7,7 @@ set(TZDB_VERSION_FILE ${TZ_SOURCE_DIR}/NEWS)
- set(NX_ZONEINFO_DIR "${NX_TZDB_DIR}/zoneinfo")
- 
- set(TZDB_VERSION_FILE ${TZ_SOURCE_DIR}/NEWS)
+@@ -16,29 +11,7 @@ else()
+ if (NOT "${TZDB2NX_VERSION}" STREQUAL "")
+     set(TZDB_VERSION "${TZDB2NX_VERSION}\n")
+ else()
+-    execute_process(
+-        COMMAND 
+-            ${GIT_PROGRAM} log --pretty=%at -n1 NEWS
+-        OUTPUT_VARIABLE
+-            TZ_COMMIT_TIME
+-        WORKING_DIRECTORY
+-            ${TZ_SOURCE_DIR}
+-        COMMAND_ERROR_IS_FATAL ANY)
 -
--execute_process(
--    COMMAND 
--        ${GIT_PROGRAM} log --pretty=%at -n1 NEWS
--    OUTPUT_VARIABLE
--        TZ_COMMIT_TIME
--    WORKING_DIRECTORY
--        ${TZ_SOURCE_DIR}
--    COMMAND_ERROR_IS_FATAL ANY)
+-    string(REPLACE "\n" "" TZ_COMMIT_TIME "${TZ_COMMIT_TIME}")
 -
--string(REPLACE "\n" "" TZ_COMMIT_TIME "${TZ_COMMIT_TIME}")
-+set(TZ_COMMIT_TIME 1687220316)
+-    if (APPLE OR CMAKE_SYSTEM_NAME MATCHES "DragonFly|FreeBSD|NetBSD|OpenBSD")
+-        set(VERSION_COMMAND ${GNU_DATE} -r ${TZ_COMMIT_TIME} +%y%m%d)
+-    else ()
+-        set(VERSION_COMMAND ${GNU_DATE} +%y%m%d --date=@${TZ_COMMIT_TIME})
+-    endif ()
+-
+-    execute_process(
+-        COMMAND
+-            ${VERSION_COMMAND}
+-        OUTPUT_VARIABLE
+-            TZDB_VERSION
+-        COMMAND_ERROR_IS_FATAL ANY)
++    set(TZDB_VERSION 230620)
+ endif()
  
- if (APPLE)
- 	set(VERSION_COMMAND ${GNU_DATE} -r ${TZ_COMMIT_TIME} +%y%m%d) 
+ set(NX_VERSION_FILE ${NX_TZDB_DIR}/version.txt)

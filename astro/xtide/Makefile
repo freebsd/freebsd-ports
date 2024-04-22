@@ -1,5 +1,6 @@
 PORTNAME=	xtide
 PORTVERSION=	2.15.5
+PORTREVISION=	2
 CATEGORIES=	astro geography
 MASTER_SITES=	https://flaterco.com/files/xtide/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -20,6 +21,7 @@ USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_header_tcd_h=yes \
 		ac_cv_lib_tcd_get_tide_db_header=yes
 CFLAGS+=	-Wno-deprecated-declarations
@@ -40,7 +42,7 @@ X11_DESKTOP_ENTRIES=	"XTide" "" "xtide" "xtide" "" ""
 
 DISTNAME_TCD=	libtcd-2.2.7-r3
 WRKSRC_TCD=	${WRKDIR}/${DISTNAME_TCD:C/-r[0-9]+//}
-DISTNAME_HARM=	harmonics-dwf-20210110-free
+DISTNAME_HARM=	harmonics-dwf-20240104-free
 WRKSRC_HARM=	${WRKDIR}/${DISTNAME_HARM:C/-free//}
 DISTNAME_WVS=	wvs
 

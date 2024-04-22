@@ -1,0 +1,16 @@
+The starlark-rust project provides a Rust implementation of the
+Starlark language.
+Starlark is a deterministic language inspired by Python3, used for configuration
+in the build systems
+Bazel, Buck and Buck2
+
+Project features:
+- Easy interoperability between Rust types and Starlark.
+- Rust-friendly types, so frozen values are Send/Sync, while non-frozen
+  values aren't.
+- Garbage collected values allocated on a heap.
+- Optional runtime-checked types.
+- A linter, to detect code issues in Starlark.
+- IDE integration in the form of LSP.
+- Extensive testing, including fuzz testing.
+- DAP support.

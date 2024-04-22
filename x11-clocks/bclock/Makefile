@@ -1,6 +1,6 @@
 PORTNAME=	bclock
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks
 MASTER_SITES=	SUNSITE/X11/clocks
 
@@ -12,6 +12,6 @@ USE_XORG=	ice sm x11 xext xmu xt
 
 PLIST_FILES=	bin/bclock \
 		lib/X11/app-defaults/Clock-color \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>

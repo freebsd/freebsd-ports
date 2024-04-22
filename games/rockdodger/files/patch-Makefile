@@ -1,6 +1,6 @@
---- Makefile.orig	2018-07-28 08:20:48 UTC
+--- Makefile.orig	2020-07-24 19:19:35 UTC
 +++ Makefile
-@@ -25,7 +25,7 @@ VRELEASE=3
+@@ -25,7 +25,7 @@ PACKAGENAME=rockdodger
  VERSION=$(VMAJOR).$(VMINOR).$(VRELEASE)
  PACKAGENAME=rockdodger
  
@@ -9,13 +9,11 @@
  INSTALL=/usr/bin/install
  TMP=/tmp
  
-@@ -34,14 +34,14 @@ datarootdir = $(prefix)/share
- datadir = $(datarootdir)
+@@ -35,13 +35,13 @@ mandir = $(datarootdir)/man
  bindir = $(exec_prefix)/bin
  docdir = $(datarootdir)/doc/$(PACKAGENAME)
--mandir = $(datarootdir)/man
+ mandir = $(datarootdir)/man
 -localstatedir = $(prefix)/var
-+mandir = $(prefix)/man
 +localstatedir = /var
  gamesdir = $(localstatedir)/games
  
@@ -27,7 +25,7 @@
  EXENAME=rockdodger
  
  SOUNDLIBRARIES=-lSDL_mixer
-@@ -60,14 +60,9 @@ ifeq ($(profile),1)
+@@ -60,14 +60,9 @@ ifeq ($(debug),0)
  	OPTIONS+=-pg
  endif
  ifeq ($(debug),0)
@@ -43,7 +41,7 @@
  
  all:	$(EXENAME) config.h
  
-@@ -98,16 +93,16 @@ pkg:	$(EXENAME)
+@@ -98,16 +93,16 @@ install:	all
  	tar -C $$DTEMP -cvzf $(TARPKGNAME) . && rm -r $$DTEMP)
  
  install:	all

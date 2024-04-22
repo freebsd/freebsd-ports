@@ -47,6 +47,9 @@ post-patch:
 		-e '/pthread/d; /CMAKE_THREAD_LIBS_INIT/d' \
 		-e '/ rt)/d' \
 		${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e '/GLES3/d' \
+		-e '/pthread\.h/d' \
+		${WRKSRC}/src/includes.hpp
 
 pre-configure:
 	@${SETENV} ${MAKE_ENV} ${GMAKE} protocols -C${WRKSRC}

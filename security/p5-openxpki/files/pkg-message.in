@@ -14,7 +14,7 @@
       - Install e.g. databases/mariadb106-server
       - Add value mysql to file /etc/make.conf like this:
         DEFAULT_VERSIONS+= mysql=10.6m
-      - cd /usr/ports/databases/p5-DBD-mysql && make reinstall
+      - cd /usr/ports/databases/p5-DBD-mysql4 && make reinstall
         Note that installing of databases/p5-DBD-MariaDB here may hinder
         operation of your OpeXPKI setup. 
 - Install your favorite web server.

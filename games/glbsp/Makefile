@@ -1,5 +1,6 @@
 PORTNAME=	glbsp
 PORTVERSION=	2.24
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/.//}
@@ -16,7 +17,7 @@ MAKEFILE=	Makefile.unx
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
 PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt TRICKS.txt USAGE.txt
-PLIST_FILES=	bin/glbsp man/man1/glbsp.1.gz include/glbsp.h lib/libglbsp.a
+PLIST_FILES=	bin/glbsp share/man/man1/glbsp.1.gz include/glbsp.h lib/libglbsp.a
 
 OPTIONS_DEFINE=	DOCS GUI
 
@@ -31,7 +32,7 @@ GUI_PLIST_FILES=	bin/glBSPX
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/glbsp ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/glbsp.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/glbsp.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/src/glbsp.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libglbsp.a ${STAGEDIR}${PREFIX}/lib
 

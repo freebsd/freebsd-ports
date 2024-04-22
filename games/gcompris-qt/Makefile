@@ -1,11 +1,11 @@
 PORTNAME=	gcompris-qt
-DISTVERSION=	3.3
+DISTVERSION=	4.0
 CATEGORIES=	games education kde
-MASTER_SITES=	http://gcompris.net/download/qt/src/
+MASTER_SITES=	https://gcompris.net/download/qt/src/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Educational games and activities for kids ages 2 to 10
-WWW=		http://gcompris.net/
+WWW=		https://gcompris.net/
 
 LICENSE=	AGPLv3 GPLv3
 LICENSE_COMB=	multi
@@ -14,10 +14,10 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
 
 LIB_DEPENDS=	libBox2D.so:x11-toolkits/qml-box2d
 
-USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz
+USES=		cmake kde:5 qt:5 tar:xz
 USE_KDE=	doctools:build ecm:build
-USE_QT=		charts core declarative graphicaleffects gui multimedia network quickcontrols2 \
-		sensors svg widgets \
+USE_QT=		charts core declarative graphicaleffects gui multimedia \
+		network quickcontrols2 sensors svg widgets \
 		buildtools:build linguisttools:build qmake:build testlib:build \
 		imageformats:run
 

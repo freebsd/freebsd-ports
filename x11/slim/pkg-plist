@@ -4,6 +4,6 @@ lib/libslim.so.%%VERSION%%
 %%DATADIR%%/themes/default/background.jpg
 %%DATADIR%%/themes/default/panel.png
 %%DATADIR%%/themes/default/slim.theme
-man/man1/slim.1.gz
+share/man/man1/slim.1.gz
 @sample etc/slim.conf.sample
 %%PAM%%@sample etc/pam.d/slim.sample

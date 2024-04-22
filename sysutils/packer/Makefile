@@ -1,15 +1,16 @@
 PORTNAME=	packer
-PORTVERSION=	1.8.6
-PORTREVISION=	4
+PORTVERSION=	1.10.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	brad@facefault.org
 COMMENT=	Tool for creating machine images
-WWW=		https://packer.io/
+WWW=		https://www.packer.io/
 
-LICENSE=	MPL20
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_NAME=   Business Source License 1.1
+LICENSE_FILE=   ${WRKSRC}/LICENSE
+LICENSE_PERMS=  dist-mirror pkg-mirror pkg-sell auto-accept
 
 USES=		cpe go:modules
 CPE_VENDOR=	hashicorp

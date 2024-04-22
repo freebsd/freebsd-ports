@@ -1,6 +1,6 @@
 PORTNAME=	gpsd
 PORTVERSION=	3.23.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro geography
 MASTER_SITES=	SAVANNAH
 
@@ -17,7 +17,7 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	gpsd
 
 MAKE_ARGS=	manbuild=no \
-		mandir="man" \
+		mandir="share/man" \
 		pkgconfig="libdata/pkgconfig" \
 		prefix="${PREFIX}" \
 		qt=no \

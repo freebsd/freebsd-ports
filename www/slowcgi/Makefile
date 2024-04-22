@@ -1,5 +1,6 @@
 PORTNAME=	slowcgi
 PORTVERSION=	7.1.20220916
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	koue@chaosophia.net
@@ -18,7 +19,7 @@ GH_PROJECT=	slowcgi
 
 USE_RC_SUBR=	slowcgi
 
-MAKE_ARGS+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
+MAKE_ARGS+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/share/man/man
 
 CFLAGS+=	-Wall -I${PREFIX}/include
 
@@ -30,6 +31,6 @@ USERS=		www
 GROUPS=		www
 
 PLIST_FILES=	sbin/slowcgi \
-		man/man8/slowcgi.8.gz
+		share/man/man8/slowcgi.8.gz
 
 .include <bsd.port.mk>

@@ -141,10 +141,9 @@ lib/gretl-gtk%%GTK_VER%%/vif.so
 %%GUI%%lib/gretl-gtk%%GTK_VER%%/xlsx_import.so
 %%GUI%%lib/gretl-gtk%%GTK_VER%%/xml_get.so
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.46
-lib/libgretl-1.0.so.46.0.0
+lib/libgretl-1.0.so.47
+lib/libgretl-1.0.so.47.0.0
 libdata/pkgconfig/gretl.pc
-man/man1/gretl.1.gz
 %%GUI%%share/applications/gretl.desktop
 %%GUI%%share/applications/gretl_edit.desktop
 %%GUI%%share/metainfo/gretl.appdata.xml
@@ -440,7 +439,6 @@ man/man1/gretl.1.gz
 %%ADDONS%%%%DATADIR%%/functions/ivpanel/ivpanel.pdf
 %%ADDONS%%%%DATADIR%%/functions/logging/logging.gfn
 %%ADDONS%%%%DATADIR%%/functions/logging/logging.pdf
-%%DATADIR%%/functions/packages.xml
 %%ADDONS%%%%DATADIR%%/functions/regls/examples/README.txt
 %%ADDONS%%%%DATADIR%%/functions/regls/examples/elnet_sequence.inp
 %%ADDONS%%%%DATADIR%%/functions/regls/examples/fat.inp
@@ -546,6 +544,7 @@ man/man1/gretl.1.gz
 %%DATADIR%%/scripts/misc/credscore.inp
 %%DATADIR%%/scripts/misc/denmark.inp
 %%DATADIR%%/scripts/misc/ects_nls.inp
+%%DATADIR%%/scripts/misc/fanchart.inp
 %%DATADIR%%/scripts/misc/frontier.inp
 %%DATADIR%%/scripts/misc/garch.inp
 %%DATADIR%%/scripts/misc/gdp_midas.inp
@@ -682,4 +681,5 @@ man/man1/gretl.1.gz
 %%NLS%%share/locale/uk/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gretl.mo
+share/man/man1/gretl.1.gz
 %%GUI%%share/mime/packages/gretl.xml

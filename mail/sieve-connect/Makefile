@@ -1,5 +1,6 @@
 PORTNAME=	sieve-connect
 DISTVERSION=	0.90
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://people.spodhuis.org/phil.pennock/software/
 
@@ -24,7 +25,7 @@ SHEBANG_FILES=	sieve-connect.pl
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/sieve-connect \
-		man/man1/sieve-connect.1.gz
+		share/man/man1/sieve-connect.1.gz
 
 PORTDOCS=	ChangeLog README.md TODO
 
@@ -34,7 +35,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sieve-connect \
 		${STAGEDIR}${PREFIX}/bin/sieve-connect
 	${INSTALL_MAN} ${WRKSRC}/sieve-connect.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1/sieve-connect.1
+		${STAGEDIR}${PREFIX}/share/man/man1/sieve-connect.1
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 

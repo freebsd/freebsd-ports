@@ -1,5 +1,6 @@
 PORTNAME=	adcli
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt net security
 MASTER_SITES=	https://gitlab.freedesktop.org/realmd/adcli/-/archive/${PORTVERSION}/
 
@@ -14,6 +15,7 @@ BUILD_DEPENDS=	xsltproc:textproc/libxslt	\
 		docbook-xsl>0:textproc/docbook-xsl
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 TEST_TARGET=	check
 
 OPTIONS_DEFINE=	DOCS

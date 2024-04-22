@@ -1,5 +1,4 @@
 MASTERDIR=	${.CURDIR}/../litecoin
-PORTREVISION=	5
 PKGNAMESUFFIX=	-daemon
 
 COMMENT=	Virtual Peer-to-Peer Currency (Daemon)
@@ -22,7 +21,7 @@ CONFIGURE_ARGS=	--with-daemon \
 		--without-utils
 
 PLIST_FILES=	bin/litecoind
-PLIST_FILES+=	man/man1/litecoind.1.gz
+PLIST_FILES+=	share/man/man1/litecoind.1.gz
 PLIST_FILES+=	"@sample etc/litecoin.conf.sample"
 
 USE_RC_SUBR=	litecoind

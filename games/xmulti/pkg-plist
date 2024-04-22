@@ -58,7 +58,7 @@ lib/X11/xmaid/multi/suwari.gif
 lib/X11/xmaid/multi/xmultiback.gif
 lib/X11/xmaid/multi/xmultimark.gif
 lib/X11/xmaid/multi/xmultimark2.gif
-man/man1/xmaid.1.gz
+share/man/man1/xmaid.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/MODULE.jp
 %%PORTDOCS%%%%DOCSDIR%%/README.jp
 %%PORTDOCS%%%%DOCSDIR%%/STYLESHEET.jp

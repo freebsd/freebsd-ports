@@ -31,5 +31,5 @@ lib/liblog4c.so
 lib/liblog4c.so.3
 lib/liblog4c.so.3.3.1
 libdata/pkgconfig/log4c.pc
-man/man1/log4c-config.1.gz
+share/man/man1/log4c-config.1.gz
 share/aclocal/log4c.m4

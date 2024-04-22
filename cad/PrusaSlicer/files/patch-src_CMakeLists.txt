@@ -1,15 +1,15 @@
---- src/CMakeLists.txt.orig	2023-06-19 12:07:14 UTC
+--- src/CMakeLists.txt.orig	2023-12-12 14:21:21 UTC
 +++ src/CMakeLists.txt
-@@ -78,7 +78,7 @@ if (SLIC3R_GUI)
+@@ -62,7 +62,7 @@ if (SLIC3R_GUI)
  
-     find_package(JPEG QUIET)
-     find_package(TIFF QUIET)
+     find_package(JPEG MODULE QUIET)
+     find_package(TIFF MODULE QUIET) # Tiff exported config is broken for static build
 -    find_package(NanoSVG REQUIRED)
-+    # find_package(NanoSVG REQUIRED)
++	#find_package(NanoSVG REQUIRED)
  
      string(REGEX MATCH "wxpng" WX_PNG_BUILTIN ${wxWidgets_LIBRARIES})
      if (PNG_FOUND AND NOT WX_PNG_BUILTIN)
-@@ -147,7 +147,7 @@ endif ()
+@@ -131,7 +131,7 @@ if (NOT WIN32 AND NOT APPLE)
      set_target_properties(PrusaSlicer PROPERTIES OUTPUT_NAME "prusa-slicer")
  endif ()
  

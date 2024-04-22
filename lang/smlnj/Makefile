@@ -1,5 +1,6 @@
 PORTNAME=	smlnj
 PORTVERSION=	110.98
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/ \
 		ftp://mirror.free.de/http/smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/
@@ -343,7 +344,7 @@ do-install:
 	@[ ! -d ${WRKSRC}/doc/man/man${mansect} ] || \
 	{ cd ${WRKSRC}/doc/man/man${mansect} && ls *.${mansect} | \
 	  ${XARGS} -J % \
-	    ${INSTALL_MAN} % ${STAGEDIR}${MANPREFIX}/man/man${mansect} ; }
+	    ${INSTALL_MAN} % ${STAGEDIR}${PREFIX}/share/man/man${mansect} ; }
 .endfor
 	@${ECHO} '(* Stripping runtime executable: *)'
 	MLARCHOPSYS=`${STAGEDIR}${MLBIN}/.arch-n-opsys` && \

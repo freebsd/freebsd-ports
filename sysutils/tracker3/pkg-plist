@@ -44,12 +44,6 @@ libexec/tracker3/help
 libexec/tracker3/import
 libexec/tracker3/sparql
 libexec/tracker3/sql
-%%MAN%%man/man1/tracker-xdg-portal-3.1.gz
-%%MAN%%man/man1/tracker3-endpoint.1.gz
-%%MAN%%man/man1/tracker3-export.1.gz
-%%MAN%%man/man1/tracker3-import.1.gz
-%%MAN%%man/man1/tracker3-sparql.1.gz
-%%MAN%%man/man1/tracker3-sql.1.gz
 share/dbus-1/services/org.freedesktop.portal.Tracker.service
 %%PORTDOCS%%share/doc/Tracker-3.0/RedHatDisplay-Black.woff
 %%PORTDOCS%%share/doc/Tracker-3.0/RedHatDisplay-Black.woff2
@@ -379,6 +373,12 @@ share/locale/vi/LC_MESSAGES/tracker3.mo
 share/locale/zh_CN/LC_MESSAGES/tracker3.mo
 share/locale/zh_HK/LC_MESSAGES/tracker3.mo
 share/locale/zh_TW/LC_MESSAGES/tracker3.mo
+%%MAN%%share/man/man1/tracker-xdg-portal-3.1.gz
+%%MAN%%share/man/man1/tracker3-endpoint.1.gz
+%%MAN%%share/man/man1/tracker3-export.1.gz
+%%MAN%%share/man/man1/tracker3-import.1.gz
+%%MAN%%share/man/man1/tracker3-sparql.1.gz
+%%MAN%%share/man/man1/tracker3-sql.1.gz
 %%DATADIR%%/ontologies/nepomuk/30-nie.description
 %%DATADIR%%/ontologies/nepomuk/30-nie.ontology
 %%DATADIR%%/ontologies/nepomuk/31-nao.description

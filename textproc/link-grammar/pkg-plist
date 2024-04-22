@@ -546,5 +546,5 @@ libdata/pkgconfig/link-grammar.pc
 %%DATADIR%%/vn/4.0.dict
 %%DATADIR%%/vn/4.0.knowledge
 %%DATADIR%%/vn/4.0.regex
-man/man1/link-generator.1.gz
-man/man1/link-parser.1.gz
+share/man/man1/link-generator.1.gz
+share/man/man1/link-parser.1.gz

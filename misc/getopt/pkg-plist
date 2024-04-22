@@ -1,5 +1,4 @@
 bin/getopt
-man/man1/getopt.1.gz
 %%NLS%%share/locale/ca/LC_MESSAGES/getopt.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/getopt.mo
 %%NLS%%share/locale/da/LC_MESSAGES/getopt.mo
@@ -26,3 +25,4 @@ man/man1/getopt.1.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/getopt.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/getopt.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/getopt.mo
+share/man/man1/getopt.1.gz

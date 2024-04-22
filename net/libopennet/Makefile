@@ -1,9 +1,8 @@
 PORTNAME=	libopennet
 PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	http://www.rkeene.org/files/oss/libopennet/ \
-		http://www.cs.nctu.edu.tw/~gslin/files/
+MASTER_SITES=	https://www.rkeene.org/files/oss/libopennet/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for opening files over a network
@@ -14,6 +13,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USES=		gmake
 USE_LDCONFIG=	yes

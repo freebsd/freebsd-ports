@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/auto/meta/meta.so
+%%SITE_ARCH%%/meta.pm
+%%PERL5_MAN3%%/meta.3.gz

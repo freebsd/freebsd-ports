@@ -1,6 +1,6 @@
---- chrome/browser/download/download_item_model.cc.orig	2023-12-23 12:33:28 UTC
+--- chrome/browser/download/download_item_model.cc.orig	2024-03-22 14:16:19 UTC
 +++ chrome/browser/download/download_item_model.cc
-@@ -752,7 +752,7 @@ bool DownloadItemModel::IsCommandChecked(
+@@ -744,7 +744,7 @@ bool DownloadItemModel::IsCommandChecked(
               download_crx_util::IsExtensionDownload(*download_);
      case DownloadCommands::ALWAYS_OPEN_TYPE:
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -9,7 +9,7 @@
        if (download_commands->CanOpenPdfInSystemViewer()) {
          DownloadPrefs* prefs = DownloadPrefs::FromBrowserContext(profile());
          return prefs->ShouldOpenPdfInSystemReader();
-@@ -798,7 +798,7 @@ void DownloadItemModel::ExecuteCommand(DownloadCommand
+@@ -790,7 +790,7 @@ void DownloadItemModel::ExecuteCommand(DownloadCommand
                                           DownloadCommands::ALWAYS_OPEN_TYPE);
        DownloadPrefs* prefs = DownloadPrefs::FromBrowserContext(profile());
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -18,7 +18,7 @@
        if (download_commands->CanOpenPdfInSystemViewer()) {
          prefs->SetShouldOpenPdfInSystemReader(!is_checked);
          SetShouldPreferOpeningInBrowser(is_checked);
-@@ -1078,7 +1078,7 @@ void DownloadItemModel::DetermineAndSetShouldPreferOpe
+@@ -1065,7 +1065,7 @@ void DownloadItemModel::DetermineAndSetShouldPreferOpe
      return;
    }
  

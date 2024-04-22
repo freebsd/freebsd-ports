@@ -1,6 +1,6 @@
 PORTNAME=	vera++
 PORTVERSION=	1.3.0
-PORTREVISION=	19
+PORTREVISION=	21
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/verateam/vera/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -25,7 +25,7 @@ CMAKE_ARGS+=	-DTCL_INCLUDE_PATH=${TCL_INCLUDEDIR} \
 
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 
-PLIST_FILES=	bin/vera++ man/man1/vera++.1.gz
+PLIST_FILES=	bin/vera++ share/man/man1/vera++.1.gz
 PORTDATA=	*
 PORTDOCS=	*
 
@@ -41,7 +41,7 @@ post-patch:
 		${WRKSRC}/CMakeLists.txt
 
 post-install:
-	${INSTALL_MAN} ${WRKDIR}/vera++.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/vera++.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/vera++.html ${STAGEDIR}${DOCSDIR}
 

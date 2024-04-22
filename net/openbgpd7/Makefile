@@ -1,5 +1,5 @@
 PORTNAME=	openbgpd
-PORTVERSION=	7.7
+PORTVERSION=	7.9
 CATEGORIES=	net
 MASTER_SITES=	OPENBSD/OpenBGPD
 PKGNAMESUFFIX=	7
@@ -17,6 +17,7 @@ USES=		autoreconf libtool localbase pathfix uidfix
 USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 SUB_FILES=	pkg-message
 

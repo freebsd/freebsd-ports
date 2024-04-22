@@ -13,8 +13,8 @@ lib/libprojectM.so
 lib/libprojectM.so.3
 lib/libprojectM.so.3.1.1
 libdata/pkgconfig/libprojectM.pc
-%%JACK%%man/man1/projectM-jack.1.gz
-%%PULSEAUDIO%%man/man1/projectM-pulseaudio.1.gz
+%%JACK%%share/man/man1/projectM-jack.1.gz
+%%PULSEAUDIO%%share/man/man1/projectM-pulseaudio.1.gz
 %%JACK%%share/applications/projectM-jack.desktop
 %%PULSEAUDIO%%share/applications/projectM-pulseaudio.desktop
 @sample share/projectM/config.inp.sample

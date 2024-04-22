@@ -38,4 +38,4 @@ lib/spar/zsolve_c.so
 lib/spar/zsolve_q.a
 lib/spar/zsolve_q.so
 share/spar/modules_config
-man/man1/spar.1.gz
+share/man/man1/spar.1.gz

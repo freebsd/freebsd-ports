@@ -15,5 +15,5 @@ lib/libruin/scheme/sdom/common.scm
 lib/libruin/scheme/sdom/core.scm
 lib/libruin/scheme/sdom/events.scm
 lib/libruin/scheme/sdom/parser.scm
-man/man3/ruin.3.gz
+share/man/man3/ruin.3.gz
 %%DATADIR%%/ChangeLog

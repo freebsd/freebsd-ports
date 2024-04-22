@@ -294,9 +294,6 @@ libexec/singular/MOD/systhreads.so
 libexec/singular/MOD/syzextra.a
 libexec/singular/MOD/syzextra.so
 libexec/singular/MOD/toric_ideal
-man/man1/ESingular.1.gz
-man/man1/Singular.1.gz
-man/man1/TSingular.1.gz
 share/applications/Singular-manual.desktop
 share/applications/Singular.desktop
 share/factory/gftables/10201
@@ -392,6 +389,9 @@ share/factory/gftables/9
 share/factory/gftables/9409
 share/factory/gftables/961
 share/icons/Singular.png
+share/man/man1/ESingular.1.gz
+share/man/man1/Singular.1.gz
+share/man/man1/TSingular.1.gz
 share/ml_python/__init__.py
 share/ml_python/common/__init__.py
 share/ml_python/common/constants.py

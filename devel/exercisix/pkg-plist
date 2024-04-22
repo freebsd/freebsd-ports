@@ -1,4 +1,4 @@
 include/exercisix.hh
 share/examples/exercisix/BSDmakefile
 share/examples/exercisix/example.cc
-man/man3/exercisix.3.gz
+share/man/man3/exercisix.3.gz

@@ -1,28 +1,8 @@
-* Rename Python2 related functions to Python generic ones [1]
 * Add support for FreeBSD
 * Add detection for PowerPC64
 
-[1] Obtained from:
-
-https://gitlab.archlinux.org/archlinux/packaging/packages/qt5-webengine/-/raw/main/qt5-webengine-python3.patch?ref_type=heads
-
---- mkspecs/features/functions.prf.orig	2023-07-20 09:52:10 UTC
+--- mkspecs/features/functions.prf.orig	2024-03-27 11:26:34 UTC
 +++ mkspecs/features/functions.prf
-@@ -44,11 +44,11 @@ defineReplace(pythonPath) {
- 
- # Returns the unquoted path to the python executable.
- defineReplace(pythonPath) {
--    isEmpty(QMAKE_PYTHON2) {
-+    isEmpty(QMAKE_PYTHON) {
-         # Fallback for building QtWebEngine with Qt < 5.8
--        QMAKE_PYTHON2 = python
-+        QMAKE_PYTHON = python
-     }
--    return($$QMAKE_PYTHON2)
-+    return($$QMAKE_PYTHON)
- }
- 
- # Returns the python executable for use with shell / make targets.
 @@ -89,6 +89,10 @@ defineReplace(gnWebEngineArgs) {
          include($$QTWEBENGINE_ROOT/src/buildtools/config/windows.pri)
          include($$QTWEBENGINE_ROOT/src/core/config/windows.pri)

@@ -37,13 +37,8 @@ bin/pptemplate
 %%SITE_ARCH%%/PDL/Demos/BAD_demo.pm
 %%SITE_ARCH%%/PDL/Demos/Cartography_demo.pm
 %%SITE_ARCH%%/PDL/Demos/General.pm
-%%SITE_ARCH%%/PDL/Demos/PGPLOT.pm
-%%SITE_ARCH%%/PDL/Demos/PGPLOT_OO.pm
 %%SITE_ARCH%%/PDL/Demos/Sound.pm
 %%SITE_ARCH%%/PDL/Demos/Transform_demo.pm
-%%SITE_ARCH%%/PDL/Demos/TriD1.pm
-%%SITE_ARCH%%/PDL/Demos/TriD2.pm
-%%SITE_ARCH%%/PDL/Demos/TriDGallery.pm
 %%SITE_ARCH%%/PDL/Demos/m51.fits
 %%SITE_ARCH%%/PDL/DiskCache.pm
 %%SITE_ARCH%%/PDL/Doc.pm
@@ -118,9 +113,6 @@ bin/pptemplate
 %%SITE_ARCH%%/PDL/Graphics/LUT/tables/stairs9.fits
 %%SITE_ARCH%%/PDL/Graphics/LUT/tables/standard.fits
 %%SITE_ARCH%%/PDL/Graphics/Limits.pm
-%%SITE_ARCH%%/PDL/Graphics/PGPLOT.pm
-%%SITE_ARCH%%/PDL/Graphics/PGPLOT/Window.pm
-%%SITE_ARCH%%/PDL/Graphics/PGPLOTOptions.pm
 %%SITE_ARCH%%/PDL/Graphics/State.pm
 %%SITE_ARCH%%/PDL/Graphics2D.pm
 %%SITE_ARCH%%/PDL/IO.pod
@@ -204,7 +196,6 @@ bin/pptemplate
 %%SITE_ARCH%%/auto/PDL/FFT/FFT.so
 %%SITE_ARCH%%/auto/PDL/Fit/Gaussian/Gaussian.so
 %%SITE_ARCH%%/auto/PDL/Graphics/IIS/IIS.so
-%%SITE_ARCH%%/auto/PDL/Graphics/PGPLOT/Window/Window.so
 %%SITE_ARCH%%/auto/PDL/IO/Browser/Browser.so
 %%SITE_ARCH%%/auto/PDL/IO/Misc/Misc.so
 %%SITE_ARCH%%/auto/PDL/IO/Pnm/Pnm.so
@@ -271,14 +262,10 @@ bin/pptemplate
 %%PERL5_MAN3%%/PDL::Fit::Gaussian.3.gz
 %%PERL5_MAN3%%/PDL::Func.3.gz
 %%PERL5_MAN3%%/PDL::Graphics2D.3.gz
-%%PERL5_MAN3%%/PDL::Graphics::Demo.3.gz
 %%PERL5_MAN3%%/PDL::Graphics::IIS.3.gz
 %%PERL5_MAN3%%/PDL::Graphics::LUT.3.gz
 %%PERL5_MAN3%%/PDL::Graphics::Limits.3.gz
-%%PERL5_MAN3%%/PDL::Graphics::PGPLOT.3.gz
-%%PERL5_MAN3%%/PDL::Graphics::PGPLOT::Demo.3.gz
-%%PERL5_MAN3%%/PDL::Graphics::PGPLOT::Window.3.gz
-%%PERL5_MAN3%%/PDL::Graphics::PGPLOTOptions.3.gz
+%%PERL5_MAN3%%/PDL::Graphics::State.3.gz
 %%PERL5_MAN3%%/PDL::IFiles.3.gz
 %%PERL5_MAN3%%/PDL::IO.3.gz
 %%PERL5_MAN3%%/PDL::IO::Browser.3.gz
@@ -320,7 +307,6 @@ bin/pptemplate
 %%PERL5_MAN3%%/PDL::Slatec.3.gz
 %%PERL5_MAN3%%/PDL::Slices.3.gz
 %%PERL5_MAN3%%/PDL::Sound.3.gz
-%%PERL5_MAN3%%/PDL::State.3.gz
 %%PERL5_MAN3%%/PDL::Transform.3.gz
 %%PERL5_MAN3%%/PDL::Transform::Cartography.3.gz
 %%PERL5_MAN3%%/PDL::Types.3.gz

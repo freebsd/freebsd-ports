@@ -1,6 +1,6 @@
 PORTNAME=	xgraph
 PORTVERSION=	11.3.2.20000910
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math print
 MASTER_SITES=	ftp://ftp.cs.utoronto.ca/pub/radford/
 DISTNAME=	xgraph-11

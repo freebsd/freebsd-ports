@@ -14,10 +14,10 @@ lib/libfa.so
 lib/libfa.so.1
 lib/libfa.so.1.5.3
 libdata/pkgconfig/augeas.pc
-man/man1/augmatch.1.gz
-man/man1/augparse.1.gz
-man/man1/augprint.1.gz
-man/man1/augtool.1.gz
+share/man/man1/augmatch.1.gz
+share/man/man1/augparse.1.gz
+share/man/man1/augprint.1.gz
+share/man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/access.aug
 %%DATADIR%%/lenses/dist/activemq_conf.aug
 %%DATADIR%%/lenses/dist/activemq_xml.aug

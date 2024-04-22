@@ -8,5 +8,5 @@ lib/libgcrypt.so
 lib/libgcrypt.so.20
 lib/libgcrypt.so.20.4.3
 libdata/pkgconfig/libgcrypt.pc
-man/man1/hmac256.1.gz
+share/man/man1/hmac256.1.gz
 share/aclocal/libgcrypt.m4

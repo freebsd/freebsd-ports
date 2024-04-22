@@ -1,6 +1,6 @@
 PORTNAME=	pianobar
 PORTVERSION=	2022.04.01
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	jhixson@FreeBSD.org
@@ -21,7 +21,7 @@ MAKE_ENV+=	V=1
 USES=		alias gmake localbase pkgconfig tar:bzip2
 
 PLIST_FILES=	bin/pianobar \
-		man/man1/pianobar.1.gz
+		share/man/man1/pianobar.1.gz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PromyLOPh

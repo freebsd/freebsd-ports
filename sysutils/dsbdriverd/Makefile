@@ -1,5 +1,6 @@
 PORTNAME=	dsbdriverd
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	mk@nic-nac-project.org
@@ -36,6 +37,10 @@ USE_RC_SUBR=	dsbdriverd
 PLIST_FILES=	"@sample ${ETCDIR}/config.lua.sample" \
 		${ETCDIR}/netif.lua \
 		libexec/dsbdriverd \
-		man/man8/dsbdriverd.8.gz
+		share/man/man8/dsbdriverd.8.gz
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^MANDIR.*|MANDIR = $${PREFIX}/share/man/man8|' \
+		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

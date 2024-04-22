@@ -27,6 +27,6 @@ share/X11/app-defaults/XVkbd-swissgerman
 share/X11/app-defaults/XVkbd-turkish
 share/X11/app-defaults/XVkbd-turkishF
 share/X11/app-defaults/XVkbd-uk
-man/man1/xvkbd.1.gz
+share/man/man1/xvkbd.1.gz
 %%DATADIR%%/words.english
 %%PORTDOCS%%%%DOCSDIR%%/README

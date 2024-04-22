@@ -1,5 +1,5 @@
 PORTNAME=	libgpg-error
-PORTVERSION=	1.47
+DISTVERSION=	1.48
 CATEGORIES=	security devel
 MASTER_SITES=	GNUPG
 
@@ -12,25 +12,26 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
-USES=		cpe libtool tar:bzip2
-
+USES=		cpe libtool pathfix tar:bzip2
 CPE_VENDOR=	gnupg
+USE_LDCONFIG=	yes
 
-USE_LDCONFIG=		yes
-GNU_CONFIGURE=		yes
-CPP+=			-P
-CONFIGURE_ARGS=		--enable-static=yes \
-			--enable-install-gpg-error-config
-INSTALL_TARGET=		install-strip
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+
 DOCS=		AUTHORS ChangeLog NEWS README
 INFO=		gpgrt
+
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+CONFIGURE_ARGS=		--enable-static=yes \
+			--enable-install-gpg-error-config
 
 OPTIONS_DEFINE=	DOCS NLS TEST
 OPTIONS_SUB=	yes
 
+NLS_USES=		gettext iconv
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG} --with-libintl-prefix=${LOCALBASE}
-NLS_USES=		gettext iconv
 
 TEST_CONFIGURE_ENABLE=	tests
 TEST_TARGET=	check

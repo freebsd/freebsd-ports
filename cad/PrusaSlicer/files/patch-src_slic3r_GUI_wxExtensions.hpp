@@ -1,6 +1,6 @@
---- src/slic3r/GUI/wxExtensions.hpp.orig	2023-07-25 13:07:41 UTC
+--- src/slic3r/GUI/wxExtensions.hpp.orig	2023-12-12 14:21:21 UTC
 +++ src/slic3r/GUI/wxExtensions.hpp
-@@ -16,7 +16,7 @@
+@@ -20,7 +20,7 @@
  #include <functional>
  
  

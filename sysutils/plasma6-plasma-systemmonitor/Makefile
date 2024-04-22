@@ -6,7 +6,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Interface for monitoring system sensors, process information and other system resources
 
 USES=		cmake gettext gl kde:6 qt:6 tar:xz xorg
-USE_KDE=	attica5 config coreaddons dbusaddons globalaccel i18n \
+USE_KDE=	attica config coreaddons dbusaddons globalaccel i18n \
 		itemmodels kio kirigami-addons libksysguard newstuff package \
 		service windowsystem \
 		ecm:build

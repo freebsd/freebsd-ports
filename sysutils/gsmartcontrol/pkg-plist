@@ -1,6 +1,6 @@
 bin/gsmartcontrol-root
-man/man1/gsmartcontrol-root.1.gz
-man/man1/gsmartcontrol.1.gz
+share/man/man1/gsmartcontrol-root.1.gz
+share/man/man1/gsmartcontrol.1.gz
 sbin/gsmartcontrol
 share/applications/gsmartcontrol.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt

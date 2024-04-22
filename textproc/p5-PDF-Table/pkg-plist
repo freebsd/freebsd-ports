@@ -10,6 +10,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colspan.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/header.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/header_repeat_with_cell_props.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/no_repeat.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/row_height.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample1.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/size.pl

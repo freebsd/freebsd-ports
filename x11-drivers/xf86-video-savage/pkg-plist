@@ -1,2 +1,2 @@
 lib/xorg/modules/drivers/savage_drv.so
-man/man4/savage.4x.gz
+share/man/man4/savage.4x.gz

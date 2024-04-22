@@ -1,0 +1,9 @@
+include/tommath.h
+lib/cmake/libtommath/libtommath-config-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/libtommath/libtommath-config-version.cmake
+lib/cmake/libtommath/libtommath-config.cmake
+lib/libtommath.a
+lib/libtommath.so
+lib/libtommath.so.1
+lib/libtommath.so.1.3.0
+libdata/pkgconfig/libtommath.pc

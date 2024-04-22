@@ -1,6 +1,6 @@
 PORTNAME=	player
 PORTVERSION=	0.1.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.defora.org/os/download/download/4297/
 PKGNAMEPREFIX=	deforaos-
@@ -22,7 +22,7 @@ MAKE_ARGS+=	PREFIX=${PREFIX}
 USE_GNOME=	gtk20
 USES=		desktop-file-utils gettext gnome pkgconfig
 
-MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
+MAKE_ENV+=	MANDIR=${STAGEDIR}${PREFIX}/share/man
 
 post-install: compress-man
 

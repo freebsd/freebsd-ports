@@ -1,6 +1,6 @@
 PORTNAME=	fmt
 # Make sure to check devel/spdlog consumers too
-PORTVERSION=	10.1.1
+PORTVERSION=	10.2.1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/fmtlib/fmt/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	lib
@@ -11,7 +11,7 @@ WWW=		https://fmt.dev/ \
 		https://github.com/fmtlib/fmt
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.rst
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake:testing compiler:c++11-lang cpe pathfix zip
 
@@ -21,9 +21,6 @@ CMAKE_TESTING_ON=	FMT_TEST
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-
-# include/fmt/*
-CONFLICTS_INSTALL=	axom
 
 OPTIONS_DEFINE=	FULL_CACHE_DRAGONBOX
 OPTIONS_DEFAULT=FULL_CACHE_DRAGONBOX

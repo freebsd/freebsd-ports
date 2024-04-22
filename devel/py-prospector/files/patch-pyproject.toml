@@ -1,14 +1,15 @@
---- pyproject.toml.orig	2023-05-25 01:28:05 UTC
+--- pyproject.toml.orig	2023-10-18 06:23:10 UTC
 +++ pyproject.toml
-@@ -38,7 +38,6 @@ prospector = 'prospector.run:main'
+@@ -38,21 +38,20 @@ prospector = 'prospector.run:main'
  [tool.poetry.dependencies]
  python = ">=3.7.2,<4.0"
  pylint = ">=2.8.3"
 -pylint-celery = "0.3"
  pylint-django = "~2.5"
- pylint-plugin-utils = "~0.7"
+-pylint-plugin-utils = "~0.7"
++pylint-plugin-utils = ">=0.7"
  pylint-flask = "0.6"
-@@ -46,13 +45,13 @@ requirements-detector = ">=1.2.0"
+ requirements-detector = ">=1.2.0"
  PyYAML = "*"
  mccabe = "^0.7.0"
  flake8 = "<6.0.0"

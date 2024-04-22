@@ -1,20 +1,11 @@
---- src/Rack/Makefile.orig	2022-05-15 13:41:31 UTC
+--- src/Rack/Makefile.orig	2023-10-24 08:54:55 UTC
 +++ src/Rack/Makefile
-@@ -12,7 +12,7 @@ include arch.mk
+@@ -11,7 +11,7 @@ SOURCES += dep/oui-blendish/blendish.c
  SOURCES += dep/nanovg/src/nanovg.c
  SOURCES += dep/osdialog/osdialog.c
  SOURCES += dep/oui-blendish/blendish.c
 -SOURCES += dep/pffft/pffft.c dep/pffft/fftpack.c
 +#SOURCES += dep/pffft/pffft.c dep/pffft/fftpack.c
+ SOURCES += dep/tinyexpr/tinyexpr.c
  SOURCES += $(wildcard src/*.c src/*/*.c)
  SOURCES += $(wildcard src/*.cpp src/*/*.cpp)
- 
-@@ -31,7 +31,7 @@ ifdef ARCH_LIN
- 
- 	# This prevents static variables in the DSO (dynamic shared object) from being preserved after dlclose().
- 	# I don't really understand the side effects (see GCC manual), but so far tests are positive.
--	FLAGS += -fno-gnu-unique
-+	#FLAGS += -fno-gnu-unique
- 
- 	LDFLAGS += -Wl,--whole-archive
- 	LDFLAGS += -static-libstdc++ -static-libgcc

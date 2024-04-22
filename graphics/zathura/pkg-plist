@@ -7,8 +7,8 @@ include/zathura/plugin-api.h
 include/zathura/types.h
 include/zathura/zathura-version.h
 libdata/pkgconfig/zathura.pc
-share/man/man1/zathura.1.gz
-share/man/man5/zathurarc.5.gz
+%%MANPAGES%%share/man/man1/zathura.1.gz
+%%MANPAGES%%share/man/man5/zathurarc.5.gz
 share/applications/org.pwmt.zathura.desktop
 share/bash-completion/completions/zathura
 share/dbus-1/interfaces/org.pwmt.zathura.xml

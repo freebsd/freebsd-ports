@@ -1,6 +1,6 @@
 PORTNAME=	rancid
 PORTVERSION=	3.13
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 PKGNAMESUFFIX=	3
@@ -23,6 +23,7 @@ GROUPS=		rancid
 
 SUB_FILES=	pkg-message 200.rancid
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFIGURE_ARGS=	--localstatedir=${LOCALBASE}/var/${PORTNAME}/ \
 		--bindir=${LOCALBASE}/libexec/${PORTNAME}/ \
@@ -46,7 +47,11 @@ COMWARE_DESC=		Add experimental support for Comware devices
 CVS_RUN_DEPENDS=	cvs:devel/cvs
 CVS_CONFIGURE_ON=	--without-svn
 
-SUBVERSION_RUN_DEPENDS=		svn:devel/subversion
+.if ${WITH_SUBVERSION_VER:U} == LTS
+SUBVERSION_RUN_DEPENDS=	svn:devel/subversion-lts
+.else
+SUBVERSION_RUN_DEPENDS=	svn:devel/subversion
+.endif
 SUBVERSION_CONFIGURE_ON=	--with-svn
 
 GIT_RUN_DEPENDS=	git:devel/git

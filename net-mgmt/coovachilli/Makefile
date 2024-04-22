@@ -1,6 +1,6 @@
 PORTNAME=	coovachilli
 PORTVERSION=	1.0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://ap.coova.org/chilli/ \
 		http://www.geeklan.co.uk/files/ \
@@ -18,6 +18,7 @@ CONFLICTS=	chillispot
 
 CONFIGURE_ARGS=-localstatedir=/var
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		cpe perl5 libtool
 CPE_VENDOR=	${PORTNAME}_project
 USE_PERL5=	build

@@ -6,10 +6,10 @@ include/memchanDecls.h
 include/buf.h
 include/bufDecls.h
 include/bufIntDecls.h
-man/mann/fifo.n.gz
-man/mann/fifo2.n.gz
-man/mann/memchan.n.gz
-man/mann/memchanapi.n.gz
-man/mann/null.n.gz
-man/mann/random.n.gz
-man/mann/zero.n.gz
+share/man/mann/fifo.n.gz
+share/man/mann/fifo2.n.gz
+share/man/mann/memchan.n.gz
+share/man/mann/memchanapi.n.gz
+share/man/mann/null.n.gz
+share/man/mann/random.n.gz
+share/man/mann/zero.n.gz

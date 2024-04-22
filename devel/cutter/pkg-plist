@@ -130,10 +130,10 @@ libdata/pkgconfig/gcutter.pc
 libdata/pkgconfig/gdkcutter-pixbuf.pc
 libdata/pkgconfig/libcutter.pc
 %%SOUP%%libdata/pkgconfig/soupcutter.pc
-man/ja/man1/cut-diff.1.gz
-man/ja/man1/cutter.1.gz
-man/man1/cut-diff.1.gz
-man/man1/cutter.1.gz
+share/man/ja/man1/cut-diff.1.gz
+share/man/ja/man1/cutter.1.gz
+share/man/man1/cut-diff.1.gz
+share/man/man1/cutter.1.gz
 share/aclocal/cutter.m4
 %%DATADIR%%/icons/kinotan/default.png
 %%DATADIR%%/icons/kinotan/failure.png

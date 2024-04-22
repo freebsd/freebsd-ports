@@ -1,5 +1,6 @@
 PORTNAME=	graphql-docs
 PORTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/gjtorikian/graphql-docs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-commonmarker>=0.23.6<1:textproc/rubygem-commonmarker \
+RUN_DEPENDS=	rubygem-commonmarker0>=0.23.6<1:textproc/rubygem-commonmarker0 \
 		rubygem-dartsass>=1.49<2:textproc/rubygem-dartsass \
 		rubygem-escape_utils>=1.2<2.0:textproc/rubygem-escape_utils \
 		rubygem-extended-markdown-filter>=0.4<1.0:textproc/rubygem-extended-markdown-filter \

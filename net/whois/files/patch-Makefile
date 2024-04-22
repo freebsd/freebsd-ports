@@ -1,6 +1,6 @@
---- Makefile.orig	2019-12-31 02:05:47 UTC
+--- Makefile.orig	2020-10-03 15:43:15 UTC
 +++ Makefile
-@@ -1,5 +1,9 @@
+@@ -1,5 +1,9 @@ prefix = /usr
  prefix = /usr
  
 +ifdef PREFIX
@@ -10,7 +10,7 @@
  ifdef DESTDIR
  BASEDIR := $(DESTDIR)
  endif
-@@ -72,13 +76,13 @@ endif
+@@ -72,13 +76,13 @@ CPPFLAGS += $(DEFS) $(INCLUDES)
  CPPFLAGS += $(DEFS) $(INCLUDES)
  
  ##############################################################################
@@ -26,7 +26,7 @@
  	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(whois_LDADD) $(LIBS)
  
  mkpasswd: $(mkpasswd_OBJECTS)
-@@ -115,37 +119,37 @@ servers_charset.h: servers_charset_list make_servers_c
+@@ -115,21 +119,21 @@ afl:
  ##############################################################################
  afl:
  	-rm -f Makefile.depend
@@ -43,24 +43,20 @@
 -install-whois: whois
 +install-whois: %%MWHOIS%%
  	$(INSTALL) -d $(BASEDIR)$(prefix)/bin/
--	$(INSTALL) -d $(BASEDIR)$(prefix)/share/man/man1/
--	$(INSTALL) -d $(BASEDIR)$(prefix)/share/man/man5/
+ 	$(INSTALL) -d $(BASEDIR)$(prefix)/share/man/man1/
+ 	$(INSTALL) -d $(BASEDIR)$(prefix)/share/man/man5/
 -	$(INSTALL) -m 0755 whois $(BASEDIR)$(prefix)/bin/
 -	$(INSTALL) -m 0644 whois.1 $(BASEDIR)$(prefix)/share/man/man1/
 -	$(INSTALL) -m 0644 whois.conf.5 $(BASEDIR)$(prefix)/share/man/man5/
-+	$(INSTALL) -d $(BASEDIR)$(prefix)/man/man1/
-+	$(INSTALL) -d $(BASEDIR)$(prefix)/man/man5/
 +	$(INSTALL) -m 0755 %%MWHOIS%% $(BASEDIR)$(prefix)/bin/
-+	$(INSTALL) -m 0644 whois.1 $(BASEDIR)$(prefix)/man/man1/%%MWHOIS%%.1
-+	$(INSTALL) -m 0644 whois.conf.5 $(BASEDIR)$(prefix)/man/man5/%%MWHOIS%%.conf.5
++	$(INSTALL) -m 0644 whois.1 $(BASEDIR)$(prefix)/share/man/man1/%%MWHOIS%%.1
++	$(INSTALL) -m 0644 whois.conf.5 $(BASEDIR)$(prefix)/share/man/man5/%%MWHOIS%%.conf.5
  
  install-mkpasswd: mkpasswd
  	$(INSTALL) -d $(BASEDIR)$(prefix)/bin/
--	$(INSTALL) -d $(BASEDIR)$(prefix)/share/man/man1/
-+	$(INSTALL) -d $(BASEDIR)$(prefix)/man/man1/
+@@ -137,15 +141,15 @@ install-mkpasswd: mkpasswd
  	$(INSTALL) -m 0755 mkpasswd $(BASEDIR)$(prefix)/bin/
--	$(INSTALL) -m 0644 mkpasswd.1 $(BASEDIR)$(prefix)/share/man/man1/
-+	$(INSTALL) -m 0644 mkpasswd.1 $(BASEDIR)$(prefix)/man/man1/
+ 	$(INSTALL) -m 0644 mkpasswd.1 $(BASEDIR)$(prefix)/share/man/man1/
  
 -install-pos:
 +install-pos: pos

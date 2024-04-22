@@ -1,1 +1,6 @@
-PSGI reference implementation and utilities.
+Plack is the Perl Superglue for Web frameworks and Web
+Servers (PSGI toolkit).
+
+Plack is a set of tools for using the PSGI stack.
+It contains middleware components, a reference
+server and utilities for Web application frameworks.

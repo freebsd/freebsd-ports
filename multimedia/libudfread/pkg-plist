@@ -1,0 +1,8 @@
+include/udfread/blockinput.h
+include/udfread/udfread-version.h
+include/udfread/udfread.h
+lib/libudfread.a
+lib/libudfread.so
+lib/libudfread.so.0
+lib/libudfread.so.0.1.0
+libdata/pkgconfig/libudfread.pc

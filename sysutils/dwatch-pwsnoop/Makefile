@@ -4,7 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD dwatch profile for snooping passwords
-WWW=		https://fraubsd.org/dwatch-pwsnoop/
+WWW=		https://github.com/FrauBSD/dwatch-pwsnoop
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

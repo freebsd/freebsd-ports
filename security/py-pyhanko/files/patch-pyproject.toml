@@ -1,12 +1,11 @@
---- pyproject.toml.orig	2023-11-25 23:58:39 UTC
+--- pyproject.toml.orig	2024-03-07 22:13:09 UTC
 +++ pyproject.toml
-@@ -1,12 +1,12 @@
+@@ -1,12 +1,12 @@ requires = [
  [build-system]
  requires = [
 -    "setuptools>=67.4",
--    "wheel", "pytest-runner",
 +    "setuptools>=61",
-+    "wheel",
+     "wheel"
  ]
  build-backend = "setuptools.build_meta"
  
@@ -16,7 +15,7 @@
  description = "Tools for stamping and signing PDF files"
  authors = [{name = "Matthias Valvekens", email = "dev@mvalvekens.be"}]
  maintainers = [{name = "Matthias Valvekens", email = "dev@mvalvekens.be"}]
-@@ -36,7 +36,7 @@ requires-python = ">=3.8"
+@@ -36,7 +36,7 @@ dependencies = [
  dependencies = [
      "asn1crypto>=1.5.1",
      "qrcode>=7.3.1",

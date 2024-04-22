@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/test/os_integration_test_override_impl.cc.orig	2023-11-03 10:09:45 UTC
+--- chrome/browser/web_applications/test/os_integration_test_override_impl.cc.orig	2024-02-23 21:04:38 UTC
 +++ chrome/browser/web_applications/test/os_integration_test_override_impl.cc
 @@ -127,7 +127,7 @@ std::vector<std::wstring> GetFileExtensionsForProgId(
  }
@@ -46,14 +46,14 @@
        applications_dir().Append("applications");
    bool database_update_called = false;
 @@ -378,7 +378,7 @@ OsIntegrationTestOverrideImpl::GetShortcutIconTopLeftC
-     return absl::nullopt;
+     return std::nullopt;
    }
    return GetIconTopLeftColorFromShortcutFile(shortcut_path);
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    WebAppProvider* provider = WebAppProvider::GetForLocalAppsUnchecked(profile);
    if (!provider) {
-     return absl::nullopt;
+     return std::nullopt;
 @@ -428,7 +428,7 @@ base::FilePath OsIntegrationTestOverrideImpl::GetShort
        app_installed_profiles.end()) {
      return shortcut_path;

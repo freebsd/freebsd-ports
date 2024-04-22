@@ -88,8 +88,8 @@ _INCLUDE_USES_AUTORECONF_POST_MK=	yes
 _AUTORECONF=	2.69
 BUILD_DEPENDS+=	autoconf2.69>=2.69:devel/autoconf2.69
 .  else
-_AUTORECONF=	2.71
-BUILD_DEPENDS+=	autoconf>=2.71:devel/autoconf
+_AUTORECONF=	2.72
+BUILD_DEPENDS+=	autoconf>=${_AUTORECONF}:devel/autoconf
 .  endif
 
 BUILD_DEPENDS+=	automake>=1.16.5:devel/automake
@@ -101,6 +101,7 @@ BUILD_DEPENDS+=	libtoolize:devel/libtool
 # In case autoconf-switch wrapper scripts are used during build.
 CONFIGURE_ENV+=	DEFAULT_AUTOCONF=${_AUTORECONF}
 MAKE_ENV+=	DEFAULT_AUTOCONF=${_AUTORECONF}
+WRK_ENV+=	DEFAULT_AUTOCONF=${_AUTORECONF}
 
 .  if ${autoreconf_ARGS:Nbuild:N2.69}
 IGNORE= 	incorrect 'USES+=autoreconf:${autoreconf_ARGS}'\

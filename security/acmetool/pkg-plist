@@ -1,4 +1,4 @@
-man/man8/acmetool.8.gz
+share/man/man8/acmetool.8.gz
 bin/acmetool
 @dir /var/db/acme
 @dir /var/db/

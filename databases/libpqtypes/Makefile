@@ -1,6 +1,6 @@
 PORTNAME=	libpqtypes
 PORTVERSION=	1.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/3484/
 
@@ -13,6 +13,7 @@ LICENSE=	BSD2CLAUSE
 USES=		gmake libtool pgsql autoreconf
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip

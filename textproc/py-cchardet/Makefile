@@ -13,9 +13,7 @@ LICENSE=	GPLv2 LGPL21 MPL11
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	cmake:devel/cmake-core
-
-USES=		python
+USES=		cmake:indirect python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:

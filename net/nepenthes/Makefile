@@ -1,6 +1,6 @@
 PORTNAME=	nepenthes
 PORTVERSION=	0.2.2
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Nepenthes%20development/${PORTVERSION}
 
@@ -17,6 +17,7 @@ USES=		dos2unix libtool perl5
 USE_CXXSTD=	gnu++98
 USE_GCC=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=/var
 INSTALL_TARGET=	install-strip
 

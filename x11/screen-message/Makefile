@@ -1,6 +1,6 @@
 PORTNAME=	screen-message
 PORTVERSION=	0.25
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 
 MAINTAINER=	mail@dhauck.eu
@@ -16,10 +16,11 @@ GH_ACCOUNT=	nomeata
 GH_TAGNAME=	82c01f85d9ca9d0a3b2fe811249808d2fe4703ba
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_GNOME=	gtk30 atk glib20 cairo gdkpixbuf2
 
 PLIST_FILES=	bin/sm \
-		man/man6/sm.6.gz \
+		share/man/man6/sm.6.gz \
 		share/applications/sm.desktop \
 		share/icons/hicolor/48x48/apps/sm.png
 

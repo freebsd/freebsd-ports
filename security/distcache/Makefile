@@ -14,6 +14,7 @@ USES=		libtool ssl tar:bzip2
 USE_RC_SUBR=	dc_server
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shared --with-ssl=${OPENSSLBASE}
 INSTALL_TARGET=	install-strip
 

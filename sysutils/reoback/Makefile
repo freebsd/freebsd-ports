@@ -1,6 +1,6 @@
 PORTNAME=	reoback
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Release%203
 EXTRACT_SUFX=	_r3.tar.gz
@@ -27,7 +27,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/reoback
 	${INSTALL_DATA} ${WRKSRC}/conf/settings.conf ${STAGEDIR}${PREFIX}/etc/reoback/settings.conf.dist
 	${INSTALL_DATA} ${WRKSRC}/conf/files.conf ${STAGEDIR}${PREFIX}/etc/reoback/files.conf.dist
-	${INSTALL_MAN} ${WRKSRC}/docs/man/reoback.1.gz ${STAGEDIR}${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/docs/man/reoback.pl.1.gz ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/docs/man/reoback.1.gz ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/docs/man/reoback.pl.1.gz ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

@@ -5,7 +5,7 @@
  libexecdir = @libexecdir@
  localstatedir = @localstatedir@
 -mandir = $(prefix)/dx/man
-+mandir = $(prefix)/man
++mandir = $(prefix)/share/man
  mkdir_p = @mkdir_p@
  oldincludedir = @oldincludedir@
  prefix = @prefix@

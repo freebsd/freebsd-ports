@@ -1,5 +1,5 @@
 PORTNAME=	wgetpaste
-PORTVERSION=	2.33
+PORTVERSION=	2.34
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/zlin/wgetpaste/releases/download/${PORTVERSION}/ \
 		https://wgetpaste.zlin.dk/:misc
@@ -12,6 +12,9 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Paste to several pastebin services via bash script
 WWW=		http://wgetpaste.zlin.dk/ \
 		https://github.com/zlin/wgetpaste
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash \
 		wget:ftp/wget

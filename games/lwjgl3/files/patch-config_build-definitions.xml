@@ -1,0 +1,12 @@
+--- config/build-definitions.xml.orig	2023-12-18 14:22:59 UTC
++++ config/build-definitions.xml
+@@ -100,7 +100,8 @@ This script is included in /build.xml and /config/upda
+ 
+     <property name="lib" location="bin/libs" relative="true"/>
+ 
+-    <property name="kotlinc" location="${lib}/kotlinc" relative="true"/>
++    <property name="kotlinc" location="${lib}/kotlinc" relative="true" unless:set="local.kotlin"/>
++    <property name="kotlinc" location="${local.kotlin}" relative="false" if:set="local.kotlin"/>
+ 
+     <property name="module.lwjgl" location="modules/lwjgl" relative="true"/>
+ 

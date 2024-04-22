@@ -10,4 +10,4 @@ lib/libsablot.a
 lib/libsablot.so
 lib/libsablot.so.0
 lib/libsablot.so.0.100.3
-man/man1/sabcmd.1.gz
+share/man/man1/sabcmd.1.gz

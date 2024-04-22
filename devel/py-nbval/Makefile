@@ -1,5 +1,5 @@
 PORTNAME=	nbval
-PORTVERSION=	0.10.0
+DISTVERSION=	0.11.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nbdime>0:devel/py-nbdime@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist pytest # 2 tests fail, see https://github.com/computationalmodelling/nbval/issues/189
+USE_PYTHON=	distutils autoplist pytest # 4 tests fail, see https://github.com/computationalmodelling/nbval/issues/189
 
 NO_ARCH=	yes
 

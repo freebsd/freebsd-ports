@@ -1,24 +1,25 @@
 PORTNAME=	libb64
-PORTVERSION=	1.2.1
+DISTVERSION=	2.0.0-15
 CATEGORIES=	converters mail
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	ismail.yenigul@surgate.com
 COMMENT=	Library for fast Base64 encoding and decoding
-WWW=		https://libb64.sourceforge.net/
+WWW=		https://github.com/stefantalpalaru/libb64
 
-BUILD_DEPENDS=	makedepend:devel/makedepend
+LICENSE=	MIT
 
-USES=		gmake zip
-ALL_TARGET=	all_src
+USES=		cmake:testing
 USE_LDCONFIG=	yes
 
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/src/libb64.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_LIB} ${WRKSRC}/src/libb64.so.0 ${STAGEDIR}${PREFIX}/lib
-	${LN} -fs libb64.so.0 ${STAGEDIR}${PREFIX}/lib/libb64.so
-	@${MKDIR} ${STAGEDIR}${PREFIX}/include/b64
-	${INSTALL_DATA} ${WRKSRC}/include/b64/*.h \
-		${STAGEDIR}${PREFIX}/include/b64
+USE_GITHUB=	yes
+GH_ACCOUNT=	stefantalpalaru
+GH_TAGNAME=	382c274
+
+CMAKE_TESTING_ON=	LIBB64_BUILD_EXAMPLES LIBB64_ENABLE_TESTS
+CMAKE_OFF=	LIBB64_BUILD_EXAMPLES LIBB64_BUILD_PROGRAMS LIBB64_ENABLE_TESTS
+CMAKE_ON=	LIBB64_SHARED
+
+post-install:
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libb64.so ${STAGEDIR}${PREFIX}/lib/libb64.so.0
 
 .include <bsd.port.mk>

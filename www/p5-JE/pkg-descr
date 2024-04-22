@@ -1,1 +1,11 @@
-JE is a pure-Perl JavaScript engine.
+JE is a pure-Perl ECMAScript (JavaScript) engine that seamlessly
+integrates JavaScript's dynamic capabilities into Perl projects. It
+stands out for its compatibility with serialization tools, allowing the
+runtime environment to be easily serialized. The engine is highly
+customizable, with a parser that can be tailored to support a wide range
+of language features according to project needs. Additionally, JE offers
+direct manipulation of JavaScript datatypes from Perl, utilizing
+overloaded operators for a smooth interoperability. This feature set
+makes JE particularly useful for developers looking to enhance their
+Perl applications with JavaScript functionality, providing a bridge
+between the two languages' ecosystems.

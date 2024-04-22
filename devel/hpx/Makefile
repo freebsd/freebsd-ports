@@ -1,7 +1,7 @@
 PORTNAME=	hpx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -14,6 +14,7 @@ WWW=		https://hpx.stellar-group.org/
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
+BROKEN_i386=	compilation fails: detail/tagged_ptr_pair.hpp:117:27: error: no matching function for call to 'bit_cast', see https://github.com/STEllAR-GROUP/hpx/issues/6426
 BROKEN_riscv64=	hpx/hardware/timestamp.hpp:43:6: error: Unsupported platform
 
 BUILD_DEPENDS=	asio>0:net/asio

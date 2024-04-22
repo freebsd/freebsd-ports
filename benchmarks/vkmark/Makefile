@@ -19,7 +19,7 @@ BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers \
 LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader \
 		libassimp.so:multimedia/assimp
 
-USES=		compiler:c++14-lang localbase meson pkgconfig
+USES=		cmake:indirect compiler:c++14-lang localbase meson pkgconfig
 USE_GITHUB=	yes
 
 OPTIONS_DEFINE=	DRM WAYLAND X11

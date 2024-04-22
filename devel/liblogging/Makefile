@@ -1,5 +1,6 @@
 PORTNAME=	liblogging
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.rsyslog.com/liblogging/
 
@@ -9,11 +10,13 @@ WWW=		https://www.liblogging.org/
 
 LICENSE=	BSD2CLAUSE
 
-GNU_CONFIGURE=	yes
 USES=		cpe libtool pathfix pkgconfig
 CPE_VENDOR=	adiscon
 
-CONFIGURE_ARGS+=	--disable-journal --enable-rfc3195
+GNU_CONFIGURE=			yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+CONFIGURE_ARGS+=		--disable-journal --enable-rfc3195
+USE_LDCONFIG=			yes
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblogging-rfc3195.so.0.0.0

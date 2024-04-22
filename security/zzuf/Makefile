@@ -1,6 +1,6 @@
 PORTNAME=	zzuf
 PORTVERSION=	0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/zzuf/
 
@@ -10,6 +10,7 @@ WWW=		http://sam.zoy.org/zzuf/
 
 USES=		libtool
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	bison
 PORTVERSION=	3.8.2
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
@@ -15,10 +16,11 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	m4>=1.4.16,1:devel/m4
 
 # USES=gmake is used for parallelized make test
-USES=		charsetfix compiler:c11 cpe gmake iconv localbase perl5 readline tar:xz
+USES=		charsetfix compiler:c11 cpe gmake iconv localbase perl5 tar:xz
 USE_PERL5=	build
 
 CONFIGURE_ARGS=	--disable-yacc --enable-relocatable
+CONFIGURE_ENV=	gl_cv_lib_readline=no
 GNU_CONFIGURE=	yes
 LIBS+=		-lm
 TEST_ARGS+=	${_MAKE_JOBS}

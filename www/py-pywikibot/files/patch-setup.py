@@ -1,21 +1,21 @@
---- setup.py.orig	2023-07-06 07:11:10 UTC
+--- setup.py.orig	2024-03-09 06:20:55 UTC
 +++ setup.py
-@@ -141,12 +141,12 @@ def get_validated_version() -> str:
-     from subprocess import PIPE, run
+@@ -160,12 +160,12 @@ def get_validated_version(name: str) -> str:  # pragma
  
-     from pkg_resources import parse_version, safe_version
+     from packaging.version import InvalidVersion, Version
+ 
 -    try:
 -        tags = run(['git', 'tag'], check=True, stdout=PIPE,
--                   universal_newlines=True).stdout.splitlines()
--    except Exception as e:  # pragma: no cover
+-                   text=True).stdout.splitlines()
+-    except Exception as e:
 -        print(e)
 -        sys.exit('Creating source distribution canceled.')
 +    #try:
 +    #    tags = run(['git', 'tag'], check=True, stdout=PIPE,
-+    #               universal_newlines=True).stdout.splitlines()
-+    #except Exception as e:  # pragma: no cover
++    #               text=True).stdout.splitlines()
++    #except Exception as e:
 +    #    print(e)
 +    #    sys.exit('Creating source distribution canceled.')
  
      last_tag = None
-     if tags:  # pragma: no cover
+     if tags:

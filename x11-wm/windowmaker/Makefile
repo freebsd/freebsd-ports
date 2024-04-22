@@ -1,5 +1,6 @@
 PORTNAME=	windowmaker
 PORTVERSION=	0.96.0
+PORTREVISION=	2
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	https://www.windowmaker.org/pub/source/release/ \
 		https://github.com/window-maker/wmaker/releases/download/wmaker-${PORTVERSION}/ LOCAL/danfe
@@ -22,14 +23,15 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libexif.so:graphics/libexif
 RUN_DEPENDS=	${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:graphics/wmicons
 
-USES=		cpe gmake gnome jpeg libtool pathfix perl5 pkgconfig \
-		shebangfix xorg
+USES=		cpe desktop-file-utils gmake gnome jpeg libtool localbase \
+		pathfix perl5 pkgconfig shebangfix xorg
 USE_CSTD=	c99
 USE_GNOME=	pango
 USE_LDCONFIG=	yes
-USE_XORG=	x11 xext xft xinerama xmu xpm
+USE_XORG=	x11 xext xft xinerama xmu xpm xrandr xres
 SHEBANG_FILES=	util/wkdemenu.pl
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=no \
 		wm_cv_func_secure_getenv=no
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
@@ -42,9 +44,8 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--enable-xinerama \
 		--enable-usermenu \
 		--enable-wmreplace \
+		--enable-xrandr \
 		--with-x
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 PORTDOCS=	AUTHORS BUGFORM BUGS ChangeLog FAQ INSTALL \
@@ -67,7 +68,7 @@ NLS_CONFIGURE_ENABLE=	locale
 post-patch-IMAGEMAGICK-on:
 .if ${IMAGEMAGICK_DEFAULT} == 6
 	@${REINPLACE_CMD} -e '/MagickWand\.h/s,MagickWand/,wand/,' \
-		${WRKSRC}/configure ${WRKSRC}/wrlib/load_magick.c
+	    ${WRKSRC}/configure ${WRKSRC}/wrlib/load_magick.c
 .endif
 
 post-install:
@@ -75,8 +76,10 @@ post-install:
 	    ${STAGEDIR}${PREFIX}/GNUstep/Applications/WPrefs.app/xpm \
 	    ${STAGEDIR}${PREFIX}/share/WindowMaker/Sounds
 
-post-install-DOCS-on:
+pre-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -6,5 +6,3 @@ RFC 2229 describes the DICT client/server protocol.
 
 dictfmt converts databases in various formats into working databases and indices
 for the DICT server.
-
-See also: https://sourceforge.net/projects/dict/

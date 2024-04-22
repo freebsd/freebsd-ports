@@ -1,5 +1,6 @@
 PORTNAME=	calcurse
 DISTVERSION=	4.8.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://calcurse.org/files/ \
 		https://fossies.org/linux/privat/

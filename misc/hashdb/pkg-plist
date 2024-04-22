@@ -7,4 +7,4 @@ lib/libhashdb.a
 %%PYTHON_SITELIBDIR%%/_hashdb.so.0
 %%PYTHON_SITELIBDIR%%/_hashdb.so.0.0.0
 %%PYTHON_SITELIBDIR%%/hashdb.py
-man/man1/hashdb.1.gz
+share/man/man1/hashdb.1.gz

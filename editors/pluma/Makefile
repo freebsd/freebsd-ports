@@ -1,6 +1,5 @@
 PORTNAME=	pluma
-PORTVERSION=	1.26.0
-PORTREVISION=	5
+PORTVERSION=	1.28.0
 CATEGORIES=	editors mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -21,12 +20,14 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome libtool localbase \
-		pathfix pkgconfig python shebangfix tar:xz xorg
+		pathfix pkgconfig python shebangfix tar:xz xorg mate
 USE_XORG=	ice sm x11
 USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 gtksourceview4 \
-		gvfs intltool introspection libxml2
+		intltool introspection libxml2
+USE_MATE=	desktop:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 SHEBANG_FILES=	\

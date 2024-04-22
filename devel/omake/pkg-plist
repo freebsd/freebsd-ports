@@ -25,8 +25,8 @@ lib/omake/parse/LaTeX/Macros.om
 lib/omake/parse/LaTeX/Parse.om
 lib/omake/parse/LaTeX/Spell.om
 lib/omake/web/simple-xml.om
-man/man1/omake.1.gz
-man/man1/osh.1.gz
+share/man/man1/omake.1.gz
+share/man/man1/osh.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/omake-all-index.html
 %%PORTDOCS%%%%DOCSDIR%%/omake-autoconf.html

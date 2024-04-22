@@ -14,6 +14,8 @@ LICENSE=	PHP301
 
 USES=		compiler:c11 php:build,pecl
 
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+
 CONFIGURE_ARGS=	--enable-rar
 
 .include <bsd.port.mk>

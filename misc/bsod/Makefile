@@ -1,31 +1,24 @@
 PORTNAME=	bsod
-PORTVERSION=	0.1
+DISTVERSIONPREFIX=v
+DISTVERSION=	0.2
 CATEGORIES=	misc
-MASTER_SITES=	https://www.vanheusden.com/bsod/ \
-		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Experience the authentic Microsoft Windows experience
-WWW=		https://www.vanheusden.com/bsod/
+WWW=		https://github.com/folkertvanheusden/bsod
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/license.txt
+LICENSE=	PD
 
 USES=		ncurses tar:tgz
+USE_GITHUB=	yes
+GH_ACCOUNT=	folkertvanheusden
 
-PORTDOCS=	*
 PLIST_FILES=	bin/${PORTNAME}
 
-OPTIONS_DEFINE=	DOCS
-
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${NCURSESINC} -L${NCURSESLIB} -lncurses -o ${PORTNAME} ${PORTNAME}.c
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -DVERSION=\"${DISTVERSION}\" -I${NCURSESINC} -L${NCURSESLIB} -lncurses -o ${PORTNAME} ${PORTNAME}.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

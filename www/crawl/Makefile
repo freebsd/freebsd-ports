@@ -1,6 +1,6 @@
 PORTNAME=	crawl
 PORTVERSION=	0.4
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	www
 MASTER_SITES=	http://www.monkey.org/~provos/
 
@@ -15,6 +15,7 @@ LIB_DEPENDS=	libevent.so:devel/libevent
 USES=		bdb pkgconfig
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-libevent --program-transform-name=''
 CONFIGURE_ENV=	EVENTINC="`pkgconf --cflags libevent`" EVENTLIB="`pkgconf --libs libevent`"
 

@@ -1,6 +1,6 @@
 PORTNAME=	xcdroast
 PORTVERSION=	0.98.a.16
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.98alpha16 \
 		http://www.xcdroast.org/download/
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	cdrecord:sysutils/cdrtools
 
 USES=		gettext gmake gnome iconv pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CONFIGURE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}"

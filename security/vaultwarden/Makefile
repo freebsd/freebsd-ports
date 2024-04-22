@@ -1,5 +1,6 @@
 PORTNAME=	vaultwarden
-DISTVERSION=	1.30.1
+DISTVERSION=	1.30.5
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	mr@FreeBSD.org
@@ -8,6 +9,8 @@ WWW=		https://github.com/dani-garcia/vaultwarden
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+BROKEN_i386=    doesn't buld on pkg builder
 
 LIB_DEPENDS+=	libcapnp.so:devel/capnproto \
 		libgmp.so:math/gmp \
@@ -48,7 +51,7 @@ CARGO_FEATURES=	--no-default-features
 INSTALL_TARGET=	install-strip
 
 SUB_LIST=	WWWGRP=${WWWGRP} \
-		WWWOWN=${WWWOWN}
+ 		WWWOWN=${WWWOWN}
 
 .include <bsd.port.pre.mk>
 
@@ -58,12 +61,26 @@ LTO_UNSAFE=	yes
 CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
 .endif
 
+.if !defined(WITH_DEBUG)
+CARGO_INSTALL_ARGS+=	--config profile.release.strip=true
+.endif
+
 #post-patch:
 #	${REINPLACE_CMD} 's/^rust-version = "1.60"/rust-version = "1.59"/' \
 #		${WRKSRC}/Cargo.toml
 
-post-install:
+pre-install:
 	${MKDIR} ${STAGEDIR}/${WWWDIR}/data
-	${INSTALL} -m0600 ${FILESDIR}/${PORTNAME}_conf.in ${STAGEDIR}/${WWWDIR}/data/config.json.sample
+	# @${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}
+	# @${ECHO_CMD} "@group ${WWWGRP}" >> ${PLIST}
+	# @${ECHO_CMD} "@mode 755" >> ${PLIST}
+	# @${ECHO_CMD} "${STAGEDIR}/${WWWDIR}/data" >> ${PLIST}
+	# @${ECHO_CMD} "@mode" >> ${PLIST}
+	# @${ECHO_CMD} "@group" >> ${PLIST}
+	# @${ECHO_CMD} "@owner" >> ${PLIST}
+	${MKDIR} ${STAGEDIR}/${ETCDIR}/rc.conf.d
+	${INSTALL} -m0600 ${FILESDIR}/${PORTNAME}_conf.in ${STAGEDIR}/${LOCALBASE}/etc/rc.conf.d/${PORTNAME}.sample
+
+#post-install:
 
 .include <bsd.port.post.mk>

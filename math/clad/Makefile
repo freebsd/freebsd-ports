@@ -1,6 +1,7 @@
 PORTNAME=	clad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2
+DISTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +11,9 @@ WWW=		https://github.com/vgvassilev/clad
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-USES=		cmake:testing compiler:c++14-lang llvm:15,build,run
+TEST_DEPENDS=	kokkos>0:devel/kokkos
+
+USES=		cmake:testing llvm:16,build,run localbase
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -23,6 +26,8 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	FREEBSD_BUILD_TESTS FREEBSD_BUILD_DEMOS
 CMAKE_TESTING_TARGET=	check-clad
 
+#CXXFLAGS+=	-D_OPENMP
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e ' \
@@ -30,5 +35,7 @@ post-patch:
 			s|lit\.|lit${LLVM_VERSION}.| \
 		' \
 		${WRKSRC}/test/lit.cfg
+
+# tests fail to compile: https://github.com/vgvassilev/clad/issues/798
 
 .include <bsd.port.mk>

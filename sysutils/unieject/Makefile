@@ -1,6 +1,6 @@
 PORTNAME=	unieject
 PORTVERSION=	6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -18,6 +18,7 @@ LIB_DEPENDS=	libconfuse.so:devel/libconfuse \
 USES=		gettext gnome iconv libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-doc
 USE_LDCONFIG=	yes
 LLD_UNSAFE=	yes

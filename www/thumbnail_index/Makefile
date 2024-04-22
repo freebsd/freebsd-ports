@@ -1,6 +1,6 @@
 PORTNAME=	thumbnail_index
 PORTVERSION=	1998.08.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://www.acme.com/software/thumbnail_index/
 DISTNAME=	${PORTNAME}_10aug1998
@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/thumbnail_index ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/thumbnail_reap ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/thumbnail_index.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/thumbnail_index.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

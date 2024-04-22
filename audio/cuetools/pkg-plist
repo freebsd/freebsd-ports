@@ -2,6 +2,6 @@ bin/cuebreakpoints
 bin/cueconvert
 bin/cueprint
 bin/cuetag.sh
-man/man1/cuebreakpoints.1.gz
-man/man1/cueconvert.1.gz
-man/man1/cueprint.1.gz
+share/man/man1/cuebreakpoints.1.gz
+share/man/man1/cueconvert.1.gz
+share/man/man1/cueprint.1.gz

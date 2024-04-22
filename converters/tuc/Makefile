@@ -1,6 +1,6 @@
 PORTNAME=	tuc
 PORTVERSION=	1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	converters
 MASTER_SITES=	http://www.whizkidtech.redprince.net/fports/
 
@@ -14,11 +14,13 @@ LICENSE_NAME=	tuc
 LICENSE_TEXT=	Author does not allow CD-ROM distribution
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+BROKEN=		unfetchable 6 times in 2 weeks - Host does not resolve  
+
 PLIST_FILES=	bin/tuc \
-		man/man1/tuc.1.gz
+		share/man/man1/tuc.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tuc ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/tuc.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/tuc.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

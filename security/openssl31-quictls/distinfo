@@ -1,3 +1,3 @@
-TIMESTAMP = 1698438879
-SHA256 (quictls-openssl-3.1.4-openssl-3.1.4-quic1_GH0.tar.gz) = 4bf990243d6aa39b8befa0c399834415842912ef67f88bef98e74dc619469618
-SIZE (quictls-openssl-3.1.4-openssl-3.1.4-quic1_GH0.tar.gz) = 15743124
+TIMESTAMP = 1710593356
+SHA256 (quictls-openssl-openssl-3.1.5-quic1_GH0.tar.gz) = 928a0c484fca5a5b9ae484e7b14e6691e946220d77d86ac4031cbb408655b644
+SIZE (quictls-openssl-openssl-3.1.5-quic1_GH0.tar.gz) = 15826997

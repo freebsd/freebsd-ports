@@ -1,5 +1,5 @@
 PORTNAME=	yara
-DISTVERSION=	4.2.3
+DISTVERSION=	4.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -16,6 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	VirusTotal
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-cuckoo --enable-dex --enable-dotnet --enable-macho --enable-magic
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check

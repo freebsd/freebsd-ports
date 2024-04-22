@@ -4,10 +4,11 @@
 ================================================================================
 Step Certificates requires additional configuration:
 
-The simple way is via the service start script step_ca. 
+The simple way is via the service start script step_ca with:
+service step_ca configure
 When there is no configuration it will be created. User input is required!!!
 
-The hard way would be via the step command.
+The hard way would be manually via the step command.
 
 Ensure to set the STEPPATH environment variable. This makes using the
 commands much simpler.

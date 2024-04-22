@@ -3,7 +3,7 @@
 # pinned to exact versions of everything used to build them.
 
 PORTNAME=	sbcl
-DISTVERSION=	2.4.0
+DISTVERSION=	2.4.3
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
@@ -155,7 +155,7 @@ post-build-DOCS-on:
 do-install:
 	(cd ${WRKSRC} && ${SETENV} \
 	INSTALL_ROOT="${STAGEDIR}${PREFIX}" \
-	MAN_DIR="${STAGEDIR}${MANPREFIX}/man" \
+	MAN_DIR="${STAGEDIR}${PREFIX}/share/man" \
 	INFO_DIR="${STAGEDIR}${PREFIX}/${INFO_PATH}" \
 	DOC_DIR="${STAGEDIR}${DOCSDIR}" \
 	SBCL_HOME="" \

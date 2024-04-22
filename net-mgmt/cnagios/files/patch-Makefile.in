@@ -38,7 +38,7 @@
 -	  $(INSTALL) -c -m 644 cnagios.pl @NAGIOS_ETC_DIR@/cnagios.pl.NEW ; \
 -	fi
 +	$(INSTALL) -c -m 755 cnagios $(DESTDIR)@prefix@/bin/cnagios
-+	$(INSTALL) -c -m 444 cnagios.1 $(DESTDIR)@prefix@/man/man1/cnagios.1
++	$(INSTALL) -c -m 444 cnagios.1 $(DESTDIR)@prefix@/share/man/man1/cnagios.1
 +	$(INSTALL) -c -m 644 cnagiosrc $(DESTDIR)@NAGIOS_ETC_DIR@/cnagiosrc.sample
 +	$(INSTALL) -c -m 644 cnagios.help $(DESTDIR)@NAGIOS_ETC_DIR@/cnagios.help.sample
 +	$(INSTALL) -c -m 644 cnagios.pl $(DESTDIR)@NAGIOS_ETC_DIR@/cnagios.pl.sample

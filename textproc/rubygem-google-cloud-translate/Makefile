@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-translate
-PORTVERSION=	3.4.1
+PORTVERSION=	3.6.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-google-cloud-core>=1.6<2:net/rubygem-google-cloud-core \
 		rubygem-google-cloud-translate-v2>=0.0<2.0:textproc/rubygem-google-cloud-translate-v2 \
-		rubygem-google-cloud-translate-v3>=0.6<2.0:textproc/rubygem-google-cloud-translate-v3
+		rubygem-google-cloud-translate-v3>=0.11<2.0:textproc/rubygem-google-cloud-translate-v3
 
 USES=		gem
 

@@ -1,5 +1,7 @@
 PORTNAME=	desktop-installer
-DISTVERSION=	0.8.3
+DISTVERSION=	0.8.3-9
+PORTREVISION=	1
+DISTVERSIONSUFFIX=	-g9820283
 CATEGORIES=	sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -9,7 +11,7 @@ WWW=		https://acadix.biz/desktop-installer.php
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	auto-admin>=0.8.0:sysutils/auto-admin
+RUN_DEPENDS=	auto-admin>=0.8.0.25:sysutils/auto-admin
 
 USES=		desktop-file-utils tar:xz
 USE_GITHUB=	yes
@@ -23,7 +25,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/FreeBSD/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/battery-shutdown.sh ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/FreeBSD/${PORTNAME}.man \
-		${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
+		${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/Common && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/FreeBSD && ${COPYTREE_SHARE} XDM ${STAGEDIR}${DATADIR}

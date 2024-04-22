@@ -1,7 +1,7 @@
 PORTNAME=	cosma
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
 
-BUILD_DEPENDS=	openmpi>0:net/openmpi
+BUILD_DEPENDS=	openmpi4>0:net/openmpi4
 LIB_DEPENDS=	libopenblas.so:math/openblas
-RUN_DEPENDS=	openmpi>0:net/openmpi
+RUN_DEPENDS=	openmpi4>0:net/openmpi4
 
 USES=		cmake:testing
 USE_LDCONFIG=	yes

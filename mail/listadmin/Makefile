@@ -1,5 +1,6 @@
 PORTNAME=	listadmin
-PORTVERSION=	2.40
+DISTVERSION=	2.40
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://heim.ifi.uio.no/kjetilho/hacks/
 
@@ -15,13 +16,16 @@ RUN_DEPENDS=	p5-Text-Reform>=0:textproc/p5-Text-Reform \
 USES=		perl5 shebangfix
 USE_PERL5=	run
 
-PLIST_FILES=	bin/listadmin man/man1/listadmin.1.gz
 SHEBANG_FILES=	listadmin.pl
+
+NO_ARCH=	yes
+
+PLIST_FILES=	bin/listadmin share/man/man1/listadmin.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/listadmin.pl \
 		${STAGEDIR}${PREFIX}/bin/listadmin
 	${INSTALL_MAN} ${WRKSRC}/listadmin.man \
-		${STAGEDIR}${MANPREFIX}/man/man1/listadmin.1
+		${STAGEDIR}${PREFIX}/share/man/man1/listadmin.1
 
 .include <bsd.port.mk>

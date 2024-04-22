@@ -1,5 +1,6 @@
 PORTNAME=	sniproxy
 DISTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	krion@FreeBSD.org
@@ -22,10 +23,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dlundquist
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	man/man5/sniproxy.conf.5.gz \
-		man/man8/sniproxy.8.gz \
+PLIST_FILES=	share/man/man5/sniproxy.conf.5.gz \
+		share/man/man8/sniproxy.8.gz \
 		sbin/sniproxy \
 		"@sample etc/sniproxy.conf.sample"
 

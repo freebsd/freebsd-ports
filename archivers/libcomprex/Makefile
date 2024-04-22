@@ -1,6 +1,6 @@
 PORTNAME=	libcomprex
 PORTVERSION=	0.3.3
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	archivers
 MASTER_SITES=	SF/gnupdate/${PORTNAME}/${PORTVERSION}
 
@@ -14,6 +14,7 @@ USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 

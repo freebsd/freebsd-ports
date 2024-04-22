@@ -1,0 +1,23 @@
+Strawberry is a developer friendly GraphQL library for Python, designed for
+modern development.
+
+* Type hints: Leverages Python type hints to provide a great developer
+  experience while creating GraphQL Libraries.
+
+* Async Support: Supports async/await out of the box, allowing you to write
+  your resolvers in a non-blocking way.
+
+* Extensible: Has support for schema and field extensions, allowing you to
+  extend the schema with custom logic.
+
+* Generics: Supports generics, allowing you to create reusable types that can
+  be used in multiple places.
+
+* Federation: Supports Federation, allowing you to create a federated GraphQL
+  schema.
+
+* Dataloaders: Comes with support for dataloaders, allowing you to batch
+  multiple queries into a single one.
+
+* Integrations: Has support for multiple integrations, allowing you to use it
+  with your favorite web framework.

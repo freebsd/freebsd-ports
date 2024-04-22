@@ -1,5 +1,4 @@
 bin/gource
-man/man1/gource.1.gz
 %%DATADIR%%/beam.png
 %%DATADIR%%/bloom.tga
 %%DATADIR%%/bloom_alpha.tga
@@ -14,3 +13,4 @@ man/man1/gource.1.gz
 %%DATADIR%%/shaders/text.frag
 %%DATADIR%%/shaders/text.vert
 %%DATADIR%%/user.png
+share/man/man1/gource.1.gz

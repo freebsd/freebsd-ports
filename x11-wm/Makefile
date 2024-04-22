@@ -3,7 +3,6 @@
     SUBDIR += afterstep
     SUBDIR += afterstep-stable
     SUBDIR += amiwm
-    SUBDIR += antiwm
     SUBDIR += aphelia
     SUBDIR += awesome
     SUBDIR += awesome-vicious
@@ -21,6 +20,7 @@
     SUBDIR += compiz-plugins-main
     SUBDIR += compiz-plugins-unsupported
     SUBDIR += compton
+    SUBDIR += cosmic-comp
     SUBDIR += ctwm
     SUBDIR += cwm
     SUBDIR += deforaos-panel
@@ -42,7 +42,6 @@
     SUBDIR += fbcmd
     SUBDIR += fluxbox
     SUBDIR += fluxter
-    SUBDIR += flwm
     SUBDIR += fswm
     SUBDIR += fvwm2
     SUBDIR += fvwm3
@@ -54,11 +53,9 @@
     SUBDIR += i3
     SUBDIR += icewm
     SUBDIR += ittywm
-    SUBDIR += jewel
     SUBDIR += jwm
     SUBDIR += kickshaw
     SUBDIR += korgwm
-    SUBDIR += kwinft
     SUBDIR += labwc
     SUBDIR += leftwm
     SUBDIR += libcompizconfig
@@ -108,6 +105,7 @@
     SUBDIR += sway
     SUBDIR += sway-devel
     SUBDIR += swayfx
+    SUBDIR += theseus-ship
     SUBDIR += tinywm
     SUBDIR += transset
     SUBDIR += twm

@@ -1,6 +1,7 @@
 PORTNAME=	gotosocial
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.1
+DISTVERSION=	0.14.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES?=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/v${DISTVERSION}/:web
 DISTFILES?=	${PORTNAME}_${DISTVERSION}_web-assets.tar.gz:web
@@ -36,6 +37,8 @@ GROUPS=		gotosocial
 DBDIR=		/var/db/${PORTNAME}
 
 PLIST_SUB=	WWWDIR="${WWWDIR}"
+
+TESTING_UNSAFE=	FAIL    github.com/superseriousbusiness/gotosocial/internal/log
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

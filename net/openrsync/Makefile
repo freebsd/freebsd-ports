@@ -1,5 +1,6 @@
 PORTNAME=	openrsync
 PORTVERSION=	0.0.20200401
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	beyert@cs.ucr.edu
@@ -14,9 +15,10 @@ GH_ACCOUNT=	kristapsdz
 GH_TAGNAME=	8b61216
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	MANDIR=${PREFIX}/share/man
 
-PLIST_FILES=	bin/openrsync man/man1/openrsync.1.gz man/man5/openrsync.5.gz \
-		man/man5/openrsyncd.5.gz
+PLIST_FILES=	bin/openrsync share/man/man1/openrsync.1.gz share/man/man5/openrsync.5.gz \
+		share/man/man5/openrsyncd.5.gz
 
 pre-build:
 .for SUFFIX in rsync.5 rsyncd.5

@@ -1,6 +1,6 @@
 PORTNAME=	logtools
 PORTVERSION=	0.13e
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.coker.com.au/logtools/
 
@@ -12,6 +12,7 @@ LICENSE=	GPLv2
 
 USES=		compiler:c++11-lang tar:tgz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 post-patch:
 	@${REINPLACE_CMD} -e \

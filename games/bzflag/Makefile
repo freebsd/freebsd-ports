@@ -1,6 +1,6 @@
 PORTNAME=	bzflag
 PORTVERSION=	2.4.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://download.bzflag.org/bzflag/source/${PORTVERSION}/
 
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libcares.so:dns/c-ares
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		autoreconf compiler:c++11-lib libtool localbase ncurses pkgconfig tar:bzip2
 INSTALL_TARGET=	install-strip
 

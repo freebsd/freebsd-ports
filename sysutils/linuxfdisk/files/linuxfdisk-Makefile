@@ -30,6 +30,6 @@ install:
 	$(INSTALL) -c -m 0555 -s fdisk ${DESTDIR}${PREFIX}/sbin/fdisk-linux
 	$(INSTALL) -c -m 0555 -s cfdisk ${DESTDIR}${PREFIX}/sbin/cfdisk-linux
 	$(INSTALL) -c -m 0555 -s sfdisk ${DESTDIR}${PREFIX}/sbin/sfdisk-linux
-	$(INSTALL) -c -m 0644 fdisk.8 ${DESTDIR}${PREFIX}/man/man8/fdisk-linux.8
-	$(INSTALL) -c -m 0644 cfdisk.8 ${DESTDIR}${PREFIX}/man/man8/cfdisk-linux.8
-	$(INSTALL) -c -m 0644 sfdisk.8 ${DESTDIR}${PREFIX}/man/man8/sfdisk-linux.8
+	$(INSTALL) -c -m 0644 fdisk.8 ${DESTDIR}${PREFIX}/share/man/man8/fdisk-linux.8
+	$(INSTALL) -c -m 0644 cfdisk.8 ${DESTDIR}${PREFIX}/share/man/man8/cfdisk-linux.8
+	$(INSTALL) -c -m 0644 sfdisk.8 ${DESTDIR}${PREFIX}/share/man/man8/sfdisk-linux.8

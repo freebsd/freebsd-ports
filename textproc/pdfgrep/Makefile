@@ -1,6 +1,6 @@
 PORTNAME=	pdfgrep
 PORTVERSION=	2.1.1
-PORTREVISION=	49
+PORTREVISION=	51
 CATEGORIES=	textproc
 MASTER_SITES=	https://pdfgrep.org/download/
 
@@ -16,9 +16,10 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		compiler:c11 pkgconfig
 
-PLIST_FILES=	bin/pdfgrep man/man1/pdfgrep.1.gz \
+PLIST_FILES=	bin/pdfgrep share/man/man1/pdfgrep.1.gz \
 		share/bash-completion/completions/pdfgrep \
 		share/zsh/site-functions/_pdfgrep
 

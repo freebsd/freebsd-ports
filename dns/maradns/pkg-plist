@@ -6,19 +6,19 @@ bin/mqhash
 @sample %%ETCDIR%%/csv2.sample
 @sample %%ETCDIR%%/dwood3rc.sample
 @sample %%ETCDIR%%/mararc.sample
-man/man1/Deadwood.1.gz
-man/man1/askmara.1.gz
-man/man1/bind2csv2.1.gz
-man/man1/fetchzone.1.gz
-man/man1/getzone.1.gz
-man/man1/mqhash.1.gz
-man/man5/csv1.5.gz
-man/man5/csv2.5.gz
-man/man5/csv2_txt.5.gz
-man/man5/mararc.5.gz
-man/man8/duende.8.gz
-man/man8/maradns.8.gz
-man/man8/zoneserver.8.gz
+share/man/man1/Deadwood.1.gz
+share/man/man1/askmara.1.gz
+share/man/man1/bind2csv2.1.gz
+share/man/man1/fetchzone.1.gz
+share/man/man1/getzone.1.gz
+share/man/man1/mqhash.1.gz
+share/man/man5/csv1.5.gz
+share/man/man5/csv2.5.gz
+share/man/man5/csv2_txt.5.gz
+share/man/man5/mararc.5.gz
+share/man/man8/duende.8.gz
+share/man/man8/maradns.8.gz
+share/man/man8/zoneserver.8.gz
 sbin/Deadwood
 sbin/maradns
 sbin/zoneserver

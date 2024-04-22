@@ -1,5 +1,4 @@
 bin/gsasl
-man/man1/gsasl.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/gsasl.html
 %%NLS%%share/locale/da/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gsasl.mo
@@ -13,6 +12,7 @@ man/man1/gsasl.1.gz
 %%NLS%%share/locale/hu/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/id/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gsasl.mo
@@ -25,3 +25,4 @@ man/man1/gsasl.1.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gsasl.mo
+share/man/man1/gsasl.1.gz

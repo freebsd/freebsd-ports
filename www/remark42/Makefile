@@ -1,7 +1,7 @@
 PORTNAME=	remark42
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.12.1
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/delphij:npmcache
 DISTFILES=	${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache
@@ -125,7 +125,7 @@ make-npm-cache: extract
 		&& ${ECHO} "Please upload the file ${WRKDIR}/${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}"
 
 pre-build:
-	cd ${WRKSRC}/frontend/apps/${PORTNAME} && ${SETENV} HOME=${WRKDIR} npm install --force
+	cd ${WRKSRC}/frontend/apps/${PORTNAME} && ${SETENV} HOME=${WRKDIR} npm install --force --legacy-peer-deps
 	cd ${WRKSRC}/frontend/apps/${PORTNAME} && ${SETENV} HOME=${WRKDIR} npm run build
 	${RM} -r ${WRKSRC}/backend/app/cmd/web/
 	${MV} ${WRKSRC}/frontend/apps/remark42/public ${WRKSRC}/backend/app/cmd/web

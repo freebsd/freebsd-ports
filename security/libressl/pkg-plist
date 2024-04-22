@@ -94,9 +94,9 @@ libdata/pkgconfig/libcrypto.pc
 libdata/pkgconfig/libssl.pc
 libdata/pkgconfig/libtls.pc
 libdata/pkgconfig/openssl.pc
-%%NC%%man/man1/nc.1.gz
-man/man1/openssl.1.gz
-man/man5/openssl.cnf.5.gz
-man/man5/x509v3.cnf.5.gz
-man/man8/ocspcheck.8.gz
+%%NC%%share/man/man1/nc.1.gz
+share/man/man1/openssl.1.gz
+share/man/man5/openssl.cnf.5.gz
+share/man/man5/x509v3.cnf.5.gz
+share/man/man8/ocspcheck.8.gz
 @dir include/openssl

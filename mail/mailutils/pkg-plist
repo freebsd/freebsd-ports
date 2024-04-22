@@ -333,10 +333,6 @@ libexec/mailutils/mailutils-send
 libexec/mailutils/mailutils-smtp
 libexec/mailutils/mailutils-stat
 libexec/mailutils/mailutils-wicket
-man/man1/imap4d.1.gz
-man/man1/mail.1.gz
-man/man1/pop3d.1.gz
-man/man1/popauth.1.gz
 sbin/comsatd
 sbin/imap4d
 sbin/lmtpd
@@ -376,3 +372,7 @@ share/aclocal/mailutils.m4
 %%MH%%%%DATADIR%%/mh/scan.size
 %%MH%%%%DATADIR%%/mh/scan.time
 %%MH%%%%DATADIR%%/mh/scan.timely
+share/man/man1/imap4d.1.gz
+share/man/man1/mail.1.gz
+share/man/man1/pop3d.1.gz
+share/man/man1/popauth.1.gz

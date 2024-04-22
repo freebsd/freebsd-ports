@@ -144,13 +144,7 @@ RUBY?=			${LOCALBASE}/bin/ruby${RUBY_SUFFIX}
 .    if defined(RUBY_VER)
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-.      if ${RUBY_VER} == 3.0
-#
-# Ruby 3.0
-#
-RUBY_DISTVERSION=	3.0.6
-RUBY_PORTREVISION=	1
-.      elif ${RUBY_VER} == 3.1
+.      if ${RUBY_VER} == 3.1
 #
 # Ruby 3.1
 #
@@ -161,8 +155,8 @@ RUBY_PORTREVISION=	1
 #
 # Ruby 3.2
 #
-RUBY_DISTVERSION=	3.2.2
-RUBY_PORTREVISION=	1
+RUBY_DISTVERSION=	3.2.3
+RUBY_PORTREVISION=	0
 
 .      elif ${RUBY_VER} == 3.3
 #
@@ -177,7 +171,7 @@ RUBY_PORTREVISION=	0
 #
 # Other versions
 #
-IGNORE=	Only ruby 3.0, 3.1, 3,2 and 3.3 are supported
+IGNORE=	Only ruby 3.1, 3,2 and 3.3 are supported
 _INVALID_RUBY_VER=	1
 .      endif
 RUBY_PORTEPOCH=		1
@@ -186,7 +180,6 @@ RUBY_VERSION=	${RUBY_DISTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}
 
 .    if !defined(_INVALID_RUBY_VER)
 
-RUBY30?=		"@comment "
 RUBY31?=		"@comment "
 RUBY32?=		"@comment "
 RUBY33?=		"@comment "
@@ -311,12 +304,12 @@ ruby-extconf-configure:
 .        for d in ${RUBY_EXTCONF_SUBDIRS}
 	@${ECHO_MSG} "===>  Running ${RUBY_EXTCONF} in ${d} to configure"
 	@cd ${CONFIGURE_WRKSRC}/${d}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_EXTCONF} ${CONFIGURE_ARGS}
+	${SETENVI} ${WRK_ENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_EXTCONF} ${CONFIGURE_ARGS}
 .        endfor
 .      else
 	@${ECHO_MSG} "===>  Running ${RUBY_EXTCONF} to configure"
 	@cd ${CONFIGURE_WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_EXTCONF} ${CONFIGURE_ARGS}
+	${SETENVI} ${WRK_ENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_EXTCONF} ${CONFIGURE_ARGS}
 .      endif
 .    endif
 
@@ -331,21 +324,21 @@ do-configure:	ruby-setup-configure
 ruby-setup-configure:
 	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to configure"
 	@cd ${BUILD_WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} config ${CONFIGURE_ARGS}
+	${SETENVI} ${WRK_ENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} config ${CONFIGURE_ARGS}
 
 do-build:	ruby-setup-build
 
 ruby-setup-build:
 	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to build"
 	@cd ${BUILD_WRKSRC}; \
-	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} setup
+	${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} setup
 
 do-install:	ruby-setup-install
 
 ruby-setup-install:
 	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to install"
 	@cd ${INSTALL_WRKSRC}; \
-	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} install --prefix=${STAGEDIR}
+	${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} install --prefix=${STAGEDIR}
 .    endif
 
 .    if !${ruby_ARGS:Mbuild} && !${ruby_ARGS:Mrun} && !${ruby_ARGS:Mnone}

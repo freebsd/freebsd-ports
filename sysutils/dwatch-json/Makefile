@@ -4,7 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	dteske@FreeBSD.org
 COMMENT=	FreeBSD dwatch suite to produce JSON stats
-WWW=		https://fraubsd.org/dwatch-json/
+WWW=		https://github.com/FrauBSD/dwatch-json
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

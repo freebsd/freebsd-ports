@@ -1,6 +1,6 @@
 PORTNAME=	ldmud
 PORTVERSION=	3.3.720
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	games net
 MASTER_SITES=	http://www.bearnip.com/ftp/mud/ \
@@ -20,6 +20,7 @@ USES=		iconv pkgconfig ssl
 USE_RC_SUBR=	ldmud
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=--libdir=${DATADIR} \
 		--bindir=${PREFIX}/sbin \
 		--enable-use-pcre \
@@ -46,6 +47,12 @@ PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ENABLE=	use-pgsql
 SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_ENABLE=use-sqlite
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}/var/log/${PORTNAME} \

@@ -4069,6 +4069,7 @@ share/foomatic/db/source/PPD/Ricoh/PCL5/Ricoh-SP_3710SF_PCL5.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PCL5/Ricoh-SP_377DNwX_PCL5.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PCL5/Ricoh-SP_377SFNwX_PCL5.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PCL5/Ricoh-SP_377SNwX_PCL5.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PDF/Generic_PDF_Printer.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PDF/Ricoh-Aficio_3025_PDF.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PDF/Ricoh-Aficio_3030_PDF.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PDF/Ricoh-Aficio_3035_PDF.ppd.gz
@@ -4379,6 +4380,7 @@ share/foomatic/db/source/PPD/Ricoh/PDF/Ricoh-SP_C435DN_PDF.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PDF/Ricoh-SP_C440DN_PDF.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PDF/Ricoh-SP_C840DN_PDF.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PDF/Ricoh-SP_C842DN_PDF.ppd.gz
+share/foomatic/db/source/PPD/Ricoh/PS/Generic_PS_Printer.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-Aficio_1022_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-Aficio_1027_PS.ppd.gz
 share/foomatic/db/source/PPD/Ricoh/PS/Ricoh-Aficio_1032_PS.ppd.gz
@@ -8687,6 +8689,7 @@ share/foomatic/db/source/printer/Generic-PCL_5_Printer.xml
 share/foomatic/db/source/printer/Generic-PCL_5c_Printer.xml
 share/foomatic/db/source/printer/Generic-PCL_5e_Printer.xml
 share/foomatic/db/source/printer/Generic-PCL_6_PCL_XL_Printer.xml
+share/foomatic/db/source/printer/Generic-PS_Printer.xml
 share/foomatic/db/source/printer/Generic-PostScript_Level_1_Printer.xml
 share/foomatic/db/source/printer/Generic-PostScript_Printer.xml
 share/foomatic/db/source/printer/Generic-ZjStream_Printer.xml

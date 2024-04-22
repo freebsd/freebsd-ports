@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/discovery/3b5db901-2cb8-4df7-8043-c4628a6a5d5a.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/3b5db901-2cb8-4df7-8043-c4628a6a5d5a.yml
+@@ -12,7 +12,7 @@
+       sh:
+         command: |
+           ps aux | grep #{host.user.name}
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           ps aux | grep #{host.user.name}

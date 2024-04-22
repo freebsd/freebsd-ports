@@ -1,6 +1,6 @@
 bin/ytree
 @sample etc/ytree.conf.sample
-man/man1/ytree.1.gz
+share/man/man1/ytree.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS

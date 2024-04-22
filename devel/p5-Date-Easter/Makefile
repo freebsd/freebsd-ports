@@ -13,6 +13,8 @@ LICENSE=	ART20
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL
 

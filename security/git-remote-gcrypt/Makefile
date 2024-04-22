@@ -1,5 +1,6 @@
 PORTNAME=	git-remote-gcrypt
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -22,10 +23,7 @@ MAKE_ENV=	DESTDIR=${STAGEDIR}
 NO_BUILD=
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
-
-post-extract:
-	@${REINPLACE_CMD} -e s,prefix/share/man,prefix/man, ${WRKSRC}/install.sh
+		share/man/man1/${PORTNAME}.1.gz
 
 do-install:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${WRKSRC}/install.sh

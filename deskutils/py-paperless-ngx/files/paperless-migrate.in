@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# PROVIDE: paperless-migrate
+# REQUIRE: LOGIN mysql postgresql redis
+# BEFORE:  paperless-webui
+# KEYWORD: shutdown
+#
+# Add the following line(s) to /etc/rc.conf to enable running paperless
+# migrations:
+#
+# paperless_migrate_enable (bool):	Set to "NO" by default.
+#					Set it to "YES" to enable
+#					paperless_migrate
+# paperless_migrate_log_facility(str):	Set to "daemon" by default.
+#					Migrate logging syslog facility.
+# paperless_migrate_log_priority(str):	Set to "notice" by default.
+#					Migrate logging syslog priority.
+# paperless_migrate_log_tag(str):	Set to "paperless-migrate" by default.
+#					Migrate logging syslog tag.
+
+. /etc/rc.subr
+
+name="paperless_migrate"
+rcvar="${name}_enable"
+
+# Set defaults
+paperless_migrate_enable=${paperless_migrate_enable:-"NO"}
+paperless_migrate_user=${paperless_migrate_user:-"paperless"}
+paperless_migrate_log_facility=${paperless_migrate_log_facility:-"daemon"}
+paperless_migrate_log_priority=${paperless_migrate_log_priority:-"notice"}
+paperless_migrate_log_tag=${paperless_migrate_log_tag:-"paperless-migrate"}
+
+paperless_migrate_env="LANG=en_US.UTF-8 PATH=$PATH:%%PREFIX%%/bin \
+  PYTHONPATH=%%PYTHONPREFIX_SITELIBDIR%%/paperless"
+
+start_cmd="${name}_run | logger -s -t '$paperless_migrate_log_tag'"
+stop_cmd=":"
+
+paperless_migrate_run()
+{
+	echo "Applying potential migrations to ${name}."
+	env ${paperless_migrate_env} su \
+		-m ${paperless_migrate_user} \
+		-c 'sh -c "%%PREFIX%%/bin/paperless migrate --no-color -v 0"'
+}
+
+load_rc_config ${name}
+run_rc_command "$1"

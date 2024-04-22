@@ -1,6 +1,6 @@
---- src/slic3r/Utils/WxFontUtils.cpp.orig	2023-07-25 13:16:26 UTC
+--- src/slic3r/Utils/WxFontUtils.cpp.orig	2023-12-12 14:21:21 UTC
 +++ src/slic3r/Utils/WxFontUtils.cpp
-@@ -8,7 +8,7 @@
+@@ -12,7 +12,7 @@
  #include <wx/uri.h>
  #include <wx/fontutil.h> // wxNativeFontInfo
  #include <wx/osx/core/cfdictionary.h>
@@ -9,7 +9,7 @@
  #include "slic3r/Utils/FontConfigHelp.hpp"
  #endif
  
-@@ -72,7 +72,7 @@ bool WxFontUtils::can_load(const wxFont &font)
+@@ -76,7 +76,7 @@ bool WxFontUtils::can_load(const wxFont &font)
  #elif defined(__APPLE__)
      return true;
      //return is_valid_ttf(get_file_path(font));
@@ -18,7 +18,7 @@
      return true;
      // font config check file path take about 4000ms for chech them all
      //std::string font_path = Slic3r::GUI::get_font_path(font);
-@@ -93,7 +93,7 @@ std::unique_ptr<Emboss::FontFile> WxFontUtils::create_
+@@ -97,7 +97,7 @@ std::unique_ptr<Emboss::FontFile> WxFontUtils::create_
          return nullptr; 
      }
      return Emboss::create_font_file(file_path.c_str());
@@ -27,7 +27,7 @@
      std::string font_path = Slic3r::GUI::get_font_path(font);
      if (font_path.empty()){
          BOOST_LOG_TRIVIAL(error) << "Can not read font('" << get_human_readable_name(font) << "'), "
-@@ -114,7 +114,7 @@ EmbossStyle::Type WxFontUtils::get_actual_type()
+@@ -118,7 +118,7 @@ EmbossStyle::Type WxFontUtils::get_current_type()
      return EmbossStyle::Type::wx_win_font_descr;
  #elif defined(__APPLE__)
      return EmbossStyle::Type::wx_mac_font_descr;
@@ -36,7 +36,7 @@
      return EmbossStyle::Type::wx_lin_font_descr;
  #else
      return EmbossStyle::Type::undefined;
-@@ -348,4 +348,4 @@ std::unique_ptr<Emboss::FontFile> WxFontUtils::set_bol
+@@ -351,4 +351,4 @@ std::unique_ptr<Emboss::FontFile> WxFontUtils::set_bol
      // There is NO bold font by wx
      font.SetWeight(orig_weight);
      return nullptr;

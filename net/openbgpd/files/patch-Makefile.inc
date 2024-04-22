@@ -9,4 +9,4 @@ diff -N Makefile.inc
 +
 +PREFIX?=	/usr/local
 +BINDIR?=	${PREFIX}/sbin
-+MANDIR?=	${PREFIX}/man/man
++MANDIR?=	${PREFIX}/share/man/man

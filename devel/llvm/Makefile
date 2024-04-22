@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	# not applicable
@@ -33,7 +33,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	${COMMANDS:S|^|bin/|} \
-		${MAN1SRCS:S|^|man/man1/|:S|$|.gz|}
+		${MAN1SRCS:S|^|share/man/man1/|:S|$|.gz|}
 
 .include <bsd.port.options.mk>
 
@@ -86,7 +86,7 @@ do-install:
 .endfor
 .for _man in ${MAN1SRCS}
 	${LN} -s ${_man:R}${LLVM_SUFFIX}.1 \
-	    ${STAGEDIR}${MANPREFIX}/man/man1/${_man}
+	    ${STAGEDIR}${PREFIX}/share/man/man1/${_man}
 .endfor
 
 .include <bsd.port.mk>

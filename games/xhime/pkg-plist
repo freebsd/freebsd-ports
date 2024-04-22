@@ -1,6 +1,6 @@
 bin/xhime
-man/ja/man6/xhime.6.gz
-man/man6/xhime.6.gz
+share/man/ja/man6/xhime.6.gz
+share/man/man6/xhime.6.gz
 %%PORTDOCS%%share/doc/ja/xhime/xhime-doc.euc
 %%PORTDOCS%%share/doc/ja/xhime/xhime.doc
 %%PORTDOCS%%share/doc/ja/xhime/rh110-doc.euc

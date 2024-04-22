@@ -1,5 +1,5 @@
 PORTNAME=	cucumber-cucumber-expressions
-PORTVERSION=	17.0.1
+PORTVERSION=	17.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -8,6 +8,8 @@ COMMENT=	Cucumber Expressions for Ruby
 WWW=		https://github.com/cucumber/cucumber-expressions/tree/main/ruby
 
 LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-bigdecimal>=0:math/rubygem-bigdecimal
 
 USES=		gem
 

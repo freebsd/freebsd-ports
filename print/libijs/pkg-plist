@@ -9,4 +9,4 @@ lib/libijs.so
 lib/libijs.so.1
 lib/libijs.so.1.0.1
 libdata/pkgconfig/ijs.pc
-man/man1/ijs-config.1.gz
+share/man/man1/ijs-config.1.gz

@@ -181,6 +181,7 @@
 %%PMWIKIDIR%%/pub/skins/pmwiki/pmwiki.tmpl
 %%PMWIKIDIR%%/pub/skins/pmwiki/pmwiki.css
 %%PMWIKIDIR%%/pub/skins/pmwiki/pmwiki-32.gif
+%%PMWIKIDIR%%/pub/skins/pmwiki/pmwiki-32.svg
 %%PMWIKIDIR%%/pub/skins/pmwiki/README
 %%PMWIKIDIR%%/pub/skins/pmwiki-responsive/xwrench.svg
 %%PMWIKIDIR%%/pub/skins/pmwiki-responsive/xsearch.svg
@@ -191,6 +192,7 @@
 %%PMWIKIDIR%%/pub/skins/pmwiki-responsive/skin.js
 %%PMWIKIDIR%%/pub/skins/pmwiki-responsive/skin.css
 %%PMWIKIDIR%%/pub/skins/pmwiki-responsive/README
+%%PMWIKIDIR%%/pub/pmwiki-darktoggle.js
 %%PMWIKIDIR%%/pub/pmwiki-utils.js
 %%PMWIKIDIR%%/pub/guiedit/underline.gif
 %%PMWIKIDIR%%/pub/guiedit/ul.gif

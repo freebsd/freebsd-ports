@@ -1,6 +1,7 @@
 PORTNAME=	sayonara
-DISTVERSION=	1.7.0
-PORTREVISION=	1
+DISTVERSION=	1.9.0
+DISTVERSIONSUFFIX=	-stable1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -18,18 +19,17 @@ USES=		cmake compiler:c++11-lib desktop-file-utils gnome gstreamer pkgconfig \
 USE_GNOME=	glib20
 USE_GSTREAMER=	flac libav mpg123 ogg opus vorbis
 USE_QT=		dbus core gui network sql sql-sqlite3:run svg widgets xml \
-		buildtools:build qmake:build linguisttools:build
+		buildtools:build qmake:build linguisttools:build \
+		testlib:build
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	luciocarreras
 GL_PROJECT=	${PORTNAME}-player
-GL_TAGNAME=	5bbf1399332d5d59362ad03bf625f9132be72206 # 1.7.0-stable1
 
 SHEBANG_FILES=	src/DBus/sayonara-ctl src/DBus/sayonara-query
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e '/man1/s,share/,,' \
 		-e '/DESTINATION/s,share/metainfo,share/appdata,' \
 		${WRKSRC}/resources/CMakeLists.txt
 

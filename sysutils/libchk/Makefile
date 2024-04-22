@@ -1,5 +1,6 @@
 PORTNAME=	libchk
 PORTVERSION=	1.10.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 		LOCAL/knu
@@ -12,9 +13,10 @@ LICENSE=	BSD2CLAUSE
 
 USES=		ruby tar:bzip2 uidfix
 
-MAKE_ARGS=	PREFIX="${PREFIX}"
+MAKE_ARGS=	PREFIX="${PREFIX}" \
+		MANDIR="${PREFIX}/share/man/man"
 
-PLIST_FILES=	man/man1/libchk.1.gz \
-		sbin/libchk
+PLIST_FILES=	sbin/libchk \
+		share/man/man1/libchk.1.gz
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	kore
 DISTVERSION=	4.2.3
-PORTREVISON=	1
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	https://kore.io/releases/
 

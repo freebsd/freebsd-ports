@@ -1,5 +1,5 @@
 PORTNAME=	nagiosql
-PORTVERSION=	3.5.0.20230311
+PORTVERSION=	3.5.0.20240126
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -9,13 +9,11 @@ WWW=		https://gitlab.com/wizonet/nagiosql
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_WITH_PHP=	82 83
-
 USES=		cpe gettext mysql php:web tar:bzip2
 USE_PHP=	filter gettext mysqli session simplexml
 USE_GITLAB=	yes
 GL_ACCOUNT=	wizonet
-GL_TAGNAME=	7e40440fa5e0a4a81a3a40c2895b248bfabcdd84
+GL_TAGNAME=	2cfb368a
 
 USERS?=		nagios
 GROUPS?=	nagios

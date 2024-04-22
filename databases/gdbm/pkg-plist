@@ -14,10 +14,6 @@ lib/libgdbm.so.6.0.0
 %%COMPAT%%lib/libgdbm_compat.so
 %%COMPAT%%lib/libgdbm_compat.so.4
 %%COMPAT%%lib/libgdbm_compat.so.4.0.0
-man/man1/gdbm_dump.1.gz
-man/man1/gdbm_load.1.gz
-man/man1/gdbmtool.1.gz
-man/man3/gdbm.3.gz
 %%NLS%%share/locale/da/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/gdbm.mo
@@ -32,3 +28,7 @@ man/man3/gdbm.3.gz
 %%NLS%%share/locale/sv/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/gdbm.mo
+share/man/man1/gdbm_dump.1.gz
+share/man/man1/gdbm_load.1.gz
+share/man/man1/gdbmtool.1.gz
+share/man/man3/gdbm.3.gz

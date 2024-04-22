@@ -4,7 +4,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dgeo@centrale-marseille.fr
+MAINTAINER=	dgeo@centrale-med.fr
 COMMENT=	Abstract implementation of the cron(8) scheduling algorithm
 
 LICENSE=	ART10 GPLv1+

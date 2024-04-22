@@ -1,6 +1,6 @@
 PORTNAME=	exiftran
 PORTVERSION=	2.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kraxel.org/releases/fbida/
 DISTNAME=	fbida-${PORTVERSION}
@@ -19,9 +19,9 @@ USE_XORG=	pixman
 
 CONFLICTS_INSTALL=	ida
 
-MAKE_ARGS+=	WRKSRC=${WRKSRC} BINDIR=${PREFIX}/bin MANDIR=${MANPREFIX}/man
+MAKE_ARGS+=	WRKSRC=${WRKSRC} BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/share/man
 PLIST_FILES=	bin/exiftran bin/thumbnail.cgi \
-		man/man1/exiftran.1.gz
+		share/man/man1/exiftran.1.gz
 
 CFLAGS+=	-I${LOCALBASE}/include
 
@@ -35,6 +35,6 @@ post-patch:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/exiftran.1 \
-		${STAGEDIR}${PREFIX}/man/man1/exiftran.1
+		${STAGEDIR}${PREFIX}/share/man/man1/exiftran.1
 
 .include <bsd.port.mk>

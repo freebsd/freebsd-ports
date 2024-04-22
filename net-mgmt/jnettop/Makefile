@@ -1,6 +1,6 @@
 PORTNAME=	jnettop
 PORTVERSION=	0.13.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.13 \
 		ZI
@@ -10,6 +10,7 @@ COMMENT=	Traffic visualizer, similar to nettop
 WWW=		https://sourceforge.net/projects/jnettop/
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		gmake gnome pkgconfig
 USE_GNOME=	glib20
 

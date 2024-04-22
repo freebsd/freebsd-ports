@@ -51,6 +51,10 @@ _PLIST_FILES+=	lib/libopencl-clang.so \
 		lib/libopencl-clang.so.${DISTVERSION:R:R}
 PLIST_FILES=	${_PLIST_FILES:S,^,${FLAVOR}/,}
 
+.if ${FLAVOR:U} == llvm11 || ${FLAVOR:U} == llvm12 || ${FLAVOR:U} == llvm13 || ${FLAVOR:U} == llvm14 ||  ${FLAVOR:U} == llvm15
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-common__clang.map
+.endif
+
 .if !defined(DEFAULT_MAKESUM)
 makesum:
 . for f in ${FLAVORS}

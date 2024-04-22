@@ -1,5 +1,6 @@
 PORTNAME=	faraday
 PORTVERSION=	1.10.3
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	1
@@ -11,7 +12,7 @@ WWW=		https://github.com/lostisland/faraday
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-faraday-em_http>=1.0<2:www/rubygem-faraday-em_http \
+RUN_DEPENDS=	rubygem-faraday-em_http1>=1.0<2:www/rubygem-faraday-em_http1 \
 		rubygem-faraday-em_synchrony>=1.0<2:www/rubygem-faraday-em_synchrony \
 		rubygem-faraday-excon1>=1.1<2:devel/rubygem-faraday-excon1 \
 		rubygem-faraday-httpclient1>=1.0<2:www/rubygem-faraday-httpclient1 \

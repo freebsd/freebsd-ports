@@ -1,6 +1,7 @@
 PORTNAME=	magicrescue
-PORTVERSION=	1.1.10
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.1.10
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -11,15 +12,14 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		perl5 shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	jbj
 USE_PERL5=	run
+
+SHEBANG_FILES=	magicsort tools/*.pl tools/checkrecipe
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	jbj
-
-SHEBANG_FILES=	magicsort tools/*.pl tools/checkrecipe
 
 MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 

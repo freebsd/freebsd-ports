@@ -1,7 +1,7 @@
 PORTNAME=	dune-uggrid
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.0
-PORTREVISION=	10
+PORTREVISION=	12
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,12 +11,12 @@ WWW=		https://www.dune-project.org/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPL-2.1
 
-BUILD_DEPENDS=	openmpi>0:net/openmpi \
+BUILD_DEPENDS=	openmpi4>0:net/openmpi4 \
 		vc>0:devel/vc
 LIB_DEPENDS=	libdunecommon.so:math/dune-common \
 		libopenblas.so:math/openblas \
 		libtbb.so:devel/onetbb
-RUN_DEPENDS=	openmpi>0:net/openmpi
+RUN_DEPENDS=	openmpi4>0:net/openmpi4
 
 USES=		cmake compiler:c++17-lang fortran pkgconfig python
 USE_GITLAB=	yes

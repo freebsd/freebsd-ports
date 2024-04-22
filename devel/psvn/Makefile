@@ -1,6 +1,6 @@
 PORTNAME=	psvn
 PORTVERSION=	20150720.214200
-PORTREVISION=	11
+PORTREVISION=	14
 CATEGORIES=	devel elisp
 MASTER_SITES=	http://www.xsteve.at/prg/emacs/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
@@ -13,7 +13,11 @@ WWW=		http://www.xsteve.at/prg/emacs/
 
 LICENSE=	GPLv2+
 
+.if ${WITH_SUBVERSION_VER:U} == LTS
+RUN_DEPENDS=	svn:devel/subversion-lts
+.else
 RUN_DEPENDS=	svn:devel/subversion
+.endif
 
 USES=		emacs
 

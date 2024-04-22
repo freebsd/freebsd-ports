@@ -1,6 +1,6 @@
 PORTNAME=	irc
 PORTVERSION=	2.11.2p3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	http://ftp.irc.org/ftp/irc/server/ \
 		ftp://ftp.archive.de.uu.net/pub/mirrors/ftp.irc.org/server/ \
@@ -16,6 +16,7 @@ CONFLICTS_INSTALL=	charybdis ircd-hybrid Nefarious \
 USES=		tar:tgz
 USE_RC_SUBR=	ircd
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_OUTSOURCE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/ircd
 CONFIGURE_WRKSRC=	${WRKSRC}/build

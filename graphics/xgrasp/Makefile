@@ -1,6 +1,6 @@
 PORTNAME=	xgrasp
 PORTVERSION=	1.7d
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	XCONTRIB/../R5contrib
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -14,6 +14,6 @@ USES=		imake tar:Z xorg
 USE_XORG=	x11 xext
 
 PLIST_FILES=	bin/glib bin/xgrasp \
-		man/man1/glib.1.gz man/man1/xgrasp.1.gz
+		share/man/man1/glib.1.gz share/man/man1/xgrasp.1.gz
 
 .include <bsd.port.mk>

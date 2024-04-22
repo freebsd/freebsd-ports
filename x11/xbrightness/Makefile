@@ -1,5 +1,6 @@
 PORTNAME=	xbrightness
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://disjunkt.com/xbrightness/ ftp://ftp.motoom.net/files/
 
@@ -10,6 +11,6 @@ WWW=		http://disjunkt.com/xbrightness/
 USES=		imake xorg
 USE_XORG=	x11 xxf86vm ice xmu xt xaw
 
-PLIST_FILES=	bin/xbrightness man/man1/xbrightness.1.gz
+PLIST_FILES=	bin/xbrightness share/man/man1/xbrightness.1.gz
 
 .include <bsd.port.mk>

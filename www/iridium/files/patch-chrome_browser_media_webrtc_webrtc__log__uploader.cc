@@ -1,6 +1,6 @@
---- chrome/browser/media/webrtc/webrtc_log_uploader.cc.orig	2023-08-28 20:17:35 UTC
+--- chrome/browser/media/webrtc/webrtc_log_uploader.cc.orig	2024-02-04 14:46:08 UTC
 +++ chrome/browser/media/webrtc/webrtc_log_uploader.cc
-@@ -373,6 +373,10 @@ void WebRtcLogUploader::SetupMultipart(
+@@ -374,6 +374,10 @@ void WebRtcLogUploader::SetupMultipart(
    const char product[] = "Chrome_ChromeOS";
  #elif BUILDFLAG(IS_FUCHSIA)
    const char product[] = "Chrome_Fuchsia";

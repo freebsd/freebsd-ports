@@ -1,7 +1,7 @@
 PORTNAME=	gambit-c
 PORTVERSION=	4.9.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	lang
 
@@ -17,6 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gambit
 GH_PROJECT=	gambit
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-single-host \
 		--enable-gcc-opts \
 		--docdir=${DOCSDIR} \
@@ -37,7 +38,7 @@ GCC_DESC=	Build with GCC from ports
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGCC}
-USE_GCC=	yes
+USE_GCC=	12
 .endif
 
 post-patch:

@@ -1,5 +1,6 @@
 PORTNAME=	cal3d
 PORTVERSION=	0.11.1	# see note below
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	LOCAL/acm/cal3d
 DISTNAME=	cal3d-20060720
@@ -16,10 +17,12 @@ WWW=		http://gna.org/projects/cal3d/
 # number of 0.11.1 to indicate it comes after 0.11.0 rather than changing
 # the version scheme completely.
 
-GNU_CONFIGURE=	yes
 USES=		autoreconf compiler:c++11-lang libtool pathfix pkgconfig \
 		tar:bzip2
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+
 INSTALL_TARGET=	install-strip
 
 post-patch:

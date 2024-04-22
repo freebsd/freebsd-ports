@@ -1,5 +1,5 @@
 PORTNAME=	sleuthkit
-PORTVERSION=	4.7.0
+PORTVERSION=	4.12.1
 CATEGORIES=	sysutils security
 MASTER_SITES=	https://github.com/sleuthkit/sleuthkit/releases/download/sleuthkit-${PORTVERSION}/
 
@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-DateTime-TimeZone>=0:devel/p5-DateTime-TimeZone \
 CONFLICTS=	ja-ls icat
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_header_libpq_fe_h=no
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		compiler:c++11-lang libtool perl5 sqlite
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

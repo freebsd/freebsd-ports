@@ -4,4 +4,4 @@ lib/doc/doc-3.awk
 lib/doc/doc-4.awk
 lib/doc/INFO
 lib/doc/RFC.XXXX
-man/man8/doc.8.gz
+share/man/man8/doc.8.gz

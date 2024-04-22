@@ -1,0 +1,18 @@
+--- plugins/response/data/abilities/response/2ca64acd-dc12-4cc8-b78a-6a182508a50b.yml.orig	2021-10-13 20:41:40 UTC
++++ plugins/response/data/abilities/response/2ca64acd-dc12-4cc8-b78a-6a182508a50b.yml
+@@ -7,7 +7,7 @@
+     attack_id: x
+     name: x
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           if ! test -f hosts_backup; then cp /etc/hosts hosts_backup; fi;
+@@ -27,4 +27,4 @@
+           if (-not (Test-Path -Path .\hosts_backup)) { Copy-Item -Path c:\windows\system32\drivers\etc\hosts -Destination .\hosts_backup; };
+           Add-Content c:\windows\system32\drivers\etc\hosts "127.0.0.1`t#{remote.suspicious.url}";
+         cleanup: |
+-          Move-Item -Path .\hosts_backup -Destination c:\windows\system32\drivers\etc\hosts -Force
+\ No newline at end of file
++          Move-Item -Path .\hosts_backup -Destination c:\windows\system32\drivers\etc\hosts -Force

@@ -1,5 +1,5 @@
 bin/emu803
-man/man1/emu803.1.gz
+share/man/man1/emu803.1.gz
 %%DATADIR%%/Algol60-Samples/cogs.a60
 %%DATADIR%%/Algol60-Samples/cogs.script
 %%DATADIR%%/Algol60-Samples/fib.a60

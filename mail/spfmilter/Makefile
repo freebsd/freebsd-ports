@@ -1,6 +1,6 @@
 PORTNAME=	spfmilter
 PORTVERSION=	2.001
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	https://acme.com/software/spfmilter/
 
@@ -28,13 +28,15 @@ LIBSPF2_DESC=	Use the libspf2 Sender Policy Framework library
 
 PLIST_FILES=	libexec/spfmilter \
 		etc/rc.d/spfmilter \
-		man/man8/spfmilter.8.gz \
+		share/man/man8/spfmilter.8.gz \
 		"@dir /var/run/spfmilter"
 
 do-install:
-	@${MKDIR} ${STAGEDIR}/var/run/spfmilter
+	${MKDIR} ${STAGEDIR}/var/run/spfmilter
 	${INSTALL_PROGRAM} ${WRKSRC}/spfmilter ${STAGEDIR}${PREFIX}/libexec
-	${INSTALL_SCRIPT} ${WRKSRC}/rc_scripts/freebsd ${STAGEDIR}${PREFIX}/etc/rc.d/spfmilter
-	${INSTALL_MAN} ${WRKSRC}/spfmilter.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_SCRIPT} ${WRKSRC}/rc_scripts/freebsd \
+	    ${STAGEDIR}${PREFIX}/etc/rc.d/spfmilter
+	${INSTALL_MAN} ${WRKSRC}/spfmilter.8 \
+	    ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

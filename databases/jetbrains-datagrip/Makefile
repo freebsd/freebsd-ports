@@ -1,5 +1,6 @@
 PORTNAME=	datagrip
 DISTVERSION=	2023.2
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	https://download-cf.jetbrains.com/datagrip/
 PKGNAMEPREFIX=	jetbrains-
@@ -58,7 +59,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.1 \
-		${STAGEDIR}${PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
 # Use fsnotifier replacement provided by java/intellij-fsnotifier

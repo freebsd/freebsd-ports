@@ -1,9 +1,10 @@
 %%FLARQ%%bin/flarq
 bin/fldigi
-%%FLARQ%%man/man1/flarq.1.gz
-man/man1/fldigi.1.gz
+%%FLARQ%%share/man/man1/flarq.1.gz
+share/man/man1/fldigi.1.gz
 %%FLARQ%%share/applications/flarq.desktop
 share/applications/fldigi.desktop
+%%NLS%%share/locale/ca/LC_MESSAGES/fldigi.mo
 %%NLS%%share/locale/de/LC_MESSAGES/fldigi.mo
 %%NLS%%share/locale/el/LC_MESSAGES/fldigi.mo
 %%NLS%%share/locale/es/LC_MESSAGES/fldigi.mo

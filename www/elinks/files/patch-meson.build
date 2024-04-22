@@ -11,16 +11,6 @@
  if compiler.has_header('libgen.h')
      conf_data.set('HAVE_LIBGEN_H', 1)
  endif
-@@ -396,7 +400,8 @@ if conf_data.get('CONFIG_OPENSSL')
- if conf_data.get('CONFIG_OPENSSL')
-     ssldeps = dependency('openssl', static: st, required: false)
-     if not ssldeps.found()
--        ssldeps = compiler.find_library('ssl', static: st, dirs: [get_option('prefix')+'/lib', '/usr/local/lib'])
-+        ssldeps = compiler.find_library('crypto', static: st, dirs: [get_option('prefix')+'/lib', '/usr/local/lib'])
-+        ssldeps += compiler.find_library('ssl', static: st, dirs: [get_option('prefix')+'/lib', '/usr/local/lib'])
-     endif
-     deps += ssldeps
-     conf_data.set('USE_OPENSSL', true)
 @@ -959,7 +964,7 @@ endif
      conf_data.set('HAVE_ICONV', 1)
  endif

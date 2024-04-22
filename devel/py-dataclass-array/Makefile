@@ -1,5 +1,5 @@
 PORTNAME=	dataclass-array
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,8 +27,8 @@ NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 31000
-IGNORE=		devel/py-etils requires Python 3.10+
+.if ${PYTHON_REL} < 31100
+IGNORE=		requires Python 3.11+
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	xzip
 PORTVERSION=	1.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/infocom/interpreters/zip/ \
 		http://www.ifarchive.org/if-archive/infocom/interpreters/zip/ \
@@ -17,6 +17,6 @@ USE_XORG=	x11
 WRKSRC=		${WRKDIR}/xzip
 ALL_TARGET=
 
-PLIST_FILES=	bin/xzip man/man1/xzip.1.gz
+PLIST_FILES=	bin/xzip share/man/man1/xzip.1.gz
 
 .include <bsd.port.mk>

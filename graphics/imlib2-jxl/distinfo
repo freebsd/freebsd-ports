@@ -1,3 +1,5 @@
-TIMESTAMP = 1642715616
-SHA256 (alistair7-imlib2-jxl-v0.1.1_GH0.tar.gz) = 25d220e4638948174d5e76c66e2f0441ee41e0758fa63f065cdfd51bb76c1465
-SIZE (alistair7-imlib2-jxl-v0.1.1_GH0.tar.gz) = 24731
+TIMESTAMP = 1682715689
+SHA256 (alistair7-imlib2-jxl-v0.2.0_GH0.tar.gz) = b49ded4e9251569cfa0245a3075796924656f565e681c60a02c8ec7e16fd9a71
+SIZE (alistair7-imlib2-jxl-v0.2.0_GH0.tar.gz) = 385197
+SHA256 (de2b38f5f34f.patch) = 3722403f4caa909535f3cfb37dda1b2c092d6370e2709241736b439b5a2e9cc8
+SIZE (de2b38f5f34f.patch) = 3181

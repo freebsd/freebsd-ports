@@ -12,7 +12,7 @@
  
  # Directory to install tcplist man page
 -MANDIR = /local/man/man1
-+MANDIR = $(PREFIX)/man/man1
++MANDIR = $(PREFIX)/share/man/man1
  
  # Location of NOIDENT file
 -NOIDENT = /etc/hosts.noident

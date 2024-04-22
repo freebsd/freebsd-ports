@@ -1,5 +1,6 @@
 PORTNAME=	libXi
 DISTVERSION=	1.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -15,6 +16,7 @@ USE_XORG=	x11 xext xfixes xorgproto
 
 INSTALL_TARGET=	install-strip
 
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=--disable-docs \
 		--disable-specs \
 		--without-xmlto \

@@ -1,6 +1,5 @@
 PORTNAME=	cairo-dock
-PORTVERSION=	3.4.1
-PORTREVISION=	12
+DISTVERSION=	3.5.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,23 +13,19 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libcurl.so:ftp/curl \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
-		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
+		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
+		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	bash:shells/bash \
 		sox:audio/sox
 
+#USES=		cmake compiler:c++11-lang gettext gl gnome localbase:ldflags
+USES=		cmake gettext gl gnome localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cairo-Dock
 GH_PROJECT=	${PORTNAME}-core
-
-GNU_CONFIGURE=	yes
-USES=		cmake compiler:c++11-lang gettext gl gnome localbase:ldflags \
-		pkgconfig
 USE_GL=		glu
 USE_GNOME=	glib20 gtk30 librsvg2 libxml2
 USE_LDCONFIG=	yes
-CMAKE_ARGS=	-Dinstall-pc-path:STRING="${LOCALBASE}/libdata/pkgconfig" \
-		-DROOT_PREFIX:PATH=${STAGEDIR} \
-		-DCMAKE_INSTALL_MANDIR:PATH=share/man \
 
 OPTIONS_DEFINE=	X11 WAYLAND
 OPTIONS_DEFAULT=EGL WAYLAND X11
@@ -38,18 +33,16 @@ OPTIONS_RADIO=	GL
 OPTIONS_RADIO_GL=	GLX EGL
 
 EGL_DESC=		${GLX_DESC:S/X11/Native/}
-EGL_CMAKE_BOOL=		enable-egl-support
+
 EGL_USE=		GL=egl
-
-GLX_USE=		GL=gl
+EGL_CMAKE_BOOL=		enable-egl-support
 GLX_IMPLIES=		X11
-
+GLX_USE=		GL=gl
+WAYLAND_IMPLIES=	EGL
 WAYLAND_CATEGORIES=	wayland
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_USE=		GL=egl
 WAYLAND_CMAKE_BOOL=	enable-wayland-support
-WAYLAND_IMPLIES=	EGL
-
 X11_USES=		xorg
 X11_USE=		XORG=x11,xcomposite,xinerama,xrandr,xrender,xtst
 X11_CMAKE_BOOL=		enable-x11-support

@@ -32,16 +32,16 @@ lib/popular/libpdm_master.so
 @comment %%DB4%%lib/popular/libpdm_db4-1.5.5.so
 @comment %%DB4%%lib/popular/libpdm_db4.a
 @comment %%DB4%%lib/popular/libpdm_db4.so
-man/man1/pcheck.1.gz
-man/man1/pcontrol.1.gz
-man/man1/pdeliver.1.gz
-man/man1/pstatus.1.gz
-man/man1/ptestpdm.1.gz
-man/man7/popular-log.7.gz
-man/man8/pcheckd.8.gz
-man/man8/pproxy.8.gz
-man/man8/pserv.8.gz
-man/man8/ringd.8.gz
+share/man/man1/pcheck.1.gz
+share/man/man1/pcontrol.1.gz
+share/man/man1/pdeliver.1.gz
+share/man/man1/pstatus.1.gz
+share/man/man1/ptestpdm.1.gz
+share/man/man7/popular-log.7.gz
+share/man/man8/pcheckd.8.gz
+share/man/man8/pproxy.8.gz
+share/man/man8/pserv.8.gz
+share/man/man8/ringd.8.gz
 sbin/pcheckd
 sbin/pproxy
 sbin/pserv

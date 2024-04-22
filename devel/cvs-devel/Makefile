@@ -1,6 +1,6 @@
 PORTNAME=	cvs
 PORTVERSION=	1.12.13
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	devel
 MASTER_SITES=	GNU/non-gnu/${PORTNAME}/source/feature/${PORTVERSION}
 PKGNAMESUFFIX=	-devel
@@ -14,6 +14,7 @@ CONFLICTS=	cvs cvs+ipv6
 USES=		cpe makeinfo perl5 tar:bzip2
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-ipv6 --without-gssapi \
 		--with-editor="vi" \
 		--with-tmpdir="/tmp"

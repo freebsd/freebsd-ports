@@ -7,5 +7,5 @@ lib/libtls.so
 lib/libtls.so.%%LIBTLS_SHLIBMAJ%%
 lib/libtls.so.%%LIBTLS_SHLIBFULL%%
 libdata/pkgconfig/libtls.pc
-%%NC%%man/man1/nc.1.gz
+%%NC%%share/man/man1/nc.1.gz
 @dir etc/ssl/certs

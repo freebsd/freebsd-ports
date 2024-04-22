@@ -1,5 +1,5 @@
 PORTNAME=	elementpath
-DISTVERSION=	4.1.5
+DISTVERSION=	4.4.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xmlschema>=2.0.0:textproc/py-xmlschema@${PY_FLAVOR}
 
-USES=		python pytest
-USE_PYTHON=	distutils concurrent autoplist
+USES=		python
+USE_PYTHON=	distutils concurrent autoplist pytest
 
 NO_ARCH=	yes
 

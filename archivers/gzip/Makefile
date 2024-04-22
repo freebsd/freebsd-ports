@@ -1,5 +1,6 @@
 PORTNAME=	gzip
-PORTVERSION=	1.12
+PORTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	GNU
 
@@ -11,6 +12,7 @@ LICENSE=	GPLv3+
 
 USES=		cpe charsetfix makeinfo tar:xz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CONFLICTS_INSTALL=	zutils # bin/zcat bin/zcmp bin/zdiff bin/zgrep
 

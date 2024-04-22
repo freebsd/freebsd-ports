@@ -1,5 +1,5 @@
 @(,games,2555) bin/icebreaker
-man/man6/icebreaker.6.gz
+share/man/man6/icebreaker.6.gz
 share/applications/icebreaker.desktop
 %%DATADIR%%/atom.bmp
 %%DATADIR%%/bgeveryone.wav

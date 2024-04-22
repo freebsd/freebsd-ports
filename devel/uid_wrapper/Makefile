@@ -1,5 +1,6 @@
 PORTNAME=		uid_wrapper
 PORTVERSION=		1.2.4
+PORTREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=		SAMBA/cwrap
 
@@ -11,8 +12,6 @@ LICENSE=		GPLv3
 
 USES=			cmake
 USE_LDCONFIG=		yes
-
-CMAKE_ARGS=		-DMAN_INSTALL_DIR:PATH="${PREFIX}/man"
 
 OPTIONS_DEFINE=		TEST
 OPTIONS_DEFAULT=	TEST
@@ -27,6 +26,6 @@ PLIST_FILES=		libdata/pkgconfig/uid_wrapper.pc \
 			lib/libuid_wrapper.so.0.0.6 \
 			lib/libuid_wrapper.so.0 \
 			lib/libuid_wrapper.so \
-			man/man1/uid_wrapper.1.gz
+			share/man/man1/uid_wrapper.1.gz
 
 .include <bsd.port.mk>

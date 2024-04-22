@@ -1,5 +1,6 @@
 PORTNAME=	xinput
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -12,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		xorg xorg-cat:app
 USE_XORG=	xorgproto x11 xi xext xrandr xinerama
 
-PLIST_FILES=	bin/xinput man/man1/xinput.1.gz
+PLIST_FILES=	bin/xinput share/man/man1/xinput.1.gz
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>

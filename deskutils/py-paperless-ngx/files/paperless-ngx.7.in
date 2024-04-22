@@ -1,0 +1,371 @@
+.\"
+.\" Copyright (c) 2024 Michael Gmelin
+.\"
+.\" All rights reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE DEVELOPERS ``AS IS'' AND ANY EXPRESS OR
+.\" IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+.\" OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+.\" IN NO EVENT SHALL THE DEVELOPERS BE LIABLE FOR ANY DIRECT, INDIRECT,
+.\" INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+.\" NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+.\" DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+.\" THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+.\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+.\" THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+.\"
+.Dd February 22, 2024
+.Dt PAPERLESS-NGX 7
+.Os
+.Sh NAME
+.Nm paperless-ngx
+.Nd Index and archive scanned paper documents - installation
+.Sh SYNOPSIS
+.Nm pkg install %%PKGBASE%%
+.Sh DESCRIPTION
+.Em Paperless-ngx
+is a Django-based document management system that transforms
+physical documents into a searchable online archive.
+It is the successor of the original Paperless and Paperless-ng projects.
+.Pp
+It consists of multiple parts, a web UI and a couple of backend
+services for consuming and processing documents.
+.Pp
+This man page documents how the
+.Fx
+port is installed and configured.
+It assumes that the paperless-ngx package was already installed, e.g., from the
+.Fx
+package repo as described in
+.Sx SYNOPSIS .
+.Pp
+.Em IMPORTANT :
+Please note that upgrading an existing installation of
+deskutils/paperless needs special precautions.
+See
+.Sx UPGRADING FROM PAPERLESS
+for how to approach that.
+.Pp
+For more information about using paperless-ngx, see
+the official paperless-ngx documentation
+.Pa ( https://docs.paperless-ngx.com ) .
+.Pp
+The package creates a symlink from
+.Pa %%PYTHONPREFIX_SITELIBDIR%%/paperless/manage.py
+to
+.Pa %%PREFIX%%/bin/paperless
+for convenience reasons, so whenever the official
+documentation mentions
+.Em manage.py
+it can be substituted with
+.Pa %%PREFIX%%/bin/paperless
+or simply
+.Pa paperless .
+.Pp
+.Em Paperless-ngx always needs to be run using the correct system user
+and a UTF-8 codepage.
+.Pp
+The package %%PKGBASE%% created a user
+.Em paperless
+with the following home directory layout, setting appropriate
+restrictive access permissions:
+.Bl -tag -width "/var"
+.It Pa /var/db/paperless
+home directory (only writeable by root)
+.Bl -tag -width "consume/" -compact
+.It Pa consume/
+Consume directory writable by root, used as chroot directory
+for sftp access (see below).
+.Bl -tag -width "123" -compact
+.It Pa input/
+Input files are dropped in there to be processed by the
+paperless document consumer - either directly or via
+a mechanism like sftp.
+.El
+.It Pa data/
+Contains paperless-ngx's data, including its SQLite database
+unless an external database like PostgreSQL or MariaDB is used.
+.Bl -tag -width "123" -compact
+.It Pa log/
+This is where paperless stored its log files
+(on top of what the services write to syslog).
+.El
+.It Pa media/
+Directory used by paperless-ngx to store original files and
+thumbnails.
+.It Pa nltkdata/
+Directory containing data used for natural language processing.
+.El
+.El
+.Sh BACKEND SETUP
+Paperless needs access to a running redis instance, which can be
+installed locally:
+.Bd -literal -offset indent
+pkg install redis
+service redis enable
+service redis start
+.Ed
+.Pp
+Modify
+.Pa %%PREFIX%%/etc/paperless.conf
+to match the configured credentials (when running on localhost,
+it is possible to use no special credentials).
+.Pp
+The URL paperless is hosted on needs to be configued by setting
+.Va PAPERLESS_URL ,
+it is also possible to tune
+.Va PAPERLESS_THREADS_PER_WORKER
+in the same configuration file to limit the impact on system
+performance.
+.Pp
+Now, the database needs to be initialized.
+This can be accomplished by running
+.Bd -literal -offset indent
+service paperless-migrate onestart
+.Ed
+.Pp
+In case database migrations should be applied on every
+system start, paperless-migrate can be enabled to run on boot:
+.Bd -literal -offset indent
+service paperless-migrate enable
+.Ed
+.Pp
+Next, mandatory backend services are enabled
+.Bd -literal -offset indent
+service paperless-beat enable
+service paperless-consumer enable
+service paperless-webui enable
+service paperless-worker enable
+.Ed
+.Pp
+and subsequently started
+.Bd -literal -offset indent
+service paperless-beat start
+service paperless-consumer start
+service paperless-webui start
+service paperless-worker start
+.Ed
+.Sh NLTK DATA
+In order to process scanned documents using machine learning,
+paperless-ngx requires NLTK (natural language toolkit) data.
+The required files can be downloaded by using these commands:
+.Bd -literal -offset indent
+%%PYTHON_CMD%% -m nltk.downloader \\
+  stopwords punkt -d /var/db/paperless/nltkdata
+.Ed
+.Pp
+Normally, the document classifier is run automatically by
+Celery, but it can also be initiated manually by calling
+.Bd -literal -offset indent
+su -l paperless \\
+   -c '%%PREFIX%%/bin/paperless document_create_classifier'
+.Ed
+.Sh OPTIONAL FLOWER SERVICE
+paperless-ngx makes use of Celery to control a cluster of workers.
+There is a component called flower which can be enabled optionally
+to monitor the cluster.
+It can be enabled and started like this:
+.Bd -literal -offset indent
+service paperless-flower enable
+service paperless-flower start
+.Ed
+.Sh WEB UI SETUP
+Before using the web ui, make sure to create a super user and assign
+a password
+.Bd -literal -offset indent
+su -l paperless -c '%%PREFIX%%/bin/paperless createsuperuser'
+.Ed
+.Pp
+It is recommended to host the web component using a real
+web server, e.g., nginx:
+.Bd -literal -offset indent
+pkg install nginx
+.Ed
+.Pp
+Copy-in basic server configuration:
+.Bd -literal -offset indent
+cp %%EXAMPLESDIR%%/nginx.conf \\
+   %%PREFIX%%/etc/nginx/nginx.conf
+.Ed
+.Pp
+This server configuration contains TLS certificates, which
+need to be created by the administrator.
+See below for an example of how to create a self-signed
+certificate to get started:
+.Bd -literal -offset indent
+openssl req -x509 -nodes -days 365 -newkey rsa:4096 \\
+  -keyout %%PREFIX%%/etc/nginx/selfsigned.key \\
+  -out %%PREFIX%%/etc/nginx/selfsigned.crt
+.Ed
+.Pp
+Enable and start nginx:
+.Bd -literal -offset indent
+service nginx enable
+service nginx start
+.Ed
+.Pp
+The default nginx.conf can be adapted by the administrator to their
+needs.
+In case the optional flower service was enabled earlier, the commented
+out block in the example file can be uncommented to make flower available
+at /flower.
+.Pp
+.Em \&It is important to properly secure a public facing web server.
+.Em Doing this properly is up to the administrator.
+.Sh SETUP WITHOUT A WEB SERVER
+Even though
+.Em not
+recommended, it is also possible to configure paperless to serve static
+artifacts directly.
+To do so, set
+.Va PAPERLESS_STATICDIR=%%WWWDIR%%/static
+in
+.Pa %%PREFIX%%/etc/paperless.conf .
+.Sh SFTP SETUP
+Setting up
+.Em sftp
+enabled direct upload of files to be processed by the paperless
+consumer.
+Some scanners allow configuring sftp with key based authentication,
+which is convenient as it scans directly to the paperless processing
+pipeline.
+.Pp
+In case paperless is using a dedicated instance of
+.Xr sshd 8 ,
+access can be limited to the paperless user by adding
+these lines to
+.Pa /etc/ssh/sshd_config :
+.Bd -literal -offset indent
+# Only include if sshd is dedicated to paperless
+# otherwise you'll lock yourself out
+AllowUsers paperless
+.Ed
+.Pp
+The following block limits the paperless user to using the
+.Xr sftp 1
+protocol and locks it into the consume directory:
+.Bd -literal -offset indent
+# paperless can only do sftp and is dropped into correct directory
+Match User paperless
+	ChrootDirectory %h/consume
+	ForceCommand internal-sftp -u 0077 -d /input
+	AllowTcpForwarding no
+	X11Forwarding no
+	PasswordAuthentication no
+.Ed
+.Pp
+The public keys of authorized users/devices need to be added to
+.Pa /var/db/paperless/.ssh/authorized_keys :
+.Bd -literal -offset indent
+mkdir -p /var/db/paperless/.ssh
+cat path/to/pubkey >>/var/db/paperless/.ssh/authorized_keys
+.Ed
+.Pp
+Make sure
+.Xr sshd 8
+is enabled and restart (or reload) it:
+.Bd -literal -offset indent
+service sshd enable
+service sshd restart
+.Ed
+.Pp
+The user will be dropped into the correct directory, so uploading
+a file is as simple as:
+.Bd -literal -offset indent
+echo put file.pdf | sftp -b - paperless@host
+.Ed
+.Sh UPGRADING FROM PAPERLESS
+In case deskutils/paperless is installed, follow the upgrading
+guide at:
+.Pa https://docs.paperless-ngx.com/setup/#migrating-from-paperless
+.Pp
+This guide is for a docker based installation, so here a few basic
+hints for upgrading a
+.Fx
+based installation:
+.Bl -bullet -compact
+.It
+There need to be good and working backups before migrating
+.It
+In case PGP encryption was used, files need to be decrypted first
+by using the existing installation of deskutils/py-paperless.
+See
+.Pa https://github.com/the-paperless-project/paperless/issues/714
+for a description on how to do this and potential pitfalls.
+The basic idea is to comment out lines 95 and 96 in
+.Pa change_storage_type.py
+and then run:
+.Bd -literal -offset indent
+su -l paperless -c \\
+  '%%PREFIX%%/bin/paperless change_storage_type gpg unencrypted'
+.Ed
+.Pp
+.It
+Deinstall py-paperless (it might be good to keep a backup of the
+package).
+.It
+Move the old paperless configuration file out of the way before
+installing paperless-ngx:
+.Bd -literal -offset indent
+mv %%PREFIX%%/etc/paperless.conf \\
+   %%PREFIX%%/etc/paperless.conf.old
+.Ed
+.Pp
+.It
+Install paperless-ngx:
+.Bd -literal -offset indent
+pkg install %%PKGBASE%%
+.Ed
+.Pp
+.It
+Configure
+.Pa %%PREFIX%%/etc/paperless.conf
+as described above.
+.It
+Re-index documents:
+.Bd -literal -offset indent
+su -l paperless \\
+   -c '%%PREFIX%%/bin/paperless document_index reindex'
+.Ed
+.Pp
+.It
+Check if documents are okay:
+.Bd -literal -offset indent
+su -l paperless \\
+   -c '%%PREFIX%%/bin/paperless document_sanity_checker'
+.Ed
+.Pp
+.It
+In general, things should be expected to fail, so being able to
+restore from backup is vital.
+.El
+.Sh FILES
+.Bl -tag -width ".Pa %%PREFIX%%/etc/paperless.conf" -compact
+.It Pa %%PREFIX%%/etc/paperless.conf
+See
+.Pa %%PREFIX%%/etc/paperless.conf.sample
+for an example.
+.It Pa %%EXAMPLESDIR%%
+Configuration examples, complementary to this man page.
+.El
+.Sh SEE ALSO
+.Xr sftp 1 ,
+.Xr sshd_config 5 ,
+.Xr ports 7 ,
+.Xr daemon 8 ,
+.Xr service 8
+.Pp
+.Pa https://docs.paperless-nginx.com
+.Sh AUTHORS
+.An -nosplit
+This manual page was written by
+.An Michael Gmelin Aq Mt grembo@FreeBSD.org .

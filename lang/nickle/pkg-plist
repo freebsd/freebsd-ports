@@ -10,7 +10,7 @@ include/nickle/opcode.h
 include/nickle/ref.h
 include/nickle/stack.h
 include/nickle/value.h
-man/man1/nickle.1.gz
+share/man/man1/nickle.1.gz
 %%DATADIR%%/COPYING
 %%DATADIR%%/abort.5c
 %%DATADIR%%/arc4.5c

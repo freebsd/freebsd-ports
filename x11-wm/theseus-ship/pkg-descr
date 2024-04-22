@@ -1,0 +1,7 @@
+Theseus' Ship is a robust, fast and versatile, yet easy to use
+composited window manager for the Wayland and X11 windowing systems on
+Linux.
+
+Theseus' Ship is intended to be used as part of a KDE Plasma Desktop.
+Theseus' Ship is a reboot of KDE's KWin. It differentates itself from
+KWin in that it uses The Compositor Modules.

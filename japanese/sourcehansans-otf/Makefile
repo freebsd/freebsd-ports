@@ -1,15 +1,15 @@
 PORTNAME=		sourcehansans
-PORTVERSION=		2.000
+PORTVERSION=		2.001
 DISTVERSIONSUFFIX=	R
-CATEGORIES=		japanese x11-fonts
-PKGNAMESUFFIX=		-otf
+CATEGORIES?=		japanese x11-fonts
+PKGNAMESUFFIX?=		-otf
 # Note: the following PKGNAMEPREFIX is here only for self-documenting purpose;
 #       actual prefixing is done by the `japanese' category itself.
-#PKGNAMEPREFIX=		ja-
+#PKGNAMEPREFIX?=	ja-
 
 MAINTAINER=		hyun@caffeinated.codes
-COMMENT=		Japanese font by Adobe designed for user interfaces
-WWW=		https://github.com/adobe-fonts/source-han-sans
+COMMENT?=		Japanese font by Adobe designed for user interfaces
+WWW=			https://github.com/adobe-fonts/source-han-sans
 
 LICENSE=		OFL11
 LICENSE_FILE=		${WRKSRC}/LICENSE.txt
@@ -31,18 +31,24 @@ OPTIONS_SUB=		yes
 
 HW_DESC=		Install the half-width font in addition to the full font
 FULL_DESC=		Install the full font (can display all CJK)
-SUBSET_DESC=		Install the subset font (can display Japanese only)
+SUBSET_DESC?=		Install the subset font (can display Japanese only)
 SUBSET_PREVENTS=	HW
 SUBSET_PREVENTS_MSG=	Half-width can only be installed in addition to the full font
 
-FULL_VARS=		FONTNAME=SourceHanSans SRCFONTSDIR=OTF/Japanese
-SUBSET_VARS=		FONTNAME=SourceHanSansJP SRCFONTSDIR=SubsetOTF/JP
+FULL_VARS?=		FONTNAME=SourceHanSans SRCFONTSDIR=OTF/Japanese
+SUBSET_VARS?=		FONTNAME=SourceHanSansJP SRCFONTSDIR=SubsetOTF/JP
+
+SHS_HW_LANG?=		Japanese
+
+# These are to maintain correct pkg description and file list for slave ports
+DESCR=			${.CURDIR}/pkg-descr
+PLIST=			${.CURDIR}/pkg-plist
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${SRCFONTSDIR}/*.otf ${STAGEDIR}${FONTSDIR}
 
 post-install-HW-on:
-	${INSTALL_DATA} ${WRKSRC}/OTF/JapaneseHW/*.otf ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/OTF/${SHS_HW_LANG}HW/*.otf ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>

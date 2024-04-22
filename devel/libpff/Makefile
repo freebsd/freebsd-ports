@@ -1,9 +1,8 @@
 PORTNAME=	libpff
-# If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20180714
-PORTREVISION=	1
+DISTVERSIONPREFIX=	alpha-
+DISTVERSION=	20231205
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/libyal/libpff/releases/download/${PORTVERSION:E}/ \
+MASTER_SITES=	https://github.com/libyal/libpff/releases/download/${DISTVERSION}/ \
 		LOCAL/antoine
 
 MAINTAINER=	antoine@FreeBSD.org
@@ -16,13 +15,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfwnt.so:devel/libfwnt
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-python --with-libfwnt=${LOCALBASE}
 CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
 USES=		cpe libtool pathfix python
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:E}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 OPTIONS_DEFINE=	NLS
 

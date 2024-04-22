@@ -7,8 +7,8 @@ LICENSE=	GPLv3
 
 USES+=		autoreconf gettext-tools gmake iconv libtool pkgconfig tar:xz
 GNU_CONFIGURE=	yes
-
-CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} --disable-dbus --disable-static
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG} --disable-dbus --disable-static
 
 .include "${.CURDIR}/../claws-mail/Makefile.ver"
 .include "${.CURDIR}/../claws-mail/Makefile.claws.plugins"

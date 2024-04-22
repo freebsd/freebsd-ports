@@ -26,7 +26,7 @@ TEXDOCS_BUILD_DEPENDS=	fig2dev:print/transfig
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ragel/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-TEXDOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

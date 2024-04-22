@@ -35,10 +35,10 @@ lib/libracoon.so.0.0.0
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.jp
 %%PORTDOCS%%%%DOCSDIR%%/README
-man/man8/spmd.8.gz
-man/man8/spmdctl.8.gz
-man/man8/pskgen.8.gz
-man/man8/iked.8.gz
+share/man/man8/spmd.8.gz
+share/man/man8/spmdctl.8.gz
+share/man/man8/pskgen.8.gz
+share/man/man8/iked.8.gz
 @dir etc/racoon2/psk
 @dir etc/racoon2/hook/migration.d
 @dir etc/racoon2/hook/ikesa-rekey.d

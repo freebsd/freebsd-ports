@@ -12,11 +12,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_riscv64=		fails to build: ../src/gallium/include/pipe/p_config.h:171:2: Unknown Endianness
 
-BUILD_DEPENDS=	cmake:devel/cmake-core
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libepoxy.so:graphics/libepoxy
 
-USES=		compiler:c++11-lang cpe gl meson pkgconfig python
+USES=		cmake:indirect compiler:c++11-lang cpe gl meson pkgconfig python
 CPE_VENDOR=	${PORTNAME}_project
 USE_GITLAB=	yes
 USE_GL=		gbm

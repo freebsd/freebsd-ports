@@ -1,0 +1,9 @@
+WebM is an open, royalty-free, media file format designed for
+the web.
+
+WebM defines the file container structure, video and audio formats.
+WebM files consist of video streams compressed with the VP8 or VP9
+video codecs and audio streams compressed with the Vorbis or Opus
+audio codecs.
+
+The WebM file structure is based on the Matroska container.

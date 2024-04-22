@@ -41,7 +41,7 @@ firstboot_freebsd_update_run()
 		esac
 	fi
 
-	freebsd-update --not-running-from-cron fetch
+	env HTTP_TIMEOUT=5 freebsd-update --not-running-from-cron fetch
 	if [ -e /var/db/freebsd-update/`echo / | sha256`-install ]; then
 		freebsd-update install
 		echo "Requesting reboot after installing updates."

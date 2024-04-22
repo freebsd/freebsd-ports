@@ -1,6 +1,6 @@
 PORTNAME=	thefish
 PORTVERSION=	0.6.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/thefish/
 
@@ -23,10 +23,10 @@ USE_GNOME=	gtk20
 MAKE_ENV+=	WITH_GTK=yes
 #.endif
 
-PLIST_FILES=	bin/thefish man/man1/thefish.1.gz
+PLIST_FILES=	bin/thefish share/man/man1/thefish.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/thefish ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/thefish.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/thefish.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

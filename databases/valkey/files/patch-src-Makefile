@@ -1,0 +1,54 @@
+--- src/Makefile.orig	2024-04-16 04:18:47 UTC
++++ src/Makefile
+@@ -55,8 +55,8 @@ endif
+ 	STD+=-std=c99
+ endif
+ 
+-PREFIX?=/usr/local
+-INSTALL_BIN=$(PREFIX)/bin
++PREFIX:=$(PREFIX)
++INSTALL_BIN=$(DESTDIR)$(PREFIX)/bin
+ INSTALL=install
+ PKG_CONFIG?=pkg-config
+ 
+@@ -127,7 +127,6 @@ FINAL_LIBS=-lm
+ FINAL_CFLAGS=$(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS) $(SERVER_CFLAGS)
+ FINAL_LDFLAGS=$(LDFLAGS) $(SERVER_LDFLAGS) $(DEBUG)
+ FINAL_LIBS=-lm
+-DEBUG=-g -ggdb
+ 
+ # Linux ARM32 needs -latomic at linking time
+ ifneq (,$(findstring armv,$(uname_M)))
+@@ -166,6 +165,11 @@ else
+ 	OPENSSL_PREFIX?=/usr/local/opt/openssl
+ endif
+ else
++ifeq ($(uname_S),FreeBSD)
++        # FreeBSD
++        FINAL_CFLAGS?= $(CFLAGS) $(REDIS_CFLAGS) -I${PREFIX}/include
++        FINAL_LDFLAGS= $(LDFLAGS) -pthread
++else
+ ifeq ($(uname_S),AIX)
+         # AIX
+         FINAL_LDFLAGS+= -Wl,-bexpall
+@@ -225,6 +229,7 @@ endif
+ endif
+ endif
+ endif
++endif
+ 
+ ifdef OPENSSL_PREFIX
+ 	OPENSSL_CFLAGS=-I$(OPENSSL_PREFIX)/include
+@@ -541,12 +546,6 @@ install: all
+ 	@ln -sf $(REDIS_SERVER_NAME) $(INSTALL_BIN)/$(REDIS_CHECK_RDB_NAME)
+ 	@ln -sf $(REDIS_SERVER_NAME) $(INSTALL_BIN)/$(REDIS_CHECK_AOF_NAME)
+ 	@ln -sf $(REDIS_SERVER_NAME) $(INSTALL_BIN)/$(REDIS_SENTINEL_NAME)
+-	$(call MAYBE_INSTALL_REDIS_SYMLINK,$(REDIS_SERVER_NAME),$(INSTALL_BIN))
+-	$(call MAYBE_INSTALL_REDIS_SYMLINK,$(REDIS_CLI_NAME),$(INSTALL_BIN))
+-	$(call MAYBE_INSTALL_REDIS_SYMLINK,$(REDIS_BENCHMARK_NAME),$(INSTALL_BIN))
+-	$(call MAYBE_INSTALL_REDIS_SYMLINK,$(REDIS_CHECK_RDB_NAME),$(INSTALL_BIN))
+-	$(call MAYBE_INSTALL_REDIS_SYMLINK,$(REDIS_CHECK_AOF_NAME),$(INSTALL_BIN))
+-	$(call MAYBE_INSTALL_REDIS_SYMLINK,$(REDIS_SENTINEL_NAME),$(INSTALL_BIN))
+ 
+ uninstall:
+ 	rm -f $(INSTALL_BIN)/{$(REDIS_SERVER_NAME),$(REDIS_BENCHMARK_NAME),$(REDIS_CLI_NAME),$(REDIS_CHECK_RDB_NAME),$(REDIS_CHECK_AOF_NAME),$(REDIS_SENTINEL_NAME)}

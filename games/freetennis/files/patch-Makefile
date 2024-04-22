@@ -1,7 +1,7 @@
 --- Makefile.orig	2005-11-21 21:20:33 UTC
 +++ Makefile
-@@ -1,3 +1,3 @@
+@@ -1,3 +1,3 @@ all: freetennis.ml 
  # add -noassert for speedup
  all: freetennis.ml 
 -	ocamlopt   -I +camlimages  -I +lablGL -I +lablgtk2    -I +sdl -o freetennis  bigarray.cmxa sdl.cmxa lablgtk.cmxa lablgl.cmxa  ci_core.cmxa  sdlmixer.cmxa sdlttf.cmxa unix.cmxa freetennis.ml
-+	ocamlopt -noassert -cclib -pthread   -I +site-lib/camlimages  -I +lablGL -I +lablgtk2    -I +site-lib/sdl -o freetennis  bigarray.cmxa sdl.cmxa lablgtk.cmxa lablgl.cmxa  camlimages_core.cmxa  sdlmixer.cmxa sdlttf.cmxa unix.cmxa freetennis.ml
++	ocamlfind ocamlopt -linkpkg  -noassert -package threads.posix -package bigarray -package camlimages.core -package lablgtk2.gl -package sdl.sdlmixer -package sdl.sdlttf -I +site-lib/lablGL -o freetennis lablgl.cmxa freetennis.ml

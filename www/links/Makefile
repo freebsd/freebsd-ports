@@ -1,6 +1,6 @@
 PORTNAME=	links
 PORTVERSION=	2.29
-PORTREVISION=	2
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://links.twibright.com/download/
@@ -12,42 +12,41 @@ WWW=		http://links.twibright.com/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL=	links1
-
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ssl --without-pmshell --without-atheos \
-		--without-gpm --without-fb --without-windows
-
 USES=		cpe localbase:ldflags ssl tar:bz2
-
 CPE_VENDOR=	twibright
 
-PLIST_FILES=	bin/links man/man1/links.1.gz
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+CONFIGURE_ARGS=	--with-ssl --without-pmshell --without-atheos \
+		--without-gpm --without-fb --without-windows
+CONFLICTS_INSTALL=	links1
+
+PLIST_FILES=	bin/links share/man/man1/links.1.gz
 
 OPTIONS_DEFINE=	BROTLI CIPHERSTRING DIRECTFB IPV6 SVG SVGALIB THREADS TRANS \
 		UTF8 X11
 OPTIONS_DEFAULT=	UTF8 X11
 
-BROTLI_LIB_DEPENDS=	libbrotlidec.so:archivers/brotli
-BROTLI_CONFIGURE_WITH=	brotli
-
 CIPHERSTRING_DESC=	Select the OpenSSL ciphers used via CIPHERSTRING
 DIRECTFB_DESC=		DirectFB graphics support
 TRANS_DESC=		Hack for background transparency
+
+BROTLI_LIB_DEPENDS=	libbrotlidec.so:archivers/brotli
+BROTLI_CONFIGURE_WITH=	brotlis
 
 DIRECTFB_LIB_DEPENDS=	libdirectfb.so:devel/directfb
 DIRECTFB_CONFIGURE_WITH=directfb
 
 IPV6_CONFIGURE_WITH=	ipv6
 
-SVG_CONFIGURE_WITH=	librsvg
-SVG_USES=		gnome
-SVG_USE=		gnome=librsvg2,glib20,gdkpixbuf2,cairo
-
 SVGALIB_LIB_DEPENDS=	libvga.so:graphics/svgalib
 SVGALIB_CONFIGURE_WITH=	svgalib
+
+SVG_USES=		gnome
+SVG_USE=		gnome=librsvg2,glib20,gdkpixbuf2,cairo
+SVG_CONFIGURE_WITH=	librsvg
 
 THREADS_CFLAGS=	-DHAVE_PTHREADS
 THREADS_LDFLAGS=-pthread
@@ -56,11 +55,11 @@ TRANS_EXTRA_PATCHES=	${FILESDIR}/extra-terminal.c.diff
 
 UTF8_CONFIGURE_ENABLE=	utf8
 
-X11_USES=		xorg
-X11_USE=		xorg=x11,xorgproto
 X11_LIB_DEPENDS=	libevent.so:devel/libevent \
 			libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2
+X11_USES=		xorg
+X11_USE=		xorg=x11,xorgproto
 
 X11_CONFIGURE_WITH=	x
 X11_PLIST_FILES=	share/pixmaps/links.xpm

@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2024-03-05 11:04:37 UTC
++++ pyproject.toml
+@@ -52,5 +52,5 @@ target-version = "py37"
+ ]
+ 
+ [build-system]
+-requires = ["poetry>=1.0"]
+-build-backend = "poetry.masonry.api"
++requires = ["poetry-core>=1.0"]
++build-backend = "poetry.core.masonry.api"

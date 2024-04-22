@@ -1,6 +1,6 @@
 PORTNAME=	pwcbsd
 PORTVERSION=	1.4.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	multimedia sysutils
 MASTER_SITES=	http://raaf.atspace.org/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/ \
@@ -56,10 +56,10 @@ post-patch:
 do-install:
 	${MKDIR} ${STAGEDIR}${KMODDIR}
 	${INSTALL_KLD} ${WRKSRC}/pwc.ko ${STAGEDIR}${KMODDIR}
-	${INSTALL_MAN} ${WRKSRC}/pwc.4 ${STAGEDIR}${PREFIX}/man/man4
+	${INSTALL_MAN} ${WRKSRC}/pwc.4 ${STAGEDIR}${PREFIX}/share/man/man4
 .if ${PORT_OPTIONS:MPROGRAMS}
 	${INSTALL_PROGRAM} ${PROGRAMS:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${PROGRAMS:S|^|${WRKSRC}/|}.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${PROGRAMS:S|^|${WRKSRC}/|}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 .endif
 
 .include <bsd.port.mk>

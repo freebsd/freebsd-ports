@@ -1,4 +1,6 @@
 bin/bin2obj
+bin/chmcmd
+bin/chmls
 bin/cldrparser
 bin/compileserver
 bin/cvsco.tdf
@@ -220,6 +222,7 @@ lib/fpc/%%PORTVERSION%%/msg/errorpt.msg
 lib/fpc/%%PORTVERSION%%/msg/errorptu.msg
 lib/fpc/%%PORTVERSION%%/msg/errorr.msg
 lib/fpc/%%PORTVERSION%%/msg/errorru.msg
+lib/fpc/%%PORTVERSION%%/msg/errortr.msg
 lib/fpc/%%PORTVERSION%%/msg/errorues.msg
 %%FPC_I386%%lib/fpc/%%PORTVERSION%%/ppc386
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/ppcx64
@@ -905,6 +908,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/sslsockets.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/ssockets.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/ssockets.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/ssockets.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-passrc/dpktolpk.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-passrc/dpktolpk.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-passrc/pasresolveeval.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-passrc/pasresolveeval.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-passrc/pasresolveeval.rsj
@@ -1271,6 +1276,13 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpextjs.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpextjs.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpfcgi.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpfcgi.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpfcmclient.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpfcmclient.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpfcmstrings.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpfcmstrings.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpfcmstrings.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpfcmtypes.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpfcmtypes.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fphtml.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fphtml.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fphtml.rsj
@@ -2411,6 +2423,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/dateutils.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/dateutils.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/fmtbcd.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/fmtbcd.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/fpmonitor.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/fpmonitor.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/nullable.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/rtti.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/rtti.ppu
@@ -2753,6 +2767,9 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.analytics.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.analytics.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.ansistrings.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.ansistrings.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.credentials.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.credentials.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.credentials.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.devices.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.devices.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.diagnostics.o
@@ -2780,6 +2797,9 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.permissions.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.pushnotifications.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.pushnotifications.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.pushnotifications.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.threading.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.threading.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.threading.rsj
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/wasmedge/libwasmedge.o
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/wasmedge/libwasmedge.ppu
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/wasmtime/wasmtime.o

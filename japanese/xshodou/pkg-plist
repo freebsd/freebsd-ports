@@ -1,6 +1,6 @@
 bin/xshodou
-man/man1/xshodou.1.gz
 lib/X11/XShodou/xshodou-title.xbm
 lib/X11/XShodou/COPYRIGHT
 lib/X11/XShodou/README
 lib/X11/XShodou/INSTALL
+share/man/man1/xshodou.1.gz

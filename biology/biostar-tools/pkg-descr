@@ -1,16 +1,19 @@
-Biostar-Tools is a metaport for installing all the tools necessary to work
-through the Biostar Handbook, except for bedGrapToBigWig, which has license
-restrictions.  If you need bedGraphToBigWig, run
+Biostar-Tools is a metaport for installing all the tools necessary to
+work through the Biostar Handbook, except for bedGrapToBigWig, which
+has license restrictions.  If you need bedGraphToBigWig, run
 
 	cd /usr/ports/biology/ucsc-userapps && make install clean
 
-The handbook instructs the user to install these tools mostly via bioconda,
-which then requires the user to activate the bioconda environment each time
-they want to use the tools.  This meta-package installs all of the tools
-except emboss to the default PATH so they just work without any special
-environment.  Emboss commands are installed to /usr/local/emboss/bin due to
-conflicts with other packages.
-
-You can also install conda packages on FreeBSD.  For details, see
+The handbook instructs the reader to install these tools mostly via
+bioconda, which then requires the user to activate the bioconda
+environment each time they want to use the tools.  You can also
+install conda packages on FreeBSD if you wish.  For details, see
 
 	/usr/ports/sysutils/linux-miniconda-installer/pkg-descr
+
+This meta-package installs all of the tools except emboss to the
+default PATH (normally /usr/local/bin) so they just work without any
+special environment.  Emboss commands are installed to
+/usr/local/emboss/bin due to conflicts with other packages.  Run
+"biostar-shell" to add the emboss commands to your PATH, and simply
+exit the shell to return your PATH to normal.

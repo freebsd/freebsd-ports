@@ -29,7 +29,7 @@ bin/amath
 %%APPLIBM%%libdata/pkgconfig/amathc.pc
 %%APPLIBM%%libdata/pkgconfig/amathi.pc
 %%APPLIBM%%libdata/pkgconfig/amathr.pc
-man/man1/amath.1.gz
-%%APPLIBM%%man/man3/amathc.3.gz
-%%APPLIBM%%man/man3/amathi.3.gz
-%%APPLIBM%%man/man3/amathr.3.gz
+share/man/man1/amath.1.gz
+%%APPLIBM%%share/man/man3/amathc.3.gz
+%%APPLIBM%%share/man/man3/amathi.3.gz
+%%APPLIBM%%share/man/man3/amathr.3.gz

@@ -1,11 +1,11 @@
 %%IRCBUG%%bin/ircbug
-%%IRCBUG%%man/man1/ircbug.1.gz
+%%IRCBUG%%share/man/man1/ircbug.1.gz
 bin/irc
 bin/ircflush
 libexec/ircio
 libexec/wserv
-man/man1/irc.1.gz
-man/man1/ircII.1.gz
+share/man/man1/irc.1.gz
+share/man/man1/ircII.1.gz
 %%HELP%%%%DATADIR%%/help/!
 %%HELP%%%%DATADIR%%/help/.date
 %%HELP%%%%DATADIR%%/help/:

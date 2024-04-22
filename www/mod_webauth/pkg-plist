@@ -15,4 +15,4 @@ lib/lib%%AP_NAME%%.so.12.0.0
 libdata/pkgconfig/lib%%AP_NAME%%.pc
 libexec/apache2/modules/%%AP_MODULE%%
 libexec/apache2/modules/mod_%%AP_NAME%%ldap.so
-man/man1/wa_keyring.1.gz
+share/man/man1/wa_keyring.1.gz

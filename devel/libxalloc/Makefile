@@ -14,7 +14,7 @@ USES=		uidfix
 
 MAKEFILE=	${FILESDIR}/Makefile.lib
 USE_LDCONFIG=	yes
-MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
+MAKE_ENV=	WITHOUT_PROFILE=yes SRCCONF=/dev/null
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -23,7 +23,6 @@ include/pqxx/internal/array-composite.hxx
 include/pqxx/internal/callgate.hxx
 include/pqxx/internal/concat.hxx
 include/pqxx/internal/conversions.hxx
-include/pqxx/internal/cxx-features.hxx
 include/pqxx/internal/encoding_group.hxx
 include/pqxx/internal/encodings.hxx
 include/pqxx/internal/gates/connection-errorhandler.hxx

@@ -1,0 +1,3 @@
+django-permissionedforms is an extension to Django's forms framework, allowing
+you to define forms where certain fields are shown or omitted according to the
+user's permissions.

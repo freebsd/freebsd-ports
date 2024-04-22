@@ -1,7 +1,6 @@
 PORTNAME=	gramps
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.1.6
-PORTREVISION=	1
+DISTVERSION=	5.2.2
 CATEGORIES=	science gnome python
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -13,10 +12,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgeocode-glib.so:net/geocode-glib \
 		libosmgpsmap-1.0.so:x11-toolkits/osm-gps-map
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=0:graphics/py-pygraphviz@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}berkeleydb>0:databases/py-berkeleydb@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pygraphviz>=0:graphics/py-pygraphviz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyicu>=1.8:devel/py-pyicu@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
-		xdg-open:devel/xdg-utils
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		desktop-file-utils gettext gnome python shared-mime-info
 USE_GITHUB=	yes
@@ -39,8 +38,5 @@ GTKSPELL_LIB_DEPENDS=		libgtkspell3-3.so:textproc/gtkspell3
 PIL_RUN_DEPENDS=		${PY_PILLOW}
 RCS_RUN_DEPENDS=		rcsdiff:devel/rcs
 TTFFREEFONT_RUN_DEPENDS=	${LOCALBASE}/share/fonts/freefont-ttf/FreeMono.ttf:x11-fonts/freefont-ttf
-
-post-install:
-	${ECHO_CMD} -n ${PREFIX}/share > ${STAGEDIR}${PYTHON_SITELIBDIR}/gramps/gen/utils/resource-path
 
 .include <bsd.port.mk>

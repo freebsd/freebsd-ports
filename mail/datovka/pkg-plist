@@ -2,6 +2,8 @@ bin/datovka
 share/applications/datovka.desktop
 %%DATADIR%%/localisations/datovka_cs.qm
 %%DATADIR%%/localisations/datovka_en.qm
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
 share/icons/hicolor/128x128/apps/datovka.png
 share/icons/hicolor/16x16/apps/datovka.png
 share/icons/hicolor/24x24/apps/datovka.png

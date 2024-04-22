@@ -1,5 +1,5 @@
 PORTNAME=	sdl_gfx
-PORTVERSION=	2.0.26
+PORTVERSION=	2.0.27
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ferzkopp.net/Software/SDL_gfx-${PORTVERSION:R}/
 DISTNAME=	SDL_gfx-${PORTVERSION}

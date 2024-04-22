@@ -1,5 +1,6 @@
 PORTNAME=	dvdisaster
 DISTVERSION=	0.79.10
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://dvdisaster.jcea.es/downloads/
 
@@ -51,7 +52,7 @@ DOCS_CONFIGURE_ON=	--docdir=${DOCSDIR}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/documentation/${PORTNAME}.en.1 ${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
+	${INSTALL_MAN} ${WRKSRC}/documentation/${PORTNAME}.en.1 ${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

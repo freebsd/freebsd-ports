@@ -6,7 +6,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:LODIN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kurt.lidl@cello.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Strip leading whitespace from here-docs
 WWW=		https://metacpan.org/release/Text-Outdent
 

@@ -1,5 +1,5 @@
-TIMESTAMP = 1697828073
+TIMESTAMP = 1707060981
 SHA256 (OpenPrinting-cups-v2.4.2_GH0.tar.gz) = 7095b2977bb728ded5566a5c802866062840d6541fd027836865949a407c3682
 SIZE (OpenPrinting-cups-v2.4.2_GH0.tar.gz) = 8173207
-SHA256 (battleblow-jdk11u-jdk-11.0.21+9-1_GH0.tar.gz) = b679d0e10fced00008d35e9ec0bd7663b729e674b92acc5abde83b2dac942c28
-SIZE (battleblow-jdk11u-jdk-11.0.21+9-1_GH0.tar.gz) = 116433451
+SHA256 (battleblow-jdk11u-jdk-11.0.22+7-1_GH0.tar.gz) = d4e33661cfe15cb8ca16b10477149d9d12cff5f59597fe28fc9f2beec60d906b
+SIZE (battleblow-jdk11u-jdk-11.0.22+7-1_GH0.tar.gz) = 116371964

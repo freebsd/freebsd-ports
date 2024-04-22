@@ -1,6 +1,5 @@
 PORTNAME=	nestopia
-DISTVERSION=	1.52.0
-PORTREVISION=	1
+DISTVERSION=	1.52.1
 CATEGORIES=	emulators
 
 MAINTAINER=	mclay@astate.edu

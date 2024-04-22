@@ -1,8 +1,7 @@
 PORTNAME=	linbox
 PORTVERSION=	1.7.0
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -11,10 +10,6 @@ WWW=		https://linalg.org/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
-
-# See https://github.com/linbox-team/givaro/issues/225
-# and https://github.com/linbox-team/linbox/issues/306
-BROKEN_FreeBSD_14=	fails to compile with clang 16
 
 BUILD_DEPENDS=	fflas-ffpack-config:math/fflas-ffpack
 LIB_DEPENDS=	libgmp.so:math/gmp		\
@@ -31,6 +26,7 @@ SHEBANG_FILES=	benchmarks/perfpublisher.sh linbox-auto-install.sh	\
 		linbox-config.in tests/jenkins-maker.sh	\
 		tests/perfpublisher.sh tests/test_leak.sh
 USE_CXXSTD=	c++14
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 OPTIONS_DEFINE=		DOXYGEN
 OPTIONS_RADIO=		SIZE

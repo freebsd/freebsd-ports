@@ -1,6 +1,6 @@
 PORTNAME=	dbench
 PORTVERSION=	4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks
 MASTER_SITES=	SAMBA/tridge/dbench
 
@@ -16,6 +16,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 USES=		autoreconf
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=--datadir=${DATADIR}
 
 post-install:

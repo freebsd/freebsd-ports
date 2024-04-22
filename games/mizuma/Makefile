@@ -1,5 +1,5 @@
 PORTNAME=	mizuma
-DISTVERSION=	2023.11
+DISTVERSION=	2024.01
 CATEGORIES=	games emulators 
 MASTER_SITES=	https://codeberg.org/Alexander88207/Mizutamari/archive/${PORTVERSION}${EXTRACT_SUFX}?dummy=/
 
@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS_REASON=	Wine only runs on x86 architecture
 RUN_DEPENDS=	7zz:archivers/7-zip \
 		bash:shells/bash \
 		vulkaninfo:graphics/vulkan-tools \
-		wine:emulators/wine7 \
+		wine:emulators/wine \
 		wine-mono>0:emulators/wine-mono \
 		winetricks:emulators/winetricks \
 		xdg-open:devel/xdg-utils \

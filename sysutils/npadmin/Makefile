@@ -1,6 +1,6 @@
 PORTNAME=	npadmin
 PORTVERSION=	0.8.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils print
 MASTER_SITES=	SF
 
@@ -10,11 +10,12 @@ WWW=		https://npadmin.sourceforge.net/
 
 USES=		compiler
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_clang=	-Wno-c++11-narrowing
 
-PLIST_FILES=	bin/npadmin man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/npadmin share/man/man1/${PORTNAME}.1.gz
 
 pre-configure:
 	${RM} ${WRKSRC}/getopt.h ${WRKSRC}/getopt1.c

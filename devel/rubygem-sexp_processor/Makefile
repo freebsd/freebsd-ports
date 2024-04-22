@@ -1,11 +1,12 @@
 PORTNAME=	sexp_processor
-PORTVERSION=	4.17.0
+PORTVERSION=	4.17.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Generic sexp processing tools
-WWW=		https://github.com/seattlerb/sexp_processor
+WWW=		https://docs.seattlerb.org/sexp_processor/ \
+		https://github.com/seattlerb/sexp_processor
 
 LICENSE=	MIT
 

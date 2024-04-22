@@ -1,5 +1,5 @@
 bin/sdlroids
-man/man6/sdlroids.6.gz
+share/man/man6/sdlroids.6.gz
 share/pixmaps/sdlroids.png
 %%DATADIR%%/bmp/blank.bmp
 %%DATADIR%%/bmp/bomb.bmp

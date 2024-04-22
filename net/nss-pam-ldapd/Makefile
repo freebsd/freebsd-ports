@@ -1,6 +1,6 @@
 PORTNAME=		nss-pam-ldapd
 PORTVERSION=		0.9.12
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		net
 MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/ \
 			ZI
@@ -16,6 +16,7 @@ USES=			cpe ldap
 
 CPE_VENDOR=		arthurdejong
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_RC_SUBR=		nslcd
 PAM_LDAP_SHMAJOR=	1
 NSS_LDAP_SHMAJOR=	1

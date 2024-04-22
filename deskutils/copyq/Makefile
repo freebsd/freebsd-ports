@@ -1,12 +1,9 @@
 PORTNAME=	copyq
-DISTVERSION=	7.1.0
+DISTVERSION=	8.0.0
 CATEGORIES=	deskutils
 MASTER_SITES=	https://github.com/hluk/CopyQ/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-${FLAVOR}
 DISTNAME=	CopyQ-${DISTVERSION}
-
-PATCH_SITES=	https://github.com/hluk/CopyQ/commit/
-PATCHFILES+=	19e9dd1c2ecb49b14a24159c5ac3bc1b77fdf250.patch:-p1 # Fix build with Qt 6.6.0
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Qt${FLAVOR:S/qt//} based clipboard manager
@@ -23,11 +20,11 @@ FLAVOR?=		qt5
 qt5_CONFLICTS_INSTALL=	copyq-qt6
 qt6_CONFLICTS_INSTALL=	copyq-qt5
 
-USES=		cmake compiler:c++17-lang gl kde:5 pkgconfig \
-		qt:${FLAVOR:S/qt//} xorg
+USES=		cmake gl kde:${FLAVOR:S/qt//} pkgconfig qt:${FLAVOR:S/qt//} \
+		xorg
 USE_GL=		gl
 _USE_KDE_qt5=	ecm:build notifications
-_USE_KDE_qt6=	ecm:build
+_USE_KDE_qt6=	ecm:build notifications statusnotifieritem
 USE_KDE=	${_USE_KDE_${FLAVOR}}
 _USE_QT5=	core dbus declarative gui network svg wayland widgets x11extras \
 		xml buildtools:build qmake:build

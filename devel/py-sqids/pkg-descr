@@ -1,0 +1,15 @@
+Sqids (pronounced "squids") is a small library that lets one generate
+YouTube-like unique IDs from numbers.  It is good for link shortening,
+fast and URL-safe ID generation, and decoding back into numbers for
+quicker database lookups.
+
+Good for:
+
+  - Generating IDs for public URLs (e.g. link shortening)
+  - Generating IDs for internal systems (e.g. event tracking)
+  - Decoding for quicker database lookups (e.g. by primary keys)
+
+Not good for:
+
+  - Sensitive data (this is not an encryption library)
+  - User IDs (can be decoded revealing user count)

@@ -8,7 +8,7 @@ bin/omega-game
 %%DATADIR%%/omega.log
 %%DATADIR%%/omegahi.bak
 @mode
-man/man6/omega.6.gz
+share/man/man6/omega.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/buglist.txt
 %%PORTDOCS%%%%DOCSDIR%%/compile.all
 %%PORTDOCS%%%%DOCSDIR%%/omega.txt

@@ -12,6 +12,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
+BROKEN=		error[E0635]: unknown feature stdsimd, see https://github.com/ezrosent/frawk/issues/110
+
 BUILD_DEPENDS=	gmake:devel/gmake \
 		rust-nightly>0:lang/rust-nightly
 

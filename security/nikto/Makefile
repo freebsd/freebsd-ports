@@ -1,5 +1,6 @@
 PORTNAME=	nikto
 PORTVERSION=	2.1.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security www
 
@@ -39,7 +40,7 @@ post-patch:	.SILENT
 
 do-install:	.SILENT
 	${INSTALL_SCRIPT} ${WRKSRC}/nikto.pl ${STAGEDIR}${PREFIX}/bin/nikto
-	${INSTALL_MAN} ${WRKSRC}/docs/nikto.1 ${STAGEDIR}${PREFIX}/man/man1/nikto.1
+	${INSTALL_MAN} ${WRKSRC}/docs/nikto.1 ${STAGEDIR}${PREFIX}/share/man/man1/nikto.1
 	${INSTALL_DATA} ${WRKSRC}/nikto.conf ${STAGEDIR}${PREFIX}/etc/nikto.conf.sample
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/replay.pl ${STAGEDIR}${DATADIR}

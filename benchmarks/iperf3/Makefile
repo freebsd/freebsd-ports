@@ -1,5 +1,6 @@
 PORTNAME=	iperf
 DISTVERSION=	3.16
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://downloads.es.net/pub/iperf/
 PKGNAMESUFFIX=	3
@@ -13,6 +14,7 @@ LICENSE_COMB=	multi
 
 USES=		cpe libtool ssl
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	iperf_project

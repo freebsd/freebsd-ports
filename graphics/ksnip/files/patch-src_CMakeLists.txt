@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2024-01-26 06:54:23 UTC
++++ src/CMakeLists.txt
+@@ -273,7 +273,7 @@ elseif (UNIX)
+                 Qt5::DBus
+                 Qt5::X11Extras
+                 kImageAnnotator::kImageAnnotator
+-                kColorPicker::kColorPicker
++                kColorPicker::kColorPicker-Qt5
+                 XCB::XFIXES
+                 )
+ 

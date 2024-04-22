@@ -1,6 +1,6 @@
---- src/slic3r/GUI/KBShortcutsDialog.cpp.orig	2023-07-25 11:17:47 UTC
+--- src/slic3r/GUI/KBShortcutsDialog.cpp.orig	2023-12-12 14:21:21 UTC
 +++ src/slic3r/GUI/KBShortcutsDialog.cpp
-@@ -54,7 +54,7 @@ KBShortcutsDialog::KBShortcutsDialog()
+@@ -59,7 +59,7 @@ KBShortcutsDialog::KBShortcutsDialog()
      main_sizer->SetSizeHints(this);
      this->CenterOnParent();
  

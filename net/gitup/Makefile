@@ -1,6 +1,5 @@
 PORTNAME=	gitup
-DISTVERSION=	0.98-14
-DISTVERSIONSUFFIX=	-g5e26080
+DISTVERSION=	0.99
 CATEGORIES=	net
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -18,7 +17,7 @@ MAKE_ENV+=	CONFIG_FILE_PATH=${LOCALBASE}/etc/gitup.conf
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/gitup \
-		etc/gitup.conf.sample \
+		"@sample etc/gitup.conf.sample" \
 		share/man/man1/gitup.1.gz \
 		share/man/man5/gitup.conf.5.gz
 PORTDOCS=	README.md

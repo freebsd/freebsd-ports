@@ -1,6 +1,5 @@
 bin/pcsx2-qt
 share/applications/PCSX2.desktop
-share/pixmaps/PCSX2.png
 %%DATADIR%%/resources/GameIndex.yaml
 %%DATADIR%%/resources/RedumpDatabase.yaml
 %%DATADIR%%/resources/cover-placeholder.png
@@ -8,8 +7,11 @@ share/pixmaps/PCSX2.png
 %%DATADIR%%/resources/fonts/Roboto-Regular.ttf
 %%DATADIR%%/resources/fonts/RobotoMono-Medium.ttf
 %%DATADIR%%/resources/fonts/fa-solid-900.ttf
+%%DATADIR%%/resources/fonts/promptfont-license
+%%DATADIR%%/resources/fonts/promptfont.otf
 %%DATADIR%%/resources/fullscreenui/applications-system.png
 %%DATADIR%%/resources/fullscreenui/media-cdrom.png
+%%DATADIR%%/resources/fullscreenui/no-save.png
 %%DATADIR%%/resources/fullscreenui/placeholder.png
 %%DATADIR%%/resources/game_controller_db.txt
 %%DATADIR%%/resources/icons/AppIconLarge.png
@@ -73,3 +75,4 @@ share/pixmaps/PCSX2.png
 %%DATADIR%%/resources/sounds/achievements/lbsubmit.wav
 %%DATADIR%%/resources/sounds/achievements/message.wav
 %%DATADIR%%/resources/sounds/achievements/unlock.wav
+share/pixmaps/PCSX2.png

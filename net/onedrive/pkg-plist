@@ -1,6 +1,6 @@
 bin/onedrive
 etc/logrotate.d/onedrive
-man/man1/onedrive.1.gz
+share/man/man1/onedrive.1.gz
 %%COMPLETION%%share/bash-completion/completions/onedrive
 %%COMPLETION%%share/zsh/site-functions/_onedrive
 %%COMPLETION%%share/fish/completions/onedrive.fish

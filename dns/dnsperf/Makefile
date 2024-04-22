@@ -1,5 +1,6 @@
 PORTNAME=	dnsperf
 DISTVERSION=	2.11.0
+PORTREVISION=	1
 CATEGORIES=	dns benchmarks net
 MASTER_SITES=	https://www.dns-oarc.net/files/${PORTNAME}/
 
@@ -17,6 +18,7 @@ LIB_DEPENDS=	libnghttp2.so:www/libnghttp2 \
 USES=		compiler:c11 libtool pkgconfig ssl
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	libssl_LIBS="-lssl -L${OPENSSLLIB}" \
 		libssl_CFLAGS="-I${OPENSSLINC}" \
 		libcrypto_LIBS="-lcrypto -L${OPENSSLLIB}" \
@@ -28,7 +30,7 @@ MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 PLIST_FILES=	bin/dnsperf \
 		bin/resperf \
 		bin/resperf-report \
-		man/man1/dnsperf.1.gz \
-		man/man1/resperf.1.gz
+		share/man/man1/dnsperf.1.gz \
+		share/man/man1/resperf.1.gz
 
 .include <bsd.port.mk>

@@ -1,6 +1,7 @@
 PORTNAME=	zmap
-DISTVERSION=	3.0.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,8 +40,6 @@ JSON_CMAKE_BOOL=	WITH_JSON
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/etc/zmap|${LOCALBASE}/etc/zmap|g' -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -i '' -e 's|share/man/man1|man/man1|g' \
-		${WRKSRC}/src/CMakeLists.txt
 	@${REINPLACE_CMD} -i '' -e 's|/etc/zmap/zmap.conf|${LOCALBASE}/etc/zmap/zmap.conf|g' \
 		${WRKSRC}/src/zopt.ggo.in \
 		${WRKSRC}/src/zmap.c

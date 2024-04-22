@@ -1,5 +1,6 @@
 PORTNAME=	xshogi
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	GNU/gnushogi
 
@@ -11,11 +12,12 @@ RUN_DEPENDS=	gnushogi:games/gnushogi
 USES=		xorg
 USE_XORG=	xt xaw x11
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 PORTDOCS=	README.xboard BUGS
-PLIST_FILES=	bin/xshogi man/man6/xshogi.6.gz
+PLIST_FILES=	bin/xshogi share/man/man6/xshogi.6.gz
 
 OPTIONS_DEFINE=	DOCS
 

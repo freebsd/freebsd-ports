@@ -14,7 +14,7 @@ USES=		autoreconf
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/nbtscan \
-		man/man1/nbtscan.1.gz
+		share/man/man1/nbtscan.1.gz
 PORTDOCS=	README.md
 
 GH_ACCOUNT=	resurrecting-open-source-projects

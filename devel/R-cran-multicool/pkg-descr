@@ -1,2 +1,4 @@
 A set of tools to permute multisets without loops or hash tables and to generate
 integer partitions.
+
+See also <https://github.com/jmcurran/multicool>.

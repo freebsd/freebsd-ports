@@ -8,14 +8,6 @@ bin/pklogin_finder
 lib/pam_pkcs11/opensc_mapper.so
 lib/pam_pkcs11/openssh_mapper.so
 lib/security/pam_pkcs11.so
-man/man1/card_eventmgr.1.gz
-man/man1/pkcs11_eventmgr.1.gz
-man/man1/pkcs11_inspect.1.gz
-man/man1/pkcs11_listcerts.1.gz
-man/man1/pkcs11_make_hash_link.1.gz
-man/man1/pkcs11_setup.1.gz
-man/man1/pklogin_finder.1.gz
-man/man8/pam_pkcs11.8.gz
 %%NLS%%share/locale/de/LC_MESSAGES/pam_pkcs11.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pam_pkcs11.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pam_pkcs11.mo
@@ -24,3 +16,11 @@ man/man8/pam_pkcs11.8.gz
 %%NLS%%share/locale/pl/LC_MESSAGES/pam_pkcs11.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/pam_pkcs11.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/pam_pkcs11.mo
+share/man/man1/card_eventmgr.1.gz
+share/man/man1/pkcs11_eventmgr.1.gz
+share/man/man1/pkcs11_inspect.1.gz
+share/man/man1/pkcs11_listcerts.1.gz
+share/man/man1/pkcs11_make_hash_link.1.gz
+share/man/man1/pkcs11_setup.1.gz
+share/man/man1/pklogin_finder.1.gz
+share/man/man8/pam_pkcs11.8.gz

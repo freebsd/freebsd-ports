@@ -1,16 +1,18 @@
 --- Makefile.orig	2020-05-26 04:29:37 UTC
 +++ Makefile
-@@ -9,8 +9,8 @@
+@@ -9,9 +9,9 @@
  
  # User-definable stuff:
  
 -CC=gcc
 -PREFIX=/usr/local
+-MAN_PREFIX=$(PREFIX)
 +#CC=gcc
 +#PREFIX=/usr/local
- MAN_PREFIX=$(PREFIX)
++MAN_PREFIX=$(PREFIX)/share
  BIN_PREFIX=$(PREFIX)/bin
  DATA_PREFIX=$(PREFIX)/share/defendguin/
+ JOY=YES
 @@ -40,14 +40,14 @@ install:	defendguin
  
  .PHONY: install

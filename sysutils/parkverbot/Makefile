@@ -13,8 +13,9 @@ LIB_DEPENDS=	libHX.so:lang/libhx
 
 USES=		pkgconfig tar:xz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-PLIST_FILES=	man/man8/parkverbot.8.gz sbin/parkverbot
+PLIST_FILES=	share/man/man8/parkverbot.8.gz sbin/parkverbot
 
 post-install:
 	${RM} -r ${STAGEDIR}/lib/systemd

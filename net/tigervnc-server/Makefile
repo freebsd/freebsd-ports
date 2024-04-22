@@ -1,4 +1,4 @@
-PORTREVISION=	2
+PORTREVISION=	4
 PKGNAMESUFFIX=	-server
 
 COMMENT=	TigerVNC Server
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libxshmfence.so:x11/libxshmfence \
 RUN_DEPENDS+=	${LOCALBASE}/share/X11/xkb/rules/base:x11/xkeyboard-config \
 		xkbcomp:x11/xkbcomp
 
-USES+=		autoreconf:build compiler:c11 gl jpeg libtool pkgconfig ssl shebangfix xorg
+USES+=		autoreconf:build compiler:c11 gl jpeg libtool perl5 pkgconfig ssl shebangfix xorg
 USE_LDCONFIG=	yes
 USE_GL+=	gl
 USE_XORG+=	ice pixman sm x11 xau xdamage xdmcp xext xfixes xfont2 \
@@ -37,7 +37,7 @@ GNUTLS_LIB_DEPENDS=	libtasn1.so:security/libtasn1 \
 PAM_CMAKE_BOOL=	ENABLE_PAM
 
 CONFIGURE_ARGS+=	\
-		--prefix=${PREFIX} --mandir=${MANPREFIX}/share/man \
+		--prefix=${PREFIX} --mandir=${PREFIX}/share/man \
 		--docdir=${PREFIX}/share/doc/${PORTNAME}/ --with-pic --without-dtrace \
 		--disable-static --disable-dri --disable-unit-tests \
 		--disable-xinerama --disable-xvfb --disable-xnest --disable-xorg \
@@ -95,7 +95,7 @@ post-stage:
 	# Install v1.10.0 vncserver script and manpage.
 	# See: https://cgit.freebsd.org/ports/commit/net/tigervnc-server?id=e6d3d07
 	${INSTALL_SCRIPT} ${FILESDIR}/v1.10.0-vncserver ${STAGEDIR}${PREFIX}/bin/vncserver
-	${INSTALL_MAN} ${FILESDIR}/v1.10.0-vncserver.man ${STAGEDIR}${MANPREFIX}/share/man/man8/vncserver.8
+	${INSTALL_MAN} ${FILESDIR}/v1.10.0-vncserver.man ${STAGEDIR}${PREFIX}/share/man/man8/vncserver.8
 
 post-install:
 	cd ${WRKSRC}/unix/xserver/hw/vnc/ && \

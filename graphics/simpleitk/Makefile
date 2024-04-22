@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv7=	clang consistently runs out of memory
 BROKEN_i386=	clang consistently runs out of memory
+BROKEN_powerpc=	clang consistently runs out of memory
 
 LIB_DEPENDS=	libgdcmCommon.so:devel/gdcm \
 		libhdf5.so:science/hdf5 \

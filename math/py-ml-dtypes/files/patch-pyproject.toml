@@ -1,27 +1,24 @@
---- pyproject.toml.orig	2023-09-19 22:47:59 UTC
+--- pyproject.toml.orig	2024-04-01 15:41:58 UTC
 +++ pyproject.toml
-@@ -17,10 +17,7 @@ keywords = []
+@@ -17,10 +17,7 @@ dependencies = [
  # pip dependencies of the project
  dependencies = [
      # Ensure numpy release supports Python version.
 -    "numpy>1.20",
--    "numpy>=1.21.2; python_version>'3.9'",
--    "numpy>=1.23.3; python_version>'3.10'",
--    "numpy>=1.26.0; python_version>'3.12'",
-+    "numpy>=1.21.2",
+-    "numpy>=1.21.2; python_version>='3.10'",
+-    "numpy>=1.23.3; python_version>='3.11'",
+-    "numpy>=1.26.0; python_version>='3.12'",
++    "numpy>=1.23.3",
  ]
  
  [project.urls]
-@@ -49,11 +46,9 @@ pyink-use-majority-quotes = true
+@@ -49,8 +46,8 @@ requires = [
  [build-system]
  requires = [
-     # Build with oldest supported numpy for each Python version.
--    "numpy~=1.21.2; python_version<'3.11'",
--    "numpy~=1.23.3; python_version>='3.11' and python_version<'3.12'",
--    "numpy~=1.26.0; python_version>='3.12'",
-+    "numpy>=1.21.2",
-     "pybind11~=2.11.1",
+     # TODO(phawkins): update this to 2.0.0 after its release.
+-    "numpy==2.0.0rc1",
 -    "setuptools~=68.1.0",
++    "numpy>=1.23.3",
 +    "setuptools",
  ]
  build-backend = "setuptools.build_meta"

@@ -1,6 +1,6 @@
 --- Makefile.orig	2003-06-21 15:16:34 UTC
 +++ Makefile
-@@ -35,7 +35,7 @@ STRIP    = strip
+@@ -35,24 +35,24 @@ STRIP    = strip
  
  # Installation sites (GNU conventions):
  #
@@ -8,8 +8,11 @@
 +prefix   = ${PREFIX}
  bindir   = $(prefix)/bin
  includedir = $(prefix)/include
- mandir   = $(prefix)/man
-@@ -45,14 +45,14 @@ infodir  = $(prefix)/info
+-mandir   = $(prefix)/man
++mandir   = $(prefix)/share/man
+ man1dir  = $(mandir)/man1
+ infodir  = $(prefix)/info
+ 
  # CC and CFLAGS set for gcc, but any ANSI-C compiler should work.
  # For non-gcc compilers, simply set CFLAGS = -O (to start with)
  #
@@ -40,7 +43,7 @@
  #
  # for experimental truetype font support
  #
-@@ -230,13 +230,13 @@ ALL_CFLAGS	= -c $(CFLAGS)
+@@ -230,13 +230,13 @@ SRCS	= clip.c fillpoly.c\
  
  # $(SRCS) NOT USED YET:
  SRCS	= clip.c fillpoly.c\
@@ -56,7 +59,7 @@
  	  to_vec.o to_pcx.o to_pcl.o  to_eps.o to_img.o to_pbm.o \
  	  to_rgip.o to_fig.o std_main.o $(PREVIEWER).o pendef.o lindef.o $(EX_OBJ)
  
-@@ -244,8 +244,9 @@ PROGRAM	= hp2xx
+@@ -244,8 +244,9 @@ $(PROGRAM): $(OBJS)
  
  $(PROGRAM): $(OBJS)
  	$(CC) $(LFLAGS) $(OBJS) $(ALL_LIBS) $(EX_LIBS) -o $(PROGRAM)
@@ -80,7 +83,7 @@
  
  
  #########################################################################
-@@ -327,18 +328,14 @@ realclean:
+@@ -327,18 +328,14 @@ TAGS:
  TAGS:
  	@echo make TAGS -- not supported nor needed.
  

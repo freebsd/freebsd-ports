@@ -15,7 +15,6 @@ lib/libkwalletbackend5.so
 lib/libkwalletbackend5.so.5
 lib/libkwalletbackend5.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KWallet.pri
-man/man1/kwallet-query.1.gz
 share/applications/org.kde.kwalletd5.desktop
 share/dbus-1/interfaces/kf5_org.kde.KWallet.xml
 share/dbus-1/services/org.kde.kwalletd5.service
@@ -147,5 +146,6 @@ share/locale/zh_CN/LC_MESSAGES/kwallet-query.mo
 share/locale/zh_CN/LC_MESSAGES/kwalletd5.mo
 share/locale/zh_TW/LC_MESSAGES/kwallet-query.mo
 share/locale/zh_TW/LC_MESSAGES/kwalletd5.mo
+share/man/man1/kwallet-query.1.gz
 share/qlogging-categories5/kwallet.categories
 share/qlogging-categories5/kwallet.renamecategories

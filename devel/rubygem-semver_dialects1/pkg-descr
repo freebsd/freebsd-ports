@@ -1,0 +1,20 @@
+semver_dialects is a gem for generic semantic version matcher that supports
+different semantic version dialects:
+- pypi
+- composer/packagist
+- maven
+- gem
+- go
+- npm
+- nuget
+- conan
+
+semver_dialects ...
+- provides a unified interface to the language specific dialects.
+- matches semantic versions in a language agnostic way.
+- is able to collapse a list of concrete version into version ranges.
+- invert ranges.
+- can cope with scattered, non-consecutive ranges.
+- can parse and produce different version syntaxes.
+- matches version gracefully and handles input versions/constraints in a
+  best-effort manner.

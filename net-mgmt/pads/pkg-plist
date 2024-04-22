@@ -9,6 +9,6 @@ etc/pads.conf
 %%DATADIR%%/ChangeLog
 %%DATADIR%%/INSTALL
 %%DATADIR%%/README
-man/man8/pads-report.8.gz
-man/man8/pads.8.gz
-man/man8/pads.conf.8.gz
+share/man/man8/pads-report.8.gz
+share/man/man8/pads.8.gz
+share/man/man8/pads.conf.8.gz

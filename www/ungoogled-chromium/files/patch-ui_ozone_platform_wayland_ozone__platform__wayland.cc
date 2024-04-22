@@ -1,4 +1,4 @@
---- ui/ozone/platform/wayland/ozone_platform_wayland.cc.orig	2023-11-04 07:08:51 UTC
+--- ui/ozone/platform/wayland/ozone_platform_wayland.cc.orig	2024-03-22 14:16:19 UTC
 +++ ui/ozone/platform/wayland/ozone_platform_wayland.cc
 @@ -66,13 +66,13 @@
  #include "ui/events/ozone/layout/stub/stub_keyboard_layout_engine.h"
@@ -16,7 +16,7 @@
  #include "ui/ozone/platform/wayland/host/linux_ui_delegate_wayland.h"
  #endif
  
-@@ -262,7 +262,7 @@ class OzonePlatformWayland : public OzonePlatform,
+@@ -267,7 +267,7 @@ class OzonePlatformWayland : public OzonePlatform,
  
      buffer_manager_connector_ = std::make_unique<WaylandBufferManagerConnector>(
          connection_->buffer_manager_host());
@@ -25,7 +25,7 @@
      cursor_factory_ = std::make_unique<WaylandCursorFactory>(connection_.get());
  #else
      cursor_factory_ = std::make_unique<BitmapCursorFactory>();
-@@ -272,7 +272,7 @@ class OzonePlatformWayland : public OzonePlatform,
+@@ -277,7 +277,7 @@ class OzonePlatformWayland : public OzonePlatform,
  
      supported_buffer_formats_ =
          connection_->buffer_manager_host()->GetSupportedBufferFormats();
@@ -34,7 +34,7 @@
      linux_ui_delegate_ =
          std::make_unique<LinuxUiDelegateWayland>(connection_.get());
  #endif
-@@ -507,7 +507,7 @@ class OzonePlatformWayland : public OzonePlatform,
+@@ -522,7 +522,7 @@ class OzonePlatformWayland : public OzonePlatform,
    DrmRenderNodePathFinder path_finder_;
  #endif
  

@@ -9,12 +9,3 @@
  if [ "$real_gtk" = "2+3" ] || [ "$real_gtk" = "3+2" ]; then
    real_gtk="all"
    LIBS_VTE="-ldl"
-@@ -160,7 +162,7 @@ fi
-   $DO_ECHO
- 
- bindir=$prefix/bin
--mandir=$prefix/share/man/man1
-+mandir=$prefix/man/man1
- deskdir=$prefix/share/applications
- ICON_DIR=$prefix/share/pixmaps
- THEME_DIR=$prefix/share/icons

@@ -1,6 +1,6 @@
 PORTNAME=	oss
 DISTVERSION=	4.2-build2019
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.opensound.com/developer/sources/stable/bsd/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-bsd
@@ -94,11 +94,11 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/lib/oss/include/sys/
 	${INSTALL_KLD} ${PROTO_OSSLIBDIR}/modules/*.ko ${STAGEDIR}${KMODDIR}
 	${INSTALL_MAN} ${PROTO_MANDIR}/man1/*.1.gz \
-	    ${STAGEDIR}${PREFIX}/man/man1/
+	    ${STAGEDIR}${PREFIX}/share/man/man1/
 	${INSTALL_MAN} ${PROTO_MANDIR}/man7/*.7.gz \
-	    ${STAGEDIR}${PREFIX}/man/man7/
+	    ${STAGEDIR}${PREFIX}/share/man/man7/
 	${INSTALL_MAN} ${PROTO_MANDIR}/man8/*.8.gz \
-	    ${STAGEDIR}${PREFIX}/man/man8/
+	    ${STAGEDIR}${PREFIX}/share/man/man8/
 	${INSTALL_PROGRAM} ${PROTO_SBINDIR}/ossdetect \
 	    ${STAGEDIR}${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${PROTO_SBINDIR}/ossdevlinks \

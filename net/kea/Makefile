@@ -1,5 +1,6 @@
 PORTNAME=	kea
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/-beta/b/:S/a/.a/:S/rc/.rc/}
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ISC/kea/${ISCVERSION}
 DISTNAME=	${PORTNAME}-${ISCVERSION}
@@ -28,6 +29,7 @@ CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} \
 		--with-log4cplus=${LOCALBASE} \
 		--with-boost-include=${LOCALBASE}/include \

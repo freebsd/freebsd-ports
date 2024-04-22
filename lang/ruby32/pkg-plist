@@ -854,6 +854,9 @@ lib/libruby%%RUBY_SHLIBVER%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rubygems/ext/rake_builder.rb
 %%RUBY_LIBDIR%%/rubygems/gem_runner.rb
 %%RUBY_LIBDIR%%/rubygems/gemcutter_utilities.rb
+%%RUBY_LIBDIR%%/rubygems/gemcutter_utilities/webauthn_listener.rb
+%%RUBY_LIBDIR%%/rubygems/gemcutter_utilities/webauthn_listener/response.rb
+%%RUBY_LIBDIR%%/rubygems/gemcutter_utilities/webauthn_poller.rb
 %%RUBY_LIBDIR%%/rubygems/indexer.rb
 %%RUBY_LIBDIR%%/rubygems/install_default_message.rb
 %%RUBY_LIBDIR%%/rubygems/install_message.rb
@@ -957,6 +960,7 @@ lib/libruby%%RUBY_SHLIBVER%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rubygems/security/signer.rb
 %%RUBY_LIBDIR%%/rubygems/security/trust_dir.rb
 %%RUBY_LIBDIR%%/rubygems/security_option.rb
+%%RUBY_LIBDIR%%/rubygems/shellwords.rb
 %%RUBY_LIBDIR%%/rubygems/source.rb
 %%RUBY_LIBDIR%%/rubygems/source/git.rb
 %%RUBY_LIBDIR%%/rubygems/source/installed.rb
@@ -996,6 +1000,8 @@ lib/libruby%%RUBY_SHLIBVER%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/syntax_suggest/api.rb
 %%RUBY_LIBDIR%%/syntax_suggest/around_block_scan.rb
 %%RUBY_LIBDIR%%/syntax_suggest/block_expand.rb
+%%RUBY_LIBDIR%%/syntax_suggest/capture/before_after_keyword_ends.rb
+%%RUBY_LIBDIR%%/syntax_suggest/capture/falling_indent_lines.rb
 %%RUBY_LIBDIR%%/syntax_suggest/capture_code_context.rb
 %%RUBY_LIBDIR%%/syntax_suggest/clean_document.rb
 %%RUBY_LIBDIR%%/syntax_suggest/cli.rb
@@ -1015,6 +1021,7 @@ lib/libruby%%RUBY_SHLIBVER%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/syntax_suggest/priority_engulf_queue.rb
 %%RUBY_LIBDIR%%/syntax_suggest/priority_queue.rb
 %%RUBY_LIBDIR%%/syntax_suggest/ripper_errors.rb
+%%RUBY_LIBDIR%%/syntax_suggest/scan_history.rb
 %%RUBY_LIBDIR%%/syntax_suggest/unvisited_lines.rb
 %%RUBY_LIBDIR%%/syntax_suggest/version.rb
 %%RUBY_LIBDIR%%/syslog/logger.rb
@@ -1045,9 +1052,10 @@ lib/libruby%%RUBY_SHLIBVER%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/yaml.rb
 %%RUBY_LIBDIR%%/yaml/dbm.rb
 %%RUBY_LIBDIR%%/yaml/store.rb
+@dir %%RUBY_SITEARCHLIBDIR%%
+@dir %%RUBY_VENDORARCHLIBDIR%%
 libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
-%%IF_DEFAULT%%man/man1/ruby.1.gz
-man/man1/ruby%%RUBY_SUFFIX%%.1.gz
+%%NO_CAPIDOCS%%%%NO_DOCS%%%%RDOC%%@dir %%RUBY_DOCDIR%%
 %%DOCS%%%%RUBY_DOCDIR%%/COPYING
 %%DOCS%%%%RUBY_DOCDIR%%/COPYING.ja
 %%DOCS%%%%RUBY_DOCDIR%%/ChangeLog
@@ -1145,6 +1153,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%DOCS%%%%RUBY_DOCDIR%%/memory_view.md
 %%DOCS%%%%RUBY_DOCDIR%%/mjit/mjit.md
 %%DOCS%%%%RUBY_DOCDIR%%/net-http/examples.rdoc
+%%DOCS%%%%RUBY_DOCDIR%%/net-http/included_getters.rdoc
 %%DOCS%%%%RUBY_DOCDIR%%/optparse/.document
 %%DOCS%%%%RUBY_DOCDIR%%/optparse/argument_converters.rdoc
 %%DOCS%%%%RUBY_DOCDIR%%/optparse/creates_option.rdoc
@@ -4277,13 +4286,60 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemRunner/do_configuration-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemRunner/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemRunner/run-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/BadRequestResponse/body-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/BadRequestResponse/cdesc-BadRequestResponse.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/BadRequestResponse/code-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/BadRequestResponse/reason_phrase-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/MethodNotAllowedResponse/add_access_control_headers-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/MethodNotAllowedResponse/cdesc-MethodNotAllowedResponse.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/MethodNotAllowedResponse/code-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/MethodNotAllowedResponse/reason_phrase-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/NoContentResponse/cdesc-NoContentResponse.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/NoContentResponse/code-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/NoContentResponse/reason_phrase-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/NotFoundResponse/cdesc-NotFoundResponse.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/NotFoundResponse/code-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/NotFoundResponse/reason_phrase-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/OkResponse/body-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/OkResponse/cdesc-OkResponse.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/OkResponse/code-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/OkResponse/reason_phrase-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/Response/add_access_control_headers-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/Response/add_body-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/Response/add_connection_header-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/Response/body-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/Response/build_http_response-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/Response/cdesc-Response.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/Response/code-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/Response/for-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/Response/http_response-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/Response/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/Response/reason_phrase-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/Response/to_s-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/SocketResponder/cdesc-SocketResponder.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/SocketResponder/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/SocketResponder/send-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/cdesc-WebauthnListener.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/host-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/listener_thread-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/parse_otp_from_uri-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/root_path%3f-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnListener/wait_for_otp_code-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnPoller/cdesc-WebauthnPoller.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnPoller/host-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnPoller/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnPoller/options-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnPoller/poll_for_otp-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnPoller/poll_thread-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/WebauthnPoller/webauthn_verification_poll_response-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/add_key_option-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/add_otp_option-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/api_key-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/api_key_forbidden%3f-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/ask_otp-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/cdesc-GemcutterUtilities.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/default_host%3f-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/fetch_otp-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/get_key_name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/get_mfa_params-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/get_scope_params-i.ri
@@ -4299,6 +4355,8 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/sign_in-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/update_scope-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/verify_api_key-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/wait_for_otp_thread-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/webauthn_verification_url-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/GemcutterUtilities/with_response-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/ImpossibleDependenciesError/cdesc-ImpossibleDependenciesError.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/ImpossibleDependenciesError/conflicts-i.ri
@@ -4370,6 +4428,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/install-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/installation_satisfies_dependency%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/installed_specs-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/load_plugin-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/load_relative_enabled%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Installer/options-i.ri
@@ -5670,6 +5729,8 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/VersionOption/add_version_option-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/VersionOption/cdesc-VersionOption.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/VersionOption/get_platform_from_requirements-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/WebauthnVerificationError/cdesc-WebauthnVerificationError.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/WebauthnVerificationError/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/activated_gem_paths-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/add_to_load_path-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/already_loaded%3f-c.ri
@@ -6802,9 +6863,6 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Kernel/sprintf-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Kernel/srand-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Kernel/sub-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Kernel/syntax_suggest_original_load-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Kernel/syntax_suggest_original_require-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Kernel/syntax_suggest_original_require_relative-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Kernel/syscall-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Kernel/system-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Kernel/tap-i.ri
@@ -7246,6 +7304,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Net/HTTP/proxy_user-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/HTTP/proxyaddr-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/HTTP/proxyport-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Net/HTTP/put-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/HTTP/read_timeout%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/HTTP/read_timeout-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/HTTP/request-i.ri
@@ -7302,7 +7361,6 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Net/HTTPGatewayTimeout/cdesc-HTTPGatewayTimeout.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/HTTPGenericRequest/body%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/HTTPGenericRequest/body-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Net/HTTPGenericRequest/body_exist%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/HTTPGenericRequest/body_stream%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/HTTPGenericRequest/body_stream-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/HTTPGenericRequest/cdesc-HTTPGenericRequest.ri
@@ -7311,7 +7369,6 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Net/HTTPGenericRequest/flush_buffer-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/HTTPGenericRequest/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/HTTPGenericRequest/method-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Net/HTTPGenericRequest/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/HTTPGenericRequest/path-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/HTTPGenericRequest/quote_string-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Net/HTTPGenericRequest/request_body_permitted%3f-i.ri
@@ -12346,23 +12403,17 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxError/cdesc-SyntaxError.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxError/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxError/path-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/after_index-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/after_lines-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/before_index-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/before_lines-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/capture_neighbor_context-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/cdesc-AroundBlockScan.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/code_block-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/force_add_empty-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/force_add_hidden-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/lines-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/lookahead_balance_one_line-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/new-c.ri
-%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/next_down-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/next_up-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/on_falling_indent-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/scan_adjacent_indent-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/scan_neighbors-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/scan_neighbors_not_empty-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/scan_while-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/skip-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/start_at_next_line-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/AroundBlockScan/stop_after_kw-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/BlockExpand/call-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/BlockExpand/cdesc-BlockExpand.ri
@@ -12370,6 +12421,13 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/BlockExpand/expand_neighbors-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/BlockExpand/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/BlockExpand/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/Capture/BeforeAfterKeywordEnds/call-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/Capture/BeforeAfterKeywordEnds/cdesc-BeforeAfterKeywordEnds.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/Capture/BeforeAfterKeywordEnds/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/Capture/FallingIndentLines/call-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/Capture/FallingIndentLines/cdesc-FallingIndentLines.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/Capture/FallingIndentLines/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/Capture/cdesc-Capture.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/CaptureCodeContext/call-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/CaptureCodeContext/capture_before_after_kws-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/CaptureCodeContext/capture_falling_indent-i.ri
@@ -12378,6 +12436,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/CaptureCodeContext/cdesc-CaptureCodeContext.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/CaptureCodeContext/code_lines-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/CaptureCodeContext/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/CaptureCodeContext/sorted_lines-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/CleanDocument/call-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/CleanDocument/cdesc-CleanDocument.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/CleanDocument/clean_sweep-i.ri
@@ -12554,6 +12613,22 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/RipperErrors/on_class_name_error-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/RipperErrors/on_param_error-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/RipperErrors/on_parse_error-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/ScanHistory/after_index-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/ScanHistory/after_lines-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/ScanHistory/before_index-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/ScanHistory/before_lines-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/ScanHistory/cdesc-ScanHistory.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/ScanHistory/changed%3f-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/ScanHistory/commit_if_changed-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/ScanHistory/current-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/ScanHistory/lines-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/ScanHistory/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/ScanHistory/next_down-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/ScanHistory/next_up-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/ScanHistory/refresh_index-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/ScanHistory/revert_last_commit-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/ScanHistory/scan-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/ScanHistory/stash_changes-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/UnvisitedLines/cdesc-UnvisitedLines.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/UnvisitedLines/empty%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/SyntaxSuggest/UnvisitedLines/new-c.ri
@@ -13357,8 +13432,9 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/syntax/page-precedence_rdoc.ri
 %%RDOC%%%%RUBY_RIDIR%%/syntax/page-refinements_rdoc.ri
 %%RDOC%%%%RUBY_RIDIR%%/win32/page-README_win32.ri
-@dir %%RUBY_SITEARCHLIBDIR%%
-@dir %%RUBY_VENDORARCHLIBDIR%%
-%%NO_CAPIDOCS%%%%NO_DOCS%%%%RDOC%%@dir %%RUBY_DOCDIR%%
+%%RDOC%%%%RUBY_RIDIR%%/yjit/page-yjit_hacking_md.ri
+%%RDOC%%%%RUBY_RIDIR%%/yjit/page-yjit_md.ri
+%%IF_DEFAULT%%share/man/man1/ruby.1.gz
+share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%@dir %%RUBY_SITERIDIR%%
 %%RDOC%%@dir %%RUBY_RIDIR%%

@@ -2,7 +2,7 @@
 
 PORTNAME=	observium
 PORTVERSION=	0.19.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.observium.org/
 DISTNAME=	${PORTNAME}-community-latest
@@ -56,7 +56,11 @@ LIBVIRT_RUN_DEPENDS=	virsh:devel/libvirt
 NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios-plugins
 NMAP_RUN_DEPENDS=	nmap:security/nmap
 PYPOLLER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mysqlclient>=1.3.13:databases/py-mysqlclient@${PY_FLAVOR}
+.if ${WITH_SUBVERSION_VER:U} == LTS
+SUBVERSION_RUN_DEPENDS=	svn:devel/subversion-lts
+.else
 SUBVERSION_RUN_DEPENDS=	svn:devel/subversion
+.endif
 WMIC_RUN_DEPENDS=	wmic:net-mgmt/wmi-client
 
 .include <bsd.port.options.mk>

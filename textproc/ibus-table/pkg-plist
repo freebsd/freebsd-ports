@@ -2,7 +2,6 @@ bin/ibus-table-createdb
 libdata/pkgconfig/ibus-table.pc
 libexec/ibus-engine-table
 libexec/ibus-setup-table
-man/man1/ibus-table-createdb.1.gz
 share/applications/ibus-setup-table.desktop
 %%DATADIR%%/data/coin9.wav
 %%DATADIR%%/data/phrase.txt.bz2
@@ -66,4 +65,5 @@ share/icons/hicolor/scalable/apps/ibus-table.svg
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/ibus-table.mo
+share/man/man1/ibus-table-createdb.1.gz
 %%NLS%%share/metainfo/ibus-table.appdata.xml

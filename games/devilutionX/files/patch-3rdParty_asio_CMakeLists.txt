@@ -1,0 +1,10 @@
+--- 3rdParty/asio/CMakeLists.txt.orig	2024-01-15 01:03:52 UTC
++++ 3rdParty/asio/CMakeLists.txt
+@@ -8,6 +8,7 @@ add_library(asio INTERFACE)
+ FetchContent_MakeAvailableExcludeFromAll(asio)
+ 
+ add_library(asio INTERFACE)
++target_compile_definitions(asio INTERFACE ASIO_HAS_STD_INVOKE_RESULT=ON)
+ target_include_directories(asio INTERFACE ${asio_SOURCE_DIR}/asio/include)
+ 
+ if(NINTENDO_3DS OR NINTENDO_SWITCH)

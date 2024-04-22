@@ -1,5 +1,5 @@
 PORTNAME=	websvn
-PORTVERSION=	2.8.3
+PORTVERSION=	2.8.4
 CATEGORIES=	devel www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -10,8 +10,12 @@ WWW=		https://websvnphp.github.io/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-RUN_DEPENDS=	${LOCALBASE}/bin/svn:devel/subversion \
-		${LOCALBASE}/bin/composer:devel/php-composer@${PHP_FLAVOR}
+.if ${WITH_SUBVERSION_VER:U} == LTS
+RUN_DEPENDS=	subversion-lts>0:devel/subversion-lts
+.else
+RUN_DEPENDS=	subversion>0:devel/subversion
+.endif
+RUN_DEPENDS+=	${LOCALBASE}/bin/composer:devel/php-composer@${PHP_FLAVOR}
 
 USES=		php:web,flavors cpe
 USE_GITHUB=	yes

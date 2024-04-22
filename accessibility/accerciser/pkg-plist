@@ -1,5 +1,5 @@
 bin/accerciser
-man/man1/accerciser.1.gz
+share/man/man1/accerciser.1.gz
 %%PYTHON_SITELIBDIR%%/accerciser/__init__.py
 %%PYTHON_SITELIBDIR%%/accerciser/about_dialog.py
 %%PYTHON_SITELIBDIR%%/accerciser/accerciser.py

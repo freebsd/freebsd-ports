@@ -13,14 +13,6 @@ lib/gtags/universal-ctags.a
 lib/gtags/universal-ctags.so
 lib/gtags/user-custom.a
 lib/gtags/user-custom.so
-man/man1/global.1.gz
-man/man1/globash.1.gz
-man/man1/gozilla.1.gz
-man/man1/gtags-cscope.1.gz
-man/man1/gtags.1.gz
-man/man1/htags-server.1.gz
-man/man1/htags.1.gz
-man/man5/gtags.conf.5.gz
 share/gtags/AUTHORS
 share/gtags/BUILD_TOOLS
 share/gtags/ChangeLog
@@ -99,4 +91,12 @@ share/gtags/script/pygments_parser.py
 share/gtags/style.css
 share/gtags/uctags-scheme.c-diff
 share/gtags/vim74-gtags-cscope.patch
+share/man/man1/global.1.gz
+share/man/man1/globash.1.gz
+share/man/man1/gozilla.1.gz
+share/man/man1/gtags-cscope.1.gz
+share/man/man1/gtags.1.gz
+share/man/man1/htags-server.1.gz
+share/man/man1/htags.1.gz
+share/man/man5/gtags.conf.5.gz
 @dir /var/gtags

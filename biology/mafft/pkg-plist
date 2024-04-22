@@ -49,8 +49,8 @@ libexec/mafft/sextet5
 libexec/mafft/splittbfast
 libexec/mafft/tbfast
 libexec/mafft/version
-man/man1/mafft-homologs.1.gz
-man/man1/mafft.1.gz
+share/man/man1/mafft-homologs.1.gz
+share/man/man1/mafft.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/readme
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.dpparttree

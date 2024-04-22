@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		charsetfix gmake perl5
 USE_PERL5=	build
+
 GNU_CONFIGURE=	yes
 
 INFO=		hello

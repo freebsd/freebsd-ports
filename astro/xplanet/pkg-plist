@@ -1,5 +1,5 @@
 bin/xplanet
-man/man1/xplanet.1.gz
+share/man/man1/xplanet.1.gz
 %%DATADIR%%/arcs/README
 %%DATADIR%%/arcs/constellations
 %%DATADIR%%/config/README

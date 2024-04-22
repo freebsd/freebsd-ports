@@ -1,5 +1,5 @@
 PORTNAME=	apache-arrow
-DISTVERSION=	13.0.0
+DISTVERSION=	15.0.2
 CATEGORIES=	databases python
 MASTER_SITES=	APACHE/arrow/arrow-${DISTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY}

@@ -1,5 +1,5 @@
 sbin/chilli
-man/man8/chilli.8.gz
+share/man/man8/chilli.8.gz
 %%DATADIR%%/chilli.conf.sample
 %%DATADIR%%/dictionary.chillispot
 %%DATADIR%%/freeradius.users

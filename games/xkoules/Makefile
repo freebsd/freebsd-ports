@@ -1,6 +1,6 @@
 PORTNAME=	xkoules
 PORTVERSION=	1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.ucw.cz/~hubicka/koules/packages/ \
 		GENTOO \

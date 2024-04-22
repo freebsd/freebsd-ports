@@ -8,10 +8,10 @@ bin/makedeltarpm
 bin/rpmdumpheader
 %%PYTHON_SITELIBDIR%%/_deltarpm.so
 %%PYTHON_SITELIBDIR%%/deltarpm.py
-man/man8/applydeltaiso.8.gz
-man/man8/applydeltarpm.8.gz
-man/man8/combinedeltarpm.8.gz
-man/man8/drpmsync.8.gz
-man/man8/fragiso.8.gz
-man/man8/makedeltaiso.8.gz
-man/man8/makedeltarpm.8.gz
+share/man/man8/applydeltaiso.8.gz
+share/man/man8/applydeltarpm.8.gz
+share/man/man8/combinedeltarpm.8.gz
+share/man/man8/drpmsync.8.gz
+share/man/man8/fragiso.8.gz
+share/man/man8/makedeltaiso.8.gz
+share/man/man8/makedeltarpm.8.gz

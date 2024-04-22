@@ -3,7 +3,6 @@ include/chewing/chewingio.h
 include/chewing/chewing-compat.h
 include/chewing/global.h
 include/chewing/mod_aux.h
-lib/libchewing.a
 lib/libchewing.so
 lib/libchewing.so.3
 lib/libchewing.so.3.3.1

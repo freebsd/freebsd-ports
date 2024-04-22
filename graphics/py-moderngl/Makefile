@@ -1,5 +1,5 @@
 PORTNAME=	moderngl
-DISTVERSION=	5.8.2
+DISTVERSION=	5.10.0
 CATEGORIES=	graphics
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,12 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}glcontext>=2.3.6<3:graphics/py-glcontext@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}glcontext>=2.5.0<3:graphics/py-glcontext@${PY_FLAVOR}
 TEST_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.2.1:science/py-scipy@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # testsuite SEGVs, see https://github.com/moderngl/moderngl/issues/547, https://github.com/pytest-dev/pytest/issues/11142
+USE_PYTHON=	pep517 autoplist pytest # 1 test fails due to path mismatch, see https://github.com/pytest-dev/pytest/issues/11142
 
 USE_GITHUB=	yes
 

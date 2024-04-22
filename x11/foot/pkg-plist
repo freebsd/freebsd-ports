@@ -23,6 +23,8 @@ share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/themes/derp
 %%DATADIR%%/themes/deus
 %%DATADIR%%/themes/dracula
+%%DATADIR%%/themes/dracula-iterm
+%%DATADIR%%/themes/electrophoretic
 %%DATADIR%%/themes/gruvbox-dark
 %%DATADIR%%/themes/gruvbox-light
 %%DATADIR%%/themes/hacktober
@@ -34,13 +36,16 @@ share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/themes/modus-vivendi
 %%DATADIR%%/themes/monokai-pro
 %%DATADIR%%/themes/moonfly
+%%DATADIR%%/themes/neon
 %%DATADIR%%/themes/nightfly
+%%DATADIR%%/themes/noirblaze
 %%DATADIR%%/themes/nord
 %%DATADIR%%/themes/nordiq
 %%DATADIR%%/themes/onedark
 %%DATADIR%%/themes/panda
 %%DATADIR%%/themes/paper-color-dark
 %%DATADIR%%/themes/paper-color-light
+%%DATADIR%%/themes/poimandres
 %%DATADIR%%/themes/rezza
 %%DATADIR%%/themes/rose-pine
 %%DATADIR%%/themes/selenized-black
@@ -73,6 +78,7 @@ share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/themes/tokyonight-night
 %%DATADIR%%/themes/tokyonight-storm
 %%DATADIR%%/themes/visibone
+%%DATADIR%%/themes/xterm
 %%DATADIR%%/themes/zenburn
 share/icons/hicolor/48x48/apps/foot.png
 share/icons/hicolor/scalable/apps/foot.svg

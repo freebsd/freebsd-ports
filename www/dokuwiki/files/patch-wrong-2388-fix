@@ -1,11 +1,11 @@
---- inc/httputils.php.orig	2018-04-22 11:17:57 UTC
+--- inc/httputils.php.orig	2024-02-06 13:03:45 UTC
 +++ inc/httputils.php
-@@ -82,8 +82,6 @@ function http_sendfile($file) {
+@@ -78,8 +78,6 @@ function http_sendfile($file)
          ob_end_clean();
          exit;
-     }elseif($conf['xsendfile'] == 3){
+     } elseif ($conf['xsendfile'] == 3) {
 -        // FS#2388 nginx just needs the relative path.
--        $file = DOKU_REL.substr($file, strlen(fullpath(DOKU_INC)) + 1);
+-        $file = DOKU_REL . substr($file, strlen(fullpath(DOKU_INC)) + 1);
          header("X-Accel-Redirect: $file");
          ob_end_clean();
          exit;

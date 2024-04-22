@@ -1,5 +1,5 @@
 bin/lxterminal
-man/man1/lxterminal.1.gz
+share/man/man1/lxterminal.1.gz
 share/applications/lxterminal.desktop
 share/icons/hicolor/128x128/apps/lxterminal.png
 %%NLS%%share/locale/af/LC_MESSAGES/lxterminal.mo

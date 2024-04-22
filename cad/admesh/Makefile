@@ -1,6 +1,7 @@
 PORTNAME=	admesh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.98.5
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		autoreconf libtool
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
@@ -25,7 +27,7 @@ PLIST_FILES=	bin/admesh \
 		lib/libadmesh.so.1 \
 		lib/libadmesh.so.1.0.0 \
 		libdata/pkgconfig/libadmesh.pc \
-		man/man1/admesh.1.gz
+		share/man/man1/admesh.1.gz
 
 do-install-DOCS-on:
 	@${RM} ${STAGEDIR}${DOCSDIR}/COPYING

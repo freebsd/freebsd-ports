@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2024-03-06 18:20:01 UTC
++++ CMakeLists.txt
+@@ -27,10 +27,6 @@ endif ()
+     include(deps/autobuild.cmake)
+ endif ()
+ 
+-if (NOT CMAKE_DEBUG_POSTFIX)
+-    set(CMAKE_DEBUG_POSTFIX "d")
+-endif ()
+-
+ include(CMakeDependentOption)
+ cmake_dependent_option(${PROJECT_NAME}_BUILD_COMPONENT_Convert "Include Convert component in the library" ON 
+                        "${PROJECT_NAME}_BUILD_COMPONENT_Binarize" OFF)

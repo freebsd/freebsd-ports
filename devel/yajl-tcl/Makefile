@@ -1,6 +1,7 @@
 PORTNAME=	yajl-tcl
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -19,7 +20,7 @@ GH_ACCOUNT=	flightaware
 
 TEST_TARGET=	test
 
-PLIST_FILES=	lib/yajltcl${PORTVERSION}/libyajltcl.so.1 \
+PLIST_FILES=	lib/yajltcl${PORTVERSION}/libyajltcl${PORTVERSION}.so \
 		lib/yajltcl${PORTVERSION}/pkgIndex.tcl \
 		lib/yajltcl${PORTVERSION}/yajl.tcl
 

@@ -27,7 +27,6 @@
 @sample %%ETCDIR%%/etc/refuse.sbcprofile.conf.sample
 @sample %%ETCDIR%%/etc/reg_agent.conf.sample
 @sample %%ETCDIR%%/etc/replytranslate.sbcprofile.conf.sample
-@sample %%ETCDIR%%/etc/rtmp.conf.sample
 @sample %%ETCDIR%%/etc/sbc.conf.sample
 @sample %%ETCDIR%%/etc/src_ipmap.conf.sample
 @sample %%ETCDIR%%/etc/sst_b2b.sbcprofile.conf.sample
@@ -168,7 +167,6 @@ lib/sems/plug-in/opus.so
 lib/sems/plug-in/precoded_announce.so
 lib/sems/plug-in/reg_agent.so
 lib/sems/plug-in/registrar_client.so
-lib/sems/plug-in/rtmp.so
 lib/sems/plug-in/sbc.so
 lib/sems/plug-in/session_timer.so
 lib/sems/plug-in/speex.so

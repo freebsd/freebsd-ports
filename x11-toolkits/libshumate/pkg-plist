@@ -23,6 +23,8 @@ include/shumate-1.0/shumate/shumate-symbol-event.h
 include/shumate-1.0/shumate/shumate-tile-downloader.h
 include/shumate-1.0/shumate/shumate-tile.h
 include/shumate-1.0/shumate/shumate-user-agent.h
+include/shumate-1.0/shumate/shumate-vector-reader-iter.h
+include/shumate-1.0/shumate/shumate-vector-reader.h
 include/shumate-1.0/shumate/shumate-vector-renderer.h
 include/shumate-1.0/shumate/shumate-vector-sprite-sheet.h
 include/shumate-1.0/shumate/shumate-vector-sprite.h
@@ -87,6 +89,8 @@ libdata/pkgconfig/shumate-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-1.0/class.SymbolEvent.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/class.Tile.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/class.TileDownloader.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/class.VectorReader.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/class.VectorReaderIter.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/class.VectorRenderer.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/class.VectorSprite.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/class.VectorSpriteSheet.html
@@ -133,11 +137,13 @@ libdata/pkgconfig/shumate-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-1.0/ctor.Tile.new.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/ctor.Tile.new_full.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/ctor.TileDownloader.new.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/ctor.VectorReader.new.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/ctor.VectorRenderer.new.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/ctor.VectorSprite.new.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/ctor.VectorSprite.new_full.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/ctor.VectorSpriteSheet.new.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/ctor.Viewport.new.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/enum.GeometryType.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/enum.MapProjection.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/enum.State.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/enum.Unit.html
@@ -194,6 +200,7 @@ libdata/pkgconfig/shumate-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.License.remove_map_source.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.License.set_extra_text.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.License.set_xalign.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.Location.distance.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Location.get_latitude.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Location.get_longitude.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Location.set_location.html
@@ -315,9 +322,7 @@ libdata/pkgconfig/shumate-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.SymbolEvent.get_layer.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.SymbolEvent.get_source_layer.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.SymbolEvent.get_tag.html
-%%PORTDOCS%%%%DOCSDIR%%-1.0/method.Tile.get_etag.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Tile.get_fade_in.html
-%%PORTDOCS%%%%DOCSDIR%%-1.0/method.Tile.get_modified_time.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Tile.get_paintable.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Tile.get_scale_factor.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Tile.get_size.html
@@ -325,9 +330,7 @@ libdata/pkgconfig/shumate-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Tile.get_x.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Tile.get_y.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Tile.get_zoom_level.html
-%%PORTDOCS%%%%DOCSDIR%%-1.0/method.Tile.set_etag.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Tile.set_fade_in.html
-%%PORTDOCS%%%%DOCSDIR%%-1.0/method.Tile.set_modified_time.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Tile.set_paintable.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Tile.set_scale_factor.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Tile.set_size.html
@@ -335,7 +338,24 @@ libdata/pkgconfig/shumate-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Tile.set_x.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Tile.set_y.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Tile.set_zoom_level.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorReader.iterate.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorReaderIter.feature_contains_point.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorReaderIter.get_feature_geometry_type.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorReaderIter.get_feature_id.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorReaderIter.get_feature_keys.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorReaderIter.get_feature_point.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorReaderIter.get_feature_tag.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorReaderIter.get_layer_count.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorReaderIter.get_layer_extent.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorReaderIter.get_layer_feature_count.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorReaderIter.get_layer_name.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorReaderIter.get_reader.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorReaderIter.next_feature.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorReaderIter.read_feature.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorReaderIter.read_layer.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorReaderIter.read_layer_by_name.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorRenderer.get_sprite_sheet.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorRenderer.set_data_source.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorRenderer.set_sprite_sheet.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorRenderer.set_sprite_sheet_data.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.VectorSprite.get_height.html
@@ -424,6 +444,7 @@ libdata/pkgconfig/shumate-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-1.0/property.Tile.y.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/property.Tile.zoom-level.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/property.TileDownloader.url-template.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/property.VectorReaderIter.reader.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/property.VectorRenderer.sprite-sheet.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/property.VectorRenderer.style-json.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/property.VectorSprite.height.html
@@ -454,6 +475,7 @@ libdata/pkgconfig/shumate-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-1.0/vfunc.DataSource.get_tile_data_async.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/vfunc.DataSource.get_tile_data_finish.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/vfunc.DataSource.start_request.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/vfunc.Layer.get_debug_text.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/vfunc.Location.get_latitude.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/vfunc.Location.get_longitude.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/vfunc.Location.set_location.html
@@ -468,6 +490,7 @@ share/locale/cs/LC_MESSAGES/shumate1.mo
 share/locale/da/LC_MESSAGES/shumate1.mo
 share/locale/de/LC_MESSAGES/shumate1.mo
 share/locale/el/LC_MESSAGES/shumate1.mo
+share/locale/en_GB/LC_MESSAGES/shumate1.mo
 share/locale/eo/LC_MESSAGES/shumate1.mo
 share/locale/es/LC_MESSAGES/shumate1.mo
 share/locale/eu/LC_MESSAGES/shumate1.mo
@@ -505,5 +528,6 @@ share/locale/sv/LC_MESSAGES/shumate1.mo
 share/locale/tr/LC_MESSAGES/shumate1.mo
 share/locale/uk/LC_MESSAGES/shumate1.mo
 share/locale/zh_CN/LC_MESSAGES/shumate1.mo
+share/locale/zh_TW/LC_MESSAGES/shumate1.mo
 share/vala/vapi/shumate-1.0.deps
 share/vala/vapi/shumate-1.0.vapi

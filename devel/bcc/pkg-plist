@@ -2,7 +2,7 @@ bin/as86
 bin/ld86
 bin/bcc
 lib/bcc/bcc-cc1
-man/man1/as86.1.gz
-man/man1/bcc-cc1.1.gz
-man/man1/bcc.1.gz
-man/man1/ld86.1.gz
+share/man/man1/as86.1.gz
+share/man/man1/bcc-cc1.1.gz
+share/man/man1/bcc.1.gz
+share/man/man1/ld86.1.gz

@@ -1,7 +1,7 @@
 lib/%%TCL_PKG%%/lib%%TCL_PKG%%.so
 lib/%%TCL_PKG%%/ttrace.tcl
 lib/%%TCL_PKG%%/pkgIndex.tcl
-man/mann/thread.n.gz
-man/mann/tpool.n.gz
-man/mann/tsv.n.gz
-man/mann/ttrace.n.gz
+share/man/mann/thread.n.gz
+share/man/mann/tpool.n.gz
+share/man/mann/tsv.n.gz
+share/man/mann/ttrace.n.gz

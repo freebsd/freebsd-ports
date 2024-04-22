@@ -1,6 +1,6 @@
 PORTNAME=	flickcurl
 PORTVERSION=	1.26
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://download.dajobe.org/flickcurl/
 
@@ -24,6 +24,7 @@ CAPTURE_DESC=	Capturing web service responses
 USES=		gnome libtool pathfix pkgconfig
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

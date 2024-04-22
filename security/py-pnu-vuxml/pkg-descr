@@ -1,0 +1,3 @@
+pnu-vuxml is both a Python command-line tool and a library that can be
+used to query or process the FreeBSD VuXML "database" of vulnerable
+ports, making it much more user-friendly and useful.

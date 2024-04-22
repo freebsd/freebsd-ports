@@ -10,9 +10,9 @@ lib/gnome-keyring/devel/gkm-ssh-store-standalone.so
 lib/gnome-keyring/devel/gkm-xdg-store-standalone.so
 lib/pam_gnome_keyring.so
 lib/pkcs11/gnome-keyring-pkcs11.so
-man/man1/gnome-keyring-3.1.gz
-man/man1/gnome-keyring-daemon.1.gz
-man/man1/gnome-keyring.1.gz
+share/man/man1/gnome-keyring-3.1.gz
+share/man/man1/gnome-keyring-daemon.1.gz
+share/man/man1/gnome-keyring.1.gz
 share/GConf/gsettings/org.gnome.crypto.cache.convert
 share/dbus-1/services/org.freedesktop.impl.portal.Secret.service
 share/dbus-1/services/org.freedesktop.secrets.service

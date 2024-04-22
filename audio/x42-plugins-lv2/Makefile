@@ -1,5 +1,6 @@
 PORTNAME=	x42-plugins
 DISTVERSION=	20230706 # the version is published here: http://gareus.org/misc/x42-plugins.php
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://gareus.org/misc/x42-plugins/
 PKGNAMESUFFIX=	-lv2
@@ -34,7 +35,7 @@ USE_GL=		glu gl
 USE_GITHUB=	nodefault
 GH_TUPLE=	x42:convoLV2:ff291a3:x/convoLV2zita4
 
-MAKE_ENV=	BUILDOPENGL=yes BUILDGTK=no LV2DIR=${PREFIX}/lib/lv2 MANDIR=${PREFIX}/man/man1
+MAKE_ENV=	BUILDOPENGL=yes BUILDGTK=no LV2DIR=${PREFIX}/lib/lv2 MANDIR=${PREFIX}/share/man/man1
 SHEBANG_FILES=	stepseq.lv2/gridgen.sh
 
 CXXFLAGS+=	-std=c++98

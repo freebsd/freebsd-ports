@@ -1,6 +1,6 @@
 PORTNAME=	openvpn
-DISTVERSION=	g20231109
-PORTREVISION=	0
+DISTVERSION=	g20240211
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security net net-vpn
 PKGNAMESUFFIX=	-devel
@@ -21,7 +21,7 @@ LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 USES=		autoreconf cpe libtool pkgconfig python:build shebangfix tar:xz
 IGNORE_SSL=	libressl libressl-devel
 USE_GITLAB=	yes
-GL_TAGNAME=	efad93d049c318a3bd9ea5956c6ac8237b8d6d70
+GL_TAGNAME=	91b057a2b5b4d16b64d9d01824a8ec9327a61da1
 USE_RC_SUBR=	openvpn
 
 SHEBANG_FILES=	sample/sample-scripts/auth-pam.pl \
@@ -30,6 +30,7 @@ SHEBANG_FILES=	sample/sample-scripts/auth-pam.pl \
 		sample/sample-scripts/verify-cn
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--enable-strict
 # set PLUGIN_LIBDIR so that unqualified plugin paths are found:
 CONFIGURE_ENV+=		PLUGINDIR="${PREFIX}/lib/openvpn/plugins"

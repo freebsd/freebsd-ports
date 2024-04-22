@@ -1,5 +1,6 @@
 PORTNAME=	awale
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 
@@ -12,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tk:wrapper
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 SUB_FILES=	pkg-message
 
@@ -19,8 +21,8 @@ PORTDATA=	*
 PORTDOCS=	*
 PLIST_FILES=	bin/awale \
 		bin/xawale \
-		man/man6/awale.6.gz \
-		man/man6/xawale.6.gz \
+		share/man/man6/awale.6.gz \
+		share/man/man6/xawale.6.gz \
 		share/applications/awale.desktop
 
 OPTIONS_DEFINE=	DOCS

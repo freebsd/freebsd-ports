@@ -1,6 +1,6 @@
 PORTNAME=	dnswalk
 PORTVERSION=	2.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns
 MASTER_SITES=	SF
 
@@ -28,7 +28,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README \
 		${WRKSRC}/dnswalk.errors \
 		${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/dnswalk.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/dnswalk.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_SCRIPT} ${WRKSRC}/dnswalk ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

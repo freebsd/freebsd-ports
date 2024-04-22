@@ -1,6 +1,7 @@
 PORTNAME=	xcape
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2-9
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g6ded5b4
 CATEGORIES=	x11
 
@@ -17,9 +18,9 @@ GH_ACCOUNT=	alols
 USES=		pkgconfig xorg
 USE_XORG=	x11 xtst
 
-MAKE_ARGS=	PREFIX=${PREFIX} MANDIR=/man/man1
+MAKE_ARGS=	PREFIX=${PREFIX} MANDIR=/share/man/man1
 
-PLIST_FILES=	bin/xcape man/man1/xcape.1.gz
+PLIST_FILES=	bin/xcape share/man/man1/xcape.1.gz
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xcape

@@ -1,6 +1,6 @@
 PORTNAME=	gxneur
 PORTVERSION=	0.20.0
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSIONSUFFIX=.orig
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpad.net/~andrew-crew-kuznetsov/+archive/xneur-stable/+files/
@@ -21,6 +21,7 @@ USE_GNOME=	gtk20 libglade2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--without-gconf
 
 OPTIONS_DEFINE=	NLS

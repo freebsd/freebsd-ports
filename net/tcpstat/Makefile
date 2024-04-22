@@ -1,5 +1,6 @@
 PORTNAME=	tcpstat
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.frenchfries.net/paul/tcpstat/
 
@@ -11,9 +12,10 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/tcpstat bin/tcpprof \
-		man/man1/tcpprof.1.gz man/man1/tcpstat.1.gz
+		share/man/man1/tcpprof.1.gz share/man/man1/tcpstat.1.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS

@@ -119,7 +119,7 @@ libdata/pkgconfig/libgda-report-%%VERSION%%.pc
 libdata/pkgconfig/libgda-sqlite-%%VERSION%%.pc
 libdata/pkgconfig/libgda-web-%%VERSION%%.pc
 libdata/pkgconfig/libgda-xslt-%%VERSION%%.pc
-man/man1/gda-sql-%%VERSION%%.1.gz
+share/man/man1/gda-sql-%%VERSION%%.1.gz
 share/gir-1.0/Gda-%%VERSION%%.gir
 share/gtk-doc/html/libgda-%%VERSION%%/DataModels.png
 share/gtk-doc/html/libgda-%%VERSION%%/GdaBatch.html

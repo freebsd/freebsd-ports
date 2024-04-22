@@ -2019,5 +2019,5 @@ lib/racket/compiled/usr/local/%%DATADIR%%/collects/xml/private/compiled/xexpr-co
 %%CS%%lib/racket/racket.boot
 %%CS%%lib/racket/scheme.boot
 %%BC%%lib/racket/mzdyn3m.o
-man/man1/racket.1.gz
-man/man1/raco.1.gz
+share/man/man1/racket.1.gz
+share/man/man1/raco.1.gz

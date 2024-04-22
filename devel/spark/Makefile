@@ -16,7 +16,7 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsnappyjava.so:archivers/snappy-java \
 		bash:shells/bash \
-		mvn:devel/maven
+		maven>0:devel/maven
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		cpe python shebangfix

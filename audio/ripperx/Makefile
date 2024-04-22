@@ -1,6 +1,6 @@
 PORTNAME=	ripperx
 PORTVERSION=	2.7.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	SF
 DISTNAME=	ripperX-${PORTVERSION}
@@ -14,6 +14,7 @@ RUN_DEPENDS=	cdparanoia:audio/cdparanoia
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_lib_id3_ID3Tag_Link=yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 USES=		compiler:c++11-lang gmake gnome pathfix pkgconfig

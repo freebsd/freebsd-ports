@@ -51,5 +51,5 @@ lib/libbabeltrace.so.1
 lib/libbabeltrace.so.1.0.0
 libdata/pkgconfig/babeltrace-ctf.pc
 libdata/pkgconfig/babeltrace.pc
-man/man1/babeltrace-log.1.gz
-man/man1/babeltrace.1.gz
+share/man/man1/babeltrace-log.1.gz
+share/man/man1/babeltrace.1.gz

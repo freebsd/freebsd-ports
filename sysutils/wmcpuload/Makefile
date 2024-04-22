@@ -1,5 +1,6 @@
 PORTNAME=	wmcpuload
 DISTVERSION=	1.1.1
+PORTREVISION=	1
 
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	https://www.dockapps.net/download/
@@ -12,10 +13,11 @@ LICENSE=	GPLv2
 USES=		xorg
 USE_XORG+=	x11 xext xpm
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PORTDOCS=	ChangeLog README
 PLIST_FILES=	"@(,kmem,2555) bin/wmcpuload" \
-		man/man1/wmcpuload.1.gz
+		share/man/man1/wmcpuload.1.gz
 
 OPTIONS_DEFINE=	DOCS
 

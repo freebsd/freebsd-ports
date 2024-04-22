@@ -1,5 +1,5 @@
 PORTNAME=	POT
-DISTVERSION=	0.9.2
+DISTVERSION=	0.9.3
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,10 +15,13 @@ BUILD_DEPENDS=	${SETUPTOOLS} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.6:science/py-scipy@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 cython autoplist
+USE_PYTHON=	pep517 cython autoplist pytest # expects newer pytest than 7.4.4: AttributeError: module pytest has no attribute skip_backend
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/test
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/ot/lp/emd_wrap${PYTHON_EXT_SUFFIX}.so

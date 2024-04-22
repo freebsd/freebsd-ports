@@ -1,0 +1,2 @@
+django-allauth is a reusable Django app that allows for both local and social
+authentication, with flows that just work.

@@ -1,6 +1,6 @@
 PORTNAME=	ipv6mon
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -20,6 +20,7 @@ CFLAGS+=	-DIPV6MON_CONF=\\\"${PREFIX}/etc/ipv6mon.conf\\\"
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 USE_RC_SUBR=	${PORTNAME}
+MAKE_ARGS=	MANDIR=${PREFIX}/share/man/man
 
 PORTDOCS=	README.TXT \
 		ipv6mon-installation-notes.odt \

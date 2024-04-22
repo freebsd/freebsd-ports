@@ -23,7 +23,6 @@ lib/medusa/modules/vmauthd.mod
 lib/medusa/modules/vnc.mod
 lib/medusa/modules/web-form.mod
 lib/medusa/modules/wrapper.mod
-man/man1/medusa.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/medusa-afp.html
 %%PORTDOCS%%%%DOCSDIR%%/medusa-compare.html
 %%PORTDOCS%%%%DOCSDIR%%/medusa-cvs.html
@@ -53,4 +52,5 @@ man/man1/medusa.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/medusa-web-form.html
 %%PORTDOCS%%%%DOCSDIR%%/medusa-wrapper.html
 %%PORTDOCS%%%%DOCSDIR%%/medusa.html
+share/man/man1/medusa.1.gz
 share/zsh/site-functions/_medusa

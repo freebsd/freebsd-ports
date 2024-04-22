@@ -1,5 +1,6 @@
 PORTNAME=	opendnssec
 DISTVERSION=	2.1.13
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://dist.opendnssec.org/source/
 PKGNAMESUFFIX=	2
@@ -19,6 +20,7 @@ USES=		autoreconf cpe libtool ssl
 USE_RC_SUBR=	opendnssec
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var" \
 		--with-ssl=${OPENSSLBASE}
 

@@ -1,5 +1,6 @@
 PORTNAME=	avenger
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailavenger.org/dist/
 
@@ -14,6 +15,7 @@ USES=		bdb ssl
 USE_CXXSTD=	c++14
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-ssl=${OPENSSLBASE} \
 		--with-db=${LOCALBASE} \
 		--with-etcdir=${ETCDIR}

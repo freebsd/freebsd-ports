@@ -1,6 +1,7 @@
 PORTNAME=	gluon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.18.2
+PORTREVISION=	2
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
@@ -10,6 +11,8 @@ WWW=		https://gluon-lang.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE
+
+BROKEN_armv7=	compilation fails: (1) error[E0412]: cannot find type `AtomicU128` in module `core::sync::atomic` (2) LLVM ERROR: out of memory
 
 USES=		cargo
 
@@ -387,6 +390,12 @@ OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == i386
+LTO_UNSAFE=	yes
+.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

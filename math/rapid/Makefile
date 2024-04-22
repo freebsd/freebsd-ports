@@ -1,5 +1,6 @@
 PORTNAME=	rapid
 PORTVERSION=	2.01
+PORTREVISION=	1
 CATEGORIES=	math science graphics
 MASTER_SITES=	http://www.cs.sunysb.edu/~algorith/implement/RAPID/distrib/
 DISTNAME=	RAPID_v2_01
@@ -30,6 +31,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/RAPID
 	${INSTALL_DATA}	${WRKSRC}/*.H ${STAGEDIR}${PREFIX}/include/RAPID
 	${INSTALL_DATA}	${WRKSRC}/libRAPID.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_MAN} ${FILESDIR}/rapid.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${FILESDIR}/rapid.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.post.mk>

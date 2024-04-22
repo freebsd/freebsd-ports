@@ -1,6 +1,6 @@
 PORTNAME=	lasem
 PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -16,6 +16,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	stixfonts>0:x11-fonts/stix-fonts
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		gettext gmake gnome libtool localbase pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 pango intltool gdkpixbuf2 libxml2 introspection:build
 

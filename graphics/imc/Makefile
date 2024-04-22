@@ -1,6 +1,6 @@
 PORTNAME=	imc
 PORTVERSION=	4.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.peterverthez.net/projects/imc/
 
@@ -17,12 +17,13 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 NO_ARCH=	yes
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

@@ -2,8 +2,6 @@ bin/mate-volume-control
 bin/mate-volume-control-status-icon
 etc/xdg/autostart/mate-volume-control-status-icon.desktop
 libexec/mate-volume-control-applet
-man/man1/mate-volume-control-status-icon.1.gz
-man/man1/mate-volume-control.1.gz
 share/applications/mate-volume-control.desktop
 share/dbus-1/services/org.mate.panel.applet.GvcAppletFactory.service
 share/locale/af/LC_MESSAGES/mate-media.mo
@@ -97,6 +95,7 @@ share/locale/ml/LC_MESSAGES/mate-media.mo
 share/locale/mn/LC_MESSAGES/mate-media.mo
 share/locale/mr/LC_MESSAGES/mate-media.mo
 share/locale/ms/LC_MESSAGES/mate-media.mo
+share/locale/nan/LC_MESSAGES/mate-media.mo
 share/locale/nb/LC_MESSAGES/mate-media.mo
 share/locale/nds/LC_MESSAGES/mate-media.mo
 share/locale/ne/LC_MESSAGES/mate-media.mo
@@ -140,6 +139,8 @@ share/locale/zh_CN/LC_MESSAGES/mate-media.mo
 share/locale/zh_HK/LC_MESSAGES/mate-media.mo
 share/locale/zh_TW/LC_MESSAGES/mate-media.mo
 share/locale/zu/LC_MESSAGES/mate-media.mo
+share/man/man1/mate-volume-control-status-icon.1.gz
+share/man/man1/mate-volume-control.1.gz
 %%DATADIR%%/icons/hicolor/16x16/status/audio-input-microphone-high.png
 %%DATADIR%%/icons/hicolor/16x16/status/audio-input-microphone-low.png
 %%DATADIR%%/icons/hicolor/16x16/status/audio-input-microphone-medium.png

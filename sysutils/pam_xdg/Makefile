@@ -1,17 +1,21 @@
 PORTNAME=	pam_xdg
-DISTVERSION=	0.8.1
+DISTVERSION=	0.8.2
 CATEGORIES=	sysutils wayland
 MASTER_SITES=	https://ftp.sdaoden.eu/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PAM module to manage XDG Base Directories
-WWW=		https://www.sdaoden.eu/code.html #s-toolbox
+WWW=		https://www.sdaoden.eu/code.html#s-toolbox
 
 LICENSE=	ISCL
 
 USES=		uidfix
 PLIST_FILES=	lib/${PORTNAME}.so \
 		share/man/man8/${PORTNAME}.8.gz
+
+.if exists(/usr/lib/pam_xdg.so)
+IGNORE=		module name conflict with a different implementation in base system
+.endif
 
 # makefile is too crufty, so roll our own
 MAKEFILE=	bsd.lib.mk

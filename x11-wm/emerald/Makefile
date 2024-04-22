@@ -1,6 +1,6 @@
 PORTNAME=	emerald
 PORTVERSION=	0.8.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://BSDforge.com/projects/source/x11-wm/emerald/
 
@@ -12,16 +12,18 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:x11-wm/compiz
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libwnck-1.so:x11-toolkits/libwnck
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		desktop-file-utils gl gmake gnome libtool pathfix \
 		pkgconfig shared-mime-info tar:bzip2 xorg
 USE_GL=		gl
-USE_GNOME=	cairo gtk20 intltool pango
+USE_GNOME=	cairo gdkpixbuf2 gtk20 intltool pango
 USE_XORG=	x11 xrender
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

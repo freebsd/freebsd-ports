@@ -1,6 +1,6 @@
 PORTNAME=	foobillard
 PORTVERSION=	3.0a
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/FooBillard-Sources/
 
@@ -53,6 +53,6 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/foobillard.6 ${STAGEDIR}${PREFIX}/man/man6/foobillard.6
+	${INSTALL_MAN} ${WRKSRC}/foobillard.6 ${STAGEDIR}${PREFIX}/share/man/man6/foobillard.6
 
 .include <bsd.port.mk>

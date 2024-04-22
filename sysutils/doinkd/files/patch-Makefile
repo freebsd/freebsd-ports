@@ -1,5 +1,5 @@
---- Makefile.orig	2006-06-02 12:15:31.000000000 -0700
-+++ Makefile	2023-02-10 06:37:55.103169000 -0800
+--- Makefile.orig	2006-06-02 19:15:31 UTC
++++ Makefile
 @@ -2,8 +2,8 @@
  #
  
@@ -11,7 +11,7 @@
  INCLUDE = 
  
  ######################################################################
-@@ -81,7 +81,7 @@
+@@ -81,7 +81,7 @@ INCLUDE = 
  ######################################################################
  # UnixWare 7 -- SVR5 MP 
  #DEFS = -DSYSV -DHAVE_PROC_FS -DUTMPPID -DHAVE_SETSID -DHAVE_UTMPX -DUTMPHOST -DUNIXWARE
@@ -20,7 +20,7 @@
  SPECLIBS = 
  INSTTYPE = install4
  
-@@ -193,26 +193,27 @@
+@@ -193,26 +193,27 @@ MMODE   = 644
  # You will need to delete parse.c before compiling!  You can either
  # do so by hand, or do a 'make clean' followed by the normal 'make'.
  #DEFS += -O -m486
@@ -38,7 +38,7 @@
 +DEST    = ${STAGEDIR}${PREFIX}/sbin
 +CFDEST  = ${STAGEDIR}${PREFIX}/etc/doinkd
 +CFDEST_REAL  = ${PREFIX}/etc/doinkd
-+MDEST   = ${STAGEDIR}${PREFIX}/man
++MDEST   = ${STAGEDIR}${PREFIX}/share/man
 +LOGDEST = /var/log
  #
  #OWNER   = root
@@ -60,7 +60,7 @@
  
  ######################################################################
  ######################################################################
-@@ -450,13 +451,13 @@
+@@ -450,13 +451,13 @@ PMAN    = doinkd.8
  PMAN    = doinkd.8
  
  # Names of config and log files
@@ -76,7 +76,7 @@
  
  # For HP's ANSI C compiler (use -g instead of +O3 for debugging)
  # CFLAGS = +O3 -Aa -D_HPUX_SOURCE ${DEFS} ${DEBUG} -DCONFIG=\"${CONFIG}\" -DLOGFILE=\"${LOGFILE}\" ${INCLUDE}
-@@ -509,11 +510,11 @@
+@@ -509,11 +510,11 @@ install1a: all
  # BSD like, but with some enhancements like: install -s -> strip binary
  #                                            gzip manual pages
  install1a: all

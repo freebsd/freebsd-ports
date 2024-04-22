@@ -131,6 +131,13 @@ share/TrustedQSL/help/tqslapp/update.htm
 share/TrustedQSL/help/tqslapp/update1.bmp
 share/TrustedQSL/help/tqslapp/update2.bmp
 share/TrustedQSL/languages.dat
+share/applications/org.arrl.trustedqsl.desktop
+share/icons/hicolor/128x128/apps/org.arrl.trustedqsl.png
+share/icons/hicolor/16x16/apps/org.arrl.trustedqsl.png
+share/icons/hicolor/32x32/apps/org.arrl.trustedqsl.png
+share/icons/hicolor/48x48/apps/org.arrl.trustedqsl.png
+share/icons/hicolor/64x64/apps/org.arrl.trustedqsl.png
+share/locale/ca_ES/LC_MESSAGES/tqslapp.mo
 share/locale/de/LC_MESSAGES/tqslapp.mo
 share/locale/es/LC_MESSAGES/tqslapp.mo
 share/locale/fi/LC_MESSAGES/tqslapp.mo
@@ -138,8 +145,11 @@ share/locale/fr/LC_MESSAGES/tqslapp.mo
 share/locale/hi_IN/LC_MESSAGES/tqslapp.mo
 share/locale/it/LC_MESSAGES/tqslapp.mo
 share/locale/ja/LC_MESSAGES/tqslapp.mo
+share/locale/pl_PL/LC_MESSAGES/tqslapp.mo
 share/locale/pt/LC_MESSAGES/tqslapp.mo
 share/locale/ru/LC_MESSAGES/tqslapp.mo
+share/locale/sv_SE/LC_MESSAGES/tqslapp.mo
+share/locale/tr_TR/LC_MESSAGES/tqslapp.mo
 share/locale/zh_CN/LC_MESSAGES/tqslapp.mo
 share/locale/zh_TW/LC_MESSAGES/tqslapp.mo
 share/man/man5/tqsl.5.gz

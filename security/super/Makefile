@@ -1,6 +1,6 @@
 PORTNAME=	super
 PORTVERSION=	3.30.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security sysutils
 MASTER_SITES=	ftp://ftp.ucolick.org/pub/users/will/ \
 		http://www.ucolick.org/~will/RUE/super/
@@ -16,6 +16,7 @@ LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var"
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

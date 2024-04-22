@@ -1,5 +1,5 @@
 PORTNAME=	notmuch
-DISTVERSION=	0.38.2
+DISTVERSION=	0.38.3
 PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	https://notmuchmail.org/releases/
@@ -37,7 +37,7 @@ USES+=		tar:xz
 .ifndef MASTERDIR
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--infodir=${PREFIX}/${INFO_PATH} \
-		--mandir=${MANPREFIX}/man \
+		--mandir=${PREFIX}/share/man \
 		--prefix=${PREFIX} \
 		--with-bash-completion \
 		--with-retry-lock \
@@ -84,7 +84,7 @@ post-install:
 
 # Keep poudriere-testport(8) happy.
 post-install-MANPAGES-on:
-	@${RM} ${STAGEDIR}${MANPREFIX}/man/man1/notmuch-emacs-mua.1.gz
+	@${RM} ${STAGEDIR}${PREFIX}/share/man/man1/notmuch-emacs-mua.1.gz
 .endif
 
 .include <bsd.port.mk>

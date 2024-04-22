@@ -1,5 +1,5 @@
 PORTNAME=	Lingua-JA-Moji
-PORTVERSION=	0.59
+PORTVERSION=	0.60
 CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 
@@ -11,8 +11,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Convert-Moji>=0.05:converters/p5-Convert-Moji \
-		p5-JSON-Parse>=0.61:devel/p5-JSON-Parse
+RUN_DEPENDS=	p5-Convert-Moji>=0.11:converters/p5-Convert-Moji \
+		p5-JSON-Parse>=0.62:devel/p5-JSON-Parse
 
 USES=		perl5
 USE_PERL5=	configure

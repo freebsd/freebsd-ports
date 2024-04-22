@@ -1,10 +1,10 @@
 bin/slick-greeter-check-hidpi
 bin/slick-greeter-enable-tap-to-click
 bin/slick-greeter-set-keyboard-layout
-man/man1/slick-greeter-check-hidpi.1.gz
-man/man1/slick-greeter-enable-tap-to-click.1.gz
-man/man1/slick-greeter-set-keyboard-layout.1.gz
-man/man8/slick-greeter.8.gz
+share/man/man1/slick-greeter-check-hidpi.1.gz
+share/man/man1/slick-greeter-enable-tap-to-click.1.gz
+share/man/man1/slick-greeter-set-keyboard-layout.1.gz
+share/man/man8/slick-greeter.8.gz
 sbin/slick-greeter
 share/locale/af/LC_MESSAGES/slick-greeter.mo
 share/locale/am/LC_MESSAGES/slick-greeter.mo

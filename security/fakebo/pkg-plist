@@ -1,5 +1,0 @@
-bin/fakebo
-@sample etc/fakebo.conf.sample
-share/man/man1/fakebo.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/custom.replies

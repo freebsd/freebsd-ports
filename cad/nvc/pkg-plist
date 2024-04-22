@@ -165,5 +165,5 @@ libexec/nvc/install-uvvm.sh
 libexec/nvc/install-vivado.sh
 libexec/nvc/install-vunit.sh
 libexec/nvc/install-xpm_vhdl.sh
-man/man1/nvc.1.gz
+share/man/man1/nvc.1.gz
 share/bash-completion/completions/nvc.bash

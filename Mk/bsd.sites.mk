@@ -104,7 +104,6 @@ MASTER_SITE_CRAN+= \
 	http://cran.utstat.utoronto.ca/%SUBDIR%/ \
 	https://cran.csiro.au/%SUBDIR%/ \
 	https://mirrors.tuna.tsinghua.edu.cn/CRAN/%SUBDIR%/ \
-	http://camoruco.ing.uc.edu.ve/cran/%SUBDIR%/ \
 	https://mirror.las.iastate.edu/CRAN/%SUBDIR%/ \
 	https://cran.ma.imperial.ac.uk/%SUBDIR%/ \
 	https://cran.ism.ac.jp/%SUBDIR%/
@@ -134,8 +133,7 @@ MASTER_SITE_DEBIAN_POOL+= \
 .if !defined(IGNORE_MASTER_SITE_ECLIPSE)
 MASTER_SITE_ECLIPSE+= \
 	https://ftp-stud.hs-esslingen.de/pub/Mirrors/eclipse/%SUBDIR%/ \
-	https://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/%SUBDIR%/ \
-	http://eclipse.stu.edu.tw/%SUBDIR%/
+	https://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/%SUBDIR%/
 .endif
 
 # List: https://www.exim.org/mirmon/ftp_mirrors.html
@@ -566,14 +564,12 @@ WWW?=	https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/
 .if !defined(IGNORE_MASTER_SITE_GNOME)
 MASTER_SITE_GNOME+= \
 	https://download.gnome.org/%SUBDIR%/ \
-	http://download.gnome.org/%SUBDIR%/ \
 	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/archive/${PORTVERSION}/ \
-	http://ftp.belnet.be/mirror/ftp.gnome.org/%SUBDIR%/ \
-	ftp://ftp.belnet.be/mirror/ftp.gnome.org/%SUBDIR%/ \
+	http://ftp.belnet.be/mirror/ftp.gnome.org/gnomeftp/%SUBDIR%/ \
+	ftp://ftp.belnet.be/mirror/ftp.gnome.org/gnomeftp/%SUBDIR%/ \
 	https://ftp.acc.umu.se/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/ \
 	https://fr2.rpmfind.net/linux/gnome.org/%SUBDIR%/ \
-	http://www.gtlib.gatech.edu/pub/gnome/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.nara.wide.ad.jp/pub/X11/GNOME/%SUBDIR%/
@@ -686,13 +682,6 @@ MASTER_SITE_MATE+= \
 
 .if !defined(IGNORE_MASTER_SITE_MOZDEV)
 MASTER_SITE_MOZDEV+= \
-	http://ftp.scarlet.be/pub/mozdev/%SUBDIR%/ \
-	http://ftp.rz.tu-bs.de/pub/mirror/downloads.mozdev.org/%SUBDIR%/ \
-	http://ftp.ntua.gr/pub/www/mozdev/%SUBDIR%/ \
-	http://mozdev.oregonstate.edu/%SUBDIR%/ \
-	http://ftp.ntua.gr/pub/www/mozdev/%SUBDIR%/ \
-	http://www.devlib.org/mozdev/%SUBDIR%/ \
-	ftp://ftp.heanet.ie/pub/mozdev/%SUBDIR%/ \
 	http://mirrors.ibiblio.org/mozdev.org/%SUBDIR%/
 .endif
 
@@ -784,8 +773,7 @@ MASTER_SITE_OSSP+= \
 
 .if !defined(IGNORE_MASTER_SITE_PACKETSTORM)
 MASTER_SITE_PACKETSTORM+= \
-	https://dl.packetstormsecurity.net/%SUBDIR%/ \
-	https://packetstorm.foofus.com/%SUBDIR%/
+	https://dl.packetstormsecurity.net/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_PERL_CPAN)
@@ -853,8 +841,6 @@ MASTER_SITE_QMAIL+= \
 	http://qmail.glasswings.com.au/%SUBDIR%/ \
 	http://qmail.psshee.com/%SUBDIR%/ \
 	http://www.agria.hu/qmail/%SUBDIR%/ \
-	http://qmail.netvisao.pt/%SUBDIR%/ \
-	http://qmail.ipg.sk/%SUBDIR%/ \
 	http://qmail.omnis.ch/%SUBDIR%/ \
 	http://www.qmail.org/%SUBDIR%/
 .endif
@@ -865,7 +851,6 @@ MASTER_SITE_QT+= \
 	http://master.qt.io/%SUBDIR%/ \
 	https://www.mirrorservice.org/sites/download.qt-project.org/%SUBDIR%/ \
 	http://www.nic.funet.fi/pub/mirrors/download.qt-project.org/%SUBDIR%/ \
-	http://qtmirror.ics.com/pub/qtproject/%SUBDIR%/ \
 	https://ftp.jaist.ac.jp/pub/qtproject/%SUBDIR%/
 .endif
 
@@ -908,9 +893,9 @@ MASTER_SITE_SAVANNAH+= \
 .  for p in https http
 MASTER_SITE_SOURCEFORGE+= ${p}://downloads.sourceforge.net/project/%SUBDIR%/
 .    for m in cfhcable cytranet deac-ams deac-fra deac-riga excellmedia \
-	freefr gigenet ixpeering jaist jztkft kumisystems liquidtelecom \
+	freefr gigenet ixpeering jaist kumisystems liquidtelecom \
 	nchc netactuate netcologne netix onboardcloud phoenixnap \
-	razaoinfo sinalbr sitsa sonik tenet udomain ufpr versaweb
+	razaoinfo sinalbr sitsa tenet udomain ufpr versaweb
 MASTER_SITE_SOURCEFORGE+= ${p}://${m}.dl.sourceforge.net/project/%SUBDIR%/
 .    endfor
 .  endfor
@@ -1007,7 +992,6 @@ MASTER_SITE_TOR+= \
 		http://tor.cyberarmy.at/dist/%SUBDIR%/ \
 		http://tor.dont-know-me.at/dist/%SUBDIR%/ \
 		http://tor.factor.cc/dist/%SUBDIR%/ \
-		http://tor.homosu.net/dist/%SUBDIR%/ \
 		http://tor.idnr.ws/dist/%SUBDIR%/ \
 		http://tor.kamagurka.org/dist/%SUBDIR%/ \
 		http://tor.spline.de/dist/%SUBDIR%/ \
@@ -1039,8 +1023,7 @@ MASTER_SITE_XFCE+= \
 	https://mirror.netcologne.de/xfce/src/%SUBDIR%/${_XFCE_PATH}/ \
 	https://ftp.cixug.es/xfce/src/%SUBDIR%/${_XFCE_PATH}/ \
 	https://archive.be.xfce.org/src/%SUBDIR%/${_XFCE_PATH}/ \
-	https://archive.al-us.xfce.org/src/%SUBDIR%/${_XFCE_PATH}/ \
-	http://mirror.perldude.de/archive.xfce.org/src/%SUBDIR%/${_XFCE_PATH}/
+	https://archive.al-us.xfce.org/src/%SUBDIR%/${_XFCE_PATH}/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_XORG)
@@ -1053,7 +1036,6 @@ MASTER_SITE_XORG+= \
 	https://www.mirrorservice.org/sites/ftp.x.org/pub/%SUBDIR%/ \
 	https://ftp.yz.yamagata-u.ac.jp/pub/X11/x.org/%SUBDIR%/ \
 	http://piotrkosoft.net/pub/mirrors/ftp.x.org/pub/%SUBDIR%/ \
-	http://xorg.mirrors.pair.com/%SUBDIR%/ \
 	http://ftp.kaist.ac.kr/x.org/%SUBDIR%/
 .endif
 

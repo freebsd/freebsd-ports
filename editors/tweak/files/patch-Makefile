@@ -21,7 +21,7 @@
 -MANDIR=$(PREFIX)/man/man1
 +PREFIX?=/usr/local
 +BINDIR?=$(PREFIX)/bin
-+MANDIR?=$(PREFIX)/man/man1
++MANDIR?=$(PREFIX)/share/man/man1
  
  TWEAK := main.o keytab.o actions.o search.o rcfile.o buffer.o btree.o
  

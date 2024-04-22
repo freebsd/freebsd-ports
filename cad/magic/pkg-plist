@@ -76,7 +76,8 @@ lib/magic/doc/html/graphics/corner2.gif
 lib/magic/doc/html/graphics/email_address.png
 lib/magic/doc/html/graphics/line1.gif
 lib/magic/doc/html/graphics/magic_OGL_sm.gif
-lib/magic/doc/html/graphics/magic_title2.gif
+lib/magic/doc/html/graphics/magic_title8_3.gif
+lib/magic/doc/html/graphics/magic_title8_3.png
 lib/magic/doc/html/graphics/techmgr.gif
 lib/magic/doc/html/graphics/toolbar.gif
 lib/magic/doc/html/graphics/writeall.gif
@@ -289,6 +290,7 @@ lib/magic/tcl/magicdnull
 lib/magic/tcl/magicexec
 lib/magic/tcl/mazeroute.tcl
 lib/magic/tcl/readspice.tcl
+lib/magic/tcl/reorderLayers.tcl
 lib/magic/tcl/socketcmd.tcl
 lib/magic/tcl/strip_reflibs.tcl
 lib/magic/tcl/tclmagic.so
@@ -296,6 +298,7 @@ lib/magic/tcl/techbuilder.tcl
 lib/magic/tcl/texthelper.tcl
 lib/magic/tcl/tkcon.tcl
 lib/magic/tcl/tkshell.tcl
+lib/magic/tcl/toolbar.tcl
 lib/magic/tcl/toolkit.tcl
 lib/magic/tcl/toolkit_rev0.tcl
 lib/magic/tcl/tools.tcl

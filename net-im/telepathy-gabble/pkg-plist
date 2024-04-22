@@ -8,7 +8,7 @@ lib/telepathy/gabble-0/lib/libwocky.so
 lib/telepathy/gabble-0/plugins/libconsole.so
 lib/telepathy/gabble-0/plugins/libgateways.so
 libexec/telepathy-gabble
-man/man8/telepathy-gabble.8.gz
+share/man/man8/telepathy-gabble.8.gz
 share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.gabble.service
 %%DOCSDIR%%/muc-bytestream.html
 %%DOCSDIR%%/olpc.html

@@ -1,5 +1,5 @@
 PORTNAME=	mongo
-PORTVERSION=	2.19.3
+PORTVERSION=	2.20.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/mongodb/mongo-ruby-driver
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-bson>=4.14.1<5.0.0:devel/rubygem-bson
+RUN_DEPENDS=	rubygem-bson>=4.14.1<6.0.0:devel/rubygem-bson
 
 USES=		gem
 

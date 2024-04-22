@@ -2,7 +2,7 @@ PORTNAME=	pdfpc
 DISTVERSION=	4.6.0
 CATEGORIES=	graphics
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Keynote-like multi-monitor presentation viewer
@@ -26,8 +26,6 @@ USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XORG=	x11
 
 USE_GITHUB=	yes
-
-CMAKE_ARGS=	-DMANDIR:STRING="man/"
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/pdfpcrc \

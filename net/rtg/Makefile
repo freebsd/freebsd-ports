@@ -1,5 +1,6 @@
 PORTNAME=	rtg
 PORTVERSION=	0.7.5
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftpmirror.uk/freebsd-ports/rtg/
 
@@ -12,13 +13,14 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp \
 		libgd.so:graphics/gd
 RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
-		p5-DBD-mysql>=0:databases/p5-DBD-mysql
+		${DBD_MYSQL}
 
 USES=		mysql:client perl5 shebangfix ssl
 USE_RC_SUBR=	rtgpoll
 
 SHEBANG_FILES=	etc/95.pl etc/report.pl etc/rtgtargmkr.pl.in
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/${PORTNAME} \
 			--htmldir=${PREFIX}/www/data \
 			--with-mysql=${LOCALBASE} \

@@ -1,5 +1,5 @@
 PORTNAME=	html2text
-PORTVERSION=	2020.1.16
+DISTVERSION=	2024.2.26
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,16 +11,10 @@ WWW=		https://github.com/Alir3z4/html2text/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR}
-
 USES=		python
-USE_PYTHON=	distutils concurrent autoplist
+USE_PYTHON=	autoplist concurrent distutils pytest
 NO_ARCH=	yes
 
 CONFLICTS_INSTALL=	html2text py*-html2text2018 # bin/html2text
-
-do-test:
-	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest --cov=html2text
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-man/man3/RT::Extension::RepeatTicket.3.gz
+share/man/man3/RT::Extension::RepeatTicket.3.gz
 %%RTHOME%%/plugins/RT-Extension-RepeatTicket/bin/rt-repeat-ticket
 %%RTHOME%%/plugins/RT-Extension-RepeatTicket/etc/initialdata
 %%RTHOME%%/plugins/RT-Extension-RepeatTicket/html/Callbacks/RepeatTicket/Elements/Tabs/Privileged

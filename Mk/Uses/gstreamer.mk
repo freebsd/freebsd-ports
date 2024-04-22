@@ -33,7 +33,7 @@ _GST_VER=	${_GST_VER_DEFAULT}
 
 #== Component setup
 
-_GST1_VERSION=		1.22.5
+_GST1_VERSION=		1.22.10
 _GST1_LIB_VER=		1.0
 
 _GST1_CATEGORIES=	audio comms devel ftp graphics multimedia net security \
@@ -50,7 +50,7 @@ _GST1_PLUGINS_graphics= aalib cairo gdkpixbuf gl jpeg kms libcaca libvisual \
 			opencv openexr openjpeg png qt rsvg vulkan webp zbar
 _GST1_PLUGINS_multimedia=	aom assrender bad dash dts dv dvdread \
 			editing-services gnonlin good hls libav libde265 \
-			mpeg2dec mpeg2enc mplex mm openh264 resindvd rtmp \
+			mpeg2dec mpeg2enc mplex mm openh264 resindvd \
 			smoothstreaming theora ttml ugly v4l2 vpx x264 x265 \
 			zxing
 _GST1_PLUGINS_net=	srtp
@@ -326,9 +326,6 @@ gst-mplex_IMPL=		bad
 
 gst-openh264_PORT=	multimedia/gstreamer${_GST_VER}-plugins-openh264
 gst-openh264_IMPL=	bad
-
-gst-rtmp_PORT=		multimedia/gstreamer${_GST_VER}-plugins-rtmp
-gst-rtmp_IMPL=		bad
 
 gst-smoothstreaming_PORT=	multimedia/gstreamer${_GST_VER}-plugins-smoothstreaming
 gst-smoothstreaming_IMPL=	bad

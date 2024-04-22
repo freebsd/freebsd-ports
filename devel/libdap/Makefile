@@ -1,12 +1,13 @@
 PORTNAME=	libdap
-PORTVERSION=	3.20.11
+DISTVERSION=	3.21.0-27
 CATEGORIES=	devel
 MASTER_SITES=	https://www.opendap.org/pub/source/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SDK which contains an implementation of DAP 2.0 and 4.0
-WWW=		https://www.opendap.org/software/libdap
+WWW=		https://www.opendap.org/software/libdap \
+		https://github.com/OPENDAP/libdap4
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -22,5 +23,6 @@ CONFIGURE_ARGS=	ac_cv_lib_crypto_OpenSSL_add_all_algorithms=yes \
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/libdap-${PORTVERSION:R}
 
 .include <bsd.port.mk>

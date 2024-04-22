@@ -1,6 +1,6 @@
 PORTNAME=	beets
 DISTVERSION=	1.6.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio python
 MASTER_SITES=	PYPI
 
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}confuse>=1.0.0:devel/py-confuse@${PY_FLAVOR}
 USES=		python
 USE_PYTHON=	autoplist distutils optsuffix
 
-PLIST_FILES=	man/man1/beet.1.gz man/man5/beetsconfig.5.gz
+PLIST_FILES=	share/man/man1/beet.1.gz share/man/man5/beetsconfig.5.gz
 
 NO_ARCH=	yes
 
@@ -80,7 +80,7 @@ METASYNC_DBUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLA
 MPDSTATS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-mpd2>=0.4.2:audio/py-python-mpd2@${PY_FLAVOR}
 PLEXUPDATE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 REPLAYGAIN_RUN_DEPENDS=	mp3gain>=0:audio/mp3gain
-# Broken, unfechable	aacgain>=0:audio/aacgain 
+# Broken, unfechable	aacgain>=0:audio/aacgain
 SONOS_UPDATE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}soco>=0:multimedia/py-soco@${PY_FLAVOR}
 SPOTIFY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 THUMBNAILS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>=0:devel/py-xdg@${PY_FLAVOR}
@@ -88,7 +88,7 @@ WEB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask>=0:www/py-flask@${PY_FLAVOR}
 WEB_CORS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask-Cors>=0:www/py-flask-cors@${PY_FLAVOR}
 
 post-install:
-	${INSTALL} ${WRKSRC}/man/beet.1 ${STAGEDIR}${PREFIX}/man/man1/
-	${INSTALL} ${WRKSRC}/man/beetsconfig.5 ${STAGEDIR}${PREFIX}/man/man5/
+	${INSTALL} ${WRKSRC}/man/beet.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL} ${WRKSRC}/man/beetsconfig.5 ${STAGEDIR}${PREFIX}/share/man/man5/
 
 .include <bsd.port.mk>

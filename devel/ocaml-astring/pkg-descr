@@ -1,0 +1,3 @@
+Astring is an opiniated immutable-String library for OCaml. It is
+highly recommended to compile your project in the -safe-string mode of
+the OCaml compiler before using this library.

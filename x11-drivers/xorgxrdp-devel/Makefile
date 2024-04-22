@@ -1,8 +1,8 @@
 PORTNAME=	xorgxrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.80.b20230317
+DISTVERSION=	0.10.0
 # Be sure to bump PORTREVISION after xorg-server update to force rebuild
-PORTREVISION=	2
+#PORTREVISION=	0
 CATEGORIES=	x11-drivers
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	xrdp
@@ -11,7 +11,7 @@ PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	X.Org driver enabling use through an RDP session with xrdp
-WWW=		http://www.xrdp.org/
+WWW=		https://www.xrdp.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -25,8 +25,8 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	neutrinolabs
-GH_TAGNAME=	a07c9c8
-GH_TUPLE=	neutrinolabs:xrdp:ae43cee:xrdp
+GH_TAGNAME=	e9a85dd
+GH_TUPLE=	neutrinolabs:xrdp:c3cb855:xrdp
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 

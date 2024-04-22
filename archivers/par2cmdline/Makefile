@@ -1,7 +1,7 @@
 PORTNAME=	par2cmdline
 PORTVERSION=	0.8.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE=	GPLv2
 
 USES=		autoreconf compiler:c++11-lang
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Parchive
@@ -20,7 +21,7 @@ PORTDOCS=	README
 CONFLICTS=	par2cmdline-turbo
 
 PLIST_FILES=	bin/par2 bin/par2create bin/par2repair bin/par2verify \
-	man/man1/par2.1.gz
+	share/man/man1/par2.1.gz
 
 OPTIONS_DEFINE=	DOCS
 

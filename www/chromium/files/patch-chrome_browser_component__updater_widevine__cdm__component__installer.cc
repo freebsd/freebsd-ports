@@ -1,4 +1,4 @@
---- chrome/browser/component_updater/widevine_cdm_component_installer.cc.orig	2023-10-11 18:22:24 UTC
+--- chrome/browser/component_updater/widevine_cdm_component_installer.cc.orig	2024-03-27 13:31:02 UTC
 +++ chrome/browser/component_updater/widevine_cdm_component_installer.cc
 @@ -40,7 +40,7 @@
  #include "third_party/widevine/cdm/buildflags.h"
@@ -9,7 +9,7 @@
  #include "chrome/common/media/component_widevine_cdm_hint_file_linux.h"
  #endif
  
-@@ -77,7 +77,7 @@ static_assert(std::size(kWidevineSha2Hash) == crypto::
+@@ -78,7 +78,7 @@ static_assert(std::size(kWidevineSha2Hash) == crypto::
  const char ImageLoaderComponentName[] = "WidevineCdm";
  #endif
  
@@ -18,7 +18,7 @@
  // On Linux and ChromeOS the Widevine CDM is loaded at startup before the
  // zygote is locked down. As a result there is no need to register the CDM
  // with Chrome as it can't be used until Chrome is restarted.
-@@ -363,7 +363,7 @@ void WidevineCdmComponentInstallerPolicy::UpdateCdmPat
+@@ -364,7 +364,7 @@ void WidevineCdmComponentInstallerPolicy::UpdateCdmPat
      return;
    }
  

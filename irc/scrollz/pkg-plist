@@ -1,7 +1,7 @@
 bin/scrollz
 bin/scrollz-%%SCROLLZ_VER%%
 bin/wservz
-man/man1/scrollz.1.gz
+share/man/man1/scrollz.1.gz
 %%DATADIR%%/doc/ScrollZ.doc
 %%DATADIR%%/help/!
 %%DATADIR%%/help/:

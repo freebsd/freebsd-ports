@@ -1,6 +1,6 @@
 PORTNAME=	dillo
 PORTVERSION=	3.0.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://www.dillo.org/download/ \
 		LOCAL/bf/dillo/ \
@@ -27,6 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-efence \
 		--disable-insure \
 		--libdir=${PREFIX}/libexec
+GNU_CONFIGURE_MANPREFIX= ${PREFIX}/share
 LDFLAGS+=	-lthr
 
 # Fix build with clang11

@@ -2,8 +2,8 @@ bin/ug
 bin/ugrep
 bin/ug+
 bin/ugrep+
-man/man1/ug.1.gz
-man/man1/ugrep.1.gz
+share/man/man1/ug.1.gz
+share/man/man1/ugrep.1.gz
 %%DATADIR%%/patterns/README.md
 %%DATADIR%%/patterns/c++/README.md
 %%DATADIR%%/patterns/c++/classes

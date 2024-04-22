@@ -1,14 +1,5 @@
---- CMakeLists.txt.orig	2018-03-20 06:20:43 UTC
+--- CMakeLists.txt.orig	2024-02-24 09:22:45 UTC
 +++ CMakeLists.txt
-@@ -29,7 +29,7 @@ set (pfstools_VERSION_MINOR ${CPACK_PACK
- set (pfslib_version 1.2)
- set(CMAKE_LEGACY_CYGWIN_WIN32 0)
-  
--set (MAN_DIR "${CMAKE_INSTALL_PREFIX}/share/man/man1" CACHE PATH "The directory where the man pages are")
-+set (MAN_DIR "${CMAKE_INSTALL_PREFIX}/man/man1" CACHE PATH "The directory where the man pages are")
- 
- include( CheckCXXSourceCompiles )
- 
 @@ -57,12 +57,12 @@ endif( HAS_BRANCH_PREDICTION )
  # ======== Find bash =======
  

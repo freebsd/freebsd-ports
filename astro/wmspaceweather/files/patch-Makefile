@@ -39,5 +39,5 @@
 -	install    -m 0644 wmSpaceWeather.1 $(DESTDIR)/man/man1 
 +	${BSD_INSTALL_PROGRAM} wmSpaceWeather $(DESTDIR)$(PREFIX)/bin
 +	${BSD_INSTALL_SCRIPT} GetKp $(DESTDIR)$(PREFIX)/bin
-+	${BSD_INSTALL_MAN} wmSpaceWeather.1 $(DESTDIR)$(PREFIX)/man/man1 
++	${BSD_INSTALL_MAN} wmSpaceWeather.1 $(DESTDIR)$(PREFIX)/share/man/man1 
  

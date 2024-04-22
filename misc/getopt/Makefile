@@ -1,5 +1,6 @@
 PORTNAME=	getopt
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://frodo.looijaard.name/system/files/software/getopt/ \
 		LOCAL/sunpoet

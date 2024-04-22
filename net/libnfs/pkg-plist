@@ -17,6 +17,6 @@ include/nfsc/libnfs-raw.h
 include/nfsc/libnfs-zdr.h
 include/nfsc/libnfs.h
 libdata/pkgconfig/libnfs.pc
-man/man1/nfs-cat.1.gz
-man/man1/nfs-cp.1.gz
-man/man1/nfs-ls.1.gz
+share/man/man1/nfs-cat.1.gz
+share/man/man1/nfs-cp.1.gz
+share/man/man1/nfs-ls.1.gz

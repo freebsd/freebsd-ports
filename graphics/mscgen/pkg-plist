@@ -1,5 +1,4 @@
 bin/mscgen
-man/man1/mscgen.1.gz
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/README
@@ -9,3 +8,4 @@ man/man1/mscgen.1.gz
 %%DOCSDIR%%/examples/msg_types.msc
 %%DOCSDIR%%/examples/simple_prog_desc.msc
 %%DOCSDIR%%/mscgen.lang
+share/man/man1/mscgen.1.gz

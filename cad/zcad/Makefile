@@ -1,12 +1,13 @@
 PORTNAME=	zcad
 PORTVERSION=	0.9.8.5
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	cad
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Simple CAD program
 
+BROKEN=	Can't find unit TransferMacros used by uzmacros
 USES=		dos2unix fpc lazarus:flavors tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	zamtmn

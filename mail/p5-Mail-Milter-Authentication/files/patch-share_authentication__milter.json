@@ -1,0 +1,76 @@
+--- share/authentication_milter.json.orig	2024-02-05 02:41:57 UTC
++++ share/authentication_milter.json
+@@ -2,19 +2,19 @@
+     "debug"     : 0,
+     "dryrun"    : 0,
+     "logtoerr"  : 0,
+-    "error_log" : "/var/log/authentication_milter.err",
++    "log_dispatchouli" : {},
+ 
+-    "connection"             : "inet:12345@localhost",
+-    "umask"                  : "0000",
+-    "runas"                  : "nobody",
+-    "rungroup"               : "nogroup",
++    "connection"             : "unix:%%RUNDIR%%/auth_milter.sock",
++    "umask"                  : "0077",
++    "runas"                  : "%%DEFAULT_USER%%",
++    "rungroup"               : "%%DEFAULT_GROUP%%",
+     "chroot"                 : "",
+ 
+     "listen_backlog"         : 20,
+-    "min_children"           : 20,
+-    "max_children"           : 200,
+-    "min_spare_children"     : 10,
+-    "max_spare_children"     : 20,
++    "min_children"           : 1,
++    "max_children"           : 2,
++    "min_spare_children"     : 1,
++    "max_spare_children"     : 1,
+     "max_requests_per_child" : 200,
+ 
+     "connect_timeout"       : 30,
+@@ -31,21 +31,32 @@
+     "handlers" : {
+ 
+         "SPF" : {
+-            "hide_none" : 0
++            "hide_none" : 0,
++            "hide_received-spf_header": 1
+         },
+ 
+         "DKIM" : {
+             "hide_none" : 0,
+-            "check_adsp" : 1,
++            "check_adsp" : 0,
++            "hide_domainkeys" : 1,
+             "show_default_adsp" : 0,
+-            "adsp_hide_none" : 0
++            "adsp_hide_none" : 1
+         },
+ 
+         "DMARC" : {
+             "hide_none" : 0,
++            "hard_reject" : 0,
++            "no_reject_disposition" : "quarantine",
++            "use_arc" : 1,
++            "no_report" : 1,
++            "config_file": "%%ETCDIR%%/mail-dmarc.ini",
+             "detect_list_id" : "1"
+         },
+ 
++        "ARC" : {
++            "hide_none" : 0
++        },
++
+         "PTR" : {},
+ 
+         "SenderID" : {
+@@ -63,7 +74,7 @@
+                 "100.200.100.2",
+                 "2001:44c2:3881:aa00::/56",
+                 "2001:44b8:3021:123:dead:beef:abcd:1234"
+-            ],
++            ]
+         },
+ 
+         "!AddID" : {},

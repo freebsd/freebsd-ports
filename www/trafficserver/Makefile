@@ -1,5 +1,5 @@
 PORTNAME=	trafficserver
-PORTVERSION=	9.2.1
+PORTVERSION=	9.2.4
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libbrotlienc.so:archivers/brotli
 
 USES=		compiler:c++17-lang cpe gmake libtool localbase luajit \
-		ncurses pathfix perl5 pkgconfig sqlite ssl tar:bzip2 tcl
+		ncurses pathfix perl5 pkgconfig sqlite ssl tar:bzip2
 CPE_VENDOR=	apache
 CPE_PRODUCT=	traffic_server
 USE_PERL5=	build run
@@ -26,6 +26,7 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 USERS=		${WWWOWN}
@@ -34,16 +35,16 @@ PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}" PORTVERSION="${PORTVERSION}"
 
 CONFIGURE_ARGS=	--with-pcre=${LOCALBASE} \
 		--with-openssl=${OPENSSLBASE} \
-		--with-tcl=${TCL_LIBDIR} \
 		--localstatedir=/var \
 		--with-user=${USERS} \
 		--with-group=${GROUPS} \
 		--disable-maintainer-mode \
 		--disable-dependency-tracking \
 		--enable-mime-sanity-check \
-		--enable-experimental-plugins
+		--enable-experimental-plugins \
+		--enable-event-tracker
 
-OPTIONS_DEFINE=	DOCS GEOIP WCCP MEMCACHED IMAGEMAGICK X11
+OPTIONS_DEFINE=	DOCS GEOIP WCCP MEMCACHED IMAGEMAGICK X11 MIMALLOC
 OPTIONS_SUB=	yes
 PLIST_SUB+=	ARCH="${ARCH:C/powerpc64.*/powerpc/}"
 
@@ -51,18 +52,21 @@ GEOIP_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 WCCP_DESC=	Enable WCCPv2 protocol
 WCCP_CONFIGURE_ENABLE=	wccp
 
+MIMALLOC_DESC=	Use mimalloc
+MIMALLOC_LIB_DEPENDS=	libmimalloc.so:devel/mimalloc
+MIMALLOC_CONFIGURE_WITH=	mimalloc
 MEMCACHED_DESC=		Enable memcache & memcached_remap plugin
 MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 
 IMAGEMAGICK_DESC=	Enable ats-magick & webp convert plugin
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
 .if ${PORT_OPTIONS:MX11}
-USES+=		magick:6
+USES+=		magick
 .else
-USES+=		magick:6,nox11
+USES+=		magick:nox11
 .endif
 .endif
 
@@ -82,4 +86,4 @@ post-install:
 	${SED} -i '' -e 's|^${STAGEDIR}||g' \
 		${STAGEDIR}${PREFIX}/lib/perl5/${ARCH:C/powerpc64.*/powerpc/}-freebsd-thread-multi/auto/Apache/TS/.packlist
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

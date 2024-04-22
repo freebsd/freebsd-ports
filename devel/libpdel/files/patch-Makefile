@@ -1,6 +1,6 @@
 --- Makefile.orig	2009-05-13 21:36:05 UTC
 +++ Makefile
-@@ -2,6 +2,11 @@
+@@ -2,6 +2,11 @@ LIB=		pdel
  
  LIB=		pdel
  
@@ -12,7 +12,16 @@
  SUBDIRS=	config http io misc net pdel ppp regex structs sys thread tmpl util
  
  VERSION!=	grep -w PDEL_VERSION_STRING ${.CURDIR}/version.h \
-@@ -32,7 +37,7 @@ OBJDIR=		${PDELTOP}/obj/${OS}.${ARCH}
+@@ -23,7 +28,7 @@ SHLIBDIR=	${PREFIX}/${LIBSUFX}
+ LIBSUFX=	lib
+ LIBDIR=		${PREFIX}/${LIBSUFX}
+ SHLIBDIR=	${PREFIX}/${LIBSUFX}
+-MANSUFX=	man/man
++MANSUFX=	share/man/man
+ MANDIR=		${PREFIX}/${MANSUFX}
+ INCSUFX=	include/pdel
+ INCDIR=		${PREFIX}/${INCSUFX}
+@@ -32,7 +37,7 @@ MAN=		libpdel.3
  SHLIB_MAJOR=	${VERSION_MAJOR}
  SHLIB_MAJOR=	${VERSION_MINOR}
  MAN=		libpdel.3

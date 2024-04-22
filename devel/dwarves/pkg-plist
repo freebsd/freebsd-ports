@@ -45,4 +45,4 @@ lib/libdwarves_reorganize.so.1.0.0
 %%DOCSDIR%%/changes-v1.17
 %%DOCSDIR%%/README
 %%DOCSDIR%%/README.btf
-%%MANPAGES%%man/man1/pahole.1.gz
+%%MANPAGES%%share/man/man1/pahole.1.gz

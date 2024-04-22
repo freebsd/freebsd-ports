@@ -2,7 +2,7 @@
 %%METASERVER%%bin/lmmetaserver
 %%SERVERSCANNER%%bin/lmscan
 %%SERVER%%bin/lmserver
-%%CLIENT%%man/man6/legesmotus.6.gz
-%%SERVERSCANNER%%man/man6/lmscan.6.gz
-%%SERVER%%man/man6/lmserver.6.gz
+%%CLIENT%%share/man/man6/legesmotus.6.gz
+%%SERVERSCANNER%%share/man/man6/lmscan.6.gz
+%%SERVER%%share/man/man6/lmserver.6.gz
 %%CLIENT%%share/icons/hicolor/256x256/legesmotus.png

@@ -1,7 +1,7 @@
 PORTNAME=	dehydrated
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1-5
-DISTVERSIONSUFFIX=	-ge3ef43c
+DISTVERSION=	0.7.1-6
+DISTVERSIONSUFFIX=	-g4fd777e
 CATEGORIES=	security
 
 MAINTAINER=	meta@FreeBSD.org
@@ -21,7 +21,7 @@ SHEBANG_FILES=	docs/examples/hook.sh dehydrated
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-SUB_FILES=	000.dehydrated pkg-message
+SUB_FILES=	000.dehydrated.daily 000.dehydrated.weekly pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
 
 OPTIONS_DEFINE=		DOCS
@@ -34,8 +34,6 @@ ZSH_DESC=	Use the Z shell (ZSH)
 
 BASH_RUN_DEPENDS=	bash:shells/bash
 ZSH_RUN_DEPENDS=	zsh:shells/zsh
-PERIODIC_DIRS=		etc/periodic/weekly
-PERIODIC_FILES=		000.dehydrated
 
 post-patch:
 .	for f in docs/examples/config dehydrated
@@ -49,13 +47,16 @@ post-patch-ZSH-on:
 .	endfor
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${ETCDIR}/.acme-challenges ${STAGEDIR}${PREFIX}/${PERIODIC_DIRS}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/.acme-challenges \
+		${STAGEDIR}${PREFIX}/etc/periodic/daily \
+		${STAGEDIR}${PREFIX}/etc/periodic/weekly
 	${INSTALL_DATA} ${WRKSRC}/docs/examples/config ${STAGEDIR}${ETCDIR}/config.sample
 	${INSTALL_DATA} ${WRKSRC}/docs/examples/hook.sh ${STAGEDIR}${ETCDIR}/hook.sh.sample
 	${INSTALL_DATA} ${WRKSRC}/docs/examples/domains.txt ${STAGEDIR}${ETCDIR}/domains.txt.sample
-	${INSTALL_MAN} ${WRKSRC}/docs/man/dehydrated.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/man/dehydrated.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKDIR}/${PERIODIC_FILES} ${STAGEDIR}${PREFIX}/${PERIODIC_DIRS}/${PERIODIC_FILES}
+	${INSTALL_SCRIPT} ${WRKDIR}/000.dehydrated.daily ${STAGEDIR}${PREFIX}/etc/periodic/daily/000.dehydrated
+	${INSTALL_SCRIPT} ${WRKDIR}/000.dehydrated.weekly ${STAGEDIR}${PREFIX}/etc/periodic/weekly/000.dehydrated
 	@${MKDIR} ${STAGEDIR}${PREFIX}/www/dehydrated
 
 do-install-DOCS-on:

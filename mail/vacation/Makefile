@@ -1,5 +1,6 @@
 PORTNAME=	vacation
 PORTVERSION=	3.3.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -16,7 +17,7 @@ CFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/work
 
-PLIST_FILES=	bin/vacation man/man1/vacation.1.gz
+PLIST_FILES=	bin/vacation share/man/man1/vacation.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldb|-l${BDB_LIB_NAME}|g' \
@@ -28,6 +29,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vacation ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/vacation.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/vacation.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

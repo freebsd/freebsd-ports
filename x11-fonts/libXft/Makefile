@@ -1,5 +1,6 @@
 PORTNAME=	libXft
 DISTVERSION=	2.3.7
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -14,6 +15,9 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 
 USES=		tar:xz xorg xorg-cat:lib
 USE_XORG=	x11 xorgproto xrender
+
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+
 INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	SHLIB_VER=${DISTVERSION}

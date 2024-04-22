@@ -1,5 +1,4 @@
 bin/lumina-calculator
-man/man1/lumina-calculator.1.gz
 share/applications/lumina-calculator.desktop
 %%NLS%%%%DATADIR%%/i18n/l-calc_af.qm
 %%NLS%%%%DATADIR%%/i18n/l-calc_ar.qm
@@ -64,3 +63,4 @@ share/applications/lumina-calculator.desktop
 %%NLS%%%%DATADIR%%/i18n/l-calc_zh_HK.qm
 %%NLS%%%%DATADIR%%/i18n/l-calc_zh_TW.qm
 %%NLS%%%%DATADIR%%/i18n/l-calc_zu.qm
+share/man/man1/lumina-calculator.1.gz

@@ -1,7 +1,7 @@
 PORTNAME=	ladvd
 PORTVERSION=	1.1.2
 DISTVERSIONPREFIX=v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,14 +20,15 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sspans
 USES=		autoreconf libtool pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-chroot-dir=/var/empty
 
 PORTDOCS=	README TODO HACKING
 USE_RC_SUBR=	ladvd
 SUB_FILES=	pkg-message
 
-PLIST_FILES=	man/man8/ladvd.8.gz \
-		man/man8/ladvdc.8.gz \
+PLIST_FILES=	share/man/man8/ladvd.8.gz \
+		share/man/man8/ladvdc.8.gz \
 		sbin/ladvd \
 		sbin/ladvdc
 

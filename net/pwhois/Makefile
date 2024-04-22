@@ -1,5 +1,6 @@
 PORTNAME=	pwhois
 PORTVERSION=	2.2.1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://pwhois.org/get/ \
 		ZI
@@ -15,7 +16,7 @@ RUN_DEPENDS=	p5-DBI>0:databases/p5-DBI \
 		p5-Net-Telnet>0:net/p5-Net-Telnet \
 		p5-Net-CIDR>0:net-mgmt/p5-Net-CIDR \
 		p5-RPSL-Parser>0:devel/p5-RPSL-Parser \
-		p5-DBD-mysql>=0:databases/p5-DBD-mysql
+		${DBD_MYSQL}
 
 FETCH_ARGS=	-p
 

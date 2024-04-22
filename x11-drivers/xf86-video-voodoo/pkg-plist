@@ -1,2 +1,2 @@
 lib/xorg/modules/drivers/voodoo_drv.so
-man/man4/voodoo.4x.gz
+share/man/man4/voodoo.4x.gz

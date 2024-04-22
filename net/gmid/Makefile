@@ -1,5 +1,6 @@
 PORTNAME=	gmid
 DISTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/omar-polo/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		https://ftp.omarpolo.com/
@@ -24,6 +25,9 @@ USERS=		_gmid
 GROUPS=		_gmid
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/man|/share/man|' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/gmid.conf.sample \

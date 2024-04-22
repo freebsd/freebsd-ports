@@ -239,7 +239,6 @@ lib/libcalamares.so
 lib/libcalamares.so.3.2.61
 lib/libcalamaresui.so
 lib/libcalamaresui.so.3.2.61
-man/man8/calamares.8.gz
 share/applications/calamares.desktop
 %%DATADIR%%/branding/default/banner.png
 %%DATADIR%%/branding/default/banner.png.license
@@ -323,3 +322,4 @@ share/locale/uk/LC_MESSAGES/calamares-python.mo
 share/locale/vi/LC_MESSAGES/calamares-python.mo
 share/locale/zh_CN/LC_MESSAGES/calamares-python.mo
 share/locale/zh_TW/LC_MESSAGES/calamares-python.mo
+share/man/man8/calamares.8.gz

@@ -1,6 +1,5 @@
 PORTNAME=	courier-authlib
-PORTVERSION=	0.72.0
-PORTREVISION=	1
+PORTVERSION=	0.72.1
 CATEGORIES?=	security mail
 .if defined(PKGNAMESUFFIX)
 MASTER_SITES=	SF/courier/authlib/${PORTVERSION}
@@ -29,10 +28,11 @@ OPTIONS_DEFINE+=	GDBM
 
 .else	# !defined(PKGNAMESUFFIX)
 
-LIB_DEPENDS+=	libltdl.so:devel/libltdl \
+LIB_DEPENDS+=	libidn2.so:dns/libidn2 \
+		libltdl.so:devel/libltdl \
 		libcourier-unicode.so:devel/courier-unicode
 
-USES=		iconv gmake libtool localbase perl5 tar:bzip2
+USES=		iconv gmake libtool localbase perl5 pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_SUBMAKE=	yes
 
@@ -44,6 +44,7 @@ AUTHDAEMONVAR=	${LOCALSTATEDIR}/run/authdaemond
 VPOPMAILDIR?=	${LOCALBASE}/vpopmail
 USERDB?=	${PREFIX}/etc/userdb
 
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-unicode \
 		--disable-static \
 		--without-authcustom \

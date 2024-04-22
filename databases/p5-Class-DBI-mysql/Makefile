@@ -1,6 +1,6 @@
 PORTNAME=	Class-DBI-mysql
 PORTVERSION=	1.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,9 +11,9 @@ WWW=		https://metacpan.org/release/Class-DBI-mysql
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-DBI>=0:databases/p5-Class-DBI \
-		p5-DBD-mysql>=0:databases/p5-DBD-mysql
+		${DBD_MYSQL}
 
-USES=		perl5
+USES=		mysql perl5
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

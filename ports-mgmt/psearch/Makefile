@@ -1,5 +1,6 @@
 PORTNAME=	psearch
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	mail@maxlor.com
@@ -13,10 +14,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	maxlor
 
 PLIST_FILES=	bin/psearch \
-		man/man1/psearch.1.gz
+		share/man/man1/psearch.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/psearch ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/psearch.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/psearch.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

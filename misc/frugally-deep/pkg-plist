@@ -13,7 +13,6 @@ include/fdeep/layers/attention_layer.hpp
 include/fdeep/layers/average_layer.hpp
 include/fdeep/layers/average_pooling_3d_layer.hpp
 include/fdeep/layers/batch_normalization_layer.hpp
-include/fdeep/layers/bidirectional_layer.hpp
 include/fdeep/layers/category_encoding_layer.hpp
 include/fdeep/layers/centercrop_layer.hpp
 include/fdeep/layers/concatenate_layer.hpp
@@ -30,14 +29,12 @@ include/fdeep/layers/gelu_layer.hpp
 include/fdeep/layers/global_average_pooling_3d_layer.hpp
 include/fdeep/layers/global_max_pooling_3d_layer.hpp
 include/fdeep/layers/global_pooling_layer.hpp
-include/fdeep/layers/gru_layer.hpp
 include/fdeep/layers/hard_sigmoid_layer.hpp
 include/fdeep/layers/input_layer.hpp
 include/fdeep/layers/layer.hpp
 include/fdeep/layers/layer_normalization_layer.hpp
 include/fdeep/layers/leaky_relu_layer.hpp
 include/fdeep/layers/linear_layer.hpp
-include/fdeep/layers/lstm_layer.hpp
 include/fdeep/layers/max_pooling_3d_layer.hpp
 include/fdeep/layers/maximum_layer.hpp
 include/fdeep/layers/minimum_layer.hpp

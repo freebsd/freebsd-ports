@@ -1,5 +1,6 @@
 PORTNAME=	valgrind
 PORTVERSION=	3.22.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/valgrind
@@ -20,6 +21,7 @@ SHEBANG_FILES=	callgrind/callgrind_annotate.in callgrind/callgrind_control.in \
 		cachegrind/cg_merge.in cachegrind/cg_diff.in \
 		cachegrind/cg_annotate.in
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL}
 
 SSP_UNSAFE=	yes

@@ -122,6 +122,7 @@ include/palisade/core/math/bigintfxd/mubintvecfxd.h
 include/palisade/core/math/bigintfxd/ubintfxd.h
 include/palisade/core/math/bigintnat/mubintvecnat.h
 include/palisade/core/math/bigintnat/ubintnat.h
+include/palisade/core/math/bigintnat/ubintnat.h.orig
 include/palisade/core/math/bigintntl/mubintvecntl.h
 include/palisade/core/math/bigintntl/ubintntl.h
 include/palisade/core/math/binaryuniformgenerator.h
@@ -204,10 +205,10 @@ lib/Palisade/PalisadeTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/Palisade/PalisadeTargets.cmake
 lib/libPALISADEbinfhe.so
 lib/libPALISADEbinfhe.so.1
-lib/libPALISADEbinfhe.so.1.11.6
+lib/libPALISADEbinfhe.so.1.11.9
 lib/libPALISADEcore.so
 lib/libPALISADEcore.so.1
-lib/libPALISADEcore.so.1.11.6
+lib/libPALISADEcore.so.1.11.9
 lib/libPALISADEpke.so
 lib/libPALISADEpke.so.1
-lib/libPALISADEpke.so.1.11.6
+lib/libPALISADEpke.so.1.11.9

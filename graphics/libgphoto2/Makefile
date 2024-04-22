@@ -19,6 +19,7 @@ USE_CSTD=	gnu99
 USE_GNOME=	libxml2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	LTDLINCL="-I${LOCALBASE}/include" \
 		LIBLTDL="-L${LOCALBASE}/lib -lltdl" \
 		PATH="${PATH:C,${HOME}/bin,,}" \

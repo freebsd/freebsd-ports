@@ -1,6 +1,6 @@
 PORTNAME=	amberfish
 PORTVERSION=	1.6.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc databases
 MASTER_SITES=	SF/${PORTNAME}/Amberfish%20source%20-%20stable/${PORTVERSION}	\
 		http://etymon.com/software/amberfish/stable/
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3
 USES=		gmake
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 ALL_TARGET=	all html
 
@@ -26,7 +27,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 DOCS_USES=	makeinfo
-DOCS_PLIST_FILES=	man/man1/af.1.gz
+DOCS_PLIST_FILES=	share/man/man1/af.1.gz
 
 post-extract:
 	${CP} ${FILESDIR}/porter.cc ${WRKSRC}/src

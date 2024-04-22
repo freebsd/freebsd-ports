@@ -1,5 +1,5 @@
-TIMESTAMP = 1683839135
-SHA256 (openssl-3.1.0.tar.gz) = aaa925ad9828745c4cad9d9efeb273deca820f2cdcf2c3ac7d7c1212b7c497b4
-SIZE (openssl-3.1.0.tar.gz) = 15525381
-SHA256 (rbsec-sslscan-2.0.16_GH0.tar.gz) = eae49b9c2023f9c9adeb10c50a6ee3ddf5da7aae20f6a6c59251e7a84aa44131
-SIZE (rbsec-sslscan-2.0.16_GH0.tar.gz) = 113523
+TIMESTAMP = 1707630173
+SHA256 (openssl-3.2.1.tar.gz) = 83c7329fe52c850677d75e5d0b0ca245309b97e8ecbcfdc1dfdc4ab9fac35b39
+SIZE (openssl-3.2.1.tar.gz) = 17733249
+SHA256 (rbsec-sslscan-2.1.3_GH0.tar.gz) = 6beec9345635b41fa2c1bbc5f0854f10014e4b2b4179e9e9a3bda6bdb9e1aa41
+SIZE (rbsec-sslscan-2.1.3_GH0.tar.gz) = 113917

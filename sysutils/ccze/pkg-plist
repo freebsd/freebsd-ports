@@ -21,6 +21,6 @@ lib/ccze/syslog.so
 lib/ccze/ulogd.so
 lib/ccze/vsftpd.so
 lib/ccze/xferlog.so
-man/man1/ccze-cssdump.1.gz
-man/man1/ccze.1.gz
-man/man7/ccze-plugin.7.gz
+share/man/man1/ccze-cssdump.1.gz
+share/man/man1/ccze.1.gz
+share/man/man7/ccze-plugin.7.gz

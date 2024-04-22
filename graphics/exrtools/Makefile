@@ -1,6 +1,6 @@
 PORTNAME=	exrtools
-PORTVERSION=	0.4
-PORTREVISION=	34
+DISTVERSION=	0.4
+PORTREVISION=	35
 CATEGORIES=	graphics
 MASTER_SITES=	http://scanline.ca/exrtools/ \
 		LOCAL/ehaupt
@@ -12,8 +12,8 @@ WWW=		http://scanline.ca/exrtools/
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libImath.so:math/Imath \
-		libpng.so:graphics/png \
-		libOpenEXR.so:graphics/openexr
+		libOpenEXR.so:graphics/openexr \
+		libpng.so:graphics/png
 
 USES=		compiler:c++11-lang gmake jpeg localbase:ldflags pkgconfig
 

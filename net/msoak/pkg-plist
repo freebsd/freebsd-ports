@@ -1,4 +1,4 @@
 bin/msoak
-man/man1/msoak.1.gz
+share/man/man1/msoak.1.gz
 %%EXAMPLESDIR%%/example.config
 %%EXAMPLESDIR%%/example.lua

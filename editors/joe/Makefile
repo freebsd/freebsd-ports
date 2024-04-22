@@ -1,5 +1,6 @@
 PORTNAME=	joe
 PORTVERSION=	4.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES?=	editors
 MASTER_SITES=	SF/joe-editor/JOE%20sources/joe-${PORTVERSION}
@@ -15,6 +16,7 @@ CONFLICTS=	jupp
 
 USES=		gmake iconv localbase ncurses
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	SPELL=aspell
 LIBS+=		${ICONV_LIB}
 

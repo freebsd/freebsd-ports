@@ -1,6 +1,6 @@
 PORTNAME=	mpatrol
 PORTVERSION=	1.4.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -56,8 +56,8 @@ do-install:
 .for file in mpatrol mleak mptrace mprof
 	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/../../man/man1/*.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/../../man/man3/*.3 ${STAGEDIR}${PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/../../man/man1/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/../../man/man3/*.3 ${STAGEDIR}${PREFIX}/share/man/man3
 .for lib in mpalloc mpatrol mpatrolmt
 	${INSTALL_DATA} ${WRKSRC}/lib${lib}.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/lib${lib}.so.1 ${STAGEDIR}${PREFIX}/lib

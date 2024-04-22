@@ -5,16 +5,16 @@
  PREFIX ?= /usr/local
  IBDIR= $(PREFIX)/bin
 -IMDIR= $(PREFIX)/man/man1
-+IMDIR= $(MANPREFIX)/share/man/man1
++IMDIR= $(PREFIX)/share/man/man1
  BSD_INSTALL_PROGRAM ?= install -c -s -m 755
  BSD_INSTALL_MAN ?= install -c -m 644
- 
+
 @@ -19,6 +19,6 @@ install: all
  	rm -f $(OBJS) $(EXE)
- 
+
  install: all
 -	$(BSD_INSTALL_PROGRAM) $(EXE) $(IBDIR)/$(EXE)
 -	$(BSD_INSTALL_MAN) ${.CURDIR}/xmake.1 $(IMDIR)/xmake.1
 +	$(BSD_INSTALL_PROGRAM) $(EXE) $(DESTDIR)$(IBDIR)/$(EXE)
 +	$(BSD_INSTALL_MAN) ${.CURDIR}/xmake.1 $(DESTDIR)$(IMDIR)/xmake.1
- 
+

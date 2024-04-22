@@ -9,5 +9,5 @@ lib/cmake/vvdec/vvdecTargets-shared-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/vvdec/vvdecTargets-shared.cmake
 lib/libvvdec.so
 lib/libvvdec.so.2
-lib/libvvdec.so.2.1.1
+lib/libvvdec.so.2.2.0
 libdata/pkgconfig/libvvdec.pc

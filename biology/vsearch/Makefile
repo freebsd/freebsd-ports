@@ -1,6 +1,6 @@
 PORTNAME=		vsearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=		2.26.1
+DISTVERSION=		2.27.1
 CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -18,8 +18,9 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	torognes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-PLIST_FILES=	bin/vsearch man/man1/vsearch.1.gz
+PLIST_FILES=	bin/vsearch share/man/man1/vsearch.1.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS

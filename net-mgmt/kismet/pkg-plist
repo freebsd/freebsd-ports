@@ -11,10 +11,10 @@ bin/kismet_server
 %%PLUGINS%%lib/kismet/kismet-syslog.so
 %%PLUGINS%%lib/kismet/spectool_net.so
 %%PLUGINS%%lib/kismet_client/spectools_ui.so
-man/man1/kismet.1.gz
-man/man1/kismet_drone.1.gz
-man/man5/kismet.conf.5.gz
-man/man5/kismet_drone.conf.5.gz
+share/man/man1/kismet.1.gz
+share/man/man1/kismet_drone.1.gz
+share/man/man5/kismet.conf.5.gz
+share/man/man5/kismet_drone.conf.5.gz
 %%DATADIR%%/wav/alert.wav
 %%DATADIR%%/wav/gpslock.wav
 %%DATADIR%%/wav/gpslost.wav

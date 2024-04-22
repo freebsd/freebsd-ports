@@ -21,4 +21,4 @@ etc/mp3lintrc
 %%PERL5_MAN1%%/mp3lintskip.1.gz
 %%PERL5_MAN1%%/mp3lintsum.1.gz
 %%PERL5_MAN3%%/mp3lint-tools.3.gz
-man/man5/mp3lintrc.5.gz
+share/man/man5/mp3lintrc.5.gz

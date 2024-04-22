@@ -1,6 +1,6 @@
 PORTNAME=	lineak-defaultplugin
 PORTVERSION=	0.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils deskutils
 MASTER_SITES=	SF/lineak/lineak_defaultplugin/${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	lineak
@@ -16,6 +16,7 @@ LIB_DEPENDS=	liblineak.so:sysutils/lineakd
 USES=		gmake libtool xorg
 USE_XORG=	x11 xext xt xtst xfixes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	kde_cv_prog_cxx_fno_check_new=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -23,7 +24,7 @@ INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	lib/lineakd/plugins/defaultplugin.so \
 		lib/lineakd/plugins/mediadetectplugin.so \
-		man/man1/lineak_defaultplugin.1.gz \
+		share/man/man1/lineak_defaultplugin.1.gz \
 		etc/media-detect.conf
 
 post-patch:

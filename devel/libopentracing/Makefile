@@ -10,6 +10,9 @@ WWW=		https://github.com/opentracing/opentracing-cpp
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	https://github.com/opentracing/specification/issues/163
+EXPIRATION_DATE=2024-02-29
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	opentracing
 GH_PROJECT=	opentracing-cpp

@@ -1,6 +1,15 @@
---- Makefile.in.orig	1994-12-12 21:21:47.000000000 +0100
-+++ Makefile.in	2013-09-24 09:49:45.698631771 +0200
-@@ -175,25 +175,13 @@
+--- Makefile.in.orig	1994-12-12 20:21:47 UTC
++++ Makefile.in
+@@ -47,7 +47,7 @@ INCLUDE_DIR = 	$(prefix)/include
+ INCLUDE_DIR = 	$(prefix)/include
+ 
+ # top-level directory for manual entries
+-MAN_DIR = 	$(prefix)/man
++MAN_DIR = 	$(prefix)/share/man
+ 
+ # directory in which to install manual entries for library functions
+ MAN3_DIR = 	$(MAN_DIR)/man3
+@@ -175,25 +175,13 @@ vp_opts.c: makeopts Makefile
  	cc -o makeopts makeopts.c
  
  vp_opts.c: makeopts Makefile
@@ -29,7 +38,7 @@
  
  examples: libvolpack.a
  	cd examples; make
-@@ -201,7 +189,7 @@
+@@ -201,7 +189,7 @@ install-binaries: libvolpack.a
  install: install-binaries install-include install-man
  
  install-binaries: libvolpack.a
@@ -38,7 +47,7 @@
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
-@@ -211,11 +199,11 @@
+@@ -211,11 +199,11 @@ install-binaries: libvolpack.a
  		fi; \
  	    done;
  	@echo "Installing libvolpack.a"
@@ -53,7 +62,7 @@
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
-@@ -225,10 +213,10 @@
+@@ -225,10 +213,10 @@ install-include:
  		fi; \
  	    done;
  	@echo "Installing volpack.h"
@@ -66,7 +75,7 @@
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
-@@ -239,10 +227,9 @@
+@@ -239,10 +227,9 @@ install-man:
  	    done;
  	@cd $(SRC_DIR)/man/src; for i in *.3; \
  	    do \

@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2021-11-11 17:27:05 UTC
++++ pyproject.toml
+@@ -11,7 +11,7 @@ exclude = ["language_data/data/cldr", "language_data/d
+ 
+ [tool.poetry.dependencies]
+ python = ">= 3.6"
+-marisa-trie = "^0.7.7"
++marisa-trie = ">= 0.7.7"
+ 
+ [tool.poetry.dev-dependencies]
+ 

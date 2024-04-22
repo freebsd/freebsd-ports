@@ -11,7 +11,7 @@ lib/pth/libpth.so.20.0.27
 %%PTHREAD%%lib/pth/libpthread.so.20
 %%PTHREAD%%lib/pth/libpthread.so.20.0.27
 share/aclocal/pth.m4
-man/man1/pth-config.1.gz
-%%PTHREAD%%man/man1/pthread-config.1.gz
-man/man3/pth.3.gz
-%%PTHREAD%%man/man3/pthread.3.gz
+share/man/man1/pth-config.1.gz
+%%PTHREAD%%share/man/man1/pthread-config.1.gz
+share/man/man3/pth.3.gz
+%%PTHREAD%%share/man/man3/pthread.3.gz

@@ -93,7 +93,6 @@ MODSECURITY3_DESC=		3rd party modsecurity3 module
 NAXSI_DESC=			3rd party naxsi module
 NJS_DESC=			Enable javascript (NJS) module
 NJS_XML_DESC=			Enable XML functionality in NJS module
-OPENTRACING_DESC=		3rd party opentracing module
 PASSENGER_DESC=			3rd party passenger module
 POSTGRES_DESC=			3rd party postgres module
 RDS_CSV_DESC=			3rd party rds_csv module

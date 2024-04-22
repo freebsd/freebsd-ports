@@ -1,6 +1,6 @@
---- Makefile.INCLUDE.orig	2021-09-01 13:56:01 UTC
+--- Makefile.INCLUDE.orig	2024-02-29 01:05:45 UTC
 +++ Makefile.INCLUDE
-@@ -99,7 +99,7 @@ MISC    = AFNI_atlas_spaces.niml AFNI.Xdefaults AFNI.a
+@@ -105,7 +105,7 @@ MISC    = $(MISC_TEXT) 3d*.lib
  ## AFNI package, but included because they are useful.  Some of
  ## them are Open Source programs, not from the AFNI group at all.
  
@@ -9,7 +9,7 @@
  
  # mpegtoppm in above list
  
-@@ -112,7 +112,7 @@ EXTRAS   = cjpeg djpeg whirlgif myget rmz aiv mycat qu
+@@ -118,7 +118,7 @@ PROGS_1  = afni to3d from3d 3dclust nsize 3dinfo 3dmer
  PROGS_1  = afni to3d from3d 3dclust nsize 3dinfo 3dmerge count                \
             sfim tfim imrotate imreg imstat 3dnvals                            \
             fim2 imand immask imdump imaver 3dhistog 3daxialize                \
@@ -18,7 +18,7 @@
             waver 3dnewid 3dcalc ccalc imcalc 1dmatcalc 3drefit 3dbucket       \
             3dNLfim 3dTSgen plugout_tt plugout_ijk                             \
             3dMannWhitney 3dWilcoxon 3dKruskalWallis 3dFriedman 3dRegAna       \
-@@ -125,7 +125,7 @@ PROGS_2  = 3dTshift 3dDetrend 1dfft 1dcat 3drename 1dn
+@@ -131,7 +131,7 @@ PROGS_2  = 3dTshift 3dDetrend 1dfft 1dcat 3drename 1dn
             3dfim+ imcutup imcat 3dWinsor 3dZeropad 3dTagalign                 \
             3dMean 3dAttribute cat_matvec 3dOverlap 3dClipLevel 3dZregrid      \
             3dEntropy 3ddelay 3dRowFillin 1dgrayplot 3dToutcount 1dsum         \
@@ -27,7 +27,7 @@
             3dGetrow 3dTcorrelate 3dcopy Vecwarp 3dCM fdrval                   \
             3dAFNItoANALYZE 3dAFNItoNIFTI                                      \
             3dAutoTcorrelate 3dFDR rtfeedme 3dAutomask 3dBrickStat             \
-@@ -148,7 +148,7 @@ PROGS_3  = 3dAnhist 3dAFNIto3D 3dWarp nicat           
+@@ -154,7 +154,7 @@ PROGS_4  = 3dBlurInMask 3dRank 3dFFT 1dgenARMA11 3dPer
  PROGS_4  = 3dBlurInMask 3dRank 3dFFT 1dgenARMA11 3dPeriodogram 1dAstrip       \
             3dLocalPV 3dBandpass 3dSetupGroupInCorr 3dGroupInCorr 3dTcorr1D    \
             3dClustSim 3dRetinoPhase 3dMaskToASCII 3dttest++ 3dDTtoDWI         \
@@ -36,7 +36,7 @@
             1dCorrelate 3dNwarpCalc dicom_hinfo apsearch 1dBport               \
             3dNormalityTest 3dmask_tool FIRdesign help_format 2perm            \
             3dClustCount column_cat 3dUnifize 3dNwarpCat 3dQwarp 3dLocalHistog \
-@@ -175,7 +175,7 @@ PROGRAMS = $(PROGS_1) $(PROGS_2) $(PROGS_3) $(PROGS_4)
+@@ -182,7 +182,7 @@ PROGRAMS_NOPLUG =                                     
  PROGRAMS_NOPLUG =                                                             \
          afni to3d from3d 3dclust nsize 3dinfo 3dmerge sfim tfim imrotate      \
          imreg imstat count fim2 imand immask imdump imaver 3dhistog imupsam   \
@@ -45,7 +45,7 @@
          3dcalc ccalc imcalc 2dImReg 3dmaskave adwarp fdrval 3dMannWhitney     \
          3dWilcoxon 3dKruskalWallis 3dFriedman 3dRegAna imstack byteorder      \
          3dDeconvolve 3dTcat 3drotate 3dvolreg 1dplot 24swap 3dTsmooth RSFgen  \
-@@ -213,7 +213,7 @@ PROGRAMS_NOPLUG =                                     
+@@ -221,7 +221,7 @@ PROGRAMS_EXE =                                        
  PROGRAMS_EXE =                                                                \
          afni.exe to3d from3d 3dclust nsize 3dinfo 3dmerge sfim tfim imrotate  \
          imreg imstat 3dnvals count fim2 imand immask imdump imaver 3dhistog   \

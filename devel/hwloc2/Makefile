@@ -1,5 +1,6 @@
 PORTNAME=	hwloc
 DISTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://download.open-mpi.org/release/hwloc/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	2
@@ -19,6 +20,7 @@ USE_GNOME=	libxml2
 CONFLICTS_INSTALL=	hwloc
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-static \
 		--disable-opencl \
 		--disable-cuda \

@@ -1,6 +1,6 @@
 PORTNAME=	ap-utils
 PORTVERSION=	1.4.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -9,6 +9,7 @@ COMMENT=	Set of utilities to configure and monitor wireless access points
 WWW=		https://ap-utils.polesye.net/
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		iconv ncurses tar:bzip2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lintl

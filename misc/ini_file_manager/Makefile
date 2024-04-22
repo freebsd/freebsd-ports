@@ -11,6 +11,8 @@ WWW=		https://sourceforge.net/projects/ini-files/
 
 LICENSE=	MIT
 
+BROKEN=		gnatmake: project files are no longer supported by gnatmake; use gprbuild instead
+
 USES=		ada zip dos2unix
 
 NO_WRKSUBDIR=	yes

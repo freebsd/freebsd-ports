@@ -1,7 +1,0 @@
-This new design of syslog allows for an easy implementation of input and output
-modules. The modules that mantain compatibility with its precursor (Secure
-Syslog) are included in the standard distribution along with four modules:
-om_peo (an implementation of PEO-1 and L-PEO, two algorithmic protocols for
-integrity checking), om_mysql and om_pgsql (modules that sends output to a
-MySQL and PostgreSQL database, respectively) and om_regex (a module that allows
-output redirection using regular expressions).

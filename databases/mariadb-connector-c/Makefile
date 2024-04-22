@@ -1,5 +1,6 @@
 PORTNAME=	mariadb-connector-c
 PORTVERSION=	3.3.8
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
 		https://mirror.one.com/${SITESDIR}/ \
@@ -10,7 +11,6 @@ MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
 		https://ftp.ubuntu-tw.org/mirror/${SITESDIR}/ \
 		https://mirror.kku.ac.th/${SITESDIR}/ \
 		https://espejito.fder.edu.uy/${SITESDIR}/ \
-		https://mirror1.cl.netactuate.com/${SITESDIR}/ \
 		https://ftp.osuosl.org/pub/${SITESDIR}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
@@ -35,6 +35,7 @@ SITESDIR=	mariadb/connector-c-${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/mysql
 
 CMAKE_ARGS+=	-DCOMPILATION_COMMENT="FreeBSD Ports" \
-		-DWITH_EXTERNAL_ZLIB="YES"
+		-DWITH_EXTERNAL_ZLIB="YES" \
+		-DINSTALL_MANDIR:PATH=${PREFIX}/share/man
 
 .include <bsd.port.mk>

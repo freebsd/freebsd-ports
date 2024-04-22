@@ -1,5 +1,5 @@
 PORTNAME=	Astro-App-Satpass2
-PORTVERSION=	0.053
+PORTVERSION=	0.054
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,12 @@ RUN_DEPENDS=	p5-Astro-SIMBAD-Client>=0:astro/p5-Astro-SIMBAD-Client \
 		p5-Clone>=0:devel/p5-Clone \
 		p5-File-HomeDir>=0.93:devel/p5-File-HomeDir \
 		p5-IPC-System-Simple>=0:devel/p5-IPC-System-Simple \
-		p5-Template-Toolkit>=2.21:www/p5-Template-Toolkit
+		p5-Template-Toolkit>=2.21:www/p5-Template-Toolkit \
+		p5-YAML>=0:textproc/p5-YAML
+TEST_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
+		p5-Test2-Suite>=0:devel/p5-Test2-Suite \
+		p5-Test2-Tools-Explain>=0:devel/p5-Test2-Tools-Explain \
+		p5-Test2-Tools-LoadModule>=0:devel/p5-Test2-Tools-LoadModule
 
 NO_ARCH=	yes
 USES=		perl5

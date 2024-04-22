@@ -1,6 +1,6 @@
 PORTNAME=	openssn
 PORTVERSION=	1.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e '/cp|mkdir/s,\$$\(PREFIX\)|\$$\(DATADIR\),$$(DESTDIR)&,' \
-		-e 's,share/man/man6,man/man6,' ${WRKSRC}/Makefile
+		${WRKSRC}/Makefile
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

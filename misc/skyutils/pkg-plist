@@ -1,6 +1,0 @@
-bin/skyutils-config
-include/skyutils.h
-lib/libskyutils-3.0.so.0
-lib/libskyutils-3.0.so.0.0.0
-lib/libskyutils.a
-lib/libskyutils.so

@@ -1,5 +1,5 @@
 PORTNAME=	petl
-PORTVERSION=	1.7.14
+PORTVERSION=	1.7.15
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		cpe python
@@ -39,10 +39,10 @@ WHOOSH_DESC=	Whoosh support
 
 AVRO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastavro>=0.24.0:textproc/py-fastavro@${PY_FLAVOR}
 DB_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.3.6<2.0:databases/py-sqlalchemy14@${PY_FLAVOR}
-HDF5_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0.29.13:lang/cython@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}numexpr>=2.6.9:math/py-numexpr@${PY_FLAVOR} \
+HDF5_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numexpr>=2.6.9:math/py-numexpr@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}numpy>=1.16.4,1:math/py-numpy@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}tables>=3.5.2:devel/py-tables@${PY_FLAVOR}
+HDF5_USE_PYTHON=	cython_run
 HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.6.2:www/py-aiohttp@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 INTERVAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}intervaltree>=3.0.2:devel/py-intervaltree@${PY_FLAVOR}

@@ -1,6 +1,6 @@
 PORTNAME=	libtranslate
 PORTVERSION=	0.99
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	textproc
 MASTER_SITES=	SAVANNAH
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # May append to this
@@ -16,6 +16,7 @@ WWW=		https://www.nongnu.org/libtranslate/
 USES=		gettext gmake gnome libtool pathfix pkgconfig
 USE_GNOME=	glib20 intlhack
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

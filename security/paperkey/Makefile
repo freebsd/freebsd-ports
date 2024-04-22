@@ -1,5 +1,6 @@
 PORTNAME=	paperkey
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.jabberwocky.com/software/paperkey/ \
 		ZI
@@ -12,8 +13,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-PLIST_FILES=	bin/paperkey man/man1/paperkey.1.gz
+PLIST_FILES=	bin/paperkey share/man/man1/paperkey.1.gz
 PORTDOCS=	NEWS README
 
 OPTIONS_DEFINE=	DOCS

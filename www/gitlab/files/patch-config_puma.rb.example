@@ -1,0 +1,49 @@
+--- config/puma.rb.example.orig	2024-04-09 16:46:13 UTC
++++ config/puma.rb.example
+@@ -5,11 +5,11 @@
+ # The default is "config.ru".
+ #
+ rackup 'config.ru'
+-pidfile '/home/git/gitlab/tmp/pids/puma.pid'
+-state_path '/home/git/gitlab/tmp/pids/puma.state'
++pidfile '%%WWWDIR%%/tmp/pids/puma.pid'
++state_path '%%WWWDIR%%/tmp/pids/puma.state'
+ 
+-stdout_redirect '/home/git/gitlab/log/puma.stdout.log',
+-  '/home/git/gitlab/log/puma.stderr.log',
++stdout_redirect '%%WWWDIR%%/log/puma.stdout.log',
++  '%%WWWDIR%%/log/puma.stderr.log',
+   true
+ 
+ # Configure "min" to be the minimum number of threads to use to answer
+@@ -31,11 +31,11 @@ queue_requests false
+ 
+ # Bind the server to "url". "tcp://", "unix://" and "ssl://" are the only
+ # accepted protocols.
+-bind 'unix:///home/git/gitlab/tmp/sockets/gitlab.socket'
++bind 'unix://%%WWWDIR%%/tmp/sockets/gitlab.socket'
+ 
+ workers 3
+ 
+-require_relative "/home/git/gitlab/lib/gitlab/cluster/lifecycle_events"
++require_relative "%%WWWDIR%%/lib/gitlab/cluster/lifecycle_events"
+ 
+ on_restart do
+   # Signal application hooks that we're about to restart
+@@ -74,14 +74,14 @@ worker_timeout 60
+ wait_for_less_busy_worker ENV.fetch('PUMA_WAIT_FOR_LESS_BUSY_WORKER', 0.001).to_f
+ 
+ # Use json formatter
+-require_relative "/home/git/gitlab/lib/gitlab/puma_logging/json_formatter"
++require_relative "%%WWWDIR%%/lib/gitlab/puma_logging/json_formatter"
+ 
+ json_formatter = Gitlab::PumaLogging::JSONFormatter.new
+ log_formatter do |str|
+   json_formatter.call(str)
+ end
+ 
+-require_relative "/home/git/gitlab/lib/gitlab/puma/error_handler"
++require_relative "%%WWWDIR%%/lib/gitlab/puma/error_handler"
+ 
+ error_handler = Gitlab::Puma::ErrorHandler.new(ENV['RAILS_ENV'] == 'production')
+ 

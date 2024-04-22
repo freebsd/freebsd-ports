@@ -1,10 +1,10 @@
 bin/mocp
-man/man1/mocp.1.gz
 %%DOCSDIR%%/README
 %%DOCSDIR%%/README_equalizer
 %%DOCSDIR%%/THANKS
 %%DOCSDIR%%/config.example
 %%DOCSDIR%%/keymap.example
+share/man/man1/mocp.1.gz
 %%DATADIR%%/themes/black_theme
 %%DATADIR%%/themes/darkdot_theme
 %%DATADIR%%/themes/example_theme

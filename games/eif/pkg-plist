@@ -21,4 +21,4 @@ lib/eif/pop.sh
 lib/eif/pwith
 lib/eif/swith
 lib/eif/with
-man/man1/eif.1.gz
+share/man/man1/eif.1.gz

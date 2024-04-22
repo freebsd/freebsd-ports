@@ -1,0 +1,10 @@
+--- Meta/Lagom/CMakeLists.txt.orig	2024-02-26 22:01:50 UTC
++++ Meta/Lagom/CMakeLists.txt
+@@ -350,6 +350,7 @@ lagom_lib(AK ak SOURCES ${AK_SOURCES})
+ # AK
+ add_serenity_subdirectory(AK)
+ lagom_lib(AK ak SOURCES ${AK_SOURCES})
++target_link_libraries(AK PRIVATE execinfo)
+ 
+ # LibCore
+ add_serenity_subdirectory(Userland/Libraries/LibCore)

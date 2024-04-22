@@ -116,7 +116,7 @@
 : ${gl_cv_header_wchar_h_correct_inline=yes}
 
 : ${ac_cv_header_argz_h=no}
-: ${ac_cv_header_byteswap_h=no}
+: ${ac_cv_header_byteswap_h=yes}
 : ${ac_cv_header_dl_h=no}
 : ${ac_cv_header_random_h=no}
 : ${ac_cv_header_vfork_h=no}
@@ -862,7 +862,7 @@
 : ${gl_cv_func_btowc_eof=yes}
 : ${gl_cv_func_btowc_nul=yes}
 : ${gl_cv_func_fcntl_f_dupfd_cloexec=yes}
-: ${gl_cv_func_fnmatch_posix=yes}
+: ${gl_cv_func_fnmatch_posix=no}
 : ${gl_cv_func_fopen_slash=yes}
 : ${gl_cv_func_frexp_no_libm=yes}
 : ${gl_cv_func_fseeko=yes}

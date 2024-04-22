@@ -1,5 +1,5 @@
 bin/imwheel
 etc/imwheelrc
-man/man1/imwheel.1.gz
+share/man/man1/imwheel.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/EMACS
 %%PORTDOCS%%%%DOCSDIR%%/README

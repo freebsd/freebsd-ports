@@ -1,3 +1,5 @@
-TIMESTAMP = 1693981413
-SHA256 (stan-dev-stan-v2.33.0_GH0.tar.gz) = eb35d40eafe090a19a800f19c66e79eacbd1532906fbe3940abd1e0b854dae4f
-SIZE (stan-dev-stan-v2.33.0_GH0.tar.gz) = 4372023
+TIMESTAMP = 1706078819
+SHA256 (stan-dev-stan-v2.34.1_GH0.tar.gz) = c38864706bbeb1ee1ad92d97cd0d8db24844bb01c4a431bd7f9d6e87fd0f0bd0
+SIZE (stan-dev-stan-v2.34.1_GH0.tar.gz) = 4377341
+SHA256 (stan-dev-math-c26bd83_GH0.tar.gz) = 4b02d9dcdd4f7d176f7fa12e60b0a9929b17158fc9e24858912c44f7eed566b1
+SIZE (stan-dev-math-c26bd83_GH0.tar.gz) = 30100879

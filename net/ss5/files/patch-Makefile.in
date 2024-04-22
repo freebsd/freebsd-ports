@@ -17,7 +17,7 @@
 -CC = gcc
 +ss5_share       = ${DESTDIR}${DATADIR}
 +ss5_examples    = ${DESTDIR}${EXAMPLESDIR}
-+ss5_man         = ${DESTDIR}${MANPREFIX}/man
++ss5_man         = ${DESTDIR}${PREFIX}/share/man
  
  CFLAGS=@CFLAGS@ -I . @EXTRA_CFLAGS@ 
  

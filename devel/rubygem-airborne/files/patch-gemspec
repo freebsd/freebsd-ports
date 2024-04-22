@@ -1,11 +1,11 @@
---- airborne.gemspec.orig	2023-01-05 18:22:17 UTC
+--- airborne.gemspec.orig	2024-02-14 06:27:46 UTC
 +++ airborne.gemspec
 @@ -19,7 +19,7 @@ Gem::Specification.new do |s|
  
-   s.add_runtime_dependency(%q<rspec>.freeze, ["~> 3.8"])
-   s.add_runtime_dependency(%q<rest-client>.freeze, [">= 2.0.2", "< 3.0"])
--  s.add_runtime_dependency(%q<rack-test>.freeze, [">= 1.1.0", "< 2.0"])
-+  s.add_runtime_dependency(%q<rack-test>.freeze, [">= 1.1.0", "< 3.0"])
-   s.add_runtime_dependency(%q<rack>.freeze, [">= 0"])
-   s.add_runtime_dependency(%q<activesupport>.freeze, [">= 0"])
-   s.add_development_dependency(%q<webmock>.freeze, ["~> 3"])
+   s.add_runtime_dependency(%q<rspec>.freeze, ["~> 3.8".freeze])
+   s.add_runtime_dependency(%q<rest-client>.freeze, [">= 2.0.2".freeze, "< 3.0".freeze])
+-  s.add_runtime_dependency(%q<rack-test>.freeze, [">= 1.1.0".freeze, "< 2.0".freeze])
++  s.add_runtime_dependency(%q<rack-test>.freeze, [">= 1.1.0".freeze, "< 3.0".freeze])
+   s.add_runtime_dependency(%q<rack>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<activesupport>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<webmock>.freeze, ["~> 3".freeze])

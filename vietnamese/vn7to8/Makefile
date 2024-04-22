@@ -1,5 +1,6 @@
 PORTNAME=	vn7to8
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	vietnamese
 MASTER_SITES=	ftp://ftp.monash.edu.au/pub/vietnam/unix/
 DISTNAME=	vn7to8
@@ -17,8 +18,8 @@ post-extract:
 	@${MV} ${WRKDIR}/include ${WRKDIR}/DONT.include
 
 post-install:
-	@${INSTALL_MAN} ${FILESDIR}/vn7to8.1 ${STAGEDIR}${PREFIX}/man/man1
-	@${INSTALL_MAN} ${FILESDIR}/vn80to81.1 ${STAGEDIR}${PREFIX}/man/man1
-	@${INSTALL_MAN} ${FILESDIR}/vn8to7.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${INSTALL_MAN} ${FILESDIR}/vn7to8.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	@${INSTALL_MAN} ${FILESDIR}/vn80to81.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	@${INSTALL_MAN} ${FILESDIR}/vn8to7.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

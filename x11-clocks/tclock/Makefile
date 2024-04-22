@@ -1,6 +1,6 @@
 PORTNAME=	tclock
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.linta.de/distfiles/ \
 		ftp://ftp.uni-potsdam.de/pub/X11/tools/clocks/
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		imake tar:Z xorg
 USE_XORG=	x11 xext
 
-PLIST_FILES=	bin/tclock man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/tclock share/man/man1/${PORTNAME}.1.gz
 NO_WRKSUBDIR=	yes
 
 .include <bsd.port.mk>

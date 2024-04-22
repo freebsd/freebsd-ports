@@ -3,25 +3,25 @@ bin/newsq
 %%ETCDIR%%/config.example
 %%ETCDIR%%/filters.example
 %%ETCDIR%%/UNINSTALL-daemontools
-man/man1/leafnode-version.1.gz
-man/man1/newsq.1.gz
-man/man8/applyfilter.8.gz
-man/man8/checkgroups.8.gz
-man/man8/fetchnews.8.gz
-man/man8/leafnode.8.gz
-man/man8/texpire.8.gz
-man/de.ISO8859-1/man1/leafnode-version.1.gz
-man/de.ISO8859-1/man1/newsq.1.gz
-man/de.ISO8859-1/man8/applyfilter.8.gz
-man/de.ISO8859-1/man8/checkgroups.8.gz
-man/de.ISO8859-1/man8/fetchnews.8.gz
-man/de.ISO8859-1/man8/leafnode.8.gz
-man/de.ISO8859-1/man8/texpire.8.gz
 sbin/leafnode
 sbin/fetchnews
 sbin/texpire
 sbin/checkgroups
 sbin/applyfilter
+share/man/man1/leafnode-version.1.gz
+share/man/man1/newsq.1.gz
+share/man/man8/applyfilter.8.gz
+share/man/man8/checkgroups.8.gz
+share/man/man8/fetchnews.8.gz
+share/man/man8/leafnode.8.gz
+share/man/man8/texpire.8.gz
+share/man/de.ISO8859-1/man1/leafnode-version.1.gz
+share/man/de.ISO8859-1/man1/newsq.1.gz
+share/man/de.ISO8859-1/man8/applyfilter.8.gz
+share/man/de.ISO8859-1/man8/checkgroups.8.gz
+share/man/de.ISO8859-1/man8/fetchnews.8.gz
+share/man/de.ISO8859-1/man8/leafnode.8.gz
+share/man/de.ISO8859-1/man8/texpire.8.gz
 @dir %%ETCDIR%%
 @comment only remove these when empty:
 @comment we don't want to kill the news spool across updates

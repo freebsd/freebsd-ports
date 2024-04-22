@@ -1,5 +1,5 @@
---- src/util.cc-orig	2014-07-18 09:55:37.000000000 +0200
-+++ src/util.cc	2014-07-18 09:56:11.000000000 +0200
+--- src/util.cc-orig	2014-07-18 09:55:37 UTC
++++ src/util.cc
 @@ -22,6 +22,7 @@
  #include "util.h"
  #include <stdio.h>

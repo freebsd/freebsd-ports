@@ -1,3 +1,3 @@
 bin/wmitime
-man/man1/wmitime.1.gz
+share/man/man1/wmitime.1.gz
 share/applications/wmitime.desktop

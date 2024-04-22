@@ -21,9 +21,9 @@ lib/libstlink.so.1
 lib/libstlink.so.1.7.0
 lib/libstlink.a
 libdata/pkgconfig/stlink.pc
-man/man1/st-flash.1.gz
-man/man1/st-info.1.gz
-man/man1/st-util.1.gz
+share/man/man1/st-flash.1.gz
+share/man/man1/st-info.1.gz
+share/man/man1/st-util.1.gz
 %%DATADIR%%/Makefile
 %%DATADIR%%/cleanroom.md
 %%DATADIR%%/linker.ld

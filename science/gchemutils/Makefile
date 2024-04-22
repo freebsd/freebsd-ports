@@ -1,6 +1,6 @@
 PORTNAME=	gchemutils
 PORTVERSION=	0.14.17
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	SAVANNAH/${PORTNAME}/${PORTVERSION:R}
 DISTNAME=	gnome-chemistry-utils-${PORTVERSION}
@@ -30,6 +30,7 @@ USE_GNOME=	cairo gtk30 intlhack libgsf libxml2
 USE_GL=		gl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-omf-dir=${PREFIX}/share/omf
 GLIB_SCHEMAS=	org.gnome.gchemutils.crystal.gschema.xml \
 		org.gnome.gchemutils.gschema.xml \

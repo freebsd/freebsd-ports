@@ -6,7 +6,7 @@ lib/bluefish/htmlbar.so
 lib/bluefish/infbrowser.so
 lib/bluefish/snippets.so
 lib/bluefish/zencoding.so
-man/man1/bluefish.1.gz
+share/man/man1/bluefish.1.gz
 share/metainfo/bluefish.appdata.xml
 share/applications/bluefish.desktop
 %%DATADIR%%/bflang/JQuery.bfinc
@@ -99,6 +99,7 @@ share/applications/bluefish.desktop
 %%DATADIR%%/jsbeautifier/unpackers/urlencode.py
 %%DATADIR%%/jsbeautify
 %%DATADIR%%/jsmin.py
+%%DATADIR%%/json_prettyprint.py
 %%DATADIR%%/lorem-ipsum-generator
 %%DATADIR%%/plugins/htmlbar/ui/htmlbar_menu_ui.xml
 %%DATADIR%%/plugins/zencoding/__init__.py

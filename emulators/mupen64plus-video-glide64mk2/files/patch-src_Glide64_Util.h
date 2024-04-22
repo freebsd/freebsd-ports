@@ -1,14 +1,16 @@
 --- src/Glide64/Util.h.orig	2024-01-06 03:12:23 UTC
 +++ src/Glide64/Util.h
-@@ -94,6 +94,7 @@ float ScaleZ(float z);
+@@ -94,6 +94,9 @@ float ScaleZ(float z);
    #include <stdlib.h>
    #define bswap32(x) _byteswap_ulong(x)
  #else
-+#if !defined __FreeBSD__
++#if defined __FreeBSD__
++#include <sys/endian.h>
++#else
  static inline uint32_t bswap32(uint32_t val)
  {
  	return (((val & 0xff000000) >> 24) |
-@@ -101,6 +102,7 @@ static inline uint32_t bswap32(uint32_t val)
+@@ -101,6 +104,7 @@ static inline uint32_t bswap32(uint32_t val)
  		((val & 0x0000ff00) <<  8) |
  		((val & 0x000000ff) << 24));
  }

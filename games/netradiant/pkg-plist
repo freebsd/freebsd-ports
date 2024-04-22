@@ -1,5 +1,5 @@
 bin/netradiant
-man/man6/q3map2.6.gz
+share/man/man6/q3map2.6.gz
 %%DATADIR%%/RADIANT_MAJOR
 %%DATADIR%%/RADIANT_MINOR
 %%DATADIR%%/README.txt

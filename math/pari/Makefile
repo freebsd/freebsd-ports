@@ -1,5 +1,5 @@
 PORTNAME=	pari
-DISTVERSION=	2.15.4
+DISTVERSION=	2.15.5
 PORTEPOCH=	2
 CATEGORIES=	math
 MASTER_SITES=	https://pari.math.u-bordeaux.fr/pub/pari/unix/
@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 USE_PERL5=	build run
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man/man1 \
+CONFIGURE_ARGS=	--mandir=${PREFIX}/share/man/man1 \
 		--prefix=${PREFIX} \
 		--with-readline
 ALL_TARGET=	gp

@@ -1,5 +1,4 @@
 bin/grip
-man/man1/grip.1.gz
 share/applications/grip.desktop
 share/apps/solid/actions/grip-audiocd.desktop
 share/gnome/help/grip/C/cdconfig.png
@@ -83,6 +82,7 @@ share/icons/hicolor/scalable/apps/grip.svg
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/grip.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/grip.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/grip.mo
+share/man/man1/grip.1.gz
 share/pixmaps/grip.png
 share/pixmaps/griptray.png
 share/solid/actions/grip-audiocd.desktop

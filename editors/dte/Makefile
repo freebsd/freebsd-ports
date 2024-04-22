@@ -1,6 +1,7 @@
 PORTNAME=	dte
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -17,14 +18,14 @@ GL_ACCOUNT=	craigbarnes
 GL_TAGNAME=	cae7c45ea5a563c022001a54d1eee71c268f62b4
 
 MAKEFILE=	${WRKSRC}/GNUmakefile
-MAKE_ARGS=	V=1 prefix=${PREFIX} mandir=${PREFIX}/man
+MAKE_ARGS=	V=1 prefix=${PREFIX} mandir=${PREFIX}/share/man
 
 TEST_TARGET=	check
 
 PLIST_FILES=	bin/dte \
-		man/man1/dte.1.gz \
-		man/man5/dte-syntax.5.gz \
-		man/man5/dterc.5.gz \
+		share/man/man1/dte.1.gz \
+		share/man/man5/dte-syntax.5.gz \
+		share/man/man5/dterc.5.gz \
 
 PORTDOCS=	README.md keys.md
 

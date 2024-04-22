@@ -1,6 +1,7 @@
+TIMESTAMP = 1709153455
 SHA256 (pdksh-5.2.14.tar.gz) = ab15bcdd50f291edc632bca351b2edce5405d4f2ce3854d3d548d721ab9bbfa6
 SIZE (pdksh-5.2.14.tar.gz) = 480107
-SHA256 (pdksh-5.2.14-patches.1) = b4adfc47e4d78eb8718ee10f7ffafc218b0e9d453413456fab263985ae02d356
-SIZE (pdksh-5.2.14-patches.1) = 4435
-SHA256 (pdksh-5.2.14-patches.2) = 82041113e0b3aeca57bb9b161257b43d9f8eba95fd450d2287666e77e6209afd
-SIZE (pdksh-5.2.14-patches.2) = 1917
+SHA256 (pdksh-5.2.14-patches.1.gz) = 883a5cec5e50c954361b35c2f307b0909c8a1f38caf4918ddefc00878542f26d
+SIZE (pdksh-5.2.14-patches.1.gz) = 1998
+SHA256 (pdksh-5.2.14-patches.2.gz) = 4235b00b49ac3e7d979b502f5c8d599c6e73c325145b4ef593f84d2b630238f6
+SIZE (pdksh-5.2.14-patches.2.gz) = 796

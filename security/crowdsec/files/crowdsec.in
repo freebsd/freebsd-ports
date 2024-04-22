@@ -61,7 +61,7 @@ crowdsec_precmd() {
         # There are no machines, we create the main one
         if [ "$(cs_cli machines list -o json)" = "[]" ]; then
             echo "Registering LAPI"
-            cs_cli machines add "${crowdsec_machine_name}" --auto || :
+            cs_cli machines add "${crowdsec_machine_name}" --auto --force --error || :
         fi
 
         # Register to the central server to receive the community blocklist and more

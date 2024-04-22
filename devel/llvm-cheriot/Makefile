@@ -9,14 +9,12 @@ DISTINFO_FILE=	${.CURDIR}/distinfo
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
+GH_ACCOUNT=	CHERIoT-Platform
+
+OPTIONS_EXCLUDE=	XTOOLCHAIN STATIC_LIBS
+
 LLVM_TARGETS=          RISCV
 CMAKE_FLAGS+=	-DLLVM_DEFAULT_TARGET_TRIPLE=riscv32-unknown-unknown
-
-.if exists(${.CURDIR}/files)
-EXTRA_PATCHES=	${.CURDIR}/files
-.endif
-
-.include "${.CURDIR}/Makefile.snapshot"
 
 MASTERDIR=	${.CURDIR}/../llvm-cheri
 

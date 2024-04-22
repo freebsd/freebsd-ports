@@ -1,12 +1,12 @@
 PORTNAME=	flowgrind
 PORTVERSION=	0.8.2
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Measure throughput and other metrics for TCP
-WWW=		http://flowgrind.net/
+WWW=		https://flowgrind.github.io
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -23,6 +23,7 @@ USES=		autoreconf ssl
 USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	LIBS="${LIBS} -lpcap"
 
 .include <bsd.port.mk>

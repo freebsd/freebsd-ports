@@ -1,3 +1,3 @@
-TIMESTAMP = 1695143311
-SHA256 (nest_asyncio-1.5.8.tar.gz) = 25aa2ca0d2a5b5531956b9e273b45cf664cae2b145101d73b86b199978d48fdb
-SIZE (nest_asyncio-1.5.8.tar.gz) = 6105
+TIMESTAMP = 1708449222
+SHA256 (nest_asyncio-1.6.0.tar.gz) = 6f172d5449aca15afd6c646851f4e31e02c598d553a667e38cafa997cfec55fe
+SIZE (nest_asyncio-1.6.0.tar.gz) = 7418

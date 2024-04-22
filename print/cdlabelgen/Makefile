@@ -1,5 +1,6 @@
 PORTNAME=	cdlabelgen
 PORTVERSION=	4.3.0
+PORTREVISION=	1
 CATEGORIES=	print perl5
 MASTER_SITES=	http://www.aczoom.com/pub/tools/
 
@@ -20,7 +21,7 @@ MAKE_ARGS=	BASE_DIR="${STAGEDIR}${PREFIX}" \
 		INSTALL_DIR="${MKDIR}" \
 		INSTALL_FILE="${INSTALL_DATA}" \
 		INSTALL_MAN="${INSTALL_MAN}" \
-		MAN_DIR="${STAGEDIR}${PREFIX}/man"
+		MAN_DIR="${STAGEDIR}${PREFIX}/share/man"
 
 post-extract:
 	@${SED} -ne '5,35 {s|# *||;p;}' ${WRKSRC}/${PORTNAME} > ${WRKSRC}/COPYING

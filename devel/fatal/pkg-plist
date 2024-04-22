@@ -6,7 +6,6 @@ include/fatal/codec/varint.h
 include/fatal/container/circular_queue.h
 include/fatal/container/flag_set.h
 include/fatal/container/legacy_variant.h
-include/fatal/container/normalized_wrapper.h
 include/fatal/container/optional.h
 include/fatal/container/random_access_iterator.h
 include/fatal/container/runtime_array.h
@@ -21,7 +20,6 @@ include/fatal/debug/debug.h
 include/fatal/functional/functional.h
 include/fatal/functional/identity.h
 include/fatal/functional/no_op.h
-include/fatal/lesson/driver.h
 include/fatal/lesson/lesson.h
 include/fatal/log/log.h
 include/fatal/math/compile_time_rng.h

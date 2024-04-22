@@ -1,8 +1,0 @@
-#!/bin/sh
-conf=%%PREFIX%%/etc/nvidia-headless.conf
-. %%PREFIX%%/libexec/nvidia-headless-utils/readconf
-conf=%%PREFIX%%/etc/nvidia-hybrid.conf
-. %%PREFIX%%/libexec/nvidia-headless-utils/readconf
-if [ -z "$NVDISPLAY" ]; then printf %s\\n "NVDISPLAY required in environment or in $conf" >&2 ; exit 1; fi
-if [ -z "$VGLRUN" ]; then printf %s\\n "VGLRUN required in environment or in $conf" >&2 ; exit 1; fi
-exec "$VGLRUN" -ld "%%LOCALBASE%%/lib/libGL-NVIDIA" -d "$NVDISPLAY" "$@"

@@ -17,8 +17,6 @@ lib/actiona/libtools.so
 lib/actiona/libtools.so.1
 lib/actiona/libtools.so.1.0
 lib/actiona/libtools.so.1.0.0
-man/man1/actexec.1.gz
-man/man1/actiona.1.gz
 %%NLS%%%%DATADIR%%/locale/actexecuter_fr_FR.qm
 %%NLS%%%%DATADIR%%/locale/actionpackdata_fr_FR.qm
 %%NLS%%%%DATADIR%%/locale/actionpackdevice_fr_FR.qm
@@ -31,5 +29,7 @@ man/man1/actiona.1.gz
 %%NLS%%%%DATADIR%%/locale/tools_fr_FR.qm
 share/applications/actiona.desktop
 share/icons/hicolor/48x48/apps/actiona.png
+share/man/man1/actexec.1.gz
+share/man/man1/actiona.1.gz
 share/mime/packages/actiona.xml
 share/pixmaps/actiona.png

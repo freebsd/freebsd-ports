@@ -11,7 +11,7 @@ WWW=		https://cdk.github.io/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	mvn:devel/maven
+BUILD_DEPENDS=	maven>0:devel/maven
 
 USE_JAVA=	yes
 USE_GITHUB=	yes

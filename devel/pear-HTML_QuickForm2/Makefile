@@ -4,7 +4,8 @@ CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP5 rewrite of the HTML_QuickForm package
-WWW=		https://pear.php.net/package/HTML_QuickForm2
+WWW=		https://pear.php.net/package/HTML_QuickForm2 \
+		https://github.com/pear/HTML_QuickForm2
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE

@@ -1,6 +1,6 @@
 PORTNAME=	libtai
 PORTVERSION=	0.60
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	http://cr.yp.to/libtai/ \
 		ftp://ftp.task.gda.pl/mirror/mirror.qmail.org/koobera/pub/software/
@@ -11,16 +11,16 @@ WWW=		https://cr.yp.to/libtai.html
 
 LICENSE=	UNLICENSE
 
-CONFLICTS_INSTALL=	mess822
-
-ALL_TARGET=	it
 USES=		groff
 USE_LDCONFIG=	yes
 MAKE_ENV=	LIBVERSION="${LIBVERSION}"
 MAKE_JOBS_UNSAFE=	yes
+ALL_TARGET=	it
 
-PLIST_SUB=	LIBVERSION=${LIBVERSION} \
-		LIBFILE=${LIBFILE}
+CONFLICTS_INSTALL=	mess822
+
+PLIST_SUB=	LIBFILE=${LIBFILE} \
+		LIBVERSION=${LIBVERSION}
 
 MAN_FILES=	caldate.3 caldate_mjd.3 caltime.3 caltime_tai.3 leapsecs.3 \
 		tai.3 tai_now.3 tai_pack.3 taia.3 taia_now.3 taia_pack.3
@@ -40,6 +40,11 @@ do-configure:
 # update leap seconds table
 	@${CAT} ${FILESDIR}/leapsecs-update.txt >> ${WRKSRC}/leapsecs.txt
 
+post-build:
+	@${SETENV} LD_LIBRARY_PATH=${WRKSRC} \
+		${WRKSRC}/leapsecs < ${WRKSRC}/leapsecs.txt > \
+		${WRKSRC}/leapsecs.dat
+
 pre-install:
 # correct header locations inside files
 .for file in ${HEADER_FILES}
@@ -47,15 +52,10 @@ pre-install:
 		${WRKSRC}/${file}
 .endfor
 
-post-build:
-	@${SETENV} LD_LIBRARY_PATH=${WRKSRC} \
-		${WRKSRC}/leapsecs < ${WRKSRC}/leapsecs.txt > \
-		${WRKSRC}/leapsecs.dat
-
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/leapsecs.dat ${STAGEDIR}${PREFIX}/etc
 .for i in ${MAN_FILES}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/share/man/man3
 .endfor
 .for i in ${PROGRAM_FILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin

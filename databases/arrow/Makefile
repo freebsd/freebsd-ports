@@ -1,6 +1,6 @@
 PORTNAME=	arrow
-DISTVERSION=	13.0.0
-PORTREVISION=	4
+DISTVERSION=	15.0.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${DISTVERSION} \
 		https://github.com/apache/orc/archive/rel/:orc
@@ -32,15 +32,7 @@ CMAKE_OFF=	ARROW_BUILD_STATIC ARROW_WITH_BACKTRACE ARROW_BUILD_TESTS ARROW_BUILD
 OPTIONS_GROUP=			COMPRESSION COMPONENTS # components are listed in cpp/cmake_modules/DefineOptions.cmake
 OPTIONS_GROUP_COMPRESSION=	BROTLI BZ2 LZ4 SNAPPY ZLIB ZSTD
 OPTIONS_GROUP_COMPONENTS=	ACERO COMPUTE CSV DATASET FILESYSTEM FLIGHT GANDIVA HDFS IPC JSON MIMALLOC PARQUET ORC S3 SKYHOOK SUBSTRAIT BUILD_UTILITIES TENSORFLOW TESTING
-OPTIONS_DEFINE=			UTF8PROC
-OPTIONS_DEFAULT=		UTF8PROC
 OPTIONS_SUB=			yes
-
-## Miscellaneous options
-
-UTF8PROC_DESC=			Build with support for Unicode properties using the utf8proc library
-UTF8PROC_CMAKE_BOOL=		ARROW_WITH_UTF8PROC
-UTF8PROC_LIB_DEPENDS=		libutf8proc.so:textproc/utf8proc
 
 ## DESCs
 
@@ -75,7 +67,9 @@ ACERO_IMPLIES=			COMPUTE IPC
 
 COMPUTE_DESC=			Arrow Compute Modules
 COMPUTE_CMAKE_BOOL=		ARROW_COMPUTE
-COMPUTE_LIB_DEPENDS=		libre2.so:devel/re2
+COMPUTE_CMAKE_ON=		-DARROW_WITH_UTF8PROC=ON
+COMPUTE_LIB_DEPENDS=		libre2.so:devel/re2 \
+				libutf8proc.so:textproc/utf8proc
 
 CSV_DESC=			Arrow CSV Parser Module
 CSV_CMAKE_BOOL=			ARROW_CSV
@@ -96,17 +90,17 @@ FLIGHT_LIB_DEPENDS=		libgflags.so:devel/gflags \
 				libcares.so:dns/c-ares \
 				libgrpc.so:devel/grpc \
 				libre2.so:devel/re2
-FLIGHT_IMPLIES=			IPC
+FLIGHT_IMPLIES=			IPC COMPUTE # see https://github.com/apache/arrow/issues/40766
 FLIGHT_BROKEN=			configure breaks: Could not find a package configuration file provided by "re2"
 
 GANDIVA_DESC=			Gandiva libraries
-GANDIVA_USES=			ssl
+GANDIVA_USES=			llvm:17,lib ssl
 GANDIVA_CMAKE_BOOL=		ARROW_GANDIVA
-GANDIVA_BUILD_DEPENDS=		${LOCALBASE}/bin/clang12:devel/llvm12 # explicitly requires llvm-12
+GANDIVA_CMAKE_ON=		-DARROW_WITH_UTF8PROC=ON
 GANDIVA_LIB_DEPENDS=		libgrpc.so:devel/grpc \
 				libprotobuf.so:devel/protobuf \
-				libre2.so:devel/re2
-GANDIVA_IMPLIES=		UTF8PROC
+				libre2.so:devel/re2 \
+				libutf8proc.so:textproc/utf8proc
 
 HDFS_DESC=			Arrow HDFS bridge
 HDFS_CMAKE_BOOL=		ARROW_HDFS
@@ -185,6 +179,14 @@ TESTING_DESC=			Arrow testing libraries
 TESTING_CMAKE_BOOL=		ARROW_TESTING
 TESTING_LIB_DEPENDS=		libgtest.so:devel/googletest
 
+# workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=277953
+OPSYS!=		uname -s # HACK: OPSYS is defined in bsd.port.options.mk which has to be later
+OSVERSION!=	awk '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < ${CROSS_SYSROOT}/usr/include/sys/param.h # HACK: same as above
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1303000
+TESTING_BROKEN=	configure fails because GTest built with C++ level <17 isn't compatible with C++17 used in arrow
+.endif
+
+# form OPTIONS_DEFAULT
 .for opt in ${OPTIONS_GROUP_COMPONENTS}
 .  if "${${opt}_BROKEN}" == ""
 OPTIONS_DEFAULT+=	${opt}
@@ -201,6 +203,9 @@ PLIST_FILES+=	lib/cmake/Arrow/Findre2Alt.cmake
 PLIST_FILES+=	bin/arrow-file-to-stream \
 		bin/arrow-stream-to-file
 .endif
+.if ${PORT_OPTIONS:MGANDIVA} || ${PORT_OPTIONS:MCOMPUTE}
+PLIST_FILES+=	lib/cmake/Arrow/Findutf8proc.cmake
+.endif
 
 .if ${PORT_OPTIONS:MPYTHON} == "PYTHON" && ${PORT_OPTIONS:MFLIGHT} == "FLIGHT"
     PLIST_SUB+=	PYTHONFLIGHT=""
@@ -213,6 +218,13 @@ PLIST_FILES+=	bin/arrow-file-to-stream \
 .else
     PLIST_SUB+=	TESTINGFLIGHT="@comment "
 .endif
+
+post-install:
+	# based on the user's report on 2024-04-12, the R extension expects only "ON" and "OFF" values in lib/cmake/Arrow/ArrowOptions.cmake
+	# other values confuse the R extension build, so we adjust these values to "ON" and "OFF" as a workaround
+	${REINPLACE_CMD} -i '' \
+		-e 's|"true"|"ON"|; s|"false"|"OFF"|' \
+		${STAGEDIR}${PREFIX}/lib/cmake/Arrow/ArrowOptions.cmake
 
 do-test: # tests fail to compile: https://issues.apache.org/jira/browse/ARROW-12625
 	@cd ${BUILD_WRKSRC} && \

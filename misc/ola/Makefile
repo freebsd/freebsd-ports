@@ -1,6 +1,6 @@
 PORTNAME=	ola
 DISTVERSION=	0.10.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	https://github.com/OpenLightingProject/ola/releases/download/${DISTVERSION}/
 
@@ -20,9 +20,11 @@ TEST_DEPENDS=	cppunit>0:devel/cppunit
 USES=		bison gmake libtool localbase pkgconfig
 USE_LDCONFIG=	yes
 
+CXXFLAGS+=	-Wno-c2x-extensions # workaround for https://github.com/OpenLightingProject/ola/issues/1962
 LDFLAGS+=	-lprotobuf # workaround for https://github.com/OpenLightingProject/ola/issues/1871
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFIGURE_ARGS=	--disable-unittests --disable-examples
 

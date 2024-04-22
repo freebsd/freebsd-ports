@@ -1,5 +1,5 @@
 PORTNAME=	glslang
-DISTVERSION=	14.0.0
+DISTVERSION=	14.1.0
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -9,6 +9,9 @@ WWW=		https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/
 LICENSE=	APACHE20 BSD2CLAUSE BSD3CLAUSE GPLv3+ MIT
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+TEST_DEPENDS=	bash:shells/bash \
+		gmake:devel/gmake
 
 USES=		cmake:testing compiler:c++11-lib python:build
 USE_GITHUB=	yes

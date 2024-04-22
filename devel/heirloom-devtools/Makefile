@@ -25,14 +25,14 @@ CFLAGS+=	-fcommon
 SUB_FILES=	${PORTNAME}.conf
 PLIST_SUB=	LIBEXECDIR=heirloom/libexec
 
-MANPREFIX=	${PREFIX}/heirloom/share
+MANDIRS=	${PREFIX}/heirloom/share/man
 DATADIR=	${PREFIX}/heirloom/share
 
 BINDIR?=	${PREFIX}/heirloom/bin
 SUSBIN?=	${PREFIX}/heirloom/bin/posix
 LIBDIR?=	${PREFIX}/heirloom/libexec
 HDRSDIR?=	${DATADIR}/lib/make
-MANDIR?=	${MANPREFIX}/man
+MANDIR?=	${PREFIX}/heirloom/share/man
 
 PORTDOCS=	 *
 

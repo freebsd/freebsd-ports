@@ -1,6 +1,5 @@
 PORTNAME=	marco
-PORTVERSION=	1.26.0
-PORTREVISION=	2
+PORTVERSION=	1.28.1
 CATEGORIES=	x11-wm mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -23,12 +22,14 @@ RUN_DEPENDS=	zenity>=3.0.0:x11/zenity
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake gnome libtool localbase pathfix pkgconfig \
-		tar:xz xorg
+		tar:xz xorg mate
 USE_XORG=	ice sm x11 xcomposite xcursor xdamage xext xfixes \
-		xinerama xrandr xrender
+		xinerama xrandr xrender xres
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
+USE_MATE=	desktop
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.marco.gschema.xml

@@ -1,7 +1,7 @@
 PORTNAME=	dune-typetree
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,10 +12,10 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	dune-common>0:math/dune-common \
-		openmpi>0:net/openmpi \
+		openmpi4>0:net/openmpi4 \
 		vc>0:devel/vc
 RUN_DEPENDS=	dune-common>0:math/dune-common \
-		openmpi>0:net/openmpi \
+		openmpi4>0:net/openmpi4 \
 		vc>0:devel/vc
 
 USES=		cmake compiler:c++17-lang fortran pkgconfig

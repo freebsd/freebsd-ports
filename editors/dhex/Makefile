@@ -1,5 +1,6 @@
 PORTNAME=	dhex
-PORTVERSION=	0.69
+DISTVERSION=	0.69
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.dettus.net/dhex/ \
 		LOCAL/ehaupt
@@ -16,14 +17,17 @@ USES=		ncurses
 MANPAGE1=	dhex.1
 MANPAGE5=	dhexrc.5 dhex_markers.5 dhex_searchlog.5
 
-PLIST_FILES=	bin/dhex man/man1/dhex.1.gz man/man5/dhex_markers.5.gz \
-		man/man5/dhex_searchlog.5.gz man/man5/dhexrc.5.gz
+PLIST_FILES=	bin/dhex \
+		share/man/man1/dhex.1.gz \
+		share/man/man5/dhex_markers.5.gz \
+		share/man/man5/dhex_searchlog.5.gz \
+		share/man/man5/dhexrc.5.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MANPAGE1} ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${MANPAGE1} ${STAGEDIR}${PREFIX}/share/man/man1
 .for f in ${MANPAGE5}
-	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/share/man/man5
 .endfor
 
 .include <bsd.port.mk>

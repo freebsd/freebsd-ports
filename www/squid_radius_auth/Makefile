@@ -7,10 +7,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RADIUS authenticator for squid proxy 2.5 and later
 WWW=		http://www.squid-cache.org/contrib/squid_radius_auth
 
-.include <bsd.port.pre.mk>
+MAKE_ENV=	BINDIR=${PREFIX}/libexec/squid \
+		CONFDIR=${PREFIX}/etc/squid \
+		MANDIR=${PREFIX}/share/man/man8
+ALL_TARGET=	ALL
 
 post-patch:
-	${REINPLACE_CMD} 's|= gcc|?= gcc|' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} 's|PREFIX  = /usr/local|PREFIX  = ${PREFIX}|' ${WRKSRC}/Make.inc
+	@${REINPLACE_CMD} -E '/^(CC|CFLAGS|LDFLAGS)/s/=/?=/' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -E '/^(PREFIX|BINDIR|CONFDIR|MANDIR)/s/=/?=/' \
+		${WRKSRC}/Make.inc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

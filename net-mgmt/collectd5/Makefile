@@ -1,6 +1,6 @@
 PORTNAME=	collectd
 PORTVERSION=	5.12.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://storage.googleapis.com/collectd-tarballs/
 PKGNAMESUFFIX=	5
@@ -18,6 +18,7 @@ LDFLAGS+=	-lpfctl
 USES=		autoreconf cpe gmake libtool localbase:ldflags pkgconfig shebangfix tar:bzip2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 OPTIONS_DEFINE=		CGI GCRYPT JAVA LOGGING LOGSTASH VIRT
 OPTIONS_GROUP=		INPUT OUTPUT

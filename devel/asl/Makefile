@@ -1,5 +1,6 @@
 PORTNAME=	asl
 PORTVERSION=	1.42.183
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://john.ccac.rwth-aachen.de:8000/ftp/as/source/c_version/
 DISTNAME=	${PORTNAME}-${VERSION}

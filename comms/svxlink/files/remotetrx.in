@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: remotetrx
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# remotetrx_enable (bool):	Set to NO by default.
+#				Set it to YES to enable remotetrx.
+# remotetrx_config (path):	Set to %%PREFIX%%/etc/remotetrx/remotetrx
+#				by default.
+
+. /etc/rc.subr
+
+name=remotetrx
+rcvar=remotetrx_enable
+
+load_rc_config $name
+
+: ${remotetrx_enable:="NO"}
+: ${remotetrx_config="%%PREFIX%%/etc/remotetrx/remotetrx.conf"}
+
+command=%%PREFIX%%/bin/${name}
+pidfile=/var/run/${name}.pid
+
+command_args="--config $remotetrx_config --daemon --runasuser svxlink --pidfile ${pidfile}"
+
+run_rc_command "$1"

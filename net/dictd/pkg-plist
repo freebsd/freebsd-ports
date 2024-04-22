@@ -1,5 +1,5 @@
 bin/dictzip
 @sample etc/dictd.conf.sample
-man/man1/dictzip.1.gz
-man/man8/dictd.8.gz
 sbin/dictd
+share/man/man1/dictzip.1.gz
+share/man/man8/dictd.8.gz

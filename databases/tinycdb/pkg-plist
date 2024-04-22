@@ -3,6 +3,7 @@ include/cdb.h
 lib/libcdb.a
 lib/libcdb.so
 lib/libcdb.so.1
-man/man1/cdb.1.gz
-man/man3/cdb.3.gz
-man/man5/cdb.5.gz
+libdata/pkgconfig/libcdb.pc
+share/man/man1/cdb.1.gz
+share/man/man3/cdb.3.gz
+share/man/man5/cdb.5.gz

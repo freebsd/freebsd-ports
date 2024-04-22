@@ -15,15 +15,6 @@
  INSTALL_BIN_DIR = $(INSTALL_DIR)/bin
  INST_LOCALEDIR = $(INSTALL_DIR)/share/locale
  TARGET = $(INSTALL_BIN_DIR)/$(PROG)$(EXE_EXT)
-@@ -58,7 +58,7 @@ INSTPERM = 4111   # install suid if your
- #
- # simple man page installation
- #
--DI_MANINSTDIR = $(INSTALL_DIR)/share/man
-+DI_MANINSTDIR = $(INSTALL_DIR)/man
- DI_MANDIR = $(DI_MANINSTDIR)/man1
- MAN_TARGET = $(PROG).1
- MANPERM = 644
 @@ -140,7 +140,7 @@ install-prog:
  	$(TEST) -d $(INSTALL_BIN_DIR) || $(MKDIR) $(INSTALL_BIN_DIR)
  	$(CP) -f ./$(FROMDIR)/$(PROG)$(EXE_EXT) $(TARGET)

@@ -1,6 +1,6 @@
 PORTNAME=	duff
 PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		localbase tar:bzip2 shebangfix
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 bash_OLD_CMD=	/bin/sh
 SHEBANG_FILES=	join-duplicates.sh
 

@@ -13,9 +13,11 @@ include/QXmppQt%%QT_VER%%/QXmppBitsOfBinaryContentId.h
 include/QXmppQt%%QT_VER%%/QXmppBitsOfBinaryData.h
 include/QXmppQt%%QT_VER%%/QXmppBitsOfBinaryDataList.h
 include/QXmppQt%%QT_VER%%/QXmppBitsOfBinaryIq.h
+include/QXmppQt%%QT_VER%%/QXmppBlockingManager.h
 include/QXmppQt%%QT_VER%%/QXmppBookmarkManager.h
 include/QXmppQt%%QT_VER%%/QXmppBookmarkSet.h
 include/QXmppQt%%QT_VER%%/QXmppByteStreamIq.h
+include/QXmppQt%%QT_VER%%/QXmppCallInviteManager.h
 include/QXmppQt%%QT_VER%%/QXmppCarbonManager.h
 include/QXmppQt%%QT_VER%%/QXmppCarbonManagerV2.h
 include/QXmppQt%%QT_VER%%/QXmppClient.h
@@ -35,6 +37,9 @@ include/QXmppQt%%QT_VER%%/QXmppEntityTimeIq.h
 include/QXmppQt%%QT_VER%%/QXmppEntityTimeManager.h
 include/QXmppQt%%QT_VER%%/QXmppError.h
 include/QXmppQt%%QT_VER%%/QXmppExtension.h
+include/QXmppQt%%QT_VER%%/QXmppExternalService.h
+include/QXmppQt%%QT_VER%%/QXmppExternalServiceDiscoveryIq.h
+include/QXmppQt%%QT_VER%%/QXmppExternalServiceDiscoveryManager.h
 include/QXmppQt%%QT_VER%%/QXmppFileMetadata.h
 include/QXmppQt%%QT_VER%%/QXmppFileShare.h
 include/QXmppQt%%QT_VER%%/QXmppFileSharingManager.h
@@ -53,7 +58,9 @@ include/QXmppQt%%QT_VER%%/QXmppIncomingServer.h
 include/QXmppQt%%QT_VER%%/QXmppInvokable.h
 include/QXmppQt%%QT_VER%%/QXmppIq.h
 include/QXmppQt%%QT_VER%%/QXmppIqHandling.h
+include/QXmppQt%%QT_VER%%/QXmppJingleData.h
 include/QXmppQt%%QT_VER%%/QXmppJingleIq.h
+include/QXmppQt%%QT_VER%%/QXmppJingleMessageInitiationManager.h
 include/QXmppQt%%QT_VER%%/QXmppLogger.h
 include/QXmppQt%%QT_VER%%/QXmppMamIq.h
 include/QXmppQt%%QT_VER%%/QXmppMamManager.h
@@ -133,8 +140,8 @@ include/QXmppQt%%QT_VER%%/QXmppVCardManager.h
 include/QXmppQt%%QT_VER%%/QXmppVersionIq.h
 include/QXmppQt%%QT_VER%%/QXmppVersionManager.h
 include/QXmppQt%%QT_VER%%/qxmpp_export.h
-lib/cmake/QXmpp/QXmppConfig.cmake
-lib/cmake/QXmpp/QXmppConfigVersion.cmake
+%%QT5_ONLY%%lib/cmake/QXmpp/QXmppConfig.cmake
+%%QT5_ONLY%%lib/cmake/QXmpp/QXmppConfigVersion.cmake
 lib/cmake/QXmppOmemoQt%%QT_VER%%/QXmppOmemo-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/QXmppOmemoQt%%QT_VER%%/QXmppOmemo.cmake
 lib/cmake/QXmppOmemoQt%%QT_VER%%/QXmppOmemoQt%%QT_VER%%Config.cmake

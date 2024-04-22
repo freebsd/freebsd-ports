@@ -10,7 +10,7 @@ include/roboctl/rct_protos.h
 include/roboctl/rct_rcx.h
 include/roboctl/roboctl.h
 lib/libroboctl.a
-man/man1/legoctl.1.gz
-man/man1/nxtremote.1.gz
-man/man1/vexctl.1.gz
-man/man3/roboctl.3.gz
+share/man/man1/legoctl.1.gz
+share/man/man1/nxtremote.1.gz
+share/man/man1/vexctl.1.gz
+share/man/man3/roboctl.3.gz

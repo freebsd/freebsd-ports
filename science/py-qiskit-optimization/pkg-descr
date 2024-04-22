@@ -1,8 +1,0 @@
-Qiskit [quiss-kit] is an open-source SDK for working with quantum computers
-at the level of pulses, circuits, and application modules.
-
-Qiskit Optimization is one of Qiskit components. It covers the whole range from
-high-level modeling of optimization problems, with automatic conversion of
-problems to different required representations, to a suite of easy-to-use
-quantum optimization algorithms that are ready to run on classical simulators,
-as well as on real quantum devices via Qiskit.

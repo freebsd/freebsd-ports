@@ -1,6 +1,6 @@
 PORTNAME=	mergelog
 PORTVERSION=	4.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www textproc
 MASTER_SITES=	SF
 
@@ -10,5 +10,6 @@ WWW=		https://mergelog.sourceforge.net/
 
 USES=	gmake
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 .include <bsd.port.mk>

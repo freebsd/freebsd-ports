@@ -1,0 +1,5 @@
+This package also installs a desktop application file for bsdconfig(8),
+FreeBSD's system configuration tool, for operation as a graphical
+interface (starting with -X) as permitted with xdialog(1) as helper tool.
+However, for proper operation this requires either running as the root user, or
+sudo(8) to be installed and the user to be allowed in the sudoers(5) file.

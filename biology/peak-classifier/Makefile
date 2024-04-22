@@ -1,6 +1,7 @@
 PORTNAME=	peak-classifier
 DISTVERSION=	0.1.4-13
 DISTVERSIONSUFFIX=	-gfb89af3
+PORTREVISION=	1
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,11 +15,13 @@ LIB_DEPENDS=	libxtend.so:devel/libxtend libbiolibc.so:biology/biolibc
 RUN_DEPENDS=	bedtools:biology/bedtools \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		localbase python:3.7+ shebangfix
+USES=		localbase python shebangfix
 USE_GITHUB=	yes
-
 GH_ACCOUNT=	auerlab
+
 SHEBANG_FILES=	feature-view.py
+
+MAKE_ARGS=	MANPREFIX=${PREFIX}/share
 
 pre-build:
 	cd ${WRKSRC} && make depend LOCALBASE=${LOCALBASE}

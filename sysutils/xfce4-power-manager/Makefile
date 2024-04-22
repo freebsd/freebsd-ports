@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-power-manager
 PORTVERSION=	4.18.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -22,6 +22,7 @@ USE_XFCE=	libmenu panel xfconf
 USE_XORG=	ice sm xrandr x11 xext xtst xscrnsaver
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-network-manager \
 		--enable-polkit \
 		--enable-xfce4panel

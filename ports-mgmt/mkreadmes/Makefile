@@ -1,5 +1,6 @@
 PORTNAME=	mkreadmes
 DISTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -9,7 +10,7 @@ WWW=		https://sourceforge.net/projects/mkreadmes/
 
 USES=		tar:bzip2
 
-PLIST_FILES=	man/man1/mkreadmes.1.gz sbin/${PORTNAME}
+PLIST_FILES=	sbin/${PORTNAME} share/man/man1/mkreadmes.1.gz
 PORTDATA=	*
 
 post-patch:

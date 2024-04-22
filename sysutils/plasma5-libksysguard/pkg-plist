@@ -360,6 +360,7 @@ share/locale/gl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
 share/locale/gl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/gl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/gl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
+share/locale/gl/LC_MESSAGES/ksysguard_sensors.mo
 share/locale/gl/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/gl/LC_MESSAGES/processcore.mo
 share/locale/gl/LC_MESSAGES/processui.mo

@@ -1,0 +1,17 @@
+%%NLS%%%%PYTHON_SITELIBDIR%%/chirp/share/locale/de.po
+%%NLS%%%%PYTHON_SITELIBDIR%%/chirp/share/locale/el.po
+%%NLS%%%%PYTHON_SITELIBDIR%%/chirp/share/locale/en_US.po
+%%NLS%%%%PYTHON_SITELIBDIR%%/chirp/share/locale/es.po
+%%NLS%%%%PYTHON_SITELIBDIR%%/chirp/share/locale/fr.po
+%%NLS%%%%PYTHON_SITELIBDIR%%/chirp/share/locale/hu.po
+%%NLS%%%%PYTHON_SITELIBDIR%%/chirp/share/locale/it.po
+%%NLS%%%%PYTHON_SITELIBDIR%%/chirp/share/locale/ja_JP.po
+%%NLS%%%%PYTHON_SITELIBDIR%%/chirp/share/locale/nl.po
+%%NLS%%%%PYTHON_SITELIBDIR%%/chirp/share/locale/pl.po
+%%NLS%%%%PYTHON_SITELIBDIR%%/chirp/share/locale/pt_BR.po
+%%NLS%%%%PYTHON_SITELIBDIR%%/chirp/share/locale/ru.po
+%%NLS%%%%PYTHON_SITELIBDIR%%/chirp/share/locale/tr_TR.po
+%%NLS%%%%PYTHON_SITELIBDIR%%/chirp/share/locale/uk_UA.po
+%%NLS%%%%PYTHON_SITELIBDIR%%/chirp/share/locale/zh_CN.po
+share/applications/chirp.desktop
+share/pixmaps/chirp.png

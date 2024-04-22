@@ -1,6 +1,7 @@
 PORTNAME=	pam_u2f
 DISTVERSIONPREFIX=${PORTNAME}-
 DISTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	romain@FreeBSD.org
@@ -18,11 +19,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Yubico
 GH_PROJECT=	pam-u2f
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-pam-dir=${PREFIX}/lib
 
 PLIST_FILES=	bin/pamu2fcfg \
 		lib/pam_u2f.so \
-		man/man1/pamu2fcfg.1.gz \
-		man/man8/pam_u2f.8.gz
+		share/man/man1/pamu2fcfg.1.gz \
+		share/man/man8/pam_u2f.8.gz
 
 .include <bsd.port.mk>

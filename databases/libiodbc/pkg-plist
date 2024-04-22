@@ -30,10 +30,10 @@ lib/libiodbcinst.so
 lib/libiodbcinst.so.2
 lib/libiodbcinst.so.2.1.31
 libdata/pkgconfig/libiodbc.pc
-man/man1/iodbc-config.1.gz
-%%GTK2%%man/man1/iodbcadm-gtk.1.gz
-man/man1/iodbctest.1.gz
-man/man1/iodbctestw.1.gz
+share/man/man1/iodbc-config.1.gz
+%%GTK2%%share/man/man1/iodbcadm-gtk.1.gz
+share/man/man1/iodbctest.1.gz
+share/man/man1/iodbctestw.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS

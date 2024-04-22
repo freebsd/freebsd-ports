@@ -1,5 +1,6 @@
 PORTNAME=	rolo
 PORTVERSION=	011
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF
 
@@ -14,6 +15,7 @@ LIB_DEPENDS=	libvc.so:devel/libvc
 
 USES=		localbase ncurses tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 OPTIONS_DEFINE=	DOCS
 

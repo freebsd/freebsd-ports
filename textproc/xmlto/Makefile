@@ -1,5 +1,6 @@
 PORTNAME=	xmlto
 PORTVERSION=	0.0.28
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://releases.pagure.org/xmlto/:xmlto \
 		LOCAL/mandree/:xmlto \
@@ -38,6 +39,7 @@ PASSIVETEX_DESC=	Add dependency on XMLTeX/PassiveTeX
 
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	BASH=${BASH_CMD} GETOPT=${GETOPT_CMD} PDFXMLTEX=${PDFXMLTEX_CMD}
 MAKE_ENV+=	HOME=/dev/null
 

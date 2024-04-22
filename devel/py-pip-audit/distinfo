@@ -1,3 +1,3 @@
-TIMESTAMP = 1703227890
-SHA256 (pip_audit-2.6.2.tar.gz) = 0bbd023a199a104b29f949f063a872d41113b5a9048285666820fa35a76a7794
-SIZE (pip_audit-2.6.2.tar.gz) = 48452
+TIMESTAMP = 1709390622
+SHA256 (pip_audit-2.7.2.tar.gz) = a12905e42dd452f43a2dbf895606d59c35348deed27b8cbaff8516423576fdfb
+SIZE (pip_audit-2.7.2.tar.gz) = 50358

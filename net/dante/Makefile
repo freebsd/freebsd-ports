@@ -4,7 +4,7 @@ CATEGORIES=	net security
 MASTER_SITES=	http://www.inet.no/dante/files/ \
 		ftp://ftp.inet.no/pub/socks/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Circuit-level firewall/proxy
 WWW=		https://www.inet.no/dante/
 
@@ -14,10 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc \
 		libsasl2.so:security/cyrus-sasl2
 
-CONFLICTS=	socks5
-
-USES=		autoreconf libtool localbase
+USES=		libtool localbase
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-socks-conf=${PREFIX}/etc/socks.conf \
 		--with-sockd-conf=${PREFIX}/etc/sockd.conf
 INSTALL_TARGET=	install-strip
@@ -28,23 +27,25 @@ USE_RC_SUBR=	sockd
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/example/socks.conf ${STAGEDIR}${PREFIX}/etc/socks.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/example/sockd.conf ${STAGEDIR}${PREFIX}/etc/sockd.conf.sample
+.for x in s d
+	${INSTALL_DATA} ${WRKSRC}/example/sock${x}.conf \
+		${STAGEDIR}${PREFIX}/etc/sock${x}.conf.sample
+.endfor
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/example/sockd-basic.conf ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/example/sockd-chaining.conf ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/example/socks-simple-withoutnameserver.conf ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/example/socks-simple.conf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example/sockd-basic.conf \
+		${WRKSRC}/example/sockd-chaining.conf \
+		${WRKSRC}/example/socks-simple-withoutnameserver.conf \
+		${WRKSRC}/example/socks-simple.conf ${STAGEDIR}${EXAMPLESDIR}
 
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/contrib
-	${INSTALL_DATA} ${WRKSRC}/doc/README* ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/rfc* ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/SOCKS4*.protocol ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/UPGRADE ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/contrib/sockd-stat.awk ${STAGEDIR}${DOCSDIR}/contrib/sockd-stat.awk
+	${INSTALL_DATA} ${WRKSRC}/doc/README* \
+		${WRKSRC}/doc/rfc* \
+		${WRKSRC}/doc/SOCKS4*.protocol \
+		${WRKSRC}/UPGRADE ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/sockd-stat.awk \
+		${STAGEDIR}${DOCSDIR}/contrib
 
 .include <bsd.port.mk>

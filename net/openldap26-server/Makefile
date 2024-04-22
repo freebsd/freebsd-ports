@@ -1,5 +1,5 @@
 PORTNAME=		openldap
-DISTVERSION=		2.6.6
+DISTVERSION=		2.6.7
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		https://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/ \
@@ -44,9 +44,10 @@ CONFLICTS_INSTALL=	${PORTNAME}2[0-57-9]-server ${PORTNAME}-server
 .endif
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	1
+PORTREVISION_SERVER=	0
 OPENLDAP_SHLIB_MAJOR=	2
 OPENLDAP_SHLIB_MINOR=	0.200
 
@@ -273,8 +274,7 @@ EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
 
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-SED_MODULES=		-e 's,mandir = \$$(exec_prefix)/share/man,mandir = $$(exec_prefix)/man,' \
-			-e 's/\(moduleload[ 	]*back_[a-z]*\)\.la/\1/' \
+SED_MODULES=		-e 's/\(moduleload[ 	]*back_[a-z]*\)\.la/\1/' \
 			-e 's/\# *\(modulepath\)/\1/'
 
 CONFIGURE_ARGS+=	--enable-modules \
@@ -389,6 +389,11 @@ post-patch:
 .if defined(CONFIGURE_SED)
 	@${REINPLACE_CMD} -E ${CONFIGURE_SED} \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
+.if !${PORT_OPTIONS:MDEBUG}
+	@${REINPLACE_CMD} -E \
+		-e '/ldap_dump_(connection|requests_and_responses);/d' \
+		${WRKSRC}/libraries/libldap/ldap.map
 .endif
 
 pre-configure:

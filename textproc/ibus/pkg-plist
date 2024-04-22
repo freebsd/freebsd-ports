@@ -4,7 +4,7 @@ bin/ibus-setup
 etc/xdg/autostart/ibus.desktop
 etc/xdg/Xwayland-session.d/10-ibus-x11
 %%DCONF%%etc/dconf/db/ibus.d/00-upstream-settings
-%%DCONF%%man/man5/00-upstream-settings.5.gz
+%%DCONF%%share/man/man5/00-upstream-settings.5.gz
 %%DCONF%%@postunexec rm -f %D/etc/dconf/db/ibus
 %%DCONF%%@postexec dconf update
 %%DCONF%%etc/dconf/profile/ibus
@@ -57,7 +57,7 @@ include/ibus-1.0/ibusxml.h
 %%GTK3%%lib/gtk-3.0/3.0.0/immodules/im-ibus.so
 lib/libibus-1.0.so
 lib/libibus-1.0.so.5
-lib/libibus-1.0.so.5.0.527
+lib/libibus-1.0.so.5.0.529
 libdata/pkgconfig/ibus-1.0.pc
 %%GTK3%%libexec/ibus-extension-gtk3
 %%GTK3%%libexec/ibus-ui-gtk3
@@ -67,11 +67,11 @@ libdata/pkgconfig/ibus-1.0.pc
 libexec/ibus-portal
 %%EMOJI%%libexec/ibus-ui-emojier
 %%WAYLAND%%libexec/ibus-wayland
-man/man1/ibus-daemon.1.gz
-man/man1/ibus-setup.1.gz
-man/man1/ibus.1.gz
-%%DCONF%%man/man5/ibus.5.gz
-%%EMOJI%%man/man7/ibus-emoji.7.gz
+share/man/man1/ibus-daemon.1.gz
+share/man/man1/ibus-setup.1.gz
+share/man/man1/ibus.1.gz
+%%DCONF%%share/man/man5/ibus.5.gz
+%%EMOJI%%share/man/man7/ibus-emoji.7.gz
 share/applications/org.freedesktop.IBus.Setup.desktop
 %%EMOJI%%share/applications/org.freedesktop.IBus.Panel.Emojier.desktop
 %%GTK3%%share/applications/org.freedesktop.IBus.Panel.Extension.Gtk3.desktop
@@ -271,6 +271,7 @@ share/icons/hicolor/scalable/apps/ibus.svg
 %%NLS%%share/locale/id/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/it/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/ibus10.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/kn/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/ibus10.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/ibus10.mo

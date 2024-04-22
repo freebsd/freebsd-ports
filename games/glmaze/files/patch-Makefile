@@ -12,7 +12,7 @@
 -GAMEPATH = $(DESTPATH)/games/glMaze
 -MANPATH = $(DESTPATH)/man/man1
 +GAMEPATH = $(DESTPATH)/share/glmaze
-+MANPATH = $(DESTPATH)/man/man6
++MANPATH = $(DESTPATH)/share/man/man6
  
  OBJECTS = load_maze.o main.o controls.o shot.o player.o net.o \
  	  username.o radar.o prefs.o sound.o

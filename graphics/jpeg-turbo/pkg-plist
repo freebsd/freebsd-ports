@@ -16,11 +16,11 @@
 %%JPEG%%lib/libjpeg.so.8
 %%JPEG%%lib/libjpeg.so.8.3.2
 %%JPEG%%libdata/pkgconfig/libjpeg.pc
-%%JPEG%%man/man1/cjpeg.1.gz
-%%JPEG%%man/man1/djpeg.1.gz
-%%JPEG%%man/man1/jpegtran.1.gz
-%%JPEG%%man/man1/rdjpgcom.1.gz
-%%JPEG%%man/man1/wrjpgcom.1.gz
+%%JPEG%%share/man/man1/cjpeg.1.gz
+%%JPEG%%share/man/man1/djpeg.1.gz
+%%JPEG%%share/man/man1/jpegtran.1.gz
+%%JPEG%%share/man/man1/rdjpgcom.1.gz
+%%JPEG%%share/man/man1/wrjpgcom.1.gz
 %%LIBTURBOJPEG%%bin/tjbench
 %%LIBTURBOJPEG%%include/turbojpeg.h
 %%LIBTURBOJPEG%%lib/libturbojpeg.a

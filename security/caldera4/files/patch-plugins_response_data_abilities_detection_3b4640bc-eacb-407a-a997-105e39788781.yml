@@ -1,0 +1,18 @@
+--- plugins/response/data/abilities/detection/3b4640bc-eacb-407a-a997-105e39788781.yml.orig	2021-10-13 20:41:40 UTC
++++ plugins/response/data/abilities/detection/3b4640bc-eacb-407a-a997-105e39788781.yml
+@@ -17,7 +17,7 @@
+             - source: remote.port.unauthorized
+               edge: has_pid
+               target: host.pid.unauthorized
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           ps aux | grep -v grep | grep #{remote.port.unauthorized} | awk '{print $2}'
+@@ -34,4 +34,4 @@
+           plugins.response.app.parsers.process:
+             - source: remote.port.unauthorized
+               edge: has_pid
+-              target: host.pid.unauthorized
+\ No newline at end of file
++              target: host.pid.unauthorized

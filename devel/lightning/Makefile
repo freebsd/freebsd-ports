@@ -1,5 +1,5 @@
 PORTNAME=	lightning
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -14,15 +14,16 @@ ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 mips powerpc powerpc64 powerpc64l
 
 USES=		cpe libtool pathfix
 CPE_VENDOR=	gnu
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-disassembler=no
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	JIT_ARCH=${ARCH:S/i386/x86/:S/amd64/x86/:S/x86_64/x86/:C/powerpc.*/ppc/:C/armv./arm/:S/riscv64/riscv/}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-disassembler=no
+
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 INFO=		lightning
+PLIST_SUB=	JIT_ARCH=${ARCH:S/i386/x86/:S/amd64/x86/:S/x86_64/x86/:C/powerpc.*/ppc/:C/armv./arm/:S/riscv64/riscv/}
 
 OPTIONS_DEFINE=	ASSERTIONS
 

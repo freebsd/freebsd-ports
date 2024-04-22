@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-03-19 21:48:55 UTC
++++ CMakeLists.txt
+@@ -27,7 +27,7 @@ add_custom_target(man ALL DEPENDS ${MAN_TGT})
+     COMMENT "Building manpage ${MAN_TGT}"
+     VERBATIM)
+ add_custom_target(man ALL DEPENDS ${MAN_TGT})
+-install(FILES ${MAN_TGT} DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man8)
++install(FILES ${MAN_TGT} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man8)
+ 
+ # Packaging for RPM or DEB
+ find_program(rpmbuild_path "rpmbuild" FALSE)

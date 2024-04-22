@@ -1,0 +1,35 @@
+--- doc/rdist.man.orig	1998-11-09 21:38:53.000000000 -0800
++++ doc/rdist.man	2024-03-19 08:57:42.415646000 -0700
+@@ -242,6 +242,21 @@
+ .RE
+ .sp
+ .fi
++The
++.I rsh(1)
++method can be overridden to ssh using the
++.I RDIST_RSH
++environment variable.
++.nf
++.sp
++.RS
++\fBexport RDIST_RSH=/usr/local/bin/ssh\fR
++.RE
++.sp
++.fi
++See the
++.I ENVIRONMENT
++section below.
+ .PP
+ If the
+ .I rcmd(3) 
+@@ -870,6 +885,10 @@
+ .IP TMPDIR
+ Name of temporary directory to use.  Default is 
+ .B /tmp.
++.IP RDIST_RSH
++This environment variable lets you override the default remote shell used
++to transport the rdist protocol. By default it is net/bsdrcmds rsh. To
++use ssh simply assign the full pathname of the ssh binary.
+ .SH FILES
+ .nf
+ .ta \w'/tmp/rdist*    'u

@@ -1,37 +1,37 @@
 - Restore system shaderc support
 - Detect system shaderc on BSDs
 
---- Cargo.lock.orig	2023-10-08 11:35:01 UTC
+--- Cargo.lock.orig	2024-02-07 19:13:27 UTC
 +++ Cargo.lock
-@@ -5614,8 +5614,9 @@ name = "shaderc"
+@@ -5792,8 +5792,9 @@ dependencies = [
  
  [[package]]
  name = "shaderc"
 -version = "0.8.0"
 -source = "git+https://github.com/pythonesque/shaderc-rs?rev=f2605a02062834019bedff911aee2fd2998c49f9#f2605a02062834019bedff911aee2fd2998c49f9"
-+version = "0.8.2"
++version = "0.8.3"
 +source = "registry+https://github.com/rust-lang/crates.io-index"
-+checksum = "31cef52787a0db5108788ea20bed13d6bf4b96287c5c5201e55725f7070f3443"
++checksum = "27e07913ada18607bb60d12431cbe3358d3bbebbe95948e1618851dc01e63b7b"
  dependencies = [
   "libc",
   "shaderc-sys",
-@@ -5623,8 +5624,9 @@ name = "shaderc-sys"
+@@ -5801,8 +5802,9 @@ dependencies = [
  
  [[package]]
  name = "shaderc-sys"
 -version = "0.8.0"
 -source = "git+https://github.com/pythonesque/shaderc-rs?rev=f2605a02062834019bedff911aee2fd2998c49f9#f2605a02062834019bedff911aee2fd2998c49f9"
-+version = "0.8.2"
++version = "0.8.3"
 +source = "registry+https://github.com/rust-lang/crates.io-index"
-+checksum = "1e8f8439fffcffd6efcd74197204addf935dbab5752696bd990a6cd36d54cf64"
++checksum = "73120d240fe22196300f39ca8547ca2d014960f27b19b47b21288b396272f7f7"
  dependencies = [
   "cmake",
   "libc",
---- voxygen/Cargo.toml.orig	2023-01-06 18:27:46 UTC
+--- voxygen/Cargo.toml.orig	2024-02-07 19:13:27 UTC
 +++ voxygen/Cargo.toml
 @@ -29,14 +29,13 @@ egui-ui = ["voxygen-egui", "egui", "egui_wgpu_backend"
  tracy-memory = ["tracy"] # enables heap profiling with tracy
- plugins = ["client/plugins"]
+ plugins = ["client/plugins", "common-assets/plugins"]
  egui-ui = ["voxygen-egui", "egui", "egui_wgpu_backend", "egui_winit_platform"]
 -shaderc-from-source = ["shaderc/build-from-source"]
  discord = ["discord-sdk"]
@@ -45,10 +45,10 @@
  default = ["default-no-egui", "egui-ui"]
  
  [dependencies]
-@@ -60,9 +59,7 @@ bytemuck = { version="1.4", features=["derive"] }
- wgpu = { version = "=0.8.0", features = ["trace", "cross"] }
- wgpu-profiler = { git = "https://github.com/Imberflur/wgpu-profiler", tag = "wgpu-0.8" }
- bytemuck = { version="1.4", features=["derive"] }
+@@ -60,9 +59,7 @@ bytemuck = { version="1.7", features=["derive"] }
+ wgpu = { version = "0.18.0", default-features = false, features = ["trace", "spirv", "glsl"] }
+ wgpu-profiler = "0.15.0"
+ bytemuck = { version="1.7", features=["derive"] }
 -# shaderc = "0.8.0"
 -# Working around a current bug in shaderc that causes it to use the system installation even if we specify compile from source
 -shaderc = { git = "https://github.com/pythonesque/shaderc-rs", rev = "f2605a02062834019bedff911aee2fd2998c49f9" }
@@ -56,16 +56,16 @@
  # cmake crate used by shaderc, newer version 0.1.46 uses a new cmake command that is not available in our CI cmake version
  # see https://github.com/alexcrichton/cmake-rs/issues/131
  cmake = "=0.1.45"
---- cargo-crates/shaderc-sys-0.8.2/build/build.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/shaderc-sys-0.8.2/build/build.rs
-@@ -287,10 +287,13 @@ fn main() {
+--- cargo-crates/shaderc-sys-0.8.3/build/build.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/shaderc-sys-0.8.3/build/build.rs
+@@ -309,10 +309,13 @@ fn main() {
              }
          } {
              match (target_os.as_str(), target_env.as_str()) {
 -                ("linux", _) => {
 +                ("linux", _) | ("dragonfly", _) | ("freebsd", _) | ("netbsd", _) | ("openbsd", _) => {
-                     println!("cargo:rustc-link-search=native={}", search_dir_str);
-                     println!("cargo:rustc-link-lib={}={}", lib_kind, lib_name);
+                     println!("cargo:rustc-link-search=native={search_dir_str}");
+                     println!("cargo:rustc-link-lib={lib_kind}={lib_name}");
 -                    println!("cargo:rustc-link-lib=dylib=stdc++");
 +                    println!("cargo:rustc-link-lib=dylib={}", match target_os.as_str() {
 +                        "freebsd" | "openbsd" => "c++",
@@ -74,7 +74,7 @@
                      return;
                  }
                  ("windows", "msvc") => {
-@@ -373,8 +376,8 @@ fn emit_std_cpp_link() {
+@@ -395,8 +398,8 @@ fn emit_std_cpp_link() {
      let target_env = env::var("CARGO_CFG_TARGET_ENV").unwrap();
  
      match (target_os.as_str(), target_env.as_str()) {

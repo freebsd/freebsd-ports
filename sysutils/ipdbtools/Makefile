@@ -1,7 +1,7 @@
 PORTNAME=	ipdbtools
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	cyclaero@gmail.com
@@ -19,9 +19,12 @@ GH_PROJECT=	ipdb
 PLIST_FILES=	bin/ipup \
 		bin/ipdb \
 		bin/ipdb-update.sh \
-		man/man1/ipdbtools.1.gz \
-		man/man1/ipup.1.gz \
-		man/man1/ipdb.1.gz \
-		man/man1/ipdb-update.sh.1.gz
+		share/man/man1/ipdbtools.1.gz \
+		share/man/man1/ipup.1.gz \
+		share/man/man1/ipdb.1.gz \
+		share/man/man1/ipdb-update.sh.1.gz
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|man/man1|share/man/man1|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

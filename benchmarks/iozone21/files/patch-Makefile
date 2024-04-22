@@ -33,4 +33,4 @@
 +		 {if (x) print $0}' >>iozone.1
 +	@echo .Sh AUTHOR >> iozone.1
 +	@echo Bill Norcott >> iozone.1
-+	${BSD_INSTALL_MAN} iozone.1 $(DESTDIR)${PREFIX}/man/man1
++	${BSD_INSTALL_MAN} iozone.1 $(DESTDIR)${PREFIX}/share/man/man1

@@ -1,5 +1,6 @@
 PORTNAME=	bdes
 PORTVERSION=	1993
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://phobos69.inf.uni-konstanz.de/download/tools/ \
 		LOCAL/brnrd
@@ -13,7 +14,7 @@ LICENSE=	BSD2CLAUSE
 USES=		ssl tar
 WRKSRC=		${WRKDIR}/bdes.src
 
-PLIST_FILES=	bin/bdes man/man1/bdes.1.gz
+PLIST_FILES=	bin/bdes share/man/man1/bdes.1.gz
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${OPENSSLINC} -c bdes.c
@@ -21,6 +22,6 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bdes ${STAGEDIR}${PREFIX}/bin/bdes
-	${INSTALL_MAN} ${WRKSRC}/bdes.1 ${STAGEDIR}${MANPREFIX}/man/man1/bdes.1
+	${INSTALL_MAN} ${WRKSRC}/bdes.1 ${STAGEDIR}${PREFIX}/share/man/man1/bdes.1
 
 .include <bsd.port.mk>

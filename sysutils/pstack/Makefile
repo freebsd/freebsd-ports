@@ -1,5 +1,6 @@
 PORTNAME=	pstack
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -15,9 +16,9 @@ USES=		uidfix
 ONLY_FOR_ARCHS=	amd64 i386
 CONFLICTS=	pstacku
 MAKE_ARGS+=	BINDIR=${PREFIX}/bin
-MAKE_ARGS+=	MANDIR=${PREFIX}/man/man
+MAKE_ARGS+=	MANDIR=${PREFIX}/share/man/man
 MAKE_ARGS+=	LIBDIR=${PREFIX}/lib
 
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>

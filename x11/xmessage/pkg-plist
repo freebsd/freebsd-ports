@@ -1,4 +1,4 @@
 bin/xmessage
-man/man1/xmessage.1.gz
+share/man/man1/xmessage.1.gz
 share/X11/app-defaults/Xmessage
 share/X11/app-defaults/Xmessage-color

@@ -1,6 +1,6 @@
 PORTNAME=	crack-attack
 PORTVERSION=	1.1.14
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 
@@ -15,9 +15,10 @@ USE_GNOME=	gtk20
 USE_XORG=	x11 xi xmu sm ice
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man6/${PORTNAME}.6.gz \
+		share/man/man6/${PORTNAME}.6.gz \
 		share/pixmaps/${PORTNAME}.xpm
 PORTDATA=	*
 

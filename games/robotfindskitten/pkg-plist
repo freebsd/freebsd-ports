@@ -2,4 +2,4 @@ bin/robotfindskitten
 %%DATADIR%%/vanilla.nki
 %%EXTRANKI%%%%DATADIR%%/freebsd.nki
 %%EXTRANKI%%%%DATADIR%%/nethack.nki
-man/man6/robotfindskitten.6.gz
+share/man/man6/robotfindskitten.6.gz

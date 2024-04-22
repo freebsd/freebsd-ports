@@ -1,5 +1,6 @@
 PORTNAME=	x026
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/x3270/${PORTNAME}/${PORTVERSION}
 
@@ -11,6 +12,6 @@ USES=		imake tar:tgz xorg
 USE_XORG=	xaw7 xpm xt
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/x026.1.gz
+		share/man/man1/x026.1.gz
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 --- core/Common/base.pri.orig	2021-09-30 12:13:32 UTC
 +++ core/Common/base.pri
-@@ -79,6 +79,14 @@ android {
-     DEFINES += __ANDROID__ LINUX _LINUX _ARM_ALIGN_
+@@ -97,6 +97,14 @@ android {
+ 	DEFINES += __ANDROID__ LINUX _LINUX _ARM_ALIGN_
  }
  
 +freebsd-clang {
@@ -13,10 +13,10 @@
 +}
 +
  win32:contains(QMAKE_TARGET.arch, x86_64): {
-     CONFIG += core_win_64
+ 	CONFIG += core_win_64
  }
-@@ -165,6 +173,14 @@ core_windows {
-     }
+@@ -167,6 +175,14 @@ core_win_64 {
+ 	DEFINES += WIN64 _WIN64
  }
  
 +core_freebsd {
@@ -28,15 +28,16 @@
 +}
 +
  core_linux {
-     equals(TEMPLATE, app) {
-         QMAKE_LFLAGS += "-Wl,-rpath,\'\$$ORIGIN\'"
-@@ -178,6 +194,9 @@ core_win_32 {
+ 	DEFINES += LINUX _LINUX
  }
- core_win_64 {
-     CORE_BUILDS_PLATFORM_PREFIX = win_64
+@@ -219,6 +235,10 @@ core_windows {
+ 			core_win_32:QMAKE_LFLAGS_WINDOWS = /SUBSYSTEM:WINDOWS,5.01
+ 		}
+ 	}
 +}
++
 +core_freebsd_64 {
 +    CORE_BUILDS_PLATFORM_PREFIX = freebsd_64
  }
- core_linux_32 {
-     CORE_BUILDS_PLATFORM_PREFIX = linux_32
+ 
+ core_linux {

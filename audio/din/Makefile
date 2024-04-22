@@ -1,5 +1,5 @@
 PORTNAME=	din
-PORTVERSION=	57
+PORTVERSION=	58.1
 CATEGORIES=	audio
 MASTER_SITES=	https://archive.org/download/dinisnoise_source_code/
 
@@ -30,7 +30,7 @@ ALSA_DESC=	Uses ALSA sound server
 ALSA_CXXFLAGS+=	-D__LINUX_ALSA__
 JACK_CXXFLAGS+=	-D__UNIX_JACK__
 
-CXXFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl${TCL_VER}
+CXXFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl${TCL_VER} -Wno-register
 LIBS+=		-L${LOCALBASE}/lib -ltcl${TCL_SHLIB_VER} -lthr -ljack
 
 .include <bsd.port.mk>

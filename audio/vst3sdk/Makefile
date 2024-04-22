@@ -12,7 +12,6 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_i386=	fails to build: static_assert failed due to requirement 'alignof(Steinberg::Vst::ProcessContext) == (0 ? 8U : 0 ? 1U : 1 ? 8U : 8U)
-BROKEN_FreeBSD_14=	fails to compile: 'experimental/filesystem' file not found
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
@@ -27,6 +26,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 USES=		cmake compiler:c++14-lang gnome localbase:ldflags pkgconfig shebangfix xorg
 USE_GNOME=	cairo gtk30 gtkmm30
 USE_XORG=	ice sm x11 xcb xext
+USE_CXXSTD=	c++20 # otherwise the code in public.sdk/source/vst/hosting/module_linux.cpp uses the default value of __cplusplus=201703 and fails to use the correct #include <filesystem>
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	steinbergmedia

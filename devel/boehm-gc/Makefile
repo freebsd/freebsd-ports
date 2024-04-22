@@ -1,5 +1,5 @@
 PORTNAME=	gc
-DISTVERSION=	8.2.4
+DISTVERSION=	8.2.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hboehm.info/gc/gc_source/ \
 		https://github.com/ivmai/bdwgc/releases/download/v${PORTVERSION}/
@@ -25,6 +25,7 @@ CPE_PRODUCT=	garbage_collector
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 # NOTE: do not --disable-static, static is useful for e.g. lang/crystal
 CONFIGURE_ARGS=	--enable-cplusplus \
 		--enable-mmap \
@@ -48,7 +49,7 @@ PLIST=			${NONEXISTENT}
 PLIST_FILES=		${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.a,} \
 			${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
 			${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
-			${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.5.0,} \
+			${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.5.1,} \
 			${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.a,} \
 			${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
 			${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
@@ -56,7 +57,7 @@ PLIST_FILES=		${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.a,} \
 			${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.a,} \
 			${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
 			${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
-			${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.5.2,} \
+			${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.5.3,} \
 			${GCTBALIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.a,} \
 			${GCTBALIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
 			${GCTBALIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
@@ -102,8 +103,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/include/gc_pthread_redirects.h \
 		${STAGEDIR}${PREFIX}/include/gc
 . endif
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcord-${GC_VARIANT}.so.1.5.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgc-${GC_VARIANT}.so.1.5.2
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcord-${GC_VARIANT}.so.1.5.1
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgc-${GC_VARIANT}.so.1.5.3
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgccpp-${GC_VARIANT}.so.1.5.0
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgctba-${GC_VARIANT}.so.1.5.0
 

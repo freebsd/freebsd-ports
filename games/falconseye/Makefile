@@ -1,6 +1,6 @@
 PORTNAME=	falconseye
 PORTVERSION=	1.9.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/NetHack-Falcon_s%20Eye%20%28source%29/${PORTVERSION}
 DISTNAME=	nethack_source_331_jtp_${PORTVERSION:S/.//g}
@@ -56,9 +56,9 @@ post-build:
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/util/recover ${STAGEDIR}${PREFIX}/bin/frecover
 	cd ${WRKSRC}/doc && ${INSTALL_MAN} recover.6 \
-		${STAGEDIR}${PREFIX}/man/man6/frecover.6
+		${STAGEDIR}${PREFIX}/share/man/man6/frecover.6
 	cd ${WRKSRC}/doc && ${INSTALL_MAN} nethack.6 \
-		${STAGEDIR}${PREFIX}/man/man6/falconseye.6
+		${STAGEDIR}${PREFIX}/share/man/man6/falconseye.6
 	${TOUCH} ${STAGEDIR}${DATADIR}/logfile ${STAGEDIR}${DATADIR}/perm \
 		${STAGEDIR}${DATADIR}/record
 

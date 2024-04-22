@@ -55,6 +55,7 @@ bin/faust2nodejs
 bin/faust2octave
 bin/faust2osxiosunity
 bin/faust2owl
+bin/faust2paconsole
 bin/faust2paqt
 bin/faust2pdf
 bin/faust2plot
@@ -154,6 +155,7 @@ include/faust/dsp/libfaust-signal-c.h
 include/faust/dsp/libfaust-signal.h
 include/faust/dsp/libfaust.h
 include/faust/dsp/llvm-dsp-adapter.h
+include/faust/dsp/llvm-dsp-adapter1.h
 include/faust/dsp/llvm-dsp-c.h
 include/faust/dsp/llvm-dsp.h
 include/faust/dsp/llvm-machine-dsp.h
@@ -269,7 +271,7 @@ lib/ios-libsndfile.a
 lib/libOSCFaust.a
 lib/libfaust.so
 lib/libfaust.so.2
-lib/libfaust.so.2.70.3
+lib/libfaust.so.2.72.14
 %%HIGHLIGHT%%share/apps/katepart/syntax/faust.xml
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.cpp
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.h
@@ -413,7 +415,6 @@ lib/libfaust.so.2.70.3
 %%DATADIR%%/cmajor/poly-dsp-effect.cmajor
 %%DATADIR%%/cmajor/poly-dsp.cmajor
 %%DATADIR%%/compressors.lib
-%%DATADIR%%/cpal.rs
 %%DATADIR%%/csound.cpp
 %%DATADIR%%/csvplot.cpp
 %%DATADIR%%/daisy/Makefile
@@ -593,7 +594,6 @@ lib/libfaust.so.2.70.3
 %%DATADIR%%/jack-qt-chain-header.cpp
 %%DATADIR%%/jack-qt.cpp
 %%DATADIR%%/jack-ros.cpp
-%%DATADIR%%/jack.rs
 %%DATADIR%%/java-minimal.java
 %%DATADIR%%/java-swing.java
 %%DATADIR%%/jax/minimal.py
@@ -698,7 +698,6 @@ lib/libfaust.so.2.70.3
 %%DATADIR%%/minimal.c
 %%DATADIR%%/minimal.cpp
 %%DATADIR%%/minimal.d
-%%DATADIR%%/minimal.rs
 %%DATADIR%%/misceffects.lib
 %%DATADIR%%/module.cpp
 %%DATADIR%%/music.lib
@@ -791,6 +790,7 @@ lib/libfaust.so.2.70.3
 %%DATADIR%%/osclib/oscpack/tests/OscUnitTests.cpp
 %%DATADIR%%/osclib/oscpack/tests/OscUnitTests.h
 %%DATADIR%%/owl.cpp
+%%DATADIR%%/pa-console.cpp
 %%DATADIR%%/pa-gtk.cpp
 %%DATADIR%%/pa-qt.cpp
 %%DATADIR%%/params.d
@@ -799,7 +799,6 @@ lib/libfaust.so.2.70.3
 %%DATADIR%%/physmodels.lib
 %%DATADIR%%/platform.lib
 %%DATADIR%%/plot.cpp
-%%DATADIR%%/portaudio.rs
 %%DATADIR%%/pure.c
 %%DATADIR%%/pure.cpp
 %%DATADIR%%/puredata.cpp
@@ -809,6 +808,13 @@ lib/libfaust.so.2.70.3
 %%DATADIR%%/reverbs.lib
 %%DATADIR%%/ros-callbacks.cpp
 %%DATADIR%%/routes.lib
+%%DATADIR%%/rust/README.md
+%%DATADIR%%/rust/cpal.rs
+%%DATADIR%%/rust/jack-double.rs
+%%DATADIR%%/rust/jack-float.rs
+%%DATADIR%%/rust/minimal.rs
+%%DATADIR%%/rust/portaudio-double.rs
+%%DATADIR%%/rust/portaudio-float.rs
 %%DATADIR%%/sam/fast_pow2.h
 %%DATADIR%%/sam/fastexp.h
 %%DATADIR%%/sam/samFaustDSP.cpp

@@ -1,5 +1,4 @@
 bin/exif
-man/man1/exif.1.gz
 %%NLS%%share/locale/ast/LC_MESSAGES/exif.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/exif.mo
 %%NLS%%share/locale/da/LC_MESSAGES/exif.mo
@@ -31,3 +30,4 @@ man/man1/exif.1.gz
 %%NLS%%share/locale/uk/LC_MESSAGES/exif.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/exif.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/exif.mo
+share/man/man1/exif.1.gz

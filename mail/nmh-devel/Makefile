@@ -10,8 +10,8 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Cleaned up MH mailer suite
 WWW=		https://savannah.nongnu.org/projects/nmh/
 
-GIT_TAGNAME=	fefdea3
-NMH_COMMIT_DATE=	2023.12.03
+GIT_TAGNAME=	5718396
+NMH_COMMIT_DATE=	2024.01.21
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GIT_TAGNAME}
 
@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
 		--sysconfdir=${PREFIX}/etc \
 		--docdir=${DOCSDIR}
+GNU_CONFIGURE_MANPREFIX= ${PREFIX}/share
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		liblockfile.so:devel/liblockfile
 

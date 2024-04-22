@@ -1,5 +1,5 @@
 PORTNAME=	vapoursynth
-DISTVERSION=	R65
+DISTVERSION=	R66
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/

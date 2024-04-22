@@ -9,10 +9,10 @@ bin/taiclockd
 @mode 0755
 etc/clockspeed/leapsecs.dat
 @sample etc/rc.d/clockspeed.sh.sample
-man/man1/clockadd.1.gz
-man/man1/clockspeed.1.gz
-man/man1/clockview.1.gz
-man/man1/sntpclock.1.gz
-man/man1/taiclock.1.gz
-man/man1/taiclockd.1.gz
-@unexec echo "If you are permanently removing this port, you should do a ``rm -Rf ${PKG_PREFIX}/etc/clockspeed`` to remove any configuration files left." | fmt
+share/man/man1/clockadd.1.gz
+share/man/man1/clockspeed.1.gz
+share/man/man1/clockview.1.gz
+share/man/man1/sntpclock.1.gz
+share/man/man1/taiclock.1.gz
+share/man/man1/taiclockd.1.gz
+@postunexec echo "If you are permanently removing this port, you should do a ``rm -Rf ${PKG_PREFIX}/etc/clockspeed`` to remove any configuration files left." | fmt

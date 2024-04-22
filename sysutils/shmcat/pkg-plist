@@ -1,9 +1,9 @@
 bin/ftok
 bin/shmcat
-%%NLS%%man/de/man1/ftok.1.gz
-%%NLS%%man/de/man1/shmcat.1.gz
-man/man1/ftok.1.gz
-man/man1/shmcat.1.gz
+%%NLS%%share/man/de/man1/ftok.1.gz
+%%NLS%%share/man/de/man1/shmcat.1.gz
+share/man/man1/ftok.1.gz
+share/man/man1/shmcat.1.gz
 %%NLS%%share/locale/de/LC_MESSAGES/shmcat.mo
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/shmcat.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/shmcat.mo

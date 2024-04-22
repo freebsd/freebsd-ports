@@ -1,3 +1,3 @@
-TIMESTAMP = 1695143367
-SHA256 (httpx_auth-0.18.0.tar.gz) = 22826b4b9c3d76523e9f4797769cafcc46f0d2e02f5e56856d5d996e7b925654
-SIZE (httpx_auth-0.18.0.tar.gz) = 70205
+TIMESTAMP = 1709390722
+SHA256 (httpx_auth-0.22.0.tar.gz) = 5dc2d18cd3a0788015fd22714048e59f5eca6aa3051bfbd8d9dd0d2e6254c095
+SIZE (httpx_auth-0.22.0.tar.gz) = 116355

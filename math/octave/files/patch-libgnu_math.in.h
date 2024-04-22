@@ -1,8 +1,8 @@
---- libgnu/math.in.h.orig	2022-11-02 18:19:56 UTC
+--- libgnu/math.in.h.orig	2024-03-12 18:00:23 UTC
 +++ libgnu/math.in.h
-@@ -15,7 +15,7 @@
-    You should have received a copy of the GNU Lesser General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
+@@ -20,7 +20,7 @@
+    would lead to many syntax errors.  */
+ #if !(defined __ANDROID__ && defined _LIBCPP_MATH_H && !defined INFINITY)
  
 -#ifndef _@GUARD_PREFIX@_MATH_H
 +#if 1

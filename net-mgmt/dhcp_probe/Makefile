@@ -1,6 +1,6 @@
 PORTNAME=	dhcp_probe
 PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.net.princeton.edu/software/dhcp_probe/
 
@@ -19,6 +19,7 @@ LICENSE_PERMS_addl=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libnet.so:net/libnet
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 USE_RC_SUBR=	dhcp_probe

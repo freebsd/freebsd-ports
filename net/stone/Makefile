@@ -1,5 +1,6 @@
 PORTNAME=	stone
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.gcd.org/sengoku/stone/
 
@@ -32,8 +33,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stone ${STAGEDIR}${PREFIX}/bin/stone
-	${INSTALL_MAN} ${FILESDIR}/stone.1 ${STAGEDIR}${PREFIX}/man/man1/stone.1
-	${INSTALL_MAN} ${FILESDIR}/stone.1.ja ${STAGEDIR}${PREFIX}/man/ja/man1/stone.1
+	${INSTALL_MAN} ${FILESDIR}/stone.1 ${STAGEDIR}${PREFIX}/share/man/man1/stone.1
+	${INSTALL_MAN} ${FILESDIR}/stone.1.ja ${STAGEDIR}${PREFIX}/share/man/ja/man1/stone.1
 	${INSTALL_DATA} ${FILESDIR}/stone.cnf ${STAGEDIR}${PREFIX}/etc/stone.cnf.sample
 
 .include <bsd.port.post.mk>

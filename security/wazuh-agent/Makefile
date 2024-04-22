@@ -1,5 +1,5 @@
 PORTNAME=	wazuh
-DISTVERSION=	4.7.2
+DISTVERSION=	4.7.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/24/libraries/sources/:wazuh_sources
@@ -15,10 +15,9 @@ WWW=		https://github.com/wazuh/wazuh
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake:devel/cmake-core
 LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
-USES=		cpe gmake perl5 readline shebangfix sqlite:3 uidfix
+USES=		cmake:indirect cpe gmake perl5 readline shebangfix sqlite:3 uidfix
 
 USE_GITHUB=	yes
 GH_TUPLE=	alonsobsd:wazuh-freebsd:${WAZUH_EXTRAFILE_TAGNAME}:wazuh

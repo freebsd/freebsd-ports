@@ -1,6 +1,0 @@
-bin/lzmacmd
-include/lzmalib.h
-lib/liblzma.a
-lib/liblzma.so
-lib/liblzma.so.1
-lib/liblzma.so.1.1.0

@@ -1,5 +1,6 @@
 PORTNAME=	dupd
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	tom@hur.st
@@ -14,6 +15,7 @@ TEST_DEPENDS+=	bash:shells/bash
 USES=		gmake localbase perl5 sqlite:3 ssl
 USE_PERL5=	test
 
+MAKE_ARGS=	MAN_BASE=${PREFIX}/share/man
 ALL_TARGET=	dupd
 TEST_TARGET=	test
 

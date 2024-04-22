@@ -1,0 +1,9 @@
+bin/vuls
+etc/periodic/daily/vuls
+@sample %%ETCDIR%%/config.toml.sample
+@sample etc/newsyslog.conf.d/vuls.conf.sample
+@dir(vuls,vuls,0775) /var/db/vuls/results
+@dir(vuls,vuls,0775) /var/db/vuls
+@dir(vuls,vuls,0775) /var/log/vuls
+@dir etc/newsyslog.conf.d
+@dir etc/periodic/daily

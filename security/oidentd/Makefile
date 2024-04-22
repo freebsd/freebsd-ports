@@ -1,5 +1,6 @@
 PORTNAME=	oidentd
 DISTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://files.janikrabe.com/pub/oidentd/releases/${DISTVERSION}/
 
@@ -18,7 +19,7 @@ PLIST_FILES=	sbin/oidentd etc/oidentd.conf.sample \
 		etc/oidentd_masq.conf.sample
 MANPAGES=	oidentd.conf.5 oidentd_masq.conf.5 oidentd.8
 .for man in ${MANPAGES}
-PLIST_FILES+=	man/man${man:E}/${man}.gz
+PLIST_FILES+=	share/man/man${man:E}/${man}.gz
 .endfor
 
 CONFIGURE_ARGS=	--disable-masq
@@ -29,7 +30,7 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/oidentd_masq.conf.sample ${STAGEDIR}${PREFIX}/etc
 .for MANFILE in ${MANPAGES}
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/doc/${MANFILE}
-	${INSTALL_MAN} ${WRKSRC}/doc/${MANFILE} ${STAGEDIR}${PREFIX}/man/man${MANFILE:E}
+	${INSTALL_MAN} ${WRKSRC}/doc/${MANFILE} ${STAGEDIR}${PREFIX}/share/man/man${MANFILE:E}
 .endfor
 
 .include <bsd.port.mk>

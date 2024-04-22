@@ -4,5 +4,5 @@ libexec/cups/backend/beh
 libexec/cups/filter/foomatic-rip
 lib/ppr/interfaces/foomatic-rip
 lib/ppr/lib/foomatic-rip
-man/man1/foomatic-rip.1.gz
+share/man/man1/foomatic-rip.1.gz
 @dir etc/foomatic/direct

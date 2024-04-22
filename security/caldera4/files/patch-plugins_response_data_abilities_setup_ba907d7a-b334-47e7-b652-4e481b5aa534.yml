@@ -1,0 +1,18 @@
+--- plugins/response/data/abilities/setup/ba907d7a-b334-47e7-b652-4e481b5aa534.yml.orig	2021-10-13 20:41:40 UTC
++++ plugins/response/data/abilities/setup/ba907d7a-b334-47e7-b652-4e481b5aa534.yml
+@@ -7,7 +7,7 @@
+     attack_id: x
+     name: x
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           echo '' > /tmp/cron_jobs;
+@@ -32,4 +32,4 @@
+           cat /tmp/cron_jobs | sort > /tmp/baseline_cronjobs_list.txt;
+           rm /tmp/cron_jobs;
+         cleanup: |
+-          rm -f /tmp/baseline_cronjobs_list.txt
+\ No newline at end of file
++          rm -f /tmp/baseline_cronjobs_list.txt

@@ -15,6 +15,7 @@ lib/zotero/defaults/preferences/zotero.js
 lib/zotero/dependentlibs.list
 lib/zotero/dictionaries/en-US.aff
 lib/zotero/dictionaries/en-US.dic
+lib/zotero/extensions/zoteroOpenOfficeIntegration@zotero.org/.github/ISSUE_TEMPLATE.md
 lib/zotero/extensions/zoteroOpenOfficeIntegration@zotero.org/.gitignore
 lib/zotero/extensions/zoteroOpenOfficeIntegration@zotero.org/COPYING
 lib/zotero/extensions/zoteroOpenOfficeIntegration@zotero.org/README.md

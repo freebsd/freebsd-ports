@@ -1,6 +1,6 @@
 PORTNAME=	gawk
 PORTVERSION=	3.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese lang
 MASTER_SITES=	GNU
 
@@ -14,6 +14,7 @@ COMMENT=	GNU awk + multi-byte extension
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-bitops --enable-non-decimal-data
 MAKE_JOBS_UNSAFE=	yes
 

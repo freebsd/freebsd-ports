@@ -1,5 +1,6 @@
 PORTNAME=	tripwire
 PORTVERSION=	2.4.3.8
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	cy@FreeBSD.org
@@ -17,6 +18,7 @@ NO_LICENSES_INSTALL=	yes
 MAKE_JOBS_UNSAFE=	yes
 USES=		cpe gmake ssl
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX= ${PREFIX}/share
 MAKE_ARGS=	SYSPRE=${ARCH}-unknown-freebsd \
 		DESTDIR=${STAGEDIR}
 M4=		/usr/bin/m4

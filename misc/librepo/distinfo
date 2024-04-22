@@ -1,3 +1,3 @@
-TIMESTAMP = 1704178027
-SHA256 (rpm-software-management-librepo-1.17.0_GH0.tar.gz) = ae707c2b9d72c2eaeecc9a5370273a99987d9c6979517b4ad433ae920b65d993
-SIZE (rpm-software-management-librepo-1.17.0_GH0.tar.gz) = 840253
+TIMESTAMP = 1711520106
+SHA256 (rpm-software-management-librepo-1.17.1_GH0.tar.gz) = 16e4158d6ce8a8536cc80dc327efb4ad53acf9181175b80cb9ef17cbda53cb8f
+SIZE (rpm-software-management-librepo-1.17.1_GH0.tar.gz) = 840461

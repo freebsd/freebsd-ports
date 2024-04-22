@@ -1,7 +1,7 @@
 PORTNAME=	taskw
-PORTVERSION=	2.0.0
+DISTVERSION=	2.0.0
+PORTREVISION=	2
 CATEGORIES=	deskutils python
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -11,24 +11,23 @@ WWW=		https://github.com/ralphbean/taskw
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR} \
+PATCH_SITES=    https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
+PATCHFILES+=    168.patch:-p1
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-dateutil>0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}kitchen>0:devel/py-kitchen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.3.4,<2:devel/py-nose@${PY_FLAVOR} \
 		task:deskutils/taskwarrior
 
 USES=		python
+USE_GITHUB=	yes
+GH_ACCOUNT=	ralphbean
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} > 30900
-BROKEN=		python-3.9 is not supported
-.endif
-
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

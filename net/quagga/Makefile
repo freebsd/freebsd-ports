@@ -1,6 +1,6 @@
 PORTNAME=	quagga
 PORTVERSION=	1.2.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/Quagga/quagga/releases/download/${DISTNAME}/ \
 		http://www.grosbein.net/freebsd/distfiles/ \
@@ -18,6 +18,7 @@ USES=		compiler:c11 cpe gmake libtool makeinfo \
 
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV+=	GAWK=${AWK}
 
 CFLAGS+=	-fcommon
@@ -121,8 +122,8 @@ USE_LDCONFIG=		yes
 PKGNAMESUFFIX=		-compat
 QPREFIX=		${PREFIX}/${PORTNAME}
 GNU_CONFIGURE_PREFIX=	${QPREFIX}
-MANPREFIX=		${QPREFIX}
-MANDIRS=		${QPREFIX}/man
+GNU_CONFIGURE_MANPREFIX=	${QPREFIX}/share
+MANDIRS=		${QPREFIX}/share/man
 USE_LDCONFIG=		${QPREFIX}/lib
 CONFIGURE_ARGS+=	--datarootdir=${QPREFIX} \
 			--bindir=${PREFIX}/bin \

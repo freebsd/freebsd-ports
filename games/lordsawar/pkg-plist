@@ -5,12 +5,6 @@ bin/lordsawar-game-list-client
 bin/lordsawar-game-list-server
 bin/lordsawar-import
 bin/lordsawar-upgrade-file
-man/man6/lordsawar-game-host-client.6.gz
-man/man6/lordsawar-game-host-server.6.gz
-man/man6/lordsawar-game-list-client.6.gz
-man/man6/lordsawar-game-list-server.6.gz
-man/man6/lordsawar-import.6.gz
-man/man6/lordsawar.6.gz
 share/appdata/lordsawar-appdata.xml
 share/applications/lordsawar.desktop
 share/icons/hicolor/16x16/apps/lordsawar.png
@@ -249,3 +243,9 @@ share/locale/tr/LC_MESSAGES/lordsawar.mo
 %%DATADIR%%/various/xslt/gs-0.2.1-0.3.2.xsl
 %%DATADIR%%/various/xslt/ss-0.2.1-0.3.2.xsl
 %%DATADIR%%/various/xslt/ts-0.2.1-0.3.2.xsl
+share/man/man6/lordsawar-game-host-client.6.gz
+share/man/man6/lordsawar-game-host-server.6.gz
+share/man/man6/lordsawar-game-list-client.6.gz
+share/man/man6/lordsawar-game-list-server.6.gz
+share/man/man6/lordsawar-import.6.gz
+share/man/man6/lordsawar.6.gz

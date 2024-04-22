@@ -1,6 +1,6 @@
 PORTNAME=	libremidi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.4
+DISTVERSION=	4.5.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,9 +17,10 @@ USES=		cmake:testing compiler:c++20-lang localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	jcelerier
 
-#CMAKE_ON=	BUILD_SHARED_LIBS # this doesn't work on libremidi form some reason - see the patch
+CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	LIBREMIDI_TESTS
-CMAKE_TESTING_ON=	LIBREMIDI_TESTS # 1 test fails: https://github.com/jcelerier/libremidi/issues/86
+CMAKE_ARGS=	-DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS
+CMAKE_TESTING_ON=	LIBREMIDI_TESTS
 
 OPTIONS_DEFINE=		JACK
 OPTIONS_DEFAULT=	JACK
@@ -31,7 +32,7 @@ OPTIONS_DEFAULT+=	ALSA # ALSA support requires libalsa, sys/eventfd.h, sys/timer
 ALSA_CMAKE_OFF=		-DLIBREMIDI_NO_ALSA=ON
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 .else
-CMAKE_ON=		LIBREMIDI_NO_ALSA
+CMAKE_ON+=		LIBREMIDI_NO_ALSA
 .endif
 
 JACK_CMAKE_OFF=		-DLIBREMIDI_NO_JACK=ON

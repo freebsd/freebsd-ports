@@ -1,9 +1,9 @@
 sbin/ptpd2
-man/man8/ptpd2.8.gz
-man/man5/ptpd2.conf.5.gz
 %%ETCDIR%%/client-e2e-8023.conf.sample
 %%ETCDIR%%/client-e2e-pcap.conf.sample
 %%ETCDIR%%/client-e2e-socket.conf.sample
+share/man/man8/ptpd2.8.gz
+share/man/man5/ptpd2.conf.5.gz
 %%DATADIR%%/PTPBASE-MIB.txt
 %%DATADIR%%/leap-seconds.list
 %%DATADIR%%/ptpd2.conf.default-full

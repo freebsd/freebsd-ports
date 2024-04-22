@@ -1,5 +1,6 @@
 PORTNAME=	milter-greylist
 PORTVERSION=	4.6.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/ \
 		http://fossies.org/unix/privat/
@@ -63,6 +64,7 @@ LDAP_USES=			ldap
 LIBS+=		-lpthread
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--with-user=mailnull \
 			--with-libmilter=${MILTERBASE} \
 			--enable-dnsrbl \
@@ -78,9 +80,9 @@ PORTEXAMPLES=	greylist.conf
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail
 	${INSTALL_MAN} ${WRKSRC}/greylist.conf.5 \
-		${STAGEDIR}${PREFIX}/man/man5/
+		${STAGEDIR}${PREFIX}/share/man/man5/
 	${INSTALL_MAN} ${WRKSRC}/milter-greylist.8 \
-		${STAGEDIR}${PREFIX}/man/man8/
+		${STAGEDIR}${PREFIX}/share/man/man8/
 	${INSTALL_PROGRAM} ${WRKSRC}/milter-greylist \
 		${STAGEDIR}${PREFIX}/libexec/
 	${INSTALL_DATA} ${WRKSRC}/greylist.conf \

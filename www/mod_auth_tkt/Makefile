@@ -1,6 +1,6 @@
 PORTNAME=	mod_auth_tkt
 PORTVERSION=	2.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/kuriyama \
 		http://www.openfusion.com.au/labs/dist/mod_auth_tkt/
@@ -30,7 +30,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-query-separator
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|.usr/share/man|${STAGEDIR}${PREFIX}/man|' ${WRKSRC}/../Makedefs
+	@${REINPLACE_CMD} -e 's|.usr/share/man|${STAGEDIR}${PREFIX}/share/man|' ${WRKSRC}/../Makedefs
 
 post-build:
 	cd ${WRKSRC}/../doc; ${MAKE} all

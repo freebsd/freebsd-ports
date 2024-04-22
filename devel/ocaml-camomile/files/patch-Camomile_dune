@@ -1,0 +1,11 @@
+--- Camomile/dune.orig	2024-02-11 22:33:43 UTC
++++ Camomile/dune
+@@ -9,7 +9,7 @@
+  (name camomileLibrary)
+  (public_name camomile.library)
+  (wrapped true)
+- (libraries bigarray camomileDefaultConfig)
++ (libraries bigarray camomileDefaultConfig camlp-streams)
+  (modules
+   :standard \ camomileDefaultConfig
+   camomile_do_not_use

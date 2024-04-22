@@ -1,5 +1,0 @@
-TIMESTAMP = 1682615944
-SHA256 (svm_light.tar.gz) = aa48985a4c77eecd84d293de40d4731da767e49a1d2323c6198180652aa8724e
-SIZE (svm_light.tar.gz) = 51026
-SHA256 (SVMLight.patch) = ae65da45b33c014d36d8e7fd6634a411738a72a79c0d23e063cf0e76dc79cc4a
-SIZE (SVMLight.patch) = 35789

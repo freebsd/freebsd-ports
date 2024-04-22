@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+If you want to work with GnuPG keyring, please install security/gnupg
+EOM
+}
+]

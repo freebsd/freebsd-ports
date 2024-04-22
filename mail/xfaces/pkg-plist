@@ -1,6 +1,6 @@
 bin/xfaces
-man/man1/xfaces.1.gz
 lib/X11/app-defaults/XFaces
+share/man/man1/xfaces.1.gz
 %%DATADIR%%/images/andrew-shape.xpm
 %%DATADIR%%/images/andrew.xpm
 %%DATADIR%%/images/asterix.xpm

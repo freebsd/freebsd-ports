@@ -1,5 +1,6 @@
 PORTNAME=	bcrypt
-PORTVERSION=	1.1
+DISTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://bcrypt.sourceforge.net/ \
 		LOCAL/ehaupt
@@ -12,8 +13,9 @@ ALL_TARGET=	${PORTNAME}
 
 LDFLAGS+=	-lz
 
+PLIST_FILES=	bin/bcrypt \
+		share/man/man1/bcrypt.1.gz
 PORTDOCS=	README
-PLIST_FILES=	bin/bcrypt man/man1/bcrypt.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
@@ -23,7 +25,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

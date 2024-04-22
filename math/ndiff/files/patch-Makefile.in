@@ -1,6 +1,15 @@
---- Makefile.in.orig	2000-12-12 19:11:11.000000000 +0100
-+++ Makefile.in	2014-02-02 11:56:29.000000000 +0100
-@@ -191,9 +190,9 @@
+--- Makefile.in.orig	2000-12-12 18:11:11 UTC
++++ Makefile.in
+@@ -62,7 +62,7 @@ catdir		= $(prefix)/man/cat$(manext)
+ prefix		= @prefix@
+ bindir		= $(prefix)/bin
+ catdir		= $(prefix)/man/cat$(manext)
+-mandir		= $(prefix)/man/man$(manext)
++mandir		= $(prefix)/share/man/man$(manext)
+ manext		= 1
+ shrlibdir	= $(shrlibtop)/$(PROGNAME)-$(VERSION)
+ shrlibtop       = $(prefix)/share/lib/$(PROGNAME)
+@@ -191,9 +191,9 @@ DEFINES		= -DVERSION='"@VERSION@"' -DDATE='"@DATE@"' $
  
  DEFINES		= -DVERSION='"@VERSION@"' -DDATE='"@DATE@"' $(XDEFINES)
  
@@ -12,7 +21,7 @@
  
  LIBS		= @LIBS@ $(XLIBS)
  
-@@ -602,14 +601,12 @@
+@@ -602,14 +602,12 @@ install-exe:	uninstall-exe
  	if test -f $(PROGNAME) ; \
  	then \
  		$(CP) $(PROGNAME) $(bindir)/$(PROGNAME) ; \
@@ -28,7 +37,7 @@
  		done ; \
  	fi
  
-@@ -635,7 +632,7 @@
+@@ -635,7 +633,7 @@ install-show:
  install-show:
  	@echo ''
  	@echo Installed files...
@@ -37,7 +46,7 @@
  	@$(LS) -l $(mandir)/$(PROGNAME).$(manext)
  	@if test -d $(shrlibdir) ; then $(LS) -lR $(shrlibdir)/* ; fi
  	@echo ''
-@@ -703,7 +698,7 @@
+@@ -703,7 +701,7 @@ uninstall-exe:
  uninstall-exe:
  	-for f in $(PROGRAMS) ; \
  	do \

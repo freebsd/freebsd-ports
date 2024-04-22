@@ -2326,7 +2326,7 @@ lib/node_modules/corepack/shims/yarn.ps1
 lib/node_modules/corepack/shims/yarnpkg
 lib/node_modules/corepack/shims/yarnpkg.cmd
 lib/node_modules/corepack/shims/yarnpkg.ps1
-@(,,444) man/man1/node.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/gdbinit
 %%PORTDOCS%%%%DOCSDIR%%/lldb_commands.py
+@(,,444) share/man/man1/node.1.gz
 share/systemtap/tapset/node.stp

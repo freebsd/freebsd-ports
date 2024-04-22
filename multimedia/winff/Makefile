@@ -1,18 +1,16 @@
 PORTNAME=	WinFF
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/WinFF/winff/archive/refs/tags/
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 DISTNAME=	${_PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Convert your videos quickly, easily, and all at once
 WWW=		https://www.biggmatt.com/p/winff.html
 
 LICENSE=	GPLv3
-
-DEPRECATED=	Depends on legacy libraries such as GTK2 and isn't up to date with current available formats, consider using multimedia/handbrake
-EXPIRATION_DATE=2024-02-29
 
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg
 
@@ -34,7 +32,7 @@ DESKTOP_ENTRIES=	"${PORTNAME}"	\
 			true
 
 LAZARUS_PROJECT_FILES=	winff.lpr
-LAZBUILD_ARGS=		-d
+LAZBUILD_ARGS=		-d --pcp=${WRKSRC} --scp=${WRKDIR}
 
 WRKSRC=		${WRKDIR}/${_PORTNAME}-${_PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/${_PORTNAME}
@@ -52,12 +50,15 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/bin/|${LOCALBASE}/bin/|g' ${BUILD_WRKSRC}/${fp}
 .endfor
 
+pre-build:
+	${CP} -p ${LOCALBASE}/etc/fppkg.cfg ${WRKDIR}
+
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME:tl} ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DATADIR}/languages
 	${INSTALL_DATA} ${BUILD_WRKSRC}/presets.xml ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${BUILD_WRKSRC}/languages/* ${STAGEDIR}${DATADIR}/languages/
-	${INSTALL_MAN} ${BUILD_WRKSRC}/${_PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${BUILD_WRKSRC}/${_PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${BUILD_WRKSRC}/winff-icons/48x48/${_PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

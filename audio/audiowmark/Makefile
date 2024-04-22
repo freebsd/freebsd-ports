@@ -1,10 +1,6 @@
 PORTNAME=	audiowmark
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 CATEGORIES=	audio
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	99ffa6b4a4f311c88b6b38b31e579b2102453f3a.patch:-p1 # https://github.com/swesterfeld/audiowmark/issues/36
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Audio and video watermarking tool
@@ -22,7 +18,8 @@ LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
 		libsndfile.so:audio/libsndfile \
 		libzita-resampler.so:audio/zita-resampler
 
-USES=		autoreconf localbase:ldflags pkgconfig shebangfix
+USES=		autoreconf gettext-tools libtool localbase:ldflags pkgconfig \
+		shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	swesterfeld
 

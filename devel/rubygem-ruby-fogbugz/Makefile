@@ -1,5 +1,6 @@
 PORTNAME=	ruby-fogbugz
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +10,7 @@ WWW=		https://github.com/szechyjs/ruby-fogbugz
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-crack>=0.4<1:devel/rubygem-crack \
+RUN_DEPENDS=	rubygem-crack>=0.4:devel/rubygem-crack \
 		rubygem-multipart-post>=2.0<3:www/rubygem-multipart-post
 
 USES=		gem

@@ -13,5 +13,5 @@
 %%ETCDIR%%/scanner.d/snapscan.conf
 sbin/scanbd
 sbin/scanbm
-man/man8/scanbm.8.gz
-man/man8/scanbd.8.gz
+share/man/man8/scanbm.8.gz
+share/man/man8/scanbd.8.gz

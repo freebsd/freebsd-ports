@@ -18,12 +18,6 @@ GL_TAGNAME=	${LLVM_COMMIT}
 # Regularly tested targets as part of Android development
 LLVM_TARGETS=	AArch64;ARM;BPF;X86
 
-.if exists(${.CURDIR}/files)
-EXTRA_PATCHES=	${.CURDIR}/files
-.endif
-
-.include "${.CURDIR}/Makefile.snapshot"
-
 MASTERDIR=	${.CURDIR}/../llvm-cheri
 
 .include "${MASTERDIR}/Makefile"

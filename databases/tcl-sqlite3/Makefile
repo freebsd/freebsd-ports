@@ -1,5 +1,6 @@
 PORTNAME=	sqlite3
 PORTVERSION=	3.34.1
+PORTREVISION=	1
 CATEGORIES=	databases tcl
 MASTER_SITES=	https://www.sqlite.org/2021/ \
 		https://www2.sqlite.org/2021/ \
@@ -18,6 +19,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 USES=		pkgconfig tcl:tea
 USE_LDCONFIG=	yes
 
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-system-sqlite
 
 CFLAGS+=	`pkg-config --cflags sqlite3`
@@ -30,7 +32,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/tea
 
 PLIST_FILES=	lib/${PORTNAME}/libsqlite${PORTVERSION}.so \
 		lib/${PORTNAME}/pkgIndex.tcl \
-		man/mann/sqlite3.n.gz
+		share/man/mann/sqlite3.n.gz
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=		EXAMPLES THREADS

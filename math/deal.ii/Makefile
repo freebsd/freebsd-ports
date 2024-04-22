@@ -1,6 +1,6 @@
 PORTNAME=	deal.II
-DISTVERSION=	9.5.0
-PORTREVISION=	4
+DISTVERSION=	9.5.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/dealii/dealii/releases/download/v${DISTVERSION}/
 DISTNAME=	dealii-${DISTVERSION}
@@ -12,12 +12,12 @@ WWW=		https://www.dealii.org/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN_FreeBSD_14=	clang crashes: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=257876
 BROKEN_aarch64=		error: use of undeclared identifier '__TBB_machine_fetchadd4'
 BROKEN_armv7=		clang runs out of memory
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/config.hpp:devel/boost-libs
-LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
+LIB_DEPENDS=	libblis.so:math/blis \
+		libboost_serialization.so:devel/boost-libs \
 		libhdf5.so:science/hdf5 \
 		libmetis.so:math/metis
 #		libkokkoscore.so:devel/kokkos TMP commented out for bundled kokkos, tests fail for non-bundled kokkos, see https://github.com/dealii/dealii/issues/15692

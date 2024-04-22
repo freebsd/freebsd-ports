@@ -1,6 +1,6 @@
 PORTNAME=	xmix
 PORTVERSION=	2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SUNSITE/apps/sound/mixers
 
@@ -15,7 +15,7 @@ WRKSRC=		${WRKDIR}/xmix
 USE_XORG=	x11 xext xmu xaw xt sm ice
 
 PLIST_FILES=	bin/xmix lib/X11/app-defaults/XMix \
-		man/man1/xmix.1.gz
+		share/man/man1/xmix.1.gz
 
 pre-build:
 	${CP} ${WRKSRC}/xmix.1 ${WRKSRC}/xmix.man

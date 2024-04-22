@@ -1,0 +1,87 @@
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276962
+https://github.com/yshui/picom/commit/dff77aae27cf
+
+--- src/meson.build.orig	2024-02-13 10:36:02 UTC
++++ src/meson.build
+@@ -23,7 +23,7 @@ required_packages = [
+ # Some XCB packages are here because their versioning differs (see check below).
+ required_packages = [
+ 	'pixman-1', 'x11', 'x11-xcb', 'xcb-image', 'xcb-renderutil', 'xcb-util',
+-	'xext'
++	'xext', 'threads',
+ ]
+ 
+ foreach i : required_packages
+@@ -59,7 +59,7 @@ if get_option('opengl')
+ 
+ if get_option('opengl')
+ 	cflags += ['-DCONFIG_OPENGL']
+-	deps += [dependency('epoxy', required: true), dependency('threads', required:true)]
++	deps += [dependency('epoxy', required: true)]
+ 	srcs += [ 'opengl.c' ]
+ endif
+ 
+@@ -84,10 +84,6 @@ elif (host_system == 'freebsd' or host_system == 'netb
+ elif (host_system == 'freebsd' or host_system == 'netbsd' or
+       host_system == 'dragonfly' or host_system == 'openbsd')
+ 	cflags += ['-DHAS_KQUEUE']
+-endif
+-
+-if host_system == 'openbsd'
+-	deps += [dependency('threads', required: true)]
+ endif
+ 
+ subdir('backend')
+--- src/picom.c.orig	2024-02-13 10:36:02 UTC
++++ src/picom.c
+@@ -17,6 +17,7 @@
+ #include <fcntl.h>
+ #include <inttypes.h>
+ #include <math.h>
++#include <pthread.h>
+ #include <sched.h>
+ #include <stddef.h>
+ #include <stdio.h>
+@@ -33,9 +34,6 @@
+ #include <xcb/render.h>
+ #include <xcb/sync.h>
+ #include <xcb/xfixes.h>
+-#ifdef __OpenBSD__
+-#include <pthread.h>
+-#endif
+ 
+ #include <ev.h>
+ #include <test.h>
+@@ -2606,14 +2604,8 @@ void set_rr_scheduling(void) {
+ 
+ 	int ret;
+ 	struct sched_param param;
+-
+-#ifndef __OpenBSD__
+-	ret = sched_getparam(0, &param);
+-#else
+ 	int old_policy;
+ 	ret = pthread_getschedparam(pthread_self(), &old_policy, &param);
+-#endif
+-
+ 	if (ret != 0) {
+ 		log_debug("Failed to get old scheduling priority");
+ 		return;
+@@ -2621,16 +2613,12 @@ void set_rr_scheduling(void) {
+ 
+ 	param.sched_priority = priority;
+ 
+-#ifndef __OpenBSD__
+-	ret = sched_setscheduler(0, SCHED_RR, &param);
+-#else
+ 	ret = pthread_setschedparam(pthread_self(), SCHED_RR, &param);
+-#endif
+-
+ 	if (ret != 0) {
+ 		log_info("Failed to set real-time scheduling priority to %d.", priority);
+ 		return;
+ 	}
++
+ 	log_info("Set real-time scheduling priority to %d", priority);
+ }
+ 

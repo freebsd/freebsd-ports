@@ -1,5 +1,5 @@
 PORTNAME=	rssguard
-PORTVERSION=	4.6.3
+PORTVERSION=	4.6.6
 CATEGORIES=	net www
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	GPLv3+
 USES=		cmake qt:5 sqlite
 USE_QT=		buildtools:build linguisttools:build qmake:build \
 		concurrent core dbus declarative gui multimedia \
-		network sql widgets xml
+		network sql widgets xml sql-sqlite3:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	martinrotter
 

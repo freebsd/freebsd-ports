@@ -1,5 +1,6 @@
 PORTNAME=	aterm
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	chinese x11
 MASTER_SITES=	SF
 
@@ -10,12 +11,13 @@ WWW=		https://aterm.sourceforge.net/
 USES=		cpe xorg
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-xim --enable-big5
 MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS_INSTALL=	aterm
 
 PLIST_FILES=	"@(,,4711) bin/aterm" \
-		man/man1/aterm.1.gz
+		share/man/man1/aterm.1.gz
 
 .include <bsd.port.mk>

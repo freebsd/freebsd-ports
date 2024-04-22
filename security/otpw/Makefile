@@ -1,5 +1,6 @@
 PORTNAME=	otpw
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.cl.cam.ac.uk/~mgk25/download/ \
 		LOCAL/jkim
@@ -21,8 +22,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/otpw-gen ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_LIB} ${WRKSRC}/pam_otpw.so ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_MAN} ${WRKSRC}/otpw-gen.1.gz \
-	    ${STAGEDIR}${MANPREFIX}/man/man1
+	    ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_MAN} ${WRKSRC}/pam_otpw.8.gz \
-	    ${STAGEDIR}${MANPREFIX}/man/man8
+	    ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

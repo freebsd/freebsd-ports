@@ -1,5 +1,6 @@
 PORTNAME=	jbig2dec
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	https://github.com/ArtifexSoftware/jbig2dec/releases/download/${PORTVERSION}/
 

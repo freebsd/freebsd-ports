@@ -139,6 +139,12 @@ share/man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dev-dax.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dfs.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dfs.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dircreate-ioengine.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dircreate-ioengine.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dirdelete-ioengine.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dirdelete-ioengine.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dirstat-ioengine.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dirstat-ioengine.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/disk-zone-profile.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/disk-zone-profile.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/e4defrag.fio
@@ -237,6 +243,12 @@ share/man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio_multicast.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio_multicast.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio_vsock.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio_vsock.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio_vsock_receiver.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio_vsock_receiver.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio_vsock_sender.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio_vsock_sender.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nfs.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nfs.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/null.fio
@@ -279,6 +291,8 @@ share/man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-pi-ext.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-pi-sb.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-pi-sb.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-trim-multi-range.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-trim-multi-range.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-zoned.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-zoned.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/waitfor.fio
@@ -286,6 +300,9 @@ share/man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xnvme-compare.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xnvme-compare.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xnvme-fdp.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xnvme-fdp.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xnvme-pi.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xnvme-pi.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xnvme-zoned.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xnvme-zoned.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zbd-rand-write.fio

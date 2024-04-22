@@ -182,6 +182,7 @@
     SUBDIR += py-macs3
     SUBDIR += py-mrcfile
     SUBDIR += py-multiqc
+    SUBDIR += py-newick
     SUBDIR += py-ont-fast5-api
     SUBDIR += py-orange3-bioinformatics
     SUBDIR += py-orange3-single-cell

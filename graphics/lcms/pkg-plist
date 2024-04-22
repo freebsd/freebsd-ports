@@ -8,5 +8,5 @@ lib/liblcms.so
 lib/liblcms.so.1
 lib/liblcms.so.1.0.19
 libdata/pkgconfig/lcms.pc
-%%JPEGICC%%man/man1/jpegicc.1.gz
-%%TIFFICC%%man/man1/tifficc.1.gz
+%%JPEGICC%%share/man/man1/jpegicc.1.gz
+%%TIFFICC%%share/man/man1/tifficc.1.gz

@@ -1,3 +1,4 @@
+PORTREVISION=	1
 PKGNAMESUFFIX=	-client
 
 CONFLICTS=	nsca-client-2.* nsca27-client-2.*

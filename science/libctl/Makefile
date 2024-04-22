@@ -1,6 +1,6 @@
 PORTNAME=	libctl
 DISTVERSION=	4.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science math
 MASTER_SITES=	https://github.com/NanoComp/libctl/releases/download/v${DISTVERSION}/
 
@@ -12,6 +12,7 @@ LICENSE=	GPLv2
 
 USES=		fortran guile:2.2 libtool pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lm

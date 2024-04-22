@@ -2,12 +2,8 @@
 { type: install
   message: <<EOD
 Please note that only the default set of cards was installed.  If you would
-like to install more cardsets, please proceed as follows:
-
-$ fetch https://netcologne.dl.sourceforge.net/project/pysolfc/PySolFC-Cardsets/PySolFC-Cardsets-2.1/PySolFC-Cardsets-2.1.tar.bz2
-$ tar xf PySolFC-Cardsets-2.1.tar.bz2
-$ mkdir -p ~/.PySolFC/cardsets
-$ cp -r PySolFC-Cardsets-2.1/cardset-* ~/.PySolFC/cardsets/
+like to install more cardsets, please take a look at the games/pysolfc-cardsets
+port.
 EOD
 }
 { type: upgrade
@@ -46,6 +42,16 @@ $ tar xf PySolFC-Cardsets-2.1.tar.bz2
 $ mkdir -p ~/.PySolFC/cardsets
 $ cp -r PySolFC-Cardsets-2.1/cardset-* ~/.PySolFC/cardsets/
 $ rm -r ~/.PySolFC/cardsets.bak
+EOD
+}
+{ type: upgrade
+  maximum_version: 3.0.0
+  message: <<EOD
+Additional cardsets are now also available via the games/pysolfc-cardsets
+port in the FreeBSD ports tree.
+
+A manual installation of the additional cardsets via several steps, as
+described a while ago, should therefore no longer be necessary.
 EOD
 }
 ]

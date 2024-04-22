@@ -1,6 +1,6 @@
 PORTNAME=	mew
 DISTVERSION=	6.9
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.mew.org/Release/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
@@ -18,6 +18,8 @@ USES=		emacs
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-elispdir=${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/mew \
 		--with-etcdir=${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/mew/etc
+
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 # target name for make build and install
 ALL_TARGET=	all info jinfo

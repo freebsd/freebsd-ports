@@ -1,6 +1,6 @@
 bin/xkoules
 libexec/koules.sndsrv.freebsd
-man/man6/xkoules.6.gz
+share/man/man6/xkoules.6.gz
 share/pixmaps/xkoules.png
 %%DATADIR%%/colize.raw
 %%DATADIR%%/creator1.raw

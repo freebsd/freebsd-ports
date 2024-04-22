@@ -1,5 +1,6 @@
 PORTNAME=	clinfo
 PORTVERSION=	3.0.23.01.25
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
@@ -16,8 +17,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Oblomov
 
 USES=		gmake localbase:ldflags
+
+MAKE_ARGS+=	MANDIR=${PREFIX}/share/man
+
 ALL_TARGET=	#
 PLIST_FILES=	bin/clinfo \
-		man/man1/clinfo.1.gz
+		share/man/man1/clinfo.1.gz
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 PORTNAME=	gtk
-DISTVERSION=	3.24.38 # sync with x11-themes: adwaita-icon-theme, gnome-themes-standard and mate-themes
-PORTREVISION=	2
+DISTVERSION=	3.24.41 # sync with x11-themes: adwaita-icon-theme, gnome-themes-standard and mate-themes
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/${DISTVERSION:R}
 PKGNAMESUFFIX=	3
@@ -38,7 +37,7 @@ MESON_ARGS=	-Dtests=false
 
 PORTSCOUT=	limit:1,even
 
-LIBVERSION=	0.2406.32
+LIBVERSION=	0.2409.32
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 OPTIONS_DEFINE=		ATK_BRIDGE COLORD CUPS DEBUG DOCS
@@ -80,6 +79,8 @@ WAYLAND_MESON_TRUE=	wayland_backend
 X11_USES=	xorg
 X11_USE=	XORG=x11,xcomposite,xcursor,xdamage,xext,xfixes,xi,xinerama,xrandr,xrender
 X11_MESON_TRUE=	x11_backend
+
+TESTING_UNSAFE=	ld: error: unable to find library -lintl
 
 pre-build:
 	@${RM} -r ${WRKSRC}/docs/gtk.info*

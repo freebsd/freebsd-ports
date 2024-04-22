@@ -1,0 +1,11 @@
+bin/gigedit
+lib/gigedit/libgigedit.a
+lib/gigedit/libgigedit.so
+lib/gigedit/libgigedit.so.6
+lib/gigedit/libgigedit.so.6.0.0
+lib/linuxsampler/plugins/libgigeditlinuxsamplerplugin.a
+lib/linuxsampler/plugins/libgigeditlinuxsamplerplugin.so
+%%DATADIR%%/status_attached.xpm
+%%DATADIR%%/status_detached.xpm
+share/locale/de/LC_MESSAGES/gigedit.mo
+share/locale/sv/LC_MESSAGES/gigedit.mo

@@ -186,6 +186,8 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/controllers/Numark-N4-scripts.js
 %%DATADIR%%/controllers/Numark-NS7-scripts.js
 %%DATADIR%%/controllers/Numark-Omni-Control-scripts.js
+%%DATADIR%%/controllers/Numark-Party-Mix.midi.xml
+%%DATADIR%%/controllers/Numark-Party-Mix.scripts.js
 %%DATADIR%%/controllers/Numark-Total-Control-scripts.js
 %%DATADIR%%/controllers/Numark-V7-scripts.js
 %%DATADIR%%/controllers/Numark-iDJ-Live-II-scripts.js
@@ -245,11 +247,13 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/controllers/TrakProDJ-iPad-scripts.js
 %%DATADIR%%/controllers/Traktor Kontrol F1.hid.xml
 %%DATADIR%%/controllers/Traktor Kontrol S2 MK3.hid.xml
+%%DATADIR%%/controllers/Traktor Kontrol S2 Mk1.hid.xml
 %%DATADIR%%/controllers/Traktor Kontrol S2 Mk2.hid.xml
 %%DATADIR%%/controllers/Traktor Kontrol S3.hid.xml
 %%DATADIR%%/controllers/Traktor Kontrol S4 MK2.hid.xml
 %%DATADIR%%/controllers/Traktor Kontrol X1.midi.xml
 %%DATADIR%%/controllers/Traktor-Kontrol-F1-scripts.js
+%%DATADIR%%/controllers/Traktor-Kontrol-S2-MK1-hid-scripts.js
 %%DATADIR%%/controllers/Traktor-Kontrol-S2-MK2-hid-scripts.js
 %%DATADIR%%/controllers/Traktor-Kontrol-S2-MK3-hid-scripts.js
 %%DATADIR%%/controllers/Traktor-Kontrol-S3-hid-scripts.js
@@ -1421,9 +1425,8 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/palemoon/style/spinny_mask_34.svg
 %%DATADIR%%/skins/LateNight/palemoon/style/splitter_handle_horizontal.svg
 %%DATADIR%%/skins/LateNight/palemoon/style/splitter_handle_horizontal_pressed.svg
-%%DATADIR%%/skins/LateNight/palemoon/style/splitter_handle_vertical.png
 %%DATADIR%%/skins/LateNight/palemoon/style/splitter_handle_vertical.svg
-%%DATADIR%%/skins/LateNight/palemoon/style/splitter_handle_vertical_pressed.png
+%%DATADIR%%/skins/LateNight/palemoon/style/splitter_handle_vertical_pressed.svg
 %%DATADIR%%/skins/LateNight/palemoon/style/vinyl_control_0.svg
 %%DATADIR%%/skins/LateNight/palemoon/style/vinyl_control_1.svg
 %%DATADIR%%/skins/LateNight/palemoon/style/vinyl_control_2.svg
@@ -2509,20 +2512,12 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Tango/graphics/splitterHori_handle_pressed.svg
 %%DATADIR%%/skins/Tango/graphics/splitterVert_handle.svg
 %%DATADIR%%/skins/Tango/graphics/splitterVert_handle_pressed.svg
-%%DATADIR%%/skins/Tango/graphics/vumeter_clipping.png
-%%DATADIR%%/skins/Tango/graphics/vumeter_clipping.svg
-%%DATADIR%%/skins/Tango/graphics/vumeter_clipping_over.png
-%%DATADIR%%/skins/Tango/graphics/vumeter_clipping_over.svg
 %%DATADIR%%/skins/Tango/graphics/vumeter_level.png
 %%DATADIR%%/skins/Tango/graphics/vumeter_level.svg
 %%DATADIR%%/skins/Tango/graphics/vumeter_level_over.png
 %%DATADIR%%/skins/Tango/graphics/vumeter_level_over.svg
-%%DATADIR%%/skins/Tango/graphics/vumeter_mini_clipping.png
-%%DATADIR%%/skins/Tango/graphics/vumeter_mini_clipping.svg
 %%DATADIR%%/skins/Tango/graphics/vumeter_mini_clipping_over.png
-%%DATADIR%%/skins/Tango/graphics/vumeter_mini_clipping_over.svg
 %%DATADIR%%/skins/Tango/graphics/vumeter_mini_level.png
-%%DATADIR%%/skins/Tango/graphics/vumeter_mini_level.svg
 %%DATADIR%%/skins/Tango/graphics/vumeter_mini_level_over.png
 %%DATADIR%%/skins/Tango/graphics/vumeter_mini_level_over.svg
 %%DATADIR%%/skins/Tango/helpers/pfl_cover.xml

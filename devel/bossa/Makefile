@@ -1,5 +1,6 @@
 PORTNAME=	bossa
 PORTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	kevans@FreeBSD.org
@@ -9,11 +10,11 @@ WWW=		https://github.com/shumatech/BOSSA
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		compiler:c++11-lang gmake
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	shumatech
 GH_PROJECT=	${PORTNAME:tu}
-
-USES=		compiler:c++11-lang gmake
 
 CXXFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
@@ -32,6 +33,12 @@ BOSSASH_DESC=		Include BOSSA Shell
 BOSSASH_USES=		readline
 BOSSASH_ALL_TARGET=	bin/bossash
 
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 180
+CXXFLAGS+=		-Wno-vla-cxx-extension
+.endif
+
 post-extract:
 	${REINPLACE_CMD} -e 's/wx-config/$${WX_CONFIG}/' ${WRKSRC}/Makefile
 
@@ -44,4 +51,4 @@ do-install-BOSSA-on:
 do-install-BOSSASH-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bossash ${STAGEDIR}${PREFIX}/bin/bossash
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -67,5 +67,5 @@ libdata/pkgconfig/qhull_r.pc
 libdata/pkgconfig/qhullcpp.pc
 libdata/pkgconfig/qhullstatic.pc
 libdata/pkgconfig/qhullstatic_r.pc
-man/man1/qhull.1.gz
-man/man1/rbox.1.gz
+share/man/man1/qhull.1.gz
+share/man/man1/rbox.1.gz

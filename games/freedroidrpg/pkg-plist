@@ -1,5 +1,4 @@
 bin/freedroidRPG
-man/man6/freedroidRPG.6.gz
 share/applications/org.freedroid.freedroidRPG.desktop
 share/icons/HighContrast/128x128/apps/freedroidrpg.png
 share/icons/HighContrast/48x48/apps/freedroidrpg.png
@@ -39,3 +38,4 @@ share/icons/hicolor/scalable/apps/freedroidrpg.svg
 %%NLS%%share/locale/sv/LC_MESSAGES/freedroidrpg-dialogs.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/freedroidrpg.mo
 share/metainfo/org.freedroid.freedroidRPG.appdata.xml
+share/man/man6/freedroidRPG.6.gz

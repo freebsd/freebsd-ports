@@ -11,7 +11,7 @@ lib/libctlgeom.a
 lib/libctlgeom.so
 lib/libctlgeom.so.7
 lib/libctlgeom.so.7.3.0
-man/man1/gen-ctl-io.1.gz
+share/man/man1/gen-ctl-io.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/docs/Advanced_User_Experience.md
 %%PORTDOCS%%%%DOCSDIR%%/docs/Basic_User_Experience.md

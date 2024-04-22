@@ -48,6 +48,7 @@ include/nss/key.h
 include/nss/keyhi.h
 include/nss/keyt.h
 include/nss/keythi.h
+include/nss/kyber.h
 include/nss/lowkeyi.h
 include/nss/lowkeyti.h
 include/nss/nss.h

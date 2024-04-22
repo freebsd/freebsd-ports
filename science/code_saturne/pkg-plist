@@ -1685,8 +1685,6 @@ lib/libsaturne.so
 libexec/code_saturne/cs_io_dump
 libexec/code_saturne/cs_preprocess
 libexec/code_saturne/cs_solver
-man/man1/code_saturne.1.gz
-man/man1/ple-config.1.gz
 %%DATADIR%%/COPYING
 %%DATADIR%%/batch/batch.CCC
 %%DATADIR%%/batch/batch.LSF
@@ -1878,3 +1876,5 @@ man/man1/ple-config.1.gz
 %%DATADIR%%/user_sources/REFERENCE/cs_user_wall_condensation.c
 %%DATADIR%%/user_sources/REFERENCE/cs_user_zones.c
 %%DATADIR%%/user_sources/REFERENCE/usatch.f90
+share/man/man1/code_saturne.1.gz
+share/man/man1/ple-config.1.gz

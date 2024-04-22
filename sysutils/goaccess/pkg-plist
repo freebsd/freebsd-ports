@@ -2,7 +2,6 @@ bin/goaccess
 %%ETCDIR%%/browsers.list
 %%ETCDIR%%/podcast.list
 @sample %%ETCDIR%%/goaccess.conf.sample
-man/man1/goaccess.1.gz
 %%NLS%%share/locale/de/LC_MESSAGES/goaccess.mo
 %%NLS%%share/locale/es/LC_MESSAGES/goaccess.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/goaccess.mo
@@ -14,3 +13,4 @@ man/man1/goaccess.1.gz
 %%NLS%%share/locale/sv/LC_MESSAGES/goaccess.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/goaccess.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/goaccess.mo
+share/man/man1/goaccess.1.gz

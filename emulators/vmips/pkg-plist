@@ -4,5 +4,5 @@ etc/vmipsrc
 include/vmips/asm_regnames.h
 %%DATADIR%%/ld.script
 %%DATADIR%%/setup.S
-man/man1/vmips.1.gz
-man/man1/vmipstool.1.gz
+share/man/man1/vmips.1.gz
+share/man/man1/vmipstool.1.gz

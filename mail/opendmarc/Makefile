@@ -1,5 +1,6 @@
 PORTNAME=	opendmarc
 PORTVERSION=	1.4.2
+PORTREVISION=	2
 CATEGORIES=	mail security
 MASTER_SITES=	GH
 
@@ -12,10 +13,10 @@ LICENSE_COMB=	multi
 
 RUN_DEPENDS=	p5-Switch>=0:lang/p5-Switch \
 		p5-DBI>=0:databases/p5-DBI \
-		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
+		${DBD_MYSQL} \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message
 
-USES=		cpe libtool perl5 shebangfix autoreconf
+USES=		cpe libtool mysql perl5 shebangfix autoreconf
 LICENSE_FILE_SENDMAIL=	${WRKSRC}/LICENSE.Sendmail
 LICENSE_GROUPS_SENDMAIL=	FSF OSI
 LICENSE_NAME_SENDMAIL=	Sendmail Open Source License
@@ -30,6 +31,7 @@ GH_ACCOUNT=	trusteddomainproject
 GH_TAGNAME=	rel-opendmarc-1-4-2
 GH_PROJECT=	OpenDMARC
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 OPTIONS_DEFINE=		SPF DOCS
 OPTIONS_DEFAULT=	SPF

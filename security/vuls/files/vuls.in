@@ -1,0 +1,56 @@
+#!/bin/sh
+
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# vuls_enable (bool):     Set to NO by default
+#                         Set it to YES to enable the vuls server
+# vuls_user (string):     Set user to run vuls
+#                         Default is "%%USERS%%"
+# vuls_group (string):    Set group to run vuls
+#                         Default is "%%GROUPS%%"
+# vuls_log_file (string): Set file that vuls will log to
+#                         Default is "/var/log/vuls/vuls.log"
+# vuls_args (string):     Set additional command line arguments
+#                         Default is ""
+#
+# Set up vuls using the config file: %%ETCDIR%%/config.toml
+#
+
+. /etc/rc.subr
+
+name=vuls
+rcvar=vuls_enable
+
+load_rc_config $name
+
+: ${vuls_enable:="NO"}
+: ${vuls_user:="%%USERS%%"}
+: ${vuls_group:="%%GROUPS%%"}
+: ${vuls_log_file:="/var/log/vuls/vuls.log"}
+: ${vuls_results_dir:="/var/db/vuls/results"}
+: ${vuls_listen:="0.0.0.0:5515"}
+: ${vuls_args:=""}
+
+pidfile=/var/run/${name}.pid
+pidfile_daemon=/var/run/${name}_daemon.pid
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/%%PORTNAME%%"
+
+command_args="-p ${pidfile} -P ${pidfile_daemon} -t ${name} -Ho ${vuls_log_file} \
+	${procname} server -results-dir=${vuls_results_dir} -to-localfile -listen=${vuls_listen} ${vuls_args}"
+
+start_precmd=vuls_startprecmd
+
+vuls_startprecmd()
+{
+	/usr/bin/install -o ${vuls_user} -g ${vuls_group} -m 640 /dev/null ${pidfile}
+	/usr/bin/install -o ${vuls_user} -g ${vuls_group} -m 640 /dev/null ${pidfile_daemon}
+}
+
+load_rc_config $name
+run_rc_command "$1"

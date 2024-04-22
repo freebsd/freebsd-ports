@@ -1,5 +1,5 @@
-TIMESTAMP = 1678287644
-SHA256 (centos/ca-certificates-2022.2.54-74.el7_9.noarch.rpm) = d56f208cb0a3f9404c7aa65a34d04ff637f76d4517d2f68c4c63ec940a0806a5
-SIZE (centos/ca-certificates-2022.2.54-74.el7_9.noarch.rpm) = 933048
-SHA256 (centos/ca-certificates-2022.2.54-74.el7_9.src.rpm) = 982420995b7554b83ff0434a6697faafc620e71d6b48307b08674e9e97d907c8
-SIZE (centos/ca-certificates-2022.2.54-74.el7_9.src.rpm) = 668658
+TIMESTAMP = 1711363230
+SHA256 (centos/ca-certificates-2023.2.60_v7.0.306-72.el7_9.noarch.rpm) = e3a24b7d3f533aea4ed0f3d9388b2f7d72febbb435d58e7be4020cdbc47107e6
+SIZE (centos/ca-certificates-2023.2.60_v7.0.306-72.el7_9.noarch.rpm) = 945284
+SHA256 (centos/ca-certificates-2023.2.60_v7.0.306-72.el7_9.src.rpm) = 855cebafa66353f399c41664940cd768a04851f05a9126436404a76f87f7802d
+SIZE (centos/ca-certificates-2023.2.60_v7.0.306-72.el7_9.src.rpm) = 673811

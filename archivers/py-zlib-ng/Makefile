@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=51:devel/py-setuptools@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 		cmake:devel/cmake-core
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist pep517
 
 INSTALL_TARGET=install-strip

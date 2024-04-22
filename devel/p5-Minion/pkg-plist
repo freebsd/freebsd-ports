@@ -19,6 +19,7 @@
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/epoch/epoch.css
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/epoch/epoch.js
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/fontawesome/fontawesome.css
+%%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/jquery/jquery.js
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/logo-black-2x.png
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/logo-black.png
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/moment/moment.js

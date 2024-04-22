@@ -1,2 +1,3 @@
-SHA256 (xorg/app/xkbutils-1.0.4.tar.bz2) = d2a18ab90275e8bca028773c44264d2266dab70853db4321bdbc18da75148130
-SIZE (xorg/app/xkbutils-1.0.4.tar.bz2) = 131269
+TIMESTAMP = 1707032310
+SHA256 (xorg/app/xkbutils-1.0.6.tar.xz) = 31a2bbee1e09ccba01de92897b8f540b545de812f318d31de07bd3a5a75ee25e
+SIZE (xorg/app/xkbutils-1.0.6.tar.xz) = 130540

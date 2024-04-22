@@ -1,7 +1,6 @@
 PORTNAME=	ghdl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.0
-PORTREVISION=	2
+DISTVERSION=	4.0.0
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,6 +9,8 @@ WWW=		https://github.com/ghdl/ghdl
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.md
+
+BROKEN_aarch64=	build breaks, see https://github.com/ghdl/ghdl/issues/2639
 
 TEST_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}pyTooling>=2.11.0:devel/py-pyTooling@${PY_FLAVOR}
@@ -43,7 +44,7 @@ SYNTH_DESC=		Enable Synthesis Features in ghdl
 SYNTH_CONFIGURE_ON=	--enable-synth
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libghdl-3_0_0.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libghdl-4_0_0.so
 
 post-install-MCODE-on:
 	@${STRIP_CMD} \

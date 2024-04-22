@@ -1,8 +1,8 @@
 bin/taskd
 bin/taskdctl
-man/man1/taskd.1.gz
-man/man1/taskdctl.1.gz
-man/man5/taskdrc.5.gz
+share/man/man1/taskd.1.gz
+share/man/man1/taskdctl.1.gz
+share/man/man5/taskdrc.5.gz
 share/taskd/README
 @mode 0755
 %%DATADIR%%/generate

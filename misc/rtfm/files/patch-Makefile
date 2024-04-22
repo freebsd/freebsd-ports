@@ -1,13 +1,13 @@
---- Makefile.orig	2014-06-20 00:12:17.290047513 +0800
-+++ Makefile	2014-06-20 00:12:43.436059870 +0800
-@@ -4,8 +4,8 @@ rtfm: rtfm.c
+--- Makefile.orig	2000-01-18 05:33:15 UTC
++++ Makefile
+@@ -4,8 +4,8 @@ install: rtfm
  	${CC} -o rtfm rtfm.c ${CFLAGS} ${LDFLAGS}
  
  install: rtfm
 -	install -c -s -o root -g wheel -m 0755 rtfm /usr/local/bin
 -	install -c -o root -g wheel -m 0644 rtfm.1 ${PREFIX}/man/man1
 +	$(BSD_INSTALL_PROGRAM) rtfm $(DESTDIR)${PREFIX}/bin
-+	$(BSD_INSTALL_MAN) rtfm.1 $(DESTDIR)${PREFIX}/man/man1
++	$(BSD_INSTALL_MAN) rtfm.1 $(DESTDIR)${PREFIX}/share/man/man1
  
  clean:
  	rm -f rtfm

@@ -5,7 +5,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.musicpd.org/download/mpc/0/
 DISTNAME=	mpc-${PORTVERSION}
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Command line client for the musicpd
 WWW=		https://www.musicpd.org/clients/mpc/
 

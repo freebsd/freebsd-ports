@@ -1,5 +1,6 @@
 PORTNAME=	libspiro
 DISTVERSION=	20221101
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/fontforge/${PORTNAME}/releases/download/${DISTVERSION}/
@@ -17,6 +18,7 @@ CPE_VENDOR=	libspiro_project
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 

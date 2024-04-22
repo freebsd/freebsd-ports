@@ -1,6 +1,6 @@
 PORTNAME=	tcpview
 PORTVERSION=	1.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.vim.org/ibiblio/system/network/management/ \
 		ftp://ftp.ottix.net/pub/mirrors/by-package/tcpview/ \
@@ -18,6 +18,8 @@ post-patch:
 .for f in nametoaddr.c addrtoname.c print-nfs.c detail-tcp.c tv_addrtoname.c
 	@${REINPLACE_CMD} -e 's/NTOHL/ntohl/ ; s/NTOHS/ntohs/' ${WRKSRC}/${f}
 .endfor
+	@${REINPLACE_CMD} -e '/^TCPVIEW_MANDEST/s,/man,/share/man,' \
+		${WRKSRC}/Makefile
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/DOC/Tcpview ${STAGEDIR}${PREFIX}/lib/X11/app-defaults

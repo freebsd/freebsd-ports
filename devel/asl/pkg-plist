@@ -461,9 +461,9 @@ lib/asl/p2hex.msg
 lib/asl/pbind.msg
 lib/asl/plist.msg
 lib/asl/tools.msg
-man/man1/alink.1.gz
-man/man1/asl.1.gz
-man/man1/p2bin.1.gz
-man/man1/p2hex.1.gz
-man/man1/pbind.1.gz
-man/man1/plist.1.gz
+share/man/man1/alink.1.gz
+share/man/man1/asl.1.gz
+share/man/man1/p2bin.1.gz
+share/man/man1/p2hex.1.gz
+share/man/man1/pbind.1.gz
+share/man/man1/plist.1.gz

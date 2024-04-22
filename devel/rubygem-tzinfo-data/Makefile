@@ -1,11 +1,12 @@
 PORTNAME=	tzinfo-data
-PORTVERSION=	1.2023.4
+PORTVERSION=	1.2024.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	IANA Time Zone database for TZInfo
-WWW=		https://tzinfo.github.io/
+WWW=		https://tzinfo.github.io/ \
+		https://github.com/tzinfo/tzinfo-data
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

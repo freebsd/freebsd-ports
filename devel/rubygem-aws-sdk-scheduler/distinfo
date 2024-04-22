@@ -1,3 +1,3 @@
-TIMESTAMP = 1701364366
-SHA256 (rubygem/aws-sdk-scheduler-1.12.0.gem) = b14d42734665c7b8aa28da6dee24c61c7ad765fdf4f9f0540fe6f65419427c3d
-SIZE (rubygem/aws-sdk-scheduler-1.12.0.gem) = 33792
+TIMESTAMP = 1708450230
+SHA256 (rubygem/aws-sdk-scheduler-1.13.0.gem) = 37dfb2d7bf0a3c0a638015bff48018c3da0d0ce27b351909350dd84a5b3e4ea7
+SIZE (rubygem/aws-sdk-scheduler-1.13.0.gem) = 37376

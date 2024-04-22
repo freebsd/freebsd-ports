@@ -19,4 +19,4 @@ lib/libsquashfuse.so
 lib/libsquashfuse.so.0
 lib/libsquashfuse.so.0.0.0
 libdata/pkgconfig/squashfuse.pc
-man/man1/squashfuse.1.gz
+share/man/man1/squashfuse.1.gz

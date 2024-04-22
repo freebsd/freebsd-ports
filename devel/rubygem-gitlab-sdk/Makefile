@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-sdk
-PORTVERSION=	0.2.6
+PORTVERSION=	0.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

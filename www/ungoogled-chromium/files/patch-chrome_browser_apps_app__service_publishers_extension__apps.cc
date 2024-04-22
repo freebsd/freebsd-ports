@@ -1,6 +1,6 @@
---- chrome/browser/apps/app_service/publishers/extension_apps.cc.orig	2023-06-05 19:39:05 UTC
+--- chrome/browser/apps/app_service/publishers/extension_apps.cc.orig	2024-02-03 15:42:55 UTC
 +++ chrome/browser/apps/app_service/publishers/extension_apps.cc
-@@ -25,7 +25,7 @@ ExtensionApps::~ExtensionApps() = default;
+@@ -24,7 +24,7 @@ ExtensionApps::~ExtensionApps() = default;
  
  bool ExtensionApps::Accepts(const extensions::Extension* extension) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

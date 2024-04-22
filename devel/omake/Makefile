@@ -1,6 +1,6 @@
 PORTNAME=	omake
 DISTVERSION=	0.10.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://download.camlcity.org/download/
 
@@ -17,7 +17,6 @@ USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
 HAS_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_ROOT=${STAGEDIR}
-MAKE_JOBS_UNSAFE=	yes
 
 INFO=		omake-doc
 

@@ -1,0 +1,188 @@
+commit 54d21b7398dc1a8ff22a987c660d400347b144a9
+Author: Christoph Moench-Tegeder <cmt@burggraben.net>
+Date:   Sun Feb 11 19:11:15 2024 +0100
+
+    Bug 1876366: many X11 cursors stopped working
+    
+    revert switch to newer gdk interface, as it broke cursor shape
+    switching and living with the default cursor only is no fun.
+    
+    Revert "Bug 1872961 [Linux] Use pointer cursor for hyperlinks r=emilio"
+    
+    This reverts commit 0574d0cdc438e4b0ce588f1652af802a0357f255.
+    
+    Revert "Bug 1871863 - Port from GdkCursorType to gdk_cursor_new_from_name. r=rmader,stransky"
+    
+    This reverts commit 5dfa42970a9577f0ac4e0992d9ec58c691e9bef6.
+
+diff --git widget/gtk/nsWindow.cpp widget/gtk/nsWindow.cpp
+index a011dcc51fdb..28100db36d89 100644
+--- widget/gtk/nsWindow.cpp
++++ widget/gtk/nsWindow.cpp
+@@ -7797,53 +7797,61 @@ static GdkCursor* get_gtk_cursor(nsCursor aCursor) {
+ 
+   GdkDisplay* defaultDisplay = gdk_display_get_default();
+ 
++  // The strategy here is to use standard GDK cursors, and, if not available,
++  // load by standard name with gdk_cursor_new_from_name.
++  // Spec is here: http://www.freedesktop.org/wiki/Specifications/cursor-spec/
+   switch (aCursor) {
+     case eCursor_standard:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "default");
++      gdkcursor = gdk_cursor_new_for_display(defaultDisplay, GDK_LEFT_PTR);
+       break;
+     case eCursor_wait:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "wait");
++      gdkcursor = gdk_cursor_new_for_display(defaultDisplay, GDK_WATCH);
+       break;
+     case eCursor_select:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "text");
++      gdkcursor = gdk_cursor_new_for_display(defaultDisplay, GDK_XTERM);
+       break;
+     case eCursor_hyperlink:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "pointer");
++      gdkcursor = gdk_cursor_new_for_display(defaultDisplay, GDK_HAND2);
+       break;
+     case eCursor_n_resize:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "n-resize");
++      gdkcursor = gdk_cursor_new_for_display(defaultDisplay, GDK_TOP_SIDE);
+       break;
+     case eCursor_s_resize:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "s-resize");
++      gdkcursor = gdk_cursor_new_for_display(defaultDisplay, GDK_BOTTOM_SIDE);
+       break;
+     case eCursor_w_resize:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "w-resize");
++      gdkcursor = gdk_cursor_new_for_display(defaultDisplay, GDK_LEFT_SIDE);
+       break;
+     case eCursor_e_resize:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "e-resize");
++      gdkcursor = gdk_cursor_new_for_display(defaultDisplay, GDK_RIGHT_SIDE);
+       break;
+     case eCursor_nw_resize:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "nw-resize");
++      gdkcursor =
++          gdk_cursor_new_for_display(defaultDisplay, GDK_TOP_LEFT_CORNER);
+       break;
+     case eCursor_se_resize:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "se-resize");
++      gdkcursor =
++          gdk_cursor_new_for_display(defaultDisplay, GDK_BOTTOM_RIGHT_CORNER);
+       break;
+     case eCursor_ne_resize:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "ne-resize");
++      gdkcursor =
++          gdk_cursor_new_for_display(defaultDisplay, GDK_TOP_RIGHT_CORNER);
+       break;
+     case eCursor_sw_resize:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "sw-resize");
++      gdkcursor =
++          gdk_cursor_new_for_display(defaultDisplay, GDK_BOTTOM_LEFT_CORNER);
+       break;
+     case eCursor_crosshair:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "crosshair");
++      gdkcursor = gdk_cursor_new_for_display(defaultDisplay, GDK_CROSSHAIR);
+       break;
+     case eCursor_move:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "move");
++      gdkcursor = gdk_cursor_new_for_display(defaultDisplay, GDK_FLEUR);
+       break;
+     case eCursor_help:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "help");
++      gdkcursor =
++          gdk_cursor_new_for_display(defaultDisplay, GDK_QUESTION_ARROW);
+       break;
+-    case eCursor_copy:
++    case eCursor_copy:  // CSS3
+       gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "copy");
+       if (!gdkcursor) newType = MOZ_CURSOR_COPY;
+       break;
+@@ -7856,14 +7864,18 @@ static GdkCursor* get_gtk_cursor(nsCursor aCursor) {
+       if (!gdkcursor) newType = MOZ_CURSOR_CONTEXT_MENU;
+       break;
+     case eCursor_cell:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "cell");
++      gdkcursor = gdk_cursor_new_for_display(defaultDisplay, GDK_PLUS);
+       break;
++    // Those two aren’t standardized. Trying both KDE’s and GNOME’s names
+     case eCursor_grab:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "grab");
++      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "openhand");
+       if (!gdkcursor) newType = MOZ_CURSOR_HAND_GRAB;
+       break;
+     case eCursor_grabbing:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "grabbing");
++      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "closedhand");
++      if (!gdkcursor) {
++        gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "grabbing");
++      }
+       if (!gdkcursor) newType = MOZ_CURSOR_HAND_GRABBING;
+       break;
+     case eCursor_spinning:
+@@ -7880,6 +7892,9 @@ static GdkCursor* get_gtk_cursor(nsCursor aCursor) {
+       break;
+     case eCursor_not_allowed:
+       gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "not-allowed");
++      if (!gdkcursor) {  // nonstandard, yet common
++        gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "crossed_circle");
++      }
+       if (!gdkcursor) newType = MOZ_CURSOR_NOT_ALLOWED;
+       break;
+     case eCursor_no_drop:
+@@ -7900,35 +7915,46 @@ static GdkCursor* get_gtk_cursor(nsCursor aCursor) {
+       }
+       break;
+     case eCursor_all_scroll:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "move");
++      gdkcursor = gdk_cursor_new_for_display(defaultDisplay, GDK_FLEUR);
+       break;
+     case eCursor_nesw_resize:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "nesw-resize");
++      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "size_bdiag");
+       if (!gdkcursor) newType = MOZ_CURSOR_NESW_RESIZE;
+       break;
+     case eCursor_nwse_resize:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "nwse-resize");
++      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "size_fdiag");
+       if (!gdkcursor) newType = MOZ_CURSOR_NWSE_RESIZE;
+       break;
+     case eCursor_ns_resize:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "ns-resize");
++      gdkcursor =
++          gdk_cursor_new_for_display(defaultDisplay, GDK_SB_V_DOUBLE_ARROW);
+       break;
+     case eCursor_ew_resize:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "ew-resize");
++      gdkcursor =
++          gdk_cursor_new_for_display(defaultDisplay, GDK_SB_H_DOUBLE_ARROW);
+       break;
++    // Here, two better fitting cursors exist in some cursor themes. Try those
++    // first
+     case eCursor_row_resize:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "row-resize");
++      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "split_v");
++      if (!gdkcursor) {
++        gdkcursor =
++            gdk_cursor_new_for_display(defaultDisplay, GDK_SB_V_DOUBLE_ARROW);
++      }
+       break;
+     case eCursor_col_resize:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "col-resize");
++      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "split_h");
++      if (!gdkcursor) {
++        gdkcursor =
++            gdk_cursor_new_for_display(defaultDisplay, GDK_SB_H_DOUBLE_ARROW);
++      }
+       break;
+     case eCursor_none:
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "none");
+-      if (!gdkcursor) newType = MOZ_CURSOR_NONE;
++      newType = MOZ_CURSOR_NONE;
+       break;
+     default:
+       NS_ASSERTION(aCursor, "Invalid cursor type");
+-      gdkcursor = gdk_cursor_new_from_name(defaultDisplay, "default");
++      gdkcursor = gdk_cursor_new_for_display(defaultDisplay, GDK_LEFT_PTR);
+       break;
+   }
+ 

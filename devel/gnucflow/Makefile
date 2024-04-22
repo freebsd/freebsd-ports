@@ -1,5 +1,6 @@
 PORTNAME=	gnucflow
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU/cflow/
 DISTNAME=	cflow-${PORTVERSION}
@@ -17,6 +18,7 @@ USES=		cpe gmake tar:bzip2
 CPE_VENDOR=	gnu
 CPE_PRODUCT=	cflow
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 TEST_TARGET=	check
 
 INFO=		cflow

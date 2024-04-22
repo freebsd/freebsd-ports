@@ -1,20 +1,11 @@
---- CMakeLists.txt.orig	2023-10-04 06:49:20 UTC
+--- CMakeLists.txt.orig	2024-03-29 06:17:35 UTC
 +++ CMakeLists.txt
-@@ -5,7 +5,7 @@ include(f3dPython)
- list(INSERT CMAKE_MODULE_PATH 0 "${CMAKE_CURRENT_LIST_DIR}/cmake")
+@@ -6,7 +6,7 @@ include(f3dPython)
+ include(GNUInstallDirs)
  include(f3dPython)
  
--find_package(Python 3.6 COMPONENTS Interpreter Development)
+-find_package(Python 3.8 COMPONENTS Interpreter Development)
 +find_package(Python ${FREEBSD_PYTHON_VER} EXACT COMPONENTS Interpreter Development)
  find_package(pybind11 2.2 REQUIRED)
  
  pybind11_add_module(pyf3d MODULE F3DPythonBindings.cxx)
-@@ -21,7 +21,7 @@ set(f3d_python_package_suffix "python${Python_VERSION_
- 
- set(f3d_python_package_name "f3d")
- set(f3d_python_package_suffix "python${Python_VERSION_MAJOR}.${Python_VERSION_MINOR}/site-packages")
--set(f3d_module_dir "${CMAKE_BINARY_DIR}$<${F3D_MULTI_CONFIG_GENERATOR}:/$<CONFIG>>/${f3d_python_package_name}")
-+set(f3d_module_dir "${CMAKE_BINARY_DIR}/${f3d_python_package_name}") # workaround for https://github.com/f3d-app/f3d/issues/1149
- 
- set_target_properties(pyf3d PROPERTIES
-   CXX_STANDARD 14

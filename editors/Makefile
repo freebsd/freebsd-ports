@@ -7,7 +7,6 @@
     SUBDIR += aewan
     SUBDIR += amp
     SUBDIR += apel
-    SUBDIR += asedit
     SUBDIR += beav
     SUBDIR += bee-host
     SUBDIR += biew
@@ -65,13 +64,14 @@
     SUBDIR += hnb
     SUBDIR += hte
     SUBDIR += imhex
+    SUBDIR += imhex-current
     SUBDIR += jed
     SUBDIR += jedit
     SUBDIR += joe
     SUBDIR += jucipp
     SUBDIR += jupp
-    SUBDIR += kak-lsp
     SUBDIR += kakoune
+    SUBDIR += kakoune-lsp
     SUBDIR += kate
     SUBDIR += kate-devel
     SUBDIR += kibi
@@ -194,7 +194,6 @@
     SUBDIR += libreoffice-zu
     SUBDIR += linux-bcompare
     SUBDIR += linux-r7-office
-    SUBDIR += linux-sublime
     SUBDIR += linux-sublime-text4
     SUBDIR += linux-sublime3
     SUBDIR += linux-wps-office
@@ -206,7 +205,6 @@
     SUBDIR += micro
     SUBDIR += mined
     SUBDIR += mle
-    SUBDIR += morla
     SUBDIR += mousepad
     SUBDIR += mp
     SUBDIR += nano
@@ -216,6 +214,7 @@
     SUBDIR += neovim-gtk
     SUBDIR += neovim-qt
     SUBDIR += notepadnext
+    SUBDIR += notepadnext-devel
     SUBDIR += novelwriter
     SUBDIR += nvi-m17n
     SUBDIR += nvi2

@@ -1,5 +1,6 @@
 PORTNAME=	wmsystemtray
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	x11 windowmaker afterstep
 MASTER_SITES=	SF/wmsystemtray/wmsystemtray
 
@@ -14,6 +15,7 @@ USES=		pkgconfig xorg
 USE_XORG=	ice sm x11 xext xfixes xmu xpm
 
 GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/wmsystemtray man/man1/wmsystemtray.1.gz
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+PLIST_FILES=	bin/wmsystemtray share/man/man1/wmsystemtray.1.gz
 
 .include <bsd.port.mk>

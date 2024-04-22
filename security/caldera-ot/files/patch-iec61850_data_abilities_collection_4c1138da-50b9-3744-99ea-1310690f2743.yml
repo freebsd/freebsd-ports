@@ -1,0 +1,15 @@
+--- iec61850/data/abilities/collection/4c1138da-50b9-3744-99ea-1310690f2743.yml.orig	2024-02-18 18:34:52 UTC
++++ iec61850/data/abilities/collection/4c1138da-50b9-3744-99ea-1310690f2743.yml
+@@ -30,6 +30,12 @@
+         payloads:
+         - iec61850_actions
+         timeout: 360
++    freebsd:
++      sh:
++        command: './iec61850_actions_freebsd get log #{iec61850.lcb.name} #{iec61850.server.ip}'
++        payloads:
++        - iec61850_actions_freebsd
++        timeout: 360
+   repeatable: true
+   plugin: iec61850
+   additional_info:

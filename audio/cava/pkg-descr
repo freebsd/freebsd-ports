@@ -1,5 +1,7 @@
-C.A.V.A. is a bar spectrum audio visualizer for the terminal using
-PulseAudio, sndio or fifo buffer for input.
+CAVA (Cross-platform Audio Visualizer) is a bar spectrum audio visualizer for
+the terminal (ncurses) or desktop (SDL). It also provides a GLSL shader output
+backend which can enhance the desktop experience even more. The supported input
+backends include OSS, sndio, JACK, portaudio, pulseaudio and fifo.
 
-This program is not intended for scientific use.  It's written to look
+This program is not intended for scientific use. It's written to look
 responsive and aesthetic when used to visualize music.

@@ -1,6 +1,5 @@
 PORTNAME=	mate-settings-daemon
-PORTVERSION=	1.26.0
-PORTREVISION=	4
+PORTVERSION=	1.28.0
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -34,6 +33,7 @@ USE_XORG=	ice sm x11 xext xi
 USE_GNOME=	cairo dconf gtk30 intlhack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-dbus-services=${PREFIX}/share/dbus-1/services \
 		--disable-static \
 		--disable-rfkill

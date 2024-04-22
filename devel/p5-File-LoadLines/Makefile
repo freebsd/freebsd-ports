@@ -1,5 +1,5 @@
 PORTNAME=	File-LoadLines
-PORTVERSION=	1.043
+PORTVERSION=	1.046
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,6 +11,8 @@ WWW=		https://metacpan.org/dist/File-LoadLines
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-URI>=0:net/p5-URI
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USES=		perl5

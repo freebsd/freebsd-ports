@@ -1,5 +1,5 @@
 bin/s3backer
-man/man1/s3backer.1.gz
+share/man/man1/s3backer.1.gz
 share/doc/packages/s3backer/CHANGES
 share/doc/packages/s3backer/COPYING
 share/doc/packages/s3backer/INSTALL

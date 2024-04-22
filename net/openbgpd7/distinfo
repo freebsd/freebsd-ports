@@ -1,3 +1,3 @@
-TIMESTAMP = 1670888338
-SHA256 (openbgpd-7.7.tar.gz) = cbdfcc6a1e5d71ad105a2398a7af28ad09d5bfed191963f169fa213a72863c62
-SIZE (openbgpd-7.7.tar.gz) = 787996
+TIMESTAMP = 1710086786
+SHA256 (openbgpd-7.9.tar.gz) = cef83570f5f0c149f11152f0f9532efba42fb638c5e599813ba32ea6e002fd5c
+SIZE (openbgpd-7.9.tar.gz) = 808568

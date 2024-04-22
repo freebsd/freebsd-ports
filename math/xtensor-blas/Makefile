@@ -1,5 +1,5 @@
 PORTNAME=	xtensor-blas
-DISTVERSION=	0.20.0
+DISTVERSION=	0.21.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org

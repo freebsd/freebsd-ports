@@ -1,6 +1,6 @@
 PORTNAME=	libmcfp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.4
+DISTVERSION=	1.3.3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,14 +10,15 @@ WWW=		https://github.com/mhekkel/libmcfp
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${LOCALBASE}/include/boost/test/included/unit_test.hpp:devel/boost-libs
+TEST_DEPENDS=	catch2>0:devel/catch2 \
+		${LOCALBASE}/include/boost/test/included/unit_test.hpp:devel/boost-libs
 
 USES=		cmake:testing localbase
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mhekkel
 
-CMAKE_TESTING_ON=	ENABLE_TESTING
+CMAKE_OFF=	BUILD_TESTING
 
 NO_ARCH=	yes
 

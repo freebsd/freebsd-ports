@@ -1,7 +1,7 @@
 PORTNAME=	bip
-DISTVERSION=	0.9.0-rc4
+DISTVERSION=	0.9.1
 CATEGORIES=	irc
-MASTER_SITES=	https://projects.duckcorp.org/attachments/download/97/
+MASTER_SITES=	https://projects.duckcorp.org/attachments/download/102/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Simple IRC proxy with SSL support
@@ -11,6 +11,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
 CFLAGS+=	-Wno-sign-compare -Wno-error -I${OPENSSLINC}
 USES=		cpe gmake ssl
@@ -27,9 +28,9 @@ EXAMPLEFILES=	bip.conf bip.vim
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/bip.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/bipmkpw.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/bip.conf.5 ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/bip.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/bipmkpw.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/bip.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -189,7 +189,6 @@
 %%WWWDIR%%/renderers/WebGL3DRenderTarget.js
 %%WWWDIR%%/renderers/WebGLArrayRenderTarget.js
 %%WWWDIR%%/renderers/WebGLCubeRenderTarget.js
-%%WWWDIR%%/renderers/WebGLMultipleRenderTargets.js
 %%WWWDIR%%/renderers/WebGLRenderTarget.js
 %%WWWDIR%%/renderers/WebGLRenderer.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk.js
@@ -269,6 +268,7 @@
 %%WWWDIR%%/renderers/shaders/ShaderChunk/metalnessmap_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/metalnessmap_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/morphcolor_vertex.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderChunk/morphinstance_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/morphnormal_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/morphtarget_pars_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/morphtarget_vertex.glsl.js
@@ -354,6 +354,7 @@
 %%WWWDIR%%/renderers/webgl/WebGLUniformsGroups.js
 %%WWWDIR%%/renderers/webgl/WebGLUtils.js
 %%WWWDIR%%/renderers/webxr/WebXRController.js
+%%WWWDIR%%/renderers/webxr/WebXRDepthSensing.js
 %%WWWDIR%%/renderers/webxr/WebXRManager.js
 %%WWWDIR%%/scenes/Fog.js
 %%WWWDIR%%/scenes/FogExp2.js

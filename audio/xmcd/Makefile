@@ -1,6 +1,6 @@
 PORTNAME=	xmcd
 PORTVERSION=	3.3.2
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	audio
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 
@@ -42,7 +42,7 @@ post-configure:
 	@${REINPLACE_CMD} \
 		-e 's: BINDIR .*:BINDIR=${STAGEDIR}${PREFIX}/bin:' \
 		-e 's: LIBDIR .*:LIBDIR=${STAGEDIR}${PREFIX}/lib/X11:' \
-		-e 's: MANDIR .*:MANDIR=${STAGEDIR}${PREFIX}/man/man1:' \
+		-e 's: MANDIR .*:MANDIR=${STAGEDIR}${PREFIX}/share/man/man1:' \
 		-e 's: MANSUFFIX .*:MANSUFFIX=1:' \
 		-e 's/^Makefile::/^Makefile:/' \
 		${WRKSRC}/Makefile

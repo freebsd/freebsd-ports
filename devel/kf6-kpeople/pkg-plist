@@ -40,14 +40,14 @@ lib/cmake/KF6People/KF6PeopleConfigVersion.cmake
 lib/cmake/KF6People/KPeopleTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6People/KPeopleTargets.cmake
 lib/libKF6People.so
-lib/libKF6People.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6People.so.6
+lib/libKF6People.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6PeopleBackend.so
-lib/libKF6PeopleBackend.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6PeopleBackend.so.6
+lib/libKF6PeopleBackend.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6PeopleWidgets.so
-lib/libKF6PeopleWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6PeopleWidgets.so.6
+lib/libKF6PeopleWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/kpeople/datasource/KPeopleVCard.so
 %%QT_QMLDIR%%/org/kde/people/libKF6PeopleDeclarative.so
 %%QT_QMLDIR%%/org/kde/people/qmldir
@@ -82,6 +82,7 @@ share/locale/ja/LC_MESSAGES/kpeople6.mo
 share/locale/ka/LC_MESSAGES/kpeople6.mo
 share/locale/ko/LC_MESSAGES/kpeople6.mo
 share/locale/lt/LC_MESSAGES/kpeople6.mo
+share/locale/lv/LC_MESSAGES/kpeople6.mo
 share/locale/ml/LC_MESSAGES/kpeople6.mo
 share/locale/nb/LC_MESSAGES/kpeople6.mo
 share/locale/nl/LC_MESSAGES/kpeople6.mo
@@ -100,6 +101,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/kpeople6.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kpeople6.mo
 share/locale/sr@latin/LC_MESSAGES/kpeople6.mo
 share/locale/sv/LC_MESSAGES/kpeople6.mo
+share/locale/ta/LC_MESSAGES/kpeople6.mo
 share/locale/tg/LC_MESSAGES/kpeople6.mo
 share/locale/tr/LC_MESSAGES/kpeople6.mo
 share/locale/uk/LC_MESSAGES/kpeople6.mo

@@ -1,6 +1,6 @@
 PORTNAME=	mpd
 DISTVERSION=	5.9
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Mpd5/Mpd-${PORTVERSION}
 PKGNAMESUFFIX=	5
@@ -13,6 +13,8 @@ WWW=		https://sourceforge.net/projects/mpd/
 LICENSE=	BSD3CLAUSE
 
 USES=		cpe
+
+MAKE_ARGS+=	MANDIR=${PREFIX}/share/man/man
 
 CPE_VENDOR=	mpd_project
 
@@ -59,7 +61,7 @@ PLIST_FILES+=	${CONFSUF:C|(.*)|"@sample etc/mpd5/mpd.\1.sample"|} \
 		sbin/mpd5
 
 .if !defined(WITHOUT_MAN)
-PLIST_FILES+=	man/man8/mpd5.8.gz
+PLIST_FILES+=	share/man/man8/mpd5.8.gz
 .endif
 
 .include <bsd.port.mk>

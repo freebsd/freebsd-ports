@@ -1,0 +1,11 @@
+--- configure.ac.orig	2024-04-03 21:52:15.764296000 -0500
++++ configure.ac	2024-04-03 21:52:51.590619000 -0500
+@@ -200,7 +200,7 @@
+    ODBC_LIBS=`$ODBC_CONFIG --libs`
+    ODBC_CFLAGS=`$ODBC_CONFIG --cflags`
+  else
+-   PKG_CHECK_MODULES([ODBC], [odbc])
++   true
+  fi
+ fi
+ AC_SUBST([ODBC_LIBS])

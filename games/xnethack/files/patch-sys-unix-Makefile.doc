@@ -10,7 +10,7 @@
 -GAME	= nethack
 -MANDIR	= /usr/man/man6
 +GAME	= xnethack
-+MANDIR	= ${PREFIX}/man/man6
++MANDIR	= ${PREFIX}/share/man/man6
  MANEXT	= 6
  
  # manual installation for most BSD-style systems

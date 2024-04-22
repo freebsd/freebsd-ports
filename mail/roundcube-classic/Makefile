@@ -19,8 +19,6 @@ NO_BUILD=	yes
 CPE_PRODUCT=	webmail
 CPE_VENDOR=	roundcube
 
-IGNORE_WITH_PHP=83
-
 WWWDIR=		${PREFIX}/www/${PKGNAMEPREFIX:S/-//}/skins/${PORTNAME}
 
 USE_GITHUB=	yes

@@ -11,4 +11,4 @@ libexec/cssc/sccsdiff
 libexec/cssc/unget
 libexec/cssc/val
 libexec/cssc/what
-man/man1/sccs.1.gz
+share/man/man1/sccs.1.gz

@@ -1,17 +1,26 @@
 Darcs is a free, open source revision control system. It is:
 
-* Distributed: Every user has access to the full command set, removing
-  boundaries between server and client or committer and non-committers.
+* Distributed: Darcs was one of the first revision control systems in
+  which every user has access to the full command set, removing
+  boundaries between server and client or committer and
+  non-committers.
 
 * Interactive: Darcs is easy to learn and efficient to use because it
-  asks you questions in response to simple commands, giving you choices in
-  your work flow. You can choose to record one change in a file, while
-  ignoring another. As you update from upstream, you can review each patch
-  name, even the full "diff" for interesting patches.
+  asks you questions in response to simple commands, giving you
+  choices in your work flow. You can choose to record one change in a
+  file, while ignoring another. As you update from upstream, you can
+  review each patch, picking and choosing which patches are
+  appropriate.
 
-* Smart: Originally developed by physicist David Roundy, darcs is based
-  on a unique algebra of patches.
+* Smart: Darcs is different from most revision control systems in that
+  it is based on the notion of change (or patch), rather than
+  version. An underlying algebra of patches determines whether changes
+  can be re-ordered. The laws of this algebra guarantee that the
+  result of merging depends only on the final set of patches applied
+  in a repository and not on their order.
 
-This smartness lets you respond to changing demands in ways that would
-otherwise not be possible. Learn more about spontaneous branches with
-darcs.
+* Simple: As a consequence, Darcs offers a conceptually simpler view
+  of the state of a repository: it is given by the set of patches it
+  contains. Pulling and pushing patches merely transfers them from one
+  set to another. So called "cherry-picking" is the default mode of
+  operation, and it fully preserves the identity of patches.

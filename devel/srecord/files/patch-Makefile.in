@@ -1,6 +1,6 @@
---- Makefile.in.orig
+--- Makefile.in.orig	2014-06-22 05:31:46 UTC
 +++ Makefile.in
-@@ -4594,7 +4594,7 @@
+@@ -4594,7 +4594,7 @@ install-include: $(includedir)/srecord/adler16.h \
  # to install the *.a and *.so* files as well, which is why you don't see them
  # explicitly mentioned here.
  #

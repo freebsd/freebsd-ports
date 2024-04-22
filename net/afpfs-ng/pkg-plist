@@ -17,8 +17,8 @@ lib/libafpclient.a
 lib/libafpclient.so
 lib/libafpclient.so.0
 lib/libafpclient.so.0.0.0
-%%FUSE%%man/man1/afp_client.1.gz
-man/man1/afpcmd.1.gz
-%%FUSE%%man/man1/afpfsd.1.gz
-man/man1/afpgetstatus.1.gz
-%%FUSE%%man/man1/mount_afp.1.gz
+%%FUSE%%share/man/man1/afp_client.1.gz
+share/man/man1/afpcmd.1.gz
+%%FUSE%%share/man/man1/afpfsd.1.gz
+share/man/man1/afpgetstatus.1.gz
+%%FUSE%%share/man/man1/mount_afp.1.gz

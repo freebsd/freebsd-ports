@@ -1,12 +1,11 @@
 PORTNAME=	rack-cache
-PORTVERSION=	1.15.0
+PORTVERSION=	1.17.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rack middleware to enable HTTP caching
-WWW=		https://rtomayko.github.io/rack-cache/ \
-		https://github.com/rtomayko/rack-cache
+WWW=		https://github.com/rack/rack-cache
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

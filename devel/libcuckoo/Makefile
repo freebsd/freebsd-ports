@@ -10,7 +10,7 @@ WWW=		https://github.com/efficient/libcuckoo
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake:testing
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	efficient
@@ -20,6 +20,7 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=		TEST
 
 TEST_CMAKE_BOOL=	BUILD_TESTS BUILD_STRESS_TESTS BUILD_UNIT_TESTS
-TEST_TARGET=		test
+
+TESTING_UNSAFE=	bundled Catch2 library is too old for FreeBSD 14+
 
 .include <bsd.port.mk>

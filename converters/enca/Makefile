@@ -1,5 +1,6 @@
 PORTNAME=	enca
 PORTVERSION=	1.19
+PORTREVISION=	1
 CATEGORIES=	converters textproc russian ukrainian
 MASTER_SITES=	http://dl.cihar.com/enca/
 
@@ -17,6 +18,7 @@ RUN_DEPENDS=	umap:converters/p5-Unicode-Map8
 USES=		gmake iconv libtool localbase pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR}
 INSTALL_TARGET=	install-strip
 

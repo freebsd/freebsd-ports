@@ -1,0 +1,18 @@
+--- plugins/training/data/abilities/training/fc4715ac-758e-4ba9-9e52-d07ff3d22a74.yml.orig	2022-08-08 23:35:27 UTC
++++ plugins/training/data/abilities/training/fc4715ac-758e-4ba9-9e52-d07ff3d22a74.yml
+@@ -7,7 +7,7 @@
+     attack_id: x
+     name: x
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           crontab -l > new_crontab;
+@@ -26,4 +26,4 @@
+         command: |
+           $action = New-ScheduledTaskAction -Execute "calc.exe";
+           $trigger = New-ScheduledTaskTrigger -Daily -At 9am;
+-          Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "FindMe" -Description "Pretend malicious scheduled action";
+\ No newline at end of file
++          Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "FindMe" -Description "Pretend malicious scheduled action";

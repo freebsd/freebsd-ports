@@ -1,11 +1,11 @@
---- igal2.orig	2016-06-02 05:29:25 UTC
+--- igal2.orig	2021-11-18 00:25:55 UTC
 +++ igal2
-@@ -5,7 +5,7 @@ eval 'exec perl -wS $0 ${1+"$@"}'
+@@ -6,7 +6,7 @@ eval 'exec perl -wS $0 ${1+"$@"}'
  ############################################################################
  # Please change this accordingly if you change the DESTDIR in the tarball 
  # distribution Makefile or the --prefix of the RPM installation
--$LIBDIR = "/usr/local/lib/igal2";
-+$LIBDIR = "%%LIBDIR%%";
- # for example if you make DESTDIR=/usr then $LIBDIR="/usr/lib/igal2"
- ############################################################################
- #
+-$IGALDIR = "/usr/local/share/igal2";
++$IGALDIR = "%%IGALDIR%%";
+ # debug locally
+ #use File::Basename;
+ #$IGALDIR = dirname($0);

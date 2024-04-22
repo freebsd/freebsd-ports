@@ -1,0 +1,5 @@
+bin/vmstatedctl
+etc/rc.d/vmstated
+sbin/vmstated
+share/man/man1/vmstatedctl.1.gz
+share/man/man8/vmstated.8.gz

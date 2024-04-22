@@ -1,5 +1,6 @@
 PORTNAME=	tkgate
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://cdn.bitbucket.org/starling13/tkgate/downloads/
 
@@ -19,6 +20,7 @@ USE_XORG=	x11 xft
 USE_GNOME=	pango
 OPTIONS_DEFINE=	DOCS
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 post-patch:
 	@${REINPLACE_CMD} -e \

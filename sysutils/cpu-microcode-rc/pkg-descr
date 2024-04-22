@@ -1,3 +1,10 @@
-An RC script for use with the cpuctl(4) microcode update facility to keep your
-processor's firmware up-to-date.  CPU microcode data must be installed from a
-vendor.  See sysutils/devcpu-data-amd and sysutils/devcpu-data-intel.
+An RC script for one of two methods to update CPU microcode.
+
+Early loading, which does not require this RC script, is usually the preferred
+method because updates are applied before the kernel performs CPU feature
+detection.  The other method, which requires this RC script, is late loading.
+AMD systems running FreeBSD prior to 2024-02-22 snapshot 34467bd76 only support
+late loading.
+
+CPU microcode data can be installed from one of the sysutils/cpu-microcode-*
+ports.

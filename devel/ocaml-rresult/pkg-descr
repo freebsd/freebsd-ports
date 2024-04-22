@@ -1,0 +1,7 @@
+This library defines cominators to operate on the standard Result type
+(introduced in OCaml 4.03). Using Result as return type of a
+computation that can fail forces explicit handling of error, as oposed
+to e.g. raising an exception.
+
+As the author puts it: "OCaml 4.08 provides the Stdlib.Result module
+which you should prefer to Rresult."

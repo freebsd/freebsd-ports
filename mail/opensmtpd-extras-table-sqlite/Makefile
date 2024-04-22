@@ -1,10 +1,10 @@
 PKGNAMESUFFIX=	-table-sqlite
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	SQLite table support for OpenSMTPD
 
 PLIST_FILES=	libexec/opensmtpd/table-sqlite \
-		man/man5/table-sqlite.5.gz
+		share/man/man5/table-sqlite.5.gz
 
 CONFIGURE_ARGS+=	--with-table-sqlite
 

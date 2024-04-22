@@ -4,7 +4,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/netdisco/${PORTNAME}/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	dgeo@centrale-marseille.fr
+MAINTAINER=	dgeo@centrale-med.fr
 COMMENT=	MIBs for use with ports-mgmt/netdisco (and SNMP)
 
 NO_ARCH=	yes

@@ -1,6 +1,6 @@
 PORTNAME=	visualboyadvance-m
 PORTVERSION=	2.0.0b2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	emulators
 
 MAINTAINER=	ports@FreeBSD.org
@@ -75,8 +75,8 @@ USES+=		compiler:c++11-lang
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/SET.*LIRC_CLIENT_LIBRARY/ s|lirc_client|${LOCALBASE}/lib/lib&.so|; \
-		s|share/man|man|' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e '/SET.*LIRC_CLIENT_LIBRARY/ s|lirc_client|${LOCALBASE}/lib/lib&.so|' \
+		${WRKSRC}/CMakeLists.txt
 
 maint-gen-distfile:
 	@if [ -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \

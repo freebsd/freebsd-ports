@@ -219,7 +219,11 @@ OPTIONS_DEFINE+=	${opt}
 .  endfor
 
 # Add per arch defaults
+.  if defined(OPTIONS_DEFAULT_${ARCH})
 OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${ARCH}}
+.  else
+OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_OTHER_ARCHS}
+.  endif
 
 _ALL_EXCLUDE=	${OPTIONS_EXCLUDE_${ARCH}} ${OPTIONS_EXCLUDE} \
 		${OPTIONS_SLAVE} ${OPTIONS_EXCLUDE_${OPSYS}} \
@@ -555,7 +559,7 @@ ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS}
 .        endif
 .        for p in ${SUBPACKAGES}
 .          if defined(${opt}_${deptype}_DEPENDS.${p})
-${deptype}_DEPENDS.{p}+=	${${opt}_${deptype}_DEPENDS.${p}}
+${deptype}_DEPENDS.${p}+=	${${opt}_${deptype}_DEPENDS.${p}}
 .          endif
 .        endfor
 .      endfor
@@ -631,7 +635,7 @@ ${deptype}_DEPENDS+=	${${opt}_${deptype}_DEPENDS_OFF}
 .        endif
 .        for p in ${SUBPACKAGES}
 .          if defined(${opt}_${deptype}_DEPENDS_OFF.${p})
-${deptype}_DEPENDS.{p}+=	${${opt}_${deptype}_DEPENDS_OFF.${p}}
+${deptype}_DEPENDS.${p}+=	${${opt}_${deptype}_DEPENDS_OFF.${p}}
 .          endif
 .        endfor
 .      endfor

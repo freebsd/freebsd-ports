@@ -1,5 +1,5 @@
 PORTNAME=	gsequencer
-DISTVERSION=	5.4.3
+DISTVERSION=	6.5.2
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH/gsequencer/${DISTVERSION:R}.x
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libgraphene-1.0.so:graphics/graphene \
 		libharfbuzz.so:print/harfbuzz \
 		libinstpatch-1.0.so:audio/libinstpatch \
+		libjson-glib-1.0.so:devel/json-glib \
 		libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile \
 		libsoup-3.0.so:devel/libsoup3 \
@@ -36,6 +37,7 @@ USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-alsa --enable-oss --disable-introspection --disable-rt
 
 CPPFLAGS+=	-DAGS_LICENSE_FILENAME=\\\"${LOCALBASE}/share/licenses/${PKGNAME}/${LICENSE}\\\" \

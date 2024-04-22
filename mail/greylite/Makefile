@@ -1,6 +1,6 @@
 PORTNAME=	greylite
 PORTVERSION=	2.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/OlliL/greylite/releases/download/v${PORTVERSION}/
 
@@ -14,7 +14,7 @@ RUN_DEPENDS=	tcpserver:sysutils/ucspi-tcp
 
 USES=		sqlite tar:bzip2
 PLIST_FILES=	bin/greylite \
-		man/man8/greylite.8.gz
+		share/man/man8/greylite.8.gz
 DNSBLENV_PLIST_FILES=	bin/dnsblenv
 UCSPI2SOCKET_PLIST_FILES=	bin/ucspi2socket
 
@@ -45,6 +45,7 @@ PLIST_SUB+=	UCSPI2SOCKET="@comment "
 post-patch:
 	${CP} ${WRKSRC}/Makefile.bsdmake ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|PREFIX\?=.*|PREFIX=${STAGEDIR}${PREFIX}|g' \
+		-e 's,/man/,/share/man/,g' \
 		-e 's,logmsg.c logmsg.h ucspi2socket.c,logmsg.o ucspi2socket.c,' \
 		${WRKSRC}/Makefile
 

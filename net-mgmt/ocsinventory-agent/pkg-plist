@@ -6,6 +6,7 @@ bin/ocsinventory-agent
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/AccessLog.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/DeviceID.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/IpDiscover.pm
+%%SITE_PERL%%/Ocsinventory/Agent/Backend/IpDiscover/ArpScan.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/IpDiscover/IpDiscover.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/IpDiscover/Nmap.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/AIX.pm
@@ -24,6 +25,7 @@ bin/ocsinventory-agent
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/AIX/Software.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/AIX/Sounds.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/AIX/Storages.pm
+%%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/AIX/UUID.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/AIX/Users.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/AIX/Videos.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/BSD.pm
@@ -209,6 +211,7 @@ bin/ocsinventory-agent
 %%SITE_PERL%%/Ocsinventory/Agent/Modules/Databases/Oracle/Instances.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Modules/Download.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Modules/Example.pm
+%%SITE_PERL%%/Ocsinventory/Agent/Modules/LocalSnmpScan.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Modules/SnmpScan.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Network.pm
 %%SITE_PERL%%/Ocsinventory/Agent/XML/Inventory.pm

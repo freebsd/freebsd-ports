@@ -1,6 +1,6 @@
---- base/rand_util_posix.cc.orig	2023-11-04 07:08:51 UTC
+--- base/rand_util_posix.cc.orig	2024-03-22 14:16:19 UTC
 +++ base/rand_util_posix.cc
-@@ -22,7 +22,7 @@
+@@ -23,7 +23,7 @@
  #include "base/time/time.h"
  #include "build/build_config.h"
  
@@ -9,7 +9,7 @@
  #include "third_party/lss/linux_syscall_support.h"
  #elif BUILDFLAG(IS_MAC)
  // TODO(crbug.com/995996): Waiting for this header to appear in the iOS SDK.
-@@ -39,6 +39,7 @@ namespace base {
+@@ -40,6 +40,7 @@ namespace base {
  
  namespace {
  
@@ -17,7 +17,7 @@
  #if BUILDFLAG(IS_AIX)
  // AIX has no 64-bit support for O_CLOEXEC.
  static constexpr int kOpenFlags = O_RDONLY;
-@@ -63,10 +64,11 @@ class URandomFd {
+@@ -64,10 +65,11 @@ class URandomFd {
   private:
    const int fd_;
  };
@@ -30,26 +30,26 @@
  // TODO(pasko): Unify reading kernel version numbers in:
  // mojo/core/channel_linux.cc
  // chrome/browser/android/seccomp_support_detector.cc
-@@ -176,6 +178,7 @@ bool UseBoringSSLForRandBytes() {
+@@ -177,6 +179,7 @@ bool UseBoringSSLForRandBytes() {
  namespace {
  
- void RandBytes(void* output, size_t output_length, bool avoid_allocation) {
+ void RandBytes(span<uint8_t> output, bool avoid_allocation) {
 +#if !BUILDFLAG(IS_BSD)
  #if !BUILDFLAG(IS_NACL)
    // The BoringSSL experiment takes priority over everything else.
    if (!avoid_allocation && internal::UseBoringSSLForRandBytes()) {
-@@ -214,6 +217,9 @@ void RandBytes(void* output, size_t output_length, boo
-   const bool success =
-       ReadFromFD(urandom_fd, static_cast<char*>(output), output_length);
+@@ -215,6 +218,9 @@ void RandBytes(span<uint8_t> output, bool avoid_alloca
+   const int urandom_fd = GetUrandomFD();
+   const bool success = ReadFromFD(urandom_fd, as_writable_chars(output));
    CHECK(success);
 +#else
-+  arc4random_buf(static_cast<char*>(output), output_length);
++  arc4random_buf(output.data(), output.size());
 +#endif
  }
  
  }  // namespace
-@@ -233,9 +239,11 @@ void RandBytes(void* output, size_t output_length) {
-   RandBytes(output, output_length, /*avoid_allocation=*/false);
+@@ -239,9 +245,11 @@ void RandBytes(void* output, size_t output_length) {
+   RandBytes(make_span(static_cast<uint8_t*>(output), output_length));
  }
  
 +#if !BUILDFLAG(IS_BSD)

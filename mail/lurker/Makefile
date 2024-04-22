@@ -1,6 +1,6 @@
 PORTNAME=	lurker
 PORTVERSION=	2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	SF:0 \
 		SF/${PORTNAME}/mimelib/${MIMELIB_VERSION}/:1
@@ -18,6 +18,7 @@ USES=		iconv localbase
 USE_CXXSTD=	c++14
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-mimelib-local \
 		--with-default-www-dir=${PREFIX}/www/lurker \
 		--with-cgi-bin-dir=${PREFIX}/www/lurker

@@ -6,9 +6,9 @@ include/ucl.h
 include/ucl++.h
 lib/libucl.a
 lib/libucl.so
-lib/libucl.so.5
-lib/libucl.so.5.1.0
+lib/libucl.so.8
+lib/libucl.so.8.1.0
 %%LUA%%%%LUA_MODLIBDIR%%/ucl.a
 %%LUA%%%%LUA_MODLIBDIR%%/ucl.so
 libdata/pkgconfig/libucl.pc
-man/man3/libucl.3.gz
+share/man/man3/libucl.3.gz

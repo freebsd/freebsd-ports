@@ -1,6 +1,7 @@
 PORTNAME=	nsxiv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	28
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -22,7 +23,7 @@ USES=		desktop-file-utils gmake localbase:ldflags pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	x11 xft
 
-MAKE_ARGS=	MANPREFIX=${MANPREFIX}/share/man
+MAKE_ARGS=	MANPREFIX=${PREFIX}/share/man
 MAKE_ENV=	EGPREFIX=${EXAMPLESDIR} LDLIBS=-linotify
 
 INSTALL_TARGET=	install-all

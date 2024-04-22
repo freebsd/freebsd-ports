@@ -1,6 +1,6 @@
 PORTNAME=	svk
 PORTVERSION=	2.2.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CLKAO
@@ -43,8 +43,12 @@ RUN_DEPENDS=	p5-Algorithm-Annotate>=0:devel/p5-Algorithm-Annotate \
 		p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require \
 		p5-URI>=0:net/p5-URI \
 		p5-YAML-Syck>=0.60:textproc/p5-YAML-Syck \
-		p5-libwww>=0:www/p5-libwww \
-		p5-subversion>=0:devel/p5-subversion
+		p5-libwww>=0:www/p5-libwww
+.if ${WITH_SUBVERSION_VER:U} == LTS
+RUN_DEPENDS+=	p5-subversion-lts>=0:devel/p5-subversion
+.else
+RUN_DEPENDS+=	p5-subversion>=0:devel/p5-subversion
+.endif
 
 USES=		perl5
 USE_PERL5=	configure

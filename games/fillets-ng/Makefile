@@ -1,6 +1,6 @@
 PORTNAME=	fillets-ng
 PORTVERSION=	1.0.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	SF/fillets/Fish%20Fillets%20-%20Next%20Generation/${PORTVERSION} \
 		SF/fillets/Fish%20Fillets%20-%20Next%20Generation/${DATAVERSION}:data
@@ -21,6 +21,7 @@ USE_CXXSTD=	c++14
 USE_SDL=	sdl mixer image ttf
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--datadir="${DATADIR}"
 CONFIGURE_ENV=	LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}" \
 		LUA_CFLAGS="-I${LUA_INCDIR}"
@@ -32,7 +33,7 @@ DESKTOP_ENTRIES="Fish Fillets - Next Generation" \
 		"Game;LogicGame;" \
 		false
 
-PLIST_FILES=	bin/fillets man/man6/fillets.6.gz
+PLIST_FILES=	bin/fillets share/man/man6/fillets.6.gz
 PORTDATA=	*
 PORTDOCS=	*
 

@@ -2,9 +2,9 @@
 - Recognize DragonFly as x86_64-linux-gcc target by default
 - Don't override -march= on armv6, armv7 and aarch64
 
---- build/make/configure.sh.orig	2018-01-24 22:25:44 UTC
+--- build/make/configure.sh.orig	2024-01-09 21:12:22 UTC
 +++ build/make/configure.sh
-@@ -696,6 +696,14 @@ process_common_toolchain() {
+@@ -752,6 +752,14 @@ process_common_toolchain() {
        aarch64*)
          tgt_isa=arm64
          ;;
@@ -19,7 +19,7 @@
        armv7*-hardfloat* | armv7*-gnueabihf | arm-*-gnueabihf)
          tgt_isa=armv7
          float_abi=hard
-@@ -767,7 +767,7 @@ process_common_toolchain() {
+@@ -806,7 +814,7 @@ process_common_toolchain() {
          [ -z "$tgt_isa" ] && tgt_isa=x86
          tgt_os=win32
          ;;
@@ -28,18 +28,18 @@
          tgt_os=linux
          ;;
        *solaris2.10)
-@@ -914,7 +922,7 @@ process_common_toolchain() {
-         arm64|armv8)
-           soft_enable neon
+@@ -997,7 +1005,7 @@ EOF
+             fi
+           done
            ;;
 -        armv7|armv7s)
 +        armv6|armv7|armv7s)
            soft_enable neon
            # Only enable neon_asm when neon is also enabled.
            enabled neon && soft_enable neon_asm
-@@ -935,29 +943,6 @@
+@@ -1017,29 +1025,6 @@ EOF
+           arch_int=${tgt_isa##armv}
            arch_int=${arch_int%%te}
-           check_add_asflags --defsym ARCHITECTURE=${arch_int}
            tune_cflags="-mtune="
 -          if [ ${tgt_isa} = "armv7" ] || [ ${tgt_isa} = "armv7s" ]; then
 -            if [ -z "${float_abi}" ]; then
@@ -65,5 +65,5 @@
 -          fi
 -
            enabled debug && add_asflags -g
-           asm_conversion_cmd="${source_path}/build/make/ads2gas.pl"
-           if enabled thumb; then
+           asm_conversion_cmd="${source_path_mk}/build/make/ads2gas.pl"
+ 

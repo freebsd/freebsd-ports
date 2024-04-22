@@ -1,5 +1,6 @@
 PORTNAME=	dev86
 PORTVERSION=	0.16.20
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://v3.sk/~lkundrak/dev86/archive/ \
 		http://tmp.chruetertee.ch/ \
@@ -16,6 +17,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DESTDIRNAME=	DIST
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|^MANDIR=.*|MANDIR=${PREFIX}/share/man|' \
+		${WRKSRC}/Makefile
 # Respect CFLAGS in Makefiles.
 	@${GREP} -Rl 'CFLAGS=' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -i "" \
 	    -Ee "s|CFLAGS='|&${CFLAGS} |; s|^(CFLAGS=)([^'])|\1${CFLAGS} \2|"

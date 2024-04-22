@@ -1,6 +1,6 @@
 PORTNAME=	euclid-wm
 PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 
 MAINTAINER=	anastasios@mageirias.com
@@ -19,7 +19,7 @@ ALL_TARGET=		noxinerama
 
 PLIST_FILES=	bin/euclid-wm \
 		bin/start-euclid \
-		man/man1/euclid-wm.1.gz \
+		share/man/man1/euclid-wm.1.gz \
 		share/xsessions/euclid.desktop \
 		%%DATADIR%%/VERSION \
 		%%DATADIR%%/euclid-wm.conf \

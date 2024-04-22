@@ -9,4 +9,4 @@ bin/steghide
 %%NLS%%share/locale/es/LC_MESSAGES/steghide.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/steghide.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/steghide.mo
-man/man1/steghide.1.gz
+share/man/man1/steghide.1.gz

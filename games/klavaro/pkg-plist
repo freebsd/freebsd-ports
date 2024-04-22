@@ -1,5 +1,4 @@
 bin/klavaro
-man/man1/klavaro.1.gz
 share/applications/klavaro.desktop
 share/icons/hicolor/16x16/apps/klavaro.png
 share/icons/hicolor/22x22/apps/klavaro.png
@@ -221,4 +220,5 @@ share/locale/ur/LC_MESSAGES/klavaro.mo
 share/locale/vi/LC_MESSAGES/klavaro.mo
 share/locale/wo/LC_MESSAGES/klavaro.mo
 share/locale/zh_CN/LC_MESSAGES/klavaro.mo
+share/man/man1/klavaro.1.gz
 share/metainfo/klavaro.appdata.xml

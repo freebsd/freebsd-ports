@@ -1,8 +1,8 @@
 PORTNAME=	jpeg-turbo
-DISTVERSION=	3.0.1
-PORTREVISION?=	0
+DISTVERSION=	3.0.2
+#PORTREVISION?=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/lib${PORTNAME}/${DISTVERSION}
+MASTER_SITES=	https://github.com/lib${PORTNAME}/lib${PORTNAME}/releases/download/${DISTVERSION}/
 DISTNAME=	lib${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -17,6 +17,10 @@ LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE.md
 LICENSE_FILE_IJG=	${WRKSRC}/README.ijg
 LICENSE_FILE_ZLIB=	${WRKSRC}/LICENSE.md
 LICENSE_PERMS_IJG=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}
+BUILD_DEPENDS_amd64=	nasm:devel/nasm
+BUILD_DEPENDS_i386=	nasm:devel/nasm
 
 USES=		cmake cpe pathfix
 USE_LDCONFIG=	yes
@@ -37,10 +41,6 @@ OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 OPTIMIZED_CFLAGS_CFLAGS=	-O3
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH} == i386 || ${ARCH} == amd64
-BUILD_DEPENDS+=	nasm:devel/nasm
-.endif
 
 .if ${ARCH} == armv6
 CMAKE_OFF=	WITH_SIMD

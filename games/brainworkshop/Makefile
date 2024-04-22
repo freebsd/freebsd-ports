@@ -1,14 +1,14 @@
 PORTNAME=	brainworkshop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.2
-PORTREVISION=	1
+DISTVERSION=	5.0.3
 CATEGORIES=	games python
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Dual N-Back mental exercise
 WWW=		https://github.com/samcv/brainworkshop
 
-LICENSE=	GPLv1+ # version not specified
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet1>=0:graphics/py-pyglet1@${PY_FLAVOR}
 

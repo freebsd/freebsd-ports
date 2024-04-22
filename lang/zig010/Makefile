@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 PATCH_SITES=	https://github.com/ziglang/${PORTNAME}/commit/
 
-MAINTAINER=	dch@FreeBSD.org
+MAINTAINER=	bsd@orsolic.org
 COMMENT=	Language designed for robustness, optimality, and maintainability (deprecated 0.10.* series)
 WWW=		https://ziglang.org/
 

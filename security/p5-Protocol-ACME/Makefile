@@ -1,6 +1,5 @@
 PORTNAME=	Protocol-ACME
-PORTVERSION=	0.16
-PORTREVISION=	1
+PORTVERSION=	1.02
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SLUDIN
@@ -11,6 +10,9 @@ COMMENT=	Interface to the Let's Encrypt ACME API
 WWW=		https://metacpan.org/release/Protocol-ACME
 
 LICENSE=	ART20
+
+DEPRECATED=	upstream maintainer indicated that it is no longer suitable for use
+EXPIRATION_DATE=2024-06-30
 
 RUN_DEPENDS=	p5-Crypt-Format>=0.06:security/p5-Crypt-Format \
 		p5-Crypt-OpenSSL-Bignum>=0.06:security/p5-Crypt-OpenSSL-Bignum \

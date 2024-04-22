@@ -10,8 +10,8 @@ externals/./renderdoc/renderdoc_app.h:240:12: note: to match this '('
       |            ^
 [...]
 
---- externals/./renderdoc/renderdoc_app.h~	2023-09-18 13:31:05.000000000 +0000
-+++ externals/./renderdoc/renderdoc_app.h	2023-09-18 17:24:14.130392873 +0000
+--- externals/./renderdoc/renderdoc_app.h.orig	2023-09-18 13:31:05 UTC
++++ externals/./renderdoc/renderdoc_app.h
 @@ -38,12 +38,8 @@
  
  #if defined(WIN32) || defined(__WIN32__) || defined(_WIN32) || defined(_MSC_VER)

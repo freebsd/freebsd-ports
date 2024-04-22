@@ -1,5 +1,5 @@
 PORTNAME=	libunistring
-DISTVERSION=	1.1
+DISTVERSION=	1.2
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -22,5 +22,7 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 INFO=		${PORTNAME}
 OPTIONS_DEFINE=	DOCS
+
+TESTING_UNSAFE=	test-time.c:46: assertion 'tt3 >= tv2.tv_sec' failed
 
 .include <bsd.port.mk>

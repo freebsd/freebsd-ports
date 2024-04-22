@@ -1,5 +1,6 @@
 PORTNAME=	ree
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -15,13 +16,16 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	alexmyczko
 
-PLIST_FILES=	bin/fontdump man/man1/fontdump.1.gz man/man8/rom-ree.8.gz \
-		sbin/rom-ree
+MAKEFILE=	makefile
+
+PLIST_FILES=	bin/fontdump \
+		sbin/rom-ree \
+		share/man/man1/fontdump.1.gz \
+		share/man/man8/rom-ree.8.gz
+
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
-
-MAKEFILE=	makefile
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -34,7 +38,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/rom-ree \
 		${STAGEDIR}${PREFIX}/bin/fontdump
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/ree.8 ${STAGEDIR}${MANPREFIX}/man/man8/rom-ree.8
-	${INSTALL_MAN} ${WRKSRC}/fontdump.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/ree.8 ${STAGEDIR}${PREFIX}/share/man/man8/rom-ree.8
+	${INSTALL_MAN} ${WRKSRC}/fontdump.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

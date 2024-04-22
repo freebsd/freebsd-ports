@@ -2,6 +2,7 @@ include/c++utilities/application/argumentparser.h
 include/c++utilities/application/commandlineutils.h
 include/c++utilities/application/fakeqtconfigarguments.h
 include/c++utilities/application/global.h
+include/c++utilities/c++utilities-definitions.h
 include/c++utilities/chrono/datetime.h
 include/c++utilities/chrono/format.h
 include/c++utilities/chrono/period.h
@@ -34,7 +35,7 @@ include/c++utilities/tests/testutils.h
 include/c++utilities/version.h
 lib/libc++utilities.so
 lib/libc++utilities.so.5
-lib/libc++utilities.so.5.24.5
+lib/libc++utilities.so.5.24.7
 libdata/pkgconfig/c++utilities.pc
 share/c++utilities/cmake/c++utilitiesConfig.cmake
 share/c++utilities/cmake/c++utilitiesConfigVersion.cmake

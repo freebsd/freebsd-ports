@@ -1,5 +1,5 @@
 bin/bmf
 bin/bmfconv
-%%MANPAGES%%man/man1/bmf.1.gz
-%%MANPAGES%%man/man1/bmfconv.1.gz
+%%MANPAGES%%share/man/man1/bmf.1.gz
+%%MANPAGES%%share/man/man1/bmfconv.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README

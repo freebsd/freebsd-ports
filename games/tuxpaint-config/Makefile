@@ -1,5 +1,6 @@
 PORTNAME=	tuxpaint-config
 PORTVERSION=	0.0.21
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/tuxpaint/${PORTNAME}/${PORTVERSION}
 
@@ -17,7 +18,7 @@ RUN_DEPENDS=	tuxpaint:games/tuxpaint
 
 USES=		gettext gmake pkgconfig
 MAKE_ARGS=	PREFIX="${PREFIX}" \
-		MAN_PREFIX="${MANPREFIX}/man" \
+		MAN_PREFIX="${PREFIX}/share/man" \
 		GNOME_PREFIX="${PREFIX}" \
 		CFLAGS="${CXXFLAGS} ${CPPFLAGS}" \
 		ARCH_LINKS="${LDFLAGS}"

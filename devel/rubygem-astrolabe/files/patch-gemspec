@@ -1,11 +1,11 @@
---- astrolabe.gemspec.orig	2023-01-05 18:23:39 UTC
+--- astrolabe.gemspec.orig	2024-02-14 06:29:52 UTC
 +++ astrolabe.gemspec
 @@ -20,7 +20,7 @@ Gem::Specification.new do |s|
  
    s.specification_version = 4
  
--  s.add_runtime_dependency(%q<parser>.freeze, ["~> 2.2"])
-+  s.add_runtime_dependency(%q<parser>.freeze, [">= 2.2"])
-   s.add_development_dependency(%q<bundler>.freeze, ["~> 1.6"])
-   s.add_development_dependency(%q<rake>.freeze, ["~> 10.3"])
-   s.add_development_dependency(%q<yard>.freeze, ["~> 0.8"])
+-  s.add_runtime_dependency(%q<parser>.freeze, ["~> 2.2".freeze])
++  s.add_runtime_dependency(%q<parser>.freeze, [">= 2.2".freeze])
+   s.add_development_dependency(%q<bundler>.freeze, ["~> 1.6".freeze])
+   s.add_development_dependency(%q<rake>.freeze, ["~> 10.3".freeze])
+   s.add_development_dependency(%q<yard>.freeze, ["~> 0.8".freeze])

@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2022-11-10 17:08:31 UTC
++++ pyproject.toml
+@@ -25,7 +25,7 @@ classifiers = [
+ ]
+ 
+ dependencies = [
+-    "discord.py==2.0.1",
++    "discord.py>=2.0.1",
+ ]
+ 
+ [project.urls]

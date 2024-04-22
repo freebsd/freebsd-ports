@@ -1,6 +1,6 @@
 PORTNAME=	sl2tps
 PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SF/libpdel/${PORTNAME}/${PORTVERSION}
 
@@ -19,6 +19,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$${PREFIX}/include|$${LOCALBASE}/include|g ; \
 		 /-g/s|^CFLAGS|#CFLAGS|g ; \
-		 s|$${PREFIX}/lib|$${LOCALBASE}/lib|g' ${WRKSRC}/Makefile
+		 s|$${PREFIX}/lib|$${LOCALBASE}/lib|g ; \
+		 s|$${PREFIX}/man|$${PREFIX}/share/man|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 PORTNAME=	clamtk
-PORTVERSION=	6.14
-PORTREVISION=	2
+PORTVERSION=	6.18
 DISTVERSIONPREFIX=v
 CATEGORIES=	security
 
@@ -26,7 +25,7 @@ USES=		gettext-runtime:run perl5 shebangfix
 USE_PERL5=	run
 USE_GITHUB=	yes
 GH_ACCOUNT=	dave-theunsub
-GH_TAGNAME=	1f026fs
+GH_TAGNAME=	1f026f0
 SHEBANG_FILES=	clamtk
 
 LINGUAS=	`${LS} ${WRKSRC}/po/*.mo | ${XARGS} ${BASENAME} -s .mo`

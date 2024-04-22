@@ -1,29 +1,28 @@
---- Makefile.orig	2002-01-04 14:50:06.000000000 +0900
-+++ Makefile	2013-10-17 12:39:39.000000000 +0900
-@@ -14,13 +14,15 @@
- #SSL_INC =	-I$(SSL_TREE)/include
+--- Makefile.orig	2014-08-11 19:13:31 UTC
++++ Makefile
+@@ -15,23 +15,26 @@
  #SSL_LIBS =	-L$(SSL_TREE)/lib -lssl -lcrypto
  
--
+ 
 -BINDIR =	/usr/local/bin
 -MANDIR =	/usr/local/man/man1
--CC =		gcc -Wall
--CFLAGS =	-O $(SRANDOM_DEFS) $(SSL_DEFS) $(SSL_INC)
-+SSL_DEFS=	-DUSE_SSL ${OPENSSL_CFLAGS}
-+SSL_INC=	-I${OPENSSLINC}
-+SSL_LIBS=	-L${OPENSSLLIB} -lssl -lcrypto
-+BINDIR =	${PREFIX}/bin
-+MANDIR =	${MANPREFIX}/man/man1
-+CC?=		gcc -Wall
-+CFLAGS+=	-g $(SRANDOM_DEFS) $(SSL_DEFS) $(SSL_INC)
- #CFLAGS =	-g $(SRANDOM_DEFS) $(SSL_DEFS) $(SSL_INC)
+-CC =		cc
+-CFLAGS =	-O $(SRANDOM_DEFS) $(SSL_DEFS) $(SSL_INC) -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
 -LDFLAGS =	-s $(SSL_LIBS) $(SYSV_LIBS)
-+LDFLAGS+=	-s -lssl -lcrypto
- #LDFLAGS =	-g $(SSL_LIBS) $(SYSV_LIBS)
++BINDIR =	${PREFIX}/bin
++MANDIR =	${PREFIX}/share//man/man1
++CC?=		cc
++CFLAGS+=	-O $(SRANDOM_DEFS) $(SSL_DEFS) $(SSL_INC)
++LDFLAGS+=	-s $(SSL_LIBS) $(SYSV_LIBS)
  
++SSL_DEFS =	-DUSE_SSL ${OPENSSL_CFLAGS}
++SSL_INC =	-I${OPENSSLINC}
++SSL_LIBS =	-L${OPENSSLLIB} -lssl -lcrypto
++
  all:		http_ping
-@@ -32,11 +34,10 @@
- 	$(CC) $(CFLAGS) -c http_ping.c
+ 
+ http_ping:	http_ping.c port.h
+ 	$(CC) $(CFLAGS) http_ping.c $(LDFLAGS) -o http_ping
  
  
 -install:	all

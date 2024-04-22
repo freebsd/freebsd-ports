@@ -16,7 +16,6 @@ BROKEN_i386=	undefined reference to `__atomic_load' and `__atomic_compare_exchan
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
 
-BUILD_DEPENDS=	cmake:devel/cmake-core
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libcfitsio.so:astro/cfitsio \
 		libconfig.so:devel/libconfig \
@@ -37,7 +36,7 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libwcs.so:astro/wcslib
 LIB_DEPENDS+=	libopencv_photo.so:graphics/opencv # for some reason, configure fails without opencv, but executable only links to opencv-core
 
-USES=		compiler:c++11-lang desktop-file-utils gettext \
+USES=		cmake:indirect compiler:c++11-lang desktop-file-utils gettext \
 		gnome meson pkgconfig jpeg shared-mime-info tar:bz2
 USE_GNOME=	atk cairo gdkpixbuf2 gtk30 intltool pango
 

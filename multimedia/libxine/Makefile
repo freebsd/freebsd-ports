@@ -1,6 +1,6 @@
 PORTNAME=	xine
 DISTVERSION=	1.2.13
-PORTREVISION=	6
+PORTREVISION=	9
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${DISTVERSION}
 PKGNAMEPREFIX=	lib
@@ -43,6 +43,7 @@ LLD_UNSAFE=	yes
 CPE_PRODUCT=	xine-lib
 CPE_VENDOR=	xine
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_XORG=	x11 xcb xv xinerama xext sm ice
 USE_GL=		gl glu
 USE_PERL5=	build
@@ -133,8 +134,7 @@ SMB_CONFIGURE_ENV=		LIBSMBCLIENT_LIBS="-L${SAMBALIBS} -lsmbclient" \
 SMB_CONFIGURE_ENABLE=		samba
 SNDIO_LIB_DEPENDS=		libsndio.so:audio/sndio
 SNDIO_CONFIGURE_ENABLE=		sndio
-VAAPI_LIB_DEPENDS=		libva.so:multimedia/libva \
-				libva-glx.so:multimedia/libva-glx
+VAAPI_LIB_DEPENDS=		libva.so:multimedia/libva
 VAAPI_CONFIGURE_ENABLE=		vaapi
 V4L_BUILD_DEPENDS=		v4l_compat>=1.0.20100321:multimedia/v4l_compat
 V4L_LIB_DEPENDS=		libv4l2.so:multimedia/libv4l

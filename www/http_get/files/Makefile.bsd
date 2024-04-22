@@ -7,6 +7,6 @@ LDFLAGS	+=	-L${OPENSSLBASE}/lib -lssl -lcrypto
 .endif
 
 BINDIR	 =	${PREFIX}/bin
-MANDIR	 =	${PREFIX}/man/man
+MANDIR	 =	${PREFIX}/share/man/man
 
 .include <bsd.prog.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	docbook-utils
 PORTVERSION=	0.6.14
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	textproc
 MASTER_SITES=	SOURCEWARE/docbook-tools/new-trials/SOURCES
 
@@ -23,6 +23,7 @@ USE_PERL5=	run
 USE_TEX=	jadetex
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 MAKE_ARGS+=	docdir="${DOCSDIR}" htmldir="${DOCSDIR}/html"
 NO_ARCH=	yes
 SHEBANG_FILES=	bin/sgmldiff.in

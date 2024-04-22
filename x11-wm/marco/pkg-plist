@@ -14,10 +14,6 @@ lib/libmarco-private.so
 lib/libmarco-private.so.2
 lib/libmarco-private.so.2.0.0
 libdata/pkgconfig/libmarco-private.pc
-man/man1/marco-message.1.gz
-man/man1/marco-theme-viewer.1.gz
-man/man1/marco-window-demo.1.gz
-man/man1/marco.1.gz
 share/applications/marco.desktop
 share/help/C/creating-marco-themes/index.docbook
 share/locale/af/LC_MESSAGES/marco.mo
@@ -132,6 +128,10 @@ share/locale/zh_CN/LC_MESSAGES/marco.mo
 share/locale/zh_HK/LC_MESSAGES/marco.mo
 share/locale/zh_TW/LC_MESSAGES/marco.mo
 share/locale/zu/LC_MESSAGES/marco.mo
+share/man/man1/marco-message.1.gz
+share/man/man1/marco-theme-viewer.1.gz
+share/man/man1/marco-window-demo.1.gz
+share/man/man1/marco.1.gz
 %%DATADIR%%/icons/marco-window-demo.png
 share/mate-control-center/keybindings/50-marco-desktop-key.xml
 share/mate-control-center/keybindings/50-marco-global-key.xml

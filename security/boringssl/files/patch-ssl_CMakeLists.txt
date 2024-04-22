@@ -1,8 +1,0 @@
---- ssl/CMakeLists.txt.orig	2023-07-12 16:42:06 UTC
-+++ ssl/CMakeLists.txt
-@@ -45,3 +45,5 @@ add_library(
- install_if_enabled(TARGETS ssl EXPORT OpenSSLTargets ${INSTALL_DESTINATION_DEFAULT})
- set_property(TARGET ssl PROPERTY EXPORT_NAME SSL)
- target_link_libraries(ssl crypto)
-+
-+SET_TARGET_PROPERTIES(ssl PROPERTIES SOVERSION 1)

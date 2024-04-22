@@ -1,3 +1,7 @@
-TIMESTAMP = 1703157332
-SHA256 (jetbrains/CLion-2023.3.2.tar.gz) = f342d0f62454cea04b89db67dc1a720e6d2b767bbd93bafa270d9c92367086c2
-SIZE (jetbrains/CLion-2023.3.2.tar.gz) = 906106638
+TIMESTAMP = 1708291203
+SHA256 (jetbrains/CLion-2023.3.4.tar.gz) = eae2e1646387ee36a2f24c10d924647fd3d00bb31dd42e9c17438ae7aecf79a8
+SIZE (jetbrains/CLion-2023.3.4.tar.gz) = 907669083
+SHA256 (jetbrains/clang-clion2023.3-freebsd-aarch64.tar.gz) = 60cda8f7745a5f5499599cb12973370c658440e9a1e7fd8e0ed5f912ca553dd8
+SIZE (jetbrains/clang-clion2023.3-freebsd-aarch64.tar.gz) = 63548166
+SHA256 (jetbrains/clang-clion2023.3-freebsd-x86_64.tar.gz) = cf75282dfae8d4b8b84946dc00aba36d39f5713e5419eb7dac34de8d7199510b
+SIZE (jetbrains/clang-clion2023.3-freebsd-x86_64.tar.gz) = 64941191

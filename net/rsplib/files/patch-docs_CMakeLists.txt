@@ -1,6 +1,0 @@
---- docs/CMakeLists.txt.orig	2019-08-05 14:28:40 UTC
-+++ docs/CMakeLists.txt
-@@ -1,2 +1,2 @@
- # ###### Documentation ######################################################
--INSTALL(FILES Handbook.pdf DESTINATION ${CMAKE_INSTALL_DOCDIR})
-+INSTALL(FILES Handbook.pdf DESTINATION ${DOCSDIR})

@@ -1,5 +1,8 @@
 bin/Xdialog
-man/man1/Xdialog.1.gz
+share/man/man1/Xdialog.1.gz
+@dir %%DATADIR%%/usr/local/share/applications
+share/applications/bsdconfig.desktop
+share/icons/hicolor/48x48/apps/bsdconfig.png
 %%PORTDOCS%%%%DOCSDIR%%/2ranges.png
 %%PORTDOCS%%%%DOCSDIR%%/authors.html
 %%PORTDOCS%%%%DOCSDIR%%/box.html

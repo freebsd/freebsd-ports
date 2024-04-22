@@ -1,0 +1,22 @@
+--- profinet/data/abilities/discovery/df68ded9-4fa1-4d6c-a7d3-558c3ddd808a.yml.orig	2024-02-18 23:08:41 UTC
++++ profinet/data/abilities/discovery/df68ded9-4fa1-4d6c-a7d3-558c3ddd808a.yml
+@@ -20,10 +20,17 @@
+           ./dcp_utility id_all
+         payloads:
+         - dcp_utility
++    freebsd:
++      sh:
++        timeout: 360
++        command: |
++          ./dcp_utility_freebsd id_all
++        payloads:
++        - dcp_utility_freebsd
+     windows:
+       psh, cmd:
+         timeout: 360
+         command: |
+           .\dcp_utility.exe id_all
+         payloads:
+-        - dcp_utility.exe
+\ No newline at end of file
++        - dcp_utility.exe

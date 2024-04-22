@@ -55,5 +55,5 @@ libexec/magicfilter/stylus_color_720dpi
 libexec/magicfilter/tek4693
 libexec/magicfilter/tek4696
 libexec/magicfilter/textonly
-man/man5/magicfilter.5.gz
-man/man8/magicfilter.8.gz
+share/man/man5/magicfilter.5.gz
+share/man/man8/magicfilter.8.gz

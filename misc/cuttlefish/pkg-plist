@@ -12,4 +12,4 @@ lib/cmake/Cuttlefish/cuttlefish_lib-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Cuttlefish/cuttlefish_lib-targets.cmake
 lib/libcuttlefish.so
 lib/libcuttlefish.so.2.7
-lib/libcuttlefish.so.2.7.4
+lib/libcuttlefish.so.2.7.5

@@ -1,6 +1,6 @@
 PORTNAME=	dcd
 PORTVERSION=	0.99.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}player/${PORTNAME}player/${PORTVERSION}
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libcdaudio.so:audio/libcdaudio
 USES=		gmake
 
 PLIST_FILES=	bin/dcd \
-		man/man1/dcd.1.gz
+		share/man/man1/dcd.1.gz
 
 post-patch:
 	# Handle namespace collision with libcdaudio

@@ -1,10 +1,10 @@
---- sinatra.gemspec.orig	2023-01-22 13:52:47 UTC
+--- sinatra.gemspec.orig	2024-02-21 16:43:28 UTC
 +++ sinatra.gemspec
 @@ -26,6 +26,6 @@ Gem::Specification.new do |s|
-   s.add_runtime_dependency(%q<rack>.freeze, ["~> 2.2"])
-   s.add_runtime_dependency(%q<tilt>.freeze, ["~> 2.0"])
-   s.add_runtime_dependency(%q<rack-protection>.freeze, ["= 2.2.4"])
--  s.add_runtime_dependency(%q<mustermann>.freeze, ["~> 2.0"])
-+  s.add_runtime_dependency(%q<mustermann>.freeze, [">= 2.0"])
+   s.add_runtime_dependency(%q<rack>.freeze, ["~> 2.2".freeze])
+   s.add_runtime_dependency(%q<tilt>.freeze, ["~> 2.0".freeze])
+   s.add_runtime_dependency(%q<rack-protection>.freeze, ["= 2.2.4".freeze])
+-  s.add_runtime_dependency(%q<mustermann>.freeze, ["~> 2.0".freeze])
++  s.add_runtime_dependency(%q<mustermann>.freeze, [">= 2.0".freeze])
  end
  

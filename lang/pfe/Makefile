@@ -1,6 +1,6 @@
 PORTNAME=	pfe
 PORTVERSION=	0.33.71
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
@@ -17,6 +17,7 @@ BROKEN_powerpc64=	fails to build: lvalue required as increment operand
 BROKEN_riscv64=		fails to compile: pfe/assembler-ext.c:99:5: implicit declaration of function 'PFE_SBR_COMPILE_EXIT' is invalid in C99
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		gmake perl5 libtool tar:bzip2
 USE_PERL5=	build
 USE_LDCONFIG=	yes

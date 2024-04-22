@@ -59,7 +59,7 @@ TEST_WRKSRC?=	${WRKSRC}/tests
 ANGR_NOSETESTS?=	nosetests-${PYTHON_VER}
 
 do-test:
-	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${ANGR_NOSETESTS})
+	@(cd ${TEST_WRKSRC} && ${SETENVI} ${WRK_ENV} ${TEST_ENV} ${ANGR_NOSETESTS})
 .  endif # "${angr_ARGS:Mnose}" != ""
 
 .endif

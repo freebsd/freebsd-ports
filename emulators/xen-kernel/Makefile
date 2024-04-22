@@ -1,11 +1,11 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-kernel
-DISTVERSION=	4.18.0.20231212
+DISTVERSION=	4.18.2.20240411
 CATEGORIES=	emulators
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	xen-project
-GL_TAGNAME=	1792d1723b7fb45a20b145d2de4d233913b22c09
+GL_TAGNAME=	2d38302c33b117aa9a417056db241aefc840c2f0
 
 MAINTAINER=	royger@FreeBSD.org
 COMMENT=	Hypervisor using a microkernel design
@@ -39,10 +39,12 @@ IGNORE=		only supported on FreeBSD
 #
 # Build both a production and a debug hypervisor.
 do-build:
-	${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${WRKSRC} build-xen ${MAKE_ARGS} debug=y
+	${ECHO} "CONFIG_DEBUG=y" > ${WRKSRC}/xen/.config
+	${MAKE_CMD} -C ${WRKSRC}/xen olddefconfig ${MAKE_ARGS}
+	${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${WRKSRC} build-xen ${MAKE_ARGS}
 	cp ${WRKSRC}/xen/xen ${WRKSRC}/xen/xen-debug
 	cp ${WRKSRC}/xen/xen-syms ${WRKSRC}/xen/xen-debug-syms
-	${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${WRKSRC} clean-xen ${MAKE_ARGS}
+	${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${WRKSRC} distclean-xen ${MAKE_ARGS}
 	${MAKE_CMD} -j${MAKE_JOBS_NUMBER} -C ${WRKSRC} build-xen ${MAKE_ARGS}
 
 do-install:

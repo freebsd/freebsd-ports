@@ -5,7 +5,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://mailgraph.schweikert.ch/pub/ \
 		http://mailgraph.schweikert.ch/pub/old/
 
-MAINTAINER=	dgeo@centrale-marseille.fr
+MAINTAINER=	dgeo@centrale-med.fr
 COMMENT=	RRDtool frontend for Postfix statistics
 WWW=		https://mailgraph.schweikert.ch/
 

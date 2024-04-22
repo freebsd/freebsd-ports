@@ -167,6 +167,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/ADB/ADB-ALC4.qxf
 %%DATADIR%%/fixtures/ADB/ADB-Warp-M.qxf
 %%DATADIR%%/fixtures/AFX/AFX-BARLED200-FX.qxf
+%%DATADIR%%/fixtures/AFX/AFX-CLUB-MIX3-19x10W-RGBW.qxf
 %%DATADIR%%/fixtures/AFX/AFX-Spot-180-LED.qxf
 %%DATADIR%%/fixtures/AFX/AFX-Spot-60-LED.qxf
 %%DATADIR%%/fixtures/AGPtek/AGPtek-RGB-6ch-crystal-ball.qxf
@@ -175,6 +176,10 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/AVE/AVE-StagePar-Hex18.qxf
 %%DATADIR%%/fixtures/Abstract/Abstract-Twister-4.qxf
 %%DATADIR%%/fixtures/Abstract/Abstract-VR8.qxf
+%%DATADIR%%/fixtures/Acme/Acme-Dotline180.qxf
+%%DATADIR%%/fixtures/Acme/Acme-Dotline360.qxf
+%%DATADIR%%/fixtures/Acme/Acme-Oxygen.qxf
+%%DATADIR%%/fixtures/Acme/Acme-Super-Dotline.qxf
 %%DATADIR%%/fixtures/Alkalite/Alkalite-Octopod-DP-80.qxf
 %%DATADIR%%/fixtures/Altman/Altman-Spectra-CYC-100.qxf
 %%DATADIR%%/fixtures/American_DJ/American-DJ-12P-Hex-IP.qxf
@@ -337,6 +342,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Antari/Antari-Z-1520-RGB.qxf
 %%DATADIR%%/fixtures/Art_System/Art-System-GC-18x15-RGBWA.qxf
 %%DATADIR%%/fixtures/Astera/Astera-AX3-Lightdrop.qxf
+%%DATADIR%%/fixtures/Audibax/Audibax-Iowa-70.qxf
 %%DATADIR%%/fixtures/Ayra/Ayra-ALO-Micro-Scan.qxf
 %%DATADIR%%/fixtures/Ayra/Ayra-ComPar20.qxf
 %%DATADIR%%/fixtures/Ayra/Ayra-Compar-Kit-1.qxf
@@ -350,6 +356,8 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Ayrton/Ayrton-Arcaline-100-RGB.qxf
 %%DATADIR%%/fixtures/Ayrton/Ayrton-MagicBlade-R.qxf
 %%DATADIR%%/fixtures/Ayrton/Ayrton-MagicPanel-602.qxf
+%%DATADIR%%/fixtures/Ayrton/Ayrton-NandoBeam-S3.qxf
+%%DATADIR%%/fixtures/Betopper/Betopper-LB230.qxf
 %%DATADIR%%/fixtures/Betopper/Betopper-LM108.qxf
 %%DATADIR%%/fixtures/Betopper/Betopper-LM70.qxf
 %%DATADIR%%/fixtures/Betopper/Betopper-LPC004.qxf
@@ -362,6 +370,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Blizzard_Lighting/Blizzard-Lighting-Hotbox-EXA.qxf
 %%DATADIR%%/fixtures/Blizzard_Lighting/Blizzard-Lighting-Hotbox-RGBAW.qxf
 %%DATADIR%%/fixtures/Blizzard_Lighting/Blizzard-Lighting-Hotbox-RGBW.qxf
+%%DATADIR%%/fixtures/Blizzard_Lighting/Blizzard-Lighting-LB-Hex-Unplugged.qxf
 %%DATADIR%%/fixtures/Blizzard_Lighting/Blizzard-Lighting-LB-Par-Hex.qxf
 %%DATADIR%%/fixtures/Blizzard_Lighting/Blizzard-Lighting-Lil-G.qxf
 %%DATADIR%%/fixtures/Blizzard_Lighting/Blizzard-Lighting-Lo-Pro-CSI.qxf
@@ -375,6 +384,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Blizzard_Lighting/Blizzard-Lighting-StormChaser.qxf
 %%DATADIR%%/fixtures/Blizzard_Lighting/Blizzard-Lighting-Weather-System.qxf
 %%DATADIR%%/fixtures/BoomToneDJ/BoomToneDJ-Froggy-LED-RGBW.qxf
+%%DATADIR%%/fixtures/BoomToneDJ/BoomToneDJ-KUB-500-RGB.qxf
 %%DATADIR%%/fixtures/BoomToneDJ/BoomToneDJ-Moving-Wash-5X15-Speed.qxf
 %%DATADIR%%/fixtures/BoomToneDJ/BoomToneDJ-Quattro-Scan-LED.qxf
 %%DATADIR%%/fixtures/BoomToneDJ/BoomToneDJ-SilentPAR-12x10w-6in1.qxf
@@ -384,6 +394,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Botex/Botex-DPX-620-III.qxf
 %%DATADIR%%/fixtures/Botex/Botex-DSP-405.qxf
 %%DATADIR%%/fixtures/Botex/Botex-SP-1500.qxf
+%%DATADIR%%/fixtures/Bright/Bright-XBAR.qxf
 %%DATADIR%%/fixtures/Briteq/Briteq-BT-575S.qxf
 %%DATADIR%%/fixtures/Briteq/Briteq-BT-575W.qxf
 %%DATADIR%%/fixtures/Briteq/Briteq-BT-70LS.qxf
@@ -392,6 +403,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Briteq/Briteq-BT-Theatre-100EC.qxf
 %%DATADIR%%/fixtures/Briteq/Briteq-BT-Theatre-50WW.qxf
 %%DATADIR%%/fixtures/Briteq/Briteq-BT-Theatre-HD1.qxf
+%%DATADIR%%/fixtures/Briteq/Briteq-BT-Theatre-HD2.qxf
 %%DATADIR%%/fixtures/Briteq/Briteq-BT-Vintage.qxf
 %%DATADIR%%/fixtures/Briteq/Briteq-BT-W07L12.qxf
 %%DATADIR%%/fixtures/Briteq/Briteq-BT-W12L10.qxf
@@ -424,6 +436,9 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Cameo/Cameo-CLPIXBAR400PRO.qxf
 %%DATADIR%%/fixtures/Cameo/Cameo-CLPIXBAR450PRO-CLPIXBAR650PRO.qxf
 %%DATADIR%%/fixtures/Cameo/Cameo-F2-T-PO.qxf
+%%DATADIR%%/fixtures/Cameo/Cameo-FLAT-PRO-12.qxf
+%%DATADIR%%/fixtures/Cameo/Cameo-FLAT-PRO-18.qxf
+%%DATADIR%%/fixtures/Cameo/Cameo-FLAT-PRO-7.qxf
 %%DATADIR%%/fixtures/Cameo/Cameo-Flash-Bar-150.qxf
 %%DATADIR%%/fixtures/Cameo/Cameo-Flat-PAR-CAN-TRI-3W.qxf
 %%DATADIR%%/fixtures/Cameo/Cameo-Gobo-Scanner-60.qxf
@@ -447,8 +462,10 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Cameo/Cameo-Multi-PAR-1.qxf
 %%DATADIR%%/fixtures/Cameo/Cameo-Multi-PAR-3.qxf
 %%DATADIR%%/fixtures/Cameo/Cameo-NanoBeam-300.qxf
+%%DATADIR%%/fixtures/Cameo/Cameo-P2-FC.qxf
 %%DATADIR%%/fixtures/Cameo/Cameo-Pixbar-600-PRO.qxf
-%%DATADIR%%/fixtures/Cameo/Cameo-Q-SPOT-15-RGBW.qxf
+%%DATADIR%%/fixtures/Cameo/Cameo-Q-Spot-15-RGBW.qxf
+%%DATADIR%%/fixtures/Cameo/Cameo-Q-Spot-40-RGBW.qxf
 %%DATADIR%%/fixtures/Cameo/Cameo-ROOT-Par-6.qxf
 %%DATADIR%%/fixtures/Cameo/Cameo-Storm.qxf
 %%DATADIR%%/fixtures/Cameo/Cameo-Strobe-3x3.5W.qxf
@@ -482,6 +499,8 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Chauvet/Chauvet-COLORado-2-Quad-Zoom.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-COLORado-3P.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-COLORado-Batten-72-Tour.qxf
+%%DATADIR%%/fixtures/Chauvet/Chauvet-COLORado-Batten-72x.qxf
+%%DATADIR%%/fixtures/Chauvet/Chauvet-COLORband-Q3BT.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-COLORband-T3-BT.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-COLORband-T3-USB.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-COLORbar-SMD.qxf
@@ -490,6 +509,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Chauvet/Chauvet-COLORdash-Batten.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-COLORdash-Par-Hex-12.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-COLORdash-Par-Hex-7.qxf
+%%DATADIR%%/fixtures/Chauvet/Chauvet-COLORdash-Par-Quad-18.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-COLORdash-Par-Quad-7.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-COLORpalette.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-COLORrail-IRC2.qxf
@@ -524,6 +544,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Chauvet/Chauvet-GigBAR-Move.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-GigBar-IRC.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Gobo-Zoom-LED-2.0.qxf
+%%DATADIR%%/fixtures/Chauvet/Chauvet-Gobozap.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Gyser-RGB.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Hemisphere-5.1.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Hive.qxf
@@ -547,6 +568,8 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Intimidator-Spot-355Z-IRC.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Intimidator-Spot-375Z-IRC.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Intimidator-Spot-400-IRC.qxf
+%%DATADIR%%/fixtures/Chauvet/Chauvet-Intimidator-Spot-475ZX.qxf
+%%DATADIR%%/fixtures/Chauvet/Chauvet-Intimidator-Spot-Duo-155.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Intimidator-Spot-Duo.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Intimidator-Spot-LED-150.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Intimidator-Spot-LED-250.qxf
@@ -554,6 +577,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Intimidator-Spot-LED-350.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Intimidator-Trio.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Intimidator-Wash-Zoom-350-IRC.qxf
+%%DATADIR%%/fixtures/Chauvet/Chauvet-Intimidator-Wash-Zoom-450-IRC.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Intimidator-Wave-360-IRC.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Kinta-FX.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-LED-PAR-64-36B.qxf
@@ -629,6 +653,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Vue-1.1.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Vue-3.1.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Vue-6.1.qxf
+%%DATADIR%%/fixtures/Chauvet/Chauvet-Wash-FX-Hex.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Wash-FX.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Wash-FX2.qxf
 %%DATADIR%%/fixtures/Chauvet/Chauvet-Wedge-Tri.qxf
@@ -701,6 +726,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Contest/Contest-Tri4U.qxf
 %%DATADIR%%/fixtures/Contest/Contest-irLED64-18x10FIVE.qxf
 %%DATADIR%%/fixtures/DNA/DNA-Pro-Slim-18-RGBW.qxf
+%%DATADIR%%/fixtures/DTS/DTS-Jack.qxf
 %%DATADIR%%/fixtures/DTS/DTS-Katana.qxf
 %%DATADIR%%/fixtures/DTS/DTS-Max-FAR.qxf
 %%DATADIR%%/fixtures/DTS/DTS-Nick-NRG1201.qxf
@@ -713,6 +739,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Dune_Lighting/Dune-Lighting-MOVLED60W.qxf
 %%DATADIR%%/fixtures/Dune_Lighting/Dune-Lighting-PAR-LED-64.qxf
 %%DATADIR%%/fixtures/EK/EK-E3-LED-Spot.qxf
+%%DATADIR%%/fixtures/EK/EK-R3-Wash.qxf
 %%DATADIR%%/fixtures/ENTTEC/ENTTEC-CVC4.qxf
 %%DATADIR%%/fixtures/ENTTEC/ENTTEC-SMART-PXL-40-Dot.qxf
 %%DATADIR%%/fixtures/ENTTEC/ENTTEC-SMART-PXL-60-Dot.qxf
@@ -733,6 +760,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Elation/Elation-Fuze-PAR-Z175.qxf
 %%DATADIR%%/fixtures/Elation/Elation-Fuze-Wash-Z350.qxf
 %%DATADIR%%/fixtures/Elation/Elation-OPTI-TRI-30.qxf
+%%DATADIR%%/fixtures/Elation/Elation-Paladin.qxf
 %%DATADIR%%/fixtures/Elation/Elation-Platinum-Beam-5R.qxf
 %%DATADIR%%/fixtures/Elation/Elation-Platinum-Spot-5R.qxf
 %%DATADIR%%/fixtures/Elation/Elation-Platinum-Spot-III.qxf
@@ -750,7 +778,12 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Eliminator_Lighting/Eliminator-Lighting-Electro-MH25R.qxf
 %%DATADIR%%/fixtures/Eliminator_Lighting/Eliminator-Lighting-Follow-Spot-100-LED.qxf
 %%DATADIR%%/fixtures/Eliminator_Lighting/Eliminator-Lighting-LP-12-HEX.qxf
+%%DATADIR%%/fixtures/Eliminator_Lighting/Eliminator-Lighting-Stealth-Beam.qxf
+%%DATADIR%%/fixtures/Eliminator_Lighting/Eliminator-Lighting-Stealth-Wash-Zoom.qxf
 %%DATADIR%%/fixtures/Elumen8/Elumen8-COB-Tri-4-Pixel-Batten.qxf
+%%DATADIR%%/fixtures/Elumen8/Elumen8-MP-120.qxf
+%%DATADIR%%/fixtures/Elumen8/Elumen8-MP-60-Mk1.qxf
+%%DATADIR%%/fixtures/Elumen8/Elumen8-MP-60-Mk2.qxf
 %%DATADIR%%/fixtures/Elumen8/Elumen8-MS-700PE.qxf
 %%DATADIR%%/fixtures/Enterius/Enterius-EC-133DMX.qxf
 %%DATADIR%%/fixtures/Epsilon/Epsilon-PixBeam.qxf
@@ -772,9 +805,11 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Eurolite/Eurolite-DMXSuperstrobe-2700.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-EDX-4RT.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-GKF-60.qxf
+%%DATADIR%%/fixtures/Eurolite/Eurolite-KLS-180-6.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-KLS200.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-ACS-BAR-12.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-B-40-Beam.qxf
+%%DATADIR%%/fixtures/Eurolite/Eurolite-LED-Bar-2-RGBA-252_10_40__Indoor.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-Bar-RGB-252_10_40__Indoor.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-CBB-3-COB-RGB-3x15W-Bar.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-CLS-9-QCL-RGBW-9x8W-12.qxf
@@ -787,9 +822,11 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-Flood-Light-252-RGB-19.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-H2O-Water-Effect.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-KLS-120-FX.qxf
+%%DATADIR%%/fixtures/Eurolite/Eurolite-LED-KLS-180.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-KLS-2500.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-KLS-401.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-KLS-Laser-Bar-FX-Light-Set.qxf
+%%DATADIR%%/fixtures/Eurolite/Eurolite-LED-KLS-Scan-Pro-Next-FX-Light.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-ML-56-QCL-RGBW-RGBA-18x8W.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-Multi-FX-Laser-Bar.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-PAR-56-RGB-DMX.qxf
@@ -800,6 +837,8 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-PAR64-White.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-PARty-Hybrid-spot.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-PARty-RGBW.qxf
+%%DATADIR%%/fixtures/Eurolite/Eurolite-LED-PARty-TCL-spot.qxf
+%%DATADIR%%/fixtures/Eurolite/Eurolite-LED-PLL-480-CW-WW.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-PMB-4-COB-RGB-30W-Bar.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-PMB-8-COB-RGB-30W.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-PT-100-32-Pixel-DMX-Tube.qxf
@@ -816,6 +855,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-SLS-7-HCL.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-SLS-X-QCL.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-Strobe-PRO-DMX.qxf
+%%DATADIR%%/fixtures/Eurolite/Eurolite-LED-Strobe-SMD-PRO-132-DMX-RGB.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-T-36-RGB-Pinspot.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-T-36-RGB-Spot.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-THA-250F.qxf
@@ -827,7 +867,9 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-TMH-FE-1800.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-TMH-FE-600.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-TMH-X10.qxf
+%%DATADIR%%/fixtures/Eurolite/Eurolite-LED-TMH-X4.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-TMH-X5.qxf
+%%DATADIR%%/fixtures/Eurolite/Eurolite-LED-Theatre-COB-200-RGB+WW.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-LED-Z-200-TCL.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-Led-Theatre-36x3W-CW-WW.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-NH-30-MK2.qxf
@@ -845,6 +887,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Eurolite/Eurolite-THA-100F-COB.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-TMH-10.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-TMH-14.qxf
+%%DATADIR%%/fixtures/Eurolite/Eurolite-TMH-15.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-TMH-155.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-TMH-250.qxf
 %%DATADIR%%/fixtures/Eurolite/Eurolite-TMH-30-60-mk2.qxf
@@ -868,17 +911,25 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Event_Lighting/Event-Lighting-PAR6X12OB.qxf
 %%DATADIR%%/fixtures/Event_Lighting/Event-Lighting-PAR6X12OB2.qxf
 %%DATADIR%%/fixtures/Event_Lighting/Event-Lighting-Pixbar12x12.qxf
+%%DATADIR%%/fixtures/Event_Lighting/Event-Lighting-StrobeX-RGB.qxf
+%%DATADIR%%/fixtures/Event_Lighting/Event-Lighting-StrobeX.qxf
 %%DATADIR%%/fixtures/Evolight/Evolight-Colours-SL3.qxf
 %%DATADIR%%/fixtures/Expolite/Expolite-AkkuLED-Power-Compact.qxf
 %%DATADIR%%/fixtures/Expolite/Expolite-TourLED-MC180.qxf
 %%DATADIR%%/fixtures/Expolite/Expolite-TourLed-42.qxf
+%%DATADIR%%/fixtures/Expolite/Expolite-TourSpot-50-Mini.qxf
 %%DATADIR%%/fixtures/Expolite/Expolite-TourSpot-60.qxf
 %%DATADIR%%/fixtures/Expolite/Expolite-TourStick-72-RGBWA.qxf
+%%DATADIR%%/fixtures/FOS_Technologies/FOS-Technologies-IQ-28x12-Wash.qxf
+%%DATADIR%%/fixtures/FOS_Technologies/FOS-Technologies-IQ-Par.qxf
+%%DATADIR%%/fixtures/FOS_Technologies/FOS-Technologies-Iridium-75W-Spot.qxf
 %%DATADIR%%/fixtures/FixturesMap.xml
 %%DATADIR%%/fixtures/Flash-Butrym/Flash-Butrym-LED-Moving-Head-Mini-Beam-18x3W-RGB-CREE.qxf
 %%DATADIR%%/fixtures/Flash-Butrym/Flash-Butrym-LED-PAR-64-4x30W-COB-RGBW.qxf
+%%DATADIR%%/fixtures/Flash-Butrym/Flash-Butrym-LED-PAR-64-7x10W-RGBW.qxf
 %%DATADIR%%/fixtures/Flash-Butrym/Flash-Butrym-LED-PAR-64-COB-250W-2xWhite-Mk2.qxf
 %%DATADIR%%/fixtures/Fun-Generation/Fun-Generation-LED-Diamond-Dome.qxf
+%%DATADIR%%/fixtures/Fun-Generation/Fun-Generation-LED-Pot-12x1W-QCL-RGB-WW.qxf
 %%DATADIR%%/fixtures/Fun-Generation/Fun-Generation-LED-Pot-12x1W-RGBW.qxf
 %%DATADIR%%/fixtures/Fun-Generation/Fun-Generation-MiniSpider-FX.qxf
 %%DATADIR%%/fixtures/Fun-Generation/Fun-Generation-PicoBeam-60.qxf
@@ -976,6 +1027,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/IMG_Stageline/IMG-Stageline-PARL-73-RGB.qxf
 %%DATADIR%%/fixtures/IMG_Stageline/IMG-Stageline-Wash-40-LED.qxf
 %%DATADIR%%/fixtures/Ibiza/Ibiza-400-RGB.qxf
+%%DATADIR%%/fixtures/Ibiza/Ibiza-Mini-Moving-STAR-WASH.qxf
 %%DATADIR%%/fixtures/Ibiza/Ibiza-PAR-LED-710.qxf
 %%DATADIR%%/fixtures/Ibiza/Ibiza-PAR-LED-712IR.qxf
 %%DATADIR%%/fixtures/Ibiza/Ibiza-PAR-LED50-COB.qxf
@@ -991,6 +1043,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Involight/Involight-LED-MH77S.qxf
 %%DATADIR%%/fixtures/Involight/Involight-LED-PAR-180.qxf
 %%DATADIR%%/fixtures/Involight/Involight-LEDSTROB400.qxf
+%%DATADIR%%/fixtures/Involight/Involight-NL410.qxf
 %%DATADIR%%/fixtures/Involight/Involight-SBL2000.qxf
 %%DATADIR%%/fixtures/Involight/Involight-SBL3000.qxf
 %%DATADIR%%/fixtures/Involight/Involight-SlimPar56-PRO.qxf
@@ -1037,10 +1090,12 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/LDDE/LDDE-SpectraConnecT5.qxf
 %%DATADIR%%/fixtures/Lanta/Lanta-Fireball-P64s.qxf
 %%DATADIR%%/fixtures/Lanta/Lanta-Orion-Link-V2.qxf
+%%DATADIR%%/fixtures/Laserworld/Laserworld-CS-1000RGB-Mk3.qxf
 %%DATADIR%%/fixtures/Laserworld/Laserworld-CS-1000RGB-MkII.qxf
 %%DATADIR%%/fixtures/Laserworld/Laserworld-CS-1000RGB.qxf
 %%DATADIR%%/fixtures/Laserworld/Laserworld-EL-200RGY.qxf
 %%DATADIR%%/fixtures/Laserworld/Laserworld-EL-230RGB-MK2.qxf
+%%DATADIR%%/fixtures/Laserworld/Laserworld-EL-900RGB.qxf
 %%DATADIR%%/fixtures/Laserworld/Laserworld-ES-600B.qxf
 %%DATADIR%%/fixtures/Laserworld/Laserworld-PRO-1600RGB.qxf
 %%DATADIR%%/fixtures/Laserworld/Laserworld-PRO-730RGB.qxf
@@ -1095,6 +1150,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Mac_Mah/Mac-Mah-WiderPanel.qxf
 %%DATADIR%%/fixtures/Martin/Martin-24-7-Hazer.qxf
 %%DATADIR%%/fixtures/Martin/Martin-Acrobat.qxf
+%%DATADIR%%/fixtures/Martin/Martin-Atomic-3000-LED.qxf
 %%DATADIR%%/fixtures/Martin/Martin-Atomic-3000.qxf
 %%DATADIR%%/fixtures/Martin/Martin-CX-10-Extreme.qxf
 %%DATADIR%%/fixtures/Martin/Martin-Destroyer.qxf
@@ -1105,6 +1161,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Martin/Martin-ELP-CL-Profile.qxf
 %%DATADIR%%/fixtures/Martin/Martin-ERA-300-Profile.qxf
 %%DATADIR%%/fixtures/Martin/Martin-ERA-400-Performance.qxf
+%%DATADIR%%/fixtures/Martin/Martin-Ego-X6.qxf
 %%DATADIR%%/fixtures/Martin/Martin-JEM-K1-Hazer.qxf
 %%DATADIR%%/fixtures/Martin/Martin-JEM-ZR24-7.qxf
 %%DATADIR%%/fixtures/Martin/Martin-JEM-ZR44.qxf
@@ -1197,6 +1254,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Pro-Lights/Pro-Lights-BB5Pix.qxf
 %%DATADIR%%/fixtures/Pro-Lights/Pro-Lights-CromoSpot150.qxf
 %%DATADIR%%/fixtures/Pro-Lights/Pro-Lights-CromoSpot300.qxf
+%%DATADIR%%/fixtures/Pro-Lights/Pro-Lights-CromoWash100.qxf
 %%DATADIR%%/fixtures/Pro-Lights/Pro-Lights-CromoWash300.qxf
 %%DATADIR%%/fixtures/Pro-Lights/Pro-Lights-EVO90F.qxf
 %%DATADIR%%/fixtures/Pro-Lights/Pro-Lights-Explo-3000D.qxf
@@ -1268,6 +1326,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Robe/Robe-DJ-Scan-150-XT.qxf
 %%DATADIR%%/fixtures/Robe/Robe-Fog-1500-FT.qxf
 %%DATADIR%%/fixtures/Robe/Robe-LED-Blinder-196LT.qxf
+%%DATADIR%%/fixtures/Robe/Robe-LEDBeam-350.qxf
 %%DATADIR%%/fixtures/Robe/Robe-ParFect-150.qxf
 %%DATADIR%%/fixtures/Robe/Robe-Pointe.qxf
 %%DATADIR%%/fixtures/Robe/Robe-Robin-100-LEDBeam.qxf
@@ -1285,11 +1344,13 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Robe/Robe-Robin-Tetra-2.qxf
 %%DATADIR%%/fixtures/Robe/Robe-Robin-Viva-CMY.qxf
 %%DATADIR%%/fixtures/Robe/Robe-Scan-575-XT.qxf
+%%DATADIR%%/fixtures/Robe/Robe-Spiider.qxf
 %%DATADIR%%/fixtures/Robe/Robe-Spot-160-XT.qxf
 %%DATADIR%%/fixtures/Robe/Robe-Spot-575-XT.qxf
 %%DATADIR%%/fixtures/Robe/Robe-Wash-575-XT.qxf
 %%DATADIR%%/fixtures/Robe/Robe_ColorMix_240_AT.qxf
 %%DATADIR%%/fixtures/Robert_Juliat/Robert-Juliat-DArtagnan-934SNX.qxf
+%%DATADIR%%/fixtures/Rockville/Rockville-Battery-Strip-24.qxf
 %%DATADIR%%/fixtures/Rockville/Rockville-Best-Strip-60-RGBWAUV.qxf
 %%DATADIR%%/fixtures/Rockville/Rockville-Motionstrip-RGBW.qxf
 %%DATADIR%%/fixtures/Rockville/Rockville-Rockwedge-LED.qxf
@@ -1316,6 +1377,13 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Sagitter/Sagitter-Slimpar-7DL.qxf
 %%DATADIR%%/fixtures/Sagitter/Sagitter-Smart-DL-Wash.qxf
 %%DATADIR%%/fixtures/Scanic/Scanic-Astute-LED-108.qxf
+%%DATADIR%%/fixtures/Shehds/Shehds-230W-LED-Beam-Moving-Head.qxf
+%%DATADIR%%/fixtures/Shehds/Shehds-GalaxyJet-Waterproof-IP65-380W-19R-Beam-Moving-Head.qxf
+%%DATADIR%%/fixtures/Shehds/Shehds-JMS-WEBB-LED-Wash-BigBeeEye-19X40W.qxf
+%%DATADIR%%/fixtures/Shehds/Shehds-LED-Beam+Wash-19x15W-RGBW-Zoom.qxf
+%%DATADIR%%/fixtures/Shehds/Shehds-LED-Flat-Par-18x18W-RGBWA+UV.qxf
+%%DATADIR%%/fixtures/Shehds/Shehds-LED-Flat-Par-7x18W-RGBWA+UV.qxf
+%%DATADIR%%/fixtures/Shehds/Shehds-Wash-Zoom-36x18W.qxf
 %%DATADIR%%/fixtures/Showlite/Showlite-Flood-Light-Panel-144x10mm-LED-RGBW.qxf
 %%DATADIR%%/fixtures/Showlite/Showlite-LB-4390.qxf
 %%DATADIR%%/fixtures/Showlite/Showlite-LED-Stage-Bar.qxf
@@ -1346,9 +1414,11 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Showtec/Showtec-Infinity-iW-715.qxf
 %%DATADIR%%/fixtures/Showtec/Showtec-Infinity-iW-720.qxf
 %%DATADIR%%/fixtures/Showtec/Showtec-Kanjo-Spot-60.qxf
+%%DATADIR%%/fixtures/Showtec/Showtec-Kanjo-Wash-RGB.qxf
 %%DATADIR%%/fixtures/Showtec/Showtec-LED-Light-Bar-8.qxf
 %%DATADIR%%/fixtures/Showtec/Showtec-LED-Light-Bar-RGB-V3.qxf
 %%DATADIR%%/fixtures/Showtec/Showtec-LED-Par-56.qxf
+%%DATADIR%%/fixtures/Showtec/Showtec-LED-Par-64-Short-V2.qxf
 %%DATADIR%%/fixtures/Showtec/Showtec-LED-Pixel-Track-Pro.qxf
 %%DATADIR%%/fixtures/Showtec/Showtec-LED-Powerline-16-Bar.qxf
 %%DATADIR%%/fixtures/Showtec/Showtec-Led-Air-Cone-Pro.qxf
@@ -1358,6 +1428,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Showtec/Showtec-MultiDim-MK-III-DMX.qxf
 %%DATADIR%%/fixtures/Showtec/Showtec-Par-56-90W-COB-RGB.qxf
 %%DATADIR%%/fixtures/Showtec/Showtec-Par-64-100W-COB-UV.qxf
+%%DATADIR%%/fixtures/Showtec/Showtec-Performer-2000-RGBAL.qxf
 %%DATADIR%%/fixtures/Showtec/Showtec-Phantom-130-LED-Spot.qxf
 %%DATADIR%%/fixtures/Showtec/Showtec-Phantom-20-LED-Beam.qxf
 %%DATADIR%%/fixtures/Showtec/Showtec-Phantom-250-Wash.qxf
@@ -1377,6 +1448,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Showtec/Showtec-Slidebar-4.qxf
 %%DATADIR%%/fixtures/Showtec/Showtec-Spectral-850-RGBA-Tour.qxf
 %%DATADIR%%/fixtures/Showtec/Showtec-Spectral-CYC650.qxf
+%%DATADIR%%/fixtures/Showtec/Showtec-Spectral-M1000-Tour-Q4-MKII.qxf
 %%DATADIR%%/fixtures/Showtec/Showtec-Spectral-ZP-5.qxf
 %%DATADIR%%/fixtures/Showtec/Showtec-Stage-Blinder-Series.qxf
 %%DATADIR%%/fixtures/Showtec/Showtec-Star-Dream-144-LED-White.qxf
@@ -1507,6 +1579,8 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Talent/Talent-BL252A.qxf
 %%DATADIR%%/fixtures/Talent/Talent-BL63-10-LED-Bar.qxf
 %%DATADIR%%/fixtures/Talent/Talent-SSL1.qxf
+%%DATADIR%%/fixtures/Talent/Talent-SSL2.qxf
+%%DATADIR%%/fixtures/Tecshow/Tecshow-Nebula-6.qxf
 %%DATADIR%%/fixtures/Tomshine/Tomshine-Mini-Gobo-Moving-Head.qxf
 %%DATADIR%%/fixtures/Triton_Blue/Triton-Blue-Wally-MH-20.qxf
 %%DATADIR%%/fixtures/UKing/UKing-4-Head-Beam-RGBW.qxf
@@ -1517,6 +1591,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/UKing/UKing-Mini-RGBW-Moving-Head.qxf
 %%DATADIR%%/fixtures/UKing/UKing-Par-36.qxf
 %%DATADIR%%/fixtures/UKing/UKing-Wall-Washer-24x3W.qxf
+%%DATADIR%%/fixtures/UKing/UKing-ZQ-02319.qxf
 %%DATADIR%%/fixtures/UKing/UKing-ZQ-B117-Par-Can-4in1-RGBW.qxf
 %%DATADIR%%/fixtures/UKing/UKing-ZQ-B243.qxf
 %%DATADIR%%/fixtures/UKing/UKing-ZQ-B370-Laser.qxf
@@ -1529,6 +1604,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Varytec/Varytec-BAT.BAR-8-RGBW.qxf
 %%DATADIR%%/fixtures/Varytec/Varytec-BAT.PAR-6-RGBUV.qxf
 %%DATADIR%%/fixtures/Varytec/Varytec-BAT.PAR-6-RGBWA.qxf
+%%DATADIR%%/fixtures/Varytec/Varytec-Blitz-Bar-240.qxf
 %%DATADIR%%/fixtures/Varytec/Varytec-Easy-Move-LED-XS-Spot.qxf
 %%DATADIR%%/fixtures/Varytec/Varytec-Easy-Move-LED-XS-Wash.qxf
 %%DATADIR%%/fixtures/Varytec/Varytec-Easy-Scan-XT-Mini.qxf
@@ -1537,6 +1613,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Varytec/Varytec-Gigabar-II.qxf
 %%DATADIR%%/fixtures/Varytec/Varytec-Hero-Beam-100.qxf
 %%DATADIR%%/fixtures/Varytec/Varytec-Hero-Spot-230.qxf
+%%DATADIR%%/fixtures/Varytec/Varytec-Hero-Spot-60.qxf
 %%DATADIR%%/fixtures/Varytec/Varytec-Hero-Spot-90.qxf
 %%DATADIR%%/fixtures/Varytec/Varytec-Hero-Spot-Wash-140-2in1-RGBW+W.qxf
 %%DATADIR%%/fixtures/Varytec/Varytec-Hero-Spot-Wash-80-2in1-RGBW+W.qxf
@@ -1550,12 +1627,15 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/Varytec/Varytec-LED-Hellball-3.qxf
 %%DATADIR%%/fixtures/Varytec/Varytec-LED-Laser-4.qxf
 %%DATADIR%%/fixtures/Varytec/Varytec-LED-Magic-Mushroom.qxf
+%%DATADIR%%/fixtures/Varytec/Varytec-LED-PAR-14x8W.qxf
 %%DATADIR%%/fixtures/Varytec/Varytec-LED-PAR-64-Floor-5in1.qxf
 %%DATADIR%%/fixtures/Varytec/Varytec-LED-PAR56.qxf
 %%DATADIR%%/fixtures/Varytec/Varytec-LED-Pad-7-BA-D.qxf
+%%DATADIR%%/fixtures/Varytec/Varytec-LED-Typhoon-PAR-Outdoor-12x10.qxf
 %%DATADIR%%/fixtures/Varytec/Varytec-RGB-LED-Spot-38.qxf
 %%DATADIR%%/fixtures/Varytec/Varytec-Street-Bar.qxf
 %%DATADIR%%/fixtures/Varytec/Varytec-Thunderscan-FX.qxf
+%%DATADIR%%/fixtures/Varytec/Varytec-Typhoon-True-Kid-720Z-RGBW-IP65.qxf
 %%DATADIR%%/fixtures/Velleman/Velleman-Beam-Driver-250.qxf
 %%DATADIR%%/fixtures/Velleman/Velleman-VDP1500SM.qxf
 %%DATADIR%%/fixtures/Venue/Venue-LEDPAR64.qxf
@@ -1567,16 +1647,19 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/XStatic/XStatic-X-240Bar-RGB.qxf
 %%DATADIR%%/fixtures/beamZ/beamZ-BAC302.qxf
 %%DATADIR%%/fixtures/beamZ/beamZ-BAC406.qxf
+%%DATADIR%%/fixtures/beamZ/beamZ-BAC503.qxf
 %%DATADIR%%/fixtures/beamZ/beamZ-BT270-LED-FlatPAR.qxf
 %%DATADIR%%/fixtures/beamZ/beamZ-BT310-LED-FlatPAR.qxf
 %%DATADIR%%/fixtures/beamZ/beamZ-Fuze-75B-Beam.qxf
 %%DATADIR%%/fixtures/beamZ/beamZ-Illusion-II.qxf
 %%DATADIR%%/fixtures/beamZ/beamZ-LCB-252.qxf
+%%DATADIR%%/fixtures/beamZ/beamZ-LCB244.qxf
 %%DATADIR%%/fixtures/beamZ/beamZ-LED-FlatPAR-154.qxf
 %%DATADIR%%/fixtures/beamZ/beamZ-LS-3DRG.qxf
 %%DATADIR%%/fixtures/beamZ/beamZ-Lucid-1.2.qxf
 %%DATADIR%%/fixtures/beamZ/beamZ-MHL108-Wash-MKII.qxf
 %%DATADIR%%/fixtures/beamZ/beamZ-MHL90-Wash-5x18W-RGBAW-UV.qxf
+%%DATADIR%%/fixtures/beamZ/beamZ-Radical-II.qxf
 %%DATADIR%%/fixtures/beamZ/beamZ-SB200-Stage-Blinder-2x50w.qxf
 %%DATADIR%%/fixtures/beamZ/beamZ-SparkleWall.qxf
 %%DATADIR%%/fixtures/beamZ/beamz-Panther-25-LED-Spot.qxf
@@ -1597,6 +1680,8 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/fixtures/lightmaXX/lightmaXX-Platinum-Line-Mini-TRI-PAR-7x3-W.qxf
 %%DATADIR%%/fixtures/lightmaXX/lightmaXX-Star-Sphere-6-RGBAW.qxf
 %%DATADIR%%/fixtures/lightmaXX/lightmaXX-Tour-Spot-ARC-MKII.qxf
+%%DATADIR%%/fixtures/lightmaXX/lightmaXX-Vector-ARC-Flood-II.qxf
+%%DATADIR%%/fixtures/lightmaXX/lightmaXX-Vega-Arc-Pro-II-MkII.qxf
 %%DATADIR%%/fixtures/lightmaXX/lightmaXX-Vega-Shiggy-Beam-Wash.qxf
 %%DATADIR%%/fixtures/lightmaXX/lightmaXX-Vega-Spot-60.qxf
 %%DATADIR%%/fixtures/lightmaXX/lightmaXX-Vega-Zoom-Wash-Beam.qxf
@@ -1650,6 +1735,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/gobos/Chauvet/gobo00048.svg
 %%DATADIR%%/gobos/Chauvet/gobo00049.svg
 %%DATADIR%%/gobos/Chauvet/gobo00050.png
+%%DATADIR%%/gobos/Chauvet/gobo00051.svg
 %%DATADIR%%/gobos/Chauvet/gobo00052.svg
 %%DATADIR%%/gobos/Chauvet/gobo00053.svg
 %%DATADIR%%/gobos/Chauvet/gobo00054.svg
@@ -1658,7 +1744,7 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/gobos/Chauvet/gobo00057.svg
 %%DATADIR%%/gobos/Chauvet/gobo00058.svg
 %%DATADIR%%/gobos/Chauvet/gobo00059.svg
-%%DATADIR%%/gobos/Chauvet/gobo00060.png
+%%DATADIR%%/gobos/Chauvet/gobo00060.svg
 %%DATADIR%%/gobos/Chauvet/gobo00061.png
 %%DATADIR%%/gobos/Chauvet/gobo00062.svg
 %%DATADIR%%/gobos/Chauvet/gobo00063.svg
@@ -1695,6 +1781,19 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/gobos/Chauvet/gobo00094.svg
 %%DATADIR%%/gobos/Chauvet/gobo00095.svg
 %%DATADIR%%/gobos/Chauvet/gobo00096.svg
+%%DATADIR%%/gobos/Chauvet/gobo00097.svg
+%%DATADIR%%/gobos/Chauvet/gobo00098.svg
+%%DATADIR%%/gobos/Chauvet/gobo00099.svg
+%%DATADIR%%/gobos/Chauvet/gobo00100.svg
+%%DATADIR%%/gobos/Chauvet/gobo00101.svg
+%%DATADIR%%/gobos/Chauvet/gobo00102.svg
+%%DATADIR%%/gobos/Chauvet/gobo00103.svg
+%%DATADIR%%/gobos/Chauvet/gobo00104.svg
+%%DATADIR%%/gobos/Chauvet/gobo00105.svg
+%%DATADIR%%/gobos/Chauvet/gobo00106.svg
+%%DATADIR%%/gobos/Chauvet/gobo00107.svg
+%%DATADIR%%/gobos/Chauvet/gobo00108.svg
+%%DATADIR%%/gobos/Chauvet/gobo00109.svg
 %%DATADIR%%/gobos/ClayPaky/gobo00001.svg
 %%DATADIR%%/gobos/ClayPaky/gobo00002.svg
 %%DATADIR%%/gobos/ClayPaky/gobo00003.svg
@@ -1961,6 +2060,8 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/gobos/Others/gobo00133.svg
 %%DATADIR%%/gobos/Others/gobo00134.svg
 %%DATADIR%%/gobos/Others/gobo00135.svg
+%%DATADIR%%/gobos/Others/gobo00136.svg
+%%DATADIR%%/gobos/Others/gobo00137.svg
 %%DATADIR%%/gobos/Others/open.svg
 %%DATADIR%%/gobos/Others/rainbow.png
 %%DATADIR%%/gobos/Robe/gobo00001.png
@@ -2615,9 +2716,14 @@ share/pixmaps/qlcplus.png
 %%DATADIR%%/inputprofiles/Novation-Launchpad.qxi
 %%DATADIR%%/inputprofiles/Novation-LaunchpadMK2.qxi
 %%DATADIR%%/inputprofiles/Novation-LaunchpadPro.qxi
+%%DATADIR%%/inputprofiles/PMJ-9-Faders-Controller.qxi
+%%DATADIR%%/inputprofiles/PMJ-Circus.qxi
+%%DATADIR%%/inputprofiles/PMJ-MidiKey.qxi
 %%DATADIR%%/inputprofiles/ShowTec-ShowMaster24.qxi
 %%DATADIR%%/inputprofiles/TouchOSC-Automat5.qxi
 %%DATADIR%%/inputprofiles/TouchOSC-Mix16.qxi
+%%DATADIR%%/inputprofiles/Worlde-Easypad.12.qxi
+%%DATADIR%%/inputprofiles/Worlde-OrcaPAD16.qxi
 %%DATADIR%%/inputprofiles/Zoom-R16.qxi
 %%DATADIR%%/miditemplates/APC20.qxm
 %%DATADIR%%/miditemplates/APC40.qxm

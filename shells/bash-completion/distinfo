@@ -1,5 +1,5 @@
-TIMESTAMP = 1636382609
-SHA256 (scop-bash-completion-2.11_GH0.tar.gz) = 16adefabf43ec8ffb473704f5724d775c2f47e9f750d7d608f0251ec21fe8813
-SIZE (scop-bash-completion-2.11_GH0.tar.gz) = 358209
+TIMESTAMP = 1712580504
+SHA256 (scop-bash-completion-2.13.0_GH0.tar.gz) = 6c1cc04bb506e7ba6bd7bb3c7c6f6ad2b46e6198e86666ef4c88139597250601
+SIZE (scop-bash-completion-2.13.0_GH0.tar.gz) = 484155
 SHA256 (0mp-bash-completion-freebsd-1.2.0_GH0.tar.gz) = c6aacb55a913b0b5474579fcfecff38549982046abe0fe81dae89e76c711b2d5
 SIZE (0mp-bash-completion-freebsd-1.2.0_GH0.tar.gz) = 7109

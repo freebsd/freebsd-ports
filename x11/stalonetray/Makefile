@@ -1,9 +1,10 @@
 PORTNAME=	stalonetray
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	x11
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	STAnd-aLONE system tray
 WWW=		https://kolbusa.github.io/stalonetray/
 
@@ -18,6 +19,7 @@ GH_ACCOUNT=	kolbusa
 USE_XORG=	sm ice x11 xpm
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-native-kde \
 		--disable-debug
 

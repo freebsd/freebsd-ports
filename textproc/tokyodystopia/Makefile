@@ -1,5 +1,6 @@
 PORTNAME=	tokyodystopia
 PORTVERSION=	0.9.15
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://dbmx.net/${PORTNAME}/
 
@@ -12,6 +13,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		gmake localbase pathfix
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--libdir=${LOCALBASE}/lib --includedir=${LOCALBASE}/include

@@ -1,6 +1,6 @@
---- configure.orig	2023-02-28 09:24:52 UTC
+--- configure.orig	2024-03-04 05:50:28 UTC
 +++ configure
-@@ -44124,7 +44124,10 @@ _ACEOF
+@@ -43985,7 +43985,10 @@ _ACEOF
  
  else $as_nop
  
@@ -12,7 +12,7 @@
  
  fi
  
-@@ -50983,6 +50986,7 @@ fi
+@@ -50834,6 +50837,7 @@ fi
  
  ac_fn_cxx_check_type "$LINENO" "cpu_set_t" "ac_cv_type_cpu_set_t" "
  #if HAVE_SCHED_H
@@ -20,7 +20,7 @@
  #include <sched.h>
  #endif
  
-@@ -54169,6 +54173,7 @@ else $as_nop
+@@ -54020,6 +54024,7 @@ else $as_nop
  #       include <sys/ioccom.h>
  #       include <netinet/in.h>
  #undef minor_t

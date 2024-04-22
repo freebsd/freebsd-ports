@@ -14,9 +14,9 @@ bin/qmidiarp
 %%LV2%%lib/lv2/qmidiarp_seq.lv2/qmidiarp_seq.ttl
 %%LV2%%lib/lv2/qmidiarp_seq.lv2/qmidiarp_seq_ui.so
 %%LV2%%lib/lv2/qmidiarp_seq.lv2/qmidiarp_seq_ui.ttl
-man/de/man1/qmidiarp.1.gz
-man/fr/man1/qmidiarp.1.gz
-man/man1/qmidiarp.1.gz
+share/man/de/man1/qmidiarp.1.gz
+share/man/fr/man1/qmidiarp.1.gz
+share/man/man1/qmidiarp.1.gz
 share/metainfo/qmidiarp.appdata.xml
 share/applications/qmidiarp.desktop
 share/icons/hicolor/scalable/apps/qmidiarp.svg

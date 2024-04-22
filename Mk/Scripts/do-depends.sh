@@ -24,7 +24,7 @@ install_depends()
 	subpkg=$3
 	depends_args=$4
 	if [ -z "${dp_USE_PACKAGE_DEPENDS}" -a -z "${dp_USE_PACKAGE_DEPENDS_ONLY}" ]; then
-		MAKEFLAGS="${dp_MAKEFLAGS}" ${dp_MAKE} -C ${origin} -DINSTALLS_DEPENDS ${target} ${depends_args}
+		INSTALLS_DEPENDS=1 MAKEFLAGS="${dp_MAKEFLAGS}" ${dp_MAKE} -C ${origin} ${target} ${depends_args}
 		return 0
 	fi
 
@@ -53,7 +53,7 @@ install_depends()
 		echo "===>   USE_PACKAGE_DEPENDS_ONLY set - not building missing dependency from source" >&2
 		exit 1
 	else
-		MAKEFLAGS="${dp_MAKEFLAGS}" ${dp_MAKE} -C ${origin} -DINSTALLS_DEPENDS ${target} ${depends_args}
+		INSTALLS_DEPENDS=1 MAKEFLAGS="${dp_MAKEFLAGS}" ${dp_MAKE} -C ${origin} ${target} ${depends_args}
 	fi
 }
 

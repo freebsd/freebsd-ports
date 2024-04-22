@@ -1,6 +1,6 @@
---- chrome/common/webui_url_constants.cc.orig	2023-12-23 12:33:28 UTC
+--- chrome/common/webui_url_constants.cc.orig	2024-03-22 14:16:19 UTC
 +++ chrome/common/webui_url_constants.cc
-@@ -512,18 +512,18 @@ const char kOsUIShortcutCustomizationAppURL[] = "os://
+@@ -512,18 +512,18 @@ const char kOsUISystemURL[] = "os://system";
  const char kOsUIVersionURL[] = "os://version";
  #endif
  
@@ -38,7 +38,7 @@
 +    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || BUILDFLAG(IS_BSD)
  const char kChromeUIBrowserSwitchHost[] = "browser-switch";
  const char kChromeUIBrowserSwitchURL[] = "chrome://browser-switch/";
- const char kChromeUIEnterpriseProfileWelcomeHost[] =
+ const char kChromeUIIntroHost[] = "intro";
 @@ -564,7 +564,7 @@ const char kChromeUIProfilePickerUrl[] = "chrome://pro
  const char kChromeUIProfilePickerStartupQuery[] = "startup";
  #endif
@@ -48,7 +48,7 @@
       defined(TOOLKIT_VIEWS)) ||                         \
      defined(USE_AURA)
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
-@@ -650,7 +650,7 @@ const char kCookiesSubPagePath[] = "/cookies";
+@@ -644,7 +644,7 @@ const char kCookiesSubPagePath[] = "/cookies";
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -57,7 +57,7 @@
  const char kChromeUIWebAppSettingsURL[] = "chrome://app-settings/";
  const char kChromeUIWebAppSettingsHost[] = "app-settings";
  #endif
-@@ -890,7 +890,7 @@ const char* const kChromeDebugURLs[] = {
+@@ -875,7 +875,7 @@ const char* const kChromeDebugURLs[] = {
      blink::kChromeUIGpuJavaCrashURL,
      kChromeUIJavaCrashURL,
  #endif

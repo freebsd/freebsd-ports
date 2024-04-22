@@ -5,7 +5,7 @@ lib/libgerbv.so
 lib/libgerbv.so.1
 lib/libgerbv.so.1.0.9
 libdata/pkgconfig/libgerbv.pc
-man/man1/gerbv.1.gz
+share/man/man1/gerbv.1.gz
 share/applications/gerbv.desktop
 %%PORTDOCS%%%%DOCSDIR%%/PNG-print/PNGPrintMiniHowto.txt
 %%PORTDOCS%%%%DOCSDIR%%/PNG-print/gimp-window.jpg

@@ -1,5 +1,6 @@
 PORTNAME=	squashfs-tools
 PORTVERSION=	4.6.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/squashfs/squashfs/squashfs${PORTVERSION}
 DISTFILES=	squashfs${PORTVERSION}${EXTRACT_SUFX}
@@ -14,11 +15,14 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 BUILD_DEPENDS=	gsed:textproc/gsed help2man:misc/help2man
 
 USES=		alias cpe gmake
+
+MAKE_ARGS=	INSTALL_MANPAGES_DIR=${PREFIX}/share/man/man1
+
 BINARY_ALIAS=	sed=gsed
 
 PLIST_FILES=	bin/mksquashfs bin/sqfscat bin/sqfstar bin/unsquashfs \
-		man/man1/mksquashfs.1.gz man/man1/sqfscat.1.gz \
-		man/man1/sqfstar.1.gz man/man1/unsquashfs.1.gz
+		share/man/man1/mksquashfs.1.gz share/man/man1/sqfscat.1.gz \
+		share/man/man1/sqfstar.1.gz share/man/man1/unsquashfs.1.gz
 
 OPTIONS_DEFINE=	DOCS LZ4 LZMA LZO XZ ZSTD
 OPTIONS_DEFAULT=	LZ4 LZMA LZO XZ ZSTD

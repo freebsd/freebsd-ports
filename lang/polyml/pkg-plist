@@ -4,9 +4,9 @@ bin/polyimport
 lib/libpolymain.a
 lib/libpolyml.a
 lib/libpolyml.so
-lib/libpolyml.so.13
-lib/libpolyml.so.13.0.0
+lib/libpolyml.so.14
+lib/libpolyml.so.14.0.0
 libdata/pkgconfig/polyml.pc
-man/man1/poly.1.gz
-man/man1/polyc.1.gz
-man/man1/polyimport.1.gz
+share/man/man1/poly.1.gz
+share/man/man1/polyc.1.gz
+share/man/man1/polyimport.1.gz

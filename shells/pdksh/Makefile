@@ -1,14 +1,12 @@
 PORTNAME=	pdksh
 PORTVERSION=	5.2.14p2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	shells
-MASTER_SITES=	http://gd.tuwien.ac.at/utils/shells/pdksh/ \
-		ftp://ftp.lip6.fr/pub/unix/shells/pdksh/ \
-		ftp://ftp.demon.net/pub/mirrors/pdksh/
+MASTER_SITES= https://ftp.lip6.fr/pub/unix/shells/pdksh/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/p.*//}
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${DISTNAME}-patches.1 ${DISTNAME}-patches.2
+PATCHFILES=	${DISTNAME}-patches.1.gz ${DISTNAME}-patches.2.gz
 PATCH_DIST_STRIP=	-p2
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -17,10 +15,10 @@ WWW=		http://www.cs.mun.ca/~michael/pdksh/
 
 LICENSE=	BSD3CLAUSE
 
-OPTIONS_DEFINE=	STATIC
-
 GNU_CONFIGURE=	yes
 CPP+=		-P
+
+OPTIONS_DEFINE=	STATIC
 
 STATIC_CONFIGURE_ENV+=	LDSTATIC=-static
 

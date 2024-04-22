@@ -1,6 +1,6 @@
 PORTNAME=	wbar
 PORTVERSION=	2.3.4
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	x11
 MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/${PORTNAME}/
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 USES=		compiler:c++11-lang gettext gmake gnome pkgconfig tar:tgz
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 LDFLAGS+=	-L${LOCALBASE}/lib
 

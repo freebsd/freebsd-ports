@@ -1,5 +1,6 @@
 PORTNAME=	cloudflare
 PORTVERSION=	4.3.0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +10,7 @@ WWW=		https://github.com/socketry/cloudflare
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-async-rest>=0.12.3<0.13:www/rubygem-async-rest
+RUN_DEPENDS=	rubygem-async-rest>=0.12.3<1:www/rubygem-async-rest
 
 USES=		gem
 

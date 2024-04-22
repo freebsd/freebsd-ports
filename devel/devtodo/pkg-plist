@@ -6,13 +6,13 @@ bin/tdl
 bin/tdr
 bin/todo
 @sample etc/todorc.sample
-man/man1/devtodo.1.gz
-man/man1/tda.1.gz
-man/man1/tdd.1.gz
-man/man1/tde.1.gz
-man/man1/tdl.1.gz
-man/man1/tdr.1.gz
-man/man1/todo.1.gz
+share/man/man1/devtodo.1.gz
+share/man/man1/tda.1.gz
+share/man/man1/tdd.1.gz
+share/man/man1/tde.1.gz
+share/man/man1/tdl.1.gz
+share/man/man1/tdr.1.gz
+share/man/man1/todo.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts.tcsh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/todorc.example

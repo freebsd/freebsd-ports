@@ -1,5 +1,5 @@
 PORTNAME=	sphinx-markdown-tables
-PORTVERSION=	0.0.15
+PORTVERSION=	0.0.17
 PORTEPOCH=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
@@ -12,7 +12,7 @@ WWW=		https://github.com/ryanfox/sphinx-markdown-tables
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>=0:textproc/py-markdown@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>=3.4:textproc/py-markdown@${PY_FLAVOR}
 
 USES=		dos2unix python
 USE_PYTHON=	autoplist distutils concurrent

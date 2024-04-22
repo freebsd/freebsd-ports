@@ -1,15 +1,9 @@
 PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
-DISTVERSION=	21.0.99.1-653
-DISTVERSIONSUFFIX=	-g2ef0f1116
+DISTVERSION=	21.0.99.1-1020
+DISTVERSIONSUFFIX=	-g43f47e8e6
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
-
-PATCH_SITES+=	https://github.com/mirror/${GL_PROJECT}/commit/:github
-PATCHFILES+=	cd6c9c1246af.patch:-p1:github # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
-PATCHFILES+=	91b97b031290.patch:-p1:github # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
-PATCHFILES+=	3b0d1a3a2296.patch:-p1:github # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
-PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	X11 server as Wayland client (development snapshot)
@@ -37,6 +31,7 @@ USE_XORG=	pixman xau xdmcp xfont2 xkbfile xshmfence xtrans
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	xorg
 GL_PROJECT=	xserver
+GL_TUPLE=	xorg/proto:xorgproto:xorgproto-2024.1:xorgproto/subprojects/xorgproto
 MESON_ARGS=	-D${PORTNAME}=true \
 		-Dxorg=false \
 		-Dxnest=false \
@@ -44,6 +39,7 @@ MESON_ARGS=	-D${PORTNAME}=true \
 		-Dudev=false \
 		-Dudev_kms=false \
 		-Dxcsecurity=true \
+		-Dxkb_output_dir=/var/lib/xkb \
 		-Ddefault_font_path="${DEFAULT_FONTPATH_LIST:ts,}"
 PLIST_FILES=	bin/Xwayland \
 		"@comment lib/xorg/protocol.txt" \
@@ -64,7 +60,7 @@ DEFAULT_FONTPATH_LIST= \
 	${FONTPATH_ROOT}/75dpi/ \
 	catalogue:${FONTPATHD}
 
-OPTIONS_DEFINE=	CSD EI NVIDIA
+OPTIONS_DEFINE=	CSD EI
 OPTIONS_DEFAULT=CSD EI
 
 CSD_DESC=		Client-side decorations via libdecor
@@ -75,8 +71,10 @@ EI_DESC=		Emulated input via libei
 EI_LIB_DEPENDS=		libei.so:x11/libei
 EI_MESON_OFF=		-Dxwayland_ei=false
 
-NVIDIA_DESC=		EGLStream support for glamor on Xwayland
-NVIDIA_BUILD_DEPENDS=	egl-wayland>0:graphics/egl-wayland
-NVIDIA_MESON_TRUE=	xwayland_eglstream
+.ifdef GL_TUPLE
+post-configure:
+	@${REINPLACE_CMD} 's/meson install/& \
+		--skip-subprojects/' ${BUILD_WRKSRC}/build.ninja
+.endif
 
 .include <bsd.port.mk>

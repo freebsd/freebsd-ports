@@ -1,8 +1,7 @@
 PORTNAME=	hexchat
-DISTVERSION=	2.16.1
-PORTREVISION=	5
+DISTVERSION=	2.16.2
 CATEGORIES=	irc gnome
-MASTER_SITES=	https://dl.hexchat.net/hexchat/
+MASTER_SITES=	https://github.com/hexchat/hexchat/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	IRC chat program with GTK and Text Frontend
@@ -10,6 +9,8 @@ WWW=		https://hexchat.github.io/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Repo archived upstream as of 2024-02-10
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 		${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR}
@@ -48,11 +49,9 @@ TEXTFE_DESC=		Text frontend
 SYSINFO_DESC=		Sysinfo plugin
 
 CANBERRA_LIB_DEPENDS=	libcanberra.so:audio/libcanberra
-CANBERRA_MESON_ON=	-Dlibcanberra=enabled
-CANBERRA_MESON_OFF=	-Dlibcanberra=disabled
+CANBERRA_MESON_ENABLED=	libcanberra
 DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
-DBUS_MESON_ON=		-Ddbus=enabled
-DBUS_MESON_OFF=		-Ddbus=disabled
+DBUS_MESON_ENABLED=	dbus
 FISHLIM_MESON_TRUE=	with-fishlim
 LUA_MESON_ON=		-Dwith-lua=lua-${LUA_VER}
 LUA_MESON_OFF=		-Dwith-lua=false

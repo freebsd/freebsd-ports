@@ -1,5 +1,6 @@
 PORTNAME=	sowon
 DISTVERSION=	g20201203
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	nsonack@outlook.com
@@ -18,6 +19,11 @@ GH_TAGNAME=	0d43de4af5a430052aee2c2691fafe21ad80a83d
 USE_SDL=	sdl2
 
 PLIST_FILES=	bin/sowon \
-		man/man6/sowon.6.gz
+		share/man/man6/sowon.6.gz
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/sowon ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/docs/sowon.6.gz \
+		${STAGEDIR}${PREFIX}/share/man/man6
 
 .include <bsd.port.mk>

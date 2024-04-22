@@ -2,7 +2,7 @@ PORTNAME=	neolink
 PORTVERSION=	0.3.0
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	g20210903
-PORTREVISION=	22
+PORTREVISION=	24
 CATEGORIES=	multimedia
 
 MAINTAINER=	kevans@FreeBSD.org
@@ -11,6 +11,8 @@ WWW=		https://github.com/thirtythreeforty/neolink
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_powerpc64le=	rust compiler crashes, see https://github.com/rust-lang/rust/issues/120583
 
 LIB_DEPENDS=	libgstrtspserver-1.0.so:multimedia/gstreamer1-rtsp-server
 

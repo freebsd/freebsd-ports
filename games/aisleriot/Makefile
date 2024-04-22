@@ -1,6 +1,5 @@
 PORTNAME=	aisleriot
-DISTVERSION=	3.22.25
-PORTREVISION=	4
+DISTVERSION=	3.22.30
 CATEGORIES=	games gnome
 DIST_SUBDIR=	gnome
 
@@ -26,7 +25,7 @@ USE_XORG=	x11
 
 GL_SITE=	https://gitlab.gnome.org/
 GL_ACCOUNT=	GNOME
-GL_TAGNAME=	8a4542d2f44ee1425a56ac7595ed51449ae0290e
+GL_TAGNAME=	40c064e3488a131b5f21e36e7657728b639f4d38
 
 MESON_ARGS=	-Dtheme_kde=false -Dguile=${GUILE_VER}
 SHEBANG_FILES=	data/icons/meson_updateiconcache.py \

@@ -1,5 +1,5 @@
 PORTNAME=	artifacts
-PORTVERSION=	20221219
+PORTVERSION=	20230928
 CATEGORIES=	security python
 MASTER_SITES=	PYPI \
 		https://github.com/ForensicArtifacts/artifacts/releases/download/${PORTVERSION}/

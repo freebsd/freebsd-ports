@@ -1,3 +1,5 @@
+include/vk_video/vulkan_video_codec_av1std.h
+include/vk_video/vulkan_video_codec_av1std_decode.h
 include/vk_video/vulkan_video_codec_h264std.h
 include/vk_video/vulkan_video_codec_h264std_decode.h
 include/vk_video/vulkan_video_codec_h264std_encode.h
@@ -46,7 +48,7 @@ share/vulkan/registry/apiconventions.py
 share/vulkan/registry/cgenerator.py
 share/vulkan/registry/generator.py
 share/vulkan/registry/parse_dependency.py
-share/vulkan/registry/profiles/VP_KHR_roadmap_2022.json
+share/vulkan/registry/profiles/VP_KHR_roadmap.json
 share/vulkan/registry/reg.py
 share/vulkan/registry/spec_tools/conventions.py
 share/vulkan/registry/spec_tools/util.py

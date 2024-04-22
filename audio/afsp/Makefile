@@ -1,5 +1,6 @@
 PORTNAME=	afsp
 PORTVERSION=	8.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www-mmsp.ece.mcgill.ca/Documents/Downloads/AFsp/
 DISTNAME=	AFsp-v8r2

@@ -1,6 +1,6 @@
 PORTNAME=	cmdtest
 PORTVERSION=	0.33.s20191128
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://git.liw.fi/cmdtest/snapshot/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,6 +25,6 @@ USE_PYTHON=	distutils concurrent autoplist
 NO_ARCH=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,python3,${PYTHON_CMD},g ; s,share/man/,man/," ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e "s,python3,${PYTHON_CMD},g" ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

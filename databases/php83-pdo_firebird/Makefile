@@ -1,5 +1,7 @@
 CATEGORIES=	databases
 
+PORTREVISION=	0
+
 MASTERDIR=	${.CURDIR}/../../lang/php83
 
 PKGNAMESUFFIX=	-pdo_firebird

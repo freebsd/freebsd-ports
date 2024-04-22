@@ -1,5 +1,6 @@
 PORTNAME=	sdparm
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
 
@@ -17,7 +18,7 @@ SHEBANG_FILES=	scripts/sas_disk_blink
 
 PLIST_FILES=	bin/sas_disk_blink \
 		bin/sdparm \
-		man/man8/sas_disk_blink.8.gz \
-		man/man8/sdparm.8.gz
+		share/man/man8/sas_disk_blink.8.gz \
+		share/man/man8/sdparm.8.gz
 
 .include <bsd.port.mk>

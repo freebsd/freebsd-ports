@@ -45,4 +45,4 @@
 +install: all
 +	install -c -s $(EXETARGET) $(DESTDIR)$(PREFIX)/bin
 +	gzip -c < html2latex.1 > html2latex.1.gz
-+	install -c html2latex.1.gz $(DESTDIR)$(PREFIX)/man/man1
++	install -c html2latex.1.gz $(DESTDIR)$(PREFIX)/share/man/man1

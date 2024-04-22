@@ -1,7 +1,7 @@
 PORTNAME=	grive2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.2-dev
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	net
 
 MAINTAINER=	samuel@andersentech.net
@@ -27,7 +27,7 @@ GH_ACCOUNT=	vitalif
 GH_TAGNAME=	ffb744a
 
 PLIST_FILES=	bin/grive \
-		man/man1/grive.1.gz
+		share/man/man1/grive.1.gz
 
 OPTIONS_DEFINE=	BACKTRACE
 

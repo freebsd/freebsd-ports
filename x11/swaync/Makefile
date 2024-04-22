@@ -1,7 +1,6 @@
 PORTNAME=	swaync
 DISTVERSIONPREFIX=	v
-PORTVERSION=	0.9.0
-PORTREVISION=	3
+PORTVERSION=	0.10.1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,13 +10,14 @@ WWW=		https://github.com/ErikReider/SwayNotificationCenter
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
-		libjson-glib-1.0.so:devel/json-glib \
+BUILD_DEPENDS=	sassc:textproc/sassc
+LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libgee-0.8.so:devel/libgee \
+		libgranite.so:x11-toolkits/granite \
 		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell \
 		libhandy-1.so:x11-toolkits/libhandy
 
-USES=		compiler:c11 gnome localbase:ldflags meson pkgconfig \
+USES=		compiler:c11 gnome meson pkgconfig \
 		python:build shebangfix vala:build
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
@@ -26,14 +26,17 @@ GH_PROJECT=	SwayNotificationCenter
 SHEBANG_FILES=	build-aux/meson/postinstall.py
 GLIB_SCHEMAS=	org.erikreider.swaync.gschema.xml
 
-OPTIONS_DEFINE=	MANPAGES
-OPTIONS_DEFAULT=MANPAGES
+OPTIONS_DEFINE=	MANPAGES PULSEAUDIO
+OPTIONS_DEFAULT=MANPAGES PULSEAUDIO
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_TRUE=	man-pages
 MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz \
 			share/man/man1/${PORTNAME}-client.1.gz \
 			share/man/man5/${PORTNAME}.5.gz
+
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+PULSEAUDIO_MESON_TRUE=	pulse-audio
 
 post-patch:
 # Extract (snapshot) version from the port instead of meson.build
@@ -43,8 +46,10 @@ post-patch:
 # Let @sample handle default files under etc/
 	@${REINPLACE_CMD} -e "s,'/',get_option('prefix')," \
 		-e "/output.*json/s/'[^']*/&.sample/" \
-		-e "/inst.*css/s/'[^']*/&', rename: &.sample/1" \
 		${WRKSRC}/src/meson.build
+	@${REINPLACE_CMD} -e "s,'/',get_option('prefix')," \
+		-e "/output.*css/s/'[^']*/&.sample/" \
+		${WRKSRC}/data/meson.build
 # Respect PREFIX in manpages
 	@${REINPLACE_CMD} 's,/etc,${PREFIX}&,' \
 		${WRKSRC}/man/${PORTNAME}.1.scd

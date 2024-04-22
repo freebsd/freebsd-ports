@@ -1,0 +1,15 @@
+Run Rust script files without any setup or explicit compilation step,
+with seamless use of crates specified as dependencies inside the
+scripts.
+
+With rust-script Rust files and expressions can be executed just like
+a shell or Python script. Features include:
+
+- Caching compiled artifacts for speed.
+- Reading Cargo manifests embedded in Rust scripts.
+- Supporting executable Rust scripts via Unix shebangs and Windows
+  file associations.
+- Using expressions as stream filters (i.e. for use in command pipelines).
+- Running unit tests and benchmarks from scripts.
+
+You can get an overview of the available options using the --help flag.

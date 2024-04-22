@@ -87,10 +87,6 @@ PLIST_SUB+=		OCTAVE_OCT_SITE_DIR=${OCTAVE_OCT_SITE_DIR:sh}/
 PLIST_SUB+=		OCTAVE_M_SITE_DIR=${OCTAVE_M_SITE_DIR:sh}/
 .endif
 
-.if ${PORT_OPTIONS:MDEBUG}
-WITH_DEBUG=	yes
-.endif
-
 post-build:
 # N.B. COPYTREE_BIN here chmods 555 which breaks CMAKE_INSTALL in user mode!
 	(cd ${BUILD_WRKSRC}/bin && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/bin)

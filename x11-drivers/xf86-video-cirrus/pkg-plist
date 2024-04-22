@@ -1,2 +1,2 @@
 lib/xorg/modules/drivers/cirrus_drv.so
-man/man4/cirrus.4x.gz
+share/man/man4/cirrus.4x.gz

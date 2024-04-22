@@ -1,5 +1,6 @@
 PORTNAME=	kwin
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-wm kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -24,13 +25,11 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxcvt.so:x11/libxcvt
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
-		xwayland-devel>0:x11-servers/xwayland-devel \
+		Xwayland:x11-servers/xwayland \
 		wayland-protocols>0:graphics/wayland-protocols \
 		hwdata>0:misc/hwdata
-RUN_DEPENDS=	xwayland-devel>0:x11-servers/xwayland-devel \
+RUN_DEPENDS=	Xwayland:x11-servers/xwayland \
 		hwdata>0:misc/hwdata
-
-CONFLICTS_INSTALL=	kwinft # bin/kwin_wayland
 
 USES=		cmake compiler:c++11-lib gettext gl gnome kde:5 pkgconfig qt:5 \
 		shebangfix tar:xz xorg \

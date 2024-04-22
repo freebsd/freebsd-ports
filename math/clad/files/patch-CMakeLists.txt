@@ -1,18 +1,16 @@
---- CMakeLists.txt.orig	2023-07-19 08:50:39 UTC
+--- CMakeLists.txt.orig	2024-02-29 15:28:44 UTC
 +++ CMakeLists.txt
-@@ -299,9 +299,13 @@ if (CLAD_INCLUDE_DOCS)
- endif()
+@@ -309,10 +309,14 @@ if (NOT CLAD_BUILD_STATIC_ONLY)
+   string(REPLACE "-fno-lifetime-dse" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+   string(REPLACE "-Wno-class-memaccess" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
  
- if (NOT CLAD_BUILD_STATIC_ONLY)
--  add_subdirectory(test)
--  add_subdirectory(demos/ErrorEstimation/CustomModel)
--  add_subdirectory(demos/ErrorEstimation/PrintModel)
 +  if (FREEBSD_BUILD_TESTS)
-+    add_subdirectory(test)
+   add_subdirectory(unittests)
+   add_subdirectory(test)
 +  endif()
 +  if (FREEBSD_BUILD_DEMOS)
-+    add_subdirectory(demos/ErrorEstimation/CustomModel)
-+    add_subdirectory(demos/ErrorEstimation/PrintModel)
+   add_subdirectory(demos/ErrorEstimation/CustomModel)
+   add_subdirectory(demos/ErrorEstimation/PrintModel)
 +  endif()
  
    # Add benchmarking infrastructure.

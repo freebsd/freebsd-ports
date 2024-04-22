@@ -1,11 +1,11 @@
---- third_party/blink/renderer/platform/video_capture/video_capture_impl.cc.orig	2023-12-10 06:10:27 UTC
+--- third_party/blink/renderer/platform/video_capture/video_capture_impl.cc.orig	2024-04-19 13:02:56 UTC
 +++ third_party/blink/renderer/platform/video_capture/video_capture_impl.cc
-@@ -634,7 +634,7 @@ bool VideoCaptureImpl::VideoFrameBufferPreparer::BindV
+@@ -676,7 +676,7 @@ bool VideoCaptureImpl::BindVideoFrameOnMediaTaskRunner
    }
  
    const unsigned texture_target =
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-       // Explicitly set GL_TEXTURE_EXTERNAL_OES as the
+       // Explicitly set GL_TEXTURE_EXTERNAL_OES if necessary:
        // `media::VideoFrame::RequiresExternalSampler()` requires it for NV12
-       // format, while the `ImageTextureTarget()` will return GL_TEXTURE_2D.
+       // format, while `ClientSharedImage::GetTextureTarget(BufferUsage,

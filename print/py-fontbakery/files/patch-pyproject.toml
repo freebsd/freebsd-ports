@@ -1,0 +1,29 @@
+--- pyproject.toml.orig	2024-04-17 19:14:00 UTC
++++ pyproject.toml
+@@ -29,7 +29,7 @@ dependencies = [
+ 
+ dependencies = [
+ 	"fontTools >= 4.46.0",
+-	"freetype-py < 2.4.0",
++	"freetype-py",
+ 	"opentypespec",
+ 	"opentype-sanitizer >= 9.1.0, == 9.*",
+ 	"munkres",
+@@ -43,7 +43,7 @@ dependencies = [
+ 	"requests",
+ 	"beziers >= 0.5.0, == 0.5.*",
+ 	"uharfbuzz",
+-	"vharfbuzz >= 0.2.0, == 0.2.*",
++	"vharfbuzz >= 0.2.0",
+     "typing_extensions ; python_version < '3.11'",
+ ]
+ 
+@@ -110,7 +110,7 @@ googlefonts = [
+     "fonttools[lxml,unicode]",
+     # (see https://github.com/googlefonts/gflanguages/pull/7)
+ 
+-    "protobuf >= 3.7.0, < 4",
++    "protobuf >= 3.7.0",
+     # 3.7.0 fixed a bug on parsing some METADATA.pb files.
+     # We cannot use v4 because our protobuf files have been compiled with v3.
+     # (see https://github.com/fonttools/fontbakery/issues/2200)

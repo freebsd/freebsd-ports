@@ -1,9 +1,9 @@
 PORTNAME=	xfun
-PORTVERSION=	0.40
+PORTVERSION=	0.43
 CATEGORIES=	misc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Miscellaneous Functions by Yihui Xie
 WWW=		https://cran.r-project.org/web/packages/xfun/
 

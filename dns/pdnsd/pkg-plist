@@ -1,7 +1,4 @@
 @sample etc/pdnsd.conf.sample
-man/man5/pdnsd.conf.5.gz
-man/man8/pdnsd-ctl.8.gz
-man/man8/pdnsd.8.gz
 sbin/pdnsd
 sbin/pdnsd-ctl
 %%PORTDOCS%%%%DOCSDIR%%/dl.html
@@ -11,4 +8,7 @@ sbin/pdnsd-ctl
 %%PORTDOCS%%%%DOCSDIR%%/faq.txt
 %%PORTDOCS%%%%DOCSDIR%%/intro.txt
 %%PORTDOCS%%%%DOCSDIR%%/manual.txt
+share/man/man5/pdnsd.conf.5.gz
+share/man/man8/pdnsd-ctl.8.gz
+share/man/man8/pdnsd.8.gz
 @dir(nobody,,755) /var/db/pdnsd

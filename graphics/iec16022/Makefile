@@ -1,5 +1,6 @@
 PORTNAME=	iec16022
 DISTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/rdoeffinger/${PORTNAME}/releases/download/v${DISTVERSION}/
 

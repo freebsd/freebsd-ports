@@ -1,5 +1,5 @@
 PORTNAME=	dnsdist
-DISTVERSION=	1.8.3
+DISTVERSION=	1.9.3
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 
@@ -18,7 +18,8 @@ NOT_FOR_ARCHS_REASON=	archs with 32-bits time_t are no longer supported by upstr
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
-		libh2o-evloop.so:www/h2o \
+		libnghttp2.so:www/libnghttp2 \
+		libquiche.so:net/quiche \
 		libre2.so:devel/re2 \
 		libsodium.so:security/libsodium
 
@@ -28,8 +29,11 @@ CPE_VENDOR=	powerdns
 USE_RC_SUBR=	dnsdist
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
+		--enable-dns-over-http3 \
 		--enable-dns-over-https \
+		--enable-dns-over-quic \
 		--enable-dns-over-tls \
 		--enable-dnscrypt \
 		--sysconfdir=${ETCDIR} \
@@ -37,6 +41,7 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 		--with-re2
 
 INSTALL_TARGET=	install-strip
+LDFLAGS+=	-Wl,--as-needed
 
 USERS=		_dnsdist
 GROUPS=		_dnsdist

@@ -12,14 +12,12 @@ bin/bwild
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/WindowsAllDrives.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-gfapi.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-ldap.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-ovirt.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupCatalog.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupGFAPI.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreFiles.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreGFAPI.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-bareos-fd.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-ldap.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-ovirt.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/restore-ldap.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/jobdefs/DefaultJob.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/messages/Daemon.conf.sample
@@ -47,7 +45,6 @@ bin/bwild
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/storage/bareos-sd.conf.sample
 %%MTX%%@sample(,bareos,640) %%ETCDIR%%/mtx-changer.conf.sample
 etc/logrotate.d/bareos-dir
-lib/bareos/backends/libbareoscats-%%DBTYPE%%.so
 lib/bareos/backends/libbareossd-fifo.so
 lib/bareos/backends/libbareossd-file.so
 %%GFAPI%%lib/bareos/backends/libbareossd-gfapi.so
@@ -70,22 +67,23 @@ lib/bareos/scripts/bareos-ctl-sd
 lib/bareos/scripts/bareos-explorer
 lib/bareos/scripts/bareos-glusterfind-wrapper
 lib/bareos/scripts/create_bareos_database
-%%PGSQL%%lib/bareos/scripts/ddl/creates/%%DBTYPE%%.sql
-%%PGSQL%%lib/bareos/scripts/ddl/drops/%%DBTYPE%%.sql
-%%PGSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%-change_owner.dbconfig-template.sql
-%%PGSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%-readonly.sql
-%%PGSQL%%lib/bareos/scripts/ddl/grants/%%DBTYPE%%.sql
-lib/bareos/scripts/ddl/updates/%%DBTYPE%%.10_11.sql
-lib/bareos/scripts/ddl/updates/%%DBTYPE%%.11_12.sql
-lib/bareos/scripts/ddl/updates/%%DBTYPE%%.12_14.sql
-lib/bareos/scripts/ddl/updates/%%DBTYPE%%.14_2001.sql
-lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2001_2002.sql
-lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2002_2003.sql
-lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2003_2004.sql
-lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2004_2171.sql
-lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2171_2192.sql
-lib/bareos/scripts/ddl/updates/%%DBTYPE%%.2192_2210.sql
-%%PGSQL%%lib/bareos/scripts/ddl/updates/%%DBTYPE%%.bee.1017_2004.sql
+%%PGSQL%%lib/bareos/scripts/ddl/creates/postgresql.sql
+%%PGSQL%%lib/bareos/scripts/ddl/drops/postgresql.sql
+%%PGSQL%%lib/bareos/scripts/ddl/grants/postgresql-change_owner.dbconfig-template.sql
+%%PGSQL%%lib/bareos/scripts/ddl/grants/postgresql-readonly.sql
+%%PGSQL%%lib/bareos/scripts/ddl/grants/postgresql.sql
+lib/bareos/scripts/ddl/updates/postgresql.10_11.sql
+lib/bareos/scripts/ddl/updates/postgresql.11_12.sql
+lib/bareos/scripts/ddl/updates/postgresql.12_14.sql
+lib/bareos/scripts/ddl/updates/postgresql.14_2001.sql
+lib/bareos/scripts/ddl/updates/postgresql.2001_2002.sql
+lib/bareos/scripts/ddl/updates/postgresql.2002_2003.sql
+lib/bareos/scripts/ddl/updates/postgresql.2003_2004.sql
+lib/bareos/scripts/ddl/updates/postgresql.2004_2171.sql
+lib/bareos/scripts/ddl/updates/postgresql.2171_2192.sql
+lib/bareos/scripts/ddl/updates/postgresql.2192_2210.sql
+lib/bareos/scripts/ddl/updates/postgresql.2210_2230.sql
+%%PGSQL%%lib/bareos/scripts/ddl/updates/postgresql.bee.1017_2004.sql
 lib/bareos/scripts/ddl/versions.map
 lib/bareos/scripts/delete_catalog_backup
 lib/bareos/scripts/disk-changer
@@ -94,21 +92,17 @@ lib/bareos/scripts/drop_bareos_tables
 lib/bareos/scripts/grant_bareos_privileges
 lib/bareos/scripts/make_bareos_tables
 lib/bareos/scripts/make_catalog_backup
-lib/bareos/scripts/make_catalog_backup.pl
 lib/bareos/scripts/mtx-changer
 lib/bareos/scripts/query.sql
 lib/bareos/scripts/update_bareos_tables
-lib/libbareoscats.so
-lib/libbareoscats.so.22
-lib/libbareoscats.so.%%LIB_VERSION%%
 %%NDMP%%lib/libbareosndmp.so
-%%NDMP%%lib/libbareosndmp.so.22
+%%NDMP%%lib/libbareosndmp.so.23
 %%NDMP%%lib/libbareosndmp.so.%%LIB_VERSION%%
 lib/libbareossd.so
-lib/libbareossd.so.22
+lib/libbareossd.so.23
 lib/libbareossd.so.%%LIB_VERSION%%
 lib/libbareossql.so
-lib/libbareossql.so.22
+lib/libbareossql.so.23
 lib/libbareossql.so.%%LIB_VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/bareosdir%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/bareossd%%PYTHON_EXT_SUFFIX%%.so

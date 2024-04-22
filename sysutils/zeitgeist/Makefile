@@ -2,7 +2,7 @@
 
 PORTNAME=	zeitgeist
 DISTVERSION=	1.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	kwm@FreeBSD.org
@@ -30,6 +30,7 @@ USE_LDCONFIG=	yes
 USE_PYTHON=	py3kplist
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-fts --disable-telepathy \
 		--disable-downloads-monitor
 

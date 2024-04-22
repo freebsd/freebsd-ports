@@ -1,6 +1,6 @@
---- net/tools/cert_verify_tool/cert_verify_comparision_tool.cc.orig	2023-11-03 10:09:45 UTC
+--- net/tools/cert_verify_tool/cert_verify_comparision_tool.cc.orig	2024-02-23 21:04:38 UTC
 +++ net/tools/cert_verify_tool/cert_verify_comparision_tool.cc
-@@ -34,7 +34,7 @@
+@@ -35,7 +35,7 @@
  #include "net/url_request/url_request_context_builder.h"
  #include "net/url_request/url_request_context_getter.h"
  
@@ -9,7 +9,7 @@
  #include "net/proxy_resolution/proxy_config.h"
  #include "net/proxy_resolution/proxy_config_service_fixed.h"
  #endif
-@@ -54,7 +54,7 @@ void SetUpOnNetworkThread(
+@@ -55,7 +55,7 @@ void SetUpOnNetworkThread(
      base::WaitableEvent* initialization_complete_event) {
    net::URLRequestContextBuilder url_request_context_builder;
    url_request_context_builder.set_user_agent(GetUserAgent());
@@ -18,7 +18,7 @@
    // On Linux, use a fixed ProxyConfigService, since the default one
    // depends on glib.
    //
-@@ -125,7 +125,7 @@ class CertVerifyImpl {
+@@ -123,7 +123,7 @@ class CertVerifyImpl {
  std::unique_ptr<CertVerifyImpl> CreateCertVerifyImplFromName(
      base::StringPiece impl_name,
      scoped_refptr<net::CertNetFetcher> cert_net_fetcher) {

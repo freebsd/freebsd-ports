@@ -27,7 +27,7 @@ lib/libthunarx-3.so.0.0.0
 %%PLUG_WALL%%lib/thunarx-3/thunar-wallpaper-plugin.so
 %%PLUG_TPA%%lib/xfce4/panel/plugins/libthunar-tpa.so
 libdata/pkgconfig/thunarx-3.pc
-man/man1/Thunar.1.gz
+share/man/man1/Thunar.1.gz
 share/Thunar/sendto/thunar-sendto-email.desktop
 share/applications/thunar-bulk-rename.desktop
 share/applications/thunar.desktop

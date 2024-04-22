@@ -1,6 +1,6 @@
 PORTNAME=	fix-mime-charset
 PORTVERSION=	0.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	converters textproc russian ukrainian
 MASTER_SITES=	SF/fix-mime-chr/${PORTNAME}/${PORTVERSION}
 
@@ -17,9 +17,10 @@ USES=		localbase perl5
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=	bin/fix-mime-charset \
-		man/man1/fix-mime-charset.1.gz
+		share/man/man1/fix-mime-charset.1.gz
 PORTDOCS=	README.koi8r README
 
 OPTIONS_DEFINE=	DOCS

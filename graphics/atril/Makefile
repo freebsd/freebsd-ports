@@ -2,8 +2,7 @@
 # Please update update atril-lite also
 
 PORTNAME=	atril
-PORTVERSION=	1.26.0
-PORTREVISION=	22
+PORTVERSION=	1.28.0
 CATEGORIES=	graphics print mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -28,11 +27,12 @@ SLAVEPORT?=	no
 
 USES=		compiler:c11 desktop-file-utils gettext gmake gnome libarchive \
 		libtool mate pathfix pkgconfig tar:xz xorg
-USE_MATE=	icontheme
+USE_MATE=	icontheme desktop:build
 USE_XORG=	ice sm x11
 USE_GNOME=	cairo gtk30 intlhack libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-static \
 		--disable-synctex
 CPPFLAGS+=	-I${LOCALBASE}/include

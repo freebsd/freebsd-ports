@@ -1,7 +1,7 @@
 PORTNAME=	caffe
 DISTVERSION=	1.0-136
 DISTVERSIONSUFFIX=	-g9b891540
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc # machine-learning
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -46,6 +46,7 @@ GH_ACCOUNT=	BVLC
 CMAKE_ARGS=	-DBLAS=Open \
 		-DPYTHON_EXECUTABLE=${PYTHON_CMD} \
 		-DFREEBSD_PYTHONPREFIX_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR}
+CXXFLAGS+=	-DGLOG_USE_GLOG_EXPORT
 LDFLAGS+=	-lpython${PYTHON_VER}
 
 PORTSCOUT=	limit:^[0-9].*[0-9]$$ # should begin and end with a digit to prevent tags like rcnn-release and rc5

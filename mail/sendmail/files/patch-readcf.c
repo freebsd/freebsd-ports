@@ -1,26 +1,26 @@
---- sendmail/readcf.c.orig	2021-07-14 05:34:51 UTC
+--- sendmail/readcf.c.orig	2024-01-25 05:27:02 UTC
 +++ sendmail/readcf.c
-@@ -3056,6 +3056,10 @@ static struct optioninfo
+@@ -3208,6 +3208,10 @@ static struct optioninfo
  	{ "CipherSuites",		O_CIPHERSUITES,	OI_NONE	},
  #endif
  
 +#if USE_BLACKLIST
-+# define O_BLACKLIST		0xf2
++# define O_BLACKLIST		0xfb
 +	{ "UseBlacklist",	O_BLACKLIST,	OI_NONE	},
 +#endif
  	{ NULL,				'\0',		OI_NONE	}
  };
  
-@@ -4795,6 +4799,12 @@ setoption(opt, val, safe, sticky, e)
- 		break;
- #endif
- 
-+#if USE_BLACKLIST
-+	  case O_BLACKLIST:
-+		UseBlacklist = atobool(val);
+@@ -4943,6 +4947,12 @@ setoption(opt, val, safe, sticky, e)
+ #if _FFR_MTA_STS
+ 	  case O_MTASTS:
+ 		MTASTS = atobool(val);
 +		break;
 +#endif
 +
- 	  default:
- 		if (tTd(37, 1))
- 		{
++#if USE_BLACKLIST
++	  case O_BLACKLIST:
++		UseBlacklist = atobool(val);
+ 		break;
+ #endif
+ 

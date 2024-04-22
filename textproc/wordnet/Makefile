@@ -1,6 +1,6 @@
 PORTNAME=	WordNet
 PORTVERSION=	3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	http://wordnetcode.princeton.edu/${PORTVERSION}/:code \
 		http://wordnetcode.princeton.edu/:dict

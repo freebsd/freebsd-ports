@@ -3,7 +3,7 @@ bin/balsa-ab
 etc/sound/events/balsa.soundlist
 lib/balsa/libhtmlfilter.a
 lib/balsa/libhtmlfilter.so
-man/man1/balsa.1.gz
+share/man/man1/balsa.1.gz
 share/applications/balsa-mailto-handler.desktop
 share/applications/org.desktop.Balsa.desktop
 %%DATADIR%%/gtksourceview-3.0/balsa-mail-style.xml

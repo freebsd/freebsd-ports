@@ -1,8 +1,11 @@
 PORTNAME=	hyprpaper
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	x11 wayland
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	b6cd8472e4a1.patch:-p1 # https://github.com/hyprwm/hyprpaper/issues/139
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Blazing fast Wayland wallpaper utility with IPC controls

@@ -1,5 +1,5 @@
 PORTNAME=	eiskaltdcpp
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX=	-cli
 
@@ -26,9 +26,9 @@ do-install:
 	@${INSTALL_SCRIPT} "${WRKSRC}/eiskaltdcpp-cli/cli-xmlrpc.pl" \
 		"${STAGEDIR}${PREFIX}/bin/eiskaltdcpp-cli-xmlrpc"
 	@${INSTALL_MAN} "${WRKSRC}/eiskaltdcpp-cli/eiskaltdcpp-cli-jsonrpc.1" \
-		"${STAGEDIR}${PREFIX}/man/man1/"
+		"${STAGEDIR}${PREFIX}/share/man/man1/"
 	@${INSTALL_MAN} "${WRKSRC}/eiskaltdcpp-cli/eiskaltdcpp-cli-xmlrpc.1" \
-		"${STAGEDIR}${PREFIX}/man/man1/"
+		"${STAGEDIR}${PREFIX}/share/man/man1/"
 	@${MKDIR} "${STAGEDIR}${PREFIX}/etc/eiskaltdcpp" || true
 	@${INSTALL_DATA} "${WRKSRC}/eiskaltdcpp-cli/cli-jsonrpc-config.pl" \
 		"${STAGEDIR}${PREFIX}/etc/eiskaltdcpp/cli-jsonrpc-config.pl.sample"

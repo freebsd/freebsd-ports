@@ -1,3 +1,3 @@
 bin/clive
-man/man1/clive.1.gz
+share/man/man1/clive.1.gz
 share/clive/cliverc-example.conf

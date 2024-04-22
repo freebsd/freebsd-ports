@@ -1,19 +1,11 @@
-*** Makefile.in.orig	Sat Aug  9 15:44:33 2003
---- Makefile.in	Sat Aug  9 15:44:39 2003
-***************
-*** 9,15 ****
-  first_rule: all
-  dummy:
-  
-! subdirs = src doc rclock src/graphics src/test
-  allsubdirs = W11 $(subdirs)
-  
-  DIST =	INSTALL README.configure configure Makefile Makefile.in ChangeLog
---- 9,15 ----
-  first_rule: all
-  dummy:
-  
-! subdirs = src doc #rclock src/graphics src/test
-  allsubdirs = W11 $(subdirs)
-  
-  DIST =	INSTALL README.configure configure Makefile Makefile.in ChangeLog
+--- Makefile.in.orig	2024-02-21 00:18:50 UTC
++++ Makefile.in
+@@ -9,7 +9,7 @@ dummy:
+ first_rule: all
+ dummy:
+ 
+-subdirs = src doc rclock src/graphics src/test
++subdirs = src doc #rclock src/graphics src/test
+ allsubdirs = W11 $(subdirs)
+ 
+ DIST =	INSTALL README.configure configure Makefile Makefile.in ChangeLog

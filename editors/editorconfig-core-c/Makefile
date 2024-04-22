@@ -1,9 +1,9 @@
 PORTNAME=	editorconfig-core-c
-PORTVERSION=	0.12.6
+PORTVERSION=	0.12.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dutra@FreeBSD.org
 COMMENT=	EditorConfig core library and executable written in C
 WWW=		https://editorconfig.org/
 

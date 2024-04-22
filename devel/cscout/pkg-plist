@@ -25,10 +25,10 @@ include/cscout/stdc/stdio.h
 include/cscout/stdc/stdlib.h
 include/cscout/stdc/string.h
 include/cscout/stdc/time.h
-man/man1/cscc.1.gz
-man/man1/cscout.1.gz
-man/man1/csmake.1.gz
-man/man1/cswc.1.gz
+share/man/man1/cscc.1.gz
+share/man/man1/cscout.1.gz
+share/man/man1/csmake.1.gz
+share/man/man1/cswc.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/.cscout/host-defs.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/.cscout/host-incs.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/.cscout/options

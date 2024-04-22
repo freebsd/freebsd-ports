@@ -17,8 +17,6 @@ USE_PYTHON=	autoplist concurrent distutils unittest
 
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}smmap2
-
 PORTSCOUT=	skipv:6.0.0
 
 .include <bsd.port.mk>

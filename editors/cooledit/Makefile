@@ -1,5 +1,6 @@
 PORTNAME=	cooledit
 DISTVERSION=	4.1.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	SUNSITE/apps/editors/X/cooledit
 

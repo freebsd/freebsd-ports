@@ -1,4 +1,4 @@
---- configure.ac.in.orig	2023-11-03 09:27:20 UTC
+--- configure.ac.in.orig	2024-01-02 16:25:47 UTC
 +++ configure.ac.in
 @@ -142,40 +142,8 @@ LIBPCAP=-lpcap
  MAKE=make
@@ -213,3 +213,12 @@
  fi
  
  AC_CHECK_LIB([expat], [XML_ParserCreate], expat=true)
+@@ -818,7 +733,7 @@ fi
+   INSTALL_DIR=${ac_default_prefix}
+ fi
+ 
+-if test $SYSTEM = "Darwin"; then
++if test $SYSTEM = "Darwin" -o $SYSTEM = "FreeBSD"; then
+   MAN_DIR=$INSTALL_DIR/share/man
+ else
+   MAN_DIR=$INSTALL_DIR/man

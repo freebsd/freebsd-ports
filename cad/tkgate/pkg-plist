@@ -1,9 +1,9 @@
 bin/gmac
 bin/tkgate
 bin/verga
-man/man1/gmac.1.gz
-man/man1/tkgate.1.gz
-man/man1/verga.1.gz
+share/man/man1/gmac.1.gz
+share/man/man1/tkgate.1.gz
+share/man/man1/verga.1.gz
 share/applications/tkgate.desktop
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

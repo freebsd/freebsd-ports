@@ -1,6 +1,6 @@
 PORTNAME=	lsdvd
 PORTVERSION=	0.17
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -14,12 +14,13 @@ LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
 
 USES=		pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/lsdvd \
-		man/man1/lsdvd.1.gz
+		share/man/man1/lsdvd.1.gz
 
 WITH_DVD_DEVICE?=/dev/cd0
 

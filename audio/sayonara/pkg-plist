@@ -1,10 +1,7 @@
 bin/sayonara
 bin/sayonara-ctl
 bin/sayonara-query
-man/man1/sayonara-ctl.1.gz
-man/man1/sayonara-query.1.gz
-man/man1/sayonara.1.gz
-share/appdata/sayonara.appdata.xml
+share/appdata/com.sayonara-player.Sayonara.appdata.xml
 share/applications/com.sayonara-player.Sayonara.desktop
 share/icons/hicolor/128x128/apps/sayonara.png
 share/icons/hicolor/16x16/apps/sayonara.png
@@ -18,6 +15,9 @@ share/icons/hicolor/48x48/apps/sayonara.png
 share/icons/hicolor/64x64/apps/sayonara.png
 share/icons/hicolor/72x72/apps/sayonara.png
 share/icons/hicolor/96x96/apps/sayonara.png
+share/man/man1/sayonara-ctl.1.gz
+share/man/man1/sayonara-query.1.gz
+share/man/man1/sayonara.1.gz
 %%DATADIR%%/translations/icons/ar_SA.png
 %%DATADIR%%/translations/icons/cs_CZ.png
 %%DATADIR%%/translations/icons/de_DE.png
@@ -27,6 +27,7 @@ share/icons/hicolor/96x96/apps/sayonara.png
 %%DATADIR%%/translations/icons/fi_FI.png
 %%DATADIR%%/translations/icons/fr_FR.png
 %%DATADIR%%/translations/icons/hu_HU.png
+%%DATADIR%%/translations/icons/id_ID.png
 %%DATADIR%%/translations/icons/it_IT.png
 %%DATADIR%%/translations/icons/ja_JP.png
 %%DATADIR%%/translations/icons/nl_NL.png
@@ -40,6 +41,7 @@ share/icons/hicolor/96x96/apps/sayonara.png
 %%DATADIR%%/translations/icons/uk_UA.png
 %%DATADIR%%/translations/icons/zh_CN.png
 %%DATADIR%%/translations/sayonara_lang_ar_SA.qm
+%%DATADIR%%/translations/sayonara_lang_ca.qm
 %%DATADIR%%/translations/sayonara_lang_cs_CZ.qm
 %%DATADIR%%/translations/sayonara_lang_de_DE.qm
 %%DATADIR%%/translations/sayonara_lang_el.qm
@@ -48,6 +50,7 @@ share/icons/hicolor/96x96/apps/sayonara.png
 %%DATADIR%%/translations/sayonara_lang_fi_FI.qm
 %%DATADIR%%/translations/sayonara_lang_fr_FR.qm
 %%DATADIR%%/translations/sayonara_lang_hu_HU.qm
+%%DATADIR%%/translations/sayonara_lang_id_ID.qm
 %%DATADIR%%/translations/sayonara_lang_it_IT.qm
 %%DATADIR%%/translations/sayonara_lang_ja_JP.qm
 %%DATADIR%%/translations/sayonara_lang_nl_NL.qm

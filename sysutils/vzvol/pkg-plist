@@ -18,5 +18,5 @@ lib/vzvol/lib/shared/vzvol_showhelp.sh
 lib/vzvol/lib/shared/vzvol_type.sh
 lib/vzvol/lib/shared/vzvol_vmdk.sh
 lib/vzvol/lib/shared/zvol_check.sh
-man/man8/vzvol.8.gz
 sbin/vzvol
+share/man/man8/vzvol.8.gz

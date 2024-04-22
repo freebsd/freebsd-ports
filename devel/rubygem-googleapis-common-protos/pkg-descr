@@ -1,4 +1,2 @@
 googleapis-common-protos provides common gRPC and protocol buffer classes used
 in Google APIs.
-
-See also: https://github.com/googleapis/common-protos-ruby

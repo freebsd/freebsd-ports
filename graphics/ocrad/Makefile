@@ -1,5 +1,5 @@
 PORTNAME=	ocrad
-DISTVERSION=	0.28
+DISTVERSION=	0.29
 CATEGORIES=	graphics
 MASTER_SITES=	GNU
 
@@ -16,15 +16,15 @@ USES=		localbase:ldflags tar:lz
 USE_LDCONFIG=	yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -fPIC" --mandir=${PREFIX}/man --infodir=${PREFIX}/info
+CONFIGURE_ARGS=	--prefix=${PREFIX} CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -fPIC" --mandir=${PREFIX}/share/man --infodir=${PREFIX}/info
 
 MAKE_ARGS=	LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/${PORTNAME} \
 		include/ocradlib.h \
 		lib/libocrad.so \
-		man/man1/ocrad.1.gz \
-		info/ocrad.info
+		info/ocrad.info \
+		share/man/man1/ocrad.1.gz
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

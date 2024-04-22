@@ -1,5 +1,6 @@
 bin/kooha
 share/applications/io.github.seadve.Kooha.desktop
+share/dbus-1/services/io.github.seadve.Kooha.service
 share/icons/hicolor/scalable/apps/io.github.seadve.Kooha.svg
 share/icons/hicolor/symbolic/apps/io.github.seadve.Kooha-symbolic.svg
 %%DATADIR%%/resources.gresource
@@ -35,6 +36,7 @@ share/locale/oc/LC_MESSAGES/kooha.mo
 share/locale/pl/LC_MESSAGES/kooha.mo
 share/locale/pt/LC_MESSAGES/kooha.mo
 share/locale/pt_BR/LC_MESSAGES/kooha.mo
+share/locale/ro/LC_MESSAGES/kooha.mo
 share/locale/ru/LC_MESSAGES/kooha.mo
 share/locale/si/LC_MESSAGES/kooha.mo
 share/locale/sk/LC_MESSAGES/kooha.mo

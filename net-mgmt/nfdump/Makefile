@@ -1,10 +1,10 @@
 PORTNAME=	nfdump
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	pi@FreeBSD.org
-COMMENT=	Command-line tools to collect and process NetFlow data
+COMMENT=	Command-line tools to collect and process NetFlow, sFlow and IPFIX data
 WWW=		https://github.com/phaag/nfdump
 
 LICENSE=	BSD3CLAUSE
@@ -18,13 +18,15 @@ GH_ACCOUNT=	phaag
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/nfanon bin/nfcapd bin/nfdump bin/nfexpire bin/nfreplay \
 		lib/libnfdump-${PORTVERSION}.so lib/libnfdump.so \
 		lib/libnfdump.a \
-		man/man1/nfanon.1.gz man/man1/nfcapd.1.gz man/man1/nfdump.1.gz \
-		man/man1/nfexpire.1.gz man/man1/nfreplay.1.gz \
+		share/man/man1/nfanon.1.gz share/man/man1/nfcapd.1.gz \
+		share/man/man1/nfdump.1.gz share/man/man1/nfexpire.1.gz \
+		share/man/man1/nfreplay.1.gz \
 		etc/nfdump.conf.sample
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
 
@@ -48,20 +50,20 @@ FIXTIMEBUG_CONFIGURE_ENABLE=	fixtimebug
 FT2NFDUMP_BUILD_DEPENDS=		flow-cat:net-mgmt/flow-tools
 FT2NFDUMP_LIB_DEPENDS=		libft.so:net-mgmt/flow-tools
 FT2NFDUMP_CONFIGURE_ON=	--enable-ftconv --with-ftpath=${LOCALBASE}
-FT2NFDUMP_PLIST_FILES=	bin/ft2nfdump man/man1/ft2nfdump.1.gz
+FT2NFDUMP_PLIST_FILES=	bin/ft2nfdump share/man/man1/ft2nfdump.1.gz
 INFLUXDB_LIB_DEPENDS=		libcurl.so:ftp/curl
 INFLUXDB_CONFIGURE_ENABLE=	influxdb
 NFPCAPD_CONFIGURE_ENABLE=	nfpcapd
-NFPCAPD_PLIST_FILES=	bin/nfpcapd man/man1/nfpcapd.1.gz
+NFPCAPD_PLIST_FILES=	bin/nfpcapd share/man/man1/nfpcapd.1.gz
 NFPROFILE_CONFIGURE_ENABLE=	nfprofile
-NFPROFILE_PLIST_FILES=	bin/nfprofile man/man1/nfprofile.1.gz
+NFPROFILE_PLIST_FILES=	bin/nfprofile share/man/man1/nfprofile.1.gz
 NFTRACK_CONFIGURE_ENABLE=	nftrack
 NFTRACK_PLIST_FILES=	bin/nftrack
 NSEL_CONFIGURE_ENABLE=	nsel
 READPCAP_CONFIGURE_ENABLE=	readpcap
 SFLOW_CONFIGURE_ENABLE=	sflow
-SFLOW_PLIST_FILES=	bin/sfcapd man/man1/sfcapd.1.gz
-GEODB_PLIST_FILES=	bin/geolookup bin/updateGeoDB.sh man/man1/geolookup.1.gz
+SFLOW_PLIST_FILES=	bin/sfcapd share/man/man1/sfcapd.1.gz
+GEODB_PLIST_FILES=	bin/geolookup bin/updateGeoDB.sh share/man/man1/geolookup.1.gz
 GEODB_CONFIGURE_ENABLE=	maxmind
 
 .include <bsd.port.pre.mk>

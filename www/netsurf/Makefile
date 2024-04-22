@@ -1,6 +1,5 @@
 PORTNAME=	netsurf
-PORTVERSION=	3.10
-PORTREVISION=	10
+PORTVERSION=	3.11
 CATEGORIES=	www
 MASTER_SITES=	http://download.netsurf-browser.org/netsurf/releases/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -38,9 +37,6 @@ USES=		bison cpe desktop-file-utils gmake gnome iconv:translit jpeg \
 CPE_VENDOR=	${PORTNAME}-browser
 USE_GNOME=	cairo glib20 gtk30 librsvg2
 
-SHEBANG_FILES=	utils/split-messages.pl
-perl_CMD=	${PERL}
-
 MAKE_ARGS=	CC="${CC}" \
 		CCOPT="" \
 		HOST="${OPSYS}" \
@@ -74,16 +70,6 @@ post-install:
 .for d in applications pixmaps
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/${d}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/frontends/gtk/res/deoptions.gtk3.ui \
-		${STAGEDIR}${PREFIX}/share/netsurf
-	${INSTALL_DATA} ${WRKSRC}/frontends/gtk/res/enoptions.gtk3.ui \
-		${STAGEDIR}${PREFIX}/share/netsurf
-	${INSTALL_DATA} ${WRKSRC}/frontends/gtk/res/froptions.gtk3.ui \
-		${STAGEDIR}${PREFIX}/share/netsurf
-	${INSTALL_DATA} ${WRKSRC}/frontends/gtk/res/itoptions.gtk3.ui \
-		${STAGEDIR}${PREFIX}/share/netsurf
-	${INSTALL_DATA} ${WRKSRC}/frontends/gtk/res/nloptions.gtk3.ui \
-		${STAGEDIR}${PREFIX}/share/netsurf
 	${INSTALL_DATA} ${WRKSRC}/frontends/gtk/res/netsurf-gtk.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/frontends/gtk/res/netsurf.xpm \

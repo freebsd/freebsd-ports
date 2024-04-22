@@ -1,6 +1,6 @@
 PORTNAME=	ifstated
 PORTVERSION=	5.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	3
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/tobik \
@@ -14,8 +14,8 @@ LIB_DEPENDS=	libevent.so:devel/libevent
 
 PLIST_FILES=	etc/ifstated.conf-sample \
 		sbin/ifstated \
-		man/man5/ifstated.conf.5.gz \
-		man/man8/ifstated.8.gz
+		share/man/man5/ifstated.conf.5.gz \
+		share/man/man8/ifstated.8.gz
 
 SUB_FILES=	pkg-message
 
@@ -28,7 +28,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ifstated ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/ifstated.conf-sample ${STAGEDIR}${PREFIX}/etc
-	${INSTALL_MAN} ${WRKSRC}/ifstated.conf.5 ${STAGEDIR}${PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/ifstated.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/ifstated.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
+	${INSTALL_MAN} ${WRKSRC}/ifstated.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

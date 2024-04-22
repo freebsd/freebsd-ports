@@ -1,5 +1,6 @@
 PORTNAME=	mp4v2
 PORTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/enzo1982/mp4v2/releases/download/v${PORTVERSION}/
 
@@ -15,6 +16,7 @@ CPE_VENDOR=	mp4v2_project
 
 MAKEFILE=	GNUmakefile
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	"FOUND_HELP2MAN=no"
 CXXFLAGS+=	${COMPILER_FEATURES:Mc++11:C/.+/-Wno-error=narrowing/}

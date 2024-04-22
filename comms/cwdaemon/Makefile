@@ -1,5 +1,6 @@
 PORTNAME=	cwdaemon
 PORTVERSION=	0.10.2
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -9,11 +10,15 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcw.so:comms/unixcw
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/doc
-USES=		pkgconfig autoreconf
+USES=		autoreconf pkgconfig shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	acerion
+
+SHEBANG_FILES=	examples/example.pl
+
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/doc
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

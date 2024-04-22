@@ -1,5 +1,5 @@
 bin/rats
-man/man1/rats.1.gz
+share/man/man1/rats.1.gz
 %%DATADIR%%/rats-c.xml
 %%DATADIR%%/rats-openssl.xml
 %%DATADIR%%/rats-perl.xml

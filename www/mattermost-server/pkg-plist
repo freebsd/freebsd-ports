@@ -1,5 +1,5 @@
 bin/mattermostd
-etc/mattermost/config.json.sample
+%%ETCDIR%%/config.json.sample
 %%WWWDIR%%/fonts/OFL.txt
 %%WWWDIR%%/fonts/nunito-bold.ttf
 %%WWWDIR%%/i18n/bg.json
@@ -38,7 +38,6 @@ etc/mattermost/config.json.sample
 %%WWWDIR%%/templates/globalrelay_compliance_export.html
 %%WWWDIR%%/templates/globalrelay_compliance_export_message.html
 %%WWWDIR%%/templates/globalrelay_compliance_export_participant_row.html
-%%WWWDIR%%/templates/inactivity_body.html
 %%WWWDIR%%/templates/invite_body.html
 %%WWWDIR%%/templates/license_up_for_renewal.html
 %%WWWDIR%%/templates/messages_notification.html

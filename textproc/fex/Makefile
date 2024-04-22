@@ -1,7 +1,7 @@
 PORTNAME=	fex
 PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	zi@FreeBSD.org
@@ -15,9 +15,9 @@ USE_PERL5=	build # pod2man
 USE_GITHUB=	yes
 GH_ACCOUNT=	jordansissel
 
-MAKE_ENV+=	INSTALLMAN=${PREFIX}/man
+MAKE_ENV+=	INSTALLMAN=${PREFIX}/share/man
 
-PLIST_FILES=	bin/fex man/man1/fex.1.gz
+PLIST_FILES=	bin/fex share/man/man1/fex.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CC=gcc|CC=${CC}|g' ${WRKSRC}/Makefile

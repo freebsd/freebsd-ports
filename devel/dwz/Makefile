@@ -1,5 +1,6 @@
 PORTNAME=	dwz
 DISTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://sourceware.org/ftp/dwz/releases/
 

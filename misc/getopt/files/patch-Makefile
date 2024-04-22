@@ -1,24 +1,29 @@
---- ./Makefile.orig	2013-03-02 19:04:01.590723827 -0500
-+++ ./Makefile	2013-03-02 19:06:02.492723812 -0500
-@@ -1,7 +1,7 @@
+--- Makefile.orig	2014-11-24 12:33:39 UTC
++++ Makefile
+@@ -1,9 +1,9 @@ DESTDIR=
  .SUFFIXES:
  
  DESTDIR=
 -prefix=/usr/local
 +prefix=$(PREFIX)
  bindir=$(prefix)/bin
- mandir=$(prefix)/man
+-mandir=$(prefix)/man
++mandir=$(prefix)/share/man
  man1dir=$(mandir)/man1
-@@ -32,7 +32,7 @@
- LANGUAGES = ca cs da de es et eu fi fr gl hu id it ja nl pl pt_BR ru sl sv tr uk vi zh_CN zh_TW
+ sharedir=$(prefix)/share
+ getoptdir=$(sharedir)/getopt
+@@ -32,18 +32,15 @@ MOFILES:=$(patsubst %,po/%.mo,$(LANGUAGES))
+ LANGUAGES = ca cs da de es et eu fi fr gl hr hu id it ja nl pl pt_BR ru sl sv tr uk vi zh_CN zh_TW
  MOFILES:=$(patsubst %,po/%.mo,$(LANGUAGES))
  
 -CPPFLAGS=-DLIBCGETOPT=$(LIBCGETOPT) -DWITHOUT_GETTEXT=$(WITHOUT_GETTEXT) -DLOCALEDIR=\"$(localedir)\" -DNOT_UTIL_LINUX -Dprogram_invocation_short_name=\"$(PACKAGE)\"  -Dprogram_version=\"$(VERSION)\"
 +CPPFLAGS+=-DLIBCGETOPT=$(LIBCGETOPT) -DWITHOUT_GETTEXT=$(WITHOUT_GETTEXT) -DLOCALEDIR=\"$(localedir)\" -DNOT_UTIL_LINUX -Dprogram_invocation_short_name=\"$(PACKAGE)\"  -Dprogram_version=\"$(VERSION)\"
  ifeq ($(LIBCGETOPT),0)
- CPPFLAGS+=-I./gnu 
+-CPPFLAGS+=-I./gnu 
++CPPFLAGS+=-I./gnu
  endif
-@@ -41,9 +41,6 @@
+ WARNINGS=-Wall \
+          -W -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual \
           -Wcast-align -Wmissing-declarations \
           -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes \
           -Wnested-externs -Winline
@@ -28,3 +33,17 @@
  
  sources=getopt.c
  ifeq ($(LIBCGETOPT),0)
+@@ -54,11 +51,11 @@ binaries=getopt
+ 
+ binaries=getopt
+ 
+-.PHONY: all clean realclean 
++.PHONY: all clean realclean
+ all: $(binaries) all_po
+ 
+ clean: clean_po
+-	-$(RM) $(objects) $(binaries) 
++	-$(RM) $(objects) $(binaries)
+ 
+ getopt: $(objects)
+ 	$(CC) $(LDFLAGS) -o $@ $(objects)

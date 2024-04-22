@@ -14,6 +14,7 @@ module UserSettings (
     verboseCommand, buildProgressColour, successColour, finalStage
     ) where
 
+import qualified Data.Set as Set
 import Flavour.Type
 import Expression
 import {-# SOURCE #-} Settings.Default
@@ -35,12 +36,12 @@ userFlavours = [userFlavour] -- Add more build flavours if need be.
 userFlavour :: Flavour
 userFlavour = defaultFlavour {
     name = "ports"
-  , libraryWays = remove ws defaultLibraryWays
+  , libraryWays = Set.difference <$> defaultLibraryWays <*> pure ws
   , dynamicGhcPrograms = pure %%DYNAMIC%%
 --  , ghcProfiled = %%PROFILE%%
   }
   where
-    ws = concat [
+    ws = Set.fromList $ concat [
         if %%DYNAMIC%% then [] else [dynamic]
       , if %%PROFILE%% then [] else [profiling]]
 

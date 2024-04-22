@@ -1,11 +1,8 @@
 PORTNAME=	gnupg
-DISTVERSION=	2.4.3
-PORTREVISION=	4
+DISTVERSION=	2.4.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
-
-PATCH_SITES=	https://github.com/gpg/${PORTNAME}/commit/
-PATCHFILES+=	9ae3cfcabec9252c22d67b7a15c36f0a8cf22f0f.patch:-p1 #Fix linking without LDAP
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Complete and free PGP implementation
@@ -30,6 +27,7 @@ CPE_VENDOR=	gnupg
 
 CONFIGURE_ARGS=	--disable-ntbtls --enable-gpg-is-gpg2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INFO=		gnupg
 TEST_TARGET=	check
 TEST_ARGS=	TESTARGS=--parallel

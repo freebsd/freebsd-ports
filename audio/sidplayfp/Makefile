@@ -1,5 +1,5 @@
 PORTNAME=	sidplayfp
-DISTVERSION=	2.6.2
+DISTVERSION=	2.7.0
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/lib${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -12,14 +12,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libstilview.so:audio/libsidplayfp
 
-USES=		compiler:c++17-lang localbase:ldflags pkgconfig
-GNU_CONFIGURE=	yes
+USES=				compiler:c++17-lang localbase:ldflags pkgconfig
+GNU_CONFIGURE=			yes
 
 PLIST_FILES=	bin/sidplayfp \
 		bin/stilview \
-		man/man1/sidplayfp.1.gz \
-		man/man1/stilview.1.gz \
-		man/man5/sidplayfp.ini.5.gz
+		share/man/man1/sidplayfp.1.gz \
+		share/man/man1/stilview.1.gz \
+		share/man/man5/sidplayfp.ini.5.gz
 
 OPTIONS_DEFINE=		ALSA OUT123 PULSEAUDIO
 OPTIONS_DEFAULT=	OUT123

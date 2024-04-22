@@ -5,9 +5,9 @@ bin/vi
 bin/view
 libexec/exrecover
 libexec/expreserve
-man/man1/edit.1.gz
-man/man1/ex.1.gz
-man/man1/vedit.1.gz
-man/man1/vi.1.gz
-man/man1/view.1.gz
+share/man/man1/edit.1.gz
+share/man/man1/ex.1.gz
+share/man/man1/vedit.1.gz
+share/man/man1/vi.1.gz
+share/man/man1/view.1.gz
 @dir(,,1777) %%PRESERVEDIR%%

@@ -1,6 +1,6 @@
 PORTNAME=	foomatic-filters
 PORTVERSION=	4.0.17
-PORTREVISION=	10
+PORTREVISION=	12
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/foomatic/
 
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		autoreconf cpe ghostscript perl5 pkgconfig
 CPE_VENDOR=	linuxfoundation
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_path_A2PS=${LOCALBASE}/bin/a2ps \
 		ac_cv_path_CUPS=${LOCALBASE}/libexec/cups \
 		ac_cv_path_CUPS_BACKENDS=${LOCALBASE}/libexec/cups/backend \

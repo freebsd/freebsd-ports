@@ -1,5 +1,5 @@
 PORTNAME=	pglast
-PORTVERSION=	1.2
+PORTVERSION=	5.8
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,6 @@ WWW=		https://github.com/lelit/pglast
 LICENSE=	GPLv3+
 
 BROKEN_riscv64=		fails to build: PostgreSQL does not have native spinlock support on this platform
-NOT_FOR_ARCHS=		aarch64 armv6 armv7
-NOT_FOR_ARCHS_REASON=	port/atomics/arch-<arch>.h: No such file or directory
 
 USES=		gmake python
 USE_PYTHON=	autoplist distutils

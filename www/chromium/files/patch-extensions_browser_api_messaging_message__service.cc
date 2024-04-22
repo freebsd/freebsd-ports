@@ -1,6 +1,6 @@
---- extensions/browser/api/messaging/message_service.cc.orig	2023-12-10 06:10:27 UTC
+--- extensions/browser/api/messaging/message_service.cc.orig	2024-03-22 08:19:40 UTC
 +++ extensions/browser/api/messaging/message_service.cc
-@@ -70,7 +70,7 @@ namespace {
+@@ -71,7 +71,7 @@ namespace {
  const char kReceivingEndDoesntExistError[] =
      "Could not establish connection. Receiving end does not exist.";
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

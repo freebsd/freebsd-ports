@@ -1,5 +1,6 @@
 PORTNAME=	popt
 PORTVERSION=	1.19
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://ftp.osuosl.org/pub/rpm/popt/releases/popt-1.x/ \
 		http://ftp.rpm.org/popt/releases/popt-1.x/

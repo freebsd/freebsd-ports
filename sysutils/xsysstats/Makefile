@@ -1,6 +1,6 @@
 PORTNAME=	xsysstats
 PORTVERSION=	1.51
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	XCONTRIB/utilities
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -14,12 +14,13 @@ LICENSE_FILE=	${PATCHDIR}/LICENSE
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		gmake xorg
 USE_XORG=	x11
 
 ALL_TARGET=	xsysstats
 
-PLIST_FILES=	bin/xsysstats man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/xsysstats share/man/man1/${PORTNAME}.1.gz
 
 pre-patch:
 	${RM} ${WRKSRC}/headers.h && ${TOUCH} ${WRKSRC}/headers.h

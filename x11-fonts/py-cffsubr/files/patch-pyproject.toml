@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-01-18 11:25:11 UTC
++++ pyproject.toml
+@@ -3,8 +3,5 @@ requires = [
+     "setuptools",
+     "setuptools_scm",
+ ]
+-# https://setuptools.pypa.io/en/latest/build_meta.html#dynamic-build-dependencies-and-other-build-meta-tweaks
+-build-backend = "backend"
+-backend-path = ["_custom_build"]
+ [tool.setuptools_scm]
+ write_to = "src/cffsubr/_version.py"

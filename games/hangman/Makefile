@@ -1,6 +1,6 @@
 PORTNAME=	hangman
 PORTVERSION=	0.9.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	http://www.shiftygames.com/hangman/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -12,6 +12,7 @@ WWW=		http://www.shiftygames.com/hangman/hangman.html
 CONFLICTS=	bsdgames
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		gmake sdl
 USE_CSTD=	gnu89
 USE_SDL=	sdl mixer image ttf
@@ -20,7 +21,7 @@ CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 CPPFLAGS+=	`${SDL_CONFIG} --cflags`
 LDFLAGS+=	`${SDL_CONFIG} --libs`
 
-PLIST_FILES=	bin/${PORTNAME} man/man6/${PORTNAME}.6.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man6/${PORTNAME}.6.gz
 PORTDATA=	*
 
 .include <bsd.port.pre.mk>

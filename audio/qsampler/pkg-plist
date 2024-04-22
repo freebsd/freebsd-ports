@@ -1,13 +1,15 @@
 bin/qsampler
-share/man/fr/man1/qsampler.1.gz
-share/man/man1/qsampler.1.gz
 share/applications/org.rncbc.qsampler.desktop
 share/icons/hicolor/32x32/apps/org.rncbc.qsampler.png
 share/icons/hicolor/32x32/mimetypes/org.rncbc.qsampler.application-x-qsampler-session.png
 share/icons/hicolor/scalable/apps/org.rncbc.qsampler.svg
 share/icons/hicolor/scalable/mimetypes/org.rncbc.qsampler.application-x-qsampler-session.svg
+share/man/fr/man1/qsampler.1.gz
+share/man/man1/qsampler.1.gz
 share/metainfo/org.rncbc.qsampler.metainfo.xml
 share/mime/packages/org.rncbc.qsampler.xml
+%%DATADIR%%/palette/KXStudio.conf
+%%DATADIR%%/palette/Wonton Soup.conf
 %%DATADIR%%/translations/qsampler_cs.qm
 %%DATADIR%%/translations/qsampler_fr.qm
 %%DATADIR%%/translations/qsampler_ru.qm

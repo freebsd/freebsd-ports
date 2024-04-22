@@ -1,7 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	jql-v
-DISTVERSION=	7.1.2
-PORTREVISION=	1
+DISTVERSION=	7.1.7
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,12 +19,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
 		aho-corasick-1.1.2 \
 		anes-0.1.6 \
-		anstream-0.6.5 \
+		anstream-0.6.11 \
 		anstyle-1.0.4 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.75 \
+		anyhow-1.0.81 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
 		bitflags-2.4.1 \
@@ -37,10 +36,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ciborium-0.2.1 \
 		ciborium-io-0.2.1 \
 		ciborium-ll-0.2.1 \
-		clap-4.4.11 \
-		clap_builder-4.4.11 \
-		clap_derive-4.4.7 \
-		clap_lex-0.6.0 \
+		clap-4.5.4 \
+		clap_builder-4.5.2 \
+		clap_derive-4.5.4 \
+		clap_lex-0.7.0 \
 		colorchoice-1.0.0 \
 		colored_json-4.1.0 \
 		criterion-0.5.1 \
@@ -54,9 +53,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		gimli-0.28.1 \
 		half-1.8.2 \
 		hashbrown-0.14.3 \
-		heck-0.4.1 \
+		heck-0.5.0 \
 		hermit-abi-0.3.3 \
-		indexmap-2.1.0 \
+		indexmap-2.2.3 \
 		is-terminal-0.4.9 \
 		itertools-0.10.5 \
 		itoa-1.0.10 \
@@ -76,11 +75,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		plotters-0.3.5 \
 		plotters-backend-0.3.5 \
 		plotters-svg-0.3.5 \
-		proc-macro2-1.0.70 \
+		proc-macro2-1.0.76 \
 		psm-0.1.21 \
-		quote-1.0.33 \
-		rayon-1.8.0 \
-		rayon-core-1.12.0 \
+		quote-1.0.35 \
+		rayon-1.10.0 \
+		rayon-core-1.12.1 \
 		regex-1.10.2 \
 		regex-automata-0.4.3 \
 		regex-syntax-0.8.2 \
@@ -88,17 +87,17 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustix-0.38.28 \
 		ryu-1.0.16 \
 		same-file-1.0.6 \
-		serde-1.0.193 \
-		serde_derive-1.0.193 \
-		serde_json-1.0.108 \
-		serde_stacker-0.1.10 \
+		serde-1.0.197 \
+		serde_derive-1.0.197 \
+		serde_json-1.0.115 \
+		serde_stacker-0.1.11 \
 		stacker-0.1.15 \
-		strsim-0.10.0 \
-		syn-2.0.41 \
-		thiserror-1.0.51 \
-		thiserror-impl-1.0.51 \
+		strsim-0.11.0 \
+		syn-2.0.48 \
+		thiserror-1.0.58 \
+		thiserror-impl-1.0.58 \
 		tinytemplate-1.2.1 \
-		tokio-1.35.1 \
+		tokio-1.37.0 \
 		tokio-macros-2.2.0 \
 		unicode-ident-1.0.12 \
 		utf8parse-0.2.1 \
@@ -131,7 +130,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		winnow-0.5.30 \
+		winnow-0.6.5 \
 		yansi-0.5.1
 PLIST_FILES=	bin/${PORTNAME}
 

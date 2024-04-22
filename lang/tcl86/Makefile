@@ -1,6 +1,6 @@
 PORTNAME=	tcl
 DISTVERSION=	${TCL_VERSION}${TCL_RC}
-PORTREVISION=	0
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	SF/tcl/Tcl/${TCL_VERSION}
 PKGNAMESUFFIX=	${SHORT_TCL_VER}
@@ -19,6 +19,7 @@ USES=		cpe
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shared \
 		--enable-man-suffix=.${MAN_SUFFIX} \
 		--includedir=${PREFIX}/include/tcl${TCL_VER}
@@ -48,7 +49,7 @@ ALL_TARGET=	all
 INSTALL_TARGET=	install-strip install-libraries install-private-headers
 TEST_TARGET=	test-tcl
 
-TCL_VERSION=	8.6.13
+TCL_VERSION=	8.6.14
 TCL_VER=	${TCL_VERSION:R}
 TCL_RC=
 SHORT_TCL_VER=	${TCL_VER:S/.//}

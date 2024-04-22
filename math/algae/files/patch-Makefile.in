@@ -5,7 +5,7 @@
  
  # Directory in which to install the man page.
 -mandir = $(datadir)/man/man$(manext)
-+mandir = $(prefix)/man/man$(manext)
++mandir = $(prefix)/share/man/man$(manext)
  # The manpage extension
  manext = 1
  

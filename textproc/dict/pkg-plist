@@ -2,6 +2,6 @@ bin/dict
 bin/dict_lookup
 bin/dictl
 @sample etc/dict.conf.sample
-man/man1/dict.1.gz
-man/man1/dict_lookup.1.gz
-man/man1/dictl.1.gz
+share/man/man1/dict.1.gz
+share/man/man1/dict_lookup.1.gz
+share/man/man1/dictl.1.gz

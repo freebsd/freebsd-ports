@@ -54,5 +54,5 @@ lib/libginac.so.11
 lib/libginac.so.11.1.6
 libdata/pkgconfig/ginac.pc
 libexec/ginac-excompiler
-man/man1/ginsh.1.gz
-man/man1/viewgar.1.gz
+share/man/man1/ginsh.1.gz
+share/man/man1/viewgar.1.gz

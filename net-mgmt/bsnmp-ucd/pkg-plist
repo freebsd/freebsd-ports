@@ -1,4 +1,4 @@
 lib/snmp_ucd.so
 lib/snmp_ucd.so.1
-man/man8/bsnmp-ucd.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/snmpd.config.sample
+share/man/man8/bsnmp-ucd.8.gz

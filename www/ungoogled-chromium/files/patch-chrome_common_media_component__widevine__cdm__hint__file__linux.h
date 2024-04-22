@@ -1,4 +1,4 @@
---- chrome/common/media/component_widevine_cdm_hint_file_linux.h.orig	2023-10-13 13:20:35 UTC
+--- chrome/common/media/component_widevine_cdm_hint_file_linux.h.orig	2024-04-04 19:16:34 UTC
 +++ chrome/common/media/component_widevine_cdm_hint_file_linux.h
 @@ -15,7 +15,7 @@
  

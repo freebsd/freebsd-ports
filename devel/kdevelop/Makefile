@@ -3,7 +3,7 @@
 #  devel/kdev-python
 PORTNAME=	kdevelop
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,9 +16,13 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	kdev-pg-qt:devel/kdevelop-pg-qt
 LIB_DEPENDS=	libKasten4Controllers.so:devel/okteta \
 		libapr-1.so:devel/apr1 \
-		libsvn_client-1.so:devel/subversion \
 		libboost_thread.so:devel/boost-libs \
 		libkomparediff2.so:textproc/libkomparediff2
+.if ${WITH_SUBVERSION_VER:U} == LTS
+LIB_DEPENDS+=	libsvn_client-1.so:devel/subversion-lts
+.else
+LIB_DEPENDS+=	libsvn_client-1.so:devel/subversion
+.endif
 RUN_DEPENDS=	gmake:devel/gmake
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext grantlee:5 \

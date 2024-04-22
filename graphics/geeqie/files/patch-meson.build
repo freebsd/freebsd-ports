@@ -1,20 +1,11 @@
---- meson.build.orig	2023-06-24 16:32:21 UTC
+--- meson.build.orig	2024-03-23 13:57:27 UTC
 +++ meson.build
-@@ -416,7 +416,7 @@ lua_dep = []
- req_version = '>=5.3'
- option = get_option('lua')
- if not option.disabled()
--    foreach name : ['lua', 'lua5.3', 'lua-5.3', 'lua53']
-+    foreach name : ['lua-5.3']
-         lua_dep = dependency(name, version: req_version, required: get_option('lua'))
-         if lua_dep.found()
-             break
-@@ -452,7 +452,7 @@ if not option.disabled()
+@@ -459,7 +459,7 @@ endif
  else
      summary({'pandoc' : ['disabled - README.html created:', false]}, section : 'Documentation', bool_yn : true)
  endif
 -install_data('README.md', 'COPYING', 'TODO', install_dir : helpdir)
 +install_data('README.md', 'TODO', install_dir : helpdir)
  
+ conf_data.set('HAVE_PDF', 0)
  poppler_glib_dep = []
- req_version = '>=0.62'

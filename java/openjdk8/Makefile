@@ -53,8 +53,8 @@ INSTALLDIR=	${PREFIX}/${PKGBASE}
 NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	8
-JDK_UPDATE_VERSION=	392
-JDK_BUILD_NUMBER=	08
+JDK_UPDATE_VERSION=	402
+JDK_BUILD_NUMBER=	06
 BSD_JDK_VERSION=	1
 JTREG_VERSION=		4.1
 JTREG_BUILD_NUMBER=	b08
@@ -288,6 +288,10 @@ post-build:
 	    ${JRE_IMAGEDIR}/lib/javazic.jar \
 	    build.tools.tzdb.TzdbZoneRulesCompiler \
 	    -C ${JDK_BUILDDIR}/jdk/btclasses build/tools/tzdb
+.endif
+.if defined(OPENJDK_SYMLINK_CACERTS)
+	@${RM} ${JRE_IMAGEDIR}/lib/security/cacerts
+	@${LN} -sf ${OPENJDK_SYMLINK_CACERTS} ${JRE_IMAGEDIR}/lib/security/cacerts
 .endif
 
 post-build-TZUPDATE-on:

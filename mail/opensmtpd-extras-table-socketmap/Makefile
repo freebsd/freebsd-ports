@@ -1,10 +1,10 @@
 PKGNAMESUFFIX=	-table-socketmap
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	Socketmap table support for OpenSMTPD
 
 PLIST_FILES=	libexec/opensmtpd/table-socketmap \
-		man/man5/table-socketmap.5.gz
+		share/man/man5/table-socketmap.5.gz
 
 CONFIGURE_ARGS+=	--with-table-socketmap
 

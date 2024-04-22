@@ -1,5 +1,5 @@
 bin/adonthell-wastesedge
-man/man6/adonthell-wastesedge.6.gz
+share/man/man6/adonthell-wastesedge.6.gz
 %%DATADIR%%/achievements.data
 %%DATADIR%%/audio.data
 %%DATADIR%%/audio/at-demo-1.ogg

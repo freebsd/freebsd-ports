@@ -1,6 +1,0 @@
-Qiskit [quiss-kit] is an open-source SDK for working with quantum computers
-at the level of pulses, circuits, and application modules.
-
-Qiskit Experiments is one of Qiskit components. Qiskit Experiments is a
-repository that builds tools for building, running, and analysis of
-experiments on noisy quantum computers.

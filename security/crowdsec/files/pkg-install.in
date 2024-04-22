@@ -2,6 +2,7 @@
 
 case $2 in
         "POST-INSTALL")
+                cscli hub update -o human --error > /dev/null
                 if [ -e /var/run/crowdsec.running ]; then
                         service crowdsec start
                         rm -f /var/run/crowdsec.running

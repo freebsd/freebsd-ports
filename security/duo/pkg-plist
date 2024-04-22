@@ -8,9 +8,9 @@ include/duo/util.h
 include/duo/shell.h
 libdata/pkgconfig/libduo.pc
 lib/security/pam_duo.so
-man/man3/duo.3.gz
-man/man8/login_duo.8.gz
-man/man8/pam_duo.8.gz
+share/man/man3/duo.3.gz
+share/man/man8/login_duo.8.gz
+share/man/man8/pam_duo.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
 @comment %%PORTDOCS%%%%DOCSDIR%%_unix/duo_unix_support/README.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md

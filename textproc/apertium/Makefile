@@ -1,5 +1,6 @@
 PORTNAME=	apertium
 PORTVERSION=	3.9.4
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -11,10 +12,9 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash \
-		utf8cpp3>0:devel/utf8cpp3
+		utf8cpp>=4.0.0:devel/utf8cpp
 LIB_DEPENDS=	libicudata.so:devel/icu \
-		liblttoolbox.so:textproc/lttoolbox \
-		libpcre.so:devel/pcre
+		liblttoolbox.so:textproc/lttoolbox
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf gmake gnome libtool localbase:ldflags pathfix \
@@ -35,6 +35,7 @@ SHEBANG_FILES=	apertium/apertium-get/apertium-get.sh scripts/apertium-editdist \
 		scripts/apertium-translate-to-default-equivalent.in
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip

@@ -11,7 +11,7 @@
 -INSTALLMAN=$(MYPREFIX)/share/man
 +INSTALLSHARE=$(MYPREFIX)/share
 +INSTALLDOC=$(MYPREFIX)/share/doc
-+INSTALLMAN=$(MYPREFIX)/man
++INSTALLMAN=$(MYPREFIX)/share/man
  
  CC?=gcc
  AR?=ar

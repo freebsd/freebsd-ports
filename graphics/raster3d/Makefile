@@ -46,7 +46,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/worms ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/manl
 	${INSTALL_MAN} ${WRKSRC}/doc/*.l ${STAGEDIR}${PREFIX}/share/man/manl
 	@${MKDIR} ${STAGEDIR}${DATADIR}/materials
 	${INSTALL_DATA} ${WRKSRC}/materials/* ${STAGEDIR}${DATADIR}/materials

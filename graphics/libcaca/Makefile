@@ -1,6 +1,6 @@
 PORTNAME=	libcaca
 DISTVERSION=	0.99.beta19
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/libcaca/
 
@@ -10,6 +10,7 @@ WWW=		http://caca.zoy.org/
 
 USES=		cpe libtool ncurses pathfix pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-doc \
 		--enable-ncurses \

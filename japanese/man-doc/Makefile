@@ -1,6 +1,6 @@
 PORTNAME=	man-doc
 PORTVERSION=	5.4.20050911
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese
 .if !defined(WITH_CVS)
 MASTER_SITES=	LOCAL/hrs
@@ -24,7 +24,7 @@ MANSECS=	man1 man2 man3 man4 man4/man4.i386 \
 CVSROOT?=	/home/ncvs
 CVS_CMD?=	/usr/bin/cvs
 JAMANDIR?=	doc/ja_JP.eucJP/man
-MANDIR?=	${PREFIX}/man/ja/man
+MANDIR?=	${PREFIX}/share/man/ja/man
 
 .if defined(WITH_CVS)
 do-extract:
@@ -39,14 +39,14 @@ post-build:
 		cd ${WRKSRC}/$${SEC} && \
 		SUBDIR=`${MAKE} -VMANSUBDIR` && \
 		for F in `${MAKE} -VMAN`; do \
-			${ECHO_CMD} "man/ja/$${SECNUM}$${SUBDIR}/$${F}.gz"; \
+			${ECHO_CMD} "share/man/ja/$${SECNUM}$${SUBDIR}/$${F}.gz"; \
 		done; \
 		set -- `${MAKE} -VMLINKS`; while :; do \
 		case $$# in \
 		[01])	break ;; \
 		*)	m=$$2; \
 			num=$${m##*.}; \
-			${ECHO_CMD} "man/ja/man$${num}/$${m}.gz"; \
+			${ECHO_CMD} "share/man/ja/man$${num}/$${m}.gz"; \
 			shift 2;\
 		esac; \
 		done; \
@@ -57,7 +57,7 @@ pre-install:
 		SECNUM=$${SEC%%/*}; \
 		cd ${WRKSRC}/$${SEC} && \
 		SUBDIR=`${MAKE} -VMANSUBDIR` && \
-		${MKDIR} ${STAGEDIR}${PREFIX}/man/ja/$${SECNUM}$${SUBDIR}; \
+		${MKDIR} ${STAGEDIR}${PREFIX}/share/man/ja/$${SECNUM}$${SUBDIR}; \
 	done
 
 # XXX: make gendist generates distfile.  Use with WITH_CVS.

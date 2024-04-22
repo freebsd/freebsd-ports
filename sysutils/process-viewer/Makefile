@@ -1,6 +1,6 @@
 PORTNAME=	process-viewer
 DISTVERSION=	g20220909
-PORTREVISION=	11
+PORTREVISION=	13
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,6 +9,8 @@ WWW=		https://github.com/guillaumegomez/process-viewer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_powerpc64le=	rust compiler crashes, see https://github.com/rust-lang/rust/issues/120583
 
 LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene
 

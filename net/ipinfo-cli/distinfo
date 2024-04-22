@@ -1,5 +1,5 @@
-TIMESTAMP = 1704631955
-SHA256 (ipinfo-cli-ipinfo-3.3.0_GH0.tar.gz) = 18069e115c78a7a167311ad02de354c8e8d71dc63d838d94635f439eb64585f0
-SIZE (ipinfo-cli-ipinfo-3.3.0_GH0.tar.gz) = 4957330
+TIMESTAMP = 1710124880
+SHA256 (ipinfo-cli-ipinfo-3.3.1_GH0.tar.gz) = b3acdfdfdebe64b34c7a1aa80de25fd7178a51105e588ad0d205870ca9d15cfb
+SIZE (ipinfo-cli-ipinfo-3.3.1_GH0.tar.gz) = 4961799
 SHA256 (golang-sys-v0.16.0_GH0.tar.gz) = 9c17b728aa75f4fc4743c3f5c0dccdc3b7f9ac7c12b3124b666672cc571f657e
 SIZE (golang-sys-v0.16.0_GH0.tar.gz) = 1444155

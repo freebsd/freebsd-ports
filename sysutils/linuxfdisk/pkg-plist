@@ -1,6 +1,6 @@
-man/man8/cfdisk-linux.8.gz
-man/man8/fdisk-linux.8.gz
-man/man8/sfdisk-linux.8.gz
+share/man/man8/cfdisk-linux.8.gz
+share/man/man8/fdisk-linux.8.gz
+share/man/man8/sfdisk-linux.8.gz
 sbin/fdisk-linux
 sbin/cfdisk-linux
 sbin/sfdisk-linux

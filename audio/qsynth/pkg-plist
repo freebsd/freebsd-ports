@@ -1,10 +1,12 @@
 bin/qsynth
-share/man/fr/man1/qsynth.1.gz
-share/man/man1/qsynth.1.gz
 share/applications/org.rncbc.qsynth.desktop
 share/icons/hicolor/32x32/apps/org.rncbc.qsynth.png
 share/icons/hicolor/scalable/apps/org.rncbc.qsynth.svg
+share/man/fr/man1/qsynth.1.gz
+share/man/man1/qsynth.1.gz
 share/metainfo/org.rncbc.qsynth.metainfo.xml
+%%DATADIR%%/palette/KXStudio.conf
+%%DATADIR%%/palette/Wonton Soup.conf
 %%DATADIR%%/translations/qsynth_cs.qm
 %%DATADIR%%/translations/qsynth_de.qm
 %%DATADIR%%/translations/qsynth_es.qm

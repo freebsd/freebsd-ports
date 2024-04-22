@@ -1,11 +1,12 @@
 PORTNAME=	valgrind
-PORTVERSION=	3.22.0.g20230917
+PORTVERSION=	3.23.0.g20240201
+PORTREVISION=	1
 DISTVERSIONPREFIX=	freebsd-
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://snapshots.sourceware.org/valgrind/trunk/2023-09-17_09-18_1694942281/
+MASTER_SITES=	https://snapshots.sourceware.org/valgrind/trunk/2024-02-01_13-39_1706794741/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-3.22.0.GIT
+DISTNAME=	${PORTNAME}-3.23.0.GIT
 
 MAINTAINER=	pjfloyd@wanadoo.fr
 COMMENT=	Memory debugging and profiling tool
@@ -20,6 +21,7 @@ USES=		autoreconf cpe gmake pathfix perl5 pkgconfig shebangfix python:3.9+,run t
 USE_PERL5=	build
 SHEBANG_FILES=	callgrind/callgrind_annotate.in callgrind/callgrind_control.in cachegrind/cg_merge.in cachegrind/cg_diff.in cachegrind/cg_annotate.in
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL}
 
 SSP_UNSAFE=	yes

@@ -1,6 +1,7 @@
 PORTNAME=	coolreader
 DISTVERSIONPREFIX=	cr
 DISTVERSION=	3.2.59
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	mistresssilvara@hotmail.com

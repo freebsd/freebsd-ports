@@ -1,5 +1,4 @@
 PORTNAME=	cdrtools
-PORTREVISION=	1
 CATEGORIES=	sysutils audio
 
 COMMENT=	Tools for ripping from and recording to CDs and DVDs

@@ -1,6 +1,6 @@
 PORTNAME=	msort
 PORTVERSION=	8.53
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
@@ -19,9 +19,10 @@ RUN_DEPENDS=	iwidgets>=0:x11-toolkits/iwidgets
 USES=		gettext localbase tk:wrapper,run
 CONFIGURE_ENV=	ac_cv_lib_tre_regwcomp=yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 TEST_TARGET=	test
 
-PLIST_FILES=	bin/msg bin/msort man/man1/msort.1.gz
+PLIST_FILES=	bin/msg bin/msort share/man/man1/msort.1.gz
 
 post-patch:
 	@${MV} ${WRKSRC}/limits.h ${WRKSRC}/${PORTNAME}_limits.h

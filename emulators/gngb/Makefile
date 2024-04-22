@@ -1,6 +1,6 @@
 PORTNAME=	gngb
 PORTVERSION=	20060309
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	emulators
 MASTER_SITES=	http://m.peponas.free.fr/gngb/download/
 
@@ -15,9 +15,10 @@ USES=		gmake localbase sdl
 USE_CSTD=	gnu89
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=	bin/gngb \
-		man/man1/gngb.1.gz
+		share/man/man1/gngb.1.gz
 
 OPTIONS_DEFINE=	OPENGL
 

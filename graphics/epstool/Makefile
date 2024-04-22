@@ -11,7 +11,7 @@ WWW=		http://www.ghostgum.com.au/software/epstool.htm
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-USES=		ghostscript:run gmake
+USES=		dos2unix ghostscript:run gmake
 MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CC}" \
 		CCAUX="${CC}" \
@@ -24,7 +24,6 @@ MAKE_ARGS=	CC="${CC}" \
 		LIBPNGLIBS="" \
 		LINK="${CC} ${LDFLAGS}" \
 		MAKE="${MAKE_CMD}"
-ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/epstool \
 		share/man/man1/epstool.1.gz

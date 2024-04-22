@@ -1,6 +1,6 @@
 PORTNAME=	dialog4ports
 PORTVERSION=	0.1.6
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	https://files.etoilebsd.net/dialog4ports/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
@@ -16,10 +16,12 @@ LICENSE=	BSD2CLAUSE
 
 USES=		uidfix
 
+MAKE_ARGS+=	MAN1DIR=${PREFIX}/share/man/man1
+
 # CCACHE has options, so may need d4p, make d4p not ccache friendly
 # to avoid circular dependency
 NO_CCACHE=	yes
-MAKE_ENV+=	__MAKE_CONF=/dev/null SRCCONF=/dev/null
+MAKE_ENV+=	SRCCONF=/dev/null
 
 .if !exists(/usr/lib/libdialog.so)
 BROKEN=		Requires libdialog in base
@@ -28,7 +30,7 @@ BROKEN=		Requires libdialog in base
 DEPRECATED=	Consider using ports-mgmt/portconfig which is a dropin replacement
 
 .if !defined(D4P_SLAVE)
-PLIST_FILES=	bin/dialog4ports man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/dialog4ports share/man/man1/${PORTNAME}.1.gz
 .endif
 
 .include <bsd.port.pre.mk>

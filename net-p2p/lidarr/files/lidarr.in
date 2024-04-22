@@ -33,6 +33,8 @@ command="/usr/sbin/daemon"
 
 start_precmd=${name}_precmd
 %%PORTNAME%%_precmd() {
+    export PATH="/sbin:/bin:/usr/sbin:/usr/bin:%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin"
+
     if [ ! -d ${%%PORTNAME%%_data_dir} ]; then
         install -d -o ${%%PORTNAME%%_user} -g ${%%PORTNAME%%_group} ${%%PORTNAME%%_data_dir}
     fi

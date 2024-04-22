@@ -1,11 +1,12 @@
 PORTNAME=	conmon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.10
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
 COMMENT=	OCI container runtime monitor
-WWW=		https://github.com/containers
+WWW=		https://github.com/containers/conmon
 
 LICENSE=	GPLv2
 

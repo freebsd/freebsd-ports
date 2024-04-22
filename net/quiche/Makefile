@@ -1,5 +1,5 @@
 PORTNAME=	quiche
-DISTVERSION=	0.20.0
+DISTVERSION=	0.20.1
 CATEGORIES=	net
 
 MAINTAINER=	junho.choi@gmail.com

@@ -1,5 +1,5 @@
 PORTNAME=	froxlor
-DISTVERSION=	2.0.10
+DISTVERSION=	2.1.6
 CATEGORIES=	sysutils www
 MASTER_SITES=	https://files.froxlor.org/releases/
 

@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/collection/02de522f-7e0a-4544-8afc-0c195f400f5f.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/collection/02de522f-7e0a-4544-8afc-0c195f400f5f.yml
+@@ -15,7 +15,7 @@
+         parsers:
+           plugins.stockpile.app.parsers.ssh:
+             - source: remote.ssh.cmd
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           pip install -q stormssh 2> /dev/null && storm list | sed 's/\x1b\[[0-9;]*m//g'

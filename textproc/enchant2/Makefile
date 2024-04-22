@@ -1,6 +1,6 @@
 PORTNAME=	enchant
 PORTVERSION=	2.2.15
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc gnome
 MASTER_SITES=	https://github.com/AbiWord/enchant/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	2
@@ -16,6 +16,7 @@ USES=		compiler:c++11-lib gmake gnome libtool localbase pathfix \
 		pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--without-applespell \
 		--without-voikko

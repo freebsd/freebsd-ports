@@ -74,7 +74,7 @@
 +	${INSTALL} -d -v                      $(DESTDIR)${PREFIX}/bin/
 +	${INSTALL} -s -m 0755 qrq             $(DESTDIR)${PREFIX}/bin/
 +	${INSTALL}    -m 0755 qrqscore        $(DESTDIR)${PREFIX}/bin/
-+	${INSTALL}    -m 0644 qrq.1           $(DESTDIR)${PREFIX}/man/man1/
++	${INSTALL}    -m 0644 qrq.1           $(DESTDIR)${PREFIX}/share/man/man1/
 +	${INSTALL}    -m 0644 callbase.qcb    $(DESTDIR)${PREFIX}/share/qrq/
 +	${INSTALL}    -m 0644 english.qcb     $(DESTDIR)${PREFIX}/share/qrq/
 +	${INSTALL}    -m 0644 cwops.qcb       $(DESTDIR)${PREFIX}/share/qrq/

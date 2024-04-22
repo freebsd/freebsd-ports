@@ -1,5 +1,5 @@
 PORTNAME=	qschematic
-DISTVERSION=	1.5.1
+DISTVERSION=	1.6.0
 CATEGORIES=	devel
 
 MAINTAINER=	jbo@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 LIB_DEPENDS=	libgpds.so:devel/gpds
 
-USES=		cmake compiler:c++17-lang qt:6
+USES=		cmake compiler:c++20-lang pkgconfig qt:6
 USE_QT=		base
 
 USE_GITHUB=	yes

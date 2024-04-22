@@ -1,0 +1,3 @@
+This package offers Python bindings to the ammonia HTML sanitization library
+(see https://github.com/rust-ammonia/ammonia) and it has many options to
+customize the sanitization.

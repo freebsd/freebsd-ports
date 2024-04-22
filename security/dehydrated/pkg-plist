@@ -3,8 +3,9 @@ bin/dehydrated
 @sample %%ETCDIR%%/config.sample
 @sample %%ETCDIR%%/domains.txt.sample
 @sample %%ETCDIR%%/hook.sh.sample
+etc/periodic/daily/000.dehydrated
 etc/periodic/weekly/000.dehydrated
-man/man1/dehydrated.1.gz
+share/man/man1/dehydrated.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/dns-verification.md
 %%PORTDOCS%%%%DOCSDIR%%/domains_txt.md

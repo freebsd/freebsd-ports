@@ -1,5 +1,6 @@
 PORTNAME=		hitch
 PORTVERSION=		1.8.0
+PORTREVISION=		1
 CATEGORIES=		security
 MASTER_SITES=		http://hitch-tls.org/source/ \
 			ZI
@@ -18,6 +19,7 @@ GROUPS=			hitch
 
 USES=			pkgconfig ssl
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=		--localstatedir=/var/run
 CONFIGURE_ENV=		CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB}" \
 			SSL_CFLAGS="-I${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB}"

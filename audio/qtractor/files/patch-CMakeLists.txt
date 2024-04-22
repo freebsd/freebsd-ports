@@ -9,12 +9,3 @@
    if (NOT Qt6_FOUND)
      set (CONFIG_QT6 0)
    endif ()
-@@ -385,7 +385,7 @@ endif ()
- 
- # Check for MAD libraries.
- if (CONFIG_LIBMAD)
--  pkg_check_modules (MAD IMPORTED_TARGET mad)
-+  pkg_check_modules (MAD IMPORTED_TARGET libmad)
-   if (NOT MAD_FOUND)
-     message (WARNING "*** MAD library not found.")
-     set (CONFIG_LIBMAD 0)

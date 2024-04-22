@@ -1,5 +1,5 @@
 PORTNAME=	neomutt
-PORTVERSION=	20231221
+PORTVERSION=	20240329
 CATEGORIES=	mail
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -49,7 +49,6 @@ CONFIGURE_ARGS=	--with-ssl="${OPENSSLBASE}" \
 		--pcre2 \
 		--disable-idn \
 		--prefix=${PREFIX} \
-		--mandir=${PREFIX}/man \
 		${ICONV_CONFIGURE_ARGS}
 CONFIGURE_ENV=	CC_FOR_BUILD="${CC}"
 

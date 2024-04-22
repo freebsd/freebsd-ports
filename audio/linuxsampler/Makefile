@@ -1,6 +1,5 @@
 PORTNAME=	linuxsampler
-DISTVERSION=	2.2.0
-PORTREVISION=	3
+DISTVERSION=	2.3.1
 CATEGORIES=	audio
 MASTER_SITES=	https://download.linuxsampler.org/packages/
 
@@ -23,6 +22,7 @@ USES=		bison:wrapper compiler:c++14-lang gmake libtool localbase pathfix pkgconf
 USE_LDCONFIG=	${PREFIX}/lib/linuxsampler
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	HAVE_UNIX98=1
 CONFIGURE_ARGS=	--disable-arts-driver
 

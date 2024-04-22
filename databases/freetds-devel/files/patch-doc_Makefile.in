@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	2019-03-30 09:02:39 UTC
+--- doc/Makefile.in.orig	2024-03-02 09:02:15 UTC
 +++ doc/Makefile.in
-@@ -740,16 +740,7 @@ $(INSTALLDIRS) $(DOCDIR):
+@@ -746,16 +746,7 @@ $(INSTALLDIRS) $(DOCDIR):
  
  # If we built the documentation ourselves, install that, 
  # else if we have access to distributed documentation, install that.  

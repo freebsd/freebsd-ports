@@ -1,5 +1,6 @@
 PORTNAME=	iat
 PORTVERSION=	0.1.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	BERLIOS
 
@@ -13,8 +14,9 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-PLIST_FILES=	bin/iat man/man1/iat.1.gz
+PLIST_FILES=	bin/iat share/man/man1/iat.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e '/install-data-am:/ s|install-includeHEADERS||' \

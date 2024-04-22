@@ -4,7 +4,7 @@ include/gpds/archiver_yaml.hpp
 include/gpds/attributes.hpp
 include/gpds/container.hpp
 include/gpds/serialize.hpp
-%%SPDLOG%%include/gpds/spdlog_sink.hpp
+include/gpds/spdlog_sink.hpp
 include/gpds/utils.hpp
 include/gpds/value.hpp
 lib/cmake/gpds/gpds-config-version.cmake

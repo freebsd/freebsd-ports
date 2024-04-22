@@ -1,6 +1,6 @@
 PORTNAME=	sdl
 PORTVERSION=	0.9.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	SF/ocaml${PORTNAME}/OCamlSDL/ocaml${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	ocaml-
@@ -23,7 +23,7 @@ USE_OCAML_LDCONFIG=yes
 USES=		gmake sdl
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-lablgldir=${LOCALBASE} \
+CONFIGURE_ARGS=	--with-lablgldir=${LOCALBASE}/${OCAML_SITELIBDIR}/lablGL \
 		--with-sdl-prefix=${LOCALBASE} \
 		--with-installdir=${PREFIX}
 

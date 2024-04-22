@@ -1,6 +1,6 @@
 PORTNAME=	wireguard-tools
 PORTVERSION=	1.0.20210914
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net net-vpn
 MASTER_SITES=	https://git.zx2c4.com/wireguard-tools/snapshot/
 
@@ -19,7 +19,7 @@ USES=		gmake tar:xz
 WRKSRC_SUBDIR=	src
 
 MAKE_ARGS+=	DEBUG=no WITH_BASHCOMPLETION=yes WITH_SYSTEMDUNITS=no
-MAKE_ENV+=	MANDIR="${MANPREFIX}/man" \
+MAKE_ENV+=	MANDIR="${PREFIX}/share/man" \
 		SYSCONFDIR="${PREFIX}/etc"
 
 OPTIONS_DEFINE=	WGQUICK

@@ -39,6 +39,7 @@ share/applications/asunder.desktop
 %%NLS%%share/locale/hu/LC_MESSAGES/asunder.mo
 %%NLS%%share/locale/hy/LC_MESSAGES/asunder.mo
 %%NLS%%share/locale/ia/LC_MESSAGES/asunder.mo
+%%NLS%%share/locale/ie/LC_MESSAGES/asunder.mo
 %%NLS%%share/locale/id/LC_MESSAGES/asunder.mo
 %%NLS%%share/locale/is/LC_MESSAGES/asunder.mo
 %%NLS%%share/locale/it/LC_MESSAGES/asunder.mo

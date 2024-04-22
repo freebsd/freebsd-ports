@@ -1,5 +1,5 @@
 PORTNAME=	subnetcalc
-PORTVERSION=	2.4.23
+DISTVERSION=	2.5.1
 CATEGORIES=	net
 MASTER_SITES=	https://www.nntb.no/~dreibh/subnetcalc/download/
 
@@ -10,10 +10,9 @@ WWW=		https://www.nntb.no/~dreibh/subnetcalc/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz cmake
-CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${MANPREFIX}/man
+USES=		cmake tar:xz
 
 PLIST_FILES=	bin/subnetcalc \
-		man/man1/subnetcalc.1.gz
+		share/man/man1/subnetcalc.1.gz
 
 .include <bsd.port.mk>

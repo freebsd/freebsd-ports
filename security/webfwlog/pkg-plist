@@ -1,5 +1,6 @@
 @(root,%%WWWGRP%%,4550) bin/wfwl_syslog
 @sample(root,%%WWWGRP%%,0640) %%ETCDIR%%/webfwlog.conf.sample
+@mode 0644
 %%WWWDIR%%/include/config.php
 %%WWWDIR%%/include/criteria.php
 %%WWWDIR%%/include/debug.php
@@ -25,6 +26,7 @@
 %%WWWDIR%%/style.css
 %%WWWDIR%%-vendor/autoload.php
 %%WWWDIR%%-vendor/composer/ClassLoader.php
+%%WWWDIR%%-vendor/composer/InstalledVersions.php
 %%WWWDIR%%-vendor/composer/LICENSE
 %%WWWDIR%%-vendor/composer/autoload_classmap.php
 %%WWWDIR%%-vendor/composer/autoload_namespaces.php
@@ -32,11 +34,14 @@
 %%WWWDIR%%-vendor/composer/autoload_real.php
 %%WWWDIR%%-vendor/composer/autoload_static.php
 %%WWWDIR%%-vendor/composer/installed.json
+%%WWWDIR%%-vendor/composer/installed.php
+%%WWWDIR%%-vendor/composer/platform_check.php
 %%WWWDIR%%-vendor/maxmind-db/reader/CHANGELOG.md
 %%WWWDIR%%-vendor/maxmind-db/reader/LICENSE
 %%WWWDIR%%-vendor/maxmind-db/reader/README.md
 %%WWWDIR%%-vendor/maxmind-db/reader/autoload.php
 %%WWWDIR%%-vendor/maxmind-db/reader/composer.json
+%%WWWDIR%%-vendor/maxmind-db/reader/package.xml
 %%WWWDIR%%-vendor/maxmind-db/reader/src/MaxMind/Db/Reader.php
 %%WWWDIR%%-vendor/maxmind-db/reader/src/MaxMind/Db/Reader/Decoder.php
 %%WWWDIR%%-vendor/maxmind-db/reader/src/MaxMind/Db/Reader/InvalidDatabaseException.php
@@ -67,15 +72,15 @@
 %%PORTDOCS%%%%DOCSDIR%%/mysql/setup
 @mode 0644
 %%PORTDOCS%%%%DOCSDIR%%/pgsql/README
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/README.geoip
 %%PORTDOCS%%%%DOCSDIR%%/pgsql/pgsql_data_table.sql
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/pgsql_geoip2_asn_table.sql
+%%PORTDOCS%%%%DOCSDIR%%/pgsql/pgsql_geoip2_locations_tables.sql
 %%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/snort_view
 %%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_functions
 %%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_hostnames_create
 %%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_reports_addcol
 %%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_reports_create
 %%PORTDOCS%%%%DOCSDIR%%/pgsql/scripts/wfwl_services_create
-%%PORTDOCS%%%%DOCSDIR%%/pgsql/README.geoip
-%%PORTDOCS%%%%DOCSDIR%%/pgsql/pgsql_geoip2_tables.sql
 @mode 0755
 %%PORTDOCS%%%%DOCSDIR%%/pgsql/setup
-@mode 0644

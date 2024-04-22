@@ -1,12 +1,15 @@
 PORTNAME=	iaxmodem
 PORTVERSION=	1.2.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net comms
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	stucchi@gufi.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software modem that connects to IAX channel
 WWW=		https://iaxmodem.sourceforge.net/
+
+DEPRECATED=	outdated and uses end-of-life version of GCC
+EXPIRATION_DATE=2024-05-28
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff
 
@@ -19,7 +22,7 @@ SUB_FILES=	pkg-message
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	sbin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	sbin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 PORTDOCS=	CHANGES FAQ README
 PORTEXAMPLES=	config.ttyIAX iaxmodem-cfg.ttyIAX
 
@@ -40,7 +43,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iaxmodem ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/iaxmodem.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/iaxmodem.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/,} ${STAGEDIR}${EXAMPLESDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

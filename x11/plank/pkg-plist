@@ -10,7 +10,7 @@ lib/plank/docklets/libdocklet-clock.so
 lib/plank/docklets/libdocklet-desktop.so
 lib/plank/docklets/libdocklet-trash.so
 libdata/pkgconfig/plank.pc
-man/man1/plank.1.gz
+share/man/man1/plank.1.gz
 share/metainfo/plank.appdata.xml
 share/applications/plank.desktop
 share/icons/hicolor/128x128/apps/plank.svg

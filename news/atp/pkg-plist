@@ -3,7 +3,7 @@ bin/atpdiag
 bin/rot13
 %%DATADIR%%/atprc
 %%DATADIR%%/taglines.atp
-man/man1/atp.1.gz
-man/man1/atpdiag.1.gz
-man/man1/rot13.1.gz
-man/man3/editline.3.gz
+share/man/man1/atp.1.gz
+share/man/man1/atpdiag.1.gz
+share/man/man1/rot13.1.gz
+share/man/man3/editline.3.gz

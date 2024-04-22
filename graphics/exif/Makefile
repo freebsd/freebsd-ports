@@ -1,11 +1,13 @@
 PORTNAME=	exif
 PORTVERSION=	0.6.22
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libexif/exif/releases/download/exif-${PORTVERSION:S|.|_|g}-release/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command line utility to read and manipulate EXIF data
-WWW=		https://libexif.github.io/
+WWW=		https://libexif.github.io/ \
+		https://github.com/libexif/exif
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

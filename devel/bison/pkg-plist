@@ -1,5 +1,4 @@
 bin/bison
-man/man1/bison.1.gz
 share/aclocal/bison-i18n.m4
 %%DATADIR%%/README.md
 %%DATADIR%%/bison-default.css
@@ -194,3 +193,4 @@ share/aclocal/bison-i18n.m4
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/bison-gnulib.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/bison.mo
+share/man/man1/bison.1.gz

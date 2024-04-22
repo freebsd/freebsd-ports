@@ -11,13 +11,13 @@ lib/%%PORTNAME%%/PCREPlugin.so
 lib/%%PORTNAME%%/StringsPlugin.so
 lib/%%PORTNAME%%/TrafficPlugin.so
 lib/%%PORTNAME%%/pamauth.so
-man/man3/3proxy.cfg.3.gz
-man/man8/3proxy.8.gz
-man/man8/ftppr.8.gz
-man/man8/httppr.8.gz
-man/man8/pop3p.8.gz
-man/man8/socks.8.gz
-man/man8/tcppm.8.gz
-man/man8/udppm.8.gz
+share/man/man3/3proxy.cfg.3.gz
+share/man/man8/3proxy.8.gz
+share/man/man8/ftppr.8.gz
+share/man/man8/httppr.8.gz
+share/man/man8/pop3p.8.gz
+share/man/man8/socks.8.gz
+share/man/man8/tcppm.8.gz
+share/man/man8/udppm.8.gz
 @dir(,,755) %%3PROXY_LOGDIR%%
 @sample etc/3proxy.cfg.sample

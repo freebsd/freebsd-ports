@@ -44,8 +44,8 @@ libexec/TeXmacs/bin/tm_shell
 libexec/TeXmacs/bin/tm_texgraph
 libexec/TeXmacs/bin/tm_xypic
 libexec/TeXmacs/bin/tmstree.sci
-man/man1/fig2ps.1.gz
-man/man1/texmacs.1.gz
+share/man/man1/fig2ps.1.gz
+share/man/man1/texmacs.1.gz
 %%DATADIR%%/LICENSE
 %%DATADIR%%/doc/about/about-summary.de.tm
 %%DATADIR%%/doc/about/about-summary.en.tm

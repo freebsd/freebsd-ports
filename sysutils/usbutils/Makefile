@@ -16,7 +16,7 @@ RUN_DEPENDS=	usbhid-dump:sysutils/usbhid-dump \
 USES=		autoreconf gmake pkgconfig shebangfix
 
 CONFIGURE_ARGS=	--datadir=${LOCALBASE}/share/usbids --enable-zlib
-CONFIGURE_ENV=	LIBUSB_CFLAGS="-I/usr/include" LIBUSB_LIBS="-L/usr/lib -lusb"
+CONFIGURE_ENV=	LIBUSB_CFLAGS=-I/usr/include LIBUSB_LIBS="-L/usr/lib -lusb"
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README

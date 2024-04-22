@@ -1,6 +1,6 @@
 bin/direvent
-man/man5/direvent.conf.5.gz
-man/man8/direvent.8.gz
+share/man/man5/direvent.conf.5.gz
+share/man/man8/direvent.8.gz
 %%NLS%%share/locale/da/LC_MESSAGES/direvent.mo
 %%NLS%%share/locale/de/LC_MESSAGES/direvent.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/direvent.mo

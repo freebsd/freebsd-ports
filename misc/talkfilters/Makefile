@@ -1,6 +1,6 @@
 PORTNAME=	talkfilters
-PORTVERSION=	2.3.8
-PORTREVISION=	2
+DISTVERSION=	2.3.8
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.hyperrealm.com/talkfilters/ \
 		LOCAL/ehaupt
@@ -11,15 +11,14 @@ WWW=		https://www.hyperrealm.com/talkfilters/talkfilters.html
 
 LICENSE=	GPLv2
 
-CONFLICTS=	chef filters
-
 USES=		libtool pathfix
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CONFLICTS=	chef filters
 
 SUB_FILES=	pkg-message
 
-INFO=	talkfilters
+INFO=		talkfilters
 
 post-extract:
 	@${ECHO} ${DO_NADA} > ${WRKSRC}/install-sh

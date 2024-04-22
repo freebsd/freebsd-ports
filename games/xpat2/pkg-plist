@@ -1,5 +1,4 @@
 @(,games,2555) bin/xpat2
-man/man6/xpat2.6.gz
 lib/X11/app-defaults/XPat
 lib/X11/de_DE/app-defaults/XPat
 lib/X11/fr_FR/app-defaults/XPat
@@ -8,6 +7,7 @@ lib/X11/german/app-defaults/XPat
 lib/X11/it_IT/app-defaults/XPat
 lib/X11/italian/app-defaults/XPat
 lib/X11/russian/app-defaults/XPat
+share/man/man6/xpat2.6.gz
 %%DATADIR%%/PySol-large/COPYRIGHT
 %%DATADIR%%/PySol-large/Cards.conf
 %%DATADIR%%/PySol-large/Empty.Clubs.xpm

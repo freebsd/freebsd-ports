@@ -1,5 +1,5 @@
 PORTNAME=	libnsbmp
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 EXTRACT_SUFX=	-src.tar.gz

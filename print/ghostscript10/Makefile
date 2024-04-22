@@ -1,9 +1,12 @@
 PORTNAME=	ghostscript
-DISTVERSION=	10.02.1
+DISTVERSION=	10.03.0
 PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${DISTVERSION:S/.//g}/
 PKGNAMESUFFIX=	${GS_MAJOR_VERSION}
+
+PATCH_SITES=	https://github.com/ArtifexSoftware/ghostpdl/commit/
+PATCHFILES=	90cabe08422afdd16bac5dd9217602679d943045.patch:-p1
 
 MAINTAINER=	michael.osipov@siemens.com
 COMMENT=	PostScript and PDF interpreter
@@ -28,11 +31,6 @@ USES=		cpe gmake iconv jpeg localbase pkgconfig tar:xz
 USE_LDCONFIG=	yes
 CPE_VENDOR=	artifex
 
-CONFLICTS_INSTALL=	ghostscript[789]-base \
-			ghostscript[789]-x11 \
-			ghostscript9-agpl-base \
-			ghostscript9-agpl-x11
-
 EXTRACT_AFTER_ARGS=	--exclude cups/libs \
 			--exclude expat \
 			--exclude freetype \
@@ -48,6 +46,7 @@ EXTRACT_AFTER_ARGS=	--exclude cups/libs \
 			--exclude zlib
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 ALL_TARGET=	so
 INSTALL_TARGET=	soinstall

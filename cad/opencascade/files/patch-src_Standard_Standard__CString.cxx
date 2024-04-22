@@ -1,6 +1,6 @@
---- src/Standard/Standard_CString.cxx.orig	2022-09-30 11:54:05 UTC
+--- src/Standard/Standard_CString.cxx.orig	2023-12-04 15:53:08 UTC
 +++ src/Standard/Standard_CString.cxx
-@@ -80,7 +80,7 @@ Standard_Integer HashCodes (const Standard_CString the
+@@ -50,7 +50,7 @@
      // strtod, strtol, strtoll functions. For other system with locale-depended
      // implementations problems may appear if "C" locale is not set explicitly.
      #if !defined(__ANDROID__) && !defined(__QNX__) && !defined(__MINGW32__)

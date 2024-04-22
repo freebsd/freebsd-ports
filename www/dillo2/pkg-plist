@@ -15,5 +15,5 @@ libexec/dillo/dpi/ftp/ftp.filter.dpi
 libexec/dillo/dpi/hello/hello.filter.dpi
 libexec/dillo/dpi/https/https.filter.dpi
 libexec/dillo/dpi/vsource/vsource.filter.dpi
-man/man1/dillo.1.gz
+share/man/man1/dillo.1.gz
 @dir libexec/dillo/hyphenation

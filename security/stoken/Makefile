@@ -1,6 +1,7 @@
 PORTNAME=	stoken
+DISTVERSIONPREFIX=	v
 DISTVERSION=	0.93
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	samm@FreeBSD.org
@@ -14,10 +15,10 @@ LIB_DEPENDS=	libtomcrypt.so:security/libtomcrypt # can alternatively use nettle,
 
 USES=		gnome libtool localbase pkgconfig autoreconf
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
-GH_TAGNAME=	v${DISTVERSION}
 GH_ACCOUNT=	stoken-dev
 INSTALL_TARGET=	install-strip
 

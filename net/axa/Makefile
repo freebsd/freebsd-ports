@@ -1,6 +1,6 @@
 PORTNAME=	axa
 PORTVERSION=	3.0.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net dns
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
@@ -15,10 +15,7 @@ LICENSE_FILE_PD=	${WRKSRC}/license_pd
 
 BUILD_DEPENDS=	bash:shells/bash \
 		sie-nmsg>0:net/sie-nmsg
-LIB_DEPENDS=	liblmdb.so:databases/lmdb \
-		libcheck.so:devel/check \
-		libprotobuf-c.so:devel/protobuf-c \
-		libnmsg.so:net/nmsg \
+LIB_DEPENDS=	libnmsg.so:net/nmsg \
 		libwdns.so:dns/wdns \
 		libyajl.so:devel/yajl
 RUN_DEPENDS=	sie-nmsg>0:net/sie-nmsg
@@ -27,6 +24,7 @@ USES=		autoreconf compiler gmake libedit libtool pathfix \
 		pkgconfig shebangfix ssl
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	tools/axa_link_certs.in

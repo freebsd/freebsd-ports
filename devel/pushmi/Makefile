@@ -1,6 +1,6 @@
 PORTNAME=	pushmi
 PORTVERSION=	1.0.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CLKAO
@@ -17,8 +17,12 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		p5-RunApp>=0.13:devel/p5-RunApp \
 		p5-Test-Output>=0:devel/p5-Test-Output \
 		${APACHE_PKGNAMEPREFIX}mod_perl2>=0:www/mod_perl2
-RUN_DEPENDS=	p5-subversion>=0:devel/p5-subversion \
-		p5-App-CLI>=0.06:devel/p5-App-CLI \
+.if ${WITH_SUBVERSION_VER:U} == LTS
+RUN_DEPENDS=	p5-subversion-lts>=0:devel/p5-subversion
+.else
+RUN_DEPENDS=	p5-subversion>=0:devel/p5-subversion
+.endif
+RUN_DEPENDS+=	p5-App-CLI>=0.06:devel/p5-App-CLI \
 		p5-Cache-Memcached>=0:databases/p5-Cache-Memcached \
 		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl \
 		p5-YAML-Syck>=0:textproc/p5-YAML-Syck \

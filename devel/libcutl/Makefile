@@ -1,5 +1,6 @@
 PORTNAME=	libcutl
 PORTVERSION=	1.11.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.codesynthesis.com/download/xsd/4.2/
 

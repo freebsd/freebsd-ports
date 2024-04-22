@@ -14,6 +14,6 @@ lib/libluksde.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pyluksde.a
 %%PYTHON_SITELIBDIR%%/pyluksde.so
 libdata/pkgconfig/libluksde.pc
-man/man1/luksdeinfo.1.gz
-man/man1/luksdemount.1.gz
-man/man3/libluksde.3.gz
+share/man/man1/luksdeinfo.1.gz
+share/man/man1/luksdemount.1.gz
+share/man/man3/libluksde.3.gz

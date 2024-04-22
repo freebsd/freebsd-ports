@@ -17,3 +17,4 @@ libdata/pkgconfig/colord-gtk4.pc
 share/man/man1/cd-convert.1.gz
 share/gir-1.0/ColordGtk-1.0.gir
 share/locale/en_GB/LC_MESSAGES/colord-gtk.mo
+share/locale/ka/LC_MESSAGES/colord-gtk.mo

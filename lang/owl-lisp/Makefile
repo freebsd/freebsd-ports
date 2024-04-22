@@ -1,20 +1,18 @@
 PORTNAME=	owl-lisp
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.23
+DISTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	lang
+MASTER_SITES=	https://haltp.org/files/
+DISTNAME=	owl-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	me@pacopascal.com
 COMMENT=	Functional dialect of Scheme
-WWW=		https://github.com/aoh/owl-lisp/
+WWW=		https://gitlab.com/owl-lisp/owl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-USE_GITLAB=	yes
-GL_PROJECT=	owl
-GL_TAGNAME=	079f58f45039805517b9b880feec050e151c52b3
-
-MAKE_ARGS+=	CC="${CC}" \
+MAKE_ARGS+= 	CC="${CC}" \
 		CFLAGS="${CFLAGS}" \
 		PREFIX="${PREFIX}"
 
@@ -27,6 +25,8 @@ PLIST_FILES=	bin/ol \
 		share/owl-lisp/fasl/init.fasl
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/ol
+	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/ovm
 	${MKDIR} ${STAGEDIR}${DATADIR}/fasl
 	${INSTALL_DATA} ${WRKSRC}/fasl/init.fasl ${STAGEDIR}${DATADIR}/fasl/init.fasl
 

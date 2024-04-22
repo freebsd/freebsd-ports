@@ -1,6 +1,6 @@
---- core/CMakeLists.txt	2022-11-09 08:14:10.000000000 -0500
-+++ core/CMakeLists.txt	2022-11-18 00:11:43.670601000 -0500
-@@ -283,7 +283,9 @@
+--- core/CMakeLists.txt	2023-12-13 17:44:47.000000000 -0500
++++ core/CMakeLists.txt	2024-01-10 01:25:40.807505000 -0500
+@@ -333,7 +333,9 @@
    set(HAVE_FREEBSD_OS 1)
    include_directories(/usr/local/include)
    link_directories(/usr/local/lib)
@@ -11,7 +11,7 @@
    check_cxx_compiler_flag(
      -Wunused-but-set-variable compiler_will_warn_of_unused_but_set_variable
    )
-@@ -350,7 +352,9 @@
+@@ -386,7 +388,9 @@
    add_definitions("-D_FILE_OFFSET_BITS=64")
  endif()
  
@@ -20,9 +20,9 @@
 +  include(FindIntl)
 +endif()
  
- if(developer)
-   add_definitions("-DDEVELOPER=1")
-@@ -368,7 +372,7 @@
+ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror -Wall -Wextra")
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wall -Wextra")
+@@ -400,7 +404,7 @@
  include(BareosFindStaticCodeAnalysisTools)
  
  if(NOT client-only
@@ -31,11 +31,11 @@
     AND CMAKE_SIZEOF_VOID_P EQUAL 8
  )
    # droplet does not build on solaris because of sys/cdefs.h: No such file or
-@@ -782,7 +786,6 @@
+@@ -777,7 +781,6 @@
  
- add_subdirectory(scripts)
- add_subdirectory(manpages)
+ include(BareosConfigureFile)
+ 
 -add_subdirectory(platforms)
  add_subdirectory(src)
- 
- include(BareosLocalBuildDefinitions OPTIONAL
+ add_subdirectory(scripts)
+ add_subdirectory(manpages)

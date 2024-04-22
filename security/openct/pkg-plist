@@ -25,7 +25,7 @@ lib/libopenctapi.so
 %%PCSC%%lib/openct-ifd.a
 %%PCSC%%lib/openct-ifd.so
 libdata/pkgconfig/libopenct.pc
-man/man1/openct-tool.1.gz
 sbin/ifdhandler
 sbin/ifdproxy
 sbin/openct-control
+share/man/man1/openct-tool.1.gz

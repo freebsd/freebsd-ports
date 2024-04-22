@@ -1,3 +1,3 @@
 bin/tsito
-man/man1/tsito.1.gz
+share/man/man1/tsito.1.gz
 %%DATADIR%%/book.dat

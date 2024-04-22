@@ -1,5 +1,6 @@
 PORTNAME=	ipsumdump
 DISTVERSION=	1.86
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://read.seas.harvard.edu/~kohler/ipsumdump/
 
@@ -14,12 +15,14 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_PERL5=	build
 
 PORTDOCS=	README.md
 PLIST_FILES=	bin/ipaggcreate bin/ipsumdump bin/ipaggmanip \
-		man/man1/${PORTNAME}.1.gz man/man1/ipaggmanip.1.gz \
-		man/man1/ipaggcreate.1.gz
+		share/man/man1/${PORTNAME}.1.gz \
+		share/man/man1/ipaggmanip.1.gz \
+		share/man/man1/ipaggcreate.1.gz
 
 OPTIONS_DEFINE=	IPV6 DOCS
 OPTIONS_SUB=	yes

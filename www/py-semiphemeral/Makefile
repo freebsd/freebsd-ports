@@ -1,5 +1,6 @@
 PORTNAME=	semiphemeral
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask>=0:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask-json>=0:www/py-flask-json@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}flask-sqlalchemy>=0:databases/py-flask-sqlalchemy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flask-sqlalchemy30>=0:databases/py-flask-sqlalchemy30@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=0:databases/py-sqlalchemy14@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy-json>=0:databases/py-sqlalchemy-json@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tweepy>=0:net/py-tweepy@${PY_FLAVOR}

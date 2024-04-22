@@ -1,5 +1,5 @@
 PORTNAME=	dill
-DISTVERSION=	0.3.7
+DISTVERSION=	0.3.8
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +16,9 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 
 USES=		python
 USE_PYTHON=	pep517 concurrent autoplist pytest # tests fail, see https://github.com/uqfoundation/dill/issues/578
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/dill/tests
 
 NO_ARCH=	yes
 

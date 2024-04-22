@@ -1,0 +1,23 @@
+PORTNAME=	lxqt-menu-data
+PORTVERSION= 	1.4.1
+CATEGORIES=	x11
+MASTER_SITES=	LXQT
+DIST_SUBDIR=	lxqt
+
+MAINTAINER=	wen@FreeBSD.org
+COMMENT=	Freedesktop.org compliant menu files for lxqt
+WWW=		https://lxqt-project.org
+
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cmake compiler:c++11-lang kde:5 lxqt perl5 pkgconfig tar:xz qt:5 gnome xorg
+
+USE_QT=		buildtools:build qmake:build core dbus gui svg widgets \
+		x11extras xml
+USE_XORG=	x11
+USE_KDE=	windowsystem
+USE_GNOME=	glib20
+USE_LXQT=	buildtools lxqt
+
+.include <bsd.port.mk>

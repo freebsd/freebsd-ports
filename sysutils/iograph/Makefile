@@ -1,5 +1,6 @@
 PORTNAME=	iograph
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/iograph
 
@@ -11,11 +12,12 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 PLIST_FILES=	bin/iograph \
-		man/man8/iograph.8.gz \
+		share/man/man8/iograph.8.gz \
 		%%DATADIR%%/in.gif \
 		%%DATADIR%%/out.gif \
 		%%DATADIR%%/iograph.gif
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 .include <bsd.port.mk>

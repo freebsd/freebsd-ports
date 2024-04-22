@@ -1,0 +1,46 @@
+https://github.com/stanislav-tkach/os_info/commit/3147a6125e48
+
+error[E0308]: mismatched types
+  --> cargo-crates/os_info-3.8.1/src/freebsd/mod.rs:28:9
+   |
+27 |     match uname("-s").as_deref() {
+   |           ---------------------- this expression has type `std::option::Option<&str>`
+28 |         "MidnightBSD" => Type::MidnightBSD,
+   |         ^^^^^^^^^^^^^ expected `Option<&str>`, found `&str`
+   |
+   = note:   expected enum `std::option::Option<&str>`
+           found reference `&'static str`
+help: try wrapping the pattern in `Some`
+   |
+28 |         Some("MidnightBSD") => Type::MidnightBSD,
+   |         +++++             +
+
+error[E0308]: mismatched types
+  --> cargo-crates/os_info-3.8.1/src/freebsd/mod.rs:29:9
+   |
+27 |     match uname("-s").as_deref() {
+   |           ---------------------- this expression has type `std::option::Option<&str>`
+28 |         "MidnightBSD" => Type::MidnightBSD,
+29 |         "FreeBSD" => {
+   |         ^^^^^^^^^ expected `Option<&str>`, found `&str`
+   |
+   = note:   expected enum `std::option::Option<&str>`
+           found reference `&'static str`
+help: try wrapping the pattern in `Some`
+   |
+29 |         Some("FreeBSD") => {
+   |         +++++         +
+
+--- cargo-crates/os_info-3.8.1/src/freebsd/mod.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/os_info-3.8.1/src/freebsd/mod.rs
+@@ -25,8 +25,8 @@ fn get_os() -> Type {
+ 
+ fn get_os() -> Type {
+     match uname("-s").as_deref() {
+-        "MidnightBSD" => Type::MidnightBSD,
+-        "FreeBSD" => {
++        Some("MidnightBSD") => Type::MidnightBSD,
++        Some("FreeBSD") => {
+             let check_hardening = match Command::new("/sbin/sysctl")
+                 .arg("hardening.version")
+                 .output()

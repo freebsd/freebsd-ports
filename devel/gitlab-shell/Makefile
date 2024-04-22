@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-shell
-PORTVERSION=	14.32.0
+PORTVERSION=	14.35.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -13,20 +13,18 @@ LICENSE=	MIT
 # https://gitlab.com/gitlab-org/gitlab-shell/-/merge_requests/720
 #BUILD_DEPENDS=	heimdal>=0:security/heimdal
 
-USES=		gmake go:modules,no_targets pkgconfig
+USES=		gmake go:modules,no_targets,1.22 pkgconfig
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 
-USERS=		git
-GROUPS=		git
-
-#INSTALL_TARGET=	install-strip
-ALL_TARGET=	build
-
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 # make sure to pass go build options into make process
 MAKE_ENV+=	${GO_ENV}
+ALL_TARGET=	build
+
+USERS=		git
+GROUPS=		git
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy
@@ -45,12 +43,19 @@ go-post-fetch:
 		[ -e go.mod ] || ${RLN} ${GO_MODFILE} go.mod; \
 		${SETENV} ${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x all)
 # ---------------------------
+# WARNING, maybe bug in core ports framework (work fine in the past for very long time
+# For an unkown reason, the downloaded go.mod is modified and therefor the distinfo is generated wrongly
+# Execute this, to fix it:
+# curl -v https://gitlab.com/gitlab-org/gitlab-shell/-/raw/v14.35.0/go.mod 2>&1 | grep content-length
+# curl -v https://gitlab.com/gitlab-org/gitlab-shell/-/raw/v14.35.0/go.mod | sha256
+# Correct this in distinfo
 
 VARLOGDIR=	/var/log/gitlab-shell
 
 PLIST_FILES+=	"@dir(git,,755) ${VARLOGDIR}"
 
 post-patch:
+	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config.yml.example
 	${MV} ${WRKSRC}/config.yml.example ${WRKSRC}/config.yml.sample
 	${CP} ${WRKSRC}/config.yml.sample ${WRKSRC}/config.yml
 	${REINPLACE_CMD} -e 's|VERSION_STRING :=.*|VERSION_STRING := v${PORTVERSION}|g' ${WRKSRC}/Makefile

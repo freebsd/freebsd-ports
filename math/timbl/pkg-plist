@@ -23,4 +23,4 @@ lib/libtimbl.so
 lib/libtimbl.so.7
 lib/libtimbl.so.7.0.0
 libdata/pkgconfig/timbl.pc
-man/man1/timbl.1.gz
+share/man/man1/timbl.1.gz

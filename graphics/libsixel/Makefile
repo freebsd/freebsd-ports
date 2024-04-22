@@ -1,5 +1,6 @@
 PORTNAME=	libsixel
 PORTVERSION=	1.8.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/saitoha/libsixel/releases/download/v${PORTVERSION}/
@@ -14,6 +15,7 @@ USES=		cpe libtool pkgconfig
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
 INSTALL_TARGET=	install-strip
 

@@ -1,6 +1,6 @@
 PORTNAME=	gutenprint
 PORTVERSION=	5.3.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	print
 MASTER_SITES=	SF/gimp-print/gutenprint-5.3/${PORTVERSION}
 
@@ -12,6 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-static --enable-cups-ppds \
 		--enable-cups-1_2-enhancements \
 		--enable-simplified-cups-ppds \

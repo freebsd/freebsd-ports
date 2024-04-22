@@ -1,5 +1,5 @@
 PORTNAME=	libnspsl
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.7
 CATEGORIES=	dns
 MASTER_SITES=	https://download.netsurf-browser.org/libs/releases/
 EXTRACT_SUFX=	-src.tar.gz

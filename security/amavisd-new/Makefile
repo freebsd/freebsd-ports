@@ -1,6 +1,6 @@
 PORTNAME=	amavisd-new
-DISTVERSION=	2.12.2
-PORTREVISION=	1
+DISTVERSION=	2.12.3
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -24,7 +24,7 @@ USE_GITLAB=	yes
 USE_PERL5=	run
 GL_ACCOUNT=	amavis
 GL_PROJECT=	amavis
-GL_TAGNAME=	38f86957cfc161c23d12637ce206f5ae7ec3d0a8
+GL_TAGNAME=	3290c9c2a11a8cc9595b5810b2f86c1dac25a392
 
 SHEBANG_FILES=	amavisd-agent amavisd-nanny amavisd-release p0f-analyzer.pl \
 		amavisd-snmp-subagent amavisd
@@ -112,7 +112,8 @@ RUN_DEPENDS+=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+RUN_DEPENDS+=	${DBD_MYSQL}
+USES+=		mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
@@ -237,9 +238,9 @@ do-install:
 .for i in amavisd amavisd-agent amavisd-nanny amavisd-release amavisd-snmp-subagent
 	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/sbin
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf ${STAGEDIR}${PREFIX}/etc/amavisd.conf.sample
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf-default ${STAGEDIR}${PREFIX}/etc/amavisd.conf-default
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-custom.conf ${STAGEDIR}${PREFIX}/etc/amavisd-custom.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/amavisd.conf ${STAGEDIR}${PREFIX}/etc/amavisd.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/amavisd.conf-default ${STAGEDIR}${PREFIX}/etc/amavisd.conf-default
+	${INSTALL_DATA} ${WRKSRC}/amavisd-custom.conf ${STAGEDIR}${PREFIX}/etc/amavisd-custom.conf.sample
 	${LN} -s ${PREFIX}/sbin/amavisd-release ${STAGEDIR}${PREFIX}/sbin/amavisd-requeue
 	${MKDIR} ${STAGEDIR}${AMAVISDIR}/var
 	${MKDIR} ${STAGEDIR}${AMAVISDIR}/tmp

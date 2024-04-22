@@ -1,17 +1,13 @@
---- Makefile.orig	2005-03-24 23:50:09 UTC
+--- Makefile.orig	2005-03-24 15:50:09 UTC
 +++ Makefile
-@@ -79,10 +79,9 @@
+@@ -79,7 +79,6 @@
  # Destinations for installation. $(PRESERVEDIR) is used for recovery files.
  # It will get mode 1777.
  #
 -PREFIX		= /usr/local
  BINDIR		= $(PREFIX)/bin
  LIBEXECDIR	= $(PREFIX)/libexec
--MANDIR		= $(PREFIX)/share/man
-+MANDIR		= $(PREFIX)/man
- PRESERVEDIR	= /var/preserve
- 
- #
+ MANDIR		= $(PREFIX)/share/man
 @@ -94,7 +93,7 @@
  #
  # A BSD-like install program. GNU install will fit well here, too.
@@ -56,7 +52,7 @@
  INCLUDE	= /usr/include
  OBJS	= ex.o ex_addr.o ex_cmds.o ex_cmds2.o ex_cmdsub.o \
  		ex_data.o ex_extern.o ex_get.o ex_io.o ex_put.o ex_re.o \
-@@ -296,13 +292,6 @@
+@@ -296,24 +292,13 @@
  # install in standard place
  
  install-man:
@@ -70,14 +66,15 @@
  	$(INSTALL) -c -m 644 ex.1 $(DESTDIR)$(MANDIR)/man1/ex.1
  	$(INSTALL) -c -m 644 vi.1 $(DESTDIR)$(MANDIR)/man1/vi.1
  	ln -s ex.1 $(DESTDIR)$(MANDIR)/man1/edit.1
-@@ -310,10 +299,6 @@
+ 	ln -s vi.1 $(DESTDIR)$(MANDIR)/man1/vedit.1
  	ln -s vi.1 $(DESTDIR)$(MANDIR)/man1/view.1
  
- install: all install-man
+-install: all install-man
 -	rm -f $(DESTDIR)$(BINDIR)/ex $(DESTDIR)$(BINDIR)/edit \
 -		$(DESTDIR)$(BINDIR)/vedit $(DESTDIR)$(BINDIR)/vi \
 -		$(DESTDIR)$(BINDIR)/view
 -	test -d $(DESTDIR)$(BINDIR) || mkdir -p $(DESTDIR)$(BINDIR)
++install: all install-man
  # special provisions for sticky install
  	if test -f $(DESTDIR)$(BINDIR)/ex; \
  	then	test -f $(DESTDIR)$(BINDIR)/ex.old.$$$$ && exit 1; \

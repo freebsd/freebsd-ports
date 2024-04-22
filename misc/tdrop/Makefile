@@ -1,5 +1,6 @@
 PORTNAME=	tdrop
 DISTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -24,10 +25,10 @@ GH_ACCOUNT=	noctuid
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/tdrop \
-		man/man1/tdrop.1.gz
+		share/man/man1/tdrop.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tdrop ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/tdrop.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/tdrop.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

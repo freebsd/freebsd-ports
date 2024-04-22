@@ -10,6 +10,8 @@ WWW=		https://github.com/awslabs/amazon-qldb-shell
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		unknown feature `stdsimd`, ahash requires the removed feature, see https://github.com/awslabs/amazon-qldb-shell/issues/587
+
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		rust-nightly>0:lang/rust-nightly # #![feature(rustc_attrs)] => #![feature]` may not be used on the stable release channel
 

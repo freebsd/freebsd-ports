@@ -1,7 +1,5 @@
 bin/mkpreview
 bin/wmakerconf
-man/man1/mkpreview.1.gz
-man/man1/wmakerconf.1.gz
 share/applications/wmakerconf.desktop
 share/locale/ca/LC_MESSAGES/wmakerconf.mo
 share/locale/da/LC_MESSAGES/wmakerconf-data.mo
@@ -28,6 +26,8 @@ share/locale/ru/LC_MESSAGES/wmakerconf-data.mo
 share/locale/ru/LC_MESSAGES/wmakerconf.mo
 share/locale/sv/LC_MESSAGES/wmakerconf.mo
 share/locale/tr/LC_MESSAGES/wmakerconf.mo
+share/man/man1/mkpreview.1.gz
+share/man/man1/wmakerconf.1.gz
 %%DATADIR%%/ABOUT-NLS
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING

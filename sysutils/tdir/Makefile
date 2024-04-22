@@ -1,5 +1,6 @@
 PORTNAME=	tdir
 PORTVERSION=	1.73
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tundraware.com/Software/tdir/
 
@@ -16,6 +17,6 @@ SHEBANG_FILES=	tdir
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/tdir \
-		man/man1/tdir.1.gz
+		share/man/man1/tdir.1.gz
 
 .include <bsd.port.mk>

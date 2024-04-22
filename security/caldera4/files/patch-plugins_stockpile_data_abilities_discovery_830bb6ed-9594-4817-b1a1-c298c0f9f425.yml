@@ -1,0 +1,10 @@
+--- plugins/stockpile/data/abilities/discovery/830bb6ed-9594-4817-b1a1-c298c0f9f425.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/830bb6ed-9594-4817-b1a1-c298c0f9f425.yml
+@@ -16,3 +16,7 @@
+       sh:
+         command: |
+           which google-chrome
++    freebsd:
++      sh:
++        command: |
++          which chrome

@@ -1,6 +1,6 @@
 PORTNAME=	oinkmaster
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -21,7 +21,7 @@ NO_ARCH=	yes
 
 PLIST_FILES=	bin/oinkmaster \
 		etc/oinkmaster.conf.sample \
-		man/man1/oinkmaster.1.gz
+		share/man/man1/oinkmaster.1.gz
 
 PORTDOCS=	README
 
@@ -30,7 +30,7 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/oinkmaster.pl ${STAGEDIR}${PREFIX}/bin/oinkmaster
 	${INSTALL_DATA} ${WRKSRC}/oinkmaster.conf ${STAGEDIR}${PREFIX}/etc/oinkmaster.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/oinkmaster.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/oinkmaster.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

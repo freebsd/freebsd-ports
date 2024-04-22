@@ -1,6 +1,6 @@
 PORTNAME=	graphviz
 PORTVERSION=	9.0.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/${PORTVERSION}/
 
@@ -39,7 +39,6 @@ MAKE_ENV=	EXPR_COMPAT=yes
 CONFLICTS_INSTALL=	ghmm
 
 INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 FIX_INCLUDE=	lib/cdt/dthdr.h lib/pathplan/tri.h \

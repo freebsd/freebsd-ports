@@ -1,7 +1,7 @@
 PORTNAME=	singular
 DISTVERSIONPREFIX=	Release-
 DISTVERSION=	4-3-2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 #MASTER_SITES=	ftp://jim.mathematik.uni-kl.de/pub/Math/Singular/SOURCES/${PORTVERSION:C/\./-/g}/
 DIST_SUBDIR=	${PORTNAME}
@@ -30,6 +30,7 @@ SHEBANG_FILES=	Singular/surfex \
 		libsingular-config.in
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE} --enable-Singular --enable-factory	\
 		--with-libparse --disable-dependency-tracking --without-python
 

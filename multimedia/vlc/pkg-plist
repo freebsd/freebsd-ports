@@ -111,8 +111,8 @@ lib/libvlccore.so.9
 lib/libvlccore.so.9.0.1
 libdata/pkgconfig/libvlc.pc
 libdata/pkgconfig/vlc-plugin.pc
-man/man1/vlc-wrapper.1.gz
-man/man1/vlc.1.gz
+share/man/man1/vlc-wrapper.1.gz
+share/man/man1/vlc.1.gz
 share/applications/vlc.desktop
 share/icons/hicolor/128x128/apps/vlc-kb.png
 share/icons/hicolor/128x128/apps/vlc-xmas.png

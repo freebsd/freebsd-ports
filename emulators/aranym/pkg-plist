@@ -1,7 +1,4 @@
 bin/aranym
-man/man1/aranym-jit.1.gz
-man/man1/aranym-mmu.1.gz
-man/man1/aranym.1.gz
 share/applications/aranym-jit.desktop
 share/applications/aranym-mmu.desktop
 share/applications/aranym.desktop
@@ -25,6 +22,9 @@ share/icons/hicolor/32x32/apps/aranym.png
 share/icons/hicolor/48x48/apps/aranym-jit.png
 share/icons/hicolor/48x48/apps/aranym-mmu.png
 share/icons/hicolor/48x48/apps/aranym.png
+share/man/man1/aranym-jit.1.gz
+share/man/man1/aranym-mmu.1.gz
+share/man/man1/aranym.1.gz
 share/pixmaps/aranym-jit.png
 share/pixmaps/aranym-mmu.png
 share/pixmaps/aranym.png

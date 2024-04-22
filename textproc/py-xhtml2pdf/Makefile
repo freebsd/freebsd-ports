@@ -1,12 +1,13 @@
 PORTNAME=	xhtml2pdf
-PORTVERSION=	0.2.13
+PORTVERSION=	0.2.15
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PDF generator using HTML and CSS
-WWW=		https://github.com/xhtml2pdf/xhtml2pdf
+WWW=		https://xhtml2pdf.readthedocs.io/en/latest/ \
+		https://github.com/xhtml2pdf/xhtml2pdf
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -20,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arabic-reshaper>=3.0.0:textproc/py-arabic-re
 		${PYTHON_PKGNAMEPREFIX}pyhanko-certvalidator>=0.19.5:security/py-pyhanko-certvalidator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pypdf>=3.1.0:print/py-pypdf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-bidi>=0.4.2:textproc/py-python-bidi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}reportlab>=3.6:print/py-reportlab@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}reportlab>=4.0.4:print/py-reportlab@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}svglib>=1.2.1:converters/py-svglib@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.0:devel/py-nose@${PY_FLAVOR}
 

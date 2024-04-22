@@ -1,5 +1,5 @@
 bin/dvdisaster
-man/man1/dvdisaster.1.gz
+share/man/man1/dvdisaster.1.gz
 %%DEFAULT%%share/applications/dvdisaster.desktop
 %%DOCS%%%%DOCSDIR%%/codecs.pdf
 %%DOCS%%%%DOCSDIR%%/devices.txt

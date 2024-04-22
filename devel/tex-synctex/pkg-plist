@@ -7,5 +7,5 @@ lib/libsynctex.so
 lib/libsynctex.so.2
 lib/libsynctex.so.2.0.0
 libdata/pkgconfig/synctex.pc
-man/man1/synctex.1.gz
-man/man5/synctex.5.gz
+share/man/man1/synctex.1.gz
+share/man/man5/synctex.5.gz

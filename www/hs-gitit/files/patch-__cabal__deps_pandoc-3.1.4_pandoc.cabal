@@ -1,5 +1,5 @@
 --- _cabal_deps/pandoc-3.1.4/pandoc.cabal.orig	2001-09-09 01:46:40 UTC
-+++ _cabal_deps/pandoc-3.1.4/pandoc.cabal
++++ _cabal_deps/pandoc-3.1.12.1/pandoc.cabal
 @@ -415,7 +415,7 @@ source-repository head
  
  flag embed_data_files

@@ -1,5 +1,6 @@
 PORTNAME=	filtermail
 PORTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://sourceforge.net/projects/mailfilter/files/Mailfilter/
 DISTNAME=	mailfilter-${PORTVERSION}
@@ -24,12 +25,13 @@ EXTRACT_AFTER_ARGS=	| ${SED} 's/[mM][aA][iI][lL][fF][iI][lL][tT][eE][rR]/filterm
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz \
-		man/man5/${PORTNAME}ex.5.gz \
-		man/man5/${PORTNAME}rc.5.gz
+		share/man/man1/${PORTNAME}.1.gz \
+		share/man/man5/${PORTNAME}ex.5.gz \
+		share/man/man5/${PORTNAME}rc.5.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|filtermail.sourceforge|mailfilter.sourceforge|g' ${WRKSRC}/README

@@ -1,6 +1,6 @@
 PORTNAME=	emil
 PORTVERSION=	2.1b9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.uu.se/pub/unix/networking/mail/emil/ \
 		ftp://ftp.gwdg.de/pub/misc/emil/ \
@@ -15,6 +15,7 @@ COMMENT=	Mail format/encoding converter
 USES=		cpe
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	YACC=byacc
 
 OPTIONS_DEFINE=	DOCS

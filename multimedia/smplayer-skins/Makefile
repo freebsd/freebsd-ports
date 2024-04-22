@@ -7,16 +7,16 @@ MASTER_SITES=	SF/smplayer/SMPlayer-skins/${PORTVERSION}
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Skins for SMPlayer (Skinnable GUI)
-WWW=		http://smplayer.sourceforge.net/
+WWW=		https://www.smplayer.info/
 
 USES=		qt:5 tar:bzip2
 USE_QT=		buildtools:build
 
-NO_ARCH=	yes
-
 DATADIR=	${PREFIX}/share/smplayer
 
 BINARY_ALIAS=	rcc=${RCC}
+
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|g' \

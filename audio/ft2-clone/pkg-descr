@@ -1,0 +1,5 @@
+Multi-platform clone of the classic music making software FastTracker II.
+
+It aims to be a highly accurate clone of the classic Fasttracker II
+software for MS-DOS. The XM player itself has been directly ported from
+the original source code, for maximum accuracy.

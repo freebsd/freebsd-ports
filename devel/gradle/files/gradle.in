@@ -1,2 +1,3 @@
 #!/bin/sh
-exec "java" -Dorg.gradle.native=false $JAVA_OPTS -classpath "%%DATADIR%%/lib/gradle-launcher-%%PORTVERSION%%.jar" org.gradle.launcher.GradleMain "$@"
+DEFAULT_JVM_OPTS="-Xmx64m -Xms64m -javaagent:%%DATADIR%%/lib/agents/gradle-instrumentation-agent-%%PORTVERSION%%.jar"
+exec "java" -Dorg.gradle.native=false $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS -classpath "%%DATADIR%%/lib/gradle-launcher-%%PORTVERSION%%.jar:$CLASSPATH" org.gradle.launcher.GradleMain "$@"

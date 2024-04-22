@@ -4,7 +4,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dgeo@centrale-marseille.fr
+MAINTAINER=	dgeo@centrale-med.fr
 COMMENT=	Deal transparently with shared files distributed as tarballs
 WWW=		https://metacpan.org/pod/File::ShareDir::Tarball
 

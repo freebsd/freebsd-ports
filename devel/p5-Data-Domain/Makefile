@@ -1,5 +1,5 @@
 PORTNAME=	Data-Domain
-PORTVERSION=	1.13
+PORTVERSION=	1.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Date-Calc>=0:devel/p5-Date-Calc \
 TEST_DEPENDS=	p5-Clone>=0:devel/p5-Clone \
 		p5-Test-Pod>=1.14:devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.04:devel/p5-Test-Pod-Coverage \
-		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings
+		p5-Test-Warnings>=0:devel/p5-Test-Warnings
 
 USES=		perl5
 USE_PERL5=	modbuild

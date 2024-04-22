@@ -1,5 +1,6 @@
 PORTNAME=	mk-configure
 PORTVERSION=	0.38.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -17,6 +18,7 @@ MAKE_JOBS_UNSAFE=	yes
 NO_ARCH=	yes
 
 BMAKE?=		${LOCALBASE}/bin/bmake
+MAKE_ARGS=	MANDIR=${PREFIX}/share/man
 INSTALL_TARGET=	installdirs install install-doc
 
 PORTDATA=	*

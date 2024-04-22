@@ -1,11 +1,15 @@
---- inspec-core.gemspec.orig	2023-01-05 19:05:28 UTC
+--- inspec-core.gemspec.orig	2024-02-21 17:10:13 UTC
 +++ inspec-core.gemspec
-@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
-   s.add_runtime_dependency(%q<thor>.freeze, [">= 0.20", "< 2.0"])
-   s.add_runtime_dependency(%q<method_source>.freeze, [">= 0.8", "< 2.0"])
-   s.add_runtime_dependency(%q<rubyzip>.freeze, [">= 1.2.2", "< 3.0"])
--  s.add_runtime_dependency(%q<rspec>.freeze, [">= 3.9", "<= 3.11"])
-+  s.add_runtime_dependency(%q<rspec>.freeze, [">= 3.9", "< 3.13"])
-   s.add_runtime_dependency(%q<rspec-its>.freeze, ["~> 1.2"])
-   s.add_runtime_dependency(%q<pry>.freeze, ["~> 0.13"])
-   s.add_runtime_dependency(%q<hashie>.freeze, [">= 3.4", "< 5.0"])
+@@ -22,10 +22,10 @@ Gem::Specification.new do |s|
+ 
+   s.add_runtime_dependency(%q<chef-telemetry>.freeze, ["~> 1.0".freeze, ">= 1.0.8".freeze])
+   s.add_runtime_dependency(%q<license-acceptance>.freeze, [">= 0.2.13".freeze, "< 3.0".freeze])
+-  s.add_runtime_dependency(%q<thor>.freeze, [">= 0.20".freeze, "< 1.3.0".freeze])
++  s.add_runtime_dependency(%q<thor>.freeze, [">= 0.20".freeze, "< 2.0".freeze])
+   s.add_runtime_dependency(%q<method_source>.freeze, [">= 0.8".freeze, "< 2.0".freeze])
+   s.add_runtime_dependency(%q<rubyzip>.freeze, [">= 1.2.2".freeze, "< 3.0".freeze])
+-  s.add_runtime_dependency(%q<rspec>.freeze, [">= 3.9".freeze, "<= 3.12".freeze])
++  s.add_runtime_dependency(%q<rspec>.freeze, [">= 3.9".freeze, "<= 3.14".freeze])
+   s.add_runtime_dependency(%q<rspec-its>.freeze, ["~> 1.2".freeze])
+   s.add_runtime_dependency(%q<pry>.freeze, ["~> 0.13".freeze])
+   s.add_runtime_dependency(%q<hashie>.freeze, [">= 3.4".freeze, "< 6.0".freeze])

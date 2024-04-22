@@ -21,8 +21,8 @@ lib/cmake/Plasma5Support/Plasma5SupportMacros.cmake
 lib/cmake/Plasma5Support/Plasma5SupportTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Plasma5Support/Plasma5SupportTargets.cmake
 lib/libPlasma5Support.so
-lib/libPlasma5Support.so.%%KDE_PLASMA_VERSION%%
 lib/libPlasma5Support.so.6
+lib/libPlasma5Support.so.%%KDE_PLASMA_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/plasma5support/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/plasma/plasma5support/libplasma5supportplugin.so
 %%QT_QMLDIR%%/org/kde/plasma/plasma5support/plasma5supportplugin.qmltypes
@@ -54,6 +54,7 @@ share/locale/nn/LC_MESSAGES/libplasma5support.mo
 share/locale/pa/LC_MESSAGES/libplasma5support.mo
 share/locale/pl/LC_MESSAGES/libplasma5support.mo
 share/locale/pt_BR/LC_MESSAGES/libplasma5support.mo
+share/locale/ro/LC_MESSAGES/libplasma5support.mo
 share/locale/ru/LC_MESSAGES/libplasma5support.mo
 share/locale/sa/LC_MESSAGES/libplasma5support.mo
 share/locale/sk/LC_MESSAGES/libplasma5support.mo

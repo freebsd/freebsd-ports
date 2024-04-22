@@ -4,7 +4,7 @@
 # curl and jq.  Uses unauthenticated access which is ratelimited to 60
 # queries per hour.
 
-REPOS_URL=https://api.github.com/repos/CTSRD-CHERI
+REPOS_URL=https://api.github.com/repos/CHERIoT-Platform
 MAX_DATE=1970101
 
 tmpfile=`mktemp -t gen-Makefile.snapshot`

@@ -1,3 +1,3 @@
-TIMESTAMP = 1697463078
-SHA256 (aws-xray-sdk-2.12.1.tar.gz) = 0bbfdbc773cfef4061062ac940b85e408297a2242f120bcdfee2593209b1e432
-SIZE (aws-xray-sdk-2.12.1.tar.gz) = 93824
+TIMESTAMP = 1710712414
+SHA256 (aws-xray-sdk-2.13.0.tar.gz) = 816186126917bc35ae4e6e2f304702a43d494ecef34a39e6330f5018bdecc9f5
+SIZE (aws-xray-sdk-2.13.0.tar.gz) = 77426

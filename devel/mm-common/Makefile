@@ -1,5 +1,6 @@
 PORTNAME=	mm-common
 PORTVERSION=	0.9.12
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -14,5 +15,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		gmake pathfix tar:xz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 .include <bsd.port.mk>

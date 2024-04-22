@@ -1,9 +1,9 @@
 PORTNAME=	tcpreplay
-DISTVERSION=	4.4.3
+DISTVERSION=	4.4.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/appneta/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to replay saved packet capture files
 WWW=		https://github.com/appneta/tcpreplay
 
@@ -17,6 +17,7 @@ USES=		cpe gmake libtool pkgconfig tar:xz
 CPE_VENDOR=	broadcom
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 # libopts options are required when using autogen
 CONFIGURE_ARGS=	--disable-libopts-install \
 		--disable-local-libopts \
@@ -24,9 +25,6 @@ CONFIGURE_ARGS=	--disable-libopts-install \
 		--with-pcapnav-config=${LOCALBASE}/bin/pcapnav-config
 
 TEST_TARGET=	test
-
-# https://github.com/appneta/tcpreplay/issues/809
-PORTSCOUT=	skipv:4.4.4
 
 OPTIONS_DEFAULT=	LIBPCAP_BASE
 OPTIONS_SINGLE=		LIBPCAP

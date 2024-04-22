@@ -1,4 +1,4 @@
---- chrome/browser/ui/browser_command_controller.cc.orig	2023-12-10 06:10:27 UTC
+--- chrome/browser/ui/browser_command_controller.cc.orig	2024-03-22 08:19:40 UTC
 +++ chrome/browser/ui/browser_command_controller.cc
 @@ -121,7 +121,7 @@
  #include "components/user_manager/user_manager.h"
@@ -36,7 +36,7 @@
      case IDC_USE_SYSTEM_TITLE_BAR: {
        PrefService* prefs = profile()->GetPrefs();
        prefs->SetBoolean(prefs::kUseCustomChromeFrame,
-@@ -1234,12 +1234,12 @@ void BrowserCommandController::InitCommandState() {
+@@ -1231,12 +1231,12 @@ void BrowserCommandController::InitCommandState() {
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

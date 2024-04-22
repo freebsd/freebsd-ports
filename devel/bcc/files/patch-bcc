@@ -26,7 +26,7 @@
 -clean:
 -	rm -f bcc bcc09 ccc
 +BINDIR		= ${LOCALPREFIX}/lib/bcc
-+MANDIR		= ${LOCALPREFIX}/man/man
++MANDIR		= ${LOCALPREFIX}/share/man/man
 +
 +beforeinstall:
 +	-mkdir -p ${DESTDIR}${LOCALPREFIX}/lib/bcc

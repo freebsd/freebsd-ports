@@ -1,8 +1,10 @@
 bin/qxgedit
 %%QT_PLUGINDIR%%/styles/libskulpturestyle.so
-share/man/fr/man1/qxgedit.1.gz
-share/man/man1/qxgedit.1.gz
 share/applications/org.rncbc.qxgedit.desktop
 share/icons/hicolor/32x32/apps/org.rncbc.qxgedit.png
 share/icons/hicolor/scalable/apps/org.rncbc.qxgedit.svg
+share/man/fr/man1/qxgedit.1.gz
+share/man/man1/qxgedit.1.gz
 share/metainfo/org.rncbc.qxgedit.metainfo.xml
+%%DATADIR%%/palette/KXStudio.conf
+%%DATADIR%%/palette/Wonton Soup.conf

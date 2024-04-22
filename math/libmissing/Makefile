@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USES=		tar:xz uidfix
 
 MAKE_ENV=	LDADD=-lmpc LIB=missing SHLIB_MAJOR="${SHLIB_MAJOR}" \
-		SRCCONF=/dev/null SRCS="${SRCS}" __MAKE_CONF=/dev/null
+		SRCCONF=/dev/null SRCS="${SRCS}"
 
 OPTIONS_DEFINE=	PROFILE EXAMPLES
 
@@ -61,10 +61,11 @@ post-patch:
 		${WRKSRC}/c/sp/Makefile
 
 do-test:
-	@cd ${WRKSRC}/c; ${SETENV} ${MAKE_ENV} XCFLAGS="${CFLAGS} -frounding-math" \
-		XINCLUDES="-I${WRKSRC}" XLDFLAGS="${LDFLAGS}" XLIBS="-L${WRKSRC} -lmissing" \
+	@cd ${WRKSRC}/c; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} \
+		XCFLAGS="${CFLAGS} -frounding-math" XINCLUDES="-I${WRKSRC}" \
+		XLDFLAGS="${LDFLAGS}" XLIBS="-L${WRKSRC} -lmissing" \
 		LD_LIBRARY_PATH="/lib:/usr/lib:${LOCALBASE}/lib:${WRKSRC}" \
-		${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} all3
+		${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS} all3
 .for t in d q s
 	@${PRINTF} "\n\n\n\t\t%s\n\n\n" "REPORT OF ${t:tu}. PRECISION TEST RESULTS:"
 	@${CAT} ${WRKSRC}/c/${t}p/tall${t}p.lst-xxx

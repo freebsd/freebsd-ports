@@ -1,5 +1,6 @@
 PORTNAME=	html-xml-utils
 PORTVERSION=	8.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.w3.org/Tools/HTML-XML-utils/
 
@@ -17,6 +18,7 @@ USES=		gmake iconv localbase shebangfix
 
 SHEBANG_FILES=	${WRKSRC}/hxcite-mkbib
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	LDFLAGS=${ICONV_LIB}
 
 OPTIONS_DEFINE=		CURL IDN IDN2 DOCS

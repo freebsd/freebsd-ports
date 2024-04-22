@@ -1,5 +1,6 @@
 PORTNAME=	cdialog
 DISTVERSION=	1.3-20230209
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://invisible-island.net/archives/${PORTNAME:S|^c||}/\
@@ -16,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		libtool:build ncurses tar:tgz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-widec \
 		--includedir=${PREFIX}/include/${PORTNAME} \
 		--with-libtool \

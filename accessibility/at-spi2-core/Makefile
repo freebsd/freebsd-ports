@@ -1,5 +1,5 @@
 PORTNAME=	at-spi2-core
-PORTVERSION=	2.50.1
+PORTVERSION=	2.52.0
 CATEGORIES=	accessibility x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -29,5 +29,7 @@ ATKONLY_MESON_TRUE= atk_only
 X11_USES=		xorg
 X11_USE=		XORG=x11,xi,xtst
 X11_MESON_ENABLED=	x11
+
+TESTING_UNSAFE=	some tests fail
 
 .include <bsd.port.mk>

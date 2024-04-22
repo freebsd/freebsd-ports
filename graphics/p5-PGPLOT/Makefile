@@ -1,6 +1,5 @@
 PORTNAME=	PGPLOT
-PORTVERSION=	2.21
-PORTREVISION=	17
+PORTVERSION=	2.29
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KGB
@@ -14,16 +13,17 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-ExtUtils-F77>=1.13:lang/p5-ExtUtils-F77
+BUILD_DEPENDS=	p5-Devel-CheckLib>0:devel/p5-Devel-CheckLib \
+		p5-ExtUtils-F77>=1.13:lang/p5-ExtUtils-F77
 LIB_DEPENDS=	libpgplot.so:graphics/pgplot \
 		libpng.so:graphics/png
 
 USES=		fortran perl5 xorg
 USE_XORG=	x11
 
+SCRIPTS_ENV=	PERL=${PERL}
 INSTALL_TARGET=	pure_install
 TEST_TARGET=	test
-SCRIPTS_ENV=	PERL=${PERL}
 
 OPTIONS_DEFINE=	EXAMPLES
 

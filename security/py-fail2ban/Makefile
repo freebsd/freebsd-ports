@@ -1,5 +1,6 @@
 PORTNAME=	fail2ban
 DISTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -70,9 +71,9 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${FAIL2BAN_DBDIR} ${STAGEDIR}/var/run/fail2ban
 .for file in fail2ban-client fail2ban-regex fail2ban-server fail2ban
-	${INSTALL_MAN} ${WRKSRC}/man/${file}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/${file}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/man/jail.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5/fail2ban-jail.conf.5
+	${INSTALL_MAN} ${WRKSRC}/man/jail.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5/fail2ban-jail.conf.5
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

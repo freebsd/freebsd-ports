@@ -14,6 +14,6 @@ lib/libfsxfs.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pyfsxfs.a
 %%PYTHON_SITELIBDIR%%/pyfsxfs.so
 libdata/pkgconfig/libfsxfs.pc
-man/man1/fsxfsinfo.1.gz
-man/man1/fsxfsmount.1.gz
-man/man3/libfsxfs.3.gz
+share/man/man1/fsxfsinfo.1.gz
+share/man/man1/fsxfsmount.1.gz
+share/man/man3/libfsxfs.3.gz

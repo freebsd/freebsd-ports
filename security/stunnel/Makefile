@@ -1,5 +1,5 @@
 PORTNAME=	stunnel
-DISTVERSION=	5.71
+DISTVERSION=	5.72
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.stunnel.org/downloads/archive/5.x/ \
@@ -21,6 +21,7 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	stunnel
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=/var/tmp --enable-static --disable-systemd \
 		--with-ssl="${OPENSSLBASE}"
 SHEBANG_FILES=	src/stunnel3.in

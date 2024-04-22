@@ -1,7 +1,5 @@
 bin/msmtp
 %%MSMTPD%%bin/msmtpd
-man/man1/msmtp.1.gz
-%%MSMTPD%%man/man1/msmtpd.1.gz
 %%MSMTPQ%%bin/msmtp-queue
 %%MSMTPQ%%bin/msmtpq
 %%NLS%%share/locale/de/LC_MESSAGES/msmtp.mo
@@ -14,3 +12,5 @@ man/man1/msmtp.1.gz
 %%NLS%%share/locale/sv/LC_MESSAGES/msmtp.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/msmtp.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/msmtp.mo
+share/man/man1/msmtp.1.gz
+%%MSMTPD%%share/man/man1/msmtpd.1.gz

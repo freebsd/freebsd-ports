@@ -1,7 +1,9 @@
 PORTNAME=	vttest
-PORTVERSION=	2018.08.11
+PORTVERSION=	2023.12.30
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.invisible-island.net/vttest/
+MASTER_SITES=	https://invisible-island.net/archives/${PORTNAME}/ \
+		https://invisible-mirror.net/archives/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,,g}
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -11,12 +13,14 @@ WWW=		https://invisible-island.net/vttest/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		tar:tgz
+
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 MAKEFILE=	makefile
 
-PLIST_FILES=	bin/vttest man/man1/vttest.1.gz
-
-USES=		tar:tgz
+PLIST_FILES=	bin/vttest \
+		share/man/man1/vttest.1.gz
 
 .include <bsd.port.mk>

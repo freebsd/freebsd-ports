@@ -1,11 +1,11 @@
---- actioncable.gemspec.orig	2023-01-06 04:36:12 UTC
+--- actioncable.gemspec.orig	2024-02-21 09:57:39 UTC
 +++ actioncable.gemspec
 @@ -22,7 +22,7 @@ Gem::Specification.new do |s|
  
-   s.add_runtime_dependency(%q<actionpack>.freeze, ["= 5.0.7.2"])
-   s.add_runtime_dependency(%q<nio4r>.freeze, [">= 1.2", "< 3.0"])
--  s.add_runtime_dependency(%q<websocket-driver>.freeze, ["~> 0.6.1"])
-+  s.add_runtime_dependency(%q<websocket-driver>.freeze, ["~> 0.6", ">= 0.6.1"])
-   s.add_development_dependency(%q<blade>.freeze, ["~> 0.5.1"])
+   s.add_runtime_dependency(%q<actionpack>.freeze, ["= 5.0.7.2".freeze])
+   s.add_runtime_dependency(%q<nio4r>.freeze, [">= 1.2".freeze, "< 3.0".freeze])
+-  s.add_runtime_dependency(%q<websocket-driver>.freeze, ["~> 0.6.1".freeze])
++  s.add_runtime_dependency(%q<websocket-driver>.freeze, ["~> 0.6".freeze, ">= 0.6.1".freeze])
+   s.add_development_dependency(%q<blade>.freeze, ["~> 0.5.1".freeze])
  end
  

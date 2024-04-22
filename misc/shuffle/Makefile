@@ -1,16 +1,18 @@
 PORTNAME=	shuffle
 PORTVERSION=	20010603
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/dd
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce random permutations
 
-PLIST_FILES=	bin/shuffle man/man1/shuffle.1.gz
+PLIST_FILES=	bin/shuffle share/man/man1/shuffle.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/shuffle ${STAGEDIR}${PREFIX}/bin/shuffle
-	${INSTALL_MAN} ${WRKSRC}/shuffle.1.gz ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/shuffle.1.gz \
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 #
 # Ports build/install stuff stops here.  Tarball creation stuff begins here.

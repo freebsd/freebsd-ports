@@ -1,6 +1,6 @@
 PORTNAME=	portupgrade
 PORTVERSION=	2.4.16
-PORTREVISION=	1
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
@@ -40,6 +40,12 @@ INSTALL_TARGET+=	install-doc
 
 # For PKG_DBDRIVER={bdb_btree,bdb_hash}
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb.so:databases/ruby-bdb
+
+.if ${RUBY_VERSION_CODE:U} >= 320
+post-patch:
+	cd ${WRKSRC} && ${FIND} bin etc lib -type f |\
+		${XARGS} ${REINPLACE_CMD} 's/File\.exists\?/File.exist?/'
+.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/compat/pkg

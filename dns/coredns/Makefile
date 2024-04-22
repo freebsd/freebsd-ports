@@ -1,7 +1,7 @@
 PORTNAME=	coredns
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.1
-PORTREVISION=	3
+DISTVERSION=	1.11.2
+PORTREVISION=	2
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +21,7 @@ PORTSCOUT=	limit:^[0-9]*\.[0-9]*\.[0-9]*$$ # otherwise it picks up the deleted t
 
 post-install:
 .for n in 1 5 7
-	${INSTALL_MAN} ${WRKSRC}/man/*.${n} ${STAGEDIR}${MANPREFIX}/man/man${n}
+	${INSTALL_MAN} ${WRKSRC}/man/*.${n} ${STAGEDIR}${PREFIX}/share/man/man${n}
 .endfor
 
 .include <bsd.port.mk>

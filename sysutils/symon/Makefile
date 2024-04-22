@@ -1,5 +1,6 @@
 PORTNAME=	symon
 PORTVERSION=	2.88
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://wpd.home.xs4all.nl/symon/philes/ \
 		LOCAL/uqs
@@ -50,7 +51,8 @@ PLIST_SUB+=	SYMUX="@comment "
 SUBDIR+=	client
 
 MAKE_ARGS+=	SUBDIR="${SUBDIR}" RRDDIR="${LOCALBASE}" LORDER=echo TSORT=cat \
-		SYSCONFDIR="${PREFIX}/etc" PREFIX="${STAGEDIR}/${PREFIX}"
+		SYSCONFDIR="${PREFIX}/etc" PREFIX="${STAGEDIR}/${PREFIX}" \
+		MANDIR="share/man"
 
 .include <bsd.port.pre.mk>
 

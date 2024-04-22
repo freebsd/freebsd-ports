@@ -1,6 +1,7 @@
 PORTNAME=	octave-forge-pkg-octave-doc
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	0.5.1
+PORTREVISION=	1
+DISTVERSION=	0.5.3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

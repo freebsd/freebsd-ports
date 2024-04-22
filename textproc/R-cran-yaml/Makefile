@@ -1,9 +1,9 @@
 PORTNAME=	yaml
-PORTVERSION=	2.3.7
+PORTVERSION=	2.3.8
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Methods to convert R data to YAML and back
 WWW=		https://cran.r-project.org/web/packages/yaml/
 

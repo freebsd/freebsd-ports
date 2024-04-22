@@ -1,6 +1,6 @@
 PORTNAME=	flex
 PORTVERSION=	2.6.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc devel
 MASTER_SITES=	https://github.com/westes/flex/releases/download/v${PORTVERSION}/
 
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	help2man:misc/help2man
 USES=		bison:alias cpe gmake libtool makeinfo
 CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 # install flex header to its own dir to avoid conflict with system flex.
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/flex --disable-shared
 CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split" \

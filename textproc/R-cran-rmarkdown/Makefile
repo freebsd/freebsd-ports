@@ -1,5 +1,5 @@
 PORTNAME=	rmarkdown
-DISTVERSION=	2.25
+DISTVERSION=	2.26
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -15,7 +15,7 @@ CRAN_DEPENDS=	R-cran-bslib>=0.2.5.1:www/R-cran-bslib \
 		R-cran-htmltools>=0.5.1:textproc/R-cran-htmltools \
 		R-cran-jquerylib>0:www/R-cran-jquerylib \
 		R-cran-jsonlite>0:converters/R-cran-jsonlite \
-		R-cran-knitr>=1.22:print/R-cran-knitr \
+		R-cran-knitr>=1.43:print/R-cran-knitr \
 		R-cran-stringr>=1.2.0:textproc/R-cran-stringr \
 		R-cran-tinytex>=0.31:print/R-cran-tinytex \
 		R-cran-xfun>=0.36:misc/R-cran-xfun \

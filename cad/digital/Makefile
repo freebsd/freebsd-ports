@@ -10,7 +10,7 @@ WWW=		https://github.com/hneemann/Digital
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	mvn:devel/maven
+BUILD_DEPENDS=	maven>0:devel/maven
 
 USES=		desktop-file-utils
 

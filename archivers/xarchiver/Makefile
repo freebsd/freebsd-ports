@@ -1,9 +1,6 @@
 PORTNAME=	xarchiver
-DISTVERSION=	0.5.4.22
+DISTVERSION=	0.5.4.23
 CATEGORIES=	archivers
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	5c49e86ffe16cc8a98018ff2f4d2e0ea2b9c0b6c.patch:-p1 # (bsd)sed fix: https://github.com/ib/xarchiver/issues/186
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Desktop-agnostic GTK frontend to various archiving tools

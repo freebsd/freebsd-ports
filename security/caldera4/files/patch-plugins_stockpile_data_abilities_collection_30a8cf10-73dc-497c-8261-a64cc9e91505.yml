@@ -1,0 +1,18 @@
+--- plugins/stockpile/data/abilities/collection/30a8cf10-73dc-497c-8261-a64cc9e91505.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/collection/30a8cf10-73dc-497c-8261-a64cc9e91505.yml
+@@ -8,7 +8,7 @@
+     attack_id: T1560.001
+     name: "Archive Collected Data: Archive via Utility"
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           tar -C #{host.dir.staged} -czf - . | gpg -c --pinentry-mode=loopback --passphrase #{host.archive.password} > #{host.dir.staged}.tar.gz.gpg && echo #{host.dir.staged}.tar.gz.gpg
+@@ -29,4 +29,4 @@
+             - source: host.dir.compress
+   requirements:
+     - plugins.stockpile.app.requirements.paw_provenance:
+-      - source: host.dir.staged
+\ No newline at end of file
++      - source: host.dir.staged

@@ -2,8 +2,8 @@
 @sample etc/wifibox/core.conf.sample
 @sample etc/devd/wifibox.conf.sample
 etc/rc.d/wifibox
-man/man5/wifibox-guest.5.gz
-man/man8/wifibox.8.gz
 sbin/wifibox
+share/man/man5/wifibox-guest.5.gz
+share/man/man8/wifibox.8.gz
 @preexec /usr/bin/touch /var/log/wifibox.log
 @preunexec /bin/rm -f /var/log/wifibox.log

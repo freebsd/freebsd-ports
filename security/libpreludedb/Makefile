@@ -1,5 +1,6 @@
 PORTNAME=	libpreludedb
 PORTVERSION=	5.2.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.prelude-siem.org/attachments/download/1393/
 
@@ -21,6 +22,7 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	preludedb-admin
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--without-swig
 CONFIGURE_ENV=	PYTHON3=${PYTHON_CMD}
 

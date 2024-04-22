@@ -1,5 +1,6 @@
 PORTNAME=	mesa-libs
 PORTVERSION=	${MESAVERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL libraries that support GLX and EGL clients
@@ -10,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/docs/license.rst
 
 USES=		llvm:noexport
 
-LIB_DEPENDS=	libOpenGL.so:graphics/libglvnd
+BUILD_DEPENDS=	libglvnd>=0:graphics/libglvnd
 
 OPTIONS_GROUP=			PLATFORM
 OPTIONS_GROUP_PLATFORM=		PLATFORM_X11 PLATFORM_WAYLAND
@@ -24,7 +25,7 @@ OPTIONS_SUB=	yes
 
 WAYLAND_DESC=		Enable support for the Wayland platform in EGL
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>=1.8:graphics/wayland-protocols
-WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland
+WAYLAND_LIB_DEPENDS=	libwayland-server.so:graphics/wayland
 WAYLAND_IMPLIES=	PLATFORM_WAYLAND
 
 ZSTD_DESC=		Use ZSTD for shader cache

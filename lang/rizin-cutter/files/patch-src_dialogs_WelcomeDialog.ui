@@ -1,0 +1,12 @@
+--- src/dialogs/WelcomeDialog.ui.orig	2024-03-28 18:05:38 UTC
++++ src/dialogs/WelcomeDialog.ui
+@@ -228,6 +228,9 @@
+            <property name="text">
+             <string>Check for updates on start</string>
+            </property>
++           <property name="disabled">
++            <bool>true</bool>
++           </property>
+           </widget>
+          </item>
+         </layout>

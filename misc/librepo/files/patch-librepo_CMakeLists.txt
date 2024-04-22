@@ -1,6 +1,6 @@
---- librepo/CMakeLists.txt.orig	2022-12-09 12:47:26 UTC
+--- librepo/CMakeLists.txt.orig	2024-03-26 13:28:08 UTC
 +++ librepo/CMakeLists.txt
-@@ -18,7 +18,8 @@ SET (librepo_SRCS
+@@ -18,7 +18,8 @@ LIST(APPEND librepo_SRCS
       url_substitution.c
       util.c
       xmlparser.c
@@ -8,17 +8,17 @@
 +     yum.c
 +     xattr.c)
  
- SET(librepo_HEADERS
-     checksum.h
-@@ -52,6 +53,7 @@ TARGET_LINK_LIBRARIES(librepo
+ IF(USE_GPGME)
+     LIST(APPEND librepo_SRCS gpg_gpgme.c)
+@@ -68,6 +69,7 @@ TARGET_LINK_LIBRARIES(librepo
+                         ${CURL_LIBRARY}
                          ${LIBCRYPTO_LIBRARIES}
-                         ${GPGME_VANILLA_LIBRARIES}
                          ${GLIB2_LIBRARIES}
 +			crypto ssl
                       )
- IF (WITH_ZCHUNK)
-     TARGET_LINK_LIBRARIES(librepo ${ZCHUNKLIB_LIBRARIES})
-@@ -73,6 +75,8 @@ INSTALL(TARGETS librepo LIBRARY DESTINATION ${CMAKE_IN
+ IF (USE_GPGME)
+     TARGET_LINK_LIBRARIES(librepo ${GPGME_VANILLA_LIBRARIES})
+@@ -98,6 +100,8 @@ INSTALL(FILES "${CMAKE_BINARY_DIR}/librepo.pc"
  INSTALL(FILES "${CMAKE_BINARY_DIR}/librepo.pc"
  	DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
  

@@ -1,4 +1,4 @@
 bin/suck
 bin/blow
-man/man1/blow.1.gz
-man/man1/suck.1.gz
+share/man/man1/blow.1.gz
+share/man/man1/suck.1.gz

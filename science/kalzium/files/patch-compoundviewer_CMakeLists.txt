@@ -1,0 +1,13 @@
+- fix linking with avogadrolibs: it fails w/out the lib specification
+- cmake's link_directories doesn't work for some reason
+
+--- compoundviewer/CMakeLists.txt.orig	2023-11-30 16:56:21 UTC
++++ compoundviewer/CMakeLists.txt
+@@ -30,6 +30,7 @@ target_link_libraries(compoundviewer
+     AvogadroQtOpenGL
+     AvogadroQtPlugins
+     Eigen3::Eigen
++    -L${CMAKE_INSTALL_PREFIX}/lib
+ )
+ 
+ target_include_directories(compoundviewer PRIVATE

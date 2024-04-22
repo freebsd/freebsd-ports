@@ -45,6 +45,7 @@ share/desktop-directories/xfce-system.directory
 %%GIR%%share/gir-1.0/Garcon-1.0.gir
 %%GIR%%share/gir-1.0/GarconGtk-1.0.gir
 share/icons/hicolor/32x32/apps/org.xfce.garcon.png
+share/icons/hicolor/64x64/apps/org.xfce.garcon.png
 %%NLS%%share/locale/am/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/garcon.mo

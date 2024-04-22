@@ -2,10 +2,10 @@ bin/btedit
 bin/dbverify
 bin/llexec
 bin/llines
-man/man1/btedit.1.gz
-man/man1/dbverify.1.gz
-man/man1/llexec.1.gz
-man/man1/llines.1.gz
+share/man/man1/btedit.1.gz
+share/man/man1/dbverify.1.gz
+share/man/man1/llexec.1.gz
+share/man/man1/llines.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/.linesrc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

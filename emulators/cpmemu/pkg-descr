@@ -1,7 +1,0 @@
-A CPM emulator.
-
-Type 'UNIX' at the CCP prompt to leave the emulator.
-(Or ctrl-@, followed by 'q' any time the keyboard is polled)
-
-WARNING! This software runs only on 386 compatible processors
-and systems which allow nonaligned word/dword memory access.

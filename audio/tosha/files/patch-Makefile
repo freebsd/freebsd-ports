@@ -1,6 +1,15 @@
 --- Makefile.orig	1998-12-16 12:34:09 UTC
 +++ Makefile
-@@ -17,7 +17,7 @@ MANDIR=$(PREFIX)/man
+@@ -8,7 +8,7 @@ ETCDIR=$(PREFIX)/etc
+ PREFIX?=/usr/local
+ BINDIR=$(PREFIX)/bin
+ ETCDIR=$(PREFIX)/etc
+-MANDIR=$(PREFIX)/man
++MANDIR=$(PREFIX)/share/man
+ 
+ ###################################################
+ ######                                       ######
+@@ -17,7 +17,7 @@ CFLAGS?=-O2
  ###################################################
  
  CFLAGS?=-O2
@@ -9,7 +18,7 @@
  
  .if (exists(/usr/include/camlib.h))
  CFLAGS+=-DCAM
-@@ -53,15 +53,10 @@ pcmfade:	pcmfade.o utils.o
+@@ -53,15 +53,10 @@ install:	$(BINS)
  	$(CC) $(CFLAGS) -o pcmfade pcmfade.o utils.o
  
  install:	$(BINS)

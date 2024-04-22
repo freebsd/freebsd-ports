@@ -1,4 +1,4 @@
---- chrome/common/media/cdm_registration.cc.orig	2023-12-23 12:33:28 UTC
+--- chrome/common/media/cdm_registration.cc.orig	2024-04-04 19:16:34 UTC
 +++ chrome/common/media/cdm_registration.cc
 @@ -26,11 +26,11 @@
  

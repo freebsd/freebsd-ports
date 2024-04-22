@@ -1,11 +1,6 @@
 --- configure.ac.orig	2019-12-10 09:29:11 UTC
 +++ configure.ac
-@@ -123,12 +123,12 @@ SV_MODULE_OPTIONAL([libpulse],[libpulse >= 0.9],[pulse
- SV_MODULE_REQUIRED([lrdf],[lrdf >= 0.2],[lrdf.h],[lrdf],[lrdf_init])
- SV_MODULE_REQUIRED([oggz],[oggz >= 1.0.0],[oggz/oggz.h],[oggz],[oggz_run])
- SV_MODULE_REQUIRED([fishsound],[fishsound >= 1.0.0],[fishsound/fishsound.h],[fishsound],[fish_sound_new])
--SV_MODULE_REQUIRED([mad],[mad >= 0.15.0],[mad.h],[mad],[mad_decoder_init])
-+SV_MODULE_REQUIRED([mad],[libmad >= 0.15.0],[mad.h],[mad],[mad_decoder_init])
+@@ -127,8 +127,8 @@ SV_MODULE_REQUIRED([opus],[opusfile],[opus/opusfile.h]
  SV_MODULE_REQUIRED([id3tag],[id3tag >= 0.15.0],[id3tag.h],[id3tag],[id3_tag_new])
  SV_MODULE_REQUIRED([opus],[opusfile],[opus/opusfile.h],[opusfile],[op_read_float])
  
@@ -16,7 +11,7 @@
  
  AC_SUBST(PERL)
  AC_SUBST(XARGS)
-@@ -154,6 +154,7 @@ AC_CONFIG_FILES([config.pri])
+@@ -154,6 +154,7 @@ AC_OUTPUT
  
  AC_OUTPUT
  

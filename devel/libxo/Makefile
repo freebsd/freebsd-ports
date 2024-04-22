@@ -1,6 +1,6 @@
 PORTNAME=	libxo
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel textproc
 MASTER_SITES=	https://github.com/Juniper/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/Copyright
 
 USES=		autoreconf gmake libtool pathfix perl5
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USE_PERL5=	run
 

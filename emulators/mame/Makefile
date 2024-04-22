@@ -1,5 +1,5 @@
 PORTNAME=	mame
-DISTVERSION=	0.261
+DISTVERSION=	0.264
 CATEGORIES=	emulators games
 
 MAINTAINER=	agh@riseup.net
@@ -27,21 +27,17 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinxcontrib-svg2pdfconverter>0:textproc/
 		rapidjson>0:devel/rapidjson
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libFLAC.so:audio/flac \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
-		libportmidi.so:audio/portmidi \
 		libpugixml.so:textproc/pugixml \
-		libutf8proc.so:textproc/utf8proc
-RUN_DEPENDS=	liberation-fonts-ttf>=0:x11-fonts/liberation-fonts-ttf
+		libutf8proc.so:textproc/utf8proc \
+		libzstd.so:archivers/zstd
 
-USES=		compiler:c++17-lang gl gmake jpeg llvm:min=16 localbase \
-		pkgconfig python:build sdl shebangfix sqlite:3 xorg
+USES=		compiler:c++17-lang gmake jpeg llvm:min=16 localbase pkgconfig \
+		python:build sdl shebangfix sqlite:3 xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mamedev
 GH_TAGNAME=	mame${DISTVERSION:S/.//}
-USE_GL=		gl
-USE_SDL=	sdl2 ttf2
+USE_SDL=	sdl2
 USE_XORG=	x11 xext xi xinerama xrender
 
 MAKEFILE=	makefile
@@ -63,12 +59,12 @@ MAKE_ENV=	NO_USE_PORTAUDIO=1 \
 		USE_SYSTEM_LIB_FLAC=1 \
 		USE_SYSTEM_LIB_GLM=1 \
 		USE_SYSTEM_LIB_JPEG=1 \
-		USE_SYSTEM_LIB_PORTMIDI=1 \
 		USE_SYSTEM_LIB_PUGIXML=1 \
 		USE_SYSTEM_LIB_RAPIDJSON=1 \
 		USE_SYSTEM_LIB_SQLITE3=1 \
 		USE_SYSTEM_LIB_UTF8PROC=1 \
 		USE_SYSTEM_LIB_ZLIB=1 \
+		USE_SYSTEM_LIB_ZSTD=1 \
 		USE_TAPTUN=1
 
 CFLAGS_aarch64=	-march=armv8-a+crc+crypto
@@ -77,9 +73,14 @@ EXTRACT_AFTER_ARGS=	${_DIST_EXCLUDES:S,^,--exclude ,}
 
 SUB_FILES=	mame.ini pkg-message plugin.ini ui.ini
 
-PORTDOCS=	html/*
+PORTDOCS=	*
 
-OPTIONS_DEFINE=			DOCS NLS OPENMP QTDEBUGGER SSE2 TOOLS
+OPTIONS_DEFINE=			DOCS
+OPTIONS_DEFAULT=		MAME
+OPTIONS_GROUP=			EMULATORS EXTRATOOLS HARDWARE
+OPTIONS_GROUP_EMULATORS=	MAME MAMENL MAMEVIRTUAL NLS QTDEBUGGER
+OPTIONS_GROUP_EXTRATOOLS=	TOOLS
+OPTIONS_GROUP_HARDWARE=		OPENMP SSE2
 OPTIONS_RADIO=			BUILDTYPE
 OPTIONS_RADIO_BUILDTYPE=	DEBUG SIZE_OPTIMIZED_CFLAGS \
 				SPEED_OPTIMIZED_CFLAGS
@@ -91,12 +92,18 @@ OPTIONS_SUB=			yes
 BUILDTYPE_DESC=			Application production type
 DEBUG_DESC=			Produce profiling data, and symbols for debugging
 DOCS_DESC=			Install extensive online MAME documentation
+EMULATORS_DESC=			Emulators
+EXTRATOOLS_DESC=		Tools
+HARDWARE_DESC=			Build with hardware extensions
+MAMENL_DESC=			Netlist audio component solver
+MAMEVIRTUAL_DESC=		LaserDisk Player
+MAME_DESC=			MAME
 NLS_DESC=			Install language translations for use in the GUI
 QTDEBUGGER_DESC=		Build with Qt interactive low-level machine debugger
 SIZE_OPTIMIZED_CFLAGS_DESC=	Optimize for smaller binaries (-Os)
 SPEED_OPTIMIZED_CFLAGS_DESC=	Optimize for faster binaries (-O3)
 SSE2_DESC=			Build with Streaming SIMD Extensions 2
-TOOLS_DESC=			Additional tools for archiving, development, and multimedia
+TOOLS_DESC=			Tools for archiving, development, and multimedia
 
 DEBUG_MAKE_ENV=				DEBUG=1 \
 					OPTIMIZE=g \
@@ -105,6 +112,27 @@ DEBUG_MAKE_ENV_OFF=			STRIP_SYMBOLS=1
 # Attempt to avoid address space exhaustion during linking, specifically
 # on armv7, and possibly other architectures:
 DEBUG_LDFLAGS_OFF=			-s
+MAMENL_LIB_DEPENDS=			${_EMULATORS_LIB_DEPENDS}
+MAMENL_RUN_DEPENDS=			${_EMULATORS_RUN_DEPENDS}
+MAMENL_USES=				${_EMULATORS_USES}
+MAMENL_USE=				${_EMULATORS_USE}
+MAMENL_MAKE_ENV=			${_EMULATORS_MAKE_ENV}
+MAMENL_PLIST_SUB=			MAMEDATA=""
+MAMENL_PLIST_SUB_OFF=			MAMEDATA="@comment "
+MAMEVIRTUAL_LIB_DEPENDS=		${_EMULATORS_LIB_DEPENDS}
+MAMEVIRTUAL_RUN_DEPENDS=		${_EMULATORS_RUN_DEPENDS}
+MAMEVIRTUAL_USES=			${_EMULATORS_USES}
+MAMEVIRTUAL_USE=			${_EMULATORS_USE}
+MAMEVIRTUAL_MAKE_ENV=			${_EMULATORS_MAKE_ENV}
+MAMEVIRTUAL_PLIST_SUB=			MAMEDATA=""
+MAMEVIRTUAL_PLIST_SUB_OFF=		MAMEDATA="@comment "
+MAME_LIB_DEPENDS=			${_EMULATORS_LIB_DEPENDS}
+MAME_RUN_DEPENDS=			${_EMULATORS_RUN_DEPENDS}
+MAME_USES=				${_EMULATORS_USES}
+MAME_USE=				${_EMULATORS_USE}
+MAME_MAKE_ENV=				${_EMULATORS_MAKE_ENV}
+MAME_PLIST_SUB=				MAMEDATA=""
+MAME_PLIST_SUB_OFF=			MAMEDATA="@comment "
 NLS_USES=				gettext-runtime
 OPENMP_MAKE_ENV=			OPENMP=1
 OPENMP_MAKE_ENV_OFF=			OPENMP=0
@@ -135,12 +163,26 @@ _DIST_EXCLUDES+=	3rdparty/bx/include/compat/freebsd/dirent.h \
 # Make use of Ports instead of bundled libraries:
 _DIST_EXCLUDES+=	3rdparty/expat 3rdparty/glm 3rdparty/libflac \
 			3rdparty/libjpeg 3rdparty/portmidi 3rdparty/pugixml \
-			3rdparty/rapidjson 3rdparty/sqlite3 \
-			3rdparty/utf8proc 3rdparty/zlib
+			3rdparty/rapidjson 3rdparty/sqlite3 3rdparty/utf8proc \
+			3rdparty/zlib 3rdparty/zstd
 # Bundled libraries not used at all:
 _DIST_EXCLUDES+=	3rdparty/genie 3rdparty/portaudio 3rdparty/tap-windows6
 # pre-built GENie binaries for other platforms:
 _DIST_EXCLUDES+=	3rdparty/bx/tools/bin
+_DOCS_INSTALL_EXCLUDES=	"-not -name .buildinfo -not -regex ^./_sources.*"
+_EMULATORS_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+			libfreetype.so:print/freetype2 \
+			libportmidi.so:audio/portmidi
+_EMULATORS_MAKE_ENV=	EMULATOR=1 \
+			USE_SYSTEM_LIB_PORTMIDI=1
+_EMULATORS_RUN_DEPENDS=	liberation-fonts-ttf>=0:x11-fonts/liberation-fonts-ttf
+_EMULATORS_USES=	gl
+_EMULATORS_USE=		GL=gl \
+			SDL=ttf2
+_TOOLS_COMMANDS=	-depth 1 -type f -and -not -type d -and -not -name \
+			${PORTNAME}* -perm -o=+x
+_TOOLS_MANUALS=		-name *.1 -depth 1 -type f -and -not -type d -and -not \
+			-name ${PORTNAME}*
 
 .include <bsd.port.options.mk>
 
@@ -151,9 +193,15 @@ MAKE_ENV+=	PTR64=1
 # Compiling with -pg (PROFILE) causes the linker to run out of memory on i386,
 # build with less profiling data:
 .if ${ARCH:Mi386}
-DEBUG_MAKE_ENV+=	PROFILER=1
+DEBUG_MAKE_ENV=	PROFILER=1
 .else
-DEBUG_MAKE_ENV+=	PROFILE=1
+DEBUG_MAKE_ENV=	PROFILE=1
+.endif
+
+.if empty(PORT_OPTIONS:MMAME) && empty(PORT_OPTIONS:MMAMENL) && \
+	empty(PORT_OPTIONS:MMAMEVIRTUAL)
+MAKE_ENV+=	EMULATOR=0
+PLIST_SUB+=	MAMEDATA="@comment "
 .endif
 
 post-extract:
@@ -168,60 +216,72 @@ post-patch:
 		${WRKSRC}/src/frontend/mame/ui/icorender.cpp
 # Patch build to use GENie from Ports:
 	${REINPLACE_CMD} -e 's|%%GENIE_PREFIX%%|${PREFIX}/bin/|' \
-	${WRKSRC}/makefile \
+		${WRKSRC}/makefile \
 		${WRKSRC}/3rdparty/bx/makefile
 
 do-build-DOCS-on:
 	(cd ${WRKSRC}/docs && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} html SPHINXBUILD=sphinx-build-${PYTHON_VER})
 
+do-build-MAMEVIRTUAL-on:
+	(cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} SUBTARGET=virtual)
+
+do-build-MAMENL-on:
+	(cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} SUBTARGET=nl)
+
 post-build:
 	(cd ${WRKSRC}/docs && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} man SPHINXBUILD=sphinx-build-${PYTHON_VER})
 
-post-build-TOOLS-on:
-.for EXTRA_TOOL in nl virtual
-	(cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} SUBTARGET=${EXTRA_TOOL} \
-		TOOLS=0)
-.endfor
-
 do-install:
-.for DATA in artwork bgfx ctrlr ini hash plugins samples
+. if ${PORT_OPTIONS:MMAME} || ${PORT_OPTIONS:MMAMENL} || \
+	${PORT_OPTIONS:MMAMEVIRTUAL}
+.  for DATA in artwork bgfx ctrlr ini hash plugins samples
 	(cd ${WRKSRC} && \
 		${COPYTREE_SHARE} ${DATA} ${STAGEDIR}${DATADIR})
-.endfor
+.  endfor
 	${MKDIR} ${STAGEDIR}${ETCDIR}
-.for INI in mame plugin ui
+.  for INI in mame plugin ui
 	${INSTALL_DATA} ${WRKDIR}/${INI}.ini \
 		${STAGEDIR}${ETCDIR}/${INI}.ini.sample
-.endfor
+.  endfor
 	${MKDIR} ${STAGEDIR}${DATADIR}/keymaps
-.for KEYMAP in be br ch de es fr gb it pt se
+.  for KEYMAP in be br ch de es fr gb it pt se
 	${INSTALL_DATA} ${WRKSRC}/keymaps/km_${KEYMAP}_LINUX.map \
 		${STAGEDIR}${DATADIR}/keymaps/km_${KEYMAP}.map
-.endfor
+.  endfor
+. endif
 	${INSTALL_MAN} ${WRKSRC}/docs/build/man/${PORTNAME:tu}.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
+
+do-install-DOCS-on:
+	(cd ${WRKSRC}/docs/build/html && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} ${_DOCS_INSTALL_EXCLUDES})
+
+do-install-MAME-on:
 	${INSTALL_MAN} ${WRKSRC}/docs/man/${PORTNAME}.6 \
 		${STAGEDIR}${PREFIX}/share/man/man6
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
-do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/docs/build && \
-		${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR} "! -name .buildinfo -not -regex ^./_sources.*")
+do-install-MAMENL-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}nl \
+		${STAGEDIR}${PREFIX}/bin
+
+do-install-MAMEVIRTUAL-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}virtual \
+		${STAGEDIR}${PREFIX}/bin
 
 do-install-NLS-on:
 	(cd ${WRKSRC} && \
-		${COPYTREE_SHARE} language ${STAGEDIR}${DATADIR} "! -name *.po")
+		${COPYTREE_SHARE} language ${STAGEDIR}${DATADIR} "-not -name *.po")
 
 do-install-TOOLS-on:
-	${FIND} ${WRKSRC} -depth 1 -type f -and ! -type d -and ! -name ${PORTNAME} \
-		-perm -o=+x -exec ${INSTALL_PROGRAM} {} ${STAGEDIR}${PREFIX}/bin/ \
-		\;
-	${INSTALL_MAN} ${WRKSRC}/docs/man/*.1 \
-		${STAGEDIR}${PREFIX}/share/man/man1
+	${FIND} ${WRKSRC} ${_TOOLS_COMMANDS} -exec ${INSTALL_PROGRAM} {} \
+		${STAGEDIR}${PREFIX}/bin/ \;
+	${FIND} ${WRKSRC}/docs/man ${_TOOLS_MANUALS} -exec ${INSTALL_MAN} \
+		{} ${STAGEDIR}${PREFIX}/share/man/man1/ \;
 
 .include <bsd.port.mk>

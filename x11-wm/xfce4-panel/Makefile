@@ -1,6 +1,5 @@
 PORTNAME=	xfce4-panel
-PORTVERSION=	4.18.5
-PORTREVISION=	2
+PORTVERSION=	4.18.6
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -25,8 +24,9 @@ USE_XFCE=	garcon libexo xfconf
 USE_XORG=	ice sm x11 xext
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-gio-unix \
+		--without-html-dir
 INSTALL_TARGET=	install-strip
-CONFIGURE_ARGS=	--enable-gio-unix --without-html-dir
 
 PORTSCOUT=	limitw:1,even
 
@@ -36,15 +36,15 @@ OPTIONS_SUB=		yes
 
 GIR_DESC=		Use Gobject Introspection
 
-GIR_USE=		gnome=introspection:build
+GIR_USE=		GNOME=introspection:build
 GIR_CONFIGURE_ON=	--enable-introspection=yes
 GIR_CONFIGURE_OFF=	--enable-introspection=no
 
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 
+VAPI_IMPLIES=		GIR
 VAPI_USES=		vala:build
 VAPI_CONFIGURE_ENABLE=	vala
-VAPI_IMPLIES=		GIR
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 PORTNAME=	harvid
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 
 MAINTAINER=	marcelbonnet@gmail.com
@@ -22,7 +22,7 @@ LLD_UNSAFE=	yes
 MAKE_JOBS_UNSAFE=	yes # https://github.com/x42/harvid/issues/5
 
 PLIST_FILES=	bin/harvid \
-		man/man1/harvid.1.gz
+		share/man/man1/harvid.1.gz
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/harvid

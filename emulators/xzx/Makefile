@@ -1,6 +1,6 @@
 PORTNAME=	xzx
 PORTVERSION=	4.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
 MASTER_SITES=	http://wos.meulie.net/pub/sinclair/emulators/unix/ \
 		http://fossies.org/linux/misc/old/
@@ -21,6 +21,7 @@ USE_XORG=	x11 ice sm xext xpm xt xxf86vm
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-oss
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-pro
 

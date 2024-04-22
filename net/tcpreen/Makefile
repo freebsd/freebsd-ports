@@ -1,6 +1,6 @@
 PORTNAME=	tcpreen
 PORTVERSION=	1.4.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.remlab.net/files/tcpreen/
 
@@ -12,6 +12,7 @@ LICENSE=	GPLv2+
 
 USES=		cpe tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 OPTIONS_SUB=	yes
 

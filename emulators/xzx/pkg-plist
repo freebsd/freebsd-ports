@@ -7,7 +7,7 @@ lib/xzx-pro/if1.rom
 lib/xzx-pro/plus2.rom
 lib/xzx-pro/plus3.rom
 lib/xzx-pro/spectrum.rom
-man/man1/xzx.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/README
+share/man/man1/xzx.1.gz

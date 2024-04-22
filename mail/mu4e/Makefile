@@ -1,6 +1,6 @@
 PORTNAME=	mu4e
 PORTVERSION=	1.8.13
-PORTREVISION=	6
+PORTREVISION=	8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
@@ -38,7 +38,7 @@ post-extract:
 	${INSTALL_DATA} ${WRKSRC}/mu4e/obsolete/org-mu4e.el \
 	    ${WRKSRC}/mu4e/org-mu4e.el
 
-pre-build:
+post-configure:
 	${REINPLACE_CMD} -e '/.el.elc/,/^$$/d' ${BUILD_WRKSRC}/Makefile && \
 	    ${ECHO_CMD} '.include "${FILESDIR}/byte-compile.mk"' \
 	    >> ${BUILD_WRKSRC}/Makefile

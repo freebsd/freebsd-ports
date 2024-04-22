@@ -1,5 +1,6 @@
 PORTNAME=	surblhost
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -9,7 +10,8 @@ WWW=		https://surblhost.sourceforge.net/
 
 USES=	tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/surblhost.1.gz
+		share/man/man1/surblhost.1.gz
 
 .include <bsd.port.mk>

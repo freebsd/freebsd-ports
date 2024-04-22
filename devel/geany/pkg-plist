@@ -48,7 +48,7 @@ lib/libgeany.so
 lib/libgeany.so.0
 lib/libgeany.so.0.0.0
 libdata/pkgconfig/geany.pc
-%%PORTDOCS%%man/man1/geany.1.gz
+%%PORTDOCS%%share/man/man1/geany.1.gz
 share/applications/geany.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING

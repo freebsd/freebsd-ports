@@ -1,5 +1,6 @@
 PORTNAME=	compupic
 PORTVERSION=	5.1.1063
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://files.photodex.com/archive/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-i386-freebsd
@@ -19,6 +20,6 @@ do-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/compupic
 	${LN} -sf ${PREFIX}/compupic/compupic ${STAGEDIR}${PREFIX}/bin/compupic
 	${INSTALL_MAN} ${STAGEDIR}${PREFIX}/compupic/compupic.1 \
-		${STAGEDIR}${PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	xmahjongg
 PORTVERSION=	3.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.lcdf.org/xmahjongg/
 
@@ -13,5 +13,6 @@ LICENSE=	GPLv2
 USES=		xorg
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>

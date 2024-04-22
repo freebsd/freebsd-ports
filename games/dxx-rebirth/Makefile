@@ -1,5 +1,5 @@
 PORTNAME=	dxx-rebirth
-PORTVERSION=	20231232
+PORTVERSION=	20240317
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -17,11 +17,10 @@ BUILD_DEPENDS=	as:devel/binutils
 LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libpng.so:graphics/png
 
-USES=		compiler:c++17-lang gl localbase:ldflags pkgconfig scons sdl \
-		tar:xz
+USES=		gl localbase:ldflags pkgconfig scons sdl tar:xz
 USE_GL=		gl glu
 USE_GITHUB=	yes
-GH_TAGNAME=	4efe4c9
+GH_TAGNAME=	b5ca993
 USE_SDL=	image2 mixer2 sdl2
 
 MAKE_ARGS=	ignore_unknown_variables=1 sdl2=1
@@ -29,14 +28,19 @@ MAKE_ARGS=	ignore_unknown_variables=1 sdl2=1
 PLIST_FILES=	bin/d1x-rebirth \
 		bin/d2x-rebirth
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} != riscv64
 MAKE_ARGS+=	lto=1
+.endif
+
+.if ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc
+CXXFLAGS+=	-Wno-error=missing-field-initializers
+USE_GCC=	12
 .endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/d1x-rebirth \
 		${STAGEDIR}${PREFIX}/bin/d2x-rebirth
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

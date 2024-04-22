@@ -228,4 +228,4 @@ lib/exmh-%%EXMH_VERSION%%/widgetText.tcl
 lib/exmh-%%EXMH_VERSION%%/widgets.tcl
 lib/exmh-%%EXMH_VERSION%%/xns.tcl
 lib/exmh-%%EXMH_VERSION%%/xnsgetmail.exp
-man/man1/exmh.1.gz
+share/man/man1/exmh.1.gz

@@ -1,6 +1,6 @@
 PORTNAME=	rasqal
 PORTVERSION=	0.9.33
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/ \
 		SF/librdf/${PORTNAME}/${PORTVERSION}
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libraptor2.so:textproc/raptor2 \
 USES=		gmake libtool pathfix perl5 pkgconfig ssl
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 
 OPTIONS_RADIO=	DEC

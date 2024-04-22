@@ -147,7 +147,7 @@ share/man/man5/svxreflector.conf.5.gz
 sbin/svxlink_gpio_down
 sbin/svxlink_gpio_up
 @dir %%DATADIR%%/sounds
-@dir /var/spool/svxlink/propagation_monitor
-@dir /var/spool/svxlink/qso_recorder
-@dir /var/spool/svxlink/voice_mail
-@dir /var/spool/svxlink
+@dir(svxlink,svxlink,755) /var/spool/svxlink/propagation_monitor
+@dir(svxlink,svxlink,755) /var/spool/svxlink/qso_recorder
+@dir(svxlink,svxlink,755) /var/spool/svxlink/voice_mail
+@dir(svxlink,svxlink,755) /var/spool/svxlink

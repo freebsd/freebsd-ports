@@ -30,6 +30,8 @@ To start the Common Desktop Environment,
 If you want to use dtlogin as well, you'll need to create
 %%LOCALBASE%%/etc/X11/Xwrapper.config and add this line:
 
+Also, make sure to add %%PREFIX%%/dt/bin to your path.
+
 allowed_users=anybody
 EOM
 }

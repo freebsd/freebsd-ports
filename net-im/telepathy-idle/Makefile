@@ -1,6 +1,6 @@
 PORTNAME=	telepathy-idle
-PORTVERSION=	0.2.0
-PORTREVISION=	3
+PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -14,6 +14,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 USES=		gmake gnome libtool pathfix pkgconfig python:build ssl
 USE_GNOME=	glib20 libxslt:build
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip

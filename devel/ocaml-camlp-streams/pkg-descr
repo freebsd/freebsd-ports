@@ -1,0 +1,10 @@
+OCaml library package providing the `Genlex' and the `Stream'
+modules which used to be part of the standard library of the
+OCaml compiler before its version 5.0.
+
+To ease the transition to OCaml 5, it is recommended for new OCaml
+code to be compiled against this package, even if targetting on OCaml 4.x.
+
+Beware that due to the value-type (in)equality, it is not possible to
+mix values produced by this library and values produced by the OCaml
+4.x standard library equivalent as if they were of the same type.

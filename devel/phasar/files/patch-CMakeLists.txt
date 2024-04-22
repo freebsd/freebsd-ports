@@ -1,25 +1,24 @@
---- CMakeLists.txt.orig	2022-12-22 14:14:32 UTC
+--- CMakeLists.txt.orig	2024-03-02 09:55:57 UTC
 +++ CMakeLists.txt
-@@ -114,11 +114,13 @@ if (NOT PHASAR_IN_TREE)
-   set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+@@ -111,7 +111,7 @@ if (NOT "${PHASAR_TARGET_ARCH_INTERNAL}" STREQUAL "")
+   check_cxx_compiler_flag("-march=${PHASAR_TARGET_ARCH_INTERNAL}" MARCH_SUPPORTED)
+   if (MARCH_SUPPORTED)
+     message(STATUS "Target architecture '${PHASAR_TARGET_ARCH_INTERNAL}' enabled")
+-    string(APPEND CMAKE_CXX_FLAGS_RELEASE " -march=${PHASAR_TARGET_ARCH_INTERNAL}")
++    #string(APPEND CMAKE_CXX_FLAGS_RELEASE " -march=${PHASAR_TARGET_ARCH_INTERNAL}")
+   else()
+     message(WARNING "Target architecture '${PHASAR_TARGET_ARCH_INTERNAL}' not supported. Fallback to generic build")
+   endif()
+@@ -220,10 +220,12 @@ endif()
  endif()
  
+ # Filesystem
 +if (FALSE)
  if (LLVM_ENABLE_LIBCXX)
    set(PHASAR_STD_FILESYSTEM c++fs)
  else()
    set(PHASAR_STD_FILESYSTEM stdc++fs)
- endif()
 +endif()
+ endif()
  
- ### Adding external libraries
- # Threads
-@@ -334,7 +336,7 @@ install(DIRECTORY utils/
- 
- # Install the Phasar config files into ~/.config/phasar/
- install(DIRECTORY config/
--  DESTINATION $ENV{HOME}/.config/phasar
-+  DESTINATION etc/phasar
-   PATTERN "config/*"
-   PERMISSIONS OWNER_WRITE OWNER_READ
-               GROUP_WRITE GROUP_READ
+ # Config

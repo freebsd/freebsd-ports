@@ -1,6 +1,6 @@
---- guake/terminal.py.orig	2018-10-09 15:32:50 UTC
+--- guake/terminal.py.orig	2021-08-01 08:12:10 UTC
 +++ guake/terminal.py
-@@ -57,7 +57,7 @@ try:
+@@ -61,7 +61,7 @@ try:
      # be injected in current process, as: wall
      from atexit import register as at_exit_call
      from ctypes import cdll

@@ -1,0 +1,11 @@
+--- configure.orig	2024-02-25 17:30:55 UTC
++++ configure
+@@ -5435,7 +5435,7 @@ if enabled system_libexiv2 ; then
+ 
+ # libexiv2
+ if enabled system_libexiv2 ; then
+-    if $(pkg-config --atleast-version="0.99" exiv2); then
++    if $(pkg-config --atleast-version="0.28" exiv2); then
+         use_pkg_config exiv2 exiv2 exiv2/exiv2.hpp versionNumber
+     elif [ $target_os != "android" ] ; then
+         disable system_libexiv2

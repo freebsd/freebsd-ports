@@ -8,7 +8,6 @@ PRESTASHOP e-Commerce platform.
 2 Add the following to your Apache configuration file
    httpd.conf, and restart the server:
 
-   For Apache version 2.4.x or above:
    Alias /prestashop /usr/local/www/prestashop/
    AcceptPathInfo On
    <Directory /usr/local/www/prestashop>
@@ -22,7 +21,7 @@ PRESTASHOP e-Commerce platform.
   http://your-server-name/prestashop/
 
 4 More detailed document could be found here:
-  http://www.prestashop.com/wiki/Installing_And_Updating_PrestaShop_Software/
+  https://docs.prestashop-project.org/v.8-documentation/getting-started/installing-prestashop
 EOM
 }
 ]

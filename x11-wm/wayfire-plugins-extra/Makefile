@@ -1,7 +1,6 @@
 PORTNAME=	wayfire-plugins-extra
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
-PORTREVISION=	1
+DISTVERSION=	0.8.1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,7 +14,8 @@ BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-scanner:graphics/wayland \
 		wayland-protocols>0:graphics/wayland-protocols \
 		wayfire>0:x11-wm/wayfire
-LIB_DEPENDS=	libwf-config.so:devel/wf-config \
+LIB_DEPENDS=	libevdev.so:devel/libevdev \
+		libwf-config.so:devel/wf-config \
 		libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots
 
@@ -41,5 +41,4 @@ post-patch:
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
 		${WRKSRC}/subprojects/windecor/deco-icontheme.cpp
 
-.include "${.CURDIR:H:H}/x11-toolkits/wlroots016/override.mk"
 .include <bsd.port.mk>

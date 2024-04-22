@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-session
 PORTVERSION=	4.18.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -24,6 +24,7 @@ USE_XFCE=	libmenu xfconf
 USE_XORG=	ice sm x11
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-legacy-sm \
 		--with-xsession-prefix=${PREFIX}
 SUB_FILES=	pkg-message

@@ -1,5 +1,5 @@
 PORTNAME=	mpdecimal
-DISTVERSION=	2.5.1
+DISTVERSION=	4.0.0
 CATEGORIES=	math
 MASTER_SITES=	https://www.bytereef.org/software/mpdecimal/releases/
 
@@ -8,18 +8,15 @@ COMMENT=	C/C++ arbitrary precision decimal floating point libraries
 WWW=		https://www.bytereef.org/mpdecimal/index.html
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT.txt
 
 USES=		compiler:c++11-lang gmake
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_LDCONFIG=	yes
 ALL_TARGET=	default
 TEST_TARGET=	check_local
-
-PORTDOCS=	libmpdec++/* libmpdec/*
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 

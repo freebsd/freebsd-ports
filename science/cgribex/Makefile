@@ -1,15 +1,14 @@
 PORTNAME=	cgribex
-PORTVERSION=	1.9.4
-PORTREVISION=	3
+PORTVERSION=	2.0.0
 CATEGORIES=	science
-MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/21178/ \
+MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/26325/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight GRIBEX in C with portable Fortran interface
 WWW=		https://code.mpimet.mpg.de/projects/cgribex
 
-LICENSE=	GPLv2
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libtool

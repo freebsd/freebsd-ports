@@ -1,5 +1,5 @@
 PORTNAME=	scdoc
-DISTVERSION=	1.11.2
+DISTVERSION=	1.11.3
 CATEGORIES=	textproc
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 

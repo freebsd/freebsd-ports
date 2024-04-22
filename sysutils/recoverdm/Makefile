@@ -1,5 +1,6 @@
 PORTNAME=	recoverdm
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,7 +13,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	flok99
 GH_TAGNAME=	8ecb743
 
-PLIST_FILES=	bin/mergebad bin/recoverdm man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/mergebad bin/recoverdm share/man/man1/${PORTNAME}.1.gz
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*

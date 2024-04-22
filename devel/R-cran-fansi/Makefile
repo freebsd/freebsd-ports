@@ -3,7 +3,7 @@ DISTVERSION=	1.0.6
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	ANSI Control Sequence Aware String Functions
 WWW=		https://cran.r-project.org/web/packages/fansi/
 

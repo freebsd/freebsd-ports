@@ -1,5 +1,6 @@
 PORTNAME=	freqtrade
 DISTVERSION=	2023.12
+PORTREVISION=	1
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 
@@ -20,7 +21,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy20>=2.0.6:databases/py-sqlalchemy20
 		${PYTHON_PKGNAMEPREFIX}ccxt>=4.0.0:finance/py-ccxt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>0:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-dateutil>0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fastapi>0:www/py-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.24.1:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}janus>0:devel/py-janus@${PY_FLAVOR} \

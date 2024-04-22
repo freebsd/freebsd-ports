@@ -1,5 +1,6 @@
 PORTNAME=	qprint
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.fourmilab.ch/webtools/qprint/
 
@@ -14,12 +15,12 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
 
 PLIST_FILES=	bin/qprint \
-		man/man1/qprint.1.gz
+		share/man/man1/qprint.1.gz
 
 ALL_TARGET=	prog check wringer
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qprint ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/qprint.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/qprint.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

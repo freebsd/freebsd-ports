@@ -1,5 +1,6 @@
 PORTNAME=	cosmosmash
 DISTVERSION=	1.4.8
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://perso.b2b2c.ca/~sarrazip/dev/ \
 		LOCAL/martymac
@@ -21,6 +22,7 @@ USE_SDL=	image mixer sdl
 USE_XORG=	x11 xau xdmcp
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PORTDOCS=	AUTHORS COPYING NEWS README THANKS
 

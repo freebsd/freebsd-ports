@@ -30,7 +30,6 @@ libexec/dcc-stats-update
 %%IFD_MILT%%libexec/dns-helper
 libexec/fetchblack
 libexec/fetchids
-libexec/fetch-testmsg-whitelist
 libexec/fix-map
 libexec/hackmc
 libexec/list-clients
@@ -46,15 +45,15 @@ libexec/stop-dccd
 libexec/updatedcc
 libexec/uninstalldcc
 libexec/wlist
-man/man8/cdcc.8.gz
-man/man8/dbclean.8.gz
-man/man8/dblist.8.gz
-man/man8/dcc.8.gz
-man/man8/dccd.8.gz
-man/man8/dccifd.8.gz
-man/man8/dccm.8.gz
-man/man8/dccproc.8.gz
-man/man8/dccsight.8.gz
+share/man/man8/cdcc.8.gz
+share/man/man8/dbclean.8.gz
+share/man/man8/dblist.8.gz
+share/man/man8/dcc.8.gz
+share/man/man8/dccd.8.gz
+share/man/man8/dccifd.8.gz
+share/man/man8/dccm.8.gz
+share/man/man8/dccproc.8.gz
+share/man/man8/dccsight.8.gz
 @owner %%DCCUSER%%
 @group %%DCCGROUP%%
 @sample %%DCCDATA%%/dcc_conf.sample

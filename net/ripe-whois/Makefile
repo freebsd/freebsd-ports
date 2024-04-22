@@ -1,5 +1,6 @@
 PORTNAME=	ripe-whois
 PORTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/whois/whois/${PORTVERSION}
 DISTNAME=	whois3-${PORTVERSION}
@@ -12,8 +13,9 @@ USES=		perl5 gmake
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
-PLIST_FILES=	bin/whois3 man/man1/whois3.1.gz
+PLIST_FILES=	bin/whois3 share/man/man1/whois3.1.gz
 
 post-patch::
 	${REINPLACE_CMD} -E \

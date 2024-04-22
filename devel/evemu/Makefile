@@ -1,5 +1,6 @@
 PORTNAME=	evemu
 PORTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.freedesktop.org/software/${PORTNAME}/
 
@@ -29,6 +30,7 @@ PYTHON_CONFIGURE_ENABLE=	python-bindings
 PYTHON_USE=			PYTHON=py3kplist
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CFLAGS+=	-include stdlib.h -include limits.h
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
@@ -49,7 +51,7 @@ post-patch:
 post-install-MANPAGES-on:
 .for manpage in evemu-event.1 evemu-play.1 evemu-record.1
 	@${REINPLACE_CMD} -e 's|^\.so evemu|.so man1/evemu|' \
-		${STAGEDIR}${PREFIX}/man/man1/${manpage}
+		${STAGEDIR}${PREFIX}/share/man/man1/${manpage}
 .endfor
 
 .include <bsd.port.mk>

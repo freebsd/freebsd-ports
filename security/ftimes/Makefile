@@ -1,6 +1,6 @@
 PORTNAME=		ftimes
 PORTVERSION=		3.11.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		security sysutils
 MASTER_SITES=		SF
 
@@ -132,6 +132,11 @@ PLIST_SUB+=		FTIMES_PERL5_LIBS=""
 .else
 PLIST_SUB+=		FTIMES_PERL5_LIBS="@comment "
 .endif
+
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|man/man|share/man/man|g'
+	@${REINPLACE_CMD} -e 's|man/man|share/man/man|g' ${WRKSRC}/lib/perl/Makefile.PL.in
 
 post-configure:
 	if [ "${INSTALL_PERL5_LIBS}" = "yes" ] ; then ${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' ${WRKSRC}/lib/perl/Makefile ; fi

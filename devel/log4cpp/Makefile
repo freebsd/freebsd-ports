@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lang gmake libtool pathfix
 
-CONFIGURE_ARGS=	--disable-dot --disable-doxygen --disable-html-docs --disable-latex-docs
+CONFIGURE_ARGS=	--disable-dot --disable-html-docs --disable-latex-docs
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

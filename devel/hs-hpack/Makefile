@@ -1,5 +1,5 @@
 PORTNAME=	hpack
-PORTVERSION=	0.35.2
+PORTVERSION=	0.36.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,90 +11,94 @@ LICENSE=	BSD3CLAUSE
 USES=		cabal
 
 USE_CABAL=	Glob-0.10.2_3 \
-		OneTuple-0.4.1.1 \
-		QuickCheck-2.14.2 \
+		OneTuple-0.4.1.1_1 \
+		QuickCheck-2.14.3 \
 		StateVar-1.2.2 \
-		aeson-2.1.2.1_1 \
+		aeson-2.2.1.0_1 \
 		appar-0.1.8 \
 		asn1-encoding-0.9.6_2 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
-		assoc-1.0.2_3 \
-		async-2.2.4_2 \
-		attoparsec-0.14.4_3 \
-		base-compat-0.12.2 \
-		base-compat-batteries-0.12.2 \
-		base-orphans-0.9.0 \
-		base64-bytestring-1.2.1.0 \
-		basement-0.0.15 \
-		bifunctors-5.5.15 \
-		bitvec-1.1.3.0 \
-		blaze-builder-0.4.2.2_1 \
+		assoc-1.1_1 \
+		async-2.2.5 \
+		attoparsec-0.14.4_5 \
+		base-orphans-0.9.1 \
+		base64-bytestring-1.2.1.0_1 \
+		basement-0.0.16 \
+		bifunctors-5.6.1_2 \
+		bitvec-1.1.5.0 \
+		blaze-builder-0.4.2.3 \
 		byteorder-1.0.4 \
 		case-insensitive-1.2.1.0 \
 		cereal-0.5.8.3 \
-		comonad-5.0.8_1 \
-		conduit-1.3.4.3_1 \
-		connection-0.3.1_1 \
+		comonad-5.0.8_2 \
+		conduit-1.3.5 \
 		contravariant-1.5.5 \
 		cookie-0.4.6 \
-		cryptonite-0.30 \
-		data-array-byte-0.1.0.1_1 \
+		crypton-0.34 \
+		crypton-connection-0.3.1 \
+		crypton-x509-1.7.6_1 \
+		crypton-x509-store-1.6.9 \
+		crypton-x509-system-1.6.7 \
+		crypton-x509-validation-1.6.12 \
 		data-default-class-0.1.2.0 \
-		data-fix-0.3.2_4 \
+		data-fix-0.3.2_5 \
 		distributive-0.6.2.1_1 \
-		dlist-1.0 \
-		generically-0.1.1 \
-		hashable-1.4.2.0_1 \
+		dlist-1.0_1 \
+		foldable1-classes-compat-0.1_4 \
+		generically-0.1.1_2 \
+		hashable-1.4.3.0_1 \
 		hourglass-0.2.12 \
-		hsc2hs-0.68.9 \
-		http-client-0.7.13.1_1 \
-		http-client-tls-0.3.6.1 \
-		http-types-0.12.3 \
-		indexed-traversable-0.1.2.1 \
-		indexed-traversable-instances-0.1.1.2_1 \
+		hsc2hs-0.68.10_1 \
+		http-client-0.7.16 \
+		http-client-tls-0.3.6.3 \
+		http-types-0.12.4 \
+		indexed-traversable-0.1.3 \
+		indexed-traversable-instances-0.1.1.2_2 \
 		infer-license-0.2.0 \
-		integer-logarithms-1.0.3.1_4 \
+		integer-conversion-0.1.0.1_1 \
+		integer-logarithms-1.0.3.1_5 \
 		iproute-1.7.12 \
 		libyaml-0.1.2_1 \
 		memory-0.18.0 \
-		mime-types-0.1.1.0 \
+		mime-types-0.1.2.0 \
 		mono-traversable-1.0.15.3 \
-		network-3.1.2.8 \
-		network-uri-2.6.4.2 \
+		network-3.1.4.0_1 \
+		network-uri-2.6.4.2_1 \
+		old-locale-1.0.0.7_2 \
+		old-time-1.1.0.4 \
 		pem-0.2.4 \
-		primitive-0.8.0.0 \
-		random-1.2.1.1 \
+		primitive-0.9.0.0 \
+		random-1.2.1.1_1 \
 		resourcet-1.3.0 \
-		scientific-0.3.7.0_5 \
-		semialign-1.2.0.1_3 \
-		semigroupoids-5.3.7_1 \
+		scientific-0.3.7.0_7 \
+		semialign-1.3_1 \
+		semigroupoids-6.0.0.1_1 \
 		socks-0.6.1 \
-		split-0.2.3.5 \
-		splitmix-0.1.0.4_2 \
-		streaming-commons-0.2.2.5 \
-		strict-0.4.0.1_4 \
-		tagged-0.8.7 \
-		text-metrics-0.3.2_2 \
-		text-short-0.1.5_1 \
-		th-abstraction-0.5.0.0 \
-		th-compat-0.1.4_2 \
-		these-1.1.1.1_6 \
-		time-compat-1.9.6.1_5 \
-		tls-1.6.0 \
+		split-0.2.5 \
+		splitmix-0.1.0.5 \
+		streaming-commons-0.2.2.6_1 \
+		strict-0.5_1 \
+		tagged-0.8.8 \
+		text-iso8601-0.1_1 \
+		text-metrics-0.3.2_3 \
+		text-short-0.1.5_3 \
+		th-abstraction-0.6.0.0_1 \
+		th-compat-0.1.4_4 \
+		these-1.2_1 \
+		time-compat-1.9.6.1_6 \
+		tls-1.9.0 \
 		transformers-compat-0.7.2 \
-		unliftio-core-0.2.1.0_1 \
-		unordered-containers-0.2.19.1_1 \
-		uuid-types-1.0.5_3 \
-		vector-0.13.0.0_3 \
-		vector-algorithms-0.9.0.1_2 \
-		vector-stream-0.1.0.0_2 \
+		unix-time-0.4.11 \
+		unliftio-core-0.2.1.0_3 \
+		unordered-containers-0.2.20_1 \
+		uuid-types-1.0.5.1 \
+		vector-0.13.1.0 \
+		vector-algorithms-0.9.0.1_3 \
+		vector-stream-0.1.0.1 \
 		witherable-0.4.2_4 \
-		x509-1.7.7 \
-		x509-store-1.6.9 \
-		x509-system-1.6.7 \
-		x509-validation-1.6.12 \
-		yaml-0.11.11.0 \
-		zlib-0.6.3.0_1
+		yaml-0.11.11.2_2 \
+		zlib-0.6.3.0_4
+
 
 .include <bsd.port.mk>

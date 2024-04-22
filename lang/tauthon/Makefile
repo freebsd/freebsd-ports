@@ -7,6 +7,7 @@
 PORTNAME=	tauthon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.5
+PORTREVISION=	1
 CATEGORIES=	lang python
 
 MAINTAINER=	olce.freebsd.ports@certner.fr
@@ -27,6 +28,7 @@ GH_PROJECT=	tauthon
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 # Piggyback on Python support in shebangfix
 python_CMD=	${PREFIX}/bin/${NAME_VERSION}
 # Better be safe than sorry

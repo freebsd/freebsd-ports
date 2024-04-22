@@ -1,6 +1,6 @@
 PORTNAME=	gnome-latex
 PORTVERSION=	3.44.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -22,6 +22,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 USES=		compiler:c11 desktop-file-utils gettext gmake gnome \
 		pkgconfig tar:xz tex vala:build
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_GNOME=	cairo dconf intltool gtksourceview4
 USE_TEX=	latex dvipsk
 INSTALL_TARGET=	install-strip
@@ -33,4 +34,10 @@ OPTIONS_SUB=	yes
 
 GLIB_SCHEMAS=	org.gnome.gnome-latex.gschema.xml
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
+.include <bsd.port.post.mk>

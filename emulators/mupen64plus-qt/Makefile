@@ -1,6 +1,6 @@
 PORTNAME=	mupen64plus-qt
 DISTVERSION=	1.14
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
 
 MAINTAINER=	maintainer@hasting.email
@@ -30,7 +30,7 @@ GH_ACCOUNT=	dh4
 PORTDOCS=	README.md
 
 PLIST_FILES=	bin/mupen64plus-qt \
-		man/man6/mupen64plus-qt.6.gz \
+		share/man/man6/mupen64plus-qt.6.gz \
 		share/applications/mupen64plus-qt.desktop \
 		share/pixmaps/mupen64plus-qt.png
 
@@ -40,7 +40,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/resources/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/resources/images/mupen64plus.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
-	${INSTALL_MAN} ${WRKSRC}/resources/${PORTNAME}.6 ${STAGEDIR}${MANPREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/resources/${PORTNAME}.6 ${STAGEDIR}${PREFIX}/share/man/man6
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

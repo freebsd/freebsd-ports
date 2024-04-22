@@ -1,6 +1,6 @@
 PORTNAME=	pic2fig
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	XCONTRIB/utilities
 
@@ -13,7 +13,7 @@ CFLAGS+=	-Wno-return-type
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PLIST_FILES=	bin/pic2fig man/man1/pic2fig.1.gz
+PLIST_FILES=	bin/pic2fig share/man/man1/pic2fig.1.gz
 
 .include <bsd.port.pre.mk>
 
@@ -23,6 +23,6 @@ CFLAGS+=	-Wno-error=int-conversion
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pic2fig ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pic2fig.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/pic2fig.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.post.mk>

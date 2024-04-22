@@ -1,0 +1,762 @@
+.\"
+.\" Enhanced Ctorrent Man Page Version 0.1
+.\"
+.TH ctorrent 1 2008\-06\-15 "Enhanced CTorrent" "Enhanced CTorrent"
+.SH NAME
+ctorrent \- an enhanced peer to peer (P2P) command line client.
+.SH SYNOPSIS
+.SY ctorrent
+.OP \-cvfaTd
+.OP \-A user\-agent
+.OP \-b bf\-filename
+.OP \-C cache\-size
+.OP \-D dl\-rate
+.OP \-E ratio
+.OP \-e hours
+.OP \-I out\-ip
+.OP \-i in\-ip
+.OP \-M max\-peers
+.OP \-m min\-peers
+.OP \-n file\-num,...
+.OP \-P peer\-id
+.OP \-p in\-port
+.OP \-S server\-host:port
+.OP \-s save\-file|dir
+.OP \-U ul\-rate
+.OP \-u trkr\-num|URL
+.OP \-X exit\-cmd
+.OP \-z slice\-size
+.B torrent\-filename
+.SY ctorrent
+.B \-x
+.B torrent\-filename
+.SY ctorrent
+.B \-c
+.OP \-x
+.B torrent\-filename
+.SY ctorrent
+.B \-t
+.B \-s filename
+.B \-u URL
+.OP \-p
+.OP \-l piece_len
+.OP \-c comment
+.B file\-or\-directory
+.SH DESCRIPTION
+This is an enhanced version of the command line CTorrent peer to peer
+BitTorrent client for unix\-like environments. High performance with minimal
+system resources and dependencies is a priority.
+.SH OPTIONS
+.P
+.SS "General Options"
+.TP
+.B \-c
+Check pieces only, don't download.
+.RS
+.P
+Hash\-checks all pieces of the torrent to verify completion status and
+exits. Use this when you want to verify that you've successfully downloaded
+the complete torrent, or to make sure the files are intact after a system
+crash. This option is normally used alone, but can be used with
+.B \-x
+for an automated completion check.
+.RE
+.TP
+.B \-x
+Decode metainfo (torrent) file only, don't download.
+.RS
+.P
+Displays the torrent information and contents from the metainfo (.torrent)
+file. No piece checking or downloading is performed. This option is normally
+used alone.
+.RE
+.TP
+.B \-v
+Verbose output (for debugging).
+.RS
+.P
+Generates [a lot of] extra output while CTorrrent is running.
+.RE
+.SS "Downloading Options"
+.TP
+.BI \-A\ user_agent
+(default = "Enhanced\-CTorrent/dnh3.1") Set the
+.B User\-Agent
+header.
+.RS
+.P
+Specify an alternate user\-agent header. This can be useful if a tracker is
+set up to only allow client programs that it recognizes.
+.RE
+.TP
+.B \-a
+Preallocate files on disk.
+.RS
+.P
+Use this if you are concerned about file fragmentation or out\-of\-order block
+storage. This option is only effective when initially creating the files and
+will cause startup to take longer as each entire file is written in order to
+reserve physical disk space. Note that all files will be created and
+preallocated even if the
+.B \-n
+option is used to download a particular file.
+.RE
+.TP
+.BI \-b\ filename
+(default = torrent+".bf") Specify bitfield save
+.B file name.
+.RS
+.P
+Piece completion status is saved to a bitfield file on exit if download has
+not completed. On startup the file is read to determine (and check) available
+pieces. The
+.B \-b
+option can be used to specify a file name other than the default. Be
+consistent and careful with this option; it is generally not needed.
+.RE
+.TP
+.BI \-C\ cache_size
+(default = 16MB) The
+.B cache size
+units in MB.
+.RS
+.P
+Specify the maximum amount of memory to use for caching downloaded slices. The
+program may use less than this; the cache size is dynamically tuned based on
+the download and upload rates. You may need to use this option if running on a
+memory\-constrained system such as a router or SAN device. If you use a value
+of 0, no memory cache will be used but the process will be more disk\-intensive.
+.RE
+.TP
+.BI \-D\ rate
+Maximum bandwidth download
+.B rate
+(unit KB/s).
+.RS
+.P
+Specify a download bandwidth limit for this torrent. The client will maintain
+its short\-term average download rate at or below this value.
+.RE
+.TP
+.B \-d
+Daemon mode (fork to background).
+.RS
+.P
+The client will detach itself from the terminal session and become a
+background process, closing stdin, stdout, and stderr. There is no way to
+bring it back into the foreground of a session later; if you want to monitor
+or manage the client then either use the CTCS option (
+.B \-S
+) as well or run the client under
+.I screen
+instead of using
+.B \-d.
+.P
+If this option is specified twice (
+.B \-dd
+) then redirected standard I/O descriptors will not be closed.
+.RE
+.TP
+.BI \-E\ num
+Exit after seeding to
+.B num
+ratio (UL:DL).
+.RS
+.P
+Specify a desired "seed ratio". After downloading completes, the client will
+continue seeding (uploading) until your total upload volume divided by your
+download volume equals this number. Fractional values (such as 1.5) are
+allowed. It is considered polite and fair (and required by some tracker sites)
+to seed until your ratio is at least 1:1. There is no default value, so this
+must be explicitly used on the command line if it's desired.
+.RE
+.TP
+.BI \-e\ int
+(default = 72) Exit after seeding
+.B int
+hours.
+.RS
+.P
+Indicate how long (in hours) you want to "seed" (continue uploading) after
+download has completed. It is considered polite and fair (and required by some
+tracker sites) to seed for some time after downloading. A value of zero (0)
+will turn this off and seed indefinitely unless the
+.B \-E
+ratio option is also used.
+.RE
+.TP
+.B \-f
+Force saved bitfield or seed mode (skip hash check at startup).
+.RS
+.P
+Perform a fast startup by skipping the initial (or background) hash
+verification of the files. This option is not generally recommended since the
+client now performs initial hash checking in the background.
+.B Use this option only if CTorrent was shut down cleanly when last downloading this torrent and you are absolutely certain that the bitfield (if download is not complete) and data files are intact and correct.
+To emulate the old behavior of hash\-checking all pieces before beginning
+download or seeding, use
+.B \-f
+along with the
+.B \-c
+option.
+.RE
+.TP
+.BI \-I\ ip
+Specify public/external
+.B IP address
+for peer connections.
+.RS
+.P
+Specify the IP address which the tracker should give out to peer clients in
+order to connect to you. This is normally needed only if you are behind a NAT
+and on the tracker's local network.
+.RE
+.TP
+.BI \-i\ ip
+(default = all/any) Listen for connections on a specific
+.B IP address.
+.RS
+.P
+Specify the IP address on which you want to listen for incoming
+connections. This is only useful if your system has multiple network
+interfaces and you want to restrict access or run multiple clients on
+different interfaces.
+.RE
+.TP
+.BI \-M\ max_peer
+(default = 100) Maximum peer
+.B count.
+.RS
+.P
+Set the maximum allowable number of peer connections. If this number is
+reached, no new connections will be initiated or accepted. If memory or upload
+bandwidth are constrained, you may want to use this option to specify a lower
+value.
+.RE
+.TP
+.BI \-m\ min_peer
+(default = 1) Minimum peer
+.B count.
+.RS
+.P
+Set the desired minimum number of peer connections. If the number falls below
+this value, the client will contact the tracker to request more peers.
+.RE
+.TP
+.BI \-n\ file_num,...
+Specify the
+.B file number(s)
+to download.
+.RS
+.P
+Specify a priority order for downloading files in the torrent. A
+comma\-separated list of file numbers and groups can be specified; the file
+numbers can be seen with the
+.B \-x
+option. The client will preferentially request pieces of the highest\-priority
+files, requesting a piece from a lower\-priority group if a peer has no such
+pieces.
+.P
+A group may consist of:
+.P
+.RS
+* a file number
+.P
+* a range of file numbers (x\-y)
+.P
+* a combination of file numbers and ranges separated with plus (+) signs
+.P
+* an asterisk (*) or 3\-dot ellipsis (...)
+.P
+.RE
+If an asterisk (remember to quote it on the command line!) or ellipsis is
+used, the client will download and seed the remainder of the torrent once the
+prioritized files are completed; this is similar to the previous behavior of
+the option. If no such specification is given, the client will download and
+seed only the indicated files.
+.P
+Examples:
+.P
+.TP
+.BI \-n\ 3
+Download and seed only file 3.
+.TP
+.BI \-n\ 3+5+7,8\-11
+Download files 3, 5, and 7 simultaneously, then download files 8 through 11
+simultaneously, then stop downloading and seed all downloaded files.
+.TP
+.BI \-n\ 3\-4,...
+Download files 3 and 4 simultaneously, then download and seed all remaining
+content.
+.RE
+.TP
+.BI \-P\ peer_id
+(default = "\-CD0301\-") Set the
+.B Peer ID
+prefix.
+.RS
+.P
+Specify an alternate peer ID prefix. This can be useful if a tracker is set up
+to only allow client programs that it recognizes. (The admin may not even
+realize it, so you may want to try contacting them to request that they change
+their configuration or add Enhanced CTorrent to the list.) If you receive a
+tracker warning message that your client is out of date, try using this option
+with the prefix of another well\-known client program (such as "\-AZ2304\-").
+.RE
+.TP
+.BI \-p\ port
+(default = 2706 \-> 2106) Listen on
+.B port.
+.RS
+.P
+Specify the TCP port number on which to listen for incoming connections. By
+default, CTorrent starts at 2706 and searches for an available port in
+decreasing order until it finds one or exhausts all ports down through
+2106. The behavior with this option is similar, but starting at the specified
+port number.
+.RE
+.TP
+.BI \-S\ host:port
+Use CTCS server at
+.B host:port.
+.RS
+.P
+Maintain a connection to CTCS for status reporting, bandwidth control, and
+client management. Using a colon at the end of the parameter (as in "\-S
+localhost:2780:") will cause the client to prompt for a password to send to
+CTCS when connecting.
+.RE
+.TP
+.BI \-s\ filename\ |\ directory
+Download ("save as") to a different
+.B file
+or
+.B directory.
+.RS
+.P
+Download to a different filename or top\-level directory name than what is
+given in the metainfo file.
+.RE
+.TP
+.B \-T
+Convert foreign filenames to printable text.
+.RS
+.P
+Substitutes a hex representation of any non\-printable characters in
+filenames; an underscore will be inserted between any such sequences and
+regular text. This applies to printing the name of the file as well as
+accessing it on disk, so you need to use it (or not) consistently across
+multiple runs of the same torrent. It does not apply to names specified with the
+.B \-s
+option.
+.RE
+.TP
+.BI \-U\ rate
+(Highly Recommended) Maximum bandwidth upload
+.B rate
+in KB/s.
+.RS
+.P
+Specify an upload bandwidth limit for this torrent. The client will maintain
+its short\-term average upload rate at or below this value. See the
+.I Bandwidth Limits
+section below for more information.
+.RE
+.TP
+.BI \-u\ number\ |\ URL
+Alternate announce (tracker) URL.
+.RS
+.P
+Specify an alternate tracker announce URL. The parameter can be the actual
+.B URL
+or the
+.B number
+from the list of alternates printed when starting the client or using
+.B \-x.
+.RE
+.TP
+.BI \-X\ command
+Run the
+.B command
+upon download completion ("user exit").
+.RS
+.P
+Specifies a "user exit" command to run upon download completion. The string
+parameter will be passed to the sh shell for execution; see the
+.BR system()
+man page for further clarification. You will need to quote this string on the
+command line in order to identify it as a single parameter and prevent special
+characters from being interpreted. Some substitution sequences beginning with
+ampersand (&) are available; note that it's a good idea to quote the sequence
+within the string so that the substituted names will be quoted in the final
+command.
+.P
+.B &d
+will be replaced by the name of the directory or filename that contains the
+downloaded data.
+.P
+.B &t
+will be replaced by the name of the torrent metainfo file (with path, if it
+was specified that way to ctorrent).
+.P
+.B &w
+will be replaced by the client's working directory.
+.P
+Note that the
+.BR fork()
+and
+.BR system()
+system/library functions are used for best portability. As a result,
+significant extra memory may be used while the specified command is
+running. Be advised to use this feature as a trigger mechanism to update a
+file or run a short script that kicks off a background task rather than for
+executing a longer task directly.
+.P
+This option can also be used together with
+.B \-c
+as an automated completion check. Normally the completion command will be run
+only if data has been downloaded; this case is the exception.
+.RE
+.TP
+.BI \-z\ slice_size
+(default = 16, max 128) The download
+.B slice/block
+size in KB units.
+.RS
+.P
+Sets the size of the basic unit of download. For greatest compatibility with
+other peer clients, use the default. This value can also affect the precision
+with which bandwidth is managed.
+.RE
+.TP
+.BI torrent\-filename
+(Required) The
+.B file name
+of the torrent metainfo file.
+.SS "Options For Creating A New Torrent"
+.TP
+.B \-t
+(Required) Create a new torrent file.
+.RS
+.P
+Indicates that you want to create a new torrent. This must be the first option
+specified when creating a torrent.
+.RE
+.TP
+.BI \-s\ filename
+(Required) Specify the metainfo
+.B file name.
+.RS
+.P
+Give the name of the metainfo file to be created.
+.RE
+.TP
+.BI \-u\ URL
+(Required) The tracker's
+.B URL.
+.RS
+.P
+Specify the tracker's announce URL. This usually looks similar to
+"http://tracker.example.com:port/announce".
+.RE
+.TP
+.BI \-c\ comment
+Define a
+.B comment/description.
+.RS
+.P
+Include a comment or description field in the torrent file.
+.RE
+.TP
+.BI \-l\ piece_len
+(default = 262144) The
+.B piece length
+in bytes.
+.RS
+.P
+Specify the piece size for your torrent. This will also determine the total
+number of pieces in the torrent. Larger sizes can be more efficient, but smaller
+sized pieces can speed up initial distribution. Very informal research states
+that the optimum number of total pieces in a torrent is roughly between 1200 and
+2200. Common piece sizes are 262144, 524288, 1048576 and 2097152.
+.RE
+.TP
+.B \-p
+Private (disable peer exchange).
+.RS
+.P
+Disable the use of DHT, PEX, or other trackerless peer\-exchange methods by
+other clients when sharing this torrent.
+.RE
+.TP
+.BI file\-or\-directory
+(Required) A single
+.B file name
+or a single
+.B directory
+that will be used to create the torrent metainfo file.
+.RS
+.P
+When a
+.B file name
+is used, how it's specified on the command line will be how it's specified
+within the torrent metainfo file that's created.
+.P
+For example; if you use "/tmp/music/goodstuff.mp3" on the command line, then
+that complete filespec will be contained within the resulting torrent metainfo
+file (and what's created on the remote leecher's computer). But if you are
+in the "/tmp/music" directory and only use "goodstuff.mp3" on the command
+line, then only "goodstuff.mp3" will be specified inside the created torrent
+metainfo file.
+.P
+When a
+.B directory
+name is used, the specified directory is NOT included in the torrent metainfo
+file, just the files and/or directories within that directory.
+.P
+For example; to create a torrent file to seed
+.B all
+of the files and directories found in the "/tmp/music" directory, change into
+the "/tmp" directory and then create the torrent file with the
+.B \-t
+option using the "music" directory name on the command line; or enter
+"/tmp/music" while in any directory. Later, go into the "/tmp/music" directory
+itself to actually seed it.
+.RE
+.SH EXAMPLES
+List the contents of a torrent:
+.P
+.RS
+.I ctorrent \-x example.torrent
+.RE
+.P
+Verify download completion status (takes a little time):
+.P
+.RS
+.I ctorrent \-c example.torrent
+.RE
+.P
+Download or seed a torrent using default options (not recommended):
+.P
+.RS
+.I ctorrent example.torrent
+.RE
+.P
+Download with a limit of 100KB/s, upload limit of 10KB/s, and seed until a
+ratio of 1.5:1 is achieved:
+.P
+.RS
+.I ctorrent \-D 100 \-U 10 \-E 1.5 example.torrent
+.RE
+.P
+Create a torrent:
+.P
+.RS
+.I ctorrent \-t \-u "http://tracker.example.com:6969/announce" \-s example.torrent file_or_dir_to_upload
+.RE
+.SH "RUNTIME COMMANDS"
+Several commands are available during upload/download; a list is available by
+pressing
+.B ?
+or
+.B h
+:
+.PP
+Available commands:
+.PP
+.nf
+[Esc/0]  Operator menu             m[+/-]   Adjust min peers count
+d[+/-]   Adjust download limit     M[+/-]   Adjust max peers count
+u[+/-]   Adjust upload limit       C[+/-]   Adjust max cache size
+n        Download specific file    S        Set/change CTCS server
+e[+/-]   Adjust seed exit time     v        Toggle verbose mode
+E[+/-]   Adjust seed exit ratio    Q        Quit
+.fi
+.PP
+Command keys are case\-sensitive. When a command key is pressed, a prompt or
+current value is displayed. Prompts will suspend display of the status line
+while waiting for input, though the client continues to run normally. Toggle
+and numeric commands briefly suspend the status line display.
+.PP
+Commands shown with [+/\-] following the key are numeric options and can be
+adjusted by pressing
+.B +
+or
+.B \-
+repeatedly after the command key. The increment is increased after five
+presses; to reset it, press the command key again.
+.PP
+Most commands use the same letter as the corresponding command\-line
+option. Note that the bandwidth limit commands use the same letters but
+opposite case.
+.SH "OPERATOR MENU"
+The
+.B 0
+or
+.B Esc
+command key displays an operator menu with more advanced (or less routine)
+options. All options on and beneath this menu require pressing Enter to submit
+the input. Pressing Enter alone will exit the menu.
+.PP
+.nf
+Operator Menu
+ Output Channels:
+  1) Normal/status:  stdout
+  2) Interactive:    stdout
+  3) Error/warning:  stderr
+  4) Debug/verbose:  stderr
+  5) Input:          stdin
+ Status Line Formats:
+  6) \ 0/6/18 [700/700/700] 0MB,11127MB | 0,15K/s | 0,0K E:0,405
+ *7) | S:0/10 L:6/7 C:0  R=15.92 D=0 U=16 K/s  seeding 48:57
+ Other options:
+  8) View detailed status
+  9) Pause (suspend upload/download)
+ 10) Become daemon (fork to background)
+ 11) Update tracker stats & get peers
+ 12) Restart (recover) the tracker session
+Enter selection:
+.fi
+.PP
+The first set of options allow redirection of the client's various types of
+console output (or even input\-\-use carefully!). Of particular use is the
+debug/verbose channel, which can be directed to a file to create a debug log
+(be sure to also enable verbose output with the
+.B v
+command key or CTCS).
+.PP
+The second set of options is used to select the status line format. Since the
+actual client status is used to generate the menu options, the operator menu
+display can also be used just to view the alternate status information. An
+asterisk (
+.B *
+) indicates the currently selected format.
+.PP
+The next two options provide a means to view more detailed current status and
+statistics or to pause uploading and downloading (more or less immediately,
+unlike the previous CTCS pause function).
+.PP
+Note that there is no "recovery" from daemon mode. Use CTCS (with daemon mode)
+and/or "screen" if you want the client to run in the background but need to
+manage or monitor it.
+.PP
+The next two options are the same as the corresponding actions in CTCS. The
+first performs an early tracker update. The second restarts the tracker
+session as if you had exited and restarted the client. This can be used to
+recover if the tracker appears to have suffered a failure and does not
+recognize your client session.
+.SH "USAGE NOTES"
+.SS "Bandwidth Limits"
+You should always specify an upload bandwidth limit.
+.PP
+With the most recent changes in the program, this "option" is not just a limit
+to stay under, but an advisement to the client as well. Enhanced CTorrent now
+tunes its upload performance based on the limit. Without a limit, the client
+has no idea how much bandwidth your line can support and so cannot perform
+this tuning. It is now possible to achieve better upload rates with a limit
+than without. Due to the tit\-for\-tat nature of bittorrent, this can also
+indirectly increase your download performance. If you just want the client to
+use as much upload bandwidth as possible, then choose a limit that is 10% or
+so less than the available upload capacity of your line. ("Available" means
+not typically in use by other applications.)
+.PP
+Note that limits are specified in KB/s (kilobytes per second), where 1KB =
+1024 bytes (8192 bits). Your ISP likely measures in "kilobits" (Kb, where 1Kb
+= 1000 bits or 125 bytes) or "megabits" (1Mb = 1000000 bits or 122KB). Some of
+that [to the tune of 20% in some cases] is used by the line protocol and thus
+not available to you at all.
+.SS Startup
+If you have previously started the torrent, CTorrent will perform a hash\-check
+of all pieces (or pieces indicated by the bitfield file if present) while
+beginning the upload/download process. This does not mean that it is starting
+over\-\-quite the opposite! This is how the client determines which pieces it
+already has so that they will not be downloaded again (and can be offered for
+uploading). This process confirms the pieces that you have even if the files
+have been altered or recovered after a system crash.
+.
+.SS "Status Line"
+The status line that is output by the client has changed since the original
+and deserves some explanation.
+.PP
+.nf
+/ 0/33/110 [672/672/672] 0MB,1130MB | 0,20K/s | 0,0K E:0,31 P:4/10
+- - -- ---  --- --- ---  --- ------   - --      - -    - --   ----
+A B  C  D    E   F   G    H     I     J  K      L M    N  O     P
+.fi
+.PP
+.nf
+A: Ticker; this character changes to indicate that the client is running.
+B: Number of seeders (complete peers) to which you are connected.
+C: Number of leechers (incomplete peers) to which you are connected.
+D: Total number of peers in the swarm, as last reported by the tracker.
+E: Number of pieces of the torrent that you have completed.
+F: Total number of pieces in the torrent.
+G: Number of pieces currently available from you and your connected peers.
+H: Total amount of data you have downloaded.
+I: Total amount of data you have uploaded.
+J: Your current download rate (20 second average).
+K: Your current upload rate (20 second average).
+L: Amount of data downloaded since the last status line update.
+M: Amount of data uploaded since the last status line update.
+N: Number of tracker connection errors.
+O: Number of successful tracker connections.
+P: Completion ratio of current fileset (when -n is used).
+.fi
+.PP
+Additional information such as tracker connection status may be displayed at
+the end of the status line when appropriate.
+.SS "Alternate Status Line"
+A new status line format is also available via the operator menu.
+.PP
+.nf
+/ S:4/8 L:4/5 C:1  R=5.85 D=42 U=16 K/s  79/100% 49:47  P:40/100% 2:41
+-   - -   - -   -    ----   --   --      -- ---- -----    ------- ----
+A   B C   D E   F      G     H    I       J   K    L         M      N
+.fi
+.PP
+.nf
+A: Ticker; this character changes to indicate that the client is running.
+B: Number of seeders (complete peers) to which you are connected.
+C: Number of seeders in the swarm (excluding yourself), as last reported by the tracker.
+D: Number of leechers (incomplete peers) to which you are connected.
+E: Number of leechers in the swarm (excluding yourself), as last reported by the tracker.
+F: Number of peer connection attempts in progress.
+G: Your upload/download ratio.
+H: Your current download rate (20 second average).
+I: Your current upload rate (20 second average).
+J: Percent of the torrent that you have completed.
+K: Percent of the torrent currently available from you and your connected peers.
+   If you have the complete torrent, "seeding" is displayed instead of these percentages.
+L: Estimated download or seed time remaining, in hours and minutes.
+M: Completion and availability of current fileset (when -n is used).
+N: Time remaining to complete the current fileset (when -n is used).
+.fi
+.PP
+Additional information such as tracker connection status may be displayed at
+the end of the status line when appropriate.
+.SS "Stopping CTorrent"
+Besides the
+.B Q
+command key (equivalent to Ctrl\-C but a nicer user interface), CTorrent can be
+stopped before completing download or seeding by pressing Ctrl\-C or sending
+the TERM signal ("kill pid"). This will tell the client to contact the tracker
+to send its final statistics and advise that it is leaving the torrent. Note
+that this could take a couple of minutes if the tracker is down or very
+busy. (Only one attempt is made, so the client will exit even if the
+connection fails.)
+.PP
+If Ctrl\-C or kill is used a second time, the client closes all peer
+connections and exits without waiting for the tracker connection. This means
+that other peers may still attempt to contact you for a while, and the tracker
+may not accept you back into the torrent until your original session
+expires. (This could take up to a couple of hours, depending on the tracker.)
+.PP
+In either case, this is a clean shutdown of CTorrent. All downloaded data is
+written to disk before exiting. (Though only complete pieces really count if
+the torrent is restarted, as there is no way to know which blocks are missing
+from partial pieces.)
+.SH "SEE ALSO"
+.BR ctcs (1)
+.BR screen (1)
+.BR system (3)
+.BR fork (2)

@@ -12,4 +12,4 @@ usr/lib64/libsystemd.so.0
 usr/lib64/libsystemd.so.0.6.0
 usr/lib64/libudev.so.1
 usr/lib64/libudev.so.1.6.2
-usr/lib64/security/pam_systemd.so
+@comment usr/lib64/security/pam_systemd.so

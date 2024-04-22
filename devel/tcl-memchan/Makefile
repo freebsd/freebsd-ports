@@ -1,5 +1,6 @@
 PORTNAME=	memchan
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	devel tcl
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	tcl-
@@ -13,6 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/tcllib/doctools/pkgIndex.tcl:devel/tcllib
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+MAKE_ARGS=	mandir=${PREFIX}/share/man
 ALL_TARGET=	binaries libraries doc-old
 TEST_TARGET=	test
 

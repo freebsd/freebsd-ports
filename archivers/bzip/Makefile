@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	SOURCEWARE/bzip2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Block-sorting file compressor
 WWW=		https://sourceware.org/bzip2/
 

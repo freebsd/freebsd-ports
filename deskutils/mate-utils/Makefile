@@ -1,6 +1,5 @@
 PORTNAME=	mate-utils
-PORTVERSION=	1.26.0
-PORTREVISION=	3
+PORTVERSION=	1.28.0
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -29,6 +28,7 @@ USE_XORG=	ice sm x11 xext
 USE_GNOME=	cairo gnomeprefix gtk30 intltool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--disable-disk-image-mounter

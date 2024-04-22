@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# PROVIDE: paperless-worker
+# REQUIRE: LOGIN
+# BEFORE:  paperless-beat
+# KEYWORD: shutdown
+#
+# Add the following line(s) to /etc/rc.conf to enable the paperless
+# worker:
+#
+# paperless_worker_enable (bool):	Set to "NO" by default.
+#					Set it to "YES" to enable
+#					paperless_worker
+# paperless_worker_log_facility(str):	Set to "daemon" by default.
+#					Worker logging syslog facility.
+# paperless_worker_log_priority(str):	Set to "notice" by default.
+#					Worker logging syslog priority.
+# paperless_worker_log_tag(str):	Set to "paperless-worker" by default.
+#					Worker logging syslog tag.
+
+. /etc/rc.subr
+
+name="paperless_worker"
+rcvar="${name}_enable"
+
+# Set defaults
+paperless_worker_enable=${paperless_worker_enable:-"NO"}
+paperless_worker_daemon_user=${paperless_worker_user:-"paperless"}
+paperless_worker_log_facility=${paperless_worker_log_facility:-"daemon"}
+paperless_worker_log_priority=${paperless_worker_log_priority:-"notice"}
+paperless_worker_log_tag=${paperless_worker_log_tag:-"paperless-worker"}
+
+paperless_worker_env="LANG=en_US.UTF-8 PATH=$PATH:%%PREFIX%%/bin \
+  PYTHONPATH=%%PYTHONPREFIX_SITELIBDIR%%/paperless"
+
+pidfile="/var/run/paperless/worker.pid"
+procname="%%PYTHON_CMD%%"
+command="/usr/sbin/daemon"
+command_args="-cS -u ${paperless_worker_daemon_user} \
+	-p ${pidfile} \
+	-t paperless-worker \
+	-l ${paperless_worker_log_facility} \
+	-s ${paperless_worker_log_priority} \
+	-T ${paperless_worker_log_tag} \
+	%%PREFIX%%/bin/celery \
+	--app paperless worker --loglevel INFO --without-mingle --without-gossip"
+
+load_rc_config ${name}
+run_rc_command "$1"

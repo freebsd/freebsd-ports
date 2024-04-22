@@ -1,6 +1,5 @@
 PORTNAME=	libvirt
-PORTVERSION=	9.10.0
-PORTREVISION=	1
+PORTVERSION=	10.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -118,10 +117,12 @@ MESON_ARGS+=	\
 		-Dnetcf=disabled \
 		-Dsysctl_config=disabled \
 		-Dnbdkit=disabled \
+		-Dnbdkit_config_default=disabled \
 		-Dlogin_shell=disabled \
 		-Dwireshark_dissector=disabled \
 		-Dinit_script=none \
 		-Dbash_completion=disabled \
+		-Duserfaultfd_sysctl=disabled \
 		-Dlocalstatedir=${VARDIR}
 
 # random_data fix can be removed when 8.x is eol
@@ -141,7 +142,7 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-SHLIB_VER=	0.9010.0
+SHLIB_VER=	0.10001.0
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
 #SHEBANG_FILES=	src/keycodemapdb/tools/keymap-gen

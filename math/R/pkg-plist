@@ -217,9 +217,17 @@ lib/R/library/Matrix/help/Matrix.rdb
 lib/R/library/Matrix/help/Matrix.rdx
 lib/R/library/Matrix/help/aliases.rds
 lib/R/library/Matrix/help/paths.rds
+lib/R/library/Matrix/help/macros/local.Rd
 lib/R/library/Matrix/html/00Index.html
 lib/R/library/Matrix/html/R.css
 lib/R/library/Matrix/include/Matrix.h
+lib/R/library/Matrix/include/Matrix/Matrix.h
+lib/R/library/Matrix/include/Matrix/alloca.h
+lib/R/library/Matrix/include/Matrix/cholmod-utils.h
+lib/R/library/Matrix/include/Matrix/cholmod.h
+lib/R/library/Matrix/include/Matrix/remap.h
+lib/R/library/Matrix/include/Matrix/stubs.c
+lib/R/library/Matrix/include/Matrix/version.h
 lib/R/library/Matrix/include/Matrix_stubs.c
 lib/R/library/Matrix/include/cholmod.h
 lib/R/library/Matrix/libs/Matrix.so
@@ -789,8 +797,6 @@ lib/R/library/mgcv/libs/mgcv.so
 %%NLS%%lib/R/library/mgcv/po/en@quot/LC_MESSAGES/mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/fr/LC_MESSAGES/R-mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/fr/LC_MESSAGES/mgcv.mo
-%%NLS%%lib/R/library/mgcv/po/it/LC_MESSAGES/R-mgcv.mo
-%%NLS%%lib/R/library/mgcv/po/it/LC_MESSAGES/mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/ko/LC_MESSAGES/R-mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/ko/LC_MESSAGES/mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/pl/LC_MESSAGES/R-mgcv.mo
@@ -1613,8 +1619,8 @@ lib/R/share/texmf/tex/latex/Sweave.sty
 lib/R/share/texmf/tex/latex/jss.cls
 lib/R/share/texmf/tex/latex/omscmtt.fd
 libdata/pkgconfig/libR.pc
-man/man1/R.1.gz
-man/man1/Rscript.1.gz
+share/man/man1/R.1.gz
+share/man/man1/Rscript.1.gz
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/BioC_mirrors.csv
 %%DOCSDIR%%/COPYING

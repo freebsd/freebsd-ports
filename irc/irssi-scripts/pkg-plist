@@ -76,9 +76,9 @@ share/irssi/scripts/cleanpublic.pl
 share/irssi/scripts/clipboard.pl
 share/irssi/scripts/cloneprot.pl
 share/irssi/scripts/clones.pl
+share/irssi/scripts/colored_nicks.pl
 share/irssi/scripts/colorize_nicks.pl
 share/irssi/scripts/colorkick.pl
-share/irssi/scripts/colorswap.pl
 share/irssi/scripts/connectcmd.pl
 share/irssi/scripts/copy.pl
 share/irssi/scripts/countdown.pl
@@ -87,6 +87,7 @@ share/irssi/scripts/cp1250_kick.pl
 share/irssi/scripts/crapbuster.pl
 share/irssi/scripts/cron.pl
 share/irssi/scripts/ctrlact.pl
+share/irssi/scripts/cubes.pl
 share/irssi/scripts/cwho.pl
 share/irssi/scripts/dancer_forwardfix.pl
 share/irssi/scripts/dancer_hide_477.pl
@@ -129,7 +130,6 @@ share/irssi/scripts/fortune.pl
 share/irssi/scripts/forward.pl
 share/irssi/scripts/fpaste.pl
 share/irssi/scripts/freenode_filter.pl
-share/irssi/scripts/friends_peder.pl
 share/irssi/scripts/friends_shasta.pl
 share/irssi/scripts/fserve.pl
 share/irssi/scripts/fuckem.pl
@@ -222,7 +222,7 @@ share/irssi/scripts/nact.pl
 share/irssi/scripts/news.pl
 share/irssi/scripts/newsline.pl
 share/irssi/scripts/nickban.pl
-share/irssi/scripts/nickcolor.pl
+share/irssi/scripts/nickcolor_expando.pl
 share/irssi/scripts/nickident.pl
 share/irssi/scripts/nickignore.pl
 share/irssi/scripts/nicklist.pl
@@ -230,7 +230,6 @@ share/irssi/scripts/nickmix-c0ffee.pl
 share/irssi/scripts/nickmix_pasky.pl
 share/irssi/scripts/nickserv.pl
 share/irssi/scripts/niq.pl
-share/irssi/scripts/nm.pl
 share/irssi/scripts/nocaps.pl
 share/irssi/scripts/nocollide.pl
 share/irssi/scripts/noisyquery.pl
@@ -260,7 +259,6 @@ share/irssi/scripts/paste_derwan.pl
 share/irssi/scripts/paste_huggie.pl
 share/irssi/scripts/paste_kimmoke.pl
 share/irssi/scripts/pelix.pl
-share/irssi/scripts/people.pl
 share/irssi/scripts/perlalias.pl
 share/irssi/scripts/pggb_sound.pl
 share/irssi/scripts/phpdoc.pl

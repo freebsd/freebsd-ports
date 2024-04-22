@@ -1,4 +1,4 @@
---- Makefile.orig	2021-03-16 16:41:19 UTC
+--- Makefile.orig	2024-01-29 18:20:26 UTC
 +++ Makefile
 @@ -23,22 +23,24 @@ OPT = -O2 -g
  W	= -W -Wall -Wno-unused-parameter -Wbad-function-cast -Wuninitialized
@@ -18,7 +18,7 @@
  includedir = $(prefix)/include
  datarootdir = $(prefix)/share
 -mandir = $(datarootdir)/man
-+mandir = $(prefix)/man
++mandir = $(prefix)/share/man
  
  ########################################################################
  
@@ -46,7 +46,7 @@
  
  clean:
  	rm -rf $(PROGS) *.[ao] *.[ls]o *~ testdb
-@@ -66,18 +69,28 @@ liblmdb$(SOEXT):	mdb.lo midl.lo
+@@ -66,19 +69,30 @@ liblmdb$(SOEXT):	mdb.lo midl.lo
  
  liblmdb$(SOEXT):	mdb.lo midl.lo
  #	$(CC) $(LDFLAGS) -pthread -shared -Wl,-Bsymbolic -o $@ mdb.o midl.o $(SOLIBS)
@@ -72,6 +72,8 @@
  mtest5:	mtest5.o liblmdb.a
 +	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
  mtest6:	mtest6.o liblmdb.a
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
+ mplay:	mplay.o liblmdb.a
 +	${CC} ${CFLAGS} ${LDFLAGS} -o ${.TARGET} ${.ALLSRC}
  
  mdb.o: mdb.c lmdb.h midl.h

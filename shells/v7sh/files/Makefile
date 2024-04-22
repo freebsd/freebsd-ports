@@ -1,6 +1,6 @@
 PREFIX?=	/usr/local
 BINDIR?=	${PREFIX}/bin
-MANDIR?=	${PREFIX}/man/man
+MANDIR?=	${PREFIX}/share/man/man
 
 PROG=	v7sh
 SRCS=   args.c blok.c builtin.c cmd.c ctype.c error.c expand.c \

@@ -1,3 +1,3 @@
-TIMESTAMP = 1633812895
-SHA256 (mate/mate-settings-daemon-1.26.0.tar.xz) = b77aa017ff811a6fcae40bd45f18d8606eec87be21e3e6fa6d35c0fe14e66d41
-SIZE (mate/mate-settings-daemon-1.26.0.tar.xz) = 1096588
+TIMESTAMP = 1710882222
+SHA256 (mate/mate-settings-daemon-1.28.0.tar.xz) = 4ed7cdadaaa4c99efffc0282b8411703bb76e072c41c4b57989f8c5b40611a3a
+SIZE (mate/mate-settings-daemon-1.28.0.tar.xz) = 1047604

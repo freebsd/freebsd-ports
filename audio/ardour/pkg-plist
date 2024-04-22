@@ -46,6 +46,9 @@ lib/%%ARDOUR_MAJOR%%/backends/libdummy_audiobackend.so
 lib/%%ARDOUR_MAJOR%%/backends/libjack_audiobackend.so
 lib/%%ARDOUR_MAJOR%%/engines/libclearlooks.so
 lib/%%ARDOUR_MAJOR%%/hardour-%%VERSION%%
+lib/%%ARDOUR_MAJOR%%/libaaf.so
+lib/%%ARDOUR_MAJOR%%/libaaf.so.0
+lib/%%ARDOUR_MAJOR%%/libaaf.so.0.0.0
 lib/%%ARDOUR_MAJOR%%/libardour.so
 lib/%%ARDOUR_MAJOR%%/libardour.so.3
 lib/%%ARDOUR_MAJOR%%/libardour.so.3.0.0
@@ -95,9 +98,12 @@ lib/%%ARDOUR_MAJOR%%/surfaces/libardour_faderport2.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_faderport8.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_generic_midi.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_launch_control_xl.so
+lib/%%ARDOUR_MAJOR%%/surfaces/libardour_launchpad_mini.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_launchpad_pro.so
+lib/%%ARDOUR_MAJOR%%/surfaces/libardour_launchpad_x.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_mcp.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_osc.so
+lib/%%ARDOUR_MAJOR%%/surfaces/libardour_ssl_uf8.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_us2400.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_websockets.so
 lib/%%ARDOUR_MAJOR%%/utils/ardour-util.sh
@@ -180,7 +186,9 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/icons/halfnote.png
 %%DATADIR%%/icons/i_beam_cursor.png
 %%DATADIR%%/icons/launch_control_xl.png
+%%DATADIR%%/icons/launchpad-mini.png
 %%DATADIR%%/icons/launchpad-pro.png
+%%DATADIR%%/icons/launchpad-x.png
 %%DATADIR%%/icons/mezzforte.png
 %%DATADIR%%/icons/mezzoforte.png
 %%DATADIR%%/icons/mezzopiano.png
@@ -307,6 +315,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/midi_maps/Alesis_QX25.map
 %%DATADIR%%/midi_maps/Alesis_VI25.map
 %%DATADIR%%/midi_maps/Arturia_KeyLab49.map
+%%DATADIR%%/midi_maps/Arturia_MiniLab_3.map
 %%DATADIR%%/midi_maps/Arturia_MiniLab_mkII.map
 %%DATADIR%%/midi_maps/DDX3216.map
 %%DATADIR%%/midi_maps/Devine_Versakey.map
@@ -336,6 +345,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/midi_maps/akai-mpd-32.map
 %%DATADIR%%/midi_maps/bcf2000.map
 %%DATADIR%%/midi_maps/bcf2000_mackie.map
+%%DATADIR%%/midi_maps/donnerdmk25.map
 %%DATADIR%%/midi_maps/m-audio-oxygen61v3.map
 %%DATADIR%%/midi_maps/m-audio_oxygen25.map
 %%DATADIR%%/midi_maps/m-audio_oxygen25_3rdGen.map
@@ -594,6 +604,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/patchfiles/Lexicon_DR_Music_FX_Expansion.midnam
 %%DATADIR%%/patchfiles/Lexicon_Dual_FX_Expansion.midnam
 %%DATADIR%%/patchfiles/Lexicon_Dual_Vrb_Expansion.midnam
+%%DATADIR%%/patchfiles/Lexicon_MPX100.midnam
 %%DATADIR%%/patchfiles/Lexicon_MPX500.midnam
 %%DATADIR%%/patchfiles/Lexicon_MPX_1.midnam
 %%DATADIR%%/patchfiles/Lexicon_MPX_500.midnam
@@ -792,6 +803,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/patchfiles/Yamaha_S30_80.midnam
 %%DATADIR%%/patchfiles/Yamaha_S90.midnam
 %%DATADIR%%/patchfiles/Yamaha_SY77.midnam
+%%DATADIR%%/patchfiles/Yamaha_SY85.midnam
 %%DATADIR%%/patchfiles/Yamaha_SY99.midnam
 %%DATADIR%%/patchfiles/Yamaha_So3.midnam
 %%DATADIR%%/patchfiles/Yamaha_So8.midnam
@@ -854,6 +866,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/scripts/record_now.lua
 %%DATADIR%%/scripts/remove_unknown_procs.lua
 %%DATADIR%%/scripts/reset_mixer.lua
+%%DATADIR%%/scripts/reverse_midi.lua
 %%DATADIR%%/scripts/rubberband_swing.lua
 %%DATADIR%%/scripts/s_chanmap.lua
 %%DATADIR%%/scripts/s_cut_copy_section.lua
@@ -896,11 +909,13 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/scripts/surround_to_stereo.lua
 %%DATADIR%%/scripts/tomsloop.lua
 %%DATADIR%%/scripts/track_organizer.lua
+%%DATADIR%%/scripts/trigger_mixer_scene.lua
 %%DATADIR%%/scripts/tx_raw_midi_from_file.lua
 %%DATADIR%%/scripts/vamp_audio_to_midi.lua
 %%DATADIR%%/scripts/voice_activate.lua
 %%DATADIR%%/scripts/x-fade.lua
 %%DATADIR%%/templates/.stub
+%%DATADIR%%/themes/adwaita_dark-ardour.colors
 %%DATADIR%%/themes/blueberry_milk-ardour.colors
 %%DATADIR%%/themes/caineville-ardour.colors
 %%DATADIR%%/themes/clear_gray-ardour.colors

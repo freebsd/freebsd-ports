@@ -5,4 +5,4 @@ bin/wmnet
 @mode
 @group
 @owner
-man/man1/wmnet.1.gz
+share/man/man1/wmnet.1.gz

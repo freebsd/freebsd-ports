@@ -1,6 +1,6 @@
 PORTNAME=	dico
 DISTVERSION=	2.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net textproc
 MASTER_SITES=	GNU
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 USES=		gmake libtool localbase pkgconfig readline tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 INFO=		dico

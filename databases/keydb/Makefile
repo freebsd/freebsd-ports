@@ -10,6 +10,8 @@ WWW=		https://docs.keydb.dev/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_i386=	assertion failed: static_assert(sizeof(long) == sizeof(long long),"")
+
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		liblz4.so:archivers/liblz4 \
 		libsnappy.so:archivers/snappy \

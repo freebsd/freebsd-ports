@@ -1,4 +1,4 @@
---- ext/bdb1/bdb1.c.orig	2023-07-08 13:26:04 UTC
+--- ext/bdb1/bdb1.c.orig	2024-03-25 10:10:37 UTC
 +++ ext/bdb1/bdb1.c
 @@ -115,7 +115,6 @@ VALUE
  bdb1_test_load(VALUE obj, const DBT *a, int type_kv)
@@ -8,6 +8,24 @@
      bdb1_DB *dbst;
  
      Data_Get_Struct(obj, bdb1_DB, dbst);
+@@ -138,7 +137,7 @@ bdb1_test_load(VALUE obj, const DBT *a, int type_kv)
+ 	    res = Qnil;
+ 	}
+ 	else {
+-	    res = rb_tainted_str_new(a->data, a->size);
++	    res = rb_str_new(a->data, a->size);
+ 	    if (dbst->filter[2 + type_kv]) {
+ 		if (FIXNUM_P(dbst->filter[2 + type_kv])) {
+ 		    res = rb_funcall(obj,
+@@ -230,7 +229,7 @@ bdb1_h_hash(const void *bytes, size_t length)
+ 	rb_raise(bdb1_eFatal, "BUG : current_db not set");
+     }
+     Data_Get_Struct(obj, bdb1_DB, dbst);
+-    st = rb_tainted_str_new((char *)bytes, length);
++    st = rb_str_new((char *)bytes, length);
+     if (dbst->h_hash == 0)
+ 	res = rb_funcall(obj, id_h_hash, 1, st);
+     else
 @@ -270,7 +269,7 @@ bdb1_mark(bdb1_DB *dbst)
  }
  
@@ -261,3 +279,12 @@
      GetDB(obj, dbst);
      bdb1_test_error(dbst->dbp->sync(dbst->dbp, 0));
      return Qtrue;
+@@ -1740,7 +1748,7 @@ Init_bdb1(void)
+     rb_undef_method(bdb1_cHash, "reverse_each_pair");
+     rb_undef_method(bdb1_cHash, "reverse_each");
+     bdb1_cUnknown = rb_define_class_under(bdb1_mDb, "Unknown", bdb1_cCommon);
+-    bdb1_errstr = rb_tainted_str_new(0, 0);
++    bdb1_errstr = rb_str_new(0, 0);
+     rb_global_variable(&bdb1_errstr);
+     bdb1_init_delegator();
+     bdb1_init_recnum();

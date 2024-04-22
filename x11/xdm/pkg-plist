@@ -13,8 +13,8 @@ bin/xdm
 @sample etc/X11/xdm/xdm-config.sample
 lib/X11/xdm/chooser
 lib/X11/xdm/libXdmGreet.so
-man/man8/xdm.8.gz
-%%XDMSHELL%%man/man8/xdmshell.8.gz
+share/man/man8/xdm.8.gz
+%%XDMSHELL%%share/man/man8/xdmshell.8.gz
 share/X11/app-defaults/Chooser
 share/pixmaps/xorg-bw.xpm
 share/pixmaps/xorg.xpm

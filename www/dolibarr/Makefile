@@ -1,5 +1,5 @@
 PORTNAME=	dolibarr
-DISTVERSION=	18.0.4
+DISTVERSION=	19.0.0
 CATEGORIES=	www finance
 
 MAINTAINER=	acm@FreeBSD.org
@@ -27,6 +27,9 @@ post-extract:
 	${RM} -R ${WRKSRC}/.github
 	${RM} ${WRKSRC}/.gitmessage
 	${RM} ${WRKSRC}/.stickler.yml
+	${RM} ${WRKSRC}/.php-cs-fixer.dist.php
+	${RM} ${WRKSRC}/.phpcs.xml.dist
+	${RM} ${WRKSRC}/.pre-commit-config.yaml
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${WWWDIR}

@@ -1,6 +1,6 @@
 PORTNAME=	deluge
 DISTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p python
 MASTER_SITES=	PYPI
 PKGNAMESUFFIX=	-cli
@@ -55,7 +55,7 @@ post-patch:
 post-install:
 # install man pages
 .for man in deluge.1 deluge-console.1 deluge-gtk.1 deluge-web.1 deluged.1
-	${INSTALL_MAN} ${WRKSRC}/docs/man/${man} ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/docs/man/${man} ${STAGEDIR}${PREFIX}/share/man/man1/
 .endfor
 
 post-install-DOCS-on:

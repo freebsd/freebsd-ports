@@ -1,11 +1,11 @@
 PORTNAME=	bitchx
 PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES+=	irc
 MASTER_SITES=	SF/${PORTNAME}/ircii-pana/${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Feature-rich scriptable IRC client
 WWW=		http://www.bitchx.org/
 
@@ -13,9 +13,9 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USES=		cpe gmake ncurses
-
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--exec-prefix="${PREFIX}/share" \
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+CONFIGURE_ARGS=	--exec-prefix="${PREFIX}/share" \
 		--bindir="${PREFIX}/bin" \
 		--datadir="${PREFIX}/share" \
 		--libdir="${PREFIX}/share"
@@ -43,18 +43,14 @@ PLUGINS_CONFIGURE_WITH=	plugins="${PLUGIN_LIST:C/\$$/,/g}"
 SSL_USES=		ssl
 SSL_CONFIGURE_WITH=	ssl="${OPENSSLBASE}"
 
-PLUGIN_LIST=	abot acro arcfour autocycle blowfish cavlink cdrom encrypt \
+PLUGIN_LIST=	abot acro autocycle blowfish cavlink cdrom encrypt \
 		europa fserv hint nap nicklist pkga possum qbx qmail wavplay
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
-CFLAGS+=	-Wno-error=incompatible-function-pointer-types
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|bzip2|true|g' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's|SSLeay|ERR_get_error|' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|impress_me,|(int (*)(void *, char *))&|' \
+		${WRKSRC}/dll/fserv/fserv.c
 
 post-patch-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

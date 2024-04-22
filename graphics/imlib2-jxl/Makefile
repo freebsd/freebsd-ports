@@ -1,8 +1,11 @@
 PORTNAME=	imlib2-jxl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.1
-PORTREVISION=	3
+DISTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	graphics
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	de2b38f5f34f.patch:-p1 # libjxl 0.9
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	JPEG XL loader for imlib2

@@ -1,5 +1,6 @@
 PORTNAME=	genromfs
 PORTVERSION=	0.5.7
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	tomek@cedro.info
@@ -14,6 +15,6 @@ GH_ACCOUNT=	chexum
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 PLIST_FILES=	bin/genromfs \
-		man/man8/genromfs.8.gz
+		share/man/man8/genromfs.8.gz
 
 .include <bsd.port.mk>

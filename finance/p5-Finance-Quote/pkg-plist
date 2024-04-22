@@ -1,3 +1,4 @@
+%%SITE_PERL%%/Finance/CONTRIBUTING.pod
 %%SITE_PERL%%/Finance/Quote.pm
 %%SITE_PERL%%/Finance/Quote/AEX.pm
 %%SITE_PERL%%/Finance/Quote/ASEGR.pm
@@ -8,7 +9,6 @@
 %%SITE_PERL%%/Finance/Quote/Bloomberg.pm
 %%SITE_PERL%%/Finance/Quote/Bourso.pm
 %%SITE_PERL%%/Finance/Quote/CSE.pm
-%%SITE_PERL%%/Finance/Quote/Cdnfundlibrary.pm
 %%SITE_PERL%%/Finance/Quote/Comdirect.pm
 %%SITE_PERL%%/Finance/Quote/Consorsbank.pm
 %%SITE_PERL%%/Finance/Quote/Currencies.pm
@@ -20,11 +20,8 @@
 %%SITE_PERL%%/Finance/Quote/DWS.pm
 %%SITE_PERL%%/Finance/Quote/Deka.pm
 %%SITE_PERL%%/Finance/Quote/FTfunds.pm
-%%SITE_PERL%%/Finance/Quote/Fidelity.pm
 %%SITE_PERL%%/Finance/Quote/Finanzpartner.pm
 %%SITE_PERL%%/Finance/Quote/Fondsweb.pm
-%%SITE_PERL%%/Finance/Quote/Fool.pm
-%%SITE_PERL%%/Finance/Quote/Fundata.pm
 %%SITE_PERL%%/Finance/Quote/GoldMoney.pm
 %%SITE_PERL%%/Finance/Quote/GoogleWeb.pm
 %%SITE_PERL%%/Finance/Quote/HU.pm
@@ -57,6 +54,7 @@
 %%SITE_PERL%%/Finance/Quote/YahooJSON.pm
 %%SITE_PERL%%/Finance/Quote/YahooWeb.pm
 %%SITE_PERL%%/Finance/Quote/ZA.pm
+%%PERL5_MAN3%%/Finance::CONTRIBUTING.3.gz
 %%PERL5_MAN3%%/Finance::Quote.3.gz
 %%PERL5_MAN3%%/Finance::Quote::AEX.3.gz
 %%PERL5_MAN3%%/Finance::Quote::ASEGR.3.gz
@@ -67,7 +65,6 @@
 %%PERL5_MAN3%%/Finance::Quote::Bloomberg.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Bourso.3.gz
 %%PERL5_MAN3%%/Finance::Quote::CSE.3.gz
-%%PERL5_MAN3%%/Finance::Quote::Cdnfundlibrary.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Comdirect.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Consorsbank.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Currencies.3.gz
@@ -79,11 +76,8 @@
 %%PERL5_MAN3%%/Finance::Quote::DWS.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Deka.3.gz
 %%PERL5_MAN3%%/Finance::Quote::FTfunds.3.gz
-%%PERL5_MAN3%%/Finance::Quote::Fidelity.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Finanzpartner.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Fondsweb.3.gz
-%%PERL5_MAN3%%/Finance::Quote::Fool.3.gz
-%%PERL5_MAN3%%/Finance::Quote::Fundata.3.gz
 %%PERL5_MAN3%%/Finance::Quote::GoldMoney.3.gz
 %%PERL5_MAN3%%/Finance::Quote::GoogleWeb.3.gz
 %%PERL5_MAN3%%/Finance::Quote::HU.3.gz

@@ -8,8 +8,8 @@ bin/ne
 %%ETCDIR%%/term
 %%ETCDIR%%/term.kterm
 %%ETCDIR%%/term.rxvt
-man/man1/ne.1.gz
-man/ja/man1/ne.1.gz
+share/man/man1/ne.1.gz
+share/man/ja/man1/ne.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/BUGS.jp
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.jp
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY.jp

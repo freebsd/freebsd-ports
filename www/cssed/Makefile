@@ -1,6 +1,6 @@
 PORTNAME=	cssed
 PORTVERSION=	0.4.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -16,6 +16,7 @@ USES=		compiler:c++11-lang dos2unix gettext gnome localbase pathfix \
 DOS2UNIX_FILES=	scintilla/gtk/ScintillaGTK.cxx
 USE_GNOME=	gtk20 libxml2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-plugin-headers
 
 CXXFLAGS+=	-Wno-c++11-narrowing

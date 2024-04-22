@@ -147,9 +147,9 @@ lib/libxine.so.2.11.0
 %%WAVPACK%%%%PLUGINSDIR%%/xineplug_wavpack.so
 %%PLUGINSDIR%%/xineplug_xiph.so
 libdata/pkgconfig/libxine.pc
-man/man1/xine-config.1.gz
-man/man1/xine-list-1.2.1.gz
-man/man5/xine.5.gz
+share/man/man1/xine-config.1.gz
+share/man/man1/xine-list-1.2.1.gz
+share/man/man5/xine.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

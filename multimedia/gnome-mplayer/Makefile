@@ -1,6 +1,6 @@
 PORTNAME=	gnome-mplayer
 PORTVERSION=	1.0.9
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	https://launchpad.net/ubuntu/+archive/primary/+files/
 DISTNAME=	gnome-mplayer_1.0.9.orig
@@ -25,6 +25,7 @@ GLIB_SCHEMAS=	apps.gecko-mediaplayer.preferences.gschema.xml \
 		apps.gnome-mplayer.preferences.gschema.xml
 USE_XORG=	x11 xscrnsaver
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-nautilus \
 		--disable-nemo \
 		--disable-schemas-install \

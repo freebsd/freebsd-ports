@@ -1,0 +1,5 @@
+bin/yazi
+share/applications/yazi.desktop
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keymap.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/theme.toml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yazi.toml

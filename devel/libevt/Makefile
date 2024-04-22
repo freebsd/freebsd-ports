@@ -1,5 +1,5 @@
 PORTNAME=	libevt
-DISTVERSION=	alpha-20221022
+DISTVERSION=	alpha-20231121
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libevt/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -15,6 +15,7 @@ LIB_DEPENDS=	libfwnt.so:devel/libfwnt \
 		libregf.so:devel/libregf
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-python \
 		--with-libfwnt=${LOCALBASE} --with-libregf=${LOCALBASE}
 CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config

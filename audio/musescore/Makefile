@@ -1,30 +1,27 @@
 PORTNAME=	${GH_PROJECT:tl}
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.1
+DISTVERSION=	4.2.1
 CATEGORIES=	audio
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Free music composition & notation software
 WWW=		https://musescore.org/
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libmp3lame.so:audio/lame \
-		libsndfile.so:audio/libsndfile \
-		libvorbis.so:audio/libvorbis \
-		libogg.so:audio/libogg \
+LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libasound.so:audio/alsa-lib \
-		libasound_module_pcm_oss.so:audio/alsa-plugins \
-		libfreetype.so:print/freetype2
+		libasound_module_pcm_oss.so:audio/alsa-plugins
 
-USES=		cmake compiler:c++11-lib localbase \
-		pkgconfig qt:5
+USES=		cmake compiler:c++11-lib desktop-file-utils localbase \
+		pkgconfig qt:5 shared-mime-info
 USE_QT=		concurrent core dbus declarative designer graphicaleffects gui \
-		help location network networkauth opengl printsupport \
-		quickcontrols quickcontrols2 scripttools sql svg testlib \
-		webchannel widgets x11extras xml xmlpatterns \
-		buildtools:build linguisttools:build qmake:build uitools:build
+		network networkauth opengl printsupport \
+		quickcontrols quickcontrols2 svg \
+		widgets x11extras xml xmlpatterns \
+		buildtools:build linguisttools:build qmake:build testlib:build \
+		uitools:build
 
 USE_GITHUB=	yes
 GH_PROJECT=	MuseScore
@@ -61,5 +58,8 @@ post-stage:
 		${STAGEDIR}${PREFIX}/lib/cmake/GTest \
 		${STAGEDIR}${PREFIX}/lib/cmake/KDDockWidgets \
 		${STAGEDIR}${PREFIX}/lib/cmake
+	${INSTALL_DATA} ${FILESDIR}/mscore.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/share/icons/AppIcon/MS4_AppIcon_48x48.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/mscore.png
+
 
 .include <bsd.port.mk>

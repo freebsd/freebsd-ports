@@ -13,9 +13,9 @@ libexec/got-read-patch
 libexec/got-read-tag
 libexec/got-read-tree
 libexec/got-send-pack
-man/man1/got.1.gz
-man/man1/gotadmin.1.gz
-man/man1/tog.1.gz
-man/man5/git-repository.5.gz
-man/man5/got-worktree.5.gz
-man/man5/got.conf.5.gz
+share/man/man1/got.1.gz
+share/man/man1/gotadmin.1.gz
+share/man/man1/tog.1.gz
+share/man/man5/git-repository.5.gz
+share/man/man5/got-worktree.5.gz
+share/man/man5/got.conf.5.gz

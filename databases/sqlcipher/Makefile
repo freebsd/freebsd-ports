@@ -1,14 +1,14 @@
 PORTNAME=	sqlcipher
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.2
+DISTVERSION=	4.5.6
 CATEGORIES=	databases
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Encrypted SQLite database
-WWW=		http://www.sqlcipher.net
+WWW=		https://www.zetetic.net/sqlcipher/
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		cpe libedit libtool pathfix ssl tcl:86,build
 CPE_VENDOR=	zetetic

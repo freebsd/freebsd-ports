@@ -16,8 +16,9 @@ USES=		uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	claudiozz
 GH_TAGNAME=	d8428a7
+MAKE_ARGS=	MANDIR=${PREFIX}/share/man/man
 
-PLIST_FILES=	bin/bsdfan man/man1/bsdfan.1.gz \
+PLIST_FILES=	bin/bsdfan share/man/man1/bsdfan.1.gz \
 		@sample\ etc/bsdfan.conf.sample
 
 post-patch:

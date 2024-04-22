@@ -51,7 +51,7 @@ libdata/pkgconfig/polkit-gobject-1.pc
 %%MANPAGES%%share/man/man8/polkit.8.gz
 %%MANPAGES%%share/man/man8/polkitd.8.gz
 share/dbus-1/system-services/org.freedesktop.PolicyKit1.service
-share/dbus-1/system.d/org.freedesktop.PolicyKit1.conf.sample
+share/dbus-1/system.d/org.freedesktop.PolicyKit1.conf
 share/gettext/its/polkit.its
 share/gettext/its/polkit.loc
 share/gir-1.0/Polkit-1.0.gir

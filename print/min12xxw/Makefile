@@ -1,5 +1,6 @@
 PORTNAME=	min12xxw
 PORTVERSION=	0.0.9
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://hinterbergen.de/mala/min12xxw/
 
@@ -11,9 +12,10 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=	bin/esc-m \
 		bin/min12xxw \
-		man/man1/min12xxw.1.gz
+		share/man/man1/min12xxw.1.gz
 
 .include <bsd.port.mk>

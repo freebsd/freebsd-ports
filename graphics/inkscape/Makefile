@@ -1,5 +1,6 @@
 PORTNAME=	inkscape
 DISTVERSION=	1.3.2
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
 

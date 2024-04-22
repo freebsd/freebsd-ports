@@ -1,6 +1,6 @@
 PORTNAME=	ezquake
 DISTVERSION=	3.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/ezQuake/ezquake-source/archive/ \
@@ -12,6 +12,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Modern QuakeWorld client
 WWW=		https://www.ezquake.com/
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \

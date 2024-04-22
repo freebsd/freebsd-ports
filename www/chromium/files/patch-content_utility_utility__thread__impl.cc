@@ -1,8 +1,8 @@
---- content/utility/utility_thread_impl.cc.orig	2023-12-10 06:10:27 UTC
+--- content/utility/utility_thread_impl.cc.orig	2024-02-23 21:04:38 UTC
 +++ content/utility/utility_thread_impl.cc
 @@ -32,7 +32,7 @@
+ #include "mojo/public/cpp/bindings/pending_receiver.h"
  #include "mojo/public/cpp/bindings/service_factory.h"
- #include "third_party/abseil-cpp/absl/types/optional.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

@@ -10,7 +10,9 @@ WWW=		https://vprover.github.io/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
+BROKEN_armv7=	error: static_assert failed due to requirement 'sizeof(void *) == 8'
 BROKEN_i386=	error: static_assert failed due to requirement 'sizeof(void *) == 8'
+BROKEN_powerpc=	error: static_assert failed due to requirement 'sizeof(void *) == 8'
 
 USES=		cmake compiler:c++14-lang
 

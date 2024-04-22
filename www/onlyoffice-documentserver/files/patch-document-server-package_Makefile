@@ -1,5 +1,5 @@
---- document-server-package/Makefile.orig	2023-02-13 11:11:48.689223000 +0100
-+++ document-server-package/Makefile	2023-02-13 11:27:26.937335000 +0100
+--- document-server-package/Makefile.orig	2024-02-12 13:46:57.000000000 +0100
++++ document-server-package/Makefile	2024-03-01 10:49:36.212407000 +0100
 @@ -23,6 +23,7 @@ PACKAGE_VERSION := $(PRODUCT_VERSION)-$(BUILD_NUMBER)
  PACKAGE_NAME := $(COMPANY_NAME_LOW)-$(PRODUCT_NAME_LOW)
  PACKAGE_VERSION := $(PRODUCT_VERSION)-$(BUILD_NUMBER)
@@ -8,7 +8,7 @@
  UNAME_M ?= $(shell uname -m)
  ifeq ($(UNAME_M),x86_64)
  	RPM_ARCH := x86_64
-@@ -156,6 +157,21 @@ else
+@@ -143,6 +144,22 @@ else
  		DS_EXAMLE := /var/www/$(DS_PREFIX)-example
  		DEV_NULL := /dev/null
  	endif
@@ -20,17 +20,18 @@
 +		AR := 7z a -y
 +		PACKAGES = tar
 +		DS_PREFIX := $(COMPANY_NAME_LOW)/$(PRODUCT_SHORT_NAME_LOW)
-+		NGINX_CONF := %%ETCDIR%%/documentserver/nginx/includes
++		NGINX_CONF := /usr/local/etc/onlyoffice/documentserver/nginx/includes
 +		NGINX_LOG := /var/log/$(DS_PREFIX)
-+		DS_ROOT := %%LOCALBASE%%/www/$(DS_PREFIX)
++		DS_ROOT := /usr/local/www/$(DS_PREFIX)
 +		DS_FILES := /var/db/$(DS_PREFIX)
-+		DS_EXAMLE := %%LOCALBASE%%/www/$(DS_PREFIX)-example
++		DS_EXAMLE := /usr/local/www/$(DS_PREFIX)-example
 +		DEV_NULL := /dev/null
++		PKG_TARGET := node18
 +	endif
  	ifeq ($(UNAME_S),Darwin)
  		PLATFORM := mac
  		SHARED_EXT := .dylib
-@@ -173,6 +189,12 @@ else
+@@ -160,6 +177,12 @@ else
  	ifeq ($(UNAME_M),x86_64)
  		ARCHITECTURE := 64
  	endif
@@ -43,7 +44,7 @@
  	ifneq ($(filter %86,$(UNAME_M)),)
  		ARCHITECTURE := 32
  	endif
-@@ -324,7 +346,7 @@ documentserver:
+@@ -320,7 +343,7 @@ documentserver:
  		
  documentserver:
  	mkdir -p $(DOCUMENTSERVER_FILES)
@@ -52,7 +53,7 @@
  
  	mkdir -p $(DOCUMENTSERVER_CONFIG)
  	mkdir -p $(DOCUMENTSERVER_CONFIG)/log4js
-@@ -333,25 +355,25 @@ documentserver:
+@@ -329,25 +352,25 @@ documentserver:
  	mv -f $(DOCUMENTSERVER)/server/Common/config/log4js/*.json $(DOCUMENTSERVER_CONFIG)/log4js/
  
  	# rename product specific folders
@@ -85,12 +86,14 @@
  	rm -fr $(3RD_PARTY_LICENSE_FILES)
  
  ifeq ($(PLATFORM),win)
-@@ -360,33 +382,33 @@ endif
- 	cat exe/license/3rd-Party.txt ; >> $(DOCUMENTSERVER)/3rd-Party.txt
+@@ -357,34 +380,34 @@ endif
  endif
  
--	[ -f $(LICENSE_FILE) ] && cp -fr -t $(DOCUMENTSERVER) $(LICENSE_FILE) || true
-+	[ -f $(LICENSE_FILE) ] && cp -fr $(DOCUMENTSERVER) $(LICENSE_FILE) || true
+ 	[ -f $(LICENSE_FILE) ] \
+-		&& cp -f -t $(DOCUMENTSERVER) $(LICENSE_FILE) \
+-		|| cp -f -t $(DOCUMENTSERVER) LICENSE.txt
++		&& cp -f $(LICENSE_FILE) $(DOCUMENTSERVER) \
++		|| cp -f LICENSE.txt $(DOCUMENTSERVER) 
  
  	chmod u+x $(DOCUMENTSERVER)/server/FileConverter/bin/x2t$(EXEC_EXT)
  	#chmod u+x $(DOCUMENTSERVER)/server/FileConverter/bin/docbuilder$(EXEC_EXT)
@@ -98,7 +101,7 @@
  	chmod u+x $(DOCUMENTSERVER)/server/tools/allfontsgen$(EXEC_EXT)
  
 -	sed "s|\(_dc=\)0|\1"$(PACKAGE_VERSION)"|"  -i $(DOCUMENTSERVER)/web-apps/apps/api/documents/api.js
-+	sed -i '' "s|\(_dc=\)0|\1"$(PACKAGE_VERSION)"|" $(DOCUMENTSERVER)/web-apps/apps/api/documents/api.js
++	sed -i '' "s|\(_dc=\)0|\1"$(PACKAGE_VERSION)"|"  $(DOCUMENTSERVER)/web-apps/apps/api/documents/api.js
  
  ifeq ($(PRODUCT_NAME_LOW), documentserver)
 -	sed 's|\("packageType": \)[0-9]\+\(.*\)|\10\2|' -i $(DOCUMENTSERVER_CONFIG)/*.json
@@ -124,11 +127,11 @@
  	cd $(DOCUMENTSERVER)/npm && \
  		npm install && \
 -		pkg ./node_modules/json $(PKG_TARGET:%=-t %) -o json
-+		env PKG_CACHE_PATH=%%WRKDIR%%/.pkg-cache "%%WRKSRC%%/server/node_modules/.bin/pkg" ./node_modules/json $(PKG_TARGET:%=-t %) -o json
++		env PKG_CACHE_PATH=%%WRKDIR%%/.pkg-cache "%%WRKSRC%%/yao-pkg/node_modules/.bin/pkg" ./node_modules/json $(PKG_TARGET:%=-t %) -o json
  
  ifeq ($(PLATFORM),win)		
  	cd $(DOCUMENTSERVER)/npm && \
-@@ -400,7 +422,7 @@ documentserver-example:
+@@ -398,7 +421,7 @@ documentserver-example:
  
  documentserver-example:
  	mkdir -p $(DOCUMENTSERVER_EXAMPLE)
@@ -137,7 +140,7 @@
  	
  	mkdir -p $(DOCUMENTSERVER_EXAMPLE_CONFIG)
  
-@@ -409,7 +431,7 @@ documentserver-example:
+@@ -407,7 +430,7 @@ documentserver-example:
  	# Prevent for modification original config
  	chmod ug=r $(DOCUMENTSERVER_EXAMPLE_CONFIG)/*.json
  
@@ -146,12 +149,12 @@
  
  	/usr/bin/find $(DOCUMENTSERVER_EXAMPLE)/welcome -depth -type f -exec sed -i "s_{{year}}_$(shell date +"%Y")_g" {} \;
  
-@@ -496,6 +518,8 @@ $(DEB): $(DEB_DEPS) $(COMMON_DEPS) $(LINUX_DEPS) docum
+@@ -500,6 +523,8 @@ $(DEB): $(DEB_DEPS) $(COMMON_DEPS) $(LINUX_DEPS) docum
  
  %.exe:
- 	cd $(@D) && $(ISCC) $(ISCC_PARAMS) $(PACKAGE_NAME).iss
+ 	cd $(@D) && $(ISCC) $(ISCC_PARAMS) common.iss
 +
 +freebsd: $(COMMON_DEPS) $(LINUX_DEPS) documentserver
  
- $(EXE): $(WIN_DEPS) $(COMMON_DEPS) documentserver documentserver-example $(NGINX) $(PSQL) $(NSSM)
+ $(EXE): $(COMMON_DEPS) documentserver documentserver-example $(NGINX) $(PSQL) $(NSSM)
  

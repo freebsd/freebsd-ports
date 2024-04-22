@@ -1,6 +1,6 @@
 PORTNAME=	bogofilter
 DISTVERSION=	1.2.5
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	mail
 MASTER_SITES=	SF/bogofilter/bogofilter-stable/
 PKGNAMESUFFIX?=	-bdb
@@ -51,7 +51,7 @@ BF_LIBS+=		${ICONV_LIB}
 CPPFLAGS+=	${BF_CPPFLAGS}
 LIBS+=		-L${LOCALBASE}/lib ${BF_LIBS}
 CONFIGURE_ENV+=	PERL="${PERL}"
-INSTALL_TARGET=	install-strip prefix=${PREFIX} mandir=${MANPREFIX}/man
+INSTALL_TARGET=	install-strip prefix=${PREFIX} mandir=${PREFIX}/share/man
 
 post-patch:
 	${REINPLACE_CMD} -e 's/INTEGRITY_TESTS = t.lock1 t.lock3 t.valgrind/INTEGRITY_TESTS = t.lock1/' \

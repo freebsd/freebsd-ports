@@ -1,5 +1,5 @@
 bin/fetchmail
-man/man1/fetchmail.1.gz
+share/man/man1/fetchmail.1.gz
 @comment %%NLS%%share/locale/ca/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/fetchmail.mo
 @comment %%NLS%%share/locale/da/LC_MESSAGES/fetchmail.mo

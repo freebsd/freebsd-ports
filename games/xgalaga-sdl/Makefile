@@ -1,6 +1,6 @@
 PORTNAME=	xgalaga-sdl
 PORTVERSION=	2.1.1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-sdl
 USES=		localbase:ldflags sdl tar:bzip2
 USE_SDL=	sdl gfx image mixer ttf
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 
 PORTDOCS=	CREDITS README

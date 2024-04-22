@@ -1,6 +1,6 @@
 PORTNAME=	wmfishtime
 PORTVERSION=	1.24
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
 		http://www.sourcefiles.org/Toys/Clocks/
@@ -18,7 +18,7 @@ USE_XORG=	x11
 
 MAKE_ARGS=	CFLAGS="${CPPFLAGS} ${CFLAGS} -Wall" \
 		LDFLAGS="${LDFLAGS}"
-PLIST_FILES=	bin/wmfishtime man/man1/wmfishtime.1.gz
+PLIST_FILES=	bin/wmfishtime share/man/man1/wmfishtime.1.gz
 
 CPPFLAGS+=		$$(pkg-config --cflags gdk-x11-2.0 x11)
 LDFLAGS+=		$$(pkg-config --libs gdk-x11-2.0 x11) -lm
@@ -28,6 +28,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmfishtime ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/wmfishtime.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/wmfishtime.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

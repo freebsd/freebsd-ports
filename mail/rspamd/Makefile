@@ -1,5 +1,5 @@
 PORTNAME=	rspamd
-PORTVERSION=	3.7.5
+PORTVERSION=	3.8.4
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -29,7 +29,6 @@ CMAKE_ARGS+=	-DBUILD_PORT=yes \
 		-DDBDIR=/var/db/rspamd \
 		-DLIBDIR=${PREFIX}/lib/rspamd \
 		-DLOGDIR=/var/log/rspamd \
-		-DMANDIR=${MANPREFIX}/man \
 		-DRUNDIR=/var/run/rspamd
 
 CONFLICTS_INSTALL=	rspamd-devel

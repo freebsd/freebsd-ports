@@ -6,4 +6,4 @@ lib/cmake/mad/madTargets.cmake
 lib/libmad.so
 lib/libmad.so.0
 lib/libmad.so.%%PORTVERSION%%
-libdata/pkgconfig/libmad.pc
+libdata/pkgconfig/mad.pc

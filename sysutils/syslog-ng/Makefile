@@ -1,5 +1,6 @@
 PORTNAME=	syslog-ng
-DISTVERSION=	4.4.0
+DISTVERSION=	4.6.0
+PORTREVISION=	2
 CATEGORIES=	sysutils
 # official master site:
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
@@ -29,7 +30,7 @@ CONFLICTS?=	syslog-ng syslog-ng[0-9] \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAKE_JOBS_UNSAFE=	yes
-OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP2 DOCS REDIS JAVA PYTHON PYTHON_MOD MONGO CURL JAVA_MOD AMQP RIEMANN KAFKA SNMPDEST
+OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP2 DOCS REDIS JAVA PYTHON PYTHON_MOD MONGO CURL JAVA_MOD AMQP RIEMANN KAFKA SNMPDEST GRPC
 OPTIONS_DEFAULT=	CURL JSON
 TCP_WRAPPERS_DESC=	Build with TCP Wrappers
 SQL_DESC=		Build with database (libdbi) support
@@ -47,8 +48,7 @@ AMQP_DESC=		Build with AMQP support
 RIEMANN_DESC=		Build with Riemann support
 KAFKA_DESC=		Build with Kafka (librdkafka) support
 SNMPDEST_DESC=		Build with SNMP destination (net-snmp) support
-
-# USE_GCC=	yes
+GRPC_DESC=		Build with experimental GRPC-based modules (OpenTelemetry, Loki, etc.)
 
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	syslog-ng
@@ -60,8 +60,8 @@ SUB_FILES=	pkg-message
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
-		--enable-dynamic-linking --enable-manpages \
-		--disable-linux-caps --disable-cpp \
+		--enable-dynamic-linking --disable-manpages-install \
+		--disable-linux-caps \
 		--datadir=${PREFIX}/share/ --with-ivykis=system \
 		--with-python=${PYTHON_VER} --with-python-packages=none
 
@@ -259,6 +259,15 @@ KAFKA_CONFIGURE_OFF=		--disable-kafka
 KAFKA_LIB_DEPENDS=		librdkafka.so:net/librdkafka
 KAFKA_PLIST_FILES=		lib/syslog-ng/libkafka.so
 
+GRPC_CONFIGURE_ON=		--enable-cpp
+GRPC_CONFIGURE_OFF=		--disable-cpp
+GRPC_LIB_DEPENDS=		libgrpc.so:devel/grpc
+GRPC_PLIST_FILES=		lib/libgrpc-protos.so \
+ 				lib/libgrpc-protos.so.0 \
+ 				lib/libgrpc-protos.so.0.0.0 \
+ 				lib/syslog-ng/libloki.so \
+ 				lib/syslog-ng/libotel.so
+
 .include <bsd.port.pre.mk>
 
 .if !${PORT_OPTIONS:MJSON}
@@ -267,6 +276,10 @@ BROKEN=		Default configuration does not currently support non-JSON builds
 
 .if ${PORT_OPTIONS:MJAVA_MOD}
 BROKEN=		Java modules do not build currently
+.endif
+
+.if ${PORT_OPTIONS:MGRPC}
+BROKEN=		GRPC-based modules do not build currently
 .endif
 
 post-patch:
@@ -283,9 +296,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS.md ${STAGEDIR}${DOCSDIR}
 .endif
-	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${STAGEDIR}${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/doc/man/*.5 ${STAGEDIR}${PREFIX}/man/man5/
-	${INSTALL_MAN} ${WRKSRC}/doc/man/*.8 ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/man/*.5 ${STAGEDIR}${PREFIX}/share/man/man5/
+	${INSTALL_MAN} ${WRKSRC}/doc/man/*.7 ${STAGEDIR}${PREFIX}/share/man/man7/
+	${INSTALL_MAN} ${WRKSRC}/doc/man/*.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 	${INSTALL_DATA} ${FILESDIR}/syslog-ng.conf.sample \
 		${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/scl/syslog-ng.conf.dist \

@@ -1,6 +1,5 @@
 bin/remake
 include/gnuremake.h
-man/man1/remake.1.gz
 %%NLS%%share/locale/be/LC_MESSAGES/remake.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/remake.mo
 %%NLS%%share/locale/da/LC_MESSAGES/remake.mo
@@ -30,3 +29,4 @@ man/man1/remake.1.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/remake.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/remake.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/remake.mo
+share/man/man1/remake.1.gz

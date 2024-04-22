@@ -1,7 +1,7 @@
 PORTNAME=	ipdecap
 PORTVERSION=	0.7.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	loic-freebsd@loicp.eu
@@ -20,11 +20,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lpefferkorn
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 TEST_TARGET=	check
 
 PLIST_FILES=	bin/ipdecap\
-		man/man1/ipdecap.1.gz
+		share/man/man1/ipdecap.1.gz
 
 .include <bsd.port.mk>

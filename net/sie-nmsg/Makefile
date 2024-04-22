@@ -1,8 +1,7 @@
 PORTNAME=	sie-nmsg
-PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTVERSION=	1.3.1
+PORTREVISION=	0
 CATEGORIES=	net dns
-MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	SIE message module plugin for libnmsg
@@ -16,7 +15,9 @@ LIB_DEPENDS=	libprotobuf-c.so:devel/protobuf-c \
 		libwdns.so:dns/wdns
 
 GNU_CONFIGURE=	yes
-USES=	gmake libtool pathfix pkgconfig
+USES=	autoreconf gmake libtool pathfix pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	farsightsec
 
 INSTALL_TARGET=	install-strip
 

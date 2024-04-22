@@ -1,5 +1,6 @@
 PORTNAME=	fonteditfs
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 DISTNAME=	fnteditfs-${PORTVERSION}
@@ -10,7 +11,7 @@ COMMENT=	Full screen syscons font editor
 WWW=		https://fonteditfs.sourceforge.net/
 
 USES=		ncurses
-PLIST_FILES=	bin/fnteditfs man/man1/fnteditfs.1.gz
+PLIST_FILES=	bin/fnteditfs share/man/man1/fnteditfs.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|__PREFIX__|${STAGEDIR}${PREFIX}|g ; \

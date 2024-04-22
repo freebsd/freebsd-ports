@@ -1,5 +1,5 @@
 PORTNAME=	deepdiff
-DISTVERSION=	6.7.1
+DISTVERSION=	7.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,9 @@ WWW=		https://github.com/seperman/deepdiff
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ordered-set>=4.0.2:devel/py-ordered-set@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.1.7:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ordered-set>=4.0.2:devel/py-ordered-set@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=6.0.1:devel/py-yaml@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpickle>0:devel/py-jsonpickle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic>0:devel/py-pydantic@${PY_FLAVOR} \
@@ -22,7 +24,7 @@ USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
 
-do-test: # some tests fail, see https://github.com/seperman/deepdiff/issues/323
+do-test: # 3 tests fail, see https://github.com/seperman/deepdiff/issues/323
 	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest
 
 .include <bsd.port.mk>

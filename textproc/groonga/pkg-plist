@@ -4,23 +4,6 @@ bin/groonga
 %%SUGGEST%%bin/groonga-suggest-httpd
 %%SUGGEST%%bin/groonga-suggest-learner
 %%ETCDIR%%/groonga.conf
-%%ETCDIR%%/httpd/fastcgi.conf
-%%ETCDIR%%/httpd/fastcgi.conf.default
-%%ETCDIR%%/httpd/fastcgi_params
-%%ETCDIR%%/httpd/fastcgi_params.default
-%%ETCDIR%%/httpd/groonga-httpd.conf
-%%ETCDIR%%/httpd/html/50x.html
-%%ETCDIR%%/httpd/html/index.html
-%%ETCDIR%%/httpd/koi-utf
-%%ETCDIR%%/httpd/koi-win
-%%ETCDIR%%/httpd/mime.types
-%%ETCDIR%%/httpd/mime.types.default
-%%ETCDIR%%/httpd/nginx.conf.default
-%%ETCDIR%%/httpd/scgi_params
-%%ETCDIR%%/httpd/scgi_params.default
-%%ETCDIR%%/httpd/uwsgi_params
-%%ETCDIR%%/httpd/uwsgi_params.default
-%%ETCDIR%%/httpd/win-utf
 %%ETCDIR%%/synonyms.tsv
 include/groonga/groonga.h
 include/groonga/groonga.hpp
@@ -202,8 +185,6 @@ lib/libgroonga.so
 lib/libgroonga.so.0
 lib/libgroonga.so.0.0.0
 libdata/pkgconfig/groonga.pc
-sbin/groonga-httpd
-sbin/groonga-httpd-restart
 %%DATADIR%%/COPYING
 %%DATADIR%%/examples/dictionary/edict/edict-import.sh
 %%DATADIR%%/examples/dictionary/edict/edict2grn.rb
@@ -315,6 +296,3 @@ sbin/groonga-httpd-restart
 %%RUBY%%%%DATADIR%%/tools/index-column-diff-all.sh
 %%RUBY%%%%DATADIR%%/tools/object-inspect-all.sh
 %%RUBY%%%%DATADIR%%/tools/ucd-symbol-list.rb
-@dir /var/log/groonga/httpd
-@dir /var/log/groonga
-@dir /var/run/groonga

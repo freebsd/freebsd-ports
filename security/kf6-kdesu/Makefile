@@ -1,6 +1,5 @@
 PORTNAME=	kdesu
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	security kde kde-frameworks
 
 COMMENT=	User interface for running shell commands with root privileges

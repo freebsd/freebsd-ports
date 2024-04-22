@@ -32,9 +32,9 @@ etc/joe/syntax/tex.jsf
 etc/joe/syntax/verilog.jsf
 etc/joe/syntax/vhdl.jsf
 etc/joe/syntax/xml.jsf
-man/man1/jmacs.1.gz
-man/man1/joe.1.gz
-man/man1/jpico.1.gz
-man/man1/jstar.1.gz
-man/man1/jupp.1.gz
-man/man1/rjoe.1.gz
+share/man/man1/jmacs.1.gz
+share/man/man1/joe.1.gz
+share/man/man1/jpico.1.gz
+share/man/man1/jstar.1.gz
+share/man/man1/jupp.1.gz
+share/man/man1/rjoe.1.gz

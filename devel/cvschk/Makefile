@@ -1,5 +1,6 @@
 PORTNAME=	cvschk
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/mandree/ \
 		# http://cvs.sslug.dk/cvs2html/utils/
@@ -18,7 +19,7 @@ USE_PERL5=	run
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	bin/cvschk man/man1/cvschk.1.gz
+PLIST_FILES=	bin/cvschk share/man/man1/cvschk.1.gz
 
 do-configure:
 	${SED} -e "s,^#!/usr/bin/perl -w,#! ${PERL} -w," \
@@ -26,6 +27,6 @@ do-configure:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN}	  ${FILESDIR}/cvschk.1  ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN}	  ${FILESDIR}/cvschk.1  ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

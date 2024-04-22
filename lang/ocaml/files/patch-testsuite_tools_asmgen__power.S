@@ -1,5 +1,14 @@
---- testsuite/tools/asmgen_power.S.orig	2019-08-05 17:32:44 UTC
+--- testsuite/tools/asmgen_power.S.orig	2022-12-20 12:26:44 UTC
 +++ testsuite/tools/asmgen_power.S
+@@ -10,7 +10,7 @@
+ /*                                                                   */
+ /*********************************************************************/
+ 
+-#if defined(MODEL_ppc64) || defined(MODEL_ppc64le)
++#if _CALL_ELF == 1 || _CALL_ELF == 2
+ #define EITHER(a,b) b
+ #else
+ #define EITHER(a,b) a
 @@ -26,11 +26,11 @@
  #define RESERVED_STACK 16
  #define LR_SAVE_AREA 4

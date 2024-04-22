@@ -1,6 +1,6 @@
 PORTNAME=	electricsheep
 DISTVERSION=	3.0.2.20191005 # configure.ac though says that the version is 2.7b33
-PORTREVISION=	11
+PORTREVISION=	12
 PORTEPOCH=	1
 CATEGORIES=	graphics
 

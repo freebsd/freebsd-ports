@@ -4,7 +4,7 @@ lib/libspectrum.so
 lib/libspectrum.so.9
 lib/libspectrum.so.9.8.15
 libdata/pkgconfig/libspectrum.pc
-man/man3/libspectrum.3.gz
+share/man/man3/libspectrum.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README

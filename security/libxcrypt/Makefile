@@ -1,6 +1,7 @@
 PORTNAME=	libxcrypt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.4.36
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,13 +10,14 @@ WWW=		https://github.com/besser82/libxcrypt
 
 LICENSE=	LGPL21
 
-USES=		autoreconf gmake libtool
+USES=		autoreconf gmake libtool pkgconfig
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	besser82
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-static
 
 CFLAGS+=	-Wno-gnu-statement-expression

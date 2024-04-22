@@ -1,5 +1,5 @@
 PORTNAME=	libopenmpt
-DISTVERSION=	0.7.3
+DISTVERSION=	0.7.6
 DISTVERSIONSUFFIX=	+release.autotools
 CATEGORIES=	audio
 MASTER_SITES=	https://lib.openmpt.org/files/libopenmpt/src/ \
@@ -20,6 +20,7 @@ CPE_VENDOR=	openmpt
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+
 CONFIGURE_ARGS=	--disable-doxygen-doc \
 		--with-mpg123 \
 		--with-vorbis \

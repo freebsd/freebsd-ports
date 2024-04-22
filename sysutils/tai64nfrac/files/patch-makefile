@@ -6,7 +6,7 @@
  bindir		= $(prefix)/bin
 -mandir		= $(prefix)/man
 -man1dir		= $(mandir)/man1
-+mandir		= $(prefix)/man/man1
++mandir		= $(prefix)/share/man/man1
  
 -CC		= gcc
 +CC		?= gcc

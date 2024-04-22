@@ -309,9 +309,11 @@ include/openfhe/pke/scheme/ckksrns/ckksrns-utils.h
 include/openfhe/pke/scheme/ckksrns/gen-cryptocontext-ckksrns-internal.h
 include/openfhe/pke/scheme/ckksrns/gen-cryptocontext-ckksrns-params.h
 include/openfhe/pke/scheme/ckksrns/gen-cryptocontext-ckksrns.h
+include/openfhe/pke/scheme/ckksrns/schemeswitching-data-serializer.h
 include/openfhe/pke/scheme/gen-cryptocontext-params-defaults.h
 include/openfhe/pke/scheme/gen-cryptocontext-params.h
 include/openfhe/pke/scheme/scheme-id.h
+include/openfhe/pke/scheme/scheme-swch-params.h
 include/openfhe/pke/scheme/scheme-utils.h
 include/openfhe/pke/schemebase/base-advancedshe.h
 include/openfhe/pke/schemebase/base-cryptoparameters.h
@@ -349,10 +351,10 @@ lib/OpenFHE/OpenFHETargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/OpenFHE/OpenFHETargets.cmake
 lib/libOPENFHEbinfhe.so
 lib/libOPENFHEbinfhe.so.1
-lib/libOPENFHEbinfhe.so.1.1.2
+lib/libOPENFHEbinfhe.so.1.1.4
 lib/libOPENFHEcore.so
 lib/libOPENFHEcore.so.1
-lib/libOPENFHEcore.so.1.1.2
+lib/libOPENFHEcore.so.1.1.4
 lib/libOPENFHEpke.so
 lib/libOPENFHEpke.so.1
-lib/libOPENFHEpke.so.1.1.2
+lib/libOPENFHEpke.so.1.1.4

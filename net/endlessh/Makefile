@@ -1,6 +1,6 @@
 PORTNAME=	endlessh
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	brnrd@FreeBSD.org
@@ -16,14 +16,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	skeeto
 
 PLIST_FILES=	bin/endlessh \
-		man/man1/endlessh.1.gz \
+		share/man/man1/endlessh.1.gz \
 		"@sample ${PREFIX}/etc/endlessh.conf.sample" \
 		${PREFIX}/etc/endlessh.newsyslog.conf
 
 SUB_FILES=	pkg-message
 
 post-patch:
-	${REINPLACE_CMD} 's|share/man|man|;s|/usr/local|${PREFIX}|' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} 's|/etc/endlessh/config|${PREFIX}/etc/endlessh.conf|' \
 		${WRKSRC}/endlessh.c ${WRKSRC}/endlessh.1
 

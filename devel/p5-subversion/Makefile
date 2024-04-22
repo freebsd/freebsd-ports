@@ -7,8 +7,8 @@ WWW=		https://subversion.apache.org/
 USES=		perl5
 USE_PERL5=	build run
 
-PORTREVISION_114=	0
-PORTREVISION_LTS=	0
+PORTREVISION_LATEST=	1
+PORTREVISION_LTS=		1
 
 SVN_BUILD_BINDINGS=	yes
 

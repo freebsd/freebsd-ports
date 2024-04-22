@@ -1,5 +1,6 @@
 PORTNAME=	pam_jail
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.triades.net/downloads/
 
@@ -9,13 +10,13 @@ COMMENT=	PAM module dropping users in jails after login
 LICENSE=	BSD3CLAUSE
 
 SUB_FILES=	pkg-message
-PLIST_FILES=	lib/pam_jail.so lib/pam_jail.so.1 man/man8/pam_jail.8.gz
+PLIST_FILES=	lib/pam_jail.so lib/pam_jail.so.1 share/man/man8/pam_jail.8.gz
 
 .include <bsd.port.pre.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pam_jail.so.1 ${STAGEDIR}${PREFIX}/lib/
 	${LN} -sf pam_jail.so.1 ${STAGEDIR}${PREFIX}/lib/pam_jail.so
-	${INSTALL_MAN} ${WRKSRC}/pam_jail.8 ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/pam_jail.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 
 .include <bsd.port.post.mk>

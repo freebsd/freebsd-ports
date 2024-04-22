@@ -17,5 +17,3 @@ well-documented set of open tools for the wide proteomics community. One of the
 project's key features is Python itself, an open source language increasingly
 popular in scientific programming. The main applications of the library are
 reproducible statistical data analysis and rapid software prototyping.
-
-See also: https://github.com/levitsky/pyteomics

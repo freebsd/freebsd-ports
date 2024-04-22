@@ -1,5 +1,5 @@
 bin/idea
-man/man1/idea.1.gz
+share/man/man1/idea.1.gz
 share/applications/idea.desktop
 %%DATADIR%%/Install-Linux-tar.txt
 %%DATADIR%%/bin/appletviewer.policy

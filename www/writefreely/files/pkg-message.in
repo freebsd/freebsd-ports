@@ -19,9 +19,9 @@ to start the writefreely service.
 EOM
 }
 { type: upgrade
-  maximum_version: "0.14.0"
+  maximum_version: "0.15.0"
   message: <<<EOM
-WriteFreely has been upgraded, to a new minor version.
+WriteFreely has been upgraded to a new minor version.
 If WriteFreely has already been enabled, migrate the database to the new
 minor version by typing
 

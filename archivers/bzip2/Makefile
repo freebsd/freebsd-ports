@@ -1,5 +1,6 @@
 PORTNAME=	bzip2
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://sourceware.org/pub/bzip2/
 
@@ -33,16 +34,16 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libbz2.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/libbz2.so.1 ${STAGEDIR}${PREFIX}/lib
 	${LN} -sf libbz2.so.1 ${STAGEDIR}${PREFIX}/lib/libbz2.so
-	${INSTALL_MAN} ${WRKSRC}/bzip2.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/bzgrep.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/bzmore.1 ${STAGEDIR}${PREFIX}/man/man1
-	${LN} -sf bzip2.1 ${STAGEDIR}${PREFIX}/man/man1/bunzip2.1
-	${LN} -sf bzip2.1 ${STAGEDIR}${PREFIX}/man/man1/bzcat.1
-	${LN} -sf bzip2.1 ${STAGEDIR}${PREFIX}/man/man1/bz2cat.1
-	${LN} -sf bzip2.1 ${STAGEDIR}${PREFIX}/man/man1/bzip2recover.1
-	${LN} -sf bzgrep.1 ${STAGEDIR}${PREFIX}/man/man1/bzegrep.1
-	${LN} -sf bzgrep.1 ${STAGEDIR}${PREFIX}/man/man1/bzfgrep.1
-	${LN} -sf bzmore.1 ${STAGEDIR}${PREFIX}/man/man1/bzless.1
+	${INSTALL_MAN} ${WRKSRC}/bzip2.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/bzgrep.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/bzmore.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${LN} -sf bzip2.1 ${STAGEDIR}${PREFIX}/share/man/man1/bunzip2.1
+	${LN} -sf bzip2.1 ${STAGEDIR}${PREFIX}/share/man/man1/bzcat.1
+	${LN} -sf bzip2.1 ${STAGEDIR}${PREFIX}/share/man/man1/bz2cat.1
+	${LN} -sf bzip2.1 ${STAGEDIR}${PREFIX}/share/man/man1/bzip2recover.1
+	${LN} -sf bzgrep.1 ${STAGEDIR}${PREFIX}/share/man/man1/bzegrep.1
+	${LN} -sf bzgrep.1 ${STAGEDIR}${PREFIX}/share/man/man1/bzfgrep.1
+	${LN} -sf bzmore.1 ${STAGEDIR}${PREFIX}/share/man/man1/bzless.1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/bzip2
 	${INSTALL_DATA} ${WRKSRC}/manual* ${STAGEDIR}${PREFIX}/share/doc/bzip2
 	${INSTALL_DATA} ${WRKSRC}/bzip2.txt ${STAGEDIR}${PREFIX}/share/doc/bzip2

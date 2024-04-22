@@ -1,12 +1,12 @@
 PORTNAME=	Mail-DKIM
-PORTVERSION=	1.20230911
+PORTVERSION=	1.20240124
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to process and/or create DKIM email
-WWW=		http://jason.long.name/dkimproxy/
+WWW=		https://metacpan.org/dist/Mail-DKIM
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
@@ -24,9 +24,9 @@ TEST_DEPENDS=	p5-Net-DNS-Resolver-Mock>=0:dns/p5-Net-DNS-Resolver-Mock \
 USES=		perl5 shebangfix
 USE_PERL5=	configure
 
-NO_ARCH=	yes
-
 SHEBANG_FILES=	scripts/*.pl
+
+NO_ARCH=	yes
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/dkim*.pl ${STAGEDIR}${PREFIX}/bin

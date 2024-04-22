@@ -11,10 +11,9 @@ WWW=		https://paps.sourceforge.net/
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-BUILD_DEPENDS=	cmake:devel/cmake-core
 LIB_DEPENDS=	libfmt.so:devel/libfmt
 
-USES=		compiler:c++17-lang meson gnome pkgconfig python:env shebangfix
+USES=		cmake:indirect compiler:c++17-lang meson gnome pkgconfig python:env shebangfix
 USE_CXXSTD=	c++17
 USE_GITHUB=	yes
 GH_ACCOUNT=	dov

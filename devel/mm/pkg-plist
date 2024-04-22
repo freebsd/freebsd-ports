@@ -4,5 +4,5 @@ lib/libmm.a
 lib/libmm.so
 lib/libmm.so.14
 lib/libmm.so.14.0.22
-man/man1/mm-config.1.gz
-man/man3/mm.3.gz
+share/man/man1/mm-config.1.gz
+share/man/man3/mm.3.gz

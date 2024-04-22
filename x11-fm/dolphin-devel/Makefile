@@ -13,7 +13,7 @@ LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext gl kde:6 \
 		qt:6 tar:xz xorg
-USE_KDE=	activities attica5 baloo5 bookmarks codecs colorscheme \
+USE_KDE=	activities attica baloo bookmarks codecs colorscheme \
 		completion config configwidgets coreaddons crash dbusaddons \
 		filemetadata i18n iconthemes itemviews jobwidgets kcmutils kio \
 		newstuff notifications parts phonon service solid sonnet textwidgets \

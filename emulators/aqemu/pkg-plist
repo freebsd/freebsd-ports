@@ -1,5 +1,5 @@
 bin/aqemu
-man/man1/aqemu.1.gz
+share/man/man1/aqemu.1.gz
 share/applications/aqemu.desktop
 %%DATADIR%%/docs/links.html
 %%DATADIR%%/icons.rcc

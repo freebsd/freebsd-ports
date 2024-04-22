@@ -1,7 +1,7 @@
 PORTNAME=	jam
-PORTVERSION=	2.6.1
+DISTVERSION=	2.6.1
 CATEGORIES=	devel
-MASTER_SITES=	https://swarm.workshop.perforce.com/projects/perforce_software-jam/download/main/
+MASTER_SITES=	https://swarm.workshop.perforce.com/projects/perforce_software-jam/download/main/guest/perforce_software/${PORTNAME}/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Build utility like make(1)

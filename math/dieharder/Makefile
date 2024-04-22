@@ -1,6 +1,6 @@
 PORTNAME=	dieharder
 PORTVERSION=	3.31.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	math
 MASTER_SITES=	http://www.phy.duke.edu/~rgb/General/dieharder/ LOCAL/bf
 
@@ -16,6 +16,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 USES=		dos2unix libtool tar:tgz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes

@@ -1,7 +1,7 @@
 PORTNAME=	dspdfviewer
 PORTVERSION=	1.15.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	65
+PORTREVISION=	67
 CATEGORIES=	graphics
 
 MAINTAINER=	fox@FreeBSD.org
@@ -29,8 +29,8 @@ CMAKE_ARGS=	-DBuildTests=OFF \
 		-DPOPPLER_LIBRARIES=${LOCALBASE}/lib/libpoppler-qt5.so
 
 PLIST_FILES=	bin/dspdfviewer \
-		man/man1/dspdfviewer.1.gz \
-		share/applications/dspdfviewer.desktop
+		share/applications/dspdfviewer.desktop \
+		share/man/man1/dspdfviewer.1.gz
 
 .include <bsd.port.pre.mk>
 

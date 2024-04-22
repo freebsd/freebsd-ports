@@ -116,6 +116,7 @@ baselibs() {
 	local found_openssl
 	local file
 	[ "${PKGBASE}" = "pkg" -o "${PKGBASE}" = "pkg-devel" ] && return
+
 	while read -r f; do
 		case ${f} in
 		File:\ .*)
@@ -136,10 +137,13 @@ baselibs() {
 	done <<-EOF
 	$(list_stagedir_elfs -exec readelf -d {} + 2>/dev/null)
 	EOF
-	if [ -z "${USESSSL}" -a -n "${found_openssl}" ]; then
-		warn "you need USES=ssl"
-	elif [ -n "${USESSSL}" -a -z "${found_openssl}" ]; then
-		warn "you may not need USES=ssl"
+
+	if ! list_stagedir_elfs | egrep -q 'lib(crypto|ssl).so*'; then
+		if [ -z "${USESSSL}" -a -n "${found_openssl}" ]; then
+			warn "you need USES=ssl"
+		elif [ -n "${USESSSL}" -a -z "${found_openssl}" ]; then
+			warn "you may not need USES=ssl"
+		fi
 	fi
 	return ${rc}
 }
@@ -732,6 +736,8 @@ sonames() {
 		[ -z "${f}" ] && continue
 		# Ignore symlinks
 		[ -f "${f}" -a ! -L "${f}" ] || continue
+		# Ignore .debug files
+		[ "${f}" == "${f%.debug}" ] || continue
 		if ! readelf -d ${f} | grep SONAME > /dev/null; then
 			warn "${f} doesn't have a SONAME."
 			warn "pkg(8) will not register it as being provided by the port."
@@ -1028,10 +1034,18 @@ reinplace()
 	fi
 }
 
+prefixman() {
+	if [ -d "${STAGEDIR}${PREFIX}/man" ]; then
+		warn "Installing man files in ${PREFIX}/man is no longer supported. Consider installing these files in ${PREFIX}/share/man instead."
+		ls -liTd ${STAGEDIR}${PREFIX}/man
+	fi
+	return 0
+}
+
 checks="shebang symlinks paths stripped desktopfileutils sharedmimeinfo"
 checks="$checks suidfiles libtool libperl prefixvar baselibs terminfo"
 checks="$checks proxydeps sonames perlcore no_arch gemdeps gemfiledeps flavors"
-checks="$checks license depends_blacklist pkgmessage reinplace"
+checks="$checks license depends_blacklist pkgmessage reinplace prefixman"
 
 ret=0
 cd ${STAGEDIR} || exit 1

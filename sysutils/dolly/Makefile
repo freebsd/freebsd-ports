@@ -8,6 +8,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to clone harddisks/partitions over a fast switched network
 WWW=		http://www.cs.inf.ethz.ch/CoPs/patagonia/dolly.html
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandonware, upstream is gone
+EXPIRATION_DATE=2024-04-30
+
 OPTIONS_DEFINE=	BZIP2 HIGHEST_COMPRESSION DOCS
 OPTIONS_DEFAULT=	BZIP2 HIGHEST_COMPRESSION
 BZIP2_DESC=	bzip2 instead of gzip for compressing

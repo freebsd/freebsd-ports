@@ -1,6 +1,5 @@
 PORTNAME=	mate-system-monitor
-PORTVERSION=	1.26.0
-PORTREVISION=	3
+PORTVERSION=	1.28.1
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -23,6 +22,7 @@ USES=		alias compiler:c++11-lib gettext gmake gnome localbase mate \
 USE_MATE=	icontheme
 USE_GNOME=	gtkmm30 intlhack librsvg2 libwnck3 libxml2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-systemd
 CONFIGURE_ENV=	LIBS="-lutil" DATADIRNAME="share"
 

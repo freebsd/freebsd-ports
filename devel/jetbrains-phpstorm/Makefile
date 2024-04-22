@@ -1,6 +1,6 @@
 PORTNAME=	phpstorm
-DISTVERSION=	2023.3.2
-CATEGORIES=	devel java
+PORTVERSION=	2023.3.6
+CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/webide/
 PKGNAMEPREFIX=	jetbrains-
 DISTNAME=	PhpStorm-${PORTVERSION}
@@ -17,9 +17,9 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
-		jetbrains-pty4j>=0.12.13:devel/jetbrains-pty4j \
-		jetbrains-restarter>=233.11799.241:devel/jetbrains-restarter \
-		jetbrains-sqlite>=233.11799.241:devel/jetbrains-sqlite \
+		jetbrains-pty4j>=0.12.25:devel/jetbrains-pty4j \
+		jetbrains-restarter>=233.14015.106:devel/jetbrains-restarter \
+		jetbrains-sqlite>=233.14015.106:devel/jetbrains-sqlite \
 		lsof:sysutils/lsof
 
 USES=		cpe python:run
@@ -35,7 +35,7 @@ NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
-WRKSRC=		${WRKDIR}/PhpStorm-233.13135.108
+WRKSRC=		${WRKDIR}/PhpStorm-233.15026.12
 
 do-install:
 # Linux/Windows/OS X only so remove them
@@ -50,8 +50,7 @@ do-install:
 		${WRKSRC}/lib/native \
 		${WRKSRC}/lib/pty4j \
 		${WRKSRC}/plugins/cwm-plugin \
-		${WRKSRC}/plugins/cwm-plugin-projector \
-		${WRKSRC}/plugins/gateway-plugin/lib/remote-dev-workers \
+		${WRKSRC}/plugins/gateway-plugin \
 		${WRKSRC}/plugins/remote-dev-server \
 		${WRKSRC}/plugins/webp/lib/libwebp
 	${MKDIR} ${STAGEDIR}${DATADIR}
@@ -60,7 +59,7 @@ do-install:
 	@(cd ${WRKSRC}/bin && ${COPYTREE_BIN} . ${STAGEDIR}${DATADIR}/bin/ \
 		"-name *\.sh -o -name *\.py")
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/
 # Use fsnotifier replacement provided by java/intellij-fsnotifier
 	${ECHO} "idea.filewatcher.executable.path=${PREFIX}/bin/fsnotifier" >> ${STAGEDIR}${DATADIR}/bin/idea.properties

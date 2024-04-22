@@ -1,6 +1,6 @@
 PORTNAME=	bulk_mailer
 PORTVERSION=	1.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cs.utk.edu/pub/moore/bulk_mailer/ \
 		LOCAL/mat/${PORTNAME}
@@ -15,14 +15,14 @@ GNU_CONFIGURE=	YES
 ALL_TARGET=	bulk_mailer
 
 PLIST_FILES=	bin/bulk_mailer \
-		man/man1/bulk_mailer.1.gz
+		share/man/man1/bulk_mailer.1.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bulk_mailer ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/bulk_mailer.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/bulk_mailer.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/bulk_mailer.README ${STAGEDIR}${DOCSDIR}/README
 	${INSTALL_DATA} ${WRKSRC}/bulk_mailer.ps ${STAGEDIR}${DOCSDIR}

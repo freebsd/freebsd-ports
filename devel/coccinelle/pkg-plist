@@ -63,8 +63,8 @@ lib/coccinelle/python/coccilib/trac.py
 lib/coccinelle/python/coccilib/xml_firehose.py
 lib/coccinelle/standard.h
 lib/coccinelle/standard.iso
-man/man1/pycocci.1.gz
-man/man1/spatch.1.gz
-man/man1/spgen.1.gz
-man/man3/Coccilib.3cocci.gz
+share/man/man1/pycocci.1.gz
+share/man/man1/spatch.1.gz
+share/man/man1/spgen.1.gz
+share/man/man3/Coccilib.3cocci.gz
 share/bash-completion/completions/spatch

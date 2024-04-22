@@ -18,8 +18,8 @@ lib/libMailer.so
 lib/libMailer.so.0
 lib/libMailer.so.0.0
 libdata/pkgconfig/Mailer.pc
-%%PORTDOCS%%man/man1/compose.1.gz
-%%PORTDOCS%%man/man1/mailer.1.gz
+%%PORTDOCS%%share/man/man1/compose.1.gz
+%%PORTDOCS%%share/man/man1/mailer.1.gz
 share/applications/deforaos-mailer.desktop
 share/icons/hicolor/16x16/apps/mailer-accounts.png
 share/icons/hicolor/16x16/apps/mailer-drafts.png

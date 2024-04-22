@@ -1,5 +1,6 @@
 PORTNAME=	git-secret
 DISTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	mail@sobolevn.me
@@ -25,7 +26,7 @@ post-extract:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/git-secret ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/man/man1/*.1 ${STAGEDIR}${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/man/man7/*.7 ${STAGEDIR}${PREFIX}/man/man7/
+	${INSTALL_MAN} ${WRKSRC}/man/man1/*.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/man/man7/*.7 ${STAGEDIR}${PREFIX}/share/man/man7/
 
 .include <bsd.port.mk>

@@ -4,8 +4,8 @@ libexec/vchanger/vchanger-launch-mount.sh
 libexec/vchanger/vchanger-launch-umount.sh
 libexec/vchanger/vchanger-mount-uuid.sh
 libexec/vchanger/vchanger-umount-uuid.sh
-man/man5/vchanger.conf.5.gz
-man/man8/vchanger.8.gz
+share/man/man5/vchanger.conf.5.gz
+share/man/man8/vchanger.8.gz
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/ChangeLog

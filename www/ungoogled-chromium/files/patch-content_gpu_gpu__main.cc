@@ -1,4 +1,4 @@
---- content/gpu/gpu_main.cc.orig	2023-12-23 12:33:28 UTC
+--- content/gpu/gpu_main.cc.orig	2024-03-22 14:16:19 UTC
 +++ content/gpu/gpu_main.cc
 @@ -91,7 +91,7 @@
  #include "sandbox/win/src/sandbox.h"
@@ -7,7 +7,7 @@
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include "content/child/sandboxed_process_thread_type_handler.h"
- #include "content/gpu/gpu_sandbox_hook_linux.h"
+ #include "content/common/gpu_pre_sandbox_hook_linux.h"
  #include "sandbox/policy/linux/sandbox_linux.h"
 @@ -114,7 +114,7 @@ namespace content {
  
@@ -27,7 +27,7 @@
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif BUILDFLAG(IS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -289,7 +289,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -291,7 +291,7 @@ int GpuMain(MainFunctionParams parameters) {
            std::make_unique<base::SingleThreadTaskExecutor>(
                gpu_preferences.message_pump_type);
      }

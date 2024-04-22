@@ -1,13 +1,13 @@
 PORTNAME=	frobby
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES=	5b9e4ac4057f5693f53c321eeb5bfb387f6b69fb.patch:-p1
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software system and project for computations with monomial ideals
 WWW=		https://github.com/Macaulay2/frobby
 

@@ -14,7 +14,7 @@ LICENSE_NAME_TclTk=	Tcl/Tk License
 LICENSE_TEXT_TclTk=	http://www.tcl.tk/software/tcltk/license.html
 LICENSE_PERMS_TclTk=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

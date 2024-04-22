@@ -38,6 +38,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/changelog/v4.4.md
 %%PORTDOCS%%%%DOCSDIR%%/changelog/v5.0.md
 %%PORTDOCS%%%%DOCSDIR%%/changelog/v5.1.md
+%%PORTDOCS%%%%DOCSDIR%%/changelog/v5.2.md
+%%PORTDOCS%%%%DOCSDIR%%/changelog/v5.3.md
+%%PORTDOCS%%%%DOCSDIR%%/changelog/v6.0.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/2darray.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/README.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/a.md
@@ -150,8 +153,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/commands/tread.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/true.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/try.md
+%%PORTDOCS%%%%DOCSDIR%%/commands/tryerr.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/trypipe.md
+%%PORTDOCS%%%%DOCSDIR%%/commands/trypipeerr.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/type.md
+%%PORTDOCS%%%%DOCSDIR%%/commands/unsafe.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/version.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/which.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/while.md
@@ -173,12 +179,16 @@
 %%PORTDOCS%%%%DOCSDIR%%/optional/select.md
 %%PORTDOCS%%%%DOCSDIR%%/optional/sleep.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/README.md
+%%PORTDOCS%%%%DOCSDIR%%/parser/add-with.md
+%%PORTDOCS%%%%DOCSDIR%%/parser/addition.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/array.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/brace-quote-func.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/brace-quote.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/create-array.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/create-object.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/curly-brace.md
+%%PORTDOCS%%%%DOCSDIR%%/parser/divide-by.md
+%%PORTDOCS%%%%DOCSDIR%%/parser/division.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/double-quote.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/element.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/elvis.md
@@ -186,8 +196,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/parser/greater-than-greater-than.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/greater-than.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/item-index.md
+%%PORTDOCS%%%%DOCSDIR%%/parser/lambda.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/logical-and.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/logical-or.md
+%%PORTDOCS%%%%DOCSDIR%%/parser/multiplication.md
+%%PORTDOCS%%%%DOCSDIR%%/parser/multiply-by.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/namedpipe.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/not-func.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/null-coalescing.md
@@ -199,6 +212,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/parser/range.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/scalar.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/single-quote.md
+%%PORTDOCS%%%%DOCSDIR%%/parser/subtract-by.md
+%%PORTDOCS%%%%DOCSDIR%%/parser/subtraction.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/tilde.md
 %%PORTDOCS%%%%DOCSDIR%%/supported-platforms.md
 %%PORTDOCS%%%%DOCSDIR%%/tour.md
@@ -240,6 +255,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/variables/argv.md
 %%PORTDOCS%%%%DOCSDIR%%/variables/columns.md
 %%PORTDOCS%%%%DOCSDIR%%/variables/hostname.md
+%%PORTDOCS%%%%DOCSDIR%%/variables/meta-values.md
 %%PORTDOCS%%%%DOCSDIR%%/variables/murex_argv.md
 %%PORTDOCS%%%%DOCSDIR%%/variables/murex_exe.md
 %%PORTDOCS%%%%DOCSDIR%%/variables/numeric.md
@@ -254,7 +270,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/foreach.mx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello-world.mx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/inline-sql.mx
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/list-builtins.mx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/loops-iteration.mx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/table-indexes.mx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/try-catch.mx

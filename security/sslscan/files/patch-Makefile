@@ -1,4 +1,4 @@
---- Makefile.orig	2023-04-08 21:36:58 UTC
+--- Makefile.orig	2024-01-21 13:41:31 UTC
 +++ Makefile
 @@ -1,12 +1,7 @@
  # set gcc as default if CC is not set
@@ -14,12 +14,7 @@
  # Detect OS
  OS := $(shell uname)
  ARCH := $(shell uname -m)
-@@ -26,11 +21,11 @@ endif
- 
- SRCS      = sslscan.c
- BINDIR    = $(PREFIX)/bin
--MANDIR    = $(PREFIX)/share/man
-+MANDIR    = $(PREFIX)/man
+@@ -30,7 +25,7 @@ WARNINGS  = -Wall -Wformat=2 -Wformat-security -Wno-de
  MAN1DIR   = $(MANDIR)/man1
  
  WARNINGS  = -Wall -Wformat=2 -Wformat-security -Wno-deprecated-declarations
@@ -28,7 +23,7 @@
  
  # for dynamic linking
  LIBS      = -lssl -lcrypto
-@@ -58,36 +53,12 @@ endif
+@@ -58,38 +53,12 @@ CFLAGS += -std=gnu11
  CFLAGS += -std=gnu11
  
  # for static linking
@@ -61,12 +56,14 @@
 -ifneq (,$(wildcard /usr/bin/nproc))
 -	NUM_PROCS = `/usr/bin/nproc --all`
 -endif
--
+-ifeq ($(OS), Darwin)
+-	NUM_PROCS = `sysctl -n hw.ncpu`
+-endif
 -
  .PHONY: all sslscan clean install uninstall static opensslpull
  
  all: sslscan
-@@ -114,6 +85,9 @@ ifeq ($(OS), Darwin)
+@@ -116,6 +85,9 @@ ifeq ($(OS), Darwin)
  	install sslscan $(DESTDIR)$(BINDIR)/sslscan;
  	install -d $(DESTDIR)$(MAN1DIR)/;
  	install sslscan.1 $(DESTDIR)$(MAN1DIR)/sslscan.1;
@@ -76,20 +73,20 @@
  else
  	install -D sslscan $(DESTDIR)$(BINDIR)/sslscan;
  	install -D sslscan.1 $(DESTDIR)$(MAN1DIR)/sslscan.1;
-@@ -126,11 +100,7 @@ uninstall:
+@@ -128,11 +100,7 @@ opensslpull:
  .openssl.is.fresh: opensslpull
  	true
  opensslpull:
 -	if [ -d openssl -a -d openssl/.git ]; then \
--		cd ./openssl && git checkout OpenSSL_1_1_1-stable && git pull | grep -q "Already up-to-date." && [ -e ../.openssl.is.fresh ] || touch ../.openssl.is.fresh ; \
+-		cd ./openssl && git checkout `git ls-remote https://github.com/openssl/openssl | grep -Eo '(openssl-3\.0\.[0-9]+)' | sort --version-sort | tail -n 1` && git pull | grep -q "Already up-to-date." && [ -e ../.openssl.is.fresh ] || touch ../.openssl.is.fresh ; \
 -	else \
--		git clone --depth 1 -b OpenSSL_1_1_1-stable https://github.com/openssl/openssl ./openssl && cd ./openssl && touch ../.openssl.is.fresh ; \
+-	git clone --depth 1 -b `git ls-remote https://github.com/openssl/openssl | grep -Eo '(openssl-3\.0\.[0-9]+)' | sort -V | tail -n 1` https://github.com/openssl/openssl ./openssl && cd ./openssl && touch ../.openssl.is.fresh ; \
 -	fi
 +	true
  
  # Need to build OpenSSL differently on OSX
  ifeq ($(OS), Darwin)
-@@ -144,16 +114,15 @@ openssl/Makefile: .openssl.is.fresh
+@@ -146,16 +114,15 @@ openssl/Makefile: .openssl.is.fresh
  # Any other *NIX platform
  else
  openssl/Makefile: .openssl.is.fresh
@@ -99,10 +96,10 @@
  
  openssl/libcrypto.a: openssl/Makefile
 -	$(MAKE) -j $(NUM_PROCS) -C openssl depend
--	$(MAKE) -j $(NUM_PROCS) -C openssl all
+-	$(MAKE) -j $(NUM_PROCS) -C openssl build_libs
 -#	$(MAKE) -j $(NUM_PROCS) -C openssl test # Disabled because this takes 45+ minutes for OpenSSL v1.1.1.
 +	$(MAKE) -C openssl depend
-+	$(MAKE) -C openssl build_sw
++	$(MAKE) -C openssl build_libs
  
  static: openssl/libcrypto.a
 -	$(MAKE) -j $(NUM_PROCS) sslscan STATIC_BUILD=TRUE

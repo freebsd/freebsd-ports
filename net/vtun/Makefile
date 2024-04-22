@@ -1,6 +1,6 @@
 PORTNAME=	vtun
 PORTVERSION=	3.0.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	SF \
 		LOCAL/mat/vtun
@@ -16,6 +16,7 @@ LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 USES=		autoreconf localbase ssl
 USE_RC_SUBR=	vtunclient vtund
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-lzo-headers=${LOCALBASE}/include/lzo \
@@ -47,7 +48,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/vtund
 	${INSTALL_DATA} ${WRKSRC}/vtund.conf ${STAGEDIR}${PREFIX}/etc/vtund.conf.sample
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${RLN} ${STAGEDIR}${PREFIX}/man/man8/vtund.8 ${STAGEDIR}${PREFIX}/man/man1/vtun.1
+	${RLN} ${STAGEDIR}${PREFIX}/share/man/man8/vtund.8 ${STAGEDIR}${PREFIX}/share/man/man1/vtun.1
 
 post-install-DOCS-on:
 .for doc in ${PORTDOCS}

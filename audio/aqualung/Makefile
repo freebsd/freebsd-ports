@@ -1,24 +1,20 @@
 PORTNAME=	aqualung
-PORTVERSION=	1.0
-PORTREVISION=	25
+DISTVERSION=	1.2
 CATEGORIES=	audio
-MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Music player with rich features
 WWW=		https://aqualung.jeremyevans.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Depends on legacy libraries such as GTK2 and FFmpeg 4, consider using audio/strawberry instead
-EXPIRATION_DATE=2024-02-29
-
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libmp3lame.so:audio/lame \
 		libcddb.so:audio/libcddb \
 		libmad.so:audio/libmad \
 		libmodplug.so:audio/libmodplug \
+		libogg.so:audio/libogg \
 		liboggz.so:audio/liboggz \
 		libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile \
@@ -27,18 +23,20 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libmpcdec.so:audio/musepack \
 		libspeex.so:audio/speex \
 		libwavpack.so:audio/wavpack \
-		libavcodec.so.58:multimedia/ffmpeg4 \
+		libavcodec.so:multimedia/ffmpeg \
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
+		libcdio.so:sysutils/libcdio \
 		libcdio_paranoia.so:sysutils/libcdio-paranoia \
-		liblrdf.so:textproc/liblrdf
+		liblrdf.so:textproc/liblrdf \
+		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		compiler:c++11-lang cpe gettext gnome localbase lua:52 pkgconfig
-USE_GNOME=	gtk20 libxml2 libxslt
+USES=		autoreconf compiler:c++11-lang cpe gettext gnome localbase lua:52 pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	jeremyevans
+USE_GNOME=	cairo gdkpixbuf2 gtk20 libxml2 libxslt
 GNU_CONFIGURE=	yes
-
-LDFLAGS+=	-L${LOCALBASE}/ffmpeg4/lib
-CONFIGURE_ENV+=	PKG_CONFIG_PATH="${LOCALBASE}/ffmpeg4/libdata/pkgconfig"
-MAKE_ENV+=	PKG_CONFIG_PATH="${LOCALBASE}/ffmpeg4/libdata/pkgconfig"
-
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-ifp=no
 
 DESKTOP_ENTRIES="Aqualung" "" "${DATADIR}/general.png" "aqualung" \
@@ -62,7 +60,6 @@ SNDIO_CONFIGURE_OFF=	--with-sndio=no
 post-patch:
 # Remove unused duplicate global symbols (-fno-common)
 	@${REINPLACE_CMD} -E '/^g?char command/d' \
-		${WRKSRC}/src/gui_main.c \
-		${WRKSRC}/src/playlist.c
+		${WRKSRC}/src/gui_main.c
 
 .include <bsd.port.mk>

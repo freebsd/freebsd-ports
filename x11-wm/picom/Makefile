@@ -1,6 +1,6 @@
 PORTNAME=	picom
 DISTVERSIONPREFIX=	v
-DISTVERSION=	11-rc1
+DISTVERSION=	11.2
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -44,8 +44,7 @@ DRM_DESC=		DRM VSync fallback (deprecated)
 DRM_LIB_DEPENDS=	libdrm.so:graphics/libdrm
 DRM_MESON_TRUE=		vsync_drm
 
-OPENGL_USES=		gl
-OPENGL_USE=		GL=egl,gl
+OPENGL_LIB_DEPENDS=	libepoxy.so:graphics/libepoxy
 OPENGL_MESON_TRUE=	opengl
 
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus

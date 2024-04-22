@@ -1,3 +1,3 @@
-TIMESTAMP = 1701083422
-SHA256 (rubygem/sqlite3-1.6.9.gem) = 55a191656316de5bdbec28291ca2f45e8e41f804b3cc592faa318c4f69f93922
-SIZE (rubygem/sqlite3-1.6.9.gem) = 3277312
+TIMESTAMP = 1711466256
+SHA256 (rubygem/sqlite3-1.7.3.gem) = fa77f63c709548f46d4e9b6bb45cda52aa3881aa12cc85991132758e8968701c
+SIZE (rubygem/sqlite3-1.7.3.gem) = 3307008

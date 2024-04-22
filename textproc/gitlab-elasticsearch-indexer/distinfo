@@ -1,5 +1,5 @@
-TIMESTAMP = 1700763661
-SHA256 (go/textproc_gitlab-elasticsearch-indexer/gitlab-elasticsearch-indexer-v4.5.0/go.mod) = 1b4e18ed56e2774615bf8c5bdbf2133be0366917d4907fbc7e27b3f82b8f0ba1
-SIZE (go/textproc_gitlab-elasticsearch-indexer/gitlab-elasticsearch-indexer-v4.5.0/go.mod) = 4653
-SHA256 (go/textproc_gitlab-elasticsearch-indexer/gitlab-elasticsearch-indexer-v4.5.0/gitlab-elasticsearch-indexer-v4.5.0.tar.bz2) = 6e48387f8118bdee6d6c7b0bc856f5d02e8890a4f557373b377ac5fcd778aea0
-SIZE (go/textproc_gitlab-elasticsearch-indexer/gitlab-elasticsearch-indexer-v4.5.0/gitlab-elasticsearch-indexer-v4.5.0.tar.bz2) = 59249
+TIMESTAMP = 1711002210
+SHA256 (go/textproc_gitlab-elasticsearch-indexer/gitlab-elasticsearch-indexer-v4.8.0/go.mod) = 7255164e57dd4e41e3ac9881bcdec559a1f5cd1efca06f8d37cf54c1355f4e49
+SIZE (go/textproc_gitlab-elasticsearch-indexer/gitlab-elasticsearch-indexer-v4.8.0/go.mod) = 4722
+SHA256 (go/textproc_gitlab-elasticsearch-indexer/gitlab-elasticsearch-indexer-v4.8.0/gitlab-elasticsearch-indexer-v4.8.0.tar.bz2) = f6a76ae0312334610d02769035fd4edaad4f153714da45b4023bab6e55cddf10
+SIZE (go/textproc_gitlab-elasticsearch-indexer/gitlab-elasticsearch-indexer-v4.8.0/gitlab-elasticsearch-indexer-v4.8.0.tar.bz2) = 67853

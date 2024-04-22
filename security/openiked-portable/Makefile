@@ -1,5 +1,6 @@
 PORTNAME=	openiked
-DISTVERSION=	7.2
+DISTVERSION=	7.3
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	OPENBSD/OpenIKED
 PKGNAMESUFFIX=	-portable
@@ -14,6 +15,8 @@ LIB_DEPENDS=	libevent.so:devel/libevent
 
 USES=		cmake ssl
 USE_RC_SUBR=	iked
+
+CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH=${PREFIX}/share/man
 
 CONFLICTS_INSTALL=	openiked
 

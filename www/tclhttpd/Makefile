@@ -1,6 +1,6 @@
 PORTNAME=	tclhttpd
 PORTVERSION=	3.5.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www tcl
 MASTER_SITES=	TCLTK/httpd
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -14,6 +14,8 @@ RUN_DEPENDS=	dtplite:devel/tcllib
 USE_RC_SUBR=	tclhttpd
 
 USES=		tcl:tea compiler
+
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.pre.mk>
 

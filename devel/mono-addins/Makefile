@@ -1,7 +1,7 @@
 PORTNAME=	mono-addins
 PORTVERSION=	1.3
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,6 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mono
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_path_MCS=${LOCALBASE}/bin/mcs
 USES=		autoreconf gmake gnome mono pkgconfig
 

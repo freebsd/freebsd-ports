@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-automatic-differentiation
 DISTVERSION=	1.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

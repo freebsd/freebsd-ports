@@ -15,7 +15,7 @@
  	{
  		return malloc(nsize);
  	}
-@@ -482,12 +482,12 @@ dkimf_lua_setup_hook(void *ctx, const char *script, si
+@@ -482,13 +482,13 @@ dkimf_lua_setup_hook(void *ctx, const char *script, si
  	**  Register functions.
  	*/
  
@@ -27,10 +27,11 @@
 +# else /* LUA_VERSION_NUM >= 502 */
  	luaL_register(l, "odkim", dkimf_lua_lib_setup);
 -# endif /* LUA_VERSION_NUM == 502 */
-+# endif /* LUA_VERSION_NUM >= 502 */
  	lua_pop(l, 1);
++# endif /* LUA_VERSION_NUM >= 502 */
  
  	/*
+ 	**  Register constants.
 @@ -529,11 +529,11 @@ dkimf_lua_setup_hook(void *ctx, const char *script, si
  	/* import other globals */
  	dkimf_import_globals(ctx, l);
@@ -58,7 +59,7 @@
  		{
  			*keep = (void *) io.lua_io_script;
  			*funclen = io.lua_io_len;
-@@ -637,12 +641,12 @@ dkimf_lua_screen_hook(void *ctx, const char *script, s
+@@ -637,13 +641,13 @@ dkimf_lua_screen_hook(void *ctx, const char *script, s
  	**  Register functions.
  	*/
  
@@ -70,10 +71,11 @@
 +# else /* LUA_VERSION_NUM >= 502 */
  	luaL_register(l, "odkim", dkimf_lua_lib_screen);
 -# endif /* LUA_VERSION_NUM == 502 */
-+# endif /* LUA_VERSION_NUM >= 502 */
  	lua_pop(l, 1);
++# endif /* LUA_VERSION_NUM >= 502 */
  
  	/*
+ 	**  Register constants.
 @@ -674,11 +678,11 @@ dkimf_lua_screen_hook(void *ctx, const char *script, s
  	/* import other globals */
  	dkimf_import_globals(ctx, l);
@@ -101,7 +103,7 @@
  		{
  			*keep = (void *) io.lua_io_script;
  			*funclen = io.lua_io_len;
-@@ -782,12 +790,12 @@ dkimf_lua_stats_hook(void *ctx, const char *script, si
+@@ -782,13 +790,13 @@ dkimf_lua_stats_hook(void *ctx, const char *script, si
  	**  Register functions.
  	*/
  
@@ -113,10 +115,11 @@
 +# else /* LUA_VERSION_NUM >= 502 */
  	luaL_register(l, "odkim", dkimf_lua_lib_stats);
 -# endif /* LUA_VERSION_NUM == 502 */
-+# endif /* LUA_VERSION_NUM >= 502 */
  	lua_pop(l, 1);
++# endif /* LUA_VERSION_NUM >= 502 */
  
  	/*
+ 	**  Register constants.
 @@ -911,11 +919,11 @@ dkimf_lua_stats_hook(void *ctx, const char *script, si
  	/* import other globals */
  	dkimf_import_globals(ctx, l);
@@ -144,7 +147,7 @@
  		{
  			*keep = (void *) io.lua_io_script;
  			*funclen = io.lua_io_len;
-@@ -1019,12 +1031,12 @@ dkimf_lua_final_hook(void *ctx, const char *script, si
+@@ -1019,13 +1031,13 @@ dkimf_lua_final_hook(void *ctx, const char *script, si
  	**  Register functions.
  	*/
  
@@ -156,10 +159,11 @@
 +# else /* LUA_VERSION_NUM >= 502 */
  	luaL_register(l, "odkim", dkimf_lua_lib_final);
 -# endif /* LUA_VERSION_NUM == 502 */
-+# endif /* LUA_VERSION_NUM >= 502 */
  	lua_pop(l, 1);
++# endif /* LUA_VERSION_NUM >= 502 */
  
  	/*
+ 	**  Register constants.
 @@ -1148,11 +1160,11 @@ dkimf_lua_final_hook(void *ctx, const char *script, si
  	/* import other globals */
  	dkimf_import_globals(ctx, l);

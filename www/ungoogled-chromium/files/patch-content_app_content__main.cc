@@ -1,6 +1,6 @@
---- content/app/content_main.cc.orig	2023-11-04 07:08:51 UTC
+--- content/app/content_main.cc.orig	2024-02-25 20:22:18 UTC
 +++ content/app/content_main.cc
-@@ -206,7 +206,7 @@ RunContentProcess(ContentMainParams params,
+@@ -207,7 +207,7 @@ RunContentProcess(ContentMainParams params,
  #endif
      base::EnableTerminationOnOutOfMemory();
  

@@ -1,6 +1,6 @@
 PORTNAME=	spice
 PORTVERSION=	3f5.2
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	cad
 MASTER_SITES=	https://ptolemy.berkeley.edu/projects/embedded/pubs/downloads/spice/:srcs \
 		http://home.hiroshima-u.ac.jp/usdl/HiSIM2/:hisim2 \

@@ -1,6 +1,5 @@
 PORTNAME=	vnstat
-PORTVERSION=	2.11
-PORTREVISION=	1
+PORTVERSION=	2.12
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/vergoh/vnstat/releases/download/v${PORTVERSION}/ \
 		https://humdi.net/vnstat/
@@ -11,12 +10,12 @@ WWW=		https://humdi.net/vnstat/ \
 		https://github.com/vergoh/vnstat
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		localbase sqlite
 
 CONFIGURE_ARGS=	--disable-extra-paths
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INSTALL_TARGET=	install-exec install-man
 USE_RC_SUBR=	vnstat
 
@@ -36,11 +35,11 @@ GUI_DESC=	Build with graphics/gd dependency
 GUI_CONFIGURE_OFF=	--disable-image-output
 GUI_LIB_DEPENDS=	libgd.so:graphics/gd
 
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/cfg/vnstat.conf ${STAGEDIR}${PREFIX}/etc/vnstat.conf.sample
-
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/cfg/vnstat.conf ${STAGEDIR}${PREFIX}/etc/vnstat.conf.sample
 
 .include <bsd.port.mk>

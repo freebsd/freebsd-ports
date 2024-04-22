@@ -1,5 +1,5 @@
 PORTNAME=	libxml++
-PORTVERSION=	5.0.2
+PORTVERSION=	5.0.3
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
@@ -10,7 +10,7 @@ WWW=		https://github.com/libxmlplusplus/libxmlplusplus
 
 LICENSE=	LGPL21+
 
-USES=		gnome meson pkgconfig tar:xz
+USES=		gnome libtool meson pkgconfig python:build tar:xz
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Ddefault_library=both

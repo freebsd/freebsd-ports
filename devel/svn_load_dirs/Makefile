@@ -1,5 +1,6 @@
 PORTNAME=	svn_load_dirs
 PORTVERSION=	1.8.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://svn.apache.org/repos/asf/subversion/tags/${PORTVERSION}/contrib/client-side/svn_load_dirs/
 DISTFILES=	LICENSE_AFL3.txt \
@@ -14,8 +15,12 @@ WWW=		https://svn.apache.org/repos/asf/subversion/branches/scons-build-system/ww
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-RUN_DEPENDS=	p5-URI>=0:net/p5-URI \
-		${LOCALBASE}/bin/svn:devel/subversion
+RUN_DEPENDS=	p5-URI>=0:net/p5-URI
+.if ${WITH_SUBVERSION_VER:U} == LTS
+RUN_DEPENDS+=	svn:devel/subversion-lts
+.else
+RUN_DEPENDS+=	svn:devel/subversion
+.endif
 
 USES=		perl5
 

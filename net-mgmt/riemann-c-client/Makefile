@@ -1,5 +1,6 @@
 PORTNAME=	riemann-c-client
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://git.madhouse-project.org/algernon/${PORTNAME}/archive/
 
@@ -20,6 +21,7 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 USES=		autoreconf gmake libtool pathfix pkgconfig
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check

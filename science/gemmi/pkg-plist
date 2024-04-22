@@ -38,6 +38,7 @@ include/gemmi/fstream.hpp
 include/gemmi/grid.hpp
 include/gemmi/gz.hpp
 include/gemmi/input.hpp
+include/gemmi/intensit.hpp
 include/gemmi/interop.hpp
 include/gemmi/it92.hpp
 include/gemmi/iterator.hpp
@@ -45,7 +46,6 @@ include/gemmi/json.hpp
 include/gemmi/levmar.hpp
 include/gemmi/linkhunt.hpp
 include/gemmi/math.hpp
-include/gemmi/merge.hpp
 include/gemmi/metadata.hpp
 include/gemmi/mmcif.hpp
 include/gemmi/mmcif_impl.hpp
@@ -78,6 +78,7 @@ include/gemmi/select.hpp
 include/gemmi/seqalign.hpp
 include/gemmi/seqid.hpp
 include/gemmi/seqtools.hpp
+include/gemmi/serialize.hpp
 include/gemmi/sfcalc.hpp
 include/gemmi/small.hpp
 include/gemmi/smcif.hpp
@@ -88,7 +89,6 @@ include/gemmi/stats.hpp
 include/gemmi/symmetry.hpp
 include/gemmi/third_party/fast_float.h
 include/gemmi/third_party/pocketfft_hdronly.h
-include/gemmi/third_party/sajson.h
 include/gemmi/third_party/tao/LICENSE
 include/gemmi/third_party/tao/NOTES
 include/gemmi/third_party/tao/pegtl.hpp

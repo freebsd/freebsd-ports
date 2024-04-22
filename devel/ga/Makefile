@@ -1,6 +1,6 @@
 PORTNAME=	ga
 DISTVERSION=	5.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/GlobalArrays/ga/releases/download/v${DISTVERSION}/
 
@@ -18,7 +18,7 @@ USES=		autoreconf fortran gmake libtool localbase
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-peigs --enable-shared --disable-static --with-blas4 --with-scalapack
+CONFIGURE_ARGS=	--enable-peigs --enable-shared --disable-static --with-scalapack
 
 LDFLAGS+=	-lscalapack
 
@@ -27,9 +27,16 @@ TEST_TARGET=	check # test asserts, see https://github.com/GlobalArrays/ga/issues
 
 MPIEXEC_ARGS=	-np 2
 
-OPTIONS_RADIO=		MPI
-OPTIONS_RADIO_MPI=	MPICH OPENMPI
-OPTIONS_DEFAULT=	MPICH # the default should be the same as for the MPI option in math/scalapack
+OPTIONS_RADIO=			BLAS_SIZE MPI
+OPTIONS_RADIO_BLAS_SIZE=	BLAS_SIZE_4 BLAS_SIZE_8 # the default BLAS_SIZE below should be same as the same choice in science/nwchem and in math/blas or math/openblas
+OPTIONS_RADIO_MPI=		MPICH OPENMPI # the default MPI choice below should be the same as for the MPI option in math/scalapack
+OPTIONS_DEFAULT=		BLAS_SIZE_4 MPICH
+
+BLAS_SIZE_DESC=		BLAS_SIZE value to use during build (should be same as in devel/ga)
+BLAS_SIZE_4_DESC=	BLAS_SIZE=4
+BLAS_SIZE_4_CONFIGURE_ON=	--with-blas4
+BLAS_SIZE_8_DESC=	BLAS_SIZE=8
+BLAS_SIZE_8_CONFIGURE_ON=	--with-blas8
 
 MPICH_LIB_DEPENDS=	libmpich.so:net/mpich
 MPICH_VARS=		TEST_ARGS+=MPIEXEC="${LOCALBASE}/bin/mpiexec ${MPIEXEC_ARGS}"

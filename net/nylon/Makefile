@@ -1,6 +1,6 @@
 PORTNAME=	nylon
 PORTVERSION=	1.21
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net
 MASTER_SITES=	http://monkey.org/~marius/nylon/
 
@@ -17,11 +17,12 @@ USES=		pkgconfig
 USE_RC_SUBR=	nylon
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 # Necessary for $PREFIX to work:
 CONFIGURE_ARGS=	--with-libevent=yes
 CONFIGURE_ENV=	EVENTLIB="`pkgconf --libs libevent`" EVENTINC="`pkgconf --cflags libevent`"
 
-PLIST_FILES=	bin/nylon etc/nylon.conf.sample man/man1/nylon.1.gz
+PLIST_FILES=	bin/nylon etc/nylon.conf.sample share/man/man1/nylon.1.gz
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/nylon.conf ${STAGEDIR}${PREFIX}/etc/nylon.conf.sample

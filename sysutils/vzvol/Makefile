@@ -1,7 +1,7 @@
 PORTNAME=	vzvol
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	rainbow@sanitylinux.org
@@ -36,7 +36,7 @@ VIRTUALBOX_DESC=	Support .VMDK creation with VirtualBox tools
 XFS_DESC=		Install support for XFS filesystem
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/man/freebsd/vzvol.8 ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/man/freebsd/vzvol.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/vzvol ${STAGEDIR}${PREFIX}/sbin
 .for dir in shared freebsd linux
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vzvol/lib/${dir}

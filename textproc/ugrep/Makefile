@@ -1,6 +1,6 @@
 PORTNAME=	ugrep
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.5.2
+DISTVERSION=	5.1.4
 CATEGORIES=	textproc
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -25,6 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=--with-bash-completion-dir=${PREFIX}/etc/bash_completion.d \
 		--with-fish-completion-dir=${PREFIX}/share/fish/completions \
 		--with-zsh-completion-dir=${PREFIX}/share/zsh/site-functions
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 SHEBANG_FILES=	bin/ug+ bin/ugrep+
 bash_CMD=	${SH}

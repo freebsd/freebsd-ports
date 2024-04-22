@@ -1,5 +1,0 @@
-bopm is an open-source proxy monitor, designed for use
-with IRC daemons such as Bahamut, Hybrid/ratbox, Unreal,
-Dancer, and any other which supports +c to show client
-connects to opers; bopm will KLINE clients it considers
-on an open proxy.  bopm also supports DNSBL lookups.

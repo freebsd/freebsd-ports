@@ -1,6 +1,5 @@
 PORTNAME=	qalculate-gtk
-PORTVERSION=	4.9.0
-PORTREVISION=	1
+PORTVERSION=	5.0.0
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Qalculate/${PORTNAME}/releases/download/v${PORTVERSION}/
 
@@ -20,6 +19,7 @@ USES=		compiler:c++11-lang gettext gmake gnome \
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool libxml2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

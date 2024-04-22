@@ -4,4 +4,4 @@ lib/libal.a
 lib/libal.so
 lib/libal.so.9
 lib/libal.so.9.0.23
-man/man3/al.3.gz
+share/man/man3/al.3.gz

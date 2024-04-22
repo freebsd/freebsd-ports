@@ -5,7 +5,7 @@ lib/libskk.so
 lib/libskk.so.0
 lib/libskk.so.0.0.0
 libdata/pkgconfig/libskk.pc
-man/man1/skk.1.gz
+share/man/man1/skk.1.gz
 share/gir-1.0/Skk-1.0.gir
 %%DATADIR%%/rules/README.rules
 %%DATADIR%%/rules/act/keymap/default.json

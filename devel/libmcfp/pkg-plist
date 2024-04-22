@@ -1,7 +1,8 @@
-include/mcfp.hpp
+include/mcfp/detail/charconv.hpp
+include/mcfp/detail/options.hpp
+include/mcfp/error.hpp
 include/mcfp/mcfp.hpp
 include/mcfp/text.hpp
 include/mcfp/utilities.hpp
 lib/cmake/libmcfp/libmcfpConfig.cmake
-lib/cmake/libmcfp/libmcfpConfigVersion.cmake
 lib/cmake/libmcfp/libmcfpTargets.cmake

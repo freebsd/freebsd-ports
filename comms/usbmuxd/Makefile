@@ -1,6 +1,6 @@
 PORTNAME=	usbmuxd
 DISTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	https://github.com/libimobiledevice/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -21,6 +21,7 @@ CPE_VENDOR=	nikias_bassen
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-systemd
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 SUB_LIST=	USERS=${USERS} \
 		GROUPS=${GROUPS}
@@ -28,7 +29,7 @@ SUB_LIST=	USERS=${USERS} \
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
-PLIST_FILES=	man/man8/${PORTNAME}.8.gz \
+PLIST_FILES=	share/man/man8/${PORTNAME}.8.gz \
 		sbin/${PORTNAME}
 PORTDOCS=	AUTHORS NEWS README.md
 

@@ -2,7 +2,7 @@
 # experimental ports run.  Untested commits may be backed out at portmgr's
 # discretion.
 
-DISTVERSION=	0.22.3
+DISTVERSION=	0.22.5
 PORTREVISION?=	0 # Leave this zero. Set in Makefile instead.
 CATEGORIES=	devel
 MASTER_SITES=	GNU/gettext
@@ -11,3 +11,4 @@ DISTNAME=	gettext-${PORTVERSION}
 MAINTAINER?=	tijl@FreeBSD.org
 
 DISTINFO_FILE=	${.CURDIR}/../gettext/distinfo
+LTO_UNSAFE=	yes

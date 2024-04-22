@@ -1,11 +1,12 @@
 PORTNAME=	f3d
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.1
+DISTVERSION=	2.4.0
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast and minimalist 3D viewer
-WWW=		https://f3d-app.github.io/f3d/
+WWW=		https://f3d.app/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -15,19 +16,24 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg4 \
 		libfreeimage.so:graphics/freeimage \
 		libfreetype.so:print/freetype2 \
 		libhdf5.so:science/hdf5 \
-		libImath-3_1.so:math/Imath \
+		libinotify.so:devel/libinotify \
 		libnetcdf.so:science/netcdf \
+		libtbb.so:devel/onetbb \
 		libvtkCommonMisc-${VTK_VER}.so:math/vtk${VTK_VER:R}
 
-USES=		cmake:testing compiler:c++17-lang desktop-file-utils gl shared-mime-info tcl tk xorg
-USE_GL=		gl glu
+USES=		cmake:testing compiler:c++17-lang desktop-file-utils gl \
+		localbase:ldflags shared-mime-info tcl tk xorg
+USE_GL=		gl
 USE_XORG=	ice sm x11 xt
+USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	f3d-app
 
 CMAKE_OFF=	F3D_STRICT_BUILD # disable -Werror
 CMAKE_OFF+=	F3D_LINUX_APPLICATION_LINK_FILESYSTEM
+
+LDFLAGS+=	-linotify
 
 # dependency descroptions are in https://f3d.app/doc/dev/BUILD.html
 OPTIONS_GROUP=			MODULES PLUGINS
@@ -40,7 +46,8 @@ MODULES_DESC=			Build modules:
 
 ALEMBIC_DESC=			Alembic plugin (for ABC files)
 ALEMBIC_CMAKE_BOOL=		F3D_PLUGIN_BUILD_ALEMBIC
-ALEMBIC_LIB_DEPENDS=		libAlembic.so:graphics/alembic
+ALEMBIC_LIB_DEPENDS=		libAlembic.so:graphics/alembic \
+				libImath-3_1.so:math/Imath
 
 ASSIMP_DESC=			Assimp plugin (for FBX, OFF, DAE and DXF files)
 ASSIMP_CMAKE_BOOL=		F3D_PLUGIN_BUILD_ASSIMP
@@ -60,8 +67,7 @@ EXTERNAL_RENDERING_BROKEN=	Requires VTK::RenderingExternal enabled in VTK
 OCCT_DESC=			OpenCASCADE plugin (for STEP and IGES files)
 OCCT_USES=			localbase:ldflags
 OCCT_CMAKE_BOOL=		F3D_PLUGIN_BUILD_OCCT
-OCCT_LIB_DEPENDS=		libTKBRep.so:cad/opencascade \
-				libdraco.so:archivers/draco
+OCCT_LIB_DEPENDS=		libTKBRep.so:cad/opencascade
 OCCT_CMAKE_ON=			-DOpenCASCADE_DIR=${LOCALBASE}/lib/cmake
 
 RAYTRACING_DESC=		Raytracing module

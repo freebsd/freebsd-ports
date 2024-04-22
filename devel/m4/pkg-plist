@@ -1,5 +1,4 @@
 bin/gm4
-man/man1/gm4.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/capitalize.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/capitalize2.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comments.m4
@@ -70,3 +69,4 @@ man/man1/gm4.1.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/m4.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/m4.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/m4.mo
+share/man/man1/gm4.1.gz

@@ -2,10 +2,11 @@ bin/xfce4-notifyd-config
 etc/xdg/autostart/xfce4-notifyd.desktop
 lib/xfce4/notifyd/xfce4-notifyd
 lib/xfce4/panel/plugins/libnotification-plugin.so
-man/man1/xfce4-notifyd-config.1.gz
+share/man/man1/xfce4-notifyd-config.1.gz
 share/applications/xfce4-notifyd-config.desktop
 share/dbus-1/services/org.xfce.xfce4-notifyd.Notifications.service
 share/dbus-1/services/org.xfce.xfce4-notifyd.Notifyd.service
+share/icons/hicolor/128x128/apps/org.xfce.notification.png
 share/icons/hicolor/16x16/apps/org.xfce.notification.png
 share/icons/hicolor/48x48/apps/org.xfce.notification.png
 share/icons/hicolor/scalable/apps/org.xfce.notification.svg

@@ -1,11 +1,12 @@
 PORTNAME=	libpki
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 
 PATCH_SITES=	https://github.com/openca/libpki/commit/
-PATCHFILES=	d7617046e9da97473a140c02582fa571f6359ae3.patch:-p1
+PATCHFILES=	d7617046e9da97473a140c02582fa571f6359ae3.patch:-p1 \
+		9c4865ad476a75c34d89e0bd663c280f544590c0.patch:-p1
 
 MAINTAINER=	bruno@ruomad.net
 COMMENT=	OpenCA PKI library (libpki) and tools

@@ -1,0 +1,11 @@
+--- plugins/response/data/abilities/detection/1226f8ec-e2e5-4311-88e7-378c0e5cc7ce.yml.orig	2021-10-13 20:41:40 UTC
++++ plugins/response/data/abilities/detection/1226f8ec-e2e5-4311-88e7-378c0e5cc7ce.yml
+@@ -9,7 +9,7 @@
+     name: x
+   repeatable: True
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           find /var/mail -type f -exec grep "From.*@.*\..*" {} \; | cut -d'@' -f2 | cut -d' ' -f1 | sort --uniq

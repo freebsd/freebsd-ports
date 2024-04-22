@@ -1,7 +1,7 @@
 PORTNAME=	dune-alugrid
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.0
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libalberta_utilities.so:math/alberta \
 		libdunegrid.so:math/dune-grid \
 		libduneuggrid.so:math/dune-uggrid \
 		libmetis.so:math/metis \
-		libmpi.so:net/openmpi \
+		libmpi_cxx.so:net/openmpi4 \
 		libopenblas.so:math/openblas \
 		libtbb.so:devel/onetbb
 

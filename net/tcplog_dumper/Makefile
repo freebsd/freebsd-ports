@@ -1,7 +1,7 @@
 PORTNAME=	tcplog_dumper
 PORTVERSION=	0.1.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -20,11 +20,11 @@ GH_ACCOUNT=	Netflix
 USE_RC_SUBR=	tcplog_dumper
 
 PLIST_FILES=	sbin/tcplog_dumper \
-		man/man1/tcplog_dumper.1.gz
+		share/man/man1/tcplog_dumper.1.gz
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/tcplog_dumper ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/tcplog_dumper.1.gz ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/tcplog_dumper.1.gz ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

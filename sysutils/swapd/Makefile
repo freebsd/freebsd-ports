@@ -1,6 +1,6 @@
 PORTNAME=	swapd
 PORTVERSION=	1.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rkeene.org/files/oss/swapd/
 
@@ -15,6 +15,7 @@ LIB_DEPENDS=	libstatgrab.so:devel/libstatgrab
 
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 USE_RC_SUBR=	swapd
 

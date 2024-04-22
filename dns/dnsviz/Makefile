@@ -1,5 +1,6 @@
 PORTNAME=	dnsviz
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=v
 CATEGORIES=	dns
 
@@ -19,8 +20,5 @@ USE_PYTHON=	autoplist distutils concurrent optsuffix
 USE_GITHUB=	yes
 PYDISTUTILS_INSTALLNOSINGLE=	yes
 NO_ARCH=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|share/man/man1|man/man1|" ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

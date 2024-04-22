@@ -1,6 +1,6 @@
 PORTNAME=	xf86-video-ati
 PORTVERSION=	19.1.0
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	x11-drivers
 
@@ -30,6 +30,7 @@ USES=		gl xorg xorg-cat:driver
 USE_GL=		gl
 USE_XORG=	pciaccess
 
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=--disable-udev
 
 .include <bsd.port.mk>

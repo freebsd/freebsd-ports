@@ -219,5 +219,5 @@ lib/bglibs/libvmailmgr.a
 %%PORTDOCS%%%%DOCSDIR%%/uniondns__result__rrs.html
 %%PORTDOCS%%%%DOCSDIR%%/unix_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/wrap_8h_source.html
-man/man1/bg-installer.1.gz
-man/man1/cli-generate.1.gz
+share/man/man1/bg-installer.1.gz
+share/man/man1/cli-generate.1.gz

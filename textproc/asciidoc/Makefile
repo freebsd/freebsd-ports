@@ -1,6 +1,6 @@
 PORTNAME=	asciidoc
 PORTVERSION=	10.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI \
 		https://github.com/asciidoc-py/asciidoc-py/raw/${PORTVERSION}/doc/:manpage
@@ -15,12 +15,14 @@ WWW=		https://github.com/asciidoc-py/asciidoc-py
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
 
 USES=		gnome python shebangfix
 USE_GNOME=	libxml2 libxslt
-USE_PYTHON=	autoplist distutils noflavors
+USE_PYTHON=	autoplist noflavors pep517
 
 NO_ARCH=	yes
 

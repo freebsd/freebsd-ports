@@ -20,11 +20,11 @@ include/gc_cpp.h
 lib/libcord.a
 lib/libcord.so
 lib/libcord.so.1
-lib/libcord.so.1.5.0
+lib/libcord.so.1.5.1
 lib/libgc.a
 lib/libgc.so
 lib/libgc.so.1
-lib/libgc.so.1.5.2
+lib/libgc.so.1.5.3
 lib/libgccpp.a
 lib/libgccpp.so
 lib/libgccpp.so.1
@@ -34,4 +34,4 @@ lib/libgctba.so
 lib/libgctba.so.1
 lib/libgctba.so.1.5.0
 libdata/pkgconfig/bdw-gc.pc
-man/man3/gc.3.gz
+share/man/man3/gc.3.gz

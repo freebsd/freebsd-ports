@@ -1,0 +1,3 @@
+py-tree-sitter-languages provides binary Python wheels for all tree sitter
+languages. The binary wheels remove the need to download and compile support for
+individual languages.

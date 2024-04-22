@@ -1,5 +1,5 @@
 bin/pcmanx
-man/man1/pcmanx.1.gz
+share/man/man1/pcmanx.1.gz
 share/applications/pcmanx.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pcmanx.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pcmanx.mo

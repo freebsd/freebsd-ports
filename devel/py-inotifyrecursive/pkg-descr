@@ -1,0 +1,5 @@
+Inotify Recursive is a Python package that offers a simple way to watch a
+directory-tree recursively for file changes via the inotify functionality of
+the Linux kernel. It uses the inotify_simple package to set and remove the
+inotify watches and also incorporates its whole functionality. The package
+is written in Python and licensed as open-source under the LGPL version 3.

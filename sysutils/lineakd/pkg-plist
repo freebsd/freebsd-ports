@@ -28,5 +28,5 @@ lib/liblineak.a
 lib/liblineak.so
 lib/liblineak.so.0
 lib/liblineak.so.0.8.0
-man/man1/lineakd.1.gz
+share/man/man1/lineakd.1.gz
 @dir lib/lineakd/plugins

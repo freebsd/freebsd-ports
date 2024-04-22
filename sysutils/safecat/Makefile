@@ -1,5 +1,6 @@
 PORTNAME=	safecat
 PORTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	sysutils mail
 MASTER_SITES=	http://www.jeenyus.net/linux/software/safecat/ \
 		LOCAL/roam/sysutils/safecat \
@@ -17,8 +18,8 @@ ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 MAKE_JOBS_UNSAFE=yes
 
-PLIST_FILES=	bin/maildir bin/safecat man/man1/maildir.1.gz \
-		man/man1/safecat.1.gz
+PLIST_FILES=	bin/maildir bin/safecat share/man/man1/maildir.1.gz \
+		share/man/man1/safecat.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/local,${STAGEDIR}${PREFIX}," ${WRKSRC}/conf-root

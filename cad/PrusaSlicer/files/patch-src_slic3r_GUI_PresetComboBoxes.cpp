@@ -1,6 +1,6 @@
---- src/slic3r/GUI/PresetComboBoxes.cpp.orig	2023-07-25 12:38:23 UTC
+--- src/slic3r/GUI/PresetComboBoxes.cpp.orig	2023-12-12 14:21:21 UTC
 +++ src/slic3r/GUI/PresetComboBoxes.cpp
-@@ -779,7 +779,7 @@ void PlaterPresetComboBox::show_edit_menu()
+@@ -787,7 +787,7 @@ void PlaterPresetComboBox::show_edit_menu()
          [this](wxCommandEvent&) { this->switch_to_tab(); }, "cog", menu, []() { return true; }, wxGetApp().plater());
  
      if (m_type == Preset::TYPE_FILAMENT) {

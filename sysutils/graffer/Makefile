@@ -1,6 +1,6 @@
 PORTNAME=	graffer
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://chaosophia.net/downloads/graffer/ \
 		http://ns1.chaosophia.net/downloads/graffer/
@@ -16,7 +16,7 @@ USES=		jpeg
 
 PLIST_FILES=	bin/graffer \
 		etc/graffer/graffer.conf.example \
-		man/man8/graffer.8.gz
+		share/man/man8/graffer.8.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \
@@ -26,7 +26,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/graffer ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/graffer.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/graffer.8 ${STAGEDIR}${PREFIX}/share/man/man8
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/graffer
 	${INSTALL_DATA} ${WRKSRC}/graffer.conf.example ${STAGEDIR}${PREFIX}/etc/graffer
 

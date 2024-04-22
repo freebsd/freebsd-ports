@@ -1,0 +1,13 @@
+TIMESTAMP = 1709054234
+SHA256 (ricardobranco777-xhash-v3.3.2_GH0.tar.gz) = 4a43ea5e6f36ab0c21ea89a080ff6134a7c0beabd4ed47d4f8f3ed562870e32a
+SIZE (ricardobranco777-xhash-v3.3.2_GH0.tar.gz) = 14889
+SHA256 (golang-crypto-v0.19.0_GH0.tar.gz) = 0e1d6c17f9c6f529d2d06e43030695ba135115ee401fda5316d6b30423087bb2
+SIZE (golang-crypto-v0.19.0_GH0.tar.gz) = 1810389
+SHA256 (golang-sys-v0.17.0_GH0.tar.gz) = ac396e3c66940e34fdd1d422a9628ab2a5118249118f2a36f65082d32e709e7a
+SIZE (golang-sys-v0.17.0_GH0.tar.gz) = 1446309
+SHA256 (klauspost-cpuid-v2.0.12_GH0.tar.gz) = ac723eecde24ff08a2fa4b3989b602ab2ecd607f132845b66c26aae896f7130a
+SIZE (klauspost-cpuid-v2.0.12_GH0.tar.gz) = 343262
+SHA256 (spf13-pflag-v1.0.5_GH0.tar.gz) = 9a2cae1f8e8ab0d2cc8ebe468e871af28d9ac0962cf0520999e3ba85f0c7b808
+SIZE (spf13-pflag-v1.0.5_GH0.tar.gz) = 50796
+SHA256 (zeebo-blake3-v0.2.3_GH0.tar.gz) = fef93a1e03d60c0b11fbf11a36110ae87b3105e1c5cfa3b7bbb4af9b87bd2a4b
+SIZE (zeebo-blake3-v0.2.3_GH0.tar.gz) = 110842

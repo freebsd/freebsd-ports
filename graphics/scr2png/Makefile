@@ -1,6 +1,6 @@
 PORTNAME=	scr2png
 PORTVERSION=	1.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/nik
 
@@ -13,9 +13,9 @@ LIB_DEPENDS=	libgd.so:graphics/gd
 
 NO_WRKSUBDIR=	yes
 USES=		uidfix
-MAKE_ARGS=	BINDIR=${PREFIX}/bin SHAREDIR=${PREFIX}
+MAKE_ARGS=	BINDIR=${PREFIX}/bin SHAREDIR=${PREFIX}/share
 
-PLIST_FILES=	bin/scr2png man/man1/scr2png.1.gz
+PLIST_FILES=	bin/scr2png share/man/man1/scr2png.1.gz
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile

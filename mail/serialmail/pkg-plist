@@ -11,4 +11,3 @@ share/man/man1/maildirsmtp.1.gz
 share/man/man1/serialqmtp.1.gz
 share/man/man1/serialsmtp.1.gz
 share/man/man1/setlock.1.gz
-%%UCSPI_SSL%%man/man1/maildirsmtps.1.gz

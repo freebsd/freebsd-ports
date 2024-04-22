@@ -1,5 +1,5 @@
---- pcbnew/import_gfx/dxf_import_plugin.cpp.orig	2023-01-25 22:16:35.742131000 +0100
-+++ pcbnew/import_gfx/dxf_import_plugin.cpp	2023-01-25 23:02:52.939723000 +0100
+--- pcbnew/import_gfx/dxf_import_plugin.cpp.orig	2023-04-13 20:27:39 UTC
++++ pcbnew/import_gfx/dxf_import_plugin.cpp
 @@ -28,6 +28,9 @@
  // like void DXF_IMPORT_PLUGIN::addLine( const DL_LineData& data ) when a line is read.
  // this function just add the BOARD entity from dxf parameters (start and end point ...)
@@ -10,7 +10,7 @@
  
  #include "dxf_import_plugin.h"
  #include <wx/arrstr.h>
-@@ -580,7 +583,7 @@
+@@ -580,7 +583,7 @@ void DXF_IMPORT_PLUGIN::addEllipse( const DL_EllipseDa
      // For now, we assume ellipses in the XY plane.
  
      VECTOR2D center( mapX( centerCoords.x ), mapY( centerCoords.y ) );
@@ -19,7 +19,7 @@
  
      // DXF elliptical arcs store their angles in radians (unlike circular arcs which use degrees)
      // The arcs wind CCW as in KiCad.  The end angle must be greater than the start angle, and if
-@@ -598,7 +601,7 @@
+@@ -598,7 +601,7 @@ void DXF_IMPORT_PLUGIN::addEllipse( const DL_EllipseDa
  
      if( aData.ratio == 1.0 )
      {
@@ -28,7 +28,7 @@
  
          if( startAngle == endAngle )
          {
-@@ -616,7 +619,7 @@
+@@ -616,7 +619,7 @@ void DXF_IMPORT_PLUGIN::addEllipse( const DL_EllipseDa
      }
  
      std::vector<BEZIER<double>> splines;
@@ -37,7 +37,7 @@
  
      TransformEllipseToBeziers( ellipse, splines );
  
-@@ -630,8 +633,8 @@
+@@ -630,8 +633,8 @@ void DXF_IMPORT_PLUGIN::addEllipse( const DL_EllipseDa
          bufferToUse->AddSpline( b.Start, b.C1, b.C2, b.End, lineWidth );
  
      // Naive bounding

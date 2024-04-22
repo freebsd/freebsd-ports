@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2022-04-01 11:53:29 UTC
+--- CMakeLists.txt.orig	2024-02-03 08:01:27 UTC
 +++ CMakeLists.txt
-@@ -1,5 +1,18 @@
+@@ -1,3 +1,16 @@
 +cmake_minimum_required(VERSION 3.12)
 +
 +project(s2-geometry)
@@ -14,21 +14,24 @@
 +# being found by default.
 +find_package(Python3 COMPONENTS Interpreter Development)
 +
+ # Generate standard target names.
+ cmake_policy(SET CMP0078 NEW)
+ # Honor SWIG_MODULE_NAME via -module flag.
+@@ -15,7 +28,7 @@ include(${SWIG_USE_FILE})
+ endif()
+ 
  include(${SWIG_USE_FILE})
 -include_directories(${Python3_INCLUDE_DIRS})
 +include_directories(${S2_INCLUDE_DIR} ${Python3_INCLUDE_DIRS})
  
  set(CMAKE_SWIG_FLAGS "")
- set_property(SOURCE s2.i PROPERTY SWIG_FLAGS "-module" "pywraps2")
-@@ -13,9 +26,9 @@ add_test(NAME pywraps2_test COMMAND
+ set_property(SOURCE s2.i PROPERTY SWIG_FLAGS "-module" "s2geometry")
+@@ -29,7 +42,7 @@ set_property(TEST s2geometry_test PROPERTY ENVIRONMENT
           ${Python3_EXECUTABLE}
-          "${PROJECT_SOURCE_DIR}/src/python/pywraps2_test.py")
- set_property(TEST pywraps2_test PROPERTY ENVIRONMENT
+          "${PROJECT_SOURCE_DIR}/src/python/s2geometry_test.py")
+ set_property(TEST s2geometry_test PROPERTY ENVIRONMENT
 -             "PYTHONPATH=$ENV{PYTHONPATH}:${PROJECT_BINARY_DIR}/python")
 +             "PYTHONPATH=$ENV{PYTHONPATH}:${PROJECT_BINARY_DIR}")
  
  # Install the wrapper.
- install(TARGETS _pywraps2 DESTINATION ${Python3_SITELIB})
--install(FILES "${PROJECT_BINARY_DIR}/python/pywraps2.py"
-+install(FILES "${PROJECT_BINARY_DIR}/pywraps2.py"
-         DESTINATION ${Python3_SITELIB})
+ install(TARGETS s2geometry DESTINATION ${S2GEOMETRY_INSTALL_PREFIX})

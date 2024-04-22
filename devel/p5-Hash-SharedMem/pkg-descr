@@ -1,0 +1,6 @@
+This module provides a facility for efficiently sharing mutable
+data between processes on one host.  Data is organised as a
+key/value store, resembling a Perl hash.  The keys and values
+are restricted to octet (Latin-1) strings.  Structured objects
+may be stored by serialising them using a mechanism such as
+Sereal.

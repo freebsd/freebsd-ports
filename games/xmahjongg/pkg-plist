@@ -1,4 +1,5 @@
 bin/xmahjongg
+share/man/man6/xmahjongg.6.gz
 share/xmahjongg/backgrounds/default.gif
 share/xmahjongg/backgrounds/green.gif
 share/xmahjongg/layouts/arena
@@ -33,4 +34,3 @@ share/xmahjongg/tiles/real.gif
 share/xmahjongg/tiles/small.gif
 share/xmahjongg/tiles/thick.gif
 share/xmahjongg/tiles/thin.gif
-man/man6/xmahjongg.6.gz

@@ -1,6 +1,6 @@
 PORTNAME=	reduce
 PORTVERSION=	${SFSUBDIR:S/snapshot_//:S/-//g}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math lang
 MASTER_SITES=	SF/${PORTNAME}-algebra/${SFSUBDIR}/
 DISTNAME=	Reduce-svn6339-src
@@ -47,7 +47,7 @@ do-install:
 	${INSTALL_DATA} ${REDUCE_BINS}/csl/reduce.img ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${REDUCE_BINS}/csl/reduce ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${FILESDIR}/runcsl.sh ${STAGEDIR}${PREFIX}/bin/redcsl
-	${INSTALL_MAN} ${FILESDIR}/redcsl.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${FILESDIR}/redcsl.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 	${MKDIR} ${STAGEDIR}${DATADIR}/reduce.doc
 	(cd ${REDUCE_BINS}/csl/reduce.doc && ${COPYTREE_SHARE} . \
 	    ${STAGEDIR}${DATADIR}/reduce.doc)

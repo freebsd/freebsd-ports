@@ -1,12 +1,12 @@
---- specinfra.gemspec.orig	2023-01-06 04:22:56 UTC
+--- specinfra.gemspec.orig	2024-02-21 09:02:43 UTC
 +++ specinfra.gemspec
 @@ -22,8 +22,7 @@ Gem::Specification.new do |s|
  
-   s.add_runtime_dependency(%q<net-scp>.freeze, [">= 0"])
-   s.add_runtime_dependency(%q<net-ssh>.freeze, [">= 2.7"])
--  s.add_runtime_dependency(%q<net-telnet>.freeze, ["= 0.1.1"])
--  s.add_runtime_dependency(%q<sfl>.freeze, [">= 0"])
-+  s.add_runtime_dependency(%q<net-telnet>.freeze, [">= 0.1.1"])
-   s.add_development_dependency(%q<rake>.freeze, ["~> 10.1.1"])
-   s.add_development_dependency(%q<rspec>.freeze, [">= 0"])
-   s.add_development_dependency(%q<rspec-its>.freeze, [">= 0"])
+   s.add_runtime_dependency(%q<net-scp>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<net-ssh>.freeze, [">= 2.7".freeze])
+-  s.add_runtime_dependency(%q<net-telnet>.freeze, ["= 0.1.1".freeze])
+-  s.add_runtime_dependency(%q<sfl>.freeze, [">= 0".freeze])
++  s.add_runtime_dependency(%q<net-telnet>.freeze, [">= 0.1.1".freeze])
+   s.add_development_dependency(%q<rake>.freeze, ["~> 10.1.1".freeze])
+   s.add_development_dependency(%q<rspec>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<rspec-its>.freeze, [">= 0".freeze])

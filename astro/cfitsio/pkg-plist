@@ -7,5 +7,8 @@ lib/libcfitsio.so
 lib/libcfitsio.so.10
 lib/libcfitsio.so.10.%%PORTVERSION%%
 libdata/pkgconfig/cfitsio.pc
-%%PORTDOCS%%%%DOCSDIR%%/cfortran.doc
-%%PORTDOCS%%%%DOCSDIR%%/fitsio.doc
+%%PORTDOCS%%%%DOCSDIR%%/cfitsio.pdf
+%%PORTDOCS%%%%DOCSDIR%%/changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/fitsio.pdf
+%%PORTDOCS%%%%DOCSDIR%%/fpackguide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/quick.pdf

@@ -1,6 +1,6 @@
 PORTNAME=	mtasc
 PORTVERSION=	1.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang www
 MASTER_SITES=	LOCAL/chinsan
 
@@ -65,7 +65,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mtasc-bin ${STAGEDIR}${PREFIX}/bin/mtasc
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/mtasc && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR})
-	${INSTALL_MAN} ${WRKSRC}/mtasc/doc/mtasc.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/mtasc/doc/mtasc.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA}	${WRKSRC}/mtasc/doc/*.txt ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

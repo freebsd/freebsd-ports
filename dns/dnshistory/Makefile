@@ -1,6 +1,6 @@
 PORTNAME=	dnshistory
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns
 MASTER_SITES=	http://www.stedee.id.au/files/ \
 		http://launchpad.net/${PORTNAME}/${PORTVERSION}/${PORTVERSION}/+download/
@@ -15,8 +15,9 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		bdb
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 PORTDOCS=	COPYING ChangeLog NEWS
 
 OPTIONS_DEFINE=	DOCS

@@ -14,6 +14,6 @@ lib/libfsfat.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pyfsfat.a
 %%PYTHON_SITELIBDIR%%/pyfsfat.so
 libdata/pkgconfig/libfsfat.pc
-man/man1/fsfatinfo.1.gz
-man/man1/fsfatmount.1.gz
-man/man3/libfsfat.3.gz
+share/man/man1/fsfatinfo.1.gz
+share/man/man1/fsfatmount.1.gz
+share/man/man3/libfsfat.3.gz

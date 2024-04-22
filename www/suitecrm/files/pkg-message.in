@@ -4,18 +4,17 @@
 Notes:
 
 1.  SuiteCRM requires that you increase the default PHP memory limit to 128M.
-    in the php.ini file.
-    memory_limit = 128M	; Maximum amount of memory a script may consume
+    and set output_buffering = on in the php.ini file.
 
 2.  In order to get Apache or your preferred web server to recognise Suite
     Community Edition's location on your disk, you'll need to put the
     following line (or the equivalent) into the web server configuration:
 
-Alias /suitecrm %%WWWDIR%%
-<Directory %%WWWDIR%%>
+    Alias /suitecrm %%WWWDIR%%
+    <Directory %%WWWDIR%%>
 	AllowOverride None
 	Require all granted
-</Directory>
+    </Directory>
 
 3.  For full information on how to get the best out of Sugar Community
     Edition, please see the documentation on the web:

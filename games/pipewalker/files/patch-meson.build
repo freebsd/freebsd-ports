@@ -1,0 +1,11 @@
+--- meson.build.orig	2024-01-14 09:10:02 UTC
++++ meson.build
+@@ -33,7 +33,7 @@ else
+   data_dir = join_paths(meson.current_source_dir(), 'data')
+ else
+   data_dir = join_paths(get_option('prefix'), get_option('datadir'),
+-                        'games', meson.project_name())
++                        meson.project_name())
+ endif
+ 
+ # installation

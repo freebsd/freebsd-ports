@@ -1,0 +1,12 @@
+--- apps/fgr/man/Makefile.in.orig	2024-03-05 18:04:00 UTC
++++ apps/fgr/man/Makefile.in
+@@ -318,8 +318,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ fgrman1_DATA = fgr.1
+-@WANT_FREEBSD_FALSE@fgrman1dir = ${mandir}/man1
+-@WANT_FREEBSD_TRUE@fgrman1dir = ${prefix}/man/man1
++fgrman1dir = ${mandir}/man1
+ EXTRA_DIST = $(fgrman1_DATA)
+ all: all-am
+ 

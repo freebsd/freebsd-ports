@@ -24,7 +24,7 @@
 -	cp fnteditfs $(BINDIR)
 -	gzip < fnteditfs.1 > $(MANDIR)/man1/fnteditfs.1.gz
 +	__INSTALL_SCRIPT__ fnteditfs __PREFIX__/bin
-+	__INSTALL_MAN__ fnteditfs.1 __PREFIX__/man/man1
++	__INSTALL_MAN__ fnteditfs.1 __PREFIX__/share/man/man1
  
  clean:
  	rm -f *.o fnteditfs

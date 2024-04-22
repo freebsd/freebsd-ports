@@ -599,6 +599,6 @@ bin/prg2lout
 %%DATADIR%%/lib/maps/Symb.LCM
 %%DATADIR%%/lib/maps/koi8r.LCM
 %%DATADIR%%/lib/maps/null.LCM
-man/man1/lout.1.gz
-man/man1/prg2lout.1.gz
+share/man/man1/lout.1.gz
+share/man/man1/prg2lout.1.gz
 @dir %%DATADIR%%/lib/locale

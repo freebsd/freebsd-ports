@@ -28,11 +28,11 @@ CP?=			/bin/cp
 CPIO?=			/usr/bin/cpio
 CUT?=			/usr/bin/cut
 DC?=			/usr/bin/dc
-.if exists(/usr/bin/dialog)
+.  if exists(/usr/bin/dialog)
 DIALOG?=		/usr/bin/dialog
-.else
+.  else
 DIALOG?=		/usr/bin/bsddialog
-.endif
+.  endif
 DIALOG4PORTS?=		${LOCALBASE}/bin/portconfig
 DIFF?=			/usr/bin/diff
 DIRNAME?=		/usr/bin/dirname
@@ -83,6 +83,7 @@ RM?=			/bin/rm -f
 RMDIR?=			/bin/rmdir
 SED?=			/usr/bin/sed
 SETENV?=		/usr/bin/env
+SETENVI?=		/usr/bin/env -i
 SH?=			/bin/sh
 SORT?=			/usr/bin/sort
 STRIP_CMD?=		/usr/bin/strip

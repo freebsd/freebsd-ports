@@ -1,0 +1,22 @@
+--- profinet/data/abilities/discovery/35e384c3-2c27-4cf6-8155-70b2cf4b6cef.yml.orig	2024-02-18 23:08:41 UTC
++++ profinet/data/abilities/discovery/35e384c3-2c27-4cf6-8155-70b2cf4b6cef.yml
+@@ -20,10 +20,17 @@
+           ./dcp_utility get_name #{dcp.target.mac}
+         payloads:
+         - dcp_utility
++    freebsd:
++      sh:
++        timeout: 360
++        command: |
++          ./dcp_utility_freebsd get_name #{dcp.target.mac}
++        payloads:
++        - dcp_utility_freebsd
+     windows:
+       psh, cmd:
+         timeout: 360
+         command: |
+           .\dcp_utility.exe get_name #{dcp.target.mac}
+         payloads:
+-        - dcp_utility.exe
+\ No newline at end of file
++        - dcp_utility.exe

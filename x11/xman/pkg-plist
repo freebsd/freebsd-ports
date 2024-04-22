@@ -1,4 +1,4 @@
 bin/xman
-man/man1/xman.1.gz
+share/man/man1/xman.1.gz
 share/X11/app-defaults/Xman
 share/X11/xman.help

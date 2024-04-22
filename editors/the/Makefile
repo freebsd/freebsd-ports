@@ -1,6 +1,6 @@
 PORTNAME=	the
 PORTVERSION=	3.3.r4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	http://downloads.sourceforge.net/hessling-editor/
 DISTNAME=	THE-${PORTVERSION:S/.r/RC/}
@@ -12,6 +12,7 @@ WWW=		https://hessling-editor.sourceforge.net/
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-rexxincdir=${LOCALBASE}/include \
 		--with-rexxlibdir=${LOCALBASE}/lib
 ALL_TARGET=	all html

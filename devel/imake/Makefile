@@ -1,5 +1,6 @@
 PORTNAME=	imake
 DISTVERSION=	1.0.10
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -21,6 +22,7 @@ USE_PERL5=	run
 
 SHEBANG_FILES=	mkhtmlindex.pl
 
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_path_RAWCPP=tradcpp
 
 .include <bsd.port.mk>

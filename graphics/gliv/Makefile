@@ -1,6 +1,6 @@
 PORTNAME=	gliv
 PORTVERSION=	1.9.7
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	http://guichaz.free.fr/gliv/files/
 
@@ -20,6 +20,7 @@ USE_GNOME=	gnomeprefix gtk20
 USE_GL=		gl glu
 USE_XORG=	sm
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 

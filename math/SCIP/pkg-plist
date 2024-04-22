@@ -1,20 +1,4 @@
-bin/bliss
 bin/scip
-include/bliss/abstractgraph.hh
-include/bliss/bignum.hh
-include/bliss/bliss_C.h
-include/bliss/defs.hh
-include/bliss/digraph.hh
-include/bliss/graph.hh
-include/bliss/heap.hh
-include/bliss/kqueue.hh
-include/bliss/kstack.hh
-include/bliss/orbit.hh
-include/bliss/partition.hh
-include/bliss/stats.hh
-include/bliss/timer.hh
-include/bliss/uintseqhash.hh
-include/bliss/utils.hh
 include/blockmemshell/memory.h
 include/dijkstra/dijkstra.h
 include/lpi/lpi.h
@@ -48,6 +32,7 @@ include/objscip/type_objprobcloneable.h
 include/scip/bandit.h
 include/scip/bandit_epsgreedy.h
 include/scip/bandit_exp3.h
+include/scip/bandit_exp3ix.h
 include/scip/bandit_ucb.h
 include/scip/benders.h
 include/scip/benders_default.h
@@ -65,6 +50,7 @@ include/scip/branch_allfullstrong.h
 include/scip/branch_cloud.h
 include/scip/branch_distribution.h
 include/scip/branch_fullstrong.h
+include/scip/branch_gomory.h
 include/scip/branch_inference.h
 include/scip/branch_leastinf.h
 include/scip/branch_lookahead.h
@@ -84,6 +70,9 @@ include/scip/concsolver_scip.h
 include/scip/concurrent.h
 include/scip/config.h
 include/scip/conflict.h
+include/scip/conflict_dualproofanalysis.h
+include/scip/conflict_general.h
+include/scip/conflict_graphanalysis.h
 include/scip/conflictstore.h
 include/scip/cons.h
 include/scip/cons_abspower.h
@@ -120,6 +109,8 @@ include/scip/cons_xor.h
 include/scip/cutpool.h
 include/scip/cuts.h
 include/scip/cutsel.h
+include/scip/cutsel_dynamic.h
+include/scip/cutsel_ensemble.h
 include/scip/cutsel_hybrid.h
 include/scip/dbldblarith.h
 include/scip/dcmp.h
@@ -132,6 +123,7 @@ include/scip/disp_default.h
 include/scip/event.h
 include/scip/event_estim.h
 include/scip/event_globalbnd.h
+include/scip/event_shadowtree.h
 include/scip/event_softtimelimit.h
 include/scip/event_solvingphase.h
 include/scip/expr.h
@@ -169,6 +161,7 @@ include/scip/heur_fracdiving.h
 include/scip/heur_gins.h
 include/scip/heur_guideddiving.h
 include/scip/heur_indicator.h
+include/scip/heur_indicatordiving.h
 include/scip/heur_intdiving.h
 include/scip/heur_intshifting.h
 include/scip/heur_linesearchdiving.h
@@ -193,6 +186,7 @@ include/scip/heur_repair.h
 include/scip/heur_rins.h
 include/scip/heur_rootsoldiving.h
 include/scip/heur_rounding.h
+include/scip/heur_scheduler.h
 include/scip/heur_shiftandpropagate.h
 include/scip/heur_shifting.h
 include/scip/heur_simplerounding.h
@@ -213,6 +207,7 @@ include/scip/history.h
 include/scip/implics.h
 include/scip/interrupt.h
 include/scip/intervalarith.h
+include/scip/lapack_calls.h
 include/scip/lp.h
 include/scip/mem.h
 include/scip/message.h
@@ -225,6 +220,7 @@ include/scip/nlhdlr_default.h
 include/scip/nlhdlr_perspective.h
 include/scip/nlhdlr_quadratic.h
 include/scip/nlhdlr_quotient.h
+include/scip/nlhdlr_signomial.h
 include/scip/nlhdlr_soc.h
 include/scip/nlp.h
 include/scip/nlpi.h
@@ -280,6 +276,7 @@ include/scip/prop_vbounds.h
 include/scip/pub_bandit.h
 include/scip/pub_bandit_epsgreedy.h
 include/scip/pub_bandit_exp3.h
+include/scip/pub_bandit_exp3ix.h
 include/scip/pub_bandit_ucb.h
 include/scip/pub_benders.h
 include/scip/pub_benderscut.h
@@ -418,6 +415,7 @@ include/scip/sepa_gomory.h
 include/scip/sepa_impliedbounds.h
 include/scip/sepa_interminor.h
 include/scip/sepa_intobj.h
+include/scip/sepa_lagromory.h
 include/scip/sepa_mcf.h
 include/scip/sepa_minor.h
 include/scip/sepa_mixing.h
@@ -483,6 +481,10 @@ include/scip/struct_tree.h
 include/scip/struct_var.h
 include/scip/struct_visual.h
 include/scip/symmetry.h
+include/scip/symmetry_graph.h
+include/scip/symmetry_lexred.h
+include/scip/symmetry_orbital.h
+include/scip/symmetry_orbitopal.h
 include/scip/syncstore.h
 include/scip/table.h
 include/scip/table_default.h
@@ -547,6 +549,7 @@ include/scip/type_var.h
 include/scip/type_visual.h
 include/scip/var.h
 include/scip/visual.h
+include/symmetry/build_sassy_graph.h
 include/symmetry/compute_symmetry.h
 include/symmetry/type_symmetry.h
 include/tclique/tclique.h
@@ -555,22 +558,13 @@ include/tclique/tclique_def.h
 include/tinycthread/tinycthread.h
 include/tpi/def_openmp.h
 include/tpi/tpi.h
-include/tpi/tpi_none.h
-include/tpi/tpi_openmp.h
-include/tpi/tpi_tnycthrd.h
 include/tpi/type_tpi.h
-include/tpi/type_tpi_none.h
-include/tpi/type_tpi_openmp.h
-include/tpi/type_tpi_tnycthrd.h
 include/xml/xml.h
 include/xml/xmldef.h
-lib/cmake/Bliss/BlissConfig-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/Bliss/BlissConfig.cmake
 lib/cmake/scip/scip-config-version.cmake
 lib/cmake/scip/scip-config.cmake
 lib/cmake/scip/scip-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/scip/scip-targets.cmake
-lib/libbliss.a
 lib/libscip.so
-lib/libscip.so.8.1
-lib/libscip.so.8.1.0.0
+lib/libscip.so.9.0
+lib/libscip.so.9.0.0.0

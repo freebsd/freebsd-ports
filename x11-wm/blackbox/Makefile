@@ -1,6 +1,6 @@
 PORTNAME=	blackbox
 PORTVERSION=	0.70.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}wm/${PORTNAME}wm/Blackbox%20${PORTVERSION}
 
@@ -16,6 +16,7 @@ USE_CXXSTD=	c++14
 USE_XORG=	x11 xft
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 LDFLAGS+=	${ICONV_LIB}
 
@@ -50,6 +51,6 @@ post-install:
 post-install-TOOLS_ONLY-on:
 	@${REINPLACE_CMD} -E '/[^s]\/blackbox|bstyleconvert|lib|include/d' \
 		${TMPPLIST}
-	${INSTALL_MAN} ${MANPAGES:S#^#${WRKSRC}/doc/#} ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${MANPAGES:S#^#${WRKSRC}/doc/#} ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

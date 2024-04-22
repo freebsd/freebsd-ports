@@ -1,5 +1,6 @@
 PORTNAME=	samhain
 PORTVERSION=	4.4.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/
 DISTNAME=	samhain_signed-${PORTVERSION}
@@ -20,6 +21,7 @@ SHEBANG_FILES=		scripts/samhainadmin-gpg.pl.in \
 			scripts/samhainadmin-sig.pl.in
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-logserver=true \
 		--with-altlogserver=true \

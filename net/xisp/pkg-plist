@@ -13,4 +13,4 @@ etc/ppp/peers/xisp_umodem
 libexec/xispdial
 libexec/xispterm
 @group
-man/man1/xisp.1.gz
+share/man/man1/xisp.1.gz

@@ -1,5 +1,5 @@
 PORTNAME=	prawn
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.0
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,9 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/GPLv2
 LICENSE_FILE_GPLv3=	${WRKSRC}/GPLv3
 LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-pdf-core>=0.9.0<0.10:print/rubygem-pdf-core \
-		rubygem-ttfunk>=1.7<2:print/rubygem-ttfunk
+RUN_DEPENDS=	rubygem-matrix>=0.4<1:math/rubygem-matrix \
+		rubygem-pdf-core>=0.10.0<0.11:print/rubygem-pdf-core \
+		rubygem-ttfunk>=1.8<2:print/rubygem-ttfunk
 
 USES=		gem
 

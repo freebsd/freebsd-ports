@@ -1,6 +1,7 @@
 PORTNAME=	ospd-openvas
-DISTVERSION=	22.6.0
+DISTVERSION=	22.6.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ WWW=		https://github.com/greenbone/ospd-openvas
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry2setup>0:devel/py-poetry2setup@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=0:databases/py-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
@@ -29,7 +30,7 @@ GH_ACCOUNT=	greenbone
 GH_PROJECT=	${PORTNAME}
 
 USES=		python
-USE_PYTHON=	distutils
+USE_PYTHON=	pep517
 
 NO_ARCH=	yes
 
@@ -45,9 +46,6 @@ post-patch:
 		${WRKSRC}/ospd_openvas/gpg_sha_verifier.py
 	${REINPLACE_CMD} -i "" -e 's|/run/ospd|/var/run/ospd|g' \
 		${WRKSRC}/ospd/parser.py ${WRKSRC}/config/ospd-openvas.conf
-pre-configure:
-	@cd ${WRKSRC} && poetry2setup > ${WRKSRC}/setup.py
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/gvm
 	@${INSTALL_DATA} ${WRKSRC}/config/ospd-openvas.conf ${STAGEDIR}${PREFIX}/etc/gvm/ospd-openvas.conf.sample

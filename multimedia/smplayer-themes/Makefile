@@ -7,19 +7,19 @@ MASTER_SITES=	SF/smplayer/SMPlayer-themes/${PORTVERSION}/
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Themes for SMPlayer
-WWW=		http://smplayer.sourceforge.net/
+WWW=		https://www.smplayer.info/
 
 USES=		qt:5 tar:bzip2
 USE_QT=		buildtools:build
 
-NO_ARCH=	yes
-
 DATADIR=	${PREFIX}/share/smplayer
+
+BINARY_ALIAS=	rcc=${RCC}
+
+NO_ARCH=	yes
 
 PORTDOCS=	Changelog README.txt
 OPTIONS_DEFINE=	DOCS
-
-BINARY_ALIAS=	rcc=${RCC}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

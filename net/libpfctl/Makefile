@@ -1,5 +1,5 @@
 PORTNAME=	libpfctl
-PORTVERSION=	0.8
+PORTVERSION=	0.10
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/kp/
 
@@ -14,7 +14,7 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/libpfctl
 
 _LIBPFCTL_HASH=	498934c5ff51
-_LIBPFCTL_REV=	2
+_LIBPFCTL_REV=	3
 
 PLIST_FILES=	\
 		lib/libpfctl.so \
@@ -38,7 +38,7 @@ do-install:
 
 .if defined(MAINTAINER_MODE)
 upload:
-	for version in 13.2 14.0; \
+	for version in 13.2 13.3 14.0; \
 	do \
 		cd /usr/src/lib && \
 		git archive --format=tar.gz \

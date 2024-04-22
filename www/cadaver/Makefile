@@ -1,5 +1,6 @@
 PORTNAME=	cadaver
 PORTVERSION=	0.24
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://notroj.github.io/cadaver/
 
@@ -12,9 +13,10 @@ LIB_DEPENDS=	libneon.so:www/neon
 USES=		ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-netrc --with-ssl
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/cadaver \
-		man/man1/cadaver.1.gz
+		share/man/man1/cadaver.1.gz
 
 # Neither expat nor libneon are needed at all, but the configure
 # script breaks if it can not find the Makefile* in them. Exclude

@@ -3,7 +3,7 @@ PORTVERSION=	1.1.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Wrapper for the UNIX-style Database Manager Library
 WWW=		https://github.com/ruby/dbm
 

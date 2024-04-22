@@ -1,14 +1,8 @@
 PORTNAME=	iocell
-PORTVERSION=	2.1.2
+PORTVERSION=	2.2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	1
 CATEGORIES=	sysutils
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
-# https://github.com/bartekrutkowski/iocell/pull/37
-# https://github.com/bartekrutkowski/iocell/pull/40
-PATCHFILES+=	37.patch:-p1 \
-		40.patch:-p1
 
 MAINTAINER=	robak@FreeBSD.org
 COMMENT=	Feature rich Jail containers manager (iocage fork)
@@ -35,6 +29,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rc.d/iocell ${STAGEDIR}${PREFIX}/etc/rc.d
 	${INSTALL_SCRIPT} ${WRKSRC}/iocell ${STAGEDIR}${PREFIX}/sbin
 	(cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/iocell)
-	${INSTALL_MAN} ${WRKSRC}/iocell.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/iocell.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

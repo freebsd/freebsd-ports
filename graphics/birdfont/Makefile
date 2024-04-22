@@ -1,6 +1,5 @@
 PORTNAME=	birdfont
-DISTVERSION=	2.32.3
-PORTREVISION=	3
+DISTVERSION=	2.33.4
 CATEGORIES=	graphics x11-fonts
 MASTER_SITES=	https://birdfont.org/releases/
 
@@ -21,9 +20,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libxmlbird.so:textproc/libxmlbird
 
-USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome \
-		pkgconfig python:build shared-mime-info shebangfix \
-		sqlite:3 tar:xz vala:build
+USES=		gettext-tools gnome pkgconfig python:build shared-mime-info \
+		shebangfix sqlite:3 tar:xz vala:build
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	configure install.py

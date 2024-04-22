@@ -1,6 +1,6 @@
 PORTNAME=	libdistance
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://monkey.org/~jose/software/libdistance/
 
@@ -16,7 +16,7 @@ USES+=		fakeroot pkgconfig tcl
 USE_LDCONFIG=	yes
 
 MAKE_ARGS+=	INCLUDEDIR=${PREFIX}/include LIBDIR=${PREFIX}/lib
-MAKE_ARGS+=	MANDIR=${PREFIX}/man/man SWIG=swig
+MAKE_ARGS+=	MANDIR=${PREFIX}/share/man/man SWIG=swig
 MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-fPIC

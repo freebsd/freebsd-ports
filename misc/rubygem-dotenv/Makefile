@@ -1,5 +1,5 @@
 PORTNAME=	dotenv
-PORTVERSION=	2.8.1
+PORTVERSION=	3.1.0
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,8 @@ USES=		gem
 
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	py*-python-dotenv # bin/dotenv
-
 PLIST_FILES=	bin/dotenv
+
+CONFLICTS_INSTALL=	py*-python-dotenv # bin/dotenv
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	moreutils
-PORTVERSION=	0.68
+PORTVERSION=	0.69
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.joeyh.name/index.cgi/moreutils.git/snapshot/ \
 		LOCAL/sunpoet

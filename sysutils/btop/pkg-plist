@@ -9,6 +9,7 @@ share/applications/btop.desktop
 %%DATADIR%%/themes/dusklight.theme
 %%DATADIR%%/themes/elementarish.theme
 %%DATADIR%%/themes/everforest-dark-hard.theme
+%%DATADIR%%/themes/everforest-dark-medium.theme
 %%DATADIR%%/themes/flat-remix-light.theme
 %%DATADIR%%/themes/flat-remix.theme
 %%DATADIR%%/themes/greyscale.theme

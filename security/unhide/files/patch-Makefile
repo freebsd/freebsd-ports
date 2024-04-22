@@ -1,7 +1,7 @@
 --- /dev/null	2013-01-06 20:26:43.000000000 +0200
 +++ Makefile	2013-01-06 20:26:46.000000000 +0200
 @@ -0,0 +1,20 @@
-+MANDIR		:= ${PREFIX}/man
++MANDIR		:= ${PREFIX}/share/man
 +INSTALL_PROGRAM	:= /usr/bin/install -s -m 0700
 +INSTALL_MAN	:= /usr/bin/install -m 0444
 +GZIP_CMD	:= /usr/bin/gzip -9

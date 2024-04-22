@@ -1,6 +1,6 @@
 PORTNAME=	dune-grid-glue
 DISTVERSION=	2.8.0
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://www.dune-project.org/
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	alberta-fem>0:math/alberta \
-		openmpi>0:net/openmpi \
+		openmpi4>0:net/openmpi4 \
 		psurface>0:math/psurface \
 		vc>0:devel/vc
 LIB_DEPENDS=	libdunecommon.so:math/dune-common \

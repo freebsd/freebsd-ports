@@ -1,0 +1,20 @@
+Flexemu is a classic Computer emulation based on the Motorola MC6809.
+
+This processor together with a whole set of peripherals like floppy
+disk controller (WD1793), parallel interface (MC6821), serial interface
+(MC6850), real time clock (MC146818) and video interface emulates a
+Microcomputer EurocomII/V5 or EurocomII/V7 which was developed by
+Eltec Elektronik in Mainz/Germany at about 1980.
+
+The operating system running on it is called FLEX. It was developed by
+Technical Systems Consultants (TSC) at about 1979. It fits into 8KByte
+memory. Its "Disk Operating System" consists of 27 System calls and the
+"File Management System" of 3 system calls. The processor itself can
+address 64 KByte of memory.
+
+Several (cross) assemblers, debugger, compilers, textprocessing systems,
+and even a circuit board layout system and a videotext editing system
+are available. And last but not least several arcade-like games.
+
+Flexemu comes with the original FLEX documentation as available from
+the FLEX User Group.

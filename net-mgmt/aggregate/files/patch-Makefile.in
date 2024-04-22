@@ -17,9 +17,9 @@
 -	$(INSTALL) -m 0755 aggregate-ios $(prefix)/bin/
 -	$(INSTALL) -m 0644 aggregate-ios.1 $(prefix)/man/man1/
 +	$(INSTALL) -m 0755 aggregate $(DESTDIR)$(prefix)/bin/
-+	$(INSTALL) -m 0644 aggregate.1 $(DESTDIR)$(prefix)/man/man1/
++	$(INSTALL) -m 0644 aggregate.1 $(DESTDIR)$(prefix)/share/man/man1/
 +	$(INSTALL) -m 0755 aggregate-ios $(DESTDIR)$(prefix)/bin/
-+	$(INSTALL) -m 0644 aggregate-ios.1 $(DESTDIR)$(prefix)/man/man1/
++	$(INSTALL) -m 0644 aggregate-ios.1 $(DESTDIR)$(prefix)/share/man/man1/
  
  .c.o:
  	$(CC) -c $(CPPFLAGS) $(DEFS) $(CFLAGS) $<

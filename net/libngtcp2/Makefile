@@ -1,5 +1,5 @@
 PORTNAME=	ngtcp2
-PORTVERSION=	1.1.0
+PORTVERSION=	1.4.0
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/ngtcp2/ngtcp2/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	lib
@@ -12,12 +12,12 @@ WWW=		https://nghttp2.org/ngtcp2/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++17-lang libtool pathfix pkgconfig ssl tar:xz
+USES=		compiler:c++14-lang libtool pathfix pkgconfig tar:xz
 
 CONFIGURE_ARGS=	--enable-lib-only --with-jemalloc
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_CXXSTD=	c++17
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

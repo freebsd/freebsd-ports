@@ -1,0 +1,7 @@
+language_data is a supplement to the langcodes module, for working with
+standardized codes for human languages. It stores the more bulky and
+hard-to-index data about languages, particularly what they are named in various
+languages.
+
+The functions and test cases for working with this data are in langcodes,
+because working with the data correctly requires parsing language codes.

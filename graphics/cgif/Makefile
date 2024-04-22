@@ -1,6 +1,6 @@
 PORTNAME=	cgif
-PORTVERSION=	0.3.2
-DISTVERSIONPREFIX=	V
+PORTVERSION=	0.4.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -12,7 +12,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		meson
 
-MESON_ARGS=	--default-library=both -Dtests=true
+MESON_ARGS=	--default-library=both \
+		-Dexamples=false \
+		-Dfuzzer=false \
+		-Dinstall_examples=false \
+		-Dtests=true
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 

@@ -1,4 +1,4 @@
 bin/xjewel
-man/man6/xjewel.6.gz
 lib/X11/xjewel/xjewel.scores
+share/man/man6/xjewel.6.gz
 %%FONTSDIR%%/seven_seg.pcf.gz

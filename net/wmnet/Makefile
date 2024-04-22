@@ -1,6 +1,6 @@
 PORTNAME=	wmnet
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net windowmaker
 MASTER_SITES=	http://vault.101011010.xyz/distfiles/ \
 		http://freebsd.nsu.ru/distfiles/ \

@@ -64,7 +64,7 @@ pre-install:
 .	endif
 
 .	if ${PKGNAMESUFFIX} == "-ui-console"
-		@${ECHO_CMD} "man/man6/mupen64plus.6.gz" >> ${PLIST}
+		@${ECHO_CMD} "share/man/man6/mupen64plus.6.gz" >> ${PLIST}
 .	endif
 
 .	if ${PKGNAMESUFFIX} != "-ui-console"
@@ -99,7 +99,7 @@ do-install:
 	${LN} -sf ${PREFIX}/lib/libmupen64plus.so.2.0.0 ${STAGEDIR}${PREFIX}/lib/libmupen64plus.so.2
 .else
 .	if ${PKGNAMESUFFIX} == "-ui-console"
-		${INSTALL_MAN} ${WRKSRC}/doc/mupen64plus.6 ${STAGEDIR}${PREFIX}/man/man6/
+		${INSTALL_MAN} ${WRKSRC}/doc/mupen64plus.6 ${STAGEDIR}${PREFIX}/share/man/man6/
 .	endif
 
 .	if ${PKGNAMESUFFIX} == "-video-rice"

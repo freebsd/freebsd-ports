@@ -1,5 +1,6 @@
 PORTNAME=	c-icap
 PORTVERSION=	0.5.11
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.5.x/
@@ -23,6 +24,7 @@ USE_RC_SUBR=	c-icap
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--sysconfdir="${PREFIX}/etc/c-icap"
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 

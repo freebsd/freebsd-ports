@@ -1,6 +1,5 @@
 PORTNAME=	lablgtk3
-PORTVERSION=	3.1.1
-PORTREVISION=	3
+PORTVERSION=	3.1.4
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	ocaml-
 
@@ -12,7 +11,8 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	dune:devel/ocaml-dune \
-		ocaml-cairo>0:graphics/ocaml-cairo
+		ocaml-cairo>0:graphics/ocaml-cairo \
+		${LOCALBASE}/${OCAML_SITELIBDIR}/camlp-streams/META:devel/ocaml-camlp-streams
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig

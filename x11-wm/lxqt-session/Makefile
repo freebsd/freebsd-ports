@@ -1,5 +1,5 @@
 PORTNAME=	lxqt-session
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	LXQT
 
@@ -12,13 +12,13 @@ LICENSE=	LGPL21+
 BUILD_DEPENDS=	xdg-user-dirs-update:devel/xdg-user-dirs \
 		qtxdg-mat:sysutils/qtxdg-tools
 
-USES=	cmake compiler:c++14-lang kde:5 lxqt qt:5 \
-	perl5 pkgconfig tar:xz xorg gnome
-USE_PERL5=	build
-USE_QT=	buildtools:build qmake:build core dbus gui linguisttools \
+USES=	cmake kde:5 lxqt perl5 pkgconfig qt:5 \
+	tar:xz xorg gnome
+USE_QT=	buildtools:build core dbus gui linguisttools qmake:build \
 	svg widgets x11extras xml
 USE_KDE=	windowsystem
 USE_LXQT=	buildtools lxqt qtxdg
+USE_PERL5=	build
 USE_XORG=	x11 ice sm xcb xext
 USE_GNOME=	glib20
 

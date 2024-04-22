@@ -7,8 +7,8 @@ lib/gsocket_dso.so
 lib/gsocket_uchroot_dso.so
 share/gsocket/gs_funcs
 etc/gsocket.conf
-man/man1/blitz.1.gz
-man/man1/gs-mount.1.gz
-man/man1/gs-netcat.1.gz
-man/man1/gs-sftp.1.gz
-man/man1/gsocket.1.gz
+share/man/man1/blitz.1.gz
+share/man/man1/gs-mount.1.gz
+share/man/man1/gs-netcat.1.gz
+share/man/man1/gs-sftp.1.gz
+share/man/man1/gsocket.1.gz

@@ -1,6 +1,6 @@
 PORTNAME=	gnarwl
 PORTVERSION=	3.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	mail
 MASTER_SITES=	http://www.onyxbits.de/sites/default/files/download/15/
 
@@ -14,6 +14,7 @@ LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
 USES=		iconv gmake groff ldap tar:tgz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} --localstatedir="${PREFIX}/var"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB}

@@ -1,6 +1,6 @@
 PORTNAME=	vitunes
 PORTVERSION=	2.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://vitunes.org/files/
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libtag.so:audio/taglib
 
 USES=		ncurses
 ALL_TARGET=	vitunes
-PLIST_FILES=	bin/vitunes man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/vitunes share/man/man1/${PORTNAME}.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/Makefile

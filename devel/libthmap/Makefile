@@ -1,5 +1,6 @@
 PORTNAME=	libthmap
 PORTVERSION=	g2020082801
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -20,6 +21,6 @@ USE_LDCONFIG=	yes
 MAKE_ENV=	DESTDIR=${STAGEDIR}${PREFIX} \
 		INCDIR=${LOCALBASE}/include \
 		LIBDIR=${LOCALBASE}/lib \
-		MANDIR=${LOCALBASE}/man
+		MANDIR=${LOCALBASE}/share/man
 
 .include <bsd.port.mk>

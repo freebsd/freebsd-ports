@@ -10,7 +10,7 @@
 
 PORTNAME=	dovecot
 PORTVERSION=	2.3.21
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	https://dovecot.org/releases/2.3/
 
@@ -27,6 +27,7 @@ USES=		cpe iconv libtool pkgconfig ssl
 USE_RC_SUBR=	dovecot
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-docs \
 		--with-ssl=openssl \
@@ -41,7 +42,7 @@ USERS=		dovecot dovenull
 GROUPS=		${USERS}
 
 OPTIONS_DEFINE=	LIBSODIUM LIBUNWIND LIBWRAP LUA LZ4 DOCS EXAMPLES
-OPTIONS_DEFAULT=GSSAPI_NONE LIBWRAP
+OPTIONS_DEFAULT=GSSAPI_NONE LDAP LIBWRAP
 OPTIONS_SUB=	yes
 
 OPTIONS_GROUP=		DB FTS

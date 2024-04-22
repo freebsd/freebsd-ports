@@ -1,5 +1,5 @@
 PORTNAME=	qgis
-DISTVERSION=	3.34.2
+DISTVERSION=	3.36.2
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 BUILD_DEPENDS=	gpsbabel>=1.7.0:astro/gpsbabel \
 		opencl>=0:devel/opencl \
 		${PYTHON_PKGNAMEPREFIX}cycler>=0.11.0:devel/py-cycler@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=2.8.2:devel/py-dateutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.8.2:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0.18.2:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httplib2>=0.20.2:www/py-httplib2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jedi>=0.18.1:devel/py-jedi@${PY_FLAVOR} \
@@ -32,23 +32,27 @@ BUILD_DEPENDS=	gpsbabel>=1.7.0:astro/gpsbabel \
 		${PYTHON_PKGNAMEPREFIX}six>=1.16.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=3.7.16:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.4.1:devel/py-yaml@${PY_FLAVOR}
-LIB_DEPENDS=	libdraco.so:archivers/draco \
+LIB_DEPENDS=	libabsl_log_internal_check_op.so:devel/abseil \
+		libdraco.so:archivers/draco \
 		libexiv2.so:graphics/exiv2 \
 		libexpat.so:textproc/expat2 \
+		libfreexl.so:textproc/freexl \
 		libgdal.so:graphics/gdal \
 		libgeos.so:graphics/geos \
 		libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \
 		libmdal.so:math/mdal \
+		libminizip.so:archivers/minizip \
 		libnetcdf.so:science/netcdf \
 		libOpenCL.so:devel/ocl-icd \
-		libpdal_base.so:math/pdal \
+		libpdalcpp.so:math/pdal \
 		libproj.so:graphics/proj \
 		libprotobuf-lite.so:devel/protobuf \
 		libqjson-qt5.so:devel/qjson \
 		libqscintilla2_qt5.so:devel/qscintilla2-qt5 \
 		libqt5keychain.so:security/qtkeychain@qt5 \
-		libqwt6.so:x11-toolkits/qwt6 \
+		libqwt.so:x11-toolkits/qwt6@qt5 \
+		librttopo.so:devel/librttopo \
 		libspatialindex.so:devel/spatialindex \
 		libspatialite.so:databases/spatialite \
 		libsz.so:science/libaec \
@@ -59,7 +63,7 @@ RUN_DEPENDS=	astyle:devel/astyle \
 		opencl>=0:devel/opencl \
 		${PYTHON_PKGNAMEPREFIX}black>=22.10:devel/py-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cycler>=0.11.0:devel/py-cycler@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=2.8.2:devel/py-dateutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.8.2:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Fiona>=1.8.21:graphics/py-fiona@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0.18.2:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gdal>=3.5.2:graphics/py-gdal@${PY_FLAVOR} \
@@ -103,7 +107,7 @@ RUN_DEPENDS=	astyle:devel/astyle \
 
 ### Fortran is needed by numpy, GRASS, etc.
 USES=		bison cmake compiler:features desktop-file-utils \
-		fortran gl gmake gnome pgsql pyqt:5 python qca qt:5 \
+		fortran gl gmake gnome iconv pgsql pyqt:5 python qca qt:5 \
 		shebangfix sqlite:3 tar:bz2
 USE_GL=		gl
 USE_GNOME=	libxml2
@@ -125,15 +129,12 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DPython_EXECUTABLE=${PYTHON_CMD} \
 		-DQSCI_SIP_DIR:PATH=${PYQT_SIPDIR}/Qsci \
 		-DQWT_INCLUDE_DIR:PATH=${LOCALBASE}/include/qt5/qwt6 \
-		-DQWT_LIBRARY:FILEPATH=${LOCALBASE}/lib/qt5/libqwt6.so \
+		-DQWT_LIBRARY:FILEPATH=${LOCALBASE}/lib/qt5/libqwt.so \
 		-DQGIS_MANUAL_SUBDIR:PATH=share/man
 CMAKE_ON=	USE_OPENCL WITH_ASTYLE WITH_BINDINGS WITH_COPC \
 		WITH_CUSTOM_WIDGETS WITH_DRACO WITH_EPT \
 		WITH_INTERNAL_LAZPERF WITH_POSTGRESQL
-CMAKE_OFF=	ENABLE_TESTING WITH_INTERNAL_MDAL WITH_QTWEBKIT WITH_QWTPOLAR
-
-# math/pdal fails in pdal_wrench() with "undefined reference to symbol 'pthread_create@@FBSD_1.0'"
-CXXFLAGS+=	-pthread
+CMAKE_OFF=	ENABLE_TESTS WITH_INTERNAL_MDAL WITH_QTWEBKIT WITH_QWTPOLAR
 
 CONFLICTS_INSTALL=	qgis-ltr
 
@@ -144,22 +145,17 @@ CMAKE_ARGS+=	-Wno-dev
 CMAKE_OFF+=	SUPPRESS_QT_WARNINGS
 .endif
 
-OPTIONS_DEFINE=		SERVER
-OPTIONS_DEFAULT=	SERVER GRASS8
-OPTIONS_RADIO=		GRASS
-OPTIONS_RADIO_GRASS=	GRASS7 GRASS8
-#NO_OPTIONS_SORT=	yes
+OPTIONS_DEFINE=		SERVER GRASS
+OPTIONS_DEFAULT=	SERVER GRASS
+NO_OPTIONS_SORT=	yes
 OPTIONS_SUB=		yes
 
 GRASS_DESC=		Add GRASS GIS to processing tools
 SERVER_DESC=		Enable QGIS server
 
-GRASS7_BUILD_DEPENDS=	grass7:databases/grass7
-GRASS7_RUN_DEPENDS=	${GRASS7_BUILD_DEPENDS}
-GRASS7_CMAKE_BOOL=	WITH_GRASS7
-GRASS8_BUILD_DEPENDS=	grass8:databases/grass8
-GRASS8_RUN_DEPENDS=	${GRASS8_BUILD_DEPENDS}
-GRASS8_CMAKE_BOOL=	WITH_GRASS8
+GRASS_BUILD_DEPENDS=	grass8:databases/grass8
+GRASS_RUN_DEPENDS=	${GRASS_BUILD_DEPENDS}
+GRASS_CMAKE_BOOL=	WITH_GRASS8
 SERVER_LIB_DEPENDS=	libfcgi.so:www/fcgi
 SERVER_CMAKE_BOOL=	WITH_SERVER WITH_SERVER_PLUGINS WITH_QSPATIALITE
 
@@ -182,12 +178,6 @@ post-patch:
 
 pre-configure:
 	${MKDIR} ${CONFIGURE_WRKSRC}/bin && ${LN} -s ${PYTHON_CMD} ${CONFIGURE_WRKSRC}/bin/python3
-.if ${PORT_OPTIONS:MGRASS7} || ${PORT_OPTIONS:MGRASS8}
-PLIST_SUB+=	GRASS="" NO_GRASS="@comment "
-.else
-PLIST_SUB+=	GRASS="@comment " NO_GRASS=""
-.endif
-
 
 post-install:
 	@${RM} ${STAGEDIR}${DATADIR}/python/pytz/tzfile.py.bak

@@ -28,8 +28,7 @@ NO_ARCH=	yes
 
 PLIST_FILES=	bin/stella
 
-# bin/stella
-CONFLICTS_INSTALL=	stella
+CONFLICTS_INSTALL=	stella # bin/stella
 
 SHEBANG_FILES=	bin/stella \
 		support/sample_webapp/app.rb

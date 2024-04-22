@@ -1,16 +1,15 @@
 --- web-apps/build/package.json.orig	2023-02-13 11:28:45.073468000 +0100
 +++ web-apps/build/package.json	2023-02-13 11:29:43.714855000 +0100
-@@ -29,8 +29,9 @@
+@@ -30,8 +30,9 @@
      "vinyl-fs": "^3.0.3"
    },
    "devDependencies": {
--    "chai": "^4.3.6",
+-    "chai": "^4.3.7",
 -    "grunt-mocha": "^1.2.0",
--    "mocha": "^9.2.2"
--  }
-+    "chai": "^4.3.6"
+-    "mocha": "^10.2.0"
++    "chai": "^4.3.7"
 +  },
 +  "scripts": {
 +    "postinstall": "patch-package"
-+   }
+   }
  }

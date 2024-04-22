@@ -7,9 +7,6 @@ bin/vspaero_opt
 bin/vsploads
 bin/vspscript
 bin/vspviewer
-python/openvsp/openvsp/vspaero
-python/openvsp/openvsp/vsploads
-python/openvsp/openvsp/vspviewer
 %%DATADIR%%/23015.af
 %%DATADIR%%/AirfoilExport.vspscript
 %%DATADIR%%/BezierAirfoilExample.m

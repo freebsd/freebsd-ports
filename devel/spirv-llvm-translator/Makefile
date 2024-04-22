@@ -1,6 +1,7 @@
 PORTNAME=	spirv-llvm-translator
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${DISTVERSION_${FLAVOR}}
+DISTVERSION_llvm18=	18.1.0
 DISTVERSION_llvm17=	17.0.0
 DISTVERSION_llvm16=	16.0.0
 DISTVERSION_llvm15=	15.0.0
@@ -20,7 +21,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR}
 
-FLAVORS=	${17 16 15 14 13 12 11:L:S/^/llvm/}
+FLAVORS=	${18 17 16 15 14 13 12 11:L:S/^/llvm/}
 
 USES=		cmake compiler:c++11-lib
 USE_GITHUB=	yes
@@ -28,6 +29,7 @@ USE_LDCONFIG=	${PREFIX}/${FLAVOR}/lib
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	SPIRV-LLVM-Translator
 GH_TUPLE=	${GH_TUPLE_${FLAVOR}}
+GH_TUPLE_llvm18=KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-350-gb73e168:headers/projects/SPIRV-Headers
 GH_TUPLE_llvm17=KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-282-g9b527c0:headers/projects/SPIRV-Headers
 GH_TUPLE_llvm16=KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-219-g36c7694:headers/projects/SPIRV-Headers
 GH_TUPLE_llvm15=KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-168-g5a12186:headers/projects/SPIRV-Headers
@@ -43,9 +45,10 @@ _PLIST_FILES=	bin/llvm-spirv \
 		include/LLVMSPIRVLib/LLVMSPIRVLib.h \
 		include/LLVMSPIRVLib/LLVMSPIRVOpts.h \
 		lib/libLLVMSPIRVLib.so \
-		lib/libLLVMSPIRVLib.so.${DISTVERSION:R:R} \
+		lib/libLLVMSPIRVLib.so.${SOVERSION} \
 		libdata/pkgconfig/LLVMSPIRVLib.pc
 PLIST_FILES=	${_PLIST_FILES:S,^,${FLAVOR}/,}
+SOVERSION=	${${FLAVOR:S/llvm//}<18:?${DISTVERSION:R:R}:${DISTVERSION:R}}
 
 post-patch:
 	@${REINPLACE_CMD} -e '/pkgconfig/s/lib/&data/' \

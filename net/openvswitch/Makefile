@@ -1,5 +1,6 @@
 PORTNAME=	openvswitch
-DISTVERSION=	2.17.3
+DISTVERSION=	2.17.9
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://openvswitch.org/releases/
 
@@ -34,6 +35,7 @@ SHEBANG_FILES=	ipsec/ovs-monitor-ipsec.in \
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shared --disable-static --localstatedir=/var \
 		--with-dbdir=/var/db/${PORTNAME} \
 		--with-openssl=${OPENSSLBASE}

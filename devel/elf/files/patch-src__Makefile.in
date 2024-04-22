@@ -1,8 +1,9 @@
---- src/Makefile.in.orig	2003-09-20 10:23:28.000000000 -0400
-+++ src/Makefile.in	2014-08-15 12:59:59.000000000 -0400
+--- src/Makefile.in.orig	2003-09-20 14:23:28 UTC
++++ src/Makefile.in
 @@ -1,9 +1,9 @@
- CC=gcc
+-CC=gcc
 -INC=-I../include
++CC=cc
 +INC=-I../include ${CPPFLAGS}
  CFLAGS=@CFLAGS@
  PREFIX=@prefix@
@@ -12,7 +13,7 @@
  
  elf:		main.o elf.o
  		$(CC) $(CFLAGS) $(INC) main.o elf.o -o elf $(LIBS)
-@@ -16,7 +16,7 @@
+@@ -16,7 +16,7 @@ install:	elf
  		$(CC) $(CFLAGS) $(INC) -c main.c
  
  install:	elf

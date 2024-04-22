@@ -1,5 +1,6 @@
 PORTNAME=	hping3
 PORTVERSION=	20051105
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	http://www.hping.org/ \
 		http://200ok.org/distfiles/hping/
@@ -31,7 +32,7 @@ MAN_DESC=		Install manual page
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMAN}
-PLIST_FILES+=	man/man8/${PORTNAME}.8.gz
+PLIST_FILES+=	share/man/man8/${PORTNAME}.8.gz
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
@@ -54,6 +55,6 @@ do-install-DOCS-on:
 
 do-install-MAN-on:
 	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.8 \
-		${STAGEDIR}${MANPREFIX}/man/man8/${PORTNAME}.8
+		${STAGEDIR}${PREFIX}/share/man/man8/${PORTNAME}.8
 
 .include <bsd.port.mk>

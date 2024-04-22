@@ -1,6 +1,6 @@
---- lib/Template.php.orig	2023-04-01 13:46:16 UTC
+--- lib/Template.php.orig	2024-01-10 22:23:54 UTC
 +++ lib/Template.php
-@@ -56,6 +56,8 @@ class Template extends xmlTemplate {
+@@ -58,6 +58,8 @@ class Template extends xmlTemplate {
  	# Template RDN attributes
  	private $rdn;
  

@@ -4,5 +4,3 @@ scientific programmers a space-efficient and portable means for storing data.
 However, it does so in a serial manner, making it difficult to achieve high I/O
 performance. By making some small changes to the API specified by NetCDF, we can
 use MPI-IO and its collective operations.
-
-See also: https://github.com/Parallel-NetCDF/PnetCDF

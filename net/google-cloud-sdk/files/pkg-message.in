@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+Add the following line based on preferred shell for auto-completion:
+
+(bashrc) source %%PREFIX%%/google-cloud-sdk/completion.bash.inc
+(zshrc)  source %%PREFIX%%/google-cloud-sdk/completion.zsh.inc
+EOM
+}
+]

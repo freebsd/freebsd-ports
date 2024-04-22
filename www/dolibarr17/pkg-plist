@@ -15580,6 +15580,7 @@
 %%WWWDIR%%/htdocs/zapier/lib/zapier.lib.php
 %%WWWDIR%%/nightwatch.conf.js
 %%WWWDIR%%/phpstan.neon
+%%WWWDIR%%/pyproject.toml
 %%WWWDIR%%/robots.txt
 %%WWWDIR%%/scripts/accountancy/export-thirdpartyaccount.php
 %%WWWDIR%%/scripts/bank/export-bank-receipts.php

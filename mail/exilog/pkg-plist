@@ -1,8 +1,10 @@
 @owner www
 @group www
+@mode 600
 etc/exilog.conf-dist
 @owner
 @group
+@mode
 %%AGENT%%sbin/exilog_agent.pl
 sbin/exilog_cleanup.pl
 %%PORTDOCS%%%%DOCSDIR%%/Changelog

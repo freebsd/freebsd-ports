@@ -1,5 +1,5 @@
 PORTNAME=	patsy
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.6
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,15 +19,5 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.rst ${STAGEDIR}${DOCSDIR}
-
-post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/_examples/*.py ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

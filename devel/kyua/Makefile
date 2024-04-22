@@ -1,10 +1,10 @@
 PORTNAME=	kyua
 DISTVERSION=	0.13
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	3
 CATEGORIES=	devel
 
-MAINTAINER=	jmmv@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Testing framework for infrastructure software
 WWW=		https://github.com/jmmv/kyua/
 
@@ -15,10 +15,11 @@ LIB_DEPENDS=	liblutok.so:devel/lutok
 USES=		autoreconf lua pkgconfig sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
-GH_TAGNAME=	84c8ec8
+GH_TAGNAME=	c85354e
 USE_CXXSTD=	gnu++11
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--without-doxygen
 MAKE_ARGS=	examplesdir=${EXAMPLESDIR} \

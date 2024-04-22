@@ -1,4 +1,4 @@
 bin/editres
-man/man1/editres.1.gz
+share/man/man1/editres.1.gz
 share/X11/app-defaults/Editres
 share/X11/app-defaults/Editres-color

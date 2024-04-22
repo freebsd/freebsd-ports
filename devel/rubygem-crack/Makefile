@@ -1,5 +1,5 @@
 PORTNAME=	crack
-PORTVERSION=	0.4.5
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -8,12 +8,15 @@ COMMENT=	Ruby Library of Simple JSON and XML Parsing
 WWW=		https://github.com/jnunemaker/crack
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-rexml>=0:textproc/rubygem-rexml
+RUN_DEPENDS=	rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
+		rubygem-rexml>=0:textproc/rubygem-rexml
 
 USES=		cpe gem
-CPE_VENDOR=	john_nunemaker
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	john_nunemaker
 
 .include <bsd.port.mk>

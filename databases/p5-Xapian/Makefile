@@ -1,5 +1,5 @@
 PORTNAME=	Xapian
-PORTVERSION=	1.4.24.0
+PORTVERSION=	1.4.25.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION:R}/ \
 		LOCAL/sunpoet
@@ -40,8 +40,7 @@ PORTSCOUT=	limitw:1,even
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch-DOCS-off:
-	@${REINPLACE_CMD} -e 's| install-dist_exampledataDATA install-docdataDATA||' ${WRKSRC}/perl/Makefile.in
+DOCS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-perl-Makefile.in
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Xapian/Xapian.so

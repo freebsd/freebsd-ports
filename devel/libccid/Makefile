@@ -1,6 +1,5 @@
 PORTNAME=	ccid
-PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTVERSION=	1.5.5
 CATEGORIES=	devel
 MASTER_SITES=	https://ccid.apdu.fr/files/
 

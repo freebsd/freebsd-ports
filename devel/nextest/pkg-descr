@@ -1,0 +1,10 @@
+Nextest is a next-generation test runner for Rust.
+
+Features:
+* Clean interface.
+* Up to 3x as fast as cargo test.
+* Identify slow and leaky tests.
+* Filter tests using an embedded language.
+* Configure per-test overrides.
+* Designed for CI.
+* Cross-platform.

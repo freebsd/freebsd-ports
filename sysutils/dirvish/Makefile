@@ -1,6 +1,6 @@
 PORTNAME=	dirvish
 PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	http://www.dirvish.org/
 
@@ -36,10 +36,10 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${_E} ${STAGEDIR}${PREFIX}/sbin
 .endfor
 .for _M in ${MAN5S}
-	${INSTALL_MAN} ${WRKSRC}/${_M} ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/${_M} ${STAGEDIR}${PREFIX}/share/man/man5
 .endfor
 .for _M in ${MAN8S}
-	${INSTALL_MAN} ${WRKSRC}/${_M} ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/${_M} ${STAGEDIR}${PREFIX}/share/man/man8
 .endfor
 	${INSTALL_DATA} ${FILESDIR}/master.conf.dist ${STAGEDIR}${PREFIX}/etc/dirvish
 	${INSTALL_DATA} ${FILESDIR}/default.conf.dist ${STAGEDIR}${PREFIX}/etc/dirvish

@@ -1,5 +1,6 @@
 PORTNAME=	gftp
 PORTVERSION=	2.9.1b
+PORTREVISION=	1
 CATEGORIES=	ftp
 
 MAINTAINER=	oliver@FreeBSD.org
@@ -19,6 +20,7 @@ GH_ACCOUNT=	masneyb
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CFLAGS+=	-D_WANT_SEMUN
 

@@ -1,6 +1,4 @@
 @sample(inadyn,inadyn,640) etc/inadyn.conf.sample
-man/man5/inadyn.conf.5.gz
-man/man8/inadyn.8.gz
 sbin/inadyn
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.md
@@ -15,5 +13,7 @@ sbin/inadyn
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cloudflare-ipv4-only.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cloudflare-ipv6-only.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/duckdns.conf
+share/man/man5/inadyn.conf.5.gz
+share/man/man8/inadyn.8.gz
 @dir(inadyn,inadyn,) /var/cache/inadyn
 @dir(inadyn,inadyn,) /var/run/inadyn

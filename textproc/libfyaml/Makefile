@@ -1,5 +1,6 @@
 PORTNAME=	libfyaml
 DISTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/pantoniou/libfyaml/releases/download/v${DISTVERSION}/
 
@@ -19,6 +20,7 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	test/testemitter.test
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 

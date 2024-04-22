@@ -2,7 +2,7 @@ PORTNAME=	eglexternalplatform
 DISTVERSION=	1.1
 CATEGORIES=	graphics
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EGL External Platform interface
 WWW=		https://github.com/NVIDIA/eglexternalplatform
 

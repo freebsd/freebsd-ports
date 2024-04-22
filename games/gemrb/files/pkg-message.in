@@ -1,14 +1,24 @@
 [
 { type: install
   message: <<EOM
-To use GemRB, you must copy the Chitin.key from your respective Infinity Engine
-game CD to the GemRB directory.  If you do not copy this file, GemRB will not
-work. Additionally, %%ETCDIR%%/GemRB.cfg needs to be edited to point to the
-Infinity Engine game installation directory. Games can be installed with
-emulators/wine-devel, archivers/unshield, or the custom GemRB game installer:
-http://git.njw.name/cgit/cgit.cgi/gemrb-gameinstallers/
+You will need one of the original Infinity Engine games or the free Baldur's Gate II
+demo. GemRB does not support the Enhanced Edition versions of the games. GemRB comes
+with its own short demo.
 
-Please see http://www.gemrb.org/ for additional help and instructions.
+GemRB needs access to game files. You have several options to provide the files:
+  - copy from a Windows system
+  - install with emulators/wine
+  - extract with archivers/unshield and archivers/cabextract
+    (https://github.com/gemrb/gemrb/wiki/Unshield:-alternative-game-install-method)
+  - use the custom GemRB games installers
+    (http://git.njw.name/cgit/cgit.cgi/gemrb-gameinstallers)
+
+Additionally, %%ETCDIR%%/GemRB.cfg needs to be edited to point to the Infinity
+Engine game installation directory, i.e. the directory where you provide the game
+files from above. If it doesn't point to a valid game directory then GemRB will
+start its demo instead.
+
+Please see https://www.gemrb.org for additional help and instructions.
 EOM
 }
 ]

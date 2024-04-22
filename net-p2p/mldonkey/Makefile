@@ -15,6 +15,11 @@ CONFLICTS=	mldonkey{-{core,gui},}-devel
 BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/nums.cma:math/ocaml-num
 
 USES=		compiler:c++11-lang cpe gmake iconv pkgconfig tar:bzip2
+ARCH!=		uname -p
+.if ${ARCH} == i386
+# `as' is used to compile src/utils/lib/md4_i386.s
+USE_BINUTILS=	yes
+.endif
 USE_CXXSTD=	c++14
 USE_OCAML=	yes
 USE_OCAML_CAMLP4=yes

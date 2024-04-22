@@ -1,0 +1,28 @@
+--- storage/innobase/include/ddl0impl.h.orig	2023-11-24 13:33:10.000000000 +0300
++++ storage/innobase/include/ddl0impl.h	2024-02-16 15:06:59.137578000 +0300
+@@ -118,14 +118,6 @@
+ 
+ /** Physical row context. */
+ struct Row {
+-  /** Constructor. */
+-  Row() = default;
+-
+-  Row(const Row &) = default;
+-
+-  /** Destructor. */
+-  ~Row() = default;
+-
+   Row &operator=(const Row &) = default;
+ 
+   /** Build a row from a raw record.
+--- unittest/gunit/mysys_my_rdtsc-t.cc.orig	2024-02-16 15:08:36.323297000 +0300
++++ unittest/gunit/mysys_my_rdtsc-t.cc	2024-02-16 15:08:40.000582000 +0300
+@@ -145,7 +145,7 @@
+   ulonglong t1 = my_timer_nanoseconds();
+   ulonglong t2;
+   int i;
+-  int backward = 0;
++  int backward [[maybe_unused]] = 0;
+   int nonzero = 0;
+ 
+   for (i = 0; i < LOOP_COUNT; i++) {

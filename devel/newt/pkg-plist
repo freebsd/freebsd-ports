@@ -9,7 +9,7 @@ lib/libnewt.so.%%VERSION%%
 %%TCL%%lib/whip%%VERSION%%/pkgIndex.tcl
 %%TCL%%lib/whip%%VERSION%%/whiptcl.so
 libdata/pkgconfig/libnewt.pc
-man/man1/whiptail.1.gz
+share/man/man1/whiptail.1.gz
 %%NLS%%share/locale/ar/LC_MESSAGES/newt.mo
 %%NLS%%share/locale/as/LC_MESSAGES/newt.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/newt.mo

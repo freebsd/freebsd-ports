@@ -1,5 +1,4 @@
 bin/chromium-bsu
-man/man6/chromium-bsu.6.gz
 share/applications/chromium-bsu.desktop
 share/icons/hicolor/64x64/apps/chromium-bsu.png
 %%NLS%%share/locale/bg/LC_MESSAGES/chromium-bsu.mo
@@ -13,3 +12,4 @@ share/icons/hicolor/64x64/apps/chromium-bsu.png
 %%NLS%%share/locale/tr/LC_MESSAGES/chromium-bsu.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/chromium-bsu.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/chromium-bsu.mo
+share/man/man6/chromium-bsu.6.gz

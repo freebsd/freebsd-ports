@@ -1,0 +1,12 @@
+--- plugins/stockpile/data/abilities/discovery/5c4dd985-89e3-4590-9b57-71fed66ff4e2.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/5c4dd985-89e3-4590-9b57-71fed66ff4e2.yml
+@@ -15,6 +15,6 @@
+     darwin:
+       sh:
+         command: groups
+-    linux:
++    freebsd,linux:
+       sh:
+-        command: groups
+\ No newline at end of file
++        command: groups

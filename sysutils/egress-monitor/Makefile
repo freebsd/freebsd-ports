@@ -1,5 +1,6 @@
 PORTNAME=	egress-monitor
 DISTVERSION=	0.0.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	meka@tilda.center
@@ -16,7 +17,9 @@ SUB_FILES=	pkg-message
 USE_GITHUB=	yes
 GH_ACCOUNT=	mekanix
 
-PLIST_FILES=	man/man1/egress-monitor.1.gz \
-		sbin/egress-monitor
+MAKE_ARGS=	MANDIR="${PREFIX}/share/man/man"
+
+PLIST_FILES=	sbin/egress-monitor \
+		share/man/man1/egress-monitor.1.gz
 
 .include <bsd.port.mk>

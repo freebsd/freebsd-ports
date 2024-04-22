@@ -1,0 +1,109 @@
+%%PYTHON%%bin/bareos-triggerjob.py
+bin/bconsole
+%%PYTHON%%bin/bsmc
+@sample %%ETCDIR%%/bareos-fd.d/client/myself.conf.sample
+@group bareos
+@sample %%ETCDIR%%/bareos-fd.d/director/bareos-dir.conf.sample
+@group bareos
+@sample %%ETCDIR%%/bareos-fd.d/director/bareos-mon.conf.sample
+@group bareos
+@sample %%ETCDIR%%/bareos-fd.d/messages/Standard.conf.sample
+@group bareos
+@sample %%ETCDIR%%/bconsole.d/bconsole.conf.sample
+@group bareos
+%%PYTHON%%@sample(,bareos,640) %%ETCDIR%%/bsmc.conf.sample
+%%PYTHON%%lib/bareos/plugins/BareosFdPluginBaseclass.py
+%%PYTHON%%lib/bareos/plugins/BareosFdPluginLDAP.py
+%%PYTHON%%lib/bareos/plugins/BareosFdPluginLibcloud.py
+%%PYTHON%%lib/bareos/plugins/BareosFdPluginLocalFilesBaseclass.py
+%%PYTHON%%lib/bareos/plugins/BareosFdPluginLocalFileset.py
+%%PYTHON%%lib/bareos/plugins/BareosFdPluginMariabackup.py
+%%PYTHON%%lib/bareos/plugins/BareosFdPluginOvirt.py
+%%PYTHON%%lib/bareos/plugins/BareosFdPluginPerconaXtraBackup.py
+%%PYTHON%%lib/bareos/plugins/BareosFdPluginPostgres.py
+%%PYTHON%%lib/bareos/plugins/BareosFdPluginVMware.py
+%%PYTHON%%lib/bareos/plugins/BareosFdWrapper.py
+%%PYTHON%%lib/bareos/plugins/BareosLibcloudApi.py
+%%PYTHON%%lib/bareos/plugins/bareos-fd-ldap.py
+%%PYTHON%%lib/bareos/plugins/bareos-fd-libcloud.py
+%%PYTHON%%lib/bareos/plugins/bareos-fd-local-fileset.py
+%%PYTHON%%lib/bareos/plugins/bareos-fd-mariabackup.py
+%%PYTHON%%lib/bareos/plugins/bareos-fd-ovirt.py
+%%PYTHON%%lib/bareos/plugins/bareos-fd-percona-xtrabackup.py
+%%PYTHON%%lib/bareos/plugins/bareos-fd-postgres.py
+%%PYTHON%%lib/bareos/plugins/bareos-fd-vmware.py
+%%PYTHON%%lib/bareos/plugins/bareos_libcloud_api/__init__.py
+%%PYTHON%%lib/bareos/plugins/bareos_libcloud_api/bucket_explorer.py
+%%PYTHON%%lib/bareos/plugins/bareos_libcloud_api/debug.py
+%%PYTHON%%lib/bareos/plugins/bareos_libcloud_api/get_libcloud_driver.py
+%%PYTHON%%lib/bareos/plugins/bareos_libcloud_api/mtime.py
+%%PYTHON%%lib/bareos/plugins/bareos_libcloud_api/process_base.py
+%%PYTHON%%lib/bareos/plugins/bareos_libcloud_api/queue_message.py
+%%PYTHON%%lib/bareos/plugins/bareos_libcloud_api/utils.py
+%%PYTHON%%lib/bareos/plugins/bareos_libcloud_api/worker.py
+%%PYTHON%%lib/bareos/plugins/bareos_mysql_dump/BareosFdMySQLclass.py
+%%PYTHON%%lib/bareos/plugins/bareos_mysql_dump/README.md
+%%PYTHON%%lib/bareos/plugins/bareos_mysql_dump/__init__.py
+%%PYTHON%%lib/bareos/plugins/bareos_tasks/BareosFdTaskClass.py
+%%PYTHON%%lib/bareos/plugins/bareos_tasks/LICENSE.md
+%%PYTHON%%lib/bareos/plugins/bareos_tasks/README.md
+%%PYTHON%%lib/bareos/plugins/bareos_tasks/__init__.py
+%%PYTHON%%lib/bareos/plugins/bareos_tasks/mysql/BareosFdMySQLClass.py
+%%PYTHON%%lib/bareos/plugins/bareos_tasks/mysql/README.md
+%%PYTHON%%lib/bareos/plugins/bareos_tasks/mysql/__init__.py
+%%PYTHON%%lib/bareos/plugins/bareos_tasks/oracle/BareosFdOracleClass.py
+%%PYTHON%%lib/bareos/plugins/bareos_tasks/oracle/README.md
+%%PYTHON%%lib/bareos/plugins/bareos_tasks/oracle/__init__.py
+%%PYTHON%%lib/bareos/plugins/bareos_tasks/pgsql/BareosFdPgSQLClass.py
+%%PYTHON%%lib/bareos/plugins/bareos_tasks/pgsql/README.md
+%%PYTHON%%lib/bareos/plugins/bareos_tasks/pgsql/__init__.py
+%%PYTHON%%lib/bareos/plugins/bareos_tasks/xenserver/BareosFdXenServerClass.py
+%%PYTHON%%lib/bareos/plugins/bareos_tasks/xenserver/README.md
+%%PYTHON%%lib/bareos/plugins/bareos_tasks/xenserver/__init__.py
+lib/bareos/plugins/bpipe-fd.so
+%%GFAPI%%lib/bareos/plugins/gfapi-fd.so
+%%PYTHON%%lib/bareos/plugins/python3-fd.so
+%%PYTHON%%lib/bareos/plugins/openvz7/BareosFdPluginVz7CtFs.py
+%%PYTHON%%lib/bareos/plugins/openvz7/README.md
+%%PYTHON%%lib/bareos/plugins/openvz7/bareos-fd-vz7_ct_fs.py
+lib/bareos/scripts/bareos
+lib/bareos/scripts/bareos-config
+lib/bareos/scripts/bareos-config-lib.sh
+lib/bareos/scripts/bareos-ctl-fd
+lib/bareos/scripts/bareos-ctl-funcs
+lib/bareos/scripts/btraceback.dbx
+lib/bareos/scripts/btraceback.gdb
+lib/bareos/scripts/btraceback.mdb
+lib/libbareos.so
+lib/libbareos.so.22
+lib/libbareos.so.%%LIB_VERSION%%
+lib/libbareosfastlz.so
+lib/libbareosfastlz.so.22
+lib/libbareosfastlz.so.%%LIB_VERSION%%
+lib/libbareosfind.so
+lib/libbareosfind.so.22
+lib/libbareosfind.so.%%LIB_VERSION%%
+lib/libbareoslmdb.so
+lib/libbareoslmdb.so.22
+lib/libbareoslmdb.so.%%LIB_VERSION%%
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/bareosfd%%PYTHON_EXT_SUFFIX%%.so
+share/man/man1/bconsole.1.gz
+share/man/man1/bsmtp.1.gz
+share/man/man8/bareos-fd.8.gz
+share/man/man8/bareos.8.gz
+share/man/man8/btraceback.8.gz
+@group bareos
+sbin/bareos
+@group bareos
+sbin/bareos-fd
+@group bareos
+sbin/bconsole
+@group wheel
+sbin/btraceback
+@group bareos
+@dir(,bareos,750) %%ETCDIR%%/python-ldap-conf.d/bareos-dir.d/fileset
+@dir(,bareos,750) %%ETCDIR%%/python-ldap-conf.d/bareos-dir.d/job
+@group bareos
+@dir(bareos,bareos,)  %%BAREOS_DIR%%
+@dir(bareos,bareos,) /var/log/bareos
+@dir(bareos,bareos,) /var/run/bareos

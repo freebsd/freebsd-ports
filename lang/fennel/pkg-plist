@@ -1,8 +1,8 @@
 bin/fennel
-man/man1/fennel.1.gz
-man/man3/fennel-api.3.gz
-man/man5/fennel-reference.5.gz
-man/man7/fennel-tutorial.7.gz
+share/man/man1/fennel.1.gz
+share/man/man3/fennel-api.3.gz
+share/man/man5/fennel-reference.5.gz
+share/man/man7/fennel-tutorial.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/CODE-OF-CONDUCT.md
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md

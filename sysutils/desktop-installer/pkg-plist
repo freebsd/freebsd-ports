@@ -1,4 +1,4 @@
-man/man1/desktop-installer.1.gz
+share/man/man1/desktop-installer.1.gz
 sbin/battery-shutdown.sh
 sbin/desktop-installer
 %%DATADIR%%/CDE/cde.desktop

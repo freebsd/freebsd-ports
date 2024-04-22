@@ -1,0 +1,29 @@
+The certwatch utility monitors X509 certificates expiration dates by
+processing one or more data files containing lists of hostnames with
+optional port numbers.
+
+It's mainly used to check the expiration date of HTTPS certificates
+(which is the default target when the port number is not indicated),
+but the tool is protocol-agnostic and can "talk" to any SNI-aware
+(Server Name Information) SSL/TLS server (smtps, imaps, ldaps, etc.)
+without making too much assumptions on the correctness of servers
+certificates.
+
+The certificates can be saved to a specified directory for further
+analysis with other tools (such as OpenSSL).
+
+The tool's results are presented as text tables.
+
+The main one is the list of certificates successfully fetched, ordered
+by expiration date. This list can be filtered to only show
+certificates expired or expiring within the specified number of days.
+
+The second table is the sorted list of hostnames / hostports where
+certificates couldn't be fetched, with our best attempts to identify
+the reason why.
+
+Two additional tables can be generated in order to print the common
+names and alternate names unmentioned in your input data files.
+
+Finally, for user convenience, all these reports can be generated in a
+single multi-tabs Excel workbook.

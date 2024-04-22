@@ -2,9 +2,8 @@ PORTNAME=	agrep
 PORTVERSION=	2.04
 PORTREVISION=	3
 CATEGORIES=	textproc
-MASTER_SITES=	GENTOO \
-		ftp://ftp.cs.arizona.edu/agrep/ \
-		ftp://ftp.cs.arizona.edu/agrep/:doc
+MASTER_SITES=	ftp://ftp.dinoex.org/pub/agrep/ \
+		ftp://ftp.dinoex.org/pub/agrep/:doc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		agrep.ps.1.Z:doc agrep.ps.2.Z:doc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

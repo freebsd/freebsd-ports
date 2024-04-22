@@ -1,5 +1,6 @@
 PORTNAME=	ecce
 DISTVERSION=	2.9d
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.ml1.org.uk/distfiles/ \
 		http://www.ancientgeek.org.uk/distfiles/
@@ -14,7 +15,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ecce ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ecce.1.gz ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/ecce.1.gz ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

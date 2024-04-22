@@ -114,6 +114,8 @@ include/folly/base64.h
 include/folly/chrono/Clock.h
 include/folly/chrono/Conv.h
 include/folly/chrono/Hardware.h
+include/folly/cli/NestedCommandLineApp.h
+include/folly/cli/ProgramOptions.h
 include/folly/compression/Compression.h
 include/folly/compression/CompressionContextPool.h
 include/folly/compression/CompressionContextPoolSingletons.h
@@ -164,6 +166,7 @@ include/folly/container/detail/F14Table.h
 include/folly/container/detail/Util.h
 include/folly/container/detail/tape_detail.h
 include/folly/container/heap_vector_types.h
+include/folly/container/range_traits.h
 include/folly/container/tape.h
 include/folly/container/test/F14TestUtil.h
 include/folly/container/test/TrackingTypes.h
@@ -199,6 +202,7 @@ include/folly/detail/SplitStringSimdImpl.h
 include/folly/detail/Sse.h
 include/folly/detail/StaticSingletonManager.h
 include/folly/detail/ThreadLocalDetail.h
+include/folly/detail/TrapOnAvx512.h
 include/folly/detail/TurnSequencer.h
 include/folly/detail/TypeList.h
 include/folly/detail/UniqueInstance.h
@@ -261,7 +265,6 @@ include/folly/experimental/BitVectorCoding.h
 include/folly/experimental/Bits.h
 include/folly/experimental/Cleanup.h
 include/folly/experimental/CodingDetail.h
-include/folly/experimental/Coinflip.h
 include/folly/experimental/DynamicParser-inl.h
 include/folly/experimental/DynamicParser.h
 include/folly/experimental/EliasFanoCoding.h
@@ -287,12 +290,6 @@ include/folly/experimental/STTimerFDTimeoutManager.h
 include/folly/experimental/Select64.h
 include/folly/experimental/SingleWriterFixedHashMap.h
 include/folly/experimental/SingletonRelaxedCounter.h
-include/folly/experimental/StampedPtr.h
-include/folly/experimental/StringKeyedCommon.h
-include/folly/experimental/StringKeyedMap.h
-include/folly/experimental/StringKeyedSet.h
-include/folly/experimental/StringKeyedUnorderedMap.h
-include/folly/experimental/StringKeyedUnorderedSet.h
 include/folly/experimental/TLRefCount.h
 include/folly/experimental/TestUtil.h
 include/folly/experimental/ThreadedRepeatingFunctionRunner.h
@@ -340,9 +337,12 @@ include/folly/experimental/coro/AsyncGenerator.h
 include/folly/experimental/coro/AsyncPipe.h
 include/folly/experimental/coro/AsyncScope.h
 include/folly/experimental/coro/AsyncStack.h
+include/folly/experimental/coro/AutoCleanup-fwd.h
+include/folly/experimental/coro/AutoCleanup.h
 include/folly/experimental/coro/Baton.h
 include/folly/experimental/coro/BlockingWait.h
 include/folly/experimental/coro/BoundedQueue.h
+include/folly/experimental/coro/Cleanup.h
 include/folly/experimental/coro/Collect-inl.h
 include/folly/experimental/coro/Collect.h
 include/folly/experimental/coro/Concat-inl.h
@@ -408,6 +408,7 @@ include/folly/experimental/io/AsyncIoUringSocket.h
 include/folly/experimental/io/AsyncIoUringSocketFactory.h
 include/folly/experimental/io/Epoll.h
 include/folly/experimental/io/EpollBackend.h
+include/folly/experimental/io/EventBasePoller.h
 include/folly/experimental/io/FsUtil.h
 include/folly/experimental/io/HugePages.h
 include/folly/experimental/io/IoUring.h
@@ -415,6 +416,7 @@ include/folly/experimental/io/IoUringBase.h
 include/folly/experimental/io/IoUringBackend.h
 include/folly/experimental/io/IoUringEvent.h
 include/folly/experimental/io/IoUringEventBaseLocal.h
+include/folly/experimental/io/IoUringProvidedBufferRing.h
 include/folly/experimental/io/Liburing.h
 include/folly/experimental/io/MuxIOThreadPoolExecutor.h
 include/folly/experimental/io/SimpleAsyncIO.h
@@ -454,6 +456,8 @@ include/folly/experimental/symbolizer/Symbolizer.h
 include/folly/experimental/symbolizer/detail/Debug.h
 include/folly/ext/test_ext.h
 include/folly/external/farmhash/farmhash.h
+include/folly/external/fast-crc32/avx512_crc32c_v8s3x4.h
+include/folly/external/fast-crc32/sse_crc32c_v8s3x3.h
 include/folly/fibers/AddTasks-inl.h
 include/folly/fibers/AddTasks.h
 include/folly/fibers/AtomicBatchDispatcher-inl.h
@@ -634,6 +638,17 @@ include/folly/io/async/test/Util.h
 include/folly/io/coro/ServerSocket.h
 include/folly/io/coro/Transport.h
 include/folly/io/coro/TransportCallbackBase.h
+include/folly/json/DynamicConverter.h
+include/folly/json/DynamicParser-inl.h
+include/folly/json/DynamicParser.h
+include/folly/json/JSONSchema.h
+include/folly/json/JsonMockUtil.h
+include/folly/json/JsonTestUtil.h
+include/folly/json/dynamic-inl.h
+include/folly/json/dynamic.h
+include/folly/json/json.h
+include/folly/json/json_patch.h
+include/folly/json/json_pointer.h
 include/folly/json.h
 include/folly/json_patch.h
 include/folly/json_pointer.h
@@ -644,7 +659,6 @@ include/folly/lang/Assume.h
 include/folly/lang/Badge.h
 include/folly/lang/Bits.h
 include/folly/lang/Builtin.h
-include/folly/lang/Byte.h
 include/folly/lang/CArray.h
 include/folly/lang/CString.h
 include/folly/lang/Cast.h
@@ -655,7 +669,6 @@ include/folly/lang/Extern.h
 include/folly/lang/Hint-inl.h
 include/folly/lang/Hint.h
 include/folly/lang/Keep.h
-include/folly/lang/Launder.h
 include/folly/lang/New.h
 include/folly/lang/Ordering.h
 include/folly/lang/Pretty.h
@@ -700,7 +713,6 @@ include/folly/logging/StreamHandlerFactory.h
 include/folly/logging/xlog.h
 include/folly/memory/Arena-inl.h
 include/folly/memory/Arena.h
-include/folly/memory/EnableSharedFromThis.h
 include/folly/memory/MallctlHelper.h
 include/folly/memory/Malloc.h
 include/folly/memory/MemoryResource.h
@@ -761,6 +773,7 @@ include/folly/portability/Syslog.h
 include/folly/portability/Time.h
 include/folly/portability/Unistd.h
 include/folly/portability/Windows.h
+include/folly/portability/openat2.h
 include/folly/python/AsyncioExecutor.h
 include/folly/python/async_generator.h
 include/folly/python/coro.h
@@ -771,17 +784,16 @@ include/folly/python/import.h
 include/folly/python/iobuf.h
 include/folly/small_vector.h
 include/folly/sorted_vector_types.h
-include/folly/ssl/Init.h
 include/folly/ssl/OpenSSLCertUtils.h
 include/folly/ssl/OpenSSLHash.h
-include/folly/ssl/OpenSSLLockTypes.h
+include/folly/ssl/OpenSSLKeyUtils.h
 include/folly/ssl/OpenSSLPtrTypes.h
 include/folly/ssl/OpenSSLTicketHandler.h
 include/folly/ssl/OpenSSLVersionFinder.h
+include/folly/ssl/PasswordCollector.h
 include/folly/ssl/SSLSession.h
 include/folly/ssl/SSLSessionManager.h
 include/folly/ssl/detail/OpenSSLSession.h
-include/folly/ssl/detail/OpenSSLThreading.h
 include/folly/stats/BucketedTimeSeries-inl.h
 include/folly/stats/BucketedTimeSeries.h
 include/folly/stats/DigestBuilder-inl.h
@@ -863,7 +875,6 @@ include/folly/system/Shell.h
 include/folly/system/ThreadId.h
 include/folly/system/ThreadName.h
 include/folly/test/DeterministicSchedule.h
-include/folly/test/JsonTestUtil.h
 include/folly/test/TestUtils.h
 include/folly/tracing/AsyncStack-inl.h
 include/folly/tracing/AsyncStack.h

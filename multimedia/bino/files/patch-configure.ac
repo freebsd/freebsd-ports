@@ -1,0 +1,10 @@
+--- configure.ac.orig	2016-12-16 08:05:02 UTC
++++ configure.ac
+@@ -35,6 +35,7 @@ AC_PROG_CXX
+ AM_INIT_AUTOMAKE([1.11.1 color-tests silent-rules tar-pax no-texinfo.tex -Wall -Wno-portability])
+ AM_SILENT_RULES([yes])
+ AC_PROG_CXX
++AC_PROG_GREP
+ AC_PROG_INSTALL
+ AC_PROG_RANLIB
+ AC_PROG_LN_S

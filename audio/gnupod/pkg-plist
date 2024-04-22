@@ -19,13 +19,6 @@ bin/tunes2pod.pl
 %%SITE_PERL%%/GNUpod/QTfile.pm
 %%SITE_PERL%%/GNUpod/SysInfo.pm
 %%SITE_PERL%%/GNUpod/XMLhelper.pm
-man/man1/gnupod_INIT.pl.1.gz
-man/man1/gnupod_addsong.pl.1.gz
-man/man1/gnupod_check.pl.1.gz
-man/man1/gnupod_otgsync.pl.1.gz
-man/man1/gnupod_search.pl.1.gz
-man/man1/mktunes.pl.1.gz
-man/man1/tunes2pod.pl.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/fdl.texi
 %%PORTDOCS%%%%DOCSDIR%%/gnupod.html
@@ -35,3 +28,10 @@ man/man1/tunes2pod.pl.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ipod.svg
 %%PORTDOCS%%%%DOCSDIR%%/mkspl.html
 %%PORTDOCS%%%%DOCSDIR%%/version.texi
+share/man/man1/gnupod_INIT.pl.1.gz
+share/man/man1/gnupod_addsong.pl.1.gz
+share/man/man1/gnupod_check.pl.1.gz
+share/man/man1/gnupod_otgsync.pl.1.gz
+share/man/man1/gnupod_search.pl.1.gz
+share/man/man1/mktunes.pl.1.gz
+share/man/man1/tunes2pod.pl.1.gz

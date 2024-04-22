@@ -1,6 +1,6 @@
 PORTNAME=	openprinting
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print net
 MASTER_SITES=	SF/openprinting/papi/1.0%20Beta
 DISTNAME=	papi-${PORTVERSION}_beta
@@ -14,6 +14,7 @@ USES=		gettext gmake iconv libtool localbase tar:bzip2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
@@ -75,7 +76,7 @@ PLIST_FILES+=\
 	libexec/lpd-port \
 	libexec/psm-ipp.so \
 	libexec/psm-lpd.so \
-	man/man5/psm-ipp.5.gz
+	share/man/man5/psm-ipp.5.gz
 
 .if defined(WITH_PSM_CUPS)
 PLIST_FILES+=	libexec/psm-cups.so
@@ -94,7 +95,7 @@ post-patch:
 		${WRKSRC}/source/libpapi-dynamic/Makefile.in
 
 post-install:
-.for unneeded in bin sbin man/man1 man/mani share
+.for unneeded in bin sbin share/examples share/man/man1 share/man/mani
 	@${RM} -r ${STAGEDIR}${PREFIX}/${unneeded}
 .endfor
 

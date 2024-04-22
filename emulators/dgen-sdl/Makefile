@@ -1,6 +1,6 @@
 PORTNAME=	dgen-sdl
 PORTVERSION=	1.33
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
 MASTER_SITES=	SF/dgen/dgen/${PORTVERSION}
 
@@ -10,27 +10,16 @@ WWW=		https://dgen.sourceforge.net/
 
 USE_SDL=	sdl
 USE_GL=		glu
-USES=		gl gmake libarchive sdl
+USES=		gl gmake sdl
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+
+CONFIGURE_ARGS+=	--disable-asm
 
 PLIST_FILES=	bin/dgen \
 		bin/dgen_tobin \
-		man/man1/dgen.1.gz \
-		man/man1/dgen_tobin.1.gz \
-		man/man5/dgenrc.5.gz
+		share/man/man1/dgen.1.gz \
+		share/man/man1/dgen_tobin.1.gz \
+		share/man/man5/dgenrc.5.gz
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == i386
-BUILD_DEPENDS+=	nasm:devel/nasm
-.else
-CONFIGURE_ARGS+=	--disable-asm
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e '/@NASM@/s/--//' \
-		${WRKSRC}/Makefile.in \
-		${WRKSRC}/mz80/Makefile.in \
-		${WRKSRC}/star/Makefile.in
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

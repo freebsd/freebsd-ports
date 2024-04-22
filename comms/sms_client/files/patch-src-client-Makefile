@@ -1,9 +1,0 @@
---- src/client/Makefile.orig	2014-04-24 11:08:01.111278611 -0700
-+++ src/client/Makefile	2014-04-24 11:08:12.588472500 -0700
-@@ -20,7 +20,6 @@
- all: ../../bin/sms_client ../../bin/sms_address
-
- install: ../../bin/sms_client ../../bin/sms_address
--	$(INSTALL) -o $(SMSUSER) -g $(SMSGROUP) -m 755 -d $(BINDIR)
- 	$(INSTALL) -o $(SMSUSER) -g $(SMSGROUP) -m 755 -s ../../bin/sms_client $(BINDIR)
- 	$(INSTALL) -o $(SMSUSER) -g $(SMSGROUP) -m 755 -s ../../bin/sms_address $(BINDIR)

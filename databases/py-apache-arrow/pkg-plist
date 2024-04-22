@@ -1,9 +1,9 @@
-%%PYTHON_SITELIBDIR%%/pyarrow-13.0.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/pyarrow-13.0.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/pyarrow-13.0.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/pyarrow-13.0.0-py%%PYTHON_VER%%.egg-info/not-zip-safe
-%%PYTHON_SITELIBDIR%%/pyarrow-13.0.0-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/pyarrow-13.0.0-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/pyarrow-15.0.2-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/pyarrow-15.0.2-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/pyarrow-15.0.2-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/pyarrow-15.0.2-py%%PYTHON_VER%%.egg-info/not-zip-safe
+%%PYTHON_SITELIBDIR%%/pyarrow-15.0.2-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/pyarrow-15.0.2-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/pyarrow/__init__.pxd
 %%PYTHON_SITELIBDIR%%/pyarrow/__init__.py
 %%PYTHON_SITELIBDIR%%/pyarrow/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -68,7 +68,10 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/_dataset.pxd
 %%PYTHON_SITELIBDIR%%/pyarrow/_dataset.pyx
 %%PYTHON_SITELIBDIR%%/pyarrow/_dataset_orc.pyx
+%%PYTHON_SITELIBDIR%%/pyarrow/_dataset_parquet.pxd
 %%PYTHON_SITELIBDIR%%/pyarrow/_dataset_parquet.pyx
+%%PYTHON_SITELIBDIR%%/pyarrow/_dataset_parquet_encryption.pyx
+%%PYTHON_SITELIBDIR%%/pyarrow/_dlpack.pxi
 %%PYTHON_SITELIBDIR%%/pyarrow/_feather%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/pyarrow/_feather.pyx
 %%PYTHON_SITELIBDIR%%/pyarrow/_flight.pyx
@@ -118,6 +121,7 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/acero/aggregate_node.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/acero/api.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/acero/asof_join_node.h
+%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/acero/backpressure_handler.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/acero/benchmark_util.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/acero/bloom_filter.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/acero/exec_plan.h
@@ -133,8 +137,10 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/acero/schema_util.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/acero/task_util.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/acero/test_nodes.h
+%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/acero/time_series_util.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/acero/tpch_node.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/acero/type_fwd.h
+%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/acero/unmaterialized_table.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/acero/util.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/acero/visibility.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/api.h
@@ -166,6 +172,8 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/builder.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/c/abi.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/c/bridge.h
+%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/c/dlpack.h
+%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/c/dlpack_abi.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/c/helpers.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/chunk_resolver.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/chunked_array.h
@@ -178,6 +186,7 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/compute/exec.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/compute/expression.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/compute/function.h
+%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/compute/function_options.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/compute/kernel.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/compute/key_hash.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/compute/key_map.h
@@ -210,6 +219,7 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/dataset/file_json.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/dataset/file_orc.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/dataset/file_parquet.h
+%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/dataset/parquet_encryption_config.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/dataset/partition.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/dataset/pch.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/dataset/plan.h
@@ -222,6 +232,7 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/extension/fixed_shape_tensor.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/extension_type.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/filesystem/api.h
+%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/filesystem/azurefs.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/filesystem/filesystem.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/filesystem/gcsfs.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/filesystem/hdfs.h
@@ -276,6 +287,7 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/pretty_print.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/python/api.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/python/arrow_to_pandas.h
+%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/python/async.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/python/benchmark.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/python/common.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/python/csv.h
@@ -329,7 +341,6 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/testing/generator.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/testing/gtest_compat.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/testing/gtest_util.h
-%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/testing/json_integration.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/testing/matchers.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/testing/pch.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/testing/random.h
@@ -348,6 +359,7 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/base64.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/basic_decimal.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/benchmark_util.h
+%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/binary_view_util.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/bit_block_counter.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/bit_run_reader.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/bit_stream_utils.h
@@ -366,12 +378,7 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/bpacking_avx512.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/bpacking_default.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/bpacking_neon.h
-%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/bpacking_simd128_generated.h
-%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/bpacking_simd256_generated.h
-%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/bpacking_simd512_generated.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/byte_size.h
-%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/byte_stream_split.h
-%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/bytes_view.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/cancel.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/checked_cast.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/compare.h
@@ -385,9 +392,11 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/debug.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/decimal.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/delimiting.h
+%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/dict_util.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/dispatch.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/double_conversion.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/endian.h
+%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/float16.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/formatting.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/functional.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/future.h
@@ -399,6 +408,7 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/iterator.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/key_value_metadata.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/launder.h
+%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/list_util.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/logging.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/macros.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/map.h
@@ -418,6 +428,7 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/small_vector.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/sort.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/spaced.h
+%%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/span.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/stopwatch.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/string.h
 %%PYTHON_SITELIBDIR%%/pyarrow/include/arrow/util/string_builder.h
@@ -486,6 +497,7 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/includes/libarrow_python.pxd
 %%PYTHON_SITELIBDIR%%/pyarrow/includes/libarrow_substrait.pxd
 %%PYTHON_SITELIBDIR%%/pyarrow/includes/libgandiva.pxd
+%%PYTHON_SITELIBDIR%%/pyarrow/includes/libparquet_encryption.pxd
 %%PYTHON_SITELIBDIR%%/pyarrow/interchange/__init__.py
 %%PYTHON_SITELIBDIR%%/pyarrow/interchange/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/interchange/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
@@ -532,6 +544,7 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/src/arrow/python/arrow_to_pandas.cc
 %%PYTHON_SITELIBDIR%%/pyarrow/src/arrow/python/arrow_to_pandas.h
 %%PYTHON_SITELIBDIR%%/pyarrow/src/arrow/python/arrow_to_python_internal.h
+%%PYTHON_SITELIBDIR%%/pyarrow/src/arrow/python/async.h
 %%PYTHON_SITELIBDIR%%/pyarrow/src/arrow/python/benchmark.cc
 %%PYTHON_SITELIBDIR%%/pyarrow/src/arrow/python/benchmark.h
 %%PYTHON_SITELIBDIR%%/pyarrow/src/arrow/python/common.cc
@@ -595,6 +608,8 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/arrow_16597%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/arrow_16597%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/arrow_39313%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/arrow_39313%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/arrow_7980%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/arrow_7980%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/conftest%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -633,8 +648,12 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_cython%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_dataset%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_dataset%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_dataset_encryption%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_dataset_encryption%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_deprecations%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_deprecations%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_dlpack%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_dlpack%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_exec_plan%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_exec_plan%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_extension_type%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -645,6 +664,8 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_filesystem%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_flight%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_flight%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_flight_async%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_flight_async%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_fs%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_fs%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/test_gandiva%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -692,6 +713,7 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/util%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/__pycache__/util%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/arrow_16597.py
+%%PYTHON_SITELIBDIR%%/pyarrow/tests/arrow_39313.py
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/arrow_7980.py
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/bound_function_visit_strings.pyx
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/conftest.py
@@ -779,12 +801,15 @@
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/test_cuda_numba_interop.py
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/test_cython.py
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/test_dataset.py
+%%PYTHON_SITELIBDIR%%/pyarrow/tests/test_dataset_encryption.py
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/test_deprecations.py
+%%PYTHON_SITELIBDIR%%/pyarrow/tests/test_dlpack.py
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/test_exec_plan.py
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/test_extension_type.py
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/test_feather.py
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/test_filesystem.py
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/test_flight.py
+%%PYTHON_SITELIBDIR%%/pyarrow/tests/test_flight_async.py
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/test_fs.py
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/test_gandiva.py
 %%PYTHON_SITELIBDIR%%/pyarrow/tests/test_gdb.py

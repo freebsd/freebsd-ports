@@ -1,6 +1,6 @@
---- media/gpu/sandbox/hardware_video_decoding_sandbox_hook_linux.cc.orig	2023-07-21 09:49:17 UTC
+--- media/gpu/sandbox/hardware_video_decoding_sandbox_hook_linux.cc.orig	2024-03-22 14:16:19 UTC
 +++ media/gpu/sandbox/hardware_video_decoding_sandbox_hook_linux.cc
-@@ -15,7 +15,9 @@
+@@ -16,7 +16,9 @@
  #include "media/gpu/vaapi/vaapi_wrapper.h"
  #endif
  
@@ -10,7 +10,7 @@
  
  // TODO(b/195769334): the hardware video decoding sandbox is really only useful
  // when building with VA-API or V4L2 (otherwise, we're not really doing hardware
-@@ -31,6 +33,7 @@ using sandbox::syscall_broker::BrokerFilePermission;
+@@ -32,6 +34,7 @@ using sandbox::syscall_broker::BrokerFilePermission;
  namespace media {
  namespace {
  
@@ -18,7 +18,7 @@
  void AllowAccessToRenderNodes(std::vector<BrokerFilePermission>& permissions,
                                bool include_sys_dev_char,
                                bool read_write) {
-@@ -165,6 +168,7 @@ bool HardwareVideoDecodingPreSandboxHookForV4L2(
+@@ -166,6 +169,7 @@ bool HardwareVideoDecodingPreSandboxHookForV4L2(
    NOTREACHED_NORETURN();
  #endif  // BUILDFLAG(USE_V4L2_CODEC)
  }
@@ -26,7 +26,7 @@
  
  }  // namespace
  
-@@ -180,6 +184,7 @@ bool HardwareVideoDecodingPreSandboxHookForV4L2(
+@@ -181,6 +185,7 @@ bool HardwareVideoDecodingPreSandboxHookForV4L2(
  //   (at least).
  bool HardwareVideoDecodingPreSandboxHook(
      sandbox::policy::SandboxLinux::Options options) {
@@ -34,7 +34,7 @@
    using HardwareVideoDecodingProcessPolicy =
        sandbox::policy::HardwareVideoDecodingProcessPolicy;
    using PolicyType =
-@@ -217,6 +222,7 @@ bool HardwareVideoDecodingPreSandboxHook(
+@@ -227,6 +232,7 @@ bool HardwareVideoDecodingPreSandboxHook(
    sandbox::policy::SandboxLinux::GetInstance()->StartBrokerProcess(
        command_set, permissions, sandbox::policy::SandboxLinux::PreSandboxHook(),
        options);

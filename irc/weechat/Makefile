@@ -1,5 +1,5 @@
 PORTNAME=	weechat
-PORTVERSION=	4.1.2
+PORTVERSION=	4.2.2
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
@@ -54,7 +54,7 @@ ICONV_USES=		iconv
 JAVASCRIPT_LIB_DEPENDS=	libv8.so:lang/v8
 LUA_USES=		lua pkgconfig
 MANPAGES_CMAKE_BOOL=	ENABLE_MAN
-MANPAGES_CMAKE_ON=	-DMANDIR=${MANPREFIX}/man
+MANPAGES_CMAKE_ON=	-DMANDIR=${PREFIX}/share/man
 MANPAGES_BUILD_DEPENDS=	${LOCALBASE}/bin/asciidoctor:textproc/rubygem-asciidoctor
 NLS_USES=		gettext
 PERL_USES=		perl5
@@ -67,11 +67,6 @@ TCL_USES=		tcl
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 .include <bsd.port.pre.mk>
-
-.if !empty(PORT_OPTIONS:MPYTHON) && ${PYTHON_MAJOR_VER} == 2
-CMAKE_ARGS+=	-DENABLE_PYTHON2:BOOL=true \
-#		-DPYTHON_LIBRARIES=${LOCALBASE}/lib
-.endif
 
 post-patch:
 .if ${LOCALBASE} != "/usr/local"

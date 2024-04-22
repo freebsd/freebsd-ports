@@ -1,0 +1,7 @@
+Weasel lets you manage and share end-to-end workflows for different use cases
+and domains, and orchestrate training, packaging and serving your custom
+pipelines. You can start off by cloning a pre-defined project template, adjust
+it to fit your needs, load in your data, train a pipeline, export it as a Python
+package, upload your outputs to a remote storage and share your results with
+your team. Weasel can be used via the weasel command and we provide templates in
+our projects repo.

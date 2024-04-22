@@ -57,7 +57,16 @@ include/libremidi/backends/jack/shared_handler.hpp
 include/libremidi/backends/linux/alsa.hpp
 include/libremidi/backends/linux/dylib_loader.hpp
 include/libremidi/backends/linux/helpers.hpp
+include/libremidi/backends/linux/pipewire.hpp
 include/libremidi/backends/linux/udev.hpp
+include/libremidi/backends/pipewire.hpp
+include/libremidi/backends/pipewire/config.hpp
+include/libremidi/backends/pipewire/context.hpp
+include/libremidi/backends/pipewire/helpers.hpp
+include/libremidi/backends/pipewire/midi_in.hpp
+include/libremidi/backends/pipewire/midi_out.hpp
+include/libremidi/backends/pipewire/observer.hpp
+include/libremidi/backends/pipewire/shared_handler.hpp
 include/libremidi/backends/winmidi.hpp
 include/libremidi/backends/winmidi/config.hpp
 include/libremidi/backends/winmidi/helpers.hpp
@@ -82,11 +91,14 @@ include/libremidi/cmidi2.hpp
 include/libremidi/config.hpp
 include/libremidi/configurations.hpp
 include/libremidi/defaults.hpp
+include/libremidi/detail/memory.hpp
 include/libremidi/detail/midi_api.hpp
 include/libremidi/detail/midi_in.hpp
 include/libremidi/detail/midi_out.hpp
 include/libremidi/detail/midi_stream_decoder.hpp
 include/libremidi/detail/observer.hpp
+include/libremidi/detail/semaphore.hpp
+include/libremidi/detail/ump_stream.hpp
 include/libremidi/error.hpp
 include/libremidi/input_configuration.hpp
 include/libremidi/libremidi.cpp
@@ -108,3 +120,4 @@ lib/cmake/libremidi/libremidi-config.cmake
 lib/cmake/libremidi/libremidi-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/libremidi/libremidi-targets.cmake
 lib/liblibremidi.so
+lib/liblibremidi.so.4.5.0

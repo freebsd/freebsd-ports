@@ -1,6 +1,6 @@
 PORTNAME=	xdx
 DISTVERSION=	2.91
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/xdxclusterclient/${PORTVERSION}/
 
@@ -17,5 +17,6 @@ USES=		gettext gmake gnome pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 .include <bsd.port.mk>

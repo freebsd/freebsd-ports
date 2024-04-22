@@ -1,5 +1,6 @@
 PORTNAME=	evtest
 DISTVERSION=	1.35
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -14,6 +15,7 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev
 
 USES=		autoreconf localbase
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org/
 GL_ACCOUNT=	libevdev
@@ -28,6 +30,6 @@ OPTIONS_DEFAULT=	MANPAGES
 
 MANPAGES_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 			xmlto:textproc/xmlto
-MANPAGES_PLIST_FILES=	man/man1/evtest.1.gz
+MANPAGES_PLIST_FILES=	share/man/man1/evtest.1.gz
 
 .include <bsd.port.mk>

@@ -52,12 +52,12 @@ if [ -n "${GROUPS}" ]; then
 			error "** ${file} doesn't exist. Exiting."
 		fi
 	done
-	${dp_ECHO_MSG} "===> Creating groups."
-	echo "echo \"===> Creating groups.\"" >> "${dp_UG_INSTALL}"
+	${dp_ECHO_MSG} "===> Creating groups"
+	echo "echo \"===> Creating groups\"" >> "${dp_UG_INSTALL}"
 	for group in ${GROUPS}; do
 		# _bgpd:*:130:
 		if ! grep -q "^${group}:" ${dp_GID_FILES}; then \
-			error "** Cannot find any information about group \`${group}' in ${dp_GID_FILES}."
+			error "** Cannot find any information about group \`${group}' in ${dp_GID_FILES}"
 		fi
 		while read -r line; do
 			# Do not change IFS for more than one command, if we
@@ -75,10 +75,10 @@ if [ -n "${GROUPS}" ]; then
 			gid=$((gid+dp_GID_OFFSET))
 			cat >> "${dp_UG_INSTALL}" <<-eot2
 			if ! \${PW} groupshow $group >/dev/null 2>&1; then
-			  echo "Creating group '$group' with gid '$gid'."
+			  echo "Creating group '$group' with gid '$gid'"
 			  \${PW} groupadd $group -g $gid
 			else
-			  echo "Using existing group '$group'."
+			  echo "Using existing group '$group'"
 			fi
 			eot2
 		done <<-eot
@@ -100,7 +100,7 @@ if [ -n "${USERS}" ]; then
 	for user in ${USERS}; do
 		# _bgpd:*:130:130:BGP Daemon:/var/empty:/sbin/nologin
 		if ! grep -q "^${user}:" ${dp_UID_FILES} ; then
-			error "** Cannot find any information about user \`${user}' in ${dp_UID_FILES}."
+			error "** Cannot find any information about user \`${user}' in ${dp_UID_FILES}"
 		fi
 		while read -r line; do
 			# Do not change IFS for more than one command, if we
@@ -128,10 +128,10 @@ if [ -n "${USERS}" ]; then
 			homedir=$(echo "$homedir" | sed "s|^/usr/local|${dp_PREFIX}|")
 			cat >> "${dp_UG_INSTALL}" <<-eot2
 			if ! \${PW} usershow $login >/dev/null 2>&1; then
-			  echo "Creating user '$login' with uid '$uid'."
+			  echo "Creating user '$login' with uid '$uid'"
 			  \${PW} useradd $login -u $uid -g $gid $class -c "$gecos" -d $homedir -s $shell
 			else
-			  echo "Using existing user '$login'."
+			  echo "Using existing user '$login'"
 			fi
 			eot2
 			case $homedir in
@@ -184,7 +184,7 @@ if [ -n "${GROUPS}" ]; then
 					if [ -n "${user}" ] && [ "${user}" = "${login}" ]; then
 						cat >> "${dp_UG_INSTALL}" <<-eot2
 						if ! \${PW} groupshow ${group} | grep -qw ${login}; then
-						  echo "Adding user '${login}' to group '${group}'."
+						  echo "Adding user '${login}' to group '${group}'"
 						  \${PW} groupmod ${group} -m ${login}
 						fi
 						eot2
@@ -202,7 +202,7 @@ if [ -n "${USERS}" ]; then
 		if ! echo "${dp_USERS_BLACKLIST}" | grep -qw "${user}"; then
 			cat >> "${dp_UG_DEINSTALL}" <<-eot
 			if \${PW} usershow ${user} >/dev/null 2>&1; then
-			  echo "==> You should manually remove the \"${user}\" user. "
+			  echo "==> You should manually remove the \"${user}\" user"
 			fi
 			eot
 		fi
@@ -214,7 +214,7 @@ if [ -n "${GROUPS}" ]; then
 		if ! echo "${dp_GROUPS_BLACKLIST}" | grep -qw "${group}"; then
 			cat >> "${dp_UG_DEINSTALL}" <<-eot
 			if \${PW} groupshow ${group} >/dev/null 2>&1; then
-			  echo "==> You should manually remove the \"${group}\" group "
+			  echo "==> You should manually remove the \"${group}\" group"
 			fi
 			eot
 		fi

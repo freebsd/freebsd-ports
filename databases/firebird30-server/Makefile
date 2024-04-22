@@ -1,10 +1,9 @@
 PORTNAME=	firebird
-PORTVERSION=	3.0.10
-PORTREVISION=	4
+PORTVERSION=	3.0.11
 CATEGORIES?=	databases
 MASTER_SITES=	https://github.com/FirebirdSQL/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
-DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.33601-0
+DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.33703-0
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
@@ -23,7 +22,7 @@ LICENSE_PERMS_IPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libtommath.so:math/libtommath
 
-CONFLICTS_INSTALL=	firebird25 firebird40
+CONFLICTS_INSTALL=	firebird40
 
 USES=		cpe gmake pkgconfig localbase:ldflags libedit tar:bzip2
 USE_CXXSTD=	gnu++03

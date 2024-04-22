@@ -1,4 +1,4 @@
 @sample etc/freevrrpd.conf.sample
 etc/rc.d/freevrrpd
-man/man8/freevrrpd.8.gz
+share/man/man8/freevrrpd.8.gz
 sbin/freevrrpd

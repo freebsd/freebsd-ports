@@ -1,12 +1,12 @@
 PORTNAME=	py3status
-PORTVERSION=	3.54
+PORTVERSION=	3.57
 CATEGORIES=	deskutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extensible i3status wrapper written in python
-WWW=		https://py3status.readthedocs.io/en/latest/ \
+WWW=		https://ultrabug.github.io/py3status/ \
 		https://github.com/ultrabug/py3status
 
 LICENSE=	BSD3CLAUSE
@@ -24,4 +24,10 @@ UDEV_DESC=	UDEV support
 
 UDEV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyudev>=0.21.0:devel/py-pyudev@${PY_FLAVOR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 31200
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	ssldump
 PORTVERSION=	0.9b3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net security
 MASTER_SITES=	SF
 PATCHFILES=	2-ssldump-tls12.diff
@@ -16,7 +16,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} \
 		--sbindir=${PREFIX}/bin
 
-PLIST_FILES=	bin/ssldump man/man1/ssldump.1.gz
+PLIST_FILES=	bin/ssldump share/man/man1/ssldump.1.gz
 
 OPTIONS_DEFINE=	AES
 
@@ -32,6 +32,6 @@ CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ssldump ${STAGEDIR}${PREFIX}/bin/ssldump
-	${INSTALL_MAN} ${WRKSRC}/ssldump.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/ssldump.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

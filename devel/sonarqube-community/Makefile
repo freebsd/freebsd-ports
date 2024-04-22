@@ -1,6 +1,6 @@
 PORTNAME=	sonarqube
-DISTVERSION=	10.3.0.82913
-PORTREVISION=	4
+DISTVERSION=	10.5.0.89998
+PORTREVISION=	0
 CATEGORIES=	devel security www java
 MASTER_SITES=	https://binaries.sonarsource.com/Distribution/sonarqube/:m_core \
 		https://binaries.sonarsource.com/Distribution/sonar-csharp-plugin/:m_csharp \
@@ -30,7 +30,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	bash:shells/bash #\
 #		jna>0:devel/jna
 
-USES=		cpe shebangfix zip
+USES=		cpe shebangfix zip nodejs:lts,run
 CPE_VENDOR=	sonarsource
 USE_JAVA=	yes
 
@@ -52,11 +52,11 @@ DBBASE_DIR=	/var/db/${PORTNAME}
 DATA_DIR=	${DBBASE_DIR}/data
 TEMP_DIR=	${DBBASE_DIR}/temp
 
-SONARCSHARP_VER=	9.16.0.82469
-SONARJAVA_VER=		7.30.1.34514
-SONARJAVASCRIPT_VER=	10.11.0.25043
-SONARPHP_VER=		3.34.0.11311
-SONARPYTHON_VER=	4.14.0.14263
+SONARCSHARP_VER=	9.23.2.88755
+SONARJAVA_VER=		7.33.0.35775
+SONARJAVASCRIPT_VER=	10.13.2.25981
+SONARPHP_VER=		3.35.0.11659
+SONARPYTHON_VER=	4.17.0.14845
 SONARVBNET_VER=		${SONARCSHARP_VER}
 
 USERS=		sonarqube

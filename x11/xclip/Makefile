@@ -1,6 +1,7 @@
 PORTNAME=	xclip
 DISTVERSION=	0.13-82
 DISTVERSIONSUFFIX=	-gb372f73
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -24,8 +25,8 @@ PLIST_FILES=	bin/xclip \
 		bin/xclip-copyfile \
 		bin/xclip-cutfile \
 		bin/xclip-pastefile \
-		man/man1/xclip-copyfile.1.gz \
-		man/man1/xclip.1.gz
+		share/man/man1/xclip-copyfile.1.gz \
+		share/man/man1/xclip.1.gz
 
 PORTDOCS=	README
 OPTIONS_DEFINE=	DOCS

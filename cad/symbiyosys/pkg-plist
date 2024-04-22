@@ -13,3 +13,4 @@ share/yosys/python3/sby_mode_cover.py
 share/yosys/python3/sby_mode_live.py
 share/yosys/python3/sby_mode_prove.py
 share/yosys/python3/sby_sim.py
+share/yosys/python3/sby_status.py

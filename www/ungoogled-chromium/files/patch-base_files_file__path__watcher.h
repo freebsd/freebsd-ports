@@ -1,6 +1,6 @@
---- base/files/file_path_watcher.h.orig	2023-02-11 09:11:04 UTC
+--- base/files/file_path_watcher.h.orig	2024-02-03 15:42:55 UTC
 +++ base/files/file_path_watcher.h
-@@ -59,7 +59,7 @@ class BASE_EXPORT FilePathWatcher {
+@@ -105,7 +105,7 @@ class BASE_EXPORT FilePathWatcher {
      Type type = Type::kNonRecursive;
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \

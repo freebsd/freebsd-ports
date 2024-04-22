@@ -11,7 +11,7 @@ WWW=		https://github.com/googlefonts/ufo2ft
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}booleanOperations>=0.9.0:x11-fonts/py-booleanOperations@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cffsubr>=0.2.8:x11-fonts/py-cffsubr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cu2qu>=1.6.7:x11-fonts/py-cu2qu@${PY_FLAVOR} \

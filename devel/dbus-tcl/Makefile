@@ -1,6 +1,6 @@
 PORTNAME=	dbus
 PORTVERSION=	3.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://chiselapp.com/user/schelte/repository/dbus/uv/
 PKGNAMESUFFIX=	-tcl
@@ -16,6 +16,8 @@ BUILD_DEPENDS=	dtplite:devel/tcllib
 
 USES=		pkgconfig tcl:tea
 
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+
 OPTIONS_DEFINE=	DOCS
 DOCSDIR=	${PREFIX}/share/doc/dbus
 PORTDOCS=	*
@@ -24,7 +26,7 @@ TEST_TARGET=	do-test
 
 PLIST_FILES=	lib/dbus/lib${TCL_PKG}.so \
 		lib/dbus/pkgIndex.tcl \
-		man/mann/dbus.n.gz
+		share/man/mann/dbus.n.gz
 
 post-patch:
 	${REINPLACE_CMD} \

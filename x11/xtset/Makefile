@@ -1,5 +1,6 @@
 PORTNAME=	xtset
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.lemis.com/pub/
 
@@ -10,10 +11,11 @@ COMMENT=	Utility to set title on an xterm
 
 NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	bin/xtset man/man1/xtset.1.gz
+PLIST_FILES=	bin/xtset share/man/man1/xtset.1.gz
 MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX}
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/xtset ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xtset.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	dnstable
-PORTVERSION=	0.13.2
-PORTREVISION=	0
+PORTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
@@ -12,18 +12,13 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libmtbl.so:devel/mtbl	\
-		libyajl.so:devel/yajl	\
 		libwdns.so:dns/wdns
 
 USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INSTALL_TARGET=	install-strip
-
-post-install:
-.for i in 1 3 5 7
-	${INSTALL_MAN} ${WRKSRC}/man/*.${i} ${STAGEDIR}/${PREFIX}/man/man${i}
-.endfor
 
 .include <bsd.port.mk>

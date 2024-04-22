@@ -12,6 +12,4 @@ COMMENT=	Perl module interface to the mknod(2) system call
 USES=		perl5
 USE_PERL5=	configure
 
-MANPREFIX=	${PREFIX}/${SITE_PERL_REL}
-
 .include <bsd.port.mk>

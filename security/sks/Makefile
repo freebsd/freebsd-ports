@@ -1,6 +1,6 @@
 PORTNAME=	sks
 PORTVERSION=	1.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://bitbucket.org/skskeyserver/sks-keyserver/downloads/
 
@@ -24,7 +24,7 @@ SHEBANG_FILES=	sks_build.sh
 MAKE_ENV=	BDBINCLUDE="-I${BDB_INCLUDE_DIR}" \
 		BDBLIB="-L${BDB_LIB_DIR}" \
 		LIBDB="-l${BDB_LIB_NAME}" \
-		MANDIR="${MANPREFIX}/man"
+		MANDIR="${PREFIX}/share/man"
 
 SUB_FILES=	pkg-message
 

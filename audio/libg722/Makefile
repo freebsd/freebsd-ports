@@ -1,7 +1,7 @@
 PORTNAME=	libg722
 DISTVERSIONPREFIX=	v_
-DISTVERSION=	1_0_2
-PORTREVISION=	1
+DISTVERSION=	1_0_3-11
+DISTVERSIONSUFFIX=	-gf29ac9b
 CATEGORIES=	audio
 
 MAINTAINER=	ports@sippysoft.com
@@ -12,19 +12,12 @@ LICENSE_NAME=	${LICENSE:S/_/ /}
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+USES=		cmake
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	sippy
 
-USE_LDCONFIG=	yes
-
-MAKE_ENV=	MAKEOBJDIR=${WRKDIR}
-
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/g722.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/g722_decoder.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/g722_encoder.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${WRKDIR}/libg722.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_LIB} ${WRKDIR}/libg722.so.0 ${STAGEDIR}${PREFIX}/lib
-	${LN} -sf libg722.so.0 ${STAGEDIR}${PREFIX}/lib/libg722.so
+TEST_TARGET=	test
 
 .include <bsd.port.mk>

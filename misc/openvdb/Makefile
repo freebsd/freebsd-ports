@@ -1,7 +1,7 @@
 PORTNAME=	openvdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	10.0.1
-PORTREVISION=	11
+DISTVERSION=	11.0.0
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,6 +10,8 @@ WWW=		https://www.openvdb.org/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_armv7=	compilation fails: LLVM ERROR: out of memory
 
 LIB_DEPENDS=	libblosc.so:archivers/c-blosc \
 		libboost_system.so:devel/boost-libs \
@@ -38,10 +40,6 @@ TOOLS_LIB_DEPENDS=	libglfw.so:graphics/glfw \
 			libOpenEXR.so:graphics/openexr
 TOOLS_USES=		gl xorg
 TOOLS_USE=		GL=gl,glu XORG=ice,sm,x11,xcursor,xext,xi,xinerama,xrandr,xxf86vm
-
-xpost-patch: # extra fix for OneTBB
-	@cd ${WRKSRC}/openvdb/openvdb && \
-		${MKDIR} thread
 
 # DOCS is broken: https://github.com/AcademySoftwareFoundation/openvdb/issues/899
 #DOCS_CMAKE_BOOL=	OPENVDB_BUILD_DOCS

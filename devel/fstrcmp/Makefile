@@ -1,5 +1,6 @@
 PORTNAME=	fstrcmp
 PORTVERSION=	0.7.D001
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/fstrcmp/fstrcmp/${PORTVERSION:R}
 
@@ -14,6 +15,7 @@ USES=		gmake libtool:build
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfstrcmp.so

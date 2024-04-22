@@ -1,6 +1,6 @@
 PORTNAME=	batv-milter
 PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -19,7 +19,7 @@ MAKE_ARGS=	UBINOWN=${UID} UBINGRP=${GID}
 CFLAGS+=	-D_WANT_SEMUN
 
 WCONF=		${WRKSRC}/devtools/Site
-PLIST_FILES=	bin/batv-filter man/man8/batv-filter.8.gz
+PLIST_FILES=	bin/batv-filter share/man/man8/batv-filter.8.gz
 PORTDOCS=	INSTALL KNOWNBUGS LICENSE README RELEASE_NOTES \
 		draft-levine-smtp-batv-01.txt
 
@@ -51,8 +51,8 @@ post-install:
 .if !defined(WITH_DEBUG)
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/batv-filter
 .endif
-	@${RM} ${MANPREFIX}/man/cat8/batv-filter.8 ${MANPREFIX}/man/cat8/batv-filter.8.gz
-	${INSTALL_MAN} ${WRKSRC}/*/batv-filter.8 ${STAGEDIR}${MANPREFIX}/man/man8/
+	@${RM} ${PREFIX}/share/man/cat8/batv-filter.8 ${PREFIX}/share/man/cat8/batv-filter.8.gz
+	${INSTALL_MAN} ${WRKSRC}/*/batv-filter.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}

@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-desktop
 PORTVERSION=	4.18.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	XFCE
 DISTNAME=	xfdesktop-${DISTVERSIONFULL}
@@ -23,6 +23,7 @@ USE_XFCE=	garcon libexo xfconf
 USE_XORG=	ice sm x11
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--enable-gio-unix \

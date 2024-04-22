@@ -1,5 +1,6 @@
 PORTNAME=	burgerspace
 PORTVERSION=	1.9.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://perso.b2b2c.ca/~sarrazip/dev/ \
 		LOCAL/martymac
@@ -17,6 +18,7 @@ USE_CXXSTD=	gnu++98
 USE_SDL=	image mixer sdl
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PORTDOCS=	AUTHORS NEWS README THANKS
 

@@ -1,0 +1,54 @@
+#!/bin/sh
+
+# PROVIDE: phd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable phorge daemons:
+# phd_enable (bool):	Set to "NO" by default
+#			Set it to "YES" to enable phd
+# phd_fib (str):	Set an altered default network view for phd
+# phd_user (str):	User to run phorge daemons as
+
+. /etc/rc.subr
+
+name="phd"
+rcvar=phd_enable
+
+load_rc_config "$name"
+
+: ${phd_enable="NO"}
+: ${phd_user="www"}
+
+command="%%PREFIX%%/lib/php/phorge/bin/phd"
+
+extra_commands="launch list log"
+poll_cmd="phd_poll"
+stop_cmd="${command} stop"
+status_cmd="${command} status"
+restart_cmd="phd_restart"
+launch_cmd="${command} launch"
+list_cmd="${command} list"
+log_cmd="${command} log"
+
+start_precmd="eval command_args=start"
+
+required_files="%%PREFIX%%/lib/php/phorge/conf/local/local.json"
+
+PATH="${PATH}:%%PREFIX%%/bin"
+
+phd_poll()
+{
+	pids=`${status_cmd} 2>/dev/null | awk '{ print $4 }' | egrep "^[0-9]+$" | sort | uniq`
+	wait_for_pids $pids
+}
+
+phd_restart()
+{
+	${stop_cmd}
+	phd_poll
+	run_rc_command start
+}
+
+run_rc_command "$*"

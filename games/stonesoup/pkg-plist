@@ -22,9 +22,14 @@ bin/%%GAME%%
 %%DATADIR%%/dat/database/shout.txt
 %%DATADIR%%/dat/database/wpnnoise.txt
 %%DATADIR%%/dat/database/zh/FAQ.txt
+%%DATADIR%%/dat/database/zh/godname.txt
+%%DATADIR%%/dat/database/zh/godspeak.txt
 %%DATADIR%%/dat/database/zh/help.txt
+%%DATADIR%%/dat/database/zh/miscname.txt
 %%DATADIR%%/dat/database/zh/monflee.txt
+%%DATADIR%%/dat/database/zh/monspell.txt
 %%DATADIR%%/dat/database/zh/montitle.txt
+%%DATADIR%%/dat/database/zh/shout.txt
 %%DATADIR%%/dat/defaults/autopickup_exceptions.txt
 %%DATADIR%%/dat/defaults/glyph_colours.txt
 %%DATADIR%%/dat/defaults/menu_colours.txt
@@ -86,6 +91,7 @@ bin/%%GAME%%
 %%DATADIR%%/dat/des/branches/zot.des
 %%DATADIR%%/dat/des/builder/alphashops.des
 %%DATADIR%%/dat/des/builder/arena.des
+%%DATADIR%%/dat/des/builder/custombooks.des
 %%DATADIR%%/dat/des/builder/decor.des
 %%DATADIR%%/dat/des/builder/dummy.des
 %%DATADIR%%/dat/des/builder/layout_caves.des
@@ -130,6 +136,7 @@ bin/%%GAME%%
 %%DATADIR%%/dat/des/serial/glass.des
 %%DATADIR%%/dat/des/serial/gnoll_camp.des
 %%DATADIR%%/dat/des/serial/ice.des
+%%DATADIR%%/dat/des/serial/library.des
 %%DATADIR%%/dat/des/serial/magic_research.des
 %%DATADIR%%/dat/des/serial/park.des
 %%DATADIR%%/dat/des/serial/rivers.des
@@ -522,10 +529,10 @@ bin/%%GAME%%
 %%DATADIR%%/dat/dlua/lm_items.lua
 %%DATADIR%%/dat/dlua/lm_mon_prop.lua
 %%DATADIR%%/dat/dlua/lm_monst.lua
-%%DATADIR%%/dat/dlua/lm_mslav.lua
 %%DATADIR%%/dat/dlua/lm_named_hatch.lua
 %%DATADIR%%/dat/dlua/lm_pdesc.lua
 %%DATADIR%%/dat/dlua/lm_props.lua
+%%DATADIR%%/dat/dlua/lm_replica.lua
 %%DATADIR%%/dat/dlua/lm_timed.lua
 %%DATADIR%%/dat/dlua/lm_tmsg.lua
 %%DATADIR%%/dat/dlua/lm_toll.lua
@@ -562,7 +569,6 @@ bin/%%GAME%%
 %%DATADIR%%/docs/CREDITS.txt
 %%DATADIR%%/docs/develop/android.txt
 %%DATADIR%%/docs/develop/arena.txt
-%%DATADIR%%/docs/develop/background_creation.txt
 %%DATADIR%%/docs/develop/ctags.txt
 %%DATADIR%%/docs/develop/editor_tips.txt
 %%DATADIR%%/docs/develop/gdb_tips.txt
@@ -596,18 +602,6 @@ bin/%%GAME%%
 %%DATADIR%%/docs/quickstart.txt
 %%DATADIR%%/docs/ssh_guide.txt
 %%DATADIR%%/docs/tiles_help.txt
-%%DATADIR%%/settings/0.12_monster_glyphs.txt
-%%DATADIR%%/settings/0.13_monster_glyphs.txt
-%%DATADIR%%/settings/0.14_monster_glyphs.txt
-%%DATADIR%%/settings/0.16_monster_glyphs.txt
-%%DATADIR%%/settings/0.17_monster_glyphs.txt
-%%DATADIR%%/settings/0.18_monster_glyphs.txt
-%%DATADIR%%/settings/0.9_monster_glyphs.txt
-%%DATADIR%%/settings/034_command_keys.txt
-%%DATADIR%%/settings/052_monster_glyphs.txt
-%%DATADIR%%/settings/060_monster_glyphs.txt
-%%DATADIR%%/settings/071_monster_glyphs.txt
-%%DATADIR%%/settings/080_monster_glyphs.txt
 %%DATADIR%%/settings/advanced_optioneering.txt
 %%DATADIR%%/settings/colemak_command_keys.txt
 %%DATADIR%%/settings/dec_glyphs.txt
@@ -628,6 +622,7 @@ bin/%%GAME%%
 %%SDL%%%%DATADIR%%/dat/tiles/gui.png
 %%SDL%%%%DATADIR%%/dat/tiles/icons.png
 %%SDL%%%%DATADIR%%/dat/tiles/logo.png
+%%SDL%%%%DATADIR%%/dat/tiles/logo_cropped.png
 %%SDL%%%%DATADIR%%/dat/tiles/logosmall.png
 %%SDL%%%%DATADIR%%/dat/tiles/main.png
 %%SDL%%%%DATADIR%%/dat/tiles/player.png
@@ -658,6 +653,7 @@ bin/%%GAME%%
 %%SDL%%%%DATADIR%%/dat/tiles/title_gompami_kohu_xbow.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_kaonedong_ignis_the_dying_flame.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_kaonedong_menkaure_prince_of_dust.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_king7artist_eustachio.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_micah_c_ereshkigal.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_nibiki_octopode.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_omndra_zot_demon.png

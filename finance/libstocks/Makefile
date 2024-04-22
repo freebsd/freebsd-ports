@@ -9,7 +9,7 @@ WWW=		https://libstocks.sourceforge.net/
 
 USE_LDCONFIG=	yes
 REINPLACE_ARGS=	-i ""
-MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
+MAKE_ENV=	WITHOUT_PROFILE=yes SRCCONF=/dev/null
 MAKE_ENV+=	STAGEDIR="${STAGEDIR}"
 USES=		uidfix
 
@@ -23,8 +23,8 @@ post-patch:
 
 do-build do-install:
 .for d in lib client
-	cd ${WRKSRC}/$d && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKEFLAGS} -j2 \
-		-f ${FILESDIR}/Makefile.$d ${.TARGET:S/do-//}
+	cd ${WRKSRC}/$d && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} \
+		${MAKEFLAGS} -j2 -f ${FILESDIR}/Makefile.$d ${.TARGET:S/do-//}
 .endfor
 
 post-install:

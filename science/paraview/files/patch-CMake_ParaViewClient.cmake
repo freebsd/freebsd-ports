@@ -1,6 +1,6 @@
---- CMake/ParaViewClient.cmake.orig	2022-03-11 22:19:30 UTC
+--- CMake/ParaViewClient.cmake.orig	2024-02-28 20:42:21 UTC
 +++ CMake/ParaViewClient.cmake
-@@ -520,6 +520,7 @@ function (paraview_client_documentation)
+@@ -567,6 +567,7 @@ function (paraview_client_documentation)
    find_program(qt_xmlpatterns_executable
      NAMES xmlpatterns-qt5 xmlpatterns
      HINTS "${Qt5_DIR}/../../../bin"

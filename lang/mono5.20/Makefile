@@ -1,6 +1,6 @@
 PORTNAME=	mono
 PORTVERSION=	5.20.1.34
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 PKGNAMESUFFIX=	5.20
@@ -44,6 +44,7 @@ USES=	autoreconf bison compiler:c11 cpe elfctl gmake iconv libtool \
 	pathfix perl5 python shebangfix tar:bzip2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	scripts/mono-heapviz scripts/mono-package-runtime \
 		mono/mini/genmdesc.py mono/tests/test_lldb.py
@@ -103,9 +104,9 @@ post-patch:
 		${WRKSRC}/man/mono.1 \
 		${WRKSRC}/man/mozroots.1
 
-post-configure:
-	${REINPLACE_CMD} -e 's|share\/man|man|g' \
-		${WRKSRC}/mcs/jay/Makefile
+#post-configure:
+#	${REINPLACE_CMD} -e 's|share\/man|man|g' \
+#		${WRKSRC}/mcs/jay/Makefile
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/mono

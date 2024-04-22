@@ -1,0 +1,66 @@
+--- cmake/FindGTK-VNC.cmake.orig	2024-02-23 14:29:23 UTC
++++ cmake/FindGTK-VNC.cmake
+@@ -60,8 +60,8 @@ find_library(GTK-VNC_LIB gtk-vnc-2.0
+     ${COMMON_LIB_DIR}
+ )
+ 
+-if(GVNC_LIB AND GVNCPULSE_LIB AND GTK-VNC_LIB)
+-    set(GTK-VNC_LIBRARIES ${GVNC_LIB} ${GVNCPULSE_LIB} ${GTK-VNC_LIB})
++if(GVNC_LIB AND GTK-VNC_LIB)
++    set(GTK-VNC_LIBRARIES ${GVNC_LIB} ${GTK-VNC_LIB})
+     message(STATUS "GTK-VNC-Libs: ${GTK-VNC_LIBRARIES}")
+ endif()
+ 
+@@ -86,8 +86,8 @@ find_path(GTK-VNC_INCLUDE_DIR gtk-vnc.h
+     ${COMMON_INCLUDE_DIR}
+ )
+ 
+-if(GVNC_INCLUDE_DIR AND GVNCPULSE_INCLUDE_DIR AND GTK-VNC_INCLUDE_DIR)
+-    set(GTK-VNC_INCLUDE_DIRS ${GVNC_INCLUDE_DIR} ${GVNCPULSE_INCLUDE_DIR} ${GTK-VNC_INCLUDE_DIR})
++if(GVNC_INCLUDE_DIR AND GTK-VNC_INCLUDE_DIR)
++    set(GTK-VNC_INCLUDE_DIRS ${GVNC_INCLUDE_DIR} ${GTK-VNC_INCLUDE_DIR})
+     message(STATUS "GTK-VNC-Include-Dirs: ${GTK-VNC_INCLUDE_DIRS}")
+ endif()
+ 
+--- plugins/gvnc/gvnc_plugin.c.orig	2024-02-23 14:29:23 UTC
++++ plugins/gvnc/gvnc_plugin.c
+@@ -37,7 +37,7 @@
+ 
+ #include <vncdisplay.h>
+ #include <vncutil.h>
+-#include <vncaudiopulse.h>
++//#include <vncaudiopulse.h>
+ 
+ #define GVNC_DEFAULT_PORT 5900
+ 
+@@ -700,8 +700,8 @@ static void gvnc_plugin_init(RemminaProtocolWidget *gp
+ 		vnc_util_set_debug(TRUE);
+ 
+ 	gpdata->vnc = vnc_display_new();
+-	if (remmina_plugin_service->file_get_int(remminafile, "enableaudio", FALSE))
+-		gpdata->pa = vnc_audio_pulse_new();
++//	if (remmina_plugin_service->file_get_int(remminafile, "enableaudio", FALSE))
++//		gpdata->pa = vnc_audio_pulse_new();
+ 
+ 
+ 	g_signal_connect(gpdata->vnc, "vnc-auth-credential",
+--- plugins/gvnc/gvnc_plugin.h.orig	2024-02-28 20:33:54 UTC
++++ plugins/gvnc/gvnc_plugin.h
+@@ -37,7 +37,7 @@
+ #include <gdk/gdkkeysyms.h>
+ #include <vncdisplay.h>
+ #include <vncutil.h>
+-#include <vncaudiopulse.h>
++//#include <vncaudiopulse.h>
+ 
+ 
+ #ifndef GDK_Return
+@@ -113,7 +113,7 @@ typedef struct _GVncPluginData {
+ 	GtkWidget *	box;
+ 	GtkWidget *	vnc;
+ 	VncConnection * conn;
+-	VncAudioPulse * pa;
++	/*VncAudioPulse*/ void * pa;
+ 	gchar *		error_msg;
+ 	gchar *		clipstr;
+ 	gulong		signal_clipboard;

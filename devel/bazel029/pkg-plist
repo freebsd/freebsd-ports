@@ -1,2 +1,0 @@
-bin/bazel
-@sample %%ETCDIR%%/bazel.bazelrc.sample

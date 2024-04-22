@@ -21,6 +21,17 @@ weekly_dehydrated_deployscript="%%PREFIX%%/etc/%%PORTNAME%%/deploy.sh"
 
 Additional flags for the periodic run go into
 weekly_dehydrated_flags="-g"
+
+If weekly run is not frequent enough, such as when fetching OCSP
+response files (expires in 7 days), replace "weekly_" with "daily_"
+as follows to run dehydrated daily. Options are exactly same with
+weekly.
+
+daily_dehydrated_enable="YES"
+daily_dehydrated_user="_letsencrypt"
+daily_dehydrated_deployscript="%%PREFIX%%/etc/%%PORTNAME%%/deploy.sh"
+daily_dehydrated_flags="-g"
+
 EOM
 }
 ]

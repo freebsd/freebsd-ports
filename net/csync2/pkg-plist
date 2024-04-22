@@ -1,5 +1,5 @@
 @sample etc/csync2.cfg.sample
-man/man1/csync2.1.gz
+share/man/man1/csync2.1.gz
 sbin/csync2
 %%CSYNC2_COMPARE%%sbin/csync2-compare
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS

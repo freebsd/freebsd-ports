@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2011-10-02 22:12:43.000000000 +0700
-+++ CMakeLists.txt	2013-05-09 17:58:03.000000000 +0700
-@@ -169,7 +169,7 @@
+--- CMakeLists.txt.orig	2015-04-19 21:57:16 UTC
++++ CMakeLists.txt
+@@ -171,7 +171,7 @@ else (LOCAL_BOOST)
  endif()
  message (STATUS "USED LOCAL BOOST HEADERS")
  else (LOCAL_BOOST)
@@ -9,16 +9,7 @@
      if (Boost_VERSION VERSION_LESS 104200)
          add_definitions(-DTIMER_OLD_BOOST)
      endif()
-@@ -234,7 +234,7 @@
- if (APPLE)
-   set (MAN_DIR "${PROJECT_NAME_GLOBAL}.app/man/man1")
- else (APPLE)
--  set (MAN_DIR "${SHARE_DIR}/man/man1")
-+  set (MAN_DIR "${CMAKE_INSTALL_PREFIX}/man/man1")
- endif (APPLE)
- 
- message (STATUS "Data directory: ${CLIENT_DATA_DIR}")
-@@ -287,7 +287,9 @@
+@@ -284,7 +284,9 @@ endif ()
      endif ()
  endif ()
  
@@ -29,7 +20,7 @@
     ${eiskaltdcpp_SOURCE_DIR}
     ${GMP_INCLUDE_DIR}
     )
-@@ -336,13 +338,17 @@
+@@ -338,13 +340,17 @@ add_subdirectory(extra)
  endif (WIN32 OR HAIKU)
  
  add_subdirectory(extra)

@@ -1,7 +1,6 @@
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.37.5
-PORTREVISION=	8
+DISTVERSION=	4.38.8
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/authelia/authelia/releases/download/v${DISTVERSION}/:public_html
 DISTFILES=	authelia-${DISTVERSIONFULL}-public_html${EXTRACT_SUFX}:public_html # html root directory needs to be built in a special way
@@ -13,12 +12,7 @@ WWW=		https://www.authelia.com/docs/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=	imports modernc.org/libc/errno: build constraints exclude all Go files
-BROKEN_armv6=	imports modernc.org/libc/errno: build constraints exclude all Go files
-BROKEN_armv7=	imports modernc.org/libc/errno: build constraints exclude all Go files
-BROKEN_i386=	imports modernc.org/libc/errno: build constraints exclude all Go files
-
-USES=		cpe go:modules
+USES=		cpe go:1.21,modules
 
 GO_MODULE=	github.com/authelia/authelia/v4
 GO_TARGET=	./cmd/${PORTNAME}

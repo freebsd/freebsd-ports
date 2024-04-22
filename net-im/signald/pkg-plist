@@ -1,4 +1,4 @@
-man/man7/signald.7.gz
+share/man/man7/signald.7.gz
 %%DATADIR%%/bin/signald
 %%DATADIR%%/lib/annotations-13.0.jar
 %%DATADIR%%/lib/bcprov-jdk15on-1.66.jar

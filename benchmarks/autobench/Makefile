@@ -1,6 +1,6 @@
 PORTNAME=	autobench
 PORTVERSION=	2.1.2
-PORTREVISION=	9
+PORTREVISION=	11
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://www.xenoclast.org/autobench/downloads/
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	httperf:benchmarks/httperf \
 
 USES=		gmake perl5 shebangfix
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" DEBUG_FLAGS= \
-		PREFIX=${PREFIX}
+		PREFIX=${PREFIX} MANDIR=${PREFIX}/share/man/man1
 SHEBANG_FILES=	autobench_admin autobenchd autobench
 
 post-patch:

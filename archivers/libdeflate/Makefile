@@ -1,7 +1,7 @@
 PORTNAME=	libdeflate
-PORTVERSION=	1.19
-DISTVERSIONPREFIX=	v
+PORTVERSION=	1.20
 CATEGORIES=	archivers
+MASTER_SITES=	https://github.com/ebiggers/${PORTNAME}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast, whole-buffer DEFLATE-based compression library
@@ -11,8 +11,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake:testing pathfix
-USE_GITHUB=	yes
-GH_ACCOUNT=	ebiggers
 USE_LDCONFIG=	yes
 CMAKE_ON=	LIBDEFLATE_USE_SHARED_LIB
 CMAKE_TESTING_ON=	LIBDEFLATE_BUILD_TESTS

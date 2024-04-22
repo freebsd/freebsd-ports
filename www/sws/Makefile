@@ -1,5 +1,6 @@
 PORTNAME=	sws
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://prd4.wynn.com:8080/src/
 

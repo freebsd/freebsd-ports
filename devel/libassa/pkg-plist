@@ -62,4 +62,4 @@ lib/libassa-3.5.so
 lib/libassa-3.5.so.5
 lib/libassa-3.5.so.5.0.1
 libdata/pkgconfig/assa-3.5.pc
-man/man1/assa-genesis.1.gz
+share/man/man1/assa-genesis.1.gz

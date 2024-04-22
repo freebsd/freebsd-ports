@@ -18,7 +18,7 @@ USE_LOCALE=	en_US.UTF-8
 
 SCILAB_CMD=	${LOCALBASE}/bin/scilab-adv-cli
 SCILAB_ARGS=	-noatomsautoload -nb -nouserstartup
-MAKE_ENV=	SCI_JAVA_ENABLE_HEADLESS=1 SCI_DISABLE_TK=1
+WRK_ENV=	SCI_JAVA_ENABLE_HEADLESS=1 SCI_DISABLE_TK=1
 DOS2UNIX_FILES=	etc/swt.start
 
 CONTRIBDIR?=	share/scilab/contrib
@@ -57,7 +57,7 @@ pre-build:
 
 do-build:
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${SCILAB_CMD} ${SCILAB_ARGS} -f builder.sce
+		${SETENVI} ${WRK_ENV} ${SCILAB_CMD} ${SCILAB_ARGS} -f builder.sce
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${TOOLBOXDIR} "-name *\.so -or -name loader*\.sce"

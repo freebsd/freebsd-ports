@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-07-11 13:58:04.000000000 +0000
-+++ CMakeLists.txt	2023-07-26 01:16:10.541419000 +0000
-@@ -46,7 +46,7 @@
+--- CMakeLists.txt.orig	2024-01-23 09:35:14 UTC
++++ CMakeLists.txt
+@@ -48,7 +48,7 @@ set(MUSESCORE_BUILD_CONFIGURATION "app" CACHE STRING "
  # - vtest           - for visual tests (for CI)
  # - utest           - for unit tests (for CI)
  

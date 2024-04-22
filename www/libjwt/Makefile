@@ -1,5 +1,5 @@
 PORTNAME=	libjwt
-PORTVERSION=	1.15.3
+PORTVERSION=	1.17.0
 MASTER_SITES=	https://github.com/benmcollins/libjwt/releases/download/v${PORTVERSION}/
 CATEGORIES=	www
 
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	jansson>=2.0:devel/jansson
 LIB_DEPENDS=	libjansson.so:devel/jansson
 TEST_DEPENDS=	check>=0.9.4:devel/check
 
-USES=		autoreconf gmake libtool pathfix pkgconfig ssl
+USES=		autoreconf gmake libtool pathfix pkgconfig ssl tar:bz2
 
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"

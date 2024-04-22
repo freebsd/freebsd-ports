@@ -1,5 +1,5 @@
 PORTNAME=	ioncube
-DISTVERSION=	12.0.5
+DISTVERSION=	13.0.2
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.ioncube.com/loader_downloads/ \
 		http://downloads2.ioncube.com/loader_downloads/ \
@@ -20,7 +20,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 IGNORE_DragonFly=	is unsupported on DragonFly
 ONLY_FOR_ARCHS=	amd64 i386
 USES=		php:flavors
-IGNORE_WITH_PHP=	82 83
+IGNORE_WITH_PHP=	83
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message

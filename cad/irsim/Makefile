@@ -1,5 +1,6 @@
 PORTNAME=	irsim
 DISTVERSION=	9.7.116
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/irsim/archive/
 
@@ -26,6 +27,7 @@ CONFIGURE_WRKSRC=	${WRKSRC}/scripts
 
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

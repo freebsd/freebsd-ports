@@ -3,8 +3,8 @@ PORTVERSION=	2.6.32
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	http://www.smarty.net/files/docs/:manual
-DISTFILES=	manual-en-${PORTVERSION:R}.zip:manual
 PKGNAMESUFFIX=	2${PHP_PKGNAMESUFFIX}
+DISTFILES=	manual-en-${PORTVERSION:R}.zip:manual
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP compiling template engine
@@ -13,16 +13,18 @@ WWW=		https://www.smarty.net/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.lib
 
-OPTIONS_DEFINE=	DOCS
+DEPRECATED=	Does not support current php versions in tree
+EXPIRATION_DATE=	2024-05-04
+
+USES=		cpe php:web,flavors
+USE_GITHUB=	yes
+GH_ACCOUNT=	smarty-php
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		cpe php:web,flavors
-
 SUB_FILES=	pkg-message
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	smarty-php
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

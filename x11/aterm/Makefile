@@ -1,6 +1,6 @@
 PORTNAME=	aterm
 PORTVERSION=	1.0.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
@@ -15,6 +15,7 @@ DOS2UNIX_FILES=	src/rxvt.h
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-wtmp \
 		--enable-xgetdefault \
 		--disable-memset \
@@ -38,7 +39,7 @@ BIG5S_DESC=	Chinese character (BIG5) support
 GREEK_DESC=	Greek keyboard support
 
 PLIST_FILES=	bin/aterm \
-		man/man1/aterm.1.gz
+		share/man/man1/aterm.1.gz
 
 TRANS_CONFIGURE_ENABLE=	transparency
 BSDEL_CONFIGURE_OFF=	--disable-backspace-key --disable-delete-key

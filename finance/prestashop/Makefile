@@ -1,7 +1,7 @@
 PORTNAME=	prestashop
-PORTVERSION=	1.7.8.8
+PORTVERSION=	8.1.5
 CATEGORIES=	finance www
-MASTER_SITES=	https://download.prestashop.com/download/releases/
+MASTER_SITES=	https://github.com/PrestaShop/PrestaShop/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
@@ -12,22 +12,18 @@ USES=		cpe php shebangfix zip:infozip
 NO_BUILD=	yes
 PRESTADIR=	www/${PORTNAME}
 PLIST=		${WRKDIR}/plist
-USE_PHP=	ctype curl dom filter gd intl mcrypt \
-		mysqli pdo_mysql posix session simplexml soap
+USE_PHP=	ctype curl dom fileinfo filter gd intl \
+		mbstring mcrypt mysqli \
+		pdo_mysql posix session simplexml \
+		soap tokenizer zip
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
-
-SHEBANG_FILES=	vendor/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php \
-		vendor/doctrine/orm/docs/bin/generate-docs.sh \
-		vendor/doctrine/orm/docs/bin/install-dependencies.sh \
-		vendor/symfony/symfony/src/Symfony/Component/Intl/Tests/Data/Bundle/Reader/Fixtures/build.sh \
-		vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php
 
 post-extract:
 	@(cd ${WRKDIR} && ${UNZIP_CMD} -d prestashop ${WRKDIR}/prestashop.zip)
 	${REINPLACE_CMD} -e 's#@prefix@#${PREFIX}#g' \
 		${WRKSRC}/vendor/pear/archive_tar/scripts/phptar.in
-	${RM} ${WRKSRC}/vendor/pear/archive_tar/scripts/*.bak
 
 pre-install:
 	@${ECHO_CMD} -e '@owner ${WWWOWN}\n@group ${WWWGRP}' > ${PLIST}

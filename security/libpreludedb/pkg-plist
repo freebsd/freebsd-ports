@@ -22,8 +22,8 @@ lib/libpreludedb/plugins/formats/classic.so
 %%MYSQL%%lib/libpreludedb/plugins/sql/mysql.so
 %%PGSQL%%lib/libpreludedb/plugins/sql/pgsql.so
 %%SQLITE%%lib/libpreludedb/plugins/sql/sqlite3.so
-man/man1/libpreludedb-config.1.gz
-man/man1/preludedb-admin.1.gz
+share/man/man1/libpreludedb-config.1.gz
+share/man/man1/preludedb-admin.1.gz
 share/aclocal/libpreludedb.m4
 %%PORTDOCS%%share/gtk-doc/html/libpreludedb/api-index-full.html
 %%PORTDOCS%%share/gtk-doc/html/libpreludedb/ch01.html

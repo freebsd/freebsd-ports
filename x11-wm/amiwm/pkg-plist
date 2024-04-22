@@ -15,6 +15,6 @@ lib/X11/amiwm/requestchoice
 lib/X11/amiwm/schwartz.map
 lib/X11/amiwm/system.amiwmrc
 lib/X11/amiwm/system.map
-man/man1/amiwm.1.gz
+share/man/man1/amiwm.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.modules

@@ -1,6 +1,6 @@
---- lib/CMakeLists.txt.orig	2018-12-17 18:05:06 UTC
+--- lib/CMakeLists.txt.orig	2022-07-18 15:00:22 UTC
 +++ lib/CMakeLists.txt
-@@ -306,12 +306,15 @@ endif()
+@@ -331,12 +331,15 @@ include_directories(
  
  # Set include directories
  include_directories(

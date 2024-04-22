@@ -40,11 +40,11 @@ lib/liburjtag.so
 lib/liburjtag.so.0
 lib/liburjtag.so.0.0.0
 libdata/pkgconfig/urjtag.pc
-man/man1/bsdl2jtag.1.gz
-man/man1/jtag.1.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/urjtag.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/urjtag.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/urjtag.mo
+share/man/man1/bsdl2jtag.1.gz
+share/man/man1/jtag.1.gz
 %%DATADIR%%/MANUFACTURERS
 %%DATADIR%%/admtek/adm5120/adm5120
 %%DATADIR%%/altera/PARTS

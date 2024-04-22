@@ -1,5 +1,6 @@
 PORTNAME=	nwdiag
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,8 +27,8 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
 .for f in ${PORTNAME} rackdiag
-	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${STAGEDIR}${PREFIX}/man/man1/
-	@${ECHO_CMD} man/man1/${f}.1.gz >> ${TMPPLIST}
+	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	@${ECHO_CMD} share/man/man1/${f}.1.gz >> ${TMPPLIST}
 .endfor
 
 post-install-DOCS-on:

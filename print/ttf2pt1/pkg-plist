@@ -88,6 +88,6 @@ bin/ttf2pt1_x2gs
 %%DATADIR%%/scripts/trans
 %%DATADIR%%/scripts/unhtml
 %%DATADIR%%/scripts/x2gs
-man/man1/ttf2pt1.1.gz
-man/man1/ttf2pt1_convert.1.gz
-man/man1/ttf2pt1_x2gs.1.gz
+share/man/man1/ttf2pt1.1.gz
+share/man/man1/ttf2pt1_convert.1.gz
+share/man/man1/ttf2pt1_x2gs.1.gz

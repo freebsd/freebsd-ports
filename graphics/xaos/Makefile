@@ -42,7 +42,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/ui/images/xaosbig.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/xaos.png
 	${INSTALL_MAN} ${WRKSRC}/doc/xaos.6 \
-		${STAGEDIR}${MANPREFIX}/share/man/man6/xaos.6
+		${STAGEDIR}${PREFIX}/share/man/man6/xaos.6
 
 post-install-EXAMPLES-on:
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})

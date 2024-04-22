@@ -1,6 +1,6 @@
 PORTNAME=	lua
 PORTVERSION=	5.1.5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/
 PKGNAMESUFFIX=	51
@@ -13,14 +13,6 @@ LICENSE=	MIT
 
 USES=		cpe libedit lua:core,51
 USE_LDCONFIG=	yes
-
-# Overriding __MAKE_CONF makes sure that we don't re-parse
-# /etc/make.conf during do-build, which would jeopardize the build
-# if, for instance, the user set CFLAGS=mumble
-# NOTE: /etc/make.conf is read BEFORE Makefile, so we already
-# have its settings when we get here.
-# See http://wiki.freebsd.org/MatthiasAndree/LuaLessonsLearnt
-MAKE_ARGS=	__MAKE_CONF=${NONEXISTENT}
 
 # liblua.so requires libm, so make sure it has an explicit dependency
 # so that applications need not second-guess lua's dependencies.
@@ -62,13 +54,15 @@ post-patch:
 		s|^(INSTALL_LMOD=).*|\1 ${LUA_MODSHAREDIR}| ; \
 		s|llua|llua-${LUA_VER}|' \
 		${WRKSRC}/etc/lua.pc
+	@${REINPLACE_CMD} -e "s|man/man|share/man/man|g" \
+		${WRKSRC}/Makefile
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblua-${LUA_VER}.so
-	@${MV} ${STAGEDIR}${PREFIX}/man/man1/lua.1 \
-		${STAGEDIR}${PREFIX}/man/man1/lua51.1
-	@${MV} ${STAGEDIR}${PREFIX}/man/man1/luac.1 \
-		${STAGEDIR}${PREFIX}/man/man1/luac51.1
+	@${MV} ${STAGEDIR}${PREFIX}/share/man/man1/lua.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1/lua51.1
+	@${MV} ${STAGEDIR}${PREFIX}/share/man/man1/luac.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1/luac51.1
 	${INSTALL_DATA} ${WRKSRC}/etc/lua.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/lua-${LUA_VER}.pc
 

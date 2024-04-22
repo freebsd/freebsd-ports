@@ -1,6 +1,6 @@
 share/icons/hicolor/scalable/apps/ja2-stracciatella.svg
 share/applications/ja2-stracciatella.desktop
-man/man6/ja2.6.gz
+share/man/man6/ja2.6.gz
 bin/ja2-resource-pack
 bin/ja2-launcher
 bin/ja2

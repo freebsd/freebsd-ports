@@ -25,7 +25,6 @@ lib/X11/tgif/eq4jpg.sym
 lib/X11/tgif/keys.obj
 lib/X11/tgif/Copyright
 lib/X11/tgif/LICENSE.QPL
-man/man1/tgif.1.gz
 %%EXAMPLESDIR%%/demo/an-sr-flip-flop.obj
 %%EXAMPLESDIR%%/demo/example.tex
 %%EXAMPLESDIR%%/demo/fonts.obj
@@ -61,3 +60,4 @@ man/man1/tgif.1.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/tgif.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/tgif.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/tgif.mo
+share/man/man1/tgif.1.gz

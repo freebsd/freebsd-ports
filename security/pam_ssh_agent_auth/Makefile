@@ -1,6 +1,6 @@
 PORTNAME=	pam_ssh_agent_auth
 PORTVERSION=	0.10.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 
 MAINTAINER=	matthew@FreeBSD.org
@@ -21,13 +21,14 @@ USES=		perl5 ssl tar:bzip2
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_func_strnvis=no PERL=/usr/bin/false
 CONFIGURE_ARGS=	--libexecdir=${LOCALBASE}/lib \
 		--with-ssl-dir=${OPENSSLBASE} \
 		--without-openssl-header-check
 
 PLIST_FILES=	lib/pam_ssh_agent_auth.so \
-		man/man8/pam_ssh_agent_auth.8.gz
+		share/man/man8/pam_ssh_agent_auth.8.gz
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pam_ssh_agent_auth.so

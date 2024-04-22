@@ -1,6 +1,6 @@
 PORTNAME=	pmars
 PORTVERSION=	0.9.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/corewar/pMARS/${PORTVERSION}
 
@@ -67,7 +67,7 @@ do-install:
 .for f in ${TARGETS}
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/../doc/pmars.6 ${STAGEDIR}${PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/../doc/pmars.6 ${STAGEDIR}${PREFIX}/share/man/man6
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/.. && ${COPYTREE_SHARE} "README config doc warriors" ${STAGEDIR}${DOCSDIR}
 

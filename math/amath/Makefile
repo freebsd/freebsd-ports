@@ -1,5 +1,6 @@
 PORTNAME=	amath
 PORTVERSION=	1.8.5
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://dist1.innolan.net/ \
 		http://dist2.innolan.net/ \
@@ -18,7 +19,7 @@ USES=		gmake
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --pkgconfig=libdata/pkgconfig \
-		--mandir=man LDFLAGS="-L${LOCALBASE}/lib"
+		--mandir=share/man LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ARGS=	CC=${CC} CXX=${CXX}
 
 OPTIONS_DEFINE=	TESTS
@@ -47,6 +48,6 @@ post-install-APPLIBM-on:
 
 do-install-APPLIBM-off:
 	${INSTALL_PROGRAM} ${WRKSRC}/amath ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/amath.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/amath.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

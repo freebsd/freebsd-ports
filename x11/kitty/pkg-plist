@@ -15,7 +15,6 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_actions_1745a1bd.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_binary_478594b0.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_build_7ee1e14e.png
-%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_changelog_439aee19.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_clipboard_673291d1.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_color-stack_587105f7.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_conf_6d817f14.png
@@ -24,7 +23,8 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_faq_6acfb156.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_file-transfer-protocol_67d60cd4.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_generated_launch_2c8ae1a7.png
-%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_generated_rc_1e263193.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_generated_matching_f5ed7c14.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_generated_rc_4121b4bb.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_generated_ssh-copy_26aa9e71.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_glossary_e93f6fff.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_graphics-protocol_96eb2627.png
@@ -50,6 +50,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_unicode_input_f1ba948b.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_launch_717c78bb.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_layouts_49b07683.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_mapping_aea5afa6.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_marks_66066db1.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_open_actions_c69b3759.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_overview_249bd848.png
@@ -81,6 +82,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_sources/faq.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/file-transfer-protocol.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/generated/launch.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/generated/matching.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/generated/rc.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/generated/ssh-copy.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/glossary.rst.txt
@@ -107,6 +109,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_sources/kittens_intro.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/launch.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/layouts.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/mapping.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/marks.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/open_actions.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/overview.rst.txt
@@ -173,6 +176,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/file-transfer-protocol.html
 %%PORTDOCS%%%%DOCSDIR%%/generated/launch.html
+%%PORTDOCS%%%%DOCSDIR%%/generated/matching.html
 %%PORTDOCS%%%%DOCSDIR%%/generated/rc.html
 %%PORTDOCS%%%%DOCSDIR%%/generated/ssh-copy.html
 %%PORTDOCS%%%%DOCSDIR%%/genindex.html
@@ -200,6 +204,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/kittens_intro.html
 %%PORTDOCS%%%%DOCSDIR%%/launch.html
 %%PORTDOCS%%%%DOCSDIR%%/layouts.html
+%%PORTDOCS%%%%DOCSDIR%%/mapping.html
 %%PORTDOCS%%%%DOCSDIR%%/marks.html
 %%PORTDOCS%%%%DOCSDIR%%/objects.inv
 %%PORTDOCS%%%%DOCSDIR%%/open_actions.html
@@ -287,6 +292,14 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kittens/icat/__pycache__/main%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%DATADIR%%/kittens/icat/__pycache__/main%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/kittens/icat/main.py
+%%DATADIR%%/kittens/pager/__init__.py
+%%DATADIR%%/kittens/pager/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/kittens/pager/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%DATADIR%%/kittens/pager/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/kittens/pager/__pycache__/main%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/kittens/pager/__pycache__/main%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%DATADIR%%/kittens/pager/__pycache__/main%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/kittens/pager/main.py
 %%DATADIR%%/kittens/panel/__init__.py
 %%DATADIR%%/kittens/panel/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/kittens/panel/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
@@ -687,6 +700,9 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/rc/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/kitty/rc/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%DATADIR%%/kitty/rc/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/kitty/rc/__pycache__/action%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/kitty/rc/__pycache__/action%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%DATADIR%%/kitty/rc/__pycache__/action%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/kitty/rc/__pycache__/base%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/kitty/rc/__pycache__/base%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%DATADIR%%/kitty/rc/__pycache__/base%%PYTHON_EXT_SUFFIX%%.pyc
@@ -735,6 +751,9 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/rc/__pycache__/launch%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/kitty/rc/__pycache__/launch%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%DATADIR%%/kitty/rc/__pycache__/launch%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/kitty/rc/__pycache__/load_config%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/kitty/rc/__pycache__/load_config%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%DATADIR%%/kitty/rc/__pycache__/load_config%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/kitty/rc/__pycache__/ls%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/kitty/rc/__pycache__/ls%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%DATADIR%%/kitty/rc/__pycache__/ls%%PYTHON_EXT_SUFFIX%%.pyc
@@ -756,6 +775,9 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/rc/__pycache__/select_window%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/kitty/rc/__pycache__/select_window%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%DATADIR%%/kitty/rc/__pycache__/select_window%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/kitty/rc/__pycache__/send_key%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/kitty/rc/__pycache__/send_key%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%DATADIR%%/kitty/rc/__pycache__/send_key%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/kitty/rc/__pycache__/send_text%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/kitty/rc/__pycache__/send_text%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%DATADIR%%/kitty/rc/__pycache__/send_text%%PYTHON_EXT_SUFFIX%%.pyc
@@ -795,6 +817,7 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/rc/__pycache__/signal_child%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/kitty/rc/__pycache__/signal_child%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%DATADIR%%/kitty/rc/__pycache__/signal_child%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/kitty/rc/action.py
 %%DATADIR%%/kitty/rc/base.py
 %%DATADIR%%/kitty/rc/close_tab.py
 %%DATADIR%%/kitty/rc/close_window.py
@@ -811,6 +834,7 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/rc/kitten.py
 %%DATADIR%%/kitty/rc/last_used_layout.py
 %%DATADIR%%/kitty/rc/launch.py
+%%DATADIR%%/kitty/rc/load_config.py
 %%DATADIR%%/kitty/rc/ls.py
 %%DATADIR%%/kitty/rc/new_window.py
 %%DATADIR%%/kitty/rc/remove_marker.py
@@ -818,6 +842,7 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/rc/resize_window.py
 %%DATADIR%%/kitty/rc/scroll_window.py
 %%DATADIR%%/kitty/rc/select_window.py
+%%DATADIR%%/kitty/rc/send_key.py
 %%DATADIR%%/kitty/rc/send_text.py
 %%DATADIR%%/kitty/rc/set_background_image.py
 %%DATADIR%%/kitty/rc/set_background_opacity.py
@@ -871,6 +896,6 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/terminfo/kitty.termcap
 %%DATADIR%%/terminfo/kitty.terminfo
 %%DATADIR%%/terminfo/x/xterm-kitty
-share/man/man1/kitty.1.gz
-share/man/man5/kitty.conf.5.gz
+%%PORTDOCS%%share/man/man1/kitty.1.gz
+%%PORTDOCS%%share/man/man5/kitty.conf.5.gz
 share/misc/kitty.terminfo

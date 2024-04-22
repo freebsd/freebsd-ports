@@ -1,6 +1,6 @@
 PORTNAME=	wavetral
 DISTVERSION=	g20210517
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,6 +22,10 @@ GH_ACCOUNT=	jeanette-c
 GH_TAGNAME=	57290f2
 
 PLIST_FILES=	bin/wavetral \
-		man/man1/wavetral.1.gz
+		share/man/man1/wavetral.1.gz
+
+post-patch:
+	${REINPLACE_CMD} -e 's|DESTINATION man/man1|DESTINATION share/man/man1|' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

@@ -3,9 +3,9 @@ bin/nvi
 bin/nview
 bin/qregular
 bin/regular
-man/man1/nex.1.gz
-man/man1/nvi.1.gz
-man/man1/nview.1.gz
+share/man/man1/nex.1.gz
+share/man/man1/nvi.1.gz
+share/man/man1/nview.1.gz
 share/vi/README.english
 share/vi/README.japanese
 share/vi/catalog/dutch

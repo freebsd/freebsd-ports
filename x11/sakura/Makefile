@@ -1,5 +1,6 @@
 PORTNAME=	sakura
 PORTVERSION=	3.8.7
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://launchpadlibrarian.net/662803382/
 
@@ -23,8 +24,7 @@ USE_PERL5=	build
 LDFLAGS+=	-lintl
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,share/man,man,g ; \
-		/-O2/d ; \
+	@${REINPLACE_CMD} -e '/-O2/d ; \
 		/FILES INSTALL/d' ${WRKSRC}/CMakeLists.txt
 
 post-install:

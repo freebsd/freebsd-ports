@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13
 CATEGORIES=	www
 
-MAINTAINER=	dmitry.wagin@ya.ru
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Lua-land LRU cache based on the LuaJIT FFI
 WWW=		https://github.com/openresty/lua-resty-lrucache
 

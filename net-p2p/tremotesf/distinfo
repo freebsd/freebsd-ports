@@ -1,3 +1,5 @@
-TIMESTAMP = 1697455699
-SHA256 (equeim-tremotesf2-2.5.0_GH0.tar.gz) = 5e6f8afa34f3e1c09f986ca825345f8322f18bca3b856009f4a5f3998523e854
-SIZE (equeim-tremotesf2-2.5.0_GH0.tar.gz) = 419541
+TIMESTAMP = 1710932801
+SHA256 (equeim-tremotesf2-2.6.1_GH0.tar.gz) = 4847c0bae6ea5ad25b770c6c8ac7faaa3c2062fb06417847bba3b201ee26497e
+SIZE (equeim-tremotesf2-2.6.1_GH0.tar.gz) = 761558
+SHA256 (yhirose-cpp-httplib-v0.14.3_GH0.tar.gz) = dcf6486d9030937636d8a4f820ca9531808fd7edb283893dddbaa05f99357e63
+SIZE (yhirose-cpp-httplib-v0.14.3_GH0.tar.gz) = 1149767

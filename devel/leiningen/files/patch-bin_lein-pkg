@@ -1,0 +1,136 @@
+--- bin/lein-pkg.orig	2024-01-31 19:01:13 UTC
++++ bin/lein-pkg
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ 
+ # This variant of the lein script is meant for downstream packagers.
+ # It has all the cross-platform stuff stripped out as well as the
+@@ -6,39 +6,39 @@ export LEIN_VERSION="2.11.1"
+ 
+ export LEIN_VERSION="2.11.1"
+ 
+-if [[ "$CLASSPATH" != "" ]]; then
++if [ "$CLASSPATH" != "" ]; then
+     cat <<-'EOS' 1>&2
+ 	WARNING: You have $CLASSPATH set, probably by accident.
+ 	It is strongly recommended to unset this before proceeding.
+ 	EOS
+ fi
+ 
+-if [[ "$OSTYPE" == "cygwin" ]] || [[ "$OSTYPE" == "msys" ]]; then
++if [ "$OSTYPE" == "cygwin" ] || [ "$OSTYPE" == "msys" ]; then
+     delimiter=";"
+ else
+     delimiter=":"
+ fi
+ 
+-if [[ "$OSTYPE" == "cygwin" ]]; then
++if [ "$OSTYPE" == "cygwin" ]; then
+   cygwin=true
+ else
+   cygwin=false
+ fi
+ 
+-function msg {
++msg() {
+     echo "$@" 1>&2
+ }
+ 
+-function command_not_found {
++command_not_found() {
+     msg "Leiningen couldn't find $1 in your \$PATH ($PATH), which is required."
+     exit 1
+ }
+ 
+-function make_native_path {
++make_native_path() {
+     # ensure we have native paths
+-    if $cygwin && [[ "$1"  == /* ]]; then
++    if $cygwin && [ "$1"  == /* ]; then
+     echo -n "$(cygpath -wp "$1")"
+-    elif [[ "$OSTYPE" == "msys" && "$1"  == /?/* ]]; then
++    elif [ "$OSTYPE" == "msys" ] && [ "$1"  == /?/* ]; then
+     echo -n "$(sh -c "(cd $1 2</dev/null && pwd -W) || echo $1 | sed 's/^\\/\([a-z]\)/\\1:/g'")"
+     else
+     echo -n "$1"
+@@ -46,21 +46,21 @@ function make_native_path {
+ }
+ 
+ #  usage : add_path PATH_VAR [PATH]...
+-function add_path {
++add_path() {
+     local path_var="$1"
+     shift
+     while [ -n "$1" ];do
+         # http://bashify.com/?Useful_Techniques:Indirect_Variables:Indirect_Assignment
+-        if [[ -z ${!path_var} ]]; then
++        if [ -z "\$$path_var" ]; then
+           export ${path_var}="$(make_native_path "$1")"
+         else
+-          export ${path_var}="${!path_var}${delimiter}$(make_native_path "$1")"
++          export ${path_var}="\$$path_var${delimiter}$(make_native_path "$1")"
+         fi
+     shift
+     done
+ }
+ 
+-function run_from_checkout() {
++run_from_checkout() {
+     add_path CLASSPATH "$LEIN_JAR"
+ 
+     if [ "$LEIN_USE_BOOTCLASSPATH" != "no" ]; then
+@@ -68,7 +68,7 @@ function run_from_checkout() {
+     fi
+ }
+ 
+-function cmd_run {
++cmd_run() {
+     if $cygwin; then
+         # When running on Cygwin, use Windows-style paths for java
+         ORIGINAL_PWD=$(cygpath -w "$ORIGINAL_PWD")
+@@ -162,9 +162,9 @@ export LEIN_HOME="${LEIN_HOME:-"$HOME/.lein"}"
+ # User init
+ export LEIN_HOME="${LEIN_HOME:-"$HOME/.lein"}"
+ 
+-for f in "/etc/leinrc" "$LEIN_HOME/leinrc" ".leinrc"; do
++for f in "/etc/leinrc" "$LEIN_HOME/leinrc" "./.leinrc"; do
+   if [ -e "$f" ]; then
+-    source "$f"
++    . "$f"
+   fi
+ done
+ 
+@@ -204,11 +204,11 @@ if [ "$SHASUM_CMD" = "" ]; then
+ 
+ # This needs to be defined before we call SHASUM_CMD below
+ if [ "$SHASUM_CMD" = "" ]; then
+-    if type -p sha256sum >/dev/null 2>&1; then
++    if type sha256sum >/dev/null 2>&1; then
+         export SHASUM_CMD="sha256sum"
+-    elif type -p shasum >/dev/null 2>&1; then
++    elif type shasum >/dev/null 2>&1; then
+         export SHASUM_CMD="shasum --algorithm 256"
+-    elif type -p sha256 >/dev/null 2>&1; then
++    elif type sha256 >/dev/null 2>&1; then
+         export SHASUM_CMD="sha256 -q"
+     else
+         command_not_found sha256sum
+@@ -221,7 +221,7 @@ run_from_checkout "$1"
+ 
+ run_from_checkout "$1"
+ 
+-if [ ! -x "$JAVA_CMD" ] && ! type -f java >/dev/null
++if [ ! -x "$JAVA_CMD" ] && ! type java >/dev/null
+ then
+     msg "Leiningen couldn't find 'java' executable, which is required."
+     msg "Please either set JAVA_CMD or put java (>=1.6) in your \$PATH ($PATH)."
+@@ -230,7 +230,7 @@ export LEIN_JAVA_CMD="${LEIN_JAVA_CMD:-${JAVA_CMD:-jav
+ 
+ export LEIN_JAVA_CMD="${LEIN_JAVA_CMD:-${JAVA_CMD:-java}}"
+ 
+-if [[ -z "${DRIP_INIT+x}" && "$(basename "$LEIN_JAVA_CMD")" == *drip* ]]; then
++if [ -z "${DRIP_INIT+x}" ] && [ "$(basename "$LEIN_JAVA_CMD")" == *drip* ]; then
+     export DRIP_INIT="$(printf -- '-e\n(require (quote leiningen.repl))')"
+     export DRIP_INIT_CLASS="clojure.main"
+ fi

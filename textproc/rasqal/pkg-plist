@@ -6,9 +6,9 @@ lib/librasqal.so
 lib/librasqal.so.3
 lib/librasqal.so.3.0.0
 libdata/pkgconfig/rasqal.pc
-man/man1/rasqal-config.1.gz
-man/man1/roqet.1.gz
-man/man3/librasqal.3.gz
+share/man/man1/rasqal-config.1.gz
+share/man/man1/roqet.1.gz
+share/man/man3/librasqal.3.gz
 share/gtk-doc/html/rasqal/home.png
 share/gtk-doc/html/rasqal/index.html
 share/gtk-doc/html/rasqal/index.sgml

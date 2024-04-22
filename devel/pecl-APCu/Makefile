@@ -16,8 +16,6 @@ PHP_MODNAME=	apcu
 
 PLIST_FILES=	${DATADIR}/apc.php
 
-CONFLICTS_INSTALL=	pecl-APC
-
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/apc.php ${STAGEDIR}${DATADIR}

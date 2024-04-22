@@ -1,13 +1,12 @@
 PORTNAME=	Osi
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	0.108.9
-PORTREVISION=	1
+DISTVERSION=	0.108.10
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	COIN-OR Open Solver Interface, an API for calling solver libraries
-WWW=		https://projects.coin-or.org/Osi/
+WWW=		https://github.com/coin-or/Osi/
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/Osi/LICENSE
@@ -31,6 +30,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	coin-or
 
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	test # tests fail to compile, see https://github.com/coin-or/Osi/issues/190
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/coin

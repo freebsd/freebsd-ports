@@ -9,14 +9,3 @@
  
  CFLAGS += -O2 -Wall -Wstrict-prototypes -Wundef -Wstrict-aliasing \
           -Werror-implicit-function-declaration -ansi -pedantic $(VERSION)
-@@ -56,8 +56,8 @@ install: $(PROGRAM)
- install: $(PROGRAM)
- 	mkdir -p $(DESTDIR)$(PREFIX)/sbin
- 	$(INSTALL) $(PROGRAM) $(DESTDIR)$(PREFIX)/sbin
--	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man8
--	$(INSTALL) -p -m644 $(PROGRAM).8 $(DESTDIR)$(PREFIX)/share/man/man8
-+	mkdir -p $(DESTDIR)$(PREFIX)/man/man8
-+	$(INSTALL) -p -m644 $(PROGRAM).8 $(DESTDIR)$(PREFIX)/man/man8
- 
- clean:
- 	rm -f $(PROGRAM) *.o junit.xml

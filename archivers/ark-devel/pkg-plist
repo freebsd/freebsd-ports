@@ -14,7 +14,6 @@ lib/libkerfuffle.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/kf6/kfileitemaction/extractfileitemaction.so
 %%QT_PLUGINDIR%%/kf6/kio_dnd/extracthere.so
 %%QT_PLUGINDIR%%/kf6/parts/arkpart.so
-man/man1/ark.1.gz
 share/applications/org.kde.ark.desktop
 share/config.kcfg/ark.kcfg
 share/icons/hicolor/128x128/apps/ark.png
@@ -102,5 +101,18 @@ share/locale/xh/LC_MESSAGES/ark.mo
 share/locale/zh_CN/LC_MESSAGES/ark.mo
 share/locale/zh_HK/LC_MESSAGES/ark.mo
 share/locale/zh_TW/LC_MESSAGES/ark.mo
+share/man/ca/man1/ark.1.gz
+share/man/es/man1/ark.1.gz
+share/man/fr/man1/ark.1.gz
+share/man/gl/man1/ark.1.gz
+share/man/it/man1/ark.1.gz
+share/man/man1/ark.1.gz
+share/man/nl/man1/ark.1.gz
+share/man/pt_BR/man1/ark.1.gz
+share/man/sr/man1/ark.1.gz
+share/man/sr@latin/man1/ark.1.gz
+share/man/sv/man1/ark.1.gz
+share/man/tr/man1/ark.1.gz
+share/man/uk/man1/ark.1.gz
 share/metainfo/org.kde.ark.appdata.xml
 share/qlogging-categories6/ark.categories

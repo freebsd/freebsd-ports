@@ -1,8 +1,0 @@
---- crypto/CMakeLists.txt.orig	2023-12-06 22:08:40 UTC
-+++ crypto/CMakeLists.txt
-@@ -352,3 +352,5 @@ endif()
- if(USE_CUSTOM_LIBCXX)
-   target_link_libraries(crypto libcxx)
- endif()
-+
-+SET_TARGET_PROPERTIES(crypto PROPERTIES SOVERSION 1)

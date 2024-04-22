@@ -1,7 +1,7 @@
 PORTNAME=	future
-DISTVERSION=	1.33.1
+DISTVERSION=	1.33.2
 CATEGORIES=	devel
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Unified Parallel and Distributed Processing in R for Everyone

@@ -1,6 +1,6 @@
 PORTNAME=	chicken
 DISTVERSION=	5.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	https://code.call-cc.org/releases/${DISTVERSION}/
@@ -27,7 +27,7 @@ MAKE_ARGS=	C_COMPILER="${CC}" \
 		LIBDIR="${PREFIX}/lib" \
 		LIBRARIAN="${AR}" \
 		LINKER_OPTIONS="${LDFLAGS}" \
-		MANDIR=${PREFIX}/man \
+		MANDIR=${PREFIX}/share/man \
 		PREFIX=${PREFIX}
 
 TEST_TARGET=	check

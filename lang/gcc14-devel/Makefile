@@ -1,5 +1,6 @@
 PORTNAME=	gcc
-PORTVERSION=	14.0.0.s20240114
+PORTVERSION=	14.0.1.s20240414
+PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -47,8 +48,8 @@ OPTIONS_DEFAULT_i386=	STANDARD_BOOTSTRAP
 OPTIONS_DEFAULT_powerpc=LTO_BOOTSTRAP
 OPTIONS_DEFAULT_powerpc64=LTO_BOOTSTRAP
 OPTIONS_DEFAULT_powerpc64le=LTO_BOOTSTRAP
-OPTIONS_RADIO=	BOOTSTRAP
-OPTIONS_RADIO_BOOTSTRAP=	LTO_BOOTSTRAP STANDARD_BOOTSTRAP
+OPTIONS_SINGLE=	BOOTSTRAP
+OPTIONS_SINGLE_BOOTSTRAP=	LTO_BOOTSTRAP STANDARD_BOOTSTRAP
 LTO_BOOTSTRAP_DESC=	Build using a full LTO bootstrap
 STANDARD_BOOTSTRAP_DESC=	Build using a full bootstrap without LTO
 GRAPHITE_DESC=		Support for Graphite loop optimizations
@@ -87,10 +88,9 @@ TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 TARGLIB32=	${PREFIX}/lib32	# The version information is added later
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_OUTSOURCE=	yes
-.if empty(PORT_OPTIONS:M*BOOTSTRAP)
-CONFIGURE_ARGS+=--disable-bootstrap
-.elif ${PORT_OPTIONS:MLTO_BOOTSTRAP}
+.if ${PORT_OPTIONS:MLTO_BOOTSTRAP}
 CONFIGURE_ARGS+=--with-build-config=bootstrap-lto-noplugin
 ALL_TARGET=	bootstrap-lean
 PIE_UNSAFE=	yes
@@ -162,7 +162,7 @@ full-regression-test: build
 .endif
 
 post-stage:
-	${RM} ${STAGEDIR}${PREFIX}/man/man7/*
+	${RM} ${STAGEDIR}${PREFIX}/share/man/man7/*
 	${RM} -r ${STAGEDIR}${TARGLIB}/gcc/*/${GCC_VERSION}/include-fixed/
 	# Install ISO_Fortran_binding.h in an easily findable directory
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/gcc${SUFFIX}

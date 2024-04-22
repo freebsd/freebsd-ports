@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Best way to have Django DRY forms
-WWW=		https://github.com/django-crispy-forms/django-crispy-forms
+WWW=		https://django-crispy-forms.readthedocs.io/en/latest/ \
+		https://github.com/django-crispy-forms/django-crispy-forms
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -19,8 +20,6 @@ USES=		dos2unix python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
-
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj22-django-crispy-forms
 
 PORTSCOUT=	skipv:2.1
 

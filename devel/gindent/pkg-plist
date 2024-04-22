@@ -1,5 +1,5 @@
 bin/gindent
-man/man1/gindent.1.gz
+share/man/man1/gindent.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/indent.html
 %%NLS%%share/locale/bg/LC_MESSAGES/indent.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/indent.mo

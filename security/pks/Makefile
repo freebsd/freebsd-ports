@@ -1,6 +1,6 @@
 PORTNAME=	pks
 PORTVERSION=	0.9.6.20040312
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	security www
 MASTER_SITES=	http://pks.sourceforge.net/ LOCAL/mandree
 DISTFILES=	pks-current.tgz
@@ -18,6 +18,7 @@ USE_RC_SUBR=	pksd
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--localstatedir=/var/pks \
 		--with-db --with-ipv6 --with-libwrap \

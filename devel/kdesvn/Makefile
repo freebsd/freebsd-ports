@@ -1,6 +1,6 @@
 PORTNAME=	kdesvn
 DISTVERSION=	2.1.0
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/
 
@@ -13,8 +13,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libexpat.so:textproc/expat2 \
-		libgdbm.so:databases/gdbm \
-		libsvn_client-1.so:devel/subversion
+		libgdbm.so:databases/gdbm
+.if ${WITH_SUBVERSION_VER:U} == LTS
+LIB_DEPENDS+=	libsvn_client-1.so:devel/subversion-lts
+.else
+LIB_DEPENDS+=	libsvn_client-1.so:devel/subversion
+.endif
 
 CONFLICTS_INSTALL=	qsvn
 

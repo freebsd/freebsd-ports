@@ -1,8 +1,8 @@
 bin/portshaker
 etc/portshaker.conf.sample
-man/man5/portshaker.conf.5.gz
-man/man5/portshaker.d.5.gz
-man/man8/portshaker.8.gz
+share/man/man5/portshaker.conf.5.gz
+share/man/man5/portshaker.d.5.gz
+share/man/man8/portshaker.8.gz
 %%DATADIR%%/merge-updating.awk
 %%DATADIR%%/portshaker.subr
 @dir etc/portshaker.d

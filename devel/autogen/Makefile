@@ -31,8 +31,7 @@ USE_LDCONFIG=	yes
 
 INFO=		autogen
 
-# bin/columns
-CONFLICTS_INSTALL=	columns
+CONFLICTS_INSTALL=	columns # bin/columns
 
 SHEBANG_FILES=	autoopts/tpl/*.pl
 

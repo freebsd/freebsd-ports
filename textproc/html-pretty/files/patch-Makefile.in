@@ -18,7 +18,7 @@
  ###				directories
  ###	uninstall-man		remove htmlpty manual pages from system
  ###				directories
-@@ -149,21 +149,21 @@
+@@ -149,22 +149,22 @@
  
  #### Start of system configuration section. ####
  
@@ -41,11 +41,13 @@
  ### are NOT independent.
  BINDIR          = $(bindir)
 -LIBDIR		= $(libdir)
+-MANDIR          = $(prefix)/man
 +DATADIR		= $(datadir)
- MANDIR          = $(prefix)/man
++MANDIR          = $(prefix)/share/man
  MANEXT		= 1
  
-@@ -217,7 +217,7 @@ INSTALL         = @INSTALL@
+ CC              = @CC@
+@@ -217,7 +217,7 @@ INSTALL_DATA    = @INSTALL_DATA@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
  INSTALL_DATA    = @INSTALL_DATA@
  
@@ -94,7 +96,7 @@
  
  install-ftp:	htmlpty.tar htmlpty.zip htmlpty.zoo
  	$(TAR) tvf htmlpty-$(VERSION).tar >$(FTPDIR)/htmlpty-$(VERSION).tar-lst
-@@ -827,14 +817,14 @@ table.o:	table.c builtin.h default.h $(H
+@@ -827,14 +817,14 @@ test-version:
  test-version:
  	@echo "Version number is ""'"$(VERSION)"'"
  

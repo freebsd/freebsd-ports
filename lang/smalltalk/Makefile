@@ -1,6 +1,6 @@
 PORTNAME=	smalltalk
 PORTVERSION=	3.2.5
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 
@@ -27,6 +27,7 @@ USE_GL=		gl glu glut
 USE_GNOME=	pango
 USE_XORG=	ice sm x11 xi xmu
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_prog_EMACS=no ac_cv_prog_AWK=gawk
 CONFIGURE_ARGS=	--enable-generational-gc=no \
 		--enable-gtk=no \
@@ -70,7 +71,7 @@ post-build:
 		${WRKSRC}/gst-mode.el.in > ${WRKSRC}/gst-mode.el
 
 post-install:
-	@${LN} -sf gst-load.1 ${STAGEDIR}${MANPREFIX}/man/man1/gst-reload.1
+	@${LN} -sf gst-load.1 ${STAGEDIR}${PREFIX}/share/man/man1/gst-reload.1
 	@${MKDIR} ${STAGEDIR}${DATADIR}/gtk
 	${INSTALL_DATA} ${WRKSRC}/*.el ${STAGEDIR}${PREFIX}/share/emacs/site-lisp
 	@${LS} -1 ${STAGEDIR}${PREFIX}/bin/gst* |grep -v config|${XARGS} ${STRIP_CMD}

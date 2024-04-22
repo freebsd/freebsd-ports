@@ -1,5 +1,6 @@
 PORTNAME=	gsm
 DISTVERSION=	1.0.22
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.quut.com/gsm/
 

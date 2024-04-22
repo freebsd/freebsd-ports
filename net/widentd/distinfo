@@ -1,2 +1,3 @@
-SHA256 (widentd-1.04.tar.xz) = cbdea487ad21dd6bdb21661d84745c0123e851054f69a53445129011b255a060
-SIZE (widentd-1.04.tar.xz) = 5380
+TIMESTAMP = 1709489923
+SHA256 (widentd-widentd-1.05.tar.gz) = fc685d69dd268bd66b655e8ea0c3a8490c69902c543894b37abff4def04684c6
+SIZE (widentd-widentd-1.05.tar.gz) = 5961

@@ -1,5 +1,7 @@
 PORTNAME=	wasi-libc
+DISTVERSIONPREFIX=	wasi-sdk-
 DISTVERSION=	21
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	vishwin@FreeBSD.org
@@ -17,7 +19,6 @@ LICENSE_PERMS_LLVM2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		gmake llvm:min=12
 USE_GITHUB=	yes
 GH_ACCOUNT=	WebAssembly
-GH_TAGNAME=	wasi-sdk-${DISTVERSION}${DISTVERSIONSUFFIX}
 GH_TUPLE=	WebAssembly:WASI:59cbe14:wasi/tools/wasi-headers/WASI
 NO_ARCH=	yes
 
@@ -25,9 +26,6 @@ ALL_TARGET=	finish
 
 # NOTE: matches the https://github.com/WebAssembly/wasi-sdk
 WASI_SYSROOT=	${PREFIX}/share/wasi-sysroot
-
-# NOTE: our llvm ports don't ship stdarg/stddef clang headers, so they're in FILESDIR
-#       and we install them to the sysroot
 
 MAKE_ENV=	INSTALL_DIR=${STAGEDIR}${WASI_SYSROOT} \
 		EXTRA_CFLAGS="-O2 -DNDEBUG -isystem ${FILESDIR}" \
@@ -40,7 +38,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's|install: finish|install:|' ${WRKSRC}/Makefile
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/stdarg.h ${STAGEDIR}${WASI_SYSROOT}/include/
-	${INSTALL_DATA} ${FILESDIR}/stddef.h ${STAGEDIR}${WASI_SYSROOT}/include/
+# NOTE: our llvm ports don't ship stdarg/stddef clang headers, so
+#       they are copied from clang/lib/Headers into FILESDIR and we install
+#       them to the sysroot
+	${INSTALL_DATA} ${FILESDIR}/*stdarg*.h ${STAGEDIR}${WASI_SYSROOT}/include/
+	${INSTALL_DATA} ${FILESDIR}/*stddef*.h ${STAGEDIR}${WASI_SYSROOT}/include/
 
 .include <bsd.port.mk>

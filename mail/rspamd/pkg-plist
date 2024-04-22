@@ -99,9 +99,9 @@ lib/rspamd/librspamd-ev.so
 lib/rspamd/librspamd-kann.so
 lib/rspamd/librspamd-replxx.so
 lib/rspamd/librspamd-server.so
-man/man1/rspamadm.1.gz
-man/man1/rspamc.1.gz
-man/man8/rspamd.8.gz
+share/man/man1/rspamadm.1.gz
+share/man/man1/rspamc.1.gz
+share/man/man8/rspamd.8.gz
 %%DATADIR%%/effective_tld_names.dat
 %%DATADIR%%/elastic/kibana.json
 %%DATADIR%%/elastic/rspamd_template.json
@@ -160,6 +160,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_auth_results.lua
 %%DATADIR%%/lualib/lua_aws.lua
 %%DATADIR%%/lualib/lua_bayes_learn.lua
+%%DATADIR%%/lualib/lua_bayes_redis.lua
 %%DATADIR%%/lualib/lua_cfg_transform.lua
 %%DATADIR%%/lualib/lua_cfg_utils.lua
 %%DATADIR%%/lualib/lua_clickhouse.lua
@@ -221,6 +222,11 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/plugins/neural.lua
 %%DATADIR%%/lualib/plugins/rbl.lua
 %%DATADIR%%/lualib/plugins_stats.lua
+%%DATADIR%%/lualib/redis_scripts/bayes_cache_check.lua
+%%DATADIR%%/lualib/redis_scripts/bayes_cache_learn.lua
+%%DATADIR%%/lualib/redis_scripts/bayes_classify.lua
+%%DATADIR%%/lualib/redis_scripts/bayes_learn.lua
+%%DATADIR%%/lualib/redis_scripts/bayes_stat.lua
 %%DATADIR%%/lualib/redis_scripts/neural_maybe_invalidate.lua
 %%DATADIR%%/lualib/redis_scripts/neural_maybe_lock.lua
 %%DATADIR%%/lualib/redis_scripts/neural_save_unlock.lua
@@ -238,6 +244,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/rspamadm/dmarc_report.lua
 %%DATADIR%%/lualib/rspamadm/dns_tool.lua
 %%DATADIR%%/lualib/rspamadm/fuzzy_convert.lua
+%%DATADIR%%/lualib/rspamadm/fuzzy_ping.lua
 %%DATADIR%%/lualib/rspamadm/fuzzy_stat.lua
 %%DATADIR%%/lualib/rspamadm/grep.lua
 %%DATADIR%%/lualib/rspamadm/keypair.lua
@@ -343,9 +350,11 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/www/img/desc.png
 %%DATADIR%%/www/img/rspamd_logo_navbar.png
 %%DATADIR%%/www/index.html
+%%DATADIR%%/www/js/app/common.js
 %%DATADIR%%/www/js/app/config.js
 %%DATADIR%%/www/js/app/graph.js
 %%DATADIR%%/www/js/app/history.js
+%%DATADIR%%/www/js/app/libft.js
 %%DATADIR%%/www/js/app/rspamd.js
 %%DATADIR%%/www/js/app/selectors.js
 %%DATADIR%%/www/js/app/stats.js
@@ -359,7 +368,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/www/js/lib/d3pie.min.js
 %%DATADIR%%/www/js/lib/fontawesome.min.js
 %%DATADIR%%/www/js/lib/footable.min.js
-%%DATADIR%%/www/js/lib/jquery-3.7.0.min.js
+%%DATADIR%%/www/js/lib/jquery-3.7.1.min.js
 %%DATADIR%%/www/js/lib/jquery.stickytabs.min.js
 %%DATADIR%%/www/js/lib/nprogress.min.js
 %%DATADIR%%/www/js/lib/prism.js

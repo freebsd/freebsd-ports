@@ -1,8 +1,11 @@
 PORTNAME=	ncmpcpp
 DISTVERSION=	0.9.2
-PORTREVISION=	11
+PORTREVISION=	13
 CATEGORIES=	audio
 MASTER_SITES=	https://ncmpcpp.rybczak.net/stable/
+
+PATCH_SITES=	https://github.com/ncmpcpp/ncmpcpp/commit/
+PATCHFILES=	d7f487c648e05172aeb2c2d0899d2086160edaf1.patch:-p1
 
 MAINTAINER=	yamagi@yamagi.org
 COMMENT=	Ncurses mpd client, clone of ncmpc with some new features
@@ -20,10 +23,11 @@ USES=		compiler:c++14-lang gnome iconv libtool localbase ncurses \
 		pkgconfig readline tar:bzip2
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	ncursesw_CFLAGS="-L${NCURSESLIB}" ncursesw_LIBS="-lncursesw"
 
 PLIST_FILES=	bin/ncmpcpp \
-		man/man1/ncmpcpp.1.gz
+		share/man/man1/ncmpcpp.1.gz
 PORTDOCS=	AUTHORS CHANGELOG.md COPYING bindings config
 
 OPTIONS_DEFINE=	CLOCK DOCS OUTPUTS TAGLIB VISUALIZER

@@ -1,18 +1,11 @@
---- Makefile.in.orig	2015-06-24 02:57:05 UTC
+--- Makefile.in.orig	2024-03-27 11:13:06 UTC
 +++ Makefile.in
-@@ -89,7 +89,7 @@ PAPERFORMAT       = @PAPERFORMAT@
- # -DINTEGRATEDLIKE may be used to get a marginal likelihood different to the current thermodynamic integr and harmonic mean [does not work]
- # -UEP calculates unique event polymorphism [not checked in a long time -- most likely does not work]
- NEWSTUFF          =  -DNEXUSTREE
--COMMONFLAGS       = $(ARCH) $(MACOSVERSION) $(NEWSTUFF) $(HAVE_ZNZ) -DHIGHBITS -DHAVE_CONFIG_H -DHAVE_MALLOCWRAP $(CFLAGS_MT) $(HARDWARECFLAGS)
-+COMMONFLAGS       = $(MACOSVERSION) $(NEWSTUFF) $(HAVE_ZNZ) -DHIGHBITS -DHAVE_CONFIG_H -DHAVE_MALLOCWRAP $(CFLAGS_MT) $(HARDWARECFLAGS)
+@@ -94,7 +94,7 @@ NEWSTUFF          = 
+ # -DTHERMOCHECK prints heated likelihood into mixfile (needs to be added the parmfile)
+ #NEWSTUFF          = -DNEWVERSION
+ NEWSTUFF          = 
+-COMMONFLAGS       = $(ARCH) $(MACOSVERSION) $(NEWSTUFF) $(HAVE_ZNZ) -DNEXUSTREE -DHIGHBITS -DHAVE_CONFIG_H -DHAVE_MALLOCWRAP $(CFLAGS_MT) $(HARDWARECFLAGS)
++COMMONFLAGS       = $(MACOSVERSION) $(NEWSTUFF) $(HAVE_ZNZ) -DNEXUSTREE -DHIGHBITS -DHAVE_CONFIG_H -DHAVE_MALLOCWRAP $(CFLAGS_MT) $(HARDWARECFLAGS)
+ VALGRINDCOMMONFLAGS       = $(ARCH) $(MACOSVERSION) $(NEWSTUFF) $(HAVE_ZNZ) -DHIGHBITS -DHAVE_CONFIG_H -DHAVE_MALLOCWRAP $(CFLAGS_MT)
  #
  # combine the common flags with the version number and subversion number
- COMMONVFLAGS      =  $(COMMONFLAGS)  -DMIGRATESUBVERSION=\"\\\"$(MIGRATESUBVERSION)\\\"\" 
-@@ -544,4 +544,4 @@ parallel_short_test::
- #----------------------------------------------------------------
- # BEAGLE
- beagle:
--	$(MAKE) $(NAME) "CFLAGS = $(DEBUGCFLAGS)  $(BEAGLEFLAGS) $(PRETTYCFLAGS)" "LIBS = $(PDFLIB) $(LIBS)"  "LDFLAGS =$(LDFLAGS) $(EXCEPTIONS) `pkg-config /Users/beerli/src/beagle-lib/hmsbeagle-1.0.pc --cflags --libs` -framework OpenCL"
-\ No newline at end of file
-+	$(MAKE) $(NAME) "CFLAGS = $(DEBUGCFLAGS)  $(BEAGLEFLAGS) $(PRETTYCFLAGS)" "LIBS = $(PDFLIB) $(LIBS)"  "LDFLAGS =$(LDFLAGS) $(EXCEPTIONS) `pkg-config /Users/beerli/src/beagle-lib/hmsbeagle-1.0.pc --cflags --libs` -framework OpenCL"

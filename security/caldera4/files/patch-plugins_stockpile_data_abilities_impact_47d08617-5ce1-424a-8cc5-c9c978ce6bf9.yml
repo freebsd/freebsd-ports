@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/impact/47d08617-5ce1-424a-8cc5-c9c978ce6bf9.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/impact/47d08617-5ce1-424a-8cc5-c9c978ce6bf9.yml
+@@ -12,7 +12,7 @@
+       sh:
+         command: |
+           echo "proof that this machine was hacked." > message.txt
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           echo "proof that this machine was hacked." > message.txt

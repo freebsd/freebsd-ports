@@ -1,6 +1,7 @@
 PORTNAME=	vmtouch
 PORTVERSION=	1.3.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	trociny@FreeBSD.org
@@ -15,10 +16,10 @@ USES=		perl5 uidfix
 USE_PERL5=	build # pod2man
 
 PLIST_FILES=	bin/vmtouch \
-		man/man8/vmtouch.8.gz
+		share/man/man8/vmtouch.8.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vmtouch ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/vmtouch.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/vmtouch.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

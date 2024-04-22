@@ -1,17 +1,17 @@
 ﻿#
 # PLUGINS OPTIONS
 #
-autofire                  0
-cheat                     0
-cheatfind                 0
-console                   0
-data                      1
-discord                   0
-dummy                     0
-gdbstub                   0
 hiscore                   0
-inputmacro                0
-layout                    1
-portname                  0
+cheat                     0
 timecode                  0
+dummy                     0
 timer                     0
+cheatfind                 0
+data                      1
+inputmacro                0
+portname                  0
+discord                   0
+console                   0
+autofire                  0
+layout                    1
+gdbstub                   0

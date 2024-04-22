@@ -1,7 +1,7 @@
 bin/MergePCBPS
 bin/Merge_dimPCBPS
 bin/pcb
-%%PORTDOCS%%man/man1/pcb.1.gz
+%%PORTDOCS%%share/man/man1/pcb.1.gz
 share/applications/pcb.desktop
 share/gEDA/scheme/gnet-pcbfwd.scm
 share/icons/hicolor/16x16/mimetypes/application-x-excellon-16.png

@@ -121,10 +121,10 @@ lib/libhtp.so.2.0.0
 %%PYTHON%%lib/suricata/python/suricatasc/__init__.py
 %%PYTHON%%lib/suricata/python/suricatasc/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 libdata/pkgconfig/htp.pc
-man/man1/suricata.1.gz
-%%PYTHON%%man/man1/suricatactl-filestore.1.gz
-%%PYTHON%%man/man1/suricatactl.1.gz
-%%PYTHON%%man/man1/suricatasc.1.gz
+share/man/man1/suricata.1.gz
+%%PYTHON%%share/man/man1/suricatactl-filestore.1.gz
+%%PYTHON%%share/man/man1/suricatactl.1.gz
+%%PYTHON%%share/man/man1/suricatasc.1.gz
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/Basic_Setup.txt
 %%DOCSDIR%%/GITGUIDE

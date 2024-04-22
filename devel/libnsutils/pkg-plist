@@ -1,3 +1,4 @@
+include/nsutils/assert.h
 include/nsutils/base64.h
 include/nsutils/endian.h
 include/nsutils/errors.h

@@ -12,4 +12,4 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING
 
 USES=		tar:xz
 
-.include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
+.include "${.CURDIR}/Makefile.icons"

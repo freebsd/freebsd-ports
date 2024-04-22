@@ -1,9 +1,9 @@
 include/libdatovka/isds.h
 lib/libdatovka.a
 lib/libdatovka.so
-lib/libdatovka.so.4
-lib/libdatovka.so.4.0.0
+lib/libdatovka.so.6
+lib/libdatovka.so.6.1.2
 libdata/pkgconfig/libdatovka.pc
-man/man3/isds.h.libdatovka.3.gz
-man/man3/libdatovka.3.gz
+share/man/man3/isds.h.libdatovka.3.gz
+share/man/man3/libdatovka.3.gz
 share/locale/cs/LC_MESSAGES/libdatovka.mo

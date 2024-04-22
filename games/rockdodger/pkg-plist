@@ -1,5 +1,5 @@
 @(,games,2555) bin/rockdodger
-man/man6/rockdodger.6.gz
 share/applications/rockdodger.desktop
+share/man/man6/rockdodger.6.gz
 share/pixmaps/rockdodger.xpm
 @sample(,games,664) /var/games/rockdodger.scores.sample

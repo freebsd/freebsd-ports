@@ -2,11 +2,6 @@ bin/rush-po
 bin/rushlast
 bin/rushwho
 etc/rush.rc
-man/man1/rush-po.1.gz
-man/man1/rushlast.1.gz
-man/man1/rushwho.1.gz
-man/man5/rush.rc.5.gz
-man/man8/rush.8.gz
 sbin/rush
 share/locale/da/LC_MESSAGES/rush.mo
 share/locale/de/LC_MESSAGES/rush.mo
@@ -22,3 +17,8 @@ share/locale/sv/LC_MESSAGES/rush.mo
 share/locale/uk/LC_MESSAGES/rush.mo
 share/locale/vi/LC_MESSAGES/rush.mo
 share/locale/zh_CN/LC_MESSAGES/rush.mo
+share/man/man1/rush-po.1.gz
+share/man/man1/rushlast.1.gz
+share/man/man1/rushwho.1.gz
+share/man/man5/rush.rc.5.gz
+share/man/man8/rush.8.gz

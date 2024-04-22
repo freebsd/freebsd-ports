@@ -1,0 +1,18 @@
+--- osmpbf/CMakeLists.txt.orig	2024-03-11 08:26:22 UTC
++++ osmpbf/CMakeLists.txt
+@@ -1,13 +1,13 @@ add_library(osmpbf STATIC ${CPPS})
+ protobuf_generate_cpp(CPPS HS fileformat.proto osmformat.proto)
+ 
+ add_library(osmpbf STATIC ${CPPS})
+-target_compile_features(osmpbf PUBLIC cxx_std_11)
++target_compile_features(osmpbf PUBLIC cxx_std_17)
+ target_link_libraries(osmpbf PRIVATE protobuf::libprotobuf)
+ target_include_directories(osmpbf SYSTEM PUBLIC ${Protobuf_INCLUDE_DIRS})
+ install(TARGETS osmpbf ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
+ 
+ add_library(osmpbf_shared SHARED ${CPPS})
+-target_compile_features(osmpbf_shared PUBLIC cxx_std_11)
++target_compile_features(osmpbf_shared PUBLIC cxx_std_17)
+ target_link_libraries(osmpbf_shared PRIVATE protobuf::libprotobuf)
+ target_include_directories(osmpbf_shared SYSTEM PUBLIC ${Protobuf_INCLUDE_DIRS})
+ set_target_properties(osmpbf_shared PROPERTIES OUTPUT_NAME osmpbf

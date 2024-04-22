@@ -1,5 +1,5 @@
 PORTNAME=	unicode-emoji
-DISTVERSION=	15.0
+DISTVERSION=	15.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.unicode.org/Public/emoji/${DISTVERSION}/ \
 		http://www.unicode.org/Public/${DISTVERSION}.0/ucd/emoji/:ucd
@@ -9,7 +9,7 @@ EXTRACT_ONLY=	# nothing to extract
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Unicode emoji data files
-WWW=		https://www.unicode.org/emoji/
+WWW=		https://home.unicode.org/emoji/
 
 LICENSE=	UNICODE
 LICENSE_NAME=	UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE

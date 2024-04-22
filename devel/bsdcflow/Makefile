@@ -1,6 +1,6 @@
 PORTNAME=	bsdcflow
 PORTVERSION=	0.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/marcusva/cflow/downloads/
 DISTNAME=	cflow-${PORTVERSION}
@@ -14,7 +14,7 @@ LICENSE=	BSD2CLAUSE
 CONFLICTS=	gnucflow cflow
 
 USES=		gmake
-MAKE_ENV=	MANDIR=${PREFIX}/man
+MAKE_ENV=	MANDIR=${PREFIX}/share/man
 MAKE_JOBS_UNSAFE=	yes
 WRKSRC_SUBDIR=	gnu
 

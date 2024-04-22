@@ -39,14 +39,15 @@ lib/cmake/KF6WindowSystem/KF6WindowSystemConfigVersion.cmake
 lib/cmake/KF6WindowSystem/KF6WindowSystemTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6WindowSystem/KF6WindowSystemTargets.cmake
 lib/libKF6WindowSystem.so
-lib/libKF6WindowSystem.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6WindowSystem.so.6
+lib/libKF6WindowSystem.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/kf6/kwindowsystem/KF6WindowSystemKWaylandPlugin.so
 %%QT_PLUGINDIR%%/kf6/kwindowsystem/KF6WindowSystemX11Plugin.so
 %%QT_QMLDIR%%/org/kde/kwindowsystem/KWindowSystem.qmltypes
 %%QT_QMLDIR%%/org/kde/kwindowsystem/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/kwindowsystem/libKWindowSystem.so
 %%QT_QMLDIR%%/org/kde/kwindowsystem/qmldir
+libdata/pkgconfig/KF6WindowSystem.pc
 share/locale/af/LC_MESSAGES/kwindowsystem6_qt.qm
 share/locale/ar/LC_MESSAGES/kwindowsystem6_qt.qm
 share/locale/as/LC_MESSAGES/kwindowsystem6_qt.qm

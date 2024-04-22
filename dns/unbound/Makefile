@@ -1,5 +1,5 @@
 PORTNAME=	unbound
-DISTVERSION=	1.19.0
+DISTVERSION=	1.19.3
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/unbound/
 
@@ -18,6 +18,7 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	unbound
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-libexpat=${LOCALBASE} \
 		--with-ssl=${OPENSSLBASE}
 TEST_TARGET=	test

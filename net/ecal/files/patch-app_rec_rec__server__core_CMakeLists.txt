@@ -1,0 +1,21 @@
+--- app/rec/rec_server_core/CMakeLists.txt.orig	2023-10-27 08:38:06 UTC
++++ app/rec/rec_server_core/CMakeLists.txt
+@@ -20,7 +20,8 @@ find_package(fineftp REQUIRED)
+ find_package(Protobuf REQUIRED)
+ find_package(spdlog REQUIRED)
+ find_package(fineftp REQUIRED)
+-find_package(tinyxml2 REQUIRED)
++find_package(PkgConfig REQUIRED)
++pkg_check_modules(tinyxml2 REQUIRED IMPORTED_TARGET tinyxml2)
+ 
+ set(PROJECT_NAME rec_server_core)
+ 
+@@ -66,7 +66,7 @@ target_link_libraries(${PROJECT_NAME}
+ 
+ target_link_libraries(${PROJECT_NAME}
+     PRIVATE
+-    tinyxml2::tinyxml2
++    PkgConfig::tinyxml2
+     protobuf::libprotobuf
+     eCAL::core
+     eCAL::app_pb

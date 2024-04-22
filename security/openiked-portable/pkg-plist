@@ -1,9 +1,11 @@
 @sample(,,600) etc/iked.conf.sample
 sbin/ikectl
 sbin/iked
-man/man5/iked.conf.5.gz
-man/man8/ikectl.8.gz
-man/man8/iked.8.gz
+share/man/man5/iked.conf.5.gz
+share/man/man8/ikectl.8.gz
+share/man/man8/iked.8.gz
+etc/ssl/ikeca.cnf
+etc/ssl/ikex509v3.cnf
 @dir etc/iked/ca
 @dir etc/iked/certs
 @dir etc/iked/crls

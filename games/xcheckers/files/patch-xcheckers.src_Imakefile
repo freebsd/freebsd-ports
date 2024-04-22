@@ -1,13 +1,16 @@
---- xcheckers.src/Imakefile.orig	Sun Dec  9 19:43:13 2001
-+++ xcheckers.src/Imakefile	Wed Jul 30 20:46:21 2003
-@@ -3,7 +3,6 @@
+--- xcheckers.src/Imakefile.orig	2001-12-09 18:43:13 UTC
++++ xcheckers.src/Imakefile
+@@ -3,9 +3,8 @@
  # Imakefile for xcheckers
  # Don Okt 21 12:38:50 CEST 1999
  
 -           PREFIX = /usr/local
             BINDIR = $(PREFIX)/bin
-            MANDIR = $(PREFIX)/man/man6
+-           MANDIR = $(PREFIX)/man/man6
++           MANDIR = $(PREFIX)/share/man/man6
          MANSUFFIX = 6
+            PIXDIR = $(PREFIX)/share/xcheckers
+             XDEFS = -DAPPDEFS=\"$(XAPPLOADDIR)/XCheckers\" \
 @@ -13,7 +12,6 @@
  
       CDEBUGFLAGS = -g -Wall -O2

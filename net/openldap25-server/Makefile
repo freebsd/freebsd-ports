@@ -1,5 +1,5 @@
 PORTNAME=		openldap
-DISTVERSION=		2.5.16
+DISTVERSION=		2.5.17
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		https://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/ \
@@ -43,11 +43,12 @@ CONFLICTS_INSTALL=	${PORTNAME}2[0-46-9]-server ${PORTNAME}-server
 .endif
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	1
+PORTREVISION_CLIENT=	1
+PORTREVISION_SERVER=	2
 OPENLDAP_SHLIB_MAJOR=	0
-OPENLDAP_SHLIB_MINOR=	1.11
+OPENLDAP_SHLIB_MINOR=	1.12
 OPENLDAP_MAJOR=		${DISTVERSION:R}
 
 OPTIONS_DEFINE=		DEBUG FETCH GSSAPI
@@ -273,8 +274,7 @@ EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
 
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-SED_MODULES=		-e 's,mandir = \$$(exec_prefix)/share/man,mandir = $$(exec_prefix)/man,' \
-			-e 's/\(moduleload[ 	]*back_[a-z]*\)\.la/\1/' \
+SED_MODULES=		-e 's/\(moduleload[ 	]*back_[a-z]*\)\.la/\1/' \
 			-e 's/\# *\(modulepath\)/\1/'
 
 CONFIGURE_ARGS+=	--enable-modules \

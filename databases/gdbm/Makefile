@@ -11,6 +11,7 @@ LICENSE=	GPLv3+
 
 USES=		gmake libtool:keepla readline
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes

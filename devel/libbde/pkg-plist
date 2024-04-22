@@ -14,6 +14,6 @@ lib/libbde.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pybde.a
 %%PYTHON_SITELIBDIR%%/pybde.so
 libdata/pkgconfig/libbde.pc
-man/man1/bdeinfo.1.gz
-man/man1/bdemount.1.gz
-man/man3/libbde.3.gz
+share/man/man1/bdeinfo.1.gz
+share/man/man1/bdemount.1.gz
+share/man/man3/libbde.3.gz

@@ -121,7 +121,6 @@ lib/libec.so
 lib/libec.so.10
 lib/libec.so.10.2.0
 libdata/pkgconfig/eclib.pc
-man/man1/mwrank.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/g0n.txt
 %%PORTDOCS%%%%DOCSDIR%%/howto.txt
 %%PORTDOCS%%%%DOCSDIR%%/mwrank/mwrank.changes
@@ -129,3 +128,4 @@ man/man1/mwrank.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mwrank/mwrank.options
 %%PORTDOCS%%%%DOCSDIR%%/mwrank/mwrank.readme
 %%PORTDOCS%%%%DOCSDIR%%/progs.txt
+share/man/man1/mwrank.1.gz

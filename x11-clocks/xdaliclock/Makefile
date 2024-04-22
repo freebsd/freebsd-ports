@@ -1,6 +1,6 @@
 PORTNAME=	xdaliclock
 DISTVERSION=	2.48
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	https://www.jwz.org/${PORTNAME}/
 
@@ -21,7 +21,7 @@ CONFLICTS=	xdaliclock-classic
 WRKSRC=		${WRKDIR}/${DISTNAME}/X11
 
 PLIST_FILES=	bin/xdaliclock \
-		man/man1/xdaliclock.1.gz \
+		share/man/man1/xdaliclock.1.gz \
 		share/applications/xdaliclock.desktop \
 		share/glib-2.0/schemas/gschemas.compiled \
 		share/pixmaps/xdaliclock.png

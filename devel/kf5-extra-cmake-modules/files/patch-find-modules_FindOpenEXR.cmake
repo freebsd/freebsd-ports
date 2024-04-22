@@ -1,6 +1,6 @@
---- find-modules/FindOpenEXR.cmake.orig	2021-02-26 21:48:38 UTC
+--- find-modules/FindOpenEXR.cmake.orig	2023-12-23 00:45:39 UTC
 +++ find-modules/FindOpenEXR.cmake
-@@ -44,6 +44,13 @@ pkg_check_modules(PC_OpenEXR QUIET OpenEXR)
+@@ -43,6 +43,13 @@ set(OpenEXR_DEFINITIONS ${PC_OpenEXR_CFLAGS_OTHER})
  
  set(OpenEXR_DEFINITIONS ${PC_OpenEXR_CFLAGS_OTHER})
  
@@ -14,7 +14,7 @@
  find_path(OpenEXR_INCLUDE_DIR ImfRgbaFile.h
     PATHS
     ${PC_OpenEXR_INCLUDEDIR}
-@@ -52,7 +59,7 @@ find_path(OpenEXR_INCLUDE_DIR ImfRgbaFile.h
+@@ -51,7 +58,7 @@ find_path(OpenEXR_INCLUDE_DIR ImfRgbaFile.h
  )
  
  # Required libraries for OpenEXR
@@ -23,7 +23,7 @@
     PATHS
     ${PC_OpenEXR_LIBDIR}
     ${PC_OpenEXR_LIBRARY_DIRS}
-@@ -73,7 +80,7 @@ find_library(OpenEXR_ILMTHREAD_LIBRARY NAMES IlmThread
+@@ -72,7 +79,7 @@ find_library(OpenEXR_ILMTHREAD_LIBRARY NAMES IlmThread
     ${PC_OpenEXR_LIBRARY_DIRS}
  )
  # This is the actual OpenEXR library
@@ -32,7 +32,7 @@
     PATHS
     ${PC_OpenEXR_LIBDIR}
     ${PC_OpenEXR_LIBRARY_DIRS}
-@@ -109,9 +116,10 @@ find_package_handle_standard_args(OpenEXR
+@@ -108,9 +115,10 @@ find_package_handle_standard_args(OpenEXR
        OpenEXR_IMATH_LIBRARY
        OpenEXR_ILMTHREAD_LIBRARY
        OpenEXR_INCLUDE_DIR

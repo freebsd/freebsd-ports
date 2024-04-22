@@ -1,6 +1,6 @@
 PORTNAME=	ipa
 PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/ipa-system
 
@@ -13,18 +13,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_RC_SUBR=	ipa
 
 PLIST_FILES=	bin/ipa bin/ipactl bin/ipastat include/ipa_mod.h \
-		man/man3/ipa_mod.3.gz man/man5/ipa.conf.5.gz \
-		man/man5/ipastat.conf.5.gz man/man8/ipa.8.gz \
-		man/man8/ipactl.8.gz man/man8/ipastat.8.gz \
-		man/ru.KOI8-R/man3/ipa_mod.3.gz \
-		man/ru.KOI8-R/man5/ipa.conf.5.gz \
-		man/ru.KOI8-R/man5/ipastat.conf.5.gz \
-		man/ru.KOI8-R/man8/ipa.8.gz \
-		man/ru.KOI8-R/man8/ipactl.8.gz \
-		man/ru.KOI8-R/man8/ipastat.8.gz
+		share/man/man3/ipa_mod.3.gz share/man/man5/ipa.conf.5.gz \
+		share/man/man5/ipastat.conf.5.gz share/man/man8/ipa.8.gz \
+		share/man/man8/ipactl.8.gz share/man/man8/ipastat.8.gz \
+		share/man/ru.KOI8-R/man3/ipa_mod.3.gz \
+		share/man/ru.KOI8-R/man5/ipa.conf.5.gz \
+		share/man/ru.KOI8-R/man5/ipastat.conf.5.gz \
+		share/man/ru.KOI8-R/man8/ipa.8.gz \
+		share/man/ru.KOI8-R/man8/ipactl.8.gz \
+		share/man/ru.KOI8-R/man8/ipastat.8.gz
 
 NO_OPTIONS_SORT=	yes
 OPTIONS_DEFINE=		AUTORULES RULES LIMITS SUBLIMITS THRESHOLDS CTL_CREDS

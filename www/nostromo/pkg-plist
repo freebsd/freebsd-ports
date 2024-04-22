@@ -1,6 +1,6 @@
-man/man8/nhttpd.8.gz
 sbin/crypt
 sbin/nhttpd
+share/man/man8/nhttpd.8.gz
 %%NOSTROMODIR%%/conf/mimes
 @sample %%NOSTROMODIR%%/conf/nhttpd.conf.sample
 %%NOSTROMODIR%%/htdocs/index.html

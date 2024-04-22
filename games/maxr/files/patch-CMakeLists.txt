@@ -1,0 +1,49 @@
+--- CMakeLists.txt.orig	2024-04-12 08:07:57 UTC
++++ CMakeLists.txt
+@@ -22,7 +22,6 @@ if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
+ 
+ # ---------------------------------------
+ if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
+-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
+ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP /bigobj")
+   set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /ZI /bigobj")
+@@ -47,8 +46,8 @@ endif()
+ # ============================================
+ 
+ # nlohmann is a library header for json
+-add_library(nlohmann INTERFACE IMPORTED)
+-target_include_directories(nlohmann SYSTEM INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/submodules/nlohmann/single_include")
++find_package(nlohmann_json REQUIRED)
++add_library(nlohmann ALIAS nlohmann_json::nlohmann_json)
+ 
+ # spiritless_po is a library header for gettext po translation
+ add_library(spiritless_po INTERFACE IMPORTED)
+@@ -57,7 +56,8 @@ if(BUILD_TESTING)
+ # doctest is a library header for test framework
+ include(CTest)
+ if(BUILD_TESTING)
+-  add_library(doctest INTERFACE IMPORTED)
++  #find_package(doctest REQUIRED)
++  #add_library(doctest ALIAS doctest::doctest)
+   target_include_directories(doctest SYSTEM INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/submodules/doctest/doctest")
+   set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/submodules/doctest/scripts/cmake")
+   include(doctest)
+@@ -88,17 +88,6 @@ if(CRASH_RPT_INCLUDE_DIR)
+   target_compile_definitions(maxr_lib PUBLIC USE_CRASH_RPT)
+   target_include_directories(maxr_lib PUBLIC ${CRASH_RPT_INCLUDE_DIR})
+   target_link_libraries(maxr_lib PUBLIC ${CRASH_RPT_LIB})
+-endif()
+-## Add GIT Revision
+-include(GetGitRevisionDescription)
+-git_describe(GIT_DESC --always)
+-
+-if (GIT_DESC)
+-  message(STATUS "Setting cpp define GIT_DESC to ${GIT_DESC}")
+-  configure_file("${CMAKE_CURRENT_SOURCE_DIR}/src/autoversion.h.in" "${CMAKE_CURRENT_BINARY_DIR}/autoversion.h")
+-  target_include_directories(maxr_lib PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
+-else()
+-  message("Could not automativally set the maxr GIT_DESC from git. Set cmake variable GIT_EXECUTABLE to use this feature.")
+ endif()
+ 
+ # maxr dedicated server

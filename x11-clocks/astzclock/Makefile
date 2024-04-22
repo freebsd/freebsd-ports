@@ -1,6 +1,6 @@
 PORTNAME=	astzclock
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks afterstep
 MASTER_SITES=	http://www.eyesbeyond.com/freebsddom/astzclock/
 
@@ -10,7 +10,7 @@ WWW=		http://www.eyesbeyond.com/freebsddom/astzclock/
 
 USES=		imake xorg
 USE_XORG=	xpm
-PLIST_FILES=	bin/astzclock man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/astzclock share/man/man1/${PORTNAME}.1.gz
 
 pre-configure:
 	(cd ${WRKSRC}; \

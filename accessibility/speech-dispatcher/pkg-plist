@@ -45,8 +45,8 @@ libexec/speech-dispatcher-modules/sd_festival
 %%FLITE%%libexec/speech-dispatcher-modules/sd_flite
 libexec/speech-dispatcher-modules/sd_generic
 %%VOXIN%%libexec/speech-dispatcher-modules/sd_voxin
-man/man1/spd-say.1.gz
-man/man1/speech-dispatcher.1.gz
+share/man/man1/spd-say.1.gz
+share/man/man1/speech-dispatcher.1.gz
 share/locale/cs/LC_MESSAGES/speech-dispatcher.mo
 share/locale/de/LC_MESSAGES/speech-dispatcher.mo
 share/locale/eo/LC_MESSAGES/speech-dispatcher.mo

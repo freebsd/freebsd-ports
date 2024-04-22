@@ -739,6 +739,7 @@ include/zeek/analyzer/protocol/login/Telnet.h
 include/zeek/analyzer/protocol/login/events.bif.h
 include/zeek/analyzer/protocol/login/functions.bif.h
 include/zeek/analyzer/protocol/mime/MIME.h
+include/zeek/analyzer/protocol/mime/consts.bif.h
 include/zeek/analyzer/protocol/mime/events.bif.h
 include/zeek/analyzer/protocol/modbus/Modbus.h
 include/zeek/analyzer/protocol/modbus/events.bif.h
@@ -1220,7 +1221,7 @@ include/zeek/zeekygen/zeekygen.bif.h
 %%ZEEKCTL%%lib/broctl
 lib/cmake/Broker/BrokerConfig.cmake
 lib/cmake/Broker/BrokerConfigVersion.cmake
-lib/cmake/Broker/BrokerTargets-release.cmake
+lib/cmake/Broker/BrokerTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Broker/BrokerTargets.cmake
 lib/libbinpac.so
 lib/libbinpac.so.0
@@ -1283,10 +1284,6 @@ lib/zeek/python/zeekctl/plugins/lb_pf_ring.py
 lib/zeek/python/zeekctl/plugins/ps.py
 lib/zeek/python/zeekctl/plugins/zeek_port_warning.py
 lib/zeek/python/zeekctl/plugins/zzz_af_packet.py
-%%ZEEKCTL%%man/man1/trace-summary.1.gz
-man/man1/zeek-cut.1.gz
-man/man8/zeek.8.gz
-%%ZEEKCTL%%man/man8/zeekctl.8.gz
 share/btest/data/Scripts/README
 share/btest/data/Scripts/canonify-zeek-log
 share/btest/data/Scripts/canonify-zeek-log-sorted
@@ -1320,6 +1317,10 @@ share/btest/scripts/spicy/diff-remove-abspath
 share/btest/scripts/spicy/diff-remove-timestamps
 share/btest/scripts/spicy/diff-sort
 %%SPICY%%share/hilti/hilti.hlt
+%%ZEEKCTL%%share/man/man1/trace-summary.1.gz
+share/man/man1/zeek-cut.1.gz
+share/man/man8/zeek.8.gz
+%%ZEEKCTL%%share/man/man8/zeekctl.8.gz
 %%SPICY%%share/spicy/filter.spicy
 %%SPICY%%share/spicy/spicy-driver-host.cc
 %%SPICY%%share/spicy/spicy.spicy
@@ -1379,6 +1380,7 @@ share/btest/scripts/spicy/diff-sort
 %%DATADIR%%/base/bif/plugins/Zeek_KRB.types.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_Login.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_Login.functions.bif.zeek
+%%DATADIR%%/base/bif/plugins/Zeek_MIME.consts.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_MIME.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_MQTT.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_MQTT.types.bif.zeek
@@ -2099,6 +2101,9 @@ share/btest/scripts/spicy/diff-sort
 %%ZEEKCTL%%@dir spool/installed-scripts-do-not-touch
 %%ZEEKCTL%%@dir spool/brokerstore
 %%ZEEKCTL%%@dir spool
+@dir share/man/man8
+@dir share/man/man1
+@dir share/man
 %%ZEEKCTL%%@dir logs
 %%SPICY%%@dir lib/zeek/spicy
 @dir lib/zeek/plugins

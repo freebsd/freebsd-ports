@@ -1,0 +1,18 @@
+--- plugins/response/data/abilities/response/02fb7fa9-8886-4330-9e65-fa7bb1bc5271.yml.orig	2021-10-13 20:41:40 UTC
++++ plugins/response/data/abilities/response/02fb7fa9-8886-4330-9e65-fa7bb1bc5271.yml
+@@ -8,7 +8,7 @@
+     attack_id: x
+     name: x
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           kill -9 #{host.pid.unauthorized}
+@@ -25,4 +25,4 @@
+           taskkill /pid #{host.pid.unauthorized} /f
+   requirements:
+     - plugins.stockpile.app.requirements.paw_provenance:
+-      - source: host.pid.unauthorized
+\ No newline at end of file
++      - source: host.pid.unauthorized

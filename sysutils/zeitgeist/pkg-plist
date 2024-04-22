@@ -24,8 +24,8 @@ lib/libzeitgeist-2.0.so.0.0.0
 %%PYTHON_SITELIBDIR%%/zeitgeist/mimetypes.pyo
 @comment lib/systemd/user/zeitgeist.service
 libdata/pkgconfig/zeitgeist-2.0.pc
-man/man1/zeitgeist-daemon.1.gz
-man/man1/zeitgeist-datahub.1.gz
+share/man/man1/zeitgeist-daemon.1.gz
+share/man/man1/zeitgeist-datahub.1.gz
 share/bash-completion/completions/zeitgeist-daemon
 share/dbus-1/services/org.gnome.zeitgeist.Engine.service
 share/gir-1.0/Zeitgeist-2.0.gir

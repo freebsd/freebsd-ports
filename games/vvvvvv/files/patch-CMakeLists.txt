@@ -1,20 +1,11 @@
---- CMakeLists.txt.orig	2021-12-22 13:20:25 UTC
+--- CMakeLists.txt.orig	2024-01-27 15:19:24 UTC
 +++ CMakeLists.txt
-@@ -181,7 +181,7 @@ if(APPLE)
- endif()
- set(PNG_SRC ../third_party/lodepng/lodepng.c)
+@@ -205,7 +205,7 @@ set(SBIDI_SRC ../third_party/SheenBidi/Source/SheenBid
+ set(CHM_SRC ../third_party/c-hashmap/map.c)
+ set(SBIDI_SRC ../third_party/SheenBidi/Source/SheenBidi.c)
  
 -if(NOT OFFICIAL_BUILD)
 +if(FALSE)
- 	# Add interim commit hash and its date to the build
+     # Add interim commit hash and its date to the build
  
- 	# find_package sets GIT_FOUND and GIT_EXECUTABLE
-@@ -296,7 +296,7 @@ if(BUNDLE_DEPENDENCIES)
- else()
- 	find_package(utf8cpp CONFIG)
- 
--	target_link_libraries(VVVVVV physfs tinyxml2 utf8cpp lodepng-static)
-+	target_link_libraries(VVVVVV physfs tinyxml2 lodepng-static)
- endif()
- 
- # SDL2 Dependency (Detection pulled from FAudio)
+     # find_package sets GIT_FOUND and GIT_EXECUTABLE

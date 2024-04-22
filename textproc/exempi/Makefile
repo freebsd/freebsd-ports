@@ -1,5 +1,6 @@
 PORTNAME=	exempi
 DISTVERSION=	2.6.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://libopenraw.freedesktop.org/download/
 
@@ -18,6 +19,7 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_CXXSTD=	c++11
 
 post-patch:

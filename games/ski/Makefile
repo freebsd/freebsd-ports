@@ -1,5 +1,6 @@
 PORTNAME=	ski
 PORTVERSION=	6.13
+PORTREVISION=	1
 CATEGORIES=	games python
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,7 +20,7 @@ GL_TAGNAME=	0b50570a28a99de2ea797f703b104ec03835d24d
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man6/${PORTNAME}.6.gz \
+		share/man/man6/${PORTNAME}.6.gz \
 		share/applications/${PORTNAME}.desktop \
 		share/appdata/${PORTNAME}.xml \
 		share/pixmaps/${PORTNAME}.png
@@ -29,7 +30,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin|; \
-		s|/usr/share/man|${PREFIX}/man|; \
+		s|/usr/share/man|${PREFIX}/share/man|; \
 		s|/usr/share|${PREFIX}/share|' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|' \

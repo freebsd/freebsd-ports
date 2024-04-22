@@ -1,6 +1,6 @@
 PORTNAME=	flpsed
 DISTVERSION=	0.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://flpsed.org/
 
@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 
 PLIST_FILES=	bin/flpsed \
-		man/man1/flpsed.1.gz \
+		share/man/man1/flpsed.1.gz \
 		share/applications/flpsed.desktop \
 		share/icons/flpsed.png \
 		share/icons/flpsed.svg
@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/flpsed ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/flpsed.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/flpsed.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/flpsed.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons
 	${INSTALL_DATA} ${WRKSRC}/flpsed.png ${WRKSRC}/flpsed.svg ${STAGEDIR}${PREFIX}/share/icons

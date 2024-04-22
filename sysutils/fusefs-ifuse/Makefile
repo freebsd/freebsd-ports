@@ -1,5 +1,6 @@
 PORTNAME=	ifuse
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/libimobiledevice/${PORTNAME}/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	fusefs-
@@ -19,7 +20,8 @@ USES=		fuse localbase gnome pkgconfig tar:bzip2
 USE_GNOME=	glib20
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
-PLIST_FILES=	bin/${PORTNAME} man/man1/ifuse.1.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/ifuse.1.gz
 
 .include <bsd.port.mk>

@@ -1,12 +1,14 @@
 PORTNAME=	mp3plot
 DISTVERSION=	0.6.0
-PORTREVISION=	35
+PORTREVISION=	37
 CATEGORIES=	audio
 MASTER_SITES=	http://p.outlyer.net/mp3plot/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MP3 bitrate plot tool
 WWW=		https://p.outlyer.net/mp3plot/
+
+BROKEN=		fails to build with newest Boost
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -23,9 +25,10 @@ CONFIGURE_ARGS=	--with-boost-program-options=boost_program_options \
 		--with-boost-thread=boost_thread
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 LIBS+=		-L${LOCALBASE}/lib -lboost_system
 
-PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 
 GD_CONFIGURE_ENABLE=	gd
 GD_LIB_DEPENDS=		libgd.so:graphics/gd

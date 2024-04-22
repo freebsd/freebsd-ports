@@ -1,5 +1,5 @@
 PORTNAME=	celery
-PORTVERSION=	4.4.7
+PORTVERSION=	5.3.6
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,9 +11,13 @@ WWW=		https://pypi.org/project/celery/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}billiard>=3.3.0.21:devel/py-billiard@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}billiard>=4.1.0,<5.0:devel/py-billiard@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}click>=8.1.7:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}click-didyoumean>=0.3.0:devel/py-click-didyoumean@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}click-plugins>=1.1.1:devel/py-click-plugins@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}click-repl>=0.3.0:devel/py-click-repl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=1.5:devel/py-pytz@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}kombu>=4.6.8:net/py-kombu@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}kombu>=5.3.2,<6.0.0:net/py-kombu@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vine>=1.3.0:devel/py-vine@${PY_FLAVOR}
 
 NO_ARCH=	yes

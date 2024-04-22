@@ -27,8 +27,8 @@ swpath                    ~/.mame/software;%%DATADIR%%/software/
 cfg_directory             ~/.mame/cfg
 nvram_directory           ~/.mame/nvram
 input_directory           ~/.mame/inp
-state_directory           ~/.mame/state
-snapshot_directory        ~/.mame/snapshot
+state_directory           ~/.mame/sta
+snapshot_directory        ~/.mame/snap
 diff_directory            ~/.mame/diff
 comment_directory         ~/.mame/comments
 share_directory           ~/.mame/share
@@ -136,7 +136,7 @@ steadykey                 0
 ui_active                 0
 offscreen_reload          0
 joystick_map              auto
-joystick_deadzone         0.3
+joystick_deadzone         0.15
 joystick_saturation       0.85
 joystick_threshold        0.3
 natural                   0
@@ -349,7 +349,7 @@ networkprovider           auto
 bgfx_path                 %%DATADIR%%/bgfx
 bgfx_backend              auto
 bgfx_debug                0
-bgfx_screen_chains        default
+bgfx_screen_chains        t
 bgfx_shadow_mask          slot-mask.png
 bgfx_lut                  lut-default.png
 bgfx_avi_name             auto

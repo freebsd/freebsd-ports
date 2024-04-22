@@ -1,6 +1,7 @@
 PORTNAME=	sqtop
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2015-02-08
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	coco@executive-computing.de
@@ -15,9 +16,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	paleg
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=	bin/sqtop \
-		man/man1/sqtop.1.gz
+		share/man/man1/sqtop.1.gz
 
 OPTIONS_DEFINE=		NCURSES
 OPTIONS_DEFAULT=	NCURSES

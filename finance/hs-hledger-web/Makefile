@@ -1,6 +1,6 @@
 PORTNAME=	hledger-web
-DISTVERSION=	1.29.2
-CATEGORIES=	finance haskell
+DISTVERSION=	1.32.3
+CATEGORIES=	finance haskell www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Web interface for hledger, the accounting software
@@ -12,65 +12,66 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cabal
 USE_LOCALE=	en_US.UTF-8
 USE_CABAL=      Decimal-0.5.2 \
-		Diff-0.4.1 \
+		Diff-0.5_1 \
 		Glob-0.10.2_3 \
 		HUnit-1.6.2.0 \
-		OneTuple-0.4.1.1 \
-		Only-0.1_1 \
-		QuickCheck-2.14.2 \
+		OneTuple-0.4.1.1_1 \
+		Only-0.1_2 \
+		QuickCheck-2.14.3 \
 		StateVar-1.2.2 \
-		aeson-2.1.2.1_3 \
-		aeson-pretty-0.8.9_2 \
-		alex-3.2.7.4 \
-		ansi-terminal-1.0 \
-		ansi-terminal-types-0.11.5_1 \
-		ansi-wl-pprint-0.6.9_4 \
+		aeson-2.2.1.0_1 \
+		aeson-pretty-0.8.10 \
+		alex-3.5.1.0 \
+		ansi-terminal-1.1 \
+		ansi-terminal-types-1.1 \
 		appar-0.1.8 \
 		asn1-encoding-0.9.6_2 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
-		assoc-1.1 \
-		async-2.2.4_3 \
-		attoparsec-0.14.4_3 \
-		attoparsec-iso8601-1.1.0.0_1 \
+		assoc-1.1_1 \
+		async-2.2.5 \
+		attoparsec-0.14.4_5 \
+		attoparsec-aeson-2.2.0.1 \
 		auto-update-0.1.6 \
-		base-compat-0.13.0 \
-		base-compat-batteries-0.13.0 \
-		base-orphans-0.9.0 \
+		base-compat-0.13.1 \
+		base-orphans-0.9.1 \
 		base-unicode-symbols-0.2.4.2 \
-		base64-0.4.2.4_3 \
-		base64-bytestring-1.2.1.0 \
-		basement-0.0.15 \
-		bifunctors-5.6.1 \
-		bitvec-1.1.4.0 \
-		blaze-builder-0.4.2.2_1 \
-		blaze-html-0.9.1.2_2 \
-		blaze-markup-0.8.2.8_4 \
-		bsb-http-chunked-0.0.0.4_3 \
+		base16-bytestring-1.0.2.0_1 \
+		base64-0.4.2.4_4 \
+		base64-bytestring-1.2.1.0_1 \
+		basement-0.0.16 \
+		bifunctors-5.6.1_2 \
+		bitvec-1.1.5.0 \
+		blaze-builder-0.4.2.3 \
+		blaze-html-0.9.1.2_4 \
+		blaze-markup-0.8.3.0_1 \
+		bsb-http-chunked-0.0.0.4_4 \
 		byteable-0.1.1 \
 		byteorder-1.0.4 \
 		cabal-doctest-1.0.9_3 \
 		call-stack-0.4.0 \
 		case-insensitive-1.2.1.0 \
-		cassava-0.5.3.0_1 \
-		cassava-megaparsec-2.0.4_1 \
+		cassava-0.5.3.0_5 \
+		cassava-megaparsec-2.1.1 \
+		cborg-0.2.10.0 \
 		cereal-0.5.8.3 \
-		cipher-aes-0.2.11 \
-		clientsession-0.9.1.2 \
-		clock-0.8.3 \
+		clientsession-0.9.2.0_1 \
+		clock-0.8.4 \
 		cmdargs-0.10.22 \
 		colour-2.3.6 \
-		comonad-5.0.8_1 \
-		conduit-1.3.4.3_1 \
+		comonad-5.0.8_2 \
+		conduit-1.3.5 \
 		conduit-extra-1.3.6 \
-		connection-0.3.1_1 \
 		contravariant-1.5.5 \
 		control-monad-free-0.6.2 \
 		cookie-0.4.6 \
-		cprng-aes-0.6.1 \
 		crypto-api-0.13.3_1 \
-		crypto-cipher-types-0.0.9 \
-		crypto-random-0.0.9_1 \
+		crypton-0.34 \
+		crypton-connection-0.3.2 \
+		crypton-x509-1.7.6_1 \
+		crypton-x509-store-1.6.9 \
+		crypton-x509-system-1.6.7 \
+		crypton-x509-validation-1.6.12 \
 		cryptonite-0.30 \
 		cryptonite-conduit-0.2.2_1 \
 		css-text-0.1.3.0 \
@@ -80,168 +81,166 @@ USE_CABAL=      Decimal-0.5.2 \
 		data-default-instances-containers-0.0.1 \
 		data-default-instances-dlist-0.0.1 \
 		data-default-instances-old-locale-0.0.1 \
-		data-fix-0.3.2_4 \
-		deferred-folds-0.9.18.3 \
+		data-fix-0.3.2_5 \
 		distributive-0.6.2.1_1 \
-		dlist-1.0 \
+		dlist-1.0_1 \
 		doclayout-0.4.0.1 \
 		easy-file-0.2.5 \
-		email-validate-2.3.2.18 \
-		emojis-0.1.2 \
+		email-validate-2.3.2.20 \
+		emojis-0.1.3 \
 		entropy-0.4.1.10_1 \
-		extra-1.7.13 \
-		fast-logger-3.2.1 \
-		file-embed-0.0.15.0 \
-		foldable1-classes-compat-0.1_2 \
-		foldl-1.4.14_2 \
-		generically-0.1.1_1 \
-		githash-0.1.6.3 \
+		extra-1.7.14 \
+		fast-logger-3.2.2 \
+		file-embed-0.0.16.0 \
+		generically-0.1.1_2 \
+		githash-0.1.7.0 \
+		half-0.3.1_1 \
 		happy-1.20.1.1 \
-		hashable-1.4.2.0_1 \
+		hashable-1.4.3.0_1 \
 		hashtables-1.3.1 \
 		haskell-lexer-1.1.1 \
 		hjsmin-0.2.1 \
-		hledger-1.29.2 \
-		hledger-lib-1.29.2 \
+		hledger-1.32.3 \
+		hledger-lib-1.32.3 \
 		hourglass-0.2.12 \
-		hsc2hs-0.68.9 \
-		hspec-2.11.0.1 \
-		hspec-core-2.11.0.1 \
-		hspec-discover-2.11.0.1 \
-		hspec-expectations-0.8.2 \
+		hsc2hs-0.68.10_1 \
+		hspec-2.11.7 \
+		hspec-core-2.11.7 \
+		hspec-discover-2.11.7 \
+		hspec-expectations-0.8.4_2 \
 		html-1.0.1.2 \
 		html-conduit-1.3.2.2 \
-		http-api-data-0.5.1 \
-		http-client-0.7.13.1_1 \
-		http-client-tls-0.3.6.1 \
-		http-conduit-2.3.8 \
+		http-api-data-0.6_1 \
+		http-client-0.7.16 \
+		http-client-tls-0.3.6.3 \
+		http-conduit-2.3.8.3 \
 		http-date-0.0.11 \
-		http-types-0.12.3 \
-		http2-4.1.2 \
-		indexed-traversable-0.1.2.1 \
-		indexed-traversable-instances-0.1.1.2_1 \
-		integer-logarithms-1.0.3.1_4 \
+		http-types-0.12.4 \
+		http2-5.0.1 \
+		indexed-traversable-0.1.3 \
+		indexed-traversable-instances-0.1.1.2_2 \
+		integer-conversion-0.1.0.1_1 \
+		integer-logarithms-1.0.3.1_5 \
 		iproute-1.7.12 \
-		isomorphism-class-0.1.0.9 \
 		language-javascript-0.7.1.0 \
 		libyaml-0.1.2_1 \
 		lift-type-0.1.1.1 \
 		lifted-base-0.2.3.12 \
-		lucid-2.11.20230408 \
-		math-functions-0.3.4.2 \
-		megaparsec-9.3.1 \
+		lucid-2.11.20230408_1 \
+		math-functions-0.3.4.3 \
+		megaparsec-9.6.1 \
 		memory-0.18.0 \
-		microlens-0.4.13.1 \
-		microlens-th-0.4.3.13 \
-		mime-types-0.1.1.0 \
+		microlens-0.4.13.1_1 \
+		microlens-th-0.4.3.14 \
+		mime-types-0.1.2.0 \
 		mmorph-1.2.0_3 \
 		monad-control-1.0.3.1 \
-		monad-logger-0.3.39_1 \
+		monad-logger-0.3.40 \
 		monad-loops-0.4.3 \
-		mono-traversable-1.0.15.3 \
-		network-3.1.3.0 \
-		network-byte-order-0.1.6_1 \
-		network-uri-2.6.4.2 \
+		mono-traversable-1.0.17.0 \
+		network-3.1.4.0_1 \
+		network-byte-order-0.1.7 \
+		network-control-0.0.2 \
+		network-uri-2.6.4.2_1 \
 		old-locale-1.0.0.7_2 \
-		old-time-1.1.0.3_2 \
-		optparse-applicative-0.17.0.0 \
+		old-time-1.1.0.4 \
+		optparse-applicative-0.18.1.0 \
 		pager-0.1.1.0 \
-		parser-combinators-1.3.0 \
+		parser-combinators-1.3.0_1 \
 		path-pieces-0.2.1_1 \
 		pem-0.2.4 \
-		persistent-2.14.5.0 \
+		persistent-2.14.6.1 \
 		persistent-template-2.12.0.0 \
 		pretty-show-1.10 \
 		pretty-simple-4.1.2.0 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
-		primitive-0.8.0.0 \
-		profunctors-5.6.2_3 \
-		psqueues-0.2.7.3 \
+		primitive-0.9.0.0 \
+		psqueues-0.2.8.0 \
 		quickcheck-io-0.2.0 \
-		random-1.2.1.1 \
+		quote-quot-0.2.1.0 \
+		random-1.2.1.2 \
 		recv-0.1.0 \
-		regex-base-0.94.0.2_1 \
-		regex-tdfa-1.3.2 \
+		regex-base-0.94.0.2_4 \
+		regex-tdfa-1.3.2.2_2 \
 		resource-pool-0.4.0.0 \
 		resourcet-1.3.0 \
-		safe-0.3.19 \
-		safe-exceptions-0.1.7.3 \
-		scientific-0.3.7.0_5 \
-		securemem-0.1.10 \
-		semialign-1.3 \
-		semigroupoids-6.0.0.1 \
+		safe-0.3.21_1 \
+		safe-exceptions-0.1.7.4_1 \
+		scientific-0.3.7.0_7 \
+		semialign-1.3_1 \
+		semigroupoids-6.0.0.1_1 \
+		serialise-0.2.6.1_1 \
 		setenv-0.1.1.3_1 \
-		shakespeare-2.1.0 \
+		shakespeare-2.1.0.1 \
 		silently-1.2.5.3 \
-		simple-sendfile-0.2.31 \
+		simple-sendfile-0.2.32 \
 		skein-1.0.9.4 \
 		socks-0.6.1 \
-		split-0.2.3.5 \
-		splitmix-0.1.0.4_2 \
+		split-0.2.5 \
+		splitmix-0.1.0.5 \
 		stm-chans-3.0.0.9 \
-		streaming-commons-0.2.2.6 \
-		strict-0.5 \
+		streaming-commons-0.2.2.6_1 \
+		strict-0.5_1 \
 		tabular-0.2.2.8_1 \
-		tagged-0.8.7 \
+		tagged-0.8.8 \
 		tagsoup-0.14.8 \
-		tasty-1.4.3 \
-		tasty-hunit-0.10.0.3 \
+		tasty-1.5_2 \
+		tasty-hunit-0.10.1 \
 		temporary-1.3 \
-		text-ansi-0.2.1.1 \
-		text-builder-0.6.7 \
-		text-builder-dev-0.3.3.2 \
-		text-short-0.1.5_2 \
+		terminal-size-0.3.4 \
+		text-ansi-0.3.0.1 \
+		text-builder-linear-0.1.2 \
+		text-iso8601-0.1_1 \
+		text-short-0.1.5_3 \
 		tf-random-0.5 \
-		th-abstraction-0.5.0.0 \
-		th-compat-0.1.4_2 \
-		th-lift-0.8.3 \
+		th-abstraction-0.6.0.0_1 \
+		th-compat-0.1.4_4 \
+		th-lift-0.8.4 \
 		th-lift-instances-0.1.20 \
-		these-1.2 \
-		time-compat-1.9.6.1_5 \
-		time-manager-0.0.0_1 \
+		these-1.2_1 \
+		time-compat-1.9.6.1_6 \
+		time-manager-0.0.1 \
 		timeit-2.0_2 \
-		tls-1.6.0 \
+		tls-2.0.1_1 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
-		typed-process-0.2.11.0 \
+		typed-process-0.2.11.1 \
 		uglymemo-0.1.0.1 \
-		unix-compat-0.7 \
-		unix-time-0.4.9 \
-		unliftio-0.2.24.0 \
-		unliftio-core-0.2.1.0_2 \
-		unordered-containers-0.2.19.1_2 \
+		unix-compat-0.7.1 \
+		unix-time-0.4.12 \
+		unliftio-0.2.25.0 \
+		unliftio-core-0.2.1.0_3 \
+		unordered-containers-0.2.20_1 \
 		utf8-string-1.0.2 \
-		utility-ht-0.0.17 \
-		uuid-types-1.0.5_4 \
-		vault-0.3.1.5_3 \
-		vector-0.13.0.0_3 \
-		vector-algorithms-0.9.0.1_2 \
-		vector-stream-0.1.0.0_2 \
-		wai-3.2.3 \
-		wai-app-static-3.1.7.4 \
+		utility-ht-0.0.17.1 \
+		uuid-types-1.0.5.1 \
+		vault-0.3.1.5_6 \
+		vector-0.13.1.0 \
+		vector-algorithms-0.9.0.1_3 \
+		vector-stream-0.1.0.1 \
+		wai-3.2.4 \
+		wai-app-static-3.1.8 \
 		wai-cors-0.2.7 \
-		wai-extra-3.1.13.0_1 \
+		wai-extra-3.1.14 \
 		wai-handler-launch-3.0.3.1 \
 		wai-logger-2.4.0 \
-		warp-3.3.25 \
+		warp-3.3.31 \
 		witherable-0.4.2_4 \
-		wizards-1.0.3_1 \
+		wizards-1.0.3_2 \
 		word8-0.1.3 \
-		x509-1.7.7 \
-		x509-store-1.6.9 \
-		x509-system-1.6.7 \
-		x509-validation-1.6.12 \
-		xml-conduit-1.9.1.2 \
+		xml-conduit-1.9.1.3 \
 		xml-types-0.3.8 \
-		xss-sanitize-0.3.7.2 \
-		yaml-0.11.11.0 \
+		xss-sanitize-0.3.7.2_1 \
+		yaml-0.11.11.2_2 \
 		yesod-1.6.2.1 \
-		yesod-core-1.6.24.2 \
-		yesod-form-1.7.4 \
+		yesod-core-1.6.25.1 \
+		yesod-form-1.7.6 \
 		yesod-persistent-1.6.0.8 \
 		yesod-static-1.6.1.0 \
-		yesod-test-1.6.15 \
-		zlib-0.6.3.0_1
+		yesod-test-1.6.16 \
+		zlib-0.7.0.0
+
+CABAL_REVISION=	1
 
 .include <bsd.port.mk>

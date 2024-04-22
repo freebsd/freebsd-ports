@@ -11,7 +11,7 @@ WWW=		https://www.netlib.org/benchmark/hpl/
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/www/copyright.html
 
-USES=		fortran
+USES=		fortran pkgconfig
 HPL_ARCH?=	FreeBSD_PIV_CBLAS
 MAKE_ARGS=	arch=${HPL_ARCH}
 ALL_TARGET=	build

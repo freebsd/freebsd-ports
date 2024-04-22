@@ -1,5 +1,6 @@
 PORTNAME=	hercules
 PORTVERSION=	3.13
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.hercules-390.eu/
 
@@ -17,6 +18,7 @@ USES=		iconv libtool:keepla perl5 shebangfix
 SHEBANG_FILES=	util/bldlvlck
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-optimization
 INSTALL_TARGET=	install-strip
 

@@ -1,6 +1,6 @@
 PORTNAME=	wf-shell
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
+DISTVERSION=	0.8.1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -47,5 +47,4 @@ post-patch:
 		${WRKSRC}/src/dock/toplevel-icon.cpp \
 		${WRKSRC}/src/panel/widgets/window-list/toplevel.cpp
 
-.include "${.CURDIR:H:H}/x11-toolkits/wlroots016/override.mk"
 .include <bsd.port.mk>

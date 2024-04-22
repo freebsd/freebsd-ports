@@ -1,5 +1,6 @@
 PORTNAME=	qelectrotech
 DISTVERSION=	0.9.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://git.tuxfamily.org/qet/qet.git/snapshot/
@@ -33,6 +34,8 @@ pre-configure:
 	${REINPLACE_CMD} -e 's,/usr/local/,${PREFIX}/,g' \
 		${WRKSRC}/${PORTNAME}.pro
 	${REINPLACE_CMD} -e 's,doc/,share/doc/,g' \
+		${WRKSRC}/${PORTNAME}.pro
+	${REINPLACE_CMD} -e '/QET_MAN_PATH/s,man/,share/man/,g' \
 		${WRKSRC}/${PORTNAME}.pro
 	${REINPLACE_CMD} -e 's,../share,share,g' \
 		${WRKSRC}/${PORTNAME}.pro

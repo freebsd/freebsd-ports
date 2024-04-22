@@ -1,11 +1,12 @@
 PORTNAME=	freeipmi
-PORTVERSION=	1.6.11
+PORTVERSION=	1.6.14
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library and tools to support IPMI-capable hardware
-WWW=		https://savannah.gnu.org/projects/freeipmi/
+WWW=		https://www.gnu.org/software/freeipmi/ \
+		https://savannah.gnu.org/projects/freeipmi/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -17,7 +18,7 @@ BROKEN_armv7=	fails to link: libfreeipmi/.libs/libfreeipmi.so: undefined referen
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libgcrypt.so:security/libgcrypt
 
-USES=		gmake libtool localbase makeinfo shebangfix
+USES=		gmake libtool localbase shebangfix
 
 CFLAGS+=	-D_WANT_SEMUN
 CONFIGURE_ARGS=	--disable-init-scripts \
@@ -32,7 +33,7 @@ USE_LDCONFIG=	yes
 INFO=		freeipmi-faq
 PLIST_SUB=	CACHE_DIR=${CACHE_DIR}
 
-CACHE_DIR?=	/var/db/${PORTNAME}
+CACHE_DIR?=	/var/db/freeipmi
 
 SHEBANG_FILES=	contrib/ganglia/ganglia_ipmi_sensors.pl \
 		contrib/nagios/nagios_ipmi_sensors.pl \

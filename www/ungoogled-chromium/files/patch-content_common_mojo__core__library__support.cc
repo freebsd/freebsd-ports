@@ -1,9 +1,9 @@
---- content/common/mojo_core_library_support.cc.orig	2022-10-01 07:40:07 UTC
+--- content/common/mojo_core_library_support.cc.orig	2024-02-25 20:22:18 UTC
 +++ content/common/mojo_core_library_support.cc
 @@ -15,7 +15,7 @@ bool IsMojoCoreSharedLibraryEnabled() {
  }
  
- absl::optional<base::FilePath> GetMojoCoreSharedLibraryPath() {
+ std::optional<base::FilePath> GetMojoCoreSharedLibraryPath() {
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    const base::CommandLine& command_line =

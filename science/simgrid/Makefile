@@ -1,6 +1,7 @@
 PORTNAME=	SimGrid
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.35
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,7 +30,11 @@ CMAKE_OFF=	enable_python
 
 LDFLAGS+=	/usr/lib/liblzma.so # workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=237919
 
-# it'll probably break on gcc-based systems, see https://framagit.org/simgrid/simgrid/issues/12, it'll need CMAKE_OFF=enable_lto and possibly more
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+CMAKE_ARGS+=	-Denable_lto:BOOL=OFF
+.endif
 
 # tests fail, see https://github.com/simgrid/simgrid/issues/384
 

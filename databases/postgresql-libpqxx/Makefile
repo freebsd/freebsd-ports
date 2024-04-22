@@ -1,5 +1,5 @@
 PORTNAME=	libpqxx
-PORTVERSION=	7.8.1
+PORTVERSION=	7.9.0
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	postgresql
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jtv
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-SHEBANG_FILES=	${WRKSRC}/tools/splitconfig
+SHEBANG_FILES=	${WRKSRC}/tools/splitconfig.py
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 

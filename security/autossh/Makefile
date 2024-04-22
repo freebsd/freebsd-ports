@@ -1,5 +1,6 @@
 PORTNAME=	autossh
 PORTVERSION=	1.4g
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.harding.motd.ca/autossh/
 
@@ -12,6 +13,7 @@ LICENSE=	BSD3CLAUSE
 USES=		tar:tgz
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PORTDOCS=	CHANGES README
 

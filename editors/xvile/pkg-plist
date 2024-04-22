@@ -96,10 +96,10 @@ lib/xvile/vile-xres-filt%%SO_EXT%%
 lib/xvile/vile-xs-filt%%SO_EXT%%
 lib/xvile/vile-yacc-filt%%SO_EXT%%
 lib/xvile/vile-yaml-filt%%SO_EXT%%
-man/man1/xvile.1.gz
-man/man1/xvile-libdir-path.1.gz
-man/man1/xvile-pager.1.gz
-man/man1/xvile-to-html.1.gz
+share/man/man1/xvile.1.gz
+share/man/man1/xvile-libdir-path.1.gz
+share/man/man1/xvile-pager.1.gz
+share/man/man1/xvile-to-html.1.gz
 share/applications/lxvile.desktop
 share/applications/uxvile.desktop
 share/applications/xvile.desktop

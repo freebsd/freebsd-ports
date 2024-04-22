@@ -19,6 +19,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 USES=		compiler:c++11-lang gmake libtool localbase
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	CXX_WERROR=no
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

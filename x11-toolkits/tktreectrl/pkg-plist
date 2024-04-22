@@ -4,4 +4,4 @@ lib/%%TCL_PKG%%/htmldoc/treectrl.html
 lib/%%TCL_PKG%%/libtreectrl.so.1
 lib/%%TCL_PKG%%/pkgIndex.tcl
 lib/%%TCL_PKG%%/treectrl.tcl
-man/mann/treectrl.n.gz
+share/man/mann/treectrl.n.gz

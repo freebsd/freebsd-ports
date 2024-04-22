@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2013-10-01 18:38:05.000000000 -0400
-+++ CMakeLists.txt	2014-12-15 21:35:53.000000000 -0500
-@@ -14,6 +14,7 @@
+--- CMakeLists.txt.orig	2013-10-01 22:38:05 UTC
++++ CMakeLists.txt
+@@ -14,6 +14,7 @@ INCLUDE(CheckTypeSize)
  INCLUDE(CheckCCompilerFlag)
  INCLUDE(CheckCXXCompilerFlag)
  INCLUDE(CheckTypeSize)
@@ -8,23 +8,21 @@
  
  # Version
  set(SLIM_VERSION_MAJOR "1")
-@@ -23,14 +24,23 @@
+@@ -23,14 +24,22 @@ set(PKGDATADIR "${CMAKE_INSTALL_PREFIX}/share/slim")
  
  set(CMAKE_INSTALL_PREFIX "/usr/local" CACHE PATH "Installation Directory")
  set(PKGDATADIR "${CMAKE_INSTALL_PREFIX}/share/slim")
 -set(SYSCONFDIR "/etc")
 -set(LIBDIR "/lib")
--set(MANDIR "${CMAKE_INSTALL_PREFIX}/share/man")
+ set(MANDIR "${CMAKE_INSTALL_PREFIX}/share/man")
 +if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD" OR
 +		${CMAKE_SYSTEM_NAME} MATCHES "DragonFly"
 +		)
 +	set(SYSCONFDIR "${CMAKE_INSTALL_FULL_SYSCONFDIR}")
 +	set(LIBDIR "${CMAKE_INSTALL_FULL_LIBDIR}")
-+	set(MANDIR "${CMAKE_INSTALL_PREFIX}/man")
 +else()
 +        set(SYSCONFDIR "/etc")
 +        set(LIBDIR "/lib")
-+        set(MANDIR "${CMAKE_INSTALL_PREFIX}/share/man")
 +endif()
  
  set(SLIM_DEFINITIONS)
@@ -36,7 +34,7 @@
  		)
  	set(SLIM_DEFINITIONS ${SLIM_DEFINITIONS} "-DNEEDS_BASENAME")
  else()
-@@ -70,8 +80,10 @@
+@@ -70,8 +79,10 @@ if(USE_PAM)
  )
  if(USE_PAM)
  	set(common_srcs ${common_srcs} PAM.cpp)
@@ -49,7 +47,7 @@
  endif(USE_PAM)
  
  # Build common library
-@@ -120,7 +132,9 @@
+@@ -120,7 +131,9 @@ if(USE_PAM)
  		message("\tPAM Found")
  		set(SLIM_DEFINITIONS ${SLIM_DEFINITIONS} "-DUSE_PAM")
  		target_link_libraries(${PROJECT_NAME} ${PAM_LIBRARY})
@@ -60,7 +58,7 @@
  		include_directories(${PAM_INCLUDE_DIR})
  	else(PAM_FOUND)
  		message("\tPAM Not Found")
-@@ -195,6 +209,7 @@
+@@ -195,6 +208,7 @@ target_link_libraries(${PROJECT_NAME}
  	${FREETYPE_LIBRARY}
  	${JPEG_LIBRARIES}
  	${PNG_LIBRARIES}
@@ -68,7 +66,7 @@
      libslim
  )
  
-@@ -221,7 +236,9 @@
+@@ -221,7 +235,9 @@ install(TARGETS slim RUNTIME DESTINATION bin)
  ####### install
  # slim
  install(TARGETS slim RUNTIME DESTINATION bin)
@@ -79,7 +77,7 @@
  
  if (BUILD_SHARED_LIBS)
  	set_target_properties(libslim PROPERTIES
-@@ -236,9 +253,11 @@
+@@ -236,9 +252,11 @@ install(FILES slim.1 DESTINATION ${MANDIR}/man1/)
  
  # man file
  install(FILES slim.1 DESTINATION ${MANDIR}/man1/)

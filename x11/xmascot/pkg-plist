@@ -44,5 +44,5 @@ lib/X11/xmascot/tumamu.xbmmsk
 lib/X11/xmascot/virgo.gif
 lib/X11/xmascot/yubi.xbm
 lib/X11/xmascot/yubi.xbmmsk
-man/man1/xmascot.1.gz
+share/man/man1/xmascot.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.jp

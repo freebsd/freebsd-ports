@@ -1,6 +1,6 @@
 PORTNAME=	love
 PORTVERSION=	0.10.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel games
 MASTER_SITES=	https://bitbucket.org/rude/love/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -29,6 +29,7 @@ USES=		autoreconf compiler:c++11-lib desktop-file-utils gl gmake \
 USE_SDL=	sdl2
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--program-suffix=${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/love-${PORTVERSION}
 INSTALL_TARGET=	install-strip

@@ -1,11 +1,11 @@
---- components/password_manager/core/browser/features/password_features.h.orig	2023-12-23 12:33:28 UTC
+--- components/password_manager/core/browser/features/password_features.h.orig	2024-03-22 14:16:19 UTC
 +++ components/password_manager/core/browser/features/password_features.h
-@@ -15,7 +15,7 @@ namespace password_manager::features {
- // All features in alphabetical order. The features should be documented
- // alongside the definition of their values in the .cc file.
+@@ -95,7 +95,7 @@ BASE_DECLARE_FEATURE(kPasswordManagerEnableSenderServi
+ // terminal.
+ BASE_DECLARE_FEATURE(kPasswordManagerLogToTerminal);
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- BASE_DECLARE_FEATURE(kAttachLogsToAutofillRaterExtensionReport);
- #endif
- 
+-#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // Enables "Needs access to keychain, restart chrome" bubble and banner.
+ BASE_DECLARE_FEATURE(kRestartToGainAccessToKeychain);
+ #endif  // BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

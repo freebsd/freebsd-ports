@@ -1,6 +1,6 @@
 PORTNAME=	l2tpd
 PORTVERSION=	0.69
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/L2TPd/${PORTVERSION}
 
@@ -27,9 +27,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/l2tpd ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/l2tpd.8 ${STAGEDIR}${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/doc/l2tp-secrets.5 ${STAGEDIR}${PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/doc/l2tpd.conf.5 ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/doc/l2tpd.8 ${STAGEDIR}${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/doc/l2tp-secrets.5 ${STAGEDIR}${PREFIX}/share/man/man5
+	${INSTALL_MAN} ${WRKSRC}/doc/l2tpd.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/l2tpd.conf.sample ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/l2tp-secrets.sample ${STAGEDIR}${ETCDIR}

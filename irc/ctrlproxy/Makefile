@@ -1,6 +1,6 @@
 PORTNAME=	ctrlproxy
 PORTVERSION=	3.0.8
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	irc
 MASTER_SITES=	http://launchpadlibrarian.net/50016234/ \
 		LOCAL/ashish/
@@ -24,8 +24,8 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ctrlproxy-admin
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/linestack-cmd
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/ctrlproxyd
-	${INSTALL_MAN} ${WRKSRC}/doc/ctrlproxy.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/ctrlproxy_config.5 ${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/doc/ctrlproxy.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/ctrlproxy_config.5 ${STAGEDIR}${PREFIX}/share/man/man5
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/help.txt ${STAGEDIR}${DATADIR}/help.txt
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

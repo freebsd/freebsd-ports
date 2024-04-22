@@ -2,4 +2,4 @@ bin/gunits
 %%DATADIR%%/currency.units
 %%DATADIR%%/definitions.units
 %%DATADIR%%/locale_map.txt
-man/man1/gunits.1.gz
+share/man/man1/gunits.1.gz

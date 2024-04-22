@@ -1,0 +1,265 @@
+PORTNAME=	wstunnel
+DISTVERSIONPREFIX=	v
+DISTVERSION=	9.2.3
+PORTREVISION=	1
+CATEGORIES=	net
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Traffic tunnel over Websocket or HTTP2 to bypass firewalls/DPI
+WWW=		https://github.com/erebe/wstunnel
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	erebe
+
+CARGO_CRATES=	addr2line-0.21.0 \
+		adler-1.0.2 \
+		ahash-0.8.7 \
+		aho-corasick-1.1.2 \
+		anstream-0.6.11 \
+		anstyle-1.0.4 \
+		anstyle-parse-0.2.3 \
+		anstyle-query-1.0.2 \
+		anstyle-wincon-3.0.2 \
+		anyhow-1.0.79 \
+		async-trait-0.1.77 \
+		atomic-0.5.3 \
+		autocfg-1.1.0 \
+		backtrace-0.3.69 \
+		base64-0.21.7 \
+		bb8-0.8.1 \
+		bitflags-1.3.2 \
+		bitflags-2.4.2 \
+		block-buffer-0.10.4 \
+		bollard-stubs-1.42.0-rc.3 \
+		bumpalo-3.14.0 \
+		bytes-1.5.0 \
+		cc-1.0.83 \
+		cfg-if-1.0.0 \
+		clap-4.4.18 \
+		clap_builder-4.4.18 \
+		clap_derive-4.4.7 \
+		clap_lex-0.6.0 \
+		colorchoice-1.0.0 \
+		core-foundation-0.9.4 \
+		core-foundation-sys-0.8.6 \
+		cpufeatures-0.2.12 \
+		crossbeam-channel-0.5.11 \
+		crossbeam-utils-0.8.19 \
+		crossterm-0.27.0 \
+		crossterm_winapi-0.9.1 \
+		crypto-common-0.1.6 \
+		darling-0.13.4 \
+		darling_core-0.13.4 \
+		darling_macro-0.13.4 \
+		data-encoding-2.5.0 \
+		deranged-0.3.11 \
+		digest-0.10.7 \
+		enum-as-inner-0.6.0 \
+		equivalent-1.0.1 \
+		filetime-0.2.23 \
+		fnv-1.0.7 \
+		form_urlencoded-1.2.1 \
+		fsevent-sys-4.1.0 \
+		futures-0.3.30 \
+		futures-channel-0.3.30 \
+		futures-core-0.3.30 \
+		futures-executor-0.3.30 \
+		futures-io-0.3.30 \
+		futures-macro-0.3.30 \
+		futures-sink-0.3.30 \
+		futures-task-0.3.30 \
+		futures-util-0.3.30 \
+		generic-array-0.14.7 \
+		getrandom-0.2.12 \
+		gimli-0.28.1 \
+		h2-0.3.24 \
+		h2-0.4.2 \
+		hashbrown-0.14.3 \
+		heck-0.4.1 \
+		hermit-abi-0.3.4 \
+		hex-0.4.3 \
+		hickory-proto-0.24.0 \
+		hickory-resolver-0.24.0 \
+		hmac-0.12.1 \
+		hostname-0.3.1 \
+		http-0.2.11 \
+		http-1.0.0 \
+		http-body-1.0.0 \
+		http-body-util-0.1.0 \
+		httparse-1.8.0 \
+		httpdate-1.0.3 \
+		hyper-1.1.0 \
+		hyper-util-0.1.2 \
+		ident_case-1.0.1 \
+		idna-0.4.0 \
+		idna-0.5.0 \
+		indexmap-2.1.0 \
+		inotify-0.9.6 \
+		inotify-sys-0.1.5 \
+		ipconfig-0.3.2 \
+		ipnet-2.9.0 \
+		itoa-1.0.10 \
+		js-sys-0.3.67 \
+		jsonwebtoken-9.2.0 \
+		kqueue-1.0.8 \
+		kqueue-sys-1.0.4 \
+		lazy_static-1.4.0 \
+		libc-0.2.152 \
+		linked-hash-map-0.5.6 \
+		lock_api-0.4.11 \
+		log-0.4.20 \
+		lru-cache-0.1.2 \
+		match_cfg-0.1.0 \
+		matchers-0.1.0 \
+		memchr-2.7.1 \
+		memoffset-0.9.0 \
+		miniz_oxide-0.7.1 \
+		mio-0.8.10 \
+		nix-0.27.1 \
+		notify-6.1.1 \
+		nu-ansi-term-0.46.0 \
+		num_cpus-1.16.0 \
+		num_threads-0.1.6 \
+		object-0.32.2 \
+		once_cell-1.19.0 \
+		openssl-probe-0.1.5 \
+		overload-0.1.1 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.9 \
+		percent-encoding-2.3.1 \
+		pin-project-1.1.3 \
+		pin-project-internal-1.1.3 \
+		pin-project-lite-0.2.13 \
+		pin-utils-0.1.0 \
+		powerfmt-0.2.0 \
+		ppp-2.2.0 \
+		ppv-lite86-0.2.17 \
+		proc-macro2-1.0.76 \
+		quick-error-1.2.3 \
+		quote-1.0.35 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
+		redox_syscall-0.4.1 \
+		regex-1.10.2 \
+		regex-automata-0.1.10 \
+		regex-automata-0.4.3 \
+		regex-syntax-0.6.29 \
+		regex-syntax-0.8.2 \
+		resolv-conf-0.7.0 \
+		ring-0.17.7 \
+		rustc-demangle-0.1.23 \
+		rustls-0.21.10 \
+		rustls-native-certs-0.7.0 \
+		rustls-pemfile-1.0.4 \
+		rustls-pemfile-2.0.0 \
+		rustls-pki-types-1.1.0 \
+		rustls-webpki-0.101.7 \
+		ryu-1.0.16 \
+		same-file-1.0.6 \
+		schannel-0.1.23 \
+		scopeguard-1.2.0 \
+		sct-0.7.1 \
+		security-framework-2.9.2 \
+		security-framework-sys-2.9.1 \
+		serde-1.0.195 \
+		serde_derive-1.0.195 \
+		serde_json-1.0.111 \
+		serde_with-1.14.0 \
+		serde_with_macros-1.5.2 \
+		sha1-0.10.6 \
+		sha2-0.10.8 \
+		sharded-slab-0.1.7 \
+		signal-hook-0.3.17 \
+		signal-hook-mio-0.2.3 \
+		signal-hook-registry-1.4.1 \
+		simdutf8-0.1.4 \
+		slab-0.4.9 \
+		smallvec-1.13.1 \
+		socket2-0.5.5 \
+		spin-0.9.8 \
+		strsim-0.10.0 \
+		subtle-2.5.0 \
+		syn-1.0.109 \
+		syn-2.0.48 \
+		testcontainers-0.15.0 \
+		thiserror-1.0.56 \
+		thiserror-impl-1.0.56 \
+		thread_local-1.1.7 \
+		time-0.3.31 \
+		time-core-0.1.2 \
+		time-macros-0.2.16 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.1 \
+		tokio-1.35.1 \
+		tokio-fd-0.3.0 \
+		tokio-macros-2.2.0 \
+		tokio-rustls-0.24.1 \
+		tokio-stream-0.1.14 \
+		tokio-util-0.7.10 \
+		tracing-0.1.40 \
+		tracing-attributes-0.1.27 \
+		tracing-core-0.1.32 \
+		tracing-log-0.2.0 \
+		tracing-subscriber-0.3.18 \
+		try-lock-0.2.5 \
+		typenum-1.17.0 \
+		unicode-bidi-0.3.15 \
+		unicode-ident-1.0.12 \
+		unicode-normalization-0.1.22 \
+		untrusted-0.9.0 \
+		url-2.5.0 \
+		urlencoding-2.1.3 \
+		utf-8-0.7.6 \
+		utf8parse-0.2.1 \
+		uuid-1.7.0 \
+		valuable-0.1.0 \
+		version_check-0.9.4 \
+		walkdir-2.4.0 \
+		want-0.3.1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.90 \
+		wasm-bindgen-backend-0.2.90 \
+		wasm-bindgen-macro-0.2.90 \
+		wasm-bindgen-macro-support-0.2.90 \
+		wasm-bindgen-shared-0.2.90 \
+		widestring-1.0.2 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.6 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.0 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.0 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.0 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.0 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.0 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.0 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.0 \
+		winreg-0.50.0 \
+		zerocopy-0.7.32 \
+		zerocopy-derive-0.7.32 \
+		fastwebsockets@git+https://github.com/erebe/fastwebsockets.git?branch=main\#ca6fe98d872c6f90c089125d95efc70c9ce5d778 \
+		fast-socks5@git+https://github.com/erebe/fast-socks5.git?branch=master\#1912e35f8f5621827927096171d96c54816bf1ba
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

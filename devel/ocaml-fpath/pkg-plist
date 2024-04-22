@@ -1,0 +1,16 @@
+%%OCAML_SITELIBDIR%%/fpath/opam
+%%OCAML_SITELIBDIR%%/fpath/META
+%%OCAML_SITELIBDIR%%/fpath/fpath.a
+%%OCAML_SITELIBDIR%%/fpath/fpath.cma
+%%OCAML_SITELIBDIR%%/fpath/fpath.cmi
+%%OCAML_SITELIBDIR%%/fpath/fpath.cmti
+%%OCAML_SITELIBDIR%%/fpath/fpath.cmx
+%%OCAML_SITELIBDIR%%/fpath/fpath.cmxa
+%%OCAML_SITELIBDIR%%/fpath/fpath.cmxs
+%%OCAML_SITELIBDIR%%/fpath/fpath.mli
+%%OCAML_SITELIBDIR%%/fpath/fpath_top.a
+%%OCAML_SITELIBDIR%%/fpath/fpath_top.cma
+%%OCAML_SITELIBDIR%%/fpath/fpath_top.cmx
+%%OCAML_SITELIBDIR%%/fpath/fpath_top.cmxa
+%%OCAML_SITELIBDIR%%/fpath/fpath_top.cmxs
+%%OCAML_SITELIBDIR%%/fpath/fpath_top_init.ml

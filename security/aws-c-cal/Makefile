@@ -1,6 +1,6 @@
 PORTNAME=	aws-c-cal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.9
+DISTVERSION=	0.6.11
 CATEGORIES=	security
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libaws-c-common.so:devel/aws-c-common
 
-USES=		cmake:testing compiler:c11 ssl
+USES=		cmake:testing ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	awslabs
 USE_LDCONFIG=	yes

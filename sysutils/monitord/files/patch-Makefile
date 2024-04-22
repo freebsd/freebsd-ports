@@ -5,7 +5,7 @@
  TARGET =	monitord
  
 -MANDIR = 	/usr/local/man
-+MANDIR = 	$(PREFIX)/man
++MANDIR = 	$(PREFIX)/share/man
  
  .SUFFIXES:
  .SUFFIXES: .c .o

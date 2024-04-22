@@ -1,6 +1,6 @@
---- third_party/dawn/include/dawn/native/VulkanBackend.h.orig	2023-08-28 20:17:35 UTC
+--- third_party/dawn/include/dawn/native/VulkanBackend.h.orig	2024-02-04 14:46:08 UTC
 +++ third_party/dawn/include/dawn/native/VulkanBackend.h
-@@ -80,7 +80,7 @@ struct ExternalImageExportInfoVk : ExternalImageExport
+@@ -83,7 +83,7 @@ struct ExternalImageExportInfoVk : ExternalImageExport
  };
  
  // Can't use DAWN_PLATFORM_IS(LINUX) since header included in both Dawn and Chrome

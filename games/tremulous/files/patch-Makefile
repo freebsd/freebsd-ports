@@ -1,6 +1,15 @@
---- ./tremulous-1.1.0-src/Makefile.orig	Tue Mar 21 19:28:25 2006
-+++ ./tremulous-1.1.0-src/Makefile	Wed Jun  7 16:57:12 2006
-@@ -27,11 +27,20 @@
+--- tremulous-1.1.0-src/Makefile.orig	2006-03-21 22:28:25 UTC
++++ tremulous-1.1.0-src/Makefile
+@@ -18,7 +18,7 @@ else
+   # Apple does some things a little differently...
+   COMPILE_ARCH=$(shell uname -p | sed -e s/i.86/x86/)
+ else
+-  COMPILE_ARCH=$(shell uname -m | sed -e s/i.86/x86/)
++  COMPILE_ARCH=$(shell uname -m | sed -e s/amd64/x86_64/ -e s/i.86/x86/ -e s/powerpc/ppc/)
+ endif
+ 
+ ifeq ($(COMPILE_PLATFORM),mingw32)
+@@ -27,11 +27,20 @@ endif
    endif
  endif
  
@@ -26,7 +35,18 @@
  
  #############################################################################
  #
-@@ -89,34 +98,10 @@
+@@ -51,10 +60,6 @@ endif
+ ifndef ARCH
+ ARCH=$(COMPILE_ARCH)
+ endif
+-
+-ifeq ($(ARCH),powerpc)
+-  ARCH=ppc
+-endif
+ export ARCH
+ 
+ ifneq ($(PLATFORM),$(COMPILE_PLATFORM))
+@@ -89,34 +94,10 @@ export USE_CCACHE
  endif
  export USE_CCACHE
  
@@ -62,7 +82,7 @@
  CDIR=$(MOUNT_DIR)/client
  SDIR=$(MOUNT_DIR)/server
  RDIR=$(MOUNT_DIR)/renderer
-@@ -202,15 +187,13 @@
+@@ -202,15 +183,13 @@ ifeq ($(PLATFORM),linux)
  
    ifeq ($(ARCH),x86_64)
      OPTIMIZE = -O3 -fomit-frame-pointer -ffast-math -funroll-loops \
@@ -80,7 +100,7 @@
      HAVE_VM_COMPILED=true
    else
    ifeq ($(ARCH),ppc)
-@@ -293,7 +276,7 @@
+@@ -293,7 +272,7 @@ ifeq ($(PLATFORM),darwin)
      GL_CFLAGS =
    endif
  
@@ -89,7 +109,7 @@
  
    ifeq ($(ARCH),ppc)
    BASE_CFLAGS += -faltivec
-@@ -375,8 +358,8 @@
+@@ -375,8 +354,8 @@ ifeq ($(PLATFORM),mingw32)
    GL_CFLAGS =
    MINGW_CFLAGS = -DDONT_TYPEDEF_INT32
  
@@ -100,7 +120,7 @@
  
    DEBUG_CFLAGS=$(BASE_CFLAGS) -g -O0
  
-@@ -412,18 +395,12 @@
+@@ -412,18 +391,12 @@ ifeq ($(PLATFORM),freebsd)
  
  ifeq ($(PLATFORM),freebsd)
  
@@ -109,20 +129,20 @@
 -  else #default to x86
 -    ARCH=x86
 -  endif #alpha test
--
--
--  BASE_CFLAGS = -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes
 +  BASE_CFLAGS = -I$(LOCALBASE)/include -DARCH='\"$(ARCH)\"' -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes
  
--  GL_CFLAGS = -I/usr/X11R6/include
 +  GL_CFLAGS = -I$(LOCALBASE)/include
  
+-  BASE_CFLAGS = -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes
+-
+-  GL_CFLAGS = -I/usr/X11R6/include
+-
    DEBUG_CFLAGS=$(BASE_CFLAGS) -g
 +  RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -pipe
  
    ifeq ($(USE_OPENAL),1)
      BASE_CFLAGS += -DUSE_OPENAL=1
-@@ -436,46 +413,61 @@
+@@ -436,46 +409,61 @@ ifeq ($(PLATFORM),freebsd)
      BASE_CFLAGS += -DUSE_CODEC_VORBIS=1
    endif
  
@@ -156,12 +176,12 @@
 +
 +  ifeq ($(USE_SDL_VIDEO),1)
 +    BASE_CFLAGS += -DUSE_SDL_VIDEO=1
-+  endif
-+
+   endif
+ 
 +  ifeq ($(USE_OPTIMIZED_CFLAGS),1)
 +    RELEASE_CFLAGS+=-O3 -ffast-math -funroll-loops -fomit-frame-pointer \
 +       -fexpensive-optimizations
-+    ifeq ($(ARCH),i386)
++    ifeq ($(ARCH),x86)
 +      RELEASE_CFLAGS+=-falign-functions=2 -fstrength-reduce
 +    endif
 +  endif
@@ -169,14 +189,13 @@
 +  HAVE_VM_COMPILED?=false
 +  ifneq ($(HAVE_VM_COMPILED),true)
 +    BASE_CFLAGS += -DNO_VM_COMPILED
-   endif
- 
++  endif
++
    SHLIBEXT=so
    SHLIBCFLAGS=-fPIC
    SHLIBLDFLAGS=-shared $(LDFLAGS)
  
--  THREAD_LDFLAGS=-lpthread
-+  THREAD_LDFLAGS=$(PTHREAD_LIBS)
+   THREAD_LDFLAGS=-lpthread
    # don't need -ldl (FreeBSD)
 -  LDFLAGS=-lm
 +  LDFLAGS+=-lm
@@ -193,12 +212,12 @@
 +    ifeq ($(USE_SDL_VIDEO),1)
 +      CLIENT_LDFLAGS += $(shell $(SDL_CONFIG) --libs)
 +    endif
-+  endif
-+
-+  ifneq ($(USE_SDL_VIDEO),1)
-+    CLIENT_LDFLAGS += -L$(LOCALBASE)/lib -lGL -lX11 -lXext -lXxf86dga -lXxf86vm
    endif
  
++  ifneq ($(USE_SDL_VIDEO),1)
++    CLIENT_LDFLAGS += -L$(LOCALBASE)/lib -lGL -lX11 -lXext -lXxf86dga -lXxf86vm
++  endif
++
    ifeq ($(USE_OPENAL),1)
 +    CLIENT_LDFLAGS += $(THREAD_LDFLAGS)
      ifneq ($(USE_OPENAL_DLOPEN),1)
@@ -207,7 +226,7 @@
      endif
    endif
  
-@@ -574,16 +566,15 @@
+@@ -574,16 +562,15 @@ ifeq ($(PLATFORM),SunOS)
    OPTIMIZE = -O3 -ffast-math -funroll-loops
  
    ifeq ($(ARCH),sparc)
@@ -227,7 +246,7 @@
    endif
    endif
  
-@@ -637,21 +628,22 @@
+@@ -637,21 +624,22 @@ ifneq ($(BUILD_SERVER),0)
  TARGETS =
  
  ifneq ($(BUILD_SERVER),0)
@@ -241,12 +260,12 @@
 -    TARGETS += $(B)/tremulous.$(ARCH)$(BINEXT)
 -  endif
 +  TARGETS += $(B)/tremulous$(BINEXT)
-+endif
-+
-+ifneq ($(BUILD_CLIENT_SMP),0)
-+  TARGETS += $(B)/tremulous-smp$(BINEXT)
  endif
  
++ifneq ($(BUILD_CLIENT_SMP),0)
++  TARGETS += $(B)/tremulous-smp$(BINEXT)
++endif
++
  ifneq ($(BUILD_GAME_SO),0)
    TARGETS += \
 -    $(B)/base/cgame$(ARCH).$(SHLIBEXT) \
@@ -258,7 +277,7 @@
  endif
  
  ifneq ($(BUILD_GAME_QVM),0)
-@@ -709,14 +701,14 @@
+@@ -709,14 +697,14 @@ build_release: B=$(BR)
  endif
  
  build_release: B=$(BR)
@@ -275,25 +294,7 @@
  
  targets: $(TARGETS)
  
-@@ -901,7 +893,7 @@
-   $(B)/client/tr_surface.o \
-   $(B)/client/tr_world.o \
- 
--ifeq ($(ARCH),x86)
-+ifeq ($(ARCH),i386)
-   Q3OBJ += $(B)/client/vm_x86.o
-   Q3OBJ += \
-     $(B)/client/snd_mixa.o \
-@@ -910,7 +902,7 @@
-     $(B)/client/snapvectora.o
- endif
- 
--ifeq ($(ARCH),x86_64)
-+ifeq ($(ARCH),amd64)
-   Q3OBJ += $(B)/client/vm_x86_64.o
- endif
- 
-@@ -962,10 +954,10 @@
+@@ -962,10 +950,10 @@ endif
      $(B)/client/sdl_glimp_smp.o
  endif
  
@@ -306,22 +307,7 @@
  	$(CC)  -o $@ $(Q3OBJ) $(Q3POBJ_SMP) $(CLIENT_LDFLAGS) \
  		$(THREAD_LDFLAGS) $(LDFLAGS) $(LIBSDLMAIN)
  
-@@ -1238,12 +1230,12 @@
-   $(B)/ded/null_input.o \
-   $(B)/ded/null_snddma.o
- 
--ifeq ($(ARCH),x86)
-+ifeq ($(ARCH),i386)
-   Q3DOBJ += $(B)/ded/vm_x86.o $(B)/ded/ftola.o \
-       $(B)/ded/snapvectora.o $(B)/ded/matha.o
- endif
- 
--ifeq ($(ARCH),x86_64)
-+ifeq ($(ARCH),amd64)
-   Q3DOBJ += $(B)/ded/vm_x86_64.o
- endif
- 
-@@ -1253,7 +1245,7 @@
+@@ -1253,7 +1241,7 @@ endif
    endif
  endif
  
@@ -330,7 +316,7 @@
  	$(CC) -o $@ $(Q3DOBJ) $(LDFLAGS)
  
  $(B)/ded/sv_bot.o : $(SDIR)/sv_bot.c; $(DO_DED_CC)
-@@ -1374,7 +1366,7 @@
+@@ -1374,7 +1362,7 @@ CGVMOBJ = $(CGOBJ_:%.o=%.asm) $(B)/base/game/bg_lib.as
  CGOBJ = $(CGOBJ_) $(B)/base/cgame/cg_syscalls.o
  CGVMOBJ = $(CGOBJ_:%.o=%.asm) $(B)/base/game/bg_lib.asm
  
@@ -339,7 +325,7 @@
  	$(CC) $(SHLIBLDFLAGS) -o $@ $(CGOBJ)
  
  $(B)/base/vm/cgame.qvm: $(CGVMOBJ) $(CGDIR)/cg_syscalls.asm
-@@ -1418,7 +1410,7 @@
+@@ -1418,7 +1406,7 @@ GVMOBJ = $(GOBJ_:%.o=%.asm) $(B)/base/game/bg_lib.asm
  GOBJ = $(GOBJ_) $(B)/base/game/g_syscalls.o
  GVMOBJ = $(GOBJ_:%.o=%.asm) $(B)/base/game/bg_lib.asm
  
@@ -348,7 +334,7 @@
  	$(CC) $(SHLIBLDFLAGS) -o $@ $(GOBJ)
  
  $(B)/base/vm/game.qvm: $(GVMOBJ) $(GDIR)/g_syscalls.asm
-@@ -1444,7 +1436,7 @@
+@@ -1444,7 +1432,7 @@ UIVMOBJ = $(UIOBJ_:%.o=%.asm) $(B)/base/game/bg_lib.as
  UIOBJ = $(UIOBJ_) $(B)/base/ui/ui_syscalls.o
  UIVMOBJ = $(UIOBJ_:%.o=%.asm) $(B)/base/game/bg_lib.asm
  

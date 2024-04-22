@@ -1,5 +1,6 @@
 PORTNAME=	libofx
 PORTVERSION=	0.10.9
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/ \
 		SF/${PORTNAME}/${PORTNAME}
@@ -23,6 +24,7 @@ CONFIGURE_ARGS=	--disable-doxygen --disable-dot --disable-gengetopt \
 		--with-opensp-includes=${LOCALBASE}/include/OpenSP \
 		--with-opensp-libs=${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check

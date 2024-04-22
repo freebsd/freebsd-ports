@@ -1,8 +1,8 @@
 %%CLIENT%%bin/freeminer
 %%SERVER%%bin/freeminerserver
 @sample etc/freeminer.conf.sample
-man/man6/freeminer.6.gz
-man/man6/freeminerserver.6.gz
+share/man/man6/freeminer.6.gz
+share/man/man6/freeminerserver.6.gz
 share/appdata/freeminer.appdata.xml
 share/applications/freeminer.desktop
 share/icons/hicolor/scalable/apps/freeminer.svg

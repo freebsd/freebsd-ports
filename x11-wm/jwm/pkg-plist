@@ -1,6 +1,6 @@
 bin/jwm
 @sample etc/system.jwmrc.sample
-man/man1/jwm.1.gz
+share/man/man1/jwm.1.gz
 %%DATADIR%%/jwm-blue.svg
 %%DATADIR%%/jwm-gray.svg
 %%DATADIR%%/jwm-orange.svg

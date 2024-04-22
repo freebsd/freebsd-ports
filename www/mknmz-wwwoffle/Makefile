@@ -1,6 +1,6 @@
 PORTNAME=	mknmz-wwwoffle
 PORTVERSION=	0.7.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www databases textproc
 MASTER_SITES=	http://www.naney.org/comp/distrib/mknmz-wwwoffle/archive/
 
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/mknmz:databases/namazu2
 
 USES=		perl5
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/share/man
 NO_ARCH=	yes
 
 PORTDOCS=	AUTHORS COPYING INSTALL INSTALL.ja NEWS README README.ja THANKS

@@ -1,8 +1,7 @@
 PORTNAME=	libpci
-PORTVERSION=	3.10.0
+PORTVERSION=	3.12.0
 CATEGORIES=	devel
-MASTER_SITES=	KERNEL_ORG/software/utils/pciutils \
-		LOCAL/sunpoet
+MASTER_SITES=	KERNEL_ORG/software/utils/pciutils
 DISTNAME=	pciutils-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -36,7 +35,7 @@ post-patch:
 	@${LN} -s . ${WRKSRC}/lib/pci
 
 do-configure:
-	@cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} lib/config.h
+	@cd ${WRKSRC}/ && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} lib/config.h
 
 post-build:
 	@cd ${WRKSRC}/lib/ && ${CC} ${CFLAGS} ${STRIP} -Wl,-soname=libpci.so.3 -shared *.o -lz -o libpci.so.3

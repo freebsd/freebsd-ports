@@ -1,11 +1,11 @@
 etc/newsyslog.conf.d/thttpd.conf
 @sample etc/thttpd.conf.sample
-man/man1/makeweb.1.gz
-man/man1/thtpasswd.1.gz
-man/man8/redirect.8.gz
-man/man8/ssi.8.gz
-man/man8/syslogtocern.8.gz
-man/man8/thttpd.8.gz
+share/man/man1/makeweb.1.gz
+share/man/man1/thtpasswd.1.gz
+share/man/man8/redirect.8.gz
+share/man/man8/ssi.8.gz
+share/man/man8/syslogtocern.8.gz
+share/man/man8/thttpd.8.gz
 sbin/makeweb
 sbin/syslogtocern
 sbin/thttpd

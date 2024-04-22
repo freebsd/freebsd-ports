@@ -1,5 +1,6 @@
 PORTNAME=	tokyopromenade
 PORTVERSION=	0.9.25
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://dbmx.net/${PORTNAME}/pkg/
 
@@ -16,6 +17,7 @@ OPTIONS_DEFINE=	LUA
 
 CONFIGURE_ARGS=	--enable-fcgi
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		gmake localbase lua compiler
 
 SUB_FILES=	pkg-message

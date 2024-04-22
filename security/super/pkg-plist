@@ -1,10 +1,10 @@
 bin/setuid
 bin/super
 @sample etc/super.tab.sample
-man/man1/setuid.1.gz
-man/man1/super.1.gz
-man/man5/super.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.cdmount
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.tab
+share/man/man1/setuid.1.gz
+share/man/man1/super.1.gz
+share/man/man5/super.5.gz
 @dir var

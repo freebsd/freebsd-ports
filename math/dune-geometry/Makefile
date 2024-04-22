@@ -1,7 +1,7 @@
 PORTNAME=	dune-geometry
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.0
-PORTREVISION=	10
+PORTREVISION=	12
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://www.dune-project.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	openmpi>0:net/openmpi \
+BUILD_DEPENDS=	openmpi4>0:net/openmpi4 \
 		vc>0:devel/vc
 LIB_DEPENDS=	libdunecommon.so:math/dune-common \
 		libopenblas.so:math/openblas \

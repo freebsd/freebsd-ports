@@ -14,5 +14,3 @@ Features include:
 gevent is inspired by eventlet but features more consistent API, simpler
 implementation and better performance. Read why others use gevent and check out
 the list of the open source projects based on gevent.
-
-See also: https://github.com/gevent/gevent

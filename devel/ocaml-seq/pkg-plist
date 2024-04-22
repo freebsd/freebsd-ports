@@ -1,0 +1,13 @@
+%%OCAML_SITELIBDIR%%/seq/META
+%%OCAML_SITELIBDIR%%/seq/dune-package
+%%OCAML_SITELIBDIR%%/seq/opam
+%%OCAML_SITELIBDIR%%/seq/seq.a
+%%OCAML_SITELIBDIR%%/seq/seq.cma
+%%OCAML_SITELIBDIR%%/seq/seq.cmi
+%%OCAML_SITELIBDIR%%/seq/seq.cmt
+%%OCAML_SITELIBDIR%%/seq/seq.cmti
+%%OCAML_SITELIBDIR%%/seq/seq.cmx
+%%OCAML_SITELIBDIR%%/seq/seq.cmxa
+%%OCAML_SITELIBDIR%%/seq/seq.cmxs
+%%OCAML_SITELIBDIR%%/seq/seq.ml
+%%OCAML_SITELIBDIR%%/seq/seq.mli

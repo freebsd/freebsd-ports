@@ -1,6 +1,6 @@
 PORTNAME=	openjade
 PORTVERSION=	1.3.3p1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.3.3
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/-pre/}
@@ -15,6 +15,7 @@ RUN_DEPENDS=	${XMLCATMGR}:textproc/xmlcatmgr
 USES=		gettext gmake libtool perl5
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
 		--datadir=${DATADIR}
 LDFLAGS+=	-L${LOCALBASE}/lib

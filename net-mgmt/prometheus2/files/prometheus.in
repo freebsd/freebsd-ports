@@ -34,6 +34,9 @@
 # prometheus_syslog_output_facility (string)
 #     Set syslog facility if syslog enabled
 #     Default is "daemon"
+# prometheus_agent_mode (bool)
+#     Set to "YES" to enable Prometheus Agent Mode
+#     Default is "NO"
 # prometheus_consoles (string)
 #     Set dir that contains Prometheus consoles
 #     Default is "%%PROMETHEUS_CONSOLES_DIR%%"
@@ -69,6 +72,7 @@ load_rc_config $name
 : ${prometheus_config:="%%PREFIX%%/etc/prometheus.yml"}
 : ${prometheus_pidfile:="/var/run/prometheus.pid"}
 : ${prometheus_syslog_output_enable:="YES"}
+: ${prometheus_agent_mode:="NO"}
 : ${prometheus_consoles_dir:="%%PROMETHEUS_CONSOLES_DIR%%"}
 : ${prometheus_console_libraries_dir:="%%PROMETHEUS_CONSOLE_LIBRARIES_DIR%%"}
 : ${prometheus_data_dir:="%%PROMETHEUS_DB_DIR%%"}
@@ -89,6 +93,12 @@ if checkyesno prometheus_syslog_output_enable; then
 	fi
 fi
 
+if checkyesno prometheus_agent_mode; then
+    prometheus_storage_flags="--enable-feature=agent --storage.agent.path=${prometheus_data_dir}"
+else
+    prometheus_storage_flags="--storage.tsdb.path=${prometheus_data_dir}"
+fi
+
 pidfile="${prometheus_pidfile}"
 required_files="${prometheus_config}"
 
@@ -99,9 +109,9 @@ command_args="-f ${prometheus_syslog_output_flags} -p ${pidfile} -t ${name} \
 	--config.file=${prometheus_config} \
 	--web.console.templates=${prometheus_consoles_dir} \
 	--web.console.libraries=${prometheus_console_libraries_dir} \
-	--storage.tsdb.path=${prometheus_data_dir} \
 	--log.level=${prometheus_loglevel} \
 	--log.format=${prometheus_logformat} \
+	${prometheus_storage_flags} \
 	${prometheus_args}"
 
 start_precmd="prometheus_start_precmd"

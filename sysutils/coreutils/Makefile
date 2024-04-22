@@ -1,5 +1,6 @@
 PORTNAME=	coreutils
-PORTVERSION=	9.1
+PORTVERSION=	9.4
+PORTREVISION=	1
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	GNU
 
@@ -18,6 +19,7 @@ TEST_TARGET=	check
 PIE_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 # A rather nasty hack to stop gnustat from conflicting with base gstat
 # bugs.freebsd.org/160060
 CONFIGURE_ARGS=	--program-prefix=g	\
@@ -42,5 +44,11 @@ post-build:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/g* \
 		${STAGEDIR}${PREFIX}/libexec/coreutils/libstdbuf.so
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == i386
+CONFIGURE_ARGS+=	--disable-year2038
+.endif
 
 .include <bsd.port.mk>

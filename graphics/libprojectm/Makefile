@@ -1,7 +1,7 @@
 PORTNAME=	libprojectM
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.12
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,6 +27,7 @@ USE_SDL=	sdl2
 USE_GL=		gl glu glew
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-sdl --enable-gles
 INSTALL_TARGET=	install-strip
 

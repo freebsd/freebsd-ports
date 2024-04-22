@@ -1,6 +1,6 @@
 PORTNAME=	binutils
 DISTVERSION=	2.40
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	GNU \
@@ -29,6 +29,7 @@ USES=		bison:alias compiler:env cpe gmake localbase libtool perl5 pkgconfig tar:
 USE_PERL5=	build
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 #TEST_DEPENDS+=	runtest:misc/dejagnu
 CONFIGURE_ARGS+=	--disable-werror \
@@ -180,8 +181,8 @@ post-install:
 .for tool in ${BUREMOVE}
 	@${RM} ${STAGEDIR}${PREFIX}/bin/${BUTARGET}-${tool} \
 	    ${STAGEDIR}${PREFIX}/bin/${tool} \
-	    ${STAGEDIR}${MANPREFIX}/man/man1/${BUTARGET}-${tool}.1 \
-	    ${STAGEDIR}${MANPREFIX}/man/man1/${tool}.1 \
+	    ${STAGEDIR}${PREFIX}/share/man/man1/${BUTARGET}-${tool}.1 \
+	    ${STAGEDIR}${PREFIX}/share/man/man1/${tool}.1 \
 	    ${STAGEDIR}${PREFIX}/${BUTARGET}/bin/${tool}
 .endfor
 .if defined(BUREMOVE) && ${BUREMOVE:Mld}

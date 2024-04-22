@@ -1,5 +1,6 @@
 PORTNAME=	dhall-json
 PORTVERSION=	1.7.12
+PORTREVISION=	1
 CATEGORIES=	converters lang haskell
 
 MAINTAINER=	malcolm.matalka@acsl.se
@@ -8,123 +9,131 @@ WWW=		https://dhall-lang.org/
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	ghc-8.10.7:lang/ghc810
-
 USES=		cabal
 
-USE_CABAL=	Diff-0.4.1 \
-		OneTuple-0.4.1.1 \
-		QuickCheck-2.14.2 \
+USE_CABAL=	Cabal-3.10.3.0 \
+		Cabal-syntax-3.10.3.0 \
+		Diff-0.4.1 \
+		OneTuple-0.4.1.1_1 \
+		QuickCheck-2.14.3 \
 		StateVar-1.2.2 \
 		aeson-2.1.2.1_3 \
-		aeson-pretty-0.8.9_2 \
-		aeson-yaml-1.1.0.1_3 \
-		ansi-terminal-0.11.5 \
+		aeson-pretty-0.8.10 \
+		aeson-yaml-1.1.0.1_4 \
+		ansi-terminal-1.0.2 \
 		ansi-terminal-types-0.11.5_1 \
-		ansi-wl-pprint-0.6.9_4 \
 		appar-0.1.8 \
 		asn1-encoding-0.9.6_2 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
-		assoc-1.1 \
-		async-2.2.4_3 \
+		assoc-1.1_1 \
+		async-2.2.5 \
 		atomic-write-0.2.0.7 \
-		attoparsec-0.14.4_3 \
-		base-compat-0.13.0 \
-		base-compat-batteries-0.13.0 \
-		base-orphans-0.9.0 \
-		base16-bytestring-1.0.2.0 \
-		base64-bytestring-1.2.1.0 \
-		basement-0.0.15 \
-		bifunctors-5.6.1 \
-		blaze-builder-0.4.2.2_1 \
+		attoparsec-0.14.4_5 \
+		attoparsec-aeson-2.1.0.0 \
+		base-compat-0.13.1 \
+		base-compat-batteries-0.13.1 \
+		base-orphans-0.9.1 \
+		base16-bytestring-1.0.2.0_1 \
+		base64-bytestring-1.2.1.0_1 \
+		basement-0.0.16 \
+		bifunctors-5.6.2 \
+		blaze-builder-0.4.2.3 \
 		byteorder-1.0.4 \
 		cabal-doctest-1.0.9_3 \
 		case-insensitive-1.2.1.0 \
-		cborg-0.2.9.0 \
-		cborg-json-0.2.5.0_1 \
+		cborg-0.2.10.0 \
+		cborg-json-0.2.6.0 \
 		cereal-0.5.8.3 \
-		charset-0.3.9 \
+		charset-0.3.10_1 \
 		cmdargs-0.10.22 \
 		colour-2.3.6 \
-		comonad-5.0.8_1 \
-		connection-0.3.1_1 \
+		comonad-5.0.8_2 \
 		contravariant-1.5.5 \
-		cookie-0.4.6 \
-		cryptohash-sha256-0.11.102.1_2 \
-		cryptonite-0.30 \
-		data-array-byte-0.1.0.1_1 \
+		cookie-0.5.0 \
+		cryptohash-sha256-0.11.102.1_3 \
+		crypton-0.34 \
+		crypton-connection-0.3.2 \
+		crypton-x509-1.7.6_1 \
+		crypton-x509-store-1.6.9 \
+		crypton-x509-system-1.6.7 \
+		crypton-x509-validation-1.6.12 \
 		data-default-class-0.1.2.0 \
-		data-fix-0.3.2_4 \
-		dhall-1.42.0_1 \
+		data-fix-0.3.2_5 \
+		dhall-1.42.1 \
+		directory-1.3.8.1_1 \
 		distributive-0.6.2.1_1 \
-		dlist-1.0 \
+		dlist-1.0_1 \
 		dotgen-0.4.3 \
 		either-5.0.2_1 \
-		foldable1-classes-compat-0.1_2 \
-		generically-0.1.1_1 \
-		half-0.3.1 \
-		hashable-1.4.2.0_1 \
+		filepath-1.4.300.1 \
+		generically-0.1.1_2 \
+		half-0.3.1_1 \
+		hashable-1.4.4.0_1 \
+		haskeline-0.8.2.1_1 \
 		hourglass-0.2.12 \
-		hsc2hs-0.68.9 \
-		http-client-0.7.13.1_1 \
-		http-client-tls-0.3.6.1 \
-		http-types-0.12.3 \
-		indexed-traversable-0.1.2.1 \
-		indexed-traversable-instances-0.1.1.2_1 \
-		integer-logarithms-1.0.3.1_4 \
+		hsc2hs-0.68.10_2 \
+		http-client-0.7.17 \
+		http-client-tls-0.3.6.3 \
+		http-types-0.12.4 \
+		indexed-traversable-0.1.3 \
+		indexed-traversable-instances-0.1.1.2_2 \
+		integer-logarithms-1.0.3.1_6 \
 		iproute-1.7.12 \
-		lens-family-core-2.1.2 \
-		megaparsec-9.2.1_1 \
+		lens-family-core-2.1.3 \
+		megaparsec-9.6.1 \
 		memory-0.18.0 \
-		mime-types-0.1.1.0 \
+		mime-types-0.1.2.0 \
 		mmorph-1.2.0_3 \
-		network-3.1.3.0 \
-		network-uri-2.6.4.2 \
-		optparse-applicative-0.17.0.0 \
-		parser-combinators-1.3.0 \
-		parsers-0.12.11 \
+		network-3.1.4.0_1 \
+		network-uri-2.6.4.2_1 \
+		old-locale-1.0.0.7_2 \
+		old-time-1.1.0.4 \
+		optparse-applicative-0.18.1.0 \
+		os-string-2.0.2 \
+		parser-combinators-1.3.0_1 \
+		parsers-0.12.11_2 \
 		pem-0.2.4 \
 		pretty-simple-4.1.2.0 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
-		primitive-0.8.0.0 \
+		primitive-0.8.0.0_1 \
+		process-1.6.18.0_2 \
 		profunctors-5.6.2_3 \
-		random-1.2.1.1 \
+		random-1.2.1.2 \
 		repline-0.4.2.0 \
-		scientific-0.3.7.0_5 \
-		semialign-1.3 \
-		semigroupoids-6.0.0.1 \
-		serialise-0.2.6.0_3 \
+		scientific-0.3.7.0_7 \
+		semialign-1.3_1 \
+		semigroupoids-6.0.0.1_1 \
+		serialise-0.2.6.1_1 \
 		socks-0.6.1 \
-		splitmix-0.1.0.4_2 \
-		streaming-commons-0.2.2.6 \
-		strict-0.5 \
-		tagged-0.8.7 \
+		splitmix-0.1.0.5_1 \
+		streaming-commons-0.2.2.6_1 \
+		strict-0.5_1 \
+		tagged-0.8.8_1 \
 		temporary-1.3 \
 		text-manipulate-0.3.1.0 \
-		text-short-0.1.5_2 \
+		text-short-0.1.5_3 \
 		th-abstraction-0.5.0.0 \
-		th-compat-0.1.4_2 \
-		th-lift-0.8.3 \
+		th-compat-0.1.5 \
+		th-lift-0.8.4_2 \
 		th-lift-instances-0.1.20 \
-		these-1.2 \
-		time-compat-1.9.6.1_5 \
-		tls-1.6.0 \
+		these-1.2_1 \
+		time-compat-1.9.6.1_6 \
+		tls-2.0.2 \
 		transformers-compat-0.7.2 \
-		unix-compat-0.6_1 \
-		unordered-containers-0.2.19.1_2 \
-		uuid-types-1.0.5_4 \
-		vector-0.13.0.0_3 \
-		vector-stream-0.1.0.0_2 \
+		unix-2.8.5.0_1 \
+		unix-compat-0.7.1 \
+		unix-time-0.4.12 \
+		unordered-containers-0.2.20_1 \
+		uuid-types-1.0.5.1 \
+		vector-0.13.1.0_1 \
+		vector-stream-0.1.0.1_1 \
 		witherable-0.4.2_4 \
-		x509-1.7.7 \
-		x509-store-1.6.9 \
-		x509-system-1.6.7 \
-		x509-validation-1.6.12 \
-		zlib-0.6.3.0_1
+		zlib-0.7.0.0_1
 
-CABAL_EXECUTABLES=	dhall-to-json json-to-dhall
 CABAL_PROJECT=		remove
+CABAL_EXECUTABLES=	dhall-to-json json-to-dhall
+CABAL_REVISION=		2
 
 .include <bsd.port.mk>

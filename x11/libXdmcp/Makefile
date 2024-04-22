@@ -1,5 +1,5 @@
 PORTNAME=	libXdmcp
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.5
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -8,7 +8,7 @@ WWW=		https://www.freedesktop.org/Software/xlibs
 
 LICENSE=	MIT
 
-USES=		cpe xorg xorg-cat:lib
+USES=		cpe tar:xz xorg xorg-cat:lib
 USE_XORG=	xorgproto:both
 
 CPE_VENDOR=	x.org

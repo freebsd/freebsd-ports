@@ -1,5 +1,5 @@
 PORTNAME=	sslproxy
-PORTVERSION=	0.9.4
+DISTVERSION=	0.9.5
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	security
@@ -19,9 +19,9 @@ GH_ACCOUNT=	sonertari
 GH_PROJECT=	SSLproxy
 
 MAKEFILE=	GNUmakefile
-MAKE_ENV=	MANDIR=man INSTALLUID=${UID} INSTALLGID=${GID}
-PLIST_FILES=	bin/sslproxy man/man1/sslproxy.1.gz \
-		man/man5/sslproxy.conf.5.gz \
+MAKE_ENV=	MANDIR=share/man INSTALLUID=${UID} INSTALLGID=${GID}
+PLIST_FILES=	bin/sslproxy share/man/man1/sslproxy.1.gz \
+		share/man/man5/sslproxy.conf.5.gz \
 		"@sample etc/sslproxy.conf.sample"
 
 post-patch:

@@ -62,11 +62,12 @@ include/exiv2/version.hpp
 include/exiv2/webpimage.hpp
 include/exiv2/xmp_exiv2.hpp
 include/exiv2/xmpsidecar.hpp
-lib/cmake/exiv2/exiv2Config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/exiv2/exiv2Config.cmake
 lib/cmake/exiv2/exiv2ConfigVersion.cmake
+lib/cmake/exiv2/exiv2Export-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/exiv2/exiv2Export.cmake
 lib/libexiv2.so
-lib/libexiv2.so.0.28.0
+lib/libexiv2.so.0.28.2
 lib/libexiv2.so.28
 libdata/pkgconfig/exiv2.pc
 share/man/man1/exiv2.1.gz

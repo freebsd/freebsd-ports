@@ -1,7 +1,10 @@
 PORTNAME=	filament
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.49.3
+DISTVERSION=	1.51.4
 CATEGORIES=	graphics
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	a5bba37dc5463b6e7c428437c8cd3c5792b72dab.patch:-p1 # https://github.com/google/filament/pull/7764
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Real-time physically based rendering engine
@@ -12,6 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv7=	compilation breaks: unexpected token in operand, see https://github.com/google/filament/issues/6131
 BROKEN_i386=	compilation breaks: register r11 is only available in 64-bit mode
+BROKEN_powerpc=		compilation breaks: invalid register name, see https://github.com/google/filament/issues/7552
+BROKEN_powerpc64=	compilation breaks: invalid register name, see https://github.com/google/filament/issues/7552
+BROKEN_powerpc64le=	compilation breaks: invalid register name, see https://github.com/google/filament/issues/7552
 
 BUILD_DEPENDS=	bash:shells/bash \
 		evdev-proto>0:devel/evdev-proto

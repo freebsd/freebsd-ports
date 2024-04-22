@@ -1,5 +1,6 @@
 PORTNAME=	bmd-plugin-hookcmd
 DISTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	naito.yuichiro@gmail.com

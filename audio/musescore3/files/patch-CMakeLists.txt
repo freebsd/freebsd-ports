@@ -1,0 +1,79 @@
+--- CMakeLists.txt.orig	2021-02-08 12:16:37 UTC
++++ CMakeLists.txt
+@@ -25,7 +25,7 @@ include(build/functions.cmake) # library of CMake func
+ include(build/functions.cmake) # library of CMake functions ("fn__" namespace)
+ 
+ # Print Qt version or fail the build if Qt (qmake) is not in PATH.
+-fn__require_program(QMAKE Qt --version "https://musescore.org/en/handbook/developers-handbook/compilation" qmake)
++fn__require_program(QMAKE Qt --version "https://musescore.org/en/handbook/developers-handbook/compilation" qmake-qt5)
+ 
+ # Libraries linked via full path no longer produce linker search paths.
+ cmake_policy(SET CMP0003 NEW)
+@@ -108,7 +108,7 @@ add_definitions(-DMUSESCORE_REVISION="${MUSESCORE_REVI
+ add_definitions(-DMUSESCORE_REVISION="${MUSESCORE_REVISION}")
+ 
+ # Setup version number and general build settings
+-SET(MUSESCORE_BUILD_CONFIG "dev" CACHE STRING "Build config")
++SET(MUSESCORE_BUILD_CONFIG "release" CACHE STRING "Build config")
+ # Possible MUSESCORE_BUILD_CONFIG values:
+ # - dev     - for development/nightly builds
+ # - testing - for testing versions (alpha, beta, RC)
+@@ -157,7 +157,7 @@ option(BUILD_LAME    "Enable MP3 export"              
+ option(USE_SYSTEM_FREETYPE "Use system FreeType"          OFF) # requires freetype >= 2.5.2, does not work on win
+ option(USE_SYSTEM_POPPLER  "Use system Poppler for OMR"   OFF)
+ option(BUILD_LAME    "Enable MP3 export"                  ON)  # Requires libmp3lame, call CMake with -DBUILD_LAME="OFF" to disable
+-option(DOWNLOAD_SOUNDFONT "Download the latest soundfont version as part of the build process" ON)
++option(DOWNLOAD_SOUNDFONT "Download the latest soundfont version as part of the build process" OFF)
+ 
+ # licence incompatibility, must never be distributed
+ set(OCR OFF)
+@@ -629,6 +629,38 @@ else(APPLE)
+       set_target_properties(oggdll PROPERTIES IMPORTED_IMPLIB ${OGG_LIBRARY})
+    else (MINGW OR MSVC)
+       set(SNDFILE_LIB sndfile)
++      message(STATUS "Looking for support libraries")
++      PKGCONFIG1(sndfile 1.0 SNDFILE_INCDIR SNDFILE_LIBDIR SNDFILE_LIB SNDFILE_CPP)
++      PKGCONFIG1(ogg 1.0 OGG_INCDIR OGG_LIBDIR OGG_LIB OGG_CPP)
++      PKGCONFIG1(vorbis 1.0 VORBIS_INCDIR VORBIS_LIBDIR VORBIS_LIB VORBIS_CPP)
++      message(STATUS "sndfile=${SNDFILE_LIBDIR} ogg=${OGG_LIBDIR} vorbis=${VORBIS_LIBDIR}")
++      if (SNDFILE_LIB)
++        find_library(_l sndfile PATHS ${SNDFILE_LIBDIR})
++        if (_l)
++          add_library(sndfile UNKNOWN IMPORTED)
++          set_target_properties(sndfile PROPERTIES
++            IMPORTED_LOCATION ${_l}
++            INTERFACE_INCLUDE_DIRECTORIES ${SNDFILE_INCDIR})
++        endif()
++      endif()
++      if (OGG_LIB)
++        find_library(_l ogg PATHS ${OGG_LIBDIR})
++        if (_l)
++          add_library(ogg UNKNOWN IMPORTED)
++          set_target_properties(ogg PROPERTIES
++            IMPORTED_LOCATION ${_l}
++            INTERFACE_INCLUDE_DIRECTORIES ${OGG_INCDIR})
++        endif()
++      endif()
++      if (VORBIS_LIB)
++        find_library(_l vorbis PATHS ${VORBIS_LIBDIR})
++        if (_l)
++          add_library(vorbis UNKNOWN IMPORTED)
++          set_target_properties(vorbis PROPERTIES
++            IMPORTED_LOCATION ${_l}
++            INTERFACE_INCLUDE_DIRECTORIES ${VORBIS_INCDIR})
++        endif()
++      endif()
+    endif (MINGW OR MSVC)
+    set(OGG_LIB ogg)
+ 
+@@ -771,8 +803,8 @@ if (NOT MSVC)
+ # MSVC does not require these targets, as all.h is not copied and the
+ #   PCH generation is done per-project
+ if (NOT MSVC)
+-   ADD_CUSTOM_TARGET(mops1 DEPENDS ${PROJECT_BINARY_DIR}/all.h)
+-   ADD_CUSTOM_TARGET(mops2 DEPENDS ${PCH})
++   ADD_CUSTOM_TARGET(mops1 DEPENDS ) # ${PROJECT_BINARY_DIR}/all.h)
++   ADD_CUSTOM_TARGET(mops2 DEPENDS ) # ${PCH})
+ endif (NOT MSVC)
+ 
+ ##

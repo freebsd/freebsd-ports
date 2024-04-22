@@ -1,4 +1,4 @@
 @sample etc/ipv6mon.conf.sample
 sbin/ipv6mon
-man/man5/ipv6mon.conf.5.gz
-man/man8/ipv6mon.8.gz
+share/man/man5/ipv6mon.conf.5.gz
+share/man/man8/ipv6mon.8.gz

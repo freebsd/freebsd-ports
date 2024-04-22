@@ -1,6 +1,6 @@
 PORTNAME=	xscavenger
 PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.linuxmotors.com/scavenger/downloads/
 

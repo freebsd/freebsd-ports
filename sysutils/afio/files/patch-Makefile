@@ -56,7 +56,7 @@
 -	cp afio /usr/local/bin
 -	cp afio.1 /usr/share/man/man1
 +	${BSD_INSTALL_PROGRAM} afio ${DESTDIR}${PREFIX}/bin
-+	${BSD_INSTALL_MAN} afio.1 ${DESTDIR}${PREFIX}/man/man1
++	${BSD_INSTALL_MAN} afio.1 ${DESTDIR}${PREFIX}/share/man/man1
  
  # generate default list of -E extensions from manpage
  # note: on sun, I had to change awk command below to nawk or gawk

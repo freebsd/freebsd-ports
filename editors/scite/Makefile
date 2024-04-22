@@ -1,6 +1,6 @@
 PORTNAME=	scite
 DISTVERSION=	4.4.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors gnome
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -47,7 +47,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../bin/SciTE ${STAGEDIR}${PREFIX}/bin
 	${LN} -sf SciTE ${STAGEDIR}${PREFIX}/bin/scite
-	${INSTALL_MAN} ${WRKSRC}/../doc/scite.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/../doc/scite.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/SciTE.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/Sci48M.png ${STAGEDIR}${PREFIX}/share/pixmaps
 	(cd ${WRKSRC}/../src && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR})

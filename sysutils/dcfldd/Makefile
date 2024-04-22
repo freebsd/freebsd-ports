@@ -1,6 +1,7 @@
 PORTNAME=	dcfldd
-DISTVERSION=	1.9.1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	nobutaka@FreeBSD.org
@@ -12,10 +13,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_GITHUB=	yes
 GH_ACCOUNT=	resurrecting-open-source-projects
 
 PLIST_FILES=	bin/dcfldd \
-		man/man1/dcfldd.1.gz
+		share/man/man1/dcfldd.1.gz
 
 .include <bsd.port.mk>

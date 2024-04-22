@@ -1,5 +1,6 @@
 PORTNAME=	elfkickers
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	devel education sysutils
 MASTER_SITES=	http://www.muppetlabs.com/~breadbox/pub/software/
 DISTNAME=	ELFkickers-${PORTVERSION}
@@ -30,7 +31,7 @@ do-build:
 do-install:
 .for f in ${ELFBINS}
 	${INSTALL_SCRIPT} ${WRKSRC}/${f}/${f} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${f}/${f:S,$,.1,} ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${f}/${f:S,$,.1,} ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 
 post-install:

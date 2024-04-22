@@ -1,5 +1,5 @@
 PORTNAME=	red-arrow
-PORTVERSION=	13.0.0
+PORTVERSION=	15.0.2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -16,13 +16,12 @@ BUILD_DEPENDS=	arrow>=${PORTVERSION}<${PORTVERSION}_99:databases/arrow \
 LIB_DEPENDS=	libarrow.so:databases/arrow \
 		libarrow-glib.so:databases/arrow-glib
 RUN_DEPENDS=	rubygem-bigdecimal>=3.1.0:math/rubygem-bigdecimal \
+		rubygem-csv>=0:devel/rubygem-csv \
 		rubygem-extpp>=0.1.1:devel/rubygem-extpp \
 		rubygem-gio2>=3.5.0:devel/rubygem-gio2 \
 		rubygem-native-package-installer>=0:devel/rubygem-native-package-installer \
 		rubygem-pkg-config>=0:devel/rubygem-pkg-config \
 
-USES=		gem localbase
-
-CFLAGS+=	-I${LOCALBASE}/include
+USES=		gem
 
 .include <bsd.port.mk>

@@ -1,12 +1,12 @@
 PORTNAME=	jonpy
-PORTVERSION=	0.12
+DISTVERSION=	0.14
 CATEGORIES=	www python
-MASTER_SITES=	SF
+MASTER_SITES=	https://github.com/jribbens/${PORTNAME}/releases/download/rel-0-14/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python FastCGI interface library
-WWW=		https://jonpy.sourceforge.net/
+WWW=		https://github.com/jribbens/jonpy
 
 LICENSE=	MIT
 
@@ -14,14 +14,9 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
-PORTDOCS=	*
 PORTEXAMPLES=	* .htaccess
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
+OPTIONS_DEFINE=	EXAMPLES
 
 do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

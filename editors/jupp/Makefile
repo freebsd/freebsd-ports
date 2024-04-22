@@ -1,5 +1,6 @@
 PORTNAME=	jupp
 PORTVERSION=	3.1.41
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.mirbsd.org/MirOS/dist/jupp/ \
 		http://pub.allbsd.org/MirOS/dist/jupp/
@@ -15,6 +16,7 @@ CONFLICTS=	joe
 
 USES=		tar:tgz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-termidx
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

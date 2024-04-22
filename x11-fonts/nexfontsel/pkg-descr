@@ -4,3 +4,5 @@ advantage from standerd xfontsel.
 o neXtaw's scrollable menu widget.
 o "reset button".
 o I18N sopport.
+o Unicode support.
+o Some short-cut key bindings support.

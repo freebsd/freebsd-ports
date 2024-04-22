@@ -1,6 +1,6 @@
 PORTNAME=	dssi
 PORTVERSION=	1.1.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -21,8 +21,10 @@ RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
 		${LOCALBASE}/include/alsa/seq_event.h:audio/alsa-lib
 
 USES=		gmake pathfix pkgconfig localbase libtool xorg
-GNU_CONFIGURE=	yes
 USE_XORG=	x11
+
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PORTDOCS=	ChangeLog README
 
@@ -34,6 +36,12 @@ EXAMPLES_FILES2=LTS_qt trivial_sampler_qt
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_SUB=	yes
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -51,8 +59,12 @@ post-install:
 .for l in trivial_synth less_trivial_synth trivial_sampler karplong
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/dssi/${l}.so
 .endfor
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_PROGRAM} ${EXAMPLES_FILES1:S|^|${EXAMPLESSRCDIR}/|} \
 		${STAGEDIR}${EXAMPLESDIR}

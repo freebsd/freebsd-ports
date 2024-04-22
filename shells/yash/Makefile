@@ -1,5 +1,5 @@
 PORTNAME=	yash
-DISTVERSION=	2.55
+DISTVERSION=	2.56.1
 CATEGORIES=	shells
 MASTER_SITES=	https://github.com/magicant/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -14,7 +14,7 @@ USES=		tar:xz
 USE_CSTD=	c99
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

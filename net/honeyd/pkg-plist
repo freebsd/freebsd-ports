@@ -7,8 +7,6 @@ include/honeyd/hooks.h
 include/honeyd/plugins.h
 include/honeyd/plugins_config.h
 lib/honeyd/libhoneyd.so
-man/man1/honeydctl.1.gz
-man/man8/honeyd.8.gz
 %%DATADIR%%/README
 %%DATADIR%%/config.ethernet
 %%DATADIR%%/config.sample
@@ -60,3 +58,5 @@ man/man8/honeyd.8.gz
 %%DATADIR%%/scripts/kuang2.conf
 %%DATADIR%%/scripts/smtp.pl
 %%DATADIR%%/scripts/proxy.pl
+share/man/man1/honeydctl.1.gz
+share/man/man8/honeyd.8.gz

@@ -1,6 +1,3 @@
-SHA256 (ttcp/ttcp.c) = e630a95788efacfee226dff3550e58ed908987ef96817efc8ad4862657a60c3b
-SIZE (ttcp/ttcp.c) = 19170
-SHA256 (ttcp/ttcp.1) = edb5dbc156c06584d7a73b6ffdb0049dca1b819f0c79aa2289005d60acaddbc9
-SIZE (ttcp/ttcp.1) = 3885
-SHA256 (ttcp/README) = a5c033bcfdcbca3cfe82c36b8c82d8b25d7bc1968a5a664f61052bfe31a1a531
-SIZE (ttcp/README) = 781
+TIMESTAMP = 1709490744
+SHA256 (ttcp-ttcp-1.13.tar.gz) = 809214c535175139897afba784e2e6d1eff02efc3d7b90a67f1bb52fb5082027
+SIZE (ttcp-ttcp-1.13.tar.gz) = 10959

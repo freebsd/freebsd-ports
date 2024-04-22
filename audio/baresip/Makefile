@@ -1,6 +1,6 @@
 PORTNAME=	baresip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.0
+DISTVERSION=	3.11.0
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/baresip
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	re>=${PORTVERSION}:audio/re
+BUILD_DEPENDS=	re>=${PORTVERSION:R}:audio/re
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cmake pkgconfig ssl
@@ -18,8 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	baresip
 
 # FIXME values of the next 3 variables taken from source code Makefile
-ABI_MAJOR=	10
-ABI_AGE=	6
+ABI_MAJOR=	15
+ABI_AGE=	11
 ABI_REV=	0
 PLIST_SUB=	ABI_MAJOR=${ABI_MAJOR}
 PLIST_SUB+=	ABI_AGE=${ABI_AGE} \

@@ -1,17 +1,18 @@
 PORTNAME=	dotenv-linter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.0
-PORTREVISION=	10
+PORTREVISION=	12
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Linter for .env files. Written in Rust
 WWW=		https://dotenv-linter.github.io
 
-BROKEN_powerpc64le=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs: # see https://github.com/dotenv-linter/dotenv-linter/issues/742
-
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_powerpc64=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs: # see https://github.com/dotenv-linter/dotenv-linter/issues/742
+BROKEN_powerpc64le=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs: # see https://github.com/dotenv-linter/dotenv-linter/issues/742
 
 USES=		cargo
 

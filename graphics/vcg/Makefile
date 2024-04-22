@@ -1,6 +1,6 @@
 PORTNAME=	vcg
 PORTVERSION=	1.30
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.polytechnic.edu.na/pub2/openpkg1/sources/DST/vcg/ \
 		http://ftp.gwdg.de/linux/openpkg/openpkg-ftp/sources/DST/vcg/ \

@@ -1,5 +1,5 @@
 PORTNAME=	sabredav
-DISTVERSION=	4.4.0
+DISTVERSION=	4.6.0
 CATEGORIES=	www
 
 MAINTAINER=	meyser@xenet.de

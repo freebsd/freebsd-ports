@@ -1,3 +1,4 @@
+PORTREVISION=	1
 PKGNAMESUFFIX=	-chunkserver
 
 COMMENT=	MooseFS data storage and synchronization component

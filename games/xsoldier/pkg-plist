@@ -1,6 +1,6 @@
 @(,games,2555) bin/xsoldier
-man/man6/xsoldier.6.gz
 @sample(,games,664) %%EXAMPLESDIR%%/xsoldier.scores /var/games/xsoldier.scores
+share/man/man6/xsoldier.6.gz
 %%DATADIR%%/Boss1.xpm
 %%DATADIR%%/Boss2.xpm
 %%DATADIR%%/Boss3.xpm

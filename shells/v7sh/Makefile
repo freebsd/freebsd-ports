@@ -1,6 +1,6 @@
 PORTNAME=	v7sh
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 MASTER_SITES=	https://BSDforge.com/projects/source/shells/v7sh/
 DISTFILES=	args.c blok.c brkincr.h builtin.c cmd.c \

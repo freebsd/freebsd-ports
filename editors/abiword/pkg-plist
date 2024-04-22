@@ -49,7 +49,7 @@ lib/abiword-%%ABIVERSION%%/plugins/wml.so
 lib/abiword-%%ABIVERSION%%/plugins/xslfo.so
 lib/libabiword-%%ABIVERSION%%.so
 libdata/pkgconfig/abiword-%%ABIVERSION%%.pc
-man/man1/abiword.1.gz
+share/man/man1/abiword.1.gz
 %%DATADIR%%-%%ABIVERSION%%/Presentation.xml
 %%COLLAB%%%%DATADIR%%-%%ABIVERSION%%/certs/cacert.pem
 %%CLIPART%%%%DATADIR%%-%%ABIVERSION%%/clipart/book.png

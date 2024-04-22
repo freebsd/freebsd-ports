@@ -1,13 +1,12 @@
 PORTNAME=	znc-push
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0-173
-DISTVERSIONSUFFIX=	-g78d0385
-PORTREVISION=	8
+DISTVERSION=	1.1.0-1
+DISTVERSIONSUFFIX=	-g23d8467
 CATEGORIES=	irc
 
 MAINTAINER=	dor.bsd@xm0.uk
 COMMENT=	Push notification service module for ZNC
-WWW=		https://github.com/jreese/znc-push
+WWW=		https://github.com/amyreese/znc-push
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,10 +15,10 @@ BUILD_DEPENDS=	znc:irc/znc
 LIB_DEPENDS=	libicudata.so:devel/icu
 RUN_DEPENDS=	znc:irc/znc
 
-USES=		compiler:c++11-lang gmake localbase:ldflags ssl
+USES=		compiler:c++11-lang gmake localbase:ldflags pkgconfig ssl
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	jreese
+GH_ACCOUNT=	amyreese
 
 MAKE_ENV=	version=${PORTVERSION}
 

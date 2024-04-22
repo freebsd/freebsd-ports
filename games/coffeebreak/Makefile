@@ -1,5 +1,6 @@
 PORTNAME=	coffeebreak
 DISTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -11,10 +12,13 @@ LICENSE=	BSD2CLAUSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	0mp
 
+MAKE_ARGS=	MANDIR=${STAGEDIR}${PREFIX}/share/man \
+		PREFIX=${PREFIX}
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/coffeebreak \
-		man/man6/coffeebreak.6.gz
+		share/man/man6/coffeebreak.6.gz
 
 .include <bsd.port.mk>

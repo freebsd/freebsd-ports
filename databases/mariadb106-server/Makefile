@@ -1,5 +1,5 @@
 PORTNAME?=	mariadb
-PORTVERSION=	10.6.16
+PORTVERSION=	10.6.17
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
@@ -11,7 +11,6 @@ MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
 		https://ftp.ubuntu-tw.org/mirror/${SITESDIR}/ \
 		https://mirror.kku.ac.th/${SITESDIR}/ \
 		https://espejito.fder.edu.uy/${SITESDIR}/ \
-		https://mirror1.cl.netactuate.com/${SITESDIR}/ \
 		https://ftp.osuosl.org/pub/${SITESDIR}/ \
 		https://downloads.mariadb.org/rest-api/mariadb/${PORTVERSION}/
 PKGNAMESUFFIX?=	106-server
@@ -105,6 +104,7 @@ CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH=${PREFIX} \
 		-DINSTALL_SYSCONF2DIR="${ETCDIR}/conf.d" \
 		-DINSTALL_UNIX_ADDRDIR="${MARIADB_RUNDIR}/${MARIADB_SOCK}" \
 		-DWITH_PCRE=system \
+		-DPCRE_LIBRARY_DIRS=${PREFIX}/lib \
 		-DWITH_SSL="${OPENSSLBASE}" \
 		-DCURSES_CURSES_LIBRARY="/usr/lib/libcurses.so" \
 		-DCURSES_FORM_LIBRARY="/usr/lib/libform.so" \
@@ -221,12 +221,6 @@ CFLAGS+=        -Wno-incompatible-function-pointer-types
 .if ${ARCH} != amd64 && ${ARCH} != aarch64
 PLIST_SUB+=	WSREP="@comment "
 .endif
-
-#.if ${ARCH} == i386
-#USE_GCC=	9
-#CFLAGS+=	-DHAVE_GCC_C11_ATOMICS -latomic -DUSE_NEW_READLINE_INTERFACE
-#CXXFLAGS+=	-fpermissive
-#.endif
 
 post-patch:
 .if ${OPSYS} == DragonFly

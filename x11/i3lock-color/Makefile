@@ -1,6 +1,6 @@
 PORTNAME=	i3lock-color
 DISTVERSION=	2.13.c.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 
 MAINTAINER=	fjachuf@gmail.com
@@ -29,6 +29,7 @@ USE_GNOME=	cairo
 USE_XORG=	x11 xcb xext xinerama xorgproto xrandr xt
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \
 		X11INC="${LOCALBASE}/include" CC="${CC}"
@@ -39,7 +40,7 @@ CONFLICTS_INSTALL=	i3lock
 
 PLIST_FILES=	bin/i3lock \
 		etc/pam.d/i3lock \
-		man/man1/i3lock.1.gz
+		share/man/man1/i3lock.1.gz
 
 OPTIONS_DEFINE=	DOCS
 

@@ -287,5 +287,5 @@ lib/X11/xmcd/pixmaps/xmcd_a.px
 lib/X11/xmcd/pixmaps/xmcd_b.px
 lib/X11/xmcd/pixmaps/xmcd.xpm
 lib/X11/xmcd/scripts/genidx
-man/man1/cda.1.gz
-man/man1/xmcd.1.gz
+share/man/man1/cda.1.gz
+share/man/man1/xmcd.1.gz

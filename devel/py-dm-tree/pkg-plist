@@ -1,0 +1,13 @@
+%%PYTHON_SITELIBDIR%%/tree/__init__.py
+%%PYTHON_SITELIBDIR%%/tree/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/tree/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/tree/__pycache__/sequence%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/tree/__pycache__/sequence%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/tree/__pycache__/tree_benchmark%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/tree/__pycache__/tree_benchmark%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/tree/__pycache__/tree_test%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/tree/__pycache__/tree_test%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/tree/_tree%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/tree/sequence.py
+%%PYTHON_SITELIBDIR%%/tree/tree_benchmark.py
+%%PYTHON_SITELIBDIR%%/tree/tree_test.py

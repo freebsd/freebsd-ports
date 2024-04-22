@@ -16,4 +16,6 @@ RUN_DEPENDS=	rubygem-httparty>=0.18.1:www/rubygem-httparty
 NO_ARCH=	yes
 USES=		gem
 
+PORTSCOUT=	limit:^3\.7\.
+
 .include <bsd.port.mk>

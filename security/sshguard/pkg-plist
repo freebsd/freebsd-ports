@@ -12,5 +12,5 @@ libexec/sshg-fw-null
 libexec/sshg-fw-pf
 libexec/sshg-logtail
 libexec/sshg-parser
-man/man7/sshguard-setup.7.gz
-man/man8/sshguard.8.gz
+share/man/man7/sshguard-setup.7.gz
+share/man/man8/sshguard.8.gz

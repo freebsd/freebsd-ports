@@ -1,9 +1,9 @@
 sbin/dhclient
 sbin/dhclient-script
-man/man5/dhclient.conf.5.gz
-man/man5/dhclient.leases.5.gz
-man/man8/dhclient.8.gz
-man/man8/dhclient-script.8.gz
+share/man/man5/dhclient.conf.5.gz
+share/man/man5/dhclient.leases.5.gz
+share/man/man8/dhclient.8.gz
+share/man/man8/dhclient-script.8.gz
 @sample etc/dhclient.conf.example etc/dhclient.conf
 @touch /var/run/dhclient.leases
 @rmempty /var/run/dhclient.leases

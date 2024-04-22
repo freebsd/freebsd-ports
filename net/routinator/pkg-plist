@@ -1,3 +1,3 @@
 bin/routinator
 @sample %%ETCDIR%%/routinator.conf.example %%ETCDIR%%/routinator.conf
-man/man1/routinator.1.gz
+share/man/man1/routinator.1.gz

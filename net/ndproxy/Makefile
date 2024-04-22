@@ -1,5 +1,6 @@
 PORTNAME=	ndproxy
 PORTVERSION=	3.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -22,13 +23,13 @@ GH_ACCOUNT=	AlexandreFenyo
 CFLAGS+=	-DVIMAGE ${CFLAGS_${CHOSEN_COMPILER_TYPE}}
 CFLAGS_gcc=	-Wno-error=strict-prototypes
 
-PLIST_FILES=	${KMODDIR}/${PORTNAME}.ko man/man4/${PORTNAME}.4.gz
+PLIST_FILES=	${KMODDIR}/${PORTNAME}.ko share/man/man4/${PORTNAME}.4.gz
 
 pre-build:
 	(cd ${BUILD_WRKSRC}; ${MAKE} depend)
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/${PORTNAME}.ko ${STAGEDIR}${KMODDIR}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.4 ${STAGEDIR}${PREFIX}/man/man4/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.4 ${STAGEDIR}${PREFIX}/share/man/man4/
 
 .include <bsd.port.mk>

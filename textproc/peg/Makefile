@@ -1,5 +1,6 @@
 PORTNAME=	peg
 DISTVERSION=	0.1.19
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.piumarta.com/software/peg/
 
@@ -13,7 +14,7 @@ USES=		gmake
 
 PLIST_FILES=	bin/leg \
 		bin/peg \
-		man/man1/peg.1.gz
+		share/man/man1/peg.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%STAGEDIR%%,${STAGEDIR},g' \

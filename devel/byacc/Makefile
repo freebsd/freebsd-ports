@@ -1,7 +1,8 @@
 PORTNAME=	byacc
-PORTVERSION=	20230521
+PORTVERSION=	20240109
 CATEGORIES=	devel
-MASTER_SITES=	https://invisible-mirror.net/archives/byacc/ \
+MASTER_SITES=	https://invisible-island.net/archives/byacc/ \
+		https://invisible-mirror.net/archives/byacc/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -18,6 +19,6 @@ MAKEFILE=	makefile
 TEST_TARGET=	check
 
 PLIST_FILES=	bin/yacc \
-		man/man1/yacc.1.gz
+		share/man/man1/yacc.1.gz
 
 .include <bsd.port.mk>

@@ -6,11 +6,11 @@ libexec/imapd
 libexec/ipop2d
 libexec/ipop3d
 @(,mail,2711) libexec/mlock
-man/man1/dmail.1.gz
-man/man1/mailutil.1.gz
-man/man1/tmail.1.gz
-man/man8/ipopd.8.gz
-man/man8/imapd.8.gz
+share/man/man1/dmail.1.gz
+share/man/man1/mailutil.1.gz
+share/man/man1/tmail.1.gz
+share/man/man8/ipopd.8.gz
+share/man/man8/imapd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/BUILD
 %%PORTDOCS%%%%DOCSDIR%%/CONFIG
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.html

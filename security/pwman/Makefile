@@ -1,6 +1,6 @@
 PORTNAME=	pwman
 DISTVERSION=	0.4.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,10 +16,11 @@ RUN_DEPENDS=	gpgv:security/gnupg1
 USES=		gnome ncurses
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	curses_loc=${NCURSESBASE}
 
 PORTDOCS=	AUTHORS ChangeLog README TODO
-PLIST_FILES=	bin/convert_pwdb bin/pwdb2csv bin/pwman man/man1/pwman.1.gz
+PLIST_FILES=	bin/convert_pwdb bin/pwdb2csv bin/pwman share/man/man1/pwman.1.gz
 
 CFLAGS+=	-Wno-error=return-type
 

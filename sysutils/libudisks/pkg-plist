@@ -8,15 +8,13 @@ include/udisks2/udisks/udiskserror.h
 include/udisks2/udisks/udisksobjectinfo.h
 include/udisks2/udisks/udiskstypes.h
 include/udisks2/udisks/udisksversion.h
-lib/girepository-1.0/UDisks-2.0.typelib
 lib/libudisks2.a
 lib/libudisks2.so
 lib/libudisks2.so.0
 lib/libudisks2.so.0.0.0
 libdata/pkgconfig/udisks2.pc
-%%UDISKSCTL%%man/man1/udisksctl.1.gz
+%%UDISKSCTL%%share/man/man1/udisksctl.1.gz
 %%UDISKSCTL%%share/bash-completion/completions/udisksctl
-share/gir-1.0/UDisks-2.0.gir
 %%NLS%%share/locale/af/LC_MESSAGES/udisks2.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/udisks2.mo
 %%NLS%%share/locale/as/LC_MESSAGES/udisks2.mo

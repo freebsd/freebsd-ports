@@ -1,8 +1,8 @@
-man/man5/hitch.conf.5.gz
-man/man8/hitch.8.gz
 sbin/hitch
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.rst
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/hitch.conf.example
+share/man/man5/hitch.conf.5.gz
+share/man/man8/hitch.8.gz
 @sample etc/hitch.conf.sample
 @dir(hitch,hitch,) %%CACHE_DIR%%

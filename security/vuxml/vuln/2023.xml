@@ -2896,7 +2896,7 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
       </package>
     </affects>
     <description>
-      <body>
+      <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Attacker can add other projects policy bot as member to their own project and use that bot to trigger pipelines in victims project</p>
 	<p>Group import allows impersonation of users in CI pipelines</p>
 	<p>Developers can bypass code owners approval by changing a MR's base branch</p>
@@ -5523,7 +5523,7 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
       </package>
       <package>
 	<name>krb5-devel</name>
-	<range><lt>2023.08.07</lt></range>
+	<range><lt>1.22.2023.08.07</lt></range>
       </package>
     </affects>
     <description>

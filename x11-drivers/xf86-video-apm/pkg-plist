@@ -1,2 +1,2 @@
 lib/xorg/modules/drivers/apm_drv.so
-man/man4/apm.4x.gz
+share/man/man4/apm.4x.gz

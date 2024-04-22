@@ -1,6 +1,5 @@
 PORTNAME=	pspp
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -24,6 +23,7 @@ CPE_VENDOR=	gnu
 USE_GNOME=	libxml2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	PYTHON3=${PYTHON_CMD}
 MAKE_ARGS=	MAKEINFO="${LOCALBASE}/bin/makeinfo" \
 		XMLLINT="${LOCALBASE}/bin/xmllint"
@@ -44,7 +44,7 @@ OPTIONS_SUB=		yes
 GUI_LIB_DEPENDS=	libgladeui-2.so:devel/glade \
 			libspread-sheet-widget.so:devel/spread-sheet-widget
 GUI_USES=		desktop-file-utils shared-mime-info
-GUI_USE=		gnome=cairo,gtk30,gtksourceview3,pango pkgconfig
+GUI_USE=		gnome=cairo,gtk30,gtksourceview4,pango pkgconfig
 GUI_CONFIGURE_WITH=	cairo gui
 GUI_INSTALL_TARGET=	install-icons install-ext-icons
 

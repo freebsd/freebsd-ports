@@ -1,6 +1,6 @@
---- chrome/app/chrome_main_delegate.cc.orig	2023-12-10 06:10:27 UTC
+--- chrome/app/chrome_main_delegate.cc.orig	2024-04-19 13:02:56 UTC
 +++ chrome/app/chrome_main_delegate.cc
-@@ -145,7 +145,7 @@
+@@ -146,7 +146,7 @@
  #include "components/about_ui/credit_utils.h"
  #endif
  
@@ -9,13 +9,18 @@
  #include "components/nacl/common/nacl_paths.h"
  #include "components/nacl/zygote/nacl_fork_delegate_linux.h"
  #endif
-@@ -189,16 +189,16 @@
+@@ -189,20 +189,20 @@
  #include "v8/include/v8.h"
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include "base/environment.h"
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "base/nix/scoped_xdg_activation_token_injector.h"
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
@@ -29,7 +34,7 @@
  #include "chrome/browser/policy/policy_path_parser.h"
  #include "components/crash/core/app/crashpad.h"
  #endif
-@@ -337,7 +337,7 @@ void AdjustLinuxOOMScore(const std::string& process_ty
+@@ -346,7 +346,7 @@ void AdjustLinuxOOMScore(const std::string& process_ty
  // and resources loaded.
  bool SubprocessNeedsResourceBundle(const std::string& process_type) {
    return
@@ -38,7 +43,7 @@
        // The zygote process opens the resources for the renderers.
        process_type == switches::kZygoteProcess ||
  #endif
-@@ -422,7 +422,7 @@ bool HandleVersionSwitches(const base::CommandLine& co
+@@ -431,7 +431,7 @@ bool HandleVersionSwitches(const base::CommandLine& co
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -47,7 +52,25 @@
  // Show the man page if --help or -h is on the command line.
  void HandleHelpSwitches(const base::CommandLine& command_line) {
    if (command_line.HasSwitch(switches::kHelp) ||
-@@ -600,7 +600,7 @@ void InitializeUserDataDir(base::CommandLine* command_
+@@ -477,7 +477,7 @@ void SetCrashpadUploadConsentPostLogin() {
+ }
+ #endif  // BUILDFLAG(IS_CHROMEOS_LACROS)
+ 
+-#if !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_ANDROID)
++#if !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_BSD)
+ void SIGTERMProfilingShutdown(int signal) {
+   content::Profiling::Stop();
+   struct sigaction sigact;
+@@ -559,7 +559,7 @@ std::optional<int> AcquireProcessSingleton(
+   // process can be exited.
+   ChromeProcessSingleton::CreateInstance(user_data_dir);
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   // Read the xdg-activation token and set it in the command line for the
+   // duration of the notification in order to ensure this is propagated to an
+   // already running browser process if it exists.
+@@ -643,7 +643,7 @@ void InitializeUserDataDir(base::CommandLine* command_
    std::string process_type =
        command_line->GetSwitchValueASCII(switches::kProcessType);
  
@@ -56,7 +79,7 @@
    // On Linux, Chrome does not support running multiple copies under different
    // DISPLAYs, so the profile directory can be specified in the environment to
    // support the virtual desktop use-case.
-@@ -690,7 +690,7 @@ void RecordMainStartupMetrics(base::TimeTicks applicat
+@@ -770,7 +770,7 @@ void RecordMainStartupMetrics(base::TimeTicks applicat
  #endif
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
@@ -65,16 +88,25 @@
    // Record the startup process creation time on supported platforms. On Android
    // this is recorded in ChromeMainDelegateAndroid.
    startup_metric_utils::GetCommon().RecordStartupProcessCreationTime(
-@@ -1044,7 +1044,7 @@ void ChromeMainDelegate::CommonEarlyInitialization(Inv
-   base::InitializeCpuReductionExperiment();
-   base::sequence_manager::internal::SequenceManagerImpl::InitializeFeatures();
-   base::sequence_manager::internal::ThreadController::InitializeFeatures();
+@@ -1155,7 +1155,7 @@ void ChromeMainDelegate::CommonEarlyInitialization(Inv
+       chrome::GetChannel() == version_info::Channel::DEV;
+   const bool emit_crashes =
+ #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
+-    BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+       is_canary_dev;
+ #else
+       false;
+@@ -1174,7 +1174,7 @@ void ChromeMainDelegate::CommonEarlyInitialization(Inv
+   // for more context.
+   base::sequence_manager::internal::ThreadController::InitializeFeatures(
+       /*record_sample_metadata=*/is_canary_dev);
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
    base::MessagePumpLibevent::InitializeFeatures();
  #elif BUILDFLAG(IS_MAC)
    base::PlatformThread::InitFeaturesPostFieldTrial();
-@@ -1196,7 +1196,7 @@ absl::optional<int> ChromeMainDelegate::BasicStartupCo
+@@ -1323,7 +1323,7 @@ std::optional<int> ChromeMainDelegate::BasicStartupCom
  
    // TODO(crbug.com/1052397): Revisit the macro expression once build flag
    // switch of lacros-chrome is complete.
@@ -83,7 +115,7 @@
    // This will directly exit if the user asked for help.
    HandleHelpSwitches(command_line);
  #endif
-@@ -1226,7 +1226,7 @@ absl::optional<int> ChromeMainDelegate::BasicStartupCo
+@@ -1353,7 +1353,7 @@ std::optional<int> ChromeMainDelegate::BasicStartupCom
  #if BUILDFLAG(IS_CHROMEOS)
    chromeos::dbus_paths::RegisterPathProvider();
  #endif
@@ -92,7 +124,7 @@
    nacl::RegisterPathProvider();
  #endif
  
-@@ -1637,7 +1637,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1750,7 +1750,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
      CHECK(!loaded_locale.empty()) << "Locale could not be found for " << locale;
    }
  
@@ -101,7 +133,7 @@
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
      if (command_line.HasSwitch(switches::kPreCrashpadCrashTest)) {
-@@ -1746,7 +1746,7 @@ absl::variant<int, content::MainFunctionParams> Chrome
+@@ -1851,7 +1851,7 @@ absl::variant<int, content::MainFunctionParams> Chrome
  
    // This entry is not needed on Linux, where the NaCl loader
    // process is launched via nacl_helper instead.

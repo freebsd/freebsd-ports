@@ -1,20 +1,23 @@
 PORTNAME=	pycups
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.4
 CATEGORIES=	print python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/OpenPrinting/pycups/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CUPS bindings for Python
-WWW=		https://github.com/zdohnal/pycups
+WWW=		https://github.com/OpenPrinting/pycups
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libcups.so:print/cups
 
 USES=		iconv localbase python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 .include <bsd.port.pre.mk>
 

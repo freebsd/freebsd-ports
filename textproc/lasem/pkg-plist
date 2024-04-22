@@ -30,7 +30,7 @@ lib/liblasem-0.6.so
 lib/liblasem-0.6.so.5
 lib/liblasem-0.6.so.5.0.1
 libdata/pkgconfig/lasem-0.6.pc
-man/man1/lasem-render-0.6.1.gz
+share/man/man1/lasem-render-0.6.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

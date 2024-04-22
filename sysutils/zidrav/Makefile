@@ -1,6 +1,6 @@
 PORTNAME=	zidrav
 PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}4unix/${PORTVERSION}
 DISTNAME=	zidrav4unix-${PORTVERSION}
@@ -28,7 +28,7 @@ CFLAGS+=	-Dcrc32_type=long
 CFLAGS+=	-Dcrc32_type=int
 .endif
 
-.if ! empty(ARCH:Mmips*) || ${ARCH} == powerpc || ${ARCH} == powerpc64
+.if ${ARCH} == mips || ${ARCH} == mipshf || ${ARCH} == mipsn32 || ${ARCH} == mips64 || ${ARCH} == mips64hf || ${ARCH} == powerpc || ${ARCH} == powerpcspe || ${ARCH} == powerpc64
 CFLAGS+=	-DCPU_BIGENDIAN
 .endif
 

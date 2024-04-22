@@ -1,5 +1,6 @@
 PORTNAME=	netpbm
 DISTVERSION=	11.04.02
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/leres/netpbm
 
@@ -64,7 +65,11 @@ post-patch:
 #
 #.if defined(BOOTSTRAP) && !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 .if defined(BOOTSTRAP)
+.if ${WITH_SUBVERSION_VER:U} == LTS
+FETCH_DEPENDS+=	svn:devel/subversion-lts
+.else
 FETCH_DEPENDS+=	svn:devel/subversion
+.endif
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work/.bootstrap
 
 do-fetch:

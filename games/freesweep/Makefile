@@ -1,6 +1,7 @@
 PORTNAME=	freesweep
 PORTVERSION=	1.0.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -30,7 +31,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}/var/games
 	${TOUCH} ${STAGEDIR}/var/games/sweeptimes.sample
 	${INSTALL_DATA} ${WRKSRC}/sweeprc ${STAGEDIR}${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/freesweep.6 ${STAGEDIR}${PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/freesweep.6 ${STAGEDIR}${PREFIX}/share/man/man6
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

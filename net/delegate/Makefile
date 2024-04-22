@@ -1,13 +1,18 @@
 PORTNAME=	delegate
 PORTVERSION=	9.9.13
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net www
-MASTER_SITES=	ftp://ftp.delegate.org/pub/DeleGate/
+MASTER_SITES=	http://www.delegate.org/anonftp/DeleGate/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	General purpose TCP/IP proxy system
 WWW=		http://www.delegate.org/delegate/
+
+LICENSE=	AIST
+LICENSE_NAME=	aist
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 BROKEN_mips=		fails to build: gmake[1]: [Makefile:116: mkmake.exe] Error 1
 BROKEN_mips64=		fails to build: gmake[1]: [Makefile:116: mkmake.exe] Error 1
@@ -18,18 +23,17 @@ SUB_FILES=	pkg-message
 ADMIN?=		admin@example.com
 
 CFLAGS+=	-x c++ -std=gnu++98
-
-FETCH_ARGS=	-Fr --no-passive
+MAKE_JOBS_UNSAFE=yes
 
 PLIST_FILES=	sbin/delegated etc/rc.d/delegated.sh-dist
-PORTDOCS=	CHANGES COPYRIGHT DG9note.html HowToDG.html IPv6NOTE.txt \
+PORTDOCS=	CHANGES COPYRIGHT HowToDG.html IPv6NOTE.txt \
 		Manual.htm jpconv.htm tutor-en.htm tutor-jp.htm
 
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
-	@${LN} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/DG9note.html \
-		${WRKSRC}/IPv6NOTE.txt ${WRKSRC}/doc
+	@${LN} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT \
+	${WRKSRC}/IPv6NOTE.txt ${WRKSRC}/doc
 
 post-patch:
 # Prevent "filesystem was touched prior to 'make install' phase" warning;

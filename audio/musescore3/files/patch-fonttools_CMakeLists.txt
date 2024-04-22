@@ -1,0 +1,11 @@
+--- fonttools/CMakeLists.txt.orig	2021-01-27 17:12:14 UTC
++++ fonttools/CMakeLists.txt
+@@ -20,7 +20,7 @@ add_executable(
+ target_link_libraries(genft ${QT_LIBRARIES} -lfreetype)
+ 
+ if (NOT MSVC)
+-   set_target_properties(genft PROPERTIES COMPILE_FLAGS "-I/usr/include/freetype2 -g -Wall -Wextra -Winvalid-pch")
++   set_target_properties(genft PROPERTIES COMPILE_FLAGS "-I/usr/include/freetype2 -Wall -Wextra -Winvalid-pch")
+ else (NOT MSVC)
+    set_target_properties (
+       genft

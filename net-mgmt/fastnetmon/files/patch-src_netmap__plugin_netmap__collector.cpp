@@ -1,5 +1,5 @@
---- src/netmap_plugin/netmap_collector.cpp.orig	2023-03-01 14:23:34 UTC
-+++ src/netmap_plugin/netmap_collector.cpp
+--- netmap_plugin/netmap_collector.cpp.orig	2023-03-01 14:23:34 UTC
++++ netmap_plugin/netmap_collector.cpp
 @@ -19,6 +19,7 @@
  
  // Disable debug messages from Netmap

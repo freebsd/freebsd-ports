@@ -8,4 +8,4 @@ lib/sendip/rip.so
 lib/sendip/ripng.so
 lib/sendip/tcp.so
 lib/sendip/udp.so
-man/man1/sendip.1.gz
+share/man/man1/sendip.1.gz

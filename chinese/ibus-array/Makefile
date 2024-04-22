@@ -11,7 +11,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	ibus-daemon:textproc/ibus zh-opencc>=1.0:chinese/opencc
 RUN_DEPENDS=	ibus-daemon:textproc/ibus zh-opencc>=1.0:chinese/opencc
 
-USES=		autoreconf gmake gnome libtool pkgconfig python:3.0+ sqlite
+USES=		autoreconf gmake gnome libtool pkgconfig python sqlite
 USE_GNOME+=	glib20
 USE_GITHUB=	yes
 GH_ACCOUNT=	lexical

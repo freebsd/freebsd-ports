@@ -1,4 +1,4 @@
-man/man3/thmap.3.gz
+share/man/man3/thmap.3.gz
 include/thmap.h
 lib/libthmap.a
 lib/libthmap.so

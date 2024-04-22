@@ -1,6 +1,6 @@
 PORTNAME=	courier
 PORTVERSION=	1.1.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -69,6 +69,7 @@ SHEBANG_FILES=	courier/filters/perlfilter/perlfilter-ratelimit.pl \
 		courier/filters/perlfilter/perlfilter-wrapper.pl
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-root-check \
 		--with-db=gdbm \
 		--enable-syslog=1 --enable-use-flock \

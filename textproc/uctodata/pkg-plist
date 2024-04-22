@@ -1,6 +1,7 @@
 libdata/pkgconfig/uctodata.pc
 %%DATADIR%%/deu.abr
 %%DATADIR%%/e-mail.rule
+%%DATADIR%%/eng.abr
 %%DATADIR%%/exotic-eos.eos
 %%DATADIR%%/exotic-quotes.quote
 %%DATADIR%%/fra.abr

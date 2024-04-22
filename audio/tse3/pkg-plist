@@ -107,8 +107,8 @@ include/tse3/util/Track.h
 lib/libtse3.so
 lib/libtse3.so.0
 lib/libtse3.so.0.0.0
-man/man1/tse3play.1.gz
-man/man3/tse3.3.gz
+share/man/man1/tse3play.1.gz
+share/man/man3/tse3.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/About.html
 %%PORTDOCS%%%%DOCSDIR%%/Article.html
 %%PORTDOCS%%%%DOCSDIR%%/Bugs.html

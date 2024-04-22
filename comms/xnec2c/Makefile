@@ -1,7 +1,7 @@
 PORTNAME=	xnec2c
 PORTVERSION=	4.4.12
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	https://www.xnec2c.org/releases/ \
 		LOCAL/db
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		autoreconf desktop-file-utils gettext gmake gnome pkgconfig shared-mime-info
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV+=	LIBS=-lexecinfo
 CONFIGURE_ENV+=	LDFLAGS="-L/${LOCALBASE}/lib ${LDFLAGS}"
 

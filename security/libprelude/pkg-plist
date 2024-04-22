@@ -76,8 +76,8 @@ lib/libpreludecpp.so.12.0.1
 %%PERL%%%%SITE_ARCH%%/Prelude.pm
 %%PERL%%%%SITE_ARCH%%/auto/Prelude/Prelude.so
 libdata/pkgconfig/libprelude.pc
-man/man1/libprelude-config.1.gz
-man/man1/prelude-admin.1.gz
+share/man/man1/libprelude-config.1.gz
+share/man/man1/prelude-admin.1.gz
 share/aclocal/libprelude.m4
 %%PORTDOCS%%share/gtk-doc/html/libprelude/api-index-full.html
 %%PORTDOCS%%share/gtk-doc/html/libprelude/ch01.html

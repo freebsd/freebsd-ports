@@ -1,7 +1,7 @@
 PORTNAME=	vector
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.0
-PORTREVISION=	30
+PORTREVISION=	32
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,6 +12,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_FreeBSD_13=	error: could not compile `num-bigint` (lib) due to 4 previous errors
+DEPRECATED=	Unmaintained in tree and broken for months
+EXPIRATION_DATE=2024-04-30
 
 BUILD_DEPENDS=	protoc:devel/protobuf
 LIB_DEPENDS=	libonig.so:devel/oniguruma \

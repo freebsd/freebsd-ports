@@ -1,0 +1,5 @@
+Pytest plugin to drop duplicated tests during collection. Pytest by default
+will collect all tests from directories or files given configured by the
+Project, or passed on the command line. The plugin aims to reduce test work by
+executing tests/unit first, followed by the remaining tests under tests,
+however, without duplicates.

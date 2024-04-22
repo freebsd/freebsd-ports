@@ -1,6 +1,6 @@
 PORTNAME=		MACS3
 DISTVERSIONPREFIX=	v
-DISTVERSION=		3.0.0
+DISTVERSION=		3.0.1
 CATEGORIES=		biology python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
@@ -10,6 +10,9 @@ WWW=		https://github.com/taoliu/MACS
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON_i386=Requires _Float16
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 		${PYNUMPY} \
@@ -42,7 +45,7 @@ post-stage:
 
 # FIXME: Some tests fail due to a py-threadpoolctl issue
 # https://github.com/joblib/threadpoolctl/pull/148
-do-test: deinstall install
+do-test: deinstall reinstall
 	@${RM} -rf ${WRKSRC}/temp
 	@cd ${WRKSRC}/test && ./cmdlinetest tag
 

@@ -1,6 +1,6 @@
-TIMESTAMP = 1689925226
-SHA256 (dmlc-dgl-1.1.1_GH0.tar.gz) = 076026a7818f2396056252269d7960c561840bb0fe89494e11f8d6c524891c49
-SIZE (dmlc-dgl-1.1.1_GH0.tar.gz) = 5542829
+TIMESTAMP = 1711418448
+SHA256 (dmlc-dgl-1.1.2_GH0.tar.gz) = 5b7ef998d63946e8af29507318507915bc86a77d52d241414ef78eaca74a641a
+SIZE (dmlc-dgl-1.1.2_GH0.tar.gz) = 5613467
 SHA256 (apache-tvm-b2e418c_GH0.tar.gz) = f351aee38d7ad4bb1025407e26d5ed21704d1daf6cb2c2b7972ec1bef11189b7
 SIZE (apache-tvm-b2e418c_GH0.tar.gz) = 4105160
 SHA256 (dmlc-dlpack-e2bdd3b_GH0.tar.gz) = e88e702277cf4cfa4814afdbb27b07b75041d80b3df60da387cdd7e0ebeb6817

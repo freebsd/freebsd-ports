@@ -1,5 +1,6 @@
 PORTNAME=	ipaudit
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	SF/ipaudit/ipaudit
 
@@ -14,6 +15,7 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/ipaudit.conf.sample ${STAGEDIR}${PREFIX}/etc

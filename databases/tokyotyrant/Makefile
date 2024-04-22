@@ -1,6 +1,6 @@
 PORTNAME=	tokyotyrant
 PORTVERSION=	1.1.41
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	https://dbmx.net/tokyotyrant/
 
@@ -14,6 +14,7 @@ LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 USES=		gmake localbase pathfix
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	ttserver
 

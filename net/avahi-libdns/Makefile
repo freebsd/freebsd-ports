@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	2	# don't delete, reset to 0
 CATEGORIES=	net
 PKGNAMESUFFIX=	-libdns
 

@@ -2,10 +2,10 @@ bin/xpilot-ng-replay
 %%SDL%%bin/xpilot-ng-sdl
 bin/xpilot-ng-x11
 bin/xpilot-ng-xp-mapedit
-man/man6/xpilot-ng-replay.6.gz
-%%SDL%%man/man6/xpilot-ng-sdl.6.gz
-man/man6/xpilot-ng-x11.6.gz
-man/man6/xpilot-ng-xp-mapedit.6.gz
+share/man/man6/xpilot-ng-replay.6.gz
+%%SDL%%share/man/man6/xpilot-ng-sdl.6.gz
+share/man/man6/xpilot-ng-x11.6.gz
+share/man/man6/xpilot-ng-xp-mapedit.6.gz
 share/xpilot-ng/fonts/ConsoleFont.bmp
 share/xpilot-ng/fonts/FreeSansBoldOblique.ttf
 share/xpilot-ng/fonts/VeraMoBd.ttf

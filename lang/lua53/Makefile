@@ -1,5 +1,6 @@
 PORTNAME=	lua
 DISTVERSION=	5.3.6
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://www.lua.org/ftp/
 PKGNAMESUFFIX=	${LUA_VER_STR}
@@ -12,14 +13,6 @@ LICENSE=	MIT
 
 USES=		cpe lua:core,53
 USE_LDCONFIG=	yes
-
-# Overriding __MAKE_CONF makes sure that we don't re-parse
-# /etc/make.conf during do-build, which would jeopardize the build
-# if, for instance, the user set CFLAGS=mumble
-# NOTE: /etc/make.conf is read BEFORE Makefile, so we already
-# have its settings when we get here.
-# See http://wiki.freebsd.org/MatthiasAndree/LuaLessonsLearnt
-MAKE_ARGS=	__MAKE_CONF=${NONEXISTENT}
 
 # using the "bsd" target rather than "freebsd" saves patching out the
 # assumption of using base libedit in order to make it configurable. "bsd"
@@ -121,6 +114,8 @@ READLINE_LIBS=		-lreadline
 post-patch:
 	@${REINPLACE_CMD} -e "/LUA_ROOT/s,/usr/local,${LUA_PREFIX}," \
 		${WRKSRC}/src/luaconf.h
+	@${REINPLACE_CMD} -e "s|man/man|share/man/man|g" \
+		${WRKSRC}/Makefile
 
 post-patch-LIBEDIT-on:
 	@${REINPLACE_CMD} -e "s,readline/,editline/,g ; \
@@ -133,10 +128,10 @@ post-patch-LIBEDIT_DL-on:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${LUA_LIB_SHARED}
-	${MV} ${STAGEDIR}${PREFIX}/man/man1/lua.1 \
-		${STAGEDIR}${PREFIX}/man/man1/${LUA_CMD}.1
-	${MV} ${STAGEDIR}${PREFIX}/man/man1/luac.1 \
-		${STAGEDIR}${PREFIX}/man/man1/${LUAC_CMD}.1
+	${MV} ${STAGEDIR}${PREFIX}/share/man/man1/lua.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1/${LUA_CMD}.1
+	${MV} ${STAGEDIR}${PREFIX}/share/man/man1/luac.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1/${LUAC_CMD}.1
 	${INSTALL_DATA} ${WRKDIR}/${LUA_PC_FILE} \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig
 

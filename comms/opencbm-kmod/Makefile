@@ -1,6 +1,6 @@
 PORTNAME=	opencbm-kmod
 PORTVERSION=	${OCBM_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms archivers
 
 MAINTAINER=	zirias@FreeBSD.org
@@ -14,5 +14,7 @@ USES=	kmod uidfix
 WRKSRC_SUBDIR=	opencbm/sys/freebsd
 
 .include "../opencbm/Makefile.inc"
+
+MAKE_ARGS+=	MANDIR=${PREFIX}/share/man/man
 
 .include <bsd.port.mk>

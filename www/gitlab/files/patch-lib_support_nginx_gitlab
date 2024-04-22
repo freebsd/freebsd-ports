@@ -1,0 +1,20 @@
+--- lib/support/nginx/gitlab.orig	2024-04-09 16:46:13 UTC
++++ lib/support/nginx/gitlab
+@@ -19,7 +19,7 @@
+ upstream gitlab-workhorse {
+   # GitLab socket file,
+   # for Omnibus this would be: unix:/var/opt/gitlab/gitlab-workhorse/sockets/socket
+-  server unix:/home/git/gitlab/tmp/sockets/gitlab-workhorse.socket fail_timeout=0;
++  server unix:%%WWWDIR%%/tmp/sockets/gitlab-workhorse.socket fail_timeout=0;
+ }
+ 
+ map $http_upgrade $connection_upgrade_gitlab {
+@@ -114,7 +114,7 @@ server {
+   location ~ ^/(404|422|500|502|503)\.html$ {
+     # Location to the GitLab's public directory,
+     # for Omnibus this would be: /opt/gitlab/embedded/service/gitlab-rails/public.
+-    root /home/git/gitlab/public;
++    root %%WWWDIR%%/public;
+     internal;
+   }
+ 

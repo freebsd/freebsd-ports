@@ -1,9 +1,6 @@
 bin/eboard
 bin/eboard-addtheme
 bin/eboard-config
-man/man1/eboard-config.1.gz
-man/man1/eboard-addtheme.1.gz
-man/man6/eboard.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/Crafty.txt
 %%PORTDOCS%%%%DOCSDIR%%/FICS-Timeseal.txt
 %%PORTDOCS%%%%DOCSDIR%%/GNUChess4.txt
@@ -65,9 +62,9 @@ man/man6/eboard.6.gz
 %%DATADIR%%/eboard.de.dict
 %%DATADIR%%/eboard.es.dict
 %%DATADIR%%/eboard.fr.dict
+%%DATADIR%%/eboard.hu.dict
 %%DATADIR%%/eboard.it.dict
 %%DATADIR%%/eboard.ja.dict
-%%DATADIR%%/eboard.hu.dict
 %%DATADIR%%/eboard.pl.dict
 %%DATADIR%%/eboard.pt_BR.dict
 %%DATADIR%%/eboard.zh_CN.dict
@@ -75,7 +72,11 @@ man/man6/eboard.6.gz
 %%DATADIR%%/extras1.prevconf
 %%DATADIR%%/extras2.prevconf
 %%DATADIR%%/ghouls.png
+%%DATADIR%%/gnupiece.xpm
 %%DATADIR%%/plastic.png
 %%DATADIR%%/themeconf.extras1
 %%DATADIR%%/themeconf.extras2
 %%DATADIR%%/timeseal.FreeBSD
+share/man/man1/eboard-addtheme.1.gz
+share/man/man1/eboard-config.1.gz
+share/man/man6/eboard.6.gz

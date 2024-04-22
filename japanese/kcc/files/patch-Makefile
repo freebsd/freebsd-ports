@@ -10,7 +10,7 @@
 -           CFLAGS = -O
 +          PREFIX?= /usr/local
 +          BINPATH = ${PREFIX}/bin
-+          MANPATH = ${PREFIX}/man
++          MANPATH = ${PREFIX}/share/man
 +          JMANDIR = ja
 +           CFLAGS?= -O
  

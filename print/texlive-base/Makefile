@@ -1,6 +1,6 @@
 PORTNAME=	texlive
 PORTVERSION=	${TEXLIVE_VERSION}
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}
 PKGNAMESUFFIX=	-base
@@ -84,6 +84,7 @@ SHEBANG_FILES=	texk/texlive/linked_scripts/accfonts/mkt1font \
 
 # during build phase gnu configure is run a lot
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-native-texlive-build \
 		--disable-web-progs \
 		--disable-psutils \

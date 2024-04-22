@@ -29,8 +29,8 @@ lib/libglbarcode-3.0.so.0
 lib/libglbarcode-3.0.so.0.0.0
 libdata/pkgconfig/libglabels-3.0.pc
 libdata/pkgconfig/libglbarcode-3.0.pc
-man/man1/glabels-3-batch.1.gz
-man/man1/glabels-3.1.gz
+share/man/man1/glabels-3-batch.1.gz
+share/man/man1/glabels-3.1.gz
 share/appdata/glabels-3.appdata.xml
 share/applications/glabels-3.0.desktop
 %%DATADIR%%-3.0/icons/hicolor/16x16/actions/glabels-align-bottom.png

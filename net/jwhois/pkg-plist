@@ -1,7 +1,7 @@
 bin/jwhois
 @sample etc/jwhois.conf.sample
-man/man1/jwhois.1.gz
-man/sv/man1/jwhois.1.gz
+share/man/man1/jwhois.1.gz
+share/man/sv/man1/jwhois.1.gz
 %%NLS%%share/locale/es/LC_MESSAGES/jwhois.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/jwhois.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/jwhois.mo

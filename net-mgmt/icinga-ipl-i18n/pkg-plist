@@ -4,6 +4,8 @@
 %%WWWDIR%%/README.md
 %%WWWDIR%%/composer.json
 %%WWWDIR%%/phpcs.xml
+%%WWWDIR%%/phpstan-baseline.neon
+%%WWWDIR%%/phpstan.neon
 %%WWWDIR%%/phpunit.xml
 %%WWWDIR%%/src/GettextTranslator.php
 %%WWWDIR%%/src/Locale.php
@@ -15,6 +17,7 @@
 %%WWWDIR%%/tests/FunctionsTest.php
 %%WWWDIR%%/tests/GettextTranslatorTest.php
 %%WWWDIR%%/tests/LocaleTest.php
+%%WWWDIR%%/tests/TranslationTest.php
 %%WWWDIR%%/tests/locale/de_DE/LC_MESSAGES/default.mo
 %%WWWDIR%%/tests/locale/de_DE/LC_MESSAGES/default.po
 %%WWWDIR%%/tests/locale/de_DE/LC_MESSAGES/special.mo

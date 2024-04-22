@@ -1,6 +1,6 @@
 PORTNAME=	mailman
 DISTVERSION=	2.1.39
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	GNU \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
@@ -139,6 +139,7 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-with-htdig
 #X upload the latter with mode 0644 or similar to freefall's public_distfiles/ directory
 _HTDIGREV=	1822
 PATCHFILES+=	msapiro-htdig-${_HTDIGREV}.patch.xz
+EXTRA_PATCHES+=	${FILESDIR}/mailman-htdig-xss.patch
 RUN_DEPENDS+=	htdig:textproc/htdig
 PLIST_SUB+=	SUB_HTDIG=""
 .else

@@ -1,6 +1,5 @@
 PORTNAME=	code_saturne
-PORTVERSION=	8.1.0
-PORTREVISION=	2
+PORTVERSION=	8.1.1
 CATEGORIES=	science parallel
 MASTER_SITES=	https://www.code-saturne.org/releases/
 
@@ -47,6 +46,7 @@ CONFIGURE_ARGS=	--without-salome --without-salome-yacs --without-salome-kernel	\
 		--with-scotch-include="${LOCALBASE}/include"
 CONFIGURE_ENV=	ac_cv_path_SED=${LOCALBASE}/bin/gsed ldflags_rpath="-R"	\
 		MUMPS_LIBS="-lmpiseq -llapack"
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 BINARY_ALIAS=	python=${PYTHON_CMD} \

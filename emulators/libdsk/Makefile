@@ -1,5 +1,6 @@
 PORTNAME=	libdsk
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	emulators devel
 MASTER_SITES=	http://www.seasip.info/Unix/LibDsk/
 
@@ -12,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 USES=		libtool
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

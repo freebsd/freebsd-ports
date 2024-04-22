@@ -1,6 +1,6 @@
 PORTNAME=	mesa-gallium-vdpau
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	Mesa Gallium VDPAU drivers
@@ -12,8 +12,8 @@ LICENSE_FILE=	${WRKSRC}/docs/license.rst
 ONLY_FOR_ARCHS=		aarch64 amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	used only by AMD/Radeon hardware
 
-LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau \
-		libzstd.so:archivers/zstd
+BUILD_DEPENDS=	libvdpau>=0:multimedia/libvdpau
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		llvm:lib,noexport
 

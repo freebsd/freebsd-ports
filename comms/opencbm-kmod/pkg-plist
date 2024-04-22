@@ -1,2 +1,2 @@
 /%%KMODDIR%%/opencbm.ko
-man/man4/opencbm.4.gz
+share/man/man4/opencbm.4.gz

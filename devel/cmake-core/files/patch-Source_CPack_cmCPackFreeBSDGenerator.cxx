@@ -1,8 +1,6 @@
-diff --git Source/CPack/cmCPackFreeBSDGenerator.cxx Source/CPack/cmCPackFreeBSDGenerator.cxx
-index 162dfc7346..206f2d06a0 100644
---- Source/CPack/cmCPackFreeBSDGenerator.cxx
+--- Source/CPack/cmCPackFreeBSDGenerator.cxx.orig	2024-01-29 20:01:32 UTC
 +++ Source/CPack/cmCPackFreeBSDGenerator.cxx
-@@ -245,8 +245,15 @@ public:
+@@ -245,8 +245,15 @@ class ManifestKeyDepsValue : public ManifestKeyListVal
    void write_value(cmGeneratedFileStream& s) const override
    {
      s << "{\n";

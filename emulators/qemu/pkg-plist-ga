@@ -1,11 +1,11 @@
 bin/qemu-ga
 include/qemu-plugin.h
-%%PORTDOCS%%man/man1/qemu.1.gz
-%%PORTDOCS%%man/man7/qemu-block-drivers.7.gz
-%%PORTDOCS%%man/man7/qemu-cpu-models.7.gz
-%%PORTDOCS%%man/man7/qemu-ga-ref.7.gz
-%%PORTDOCS%%man/man7/qemu-qmp-ref.7.gz
-%%PORTDOCS%%man/man8/qemu-ga.8.gz
+%%PORTDOCS%%share/man/man1/qemu.1.gz
+%%PORTDOCS%%share/man/man7/qemu-block-drivers.7.gz
+%%PORTDOCS%%share/man/man7/qemu-cpu-models.7.gz
+%%PORTDOCS%%share/man/man7/qemu-ga-ref.7.gz
+%%PORTDOCS%%share/man/man7/qemu-qmp-ref.7.gz
+%%PORTDOCS%%share/man/man8/qemu-ga.8.gz
 %%DATADIR%%/keymaps/ar
 %%DATADIR%%/keymaps/bepo
 %%DATADIR%%/keymaps/cz

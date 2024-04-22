@@ -46,8 +46,19 @@
  
  # asan is somewhat similar to valgrind, but has low enough overhead so it
  # can be used during normal operation.
-@@ -143,43 +143,13 @@ AS_IF([test -z "$PKG_CONFIG"],
- )
+@@ -134,52 +134,22 @@ PKG_PROG_PKG_CONFIG(0.28) # latest version in buildroo
+ m4_ifndef([PKG_PROG_PKG_CONFIG],
+    [m4_fatal([please install pkg-config >= 0.28 before running autoconf/autogen])])
+ PKG_PROG_PKG_CONFIG(0.28) # latest version in buildroot
+-AS_IF([test -z "$PKG_CONFIG"],
++AS_IF([test -z "$PKG_CONFIG"],[
+    AC_MSG_ERROR([
+    *** pkg-config with version >= 0.28 could not be found.
+    ***
+    *** Make sure it is in your path, or set the PKG_CONFIG environment variable
+    *** to the full path to pkg-config.])
+-)
++])
  
  # glib2?
 -PKG_CHECK_MODULES(GLIB,glib-2.0 >= 2.58 gobject-2.0 gio-2.0)
@@ -94,7 +105,7 @@
  ###############################################################################
  # we set the set the version of the MuStore (Xapian database) layout
  # here; it will become part of the db name, so we can automatically
-@@ -247,24 +217,10 @@ AC_SUBST(MU_DOC_DIR, "${prefix}/share/doc/mu")
+@@ -247,24 +217,10 @@ Makefile
  
  AC_CONFIG_FILES([
  Makefile

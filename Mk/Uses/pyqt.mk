@@ -85,7 +85,7 @@ MASTER_SITES_QSCI2=	RIVERBANK/QScintilla/${PORTVERSION} \
 #
 # Where noted, the ports are epoched and the py-${comp}-PATH variables,
 # below, should have a suitable epoch appended to the version.
-SIP_VERSION=		6.8.1	# ,1
+SIP_VERSION=		6.8.3	# ,1
 SIP4_VERSION=		4.19.25
 QSCI2_VERSION=		2.14.1
 PYQT5_VERSION=		5.15.10
@@ -228,13 +228,13 @@ post-patch:
 
 .    if !target(do-build)
 do-build:
-	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${SIP} ${SIP_ARGS}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} -C ./build)
+	(cd ${WRKSRC}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${SIP} ${SIP_ARGS}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} -C ./build)
 
 .    endif  # !target(do-build)
 
 .    if !target(do-install)
 do-install:
-	(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE} -C ./build install INSTALL_ROOT=${STAGEDIR} )
+	(cd ${WRKSRC} ; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE} -C ./build install INSTALL_ROOT=${STAGEDIR} )
 .    endif  # !target(do-install)
 
 .  endif  # defined(PYQT_DIST)

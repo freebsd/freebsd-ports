@@ -787,6 +787,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/i_cluster_landsat_clustering.png
 %%GRASS_INST_DIR%%/docs/html/i_colors_enhance_corrected.jpg
 %%GRASS_INST_DIR%%/docs/html/i_colors_enhance_uncorrected.jpg
+%%GRASS_INST_DIR%%/docs/html/i_evapo_time.png
 %%GRASS_INST_DIR%%/docs/html/i_maxlik_classes.png
 %%GRASS_INST_DIR%%/docs/html/i_maxlik_rejection.png
 %%GRASS_INST_DIR%%/docs/html/i_maxlik_rgb.png

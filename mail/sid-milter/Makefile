@@ -1,6 +1,6 @@
 PORTNAME=	sid-milter
 PORTVERSION=	1.0.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/SenderID%20Milter/${PORTVERSION}
 
@@ -13,7 +13,7 @@ WCONF=		${WRKSRC}/devtools/Site
 DOCSFILES=	FEATURES INSTALL KNOWNBUGS LICENSE README README-SenderID \
 		RELEASE_NOTES rfc4406.txt rfc4407.txt rfc4408.txt
 INSTALL_WRKSRC=	${WRKSRC}/sid-filter
-PLIST_FILES=	libexec/sid-filter man/man8/sid-filter.8.gz
+PLIST_FILES=	libexec/sid-filter share/man/man8/sid-filter.8.gz
 USE_RC_SUBR=	miltersid
 PORTDOCS=	${DOCSFILES}
 
@@ -30,7 +30,7 @@ OPTIONS_DEFINE=	LIBAR NH_MFROM DOCS
 LIBAR_DESC=	build and install libar
 NH_MFROM_DESC=	use NH_MFROM
 
-LIBAR_PLIST_FILES=	include/libar.h lib/libar.a man/man3/ar.3.gz
+LIBAR_PLIST_FILES=	include/libar.h lib/libar.a share/man/man3/ar.3.gz
 
 .include <bsd.port.options.mk>
 
@@ -54,12 +54,12 @@ pre-configure-NH_MFROM-on:
 		>> ${WCONF}/site.config.m4
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/*/sid-filter.8 ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/*/sid-filter.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 
 post-install-LIBAR-on:
 	${INSTALL_DATA} ${WRKSRC}/*/libar/libar.a ${STAGEDIR}${PREFIX}/lib/libar.a
 	${INSTALL_DATA} ${WRKSRC}/libar/ar.h ${STAGEDIR}${PREFIX}/include/libar.h
-	${INSTALL_MAN} ${WRKSRC}/*/ar.3 ${STAGEDIR}${PREFIX}/man/man3/
+	${INSTALL_MAN} ${WRKSRC}/*/ar.3 ${STAGEDIR}${PREFIX}/share/man/man3/
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

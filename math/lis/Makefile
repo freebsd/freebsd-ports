@@ -1,5 +1,6 @@
 PORTNAME=	lis
 DISTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://www.ssisc.org/lis/dl/
 
@@ -12,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake libtool zip
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shared --disable-static
 USE_LDCONFIG=	yes
 

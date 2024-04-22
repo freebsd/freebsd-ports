@@ -6,7 +6,7 @@ MASTER_SITES=	https://smuxi.im/jaws/data/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-layered IRC library
-WWW=		http://smartirc4net.meebey.net/jaws/
+WWW=		https://www.meebey.net/projects/smartirc4net/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,16 +1,33 @@
-PORTNAME=	bareos
 PORTREVISION=	0
-PKGNAMESUFFIX=	-traymonitor
 
 COMMENT=	Backup archiving recovery open sourced (traymonitor)
 
-LIB_DEPENDS+=	libqwt5-qt5.so:x11-toolkits/qwt5-qt5 \
-		libbareos.so:sysutils/bareos-client
+LIB_DEPENDS+=	libbareos.so:sysutils/bareos-client
 
-CONFLICTS=	bareos18-traymonitor bareos19-traymonitor bareos20-traymonitor
+CONFLICTS=	bareos20-traymonitor bareos21-traymonitor bareos22-traymonitor
 
-USES=		desktop-file-utils gettext-runtime pkgconfig qt:5
+USES=		desktop-file-utils gettext-runtime pkgconfig
+
+FLAVORS=	qt5 qt6
+FLAVOR?=	${FLAVORS:[1]}
+
+qt5_CONFLICTS=		bareos-traymonitor-qt6
+qt6_CONFLICTS=		bareos-traymonitor-qt5
+
+.if ${FLAVOR} == qt6
+PKGNAMESUFFIX=	-traymonitor-qt6
+
+USES+=		qt:6
+USE_QT=		base:run declarative:build tools:build
+CMAKE_ARGS+=	-Dbat-qt6=yes
+.else
+PKGNAMESUFFIX=	-traymonitor-qt5
+
+LIB_DEPENDS+=	libqwt5-qt5.so:x11-toolkits/qwt5-qt5
+USES+=		qt:5
 USE_QT=		buildtools:build qmake:build uitools:build gui core widgets
+.endif
+
 WITH_BAT=	yes
 
 PLIST=		${.CURDIR}/pkg-plist

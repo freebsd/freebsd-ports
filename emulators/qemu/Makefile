@@ -1,6 +1,6 @@
 PORTNAME=	qemu
-PORTVERSION=	8.2.0
-PORTREVISION=	1
+PORTVERSION=	8.2.2
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=	--cc=${CC} \
 			--extra-ldflags=-L${LOCALBASE}/lib \
 			--extra-ldflags=-L/usr/lib \
 			--localstatedir=/var \
-			--mandir=${PREFIX}/man \
+			--mandir=${PREFIX}/share/man \
 			--prefix=${PREFIX} \
 			--python=${PYTHON_CMD}
 .if ${FLAVOR:U} == guestagent
@@ -156,7 +156,7 @@ STATIC_LINK_DESC=		Statically link the executables
 USBREDIR_DESC=			usb device network redirection (experimental!)
 VDE_DESC=			vde dependency (for vde networking)
 X86_TARGETS_DESC=		Build only x86 system targets
-CAPSTONE_LIB_DEPENDS=		libcapstone.so:devel/capstone4
+CAPSTONE_LIB_DEPENDS=		libcapstone.so:devel/capstone
 CAPSTONE_CONFIGURE_ON=		--enable-capstone \
 				--extra-cflags=-I${LOCALBASE}/include/capstone
 CAPSTONE_CONFIGURE_OFF=		--disable-capstone
@@ -241,10 +241,10 @@ post-patch-CDROM_DMA-off:
 	@${REINPLACE_CMD} -e '/USE_DMA_CDROM/d' ${WRKSRC}/include/hw/ide/internal.h
 
 do-build:
-	cd ${WRKSRC} && ${GMAKE} -j${MAKE_JOBS_NUMBER}
+	cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${GMAKE} -j${MAKE_JOBS_NUMBER}
 
 do-install:
-	cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} ${GMAKE} install
+	cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} DESTDIR=${STAGEDIR} ${GMAKE} install
 
 .if !target(post-install)
 post-install:

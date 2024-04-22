@@ -9,8 +9,10 @@ WWW=		https://github.com/yaroslav/russian
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-i18n>=0.5.0:devel/rubygem-i18n
+RUN_DEPENDS=	rubygem-i18n>=0.5.0,2:devel/rubygem-i18n
 
 USES=		gem
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

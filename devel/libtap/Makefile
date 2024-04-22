@@ -1,5 +1,6 @@
 PORTNAME=	libtap
 PORTVERSION=	1.12.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://web-cpan.shlomifish.org/downloads/
 

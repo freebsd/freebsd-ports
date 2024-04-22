@@ -1,5 +1,6 @@
 PORTNAME=	cvsup-static
 PORTVERSION=	16.1h
+PORTREVISION=	1
 CATEGORIES=	net devel
 MASTER_SITES=	LOCAL/delphij
 PKGNAMEPREFIX=	binary-
@@ -21,6 +22,6 @@ do-install:
 	(cd ${WRKDIR} && ${COPYTREE_BIN} bin ${STAGEDIR}${PREFIX})
 	(cd ${WRKDIR} && ${COPYTREE_BIN} sbin ${STAGEDIR}${PREFIX})
 	(cd ${WRKDIR} && ${COPYTREE_SHARE} share/cvsup ${STAGEDIR}${PREFIX})
-	(cd ${WRKDIR} && ${COPYTREE_SHARE} man ${STAGEDIR}${PREFIX})
+	(cd ${WRKDIR} && ${COPYTREE_SHARE} man ${STAGEDIR}${PREFIX}/share)
 
 .include <bsd.port.mk>

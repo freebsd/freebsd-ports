@@ -1,5 +1,6 @@
 PORTNAME=	latd
 PORTVERSION=	1.31
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/linux-decnet/${PORTNAME}/${PORTVERSION}
 
@@ -11,13 +12,14 @@ LICENSE=	GPLv2
 
 USES=		alias compiler
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 PLIST_FILES=	bin/llogin etc/latd.conf.sample \
-		man/man1/llogin.1.gz man/man5/latd.conf.5.gz \
-		man/man8/latd.8.gz man/man8/latcp.8.gz man/man8/moprc.8.gz \
+		share/man/man1/llogin.1.gz share/man/man5/latd.conf.5.gz \
+		share/man/man8/latd.8.gz share/man/man8/latcp.8.gz share/man/man8/moprc.8.gz \
 		sbin/latcp sbin/latd sbin/moprc
 
 post-extract:

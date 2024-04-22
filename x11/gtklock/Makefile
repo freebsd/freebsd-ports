@@ -1,7 +1,6 @@
 PORTNAME=	gtklock
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
-PORTREVISION=	1
+DISTVERSION=	3.0.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,22 +10,22 @@ WWW=		https://github.com/jovanlanik/gtklock
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	scdoc:textproc/scdoc
-LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
-		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
+LIB_DEPENDS=	libgtk-session-lock.so:x11-toolkits/gtk-session-lock
 RUN_DEPENDS=	unix-selfauth-helper>0:security/unix-selfauth-helper
 
-USES=		compiler:c11 gmake gnome pkgconfig
+USES=		compiler:c11 gnome meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	gtk30
 GH_ACCOUNT=	jovanlanik
-MAKEFILE=	makefile
-LDFLAGS+=	-Wl,--as-needed # gtk30 deps
+LDFLAGS_i386=	-Wl,-z,notext
 PLIST_FILES=	bin/${PORTNAME} \
-		etc/pam.d/${PORTNAME} \
-		share/man/man1/${PORTNAME}.1.gz
+		etc/pam.d/${PORTNAME}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFAULT=MANPAGES
+
+MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
+MANPAGES_MESON_ENABLED=	man-pages
+MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>

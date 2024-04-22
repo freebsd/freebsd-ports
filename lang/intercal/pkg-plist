@@ -11,8 +11,6 @@ lib/libick.a
 lib/libickec.a
 lib/libickmt.a
 lib/libyuk.a
-man/man1/ick.1.gz
-man/man1/convickt.1.gz
 %%DATADIR%%/COPYING
 %%DATADIR%%/atari.bin
 %%DATADIR%%/baudot.bin
@@ -31,3 +29,5 @@ man/man1/convickt.1.gz
 %%DATADIR%%/syslib6.6i
 %%DATADIR%%/syslib7.7i
 %%DATADIR%%/syslibc.c
+share/man/man1/ick.1.gz
+share/man/man1/convickt.1.gz

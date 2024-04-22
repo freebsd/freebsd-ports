@@ -1,2 +1,2 @@
 lib/xorg/modules/drivers/neomagic_drv.so
-man/man4/neomagic.4x.gz
+share/man/man4/neomagic.4x.gz

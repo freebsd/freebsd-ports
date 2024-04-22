@@ -1,4 +1,4 @@
-%%MANPAGES%%man/man1/wget.1.gz
+%%MANPAGES%%share/man/man1/wget.1.gz
 %%NLS%%share/locale/af/LC_MESSAGES/wget-gnulib.mo
 %%NLS%%share/locale/be/LC_MESSAGES/wget-gnulib.mo
 %%NLS%%share/locale/be/LC_MESSAGES/wget.mo

@@ -1,6 +1,6 @@
 PORTNAME=	abiword
 PORTVERSION=	3.0.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/abiword/${PORTVERSION}/source/
 DIST_SUBDIR=	AbiWord
@@ -21,31 +21,31 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSerif.ttf:x11-fonts/dejavu
 
 USES=		compiler:c++11-lang cpe desktop-file-utils gmake gnome iconv jpeg \
-		libtool pathfix pkgconfig
+		libtool localbase:ldflags pathfix pkgconfig
+CPE_VENDOR=	abisource
 USE_GNOME=	libxml2 gtk30 librsvg2 libxslt
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--without-gnomevfs --enable-plugins="${ABIWORD_PLUGINS}" \
 		--enable-shared="yes" --enable-static="no"
-USE_LDCONFIG=	yes
+
 INSTALL_TARGET=	install-strip
-CPE_VENDOR=	abisource
 
 PLIST_SUB+=	ABIVERSION=3.0
 
 OPTIONS_DEFINE=	CLIPART DEBUG MATHVIEW NLS PSION \
 		TEMPLATES WP
-OPTIONS_DEFAULT=CLIPART COLSERVICE COLSUGAR COLTCP SPELLCHECK TEMPLATES
+OPTIONS_DEFAULT=CLIPART COLSUGAR SPELLCHECK TEMPLATES
+OPTIONS_GROUP=	DICT COLLAB
+OPTIONS_GROUP_COLLAB=	COLFAKE COLSERVICE COLSIP COLSUGAR COLTCP COLTELEPATHY COLXMPP
+OPTIONS_GROUP_DICT=	GRAMMAR SPELLCHECK
 OPTIONS_SUB=	yes
 
-OPTIONS_GROUP=	DICT COLLAB
-OPTIONS_GROUP_DICT=	GRAMMAR SPELLCHECK
-OPTIONS_GROUP_COLLAB=	COLFAKE COLSERVICE COLSIP COLSUGAR COLTCP COLTELEPATHY COLXMPP
-
 CLIPART_DESC=		Include clipart
-COLLAB_DESC=		Collaboration backend
 COLFAKE_DESC=		Fake collaboration for debugging purposes only
+COLLAB_DESC=		Collaboration backend
 COLSERVICE_DESC=	Collaborate with AbiCollab.net webservice
 COLSIP_DESC=		Collaborate with the SIP/SIMPLE backend
 COLSUGAR_DESC=		Collaborate with the Sugar/OLPC environment
@@ -76,73 +76,65 @@ CLIPART_CONFIGURE_ENABLE=	clipart
 
 COLFAKE_CONFIGURE_ENABLE=	collab-backend-fake
 
-COLSERVICE_CONFIGURE_ENABLE=	collab-backend-service
+COLSERVICE_BROKEN=		Does not build with asio from system
 COLSERVICE_BUILD_DEPENDS=	${LOCALBASE}/include/asio.hpp:net/asio
 COLSERVICE_LIB_DEPENDS=		libsoup-2.4.so:devel/libsoup \
 				libgnutls.so:security/gnutls
 COLSERVICE_RUN_DEPENDS=		${LOCALBASE}/include/asio.hpp:net/asio
+COLSERVICE_CONFIGURE_ENABLE=	collab-backend-service
 
 COLSIP_CONFIGURE_ENABLE=	collab-backend-sip
 
-COLSUGAR_CONFIGURE_ENABLE=	collab-backend-sugar
 COLSUGAR_LIB_DEPENDS=		libdbus-glib-1.so:devel/dbus-glib
+COLSUGAR_CONFIGURE_ENABLE=	collab-backend-sugar
 
-COLTCP_CONFIGURE_ENABLE=	collab-backend-tcp
+COLTCP_BROKEN=			Does not build with asio from system
 COLTCP_BUILD_DEPENDS=		${LOCALBASE}/include/asio.hpp:net/asio
 COLTCP_RUN_DEPENDS=		${LOCALBASE}/include/asio.hpp:net/asio
+COLTCP_CONFIGURE_ENABLE=	collab-backend-tcp
 
-COLTELEPATHY_CONFIGURE_ENABLE=	collab-backend-telepathy
 COLTELEPATHY_LIB_DEPENDS=	libtelepathy-glib.so:net-im/telepathy-glib
+COLTELEPATHY_CONFIGURE_ENABLE=	collab-backend-telepathy
 
-COLXMPP_CONFIGURE_ENABLE=	collab-backend-xmpp
 COLXMPP_LIB_DEPENDS=		libloudmouth-1.so:net-im/loudmouth
+COLXMPP_CONFIGURE_ENABLE=	collab-backend-xmpp
 
 DEBUG_CONFIGURE_ENABLE=		debug
 
-GRAMMAR_LIB_DEPENDS=		liblink-grammar.so:textproc/link-grammar
 GRAMMAR_IMPLIES=		SPELLCHECK
+GRAMMAR_LIB_DEPENDS=		liblink-grammar.so:textproc/link-grammar
+GRAMMAR_VARS=			ABIWORD_PLUGINS+=grammar
 
-MATHVIEW_USES=			bison
 MATHVIEW_LIB_DEPENDS=		libmathview.so:x11-toolkits/gtkmathview
+MATHVIEW_USES=			bison
+MATHVIEW_VARS=			ABIWORD_PLUGINS+=mathview
 
 NLS_USES=			gettext
 NLS_CONFIGURE_ENABLE=		nls
 
 PSION_LIB_DEPENDS=		libpsiconv.so:converters/psiconv
+PSION_VARS=			ABIWORD_PLUGINS+=psion
 
 SPELLCHECK_LIB_DEPENDS=		libenchant.so:textproc/enchant
 SPELLCHECK_CONFIGURE_ENABLE=	spell
 
 TEMPLATES_CONFIGURE_ENABLE=	templates
 
-WP_USE=		gnome=libgsf
 WP_LIB_DEPENDS=	libwpg-0.3.so:graphics/libwpg03 \
 		libwpd-0.10.so:textproc/libwpd010 \
 		libwps-0.4.so:textproc/libwps
+WP_USE=		gnome=libgsf
+WP_VARS=	ABIWORD_PLUGINS+="wpg wordperfect"
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOL*}
-PLIST_SUB+=		COLLAB=""
 ABIWORD_PLUGINS+=	collab
+.if ${PORT_OPTIONS:MCOLFAKE} || ${PORT_OPTIONS:MCOLSERVICE} || ${PORT_OPTIONS:MCOLSIP} || ${PORT_OPTIONS:MCOLTCP} || ${PORT_OPTIONS:MCOLTELEPATHY} || ${PORT_OPTIONS:MCOLXMPP}
+PLIST_SUB+=		COLLAB=""
 .else
 PLIST_SUB+=		COLLAB="@comment "
 .endif
-
-.if ${PORT_OPTIONS:MGRAMMAR}
-ABIWORD_PLUGINS+=	grammar
-.endif
-
-.if ${PORT_OPTIONS:MMATHVIEW}
-ABIWORD_PLUGINS+=	mathview
-.endif
-
-.if ${PORT_OPTIONS:MPSION}
-ABIWORD_PLUGINS+=	psion
-.endif
-
-.if ${PORT_OPTIONS:MWP}
-ABIWORD_PLUGINS+=	wpg wordperfect
 .endif
 
 post-patch:

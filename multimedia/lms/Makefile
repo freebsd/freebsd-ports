@@ -1,6 +1,6 @@
 PORTNAME=	lms
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.47.0
+DISTVERSION=	3.51.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,6 +10,8 @@ WWW=		https://github.com/epoupon/lms
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_13=	compilation fails: error: object of type 'const LiteralString' cannot be compared because its 'operator<=>' is implicitly deleted
+
 BUILD_DEPENDS=	googletest>0:devel/googletest
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libboost_system.so:devel/boost-libs \
@@ -18,7 +20,7 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libwthttp.so:www/wt
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-USES=		cmake compiler:c++17-lang cpe libarchive pkgconfig
+USES=		cmake cpe libarchive pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	epoupon
@@ -41,6 +43,13 @@ STB_CMAKE_BOOL=			FREEBSD_USE_STB
 MAGICK_DESC=			Use GraphicsMagick++ as image library
 MAGICK_LIB_DEPENDS=		libGraphicsMagick.so:graphics/GraphicsMagick
 MAGICK_CMAKE_BOOL=		FREEBSD_USE_MAGICK
+
+.include <bsd.port.options.mk>
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000
+USES+=		llvm:17 # fix the build failure on 13: error: object of type 'const lms::core::LiteralString' cannot be compared because its 'operator<=>' is implicitly deleted
+.else
+USES+=		compiler:c++20-lang
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/etc/lms.conf"|"${PREFIX}/etc/lms.conf"|' \

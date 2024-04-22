@@ -1,5 +1,5 @@
-TIMESTAMP = 1684711236
-SHA256 (simd-everywhere-simde-v0.7.6_GH0.tar.gz) = c63e6c61392e324728da1c7e5de308cb31410908993a769594f5e21ff8de962b
-SIZE (simd-everywhere-simde-v0.7.6_GH0.tar.gz) = 6125123
+TIMESTAMP = 1710484468
+SHA256 (simd-everywhere-simde-v0.8.0_GH0.tar.gz) = d7c1aef6dd9ef0fbe6f521d1ca3e79afc26deda7d8f857544ca020b42a4b9b97
+SIZE (simd-everywhere-simde-v0.8.0_GH0.tar.gz) = 7455442
 SHA256 (nemequ-munit-da8f73412998e4f1adf1100dc187533a51af77fd_GH0.tar.gz) = 835a9ee03e3b9560af5a2e4465394e00337398f5baba9d686083b8e1d93f0c30
 SIZE (nemequ-munit-da8f73412998e4f1adf1100dc187533a51af77fd_GH0.tar.gz) = 27727

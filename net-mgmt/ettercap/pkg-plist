@@ -47,13 +47,6 @@ lib/libettercap-ui.so.0.8.3.1
 lib/libettercap.so
 lib/libettercap.so.0
 lib/libettercap.so.0.8.3.1
-man/man5/etter.conf.5.gz
-%%DESKTOP%%man/man8/ettercap-pkexec.8.gz
-man/man8/ettercap.8.gz
-man/man8/ettercap_curses.8.gz
-%%PLUGINS%%man/man8/ettercap_plugins.8.gz
-man/man8/etterfilter.8.gz
-man/man8/etterlog.8.gz
 %%DESKTOP%%%%GTK3%%share/appdata/ettercap.appdata.xml
 %%DESKTOP%%%%GTK3%%share/applications/ettercap.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -92,5 +85,12 @@ man/man8/etterlog.8.gz
 %%DATADIR%%/etterfilter.cnt
 %%DATADIR%%/etterfilter.tbl
 %%DATADIR%%/etterlog.dtd
+share/man/man5/etter.conf.5.gz
+%%DESKTOP%%share/man/man8/ettercap-pkexec.8.gz
+share/man/man8/ettercap.8.gz
+share/man/man8/ettercap_curses.8.gz
+%%PLUGINS%%share/man/man8/ettercap_plugins.8.gz
+share/man/man8/etterfilter.8.gz
+share/man/man8/etterlog.8.gz
 %%DESKTOP%%%%GTK3%%share/pixmaps/ettercap.svg
 %%DESKTOP%%%%GTK3%%share/polkit-1/actions/org.pkexec.ettercap.policy

@@ -1,5 +1,6 @@
 PORTNAME=	mroonga
 PORTVERSION=	13.05
+PORTREVISION=	1
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/mroonga/
 
@@ -19,6 +20,7 @@ IGNORE_WITH_MYSQL=	105m 106m 1011m 81
 SHEBANG_FILES=	data/rpm/post.sh data/rpm/preun.sh
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-mysql-build="$$(cd ${PORTSDIR}/${_MYSQL_SERVER}; ${MAKE} -V BUILD_WRKSRC)" \
 		--with-mysql-config=${PREFIX}/bin/mysql_config \
 		--with-mysql-source="$$(cd ${PORTSDIR}/${_MYSQL_SERVER}; ${MAKE} -V WRKSRC)"

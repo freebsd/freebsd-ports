@@ -1,6 +1,6 @@
-TIMESTAMP = 1665903503
-SHA256 (OpenChemistry-avogadroapp-1.97.0_GH0.tar.gz) = c4e1a0d54e43c2ae8bbd6b872e46b2f983f45c5aaa981731c681d5325faaec63
-SIZE (OpenChemistry-avogadroapp-1.97.0_GH0.tar.gz) = 2931223
+TIMESTAMP = 1707725773
+SHA256 (OpenChemistry-avogadroapp-1.99.0_GH0.tar.gz) = 4713faa4e755433947924a381fd1631dfe46a9f27065765cfa04c120ed603189
+SIZE (OpenChemistry-avogadroapp-1.99.0_GH0.tar.gz) = 3044744
 SHA256 (flathub-shared-modules-1bb5393_GH0.tar.gz) = a590c2f31dff3f258b439e210b62a1278c13b3353d64f290ebcd1d6062d8c147
 SIZE (flathub-shared-modules-1bb5393_GH0.tar.gz) = 66640
 SHA256 (openchemistry-avogadro-i18n-16142cf_GH0.tar.gz) = 706a0489fd2919cde92c41b6b5f5a42972c4d86614eea7a29d774e3bd0b68873

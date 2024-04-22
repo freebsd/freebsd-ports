@@ -1,6 +1,5 @@
 PORTNAME=	Perl-Version
-PORTVERSION=	1.013
-PORTREVISION=	2
+PORTVERSION=	1.017
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,9 +12,10 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-File-Slurp-Tiny>=0:devel/p5-File-Slurp-Tiny
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

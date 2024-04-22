@@ -1,8 +1,8 @@
 PORTNAME=	schismtracker
-PORTVERSION=	20231029
+DISTVERSION=	20240409
+DISTVERSIONSUFFIX=	.source
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/schismtracker/schismtracker/releases/download/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.source
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Module tracker editor/player resembling impulse tracker
@@ -16,10 +16,11 @@ USES=		compiler:c++11-lib desktop-file-utils localbase python sdl xorg
 USE_SDL=	sdl2
 USE_XORG=	x11 xext xv
 GNU_CONFIGURE=	yes
-NO_WRKSUBDIR=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PLIST_FILES=	bin/schismtracker \
-		man/man1/schismtracker.1.gz \
+		share/man/man1/schismtracker.1.gz \
 		share/applications/schism.desktop \
 		share/pixmaps/schism-icon-128.png \
 		share/pixmaps/schism-itf-icon-128.png

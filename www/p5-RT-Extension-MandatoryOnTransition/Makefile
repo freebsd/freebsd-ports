@@ -1,5 +1,6 @@
 PORTNAME=	RT-Extension-MandatoryOnTransition
-DISTVERSION=	0.22
+DISTVERSION=	0.23
+PORTREVISION=	1
 CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 
@@ -20,9 +21,9 @@ rt50_PKGNAMEPREFIX=	p5-RT50-
 rt50_CONFLICTS_INSTALL=	rt44
 
 .if ${FLAVOR} == rt44
-RT_VER=		       44
+RT_VER=		44
 .elif ${FLAVOR} == rt50
-RT_VER=		       50
+RT_VER=		50
 .endif
 
 USES=		perl5
@@ -31,6 +32,9 @@ USE_PERL5=	configure
 NO_ARCH=	yes
 
 PLIST_SUB+=	RT_VER=${RT_VER}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|LocalPath/man/man3|LocalPath/share/man/man3|g' ${WRKSRC}/inc/Module/Install/RTx.pm
 
 # Note: You can install using an arbitrary $PREFIX but only if it
 # matches the $PREFIX used to install www/rt{44,50}.  Hence ignore

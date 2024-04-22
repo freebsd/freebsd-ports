@@ -1,7 +1,6 @@
 bin/ircd
 bin/ircd-hybrid-mkpasswd
 %%ETCDIR%%/reference.conf
-etc/rc.d/ircd-hybrid
 lib/ircd-hybrid/modules/autoload/m_accept.la
 lib/ircd-hybrid/modules/autoload/m_accept.so
 lib/ircd-hybrid/modules/autoload/m_admin.la
@@ -170,7 +169,6 @@ lib/ircd-hybrid/modules/m_squit.la
 lib/ircd-hybrid/modules/m_squit.so
 lib/ircd-hybrid/modules/m_tmode.la
 lib/ircd-hybrid/modules/m_tmode.so
-man/man8/ircd.8.gz
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/accept
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/admin
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/away
@@ -233,6 +231,7 @@ man/man8/ircd.8.gz
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/whois
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/whowas
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/xline
+share/man/man8/ircd.8.gz
 @dir /var/ircd-hybrid/lib
 @dir /var/ircd-hybrid/log
 @dir /var/ircd-hybrid/run

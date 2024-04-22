@@ -1,5 +1,5 @@
 bin/pipenightdreams
-man/man6/pipenightdreams.6.gz
+share/man/man6/pipenightdreams.6.gz
 share/pixmaps/pipenightdreams.png
 %%DATADIR%%/images/alllevelsdone.png
 %%DATADIR%%/images/arrows_grey/arrow_e.png

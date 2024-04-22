@@ -1,7 +1,7 @@
 PORTNAME=	xastir
 DISTVERSIONPREFIX=	Release-
 DISTVERSION=	2.2.0
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	carl@stagecraft.cx
@@ -32,6 +32,7 @@ USES=		autoreconf gmake gnome jpeg motif shebangfix xorg
 USE_XORG=	ice sm x11 xext xt
 USE_GNOME+=	libxml2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 SHEBANG_FILES=	scripts/gpx2shape
 SHEBANG_REGEX=	./scripts/.*\.(sh|pl|py)

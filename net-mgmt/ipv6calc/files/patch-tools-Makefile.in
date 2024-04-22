@@ -1,0 +1,10 @@
+--- tools/Makefile.in.orig	2024-02-15 11:55:16 UTC
++++ tools/Makefile.in
+@@ -6,6 +6,7 @@
+ #  Makefile for various tools
+ #
+ 
++prefix          = @prefix@
+ datadir         = @datadir@
+ 
+ all:

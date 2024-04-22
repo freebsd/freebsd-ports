@@ -1,9 +1,9 @@
 PORTNAME=	luit
-PORTVERSION=	20230201
+PORTVERSION=	20240102
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://invisible-island.net/archives/luit/ \
-		https://invisible-mirror.net/archives/luit/ \
-		ftp://ftp.invisible-island.net/pub/luit/
+		https://invisible-mirror.net/archives/luit/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Locale and ISO 2022 support for Unicode terminals
@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--x-libraries=${LOCALBASE}/lib \
 		--with-locale-alias=${LOCALBASE}/lib/X11/locale/locale.alias \
 		--with-pkg-config=${LOCALBASE}/bin/pkg-config \
 
-PLIST_FILES=	bin/luit man/man1/luit.1.gz
+PLIST_FILES=	bin/luit share/man/man1/luit.1.gz
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>

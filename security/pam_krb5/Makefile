@@ -1,6 +1,6 @@
 PORTNAME=		pam_krb5
 PORTVERSION=		4.11
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		security
 MASTER_SITES=		http://archives.eyrie.org/software/kerberos/ \
 			http://archives.eyrie.org/software/ARCHIVE/pam-krb5/
@@ -23,6 +23,7 @@ CONFIGURE_ARGS+=	--with-krb5="${GSSAPIBASEDIR}" \
 			--with-krb5-include="${GSSAPIINCDIR}" \
 			--with-krb5-lib="${GSSAPILIBDIR}"
 CONFIGURE_ENV=		PATH_KRB5_CONFIG="${KRB5CONFIG}"
+GNU_CONFIGURE_MANPREFIX= ${PREFIX}/share
 INSTALL_TARGET=		install-strip
 
 FLAVORS=		mit heimdal_base heimdal_port

@@ -1,6 +1,6 @@
 PORTNAME=	powder-toy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	97.0.352
+DISTVERSION=	98.2.365
 PORTREVISION=	1
 CATEGORIES=	games
 
@@ -18,13 +18,14 @@ LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
 		libpng.so:graphics/png \
 		libjsoncpp.so:devel/jsoncpp
 
-USES=		compiler:c++17-lang desktop-file-utils luajit:luajit-openresty \
+USES=		compiler:c++17-lang desktop-file-utils luajit \
 		meson pkgconfig python:build sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	The-Powder-Toy
 GH_PROJECT=	The-Powder-Toy
 USE_SDL=	sdl2
 MESON_ARGS=	-Dapp_exe="${PORTNAME}"
+CXXFLAGS_i386=	-msse
 
 CONFLICTS_INSTALL=powder-toy-devel
 

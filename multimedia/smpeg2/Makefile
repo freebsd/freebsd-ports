@@ -1,6 +1,6 @@
 PORTNAME=	smpeg2
 PORTVERSION=	2.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	https://www.libsdl.org/projects/smpeg/release/ \
 		https://distfiles.macports.org/smpeg2/
@@ -15,6 +15,7 @@ LICENSE_COMB=	multi
 USES=		compiler:features libtool sdl
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INSTALL_TARGET=	install-strip
 CFLAGS+=	${COMPILER_FEATURES:Mc++11:C/.+/-Wno-error=narrowing/}
 USE_SDL=	sdl2

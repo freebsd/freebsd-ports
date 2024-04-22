@@ -2,7 +2,6 @@ bin/mate-about
 bin/mate-color-select
 include/mate-desktop-2.0/libmate-desktop/mate-bg-crossfade.h
 include/mate-desktop-2.0/libmate-desktop/mate-bg.h
-include/mate-desktop-2.0/libmate-desktop/mate-colorbutton.h
 include/mate-desktop-2.0/libmate-desktop/mate-colorsel.h
 include/mate-desktop-2.0/libmate-desktop/mate-colorseldialog.h
 include/mate-desktop-2.0/libmate-desktop/mate-dconf.h
@@ -12,6 +11,7 @@ include/mate-desktop-2.0/libmate-desktop/mate-desktop-utils.h
 include/mate-desktop-2.0/libmate-desktop/mate-desktop.h
 include/mate-desktop-2.0/libmate-desktop/mate-gsettings.h
 include/mate-desktop-2.0/libmate-desktop/mate-hsv.h
+include/mate-desktop-2.0/libmate-desktop/mate-image-menu-item.h
 include/mate-desktop-2.0/libmate-desktop/mate-languages.h
 include/mate-desktop-2.0/libmate-desktop/mate-rr-config.h
 include/mate-desktop-2.0/libmate-desktop/mate-rr-labeler.h
@@ -22,8 +22,6 @@ lib/libmate-desktop-2.so
 lib/libmate-desktop-2.so.17
 lib/libmate-desktop-2.so.17.1.4
 libdata/pkgconfig/mate-desktop-2.0.pc
-man/man1/mate-about.1.gz
-man/man1/mate-color-select.1.gz
 share/applications/mate-about.desktop
 share/applications/mate-color-select.desktop
 %%PORTDOCS%%%%DOCSDIR%%/MateBG.html
@@ -32,6 +30,7 @@ share/applications/mate-color-select.desktop
 %%PORTDOCS%%%%DOCSDIR%%/MateRRLabeler.html
 %%PORTDOCS%%%%DOCSDIR%%/background.html
 %%PORTDOCS%%%%DOCSDIR%%/home.png
+%%PORTDOCS%%%%DOCSDIR%%/image-menu-item.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/intro.html
 %%PORTDOCS%%%%DOCSDIR%%/languages.html
@@ -39,6 +38,7 @@ share/applications/mate-color-select.desktop
 %%PORTDOCS%%%%DOCSDIR%%/left.png
 %%PORTDOCS%%%%DOCSDIR%%/libmate.html
 %%PORTDOCS%%%%DOCSDIR%%/mate-desktop-Language-Utilities.html
+%%PORTDOCS%%%%DOCSDIR%%/mate-desktop-MateImageMenuItem.html
 %%PORTDOCS%%%%DOCSDIR%%/mate-desktop-Miscellaneous-Functions.html
 %%PORTDOCS%%%%DOCSDIR%%/mate-desktop-Miscellaneous-Thumbnail-Functions.html
 %%PORTDOCS%%%%DOCSDIR%%/mate-desktop-mate-rr-config.html
@@ -183,4 +183,7 @@ share/locale/zh_CN/LC_MESSAGES/mate-desktop.mo
 share/locale/zh_HK/LC_MESSAGES/mate-desktop.mo
 share/locale/zh_TW/LC_MESSAGES/mate-desktop.mo
 share/locale/zu/LC_MESSAGES/mate-desktop.mo
+share/man/man1/mate-about.1.gz
+share/man/man1/mate-color-select.1.gz
 share/mate-about/mate-version.xml
+share/xdg-desktop-portal/mate-portals.conf

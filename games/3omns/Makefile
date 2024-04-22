@@ -1,6 +1,6 @@
 PORTNAME=	3omns
 DISTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://lab.burn.capital/chaz/3omns/uploads/6ec547a14fec72a72f9fa53c374bfa7e/
 
@@ -18,6 +18,7 @@ USES=		compiler:c++11-lang gmake localbase lua:52 pkgconfig sdl tar:xz
 USE_SDL=	image2 sdl2 ttf2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 LIBS+=		-largp
 
 .include <bsd.port.mk>

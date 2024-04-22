@@ -10,11 +10,11 @@ lib/Regina-REXX/addons/librxtest2.so
 lib/libregina.a
 lib/libregina.so
 libdata/pkgconfig/libregina.pc
-man/man1/regina.1.gz
-man/man1/rexx.1.gz
-man/man1/regina-config.1.gz
-man/man1/rxqueue.1.gz
-man/man1/rxstack.1.gz
+share/man/man1/regina.1.gz
+share/man/man1/rexx.1.gz
+share/man/man1/regina-config.1.gz
+share/man/man1/rxqueue.1.gz
+share/man/man1/rxstack.1.gz
 %%DATADIR%%/de.mtb
 %%DATADIR%%/en.mtb
 %%DATADIR%%/es.mtb

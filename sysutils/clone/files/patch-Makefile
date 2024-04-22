@@ -7,4 +7,4 @@
 -	strip -x -o /usr/local/bin/$(TOOL) $(TOOL)
 -	cp $(TOOL).1 /usr/local/man/man1/$(TOOL).1
 +	strip -x -o $(DESTDIR)$(PREFIX)/bin/$(TOOL) $(TOOL)
-+	cp $(TOOL).1 $(DESTDIR)$(PREFIX)/man/man1/$(TOOL).1
++	cp $(TOOL).1 $(DESTDIR)$(PREFIX)/share/man/man1/$(TOOL).1

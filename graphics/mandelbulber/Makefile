@@ -1,11 +1,11 @@
 PORTNAME=	mandelbulber
-PORTVERSION=	2.30
-PORTREVISION=	2
+DISTVERSION=	2.31-1
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D Mandelbrot fractal renderer
-WWW=		https://mandelbulber.com/
+WWW=		https://mandelbulber.com/ \
+		https://github.com/buddhi1980/mandelbulber2
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -24,7 +24,7 @@ GH_PROJECT=	${PORTNAME}2
 USES=		cmake compiler:c++11-lang gnome jpeg localbase:ldflags \
 		pkgconfig qt:5
 USE_QT=		core widgets network gui multimedia testlib concurrent \
-		qmake:build buildtools:build uitools:build
+		declarative qmake:build buildtools:build uitools:build
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/mandelbulber2/cmake
 

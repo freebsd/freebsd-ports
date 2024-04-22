@@ -1,6 +1,6 @@
 bin/vdradmind
 @sample(%%VDR_USER%%,%%VDR_GROUP%%,) %%ETCDIR%%/vdradmind.conf.sample
-man/man8/vdradmind.8.gz
+share/man/man8/vdradmind.8.gz
 share/vdradmin-am/lib/MIME/Base64.pm
 share/vdradmin-am/lib/Template/Plugin/Date.pm
 share/vdradmin-am/lib/Template/Plugin/HTML.pm

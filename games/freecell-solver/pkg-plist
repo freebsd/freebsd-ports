@@ -25,14 +25,6 @@ lib/libfreecell-solver.so
 lib/libfreecell-solver.so.0
 lib/libfreecell-solver.so.0.7.0
 libdata/pkgconfig/libfreecell-solver.pc
-man/man6/dbm-fc-solver.6.gz
-man/man6/fc-solve-board_gen.6.gz
-man/man6/fc-solve.6.gz
-man/man6/freecell-solver-range-parallel-solve.6.gz
-man/man6/gen-multiple-pysol-layouts.6.gz
-man/man6/make_pysol_freecell_board.py.6.gz
-man/man6/pi-make-microsoft-freecell-board.6.gz
-man/man6/transpose-freecell-board.py.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.asciidoc
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -80,3 +72,11 @@ man/man6/transpose-freecell-board.py.6.gz
 %%DATADIR%%/presets/toons-for-twenty-somethings.sh
 %%DATADIR%%/presets/video-editing.sh
 %%DATADIR%%/presets/yellow-brick-road.sh
+share/man/man6/dbm-fc-solver.6.gz
+share/man/man6/fc-solve-board_gen.6.gz
+share/man/man6/fc-solve.6.gz
+share/man/man6/freecell-solver-range-parallel-solve.6.gz
+share/man/man6/gen-multiple-pysol-layouts.6.gz
+share/man/man6/make_pysol_freecell_board.py.6.gz
+share/man/man6/pi-make-microsoft-freecell-board.6.gz
+share/man/man6/transpose-freecell-board.py.6.gz

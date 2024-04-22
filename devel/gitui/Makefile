@@ -1,7 +1,6 @@
 PORTNAME=	gitui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.24.3	# After update, `make patch` and `make cargo-crates > Makefile.crates` to avoid fetching vendored openssl-src
-PORTREVISION=	5
+DISTVERSION=	0.26.1	# After update, `make patch` and `make cargo-crates > Makefile.crates` to avoid fetching vendored openssl-src
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,6 +9,8 @@ WWW=		https://github.com/extrawurst/gitui
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+BROKEN_i386=	link fails: ld: error: undefined symbol: __atomic_is_lock_fre
 
 BUILD_DEPENDS=	bash:shells/bash \
 		gmake:devel/gmake
@@ -24,6 +25,9 @@ GH_ACCOUNT=	extrawurst
 
 RUSTFLAGS+=	--cap-lints=warn
 PLIST_FILES=	bin/${PORTNAME}
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} # xcb requires python3
 

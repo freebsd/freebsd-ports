@@ -1,5 +1,5 @@
 PORTNAME=	bgpq4
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -14,10 +14,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bgp
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 MAKE_ARGS+=	CC="${CC}"
 
 PLIST_FILES=	bin/bgpq4 \
-		man/man8/bgpq4.8.gz
+		share/man/man8/bgpq4.8.gz
 
 .include <bsd.port.mk>

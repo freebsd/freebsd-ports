@@ -11,9 +11,9 @@ lib/libsockswrap.so
 lib/libsockswrap.so.0
 lib/libsockswrap.so.0.0.0
 libexec/sockd
-man/man1/sockd.1.gz
-man/man1/socksify.1.gz
-man/man3/socks.3.gz
-man/man5/socksrc.5.gz
-man/man8/mkbl4.8.gz
+share/man/man1/sockd.1.gz
+share/man/man1/socksify.1.gz
+share/man/man3/socks.3.gz
+share/man/man5/socksrc.5.gz
+share/man/man8/mkbl4.8.gz
 sbin/sockd

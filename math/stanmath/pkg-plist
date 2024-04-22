@@ -143,8 +143,10 @@ include/stan/math/fwd/fun/value_of.hpp
 include/stan/math/fwd/fun/value_of_rec.hpp
 include/stan/math/fwd/functor.hpp
 include/stan/math/fwd/functor/apply_scalar_unary.hpp
+include/stan/math/fwd/functor/finite_diff.hpp
 include/stan/math/fwd/functor/gradient.hpp
 include/stan/math/fwd/functor/hessian.hpp
+include/stan/math/fwd/functor/integrate_1d.hpp
 include/stan/math/fwd/functor/jacobian.hpp
 include/stan/math/fwd/functor/operands_and_partials.hpp
 include/stan/math/fwd/functor/partials_propagator.hpp
@@ -185,6 +187,7 @@ include/stan/math/opencl/kernel_generator.hpp
 include/stan/math/opencl/kernel_generator/append.hpp
 include/stan/math/opencl/kernel_generator/as_column_vector_or_scalar.hpp
 include/stan/math/opencl/kernel_generator/as_operation_cl.hpp
+include/stan/math/opencl/kernel_generator/assignment_ops.hpp
 include/stan/math/opencl/kernel_generator/binary_operation.hpp
 include/stan/math/opencl/kernel_generator/block_zero_based.hpp
 include/stan/math/opencl/kernel_generator/broadcast.hpp
@@ -288,6 +291,7 @@ include/stan/math/opencl/prim/bernoulli_lpmf.hpp
 include/stan/math/opencl/prim/beta_binomial_lpmf.hpp
 include/stan/math/opencl/prim/beta_lpdf.hpp
 include/stan/math/opencl/prim/beta_proportion_lpdf.hpp
+include/stan/math/opencl/prim/binomial_logit_glm_lpmf.hpp
 include/stan/math/opencl/prim/binomial_logit_lpmf.hpp
 include/stan/math/opencl/prim/binomial_lpmf.hpp
 include/stan/math/opencl/prim/block.hpp
@@ -508,6 +512,7 @@ include/stan/math/opencl/rev/floor.hpp
 include/stan/math/opencl/rev/fmax.hpp
 include/stan/math/opencl/rev/fmin.hpp
 include/stan/math/opencl/rev/fmod.hpp
+include/stan/math/opencl/rev/grad.hpp
 include/stan/math/opencl/rev/hypot.hpp
 include/stan/math/opencl/rev/inv.hpp
 include/stan/math/opencl/rev/inv_Phi.hpp
@@ -1002,6 +1007,7 @@ include/stan/math/prim/fun/scaled_add.hpp
 include/stan/math/prim/fun/sd.hpp
 include/stan/math/prim/fun/segment.hpp
 include/stan/math/prim/fun/select.hpp
+include/stan/math/prim/fun/serializer.hpp
 include/stan/math/prim/fun/sign.hpp
 include/stan/math/prim/fun/signbit.hpp
 include/stan/math/prim/fun/simplex_constrain.hpp
@@ -1220,6 +1226,7 @@ include/stan/math/prim/prob/binomial_cdf_log.hpp
 include/stan/math/prim/prob/binomial_lccdf.hpp
 include/stan/math/prim/prob/binomial_lcdf.hpp
 include/stan/math/prim/prob/binomial_log.hpp
+include/stan/math/prim/prob/binomial_logit_glm_lpmf.hpp
 include/stan/math/prim/prob/binomial_logit_log.hpp
 include/stan/math/prim/prob/binomial_logit_lpmf.hpp
 include/stan/math/prim/prob/binomial_lpmf.hpp
@@ -1250,6 +1257,8 @@ include/stan/math/prim/prob/chi_square_rng.hpp
 include/stan/math/prim/prob/dirichlet_log.hpp
 include/stan/math/prim/prob/dirichlet_lpdf.hpp
 include/stan/math/prim/prob/dirichlet_lpmf.hpp
+include/stan/math/prim/prob/dirichlet_multinomial_lpmf.hpp
+include/stan/math/prim/prob/dirichlet_multinomial_rng.hpp
 include/stan/math/prim/prob/dirichlet_rng.hpp
 include/stan/math/prim/prob/discrete_range_ccdf_log.hpp
 include/stan/math/prim/prob/discrete_range_cdf.hpp

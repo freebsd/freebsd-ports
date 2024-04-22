@@ -1,6 +1,6 @@
 PORTNAME=	qlcplus
 DISTVERSIONPREFIX=	QLC+_
-DISTVERSION=	4.12.7
+DISTVERSION=	4.13.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +24,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mcallegari
 USE_GL=		gl
 USE_LDCONFIG=	yes
-USE_QT=		core gui multimedia network script testlib widgets buildtools:build
+USE_QT=		core gui multimedia network script serialport testlib widgets buildtools:build
 
 SHEBANG_FILES=	translate.sh
 

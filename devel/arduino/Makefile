@@ -1,6 +1,6 @@
 PORTNAME=	arduino
 PORTVERSION=	1.0.6
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	devel java lang
 MASTER_SITES=	https://arduino.cc/download.php?f=/
@@ -47,23 +47,24 @@ DESKTOP_ENTRIES=	"Arduino" "Arduino IDE" \
 
 OPTIONS_DEFINE=		ATMEGA644P DOCS EXAMPLES UARDUNO
 OPTIONS_SUB=
-ATMEGA644P_DESC=	ATmega644p patches
+ATMEGA644P_DESC=	ATmega644p/ATmega1284p patches
 DOCS_DESC=		Install the reference documents
 UARDUNO_DESC=		Kernel module for Arduino Uno USB interface
 
 INSLIST=	arduino hardware lib libraries logo.png revisions.txt tools
 
+ATMEGA644P_EXTRA_PATCHES= \
+	${FILESDIR}/extrapatch-hardware_arduino_boards.txt \
+	${FILESDIR}/extrapatch-hardware_arduino_cores_arduino_WInterrupts.c \
+	${FILESDIR}/extrapatch-hardware_arduino_variants_atmega644p_pins__arduino.h
+
 # Add serial drivers for those who are new to this.
 UARDUNO_RUN_DEPENDS+=	${KMODDIR}/uarduno.ko:comms/uarduno
 
-.include <bsd.port.options.mk>
+pre-patch-ATMEGA644P-on:
+	${MKDIR} ${WRKSRC}/hardware/arduino/variants/atmega644p
 
-.if ${PORT_OPTIONS:MATMEGA644P}
-EXTRA_PATCHES+=	\
-	${FILESDIR}/extrapatch-hardware-arduino-boards.txt \
-	${FILESDIR}/extrapatch-hardware-arduino-cores-arduino-WInterrupts.c \
-	${FILESDIR}/extrapatch-hardware-arduino-variants-atmega644p-pins_arduino.h
-.endif
+.include <bsd.port.options.mk>
 
 .if ! empty(PORT_OPTIONS:MDOCS)
 INSLIST+=	reference
@@ -79,42 +80,38 @@ INSLIST+=	examples
 
 FIND_EXPR=	"${FIND_EXCLUDES} -prune"
 
-.if ${PORT_OPTIONS:MATMEGA644P}
-pre-patch:
-	@${MKDIR} ${WRKSRC}/hardware/arduino/variants/atmega644p
-.endif
-
 post-patch:
-	@${RM} -r ${WRKSRC}/hardware/tools/
-	@${MKDIR} ${WRKSRC}/hardware/tools/avr/
-	@${LN} -s ${PREFIX}/bin ${WRKSRC}/hardware/tools/avr/bin
-	@${LN} -s ${PREFIX}/etc ${WRKSRC}/hardware/tools/avr/etc
+	${RM} -r ${WRKSRC}/hardware/tools/
+	${MKDIR} ${WRKSRC}/hardware/tools/avr/
+	${LN} -s ${PREFIX}/bin ${WRKSRC}/hardware/tools/avr/bin
+	${LN} -s ${PREFIX}/etc ${WRKSRC}/hardware/tools/avr/etc
 
 	# Remove broken jar, and Linux C6 based libraries.
-	@${RM} ${WRKSRC}/lib/RXTXcomm.jar
+	${RM} ${WRKSRC}/lib/RXTXcomm.jar
 
 	# This port relys on comms/RXTX working without Linux C6 compatibility.
-	@${RM} ${WRKSRC}/lib/librxtxSerial.so
-	@${RM} ${WRKSRC}/lib/librxtxSerial64.so
+	${RM} ${WRKSRC}/lib/librxtxSerial.so
+	${RM} ${WRKSRC}/lib/librxtxSerial64.so
 
 	# Map the RXTX port for our use
-	@${LN} -s ${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar ${WRKSRC}/lib/RXTXcomm.jar
+	${LN} -s ${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar ${WRKSRC}/lib/RXTXcomm.jar
 
 # Add in links to the libraries compiled in RXTX for the above jar to use based on architecture.
 .if ${ARCH} == i386
-	@${LN} -s ${JAVA_HOME}/jre/lib/i386/librxtxSerial.so ${WRKSRC}/lib/librxtxSerial.so
+	${LN} -s ${JAVA_HOME}/jre/lib/i386/librxtxSerial.so ${WRKSRC}/lib/librxtxSerial.so
 .endif
 
 .if ${ARCH} == amd64
-	@${LN} -s ${JAVA_HOME}/jre/lib/amd64/librxtxSerial.so ${WRKSRC}/lib/librxtxSerial64.so
+	${LN} -s ${JAVA_HOME}/jre/lib/amd64/librxtxSerial.so ${WRKSRC}/lib/librxtxSerial64.so
 .endif
 
-	@${MV} ${WRKSRC}/reference/img/logo.png ${WRKSRC}/
-	@${RM} -r ${WRKSRC}/reference/img/
+	${MV} ${WRKSRC}/reference/img/logo.png ${WRKSRC}/
+	${RM} -r ${WRKSRC}/reference/img/
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "${INSLIST}" ${STAGEDIR}${PREFIX}/${PORTNAME} ${FIND_EXPR})
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "${INSLIST}" ${STAGEDIR}${PREFIX}/${PORTNAME} \
+	    ${FIND_EXPR})
 	${INSTALL_SCRIPT} ${WRKDIR}/arduino ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>

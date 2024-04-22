@@ -1,6 +1,6 @@
 PORTNAME=	webresolve
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://siag.nu/pub/webresolve/ \
 		ftp://siag.nu/pub/webresolve/
@@ -16,6 +16,7 @@ ALL_TARGET=	webresolve
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; s|\-g||' \
+		-e 's|$$(PREFIX)/man|$$(PREFIX)/share/man|' \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>

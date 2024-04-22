@@ -1,6 +1,6 @@
 PORTNAME=	oggvideotools
 PORTVERSION=	0.9.1
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 
@@ -26,5 +26,7 @@ USE_LDCONFIG=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-O0.*-fPIC|-fPIC|' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e \
+		's|man/man1|share/man/man1|' ${WRKSRC}/docs/CMakeLists.txt
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	44bsd-csh
 PORTVERSION=	20001106
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	shells
 MASTER_SITES=	LOCAL/cy
 
@@ -28,7 +28,7 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/csh ${STAGEDIR}${PREFIX}/bin/44bsd-csh
-	${INSTALL_MAN} ${WRKSRC}/csh.1 ${STAGEDIR}${PREFIX}/man/man1/44bsd-csh.1
+	${INSTALL_MAN} ${WRKSRC}/csh.1 ${STAGEDIR}${PREFIX}/share/man/man1/44bsd-csh.1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/USD.doc/paper.ascii.gz ${STAGEDIR}${DOCSDIR}
 

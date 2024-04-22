@@ -8,9 +8,9 @@ lib/openjpeg-%%VER%%/OpenJPEGTargets.cmake
 lib/libopenjpeg.so
 lib/libopenjpeg.so.1.5.2
 lib/libopenjpeg.so.2
-man/man1/image_to_j2k.1.gz
-man/man1/j2k_dump.1.gz
-man/man1/j2k_to_image.1.gz
-man/man3/libopenjpeg.3.gz
 libdata/pkgconfig/libopenjpeg.pc
 libdata/pkgconfig/libopenjpeg1.pc
+share/man/man1/image_to_j2k.1.gz
+share/man/man1/j2k_dump.1.gz
+share/man/man1/j2k_to_image.1.gz
+share/man/man3/libopenjpeg.3.gz

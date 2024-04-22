@@ -12,6 +12,9 @@ WWW=		https://github.com/thoughtbot/paperclip
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream repo archived Jul 13, 2023. Upstream recommends using Rails' own ActiveStorage.
+EXPIRATION_DATE=2024-04-30
+
 RUN_DEPENDS=	rubygem-activemodel50>0:databases/rubygem-activemodel50 \
 		rubygem-activesupport50>=0:devel/rubygem-activesupport50 \
 		rubygem-mimemagic>=0.3.0:misc/rubygem-mimemagic \

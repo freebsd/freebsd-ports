@@ -1,5 +1,5 @@
 bin/gdmap
-man/man1/gdmap.1.gz
+share/man/man1/gdmap.1.gz
 share/applications/gdmap.desktop
 %%DATADIR%%/pixmaps/gdmap_icon.png
 share/locale/bg/LC_MESSAGES/GdMap.mo

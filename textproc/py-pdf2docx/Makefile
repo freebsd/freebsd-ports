@@ -1,5 +1,5 @@
 PORTNAME=	pdf2docx
-DISTVERSION=	0.5.7
+DISTVERSION=	0.5.8
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${PY_DEPENDS} \
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python
-USE_PYTHON=	distutils concurrent autoplist pytest
+USE_PYTHON=	distutils concurrent autoplist pytest # 2 tests fail, see https://github.com/ArtifexSoftware/pdf2docx/issues/276
 
 NO_ARCH=	yes
 

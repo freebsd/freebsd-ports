@@ -3,6 +3,10 @@ DISTVERSION=	1.3.1
 PORTREVISION=	1
 CATEGORIES=	x11
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	6f62a2d0784a6937d35ac8f6df2e22c23bbfc8f4.patch:-p1 # Fix function pointer initialization
+PATCHFILES+=	4d402e599e209a072492cc8c0e35a5e039e7bfd6.patch:-p1 # Check that 'height' is within INT_MAX
+
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Use rofi to quickly open files
 WWW=		https://github.com/marvinkreis/rofi-file-browser-extended

@@ -10,9 +10,9 @@ bin/wwwoffle-rm
 bin/wwwoffle-tools
 bin/wwwoffle-write
 @sample etc/wwwoffle.conf.sample
-man/man1/wwwoffle.1.gz
-man/man5/wwwoffle.conf.5.gz
-man/man8/wwwoffled.8.gz
+share/man/man1/wwwoffle.1.gz
+share/man/man5/wwwoffle.conf.5.gz
+share/man/man8/wwwoffled.8.gz
 sbin/wwwoffled
 %%DOCSDIR%%/CHANGES.CONF
 %%DOCSDIR%%/COPYING

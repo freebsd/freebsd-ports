@@ -50,8 +50,6 @@ lib/libgphoto2_port/%%VERSION_PORT%%/ptpip.so
 lib/libgphoto2_port/%%VERSION_PORT%%/usb1.so
 libdata/pkgconfig/libgphoto2.pc
 libdata/pkgconfig/libgphoto2_port.pc
-man/man3/libgphoto2.3.gz
-man/man3/libgphoto2_port.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/ABOUT-NLS
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -149,3 +147,5 @@ man/man3/libgphoto2_port.3.gz
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libgphoto2-6.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libgphoto2_port-12.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/libgphoto2_port-12.mo
+share/man/man3/libgphoto2.3.gz
+share/man/man3/libgphoto2_port.3.gz

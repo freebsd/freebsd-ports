@@ -1,5 +1,5 @@
 PORTNAME=	glpi
-PORTVERSION=	10.0.10
+PORTVERSION=	10.0.14
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/glpi-project/glpi/releases/download/${PORTVERSION}/
@@ -12,9 +12,9 @@ LICENSE=	GPLv2
 
 USES=		cpe gettext php tar:tgz
 CPE_VENDOR=	glpi-project
-USE_PHP=	bz2 ctype curl exif fileinfo gd iconv intl mbstring \
-		mysqli opcache session simplexml sodium xml xmlrpc zip zlib \
-		dom filter
+USE_PHP=	bz2 ctype curl dom exif fileinfo filter gd iconv intl json \
+		mbstring mysqli opcache session simplexml sodium xml xmlreader \
+		xmlrpc xmlwriter zip zlib
 
 NO_ARCH=	yes
 NO_BUILD=	yes

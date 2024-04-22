@@ -1,5 +1,6 @@
 PORTNAME=	flvmeta
 DISTVERSION=	1.2.2.20210819
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	earl@eeg3.net
@@ -28,6 +29,6 @@ post-patch:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/flvmeta.1 \
-	    ${STAGEDIR}${MANPREFIX}/share/man/man1
+	    ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

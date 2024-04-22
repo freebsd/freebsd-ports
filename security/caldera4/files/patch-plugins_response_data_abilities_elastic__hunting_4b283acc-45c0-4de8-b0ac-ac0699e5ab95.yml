@@ -1,0 +1,11 @@
+--- plugins/response/data/abilities/elastic_hunting/4b283acc-45c0-4de8-b0ac-ac0699e5ab95.yml.orig	2021-10-13 20:41:40 UTC
++++ plugins/response/data/abilities/elastic_hunting/4b283acc-45c0-4de8-b0ac-ac0699e5ab95.yml
+@@ -28,7 +28,7 @@
+             - source: host.process.guid
+               edge: has_interesting
+               target: investigate.process.guid
+-    linux:
++    freebsd,linux:
+       elasticsearch:
+         *cmd
+     darwin:

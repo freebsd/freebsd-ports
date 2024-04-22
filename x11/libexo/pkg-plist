@@ -23,7 +23,7 @@ lib/libexo-2.so
 lib/libexo-2.so.0
 lib/libexo-2.so.0.1.0
 libdata/pkgconfig/exo-2.pc
-man/man1/exo-open.1.gz
+share/man/man1/exo-open.1.gz
 %%NLS%%share/locale/am/LC_MESSAGES/exo.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/exo.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/exo.mo

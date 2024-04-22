@@ -1,6 +1,6 @@
---- content/browser/audio/audio_service.cc.orig	2023-04-08 11:38:38 UTC
+--- content/browser/audio/audio_service.cc.orig	2024-02-25 20:22:18 UTC
 +++ content/browser/audio/audio_service.cc
-@@ -33,7 +33,7 @@
+@@ -34,7 +34,7 @@
  #if BUILDFLAG(ENABLE_PASSTHROUGH_AUDIO_CODECS)
  #include "ui/display/util/edid_parser.h"
  
@@ -9,7 +9,7 @@
  #include "ui/display/display_util.h"
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -225,7 +225,7 @@ audio::mojom::AudioService& GetAudioService() {
+@@ -202,7 +202,7 @@ audio::mojom::AudioService& GetAudioService() {
          ->PostTaskAndReplyWithResult(
              FROM_HERE, base::BindOnce(&ScanEdidBitstreams),
              base::BindOnce(&LaunchAudioService, std::move(receiver)));

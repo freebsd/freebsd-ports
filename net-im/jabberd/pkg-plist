@@ -104,11 +104,11 @@ lib/jabberd/mod_verify.so.0.0.0
 %%MYSQL%%lib/jabberd/storage_mysql.so
 %%PGSQL%%lib/jabberd/storage_pgsql.so
 %%SQLITE%%lib/jabberd/storage_sqlite.so
-man/man8/c2s.8.gz
-man/man8/jabberd.8.gz
-man/man8/router.8.gz
-man/man8/s2s.8.gz
-man/man8/sm.8.gz
+share/man/man8/c2s.8.gz
+share/man/man8/jabberd.8.gz
+share/man/man8/router.8.gz
+share/man/man8/s2s.8.gz
+share/man/man8/sm.8.gz
 @dir(%%JABBER_USER%%,%%JABBER_GROUP%%,0700) %%JABBER_RUNDIR%%/db
 @dir(%%JABBER_USER%%,%%JABBER_GROUP%%,0700) %%JABBER_RUNDIR%%/logs
 @dir(%%JABBER_USER%%,%%JABBER_GROUP%%,0700) %%JABBER_RUNDIR%%/pid

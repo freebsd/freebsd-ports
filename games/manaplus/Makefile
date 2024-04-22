@@ -1,6 +1,6 @@
 PORTNAME=	manaplus
 DISTVERSION=	2.1.3.17
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://download.evolonline.org/manaplus/download/${PORTVERSION}/
 
@@ -21,6 +21,7 @@ USE_SDL=	sdl2 gfx2 image2 mixer2 net2 ttf2
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-sdl2 \
 		--without-internalsdlgfx
 

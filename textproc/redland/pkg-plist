@@ -33,10 +33,10 @@ lib/librdf.so.0.0.0
 %%SQLITE%%lib/redland/librdf_storage_sqlite.a
 %%SQLITE%%lib/redland/librdf_storage_sqlite.so
 libdata/pkgconfig/redland.pc
-man/man1/rdfproc.1.gz
-man/man1/redland-config.1.gz
-man/man1/redland-db-upgrade.1.gz
-man/man3/redland.3.gz
+share/man/man1/rdfproc.1.gz
+share/man/man1/redland-config.1.gz
+share/man/man1/redland-db-upgrade.1.gz
+share/man/man3/redland.3.gz
 share/gtk-doc/html/redland/home.png
 share/gtk-doc/html/redland/index.html
 share/gtk-doc/html/redland/index.sgml

@@ -1,5 +1,5 @@
 bin/wmclock
-man/man1/wmclock.1.gz
+share/man/man1/wmclock.1.gz
 %%DATADIR%%/lang.breton/month.xpm
 %%DATADIR%%/lang.breton/weekday.xpm
 %%DATADIR%%/lang.croatian/month.xpm

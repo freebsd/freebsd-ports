@@ -1,7 +1,9 @@
 include/CLI/App.hpp
+include/CLI/Argv.hpp
 include/CLI/CLI.hpp
 include/CLI/Config.hpp
 include/CLI/ConfigFwd.hpp
+include/CLI/Encoding.hpp
 include/CLI/Error.hpp
 include/CLI/Formatter.hpp
 include/CLI/FormatterFwd.hpp
@@ -14,12 +16,14 @@ include/CLI/TypeTools.hpp
 include/CLI/Validators.hpp
 include/CLI/Version.hpp
 include/CLI/impl/App_inl.hpp
+include/CLI/impl/Argv_inl.hpp
 include/CLI/impl/Config_inl.hpp
+include/CLI/impl/Encoding_inl.hpp
 include/CLI/impl/Formatter_inl.hpp
 include/CLI/impl/Option_inl.hpp
 include/CLI/impl/Split_inl.hpp
 include/CLI/impl/StringTools_inl.hpp
 include/CLI/impl/Validators_inl.hpp
+libdata/pkgconfig/CLI11.pc
 share/cmake/CLI11/CLI11Config.cmake
 share/cmake/CLI11/CLI11ConfigVersion.cmake
-share/pkgconfig/CLI11.pc

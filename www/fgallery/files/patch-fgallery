@@ -1,0 +1,11 @@
+--- fgallery.orig	2024-03-17 13:48:32 UTC
++++ fgallery
+@@ -649,7 +649,7 @@ sub process_img
+     sys('jpegoptim', '-q', $fout);
+   } elsif($pngoptim && $props{FileType} eq "PNG")
+   {
+-    sys('pngcrush', '-q', $fout, $ftmp);
++    sys('pngcrush', '-q --out', $ftmp, $fout);
+     rename($ftmp, $fout);
+   }
+ 

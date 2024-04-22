@@ -1,16 +1,14 @@
---- Makefile.orig	2023-11-11 21:38:04.595901000 +0000
-+++ Makefile	2023-11-11 21:42:32.782642000 +0000
-@@ -37,8 +37,8 @@
+--- Makefile.orig	2023-05-25 21:02:56 UTC
++++ Makefile
+@@ -37,7 +37,7 @@
  
  DESTDIR=
  PREFIX=$(DESTDIR)/usr/local
 -INFODIR=$(PREFIX)/info
--MAN1DIR=$(PREFIX)/share/man/man1
 +INFODIR=$(PREFIX)/share/info
-+MAN1DIR=$(PREFIX)/man/man1
+ MAN1DIR=$(PREFIX)/share/man/man1
  BINDIR=$(PREFIX)/bin
  SITELISP=$(PREFIX)/share/emacs/site-lisp/emms
- 
 @@ -48,7 +48,7 @@
  
  GINSTALLINFO = /usr/bin/ginstall-info --info-dir=$(INFODIR)

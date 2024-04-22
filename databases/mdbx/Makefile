@@ -1,5 +1,6 @@
 PORTNAME=	mdbx
 PORTVERSION=	0.11.14
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 MASTER_SITES=	https://libmdbx.dqdkfa.ru/release/
@@ -19,6 +20,7 @@ USE_LDCONFIG=	yes
 
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	mdbx tools
+MAKE_ENV=	mandir=${PREFIX}/share/man
 
 CFLAGS+=	-Wall -Werror -Wextra -Wpedantic -ffunction-sections \
 		-fPIC -fvisibility=hidden -std=gnu11 -pthread -Wno-error=attributes

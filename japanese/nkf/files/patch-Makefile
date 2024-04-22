@@ -15,7 +15,7 @@
 -prefix = /usr/local
 +MKDIR ?= mkdir
 +prefix = $(DESTDIR)$(PREFIX)
-+manprefix = $(DESTDIR)$(MANPREFIX)
++manprefix = $(DESTDIR)$(PREFIX)/share
  PYTHON2 = python
  PYTHON3 = python
 +BSD_INSTALL_PROGRAM?= ${INSTALL} -s -o root -g wheel -m 555
@@ -52,9 +52,9 @@
 +	${ICONV_CMD} -f iso-2022-jp -t utf-8 < $? > $@
 +
 +install-man-ja: nkf.1u
-+	-$(MKDIR) $(manprefix)/man/ja.UTF-8
-+	-$(MKDIR) $(manprefix)/man/ja.UTF-8/man1
-+	${BSD_INSTALL_MAN} nkf.1u $(manprefix)/man/ja.UTF-8/man1/nkf.1
++	-$(MKDIR) $(manprefix)/man/ja
++	-$(MKDIR) $(manprefix)/man/ja/man1
++	${BSD_INSTALL_MAN} nkf.1u $(manprefix)/man/ja/man1/nkf.1
  
  shar:
  	-mkdir nkf-$(VERSION)

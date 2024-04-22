@@ -4,7 +4,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dgeo@centrale-marseille.fr
+MAINTAINER=	dgeo@centrale-med.fr
 COMMENT=	Make it easy to run code against a local-lib
 WWW=		https://metacpan.org/release/App-local-lib-helper
 

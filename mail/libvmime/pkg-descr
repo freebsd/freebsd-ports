@@ -4,5 +4,3 @@ and Internet messaging services like IMAP, POP or SMTP.
 With VMime you can parse, generate and modify messages, and also connect to
 store and transport services to receive or send messages over the Internet. The
 library offers all the features to build a complete mail client.
-
-See also: https://github.com/kisli/vmime

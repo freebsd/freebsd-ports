@@ -318,7 +318,9 @@ bin/@Install_MBM_Marmoset
 bin/@Install_MEICA_Demo
 bin/@Install_NIH_Marmoset
 bin/@Install_NMT
+bin/@Install_RAT_DEMO_REST
 bin/@Install_RSFMRI_Motion_Group_Demo
+bin/@Install_SAM_marmoset
 bin/@Install_SURFLAYERS_DEMO1
 bin/@Install_TSrestMovieDemo
 bin/@IsoMasks
@@ -492,9 +494,11 @@ bin/abids_json_info.py
 bin/abids_json_tool.py
 bin/abids_tool.py
 bin/adjunct_apqc_tsnr_general
+bin/adjunct_atlas_points_to_labeltable
 bin/adjunct_aw_tableize_roi_info.py
 bin/adjunct_calc_mont_dims.py
 bin/adjunct_combine_str.py
+bin/adjunct_deob_around_origin
 bin/adjunct_is_label.py
 bin/adjunct_make_script_and_rst.py
 bin/adjunct_select_str.py
@@ -526,6 +530,7 @@ bin/afnisumagui_logo_905sq.png
 bin/aiv
 bin/align_epi_anat.py
 bin/ap_run_simple_rest.tcsh
+bin/ap_run_simple_rest_me.tcsh
 bin/apqc_logo_help.svg
 bin/apqc_logo_main.svg
 bin/apqc_make_html.py
@@ -539,6 +544,7 @@ bin/cat_matvec
 bin/ccalc
 bin/cifti_tool
 bin/column_cat
+bin/compute_ROI_stats.tcsh
 bin/convert_cdiflist_to_grads.py
 bin/count
 bin/dcm2niix_afni
@@ -578,6 +584,7 @@ bin/fim2
 bin/find_variance_lines.tcsh
 bin/float_scan
 bin/from3d
+bin/gen_cluster_table
 bin/gen_epi_review.py
 bin/gen_group_command.py
 bin/gen_ss_review_scripts.py
@@ -586,6 +593,7 @@ bin/get_afni_model_PRF
 bin/get_afni_model_PRF_6
 bin/get_afni_model_PRF_6_BAD
 bin/gifti_tool
+bin/gtkyd_check
 bin/help_format
 bin/im2niml
 bin/images_equal
@@ -643,12 +651,14 @@ bin/rPkgsInstall.R
 bin/read_matlab_files.py
 bin/realtime_receiver.py
 bin/rmz
+bin/roi_stats_warnings.py
 bin/rotcom
 bin/rtfeedme
 bin/serial_helper
 bin/sfim
 bin/slow_surf_clustsim.py
 bin/smooth.R
+bin/sswarper2
 bin/stimband
 bin/strblast
 bin/suma
@@ -833,6 +843,7 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_stats_dset.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_tcsh.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_b0_corr.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_cbar_pbar.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_cdiflist.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_csv.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_decay_timing.py
@@ -864,6 +875,7 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_qt_gui.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_rand_timing.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_realtime.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_roi_stats.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_ss_review.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_subjects.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_surf_clustsim.py

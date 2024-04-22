@@ -1,0 +1,11 @@
+-- workaround for https://github.com/softwareQinc/qpp/issues/171
+
+--- unit_tests/CMakeLists.txt.orig	2024-03-04 21:51:04 UTC
++++ unit_tests/CMakeLists.txt
+@@ -40,5 +40,5 @@ endforeach()
+   target_sources(${TARGET_NAME} PUBLIC ${file})
+ endforeach()
+ 
+-target_link_libraries(${TARGET_NAME} PUBLIC ${QPP_LINK_DEPS} gmock libqpp)
++target_link_libraries(${TARGET_NAME} PUBLIC ${QPP_LINK_DEPS} gtest gmock libqpp)
+ gtest_discover_tests(${TARGET_NAME})

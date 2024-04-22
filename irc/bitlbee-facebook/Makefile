@@ -5,7 +5,7 @@ PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	irc
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Facebook plugin for bitlbee
 WWW=		https://wiki.bitlbee.org/HowtoFacebookMQTT
 

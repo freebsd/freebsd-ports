@@ -1,5 +1,6 @@
 PORTNAME=	pipewire-module-xrdp
-DISTVERSION=	b20230609
+DISTVERSION=	0.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
 MAINTAINER=	meta@FreeBSD.org
@@ -16,7 +17,6 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	neutrinolabs
-GH_TAGNAME=	e9c6c05
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	lib/pipewire-0.3/libpipewire-module-xrdp-pipewire.so \

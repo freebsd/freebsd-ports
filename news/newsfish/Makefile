@@ -1,5 +1,6 @@
 PORTNAME=	newsfish
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	SF
 
@@ -9,8 +10,9 @@ WWW=		https://www.saddi.com/software/newsfish/
 
 USES=		gmake
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=	bin/newsfish \
-		man/man1/newsfish.1.gz
+		share/man/man1/newsfish.1.gz
 
 .include <bsd.port.mk>

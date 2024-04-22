@@ -1,8 +1,8 @@
---- Gemfile.orig	2022-02-28 12:02:31 UTC
+--- Gemfile.orig	2024-02-29 06:16:41 UTC
 +++ Gemfile
-@@ -7,35 +7,3 @@ gem 'emot'
+@@ -7,34 +7,3 @@ gem 'rake'
+ gem 'emot'
  gem 'mail'
- gem 'net-smtp' # https://github.com/mikel/mail/pull/1439
  gem 'rake'
 -
 -group :development do
@@ -11,7 +11,6 @@
 -  gem 'redcarpet'
 -  gem 'octokit'
 -  gem 'mime-types'
--  gem "debug"
 -
 -  group :test do
 -    gem 'test-unit'

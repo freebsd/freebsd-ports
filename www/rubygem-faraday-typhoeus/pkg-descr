@@ -1,0 +1,2 @@
+Faraday Typhoeus Adapter is a Faraday 2 adapter for the Typhoeus parallel HTTP
+client. It supports parallel HTTP requests and streaming.

@@ -73,8 +73,8 @@ libdata/pkgconfig/libcdio.pc
 libdata/pkgconfig/libiso9660++.pc
 libdata/pkgconfig/libiso9660.pc
 libdata/pkgconfig/libudf.pc
-man/man1/cd-drive.1.gz
-man/man1/cd-info.1.gz
-man/man1/cd-read.1.gz
-man/man1/iso-info.1.gz
-man/man1/iso-read.1.gz
+share/man/man1/cd-drive.1.gz
+share/man/man1/cd-info.1.gz
+share/man/man1/cd-read.1.gz
+share/man/man1/iso-info.1.gz
+share/man/man1/iso-read.1.gz

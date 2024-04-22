@@ -13,6 +13,8 @@ WWW=		https://lz4.org/ \
 
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi
+LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/../../lib/LICENSE
+LICENSE_FILE_GPLv2=	${WRKSRC}/../../programs/COPYING
 
 USES=		cpe meson pkgconfig python:build shebangfix
 

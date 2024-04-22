@@ -1,14 +1,14 @@
 PORTNAME=	acpica
-PORTVERSION=	20221020
+PORTVERSION=	20240321
 CATEGORIES=	sysutils devel
-MASTER_SITES=	https://acpica.org/sites/acpica/files/ \
+MASTER_SITES=	https://downloadmirror.intel.com/819451/ \
 		LOCAL/jkim
 PKGNAMESUFFIX=	-tools
 DISTNAME=	${PORTNAME}-unix-${PORTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Tools from the ACPI Component Architecture (ACPICA) project
-WWW=		https://acpica.org
+WWW=		https://www.intel.com/content/www/us/en/developer/topic-technology/open/acpica/overview.html
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual

@@ -1,6 +1,5 @@
 PORTNAME=	mate-terminal
-PORTVERSION=	1.26.0
-PORTREVISION=	2
+PORTVERSION=	1.28.1
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -24,6 +23,7 @@ USE_XORG=	ice sm x11
 USE_GNOME=	cairo dconf gdkpixbuf2 gtk30 intltool vte3
 SHEBANG_FILES=	mate-terminal.wrapper
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 GLIB_SCHEMAS=	org.mate.terminal.gschema.xml
 

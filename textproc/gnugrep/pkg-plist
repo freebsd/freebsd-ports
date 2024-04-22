@@ -4,7 +4,6 @@ bin/gegrep
 bin/gfgrep
 bin/ggrep
 %%COMPAT%%bin/grep
-man/man1/ggrep.1.gz
 %%NLS%%share/locale/af/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/be/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/grep.mo
@@ -50,3 +49,4 @@ man/man1/ggrep.1.gz
 %%NLS%%share/locale/vi/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/grep.mo
+share/man/man1/ggrep.1.gz

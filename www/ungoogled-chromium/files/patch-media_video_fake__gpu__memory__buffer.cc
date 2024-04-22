@@ -1,4 +1,4 @@
---- media/video/fake_gpu_memory_buffer.cc.orig	2022-10-01 07:40:07 UTC
+--- media/video/fake_gpu_memory_buffer.cc.orig	2024-02-25 20:22:18 UTC
 +++ media/video/fake_gpu_memory_buffer.cc
 @@ -9,7 +9,7 @@
  #include "media/base/format_utils.h"
@@ -27,7 +27,7 @@
    for (size_t i = 0; i < VideoFrame::NumPlanes(video_pixel_format_); i++) {
      const gfx::Size plane_size_in_bytes =
          VideoFrame::PlaneSize(video_pixel_format_, i, size_);
-@@ -134,7 +134,7 @@ gfx::GpuMemoryBufferHandle FakeGpuMemoryBuffer::CloneH
+@@ -132,7 +132,7 @@ gfx::GpuMemoryBufferHandle FakeGpuMemoryBuffer::CloneH
    gfx::GpuMemoryBufferHandle handle;
    handle.type = gfx::NATIVE_PIXMAP;
    handle.id = handle_.id;

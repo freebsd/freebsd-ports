@@ -1,6 +1,6 @@
 PORTNAME?=	svxlink
-PORTVERSION=	19.09.1
-PORTREVISION=	4
+PORTVERSION=	19.09.2
+PORTREVISION?=	2
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -9,15 +9,15 @@ WWW=		https://www.svxlink.org/
 
 LICENSE?=	GPLv2
 
-LIB_DEPENDS?=	libgsm.so:audio/gsm \
-		libspeex.so:audio/speex \
-		libgpg-error.so:security/libgpg-error \
+LIB_DEPENDS?=	libcurl.so:ftp/curl \
 		libgcrypt.so:security/libgcrypt \
-		libsigc-2.0.so:devel/libsigc++20 \
-		libpopt.so:devel/popt \
+		libgpg-error.so:security/libgpg-error \
+		libgsm.so:audio/gsm \
 		libopus.so:audio/opus \
+		libpopt.so:devel/popt \
 		librtlsdr.so:comms/rtl-sdr \
-		libcurl.so:ftp/curl
+		libsigc-2.0.so:devel/libsigc++20 \
+		libspeex.so:audio/speex
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 
 USES+=		cmake:noninja compiler:c++11-lang groff pkgconfig tcl
@@ -26,36 +26,39 @@ GH_ACCOUNT=	sm0svx
 GH_PROJECT=	svxlink
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
-CMAKE_ARGS+=	-DMAN_INSTALL_DIR:FILEPATH=${PREFIX}/share/man \
-		-DLOCAL_STATE_DIR=/var \
-		-DLOCALBASE:STRING="${LOCALBASE}"
+CMAKE_ARGS+=	-DLOCAL_STATE_DIR=/var \
+		-DLOCALBASE:STRING="${LOCALBASE}" \
+		-DMAN_INSTALL_DIR:FILEPATH=${PREFIX}/share/man
 
-.if ${PORTNAME}==svxlink
+.if ${PORTNAME} == svxlink
+USERS=		svxlink
+GROUPS=		svxlink
+USE_RC_SUBR=	remotetrx svxlink svxreflector
 CMAKE_ARGS+=	-DUSE_QT:BOOL=NO
 .endif
 USE_LDCONFIG=	yes
 
-ALL_TARGET?=	all man
-OPTIONS_DEFINE=	DOXYGEN STATIC DOCS
-STATIC_DESC=	Build and install static libraries
+ALL_TARGET?=		all man
+OPTIONS_DEFINE=		DOCS DOXYGEN STATIC
+STATIC_DESC=		Build and install static libraries
 STATIC_CMAKE_ON=	-DBUILD_STATIC_LIBS=YES
-.if ${PORTNAME}==svxlink
-OPTIONS_DEFAULT=OSS ALSA
-OPTIONS_MULTI=	SOUND
+.if ${PORTNAME} == svxlink
+OPTIONS_DEFAULT=	ALSA OSS
+OPTIONS_MULTI=		SOUND
 OPTIONS_MULTI_SOUND=	ALSA OSS
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-ALSA_CMAKE_OFF=	-DUSE_ALSA:BOOL=OFF
-ALSA_CMAKE_ON=	-DUSE_ALSA:BOOL=ON
-OSS_CMAKE_OFF=	-DUSE_OSS:BOOL=OFF
-OSS_CMAKE_ON=	-DUSE_OSS:BOOL=ON
+ALSA_CMAKE_OFF=		-DUSE_ALSA:BOOL=OFF
+ALSA_CMAKE_ON=		-DUSE_ALSA:BOOL=ON
+OSS_CMAKE_OFF=		-DUSE_OSS:BOOL=OFF
+OSS_CMAKE_ON=		-DUSE_OSS:BOOL=ON
 .endif
 DOXYGEN_IMPLIES=	DOCS
-DOXYGEN_ALL_TARGET=doc
+DOXYGEN_ALL_TARGET=	doc
 DOXYGEN_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:BOOL=TRUE
-DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
-			dot:graphics/graphviz
-OPTIONS_SUB=	yes
-PORTDOCS=	*
+DOXYGEN_BUILD_DEPENDS=	dot:graphics/graphviz \
+			doxygen:devel/doxygen
+OPTIONS_SUB=		yes
+PORTDOCS=		*
 
 post-patch:
 	@${GREP} -lr /dev/ttyS0 ${WRKSRC} | ${GREP} -v .bak | ${GREP} -v .orig | ${XARGS} \
@@ -75,7 +78,7 @@ post-patch-OSS-on:
 	@${GREP} -lr alsa:plughw:0 ${WRKSRC} | ${GREP} -v .bak | ${GREP} -v .orig | ${XARGS} \
 		${REINPLACE_CMD} -e 's|alsa:plughw:0|oss:/dev/dsp|'
 
-.if ${PORTNAME}==svxlink
+.if ${PORTNAME} == svxlink
 post-install:
 	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/.procmailrc \
 		${STAGEDIR}${PREFIX}/etc/svxlink/.procmailrc.sample
@@ -109,15 +112,17 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/svxlink/svxlink.d/ModuleTclVoiceMail.conf.sample
 	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/svxlink.d/ModuleTrx.conf \
 		${STAGEDIR}${PREFIX}/etc/svxlink/svxlink.d/ModuleTrx.conf.sample
+	${INSTALL} -d   ${STAGEDIR}/var/spool/svxlink
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/doc/README-19.09.adoc ${STAGEDIR}${DOCSDIR}
 .endif
-.if ${PORTNAME}==qtel
+.if ${PORTNAME} == qtel
 post-install:
 	${RM}	${STAGEDIR}${PREFIX}/include/svxlink/CppStdCompat.h
 	${RM}	${STAGEDIR}${PREFIX}/include/svxlink/common.h
 	${RM}	${STAGEDIR}${PREFIX}/lib/libsvxmisc.a
 .endif
+
 .include <bsd.port.mk>

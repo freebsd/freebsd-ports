@@ -48,7 +48,7 @@ load_rc_config ${name}
 
 pidfile="${%%RC_NAME%%_pid_dir}/${%%RC_NAME%%_pid}"
 command="/usr/sbin/daemon"
-command_args="-r -f -P ${pidfile} %%PREFIX%%/lib/emby-server/system/EmbyServer \
+command_args="-r -f -P ${pidfile} %%LOCALBASE%%/bin/dotnet %%PREFIX%%/lib/emby-server/system/EmbyServer.dll \
 	-os freebsd \
 	-ffdetect ${%%RC_NAME%%_ffdetect} \
 	-ffmpeg ${%%RC_NAME%%_ffmpeg} \

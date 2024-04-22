@@ -1,6 +1,6 @@
 PORTNAME=		tkshape
 PORTVERSION=		0.4
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		x11-toolkits
 MASTER_SITES=		http://www.cs.man.ac.uk/~fellowsd/tcl/ \
 			http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
@@ -84,7 +84,7 @@ do-install:
 	cd ${WRKSRC}; \
 	for m in ${MANPAGES} ; do \
 	    s=$${m##*.}; \
-	    ${INSTALL_MAN} doc/$${m} ${STAGEDIR}${PREFIX}/man/man$${s}/$${m}; \
+	    ${INSTALL_MAN} doc/$${m} ${STAGEDIR}${PREFIX}/share/man/man$${s}/$${m}; \
 	done;
 .endif
 

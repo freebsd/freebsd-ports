@@ -1,3 +1,5 @@
-TIMESTAMP = 1661499073
-SHA256 (eth-cscs-SpFFT-v1.0.6_GH0.tar.gz) = d179ccdce65890587d0cbf72dc2e5ec0b200ffc56e723ed01a2f5063de6a8630
-SIZE (eth-cscs-SpFFT-v1.0.6_GH0.tar.gz) = 372347
+TIMESTAMP = 1711106034
+SHA256 (eth-cscs-SpFFT-v1.1.0_GH0.tar.gz) = d4673b3135aebfa1c440723226fe976d518ff881285b3d4787f1aa8210eac81e
+SIZE (eth-cscs-SpFFT-v1.1.0_GH0.tar.gz) = 364222
+SHA256 (c91e7ec9f420d477a8144dee2bc36cd8dde434c4.patch) = ef24018e565693e805cccb56f36aa0ed2dc9a31b3d6bf26a5aaceeb5f15f253b
+SIZE (c91e7ec9f420d477a8144dee2bc36cd8dde434c4.patch) = 1657

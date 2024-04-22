@@ -1,5 +1,6 @@
 PORTNAME=	tclcheck
 DISTVERSION=	1.1.14
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -22,13 +23,13 @@ GL_TAGNAME=	9de3e5b12c5f453137305377344cb1d1c848e75e
 OPTIONS_DEFINE=	DOCS
 
 PLIST_FILES=	bin/tclCheck \
-		man/man1/tclCheck.1.gz \
+		share/man/man1/tclCheck.1.gz \
 
 PORTDOCS=	README README.md
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tclCheck ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/tclCheck.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/tclCheck.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

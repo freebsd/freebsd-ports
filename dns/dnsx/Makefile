@@ -1,6 +1,6 @@
 PORTNAME=	dnsx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.6
+DISTVERSION=	1.2.1
 PORTREVISION=	1
 CATEGORIES=	dns
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/projectdiscovery/dnsx
 
 LICENSE=	MIT
 
-USES=		go:modules
+USES=		go:1.21,modules
 
 GO_MODULE=	github.com/projectdiscovery/dnsx
 GO_TARGET=	./cmd/${PORTNAME}

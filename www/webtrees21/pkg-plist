@@ -257,6 +257,7 @@
 %%WWWDIR%%/app/CustomTags/Reunion.php
 %%WWWDIR%%/app/CustomTags/RootsMagic.php
 %%WWWDIR%%/app/CustomTags/TheMasterGenealogist.php
+%%WWWDIR%%/app/CustomTags/TheNextGeneration.php
 %%WWWDIR%%/app/Date/AbstractCalendarDate.php
 %%WWWDIR%%/app/Date/AbstractGregorianJulianDate.php
 %%WWWDIR%%/app/Date/FrenchDate.php
@@ -351,6 +352,7 @@
 %%WWWDIR%%/app/Elements/FirstCommunion.php
 %%WWWDIR%%/app/Elements/Form.php
 %%WWWDIR%%/app/Elements/GedcomElement.php
+%%WWWDIR%%/app/Elements/GeneatiqueAct.php
 %%WWWDIR%%/app/Elements/GenerationsOfAncestors.php
 %%WWWDIR%%/app/Elements/GenerationsOfDescendants.php
 %%WWWDIR%%/app/Elements/GovIdentifier.php
@@ -543,6 +545,7 @@
 %%WWWDIR%%/app/Http/Exceptions/HttpAccessDeniedException.php
 %%WWWDIR%%/app/Http/Exceptions/HttpBadRequestException.php
 %%WWWDIR%%/app/Http/Exceptions/HttpException.php
+%%WWWDIR%%/app/Http/Exceptions/HttpGoneException.php
 %%WWWDIR%%/app/Http/Exceptions/HttpNotFoundException.php
 %%WWWDIR%%/app/Http/Exceptions/HttpServerErrorException.php
 %%WWWDIR%%/app/Http/Exceptions/HttpServiceUnavailableException.php
@@ -2528,6 +2531,15 @@
 %%WWWDIR%%/vendor/brick/math/src/Internal/Calculator/NativeCalculator.php
 %%WWWDIR%%/vendor/brick/math/src/Internal/Calculator.php
 %%WWWDIR%%/vendor/brick/math/src/RoundingMode.php
+%%WWWDIR%%/vendor/carbonphp/carbon-doctrine-types/composer.json
+%%WWWDIR%%/vendor/carbonphp/carbon-doctrine-types/LICENSE
+%%WWWDIR%%/vendor/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine/CarbonDoctrineType.php
+%%WWWDIR%%/vendor/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine/CarbonImmutableType.php
+%%WWWDIR%%/vendor/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine/CarbonType.php
+%%WWWDIR%%/vendor/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine/CarbonTypeConverter.php
+%%WWWDIR%%/vendor/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine/DateTimeDefaultPrecision.php
+%%WWWDIR%%/vendor/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine/DateTimeImmutableType.php
+%%WWWDIR%%/vendor/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine/DateTimeType.php
 %%WWWDIR%%/vendor/composer/autoload_classmap.php
 %%WWWDIR%%/vendor/composer/autoload_files.php
 %%WWWDIR%%/vendor/composer/autoload_namespaces.php
@@ -2639,6 +2651,7 @@
 %%WWWDIR%%/vendor/doctrine/dbal/src/Driver/OCI8/Driver.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Driver/OCI8/Exception/ConnectionFailed.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Driver/OCI8/Exception/Error.php
+%%WWWDIR%%/vendor/doctrine/dbal/src/Driver/OCI8/Exception/InvalidConfiguration.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Driver/OCI8/Exception/NonTerminatedStringLiteral.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Driver/OCI8/Exception/SequenceDoesNotExist.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Driver/OCI8/Exception/UnknownParameterIndex.php
@@ -2765,6 +2778,7 @@
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/MariaDb1027Platform.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/MariaDb1043Platform.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/MariaDb1052Platform.php
+%%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/MariaDb1060Platform.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/MariaDBPlatform.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/MySQL/CollationMetadataProvider/CachingCollationMetadataProvider.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/MySQL/CollationMetadataProvider/ConnectionCollationMetadataProvider.php
@@ -2780,6 +2794,7 @@
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/SQLite/Comparator.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/SqlitePlatform.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/SQLServer/Comparator.php
+%%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/SQLServer/SQL/Builder/SQLServerSelectSQLBuilder.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/SQLServer2012Platform.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/SQLServerPlatform.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/TrimMode.php
@@ -2792,8 +2807,12 @@
 %%WWWDIR%%/vendor/doctrine/dbal/src/Portability/Statement.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Query/Expression/CompositeExpression.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Query/Expression/ExpressionBuilder.php
+%%WWWDIR%%/vendor/doctrine/dbal/src/Query/ForUpdate/ConflictResolutionMode.php
+%%WWWDIR%%/vendor/doctrine/dbal/src/Query/ForUpdate.php
+%%WWWDIR%%/vendor/doctrine/dbal/src/Query/Limit.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Query/QueryBuilder.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Query/QueryException.php
+%%WWWDIR%%/vendor/doctrine/dbal/src/Query/SelectQuery.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Query.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Result.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Schema/AbstractAsset.php
@@ -2846,7 +2865,9 @@
 %%WWWDIR%%/vendor/doctrine/dbal/src/Schema/Visitor/RemoveNamespacedAssets.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Schema/Visitor/Visitor.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/SQL/Builder/CreateSchemaObjectsSQLBuilder.php
+%%WWWDIR%%/vendor/doctrine/dbal/src/SQL/Builder/DefaultSelectSQLBuilder.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/SQL/Builder/DropSchemaObjectsSQLBuilder.php
+%%WWWDIR%%/vendor/doctrine/dbal/src/SQL/Builder/SelectSQLBuilder.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/SQL/Parser/Exception/RegularExpressionError.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/SQL/Parser/Exception.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/SQL/Parser/Visitor.php
@@ -6916,13 +6937,6 @@
 %%WWWDIR%%/vendor/nesbot/carbon/src/Carbon/CarbonPeriodImmutable.php
 %%WWWDIR%%/vendor/nesbot/carbon/src/Carbon/CarbonTimeZone.php
 %%WWWDIR%%/vendor/nesbot/carbon/src/Carbon/Cli/Invoker.php
-%%WWWDIR%%/vendor/nesbot/carbon/src/Carbon/Doctrine/CarbonDoctrineType.php
-%%WWWDIR%%/vendor/nesbot/carbon/src/Carbon/Doctrine/CarbonImmutableType.php
-%%WWWDIR%%/vendor/nesbot/carbon/src/Carbon/Doctrine/CarbonType.php
-%%WWWDIR%%/vendor/nesbot/carbon/src/Carbon/Doctrine/CarbonTypeConverter.php
-%%WWWDIR%%/vendor/nesbot/carbon/src/Carbon/Doctrine/DateTimeDefaultPrecision.php
-%%WWWDIR%%/vendor/nesbot/carbon/src/Carbon/Doctrine/DateTimeImmutableType.php
-%%WWWDIR%%/vendor/nesbot/carbon/src/Carbon/Doctrine/DateTimeType.php
 %%WWWDIR%%/vendor/nesbot/carbon/src/Carbon/Exceptions/BadComparisonUnitException.php
 %%WWWDIR%%/vendor/nesbot/carbon/src/Carbon/Exceptions/BadFluentConstructorException.php
 %%WWWDIR%%/vendor/nesbot/carbon/src/Carbon/Exceptions/BadFluentSetterException.php

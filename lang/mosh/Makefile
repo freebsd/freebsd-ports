@@ -1,6 +1,6 @@
 PORTNAME=	mosh
 PORTVERSION=	0.2.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	lang
 MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/mosh-scheme/
 PKGNAMESUFFIX=	-scheme
@@ -24,6 +24,7 @@ CONFLICTS_INSTALL=	mosh-1.[0-9].*
 
 USES=		gmake ssl
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--datadir=${PREFIX}/lib
 
 CFLAGS+=	-I${LOCALBASE}/include
@@ -40,7 +41,7 @@ CONFIGURE_ENV+=	MOSH_OPTS="-mmmx"
 .endif
 
 x-generate-plist: stage
-	@(${FIND} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/man -name \
+	@(${FIND} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/share/man -name \
 		'*mosh*' ; ${FIND} ${STAGEDIR}${PREFIX}/lib/mosh -type f) \
 		| ${SORT} | ${SED} -e 's,^${STAGEDIR}${PREFIX}/,,' \
 		> pkg-plist.new

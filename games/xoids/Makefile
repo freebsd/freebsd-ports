@@ -1,6 +1,6 @@
 PORTNAME=	xoids
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	XCONTRIB/games
 
@@ -15,7 +15,7 @@ USE_XORG=	x11 xpm
 CFLAGS+=	-fcommon
 
 PLIST_FILES=	bin/xoids \
-		man/man6/xoids.6.gz
+		share/man/man6/xoids.6.gz
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS

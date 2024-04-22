@@ -39,7 +39,7 @@
 +      <filename class='directory'>%%LOCALBASE%%/etc</filename>
        are processed before files in
 -      <filename class='directory'>/usr</filename>).
-+      <filename class='directory'>%%LOCALBASE/share</filename>).
++      <filename class='directory'>%%LOCALBASE%%/share</filename>).
        For example, for the following four
        files, the order is
      </para>

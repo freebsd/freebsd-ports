@@ -1,5 +1,5 @@
 PORTNAME=	virtualbox-ose
-PORTVERSION=	6.1.48
+PORTVERSION=	6.1.50
 PORTREVISION?=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
@@ -146,7 +146,6 @@ CONFLICTS_INSTALL+=	virtualbox-ose
 .if ${PORT_OPTIONS:MDEBUG}
 KMK_BUILDTYPE=	debug
 KMK_FLAGS+=	BUILD_TYPE=debug
-WITH_DEBUG=	yes
 .else
 KMK_BUILDTYPE=	release
 .endif

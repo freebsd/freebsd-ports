@@ -1,6 +1,6 @@
 PORTNAME=	libtrace
 PORTVERSION=	3.0.19
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://research.wand.net.nz/software/libtrace/
 
@@ -14,6 +14,7 @@ CONFIGURE_ARGS=	--with-libpcap=${LOCALBASE} \
 		libtrace_doxygen=false
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 USES=		gmake libtool ncurses
 LDFLAGS+=	-L${LOCALBASE}/lib

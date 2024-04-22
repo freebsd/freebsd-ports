@@ -1,6 +1,6 @@
 PORTNAME=	xtic
 PORTVERSION=	1.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	XCONTRIB/games
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -12,7 +12,7 @@ USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 CFLAGS+=	-fcommon
 
-PLIST_FILES=	bin/xtic man/man1/xtic.1.gz
+PLIST_FILES=	bin/xtic share/man/man1/xtic.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/configure.h

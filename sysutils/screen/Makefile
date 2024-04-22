@@ -1,6 +1,6 @@
 PORTNAME=	screen
 PORTVERSION=	4.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU \
 		ftp://ftp.gnu.org/gnu/screen/ \
@@ -14,6 +14,8 @@ MASTER_SITES=	GNU \
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Multi-screen window manager
 WWW=		https://www.gnu.org/software/screen/
+
+CONFLICTS=	screen-devel*
 
 LICENSE=	GPLv3
 
@@ -56,6 +58,7 @@ SSP_CFLAGS?=	-fno-stack-protector
 .endif
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX= ${PREFIX}/share
 CFLAGS+=	-I${NCURSESINC}
 LDFLAGS+=	-L${NCURSESLIB}
 

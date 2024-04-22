@@ -1,5 +1,6 @@
 PORTNAME=	hammer2
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -22,10 +23,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/sbin/newfs_hammer2/newfs_hammer2 ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/src/sbin/mount_hammer2/mount_hammer2 ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/src/sbin/fsck_hammer2/fsck_hammer2 ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/src/sbin/hammer2/hammer2.8 ${STAGEDIR}${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/src/sbin/newfs_hammer2/newfs_hammer2.8 ${STAGEDIR}${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/src/sbin/mount_hammer2/mount_hammer2.8 ${STAGEDIR}${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/src/sbin/fsck_hammer2/fsck_hammer2.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/src/sbin/hammer2/hammer2.8 ${STAGEDIR}${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/src/sbin/newfs_hammer2/newfs_hammer2.8 ${STAGEDIR}${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/src/sbin/mount_hammer2/mount_hammer2.8 ${STAGEDIR}${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/src/sbin/fsck_hammer2/fsck_hammer2.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/hammer2

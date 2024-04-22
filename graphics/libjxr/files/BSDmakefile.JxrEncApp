@@ -1,7 +1,7 @@
 PROG=	JxrEncApp
 
 BINDIR=	${PREFIX}/bin
-MANDIR=	${MANPREFIX}/man/man
+MANDIR=	${PREFIX}/share/man/man
 
 CFLAGS=	-I${.CURDIR:H}/jxrgluelib -I${.CURDIR:H}/jxrtestlib
 CFLAGS+=-I${.CURDIR:H}/image/sys -I${.CURDIR:H}/common/include

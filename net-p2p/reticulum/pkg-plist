@@ -1,5 +1,6 @@
 bin/rncp
 bin/rnid
+bin/rnir
 bin/rnodeconf
 bin/rnpath
 bin/rnprobe
@@ -124,6 +125,7 @@ bin/rnx
 %%PYTHON_SITELIBDIR%%/RNS/Interfaces/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Link.py
 %%PYTHON_SITELIBDIR%%/RNS/Packet.py
+%%PYTHON_SITELIBDIR%%/RNS/Resolver.py
 %%PYTHON_SITELIBDIR%%/RNS/Resource.py
 %%PYTHON_SITELIBDIR%%/RNS/Reticulum.py
 %%PYTHON_SITELIBDIR%%/RNS/Transport.py
@@ -134,6 +136,8 @@ bin/rnx
 %%PYTHON_SITELIBDIR%%/RNS/Utilities/__pycache__/rncp%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Utilities/__pycache__/rnid%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Utilities/__pycache__/rnid%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/RNS/Utilities/__pycache__/rnir%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/RNS/Utilities/__pycache__/rnir%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Utilities/__pycache__/rnodeconf%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Utilities/__pycache__/rnodeconf%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Utilities/__pycache__/rnpath%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -148,6 +152,7 @@ bin/rnx
 %%PYTHON_SITELIBDIR%%/RNS/Utilities/__pycache__/rnx%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/Utilities/rncp.py
 %%PYTHON_SITELIBDIR%%/RNS/Utilities/rnid.py
+%%PYTHON_SITELIBDIR%%/RNS/Utilities/rnir.py
 %%PYTHON_SITELIBDIR%%/RNS/Utilities/rnodeconf.py
 %%PYTHON_SITELIBDIR%%/RNS/Utilities/rnpath.py
 %%PYTHON_SITELIBDIR%%/RNS/Utilities/rnprobe.py
@@ -167,6 +172,8 @@ bin/rnx
 %%PYTHON_SITELIBDIR%%/RNS/__pycache__/Link%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/__pycache__/Packet%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/RNS/__pycache__/Packet%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/RNS/__pycache__/Resolver%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/RNS/__pycache__/Resolver%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/__pycache__/Resource%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/RNS/__pycache__/Resource%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/__pycache__/Reticulum%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -232,12 +239,12 @@ bin/rnx
 %%PYTHON_SITELIBDIR%%/RNS/vendor/platformutils.py
 %%PYTHON_SITELIBDIR%%/RNS/vendor/six.py
 %%PYTHON_SITELIBDIR%%/RNS/vendor/umsgpack.py
-%%PYTHON_SITELIBDIR%%/rns-0.6.2-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/rns-0.6.2-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/rns-0.6.2-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/rns-0.6.2-py%%PYTHON_VER%%.egg-info/entry_points.txt
-%%PYTHON_SITELIBDIR%%/rns-0.6.2-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/rns-0.6.2-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/rns-0.7.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/rns-0.7.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/rns-0.7.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/rns-0.7.0-py%%PYTHON_VER%%.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/rns-0.7.0-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/rns-0.7.0-py%%PYTHON_VER%%.egg-info/top_level.txt
 @owner %%USERS%%
 @group %%GROUPS%%
 @dir /var/db/reticulum

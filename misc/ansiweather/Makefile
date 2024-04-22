@@ -1,5 +1,6 @@
 PORTNAME=	ansiweather
 PORTVERSION=	1.19.0
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	dbaio@FreeBSD.org
@@ -28,7 +29,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/ansiweather ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/ansiweather.plugin.zsh ${STAGEDIR}${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/ansiweather.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/ansiweather.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

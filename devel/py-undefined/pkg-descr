@@ -1,0 +1,16 @@
+Ever needed a global object that act as None but not quite? Like for example
+keyword argument for function, where None make sense, so you need a default
+value.
+
+One solution is to create as singleton object:
+mysingleton = object()
+
+Though it becomes difficult to track the singleton across libraries, and teach
+users where to import this from. It's also relatively annoying use this
+singleton across library.
+
+Introducing undefined:
+>>> import undefined
+>>> from undefined import Undefined
+>>> undefined is Undefined
+True

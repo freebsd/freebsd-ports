@@ -1,7 +1,4 @@
 bin/iqpuzzle
-man/de/man6/iqpuzzle.6.gz
-man/it/man6/iqpuzzle.6.gz
-man/man6/iqpuzzle.6.gz
 share/applications/com.github.elth0r0.iqpuzzle.desktop
 share/icons/hicolor/128x128/apps/iqpuzzle.png
 share/icons/hicolor/16x16/apps/iqpuzzle.png
@@ -658,4 +655,7 @@ share/icons/hicolor/scalable/apps/iqpuzzle.svg
 %%DATADIR%%/boards/rectangles/rectangle_039.png
 %%DATADIR%%/boards/rectangles/rectangle_040.conf
 %%DATADIR%%/boards/rectangles/rectangle_040.png
+share/man/de/man6/iqpuzzle.6.gz
+share/man/it/man6/iqpuzzle.6.gz
+share/man/man6/iqpuzzle.6.gz
 share/metainfo/com.github.elth0r0.iqpuzzle.metainfo.xml

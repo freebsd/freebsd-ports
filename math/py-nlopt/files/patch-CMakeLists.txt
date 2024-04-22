@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2024-04-03 02:23:20 UTC
++++ CMakeLists.txt
+@@ -2,6 +2,8 @@ project(nlopt-python)
+ 
+ project(nlopt-python)
+ 
++set(FREEBSD_PYTHON_VER $ENV{FREEBSD_PYTHON_VER})
++
+ set (CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_BINARY_DIR})
+ set (CMAKE_INSTALL_LIBDIR ${CMAKE_INSTALL_PREFIX}/nlopt)
+ set (INSTALL_PYTHON_DIR ${CMAKE_INSTALL_PREFIX})
+@@ -9,7 +11,7 @@ if (NOT WIN32)
+ option (BUILD_SHARED_LIBS OFF)
+ 
+ if (NOT WIN32)
+-  find_package (PythonInterp)
++  find_package (PythonInterp ${FREEBSD_PYTHON_VER} EXACT)
+ 
+   execute_process(
+     COMMAND

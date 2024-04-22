@@ -1,6 +1,6 @@
 PORTNAME=	xtexcad
 PORTVERSION=	2.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	TEX/graphics/${PORTNAME}
 
@@ -11,6 +11,6 @@ USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
 PLIST_FILES=	bin/xtexcad lib/X11/app-defaults/XTeXcad \
-		man/man1/xtexcad.1.gz
+		share/man/man1/xtexcad.1.gz
 
 .include <bsd.port.mk>

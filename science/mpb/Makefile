@@ -1,6 +1,6 @@
 PORTNAME=	mpb
 DISTVERSION=	1.11.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/NanoComp/mpb/releases/download/v${DISTVERSION}/
 
@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 # Do not use --with-mpi, because it is not guaranted
 # that science/hdf5 also built with option PARALLEL
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shared
 
 MAKE_JOBS_UNSAFE=	yes

@@ -1,6 +1,5 @@
 PORTNAME=	kid3
-PORTVERSION=	3.9.4
-PORTREVISION=	1
+PORTVERSION=	3.9.5
 CATEGORIES=	audio kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 PKGNAMESUFFIX=	-${FLAVOR}
@@ -15,17 +14,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl
 LIB_DEPENDS=	libtag.so:audio/taglib
 
-FLAVORS=	qt5 qt6 kf5
+FLAVORS=	qt6 kf5 kf6
 FLAVOR?=	${FLAVORS:[1]}
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gnome pkgconfig \
+USES=		cmake compiler:c++17-lang desktop-file-utils gnome pkgconfig \
 		tar:xz
 USE_GNOME=	libxslt:build
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DWITH_DOCBOOKDIR="${LOCALBASE}/share/xsl/docbook" \
 		-DWITH_LIBDIR=lib \
-		-DWITH_MANDIR=man \
+		-DWITH_MANDIR=share/man \
 		-DWITH_PLUGINSDIR=lib/kid3 \
 		-DFFMPEG_ROOT="${LOCALBASE}" \
 		-DWITH_APPS="${KID3_APPS:S/ /;/gW}"
@@ -33,23 +32,15 @@ CMAKE_OFF=	WITH_ID3LIB \
 		WITH_MP4V2 \
 		WITH_QML
 CMAKE_ON=	WITH_TAGLIB
-PLIST_SUB+=	SHLIB_VER=${PORTVERSION}
+PLIST_SUB+=	KF_SUFX=${FLAVOR:S/kf//:S/qt//} \
+		SHLIB_VER=${PORTVERSION}
 
-.if ${FLAVOR} == qt5
-USES+=		qt:5
-USE_QT=		core dbus gui multimedia network xml widgets \
-		buildtools:build linguisttools:build qmake:build
-CMAKE_OFF+=	BUILD_WITH_QT6
-PLIST_SUB+=	KF5="@comment " \
-		QT="" \
-		QT_SUFX="-qt"
-KID3_APPS+=	QT
-.elif ${FLAVOR} == qt6
+.if ${FLAVOR} == qt6
 USES+=		gl qt:6
 USE_GL=		opengl
 USE_QT=		base multimedia tools:build
 CMAKE_ON+=	BUILD_WITH_QT6
-PLIST_SUB+=	KF5="@comment " \
+PLIST_SUB+=	KF="@comment " \
 		QT="" \
 		QT_SUFX="-qt"
 KID3_APPS+=	QT
@@ -60,7 +51,18 @@ USE_KDE=	auth codecs config configwidgets coreaddons kio \
 USE_QT=		concurrent core dbus gui multimedia network xml widgets \
 		buildtools:build linguisttools:build qmake:build
 CMAKE_OFF+=	BUILD_WITH_QT6
-PLIST_SUB+=	KF5="" \
+PLIST_SUB+=	KF="" \
+		QT="@comment " \
+		QT_SUFX=""
+KID3_APPS+=	KDE
+.elif ${FLAVOR} == kf6
+USES+=		gl kde:6 qt:6
+USE_GL=		opengl
+USE_KDE=	colorscheme config configwidgets coreaddons kio \
+		widgetsaddons xmlgui doctools:build ecm:build
+USE_QT=		base multimedia tools:build
+CMAKE_ON+=	BUILD_WITH_QT6
+PLIST_SUB+=	KF="" \
 		QT="@comment " \
 		QT_SUFX=""
 KID3_APPS+=	KDE
@@ -90,7 +92,7 @@ FLAC_CMAKE_BOOL=	WITH_FLAC
 FLAC_IMPLIES=		VORBIS
 
 TEST_USE=		LOCALE=en_US.UTF-8
-.if ${FLAVOR} == qt5 || ${FLAVOR} == kf5
+.if ${FLAVOR} == kf5
 TEST_USE+=		QT=testlib:build
 .endif
 TEST_CMAKE_BOOL=	BUILD_TESTING

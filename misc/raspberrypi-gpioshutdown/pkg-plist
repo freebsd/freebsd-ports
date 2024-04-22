@@ -1,2 +1,2 @@
 /%%KMODDIR%%/gpioshutdown.ko
-man/man4/gpioshutdown.4.gz
+share/man/man4/gpioshutdown.4.gz

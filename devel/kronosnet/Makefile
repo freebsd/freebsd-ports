@@ -1,5 +1,6 @@
 PORTNAME=	kronosnet
 PORTVERSION=	1.26
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://kronosnet.org/releases/
 
@@ -21,6 +22,7 @@ USE_BINUTILS=	yes
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 LDFLAGS+=	-B${LOCALBASE}/bin
 
 INSTALL_TARGET=	install-strip

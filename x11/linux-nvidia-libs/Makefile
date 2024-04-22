@@ -128,7 +128,12 @@ LINUX_LIBS+=	libnvidia-compiler.so.${PORTVERSION}
 LINUX32_LIBS+=	libnvidia-compiler.so.${PORTVERSION}
 .endif
 
-.if ${NVVERSION} >= 545.00000 # 545.00
+
+.if ${NVVERSION} >= 550.00000 # 550.00
+LINUX_LIBS+=	libnvidia-egl-wayland.so.1.1.13
+LINUX_LINKS+=	libnvidia-egl-wayland.so.1.1.13 libnvidia-egl-wayland.so.1
+PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.1.1.13/'
+.elif ${NVVERSION} >= 545.00000 # 545.00
 LINUX_LIBS+=	libnvidia-egl-wayland.so.1.1.12
 LINUX_LINKS+=	libnvidia-egl-wayland.so.1.1.12 libnvidia-egl-wayland.so.1
 PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.1.1.12/'
@@ -282,17 +287,27 @@ PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-glvkspirv\.so,d'
 .if ${NVVERSION} >= 545.00000 # 545.00
 LINUX_LIBS+=	libnvidia-gpucomp.so.${PORTVERSION}
 LINUX32_LIBS+=  libnvidia-gpucomp.so.${PORTVERSION}
+.else
+PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-gpucomp\.so,d'
 .endif # 545.00
+.if ${NVVERSION} >= 550.00000 # 550.00
+LINUX_LIBS+=	libnvidia-egl-gbm.so.1.1.1
+LINUX_LINKS+=	libnvidia-egl-gbm.so.1.1.1 libnvidia-egl-gbm.so.1 \
+		libnvidia-egl-gbm.so.1.1.1 libnvidia-egl-gbm.so
+PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-gbm\.so)\.X/\1.1.1.1/'
+.elif ${NVVERSION} >= 525.08902 # 525.89.02
+LINUX_LIBS+=	libnvidia-egl-gbm.so.1.1.0
+LINUX_LINKS+=	libnvidia-egl-gbm.so.1.1.0 libnvidia-egl-gbm.so.1 \
+		libnvidia-egl-gbm.so.1.1.0 libnvidia-egl-gbm.so
+PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-gbm\.so)\.X/\1.1.1.0/'
+.endif # 550.00
 .if ${NVVERSION} >= 525.08902 # 525.89.02
 LINUX_LIBS+=	libnvoptix.so.${PORTVERSION} \
 		libnvidia-nvvm.so.${PORTVERSION} \
 		libnvidia-ngx.so.${PORTVERSION} \
 		libnvidia-allocator.so.${PORTVERSION} \
-		libnvidia-opticalflow.so.${PORTVERSION} \
-		libnvidia-egl-gbm.so.1.1.0
-LINUX_LINKS+=	libnvidia-egl-gbm.so.1.1.0 libnvidia-egl-gbm.so.1 \
-		libnvidia-egl-gbm.so.1.1.0 libnvidia-egl-gbm.so \
-		libnvidia-nvvm.so.${PORTVERSION} libnvidia-nvvm.so.4 \
+		libnvidia-opticalflow.so.${PORTVERSION}
+LINUX_LINKS+=	libnvidia-nvvm.so.${PORTVERSION} libnvidia-nvvm.so.4 \
 		libnvidia-nvvm.so.${PORTVERSION} libnvidia-nvvm.so \
 		libnvidia-opticalflow.so.${PORTVERSION} libnvidia-opticalflow.so.1 \
 		libnvidia-opticalflow.so.${PORTVERSION} libnvidia-opticalflow.so \

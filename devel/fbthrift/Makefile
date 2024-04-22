@@ -1,6 +1,6 @@
 PORTNAME=	fbthrift
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.01.15.00
+DISTVERSION=	2024.04.15.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,6 +39,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	enable_tests
 
 CXXFLAGS+=	-fPIC # https://github.com/facebook/fbthrift/issues/399
+CXXFLAGS+=	-DGLOG_USE_GLOG_EXPORT
 
 post-install: # https://github.com/facebook/fbthrift/issues/393
 	@${FIND} ${STAGEDIR}${PREFIX}/include -type d -empty -delete

@@ -1,8 +1,10 @@
 bin/botan%%BOTANMAJOR%%
 include/botan-%%BOTANMAJOR%%/botan/aead.h
+include/botan-%%BOTANMAJOR%%/botan/allocator.h
 include/botan-%%BOTANMAJOR%%/botan/argon2.h
 include/botan-%%BOTANMAJOR%%/botan/argon2fmt.h
 include/botan-%%BOTANMAJOR%%/botan/asio_async_ops.h
+include/botan-%%BOTANMAJOR%%/botan/asio_compat.h
 include/botan-%%BOTANMAJOR%%/botan/asio_context.h
 include/botan-%%BOTANMAJOR%%/botan/asio_error.h
 include/botan-%%BOTANMAJOR%%/botan/asio_stream.h
@@ -61,6 +63,8 @@ include/botan-%%BOTANMAJOR%%/botan/ffi.h
 include/botan-%%BOTANMAJOR%%/botan/filter.h
 include/botan-%%BOTANMAJOR%%/botan/filters.h
 include/botan-%%BOTANMAJOR%%/botan/fpe_fe1.h
+include/botan-%%BOTANMAJOR%%/botan/frodo_mode.h
+include/botan-%%BOTANMAJOR%%/botan/frodokem.h
 include/botan-%%BOTANMAJOR%%/botan/gost_3410.h
 include/botan-%%BOTANMAJOR%%/botan/hash.h
 include/botan-%%BOTANMAJOR%%/botan/hex.h
@@ -94,6 +98,7 @@ include/botan-%%BOTANMAJOR%%/botan/pgp_s2k.h
 include/botan-%%BOTANMAJOR%%/botan/pipe.h
 include/botan-%%BOTANMAJOR%%/botan/pk_algs.h
 include/botan-%%BOTANMAJOR%%/botan/pk_keys.h
+include/botan-%%BOTANMAJOR%%/botan/pk_ops.h
 include/botan-%%BOTANMAJOR%%/botan/pk_ops_fwd.h
 include/botan-%%BOTANMAJOR%%/botan/pkcs10.h
 include/botan-%%BOTANMAJOR%%/botan/pkcs11.h
@@ -170,6 +175,8 @@ include/botan-%%BOTANMAJOR%%/botan/xmss_parameters.h
 include/botan-%%BOTANMAJOR%%/botan/xof.h
 include/botan-%%BOTANMAJOR%%/botan/zfec.h
 include/botan-%%BOTANMAJOR%%/botan/zlib.h
+lib/cmake/Botan-%%SOABIVER%%.%%SHLIBVER%%.%%SHLIBVERPATCH%%/botan-config-version.cmake
+lib/cmake/Botan-%%SOABIVER%%.%%SHLIBVER%%.%%SHLIBVERPATCH%%/botan-config.cmake
 lib/libbotan-%%BOTANMAJOR%%.a
 lib/libbotan-%%BOTANMAJOR%%.so
 lib/libbotan-%%BOTANMAJOR%%.so.%%SOABIVER%%

@@ -1,6 +1,6 @@
 PORTNAME=	ro
 PORTVERSION=	3.6.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	astro python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +14,12 @@ WWW=		https://staff.washington.edu/rowen/ROPackage/Overview.html \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/License.txt
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 

@@ -1,7 +1,7 @@
 PROG=sst
 
 BINDIR=${PREFIX}/sbin
-MANDIR=${PREFIX}/man/man
+MANDIR=${PREFIX}/share/man/man
 
 CFLAGS+=	-DCONFDIR='"${OPENSSLDIR}"' -DCERTF='"certs/sst.pem"' \
 		-I${OPENSSLINC} -Wno-comment

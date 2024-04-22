@@ -1,6 +1,6 @@
 PORTNAME=	pfstat
 PORTVERSION=	2.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils net
 MASTER_SITES=	https://www.benzedrine.ch/
 
@@ -18,12 +18,11 @@ USES=		iconv jpeg
 USE_RC_SUBR=	pfstatd
 
 MAKE_ARGS=	"LD_GD=gd"
-MAKE_ENV+=	__MAKE_CONF=/dev/null
 
 PLIST_FILES=	bin/pfstat \
 		bin/pfstatd \
-		man/man8/pfstat.8.gz \
-		man/man8/pfstatd.8.gz
+		share/man/man8/pfstat.8.gz \
+		share/man/man8/pfstatd.8.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lgd|-l$${LD_GD}|; s| -lttf||' \
@@ -35,7 +34,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pfstat ${STAGEDIR}/${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/pfstatd/pfstatd ${STAGEDIR}/${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pfstat.8 ${STAGEDIR}/${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/pfstatd/pfstatd.8 ${STAGEDIR}/${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/pfstat.8 ${STAGEDIR}/${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/pfstatd/pfstatd.8 ${STAGEDIR}/${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

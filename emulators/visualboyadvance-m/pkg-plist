@@ -45,5 +45,5 @@
 %%GVBAM%%share/icons/hicolor/48x48/apps/vbam.png
 %%GVBAM%%share/icons/hicolor/64x64/apps/vbam.png
 %%GVBAM%%share/icons/hicolor/96x96/apps/vbam.png
-man/man1/vbam.1.gz
-%%GVBAM%%man/man1/gvbam.1.gz
+share/man/man1/vbam.1.gz
+%%GVBAM%%share/man/man1/gvbam.1.gz

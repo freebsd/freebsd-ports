@@ -116,13 +116,13 @@
 %%QT_DOCDIR%%/qtdoc/images/btn_prev.png
 %%QT_DOCDIR%%/qtdoc/images/bullet_dn.png
 %%QT_DOCDIR%%/qtdoc/images/bullet_sq.png
-%%QT_DOCDIR%%/qtdoc/images/coffee_machine_emptycup.png
 %%QT_DOCDIR%%/qtdoc/images/coffee_machine_modify.png
 %%QT_DOCDIR%%/qtdoc/images/coffee_machine_overview.png
 %%QT_DOCDIR%%/qtdoc/images/coffee_machine_selection.png
 %%QT_DOCDIR%%/qtdoc/images/colorpalette_editing.png
 %%QT_DOCDIR%%/qtdoc/images/colorpalette_listing.png
 %%QT_DOCDIR%%/qtdoc/images/colorpalette_urlselection.png
+%%QT_DOCDIR%%/qtdoc/images/controls.png
 %%QT_DOCDIR%%/qtdoc/images/deployment-mac-application.png
 %%QT_DOCDIR%%/qtdoc/images/deployment-mac-bundlestructure.png
 %%QT_DOCDIR%%/qtdoc/images/desktop_dark.png
@@ -158,6 +158,7 @@
 %%QT_DOCDIR%%/qtdoc/images/open-project.png
 %%QT_DOCDIR%%/qtdoc/images/piemenu.gif
 %%QT_DOCDIR%%/qtdoc/images/project-structure.png
+%%QT_DOCDIR%%/qtdoc/images/project_structure.png
 %%QT_DOCDIR%%/qtdoc/images/qml-application.png
 %%QT_DOCDIR%%/qtdoc/images/qml-extending-types.gif
 %%QT_DOCDIR%%/qtdoc/images/qml-uses-animation.png
@@ -205,6 +206,8 @@
 %%QT_DOCDIR%%/qtdoc/images/qtquick-demo-clocks-small.png
 %%QT_DOCDIR%%/qtdoc/images/qtquick-demo-photosurface-small.png
 %%QT_DOCDIR%%/qtdoc/images/qtquick-demo-rssnews-small.png
+%%QT_DOCDIR%%/qtdoc/images/qtquick-demo-samegame-med-1.png
+%%QT_DOCDIR%%/qtdoc/images/qtquick-demo-samegame-med-2.png
 %%QT_DOCDIR%%/qtdoc/images/qtquick-demo-stocqt.png
 %%QT_DOCDIR%%/qtdoc/images/qtquick3D.png
 %%QT_DOCDIR%%/qtdoc/images/rhiarch.png
@@ -315,7 +318,6 @@
 %%QT_DOCDIR%%/qtdoc/qt6-buildsystem.html
 %%QT_DOCDIR%%/qtdoc/qtconcurrent-mtexamples.html
 %%QT_DOCDIR%%/qtdoc/qtconcurrentexamples.html
-%%QT_DOCDIR%%/qtdoc/qtdoc-attribution-coffeeexample-titillium.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-attribution-colorpaletteclient.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-attribution-dice-roundcarpet.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-attribution-dice-table.html
@@ -335,6 +337,7 @@
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-photosurface-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-robotarm-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-rssnews-example.html
+%%QT_DOCDIR%%/qtdoc/qtdoc-demos-samegame-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-stocqt-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-thermostat-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-todolist-example.html

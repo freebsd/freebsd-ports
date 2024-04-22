@@ -2,10 +2,10 @@ bin/adr2vcf
 bin/apoconv
 bin/scmxx
 bin/smi
-man/de/man1/scmxx.1.gz
-man/it/man1/scmxx.1.gz
-man/man1/scmxx.1.gz
-man/ru/man1/scmxx.1.gz
+share/man/de/man1/scmxx.1.gz
+share/man/it/man1/scmxx.1.gz
+share/man/man1/scmxx.1.gz
+share/man/ru/man1/scmxx.1.gz
 share/locale/de/LC_MESSAGES/scmxx.mo
 share/locale/fr/LC_MESSAGES/scmxx.mo
 share/locale/it/LC_MESSAGES/scmxx.mo

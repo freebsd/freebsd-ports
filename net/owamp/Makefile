@@ -1,5 +1,6 @@
 PORTNAME=	owamp
 PORTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://software.internet2.edu/sources/owamp/
 
@@ -10,6 +11,7 @@ WWW=		https://www.internet2.edu/performance/owamp/
 LICENSE=	APACHE20
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 .include <bsd.port.options.mk>
 

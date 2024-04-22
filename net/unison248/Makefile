@@ -34,6 +34,7 @@ WRKSRC_SUBDIR=	src
 NO_OCAML_RUNDEPENDS=yes
 CONFLICTS=	unison-devel
 MAKE_ENV=	CLIBS="${LIBS:S/^-/-ccopt -/}" COFLAGS="${CFLAGS:C/ *(-[^ ]*) */ -ccopt \"\1 \"/gW}"
+MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	unison all
 
 USE_GITHUB=	yes

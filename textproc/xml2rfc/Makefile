@@ -1,5 +1,5 @@
 PORTNAME=	xml2rfc
-PORTVERSION=	3.19.1
+PORTVERSION=	3.20.0
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,5 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4.9.0:devel/py-lxml@${PY_FLAVOR} \
 
 USES=		python
 USE_PYTHON=	distutils autoplist concurrent optsuffix
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	roboctl
 PORTVERSION=	0.3.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
@@ -13,7 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libgamepad.a:devel/libgamepad
 
 MAKE_ENV=	EXTRALIBS=-lbluetooth
 MAKE_FLAGS+=	PREFIX=${STAGEDIR}${PREFIX} \
-		MANPREFIX=${STAGEDIR}${PREFIX}
+		MANPREFIX=${STAGEDIR}${PREFIX}/share
 MAKE_JOBS_UNSAFE=	yes
 
 USES=		tar:xz
@@ -30,6 +31,6 @@ post-install:
 	(cd ${WRKSRC}/Commands/NXTRemote; ${MAKE})
 	${INSTALL_PROGRAM} ${WRKSRC}/Commands/NXTRemote/nxtremote ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/lego_bluetooth_config ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/Commands/NXTRemote/nxtremote.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/Commands/NXTRemote/nxtremote.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

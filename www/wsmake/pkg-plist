@@ -10,4 +10,4 @@ bin/wsmake
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
-man/man1/wsmake.1.gz
+share/man/man1/wsmake.1.gz

@@ -1,0 +1,27 @@
+--- Makefile.orig	2024-03-19 09:47:00 UTC
++++ Makefile
+@@ -97,15 +97,15 @@ install:
+ 	$(INSTALL_NOEXEC) $(LIBS_UPGRADE) $(PREFIX)/lib/$(PROGNAME)/upgrade
+ 	$(INSTALL_DIR) $(PREFIX)/libexec/$(PROGNAME)
+ 	$(INSTALL_SCRIPT) $(LIBEXECS) $(PREFIX)/libexec/$(PROGNAME)
+-	$(INSTALL_DIR) $(PREFIX)/man/man8
+-	$(INSTALL_NOEXEC) man/$(PROGNAME).8 $(PREFIX)/man/man8
+-	$(GZIP) ${PREFIX}/man/man8/$(PROGNAME).8
+-	$(INSTALL_NOEXEC) man/$(PROGNAME)-chroot.8 $(PREFIX)/man/man8
+-	$(GZIP) ${PREFIX}/man/man8/$(PROGNAME)-chroot.8
+-	$(INSTALL_NOEXEC) man/$(PROGNAME)-chroot-mount.8 $(PREFIX)/man/man8
+-	$(GZIP) ${PREFIX}/man/man8/$(PROGNAME)-chroot-mount.8
+-	$(INSTALL_NOEXEC) man/$(PROGNAME)-upgrade.8 $(PREFIX)/man/man8
+-	$(GZIP) ${PREFIX}/man/man8/$(PROGNAME)-upgrade.8
++	$(INSTALL_DIR) $(PREFIX)/share/man/man8
++	$(INSTALL_NOEXEC) man/$(PROGNAME).8 $(PREFIX)/share/man/man8
++	$(GZIP) ${PREFIX}/share/man/man8/$(PROGNAME).8
++	$(INSTALL_NOEXEC) man/$(PROGNAME)-chroot.8 $(PREFIX)/share/man/man8
++	$(GZIP) ${PREFIX}/share/man/man8/$(PROGNAME)-chroot.8
++	$(INSTALL_NOEXEC) man/$(PROGNAME)-chroot-mount.8 $(PREFIX)/share/man/man8
++	$(GZIP) ${PREFIX}/share/man/man8/$(PROGNAME)-chroot-mount.8
++	$(INSTALL_NOEXEC) man/$(PROGNAME)-upgrade.8 $(PREFIX)/share/man/man8
++	$(GZIP) ${PREFIX}/share/man/man8/$(PROGNAME)-upgrade.8
+ 	$(INSTALL_DIR) $(PREFIX)/share/$(PROGNAME)/bin
+ 	$(INSTALL_SCRIPT) $(PROGNAMES_DISPATCH) $(PREFIX)/share/$(PROGNAME)/bin
+ 	$(INSTALL_DIR) $(PREFIX)/etc

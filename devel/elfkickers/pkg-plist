@@ -5,10 +5,10 @@ bin/infect
 bin/objres
 bin/rebind
 bin/sstrip
-man/man1/ebfc.1.gz
-man/man1/elfls.1.gz
-man/man1/elftoc.1.gz
-man/man1/infect.1.gz
-man/man1/objres.1.gz
-man/man1/rebind.1.gz
-man/man1/sstrip.1.gz
+share/man/man1/ebfc.1.gz
+share/man/man1/elfls.1.gz
+share/man/man1/elftoc.1.gz
+share/man/man1/infect.1.gz
+share/man/man1/objres.1.gz
+share/man/man1/rebind.1.gz
+share/man/man1/sstrip.1.gz

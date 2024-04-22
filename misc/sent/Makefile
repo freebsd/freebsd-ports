@@ -19,7 +19,7 @@ USE_XORG=	x11 xft
 
 CFLAGS+=	-I${LOCALBASE}/include/freetype2
 
-MAKE_ARGS=	CC="${CC}" PREFIX="${PREFIX}" MANPREFIX="${MANPREFIX}/share/man" \
+MAKE_ARGS=	CC="${CC}" PREFIX="${PREFIX}" MANPREFIX="${PREFIX}/share/man" \
 		X11INC="${LOCALBASE}/include" X11LIB="${LOCALBASE}/lib"
 NO_WRKSUBDIR=	yes
 

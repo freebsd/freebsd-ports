@@ -1,6 +1,6 @@
---- components/live_caption/caption_util.h.orig	2023-07-21 09:49:17 UTC
+--- components/live_caption/caption_util.h.orig	2024-03-22 14:16:19 UTC
 +++ components/live_caption/caption_util.h
-@@ -14,7 +14,7 @@ class PrefService;
+@@ -15,7 +15,7 @@ class PrefService;
  namespace captions {
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \

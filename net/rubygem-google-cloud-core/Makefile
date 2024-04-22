@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-core
-PORTVERSION=	1.6.1
+PORTVERSION=	1.7.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

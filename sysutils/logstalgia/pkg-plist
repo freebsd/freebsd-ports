@@ -1,5 +1,5 @@
 bin/logstalgia
-man/man1/logstalgia.1.gz
+share/man/man1/logstalgia.1.gz
 %%DATADIR%%/fonts/README
 %%DATADIR%%/fonts/FreeMonoBold.ttf
 %%DATADIR%%/fonts/FreeSerif.ttf

@@ -1,5 +1,6 @@
 PORTNAME=	nsnake
-PORTVERSION=	2.2.0
+DISTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://releases.malikania.fr/nsnake/${PORTVERSION}/
 
@@ -24,7 +25,7 @@ post-patch:
 do-install:
 	(cd ${WRKSRC} \
 		&& ${INSTALL_PROGRAM} ${PORTNAME} ${STAGEDIR}${PREFIX}/bin \
-		&& ${INSTALL_MAN} ${PORTNAME}.6 ${STAGEDIR}${MANPREFIX}/man/man6)
+		&& ${INSTALL_MAN} ${PORTNAME}.6 ${STAGEDIR}${PREFIX}/share/man/man6)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} CHANGES.md ${STAGEDIR}${DOCSDIR})
 	@${MKDIR} ${STAGEDIR}/var/db/nsnake

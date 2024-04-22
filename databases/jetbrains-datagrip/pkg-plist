@@ -487,5 +487,5 @@
 %%DATADIR%%/plugins/xpath/lib/xpath.jar
 %%DATADIR%%/product-info.json
 bin/datagrip
-man/man1/datagrip.1.gz
+share/man/man1/datagrip.1.gz
 share/applications/datagrip.desktop

@@ -1,5 +1,6 @@
 PORTNAME=	spine
-PORTVERSION=	1.2.25
+PORTVERSION=	1.2.26
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.cacti.net/downloads/${PORTNAME}/
 DISTNAME=	cacti-${PORTNAME}-${PORTVERSION}
@@ -15,7 +16,8 @@ BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp \
 		libpkg.so:${PKG_ORIGIN}
 
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} --with-snmp=${LOCALBASE}
 CPPFLAGS+=	`net-snmp-config --cflags`
 LDFLAGS+=	`net-snmp-config --libs` -lexecinfo

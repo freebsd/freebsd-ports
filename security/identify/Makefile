@@ -1,18 +1,18 @@
 PORTNAME=	identify
 PORTVERSION=	0.7
 CATEGORIES=	security
-MASTER_SITES=	http://ftp.nluug.nl/ftp/pub/pub/security/coast/daemons/pidentd/tools/ \
-		http://www.scn.rain.com/pub/security/authent/
+MASTER_SITES=	http://ftp.nluug.nl/ftp/pub/pub/security/coast/daemons/pidentd/tools/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Client side ident protocol daemon wrapper
+WWW=		http://ftp.nluug.nl/ftp/pub/pub/security/coast/daemons/pidentd/tools/
 
 LICENSE=	PD
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libident.a:security/libident
 
-PORTDOCS=	README
 PLIST_FILES=	libexec/identify
+PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 

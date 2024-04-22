@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-symband
 PORTVERSION=	1.0.10
-PORTREVISION=	29
+PORTREVISION=	30
 CATEGORIES=	math
 MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Old%20Monolithic%20Releases/R2009-06-07
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
@@ -12,10 +12,12 @@ WWW=		https://packages.octave.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		does not install with octave version >= 9.1.0
+
 USES=		octave
 
 GNU_CONFIGURE=	yes
 
-WRKSRC=        ${WRKDIR}/${OCTAVE_SRC}
+WRKSRC=		${WRKDIR}/${OCTAVE_SRC}
 
 .include <bsd.port.mk>

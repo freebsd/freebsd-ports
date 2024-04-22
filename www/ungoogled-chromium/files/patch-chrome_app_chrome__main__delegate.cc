@@ -1,6 +1,6 @@
---- chrome/app/chrome_main_delegate.cc.orig	2023-12-23 12:33:28 UTC
+--- chrome/app/chrome_main_delegate.cc.orig	2024-03-22 14:16:19 UTC
 +++ chrome/app/chrome_main_delegate.cc
-@@ -145,7 +145,7 @@
+@@ -146,7 +146,7 @@
  #include "components/about_ui/credit_utils.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "components/nacl/common/nacl_paths.h"
  #include "components/nacl/zygote/nacl_fork_delegate_linux.h"
  #endif
-@@ -189,16 +189,16 @@
+@@ -188,16 +188,16 @@
  #include "v8/include/v8.h"
  #endif
  
@@ -47,7 +47,16 @@
  // Show the man page if --help or -h is on the command line.
  void HandleHelpSwitches(const base::CommandLine& command_line) {
    if (command_line.HasSwitch(switches::kHelp) ||
-@@ -600,7 +600,7 @@ void InitializeUserDataDir(base::CommandLine* command_
+@@ -481,7 +481,7 @@ void AddFeatureFlagsToCommandLine(
+ }
+ #endif  // BUILDFLAG(IS_CHROMEOS_LACROS)
+ 
+-#if !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_ANDROID)
++#if !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_BSD)
+ void SIGTERMProfilingShutdown(int signal) {
+   content::Profiling::Stop();
+   struct sigaction sigact;
+@@ -636,7 +636,7 @@ void InitializeUserDataDir(base::CommandLine* command_
    std::string process_type =
        command_line->GetSwitchValueASCII(switches::kProcessType);
  
@@ -56,7 +65,7 @@
    // On Linux, Chrome does not support running multiple copies under different
    // DISPLAYs, so the profile directory can be specified in the environment to
    // support the virtual desktop use-case.
-@@ -690,7 +690,7 @@ void RecordMainStartupMetrics(base::TimeTicks applicat
+@@ -763,7 +763,7 @@ void RecordMainStartupMetrics(base::TimeTicks applicat
  #endif
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
@@ -65,7 +74,16 @@
    // Record the startup process creation time on supported platforms. On Android
    // this is recorded in ChromeMainDelegateAndroid.
    startup_metric_utils::GetCommon().RecordStartupProcessCreationTime(
-@@ -1044,7 +1044,7 @@ void ChromeMainDelegate::CommonEarlyInitialization(Inv
+@@ -1116,7 +1116,7 @@ void ChromeMainDelegate::CommonEarlyInitialization(Inv
+ 
+   const bool emit_crashes =
+ #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
+-    BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+       chrome::GetChannel() == version_info::Channel::CANARY ||
+       chrome::GetChannel() == version_info::Channel::DEV;
+ #else
+@@ -1130,7 +1130,7 @@ void ChromeMainDelegate::CommonEarlyInitialization(Inv
    base::InitializeCpuReductionExperiment();
    base::sequence_manager::internal::SequenceManagerImpl::InitializeFeatures();
    base::sequence_manager::internal::ThreadController::InitializeFeatures();
@@ -74,7 +92,7 @@
    base::MessagePumpLibevent::InitializeFeatures();
  #elif BUILDFLAG(IS_MAC)
    base::PlatformThread::InitFeaturesPostFieldTrial();
-@@ -1196,7 +1196,7 @@ absl::optional<int> ChromeMainDelegate::BasicStartupCo
+@@ -1276,7 +1276,7 @@ std::optional<int> ChromeMainDelegate::BasicStartupCom
  
    // TODO(crbug.com/1052397): Revisit the macro expression once build flag
    // switch of lacros-chrome is complete.
@@ -83,7 +101,7 @@
    // This will directly exit if the user asked for help.
    HandleHelpSwitches(command_line);
  #endif
-@@ -1226,7 +1226,7 @@ absl::optional<int> ChromeMainDelegate::BasicStartupCo
+@@ -1306,7 +1306,7 @@ std::optional<int> ChromeMainDelegate::BasicStartupCom
  #if BUILDFLAG(IS_CHROMEOS)
    chromeos::dbus_paths::RegisterPathProvider();
  #endif
@@ -92,7 +110,7 @@
    nacl::RegisterPathProvider();
  #endif
  
-@@ -1637,7 +1637,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -1703,7 +1703,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
      CHECK(!loaded_locale.empty()) << "Locale could not be found for " << locale;
    }
  
@@ -101,7 +119,7 @@
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
      if (command_line.HasSwitch(switches::kPreCrashpadCrashTest)) {
-@@ -1746,7 +1746,7 @@ absl::variant<int, content::MainFunctionParams> Chrome
+@@ -1804,7 +1804,7 @@ absl::variant<int, content::MainFunctionParams> Chrome
  
    // This entry is not needed on Linux, where the NaCl loader
    // process is launched via nacl_helper instead.

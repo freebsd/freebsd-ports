@@ -1,7 +1,7 @@
 PORTNAME=	dionysus
-PORTVERSION=	g20210521
-PORTREVISION=	1
+PORTVERSION=	2.0.10
 CATEGORIES=	math
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-topology-library
 
@@ -14,14 +14,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/adaptors.hpp:devel/boost-libs
 
-USES=		cmake python
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	mrzv
-GH_TAGNAME=	ae27bb1
+USES=		cmake compiler:c++14-lang python
+USE_PYTHON=	flavors pytest # 1 test fails, see https://github.com/mrzv/dionysus/issues/64, another one loops forever
 
 CMAKE_ARGS=	-DPython_EXECUTABLE:STRING=${PYTHON_CMD}
 CMAKE_OFF=	build_examples
+
+TEST_WRKSRC=	${WRKSRC}/tests
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 PLIST_FILES=	${PYTHON_SITELIBDIR}/dionysus/__init__.py \
 		${PYTHON_SITELIBDIR}/dionysus/_dionysus${PYTHON_EXT_SUFFIX}.so \

@@ -1,0 +1,33 @@
+[
+{ type: install
+  message: <<EOM
+Congratulations, you have installed %%PORTNAME%%!
+
+To use vuls, install vuls on all your machines and activate the daily
+periodic script using
+
+sysrc -f /etc/periodic.conf daily_vuls_enable="YES"
+
+and perhaps also add some config parameters; check the information header of
+%%PREFIX%%/etc/periodic/daily/%%PORTNAME%%.
+
+Configure vuls by editing %%ETCDIR%%/config.toml.
+
+Vuls uses the port security/go-cve-dictionary to look up information about
+packages' CVEs. Install that port separately somewhere in your infrastructure,
+start the service and point vuls to it for CVE queries by editing vuls'
+configuration in %%PREFIX%%/etc/vuls.conf and setting the cveDict url properly.
+
+If you want to use vuls to collect reports from several nodes, set up the vuls
+service somewhere in your infrastructure. Set it up by enabling it and start it
+using service:
+
+sysrc %%PORTNAME%%_enable="YES"
+service %%PORTNAME%% start
+
+Also consider installing security/vulsrepo to present the resports in a
+friendly human-readable web gui.
+
+EOM
+}
+]

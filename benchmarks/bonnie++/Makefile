@@ -1,5 +1,6 @@
 PORTNAME=	bonnie++
 PORTVERSION=	1.98
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://www.coker.com.au/bonnie++/
 
@@ -13,6 +14,7 @@ USES=	shebangfix tar:tgz
 USE_CXXSTD=	c++14
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 SHEBANG_FILES=	bon_csv2txt.in
 
 PORTDOCS=	readme.html

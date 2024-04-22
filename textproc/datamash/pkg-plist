@@ -1,7 +1,5 @@
 bin/datamash
 bin/decorate
-man/man1/datamash.1.gz
-man/man1/decorate.1.gz
 %%DATADIR%%/bash-completion.d/datamash
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/genes.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/genes_h.txt
@@ -20,3 +18,5 @@ man/man1/decorate.1.gz
 %%NLS%%share/locale/sv/LC_MESSAGES/datamash.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/datamash.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/datamash.mo
+share/man/man1/datamash.1.gz
+share/man/man1/decorate.1.gz

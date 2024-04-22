@@ -1,5 +1,5 @@
 PORTNAME=	lsblk
-PORTVERSION=	3.7
+PORTVERSION=	3.8
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/vermaden/lsblk/raw/master/release/
 

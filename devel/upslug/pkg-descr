@@ -1,4 +1,0 @@
-UpSlug is a tool to flash your NSLU2 from an external computer on
-the same subnet (direct Ethernet access is needed; it won't work
-if you have routers or NAT devices between you and the NSLU2, though
-WiFi? via a wireless router is OK).

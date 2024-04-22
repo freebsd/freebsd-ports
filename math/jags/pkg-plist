@@ -108,4 +108,4 @@ lib/libjrmath.so.0
 lib/libjrmath.so.0.0.0
 libdata/pkgconfig/jags.pc
 libexec/jags-terminal
-man/man1/jags.1.gz
+share/man/man1/jags.1.gz

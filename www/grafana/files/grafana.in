@@ -10,25 +10,25 @@
 # grafana_enable (bool):
 #     Set it to YES to enable grafana
 #     Set to NO by default
-# grafana_user (string):
+# grafana_user (str):
 #     Set user that grafana will run under
 #     Default is "%%GRAFANA_USER%%"
-# grafana_group (string):
+# grafana_group (str):
 #     Set group that own grafana files
 #     Default is "%%GRAFANA_GROUP%%"
-# grafana_config (string)
+# grafana_config (str):
 #     Set full path to config file
 #     Default is "%%ETCDIR%%/grafana.ini"
-# grafana_homepath (string)
+# grafana_homepath (str):
 #     Set full path to homepath dir
 #     Default is "%%GRAFANA_HOMEDIR%%"
-# grafana_syslog_output_enable (bool)
+# grafana_syslog_output_enable (bool):
 #     Set it to YES to enable stdout/stderr syslog output
 #     Set to NO by default
-# grafana_syslog_output_tag (str)
+# grafana_syslog_output_tag (str):
 #     Set syslog tag if syslog enabled
 #     Default is "grafana"
-# grafana_args (string)
+# grafana_args (string):
 #     Set additional command line arguments
 #     Default is ""
 

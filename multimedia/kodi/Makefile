@@ -1,5 +1,5 @@
 PORTNAME=	kodi
-DISTVERSION=	20.3
+DISTVERSION=	20.5
 CATEGORIES=	multimedia java
 # do not forget to fix devel/kodi-platform when updating kodi
 
@@ -39,6 +39,7 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libtag.so:audio/taglib \
 		libtinyxml.so:textproc/tinyxml \
 		libuuid.so:misc/e2fsprogs-libuuid
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		autoreconf:build cmake:noninja compiler:c++17-lang cpe \
 		desktop-file-utils gettext gmake gnome iconv jpeg libtool \
@@ -95,6 +96,8 @@ OPTIONS_GROUP_PLATFORM=	GBM WAYLAND X11
 OPTIONS_EXCLUDE_aarch64=FEATURE
 OPTIONS_EXCLUDE_armv7=	FEATURE
 OPTIONS_EXCLUDE_armv6=	FEATURE
+OPTIONS_EXCLUDE_powerpc64=	FEATURE
+OPTIONS_EXCLUDE_powerpc64le=	FEATURE
 
 PLATFORM_DESC=	Kodi platform
 FEATURE_DESC=	X86 CPU feature
@@ -222,6 +225,7 @@ GBM_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 			libdrm.so:graphics/libdrm \
 			libxkbcommon.so:x11/libxkbcommon \
 			libinput.so:x11/libinput
+GBM_RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
 
 WAYLAND_CATEGORIES=	wayland
 WAYLAND_USES=		gl

@@ -1,5 +1,6 @@
 PORTNAME=	bindfs
 DISTVERSION=	1.17.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://bindfs.org/downloads/
 PKGNAMEPREFIX=	fusefs-
@@ -13,9 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		fuse:3 localbase:ldflags pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/bindfs \
-		man/man1/bindfs.1.gz
+		share/man/man1/bindfs.1.gz
 
 .include <bsd.port.pre.mk>
 

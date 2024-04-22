@@ -1,5 +1,5 @@
---- src/headers.h-orig	2014-07-18 09:58:12.000000000 +0200
-+++ src/headers.h	2014-07-18 09:58:31.000000000 +0200
+--- src/headers.h-orig	2014-07-18 09:58:12 UTC
++++ src/headers.h
 @@ -120,7 +120,6 @@
      #define TH_URG 0x20
      #define TH_ECE 0x40

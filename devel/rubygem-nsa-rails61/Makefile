@@ -1,5 +1,5 @@
 PORTNAME=	nsa
-PORTVERSION=	0.2.8
+PORTVERSION=	0.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails61
@@ -7,6 +7,8 @@ PKGNAMESUFFIX=	-rails61
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Deliver Rails ActiveSupport::Notifications to a Statsd backend
 WWW=		https://github.com/localshred/nsa
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-activesupport61>=4.2<7:devel/rubygem-activesupport61 \
 		rubygem-concurrent-ruby>=1.0.2<2:devel/rubygem-concurrent-ruby \

@@ -1,0 +1,7 @@
+PicoLisp is quite different from other Lisps. The main reason is its focus on
+data.  PicoLisp has one single internal data type: The "cell".  On the language
+level it has only three data types: Numbers, symbols and cons pairs. They are
+all built from cells.  What may sound like a restriction is actually a big
+advantage. The simple internal structure results in high start-up and execution
+speeds. Cells can be manipulated freely in any conceivable way, giving full
+control to the programmer.

@@ -10,3 +10,5 @@ do is run "swaylock-plugin --command 'my-wallpaper ...'", where
 * shaderbg, renders OpenGL shaders
 * rwalkbg, a very slow animation
 * wscreensaver, an experiment in porting a few xscreensaver hacks to Wayland
+* windowtolayer, a tool that can be used to run normally windowed
+  applications, like terminals, as wallpapers. Requires --command-each flag.

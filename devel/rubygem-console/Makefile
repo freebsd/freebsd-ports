@@ -1,5 +1,5 @@
 PORTNAME=	console
-PORTVERSION=	1.23.3
+PORTVERSION=	1.23.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/socketry/console
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-fiber-annotation>=0:devel/rubygem-fiber-annotation \
-		rubygem-fiber-local>=0:devel/rubygem-fiber-local
+		rubygem-fiber-local>=0:devel/rubygem-fiber-local \
+		rubygem-json>=0:devel/rubygem-json
 
 USES=		gem
 

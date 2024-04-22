@@ -1,5 +1,6 @@
 PORTNAME=	deheader
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -19,10 +20,10 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	esr
 GL_TAGNAME=	b408c9013f4e1d917cc12f06edda4e1782e64888
 
-PLIST_FILES=	bin/deheader man/man1/deheader.1.gz
+PLIST_FILES=	bin/deheader share/man/man1/deheader.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/deheader ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/deheader.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/deheader.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

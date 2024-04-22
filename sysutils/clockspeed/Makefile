@@ -1,6 +1,6 @@
 PORTNAME=	clockspeed
 PORTVERSION=	0.62
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/clockspeed/ \
 		http://redundancy.redundancy.org/mirror/
@@ -55,7 +55,7 @@ do-install:
 	${INSTALL} ${WRKSRC}/${i} ${STAGEDIR}/${PREFIX}/bin/
 .endfor
 .for i in ${MAN_FILES}
-	${INSTALL} ${WRKSRC}/${i} ${STAGEDIR}/${PREFIX}/man/man1/
+	${INSTALL} ${WRKSRC}/${i} ${STAGEDIR}/${PREFIX}/share/man/man1/
 .endfor
 	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
 		${STAGEDIR}/${PREFIX}/etc/clockspeed

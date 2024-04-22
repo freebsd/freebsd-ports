@@ -1,5 +1,6 @@
 PORTNAME=	filepp
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www-users.york.ac.uk/~dm26/filepp/
 
@@ -12,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		perl5 shebangfix
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	PERL=${PERL}
 NO_BUILD=	yes
 NO_ARCH=	yes

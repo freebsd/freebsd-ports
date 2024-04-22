@@ -3,7 +3,7 @@ lib/opencpn/libchartdldr_pi.so
 lib/opencpn/libdashboard_pi.so
 lib/opencpn/libgrib_pi.so
 lib/opencpn/libwmm_pi.so
-man/man1/opencpn.1.gz
+share/man/man1/opencpn.1.gz
 share/applications/opencpn.desktop
 %%PORTDOCS%%%%DOCSDIR%%/50info/MBT1.jpg
 %%PORTDOCS%%%%DOCSDIR%%/50info/bridge1.jpg

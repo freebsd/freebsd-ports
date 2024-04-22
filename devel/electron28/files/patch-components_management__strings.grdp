@@ -1,0 +1,11 @@
+--- components/management_strings.grdp.orig	2023-10-19 19:58:18 UTC
++++ components/management_strings.grdp
+@@ -346,7 +346,7 @@
+   </if>
+ 
+   <!-- Strings related to Chrome Enterprise Device Signals Sharing -->
+-  <if expr="is_win or is_linux or is_macosx">
++  <if expr="is_win or is_posix or is_macosx">
+     <message name="IDS_MANAGEMENT_DEVICE_SIGNALS_DISCLOSURE" desc="Disclosure message explaining that device signals can be shared.">
+       Information about your browser, OS, device, installed software, and files
+     </message>

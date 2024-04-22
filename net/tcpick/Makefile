@@ -1,6 +1,6 @@
 PORTNAME=	tcpick
 PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -11,10 +11,11 @@ WWW=		https://tcpick.sourceforge.net/
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_CSTD=	gnu89
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/man/it/man8
-	${MV} ${STAGEDIR}${PREFIX}/man/man8/tcpick_italian.8 ${STAGEDIR}${PREFIX}/man/it/man8/tcpick.8
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/it/man8
+	${MV} ${STAGEDIR}${PREFIX}/share/man/man8/tcpick_italian.8 ${STAGEDIR}${PREFIX}/share/man/it/man8/tcpick.8
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:XSAWYERX
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C|00$||}
+DISTNAME=	PathTools-${PORTVERSION:S|00$||}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl module for portably manipulating file specifications

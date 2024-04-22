@@ -1,6 +1,6 @@
 PORTNAME=	fswatch
 DISTVERSION=	1.13.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/emcrisostomo/${PORTNAME}/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-mon
@@ -17,6 +17,7 @@ USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	fswatch
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INFO=	fswatch
 INSTALL_TARGET=	install-strip
 

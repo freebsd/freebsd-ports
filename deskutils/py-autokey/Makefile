@@ -1,7 +1,7 @@
 PORTNAME=	autokey
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.95.10
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	deskutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -40,20 +40,19 @@ QT5_USES=	pyqt:5
 QT5_USE=	PYQT=pyqt5,sip
 
 post-patch:
-	@${REINPLACE_CMD} 's|share/man|man|g' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} "/install_requires=/s|'dbus-python', ||g" ${WRKSRC}/setup.py
 
 # setup.py installs both gtk and qt files no matter what, need to clean that up.
 post-install-GTK3-off:
 	@${RM} ${STAGEDIR}${PREFIX}/share/applications/autokey-gtk.desktop
 	@${RM} ${STAGEDIR}${PREFIX}/bin/autokey-gtk
-	@${RM} ${STAGEDIR}${PREFIX}/man/man1/autokey-gtk.1
+	@${RM} ${STAGEDIR}${PREFIX}/share/man/man1/autokey-gtk.1
 	@${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}${PORTNAME}/gtkui
 
 post-install-QT5-off:
 	@${RM} ${STAGEDIR}${PREFIX}/share/applications/autokey-qt.desktop
 	@${RM} ${STAGEDIR}${PREFIX}/bin/autokey-qt
-	@${RM} ${STAGEDIR}${PREFIX}/man/man1/autokey-qt.1
+	@${RM} ${STAGEDIR}${PREFIX}/share/man/man1/autokey-qt.1
 	@${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}${PORTNAME}/gtkui
 
 .include <bsd.port.mk>

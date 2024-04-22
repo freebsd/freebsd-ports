@@ -1,7 +1,7 @@
 PORTNAME=	gnuradio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.8.4.0
-PORTREVISION=	14
+PORTREVISION=	16
 CATEGORIES=	comms astro hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -34,7 +34,7 @@ LIB_DEPENDS=	libcodec2.so:audio/codec2 \
 		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
 		libgmpxx.so:math/gmp \
-		libqwt6.so:x11-toolkits/qwt6 \
+		libqwt.so:x11-toolkits/qwt6@qt5 \
 		${PY_BOOST} \
 		liblog4cpp.so:devel/log4cpp \
 		libportaudio.so:audio/portaudio \

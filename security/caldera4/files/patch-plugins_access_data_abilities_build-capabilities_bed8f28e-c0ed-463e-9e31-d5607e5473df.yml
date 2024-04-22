@@ -1,0 +1,11 @@
+--- plugins/access/data/abilities/build-capabilities/bed8f28e-c0ed-463e-9e31-d5607e5473df.yml.orig	2021-10-01 14:07:40 UTC
++++ plugins/access/data/abilities/build-capabilities/bed8f28e-c0ed-463e-9e31-d5607e5473df.yml
+@@ -7,7 +7,7 @@
+     name: Build or acquire exploits
+     attack_id: T1349
+   platforms:
+-    darwin,linux:
++    darwin,freebsd,linux:
+       sh:
+         command: |
+           msfconsole -r msf_extract.rc #{app.contact.http} #{app.api_key.red}

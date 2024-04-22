@@ -1,6 +1,6 @@
 PORTNAME=	system-config-printer
 PORTVERSION=	1.5.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -20,6 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 PORTSCOUT=	limitw:1,even
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		autoreconf desktop-file-utils gettext gmake gnome pathfix \
 		pkgconfig python shebangfix tar:xz
 

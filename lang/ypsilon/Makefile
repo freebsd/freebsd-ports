@@ -1,6 +1,6 @@
 PORTNAME=	ypsilon
 PORTVERSION=	0.9.6.3
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	lang scheme
 
 MAINTAINER=	vmagerya@gmail.com
@@ -28,7 +28,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "sitelib stdlib" ${STAGEDIR}${DATADIR})
 

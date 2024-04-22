@@ -53,4 +53,4 @@ lib/apl/wslib5/iso-apl-cf/_metadata_
 lib/apl/wslib5/iso-apl-cf/iso_cf.apl
 lib/apl/wslib5/iso-apl-cf/perf.apl
 lib/apl/wslib5/iso-apl-cf/test.apl
-man/man1/apl.1.gz
+share/man/man1/apl.1.gz

@@ -20,12 +20,13 @@ TEST_DEPENDS=	bash:shells/bash
 
 USES=		cpe charsetfix gmake tar:xz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--program-prefix=g
 CPE_VENDOR=	gnu
 
 TEST_TARGET=	check
 
-PLIST_FILES=	bin/gpatch man/man1/gpatch.1.gz
+PLIST_FILES=	bin/gpatch share/man/man1/gpatch.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^LOG_COMPILER =/,+1s|$$(SHELL)|bash|' \

@@ -1,12 +1,8 @@
 PORTNAME=	mpv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.37.0
-PORTREVISION=	1
+DISTVERSION=	0.38.0
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	f4cc236a641e.patch:-p1 # https://github.com/mpv-player/mpv/pull/12941
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
@@ -40,8 +36,6 @@ OPTIONS_GROUP=		IN VO AO
 OPTIONS_GROUP_IN=	CDIO DVDNAV LIBBLURAY V4L VAPOURSYNTH
 OPTIONS_GROUP_VO=	CACA NVDEC OPENGL SIXEL VAAPI VDPAU VULKAN WAYLAND X11
 OPTIONS_GROUP_AO=	ALSA JACK OPENAL PIPEWIRE PULSEAUDIO SDL SNDIO
-OPTIONS_RADIO=		YOUTUBE
-OPTIONS_RADIO_YOUTUBE=	YTDL YTDLP
 OPTIONS_SINGLE=		LUA
 OPTIONS_SINGLE_LUA=	LUA LUAJIT LUA_NONE
 OPTIONS_SUB=		yes
@@ -56,8 +50,6 @@ SIXEL_DESC=		Sixel graphics support
 UCHARDET_DESC=		Guess subtitle encoding via uchardet
 VAPOURSYNTH_DESC=	VapourSynth filter bridge
 VULKAN_DESC=		Vulkan output support
-YTDLP_DESC=		Install yt-dlp (youtube-dl fork)
-YTDL_DESC=		Install youtube-dl
 ZIMG_DESC=		High quality software scaling via "z" library
 IN_DESC=		Input
 VO_DESC=		Video Output
@@ -140,6 +132,7 @@ UCHARDET_LIB_DEPENDS=		libuchardet.so:textproc/uchardet
 UCHARDET_MESON_ENABLED=		uchardet
 
 V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/dvb/dmx.h:multimedia/v4l_compat
+V4L_USES=			localbase
 V4L_MESON_ENABLED=		dvbin
 
 VAAPI_LIB_DEPENDS=		libva.so:multimedia/libva
@@ -171,8 +164,6 @@ X11_USE=			XORG=x11,xext,xinerama,xorgproto,xpresent,xrandr,xscrnsaver,xv,xxf86v
 X11_MESON_ENABLED=		x11
 
 YTDLP_RUN_DEPENDS=		yt-dlp:www/yt-dlp
-
-YTDL_RUN_DEPENDS=		youtube-dl:www/youtube_dl
 
 ZIMG_LIB_DEPENDS=		libzimg.so:graphics/sekrit-twc-zimg
 ZIMG_MESON_ENABLED=		zimg

@@ -2,9 +2,9 @@ bin/asn1c
 bin/crfc2asn1.pl
 bin/enber
 bin/unber
-man/man1/asn1c.1.gz
-man/man1/enber.1.gz
-man/man1/unber.1.gz
+share/man/man1/asn1c.1.gz
+share/man/man1/enber.1.gz
+share/man/man1/unber.1.gz
 %%DATADIR%%/ANY.c
 %%DATADIR%%/ANY.h
 %%DATADIR%%/BIT_STRING.c

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2024-02-25 16:48:32 UTC
++++ CMakeLists.txt
+@@ -233,7 +233,7 @@ add_test(NAME "facter\\ smoke" COMMAND facter)
+ add_test(NAME "facter\\ smoke" COMMAND facter)
+ 
+ # Install the man page
+-if ("${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD|FreeBSD")
++if ("${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD")
+     set(MANDIR man/man8/)
+ else()
+     set(MANDIR share/man/man8/)

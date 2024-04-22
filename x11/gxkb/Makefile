@@ -1,8 +1,9 @@
 PORTNAME=	gxkb
-PORTVERSION=	0.9.3
-PORTREVISION=	2
+PORTVERSION=	0.9.5
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}
+# RU and BY flags were removed as of version 0.9.4 so we need two distfiles
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}-0.9.3${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	X11 keyboard layout indicator and switcher
@@ -14,11 +15,10 @@ LIB_DEPENDS=	libxklavier.so:x11/libxklavier
 
 USES=		gnome pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_GNOME=	gdkpixbuf2 glib20
 
 PORTDOCS=	AUTHORS NEWS
-
-PORTSCOUT=	skipv:0.9.4	# identical to 0.9.3 but RU and BY flags removed
 
 OPTIONS_DEFINE=	DOCS GTK2
 GTK2_DESC=	Build against GTK version 2, not 3
@@ -36,5 +36,11 @@ post-patch-DOCS-on:
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s, doc,,' ${WRKSRC}/Makefile.in
+
+post-install:
+.for c in by ru
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-0.9.3/data/flags/${c}.png \
+		${STAGEDIR}${DATADIR}/flags
+.endfor
 
 .include <bsd.port.mk>

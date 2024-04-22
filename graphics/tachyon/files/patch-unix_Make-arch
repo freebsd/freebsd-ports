@@ -1,0 +1,18 @@
+--- unix/Make-arch.orig	2010-01-18 19:13:41 UTC
++++ unix/Make-arch
+@@ -954,13 +954,12 @@ bsd:
+ bsd:
+ 	$(MAKE) all \
+ 	"ARCH = bsd" \
+-	"CC = gcc" \
+-	"CFLAGS = -O3 -fomit-frame-pointer -ffast-math -DBsd  $(MISCFLAGS)" \
++	"CFLAGS = $(CFLAGS) -DBsd -DTHR $(MISCFLAGS)" \
+ 	"AR = ar" \
+ 	"ARFLAGS = r" \
+ 	"STRIP = strip" \
+ 	"RANLIB = ranlib" \
+-	"LIBS = -L. -ltachyon $(MISCLIB) -lm"
++	"LIBS = -L. -ltachyon $(MISCLIB) -lm -lpthread"
+ 
+ bsd-sparc:
+ 	$(MAKE) all \

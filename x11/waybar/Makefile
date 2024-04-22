@@ -1,10 +1,13 @@
 PORTNAME=	waybar
 DISTVERSION=	0.9.24
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C/.+/-${FLAVOR}/}
 
-MAINTAINER=	jbeich@FreeBSD.org
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	514d00803c91.patch:-p1 # https://github.com/Alexays/Waybar/pull/2949
+
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Highly customizable Wayland bar for Sway and wlroots-based compositors
 WWW=		https://github.com/Alexays/Waybar
 
@@ -141,7 +144,7 @@ post-patch:
 	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
 		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
 		${WRKSRC}/meson.build
-# Temporarily use ConsoleKit2 like sysutils/gnome-settings-daemon
+# https://github.com/ConsoleKit2/ConsoleKit2/issues/150
 	@${REINPLACE_CMD} -e 's,/login1,/ConsoleKit/Manager,' \
 		-e 's,login1\([".]\),ConsoleKit\1,g' \
 		${WRKSRC}/src/modules/backlight.cpp \
@@ -162,9 +165,10 @@ pre-test:
 
 # XXX https://github.com/HowardHinnant/date/issues/799
 .if ${CXX} == c++ && exists(/usr/include/c++/v1/__chrono/concepts.h)
-BUILD_DEPENDS+=	${CMAKE_BIN}:devel/cmake-core
-CONFIGURE_ENV+=	CC="${CC}" CXX="${CXX}" CPP="${CPP}"
-CMAKE_BIN=	${LOCALBASE}/bin/cmake
+USES+=		cmake:indirect
+CMAKE_ARGS=	-B ${WRKDIR}/libcxx_build -S ${WRKSRC_libcxx}/libcxx
+CMAKE_OFF=	LIBCXX_INCLUDE_BENCHMARKS
+CMAKE_INSTALL_PREFIX=	${WRKDIR}/libcxx_prefix
 
 # XXX Move into separate port and standardize via USES
 GH_TUPLE+=	llvm:llvm-project:llvmorg-16.0.1:libcxx
@@ -174,10 +178,7 @@ CXXFLAGS+=	-nostdinc++ -isystem${WRKDIR}/libcxx_prefix/include/c++/v1
 
 pre-configure:	bundled-libcxx
 bundled-libcxx:
-	@${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} \
-		-DLIBCXX_INCLUDE_BENCHMARKS:BOOL=OFF \
-		-DCMAKE_INSTALL_PREFIX:PATH=${WRKDIR}/libcxx_prefix \
-		-B ${WRKDIR}/libcxx_build -S ${WRKSRC_libcxx}/libcxx
+	@${SETENVI} ${WRK_ENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS}
 	@${DO_MAKE_BUILD:NDESTDIR*} install -C ${WRKDIR}/libcxx_build
 .endif # exists(/usr/include/c++/v1/__chrono/concepts.h)
 

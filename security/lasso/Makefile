@@ -43,5 +43,8 @@ CFLAGS+=	-Wno-error=int-conversion
 post-patch:
 	@${REINPLACE_CMD} -E 's,(xmlsec1-openssl >= 1\.2\.6) openssl,\1,' \
 		${CONFIGURE_WRKSRC}/configure
+# Fix build with new xmlsec1 as this function was deprecated
+	@${REINPLACE_CMD} -e 's|BAD_CAST XMLSEC_CRYPTO|BAD_CAST xmlSecGetDefaultCrypto()|g' \
+		${WRKSRC}/lasso/lasso.c
 
 .include <bsd.port.mk>

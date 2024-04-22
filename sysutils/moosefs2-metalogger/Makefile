@@ -1,3 +1,4 @@
+PORTREVISION=	1
 PKGNAMESUFFIX=	-metalogger
 
 COMMENT=	MooseFS metadata backup server

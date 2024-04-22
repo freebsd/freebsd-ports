@@ -1,0 +1,22 @@
+--- Makefile.orig	2024-01-22 15:40:56 UTC
++++ Makefile
+@@ -4,6 +4,8 @@ LDFLAGS=-L /usr/local/lib -lmosquitto -lconfig
+ 
+ CFLAGS=-Wall -Werror -I.
+ LDFLAGS=-L /usr/local/lib -lmosquitto -lconfig
++BINDIR?=
++MANDIR?=
+ 
+ detect:
+ 	@echo "detected: $(OS)"
+@@ -35,9 +37,7 @@ freebsd:
+ 
+ freebsd:
+ 	@$(MAKE) $(TARGET) CFLAGS="$(CFLAGS) -I/usr/local/include -I/usr/local/include/lua53/" \
+-		LDFLAGS="$(LDFLAGS) -llua-5.3" \
+-		BINDIR=/usr/local/bin \
+-		MANDIR=/usr/local/man
++		LDFLAGS="$(LDFLAGS) -llua-5.3"
+ 
+ openbsd:
+ 	@$(MAKE) $(TARGET) CFLAGS="$(CFLAGS) -I/usr/local/include -I/usr/local/include/lua-5.3/" \

@@ -1,5 +1,6 @@
 PORTNAME=	darkstat
 DISTVERSION=	3.0.721
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	emikulic@gmail.com
@@ -17,8 +18,9 @@ GH_PROJECT=	darkstat
 USE_RC_SUBR=	darkstat
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
-PLIST_FILES=	man/man8/darkstat.8.gz \
+PLIST_FILES=	share/man/man8/darkstat.8.gz \
 		sbin/darkstat
 PORTDOCS=	AUTHORS INSTALL README
 

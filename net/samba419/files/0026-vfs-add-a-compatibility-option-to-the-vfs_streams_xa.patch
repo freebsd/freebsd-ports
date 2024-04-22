@@ -1,0 +1,335 @@
+From 2d73ccb27ffcdf419d569260fcca6e9ee3b9538a Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Thu, 29 Sep 2022 03:24:26 +0200
+Subject: [PATCH 26/28] vfs: add a compatibility option to the
+ vfs_streams_xattr
+
+When enabled, the module does not append a trailing 0
+byte to the end of the extended attribute data.
+
+This is primarily a consideration when the administrator
+wishes to expose extended attributes that have been written
+by another application as alternate data streams via
+Samba.
+
+An example where this parameter may be required is when
+migrating a netatalk share to Samba. See manpage for
+vfs_fruit for additional considerations regarding
+Netatalk and Samba compatibility.
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ docs-xml/manpages/vfs_streams_xattr.8.xml | 25 ++++++
+ source3/modules/vfs_streams_xattr.c       | 95 +++++++++++++++++------
+ 2 files changed, 97 insertions(+), 23 deletions(-)
+
+diff --git a/docs-xml/manpages/vfs_streams_xattr.8.xml b/docs-xml/manpages/vfs_streams_xattr.8.xml
+index 6645928c016..0f38d510a82 100644
+--- a/docs-xml/manpages/vfs_streams_xattr.8.xml
++++ b/docs-xml/manpages/vfs_streams_xattr.8.xml
+@@ -71,6 +71,31 @@
+ 	    </listitem>
+ 	  </varlistentry>
+ 
++	  <varlistentry>
++	    <term>streams_xattr:xattr_compat = [yes|no]</term>
++	    <listitem>
++	      <para>When enabled, the module does not append a trailing 0
++	      byte to the end of the extended attribute data. This parameter
++	      must not be changed once data has been written to the share
++	      since it may result in dropping the last byte from xattr data.
++
++	      This is primarily a consideration when the administrator
++	      wishes to expose extended attributes that have been written
++	      by another application as alternate data streams via
++	      Samba.
++
++	      An example where this parameter may be required is when
++	      migrating a netatalk share to Samba. See manpage for
++	      vfs_fruit for additional considerations regarding
++	      Netatalk and Samba compatibility.
++
++	      WARNING: this parameter must not be changed on existing
++	      Samba shares or new shares that export paths currently
++	      or previously have been shared by Samba.
++	      The default is <command>yes</command>.</para>
++	    </listitem>
++	  </varlistentry>
++
+ 	</variablelist>
+ 
+ </refsect1>
+diff --git a/source3/modules/vfs_streams_xattr.c b/source3/modules/vfs_streams_xattr.c
+index b69a4f342f5..070111e3ee9 100644
+--- a/source3/modules/vfs_streams_xattr.c
++++ b/source3/modules/vfs_streams_xattr.c
+@@ -35,6 +35,7 @@ struct streams_xattr_config {
+ 	const char *prefix;
+ 	size_t prefix_len;
+ 	bool store_stream_type;
++	int xattr_compat_bytes;
+ };
+ 
+ struct stream_io {
+@@ -45,22 +46,28 @@ struct stream_io {
+ 	vfs_handle_struct *handle;
+ };
+ 
+-static ssize_t get_xattr_size_fsp(struct files_struct *fsp,
++static ssize_t get_xattr_size_fsp(vfs_handle_struct *handle,
++				  struct files_struct *fsp,
+ 			          const char *xattr_name)
+ {
+ 	NTSTATUS status;
+ 	struct ea_struct ea;
+ 	ssize_t result;
++	struct streams_xattr_config *config = NULL;
+ 
++	SMB_VFS_HANDLE_GET_DATA(handle, config, struct streams_xattr_config,
++				return -1);
++
+ 	status = get_ea_value_fsp(talloc_tos(),
+ 				  fsp,
+ 				  xattr_name,
+ 				  &ea);
++
+ 	if (!NT_STATUS_IS_OK(status)) {
+ 		return -1;
+ 	}
+ 
+-	result = ea.value.length-1;
++	result = ea.value.length - config->xattr_compat_bytes;
+ 	TALLOC_FREE(ea.value.data);
+ 	return result;
+ }
+@@ -197,7 +204,8 @@ static int streams_xattr_fstat(vfs_handle_struct *hand
+ 		return -1;
+ 	}
+ 
+-	sbuf->st_ex_size = get_xattr_size_fsp(fsp->base_fsp,
++	sbuf->st_ex_size = get_xattr_size_fsp(handle,
++					      fsp->base_fsp,
+ 					      io->xattr_name);
+ 	if (sbuf->st_ex_size == -1) {
+ 		SET_STAT_INVALID(*sbuf);
+@@ -273,7 +281,7 @@ static int streams_xattr_stat(vfs_handle_struct *handl
+ 		fsp = fsp->base_fsp;
+ 	}
+ 
+-	smb_fname->st.st_ex_size = get_xattr_size_fsp(fsp,
++	smb_fname->st.st_ex_size = get_xattr_size_fsp(handle, fsp,
+ 						      xattr_name);
+ 	if (smb_fname->st.st_ex_size == -1) {
+ 		TALLOC_FREE(xattr_name);
+@@ -308,6 +316,7 @@ static int streams_xattr_lstat(vfs_handle_struct *hand
+ 		errno = ENOENT;
+ 		return -1;
+ 	}
++
+ 	return SMB_VFS_NEXT_LSTAT(handle, smb_fname);
+ }
+ 
+@@ -341,6 +350,12 @@ static int streams_xattr_openat(struct vfs_handle_stru
+ 					   how);
+ 	}
+ 
++#ifdef O_EMPTY_PATH
++	if (how->flags & O_EMPTY_PATH) {
++		return vfs_fake_fd();
++	}
++#endif
++
+ 	if (how->resolve != 0) {
+ 		errno = ENOSYS;
+ 		return -1;
+@@ -356,6 +371,8 @@ static int streams_xattr_openat(struct vfs_handle_stru
+ 		goto fail;
+ 	}
+ 
++	fsp->fsp_flags.have_proc_fds = fsp->conn->have_proc_fds;
++
+ 	status = get_ea_value_fsp(talloc_tos(),
+ 				  fsp->base_fsp,
+ 				  xattr_name,
+@@ -394,7 +411,8 @@ static int streams_xattr_openat(struct vfs_handle_stru
+ 		 */
+ 
+ 		/*
+-		 * Darn, xattrs need at least 1 byte
++		 * If xattr_compat_bytes is set we need to
++		 * provide one extra trailing byte
+ 		 */
+ 		char null = '\0';
+ 
+@@ -403,7 +421,8 @@ static int streams_xattr_openat(struct vfs_handle_stru
+ 
+ 		ret = SMB_VFS_FSETXATTR(fsp->base_fsp,
+ 				       xattr_name,
+-				       &null, sizeof(null),
++                                       (config->xattr_compat_bytes) ? &null : NULL,
++                                       (config->xattr_compat_bytes) ? sizeof(null) : 0,
+ 				       how->flags & O_EXCL ? XATTR_CREATE : 0);
+ 		if (ret != 0) {
+ 			goto fail;
+@@ -412,13 +431,13 @@ static int streams_xattr_openat(struct vfs_handle_stru
+ 
+ 	fakefd = vfs_fake_fd();
+ 
+-        sio = VFS_ADD_FSP_EXTENSION(handle, fsp, struct stream_io, NULL);
+-        if (sio == NULL) {
+-                errno = ENOMEM;
+-                goto fail;
+-        }
++	sio = VFS_ADD_FSP_EXTENSION(handle, fsp, struct stream_io, NULL);
++	if (sio == NULL) {
++		errno = ENOMEM;
++		goto fail;
++	}
+ 
+-        sio->xattr_name = talloc_strdup(VFS_MEMCTX_FSP_EXTENSION(handle, fsp),
++	sio->xattr_name = talloc_strdup(VFS_MEMCTX_FSP_EXTENSION(handle, fsp),
+ 					xattr_name);
+ 	if (sio->xattr_name == NULL) {
+ 		errno = ENOMEM;
+@@ -808,12 +827,16 @@ static bool collect_one_stream(struct ea_struct *ea, v
+ {
+ 	struct streaminfo_state *state =
+ 		(struct streaminfo_state *)private_data;
++	struct streams_xattr_config *config = NULL;
+ 
++	SMB_VFS_HANDLE_GET_DATA(state->handle, config, struct streams_xattr_config,
++				return false);
++
+ 	if (!add_one_stream(state->mem_ctx,
+ 			    &state->num_streams, &state->streams,
+-			    ea->name, ea->value.length-1,
++			    ea->name, ea->value.length - config->xattr_compat_bytes,
+ 			    smb_roundup(state->handle->conn,
+-					ea->value.length-1))) {
++					ea->value.length - config->xattr_compat_bytes))) {
+ 		state->status = NT_STATUS_NO_MEMORY;
+ 		return false;
+ 	}
+@@ -875,6 +898,7 @@ static int streams_xattr_connect(vfs_handle_struct *ha
+ 	const char *default_prefix = SAMBA_XATTR_DOSSTREAM_PREFIX;
+ 	const char *prefix;
+ 	int rc;
++	bool xattr_compat;
+ 
+ 	rc = SMB_VFS_NEXT_CONNECT(handle, service, user);
+ 	if (rc != 0) {
+@@ -905,6 +929,13 @@ static int streams_xattr_connect(vfs_handle_struct *ha
+ 						 "store_stream_type",
+ 						 true);
+ 
++	xattr_compat = lp_parm_bool(SNUM(handle->conn),
++				    "streams_xattr",
++				    "xattr_compat",
++				    true);
++
++        config->xattr_compat_bytes = xattr_compat ? 0 : 1;
++
+ 	SMB_VFS_HANDLE_SET_DATA(handle, config,
+ 				NULL, struct stream_xattr_config,
+ 				return -1);
+@@ -921,6 +952,7 @@ static ssize_t streams_xattr_pwrite(vfs_handle_struct 
+ 	struct ea_struct ea;
+ 	NTSTATUS status;
+ 	int ret;
++	struct streams_xattr_config *config = NULL;
+ 
+ 	DEBUG(10, ("streams_xattr_pwrite called for %d bytes\n", (int)n));
+ 
+@@ -932,6 +964,9 @@ static ssize_t streams_xattr_pwrite(vfs_handle_struct 
+ 		return -1;
+ 	}
+ 
++	SMB_VFS_HANDLE_GET_DATA(handle, config, struct streams_xattr_config,
++				return -1);
++
+ 	if ((offset + n) >= lp_smbd_max_xattr_size(SNUM(handle->conn))) {
+ 		/*
+ 		 * Requested write is beyond what can be read based on
+@@ -961,11 +996,11 @@ static ssize_t streams_xattr_pwrite(vfs_handle_struct 
+ 		return -1;
+ 	}
+ 
+-        if ((offset + n) > ea.value.length-1) {
++        if ((offset + n) > ea.value.length - config->xattr_compat_bytes) {
+ 		uint8_t *tmp;
+ 
+ 		tmp = talloc_realloc(talloc_tos(), ea.value.data, uint8_t,
+-					   offset + n + 1);
++					   offset + n + config->xattr_compat_bytes);
+ 
+ 		if (tmp == NULL) {
+ 			TALLOC_FREE(ea.value.data);
+@@ -973,8 +1008,10 @@ static ssize_t streams_xattr_pwrite(vfs_handle_struct 
+                         return -1;
+                 }
+ 		ea.value.data = tmp;
+-		ea.value.length = offset + n + 1;
+-		ea.value.data[offset+n] = 0;
++		ea.value.length = offset + n + config->xattr_compat_bytes;
++		if (config->xattr_compat_bytes) {
++			ea.value.data[offset+n] = 0;
++		}
+         }
+ 
+         memcpy(ea.value.data + offset, data, n);
+@@ -1002,7 +1039,12 @@ static ssize_t streams_xattr_pread(vfs_handle_struct *
+ 	struct ea_struct ea;
+ 	NTSTATUS status;
+ 	size_t length, overlap;
++	struct smb_filename *smb_fname_base = NULL;
++	struct streams_xattr_config *config = NULL;
+ 
++	SMB_VFS_HANDLE_GET_DATA(handle, config, struct streams_xattr_config,
++				return -1);
++
+ 	DEBUG(10, ("streams_xattr_pread: offset=%d, size=%d\n",
+ 		   (int)offset, (int)n));
+ 
+@@ -1022,7 +1064,7 @@ static ssize_t streams_xattr_pread(vfs_handle_struct *
+ 		return -1;
+ 	}
+ 
+-	length = ea.value.length-1;
++	length = ea.value.length - config->xattr_compat_bytes;
+ 
+ 	DBG_DEBUG("get_ea_value_fsp returned %d bytes\n",
+ 		   (int)length);
+@@ -1210,6 +1252,12 @@ static int streams_xattr_ftruncate(struct vfs_handle_s
+         struct stream_io *sio =
+ 		(struct stream_io *)VFS_FETCH_FSP_EXTENSION(handle, fsp);
+ 
++	struct smb_filename *smb_fname_base = NULL;
++	struct streams_xattr_config *config = NULL;
++
++	SMB_VFS_HANDLE_GET_DATA(handle, config, struct streams_xattr_config,
++				return -1);
++
+ 	DEBUG(10, ("streams_xattr_ftruncate called for file %s offset %.0f\n",
+ 		   fsp_str_dbg(fsp), (double)offset));
+ 
+@@ -1239,14 +1287,16 @@ static int streams_xattr_ftruncate(struct vfs_handle_s
+ 	}
+ 
+ 	/* Did we expand ? */
+-	if (ea.value.length < offset + 1) {
++	if (ea.value.length < offset + config->xattr_compat_bytes) {
+ 		memset(&tmp[ea.value.length], '\0',
+-			offset + 1 - ea.value.length);
++			offset + config->xattr_compat_bytes - ea.value.length);
+ 	}
+ 
+ 	ea.value.data = tmp;
+-	ea.value.length = offset + 1;
+-	ea.value.data[offset] = 0;
++	ea.value.length = offset + config->xattr_compat_bytes;
++	if (config->xattr_compat_bytes) {
++		ea.value.data[offset] = 0;
++	}
+ 
+ 	ret = SMB_VFS_FSETXATTR(fsp->base_fsp,
+ 				sio->xattr_name,

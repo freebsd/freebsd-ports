@@ -1,6 +1,6 @@
 PORTNAME=	ipguard
 PORTVERSION=	1.04
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security net
 MASTER_SITES=	http://ipguard.deep.perm.ru/files/ http://deep.perm.ru/files/ipguard/
 
@@ -16,7 +16,7 @@ USE_RC_SUBR=	${PORTNAME}
 CFLAGS+=	-fcommon
 PORTDOCS=	COPYRIGHT NEWS README README.tcpdump README.log ethers.sample rfc826.txt
 PLIST_FILES=	sbin/ipguard \
-		man/man8/${PORTNAME}.8.gz
+		share/man/man8/${PORTNAME}.8.gz
 
 OPTIONS_DEFINE=	DOCS
 

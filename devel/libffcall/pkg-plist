@@ -22,10 +22,10 @@ lib/libtrampoline.so
 lib/libtrampoline.so.1
 lib/libtrampoline.so.1.0.3
 lib/libvacall.a
-man/man3/avcall.3.gz
-man/man3/callback.3.gz
-man/man3/trampoline.3.gz
-man/man3/vacall.3.gz
+share/man/man3/avcall.3.gz
+share/man/man3/callback.3.gz
+share/man/man3/trampoline.3.gz
+share/man/man3/vacall.3.gz
 share/html/avcall.html
 share/html/callback.html
 share/html/trampoline.html

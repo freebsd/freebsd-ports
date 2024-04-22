@@ -379,9 +379,9 @@ lib/libFOX-%%MAJORVER%%.so
 lib/libFOX-%%MAJORVER%%.so.0
 lib/libFOX-%%MAJORVER%%.so.0.0.84
 libdata/pkgconfig/fox17.pc
-man/man1/ControlPanel-17.1.gz
-%%PORTEXAMPLES%%man/man1/PathFinder-17.1.gz
-%%PORTEXAMPLES%%man/man1/adie-17.1.gz
-%%PORTEXAMPLES%%man/man1/calculator-17.1.gz
-man/man1/reswrap-17.1.gz
-%%PORTEXAMPLES%%man/man1/shutterbug-17.1.gz
+share/man/man1/ControlPanel-17.1.gz
+%%PORTEXAMPLES%%share/man/man1/PathFinder-17.1.gz
+%%PORTEXAMPLES%%share/man/man1/adie-17.1.gz
+%%PORTEXAMPLES%%share/man/man1/calculator-17.1.gz
+share/man/man1/reswrap-17.1.gz
+%%PORTEXAMPLES%%share/man/man1/shutterbug-17.1.gz

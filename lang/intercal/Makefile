@@ -1,23 +1,22 @@
 PORTNAME=	intercal
-PORTVERSION=	0.31
+PORTVERSION=	0.32
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.catb.org/~esr/intercal/
 
 MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	C-INTERCAL compiler, ick, and supporting libraries
-WWW=		http://www.catb.org/~esr/intercal/
+WWW=		https://gitlab.com/esr/intercal
 
 LICENSE=	GPLv2
 
-USES=		gmake
+USES=		autoreconf gmake
 GNU_CONFIGURE=	yes
-CFLAGS+=	-D_POSIX_C_SOURCE=200809L
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+CPPFLAGS+=	-DCC='\"${CC}\"'
 DATADIR=	${PREFIX}/share/ick
 
 INFO=		ick
-
-post-patch:
-	@${REINPLACE_CMD} -e '/ICK_SPECIFIC_SUBDIR/s/-@PACKAGE_VERSION@// ' \
-		${WRKSRC}/buildaux/Makefile.in
+TEST_TARGET=	check
 
 .include <bsd.port.mk>

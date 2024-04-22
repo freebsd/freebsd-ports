@@ -1,0 +1,11 @@
+--- thirdparty/singleapp/src/CMakeLists.txt.orig	2021-01-27 17:12:14 UTC
++++ thirdparty/singleapp/src/CMakeLists.txt
+@@ -37,7 +37,7 @@ if (NOT MSVC)
+    set_target_properties (
+       qtsingleapp
+       PROPERTIES
+-         COMPILE_FLAGS "${PCH_INCLUDE} -g -Wall -Wextra -Winvalid-pch"
++         COMPILE_FLAGS "-include ${PROJECT_BINARY_DIR}/all.h -Wall -Wextra -Winvalid-pch"
+       )
+ else (NOT MSVC)
+    set_target_properties (

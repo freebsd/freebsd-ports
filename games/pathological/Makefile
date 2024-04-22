@@ -1,6 +1,6 @@
 PORTNAME=	pathological
 PORTVERSION=	1.1.3
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -37,7 +37,7 @@ do-install:
 		exec ${PYTHON_CMD} ${DATADIR}/pathological.py\n" > ${WRKDIR}/pathological.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/pathological.sh \
 		${STAGEDIR}${PREFIX}/bin/pathological
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6.gz ${STAGEDIR}${MANPREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6.gz ${STAGEDIR}${PREFIX}/share/man/man6
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES:S|^|${WRKSRC}/html/|g} ${STAGEDIR}${DOCSDIR}
 

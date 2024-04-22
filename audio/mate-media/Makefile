@@ -1,6 +1,5 @@
 PORTNAME=	mate-media
-PORTVERSION=	1.26.0
-PORTREVISION=	5
+PORTVERSION=	1.28.1
 CATEGORIES=	audio mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -28,6 +27,8 @@ USE_GNOME=	cairo glib20 gtk30 intlhack libxml2
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

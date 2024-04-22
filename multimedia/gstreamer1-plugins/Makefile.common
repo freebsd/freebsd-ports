@@ -162,7 +162,6 @@ BAD_GST_ALL_PLUGINS+= \
 		resindvd \
 		rist \
 		rsvg \
-		rtmp \
 		rtmp2 \
 		rtp \
 		sbc \

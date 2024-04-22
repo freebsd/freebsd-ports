@@ -1,6 +1,6 @@
 PORTNAME=	vimpc
 PORTVERSION=	0.09.2
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
@@ -21,11 +21,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	boysetsfrog
 
 GNU_CONFIGURE=	yes
-
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-taglib=no
 
 PLIST_FILES=	bin/vimpc \
-		man/man1/vimpc.1.gz \
+		share/man/man1/vimpc.1.gz \
 		${DOCSDIR}/help.txt
 
 post-install:

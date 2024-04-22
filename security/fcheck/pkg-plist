@@ -1,6 +1,0 @@
-@sample etc/fcheck.cfg.sample
-sbin/fcheck
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/install
-@dir /var/fcheck/logs
-@dir /var/fcheck

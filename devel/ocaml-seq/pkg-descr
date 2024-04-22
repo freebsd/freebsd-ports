@@ -1,0 +1,2 @@
+Compatibility package for the standard iterator type `Seq' introduced
+in OCaml 4.07.

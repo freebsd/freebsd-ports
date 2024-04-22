@@ -1,6 +1,6 @@
 PORTNAME=	html-pretty
 PORTVERSION=	1.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc www
 MASTER_SITES=	http://ftp.math.utah.edu:80/pub/sgml/
 DISTNAME=	htmlpty-${PORTVERSION}

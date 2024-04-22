@@ -1,5 +1,6 @@
 PORTNAME=	cciss_vol_status
 PORTVERSION=	1.12a
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/cciss/${PORTNAME}
 
@@ -11,8 +12,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
-PLIST_FILES=	bin/cciss_vol_status etc/periodic/daily/cciss_vol_status man/man8/cciss_vol_status.8.gz
+PLIST_FILES=	bin/cciss_vol_status etc/periodic/daily/cciss_vol_status share/man/man8/cciss_vol_status.8.gz
 SUB_FILES=	cciss_vol_status
 
 post-install:

@@ -1,5 +1,5 @@
 PORTNAME=	owncloud
-PORTVERSION=	10.13.4
+PORTVERSION=	10.14.0
 CATEGORIES=	www
 MASTER_SITES=	https://download.owncloud.com/server/stable/ \
 		LOCAL/sunpoet
@@ -17,7 +17,7 @@ USE_PHP=	bz2 ctype curl dom fileinfo filter gd iconv intl mbstring pdo posix ses
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/owncloud
 
 OWNCLOUD_USER?=	${WWWOWN}
 OWNCLOUD_GROUP?=${WWWGRP}

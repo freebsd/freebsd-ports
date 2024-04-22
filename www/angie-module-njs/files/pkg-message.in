@@ -10,6 +10,7 @@ and reload angie:
     load_module modules/ngx_stream_js_module.so;
 
 Please refer to the njs documentation for further details:
+https://github.com/nginx/njs
 https://angie.software/js_reference/
 https://angie.software/http_js/
 https://angie.software/stream_js/

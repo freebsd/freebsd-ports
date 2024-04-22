@@ -1,6 +1,6 @@
 PORTNAME=	intltool
 PORTVERSION=	0.51.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	https://launchpad.net/intltool/trunk/${PORTVERSION}/+download/
 DIST_SUBDIR=	gnome
@@ -17,6 +17,7 @@ RUN_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 USES=		iconv gmake perl5
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 NO_ARCH=	yes
 

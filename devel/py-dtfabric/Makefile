@@ -1,5 +1,5 @@
 PORTNAME=	dtfabric
-PORTVERSION=	20221218
+PORTVERSION=	20230520
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/libyal/dtfabric/releases/download/${PORTVERSION}/

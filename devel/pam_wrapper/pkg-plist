@@ -15,7 +15,7 @@ lib/pam_wrapper/pam_get_items.so
 lib/pam_wrapper/pam_set_items.so
 %%PYTHON_SITELIBDIR%%/pypamtest.so
 include/libpamtest.h
-man/man1/pam_wrapper.1.gz
-man/man8/pam_matrix.8.gz
-man/man8/pam_get_items.8.gz
-man/man8/pam_set_items.8.gz
+share/man/man1/pam_wrapper.1.gz
+share/man/man8/pam_matrix.8.gz
+share/man/man8/pam_get_items.8.gz
+share/man/man8/pam_set_items.8.gz

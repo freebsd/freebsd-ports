@@ -9,5 +9,5 @@ lib/libdatrie.so
 lib/libdatrie.so.1
 lib/libdatrie.so.1.4.0
 libdata/pkgconfig/datrie-0.2.pc
-man/man1/trietool-0.2.1.gz
-man/man1/trietool.1.gz
+share/man/man1/trietool-0.2.1.gz
+share/man/man1/trietool.1.gz

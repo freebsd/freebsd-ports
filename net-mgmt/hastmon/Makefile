@@ -1,5 +1,6 @@
 PORTNAME=	hastmon
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	trociny@FreeBSD.org
@@ -16,6 +17,7 @@ GH_ACCOUNT=	trociny
 USES=		ssl
 MKCMAKE?=	${LOCALBASE}/bin/mkcmake
 INSTALL_TARGET=	installdirs install
+MAKE_ARGS=	MANDIR=${PREFIX}/share/man
 
 PORTDOCS=	ChangeLog COPYRIGHT README
 
@@ -33,7 +35,7 @@ do-build:
 
 do-install:
 	${SETENV} ${MKCMAKE_ENV} DESTDIR=${STAGEDIR} \
-		${MKCMAKE} -C ${WRKSRC} ${INSTALL_TARGET}
+		${MKCMAKE} -C ${WRKSRC} ${INSTALL_TARGET} ${MAKE_ARGS}
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}

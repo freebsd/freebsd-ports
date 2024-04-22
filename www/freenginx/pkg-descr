@@ -1,0 +1,8 @@
+NGINX is a high performance edge web server with the lowest memory footprint
+and the key features to build modern and efficient web infrastructure.
+
+NGINX functionality includes HTTP server, HTTP and mail reverse proxy, caching,
+load balancing, compression, request throttling, connection multiplexing and
+reuse, SSL offload and HTTP media streaming.
+
+See also: https://freenginx.org/

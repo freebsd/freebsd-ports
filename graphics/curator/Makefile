@@ -1,6 +1,6 @@
 PORTNAME=	curator
 PORTVERSION=	2.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics www python
 MASTER_SITES=	SF
 
@@ -13,9 +13,9 @@ USE_PYTHON=	distutils autoplist concurrent optsuffix
 
 CONFLICTS_INSTALL=	py*-elasticsearch-curator
 
-PLIST_FILES=	man/man1/curator.1.gz
+PLIST_FILES=	share/man/man1/curator.1.gz
 
 post-install:
-	${INSTALL_MAN} ${FILESDIR}/curator.1 ${STAGEDIR}${PREFIX}/man/man1/curator.1
+	${INSTALL_MAN} ${FILESDIR}/curator.1 ${STAGEDIR}${PREFIX}/share/man/man1/curator.1
 
 .include <bsd.port.mk>

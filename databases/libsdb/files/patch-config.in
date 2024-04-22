@@ -6,8 +6,8 @@
  install-man:
 -	mkdir -p $(MANDIR)/man3 && cp $(MAN3) $(MANDIR)/man3
 -	mkdir -p $(MANDIR)/man8 && cp $(MAN8) $(MANDIR)/man8
-+	$(BSD_INSTALL_MAN) $(MAN3) $(DESTDIR)$(MANDIR)/man3
-+	$(BSD_INSTALL_MAN) $(MAN8) $(DESTDIR)$(MANDIR)/man8
++	$(BSD_INSTALL_MAN) $(MAN3) $(DESTDIR)/$(MANDIR)/man3
++	$(BSD_INSTALL_MAN) $(MAN8) $(DESTDIR)/$(MANDIR)/man8
  
  uninstall-man:
  	cd $(MANDIR)/man3 && rm -f $(MAN3)

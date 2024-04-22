@@ -14,7 +14,7 @@ LICENSE=	ISCL
 PLIST_FILES=	bin/ftpsesame share/man/man8/ftpsesame.8.gz
 USE_RC_SUBR=	ftpsesame
 
-MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX} MANPREFIX=${STAGEDIR}${PREFIX}/share
+MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ftpsesame ${STAGEDIR}${PREFIX}/bin

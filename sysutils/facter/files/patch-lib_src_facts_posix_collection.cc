@@ -1,6 +1,6 @@
---- lib/src/facts/posix/collection.cc.orig	2017-09-12 21:43:10 UTC
+--- lib/src/facts/posix/collection.cc.orig	2022-07-18 15:00:22 UTC
 +++ lib/src/facts/posix/collection.cc
-@@ -29,6 +29,8 @@ namespace facter { namespace facts {
+@@ -25,6 +25,8 @@ namespace facter { namespace facts {
              directories.emplace_back("/opt/puppetlabs/facter/facts.d");
              directories.emplace_back("/etc/facter/facts.d");
              directories.emplace_back("/etc/puppetlabs/facter/facts.d");

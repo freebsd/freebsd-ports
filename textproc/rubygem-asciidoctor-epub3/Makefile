@@ -1,5 +1,5 @@
 PORTNAME=	asciidoctor-epub3
-PORTVERSION=	1.5.1
+PORTVERSION=	2.1.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,15 +10,15 @@ WWW=		https://github.com/asciidoctor/asciidoctor-epub3
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-asciidoctor>=1.5.6<3:textproc/rubygem-asciidoctor \
+RUN_DEPENDS=	rubygem-asciidoctor>=2.0<3:textproc/rubygem-asciidoctor \
 		rubygem-mime-types>=3.0:misc/rubygem-mime-types \
-		rubygem-gepub>=1.0.0:textproc/rubygem-gepub
+		rubygem-gepub>=1.0.0:textproc/rubygem-gepub \
+		rubygem-sass>0:textproc/rubygem-sass
 
 USES=		gem
 
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/asciidoctor-epub3 \
-		bin/adb-push-ebook
+PLIST_FILES=	bin/asciidoctor-epub3
 
 .include <bsd.port.mk>

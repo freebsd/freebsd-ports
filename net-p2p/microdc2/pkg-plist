@@ -1,6 +1,6 @@
 bin/microdc2
 bin/tthsum
-man/man1/microdc.1.gz
-man/pl/man1/microdc.1.gz
+share/man/man1/microdc.1.gz
+share/man/pl/man1/microdc.1.gz
 %%NLS%%share/locale/pl/LC_MESSAGES/microdc2.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/microdc2.mo

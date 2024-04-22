@@ -1,6 +1,6 @@
---- asmcomp/power/arch.ml.orig	2019-12-02 10:44:34 UTC
+--- asmcomp/power/arch.ml.orig	2024-02-01 14:00:12 UTC
 +++ asmcomp/power/arch.ml
-@@ -28,7 +28,7 @@ type abi = ELF32 | ELF64v1 | ELF64v2
+@@ -28,7 +28,7 @@ let abi =
  let abi =
    match Config.model with
    | "ppc" -> ELF32

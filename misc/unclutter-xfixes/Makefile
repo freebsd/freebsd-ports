@@ -1,5 +1,6 @@
 PORTNAME=	unclutter-xfixes
 PORTVERSION=	1.6
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -23,7 +24,7 @@ USE_XORG=	x11 xi xfixes
 CONFLICTS_INSTALL=	unclutter-8*
 
 PLIST_FILES=	bin/unclutter \
-		man/man1/unclutter.1.gz
+		share/man/man1/unclutter.1.gz
 
 MAKE_ARGS=	CC=${CC}
 

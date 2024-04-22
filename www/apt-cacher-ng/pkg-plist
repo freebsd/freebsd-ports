@@ -43,7 +43,7 @@ sbin/acngtool
 %%PORTDOCS%%%%DOCSDIR%%/html/secure.html
 %%PORTDOCS%%%%DOCSDIR%%/html/troublefaq.html
 %%PORTDOCS%%%%DOCSDIR%%/html/usage.html
-man/man8/apt-cacher-ng.8.gz
-%%FUSE%%man/man8/acngfs.8.gz
+share/man/man8/apt-cacher-ng.8.gz
+%%FUSE%%share/man/man8/acngfs.8.gz
 @dir(proxy,proxy,755) /var/cache/apt-cacher-ng
 @dir(proxy,proxy,755) /var/log/apt-cacher-ng

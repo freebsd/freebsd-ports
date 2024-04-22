@@ -1,6 +1,6 @@
 PORTNAME?=	gimp
-PORTVERSION=	2.10.34
-PORTREVISION=	11
+PORTVERSION=	2.10.36
+PORTREVISION?=	2
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	GIMP/gimp/v${PORTVERSION:R}
@@ -45,7 +45,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 		glib-networking>=0:net/glib-networking \
 		mypaint-brushes>0:graphics/mypaint-brushes
 
-USES+=		compiler:c++14-lang cpe gettext gmake gnome jpeg libtool \
+USES+=		cpe compiler:c++14-lang gettext gmake gnome jpeg libtool \
 		localbase pkgconfig shebangfix tar:bzip2 xorg
 CPE_VENDOR=	gimp
 CPE_PRODUCT=	gimp
@@ -56,6 +56,7 @@ USE_XORG=	ice sm x11 xcursor xext xfixes xmu xpm xt
 SHEBANG_FILES=	plug-ins/pygimp/plug-ins/*.py
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS?=	--with-html-dir=${PREFIX}/share/doc/gimp \
 			--with-bug-report-url="https://bugs.freebsd.org/" \
 			--disable-gtk-doc \
@@ -142,6 +143,8 @@ WMF_LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 WMF_CONFIGURE_WITH=	wmf
 
 .endif
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%GIMP_LIBS%%|${GIMP_LIBS}|; \

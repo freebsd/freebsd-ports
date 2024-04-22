@@ -10,6 +10,8 @@
     SUBDIR += 54321
     SUBDIR += 7kaa
     SUBDIR += 90secondportraits
+    SUBDIR += Bugdom
+    SUBDIR += Bugdom2
     SUBDIR += CaribbeanStud
     SUBDIR += DDNet
     SUBDIR += Doom64EX
@@ -17,6 +19,7 @@
     SUBDIR += KnightCap
     SUBDIR += LibreMines
     SUBDIR += NBlood
+    SUBDIR += Nanosaur
     SUBDIR += OpenLara
     SUBDIR += OpenTomb
     SUBDIR += SRB2
@@ -578,7 +581,6 @@
     SUBDIR += linux-nerogame
     SUBDIR += linux-nwnclient
     SUBDIR += linux-quake3
-    SUBDIR += linux-quake3-demo
     SUBDIR += linux-quake4
     SUBDIR += linux-quake4-demo
     SUBDIR += linux-ssamtfe
@@ -586,7 +588,6 @@
     SUBDIR += linux-steam-utils
     SUBDIR += linux-unrealgold
     SUBDIR += linux-ut
-    SUBDIR += linux-ut2003-demo
     SUBDIR += linux-virtual-jay-peak
     SUBDIR += linwarrior
     SUBDIR += lizzie
@@ -601,6 +602,7 @@
     SUBDIR += lugaru
     SUBDIR += luola
     SUBDIR += lwjgl
+    SUBDIR += lwjgl3
     SUBDIR += macopix
     SUBDIR += madbomber
     SUBDIR += maelstrom
@@ -932,7 +934,6 @@
     SUBDIR += species
     SUBDIR += spellcast
     SUBDIR += spicetrade
-    SUBDIR += spider
     SUBDIR += starfighter
     SUBDIR += starlanes
     SUBDIR += steelstorm
@@ -1058,7 +1059,6 @@
     SUBDIR += wyrmgus
     SUBDIR += wyrmsun
     SUBDIR += xasteroids
-    SUBDIR += xataxx
     SUBDIR += xbat
     SUBDIR += xbill
     SUBDIR += xbl

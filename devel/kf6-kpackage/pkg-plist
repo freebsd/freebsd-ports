@@ -19,8 +19,8 @@ lib/cmake/KF6Package/KF6PackageTargets.cmake
 lib/cmake/KF6Package/KF6PackageToolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6Package/KF6PackageToolsTargets.cmake
 lib/libKF6Package.so
-lib/libKF6Package.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6Package.so.6
+lib/libKF6Package.so.%%KDE_FRAMEWORKS_VERSION%%
 share/locale/ar/LC_MESSAGES/libkpackage6.mo
 share/locale/ast/LC_MESSAGES/libkpackage6.mo
 share/locale/az/LC_MESSAGES/libkpackage6.mo
@@ -50,6 +50,7 @@ share/locale/ja/LC_MESSAGES/libkpackage6.mo
 share/locale/ka/LC_MESSAGES/libkpackage6.mo
 share/locale/ko/LC_MESSAGES/libkpackage6.mo
 share/locale/lt/LC_MESSAGES/libkpackage6.mo
+share/locale/lv/LC_MESSAGES/libkpackage6.mo
 share/locale/ml/LC_MESSAGES/libkpackage6.mo
 share/locale/mr/LC_MESSAGES/libkpackage6.mo
 share/locale/nb/LC_MESSAGES/libkpackage6.mo

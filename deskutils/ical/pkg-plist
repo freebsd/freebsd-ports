@@ -73,5 +73,5 @@ lib/ical/v3.0.4/tcllib/tclIndex
 lib/ical/v3.0.4/tcllib/textwin.tcl
 lib/ical/v3.0.4/timerange.tcl
 lib/ical/v3.0.4/trigger.tcl
-man/man1/ical.1.gz
+share/man/man1/ical.1.gz
 share/applications/ical.desktop

@@ -1,6 +1,6 @@
 PORTNAME=	lame
 DISTVERSION=	3.100
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/${DISTVERSION}
 
@@ -18,6 +18,7 @@ USES=		cpe gmake iconv libtool
 USE_LDCONFIG=	yes
 CPE_VENDOR=	lame_project
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CONFIGURE_ARGS=	--enable-nasm --enable-mp3rtp --disable-gtktest
 

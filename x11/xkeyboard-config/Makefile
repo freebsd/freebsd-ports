@@ -1,5 +1,5 @@
 PORTNAME=	xkeyboard-config
-DISTVERSION=	2.40
+DISTVERSION=	2.41
 PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	XORG/individual/data/${PORTNAME}
@@ -10,6 +10,8 @@ WWW=		https://freedesktop.org/wiki/Software/XKeyboardConfig/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+TEST_DEPENDS=	gawk:lang/gawk
 
 USES=		meson gnome localbase pathfix perl5 python:build \
 		shebangfix tar:xz

@@ -1,4 +1,4 @@
---- media/base/video_frame.cc.orig	2023-11-04 07:08:51 UTC
+--- media/base/video_frame.cc.orig	2024-03-22 14:16:19 UTC
 +++ media/base/video_frame.cc
 @@ -80,7 +80,7 @@ std::string VideoFrame::StorageTypeToString(
        return "OWNED_MEMORY";
@@ -18,7 +18,7 @@
        // This is not strictly needed but makes explicit that, at VideoFrame
        // level, DmaBufs are not mappable from userspace.
        storage_type != VideoFrame::STORAGE_DMABUFS &&
-@@ -306,7 +306,7 @@ static absl::optional<VideoFrameLayout> GetDefaultLayo
+@@ -306,7 +306,7 @@ static std::optional<VideoFrameLayout> GetDefaultLayou
    return VideoFrameLayout::CreateWithPlanes(format, coded_size, planes);
  }
  
@@ -45,7 +45,7 @@
  // static
  scoped_refptr<VideoFrame> VideoFrame::WrapExternalDmabufs(
      const VideoFrameLayout& layout,
-@@ -903,7 +903,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
+@@ -901,7 +901,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
      }
    }
  
@@ -54,16 +54,16 @@
    DCHECK(frame->dmabuf_fds_);
    // If there are any |dmabuf_fds_| plugged in, we should refer them too.
    wrapping_frame->dmabuf_fds_ = frame->dmabuf_fds_;
-@@ -1311,7 +1311,7 @@ const gpu::MailboxHolder& VideoFrame::mailbox_holder(
+@@ -1312,7 +1312,7 @@ const gpu::MailboxHolder& VideoFrame::mailbox_holder(
                          : mailbox_holders_[texture_index];
  }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- const std::vector<base::ScopedFD>& VideoFrame::DmabufFds() const {
-   DCHECK_EQ(storage_type_, STORAGE_DMABUFS);
- 
-@@ -1424,7 +1424,7 @@ VideoFrame::VideoFrame(const VideoFrameLayout& layout,
+ size_t VideoFrame::NumDmabufFds() const {
+   return dmabuf_fds_->size();
+ }
+@@ -1429,7 +1429,7 @@ VideoFrame::VideoFrame(const VideoFrameLayout& layout,
        storage_type_(storage_type),
        visible_rect_(Intersection(visible_rect, gfx::Rect(layout.coded_size()))),
        natural_size_(natural_size),

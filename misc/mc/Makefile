@@ -1,6 +1,5 @@
 PORTNAME=	mc
-PORTVERSION=	4.8.30
-PORTREVISION=	1
+PORTVERSION=	4.8.31
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
 		https://ftp.osuosl.org/pub/midnightcommander/
@@ -25,12 +24,13 @@ SHEBANG_FILES=	${WRKSRC}/src/vfs/extfs/helpers/s3+.in \
 python_OLD_CMD=	@PYTHON@
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	ZIP=${LOCALBASE}/bin/zip UNZIP=${UNZIP_NATIVE_CMD}
 
-PORTDOCS=	AUTHORS FAQ HACKING MAINTAINERS NEWS README *.txt
+PORTDOCS=	AUTHORS FAQ HACKING MAINTAINERS NEWS README TODO
 
 OPTIONS_DEFINE=	ASPELL DOCS EDITOR EXTATTR ICONV NLS PCRE2 SFTP SUBSHELL X11
-OPTIONS_DEFAULT=	ASPELL EDITOR ICONV SFTP SLANG SUBSHELL X11
+OPTIONS_DEFAULT=	EDITOR ICONV SFTP SLANG SUBSHELL X11
 OPTIONS_SINGLE=	SCREEN
 OPTIONS_SINGLE_SCREEN=	SLANG NCURSES
 OPTIONS_SUB=	yes
@@ -45,6 +45,7 @@ SUBSHELL_DESC=	Build with subshell support
 X11_DESC=	X11 events support (if available)
 
 ASPELL_BUILD_DEPENDS=	${LOCALBASE}/include/aspell.h:textproc/aspell
+ASPELL_RUN_DEPENDS=	${LOCALBASE}/share/aspell/en.multi:textproc/en-aspell
 ASPELL_CONFIGURE_ENABLE=aspell
 
 EDITOR_CONFIGURE_WITH=	internal-edit
@@ -80,8 +81,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|clang\*)|*)|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|x$$UNRAR_VERSION.*x|$$UNRAR_VERSION -ge |' \
 		${WRKSRC}/src/vfs/extfs/helpers/urar.in
-	@${REINPLACE_CMD} -e '/^AM_CPPFLAGS = /s|CFLAGS)|& $$(E2P_&|' \
-		${WRKSRC}/src/vfs/local/Makefile.in
 
 post-patch-EXTATTR-off:
 	@${REINPLACE_CMD} -e '/found_e2p=/s|yes|disabled|; /e2p library/ \

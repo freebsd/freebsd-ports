@@ -25,7 +25,6 @@ include/openvdb/math/Coord.h
 include/openvdb/math/DDA.h
 include/openvdb/math/FiniteDifference.h
 include/openvdb/math/Half.h
-include/openvdb/math/HalfLimits.h
 include/openvdb/math/LegacyFrustum.h
 include/openvdb/math/Maps.h
 include/openvdb/math/Mat.h
@@ -68,9 +67,20 @@ include/openvdb/points/PointScatter.h
 include/openvdb/points/PointStatistics.h
 include/openvdb/points/PointTransfer.h
 include/openvdb/points/StreamCompression.h
+include/openvdb/points/impl/PointAttributeImpl.h
+include/openvdb/points/impl/PointConversionImpl.h
+include/openvdb/points/impl/PointCountImpl.h
+include/openvdb/points/impl/PointDeleteImpl.h
+include/openvdb/points/impl/PointGroupImpl.h
+include/openvdb/points/impl/PointMaskImpl.h
+include/openvdb/points/impl/PointMoveImpl.h
 include/openvdb/points/impl/PointRasterizeFrustumImpl.h
 include/openvdb/points/impl/PointRasterizeSDFImpl.h
 include/openvdb/points/impl/PointRasterizeTrilinearImpl.h
+include/openvdb/points/impl/PointReplicateImpl.h
+include/openvdb/points/impl/PointSampleImpl.h
+include/openvdb/points/impl/PointScatterImpl.h
+include/openvdb/points/impl/PointStatisticsImpl.h
 include/openvdb/thread/Threading.h
 include/openvdb/tools/Activate.h
 include/openvdb/tools/ChangeBackground.h
@@ -148,7 +158,6 @@ include/openvdb/util/Util.h
 include/openvdb/util/logging.h
 include/openvdb/version.h
 lib/cmake/OpenVDB/FindBlosc.cmake
-lib/cmake/OpenVDB/FindIlmBase.cmake
 lib/cmake/OpenVDB/FindJemalloc.cmake
 lib/cmake/OpenVDB/FindLog4cplus.cmake
 lib/cmake/OpenVDB/FindOpenEXR.cmake
@@ -159,5 +168,5 @@ lib/cmake/OpenVDB/OpenVDBHoudiniSetup.cmake
 lib/cmake/OpenVDB/OpenVDBMayaSetup.cmake
 lib/cmake/OpenVDB/OpenVDBUtils.cmake
 lib/libopenvdb.so
-lib/libopenvdb.so.10.0
-lib/libopenvdb.so.10.0.1
+lib/libopenvdb.so.11.0
+lib/libopenvdb.so.11.0.0

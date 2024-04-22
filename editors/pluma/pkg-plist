@@ -134,7 +134,6 @@ lib/pluma/plugins/time.plugin
 lib/pluma/plugins/trailsave.plugin
 libdata/pkgconfig/pluma.pc
 libexec/pluma/pluma-bugreport.sh
-man/man1/pluma.1.gz
 share/applications/pluma.desktop
 %%PORTDOCS%%%%DOCSDIR%%/PlumaMessage.html
 %%PORTDOCS%%%%DOCSDIR%%/PlumaMessageBus.html
@@ -699,6 +698,7 @@ share/locale/zh_CN/LC_MESSAGES/pluma.mo
 share/locale/zh_HK/LC_MESSAGES/pluma.mo
 share/locale/zh_TW/LC_MESSAGES/pluma.mo
 share/locale/zu/LC_MESSAGES/pluma.mo
+share/man/man1/pluma.1.gz
 share/metainfo/pluma.appdata.xml
 %%DATADIR%%/icons/pluma-plugin.png
 %%DATADIR%%/plugins/docinfo/docinfo.ui

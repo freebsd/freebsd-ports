@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-08-17 08:05:04 UTC
+--- CMakeLists.txt.orig	2024-03-13 13:37:59 UTC
 +++ CMakeLists.txt
-@@ -100,7 +100,7 @@ set(ARROW_BINARY_DIR ${PROJECT_BINARY_DIR})
+@@ -124,7 +124,7 @@ include(CMakeParseArguments)
  
  include(CMakePackageConfigHelpers)
  include(CMakeParseArguments)
@@ -9,7 +9,7 @@
  include(FindPackageHandleStandardArgs)
  
  include(GNUInstallDirs)
-@@ -968,9 +968,9 @@ if(ARROW_BUILD_EXAMPLES)
+@@ -1010,9 +1010,9 @@ endif()
    add_subdirectory(examples/arrow)
  endif()
  

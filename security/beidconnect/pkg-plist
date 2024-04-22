@@ -1,0 +1,3 @@
+bin/beidconnect
+etc/chromium/native-messaging-hosts/be.bosa.beidconnect.json
+lib/mozilla/native-messaging-hosts/be.bosa.beidconnect.json

@@ -1,7 +1,7 @@
 @comment env LC_ALL=C sort -f
 bin/rawtherapee
 bin/rawtherapee-cli
-man/man1/rawtherapee.1.gz
+share/man/man1/rawtherapee.1.gz
 share/applications/rawtherapee.desktop
 share/icons/hicolor/128x128/apps/rawtherapee.png
 share/icons/hicolor/16x16/apps/rawtherapee.png
@@ -21,6 +21,7 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/Canon EOS 100D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 1300D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 20D.dcp
+%%DATADIR%%/dcpprofiles/CANON EOS 250D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 400D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 40D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 450D.dcp
@@ -37,8 +38,10 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/Canon EOS 6D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 7D Mark II.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 7D.dcp
+%%DATADIR%%/dcpprofiles/CANON EOS 800D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 90D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS D60.dcp
+%%DATADIR%%/dcpprofiles/CANON EOS M50.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS M6 Mark II.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS R.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS R5.dcp
@@ -50,19 +53,24 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/Canon PowerShot G1 X Mark II.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot G10.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot G12.dcp
+%%DATADIR%%/dcpprofiles/CANON POWERSHOT G5 X MARK II.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot G7 X.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot S110.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot S120.dcp
+%%DATADIR%%/dcpprofiles/FUJIFILM DBP for GX680.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM FinePix F600EXR.dcp
 %%DATADIR%%/dcpprofiles/Fujifilm FinePix S9500.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM GFX 50R.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-A5.dcp
+%%DATADIR%%/dcpprofiles/FUJIFILM X-A7.dcp
 %%DATADIR%%/dcpprofiles/Fujifilm X-E1.dcp
 %%DATADIR%%/dcpprofiles/Fujifilm X-E2.dcp
+%%DATADIR%%/dcpprofiles/FUJIFILM X-E3.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-H1.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-Pro2.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-Pro3.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-S1.dcp
+%%DATADIR%%/dcpprofiles/FUJIFILM X-S10.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-T1.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-T10.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-T2.dcp
@@ -80,6 +88,7 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/NIKON D300.dcp
 %%DATADIR%%/dcpprofiles/Nikon D3000.dcp
 %%DATADIR%%/dcpprofiles/Nikon D3100.dcp
+%%DATADIR%%/dcpprofiles/NIKON D3300.dcp
 %%DATADIR%%/dcpprofiles/Nikon D3S.dcp
 %%DATADIR%%/dcpprofiles/NIKON D50.dcp
 %%DATADIR%%/dcpprofiles/NIKON D500.dcp
@@ -101,12 +110,15 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/NIKON D800E.dcp
 %%DATADIR%%/dcpprofiles/NIKON D810.dcp
 %%DATADIR%%/dcpprofiles/NIKON D850.dcp
+%%DATADIR%%/dcpprofiles/NIKON Z 5.dcp
 %%DATADIR%%/dcpprofiles/NIKON Z 50.dcp
 %%DATADIR%%/dcpprofiles/NIKON Z 6.dcp
+%%DATADIR%%/dcpprofiles/NIKON Z 6_2.dcp
 %%DATADIR%%/dcpprofiles/NIKON Z 7.dcp
 %%DATADIR%%/dcpprofiles/Olympus E-1.dcp
 %%DATADIR%%/dcpprofiles/OLYMPUS E-510.dcp
 %%DATADIR%%/dcpprofiles/Olympus E-520.dcp
+%%DATADIR%%/dcpprofiles/OLYMPUS E-M1.dcp
 %%DATADIR%%/dcpprofiles/OLYMPUS E-M10.dcp
 %%DATADIR%%/dcpprofiles/OLYMPUS E-M1MarkII.dcp
 %%DATADIR%%/dcpprofiles/Olympus E-M5.dcp
@@ -129,6 +141,7 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/Panasonic DMC-GH2.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-GX7.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-GX85.dcp
+%%DATADIR%%/dcpprofiles/PANASONIC DMC-LX100.dcp
 %%DATADIR%%/dcpprofiles/PENTAX K-5 II.dcp
 %%DATADIR%%/dcpprofiles/PENTAX K-5.dcp
 %%DATADIR%%/dcpprofiles/PENTAX K-50.dcp
@@ -139,6 +152,7 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/RICOH PENTAX K-1.dcp
 %%DATADIR%%/dcpprofiles/RICOH PENTAX K-3.dcp
 %%DATADIR%%/dcpprofiles/samsung SM-G930V.dcp
+%%DATADIR%%/dcpprofiles/SONY DSC-RX100M6.dcp
 %%DATADIR%%/dcpprofiles/SONY DSLR-A580.dcp
 %%DATADIR%%/dcpprofiles/Sony DSLR-A700.dcp
 %%DATADIR%%/dcpprofiles/Sony DSLR-A900.dcp
@@ -147,11 +161,14 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/SONY ILCE-6400.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-6500.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-6600.dcp
+%%DATADIR%%/dcpprofiles/SONY ILCE-7.dcp
+%%DATADIR%%/dcpprofiles/SONY ILCE-7C.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-7M2.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-7M3.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-7M4.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-7RM3.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-7RM4.dcp
+%%DATADIR%%/dcpprofiles/SONY ILCE-7SM3.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-9.dcp
 %%DATADIR%%/dcpprofiles/Sony NEX-5N.dcp
 %%DATADIR%%/dcpprofiles/Sony SLT-A55V.dcp
@@ -231,6 +248,7 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/images/bidirectional-arrow-horizontal-prelight.svg
 %%DATADIR%%/images/bidirectional-arrow-vertical-hicontrast.svg
 %%DATADIR%%/images/bidirectional-arrow-vertical-prelight.svg
+%%DATADIR%%/images/box.svg
 %%DATADIR%%/images/cancel-small.svg
 %%DATADIR%%/images/cancel.svg
 %%DATADIR%%/images/circle-black-small.svg
@@ -315,6 +333,8 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/images/distortion-pincushion.svg
 %%DATADIR%%/images/draw.svg
 %%DATADIR%%/images/edit-point.svg
+%%DATADIR%%/images/edit-small.svg
+%%DATADIR%%/images/edit.svg
 %%DATADIR%%/images/empty.png
 %%DATADIR%%/images/equilizer-narrow.svg
 %%DATADIR%%/images/equilizer-wide.svg

@@ -1,7 +1,7 @@
 PORTNAME=	imv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	https://git.sr.ht/~exec64/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -18,14 +18,14 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c11 desktop-file-utils gl gnome meson pkgconfig
+USES=		desktop-file-utils gl gnome meson pkgconfig
 USE_GL=		egl
 USE_GNOME=	cairo pango
 
 CONFLICTS_INSTALL=	renameutils
 
 OPTIONS_DEFINE=		FREEIMAGE HEIF JPEG NSGIF PNG SVG TEST TIFF
-OPTIONS_DEFAULT=	ALL FREEIMAGE HEIF JPEG NSGIF PNG SVG TIFF
+OPTIONS_DEFAULT=	ALL FREEIMAGE HEIF JPEG PNG SVG TIFF
 OPTIONS_SINGLE=		WIN
 OPTIONS_SINGLE_WIN=	ALL WAYLAND X11
 OPTIONS_SUB=		yes
@@ -51,6 +51,7 @@ HEIF_MESON_ENABLED=	libheif
 JPEG_LIB_DEPENDS=	libturbojpeg.so:graphics/libjpeg-turbo
 JPEG_MESON_ENABLED=	libjpeg
 
+NSGIF_BROKEN=		fails to build with libnsgif 1.0.0, see also https://lists.sr.ht/~exec64/imv-devel/%3CCAFDf7UKQCAO5VXqykRCnpHG6u0owdXRnk5kt0S3b-aTkpuF66Q%40mail.gmail.com%3E
 NSGIF_LIB_DEPENDS=	libnsgif.so:graphics/libnsgif
 NSGIF_MESON_ENABLED=	libnsgif
 

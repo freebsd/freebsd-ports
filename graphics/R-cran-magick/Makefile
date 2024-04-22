@@ -1,9 +1,9 @@
 PORTNAME=	magick
-DISTVERSION=	2.8.1
+DISTVERSION=	2.8.3
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Advanced Graphics and Image-Processing in R
 WWW=		https://cran.r-project.org/web/packages/magick/index.html
 
@@ -20,6 +20,6 @@ TEST_DEPENDS=	R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
 		R-cran-spelling>0:textproc/R-cran-spelling
 
-USES=		cran:auto-plist,compiles magick:run
+USES=		compiler:c++17-lang cran:auto-plist,compiles magick:run
 
 .include <bsd.port.mk>

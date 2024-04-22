@@ -1,6 +1,5 @@
 PORTNAME=	mate-session-manager
-PORTVERSION=	1.26.0
-PORTREVISION=	5
+PORTVERSION=	1.28.0
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -26,6 +25,7 @@ USE_MATE=	desktop
 USE_XORG=	ice sm x11 xau xext xrandr xrender xtrans xtst
 USE_GNOME=	cairo gtk30 intlhack librsvg2 libxslt pango
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-docbook-docs \
 		--with-default-wm=mate-wm \
 		--enable-upower \

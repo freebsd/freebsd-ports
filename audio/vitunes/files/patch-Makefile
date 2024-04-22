@@ -7,7 +7,7 @@
 -	/usr/bin/install -c -m 0555 vitunes $(BINDIR)
 -	/usr/bin/install -c -m 0444 vitunes.1 $(MANDIR)
 +	${BSD_INSTALL_PROGRAM} -c -m 0555 vitunes $(DESTDIR)$(BINDIR)
-+	${BSD_INSTALL_MAN} -c -m 0444 vitunes.1 $(DESTDIR)$(MANDIR)
++	${BSD_INSTALL_MAN} -c -m 0444 vitunes.1 $(DESTDIR)$(PREFIX)/share/man/man1
  
  uninstall:
  	rm -f $(BINDIR)/vitunes

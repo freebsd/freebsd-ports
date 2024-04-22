@@ -1,6 +1,6 @@
 PORTNAME=	lordsawar
 PORTVERSION=	0.3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 
@@ -15,6 +15,7 @@ USES=		compiler:c++11-lib gettext gmake gnome libarchive pkgconfig \
 		shebangfix
 USE_GNOME=	gtkmm30 intltool libxslt
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 SHEBANG_FILES=	create-lw-file
 bash_CMD=	/bin/sh
 

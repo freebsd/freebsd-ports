@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2021-02-17 10:06:29 UTC
+--- CMakeLists.txt.orig	2022-07-30 05:55:21 UTC
 +++ CMakeLists.txt
 @@ -20,13 +20,13 @@ include(ccache)
  
@@ -12,11 +12,11 @@
  set(BINDIR bin)
  set(DATADIR share)
 -set(MANDIR ${DATADIR}/man)
-+set(MANDIR ${CMAKE_INSTALL_PREFIX}/man)
++set(MANDIR ${CMAKE_INSTALL_PREFIX}/share/man)
  set(DOCDIR ${DATADIR}/doc/herbstluftwm)
  set(LICENSEDIR ${DOCDIR}
      CACHE PATH "Install path for license file")
-@@ -36,7 +36,7 @@ set(ZSHCOMPLETIONDIR ${DATADIR}/zsh/site-functions
+@@ -36,7 +36,7 @@ set(FISHCOMPLETIONDIR ${DATADIR}/fish/vendor_completio
      CACHE PATH "Install path for zsh completions file")
  set(FISHCOMPLETIONDIR ${DATADIR}/fish/vendor_completions.d
      CACHE PATH "Install path for fish completions file")
@@ -25,7 +25,7 @@
      CACHE PATH "Install path for bash completions file")
  
  ## do the actual work
-@@ -47,7 +47,6 @@ add_subdirectory(share)
+@@ -47,7 +47,6 @@ install(FILES NEWS DESTINATION ${DOCDIR})
  
  ## install everything that was not installed from subdirectories
  install(FILES NEWS DESTINATION ${DOCDIR})

@@ -4,7 +4,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dgeo@centrale-marseille.fr
+MAINTAINER=	dgeo@centrale-med.fr
 COMMENT=	Template::Toolkit subclass with automatic filtering
 WWW=		https://metacpan.org/release/Template-AutoFilter
 

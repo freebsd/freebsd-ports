@@ -1,6 +1,6 @@
 PORTNAME=	gtkmmorse
 PORTVERSION=	0.9.27
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	comms education hamradio
 MASTER_SITES=	SAVANNAH
 
@@ -13,11 +13,12 @@ LIB_DEPENDS=	libao.so:audio/libao \
 		libgconfmm-2.6.so:devel/gconfmm26
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		compiler:c++11-lang pkgconfig tar:bzip2
 USE_CXXSTD=	c++11
 
 PLIST_FILES=	bin/gtkmmorse \
-		man/man1/gtkmmorse.1.gz
+		share/man/man1/gtkmmorse.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ansi||g' -e 's|-pedantic||g' \

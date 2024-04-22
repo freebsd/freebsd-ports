@@ -9,6 +9,8 @@ WWW=		https://kaldi-asr.org/
 
 LICENSE=	APACHE20
 
+BROKEN_i386=	compilation fails: compile with -msse -mfpmath=sse, or equivalent, when these flags are already provided, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276505
+
 LIB_DEPENDS=	libcblas.so:math/cblas \
 		libfst.so:math/openfst \
 		liblapack.so:math/lapack
@@ -24,7 +26,7 @@ CMAKE_OFF=	KALDI_BUILD_TEST
 CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD} \
 		-DKALDI_VERSION=${PORTVERSION}
 
-CXXFLAGS_i386=	-msse # SSE is off by default on i386 and compilation fails: /usr/local/include/fst/float-weight.h:99:2: error: "Please compile with -msse -mfpmath=sse, or equivalent."
+CXXFLAGS_i386=	-msse -mfpmath=sse -D__SSE2_MATH__ # __SSE2_MATH__ is a gcc-specific macro that the code looks for: https://gcc.gnu.org/legacy-ml/gcc-patches/2002-08/msg01345.html
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete

@@ -1,11 +1,12 @@
 PORTNAME=	ardour
-DISTVERSION=	8.1.0
+DISTVERSION=	8.4.0
+PORTREVISION=	1
 CATEGORIES=	audio
 # Official source download is tailored to browsers, downloads from github are
 # deliberately made empty. Put the badly named distfile into a subdirectory.
 MASTER_SITES=	https://community.ardour.org/download/release/
 DISTNAME=	Ardour-${DISTVERSION}
-DISTFILES=	550
+DISTFILES=	562
 DIST_SUBDIR=	${DISTNAME}
 
 MAINTAINER=	dev@submerge.ch
@@ -53,11 +54,14 @@ USE_LDCONFIG=	yes
 USE_XORG=	x11
 
 CONFIGURE_ARGS=	--optimize --ptformat --freedesktop --no-phone-home \
-		--with-backends=jack,dummy --internal-shared-libs \
+		--with-backends=jack,dummy --internal-shared-libs --no-ytk \
 		${CONFIGURE_ARGS_${ARCH}}
 CONFIGURE_ARGS_amd64=	--arch='-msse -mfpmath=sse -DARCH_X86' --dist-target=x86_64
 # only support for i686 or better
 CONFIGURE_ARGS_i386=	--arch='-msse -mfpmath=sse -march=i686 -DARCH_X86' --dist-target=i686
+
+CONFIGURE_ENV+=		PYTHONDONTWRITEBYTECODE=1
+MAKE_ENV+=		PYTHONDONTWRITEBYTECODE=1
 
 LDFLAGS_powerpc=	-Wl,-z,notext
 
@@ -75,8 +79,7 @@ OPTIONS_SUB=		yes
 VST3_DESC=		Build with VST3 plugin support
 
 VST3_BUILD_DEPENDS=	vst3sdk>0:audio/vst3sdk
-# Inverted logic, the --vst3 argument _disables_ VST3 support.
-VST3_CONFIGURE_OFF=	--vst3
+VST3_CONFIGURE_OFF=	--no-vst3
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/obj\.use            = '\''libsmf libpbd'\''/obj\.use            = '\''libsmf_internal libpbd'\''/g' ${WRKSRC}/libs/evoral/wscript

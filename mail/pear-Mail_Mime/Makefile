@@ -1,5 +1,5 @@
 PORTNAME=	Mail_Mime
-PORTVERSION=	1.10.11
+DISTVERSION=	1.10.12
 PORTEPOCH=	2
 CATEGORIES=	mail www pear
 
@@ -10,6 +10,7 @@ WWW=		https://pear.php.net/package/Mail_Mime
 LICENSE=	BSD3CLAUSE
 
 USES=		pear
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

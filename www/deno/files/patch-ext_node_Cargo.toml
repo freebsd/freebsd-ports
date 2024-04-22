@@ -1,0 +1,10 @@
+--- ext/node/Cargo.toml.orig	2024-02-11 11:04:43 UTC
++++ ext/node/Cargo.toml
+@@ -70,6 +70,7 @@ spki.workspace = true
+ signature.workspace = true
+ simd-json = "0.13.4"
+ spki.workspace = true
++sysinfo = "0.30.7"
+ tokio.workspace = true
+ typenum = "1.15.0"
+ url.workspace = true

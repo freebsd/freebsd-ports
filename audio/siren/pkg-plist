@@ -11,4 +11,4 @@ bin/siren
 %%SNDIO%%lib/siren/op/sndio.so
 %%VORBIS%%lib/siren/ip/vorbis.so
 %%WAVPACK%%lib/siren/ip/wavpack.so
-man/man1/siren.1.gz
+share/man/man1/siren.1.gz

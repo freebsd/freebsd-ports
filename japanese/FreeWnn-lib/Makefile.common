@@ -1,4 +1,5 @@
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		autoreconf libtool:keepla tar:bzip2
 MAKE_ARGS=	MANLANG="${MANLANG}" CDEBUGFLAGS="${CFLAGS}" \
 		LIBRARY_WNNMANDIR="3.libwnn" \

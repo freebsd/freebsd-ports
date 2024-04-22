@@ -1,5 +1,6 @@
 PORTNAME=	packit
-PORTVERSION=	1.8.1
+DISTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -17,7 +18,7 @@ GH_ACCOUNT=	eribertomota
 
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	man/man8/packit.8.gz \
+PLIST_FILES=	share/man/man8/packit.8.gz \
 		sbin/packit
 
 OPTIONS_DEFINE=		CAPTURE INJECTION

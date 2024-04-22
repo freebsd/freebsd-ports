@@ -16,7 +16,7 @@ etc/wmconfig/Office_Viewers
 etc/wmconfig/Shells
 etc/wmconfig/System
 etc/wmconfig/Utilities
-man/man1/wmconfig.1x.gz
+share/man/man1/wmconfig.1x.gz
 %%NLS%%share/locale/de/LC_MESSAGES/wmconfig.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wmconfig.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wmconfig.mo

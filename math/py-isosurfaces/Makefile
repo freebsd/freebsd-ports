@@ -1,6 +1,5 @@
 PORTNAME=	isosurfaces
-DISTVERSION=	0.1.0
-PORTREVISION=	1
+DISTVERSION=	0.1.2
 CATEGORIES=	math
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +25,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 do-test:
 	@cd ${TEST_WRKSRC} && \
 		${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/isoline_demo.py && \
-		xdg-open ${TEST_WRKSRC}/demo.svg
+		xdg-open ${TEST_WRKSRC}/out/demo.svg
 
 .include <bsd.port.mk>

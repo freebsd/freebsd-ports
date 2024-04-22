@@ -29,6 +29,7 @@ include/libint2/cxxapi.h
 include/libint2/deriv_iter.h
 include/libint2/deriv_map.h
 include/libint2/diis.h
+include/libint2/dfbs_generator.h
 include/libint2/engine.h
 include/libint2/engine.impl.h
 include/libint2/initialize.h
@@ -38,8 +39,10 @@ include/libint2/libint2_iface.h
 include/libint2/libint2_params.h
 include/libint2/libint2_types.h
 include/libint2/numeric.h
+include/libint2/pivoted_cholesky.h
 include/libint2/shell.h
 include/libint2/shgshell_ordering.h
+include/libint2/soad_fock.h
 include/libint2/solidharmonics.h
 include/libint2/statics_definition.h
 include/libint2/tenno_cheb.h

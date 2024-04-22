@@ -1,6 +1,7 @@
 PORTNAME=	mdal
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	math geography
 
 MAINTAINER=	wen@FreeBSD.org
@@ -11,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gtest/gtest.h:devel/googletest
-LIB_DEPENDS=	libpdal_base.so:math/pdal \
+LIB_DEPENDS=	libpdalcpp.so:math/pdal \
 		libnetcdf.so:science/netcdf \
 		libsqlite3.so:databases/sqlite3 \
 		libgdal.so:graphics/gdal \

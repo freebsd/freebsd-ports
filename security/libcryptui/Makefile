@@ -1,6 +1,6 @@
 PORTNAME=	libcryptui
 PORTVERSION=	3.12.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -22,6 +22,7 @@ USE_GNOME=	intlhack gnomeprefix gtk30 introspection:build
 USE_XORG=	sm ice
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip

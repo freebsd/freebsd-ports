@@ -1,17 +1,6 @@
---- battstat/power-management.c.orig	2021-08-07 11:25:17 UTC
+--- battstat/power-management.c.orig	2024-02-21 23:15:11 UTC
 +++ battstat/power-management.c
-@@ -63,6 +63,10 @@
- 
- static const char *apm_readinfo (BatteryStatus *status);
- static int pm_initialised;
-+#ifdef HAVE_HAL
-+static int using_hal;
-+#endif
-+static int using_hal = FALSE;
- #ifdef HAVE_UPOWER
- static int using_upower;
- #endif
-@@ -174,38 +178,69 @@ apm_readinfo (BatteryStatus *status)
+@@ -172,38 +172,69 @@ apm_readinfo (BatteryStatus *status)
  
  #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
  
@@ -91,7 +80,7 @@
      fd = open (APMDEVICE, O_RDONLY);
      if (fd == -1) {
        return ERR_OPEN_APMDEV;
-@@ -218,6 +253,9 @@ apm_readinfo (BatteryStatus *status)
+@@ -216,6 +247,9 @@ apm_readinfo (BatteryStatus *status)
  
      if (apminfo.ai_status == 0)
        return ERR_APM_E;
@@ -101,7 +90,7 @@
    }
  
    status->present = TRUE;
-@@ -484,6 +522,12 @@ power_management_initialise (void (*callback) (void))
+@@ -482,6 +516,12 @@ power_management_initialise (void (*callback) (void))
    }
    else
      using_acpi = FALSE;
@@ -112,9 +101,9 @@
 +       acpi_callback, NULL);
 +  }
  #endif
-   pm_initialised = 1;
+   pm_initialised = TRUE;
  
-@@ -517,6 +561,9 @@ power_management_cleanup (void)
+@@ -515,6 +555,9 @@ power_management_cleanup (void)
    }
  #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
    if (using_acpi) {

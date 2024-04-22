@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 22;
-my $micro = 0;
+my $micro = 1;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -543,36 +543,6 @@ sub checkdescr {
 		&perror("WARN", $file, -1, "includes iso-8859-1, or ".
 			"other local characters.  files should be in ".
 			"plain 7-bit ASCII");
-	}
-	if ($file =~ /\bpkg-descr/ && $tmp =~ m,https?://,) {
-		my $has_url = 0;
-		my $has_www = 0;
-		my $cpan_url = 0;
-		my $has_endslash = 0;
-		foreach my $line (grep($_ =~ "https?://", split(/\n+/, $tmp))) {
-			$has_url = 1;
-			if ($line =~ m,WWW:[ \t]+https?://,) {
-				$has_www = 1;
-				if ($line =~ m,search.cpan.org,) {
-					$cpan_url = 1;
-					if ($line =~ m,/$,) {
-						$has_endslash = 1;
-					}
-				}
-			}
-		}
-
-		if (!$has_url) {
-			&perror("WARN", $file, -1, "add \"WWW: URL:\" for this port if possible");
-		}
-
-		if ($cpan_url && !$has_endslash) {
-			&perror("WARN", $file, -1, "end WWW CPAN URL with a \"/\"");
-		}
-
-		if ($has_url && ! $has_www) {
-			&perror("FATAL", $file, -1, "contains a URL but no \"WWW:\"");
-		}
 	}
 	close(IN);
 }

@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-12-13 10:39:37 UTC
+--- CMakeLists.txt.orig	2024-02-17 11:35:57 UTC
 +++ CMakeLists.txt
-@@ -6,7 +6,7 @@ file(STRINGS "${CMAKE_CURRENT_SOURCE_DIR}/include/gemm
+@@ -6,7 +6,7 @@ string(REGEX REPLACE ".+\"([0-9]+\.[0-9]+\.[0-9]+)(-de
  string(REGEX REPLACE ".+\"([0-9]+\.[0-9]+\.[0-9]+)(-dev)?\"" "\\1"
         gemmi_version_str ${gemmi_version_line})
  
@@ -9,7 +9,16 @@
  message(STATUS "Gemmi version ${PROJECT_VERSION}")
  
  include(GNUInstallDirs)  # for CMAKE_INSTALL_LIBDIR, etc
-@@ -176,37 +176,39 @@ endif()
+@@ -18,6 +18,8 @@ endif()
+   #set(CMAKE_INSTALL_BINDIR "${SKBUILD_SCRIPTS_DIR}")
+ endif()
+ 
++find_package(gemmi REQUIRED)
++
+ option(BUILD_SHARED_LIBS "Build shared library" ON)
+ option(BUILD_GEMMI_PROGRAM "Build gemmi command-line program" ON)
+ option(INSTALL_DEV_FILES "Install C++ headers, cmake configs, static lib" ON)
+@@ -192,67 +194,67 @@ endif()
  #  target_link_libraries(fgemmi PRIVATE cgemmi)
  #endif()
  
@@ -30,7 +39,7 @@
  
 -add_library(gemmi_cpp
 -            src/align.cpp src/assembly.cpp src/calculate.cpp src/crd.cpp
--            src/ddl.cpp src/eig3.cpp
+-            src/ddl.cpp src/eig3.cpp src/gz.cpp src/intensit.cpp src/json.cpp
 -            src/mmcif.cpp src/mmread_gz.cpp src/mtz.cpp src/mtz2cif.cpp
 -            src/polyheur.cpp src/read_cif.cpp src/resinfo.cpp
 -            src/riding_h.cpp src/sprintf.cpp src/to_mmcif.cpp
@@ -39,7 +48,7 @@
 -set_property(TARGET gemmi_cpp PROPERTY POSITION_INDEPENDENT_CODE ON)
 +#add_library(gemmi_cpp
 +#            src/align.cpp src/assembly.cpp src/calculate.cpp src/crd.cpp
-+#            src/ddl.cpp src/eig3.cpp
++#            src/ddl.cpp src/eig3.cpp src/gz.cpp src/intensit.cpp src/json.cpp
 +#            src/mmcif.cpp src/mmread_gz.cpp src/mtz.cpp src/mtz2cif.cpp
 +#            src/polyheur.cpp src/read_cif.cpp src/resinfo.cpp
 +#            src/riding_h.cpp src/sprintf.cpp src/to_mmcif.cpp
@@ -56,15 +65,71 @@
 -  target_compile_definitions(gemmi_cpp PUBLIC GEMMI_SHARED)
 -endif()
 -target_link_libraries(gemmi_cpp PUBLIC gemmi_headers)
--support_gz(gemmi_cpp)
 +#if (BUILD_SHARED_LIBS)
 +#  target_compile_definitions(gemmi_cpp PUBLIC GEMMI_SHARED)
 +#endif()
 +#target_link_libraries(gemmi_cpp PUBLIC gemmi_headers)
-+#support_gz(gemmi_cpp)
  
-+find_package(gemmi REQUIRED)
-+
+-if (FETCH_ZLIB_NG)
+-  target_compile_definitions(gemmi_cpp PRIVATE USE_ZLIB_NG=1)
+-  target_link_libraries(gemmi_cpp PRIVATE zlib)
+-elseif (ZLIB_NG_FOUND)
+-  target_compile_definitions(gemmi_cpp PRIVATE USE_ZLIB_NG=1)
+-  target_link_libraries(gemmi_cpp PRIVATE ZLIB_NG::ZLIB_NG)
+-elseif (ZLIB_FOUND)
+-  target_link_libraries(gemmi_cpp PRIVATE ZLIB::ZLIB)
+-else()
+-  target_sources(gemmi_cpp PRIVATE
+-      "third_party/zlib/adler32.c"
+-      "third_party/zlib/crc32.c"
+-      "third_party/zlib/gzlib.c"
+-      "third_party/zlib/gzread.c"
+-      "third_party/zlib/inflate.c"
+-      "third_party/zlib/inftrees.c"
+-      "third_party/zlib/inffast.c"
+-      "third_party/zlib/zutil.c")
+-  check_include_file(unistd.h has_unistd_h)
+-  target_compile_definitions(gemmi_cpp PRIVATE NO_GZCOMPRESS=1 DYNAMIC_CRC_TABLE=1)
+-  if (has_unistd_h)
+-    target_compile_definitions(gemmi_cpp PRIVATE Z_HAVE_UNISTD_H=1)
+-  endif()
+-  target_include_directories(gemmi_cpp PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/third_party/zlib")
+-  if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+-    # /wd4267 - conversion from 'size_t' to 'unsigned int', possible loss of data
+-    target_compile_options(gemmi_cpp PRIVATE /wd4267)
+-  endif()
+-endif()
++#if (FETCH_ZLIB_NG)
++#  target_compile_definitions(gemmi_cpp PRIVATE USE_ZLIB_NG=1)
++#  target_link_libraries(gemmi_cpp PRIVATE zlib)
++#elseif (ZLIB_NG_FOUND)
++#  target_compile_definitions(gemmi_cpp PRIVATE USE_ZLIB_NG=1)
++#  target_link_libraries(gemmi_cpp PRIVATE ZLIB_NG::ZLIB_NG)
++#elseif (ZLIB_FOUND)
++#  target_link_libraries(gemmi_cpp PRIVATE ZLIB::ZLIB)
++#else()
++#  target_sources(gemmi_cpp PRIVATE
++#      "third_party/zlib/adler32.c"
++#      "third_party/zlib/crc32.c"
++#      "third_party/zlib/gzlib.c"
++#      "third_party/zlib/gzread.c"
++#      "third_party/zlib/inflate.c"
++#      "third_party/zlib/inftrees.c"
++#      "third_party/zlib/inffast.c"
++#      "third_party/zlib/zutil.c")
++#  check_include_file(unistd.h has_unistd_h)
++#  target_compile_definitions(gemmi PRIVATE NO_GZCOMPRESS=1 DYNAMIC_CRC_TABLE=1)
++#  if (has_unistd_h)
++#    target_compile_definitions(gemmi PRIVATE Z_HAVE_UNISTD_H=1)
++#  endif()
++#  target_include_directories(gemmi PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/third_party/zlib")
++#  if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
++#    # /wd4267 - conversion from 'size_t' to 'unsigned int', possible loss of data
++#    target_compile_options(gemmi PRIVATE /wd4267)
++#  endif()
++#endif()
+ 
+ 
  ### programs from prog/ ###
  
  add_library(options OBJECT prog/options.cpp)
@@ -73,8 +138,8 @@
  target_include_directories(options PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/third_party")
  if (GEMMI_VERSION_INFO)
    target_compile_definitions(options PRIVATE GEMMI_VERSION_INFO=${GEMMI_VERSION_INFO})
-@@ -218,11 +220,11 @@ function(add_single_prog target)
-   cmake_parse_arguments(arg "NOLIB;GZ" "ADD_SRC" "" ${ARGN})
+@@ -264,11 +266,11 @@ function(add_single_prog target)
+   cmake_parse_arguments(arg "NOLIB" "ADD_SRC" "" ${ARGN})
    add_executable(gemmi-${target} EXCLUDE_FROM_ALL prog/${target}.cpp ${arg_ADD_SRC}
                   $<TARGET_OBJECTS:options>)
 -  if (arg_NOLIB)
@@ -85,44 +150,43 @@
 +  #if (arg_NOLIB)
 +  #  target_link_libraries(gemmi-${target} PRIVATE gemmi_headers)
 +  #else()
-+  #  target_link_libraries(gemmi-${target} PRIVATE gemmi_cpp)
++  #  target_link_libraries(gemmi-${target} PRIVATE gemmi)
 +  #endif()
    target_include_directories(gemmi-${target} PRIVATE
                               "${CMAKE_CURRENT_SOURCE_DIR}/third_party")
-   if (arg_GZ)
-@@ -279,7 +281,7 @@ add_executable(gemmi_prog
+ endfunction()
+@@ -322,7 +324,7 @@ add_executable(gemmi::prog ALIAS gemmi_prog)
                 prog/xds2mtz.cpp
                 $<TARGET_OBJECTS:options>)
  add_executable(gemmi::prog ALIAS gemmi_prog)
 -target_link_libraries(gemmi_prog PRIVATE gemmi_cpp)
-+target_link_libraries(gemmi_prog PRIVATE gemmi)
- support_gz(gemmi_prog)
++target_link_libraries(gemmi_prog PRIVATE gemmi::gemmi_cpp)
  target_include_directories(gemmi_prog PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/third_party")
  target_compile_definitions(gemmi_prog PRIVATE GEMMI_ALL_IN_ONE=1)
-@@ -324,10 +326,10 @@ target_link_libraries(doc_example PRIVATE gemmi_header
+ set_target_properties(gemmi_prog PROPERTIES OUTPUT_NAME gemmi EXPORT_NAME prog)
+@@ -374,9 +376,9 @@ add_executable(doc_maybegz EXCLUDE_FROM_ALL docs/code/
  add_executable(doc_example2 EXCLUDE_FROM_ALL docs/code/cif_cc.cpp)
  target_link_libraries(doc_example2 PRIVATE gemmi_headers)
  add_executable(doc_maybegz EXCLUDE_FROM_ALL docs/code/maybegz.cpp docs/code/mutate.cpp)
 -target_link_libraries(doc_maybegz PRIVATE gemmi_cpp)
 +target_link_libraries(doc_maybegz PRIVATE gemmi)
- support_gz(doc_maybegz)
  add_executable(doc_newmtz EXCLUDE_FROM_ALL docs/code/newmtz.cpp)
 -target_link_libraries(doc_newmtz PRIVATE gemmi_cpp)
 +target_link_libraries(doc_newmtz PRIVATE gemmi)
- support_gz(doc_newmtz)
  
  # always compile these tests with assertions enabled
-@@ -336,7 +338,7 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU|Intel")
+ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU|Intel")
+@@ -384,14 +386,14 @@ add_executable(test_disulf EXCLUDE_FROM_ALL tests/disu
  endif()
  
  add_executable(test_disulf EXCLUDE_FROM_ALL tests/disulf.cpp)
 -target_link_libraries(test_disulf PRIVATE gemmi_cpp)
 +target_link_libraries(test_disulf PRIVATE gemmi)
- support_gz(test_disulf)
  
  # auth_label requires <experimental/filesystem> and -lstdc++fs
-@@ -348,7 +350,7 @@ endif()
- support_gz(auth_label)
+ add_executable(auth_label EXCLUDE_FROM_ALL examples/auth_label.cpp)
+-target_link_libraries(auth_label PRIVATE gemmi_cpp)
++target_link_libraries(auth_label PRIVATE gemmi)
  
  add_executable(check_conn EXCLUDE_FROM_ALL examples/check_conn.cpp)
 -target_link_libraries(check_conn PRIVATE gemmi_cpp)
@@ -130,7 +194,7 @@
  
  enable_testing()
  
-@@ -385,7 +387,7 @@ if (benchmark_FOUND)
+@@ -428,7 +430,7 @@ if (benchmark_FOUND)
    foreach(b stoi elem mod niggli pdb resinfo round sym writecif)
      add_executable(${b}-bm EXCLUDE_FROM_ALL benchmarks/${b}.cpp)
      if (b MATCHES "resinfo|pdb|writecif")
@@ -139,19 +203,22 @@
      endif()
      target_link_libraries(${b}-bm PRIVATE gemmi_headers benchmark::benchmark)
      set_property(TARGET ${b}-bm PROPERTY RUNTIME_OUTPUT_DIRECTORY
-@@ -421,9 +423,8 @@ if (USE_PYTHON)
-           python/mtz.cpp python/read.cpp python/recgrid.cpp
-           python/scaling.cpp python/search.cpp
+@@ -466,11 +468,11 @@ if (USE_PYTHON)
            python/sf.cpp python/sym.cpp python/topo.cpp
--          python/unitcell.cpp python/write.cpp
--          $<TARGET_OBJECTS:gemmi_cpp>)
--  target_link_libraries(gemmi_py PRIVATE gemmi_headers)
-+          python/unitcell.cpp python/write.cpp)
-+  target_link_libraries(gemmi_py PRIVATE gemmi::gemmi_cpp)
+           python/unitcell.cpp python/write.cpp)
+   if (STANDALONE_PYTHON_MODULE)
+-    target_sources(gemmi_py PRIVATE $<TARGET_OBJECTS:gemmi_cpp>)
+-    get_target_property(_gemmi_cpp_libs gemmi_cpp LINK_LIBRARIES)
++    target_sources(gemmi_py PRIVATE gemmi::gemmi_cpp)
++    get_target_property(_gemmi_cpp_libs gemmi::gemmi_cpp LINK_LIBRARIES)
+     set_property(TARGET gemmi_py APPEND PROPERTY LINK_LIBRARIES ${_gemmi_cpp_libs})
+   else()
+-    target_link_libraries(gemmi_py PRIVATE gemmi_cpp)
++    target_link_libraries(gemmi_py PRIVATE gemmi::gemmi_cpp)
+   endif()
    set_property(TARGET gemmi_py PROPERTY OUTPUT_NAME gemmi)
    if(CMAKE_CXX_FLAGS MATCHES "-Wshadow")
-     target_compile_options(gemmi_py PRIVATE "-Wno-shadow")
-@@ -450,19 +451,19 @@ if (BUILD_GEMMI_PROGRAM)
+@@ -518,19 +520,19 @@ endif()
    install(TARGETS gemmi_prog EXPORT GemmiTargets)
  endif()
  

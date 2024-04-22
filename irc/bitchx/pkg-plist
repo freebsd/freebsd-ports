@@ -1,7 +1,7 @@
 bin/BitchX
 bin/BitchX-%%DISTVERSION%%
 bin/scr-bx
-man/man1/BitchX.1.gz
+share/man/man1/BitchX.1.gz
 %%DATADIR%%/BitchX.help
 %%DATADIR%%/BitchX.ircnames
 %%DATADIR%%/BitchX.quit
@@ -9,24 +9,25 @@ man/man1/BitchX.1.gz
 @dir %%DATADIR%%/plugins
 %%PLUGINS%%%%DATADIR%%/plugins/BitchX.hints
 %%PLUGINS%%%%DATADIR%%/plugins/acro.so
+@comment %%PLUGINS%%%%DATADIR%%/plugins/arcfour.so
 %%PLUGINS%%%%DATADIR%%/plugins/autobot.so
+%%PLUGINS%%%%DATADIR%%/plugins/autocycle.so
 %%PLUGINS%%%%DATADIR%%/plugins/blowfish.so
 %%PLUGINS%%%%DATADIR%%/plugins/cavlink.so
+%%PLUGINS%%%%DATADIR%%/plugins/cdrom.so
 %%PLUGINS%%%%DATADIR%%/plugins/encrypt.so
 %%PLUGINS%%%%DATADIR%%/plugins/fserv.so
 %%PLUGINS%%%%DATADIR%%/plugins/hint.so
 %%PLUGINS%%%%DATADIR%%/plugins/nap.so
+%%PLUGINS%%%%DATADIR%%/plugins/nicklist.so
 %%PLUGINS%%%%DATADIR%%/plugins/pkga.so
 %%PLUGINS%%%%DATADIR%%/plugins/possum.so
+%%PLUGINS%%%%DATADIR%%/plugins/qbx.so
 %%PLUGINS%%%%DATADIR%%/plugins/qmail.so
 %%PLUGINS%%%%DATADIR%%/plugins/wavplay.so
-%%PLUGINS%%%%DATADIR%%/plugins/qbx.so
-%%PLUGINS%%%%DATADIR%%/plugins/arcfour.so
-%%PLUGINS%%%%DATADIR%%/plugins/autocycle.so
-%%PLUGINS%%%%DATADIR%%/plugins/cdrom.so
-%%PLUGINS%%%%DATADIR%%/plugins/nicklist.so
 %%DATADIR%%/script/SCRIPTS
 %%DATADIR%%/script/actplug.gmz
+%%DATADIR%%/script/auto_resume
 %%DATADIR%%/script/bxglobal
 %%DATADIR%%/script/bxtcl.tcl
 %%DATADIR%%/script/cyp1.0k.tar.gz
@@ -34,13 +35,12 @@ man/man1/BitchX.1.gz
 %%DATADIR%%/script/example-.bitchxrc
 %%DATADIR%%/script/file.tcl
 %%DATADIR%%/script/fserve+vfs.tar.gz
+%%DATADIR%%/script/fserve.irc
 %%DATADIR%%/script/logger.bx
 %%DATADIR%%/script/menu.bx
 %%DATADIR%%/script/operchallenge-1.3.tar
-%%DATADIR%%/script/query.bx
-%%DATADIR%%/script/auto_resume
-%%DATADIR%%/script/fserve.irc
 %%DATADIR%%/script/query
+%%DATADIR%%/script/query.bx
 %%DATADIR%%/translation/ASCII
 %%DATADIR%%/translation/CP437
 %%DATADIR%%/translation/CP850

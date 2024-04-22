@@ -6,7 +6,7 @@
 -BINDIR =	/usr/local/bin
 -MANDIR =	/usr/local/man/man1
 +BINDIR =	$(DESTDIR)$(PREFIX)/bin
-+MANDIR =	$(DESTDIR)$(MANPREFIX)/man/man1
++MANDIR =	$(DESTDIR)$(PREFIX)/share/man/man1
  
  DEFINES =	-DOS_BSD
  #DEFINES =	-DOS_SYSV
@@ -22,7 +22,7 @@
  all:		phoon
  
  phoon:		phoon.o date_parse.o astro.o
-@@ -24,7 +21,7 @@ date_parse.o:	date_parse.h
+@@ -24,7 +21,7 @@ install:	all
  astro.o:	astro.h
  
  install:	all

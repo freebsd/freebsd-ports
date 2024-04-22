@@ -1,5 +1,5 @@
 PORTNAME=	digdag
-DISTVERSION=	0.10.5
+DISTVERSION=	0.10.5.1
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://github.com/treasure-data/digdag/releases/download/v${DISTVERSION}/ \
 		LOCAL/ehaupt

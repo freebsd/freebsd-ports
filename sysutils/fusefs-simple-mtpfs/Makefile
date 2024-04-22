@@ -1,6 +1,7 @@
 PORTNAME=	simple-mtpfs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -18,10 +19,11 @@ GH_ACCOUNT=	phatina
 
 USES=		autoreconf compiler:c++17-lang fuse localbase pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 MAKEFILE=	makefile
 INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 PORTDOCS=	AUTHORS NEWS README.md
 
 OPTIONS_DEFINE=	DOCS

@@ -1,5 +1,5 @@
 PORTNAME=	viridis
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -9,11 +9,9 @@ WWW=		https://cran.r-project.org/web/packages/viridis/
 
 LICENSE=	MIT
 
-CRAN_DEPENDS=	R-cran-ggplot2>=1.0.1:graphics/R-cran-ggplot2 \
+RUN_DEPENDS=	R-cran-ggplot2>=1.0.1:graphics/R-cran-ggplot2 \
 		R-cran-gridExtra>0:graphics/R-cran-gridExtra \
 		R-cran-viridisLite>=0.4.0:graphics/R-cran-viridisLite
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist
 

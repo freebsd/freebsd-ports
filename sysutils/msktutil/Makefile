@@ -1,5 +1,6 @@
 PORTNAME=	msktutil
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 #DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -15,6 +16,7 @@ RUN_DEPENDS=	cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
 USES=		autoreconf ldap ssl
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=--with-sasldir=${LOCALBASE} --with-ldapdir=${LOCALBASE}
 
 OPTIONS_SINGLE=	GSSAPI
@@ -31,7 +33,7 @@ GSSAPI_HEIMDAL_CONFIGURE_ON=	--with-krb5=heimdal
 GSSAPI_MIT_CONFIGURE_ON=	--with-krb5=mit
 CONFIGURE_ARGS+=		--with-krb5-config=${KRB5CONFIG}
 
-PLIST_FILES=	man/man1/msktutil.1.gz sbin/msktutil
+PLIST_FILES=	sbin/msktutil share/man/man1/msktutil.1.gz
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/msktutil

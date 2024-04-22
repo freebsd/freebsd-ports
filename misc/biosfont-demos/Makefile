@@ -1,19 +1,18 @@
 PORTNAME=	biosfont-demos
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	misc
+MASTER_SITES=  https://codeberg.org/rene0/biosfont/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Demos for the biosfont kernel module
-WWW=		https://github.com/rene0/biosfont
+WWW=		https://codeberg.org/rene0/biosfont
 
 LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/biosfont.h:sysutils/biosfont
 RUN_DEPENDS=	/boot/modules/biosfont.ko:sysutils/biosfont
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	rene0
-GH_PROJECT=	biosfont
+WRKSRC=		${WRKDIR}/biosfont
 WRKSRC_SUBDIR=	biosfont-demos
 
 INSTALL_TARGET=	install-strip

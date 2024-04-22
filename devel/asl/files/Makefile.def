@@ -24,6 +24,6 @@ TARG_EXEXTENSION = $(HOST_EXEXTENSION)
 #
 BINDIR = ${PREFIX}/bin
 INCDIR = ${PREFIX}/include/asl
-MANDIR = ${PREFIX}/man
+MANDIR = ${PREFIX}/share/man
 LIBDIR = ${PREFIX}/lib/asl
 DOCDIR = ${PREFIX}/share/doc/asl

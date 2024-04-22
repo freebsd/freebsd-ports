@@ -5,8 +5,8 @@ MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Gnome Keyring integration for Version control system
 WWW=		https://subversion.apache.org/
 
-PORTREVISION_114=	0
-PORTREVISION_LTS=	0
+PORTREVISION_LATEST=	1
+PORTREVISION_LTS=		1
 
 .include "${.CURDIR}/../../devel/subversion/Makefile.addons"
 

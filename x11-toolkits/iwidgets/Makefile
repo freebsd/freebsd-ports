@@ -1,6 +1,6 @@
 PORTNAME=	iwidgets
 PORTVERSION=	4.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF/incrtcl/%5BIncr%20Widgets%5D/${PORTVERSION}
 DISTNAME=	iwidgets${PORTVERSION}
@@ -8,6 +8,11 @@ DISTNAME=	iwidgets${PORTVERSION}
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Iwidgets - [incr Widgets] companion to [incr Tk]
 WWW=		https://sourceforge.net/projects/incrtcl/
+
+LICENSE=	DTSTECH
+LICENSE_NAME=	DTSTECH
+LICENSE_FILE=	${WRKSRC}/license.terms
+LICENSE_PERMS=	auto-accept
 
 LIB_DEPENDS=	libitk.so:x11-toolkits/itk
 
@@ -24,14 +29,6 @@ PORTDOCS=	CHANGES ChangeLog README iwidgets.ps
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
-
-post-patch:
-	${REINPLACE_CMD} -e 's,^MKINSTALLDIRS =.*,MKINSTALLDIRS=${MKDIR},' \
-		-e 's,^INSTALL =.*,INSTALL=${INSTALL} -c,' \
-		-e 's,^INSTALL_PROGRAM =.*,INSTALL_PROGRAM=${INSTALL_PROGRAM},' \
-		-e 's,^INSTALL_DATA =.*,INSTALL_DATA=${INSTALL_DATA},' \
-		-e 's,^INSTALL_SCRIPT =.*,INSTALL_SCRIPT=${INSTALL_SCRIPT},' \
-		-e 's,@ITCL_VERSION@,3.3,g' ${WRKSRC}/Makefile.in
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/lib/iwidgets

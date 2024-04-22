@@ -2,10 +2,10 @@ bin/nbtdump
 bin/regiondump
 sbin/mkfs.nbt
 sbin/mount.nbt
-man/man1/nbtdump.1.gz
-man/man1/regiondump.1.gz
-man/man8/mkfs.nbt.8.gz
-man/man8/mount.nbt.8.gz
+share/man/man1/nbtdump.1.gz
+share/man/man1/regiondump.1.gz
+share/man/man8/mkfs.nbt.8.gz
+share/man/man8/mount.nbt.8.gz
 include/nbt/buffer.h
 include/nbt/list.h
 include/nbt/nbt.h

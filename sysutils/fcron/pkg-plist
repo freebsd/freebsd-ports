@@ -11,11 +11,11 @@
 @sample etc/fcron.conf.sample
 @owner
 @group
-man/man1/fcrondyn.1.gz
-man/man1/fcrontab.1.gz
-man/man5/fcron.conf.5.gz
-man/man5/fcrontab.5.gz
-man/man8/fcron.8.gz
+share/man/man1/fcrondyn.1.gz
+share/man/man1/fcrontab.1.gz
+share/man/man5/fcron.conf.5.gz
+share/man/man5/fcrontab.5.gz
+share/man/man8/fcron.8.gz
 sbin/fcron
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fcron.pam
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fcrontab-operator

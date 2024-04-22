@@ -8,7 +8,7 @@ DISTNAME=	GeoGebra-Linux-Portable-${PORTVERSION:S/./-/g}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} geogebra.png geogebra-logo.svg
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Dynamic software that joins geometry, algebra, and calculus
 WWW=		https://www.geogebra.org/
 

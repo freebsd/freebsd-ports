@@ -9,6 +9,7 @@ include/libcss/properties.h
 include/libcss/select.h
 include/libcss/stylesheet.h
 include/libcss/types.h
+include/libcss/unit.h
 lib/libcss.so
 lib/libcss.so.0
 lib/libcss.so.%%VERSION%%

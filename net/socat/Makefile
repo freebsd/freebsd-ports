@@ -1,6 +1,6 @@
 PORTNAME=	socat
 DISTVERSION=	1.8.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/ \
 		LOCAL/ehaupt
@@ -27,11 +27,11 @@ PLIST_FILES=	bin/filan \
 		share/man/man1/socat.1.gz
 PORTDOCS=	EXAMPLES FAQ README SECURITY
 
-OPTIONS_DEFINE=	DOCS READLINE IPV6DEFAULT
+OPTIONS_DEFINE=		DOCS IPV6DEFAULT READLINE
 IPV6DEFAULT_DESC=	Use IPv6 by default
 
-IPV6DEFAULT_CONFIGURE_OFF=		--enable-default-ipv=4
-IPV6DEFAULT_CONFIGURE_ENABLE=		default-ipv=6
+IPV6DEFAULT_CONFIGURE_OFF=	--enable-default-ipv=4
+IPV6DEFAULT_CONFIGURE_ENABLE=	default-ipv=6
 
 READLINE_USES=			readline
 READLINE_CONFIGURE_ENABLE=	readline
@@ -39,7 +39,8 @@ READLINE_CONFIGURE_ENABLE=	readline
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} != base
-USES+=		localbase
+USES+=			localbase
+CONFIGURE_ARGS+=	--enable-openssl-base=${LOCALBASE}
 .endif
 
 do-install:

@@ -892,6 +892,6 @@
 sbin/%%PORTNAME%%ctl
 %%DATADIR%%/captcha.sh
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%man/man5/%%PORTNAME%%.yml.5.gz
+%%PORTDOCS%%share/man/man5/%%PORTNAME%%.yml.5.gz
 @dir /var/log/%%PORTNAME%%
 @dir /var/spool/%%PORTNAME%%

@@ -1,6 +1,7 @@
 PORTNAME=	Coin
 PORTVERSION=	4.0.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -21,6 +22,7 @@ GH_PROJECT=	coin
 USE_GL=		gl glu
 USE_XORG=	ice sm x11 xext xt
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-pthread=yes --enable-threadsafe	\
 		--enable-3ds-import --enable-sound	\
 		--enable-javascript-api --enable-debug=no

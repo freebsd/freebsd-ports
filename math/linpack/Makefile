@@ -11,7 +11,7 @@ WWW=		https://www.netlib.org/linpack/
 
 LIB_DEPENDS=	libblas.so:math/blas
 
-MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
+MAKE_ENV=	WITHOUT_PROFILE=yes SRCCONF=/dev/null
 MAKEFILE=	${FILESDIR}/Makefile.lib
 
 USES=		fortran uidfix

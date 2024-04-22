@@ -1,5 +1,5 @@
 PORTNAME=	pgpdump
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	security
 MASTER_SITES=	https://www.mew.org/~kazu/proj/pgpdump/
 

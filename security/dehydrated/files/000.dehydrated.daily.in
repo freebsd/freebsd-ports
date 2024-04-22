@@ -1,0 +1,46 @@
+#!/bin/sh
+
+if [ -r /etc/defaults/periodic.conf ]
+then
+    . /etc/defaults/periodic.conf
+    source_periodic_confs
+fi
+
+PATH=$PATH:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin
+export PATH
+
+case "$daily_letsencrypt_enable" in
+    [Yy][Ee][Ss])
+        : ${daily_dehydrated_enable:=$daily_letsencrypt_enable}
+        : ${daily_dehydrated_user:=$daily_letsencrypt_user}
+        : ${daily_dehydrated_flags:=$daily_letsencrypt_flags}
+        : ${daily_dehydrated_deployscript:=$daily_letsencrypt_deployscript}
+        ;;
+    *)
+        ;;
+esac
+
+case "$daily_dehydrated_enable" in
+    [Yy][Ee][Ss])
+	echo
+	echo "Checking Let's Encrypt certificate status:"
+
+	if [ -z "$daily_dehydrated_user" ]
+	then
+		%%PREFIX%%/bin/dehydrated -c $daily_dehydrated_flags
+	else
+		su -m "$daily_dehydrated_user" -c "%%PREFIX%%/bin/dehydrated -c $daily_dehydrated_flags"
+	fi
+
+	echo "Deploying Let's Encrypt certificates:"
+
+	if [ -x "$daily_dehydrated_deployscript" ]
+	then
+		$daily_dehydrated_deployscript
+	else
+		echo 'Skipped, deploy script not set or not executable.'
+	fi
+        ;;
+    *)
+        ;;
+esac

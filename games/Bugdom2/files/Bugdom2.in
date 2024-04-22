@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -e
+cd %%PREFIX%%/share/Bugdom2/
+exec %%PREFIX%%/share/Bugdom2/Bugdom2 "$@"

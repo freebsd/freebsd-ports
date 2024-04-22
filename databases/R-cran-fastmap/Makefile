@@ -3,7 +3,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Fast Implementation of a Key-Value Store
 WWW=		https://cran.r-project.org/web/packages/fastmap/
 

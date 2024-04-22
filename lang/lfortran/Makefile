@@ -1,6 +1,7 @@
 PORTNAME=	lfortran
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.30.0
+DISTVERSION=	0.34.0
+PORTREVISION=	1
 CATEGORIES=	lang
 
 MAINTAINER=	fortran@FreeBSD.org
@@ -19,6 +20,7 @@ BUILD_DEPENDS=	bash:shells/bash		\
 LIB_DEPENDS=	libfmt.so:devel/libfmt	\
 		libzstd.so:archivers/zstd	\
 		libunwind.so:devel/libunwind	\
+		libkokkoscore.so:devel/kokkos	\
 		libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION}
 RUN_DEPENDS=	dwarfdump:devel/dwarfdump
 
@@ -26,10 +28,10 @@ USE_GITHUB=	yes
 
 USES=		bison cmake:testing compiler:c++17-lang pkgconfig	\
 		python:build ssl shebangfix
-SHEBANG_FILES=	*.sh
+SHEBANG_GLOB=	*.py *.sh
 BINARY_ALIAS=	python=${PYTHON_CMD}
 CMAKE_ON=	LFORTRAN_BUILD_ALL WITH_DWARFDUMP WITH_FMT WITH_JSON	\
-		WITH_LINKH WITH_LLVM WITH_STACKTRACE WITH_UNWIND
+		WITH_KOKKOS WITH_LINKH WITH_LLVM WITH_STACKTRACE WITH_UNWIND
 USE_LDCONFIG=	yes
 
 LLVM_VERSION=	15	# 16 is supported too

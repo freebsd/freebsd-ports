@@ -1,6 +1,6 @@
 PORTNAME=	ezstream
 PORTVERSION=	0.5.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/ezstream/ \
 		https://ftp.osuosl.org/pub/xiph/releases/ezstream/
@@ -21,6 +21,7 @@ USES=		gnome iconv pkgconfig
 USE_GNOME=	libxml2
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PORTDOCS=	NEWS README
 PORTEXAMPLES=	ezstream_metadata.xml ezstream_mp3.xml \
@@ -28,7 +29,7 @@ PORTEXAMPLES=	ezstream_metadata.xml ezstream_mp3.xml \
 		ezstream_reencode_vorbis.xml ezstream_stdin_vorbis.xml \
 		ezstream_vorbis.xml meta.sh play.sh
 PLIST_FILES=	bin/ezstream bin/ezstream-file.sh etc/ezstream/ezstream.xml \
-		man/man1/ezstream-file.sh.1.gz man/man1/ezstream.1.gz
+		share/man/man1/ezstream-file.sh.1.gz share/man/man1/ezstream.1.gz
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib

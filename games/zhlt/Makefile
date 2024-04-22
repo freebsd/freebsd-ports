@@ -18,6 +18,7 @@ DOS2UNIX_FILES=	common/bspfile.h common/cmdlib.cpp common/mathlib.h \
 		hlvis/flow.cpp hlvis/vis.cpp hlvis/vis.h
 
 MAKEFILE=	${FILESDIR}/Makefile
+MAKE_ENV=	ARCH=${ARCH}
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/hlbsp bin/hlcsg bin/hlrad bin/hlvis bin/ripent

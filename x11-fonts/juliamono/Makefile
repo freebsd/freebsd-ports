@@ -1,5 +1,5 @@
 PORTNAME=	juliamono
-PORTVERSION=	0.051
+PORTVERSION=	0.054
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	trueos@norwegianrockcat.com

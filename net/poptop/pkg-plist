@@ -1,8 +1,8 @@
 etc/pptpd.conf.sample
 lib/pptpd/pptpd-logwtmp.so
-man/man5/pptpd.conf.5.gz
-man/man8/bcrelay.8.gz
-man/man8/pptpctrl.8.gz
-man/man8/pptpd.8.gz
+share/man/man5/pptpd.conf.5.gz
+share/man/man8/bcrelay.8.gz
+share/man/man8/pptpctrl.8.gz
+share/man/man8/pptpd.8.gz
 sbin/pptpctrl
 sbin/pptpd

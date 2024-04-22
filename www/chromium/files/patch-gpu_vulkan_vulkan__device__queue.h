@@ -1,6 +1,6 @@
---- gpu/vulkan/vulkan_device_queue.h.orig	2023-09-13 12:11:42 UTC
+--- gpu/vulkan/vulkan_device_queue.h.orig	2024-02-23 21:04:38 UTC
 +++ gpu/vulkan/vulkan_device_queue.h
-@@ -166,7 +166,7 @@ class COMPONENT_EXPORT(VULKAN) VulkanDeviceQueue
+@@ -169,7 +169,7 @@ class COMPONENT_EXPORT(VULKAN) VulkanDeviceQueue
    bool allow_protected_memory_ = false;
  
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || \

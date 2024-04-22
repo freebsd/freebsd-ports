@@ -1,6 +1,6 @@
 PORTNAME=	ykpers
 PORTVERSION=	1.19.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://developers.yubico.com/yubikey-personalization/Releases/
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 
 USES=		gmake libtool localbase pathfix pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
@@ -34,9 +35,9 @@ PLIST_FILES=	bin/ykchalresp \
 		lib/libykpers-1.so.1 \
 		lib/libykpers-1.so.${PORTVERSION} \
 		libdata/pkgconfig/ykpers-1.pc \
-		man/man1/ykchalresp.1.gz \
-		man/man1/ykinfo.1.gz \
-		man/man1/ykpersonalize.1.gz
+		share/man/man1/ykchalresp.1.gz \
+		share/man/man1/ykinfo.1.gz \
+		share/man/man1/ykpersonalize.1.gz
 
 OPTIONS_DEFINE=	STATIC
 

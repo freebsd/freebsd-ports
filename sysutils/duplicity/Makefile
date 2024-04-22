@@ -1,6 +1,5 @@
 PORTNAME=	duplicity
-DISTVERSION=	2.1.5
-PORTREVISION=	1
+DISTVERSION=	2.2.3
 CATEGORIES=	sysutils
 MASTER_SITES=	PYPI
 
@@ -11,7 +10,7 @@ WWW=		https://duplicity.gitlab.io/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	librsync.so:net/librsync
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fasteners>=0:devel/py-fasteners@${PY_FLAVOR} \
@@ -29,9 +28,9 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 USE_PYTHON=	autoplist noflavors pep517 pytest
 
-SHEBANG_FILES=	bin/duplicity testing/overrides/bin/*
+SHEBANG_FILES=	duplicity/__main__.py testing/overrides/bin/*
 
-PORTDOCS=	CONTRIBUTING.md README-LOG.md README-REPO.md README-TESTING.md \
+PORTDOCS=	AUTHORS.md README-LOG.md README-REPO.md README-TESTING.md \
 		README.md
 
 OPTIONS_DEFINE=		B2 DOCS DROPBOX FTP FTPS GDOCS NLS S3

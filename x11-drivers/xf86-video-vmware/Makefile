@@ -1,6 +1,6 @@
 PORTNAME=	xf86-video-vmware
 PORTVERSION=	13.3.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -18,6 +18,7 @@ USES=		xorg-cat:driver
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
 		libxatracker.so:graphics/mesa-gallium-xa
 
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--without-libudev
 
 .include <bsd.port.options.mk>

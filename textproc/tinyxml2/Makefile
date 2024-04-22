@@ -1,19 +1,22 @@
 PORTNAME=	tinyxml2
-PORTVERSION=	9.0.0
+PORTVERSION=	10.0.0
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small C++ XML Parser
-WWW=		https://github.com/leethomason/tinyxml2
+WWW=		https://leethomason.github.io/tinyxml2/ \
+		https://github.com/leethomason/tinyxml2
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake:insource compiler:c++11-lang cpe dos2unix pathfix
+USES=		compiler:c++11-lang cpe dos2unix meson pathfix
 
-CMAKE_OFF=	BUILD_TESTS
-CMAKE_ON=	BUILD_SHARED_LIBS
+MESON_ARGS=	--default-library=both \
+		-Ddebug=false \
+		-Dtests=true
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
@@ -25,14 +28,11 @@ CPE_VENDOR=	tinyxml2_project
 
 OPTIONS_DEFINE=	EXAMPLES
 
-post-install:
-	${AR} cq ${STAGEDIR}${PREFIX}/lib/libtinyxml2.a ${WRKSRC}/CMakeFiles/tinyxml2.dir/tinyxml2.cpp.o
-
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	cd ${WRKSRC}/ && ${COPYTREE_SHARE} resources ${STAGEDIR}${EXAMPLESDIR}/
 
 do-test:
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} xmltest && ./xmltest
+	cd ${WRKSRC}/ && _build/xmltest
 
 .include <bsd.port.mk>

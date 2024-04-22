@@ -1,0 +1,10 @@
+MARISA Trie provides static memory-efficient Trie-like structures for Python
+based on marisa-trie C++ library.
+
+String data in a MARISA-trie may take up to 50x-100x less memory than in a
+standard Python dict; the raw lookup speed is comparable; trie also provides
+fast advanced methods like prefix search.
+
+Note: There are official SWIG-based Python bindings included in C++ library
+distribution; this package provides alternative Cython-based pip-installable
+Python bindings.

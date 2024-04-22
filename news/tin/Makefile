@@ -1,5 +1,6 @@
 PORTNAME=	tin
 PORTVERSION=	2.6.3
+PORTREVISION=	1
 CATEGORIES+=	news
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v${PORTVERSION:R}/ \
 		ftp://ftp.sunet.se/pub/news/readers/tin/v${PORTVERSION:R}/ \
@@ -27,6 +28,7 @@ RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support
 
 USES=		gmake iconv ncurses pkgconfig shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 SHEBANG_FILES=	tools/opt-case.pl tools/tinews.pl tools/url_handler.pl \
 		tools/w2r.pl
 TIN_EDITOR?=	/usr/bin/ee

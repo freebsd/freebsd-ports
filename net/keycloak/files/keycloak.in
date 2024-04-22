@@ -14,6 +14,7 @@
 # %%PORTNAME%%_user (string):         User account to run with.
 #                                 Default: www
 # %%PORTNAME%%_flags (string):        Additional flags for the startup script.
+#                                 Default: start
 #
 
 . /etc/rc.subr
@@ -27,7 +28,8 @@ load_rc_config $name
 : ${%%PORTNAME%%_enable:=NO}
 : ${%%PORTNAME%%_user:=%%USER%%}
 : ${%%PORTNAME%%_group:=%%GROUP%%}
-: ${%%PORTNAME%%_flags:=""}
+: ${%%PORTNAME%%_flags="start"}
+: ${%%PORTNAME%%_java_home="%%JAVA_HOME%%"}
 
 pidfile=%%RUN_DIR%%/%%PORTNAME%%.pid
 command=/usr/sbin/daemon
@@ -35,6 +37,9 @@ command_args="-u ${%%PORTNAME%%_user} -o %%LOG_DIR%%/%%PORTNAME%%.out -t %%PORTN
 
 start_cmd="%%PORTNAME%%_start"
 stop_cmd="%%PORTNAME%%_stop"
+build_cmd="%%PORTNAME%%_build"
+
+export JAVA_HOME=${%%PORTNAME%%_java_home}
 
 %%PORTNAME%%_start()
 {
@@ -49,7 +54,7 @@ stop_cmd="%%PORTNAME%%_stop"
 
 	echo "Starting %%PORTNAME%%."
         ${command} ${command_args} \
-                %%JAVASHAREDIR%%/%%PORTNAME%%/bin/kc.sh start \
+                %%JAVASHAREDIR%%/%%PORTNAME%%/bin/kc.sh \
                 ${%%PORTNAME%%_flags}
 }
 
@@ -73,4 +78,10 @@ stop_cmd="%%PORTNAME%%_stop"
     wait_for_pids ${pid_daemon} ${pid_child}
 }
 
+%%PORTNAME%%_build()
+{
+    su -m ${%%PORTNAME%%_user} -c "%%JAVASHAREDIR%%/%%PORTNAME%%/bin/kc.sh build"
+}
+
+extra_commands="build"
 run_rc_command "$1"

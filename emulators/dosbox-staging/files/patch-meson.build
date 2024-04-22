@@ -1,15 +1,15 @@
---- meson.build.orig	2022-09-30 15:59:10 UTC
+--- meson.build.orig	2024-02-11 04:55:05 UTC
 +++ meson.build
-@@ -34,7 +34,7 @@ data_dir = get_option('datadir')
+@@ -37,7 +37,7 @@ data_dir = get_option('datadir')
  licenses_dir = data_dir / 'licenses' / meson.project_name()
  doc_dir = data_dir / 'doc' / meson.project_name()
  
 -install_man('docs/dosbox.1')
 +install_man('docs/dosbox-staging.1')
- install_data('COPYING', install_dir: licenses_dir)
- install_data('AUTHORS', 'README', 'THANKS', install_dir: doc_dir)
- 
-@@ -708,7 +708,7 @@ if host_machine.system() == 'windows'
+ # Bundle licenses, but skip the ones that are not relevant for
+ # binary distribution or allow us to not distribute the license text.
+ install_data(
+@@ -1306,7 +1306,7 @@ if host_machine.system() == 'windows'
  endif
  
  executable(

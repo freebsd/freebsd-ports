@@ -1,0 +1,5 @@
+include/libblst/blst.h
+include/libblst/blst.hpp
+include/libblst/blst_aux.h
+lib/libblst.so
+libdata/pkgconfig/libblst.pc

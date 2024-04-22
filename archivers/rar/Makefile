@@ -1,5 +1,5 @@
 PORTNAME=	rar
-PORTVERSION=	6.24
+PORTVERSION=	7.00
 PORTEPOCH=	3
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.rarlab.com/rar/
@@ -22,7 +22,7 @@ USES=		cpe
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rar
 
-PLIST_FILES=	bin/rar etc/rarfiles.lst lib/default.sfx man/cat1/rar.1.gz
+PLIST_FILES=	bin/rar etc/rarfiles.lst lib/default.sfx share/man/cat1/rar.1.gz
 
 CPE_VENDOR=	rarlab
 
@@ -30,7 +30,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rar ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/rarfiles.lst ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/default.sfx ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_MAN} ${WRKSRC}/rar.txt ${STAGEDIR}${PREFIX}/man/cat1/rar.1
+	${INSTALL_MAN} ${WRKSRC}/rar.txt ${STAGEDIR}${PREFIX}/share/man/cat1/rar.1
 
 # maintainer section:
 

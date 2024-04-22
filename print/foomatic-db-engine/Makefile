@@ -1,6 +1,6 @@
 PORTNAME=	foomatic-db-engine
 PORTVERSION=	4.0.13
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/foomatic/
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 USES=		gmake gnome perl5
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	PERL=${PERL} LIBDIR=${PREFIX}/share/foomatic/ \
 		LIB_CUPS=${LOCALBASE}/libexec/cups \
 		CUPS_FILTERS=${LOCALBASE}/libexec/cups/filters \

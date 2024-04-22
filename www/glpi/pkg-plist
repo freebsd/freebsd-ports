@@ -1171,6 +1171,22 @@
 %%WWWDIR%%/install/migrations/update_10.0.0_to_10.0.1/rename_itemtypes.php
 %%WWWDIR%%/install/migrations/update_10.0.0_to_10.0.1/rulelocation.php
 %%WWWDIR%%/install/migrations/update_10.0.0_to_10.0.1/schema_fixes.php
+%%WWWDIR%%/install/migrations/update_10.0.10_to_10.0.11.php
+%%WWWDIR%%/install/migrations/update_10.0.10_to_10.0.11/duplicate_searchopt_fixes.php
+%%WWWDIR%%/install/migrations/update_10.0.10_to_10.0.11/fix_document_item_index.php
+%%WWWDIR%%/install/migrations/update_10.0.10_to_10.0.11/item_operatingsystem.php
+%%WWWDIR%%/install/migrations/update_10.0.10_to_10.0.11/lockedfield.php
+%%WWWDIR%%/install/migrations/update_10.0.10_to_10.0.11/pendingreason.php
+%%WWWDIR%%/install/migrations/update_10.0.10_to_10.0.11/refusedequipment.php
+%%WWWDIR%%/install/migrations/update_10.0.10_to_10.0.11/states.php
+%%WWWDIR%%/install/migrations/update_10.0.10_to_10.0.11/transfer.php
+%%WWWDIR%%/install/migrations/update_10.0.11_to_10.0.12.php
+%%WWWDIR%%/install/migrations/update_10.0.11_to_10.0.12/duplicate_searchopt_fixes.php
+%%WWWDIR%%/install/migrations/update_10.0.11_to_10.0.12/log_rights.php
+%%WWWDIR%%/install/migrations/update_10.0.11_to_10.0.12/user.php
+%%WWWDIR%%/install/migrations/update_10.0.12_to_10.0.13.php
+%%WWWDIR%%/install/migrations/update_10.0.12_to_10.0.13/configs.php
+%%WWWDIR%%/install/migrations/update_10.0.12_to_10.0.13/location.php
 %%WWWDIR%%/install/migrations/update_10.0.1_to_10.0.2.php
 %%WWWDIR%%/install/migrations/update_10.0.1_to_10.0.2/agent.php
 %%WWWDIR%%/install/migrations/update_10.0.1_to_10.0.2/configs.php
@@ -1340,6 +1356,10 @@
 %%WWWDIR%%/install/mysql/glpi-0.90.5-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.0-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.1-empty.sql
+%%WWWDIR%%/install/mysql/glpi-10.0.10-empty.sql
+%%WWWDIR%%/install/mysql/glpi-10.0.11-empty.sql
+%%WWWDIR%%/install/mysql/glpi-10.0.12-empty.sql
+%%WWWDIR%%/install/mysql/glpi-10.0.13-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.2-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.3-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.4-empty.sql
@@ -2721,6 +2741,7 @@
 %%WWWDIR%%/src/Console/Cache/ConfigureCommand.php
 %%WWWDIR%%/src/Console/Cache/DebugCommand.php
 %%WWWDIR%%/src/Console/Cache/SetNamespacePrefixCommand.php
+%%WWWDIR%%/src/Console/Command/ConfigurationCommandInterface.php
 %%WWWDIR%%/src/Console/Command/ForceNoPluginsOptionCommandInterface.php
 %%WWWDIR%%/src/Console/Command/GlpiCommandInterface.php
 %%WWWDIR%%/src/Console/CommandLoader.php
@@ -3423,6 +3444,7 @@
 %%WWWDIR%%/src/Toolbox.php
 %%WWWDIR%%/src/Toolbox/DataExport.php
 %%WWWDIR%%/src/Toolbox/DatabaseSchema.php
+%%WWWDIR%%/src/Toolbox/Filesystem.php
 %%WWWDIR%%/src/Toolbox/FrontEnd.php
 %%WWWDIR%%/src/Toolbox/MarkdownBuilder.php
 %%WWWDIR%%/src/Toolbox/Sanitizer.php
@@ -3511,6 +3533,7 @@
 %%WWWDIR%%/templates/components/itilobject/timeline/todo-list-summary.html.twig
 %%WWWDIR%%/templates/components/kanban/item_panels/default_panel.html.twig
 %%WWWDIR%%/templates/components/kanban/kanban.html.twig
+%%WWWDIR%%/templates/components/kanban/teammember.html.twig
 %%WWWDIR%%/templates/components/logs.html.twig
 %%WWWDIR%%/templates/components/masonry_grid.html.twig
 %%WWWDIR%%/templates/components/messages_after_redirect_alerts.html.twig
@@ -3686,7 +3709,10 @@
 %%WWWDIR%%/vendor/glpi-project/inventory_format/inventory.schema.json
 %%WWWDIR%%/vendor/glpi-project/inventory_format/lib/php/Converter.php
 %%WWWDIR%%/vendor/glpi-project/inventory_format/lib/php/FilesToJSON.php
+%%WWWDIR%%/vendor/glpi-project/inventory_format/original-netdiscovery.md
+%%WWWDIR%%/vendor/glpi-project/inventory_format/original-netinventory.md
 %%WWWDIR%%/vendor/glpi-project/inventory_format/original.md
+%%WWWDIR%%/vendor/glpi-project/inventory_format/phpstan.neon
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/CHANGELOG.md
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/LICENSE
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/README.md
@@ -6591,7 +6617,7 @@
 %%WWWDIR%%/vendor/webmozart/assert/src/Assert.php
 %%WWWDIR%%/vendor/webmozart/assert/src/InvalidArgumentException.php
 %%WWWDIR%%/vendor/webmozart/assert/src/Mixin.php
-%%WWWDIR%%/version/10.0.10
+%%WWWDIR%%/version/10.0.14
 @dir %%WWWDIR%%/ajax
 @dir %%WWWDIR%%/bin
 @dir %%WWWDIR%%/config
@@ -6665,6 +6691,9 @@
 @dir %%WWWDIR%%/install
 @dir %%WWWDIR%%/install/migrations
 @dir %%WWWDIR%%/install/migrations/update_10.0.0_to_10.0.1
+@dir %%WWWDIR%%/install/migrations/update_10.0.10_to_10.0.11
+@dir %%WWWDIR%%/install/migrations/update_10.0.11_to_10.0.12
+@dir %%WWWDIR%%/install/migrations/update_10.0.12_to_10.0.13
 @dir %%WWWDIR%%/install/migrations/update_10.0.1_to_10.0.2
 @dir %%WWWDIR%%/install/migrations/update_10.0.2_to_10.0.3
 @dir %%WWWDIR%%/install/migrations/update_10.0.3_to_10.0.4
@@ -6678,16 +6707,16 @@
 @dir %%WWWDIR%%/install/migrations/update_9.5.x_to_10.0.0
 @dir %%WWWDIR%%/install/mysql
 @dir %%WWWDIR%%/js
-@dir %%WWWDIR%%/js/modules/Debug/
 @dir %%WWWDIR%%/js/Forms
 @dir %%WWWDIR%%/js/RichText
 @dir %%WWWDIR%%/js/modules
+@dir %%WWWDIR%%/js/modules/Debug
 @dir %%WWWDIR%%/js/modules/Kanban
 @dir %%WWWDIR%%/js/modules/Search
 @dir %%WWWDIR%%/js/modules/SearchTokenizer
 @dir %%WWWDIR%%/lib
-@dir %%WWWDIR%%/lib/blueimp/
-@dir %%WWWDIR%%/lib/blueimp/jquery-file-upload/
+@dir %%WWWDIR%%/lib/blueimp
+@dir %%WWWDIR%%/lib/blueimp/jquery-file-upload
 @dir %%WWWDIR%%/lib/bundles
 @dir %%WWWDIR%%/locales
 @dir %%WWWDIR%%/marketplace
@@ -6791,8 +6820,8 @@
 @dir %%WWWDIR%%/src/ContentTemplates/Parameters/ParametersTypes
 @dir %%WWWDIR%%/src/Csv
 @dir %%WWWDIR%%/src/Dashboard
-@dir %%WWWDIR%%/src/Dashboard/Filters/
-@dir %%WWWDIR%%/src/Debug/
+@dir %%WWWDIR%%/src/Dashboard/Filters
+@dir %%WWWDIR%%/src/Debug
 @dir %%WWWDIR%%/src/Exception
 @dir %%WWWDIR%%/src/Features
 @dir %%WWWDIR%%/src/Http
@@ -6823,7 +6852,7 @@
 @dir %%WWWDIR%%/templates/central/lists
 @dir %%WWWDIR%%/templates/components
 @dir %%WWWDIR%%/templates/components/dashboard
-@dir %%WWWDIR%%/templates/components/debug/
+@dir %%WWWDIR%%/templates/components/debug
 @dir %%WWWDIR%%/templates/components/dropdown
 @dir %%WWWDIR%%/templates/components/form
 @dir %%WWWDIR%%/templates/components/itilobject
@@ -7041,7 +7070,7 @@
 @dir %%WWWDIR%%/vendor/psr/http-factory
 @dir %%WWWDIR%%/vendor/psr/http-factory/src
 @dir %%WWWDIR%%/vendor/psr/http-message
-@dir %%WWWDIR%%/vendor/psr/http-message/docs/
+@dir %%WWWDIR%%/vendor/psr/http-message/docs
 @dir %%WWWDIR%%/vendor/psr/http-message/src
 @dir %%WWWDIR%%/vendor/psr/log
 @dir %%WWWDIR%%/vendor/psr/log/Psr

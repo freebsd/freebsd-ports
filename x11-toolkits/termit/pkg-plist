@@ -2,7 +2,7 @@ bin/termit
 @sample etc/xdg/termit/colormaps.lua.sample
 @sample etc/xdg/termit/rc.lua.sample
 @sample etc/xdg/termit/utils.lua.sample
-man/man1/termit.1.gz
+share/man/man1/termit.1.gz
 share/applications/termit.desktop
 share/metainfo/termit.metainfo.xml
 %%PORTDOCS%%%%DOCSDIR%%/README

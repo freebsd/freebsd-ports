@@ -1,7 +1,5 @@
 bin/qdirstat
 bin/qdirstat-cache-writer
-man/man1/qdirstat-cache-writer.1.gz
-man/man1/qdirstat.1.gz
 share/applications/qdirstat.desktop
 share/icons/hicolor/scalable/apps/qdirstat.svg
 %%PORTDOCS%%%%DOCSDIR%%/Btrfs-Free-Size.md
@@ -29,3 +27,5 @@ share/icons/hicolor/scalable/apps/qdirstat.svg
 %%PORTDOCS%%%%DOCSDIR%%/stats/Percentiles-Table.md
 %%PORTDOCS%%%%DOCSDIR%%/stats/README.md
 %%PORTDOCS%%%%DOCSDIR%%/stats/Statistics.md
+share/man/man1/qdirstat-cache-writer.1.gz
+share/man/man1/qdirstat.1.gz

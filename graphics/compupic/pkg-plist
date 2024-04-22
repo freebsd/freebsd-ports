@@ -777,4 +777,4 @@ compupic/web/includes/tn_pry.inc
 compupic/web/includes/tn_row.inc
 compupic/web/includes/tn_std.inc
 bin/compupic
-man/man1/compupic.1.gz
+share/man/man1/compupic.1.gz

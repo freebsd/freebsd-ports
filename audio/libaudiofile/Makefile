@@ -1,6 +1,6 @@
 PORTNAME=	libaudiofile
 PORTVERSION=	0.3.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	GNOME/sources/${PORTNAME:S/lib//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	audiofile-${PORTVERSION}
@@ -21,6 +21,7 @@ CPE_PRODUCT=	audiofile
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudiofile.so.1

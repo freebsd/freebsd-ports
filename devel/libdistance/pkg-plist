@@ -7,5 +7,5 @@ lib/libdistance_wrap.a
 lib/libdistance_wrap.so
 lib/libdistance_wrap.so.1
 %%PROFILE%%lib/libdistance_wrap_p.a
-man/man3/distance.3.gz
+share/man/man3/distance.3.gz
 tests/libdistance/test

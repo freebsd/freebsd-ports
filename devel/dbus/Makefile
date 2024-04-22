@@ -1,6 +1,6 @@
 PORTNAME=	dbus
 DISTVERSION=	1.14.10
-PORTREVISION=	3
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	https://dbus.freedesktop.org/releases/dbus/
@@ -21,6 +21,7 @@ USE_RC_SUBR=	dbus
 SHEBANG_FILES=	tools/GetAllMatchRules.py
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-apparmor \
 		--disable-doxygen-docs \
 		--disable-selinux \

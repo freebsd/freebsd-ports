@@ -1,6 +1,6 @@
 PORTNAME=	deltarpm
 PORTVERSION=	3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.suse.com/pub/projects/deltarpm/
 
@@ -17,10 +17,11 @@ USE_PYTHON=	flavors optsuffix
 SHEBANG_FILES=	drpmsync
 
 ALL_TARGET=	all
-MAKE_ARGS+=	prefix=${PREFIX}
+MAKE_ARGS+=	prefix=${PREFIX} mandir=${PREFIX}/share/man
 
 post-patch:
 	${REINPLACE_CMD} \
+	    -e '/mandir=/s|=|?=|' \
 	    -e '/prefix=/s|=|?=|' \
 	    -e '/^CFLAGS/s|$$| -I${LOCALBASE}/include|' \
 	    -e '/^LDFLAGS/s|$$| -L${LOCALBASE}/lib|' \

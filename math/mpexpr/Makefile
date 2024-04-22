@@ -1,6 +1,6 @@
 PORTNAME=	mpexpr
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math tcl
 MASTER_SITES=	SF
 
@@ -24,7 +24,7 @@ CONFIGURE_ENV+=	TCL_INC_DIR=${TCL_INCLUDEDIR} \
 
 PLIST_FILES=	lib/Mpexpr12/libMpexpr12.so \
 		lib/Mpexpr12/pkgIndex.tcl \
-		man/mann/mpexpr.n.gz
+		share/man/mann/mpexpr.n.gz
 
 post-patch:
 	${REINPLACE_CMD} -e 's|\.\.||' ${WRKSRC}/pkgIndex.tcl.in
@@ -34,7 +34,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/Mpexpr12
 	${INSTALL_PROGRAM} ${WRKSRC}/libMpexpr12.so ${STAGEDIR}${PREFIX}/lib/Mpexpr12
 	${INSTALL_DATA} ${WRKSRC}/pkgIndex.tcl ${STAGEDIR}${PREFIX}/lib/Mpexpr12
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/mpexpr.man ${STAGEDIR}${PREFIX}/man/mann/mpexpr.n
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/mpexpr.man ${STAGEDIR}${PREFIX}/share/man/mann/mpexpr.n
 
 do-test:
 	cd ${WRKSRC} && ${MAKE_CMD} test

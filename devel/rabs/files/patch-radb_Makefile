@@ -1,13 +1,13 @@
 - workaround for https://github.com/wrapl/rabs/issues/193
 
---- radb/Makefile.orig	2023-03-06 14:58:35 UTC
+--- radb/Makefile.orig	2023-07-11 13:46:28 UTC
 +++ radb/Makefile
-@@ -13,7 +13,7 @@ CFLAGS += -std=gnu99 -fstrict-aliasing -Wstrict-aliasi
+@@ -13,7 +13,7 @@ else
  ifdef DEBUG
- 	CFLAGS += -g -DGC_DEBUG -DDEBUG
+ 	override CFLAGS += -g -DGC_DEBUG -DDEBUG
  else
--	CFLAGS += -O3 -g -momit-leaf-frame-pointer -foptimize-sibling-calls -fno-stack-protector -march=native -mtune=native -mno-sse2 -minline-all-stringops
-+	CFLAGS += -O3 -g -mno-sse2
+-	override CFLAGS += -O3 -g -momit-leaf-frame-pointer -foptimize-sibling-calls -fno-stack-protector -march=native -mtune=native -mno-sse2 -minline-all-stringops
++	override CFLAGS += -O3 -g -mno-sse2
  endif
  
  ifeq ($(RADB_MEM), MALLOC)

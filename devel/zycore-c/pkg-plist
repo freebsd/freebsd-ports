@@ -26,5 +26,5 @@ lib/cmake/zycore/zycore-config.cmake
 lib/cmake/zycore/zycore-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/zycore/zycore-targets.cmake
 lib/libZycore.so
-lib/libZycore.so.1.4
-lib/libZycore.so.1.4.0.0
+lib/libZycore.so.1.5
+lib/libZycore.so.1.5.0.0

@@ -1,6 +1,6 @@
 PORTNAME=	excimer
-PORTVERSION=	1.1.1
-CATEGORIES=	devel pear
+DISTVERSION=	1.2.1
+CATEGORIES=	devel
 
 MAINTAINER=	000.fbsd@quip.cz
 COMMENT=	Interrupting timer and a low-overhead sampling profiler

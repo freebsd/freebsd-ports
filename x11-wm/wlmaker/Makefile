@@ -1,15 +1,7 @@
 PORTNAME=	wlmaker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1-433
-DISTVERSIONSUFFIX=	-g5a6b8ab
+DISTVERSION=	0.2
 CATEGORIES=	x11-wm wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	0179c3c5a837.patch:-p1 # https://github.com/phkaeser/libbase/pull/2
-PATCHFILES+=	811db3b1582a.patch:-p1 # https://github.com/phkaeser/libbase/pull/2
-PATCHFILES+=	486758619471.patch:-p1 # https://github.com/phkaeser/wlmaker/pull/11
-PATCHFILES+=	3a64446b128a.patch:-p1 # https://github.com/phkaeser/wlmaker/pull/11
-PATCHFILES+=	2a7108e964e0.patch:-p1 # https://github.com/phkaeser/wlmaker/pull/11
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland compositor inspired by Window Maker
@@ -25,12 +17,12 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	foot:x11/foot
 
-USES=		cmake compiler:c11 gnome pkgconfig
+USES=		cmake compiler:c11 gnome pkgconfig xorg
 USE_GITHUB=	yes
 USE_GNOME=	cairo
+USE_XORG=	xcb
 GH_ACCOUNT=	phkaeser
-GH_TUPLE=	phkaeser:libbase:9a7149e:libbase/submodules/libbase
-CFLAGS+=	-ffile-prefix-map="${WRKSRC}"=
+GH_TUPLE=	phkaeser:libbase:27aae18:libbase/submodules/libbase
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/wlmclock \
 		share/icons/${PORTNAME}/chrome-48x48.png \
@@ -43,10 +35,16 @@ post-patch:
 # Drop dependency on unreleased version of libwayland
 	@${REINPLACE_CMD} -e 's/1\.22\.90/1.22.0/' \
 		${WRKSRC}/CMakeLists.txt
+# Respect PREFIX for icons
+	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
+		${WRKSRC}/src/decorations.c
 # Respect LOCALBASE for apps and use open source Chrome
 	@${REINPLACE_CMD} -e 's,/usr/bin,${LOCALBASE}/bin,' \
 		 -e 's/google-chrome/chrome/' \
 		${WRKSRC}/src/dock.c \
 		${WRKSRC}/src/${PORTNAME}.c
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276743
+	@${GREP} -Flr _POSIX_C_SOURCE ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
+		'/_POSIX_C_SOURCE/d'
 
 .include <bsd.port.mk>

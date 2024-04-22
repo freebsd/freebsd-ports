@@ -1,20 +1,20 @@
---- rijndael.hpp.orig	2023-01-17 16:25:54 UTC
+--- rijndael.hpp.orig	2024-02-26 09:03:53 UTC
 +++ rijndael.hpp
-@@ -12,6 +12,13 @@
+@@ -12,6 +12,13 @@ class Rijndael
  class Rijndael
  { 
    private:
-+#ifdef OPENSSL_AES
++#if defined(OPENSSL_AES)
 +#if OPENSSL_VERSION_NUMBER < 0x10100000L
 +    EVP_CIPHER_CTX ctx;
-+#else
++#else // OPENSSL_VERSION_NUMBER
 +    EVP_CIPHER_CTX *ctx = EVP_CIPHER_CTX_new();
-+#endif
++#endif // OPENSSL_VERSION_NUMBER
 +#else // OPENSSL_AES
+ 
  #ifdef USE_SSE
-     void blockEncryptSSE(const byte *input,size_t numBlocks,byte *outBuffer);
-     void blockDecryptSSE(const byte *input, size_t numBlocks, byte *outBuffer);
-@@ -31,6 +38,7 @@ class Rijndael
+ #ifdef __GNUC__
+@@ -40,6 +47,7 @@ class Rijndael
      void keySched(byte key[_MAX_KEY_COLUMNS][4]);
      void keyEncToDec();
      void GenerateTables();

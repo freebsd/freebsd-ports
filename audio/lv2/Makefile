@@ -1,6 +1,5 @@
 PORTNAME=	lv2
-PORTVERSION=	1.18.4
-PORTREVISION=	2
+PORTVERSION=	1.18.10
 CATEGORIES=	audio
 MASTER_SITES=	https://lv2plug.in/spec/
 
@@ -17,12 +16,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rdflib>0:textproc/py-rdflib@${PY_FLAVOR}
 
-USES=		python shebangfix tar:bzip2 waf
+USES=		meson pkgconfig python:build shebangfix tar:xz
 
+MESON_ARGS=	-Dtests=disabled
 SHEBANG_FILES=	lv2specgen/lv2specgen.py
+BINARY_ALIAS=	python3=${PYTHON_CMD}
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS DOXYGEN EXAMPLES
 OPTIONS_SUB=	yes
+
+DOCS_BUILD_DEPENDS=	asciidoc:textproc/asciidoc
 
 DOXYGEN_IMPLIES=	DOCS
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
@@ -30,19 +34,12 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}rdflib>0:textproc/py-rdflib@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}markdown>0:textproc/py-markdown@${PY_FLAVOR}
-DOXYGEN_CONFIGURE_ON=	--docs
-DOXYGEN_PORTDOCS=	*
+DOXYGEN_MESON_ENABLED=	docs
 
-EXAMPLES_LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
-			libfontconfig.so:x11-fonts/fontconfig \
-			libfreetype.so:print/freetype2
-EXAMPLES_USES=		pkgconfig gnome
-EXAMPLES_USE=		GNOME=atk,cairo,gdkpixbuf2,glib20,gtk20,pango
-EXAMPLES_CONFIGURE_OFF=	--no-plugins
-
-post-install:
-# Waf doesn't have built-in strip support
-	@${FIND} ${STAGEDIR}${PREFIX}/lib/${PORTNAME} \
-		-name '*.so' -exec ${STRIP_CMD} {} +
+EXAMPLES_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
+			libsndfile.so:audio/libsndfile
+EXAMPLES_USES=		gnome
+EXAMPLES_USE=		GNOME=cairo,glib20,gtk20
+EXAMPLES_MESON_ENABLED=	plugins
 
 .include <bsd.port.mk>

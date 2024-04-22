@@ -49,7 +49,6 @@ lib/libcustcalc.so.%%VERSION%%
 %%FULL%%libexec/cscript/powerterm
 %%FULL%%libexec/cscript/simple
 %%FULL%%libexec/cscript/square
-man/man1/calc.1.gz
 %%FULL%%%%DATADIR%%/README
 %%FULL%%%%DATADIR%%/alg_config.cal
 %%FULL%%%%DATADIR%%/beer.cal
@@ -541,4 +540,5 @@ man/man1/calc.1.gz
 %%FULL%%%%DATADIR%%/write2file.cal
 %%FULL%%%%DATADIR%%/xx_print.cal
 %%FULL%%%%DATADIR%%/zeta2.cal
+share/man/man1/calc.1.gz
 @dir include/calc/custom

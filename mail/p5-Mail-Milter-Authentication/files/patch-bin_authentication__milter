@@ -1,0 +1,85 @@
+--- bin/authentication_milter.orig	2024-02-05 02:41:57 UTC
++++ bin/authentication_milter
+@@ -15,7 +15,7 @@ use Mail::Milter::Authentication::Protocol::SMTP;
+ use Mail::Milter::Authentication::Protocol::SMTP;
+ 
+ # CONFIG
+-my $pid_file = '/run/authentication_milter.pid';
++my $pid_file = '%%RUNDIR%%/authentication_milter.pid';
+ my $daemon = 0;
+ my $help   = 0;
+ my $prefix;
+@@ -195,11 +195,11 @@ version 3.20240205
+ =item --pidfile <file>
+ 
+   Write the process PID to the given file.
+-  defaults to /run/authentication_milter.pid
++  defaults to %%RUNDIR%%/authentication_milter.pid
+ 
+ =item --prefix <dir>
+ 
+-  Read configuration from dir rather than /etc/
++  Read configuration from dir rather than %%ETCDIR%%
+ 
+ =item -i|--ident <ident>
+ 
+@@ -212,7 +212,7 @@ version 3.20240205
+ 
+ =head1 CONFIGURATION
+ 
+-  The milter reads configuration from /etc/authentication_milter.json
++  The milter reads configuration from %%ETCDIR%%/authentication_milter.json
+ 
+   The configuration file format is as follows...
+ 
+@@ -266,10 +266,10 @@ version 3.20240205
+     "metric_tempfile"   : "/tmpfs/authmilter_metrics",  | Path to shared metrics data, defaults to <lib_path>/metrics
+     "metric_basic_http" : 1,                            | Disable extended http services such as config and grafana json pages
+ 
+-    "cache_dir"        : "/var/cache/auth_milter",      | Path to the shared cache directory
+-    "spool_dir"        : "/var/spool/auth_milter",      | Path to the shared spool directory
+-    "lib_dir"          : "/var/lib/auth_milter",        | Path to the shared lib directory
+-    "lock_file"        : "/var/run/authmilter.lock",    | Optionally specify the location of the Net::Server lock file
++    "cache_dir"        : "%%CACHEDIR%%",      | Path to the shared cache directory
++    "spool_dir"        : "%%SPOOLDIR%%",      | Path to the shared spool directory
++    "lib_dir"          : "%%VARLIBDIR%%",        | Path to the shared lib directory
++    "lock_file"        : "%%RUNDIR%%/authmilter.lock", | Optionally specify the location of the Net::Server lock file
+ 
+     # metric_port and metric_host are deprecated.
+     # please use metric_connection instead
+@@ -289,7 +289,7 @@ version 3.20240205
+         "sock_type"      : "inet",                      | Socket type (inet or unix)
+         "sock_host"      : "localhost",                 | Host to connect to (when inet)
+         "sock_port"      : "2525",                      | Port to connect to (when inet)
+-        "sock_path"      : "/var/run/smtp.sock",        | Socket path to connect to (when unix)
++        "sock_path"      : "%%RUNDIR%%/smtp.sock", | Socket path to connect to (when unix)
+         "timeout_in"     : "10",                        | Timeout when waiting for inbound SMTP data
+         "timeout_out"    : "10",                        | Timeout when waiting for outbound SMTP data
+         "pipeline_limit" : "50",                        | Limit the number of transactions accepted in an SMTP pipeline
+@@ -315,7 +315,7 @@ version 3.20240205
+         "unix:/var/sock/a.sock" : {
+             "server_name" : "util.example.com",
+             "sock_type"   : "unix",
+-            "sock_path"   : "/var/run/smtp.sock",
++            "sock_path"   : "%%RUNDIR%%/smtp.sock",
+             "timeout_in"  : "10",
+             "timeout_out" : "10"
+         }
+@@ -408,7 +408,7 @@ version 3.20240205
+         },
+         "!InactiveModule" : {},
+                                                         | Additionally, config for a module can be placed in a file
+-                                                        | with filename /etc/authentication_milter.d/ModuleName.json
++                                                        | with filename %%ETCDIR%%/authentication_milter.d/ModuleName.json
+                                                         | the contents of which should be the JSON assigned to the
+                                                         | entry here.
+ 
+@@ -421,7 +421,7 @@ This milter uses Mail::DMARC as a backend for DMARC ch
+ 
+ This milter uses Mail::DMARC as a backend for DMARC checks, this module requires that a configuration file is setup.
+ 
+-You should create and populate /etc/mail-dmarc.ini
++You should create and populate %%ETCDIR%%/mail-dmarc.ini
+ 
+ For DMARC reporting you are also required to setup a datastore, including creating a basic table structure.
+ The detauls of this are to be found in the Mail::DMARC documentation.

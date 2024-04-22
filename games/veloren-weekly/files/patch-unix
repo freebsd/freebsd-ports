@@ -1,0 +1,52 @@
+Relax Linux checks for the code works on any non-Windows platform.
+
+--- server-cli/src/main.rs.orig	2024-02-14 21:58:23 UTC
++++ server-cli/src/main.rs
+@@ -66,14 +66,14 @@ fn main() -> io::Result<()> {
+     // Load settings
+     let settings = settings::Settings::load();
+ 
+-    #[cfg(any(target_os = "linux", target_os = "macos"))]
++    #[cfg(not(target_os = "windows"))]
+     {
+         for signal in &settings.shutdown_signals {
+             let _ = signal_hook::flag::register(signal.to_signal(), Arc::clone(&shutdown_signal));
+         }
+     }
+ 
+-    #[cfg(not(any(target_os = "linux", target_os = "macos")))]
++    #[cfg(target_os = "windows")]
+     if !settings.shutdown_signals.is_empty() {
+         tracing::warn!(
+             "Server configuration contains shutdown signals, but your platform does not support \
+--- server-cli/src/settings.rs.orig	2024-03-20 22:12:47 UTC
++++ server-cli/src/settings.rs
+@@ -15,7 +15,7 @@ impl ShutdownSignal {
+ }
+ 
+ impl ShutdownSignal {
+-    #[cfg(any(target_os = "linux", target_os = "macos"))]
++    #[cfg(not(target_os = "windows"))]
+     pub fn to_signal(self) -> core::ffi::c_int {
+         match self {
+             Self::SIGUSR1 => signal_hook::consts::SIGUSR1,
+@@ -48,7 +48,7 @@ impl Default for Settings {
+             web_address: SocketAddr::from((Ipv4Addr::LOCALHOST, 14005)),
+             web_chat_secret: None,
+             ui_api_secret: None,
+-            shutdown_signals: if cfg!(any(target_os = "linux", target_os = "macos")) {
++            shutdown_signals: if cfg!(not(target_os = "windows")) {
+                 vec![ShutdownSignal::SIGUSR1]
+             } else {
+                 Vec::new()
+--- voxygen/src/main.rs.orig	2024-02-07 19:13:27 UTC
++++ voxygen/src/main.rs
+@@ -51,7 +51,7 @@ fn main() {
+             cli::Commands::ListWgpuBackends => {
+                 #[cfg(target_os = "windows")]
+                 let backends = &["opengl", "dx12", "vulkan"];
+-                #[cfg(target_os = "linux")]
++                #[cfg(not(any(target_os = "windows", target_os = "macos")))]
+                 let backends = &["opengl", "vulkan"];
+                 #[cfg(target_os = "macos")]
+                 let backends = &["metal"];

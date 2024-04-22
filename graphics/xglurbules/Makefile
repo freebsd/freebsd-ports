@@ -1,6 +1,6 @@
 PORTNAME=	xglurbules
 PORTVERSION=	3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://stephenroome.com/xglurbules/
 
@@ -13,6 +13,6 @@ USE_XORG=	xt x11 sm ice xpm
 
 PLIST_FILES=	bin/xglurbules \
 		bin/xglurbules-noshm \
-		man/man1/xglurbules.1.gz
+		share/man/man1/xglurbules.1.gz
 
 .include <bsd.port.mk>

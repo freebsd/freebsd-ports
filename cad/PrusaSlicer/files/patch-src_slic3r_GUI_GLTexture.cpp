@@ -1,6 +1,6 @@
---- src/slic3r/GUI/GLTexture.cpp.orig	2023-07-25 16:08:09 UTC
+--- src/slic3r/GUI/GLTexture.cpp.orig	2023-12-12 14:21:21 UTC
 +++ src/slic3r/GUI/GLTexture.cpp
-@@ -21,8 +21,8 @@
+@@ -25,8 +25,8 @@
  #define STB_DXT_IMPLEMENTATION
  #include "stb_dxt/stb_dxt.h"
  

@@ -1,13 +1,13 @@
 - remove compiler ID from include path
 
---- fortran/CMakeLists.txt.orig	2023-09-11 04:42:53 UTC
+--- fortran/CMakeLists.txt.orig	2024-04-11 13:12:34 UTC
 +++ fortran/CMakeLists.txt
-@@ -22,7 +22,7 @@ if (SPGLIB_INSTALL)
- 	# Adapting the standard from fortran-stdlib
- 	# https://gitlab.kitware.com/cmake/cmake/-/issues/19608
- 	# https://discourse.cmake.org/t/api-design-c-modules-source-listings-and-interface-properties/5389/14
--	cmake_path(APPEND CMAKE_INSTALL_INCLUDEDIR ${PROJECT_NAME} "${CMAKE_Fortran_COMPILER_ID}-${CMAKE_Fortran_COMPILER_VERSION}"
-+	cmake_path(APPEND CMAKE_INSTALL_INCLUDEDIR
- 			OUTPUT_VARIABLE _DEFAULT_CMAKE_INSTALL_MODULEDIR)
- 	set(CMAKE_INSTALL_MODULEDIR ${_DEFAULT_CMAKE_INSTALL_MODULEDIR}
- 			CACHE STRING
+@@ -43,7 +43,7 @@ if (SPGLIB_INSTALL)
+     # Adapting the standard from fortran-stdlib
+     # https://gitlab.kitware.com/cmake/cmake/-/issues/19608
+     # https://discourse.cmake.org/t/api-design-c-modules-source-listings-and-interface-properties/5389/14
+-    cmake_path(APPEND CMAKE_INSTALL_INCLUDEDIR ${PROJECT_NAME} "${CMAKE_Fortran_COMPILER_ID}-${CMAKE_Fortran_COMPILER_VERSION}"
++    cmake_path(APPEND CMAKE_INSTALL_INCLUDEDIR
+             OUTPUT_VARIABLE _DEFAULT_CMAKE_INSTALL_MODULEDIR)
+     set(CMAKE_INSTALL_MODULEDIR ${_DEFAULT_CMAKE_INSTALL_MODULEDIR}
+             CACHE STRING

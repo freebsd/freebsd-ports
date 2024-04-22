@@ -1,6 +1,6 @@
---- gfx/common/wayland_common.c.orig	2023-11-06 19:16:56 UTC
+--- gfx/common/wayland_common.c.orig	2024-02-03 00:11:03 UTC
 +++ gfx/common/wayland_common.c
-@@ -419,7 +419,7 @@ bool gfx_ctx_wl_get_metrics_common(void *data,
+@@ -440,7 +440,7 @@ static int create_shm_file(off_t size)
  static int create_shm_file(off_t size)
  {
     int fd, ret;

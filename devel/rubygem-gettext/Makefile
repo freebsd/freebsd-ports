@@ -8,9 +8,9 @@ COMMENT=	Ruby implementation of the gettext library
 WWW=		https://ruby-gettext.github.io/ \
 		https://github.com/ruby-gettext/gettext
 
-LICENSE=	LGPL3 RUBY
+LICENSE=	LGPL3+ RUBY
 LICENSE_COMB=	dual
-LICENSE_FILE_LGPL3=	${WRKSRC}/doc/text/lgpl-3.0.txt
+LICENSE_FILE_LGPL3+ =	${WRKSRC}/doc/text/lgpl-3.0.txt
 LICENSE_FILE_RUBY=	${WRKSRC}/doc/text/ruby-license.txt
 
 RUN_DEPENDS=	rubygem-erubi>=0:www/rubygem-erubi \

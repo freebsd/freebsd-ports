@@ -1,11 +1,12 @@
 PORTNAME=	pidgin
-PORTREVISION=	3
+PORTREVISION=	4
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Pidgin multi-protocol messaging client (GTK UI)
 
 LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 		libpurple.so:net-im/libpurple
+RUN_DEPENDS=	${LOCALBASE}/share/fonts/noto/NotoColorEmoji.ttf:x11-fonts/noto-emoji
 
 MASTERDIR=	${.CURDIR}/../libpurple
 BUILD_WRKSRC=	${WRKSRC}/pidgin

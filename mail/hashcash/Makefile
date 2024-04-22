@@ -1,5 +1,6 @@
 PORTNAME=	hashcash
 PORTVERSION=	1.22
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.hashcash.org/source/
 
@@ -15,8 +16,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		tar:tgz
 
 PLIST_FILES=	bin/hashcash bin/sha1
-PLIST_FILES+=	man/man1/hashcash.1.gz
-PLIST_FILES+=	man/man1/sha1-hashcash.1.gz
+PLIST_FILES+=	share/man/man1/hashcash.1.gz
+PLIST_FILES+=	share/man/man1/sha1-hashcash.1.gz
 
 PORTDOCS=	CHANGELOG LICENSE README
 ALL_TARGET=	generic

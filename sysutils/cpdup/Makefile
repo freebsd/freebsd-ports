@@ -1,5 +1,6 @@
 PORTNAME=	cpdup
 PORTVERSION=	1.22
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	gmarco@giovannelli.it
@@ -14,7 +15,7 @@ GH_TUPLE=	DragonFlyBSD:${PORTNAME}:v${PORTVERSION}
 MAKEFILE=	GNUmakefile
 MAKE_ARGS+=	LIBS="-L${OPENSSLLIB} -lcrypto"
 
-PLIST_FILES=	bin/cpdup man/man1/cpdup.1.gz
+PLIST_FILES=	bin/cpdup share/man/man1/cpdup.1.gz
 
 post-patch:
 	${REINPLACE_CMD} \
@@ -25,6 +26,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cpdup ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/cpdup.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/cpdup.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

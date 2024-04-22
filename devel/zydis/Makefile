@@ -1,6 +1,6 @@
 PORTNAME=	zydis
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.0
+DISTVERSION=	4.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -19,7 +19,7 @@ USES=		cmake cpe dos2unix localbase:ldflags
 USE_GITHUB=	yes
 DOS2UNIX_FILES=	src/String.c
 GH_ACCOUNT=	zyantific
-GH_TUPLE=	zyantific:zycore-c:1401fb8:zydis/dependencies/zycore
+GH_TUPLE=	zyantific:zycore-c:f98abdf:zydis/dependencies/zycore
 CPE_VENDOR=	zyantific
 
 CMAKE_ON=	ZYDIS_BUILD_SHARED_LIB ZYAN_SYSTEM_ZYCORE

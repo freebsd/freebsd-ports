@@ -1,5 +1,6 @@
 PORTNAME=	bs
 PORTVERSION=	2.11
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	alfix86@gmail.com
@@ -22,7 +23,7 @@ GL_TAGNAME=	73947294765e163a7b914fd6eb4dd364125b3382
 
 PLIST_FILES=	${DESKTOPDIR}/${PORTNAME}.desktop \
 		bin/${PORTNAME} \
-		man/man6/${PORTNAME}.6.gz \
+		share/man/man6/${PORTNAME}.6.gz \
 		share/appdata/${PORTNAME}.xml \
 		share/icons/hicolor/32x32/apps/battleship.png
 
@@ -32,7 +33,7 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin/|; \
 		s|/usr/share/|${PREFIX}/share/|; \
-		s|/usr/local/share/man|${PREFIX}/man/|' \
+		s|/usr/local/share/man|${PREFIX}/share/man/|' \
 		${WRKSRC}/Makefile
 
 post-install:

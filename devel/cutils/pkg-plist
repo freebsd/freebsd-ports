@@ -5,10 +5,10 @@ bin/cundecl
 bin/cunloop
 bin/yyextract
 bin/yyref
-man/man1/cdecl.1.gz
-man/man1/chilight.1.gz
-man/man1/cobfusc.1.gz
-man/man1/cundecl.1.gz
-man/man1/cunloop.1.gz
-man/man1/yyextract.1.gz
-man/man1/yyref.1.gz
+share/man/man1/cdecl.1.gz
+share/man/man1/chilight.1.gz
+share/man/man1/cobfusc.1.gz
+share/man/man1/cundecl.1.gz
+share/man/man1/cunloop.1.gz
+share/man/man1/yyextract.1.gz
+share/man/man1/yyref.1.gz

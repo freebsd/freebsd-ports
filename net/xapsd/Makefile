@@ -1,5 +1,6 @@
 PORTNAME=	xapsd
-DISTVERSION=	g20231019
+DISTVERSION=	g20240326
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	PopularMoment@protonmail.com
@@ -9,13 +10,12 @@ WWW=		https://github.com/freswa/dovecot-xaps-daemon
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# must use 1.19 due to https://github.com/freswa/dovecot-xaps-daemon/issues/24
-USES=		go:1.19,modules
+USES=		go:modules
 USE_RC_SUBR=	xapsd
 USE_GITHUB=	yes
 GH_ACCOUNT=	freswa
 GH_PROJECT=	dovecot-xaps-daemon
-GH_TAGNAME=	836a75b
+GH_TAGNAME=	1e589be
 
 GH_TUPLE=	freswa:go-plist:900e8a7d907d:freswa_go_plist/vendor/github.com/freswa/go-plist \
 		fsnotify:fsnotify:v1.6.0:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
@@ -49,6 +49,8 @@ GO_TARGET=	./cmd/xapsd:${PREFIX}/sbin/xapsd
 
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
+
+PORTSCOUT=	ignore:1
 
 post-install:
 		${MKDIR} ${STAGEDIR}${PREFIX}/etc/xapsd

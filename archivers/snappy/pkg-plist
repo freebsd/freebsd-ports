@@ -9,5 +9,5 @@ lib/cmake/Snappy/SnappyTargets.cmake
 lib/libsnappy.a
 lib/libsnappy.so
 lib/libsnappy.so.1
-lib/libsnappy.so.%%PORTVERSION%%
+lib/libsnappy.so.%%DISTVERSION%%
 libdata/pkgconfig/snappy.pc

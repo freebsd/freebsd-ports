@@ -1,5 +1,5 @@
---- src/fastnetmon.cpp.orig	2023-05-23 06:20:59 UTC
-+++ src/fastnetmon.cpp
+--- fastnetmon.cpp.orig	2023-05-23 06:20:59 UTC
++++ fastnetmon.cpp
 @@ -156,7 +156,7 @@ unsigned int stats_thread_initial_call_delay = 30;
  std::string reporting_server = "community-stats.fastnetmon.com";
  

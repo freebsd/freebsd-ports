@@ -1,7 +1,7 @@
 @sample etc/mfs/mfsmetalogger.cfg.sample
 sbin/mfsmetalogger
-man/man5/mfsmetalogger.cfg.5.gz
-man/man8/mfsmetalogger.8.gz
+share/man/man5/mfsmetalogger.cfg.5.gz
+share/man/man8/mfsmetalogger.8.gz
 @owner mfs
 @group mfs
 @dir %%MFS_WORKDIR%%/mfs

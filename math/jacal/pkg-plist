@@ -34,4 +34,4 @@ lib/jacal/unparse.scm
 lib/jacal/uv-hensel.scm
 lib/jacal/vect.scm
 lib/jacal/view.scm
-man/man1/jacal.1.gz
+share/man/man1/jacal.1.gz

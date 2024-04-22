@@ -1,6 +1,6 @@
 PORTNAME=	xforward
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://komquats.com/distfiles/ \
 		http://people.freebsd.org/~cy/distfiles/
@@ -21,6 +21,6 @@ USE_XORG=	x11 xt xaw xmu xt xext sm ice xft xau xcb xdmcp xrender
 
 MAKE_ARGS=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
 NO_WRKSUBDIR=	yes
-PLIST_FILES=	bin/xforward man/man1/xforward.1.gz
+PLIST_FILES=	bin/xforward share/man/man1/xforward.1.gz
 
 .include <bsd.port.mk>

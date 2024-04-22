@@ -1,6 +1,5 @@
 PORTNAME=	gnuplot
-PORTVERSION=	5.4.1
-PORTREVISION=	5
+PORTVERSION=	5.4.10
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
@@ -18,6 +17,7 @@ CONFLICTS_INSTALL?=	gnuplot-lite
 USES+=		compiler:c++11-lang cpe groff iconv pkgconfig readline
 CPE_VENDOR=	gnuplot_project
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ARGS+=--with-readline=gnu \
 		--without-linux-vga \

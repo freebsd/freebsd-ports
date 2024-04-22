@@ -1,0 +1,12 @@
+bin/dos2ansi
+%%SHOWANSI%%bin/showansi
+%%SHOWANSI%%@sample %%ETCDIR%%/showansirc.sample
+@comment %%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%HTML%%%%DOCSDIR%%/html/dos2ansi.1.html
+%%HTML%%%%SHOWANSI%%%%DOCSDIR%%/html/showansi.1.html
+%%SHOWANSI%%%%DATADIR%%/showansi/fonts.bitmap
+%%SHOWANSI%%%%DATADIR%%/showansi/fonts.mixed
+%%SHOWANSI%%%%DATADIR%%/showansi/fonts.scalable
+%%MANPAGES%%share/man/man1/dos2ansi.1.gz
+%%MANPAGES%%%%SHOWANSI%%share/man/man1/showansi.1.gz

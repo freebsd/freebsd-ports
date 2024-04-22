@@ -24,4 +24,6 @@ INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
+CXXFLAGS+=	-DGLM_ENABLE_EXPERIMENTAL  # uses experimental extensions when checking for glm in configure
+
 .include <bsd.port.mk>

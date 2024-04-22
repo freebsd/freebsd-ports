@@ -9,11 +9,3 @@
  {
  	Authctxt *authctxt = ssh->authctxt;
  	int r, authenticated = 0;
-@@ -373,6 +373,7 @@ input_gssapi_mic(int type, u_int32_t plen, struct ssh 
- 
- Authmethod method_gsskeyex = {
- 	"gssapi-keyex",
-+	NULL,
- 	userauth_gsskeyex,
- 	&options.gss_authentication
- };

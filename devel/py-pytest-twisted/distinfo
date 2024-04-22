@@ -1,3 +1,3 @@
-TIMESTAMP = 1669057845
-SHA256 (pytest-twisted-1.14.0.tar.gz) = 209bf5a6452cfbfb61de8f015902c14ec8126400911507074bb2ee4ce8dfe313
-SIZE (pytest-twisted-1.14.0.tar.gz) = 15147
+TIMESTAMP = 1711466170
+SHA256 (pytest-twisted-1.14.1.tar.gz) = a9b18bc9fca47d2886f8efe3fd27879a81f1c0bb49f1c560666c9e764491b632
+SIZE (pytest-twisted-1.14.1.tar.gz) = 15037

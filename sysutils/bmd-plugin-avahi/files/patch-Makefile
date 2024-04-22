@@ -1,6 +1,6 @@
---- Makefile.orig	2023-08-15 08:44:56 UTC
+--- Makefile.orig	2023-09-01 00:37:15 UTC
 +++ Makefile
-@@ -1,5 +1,9 @@ MK_DEBUG_FILES=	no
+@@ -1,11 +1,15 @@ MK_DEBUG_FILES=	no
  LOCALBASE?=	/usr/local
  MK_DEBUG_FILES=	no
 +BINOWN!=	id -u
@@ -10,3 +10,10 @@
  SHLIB=		bmdplugin_avahi
  SHLIB_MAJOR=	1
  CFLAGS+=	-I${LOCALBASE}/include -DLOCALBASE=\"${LOCALBASE}\"
+ LIBDIR=		$(LOCALBASE)/libexec/bmd
+ SRCS= 		avahi.c
+ MAN=		bmd-plugin-avahi.8
+-MANDIR=		$(LOCALBASE)/man/man
++MANDIR=		$(LOCALBASE)/share/man/man
+ 
+ .include <bsd.lib.mk>

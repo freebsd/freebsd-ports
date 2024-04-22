@@ -996,9 +996,10 @@ lib/libruby%%RUBY_SHLIBVER%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/yaml.rb
 %%RUBY_LIBDIR%%/yaml/dbm.rb
 %%RUBY_LIBDIR%%/yaml/store.rb
+@dir %%RUBY_SITEARCHLIBDIR%%
+@dir %%RUBY_VENDORARCHLIBDIR%%
 libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
-%%IF_DEFAULT%%man/man1/ruby.1.gz
-man/man1/ruby%%RUBY_SUFFIX%%.1.gz
+%%NO_CAPIDOCS%%%%NO_DOCS%%%%RDOC%%@dir %%RUBY_DOCDIR%%
 %%DOCS%%%%RUBY_DOCDIR%%/COPYING
 %%DOCS%%%%RUBY_DOCDIR%%/COPYING.ja
 %%DOCS%%%%RUBY_DOCDIR%%/ChangeLog
@@ -12857,8 +12858,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/syntax/page-precedence_rdoc.ri
 %%RDOC%%%%RUBY_RIDIR%%/syntax/page-refinements_rdoc.ri
 %%RDOC%%%%RUBY_RIDIR%%/win32/page-README_win32.ri
-@dir %%RUBY_SITEARCHLIBDIR%%
-@dir %%RUBY_VENDORARCHLIBDIR%%
-%%NO_CAPIDOCS%%%%NO_DOCS%%%%RDOC%%@dir %%RUBY_DOCDIR%%
+%%IF_DEFAULT%%share/man/man1/ruby.1.gz
+share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%@dir %%RUBY_SITERIDIR%%
 %%RDOC%%@dir %%RUBY_RIDIR%%

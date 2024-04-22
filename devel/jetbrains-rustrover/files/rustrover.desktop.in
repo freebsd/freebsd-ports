@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Name=RustRover
+GenericName=RustRover
+Comment=Rust Integrated Development Environment
+Icon=%%DATADIR%%/bin/rustrover.png
+Exec=%%PREFIX%%/bin/rustrover
+Terminal=false
+StartupNotify=true
+Categories=Application;Development;

@@ -1,5 +1,6 @@
 PORTNAME=	redmine
-PORTVERSION=	5.0.7
+PORTVERSION=	5.0.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 PKGNAMESUFFIX=	50
@@ -11,11 +12,14 @@ WWW=		https://www.redmine.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
+DEPRECATED=		Requires ruby31
+EXPIRATION_DATE=	2025-03-31
+
 RUN_DEPENDS=	rubygem-bundler>=1.12.0:sysutils/rubygem-bundler \
 		rubygem-globalid-rails61>0:databases/rubygem-globalid-rails61 \
 		rubygem-rails61>=6.1:www/rubygem-rails61 \
 		rubygem-rouge3>=3.28.0:textproc/rubygem-rouge3 \
-		rubygem-request_store>=1.5.0:devel/rubygem-request_store \
+		rubygem-request_store15>=1.5.0:devel/rubygem-request_store15 \
 		rubygem-mini_mime>=1.0.1:mail/rubygem-mini_mime \
 		rubygem-actionpack-xml_parser-rails61>=0:textproc/rubygem-actionpack-xml_parser-rails61 \
 		rubygem-roadie-rails-rails61>=3.0.0:mail/rubygem-roadie-rails-rails61 \
@@ -34,17 +38,19 @@ RUN_DEPENDS=	rubygem-bundler>=1.12.0:sysutils/rubygem-bundler \
 		rubygem-net-ldap>=0.17.0:net/rubygem-net-ldap \
 		rubygem-rotp>=5.0.0:devel/rubygem-rotp \
 		rubygem-rqrcode>0:www/rubygem-rqrcode \
-		rubygem-erb>0:devel/rubygem-erb
+		rubygem-erb>0:devel/rubygem-erb \
+		rubygem-mini_portile2>=2.8.2<2.9:devel/rubygem-mini_portile2
 
 # Per https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=264638#c9
 # to be removed if https://www.redmine.org/issues/37394 is fixed
 RUN_DEPENDS+=	rubygem-redcarpet>=3.5.1:textproc/rubygem-redcarpet \
 		rubygem-html-pipeline>=2.13.2:textproc/rubygem-html-pipeline \
-		rubygem-commonmarker>=0.23.6:textproc/rubygem-commonmarker \
+		rubygem-commonmarker0>=0.23.6:textproc/rubygem-commonmarker0 \
 		rubygem-sanitize>=6.0:textproc/rubygem-sanitize \
 		rubygem-deckar01-task_list>=2.3.1:www/rubygem-deckar01-task_list
 
 USES=		cpe ruby
+BROKEN_RUBY32=	yes
 
 CONFLICTS_INSTALL=	redmine42
 

@@ -1,6 +1,6 @@
 PORTNAME=	xbill
 PORTVERSION=	2.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://www.xbill.org/download/
 
@@ -9,6 +9,7 @@ COMMENT=	Save your computers from the evil clutches of Bill
 WWW=		http://www.xbill.org
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=${SCORES_DIR} --disable-gtk
 
 SCORES_DIR?=	${DATADIR}/scores
@@ -21,7 +22,7 @@ DESKTOP_ENTRIES="xBill" \
 		false
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man6/${PORTNAME}.6.gz
+		share/man/man6/${PORTNAME}.6.gz
 
 PORTDATA=	*
 

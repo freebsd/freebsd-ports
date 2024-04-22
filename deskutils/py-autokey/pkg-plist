@@ -201,9 +201,9 @@ bin/autokey-shell
 %%PYTHON_SITELIBDIR%%/autokey/scripting_Store.py
 %%PYTHON_SITELIBDIR%%/autokey/scripting_highlevel.py
 %%PYTHON_SITELIBDIR%%/autokey/service.py
-%%GTK3%%man/man1/autokey-gtk.1.gz
-%%QT5%%man/man1/autokey-qt.1.gz
-man/man1/autokey-run.1.gz
+%%GTK3%%share/man/man1/autokey-gtk.1.gz
+%%QT5%%share/man/man1/autokey-qt.1.gz
+share/man/man1/autokey-run.1.gz
 %%GTK3%%share/applications/autokey-gtk.desktop
 %%QT5%%share/applications/autokey-qt.desktop
 share/icons/Humanity/scalable/apps/autokey-status-error.svg

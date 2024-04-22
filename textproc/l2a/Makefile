@@ -1,5 +1,6 @@
 PORTNAME=	l2a
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://hannemyr.com/enjoy/
 DISTNAME=	l2a
@@ -13,6 +14,6 @@ USES=		zip
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/l2a \
-		man/man1/l2a.1.gz
+		share/man/man1/l2a.1.gz
 
 .include <bsd.port.mk>

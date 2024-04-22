@@ -1,5 +1,6 @@
 PORTNAME=	tudu
 PORTVERSION=	0.10.3
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://code.meskio.net/tudu/
 
@@ -11,6 +12,7 @@ LICENSE=	GPLv3
 
 USES=		ncurses
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 post-patch:
 	@${REINPLACE_CMD} -E 's|cd (.+) && (\$$\{MAKE\})|\2 -C \1|' \

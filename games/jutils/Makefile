@@ -10,7 +10,7 @@ WWW=		https://github.com/jinput/jutils
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	mvn:devel/maven
+BUILD_DEPENDS=	maven>0:devel/maven
 
 # Using a fork because of maven dependencies
 USE_GITLAB=	yes

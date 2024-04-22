@@ -1,6 +1,6 @@
 PORTNAME=		openvpn
-DISTVERSION=		2.6.8
-PORTREVISION?=		1
+DISTVERSION=		2.6.10
+PORTREVISION?=		0
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
 			https://build.openvpn.net/downloads/releases/ \
@@ -25,6 +25,7 @@ SHEBANG_FILES=		sample/sample-scripts/auth-pam.pl \
 			sample/sample-scripts/verify-cn
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--enable-strict --with-crypto-library=openssl
 # set PLUGIN_LIBDIR so that unqualified plugin paths are found:
 CONFIGURE_ENV+=		PLUGINDIR="${PREFIX}/lib/openvpn/plugins"

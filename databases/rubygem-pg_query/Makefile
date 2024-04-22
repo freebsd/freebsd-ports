@@ -1,5 +1,6 @@
 PORTNAME=	pg_query
-PORTVERSION=	4.2.3
+PORTVERSION=	5.1.0
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -14,5 +15,8 @@ BUILD_DEPENDS=	rubygem-pathname>0:devel/rubygem-pathname
 RUN_DEPENDS=	rubygem-google-protobuf>=3.22.3:devel/rubygem-google-protobuf
 
 USES=		gem
+
+post-patch:
+#	${RM} ${WRKSRC}/ext/pg_query/pg_query_ruby_freebsd.sym
 
 .include <bsd.port.mk>

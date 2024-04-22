@@ -1,6 +1,6 @@
 PORTNAME=	htmldoc
-PORTVERSION=	1.9.17
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.9.18
 CATEGORIES=	textproc
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_mips=	complains about expecting ) before png_ptr
 
 LIB_DEPENDS=	libcups.so:print/cups \
-		libpng.so:graphics/png
+		libpng16.so:graphics/png
 
 USES=		compiler:c11 cpe jpeg pkgconfig
 CPE_VENDOR=	${PORTNAME}_project

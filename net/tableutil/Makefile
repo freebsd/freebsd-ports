@@ -1,6 +1,6 @@
 PORTNAME=	tableutil
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://expiretable.fnord.se/
 
@@ -11,10 +11,10 @@ WWW=		https://expiretable.fnord.se/
 LICENSE=	ISCL
 LICENSE_FILE=	${PATCHDIR}/LICENSE.txt
 
-PLIST_FILES=	bin/tableutil man/man1/tableutil.1.gz
+PLIST_FILES=	bin/tableutil share/man/man1/tableutil.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

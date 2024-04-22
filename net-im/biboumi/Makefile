@@ -1,6 +1,6 @@
 PORTNAME=	biboumi
 DISTVERSION=	9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	https://git.louiz.org/biboumi/snapshot/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -83,7 +83,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}/var/run/biboumi
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/conf/*policy.txt ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/_build/man/*.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/_build/man/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

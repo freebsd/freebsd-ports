@@ -1,6 +1,5 @@
 PORTNAME=	timbl
-DISTVERSION=	6.8.2
-PORTREVISION=	1
+DISTVERSION=	6.9
 CATEGORIES=	math education
 MASTER_SITES=	https://github.com/LanguageMachines/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -19,6 +18,7 @@ USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 TEST_TARGET=	check
 INSTALL_TARGET=	install-strip

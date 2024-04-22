@@ -1,6 +1,6 @@
 PORTNAME=	cronolog
 PORTVERSION=	1.6.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,6 +14,7 @@ CONFLICTS_INSTALL=	cronolog-devel
 
 INFO=		cronolog
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fordmason

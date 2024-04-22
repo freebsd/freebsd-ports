@@ -1,7 +1,7 @@
-%%MANPAGES%%man/man1/arbtt-stats.1.gz
-%%MANPAGES%%man/man1/arbtt-recover.1.gz
-%%MANPAGES%%man/man1/arbtt-import.1.gz
-%%MANPAGES%%man/man1/arbtt-dump.1.gz
-%%MANPAGES%%man/man1/arbtt-capture.1.gz
+%%MANPAGES%%share/man/man1/arbtt-stats.1.gz
+%%MANPAGES%%share/man/man1/arbtt-recover.1.gz
+%%MANPAGES%%share/man/man1/arbtt-import.1.gz
+%%MANPAGES%%share/man/man1/arbtt-dump.1.gz
+%%MANPAGES%%share/man/man1/arbtt-capture.1.gz
 %%EXAMPLESDIR%%/categorize.cfg
 %%EXAMPLESDIR%%/arbtt-capture.desktop

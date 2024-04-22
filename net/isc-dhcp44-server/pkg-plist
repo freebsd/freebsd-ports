@@ -4,14 +4,6 @@
 sbin/dhcpd
 bin/omshell
 %%LDAP%%bin/dhcpd-conf-to-ldap
-man/man1/omshell.1.gz
-man/man3/dhcpctl.3.gz
-man/man3/omapi.3.gz
-man/man5/dhcpd.conf.5.gz
-man/man5/dhcpd.leases.5.gz
-man/man5/dhcp-eval.5.gz
-man/man5/dhcp-options.5.gz
-man/man8/dhcpd.8.gz
 include/dhcpctl.h
 include/omapip/alloc.h
 include/omapip/buffer.h
@@ -26,3 +18,11 @@ lib/libdhcp.a
 lib/libdhcpctl.a
 lib/libomapi.a
 %%LDAP%%%%SCHEMA_DIR%%/dhcp.schema
+share/man/man1/omshell.1.gz
+share/man/man3/dhcpctl.3.gz
+share/man/man3/omapi.3.gz
+share/man/man5/dhcpd.conf.5.gz
+share/man/man5/dhcpd.leases.5.gz
+share/man/man5/dhcp-eval.5.gz
+share/man/man5/dhcp-options.5.gz
+share/man/man8/dhcpd.8.gz

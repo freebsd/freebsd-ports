@@ -1,4 +1,4 @@
---- doc/barman.5.orig	2021-12-01 11:09:36 UTC
+--- doc/barman.5.orig	2023-10-03 12:56:33 UTC
 +++ doc/barman.5
 @@ -17,7 +17,7 @@ The system\-level Barman configuration file is located
  .IP
@@ -18,7 +18,7 @@
  \f[]
  .fi
  .PP
-@@ -51,9 +51,9 @@ configurations.
+@@ -51,9 +51,9 @@ that folder.
  If the value of \f[C]configuration_files_directory\f[] is a directory,
  Barman reads all files with \f[C]\&.conf\f[] extension that exist in
  that folder.
@@ -30,7 +30,7 @@
  .SH OPTIONS
  .TP
  .B active
-@@ -851,7 +851,7 @@ Here is an example of configuration file:
+@@ -1082,7 +1082,7 @@ Here is an example of configuration file:
  \f[C]
  [barman]
  ;\ Main\ directory
@@ -39,7 +39,7 @@
  
  ;\ System\ user
  barman_user\ =\ barman
-@@ -871,13 +871,13 @@ reuse_backup\ =\ link
+@@ -1102,13 +1102,13 @@ description\ =\ \ "Main\ PostgreSQL\ Database"
  description\ =\ \ "Main\ PostgreSQL\ Database"
  
  ;\ SSH\ options

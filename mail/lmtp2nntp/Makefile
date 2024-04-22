@@ -1,5 +1,6 @@
 PORTNAME=	lmtp2nntp
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	mail news
 MASTER_SITES=	OSSP/tool/${PORTNAME}
 
@@ -16,12 +17,13 @@ LIB_DEPENDS=	libstr.so:devel/str \
 		libvar.so:devel/ossp-var
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-ex=${LOCALBASE} --with-str=${LOCALBASE} \
 		--with-sa=${LOCALBASE} --with-var=${LOCALBASE}
 TEST_TARGET=	check
 
 PLIST_FILES=	sbin/lmtp2nntp \
-		man/man8/lmtp2nntp.8.gz
+		share/man/man8/lmtp2nntp.8.gz
 PORTDOCS=	INSTALL README
 
 OPTIONS_DEFINE=	DOCS

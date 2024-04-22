@@ -10,7 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 PATCH_SITES=	https://github.com/ziglang/${PORTNAME}/commit/
 
-MAINTAINER=	dch@FreeBSD.org
+MAINTAINER=	bsd@orsolic.org
 COMMENT=	Language designed for robustness, optimality, and maintainability
 WWW=		https://ziglang.org/
 
@@ -50,6 +50,9 @@ post-configure-STATIC-on:
 
 post-build:
 	@${RM} -rf ${STAGEDIR}/wrkdirs
+
+post-install:
+	@${RM} -rf ${WRKDIR}/.build
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/std

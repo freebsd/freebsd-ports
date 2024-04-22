@@ -278,11 +278,11 @@ lib/cmake/VOTCA_XTP/VOTCA_XTPConfigVersion.cmake
 lib/cmake/VOTCA_XTP/VOTCA_XTP_Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/VOTCA_XTP/VOTCA_XTP_Targets.cmake
 lib/libvotca_csg.so
-lib/libvotca_csg.so.2023
+lib/libvotca_csg.so.2024
 lib/libvotca_tools.so
-lib/libvotca_tools.so.2023
+lib/libvotca_tools.so.2024
 lib/libvotca_xtp.so
-lib/libvotca_xtp.so.2023
+lib/libvotca_xtp.so.2024
 share/man/man1/csg_boltzmann.1.gz
 share/man/man1/csg_call.1.gz
 share/man/man1/csg_density.1.gz
@@ -1314,4 +1314,3 @@ share/man/man7/votca-tools.7.gz
 %%DATADIR%%/xtp/xml/subpackages/region.xml
 %%DATADIR%%/xtp/xml/subpackages/statetracker.xml
 %%DATADIR%%/xtp/xml/vaverage.xml
-@dir %%DATADIR%%/xtp-tutorials/share/doc

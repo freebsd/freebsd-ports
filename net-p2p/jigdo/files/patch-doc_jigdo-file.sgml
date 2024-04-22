@@ -1,0 +1,11 @@
+--- doc/jigdo-file.sgml.orig	2023-11-24 10:45:22 UTC
++++ doc/jigdo-file.sgml
+@@ -1580,7 +1580,7 @@ Any text, except that lines must not begin with `['.</
+     <para>Steve McIntyre <email>93sam@debian.org</email> picked up
+     later development of jigdo after Richard had moved on - see
+     the <ulink url="https://git.einval.com/cgi-bin/gitweb.cgi?p=jigdo.git;a=summary">git
+-    repo work</ulink> or packages in Debian for more recent releases.
++    repo work</ulink> or packages in Debian for more recent releases.</para>
+ 
+   </refsect1>
+ </refentry>

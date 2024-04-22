@@ -8,9 +8,6 @@ etc/xdg/lxsession/LXDE/autostart
 etc/xdg/openbox/LXDE/menu.xml
 etc/xdg/openbox/LXDE/rc.xml
 @sample etc/xdg/pcmanfm/LXDE/pcmanfm.conf.sample
-man/man1/lxde-logout.1.gz
-man/man1/openbox-lxde.1.gz
-man/man1/startlxde.1.gz
 share/applications/lxde-logout.desktop
 share/applications/lxde-screenlock.desktop
 %%DATADIR%%/images/logout-banner.png
@@ -18,4 +15,7 @@ share/applications/lxde-screenlock.desktop
 %%DATADIR%%/wallpapers/lxde_blue.jpg
 %%DATADIR%%/wallpapers/lxde_green.jpg
 %%DATADIR%%/wallpapers/lxde_red.jpg
+share/man/man1/lxde-logout.1.gz
+share/man/man1/openbox-lxde.1.gz
+share/man/man1/startlxde.1.gz
 share/xsessions/LXDE.desktop

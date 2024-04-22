@@ -1,11 +1,10 @@
---- etc/Makefile.in.orig	2022-12-11 08:36:14 UTC
+--- etc/Makefile.in.orig	2024-01-05 11:32:26 UTC
 +++ etc/Makefile.in
-@@ -716,10 +716,8 @@ check-am: mailfromd.lint
+@@ -724,9 +724,8 @@ check-am: mailfromd.lint
  
  install-data-local:
  	@test -z "$(DESTDIR)$(sysconfdir)" || $(mkdir_p) "$(DESTDIR)$(sysconfdir)"
--	@if [ -r $(DESTDIR)$(sysconfdir)/mailfromd.mfl ] || \
--            [ -r $(DESTDIR)$(sysconfdir)/mailfromd.mf ]; then :; \
+-	@if test -r $(DESTDIR)$(sysconfdir)/mailfromd.mfl; then :; \
 -	else ${INSTALL} -m 644 $(top_srcdir)/etc/mailfromd.mfl \
 -               $(DESTDIR)$(sysconfdir)/mailfromd.mfl; fi
 +	${INSTALL} -m 644 $(top_srcdir)/etc/mailfromd.mfl \

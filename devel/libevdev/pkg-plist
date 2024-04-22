@@ -7,4 +7,7 @@ lib/libevdev.so
 lib/libevdev.so.2
 lib/libevdev.so.2.3.0
 libdata/pkgconfig/libevdev.pc
+share/man/man1/libevdev-tweak-device.1.gz
+share/man/man1/mouse-dpi-tool.1.gz
+share/man/man1/touchpad-edge-detector.1.gz
 share/man/man3/libevdev.3.gz

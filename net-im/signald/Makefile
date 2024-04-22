@@ -1,6 +1,6 @@
 PORTNAME=	signald
 DISTVERSION=	0.15.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im java
 MASTER_SITES=	https://plugins.gradle.org/m2/gradle/plugin/de/fuerstenau/BuildConfigPlugin/1.1.8/:buildconfig \
 		https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.9.0/:jackann \
@@ -132,6 +132,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/lib
 	${INSTALL_DATA} ${WRKSRC}/build/install/${PORTNAME}/lib/*.jar \
 		${STAGEDIR}${DATADIR}/lib/
-	${INSTALL_MAN} ${WRKDIR}/signald.7 ${STAGEDIR}${MANPREFIX}/man/man7
+	${INSTALL_MAN} ${WRKDIR}/signald.7 ${STAGEDIR}${PREFIX}/share/man/man7
 
 .include <bsd.port.mk>

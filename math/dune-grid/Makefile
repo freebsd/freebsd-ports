@@ -1,7 +1,7 @@
 PORTNAME=	dune-grid
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.0
-PORTREVISION=	10
+PORTREVISION=	12
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	alberta-fem>0:math/alberta \
-		openmpi>0:net/openmpi \
+		openmpi4>0:net/openmpi4 \
 		psurface>0:math/psurface \
 		vc>0:devel/vc
 LIB_DEPENDS=	libdunecommon.so:math/dune-common \

@@ -1,4 +1,4 @@
---- Makefile.orig	2020-10-15 04:35:06 UTC
+--- Makefile.orig	2021-02-28 05:20:51 UTC
 +++ Makefile
 @@ -14,7 +14,7 @@
  #	NO_SSL_SUPPORT		/* don't support ssl (https) */
@@ -28,12 +28,12 @@
  WARNS?=	4
  
 +BINDIR=$(PREFIX)/bin
-+MANDIR=$(PREFIX)/man/man
++MANDIR=$(PREFIX)/share/man/man
 +
  .if defined(.OS.MAKE)
  OPSYS=	${.OS.MAKE}
  .else
-@@ -48,9 +45,6 @@ OPSYS:=	${:!uname -s!:S/-//g:S/\///g}
+@@ -48,9 +45,6 @@ LDADD+=		-lnbutil
  CPPFLAGS+=	-DHAVE_NBUTIL_H
  LDADD+=		-lnbutil
  .endif

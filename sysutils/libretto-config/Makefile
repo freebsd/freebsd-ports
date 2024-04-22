@@ -8,6 +8,10 @@ DISTNAME=	libapm-linux-1.0beta5
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libretto BIOS Setting Program
 
+BROKEN=		Unfetchable
+DEPRECATED=	Utility for obsolete hardware released 20 years ago
+EXPIRATION_DATE=2024-04-30
+
 ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/libapm

@@ -1,6 +1,5 @@
 PORTNAME=	faustlive
-DISTVERSION=	2.5.17
-PORTREVISION=	1
+DISTVERSION=	2.5.18
 #MASTER_SITES=	https://github.com/grame-cncm/faustlive/releases/download/${DISTVERSION}/
 #DISTFILES=	FaustLive-${DISTVERSION}${EXTRACT_SUFX}
 CATEGORIES=	audio

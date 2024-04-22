@@ -1,5 +1,6 @@
 bin/kleaver
 bin/klee
+bin/klee-exec-tree
 bin/klee-replay
 bin/klee-stats
 bin/klee-zesti

@@ -1,5 +1,6 @@
 PORTNAME=	prtunnel
 PORTVERSION=	0.2.7
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://joshbeam.com/files/
 
@@ -10,7 +11,7 @@ WWW=		https://www.joshbeam.com/software/prtunnel/
 ALL_TARGET=	${PORTNAME}
 
 PORTDOCS=	ChangeLog README
-PLIST_FILES=	bin/prtunnel man/man1/prtunnel.1.gz
+PLIST_FILES=	bin/prtunnel share/man/man1/prtunnel.1.gz
 
 OPTIONS_DEFINE=	DOCS
 

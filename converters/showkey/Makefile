@@ -1,6 +1,5 @@
 PORTNAME=	showkey
-PORTVERSION=	1.7
-PORTREVISION=	1
+DISTVERSION=	1.9
 CATEGORIES=	converters
 MASTER_SITES=	http://catb.org/~esr/showkey/
 
@@ -9,6 +8,9 @@ COMMENT=	Display cooked key sequences (keycap-to-keystrokes mappings)
 WWW=		http://catb.org/~esr/showkey/
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		gmake
 
 MAKE_ARGS=	CC="${CC} ${CFLAGS}"
 ALL_TARGET=	showkey

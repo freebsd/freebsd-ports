@@ -3,8 +3,8 @@ bin/festival_client
 libexec/audsp
 libexec/festival.naked
 libexec/festival_client.naked
-man/man1/festival.1.gz
-man/man1/festival_client.1.gz
+share/man/man1/festival.1.gz
+share/man/man1/festival_client.1.gz
 %%DATADIR%%/examples/Makefile
 %%DATADIR%%/examples/addr-mode.scm
 %%DATADIR%%/examples/apml.dtd

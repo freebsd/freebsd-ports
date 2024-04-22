@@ -1,7 +1,7 @@
 PORTNAME=	rackmonkey
 PORTVERSION=	1.2.5
 DISTVERSIONSUFFIX=	-1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF \
 		ftp://ftp.secure-computing.net/pub/FreeBSD/ports/${PORTNAME}/ \
@@ -39,7 +39,7 @@ RUN_DEPENDS+=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 .endif
 .if ${PORT_OPTIONS:MMYSQL}
 USES+=		mysql
-RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+RUN_DEPENDS+=	${DBD_MYSQL}
 .endif
 .if ${PORT_OPTIONS:MPGSQL}
 USES+=		pgsql

@@ -1,5 +1,6 @@
 PORTNAME=	minissdpd
-PORTVERSION=	1.6.0
+DISTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/ \
 		LOCAL/ehaupt
@@ -16,8 +17,8 @@ USE_RC_SUBR=	minissdpd
 
 CFLAGS+=	-D_GNU_SOURCE
 
-PLIST_FILES=	man/man8/minissdpd.8.gz \
-		sbin/minissdpd
+PLIST_FILES=	sbin/minissdpd \
+		share/man/man8/minissdpd.8.gz
 
 post-extract:
 	@${MV} ${WRKSRC}/${PORTNAME}.1 ${WRKSRC}/${PORTNAME}.8
@@ -28,6 +29,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

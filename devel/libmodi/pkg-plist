@@ -14,5 +14,5 @@ lib/libmodi.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pymodi.a
 %%PYTHON_SITELIBDIR%%/pymodi.so
 libdata/pkgconfig/libmodi.pc
-man/man1/modiinfo.1.gz
-man/man3/libmodi.3.gz
+share/man/man1/modiinfo.1.gz
+share/man/man3/libmodi.3.gz

@@ -25,26 +25,26 @@ libexec/gpg-protect-tool
 libexec/gpg-wks-client
 libexec/keyboxd
 %%SCDAEMON%%libexec/scdaemon
-man/man1/dirmngr-client.1.gz
-man/man1/gpg-agent.1.gz
-man/man1/gpg-card.1.gz
-man/man1/gpg-check-pattern.1.gz
-man/man1/gpg-connect-agent.1.gz
-man/man1/gpg-preset-passphrase.1.gz
-man/man1/gpg-wks-client.1.gz
-%%WKS_SERVER%%man/man1/gpg-wks-server.1.gz
-man/man1/gpg2.1.gz
-man/man1/gpgconf.1.gz
-man/man1/gpgparsemail.1.gz
-man/man1/gpgsm.1.gz
-man/man1/gpgtar.1.gz
-man/man1/gpgv2.1.gz
-man/man1/scdaemon.1.gz
-man/man1/watchgnupg.1.gz
-man/man7/gnupg.7.gz
-man/man8/addgnupghome.8.gz
-man/man8/applygnupgdefaults.8.gz
-man/man8/dirmngr.8.gz
+share/man/man1/dirmngr-client.1.gz
+share/man/man1/gpg-agent.1.gz
+share/man/man1/gpg-card.1.gz
+share/man/man1/gpg-check-pattern.1.gz
+share/man/man1/gpg-connect-agent.1.gz
+share/man/man1/gpg-preset-passphrase.1.gz
+share/man/man1/gpg-wks-client.1.gz
+%%WKS_SERVER%%share/man/man1/gpg-wks-server.1.gz
+share/man/man1/gpg2.1.gz
+share/man/man1/gpgconf.1.gz
+share/man/man1/gpgparsemail.1.gz
+share/man/man1/gpgsm.1.gz
+share/man/man1/gpgtar.1.gz
+share/man/man1/gpgv2.1.gz
+share/man/man1/scdaemon.1.gz
+share/man/man1/watchgnupg.1.gz
+share/man/man7/gnupg.7.gz
+share/man/man8/addgnupghome.8.gz
+share/man/man8/applygnupgdefaults.8.gz
+share/man/man8/dirmngr.8.gz
 sbin/addgnupghome
 sbin/applygnupgdefaults
 %%PORTDOCS%%%%DOCSDIR%%/DCO
@@ -123,5 +123,5 @@ sbin/applygnupgdefaults
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gnupg2.mo
 @postexec [ -e %D/bin/gpg ] || ln -sf gpg2 %D/bin/gpg
 @postunexec [ -e %D/bin/gpg ] || rm -f %D/bin/gpg
-@postexec [ -e %D/man/man1/gpg.1.gz ] || ln -sf gpg2.1.gz %D/man/man1/gpg.1.gz
-@postunexec [ -e %D/man/man1/gpg.1.gz ] || rm -f %D/man/man1/gpg.1.gz
+@postexec [ -e %D/share/man/man1/gpg.1.gz ] || ln -sf gpg2.1.gz %D/share/man/man1/gpg.1.gz
+@postunexec [ -e %D/share/man/man1/gpg.1.gz ] || rm -f %D/share/man/man1/gpg.1.gz

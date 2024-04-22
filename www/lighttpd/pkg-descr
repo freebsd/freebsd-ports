@@ -1,6 +1,7 @@
-lighttpd a secure, fast, compliant and very flexible web-server which
-has been optimized for high-performance environments. It has a very
-low memory footprint compared to other webservers and takes care of
-cpu-load. Its advanced feature-set (FastCGI, CGI, Auth, Output-Compression,
-URL-Rewriting and many more) make lighttpd the perfect webserver-software
-for every server that is suffering load problems.
+lighttpd (pronounced /lighty/) is a secure, fast, compliant, and very flexible
+web server that has been optimized for high-performance environments.
+lighttpd uses memory and CPU efficiently and has lower resource use than other
+popular web servers. Its advanced feature-set (FastCGI, CGI, Auth,
+Output-Compression, URL-Rewriting and much more) make lighttpd the perfect web
+server for all systems, small and large. lighttpd is released under the Open
+Source revised BSD license.

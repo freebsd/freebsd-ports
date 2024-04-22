@@ -1,31 +1,40 @@
---- Cargo.lock.orig	2023-06-21 07:20:01 UTC
-+++ Cargo.lock
-@@ -1567,6 +1567,7 @@ dependencies = [
-  "ring",
+--- Cargo.lock.orig	2024-02-11 11:08:12.265554000 +0100
++++ Cargo.lock	2024-02-11 11:09:02.842074000 +0100
+@@ -1727,6 +1727,7 @@ dependencies = [
+  "signature",
+  "simd-json",
+  "spki",
++ "sysinfo",
+  "tokio",
+  "typenum",
+  "url",
+@@ -1841,6 +1842,7 @@ dependencies = [
   "serde",
+  "signal-hook",
   "signal-hook-registry",
 + "sysinfo",
-  "termcolor",
-  "test_util",
+  "test_server",
   "tokio",
-@@ -1575,6 +1576,20 @@ dependencies = [
-  "which",
-  "winapi",
-  "winres",
+  "tokio-metrics",
+@@ -6514,6 +6516,21 @@ dependencies = [
+  "quote",
+  "syn 1.0.109",
+  "unicode-xid",
 +]
 +
 +[[package]]
 +name = "sysinfo"
-+version = "0.27.8"
++version = "0.30.7"
 +source = "registry+https://github.com/rust-lang/crates.io-index"
-+checksum = "a902e9050fca0a5d6877550b769abd2bd1ce8c04634b941dbe2809735e1a1e33"
++checksum = "0c385888ef380a852a16209afc8cfad22795dd8873d69c9a14d2e2088f118d18"
 +dependencies = [
 + "cfg-if",
 + "core-foundation-sys",
 + "libc",
 + "ntapi",
 + "once_cell",
-+ "winapi",
++ "rayon",
++ "windows 0.52.0",
  ]
  
  [[package]]

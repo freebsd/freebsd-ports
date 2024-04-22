@@ -13,8 +13,8 @@
 -INSTALL_KEYMAN =	$(ROOT)/man/lesskey.1
 +INSTALL_KEY =		$(ROOT)/bin/vnlesskey
 +INSTALL_HELP =		$(ROOT)/share/misc/vnless.help
-+INSTALL_LESSMAN =	$(ROOT)/man/man1/vnless.1
-+INSTALL_KEYMAN =	$(ROOT)/man/man1/vnlesskey.1
++INSTALL_LESSMAN =	$(ROOT)/share/man/man1/vnless.1
++INSTALL_KEYMAN =	$(ROOT)/share/man/man1/vnlesskey.1
  LESS_MANUAL =		less.man
  KEY_MANUAL =		lesskey.man
 -HELPFILE =		$(ROOT)/man/less.help

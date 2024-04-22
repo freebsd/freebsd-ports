@@ -1,7 +1,10 @@
 PORTNAME=	librime
 PORTVERSION=	1.7.3
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	chinese textproc
+
+PATCH_SITES=	https://github.com/rime/librime/commit/
+PATCHFILES=	c34c9ea4069bdba9d0f829e615769d79549701a9.patch:-p1
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Rime Input Method Engine, the core library
@@ -27,6 +30,7 @@ CMAKE_OFF=	BUILD_TEST
 USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 USE_XORG=	xorgproto
+CXXFLAGS+=	-DGLOG_USE_GLOG_EXPORT
 LDFLAGS+=	-lintl
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime

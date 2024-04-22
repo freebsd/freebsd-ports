@@ -1,2 +1,2 @@
 lib/xorg/modules/drivers/vmware_drv.so
-man/man4/vmware.4x.gz
+share/man/man4/vmware.4x.gz

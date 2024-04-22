@@ -1,5 +1,6 @@
 PORTNAME=	sipsak
 DISTVERSION=	0.9.8.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/nils-ohlmeier/sipsak/releases/download/${DISTVERSION}/
 
@@ -12,9 +13,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pkgconfig
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/sipsak \
-		man/man1/sipsak.1.gz
+		share/man/man1/sipsak.1.gz
 
 OPTIONS_DEFINE=		CARES GNUTLS
 OPTIONS_DEFAULT=	CARES GNUTLS

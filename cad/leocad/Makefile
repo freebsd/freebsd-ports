@@ -1,6 +1,7 @@
 PORTNAME=	leocad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	23.03
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +19,7 @@ GH_ACCOUNT=	leozide
 USE_QT=		core gui concurrent network opengl printsupport widgets xml buildtools:build linguisttools:build
 USE_GL=		gl
 
-QMAKE_ARGS=	INSTALL_PREFIX=${PREFIX} MAN_DIR=${PREFIX}/man/man1 LDRAW_LIBRARY_PATH=${PREFIX}/share/ldraw
+QMAKE_ARGS=	INSTALL_PREFIX=${PREFIX} MAN_DIR=${PREFIX}/share/man/man1 LDRAW_LIBRARY_PATH=${PREFIX}/share/ldraw
 
 PORTSCOUT=	limit:^[0-9\.]*$$ # to ignore the 'continuous' tag
 

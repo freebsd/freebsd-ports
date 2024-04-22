@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activerecord61>=6.1.5:databases/rubygem-activerecord61 \
 		rubygem-activesupport61>=6.1.5:devel/rubygem-activesupport61 \
-		rubygem-i18n>=0:devel/rubygem-i18n
+		rubygem-i18n>=0,2:devel/rubygem-i18n
 
 USES=		gem
 

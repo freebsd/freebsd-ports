@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-04-08 19:14:14 UTC
++++ pyproject.toml
+@@ -49,7 +49,7 @@ python = "^3.9"
+ 
+ [tool.poetry.dependencies]
+ python = "^3.9"
+-termcolor = "==2.3.0"
++termcolor = ">=2.3.0"
+ 
+ [tool.poetry.dev-dependencies]
+ black = "^24.3"

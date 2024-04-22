@@ -4,7 +4,7 @@ CATEGORIES=	databases
 
 # PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
 
-MAINTAINER=	dch@FreeBSD.org
+MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	Distributed, transactional key-value store
 WWW=		https://www.foundationdb.org/
 

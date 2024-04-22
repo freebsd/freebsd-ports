@@ -4,7 +4,7 @@ DISTVERSION=	1.4.9
 PORTREVISION=	1
 CATEGORIES=	security net-vpn
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenConnect GUI for GlobalProtect protocol
 WWW=		https://github.com/yuezk/GlobalProtect-openconnect
 

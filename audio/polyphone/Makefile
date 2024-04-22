@@ -1,6 +1,6 @@
 PORTNAME=	polyphone
 DISTVERSION=	2.3.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libjack.so:audio/jack \
 		libogg.so:audio/libogg \
 		libportaudio.so:audio/portaudio \
-		libQCustomPlot-qt5.so:graphics/qcustomplot-qt5 \
+		libQCustomPlot-qt5.so:graphics/qcustomplot@qt5 \
 		librtmidi.so:audio/rtmidi \
 		libstk.so:audio/stk \
 		libvorbisfile.so:audio/libvorbis

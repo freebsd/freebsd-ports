@@ -1,5 +1,5 @@
 PORTNAME=	wine-mono
-DISTVERSION=	8.1.0
+DISTVERSION=	9.0.0
 DISTVERSIONSUFFIX=-x86
 CATEGORIES=	emulators
 MASTER_SITES=	http://dl.winehq.org/wine/wine-mono/${DISTVERSION}/
@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	-devel
 EXTRACT_SUFX=	.msi
 EXTRACT_ONLY=
 
-MAINTAINER=	damjan.jov@gmail.com
+MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Mono .NET implementation for Wine development branch
 WWW=		https://wiki.winehq.org/Mono
 

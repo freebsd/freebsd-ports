@@ -1,6 +1,6 @@
 PORTNAME=	tmate
 PORTVERSION=	2.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -20,10 +20,11 @@ GH_ACCOUNT=	tmate-io
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 LDFLAGS+=	-lexecinfo
 
-PLIST_FILES=	bin/tmate man/man1/tmate.1.gz
+PLIST_FILES=	bin/tmate share/man/man1/tmate.1.gz
 
 OPTIONS_DEFINE=	BACKSPACE
 

@@ -1,5 +1,6 @@
 PORTNAME=	dkns
 PORTVERSION=	1.100
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://www.mammothcheese.ca/
 
@@ -12,10 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	munger:lang/munger
 
+MAKE_ARGS=	MANDIR="${STAGEDIR}${PREFIX}/share/man/man1/"
 MAKE_ENV=	INSTALL_MAN="${INSTALL_MAN}" INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/dkns \
-		man/man1/dkns.1.gz
+		share/man/man1/dkns.1.gz
 
 .include <bsd.port.mk>

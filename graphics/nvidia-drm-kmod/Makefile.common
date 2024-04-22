@@ -2,31 +2,40 @@
 
 MAINTAINER=	ashafer@badland.io
 COMMENT=	NVIDIA DRM Kernel Module
-WWW=		https://github.com/amshafer/nvidia-driver
+WWW=		https://www.nvidia.com/object/unix.html
+MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${NVIDIA_DISTVERSION}:nvidia \
+				https://codeload.github.com/freebsd/drm-kmod/tar.gz/${DRM_KMOD_GH_TAGNAME}?dummy=/:drm
+DISTVERSION?=   ${NVIDIA_DISTVERSION}
+PORTREVISION=	1
+DISTFILES=		NVIDIA-FreeBSD-${ARCH_SUFX}-${NVIDIA_DISTVERSION}${EXTRACT_SUFX}:nvidia \
+				freebsd-drm-kmod-${DRM_KMOD_GH_TAGNAME}_GH0.tar.gz:drm
 
 ONLY_FOR_ARCHS=	amd64
-USES=		kmod uidfix
+USES=		kmod uidfix tar:xz
 
 SUB_FILES=	20-nvidia-drm-outputclass.conf
 
 RUN_DEPENDS+=	${KMODDIR}/nvidia.ko:x11/nvidia-driver
 
 .include "${.CURDIR}/../../x11/nvidia-driver/Makefile.version"
+.include "${.CURDIR}/../../x11/nvidia-driver/Makefile.common"
 
-LICENSE_FILE=	${WRKSRC}/nvidia/doc/license.txt
-
-NVIDIA_GH_TAGNAME=	${PORTNAME}-${DISTVERSION}
-USE_GITHUB=	yes
-GH_ACCOUNT=	amshafer freebsd:drm
-GH_PROJECT=	nvidia-driver drm-kmod:drm
-GH_TAGNAME:=	${NVIDIA_GH_TAGNAME} ${DRM_KMOD_GH_TAGNAME}:drm
+LICENSE_FILE=	${WRKSRC}/../../doc/license.txt
 
 PLIST_FILES=	${KMODDIR}/nvidia-drm.ko \
 		share/X11/xorg.conf.d/20-nvidia-drm-outputclass.conf
 
-MAKE_ENV+=	DRMKMODDIR=${WRKDIR}/drm-kmod-${DRM_KMOD_GH_TAGNAME}/
-WRKSRC_SUBDIR=	nvidia/src/nvidia-drm/
+MAKE_ENV+=	DEBUG_FLAGS=${DEBUG_FLAGS} \
+			DRMKMODDIR=${WRKDIR}/drm-kmod-${DRM_KMOD_GH_TAGNAME}/
+WRKSRC=		${WRKDIR}/NVIDIA-FreeBSD-${ARCH_SUFX}-${NVIDIA_DISTVERSION}/
+WRKSRC_SUBDIR=	src/nvidia-drm/
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/X11/xorg.conf.d/
 	${INSTALL_DATA} ${WRKDIR}/20-nvidia-drm-outputclass.conf ${STAGEDIR}${PREFIX}/share/X11/xorg.conf.d/
+
+post-patch:
+	# We should support -CURRENT: kill the check (first #if __FreeBSD_version)
+	linenum=$$(${SED} -ne '/^#if __FreeBSD_version/ { = ; q ; }' \
+			${WRKSRC}/../nvidia/nv-freebsd.h) ; ${REINPLACE_CMD} \
+			-e "$$linenum,+2d" ${WRKSRC}/../nvidia/nv-freebsd.h

@@ -15,7 +15,7 @@
      exit
  fi
  
-@@ -232,7 +232,7 @@ fi
+@@ -232,7 +232,7 @@ QT4_IM='N'
  
  
  QT4_IM='N'
@@ -24,16 +24,7 @@
  echo "testing if you have qt4 support"
  pkg-config --libs QtCore QtGui > /dev/null 2> /dev/null
  if [ $? = 0 ]; then
-@@ -291,7 +291,7 @@ fi
- 
- bindir=$prefix/bin
- datadir=$prefix/share
--mandir=$datadir/man
-+mandir=$prefix/man
- libdir=$prefix/$LIB
- includedir=$prefix/include
- optdir=/opt
-@@ -306,9 +306,9 @@ if [ $QT_IM = 'N' ]; then
+@@ -306,9 +306,9 @@ else
    mv gcin.spec gcin.spec.tmp
    grep -v qt3/plugins/inputmethods gcin.spec.tmp > gcin.spec
  else
@@ -45,7 +36,7 @@
      QT_MOC=$i
      echo "QT_MOC=$QT_MOC"
      break;
-@@ -322,9 +322,9 @@ if [ $QT4_IM = 'N' ]; then
+@@ -322,9 +322,9 @@ else
    mv gcin.spec gcin.spec.tmp
    grep -v qt4/plugins/inputmethods gcin.spec.tmp > gcin.spec
  else
@@ -69,7 +60,7 @@
      QT5_MOC=$i
      echo "QT5_MOC=$QT5_MOC"
      break
-@@ -362,7 +362,7 @@ fi
+@@ -362,7 +362,7 @@ BUILD_MODULE='Y'
  
  
  BUILD_MODULE='Y'
@@ -78,7 +69,7 @@
    BUILD_MODULE='Y'
  fi
  
-@@ -388,7 +388,7 @@ echo "datadir_r=$datadir" >> config.mak
+@@ -388,7 +388,7 @@ echo "includedir=\$(DESTDIR)$includedir" >> config.mak
  echo "libdir=\$(DESTDIR)$libdir" >> config.mak
  echo "gcinlibdir=\$(DESTDIR)$gcinlibdir" >> config.mak
  echo "includedir=\$(DESTDIR)$includedir" >> config.mak
@@ -87,7 +78,7 @@
  echo "GCIN_VERSION=$GCIN_VERSION" >> config.mak
  echo "GCIN_TABLE_DIR=\$(datadir_r)/gcin/table" >> config.mak
  echo "GCIN_OGG_DIR=\$(datadir_r)/gcin/ogg" >> config.mak
-@@ -406,8 +406,8 @@ if [ "$doc_version_dir" = 'N' ]; then
+@@ -406,8 +406,8 @@ else
    echo "DOC_DIR=\$(datadir_r)/doc/gcin" >> config.mak
    echo "DOC_DIR_i=\$(datadir)/doc/gcin" >> config.mak
  else
@@ -98,7 +89,7 @@
  fi
  
  echo "GCIN_ICON_DIR=\$(datadir_r)/icons/gcin" >> config.mak
-@@ -435,11 +435,16 @@ echo "USE_INDICATOR=$USE_INDICATOR" >> config.mak
+@@ -435,11 +435,16 @@ echo "GTK_QUERY_IM_64=$GTK_QUERY_IM_64" >> config.mak
  echo "USE_GCB=$use_gcb" >> config.mak
  echo "BUILD_MODULE=$BUILD_MODULE" >> config.mak
  echo "GTK_QUERY_IM_64=$GTK_QUERY_IM_64" >> config.mak

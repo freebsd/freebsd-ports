@@ -1,6 +1,6 @@
 PORTNAME=	pixie
 PORTVERSION=	2.2.6
-PORTREVISION=	39
+PORTREVISION=	40
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Pixie%20${PORTVERSION}
 DISTNAME=	Pixie-src-${PORTVERSION}
@@ -26,6 +26,7 @@ USES=		autoreconf bison compiler:c++0x gl libtool pathfix tar:tgz
 USE_CXXSTD=	c++14
 USE_GL=		glu
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/pixie \
 		--libdir=${PREFIX}/lib/pixie \
 		--with-docdir=${DOCSDIR} \

@@ -1,5 +1,6 @@
 PORTNAME=	mail-expire
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -18,10 +19,10 @@ USES=		gmake perl5 shebangfix tar:xz
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_ARCH=	yes
 SHEBANG_FILES=	mail-expire
-PLIST_FILES=	bin/mail-expire ${MANPREFIX}/man/man1/mail-expire.1.gz
+PLIST_FILES=	bin/mail-expire ${PREFIX}/share/man/man1/mail-expire.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mail-expire ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/mail-expire.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/mail-expire.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

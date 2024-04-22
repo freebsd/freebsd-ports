@@ -1,6 +1,6 @@
 PORTNAME=	sj3
 PORTVERSION=	2.0.1.20
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	japanese
 MASTER_SITES=	LOCAL/nork
 PKGNAMESUFFIX=	-server
@@ -57,6 +57,7 @@ CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 
 post-patch:
 	cd ${WRKSRC} && ${CAT} ${POSTPATCHES} | ${PATCH}
+	${REINPLACE_CMD} 's|/man/|/share/man/|' ${WRKSRC}/doc/man/Imakefile
 
 post-patch-DOCS-off:
 	cd ${WRKSRC} && ${CAT} ${POSTPATCHES.nodocports} | ${PATCH}

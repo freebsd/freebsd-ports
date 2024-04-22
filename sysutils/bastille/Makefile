@@ -1,5 +1,6 @@
 PORTNAME=	bastille
 DISTVERSION=	0.10.20231125
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	christer.edwards@gmail.com
@@ -32,7 +33,7 @@ post-install:
 	(cd ${WRKSRC}/usr/local/share/bastille && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	${INSTALL_MAN} ${WRKSRC}/usr/local/man/man8/bastille.8.gz \
-		${STAGEDIR}${PREFIX}/man/man8/${PORTNAME}.8.gz
+		${STAGEDIR}${PREFIX}/share/man/man8/${PORTNAME}.8.gz
 	${INSTALL_DATA} ${WRKSRC}/usr/local/etc/bastille/bastille.conf.sample \
 		${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
 

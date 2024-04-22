@@ -1,6 +1,6 @@
 PORTNAME=	imwheel
 DISTVERSION=	1.0.0pre12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	ftp://jcatki.no-ip.org/pub/imwheel/ \
 		SF/${PORTNAME}/${PORTNAME}-source/${DISTVERSION}
@@ -16,6 +16,7 @@ USES=		dos2unix gmake xorg
 USE_XORG=	x11 xpm xtst xext xmu
 DOS2UNIX_FILES=	getopt/getopt.c
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-gpm
 
 OPTIONS_DEFINE=	DOCS

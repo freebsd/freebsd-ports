@@ -1,6 +1,6 @@
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	https://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot
@@ -71,21 +71,21 @@ GMP_VARS_OFF=		hadrian_gmp_arg=--bignum=native
 PROFILE_VARS=		enable_profile=YES hadrian_setting_profile=True
 PROFILE_VARS_OFF=	enable_profile=NO hadrian_setting_profile=False
 
-GHC_VERSION?=		9.4.7
-LLVM_VERSION?=		13
+GHC_VERSION?=		9.6.4
+LLVM_VERSION?=		15
 BOOT_GHC_VERSION?=	9.2.8
 # LLVM version that bootstrap compiler uses
 BOOT_LLVM_VERSION?=	12
 
-BASE_PACKAGES?=		Cabal-3.8.1.0 array-0.5.4.0 base-4.17.2.0 binary-0.8.9.1 \
-			bytestring-0.11.5.2 containers-0.6.7 deepseq-1.4.8.0 \
-			directory-1.3.7.1 exceptions-0.10.5 filepath-1.4.2.2 \
+BASE_PACKAGES?=		Cabal-3.10.1.0 array-0.5.6.0 base-4.18.2.0 binary-0.8.9.1 \
+			bytestring-0.11.5.3 containers-0.6.7 deepseq-1.4.8.1 \
+			directory-1.3.8.1 exceptions-0.10.7 filepath-1.4.200.1 \
 			ghc-${GHC_VERSION} ghc-bignum-1.3 ghc-compact-0.1.0.0 \
-			ghc-prim-0.9.1 haskeline-0.8.2 hpc-0.6.1.0 \
-			integer-gmp-1.1 mtl-2.2.2 parsec-3.1.16.1 pretty-1.1.3.6 \
-			process-1.6.17.0 stm-2.5.1.0 template-haskell-2.19.0.0 \
-			terminfo-0.4.1.5 text-2.0.2 time-1.12.2 \
-			transformers-0.5.6.2 unix-2.7.3 xhtml-3000.2.2.1
+			ghc-prim-0.10.0 haskeline-0.8.2.1 hpc-0.6.2.0 \
+			integer-gmp-1.1 mtl-2.3.1 parsec-3.1.16.1 pretty-1.1.3.6 \
+			process-1.6.17.0 stm-2.5.1.0 template-haskell-2.20.0.0 \
+			terminfo-0.4.1.6 text-2.0.2 time-1.12.2 \
+			transformers-0.6.1.0 unix-2.8.4.0 xhtml-3000.2.2.1
 
 .for pkg in ${BASE_PACKAGES}
 PLIST_SUB+=	${pkg:C/-([0-9.])+//:tu}_VERSION=${pkg:C/^([^\.]*-)+//}
@@ -135,7 +135,7 @@ CONFIGURE_ARGS+=	--with-system-libffi --with-ffi-includes=${LOCALBASE}/include -
 CONFIGURE_ENV+=		CC=${CC} CXX=${CXX}
 SHEBANG_FILES+=		hadrian/bootstrap/bootstrap.py
 HADRIAN_CMD=		${WRKSRC}/hadrian/bootstrap/_build/bin/hadrian ${HADRIAN_DOCS_ARG} ${HADRIAN_GMP_ARG}
-DO_MAKE_BUILD=		${SETENV} ${MAKE_ENV} ${HADRIAN_CMD} ${_MAKE_JOBS} --flavour=ports
+DO_MAKE_BUILD=		${SETENVI} ${WRK_ENV} ${HADRIAN_CMD} ${_MAKE_JOBS} --flavour=ports
 ALL_TARGET=		binary-dist-dir
 INSTALL_WRKSRC=		${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}-${CONFIGURE_TARGET}
 INSTALL_TARGET=		install
@@ -174,10 +174,11 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libncursesw.so.8:misc/compat12x
 
 .if empty(PORT_OPTIONS:MBOOT)
 DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${EXTRACT_SUFX}:boot
-.   if !defined(IGNORE_MISSING_HADRIAN) && defined(USE_HADRIAN)
-DISTFILES+=		hadrian-${GHC_VERSION}-boot.tar.gz:boot
-.   endif
 .endif # MBOOT
+
+.if !defined(IGNORE_MISSING_HADRIAN) && defined(USE_HADRIAN)
+DISTFILES+=		hadrian-${GHC_VERSION}-boot.tar.gz:boot
+.endif
 
 .if ${ARCH} == aarch64 || ${ARCH:Marmv*}
 # ghc-8.10.x on arm requires devel/llvm10
@@ -212,7 +213,7 @@ pre-configure:
 # If we are using bootstrap compiler, configure and install it into ${BOOT_DIR}
 .if empty(PORT_OPTIONS:MBOOT)
 	cd ${BOOT_DIR} && ${CONFIGURE_CMD} ${CONFIGURE_ENV} --prefix=${BOOT_INSTALL_DIR}
-	cd ${BOOT_DIR} && ${MAKE_CMD} PACKAGES='' install
+	cd ${BOOT_DIR} && ${SETENVI} ${WRK_ENV} ${GMAKE} PACKAGES='' install
 .endif
 .ifdef USE_HADRIAN
 # Compile Hadrian
@@ -273,7 +274,7 @@ create-bootstrap:
 		&& ${ECHO_CMD} "BIN_DIST_NAME=ghc-${GHC_VERSION}-boot" >> mk/build.mk \
 		&& ${ECHO_CMD} "BIN_DIST_TAR=ghc-${GHC_VERSION}-boot.tar" >> mk/build.mk \
 		&& ${ECHO_CMD} "HADDOCK_DOCS=NO" >> mk/build.mk \
-		&& ${GMAKE} binary-dist TAR_COMP=xz \
+		&& ${SETENVI} ${WRK_ENV} ${GMAKE} binary-dist TAR_COMP=xz \
 		&& ${MV} ${WRKSRC}/ghc-${GHC_VERSION}-boot-${GHC_ARCH}-portbld-freebsd.tar.xz /tmp/ghc-${GHC_VERSION}-boot-${ARCH}-freebsd.tar.xz
 .else
 	cd ${WRKSRC} \
@@ -292,7 +293,7 @@ create-bootstrap:
 create-stack-bindist:
 .ifndef USE_HADRIAN
 	cd ${WRKSRC} \
-		&& ${GMAKE} binary-dist TAR_COMP=xz \
+		&& ${SETENVI} ${WRK_ENV} ${GMAKE} binary-dist TAR_COMP=xz \
 		&& ${MV} ${WRKSRC}/ghc-${GHC_VERSION}-${GHC_ARCH}-portbld-freebsd.tar.xz /tmp/
 .else
 	cd ${WRKSRC} \
@@ -337,7 +338,7 @@ check-hadrian-bootstrap:
 	${FALSE}
 .endif
 # Install bootstrap GHC
-	${MAKE} -C ${.CURDIR} pre-configure
+	${MAKE_CMD} -C ${.CURDIR} pre-configure
 # Compile Hadrian
 	cd ${WRKSRC}/hadrian/bootstrap && \
 		./bootstrap.py -w ${BOOT_GHC} -s /tmp/hadrian-${GHC_VERSION}-boot.tar.gz

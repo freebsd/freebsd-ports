@@ -1,0 +1,13 @@
+--- Makefile.orig	2024-03-24 14:59:01 UTC
++++ Makefile
+@@ -38,8 +38,8 @@ $(SC_SRC)/TG04BX.f:
+ #            src directories of the SLICOT submodule.
+ $(SC_SRC)/MA02ID.f:
+ 	mkdir -p $(SC_SRC)
+-	cp -t $(SC_SRC) $(SC_SMOD)/src/*.f
+-	cp -t $(SC_SRC) $(SC_SMOD)/src_aux/*.f
++	cp $(SC_SMOD)/src/*.f $(SC_SRC)
++	cp $(SC_SMOD)/src_aux/*.f $(SC_SRC)
+ 	./bootstrap && $(RM) -r "autom4te.cache"
+ 
+ # TODO: Private oct-files for control package.

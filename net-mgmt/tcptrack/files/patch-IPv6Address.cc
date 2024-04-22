@@ -1,5 +1,5 @@
---- src/IPv6Address.cc.orig	2010-09-28 03:35:16.000000000 +0200
-+++ src/IPv6Address.cc	2014-07-18 10:19:48.000000000 +0200
+--- src/IPv6Address.cc.orig	2010-09-28 03:35:16 UTC
++++ src/IPv6Address.cc
 @@ -7,6 +7,8 @@
  #include "IPv6Address.h"
  #include "util.h"

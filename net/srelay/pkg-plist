@@ -1,4 +1,4 @@
 @sample etc/srelay.conf.sample
 @sample etc/srelay.passwd.sample
-man/man8/srelay.8.gz
 sbin/srelay
+share/man/man8/srelay.8.gz

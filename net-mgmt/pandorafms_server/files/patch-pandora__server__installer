@@ -1,0 +1,11 @@
+--- pandora_server_installer.orig	2024-03-18 13:19:50 UTC
++++ pandora_server_installer
+@@ -92,7 +92,7 @@ set_global_vars () {
+ 		PANDORA_CFG_FILE_DIST=$DISTRO/pandora_server.conf.new
+ 		PANDORA_INIT_SCRIPT=$DISTRO/pandora_server
+ 		TENTACLE_INIT_SCRIPT=$DISTRO/tentacle_server
+-		MANDIR=$PREFIX/man/man1
++		MANDIR=$PREFIX/share/man/man1
+ 		INITDIR=$PREFIX/etc/rc.d
+ 		PERL=/usr/local/bin/perl
+ 		PANDORA_RC_VAR="pandora_server_enable"

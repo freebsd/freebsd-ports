@@ -1,5 +1,5 @@
 PORTNAME=	sixarm_ruby_unaccent
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

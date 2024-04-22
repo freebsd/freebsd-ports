@@ -1,0 +1,11 @@
+--- configure.orig	2024-01-24 08:43:28 UTC
++++ configure
+@@ -16949,7 +16949,7 @@ fi
+ 
+         # Find any Python interpreter.
+     if test -z "$PYTHON"; then
+-      for ac_prog in python python2 python3  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0
++      for ac_prog in python python2 python3  python3.11 python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0
+ do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2

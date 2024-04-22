@@ -33,7 +33,7 @@ LIB_DEPENDS+=	libasound.so:audio/alsa-lib # pending https://github.com/surge-syn
 
 USES=		cmake compiler:c++17-lang gnome localbase:ldflags pkgconfig python:build shebangfix xorg
 USE_GNOME=	cairo
-USE_XORG=	x11 xcb
+USE_XORG=	x11 xcb xcursor xinerama xrandr
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	surge-synthesizer

@@ -7,6 +7,6 @@ lib/xarchive/wrappers/rar-wrap.sh
 lib/xarchive/wrappers/rpm-wrap.sh
 lib/xarchive/wrappers/tar-wrap.sh
 lib/xarchive/wrappers/zip-wrap.sh
-man/man1/xarchive.1.gz
+share/man/man1/xarchive.1.gz
 share/applications/xarchive.desktop
 share/pixmaps/xarchive.xpm

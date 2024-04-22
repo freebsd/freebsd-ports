@@ -1,0 +1,32 @@
+--- iec61850/data/abilities/collection/9f7757da-1da9-3b35-90f3-fdab578be198.yml.orig	2024-02-18 18:34:52 UTC
++++ iec61850/data/abilities/collection/9f7757da-1da9-3b35-90f3-fdab578be198.yml
+@@ -80,6 +80,29 @@
+             - source: iec61850.device.name
+               edge: has_lcb
+               target: iec61850.lcb.name
++    freebsd:
++      sh:
++        command: './iec61850_actions_freebsd get log_blocks #{iec61850.server.ip}'
++        payloads:
++        - iec61850_actions_freebsd
++        timeout: 360
++        parsers:
++          plugins.iec61850.app.parsers.lcb:
++            - source: iec61850.attribute.name
++              edge: has_fc
++              target: iec61850.attribute.fc
++            - source: iec61850.attribute.name
++              edge: has_datatype
++              target: iec61850.attribute.datatype
++            - source: iec61850.attribute.name
++              edge: has_value
++              target: iec61850.attribute.value
++            - source: iec61850.device.name
++              edge: has_node
++              target: iec61850.node.name
++            - source: iec61850.device.name
++              edge: has_lcb
++              target: iec61850.lcb.name
+   repeatable: true
+   plugin: iec61850
+   additional_info:

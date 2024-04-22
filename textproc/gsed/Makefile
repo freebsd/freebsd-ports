@@ -14,6 +14,7 @@ LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 
 USES=		charsetfix cpe makeinfo tar:xz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV+=	MAKEINFO="${MAKEINFO} --no-split"
 TEST_TARGET=	check

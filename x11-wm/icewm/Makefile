@@ -1,5 +1,5 @@
 PORTNAME=	icewm
-PORTVERSION=	3.4.5
+PORTVERSION=	3.4.7
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${PORTVERSION}/
 
@@ -21,6 +21,7 @@ USE_GNOME=	glib20
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xpm xrender
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-icesound=oss
 SHEBANG_FILES=	contrib/icewm-menu-xrandr
 
@@ -65,7 +66,7 @@ post-patch-LIBRSVG2-off:
 		${LOCALBASE}/include/nanosvgrast.h ${WRKSRC}/src
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ChangeLog NEWS README TODO doc/*.html
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor

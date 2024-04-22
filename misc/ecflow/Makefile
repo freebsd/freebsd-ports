@@ -1,5 +1,5 @@
 PORTNAME=	ecflow
-DISTVERSION=	5.11.3
+DISTVERSION=	5.12.3
 CATEGORIES=	misc
 MASTER_SITES=	https://confluence.ecmwf.int/download/attachments/8650755/
 DISTNAME=	ecFlow-${DISTVERSION}-Source
@@ -17,8 +17,9 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		cmake compiler:c++17-lang localbase perl5 pkgconfig python qt:5 shebangfix ssl
-USE_QT=		charts core gui network svg widgets buildtools:build qmake:build
+USES=		cmake compiler:c++17-lang gl localbase perl5 pkgconfig python qt:6 shebangfix ssl
+USE_QT=		5compat base charts svg tools:build
+USE_GL=		gl opengl
 
 SHEBANG_GLOB=	*.sh *.in *.py
 
@@ -31,10 +32,10 @@ CONFLICTS_BUILD=	python27 # build attempts to find python-2.7 and use it
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
-	@${REINPLACE_CMD} -e 's|std::binary_function|std::__binary_function|' \
-		${WRKSRC}/ACore/src/Str.cpp
-.endif
+#post-patch:
+#.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+#	@${REINPLACE_CMD} -e 's|std::binary_function|std::__binary_function|' \
+#		${WRKSRC}/ACore/src/Str.cpp
+#.endif
 
 .include <bsd.port.post.mk>

@@ -13,7 +13,6 @@ LICENSE=	MIT
 USES=		cpe imake xorg
 USE_XORG=	xpm xext x11
 
-MAKE_ARGS+=	MANPATH="${PREFIX}/share/man"
 WRKSRC=		${WRKDIR}/xboing
 
 OPTIONS_DEFINE=SOUND

@@ -1,5 +1,6 @@
 PORTNAME=	fwlogwatch
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://fwlogwatch.inside-security.de/sw/
 

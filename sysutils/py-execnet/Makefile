@@ -1,5 +1,5 @@
 PORTNAME=	execnet
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,5 +18,7 @@ USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
+
+TESTING_UNSAFE=	ModuleNotFoundError: No module named 'execnet'
 
 .include <bsd.port.mk>

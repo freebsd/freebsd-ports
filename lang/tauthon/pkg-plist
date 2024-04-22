@@ -4715,4 +4715,4 @@ lib/tauthon%%VERSION_NOMICRO%%/zipfile.py
 lib/tauthon%%VERSION_NOMICRO%%/zipfile.pyc
 lib/tauthon%%VERSION_NOMICRO%%/zipfile.pyo
 libdata/pkgconfig/tauthon-%%VERSION_NOMICRO%%.pc
-man/man1/tauthon%%VERSION_NOMICRO%%.1.gz
+share/man/man1/tauthon%%VERSION_NOMICRO%%.1.gz

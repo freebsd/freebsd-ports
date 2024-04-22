@@ -1,6 +1,6 @@
 PORTNAME=	lcalc
 PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/misc/sage/spkg/upstream/lcalc/
 
@@ -23,7 +23,9 @@ LIB_DEPENDS=	libgmp.so:math/gmp	\
 USES=		compiler:c++11-lang gmake libtool localbase tar:xz
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-pari
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+CONFIGURE_ARGS=	--with-pari	\
+		--mandir=${PREFIX}/share/man
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes

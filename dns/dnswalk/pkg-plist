@@ -1,5 +1,5 @@
 bin/dnswalk
-man/man1/dnswalk.1.gz
+share/man/man1/dnswalk.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/do-dnswalk
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/makereports
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendreports

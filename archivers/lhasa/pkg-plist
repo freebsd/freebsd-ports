@@ -9,4 +9,4 @@ lib/liblhasa.so
 lib/liblhasa.so.0
 lib/liblhasa.so.0.0.0
 libdata/pkgconfig/liblhasa.pc
-man/man1/lhasa.1.gz
+share/man/man1/lhasa.1.gz

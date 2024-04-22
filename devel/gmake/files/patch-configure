@@ -1,0 +1,11 @@
+--- configure.orig	2023-02-26 18:46:38 UTC
++++ configure
+@@ -6741,7 +6741,7 @@ fi
+ 
+ 
+ 
+-printf "%s\n" "#define MAKE_CXX \"$CXX\"" >>confdefs.h
++printf "%s\n" "#define MAKE_CXX \"c++\"" >>confdefs.h
+ 
+ 
+ # Configure gnulib

@@ -7,9 +7,9 @@ lib/libofx.so
 lib/libofx.so.7
 lib/libofx.so.7.0.4
 libdata/pkgconfig/libofx.pc
-man/man1/ofxconnect.1.gz
-man/man1/ofxdump.1.gz
 %%DATADIR%%/dtd/ofc.dtd
 %%DATADIR%%/dtd/ofx160.dtd
 %%DATADIR%%/dtd/ofx201.dtd
 %%DATADIR%%/dtd/opensp.dcl
+share/man/man1/ofxconnect.1.gz
+share/man/man1/ofxdump.1.gz

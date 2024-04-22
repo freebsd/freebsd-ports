@@ -1,6 +1,6 @@
 PORTNAME=	postgis
-DISTVERSION=	3.4.1
-PORTREVISION=	1
+DISTVERSION=	3.4.2
+PORTREVISION=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	https://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	34
@@ -25,6 +25,7 @@ USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE} NUMERICFLAGS=${PORTVERSION}
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 SHEBANG_FILES=	extensions/address_standardizer/*.pl regress/run_test.pl \
 		utils/postgis_restore.pl.in utils/*.pl loader/postgis.pl
 WANT_PGSQL=	server

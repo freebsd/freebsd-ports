@@ -1,5 +1,6 @@
 PORTNAME=	octave-forge-stk
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/stk-kriging/stk/releases/download/${PORTVERSION}/
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}-octpkg

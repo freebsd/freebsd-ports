@@ -1,6 +1,6 @@
 PORTNAME=	jbigkit
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.cl.cam.ac.uk/~mgk25/download/
 
@@ -28,7 +28,7 @@ do-install:
 		${BINS:S|^|${WRKSRC}/pbmtools/|} ${STAGEDIR}${PREFIX}/bin
 
 	${INSTALL_MAN}	\
-		${MANS:S|^|${WRKSRC}/pbmtools/|} ${STAGEDIR}${MANPREFIX}/man/man1
+		${MANS:S|^|${WRKSRC}/pbmtools/|} ${STAGEDIR}${PREFIX}/share/man/man1
 
 	${INSTALL_DATA} ${WRKSRC}/libjbig/*.h ${STAGEDIR}${PREFIX}/include
 

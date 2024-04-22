@@ -1,5 +1,5 @@
 @sample etc/usb_modeswitch.conf.sample
-man/man1/usb_modeswitch.1.gz
+share/man/man1/usb_modeswitch.1.gz
 sbin/usb_modeswitch
 %%DATADIR%%/03f0:002a
 %%DATADIR%%/03f0:032a

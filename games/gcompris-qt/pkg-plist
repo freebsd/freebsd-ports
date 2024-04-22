@@ -1,6 +1,7 @@
 bin/gcompris-qt
 share/applications/org.kde.gcompris.desktop
 %%DATADIR%%/rcc/activities.rcc
+%%DATADIR%%/rcc/adjacent_numbers.rcc
 %%DATADIR%%/rcc/advanced_colors.rcc
 %%DATADIR%%/rcc/algebra_by.rcc
 %%DATADIR%%/rcc/algebra_div.rcc
@@ -25,6 +26,7 @@ share/applications/org.kde.gcompris.desktop
 %%DATADIR%%/rcc/braille_alphabets.rcc
 %%DATADIR%%/rcc/braille_fun.rcc
 %%DATADIR%%/rcc/calendar.rcc
+%%DATADIR%%/rcc/calcudoku.rcc
 %%DATADIR%%/rcc/canal_lock.rcc
 %%DATADIR%%/rcc/categorization.rcc
 %%DATADIR%%/rcc/checkers.rcc
@@ -64,6 +66,7 @@ share/applications/org.kde.gcompris.desktop
 %%DATADIR%%/rcc/football.rcc
 %%DATADIR%%/rcc/fractions_create.rcc
 %%DATADIR%%/rcc/fractions_find.rcc
+%%DATADIR%%/rcc/frieze.rcc
 %%DATADIR%%/rcc/geo-country.rcc
 %%DATADIR%%/rcc/geography.rcc
 %%DATADIR%%/rcc/gletters.rcc
@@ -72,8 +75,13 @@ share/applications/org.kde.gcompris.desktop
 %%DATADIR%%/rcc/gnumch-inequality.rcc
 %%DATADIR%%/rcc/gnumch-multiples.rcc
 %%DATADIR%%/rcc/gnumch-primes.rcc
+%%DATADIR%%/rcc/graduated_line_read.rcc
+%%DATADIR%%/rcc/graduated_line_use.rcc
+%%DATADIR%%/rcc/grammar_analysis.rcc
+%%DATADIR%%/rcc/grammar_classes.rcc
 %%DATADIR%%/rcc/graph-coloring.rcc
 %%DATADIR%%/rcc/gravity.rcc
+%%DATADIR%%/rcc/guess24.rcc
 %%DATADIR%%/rcc/guesscount.rcc
 %%DATADIR%%/rcc/guessnumber.rcc
 %%DATADIR%%/rcc/hangman.rcc
@@ -189,6 +197,7 @@ share/applications/org.kde.gcompris.desktop
 %%DATADIR%%/translations/gcompris_ar.qm
 %%DATADIR%%/translations/gcompris_az.qm
 %%DATADIR%%/translations/gcompris_be.qm
+%%DATADIR%%/translations/gcompris_bg.qm
 %%DATADIR%%/translations/gcompris_br.qm
 %%DATADIR%%/translations/gcompris_ca.qm
 %%DATADIR%%/translations/gcompris_ca@valencia.qm
@@ -203,6 +212,7 @@ share/applications/org.kde.gcompris.desktop
 %%DATADIR%%/translations/gcompris_eu.qm
 %%DATADIR%%/translations/gcompris_fi.qm
 %%DATADIR%%/translations/gcompris_fr.qm
+%%DATADIR%%/translations/gcompris_gl.qm
 %%DATADIR%%/translations/gcompris_he.qm
 %%DATADIR%%/translations/gcompris_hr.qm
 %%DATADIR%%/translations/gcompris_hu.qm
@@ -222,6 +232,7 @@ share/applications/org.kde.gcompris.desktop
 %%DATADIR%%/translations/gcompris_sl.qm
 %%DATADIR%%/translations/gcompris_sq.qm
 %%DATADIR%%/translations/gcompris_sv.qm
+%%DATADIR%%/translations/gcompris_sw.qm
 %%DATADIR%%/translations/gcompris_tr.qm
 %%DATADIR%%/translations/gcompris_uk.qm
 %%DATADIR%%/translations/gcompris_zh_TW.qm

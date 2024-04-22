@@ -1,5 +1,6 @@
 PORTNAME=	reed
 PORTVERSION=	5.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/crees/reed			\
 		https://www.bayofrum.net/dist/reed/
@@ -23,6 +24,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/wrap ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/fix_bookmarks.sh ${STAGEDIR}${DATADIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/*.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

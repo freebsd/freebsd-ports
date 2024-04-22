@@ -1,6 +1,5 @@
 PORTNAME=	podcasts
-DISTVERSION=	0.6.1
-PORTREVISION=	3
+DISTVERSION=	0.7.1
 CATEGORIES=	audio
 PKGNAMEPREFIX=	gnome-
 
@@ -12,8 +11,6 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libdbus-1.so:devel/dbus \
-		libhandy-1.so:x11-toolkits/libhandy
 
 USES=		cargo gettext gnome gstreamer meson pkgconfig sqlite ssl
 USE_GITLAB=	yes

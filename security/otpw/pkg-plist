@@ -1,4 +1,4 @@
 @(otpw,otpw,4555) bin/otpw-gen
 lib/pam_otpw.so
-man/man1/otpw-gen.1.gz
-man/man8/pam_otpw.8.gz
+share/man/man1/otpw-gen.1.gz
+share/man/man8/pam_otpw.8.gz

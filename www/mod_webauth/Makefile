@@ -1,6 +1,6 @@
 PORTNAME=	mod_webauth
 PORTVERSION=	4.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://webauth.stanford.edu/dist/
 DISTNAME=	webauth-${PORTVERSION}
@@ -15,6 +15,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 USES=		apache ldap libtool pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-ldap-lib=${LOCALBASE}/lib \
 		--with-ldap-include=${LOCALBASE}/include \
 		--with-openssl=${OPENSSLBASE}

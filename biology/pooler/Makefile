@@ -1,6 +1,7 @@
 PORTNAME=		pooler
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.88
+PORTREVISION=	1
 CATEGORIES=		biology
 
 MAINTAINER=	ssb22@cam.ac.uk
@@ -19,10 +20,13 @@ GH_PROJECT=	PrimerPooler
 INSTALL_TARGET=	install-strip
 
 WRKSRC_SUBDIR=	pooler
-PLIST_FILES=	bin/pooler man/man1/pooler.1.gz share/applications/pooler.desktop
+PLIST_FILES=	bin/pooler share/man/man1/pooler.1.gz share/applications/pooler.desktop
 
 .if exists(/usr/include/omp.h)
 CFLAGS+=	-fopenmp
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|man/man1|share/man/man1|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

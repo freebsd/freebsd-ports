@@ -7497,4 +7497,4 @@ lib/libpython%%PYTHON_VER%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_LIBDIR%%/zoneinfo/_zoneinfo.py
 libdata/pkgconfig/python-%%PYTHON_VER%%-embed.pc
 libdata/pkgconfig/python-%%PYTHON_VER%%.pc
-man/man1/python%%PYTHON_VER%%.1.gz
+share/man/man1/python%%PYTHON_VER%%.1.gz

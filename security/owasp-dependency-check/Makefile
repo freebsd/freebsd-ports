@@ -18,7 +18,7 @@ WWW=		https://jeremylong.github.io/DependencyCheck \
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	mvn:devel/maven
+BUILD_DEPENDS=	maven>0:devel/maven
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jeremylong

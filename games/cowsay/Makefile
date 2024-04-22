@@ -1,7 +1,7 @@
 PORTNAME=	cowsay
 PORTVERSION=	3.04
 DISTVERSIONPREFIX=	cowsay-
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 
 MAINTAINER=	osa@FreeBSD.org
@@ -35,7 +35,7 @@ do-install:
 	#   bit from both so that after installation cowsay uses, and the manpage
 	#   mentions, the prefix path, not the stage path.
 	@${SED} -i '' 's,${STAGEDIR},,' ${STAGEDIR}${PREFIX}/bin/cowsay
-	@${SED} -i '' 's,${STAGEDIR},,' ${STAGEDIR}${PREFIX}/man/man1/cowsay.1
+	@${SED} -i '' 's,${STAGEDIR},,' ${STAGEDIR}${PREFIX}/share/man/man1/cowsay.1
 	${INSTALL_DATA} ${FILESDIR}/box.cow ${STAGEDIR}${PREFIX}/share/cows
 	${INSTALL_DATA} ${FILESDIR}/jkh.cow ${STAGEDIR}${PREFIX}/share/cows
 	${INSTALL_DATA} ${FILESDIR}/tux-stab.cow ${STAGEDIR}${PREFIX}/share/cows

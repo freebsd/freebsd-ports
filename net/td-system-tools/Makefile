@@ -1,18 +1,20 @@
 PORTNAME=	td-system-tools
-PORTVERSION=	1.2.0
+DISTVERSION=	1.6.1
 CATEGORIES=	net
-MASTER_SITES=	https://www.uni-due.de/~be0001/system-tools/download/
+MASTER_SITES=	https://www.nntb.no/~dreibh/system-tools/download/
 
-MAINTAINER=	dreibh@iem.uni-due.de
+MAINTAINER=	thomas.dreibholz@gmail.com
 COMMENT=	Printing basic system information and system maintenance
-WWW=		https://www.uni-due.de/~be0001/system-tools/
+WWW=		https://www.nntb.no/~dreibh/system-tools/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash \
+		mbuffer:misc/mbuffer \
+		figlet:misc/figlet
 
-USES=		cmake tar:xz
-CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${PREFIX}/share/man
+USES=		cmake gettext tar:xz
+CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=${PREFIX}/share/man
 
 .include <bsd.port.mk>

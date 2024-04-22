@@ -1,3 +1,4 @@
-Cryptol is a domain-specific language for specifying cryptographic algorithms.
-A Cryptol implementation of an algorithm resembles its mathematical
-specification more closely than an implementation in a general purpose language.
+Cryptol is a domain-specific language for specifying cryptographic
+algorithms.  A Cryptol implementation of an algorithm resembles its
+mathematical specification more closely than an implementation in a
+general purpose language.

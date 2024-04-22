@@ -1,5 +1,5 @@
 PORTNAME=	obs-studio
-DISTVERSION=	30.0.2
+DISTVERSION=	30.1.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,8 +9,13 @@ WWW=		https://obsproject.com/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat \
-		swig:devel/swig
+BROKEN_i386=	link fails: relocation R_386_PC32 cannot be used against symbol 'strlist_split'; recompile with -fPIC, see https://github.com/obsproject/obs-studio/issues/10481
+
+BUILD_DEPENDS=	asio>0:net/asio \
+		${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json \
+		v4l_compat>=0:multimedia/v4l_compat \
+		swig:devel/swig \
+		websocketpp>0:devel/websocketpp
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libcurl.so:ftp/curl \
 		libdatachannel.so:www/libdatachannel \
@@ -21,6 +26,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libjansson.so:devel/jansson \
 		libmbedtls.so:security/mbedtls \
 		libpci.so:devel/libpci \
+		libqrcodegencpp.so:graphics/qr-code-generator \
 		librist.so:multimedia/librist \
 		librnnoise.so:audio/rnnoise \
 		libspeexdsp.so:audio/speexdsp \
@@ -49,15 +55,14 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	obsproject
 GH_TUPLE=	obsproject:obs-amd-encoder:d5a136c6834c39293ad749cf8f07bdaa772fe44b:obsproject_obs_amd_encoder/plugins/enc-amf \
-		obsproject:obs-browser:e2310b02df3e6c184fe6eb6608244a82e37f582e:obsproject_obs_browser/plugins/obs-browser \
-		obsproject:obs-websocket:5716577019b1ccda01a12db2cba35a023082b7ad:obsproject_obs_websocket/plugins/obs-websocket \
+		obsproject:obs-browser:996b5a7:obsproject_obs_browser/plugins/obs-browser \
+		obsproject:obs-websocket:d2d4bfb:obsproject_obs_websocket/plugins/obs-websocket \
 			chriskohlhoff:asio:b73dc1d:chriskohlhoff_asio/plugins/obs-websocket/deps/asio \
 			nayuki:QR-Code-generator:8518684:nayuki_QR_Code_generator/plugins/obs-websocket/deps/qr \
 			nlohmann:json:a34e011:nlohmann_json/plugins/obs-websocket/deps/json \
 			zaphoyd:websocketpp:56123c8:zaphoyd_websocketpp/plugins/obs-websocket/deps/websocketpp \
 		obsproject:libdshowcapture:a93f1a34c14e91b5c540f264fb965f32caf77336:obsproject_libdshowcapture/plugins/win-dshow/libdshowcapture \
 			elgatosf:capture-device-support:bedcf28ed7a74eb7bf96a383fd18d2f5a1849b10:elgatosf_capture_device_support/plugins/win-dshow/libdshowcapture/external/capture-device-support \
-		palana:Syphon-Framework:01b144811f6f7080b70b2d7cc729da071f86f9d7:palana_Syphon_Framework/plugins/mac-syphon/syphon-framework \
 		Mixer:ftl-sdk:d0c8469f66806b5ea738d607f7d2b000af8b1129:Mixer_ftl_sdk/plugins/obs-outputs/ftl-sdk \
 			curl:curl:44b9b4d4f56d6f6de92c89636994c03984e9cd01:curl_curl/plugins/obs-outputs/ftl-sdk/libcurl \
 			akheron:jansson:bc5741fb1ac730ead24e9bd08977fc6c248e04b0:akheron_jansson/plugins/obs-outputs/ftl-sdk/libjansson

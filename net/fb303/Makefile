@@ -1,6 +1,6 @@
 PORTNAME=	fb303
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.01.15.00
+DISTVERSION=	2024.04.15.00
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,20 +29,20 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libwangle.so:net/wangle \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++17-lang
+USES=		cmake compiler:c++17-lang ssl
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
 
 CXXFLAGS+=	-fPIC
+CXXFLAGS+=	-DGLOG_USE_GLOG_EXPORT
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	PYTHON_EXTENSIONS
 
 post-install:
 	@${RMDIR} \
-		${STAGEDIR}${PREFIX}/include/fb303/test \
-		${STAGEDIR}${PREFIX}/include/fb303/thrift/types # see https://github.com/facebook/fb303/issues/37
+		${STAGEDIR}${PREFIX}/include/fb303/test
 
 .include <bsd.port.mk>

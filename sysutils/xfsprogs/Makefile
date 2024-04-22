@@ -1,6 +1,6 @@
 PORTNAME=	xfsprogs
-PORTVERSION=	3.2.4
-PORTREVISION=	3
+DISTVERSION=	3.2.4
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://oss.sgi.com/projects/xfs/cmd_tars/ \
 		ftp://oss.sgi.com/projects/xfs/previous/cmd_tars/
@@ -13,10 +13,11 @@ LICENSE=	LGPL21 GPLv2
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
-CPE_PRODUCT=	${PORTNAME}
-CPE_VENDOR=	sgi
 USES=		cpe gettext gmake libtool:build readline
+CPE_VENDOR=	sgi
+CPE_PRODUCT=	${PORTNAME}
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	OPTIMIZER=-fcommon
 CONFIGURE_ARGS=	--disable-shared --enable-readline
 ALL_TARGET=	# empty

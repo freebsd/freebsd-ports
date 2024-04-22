@@ -1,6 +1,6 @@
 PORTNAME=	expect
 PORTVERSION=	5.45.4
-PORTREVISION=	4
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	lang tcl tk
 MASTER_SITES=	SF/${PORTNAME}/Expect/${PORTVERSION}
@@ -13,15 +13,17 @@ WWW=		https://expect.sourceforge.net
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/license.terms
 
-USES=		tcl:tea autoreconf
+USES=		autoreconf tcl:tea,wrapper
 USE_LDCONFIG=	${LOCALBASE}/lib/${DISTNAME}
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-SUB_FILES+=	pkg-message
-SUB_LIST+=	MANPREFIX=${MANPREFIX}
-TEST_TARGET=	test
 MAKE_ENV+=	STRIPPROG=${STRIP_CMD}
+TEST_TARGET=	test
+
+SUB_FILES+=	pkg-message
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 post-install:
 	${LN} -sf ${DISTNAME}/lib${DISTNAME}.so \

@@ -14,5 +14,5 @@ lib/libfsntfs.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pyfsntfs.a
 %%PYTHON_SITELIBDIR%%/pyfsntfs.so
 libdata/pkgconfig/libfsntfs.pc
-man/man1/fsntfsinfo.1.gz
-man/man3/libfsntfs.3.gz
+share/man/man1/fsntfsinfo.1.gz
+share/man/man3/libfsntfs.3.gz

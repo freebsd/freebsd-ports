@@ -1,13 +1,13 @@
---- Makefile.orig	2014-06-23 22:26:53.428301384 +0800
-+++ Makefile	2014-06-23 22:27:04.258298966 +0800
-@@ -8,8 +8,8 @@ prtunnel:	$(OBJS)
+--- Makefile.orig	2006-01-08 22:19:09 UTC
++++ Makefile
+@@ -8,8 +8,8 @@ install:
  	$(CC) $(OBJS) -o prtunnel
  
  install:
 -	install -c prtunnel $(PREFIX)/bin/prtunnel
 -	install -c prtunnel.1 $(PREFIX)/man/man1/prtunnel.1
 +	install -c prtunnel $(DESTDIR)$(PREFIX)/bin/prtunnel
-+	install -c prtunnel.1 $(DESTDIR)$(PREFIX)/man/man1/prtunnel.1
++	install -c prtunnel.1 $(DESTDIR)$(PREFIX)/share/man/man1/prtunnel.1
  
  uninstall:
  	rm -f $(PREFIX)/bin/prtunnel

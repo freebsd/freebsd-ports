@@ -13,7 +13,7 @@
 # qdrant(_profile)?_config (str):	Full name of config file
 #				Default is "%%ETCDIR%%/config.yaml" or
 #				"%%ETCDIR%%/config(.profile)?.yaml
-# qdrant(_profile)?_flags (flags):	Set extra flags here. More options in qdrant(1)
+# qdrant(_profile)?_args (flags):	Set extra args here. More options in qdrant(1)
 #				Default is empty "".
 # qdrant(_profile)?_user (user):	Set user to run qdrant.
 #				Default is "nobody".
@@ -35,6 +35,7 @@ pidfile="${_piddir}/qdrant.pid"
 : ${qdrant_config="%%ETCDIR%%/config.yaml"}
 : ${qdrant_user="nobody"}
 : ${qdrant_group="nobody"}
+: ${qdrant_args=""}
 
 load_rc_config ${name}
 
@@ -46,7 +47,7 @@ if [ -n "$2" ]; then
 		eval qdrant_config="\${qdrant_${profile}_config:-${qdrant_config}}"
                 eval qdrant_user="\${qdrant_${profile}_user:-${qdrant_user}}"
                 eval qdrant_group="\${qdrant_${profile}_group:-${qdrant_group}}"
-		eval qdrant_flags="\${qdrant_${profile}_flags:-${qdrant_flags}}"
+		eval qdrant_args="\${qdrant_${profile}_args:-${qdrant_args}}"
 		eval qdrant_post_start="\${qdrant_${profile}_post_start:-${qdrant_post_start}}"
 	else
 		echo "%%PREFIX%%/etc/rc.d/qdrant%%RC_SUBR_SUFFIX%%: extra argument ignored"
@@ -119,7 +120,8 @@ procname=%%PREFIX%%/bin/qdrant
 command="/usr/sbin/daemon"
 command_args="-f -S -p ${pidfile} \
 	-t qdrant${_profsuffx} \
-	%%PREFIX%%/bin/qdrant --config-path $qdrant_config"
+	%%PREFIX%%/bin/qdrant --config-path $qdrant_config \
+	$qdrant_args"
 
 
 start_precmd="install -d -o $qdrant_user -g $qdrant_group -m 755 $_piddir"

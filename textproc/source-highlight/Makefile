@@ -1,6 +1,6 @@
 PORTNAME=	source-highlight
 DISTVERSION=	3.1.9
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	textproc
 MASTER_SITES=	GNU/src-highlite
 
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 USES=		compiler:c++11-lang gmake pathfix libtool localbase
 USE_CXXSTD=	gnu++11
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-bash-completion
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes

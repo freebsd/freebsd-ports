@@ -1,5 +1,5 @@
 PORTNAME=	goxel
-PORTVERSION=	0.13.0
+PORTVERSION=	0.14.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -13,11 +13,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libglfw.so:graphics/glfw \
 		libpng.so:graphics/png
 
-USES=		compiler:c++17-lang gl gnome pkgconfig scons
+USES=		compiler:c++17-lang gl pkgconfig scons
 USE_GITHUB=	yes
 GH_ACCOUNT=	guillaumechereau
 USE_GL=		gl
-USE_GNOME=	cairo gdkpixbuf2 gtk30
 
 MAKE_ARGS=	mode=release werror=false
 

@@ -1,3 +1,3 @@
-TIMESTAMP = 1677771171
-SHA256 (Flask-SQLAlchemy-3.0.3.tar.gz) = 2764335f3c9d7ebdc9ed6044afaf98aae9fa50d7a074cef55dde307ec95903ec
-SIZE (Flask-SQLAlchemy-3.0.3.tar.gz) = 135538
+TIMESTAMP = 1708449094
+SHA256 (flask_sqlalchemy-3.1.1.tar.gz) = e4b68bb881802dda1a7d878b2fc84c06d1ee57fb40b874d3dc97dabfa36b8312
+SIZE (flask_sqlalchemy-3.1.1.tar.gz) = 81899

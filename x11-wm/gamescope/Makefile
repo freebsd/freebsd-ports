@@ -30,7 +30,7 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	hwdata>0:misc/hwdata
 
-USES=		compiler:c++11-lib meson pkgconfig sdl xorg
+USES=		cmake:indirect compiler:c++11-lib meson pkgconfig sdl xorg
 USE_GITHUB=	yes
 USE_SDL=	sdl2
 USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xmu xrender xres xtst xxf86vm
@@ -46,6 +46,8 @@ MESON_ARCH_FAMILY=	${ARCH:S/amd/x86_/:S/i3/x/:C/v[67]//:S/power/p/:S/le$//}
 PLIST_FILES=	bin/${PORTNAME} \
 		lib/libVkLayer_FROG_${PORTNAME}_wsi_${MESON_ARCH_FAMILY}.so \
 		share/vulkan/implicit_layer.d/VkLayer_FROG_${PORTNAME}_wsi.${MESON_ARCH_FAMILY}.json
+
+CXXFLAGS+=	-DGLM_ENABLE_EXPERIMENTAL  # GLM_GTX_string_cast is an experimental extension
 
 # https://github.com/freebsd/drm-kmod/issues/271
 PORTSCOUT=	ignore:1
@@ -73,19 +75,19 @@ post-configure:
 		--skip-subprojects/' ${BUILD_WRKSRC}/build.ninja
 .endif
 
-# XXX Drop after FreeBSD 13.2 EOL around 2024-05-01 (don't forget distinfo)
+# XXX Drop after FreeBSD 13.2 EOL around 2024-07-01 (don't forget distinfo)
 .if ${CXX} == c++ && exists(/usr/lib/libc++.so)
 .if !exists(/usr/include/c++/v1/__ranges/as_rvalue_view.h) || make(makesum) || make(fetch)
 BUILD_DEPENDS+=	${CMAKE_BIN}:devel/cmake-core
 USES+=		llvm:min=16,build,export
 PATH:=		${LLVM_PREFIX}/bin:${PATH} # XXX _CMAKE_TOOLCHAIN_SUFFIX vs. devel/llvm*
 CONFIGURE_ENV+=	CC="${CC}" CXX="${CXX}" CPP="${CPP}"
-CMAKE_BIN=	${LOCALBASE}/bin/cmake
 
 # XXX Move into separate port and standardize via USES
 GH_TUPLE+=	llvm:llvm-project:llvmorg-16.0.1:libcxx
 CXXFLAGS+=	-nostdinc++ -isystem${WRKDIR}/libcxx_prefix/include/c++/v1
 # Don't link against new libc++ as it's not necessary
+CXXFLAGS+=	-D_LIBCPP_HAS_NO_VERBOSE_ABORT_IN_LIBRARY
 #LDFLAGS+=	-nostdlib++ -L${WRKDIR}/libcxx_prefix/lib -l:libc++.a -lcxxrt
 
 pre-configure:	bundled-libcxx

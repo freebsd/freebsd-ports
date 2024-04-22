@@ -1,4 +1,4 @@
 @(,games,2555) bin/tecnoballz
-man/man6/tecnoballz.6.gz
+share/man/man6/tecnoballz.6.gz
 @sample(,games,664) /var/games/tecnoballz/tecnoballz.hi.sample
 @dir(,games,775) /var/games/tecnoballz

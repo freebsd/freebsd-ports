@@ -6,4 +6,4 @@ include/uhd/iface_list.h
 include/uhd/libusb.h
 include/uhd/misc.h
 lib/libuhd.a
-man/man8/usbhid-dump.8.gz
+share/man/man8/usbhid-dump.8.gz

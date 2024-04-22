@@ -1,10 +1,10 @@
 PORTNAME=	xlog
 DISTVERSION=	2.0.24
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio logging application
 WWW=		https://xlog.nongnu.org/
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libhamlib.so:comms/hamlib \
 USES=		compiler:c11 gnome pkgconfig shared-mime-info
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CONFIGURE_ARGS=	--enable-mime-update
 CONFIGURE_ENV+=	ac_cv_c_compiler_gnu=no

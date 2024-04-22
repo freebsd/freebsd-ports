@@ -1,11 +1,17 @@
---- html/index.php.in.orig	2017-02-23 20:00:40 UTC
-+++ html/index.php.in
-@@ -1,6 +1,7 @@
+--- html/index.php.in.orig	2024-02-17 08:44:48.310422000 +0100
++++ html/index.php.in	2024-02-17 09:00:54.496033000 +0100
+@@ -1,4 +1,5 @@
  <?php
 +include_once(dirname(__FILE__).'/includes/utils.inc.php');
  // Allow specifying main window URL for permalinks, etc.
--$url = 'main.php';
-+$url = $cfg['cgi_base_url'].'/tac.cgi';
+ $url = 'main.php';
  
- if ("@COREWINDOW@" == "yes" && isset($_GET['corewindow'])) {
+@@ -23,7 +24,7 @@ if ("@COREWINDOW@" == "yes" && isset($_GET['corewindow
+ 		}
+ 	}
+ 	if (preg_match("/^http:\/\/|^https:\/\/|^\//", $url) != 1)
+-		$url = "main.php";
++		$url = $cfg['cgi_base_url'].'/tac.cgi';
+ }
  
+ $this_year = '2023';

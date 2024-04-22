@@ -1,5 +1,5 @@
 PORTNAME=	xprop
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.tar.xz
 USES=		xorg xorg-cat:app
 USE_XORG=	x11
 
-PLIST_FILES=	bin/xprop man/man1/xprop.1.gz
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+
+PLIST_FILES=	bin/xprop share/man/man1/xprop.1.gz
 
 .include <bsd.port.mk>

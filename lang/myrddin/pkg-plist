@@ -42,10 +42,10 @@ lib/myr/libthread.a
 lib/myr/libthread.use
 lib/myr/libthrtestutil.a
 lib/myr/libthrtestutil.use
-man/man1/6m.1.gz
-man/man1/mbld.1.gz
-man/man1/muse.1.gz
-man/man3/myr-regex.3.gz
+share/man/man1/6m.1.gz
+share/man/man1/mbld.1.gz
+share/man/man1/muse.1.gz
+share/man/man3/myr-regex.3.gz
 %%VIM%%share/vim/vimfiles/ftdetect/mbld.vim
 %%VIM%%share/vim/vimfiles/ftdetect/myr.vim
 %%VIM%%share/vim/vimfiles/indent/mbld.vim

@@ -1,6 +1,5 @@
 PORTNAME=	xfce4-screensaver
-PORTVERSION=	4.18.2
-PORTREVISION=	2
+PORTVERSION=	4.18.3
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -17,8 +16,8 @@ LICENSE_FILE_LGPL20=	${WRKSRC}/COPYING.LIB
 BUILD_DEPENDS=	xdt-csource:devel/xfce4-dev-tools
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
-		libxklavier.so:x11/libxklavier \
-		libharfbuzz.so:print/harfbuzz
+		libharfbuzz.so:print/harfbuzz \
+		libxklavier.so:x11/libxklavier
 
 USES=		compiler:c11 gettext-tools gl gmake gnome pkgconfig python \
 		shebangfix tar:bzip2 xfce xorg
@@ -27,20 +26,21 @@ USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool libwnck3
 USE_XFCE=	garcon xfconf
 USE_XORG=	ice sm x11 xext xrandr xscrnsaver xxf86vm
 
-SHEBANG_FILES=	src/xfce4-screensaver-configure
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-console-kit=yes \
-		--with-systemd=no \
-		--enable-maintainer-mode
+SHEBANG_FILES=			src/xfce4-screensaver-configure
+GNU_CONFIGURE=			yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+CONFIGURE_ARGS=			--enable-maintainer-mode \
+				--with-console-kit=yes \
+				--with-systemd=no
 
 SCREENSAVER_DIR=	share/applications/screensavers
 
-OPTIONS_DEFINE=	NLS PAM
-OPTIONS_DEFAULT=PAM
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		NLS PAM
+OPTIONS_DEFAULT=	PAM
+OPTIONS_SUB=		yes
 
+NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=	gettext-runtime
 
 PAM_RUN_DEPENDS=	pam_helper:security/pam_helper
 PAM_CONFIGURE_ON=	--enable-authentication-scheme=helper \

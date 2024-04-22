@@ -1,6 +1,6 @@
 PORTNAME=	regmath
 PORTVERSION=	1.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://home.interlog.com/~ptjm/ \
 		http://www.ancientgeek.org.uk/distfiles/
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/math
 USE_LDCONFIG=	yes
 MAKEFILE=	Makefile.bsd
 
-PLIST_FILES=	lib/librexxmath.so lib/librxmath.so man/man1/regmath.1.gz
+PLIST_FILES=	lib/librexxmath.so lib/librxmath.so share/man/man1/regmath.1.gz
 
 SUB_FILES=	regmath.1 README testrxmath testrexxmath
 
@@ -39,7 +39,7 @@ CFLAGS+=	-Wno-incompatible-pointer-types
 do-install:
 		${INSTALL_LIB} ${WRKSRC}/librexxmath.so ${STAGEDIR}${PREFIX}/lib/
 		${INSTALL_LIB} ${WRKSRC}/librxmath.so ${STAGEDIR}${PREFIX}/lib/
-		${INSTALL_MAN} ${WRKDIR}/regmath.1 ${STAGEDIR}${PREFIX}/man/man1/
+		${INSTALL_MAN} ${WRKDIR}/regmath.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 do-install-DOCS-on:
 		@${MKDIR} ${STAGEDIR}${DOCSDIR}

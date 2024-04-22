@@ -1,5 +1,5 @@
---- agent/mibgroup/ip-mib/data_access/scalars_sysctl.c.orig	2021-05-25 15:19:35.000000000 -0700
-+++ agent/mibgroup/ip-mib/data_access/scalars_sysctl.c	2022-09-27 20:25:15.687146000 -0700
+--- agent/mibgroup/ip-mib/data_access/scalars_sysctl.c.orig	2023-08-15 20:32:01 UTC
++++ agent/mibgroup/ip-mib/data_access/scalars_sysctl.c
 @@ -9,6 +9,7 @@
  #include <net-snmp/agent/net-snmp-agent-includes.h>
  #include <net-snmp/data_access/ip_scalars.h>

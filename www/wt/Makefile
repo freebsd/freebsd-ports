@@ -1,6 +1,6 @@
 PORTNAME=	wt
 DISTVERSION=	4.8.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 
 PATCH_SITES=	https://github.com/emweb/wt/commit/

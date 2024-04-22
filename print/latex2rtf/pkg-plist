@@ -1,7 +1,7 @@
 %%LATEX2PNG%%bin/latex2png
 bin/latex2rtf
-%%LATEX2PNG%%man/man1/latex2png.1.gz
-man/man1/latex2rtf.1.gz
+%%LATEX2PNG%%share/man/man1/latex2png.1.gz
+share/man/man1/latex2rtf.1.gz
 %%DATADIR%%/cfg/afrikaans.cfg
 %%DATADIR%%/cfg/bahasa.cfg
 %%DATADIR%%/cfg/basque.cfg

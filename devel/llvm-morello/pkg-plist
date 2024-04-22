@@ -12,7 +12,10 @@ bin/llvm-cfi-verify%%COMMAND_SUFFIX%%
 bin/llvm-config%%COMMAND_SUFFIX%%
 bin/llvm-cov%%COMMAND_SUFFIX%%
 bin/llvm-cvtres%%COMMAND_SUFFIX%%
+bin/llvm-cxxdump%%COMMAND_SUFFIX%%
+bin/llvm-cxxfilt%%COMMAND_SUFFIX%%
 bin/llvm-cxxmap%%COMMAND_SUFFIX%%
+bin/llvm-debuginfod-find%%COMMAND_SUFFIX%%
 bin/llvm-diff%%COMMAND_SUFFIX%%
 bin/llvm-dis%%COMMAND_SUFFIX%%
 bin/llvm-dlltool%%COMMAND_SUFFIX%%
@@ -55,6 +58,7 @@ bin/llvm-strip%%COMMAND_SUFFIX%%
 bin/llvm-symbolizer%%COMMAND_SUFFIX%%
 bin/llvm-tapi-diff%%COMMAND_SUFFIX%%
 bin/llvm-tblgen%%COMMAND_SUFFIX%%
+bin/llvm-tli-checker%%COMMAND_SUFFIX%%
 bin/llvm-undname%%COMMAND_SUFFIX%%
 bin/llvm-windres%%COMMAND_SUFFIX%%
 bin/llvm-xray%%COMMAND_SUFFIX%%
@@ -69,9 +73,12 @@ bin/c-index-test%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-cpp%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-extdef-mapping%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-format%%COMMAND_SUFFIX%%
+%%CLANG%%bin/clang-linker-wrapper%%COMMAND_SUFFIX%%
+%%CLANG%%bin/clang-nvlink-wrapper%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-offload-bundler%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-offload-wrapper%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-rename%%COMMAND_SUFFIX%%
+%%CLANG%%bin/clang-repl%%COMMAND_SUFFIX%%
 %%CLANG%%bin/clang-scan-deps%%COMMAND_SUFFIX%%
 bin/diagtool%%COMMAND_SUFFIX%%
 bin/hmaptool%%COMMAND_SUFFIX%%
@@ -84,8 +91,6 @@ bin/scan-view%%COMMAND_SUFFIX%%
 %%LLD%%bin/lld%%COMMAND_SUFFIX%%
 %%LLD%%bin/lld-link%%COMMAND_SUFFIX%%
 %%LLD%%bin/wasm-ld%%COMMAND_SUFFIX%%
-%%LLD%%bin/ld64.lld.darwinnew%%COMMAND_SUFFIX%%
-%%LLD%%bin/ld64.lld.darwinold%%COMMAND_SUFFIX%%
 %%LIT%%bin/FileCheck%%COMMAND_SUFFIX%%
 %%LIT%%llvm%%LLVM_SUFFIX%%/bin/FileCheck
 %%LIT%%bin/lit%%COMMAND_SUFFIX%%
@@ -103,10 +108,13 @@ llvm%%LLVM_SUFFIX%%/bin/c-index-test
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-cpp
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-extdef-mapping
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-format
+%%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-linker-wrapper
+%%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-nvlink-wrapper
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-offload-bundler
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-offload-wrapper
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-refactor
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-rename
+%%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-repl
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/clang-scan-deps
 llvm%%LLVM_SUFFIX%%/bin/diagtool
 llvm%%LLVM_SUFFIX%%/bin/dsymutil
@@ -116,8 +124,6 @@ llvm%%LLVM_SUFFIX%%/bin/intercept-build
 %%LLD%%llvm%%LLVM_SUFFIX%%/bin/ld
 %%LLD%%llvm%%LLVM_SUFFIX%%/bin/ld.lld
 %%LLD%%llvm%%LLVM_SUFFIX%%/bin/ld64.lld
-%%LLD%%llvm%%LLVM_SUFFIX%%/bin/ld64.lld.darwinnew
-%%LLD%%llvm%%LLVM_SUFFIX%%/bin/ld64.lld.darwinold
 llvm%%LLVM_SUFFIX%%/bin/llc
 %%LLD%%llvm%%LLVM_SUFFIX%%/bin/lld
 %%LLD%%llvm%%LLVM_SUFFIX%%/bin/lld-link
@@ -136,6 +142,7 @@ llvm%%LLVM_SUFFIX%%/bin/llvm-cvtres
 llvm%%LLVM_SUFFIX%%/bin/llvm-cxxdump
 llvm%%LLVM_SUFFIX%%/bin/llvm-cxxfilt
 llvm%%LLVM_SUFFIX%%/bin/llvm-cxxmap
+llvm%%LLVM_SUFFIX%%/bin/llvm-debuginfod-find
 llvm%%LLVM_SUFFIX%%/bin/llvm-diff
 llvm%%LLVM_SUFFIX%%/bin/llvm-dis
 llvm%%LLVM_SUFFIX%%/bin/llvm-dlltool
@@ -181,6 +188,7 @@ llvm%%LLVM_SUFFIX%%/bin/llvm-strip
 llvm%%LLVM_SUFFIX%%/bin/llvm-symbolizer
 llvm%%LLVM_SUFFIX%%/bin/llvm-tapi-diff
 llvm%%LLVM_SUFFIX%%/bin/llvm-tblgen
+llvm%%LLVM_SUFFIX%%/bin/llvm-tli-checker
 llvm%%LLVM_SUFFIX%%/bin/llvm-undname
 llvm%%LLVM_SUFFIX%%/bin/llvm-windres
 llvm%%LLVM_SUFFIX%%/bin/llvm-xray
@@ -382,8 +390,18 @@ llvm%%LLVM_SUFFIX%%/bin/verify-uselistorder
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Analysis/ConstructionContext.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Analysis/DomainSpecific/CocoaConventions.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Analysis/DomainSpecific/ObjCNoReturn.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Analysis/FlowSensitive/ControlFlowContext.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Analysis/FlowSensitive/DataflowAnalysis.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Analysis/FlowSensitive/DataflowAnalysisContext.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Analysis/FlowSensitive/DataflowEnvironment.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Analysis/FlowSensitive/DataflowLattice.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Analysis/FlowSensitive/DataflowValues.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Analysis/FlowSensitive/DataflowWorklist.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Analysis/FlowSensitive/MapLattice.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Analysis/FlowSensitive/StorageLocation.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Analysis/FlowSensitive/Transfer.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Analysis/FlowSensitive/TypeErasedDataflowAnalysis.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Analysis/FlowSensitive/Value.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Analysis/IssueHash.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Analysis/MacroExpansionContext.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Analysis/PathDiagnostic.h
@@ -407,6 +425,8 @@ llvm%%LLVM_SUFFIX%%/bin/verify-uselistorder
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/Builtins.def
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/Builtins.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/BuiltinsAArch64.def
+%%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/BuiltinsAArch64NeonSVEBridge.def
+%%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/BuiltinsAArch64NeonSVEBridge_cg.def
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/BuiltinsAMDGPU.def
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/BuiltinsARM.def
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/BuiltinsBPF.def
@@ -418,12 +438,14 @@ llvm%%LLVM_SUFFIX%%/bin/verify-uselistorder
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/BuiltinsNVPTX.def
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/BuiltinsPPC.def
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/BuiltinsRISCV.def
+%%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/BuiltinsRISCVVector.def
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/BuiltinsSVE.def
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/BuiltinsSystemZ.def
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/BuiltinsWebAssembly.def
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/BuiltinsX86.def
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/BuiltinsX86_64.def
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/BuiltinsXCore.def
+%%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/CLWarnings.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/CapturedStmt.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/CharInfo.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/CodeGenOptions.def
@@ -525,7 +547,6 @@ llvm%%LLVM_SUFFIX%%/bin/verify-uselistorder
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/Version.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/Version.inc
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/Visibility.h
-%%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/X86Target.def
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/XRayInstr.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/XRayLists.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Basic/arm_cde_builtin_aliases.inc
@@ -741,6 +762,7 @@ llvm%%LLVM_SUFFIX%%/bin/verify-uselistorder
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/StaticAnalyzer/Core/PathSensitive/AnalysisManager.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/StaticAnalyzer/Core/PathSensitive/BasicValueFactory.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/StaticAnalyzer/Core/PathSensitive/BlockCounter.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/StaticAnalyzer/Core/PathSensitive/CallDescription.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/StaticAnalyzer/Core/PathSensitive/CallEvent.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/StaticAnalyzer/Core/PathSensitive/CheckerContext.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/StaticAnalyzer/Core/PathSensitive/CheckerHelpers.h
@@ -852,6 +874,7 @@ llvm%%LLVM_SUFFIX%%/bin/verify-uselistorder
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Tooling/Transformer/Transformer.h
 %%LLD%%llvm%%LLVM_SUFFIX%%/include/lld/Common/Args.h
 %%LLD%%llvm%%LLVM_SUFFIX%%/include/lld/Common/Arrays.h
+%%LLD%%llvm%%LLVM_SUFFIX%%/include/lld/Common/CommonLinkerContext.h
 %%LLD%%llvm%%LLVM_SUFFIX%%/include/lld/Common/DWARF.h
 %%LLD%%llvm%%LLVM_SUFFIX%%/include/lld/Common/Driver.h
 %%LLD%%llvm%%LLVM_SUFFIX%%/include/lld/Common/ErrorHandler.h
@@ -883,8 +906,6 @@ llvm%%LLVM_SUFFIX%%/bin/verify-uselistorder
 %%LLD%%llvm%%LLVM_SUFFIX%%/include/lld/Core/SymbolTable.h
 %%LLD%%llvm%%LLVM_SUFFIX%%/include/lld/Core/UndefinedAtom.h
 %%LLD%%llvm%%LLVM_SUFFIX%%/include/lld/Core/Writer.h
-%%LLD%%llvm%%LLVM_SUFFIX%%/include/lld/ReaderWriter/MachOLinkingContext.h
-%%LLD%%llvm%%LLVM_SUFFIX%%/include/lld/ReaderWriter/YamlContext.h
 llvm%%LLVM_SUFFIX%%/include/llvm-c/Analysis.h
 llvm%%LLVM_SUFFIX%%/include/llvm-c/BitReader.h
 llvm%%LLVM_SUFFIX%%/include/llvm-c/BitWriter.h
@@ -892,6 +913,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm-c/Comdat.h
 llvm%%LLVM_SUFFIX%%/include/llvm-c/Core.h
 llvm%%LLVM_SUFFIX%%/include/llvm-c/DataTypes.h
 llvm%%LLVM_SUFFIX%%/include/llvm-c/DebugInfo.h
+llvm%%LLVM_SUFFIX%%/include/llvm-c/Deprecated.h
 llvm%%LLVM_SUFFIX%%/include/llvm-c/Disassembler.h
 llvm%%LLVM_SUFFIX%%/include/llvm-c/DisassemblerTypes.h
 llvm%%LLVM_SUFFIX%%/include/llvm-c/Error.h
@@ -933,6 +955,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/ADT/BitmaskEnum.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/BreadthFirstIterator.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/CachedHashString.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/CoalescingBitVector.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ADT/CombinationGenerator.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/DAGDeltaAlgorithm.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/DeltaAlgorithm.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/DenseMap.h
@@ -946,6 +969,9 @@ llvm%%LLVM_SUFFIX%%/include/llvm/ADT/EquivalenceClasses.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/FloatingPointMode.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/FoldingSet.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/FunctionExtras.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ADT/GenericCycleImpl.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ADT/GenericCycleInfo.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ADT/GenericSSAContext.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/GraphTraits.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/Hashing.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/ImmutableList.h
@@ -967,8 +993,10 @@ llvm%%LLVM_SUFFIX%%/include/llvm/ADT/PostOrderIterator.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/PriorityQueue.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/PriorityWorklist.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/SCCIterator.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ADT/STLArrayExtras.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/STLExtras.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/STLForwardCompat.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ADT/STLFunctionalExtras.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/ScopeExit.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/ScopedHashTable.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/Sequence.h
@@ -994,10 +1022,10 @@ llvm%%LLVM_SUFFIX%%/include/llvm/ADT/Triple.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/Twine.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/TypeSwitch.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/UniqueVector.h
-llvm%%LLVM_SUFFIX%%/include/llvm/ADT/Waymarking.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/bit.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/edit_distance.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/fallible_iterator.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ADT/identity.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/ilist.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/ilist_base.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ADT/ilist_iterator.h
@@ -1031,6 +1059,8 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/CmpInstAnalysis.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/CodeMetrics.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/ConstantFolding.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/ConstraintSystem.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/CostModel.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/CycleAnalysis.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/DDG.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/DDGPrinter.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/DOTGraphTraitsPass.h
@@ -1056,8 +1086,10 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/IndirectCallVisitor.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/InlineAdvisor.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/InlineCost.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/InlineModelFeatureMaps.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/InlineOrder.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/InlineSizeEstimatorAnalysis.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/InstCount.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/InstSimplifyFolder.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/InstructionPrecedenceTracking.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/InstructionSimplify.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/Interval.h
@@ -1088,9 +1120,11 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/MemoryDependenceAnalysis.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/MemoryLocation.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/MemorySSA.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/MemorySSAUpdater.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/ModelUnderTrainingRunner.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/ModuleDebugInfoPrinter.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/ModuleSummaryAnalysis.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/MustExecute.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/NoInferenceModelRunner.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/ObjCARCAliasAnalysis.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/ObjCARCAnalysisUtils.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/ObjCARCInstKind.h
@@ -1108,6 +1142,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/RegionInfoImpl.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/RegionIterator.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/RegionPass.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/RegionPrinter.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/ReleaseModeModelRunner.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/ReplayInlineAdvisor.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/ScalarEvolution.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Analysis/ScalarEvolutionAliasAnalysis.h
@@ -1177,6 +1212,8 @@ llvm%%LLVM_SUFFIX%%/include/llvm/BinaryFormat/MsgPack.h
 llvm%%LLVM_SUFFIX%%/include/llvm/BinaryFormat/MsgPackDocument.h
 llvm%%LLVM_SUFFIX%%/include/llvm/BinaryFormat/MsgPackReader.h
 llvm%%LLVM_SUFFIX%%/include/llvm/BinaryFormat/MsgPackWriter.h
+llvm%%LLVM_SUFFIX%%/include/llvm/BinaryFormat/Swift.def
+llvm%%LLVM_SUFFIX%%/include/llvm/BinaryFormat/Swift.h
 llvm%%LLVM_SUFFIX%%/include/llvm/BinaryFormat/Wasm.h
 llvm%%LLVM_SUFFIX%%/include/llvm/BinaryFormat/WasmRelocs.def
 llvm%%LLVM_SUFFIX%%/include/llvm/BinaryFormat/WasmTraits.h
@@ -1214,6 +1251,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/BasicTTIImpl.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/CSEConfigBase.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/CalcSpillWeights.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/CallingConvLower.h
+llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/CodeGenCommonISel.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/CodeGenPassBuilder.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/CommandFlags.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/CostTable.h
@@ -1253,6 +1291,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/GlobalISel/LegalizationArtifactCombiner
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/GlobalISel/Legalizer.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/GlobalISel/LegalizerHelper.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/GlobalISel/LegalizerInfo.h
+llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/GlobalISel/LoadStoreOpt.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/GlobalISel/Localizer.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/GlobalISel/LostDebugLocObserver.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/GlobalISel/MIPatternMatch.h
@@ -1288,6 +1327,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MIRFormatter.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MIRParser/MIParser.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MIRParser/MIRParser.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MIRPrinter.h
+llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MIRSampleProfile.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MIRYamlMapping.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MachORelocation.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MachineBasicBlock.h
@@ -1295,6 +1335,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MachineBlockFrequencyInfo.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MachineBranchProbabilityInfo.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MachineCombinerPattern.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MachineConstantPool.h
+llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MachineCycleAnalysis.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MachineDominanceFrontier.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MachineDominators.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MachineFrameInfo.h
@@ -1321,6 +1362,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MachinePipeliner.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MachinePostDominators.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MachineRegionInfo.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MachineRegisterInfo.h
+llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MachineSSAContext.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MachineSSAUpdater.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MachineScheduler.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/MachineSizeOpts.h
@@ -1388,6 +1430,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/TargetSchedule.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/TargetSubtargetInfo.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/TileShapeInfo.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/UnreachableBlockElim.h
+llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/VLIWMachineScheduler.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/ValueTypes.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/ValueTypes.td
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/VirtRegMap.h
@@ -1396,6 +1439,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/WinEHFuncInfo.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Config/AsmParsers.def
 llvm%%LLVM_SUFFIX%%/include/llvm/Config/AsmPrinters.def
 llvm%%LLVM_SUFFIX%%/include/llvm/Config/Disassemblers.def
+llvm%%LLVM_SUFFIX%%/include/llvm/Config/TargetMCAs.def
 llvm%%LLVM_SUFFIX%%/include/llvm/Config/Targets.def
 llvm%%LLVM_SUFFIX%%/include/llvm/Config/abi-breaking.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Config/llvm-config.h
@@ -1645,6 +1689,8 @@ llvm%%LLVM_SUFFIX%%/include/llvm/DebugInfo/PDB/UDTLayout.h
 llvm%%LLVM_SUFFIX%%/include/llvm/DebugInfo/Symbolize/DIPrinter.h
 llvm%%LLVM_SUFFIX%%/include/llvm/DebugInfo/Symbolize/SymbolizableModule.h
 llvm%%LLVM_SUFFIX%%/include/llvm/DebugInfo/Symbolize/Symbolize.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Debuginfod/Debuginfod.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Debuginfod/HTTPClient.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Demangle/Demangle.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Demangle/DemangleConfig.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Demangle/ItaniumDemangle.h
@@ -1658,6 +1704,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Interpreter.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/JITEventListener.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/JITLink/EHFrameSupport.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/JITLink/ELF.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/JITLink/ELF_aarch64.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/JITLink/ELF_riscv.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/JITLink/ELF_x86_64.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/JITLink/JITLink.h
@@ -1666,6 +1713,9 @@ llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/JITLink/JITLinkMemoryManager.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/JITLink/MachO.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/JITLink/MachO_arm64.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/JITLink/MachO_x86_64.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/JITLink/MemoryFlags.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/JITLink/TableManager.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/JITLink/aarch64.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/JITLink/riscv.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/JITLink/x86_64.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/JITSymbol.h
@@ -1677,9 +1727,15 @@ llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/CompileUtils.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/Core.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/DebugObjectManagerPlugin.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/DebugUtils.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/DebuggerSupportPlugin.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/ELFNixPlatform.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/EPCDebugObjectRegistrar.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/EPCDynamicLibrarySearchGenerator.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/EPCEHFrameRegistrar.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/EPCGenericDylibManager.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/EPCGenericJITLinkMemoryManager.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/EPCGenericMemoryAccess.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/EPCGenericRTDyldMemoryManager.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/EPCIndirectionUtils.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/ExecutionUtils.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/ExecutorProcessControl.h
@@ -1688,38 +1744,37 @@ llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/IRTransformLayer.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/IndirectionUtils.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/JITTargetMachineBuilder.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/LLJIT.h
-llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/LLVMSPSSerializers.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/Layer.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/LazyReexports.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/LookupAndRecordAddrs.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/MachOPlatform.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/Mangling.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/ObjectFileInterface.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/ObjectLinkingLayer.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/ObjectTransformLayer.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/OrcABISupport.h
-llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/OrcRPCExecutorProcessControl.h
-llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/OrcRemoteTargetClient.h
-llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/OrcRemoteTargetRPCAPI.h
-llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/OrcRemoteTargetServer.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/RTDyldObjectLinkingLayer.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/Shared/AllocationActions.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/Shared/ExecutorAddress.h
-llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/Shared/FDRawByteChannel.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/Shared/OrcError.h
-llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/Shared/RPCUtils.h
-llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/Shared/RawByteChannel.h
-llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/Shared/Serialization.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/Shared/OrcRTBridge.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/Shared/SimplePackedSerialization.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/Shared/SimpleRemoteEPCUtils.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/Shared/TargetProcessControlTypes.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/Shared/WrapperFunctionUtils.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/SimpleRemoteEPC.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/SpeculateAnalyses.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/Speculation.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/SymbolStringPool.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/TargetProcess/ExecutorBootstrapService.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/TargetProcess/JITLoaderGDB.h
-llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/TargetProcess/OrcRPCTPCServer.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/TargetProcess/RegisterEHFrames.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/TargetProcess/SimpleExecutorDylibManager.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/TargetProcess/SimpleExecutorMemoryManager.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/TargetProcess/SimpleRemoteEPCServer.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/TargetProcess/TargetExecutionUtils.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/TaskDispatch.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/Orc/ThreadSafeModule.h
-llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/OrcMCJITReplacement.h
-llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/OrcV1Deprecation.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/RTDyldMemoryManager.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/RuntimeDyld.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ExecutionEngine/RuntimeDyldChecker.h
@@ -1732,6 +1787,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Frontend/OpenACC/ACC.td
 llvm%%LLVM_SUFFIX%%/include/llvm/Frontend/OpenMP/OMP.h.inc
 llvm%%LLVM_SUFFIX%%/include/llvm/Frontend/OpenMP/OMP.inc
 llvm%%LLVM_SUFFIX%%/include/llvm/Frontend/OpenMP/OMP.td
+llvm%%LLVM_SUFFIX%%/include/llvm/Frontend/OpenMP/OMPAssume.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Frontend/OpenMP/OMPConstants.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Frontend/OpenMP/OMPContext.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Frontend/OpenMP/OMPGridValues.h
@@ -1750,6 +1806,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/IR/Assumptions.h
 llvm%%LLVM_SUFFIX%%/include/llvm/IR/Attributes.h
 llvm%%LLVM_SUFFIX%%/include/llvm/IR/Attributes.inc
 llvm%%LLVM_SUFFIX%%/include/llvm/IR/Attributes.td
+llvm%%LLVM_SUFFIX%%/include/llvm/IR/AttributesAMDGPU.td
 llvm%%LLVM_SUFFIX%%/include/llvm/IR/AutoUpgrade.h
 llvm%%LLVM_SUFFIX%%/include/llvm/IR/BasicBlock.h
 llvm%%LLVM_SUFFIX%%/include/llvm/IR/BuiltinGCs.h
@@ -1784,7 +1841,6 @@ llvm%%LLVM_SUFFIX%%/include/llvm/IR/GVMaterializer.h
 llvm%%LLVM_SUFFIX%%/include/llvm/IR/GetElementPtrTypeIterator.h
 llvm%%LLVM_SUFFIX%%/include/llvm/IR/GlobalAlias.h
 llvm%%LLVM_SUFFIX%%/include/llvm/IR/GlobalIFunc.h
-llvm%%LLVM_SUFFIX%%/include/llvm/IR/GlobalIndirectSymbol.h
 llvm%%LLVM_SUFFIX%%/include/llvm/IR/GlobalObject.h
 llvm%%LLVM_SUFFIX%%/include/llvm/IR/GlobalValue.h
 llvm%%LLVM_SUFFIX%%/include/llvm/IR/GlobalVariable.h
@@ -1865,6 +1921,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/IR/ProfileSummary.h
 llvm%%LLVM_SUFFIX%%/include/llvm/IR/PseudoProbe.h
 llvm%%LLVM_SUFFIX%%/include/llvm/IR/ReplaceConstant.h
 llvm%%LLVM_SUFFIX%%/include/llvm/IR/RuntimeLibcalls.def
+llvm%%LLVM_SUFFIX%%/include/llvm/IR/SSAContext.h
 llvm%%LLVM_SUFFIX%%/include/llvm/IR/SafepointIRVerifier.h
 llvm%%LLVM_SUFFIX%%/include/llvm/IR/Statepoint.h
 llvm%%LLVM_SUFFIX%%/include/llvm/IR/StructuralHash.h
@@ -1887,7 +1944,6 @@ llvm%%LLVM_SUFFIX%%/include/llvm/InitializePasses.h
 llvm%%LLVM_SUFFIX%%/include/llvm/InterfaceStub/ELFObjHandler.h
 llvm%%LLVM_SUFFIX%%/include/llvm/InterfaceStub/IFSHandler.h
 llvm%%LLVM_SUFFIX%%/include/llvm/InterfaceStub/IFSStub.h
-llvm%%LLVM_SUFFIX%%/include/llvm/LTO/Caching.h
 llvm%%LLVM_SUFFIX%%/include/llvm/LTO/Config.h
 llvm%%LLVM_SUFFIX%%/include/llvm/LTO/LTO.h
 llvm%%LLVM_SUFFIX%%/include/llvm/LTO/LTOBackend.h
@@ -1908,6 +1964,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/MC/MCAsmInfo.h
 llvm%%LLVM_SUFFIX%%/include/llvm/MC/MCAsmInfoCOFF.h
 llvm%%LLVM_SUFFIX%%/include/llvm/MC/MCAsmInfoDarwin.h
 llvm%%LLVM_SUFFIX%%/include/llvm/MC/MCAsmInfoELF.h
+llvm%%LLVM_SUFFIX%%/include/llvm/MC/MCAsmInfoGOFF.h
 llvm%%LLVM_SUFFIX%%/include/llvm/MC/MCAsmInfoWasm.h
 llvm%%LLVM_SUFFIX%%/include/llvm/MC/MCAsmInfoXCOFF.h
 llvm%%LLVM_SUFFIX%%/include/llvm/MC/MCAsmLayout.h
@@ -1985,6 +2042,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/MC/MachineLocation.h
 llvm%%LLVM_SUFFIX%%/include/llvm/MC/SectionKind.h
 llvm%%LLVM_SUFFIX%%/include/llvm/MC/StringTableBuilder.h
 llvm%%LLVM_SUFFIX%%/include/llvm/MC/SubtargetFeature.h
+llvm%%LLVM_SUFFIX%%/include/llvm/MC/TargetRegistry.h
 llvm%%LLVM_SUFFIX%%/include/llvm/MCA/CodeEmitter.h
 llvm%%LLVM_SUFFIX%%/include/llvm/MCA/Context.h
 llvm%%LLVM_SUFFIX%%/include/llvm/MCA/CustomBehaviour.h
@@ -2008,6 +2066,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/MCA/Stages/MicroOpQueueStage.h
 llvm%%LLVM_SUFFIX%%/include/llvm/MCA/Stages/RetireStage.h
 llvm%%LLVM_SUFFIX%%/include/llvm/MCA/Stages/Stage.h
 llvm%%LLVM_SUFFIX%%/include/llvm/MCA/Support.h
+llvm%%LLVM_SUFFIX%%/include/llvm/MCA/View.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Object/Archive.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Object/ArchiveWriter.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Object/Binary.h
@@ -2066,6 +2125,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/PassAnalysisSupport.h
 llvm%%LLVM_SUFFIX%%/include/llvm/PassInfo.h
 llvm%%LLVM_SUFFIX%%/include/llvm/PassRegistry.h
 llvm%%LLVM_SUFFIX%%/include/llvm/PassSupport.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Passes/OptimizationLevel.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Passes/PassBuilder.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Passes/PassPlugin.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Passes/StandardInstrumentations.h
@@ -2074,10 +2134,13 @@ llvm%%LLVM_SUFFIX%%/include/llvm/ProfileData/Coverage/CoverageMappingReader.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ProfileData/Coverage/CoverageMappingWriter.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ProfileData/GCOV.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ProfileData/InstrProf.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ProfileData/InstrProfCorrelator.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ProfileData/InstrProfData.inc
 llvm%%LLVM_SUFFIX%%/include/llvm/ProfileData/InstrProfReader.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ProfileData/InstrProfWriter.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ProfileData/MemProfData.inc
 llvm%%LLVM_SUFFIX%%/include/llvm/ProfileData/ProfileCommon.h
+llvm%%LLVM_SUFFIX%%/include/llvm/ProfileData/RawMemProfReader.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ProfileData/SampleProf.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ProfileData/SampleProfReader.h
 llvm%%LLVM_SUFFIX%%/include/llvm/ProfileData/SampleProfWriter.h
@@ -2131,6 +2194,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Support/CFGUpdate.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/COM.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/CRC.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/CachePruning.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Support/Caching.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/Capacity.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/Casting.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/CheckedArithmetic.h
@@ -2151,6 +2215,8 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Support/DataTypes.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/Debug.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/DebugCounter.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/Discriminator.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Support/DivisionByConstantInfo.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Support/Duration.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/DynamicLibrary.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/ELFAttributeParser.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/ELFAttributes.h
@@ -2181,6 +2247,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Support/GenericDomTreeConstruction.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/GenericIteratedDominanceFrontier.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/GlobPattern.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/GraphWriter.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Support/HashBuilder.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/Host.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/InitLLVM.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/InstructionCost.h
@@ -2194,6 +2261,8 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Support/Locale.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/LockFileManager.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/LowLevelTypeImpl.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/MD5.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Support/MSP430AttributeParser.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Support/MSP430Attributes.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/MSVCErrorWorkarounds.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/MachineValueType.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/ManagedStatic.h
@@ -2208,6 +2277,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Support/Mutex.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/NativeFormatting.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/OnDiskHashTable.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/OptimizedStructLayout.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Support/PGOOptions.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/Parallel.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/Path.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/PluginLoader.h
@@ -2218,6 +2288,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Support/Process.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/Program.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/RISCVAttributeParser.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/RISCVAttributes.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Support/RISCVISAInfo.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/RISCVTargetParser.def
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/RWMutex.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/RandomNumberGenerator.h
@@ -2247,7 +2318,6 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Support/SystemUtils.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/TarWriter.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/TargetOpcodes.def
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/TargetParser.h
-llvm%%LLVM_SUFFIX%%/include/llvm/Support/TargetRegistry.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/TargetSelect.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/TaskQueue.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Support/ThreadLocal.h
@@ -2358,6 +2428,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/IPO/Internalize.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/IPO/LoopExtractor.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/IPO/LowerTypeTests.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/IPO/MergeFunctions.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/IPO/ModuleInliner.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/IPO/OpenMPOpt.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/IPO/PartialInlining.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/IPO/PassManagerBuilder.h
@@ -2372,7 +2443,6 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/IPO/SyntheticCountsPropagation.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/IPO/ThinLTOBitcodeWriter.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/IPO/WholeProgramDevirt.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/InstCombine/InstCombine.h
-llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/InstCombine/InstCombineWorklist.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/InstCombine/InstCombiner.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Instrumentation.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Instrumentation/AddressSanitizer.h
@@ -2407,6 +2477,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Scalar/DFAJumpThreading.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Scalar/DeadStoreElimination.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Scalar/DivRemPairs.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Scalar/EarlyCSE.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Scalar/FlattenCFG.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Scalar/Float2Int.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Scalar/GVN.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Scalar/GVNExpression.h
@@ -2485,6 +2556,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/CheriLogSetBounds.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/CheriSetBounds.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/Cloning.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/CodeExtractor.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/CodeLayout.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/CodeMoverUtils.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/CtorUtils.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/Debugify.h
@@ -2499,6 +2571,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/GuardUtils.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/HelloWorld.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/InjectTLIMappings.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/InstructionNamer.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/InstructionWorklist.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/IntegerDivision.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/LCSSA.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/LibCallsShrinkWrap.h
@@ -2524,6 +2597,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/SCCPSolver.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/SSAUpdater.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/SSAUpdaterBulk.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/SSAUpdaterImpl.h
+llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/SampleProfileInference.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/SampleProfileLoaderBaseImpl.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/SampleProfileLoaderBaseUtil.h
 llvm%%LLVM_SUFFIX%%/include/llvm/Transforms/Utils/SanitizerStats.h
@@ -2577,6 +2651,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_math.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_math_forward_declares.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_runtime_wrapper.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_texture_intrinsics.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_hip_cmath.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_hip_libdevice_declares.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_hip_math.h
@@ -2606,6 +2681,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/avx512dqintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/avx512erintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/avx512fintrin.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/avx512fp16intrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/avx512ifmaintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/avx512ifmavlintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/avx512pfintrin.h
@@ -2617,6 +2693,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/avx512vlbwintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/avx512vlcdintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/avx512vldqintrin.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/avx512vlfp16intrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/avx512vlintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/avx512vlvbmi2intrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/avx512vlvnniintrin.h
@@ -2640,6 +2717,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/clwbintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/clzerointrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/cpuid.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/crc32intrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/cuda_wrappers/algorithm
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/cuda_wrappers/complex
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/cuda_wrappers/new
@@ -2698,7 +2776,6 @@ llvm%%LLVM_SUFFIX%%/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/prfchwintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/ptwriteintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/rdseedintrin.h
-%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/riscv_vector.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/rtmintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/s390intrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/serializeintrin.h
@@ -2742,19 +2819,21 @@ llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/AddSphinxTarget.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/CheckAtomic.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/CheckCompilerVersion.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/ChooseMSVCCRT.cmake
+llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/CoverageReport.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/CrossCompile.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/DetermineGCCCompatible.cmake
+llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/FindFFI.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/FindGRPC.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/FindLibpfm.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/FindOCaml.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/FindSphinx.cmake
+llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/FindTerminfo.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/FindZ3.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/GenerateVersionFromVCS.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/GetErrcMessages.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/GetLibraryName.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/HandleLLVMOptions.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/HandleLLVMStdlib.cmake
-llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/HandleStandaloneBuild.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/LLVM-Build.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/LLVM-Config.cmake
 llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/LLVMCheckLinkerFlag.cmake
@@ -2812,7 +2891,9 @@ llvm%%LLVM_SUFFIX%%/lib/libLLVM.so
 %%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMDebugInfoGSYM.a
 %%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMDebugInfoMSF.a
 %%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMDebugInfoPDB.a
+%%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMDebuginfod.a
 %%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMDemangle.a
+%%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMDiff.a
 %%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMDlltoolDriver.a
 %%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMExecutionEngine.a
 %%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMExegesis.a
@@ -2867,6 +2948,7 @@ llvm%%LLVM_SUFFIX%%/lib/libLLVM.so
 %%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMX86Desc.a
 %%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMX86Disassembler.a
 %%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMX86Info.a
+%%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMX86TargetMCA.a
 %%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMXRay.a
 %%STATIC_LIBS%%llvm%%LLVM_SUFFIX%%/lib/libLLVMipo.a
 llvm%%LLVM_SUFFIX%%/lib/libLTO.so
@@ -2876,13 +2958,14 @@ llvm%%LLVM_SUFFIX%%/lib/libRemarks.so.%%LLVM_MAJOR%%git
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclang-cpp.so
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclang-cpp.so.%%LLVM_MAJOR%%git
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclang.so
-%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclang.so.%%LLVM_MAJOR%%
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclang.so.%%LLVM_RELEASE%%git
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclang.so.13
 %%STATIC_LIBS%%%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangAPINotes.a
 %%STATIC_LIBS%%%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangARCMigrate.a
 %%STATIC_LIBS%%%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangAST.a
 %%STATIC_LIBS%%%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangASTMatchers.a
 %%STATIC_LIBS%%%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangAnalysis.a
+%%STATIC_LIBS%%%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangAnalysisFlowSensitive.a
 %%STATIC_LIBS%%%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangBasic.a
 %%STATIC_LIBS%%%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangCodeGen.a
 %%STATIC_LIBS%%%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/libclangCrossTU.a
@@ -2924,15 +3007,10 @@ llvm%%LLVM_SUFFIX%%/lib/libear/config.h.in
 llvm%%LLVM_SUFFIX%%/lib/libear/ear.c
 %%STATIC_LIBS%%%%LLD%%llvm%%LLVM_SUFFIX%%/lib/liblldCOFF.a
 %%STATIC_LIBS%%%%LLD%%llvm%%LLVM_SUFFIX%%/lib/liblldCommon.a
-%%STATIC_LIBS%%%%LLD%%llvm%%LLVM_SUFFIX%%/lib/liblldCore.a
-%%STATIC_LIBS%%%%LLD%%llvm%%LLVM_SUFFIX%%/lib/liblldDriver.a
 %%STATIC_LIBS%%%%LLD%%llvm%%LLVM_SUFFIX%%/lib/liblldELF.a
 %%STATIC_LIBS%%%%LLD%%llvm%%LLVM_SUFFIX%%/lib/liblldMachO.a
-%%STATIC_LIBS%%%%LLD%%llvm%%LLVM_SUFFIX%%/lib/liblldMachO2.a
 %%STATIC_LIBS%%%%LLD%%llvm%%LLVM_SUFFIX%%/lib/liblldMinGW.a
-%%STATIC_LIBS%%%%LLD%%llvm%%LLVM_SUFFIX%%/lib/liblldReaderWriter.a
 %%STATIC_LIBS%%%%LLD%%llvm%%LLVM_SUFFIX%%/lib/liblldWasm.a
-%%STATIC_LIBS%%%%LLD%%llvm%%LLVM_SUFFIX%%/lib/liblldYAML.a
 llvm%%LLVM_SUFFIX%%/lib/libscanbuild/__init__.py
 llvm%%LLVM_SUFFIX%%/lib/libscanbuild/analyze.py
 llvm%%LLVM_SUFFIX%%/lib/libscanbuild/arguments.py

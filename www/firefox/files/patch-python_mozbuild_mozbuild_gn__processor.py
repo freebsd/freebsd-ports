@@ -1,10 +1,10 @@
-commit 8dfec3226ff4d7d7f852ea700a5052976eded46e
+commit 6bfdff4afcc9e3843b9c3a5d7e884e281a305398
 Author: Christoph Moench-Tegeder <cmt@burggraben.net>
 
     chase gn_processor.py changes
 
 diff --git python/mozbuild/mozbuild/gn_processor.py python/mozbuild/mozbuild/gn_processor.py
-index b6c51ee010a8..15b4bda9df6e 100644
+index a77b6c7759f1..e5498ac5e9df 100644
 --- python/mozbuild/mozbuild/gn_processor.py
 +++ python/mozbuild/mozbuild/gn_processor.py
 @@ -185,6 +185,7 @@ def filter_gn_config(path, gn_result, sandbox_vars, input_vars, gn_target):
@@ -15,7 +15,7 @@ index b6c51ee010a8..15b4bda9df6e 100644
          "linux": "Linux",
          "mac": "Darwin",
          "openbsd": "OpenBSD",
-@@ -735,16 +736,16 @@ def main():
+@@ -742,17 +743,17 @@ def main():
  
      vars_set = []
      for is_debug in (True, False):
@@ -30,14 +30,15 @@ index b6c51ee010a8..15b4bda9df6e 100644
 -            if target_os in ("android", "linux", "win"):
 +            if target_os in ("android", "freebsd", "linux", "win"):
                  target_cpus.append("x86")
+-            if target_os in ("linux", "openbsd"):
++            if target_os in ("freebsd", "linux", "openbsd"):
+                 target_cpus.append("riscv64")
 -            if target_os == "linux":
--                target_cpus.extend(["ppc64", "riscv64", "mipsel", "mips64el"])
 +            if target_os in ("freebsd", "linux"):
-+                target_cpus.extend(["ppc64", "mipsel", "mips64el"])
+                 target_cpus.extend(["ppc64", "mipsel", "mips64el"])
              for target_cpu in target_cpus:
                  vars = {
-                     "host_cpu": "x64",
-@@ -752,7 +753,7 @@ def main():
+@@ -761,7 +762,7 @@ def main():
                      "target_cpu": target_cpu,
                      "target_os": target_os,
                  }

@@ -1,5 +1,6 @@
 PORTNAME=	mesquite
 DISTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/sandialabs/mesquite/raw/main/mesquite/
 PKGNAMESUFFIX=	-mesh-toolkit
@@ -16,6 +17,7 @@ USE_LDCONFIG=	yes
 USE_CXXSTD=	c++11 # attempt to fix build failing due to the use of std::unary_function that was removed in c++17
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shared --disable-static
 
 INSTALL_TARGET=	install-strip

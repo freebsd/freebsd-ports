@@ -1,0 +1,2 @@
+preshed provides simple but high performance Cython hash table mapping
+pre-randomized keys to void* values.

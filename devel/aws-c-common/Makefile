@@ -1,6 +1,6 @@
 PORTNAME=	aws-c-common
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.12
+DISTVERSION=	0.9.15
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/awslabs/aws-c-common
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c11
+USES=		cmake:testing
 USE_GITHUB=	yes
 GH_ACCOUNT=	awslabs
 

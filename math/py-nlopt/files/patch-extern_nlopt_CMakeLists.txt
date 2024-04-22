@@ -1,0 +1,14 @@
+--- extern/nlopt/CMakeLists.txt.orig	2024-04-04 04:49:46 UTC
++++ extern/nlopt/CMakeLists.txt
+@@ -317,9 +317,9 @@ if (NLOPT_PYTHON)
+ 
+ if (NLOPT_PYTHON)
+   if (CMAKE_VERSION VERSION_LESS 3.24)
+-    find_package (Python COMPONENTS Interpreter Development)
++    find_package (Python ${FREEBSD_PYTHON_VER} EXACT COMPONENTS Interpreter Development)
+   else ()
+-    find_package (Python COMPONENTS Interpreter Development.Module)
++    find_package (Python ${FREEBSD_PYTHON_VER} EXACT COMPONENTS Interpreter Development.Module)
+   endif ()
+ 
+   find_package (NumPy)

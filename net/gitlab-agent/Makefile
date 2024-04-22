@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-agent
-PORTVERSION=	16.7.0
+PORTVERSION=	16.11.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 BUILD_DEPENDS=	git>=0:devel/git \
 		golangci-lint>=0:devel/golangci-lint
 
-USES=		go:modules
+USES=		go:modules,1.22
 GO_MODULE=	gitlab.com/gitlab-org/cluster-integration/gitlab-agent/v16
 
 _BUILD_DATE=	$$(date -u "+%Y-%m-%d-%H%M UTC")

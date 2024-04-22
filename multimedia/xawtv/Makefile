@@ -1,6 +1,6 @@
 PORTNAME=	xawtv
 PORTVERSION=	3.107
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://linuxtv.org/downloads/xawtv/
 
@@ -29,6 +29,7 @@ OPTIONS_SUB=		yes
 ZVBI_DESC=	Enable libzvbi support
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_XORG=	x11 xaw
 CPPFLAGS+=	-I${WRKSRC}/common
 LIBS+=		-L${LOCALBASE}/lib

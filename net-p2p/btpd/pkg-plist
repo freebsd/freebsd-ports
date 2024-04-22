@@ -1,7 +1,0 @@
-bin/btcli
-bin/btinfo
-bin/btpd
-man/man1/btcli.1.gz
-man/man1/btinfo.1.gz
-man/man1/btpd.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/README

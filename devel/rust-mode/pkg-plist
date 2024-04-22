@@ -1,0 +1,6 @@
+%%EMACS_SITE_LISPDIR%%/rust-cargo.el
+%%EMACS_SITE_LISPDIR%%/rust-compile.el
+%%EMACS_SITE_LISPDIR%%/rust-mode.el
+%%EMACS_SITE_LISPDIR%%/rust-playpen.el
+%%EMACS_SITE_LISPDIR%%/rust-rustfmt.el
+%%EMACS_SITE_LISPDIR%%/rust-utils.el

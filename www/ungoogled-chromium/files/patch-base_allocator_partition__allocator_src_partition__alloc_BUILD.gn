@@ -1,11 +1,11 @@
---- base/allocator/partition_allocator/src/partition_alloc/BUILD.gn.orig	2023-12-23 12:33:28 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/BUILD.gn.orig	2024-03-22 14:16:19 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/BUILD.gn
-@@ -582,7 +582,7 @@ source_set("allocator_shim") {
-       ]
-       configs += [ ":mac_no_default_new_delete_symbols" ]
+@@ -858,7 +858,7 @@ if (is_clang_or_gcc) {
+         configs -= [ "//build/config/compiler:enable_arc" ]
+       }
      }
 -    if (is_chromeos || is_linux) {
 +    if ((is_chromeos || is_linux) && !is_bsd) {
-       sources += [
+       shim_headers += [
          "shim/allocator_shim_override_cpp_symbols.h",
          "shim/allocator_shim_override_glibc_weak_symbols.h",

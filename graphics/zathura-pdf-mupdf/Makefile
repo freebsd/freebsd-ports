@@ -1,8 +1,9 @@
 PORTNAME=	zathura-pdf-mupdf
 DISTVERSION=	0.4.1
+PORTREVISION=	4
 CATEGORIES=	graphics
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	MuPDF render PDF plugin for Zathura PDF viewer
 WWW=		https://pwmt.org/projects/zathura-pdf-mupdf/
 
@@ -17,7 +18,6 @@ RUN_DEPENDS=	zathura:graphics/zathura
 
 USES=		compiler:c11 desktop-file-utils gnome jpeg meson pkgconfig
 USE_GNOME=	cairo glib20
-USE_LDCONFIG=	${PREFIX}/lib/zathura
 USE_GITLAB=	yes
 GL_SITE=	https://git.pwmt.org/
 GL_ACCOUNT=	pwmt

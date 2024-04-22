@@ -28,23 +28,23 @@ lib/pkcs11/methods
 lib/pkcs11/PKCS11_API.so
 lib/pkcs11/stdll
 libdata/pkgconfig/opencryptoki.pc
-man/man1/p11sak.1.gz
-man/man1/pkcsconf.1.gz
-man/man1/pkcsicsf.1.gz
-man/man1/pkcsstats.1.gz
-man/man1/pkcstok_migrate.1.gz
-man/man5/opencryptoki.conf.5.gz
-man/man5/p11sak_defined_attrs.conf.5.gz
-man/man5/policy.conf.5.gz
-man/man5/strength.conf.5.gz
-man/man7/opencryptoki.7.gz
-man/man8/pkcsslotd.8.gz
 sbin/p11sak
 sbin/pkcsconf
 sbin/pkcsicsf
 sbin/pkcsslotd
 sbin/pkcsstats
 sbin/pkcstok_migrate
+share/man/man1/p11sak.1.gz
+share/man/man1/pkcsconf.1.gz
+share/man/man1/pkcsicsf.1.gz
+share/man/man1/pkcsstats.1.gz
+share/man/man1/pkcstok_migrate.1.gz
+share/man/man5/opencryptoki.conf.5.gz
+share/man/man5/p11sak_defined_attrs.conf.5.gz
+share/man/man5/policy.conf.5.gz
+share/man/man5/strength.conf.5.gz
+share/man/man7/opencryptoki.7.gz
+share/man/man8/pkcsslotd.8.gz
 @dir(%%USERS%%,%%GROUPS%%,770) /var/lib/opencryptoki
 @dir(%%USERS%%,%%GROUPS%%,770) /var/lib/opencryptoki/icsf
 @dir(%%USERS%%,%%GROUPS%%,770) /var/lib/opencryptoki/swtok

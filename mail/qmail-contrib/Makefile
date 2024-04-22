@@ -1,6 +1,6 @@
 PORTNAME=	qmail-contrib
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		GENTOO
@@ -40,12 +40,14 @@ post-patch:
 	@${ECHO_CMD} "${QMAIL_PREFIX}" > ${WRKFF}/conf-qmail
 	@${ECHO_CMD} "${QMAIL_PREFIX}" > ${WRKDF}/conf-qmail
 	@${REINPLACE_CMD} -e '/cat/d; s|doc/fastforward|${DOCSDIR}|g' \
+		-e 's|\"man|\"share/man|g' \
 		${WRKFF}/hier.c \
 		${WRKDF}/hier.c
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKFF}/conf-cc
 	@${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${WRKFF}/conf-ld
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKDF}/conf-cc
 	@${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${WRKDF}/conf-ld
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/man
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -E 's|^(.*${DOCSDIR})|// \1|g' \

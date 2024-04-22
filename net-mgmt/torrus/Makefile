@@ -1,6 +1,6 @@
 PORTNAME=	torrus
 PORTVERSION=	2.09
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/torrus/torrus/
 
@@ -28,6 +28,7 @@ USE_GNOME=	libxml2
 USES=		gnome perl5
 USE_PERL5=	run
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 NO_ARCH=	yes
 
 USERS=		torrus

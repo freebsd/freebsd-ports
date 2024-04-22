@@ -1,6 +1,6 @@
 PORTNAME=	texmacs
 PORTVERSION=	1.99.4
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	editors print
 MASTER_SITES=	http://www.texmacs.org/Download/ftp/tmftp/source/
 DISTNAME=	TeXmacs-${PORTVERSION}-src
@@ -32,6 +32,7 @@ SHEBANG_FILES=	plugins/asymptote/bin/* plugins/dratex/bin/* \
 		plugins/mathematica/bin/realpath.py
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-optimize="${CXXFLAGS}" --disable-qt
 
 MAKE_ARGS=	CP="${CP} -R -f"

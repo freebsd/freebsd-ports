@@ -1,6 +1,6 @@
 PORTNAME=	lavinmq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.5
+DISTVERSION=	1.2.9
 CATEGORIES=	net
 
 MAINTAINER=	dch@FreeBSD.org
@@ -19,8 +19,8 @@ GH_ACCOUNT=	cloudamqp
 GH_TUPLE=	\
 		84codes:lz4.cr:6cc0d0096207821222317ee02ea23d5296ad4023:a/deps/lz4.cr \
 		84codes:systemd.cr:v2.0.0:systemd/deps/systemd.cr \
-		cloudamqp:amq-protocol.cr:v1.1.11:proto/deps/amq-protocol.cr \
-		cloudamqp:amqp-client.cr:v1.0.12:client/deps/amqp-client.cr \
+		cloudamqp:amq-protocol.cr:v1.1.12:proto/deps/amq-protocol.cr \
+		cloudamqp:amqp-client.cr:v1.2.1:client/deps/amqp-client.cr \
 		luislavena:radix:v0.4.1:radix/deps/radix \
 		tbrand:router.cr:v0.2.8:router/deps/router.cr
 

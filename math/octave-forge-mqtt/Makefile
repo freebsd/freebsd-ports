@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-mqtt
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	0.0.4
+DISTVERSION=	0.0.5
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

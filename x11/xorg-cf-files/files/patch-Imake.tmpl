@@ -1,5 +1,14 @@
---- Imake.tmpl.orig	2021-08-02 01:00:38 UTC
+--- Imake.tmpl.orig	2023-02-22 02:28:43 UTC
 +++ Imake.tmpl
+@@ -890,7 +890,7 @@ TCLIBDIR = TclLibDir
+ #endif
+ #ifndef ManDirectoryRoot
+ #ifdef ProjectRoot
+-#define ManDirectoryRoot Concat(ProjectRoot,/man)
++#define ManDirectoryRoot Concat(ProjectRoot,/share/man)
+ #else
+ #define ManDirectoryRoot SystemManDirectory
+ #endif
 @@ -1823,7 +1823,7 @@ CXXEXTRA_INCLUDES = CplusplusExtraIncludes
         CXXOPTIONS = CplusplusOptions
        CXXINCLUDES = $(INCLUDES) $(TOP_INCLUDES) $(CXXEXTRA_INCLUDES)

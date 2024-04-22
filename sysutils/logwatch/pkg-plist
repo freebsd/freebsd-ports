@@ -273,7 +273,7 @@ libexec/logwatch/defaults/shared/onlyservice
 libexec/logwatch/defaults/shared/remove
 libexec/logwatch/defaults/shared/removeheaders
 libexec/logwatch/defaults/shared/removeservice
-man/man8/logwatch.8.gz
+share/man/man8/logwatch.8.gz
 sbin/logwatch.pl
 @dir var/logwatch
 @dir etc/logwatch/services

@@ -1,7 +1,8 @@
 PORTNAME=	iteration-utilities
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.1
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/MSeifert04/iteration_utilities/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	iteration_utilities-${PORTVERSION}
 

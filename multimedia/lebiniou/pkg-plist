@@ -122,9 +122,9 @@ lib/lebiniou/plugins/output/caca/caca.so
 lib/lebiniou/plugins/output/mp4/mp4.so
 lib/lebiniou/plugins/output/v4l2loopback/v4l2loopback.so
 lib/liblebiniou.so.0
-man/man1/lebiniou.1.gz
 share/applications/net.biniou.LeBiniou.desktop
 share/icons/hicolor/256x256/apps/net.biniou.LeBiniou.png
+share/man/man1/lebiniou.1.gz
 share/metainfo/net.biniou.LeBiniou.appdata.xml
 share/pixmaps/lebiniou.xpm
 %%DATADIR%%/etc/schemes.json

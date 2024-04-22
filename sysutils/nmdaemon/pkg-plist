@@ -1,0 +1,5 @@
+bin/nmdaemon
+@sample etc/nmdaemon.conf.sample
+etc/rc.d/nmdaemon
+%%DATADIR%%/commands.md
+%%DATADIR%%/commands.txt

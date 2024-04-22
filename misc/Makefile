@@ -1,6 +1,7 @@
     COMMENT = Miscellaneous utilities
 
     SUBDIR += R-cran-mime
+    SUBDIR += R-cran-optimx
     SUBDIR += R-cran-xfun
     SUBDIR += aclgen
     SUBDIR += actiona
@@ -37,7 +38,6 @@
     SUBDIR += boxes
     SUBDIR += broot
     SUBDIR += bsod
-    SUBDIR += buffer
     SUBDIR += caffe
     SUBDIR += chatgpt-shell-cli
     SUBDIR += cheat
@@ -245,6 +245,7 @@
     SUBDIR += lifelines
     SUBDIR += lightgbm
     SUBDIR += lingoteach
+    SUBDIR += llama-cpp
     SUBDIR += locale-en_DK
     SUBDIR += localedata
     SUBDIR += logsurfer
@@ -426,6 +427,7 @@
     SUBDIR += py-hist
     SUBDIR += py-histoprint
     SUBDIR += py-huepy
+    SUBDIR += py-huggingface-hub
     SUBDIR += py-icoextract
     SUBDIR += py-instructor
     SUBDIR += py-ipyfastscape
@@ -434,6 +436,7 @@
     SUBDIR += py-lazrs
     SUBDIR += py-lightgbm
     SUBDIR += py-lightning-utilities
+    SUBDIR += py-litellm
     SUBDIR += py-log_symbols
     SUBDIR += py-mffpy
     SUBDIR += py-mmcv
@@ -447,6 +450,7 @@
     SUBDIR += py-onnx
     SUBDIR += py-onnx-tf
     SUBDIR += py-openai
+    SUBDIR += py-openai-whisper
     SUBDIR += py-openpaperwork-core
     SUBDIR += py-openpaperwork-gtk
     SUBDIR += py-openvdb
@@ -458,6 +462,7 @@
     SUBDIR += py-palettable
     SUBDIR += py-papermill
     SUBDIR += py-pexpect
+    SUBDIR += py-pkbar
     SUBDIR += py-placekey
     SUBDIR += py-polars
     SUBDIR += py-powerline-status
@@ -476,13 +481,13 @@
     SUBDIR += py-pytorch
     SUBDIR += py-pytorch-lightning
     SUBDIR += py-pyviz-comms
-    SUBDIR += py-qiskit-machine-learning
     SUBDIR += py-safetensors
     SUBDIR += py-scikit-fusion
     SUBDIR += py-scikit-quant
     SUBDIR += py-serverfiles
     SUBDIR += py-shap2
     SUBDIR += py-shell-gpt
+    SUBDIR += py-sigopt
     SUBDIR += py-soapy_power
     SUBDIR += py-spdx
     SUBDIR += py-spdx-lookup
@@ -494,6 +499,8 @@
     SUBDIR += py-tflite
     SUBDIR += py-tflite-support
     SUBDIR += py-thermocouples_reference
+    SUBDIR += py-timm
+    SUBDIR += py-timm-vis
     SUBDIR += py-toil
     SUBDIR += py-torch-geometric
     SUBDIR += py-torchmetrics
@@ -504,6 +511,7 @@
     SUBDIR += py-vaderSentiment
     SUBDIR += py-wandb
     SUBDIR += py-wurlitzer
+    SUBDIR += py-xformers
     SUBDIR += py-xgboost
     SUBDIR += pyobd
     SUBDIR += pytorch
@@ -531,10 +539,12 @@
     SUBDIR += rsclock
     SUBDIR += rtfm
     SUBDIR += rubygem-dotenv
+    SUBDIR += rubygem-dotenv-rails
     SUBDIR += rubygem-dotenv-rails-rails4
     SUBDIR += rubygem-dotenv-rails-rails5
     SUBDIR += rubygem-dotenv-rails-rails50
     SUBDIR += rubygem-dotenv-rails-rails61
+    SUBDIR += rubygem-dotenv2
     SUBDIR += rubygem-haversine_distance
     SUBDIR += rubygem-iesd
     SUBDIR += rubygem-mime-types
@@ -557,11 +567,9 @@
     SUBDIR += shuffle-db
     SUBDIR += silicon
     SUBDIR += since
-    SUBDIR += skyutils
     SUBDIR += slides
     SUBDIR += sloccount
     SUBDIR += sls
-    SUBDIR += smssend
     SUBDIR += snakemake
     SUBDIR += soapysdr
     SUBDIR += solarized
@@ -580,6 +588,7 @@
     SUBDIR += team
     SUBDIR += tellico
     SUBDIR += tempcontrol
+    SUBDIR += tenere
     SUBDIR += termatrix
     SUBDIR += terminfo-db
     SUBDIR += teseq
@@ -607,7 +616,6 @@
     SUBDIR += unclutter-xfixes
     SUBDIR += unicode-emoji
     SUBDIR += upclient
-    SUBDIR += urbit
     SUBDIR += urh
     SUBDIR += usbids
     SUBDIR += usbrh-libusb
@@ -643,7 +651,6 @@
     SUBDIR += xfce4-appfinder
     SUBDIR += xfce4-weather-plugin
     SUBDIR += xfce4-wm-themes
-    SUBDIR += xgas
     SUBDIR += xgboost
     SUBDIR += xiphos
     SUBDIR += xless

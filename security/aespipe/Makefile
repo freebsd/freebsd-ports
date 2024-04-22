@@ -1,5 +1,6 @@
 PORTNAME=	aespipe
 PORTVERSION=	2.4e
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	http://loop-aes.sourceforge.net/${PORTNAME}/ \
@@ -17,7 +18,7 @@ USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 TEST_TARGET=	tests
 
-PLIST_FILES=	bin/aespipe man/man1/aespipe.1.gz
+PLIST_FILES=	bin/aespipe share/man/man1/aespipe.1.gz
 
 OPTIONS_DEFINE_amd64=	ASM INTEL PADLOCK
 OPTIONS_DEFINE_i386=	ASM INTEL PADLOCK
@@ -35,6 +36,6 @@ PADLOCK_IMPLIES=	ASM
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

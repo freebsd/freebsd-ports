@@ -26,7 +26,7 @@ lib/conman/exec/ssh.exp
 lib/conman/exec/sun-elom.exp
 lib/conman/exec/sun-ilom.exp
 lib/conman/exec/sun-v20z-v40z.exp
-man/man1/conman.1.gz
-man/man5/conman.conf.5.gz
-man/man8/conmand.8.gz
+share/man/man1/conman.1.gz
+share/man/man5/conman.conf.5.gz
+share/man/man8/conmand.8.gz
 sbin/conmand

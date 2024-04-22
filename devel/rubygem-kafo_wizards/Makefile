@@ -1,5 +1,6 @@
 PORTNAME=	kafo_wizards
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +10,7 @@ WWW=		https://github.com/theforeman/kafo_wizards
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	rubygem-highline>=0<3:devel/rubygem-highline
+RUN_DEPENDS=	rubygem-highline2>=0<3:devel/rubygem-highline2
 
 USES=		gem
 

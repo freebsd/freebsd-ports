@@ -1,6 +1,6 @@
 PORTNAME=	xnview
 PORTVERSION=	1.70
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.xnview.com/
 DISTFILES=	XnView-x86-unknown-FreeBSD5.x-static.tgz
@@ -28,7 +28,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/app-defaults/XnView.ad \
 		${STAGEDIR}${PREFIX}/lib/X11/app-defaults/XnView
 	cd ${WRKSRC}/man && ${INSTALL_MAN} xnview.1 nview.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC_NC} && \
 		${INSTALL_DATA} Formats.txt ReadMe.txt Usage.txt WhatsNew.txt \

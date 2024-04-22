@@ -1,6 +1,6 @@
 PORTNAME=	eisl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.60
+DISTVERSION=	3.72
 CATEGORIES=	lang devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,8 @@ BROKEN_i386=	stage breaks: data segment of more than 500GB is required, see http
 
 TEST_DEPENDS=	cppcheck:devel/cppcheck
 
-USES=		gmake ncurses:port # port because tests need ncurses6-config
+USES=		gmake gl localbase:ldflags ncurses:port tcl # port because tests need ncurses6-config
+USE_GL=		gl glu glut
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sasagawa888
@@ -25,6 +26,7 @@ TEST_TARGET=	check # tests print some errors and warnings, see https://github.co
 MAKEFILE=	makefile
 
 CFLAGS+=	-D__BSD_VISIBLE # w/out this there's error: use of undeclared identifier '_SC_NPROCESSORS_CONF'
+CFLAGS+=	-I${TCL_INCLUDEDIR}
 LDFLAGS+=	-lncursesw
 
 .include <bsd.port.options.mk>

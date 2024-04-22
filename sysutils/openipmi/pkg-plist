@@ -102,17 +102,17 @@ libdata/pkgconfig/OpenIPMIposix.pc
 libdata/pkgconfig/OpenIPMIpthread.pc
 libdata/pkgconfig/OpenIPMIui.pc
 libdata/pkgconfig/OpenIPMIutils.pc
-man/man1/ipmi_sim.1.gz
-man/man1/ipmi_ui.1.gz
-man/man1/openipmi_eventd.1.gz
-man/man1/openipmicmd.1.gz
-man/man1/openipmish.1.gz
-man/man1/rmcp_ping.1.gz
-man/man1/solterm.1.gz
-man/man5/ipmi_lan.5.gz
-man/man5/ipmi_sim_cmd.5.gz
-man/man7/ipmi_cmdlang.7.gz
-man/man7/openipmi_conparms.7.gz
+share/man/man1/ipmi_sim.1.gz
+share/man/man1/ipmi_ui.1.gz
+share/man/man1/openipmi_eventd.1.gz
+share/man/man1/openipmicmd.1.gz
+share/man/man1/openipmish.1.gz
+share/man/man1/rmcp_ping.1.gz
+share/man/man1/solterm.1.gz
+share/man/man5/ipmi_lan.5.gz
+share/man/man5/ipmi_sim_cmd.5.gz
+share/man/man7/ipmi_cmdlang.7.gz
+share/man/man7/openipmi_conparms.7.gz
 %%GLIB%%@comment files list for GLIB12/GLIB20
 %%GLIB%%lib/libOpenIPMIglib.a
 %%GLIB%%lib/libOpenIPMIglib.so
@@ -226,4 +226,4 @@ man/man7/openipmi_conparms.7.gz
 %%TKINTER%%%%PYTHON_SITELIBDIR%%/openipmigui/gui_winsys.py
 %%TKINTER%%%%PYTHON_SITELIBDIR%%/openipmigui/gui_winsys.pyc
 %%TKINTER%%%%PYTHON_SITELIBDIR%%/openipmigui/gui_winsys.pyo
-%%TKINTER%%man/man1/openipmigui.1.gz
+%%TKINTER%%share/man/man1/openipmigui.1.gz

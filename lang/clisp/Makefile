@@ -1,6 +1,6 @@
 PORTNAME=	clisp
 PORTVERSION=	2.49.93+
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	lang lisp
 
 MAINTAINER=	kiri@TrueFC.org
@@ -24,7 +24,7 @@ GL_TAGNAME=	df3b9f6fdcff22832898e89a989eb499c0f842ed
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	FORCE_UNSAFE_CONFIGURE=1
-CONFIGURE_ARGS=	--prefix="${PREFIX}" --mandir="${MANPREFIX}/man" \
+CONFIGURE_ARGS=	--prefix="${PREFIX}" --mandir="${PREFIX}/share/man" \
 		--elispdir="${DATADIR}/emacs" --vimdir="${DATADIR}/vim" \
 		--docdir="${DOCSDIR}" --with-libiconv=${ICONV_PREFIX}
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}

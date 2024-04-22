@@ -1,7 +1,7 @@
 PREFIX?=	/usr/local
 LOCALBASE?=	/usr/local
 BINDIR?=	${PREFIX}/bin
-MANDIR?=	${PREFIX}/man/man
+MANDIR?=	${PREFIX}/share/man/man
 
 CLASS=		SshAskpass
 FILES=		${CLASS}

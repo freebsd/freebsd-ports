@@ -1,7 +1,7 @@
 PORTNAME=	courier-imap
 PORTVERSION=	5.2.6
 PORTEPOCH=	2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/imap/${PORTVERSION}
 
@@ -26,6 +26,7 @@ USE_RC_SUBR=	courier-imap-imapd courier-imap-imapd-ssl \
 CONFLICTS=	courier imap-uw panda-imap
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	REHASH=${SCRIPTDIR}/c_rehash
 
 MAKE_ENV:=	${CONFIGURE_ENV}

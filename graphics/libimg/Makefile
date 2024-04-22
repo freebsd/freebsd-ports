@@ -1,5 +1,6 @@
 PORTNAME=	libimg
 PORTVERSION=	1.4.16
+PORTREVISION=	1
 CATEGORIES?=	graphics tk tcl
 MASTER_SITES=	SF/tkimg/tkimg/${PORTVERSION:R}/tkimg%20${PORTVERSION}
 DISTNAME=	Img-${PORTVERSION}-Source
@@ -32,6 +33,8 @@ DOS2UNIX_GLOB=	*.[ch] *.tcl *.msg *.in *.test license.terms
 EXTRACT_AFTER_ARGS=	--exclude 'config.*' --exclude Makefile --exclude \
 			'compat' --exclude win
 MAKE_ARGS+=	INSTALL_ROOT="${STAGEDIR}"
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	WRKDIR="${WRKDIR}"
 CONFIGURE_ARGS+=--enable-shared --disable-stubs
 

@@ -1,5 +1,6 @@
 PORTNAME=	ntfs
 PORTVERSION=	2022.10.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://download.tuxera.com/opensource/
 PKGNAMEPREFIX=	fusefs-
@@ -17,6 +18,7 @@ LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 USES=		fuse pkgconfig iconv libtool localbase:ldflags tar:tgz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --disable-mount-helper \
 		--disable-mtab --with-fuse=external --disable-ldconfig
 INSTALL_TARGET=	install-strip

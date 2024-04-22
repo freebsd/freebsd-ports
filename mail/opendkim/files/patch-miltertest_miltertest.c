@@ -1,6 +1,6 @@
 --- miltertest/miltertest.c.orig	2014-03-20 04:36:13 UTC
 +++ miltertest/miltertest.c
-@@ -4009,12 +4009,12 @@ main(int argc, char **argv)
+@@ -4009,13 +4009,13 @@ main(int argc, char **argv)
  	}
  
  	/* register functions */
@@ -12,10 +12,11 @@
 +#else /* LUA_VERSION_NUM >= 502 */
  	luaL_register(l, "mt", mt_library);
 -#endif /* LUA_VERSION_NUM == 502 */
-+#endif /* LUA_VERSION_NUM >= 502 */
  	lua_pop(l, 1);
++#endif /* LUA_VERSION_NUM >= 502 */
  
  	/* register constants */
+ 	lua_pushnumber(l, MT_HDRINSERT);
 @@ -4163,13 +4163,13 @@ main(int argc, char **argv)
  	lua_setglobal(l, "SMFIF_SETSYMLIST");
  #endif /* SMFIF_SETSYMLIST */

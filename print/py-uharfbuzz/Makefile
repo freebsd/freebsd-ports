@@ -1,5 +1,5 @@
 PORTNAME=	uharfbuzz
-PORTVERSION=	0.37.3
+PORTVERSION=	0.39.1
 CATEGORIES=	print python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,9 +11,9 @@ WWW=		https://github.com/harfbuzz/uharfbuzz
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	harfbuzz>=8.2.0:print/harfbuzz \
+BUILD_DEPENDS=	harfbuzz>=8.3.1:print/harfbuzz \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=36.4:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=2.1:devel/py-setuptools_scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=2.1:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
@@ -22,7 +22,6 @@ USE_PYTHON=	autoplist concurrent cython pep517
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/setup.py ${WRKSRC}/src/uharfbuzz/_harfbuzz.cpp
-	@${RM} ${WRKSRC}/src/uharfbuzz/_harfbuzz.cpp
 # Clean up bundled libraries
 	@${RM} -r ${WRKSRC}/harfbuzz/
 

@@ -24,5 +24,5 @@ lib/%%TCL_PKG%%/vfslib.tcl
 lib/%%TCL_PKG%%/webdavvfs.tcl
 lib/%%TCL_PKG%%/zipvfs.tcl
 lib/%%TCL_PKG%%/zipvfscompat.tcl
-man/mann/vfs.n.gz
-man/mann/vfslib.n.gz
+share/man/mann/vfs.n.gz
+share/man/mann/vfslib.n.gz

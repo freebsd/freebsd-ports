@@ -5,7 +5,7 @@ MASTER_SITES=	https://github.com/vrana/adminer/releases/download/v${PORTVERSION}
 EXTRACT_SUFX=	.php
 EXTRACT_ONLY=
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Full-featured database management tool written in PHP
 WWW=		https://www.adminer.org
 

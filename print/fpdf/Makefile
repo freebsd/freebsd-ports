@@ -1,11 +1,11 @@
 PORTNAME=	fpdf
-PORTVERSION=	1.81
+DISTVERSION=	1.86
 PORTEPOCH=	1
 CATEGORIES=	print www
 MASTER_SITES=	http://www.fpdf.org/en/
-DISTNAME=	${PORTNAME}${PORTVERSION:S|.||}
+DISTNAME=	${PORTNAME}${DISTVERSION:S|.||}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xaa+ports@dohd.org
 COMMENT=	Free PHP class to generate PDF files with pure PHP
 WWW=		http://www.fpdf.org/
 
@@ -34,7 +34,7 @@ OPTIONS_DEFINE=	DOCS
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
 	${FETCH_CMD} ${FETCH_BEFORE_ARGS}	\
-		'${MASTER_SITES}dl.php?v=${PORTVERSION:S|.||}&f=${EXTRACT_SUFX:S|.||}'; \
+		'${MASTER_SITES}dl.php?v=${DISTVERSION:S|.||}&f=${EXTRACT_SUFX:S|.||}'; \
 	fi
 
 do-install:

@@ -1,12 +1,16 @@
---- Makefile.orig	Fri Sep 10 00:31:42 2004
-+++ Makefile	Mon Mar  7 14:48:36 2005
-@@ -1,4 +1,4 @@
+--- Makefile.orig	2004-09-09 22:31:42 UTC
++++ Makefile
+@@ -1,7 +1,7 @@
 -prefix     = /usr/local
 +prefix    ?= /usr/local
  includedir = $(prefix)/include
  libdir     = $(prefix)/lib
- mandir     = $(prefix)/man
-@@ -16,10 +16,10 @@ CFLAGS     = -Wall -W -g -DMSGNO $(RPM_O
+-mandir     = $(prefix)/man
++mandir     = $(prefix)/share/man
+ CC         = gcc
+ LIBNAME    = domc
+ MAJVERSION = 0.8
+@@ -16,10 +16,10 @@ MAN        = DOM_CharacterData.3m.gz DOM_Document.3m.g
  OBJS       = src/expatls.o src/events.o src/node.o src/nodelist.o src/namednodemap.o src/dom.o src/timestamp.o src/wcwidth.o src/mbs.o
  MAN        = DOM_CharacterData.3m.gz DOM_Document.3m.gz DOM_Element.3m.gz DOM_Implementation.3m.gz DOM_NamedNodeMap.3m.gz DOM_Node.3m.gz DOM_NodeList.3m.gz DOM_Text.3m.gz
  

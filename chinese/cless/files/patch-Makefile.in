@@ -1,6 +1,15 @@
---- Makefile.in.orig	1995-04-25 10:41:39.000000000 +0800
-+++ Makefile.in	2014-01-08 23:13:25.000000000 +0800
-@@ -73,24 +73,24 @@ lesskey: lesskey.${O} version.${O}
+--- Makefile.in.orig	1995-04-25 02:41:39 UTC
++++ Makefile.in
+@@ -27,7 +27,7 @@ datadir = ${prefix}/share
+ # Where the help file goes.
+ datadir = ${prefix}/share
+ 
+-mandir = ${prefix}/man/man${manext}
++mandir = ${prefix}/share/man/man${manext}
+ manext = 1
+ manprefix = 
+ 
+@@ -73,24 +73,24 @@ filename.${O}: filename.c
  ${OBJ}: less.h defines.h funcs.h
  
  filename.${O}: filename.c

@@ -1,5 +1,5 @@
---- libretro-common/features/features_cpu.c.orig	2023-12-12 02:50:19.541552000 +0000
-+++ libretro-common/features/features_cpu.c	2023-12-12 02:52:13.056521000 +0000
+--- libretro-common/features/features_cpu.c.orig	2024-02-03 00:11:03 UTC
++++ libretro-common/features/features_cpu.c
 @@ -45,7 +45,7 @@
  
  #if defined(_XBOX360)
@@ -9,7 +9,7 @@
  #ifndef _PPU_INTRINSICS_H
  #include <ppu_intrinsics.h>
  #endif
-@@ -181,7 +181,7 @@
+@@ -181,7 +181,7 @@ retro_perf_tick_t cpu_features_get_perf_counter(void)
     time_ticks = (1000000 * tv_sec + tv_usec);
  #elif defined(GEKKO)
     time_ticks = gettime();

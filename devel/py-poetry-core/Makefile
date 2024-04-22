@@ -1,7 +1,8 @@
 PORTNAME=	poetry-core
-PORTVERSION=	1.7.0
+PORTVERSION=	1.9.0
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/python-poetry/poetry-core/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	poetry_core-${PORTVERSION}
 

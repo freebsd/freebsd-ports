@@ -1,6 +1,7 @@
 PORTNAME=	whois
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.5.7
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	coco@executive-computing.de

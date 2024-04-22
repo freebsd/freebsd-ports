@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: svxlink
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# svxlink_enable (bool):	Set to NO by default.
+#				Set it to YES to enable svxlink.
+# svxlink_config (path):	Set to %%PREFIX%%/etc/svxlink/svxlink.conf
+#				by default.
+
+. /etc/rc.subr
+
+name=svxlink
+rcvar=svxlink_enable
+
+load_rc_config $name
+
+: ${svxlink_enable:="NO"}
+: ${svxlink_config="%%PREFIX%%/etc/svxlink/svxlink.conf"}
+
+command=%%PREFIX%%/bin/${name}
+pidfile=/var/run/${name}.pid
+command_args="--config $svxlink_config --daemon --runasuser ${name} --pidfile ${pidfile}"
+
+run_rc_command "$1"

@@ -1,7 +1,7 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	22.1.3
-PORTREVISION?=	0
+DISTVERSION=	23.0.1
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	-server
@@ -13,7 +13,7 @@ WWW=		https://www.bareos.org/
 LICENSE=	AGPLv3 LGPL3
 LICENSE_COMB=	multi
 
-CONFLICTS?=	bareos20-server bareos19-server bareos18-server
+CONFLICTS?=	bareos20-server bareos21-server bareos22-server
 
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
 		libjansson.so:devel/jansson
@@ -31,8 +31,7 @@ PLIST_SUB+=	LIB_VERSION=${PORTVERSION}
 USE_LDCONFIG=	yes
 SHEBANG_LANG=	perl python
 SHEBANG_GLOB=	*.py
-SHEBANG_FILES=	${WRKSRC}/core/src/cats/make_catalog_backup.pl.in \
-		${WRKSRC}/contrib/misc/bsmc/bin/bsmc
+SHEBANG_FILES=	${WRKSRC}/contrib/misc/bsmc/bin/bsmc
 
 CPPFLAGS+=	-I${LOCALBASE}/readline
 
@@ -167,16 +166,8 @@ CMAKE_ARGS+=	-Dbuild-dird=ON \
 # Server default database
 
 MTX_RUN_DEPENDS=	${LOCALBASE}/sbin/mtx:misc/mtx
-MYSQL_VARS=	DBTYPE=mysql
-MYSQL_SUB_LIST=	REQ_MYSQL=mysql REQ_PGSQL=""
 PGSQL_CMAKE_ON=		-Dpostgresql=ON
 PGSQL_USES=	pgsql
-PGSQL_VARS=	DBTYPE=postgresql
-PGSQL_SUB_LIST=		REQ_MYSQL="" REQ_PGSQL=postgresql
-SQLITE3_VARS=	DBTYPE=sqlite3
-
-PLIST_SUB+=		DBTYPE=${DBTYPE}
-
 .endif
 
 .if defined(WITH_CLIENT_ONLY)
@@ -191,9 +182,9 @@ MP1+=	bsmtp.1 bregex.1 bwild.1 bareos-tray-monitor.1
 MAKE_ENV+=	MAN8="${MP8}" MAN1="${MP1}"
 
 post-patch:
-	@${REINPLACE_CMD}  '124,129d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD}  '133,138d' ${WRKSRC}/CMakeLists.txt
 .if ${PKGNAMESUFFIX} == "-server"
-	@${REINPLACE_CMD}  '51d' ${WRKSRC}/core/src/plugins/CMakeLists.txt
+	@${REINPLACE_CMD}  '50d' ${WRKSRC}/core/src/plugins/CMakeLists.txt
 .endif
 .if ${PKGNAMESUFFIX} == "-client"
 	@${REINPLACE_CMD} -e 's|-Werror -Wall|-Wall|g' ${PATCH_WRKSRC}/core/CMakeLists.txt
@@ -227,11 +218,5 @@ post-install:
 .else
 .include "${MASTERDIR}/Makefile.common"
 .endif # -client and -server are defined
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-USES+=	llvm:max=15
-.endif
 
 .include <bsd.port.mk>

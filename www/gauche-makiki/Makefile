@@ -1,5 +1,5 @@
 PORTNAME=	makiki
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www scheme
 PKGNAMEPREFIX=	gauche-
@@ -8,7 +8,8 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Simple multithreaded HTTP server written in Gauche
 WWW=		https://github.com/shirok/Gauche-makiki
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gosh:lang/gauche
 RUN_DEPENDS=	gosh:lang/gauche
@@ -26,6 +27,7 @@ PLIST_FILES=	${GUILE_SITELIBDIR_REL}/.packages/Gauche-makiki.gpd \
 		${GUILE_SITELIBDIR_REL}/makiki/cgi.scm \
 		${GUILE_SITELIBDIR_REL}/makiki/connect.scm \
 		${GUILE_SITELIBDIR_REL}/makiki/dev.scm \
+		${GUILE_SITELIBDIR_REL}/makiki/session.scm \
 		${GUILE_SITELIBDIR_REL}/makiki/subserver.scm \
 		${GUILE_SITELIBDIR_REL}/makiki.scm
 PORTEXAMPLES=	*

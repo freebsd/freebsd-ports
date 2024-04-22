@@ -1,5 +1,5 @@
-TIMESTAMP = 1703370880
-SHA256 (NGSolve-netgen-v6.2.2307_GH0.tar.gz) = e62a9cca2e727797dddadf04de308594f46863f2cac47adb5f51bd8b8c7884aa
-SIZE (NGSolve-netgen-v6.2.2307_GH0.tar.gz) = 3427060
-SHA256 (NGSolve-pybind11-v2.7.1_GH0.tar.gz) = 616d1c42e4cf14fa27b2a4ff759d7d7b33006fdc5ad8fd603bb2c22622f27020
-SIZE (NGSolve-pybind11-v2.7.1_GH0.tar.gz) = 668217
+TIMESTAMP = 1709782604
+SHA256 (NGSolve-netgen-v6.2.2402_GH0.tar.gz) = fb7a67901e2090120f808862a4dcb13cc9ab53b4b6fb80930dad2c817f3c1bdd
+SIZE (NGSolve-netgen-v6.2.2402_GH0.tar.gz) = 3429954
+SHA256 (NGSolve-pybind11-v2.11.1_GH0.tar.gz) = d475978da0cdc2d43b73f30910786759d593a9d8ee05b1b6846d1eb16c6d2e0c
+SIZE (NGSolve-pybind11-v2.11.1_GH0.tar.gz) = 756445

@@ -29,4 +29,3 @@ lib/ddnet/uuid
 %%SERVER%%share/icons/hicolor/32x32/apps/ddnet-server.png
 %%CLIENT%%share/icons/hicolor/48x48/apps/ddnet.png
 %%SERVER%%share/icons/hicolor/48x48/apps/ddnet-server.png
-%%CLIENT%%share/metainfo/ddnet.appdata.xml

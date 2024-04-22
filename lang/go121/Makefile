@@ -1,4 +1,4 @@
-DISTVERSION=	1.21.5
+DISTVERSION=	1.21.9
 # Always set PORTREVISION explicitly as otherwise they are inherited from lang/go-devel
 PORTREVISION=	0
 MASTER_SITES=	https://golang.org/dl/ \
@@ -12,9 +12,15 @@ PATCHFILES=
 
 COMMENT=	Go programming language
 
+BUILD_DEPENDS=
+
 MASTERDIR=	${.CURDIR}/../go-devel
 PATCHDIR=	${.CURDIR}/files
 WRKSRC=		${WRKDIR}/go
 DISTINFO_FILE=	${.CURDIR}/distinfo
+SHEBANG_FILES=	misc/wasm/go_js_wasm_exec \
+		src/net/http/cgi/testdata/test.cgi
+BASH=		${SH}
+TESTING_UNSAFE=	MemorySanitizer: use-of-uninitialized-value (/tmp/TestMSAN747758340/msan8+0x11efcf) in msanGoLoop
 
 .include "${MASTERDIR}/Makefile"

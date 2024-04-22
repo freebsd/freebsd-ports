@@ -1,6 +1,7 @@
 PORTNAME=	portacl-rc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	security net
 
 MAINTAINER=	tom@hur.st
@@ -17,10 +18,10 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	etc/rc.d/portacl \
-		man/man5/portacl.5.gz
+		share/man/man5/portacl.5.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/portacl ${STAGEDIR}${PREFIX}/etc/rc.d
-	${INSTALL_MAN} ${WRKSRC}/portacl.5 ${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/portacl.5 ${STAGEDIR}${PREFIX}/share/man/man5
 
 .include <bsd.port.mk>

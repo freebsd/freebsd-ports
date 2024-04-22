@@ -1,6 +1,6 @@
 PORTNAME=	xblood
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://kozos.jp/myfreesoft/
 
@@ -11,12 +11,13 @@ WWW=		https://kozos.jp/myfreesoft/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-MAKE_ENV=	X11BASE=${LOCALBASE}
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" X11BASE="${LOCALBASE}"
 USES=		xorg
 USE_XORG=	x11
-PLIST_FILES=	bin/xblood man/man1/xblood.1.gz
+PLIST_FILES=	bin/xblood share/man/man1/xblood.1.gz
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xblood
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/xblood ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xblood.1.gz ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-MANDIR=		${PREFIX}/man/man
+MANDIR=		${PREFIX}/share/man/man
 
 MAN1=		wn.1 wnb.1 wnintro.1
 MAN3=		binsrch.3 morph.3 wnintro.3 wnsearch.3 wnutil.3

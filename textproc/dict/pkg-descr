@@ -5,5 +5,3 @@ natural language dictionary databases.
 RFC 2229 describes the DICT client/server protocol.
 
 dict is a client which can access DICT servers from the command line.
-
-See also: https://sourceforge.net/projects/dict/

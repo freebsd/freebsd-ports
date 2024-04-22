@@ -1,6 +1,6 @@
 PORTNAME=	eject
 PORTVERSION=	1.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/OD/ \
 		ftp://ftp4.jp.FreeBSD.org/pub/FreeBSD-jp/OD/ \
@@ -13,9 +13,10 @@ LICENSE=	BSD2CLAUSE
 
 USES=		uidfix
 PLIST_FILES=	sbin/eject \
-		man/man1/eject.1.gz
+		share/man/man1/eject.1.gz
 PORTDOCS=	README README-J
-MAKE_ARGS=	BINOWN=${BINOWN}
+MAKE_ARGS=	BINOWN=${BINOWN} \
+		MANDIR="${PREFIX}/share/man/man"
 
 OPTIONS_DEFINE=	DOCS
 

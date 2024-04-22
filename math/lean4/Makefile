@@ -1,7 +1,6 @@
 PORTNAME=	lean4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.5.0-rc1
-PORTREVISION=	2
+DISTVERSION=	4.7.0
 CATEGORIES=	math lang devel # lean4 is primarily a math theorem prover, but it is also a language and a development environment
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,6 +9,8 @@ WWW=		https://lean-lang.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	linking fails: INTERNAL PANIC: out of memory (during: Linking runLinter)
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgmp.so:math/gmp
@@ -34,6 +35,7 @@ post-install:
 		bin/lake \
 		bin/lean \
 		bin/leanc \
+		lib/lean/libInit_shared.so \
 		lib/lean/libleanshared.so
 
 # 6 tests are known to fail due to bugs in the testcase code, see https://github.com/leanprover/lean4/issues/3179

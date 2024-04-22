@@ -1,6 +1,6 @@
 PORTNAME=	moab
 DISTVERSION=	5.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 
@@ -33,7 +33,7 @@ OPTIONS_DEFAULT=	MPI
 OPTIONS_SUB=		yes
 
 MPI_CMAKE_BOOL=		ENABLE_MPI
-MPI_LIB_DEPENDS=	libmpi.so:net/openmpi
+MPI_LIB_DEPENDS=	libmpi_cxx.so:net/openmpi4
 MPI_VARS=		CXX=${LOCALBASE}/mpi/openmpi/bin/mpic++ CC=${LOCALBASE}/mpi/openmpi/bin/mpicc
 MPI_VARS+=		CONFLICTS_BUILD=mpich # otherwise bin/hexmodops gets linked with libmpi.so:net/mpich
 MPI_VARS_OFF=		USES=compiler:c++11-lang

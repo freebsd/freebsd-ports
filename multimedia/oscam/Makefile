@@ -1,5 +1,6 @@
 PORTNAME=	oscam
 PORTVERSION=	1.20.20210729
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://repo.or.cz/oscam.git/snapshot/ef7f844739120f6119d7197e7be9c9b8a8da0b5f.tar.gz?/
 
@@ -33,8 +34,8 @@ USE_GCC=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Distribution/oscam ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/Distribution/doc/man/*.1 ${STAGEDIR}${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/Distribution/doc/man/*.5 ${STAGEDIR}${PREFIX}/man/man5/
+	${INSTALL_MAN} ${WRKSRC}/Distribution/doc/man/*.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/Distribution/doc/man/*.5 ${STAGEDIR}${PREFIX}/share/man/man5/
 
 do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/

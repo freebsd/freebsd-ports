@@ -15,7 +15,7 @@ etc/squidreport/lang/pl_PL.txt
 etc/squidreport/lang/pt_BR.txt
 etc/squidreport/lang/ru_RU.txt
 etc/squidreport/lang/uk_UA.txt
-man/man3/squid-analyzer.3.gz
+share/man/man3/squid-analyzer.3.gz
 %%SITE_PERL%%/SquidAnalyzer.pm
 %%PERL5_MAN3%%/SquidAnalyzer.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

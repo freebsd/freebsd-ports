@@ -56,15 +56,6 @@ lib/chicken/%%BINARYVERSION%%/types.db
 lib/libchicken.a
 lib/libchicken.so
 lib/libchicken.so.%%BINARYVERSION%%
-man/man1/chicken-do.1.gz
-man/man1/chicken-install.1.gz
-man/man1/chicken-profile.1.gz
-man/man1/chicken-status.1.gz
-man/man1/chicken-uninstall.1.gz
-man/man1/chicken.1.gz
-man/man1/chicken-csc.1.gz
-man/man1/chicken-csi.1.gz
-%%FEATHERS%%man/man1/feathers.1.gz
 %%FEATHERS%%%%DATADIR%%/feathers.tcl
 %%DATADIR%%/setup.defaults
 %%PORTDOCS%%%%DOCSDIR%%/DEPRECATED
@@ -144,5 +135,14 @@ man/man1/chicken-csi.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/manual/Using the compiler.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Using the interpreter.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual.css
+share/man/man1/chicken-do.1.gz
+share/man/man1/chicken-install.1.gz
+share/man/man1/chicken-profile.1.gz
+share/man/man1/chicken-status.1.gz
+share/man/man1/chicken-uninstall.1.gz
+share/man/man1/chicken.1.gz
+share/man/man1/chicken-csc.1.gz
+share/man/man1/chicken-csi.1.gz
+%%FEATHERS%%share/man/man1/feathers.1.gz
 @postexec %D/bin/chicken-install -update-db
 @postunexec rm -f %D/lib/chicken/%%BINARYVERSION%%/modules.db

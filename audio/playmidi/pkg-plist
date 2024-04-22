@@ -1,5 +1,5 @@
 bin/playmidi
-man/man1/playmidi.1.gz
+share/man/man1/playmidi.1.gz
 share/midi/drums.o3
 share/midi/drums.sb
 share/midi/std.o3

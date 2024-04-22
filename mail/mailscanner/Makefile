@@ -1,6 +1,6 @@
 PORTNAME=	MailScanner
 DISTVERSION=	5.3.4-3
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	.nix
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/MailScanner/v5/releases/download/${DISTVERSION}/
@@ -189,6 +189,6 @@ do-install:
 	(cd ${WRKSRC}/usr/lib/MailScanner && ${COPYTREE_BIN} . \
 		${STAGEDIR}${PREFIX}/lib/MailScanner)
 	cd ${WRKDIR} && \
-		${INSTALL_MAN} ${PORTNAME}.8 ${STAGEDIR}${PREFIX}/man/man8
+		${INSTALL_MAN} ${PORTNAME}.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

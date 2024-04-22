@@ -33,14 +33,14 @@ lib/cmake/KF6KCMUtils/KF6KCMUtilsToolingTargets.cmake
 lib/cmake/KF6KCMUtils/kcmutilsgeneratemoduledata.cpp.in
 lib/cmake/KF6KCMUtils/kcmutilsgeneratemoduledata.h.in
 lib/libKF6KCMUtils.so
-lib/libKF6KCMUtils.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6KCMUtils.so.6
+lib/libKF6KCMUtils.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6KCMUtilsCore.so
-lib/libKF6KCMUtilsCore.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6KCMUtilsCore.so.6
+lib/libKF6KCMUtilsCore.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6KCMUtilsQuick.so
-lib/libKF6KCMUtilsQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6KCMUtilsQuick.so.6
+lib/libKF6KCMUtilsQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libexec/kf6/kcmdesktopfilegenerator
 %%QT_QMLDIR%%/org/kde/kcmutils/AbstractKCM.qml
 %%QT_QMLDIR%%/org/kde/kcmutils/ContextualHelpButton.qml
@@ -60,6 +60,10 @@ lib/libexec/kf6/kcmdesktopfilegenerator
 %%QT_QMLDIR%%/org/kde/kcmutils/private/AboutPlugin.qml
 %%QT_QMLDIR%%/org/kde/kcmutils/private/GridDelegateMenu.qml
 %%QT_QMLDIR%%/org/kde/kcmutils/private/GridViewInternal.qml
+%%QT_QMLDIR%%/org/kde/kcmutils/private/kcmutilsprivateqmlplugin.qmltypes
+%%QT_QMLDIR%%/org/kde/kcmutils/private/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/kcmutils/private/libkcmutilsprivateqmlplugin.so
+%%QT_QMLDIR%%/org/kde/kcmutils/private/qmldir
 %%QT_QMLDIR%%/org/kde/kcmutils/qmldir
 share/locale/af/LC_MESSAGES/kcmutils6.mo
 share/locale/ar/LC_MESSAGES/kcmshell6.mo
@@ -136,6 +140,7 @@ share/locale/ko/LC_MESSAGES/kcmshell6.mo
 share/locale/ko/LC_MESSAGES/kcmutils6.mo
 share/locale/ku/LC_MESSAGES/kcmutils6.mo
 share/locale/lb/LC_MESSAGES/kcmutils6.mo
+share/locale/lt/LC_MESSAGES/kcmshell6.mo
 share/locale/lt/LC_MESSAGES/kcmutils6.mo
 share/locale/lv/LC_MESSAGES/kcmutils6.mo
 share/locale/mai/LC_MESSAGES/kcmutils6.mo

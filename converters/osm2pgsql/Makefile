@@ -1,5 +1,6 @@
 PORTNAME=	osm2pgsql
-PORTVERSION=	1.10.0
+PORTVERSION=	1.11.0
+PORTREVISION=	1
 CATEGORIES=	converters geography
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -11,7 +12,7 @@ WWW=		https://osm2pgsql.org/ \
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS=	armv7 i386 powerpc
 NOT_FOR_ARCHS_REASON=	needs a 64 bit architecture
 
 LIB_DEPENDS=	libproj.so:graphics/proj \
@@ -19,7 +20,8 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 		libexpat.so:textproc/expat2
 BUILD_DEPENDS=	${LOCALBASE}/include/osmium/version.hpp:astro/libosmium \
 		${LOCALBASE}/include/protozero/version.hpp:devel/protozero \
-		${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json
+		${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json \
+		${LOCALBASE}/include/CLI/Version.hpp:devel/cli11
 
 USES=		cmake compiler:c++17-lang pgsql python:run shebangfix
 USE_GITHUB=	yes
@@ -27,7 +29,8 @@ GH_ACCOUNT=	openstreetmap
 SHEBANG_FILES=	scripts/osm2pgsql-replication
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Git \
 		EXTERNAL_LIBOSMIUM \
-		EXTERNAL_PROTOZERO
+		EXTERNAL_PROTOZERO \
+		EXTERNAL_CLI11
 #		EXTERNAL_FMT  # XXX: does not build with libfmt 9.x from ports, so use bundled version until upstream fixes
 CMAKE_ARGS=	-DLUA_EXE="${LOCALBASE}/bin/${LUA_CMD}"
 

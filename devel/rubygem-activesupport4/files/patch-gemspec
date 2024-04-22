@@ -1,11 +1,11 @@
---- activesupport.gemspec.orig	2023-01-05 18:20:34 UTC
+--- activesupport.gemspec.orig	2024-02-14 06:26:24 UTC
 +++ activesupport.gemspec
 @@ -21,7 +21,7 @@ Gem::Specification.new do |s|
  
    s.specification_version = 4
  
--  s.add_runtime_dependency(%q<i18n>.freeze, ["~> 0.7"])
-+  s.add_runtime_dependency(%q<i18n>.freeze, [">= 0.7"])
-   s.add_runtime_dependency(%q<tzinfo>.freeze, ["~> 1.1"])
-   s.add_runtime_dependency(%q<minitest>.freeze, ["~> 5.1"])
-   s.add_runtime_dependency(%q<thread_safe>.freeze, ["~> 0.3", ">= 0.3.4"])
+-  s.add_runtime_dependency(%q<i18n>.freeze, ["~> 0.7".freeze])
++  s.add_runtime_dependency(%q<i18n>.freeze, [">= 0.7".freeze])
+   s.add_runtime_dependency(%q<tzinfo>.freeze, ["~> 1.1".freeze])
+   s.add_runtime_dependency(%q<minitest>.freeze, ["~> 5.1".freeze])
+   s.add_runtime_dependency(%q<thread_safe>.freeze, ["~> 0.3".freeze, ">= 0.3.4".freeze])

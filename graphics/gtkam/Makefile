@@ -1,10 +1,10 @@
 PORTNAME=	gtkam
 PORTVERSION=	1.0
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	Download and view files from various digital cameras
 WWW=		http://www.gphoto.org/proj/gtkam/
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libexif-gtk.so:graphics/libexif-gtk \
 USES=		gettext gmake gnome pathfix pkgconfig
 USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--without-bonobo --without-gnome
 
 CPPFLAGS+=	-I${LOCALBASE}/include

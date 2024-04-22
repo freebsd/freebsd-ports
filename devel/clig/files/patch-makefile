@@ -1,5 +1,35 @@
---- makefile.orig	2013-09-26 15:22:07.000000000 +0200
-+++ makefile	2013-09-26 15:22:46.000000000 +0200
+--- makefile.orig	2004-08-04 02:56:37 UTC
++++ makefile
+@@ -14,7 +14,7 @@
+ exec_prefix =$(prefix)
+ 
+ # Name of subdirectory to be used beyond DOCDIR and LIBDIR
+-cligdir =clig-$(VERSION)
++cligdir =clig
+ 
+ 
+ 
+@@ -31,16 +31,16 @@
+ 
+ # Directory in which to install manual entry for clig, the program
+ M1SUFFIX =1
+-MAN1DIR =$(prefix)/man/man$(M1SUFFIX)
++MAN1DIR =$(prefix)/share/man/man$(M1SUFFIX)
+ 
+ # Directory in which to install manual entries for clig, the Tcl-package.
+ MnSUFFIX =n
+-MANnDIR =$(prefix)/man/man$(MnSUFFIX)
++MANnDIR =$(prefix)/share/man/man$(MnSUFFIX)
+ 
+ # Directory were to put release notes, changeLogs, News etc.
+-DOCDIR =$(prefix)/doc/$(cligdir)
++DOCDIR =$(prefix)/share/doc/$(cligdir)
+ 
+-TCLSH=/usr/bin/tclsh
++TCLSH=/usr/local/bin/tclsh8.6
+ 
+ ######################################################################## 
+ #
 @@ -104,4 +104,5 @@
             M1SUFFIX=$(M1SUFFIX) \
  	   MANnDIR=$(build_root)$(MANnDIR) MnFILES="$(MnFILES.f)" \

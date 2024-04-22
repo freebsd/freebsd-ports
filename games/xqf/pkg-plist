@@ -1,5 +1,5 @@
 bin/xqf
-man/man6/xqf.6.gz
+share/man/man6/xqf.6.gz
 share/locale/ca/LC_MESSAGES/xqf.mo
 share/locale/da/LC_MESSAGES/xqf.mo
 share/locale/de/LC_MESSAGES/xqf.mo

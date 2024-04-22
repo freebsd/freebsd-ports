@@ -1,6 +1,6 @@
 PORTNAME=	xantfarm
 PORTVERSION=	1.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://www.acme.com/software/xantfarm/
 DISTNAME=	${PORTNAME}_23oct1991
@@ -13,6 +13,6 @@ WRKSRC=		${WRKDIR}/xantfarm
 USES=		imake xorg
 USE_XORG=	x11 xext xt
 PLIST_FILES=	bin/xantfarm \
-		man/man1/xantfarm.1.gz
+		share/man/man1/xantfarm.1.gz
 
 .include <bsd.port.mk>

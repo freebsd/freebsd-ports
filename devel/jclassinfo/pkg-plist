@@ -16,6 +16,6 @@ lib/libjclass.so
 lib/libjclass.so.3
 lib/libjclass.so.3.0.1
 libdata/pkgconfig/jclass.pc
-man/man1/jclassinfo.1.gz
+share/man/man1/jclassinfo.1.gz
 share/xml/jclassinfo/jclassinfo.dtd
 share/xml/jclassinfo/jclassinfo2xhtml.xsl

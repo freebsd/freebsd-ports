@@ -15,6 +15,6 @@ lib/libvshadow.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pyvshadow.a
 %%PYTHON_SITELIBDIR%%/pyvshadow.so
 libdata/pkgconfig/libvshadow.pc
-man/man1/vshadowinfo.1.gz
-man/man1/vshadowmount.1.gz
-man/man3/libvshadow.3.gz
+share/man/man1/vshadowinfo.1.gz
+share/man/man1/vshadowmount.1.gz
+share/man/man3/libvshadow.3.gz

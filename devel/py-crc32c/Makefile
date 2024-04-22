@@ -1,5 +1,5 @@
 PORTNAME=	crc32c
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,6 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/crc32c.cpython-39.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/crc32c.cpython-${PYTHON_SUFFIX}.so
 
 .include <bsd.port.mk>

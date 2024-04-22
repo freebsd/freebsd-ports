@@ -3,10 +3,14 @@ include/unicorn/arm64.h
 include/unicorn/m68k.h
 include/unicorn/mips.h
 include/unicorn/platform.h
+include/unicorn/ppc.h
+include/unicorn/riscv.h
+include/unicorn/s390x.h
 include/unicorn/sparc.h
+include/unicorn/tricore.h
 include/unicorn/unicorn.h
 include/unicorn/x86.h
 lib/libunicorn.a
 lib/libunicorn.so
-lib/libunicorn.so.1
+lib/libunicorn.so.2
 libdata/pkgconfig/unicorn.pc

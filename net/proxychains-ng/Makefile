@@ -1,12 +1,8 @@
 PORTNAME=	proxychains-ng
-DISTVERSION=	4.16
-PORTREVISION=	1
+DISTVERSION=	4.17
 CATEGORIES=	net security
 MASTER_SITES=	https://github.com/rofl0r/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		http://ftp.barfooze.de/pub/sabotage/tarballs/
-
-PATCH_SITES=	https://github.com/rofl0r/proxychains-ng/commit/
-PATCHFILES=	07c15a0.patch:-p1
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Redirect connection through proxy servers

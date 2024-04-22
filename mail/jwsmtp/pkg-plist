@@ -6,7 +6,7 @@ lib/libjwsmtp-1.32.so
 lib/libjwsmtp.a
 lib/libjwsmtp.so
 libdata/pkgconfig/jwsmtp-1.32.pc
-%%MANPAGES%%man/man3/jwsmtp.3.gz
+%%MANPAGES%%share/man/man3/jwsmtp.3.gz
 %%PORTDOCS%%%%DOCSDIR%%-1.32/Copying
 %%PORTDOCS%%%%DOCSDIR%%-1.32/basic_code.html
 %%PORTDOCS%%%%DOCSDIR%%-1.32/functions.html

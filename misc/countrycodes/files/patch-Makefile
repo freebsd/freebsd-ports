@@ -1,35 +1,35 @@
 --- Makefile.orig	2017-02-26 15:02:56 UTC
 +++ Makefile
-@@ -9,7 +9,7 @@
+@@ -9,7 +9,7 @@ bindir ?= ${prefix}/bin
  prefix ?= /usr/local
  bindir ?= ${prefix}/bin
- 
+
 -mandir ?= ${prefix}/man/man1
-+mandir ?= ${MANPREFIX}/man/man1
- 
++mandir ?= ${prefix}/share/man/man1
+
  # For system that doesn't support mkdir -p.
  # If you have Linux, don't bother.
-@@ -23,13 +23,13 @@ BINMODE=755
+@@ -23,13 +23,13 @@ LOGDIRMODE=700
  LOGDIRMODE=700
- 
+
  # Compiler to use
 -CC=gcc
 +CC?=gcc
- 
+
  # Compiler warnings
 -WARNINGS= -pedantic -Wall
 +#WARNINGS= -pedantic -Wall
- 
+
  # Compiler flags
 -CCOPTS = -O2 -fomit-frame-pointer
 +CCOPTS = ${CFLAGS}
- 
+
  # The makefile standards document I read says that I have to put it here...
  SHELL = /bin/sh
-@@ -66,11 +66,11 @@ clean:
+@@ -66,11 +66,11 @@ strip:
  strip:
  	strip $(PROGRAM)
- 
+
 -install:
 -	$(MKDIRECTORY) $(DESTDIR)/${bindir} $(DESTDIR)/${mandir}/man1
 +install: strip
@@ -38,6 +38,6 @@
  	@echo "Installing man page..."
 -	$(INSTALL) -m 644 iso3166.1 $(DESTDIR)/${mandir}/man1
 +	$(INSTALL) -m 644 iso3166.1 $(DESTDIR)/${mandir}
- 
+
  update-man:
  	@$(SEDBIN) $(SEDCMDS) iso3166.1.in > iso3166.1

@@ -1,5 +1,5 @@
 --- Makefile.orig	2016-02-19 06:35:50.592222000 -0800
-+++ Makefile	2016-04-21 19:29:52.738338000 -0700
++++ Makefile	2024-03-01 11:46:05.890134000 -0800
 @@ -11,10 +11,10 @@
  # -DHAVE_GEOIP enables support for GeoIP database lookups.
  
@@ -15,7 +15,7 @@
  
  # Mac OS X
  #CC = gcc
-@@ -37,21 +37,21 @@
+@@ -37,22 +37,22 @@
  #LIBS = -L/usr/local/lib -lz -lintl
  
  # FreeBSD
@@ -43,18 +43,12 @@
 +INSTALL_DIR = ${DESTDIR}${PREFIX}
 +CONF_DIR = ${INSTALL_DIR}/etc
 +LOCALE_DIR = ${INSTALL_DIR}
-+
  
++
  OBJS = cisco_ios.o cisco_pix.o compare.o ipchains.o ipfilter.o ipfw.o \
         lancom.o main.o modes.o net.o netfilter.o netscreen.o output.o \
-@@ -89,18 +89,24 @@
- 	$(INSTALL_PROGRAM) fwlogwatch $(INSTALL_DIR)/sbin/fwlogwatch
- 	$(INSTALL_SCRIPT) contrib/fwlw_notify $(INSTALL_DIR)/sbin/fwlw_notify
- 	$(INSTALL_SCRIPT) contrib/fwlw_respond $(INSTALL_DIR)/sbin/fwlw_respond
--	$(INSTALL_DATA) fwlogwatch.8 $(INSTALL_DIR)/share/man/man8/fwlogwatch.8
-+	$(INSTALL_DATA) fwlogwatch.8 $(INSTALL_DIR)/man/man8/fwlogwatch.8
- 
- install-config:
+        parser.o rcfile.o resolve.o response.o snort.o utils.o whois.o
+@@ -95,12 +95,18 @@
  	$(INSTALL_DATA) fwlogwatch.config $(CONF_DIR)/fwlogwatch.config
  
  install-i18n:

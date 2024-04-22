@@ -1,7 +1,7 @@
 PORTNAME=	cingb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.32
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -23,7 +23,7 @@ LDFLAGS+=	-lpthread
 
 PLIST_FILES=	bin/cingb \
 		bin/cingb_conf \
-		man/man6/cingb.6.gz
+		share/man/man6/cingb.6.gz
 PORTDOCS=	README.FAQ README.md
 
 OPTIONS_DEFINE=	DEBUG DOCS
@@ -62,7 +62,7 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cingb ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/cingb_conf ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/freebsd/cingb.6 ${STAGEDIR}${MANPREFIX}/man/man6/
+	${INSTALL_MAN} ${WRKSRC}/man/freebsd/cingb.6 ${STAGEDIR}${PREFIX}/share/man/man6/
 
 do-install-DEBUG-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

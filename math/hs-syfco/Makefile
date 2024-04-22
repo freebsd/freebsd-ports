@@ -11,6 +11,8 @@ WWW=		https://github.com/reactive-systems/syfco
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	ghc-9.4.8:lang/ghc94
+
 USES=		cabal
 
 USE_GITHUB=	yes

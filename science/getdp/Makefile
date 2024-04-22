@@ -1,6 +1,5 @@
 PORTNAME=	getdp
-PORTVERSION=	3.5.0
-PORTREVISION=	2
+PORTVERSION=	3.6.0
 CATEGORIES=	science
 MASTER_SITES=	http://www.geuz.org/getdp/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source

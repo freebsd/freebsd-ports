@@ -1,9 +1,9 @@
 bin/starconvert
 bin/starpkg
 bin/starplot
-man/man1/starconvert.1.gz
-man/man1/starpkg.1.gz
-man/man1/starplot.1.gz
+share/man/man1/starconvert.1.gz
+share/man/man1/starpkg.1.gz
+share/man/man1/starplot.1.gz
 share/applications/starplot.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/ch0.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch1.html

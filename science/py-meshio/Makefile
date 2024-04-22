@@ -1,6 +1,5 @@
 PORTNAME=	meshio
-PORTVERSION=	5.3.4
-PORTREVISION=	1
+PORTVERSION=	5.3.5
 CATEGORIES=	science cad python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,22 +11,17 @@ WWW=		https://github.com/nschloe/meshio
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYNUMPY}	\
-		${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>0:textproc/py-rich@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}netCDF4>0:science/py-netCDF4@${PY_FLAVOR}
 
-USES=		pytest python
-USE_PYTHON=	distutils
+USES=		python
+USE_PYTHON=	pep517 pytest
+PLIST_SUB=	VER=${PORTVERSION}
 
 NO_ARCH=	yes
 
-PLIST_SUB=	PARAVIEW_VER=${PARAVIEW_VER}
-
-post-stage:
-	${MV} ${STAGEDIR}${PREFIX}/share/paraview-5.9	\
-		${STAGEDIR}${PREFIX}/lib/paraview-${PARAVIEW_VER}
-
-.include <../../science/paraview/Makefile.version>
 .include <bsd.port.mk>

@@ -10,7 +10,6 @@ lib/pragha/plugins/notify/libnotify.so
 lib/pragha/plugins/notify/notify.plugin
 lib/pragha/plugins/tunein/libtunein.so
 lib/pragha/plugins/tunein/tunein.plugin
-man/man1/pragha.1.gz
 share/appdata/pragha.appdata.xml
 share/applications/pragha.desktop
 %%DOCSDIR%%/ChangeLog
@@ -46,6 +45,7 @@ share/icons/hicolor/64x64/apps/pragha.png
 %%NLS%%share/locale/uk/LC_MESSAGES/pragha.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/pragha.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pragha.mo
+share/man/man1/pragha.1.gz
 share/pixmaps/pragha/album.png
 share/pixmaps/pragha/artist.png
 share/pixmaps/pragha/cover.png

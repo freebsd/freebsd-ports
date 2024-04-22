@@ -1,6 +1,6 @@
 PORTNAME=	calf
 DISTVERSION=	0.90.3.20210427
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 #MASTER_SITES=	http://calf-studio-gear.org/files/
 PKGNAMESUFFIX=	-lv2
@@ -26,6 +26,7 @@ USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-lv2 --disable-static
 
 USE_GITHUB=	yes
@@ -60,10 +61,6 @@ USES+=		compiler:c++11-lang
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-CXXFLAGS+=	-finline-limit=80 -finline-functions -finline-functions-called-once
-.endif
 
 post-install: # fix absolute symbolic link to be relative
 	@${RM} ${STAGEDIR}${PREFIX}/lib/lv2/calf.lv2/calf.so

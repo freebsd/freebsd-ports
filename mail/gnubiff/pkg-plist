@@ -1,5 +1,4 @@
 bin/gnubiff
-man/man1/gnubiff.1.gz
 share/applications/gnubiff.desktop
 %%NLS%%share/locale/cs/LC_MESSAGES/gnubiff.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gnubiff.mo
@@ -32,6 +31,7 @@ share/gnubiff/tux-big.png
 share/gnubiff/tux-jump(64x64).png
 share/gnubiff/tux-sleep(64x64).png
 share/gnubiff/tux-sleep.png
+share/man/man1/gnubiff.1.gz
 share/pixmaps/gnubiff.png
 @dir %%BONOBODIR%%/servers
 @comment @dir share/gnome-2.0/ui

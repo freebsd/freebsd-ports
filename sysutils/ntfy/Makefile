@@ -22,4 +22,9 @@ USE_PYTHON=	distutils noflavors autoplist
 
 NO_ARCH=	yes
 
+post-patch:
+# Fix build with Python 3.11
+	@${REINPLACE_CMD} -e 's|getargspec|getfullargspec|' \
+		${WRKSRC}/ntfy/__init__.py
+
 .include <bsd.port.mk>

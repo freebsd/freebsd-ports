@@ -1,5 +1,5 @@
 bin/xfce4-terminal
-man/man1/xfce4-terminal.1.gz
+share/man/man1/xfce4-terminal.1.gz
 share/applications/xfce4-terminal-settings.desktop
 share/applications/xfce4-terminal.desktop
 share/icons/hicolor/128x128/apps/org.xfce.terminal-settings.png

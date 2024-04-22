@@ -1,6 +1,5 @@
 PORTNAME=	fig2dev
-PORTVERSION=	3.2.8a
-PORTREVISION=	1
+PORTVERSION=	3.2.9
 CATEGORIES=	print
 MASTER_SITES=	SF/mcj/
 
@@ -22,6 +21,7 @@ USE_XORG=	xpm
 CPE_VENDOR=	xfig_project
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-transfig \
 		GSEXE=gs
 CFLAGS+=	-Wno-return-type

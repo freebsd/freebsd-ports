@@ -22,6 +22,7 @@ sbin/ot-recorder
 %%WWWDIR%%/static/datatables/js/jquery.dataTables.min.js
 %%WWWDIR%%/static/datatables/js/jquery.min.js
 %%WWWDIR%%/static/defaultface.svg
+%%WWWDIR%%/static/index.html
 %%WWWDIR%%/static/leaflet/images/layers-2x.png
 %%WWWDIR%%/static/leaflet/images/layers.png
 %%WWWDIR%%/static/leaflet/images/marker-icon-2x.png
@@ -282,6 +283,7 @@ sbin/ot-recorder
 %%WWWDIR%%/test.txt
 %%WWWDIR%%/utils/debug.js
 %%WWWDIR%%/utils/config.js
+%%WWWDIR%%/utils/index.html
 %%WWWDIR%%/utils/map.css
 %%WWWDIR%%/utils/map.js
 %%WWWDIR%%/utils/map_google.js

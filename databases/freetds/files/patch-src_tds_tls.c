@@ -1,4 +1,4 @@
---- src/tds/tls.c.orig	2022-05-31 06:46:53 UTC
+--- src/tds/tls.c.orig	2023-11-24 09:00:02 UTC
 +++ src/tds/tls.c
 @@ -53,6 +53,10 @@
  #include <sys/socket.h>
@@ -20,7 +20,7 @@
  static BIO_METHOD tds_method_login[1] = {
  {
  	BIO_TYPE_MEM,
-@@ -664,7 +668,7 @@ tds_deinit_openssl_methods(void)
+@@ -665,7 +669,7 @@ tds_deinit_openssl_methods(void)
  #  endif
  #endif
  

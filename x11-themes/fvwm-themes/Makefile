@@ -1,6 +1,6 @@
 PORTNAME=	fvwm-themes
 PORTVERSION=	0.7.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-themes
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -22,6 +22,7 @@ USE_XORG=	xpm
 SHEBANG_FILES=	themes/cde/modules/create-buttonbar-config \
 		themes/redmondxp/modules/FvwmThemesPanelManager
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 NO_ARCH=	yes
 
 post-install:

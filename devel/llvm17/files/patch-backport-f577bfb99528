@@ -1,0 +1,126 @@
+commit f577bfb99528c8e65b3741a7701e6a356f25f1ff
+Author: Alexander Potapenko <glider@google.com>
+Date:   Fri Nov 10 09:33:49 2023 +0100
+
+    [sanitizer][msan] fix AArch64 vararg support for KMSAN (#70660)
+    
+    Cast StackSaveAreaPtr, GrRegSaveAreaPtr, VrRegSaveAreaPtr to pointers to
+    fix assertions in getShadowOriginPtrKernel().
+    
+    Fixes: https://github.com/llvm/llvm-project/issues/69738
+    
+    Patch by Mark Johnston.
+
+diff --git llvm/lib/Transforms/Instrumentation/MemorySanitizer.cpp llvm/lib/Transforms/Instrumentation/MemorySanitizer.cpp
+index e0ff444ab609..f43df2f4a138 100644
+--- llvm/lib/Transforms/Instrumentation/MemorySanitizer.cpp
++++ llvm/lib/Transforms/Instrumentation/MemorySanitizer.cpp
+@@ -1717,6 +1717,12 @@ struct MemorySanitizerVisitor : public InstVisitor<MemorySanitizerVisitor> {
+   std::pair<Value *, Value *>
+   getShadowOriginPtrUserspace(Value *Addr, IRBuilder<> &IRB, Type *ShadowTy,
+                               MaybeAlign Alignment) {
++    VectorType *VectTy = dyn_cast<VectorType>(Addr->getType());
++    if (!VectTy) {
++      assert(Addr->getType()->isPointerTy());
++    } else {
++      assert(VectTy->getElementType()->isPointerTy());
++    }
+     Type *IntptrTy = ptrToIntPtrType(Addr->getType());
+     Value *ShadowOffset = getShadowPtrOffset(Addr, IRB);
+     Value *ShadowLong = ShadowOffset;
+@@ -5258,21 +5264,25 @@ struct VarArgAArch64Helper : public VarArgHelper {
+       // we need to adjust the offset for both GR and VR fields based on
+       // the __{gr,vr}_offs value (since they are stores based on incoming
+       // named arguments).
++      Type *RegSaveAreaPtrTy = IRB.getInt8PtrTy();
+ 
+       // Read the stack pointer from the va_list.
+-      Value *StackSaveAreaPtr = getVAField64(IRB, VAListTag, 0);
++      Value *StackSaveAreaPtr =
++          IRB.CreateIntToPtr(getVAField64(IRB, VAListTag, 0), RegSaveAreaPtrTy);
+ 
+       // Read both the __gr_top and __gr_off and add them up.
+       Value *GrTopSaveAreaPtr = getVAField64(IRB, VAListTag, 8);
+       Value *GrOffSaveArea = getVAField32(IRB, VAListTag, 24);
+ 
+-      Value *GrRegSaveAreaPtr = IRB.CreateAdd(GrTopSaveAreaPtr, GrOffSaveArea);
++      Value *GrRegSaveAreaPtr = IRB.CreateIntToPtr(
++          IRB.CreateAdd(GrTopSaveAreaPtr, GrOffSaveArea), RegSaveAreaPtrTy);
+ 
+       // Read both the __vr_top and __vr_off and add them up.
+       Value *VrTopSaveAreaPtr = getVAField64(IRB, VAListTag, 16);
+       Value *VrOffSaveArea = getVAField32(IRB, VAListTag, 28);
+ 
+-      Value *VrRegSaveAreaPtr = IRB.CreateAdd(VrTopSaveAreaPtr, VrOffSaveArea);
++      Value *VrRegSaveAreaPtr = IRB.CreateIntToPtr(
++          IRB.CreateAdd(VrTopSaveAreaPtr, VrOffSaveArea), RegSaveAreaPtrTy);
+ 
+       // It does not know how many named arguments is being used and, on the
+       // callsite all the arguments were saved.  Since __gr_off is defined as
+diff --git llvm/test/Instrumentation/MemorySanitizer/AArch64/vararg-kmsan.ll llvm/test/Instrumentation/MemorySanitizer/AArch64/vararg-kmsan.ll
+new file mode 100644
+index 000000000000..2189424cd76f
+--- /dev/null
++++ llvm/test/Instrumentation/MemorySanitizer/AArch64/vararg-kmsan.ll
+@@ -0,0 +1,51 @@
++; RUN: opt < %s -S -passes=msan -msan-kernel=1 2>&1 | FileCheck %s
++
++target datalayout = "e-m:e-i64:64-i128:128-n32:64-S128"
++target triple = "aarch64-unknown-linux-gnu"
++
++%struct.__va_list = type { ptr, ptr, ptr, i32, i32 }
++
++define i32 @foo(i32 %guard, ...) {
++  %vl = alloca %struct.__va_list, align 8
++  call void @llvm.lifetime.start.p0(i64 32, ptr %vl)
++  call void @llvm.va_start(ptr %vl)
++  call void @llvm.va_end(ptr %vl)
++  call void @llvm.lifetime.end.p0(i64 32, ptr %vl)
++  ret i32 0
++}
++
++; First check if the variadic shadow values are saved in stack with correct
++; size (192 is total of general purpose registers size, 64, plus total of
++; floating-point registers size, 128).
++
++; CHECK-LABEL: @foo
++; CHECK: [[A:%.*]] = load {{.*}} ptr %va_arg_overflow_size
++; CHECK: [[B:%.*]] = add i64 192, [[A]]
++; CHECK: alloca {{.*}} [[B]]
++
++; We expect three memcpy operations: one for the general purpose registers,
++; one for floating-point/SIMD ones, and one for thre remaining arguments.
++
++; Propagate the GR shadow values on for the va_list::__gp_top, adjust the 
++; offset in the __msan_va_arg_tls based on va_list:__gp_off, and finally
++; issue the memcpy.
++; CHECK: [[GRP:%.*]] = getelementptr inbounds i8, ptr {{%.*}}, i64 {{%.*}}
++; CHECK: [[GRSIZE:%.*]] = sub i64 64, {{%.*}}
++; CHECK: call void @llvm.memcpy.p0.p0.i64(ptr align 8 {{%.*}}, ptr align 8 [[GRP]], i64 [[GRSIZE]], i1 false)
++
++; Propagate the VR shadow values on for the va_list::__vr_top, adjust the 
++; offset in the __msan_va_arg_tls based on va_list:__vr_off, and finally
++; issue the memcpy.
++; CHECK: [[VRP:%.*]] = getelementptr inbounds i8, ptr {{%.*}}, i64 {{%.*}}
++; CHECK: [[VRSIZE:%.*]] = sub i64 128, {{%.*}}
++; CHECK: call void @llvm.memcpy.p0.p0.i64(ptr align 8 {{%.*}}, ptr align 8 [[VRP]], i64 [[VRSIZE]], i1 false)
++
++; Copy the remaining shadow values on the va_list::__stack position (it is
++; on the constant offset of 192 from __msan_va_arg_tls).
++; CHECK: [[STACK:%.*]] = getelementptr inbounds i8, ptr {{%.*}}, i32 192
++; CHECK: call void @llvm.memcpy.p0.p0.i64(ptr align 16 {{%.*}}, ptr align 16 [[STACK]], i64 {{%.*}}, i1 false)
++
++declare void @llvm.lifetime.start.p0(i64, ptr nocapture) #1
++declare void @llvm.va_start(ptr) #2
++declare void @llvm.va_end(ptr) #2
++declare void @llvm.lifetime.end.p0(i64, ptr nocapture) #1
+diff --git llvm/test/Instrumentation/MemorySanitizer/X86/vararg.ll llvm/test/Instrumentation/MemorySanitizer/X86/vararg.ll
+index eb43ea793b9d..cdf291c1e540 100644
+--- llvm/test/Instrumentation/MemorySanitizer/X86/vararg.ll
++++ llvm/test/Instrumentation/MemorySanitizer/X86/vararg.ll
+@@ -1,4 +1,5 @@
+ ; RUN: opt < %s -msan-check-access-address=0 -S -passes=msan 2>&1
++; RUN: opt < %s -msan-check-access-address=0 -S -passes=msan -msan-kernel=1 2>&1
+ ; Test that code using va_start can be compiled on i386.
+ 
+ target datalayout = "e-p:32:32:32-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:32:64-f32:32:32-f64:32:64-v64:64:64-v128:128:128-a0:0:64-f80:32:32-n8:16:32-S128"

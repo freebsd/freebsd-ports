@@ -21,7 +21,7 @@ lib/libfswatch.a
 lib/libfswatch.so
 lib/libfswatch.so.11
 lib/libfswatch.so.11.0.0
-man/man7/fswatch.7.gz
+share/man/man7/fswatch.7.gz
 %%NLS%%%%PORTDOCS%%%%DOCSDIR%%/ABOUT-NLS
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.libfswatch

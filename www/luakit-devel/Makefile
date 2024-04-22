@@ -1,12 +1,12 @@
 PORTNAME=	luakit
 DISTVERSION=	2.3.3-0
 DISTVERSIONSUFFIX=	-g68e4ffc
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	www
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	mbeis@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, small, webkit2 based browser framework extensible with Lua
 WWW=		https://luakit.github.io
 
@@ -30,6 +30,7 @@ GH_ACCOUNT=	luakit
 GH_PROJECT=	luakit
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 
+MAKE_ARGS=	MANPREFIX=${PREFIX}/share/man
 CONFLICTS_INSTALL=	luakit
 
 PORTDATA=	*
@@ -44,7 +45,7 @@ LUAJIT_MAKE_ARGS_OFF=	USE_LUAJIT=0
 post-extract:
 	@${REINPLACE_CMD} -e \
 		's|share/man|man| ; s|luakit/doc|doc/luakit| ; \
-		s|/etc/xdg|${PREFIX}/etc/xdg| ; /MANPREFIX */s|?=|=| ; \
+		s|/etc/xdg|${PREFIX}/etc/xdg| ; \
 		s|gnu99|gnu11| ; s|-ggdb||' \
 		${WRKSRC}/config.mk
 	@${REINPLACE_CMD} -e 's|bin/env lua|&${LUA_VER_STR}|' \

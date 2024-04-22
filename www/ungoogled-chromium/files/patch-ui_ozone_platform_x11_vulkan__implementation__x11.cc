@@ -1,6 +1,6 @@
---- ui/ozone/platform/x11/vulkan_implementation_x11.cc.orig	2022-10-01 07:40:07 UTC
+--- ui/ozone/platform/x11/vulkan_implementation_x11.cc.orig	2024-03-22 14:16:19 UTC
 +++ ui/ozone/platform/x11/vulkan_implementation_x11.cc
-@@ -58,7 +58,11 @@ bool VulkanImplementationX11::InitializeVulkanInstance
+@@ -59,7 +59,11 @@ bool VulkanImplementationX11::InitializeVulkanInstance
  
      path = path.Append("libvk_swiftshader.so");
    } else {

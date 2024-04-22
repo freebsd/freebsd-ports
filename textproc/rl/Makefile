@@ -1,5 +1,6 @@
 PORTNAME=	rl
 PORTVERSION=	0.2.7
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://arthurdejong.org/rl/
 
@@ -11,7 +12,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
-PLIST_FILES=	bin/rl man/man1/rl.1.gz
+PLIST_FILES=	bin/rl share/man/man1/rl.1.gz
 
 .include <bsd.port.mk>

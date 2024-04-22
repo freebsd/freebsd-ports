@@ -1,5 +1,5 @@
 PORTNAME=	cpuid
-DISTVERSION=	20230120
+DISTVERSION=	20240330
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.etallen.com/cpuid/
@@ -24,13 +24,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 CPUID_SUFFIX=	-etallen
 
 PLIST_FILES=	bin/cpuid${CPUID_SUFFIX} \
-		man/man1/cpuid${CPUID_SUFFIX}.1.gz
+		share/man/man1/cpuid${CPUID_SUFFIX}.1.gz
 
 post-patch:
 	${REINPLACE_CMD} 's,CFL=.*,& -pthread,' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cpuid ${STAGEDIR}${PREFIX}/bin/cpuid${CPUID_SUFFIX}
-	${INSTALL_MAN} ${WRKSRC}/cpuid.man.gz ${STAGEDIR}${PREFIX}/man/man1/cpuid${CPUID_SUFFIX}.1.gz
+	${INSTALL_MAN} ${WRKSRC}/cpuid.man.gz ${STAGEDIR}${PREFIX}/share/man/man1/cpuid${CPUID_SUFFIX}.1.gz
 
 .include <bsd.port.mk>

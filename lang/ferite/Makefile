@@ -1,6 +1,6 @@
 PORTNAME=	ferite
 PORTVERSION=	1.0.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 
 USES=		gmake libtool localbase:ldflags
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 LDFLAGS+=	-lpthread
 USE_LDCONFIG=	yes
 PLIST_SUB=	MACHINE_ARCH=${MACHINE_ARCH}

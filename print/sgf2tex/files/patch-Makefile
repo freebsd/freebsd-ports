@@ -12,7 +12,7 @@
 +MFDIR=${PREFIX}/share/texmf/fonts/source/public/GOOE
 +TFMDIR=${PREFIX}/share/texmf/fonts/tfm/public/GOOE
 +TEXINPUTS=${PREFIX}/share/texmf/tex/generic/GOOE
-+MANDIR=${PREFIX}/man/man1/
++MANDIR=${PREFIX}/share/man/man1/
 +BINDIR=${PREFIX}/bin/
 +.if exists(${LOCALBASE}/bin/MakeTeXls-R)
 +TEXHASH=MakeTeXls-R

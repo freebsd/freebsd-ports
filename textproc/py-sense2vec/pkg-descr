@@ -1,0 +1,3 @@
+sense2vec (Trask et. al, 2015) is a nice twist on word2vec that lets you learn
+more interesting and detailed word vectors. This library is a simple Python
+implementation for loading, querying and training sense2vec models.

@@ -1,5 +1,5 @@
 PORTNAME=	numix-icon-theme
-PORTVERSION=	21.10.31
+PORTVERSION=	23.12.02
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com

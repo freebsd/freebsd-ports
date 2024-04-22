@@ -1,6 +1,6 @@
 PORTNAME=	idea
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.de-moliner.ch/richard/downloads/ \
 		LOCAL/ehaupt
@@ -22,7 +22,7 @@ do-build:
 		-o ${WRKSRC}/${PORTNAME}
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/manl/idea.l ${STAGEDIR}${PREFIX}/man/manl
+	${INSTALL_MAN} ${WRKSRC}/manl/idea.l ${STAGEDIR}${PREFIX}/share/man/manl
 	${INSTALL_PROGRAM} -m 0555 ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/Examples ${STAGEDIR}${EXAMPLESDIR}

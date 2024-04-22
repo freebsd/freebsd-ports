@@ -1,5 +1,6 @@
 PORTNAME=	libopenbsd
 PORTVERSION=	r298107
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/jbeich \
 		https://svn.freebsd.org/base/head/lib/${PORTNAME}/:svn
@@ -30,7 +31,11 @@ SVN_REV?=	${PORTVERSION:S/r//}
 .endif
 
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
+.if ${WITH_SUBVERSION_VER:U} == LTS
+FETCH_DEPENDS+=	svn:devel/subversion-lts
+.else
 FETCH_DEPENDS+=	svn:devel/subversion
+.endif
 
 NO_CHECKSUM=	yes
 

@@ -4,7 +4,7 @@
  id: 58aaab96-7191-4978-acec-a3b1deb03332
  name: Modbus Payloads
  standard_payloads:
-+  modbus_cli-freebsd:
++  modbus_cli_freebsd:
 +    description: Modbus Client program (FreeBSD)
 +    id: 6f914083-738b-11ee-9734-8851fb56e3b2
    modbus_cli:

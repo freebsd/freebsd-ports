@@ -226,6 +226,6 @@ lib/libecl.so
 lib/libecl.so.%%VERSION%%
 lib/libecl.so.21
 lib/libecl.so.21.2
-man/man1/ecl-config.1.gz
-man/man1/ecl.1.gz
+share/man/man1/ecl-config.1.gz
+share/man/man1/ecl.1.gz
 @dir include/ecl/gc

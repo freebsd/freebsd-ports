@@ -1,17 +1,15 @@
 PORTNAME=	timg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.1
+DISTVERSION=	1.6.0
 CATEGORIES=	graphics
 
-MAINTAINER=	uzsolt@uzsolt.hu
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Terminal Image and Video Viewer
 WWW=		https://github.com/hzeller/timg
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	pkgconf>0:devel/pkgconf \
-		ffmpeg>0:multimedia/ffmpeg
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 		libdeflate.so:archivers/libdeflate \
 		libexif.so:graphics/libexif \
@@ -20,15 +18,17 @@ LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 		libsixel.so:graphics/libsixel \
 		libturbojpeg.so:graphics/libjpeg-turbo
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler:c++17-lang pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	hzeller
 
 # timg requires libavutil, contained in multimedia/ffmpeg
 # isn't splitted libavcodec, libavutil, etc.
 CMAKE_ON=	WITH_VIDEO_DECODING WITH_VIDEO_DEVICE
-CMAKE_OFF=	TIMG_VERSION_FROM_GIT WITH_OPENSLIDE_SUPPORT
+CMAKE_OFF=	TIMG_VERSION_FROM_GIT WITH_OPENSLIDE_SUPPORT WITH_POPPLER \
+		WITH_RSVG
 
-PLIST_FILES=	bin/timg share/man/man1/timg.1.gz
+PLIST_FILES=	bin/timg \
+		share/man/man1/timg.1.gz
 
 .include <bsd.port.mk>

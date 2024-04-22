@@ -1,6 +1,6 @@
 PORTNAME?=		mysql
 PORTVERSION=		8.0.35
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-8.0
 PKGNAMESUFFIX?=		80-server
@@ -189,7 +189,6 @@ SSP_UNSAFE=	yes
 LDFLAGS+=	-latomic
 USES+=		compiler:gcc-c++11-lib
 .else
-CXXFLAGS+=	-malign-double
 USES+=		compiler:c++17-lang
 .endif
 

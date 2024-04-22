@@ -1,12 +1,13 @@
 PORTNAME=	telepath
-PORTVERSION=	0.3
+PORTVERSION=	0.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for exchanging data between Python and JavaScript
-WWW=		https://github.com/wagtail/telepath
+WWW=		https://wagtail.github.io/telepath/ \
+		https://github.com/wagtail/telepath
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

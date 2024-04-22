@@ -1,5 +1,6 @@
 PORTNAME=	pbasic
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.berklix.org/pub/FreeBSD/ports/distfiles/ \
 		http://www.berklix.com/~jhs/ftp/distfiles/
@@ -13,7 +14,7 @@ LICENSE=	PD
 
 ALL_TARGET=	freebsd
 MAKEFILE=	makefile
-PLIST_FILES=	bin/pbasic man/man1/pbasic.1.gz
+PLIST_FILES=	bin/pbasic share/man/man1/pbasic.1.gz
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e '/^CC/s/=/?=/' \
@@ -27,6 +28,6 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/basic ${STAGEDIR}${PREFIX}/bin/pbasic
-	${INSTALL_MAN} ${WRKSRC}/docs/basic.1 ${STAGEDIR}${PREFIX}/man/man1/pbasic.1
+	${INSTALL_MAN} ${WRKSRC}/docs/basic.1 ${STAGEDIR}${PREFIX}/share/man/man1/pbasic.1
 
 .include <bsd.port.mk>

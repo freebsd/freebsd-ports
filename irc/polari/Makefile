@@ -1,6 +1,6 @@
 PORTNAME=	polari
 PORTVERSION=	42.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -26,7 +26,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		desktop-file-utils gettext gnome localbase \
 		meson pkgconfig tar:xz
-USE_GNOME=	cairo gtk30 introspection
+USE_GNOME=	cairo gtk30 introspection libadwaita
 USE_LDCONFIG=	yes
 
 GLIB_SCHEMAS=	org.gnome.Polari.gschema.xml

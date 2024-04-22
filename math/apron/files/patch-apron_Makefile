@@ -1,0 +1,11 @@
+--- apron/Makefile.orig	2020-09-11 15:30:57 UTC
++++ apron/Makefile
+@@ -163,7 +163,7 @@ ap_version.h: ../version.mk
+ 	echo "#define AP_VERSION       \"${VERSION_STR}\"" >> $@
+ 	echo "#endif" >> $@
+ 
+-.PHONY : dep depend
++.PHONY : dep
+ 
+ #--------------------------------------------------------------
+ # IMPLICIT RULES AND DEPENDENCIES

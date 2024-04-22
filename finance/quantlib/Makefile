@@ -1,5 +1,6 @@
 PORTNAME=	quantlib
 PORTVERSION=	1.32
+PORTREVISION=	2
 CATEGORIES=	finance math devel
 MASTER_SITES=	http://github.com/lballabio/QuantLib/releases/download/v${PORTVERSION}/
 DISTNAME=	QuantLib-${PORTVERSION}
@@ -16,6 +17,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 USES=		compiler:c++17-lang libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV+=	EMACS=no
 MAKE_ENV+=	AM_MAKEFLAGS=${_MAKE_JOBS}
 TEST_TARGET=	check-examples check

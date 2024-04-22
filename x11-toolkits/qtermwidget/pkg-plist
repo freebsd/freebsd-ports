@@ -18,6 +18,7 @@ libdata/pkgconfig/qtermwidget5.pc
 %%DATADIR%%5/color-schemes/BlackOnWhite.colorscheme
 %%DATADIR%%5/color-schemes/BreezeModified.colorscheme
 %%DATADIR%%5/color-schemes/DarkPastels.colorscheme
+%%DATADIR%%5/color-schemes/Falcon.colorscheme
 %%DATADIR%%5/color-schemes/GreenOnBlack.colorscheme
 %%DATADIR%%5/color-schemes/Linux.colorscheme
 %%DATADIR%%5/color-schemes/Solarized.colorscheme
@@ -59,6 +60,7 @@ libdata/pkgconfig/qtermwidget5.pc
 %%DATADIR%%5/translations/qtermwidget_el.qm
 %%DATADIR%%5/translations/qtermwidget_es.qm
 %%DATADIR%%5/translations/qtermwidget_et.qm
+%%DATADIR%%5/translations/qtermwidget_fi.qm
 %%DATADIR%%5/translations/qtermwidget_fr.qm
 %%DATADIR%%5/translations/qtermwidget_gl.qm
 %%DATADIR%%5/translations/qtermwidget_he.qm
@@ -70,6 +72,7 @@ libdata/pkgconfig/qtermwidget5.pc
 %%DATADIR%%5/translations/qtermwidget_lt.qm
 %%DATADIR%%5/translations/qtermwidget_nb_NO.qm
 %%DATADIR%%5/translations/qtermwidget_nl.qm
+%%DATADIR%%5/translations/qtermwidget_oc.qm
 %%DATADIR%%5/translations/qtermwidget_pl.qm
 %%DATADIR%%5/translations/qtermwidget_pt.qm
 %%DATADIR%%5/translations/qtermwidget_pt_BR.qm

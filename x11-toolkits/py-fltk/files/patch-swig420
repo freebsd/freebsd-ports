@@ -1,0 +1,62 @@
+--- swig/Fl_File_Browser.i.orig	2024-01-07 22:03:35 UTC
++++ swig/Fl_File_Browser.i
+@@ -44,7 +44,7 @@ CHANGE_OWNERSHIP(Fl_File_Browser)
+ 
+   int load_new(PyObject* dObj, PyObject* sObj) {
+     //char *directory=PyString_AsString(dObj);
+-    char *directory=SWIG_Python_str_AsChar(dObj);
++    char *directory=PyString_AsString(dObj);
+     int sort=PyInt_AsLong(sObj);
+     int result = -1;
+ 
+--- swig/Fl_Menu_.i.orig	2024-01-07 22:03:35 UTC
++++ swig/Fl_Menu_.i
+@@ -75,7 +75,7 @@ DEFINE_CALLBACK(Fl_Menu_)
+ 	int add(PyObject *lObj, PyObject *sObj, PyObject *cObj, PyObject* uObj=0, PyObject* fObj=0) {
+ 
+ 		//char *pyLabel=PyString_AsString(lObj);
+-		char* pyLabel = SWIG_Python_str_AsChar(lObj);
++		char* pyLabel = PyString_AsString(lObj);
+ 
+ 		int shortcut=PyInt_AsLong(sObj);
+ 		PyObject *callback=cObj;
+--- swig/Fl_Pixmap.i.orig	2024-01-07 22:03:35 UTC
++++ swig/Fl_Pixmap.i
+@@ -31,7 +31,7 @@ The Fl_Pixmap class supports caching and drawing of co
+ %#endif
+       {
+ 	 //$1[i] = PyString_AsString(PyList_GetItem($input,i));
+-	 $1[i] = SWIG_Python_str_AsChar(PyList_GetItem($input,i));
++	 $1[i] = PyString_AsString(PyList_GetItem($input,i));
+       }
+       else {
+ 	 PyErr_SetString(PyExc_TypeError,"list must contain strings");
+--- swig/WindowShowTypemap.i.orig	2024-01-07 22:03:35 UTC
++++ swig/WindowShowTypemap.i
+@@ -13,7 +13,7 @@
+       if (PyString_Check(o))
+ %#endif
+ 	//$1[i] = PyString_AsString(PyList_GetItem($input,i));
+-	$1[i] = SWIG_Python_str_AsChar(PyList_GetItem($input,i));
++	$1[i] = PyString_AsString(PyList_GetItem($input,i));
+       else {
+ 	PyErr_SetString(PyExc_TypeError,"list must contain strings");
+ 	free($1);
+@@ -52,7 +52,7 @@ void show(PyObject *count = 0, PyObject *data = 0)
+ %#else  
+         if (PyString_Check(o))
+ %#endif
+-	  tmp[i] = SWIG_Python_str_AsChar(PyList_GetItem(count,i));
++	  tmp[i] = PyString_AsString(PyList_GetItem(count,i));
+ 	  //tmp[i] = PyString_AsString(PyList_GetItem(count,i));
+ 	else {
+ 	  PyErr_SetString(PyExc_TypeError,"list must contain strings");
+@@ -77,7 +77,7 @@ void show(PyObject *count = 0, PyObject *data = 0)
+ %#else  
+         if (PyString_Check(o))
+ %#endif
+-	  tmp[i] = SWIG_Python_str_AsChar(PyList_GetItem(data,i));
++	  tmp[i] = PyString_AsString(PyList_GetItem(data,i));
+ 	  //tmp[i] = PyString_AsString(PyList_GetItem(data,i));
+ 	else {
+ 	  PyErr_SetString(PyExc_TypeError,"list must contain strings");

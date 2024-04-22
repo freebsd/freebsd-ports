@@ -1,6 +1,6 @@
 PORTNAME=	soothsayer
 PORTVERSION=	0.6.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	SF/presage/${PORTNAME}/${PORTVERSION}
 
@@ -14,6 +14,7 @@ BUILD_DEPENDS=	help2man:misc/help2man
 
 USES=		compiler libtool localbase ncurses pkgconfig sqlite
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_path_CPPUNIT_CONFIG=no \
 		ac_cv_path_PYTHON=no \
 		ac_cv_path_SWIG=no \

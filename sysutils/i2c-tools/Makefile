@@ -1,5 +1,6 @@
 PORTNAME=	i2c-tools
 PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://mirrors.edge.kernel.org/pub/software/utils/i2c-tools/
 
@@ -13,12 +14,12 @@ NO_BUILD=	yes
 USES=		perl5 shebangfix tar:xz
 USE_PERL5=	run
 
-PLIST_FILES=	man/man1/decode-dimms.1.gz sbin/decode-dimms
+PLIST_FILES=	sbin/decode-dimms share/man/man1/decode-dimms.1.gz
 SHEBANG_FILES=	eeprom/decode-dimms
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/eeprom/decode-dimms.1 \
-		${STAGEDIR}${PREFIX}/man/man1/
+		${STAGEDIR}${PREFIX}/share/man/man1/
 	${INSTALL_SCRIPT} ${WRKSRC}/eeprom/decode-dimms \
 		${STAGEDIR}${PREFIX}/sbin
 

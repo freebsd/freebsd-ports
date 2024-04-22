@@ -1,6 +1,6 @@
 PORTNAME=	skem
 PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://virtual-estates.net/skem/
 
@@ -16,7 +16,9 @@ CFLAGS+=	-I${LOCALBASE}/include
 USES=		tar:bzip2 uidfix
 
 PLIST_FILES=	sbin/skem \
-		man/man8/skem.8.gz
+		share/man/man8/skem.8.gz
+
+MAKE_ARGS=	MANDIR="${PREFIX}/share/man/man"
 
 OPTIONS_DEFINE=	SKEM_NO_CLEANUP SKEM_NO_LOGWATCHER SKEM_NETINET6 SKEM_NETINET
 SKEM_NO_CLEANUP_DESC=	Omit the auto-cleanup module

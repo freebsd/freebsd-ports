@@ -1,5 +1,5 @@
 bin/alephone
-man/man6/alephone.6.gz
+share/man/man6/alephone.6.gz
 %%DATADIR%%/MML/Interface_Rects.mml
 %%DATADIR%%/MML/Transparent_Liquids.mml
 %%DATADIR%%/MML/Transparent_Sprites.mml

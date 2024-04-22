@@ -1,5 +1,5 @@
 PORTNAME=	django-modelcluster
-PORTVERSION=	6.1
+PORTVERSION=	6.2.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,6 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	TAGGIT
 TAGGIT_DESC=	Tagging support
 
-TAGGIT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-taggit>=2.0:www/py-django-taggit@${PY_FLAVOR}
+TAGGIT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-taggit>=3.1:www/py-django-taggit@${PY_FLAVOR}
 
 .include <bsd.port.mk>

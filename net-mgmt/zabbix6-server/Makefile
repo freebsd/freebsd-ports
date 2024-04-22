@@ -1,5 +1,5 @@
 PORTNAME=	zabbix6
-DISTVERSION=	6.0.25
+DISTVERSION=	6.0.28
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
@@ -22,14 +22,16 @@ ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//:S/-$//}
 .if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
 .if ${ZABBIX_BUILD} != "agent"
 CONFIGURE_ARGS+=	--cache-file=${WRKSRC}/config.cache \
-			--with-libevent=${LOCALBASE}
+			--with-libevent=${LOCALBASE} \
+			--with-libxml2
 LIB_DEPENDS+=		libevent.so:devel/libevent
 USE_RC_SUBR=		zabbix_${ZABBIX_BUILD}
 .else
 USE_RC_SUBR=		zabbix_${ZABBIX_BUILD}d
 .endif
 
-USES=		iconv pkgconfig
+USES=		gnome iconv pkgconfig
+USE_GNOME=	libxml2
 
 USERS=		zabbix
 GROUPS=		zabbix
@@ -51,6 +53,7 @@ SUB_LIST=	ZABBIX_BUILD=${ZABBIX_BUILD}
 
 MAKE_ARGS+=		ARCH=freebsd
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--datadir=${ETCDIR} \
 			--enable-${ZABBIX_BUILD} \
 			--sysconfdir=${ETCDIR} \
@@ -146,9 +149,6 @@ CURL_CONFIGURE_WITH=	libcurl
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 IPV6_CONFIGURE_ENABLE=	ipv6
-
-LIBXML2_CONFIGURE_WITH=	libxml2=${LOCALBASE}
-LIBXML2_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 MODBUS_DESC=		Support for Modbus checks
 MODBUS_CONFIGURE_WITH=	libmodbus

@@ -1,6 +1,6 @@
 PORTNAME=	scramble
 PORTVERSION=	0.9.5
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	http://www.shiftygames.com/scramble/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -10,6 +10,7 @@ COMMENT=	From 6 letters you are to create as many words as you can
 WWW=		http://www.shiftygames.com/scramble/scramble.html
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		gmake sdl
 USE_SDL=	sdl mixer image ttf
 
@@ -17,7 +18,7 @@ CPPFLAGS+=	`${SDL_CONFIG} --cflags`
 LDFLAGS+=	`${SDL_CONFIG} --libs`
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man6/scramble.6.gz
+		share/man/man6/scramble.6.gz
 PORTDATA=	*
 
 .include <bsd.port.pre.mk>

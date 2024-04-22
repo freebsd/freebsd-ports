@@ -7,7 +7,7 @@
 -BINDIR ?= ${PREFIX}/bin
 -MANDIR ?= ${PREFIX}/man
 +BINDIR ?= ${DESTDIR}${PREFIX}/bin
-+MANDIR ?= ${DESTDIR}${PREFIX}/man
++MANDIR ?= ${DESTDIR}${PREFIX}/share/man
  
  BINOWN ?= root
  BINGRP ?= wheel

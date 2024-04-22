@@ -10,7 +10,7 @@ flyers_directory          ~/.mame/flyers;%%DATADIR%%/flyers
 titles_directory          ~/.mame/titles;%%DATADIR%%/titles
 ends_directory            ~/.mame/ends;%%DATADIR%%/ends
 marquees_directory        ~/.mame/marguees;%%DATADIR%%/marquees
-artwork_preview_directory ~/.mame/artpreview;%%DATADIR%%/artpreview
+artwork_preview_directory "~/.mame/artwork preview;~/.mame/artpreview;%%DATADIR%%/artwork preview;%%DATADIR%%/artpreview"
 bosses_directory          ~/.mame/bosses;%%DATADIR%%/bosses
 logos_directory           ~/.mame/logo;%%DATADIR%%/logo
 scores_directory          ~/.mame/scores;%%DATADIR%%/scores

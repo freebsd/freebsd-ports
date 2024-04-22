@@ -1,5 +1,6 @@
 PORTNAME=	fd
 PORTVERSION=	3.01j
+PORTREVISION=	1
 CATEGORIES=	shells net
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/fd/ \
 		ftp://ftp.unixusers.net/src/fdclone/
@@ -13,6 +14,7 @@ USE_LOCALE=	ja
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		PREFIX="\$$(DESTDIR)${PREFIX}" \
 		CONFDIR="\$$(DESTDIR)${PREFIX}/etc" \
+		MANTOP="\$$(DESTDIR)${PREFIX}/share/man" \
 
 CONFLICTS_INSTALL=	fd-find # bin/fd
 

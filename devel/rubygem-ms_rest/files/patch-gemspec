@@ -1,11 +1,11 @@
---- ms_rest.gemspec.orig	2023-01-05 19:47:47 UTC
+--- ms_rest.gemspec.orig	2024-02-20 08:44:45 UTC
 +++ ms_rest.gemspec
 @@ -24,7 +24,7 @@ Gem::Specification.new do |s|
-   s.add_development_dependency(%q<bundler>.freeze, [">= 0"])
-   s.add_development_dependency(%q<rake>.freeze, ["~> 10.0"])
-   s.add_development_dependency(%q<rspec>.freeze, ["~> 3.3"])
--  s.add_runtime_dependency(%q<timeliness>.freeze, ["~> 0.3.10"])
-+  s.add_runtime_dependency(%q<timeliness>.freeze, ["~> 0.3", ">= 0.3.10"])
-   s.add_runtime_dependency(%q<concurrent-ruby>.freeze, ["~> 1.0"])
-   s.add_runtime_dependency(%q<faraday>.freeze, [">= 0.9", "< 2.0.0"])
+   s.add_development_dependency(%q<bundler>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<rake>.freeze, ["~> 10.0".freeze])
+   s.add_development_dependency(%q<rspec>.freeze, ["~> 3.3".freeze])
+-  s.add_runtime_dependency(%q<timeliness>.freeze, ["~> 0.3.10".freeze])
++  s.add_runtime_dependency(%q<timeliness>.freeze, ["~> 0.3".freeze, ">= 0.3.10".freeze])
+   s.add_runtime_dependency(%q<concurrent-ruby>.freeze, ["~> 1.0".freeze])
+   s.add_runtime_dependency(%q<faraday>.freeze, [">= 0.9".freeze, "< 2.0.0".freeze])
  end

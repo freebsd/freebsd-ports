@@ -1,6 +1,6 @@
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils perl5
 PKGNAMESUFFIX=	-node
 
@@ -36,7 +36,6 @@ SHEBANG_FILES=	node/bin/munindoc node/sbin/munin-node \
 
 .include "${.CURDIR}/../munin-common/munin.mk"
 
-MAKE_ENV=	MANDIR=${PREFIX}/share/man
 ALL_TARGET=	build-node build-plugins build/node/_bin/munin-async \
 		build/node/_bin/munin-asyncd
 INSTALL_TARGET=	install-node-prime install-async-prime install-plugins-prime

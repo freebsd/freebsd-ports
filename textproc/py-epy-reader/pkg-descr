@@ -1,0 +1,18 @@
+TUI Ebook Reader.
+
+Main features:
+
+- Supported formats:
+  Epub (.epub, .epub3)
+  FictionBook (.fb2)
+  Mobi (.mobi)
+  AZW3 (.azw, .azw3)
+  URL (online reading)
+- Reading progress percentage
+- Bookmarks
+- External dictionary integration (sdcv, dict or wkdict)
+- Inline formats: bold and italic (depend on terminal and font capability.
+  Italic only supported in python>=3.7)
+- Text-to-Speech (with additional setup, read below)
+- Double Spread
+- Seamless (disabled by default, read below)

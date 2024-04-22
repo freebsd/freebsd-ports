@@ -1,5 +1,7 @@
-TIMESTAMP = 1684104338
-SHA256 (xroche-httrack-3.49.4_GH0.tar.gz) = 2b52d3abe607b329807c90647fb7d683e4f88f2959a60200106ec1c824ed1d48
-SIZE (xroche-httrack-3.49.4_GH0.tar.gz) = 1761838
+TIMESTAMP = 1709390432
+SHA256 (xroche-httrack-3.49.5_GH0.tar.gz) = 9ab3f651fbf99fd0c4bf9a55ef2c07c9d8efa792c31dcd2f8828f289c7b8b4c7
+SIZE (xroche-httrack-3.49.5_GH0.tar.gz) = 1767597
 SHA256 (xroche-coucal-73ada07_GH0.tar.gz) = b4872b1e3b283b9ebbeaaf4334f1e9f7b8309fc1cc94dea5cc55946a1833fe8e
 SIZE (xroche-coucal-73ada07_GH0.tar.gz) = 21263
+SHA256 (ce2d2ce810cb1bbaf1c587a3947c31adb47d5244.patch) = 6d221b14289c916ea4e71431af57e6ceae3702cebc0bbcbb7253e23ea46844d9
+SIZE (ce2d2ce810cb1bbaf1c587a3947c31adb47d5244.patch) = 7563

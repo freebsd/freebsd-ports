@@ -1,5 +1,6 @@
 PORTNAME=	xwininfo
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -15,6 +16,7 @@ LIB_DEPENDS=	libxcb-icccm.so:x11/xcb-util-wm
 
 CONFIGURE_ARGS=	--with-xcb-icccm
 
-PLIST_FILES=	bin/xwininfo man/man1/xwininfo.1.gz
+PLIST_FILES=	bin/xwininfo share/man/man1/xwininfo.1.gz
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 .include <bsd.port.mk>

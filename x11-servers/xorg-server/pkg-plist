@@ -189,5 +189,3 @@ share/X11/xorg.conf.d/20-evdev-kbd.conf
 share/aclocal/xorg-server.m4
 @dir etc/X11/xorg.conf.d
 @dir %%FONTPATHD%%
-@dir /var/lib/xkb
-@dir /var/lib

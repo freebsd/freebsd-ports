@@ -8,11 +8,11 @@ etc/bash_completion.d/tarsnap-keygen
 etc/bash_completion.d/tarsnap-keymgmt
 etc/bash_completion.d/tarsnap-keyregen
 etc/bash_completion.d/tarsnap-recrypt
-man/man1/tarsnap-keygen.1.gz
-man/man1/tarsnap-keymgmt.1.gz
-man/man1/tarsnap-keyregen.1.gz
-man/man1/tarsnap-recrypt.1.gz
-man/man1/tarsnap.1.gz
-man/man5/tarsnap.conf.5.gz
+share/man/man1/tarsnap-keygen.1.gz
+share/man/man1/tarsnap-keymgmt.1.gz
+share/man/man1/tarsnap-keyregen.1.gz
+share/man/man1/tarsnap-recrypt.1.gz
+share/man/man1/tarsnap.1.gz
+share/man/man5/tarsnap.conf.5.gz
 share/zsh/site-functions/_tarsnap
 @sample etc/tarsnap.conf.sample

@@ -1,19 +1,11 @@
---- net-snmp-create-v3-user.in.orig	2021-05-25 22:19:35 UTC
+--- net-snmp-create-v3-user.in.orig	2023-08-15 20:32:01 UTC
 +++ net-snmp-create-v3-user.in
 @@ -3,7 +3,7 @@
  # this shell script is designed to add new SNMPv3 users
  # to Net-SNMP config file.
  
--if @PSCMD@ | egrep ' snmpd *$' > /dev/null 2>&1 ; then
+-if @PSCMD@ | @EGREP@ ' snmpd *$' > /dev/null 2>&1 ; then
 +if @PSCMD@ -J 0 | egrep ' snmpd *$' > /dev/null 2>&1 ; then
-     echo "Apparently at least one snmpd demon is already running."
+     echo "Apparently at least one snmpd daemon is already running."
      echo "You must stop them in order to use this command."
      exit 1
-@@ -135,6 +135,7 @@ if test ! -d "$outfile"; then
- fi
- echo "$line" >> "$outfile"
- # Avoid that configure complains that this script ignores @datarootdir@
-+datarootdir="@datarootdir@"
- echo "@datarootdir@" >/dev/null
- outfile="@datadir@/snmp/snmpd.conf"
- line="$token $user"

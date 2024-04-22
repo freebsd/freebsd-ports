@@ -1,6 +1,5 @@
 PORTNAME=	dsbmixer
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	audio
 
 MAINTAINER=	mk@nic-nac-project.org
@@ -12,19 +11,25 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	dsbwrtsysctl:sysutils/dsbwrtsysctl
 
-USES=		compiler:c++11-lang gl qmake qt:5 tar:tgz
-USE_GL=		gl
-USE_QT=		buildtools:build core gui linguisttools:build widgets
+USES=		cmake compiler:c++11-lang gl kde:5 qmake qt:5 tar:tgz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mrclksr
 GH_PROJECT=	DSBMixer
-QMAKE_ARGS=	PORTS=1
 
-OPTIONS_DEFINE=	DEVD
-OPTIONS_DEFAULT=DEVD
+USE_GL=		gl
+USE_KDE=	notifications
+USE_QT=		core dbus gui widgets buildtools:build linguisttools:build \
+		qmake:build
+
+CMAKE_ON=	PORTS
+
+MAKE_ENV+=	DESTDIR=${STAGEDIR}
+
+OPTIONS_DEFINE=		DEVD
+OPTIONS_DEFAULT=	DEVD
 
 DEVD_DESC=	Add new USB audio devices at runtime
-DEVD_MAKE_ARGS_OFF=	-DWITHOUT_DEVD
+DEVD_CMAKE_OFF=	-DWITHOUT_DEVD:BOOL=true
 
 .include <bsd.port.mk>

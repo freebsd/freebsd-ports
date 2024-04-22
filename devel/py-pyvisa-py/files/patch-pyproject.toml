@@ -1,9 +1,9 @@
---- pyproject.toml.orig	2023-05-05 07:12:33 UTC
+--- pyproject.toml.orig	2024-03-07 12:04:46 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [project]
--name = "PyVISA-py"
-+name = "pyvisa-py"
- description = "Pure Python implementation of a VISA library."
- readme = "README.rst"
- requires-python = ">=3.8"
+-  name = "PyVISA-py"
++  name = "pyvisa-py"
+   description = "Pure Python implementation of a VISA library."
+   readme = "README.rst"
+   requires-python = ">=3.8"

@@ -1,6 +1,6 @@
 PORTNAME=	perdition
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail net security
 MASTER_SITES=	http://horms.net/projects/perdition/download/${PORTVERSION}/
 
@@ -19,6 +19,7 @@ SHEBANG_FILES=	${WRKSRC}/perdition/db/ldap/perditiondb_ldap_makedb \
 		${WRKSRC}/perdition/db/odbc/perditiondb_odbc_makedb \
 		${WRKSRC}/perdition/db/postgresql/perditiondb_postgresql_makedb
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	DOCSDIR=${DOCSDIR}

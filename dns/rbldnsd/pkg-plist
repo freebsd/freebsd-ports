@@ -2,7 +2,7 @@
 @group rbldns
 sbin/rbldnsd
 %%ETCDIR%%/example
-man/man8/rbldnsd.8.gz
+share/man/man8/rbldnsd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.81
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/TODO

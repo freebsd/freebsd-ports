@@ -14,10 +14,9 @@ LICENSE_COMB=			multi
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/vendor/simplepie/simplepie/LICENSE.txt
 LICENSE_FILE_GPLv2=		${WRKSRC}/COPYING
 LICENSE_FILE_GPLv2+ =		${WRKSRC}/vendor/geshi/geshi/LICENSE
-LICENSE_FILE_GPLv3=		${WRKSRC}/vendor/marcusschwarz/lesserphp/LICENSE
 LICENSE_FILE_MIT=		${WRKSRC}/vendor/composer/LICENSE
 
-DIST_VER=	${PORTNAME}-2023-04-04a
+DIST_VER=	${PORTNAME}-2024-02-06a
 USES=		cpe php:web,flavors shebangfix tar:tgz
 USE_PHP=	ctype filter gd iconv mbstring ldap pdo_mysql session simplexml xml zlib
 NO_ARCH=	YES

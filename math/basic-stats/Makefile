@@ -1,6 +1,7 @@
 PORTNAME=	basic-stats
 DISTVERSION=	0.1.2-8
 DISTVERSIONSUFFIX=	-g338a259
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,6 +15,8 @@ LIB_DEPENDS=	libxtend.so:devel/libxtend
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
+
+MAKE_ENV=	MANDIR=${PREFIX}/share/man
 
 INSTALL_TARGET=	install-strip
 

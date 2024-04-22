@@ -1,0 +1,9 @@
+tessen is a bash script that can autotype and copy data from password-store and
+gopass files. A Wayland native dmenu is required to use tessen and the
+following dmenu backends are recognized:
+
+  - bemenu
+  - fuzzel
+  - rofi (default)
+  - tofi
+  - wofi

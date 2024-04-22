@@ -11,7 +11,7 @@ upgraded=$(/usr/local/bin/cscli --error -o human hub upgrade)
 if [ -n "$upgraded" ]; then
     # splay initial metrics push
     sleep "$(jot -r 1 1 60)"
-    service crowdsec onestatus && service crowdsec reload
+    service crowdsec onestatus && service crowdsec onereload
 fi
 
 exit 0

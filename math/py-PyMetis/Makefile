@@ -23,7 +23,7 @@ USE_PYTHON=	distutils autoplist pytest
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pymetis/_internal.cpython-39.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pymetis/_internal.cpython-${PYTHON_SUFFIX}.so
 
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} pytest

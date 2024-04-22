@@ -2,9 +2,9 @@ bin/dhcpcd-curses
 %%GTK3%%bin/dhcpcd-gtk
 bin/dhcpcd-online
 %%GTK3%%etc/xdg/autostart/dhcpcd-gtk.desktop
-man/man8/dhcpcd-curses.8.gz
-%%GTK3%%man/man8/dhcpcd-gtk.8.gz
-man/man8/dhcpcd-online.8.gz
+share/man/man8/dhcpcd-curses.8.gz
+%%GTK3%%share/man/man8/dhcpcd-gtk.8.gz
+share/man/man8/dhcpcd-online.8.gz
 %%GTK3%%share/dhcpcd/icons/hicolor/16x16/actions/dialog-ok-apply.png
 %%GTK3%%share/dhcpcd/icons/hicolor/16x16/actions/document-new.png
 %%GTK3%%share/dhcpcd/icons/hicolor/16x16/actions/document-save.png

@@ -1,6 +1,6 @@
 PORTNAME=	gsocket
 PORTVERSION=	1.4.28
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/hackerschoice/gsocket/releases/download/v${PORTVERSION}/
 
@@ -22,6 +22,7 @@ SHEBANG_FILES=	tools/blitz \
 		tools/gs-sftp
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 

@@ -39,7 +39,7 @@ configuration:
 - PHP "session.cache_limiter" is set to "nocache"
 EOM
 }
-{ type: UPGRADE
+{ type: upgrade
   message: <<EOM
 For important information about upgrading from previous versions of Drupal, please
 please see: %%DOCSDIR%%/UPDATE.txt

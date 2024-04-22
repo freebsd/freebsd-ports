@@ -17,7 +17,6 @@ CONFIGURE_ARGS=	--have-resn
 USE_RC_SUBR=	spamilter
 
 LDFLAGS+=	-lpthread
-MAKE_ENV+=	__MAKE_CONF=/dev/null
 
 BINFILES=	spamilter-system-report spamilter-user-report
 SHEBANG_FILES=	${BINFILES}

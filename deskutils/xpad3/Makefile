@@ -1,6 +1,6 @@
 PORTNAME=	xpad
 PORTVERSION=	3.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpad.net/xpad/stable/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	3
@@ -24,6 +24,7 @@ CONFLICTS_INSTALL=	xpad
 USE_XORG=	x11 sm ice
 USE_GNOME=	gtk20 intltool cairo
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 NLS_USES=		gettext
 NLS_CPPFLAGS=		${CXXFLAGS} -I${LOCALBASE}/include
@@ -55,7 +56,7 @@ share/locale/zh_TW/LC_MESSAGES/xpad.mo
 
 PLIST_FILES=	\
 bin/xpad \
-man/man1/xpad.1.gz \
+share/man/man1/xpad.1.gz \
 share/applications/xpad.desktop \
 share/icons/hicolor/scalable/apps/xpad.svg
 

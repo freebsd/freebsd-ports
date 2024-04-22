@@ -14,6 +14,6 @@ lib/libfsext.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pyfsext.a
 %%PYTHON_SITELIBDIR%%/pyfsext.so
 libdata/pkgconfig/libfsext.pc
-man/man1/fsextinfo.1.gz
-man/man1/fsextmount.1.gz
-man/man3/libfsext.3.gz
+share/man/man1/fsextinfo.1.gz
+share/man/man1/fsextmount.1.gz
+share/man/man3/libfsext.3.gz

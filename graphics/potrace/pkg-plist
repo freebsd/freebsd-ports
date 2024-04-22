@@ -1,5 +1,5 @@
 bin/potrace
 bin/mkbitmap
-man/man1/potrace.1.gz
-man/man1/mkbitmap.1.gz
+share/man/man1/potrace.1.gz
+share/man/man1/mkbitmap.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/placement.pdf

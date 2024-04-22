@@ -1,0 +1,18 @@
+--- CMakeLists.txt.orig	2024-02-26 08:35:18 UTC
++++ CMakeLists.txt
+@@ -285,10 +285,13 @@ include_directories(src/include)
+ include_directories(.)
+ include_directories(src/include)
+ 
+-# FreeBSD
++# FreeBSD|DragonFly
+ 
+-if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
++if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD|DragonFly")
+   set(CMAKE_SHARED_LIBRARY_LINK_C_FLAGS "-rdynamic")
++  list(APPEND CMAKE_PREFIX_PATH /usr/local/share/cmake/Modules/FreeRDP2)
++  list(APPEND CMAKE_PREFIX_PATH /usr/local/share/cmake/Modules/FreeRDP-Client2)
++  list(APPEND CMAKE_PREFIX_PATH /usr/local/share/cmake/Modules/WinPR2)
+   include_directories(/usr/local/include /usr/include)
+   link_directories(/usr/local/lib /usr/lib)
+   set(CMAKE_REQUIRED_INCLUDES /usr/local/include)

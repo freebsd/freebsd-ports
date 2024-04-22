@@ -1,6 +1,6 @@
 PORTNAME=	mifluz
 PORTVERSION=	0.26.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -14,6 +14,7 @@ USES=		bison compiler iconv libtool localbase:ldflags pathfix
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-posixmutexes \
 		--localstatedir="${PREFIX}/var" \
 		--without-unac

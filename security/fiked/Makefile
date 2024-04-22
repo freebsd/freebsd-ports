@@ -1,6 +1,6 @@
 PORTNAME=	fiked
 PORTVERSION=	0.0.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://mirror.roe.ch/rel/fiked/
 
@@ -17,7 +17,7 @@ USES=		gmake tar:bzip2
 
 MAKEFILE=	GNUmakefile
 
-PLIST_FILES=	bin/fiked man/man1/fiked.1.gz
+PLIST_FILES=	bin/fiked share/man/man1/fiked.1.gz
 PORTDOCS=	README NEWS
 
 OPTIONS_DEFINE=	LIBNET DOCS
@@ -30,7 +30,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fiked ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/fiked.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/fiked.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

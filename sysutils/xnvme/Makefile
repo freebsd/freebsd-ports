@@ -1,6 +1,5 @@
 PORTNAME=	xnvme
-DISTVERSION=	0.7.3
-PORTREVISION=	1
+DISTVERSION=	0.7.4
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/OpenMPDK/xNVMe/releases/download/v${DISTVERSION}/
 
@@ -10,13 +9,14 @@ WWW=		https://xnvme.io/
 
 LICENSE=	BSD3CLAUSE
 
-NOT_FOR_ARCHS=	armv7 i386
+NOT_FOR_ARCHS=	armv7 i386 powerpc
 NOT_FOR_ARCHS_REASON=	use of types with platform-specific length
 
 USES=		meson
 USE_LDCONFIG=	yes
 
 MESON_ARGS=	-Dforce_completions=true \
+		-Dwith-isal=disabled \
 		-Dwith-libaio=disabled \
 		-Dwith-liburing=disabled \
 		-Dwith-libvfn=disabled \

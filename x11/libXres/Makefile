@@ -1,5 +1,6 @@
 PORTNAME=	libXres
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -14,5 +15,7 @@ USE_XORG=	x11 xext xorgproto
 INSTALL_TARGET=	install-strip
 CPE_PRODUCT=	libxres
 CPE_VENDOR=	x
+
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 .include <bsd.port.mk>

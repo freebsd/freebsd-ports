@@ -20,9 +20,12 @@ bin/ssh-auth-cmd-marionette
 %%SITE_PERL%%/Firefox/Marionette/Exception/Response.pm
 %%SITE_PERL%%/Firefox/Marionette/Exception/StaleElement.pm
 %%SITE_PERL%%/Firefox/Marionette/Extension/HarExportTrigger.pm
+%%SITE_PERL%%/Firefox/Marionette/Extension/Stealth.pm
+%%SITE_PERL%%/Firefox/Marionette/GeoLocation.pm
 %%SITE_PERL%%/Firefox/Marionette/Image.pm
 %%SITE_PERL%%/Firefox/Marionette/Keys.pm
 %%SITE_PERL%%/Firefox/Marionette/Link.pm
+%%SITE_PERL%%/Firefox/Marionette/LocalObject.pm
 %%SITE_PERL%%/Firefox/Marionette/Login.pm
 %%SITE_PERL%%/Firefox/Marionette/Profile.pm
 %%SITE_PERL%%/Firefox/Marionette/Proxy.pm
@@ -30,6 +33,10 @@ bin/ssh-auth-cmd-marionette
 %%SITE_PERL%%/Firefox/Marionette/ShadowRoot.pm
 %%SITE_PERL%%/Firefox/Marionette/Timeouts.pm
 %%SITE_PERL%%/Firefox/Marionette/UpdateStatus.pm
+%%SITE_PERL%%/Firefox/Marionette/WebAuthn/Authenticator.pm
+%%SITE_PERL%%/Firefox/Marionette/WebAuthn/Credential.pm
+%%SITE_PERL%%/Firefox/Marionette/WebFrame.pm
+%%SITE_PERL%%/Firefox/Marionette/WebWindow.pm
 %%SITE_PERL%%/Firefox/Marionette/Window/Rect.pm
 %%SITE_PERL%%/Waterfox/Marionette.pm
 %%SITE_PERL%%/Waterfox/Marionette/Profile.pm
@@ -54,9 +61,12 @@ bin/ssh-auth-cmd-marionette
 %%PERL5_MAN3%%/Firefox::Marionette::Exception::Response.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Exception::StaleElement.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Extension::HarExportTrigger.3.gz
+%%PERL5_MAN3%%/Firefox::Marionette::Extension::Stealth.3.gz
+%%PERL5_MAN3%%/Firefox::Marionette::GeoLocation.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Image.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Keys.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Link.3.gz
+%%PERL5_MAN3%%/Firefox::Marionette::LocalObject.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Login.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Profile.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Proxy.3.gz
@@ -64,6 +74,10 @@ bin/ssh-auth-cmd-marionette
 %%PERL5_MAN3%%/Firefox::Marionette::ShadowRoot.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Timeouts.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::UpdateStatus.3.gz
+%%PERL5_MAN3%%/Firefox::Marionette::WebAuthn::Authenticator.3.gz
+%%PERL5_MAN3%%/Firefox::Marionette::WebAuthn::Credential.3.gz
+%%PERL5_MAN3%%/Firefox::Marionette::WebFrame.3.gz
+%%PERL5_MAN3%%/Firefox::Marionette::WebWindow.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Window::Rect.3.gz
 %%PERL5_MAN3%%/Waterfox::Marionette.3.gz
 %%PERL5_MAN3%%/Waterfox::Marionette::Profile.3.gz

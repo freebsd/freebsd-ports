@@ -1,5 +1,6 @@
 PORTNAME=	tippecanoe
 DISTVERSION=	2.26.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	darcy@dbitech.ca
@@ -21,7 +22,7 @@ GH_ACCOUNT=	felt
 
 PLIST_FILES=	bin/tile-join bin/tippecanoe bin/tippecanoe-decode \
 		bin/tippecanoe-enumerate bin/tippecanoe-json-tool \
-		man/man1/tippecanoe.1.gz
+		share/man/man1/tippecanoe.1.gz
 
 .include <bsd.port.options.mk>
 
@@ -35,6 +36,6 @@ do-install:
 .for file in tile-join tippecanoe tippecanoe-decode tippecanoe-enumerate tippecanoe-json-tool
 	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR$}${PREFIX}/bin
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/man/tippecanoe.1 ${STAGEDIR}${PREFIX}/man/man1/tippecanoe.1
+	${INSTALL_MAN} ${WRKSRC}/man/tippecanoe.1 ${STAGEDIR}${PREFIX}/share/man/man1/tippecanoe.1
 
 .include <bsd.port.mk>

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@yao-pkg/pkg": "^5.11.1"
+  }
+}

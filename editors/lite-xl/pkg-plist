@@ -1,6 +1,7 @@
 bin/lite-xl
 share/applications/org.lite_xl.lite_xl.desktop
 %%DATADIR%%/colors/abyss.lua
+%%DATADIR%%/colors/bearded-theme-vivid-black.lua
 %%DATADIR%%/colors/betelgeuse.lua
 %%DATADIR%%/colors/c0mfy.lua
 %%DATADIR%%/colors/catppuccin-frappe.lua
@@ -215,6 +216,7 @@ share/applications/org.lite_xl.lite_xl.desktop
 %%DATADIR%%/plugins/language_batch.lua
 %%DATADIR%%/plugins/language_bib.lua
 %%DATADIR%%/plugins/language_blade.lua
+%%DATADIR%%/plugins/language_blueprint.lua
 %%DATADIR%%/plugins/language_c.lua
 %%DATADIR%%/plugins/language_c7.lua
 %%DATADIR%%/plugins/language_caddyfile.lua

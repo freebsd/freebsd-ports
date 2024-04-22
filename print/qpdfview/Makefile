@@ -1,11 +1,11 @@
 PORTNAME=	qpdfview
 DISTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/trunk/${DISTVERSION}/+download/
 DISTNAME=	${PORTNAME}-0.5
 
-MAINTAINER=	salvadore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tabbed DjVu/PDF/PS document viewer
 WWW=		https://launchpad.net/qpdfview
 
@@ -40,7 +40,7 @@ PS_QMAKE_OFF=	"CONFIG+=without_ps"
 .include <bsd.port.options.mk>
 
 pre-configure:
-	${REINPLACE_CMD} -e 's#/usr#${PREFIX}#g;s#${PREFIX}/share/man#${PREFIX}/man#g' \
+	${REINPLACE_CMD} -e 's#/usr#${PREFIX}#g' \
 		${WRKSRC}/${PORTNAME}.pri
 	cd ${WRKSRC} && ${LRELEASE} ${PORTNAME}.pro
 

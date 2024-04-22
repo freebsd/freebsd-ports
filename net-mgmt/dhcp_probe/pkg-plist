@@ -1,4 +1,4 @@
-man/man5/dhcp_probe.cf.5.gz
-man/man8/dhcp_probe.8.gz
+share/man/man5/dhcp_probe.cf.5.gz
+share/man/man8/dhcp_probe.8.gz
 sbin/dhcp_probe
 @sample etc/dhcp_probe.cf.sample

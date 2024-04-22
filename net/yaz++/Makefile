@@ -1,6 +1,6 @@
 PORTNAME=	yaz++
 PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yazpp/
 DISTNAME=	yazpp-${PORTVERSION}
@@ -12,6 +12,7 @@ WWW=		https://www.indexdata.dk/yazplusplus/
 LIB_DEPENDS=	libyaz.so:net/yaz
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}/bin
 INSTALL_TARGET=	install-strip
 USES=		libtool

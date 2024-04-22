@@ -1,5 +1,5 @@
 PORTNAME=	autoconf
-PORTVERSION=	2.71
+DISTVERSION=	2.72
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -20,10 +20,12 @@ BUILD_DEPENDS=	gm4:devel/m4
 RUN_DEPENDS=	autoconf-switch>=0:devel/autoconf-switch \
 		gm4:devel/m4
 
-VERSION=	2.71
 USES=		perl5 tar:xz
 
+VERSION=	${DISTVERSION}
+
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--program-suffix=${VERSION} \
 		--without-lispdir
 CONFIGURE_ENV=	AWK=${AWK} \

@@ -1,6 +1,6 @@
 PORTNAME=	hpenc
 PORTVERSION=	3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -15,10 +15,10 @@ USES=		cmake compiler:c++11-lib ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
 
-PLIST_FILES=	bin/hpenc bin/hpenc-${PORTVERSION} man/man1/hpenc.1.gz
+PLIST_FILES=	bin/hpenc bin/hpenc-${PORTVERSION} share/man/man1/hpenc.1.gz
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/hpenc.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/hpenc.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/hpenc
 
 .include <bsd.port.mk>

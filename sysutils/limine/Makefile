@@ -1,5 +1,5 @@
 PORTNAME=	limine
-DISTVERSION=	6.20231227.0
+DISTVERSION=	7.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${PORTNAME}-bootloader/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -15,10 +15,15 @@ BUILD_DEPENDS=	mtools:emulators/mtools \
 
 USES=		gmake
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CONFIGURE_ARGS=	--enable-all
 MAKEFILE=	GNUmakefile
 
 INSTALL_TARGET=	install-strip
+
+PORTDOCS=	CONFIG.md COPYING PHILOSOPHY.md PROTOCOL.md README.md
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

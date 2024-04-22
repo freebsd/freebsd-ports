@@ -1,5 +1,6 @@
 PORTNAME=	ne
 PORTVERSION=	3.05
+PORTREVISION=	1
 CATEGORIES=	japanese editors
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA018758/archive/
 
@@ -18,8 +19,8 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ne ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/src/ne_en.1 ${STAGEDIR}${PREFIX}/man/man1/ne.1
-	${INSTALL_MAN} ${WRKSRC}/src/ne.1 ${STAGEDIR}${PREFIX}/man/ja/man1
+	${INSTALL_MAN} ${WRKSRC}/src/ne_en.1 ${STAGEDIR}${PREFIX}/share/man/man1/ne.1
+	${INSTALL_MAN} ${WRKSRC}/src/ne.1 ${STAGEDIR}${PREFIX}/share/man/ja/man1
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 .for i in key* nerc* term*
 	${INSTALL_DATA} ${WRKSRC}/etc/${i} ${STAGEDIR}${ETCDIR}

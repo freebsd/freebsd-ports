@@ -1,5 +1,4 @@
 bin/gnome-power-statistics
-%%MANPAGES%%man/man1/gnome-power-statistics.1.gz
 share/applications/org.gnome.PowerStats.desktop
 share/icons/hicolor/16x16/apps/org.gnome.PowerStats.png
 share/icons/hicolor/22x22/apps/org.gnome.PowerStats.png
@@ -90,4 +89,5 @@ share/locale/vi/LC_MESSAGES/gnome-power-manager.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-power-manager.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-power-manager.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-power-manager.mo
+%%MANPAGES%%share/man/man1/gnome-power-statistics.1.gz
 share/metainfo/org.gnome.PowerStats.appdata.xml

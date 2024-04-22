@@ -2,11 +2,6 @@ bin/siteconfig
 bin/siteuptime
 bin/sitewho
 bin/wzd-config
-man/man1/siteconfig.1.gz
-man/man1/siteuptime.1.gz
-man/man1/sitewho.1.gz
-man/man1/wzd-config.1.gz
-man/man8/wzdftpd.8.gz
 %%ETCDIR%%/file_ginfo.txt
 %%ETCDIR%%/file_group.txt
 %%ETCDIR%%/file_groups.txt
@@ -119,3 +114,8 @@ libdata/pkgconfig/wzdftpd.pc
 %%PORTDOCS%%%%DOCSDIR%%/wzd_tls.cnf
 sbin/wzdftpd
 share/aclocal/wzd.m4
+share/man/man1/siteconfig.1.gz
+share/man/man1/siteuptime.1.gz
+share/man/man1/sitewho.1.gz
+share/man/man1/wzd-config.1.gz
+share/man/man8/wzdftpd.8.gz

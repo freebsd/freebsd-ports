@@ -1,5 +1,5 @@
 PORTNAME=	pytsk
-PORTVERSION=	20210419
+PORTVERSION=	20231007
 CATEGORIES=	sysutils security devel python
 MASTER_SITES=	https://github.com/py4n6/pytsk/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine

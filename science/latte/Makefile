@@ -1,7 +1,7 @@
 PORTNAME=	latte
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,7 +33,7 @@ DBCSR_BROKEN=		see https://github.com/lanl/LATTE/issues/92
 OPENMP_CMAKE_BOOL=	OPENMP
 
 MPI_CMAKE_BOOL=		DO_MPI
-MPI_LIB_DEPENDS=	libmpi.so:net/openmpi
+MPI_LIB_DEPENDS=	libmpi_cxx.so:net/openmpi4
 MPI_LDFLAGS=		${LOCALBASE}/mpi/openmpi/lib/libmpi_mpifh.so
 MPI_PLIST_FILES=	bin/LATTE_MPI_DOUBLE
 MPI_PLIST_FILES_OFF=	bin/LATTE_DOUBLE

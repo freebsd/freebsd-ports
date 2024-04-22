@@ -1,6 +1,6 @@
 PORTNAME=	freedroidrpg
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://ftp.osuosl.org/pub/freedroid/freedroidRPG-${PORTVERSION}/
 DISTNAME=	freedroidRPG-${PORTVERSION}
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		cpe jpeg gmake localbase lua:53 pkgconfig python sdl xorg
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CPE_VENDOR=	freedroid
 USE_XORG=	x11
 USE_SDL=	sdl image gfx

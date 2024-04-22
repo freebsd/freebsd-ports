@@ -1,6 +1,6 @@
 PORTNAME=	mls
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	https://www.marki-online.net/MLS/
 
@@ -17,7 +17,7 @@ MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	mls
 
 SUB_FILES=	pkg-message
-PLIST_FILES=	bin/mls man/man1/mls.1.gz
+PLIST_FILES=	bin/mls share/man/man1/mls.1.gz
 PORTDATA=	html/bar.gif html/mls_class.php html/style_mls.css
 PORTDOCS=	README.txt
 PORTEXAMPLES=	README example.php forward procmailrc

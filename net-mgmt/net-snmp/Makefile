@@ -1,6 +1,5 @@
 PORTNAME=	snmp
-PORTVERSION=	5.9.1
-PORTREVISION=	4
+PORTVERSION=	5.9.4
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION} \
@@ -37,14 +36,11 @@ NEWSYSLOG_DESC=		Automatically rotate snmpd.log via newsyslog
 NOLIBPKG_DESC=		Build without libpkg
 SCTP_DESC=		Build with SCTP MIB support
 
-MAKE_JOBS_UNSAFE=	yes
-
-PORTSCOUT=	skipv:5.7.2.1
-
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+USES=		cpe libtool perl5 ssl
 USE_RC_SUBR=	snmpd snmptrapd
 USE_LDCONFIG=	yes
-USES=		cpe libtool perl5 ssl
 CPE_PRODUCT=	net-snmp
 USE_PERL5=	build run
 USE_CSTD=	c99
@@ -62,7 +58,7 @@ CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 		--with-ldflags="-lm -lkvm -ldevstat -L${PKG_PREFIX}/lib -L${LOCALBASE}/lib ${LCRYPTO}"
 SUB_FILES=	pkg-message
 
-.if !defined(WITHOUT_SSP)
+.if defined(WITH_SSP)
 CONFIGURE_ARGS+=--with-libs="-lssp_nonshared"
 .endif
 
@@ -146,7 +142,7 @@ CONFIGURE_ARGS+=--without-root-access
 .endif
 
 SHLIB_VERSION=	40
-SHLIB_VERSION2=	.1.0
+SHLIB_VERSION2=	.2.1
 PLIST_SUB+=	SHLIB_VERSION=${SHLIB_VERSION} SHLIB_VERSION2=${SHLIB_VERSION2}
 SCRIPTS_SUB=	PREFIX=${PREFIX} PERL=${PERL}
 
@@ -274,6 +270,10 @@ post-configure:
 		s!^.*#undef.*(HAVE_${hdr:tu:S/./_/g:S/\//_/g}).*$$!#define \1 1!g' \
 			${WRKSRC}/include/net-snmp/net-snmp-config.h
 .endfor
+	# Fix after:
+	# https://github.com/net-snmp/net-snmp/commit/923cb442bbef360de227fbca565710518b5ee8e5
+	@${REINPLACE_CMD} -e 's|snmpIPv6BaseDomain.h snmpIPBaseDomain.h|snmpIPv6BaseDomain.h|g' \
+		${WRKSRC}/snmplib/Makefile
 .if ${PORT_OPTIONS:MPYTHON}
 	@(cd ${WRKSRC}/python; \
 	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c bdist_egg \
@@ -287,7 +287,7 @@ post-build:
 	${FIND} ${WRKSRC}/perl -name Makefile | \
 	${XARGS} ${REINPLACE_CMD} -E -e '\
 		s!^(PREFIX) = .*!\1 = ${PREFIX}!; \
-		s!^(INSTALLMAN3DIR|INSTALLSITEMAN3DIR) = .*!\1 = ${PREFIX}/man/man3!; \
+		s!^(INSTALLMAN3DIR|INSTALLSITEMAN3DIR) = .*!\1 = ${PREFIX}/share/man/man3!; \
 		s!^(INSTALLSITELIB|INSTALLSITEARCH) = /usr/local/(.*)!\1 = ${PREFIX}/\2!; \
 		s! doc_(perl|site|\$$\(INSTALLDIRS\))_install$$!!; \
 		'

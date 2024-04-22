@@ -1,7 +1,7 @@
 bin/lynis
 etc/bash_completion.d/lynis
 @sample %%ETCDIR%%/default.prf.sample
-man/man8/lynis.8.gz
+share/man/man8/lynis.8.gz
 %%DATADIR%%/db/fileperms.db
 %%DATADIR%%/db/hints.db
 %%DATADIR%%/db/integrity.db
@@ -20,6 +20,7 @@ man/man8/lynis.8.gz
 %%DATADIR%%/db/languages/gr
 %%DATADIR%%/db/languages/he
 %%DATADIR%%/db/languages/hu
+%%DATADIR%%/db/languages/id
 %%DATADIR%%/db/languages/it
 %%DATADIR%%/db/languages/ja
 %%DATADIR%%/db/languages/ko

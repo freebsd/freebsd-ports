@@ -64,4 +64,10 @@ all-makesum:
 	@cd ${.CURDIR}/../../${${lang:tu}_PORT} && ${MAKE} makesum
 .endfor
 
+all-checksum:
+.for lang in ${LO_LANG_ALL}
+	@cd ${.CURDIR}/../../${${lang:tu}_PORT} && ${MAKE} checksum
+.endfor
+
+
 .include <bsd.port.mk>

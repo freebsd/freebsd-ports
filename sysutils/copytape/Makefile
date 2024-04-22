@@ -1,5 +1,6 @@
 PORTNAME=		copytape
 PORTVERSION=		1.0
+PORTREVISION=	1
 CATEGORIES=		sysutils
 MASTER_SITES=		COMP_SOURCES/unix/volume10
 DISTNAME=		copytape
@@ -22,12 +23,12 @@ MAKE_ARGS+=	CC="${CC} ${CFLAGS}"
 ALL_TARGET=	copytape
 
 PLIST_FILES=	bin/copytape \
-		man/man1/copytape.1.gz \
-		man/man5/copytape.5.gz
+		share/man/man1/copytape.1.gz \
+		share/man/man5/copytape.5.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/copytape ${STAGEDIR}${PREFIX}/bin/copytape
-	${INSTALL_MAN} ${WRKSRC}/copytape.1 ${STAGEDIR}${PREFIX}/man/man1/copytape.1
-	${INSTALL_MAN} ${WRKSRC}/copytape.5 ${STAGEDIR}${PREFIX}/man/man5/copytape.5
+	${INSTALL_MAN} ${WRKSRC}/copytape.1 ${STAGEDIR}${PREFIX}/share/man/man1/copytape.1
+	${INSTALL_MAN} ${WRKSRC}/copytape.5 ${STAGEDIR}${PREFIX}/share/man/man5/copytape.5
 
 .include <bsd.port.mk>

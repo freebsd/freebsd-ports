@@ -1,6 +1,6 @@
 PORTNAME=	etherape
 PORTVERSION=	0.9.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt gnome
 MASTER_SITES=	SF
 
@@ -22,6 +22,7 @@ USES=		gettext gmake gnome iconv localbase pathfix pkgconfig
 USE_GNOME=	atk cairo gdkpixbuf2 gtk30 pango
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 PORTDOCS=	AUTHORS ChangeLog FAQ NEWS README README.bugs TODO
 
 OPTIONS_DEFINE=	DOCS

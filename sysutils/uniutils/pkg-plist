@@ -6,13 +6,6 @@ bin/uniname
 bin/unireverse
 bin/unisurrogate
 bin/utf8lookup
-man/man1/ExplicateUTF8.1.gz
-man/man1/unidesc.1.gz
-man/man1/unifuzz.1.gz
-man/man1/unihist.1.gz
-man/man1/uniname.1.gz
-man/man1/unireverse.1.gz
-man/man1/unisurrogate.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Test1.ann
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Test1.u
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Test2.ann
@@ -23,3 +16,10 @@ man/man1/unisurrogate.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Test4.u
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Test5.ann
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Test5.u
+share/man/man1/ExplicateUTF8.1.gz
+share/man/man1/unidesc.1.gz
+share/man/man1/unifuzz.1.gz
+share/man/man1/unihist.1.gz
+share/man/man1/uniname.1.gz
+share/man/man1/unireverse.1.gz
+share/man/man1/unisurrogate.1.gz

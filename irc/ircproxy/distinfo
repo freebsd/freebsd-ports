@@ -1,2 +1,3 @@
-SHA256 (ircproxy-1.3.6.tar.bz2) = 493b47d86bebfb90a9a6242946c275932656989cfcd3ad990efced04f20d1296
-SIZE (ircproxy-1.3.6.tar.bz2) = 241665
+TIMESTAMP = 1709336064
+SHA256 (ircproxy-1.3.8.tar.gz) = dd1663139827d3cb2e52f3305a62d05a03ad09c5fef42853259c42998863a5f3
+SIZE (ircproxy-1.3.8.tar.gz) = 326703

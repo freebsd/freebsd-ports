@@ -7,6 +7,6 @@ PROG=	koi2koi
 CFLAGS+=	-I${PKGDIR}/src
 
 BINDIR=	${PREFIX}/bin
-MANDIR= ${PREFIX}/man/man
+MANDIR= ${PREFIX}/share/man/man
 
 .include <bsd.prog.mk>

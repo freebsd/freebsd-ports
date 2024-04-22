@@ -1,5 +1,5 @@
 PORTNAME=	dar
-PORTVERSION=	2.7.13
+DISTVERSION=	2.7.14
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	SF
 
@@ -18,6 +18,7 @@ SHEBANG_FILES=	doc/samples/*.bash doc/samples/*.sh doc/samples/dar_backup \
 		doc/samples/date_past_N_days
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--disable-build-html \
 		--disable-dar-static \

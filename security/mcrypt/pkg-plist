@@ -1,6 +1,6 @@
 bin/mcrypt
 bin/mdecrypt
-man/man1/mcrypt.1.gz
+share/man/man1/mcrypt.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/FORMAT
 %%PORTDOCS%%%%DOCSDIR%%/magic
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.mcryptrc

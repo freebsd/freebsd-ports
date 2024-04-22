@@ -1,5 +1,5 @@
 PORTNAME=	postgis
-PORTVERSION=	3.1.10
+PORTVERSION=	3.1.11
 PORTREVISION=	1
 CATEGORIES=	databases geography
 MASTER_SITES=	https://download.osgeo.org/postgis/source/

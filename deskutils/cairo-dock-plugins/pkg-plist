@@ -453,6 +453,7 @@ lib/cairo-dock/libcd-wifi.so
 share/locale/ar/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/ca/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/cs/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/da/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/de/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/el/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/en/LC_MESSAGES/cairo-dock-plugins.mo

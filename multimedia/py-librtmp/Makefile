@@ -12,6 +12,9 @@ WWW=		https://github.com/chrippa/python-librtmp
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Depends on deprecated library librtmp
+EXPIRATION_DATE=2024-04-30
+
 LIB_DEPENDS=	librtmp.so:multimedia/librtmp
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=0:devel/py-cffi@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=0:devel/py-cffi@${PY_FLAVOR}

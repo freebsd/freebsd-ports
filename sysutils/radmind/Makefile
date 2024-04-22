@@ -1,6 +1,6 @@
 PORTNAME=	radmind
 DISTVERSION=	1.16.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/voretaq7/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 
@@ -17,6 +17,7 @@ USES=	gmake ssl localbase
 USE_RC_SUBR=	radmind
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-radminddir=${RADMIND_BASE_DIR}
 
 CONFLICTS_INSTALL=	schilyutils # bin/fsdiff

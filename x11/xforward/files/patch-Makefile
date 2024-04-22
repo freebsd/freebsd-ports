@@ -1,13 +1,15 @@
---- Makefile.orig	1993-06-04 19:32:01.000000000 -0700
-+++ Makefile	2023-02-14 20:39:04.842100000 -0800
-@@ -18,18 +18,19 @@
+diff -u Makefile.orig Makefile
+index c11964d..e1d0343 100644
+--- Makefile.orig
++++ Makefile
+@@ -18,17 +18,18 @@
  # MANDIR is where the manual page will be installed.
  
  DESTDIR=
 -BINDIR=/usr/local/bin
 -MANDIR=/usr/local/man/man1
 +BINDIR=${PREFIX}/bin
-+MANDIR=${PREFIX}/man/man1
++MANDIR=${PREFIX}/share/man/man1
  
  # Where to find things
  # INCFLAGS lists directories to search for header files
@@ -20,12 +22,11 @@
 +INCFLAGS= -I${LOCALBASE}/include
 +LDFLAGS= -L${LOCALBASE}/lib
 +LIBS= -lXm -lXt -lX11 -lXext
- 
 +
+ 
  CFLAGS= ${INCFLAGS} -O
  
- # For CenterLine CodeCenter
-@@ -51,6 +52,7 @@
+@@ -51,6 +52,7 @@ xforward.o:	xforward.c
  install: ${PROGS}
  	install -c xforward ${DESTDIR}${BINDIR}/xforward
  	install -c xforward.1 ${DESTDIR}${MANDIR}/xforward.1

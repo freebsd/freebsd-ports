@@ -1,0 +1,9 @@
+ProxySQL is a high performance, high availability, protocol aware proxy for
+MySQL and forks (like Percona Server and MariaDB).
+
+With its ability to intelligently route queries, balance loads, and provide
+failover handling, ProxySQL empowers organizations to harness the full
+potential of their database infrastructure. Whether grappling with
+scalability challenges, striving to enhance performance, or seeking to
+ensure high availability, ProxySQL emerges as a versatile ally, capable of
+addressing diverse needs across various database environments.

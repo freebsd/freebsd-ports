@@ -1,6 +1,6 @@
 PORTNAME=	synapse
 DISTVERSION=	0.2.99.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpadlibrarian.net/363823069/
 
@@ -24,6 +24,7 @@ LIB_DEPENDS=	libzeitgeist-2.0.so:sysutils/zeitgeist \
 
 USES=		gettext-tools gmake gnome pkgconfig tar:xz vala:build xorg
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 libxml2 pango
 USE_XORG=	x11
 

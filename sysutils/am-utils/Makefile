@@ -1,6 +1,6 @@
 PORTNAME=	am-utils
 PORTVERSION=	6.2
-PORTREVISION=	11
+PORTREVISION=	12
 PORTEPOCH=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/ \
@@ -22,6 +22,7 @@ USES=		autoreconf:build bison libtool makeinfo perl5
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX= ${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shared
 # Enable some filesystems which are not auto-detected with GENERIC kernel.
 CONFIGURE_ARGS+=	ac_cv_fs_mfs=yes ac_cv_mnttab_type_nullfs='"mfs"' ac_cv_mount_type_nullfs='"mfs"' \

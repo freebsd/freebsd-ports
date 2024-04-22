@@ -1,6 +1,6 @@
---- Makefile.dist.orig	1993-08-01 20:28:21.000000000 +0000
-+++ Makefile.dist
-@@ -45,11 +45,14 @@ PROLOGUE = -DPROLOGUE=\"$(MPLIBDIR)\"
+--- Makefile.dist.orig	1993-08-01 22:28:21.000000000 +0200
++++ Makefile.dist	2024-01-28 16:11:09.205979000 +0100
+@@ -45,11 +45,15 @@
  #  Default locations where mp files will be installed.
  #  You might wish to alter these values.
  #
@@ -9,16 +9,18 @@
 +MPPATH     = $(PREFIX)
  MPBINDIR   = $(MPPATH)/bin
 -MPLIBDIR   = $(MPPATH)/lib
+-MPMANDIR   = $(MPPATH)/man/man$(MPMANSECT)
+-MPMANSECT  = l
 +#MPLIBDIR   = $(MPPATH)/lib
 +MPLIBDIR   = $(MPPATH)/share/mp
- MPMANDIR   = $(MPPATH)/man/man$(MPMANSECT)
--MPMANSECT  = l
++#MPMANDIR   = $(MPPATH)/man/man$(MPMANSECT)
++MPMANDIR   = $(MPPATH)/share/man/man$(MPMANSECT)
 +#MPMANSECT  = l
 +MPMANSECT  = 1
  #---------------------------------------------------------------------
  #  Alternate names for the mailp frontend
  #
-@@ -58,11 +61,13 @@ MAILPNAMES = mailp newsp digestp filep f
+@@ -58,11 +62,13 @@
  #  Compilation flags and standard macro definitions.
  #
  CDEFS	 = $(GECOSFIELDS) $(GECOSLENGTH) $(PROLOGUE)
@@ -34,7 +36,7 @@
  #=================================================================
  
  .KEEPSTATE:
-@@ -95,7 +100,7 @@ mp:	$(OBJS) mp.man
+@@ -95,7 +101,7 @@
  SHELL = /bin/sh
  install-a4: common-install
  	   @echo "      Adjusting for A4 paper"
@@ -43,7 +45,7 @@
  		cp mp.common.ps /tmp/tmp-pro; \
  		sed < /tmp/tmp-pro > mp.common.ps \
  		   -e 's|^/fullwidth 8.5 inch def|/fullwidth 595 def|' \
-@@ -107,47 +112,19 @@ install:   common-install
+@@ -107,47 +113,19 @@
  	   @echo "**IMPORTANT NOTE**"
  	   @echo
  	   @echo "Mp is setup by default to work with US Letter sized paper."
@@ -99,7 +101,7 @@
  #
  #  NOTE: If you don't want the mailp, newsp, filep ... symbolic links
  #        installed, then you should comment out the following seven lines.
-@@ -155,8 +132,7 @@ common-install: $(BINARIES)
+@@ -155,8 +133,7 @@
  	   @echo Making mp links
  	   -@for name in $(MAILPNAMES); do \
  		echo -n $$name " "; \

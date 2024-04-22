@@ -1,6 +1,6 @@
 PORTNAME=	srecord
 PORTVERSION=	1.64
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -17,6 +17,8 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 ALL_TARGET=	all libdir/pkgconfig/srecord.pc
 USES=		ghostscript groff libtool:build
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -35,15 +37,15 @@ HEADER_DIRS=	input \
 
 OPTIONS_DEFINE=	DOCS
 
+post-build:
+	${STRIP_CMD} ${WRKSRC}/srecord/.libs/libsrecord.so.0.0.0
+
 pre-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 	${MKDIR} ${HEADER_DIRS:S,^,${STAGEDIR}${PREFIX}/include/${PORTNAME}/,}
 
 post-install:
-	chmod 644 ${STAGEDIR}${PREFIX}/lib/libsrecord.so.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsrecord.so.0
-	chmod 444 ${STAGEDIR}${PREFIX}/lib/libsrecord.so.0
 	${INSTALL_DATA} ${WRKSRC}/libdir/pkgconfig/srecord.pc \
 	    ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
@@ -53,6 +55,6 @@ test:
 build-plist:
 	${RM} ${PLIST}
 	${MAKE} makeplist | \
-	    ${GREP} -v /you/have/to/check/what/makeplist/gives/you >> ${PLIST}
+	    ${GREP} -v you/have/to/check/what/makeplist/gives/you >> ${PLIST}
 
 .include <bsd.port.mk>

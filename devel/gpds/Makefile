@@ -1,5 +1,6 @@
 PORTNAME=	gpds
-DISTVERSION=	1.8.1
+DISTVERSION=	1.8.4
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jbo@FreeBSD.org
@@ -9,21 +10,17 @@ WWW=		https://github.com/simulton/gpds
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		cmake compiler:c++20-lang
+BUILD_DEPENDS=	tinyxml2>10:textproc/tinyxml2
+LIB_DEPENDS=	libtinyxml2.so:textproc/tinyxml2
+RUN_DEPENDS=	tinyxml2>10:textproc/tinyxml2
+
+USES=		cmake compiler:c++20-lang pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	simulton
 
-CMAKE_ON=	GPDS_BUILD_STATIC GPDS_BUILD_SHARED
+CMAKE_ON=	GPDS_BUILD_STATIC GPDS_BUILD_SHARED GPDS_DEPENDENCY_TINYXML2_PKGCONFIG
 CMAKE_OFF=	GPDS_BUILD_EXAMPLES GPDS_BUILD_TESTS
 
 PLIST_SUB=	SOVERSION="${DISTVERSION}"
-
-OPTIONS_DEFINE=		SPDLOG
-OPTIONS_DEFAULT=	SPDLOG
-OPTIONS_SUB=		yes
-
-SPDLOG_DESC=		Enable (de)serialization interface for spdlog
-SPDLOG_RUN_DEPENDS=	spdlog>=1.9.0:devel/spdlog
-SPDLOG_CMAKE_BOOL=	GPDS_FEATURE_SPDLOG
 
 .include <bsd.port.mk>

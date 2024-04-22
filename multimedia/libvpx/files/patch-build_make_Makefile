@@ -1,10 +1,10 @@
 - Make sure NEON is available when building with intrinsics
 
---- build/make/Makefile.orig
+--- build/make/Makefile.orig	2024-01-09 21:12:22 UTC
 +++ build/make/Makefile
-@@ -142,6 +142,28 @@ $(BUILD_PFX)%_avx2.c.o: CFLAGS += -mavx2
- $(BUILD_PFX)%_avx512.c.d: CFLAGS += -mavx512f -mavx512cd -mavx512bw -mavx512dq -mavx512vl
- $(BUILD_PFX)%_avx512.c.o: CFLAGS += -mavx512f -mavx512cd -mavx512bw -mavx512dq -mavx512vl
+@@ -151,6 +151,28 @@ $(BUILD_PFX)%_sve.c.o: CFLAGS += -march=armv8.2-a+dotp
+ $(BUILD_PFX)%_sve.c.d: CFLAGS += -march=armv8.2-a+dotprod+i8mm+sve
+ $(BUILD_PFX)%_sve.c.o: CFLAGS += -march=armv8.2-a+dotprod+i8mm+sve
  
 +# ARM
 +ifeq ($(TGT_ISA),armv6)
@@ -31,7 +31,7 @@
  # POWER
  $(BUILD_PFX)%_vsx.c.d: CFLAGS += -maltivec -mvsx
  $(BUILD_PFX)%_vsx.c.o: CFLAGS += -maltivec -mvsx
-@@ -230,8 +230,8 @@
+@@ -299,8 +321,8 @@ $(DIST_DIR)/$(1): $(2)
  define install_map_template
  $(DIST_DIR)/$(1): $(2)
  	$(if $(quiet),@echo "    [INSTALL] $$@")

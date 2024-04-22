@@ -1,6 +1,6 @@
 PORTNAME=	jwhois
 PORTVERSION=	4.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	GNU \
 		https://dl.fedoraproject.org/pub/fedora/linux/development/rawhide/Everything/source/tree/Packages/j/:srpm
@@ -16,6 +16,7 @@ RUN_DEPENDS=	lynx:www/lynx
 LIB_DEPENDS=	libidn.so:dns/libidn
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		gettext gmake iconv
 CPPFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib

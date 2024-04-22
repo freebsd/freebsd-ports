@@ -11,7 +11,7 @@
 : ${jackd_enable="NO"}
 : ${jackd_user="root"}
 : ${jackd_rtprio="NO"}
-: ${jackd_args="-r -doss -r44100 -p1024 -n3 -w16"}
+: ${jackd_args="--no-realtime -doss -r48000 -p1024 -w32"}
 
 . /etc/rc.subr
 
@@ -20,15 +20,44 @@ rcvar=jackd_enable
 procname=%%PREFIX%%/bin/jackd
 start_cmd="start_jackd"
 
+fail() {
+  echo "JACK failed to start: $1" >&2
+  exit 1
+}
+
+check_config() {
+  # check that jackd_user is set
+  if [ -z "$jackd_user" ]; then
+    fail "jackd_user has to be defined"
+  fi
+
+  # detect intent to use realtime priority
+  if [ "$jackd_rtprio" = "YES" ] || \
+     { echo "$jackd_args" | grep -q -- "oss" && \
+       { echo "$jackd_args" | grep -qw -- "--realtime"  || \
+         echo "$jackd_args" | grep -qw -- "-[A-Za-mo-z]*R[A-Za-z]*"; }; }; then
+    # check that mac_priority(4) is enabled
+    if [ "$(sysctl -qn security.mac.priority.realtime)" != "1" ]; then
+      fail "Realtime priority requires mac_priority(4) to be loaded"
+    fi
+    # check that the user has realtime privileges
+    if ! (su -m "$jackd_user" -c "rtprio 10 test -z"); then
+      fail "User jackd_user=$jackd_user is not a member of the realtime group"
+    fi
+  fi
+}
+
 start_jackd() {
   echo "Starting ${name}."
-  if [ $jackd_rtprio = "YES" ]; then
-    local rt="rtprio 1"
-  fi
+
+  # check that setup is valid
+  check_config
+
   # log the date and parameters
-  echo -e "\n[`date`] Starting the daemon, user=$jackd_user rtprio=$jackd_rtprio args=\"$jackd_args\"" >> /var/log/${name}.log
-  # daemon(8) should be able to set the realtime priority, but it isn't
-  $rt daemon -p /var/run/${name}.pid -u "${jackd_user}" %%PREFIX%%/bin/jackd ${jackd_args}
+  echo -e "\n[`date`] Starting the daemon, user=$jackd_user args=\"$jackd_args\"" >> /var/log/${name}.log
+
+  # start the daemon
+  daemon -p /var/run/${name}.pid -u "$jackd_user" %%PREFIX%%/bin/jackd $jackd_args
 }
 
 load_rc_config ${name}

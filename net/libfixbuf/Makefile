@@ -1,5 +1,6 @@
 PORTNAME=	libfixbuf
 DISTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
@@ -11,6 +12,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USES=		gnome libtool pathfix perl5 pkgconfig
 USE_GNOME=	glib20

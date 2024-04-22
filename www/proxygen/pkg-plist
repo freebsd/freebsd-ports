@@ -188,6 +188,8 @@ include/proxygen/lib/http/structuredheaders/StructuredHeadersEncoder.h
 include/proxygen/lib/http/structuredheaders/StructuredHeadersUtilities.h
 include/proxygen/lib/http/observer/HTTPSessionObserverContainer.h
 include/proxygen/lib/http/observer/HTTPSessionObserverInterface.h
+include/proxygen/lib/http/observer/HTTPTransactionObserverContainer.h
+include/proxygen/lib/http/observer/HTTPTransactionObserverInterface.h
 include/proxygen/lib/http/webtransport/WebTransport.h
 include/proxygen/lib/pools/generators/FileServerListGenerator.h
 include/proxygen/lib/pools/generators/MemberGroupConfig.h
@@ -232,6 +234,7 @@ include/proxygen/lib/utils/NullTraceEventObserver.h
 include/proxygen/lib/utils/ParseURL.h
 include/proxygen/lib/utils/PerfectIndexMap.h
 include/proxygen/lib/utils/RendezvousHash.h
+include/proxygen/lib/utils/SafePathUtils.h
 include/proxygen/lib/utils/StateMachine.h
 include/proxygen/lib/utils/StreamCompressor.h
 include/proxygen/lib/utils/StreamDecompressor.h
@@ -260,4 +263,5 @@ lib/libproxygen.so
 lib/libproxygencurl.so
 lib/libproxygendeviousbaton.so
 lib/libproxygenhqloggerhelper.so
+lib/libproxygenhqserver.so
 lib/libproxygenhttpserver.so

@@ -24,10 +24,10 @@
 -import googletest
 +#import hyphen
 +#import googletest
+ import libvlc
  
  def check_android_ndk_macos_arm(dir):
-   if base.is_dir(dir + "/darwin-x86_64") and not base.is_dir(dir + "/darwin-arm64"):
-@@ -35,17 +35,17 @@ def make():
+@@ -36,17 +36,17 @@ def make():
        if base.is_dir(toolchain):
          check_android_ndk_macos_arm(toolchain + "/prebuilt")
  
@@ -50,6 +50,6 @@
 -  googletest.make()
 +#  hyphen.make()
 +#  googletest.make()
-   
-   if config.check_option("module", "mobile"):
-     if (config.check_option("platform", "android")):
+ 
+   if config.check_option("build-libvlc", "1"):
+     libvlc.make()

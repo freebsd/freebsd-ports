@@ -1,5 +1,5 @@
 bin/packmule
-man/man1/packmule.1.gz
+share/man/man1/packmule.1.gz
 packmule/mkiso/amd64/mkisoimages.sh
 packmule/mkiso/i386/mkisoimages.sh
 packmule/mkiso/powerpc/mkisoimages.sh

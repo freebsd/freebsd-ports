@@ -1,12 +1,13 @@
 PORTNAME=	sphinxcontrib-bibtex
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sphinx extension for BibTeX style citations
-WWW=		https://github.com/mcmtroffaes/sphinxcontrib-bibtex
+WWW=		https://sphinxcontrib-bibtex.readthedocs.io/en/latest/ \
+		https://github.com/mcmtroffaes/sphinxcontrib-bibtex
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst

@@ -12,10 +12,10 @@ gopher/icons/gopher_image.gif
 gopher/icons/gopher_menu.gif
 gopher/icons/gopher_text.gif
 gopher/icons/gopher_unknown.gif
-man/man1/gofish.1.gz
-man/man1/gopherd.1.gz
-man/man1/mkcache.1.gz
-man/man5/dotcache.5.gz
-man/man5/gofish.5.gz
+share/man/man1/gofish.1.gz
+share/man/man1/gopherd.1.gz
+share/man/man1/mkcache.1.gz
+share/man/man5/dotcache.5.gz
+share/man/man5/gofish.5.gz
 sbin/gofish
 sbin/gopherd

@@ -44,7 +44,6 @@ _GPR_ARGS=	-j${MAKE_JOBS_NUMBER} -p
 
 .if ${PORT_OPTIONS:MDEBUG}
 _GPR_ARGS+=	-XASFML_BUILD_MODE=debug
-WITH_DEBUG=	yes
 .endif
 
 post-extract:

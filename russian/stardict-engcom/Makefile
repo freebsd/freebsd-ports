@@ -8,6 +8,8 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	English-Russian Dictionary of Computer Terms
 WWW=		http://download.huzheng.org/ru/
 
+BROKEN=		unfetchable
+
 USES=	tar:bzip2
 
 .include "${.CURDIR}/../stardict-mueller7/files/Makefile.common"

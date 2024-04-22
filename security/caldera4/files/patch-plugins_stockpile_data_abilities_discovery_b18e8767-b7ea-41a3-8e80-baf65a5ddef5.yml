@@ -1,0 +1,13 @@
+--- plugins/stockpile/data/abilities/discovery/b18e8767-b7ea-41a3-8e80-baf65a5ddef5.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/b18e8767-b7ea-41a3-8e80-baf65a5ddef5.yml
+@@ -16,6 +16,10 @@
+       sh:
+         command: |
+           python3 --version;python2 --version;python --version
++    freebsd:
++      sh:
++        command: |
++          pkg version -x python3 | cut -d '-' -f2 | awk '{print $1}' && pkg version -x python2 | cut -d '-' -f2 | awk '{print $1}'
+     windows:
+       cmd:
+         command: |

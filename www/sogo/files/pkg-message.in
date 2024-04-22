@@ -62,6 +62,8 @@ Then add the following lines to the root users' crontab (crontab -e):
 # The credentials file should contain the sieve admin credentials (username:passwd)
 0 0 * * * %%LOCALBASE%%/GNUstep/Local/Tools/Admin/cron-expire-autoreply
 
+Additional useful script files are located at %%DATADIR%%
+
 For more information about using SOGo, visit:
 http://www.sogo.nu/downloads/documentation.html
 EOM

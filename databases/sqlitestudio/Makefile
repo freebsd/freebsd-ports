@@ -1,5 +1,6 @@
 PORTNAME=	sqlitestudio
 DISTVERSION=	3.4.4
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,16 +24,28 @@ OPTIONS_DEFAULT=	${OPTIONS_GROUP_PLUGINS}
 OPTIONS_SUB=		yes
 PLUGINS_DESC=			Install plugins:
 
-ALL_PLUGINS=		CsvImport CsvExport DbSqliteCipher HtmlExport JsonExport MultiEditorImage PdfExport Printing \
-			RegExpImport SqlFormatterSimple SqlExport SqlEnterpriseFormatter XmlExport
+ALL_PLUGINS=		ConfigMigration CsvExport CsvImport DbAndroid DbSqliteCipher \
+			DbSqliteWx FusionDarkStyle HtmlExport JsonExport MultiEditorImage \
+			PdfExport Printing PythonSyntaxHighlighter RegExpImport ScriptingPython \
+			ScriptingTcl SqlEnterpriseFormatter SqlExport SqlFormatterSimple XmlExport
+
 .for p in ${ALL_PLUGINS}
 OPTIONS_GROUP_PLUGINS+=		PLUGIN${p:C/([A-Z])/_\1/g:tu}
 PLUGIN${p:C/([A-Z])/_\1/g:tu}_DESC=		${p} plugin
 PLUGIN${p:C/([A-Z])/_\1/g:tu}_VARS=	PLUGIN_DIRS+=${p}
 .endfor
 
-PLUGIN_DB_SQLITE_CIPHER_USES=		ssl
-PLUGIN_PRINTING_USE=			QT=printsupport
+PLUGIN_DB_SQLITE_CIPHER_USES=				ssl
+PLUGIN_PRINTING_USE=					QT=printsupport
+
+PLUGIN_PLUGIN_PYTHON_SYNTAX_HIGHLIGHTER_USES=		python
+PLUGIN_PLUGIN_PYTHON_SYNTAX_HIGHLIGHTER_CXXFLAGS=	-I${PYTHON_INCLUDEDIR}
+
+PLUGIN_SCRIPTING_PYTHON_USES=				python
+PLUGIN_SCRIPTING_PYTHON_CXXFLAGS=			-I${PYTHON_INCLUDEDIR}
+
+PLUGIN_SCRIPTING_TCL_USES=				tcl:87
+PLUGIN_SCRIPTING_TCL_CXXFLAGS=				-I${TCL_INCLUDEDIR}
 
 WRKSRC_SUBDIR=	SQLiteStudio3
 

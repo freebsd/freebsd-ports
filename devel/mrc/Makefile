@@ -1,6 +1,6 @@
 PORTNAME=	mrc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.10
+DISTVERSION=	1.3.12
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,12 +11,14 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	libmcfp>0:devel/libmcfp
-LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
+TEST_DEPENDS=	catch2>0:devel/catch2
 
-USES=		cmake
+USES=		cmake:testing
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mhekkel
+
+CMAKE_OFF=	BUILD_TESTING
 
 PLIST_FILES=	bin/mrc \
 		share/man/man1/mrc.1.gz \

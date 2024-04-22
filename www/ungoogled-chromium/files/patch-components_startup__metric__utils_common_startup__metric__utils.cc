@@ -1,6 +1,6 @@
---- components/startup_metric_utils/common/startup_metric_utils.cc.orig	2023-09-17 07:59:53 UTC
+--- components/startup_metric_utils/common/startup_metric_utils.cc.orig	2024-02-25 20:22:18 UTC
 +++ components/startup_metric_utils/common/startup_metric_utils.cc
-@@ -78,7 +78,7 @@ base::TimeTicks CommonStartupMetricRecorder::StartupTi
+@@ -85,7 +85,7 @@ base::TimeTicks CommonStartupMetricRecorder::StartupTi
    // Enabling this logic on OS X causes a significant performance regression.
    // TODO(crbug.com/601270): Remove IS_APPLE ifdef once priority changes are
    // ignored on Mac main thread.

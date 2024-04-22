@@ -1,4 +1,4 @@
---- components/policy/core/common/policy_loader_common.cc.orig	2023-09-13 12:11:42 UTC
+--- components/policy/core/common/policy_loader_common.cc.orig	2024-01-30 07:53:34 UTC
 +++ components/policy/core/common/policy_loader_common.cc
 @@ -46,7 +46,7 @@ const char* kSensitivePolicies[] = {
      key::kDefaultSearchProviderEnabled,
@@ -7,11 +7,11 @@
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
      key::kAutoOpenFileTypes,
-     key::kSafeBrowsingAllowlistDomains,
      key::kHomepageIsNewTabPage,
-@@ -55,7 +55,7 @@ const char* kSensitivePolicies[] = {
-     key::kRestoreOnStartup,
-     key::kRestoreOnStartupURLs,
+     key::kPasswordProtectionChangePasswordURL,
+@@ -56,7 +56,7 @@ const char* kSensitivePolicies[] = {
+     key::kSafeBrowsingAllowlistDomains,
+     key::kSiteSearchSettings,
  #endif
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

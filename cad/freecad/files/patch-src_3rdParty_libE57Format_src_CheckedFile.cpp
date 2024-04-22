@@ -1,4 +1,4 @@
---- src/3rdParty/libE57Format/src/CheckedFile.cpp.orig	2022-06-14 16:52:22 +0200
+--- src/3rdParty/libE57Format/src/CheckedFile.cpp.orig	2024-03-20 18:17:18 UTC
 +++ src/3rdParty/libE57Format/src/CheckedFile.cpp
 @@ -25,6 +25,11 @@
   * DEALINGS IN THE SOFTWARE.
@@ -23,7 +23,7 @@
  #else
  #error "no supported OS platform defined"
  #endif
-@@ -483,7 +492,7 @@
+@@ -483,7 +492,7 @@ uint64_t CheckedFile::lseek64( int64_t offset, int whe
  #endif
  #elif defined( __linux__ )
     int64_t result = ::lseek64( fd_, offset, whence );

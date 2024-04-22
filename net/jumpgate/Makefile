@@ -1,6 +1,6 @@
 PORTNAME=	jumpgate
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://jumpgate.sourceforge.net/
 
@@ -12,6 +12,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
-PLIST_FILES=	man/man8/jumpgate.8.gz sbin/jumpgate
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+PLIST_FILES=	sbin/jumpgate share/man/man8/jumpgate.8.gz
 
 .include <bsd.port.mk>

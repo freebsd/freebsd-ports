@@ -24,10 +24,10 @@ lib/pixie/libsdr.so
 lib/pixie/libsdr.so.0
 lib/pixie/libsdr.so.0.0.0
 lib/pixie/modules/gui.so
-man/man1/rndr.1.gz
-man/man1/sdrc.1.gz
-man/man1/sdrinfo.1.gz
-man/man1/texmake.1.gz
+share/man/man1/rndr.1.gz
+share/man/man1/sdrc.1.gz
+share/man/man1/sdrinfo.1.gz
+share/man/man1/texmake.1.gz
 %%DATADIR%%/shaders/ambientindirect.sdr
 %%DATADIR%%/shaders/ambientindirect.sl
 %%DATADIR%%/shaders/ambientlight.sdr

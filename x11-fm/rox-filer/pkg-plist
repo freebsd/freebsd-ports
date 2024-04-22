@@ -144,8 +144,8 @@ apps/ROX-Filer/images/symlink.png
 apps/ROX-Filer/style.css
 apps/ROX-Filer/subclasses
 @(,,755) bin/rox
-man/man1/rox.1.gz
 share/Choices/MIME-types/application_postscript
 share/Choices/MIME-types/text
 share/Choices/MIME-types/text_html
+share/man/man1/rox.1.gz
 share/mime/packages/rox.xml

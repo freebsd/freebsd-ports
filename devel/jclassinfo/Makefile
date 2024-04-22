@@ -1,6 +1,6 @@
 PORTNAME=	jclassinfo
 PORTVERSION=	0.19.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -9,6 +9,7 @@ COMMENT=	Shows information about Java class, dependencies, and more
 WWW=		https://jclassinfo.sourceforge.net/
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes

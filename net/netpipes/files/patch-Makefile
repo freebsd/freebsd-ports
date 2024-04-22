@@ -1,6 +1,6 @@
---- Makefile.orig	1998-10-29 07:00:03.000000000 +1030
-+++ Makefile	2014-05-11 13:28:21.742500328 +0930
-@@ -17,7 +17,7 @@
+--- Makefile.orig	1998-10-28 20:30:03 UTC
++++ Makefile
+@@ -17,10 +17,10 @@
  
  # You probably want to change this:
  #INSTROOT = ${HOME}
@@ -8,8 +8,12 @@
 +INSTROOT = ${STAGEDIR}/${PREFIX}
  #INSTROOT = /usr/local
  INSTBIN = ${INSTROOT}/bin
- INSTMAN = ${INSTROOT}/man
-@@ -59,7 +59,7 @@
+-INSTMAN = ${INSTROOT}/man
++INSTMAN = ${INSTROOT}/share/man
+ 
+ # For those who wish to use gcc instead of the vendor's compiler.
+ #CC=gcc -Wall
+@@ -59,7 +59,7 @@ INSTMAN = ${INSTROOT}/man
  #CFLAGS = -DPOSIX_SIG -DHAVE_INET_ATON $(CDEBUGFLAGS)
  
  # Linux (developed with RedHat 4.2, libc5)
@@ -18,7 +22,7 @@
  
  # SGI
  #CFLAGS = -DSYSV $(CDEBUGFLAGS)
-@@ -71,7 +71,7 @@
+@@ -71,7 +71,7 @@ CFLAGS = -DUSE_IOCTL -DPOSIX_SIG -DHAVE_INET_ATON $(CD
  #CFLAGS = -DPOSIX_SIG $(CDEBUGFLAGS)
  
  # FreeBSD
@@ -27,7 +31,7 @@
  
  # AIX 4.1.4 and 3.2.5
  #CFLAGS = -DPOSIX_SIG -DAIX $(CDEBUGFLAGS)
-@@ -86,7 +86,7 @@
+@@ -86,7 +86,7 @@ CFLAGS = -DUSE_IOCTL -DPOSIX_SIG -DHAVE_INET_ATON $(CD
  
  # gcc can handle both -O and -g at once
  #CDEBUGFLAGS = -g # -Wall -DDEBUG
@@ -36,7 +40,7 @@
  
  ######################################################################
  
-@@ -104,8 +104,7 @@
+@@ -104,8 +104,7 @@ MANPAGES = netpipes.1 faucet.1 hose.1 \
  SSLLIB = -L../SSLeay-0.8.1 -lssl -lcrypto
  
  MANPAGES = netpipes.1 faucet.1 hose.1 \
@@ -46,7 +50,7 @@
  PROGRAMS = faucet hose sockdown getpeername timelimit encapsulate
  
  all	: ${PROGRAMS}
-@@ -138,15 +137,9 @@
+@@ -138,15 +137,9 @@ install : all
  	${CC} ${CFLAGS} ${SSLINC} -c $<
  
  install : all

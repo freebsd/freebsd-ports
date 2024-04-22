@@ -34,12 +34,13 @@ if [ -n "${blocky_user}" ] && [ -z "${blocky_group}" ]; then
 	blocky_group=$(id -gn "${blocky_user}")
 fi
 
+logfile="/var/log/${name}.log"
 pidfile="/var/run/${name}.pid"
 blocky_path="%%PREFIX%%/sbin/blocky"
 
 command="/usr/sbin/daemon"
 procname="/usr/local/sbin/blocky"
-command_args="-c -f -p ${pidfile} ${blocky_path} \
+command_args="-c -f -o ${logfile} -p ${pidfile} ${blocky_path} \
 	-c ${blocky_config} ${blocky_flags}"
 
 start_precmd="blocky_precmd"

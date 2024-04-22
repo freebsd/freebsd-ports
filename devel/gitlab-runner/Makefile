@@ -1,15 +1,14 @@
 PORTNAME=	gitlab-runner
-DISTVERSION=	16.7.0
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	16.11.0
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
 DISTFILES=	prebuilt-x86_64.tar.xz:dockerx64 \
 		prebuilt-arm.tar.xz:dockerarm
 
-PATCH_SITES=	https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/
-PATCHFILES+=	4551.patch:-p1 # https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/4551, Allow FreeBSD to be used with Docker builds
+#PATCH_SITES=	https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/
+#PATCHFILES+=	4551.patch:-p1 # https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/4551, Allow FreeBSD to be used with Docker builds
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Official GitLab Runner written in Go
@@ -23,7 +22,12 @@ RUN_DEPENDS=	bash:shells/bash \
 		ca_root_nss>=0:security/ca_root_nss \
 		git:devel/git
 
-USES=		go:modules
+USES=		go:modules,1.22
+USE_GITLAB=	yes
+GL_ACCOUNT=	gitlab-org
+USE_RC_SUBR=	gitlab_runner
+
+GITBRANCH=	16-10-stable
 GO_MODULE=	gitlab.com/gitlab-org/gitlab-runner
 
 _BUILD_DATE=	$$(date -u +%Y-%m-%dT%H:%M:%S%z)
@@ -34,9 +38,6 @@ GO_BUILDFLAGS= -ldflags=" \
 		-X gitlab.com/gitlab-org/gitlab-runner/common.BUILT=${_BUILD_DATE} \
 		-X gitlab.com/gitlab-org/gitlab-runner/common.BRANCH=${GITBRANCH} \
 		-s -w"
-USE_GITLAB=	yes
-GL_ACCOUNT=	gitlab-org
-GITBRANCH=	16-7-stable
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy
@@ -48,12 +49,10 @@ DISTFILES+=	go.mod
 EXTRACT_ONLY+=	${DISTFILES:N*.mod\:*:N*.mod:C/:.*//:Nprebuilt*:}
 # ---------------------------
 
-PLIST_FILES=	bin/gitlab-runner
-
-USE_RC_SUBR=	gitlab_runner
-
 USERS=		gitlab-runner
 GROUPS=		gitlab-runner
+
+PLIST_FILES=	bin/gitlab-runner
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/out/docker/

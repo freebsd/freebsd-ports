@@ -1,5 +1,5 @@
 PORTNAME=	cookiejar
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/dwaite/cookiejar
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
 USES=		gem
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

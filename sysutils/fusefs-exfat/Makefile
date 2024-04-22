@@ -1,6 +1,7 @@
 PORTNAME=	exfat
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -18,8 +19,10 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	relan
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+
 MAKE_ARGS=	SUBDIRS="libexfat fuse"
 
-PLIST_FILES=	sbin/mount.exfat-fuse sbin/mount.exfat man/man8/mount.exfat-fuse.8.gz
+PLIST_FILES=	sbin/mount.exfat-fuse sbin/mount.exfat share/man/man8/mount.exfat-fuse.8.gz
 
 .include <bsd.port.mk>

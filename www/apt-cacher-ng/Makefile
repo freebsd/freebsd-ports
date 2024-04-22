@@ -1,5 +1,6 @@
 PORTNAME=	apt-cacher-ng
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	DEBIAN_POOL/apt-cacher-ng
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -19,7 +20,7 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_RC_SUBR=	apt_cacher_ng
 
 CMAKE_ARGS=	-DLIBDIR:PATH=${DATADIR} \
-		-DMANDIR:PATH=${PREFIX}/man
+		-DMANDIR:PATH=${PREFIX}/share/man
 
 SUB_FILES=	backends_debian backends_freebsd backends_ubuntu \
 		freebsd_mirrors pkg-message

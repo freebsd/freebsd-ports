@@ -4,7 +4,7 @@ include/dicom/dicom.h
 include/dicom/version.h
 lib/libdicom.so
 lib/libdicom.so.1
-lib/libdicom.so.1.0.0
+lib/libdicom.so.1.1.0
 libdata/pkgconfig/libdicom.pc
 share/man/man1/dcm-dump.1.gz
 share/man/man1/dcm-getframe.1.gz

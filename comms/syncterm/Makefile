@@ -1,5 +1,6 @@
 PORTNAME=	syncterm
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,7 +17,7 @@ USES=		gmake perl5 tar:tgz
 USE_PERL5=	build
 MAKEFILE=	GNUmakefile
 PLIST_FILES=	bin/syncterm \
-		man/man1/syncterm.1.gz \
+		share/man/man1/syncterm.1.gz \
 		share/applications/syncterm.desktop \
 		share/icons/hicolor/64x64/apps/syncterm.png
 
@@ -25,6 +26,7 @@ MAKE_JOBS_UNSAFE=	yes
 MAKE_ARGS+=	WITHOUT_PORTAUDIO=yes
 MAKE_ARGS+=	-C ${WRKSRC}
 MAKE_ARGS+=	PREFIX="${PREFIX}"
+MAKE_ARGS+=	MANPREFIX="${PREFIX}/share"
 MAKE_ARGS+=	INSTALL_EXE="${INSTALL_PROGRAM}"
 MAKE_ARGS+=	RELEASE=1
 

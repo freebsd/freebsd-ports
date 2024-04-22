@@ -6,7 +6,8 @@ DISTNAME=	dictd-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Format a DICT protocol dictionary database
-WWW=		https://www.dict.org/
+WWW=		https://www.dict.org/ \
+		https://sourceforge.net/projects/dict/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

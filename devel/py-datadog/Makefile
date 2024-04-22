@@ -1,5 +1,5 @@
 PORTNAME=	datadog
-PORTVERSION=	0.47.0
+PORTVERSION=	0.49.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,6 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-# bin/dog
-CONFLICTS_INSTALL=	dog
+CONFLICTS_INSTALL=	dog # bin/dog
 
 .include <bsd.port.mk>

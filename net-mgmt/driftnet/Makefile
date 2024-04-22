@@ -1,6 +1,6 @@
 PORTNAME=	driftnet
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+DISTVERSION=	1.5.0
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
@@ -32,7 +32,7 @@ INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	${DATADIR}/static-html/index.html \
 		bin/driftnet \
-		man/man1/driftnet.1.gz
+		share/man/man1/driftnet.1.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS

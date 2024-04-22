@@ -1,4 +1,5 @@
 PORTNAME=	zfs-autobackup
+DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.2
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,6 @@ USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	psy0rz
 GH_PROJECT=	zfs_autobackup
-GH_TAGNAME=	v${DISTVERSION}
 
 NO_ARCH=	yes
 

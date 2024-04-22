@@ -56,8 +56,8 @@ sbin/rrdbotd
 %%DATADIR%%/mib/UCD-SNMP-MIB.txt
 %%DATADIR%%/mib/TCP-MIB.txt
 %%DATADIR%%/mib/UDP-MIB.txt
-man/man1/rrdbot-get.1.gz
-man/man5/rrdbot.conf.5.gz
-man/man8/rrdbot-create.8.gz
-man/man8/rrdbotd.8.gz
+share/man/man1/rrdbot-get.1.gz
+share/man/man5/rrdbot.conf.5.gz
+share/man/man8/rrdbot-create.8.gz
+share/man/man8/rrdbotd.8.gz
 @dir %%ETCDIR%%

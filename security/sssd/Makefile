@@ -1,12 +1,15 @@
 PORTNAME=	sssd
 PORTVERSION=	1.16.5
-PORTREVISION=	10
+PORTREVISION=	12
 CATEGORIES=	security
 MASTER_SITES=	https://releases.pagure.org/SSSD/${PORTNAME}/
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	System Security Services Daemon
 WWW=		https://pagure.io/SSSD/sssd
+
+DEPRECATED=	Not supported, please use deve/sssd2
+EXPIRATION_DATE=	2024-12-31
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -32,11 +35,8 @@ BUILD_DEPENDS=	xmlcatalog:textproc/libxml2 \
 		krb5>=1.10:security/krb5 \
 		nsupdate:dns/bind-tools
 
-FLAVORS=	default smb
-FLAVOR?=	${FLAVORS:[1]}
-smb_PKGNAMESUFFIX=	-smb
-
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	ac_cv_prog_PO4A=no \
 		--without-selinux --without-semanage \
 		--without-libnl --without-nfsv4-idmapd-plugin \
@@ -53,7 +53,8 @@ CONFIGURE_ARGS=	ac_cv_prog_PO4A=no \
 		--with-gpo-cache-path=/var/db/sss/gpo_cache  \
 		--with-pid-path=/var/run --with-pipe-path=/var/run/sss/pipes \
 		--with-krb5-conf=/etc/krb5.conf \
-		--enable-pammoddir=${PREFIX}/lib
+		--enable-pammoddir=${PREFIX}/lib \
+		--without-samba
 CFLAGS+=	-fstack-protector-all
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 #DEBUG_FLAGS=	-g
@@ -75,22 +76,8 @@ SHEBANG_FILES=	src/tools/sss_obfuscate \
 USE_RC_SUBR=	${PORTNAME}
 PORTDATA=	*
 
-OPTIONS_DEFINE=	DOCS SMB
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
-
-SMB_DESC=		Install IPA and AD providers (requires Samba4)
-SMB_USES=		samba:lib
-SMB_CONFIGURE_WITH=	samba smb-idmap-interface-version=6
-SMB_LIB_DEPENDS=	libndr-nbt.so.0:net/samba413 \
-			libndr-krb5pac.so.0:net/samba413 \
-			libndr-standard.so.0:net/samba413 \
-			libndr.so.1:net/samba413 \
-			libsamba-util.so.0:net/samba413 \
-			libsmbclient.so.0:net/samba413
-
-.if ${FLAVOR} == smb
-OPTIONS_DEFAULT+=	SMB
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|NSS_STATUS_NOTFOUND|NS_NOTFOUND|g' \
@@ -124,7 +111,7 @@ post-install:
 
 # clean unused man dirs
 .for i in es/man1 nl/man1 nl/man5 pt/man1 pt/man5 sv/man1
-	@${RMDIR} ${STAGEDIR}${PREFIX}/man/${i}
+	@${RMDIR} ${STAGEDIR}${PREFIX}/share/man/${i}
 .endfor
 
 .include <bsd.port.mk>

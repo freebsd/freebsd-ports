@@ -622,6 +622,7 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZ/anpalm00.pm
 %%SITE_PERL%%/Date/Manip/TZ/anroth00.pm
 %%SITE_PERL%%/Date/Manip/TZ/antrol00.pm
+%%SITE_PERL%%/Date/Manip/TZ/anvost00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asalma00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asamma00.pm
 %%SITE_PERL%%/Date/Manip/TZ/asanad00.pm

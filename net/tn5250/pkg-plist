@@ -34,9 +34,9 @@ lib/lib5250.so.0.0.0
 %%DATADIR%%/XTerm
 %%DATADIR%%/sample.termcap
 %%DATADIR%%/us.5250.kbd
-man/man1/lp5250d.1.gz
-man/man1/scs2ascii.1.gz
-man/man1/scs2pdf.1.gz
-man/man1/scs2ps.1.gz
-man/man1/tn5250.1.gz
-man/man5/tn5250rc.5.gz
+share/man/man1/lp5250d.1.gz
+share/man/man1/scs2ascii.1.gz
+share/man/man1/scs2pdf.1.gz
+share/man/man1/scs2ps.1.gz
+share/man/man1/tn5250.1.gz
+share/man/man5/tn5250rc.5.gz

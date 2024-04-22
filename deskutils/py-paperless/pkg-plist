@@ -326,11 +326,11 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/reminders/views.py
 %%PYTHON_SITELIBDIR%%/paperless/setup.cfg
 %%PYTHON_SITELIBDIR%%/paperless/tox.ini
-share/man/man7/paperless.7.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nginx.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sshd_config
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uwsgi.ini
+share/man/man7/paperless.7.gz
 %%DATADIR%%/logo/print/eps/Black logo - no background.eps
 %%DATADIR%%/logo/print/eps/Color logo - no background.eps
 %%DATADIR%%/logo/print/eps/Color logo with background.eps
@@ -351,8 +351,8 @@ share/man/man7/paperless.7.gz
 %%WWWDIR%%/static/admin/css/autocomplete.css
 %%WWWDIR%%/static/admin/css/base.css
 %%WWWDIR%%/static/admin/css/changelists.css
+%%WWWDIR%%/static/admin/css/dark_mode.css
 %%WWWDIR%%/static/admin/css/dashboard.css
-%%WWWDIR%%/static/admin/css/fonts.css
 %%WWWDIR%%/static/admin/css/forms.css
 %%WWWDIR%%/static/admin/css/login.css
 %%WWWDIR%%/static/admin/css/nav_sidebar.css
@@ -363,11 +363,6 @@ share/man/man7/paperless.7.gz
 %%WWWDIR%%/static/admin/css/vendor/select2/select2.css
 %%WWWDIR%%/static/admin/css/vendor/select2/select2.min.css
 %%WWWDIR%%/static/admin/css/widgets.css
-%%WWWDIR%%/static/admin/fonts/LICENSE.txt
-%%WWWDIR%%/static/admin/fonts/README.txt
-%%WWWDIR%%/static/admin/fonts/Roboto-Bold-webfont.woff
-%%WWWDIR%%/static/admin/fonts/Roboto-Light-webfont.woff
-%%WWWDIR%%/static/admin/fonts/Roboto-Regular-webfont.woff
 %%WWWDIR%%/static/admin/img/LICENSE
 %%WWWDIR%%/static/admin/img/README.txt
 %%WWWDIR%%/static/admin/img/calendar-icons.svg
@@ -401,12 +396,14 @@ share/man/man7/paperless.7.gz
 %%WWWDIR%%/static/admin/js/change_form.js
 %%WWWDIR%%/static/admin/js/collapse.js
 %%WWWDIR%%/static/admin/js/core.js
+%%WWWDIR%%/static/admin/js/filters.js
 %%WWWDIR%%/static/admin/js/inlines.js
 %%WWWDIR%%/static/admin/js/jquery.init.js
 %%WWWDIR%%/static/admin/js/nav_sidebar.js
 %%WWWDIR%%/static/admin/js/popup_response.js
 %%WWWDIR%%/static/admin/js/prepopulate.js
 %%WWWDIR%%/static/admin/js/prepopulate_init.js
+%%WWWDIR%%/static/admin/js/theme.js
 %%WWWDIR%%/static/admin/js/urlify.js
 %%WWWDIR%%/static/admin/js/vendor/jquery/LICENSE.txt
 %%WWWDIR%%/static/admin/js/vendor/jquery/jquery.js

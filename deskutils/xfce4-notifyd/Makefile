@@ -4,8 +4,8 @@
 # Support of GTK is checked at compile time and themes directories too.
 
 PORTNAME=	xfce4-notifyd
-PORTVERSION=	0.9.2
-PORTREVISION=	3
+PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -16,7 +16,6 @@ WWW=		https://gitlab.xfce.org/apps/xfce4-notifyd
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	xdt-csource:devel/xfce4-dev-tools
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libnotify.so:devel/libnotify
 
@@ -27,6 +26,7 @@ USE_XFCE=	libmenu panel xfconf
 USE_XORG=	ice sm x11
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-systemd
 INSTALL_TARGET=	install-strip
 
@@ -35,11 +35,11 @@ OPTIONS_SUB=	yes
 
 SOUND_DESC=	Sound (audio) support via canberra
 
-SOUND_LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
-			libcanberra-gtk3.so:audio/libcanberra-gtk3
-SOUND_CONFIGURE_ENABLE=	sound
-
 NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
+
+SOUND_LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+			libcanberra.so:audio/libcanberra
+SOUND_CONFIGURE_ENABLE=	sound
 
 .include <bsd.port.mk>

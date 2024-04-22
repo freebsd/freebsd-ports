@@ -2,6 +2,7 @@ bin/pcmanfm-qt
 etc/xdg/autostart/lxqt-desktop.desktop
 share/applications/pcmanfm-qt-desktop-pref.desktop
 share/applications/pcmanfm-qt.desktop
+share/icons/hicolor/scalable/apps/pcmanfm-qt.svg
 share/man/man1/pcmanfm-qt.1.gz
 @sample %%DATADIR%%/lxqt/settings.conf.sample
 %%DATADIR%%/translations/pcmanfm-qt_ar.qm
@@ -17,6 +18,7 @@ share/man/man1/pcmanfm-qt.1.gz
 %%DATADIR%%/translations/pcmanfm-qt_en_GB.qm
 %%DATADIR%%/translations/pcmanfm-qt_es.qm
 %%DATADIR%%/translations/pcmanfm-qt_et.qm
+%%DATADIR%%/translations/pcmanfm-qt_fi.qm
 %%DATADIR%%/translations/pcmanfm-qt_fil.qm
 %%DATADIR%%/translations/pcmanfm-qt_fr.qm
 %%DATADIR%%/translations/pcmanfm-qt_ga.qm

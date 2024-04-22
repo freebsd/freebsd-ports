@@ -1,0 +1,11 @@
+--- quiche/deps/boringssl/CMakeLists.txt.orig	2024-04-12 00:59:13 UTC
++++ quiche/deps/boringssl/CMakeLists.txt
+@@ -480,7 +480,7 @@ elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "mips")
+ elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "mips")
+   # Just to avoid the “unknown processor” error.
+   set(ARCH "generic")
+-elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "ppc64le")
++elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "ppc64le" OR CMAKE_SYSTEM_PROCESSOR STREQUAL "powerpc64le")
+   set(ARCH "ppc64le")
+ else()
+   message(FATAL_ERROR "Unknown processor:" ${CMAKE_SYSTEM_PROCESSOR})

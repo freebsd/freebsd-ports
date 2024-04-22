@@ -1,0 +1,92 @@
+[
+{ type: install
+  message: <<EOM
+Make sure to run phorge using a production PHP configuration,
+e.g., %%PREFIX/etc/php.ini-production, particularly
+using the recommended error_reporting setting for production:
+
+  error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT
+
+To run the phorge daemons from startup, add phd_enable="YES"
+to /etc/rc.conf. You can control the daemons using
+
+service phd start
+service phd stop
+etc.
+
+Before starting the daemons, please finish configuring your Phorge
+instance. This involves configuring a web server (Apache, NGINX, LightHTTP)
+and a database server (MySQL, MariaDB). You can find detailed instructions
+on how to finish your setup at:
+
+https://secure.phorge.com/book/phorge/article/configuration_guide/
+
+Please note that all files are located in %%PREFIX%%/lib/php/phorge,
+so if the documentation refers to ./bin, this means
+
+  %%PREFIX%%/lib/php/phorge/bin,
+
+if it refers to webroot, this means
+
+  %%PREFIX%%/lib/php/phorge/webroot.
+
+You might want to install textproc/py-pygments to improve syntax
+highlighting.
+
+Phorge daemons and ssh-git requires setting up sudo, see
+
+  %%PREFIX%%lib/php/phorge/resources/sshd/phorge-sudoers.sample
+
+for an example.
+
+A phorge example configuration installed here:
+
+  %%PREFIX%%lib/php/phorge/conf/local/local.json.sample
+
+If you want to access phorge hosted git repositories via git,
+you can add the following configuration snippet to /etc/sshd_config
+and reload sshd afterwards (`service sshd reload'):
+
+========================================================================
+Match User git
+ AllowUsers git
+ AuthorizedKeysCommand %%PREFIX%%/lib/php/phorge/resources/sshd/phorge-ssh-hook.sh
+ AuthorizedKeysCommandUser git
+ AuthorizedKeysFile none
+ AuthenticationMethods publickey
+ PermitRootLogin no
+ PasswordAuthentication no
+ PermitTTY no
+ AllowAgentForwarding no
+ AllowTcpForwarding no
+ GatewayPorts no
+ PermitOpen none
+ PermitTunnel no
+ X11Forwarding no
+========================================================================
+EOM
+},
+{ type: upgrade
+  message: <<EOM
+Don't forget to update the database schema after update:
+
+  service nginx stop
+  service php-fpm stop
+  service phd stop
+  cd %%PREFIX%%/lib/php/phorge
+  ./bin/storage upgrade
+  service phd start
+  service php-fpm start
+  service nginx start
+
+The above procedure is for users of nginx and php-fpm, please adapt
+accordingly to match your setup.
+
+If your configuration uses an unprivileged user to connect to the database,
+you may have to override the default user so the schema changes can be
+applied with root or some other admin user:
+
+  ./bin/storage upgrade --user <user> --password <password>
+EOM
+}
+]

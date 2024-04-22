@@ -1,5 +1,6 @@
 PORTNAME=	rockdodger
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://bitbucket.org/rpkrawczyk/rockdodger/downloads/
 

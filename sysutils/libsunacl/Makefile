@@ -1,5 +1,6 @@
 PORTNAME=	libsunacl
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/freenas/libsunacl/releases/download/v${PORTVERSION}/
 

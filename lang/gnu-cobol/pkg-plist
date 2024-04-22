@@ -13,9 +13,6 @@ lib/libcob.a
 lib/libcob.so
 lib/libcob.so.4
 lib/libcob.so.4.2.0
-man/man1/cob-config.1.gz
-man/man1/cobc.1.gz
-man/man1/cobcrun.1.gz
 %%DATADIR%%/config/acu-strict.conf
 %%DATADIR%%/config/acu.conf
 %%DATADIR%%/config/acu.words
@@ -73,3 +70,6 @@ man/man1/cobcrun.1.gz
 %%NLS%%share/locale/sr/LC_MESSAGES/gnucobol.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gnucobol.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/gnucobol.mo
+share/man/man1/cob-config.1.gz
+share/man/man1/cobc.1.gz
+share/man/man1/cobcrun.1.gz

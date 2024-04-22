@@ -1,12 +1,13 @@
 PORTNAME=	pyroute2
-PORTVERSION=	0.7.10
+PORTVERSION=	0.7.12
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Netlink library
-WWW=		https://github.com/svinota/pyroute2
+WWW=		https://pyroute2.org/ \
+		https://github.com/svinota/pyroute2
 
 LICENSE=	APACHE20 GPLv2+
 LICENSE_COMB=	dual

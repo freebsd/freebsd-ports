@@ -1,5 +1,5 @@
 PORTNAME=	tintin++
-PORTVERSION=	2.02.31
+PORTVERSION=	2.02.41
 CATEGORIES+=	net games
 MASTER_SITES=	SF/tintin/TinTin%2B%2B%20Source%20Code/${PORTVERSION:C|.$||}/ \
 		https://github.com/scandum/tintin/releases/download/${PORTVERSION}/

@@ -23,7 +23,7 @@ GH_ACCOUNT=	intel
 USE_GITHUB=	yes
 
 do-configure:
-	@cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} configure
+	@cd ${WRKSRC}/ && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} configure
 
 post-install:
 	${LN} -fs libtinycbor.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libtinycbor.so

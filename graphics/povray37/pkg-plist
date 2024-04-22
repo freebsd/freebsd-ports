@@ -1,5 +1,5 @@
 bin/povray37
-man/man1/povray37.1.gz
+share/man/man1/povray37.1.gz
 @sample %%ETCDIR%%/povray.conf.sample
 @sample %%ETCDIR%%/povray.ini.sample
 %%X11%%%%DATADIR%%/icons/file_inc_classic_16.png

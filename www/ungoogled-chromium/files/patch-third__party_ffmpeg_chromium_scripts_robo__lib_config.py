@@ -1,26 +1,14 @@
---- third_party/ffmpeg/chromium/scripts/robo_lib/config.py.orig	2023-09-17 07:59:53 UTC
+--- third_party/ffmpeg/chromium/scripts/robo_lib/config.py.orig	2024-03-22 14:16:19 UTC
 +++ third_party/ffmpeg/chromium/scripts/robo_lib/config.py
-@@ -35,7 +35,7 @@ class RoboConfiguration:
-     self._patches_commit_title = "Chromium patches file"
-     # Title of the commit with README.chromium
-     self._readme_chromium_commit_title = "README.chromium file"
--    self.EnsureHostInfo()
-+    #self.EnsureHostInfo()
-     self.EnsureChromeSrc()
-     self.EnsureScriptDirectory()
- 
-@@ -47,18 +47,15 @@ class RoboConfiguration:
+@@ -49,18 +49,12 @@ class RoboConfiguration:
      self._llvm_path = os.path.join(self.chrome_src(), "third_party",
              "llvm-build", "Release+Asserts", "bin")
  
 -    self.EnsurePathContainsLLVM()
 -    self.EnsureNoMakeInfo()
-+    #self.EnsurePathContainsLLVM()
-+    #self.EnsureNoMakeInfo()
      self.EnsureFFmpegHome()
      self.EnsureASANConfig()
 -    self.ComputeBranchName()
-+    #self.ComputeBranchName()
      if not quiet:
        shell.log(f"Using chrome src: {self.chrome_src()}")
        shell.log(f"Using script dir: {self._script_directory}")
@@ -31,16 +19,30 @@
  
      # Filename that we'll ask generate_gn.py to write git commands to.
      # TODO: Should this use script_directory, or stay with ffmpeg?  As long as
-@@ -149,7 +146,7 @@ class RoboConfiguration:
-     """Ensure that the host architecture and platform are set."""
-     kernel, host, os, *rest = shell.output_or_error(["uname", "-a"]).split()
-     assert kernel in ("Linux", "linux")
--    assert "x86_64" in rest
-+    assert ("x86_64", "amd64") in rest
-     self._host_operating_system = "linux"
-     self._host_architecture = "x64"
+@@ -152,9 +146,9 @@ class RoboConfiguration:
  
-@@ -165,8 +162,8 @@ class RoboConfiguration:
+     if re.match(r"i.86", platform.machine()):
+       self._host_architecture = "ia32"
+-    elif platform.machine() == "x86_64" or platform.machine() == "AMD64":
++    elif platform.machine() == "x86_64" or platform.machine() == "AMD64" or platform.machine() == "amd64":
+       self._host_architecture = "x64"
+-    elif platform.machine() == "aarch64":
++    elif platform.machine() == "aarch64" or platform.machine() == "arm64":
+       self._host_architecture = "arm64"
+     elif platform.machine() == "mips32":
+       self._host_architecture = "mipsel"
+@@ -185,6 +179,10 @@ class RoboConfiguration:
+       self._host_operating_system = "mac"
+     elif platform.system() == "Windows" or "CYGWIN_NT" in platform.system():
+       self._host_operating_system = "win"
++    elif platform.system() == "OpenBSD":
++      self._host_operating_system = "openbsd"
++    elif platform.system() == "FreeBSD":
++      self._host_operating_system = "freebsd"
+     else:
+       raise ValueError(f"Unsupported platform: {platform.system()}")
+ 
+@@ -193,8 +191,8 @@ class RoboConfiguration:
      wd = os.getcwd()
      # Walk up the tree until we find src/AUTHORS
      while wd != "/":

@@ -1,5 +1,5 @@
-TIMESTAMP = 1705551093
-SHA256 (go/databases_rqlite/rqlite-v8.16.6/v8.16.6.mod) = 824574f39d435988768ef6108964a6774dc84f011863c38a1a749575729fd209
-SIZE (go/databases_rqlite/rqlite-v8.16.6/v8.16.6.mod) = 2678
-SHA256 (go/databases_rqlite/rqlite-v8.16.6/v8.16.6.zip) = 890856406a3a4dced8266b882a5db861f0b4fe61813d2c75f046e85a1edab4da
-SIZE (go/databases_rqlite/rqlite-v8.16.6/v8.16.6.zip) = 719394
+TIMESTAMP = 1712720076
+SHA256 (go/databases_rqlite/rqlite-v8.23.1/v8.23.1.mod) = f4ab31411d1ced2f7114dfd00d9a2afa967b1f9b3bed8802ddb719546dae77d0
+SIZE (go/databases_rqlite/rqlite-v8.23.1/v8.23.1.mod) = 2591
+SHA256 (go/databases_rqlite/rqlite-v8.23.1/v8.23.1.zip) = 048b3ffc50e4283429828bc4a8dbbeb240bc94bbcbf23066609d64f40ad9c7a3
+SIZE (go/databases_rqlite/rqlite-v8.23.1/v8.23.1.zip) = 711805

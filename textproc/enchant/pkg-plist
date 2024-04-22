@@ -18,5 +18,5 @@ lib/libenchant.so
 lib/libenchant.so.1
 lib/libenchant.so.1.6.0
 libdata/pkgconfig/enchant.pc
-man/man1/enchant.1.gz
+share/man/man1/enchant.1.gz
 %%DATADIR%%/enchant1.ordering

@@ -1,6 +1,5 @@
 PORTNAME=	tidyselect
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,14 +9,12 @@ WWW=		https://cran.r-project.org/web/packages/tidyselect/
 
 LICENSE=	MIT
 
-CRAN_DEPENDS=	R-cran-ellipsis>0:devel/R-cran-ellipsis \
+RUN_DEPENDS=	R-cran-cli>=3.3.0:devel/R-cran-cli \
 		R-cran-glue>=1.3.0:devel/R-cran-glue \
-		R-cran-purrr>=0.3.2:devel/R-cran-purrr \
-		R-cran-rlang>=1.0.1:devel/R-cran-rlang \
-		R-cran-vctrs>=0.3.0:devel/R-cran-vctrs \
+		R-cran-lifecycle>=1.0.3:devel/R-cran-lifecycle \
+		R-cran-rlang>=1.0.4:devel/R-cran-rlang \
+		R-cran-vctrs>=0.5.2:devel/R-cran-vctrs \
 		R-cran-withr>=0:devel/R-cran-withr
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles
 

@@ -1,5 +1,5 @@
 PORTNAME=	Crypt-Perl
-PORTVERSION=	0.34
+PORTVERSION=	0.38
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	p5-Test-Class>=0.4:devel/p5-Test-Class \
 		p5-Class-Accessor>=0.34:devel/p5-Class-Accessor \
 		p5-Convert-ASN1>=0.27:converters/p5-Convert-ASN1 \
 		p5-Crypt-Format>=0.06:security/p5-Crypt-Format \
+		p5-ExtUtils-MakeMaker-CPANfile>=0:devel/p5-ExtUtils-MakeMaker-CPANfile \
 		p5-File-Slurp>=0:devel/p5-File-Slurp \
 		p5-File-Which>=0:sysutils/p5-File-Which \
 		p5-Math-GMP>=2.20:math/p5-Math-GMP \

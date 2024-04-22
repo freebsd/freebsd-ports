@@ -13,7 +13,7 @@
 -MANDIR	= $(TOPDIR)/man__LANGDIR__/man$(MANSEC)
 -CATDIR	= $(TOPDIR)/man__LANGDIR__/cat$(MANSEC)
 -INSTALL	= __INSTALL__
-+MANDIR	= $(TOPDIR)/man/$(MANLANG)/man$(MANSEC)
++MANDIR	= $(TOPDIR)/share/man/$(MANLANG)/man$(MANSEC)
 +CATDIR	= $(TOPDIR)/man/$(MANLANG)/cat$(MANSEC)
  CHMOD	= chmod
  

@@ -406,11 +406,11 @@ libexec/gimp/2.2/plug-ins/van-gogh-lic/van-gogh-lic
 libexec/gimp/2.2/plug-ins/warp/warp
 libexec/gimp/2.2/plug-ins/wavelet-decompose/wavelet-decompose
 libexec/gimp/2.2/plug-ins/web-browser/web-browser
-man/man1/gimp-2.10.1.gz
-man/man1/gimp.1.gz
-man/man1/gimptool-2.0.1.gz
-man/man5/gimprc-2.10.5.gz
-man/man5/gimprc.5.gz
+share/man/man1/gimp-2.10.1.gz
+share/man/man1/gimp.1.gz
+share/man/man1/gimptool-2.0.1.gz
+share/man/man5/gimprc-2.10.5.gz
+share/man/man5/gimprc.5.gz
 share/aclocal/gimp-2.0.m4
 share/applications/gimp.desktop
 %%DOCSDIR%%/libgimp/GimpAspectPreview.html
@@ -4706,6 +4706,8 @@ share/applications/gimp.desktop
 %%DATADIR%%/themes/Dark/ui/gimp-handle-v.png
 %%DATADIR%%/themes/Dark/ui/gimp-line-h.png
 %%DATADIR%%/themes/Dark/ui/gimp-line-v.png
+%%DATADIR%%/themes/Dark/ui/gimp-lock-button-active.png
+%%DATADIR%%/themes/Dark/ui/gimp-lock-button-prelight.png
 %%DATADIR%%/themes/Dark/ui/gimp-menu-line-h.png
 %%DATADIR%%/themes/Dark/ui/gimp-tooltip-bg.png
 %%DATADIR%%/themes/Dark/ui/list_header-pressed.png

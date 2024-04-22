@@ -1,6 +1,5 @@
 PORTNAME=	hasktags
-PORTVERSION=	0.72.0
-PORTREVISION=	3
+PORTVERSION=	0.73.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,24 +11,26 @@ LICENSE=	BSD3CLAUSE
 USES=		cabal
 
 CABAL_REVISION=	2
-USE_CABAL=	ansi-terminal-0.11.3 \
-		ansi-wl-pprint-0.6.9_3 \
+USE_CABAL=	ansi-terminal-1.0.2 \
+		ansi-terminal-types-0.11.5_1 \
 		colour-2.3.6 \
-		hashable-1.4.1.0 \
-		json-0.10_1 \
-		microlens-0.4.13.0 \
-		microlens-ghc-0.4.14.0 \
-		microlens-mtl-0.2.0.2 \
-		microlens-platform-0.4.3.2 \
-		microlens-th-0.4.3.10_1 \
-		optparse-applicative-0.17.0.0 \
-		primitive-0.7.4.0 \
-		syb-0.7.2.2 \
-		th-abstraction-0.4.5.0 \
+		hashable-1.4.3.0_1 \
+		json-0.11 \
+		microlens-0.4.13.1_1 \
+		microlens-ghc-0.4.14.2 \
+		microlens-mtl-0.2.0.3_1 \
+		microlens-platform-0.4.3.5 \
+		microlens-th-0.4.3.14 \
+		optparse-applicative-0.18.1.0 \
+		prettyprinter-1.7.1 \
+		prettyprinter-ansi-terminal-1.1.3 \
+		primitive-0.9.0.0 \
+		syb-0.7.2.4 \
+		th-abstraction-0.6.0.0_1 \
 		transformers-compat-0.7.2 \
-		unordered-containers-0.2.19.1_1 \
+		unordered-containers-0.2.20_1 \
 		utf8-string-1.0.2 \
-		vector-0.13.0.0_1 \
-		vector-stream-0.1.0.0_1
+		vector-0.13.1.0 \
+		vector-stream-0.1.0.1
 
 .include <bsd.port.mk>

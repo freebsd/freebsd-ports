@@ -1,5 +1,6 @@
 PORTNAME=	cscout
 PORTVERSION=	3.01
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	dds@FreeBSD.org
@@ -30,10 +31,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's|./dest-install.sh \"|./dest-install.sh \"${STAGEDIR}/|g' ${WRKSRC}/src/Makefile
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/man/cscout.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/cswc.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/cscc.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/csmake.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/cscout.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/cswc.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/cscc.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/csmake.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 #do-install-DOCS-on:
 #	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}

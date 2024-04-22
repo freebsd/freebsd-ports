@@ -1,6 +1,6 @@
 PORTNAME=	gnome-power-manager
 PORTVERSION=	3.32.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -32,9 +32,5 @@ MANPAGES_BUILD_DEPENDS=	docbook2html:textproc/docbook-utils \
 post-patch-MANPAGES-off:
 	@${REINPLACE_CMD} -e "s|subdir('man')||g" \
 		${WRKSRC}/meson.build
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|share/man/man1|man/man1|g' \
-		${WRKSRC}/man/meson.build
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	hexcurse
 PORTVERSION=	1.60.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -15,8 +16,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	LonnyGomes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
-PLIST_FILES=	bin/hexcurse man/man1/hexcurse.1.gz
+PLIST_FILES=	bin/hexcurse share/man/man1/hexcurse.1.gz
 
 .include <bsd.port.pre.mk>
 

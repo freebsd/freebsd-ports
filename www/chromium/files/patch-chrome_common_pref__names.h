@@ -1,6 +1,6 @@
---- chrome/common/pref_names.h.orig	2023-12-10 06:10:27 UTC
+--- chrome/common/pref_names.h.orig	2024-04-19 13:02:56 UTC
 +++ chrome/common/pref_names.h
-@@ -1315,7 +1315,7 @@ inline constexpr char kUseAshProxy[] = "lacros.proxy.u
+@@ -1288,7 +1288,7 @@ inline constexpr char kUseAshProxy[] = "lacros.proxy.u
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
  // Linux specific preference on whether we should match the system theme.
  inline constexpr char kSystemTheme[] = "extensions.theme.system_theme";
  #endif
-@@ -1441,7 +1441,7 @@ inline constexpr char kShowUpdatePromotionInfoBar[] =
+@@ -1428,7 +1428,7 @@ inline constexpr char kShowUpdatePromotionInfoBar[] =
      "browser.show_update_promotion_info_bar";
  #endif
  
@@ -18,7 +18,7 @@
  // Boolean that is false if we should show window manager decorations.  If
  // true, we draw a custom chrome frame (thicker title bar and blue border).
  inline constexpr char kUseCustomChromeFrame[] = "browser.custom_chrome_frame";
-@@ -1989,7 +1989,7 @@ inline constexpr char kDownloadDefaultDirectory[] =
+@@ -1997,7 +1997,7 @@ inline constexpr char kDownloadDefaultDirectory[] =
  inline constexpr char kDownloadDirUpgraded[] = "download.directory_upgrade";
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -27,7 +27,7 @@
  inline constexpr char kOpenPdfDownloadInSystemReader[] =
      "download.open_pdf_in_system_reader";
  #endif
-@@ -2407,14 +2407,14 @@ inline constexpr char kMediaStorageIdSalt[] = "media.s
+@@ -2431,14 +2431,14 @@ inline constexpr char kMediaStorageIdSalt[] = "media.s
  inline constexpr char kMediaCdmOriginData[] = "media.cdm.origin_data";
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -44,7 +44,7 @@
  // Records whether the user has seen an HTTP auth "negotiate" header.
  inline constexpr char kReceivedHttpAuthNegotiateHeader[] =
      "net.received_http_auth_negotiate_headers";
-@@ -2492,7 +2492,7 @@ inline constexpr char kAmbientAuthenticationInPrivateM
+@@ -2516,7 +2516,7 @@ inline constexpr char kAmbientAuthenticationInPrivateM
  inline constexpr char kBasicAuthOverHttpEnabled[] =
      "auth.basic_over_http_enabled";
  
@@ -53,7 +53,16 @@
  // Boolean that specifies whether OK-AS-DELEGATE flag from KDC is respected
  // along with kAuthNegotiateDelegateAllowlist.
  inline constexpr char kAuthNegotiateDelegateByKdcPolicy[] =
-@@ -3533,7 +3533,7 @@ inline constexpr char kFileOrDirectoryPickerWithoutGes
+@@ -3034,7 +3034,7 @@ inline constexpr char kDeviceWeeklyScheduledSuspend[] 
+ 
+ #endif  // BUILDFLAG(IS_CHROMEOS)
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+ // Defines administrator-set availability of Chrome for Testing.
+ inline constexpr char kChromeForTestingAllowed[] = "chrome_for_testing.allowed";
+ #endif
+@@ -3584,7 +3584,7 @@ inline constexpr char kFileOrDirectoryPickerWithoutGes
  inline constexpr char kSandboxExternalProtocolBlocked[] =
      "profile.sandbox_external_protocol_blocked";
  
@@ -62,16 +71,16 @@
  // Boolean that indicates if system notifications are allowed to be used in
  // place of Chrome notifications.
  inline constexpr char kAllowSystemNotifications[] =
-@@ -3589,7 +3589,7 @@ inline constexpr char kCACertificateManagementAllowed[
- inline constexpr char kChromeRootStoreEnabled[] = "chrome_root_store_enabled";
+@@ -3633,7 +3633,7 @@ inline constexpr char kCACertificateManagementAllowed[
  #endif
+ 
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
  inline constexpr char kEnforceLocalAnchorConstraintsEnabled[] =
      "enforce_local_anchor_constraints_enabled";
  #endif
-@@ -3903,7 +3903,7 @@ inline constexpr char kThrottleNonVisibleCrossOriginIf
+@@ -3941,7 +3941,7 @@ inline constexpr char kPrintingOAuth2AuthorizationServ
  inline constexpr char kNewBaseUrlInheritanceBehaviorAllowed[] =
      "new_base_url_inheritance_behavior_allowed";
  

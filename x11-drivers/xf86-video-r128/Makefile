@@ -1,6 +1,6 @@
 PORTNAME=	xf86-video-r128
 PORTVERSION=	6.12.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -11,5 +11,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gl xorg-cat:driver
 USE_GL=		gl
+
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 .include <bsd.port.mk>

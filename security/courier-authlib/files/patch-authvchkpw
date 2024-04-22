@@ -1,4 +1,4 @@
---- authvchkpw.c.orig	2017-07-03 08:38:16 UTC
+--- authvchkpw.c.orig	2024-01-31 08:30:47 UTC
 +++ authvchkpw.c
 @@ -0,0 +1,242 @@
 +/*
@@ -243,7 +243,7 @@
 +{
 +	return &authvchkpw_info;
 +}
---- authvchkpwlib.c.orig	2017-07-03 08:38:16 UTC
+--- authvchkpwlib.c.orig	2024-01-31 08:30:47 UTC
 +++ authvchkpwlib.c
 @@ -0,0 +1,33 @@
 +/*
@@ -279,9 +279,9 @@
 +	if ((p=strchr(c, ':')) != 0)    return (p);
 +	return (0);
 +}
---- courier_auth_config.h.in.orig	2017-07-02 14:41:47 UTC
+--- courier_auth_config.h.in.orig	2024-01-28 13:22:18 UTC
 +++ courier_auth_config.h.in
-@@ -124,6 +124,9 @@
+@@ -121,6 +121,9 @@
  /* Define to 1 if you have the `opendir' function. */
  #undef HAVE_OPENDIR
  
@@ -291,7 +291,7 @@
  /* Define to 1 if you have the <Pam/pam_appl.h> header file. */
  #undef HAVE_PAM_PAM_APPL_H
  
-@@ -226,6 +229,9 @@
+@@ -223,6 +226,9 @@
  
  /* Define to the shared archive member specification, say "(shr.o)". */
  #undef LT_SHARED_LIB_MEMBER
@@ -301,7 +301,7 @@
  
  /* Whether we must a prototype for crypt() */
  #undef NEED_CRYPT_PROTOTYPE
---- preauthvchkpw.c.orig	2017-07-03 08:38:16 UTC
+--- preauthvchkpw.c.orig	2024-01-31 08:30:47 UTC
 +++ preauthvchkpw.c
 @@ -0,0 +1,159 @@
 +/*
@@ -463,18 +463,18 @@
 +
 +	return ((*callback)(&auth, arg));
 +}
---- userdb/Makefile.in.orig	2016-06-23 12:29:59 UTC
+--- userdb/Makefile.in.orig	2023-11-18 22:04:05 UTC
 +++ userdb/Makefile.in
-@@ -107,7 +107,7 @@ am__CONFIG_DISTCLEAN_FILES = config.status config.cach
+@@ -107,7 +107,7 @@ CONFIG_HEADER = config.h
   configure.lineno config.status.lineno
  mkinstalldirs = $(install_sh) -d
  CONFIG_HEADER = config.h
 -CONFIG_CLEAN_FILES = userdb.pl makeuserdb pw2userdb
 +CONFIG_CLEAN_FILES = userdb.pl makeuserdb pw2userdb vchkpw2userdb
  CONFIG_CLEAN_VPATH_FILES =
+ PROGRAMS = $(noinst_PROGRAMS)
  LTLIBRARIES = $(noinst_LTLIBRARIES)
- libuserdb_la_LIBADD =
-@@ -222,6 +222,7 @@ CSCOPE = cscope
+@@ -221,6 +221,7 @@ am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/conf
  AM_RECURSIVE_TARGETS = cscope
  am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in \
  	$(srcdir)/makeuserdb.in $(srcdir)/pw2userdb.in \
@@ -482,7 +482,7 @@
  	$(srcdir)/userdb.pl.in $(top_srcdir)/../compile \
  	$(top_srcdir)/../config.guess $(top_srcdir)/../config.sub \
  	$(top_srcdir)/../depcomp $(top_srcdir)/../install-sh \
-@@ -377,7 +378,7 @@ BUILT_SOURCES = makeuserdb.html.in makeuserdb.8.in \
+@@ -383,7 +384,7 @@ BUILT_SOURCES = makeuserdb.html.in makeuserdb.8.in \
  		userdb.html.in userdb.8.in \
  		userdbpw.html.in userdbpw.8.in
  
@@ -491,7 +491,7 @@
  noinst_DATA = makeuserdb.html userdb.html userdbpw.html
  userdbpw_SOURCES = userdbpw.c
  userdbpw_LDADD = libuserdb.la @HMACLIB@ @MD5LIB@ @SHA1LIB@ @CRYPTLIBS@
-@@ -444,6 +445,8 @@ userdb.pl: $(top_builddir)/config.status $(srcdir)/use
+@@ -450,6 +451,8 @@ pw2userdb: $(top_builddir)/config.status $(srcdir)/pw2
  makeuserdb: $(top_builddir)/config.status $(srcdir)/makeuserdb.in
  	cd $(top_builddir) && $(SHELL) ./config.status $@
  pw2userdb: $(top_builddir)/config.status $(srcdir)/pw2userdb.in
@@ -499,10 +499,10 @@
 +vchkpw2userdb: $(top_builddir)/config.status $(srcdir)/vchkpw2userdb.in
  	cd $(top_builddir) && $(SHELL) ./config.status $@
  
- clean-noinstLTLIBRARIES:
---- userdb/configure.orig	2016-06-23 12:29:59 UTC
+ clean-noinstPROGRAMS:
+--- userdb/configure.orig	2023-11-18 22:04:06 UTC
 +++ userdb/configure
-@@ -12873,7 +12873,7 @@ else
+@@ -13559,7 +13559,7 @@ fi
  fi
  
  
@@ -511,7 +511,7 @@
  
  cat >confcache <<\_ACEOF
  # This file is a shell script that caches the results of configure
-@@ -13894,6 +13894,7 @@ do
+@@ -14577,6 +14577,7 @@ do
      "userdb.pl") CONFIG_FILES="$CONFIG_FILES userdb.pl" ;;
      "makeuserdb") CONFIG_FILES="$CONFIG_FILES makeuserdb" ;;
      "pw2userdb") CONFIG_FILES="$CONFIG_FILES pw2userdb" ;;
@@ -519,7 +519,7 @@
  
    *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
    esac
---- userdb/vchkpw2userdb.in.orig	2017-07-03 08:38:16 UTC
+--- userdb/vchkpw2userdb.in.orig	2024-01-31 08:30:47 UTC
 +++ userdb/vchkpw2userdb.in
 @@ -0,0 +1,80 @@
 +#! @PERL@

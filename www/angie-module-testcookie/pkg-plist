@@ -1,0 +1,4 @@
+%%DOCSDIR%%/Changelog
+%%DOCSDIR%%/README.markdown
+%%MODDIR%%/ngx_http_testcookie_access_module.so
+%%DEBUG%%%%MODDIR%%/ngx_http_testcookie_access_module-debug.so

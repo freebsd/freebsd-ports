@@ -875,7 +875,6 @@ lib/libCoin.so
 lib/libCoin.so.80
 lib/libCoin.so.80.0.2
 libdata/pkgconfig/Coin.pc
-man/man1/coin-config.1.gz
 %%DATADIR%%/conf/coin-default.cfg
 %%DATADIR%%/draggerDefaults/centerballDragger.iv
 %%DATADIR%%/draggerDefaults/directionalLightDragger.iv
@@ -907,3 +906,4 @@ man/man1/coin-config.1.gz
 %%DATADIR%%/shaders/lights/SpotLight.glsl
 %%DATADIR%%/shaders/vsm/VsmLookup.glsl
 share/aclocal/coin.m4
+share/man/man1/coin-config.1.gz

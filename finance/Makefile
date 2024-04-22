@@ -21,7 +21,6 @@
     SUBDIR += beancount
     SUBDIR += beanie
     SUBDIR += chiapos
-    SUBDIR += cointop
     SUBDIR += electrum
     SUBDIR += expense
     SUBDIR += fabric
@@ -37,6 +36,7 @@
     SUBDIR += hs-hledger
     SUBDIR += hs-hledger-ui
     SUBDIR += hs-hledger-web
+    SUBDIR += hyperswitch
     SUBDIR += jgnash
     SUBDIR += kmymoney
     SUBDIR += kraft
@@ -53,6 +53,7 @@
     SUBDIR += odoo
     SUBDIR += odoo14
     SUBDIR += odoo15
+    SUBDIR += odoo16
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-Business-MaxMind-CreditCardFraudDetection
     SUBDIR += p5-Business-OCV
@@ -150,6 +151,5 @@
     SUBDIR += tickrs
     SUBDIR += venice
     SUBDIR += weberp
-    SUBDIR += xtrader
 
 .include <bsd.port.subdir.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	asmail
 PORTVERSION=	2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail afterstep
 MASTER_SITES=	AFTERSTEP/apps/asmail/ \
 		http://tigr.net/afterstep/download/asmail/
@@ -12,6 +12,7 @@ WWW=		https://tigr.net/afterstep/
 USES=		ssl xorg
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shaping \
 		--with-xpm \
 		--with-xpm-includes=${LOCALBASE}/include \

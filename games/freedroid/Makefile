@@ -1,6 +1,6 @@
 PORTNAME=	freedroid
 PORTVERSION=	1.0.2
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}Classic/FreedroidClassic-${PORTVERSION}
 
@@ -17,6 +17,7 @@ USES=		iconv jpeg sdl
 USE_SDL=	mixer image sdl
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--program-transform-name=
 
 DESKTOP_ENTRIES=	"Freedroid Classic" "${COMMENT}" \

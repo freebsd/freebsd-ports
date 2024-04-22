@@ -1,5 +1,5 @@
 PORTNAME=	confget
-PORTVERSION=	5.1.0
+PORTVERSION=	5.1.2
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	textproc
 MASTER_SITES=	https://gitlab.com/confget/confget/-/archive/release/${PORTVERSION}/

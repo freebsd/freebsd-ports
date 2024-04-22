@@ -7,7 +7,7 @@
 -.set IDIR	/news
 -.set MDIR	/news/man
 +.set IDIR	%%PREFIX%%/news
-+.set MDIR	%%PREFIX%%/man
++.set MDIR	%%PREFIX%%/share/man
  .set INSTALL	install
  
  #ifdef __FreeBSD__

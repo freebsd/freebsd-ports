@@ -1,3 +1,3 @@
-TIMESTAMP = 1642673940
-SHA256 (django-reversion-4.0.1.tar.gz) = 6991f16e5d3a972912db3d56e3a714d10b07becd566ab87f85f2e9b671981339
-SIZE (django-reversion-4.0.1.tar.gz) = 71383
+TIMESTAMP = 1704625851
+SHA256 (django-reversion-5.0.10.tar.gz) = c18749a67c1db4167ccaccc36395c5fe6078f312869683c2f3d214051e5a6b29
+SIZE (django-reversion-5.0.10.tar.gz) = 72802

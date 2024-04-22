@@ -6,7 +6,6 @@ lib/libcheck.so
 lib/libcheck.so.0
 lib/libcheck.so.0.0.0
 libdata/pkgconfig/check.pc
-man/man1/checkmk.1.gz
 share/aclocal/check.m4
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -32,3 +31,4 @@ share/aclocal/check.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/check_money.6.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/check_money.7.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/check_money.c
+share/man/man1/checkmk.1.gz

@@ -1,4 +1,4 @@
 @sample etc/proxsmtpd.conf.sample
-man/man5/proxsmtpd.conf.5.gz
-man/man8/proxsmtpd.8.gz
 sbin/proxsmtpd
+share/man/man5/proxsmtpd.conf.5.gz
+share/man/man8/proxsmtpd.8.gz

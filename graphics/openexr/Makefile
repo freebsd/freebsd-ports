@@ -1,11 +1,13 @@
 PORTNAME?=	openexr
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.4
 PORTREVISION?=	0
 CATEGORIES=	graphics devel
 .if !defined(MASTERDIR)
 MASTER_SITES=	https://raw.githubusercontent.com/AcademySoftwareFoundation/openexr-images/v1.0/:testimages \
+		https://github.com/AcademySoftwareFoundation/openexr/releases/download/v${PORTVERSION}/:DEFAULT \
 		LOCAL/mandree/openexr/:DEFAULT \
 		LOCAL/mandree/openexr/:testimages
+DISTFILES=	${EXTRACT_ONLY}:DEFAULT
 DISTFILES+=	Beachball/multipart.0001.exr:testimages
 DISTFILES+=	Beachball/singlepart.0001.exr:testimages
 DISTFILES+=	Chromaticities/Rec709_YC.exr:testimages
@@ -23,8 +25,9 @@ DISTFILES+=	TestImages/GrayRampsHorizontal.exr:testimages
 DISTFILES+=	v2/LeftView/Balls.exr:testimages
 DISTFILES+=	v2/Stereo/Trunks.exr:testimages
 .endif
-DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${DISTFILES:M*${EXTRACT_SUFX}}
+DIST_SUBDIR=	openexr # hardcode - not using ${PORTNAME} - so we can share the distdir with openexr-website-docs, avoiding double download of ...
+EXTRACT_ONLY=	openexr-v${PORTVERSION}${EXTRACT_SUFX}
+NO_WRKSUBDIR=	yes
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	High dynamic-range (HDR) image file format
@@ -39,8 +42,8 @@ LIB_DEPENDS?=	libImath-3_1.so.29:math/Imath \
 
 USES?=		cmake compiler:c++14-lang cpe pathfix pkgconfig
 
-USE_GITHUB=	yes
-GH_TUPLE=	AcademySoftwareFoundation:openexr:v${PORTVERSION}
+#USE_GITHUB=	yes
+#GH_TUPLE=	AcademySoftwareFoundation:openexr:v${PORTVERSION}
 
 USE_LDCONFIG=	yes
 
@@ -78,8 +81,10 @@ _imath_libcxx=	${COMPILER_FEATURES:Mlib*c++}
 # so we do not benefit from our checksumming and the distdir caching.
 post-extract:
 	${MKDIR} ${CONFIGURE_WRKSRC}/src/test/bin
-.for i in ${DISTFILES:M*.exr}
-	${PRINTF} %s ${i} | ( cd ${DISTDIR}/${DIST_SUBDIR} && ${CPIO} -dumpl ${CONFIGURE_WRKSRC}/src/test/bin/ 2>/dev/null )
+.for i in ${DISTFILES:M*.exr?testimages}
+	d="$$(dirname "${CONFIGURE_WRKSRC}/src/test/bin/${i:S/:testimages//}")" \
+	  && ${MKDIR} "$$d" \
+	  && ${CP} ${DISTDIR}/${DIST_SUBDIR}/${i:S/:testimages//} "$$d"
 .endfor
 
 pre-configure:

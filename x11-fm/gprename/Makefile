@@ -1,5 +1,6 @@
 PORTNAME=	gprename
 PORTVERSION=	2.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF
@@ -31,8 +32,7 @@ post-patch:
 		's|/usr/local|${PREFIX}| ; \
 		 s|(DESTDIR)|(DESTDIR)${PREFIX}| ; \
 		 s|$$(CURDIR)|$$(.CURDIR)| ; \
-		 s|uninstall build|build| ; \
-		 s|share/man|man|' ${WRKSRC}/Makefile
+		 s|uninstall build|build|' ${WRKSRC}/Makefile
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

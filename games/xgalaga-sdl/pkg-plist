@@ -1,5 +1,5 @@
 bin/xgalaga-sdl
-man/man6/xgalaga-sdl.6x.gz
+share/man/man6/xgalaga-sdl.6x.gz
 share/pixmaps/xgalaga-sdl.png
 %%DATADIR%%/fonts/LiberationMono-Bold.ttf
 %%DATADIR%%/images/al.png

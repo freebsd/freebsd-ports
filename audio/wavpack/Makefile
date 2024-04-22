@@ -1,5 +1,5 @@
 PORTNAME=	wavpack
-DISTVERSION=	5.6.0
+DISTVERSION=	5.7.0
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/dbry/WavPack/releases/download/${DISTVERSION}/ \
 		http://www.wavpack.com/
@@ -11,7 +11,7 @@ WWW=		https://www.wavpack.com/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:testing cpe iconv pathfix pkgconfig ssl tar:xz
+USES=		cmake:testing cpe iconv pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_TESTING WAVPACK_BUILD_DOCS

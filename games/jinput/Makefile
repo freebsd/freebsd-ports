@@ -10,7 +10,7 @@ WWW=		https://github.com/jinput/jinput
 LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${JAVAJARDIR}/jutils/jutils.jar:games/jutils \
-		mvn:devel/maven
+		maven>0:devel/maven
 RUN_DEPENDS=	${JAVAJARDIR}/jutils/jutils.jar:games/jutils
 
 # Using a fork because of maven dependencies

@@ -1,6 +1,5 @@
 PORTNAME=	GraphicsMagick
-PORTVERSION=	1.3.40
-PORTREVISION=	3
+PORTVERSION=	1.3.43
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
@@ -11,7 +10,7 @@ WWW=		http://www.graphicsmagick.org/
 
 LICENSE=	MIT
 
-USES=		cpe libtool localbase pathfix pkgconfig tar:zst
+USES=		cpe libtool localbase pathfix pkgconfig tar:xz
 
 CONFIGURE_ARGS=	--enable-shared --enable-static \
 		--with-windows-font-dir=${WINDOWS_FONT_DIR} \
@@ -32,6 +31,7 @@ TEST_DESC=	Run bundled self-tests after build
 
 BZIP2_CONFIGURE_WITH=	bzlib
 FPX_CONFIGURE_WITH=	fpx
+FPX_LDFLAGS=		-L${LOCALBASE}/lib -lfpx
 FPX_LIB_DEPENDS=	libfpx.so:graphics/libfpx
 FREETYPE_CONFIGURE_WITH=ttf
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2

@@ -1,10 +1,10 @@
 bin/dejagnu
 bin/runtest
 include/dejagnu.h
-man/man1/dejagnu-help.1.gz
-man/man1/dejagnu-report-card.1.gz
-man/man1/dejagnu.1.gz
-man/man1/runtest.1.gz
+share/man/man1/dejagnu-help.1.gz
+share/man/man1/dejagnu-report-card.1.gz
+share/man/man1/dejagnu.1.gz
+share/man/man1/runtest.1.gz
 %%DATADIR%%/baseboards/README
 %%DATADIR%%/baseboards/aarch64-sim.exp
 %%DATADIR%%/baseboards/am33_2.0-libremote.exp

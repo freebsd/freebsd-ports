@@ -1,5 +1,6 @@
 PORTNAME=	castget
 DISTVERSION=	2.0.1-20220211
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,9 +25,10 @@ GH_TAGNAME=	da9727d
 
 #CONFIGURE_ARGS=	--disable-static
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	bin/castget \
-		man/man1/castget.1.gz man/man5/castgetrc.5.gz
+		share/man/man1/castget.1.gz share/man/man5/castgetrc.5.gz
 
 .include <bsd.port.mk>

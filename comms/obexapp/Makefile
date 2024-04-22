@@ -1,6 +1,6 @@
 PORTNAME=	obexapp
 PORTVERSION=	1.4.15
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	comms net
 MASTER_SITES=	http://people.freebsd.org/~emax/obexapp/
 
@@ -13,7 +13,7 @@ LIB_DEPENDS=	libopenobex.so:comms/openobex \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		iconv readline uidfix
-PLIST_FILES=	bin/obexapp man/man1/obexapp.1.gz
+PLIST_FILES=	bin/obexapp share/man/man1/obexapp.1.gz
 
 MAKE_ENV+=	MK_WERROR=no
 

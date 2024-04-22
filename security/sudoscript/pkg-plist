@@ -28,8 +28,8 @@ share/doc/sudoscript-2.1.2/sudoshell-src.html
 share/doc/sudoscript-2.1.2/sudoshell.1.html
 share/doc/sudoscript-2.1.2/xsl/egbokdoc.xsl
 share/doc/sudoscript-2.1.2/xsl/egbokdoc2fop.xsl
-man/man1/ss.1.gz
-man/man1/sudoshell.1.gz
-man/man3/Sudoscript.3pm.gz
-man/man8/sudoscript.8.gz
-man/man8/sudoscriptd.8.gz
+share/man/man1/ss.1.gz
+share/man/man1/sudoshell.1.gz
+share/man/man3/Sudoscript.3pm.gz
+share/man/man8/sudoscript.8.gz
+share/man/man8/sudoscriptd.8.gz

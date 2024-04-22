@@ -1,6 +1,6 @@
 PORTNAME=	vice
-PORTVERSION=	3.7.1
-PORTREVISION=	7
+PORTVERSION=	3.8
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/vice-emu/releases
 
@@ -22,16 +22,14 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libmp3lame.so:audio/lame \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
-		libavcodec.so:multimedia/ffmpeg \
 		libFLAC.so:audio/flac \
 		libpci.so:devel/libpci \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpcre2-8.so:devel/pcre2 \
 		libgnutls.so:security/gnutls \
-		libharfbuzz.so:print/harfbuzz
-
-BROKEN_FreeBSD_aarch64=		undeclared function 'inb'
+		libharfbuzz.so:print/harfbuzz \
+		libcurl.so:ftp/curl
 
 USES=		compiler:c++11-lang pkgconfig perl5 localbase:ldflags \
 		gmake iconv:wchar_t jpeg readline gettext xorg
@@ -41,6 +39,8 @@ HAS_CONFIGURE=	yes
 MAKE_ENV+=	XDG_DATA_DIRS=${STAGEDIR}${PREFIX}/share
 CFLAGS+=	-fcommon
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
+			--with-lame \
+			--with-portaudio \
 			--enable-ipv6 \
 			--enable-x64 \
 			--disable-realdevice \
@@ -48,17 +48,20 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--localedir="${LOCALBASE}/share/locale" \
 			--disable-dependency-tracking \
 			DOS2UNIX=true
+TXTFILES=	CIA-README.txt iec-bus.txt \
+		readmes/Readme-SDL.txt readmes/Readme-SDL2.txt
 
-OPTIONS_DEFINE=	SDLSOUND ALSA PULSEAUDIO FFMPEG DOCS
+OPTIONS_DEFINE=	SDLSOUND ALSA PULSEAUDIO FFMPEG ETHERNET DOCS
 OPTIONS_SINGLE=	GUI
 OPTIONS_SINGLE_GUI=	GTK3UI SDLUI2
-OPTIONS_DEFAULT?=	GTK3UI SDLSOUND ALSA
+OPTIONS_DEFAULT?=	GTK3UI SDLSOUND ALSA ETHERNET
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
 GTK3UI_DESC=	use GTK3 user interface
 SDLUI2_DESC=	use SDL2 user interface
 SDLSOUND_DESC=	build with SDL2 sound system support
 FFMPEG_CONFIGURE_ENABLE=	ffmpeg
+ETHERNET_DESC=	Network capture/injection support
 
 GTK3UI_USES=			desktop-file-utils
 GTK3UI_CONFIGURE_ENABLE=	gtk3ui desktop-files
@@ -73,6 +76,12 @@ ALSA_CONFIGURE_OFF=		--without-alsa
 ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
 PULSEAUDIO_CONFIGURE_OFF=	--without-pulse
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
+FFMPEG_LIB_DEPENDS=		libavcodec.so.58:multimedia/ffmpeg4
+FFMPEG_CONFIGURE_ENV=		PKG_CONFIG_PATH="${LOCALBASE}/ffmpeg4/libdata/pkgconfig"
+#ETHERNET_LIB_DEPENDS=		libpcap.so:net/libpcap # conflict with base
+ETHERNET_BUILD_DEPENDS=		${LOCALBASE}/include/pcap.h:net/libpcap
+ETHERNET_RUN_DEPENDS=		${LOCALBASE}/include/pcap.h:net/libpcap
+ETHERNET_CONFIGURE_ENABLE=	ethernet
 
 .include <bsd.port.options.mk>
 
@@ -99,5 +108,15 @@ pre-configure:
 # workaround for xdg-desktop-menu
 pre-install-GTK3UI-on:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/share/desktop-directories
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ${TXTFILES}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}/
+.endfor
+	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/html/ "-name *\.html -or -name *\.css  -or -name *\.txt"
+	cd ${WRKSRC}/doc/html/fonts && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/html/fonts/
+	cd ${WRKSRC}/doc/html/images && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/html/images/
+	${INSTALL_DATA} ${WRKSRC}/doc/vice.texi ${STAGEDIR}${DOCSDIR}/html/
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- tools/memory/partition_allocator/inspect_utils.h.orig	2022-10-01 07:40:07 UTC
+--- tools/memory/partition_allocator/inspect_utils.h.orig	2024-02-25 20:22:18 UTC
 +++ tools/memory/partition_allocator/inspect_utils.h
-@@ -60,7 +60,7 @@ class RemoteProcessMemoryReader {
+@@ -61,7 +61,7 @@ class RemoteProcessMemoryReader {
    const pid_t pid_;
    bool is_valid_;
  

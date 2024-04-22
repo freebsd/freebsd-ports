@@ -1,2 +1,5 @@
-SHA256 (mrxvt-0.4.2.tgz) = a6d348670641b043aa3cb7b55c2f3ebb4fbb521f8134b67e0821991b959f1830
-SIZE (mrxvt-0.4.2.tgz) = 508718
+TIMESTAMP = 1710358992
+SHA256 (mrxvt-0.5.4.tar.gz) = f403ad5a908fcd38a55ed0a7e1b85584cb77be8781199653a39b8af1a9ad10d7
+SIZE (mrxvt-0.5.4.tar.gz) = 603978
+SHA256 (mrxvt-0.5.4-001-fix-segfault-when-wd-empty.patch) = 1b4e5c18d5c2ed6c9e1f198a97e058016b8e6589e1690d494c01bc899c010f30
+SIZE (mrxvt-0.5.4-001-fix-segfault-when-wd-empty.patch) = 380

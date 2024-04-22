@@ -1,6 +1,6 @@
 bin/xfdesktop
 bin/xfdesktop-settings
-man/man1/xfdesktop.1.gz
+share/man/man1/xfdesktop.1.gz
 share/applications/xfce-backdrop-settings.desktop
 share/backgrounds/xfce/xfce-blue.jpg
 share/backgrounds/xfce/xfce-flower.svg

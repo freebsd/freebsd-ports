@@ -1,0 +1,22 @@
+--- iec61850/data/abilities/inhibit-response-function/41fd3989-b5bd-3892-9210-9bc053c355a5.yml.orig	2024-02-18 18:43:18 UTC
++++ iec61850/data/abilities/inhibit-response-function/41fd3989-b5bd-3892-9210-9bc053c355a5.yml
+@@ -33,6 +33,12 @@
+         payloads:
+         - iec61850_actions
+         timeout: 360
++    freebsd:
++      sh:
++        command: './iec61850_actions_freebsd delete data_set #{iec61850.dataset.name} #{iec61850.server.ip}'
++        payloads:
++        - iec61850_actions_freebsd
++        timeout: 360
+   repeatable: true
+   plugin: iec61850
+   additional_info:
+@@ -42,4 +48,4 @@
+         description: Name of a dataset
+       iiec61850.server.ip:
+         default: null
+-        description: IP address of the server
+\ No newline at end of file
++        description: IP address of the server

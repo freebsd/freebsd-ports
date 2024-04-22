@@ -82,10 +82,10 @@ lib/erlang/lib/yaws-%%VERSION%%/priv/wsdl.xsd
 lib/erlang/lib/yaws-%%VERSION%%/priv/wsdl11soap12.xsd
 lib/erlang/lib/yaws-%%VERSION%%/priv/xml.xsd
 libdata/pkgconfig/yaws.pc
-man/man1/yaws.1.gz
-man/man5/yaws.conf.5.gz
-man/man5/yaws_api.5.gz
-man/man5/yaws_soap_lib.5.gz
+share/man/man1/yaws.1.gz
+share/man/man5/yaws.conf.5.gz
+share/man/man5/yaws_api.5.gz
+share/man/man5/yaws_soap_lib.5.gz
 %%WWW%%%%WWWDIR%%/END
 %%WWW%%%%WWWDIR%%/END2
 %%WWW%%%%WWWDIR%%/HEAD

@@ -3,4 +3,4 @@
 bin/moon-buggy
 @owner
 @group
-man/man6/moon-buggy.6.gz
+share/man/man6/moon-buggy.6.gz

@@ -13,7 +13,7 @@ WWW=		https://www.igniterealtime.org/projects/openfire/index.jsp
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	mvn:devel/maven
+BUILD_DEPENDS=	maven>0:devel/maven
 
 USES=		cpe
 CPE_VENDOR=	igniterealtime

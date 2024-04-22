@@ -1,5 +1,6 @@
 PORTNAME=	wcd
 DISTVERSION=	6.0.5
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	SF
 
@@ -14,7 +15,7 @@ USES=		gmake ncurses
 MAKE_ARGS=	docsubdir=${PORTNAME} \
 		EXT= \
 		LIB_CURSES=-l${NCURSES_IMPL} \
-		mandir=${PREFIX}/man \
+		mandir=${PREFIX}/share/man \
 		PREFIX=${PREFIX}
 CFLAGS+=	-I${NCURSESINC}
 
@@ -25,8 +26,7 @@ NLS_USES=		gettext
 NLS_MAKE_ARGS_OFF=	ENABLE_NLS=
 
 post-patch:
-	@${REINPLACE_CMD} -e '/manfile/ s|datarootdir|prefix|' \
-		-e 's|/usr/local|${LOCALBASE}|' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/src/Makefile
 
 post-install:

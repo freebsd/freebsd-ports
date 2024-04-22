@@ -1,0 +1,18 @@
+--- VTK/IO/PDAL/CMakeLists.txt.orig	2024-02-28 20:42:21 UTC
++++ VTK/IO/PDAL/CMakeLists.txt
+@@ -5,14 +5,7 @@ set(classes
+ set(classes
+   vtkPDALReader)
+ 
+-set(pdal_libraries pdal_util)
+-if (APPLE OR WIN32)
+-  list(APPEND pdal_libraries
+-    pdalcpp)
+-else()
+-  list(APPEND pdal_libraries
+-    pdal_base)
+-endif()
++set(pdal_libraries pdalcpp)
+ 
+ vtk_module_add_module(VTK::IOPDAL
+   CLASSES ${classes})

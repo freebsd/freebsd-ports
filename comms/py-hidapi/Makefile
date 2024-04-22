@@ -25,11 +25,11 @@ LIB_DEPENDS=	libhidapi.so:comms/hidapi
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR}
 
-USES=		pytest python
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	trezor
 GH_PROJECT=	cython-hidapi
-USE_PYTHON=	autoplist cython pep517
+USE_PYTHON=	autoplist cython pep517 pytest
 
 MAKE_ENV+=	DISTUTILS_DEBUG=1
 

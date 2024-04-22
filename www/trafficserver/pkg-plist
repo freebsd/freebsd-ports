@@ -123,6 +123,7 @@ libexec/trafficserver/access_control.so
 libexec/trafficserver/acme.so
 libexec/trafficserver/authproxy.so
 libexec/trafficserver/background_fetch.so
+libexec/trafficserver/block_errors.so
 libexec/trafficserver/cache_fill.so
 libexec/trafficserver/cache_promote.so
 libexec/trafficserver/cache_range_requests.so
@@ -185,9 +186,9 @@ lib/perl5/Apache/TS.pm
 lib/perl5/Apache/TS/AdminClient.pm
 lib/perl5/Apache/TS/Config.pm
 lib/perl5/Apache/TS/Config/Records.pm
-man/man3/Apache::TS.3.gz
-man/man3/Apache::TS::AdminClient.3.gz
-man/man3/Apache::TS::Config::Records.3.gz
+share/man/man3/Apache::TS.3.gz
+share/man/man3/Apache::TS::AdminClient.3.gz
+share/man/man3/Apache::TS::Config::Records.3.gz
 @dir(,,) libexec/trafficserver
 @dir(,,) include/ts
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%ETCDIR%%/body_factory/default

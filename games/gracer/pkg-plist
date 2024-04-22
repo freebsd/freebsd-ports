@@ -1,5 +1,5 @@
 bin/gracer
-man/man6/gracer.6.gz
+share/man/man6/gracer.6.gz
 %%DATADIR%%/courses/cliff.jpg
 %%DATADIR%%/courses/course1.grc
 %%DATADIR%%/courses/course1.grs

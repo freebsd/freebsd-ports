@@ -1,6 +1,6 @@
-TIMESTAMP = 1665654917
-SHA256 (st-0.9.tar.gz) = f36359799734eae785becb374063f0be833cf22f88b4f169cd251b99324e08e7
-SIZE (st-0.9.tar.gz) = 48171
+TIMESTAMP = 1710924730
+SHA256 (st-0.9.1.tar.gz) = 16f43b9433ade9d70d6085c31f9fd99f2835eaade31221020f22143035dfc0d2
+SIZE (st-0.9.1.tar.gz) = 48412
 SHA256 (st-scrollback-0.8.5.diff) = dc7f5223b26fc813d91d4ae35bdaa54d63024cae9f18afd9b3594ba3399dfa55
 SIZE (st-scrollback-0.8.5.diff) = 8914
 SHA256 (st-scrollback-mouse-20220127-2c5edf2.diff) = 46ac9bcdbfeb0011533207cb0ab31657a3eb9196da1d0db346e6a9d1fc4b4f76

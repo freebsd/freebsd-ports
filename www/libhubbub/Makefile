@@ -1,5 +1,5 @@
 PORTNAME=	libhubbub
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.8
 CATEGORIES=	www
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -14,12 +14,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	netsurf-buildsystem>=1.5:devel/netsurf-buildsystem
 LIB_DEPENDS=	libparserutils.so:devel/libparserutils
 
-USES=		gmake iconv:wchar_t localbase pkgconfig
+USES=		gmake gperf iconv:wchar_t localbase pkgconfig
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
-MAKE_ENV+=	BUILD_CC="${CC}" COMPONENT_TYPE="lib-shared"
+MAKE_ENV+=	BUILD_CC="${CC}" \
+		COMPONENT_TYPE="lib-shared"
 LDFLAGS+=	${ICONV_LIB}
 
 PLIST_SUB+=	VERSION=${PORTVERSION}

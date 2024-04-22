@@ -1,7 +1,6 @@
 PORTNAME=	conlecterm
-PORTVERSION=	1.4.3.1
+PORTVERSION=	1.5.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	hsw@bitmark.com
@@ -11,10 +10,11 @@ WWW=		https://github.com/hxw/conlecterm
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	urxvt:x11/rxvt-unicode
 
 USES=		cabal xorg gnome pkgconfig
-USE_GNOME=	gtk30 cairo glib20
+USE_GNOME=	gtk30 cairo glib20 gdkpixbuf2
 USE_XORG=	xext x11 xscrnsaver xinerama xrandr
 
 OPTIONS_DEFINE=	EXAMPLES
@@ -25,56 +25,56 @@ INSTALL_TARGET=	install-strip
 USE_GITHUB=	yes
 GH_ACCOUNT=	hxw
 
-USE_CABAL=	OneTuple-0.4.1.1 \
-		QuickCheck-2.14.2 \
+USE_CABAL=	OneTuple-0.4.1.1_1 \
+		QuickCheck-2.14.3 \
 		StateVar-1.2.2 \
 		X11-1.10.3 \
-		aeson-2.1.2.1_3 \
-		alex-3.2.7.4 \
-		assoc-1.1 \
-		attoparsec-0.14.4_3 \
-		base-compat-0.13.0 \
-		base-compat-batteries-0.13.0 \
-		base-orphans-0.9.0 \
-		bifunctors-5.6.1 \
-		cairo-0.13.10.0 \
-		comonad-5.0.8_1 \
+		aeson-2.2.1.0_1 \
+		alex-3.5.1.0 \
+		assoc-1.1_1 \
+		base-orphans-0.9.1 \
+		bifunctors-5.6.1_3 \
+		cairo-0.13.10.0_2 \
+		comonad-5.0.8_2 \
 		contravariant-1.5.5 \
 		data-default-class-0.1.2.0 \
-		data-fix-0.3.2_4 \
+		data-fix-0.3.2_5 \
 		distributive-0.6.2.1_1 \
-		dlist-1.0 \
-		foldable1-classes-compat-0.1_2 \
-		generically-0.1.1_1 \
-		gio-0.13.10.0 \
-		glib-0.13.10.0 \
-		gtk2hs-buildtools-0.13.10.0 \
+		dlist-1.0_1 \
+		generically-0.1.1_2 \
+		gio-0.13.10.0_1 \
+		glib-0.13.10.0_2 \
+		gtk2hs-buildtools-0.13.10.0_1 \
 		gtk3-0.15.8 \
 		happy-1.20.1.1 \
-		hashable-1.4.2.0_1 \
+		hashable-1.4.3.0_1 \
 		hashtables-1.3.1 \
-		indexed-traversable-0.1.2.1 \
-		indexed-traversable-instances-0.1.1.2_1 \
-		integer-logarithms-1.0.3.1_4 \
-		pango-0.13.10.0 \
-		primitive-0.8.0.0 \
-		random-1.2.1.1 \
-		scientific-0.3.7.0_5 \
-		semialign-1.3 \
-		semigroupoids-6.0.0.1 \
-		splitmix-0.1.0.4_2 \
-		strict-0.5 \
-		tagged-0.8.7 \
-		text-short-0.1.5_2 \
-		th-abstraction-0.5.0.0 \
-		these-1.2 \
-		time-compat-1.9.6.1_5 \
+		indexed-traversable-0.1.3 \
+		indexed-traversable-instances-0.1.1.2_2 \
+		integer-conversion-0.1.0.1_1 \
+		integer-logarithms-1.0.3.1_5 \
+		network-uri-2.6.4.2_1 \
+		pango-0.13.10.0_2 \
+		primitive-0.9.0.0_1 \
+		random-1.2.1.2 \
+		scientific-0.3.7.0_7 \
+		semialign-1.3_1 \
+		semigroupoids-6.0.0.1_1 \
+		splitmix-0.1.0.5 \
+		strict-0.5_1 \
+		tagged-0.8.8_1 \
+		text-iso8601-0.1_1 \
+		text-short-0.1.5_3 \
+		th-abstraction-0.6.0.0_2 \
+		th-compat-0.1.4_4 \
+		these-1.2_1 \
+		time-compat-1.9.6.1_6 \
 		transformers-compat-0.7.2 \
-		unordered-containers-0.2.19.1_2 \
+		unordered-containers-0.2.20_1 \
 		utf8-string-1.0.2 \
-		uuid-types-1.0.5_4 \
-		vector-0.13.0.0_3 \
-		vector-stream-0.1.0.0_2 \
+		uuid-types-1.0.5.1 \
+		vector-0.13.1.0_1 \
+		vector-stream-0.1.0.1_1 \
 		witherable-0.4.2_4
 
 PLIST_FILES+=	share/applications/conlecterm.desktop

@@ -1,6 +1,6 @@
 PORTNAME=	biew
 PORTVERSION=	6.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors
 MASTER_SITES=	SF/beye/biew/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-src
@@ -69,7 +69,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/bin_rc/syntax/* ${STAGEDIR}${DATADIR}/syntax
 	${INSTALL_DATA} ${WRKSRC}/bin_rc/xlt/russian/* \
 		${STAGEDIR}${DATADIR}/xlt
-	${INSTALL_MAN} ${WRKSRC}/doc/biew.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/biew.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}
 

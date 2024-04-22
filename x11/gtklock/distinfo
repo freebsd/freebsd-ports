@@ -1,3 +1,5 @@
-TIMESTAMP = 1683380662
-SHA256 (jovanlanik-gtklock-v2.1.0_GH0.tar.gz) = 47cc09ab773e90e3a28240faaabb8d9ac4e36f5234a2b5c3a956039783365f43
-SIZE (jovanlanik-gtklock-v2.1.0_GH0.tar.gz) = 56550
+TIMESTAMP = 1713465082
+SHA256 (jovanlanik-gtklock-v3.0.0_GH0.tar.gz) = a65e8636680c1fb11c449ecb0c88771345a9535150b7a372bc615def6bea2c7c
+SIZE (jovanlanik-gtklock-v3.0.0_GH0.tar.gz) = 54555
+SHA256 (Cu3PO42-gtk-session-lock-v0.2.0_GH0.tar.gz) = a4245c6930580c15ed263b9a7bb7e39f47693baec78be1026b4e0e28b233cb4e
+SIZE (Cu3PO42-gtk-session-lock-v0.2.0_GH0.tar.gz) = 96770

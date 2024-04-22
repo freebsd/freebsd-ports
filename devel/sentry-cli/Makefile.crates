@@ -4,6 +4,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		aes-0.7.5 \
 		ahash-0.7.6 \
 		aho-corasick-0.7.20 \
+		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anyhow-1.0.69 \
 		anylog-0.6.3 \
@@ -17,6 +18,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		base64ct-1.5.3 \
 		binary-merge-0.1.2 \
 		bitflags-1.3.2 \
+		bitflags-2.4.1 \
 		block-buffer-0.10.3 \
 		brotli-sys-0.3.2 \
 		brotli2-0.3.2 \
@@ -31,9 +33,12 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		cc-1.0.78 \
 		cfg-if-1.0.0 \
 		chardet-0.2.4 \
-		chrono-0.4.23 \
+		chrono-0.4.31 \
+		chrono-tz-0.8.4 \
+		chrono-tz-build-0.2.1 \
 		cipher-0.3.0 \
 		clap-4.1.6 \
+		clap_complete-4.4.3 \
 		clap_lex-0.3.1 \
 		codespan-reporting-0.11.1 \
 		colored-2.0.0 \
@@ -83,21 +88,30 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		encoding-index-tradchinese-1.20141219.5 \
 		encoding_index_tests-0.1.4 \
 		equivalent-1.0.1 \
-		errno-0.2.8 \
-		errno-dragonfly-0.1.2 \
+		errno-0.3.8 \
 		fallible-iterator-0.2.0 \
 		fallible-iterator-0.3.0 \
-		fastrand-1.8.0 \
+		fastrand-2.0.1 \
 		filetime-0.2.19 \
 		flate2-1.0.25 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
 		form_urlencoded-1.1.0 \
+		futures-0.3.30 \
+		futures-channel-0.3.30 \
+		futures-core-0.3.30 \
+		futures-executor-0.3.30 \
+		futures-io-0.3.30 \
+		futures-macro-0.3.30 \
+		futures-sink-0.3.30 \
+		futures-task-0.3.30 \
+		futures-timer-3.0.2 \
+		futures-util-0.3.30 \
 		generic-array-0.14.6 \
 		getrandom-0.2.8 \
 		gimli-0.27.3 \
 		gimli-0.28.0 \
-		git2-0.16.1 \
+		git2-0.18.1 \
 		glob-0.3.1 \
 		globset-0.4.10 \
 		goblin-0.7.1 \
@@ -135,20 +149,21 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		js-sys-0.3.60 \
 		lazy_static-1.4.0 \
 		leb128-0.2.5 \
-		libc-0.2.139 \
-		libgit2-sys-0.14.2+1.5.1 \
+		libc-0.2.150 \
+		libgit2-sys-0.16.1+1.7.1 \
 		libz-sys-1.1.8 \
 		line-wrap-0.1.1 \
 		link-cplusplus-1.0.8 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.1.4 \
+		linux-raw-sys-0.4.12 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
 		mac-process-info-0.2.0 \
 		magic_string-0.3.4 \
 		match_cfg-0.1.0 \
 		maybe-owned-0.3.4 \
-		memchr-2.5.0 \
+		memchr-2.7.1 \
 		memmap2-0.5.10 \
 		memoffset-0.7.1 \
 		might-be-minified-0.3.0 \
@@ -160,7 +175,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		nom-supreme-0.8.0 \
 		nom8-0.2.0 \
 		normalize-line-endings-0.3.0 \
-		num-integer-0.1.45 \
 		num-traits-0.2.15 \
 		num_cpus-1.15.0 \
 		number_prefix-0.3.0 \
@@ -169,6 +183,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		opaque-debug-0.3.0 \
 		open-3.2.0 \
 		openssl-probe-0.1.5 \
+		openssl-src-111.25.0+1.1.1t \
 		openssl-sys-0.9.80 \
 		ordered-multimap-0.4.3 \
 		os_info-3.5.1 \
@@ -177,6 +192,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		osascript-0.3.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.6 \
+		parse-zoneinfo-0.3.0 \
 		password-hash-0.4.2 \
 		pathdiff-0.2.1 \
 		pbkdf2-0.11.0 \
@@ -187,8 +203,13 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		pest_derive-2.5.4 \
 		pest_generator-2.5.4 \
 		pest_meta-2.5.4 \
+		phf-0.11.2 \
+		phf_codegen-0.11.2 \
+		phf_generator-0.11.2 \
 		phf_shared-0.10.0 \
+		phf_shared-0.11.2 \
 		pin-project-lite-0.2.9 \
+		pin-utils-0.1.0 \
 		pkg-config-0.3.26 \
 		plain-0.2.3 \
 		plist-1.4.0 \
@@ -209,17 +230,21 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		rayon-1.6.1 \
 		rayon-core-1.10.2 \
 		redox_syscall-0.2.16 \
+		redox_syscall-0.4.1 \
 		redox_users-0.4.3 \
-		regex-1.7.1 \
+		regex-1.7.3 \
 		regex-automata-0.1.10 \
-		regex-syntax-0.6.28 \
-		remove_dir_all-0.5.3 \
+		regex-syntax-0.6.29 \
+		relative-path-1.9.2 \
+		rstest-0.18.2 \
+		rstest_macros-0.18.2 \
 		runas-1.0.0 \
 		rust-ini-0.18.0 \
 		rustc-demangle-0.1.21 \
 		rustc_version-0.2.3 \
 		rustc_version-0.4.0 \
-		rustix-0.36.7 \
+		rustix-0.36.16 \
+		rustix-0.38.26 \
 		rustversion-1.0.11 \
 		ryu-1.0.12 \
 		safemem-0.3.3 \
@@ -235,12 +260,12 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		semver-0.9.0 \
 		semver-1.0.16 \
 		semver-parser-0.7.0 \
-		sentry-0.31.2 \
-		sentry-anyhow-0.31.2 \
-		sentry-backtrace-0.31.2 \
-		sentry-contexts-0.31.2 \
-		sentry-core-0.31.2 \
-		sentry-types-0.31.2 \
+		sentry-0.32.2 \
+		sentry-anyhow-0.32.2 \
+		sentry-backtrace-0.32.2 \
+		sentry-contexts-0.32.2 \
+		sentry-core-0.32.2 \
+		sentry-types-0.32.2 \
 		serde-1.0.188 \
 		serde_derive-1.0.188 \
 		serde_json-1.0.105 \
@@ -249,16 +274,17 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		sha1-0.10.5 \
 		sha1_smol-1.0.0 \
 		sha2-0.10.6 \
-		shlex-1.1.0 \
+		shlex-1.3.0 \
 		signal-hook-0.3.15 \
 		signal-hook-registry-1.4.0 \
 		similar-2.2.1 \
 		siphasher-0.3.10 \
+		slab-0.4.9 \
 		smallvec-1.10.0 \
 		snapbox-0.4.4 \
 		snapbox-macros-0.3.1 \
 		socket2-0.4.7 \
-		sourcemap-7.0.0 \
+		sourcemap-7.0.1 \
 		stable_deref_trait-1.2.0 \
 		string_cache-0.8.4 \
 		strsim-0.10.0 \
@@ -271,14 +297,14 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		symbolic-symcache-12.4.1 \
 		syn-1.0.107 \
 		syn-2.0.31 \
-		tempfile-3.3.0 \
+		tempfile-3.8.1 \
 		term-0.7.0 \
 		termcolor-1.2.0 \
 		terminal_size-0.2.3 \
+		testing_logger-0.1.1 \
 		thiserror-1.0.40 \
 		thiserror-impl-1.0.40 \
 		thread_local-1.1.4 \
-		time-0.1.45 \
 		time-0.3.17 \
 		time-core-0.1.0 \
 		time-macros-0.2.6 \
@@ -307,7 +333,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		vlq-0.5.1 \
 		wait-timeout-0.2.0 \
 		walkdir-2.3.2 \
-		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.83 \
 		wasm-bindgen-backend-0.2.83 \
@@ -324,13 +349,33 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.42.0 \
+		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.42.1 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.0 \
 		windows_aarch64_gnullvm-0.42.1 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.0 \
 		windows_aarch64_msvc-0.42.1 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.0 \
 		windows_i686_gnu-0.42.1 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.0 \
 		windows_i686_msvc-0.42.1 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.0 \
 		windows_x86_64_gnu-0.42.1 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.0 \
 		windows_x86_64_gnullvm-0.42.1 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.42.1 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.0 \
 		yaml-rust-0.4.5 \
 		yansi-0.5.1 \
 		zip-0.6.4 \

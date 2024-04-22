@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/collection/89955f55-529d-4d58-bed4-fed9e42515ec.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/collection/89955f55-529d-4d58-bed4-fed9e42515ec.yml
+@@ -12,7 +12,7 @@
+       sh:
+         command: |
+           curl #{remote.host.socket}
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           curl #{remote.host.socket}

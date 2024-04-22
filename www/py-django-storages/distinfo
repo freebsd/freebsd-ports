@@ -1,3 +1,3 @@
-TIMESTAMP = 1674590834
-SHA256 (django-storages-1.13.2.tar.gz) = cbadd15c909ceb7247d4ffc503f12a9bec36999df8d0bef7c31e57177d512688
-SIZE (django-storages-1.13.2.tar.gz) = 107522
+TIMESTAMP = 1704627222
+SHA256 (django-storages-1.14.2.tar.gz) = 51b36af28cc5813b98d5f3dfe7459af638d84428c8df4a03990c7d74d1bea4e5
+SIZE (django-storages-1.14.2.tar.gz) = 111090

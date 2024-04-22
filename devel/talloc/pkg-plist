@@ -7,4 +7,4 @@ lib/libtalloc.so.2
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/talloc%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON%%%%PKGCONFIGDIR%%/pytalloc-util%%PYTHON_EXT_SUFFIX%%.pc
 %%PKGCONFIGDIR%%/talloc.pc
-man/man3/talloc.3.gz
+share/man/man3/talloc.3.gz

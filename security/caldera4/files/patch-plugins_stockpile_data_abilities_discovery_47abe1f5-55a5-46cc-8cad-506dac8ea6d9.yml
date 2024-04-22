@@ -1,0 +1,17 @@
+--- plugins/stockpile/data/abilities/discovery/47abe1f5-55a5-46cc-8cad-506dac8ea6d9.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/47abe1f5-55a5-46cc-8cad-506dac8ea6d9.yml
+@@ -28,3 +28,14 @@
+             target: remote.host.port
+         payloads:
+         - scanner.py
++    freebsd:
++      sh:
++        command: |
++          python3.9 scanner.py -i #{remote.host.ip}
++        parsers:
++          plugins.stockpile.app.parsers.scan:
++          - source: remote.host.ip
++            edge: has_open_port
++            target: remote.host.port
++        payloads:
++        - scanner.py

@@ -1,5 +1,6 @@
 PORTNAME=	xmlsec1
-DISTVERSION=	1.2.38
+DISTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/lsh123/xmlsec/releases/download/xmlsec_${DISTVERSION:S,.,_,g}/ \
 		https://www.aleksey.com/xmlsec/download/
@@ -18,6 +19,7 @@ USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 PORTDOCS=	*

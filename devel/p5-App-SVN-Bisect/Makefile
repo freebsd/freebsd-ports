@@ -1,6 +1,6 @@
 PORTNAME=	App-SVN-Bisect
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-IO-All>0:devel/p5-IO-All \
-		p5-YAML-Syck>0:textproc/p5-YAML-Syck \
-		${LOCALBASE}/bin/svn:devel/subversion
+		p5-YAML-Syck>0:textproc/p5-YAML-Syck
+.if ${WITH_SUBVERSION_VER:U} == LTS
+RUN_DEPENDS+=	svn:devel/subversion-lts
+.else
+RUN_DEPENDS+=	svn:devel/subversion
+.endif
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Output>=0:devel/p5-Test-Output
 

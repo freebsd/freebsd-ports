@@ -1,0 +1,5 @@
+etc/rc.d/routed
+sbin/routed
+sbin/rtquery
+share/man/man8/routed.8.gz
+share/man/man8/rtquery.8.gz

@@ -8,5 +8,3 @@ Features:
 - An thread-based event loop for using ovs.db.Idl
 - Transaction support
 - Native OVSDB communication
-
-See also: https://github.com/openstack/ovsdbapp

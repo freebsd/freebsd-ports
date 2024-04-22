@@ -1,0 +1,2 @@
+This Test2::Tools module tests whether a module can be loaded, and optionally
+whether it has at least a given version, and exports specified symbols.

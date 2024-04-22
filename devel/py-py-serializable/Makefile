@@ -1,9 +1,10 @@
 PORTNAME=	py-serializable
-PORTVERSION=	0.16.0
+PORTVERSION=	1.0.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/madpah/serializable/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	py_serializable-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for serializing and deserializing Python Objects to and from JSON and XML

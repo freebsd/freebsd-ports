@@ -1,5 +1,6 @@
 PORTNAME=	balsa
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://pawsa.fedorapeople.org/balsa/
 
@@ -34,6 +35,7 @@ CPE_VENDOR=	gnome
 USE_GNOME=	cairo gdkpixbuf2 gnomeprefix intlhack libxslt gtksourceview4
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-canberra \
 				--with-gtksourceview
 CPPFLAGS+=	-I${LOCALBASE}/include

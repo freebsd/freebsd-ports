@@ -1,5 +1,6 @@
 PORTNAME=	portsreinstall
 DISTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	OSDN/${PORTNAME} \
 		http://www.mwghennndo.com/software/${PORTNAME}/

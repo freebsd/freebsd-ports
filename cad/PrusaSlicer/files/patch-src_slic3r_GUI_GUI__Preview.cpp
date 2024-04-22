@@ -1,6 +1,6 @@
---- src/slic3r/GUI/GUI_Preview.cpp.orig	2023-07-25 10:57:11 UTC
+--- src/slic3r/GUI/GUI_Preview.cpp.orig	2023-12-12 14:21:21 UTC
 +++ src/slic3r/GUI/GUI_Preview.cpp
-@@ -292,7 +292,7 @@ void Preview::reload_print(bool keep_volumes)
+@@ -303,7 +303,7 @@ void Preview::load_print(bool keep_z_range)
  
  void Preview::reload_print(bool keep_volumes)
  {
@@ -9,7 +9,7 @@
      // We are getting mysterious crashes on Linux in gtk due to OpenGL context activation GH #1874 #1955.
      // So we are applying a workaround here: a delayed release of OpenGL vertex buffers.
      if (!IsShown())
-@@ -302,14 +302,14 @@ void Preview::reload_print(bool keep_volumes)
+@@ -313,14 +313,14 @@ void Preview::reload_print(bool keep_volumes)
      }
  #endif /* __linux__ */
      if (

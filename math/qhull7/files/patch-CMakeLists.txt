@@ -1,17 +1,8 @@
 Install docs into share/doc/ rather than include/
 
---- CMakeLists.txt.orig	2018-12-28 23:33:58 UTC
+--- CMakeLists.txt.orig	2019-06-29 00:30:15 UTC
 +++ CMakeLists.txt
-@@ -91,7 +91,7 @@ else()
-     if(WIN32)
-         set(MAN_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/man/man1)
-     else()
--        set(MAN_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/share/man/man1)
-+        set(MAN_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/man/man1)
-     endif()
- endif()
- if(DOC_INSTALL_DIR)
-@@ -330,7 +330,7 @@ set(
+@@ -335,7 +335,7 @@ include_directories(${CMAKE_SOURCE_DIR}/src)
  
  include_directories(${CMAKE_SOURCE_DIR}/src)
  
@@ -20,8 +11,8 @@ Install docs into share/doc/ rather than include/
      set(qhull_CPP qhullcpp_d)
      set(qhull_SHARED qhull_d) 
      set(qhull_SHAREDP qhull_pd)
-@@ -616,9 +616,9 @@ install(TARGETS ${qhull_TARGETS_INSTALL}
-         ARCHIVE DESTINATION ${LIB_INSTALL_DIR})
+@@ -661,9 +661,9 @@ install(FILES ${libqhull_HEADERS}    DESTINATION ${INC
+ )
  
  install(FILES ${libqhull_HEADERS}    DESTINATION ${INCLUDE_INSTALL_DIR}/libqhull)
 -install(FILES ${libqhull_DOC}        DESTINATION ${INCLUDE_INSTALL_DIR}/libqhull)

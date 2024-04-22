@@ -1,6 +1,6 @@
 PORTNAME=	rrdtool
 PORTVERSION=	1.2.30
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 PKGNAMESUFFIX=	12
@@ -17,6 +17,7 @@ CONFLICTS_INSTALL=	rrdtool # include/rrd.h
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		cpe gmake libtool
 CPE_VENDOR=	${PORTNAME}_project
 

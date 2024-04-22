@@ -1,6 +1,6 @@
 PORTNAME=	pounce
 DISTVERSION=	3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	https://git.causal.agency/pounce/snapshot/
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		compiler:c11 localbase:ldflags ssl
 USE_RC_SUBR=	calico pounce
 
-MAKE_ENV+=	MANDIR=${MANPREFIX}/man
+MAKE_ENV+=	MANDIR=${PREFIX}/share/man
 CFLAGS+=	-D'OPENSSL_BIN=\"${OPENSSL_BIN}\"'
 
 .include <bsd.port.pre.mk>

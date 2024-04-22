@@ -1,5 +1,6 @@
 PORTNAME=	bible-kjv
 PORTVERSION=	4.38
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	DEBIAN
 DISTNAME=	bible-kjv_${DISTVERSION}
@@ -42,7 +43,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/bible.data ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/bible.data.conc ${STAGEDIR}${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/bible.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/debian/randverse.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/bible.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/debian/randverse.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

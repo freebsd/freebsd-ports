@@ -1,6 +1,6 @@
 PORTNAME=	caja
-PORTVERSION=	1.26.1
-PORTREVISION=	4
+PORTVERSION=	1.28.0
+PORTREVISION=	1
 CATEGORIES=	x11-fm mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -26,9 +26,11 @@ USES=		compiler:c11 desktop-file-utils gettext gmake gnome libtool \
 		localbase mate pathfix pkgconfig shared-mime-info tar:xz xorg
 USE_MATE=	desktop icontheme:run
 USE_XORG=	ice sm x11
-USE_GNOME=	cairo gtk30 gnomeprefix intltool introspection:build libxml2
+USE_GNOME=	cairo gtk30 gnomeprefix intltool introspection:build libxml2 \
+		gvfs
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-packagekit
 INSTALL_TARGET=	install-strip
 

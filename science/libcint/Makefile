@@ -1,7 +1,6 @@
 PORTNAME=	libcint
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.1.0
-PORTREVISION=	1
+DISTVERSION=	6.1.2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +23,8 @@ PLIST_FILES=	include/cint.h \
 		include/cint_funcs.h \
 		lib/libcint.so \
 		lib/libcint.so.${PORTVERSION:R:R} \
-		lib/libcint.so.${PORTVERSION}
+		lib/libcint.so.6.1.1 # see https://github.com/sunqm/libcint/issues/106
+		#lib/libcint.so.${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|\\.\\./\\.\\./build/libcint\\.so|${BUILD_WRKSRC}/libcint.so|" \

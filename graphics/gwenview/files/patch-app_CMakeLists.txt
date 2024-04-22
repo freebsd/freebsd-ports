@@ -1,0 +1,10 @@
+--- app/CMakeLists.txt.orig	2023-11-30 17:00:43 UTC
++++ app/CMakeLists.txt
+@@ -157,6 +157,6 @@ target_link_libraries(slideshowfileitemaction
+     KF${QT_MAJOR_VERSION}::KIOWidgets
+     KF${QT_MAJOR_VERSION}::Notifications)
+ 
+-if(kImageAnnotator_FOUND)
++if(kImageAnnotator${KIMAGEANNOTATOR_SUFFIX}_FOUND)
+     target_link_libraries(gwenview kImageAnnotator::kImageAnnotator)
+ endif()

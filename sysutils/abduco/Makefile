@@ -11,8 +11,7 @@ WWW=		http://www.brain-dump.org/projects/abduco/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-MAKE_ARGS=	CPPFLAGS="${CPPFLAGS}" STRIP="${STRIP_CMD}" \
-		MANPREFIX="${PREFIX}/share/man"
+MAKE_ARGS=	CPPFLAGS="${CPPFLAGS}" STRIP="${STRIP_CMD}"
 PLIST_FILES=	bin/abduco \
 		share/man/man1/abduco.1.gz
 

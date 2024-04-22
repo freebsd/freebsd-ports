@@ -1,5 +1,6 @@
 PORTNAME=	SVN-Look
 PORTVERSION=	0.43
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +15,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
-		p5-XML-Simple>=0:textproc/p5-XML-Simple \
-		subversion>0:devel/subversion
+		p5-XML-Simple>=0:textproc/p5-XML-Simple
+.if ${WITH_SUBVERSION_VER:U} == LTS
+RUN_DEPENDS+=	subversion-lts>0:devel/subversion-lts
+.else
+RUN_DEPENDS+=	subversion>0:devel/subversion
+.endif
 
 USES=		perl5
 USE_PERL5=	configure

@@ -10,6 +10,9 @@ WWW=		https://0pointer.de/lennart/projects/atitvout/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Obsolete, utility for hardware released over 20 years ago
+EXPIRATION_DATE=2024-04-30
+
 ONLY_FOR_ARCHS=	i386
 
 LIB_DEPENDS=	liblrmi.so:devel/lrmi

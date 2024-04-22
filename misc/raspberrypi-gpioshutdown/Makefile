@@ -1,5 +1,6 @@
 PORTNAME=	raspberrypi-gpioshutdown
 DISTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://mrp3.com/
 
@@ -18,6 +19,7 @@ USE_RC_SUBR=	${KMODNAME}
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/${KMODNAME}.ko ${STAGEDIR}${KMODDIR}
-	${INSTALL_MAN} ${WRKSRC}/gpioshutdown.4 ${STAGEDIR}${PREFIX}/man/man4/
+	${INSTALL_MAN} ${WRKSRC}/gpioshutdown.4 \
+		${STAGEDIR}${PREFIX}/share/man/man4/
 
 .include <bsd.port.mk>

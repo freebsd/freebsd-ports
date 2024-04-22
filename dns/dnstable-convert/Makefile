@@ -1,6 +1,6 @@
 PORTNAME=	dnstable-convert
 PORTVERSION=	0.12.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
@@ -21,12 +21,10 @@ RUN_DEPENDS=	sie-nmsg>0:net/sie-nmsg
 USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/dnstable_convert bin/dnstable_unconvert \
-		man/man1/dnstable_convert.1.gz \
-		man/man1/dnstable_unconvert.1.gz
-
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/man/*.1 ${STAGEDIR}/${PREFIX}/man/man1
+		share/man/man1/dnstable_convert.1.gz \
+		share/man/man1/dnstable_unconvert.1.gz
 
 .include <bsd.port.mk>

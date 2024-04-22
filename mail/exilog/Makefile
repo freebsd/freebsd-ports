@@ -1,6 +1,6 @@
 PORTNAME=	exilog
 PORTVERSION=	0.5
-PORTREVISION=	9
+PORTREVISION=	12
 CATEGORIES=	mail
 MASTER_SITES=	http://duncanthrax.net/exilog/
 
@@ -11,45 +11,39 @@ WWW=		https://duncanthrax.net/exilog/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-#RUN_DEPENDS=	p5-Net-Netmask>=0:net-mgmt/p5-Net-Netmask
-
-OPTIONS_DEFINE=	DOCS
+RUN_DEPENDS=	p5-Net-Netmask>=0:net-mgmt/p5-Net-Netmask \
+		p5-CGI>0:www/p5-CGI
 
 USES=		perl5 shebangfix
-NO_BUILD=	yes
-NO_ARCH=	yes
+SHEBANG_GLOB=	*.pl
 
-SHEBANG_FILES=	exilog_agent.pl exilog_cgi.pl exilog_cleanup.pl
-
-# Default sql backend
-WITH_SQL_BACKEND?=	mysql
-
-.if (${WITH_SQL_BACKEND} == "mysql")
-WITH_MYSQL=	yes
-RUN_DEPENDS+=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
-SERVER=		mysql
-.elif (${WITH_SQL_BACKEND} == "postgresql")
-WITH_POSTGRESQL=	yes
-RUN_DEPENDS+=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
-SERVER=		postgresql
-.else
-BROKEN=	You should specify sql backend using WITH_SQL_BACKEND
-.endif
-SUB_LIST+=	SERVER=${SERVER}
 .ifndef WITHOUT_WWWDIR
 EXILOGDIR?=	${PREFIX}/www/exilog
 .else
 EXILOGDIR?=	${PREFIX}/exilog
 .endif
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=			DOCS AGENT
+OPTIONS_MULTI=			SQLBACKEND
+OPTIONS_MULTI_SQLBACKEND=	MYSQL PGSQL
+OPTIONS_DEFAULT=		AGENT DOCS MYSQL
+OPTIONS_SUB=			YES
+AGENT_DESC=			Include exilog agent
 
-.if defined(WITHOUT_AGENT)
-PLIST_SUB+=	AGENT="@comment "
-.else
-USE_RC_SUBR=	exilog
-PLIST_SUB+=	AGENT=""
+MYSQL_RUN_DEPENDS=	${DBD_MYSQL}
+MYSQL_USES=		mysql
+
+PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
+PGSQL_USES=		pgsql
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MAGENT}
+USE_RC_SUBR=	${PORTNAME}
 .endif
+
+NO_BUILD=	yes
+NO_ARCH=	yes
 
 PLIST_SUB+=	EXILOGDIR="${EXILOGDIR:S,^${PREFIX}/,,}"
 
@@ -65,22 +59,22 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's,$$RealBin/exilog.conf,${PREFIX}/etc/exilog.conf,' ${WRKSRC}/exilog_config.pm
 	@${REINPLACE_CMD} -e "s,\(use exilog_config\),use lib \'${EXILOGDIR}\'; \1," ${WRKSRC}/exilog_agent.pl
 	@${REINPLACE_CMD} -e "s,\(use exilog_config\),use lib \'${EXILOGDIR}\'; \1," ${WRKSRC}/exilog_cleanup.pl
+	@${REINPLACE_CMD} -e "s,\(use exilog_config\),use lib \'${EXILOGDIR}\'; \1," ${WRKSRC}/exilog_cgi.pl
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${EXILOGDIR} ${STAGEDIR}${EXILOGDIR}/icons
-	@${CP} ${WRKSRC}/*.pm ${WRKSRC}/*.css ${WRKSRC}/*.js ${STAGEDIR}${EXILOGDIR}
-	@${CP} ${WRKSRC}/icons/* ${STAGEDIR}${EXILOGDIR}/icons
-.if !defined(WITHOUT_AGENT)
-	@${INSTALL_SCRIPT} ${WRKSRC}/exilog_agent.pl ${STAGEDIR}${PREFIX}/sbin
+	${MKDIR} ${STAGEDIR}${EXILOGDIR} ${STAGEDIR}${EXILOGDIR}/icons
+	${CP} ${WRKSRC}/*.pm ${WRKSRC}/*.css ${WRKSRC}/*.js ${STAGEDIR}${EXILOGDIR}
+	${CP} ${WRKSRC}/icons/* ${STAGEDIR}${EXILOGDIR}/icons
+.if ${PORT_OPTIONS:MAGENT}
+	${INSTALL_SCRIPT} ${WRKSRC}/exilog_agent.pl ${STAGEDIR}${PREFIX}/sbin
 .endif
-	@${INSTALL_SCRIPT} ${WRKSRC}/exilog_cleanup.pl ${STAGEDIR}${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${WRKSRC}/exilog_cgi.pl ${STAGEDIR}${EXILOGDIR}
-	@${CP} ${WRKSRC}/exilog.conf-example ${STAGEDIR}${PREFIX}/etc/exilog.conf-dist
-	@${CHMOD} 0600 ${STAGEDIR}${PREFIX}/etc/exilog.conf-dist
-	@${CP} ${FILESDIR}/htaccess ${STAGEDIR}${EXILOGDIR}/.htaccess
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/exilog_cleanup.pl ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/exilog_cgi.pl ${STAGEDIR}${EXILOGDIR}
+	${CP} ${WRKSRC}/exilog.conf-example ${STAGEDIR}${PREFIX}/etc/exilog.conf-dist
+	${CP} ${FILESDIR}/htaccess ${STAGEDIR}${EXILOGDIR}/.htaccess
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in ${PORTDOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

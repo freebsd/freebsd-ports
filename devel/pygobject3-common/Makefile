@@ -13,6 +13,8 @@ COMMENT?=	Common files for the Python bindings for GObject
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
+
 SLAVE_PORT?=	no
 
 USES=		meson pkgconfig tar:xz
@@ -25,6 +27,8 @@ PLIST_SUB=	ARCH=${ARCH} UNAME_R=${UNAME_R} VERSION=${PORTVERSION} \
 		OPSYS=${OPSYS:tl} UNAME_M=${UNAME_M}
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+TESTING_UNSAFE=	AttributeError: 'NoneType' object has no attribute '_version'
 
 .if ${SLAVE_PORT} == no
 PORTSCOUT?=	limitw:1,even

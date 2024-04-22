@@ -1,12 +1,14 @@
 PORTNAME=	ndindex
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	math python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/Quansight-Labs/ndindex/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python library for manipulating indices of ndarrays
-WWW=		https://github.com/Quansight-Labs/ndindex
+WWW=		https://quansight-labs.github.io/ndindex/ \
+		https://github.com/Quansight-Labs/ndindex
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

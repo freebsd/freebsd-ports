@@ -1,7 +1,7 @@
 PORTNAME=	pylyzer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.51
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	devel python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,6 +10,8 @@ WWW=		https://mtshiba.github.io/pylyzer/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	compilation fails: cannot transmute between types of different sizes, or dependently-sized types, see https://github.com/RustPython/Parser/issues/116
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-rust>0:devel/py-setuptools-rust@${PY_FLAVOR} \

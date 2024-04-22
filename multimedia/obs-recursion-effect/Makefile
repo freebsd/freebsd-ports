@@ -1,6 +1,5 @@
 PORTNAME=	obs-recursion-effect
-DISTVERSION=	0.0.5
-PORTREVISION=	2
+DISTVERSION=	0.1.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +21,10 @@ GH_ACCOUNT=	exeldro
 
 CMAKE_OFF=	LINUX_PORTABLE
 
+CFLAGS+=	-Wno-deprecated-declarations
+
 PLIST_FILES=	lib/obs-plugins/recursion-effect.so \
+		share/obs/obs-plugins/recursion-effect/effects/render.effect \
 		share/obs/obs-plugins/recursion-effect/locale/en-US.ini
 
 .include <bsd.port.mk>

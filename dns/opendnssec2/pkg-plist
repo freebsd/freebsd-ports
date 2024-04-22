@@ -6,18 +6,18 @@ bin/ods-kaspcheck
 @sample %%ETCDIR%%/conf.xml.sample
 @sample %%ETCDIR%%/kasp.xml.sample
 @sample %%ETCDIR%%/zonelist.xml.sample
-man/man1/ods-hsmspeed.1.gz
-man/man1/ods-hsmutil.1.gz
-man/man1/ods-kaspcheck.1.gz
-man/man5/ods-kasp.5.gz
-man/man5/ods-timing.5.gz
-man/man7/opendnssec.7.gz
-man/man8/ods-control.8.gz
-man/man8/ods-enforcer-db-setup.8.gz
-man/man8/ods-enforcer.8.gz
-man/man8/ods-enforcerd.8.gz
-man/man8/ods-signer.8.gz
-man/man8/ods-signerd.8.gz
+share/man/man1/ods-hsmspeed.1.gz
+share/man/man1/ods-hsmutil.1.gz
+share/man/man1/ods-kaspcheck.1.gz
+share/man/man5/ods-kasp.5.gz
+share/man/man5/ods-timing.5.gz
+share/man/man7/opendnssec.7.gz
+share/man/man8/ods-control.8.gz
+share/man/man8/ods-enforcer-db-setup.8.gz
+share/man/man8/ods-enforcer.8.gz
+share/man/man8/ods-enforcerd.8.gz
+share/man/man8/ods-signer.8.gz
+share/man/man8/ods-signerd.8.gz
 sbin/ods-control
 sbin/ods-enforcer
 sbin/ods-enforcer-db-setup

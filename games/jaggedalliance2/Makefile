@@ -1,6 +1,7 @@
 PORTNAME=	ja2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.21.0
+PORTREVISION=	3
 CATEGORIES=	games
 
 MAINTAINER=	timp87@gmail.com
@@ -17,6 +18,7 @@ LICENSE_PERMS_SFI-SCLA=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell \
 # Ignore this if you feel adventurous
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64le
 ONLY_FOR_ARCHS_REASON=	requires little endian environment
+BROKEN_FreeBSD_15=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276701
 
 BUILD_DEPENDS=	string_theory>=3.8:devel/string_theory \
 		magic_enum>-0.8.2:devel/magic_enum \

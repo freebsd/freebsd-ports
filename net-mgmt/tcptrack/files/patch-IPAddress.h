@@ -1,5 +1,5 @@
---- src/IPAddress.h.orig	2010-09-29 03:23:24.000000000 +0200
-+++ src/IPAddress.h	2015-08-20 23:35:26.583907000 +0200
+--- src/IPAddress.h.orig	2010-09-29 03:23:24 UTC
++++ src/IPAddress.h
 @@ -16,7 +16,7 @@ public:
  
  	virtual int GetType() const = 0;

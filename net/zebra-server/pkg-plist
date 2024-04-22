@@ -37,13 +37,6 @@ lib/libidzebra-2.0.a
 lib/libidzebra-2.0.so
 lib/libidzebra-2.0.so.0
 lib/libidzebra-2.0.so.0.0.1
-man/man1/idzebra-abs2dom.1.gz
-man/man1/idzebra-config-2.0.1.gz
-man/man1/idzebra-config.1.gz
-man/man1/zebraidx-2.0.1.gz
-man/man1/zebraidx.1.gz
-man/man8/zebrasrv-2.0.8.gz
-man/man8/zebrasrv.8.gz
 share/aclocal/idzebra-2.0.m4
 share/doc/idzebra-2.0/administration-extended-services.html
 share/doc/idzebra-2.0/administration-ranking.html
@@ -242,3 +235,10 @@ share/idzebra-2.0/tab/wais-variant.est
 share/idzebra-2.0/tab/wais.abs
 share/idzebra-2.0/tab/words-icu-da.xml
 share/idzebra-2.0/tab/words-icu.xml
+share/man/man1/idzebra-abs2dom.1.gz
+share/man/man1/idzebra-config-2.0.1.gz
+share/man/man1/idzebra-config.1.gz
+share/man/man1/zebraidx-2.0.1.gz
+share/man/man1/zebraidx.1.gz
+share/man/man8/zebrasrv-2.0.8.gz
+share/man/man8/zebrasrv.8.gz

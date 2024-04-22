@@ -1,12 +1,12 @@
 PORTNAME=	willow
-PORTVERSION=	1.6.3
+PORTVERSION=	1.8.0
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrapper that combines multiple Python image libraries into one API
-WWW=		https://willow.readthedocs.io/en/latest/ \
+WWW=		https://willow.wagtail.org/latest/ \
 		https://github.com/wagtail/Willow
 
 LICENSE=	BSD3CLAUSE
@@ -32,7 +32,7 @@ WAND_DESC=	Use Wand as backend
 
 HEIF_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow-heif>=0.13.0<1.0.0:graphics/py-pillow-heif@${PY_FLAVOR}
 OPENCV_RUN_DEPENDS=	opencv>=0:graphics/opencv
-PILLOW_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR}
-WAND_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wand>=0:graphics/py-wand@${PY_FLAVOR}
+PILLOW_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=9.1.0<11.0.0:graphics/py-pillow@${PY_FLAVOR}
+WAND_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wand>=0.6<1.0:graphics/py-wand@${PY_FLAVOR}
 
 .include <bsd.port.mk>

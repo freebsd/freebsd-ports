@@ -1,5 +1,4 @@
 sbin/adcli
-man/man8/adcli.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/adcli.html
 %%PORTDOCS%%%%DOCSDIR%%/contrib.html
 %%PORTDOCS%%%%DOCSDIR%%/devel-building-style.html
@@ -16,3 +15,4 @@ man/man8/adcli.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/right.png
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/up.png
+share/man/man8/adcli.8.gz

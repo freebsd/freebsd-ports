@@ -1,5 +1,6 @@
 PORTNAME=		fstrm
 DISTVERSION=		0.6.1
+PORTREVISION=	1
 CATEGORIES=		devel
 MASTER_SITES=		https://dl.farsightsecurity.com/dist/${PORTNAME}/ \
 			https://dns.company/downloads/${PORTNAME}/
@@ -16,6 +17,7 @@ LIB_DEPENDS=		libevent.so:devel/libevent
 USES=			gmake libtool pkgconfig
 
 GNU_CONFIGURE=		yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=		install-strip
 TEST_TARGET=		check
 

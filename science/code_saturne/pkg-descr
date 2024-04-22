@@ -7,3 +7,5 @@ Dedicated modules are available for specific physics such as radiative heat
 transfer, combustion (gas, coal, heavy fuel oil, ...), magneto-hydrodynamics,
 compressible flows, two-phase flows (Euler-Lagrange approach with two-way
 coupling), or atmospheric flows.
+
+See also: <https://github.com/code-saturne/code_saturne>.

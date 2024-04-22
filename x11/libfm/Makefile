@@ -1,11 +1,11 @@
 PORTNAME=	libfm
 DISTVERSION=	1.3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	SF/pcmanfm/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/LibFM/
 
 MAINTAINER=	portmaster@BSDforge.com
-COMMENT?=	Core library of PCManFM file manager
+COMMENT=	Core library of PCManFM file manager
 WWW=		https://wiki.lxde.org/en/Libfm
 
 LICENSE=	GPLv2+ LGPL20+
@@ -19,6 +19,7 @@ LIB_DEPENDS=	libmenu-cache.so:x11/menu-cache \
 		libexif.so:graphics/libexif \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libfm-extra.so:x11/libfm-extra
 
 FLAVORS=	gtk2 gtk3
@@ -37,6 +38,7 @@ USES+=		gettext-tools gmake gnome libtool localbase \
 USE_GNOME=	intltool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --disable-static
 
 .if ! defined(EXTRA_ONLY)

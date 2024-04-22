@@ -1,1 +1,15 @@
 RSS and Atom feed generator by Kai Blankenhorn
+
+Supported formats:
+
+* RSS0.91
+* RSS1.0
+* RSS2.0
+* PIE0.1 (deprecated)
+* MBOX
+* OPML
+* ATOM
+* ATOM0.3
+* HTML
+* JS
+* PHP

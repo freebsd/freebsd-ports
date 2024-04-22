@@ -1,5 +1,5 @@
-TIMESTAMP = 1689755650
-SHA256 (go/databases_usql/usql-v0.14.12/v0.14.12.mod) = e4684853c6d4a36eff4ebdaa253e10fd63b8cd5ba449e2a042a355d443f52202
-SIZE (go/databases_usql/usql-v0.14.12/v0.14.12.mod) = 14800
-SHA256 (go/databases_usql/usql-v0.14.12/v0.14.12.zip) = f9011c2c3ab9027c1afd2cb14ce18a7c6d6c36c40c85171f2d1dd687e93675ca
-SIZE (go/databases_usql/usql-v0.14.12/v0.14.12.zip) = 350677
+TIMESTAMP = 1711741460
+SHA256 (go/databases_usql/usql-v0.18.1/v0.18.1.mod) = dec4e65c39d5bcb0c788727998aff2221dae41f969c5b37b2a0d420f447ef5e8
+SIZE (go/databases_usql/usql-v0.18.1/v0.18.1.mod) = 17101
+SHA256 (go/databases_usql/usql-v0.18.1/v0.18.1.zip) = e59ab573c3e0c27a393cd7eaf355e4e4b94b5dc2538033ec4558195d2b95edea
+SIZE (go/databases_usql/usql-v0.18.1/v0.18.1.zip) = 375507

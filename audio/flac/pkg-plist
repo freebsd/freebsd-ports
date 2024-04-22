@@ -24,8 +24,6 @@ lib/libFLAC.so.12
 lib/libFLAC.so.12.1.0
 libdata/pkgconfig/flac++.pc
 libdata/pkgconfig/flac.pc
-man/man1/flac.1.gz
-man/man1/metaflac.1.gz
 share/aclocal/libFLAC++.m4
 share/aclocal/libFLAC.m4
 %%PORTDOCS%%%%DOCSDIR%%/FLAC.tag
@@ -275,3 +273,5 @@ share/aclocal/libFLAC.m4
 %%PORTDOCS%%%%DOCSDIR%%/api/tabs.css
 %%PORTDOCS%%%%DOCSDIR%%/images/logo.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/logo130.gif
+share/man/man1/flac.1.gz
+share/man/man1/metaflac.1.gz

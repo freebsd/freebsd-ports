@@ -49,4 +49,4 @@ lib/yazproxy/mod_proxy_sample.so
 %%DATADIR%%/yazproxy.xsd
 %%DATADIR%%/yazproxyctl.sh
 %%DATADIR%%/zeerex-2.0.xsd
-man/man8/yazproxy.8.gz
+share/man/man8/yazproxy.8.gz

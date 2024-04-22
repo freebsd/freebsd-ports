@@ -1,6 +1,6 @@
 PORTNAME=	mail2sms
 PORTVERSION=	1.3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://daniel.haxx.se/projects/mail2sms/ \
 		http://bitrote.org/distfiles/
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LEGAL
 
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/mail2sms man/man1/mail2sms.1.gz man/man5/mail2sms.5.gz
+PLIST_FILES=	bin/mail2sms share/man/man1/mail2sms.1.gz share/man/man5/mail2sms.5.gz
 PORTDOCS=	README REGEX example.conf
 
 OPTIONS_DEFINE=	DOCS
@@ -32,8 +32,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mail2sms ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mail2sms.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/mail2sms.5 ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/mail2sms.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/mail2sms.5 ${STAGEDIR}${PREFIX}/share/man/man5
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

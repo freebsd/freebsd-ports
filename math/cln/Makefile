@@ -1,5 +1,6 @@
 PORTNAME=	cln
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.7
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.ginac.de/CLN/ \
 		http://www.mirrors.wiretapped.net/security/cryptography/libraries/math/cln/ \
@@ -15,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE}
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check

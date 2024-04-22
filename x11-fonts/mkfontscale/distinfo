@@ -1,3 +1,3 @@
-TIMESTAMP = 1553317362
-SHA256 (xorg/app/mkfontscale-1.2.1.tar.bz2) = ca0495eb974a179dd742bfa6199d561bda1c8da4a0c5a667f21fd82aaab6bac7
-SIZE (xorg/app/mkfontscale-1.2.1.tar.bz2) = 150808
+TIMESTAMP = 1709537230
+SHA256 (xorg/app/mkfontscale-1.2.3.tar.xz) = 2921cdc344f1acee04bcd6ea1e29565c1308263006e134a9ee38cf9c9d6fe75e
+SIZE (xorg/app/mkfontscale-1.2.3.tar.xz) = 145584

@@ -3,7 +3,7 @@ bin/feature-view
 bin/filter-overlaps
 bin/peak-classifier
 libexec/extract-genes.awk
-man/man1/extract-genes.1.gz
-man/man1/feature-view.1.gz
-man/man1/filter-overlaps.1.gz
-man/man1/peak-classifier.1.gz
+share/man/man1/extract-genes.1.gz
+share/man/man1/feature-view.1.gz
+share/man/man1/filter-overlaps.1.gz
+share/man/man1/peak-classifier.1.gz

@@ -1,5 +1,6 @@
 PORTNAME=	fspd
 PORTVERSION=	2.8.1.29
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/fsp/fsp/2.8.1b29
 DISTNAME=	fsp-2.8.1b29
@@ -57,7 +58,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/fspd.conf \
 		${STAGEDIR}${PREFIX}/etc/fspd.conf.sample
 .for page in ${MAN1SERVER}
-	${INSTALL_MAN} ${WRKSRC}/man/${page} ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/${page} ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 
 do-install-CLIENTS-on:
@@ -65,13 +66,13 @@ do-install-CLIENTS-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/clients/${command} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for page in ${MAN1CLIENT}
-	${INSTALL_MAN} ${WRKSRC}/man/${page} ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/${page} ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 .for page in ${MAN5CLIENT}
-	${INSTALL_MAN} ${WRKSRC}/man/${page} ${STAGEDIR}${MANPREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/man/${page} ${STAGEDIR}${PREFIX}/share/man/man5
 .endfor
 .for page in ${MAN7CLIENT}
-	${INSTALL_MAN} ${WRKSRC}/man/${page} ${STAGEDIR}${MANPREFIX}/man/man7
+	${INSTALL_MAN} ${WRKSRC}/man/${page} ${STAGEDIR}${PREFIX}/share/man/man7
 .endfor
 
 do-install-DOCS-on:

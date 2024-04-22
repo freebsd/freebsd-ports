@@ -6,15 +6,15 @@ bin/mutt_pgpring
 bin/pgpewrap
 bin/smime_keys
 @sample etc/Muttrc.sample
-man/man1/mutt.1.gz
-man/man1/mutt_dotlock.1.gz
-man/man1/mutt_pgpring.1.gz
-man/man1/pgpewrap.1.gz
-man/man1/smime_keys.1.gz
-man/man5/mailcap.5.gz
-%%MAILBOX_MANPAGES%%man/man5/mbox.5.gz
-%%MAILBOX_MANPAGES%%man/man5/mmdf.5.gz
-man/man5/muttrc.5.gz
+share/man/man1/mutt.1.gz
+share/man/man1/mutt_dotlock.1.gz
+share/man/man1/mutt_pgpring.1.gz
+share/man/man1/pgpewrap.1.gz
+share/man/man1/smime_keys.1.gz
+share/man/man5/mailcap.5.gz
+%%MAILBOX_MANPAGES%%share/man/man5/mbox.5.gz
+%%MAILBOX_MANPAGES%%share/man/man5/mmdf.5.gz
+share/man/man5/muttrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/GPL

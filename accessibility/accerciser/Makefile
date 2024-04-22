@@ -1,6 +1,6 @@
 PORTNAME=	accerciser
 PORTVERSION=	3.38.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -22,6 +22,7 @@ NO_ARCH=	yes
 USES=		gettext gmake gnome localbase:ldflags pkgconfig python shebangfix tar:xz
 USE_GNOME=	gtk30 pygobject3
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 SHEBANG_FILES=	plugins/ipython_view.py
 
 GLIB_SCHEMAS=	org.a11y.Accerciser.gschema.xml

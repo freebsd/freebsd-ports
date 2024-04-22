@@ -44,6 +44,7 @@ XXHASH_LDFLAGS=	-lxxhash
 
 GPU_USES=	gl
 
+CFLAGS_powerpc=	-O0
 MAKE_ARGS=	VERBOSE=1
 
 .include <bsd.port.options.mk>

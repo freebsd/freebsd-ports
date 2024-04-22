@@ -168,6 +168,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtransposeproxymodel_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qunicodetables_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qunicodetools_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/quniquehandle_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qurl_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qvariant_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qvariantanimation_p.h
@@ -817,6 +818,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/qtversion.h
 %%QT_INCDIR%%/QtCore/qtversionchecks.h
 %%QT_INCDIR%%/QtCore/qtypeinfo.h
+%%QT_INCDIR%%/QtCore/qtyperevision.h
 %%QT_INCDIR%%/QtCore/qtypes.h
 %%QT_INCDIR%%/QtCore/qurl.h
 %%QT_INCDIR%%/QtCore/qurlquery.h
@@ -2525,10 +2527,16 @@ lib/cmake/Qt6/Qt6Targets.cmake
 lib/cmake/Qt6/Qt6VersionlessTargets.cmake
 lib/cmake/Qt6/QtAndroidHelpers.cmake
 lib/cmake/Qt6/QtAppHelpers.cmake
+lib/cmake/Qt6/QtAutoDetectHelpers.cmake
 lib/cmake/Qt6/QtAutogenHelpers.cmake
 lib/cmake/Qt6/QtBaseTopLevelHelpers.cmake
 lib/cmake/Qt6/QtBuild.cmake
+lib/cmake/Qt6/QtBuildHelpers.cmake
 lib/cmake/Qt6/QtBuildInformation.cmake
+lib/cmake/Qt6/QtBuildOptionsHelpers.cmake
+lib/cmake/Qt6/QtBuildPathsHelpers.cmake
+lib/cmake/Qt6/QtBuildRepoExamplesHelpers.cmake
+lib/cmake/Qt6/QtBuildRepoHelpers.cmake
 lib/cmake/Qt6/QtCMakeHelpers.cmake
 lib/cmake/Qt6/QtCMakePackageVersionFile.cmake.in
 lib/cmake/Qt6/QtCMakeVersionHelpers.cmake
@@ -2561,6 +2569,7 @@ lib/cmake/Qt6/QtInitProject.cmake
 lib/cmake/Qt6/QtInstallHelpers.cmake
 lib/cmake/Qt6/QtJavaHelpers.cmake
 lib/cmake/Qt6/QtLalrHelpers.cmake
+lib/cmake/Qt6/QtMkspecHelpers.cmake
 lib/cmake/Qt6/QtModuleConfig.cmake.in
 lib/cmake/Qt6/QtModuleDependencies.cmake.in
 lib/cmake/Qt6/QtModuleHeadersCheck.cmake
@@ -2587,6 +2596,7 @@ lib/cmake/Qt6/QtPublicAppleHelpers.cmake
 lib/cmake/Qt6/QtPublicCMakeHelpers.cmake
 lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake
 lib/cmake/Qt6/QtPublicDependencyHelpers.cmake
+lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake
 lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake
 lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake
 lib/cmake/Qt6/QtPublicPluginHelpers.cmake
@@ -2926,6 +2936,7 @@ lib/cmake/Qt6Sql/Qt6SqlConfig.cmake
 lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake
 lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake
 lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake
+lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake
 lib/cmake/Qt6Sql/Qt6SqlTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Sql/Qt6SqlTargets.cmake
 lib/cmake/Qt6Sql/Qt6SqlVersionlessTargets.cmake
@@ -2943,6 +2954,7 @@ lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake
+lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessTargets.cmake

@@ -600,7 +600,7 @@ etc/xdg/autostart/orca-autostart.desktop
 %%PYTHON_SITELIBDIR%%/orca/structural_navigation.py
 %%PYTHON_SITELIBDIR%%/orca/text_attribute_names.py
 %%PYTHON_SITELIBDIR%%/orca/tutorialgenerator.py
-man/man1/orca.1.gz
+share/man/man1/orca.1.gz
 share/help/C/orca/commands.page
 share/help/C/orca/commands_bookmarks.page
 share/help/C/orca/commands_braille.page

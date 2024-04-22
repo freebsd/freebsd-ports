@@ -1,0 +1,13 @@
+--- perl/Makefile.in.orig	2024-03-07 22:58:53 UTC
++++ perl/Makefile.in
+@@ -1379,8 +1379,8 @@ info-am:
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-dist_exampledataDATA \
+-	install-docdataDATA install-nobase_dist_perllibDATA \
++install-data-am: \
++	install-nobase_dist_perllibDATA \
+ 	install-perlarchLTLIBRARIES
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook

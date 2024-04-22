@@ -19,7 +19,6 @@ GH_ACCOUNT=	northox
 GH_PROJECT=	roundcube-yubikey-plugin
 GH_TAGNAME=	383bbb3
 USE_PHP=	curl
-IGNORE_WITH_PHP=	82 83
 
 WWWDIR=		${PREFIX}/www/roundcube/plugins/roundcube_yubikey_authentication
 NO_ARCH=	yes

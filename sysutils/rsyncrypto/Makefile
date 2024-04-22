@@ -1,6 +1,6 @@
 PORTNAME=	rsyncrypto
 PORTVERSION=	1.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils net
 MASTER_SITES=	SF
 
@@ -15,11 +15,12 @@ RUN_DEPENDS=	rsync:net/rsync
 
 USES=		compiler:c++11-lang gmake localbase ssl tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=	bin/rsyncrypto \
 		bin/rsyncrypto_recover \
-		man/man1/rsyncrypto.1.gz \
-		man/man1/rsyncrypto_recover.1.gz
+		share/man/man1/rsyncrypto.1.gz \
+		share/man/man1/rsyncrypto_recover.1.gz
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 OPTIONS_DEFINE=	DOCS

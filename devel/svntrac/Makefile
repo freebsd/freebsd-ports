@@ -1,9 +1,13 @@
 PORTNAME=	svntrac
-PORTREVISION=	4
+PORTREVISION=	5
 
 COMMENT=	Web-Based Bug And Patch-Set Tracking System For Subversion
 
-RUN_DEPENDS=	subversion>=0:devel/subversion
+.if ${WITH_SUBVERSION_VER:U} == LTS
+RUN_DEPENDS=	subversion-lts>0:devel/subversion-lts
+.else
+RUN_DEPENDS=	subversion>0:devel/subversion
+.endif
 
 MASTERDIR=	${.CURDIR}/../cvstrac
 MAKE_ARGS=	APPNAME=svntrac

@@ -1,7 +1,7 @@
 PORTNAME=	ocean
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 PKGNAMESUFFIX=	-spectroscopy-code
 
@@ -29,6 +29,8 @@ GH_PROJECT=	${PORTNAME:tu}
 MAKE_ARGS=	MPIFC=${MPIFC} \
 		MPI_HOME=${MPI_HOME} \
 		MPI_LIBS="${MPI_LIBS}"
+
+MAKE_JOBS_UNSAFE=	yes # parallel build fails, see https://github.com/times-software/OCEAN/issues/327
 
 BINARY_ALIAS=	make=${GMAKE}
 

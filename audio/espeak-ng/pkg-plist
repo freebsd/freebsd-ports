@@ -12,9 +12,9 @@ lib/libespeak-ng.so.1
 lib/libespeak-ng.so.1.1.51
 lib/libespeak.so
 libdata/pkgconfig/espeak-ng.pc
-man/man1/espeak-ng.1.gz
-man/man1/espeak.1.gz
-man/man1/speak-ng.1.gz
+share/man/man1/espeak-ng.1.gz
+share/man/man1/espeak.1.gz
+share/man/man1/speak-ng.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/add_language.md
 %%PORTDOCS%%%%DOCSDIR%%/building.md
 %%PORTDOCS%%%%DOCSDIR%%/contributing.md

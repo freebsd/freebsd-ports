@@ -1,6 +1,6 @@
 PORTNAME=	nanogui
 DISTVERSION=	g20220215
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,7 +26,7 @@ GH_TAGNAME=	c6505300bb3036ec87ac68f5f1699c434c3d7fc6
 GH_TUPLE=	wjakob:nanovg:bf2320d1175122374a9b806d91e9e666c9336375:wjakob_nanovg/ext/nanovg \
 		wjakob:nanovg_metal:075b04f16c579728c693b46a2ce408f2325968cf:wjakob_nanovg_metal/ext/nanovg_metal \
 		wjakob:glfw:e130e55a990998c78fd323f21076e798e0efe8a4:wjakob_glfw/ext/glfw \
-		pybind:pybind11:8de7772cc72daca8e947b79b83fea46214931604:pybind_pybind11/ext/pybind11 \
+		pybind:pybind11:ce9bbc0a213bfb21b77ada8de5346be5e350e3c4:pybind_pybind11/ext/pybind11 \
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_INCLUDEDIR=${LOCALBASE}/include \
 		-DCMAKE_INSTALL_DATAROOTDIR=${LOCALBASE}/lib

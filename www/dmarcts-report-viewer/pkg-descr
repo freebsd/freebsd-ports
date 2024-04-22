@@ -1,0 +1,2 @@
+A PHP viewer for DMARC records that have been parsed by John Levine's rddmarc
+script or the dmarcts-report-parser.pl into a MySQL or PostgreSQL database.

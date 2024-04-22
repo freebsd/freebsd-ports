@@ -1,5 +1,6 @@
 PORTNAME=	endian
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
@@ -10,8 +11,12 @@ LICENSE=	BSD2CLAUSE
 
 USES=		tar:xz
 
-PLIST_FILES=	bin/endian man/man1/endian.1.gz
+PLIST_FILES=	bin/endian share/man/man1/endian.1.gz
 
-MAKE_ARGS=	STAGEDIR=${STAGEDIR}
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

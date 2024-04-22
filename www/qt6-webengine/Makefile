@@ -12,7 +12,7 @@
 
 PORTNAME?=	webengine
 DISTVERSION=	${QT6_VERSION}
-PORTREVISION?=	1 # Master port for print/qt6-pdf. Please keep this line.
+PORTREVISION?=	0 # Master port for print/qt6-pdf. Please keep this line.
 CATEGORIES?=	www
 PKGNAMEPREFIX=	qt6-
 
@@ -46,7 +46,8 @@ CMAKE_OFF+=	QT_FEATURE_qtwebengine_build
 SYS_LIBS=	freetype
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
-LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg \
+LIB_DEPENDS+=	libabsl_base.so:devel/abseil \
+		libavcodec.so:multimedia/ffmpeg \
 		libdbus-1.so:devel/dbus \
 		libdrm.so:graphics/libdrm \
 		libevent.so:devel/libevent \

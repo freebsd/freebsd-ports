@@ -1,5 +1,6 @@
 PORTNAME=	moinmoincli
 DISTVERSION=	4.6.0
+PORTREVISION=	1
 CATEGORIES=	www docs
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -12,6 +13,8 @@ RUN_DEPENDS=	curl:ftp/curl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	0mp
+
+MAKE_ARGS=	MANDIR=${STAGEDIR}${PREFIX}/share/man
 
 SUB_FILES=	pkg-message
 

@@ -1,5 +1,6 @@
 PORTNAME=	hieracles
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -19,12 +20,12 @@ USES=		gem
 
 CONFLICTS_INSTALL=	zh-hc # bin/hc
 
-PLIST_FILES=	bin/hc man/man1/hc.1.gz \
-		bin/ppdb man/man1/ppdb.1.gz \
+PLIST_FILES=	bin/hc share/man/man1/hc.1.gz \
+		bin/ppdb share/man/man1/ppdb.1.gz \
 		bin/hieracles
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/hc.1 ${STAGEDIR}${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/ppdb.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/hc.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/ppdb.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

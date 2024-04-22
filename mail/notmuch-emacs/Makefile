@@ -1,3 +1,4 @@
+PORTREVISION=	3
 CATEGORIES=	mail elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX:S/^$/-emacs/}
 COMMENT=	Emacs major-mode for the Notmuch email search and tagging application
@@ -47,7 +48,7 @@ do-configure:
 		HAVE_BASH=1 \
 		HAVE_EMACS=1 \
 		infodir=${PREFIX}/${INFO_PATH} \
-		mandir=${MANPREFIX}/man \
+		mandir=${PREFIX}/share/man \
 		NOTMUCH_SRCDIR=${WRKSRC} \
 		prefix=${PREFIX} \
 		srcdir=. \
@@ -66,7 +67,7 @@ post-install-DOCS-on:
 	@${FIND} ${STAGEDIR}${PREFIX}/${INFO_PATH} ! -type d ! -name notmuch-emacs.info -delete
 
 post-install-MANPAGES-on:
-	@${FIND} ${STAGEDIR}${MANPREFIX}/man ! -type d ! -name notmuch-emacs-mua.1.gz -delete
+	@${FIND} ${STAGEDIR}${PREFIX}/share/man ! -type d ! -name notmuch-emacs-mua.1.gz -delete
 
 # modify what Mk/Uses/emacs.mk set
 MAKE_ARGS+=	EMACS+=--quick

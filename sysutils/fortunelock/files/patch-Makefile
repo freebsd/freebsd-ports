@@ -21,7 +21,7 @@
 -	install -m 755 fortunelock $(PREFIXDIR)/bin
 -	install -m 644 fortunelock.1 $(PREFIXDIR)/man/man1
 +	install -c -m 755 fortunelock $(DESTDIR)$(PREFIX)/bin
-+	install -c -m 644 fortunelock.1 $(DESTDIR)$(PREFIX)/man/man1
++	install -c -m 644 fortunelock.1 $(DESTDIR)$(PREFIX)/share/man/man1
  
  uninstall:
 -	rm -rf $(PREFIXDIR)/bin/fortunelock

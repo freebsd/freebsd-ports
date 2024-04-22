@@ -1,6 +1,6 @@
---- remoting/host/client_session.cc.orig	2023-11-03 10:09:45 UTC
+--- remoting/host/client_session.cc.orig	2024-04-19 13:02:56 UTC
 +++ remoting/host/client_session.cc
-@@ -157,7 +157,7 @@ void ClientSession::NotifyClientResolution(
+@@ -161,7 +161,7 @@ void ClientSession::NotifyClientResolution(
    if (desktop_environment_options_.enable_curtaining()) {
      dpi_vector.set(resolution.x_dpi(), resolution.y_dpi());
    }

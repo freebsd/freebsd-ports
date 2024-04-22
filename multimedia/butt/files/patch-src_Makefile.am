@@ -1,13 +1,5 @@
 --- src/Makefile.am.orig	2020-12-27 21:27:17.416688000 +0100
 +++ src/Makefile.am	2020-12-27 21:27:34.578674000 +0100
-@@ -25,7 +25,6 @@
- if WINDOWS
- butt_SOURCES += resource.rc currentTrack.h currentTrack.cpp
- AM_CPPFLAGS += -DHAVE_LIBFDK_AAC
--LDADD = -lintl
- endif
- 
- if OSX
 @@ -38,6 +37,7 @@
  
  if FREEBSD

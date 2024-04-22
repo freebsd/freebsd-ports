@@ -1,6 +1,6 @@
 PORTNAME=	xrick
 PORTVERSION=	021212
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://www.bigorno.net/xrick/
 
@@ -17,7 +17,7 @@ LICENSE_PERMS=	auto-accept
 USES=		gmake jpeg sdl tar:tgz
 USE_SDL=	sdl
 
-PLIST_FILES=	bin/xrick man/man6/xrick.6.gz share/xrick/data.zip
+PLIST_FILES=	bin/xrick share/man/man6/xrick.6.gz share/xrick/data.zip
 PLIST_DIRS=	share/xrick
 
 post-patch:
@@ -31,7 +31,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xrick ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xrick.6.gz ${STAGEDIR}${PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/xrick.6.gz ${STAGEDIR}${PREFIX}/share/man/man6
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/xrick
 	${INSTALL_DATA} ${WRKSRC}/data.zip ${STAGEDIR}${PREFIX}/share/xrick
 

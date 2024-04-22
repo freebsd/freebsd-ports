@@ -1,6 +1,6 @@
 PORTNAME=	yodl
 PORTVERSION=	3.10.00
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -56,7 +56,6 @@ DOCS_USE=	TEX=latex:build,dvipsk:build
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/usr"|"${PREFIX}"| ; \
 		s|"/share/yodl"|"/share/${PORTNAME}-${PORTVERSION}"| ; \
-		s|"/share/man"|"/man"| ; \
 		s|"/share/doc/yodl"|"/share/doc/${PORTNAME}-${PORTVERSION}"| ; \
 		s|"/share/doc/yodl-doc"|"/share/doc/${PORTNAME}-${PORTVERSION}/doc"| ; \
 		s|"gcc"|"${CC}"| ; \

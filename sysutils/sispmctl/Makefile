@@ -1,5 +1,6 @@
 PORTNAME=	sispmctl
 DISTVERSION=	4.11
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -10,18 +11,20 @@ WWW=		https://sispmctl.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=	libtool pkgconfig
+USES=		libtool pkgconfig
 USE_LDCONFIG=	yes
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	-disable-static --disable-webless
-CONFIGURE_ENV=	LIBUSB_CFLAGS="-I/usr/include" \
+GNU_CONFIGURE=			yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+CONFIGURE_ARGS=			--disable-webless \
+				-disable-static
+CONFIGURE_ENV=			LIBUSB_CFLAGS="-I/usr/include" \
 				LIBUSB_LIBS="-L/usr/lib -lusb"
 
 PLIST_FILES=	bin/sispmctl \
-				lib/libsispmctl.so \
-				lib/libsispmctl.so.0 \
-				lib/libsispmctl.so.0.2.2 \
-				man/man1/sispmctl.1.gz
+		lib/libsispmctl.so \
+		lib/libsispmctl.so.0 \
+		lib/libsispmctl.so.0.2.2 \
+		share/man/man1/sispmctl.1.gz
 
 .include <bsd.port.mk>

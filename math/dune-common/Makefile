@@ -1,7 +1,7 @@
 PORTNAME=	dune-common
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.0
-PORTREVISION=	11
+PORTREVISION=	13
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	metis>0:math/metis \
-		openmpi>0:net/openmpi \
+		openmpi4>0:net/openmpi4 \
 		vc>0:devel/vc # Metis isn't used, see https://gitlab.dune-project.org/core/dune-common/-/issues/306
 LIB_DEPENDS=	libopenblas.so:math/openblas \
 		libtbb.so:devel/onetbb

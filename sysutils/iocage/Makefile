@@ -1,14 +1,21 @@
 PORTNAME=	iocage
 PORTVERSION=	1.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
+# Patches in order of appearance
+# - Do not fetch/install lib32 for i386
+# - Change devfs ruleset handling so...
+# - Only update release property on update of jails
+# - Use streaming reads to avoid blowing memory
+# - Prevent slashes in jail names when checking existence
 PATCH_SITES=	https://github.com/iocage/iocage/commit/
 PATCHFILES=	2883770ae46731a2a94cd41e6d01d32cec6f1f21.patch:-p1 \
 		753b2f35731423597d7f51f33427b6d619fcd0b5.patch:-p1 \
 		b47dc2c47ff125d644720b03f598a9caf4e08192.patch:-p1 \
-		2a1685bcaba96917c79a7e4a909dac5c6926826a.patch:-p1
+		2a1685bcaba96917c79a7e4a909dac5c6926826a.patch:-p1 \
+		c06d0695487dda62c2b81aeb6be5fe91a70d8c83.patch:-p1
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	FreeBSD jail manager written in Python3

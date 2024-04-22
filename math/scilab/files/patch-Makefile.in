@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2021-07-15 11:54:56 UTC
++++ Makefile.in
+@@ -2517,7 +2517,7 @@ install-data-local:
+ 
+ .PHONY: macros localization doc strip-debug
+ 
+-.NOTPARALLEL: macros doc
++.NOTPARALLEL:
+ 
+ # Construct the LD_LIBRARY_PATH from the variable detected previously
+ # Run the unitary test of call_scilab

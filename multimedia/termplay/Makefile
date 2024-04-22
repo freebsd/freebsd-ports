@@ -1,6 +1,6 @@
 PORTNAME=	termplay
 DISTVERSION=	2.0.6
-PORTREVISION=	32
+PORTREVISION=	34
 CATEGORIES=	multimedia
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -11,6 +11,8 @@ WWW=		https://github.com/jD91mZM2/termplay
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_powerpc64le=	rust compiler crashes, see https://github.com/rust-lang/rust/issues/120583
 
 LIB_DEPENDS=	libsixel.so:graphics/libsixel
 

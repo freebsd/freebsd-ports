@@ -1,5 +1,5 @@
 bin/iodine
 sbin/iodined
-man/man8/iodine.8.gz
+share/man/man8/iodine.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/README.md

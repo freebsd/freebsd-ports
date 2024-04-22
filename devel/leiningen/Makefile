@@ -1,13 +1,12 @@
 PORTNAME=	leiningen
-DISTVERSION=	2.9.10
-PORTREVISION=	1
+DISTVERSION=	2.11.1
 CATEGORIES=	devel lisp java
-MASTER_SITES=	https://codeber.org/technomancy/leiningen/releases/download/${PORTVERSION}/:standalone \
+MASTER_SITES=	https://codeberg.org/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSIONFULL}/:standalone \
 		https://codeberg.org/leiningen/leiningen/archive/:DEFAULT
-DISTFILES=	${DISTVERSION}${EXTRACT_SUFX} ${PORTNAME}-${PORTVERSION}-standalone.jar:standalone
+DISTFILES=	${DISTVERSION}${EXTRACT_SUFX} ${PORTNAME}-${DISTVERSIONFULL}-standalone.jar:standalone
 EXTRACT_ONLY=	${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beastieboy@beastieboy.net
 COMMENT=	Automate Clojure projects
 WWW=		https://codeberg.org/leiningen/leiningen
 
@@ -27,11 +26,7 @@ PLIST_FILES=	bin/lein \
 PORTDATA=	leiningen-${PORTVERSION}-standalone.jar
 
 post-patch:
-	@${REINPLACE_CMD} -E -e 's|function (.*) \{|\1() {|' \
-		-e '1s|^.*|#!/bin/sh|' \
-		-e 's|/etc/leinrc|${PREFIX}/etc/leinrc|' \
-		-e 's|\.leinrc|./&|' -e 's|source "|. "|' \
-		-e 's|^if \[\[ (.*) \]\];|if [ \1 ];|' \
+	@${REINPLACE_CMD} -E -e 's|/etc/leinrc|${PREFIX}/etc/leinrc|' \
 		-e 's|^LEIN_JAR=.*|LEIN_JAR=${DATADIR}/leiningen-${PORTVERSION}-standalone.jar|' \
 		${WRKSRC}/bin/lein-pkg
 

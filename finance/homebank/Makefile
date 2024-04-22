@@ -1,5 +1,5 @@
 PORTNAME=	homebank
-PORTVERSION=	5.7.3
+PORTVERSION=	5.7.4
 CATEGORIES=	finance
 MASTER_SITES=	https://www.gethomebank.org/public/sources/
 

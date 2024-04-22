@@ -8,8 +8,8 @@ etc/xdg/xfce4/Xft.xrdb
 etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
 @(,,755) etc/xdg/xfce4/xinitrc
 lib/xfce4/session/xfsm-shutdown-helper
-man/man1/xfce4-session-logout.1.gz
-man/man1/xfce4-session.1.gz
+share/man/man1/xfce4-session-logout.1.gz
+share/man/man1/xfce4-session.1.gz
 share/applications/xfce-session-settings.desktop
 share/applications/xfce4-session-logout.desktop
 share/icons/hicolor/128x128/apps/org.xfce.session.png

@@ -1,6 +1,15 @@
---- Makefile.orig	2014-06-16 23:02:51.808174124 +0800
-+++ Makefile	2014-06-16 23:03:13.422174462 +0800
-@@ -48,9 +48,9 @@ depend:
+--- Makefile.orig	2007-07-03 16:49:52 UTC
++++ Makefile
+@@ -17,7 +17,7 @@ BIN_DIR=${PREFIX}/bin
+ .endif
+ 
+ BIN_DIR=${PREFIX}/bin
+-MAN_DIR=${PREFIX}/man/man1
++MAN_DIR=${PREFIX}/share/man/man1
+ 
+ COMPRESS=/usr/bin/gzip
+ STRIP= /usr/bin/true
+@@ -48,9 +48,9 @@ install: xglurbules xglurbules-noshm ${MAN_FILE}
  	gcc -E -MM *.c > .depend
  
  install: xglurbules xglurbules-noshm ${MAN_FILE}

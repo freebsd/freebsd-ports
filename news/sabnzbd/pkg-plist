@@ -18,7 +18,9 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/encoding.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/filesystem.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/getipaddress.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/happyeyeballs.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/interface.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/internetspeed.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/lang.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/misc.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/newsunpack.py
@@ -46,8 +48,6 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/diskspeed.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/file_extension.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/getperformance.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/happyeyeballs.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/internetspeed.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/kronos.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/pathbrowser.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/pybonjour.py
@@ -68,6 +68,7 @@ bin/SABnzbd.py
 %%DATADIR%%/email/badfetch-fi.tmpl
 %%DATADIR%%/email/badfetch-fr.tmpl
 %%DATADIR%%/email/badfetch-he.tmpl
+%%DATADIR%%/email/badfetch-it.tmpl
 %%DATADIR%%/email/badfetch-nb.tmpl
 %%DATADIR%%/email/badfetch-nl.tmpl
 %%DATADIR%%/email/badfetch-pl.tmpl
@@ -85,6 +86,7 @@ bin/SABnzbd.py
 %%DATADIR%%/email/email-fi.tmpl
 %%DATADIR%%/email/email-fr.tmpl
 %%DATADIR%%/email/email-he.tmpl
+%%DATADIR%%/email/email-it.tmpl
 %%DATADIR%%/email/email-nb.tmpl
 %%DATADIR%%/email/email-nl.tmpl
 %%DATADIR%%/email/email-pl.tmpl
@@ -102,6 +104,7 @@ bin/SABnzbd.py
 %%DATADIR%%/email/rss-fi.tmpl
 %%DATADIR%%/email/rss-fr.tmpl
 %%DATADIR%%/email/rss-he.tmpl
+%%DATADIR%%/email/rss-it.tmpl
 %%DATADIR%%/email/rss-nb.tmpl
 %%DATADIR%%/email/rss-nl.tmpl
 %%DATADIR%%/email/rss-pl.tmpl
@@ -230,6 +233,7 @@ bin/SABnzbd.py
 %%DATADIR%%/locale/fi/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/fr/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/he/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/locale/it/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/nb/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/nl/LC_MESSAGES/SABnzbd.mo
 %%DATADIR%%/locale/pl/LC_MESSAGES/SABnzbd.mo
@@ -248,6 +252,7 @@ bin/SABnzbd.py
 %%DATADIR%%/po/email/fi.po
 %%DATADIR%%/po/email/fr.po
 %%DATADIR%%/po/email/he.po
+%%DATADIR%%/po/email/it.po
 %%DATADIR%%/po/email/nb.po
 %%DATADIR%%/po/email/nl.po
 %%DATADIR%%/po/email/pl.po
@@ -266,6 +271,7 @@ bin/SABnzbd.py
 %%DATADIR%%/po/main/fi.po
 %%DATADIR%%/po/main/fr.po
 %%DATADIR%%/po/main/he.po
+%%DATADIR%%/po/main/it.po
 %%DATADIR%%/po/main/nb.po
 %%DATADIR%%/po/main/nl.po
 %%DATADIR%%/po/main/pl.po
@@ -284,6 +290,7 @@ bin/SABnzbd.py
 %%DATADIR%%/po/nsis/fi.po
 %%DATADIR%%/po/nsis/fr.po
 %%DATADIR%%/po/nsis/he.po
+%%DATADIR%%/po/nsis/it.po
 %%DATADIR%%/po/nsis/nb.po
 %%DATADIR%%/po/nsis/nl.po
 %%DATADIR%%/po/nsis/pl.po

@@ -1,6 +1,6 @@
 PORTNAME=	mailer
 PORTVERSION=	0.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.defora.org/os/download/download/4426/
 PKGNAMEPREFIX=	deforaos-
@@ -24,7 +24,7 @@ USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_LDCONFIG=	yes
 
 MAKE_ARGS+=	PREFIX=${PREFIX}
-MAKE_ENV+=	MANDIR=${STAGEDIR}${MANPREFIX}/man
+MAKE_ENV+=	MANDIR=${STAGEDIR}${PREFIX}/share/man
 
 MAKE_JOBS_UNSAFE=	yes
 

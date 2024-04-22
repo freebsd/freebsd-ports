@@ -1,0 +1,20 @@
+--- make/hotspot/lib/JvmMapfile.gmk.orig	2022-07-20 22:54:48 UTC
++++ make/hotspot/lib/JvmMapfile.gmk
+@@ -53,7 +53,7 @@ ifeq ($(call isTargetOs, linux), true)
+ # platform dependent.
+ 
+ ifeq ($(call isTargetOs, linux), true)
+-  DUMP_SYMBOLS_CMD := $(NM) --defined-only *.o
++  DUMP_SYMBOLS_CMD := $(NM) --extern-only --defined-only *.o
+   ifneq ($(FILTER_SYMBOLS_PATTERN), )
+     FILTER_SYMBOLS_PATTERN := $(FILTER_SYMBOLS_PATTERN)|
+   endif
+@@ -134,7 +134,7 @@ else ifeq ($(call isTargetOs, bsd), true)
+           if ($$3 ~ /$(FILTER_SYMBOLS_PATTERN)/) print $$3; \
+         }'
+   else
+-    DUMP_SYMBOLS_CMD := $(NM) --defined-only *.o
++    DUMP_SYMBOLS_CMD := $(NM) --extern-only --defined-only *.o
+     FILTER_SYMBOLS_AWK_SCRIPT := \
+         '{ \
+           if ($$3 ~ /$(FILTER_SYMBOLS_PATTERN)/) print $$3; \

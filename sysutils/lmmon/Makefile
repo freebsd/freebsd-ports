@@ -1,6 +1,6 @@
 PORTNAME=	lmmon
 PORTVERSION=	0.65
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/bf
 
@@ -11,11 +11,11 @@ LICENSE=	BSD2CLAUSE
 
 USES=		ncurses uidfix
 GNU_CONFIGURE=	yes
-MAKE_ARGS+=	LDFLAGS="${LDFLAGS} -lncurses"
+MAKE_ARGS+=	LDFLAGS="${LDFLAGS} -lncurses" MANDIR=${PREFIX}/share/man/man
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-PLIST_FILES=	bin/lmmon man/man8/lmmon.8.gz
+PLIST_FILES=	bin/lmmon share/man/man8/lmmon.8.gz
 
 FIXFILES=	configure configure.in lmmon.c
 

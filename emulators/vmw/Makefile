@@ -14,7 +14,7 @@ BUILD_DEPENDS=	as:devel/binutils
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 USES=		iconv
-MAKE_ENV+=	__MAKE_CONF=/dev/null ASFLAGS="${ASFLAGS}"
+MAKE_ENV+=	ASFLAGS="${ASFLAGS}"
 MAKE_ENV+=	LD="${CC}"
 
 SBINS=		vmw vmshrink vmftp

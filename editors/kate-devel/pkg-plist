@@ -31,18 +31,6 @@ lib/libkateprivate.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/kf6/ktexteditor/rainbowparens.so
 %%QT_PLUGINDIR%%/kf6/ktexteditor/tabswitcherplugin.so
 %%QT_PLUGINDIR%%/kf6/ktexteditor/textfilterplugin.so
-man/ca/man1/kate.1.gz
-man/de/man1/kate.1.gz
-man/es/man1/kate.1.gz
-man/it/man1/kate.1.gz
-man/man1/kate.1.gz
-man/nl/man1/kate.1.gz
-man/pt/man1/kate.1.gz
-man/pt_BR/man1/kate.1.gz
-man/ru/man1/kate.1.gz
-man/sv/man1/kate.1.gz
-man/tr/man1/kate.1.gz
-man/uk/man1/kate.1.gz
 share/applications/org.kde.kate.desktop
 share/applications/org.kde.kwrite.desktop
 share/icons/hicolor/128x128/apps/kate.png
@@ -314,6 +302,7 @@ share/locale/da/LC_MESSAGES/katexmltools.mo
 share/locale/da/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/da/LC_MESSAGES/lspclient.mo
 share/locale/da/LC_MESSAGES/tabswitcherplugin.mo
+share/locale/de/LC_MESSAGES/formatplugin.mo
 share/locale/de/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/de/LC_MESSAGES/kate-replicode-plugin.mo
 share/locale/de/LC_MESSAGES/kate.mo
@@ -338,6 +327,7 @@ share/locale/de/LC_MESSAGES/katexmlcheck.mo
 share/locale/de/LC_MESSAGES/katexmltools.mo
 share/locale/de/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/de/LC_MESSAGES/lspclient.mo
+share/locale/de/LC_MESSAGES/rainbowparens.mo
 share/locale/de/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/el/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/el/LC_MESSAGES/kate-replicode-plugin.mo
@@ -389,6 +379,7 @@ share/locale/en_GB/LC_MESSAGES/katexmltools.mo
 share/locale/en_GB/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/en_GB/LC_MESSAGES/lspclient.mo
 share/locale/en_GB/LC_MESSAGES/tabswitcherplugin.mo
+share/locale/eo/LC_MESSAGES/formatplugin.mo
 share/locale/eo/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/eo/LC_MESSAGES/kate-replicode-plugin.mo
 share/locale/eo/LC_MESSAGES/kate.mo
@@ -413,6 +404,7 @@ share/locale/eo/LC_MESSAGES/katexmlcheck.mo
 share/locale/eo/LC_MESSAGES/katexmltools.mo
 share/locale/eo/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/eo/LC_MESSAGES/lspclient.mo
+share/locale/eo/LC_MESSAGES/rainbowparens.mo
 share/locale/eo/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/es/LC_MESSAGES/formatplugin.mo
 share/locale/es/LC_MESSAGES/kate-ctags-plugin.mo
@@ -463,6 +455,7 @@ share/locale/et/LC_MESSAGES/katexmltools.mo
 share/locale/et/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/et/LC_MESSAGES/lspclient.mo
 share/locale/et/LC_MESSAGES/tabswitcherplugin.mo
+share/locale/eu/LC_MESSAGES/formatplugin.mo
 share/locale/eu/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/eu/LC_MESSAGES/kate-replicode-plugin.mo
 share/locale/eu/LC_MESSAGES/kate.mo
@@ -487,6 +480,7 @@ share/locale/eu/LC_MESSAGES/katexmlcheck.mo
 share/locale/eu/LC_MESSAGES/katexmltools.mo
 share/locale/eu/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/eu/LC_MESSAGES/lspclient.mo
+share/locale/eu/LC_MESSAGES/rainbowparens.mo
 share/locale/eu/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/fa/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/fa/LC_MESSAGES/kate.mo
@@ -523,6 +517,7 @@ share/locale/fi/LC_MESSAGES/katexmltools.mo
 share/locale/fi/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/fi/LC_MESSAGES/lspclient.mo
 share/locale/fi/LC_MESSAGES/tabswitcherplugin.mo
+share/locale/fr/LC_MESSAGES/formatplugin.mo
 share/locale/fr/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/fr/LC_MESSAGES/kate-replicode-plugin.mo
 share/locale/fr/LC_MESSAGES/kate.mo
@@ -547,6 +542,7 @@ share/locale/fr/LC_MESSAGES/katexmlcheck.mo
 share/locale/fr/LC_MESSAGES/katexmltools.mo
 share/locale/fr/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/fr/LC_MESSAGES/lspclient.mo
+share/locale/fr/LC_MESSAGES/rainbowparens.mo
 share/locale/fr/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/fy/LC_MESSAGES/kate.mo
 share/locale/fy/LC_MESSAGES/katesymbolviewer.mo
@@ -710,6 +706,7 @@ share/locale/is/LC_MESSAGES/katesearch.mo
 share/locale/is/LC_MESSAGES/katesymbolviewer.mo
 share/locale/is/LC_MESSAGES/katetextfilter.mo
 share/locale/is/LC_MESSAGES/katexmltools.mo
+share/locale/it/LC_MESSAGES/formatplugin.mo
 share/locale/it/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/it/LC_MESSAGES/kate-replicode-plugin.mo
 share/locale/it/LC_MESSAGES/kate.mo
@@ -734,7 +731,9 @@ share/locale/it/LC_MESSAGES/katexmlcheck.mo
 share/locale/it/LC_MESSAGES/katexmltools.mo
 share/locale/it/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/it/LC_MESSAGES/lspclient.mo
+share/locale/it/LC_MESSAGES/rainbowparens.mo
 share/locale/it/LC_MESSAGES/tabswitcherplugin.mo
+share/locale/ja/LC_MESSAGES/formatplugin.mo
 share/locale/ja/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/ja/LC_MESSAGES/kate-replicode-plugin.mo
 share/locale/ja/LC_MESSAGES/kate.mo
@@ -759,6 +758,7 @@ share/locale/ja/LC_MESSAGES/katexmlcheck.mo
 share/locale/ja/LC_MESSAGES/katexmltools.mo
 share/locale/ja/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/ja/LC_MESSAGES/lspclient.mo
+share/locale/ja/LC_MESSAGES/rainbowparens.mo
 share/locale/ja/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/ka/LC_MESSAGES/formatplugin.mo
 share/locale/ka/LC_MESSAGES/kate-ctags-plugin.mo
@@ -1064,6 +1064,7 @@ share/locale/pa/LC_MESSAGES/katesymbolviewer.mo
 share/locale/pa/LC_MESSAGES/katetextfilter.mo
 share/locale/pa/LC_MESSAGES/katexmltools.mo
 share/locale/pa/LC_MESSAGES/tabswitcherplugin.mo
+share/locale/pl/LC_MESSAGES/formatplugin.mo
 share/locale/pl/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/pl/LC_MESSAGES/kate-replicode-plugin.mo
 share/locale/pl/LC_MESSAGES/kate.mo
@@ -1088,6 +1089,7 @@ share/locale/pl/LC_MESSAGES/katexmlcheck.mo
 share/locale/pl/LC_MESSAGES/katexmltools.mo
 share/locale/pl/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/pl/LC_MESSAGES/lspclient.mo
+share/locale/pl/LC_MESSAGES/rainbowparens.mo
 share/locale/pl/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/pt/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/pt/LC_MESSAGES/kate-replicode-plugin.mo
@@ -1160,6 +1162,7 @@ share/locale/ro/LC_MESSAGES/katexmltools.mo
 share/locale/ro/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/ro/LC_MESSAGES/lspclient.mo
 share/locale/ro/LC_MESSAGES/tabswitcherplugin.mo
+share/locale/ru/LC_MESSAGES/formatplugin.mo
 share/locale/ru/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/ru/LC_MESSAGES/kate-replicode-plugin.mo
 share/locale/ru/LC_MESSAGES/kate.mo
@@ -1184,6 +1187,7 @@ share/locale/ru/LC_MESSAGES/katexmlcheck.mo
 share/locale/ru/LC_MESSAGES/katexmltools.mo
 share/locale/ru/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/ru/LC_MESSAGES/lspclient.mo
+share/locale/ru/LC_MESSAGES/rainbowparens.mo
 share/locale/ru/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/sa/LC_MESSAGES/kate.mo
 share/locale/sa/LC_MESSAGES/kategdbplugin.mo
@@ -1205,6 +1209,7 @@ share/locale/si/LC_MESSAGES/katesearch.mo
 share/locale/si/LC_MESSAGES/katesql.mo
 share/locale/si/LC_MESSAGES/katesymbolviewer.mo
 share/locale/si/LC_MESSAGES/katexmltools.mo
+share/locale/sk/LC_MESSAGES/formatplugin.mo
 share/locale/sk/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/sk/LC_MESSAGES/kate-replicode-plugin.mo
 share/locale/sk/LC_MESSAGES/kate.mo
@@ -1229,6 +1234,7 @@ share/locale/sk/LC_MESSAGES/katexmlcheck.mo
 share/locale/sk/LC_MESSAGES/katexmltools.mo
 share/locale/sk/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/sk/LC_MESSAGES/lspclient.mo
+share/locale/sk/LC_MESSAGES/rainbowparens.mo
 share/locale/sk/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/sl/LC_MESSAGES/formatplugin.mo
 share/locale/sl/LC_MESSAGES/kate-ctags-plugin.mo
@@ -1497,6 +1503,7 @@ share/locale/wa/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/xh/LC_MESSAGES/kate.mo
 share/locale/xh/LC_MESSAGES/katetextfilter.mo
 share/locale/xh/LC_MESSAGES/katexmltools.mo
+share/locale/zh_CN/LC_MESSAGES/formatplugin.mo
 share/locale/zh_CN/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/kate-replicode-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/kate.mo
@@ -1521,7 +1528,9 @@ share/locale/zh_CN/LC_MESSAGES/katexmlcheck.mo
 share/locale/zh_CN/LC_MESSAGES/katexmltools.mo
 share/locale/zh_CN/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/zh_CN/LC_MESSAGES/lspclient.mo
+share/locale/zh_CN/LC_MESSAGES/rainbowparens.mo
 share/locale/zh_CN/LC_MESSAGES/tabswitcherplugin.mo
+share/locale/zh_TW/LC_MESSAGES/formatplugin.mo
 share/locale/zh_TW/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/kate-replicode-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/kate.mo
@@ -1534,6 +1543,7 @@ share/locale/zh_TW/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/zh_TW/LC_MESSAGES/katefiletree.mo
 share/locale/zh_TW/LC_MESSAGES/kategdbplugin.mo
 share/locale/zh_TW/LC_MESSAGES/kategitblameplugin.mo
+share/locale/zh_TW/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/zh_TW/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/zh_TW/LC_MESSAGES/kateproject.mo
 share/locale/zh_TW/LC_MESSAGES/katesearch.mo
@@ -1545,6 +1555,20 @@ share/locale/zh_TW/LC_MESSAGES/katexmlcheck.mo
 share/locale/zh_TW/LC_MESSAGES/katexmltools.mo
 share/locale/zh_TW/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/zh_TW/LC_MESSAGES/lspclient.mo
+share/locale/zh_TW/LC_MESSAGES/rainbowparens.mo
 share/locale/zh_TW/LC_MESSAGES/tabswitcherplugin.mo
+share/man/ca/man1/kate.1.gz
+share/man/de/man1/kate.1.gz
+share/man/eo/man1/kate.1.gz
+share/man/es/man1/kate.1.gz
+share/man/it/man1/kate.1.gz
+share/man/man1/kate.1.gz
+share/man/nl/man1/kate.1.gz
+share/man/pt/man1/kate.1.gz
+share/man/pt_BR/man1/kate.1.gz
+share/man/ru/man1/kate.1.gz
+share/man/sv/man1/kate.1.gz
+share/man/tr/man1/kate.1.gz
+share/man/uk/man1/kate.1.gz
 share/metainfo/org.kde.kate.appdata.xml
 share/metainfo/org.kde.kwrite.appdata.xml

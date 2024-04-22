@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# PROVIDE: paperless-beat
+# REQUIRE: LOGIN
+# BEFORE:  paperless-consumer
+# KEYWORD: shutdown
+#
+# Add the following line(s) to /etc/rc.conf to enable the paperless
+# celery beat process:
+#
+# paperless_beat_enable (bool):		Set to "NO" by default.
+#					Set it to "YES" to enable
+#					paperless_beat
+# paperless_beat_log_facility(str):	Set to "daemon" by default.
+#					Beat logging syslog facility.
+# paperless_beat_log_priority(str):	Set to "notice" by default.
+#					Beat logging syslog priority.
+# paperless_beat_log_tag(str):		Set to "paperless-beat" by default.
+#					Beat logging syslog tag.
+
+. /etc/rc.subr
+
+name="paperless_beat"
+rcvar="${name}_enable"
+
+# Set defaults
+paperless_beat_enable=${paperless_beat_enable:-"NO"}
+paperless_beat_daemon_user=${paperless_beat_user:-"paperless"}
+paperless_beat_log_facility=${paperless_beat_log_facility:-"daemon"}
+paperless_beat_log_priority=${paperless_beat_log_priority:-"notice"}
+paperless_beat_log_tag=${paperless_beat_log_tag:-"paperless-beat"}
+
+paperless_beat_env="LANG=en_US.UTF-8 PATH=$PATH:%%PREFIX%%/bin \
+  PYTHONPATH=%%PYTHONPREFIX_SITELIBDIR%%/paperless"
+
+pidfile="/var/run/paperless/beat.pid"
+procname="%%PYTHON_CMD%%"
+command="/usr/sbin/daemon"
+command_args="-cS -u ${paperless_beat_daemon_user} \
+	-p ${pidfile} \
+	-t paperless-beat \
+	-l ${paperless_beat_log_facility} \
+	-s ${paperless_beat_log_priority} \
+	-T ${paperless_beat_log_tag} \
+	%%PREFIX%%/bin/celery \
+	--app paperless beat --loglevel INFO"
+
+load_rc_config ${name}
+run_rc_command "$1"

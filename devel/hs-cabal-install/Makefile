@@ -1,7 +1,7 @@
 PORTNAME=	cabal-install
-PORTVERSION=	3.10.1.0
+PORTVERSION=	3.10.2.1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	${PORTNAME}-v
-PORTREVISION=	4
 CATEGORIES=	devel haskell
 EXTRACT_ONLY=	${DISTNAME_DEFAULT}${_GITHUB_EXTRACT_SUFX}
 
@@ -17,30 +17,30 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	haskell
 GH_PROJECT=	cabal
 
-USE_CABAL=	async-2.2.4_2 \
+USE_CABAL=	async-2.2.4_3 \
 		base16-bytestring-1.0.2.0 \
 		base64-bytestring-1.2.1.0 \
-		cryptohash-sha256-0.11.102.1_1 \
+		cryptohash-sha256-0.11.102.1_2 \
 		data-array-byte-0.1.0.1_1 \
 		directory-1.3.7.1 \
 		echo-0.1.4 \
-		ed25519-0.0.5.0_6 \
+		ed25519-0.0.5.0_7 \
 		edit-distance-0.2.2.1_1 \
-		hackage-security-0.6.2.3_2 \
-		hashable-1.4.2.0 \
-		HTTP-4000.4.1_1 \
-		lukko-0.1.1.3_3 \
-		network-3.1.2.7 \
+		hackage-security-0.6.2.3_3 \
+		hashable-1.4.2.0_1 \
+		HTTP-4000.4.1_2 \
+		lukko-0.1.1.3_4 \
+		network-3.1.4.0 \
 		network-uri-2.6.4.2 \
 		process-1.6.17.0 \
 		random-1.2.1.1 \
 		regex-base-0.94.0.2_1 \
 		regex-posix-0.96.0.1_1 \
-		resolv-0.1.2.0_5 \
+		resolv-0.1.2.0_6 \
 		safe-exceptions-0.1.7.3 \
 		splitmix-0.1.0.4_2 \
-		tar-0.5.1.1_5 \
-		th-compat-0.1.4 \
+		tar-0.5.1.1_6 \
+		th-compat-0.1.4_2 \
 		zlib-0.6.3.0_1
 
 CABAL_EXECUTABLES=	cabal
@@ -61,7 +61,7 @@ post-extract:
 
 do-build:
 	cd ${WRKSRC} && \
-		${PYTHON_CMD} bootstrap/bootstrap.py -d bootstrap/linux-9.4.4.json
+		${PYTHON_CMD} bootstrap/bootstrap.py -d bootstrap/linux-9.4.5.json
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/_build/bin/cabal ${STAGEDIR}${PREFIX}/bin/

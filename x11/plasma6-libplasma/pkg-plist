@@ -14,6 +14,7 @@ include/Plasma/plasma/plasma_export.h
 include/Plasma/plasma/pluginloader.h
 include/Plasma/plasma/theme.h
 include/Plasma/plasma_version.h
+include/PlasmaQuick/PlasmaQuick/AppletPopup
 include/PlasmaQuick/PlasmaQuick/AppletQuickItem
 include/PlasmaQuick/PlasmaQuick/ConfigModel
 include/PlasmaQuick/PlasmaQuick/ConfigView
@@ -23,6 +24,7 @@ include/PlasmaQuick/PlasmaQuick/PlasmaWindow
 include/PlasmaQuick/PlasmaQuick/PopupPlasmaWindow
 include/PlasmaQuick/PlasmaQuick/QuickViewSharedEngine
 include/PlasmaQuick/PlasmaQuick/SharedQmlEngine
+include/PlasmaQuick/plasmaquick/appletpopup.h
 include/PlasmaQuick/plasmaquick/appletquickitem.h
 include/PlasmaQuick/plasmaquick/configmodel.h
 include/PlasmaQuick/plasmaquick/configview.h
@@ -43,11 +45,11 @@ lib/cmake/PlasmaQuick/PlasmaQuickConfigVersion.cmake
 lib/cmake/PlasmaQuick/PlasmaQuickTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/PlasmaQuick/PlasmaQuickTargets.cmake
 lib/libPlasma.so
-lib/libPlasma.so.%%KDE_PLASMA_VERSION%%
 lib/libPlasma.so.6
+lib/libPlasma.so.%%KDE_PLASMA_VERSION%%
 lib/libPlasmaQuick.so
-lib/libPlasmaQuick.so.%%KDE_PLASMA_VERSION%%
 lib/libPlasmaQuick.so.6
+lib/libPlasmaQuick.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/kf6/kirigami/platform/KirigamiPlasmaStyle.so
 %%QT_PLUGINDIR%%/kf6/packagestructure/plasma_applet.so
 %%QT_PLUGINDIR%%/kf6/packagestructure/plasma_containmentactions.so

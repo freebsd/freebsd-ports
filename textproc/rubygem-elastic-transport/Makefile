@@ -1,5 +1,5 @@
 PORTNAME=	elastic-transport
-PORTVERSION=	8.3.0
+PORTVERSION=	8.3.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

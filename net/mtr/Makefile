@@ -1,12 +1,13 @@
 PORTNAME=	mtr
 PORTVERSION=	0.95
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Traceroute and ping in a single network diagnostic tool
-WWW=		https://www.bitwizard.nl/mtr/
+WWW=		https://www.bitwizard.nl/mtr/ \
+		https://github.com/traviscross/mtr
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -16,10 +17,10 @@ USES=		autoreconf ncurses pkgconfig
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lncurses
 
-GH_ACCOUNT=	traviscross
 USE_GITHUB=	yes
+GH_ACCOUNT=	traviscross
 
-CONFLICTS_INSTALL?=	mtr-nox11
+CONFLICTS_INSTALL=	mtr mtr-nox11
 
 OPTIONS_DEFINE=	IPV6 JSON X11
 OPTIONS_DEFAULT=JSON X11

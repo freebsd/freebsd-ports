@@ -1,6 +1,6 @@
 PORTNAME=		nss_wrapper
 PORTVERSION=		1.1.3
-PORTREVISION=	2
+PORTREVISION=		3
 CATEGORIES=		devel
 MASTER_SITES=		SAMBA/cwrap
 
@@ -13,8 +13,6 @@ LICENSE=		GPLv3
 USES=			cmake compiler:c++11-lang perl5 shebangfix
 USE_PERL5=		run
 USE_LDCONFIG=		yes
-
-CMAKE_ARGS=		-DMAN_INSTALL_DIR:PATH="${PREFIX}/man"
 
 OPTIONS_DEFINE=		TEST
 OPTIONS_DEFAULT=	TEST
@@ -32,6 +30,6 @@ PLIST_FILES=		bin/nss_wrapper.pl \
 			lib/libnss_wrapper.so.0.2.3 \
 			lib/libnss_wrapper.so.0 \
 			lib/libnss_wrapper.so \
-			man/man1/nss_wrapper.1.gz
+			share/man/man1/nss_wrapper.1.gz
 
 .include <bsd.port.mk>

@@ -1,14 +1,11 @@
 @sample etc/gotosocial/config.yaml.sample
 %%WWWDIR%%/template/about.tmpl
-%%WWWDIR%%/template/header.tmpl
 %%WWWDIR%%/template/thread.tmpl
-%%WWWDIR%%/template/frontend.tmpl
 %%WWWDIR%%/template/oob.tmpl
 %%WWWDIR%%/template/confirmed.tmpl
 %%WWWDIR%%/template/profile.tmpl
 %%WWWDIR%%/template/status.tmpl
 %%WWWDIR%%/template/email_confirm.tmpl
-%%WWWDIR%%/template/footer.tmpl
 %%WWWDIR%%/template/email_reset.tmpl
 %%WWWDIR%%/template/email_test.tmpl
 %%WWWDIR%%/template/sign-in.tmpl
@@ -23,6 +20,18 @@
 %%WWWDIR%%/template/tag.tmpl
 %%WWWDIR%%/template/status_attachments.tmpl
 %%WWWDIR%%/template/status_poll.tmpl
+%%WWWDIR%%/template/index_apps.tmpl
+%%WWWDIR%%/template/index_what_is_this.tmpl
+%%WWWDIR%%/template/page.tmpl
+%%WWWDIR%%/template/page_footer.tmpl
+%%WWWDIR%%/template/page_header.tmpl
+%%WWWDIR%%/template/page_ogmeta.tmpl
+%%WWWDIR%%/template/page_stylesheets.tmpl
+%%WWWDIR%%/template/profile_fields.tmpl
+%%WWWDIR%%/template/settings.tmpl
+%%WWWDIR%%/template/status_attributes.tmpl
+%%WWWDIR%%/template/status_header.tmpl
+%%WWWDIR%%/template/status_info.tmpl
 %%WWWDIR%%/assets/LICENSE
 %%WWWDIR%%/assets/default_avatars/GoToSocial_icon5.png
 %%WWWDIR%%/assets/default_avatars/GoToSocial_icon2.png
@@ -63,6 +72,10 @@
 %%WWWDIR%%/assets/dist/base.css
 %%WWWDIR%%/assets/dist/frontend.js
 %%WWWDIR%%/assets/dist/tag.css
+%%WWWDIR%%/assets/dist/about.css
+%%WWWDIR%%/assets/dist/page.css
+%%WWWDIR%%/assets/dist/prism.css
+%%WWWDIR%%/assets/dist/thread.css
 %%WWWDIR%%/assets/feditext.svg
 %%WWWDIR%%/assets/swagger.yaml
 bin/gotosocial

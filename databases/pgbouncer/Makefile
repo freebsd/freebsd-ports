@@ -1,12 +1,12 @@
 PORTNAME=	pgbouncer
-PORTVERSION=	1.21.0
+PORTVERSION=	1.22.1
 CATEGORIES=	databases
-MASTER_SITES=	https://pgbouncer.github.io/downloads/files/${PORTVERSION}/ \
-		http://pgbouncer.github.io/downloads/files/${PORTVERSION}/
+MASTER_SITES=	https://www.pgbouncer.org/downloads/files/${PORTVERSION}/ \
+		http://www.pgbouncer.org/downloads/files/${PORTVERSION}/
 
 MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	Lightweight connection pooler for PostgreSQL
-WWW=		https://pgbouncer.github.io/
+WWW=		https://www.pgbouncer.org/
 
 LICENSE=	BSD2CLAUSE
 
@@ -53,8 +53,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pgbouncer ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/doc/pgbouncer.1 ${STAGEDIR}${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/doc/pgbouncer.5 ${STAGEDIR}${PREFIX}/man/man5/
+	${INSTALL_MAN} ${WRKSRC}/doc/pgbouncer.1 ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/pgbouncer.5 ${STAGEDIR}${PREFIX}/share/man/man5/
 	${INSTALL_DATA} ${WRKSRC}/etc/pgbouncer.ini \
 		${STAGEDIR}${PREFIX}/etc/pgbouncer.ini.sample
 	${INSTALL_DATA} ${WRKSRC}/etc/userlist.txt \

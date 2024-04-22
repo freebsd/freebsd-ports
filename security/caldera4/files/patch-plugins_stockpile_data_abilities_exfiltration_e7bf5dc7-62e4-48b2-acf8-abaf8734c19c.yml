@@ -1,0 +1,18 @@
+--- plugins/stockpile/data/abilities/exfiltration/e7bf5dc7-62e4-48b2-acf8-abaf8734c19c.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/exfiltration/e7bf5dc7-62e4-48b2-acf8-abaf8734c19c.yml
+@@ -8,7 +8,7 @@
+     attack_id: T1567.002
+     name: 'Exfiltration to Cloud Storage'
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           LocalFile='#{host.dir.compress}';
+@@ -30,4 +30,4 @@
+           aws s3 rm s3://#{s3.source.name}/$RemoteName;
+   requirements:
+     - plugins.stockpile.app.requirements.paw_provenance:
+-      - source: host.dir.compress
+\ No newline at end of file
++      - source: host.dir.compress

@@ -1,14 +1,6 @@
 bin/kdiff3
 %%QT_PLUGINDIR%%/kf5/kfileitemaction/kdiff3fileitemaction.so
 %%QT_PLUGINDIR%%/kf5/parts/kdiff3part.so
-man/ca/man1/kdiff3.1.gz
-man/de/man1/kdiff3.1.gz
-man/es/man1/kdiff3.1.gz
-man/it/man1/kdiff3.1.gz
-man/man1/kdiff3.1.gz
-man/nl/man1/kdiff3.1.gz
-man/sv/man1/kdiff3.1.gz
-man/uk/man1/kdiff3.1.gz
 share/applications/org.kde.kdiff3.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ca/kdiff3/index.cache.bz2
 %%PORTDOCS%%%%DOCSDIR%%/ca/kdiff3/index.docbook
@@ -187,4 +179,12 @@ share/locale/zh_CN/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/zh_TW/LC_MESSAGES/diff_ext.mo
 share/locale/zh_TW/LC_MESSAGES/kdiff3.mo
 share/locale/zh_TW/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+share/man/ca/man1/kdiff3.1.gz
+share/man/de/man1/kdiff3.1.gz
+share/man/es/man1/kdiff3.1.gz
+share/man/it/man1/kdiff3.1.gz
+share/man/man1/kdiff3.1.gz
+share/man/nl/man1/kdiff3.1.gz
+share/man/sv/man1/kdiff3.1.gz
+share/man/uk/man1/kdiff3.1.gz
 share/metainfo/org.kde.kdiff3.appdata.xml

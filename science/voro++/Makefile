@@ -1,6 +1,6 @@
 PORTNAME=	voro++
 DISTVERSION=	0.4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://math.lbl.gov/voro++/download/dir/
 

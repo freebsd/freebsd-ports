@@ -1,5 +1,6 @@
 PORTNAME=	nbd
 PORTVERSION=	3.24
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
@@ -17,6 +18,7 @@ CPE_VENDOR=	wouter_verhelst
 USE_GNOME=	glib20
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-lfs --enable-syslog
 TEST_TARGET=	check
 
@@ -26,11 +28,11 @@ GNUTLS_BUILD_DEPENDS=	gnutls>0:security/gnutls
 GNUTLS_RUN_DEPENDS=	gnutls>0:security/gnutls
 
 PLIST_FILES=	bin/nbd-server bin/nbd-trdump bin/nbd-trplay \
-		man/man1/nbd-server.1.gz \
-		man/man1/nbd-trdump.1.gz \
-		man/man1/nbd-trplay.1.gz \
-		man/man5/nbd-server.5.gz \
-		man/man5/nbdtab.5.gz \
-		man/man8/nbd-client.8.gz
+		share/man/man1/nbd-server.1.gz \
+		share/man/man1/nbd-trdump.1.gz \
+		share/man/man1/nbd-trplay.1.gz \
+		share/man/man5/nbd-server.5.gz \
+		share/man/man5/nbdtab.5.gz \
+		share/man/man8/nbd-client.8.gz
 
 .include <bsd.port.mk>

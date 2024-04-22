@@ -1,5 +1,6 @@
 PORTNAME=	nsca-ng
 PORTVERSION=	1.6
+PORTREVISION=	1
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
@@ -17,6 +18,7 @@ LIB_DEPENDS+=	libconfuse.so:devel/libconfuse
 
 USES=		ssl autoreconf
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=/var/spool/nagios
 CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
@@ -52,12 +54,12 @@ post-install:
 
 	cd ${STAGEDIR}${PREFIX}/etc && ${MV} send_nsca.cfg send_nsca.cfg.sample
 	# remove files not used here
-	cd ${STAGEDIR}${PREFIX} && ${RM} man/man8/nsca-ng.8 man/man5/nsca-ng.cfg.5
+	cd ${STAGEDIR}${PREFIX} && ${RM} share/man/man8/nsca-ng.8 share/man/man5/nsca-ng.cfg.5
 .else
 	cd ${STAGEDIR}${PREFIX}/etc && ${MV} nsca-ng.cfg nsca-ng.cfg.sample
 	# remove files not used here
-	cd ${STAGEDIR}${PREFIX} && ${RM} etc/send_nsca.cfg man/man5/send_nsca.cfg.5 \
-		man/man8/send_nsca.8 sbin/send_nsca
+	cd ${STAGEDIR}${PREFIX} && ${RM} etc/send_nsca.cfg share/man/man5/send_nsca.cfg.5 \
+		share/man/man8/send_nsca.8 sbin/send_nsca
 .endif
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

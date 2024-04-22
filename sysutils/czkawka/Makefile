@@ -1,6 +1,6 @@
 PORTNAME=	czkawka
-DISTVERSION=	6.1.0
-PORTREVISION=	3
+DISTVERSION=	7.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://github.com/qarmin/czkawka
 
 LICENSE=	CC-BY-4.0 MIT
 LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE_MIT=	${WRKSRC}/${PORTNAME}_core/LICENSE
 
 USES=		cargo gnome
 USE_GITHUB=	yes
@@ -26,6 +26,10 @@ PLIST_FILES=	bin/${PORTNAME}_cli \
 
 # XXX https://github.com/rust-lang/cargo/issues/4101
 CARGO_INSTALL_PATH=	${PLIST_FILES:Mbin/*:T}
+
+post-patch:
+# XXX Skip the new GUI until runtime is tested
+	@${REINPLACE_CMD} '/krokiet/d' ${WRKSRC}/Cargo.toml
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/*.desktop \

@@ -1,6 +1,6 @@
 PORTNAME=	spamd
 PORTVERSION=	4.9.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	SF/freebsdspamd/spamd
 
@@ -23,11 +23,11 @@ PLIST_FILES=	etc/spamd/spamd.conf.sample \
 		sbin/add-spamd-to-etc-service \
 		sbin/spamd-setup \
 		sbin/spamdb \
-		man/man5/spamd.conf.5.gz \
-		man/man8/spamd-setup.8.gz \
-		man/man8/spamd.8.gz \
-		man/man8/spamdb.8.gz \
-		man/man8/spamlogd.8.gz
+		share/man/man5/spamd.conf.5.gz \
+		share/man/man8/spamd-setup.8.gz \
+		share/man/man8/spamd.8.gz \
+		share/man/man8/spamdb.8.gz \
+		share/man/man8/spamlogd.8.gz
 
 SUB_LIST=	SPAMDUSER=${USERS} \
 		SPAMDGROUP=${GROUPS}
@@ -64,11 +64,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spamlogd/spamlogd ${STAGEDIR}${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/spamd-setup/spamd-setup ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/spamdb/spamdb ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/etc/spamd.conf.5 ${STAGEDIR}${PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/spamd/spamd.8 ${STAGEDIR}${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/spamd-setup/spamd-setup.8 ${STAGEDIR}${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/spamdb/spamdb.8 ${STAGEDIR}${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/spamlogd/spamlogd.8 ${STAGEDIR}${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/etc/spamd.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
+	${INSTALL_MAN} ${WRKSRC}/spamd/spamd.8 ${STAGEDIR}${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/spamd-setup/spamd-setup.8 ${STAGEDIR}${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/spamdb/spamdb.8 ${STAGEDIR}${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/spamlogd/spamlogd.8 ${STAGEDIR}${PREFIX}/share/man/man8
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/spamd.conf ${STAGEDIR}${ETCDIR}/spamd.conf.sample
 

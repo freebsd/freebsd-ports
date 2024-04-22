@@ -124,6 +124,5 @@ share/applications/klystrack.desktop
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/songs/ringmod.kt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/songs/smp_dingleberries_fix.kt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/songs/smp_dpintro.kt
-%%DATADIR%%/Default.kt
+share/icons/hicolor/256x256/apps/klystrack.png
 share/man/man1/klystrack.1.gz
-share/pixmaps/klystrack.png

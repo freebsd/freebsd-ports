@@ -1,11 +1,11 @@
---- mail-iso-2022-jp.gemspec.orig	2023-01-23 05:55:47 UTC
+--- mail-iso-2022-jp.gemspec.orig	2024-02-20 14:39:04 UTC
 +++ mail-iso-2022-jp.gemspec
 @@ -20,7 +20,7 @@ Gem::Specification.new do |s|
  
    s.specification_version = 4
  
--  s.add_runtime_dependency(%q<mail>.freeze, [">= 2.2.6", "<= 2.7.1"])
-+  s.add_runtime_dependency(%q<mail>.freeze, [">= 2.8.0"])
-   s.add_development_dependency(%q<actionmailer>.freeze, [">= 3.0.0", "< 7.0"])
-   s.add_development_dependency(%q<rdoc>.freeze, [">= 3.12", "< 5.0"])
+-  s.add_runtime_dependency(%q<mail>.freeze, [">= 2.2.6".freeze, "<= 2.7.1".freeze])
++  s.add_runtime_dependency(%q<mail>.freeze, [">= 2.8.0".freeze])
+   s.add_development_dependency(%q<actionmailer>.freeze, [">= 3.0.0".freeze, "< 7.0".freeze])
+   s.add_development_dependency(%q<rdoc>.freeze, [">= 3.12".freeze, "< 5.0".freeze])
  end

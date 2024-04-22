@@ -1,6 +1,6 @@
 PORTNAME=	vorbisgain
 PORTVERSION=	0.37
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://sjeng.org/ftp/vorbis/
 
@@ -16,9 +16,10 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 
 USES=		localbase:ldflags
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	bin/vorbisgain \
-		man/man1/vorbisgain.1.gz
+		share/man/man1/vorbisgain.1.gz
 
 OPTIONS_DEFINE=	RECURSIVE
 

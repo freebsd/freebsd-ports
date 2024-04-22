@@ -1,5 +1,6 @@
 PORTNAME=	mtbl
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.1
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
@@ -18,6 +19,7 @@ USES=		gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

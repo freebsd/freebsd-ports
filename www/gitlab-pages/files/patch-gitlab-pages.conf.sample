@@ -2,8 +2,8 @@
 +++ gitlab-pages.conf.sample
 @@ -0,0 +1,6 @@
 +listen-http=:8090
-+pages-root=%%PREFIX%%/www/gitlab-ce/shared/pages
-+api-secret-key=%%PREFIX%%/www/gitlab-ce/.gitlab_pages_secret
++pages-root=%%PREFIX%%/www/gitlab/shared/pages
++api-secret-key=%%PREFIX%%/www/gitlab/.gitlab_pages_secret
 +pages-domain=pages.example.com
 +internal-gitlab-server=https://gitlab.example.com
 +

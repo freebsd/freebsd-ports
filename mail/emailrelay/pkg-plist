@@ -8,11 +8,11 @@ libexec/emailrelay/examples/emailrelay-notify.sh
 libexec/emailrelay/examples/emailrelay-process.sh
 libexec/emailrelay/examples/emailrelay-resubmit.sh
 libexec/emailrelay/examples/emailrelay-submit.sh
-man/man1/emailrelay-filter-copy.1.gz
-man/man1/emailrelay-passwd.1.gz
-man/man1/emailrelay-poke.1.gz
-man/man1/emailrelay-submit.1.gz
-man/man1/emailrelay.1.gz
+share/man/man1/emailrelay-filter-copy.1.gz
+share/man/man1/emailrelay-passwd.1.gz
+share/man/man1/emailrelay-poke.1.gz
+share/man/man1/emailrelay-submit.1.gz
+share/man/man1/emailrelay.1.gz
 sbin/emailrelay
 sbin/emailrelay-passwd
 sbin/emailrelay-submit

@@ -1,5 +1,6 @@
 PORTNAME=	stalepid
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://devel.ringlet.net/files/sys/stalepid/
 
@@ -16,6 +17,6 @@ USE_PERL5=	run
 
 SHEBANG_FILES=	${WRKSRC}/stalepid.pl
 
-PLIST_FILES=	bin/stalepid man/man1/stalepid.1.gz
+PLIST_FILES=	bin/stalepid share/man/man1/stalepid.1.gz
 
 .include <bsd.port.mk>

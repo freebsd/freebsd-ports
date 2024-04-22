@@ -28,4 +28,4 @@
 -		install wmglobe /usr/local/bin
 -		install wmglobe.1 /usr/local/man/man1
 +		${BSD_INSTALL_PROGRAM} wmglobe ${PREFIX}/bin
-+		${BSD_INSTALL_MAN} wmglobe.1 ${PREFIX}/man/man1
++		${BSD_INSTALL_MAN} wmglobe.1 ${PREFIX}/share/man/man1

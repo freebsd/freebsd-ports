@@ -1,5 +1,5 @@
 bin/ipcad
 @sample etc/ipcad.conf.sample
 etc/ipcad.conf.simple
-man/man5/ipcad.conf.5.gz
-man/man8/ipcad.8.gz
+share/man/man5/ipcad.conf.5.gz
+share/man/man8/ipcad.8.gz

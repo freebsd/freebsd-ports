@@ -2459,6 +2459,7 @@ share/locale/gl/LC_MESSAGES/kcm_autostart.mo
 share/locale/gl/LC_MESSAGES/kcm_colors.mo
 share/locale/gl/LC_MESSAGES/kcm_cursortheme.mo
 share/locale/gl/LC_MESSAGES/kcm_desktoptheme.mo
+share/locale/gl/LC_MESSAGES/kcm_feedback.mo
 share/locale/gl/LC_MESSAGES/kcm_fonts.mo
 share/locale/gl/LC_MESSAGES/kcm_icons.mo
 share/locale/gl/LC_MESSAGES/kcm_lookandfeel.mo

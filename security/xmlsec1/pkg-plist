@@ -14,6 +14,7 @@ include/xmlsec1/xmlsec/exports.h
 %%GNUTLS%%include/xmlsec1/xmlsec/gcrypt/symbols.h
 %%GNUTLS%%include/xmlsec1/xmlsec/gnutls/app.h
 %%GNUTLS%%include/xmlsec1/xmlsec/gnutls/crypto.h
+%%GNUTLS%%include/xmlsec1/xmlsec/gnutls/keysstore.h
 %%GNUTLS%%include/xmlsec1/xmlsec/gnutls/symbols.h
 %%GNUTLS%%include/xmlsec1/xmlsec/gnutls/x509.h
 include/xmlsec1/xmlsec/io.h
@@ -25,16 +26,15 @@ include/xmlsec1/xmlsec/list.h
 include/xmlsec1/xmlsec/membuf.h
 include/xmlsec1/xmlsec/nodeset.h
 %%NSS%%include/xmlsec1/xmlsec/nss/app.h
-%%NSS%%include/xmlsec1/xmlsec/nss/bignum.h
 %%NSS%%include/xmlsec1/xmlsec/nss/crypto.h
 %%NSS%%include/xmlsec1/xmlsec/nss/keysstore.h
 %%NSS%%include/xmlsec1/xmlsec/nss/pkikeys.h
 %%NSS%%include/xmlsec1/xmlsec/nss/symbols.h
 %%NSS%%include/xmlsec1/xmlsec/nss/x509.h
 %%OPENSSL%%include/xmlsec1/xmlsec/openssl/app.h
-%%OPENSSL%%include/xmlsec1/xmlsec/openssl/bn.h
 %%OPENSSL%%include/xmlsec1/xmlsec/openssl/crypto.h
 %%OPENSSL%%include/xmlsec1/xmlsec/openssl/evp.h
+%%OPENSSL%%include/xmlsec1/xmlsec/openssl/keysstore.h
 %%OPENSSL%%include/xmlsec1/xmlsec/openssl/symbols.h
 %%OPENSSL%%include/xmlsec1/xmlsec/openssl/x509.h
 include/xmlsec1/xmlsec/parser.h
@@ -68,6 +68,6 @@ lib/libxmlsec1.so.%%DISTVERSION%%
 %%NSS%%libdata/pkgconfig/xmlsec1-nss.pc
 %%OPENSSL%%libdata/pkgconfig/xmlsec1-openssl.pc
 libdata/pkgconfig/xmlsec1.pc
-man/man1/xmlsec1-config.1.gz
-man/man1/xmlsec1.1.gz
+share/man/man1/xmlsec1-config.1.gz
+share/man/man1/xmlsec1.1.gz
 share/aclocal/xmlsec1.m4

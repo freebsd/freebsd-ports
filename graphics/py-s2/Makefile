@@ -1,6 +1,5 @@
 PORTNAME=	s2
-PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTVERSION=	0.11.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,5 +32,9 @@ USE_GITHUB=	yes
 .if ${ARCH} == powerpc64 && !defined(CPUTYPE)
 CXXFLAGS+=	-mcpu=power7
 .endif
+
+post-install:
+	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} -f ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${PYTHON_CMD} -O -m compileall -d ${PYTHON_SITELIBDIR} -f ${STAGEDIR}${PYTHON_SITELIBDIR}
 
 .include <bsd.port.mk>

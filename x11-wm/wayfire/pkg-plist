@@ -41,7 +41,6 @@ include/wayfire/plugins/grid.hpp
 include/wayfire/plugins/ipc/ipc-activator.hpp
 include/wayfire/plugins/ipc/ipc-helpers.hpp
 include/wayfire/plugins/ipc/ipc-method-repository.hpp
-include/wayfire/plugins/ipc/ipc.hpp
 include/wayfire/plugins/scale-signal.hpp
 include/wayfire/plugins/vswitch.hpp
 include/wayfire/plugins/wm-actions-signals.hpp
@@ -62,6 +61,7 @@ include/wayfire/txn/transaction-object.hpp
 include/wayfire/txn/transaction.hpp
 include/wayfire/unstable/translation-node.hpp
 include/wayfire/unstable/wlr-surface-node.hpp
+include/wayfire/unstable/wlr-text-input-v3-popup.hpp
 include/wayfire/unstable/wlr-view-events.hpp
 include/wayfire/unstable/wlr-view-keyboard-interaction.hpp
 include/wayfire/unstable/xdg-toplevel-base.hpp
@@ -93,6 +93,7 @@ lib/wayfire/libforeign-toplevel.so
 lib/wayfire/libgrid.so
 lib/wayfire/libgtk-shell.so
 lib/wayfire/libidle.so
+lib/wayfire/libinput-method-v1.so
 lib/wayfire/libinvert.so
 lib/wayfire/libipc-rules.so
 lib/wayfire/libipc.so
@@ -103,6 +104,7 @@ lib/wayfire/libpreserve-output.so
 lib/wayfire/libresize.so
 lib/wayfire/libscale-title-filter.so
 lib/wayfire/libscale.so
+lib/wayfire/libshortcuts-inhibit.so
 lib/wayfire/libsimple-tile.so
 lib/wayfire/libstipc.so
 lib/wayfire/libswitcher.so
@@ -136,6 +138,7 @@ share/man/man1/wayfire.1.gz
 %%DATADIR%%/metadata/gtk-shell.xml
 %%DATADIR%%/metadata/idle.xml
 %%DATADIR%%/metadata/input-device.xml
+%%DATADIR%%/metadata/input-method-v1.xml
 %%DATADIR%%/metadata/input.xml
 %%DATADIR%%/metadata/invert.xml
 %%DATADIR%%/metadata/ipc-rules.xml
@@ -148,6 +151,7 @@ share/man/man1/wayfire.1.gz
 %%DATADIR%%/metadata/resize.xml
 %%DATADIR%%/metadata/scale-title-filter.xml
 %%DATADIR%%/metadata/scale.xml
+%%DATADIR%%/metadata/shortcuts-inhibit.xml
 %%DATADIR%%/metadata/simple-tile.xml
 %%DATADIR%%/metadata/switcher.xml
 %%DATADIR%%/metadata/vswipe.xml

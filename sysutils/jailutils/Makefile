@@ -1,5 +1,6 @@
 PORTNAME=	jailutils
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://thewalter.net/stef/freebsd/jails/jailutils/ \
 		https://BSDforge.com/projects/source/sysutils/jailutils/
@@ -12,6 +13,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PORTDOCS=	AUTHORS ChangeLog
 

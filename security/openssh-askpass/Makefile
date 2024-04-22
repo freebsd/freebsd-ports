@@ -1,6 +1,6 @@
 PORTNAME=	OpenSSH-askpass
 PORTVERSION=	1.2.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://www.jmknoble.net/software/x11-ssh-askpass/
 DISTNAME=	x11-ssh-askpass-${PORTVERSION}
@@ -18,8 +18,8 @@ DOCSDIR=	${PREFIX}/share/doc/ssh-askpass
 PLIST_FILES=	bin/x11-ssh-askpass \
 		bin/ssh-askpass \
 		lib/X11/app-defaults/SshAskpass \
-		man/man1/ssh-askpass.1.gz \
-		man/man1/x11-ssh-askpass.1.gz
+		share/man/man1/ssh-askpass.1.gz \
+		share/man/man1/x11-ssh-askpass.1.gz
 PORTDOCS=	README TODO ChangeLog
 
 OPTIONS_DEFINE=	DOCS

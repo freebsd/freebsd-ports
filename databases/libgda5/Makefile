@@ -1,6 +1,6 @@
 PORTNAME=	libgda
 DISTVERSION?=	5.2.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	5
@@ -28,6 +28,7 @@ USES+=		gettext gmake gnome libtool localbase pathfix pkgconfig
 USE_GNOME=	glib20 libxslt intlhack introspection:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 #MAKE_JOBS_UNSAFE=yes
 CONFIGURE_ARGS=	--without-oracle \

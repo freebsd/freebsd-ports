@@ -1,6 +1,6 @@
 PORTNAME=	tclbsd
 PORTVERSION=	1.9.2
-PORTREVISION=	0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -19,10 +19,12 @@ TCL_PKG=	BSD${PORTVERSION}
 USE_GITHUB=	yes
 GH_ACCOUNT=	flightaware
 
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+
 PLIST_FILES=	lib/${TCL_PKG}/bsd_procs.tcl \
 		lib/${TCL_PKG}/lib${TCL_PKG}.so \
 		lib/${TCL_PKG}/pkgIndex.tcl \
-		man/mann/bsd.n.gz
+		share/man/mann/bsd.n.gz
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${TCL_PKG}/lib${TCL_PKG}.so

@@ -1,11 +1,11 @@
 PORTNAME=	libsignal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.36.0
+DISTVERSION=	0.42.0
 CATEGORIES=	net-im
 PKGNAMESUFFIX=	-node
 DISTFILES=	libsignal-node-${DISTVERSION}-yarn-cache.tar.gz
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Platform-agnostic APIs used by the official Signal clients and servers
 WWW=		https://github.com/signalapp/libsignal
 
@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 
-FETCH_DEPENDS=	yarn-node18>0:www/yarn-node18
-EXTRACT_DEPENDS=yarn-node18>0:www/yarn-node18
+FETCH_DEPENDS=	yarn-node20>0:www/yarn-node20
+EXTRACT_DEPENDS=yarn-node20>0:www/yarn-node20
 BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		protoc:devel/protobuf \
 		yarn:www/yarn-node18
@@ -41,7 +41,11 @@ USE_LDCONFIG=	yes
 PLIST_FILES=	lib/libsignal_node.so
 
 NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/:S/i386/ia32/:C/powerpc64.*/ppc64/}
+NPM_RINGRTC_DIR=	npm-@signalapp-ringrtc-2.36.0-67d1b48bd4c1ea31c155ea14a0bd28f04e46eff5-integrity
+NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.39.1-15b41f15c516ae3eecf8a098a9c9c7aac00444d7-integrity
+NPM_SQLITE3_DIR=	npm-@signalapp-better-sqlite3-8.6.0-0413f4d0626b99838cd64ad09c88720aa2bec6ed-integrity
 RUST_ARCH=	${ARCH:S/amd64/x86_64/:S/i386/i686/}
+SQLCIPHER=		sqlcipher-4.5.5-fts5-fix--3.0.7--0.2.1-ef53ea45ed92b928ecfd33c552d8d405263e86e63dec38e1ec63e1b0193b630b
 
 YARN_TIMESTAMP=	1661146515
 

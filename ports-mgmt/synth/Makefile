@@ -1,7 +1,7 @@
 PORTNAME=	synth
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -55,7 +55,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/build/synthexec \
 		${STAGEDIR}${PREFIX}/libexec
-	${INSTALL_MAN} ${WRKSRC}/synth.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/synth.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_SCRIPT} ${WRKSRC}/shell-completers/_synth.bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/shell-completers/_synth \

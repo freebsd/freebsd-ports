@@ -1,6 +1,5 @@
 PORTNAME=	libgig
-DISTVERSION=	4.3.0
-PORTREVISION=	1
+DISTVERSION=	4.4.1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.linuxsampler.org/packages/ # dead?: SF/qsampler/${PORTNAME}/${PORTVERSION}
 
@@ -20,6 +19,7 @@ USE_LDCONFIG=	${PREFIX}/lib/libgig
 CPE_VENDOR=	linuxsampler
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 

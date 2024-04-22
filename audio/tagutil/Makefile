@@ -1,7 +1,7 @@
 PORTNAME=	tagutil
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	alex@kaworu.ch
@@ -18,11 +18,11 @@ USES=		cmake compiler:c++11-lang iconv pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	kAworu
 
-CMAKE_ARGS=	-DMAN_PATH=${PREFIX}/man
+CMAKE_ARGS=	-DMAN_PATH=${PREFIX}/share/man
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 
 PLIST_FILES=	bin/tagutil \
-		man/man1/tagutil.1.gz
+		share/man/man1/tagutil.1.gz
 
 OPTIONS_DEFINE=		JSON
 OPTIONS_MULTI=		MEDIA

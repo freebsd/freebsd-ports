@@ -33,8 +33,8 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}uncertainties>=3.1.6:math/py-uncertainties@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybtex>0:textproc/py-pybtex@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang python pytest
-USE_PYTHON=	distutils cython concurrent autoplist
+USES=		compiler:c++11-lang python
+USE_PYTHON=	distutils cython concurrent autoplist pytest
 
 post-install:
 	@cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME} && ${STRIP_CMD} \

@@ -11,6 +11,9 @@ WWW=		https://github.com/xiaoyong/2048-Qt
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Unmaintained, last upstream release in 2016
+EXPIRATION_DATE=	2024-04-30
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiaoyong
 GH_PROJECT=	2048-Qt

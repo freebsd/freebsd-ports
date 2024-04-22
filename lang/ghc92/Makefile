@@ -18,7 +18,7 @@ BASE_PACKAGES=		Cabal-3.6.3.0 array-0.5.4.0 base-4.16.4.0 binary-0.8.9.0 \
 			terminfo-0.4.1.5 text-1.2.5.0 time-1.11.1.1 \
 			transformers-0.5.6.2 unix-2.7.2.2 xhtml-3000.2.2.1
 BOOT_GHC_VERSION=	8.10.7
-BOOT_LLVM_VERSION=	10
+BOOT_LLVM_VERSION=	11
 
 MASTERDIR=	${.CURDIR}/../ghc
 PATCHDIR=	${.CURDIR}/files

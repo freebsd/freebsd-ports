@@ -1,6 +1,6 @@
 PORTNAME=	guile
 PORTVERSION=	1.8.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU
 PKGNAMESUFFIX=	1
@@ -25,6 +25,7 @@ CPE_VENDOR=	gnu
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=--program-suffix=-${GUILE_VER} \
 		--includedir='$${prefix}/include/guile/${GUILE_VER}/'
 
@@ -74,7 +75,7 @@ post-install:
 	for p in guile guile-tools guile-config guile-snarf; do \
 	  ${LN} -s $${p}-${GUILE_VER} ${STAGEDIR}${PREFIX}/bin/$${p}${GUILE_SFX}; \
 	done
-	${INSTALL_MAN} ${WRKSRC}/doc/guile${GUILE_SFX}.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/guile${GUILE_SFX}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 	${MKDIR} ${STAGEDIR}${PREFIX}/${GUILE_INFO_PATH}
 	${INSTALL_DATA} ${WRKSRC}/doc/goops/goops.info ${STAGEDIR}${PREFIX}/${GUILE_INFO_PATH}/
 	${INSTALL_DATA} ${WRKSRC}/doc/tutorial/guile-tut.info ${STAGEDIR}${PREFIX}/${GUILE_INFO_PATH}/

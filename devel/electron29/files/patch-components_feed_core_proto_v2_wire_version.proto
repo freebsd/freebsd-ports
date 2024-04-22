@@ -1,0 +1,13 @@
+--- components/feed/core/proto/v2/wire/version.proto.orig	2021-05-12 22:05:49 UTC
++++ components/feed/core/proto/v2/wire/version.proto
+@@ -25,8 +25,8 @@ message Version {
+     BETA = 3;
+     RELEASE = 4;
+   }
+-  optional int32 major = 1;
+-  optional int32 minor = 2;
++  optional int32 gmajor = 1;
++  optional int32 gminor = 2;
+   optional int32 build = 3;
+   optional int32 revision = 4;
+   optional Architecture architecture = 5;

@@ -1,6 +1,6 @@
 PORTNAME=	codeblocks
 PORTVERSION=	20.03
-PORTREVISION=	9
+PORTREVISION=	11
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/Sources/${PORTVERSION}
 
@@ -28,6 +28,7 @@ USE_WX=		3.0+
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG} --disable-pch \
 		--with-boost-system=boost_system
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"

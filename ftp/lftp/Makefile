@@ -1,5 +1,6 @@
 PORTNAME=	lftp
 PORTVERSION=	4.9.2
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/ \
 		http://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
@@ -27,6 +28,7 @@ CPE_VENDOR=	lftp_project
 SHEBANG_FILES=	src/convert-mozilla-cookies src/verify-file src/xdg-move
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PORTDOCS=	AUTHORS BUGS ChangeLog FAQ FEATURES INSTALL MIRRORS NEWS README \
 		README.debug-levels README.modules THANKS TODO

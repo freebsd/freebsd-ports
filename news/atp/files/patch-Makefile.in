@@ -1,7 +1,11 @@
 --- Makefile.in.orig	1997-01-03 13:00:00 UTC
 +++ Makefile.in
-@@ -20,7 +20,7 @@
- mandir = $(prefix)/man
+@@ -17,10 +17,10 @@ bindir = $(exec_prefix)/bin
+ prefix = @prefix@
+ exec_prefix = $(prefix)
+ bindir = $(exec_prefix)/bin
+-mandir = $(prefix)/man
++mandir = $(prefix)/share/man
  
  # path where your ATP data and configuration files will reside:
 -atphome = @ATPHOME@
@@ -9,7 +13,7 @@
  
  # permissions and ownership
  bin_prm = 755
-@@ -78,7 +78,7 @@
+@@ -78,7 +78,7 @@ devel_targ = callmap check depend extract lint tags
  # phony targets (a.k.a "forced" targets)
  clean_targ = clean distclean clobber spotless mostlyclean unconvert
  devel_targ = callmap check depend extract lint tags
@@ -18,7 +22,7 @@
  misc_targ  = debug dvi info eline elinedb manifest 
  .PHONY     : $(clean_targ) $(devel_targ) $(instl_targ) $(misc_targ)
  
-@@ -109,7 +109,7 @@
+@@ -109,7 +109,7 @@ utils/rot13:
  utils/rot13:
  	cd utils ; $(MAKE) rot13
  
@@ -27,23 +31,23 @@
  
  in_cfg:	
  	@echo " "
-@@ -133,23 +133,17 @@
+@@ -133,23 +133,17 @@ in_bin: atp utils/atpdiag utils/rot13
  	@echo " "
  	@echo "Installing binaries . . ."
  	@$(STRIP) atp ./utils/rot13
 -	$(INSTALL) -m $(bin_prm) -o $(bin_own) -g $(bin_grp) ./atp $(bindir)/atp
 -	$(INSTALL) -m $(bin_prm) -o $(bin_own) -g $(bin_grp) ./utils/atpdiag $(bindir)/atpdiag
 -	$(INSTALL) -m $(bin_prm) -o $(bin_own) -g $(bin_grp) ./utils/rot13 $(bindir)/rot13
--
++	$(INSTALL) -m $(bin_prm) ./atp $(bindir)/atp
++	$(INSTALL) -m $(bin_prm) ./utils/atpdiag $(bindir)/atpdiag
++	$(INSTALL) -m $(bin_prm) ./utils/rot13 $(bindir)/rot13
+ 
 -in_wrap:
 -	@echo " "
 -	@echo "Now it's YOUR turn, please do this:"
 -	@echo "Set and export the environment variable: ATP=$(atphome)"
 -	@echo "Edit your $(atphome)/atprc and then read the docs!"
-+	$(INSTALL) -m $(bin_prm) ./atp $(bindir)/atp
-+	$(INSTALL) -m $(bin_prm) ./utils/atpdiag $(bindir)/atpdiag
-+	$(INSTALL) -m $(bin_prm) ./utils/rot13 $(bindir)/rot13
- 
+-
  in_man:
  	@echo " "
  	@echo "Installing man pages . . ."

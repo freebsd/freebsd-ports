@@ -1,5 +1,6 @@
 PORTNAME=	rlwrap
 DISTVERSION=	0.45.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/hanslub42/rlwrap/releases/download/v${DISTVERSION}/
 
@@ -19,6 +20,7 @@ SHEBANG_FILES=	filters/dissect_prompt \
 python_OLD_CMD=	"/usr/bin/env python3"
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PORTDOCS=	AUTHORS BUGS NEWS README
 

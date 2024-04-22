@@ -1,0 +1,44 @@
+[
+{ type: install
+  message: <<EOM
+#### Setup backend MySQL server
+
+Setup a MySQL server for backend, and invoke the following:
+
+CREATE DATABASE IF NOT EXISTS orchestrator;
+CREATE USER 'orchestrator'@'127.0.0.1' IDENTIFIED BY 'orch_backend_password';
+GRANT ALL PRIVILEGES ON `orchestrator`.* TO 'orchestrator'@'127.0.0.1';
+
+Orchestrator uses a configuration file, located in:
+%%ETCDIR%%/orchestrator.conf.json
+
+Edit orchestrator.conf to match the above as follows:
+
+  ...
+  "MySQLOrchestratorHost": "127.0.0.1",
+  "MySQLOrchestratorPort": 3306,
+  "MySQLOrchestratorDatabase": "orchestrator",
+  "MySQLOrchestratorUser": "orchestrator",
+  "MySQLOrchestratorPassword": "orch_backend_password",
+  ...
+
+#### Grant access to orchestrator on all your MySQL servers
+
+CREATE USER 'orchestrator'@'orch_host' IDENTIFIED BY 'orch_topology_password';
+GRANT SUPER, PROCESS, REPLICATION SLAVE, RELOAD ON *.* TO 'orchestrator'@'orch_host';
+GRANT SELECT ON mysql.slave_master_info TO 'orchestrator'@'orch_host';
+GRANT SELECT ON ndbinfo.processes TO 'orchestrator'@'orch_host'; -- Only for NDB Cluster
+
+Replace `orch_host` with hostname or orchestrator machine (or do your
+wildcards thing). Choose your password wisely. Modify the configuration file to
+match:
+
+  "MySQLTopologyUser": "orchestrator",
+  "MySQLTopologyPassword": "orch_topology_password",
+
+By default, orchestrator listens on 127.0.0.1:3000 and is configured to be
+read-only.  Please update the configuration file if you would like to change
+this.
+EOM
+}
+]

@@ -1,6 +1,6 @@
 PORTNAME=	gexpr
 PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	SUNSITE/apps/math/calc
 
@@ -11,7 +11,7 @@ LICENSE=	GPLv2
 
 CONFLICTS_INSTALL=	coreutils # bin/gexpr
 
-PLIST_FILES=	bin/gexpr man/man1/gexpr.1.gz
+PLIST_FILES=	bin/gexpr share/man/man1/gexpr.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX}," ${WRKSRC}/Makefile

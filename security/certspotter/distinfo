@@ -1,0 +1,5 @@
+TIMESTAMP = 1706474827
+SHA256 (go/security_certspotter/certspotter-v0.18.0/v0.18.0.mod) = 7999f3e078b45dae94b4b4b34bee2dda107e3a23bff847f54b584d0ce3bb549d
+SIZE (go/security_certspotter/certspotter-v0.18.0/v0.18.0.mod) = 165
+SHA256 (go/security_certspotter/certspotter-v0.18.0/v0.18.0.zip) = cd52b973de3ee04cbf5ced8eb87c6634185e77ad2bf4da756a4c72b9881f2c59
+SIZE (go/security_certspotter/certspotter-v0.18.0/v0.18.0.zip) = 89899

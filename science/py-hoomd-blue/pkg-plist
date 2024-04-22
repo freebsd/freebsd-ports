@@ -50,6 +50,11 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/nec/integrate.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/nec/tune.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pair/__init__.py
+%%PYTHON_SITELIBDIR%%/hoomd/hpmc/pair/angular_step.py
+%%PYTHON_SITELIBDIR%%/hoomd/hpmc/pair/lennard_jones.py
+%%PYTHON_SITELIBDIR%%/hoomd/hpmc/pair/pair.py
+%%PYTHON_SITELIBDIR%%/hoomd/hpmc/pair/step.py
+%%PYTHON_SITELIBDIR%%/hoomd/hpmc/pair/union.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pair/user.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/__init__.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/conftest.py
@@ -63,6 +68,10 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_external_wall.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_move_size_tuner.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_muvt.py
+%%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_pair_angular_step.py
+%%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_pair_lennard_jones.py
+%%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_pair_step.py
+%%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_pair_union.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_pair_union_user.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_pair_user.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_quick_compress.py
@@ -158,6 +167,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/UpdaterRemoveDrift.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/Variant.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/VectorMath.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/VectorVariant.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/WarpTools.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/BVLSSolver.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/extern/ECL.cuh
@@ -490,6 +500,11 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/Moves.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/OBB.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/OBBTree.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/PairPotential.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/PairPotentialAngularStep.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/PairPotentialLennardJones.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/PairPotentialStep.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/PairPotentialUnion.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ShapeConvexPolygon.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ShapeConvexPolyhedron.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ShapeEllipsoid.h
@@ -619,6 +634,9 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/OPLSDihedralForceComputeGPU.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/PPPMForceCompute.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/PPPMForceComputeGPU.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/PeriodicImproper.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/PeriodicImproperForceCompute.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/PeriodicImproperForceComputeGPU.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/PotentialBond.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/PotentialBondGPU.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/PotentialBondGPU.h
@@ -805,6 +823,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_balance.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_box.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_box_resize.py
+%%PYTHON_SITELIBDIR%%/hoomd/pytest/test_box_variant.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_collections.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_communicator.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_custom_tuner.py
@@ -859,7 +878,9 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/updater_plugin/pytest/test_example_updater.py
 %%PYTHON_SITELIBDIR%%/hoomd/updater_plugin/update.py
 %%PYTHON_SITELIBDIR%%/hoomd/util.py
-%%PYTHON_SITELIBDIR%%/hoomd/variant.py
+%%PYTHON_SITELIBDIR%%/hoomd/variant/__init__.py
+%%PYTHON_SITELIBDIR%%/hoomd/variant/box.py
+%%PYTHON_SITELIBDIR%%/hoomd/variant/scalar.py
 %%PYTHON_SITELIBDIR%%/hoomd/version.py
 %%PYTHON_SITELIBDIR%%/hoomd/version_config.py
 %%PYTHON_SITELIBDIR%%/hoomd/wall.py

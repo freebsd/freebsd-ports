@@ -1,5 +1,6 @@
 PORTNAME=	exiftags
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://johnst.org/sw/exiftags/
 
@@ -18,7 +19,7 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 .for i in exifcom exiftags exiftime
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${i}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${i}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in CHANGES README

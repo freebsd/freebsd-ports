@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2024-02-18 08:39:10 UTC
++++ src/CMakeLists.txt
+@@ -477,7 +477,7 @@ INSTALL(TARGETS             rspregistrar
+ INSTALL(TARGETS             rspregistrar
+         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+         BUNDLE DESTINATION  ${CMAKE_INSTALL_BINDIR})
+-INSTALL(FILES rspregistrar.service DESTINATION /lib/systemd/system)
++# INSTALL(FILES rspregistrar.service DESTINATION /lib/systemd/system)
+ INSTALL(FILES rspregistrar.1 DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
+ 
+ ADD_EXECUTABLE(rspserver rspserver.cc standardservices.cc fractalgeneratorservice.cc calcappservice.cc scriptingservice.cc environmentcache.cc memfile.cc sha1.c)

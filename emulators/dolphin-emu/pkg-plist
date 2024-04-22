@@ -1,8 +1,6 @@
 bin/dolphin-emu
 bin/dolphin-emu-nogui
 bin/dolphin-tool
-share/man/man6/dolphin-emu-nogui.6.gz
-share/man/man6/dolphin-emu.6.gz
 share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GC/dsp_coef.bin
 %%DATADIR%%/sys/GC/dsp_rom.bin
@@ -144,6 +142,8 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/FARE01.ini
 %%DATADIR%%/sys/GameSettings/FASE01.ini
 %%DATADIR%%/sys/GameSettings/G2B.ini
+%%DATADIR%%/sys/GameSettings/G2BE5G.ini
+%%DATADIR%%/sys/GameSettings/G2BP7D.ini
 %%DATADIR%%/sys/GameSettings/G2C.ini
 %%DATADIR%%/sys/GameSettings/G2FE78.ini
 %%DATADIR%%/sys/GameSettings/G2M.ini
@@ -169,6 +169,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/G4S.ini
 %%DATADIR%%/sys/GameSettings/G4SP01.ini
 %%DATADIR%%/sys/GameSettings/G4Z.ini
+%%DATADIR%%/sys/GameSettings/G5B.ini
 %%DATADIR%%/sys/GameSettings/G5D.ini
 %%DATADIR%%/sys/GameSettings/G5N.ini
 %%DATADIR%%/sys/GameSettings/G5T.ini
@@ -219,6 +220,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/GC6E01.ini
 %%DATADIR%%/sys/GameSettings/GC6J01.ini
 %%DATADIR%%/sys/GameSettings/GC6P01.ini
+%%DATADIR%%/sys/GameSettings/GC8JA4.ini
 %%DATADIR%%/sys/GameSettings/GC9.ini
 %%DATADIR%%/sys/GameSettings/GCC.ini
 %%DATADIR%%/sys/GameSettings/GCCE01.ini
@@ -567,6 +569,8 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/HAC.ini
 %%DATADIR%%/sys/GameSettings/HAF.ini
 %%DATADIR%%/sys/GameSettings/HAG.ini
+%%DATADIR%%/sys/GameSettings/HAJ.ini
+%%DATADIR%%/sys/GameSettings/HAL.ini
 %%DATADIR%%/sys/GameSettings/HAT.ini
 %%DATADIR%%/sys/GameSettings/HATE01.ini
 %%DATADIR%%/sys/GameSettings/HATJ01.ini
@@ -814,6 +818,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/REB.ini
 %%DATADIR%%/sys/GameSettings/RED.ini
 %%DATADIR%%/sys/GameSettings/REF.ini
+%%DATADIR%%/sys/GameSettings/REG.ini
 %%DATADIR%%/sys/GameSettings/REL.ini
 %%DATADIR%%/sys/GameSettings/RELJAB.ini
 %%DATADIR%%/sys/GameSettings/REM.ini
@@ -893,6 +898,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/RIU.ini
 %%DATADIR%%/sys/GameSettings/RIZ.ini
 %%DATADIR%%/sys/GameSettings/RJ2.ini
+%%DATADIR%%/sys/GameSettings/RJ3.ini
 %%DATADIR%%/sys/GameSettings/RJ4.ini
 %%DATADIR%%/sys/GameSettings/RJ7.ini
 %%DATADIR%%/sys/GameSettings/RJ8.ini
@@ -1244,6 +1250,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/SGD.ini
 %%DATADIR%%/sys/GameSettings/SGL.ini
 %%DATADIR%%/sys/GameSettings/SGLEA4.ini
+%%DATADIR%%/sys/GameSettings/SGLPA4.ini
 %%DATADIR%%/sys/GameSettings/SGT.ini
 %%DATADIR%%/sys/GameSettings/SGV.ini
 %%DATADIR%%/sys/GameSettings/SGX.ini
@@ -1343,6 +1350,7 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GameSettings/SRA.ini
 %%DATADIR%%/sys/GameSettings/SRE.ini
 %%DATADIR%%/sys/GameSettings/SRL.ini
+%%DATADIR%%/sys/GameSettings/SRQ.ini
 %%DATADIR%%/sys/GameSettings/SRT.ini
 %%DATADIR%%/sys/GameSettings/SRV.ini
 %%DATADIR%%/sys/GameSettings/SRW.ini
@@ -1611,6 +1619,8 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/Load/GraphicMods/Battalion Wars 2/metadata.json
 %%DATADIR%%/sys/Load/GraphicMods/Donkey Kong Country Returns/SF8.txt
 %%DATADIR%%/sys/Load/GraphicMods/Donkey Kong Country Returns/metadata.json
+%%DATADIR%%/sys/Load/GraphicMods/Dragon Ball Z Budokai Tenkaichi 3/RDS.txt
+%%DATADIR%%/sys/Load/GraphicMods/Dragon Ball Z Budokai Tenkaichi 3/metadata.json
 %%DATADIR%%/sys/Load/GraphicMods/Fragile Dreams - Farewell Ruins of the Moon/R2G.txt
 %%DATADIR%%/sys/Load/GraphicMods/Fragile Dreams - Farewell Ruins of the Moon/metadata.json
 %%DATADIR%%/sys/Load/GraphicMods/Link's Crossbow Training/RZP.txt
@@ -1731,8 +1741,10 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/Shaders/Anaglyph/fullcolor.glsl
 %%DATADIR%%/sys/Shaders/Anaglyph/grayscale.glsl
 %%DATADIR%%/sys/Shaders/Anaglyph/grayscale2.glsl
+%%DATADIR%%/sys/Shaders/AutoHDR.glsl
 %%DATADIR%%/sys/Shaders/FXAA.glsl
 %%DATADIR%%/sys/Shaders/Passive/horizontal.glsl
+%%DATADIR%%/sys/Shaders/PerceptualHDR.glsl
 %%DATADIR%%/sys/Shaders/acidmetal.glsl
 %%DATADIR%%/sys/Shaders/acidtrip.glsl
 %%DATADIR%%/sys/Shaders/acidtrip2.glsl
@@ -1764,7 +1776,6 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/Shaders/posterize2.glsl
 %%DATADIR%%/sys/Shaders/primarycolors.glsl
 %%DATADIR%%/sys/Shaders/sepia.glsl
-%%DATADIR%%/sys/Shaders/sharp_bilinear.glsl
 %%DATADIR%%/sys/Shaders/sketchy.glsl
 %%DATADIR%%/sys/Shaders/spookey1.glsl
 %%DATADIR%%/sys/Shaders/spookey2.glsl
@@ -1775,6 +1786,22 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/Shaders/swap_RGB_GRB.glsl
 %%DATADIR%%/sys/Shaders/swap_RGB_RBG.glsl
 %%DATADIR%%/sys/Shaders/toxic.glsl
+%%DATADIR%%/sys/Themes/Clean Blue/assembler_assemble.png
+%%DATADIR%%/sys/Themes/Clean Blue/assembler_assemble@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/assembler_assemble@4x.png
+%%DATADIR%%/sys/Themes/Clean Blue/assembler_clipboard.png
+%%DATADIR%%/sys/Themes/Clean Blue/assembler_inject.png
+%%DATADIR%%/sys/Themes/Clean Blue/assembler_inject@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/assembler_inject@4x.png
+%%DATADIR%%/sys/Themes/Clean Blue/assembler_new.png
+%%DATADIR%%/sys/Themes/Clean Blue/assembler_new@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/assembler_new@4x.png
+%%DATADIR%%/sys/Themes/Clean Blue/assembler_openasm.png
+%%DATADIR%%/sys/Themes/Clean Blue/assembler_openasm@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/assembler_openasm@4x.png
+%%DATADIR%%/sys/Themes/Clean Blue/assembler_save.png
+%%DATADIR%%/sys/Themes/Clean Blue/assembler_save@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/assembler_save@4x.png
 %%DATADIR%%/sys/Themes/Clean Blue/browse.png
 %%DATADIR%%/sys/Themes/Clean Blue/browse@2x.png
 %%DATADIR%%/sys/Themes/Clean Blue/browse@4x.png
@@ -1853,6 +1880,22 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/Themes/Clean Blue/wiimote.png
 %%DATADIR%%/sys/Themes/Clean Blue/wiimote@2x.png
 %%DATADIR%%/sys/Themes/Clean Blue/wiimote@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/assembler_assemble.png
+%%DATADIR%%/sys/Themes/Clean Emerald/assembler_assemble@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/assembler_assemble@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/assembler_clipboard.png
+%%DATADIR%%/sys/Themes/Clean Emerald/assembler_inject.png
+%%DATADIR%%/sys/Themes/Clean Emerald/assembler_inject@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/assembler_inject@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/assembler_new.png
+%%DATADIR%%/sys/Themes/Clean Emerald/assembler_new@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/assembler_new@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/assembler_openasm.png
+%%DATADIR%%/sys/Themes/Clean Emerald/assembler_openasm@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/assembler_openasm@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/assembler_save.png
+%%DATADIR%%/sys/Themes/Clean Emerald/assembler_save@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/assembler_save@4x.png
 %%DATADIR%%/sys/Themes/Clean Emerald/browse.png
 %%DATADIR%%/sys/Themes/Clean Emerald/browse@2x.png
 %%DATADIR%%/sys/Themes/Clean Emerald/browse@4x.png
@@ -1931,6 +1974,22 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/Themes/Clean Emerald/wiimote.png
 %%DATADIR%%/sys/Themes/Clean Emerald/wiimote@2x.png
 %%DATADIR%%/sys/Themes/Clean Emerald/wiimote@4x.png
+%%DATADIR%%/sys/Themes/Clean Lite/assembler_assemble.png
+%%DATADIR%%/sys/Themes/Clean Lite/assembler_assemble@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/assembler_assemble@4x.png
+%%DATADIR%%/sys/Themes/Clean Lite/assembler_clipboard.png
+%%DATADIR%%/sys/Themes/Clean Lite/assembler_inject.png
+%%DATADIR%%/sys/Themes/Clean Lite/assembler_inject@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/assembler_inject@4x.png
+%%DATADIR%%/sys/Themes/Clean Lite/assembler_new.png
+%%DATADIR%%/sys/Themes/Clean Lite/assembler_new@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/assembler_new@4x.png
+%%DATADIR%%/sys/Themes/Clean Lite/assembler_openasm.png
+%%DATADIR%%/sys/Themes/Clean Lite/assembler_openasm@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/assembler_openasm@4x.png
+%%DATADIR%%/sys/Themes/Clean Lite/assembler_save.png
+%%DATADIR%%/sys/Themes/Clean Lite/assembler_save@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/assembler_save@4x.png
 %%DATADIR%%/sys/Themes/Clean Lite/browse.png
 %%DATADIR%%/sys/Themes/Clean Lite/browse@2x.png
 %%DATADIR%%/sys/Themes/Clean Lite/browse@4x.png
@@ -2009,6 +2068,22 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/Themes/Clean Lite/wiimote.png
 %%DATADIR%%/sys/Themes/Clean Lite/wiimote@2x.png
 %%DATADIR%%/sys/Themes/Clean Lite/wiimote@4x.png
+%%DATADIR%%/sys/Themes/Clean Pink/assembler_assemble.png
+%%DATADIR%%/sys/Themes/Clean Pink/assembler_assemble@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/assembler_assemble@4x.png
+%%DATADIR%%/sys/Themes/Clean Pink/assembler_clipboard.png
+%%DATADIR%%/sys/Themes/Clean Pink/assembler_inject.png
+%%DATADIR%%/sys/Themes/Clean Pink/assembler_inject@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/assembler_inject@4x.png
+%%DATADIR%%/sys/Themes/Clean Pink/assembler_new.png
+%%DATADIR%%/sys/Themes/Clean Pink/assembler_new@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/assembler_new@4x.png
+%%DATADIR%%/sys/Themes/Clean Pink/assembler_openasm.png
+%%DATADIR%%/sys/Themes/Clean Pink/assembler_openasm@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/assembler_openasm@4x.png
+%%DATADIR%%/sys/Themes/Clean Pink/assembler_save.png
+%%DATADIR%%/sys/Themes/Clean Pink/assembler_save@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/assembler_save@4x.png
 %%DATADIR%%/sys/Themes/Clean Pink/browse.png
 %%DATADIR%%/sys/Themes/Clean Pink/browse@2x.png
 %%DATADIR%%/sys/Themes/Clean Pink/browse@4x.png
@@ -2087,6 +2162,22 @@ share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/Themes/Clean Pink/wiimote.png
 %%DATADIR%%/sys/Themes/Clean Pink/wiimote@2x.png
 %%DATADIR%%/sys/Themes/Clean Pink/wiimote@4x.png
+%%DATADIR%%/sys/Themes/Clean/assembler_assemble.png
+%%DATADIR%%/sys/Themes/Clean/assembler_assemble@2x.png
+%%DATADIR%%/sys/Themes/Clean/assembler_assemble@4x.png
+%%DATADIR%%/sys/Themes/Clean/assembler_clipboard.png
+%%DATADIR%%/sys/Themes/Clean/assembler_inject.png
+%%DATADIR%%/sys/Themes/Clean/assembler_inject@2x.png
+%%DATADIR%%/sys/Themes/Clean/assembler_inject@4x.png
+%%DATADIR%%/sys/Themes/Clean/assembler_new.png
+%%DATADIR%%/sys/Themes/Clean/assembler_new@2x.png
+%%DATADIR%%/sys/Themes/Clean/assembler_new@4x.png
+%%DATADIR%%/sys/Themes/Clean/assembler_openasm.png
+%%DATADIR%%/sys/Themes/Clean/assembler_openasm@2x.png
+%%DATADIR%%/sys/Themes/Clean/assembler_openasm@4x.png
+%%DATADIR%%/sys/Themes/Clean/assembler_save.png
+%%DATADIR%%/sys/Themes/Clean/assembler_save@2x.png
+%%DATADIR%%/sys/Themes/Clean/assembler_save@4x.png
 %%DATADIR%%/sys/Themes/Clean/browse.png
 %%DATADIR%%/sys/Themes/Clean/browse@2x.png
 %%DATADIR%%/sys/Themes/Clean/browse@4x.png
@@ -2221,3 +2312,5 @@ share/icons/hicolor/scalable/apps/dolphin-emu.svg
 %%NLS%%share/locale/tr/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/dolphin-emu.mo
+share/man/man6/dolphin-emu-nogui.6.gz
+share/man/man6/dolphin-emu.6.gz

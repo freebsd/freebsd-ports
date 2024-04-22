@@ -1,3 +1,3 @@
 bin/xblackjack
 lib/X11/app-defaults/XBlackjack
-man/man1/xblackjack.1.gz
+share/man/man1/xblackjack.1.gz

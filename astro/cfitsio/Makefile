@@ -1,5 +1,5 @@
 PORTNAME=	cfitsio
-PORTVERSION=	4.3.1
+PORTVERSION=	4.4.0
 CATEGORIES=	astro
 MASTER_SITES=	https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
@@ -37,6 +37,6 @@ do-install:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/docs/*.doc ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/docs/changes.txt ${WRKSRC}/docs/*.pdf ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- Makefile.orig	2021-01-16 14:03:35 UTC
+--- Makefile.orig	2021-02-12 16:24:42 UTC
 +++ Makefile
-@@ -1,12 +1,13 @@
+@@ -1,12 +1,12 @@
 -CC=lazbuild
 +LAZBUILD_CMD?=lazbuild -d
  ST=strip
@@ -11,7 +11,6 @@
 +bindir   = $(DESTDIR)${PREFIX}/bin
 +sharedir = $(DESTDIR)${PREFIX}/share
  tmpdir   = /tmp
-+mandir   = $(DESTDIR)${PREFIX}
  
  cqrlog: src/cqrlog.lpi
 -	$(CC) --ws=gtk2 --pcp=$(tmpdir)/.lazarus src/cqrlog.lpi
@@ -19,21 +18,3 @@
  	$(ST) src/cqrlog
  	gzip tools/cqrlog.1 -c > tools/cqrlog.1.gz
  
-@@ -38,7 +39,7 @@ install:
- 	install -d -v         $(sharedir)/icons/cqrlog
- 	install -d -v         $(sharedir)/applications
- 	install -d -v         $(sharedir)/appdata
--	install -d -v         $(sharedir)/man/man1
-+	install -d -v         $(mandir)/man/man1
- 	install    -v -m 0755 src/cqrlog $(bindir)
- 	install    -v -m 0755 tools/cqrlog-apparmor-fix $(datadir)/cqrlog-apparmor-fix
- 	install    -v -m 0644 ctyfiles/* $(datadir)/ctyfiles/
-@@ -64,7 +65,7 @@ install:
- 	install    -v -m 0644 images/icon/32x32/cqrlog.png $(sharedir)/pixmaps/cqrlog/cqrlog.png
- 	install    -v -m 0644 images/icon/128x128/cqrlog.png $(sharedir)/icons/cqrlog.png
- 	install    -v -m 0644 src/changelog.html $(datadir)/changelog.html
--	install    -v -m 0644 tools/cqrlog.1.gz $(sharedir)/man/man1/cqrlog.1.gz
-+	install    -v -m 0644 tools/cqrlog.1.gz $(mandir)/man/man1/cqrlog.1.gz
- deb:
- 	dpkg-buildpackage -rfakeroot -i -I
- deb_src:

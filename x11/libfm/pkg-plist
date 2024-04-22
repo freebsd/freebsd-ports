@@ -82,8 +82,8 @@ lib/libfm/modules/vfs-menu.so
 lib/libfm/modules/vfs-search.so
 libdata/pkgconfig/libfm-%%GTKVERSION%%.pc
 libdata/pkgconfig/libfm.pc
-man/man1/libfm-pref-apps.1.gz
-man/man1/lxshortcut.1.gz
+share/man/man1/libfm-pref-apps.1.gz
+share/man/man1/lxshortcut.1.gz
 share/applications/libfm-pref-apps.desktop
 share/applications/lxshortcut.desktop
 %%DATADIR%%/archivers.list

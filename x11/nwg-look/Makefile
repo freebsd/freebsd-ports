@@ -1,6 +1,6 @@
 PORTNAME=	nwg-look
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.5
+DISTVERSION=	0.2.7
 PORTREVISION=	2
 CATEGORIES=	x11 wayland
 
@@ -12,13 +12,14 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
+RUN_DEPENDS=	xcur2png:x11/xcur2png
 
 USES=		gnome go:modules pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 GH_ACCOUNT=	nwg-piotr
-GH_TUPLE=	golang:sys:v0.14.0:golang_sys/vendor/golang.org/x/sys \
-		gotk3:gotk3:v0.6.2:gotk3_gotk3/vendor/github.com/gotk3/gotk3 \
+GH_TUPLE=	golang:sys:v0.17.0:golang_sys/vendor/golang.org/x/sys \
+		gotk3:gotk3:v0.6.3:gotk3_gotk3/vendor/github.com/gotk3/gotk3 \
 		sirupsen:logrus:v1.9.3:sirupsen_logrus/vendor/github.com/sirupsen/logrus
 CGO_LDFLAGS+=	-Wl,--as-needed # harfbuzz, freetype2
 PLIST_FILES=	bin/${PORTNAME} \

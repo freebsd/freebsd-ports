@@ -30,8 +30,8 @@
 -	install -m 644 doc/$(NAME).8 $(PREFIX)/man/man8/$(NAME).8
 +	mkdir -p -m 755 ${DESTDIR}$(PREFIX)/sbin
 +	install -s -m 755 $(NAME) ${DESTDIR}$(PREFIX)/sbin/$(NAME)
-+	mkdir -p -m 755 ${DESTDIR}$(PREFIX)/man/man8
-+	install -m 644 doc/$(NAME).8 ${DESTDIR}$(PREFIX)/man/man8/$(NAME).8
++	mkdir -p -m 755 ${DESTDIR}$(PREFIX)/share/man/man8
++	install -m 644 doc/$(NAME).8 ${DESTDIR}$(PREFIX)/share/man/man8/$(NAME).8
  
  uninstall: deinstall
  

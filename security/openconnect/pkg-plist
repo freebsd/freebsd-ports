@@ -9,6 +9,6 @@ libexec/openconnect/hipreport-android.sh
 libexec/openconnect/hipreport.sh
 libexec/openconnect/tncc-emulate.py
 libexec/openconnect/tncc-wrapper.py
-man/man8/openconnect.8.gz
 sbin/openconnect
 share/bash-completion/completions/openconnect
+share/man/man8/openconnect.8.gz

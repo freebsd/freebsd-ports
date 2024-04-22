@@ -1,6 +1,6 @@
 PORTNAME=	xmine
 PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.sw.ru/pub/x11/ \
 		LOCAL/joerg

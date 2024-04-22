@@ -1,5 +1,5 @@
-TIMESTAMP = 1655559313
-SHA256 (wneessen-apg-go-v0.4.1_GH0.tar.gz) = 64769495843e2c59fc5513a106e58f8751f1649ff8bf6c38cd141322523deea8
-SIZE (wneessen-apg-go-v0.4.1_GH0.tar.gz) = 24182
-SHA256 (wneessen-go-hibp-v1.0.0_GH0.tar.gz) = d995b295c60457e0b078eab49c35ccec6bb5fe105b8b3d27116f3d1baf70729a
-SIZE (wneessen-go-hibp-v1.0.0_GH0.tar.gz) = 11504
+TIMESTAMP = 1712436764
+SHA256 (wneessen-apg-go-v1.2.0_GH0.tar.gz) = dfe7633a6fe7fd40f9fc2ae43ce66a5d8224a732b8051f65504123fe0a95bb40
+SIZE (wneessen-apg-go-v1.2.0_GH0.tar.gz) = 230535
+SHA256 (wneessen-go-hibp-v1.0.6_GH0.tar.gz) = 7e21ea3727734b1bf18f439adcb34aef4290011d494156c55b350e3f96729e37
+SIZE (wneessen-go-hibp-v1.0.6_GH0.tar.gz) = 22715

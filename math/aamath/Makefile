@@ -1,6 +1,6 @@
 PORTNAME=	aamath
-PORTVERSION=	0.3
-PORTREVISION=	4
+DISTVERSION=	0.3
+PORTREVISION=	5
 CATEGORIES=	math textproc
 MASTER_SITES=	http://fuse.superglue.se/${PORTNAME}/ \
 		LOCAL/ehaupt
@@ -12,15 +12,15 @@ WWW=		http://fuse.superglue.se/aamath/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		ncurses readline
-WRKSRC=		${WRKDIR}/${PORTNAME}
-CFLAGS+=	-I${LOCALBASE}/include
+USES=		localbase ncurses readline
 MAKE_ARGS=	LIBS="-lreadline -lncurses"
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PLIST_FILES=	bin/aamath man/man1/aamath.1.gz
+PLIST_FILES=	bin/aamath \
+		share/man/man1/aamath.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

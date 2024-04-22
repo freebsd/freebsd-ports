@@ -1,5 +1,5 @@
 bin/gxmessage
-man/man1/gxmessage.1.gz
+share/man/man1/gxmessage.1.gz
 share/icons/hicolor/48x48/apps/gxmessage.png
 %%NLS%%share/locale/de/LC_MESSAGES/gxmessage.mo
 %%NLS%%share/locale/en_AU/LC_MESSAGES/gxmessage.mo

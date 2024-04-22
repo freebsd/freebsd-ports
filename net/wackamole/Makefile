@@ -1,6 +1,6 @@
 PORTNAME=	wackamole
 PORTVERSION=	2.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://BSDforge.com/projects/source/net/wackamole/ \
 		http://mirrors.omniti.com/wackamole/
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libspread.so:net/spread
 
 USES=		tar:xz
 GNU_CONFIGURE=	yes
-
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV+=	YACC=${YACC}
 
 .include <bsd.port.mk>

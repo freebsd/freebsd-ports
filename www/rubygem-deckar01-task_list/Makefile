@@ -1,5 +1,5 @@
 PORTNAME=	deckar01-task_list
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://gitlab.com/deckar01/task_list
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-html-pipeline>=0:textproc/rubygem-html-pipeline
+RUN_DEPENDS=	rubygem-html-pipeline>=2.0<3:textproc/rubygem-html-pipeline
 
 USES=		gem
 

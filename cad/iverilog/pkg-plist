@@ -46,6 +46,6 @@ lib/ivl/vvp.conf
 lib/ivl/vvp.tgt
 lib/libveriuser.a
 lib/libvpi.a
-man/man1/iverilog.1.gz
-man/man1/iverilog-vpi.1.gz
-man/man1/vvp.1.gz
+share/man/man1/iverilog.1.gz
+share/man/man1/iverilog-vpi.1.gz
+share/man/man1/vvp.1.gz

@@ -1,6 +1,6 @@
 PORTNAME=	miau
 PORTVERSION=	0.6.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc
 MASTER_SITES=	SF
 
@@ -8,8 +8,12 @@ MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Fully featured easy to use IRC-bouncer
 WWW=		https://miau.sourceforge.net/
 
+DEPRECATED=	Abandoned upstream, last release in 2010 and no activity since 2014. Consider migrating to irc/soju or irc/znc
+EXPIRATION_DATE=2024-04-30
+
 USES=		iconv tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INFO=		miau
 

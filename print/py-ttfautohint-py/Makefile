@@ -11,7 +11,7 @@ WWW=		https://github.com/fonttools/ttfautohint-py
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@${PY_FLAVOR}
 LIB_DEPENDS=	libttfautohint.so:print/ttfautohint
 
 USES=		gmake python

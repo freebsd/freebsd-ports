@@ -1,5 +1,6 @@
 PORTNAME=	mtools
 PORTVERSION=	4.0.43
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	GNU
 
@@ -15,6 +16,7 @@ USES=		gmake makeinfo tar:lz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_malloc_h=no
 CONFIGURE_ARGS=	--enable-xdf
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 SUB_FILES=	pkg-message
 

@@ -1,13 +1,15 @@
 PORTNAME=	jupyter-core
-PORTVERSION=	5.5.1
+PORTVERSION=	5.7.2
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/jupyter/jupyter_core/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	jupyter_core-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Jupyter core package
-WWW=		https://jupyter.org/
+WWW=		https://jupyter.org/ \
+		https://github.com/jupyter/jupyter_core
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

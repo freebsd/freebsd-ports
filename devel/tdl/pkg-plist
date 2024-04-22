@@ -3,8 +3,8 @@ bin/tdla
 bin/tdld
 bin/tdlg
 bin/tdll
-man/man1/tdl.1.gz
-man/man1/tdla.1.gz
-man/man1/tdld.1.gz
-man/man1/tdlg.1.gz
-man/man1/tdll.1.gz
+share/man/man1/tdl.1.gz
+share/man/man1/tdla.1.gz
+share/man/man1/tdld.1.gz
+share/man/man1/tdlg.1.gz
+share/man/man1/tdll.1.gz

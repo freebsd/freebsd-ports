@@ -1,12 +1,12 @@
 bin/neomutt
 libexec/neomutt/pgpewrap
 libexec/neomutt/smime_keys
-%%PORTDOCS%%man/man1/neomutt.1.gz
-%%PORTDOCS%%man/man1/pgpewrap_neomutt.1.gz
-%%PORTDOCS%%man/man1/smime_keys_neomutt.1.gz
-%%PORTDOCS%%man/man5/mbox_neomutt.5.gz
-%%PORTDOCS%%man/man5/mmdf_neomutt.5.gz
-%%PORTDOCS%%man/man5/neomuttrc.5.gz
+%%PORTDOCS%%share/man/man1/neomutt.1.gz
+%%PORTDOCS%%share/man/man1/pgpewrap_neomutt.1.gz
+%%PORTDOCS%%share/man/man1/smime_keys_neomutt.1.gz
+%%PORTDOCS%%share/man/man5/mbox_neomutt.5.gz
+%%PORTDOCS%%share/man/man5/mmdf_neomutt.5.gz
+%%PORTDOCS%%share/man/man5/neomuttrc.5.gz
 @sample etc/neomuttrc.dist etc/neomuttrc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.md
 %%PORTDOCS%%%%DOCSDIR%%/CODE_OF_CONDUCT.md
@@ -79,6 +79,6 @@ libexec/neomutt/smime_keys
 %%DATADIR%%/logo/neomutt.svg
 %%DATADIR%%/mime.types
 %%DATADIR%%/oauth2/mutt_oauth2.py
-%%DATADIR%%/oauth2/mutt_oauth2.py.README
+%%DATADIR%%/oauth2/README.md
 %%DATADIR%%/vim-keys/README.md
 %%DATADIR%%/vim-keys/vim-keys.rc

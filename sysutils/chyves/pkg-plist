@@ -14,5 +14,5 @@ lib/chyves/chyves-resources
 lib/chyves/chyves-return
 lib/chyves/chyves-updates
 lib/chyves/chyves-verify
-man/man8/chyves.8.gz
 sbin/chyves
+share/man/man8/chyves.8.gz

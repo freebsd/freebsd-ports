@@ -1,6 +1,5 @@
 PORTNAME=	mate-notification-daemon
-PORTVERSION=	1.26.0
-PORTREVISION=	3
+PORTVERSION=	1.28.0
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -28,6 +27,7 @@ USES=		gettext gmake gnome libtool localbase pathfix pkgconfig tar:xz \
 USE_XORG=	x11
 USE_GNOME=	cairo glib20 gtk30 intlhack librsvg2 libwnck3
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-static \
 		--with-dbus-services=${PREFIX}/share/dbus-1/services
 INSTALL_TARGET=	install-strip

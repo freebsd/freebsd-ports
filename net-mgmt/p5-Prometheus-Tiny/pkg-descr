@@ -1,0 +1,13 @@
+Prometheus::Tiny is a minimal metrics client for the Prometheus
+time-series database.
+
+It does the following things differently to Net::Prometheus:
+
+ - No setup. You don't need to pre-declare metrics to get something useful.
+ - Labels are passed in a hash. Positional parameters get awkward.
+ - No inbuilt collectors, PSGI apps, etc. Just the metrics.
+ - Doesn't know anything about different metric types. You get what you ask for.
+
+These could all be pros or cons, depending on what you need. For me,
+I needed a compact base that I could back on a shared memory region.
+See Prometheus::Tiny::Shared for that!

@@ -4,7 +4,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dave@dal.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure python parser generator, that also works with RPython
 WWW=		https://github.com/alex/rply
 

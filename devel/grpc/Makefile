@@ -1,5 +1,5 @@
 PORTNAME=	grpc
-PORTVERSION=	1.60.0
+PORTVERSION=	1.62.2
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	2
 CATEGORIES=	devel
@@ -22,8 +22,6 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 USES=		cmake compiler:c++17-lang cpe localbase:ldflags pkgconfig ssl
 
 USE_GITHUB=	yes
-GH_TUPLE=	census-instrumentation:opencensus-proto:v0.4.1:census_instrumentation_opencensus_proto/third_party/opencensus-proto/src \
-		cncf:xds:0fa0005:cncf_xds/third_party/xds
 
 CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17 \
 		-DgRPC_ABSL_PROVIDER=package \
@@ -33,8 +31,8 @@ CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17 \
 		-DgRPC_RE2_PROVIDER=package \
 		-DgRPC_SSL_PROVIDER=package \
 		-DgRPC_ZLIB_PROVIDER=package
-CMAKE_OFF=	gRPC_BACKWARDS_COMPATIBILITY_MODE \
-		gRPC_BUILD_TESTS
+CMAKE_OFF=	gRPC_BUILD_TESTS \
+		gRPC_DOWNLOAD_ARCHIVES
 CMAKE_ON=	BUILD_SHARED_LIBS \
 		gRPC_BUILD_CODEGEN \
 		gRPC_BUILD_GRPC_CPP_PLUGIN \

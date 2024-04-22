@@ -1,6 +1,6 @@
 PORTNAME=	shaaft
 PORTVERSION=	0.5.0
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	games
 MASTER_SITES=	SF/criticalmass/OldFiles
 DISTNAME=	Shaaft-${PORTVERSION}
@@ -18,6 +18,7 @@ USE_GL=		gl
 USE_GCC=	yes
 USE_CXXSTD=	gnu++98
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-optimize
 
 CPPFLAGS+=	$$(libpng-config --I_opts)
@@ -26,7 +27,7 @@ LDFLAGS+=	$$(libpng-config --L_opts)
 DATADIR=	${PREFIX}/share/Shaaft
 
 PLIST_FILES=	bin/Packer bin/shaaft %%DATADIR%%/resource.dat \
-		man/man6/shaaft.6.gz
+		share/man/man6/shaaft.6.gz
 
 DESKTOP_ENTRIES="Shaaft" "" "" "${PORTNAME}" "" ""
 

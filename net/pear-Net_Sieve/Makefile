@@ -1,5 +1,5 @@
 PORTNAME=	Net_Sieve
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.7
 CATEGORIES=	net www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org

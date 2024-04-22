@@ -504,6 +504,7 @@ TLS_DESC?=		Secure network connection support via TLS
 TOMCAT85_DESC?=		Use Tomcat 8.5.x
 TOMCAT9_DESC?=		Use Tomcat 9.0.x
 TOMCAT101_DESC?=	Use Tomcat 10.1.x
+TOML_DESC?=		TOML format or parser support
 TOOLAME_DESC?=		TooLAME MP2 audio encoder support
 TREMOR_DESC?=		Tremor audio decoder support
 TTA_DESC?=		TTA lossless audio format support

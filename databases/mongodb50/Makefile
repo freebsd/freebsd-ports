@@ -1,6 +1,7 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	5.0.23
+DISTVERSION=	5.0.26
+PORTREVISION=	1
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -37,9 +38,11 @@ USE_RC_SUBR=	mongod
 SHEBANG_FILES=	buildscripts/scons.py
 python_OLD_CMD=	@python_interpreter@
 
+# --modules= disables "enterprise" module from src/mongo/db/modules/
 MAKE_ARGS=	--cxx-std=17 \
 		--disable-warnings-as-errors \
 		--libc++ \
+		--modules= \
 		--runtime-hardening=on \
 		--use-system-libunwind \
 		--use-system-pcre \
@@ -60,7 +63,7 @@ USERS=		mongodb
 GROUPS=		mongodb
 
 OPTIONS_DEFINE=		LTO SASL SSL NOAVX
-OPTIONS_DEFAULT=	LTO SASL SSL
+OPTIONS_DEFAULT=	SASL SSL
 
 NOAVX_DESC=	"Disable AVX instructions on amd64 (Sandybridge+)"
 

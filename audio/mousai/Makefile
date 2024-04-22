@@ -1,7 +1,6 @@
 PORTNAME=	mousai
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.6
-PORTREVISION=	2
+DISTVERSION=	0.7.7
 CATEGORIES=	audio
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,8 +10,7 @@ WWW=		https://github.com/SeaDve/Mousai
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
-		libsoup-3.0.so:devel/libsoup3 \
+LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 		libgraphene-1.0.so:graphics/graphene
 
 USES=		cargo gettext gnome gstreamer meson pkgconfig

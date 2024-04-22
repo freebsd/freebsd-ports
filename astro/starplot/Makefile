@@ -1,6 +1,6 @@
 PORTNAME=	starplot
 PORTVERSION=	0.95.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	astro
 MASTER_SITES=	http://starplot.org/downloads/
 
@@ -14,6 +14,7 @@ USES=		compiler:c++11-lang gmake gnome localbase:ldflags pathfix \
 		gettext pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 post-patch:
 	@${REINPLACE_CMD} -e \

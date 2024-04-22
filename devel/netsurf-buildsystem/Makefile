@@ -1,5 +1,5 @@
 PORTNAME=	buildsystem
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	devel
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 PKGNAMEPREFIX=	netsurf-

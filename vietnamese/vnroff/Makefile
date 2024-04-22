@@ -1,5 +1,6 @@
 PORTNAME=	vnroff
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	vietnamese print
 MASTER_SITES=	LOCAL/cy
 DISTNAME=	${PORTNAME}-2.0
@@ -9,7 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts Vietnamese VIQR text into troff format
 WWW=		http://www.trichlor.org/
 
-PLIST_FILES=	bin/vnroff man/man1/vnroff.1.gz
+PLIST_FILES=	bin/vnroff share/man/man1/vnroff.1.gz
 NO_WRKSUBDIR=	yes
 
 do-extract:
@@ -29,6 +30,6 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vnroff ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/vnroff.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/vnroff.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

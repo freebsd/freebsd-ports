@@ -1,5 +1,5 @@
 PORTNAME=	netgen
-PORTVERSION=	6.2.2307
+PORTVERSION=	6.2.2402
 DISTVERSIONPREFIX=	v
 CATEGORIES=	cad
 
@@ -19,7 +19,7 @@ USES=		cmake python tcl tk gl xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	NGSolve
-GH_TUPLE=	NGSolve:pybind11:v2.7.1:pybind11/external_dependencies/pybind11
+GH_TUPLE=	NGSolve:pybind11:v2.11.1:pybind11/external_dependencies/pybind11
 
 USE_GL=		gl glu
 USE_XORG=	x11 xmu xi

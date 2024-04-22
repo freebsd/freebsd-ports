@@ -11,7 +11,6 @@ WWW=		https://metacpan.org/release/Glib-Object-Introspection
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# t/vfunc-ref-counting.t requires gobject-introspection 1.35.5+
 BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.300:devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=1:devel/p5-ExtUtils-PkgConfig \
 		${RUN_DEPENDS}
@@ -25,10 +24,8 @@ USE_PERL5=	configure
 
 OPTIONS_DEFINE=	TEST
 
-# Glib::Object::Introspection requires cairo and glib20 to build
-# test libraries during build phase, therefore we add them to BUILD_DEPENDS.
-TEST_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/cairo.pc:graphics/cairo \
-			${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc:devel/glib20
+# It requires cairo to build test libraries during build phase
+TEST_BUILD_DEPENDS=	cairo>=0:graphics/cairo
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Glib/Object/Introspection/Introspection.so

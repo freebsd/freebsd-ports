@@ -1,5 +1,6 @@
 PORTNAME=	qsf
 PORTVERSION=	1.2.15
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -9,9 +10,10 @@ WWW=		https://www.ivarch.com/programs/qsf/
 
 USES=	localbase tar:bzip2
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 PLIST_FILES=	bin/qsf \
-		man/man1/qsf.1.gz
+		share/man/man1/qsf.1.gz
 
 OPTIONS_DEFINE=	GDBM MYSQL SQLITE2
 SQLITE2_DESC=	SQLite2 support

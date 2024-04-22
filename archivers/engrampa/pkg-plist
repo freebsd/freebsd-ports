@@ -2,7 +2,6 @@ bin/engrampa
 lib/caja/extensions-2.0/libcaja-engrampa.so
 libexec/engrampa-server
 libexec/engrampa/isoinfo.sh
-man/man1/engrampa.1.gz
 share/applications/engrampa.desktop
 share/caja/extensions/libcaja-engrampa.caja-extension
 share/dbus-1/services/org.mate.Engrampa.service
@@ -823,4 +822,5 @@ share/locale/zh_CN/LC_MESSAGES/engrampa.mo
 share/locale/zh_HK/LC_MESSAGES/engrampa.mo
 share/locale/zh_TW/LC_MESSAGES/engrampa.mo
 share/locale/zu/LC_MESSAGES/engrampa.mo
+share/man/man1/engrampa.1.gz
 share/metainfo/engrampa.appdata.xml

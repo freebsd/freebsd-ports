@@ -1,8 +1,8 @@
 bin/sysmond
 bin/sysmon
 etc/sysmon.conf.sample
-man/man8/sysmon.conf.man.8.gz
-man/man8/sysmon.man.8.gz
+share/man/man8/sysmon.conf.man.8.gz
+share/man/man8/sysmon.man.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/Changes.html
 %%PORTDOCS%%%%DOCSDIR%%/binaries.html
 %%PORTDOCS%%%%DOCSDIR%%/config.html

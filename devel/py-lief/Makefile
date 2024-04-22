@@ -1,5 +1,5 @@
 PORTNAME=	lief
-DISTVERSION=	0.11.5
+DISTVERSION=	0.12.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,11 +10,7 @@ WWW=		https://github.com/lief-project/lief
 
 LICENSE=	APACHE20
 
-# Note: cmake is needed to build, but distutils is used directly.
-# If USES= cmake is set, the build will not work.
-BUILD_DEPENDS=	cmake:devel/cmake-core
-
-USES=		python zip
+USES=		cmake:indirect python zip
 USE_PYTHON=	concurrent distutils
 
 PY_VER=		${PYTHON_VER:S/.//}

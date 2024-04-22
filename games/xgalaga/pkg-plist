@@ -25,4 +25,4 @@ lib/X11/xgalaga/levels/level13.xgl
 lib/X11/xgalaga/levels/level14.xgl
 lib/X11/xgalaga/levels/level15.xgl
 lib/X11/xgalaga/CREDITS
-man/man6/xgalaga.6x.gz
+share/man/man6/xgalaga.6x.gz

@@ -1,5 +1,6 @@
 PORTNAME=	c2t
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/:file  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/x-win/cxterm/dict/gb/:dict
@@ -17,6 +18,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/chinese/gb
 	${INSTALL_PROGRAM} ${WRKSRC}/c2t ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${DISTDIR}/TONEPY.tit ${STAGEDIR}${PREFIX}/share/chinese/gb
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

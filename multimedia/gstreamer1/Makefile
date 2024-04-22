@@ -1,6 +1,5 @@
 PORTNAME=	gstreamer
-PORTVERSION=	1.22.5
-PORTREVISION=	1
+PORTVERSION=	1.22.10
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gstreamer/
 PKGNAMESUFFIX=	1
@@ -13,7 +12,7 @@ LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		bison libtool gnome meson ninja pkgconfig python:build shebangfix tar:xz
-USE_GNOME=     glib20 introspection:build
+USE_GNOME=	glib20 introspection:build
 
 LIB_DEPENDS=	libunwind.so:devel/libunwind
 
@@ -23,7 +22,7 @@ CONFIGURE_ARGS=	-D tests=disabled \
 		-D doc=disabled \
 		-D libdw=disabled
 PLIST_SUB=	VERSION=${GST10_VERSION} \
-		SOVERSION=0.2205.0
+		SOVERSION=0.2210.0
 
 USE_LDCONFIG=	yes
 GST10_VERSION=	1.0

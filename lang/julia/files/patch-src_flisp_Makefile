@@ -1,0 +1,36 @@
+--- src/flisp/Makefile.orig	2023-11-14 16:57:00 UTC
++++ src/flisp/Makefile
+@@ -95,12 +95,22 @@ CCLD := $(CC)
+ 
+ CCLD := $(CC)
+ 
+-$(BUILDDIR)/$(EXENAME)-debug$(EXE): $(DOBJS) $(LIBFILES_debug) $(BUILDDIR)/$(LIBTARGET)-debug.a $(BUILDDIR)/flmain.dbg.obj | $(BUILDDIR)/flisp.boot
+-	@$(call PRINT_LINK, $(CCLD) $(DEBUGFLAGS) $(JLDFLAGS) $(DOBJS) $(BUILDDIR)/flmain.dbg.obj -o $@ $(BUILDDIR)/$(LIBTARGET)-debug.a $(LIBFILES_debug) $(LIBS) $(OSLIBS))
++$(BUILDDIR)/juliaexe.expmap: $(JULIAHOME)/src/julia.expmap
++	sed <'$<' >'$@' \
++		-e "/__stack_chk_guard;/d" -e "/asprintf;/d" \
++		-e "/rec_backtrace;/d" -e "/localtime_r;/d" \
++		-e "/restore_arg_area_loc;/d" -e "/restore_signals;/d" \
++		-e "/rl_clear_input;/d" -e "/save_arg_area_loc;/d" \
++		-e "/add_library_mapping;/d" -e "/jlbacktrace;/d" \
++		-e "/jlbacktracet;/d" -e "/_IO_stdin_used;/d" \
++		-e "/N4llvm9StringRefEi;/d" -e "/llvmGetPassPluginInfo;/d"
+ 
+-$(BUILDDIR)/$(EXENAME)$(EXE): $(OBJS) $(LIBFILES_release) $(BUILDDIR)/$(LIBTARGET).a $(BUILDDIR)/flmain.o | $(BUILDDIR)/flisp.boot
+-	@$(call PRINT_LINK, $(CCLD) $(SHIPFLAGS) $(JLDFLAGS) $(OBJS) $(BUILDDIR)/flmain.o -o $@ $(BUILDDIR)/$(LIBTARGET).a $(LIBFILES_release) $(LIBS) $(OSLIBS))
++$(BUILDDIR)/$(EXENAME)-debug$(EXE): $(DOBJS) $(LIBFILES_debug) $(BUILDDIR)/$(LIBTARGET)-debug.a $(BUILDDIR)/flmain.dbg.obj $(BUILDDIR)/juliaexe.expmap | $(BUILDDIR)/flisp.boot
++	@$(call PRINT_LINK, $(CCLD) $(DEBUGFLAGS) $(JLDFLAGS) $(DOBJS) $(BUILDDIR)/flmain.dbg.obj -o $@ $(BUILDDIR)/$(LIBTARGET)-debug.a $(LIBFILES_debug) $(LIBS) $(OSLIBS) $(JEXEVERFLAGS))
+ 
++$(BUILDDIR)/$(EXENAME)$(EXE): $(OBJS) $(LIBFILES_release) $(BUILDDIR)/$(LIBTARGET).a $(BUILDDIR)/flmain.o $(BUILDDIR)/juliaexe.expmap | $(BUILDDIR)/flisp.boot
++	@$(call PRINT_LINK, $(CCLD) $(SHIPFLAGS) $(JLDFLAGS) $(OBJS) $(BUILDDIR)/flmain.o -o $@ $(BUILDDIR)/$(LIBTARGET).a $(LIBFILES_release) $(LIBS) $(OSLIBS) $(JEXEVERFLAGS))
++
+ $(BUILDDIR)/host/Makefile:
+ 	mkdir -p $(BUILDDIR)/host
+ 	@# add Makefiles to the build directories for convenience (pointing back to the source location of each)
+@@ -133,5 +143,6 @@ clean:
+ 	rm -f $(BUILDDIR)/$(EXENAME)$(EXE)
+ 	rm -f $(BUILDDIR)/$(EXENAME)-debug$(EXE)
+ 	rm -f $(BUILDDIR)/host/*
++	rm -f $(BUILDDIR)/*.expmap
+ 
+ .PHONY: flisp-deps

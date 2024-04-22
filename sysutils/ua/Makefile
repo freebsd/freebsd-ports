@@ -1,5 +1,6 @@
 PORTNAME=	ua
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,18 +16,16 @@ GH_ACCOUNT=	euedge
 GH_TAGNAME=	7a35148
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
 PLIST_FILES=	bin/kua bin/ua \
-		man/man1/kua.1.gz man/man1/ua.1.gz
+		share/man/man1/kua.1.gz share/man/man1/ua.1.gz
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
-
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

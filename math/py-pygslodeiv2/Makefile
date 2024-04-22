@@ -16,8 +16,8 @@ BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libgsl.so:math/gsl
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		compiler:c++11-lang localbase python pytest
-USE_PYTHON=	distutils autoplist
+USES=		compiler:c++11-lang localbase python
+USE_PYTHON=	distutils autoplist pytest
 
 pre-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} build_ext --inplace

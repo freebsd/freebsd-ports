@@ -1,7 +1,7 @@
 PORTNAME=	pkg-provides
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -25,11 +25,11 @@ SUB_FILES=	pkg-message
 SUB_LIST=	LOCALBASE=${LOCALBASE}
 
 PLIST_FILES=	lib/pkg/provides.so \
-		man/man8/pkg-provides.8.gz
+		share/man/man8/pkg-provides.8.gz
 
 do-install:
 	${MKDIR} ${STAGEDIR}${LOCALBASE}/lib/pkg/
 	${INSTALL_LIB} ${WRKSRC}/provides.so ${STAGEDIR}${LOCALBASE}/lib/pkg/
-	${INSTALL_MAN} ${WRKSRC}/pkg-provides.8 ${STAGEDIR}${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/pkg-provides.8 ${STAGEDIR}${PREFIX}/share/man/man8/
 
 .include <bsd.port.mk>

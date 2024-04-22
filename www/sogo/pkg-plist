@@ -27,6 +27,7 @@ GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/NSString+DAV.
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/NSString+Utilities.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/NSURL+DAV.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/RTFHandler.h
+GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoAdmin.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoAuthenticator.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoBuild.h
 GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/5/Headers/SOGoCASSession.h
@@ -88,6 +89,7 @@ GNUstep/Local/Library/Frameworks/SOGo.framework/Versions/Current
 GNUstep/Local/Library/Frameworks/SOGo.framework/sogo/SOGo
 GNUstep/Local/Library/Frameworks/SOGo.framework/sogo/libSOGo.so
 GNUstep/Local/Library/Headers/GDLContentStore/EOAdaptorChannel+GCS.h
+GNUstep/Local/Library/Headers/GDLContentStore/GCSAdminFolder.h
 GNUstep/Local/Library/Headers/GDLContentStore/GCSAlarmsFolder.h
 GNUstep/Local/Library/Headers/GDLContentStore/GCSChannelManager.h
 GNUstep/Local/Library/Headers/GDLContentStore/GCSContext.h
@@ -745,8 +747,8 @@ GNUstep/Local/Library/Libraries/sogo/libSOGo.so
 GNUstep/Local/Library/Libraries/sogo/libSOGo.so.5
 GNUstep/Local/Library/Libraries/sogo/libSOGo.so.%%VERSION%%
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so
-GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.9
-GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.9.0
+GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.10
+GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.%%VERSION%%
 GNUstep/Local/Library/OCSTypeModels/appointment-oracle.ocs
 GNUstep/Local/Library/OCSTypeModels/appointment.ocs
 GNUstep/Local/Library/OCSTypeModels/contact-oracle.ocs
@@ -1525,6 +1527,7 @@ GNUstep/Local/Library/SOGo/SchedulerUI.SOGo/stamp.make
 GNUstep/Local/Library/SOGo/Templates/AdministrationUI/UIxAdministration.wox
 GNUstep/Local/Library/SOGo/Templates/AdministrationUI/UIxAdministrationAclEditor.wox
 GNUstep/Local/Library/SOGo/Templates/AdministrationUI/UIxAdministrationFilterPanel.wox
+GNUstep/Local/Library/SOGo/Templates/AdministrationUI/UIxAdministrationMotd.wox
 GNUstep/Local/Library/SOGo/Templates/AdministrationUI/UIxThemePreview.wox
 GNUstep/Local/Library/SOGo/Templates/Appointments/SOGoAptMailDeletion.wox
 GNUstep/Local/Library/SOGo/Templates/Appointments/SOGoAptMailICalReply.wox
@@ -1941,6 +1944,7 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/Administration/Administration.a
 GNUstep/Local/Library/SOGo/WebServerResources/js/Administration/Administration.service.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Administration/AdministrationAclController.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Administration/AdministrationController.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/Administration/AdministrationMotdController.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Administration/ThemePreviewController.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common.js.map
@@ -2218,6 +2222,44 @@ GNUstep/Local/Tools/Admin/sogo-ealarms-notify
 GNUstep/Local/Tools/Admin/sogo-slapd-sockd
 GNUstep/Local/Tools/Admin/sogo-tool
 GNUstep/Local/Tools/Admin/sogod
+%%DATADIR%%/cas-proxy-validate.py
+%%DATADIR%%/fail2ban/sogo-filter.conf
+%%DATADIR%%/fail2ban/sogo-jail.local
+%%DATADIR%%/logrotate
+%%DATADIR%%/mysql-utf8mb4.sql
+%%DATADIR%%/sogo-backup.sh
+%%DATADIR%%/sogo-default
+%%DATADIR%%/sogo-init.d-redhat
+%%DATADIR%%/sogo-init.d-sles
+%%DATADIR%%/sogo-systemd-redhat
+%%DATADIR%%/sogo-systemd.conf
+%%DATADIR%%/sogo.conf
+%%DATADIR%%/sogo.cron
+%%DATADIR%%/sql-update-1.2.2_to_1.3.0-mysql.sh
+%%DATADIR%%/sql-update-1.2.2_to_1.3.0.sh
+%%DATADIR%%/sql-update-1.3.11_to_1.3.12-mysql.sh
+%%DATADIR%%/sql-update-1.3.11_to_1.3.12.sh
+%%DATADIR%%/sql-update-1.3.16_to_1.3.17-mysql.sh
+%%DATADIR%%/sql-update-1.3.16_to_1.3.17.sh
+%%DATADIR%%/sql-update-1.3.3_to_1.3.4-mysql.sh
+%%DATADIR%%/sql-update-1.3.3_to_1.3.4.sh
+%%DATADIR%%/sql-update-101_to_102.sh
+%%DATADIR%%/sql-update-2.0.4b_to_2.0.5-mysql.sh
+%%DATADIR%%/sql-update-2.2.17_to_2.3.0-mysql.sh
+%%DATADIR%%/sql-update-2.2.17_to_2.3.0.sh
+%%DATADIR%%/sql-update-20070724.sh
+%%DATADIR%%/sql-update-20070822.sh
+%%DATADIR%%/sql-update-20080303.sh
+%%DATADIR%%/sql-update-3.0.0-to-combined-mysql.sh
+%%DATADIR%%/sql-update-3.0.0-to-combined.sh
+%%DATADIR%%/sql-update-3.2.10_to_4.0.0-mysql.sh
+%%DATADIR%%/sql-update-3.2.10_to_4.0.0.sh
+%%DATADIR%%/sql-update-5.5.1_to_5.6.0.sh
+%%DATADIR%%/sql-update-5.8.4_to_5.9.0.sh
+%%DATADIR%%/standard-version-updater.js
+%%DATADIR%%/tmpwatch
+%%DATADIR%%/updates.php
+%%DATADIR%%/verify_translations.py
 @sample %%ETCDIR%%/sogo.conf.sample
 @dir GNUstep/Local/Library/SOGo/Appointments.SOGo/Resources/WebServer
 @dir GNUstep/Local/Library/SOGo/Mailer.SOGo/Resources/WebServer

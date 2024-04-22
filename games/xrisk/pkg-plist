@@ -1,5 +1,4 @@
 bin/xrisk
-man/man6/xrisk.6.gz
 lib/X11/xrisk/#100_Afghanistan.xras
 lib/X11/xrisk/#101_Alaska.xras
 lib/X11/xrisk/#102_Alberta.xras
@@ -52,3 +51,4 @@ lib/X11/xrisk/french.mapping
 lib/X11/xrisk/german.mapping
 lib/X11/xrisk/norwegian.mapping
 lib/X11/xrisk/risk.data
+share/man/man6/xrisk.6.gz

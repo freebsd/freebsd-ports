@@ -1,8 +1,7 @@
 PORTNAME=	mined
 PORTVERSION=	2022.27
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
-MASTER_SITES=	http://towo.net/mined/download/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Text mode editor with Unicode support
@@ -13,6 +12,9 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${NONEXISTENT}:textproc/UCD:fetch
 
 USES=		desktop-file-utils gmake ncurses
+
+USE_GITHUB=	yes
+
 BINARY_ALIAS=	make=${GMAKE}
 HAS_CONFIGURE=	yes
 MAKEFILE=	makefile

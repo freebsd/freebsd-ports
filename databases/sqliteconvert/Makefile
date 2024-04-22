@@ -1,6 +1,7 @@
 PORTNAME=	sqliteconvert
 DISTVERSIONPREFIX=	VERSION_
 DISTVERSION=	0_1_2
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,6 +15,9 @@ RUN_DEPENDS=	dot:graphics/graphviz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kristapsdz
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|man/man1|share/man/man1|' ${WRKSRC}/Makefile
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sqlite2html \

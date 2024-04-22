@@ -1,6 +1,6 @@
 PORTNAME=	shntool
 DISTVERSION=	3.0.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://shnutils.freeshell.org/shntool/dist/src/
 
@@ -14,9 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 EXTRA_PATCHES=	${FILESDIR}/cfd06e4ed.patch:-p1
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PLIST_FILES=	${_SHN_ALIASES:S|^|bin/shn|} \
-		man/man1/shntool.1.gz
+		share/man/man1/shntool.1.gz
 
 OPTIONS_DEFINE=	AIFF ALAC APE FLAC KXS LA LPAC OFR TTA WAVPACK
 

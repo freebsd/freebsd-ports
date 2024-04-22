@@ -1,0 +1,11 @@
+--- cloudflare.gemspec.orig	2024-04-10 08:27:18 UTC
++++ cloudflare.gemspec
+@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<async-rest>.freeze, ["~> 0.12.3".freeze])
++  s.add_runtime_dependency(%q<async-rest>.freeze, ["~> 0.12".freeze, ">= 0.12.3".freeze])
+   s.add_development_dependency(%q<async-rspec>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<bundler>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<covered>.freeze, [">= 0".freeze])

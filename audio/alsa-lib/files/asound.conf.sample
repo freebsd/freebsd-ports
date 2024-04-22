@@ -1,15 +1,6 @@
 #
 # FreeBSD/OSS
 #
-pcm.oss {
-	type oss
-	hint.description "Open Sound System"
-}
-
-ctl.oss {
-	type oss
-}
-
 pcm.!sysdefault pcm.plug:oss
 ctl.!sysdefault ctl.oss
 pcm.!default pcm.sysdefault

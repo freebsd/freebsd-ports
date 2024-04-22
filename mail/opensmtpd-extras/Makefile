@@ -1,6 +1,6 @@
 PORTNAME=	opensmtpd-extras
 PORTVERSION?=	6.7.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES+=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/
@@ -18,6 +18,7 @@ LIB_DEPENDS+=	libevent.so:devel/libevent
 
 USES+=		autoreconf ssl libtool
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 LDFLAGS+=	-L${OPENSSLLIB}
 CFLAGS+=	-I${OPENSSLINC}
 

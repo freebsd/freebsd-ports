@@ -1,6 +1,7 @@
 PORTNAME=	packmule
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 
 MAINTAINER=	ashafer@badland.io
@@ -39,7 +40,7 @@ do-install:
 # Install the perl script and its manpage
 	${INSTALL_SCRIPT} ${WRKSRC}/packmule ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/packmule.1 \
-		${STAGEDIR}${PREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 # Install scripts for generating iso images
 	${INSTALL_SCRIPT} ${WRKSRC}/mkiso/amd64/mkisoimages.sh \

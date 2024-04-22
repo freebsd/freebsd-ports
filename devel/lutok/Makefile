@@ -1,4 +1,5 @@
 PORTNAME=	lutok
+DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	0.4
 PORTREVISION=	9
 CATEGORIES=	devel
@@ -16,7 +17,6 @@ USES=		autoreconf libtool lua pathfix pkgconfig
 USE_CXXSTD=	gnu++11
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
-GH_TAGNAME=	${PORTNAME}-${DISTVERSION}
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

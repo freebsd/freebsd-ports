@@ -1,9 +1,9 @@
---- components/cookie_config/cookie_store_util.cc.orig	2022-10-01 07:40:07 UTC
+--- components/cookie_config/cookie_store_util.cc.orig	2024-02-25 20:22:18 UTC
 +++ components/cookie_config/cookie_store_util.cc
 @@ -12,7 +12,7 @@
  namespace cookie_config {
  
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  namespace {

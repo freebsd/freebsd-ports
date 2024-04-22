@@ -1,12 +1,12 @@
 PORTNAME=	newsx
 PORTVERSION=	1.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	news
 MASTER_SITES=	LOCAL/thierry
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Program to fetch news from and post news to a remote NNTP server
-WWW=		http://www.kvaleberg.no/newsx.html
+WWW=		https://web.archive.org/web/20220208213916/http://www.kvaleberg.no/newsx.html
 
 LICENSE=	GPLv2
 
@@ -19,6 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/news/lib/libinn.so:news/inn
 
 USES=		cpe
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CFLAGS+=	-fcommon
 
 CONFLICTS=	leafnode-1.*

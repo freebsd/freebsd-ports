@@ -18,7 +18,7 @@
 @sample %%ETCDIR%%/spam.lists.conf.sample
 @sample %%ETCDIR%%/spamassassin.conf.sample
 @sample %%ETCDIR%%/virus.scanners.conf.sample
-man/man8/MailScanner.8.gz
+share/man/man8/MailScanner.8.gz
 sbin/MSMilter
 sbin/MailScanner
 sbin/mailscanner

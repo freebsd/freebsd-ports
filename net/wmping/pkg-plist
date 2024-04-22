@@ -1,4 +1,4 @@
 @mode 4555
 bin/wmping
 @mode
-man/man1/wmping.1.gz
+share/man/man1/wmping.1.gz

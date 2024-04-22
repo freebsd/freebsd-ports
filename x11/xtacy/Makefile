@@ -1,6 +1,6 @@
 PORTNAME=	xtacy
 PORTVERSION=	1.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://www.ultranet.com/~jjohnson/ \
 		SUNSITE/apps/graphics/hacks/X
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 USES=		imake xorg
 USE_XORG=	x11 xext
-PLIST_FILES=	bin/xtacy man/man1/xtacy.1.gz
+PLIST_FILES=	bin/xtacy share/man/man1/xtacy.1.gz
 
 WRKSRC=		${WRKDIR}/Xtacy
 

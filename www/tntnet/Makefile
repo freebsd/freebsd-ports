@@ -1,6 +1,6 @@
 PORTNAME=	tntnet
 PORTVERSION=	2.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www devel
 MASTER_SITES=	http://www.tntnet.org/download/
 
@@ -19,6 +19,7 @@ SHEBANG_FILES=	tntnet-conf2xml.pl
 #USE_CSTD=	gnu89
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=/var
 
 PATCH_STRIP=	-p1

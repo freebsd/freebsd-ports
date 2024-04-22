@@ -38,16 +38,16 @@ include/linuxsampler/scriptvm/ScriptVMFactory.h
 include/linuxsampler/scriptvm/common.h
 lib/linuxsampler/liblinuxsampler.a
 lib/linuxsampler/liblinuxsampler.so
-lib/linuxsampler/liblinuxsampler.so.6
-lib/linuxsampler/liblinuxsampler.so.6.0.0
+lib/linuxsampler/liblinuxsampler.so.7
+lib/linuxsampler/liblinuxsampler.so.7.0.0
 lib/linuxsampler/plugins/.keep_me
 lib/lv2/linuxsampler.lv2/linuxsampler.a
 lib/lv2/linuxsampler.lv2/linuxsampler.so
 lib/lv2/linuxsampler.lv2/linuxsampler.ttl
 lib/lv2/linuxsampler.lv2/manifest.ttl
 libdata/pkgconfig/linuxsampler.pc
-man/man1/linuxsampler.1.gz
-man/man1/lscp.1.gz
+share/man/man1/linuxsampler.1.gz
+share/man/man1/lscp.1.gz
 /var/lib/linuxsampler/instruments.db
 @dir /var/lib/linuxsampler
 @dir /var/lib

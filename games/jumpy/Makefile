@@ -1,7 +1,6 @@
 PORTNAME=	jumpy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.4
-PORTREVISION=	1
+DISTVERSION=	0.12.0
 CATEGORIES=	games wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,13 +19,15 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	fishfolk
-LTO_UNSAFE=	yes # bevy_dylib fails with -C panic=abort
+WITHOUT_LTO=	yes # XXX bug 277333 # bevy_dylib
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 
 .if ${MACHINE_ARCH} == i386
 # https://github.com/rust-lang/rust/issues/85598
 CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
+# https://github.com/briansmith/ring/issues/1793#issuecomment-1793243725
+RUSTFLAGS+=	-C target-feature=+sse2
 .endif
 
 post-patch:

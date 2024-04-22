@@ -1,3 +1,3 @@
 bin/trafshow
 @sample etc/trafshow.dist etc/trafshow
-man/man1/trafshow.1.gz
+share/man/man1/trafshow.1.gz

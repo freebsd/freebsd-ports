@@ -1,0 +1,5 @@
+A monotonic time source provides time samples or measurements which are
+always increasing, regardless of any adjustments made to the computer clock.
+
+This library provides a pure OCaml implementation, and another implementation
+relying on the operating system or the JavaScript runtime.

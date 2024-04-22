@@ -1,7 +1,8 @@
 PORTNAME=	libucl
-PORTVERSION=	0.8.2
+DISTVERSION=	0.9.1
 CATEGORIES=	textproc devel
 
+# implicit-approval+: bapt dvl
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Universal configuration library parser
 WWW=		https://github.com/vstakhov/libucl
@@ -18,11 +19,12 @@ GH_ACCOUNT=	vstakhov
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-
-CONFLICTS_INSTALL=	ucl
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
+
+CONFLICTS_INSTALL=	ucl
 
 OPTIONS_DEFINE=		LUA REGEX SIGNATURES URLS UTILS
 OPTIONS_DEFAULT=	REGEX UTILS
@@ -33,27 +35,16 @@ SIGNATURES_DESC=	Enable signatures checking
 URLS_DESC=		Enable fetching URLs
 UTILS_DESC=		Enable tools: ucl_chargen, ucl_ucldump, ucl_tool
 
+LUA_USES=		lua
 LUA_CONFIGURE_ENABLE=	lua
 LUA_CONFIGURE_ENV=	LUA=${LOCALBASE}/bin/${LUA_CMD}
 LUA_LDFLAGS=		-L${LUA_LIBDIR}
-LUA_USES=		lua
-
 REGEX_CONFIGURE_ENABLE=	regex
-
+SIGNATURES_USES=		ssl
 SIGNATURES_CONFIGURE_ENABLE=	signatures
 SIGNATURES_CPPFLAGS=		-I${OPENSSLINC}
 SIGNATURES_LDFLAGS=		-L${OPENSSLLIB}
-SIGNATURES_USES=		ssl
-
 URLS_CONFIGURE_ENABLE=	urls
-
 UTILS_CONFIGURE_ENABLE=	utils
-
-.include <bsd.port.options.mk>
-
-# https://github.com/vstakhov/libucl/issues/203
-.if ${PORT_OPTIONS:MSIGNATURES} && ((${OPSYS} == FreeBSD && ${SSL_DEFAULT} == base) || ${SSL_DEFAULT} == openssl)
-BROKEN=	Signatures checking support does not build with OpenSSL 1.1.1
-.endif
 
 .include <bsd.port.mk>

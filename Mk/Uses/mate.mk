@@ -210,7 +210,7 @@ CONFIGURE_ENV+=	NOCONFIGURE=yes
 _USES_configure+=	295:mate-pre-configure
 
 mate-pre-configure:
-	@(cd ${CONFIGURE_WRKSRC} ; ${SETENV} ${CONFIGURE_ENV} ./autogen.sh)
+	@(cd ${CONFIGURE_WRKSRC} ; ${SETENVI} ${WRK_ENV} ${CONFIGURE_ENV} ./autogen.sh)
 .  endif
 
 .  if defined(MATE_PRE_PATCH)

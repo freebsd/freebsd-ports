@@ -1,5 +1,5 @@
 bin/xbubble
-man/man6/xbubble.6.gz
+share/man/man6/xbubble.6.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/xbubble.mo
 %%DATADIR%%/baskvli.pfb
 %%DATADIR%%/fonts.dir

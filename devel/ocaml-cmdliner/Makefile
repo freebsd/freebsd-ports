@@ -1,6 +1,6 @@
 PORTNAME=	cmdliner
 PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://erratique.ch/software/cmdliner/releases/
 PKGNAMEPREFIX=	ocaml-

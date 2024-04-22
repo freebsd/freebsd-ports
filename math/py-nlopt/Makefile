@@ -1,6 +1,5 @@
 PORTNAME=	nlopt
-DISTVERSION=	2.7.1
-PORTREVISION=	1
+DISTVERSION=	2.7.1.2
 CATEGORIES=	math
 #MASTER_SITES=	PYPI # https://github.com/DanielBok/nlopt-python/issues/15
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,10 +23,13 @@ USE_PYTHON=	distutils # autoplist is broken, see https://github.com/DanielBok/nl
 USE_GITHUB=	yes
 GH_ACCOUNT=	DanielBok
 GH_PROJECT=	nlopt-python
-GH_TUPLE=	stevengj:nlopt:4a0e93c:nlopt/extern/nlopt
+GH_TUPLE=	stevengj:nlopt:7a7587e:nlopt/extern/nlopt
+
+#CMAKE_ARGS=	-DFREEBSD_PYTHON_VER=${PYTHON_VER}
+MAKE_ENV=	FREEBSD_PYTHON_VER=${PYTHON_VER}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/nlopt/_nlopt.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/nlopt/_nlopt${PYTHON_EXT_SUFFIX}.so
 
 do-test:
 	@${SETENV} ${TEST_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} ${PYTHON_CMD} ${FILESDIR}/example.py

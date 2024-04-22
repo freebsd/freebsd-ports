@@ -1,6 +1,6 @@
 PORTNAME=	gnupod
 PORTVERSION=	0.99.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio perl5
 MASTER_SITES=	SAVANNAH \
 		http://www.blinkenlights.ch/gnupod-dist/stable/
@@ -24,6 +24,7 @@ INFO=		gnupod
 
 USES=		makeinfo perl5 tar:tgz
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 NO_BUILD=	yes
 NO_ARCH=	yes
 

@@ -1,6 +1,6 @@
 PORTNAME=	xdemorse
 DISTVERSION=	3.6.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	https://www.qsl.net/5/5b4az/pkg/morse/xdemorse/
 
@@ -18,11 +18,12 @@ USES=		compiler:c++11-lang gettext-tools gmake gnome \
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 LDFLAGS+=	-lgmodule-2.0
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz \
+		share/man/man1/${PORTNAME}.1.gz \
 		share/applications/${PORTNAME}.desktop \
 		share/pixmaps/${PORTNAME}.svg
 

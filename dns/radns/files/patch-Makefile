@@ -10,7 +10,7 @@
 -	install -m 755 dhclient-exit-hooks $(ETCDIR)
 -	install -m 755 radns-script $(ETCDIR)
 +	install -m 755 radns $(DESTDIR)$(PREFIX)/bin
-+	install -m 644 radns.man $(DESTDIR)$(PREFIX)/man/man8/radns.8
++	install -m 644 radns.man $(DESTDIR)$(PREFIX)/share/man/man8/radns.8
 +	install -d $(DESTDIR)$(ETCDIR)
 +	install -m 755 dhclient-exit-hooks $(DESTDIR)$(ETCDIR)
 +	install -m 755 radns-script $(DESTDIR)$(ETCDIR)

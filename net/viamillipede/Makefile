@@ -1,6 +1,7 @@
 PORTNAME=	viamillipede
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.89
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	ash_ports@aeria.net
@@ -18,7 +19,10 @@ USES=		uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	agokhale
 
+MAKE_ARGS=	BINDIR="${PREFIX}/bin" \
+		MANDIR="${PREFIX}/share/man/man"
+
 PLIST_FILES=	bin/viamillipede \
-		man/man1/viamillipede.1.gz
+		share/man/man1/viamillipede.1.gz
 
 .include <bsd.port.mk>

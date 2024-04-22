@@ -18,8 +18,8 @@ lib/bicon/libbjoining.so
 lib/bicon/libbjoining.so.0
 lib/bicon/libbjoining.so.0.0.0
 libdata/pkgconfig/bicon.pc
-man/man1/bicon.1.gz
-man/man1/bicon.bin.1.gz
+share/man/man1/bicon.1.gz
+share/man/man1/bicon.bin.1.gz
 %%DATADIR%%/keymap/ae.map.gz
 %%DATADIR%%/keymap/arabic.map.gz
 %%DATADIR%%/keymap/bh.map.gz

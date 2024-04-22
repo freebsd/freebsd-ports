@@ -1,0 +1,2 @@
+Combinator library to produce pretty-printers compatible with
+the Format module of the OCaml standard distribution.

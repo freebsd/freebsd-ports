@@ -1,6 +1,6 @@
---- pyproject.toml.orig	2023-10-31 14:05:31 UTC
+--- pyproject.toml.orig	2024-03-05 15:15:09 UTC
 +++ pyproject.toml
-@@ -216,17 +216,6 @@ packaging = ">=20.0"
+@@ -216,17 +216,6 @@ pydantic = ">=1.7.4, <3"
  # See https://github.com/matrix-org/synapse/issues/15858
  pydantic = ">=1.7.4, <3"
  

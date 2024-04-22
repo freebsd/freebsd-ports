@@ -1,6 +1,5 @@
 bin/unzstd
 bin/zstd
-bin/zstd-frugal
 bin/zstdcat
 bin/zstdgrep
 bin/zstdless
@@ -17,9 +16,9 @@ lib/libzstd.so
 lib/libzstd.so.1
 lib/libzstd.so.%%PORTVERSION%%
 libdata/pkgconfig/libzstd.pc
-man/man1/unzstd.1.gz
-man/man1/zstd.1.gz
-man/man1/zstdcat.1.gz
-man/man1/zstdgrep.1.gz
-man/man1/zstdless.1.gz
-man/man1/zstdmt.1.gz
+share/man/man1/unzstd.1.gz
+share/man/man1/zstd.1.gz
+share/man/man1/zstdcat.1.gz
+share/man/man1/zstdgrep.1.gz
+share/man/man1/zstdless.1.gz
+share/man/man1/zstdmt.1.gz

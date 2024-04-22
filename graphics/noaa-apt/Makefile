@@ -1,0 +1,275 @@
+PORTNAME=	noaa-apt
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.4.1
+PORTREVISION=	2
+CATEGORIES=	graphics
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	NOAA APT weather satellite image decoder
+WWW=		http://noaa-apt.mbernardi.com.ar
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo gnome pkgconfig ssl
+USE_GNOME=	gdkpixbuf2 gtk30
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	martinber
+
+CARGO_CRATES=	addr2line-0.21.0 \
+		adler-1.0.2 \
+		android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
+		approx-0.5.1 \
+		argparse-0.2.2 \
+		atk-0.18.0 \
+		atk-sys-0.18.0 \
+		autocfg-1.1.0 \
+		backtrace-0.3.69 \
+		base64-0.21.5 \
+		bit_field-0.10.2 \
+		bitflags-1.3.2 \
+		bitflags-2.4.1 \
+		bumpalo-3.14.0 \
+		bytemuck-1.14.0 \
+		byteorder-1.5.0 \
+		bytes-1.5.0 \
+		cairo-rs-0.18.3 \
+		cairo-sys-rs-0.18.2 \
+		cc-1.0.83 \
+		cfg-expr-0.15.5 \
+		cfg-if-1.0.0 \
+		chrono-0.4.31 \
+		color_quant-1.1.0 \
+		colored-2.0.4 \
+		core-foundation-0.9.3 \
+		core-foundation-sys-0.8.4 \
+		crc32fast-1.3.2 \
+		crossbeam-deque-0.8.3 \
+		crossbeam-epoch-0.9.15 \
+		crossbeam-utils-0.8.16 \
+		crunchy-0.2.2 \
+		dbase-0.3.0 \
+		deranged-0.3.9 \
+		directories-5.0.1 \
+		dirs-sys-0.4.1 \
+		either-1.9.0 \
+		encoding_rs-0.8.33 \
+		equivalent-1.0.1 \
+		errno-0.3.8 \
+		exr-1.71.0 \
+		fastrand-2.0.1 \
+		fdeflate-0.3.1 \
+		field-offset-0.3.6 \
+		filetime-0.2.22 \
+		flate2-1.0.28 \
+		flume-0.11.0 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.2.1 \
+		futures-channel-0.3.29 \
+		futures-core-0.3.29 \
+		futures-executor-0.3.29 \
+		futures-io-0.3.29 \
+		futures-macro-0.3.29 \
+		futures-sink-0.3.29 \
+		futures-task-0.3.29 \
+		futures-util-0.3.29 \
+		gcd-2.3.0 \
+		gdk-0.18.0 \
+		gdk-pixbuf-0.18.3 \
+		gdk-pixbuf-sys-0.18.0 \
+		gdk-sys-0.18.0 \
+		getrandom-0.2.11 \
+		gif-0.12.0 \
+		gimli-0.28.1 \
+		gio-0.18.3 \
+		gio-sys-0.18.1 \
+		glib-0.18.3 \
+		glib-macros-0.18.3 \
+		glib-sys-0.18.1 \
+		gobject-sys-0.18.0 \
+		gtk-0.18.1 \
+		gtk-sys-0.18.0 \
+		gtk3-macros-0.18.0 \
+		h2-0.3.22 \
+		half-2.2.1 \
+		hashbrown-0.14.3 \
+		heck-0.4.1 \
+		hermit-abi-0.3.3 \
+		hound-3.5.1 \
+		http-0.2.11 \
+		http-body-0.4.5 \
+		httparse-1.8.0 \
+		httpdate-1.0.3 \
+		hyper-0.14.27 \
+		hyper-tls-0.5.0 \
+		iana-time-zone-0.1.58 \
+		iana-time-zone-haiku-0.1.2 \
+		idna-0.5.0 \
+		image-0.24.7 \
+		indexmap-2.1.0 \
+		ipnet-2.9.0 \
+		is-terminal-0.4.9 \
+		itoa-1.0.9 \
+		jpeg-decoder-0.3.0 \
+		js-sys-0.3.66 \
+		lab-0.11.0 \
+		lazy_static-1.4.0 \
+		lebe-0.5.2 \
+		libc-0.2.150 \
+		libredox-0.0.1 \
+		line_drawing-1.0.0 \
+		linux-raw-sys-0.4.11 \
+		lock_api-0.4.11 \
+		log-0.4.20 \
+		memchr-2.6.4 \
+		memoffset-0.9.0 \
+		mime-0.3.17 \
+		miniz_oxide-0.7.1 \
+		mio-0.8.9 \
+		native-tls-0.2.11 \
+		num-complex-0.4.4 \
+		num-integer-0.1.45 \
+		num-rational-0.4.1 \
+		num-traits-0.2.17 \
+		num_cpus-1.16.0 \
+		num_threads-0.1.6 \
+		object-0.32.1 \
+		once_cell-1.18.0 \
+		openssl-0.10.60 \
+		openssl-macros-0.1.1 \
+		openssl-probe-0.1.5 \
+		openssl-src-300.1.6+3.1.4 \
+		openssl-sys-0.9.96 \
+		option-ext-0.2.0 \
+		pango-0.18.3 \
+		pango-sys-0.18.0 \
+		percent-encoding-2.3.1 \
+		pin-project-lite-0.2.13 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.27 \
+		png-0.17.10 \
+		powerfmt-0.2.0 \
+		primal-check-0.3.3 \
+		proc-macro-crate-1.3.1 \
+		proc-macro-crate-2.0.0 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.70 \
+		qoi-0.4.1 \
+		quote-1.0.33 \
+		rayon-1.8.0 \
+		rayon-core-1.12.0 \
+		redox_syscall-0.3.5 \
+		redox_syscall-0.4.1 \
+		redox_users-0.4.4 \
+		reqwest-0.11.22 \
+		rustc-demangle-0.1.23 \
+		rustc_version-0.4.0 \
+		rustfft-6.1.0 \
+		rustix-0.38.25 \
+		ryu-1.0.15 \
+		schannel-0.1.22 \
+		scopeguard-1.2.0 \
+		security-framework-2.9.2 \
+		security-framework-sys-2.9.1 \
+		semver-1.0.20 \
+		serde-1.0.193 \
+		serde_derive-1.0.193 \
+		serde_json-1.0.108 \
+		serde_spanned-0.6.4 \
+		serde_urlencoded-0.7.1 \
+		shapefile-0.4.0 \
+		simd-adler32-0.3.7 \
+		simple_logger-4.3.0 \
+		slab-0.4.9 \
+		smallvec-1.11.2 \
+		socket2-0.4.10 \
+		socket2-0.5.5 \
+		spin-0.9.8 \
+		strength_reduce-0.2.4 \
+		syn-1.0.109 \
+		syn-2.0.39 \
+		system-configuration-0.5.1 \
+		system-configuration-sys-0.5.0 \
+		system-deps-6.2.0 \
+		target-lexicon-0.12.12 \
+		tempfile-3.8.1 \
+		thiserror-1.0.50 \
+		thiserror-impl-1.0.50 \
+		tiff-0.9.0 \
+		time-0.3.30 \
+		time-core-0.1.2 \
+		time-macros-0.2.15 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.1 \
+		tokio-1.34.0 \
+		tokio-native-tls-0.3.1 \
+		tokio-util-0.7.10 \
+		toml-0.7.8 \
+		toml-0.8.8 \
+		toml_datetime-0.6.5 \
+		toml_edit-0.19.15 \
+		toml_edit-0.20.7 \
+		toml_edit-0.21.0 \
+		tower-service-0.3.2 \
+		tracing-0.1.40 \
+		tracing-core-0.1.32 \
+		transpose-0.2.2 \
+		try-lock-0.2.4 \
+		unicode-bidi-0.3.13 \
+		unicode-ident-1.0.12 \
+		unicode-normalization-0.1.22 \
+		url-2.5.0 \
+		vcpkg-0.2.15 \
+		version-compare-0.1.1 \
+		version_check-0.9.4 \
+		want-0.3.1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.89 \
+		wasm-bindgen-backend-0.2.89 \
+		wasm-bindgen-futures-0.4.39 \
+		wasm-bindgen-macro-0.2.89 \
+		wasm-bindgen-macro-support-0.2.89 \
+		wasm-bindgen-shared-0.2.89 \
+		web-sys-0.3.66 \
+		weezl-0.1.7 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-core-0.51.1 \
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.0 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.0 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.0 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.0 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.0 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.0 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.0 \
+		winnow-0.5.19 \
+		winreg-0.50.0 \
+		zune-inflate-0.2.54 \
+		satellite@git+https://github.com/richinfante/satellite-rs?rev=1f95726\#1f957264057882192e467e07df7fe10c5f29c008
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

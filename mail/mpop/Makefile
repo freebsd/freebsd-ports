@@ -1,6 +1,5 @@
 PORTNAME=	mpop
-DISTVERSION=	1.4.16
-PORTREVISION=	4
+DISTVERSION=	1.4.18
 CATEGORIES=	mail
 MASTER_SITES=	https://marlam.de/mpop/releases/
 
@@ -13,6 +12,7 @@ LICENSE=	GPLv3+
 USES=		cpe gettext gmake makeinfo pkgconfig tar:xz
 CPE_VENDOR=	martin_lambers
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-tls=no
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 

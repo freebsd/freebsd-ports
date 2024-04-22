@@ -1,5 +1,6 @@
 PORTNAME=	sst
 PORTVERSION=	1.26
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://utcc.utoronto.ca/~pkern/stuff/sst/
 
@@ -15,6 +16,6 @@ MAKEFILE=	${FILESDIR}/Makefile
 USES=		uidfix ssl tar:xz
 
 PLIST_FILES=	sbin/sst \
-		man/man1/sst.1.gz
+		share/man/man1/sst.1.gz
 
 .include <bsd.port.mk>

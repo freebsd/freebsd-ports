@@ -1,14 +1,13 @@
 PORTNAME=	xgap
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.31
-PORTREVISION=	1
+DISTVERSION=	4.32
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical user interface for GAP
 WWW=		https://gap-packages.github.io/xgap/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv6=	cannot find sources (xgap.c) in ../../src.x11

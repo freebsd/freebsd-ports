@@ -345,4 +345,4 @@ lib/cmake/hydrogen/modules/HydrogenCleanupHIPTargets.cmake
 lib/cmake/hydrogen/modules/HydrogenETIGeneration.cmake
 lib/cmake/hydrogen/modules/PrintHydrogenSummary.cmake
 lib/libHydrogen_CXX.so
-lib/libHydrogen_CXX.so.1.5.2
+lib/libHydrogen_CXX.so.1.5.3

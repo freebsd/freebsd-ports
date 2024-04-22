@@ -1,5 +1,6 @@
 PORTNAME=	pftop
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	sysutils net
 
 MAINTAINER=	grembo@FreeBSD.org
@@ -20,7 +21,7 @@ ALTQ_DESC=	ALTQ support for queue statistics
 
 .include <bsd.port.options.mk>
 
-MAKE_ARGS=	LOCALBASE="${PREFIX}"
+MAKE_ARGS=	LOCALBASE="${PREFIX}" MANDIR=${PREFIX}/share/man/man
 
 CFLAGS+=	-DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1
 
@@ -29,9 +30,8 @@ CFLAGS+=	-DHAVE_ALTQ=1
 .endif
 
 MAKE_ARGS+=	CSTD=gnu89
-MAKE_ENV+=	__MAKE_CONF=/dev/null
 
-PLIST_FILES=	man/man8/pftop.8.gz \
-		sbin/pftop
+PLIST_FILES=	sbin/pftop \
+		share/man/man8/pftop.8.gz
 
 .include <bsd.port.mk>

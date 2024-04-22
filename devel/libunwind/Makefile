@@ -1,8 +1,8 @@
 PORTNAME=	libunwind
-PORTVERSION=	20230730	# This is the release date on https://github.com/libunwind/libunwind/releases
+PORTVERSION=	20240221	# This is the release date on https://github.com/libunwind/libunwind/releases
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libunwind/libunwind/releases/download/v${LIBUNWIND_VERSION}/
-DISTNAME=	${PORTNAME}-${LIBUNWIND_VERSION}
+DISTNAME=	libunwind-${LIBUNWIND_VERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generic stack unwinding library
@@ -27,7 +27,7 @@ PLIST_SUB=	ARCH=${ARCH:S|amd64|x86_64|:C|armv.|arm|:S|i386|x86|:C|powerpc64.*|pp
 
 CPE_VENDOR=	libunwind_project
 
-LIBUNWIND_VERSION=	1.7.2
+LIBUNWIND_VERSION=	1.8.1
 
 .include <bsd.port.options.mk>
 
@@ -39,9 +39,12 @@ PLIST_SUB+=	COREDUMP=""
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400052
 PLIST_FILES=	include/unwind.h
+.endif
 
 post-install:
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400052
 	${INSTALL_DATA} ${FILESDIR}/unwind.h ${STAGEDIR}${PREFIX}/include
 .endif
+	cd ${STAGEDIR}${PREFIX}/ && ${FIND} libexec/libunwind -type f >> ${TMPPLIST}
 
 .include <bsd.port.mk>

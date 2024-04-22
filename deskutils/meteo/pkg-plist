@@ -1,5 +1,4 @@
 bin/com.gitlab.bitseater.meteo
-share/man/man1/com.gitlab.bitseater.meteo.1.gz
 share/applications/com.gitlab.bitseater.meteo.desktop
 share/icons/hicolor/128x128/apps/com.gitlab.bitseater.meteo.svg
 share/icons/hicolor/128x128@2/apps/com.gitlab.bitseater.meteo.svg
@@ -49,4 +48,5 @@ share/locale/ru/LC_MESSAGES/com.gitlab.bitseater.meteo.mo
 share/locale/sr/LC_MESSAGES/com.gitlab.bitseater.meteo.mo
 share/locale/tr/LC_MESSAGES/com.gitlab.bitseater.meteo.mo
 share/locale/uk/LC_MESSAGES/com.gitlab.bitseater.meteo.mo
+share/man/man1/com.gitlab.bitseater.meteo.1.gz
 share/metainfo/com.gitlab.bitseater.meteo.appdata.xml

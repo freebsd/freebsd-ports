@@ -1,5 +1,5 @@
 PORTNAME=	firstboot-pkgs
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	sysutils
 MASTER_SITES=	# none
 DISTFILES=	# none

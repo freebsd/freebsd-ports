@@ -1,5 +1,6 @@
 PORTNAME=	etsh
 DISTVERSION=	5.4.0
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	https://etsh.nl/src/${PORTNAME}_${PORTVERSION}/
 
@@ -12,5 +13,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 HAS_CONFIGURE=	yes
+
+MAKE_ENV+=	MANDIR=${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

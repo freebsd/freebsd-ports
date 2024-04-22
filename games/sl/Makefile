@@ -1,5 +1,6 @@
 PORTNAME=	sl
 PORTVERSION=	5.02
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	hym@cocoa.freemail.ne.jp
@@ -16,8 +17,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mtoyoda
 
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz \
-		man/ja/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz \
+		share/man/ja/man1/${PORTNAME}.1.gz
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
@@ -28,8 +29,9 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1.ja ${STAGEDIR}${MANPREFIX}/man/ja/man1/${PORTNAME}.1
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/ja/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1.ja ${STAGEDIR}${PREFIX}/share/man/ja/man1/${PORTNAME}.1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

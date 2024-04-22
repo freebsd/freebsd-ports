@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	1.9.2.5
+PORTVERSION=	1.9.2.7
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -78,7 +78,8 @@ do-install:
 		"$$@"\n' > ${STAGEDIR}${PREFIX}/bin/${script}
 	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${script}
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/debian/*.6 ${STAGEDIR}${MANPREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/debian/*.6 \
+		${STAGEDIR}${PREFIX}/share/man/man6
 	${INSTALL_DATA} ${WRKSRC}/debian/openbve.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/debian/openbve.png \

@@ -15,7 +15,7 @@ USES=		cpe linux:c7
 CPE_VENDOR=	qt
 USE_LDCONFIG=	yes
 USE_LINUX=	fontconfig png xorglibs sqlite3 qt qt-x11
-USE_LINUX_RPM=	yes
+USE_LINUX_RPM=	nolib
 
 CONFLICTS=	linux-c6-qt47-webkit
 

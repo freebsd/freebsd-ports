@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-01-29 04:57:02 UTC
+--- CMakeLists.txt.orig	2023-02-07 17:22:46 UTC
 +++ CMakeLists.txt
-@@ -9,7 +9,7 @@
+@@ -9,7 +9,7 @@ project(vcflib)
  cmake_minimum_required(VERSION 3.16)
  project(vcflib)
  
@@ -9,7 +9,7 @@
  
  include(ExternalProject)
  include(FeatureSummary)
-@@ -69,7 +69,7 @@ if(NOT CMAKE_BUILD_TYPE)
+@@ -69,7 +69,7 @@ if (${CMAKE_BUILD_TYPE} MATCHES Release)
  endif()
  
  if (${CMAKE_BUILD_TYPE} MATCHES Release)
@@ -18,3 +18,9 @@
    # set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG") # reset CXX_FLAGS to replace -O3 with -Ofast
  endif()
  
+@@ -570,4 +570,4 @@ install(FILES ${INCLUDES} DESTINATION include)
+ 
+ install(FILES ${INCLUDES} DESTINATION include)
+ 
+-install(DIRECTORY ${CMAKE_SOURCE_DIR}/man/ DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
++install(DIRECTORY ${CMAKE_SOURCE_DIR}/man/ DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man1)

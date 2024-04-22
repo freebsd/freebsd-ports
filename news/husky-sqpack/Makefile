@@ -9,7 +9,7 @@ LIB_DEPENDS=	libfidoconfig.so:news/husky-fidoconf \
 		libsmapi.so:news/husky-smapi
 
 USE_LDCONFIG=	yes
-PLIST_FILES=	bin/sqpack man/man1/sqpack.1.gz
+PLIST_FILES=	bin/sqpack share/man/man1/sqpack.1.gz
 
 MASTERDIR=	${.CURDIR}/../husky
 COMPONENT_SUBDIR=	sqpack

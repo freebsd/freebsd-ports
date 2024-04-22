@@ -7,7 +7,7 @@ lib/libhello.a
 lib/libhello.so
 lib/libhello.so.0
 lib/libhello.so.0.0.0
-man/man1/htntlm.1.gz
-man/man1/htproxy.1.gz
-man/man1/htremote.1.gz
-man/man1/httest.1.gz
+share/man/man1/htntlm.1.gz
+share/man/man1/htproxy.1.gz
+share/man/man1/htremote.1.gz
+share/man/man1/httest.1.gz

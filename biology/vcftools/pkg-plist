@@ -26,4 +26,4 @@ bin/vcftools
 %%SITE_PERL%%/FaSlice.pm
 %%SITE_PERL%%/Vcf.pm
 %%SITE_PERL%%/VcfStats.pm
-man/man1/vcftools.1.gz
+share/man/man1/vcftools.1.gz

@@ -1,0 +1,253 @@
+PORTNAME=	starlark-rust
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.12.0
+CATEGORIES=	lang
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Rust implementation of the Starlark language
+WWW=		https://github.com/facebook/starlark-rust
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	facebook
+
+CARGO_CRATES=	Inflector-0.11.4 \
+		addr2line-0.21.0 \
+		adler-1.0.2 \
+		ahash-0.8.11 \
+		aho-corasick-1.1.3 \
+		allocator-api2-0.2.16 \
+		annotate-snippets-0.9.2 \
+		anstream-0.6.13 \
+		anstyle-1.0.6 \
+		anstyle-parse-0.2.3 \
+		anstyle-query-1.0.2 \
+		anstyle-wincon-3.0.2 \
+		anyhow-1.0.81 \
+		argfile-0.1.6 \
+		arrayvec-0.7.4 \
+		ascii-canvas-3.0.0 \
+		autocfg-1.2.0 \
+		backtrace-0.3.71 \
+		beef-0.5.2 \
+		bit-set-0.5.3 \
+		bit-vec-0.6.3 \
+		bitflags-1.3.2 \
+		bitflags-2.5.0 \
+		bumpalo-3.15.4 \
+		bytemuck-1.15.0 \
+		byteorder-1.5.0 \
+		bytes-1.6.0 \
+		castaway-0.2.2 \
+		cc-1.0.90 \
+		cfg-if-1.0.0 \
+		clap-4.5.4 \
+		clap_builder-4.5.2 \
+		clap_derive-4.5.4 \
+		clap_lex-0.7.0 \
+		clipboard-win-4.5.0 \
+		colorchoice-1.0.0 \
+		compact_str-0.6.1 \
+		convert_case-0.4.0 \
+		crossbeam-channel-0.5.12 \
+		crossbeam-utils-0.8.19 \
+		crunchy-0.2.2 \
+		ctor-0.1.26 \
+		dashmap-5.5.3 \
+		debugserver-types-0.5.0 \
+		derivative-2.2.0 \
+		derive_more-0.99.17 \
+		diff-0.1.13 \
+		dirs-next-2.0.0 \
+		dirs-sys-next-0.1.2 \
+		either-1.10.0 \
+		ena-0.14.2 \
+		endian-type-0.1.2 \
+		env_logger-0.7.1 \
+		equivalent-1.0.1 \
+		erased-serde-0.3.31 \
+		errno-0.3.8 \
+		error-code-2.3.1 \
+		fd-lock-3.0.13 \
+		fixedbitset-0.4.2 \
+		fnv-1.0.7 \
+		form_urlencoded-1.2.1 \
+		fs-err-2.11.0 \
+		futures-0.3.30 \
+		futures-channel-0.3.30 \
+		futures-core-0.3.30 \
+		futures-executor-0.3.30 \
+		futures-io-0.3.30 \
+		futures-macro-0.3.30 \
+		futures-sink-0.3.30 \
+		futures-task-0.3.30 \
+		futures-util-0.3.30 \
+		fxhash-0.2.1 \
+		getrandom-0.1.16 \
+		getrandom-0.2.12 \
+		gimli-0.28.1 \
+		hashbrown-0.12.3 \
+		hashbrown-0.14.3 \
+		heck-0.5.0 \
+		hermit-abi-0.3.9 \
+		idna-0.5.0 \
+		indenter-0.3.3 \
+		indexmap-1.9.3 \
+		indexmap-2.2.6 \
+		inferno-0.11.19 \
+		instant-0.1.12 \
+		inventory-0.3.15 \
+		is-terminal-0.4.12 \
+		itertools-0.10.5 \
+		itoa-1.0.11 \
+		lalrpop-0.19.12 \
+		lalrpop-util-0.19.12 \
+		lazy_static-1.4.0 \
+		libc-0.2.153 \
+		libredox-0.1.3 \
+		linux-raw-sys-0.4.13 \
+		lock_api-0.4.11 \
+		log-0.4.21 \
+		logos-0.12.1 \
+		logos-derive-0.12.1 \
+		lsp-server-0.7.6 \
+		lsp-types-0.94.1 \
+		maplit-1.0.2 \
+		memchr-2.7.2 \
+		memoffset-0.6.5 \
+		miniz_oxide-0.7.2 \
+		new_debug_unreachable-1.0.6 \
+		nibble_vec-0.1.0 \
+		nix-0.26.4 \
+		num-bigint-0.4.4 \
+		num-format-0.4.4 \
+		num-integer-0.1.46 \
+		num-traits-0.2.18 \
+		object-0.32.2 \
+		once_cell-1.19.0 \
+		os_str_bytes-6.6.1 \
+		parking_lot-0.11.2 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.8.6 \
+		parking_lot_core-0.9.9 \
+		paste-1.0.14 \
+		percent-encoding-2.3.1 \
+		petgraph-0.6.4 \
+		phf_shared-0.10.0 \
+		pin-project-lite-0.2.14 \
+		pin-utils-0.1.0 \
+		ppv-lite86-0.2.17 \
+		precomputed-hash-0.1.1 \
+		proc-macro2-1.0.79 \
+		prost-0.11.9 \
+		prost-derive-0.11.9 \
+		prost-types-0.11.9 \
+		quick-xml-0.26.0 \
+		quickcheck-0.9.2 \
+		quote-1.0.35 \
+		radix_trie-0.2.1 \
+		rand-0.7.3 \
+		rand-0.8.5 \
+		rand_chacha-0.2.2 \
+		rand_chacha-0.3.1 \
+		rand_core-0.5.1 \
+		rand_core-0.6.4 \
+		rand_hc-0.2.0 \
+		redox_syscall-0.2.16 \
+		redox_syscall-0.4.1 \
+		redox_users-0.4.5 \
+		regex-1.10.4 \
+		regex-automata-0.4.6 \
+		regex-syntax-0.6.29 \
+		regex-syntax-0.8.3 \
+		relative-path-1.9.2 \
+		rgb-0.8.37 \
+		rustc-demangle-0.1.23 \
+		rustc_version-0.4.0 \
+		rustix-0.38.32 \
+		rustversion-1.0.14 \
+		rustyline-11.0.0 \
+		ryu-1.0.17 \
+		same-file-1.0.6 \
+		schemafy-0.5.2 \
+		schemafy_core-0.5.2 \
+		schemafy_lib-0.5.2 \
+		scopeguard-1.2.0 \
+		semver-1.0.22 \
+		serde-1.0.197 \
+		serde_derive-1.0.197 \
+		serde_json-1.0.115 \
+		serde_repr-0.1.18 \
+		siphasher-0.3.11 \
+		slab-0.4.9 \
+		smallvec-1.13.2 \
+		sorted_vector_map-0.1.0 \
+		stable_deref_trait-1.2.0 \
+		static_assertions-1.1.0 \
+		str-buf-1.0.6 \
+		str_stack-0.1.0 \
+		string_cache-0.8.7 \
+		strsim-0.10.0 \
+		strsim-0.11.0 \
+		syn-1.0.109 \
+		syn-2.0.57 \
+		term-0.7.0 \
+		terminal_size-0.3.0 \
+		textwrap-0.11.0 \
+		thiserror-1.0.58 \
+		thiserror-impl-1.0.58 \
+		tiny-keccak-2.0.2 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.1 \
+		tokio-1.37.0 \
+		triomphe-0.1.11 \
+		unicode-bidi-0.3.15 \
+		unicode-ident-1.0.12 \
+		unicode-normalization-0.1.23 \
+		unicode-segmentation-1.11.0 \
+		unicode-width-0.1.11 \
+		unicode-xid-0.2.4 \
+		url-2.5.0 \
+		utf8parse-0.2.1 \
+		version_check-0.9.4 \
+		walkdir-2.5.0 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.6 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.4 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.4 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.4 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.4 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.4 \
+		zerocopy-0.7.32 \
+		zerocopy-derive-0.7.32
+
+PLIST_FILES=	bin/starlark
+
+do-install:
+	# binaries (workaround for error: found a virtual manifest at `xx` instead of a package manifest)
+	${INSTALL_PROGRAM} \
+		${WRKDIR}/target/*/release/starlark \
+		${STAGEDIR}${PREFIX}/bin
+
+.include <bsd.port.mk>
