@@ -1,13 +1,9 @@
 PORTNAME=	freerdp
-DISTVERSION=	3.5.0
+DISTVERSION=	3.5.1
 CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	3
-
-PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
-# move epoll detection to platform: https://github.com/FreeRDP/FreeRDP/pull/10097
-PATCHFILES+=	5583fec47bbca9b68cd811c12e1ae3d5cdbfaee3.patch:-p1
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol
