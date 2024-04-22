@@ -1,6 +1,5 @@
-SHA256 (agrep-2.04.tar.Z) = 31275a2fee28fb8966e1978d26fe8113b61ce49b39e68ddf4cad3964db72d5f8
-SIZE (agrep-2.04.tar.Z) = 62351
-SHA256 (agrep.ps.1.Z) = 34c342b546c7609a8e87863d94cb4927ec60e6ccd4b5e5324ac7cca4793b3ce2
-SIZE (agrep.ps.1.Z) = 74055
-SHA256 (agrep.ps.2.Z) = 59f8a9e019e6c1c01c05abd09ce319f9af96b676537039819575f66a60b2e8b0
-SIZE (agrep.ps.2.Z) = 41544
+TIMESTAMP = 1713810375
+SHA256 (Wikinaut-agrep-3.41.5-7b7f350_GH0.tar.gz) = d3d5bfd631359056d47ed2c8c37dc5f661c31074ae525a5386d9a0f455136123
+SIZE (Wikinaut-agrep-3.41.5-7b7f350_GH0.tar.gz) = 3652802
+SHA256 (agrep-patch-ansi1) = a6161b483c144f3791ba66e9fa25c92423570d9d11c576e22e3f221f02d13ce7
+SIZE (agrep-patch-ansi1) = 22304

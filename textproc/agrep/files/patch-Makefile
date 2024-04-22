@@ -1,0 +1,29 @@
+--- Makefile.orig	2016-10-22 12:40:44 UTC
++++ Makefile
+@@ -14,7 +14,7 @@
+ # use
+ # make CROSS=i686-pc-mingw32-
+ 
+-CC=$(CROSS)gcc
++#CC=$(CROSS)gcc
+ 
+ 
+ # ---------------------------------------------------------------------
+@@ -59,7 +59,7 @@ MYDEFINEFLAGS	= -DMEASURE_TIMES=0  \
+ 		
+ #		  -Werror=no-unprototyped-calls
+ 
+-CFLAGS		= $(MYDEFINEFLAGS) $(SUBDIRCFLAGS)
++CFLAGS		+= $(MYDEFINEFLAGS) $(SUBDIRCFLAGS)
+ OTHERLIBS	=
+ 
+ PROG	      = agrep
+@@ -96,7 +96,7 @@ $(PROG).exe:	$(OBJS) $(HDRS)
+ else
+ 
+ $(PROG):	$(OBJS) $(HDRS)
+-		  $(CC) -o $(PROG) $(OBJS)
++		  $(CC) -o $(PROG) ${LDFLAGS} $(OBJS)
+ 
+ endif
+ 
