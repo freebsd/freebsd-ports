@@ -214,7 +214,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc-demangle-0.1.23 \
 		rustdct-0.7.1 \
 		rustfft-6.2.0 \
-		rustix-0.38.32 \
+		rustix-0.38.33 \
 		rustls-0.22.4 \
 		rustls-native-certs-0.7.0 \
 		rustls-pemfile-2.1.2 \
@@ -238,7 +238,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		sha2-0.10.8 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.3 \
-		signal-hook-registry-1.4.1 \
+		signal-hook-registry-1.4.2 \
 		simd-adler32-0.3.7 \
 		simd_helpers-0.1.0 \
 		slab-0.4.9 \
@@ -256,8 +256,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		target-lexicon-0.12.14 \
 		tempdir-0.3.7 \
 		tempfile-3.10.1 \
-		thiserror-1.0.58 \
-		thiserror-impl-1.0.58 \
+		thiserror-1.0.59 \
+		thiserror-impl-1.0.59 \
 		tiff-0.9.1 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
