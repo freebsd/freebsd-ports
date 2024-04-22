@@ -1,3 +1,7 @@
 TIMESTAMP = 1712827443
 SHA256 (wlroots-0.17.0-312-gb1b34cd665.tar.bz2) = e9eb70ecddce0030b26b595d368cee15559febe1b8121de6bc6d5ec8bf95ccef
 SIZE (wlroots-0.17.0-312-gb1b34cd665.tar.bz2) = 458003
+SHA256 (surface-nondivisible-by-scale.patch) = e9b9f9a537090627ea4fac0b5a101d8ffedf2b399465889b225c694645b4c173
+SIZE (surface-nondivisible-by-scale.patch) = 1778
+SHA256 (nvidia-hardware-cursors.patch) = ed4720310d61068b24ebd4a30767556cb7590acfd5c66c95d7408a0c95539dbc
+SIZE (nvidia-hardware-cursors.patch) = 12545

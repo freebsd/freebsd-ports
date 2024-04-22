@@ -1,9 +1,13 @@
 PORTNAME=	wlroots
 DISTVERSION=	0.17.0-312
 DISTVERSIONSUFFIX=	-gb1b34cd665
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	-devel
 
+PATCH_SITES+=	https://github.com/hyprwm/wlroots-hyprland/raw/5c1d51c5a279/patches/:hyprland
+PATCHFILES+=	surface-nondivisible-by-scale.patch:-p1:hyprland
+PATCHFILES+=	nvidia-hardware-cursors.patch:-p1:hyprland
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 
 MAINTAINER=	jbeich@FreeBSD.org
