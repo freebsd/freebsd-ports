@@ -19,7 +19,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		aho-corasick-1.1.3 \
 		alloc-no-stdlib-2.0.4 \
 		alloc-stdlib-0.2.2 \
-		allocator-api2-0.2.16 \
+		allocator-api2-0.2.18 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.6.13 \
@@ -27,12 +27,12 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.81 \
+		anyhow-1.0.82 \
 		argon2-0.5.3 \
 		asn1-rs-0.3.1 \
 		asn1-rs-derive-0.1.0 \
 		asn1-rs-impl-0.1.0 \
-		async-channel-2.2.0 \
+		async-channel-2.2.1 \
 		async-http-codec-0.5.8 \
 		async-io-1.13.0 \
 		async-lock-2.8.0 \
@@ -42,7 +42,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		async-stream-0.3.5 \
 		async-stream-impl-0.3.5 \
 		async-task-4.7.0 \
-		async-trait-0.1.79 \
+		async-trait-0.1.80 \
 		async-web-client-0.2.7 \
 		async-ws-0.3.4 \
 		atoi-2.0.0 \
@@ -61,13 +61,13 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		blocking-1.5.1 \
 		brotli-3.5.0 \
 		brotli-decompressor-2.5.1 \
-		bumpalo-3.15.4 \
+		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
 		bytes-1.6.0 \
 		bytestring-1.3.1 \
-		cc-1.0.90 \
+		cc-1.0.95 \
 		cfg-if-1.0.0 \
-		chrono-0.4.37 \
+		chrono-0.4.38 \
 		colorchoice-1.0.0 \
 		concurrent-queue-2.4.0 \
 		config-0.14.0 \
@@ -80,7 +80,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		core-foundation-sys-0.8.6 \
 		core2-0.4.0 \
 		cpufeatures-0.2.12 \
-		crc-3.0.1 \
+		crc-3.2.1 \
 		crc-catalog-2.4.0 \
 		crc32fast-1.4.0 \
 		crossbeam-queue-0.3.11 \
@@ -94,7 +94,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		darling_macro-0.20.8 \
 		dary_heap-0.3.6 \
 		data-encoding-2.5.0 \
-		der-0.7.8 \
+		der-0.7.9 \
 		der-parser-7.0.0 \
 		deranged-0.3.11 \
 		derive_more-0.99.17 \
@@ -104,8 +104,8 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		displaydoc-0.2.4 \
 		dlv-list-0.5.2 \
 		dotenvy-0.15.7 \
-		either-1.10.0 \
-		encoding_rs-0.8.33 \
+		either-1.11.0 \
+		encoding_rs-0.8.34 \
 		env_filter-0.1.0 \
 		env_logger-0.11.3 \
 		equivalent-1.0.1 \
@@ -113,7 +113,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		event-listener-2.5.3 \
 		event-listener-3.1.0 \
 		event-listener-4.0.3 \
-		event-listener-5.2.0 \
+		event-listener-5.3.0 \
 		event-listener-strategy-0.4.0 \
 		event-listener-strategy-0.5.1 \
 		fastrand-1.9.0 \
@@ -138,11 +138,11 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		futures-util-0.3.30 \
 		generic-array-0.14.7 \
 		generic_static-0.2.0 \
-		getrandom-0.2.12 \
+		getrandom-0.2.14 \
 		gimli-0.28.1 \
 		gloo-net-0.2.6 \
 		gloo-utils-0.1.7 \
-		h2-0.3.25 \
+		h2-0.3.26 \
 		handlebars-5.1.2 \
 		hashbrown-0.13.2 \
 		hashbrown-0.14.3 \
@@ -171,7 +171,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		io-lifetimes-1.0.11 \
 		itertools-0.12.1 \
 		itoa-1.0.11 \
-		jobserver-0.1.28 \
+		jobserver-0.1.30 \
 		js-sys-0.3.69 \
 		json5-0.4.1 \
 		lambda-web-0.2.1 \
@@ -223,10 +223,10 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		pem-1.1.1 \
 		pem-rfc7468-0.7.0 \
 		percent-encoding-2.3.1 \
-		pest-2.7.8 \
-		pest_derive-2.7.8 \
-		pest_generator-2.7.8 \
-		pest_meta-2.7.8 \
+		pest-2.7.9 \
+		pest_derive-2.7.9 \
+		pest_generator-2.7.9 \
+		pest_meta-2.7.9 \
 		pin-project-1.1.5 \
 		pin-project-internal-1.1.5 \
 		pin-project-lite-0.2.14 \
@@ -238,8 +238,8 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		polling-2.8.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.79 \
-		quote-1.0.35 \
+		proc-macro2-1.0.81 \
+		quote-1.0.36 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
@@ -259,26 +259,26 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		rustc_version-0.4.0 \
 		rusticata-macros-4.1.0 \
 		rustix-0.37.27 \
-		rustix-0.38.32 \
+		rustix-0.38.33 \
 		rustls-0.20.9 \
-		rustls-0.21.10 \
+		rustls-0.21.11 \
 		rustls-acme-0.7.7 \
 		rustls-pemfile-1.0.4 \
 		rustls-webpki-0.101.7 \
-		rustversion-1.0.14 \
+		rustversion-1.0.15 \
 		ryu-1.0.17 \
 		scopeguard-1.2.0 \
 		sct-0.7.1 \
 		semver-1.0.22 \
-		serde-1.0.197 \
-		serde_derive-1.0.197 \
-		serde_json-1.0.115 \
+		serde-1.0.198 \
+		serde_derive-1.0.198 \
+		serde_json-1.0.116 \
 		serde_plain-1.0.2 \
 		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
 		sha1-0.10.6 \
 		sha2-0.10.8 \
-		signal-hook-registry-1.4.1 \
+		signal-hook-registry-1.4.2 \
 		signature-2.2.0 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
@@ -288,7 +288,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		spin-0.9.8 \
 		spki-0.7.3 \
 		sqlformat-0.2.3 \
-		sqlparser-0.44.0 \
+		sqlparser-0.45.0 \
 		sqlparser_derive-0.2.2 \
 		sqlx-core-oldapi-0.6.19 \
 		sqlx-macros-oldapi-0.6.19 \
@@ -300,14 +300,14 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		strum_macros-0.24.3 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.57 \
+		syn-2.0.60 \
 		synstructure-0.12.6 \
 		tempfile-3.10.1 \
-		thiserror-1.0.58 \
-		thiserror-impl-1.0.58 \
-		time-0.3.34 \
+		thiserror-1.0.59 \
+		thiserror-impl-1.0.59 \
+		time-0.3.36 \
 		time-core-0.1.2 \
-		time-macros-0.2.17 \
+		time-macros-0.2.18 \
 		tiny-keccak-2.0.2 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
@@ -319,7 +319,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		tokio-util-0.7.10 \
 		toml-0.8.12 \
 		toml_datetime-0.6.5 \
-		toml_edit-0.22.9 \
+		toml_edit-0.22.12 \
 		tower-0.4.13 \
 		tower-layer-0.3.2 \
 		tower-service-0.3.2 \
@@ -367,22 +367,23 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.4 \
+		windows-targets-0.52.5 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_gnullvm-0.52.5 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.4 \
+		windows_aarch64_msvc-0.52.5 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.4 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.4 \
+		windows_i686_msvc-0.52.5 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.4 \
-		winnow-0.6.5 \
+		windows_x86_64_msvc-0.52.5 \
+		winnow-0.6.6 \
 		x509-parser-0.13.2 \
 		yaml-rust-0.4.5 \
 		yasna-0.5.2 \
