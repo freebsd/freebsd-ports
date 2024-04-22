@@ -10,7 +10,7 @@ WWW=		https://github.com/libsdl-org/SDL_mixer
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake sdl
+USES=		cmake sdl pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	libsdl-org
 GH_PROJECT=	SDL_mixer
