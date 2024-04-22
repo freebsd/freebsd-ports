@@ -1,11 +1,7 @@
 PORTNAME=	visp
-DISTVERSION=	3.5.0
-PORTREVISION=	15
+DISTVERSION=	3.6.0
 CATEGORIES=	misc
 MASTER_SITES=	https://visp-doc.inria.fr/download/releases/
-
-PATCH_SITES=	https://github.com/lagadic/${PORTNAME}/commit/
-PATCHFILES=	ff554ca8be5f43a3470e1cb20150d8171a66b463.patch:-p1 # fix https://github.com/lagadic/visp/issues/1059
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modular library for visual tracking and visual servoing
@@ -14,6 +10,9 @@ WWW=		https://visp.inria.fr/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	doxygen:devel/doxygen \
+		latex:print/tex-formats \
+		nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libblas.so:math/blas \
 		libboost_system.so:devel/boost-libs \
 		libdmtx.so:graphics/libdmtx \
@@ -23,13 +22,13 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libopenblas.so:math/openblas \
 		libopencv_core.so:graphics/opencv \
 		libopencv_videoio.so:graphics/opencv \
-		libqhull_r.so:math/qhull \
+		libpcap.so:net/libpcap \
 		libpng.so:graphics/png \
 		libv4l2.so:multimedia/libv4l \
-		liblz4.so:archivers/liblz4 \
 		libdc1394.so:multimedia/libdc1394
 
-USES=		cmake compiler:c++14-lang eigen:3 fortran gl gnome jpeg python:build xorg zip
+USES=		cmake compiler:c++14-lang eigen:3 fortran gl gnome jpeg python:build qt:5 xorg zip
+USE_QT=		opengl widgets
 USE_GNOME=	libxml2
 USE_XORG=	ice sm x11 xext
 USE_GL=		gl glu opengl
