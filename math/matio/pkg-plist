@@ -3,7 +3,7 @@ include/matio.h
 include/matio_pubconf.h
 lib/libmatio.a
 lib/libmatio.so
-lib/libmatio.so.11
+lib/libmatio.so.13
 lib/libmatio.so.%%SHLIB_VER%%
 libdata/pkgconfig/matio.pc
 share/man/man3/Mat_Close.3.gz
