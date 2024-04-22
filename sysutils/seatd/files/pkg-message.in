@@ -42,6 +42,10 @@ Alternatively, configure and run seatd(1) as system service
 %%BASU%%
 %%BASU%%  # echo "session optional pam_ck_connector.so" >>/etc/pam.d/system
 %%BASU%%  $ exit # log out to re-trigger PAM
+
+Known issues:
+- Garbage on console due to missing K_OFF, see
+  https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=272095
 EOM
 }
 ]
