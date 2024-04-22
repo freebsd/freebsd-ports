@@ -1,7 +1,6 @@
 PORTNAME=	biodiff
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
-PORTREVISION=	7
+DISTVERSION=	1.2.1
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,156 +14,212 @@ USES=		cargo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	8051Enthusiast
+GH_TUPLE=	smarco:WFA2-lib:cf3eb92:wfa2/biodiff-wfa2-sys/WFA2-lib
 
-CARGO_CRATES=	ahash-0.8.3 \
-		aho-corasick-0.7.20 \
-		anyhow-1.0.69 \
+CARGO_CRATES=	ahash-0.8.11 \
+		aho-corasick-1.1.3 \
+		anstream-0.6.13 \
+		anstyle-1.0.6 \
+		anstyle-parse-0.2.3 \
+		anstyle-query-1.0.2 \
+		anstyle-wincon-3.0.2 \
+		anyhow-1.0.82 \
 		approx-0.5.1 \
-		autocfg-1.1.0 \
-		bio-1.1.0 \
-		bio-types-0.13.0 \
+		autocfg-1.2.0 \
+		bio-1.6.0 \
+		bio-types-1.0.1 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
-		bstr-0.2.17 \
+		bitflags-2.5.0 \
 		bv-0.11.1 \
-		bytecount-0.6.3 \
-		bytemuck-1.13.0 \
-		byteorder-1.4.3 \
+		bytecount-0.6.7 \
+		bytemuck-1.15.0 \
+		byteorder-1.5.0 \
+		cc-1.0.92 \
 		cfg-if-1.0.0 \
-		crossbeam-channel-0.5.6 \
-		crossbeam-utils-0.8.14 \
+		clap-4.5.4 \
+		clap_builder-4.5.2 \
+		clap_derive-4.5.4 \
+		clap_lex-0.7.0 \
+		cmake-0.1.50 \
+		colorchoice-1.0.0 \
+		content_inspector-0.2.4 \
+		crossbeam-channel-0.5.12 \
+		crossbeam-deque-0.8.5 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.19 \
 		crossterm-0.25.0 \
-		crossterm_winapi-0.9.0 \
-		csv-1.1.6 \
-		csv-core-0.1.10 \
+		crossterm_winapi-0.9.1 \
+		csv-1.3.0 \
+		csv-core-0.1.11 \
 		cursive-0.20.0 \
 		cursive_buffered_backend-0.6.1 \
 		cursive_core-0.3.7 \
 		custom_derive-0.1.7 \
-		darling-0.14.3 \
-		darling_core-0.14.3 \
-		darling_macro-0.14.3 \
+		darling-0.20.8 \
+		darling_core-0.20.8 \
+		darling_macro-0.20.8 \
+		deranged-0.3.11 \
 		derive-new-0.5.9 \
-		dirs-4.0.0 \
-		dirs-sys-0.3.7 \
-		either-1.8.1 \
-		enum-map-1.1.1 \
-		enum-map-2.4.2 \
-		enum-map-derive-0.6.0 \
-		enum-map-derive-0.11.0 \
-		enumset-1.0.12 \
-		enumset_derive-0.6.1 \
+		dirs-5.0.1 \
+		dirs-sys-0.4.1 \
+		dunce-1.0.4 \
+		editdistancek-1.0.2 \
+		either-1.10.0 \
+		enum-map-2.7.3 \
+		enum-map-derive-0.17.0 \
+		enumset-1.1.3 \
+		enumset_derive-0.8.1 \
+		equivalent-1.0.1 \
+		errno-0.3.8 \
+		fastrand-2.0.2 \
 		feature-probe-0.1.1 \
+		filetime-0.2.23 \
 		fixedbitset-0.4.2 \
 		fnv-1.0.7 \
 		fxhash-0.2.1 \
-		getrandom-0.2.8 \
-		getset-0.1.2 \
-		hashbrown-0.12.3 \
+		getrandom-0.2.14 \
+		glob-0.3.1 \
+		hashbrown-0.14.3 \
 		heck-0.4.1 \
+		heck-0.5.0 \
 		hex-0.4.3 \
+		humantime-2.1.0 \
+		humantime-serde-1.1.1 \
 		ident_case-1.0.1 \
-		indexmap-1.9.2 \
-		itertools-0.10.5 \
+		indexmap-2.2.6 \
+		itertools-0.11.0 \
 		itertools-num-0.1.3 \
-		itoa-0.4.8 \
-		itoa-1.0.5 \
+		itoa-1.0.11 \
 		lazy_static-1.4.0 \
-		libc-0.2.139 \
-		libm-0.2.6 \
-		lock_api-0.4.9 \
-		log-0.4.17 \
-		matrixmultiply-0.3.2 \
-		memchr-2.5.0 \
-		memmap2-0.5.8 \
-		mio-0.8.5 \
-		multimap-0.8.3 \
+		libc-0.2.153 \
+		libm-0.2.8 \
+		libredox-0.1.3 \
+		linux-raw-sys-0.4.13 \
+		lock_api-0.4.11 \
+		log-0.4.21 \
+		matrixmultiply-0.3.8 \
+		memchr-2.7.2 \
+		mio-0.8.11 \
+		multimap-0.9.1 \
 		nalgebra-0.29.0 \
 		nalgebra-macros-0.1.0 \
 		ndarray-0.15.6 \
 		newtype_derive-0.1.6 \
-		num-0.4.0 \
-		num-complex-0.4.3 \
-		num-integer-0.1.45 \
-		num-iter-0.1.43 \
+		normalize-line-endings-0.3.0 \
+		num-0.4.1 \
+		num-complex-0.4.5 \
+		num-conv-0.1.0 \
+		num-integer-0.1.46 \
+		num-iter-0.1.44 \
 		num-rational-0.4.1 \
-		num-traits-0.2.15 \
-		num_threads-0.1.6 \
-		once_cell-1.17.0 \
-		ordered-float-3.4.0 \
+		num-traits-0.2.18 \
+		num_threads-0.1.7 \
+		once_cell-1.19.0 \
+		option-ext-0.2.0 \
+		ordered-float-3.9.2 \
+		os_pipe-1.1.5 \
 		owning_ref-0.4.1 \
 		parking_lot-0.12.1 \
-		parking_lot_core-0.9.7 \
-		paste-1.0.11 \
-		petgraph-0.6.3 \
+		parking_lot_core-0.9.9 \
+		paste-1.0.14 \
+		petgraph-0.6.4 \
+		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
 		primal-check-0.3.3 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.51 \
-		quote-1.0.23 \
+		proc-macro2-1.0.79 \
+		quote-1.0.36 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		rand_distr-0.4.3 \
 		rawpointer-0.2.1 \
-		realfft-3.2.0 \
-		redox_syscall-0.2.16 \
-		redox_users-0.4.3 \
-		regex-1.7.1 \
-		regex-automata-0.1.10 \
-		regex-syntax-0.6.28 \
+		rayon-1.10.0 \
+		rayon-core-1.12.1 \
+		realfft-3.3.0 \
+		redox_syscall-0.4.1 \
+		redox_users-0.4.5 \
+		regex-1.10.4 \
+		regex-automata-0.4.6 \
+		regex-syntax-0.8.3 \
 		rustc_version-0.1.7 \
-		rustfft-6.1.0 \
-		rustversion-1.0.11 \
-		ryu-1.0.12 \
-		safe_arch-0.6.0 \
-		scopeguard-1.1.0 \
+		rustfft-6.2.0 \
+		rustix-0.38.32 \
+		rustversion-1.0.15 \
+		ryu-1.0.17 \
+		safe_arch-0.7.1 \
+		same-file-1.0.6 \
+		scopeguard-1.2.0 \
 		semver-0.1.20 \
-		serde-1.0.152 \
-		serde_derive-1.0.152 \
-		serde_json-1.0.93 \
-		signal-hook-0.3.14 \
+		serde-1.0.197 \
+		serde_derive-1.0.197 \
+		serde_json-1.0.115 \
+		serde_spanned-0.6.5 \
+		shlex-1.3.0 \
+		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.3 \
-		signal-hook-registry-1.4.0 \
+		signal-hook-registry-1.4.1 \
 		simba-0.6.0 \
-		smallvec-1.10.0 \
+		similar-2.5.0 \
+		smallvec-1.13.2 \
+		snapbox-0.5.9 \
+		snapbox-macros-0.3.8 \
 		stable_deref_trait-1.2.0 \
 		statrs-0.16.0 \
 		strength_reduce-0.2.4 \
-		strum-0.24.1 \
-		strum_macros-0.24.3 \
-		syn-1.0.107 \
-		thiserror-1.0.38 \
-		thiserror-impl-1.0.38 \
-		time-0.3.17 \
-		time-core-0.1.0 \
-		time-macros-0.2.6 \
-		transpose-0.2.2 \
+		strum-0.25.0 \
+		strum_macros-0.25.3 \
+		syn-1.0.109 \
+		syn-2.0.58 \
+		tempfile-3.10.1 \
+		thiserror-1.0.58 \
+		thiserror-impl-1.0.58 \
+		time-0.3.35 \
+		time-core-0.1.2 \
+		time-macros-0.2.18 \
+		toml_datetime-0.6.5 \
+		toml_edit-0.22.12 \
+		transpose-0.2.3 \
 		triple_accel-0.4.0 \
-		typenum-1.16.0 \
-		unicode-ident-1.0.6 \
-		unicode-segmentation-1.10.1 \
-		unicode-width-0.1.10 \
+		trycmd-0.15.1 \
+		typenum-1.17.0 \
+		unicode-ident-1.0.12 \
+		unicode-segmentation-1.11.0 \
+		unicode-width-0.1.11 \
+		utf8parse-0.2.1 \
 		vec_map-0.8.2 \
 		version_check-0.9.4 \
+		wait-timeout-0.2.0 \
+		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wide-0.7.6 \
+		wide-0.7.15 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.42.0 \
-		windows-sys-0.45.0 \
-		windows-targets-0.42.1 \
-		windows_aarch64_gnullvm-0.42.1 \
-		windows_aarch64_msvc-0.42.1 \
-		windows_i686_gnu-0.42.1 \
-		windows_i686_msvc-0.42.1 \
-		windows_x86_64_gnu-0.42.1 \
-		windows_x86_64_gnullvm-0.42.1 \
-		windows_x86_64_msvc-0.42.1 \
-		xi-unicode-0.3.0
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.4 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.4 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.4 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.4 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.4 \
+		winnow-0.6.6 \
+		xi-unicode-0.3.0 \
+		zerocopy-0.7.32 \
+		zerocopy-derive-0.7.32
 
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/git-biodiff
