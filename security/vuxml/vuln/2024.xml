@@ -1,3 +1,50 @@
+  <vuln vid="304d92c3-00c5-11ef-bd52-080027bff743">
+	<topic>sdl2_sound -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>sdl2_sound</name>
+	<range><lt>2.0.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GitHub Security Lab reports:</p>
+	<blockquote cite="https://securitylab.github.com/advisories/GHSL-2023-145_GHSL-2023-151_stb_image_h/">
+	  <p>stb_image.h and stb_vorbis libraries contain several memory access violations of different severity</p>
+	  <ol>
+		<li>Wild address read in stbi__gif_load_next (GHSL-2023-145).</li>
+		<li>Multi-byte read heap buffer overflow in stbi__vertical_flip (GHSL-2023-146).</li>
+		<li>Disclosure of uninitialized memory in stbi__tga_load (GHSL-2023-147).</li>
+		<li>Double-free in stbi__load_gif_main_outofmem (GHSL-2023-148).</li>
+		<li>Null pointer dereference in stbi__convert_format (GHSL-2023-149).</li>
+		<li>Possible double-free or memory leak in stbi__load_gif_main (GHSL-2023-150).</li>
+		<li>Null pointer dereference because of an uninitialized variable (GHSL-2023-151).</li>
+		<li>0 byte write heap buffer overflow in start_decoder (GHSL-2023-165)</li>
+		<li>Multi-byte write heap buffer overflow in start_decoder (GHSL-2023-166)</li>
+		<li>Heap buffer out of bounds write in start_decoder (GHSL-2023-167)</li>
+		<li>Off-by-one heap buffer write in start_decoder (GHSL-2023-168)</li>
+		<li>Attempt to free an uninitialized memory pointer in vorbis_deinit (GHSL-2023-169)</li>
+		<li>Null pointer dereference in vorbis_deinit (GHSL-2023-170)</li>
+		<li>Out of bounds heap buffer write (GHSL-2023-171)</li>
+		<li>Wild address read in vorbis_decode_packet_rest (GHSL-2023-172)</li>
+	  </ol>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-45676</cvename>
+      <cvename>CVE-2023-45677</cvename>
+      <cvename>CVE-2023-45680</cvename>
+      <cvename>CVE-2023-45681</cvename>
+      <cvename>CVE-2023-45682</cvename>
+	  <url>https://securitylab.github.com/advisories/GHSL-2023-145_GHSL-2023-151_stb_image_h/</url>
+    </references>
+    <dates>
+      <discovery>2023-10-20</discovery>
+      <entry>2024-04-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9bed230f-ffc8-11ee-8e76-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
