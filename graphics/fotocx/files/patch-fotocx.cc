@@ -20,7 +20,7 @@
     if (fid) {
        pp = fgets(buff,200,fid);                                                  //  get CPU threads supported
        pclose(fid);
-       if (pp && strmatchN(pp,"CPU(s):",7)) NSMP = atoi(pp+8);                    //  default: 2 per P-core + 1 per E-core
+       if (pp && strmatchN(pp,"CPU(s):",7)) NSMP = atoi(pp+8);                    //  P-cores + E-cores
     }
 +#endif
     if (NSMP < 1) {                                                               //  23.80
