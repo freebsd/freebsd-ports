@@ -1,6 +1,6 @@
 PORTNAME=	clipcat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.6
+DISTVERSION=	0.17.0
 CATEGORIES=	x11
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -339,9 +339,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
 		semver-1.0.22 \
-		serde-1.0.197 \
-		serde_derive-1.0.197 \
-		serde_json-1.0.115 \
+		serde-1.0.198 \
+		serde_derive-1.0.198 \
+		serde_json-1.0.116 \
 		serde_path_to_error-0.1.16 \
 		serde_repr-0.1.19 \
 		serde_spanned-0.6.5 \
