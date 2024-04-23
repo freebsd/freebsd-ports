@@ -485,6 +485,8 @@
 %%DATADIR%%/docs/plugins/development/templates.md
 %%DATADIR%%/docs/plugins/development/views.md
 %%DATADIR%%/docs/plugins/index.md
+%%DATADIR%%/docs/plugins/installation.md
+%%DATADIR%%/docs/plugins/removal.md
 %%DATADIR%%/docs/reference/conditions.md
 %%DATADIR%%/docs/reference/filtering.md
 %%DATADIR%%/docs/reference/markdown.md
@@ -1033,6 +1035,7 @@
 %%DATADIR%%/templates/dcim/inventoryitem_bulk_delete.html
 %%DATADIR%%/templates/dcim/inventoryitem_edit.html
 %%DATADIR%%/templates/dcim/inventoryitemrole.html
+%%DATADIR%%/templates/dcim/inventoryitemtemplate_edit.html
 %%DATADIR%%/templates/dcim/location.html
 %%DATADIR%%/templates/dcim/manufacturer.html
 %%DATADIR%%/templates/dcim/module.html
