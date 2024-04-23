@@ -1,6 +1,6 @@
---- components/signin/public/base/signin_switches.cc.orig	2024-03-22 14:16:19 UTC
+--- components/signin/public/base/signin_switches.cc.orig	2024-04-23 07:42:17 UTC
 +++ components/signin/public/base/signin_switches.cc
-@@ -121,7 +121,7 @@ bool IsExplicitBrowserSigninUIOnDesktopEnabled(
+@@ -126,7 +126,7 @@ bool IsExplicitBrowserSigninUIOnDesktopEnabled(
  }
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \
@@ -9,7 +9,7 @@
  BASE_FEATURE(kMinorModeRestrictionsForHistorySyncOptIn,
               "MinorModeRestrictionsForHistorySyncOptIn",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -130,7 +130,7 @@ constexpr int kMinorModeRestrictionsFetchDeadlineDefau
+@@ -135,7 +135,7 @@ constexpr int kMinorModeRestrictionsFetchDeadlineDefau
  #if BUILDFLAG(IS_ANDROID)
      // Based on Signin.AccountCapabilities.UserVisibleLatency
      400;

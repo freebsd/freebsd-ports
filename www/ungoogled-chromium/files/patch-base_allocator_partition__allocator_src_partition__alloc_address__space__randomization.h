@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/address_space_randomization.h.orig	2024-02-25 20:22:18 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/address_space_randomization.h.orig	2024-04-23 07:42:17 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/address_space_randomization.h
 @@ -38,7 +38,7 @@ AslrMask(uintptr_t bits) {
  
@@ -9,7 +9,7 @@
  
      // We shouldn't allocate system pages at all for sanitizer builds. However,
      // we do, and if random hint addresses interfere with address ranges
-@@ -126,7 +126,7 @@ AslrMask(uintptr_t bits) {
+@@ -128,7 +128,7 @@ AslrMask(uintptr_t bits) {
          return AslrAddress(0x20000000ULL);
        }
  

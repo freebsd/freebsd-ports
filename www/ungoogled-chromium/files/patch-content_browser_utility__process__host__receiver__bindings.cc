@@ -1,4 +1,4 @@
---- content/browser/utility_process_host_receiver_bindings.cc.orig	2024-02-25 20:22:18 UTC
+--- content/browser/utility_process_host_receiver_bindings.cc.orig	2024-04-23 07:42:17 UTC
 +++ content/browser/utility_process_host_receiver_bindings.cc
 @@ -10,12 +10,12 @@
  #include "content/public/browser/content_browser_client.h"
@@ -28,6 +28,6 @@
  #endif
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
-   if (auto gpu_receiver = receiver.As<viz::mojom::Gpu>()) {
-     gpu_client_ =
-         content::CreateGpuClient(std::move(gpu_receiver), base::DoNothing());
+   if (allowed_gpu_) {
+     // TODO(crbug.com/328099369) Remove once all clients get this directly.
+     if (auto gpu_receiver = receiver.As<viz::mojom::Gpu>()) {

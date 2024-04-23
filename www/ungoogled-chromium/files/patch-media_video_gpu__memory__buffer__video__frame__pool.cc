@@ -1,4 +1,4 @@
---- media/video/gpu_memory_buffer_video_frame_pool.cc.orig	2024-03-22 14:16:19 UTC
+--- media/video/gpu_memory_buffer_video_frame_pool.cc.orig	2024-04-23 07:42:17 UTC
 +++ media/video/gpu_memory_buffer_video_frame_pool.cc
 @@ -803,7 +803,7 @@ void GpuMemoryBufferVideoFramePool::PoolImpl::CreateHa
    }
@@ -18,7 +18,7 @@
      is_webgpu_compatible = (gpu_memory_buffer != nullptr);
      if (is_webgpu_compatible) {
        is_webgpu_compatible &=
-@@ -1307,7 +1307,7 @@ scoped_refptr<VideoFrame> GpuMemoryBufferVideoFramePoo
+@@ -1306,7 +1306,7 @@ scoped_refptr<VideoFrame> GpuMemoryBufferVideoFramePoo
                         gpu::SHARED_IMAGE_USAGE_DISPLAY_READ |
                         gpu::SHARED_IMAGE_USAGE_SCANOUT;
  

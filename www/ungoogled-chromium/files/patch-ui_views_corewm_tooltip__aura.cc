@@ -1,6 +1,6 @@
---- ui/views/corewm/tooltip_aura.cc.orig	2023-05-05 12:12:41 UTC
+--- ui/views/corewm/tooltip_aura.cc.orig	2024-04-23 07:42:17 UTC
 +++ ui/views/corewm/tooltip_aura.cc
-@@ -38,7 +38,7 @@ namespace {
+@@ -36,7 +36,7 @@ namespace {
  bool CanUseTranslucentTooltipWidget() {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

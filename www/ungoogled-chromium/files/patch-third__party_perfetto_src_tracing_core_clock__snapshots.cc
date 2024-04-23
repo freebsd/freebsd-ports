@@ -1,7 +1,7 @@
---- third_party/perfetto/src/tracing/service/tracing_service_impl.cc.orig	2024-03-22 14:16:19 UTC
-+++ third_party/perfetto/src/tracing/service/tracing_service_impl.cc
-@@ -3275,7 +3275,8 @@ bool TracingServiceImpl::SnapshotClocks(
- 
+--- third_party/perfetto/src/tracing/core/clock_snapshots.cc.orig	2024-04-23 07:42:17 UTC
++++ third_party/perfetto/src/tracing/core/clock_snapshots.cc
+@@ -26,7 +26,8 @@ ClockSnapshotVector CaptureClockSnapshots() {
+   ClockSnapshotVector snapshot_data;
  #if !PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE) && \
      !PERFETTO_BUILDFLAG(PERFETTO_OS_WIN) &&   \
 -    !PERFETTO_BUILDFLAG(PERFETTO_OS_NACL)

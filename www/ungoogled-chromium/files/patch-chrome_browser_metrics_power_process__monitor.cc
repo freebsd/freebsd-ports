@@ -1,7 +1,7 @@
---- chrome/browser/metrics/power/process_monitor.cc.orig	2023-12-23 12:33:28 UTC
+--- chrome/browser/metrics/power/process_monitor.cc.orig	2024-04-23 07:42:17 UTC
 +++ chrome/browser/metrics/power/process_monitor.cc
-@@ -65,7 +65,7 @@ ProcessMonitor::Metrics SampleMetrics(base::ProcessMet
- #endif
+@@ -61,7 +61,7 @@ ProcessMonitor::Metrics SampleMetrics(base::ProcessMet
+   metrics.cpu_usage = process_metrics.GetPlatformIndependentCPUUsage();
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
 -    BUILDFLAG(IS_AIX)
@@ -9,8 +9,8 @@
    metrics.idle_wakeups = process_metrics.GetIdleWakeupsPerSecond();
  #endif
  #if BUILDFLAG(IS_MAC)
-@@ -81,7 +81,7 @@ void ScaleMetrics(ProcessMonitor::Metrics* metrics, do
-   metrics->cpu_usage *= factor;
+@@ -79,7 +79,7 @@ void ScaleMetrics(ProcessMonitor::Metrics* metrics, do
+   }
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
 -    BUILDFLAG(IS_AIX)
@@ -18,8 +18,8 @@
    metrics->idle_wakeups *= factor;
  #endif
  
-@@ -172,7 +172,7 @@ ProcessMonitor::Metrics& operator+=(ProcessMonitor::Me
-   lhs.cpu_usage += rhs.cpu_usage;
+@@ -167,7 +167,7 @@ ProcessMonitor::Metrics& operator+=(ProcessMonitor::Me
+   }
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
 -    BUILDFLAG(IS_AIX)

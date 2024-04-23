@@ -1,4 +1,4 @@
---- content/browser/browser_child_process_host_impl.h.orig	2024-02-25 20:22:18 UTC
+--- content/browser/browser_child_process_host_impl.h.orig	2024-04-23 07:42:17 UTC
 +++ content/browser/browser_child_process_host_impl.h
 @@ -34,7 +34,7 @@
  #include "base/win/object_watcher.h"
@@ -9,7 +9,7 @@
  #include "content/browser/child_thread_type_switcher_linux.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
-@@ -264,7 +264,7 @@ class BrowserChildProcessHostImpl
+@@ -266,7 +266,7 @@ class BrowserChildProcessHostImpl
    std::unique_ptr<tracing::SystemTracingService> system_tracing_service_;
  #endif
  
