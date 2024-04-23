@@ -83,7 +83,11 @@ USE_GCC=	yes
 USE_GCC=	yes
 .endif
 
+.if ${ARCH} == i386
+LANGUAGES:=	c,c++,objc,fortran
+.else
 LANGUAGES:=	c,c++,objc,fortran,jit
+.endif
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 TARGLIB32=	${PREFIX}/lib32	# The version information is added later
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
