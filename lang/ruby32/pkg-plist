@@ -10161,6 +10161,7 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Store/main%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Store/main-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Store/make_variable_map-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/RDoc/Store/marshal_load-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Store/method_file-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Store/module_names-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/RDoc/Store/modules_hash-i.ri
