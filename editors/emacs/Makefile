@@ -1,6 +1,6 @@
 PORTNAME=	emacs
 DISTVERSION=	29.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	editors
 MASTER_SITES=	GNU
@@ -15,20 +15,23 @@ COMMENT=	GNU editing macros ${COMMENT_${FLAVOR}}
 WWW=		https://www.gnu.org/software/emacs/
 COMMENT_nox=	(No X flavor)
 COMMENT_canna=	(Canna Japanese input flavor)
+COMMENT_wayland=	(Wayland flavor)
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-FLAVORS=			full canna nox
+FLAVORS=			full canna nox wayland
 canna_PKGNAMESUFFIX=		-canna
 canna_LIB_DEPENDS=		libcanna.so:japanese/canna-lib
-canna_CONFLICTS_INSTALL=	emacs emacs-nox
+canna_CONFLICTS_INSTALL=	emacs emacs-nox emacs-wayland
 canna_DESCR=			${.CURDIR}/pkg-descr-canna
-full_CONFLICTS_INSTALL=		emacs-canna emacs-nox
+full_CONFLICTS_INSTALL=		emacs-canna emacs-nox emacs-wayland
 nox_PKGNAMESUFFIX=		-nox
-nox_CONFLICTS_INSTALL=		emacs emacs-canna
+nox_CONFLICTS_INSTALL=		emacs emacs-canna emacs-wayland
+wayland_PKGNAMESUFFIX=		-wayland
+wayland_CONFLICTS_INSTALL=	emacs emacs-canna emacs-nox
 
 USES=		cpe gmake localbase:ldflags ncurses pkgconfig tar:xz
 CPE_VENDOR=	gnu
@@ -42,8 +45,7 @@ CONFIGURE_ARGS=		--disable-build-details \
 			--without-selinux
 .if ${FLAVOR:U} == canna
 CONFIGURE_ARGS+=	--with-canna
-.endif
-.if ${FLAVOR:U} == nox
+.elif ${FLAVOR:U} == nox
 CONFIGURE_ARGS+=	--with-sound=no \
 			--with-x-toolkit=no \
 			--without-cairo \
@@ -66,6 +68,8 @@ CONFIGURE_ARGS+=	--with-sound=no \
 			--without-xim \
 			--without-xpm \
 			--without-xwidgets
+.elif ${FLAVOR:U} == wayland
+CONFIGURE_ARGS+=	--without-x
 .else
 CONFIGURE_ARGS+=	--with-x
 .endif
@@ -102,16 +106,21 @@ OPTIONS_DEFINE=			ACL DBUS GNUTLS GSETTINGS HARFBUZZ JSON LCMS2 \
 				XFT XIM XML XWIDGETS
 OPTIONS_DEFAULT=		ACL CAIRO DBUS GIF GNUTLS GSETTINGS GTK3 \
 				HARFBUZZ JPEG JSON KQUEUE LCMS2 MAILUTILS \
-				MODULES OSS SCROLLBARS SOURCES SQLITE3 SVG \
-				THREADS TIFF TREESITTER WEBP XML
+				MODULES OSS PNG SCROLLBARS SOURCES SQLITE3 SVG \
+				THREADS TIFF TREESITTER WEBP XIM XML
 OPTIONS_GROUP=			GRAPHICS
 OPTIONS_GROUP_GRAPHICS=		CAIRO GIF JPEG MAGICK PNG SVG TIFF WEBP XPM
 OPTIONS_RADIO=			FILENOTIFY SOUND X11TOOLKIT
 OPTIONS_RADIO_FILENOTIFY=	GFILE KQUEUE
 OPTIONS_RADIO_SOUND=		ALSA OSS
 OPTIONS_RADIO_X11TOOLKIT=	GTK2 GTK3 MOTIF XAW XAW3D
-.if ${FLAVOR:U} == nox
-OPTIONS_EXCLUDE=		ALSA CAIRO DBUS GFILE GIF GSETTINGS GTK2 GTK3 \
+.if ${FLAVOR:U} == wayland
+OPTIONS_EXCLUDE+=		GTK2 MOTIF XAW XAW3D XIM ${PGTK_PREVENTS} \
+				${PGTK_IMPLIES:@i@${${i}_PREVENTS}@}
+OPTIONS_SLAVE+=			PGTK ${PGTK_IMPLIES} \
+				${PGTK_IMPLIES:@i@${${i}_IMPLIES}@}
+.elif ${FLAVOR:U} == nox
+OPTIONS_EXCLUDE+=		ALSA CAIRO DBUS GFILE GIF GSETTINGS GTK2 GTK3 \
 				HARFBUZZ JPEG LCMS2 M17N MAGICK MOTIF OSS OTF \
 				PGTK PNG SCROLLBARS SVG TIFF WEBP XAW XAW3D XFT \
 				XIM XPM XWIDGETS
