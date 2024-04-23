@@ -1,6 +1,6 @@
---- third_party/blink/common/renderer_preferences/renderer_preferences_mojom_traits.cc.orig	2024-02-03 15:42:55 UTC
+--- third_party/blink/common/renderer_preferences/renderer_preferences_mojom_traits.cc.orig	2024-04-23 07:42:17 UTC
 +++ third_party/blink/common/renderer_preferences/renderer_preferences_mojom_traits.cc
-@@ -63,7 +63,7 @@ bool StructTraits<blink::mojom::RendererPreferencesDat
+@@ -68,7 +68,7 @@ bool StructTraits<blink::mojom::RendererPreferencesDat
  
    out->send_subresource_notification = data.send_subresource_notification();
  

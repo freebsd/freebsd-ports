@@ -1,6 +1,6 @@
---- ui/compositor/compositor.h.orig	2024-02-25 20:22:18 UTC
+--- ui/compositor/compositor.h.orig	2024-04-23 07:42:17 UTC
 +++ ui/compositor/compositor.h
-@@ -461,7 +461,7 @@ class COMPOSITOR_EXPORT Compositor : public base::Powe
+@@ -455,7 +455,7 @@ class COMPOSITOR_EXPORT Compositor : public base::Powe
    // base::PowerSuspendObserver:
    void OnResume() override;
  

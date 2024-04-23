@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.h.orig	2024-03-22 14:16:19 UTC
+--- components/feature_engagement/public/feature_constants.h.orig	2024-04-23 07:42:17 UTC
 +++ components/feature_engagement/public/feature_constants.h
 @@ -20,7 +20,7 @@ BASE_DECLARE_FEATURE(kIPHDemoMode);
  BASE_DECLARE_FEATURE(kIPHDummyFeature);
@@ -9,7 +9,7 @@
  BASE_DECLARE_FEATURE(kIPHBatterySaverModeFeature);
  BASE_DECLARE_FEATURE(kIPHCompanionSidePanelFeature);
  BASE_DECLARE_FEATURE(kIPHCompanionSidePanelRegionSearchFeature);
-@@ -255,7 +255,7 @@ extern const char kGestureInProductHelpDaysBetweenOccu
+@@ -244,7 +244,7 @@ BASE_DECLARE_FEATURE(kDefaultBrowserTriggerCriteriaExp
  
  #endif  // BUILDFLAG(IS_IOS)
  
@@ -17,8 +17,8 @@
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || \
      BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
  BASE_DECLARE_FEATURE(kIPHAutofillExternalAccountProfileSuggestionFeature);
- BASE_DECLARE_FEATURE(kIPHAutofillVirtualCardCVCSuggestionFeature);
-@@ -303,7 +303,7 @@ BASE_DECLARE_FEATURE(kIPHScalableIphHelpAppBasedTenFea
+ BASE_DECLARE_FEATURE(kIPHAutofillManualFallbackFeature);
+@@ -293,7 +293,7 @@ BASE_DECLARE_FEATURE(kIPHScalableIphHelpAppBasedTenFea
  BASE_DECLARE_FEATURE(kIPHScalableIphGamingFeature);
  #endif
  

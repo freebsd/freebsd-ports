@@ -1,6 +1,6 @@
---- third_party/skia/src/base/SkContainers.cpp.orig	2023-03-10 11:01:21 UTC
-+++ third_party/skia/src/base/SkContainers.cpp
-@@ -14,7 +14,7 @@
+--- third_party/skia/src/ports/SkMemory_malloc.cpp.orig	2024-04-23 07:42:17 UTC
++++ third_party/skia/src/ports/SkMemory_malloc.cpp
+@@ -15,7 +15,7 @@
  
  #if defined(SK_BUILD_FOR_MAC) || defined(SK_BUILD_FOR_IOS)
  #include <malloc/malloc.h>
@@ -9,12 +9,12 @@
  #include <malloc.h>
  #elif defined(SK_BUILD_FOR_WIN)
  #include <malloc.h>
-@@ -38,7 +38,7 @@ SkSpan<std::byte> complete_size(void* ptr, size_t size
+@@ -126,7 +126,7 @@ size_t sk_malloc_size(void* addr, size_t size) {
      #elif defined(SK_BUILD_FOR_ANDROID) && __ANDROID_API__ >= 17
-         completeSize = malloc_usable_size(ptr);
+         completeSize = malloc_usable_size(addr);
          SkASSERT(completeSize >= size);
 -    #elif defined(SK_BUILD_FOR_UNIX)
 +    #elif defined(SK_BUILD_FOR_UNIX) && !defined(__OpenBSD__)
-         completeSize = malloc_usable_size(ptr);
+         completeSize = malloc_usable_size(addr);
          SkASSERT(completeSize >= size);
      #elif defined(SK_BUILD_FOR_WIN)

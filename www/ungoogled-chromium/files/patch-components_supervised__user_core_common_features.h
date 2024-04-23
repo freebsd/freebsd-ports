@@ -1,6 +1,6 @@
---- components/supervised_user/core/common/features.h.orig	2024-03-22 14:16:19 UTC
+--- components/supervised_user/core/common/features.h.orig	2024-04-23 07:42:17 UTC
 +++ components/supervised_user/core/common/features.h
-@@ -28,7 +28,7 @@ extern const base::FeatureParam<std::string> kManagedB
+@@ -23,7 +23,7 @@ BASE_DECLARE_FEATURE(kLocalWebApprovals);
  BASE_DECLARE_FEATURE(
      kEnableSupervisedUserSkipParentApprovalToInstallExtensions);
  

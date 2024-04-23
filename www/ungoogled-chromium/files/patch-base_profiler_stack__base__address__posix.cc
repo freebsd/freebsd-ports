@@ -1,4 +1,4 @@
---- base/profiler/stack_base_address_posix.cc.orig	2023-02-11 09:11:04 UTC
+--- base/profiler/stack_base_address_posix.cc.orig	2024-04-23 07:42:17 UTC
 +++ base/profiler/stack_base_address_posix.cc
 @@ -17,6 +17,10 @@
  #include "base/files/scoped_file.h"
@@ -11,7 +11,7 @@
  #if BUILDFLAG(IS_CHROMEOS)
  extern "C" void* __libc_stack_end;
  #endif
-@@ -45,7 +49,21 @@ absl::optional<uintptr_t> GetAndroidMainThreadStackBas
+@@ -45,7 +49,21 @@ std::optional<uintptr_t> GetAndroidMainThreadStackBase
  
  #if !BUILDFLAG(IS_LINUX)
  uintptr_t GetThreadStackBaseAddressImpl(pthread_t pthread_id) {
@@ -48,3 +48,12 @@
    const uintptr_t base_address = reinterpret_cast<uintptr_t>(address) + size;
    return base_address;
  }
+@@ -80,7 +100,7 @@ std::optional<uintptr_t> GetThreadStackBaseAddress(Pla
+   // trying to work around the problem.
+   return std::nullopt;
+ #else
+-  const bool is_main_thread = id == GetCurrentProcId();
++  const bool is_main_thread = id == checked_cast<PlatformThreadId>(GetCurrentProcId());
+   if (is_main_thread) {
+ #if BUILDFLAG(IS_ANDROID)
+     // The implementation of pthread_getattr_np() in Bionic reads proc/self/maps
