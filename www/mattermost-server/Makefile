@@ -1,11 +1,8 @@
 PORTNAME=	mattermost
-DISTVERSION=	8.1.11
-DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTVERSION=	8.1.12
 CATEGORIES=	www
-MASTER_SITES=	LOCAL/decke/${PORTNAME}-${DISTVERSIONFULL}/:gomod
+MASTER_SITES=	LOCAL/decke
 PKGNAMESUFFIX=	-server
-DISTFILES=	go.mod:gomod
 
 # implicit-approval+ for decke
 MAINTAINER=	bofh@FreeBSD.org
@@ -20,12 +17,9 @@ ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 		mattermost-webapp>=${PORTVERSION}:www/mattermost-webapp
 
-USES=		go:modules
-USE_GITHUB=	yes
-GH_ACCOUNT=	mattermost
+USES=		go:modules tar:xz
 USE_RC_SUBR=	mattermostd
 
-GO_MODULE=	github.com/mattermost/mattermost/server/v8
 GO_TARGET=	./cmd/mattermost ./scripts/config_generator
 GO_BUILDFLAGS=	-ldflags="-X github.com/mattermost/mattermost/server/public/model.BuildNumber=${PORTVERSION}"
 
@@ -37,9 +31,6 @@ MATTERMOSTD_GROUP=	mattermost
 
 USERS=		${MATTERMOSTD_USER}
 GROUPS=		${MATTERMOSTD_GROUP}
-
-post-extract:
-	@${RM} ${WRKSRC}/vendor/modules.txt
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/mattermost ${STAGEDIR}${PREFIX}/bin/mattermostd
