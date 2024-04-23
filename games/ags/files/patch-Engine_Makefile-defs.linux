@@ -1,7 +1,7 @@
---- Engine/Makefile-defs.linux.orig	2023-06-04 18:08:48 UTC
+--- Engine/Makefile-defs.linux.orig	2024-04-08 20:18:04 UTC
 +++ Engine/Makefile-defs.linux
 @@ -6,14 +6,14 @@ LIBDIR =
- INCDIR = ../Engine ../Common ../Common/libinclude ../Common/libsrc/alfont-2.0.9 ../Engine/libsrc/apeg-1.2.1/ ../libsrc/mojoAL ../Plugins ../Engine/libsrc/glad/include ../libsrc/glm $(ALLEGRO_SRCDIR)/include
+ INCDIR = ../Engine ../Common ../Common/libinclude ../Common/libsrc/alfont-2.0.9 ../Engine/libsrc/apeg-1.2.1/ ../libsrc/mojoAL ../Plugins ../Engine/libsrc/glad/include ../libsrc/miniz ../libsrc/glm $(ALLEGRO_SRCDIR)/include
  LIBDIR =
  
 -CFLAGS := -O2 -g \
@@ -11,13 +11,13 @@
      -Wno-unused-value  \
      -Werror=write-strings -Werror=format -Werror=format-security \
      -DNDEBUG \
-     -DALLEGRO_STATICLINK \
+     -DALLEGRO_STATICLINK -DAL_LIBTYPE_STATIC \
 -    -DLINUX_VERSION -DBUILTIN_PLUGINS -DHAVE_FSEEKO -DDISABLE_MPEG_AUDIO -DAGS_CASE_SENSITIVE_FILESYSTEM -DAGS_HAS_CD_AUDIO \
 +    -DLINUX_VERSION -DBUILTIN_PLUGINS -DHAVE_FSEEKO -DDISABLE_MPEG_AUDIO -DAGS_CASE_SENSITIVE_FILESYSTEM \
      -D_FILE_OFFSET_BITS=64 -DRTLD_NEXT \
      $(FT_CFLAGS) $(CFLAGS)
  
-@@ -58,7 +58,7 @@ BASE_PLATFORM = \
+@@ -61,7 +61,7 @@ BASE_PLATFORM = \
  endif
  
  BASE_PLATFORM = \
