@@ -1,3 +1,48 @@
+  <vuln vid="2ce1a2f1-0177-11ef-a45e-08002784c58d">
+    <topic>ruby -- Arbitrary memory address read vulnerability with Regex search</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<range><ge>3.1.0,1</ge><lt>3.1.5,1</lt></range>
+	<range><ge>3.2.0,1</ge><lt>3.2.4,1</lt></range>
+	<range><ge>3.3.0,1</ge><lt>3.3.1,1</lt></range>
+      </package>
+      <package>
+	<name>ruby31</name>
+	<range><ge>3.1.0,1</ge><lt>3.1.5,1</lt></range>
+      </package>
+      <package>
+	<name>ruby32</name>
+	<range><ge>3.2.0,1</ge><lt>3.2.4,1</lt></range>
+      </package>
+      <package>
+	<name>ruby33</name>
+	<range><ge>3.3.0,1</ge><lt>3.3.1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>sp2ip reports:</p>
+	<blockquote cite="https://www.ruby-lang.org/en/news/2024/04/23/arbitrary-memory-address-read-regexp-cve-2024-27282/">
+	  <p>
+	    If attacker-supplied data is provided to the Ruby regex
+	    compiler, it is possible to extract arbitrary heap data
+	    relative to the start of the text, including pointers and
+	    sensitive strings.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-27282</cvename>
+      <url>https://www.ruby-lang.org/en/news/2024/04/23/arbitrary-memory-address-read-regexp-cve-2024-27282/</url>
+    </references>
+    <dates>
+      <discovery>2024-04-23</discovery>
+      <entry>2024-04-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="304d92c3-00c5-11ef-bd52-080027bff743">
 	<topic>sdl2_sound -- multiple vulnerabilities</topic>
     <affects>
