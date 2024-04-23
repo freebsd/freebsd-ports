@@ -1,3 +1,106 @@
+  <vuln vid="bb49f1fa-00da-11ef-92b7-589cfc023192">
+    <topic>GLPI -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><lt>10.0.13,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GLPI team reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/releases/tag/10.0.13">
+	  <p>GLPI 10.0.13 Changelog</p>
+	  <ul>
+	    <li>[SECURITY - high] SQL Injection in through the search engine (CVE-2024-27096)</li>
+	    <li>[SECURITY - moderate] Blind SSRF using Arbitrary Object Instantiation (CVE-2024-27098)</li>
+	    <li>[SECURITY - moderate] Stored XSS in dashboards (CVE-2024-27104)</li>
+	    <li>[SECURITY - moderate] Reflected XSS in debug mode (CVE-2024-27914)</li>
+	    <li>[SECURITY - moderate] Sensitive fields access through dropdowns (CVE-2024-27930)</li>
+	    <li>[SECURITY - moderate] Users emails enumeration (CVE-2024-27937)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-27096</cvename>
+      <cvename>CVE-2024-27098</cvename>
+      <cvename>CVE-2024-27104</cvename>
+      <cvename>CVE-2024-27914</cvename>
+      <cvename>CVE-2024-27930</cvename>
+      <cvename>CVE-2024-27937</cvename>
+      <url>https://github.com/glpi-project/glpi/releases/tag/10.0.13</url>
+    </references>
+    <dates>
+      <discovery>2024-03-13</discovery>
+      <entry>2024-04-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="faccf131-00d9-11ef-92b7-589cfc023192">
+    <topic>GLPI -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><lt>10.0.12,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GLPI team reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/releases/tag/10.0.12">
+	  <p>GLPI 10.0.12 Changelog</p>
+	  <ul>
+	    <li>[SECURITY - moderate] Reflected XSS in reports pages (CVE-2024-23645)</li>
+	    <li>[SECURITY - moderate] LDAP Injection during authentication (CVE-2023-51446)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-23645</cvename>
+      <cvename>CVE-2023-51446</cvename>
+      <url>https://github.com/glpi-project/glpi/releases/tag/10.0.12</url>
+    </references>
+    <dates>
+      <discovery>2024-02-01</discovery>
+      <entry>2024-04-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ed688880-00c4-11ef-92b7-589cfc023192">
+    <topic>GLPI -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><lt>10.0.11,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GLPI team reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/releases/tag/10.0.11">
+	  <p>GLPI 10.0.11 Changelog</p>
+	  <ul>
+	    <li>[SECURITY - moderate] Authenticated SQL Injection (CVE-2023-43813)</li>
+	    <li>[SECURITY - high] SQL injection through inventory agent request (CVE-2023-46727)</li>
+	    <li>[SECURITY - high] Remote code execution from LDAP server configuration form on PHP 7.4 (CVE-2023-46726)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-43813</cvename>
+      <cvename>CVE-2023-46727</cvename>
+      <cvename>CVE-2023-46726</cvename>
+      <url>https://github.com/glpi-project/glpi/releases/tag/10.0.11</url>
+    </references>
+    <dates>
+      <discovery>2023-12-13</discovery>
+      <entry>2024-04-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2ce1a2f1-0177-11ef-a45e-08002784c58d">
     <topic>ruby -- Arbitrary memory address read vulnerability with Regex search</topic>
     <affects>
