@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# PROVIDE: gunicorn
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable gunicorn:
+#  gunicorn_enable (bool):    Set to "NO" by default.
+#                       Set it to "YES" to enable gunicorn.
+#
+
+. /etc/rc.subr
+
+name=gunicorn
+rcvar=gunicorn_enable
+
+# set defaults
+
+load_rc_config $name
+
+: ${gunicorn_enable:=NO}
+: ${gunicorn_config=%%PREFIX%%/gunicorn/gunicorn.conf.py}
+: ${gunicorn_user=%%USERS%%}
+: ${gunicorn_group=%%GROUPS%%}
+
+pidfile="/var/run/${name}.pid"
+command=/usr/sbin/daemon
+command_args="-P ${pidfile} -f -ST ${name} %%PREFIX%%/bin/gunicorn -c ${gunicorn_config}"
+required_files="${gunicorn_config}"
+start_precmd="gunicorn_precmd"
+
+gunicorn_precmd()
+{
+	install -o ${gunicorn_user} /dev/null ${pidfile}
+}
+
+run_rc_command "$1"
