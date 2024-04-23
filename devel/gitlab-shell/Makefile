@@ -38,17 +38,15 @@ DIST_SUBDIR=	go/${PKGORIGIN:S,/,_,g}/${DISTNAME}
 EXTRACT_ONLY+=	${DISTFILES:N*.mod\:*:N*.mod:C/:.*//}
 _USES_fetch+=	800:go-post-fetch
 go-post-fetch:
+	@${ECHO_MSG} "Copy go.mod as go mod download will modify it, which breaks checksum check"
+	@(cd ${DISTDIR}/${DIST_SUBDIR}; ${CP} go.mod go.mod.orig)
 	@${ECHO_MSG} "===> Fetching ${GO_MODNAME} dependencies";
 	@(cd ${DISTDIR}/${DIST_SUBDIR}; \
 		[ -e go.mod ] || ${RLN} ${GO_MODFILE} go.mod; \
 		${SETENV} ${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x all)
+	@${ECHO_MSG} "Restore previous go.mod"
+	@(cd ${DISTDIR}/${DIST_SUBDIR}; ${MV} go.mod.orig go.mod)
 # ---------------------------
-# WARNING, maybe bug in core ports framework (work fine in the past for very long time
-# For an unkown reason, the downloaded go.mod is modified and therefor the distinfo is generated wrongly
-# Execute this, to fix it:
-# curl -v https://gitlab.com/gitlab-org/gitlab-shell/-/raw/v14.35.0/go.mod 2>&1 | grep content-length
-# curl -v https://gitlab.com/gitlab-org/gitlab-shell/-/raw/v14.35.0/go.mod | sha256
-# Correct this in distinfo
 
 VARLOGDIR=	/var/log/gitlab-shell
 
