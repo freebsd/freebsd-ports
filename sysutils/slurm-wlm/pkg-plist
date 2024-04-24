@@ -48,6 +48,8 @@ lib/slurm/acct_gather_energy_rapl.so
 %%IPMI%%lib/slurm/acct_gather_energy_xcc.so
 lib/slurm/acct_gather_filesystem_lustre.a
 lib/slurm/acct_gather_filesystem_lustre.so
+lib/slurm/acct_gather_interconnect_ofed.a
+lib/slurm/acct_gather_interconnect_ofed.so
 lib/slurm/acct_gather_interconnect_sysfs.a
 lib/slurm/acct_gather_interconnect_sysfs.so
 %%CURL%%lib/slurm/acct_gather_profile_influxdb.a
