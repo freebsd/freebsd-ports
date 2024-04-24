@@ -39,7 +39,9 @@ QEMU_RUN_DEPENDS=	qemu-user-static>0:emulators/qemu-user-static
 # gmake is not strictly needed but handles test jobs better
 TEST_DEPENDS=	gmake>0:devel/gmake
 TEST_ENV=	MAKE=gmake
+.if make(test)
 MAKE_CMD=	gmake
+.endif
 TEST_TARGET=	check
 TEST_ARGS=	-s
 TEST_ARGS+=	${_MAKE_JOBS}
