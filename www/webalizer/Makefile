@@ -60,6 +60,7 @@ WEBALIZER_CONV_USES=		iconv
 WEBALIZER_CONV_CONFIGURE_ON=	--enable-mininls
 WEBALIZER_CONV_CPPFLAGS=	-I${LOCALBASE}/include
 WEBALIZER_CONV_LIBS=		-L${LOCALBASE}/lib ${ICONV_LIB}
+WEBALIZER_CONV_BROKEN=		no conversion from UTF-8 needed
 FULL_CGI_REFS_CFLAGS=		-DUSE_FULL_CGI_REFS
 CLICKABLE_REFERER_CFLAGS=	-DUSE_CLICKABLE_REFERER
 IP_AS_HOSTNAME_CFLAGS=		-DUSE_IP_AS_HOSTNAME
@@ -112,11 +113,6 @@ SUPP_LANG=	albanian arabic catalan chinese croatian czech danish dutch \
 
 .if defined(WEBALIZER_LANG)
 CONFIGURE_ARGS+=	--with-language=${WEBALIZER_LANG}
-#	The patch file is written by URASHIMA Akira
-#	see http://tyche.pu-toyama.ac.jp/~a-urasim/webalizer/
-.if ${WEBALIZER_LANG} == japanese
-EXTRA_PATCHES+=		${FILESDIR}/ja-webalizer.conf-dist.patch
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MWEBALIZER_CONV}
