@@ -127,6 +127,14 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Smtp/Exceptions/ResponseException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Smtp/Settings.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Smtp/SmtpClient.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/OAuth2/Client.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/OAuth2/GrantType/AuthorizationCode.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/OAuth2/GrantType/ClientCredentials.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/OAuth2/GrantType/IGrantType.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/OAuth2/GrantType/Password.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/OAuth2/GrantType/RefreshToken.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/OAuth2/LICENSE
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/OAuth2/README.md
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/Accounts.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/Admin.php
@@ -341,6 +349,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/gpg/pgpkeysettings.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/gpg/procpipes.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/gpg/smime.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/hibp.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/http/csp.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/http/exception.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/http/request.php
