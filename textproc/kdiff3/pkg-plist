@@ -1,6 +1,5 @@
 bin/kdiff3
 %%QT_PLUGINDIR%%/kf5/kfileitemaction/kdiff3fileitemaction.so
-%%QT_PLUGINDIR%%/kf5/parts/kdiff3part.so
 share/applications/org.kde.kdiff3.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ca/kdiff3/index.cache.bz2
 %%PORTDOCS%%%%DOCSDIR%%/ca/kdiff3/index.docbook
@@ -38,9 +37,6 @@ share/icons/hicolor/32x32/apps/kdiff3.png
 share/icons/hicolor/48x48/apps/kdiff3.png
 share/icons/hicolor/64x64/apps/kdiff3.png
 share/icons/hicolor/scalable/apps/kdiff3.svgz
-share/kservices5/kdiff3part.desktop
-share/kxmlgui5/kdiff3/kdiff3_shell.rc
-share/kxmlgui5/kdiff3part/kdiff3_part.rc
 share/locale/ar/LC_MESSAGES/kdiff3.mo
 share/locale/bg/LC_MESSAGES/diff_ext.mo
 share/locale/bg/LC_MESSAGES/kdiff3.mo

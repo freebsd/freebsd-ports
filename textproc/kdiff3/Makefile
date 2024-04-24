@@ -1,6 +1,5 @@
 PORTNAME=	kdiff3
-DISTVERSION=	1.10.7
-PORTREVISION=	1
+DISTVERSION=	1.11.0
 CATEGORIES=	textproc kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 
@@ -14,9 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
 
 USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz xorg
-USE_KDE=	auth codecs completion config configwidgets coreaddons \
-		crash i18n jobwidgets kio parts service solid sonnet \
-		textwidgets widgetsaddons windowsystem xmlgui \
+USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
+		i18n jobwidgets kio service solid widgetsaddons windowsystem \
+		xmlgui \
 		doctools:build ecm:build
 USE_QT=		concurrent core dbus gui network printsupport widgets xml \
 		buildtools:build qmake:build
