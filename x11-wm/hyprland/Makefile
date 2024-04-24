@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	1016faea53fd.patch:-p1 # https://github.com/swaywm/sway/pull/5090
+PATCHFILES+=	1016faea53fd.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/5653
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
