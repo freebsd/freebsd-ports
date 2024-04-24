@@ -1,3 +1,40 @@
+  <vuln vid="b857606c-0266-11ef-8681-001b217b3468">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>16.11.0</ge><lt>16.11.1</lt></range>
+	<range><ge>16.10.0</ge><lt>16.10.4</lt></range>
+	<range><ge>7.8.0</ge><lt>16.9.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/04/24/patch-release-gitlab-16-11-1-released/">
+	  <p>GitLab account takeover, under certain conditions, when using Bitbucket as an OAuth provider</p>
+	  <p>Path Traversal leads to DoS and Restricted File Read</p>
+	  <p>Unauthenticated ReDoS in FileFinder when using wildcard filters in project file search</p>
+	  <p>Personal Access Token scopes not honoured by GraphQL subscriptions</p>
+	  <p>Domain based restrictions bypass using a crafted email address</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-4024</cvename>
+      <cvename>CVE-2024-2434</cvename>
+      <cvename>CVE-2024-2829</cvename>
+      <cvename>CVE-2024-4006</cvename>
+      <cvename>CVE-2024-1347</cvename>
+      <url>https://about.gitlab.com/releases/2024/04/24/patch-release-gitlab-16-11-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-04-24</discovery>
+      <entry>2024-04-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bb49f1fa-00da-11ef-92b7-589cfc023192">
     <topic>GLPI -- multiple vulnerabilities</topic>
     <affects>
