@@ -1,0 +1,5 @@
+tgpt is a cross-platform command-line interface (CLI) tool that allows you to
+use AI chatbot in your Terminal without requiring API keys. It supports
+these providers: KoboldAI (koboldcpp/HF_SPACE_Tiefighter-13B),
+Phind (Phind Model), Llama2 (Llama 2 70b), Blackbox AI (Blackbox model)
+and OpenAI (All models, Requires API Key)
