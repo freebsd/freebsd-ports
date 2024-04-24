@@ -10,6 +10,8 @@ WWW=		https://github.com/hyprwm/hypridle
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		https://github.com/hyprwm/hypridle/issues/95
+
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libhyprutils.so:devel/hyprutils \

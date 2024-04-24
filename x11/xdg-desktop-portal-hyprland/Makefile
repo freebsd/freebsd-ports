@@ -10,6 +10,8 @@ WWW=		https://github.com/hyprwm/xdg-desktop-portal-hyprland
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build with sdbus-cpp 2.0.0
+
 BUILD_DEPENDS=	hyprutils>0:devel/hyprutils \
 		hyprwayland-scanner>=0.4.2:devel/hyprwayland-scanner \
 		wayland-protocols>=1.31:graphics/wayland-protocols
