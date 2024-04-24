@@ -503,7 +503,7 @@ pre-build:
 	${MV} ${LIBS_PREFIX}/lib/pkgconfig/libsodium.pc ${PKGCONFIG_LINKDIR}
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/cardano-db-sync-pgsql-setup ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/postgresql-setup.sh ${STAGEDIR}${PREFIX}/bin/cardano-db-sync-pgsql-setup
 	${MKDIR} ${STAGEDIR}${DATADIR}/schema
 	cd ${WRKSRC}/schema && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/schema
 
