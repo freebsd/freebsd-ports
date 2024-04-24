@@ -11,11 +11,13 @@
 # paperless_consumer_enable (bool):	Set to "NO" by default.
 #					Set it to "YES" to enable
 #					paperless_consumer
+# paperless_consumer_user (str):	Set to "paperless" by default.
+#					User to run consumer.
 # paperless_consumer_log_facility(str): Set to "daemon" by default.
 #					Consumer logging syslog facility.
 # paperless_consumer_log_priority(str): Set to "notice" by default.
 #					Consumer logging syslog priority.
-# paperless_consumer_log_tag(str):	Set to "paperless-consumer" by default.
+# paperless_consumer_log_tag (str):	Set to "paperless-consumer" by default.
 #					Consumer logging syslog tag.
 
 . /etc/rc.subr
@@ -23,7 +25,8 @@
 name="paperless_consumer"
 rcvar="${name}_enable"
 
-# Set defaults
+# read configuration and set defaults
+load_rc_config "$name"
 paperless_consumer_enable=${paperless_consumer_enable:-"NO"}
 paperless_consumer_daemon_user=${paperless_consumer_user:-"paperless"}
 paperless_consumer_log_facility=${paperless_consumer_log_facility:-"daemon"}
@@ -45,5 +48,4 @@ command_args="-cS -u ${paperless_consumer_daemon_user} \
 	-T ${paperless_consumer_log_tag} \
 	%%PREFIX%%/bin/paperless document_consumer"
 
-load_rc_config ${name}
 run_rc_command "$1"

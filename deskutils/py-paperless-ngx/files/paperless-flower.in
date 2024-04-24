@@ -10,11 +10,13 @@
 # paperless_flower_enable (bool):	Set to "NO" by default.
 #					Set it to "YES" to enable
 #					paperless_flower
-# paperless_flower_log_facility(str):	Set to "daemon" by default.
+# paperless_flower_user (str):		Set to "paperless" by default.
+#					User to run flower.
+# paperless_flower_log_facility (str):	Set to "daemon" by default.
 #					Flower logging syslog facility.
-# paperless_flower_log_priority(str):	Set to "notice" by default.
+# paperless_flower_log_priority (str):	Set to "notice" by default.
 #					Flower logging syslog priority.
-# paperless_flower_log_tag(str):	Set to "paperless-flower" by default.
+# paperless_flower_log_tag (str):	Set to "paperless-flower" by default.
 #					Flower logging syslog tag.
 
 . /etc/rc.subr
@@ -22,7 +24,8 @@
 name="paperless_flower"
 rcvar="${name}_enable"
 
-# Set defaults
+# read configuration and set defaults
+load_rc_config "$name"
 paperless_flower_enable=${paperless_flower_enable:-"NO"}
 paperless_flower_daemon_user=${paperless_flower_user:-"paperless"}
 paperless_flower_log_facility=${paperless_flower_log_facility:-"daemon"}
@@ -44,5 +47,4 @@ command_args="-cS -u ${paperless_flower_daemon_user} \
 	%%PREFIX%%/bin/celery \
 	--app paperless flower --url-prefix=flower --loglevel INFO"
 
-load_rc_config ${name}
 run_rc_command "$1"

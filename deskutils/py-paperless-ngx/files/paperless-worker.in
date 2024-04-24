@@ -11,11 +11,13 @@
 # paperless_worker_enable (bool):	Set to "NO" by default.
 #					Set it to "YES" to enable
 #					paperless_worker
-# paperless_worker_log_facility(str):	Set to "daemon" by default.
+# paperless_worker_user (str):		Set to "paperless" by default.
+#					User to run worker.
+# paperless_worker_log_facility (str):	Set to "daemon" by default.
 #					Worker logging syslog facility.
-# paperless_worker_log_priority(str):	Set to "notice" by default.
+# paperless_worker_log_priority (str):	Set to "notice" by default.
 #					Worker logging syslog priority.
-# paperless_worker_log_tag(str):	Set to "paperless-worker" by default.
+# paperless_worker_log_tag (str):	Set to "paperless-worker" by default.
 #					Worker logging syslog tag.
 
 . /etc/rc.subr
@@ -23,7 +25,8 @@
 name="paperless_worker"
 rcvar="${name}_enable"
 
-# Set defaults
+# read configuration and set defaults
+load_rc_config "$name"
 paperless_worker_enable=${paperless_worker_enable:-"NO"}
 paperless_worker_daemon_user=${paperless_worker_user:-"paperless"}
 paperless_worker_log_facility=${paperless_worker_log_facility:-"daemon"}
@@ -45,5 +48,4 @@ command_args="-cS -u ${paperless_worker_daemon_user} \
 	%%PREFIX%%/bin/celery \
 	--app paperless worker --loglevel INFO --without-mingle --without-gossip"
 
-load_rc_config ${name}
 run_rc_command "$1"
