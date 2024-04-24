@@ -1033,6 +1033,7 @@
     SUBDIR += plasma5-polkit-kde-agent-1
     SUBDIR += plasma5-powerdevil
     SUBDIR += plasma5-systemsettings
+    SUBDIR += plasma6-discover
     SUBDIR += plasma6-drkonqi
     SUBDIR += plasma6-kde-cli-tools
     SUBDIR += plasma6-kinfocenter
