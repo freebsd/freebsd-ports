@@ -11,11 +11,13 @@
 # paperless_beat_enable (bool):		Set to "NO" by default.
 #					Set it to "YES" to enable
 #					paperless_beat
-# paperless_beat_log_facility(str):	Set to "daemon" by default.
+# paperless_beat_user (str):		Set to "paperless" by default.
+#					User to run beat.
+# paperless_beat_log_facility (str):	Set to "daemon" by default.
 #					Beat logging syslog facility.
-# paperless_beat_log_priority(str):	Set to "notice" by default.
+# paperless_beat_log_priority (str):	Set to "notice" by default.
 #					Beat logging syslog priority.
-# paperless_beat_log_tag(str):		Set to "paperless-beat" by default.
+# paperless_beat_log_tag (str):		Set to "paperless-beat" by default.
 #					Beat logging syslog tag.
 
 . /etc/rc.subr
@@ -23,7 +25,8 @@
 name="paperless_beat"
 rcvar="${name}_enable"
 
-# Set defaults
+# read configuration and set defaults
+load_rc_config "$name"
 paperless_beat_enable=${paperless_beat_enable:-"NO"}
 paperless_beat_daemon_user=${paperless_beat_user:-"paperless"}
 paperless_beat_log_facility=${paperless_beat_log_facility:-"daemon"}
@@ -45,5 +48,4 @@ command_args="-cS -u ${paperless_beat_daemon_user} \
 	%%PREFIX%%/bin/celery \
 	--app paperless beat --loglevel INFO"
 
-load_rc_config ${name}
 run_rc_command "$1"

@@ -11,11 +11,13 @@
 # paperless_migrate_enable (bool):	Set to "NO" by default.
 #					Set it to "YES" to enable
 #					paperless_migrate
-# paperless_migrate_log_facility(str):	Set to "daemon" by default.
+# paperless_migrate_user (str):		Set to "paperless" by default.
+#					User to run migrate.
+# paperless_migrate_log_facility (str):	Set to "daemon" by default.
 #					Migrate logging syslog facility.
-# paperless_migrate_log_priority(str):	Set to "notice" by default.
+# paperless_migrate_log_priority (str):	Set to "notice" by default.
 #					Migrate logging syslog priority.
-# paperless_migrate_log_tag(str):	Set to "paperless-migrate" by default.
+# paperless_migrate_log_tag (str):	Set to "paperless-migrate" by default.
 #					Migrate logging syslog tag.
 
 . /etc/rc.subr
@@ -23,7 +25,8 @@
 name="paperless_migrate"
 rcvar="${name}_enable"
 
-# Set defaults
+# read configuration and set defaults
+load_rc_config "$name"
 paperless_migrate_enable=${paperless_migrate_enable:-"NO"}
 paperless_migrate_user=${paperless_migrate_user:-"paperless"}
 paperless_migrate_log_facility=${paperless_migrate_log_facility:-"daemon"}
@@ -44,5 +47,4 @@ paperless_migrate_run()
 		-c 'sh -c "%%PREFIX%%/bin/paperless migrate --no-color -v 0"'
 }
 
-load_rc_config ${name}
 run_rc_command "$1"

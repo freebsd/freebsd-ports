@@ -1,6 +1,7 @@
 PORTNAME=	paperless-ngx
 PORTVERSION=	2.7.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/:webui \
 		GH:gh
