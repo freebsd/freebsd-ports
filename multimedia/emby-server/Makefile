@@ -1,6 +1,6 @@
 PORTNAME=	emby-server
 DISTVERSION?=	4.8.3.0
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${DISTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
@@ -35,7 +35,7 @@ LIB_DEPENDS=	libaribb24.so:multimedia/aribb24 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libfribidi.so:converters/fribidi \
-		libmbedtls.so:security/mbedtls \
+		libgnutls.so:security/gnutls \
 		libmfx.so:multimedia/intel-media-sdk \
 		libOpenCL.so:devel/ocl-icd \
 		libogg.so:audio/libogg \
@@ -86,6 +86,7 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--disable-xlib \
 		--enable-chromaprint \
 		--enable-fontconfig \
+		--enable-gnutls \
 		--enable-gpl \
 		--enable-iconv \
 		--enable-libaribb24 \
@@ -104,7 +105,6 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--enable-libx264 \
 		--enable-libx265 \
 		--enable-libzvbi \
-		--enable-mbedtls \
 		--enable-opencl \
 		--enable-optimizations \
 		--enable-static \
