@@ -39,6 +39,7 @@
     SUBDIR += and
     SUBDIR += android-file-transfer
     SUBDIR += android-file-transfer-qt5
+    SUBDIR += android-ota-payload-extractor
     SUBDIR += angrysearch
     SUBDIR += ansible
     SUBDIR += ansible-iocage
