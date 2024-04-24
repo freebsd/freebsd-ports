@@ -1,6 +1,6 @@
 PORTNAME=	emby-server
 DISTVERSION?=	4.8.3.0
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${DISTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
@@ -35,6 +35,7 @@ LIB_DEPENDS=	libaribb24.so:multimedia/aribb24 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libfribidi.so:converters/fribidi \
+		libgnutls.so:security/gnutls \
 		libmfx.so:multimedia/intel-media-sdk \
 		libOpenCL.so:devel/ocl-icd \
 		libogg.so:audio/libogg \
@@ -66,7 +67,7 @@ RUN_DEPENDS=	dotnet>0:lang/dotnet \
 		pango>0:x11-toolkits/pango \
 		tiff>0:graphics/tiff
 
-USES=		compiler:c11 gmake iconv localbase:ldflags magick:6 pkgconfig sqlite ssl
+USES=		compiler:c11 gmake iconv localbase:ldflags magick:6 pkgconfig sqlite ssl:run
 USE_RC_SUBR=	${PORTNAME}
 
 HAS_CONFIGURE=	yes
@@ -85,6 +86,7 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--disable-xlib \
 		--enable-chromaprint \
 		--enable-fontconfig \
+		--enable-gnutls \
 		--enable-gpl \
 		--enable-iconv \
 		--enable-libaribb24 \
@@ -104,7 +106,6 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--enable-libx265 \
 		--enable-libzvbi \
 		--enable-opencl \
-		--enable-openssl \
 		--enable-optimizations \
 		--enable-static \
 		--enable-vaapi \
