@@ -3196,3 +3196,4 @@ www/gitlab-ce|www/gitlab@ce|2024-04-21|Move www/gitlab-ce to www/gitlab and adde
 multimedia/flvtool++||2024-04-21|Has expired: Abandonware, consider using multimedia/flvmeta
 www/mod_tidy||2024-04-24|Has expired: Last upstream release was in 2005
 net-p2p/go-prysm||2024-04-24|Has expired: Broken for more than 6 months
+x11-toolkits/p5-Gtk2-Ex-Dialogs||2024-04-24|Has expired: No longer works with modern Gtk2
