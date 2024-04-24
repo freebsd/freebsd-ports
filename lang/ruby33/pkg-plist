@@ -1113,6 +1113,7 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%NO_CAPIDOCS%%%%NO_DOCS%%%%RDOC%%@dir %%RUBY_DOCDIR%%
 %%DOCS%%%%RUBY_DOCDIR%%/COPYING
 %%DOCS%%%%RUBY_DOCDIR%%/COPYING.ja
+%%DOCS%%%%RUBY_DOCDIR%%/ChangeLog/ChangeLog
 %%DOCS%%%%RUBY_DOCDIR%%/ChangeLog/ChangeLog-0.06_to_0.52
 %%DOCS%%%%RUBY_DOCDIR%%/ChangeLog/ChangeLog-0.50_to_0.60
 %%DOCS%%%%RUBY_DOCDIR%%/ChangeLog/ChangeLog-0.60_to_1.1
