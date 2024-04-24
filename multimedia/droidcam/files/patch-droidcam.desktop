@@ -1,0 +1,11 @@
+--- droidcam.desktop.orig	2024-04-18 16:03:55 UTC
++++ droidcam.desktop
+@@ -4,7 +4,7 @@ Exec=/usr/local/bin/droidcam
+ Comment=Use your phone as a webcam
+ TryExec=/usr/local/bin/droidcam
+ Exec=/usr/local/bin/droidcam
+-Icon=/opt/droidcam-icon.png
++Icon=/usr/local/share/pixmaps/droidcam-icon.png
+ Terminal=false
+ Type=Application
+ Categories=Video;AudioVideo;
