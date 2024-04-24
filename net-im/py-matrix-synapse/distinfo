@@ -1,6 +1,6 @@
-TIMESTAMP = 1713284272
-SHA256 (matrix_synapse-1.105.0.tar.gz) = a58ea8ca79eb7fb2e52b4fb198cab8e2ea51c7fead284ac12c8872b242be153a
-SIZE (matrix_synapse-1.105.0.tar.gz) = 3381674
+TIMESTAMP = 1713985076
+SHA256 (matrix_synapse-1.105.1.tar.gz) = 83014f23377b6a3fb7c49b1325ca541f4b0785ee0e61b3002a161974017cd3f8
+SIZE (matrix_synapse-1.105.1.tar.gz) = 3381937
 SHA256 (rust/crates/aho-corasick-1.0.2.crate) = 43f6cb1bf222025340178f382c426f13757b2960e89779dfcb319c32542a5a41
 SIZE (rust/crates/aho-corasick-1.0.2.crate) = 167694
 SHA256 (rust/crates/anyhow-1.0.81.crate) = 0952808a6c2afd1aa8947271f3a60f1a6763c7b912d210184c5149b5cf147247
