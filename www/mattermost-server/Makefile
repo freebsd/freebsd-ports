@@ -1,5 +1,5 @@
 PORTNAME=	mattermost
-PORTVERSION=	8.1.12
+PORTVERSION=	9.5.3
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/decke
 PKGNAMESUFFIX=	-server
@@ -17,11 +17,14 @@ ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 		mattermost-webapp>=${PORTVERSION}:www/mattermost-webapp
 
-USES=		go:modules tar:xz
+USES=		go:1.22,modules tar:xz
 USE_RC_SUBR=	mattermostd
 
 GO_TARGET=	./cmd/mattermost ./scripts/config_generator
-GO_BUILDFLAGS=	-ldflags="-X github.com/mattermost/mattermost/server/public/model.BuildNumber=${PORTVERSION}"
+GO_BUILDFLAGS=	-ldflags=" \
+		-X github.com/mattermost/mattermost/server/public/model.BuildNumber=${PORTVERSION} \
+		-X github.com/mattermost/mattermost/server/public/model.BuildHashEnterprise=none \
+		-X github.com/mattermost/mattermost/server/public/model.BuildEnterpriseReady=false"
 
 WRKSRC_SUBDIR=	server
 WWWDIR=		${PREFIX}/www/mattermost
