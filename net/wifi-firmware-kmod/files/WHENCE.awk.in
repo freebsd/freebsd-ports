@@ -1,0 +1,24 @@
+BEGIN {
+	start=1;
+	block=0;
+}
+{
+	if (start == 1) {
+		print;
+		if (/^----/) {
+			start=0;
+		}
+	}
+	if (block == 0) {
+		if (/^Driver: %%XXX%%/) {
+			block=1;
+			printf "\n";
+			print;
+		}
+	} else {
+		print;
+		if (/^----/) {
+			block=0;
+		}
+	}
+}
