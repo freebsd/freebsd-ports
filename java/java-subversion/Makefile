@@ -1,7 +1,7 @@
 PKGNAMEPREFIX=	java-
 CATEGORIES=	java
 
-MAINTAINER=	lev@FreeBSD.org
+MAINTAINER=	michaelo@apache.org
 COMMENT=	Java bindings for Version control system
 WWW=		https://subversion.apache.org/
 
@@ -12,8 +12,8 @@ JAVA_OS=	native
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
 
-PORTREVISION_LATEST=	1
-PORTREVISION_LTS=		1
+PORTREVISION_LATEST=	2
+PORTREVISION_LTS=		2
 
 SVN_BUILD_BINDINGS=	yes
 

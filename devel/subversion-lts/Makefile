@@ -1,7 +1,7 @@
-PORTREVISION=	2
+PORTREVISION=	3
 PKGNAMESUFFIX=	-lts
 
-MAINTAINER=	lev@FreeBSD.org
+MAINTAINER=	michaelo@apache.org
 COMMENT=	Version control system, long-term-support version
 WWW=		https://subversion.apache.org/
 

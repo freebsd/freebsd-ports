@@ -1,9 +1,11 @@
---- CMakeLists.txt.orig	2023-06-22 09:07:56 UTC
+--- CMakeLists.txt.orig	2024-04-20 18:31:07 UTC
 +++ CMakeLists.txt
-@@ -1,5 +1,5 @@
- cmake_minimum_required(VERSION 2.8.12)
--project(Cppcheck)
-+project(cppcheck)
+@@ -3,7 +3,7 @@ cmake_policy(SET CMP0048 NEW) # allow VERSION in proje
+     cmake_minimum_required(VERSION 3.13)
+ endif()
+ cmake_policy(SET CMP0048 NEW) # allow VERSION in project()
+-project(Cppcheck VERSION 2.13.99 LANGUAGES CXX)
++project(cppcheck VERSION 2.13.99 LANGUAGES CXX)
  
  include(cmake/cxx11.cmake)
  use_cxx11()

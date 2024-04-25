@@ -1,5 +1,5 @@
 PORTNAME=	gcc
-PORTVERSION=	14.0.1.s20240414
+PORTVERSION=	14.0.1.s20240421
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
@@ -83,7 +83,11 @@ USE_GCC=	yes
 USE_GCC=	yes
 .endif
 
+.if ${ARCH} == i386
+LANGUAGES:=	c,c++,objc,fortran
+.else
 LANGUAGES:=	c,c++,objc,fortran,jit
+.endif
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 TARGLIB32=	${PREFIX}/lib32	# The version information is added later
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}

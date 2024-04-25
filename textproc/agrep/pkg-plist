@@ -1,0 +1,6 @@
+bin/agrep
+%%PORTDOCS%%%%DOCSDIR%%/AGREP_A_FAST_ APPROXIMATE_PATTERN-MATCHING_TOOL_1992_agrep2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/FAST_TEXT_ SEARCHING_WITH ERRORS_199106_ agrep1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/GLIMPSE_A_Tool_to_Search_Through_Entire_File_Systems_199310_glimpse.pdf
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/agrep-and-glimpse-docs.zip

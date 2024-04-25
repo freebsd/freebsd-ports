@@ -13,6 +13,10 @@ set, you can start the sqlpage using normal rc script:
 This will start a web server on port 8080. See
 https://github.com/lovasoa/SQLpage/blob/main/configuration.md for more
 configuration details.
+
+For more ambitous setups, set up a rev proxy using your favourite web server,
+e.g. nginx or apache, and use PostgreSQL as the backend database.
+
 EOM
 }
 ]

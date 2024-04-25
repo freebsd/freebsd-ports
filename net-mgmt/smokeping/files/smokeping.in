@@ -29,8 +29,9 @@ reload_cmd="smokeping_reload"
 stop_cmd="smokeping_stop"
 
 : ${smokeping_enable:=NO}
-# pidfile is hardcoded in Smokeping.pm, not configurable
-smokeping_pidfile="%%PREFIX%%/var/smokeping/pid"
+# piddir is configured in %%PREFIX%%/etc/smokeping/config
+# pid file name is "pid" and harcoded in Smokeping.pm, not configurable
+: ${smokeping_pidfile="%%PREFIX%%/var/smokeping/pid"}
 : ${smokeping_logfile=/var/log/smokeping.log}
 : ${smokeping_user="%%USERS%%"}
 : ${smokeping_group="%%GROUPS%%"}

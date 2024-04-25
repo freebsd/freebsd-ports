@@ -1,8 +1,8 @@
 bin/fotocx
 share/applications/fotocx.desktop
-%%DATADIR%%/data/KB_shortcuts_E
-%%DATADIR%%/data/README
-%%DATADIR%%/data/colorwheel.jpg
+%%DATADIR%%/data/CIE1931.jpg
+%%DATADIR%%/data/KB_shortcuts_F
+%%DATADIR%%/data/capskeys
 %%DATADIR%%/data/custom_kernel/blur5
 %%DATADIR%%/data/custom_kernel/brighten3
 %%DATADIR%%/data/custom_kernel/color lines 3
@@ -21,6 +21,7 @@ share/applications/fotocx.desktop
 %%DATADIR%%/data/custom_kernel/sharpen3
 %%DATADIR%%/data/custom_kernel/sharpen5
 %%DATADIR%%/data/custom_kernel/sketch3
+%%DATADIR%%/data/custom_kernel/sobel v+h
 %%DATADIR%%/data/custom_menu
 %%DATADIR%%/data/custom_scripts/brightness and white point
 %%DATADIR%%/data/custom_scripts/cartoon-emboss
@@ -29,11 +30,48 @@ share/applications/fotocx.desktop
 %%DATADIR%%/data/custom_scripts/line-drawing-emboss
 %%DATADIR%%/data/custom_scripts/painting-texture
 %%DATADIR%%/data/custom_scripts/sketch-cartoon-emboss
+%%DATADIR%%/data/map_regions
 %%DATADIR%%/data/meta_picklist_E
-%%DATADIR%%/data/netmap_locations
-%%DATADIR%%/data/palettes/Golden Heavy Body Acrylics.gpl
-%%DATADIR%%/data/palettes/Liquitex Heavy Body Artist colors.gpl
-%%DATADIR%%/data/palettes/Rembrandt Extra Fine.gpl
+%%DATADIR%%/data/palettes/Bears.gpl
+%%DATADIR%%/data/palettes/Bgold.gpl
+%%DATADIR%%/data/palettes/Blues.gpl
+%%DATADIR%%/data/palettes/Borders.gpl
+%%DATADIR%%/data/palettes/Browns_And_Yellows.gpl
+%%DATADIR%%/data/palettes/Caramel.gpl
+%%DATADIR%%/data/palettes/Cascade.gpl
+%%DATADIR%%/data/palettes/China.gpl
+%%DATADIR%%/data/palettes/Coldfire.gpl
+%%DATADIR%%/data/palettes/Cool_Colors.gpl
+%%DATADIR%%/data/palettes/Cranes.gpl
+%%DATADIR%%/data/palettes/Dark_pastels.gpl
+%%DATADIR%%/data/palettes/Default.gpl
+%%DATADIR%%/data/palettes/Ega.gpl
+%%DATADIR%%/data/palettes/Firecode.gpl
+%%DATADIR%%/data/palettes/Gold.gpl
+%%DATADIR%%/data/palettes/GrayViolet.gpl
+%%DATADIR%%/data/palettes/Grayblue.gpl
+%%DATADIR%%/data/palettes/Grays.gpl
+%%DATADIR%%/data/palettes/Greens.gpl
+%%DATADIR%%/data/palettes/Hilite.gpl
+%%DATADIR%%/data/palettes/Khaki.gpl
+%%DATADIR%%/data/palettes/Lights.gpl
+%%DATADIR%%/data/palettes/Muted.gpl
+%%DATADIR%%/data/palettes/Named_Colors.gpl
+%%DATADIR%%/data/palettes/News3.gpl
+%%DATADIR%%/data/palettes/Op2.gpl
+%%DATADIR%%/data/palettes/Paintjet.gpl
+%%DATADIR%%/data/palettes/Pastels.gpl
+%%DATADIR%%/data/palettes/Plasma.gpl
+%%DATADIR%%/data/palettes/Reds.gpl
+%%DATADIR%%/data/palettes/Reds_And_Purples.gpl
+%%DATADIR%%/data/palettes/Royal.gpl
+%%DATADIR%%/data/palettes/Tango.gpl
+%%DATADIR%%/data/palettes/Topographic.gpl
+%%DATADIR%%/data/palettes/Visibone.gpl
+%%DATADIR%%/data/palettes/Visibone_2.gpl
+%%DATADIR%%/data/palettes/Volcano.gpl
+%%DATADIR%%/data/palettes/Warm_Colors.gpl
+%%DATADIR%%/data/palettes/Web.gpl
 %%DATADIR%%/data/patterns/aqua.jpg
 %%DATADIR%%/data/patterns/bathroom.jpg
 %%DATADIR%%/data/patterns/blocks.jpg
@@ -83,7 +121,6 @@ share/applications/fotocx.desktop
 %%DATADIR%%/data/userguide
 %%DATADIR%%/data/widgets.css
 %%DATADIR%%/data/worldcities.txt
-%%DATADIR%%/icons/fotocx.png
 %%DATADIR%%/images/HDF-paint.png
 %%DATADIR%%/images/HDF.png
 %%DATADIR%%/images/HDR-adjust.png
@@ -134,8 +171,7 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/brite-ramp2.png
 %%DATADIR%%/images/broken.png
 %%DATADIR%%/images/calibrate-printer.png
-%%DATADIR%%/images/cartoon.png
-%%DATADIR%%/images/cartoon2.jpg
+%%DATADIR%%/images/cartoon.jpg
 %%DATADIR%%/images/change-alpha.png
 %%DATADIR%%/images/choose-captions.png
 %%DATADIR%%/images/chromatic.png
@@ -155,8 +191,10 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/crop-buttons.png
 %%DATADIR%%/images/crop.png
 %%DATADIR%%/images/custom-kernel.png
+%%DATADIR%%/images/custom-menu.jpg
 %%DATADIR%%/images/custom-widgets.png
 %%DATADIR%%/images/custom.png
+%%DATADIR%%/images/dark-bright-pixels.png
 %%DATADIR%%/images/defog.png
 %%DATADIR%%/images/defog2.png
 %%DATADIR%%/images/delete-trash.png
@@ -168,7 +206,6 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/draw-line.png
 %%DATADIR%%/images/draw-oval.png
 %%DATADIR%%/images/draw-text.jpg
-%%DATADIR%%/images/drawing.png
 %%DATADIR%%/images/edit-any-metadata.png
 %%DATADIR%%/images/edit-bookmarks.png
 %%DATADIR%%/images/edit-dist.png
@@ -232,6 +269,9 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/manage-albums.png
 %%DATADIR%%/images/manage-tags.png
 %%DATADIR%%/images/map-click.jpg
+%%DATADIR%%/images/map-location.png
+%%DATADIR%%/images/map-location2.png
+%%DATADIR%%/images/map-regions.png
 %%DATADIR%%/images/maps.png
 %%DATADIR%%/images/margins.png
 %%DATADIR%%/images/markup.jpg
@@ -252,10 +292,10 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/moncolor.png
 %%DATADIR%%/images/mosaic1.png
 %%DATADIR%%/images/mosaic2.jpg
-%%DATADIR%%/images/netmap-locs.png
 %%DATADIR%%/images/nonlinear slider.png
 %%DATADIR%%/images/number-keys.png
 %%DATADIR%%/images/outboard-programs.png
+%%DATADIR%%/images/outlines.jpg
 %%DATADIR%%/images/paint-edits.png
 %%DATADIR%%/images/paint-image.jpg
 %%DATADIR%%/images/paint-transp.png
@@ -291,6 +331,7 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/rename.png
 %%DATADIR%%/images/repair.png
 %%DATADIR%%/images/rescale.png
+%%DATADIR%%/images/resources.png
 %%DATADIR%%/images/retouch.png
 %%DATADIR%%/images/rotate-left.png
 %%DATADIR%%/images/rotate-right.png
@@ -370,5 +411,6 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/warps4.jpg
 %%DATADIR%%/images/whiteball.png
 %%DATADIR%%/images/zoom.png
+share/icons/fotocx.png
 share/man/man1/fotocx.1.gz
 share/metainfo/kornelix.fotocx.metainfo.xml

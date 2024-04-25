@@ -1,5 +1,5 @@
 PORTNAME=	npth
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	devel
 MASTER_SITES=	GNUPG
 
@@ -10,9 +10,11 @@ WWW=		https://www.gnupg.org/software/npth/index.html
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-USES=		tar:bzip2 libtool
+USES=		libtool pathfix tar:bzip2
 USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 .include <bsd.port.mk>

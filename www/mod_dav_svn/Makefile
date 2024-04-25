@@ -3,14 +3,14 @@ DISTNAME=	subversion-${PORTVERSION}
 
 CATEGORIES=	www
 
-MAINTAINER=	lev@FreeBSD.org
+MAINTAINER=	michaelo@apache.org
 COMMENT=	Apache module for subversion serving
 WWW=		https://subversion.apache.org/
 
 USES=		apache
 
-PORTREVISION_LATEST=	1
-PORTREVISION_LTS=		1
+PORTREVISION_LATEST=	2
+PORTREVISION_LTS=		2
 
 .include "${.CURDIR}/../../devel/subversion/Makefile.addons"
 

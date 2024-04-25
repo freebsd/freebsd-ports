@@ -154,8 +154,7 @@ include/ssw.hpp
 include/ssw_cpp.hpp
 include/var.hpp
 include/vcf-c-api.h
-include/vec128int.h
-include/veclib_types.h
+include/vcf-wfa.h
 lib/libvcflib.a
 %%ZIG%%lib/libzig.a
 lib/pyvcflib%%PYTHON_EXT_SUFFIX%%.so

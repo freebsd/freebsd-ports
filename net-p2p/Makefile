@@ -33,7 +33,6 @@
     SUBDIR += eiskaltdcpp-lib
     SUBDIR += ethash
     SUBDIR += go-ethereum
-    SUBDIR += go-prysm
     SUBDIR += gtk-gnutella
     SUBDIR += jackett
     SUBDIR += jigdo

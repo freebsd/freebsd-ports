@@ -1,7 +1,6 @@
 PORTNAME=		vcflib
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.0.7
-PORTREVISION=		1
+DISTVERSION=		1.0.10
 CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -48,6 +47,7 @@ ZIG_CMAKE_OFF=	-DZIG=OFF
 # Clang and GCC disable sse2 by default on i386, but it's required for vcflib
 CFLAGS_i386=	-msse2
 
+# filevercmp is deprecated.  Remove conflict when the port is removed.
 CONFLICTS_INSTALL=	filevercmp libdisorder # include/disorder.h include/filevercmp.h include/pdflib.hpp
 
 .include <bsd.port.options.mk>

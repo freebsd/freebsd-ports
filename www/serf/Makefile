@@ -1,9 +1,10 @@
 PORTNAME=	serf
 PORTVERSION=	1.3.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	APACHE/serf
 
-MAINTAINER=	lev@FreeBSD.org
+MAINTAINER=	michaelo@apache.org
 COMMENT=	Serf HTTP client library
 WWW=		https://serf.apache.org/
 

@@ -1359,6 +1359,7 @@
 %%WWWDIR%%/locale/en/LC_MESSAGES/frontend.pot
 %%WWWDIR%%/locale/en_GB/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/en_GB/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/en_US/LC_MESSAGES/frontend.pot
 %%WWWDIR%%/locale/es/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/es/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/fa/LC_MESSAGES/frontend.mo

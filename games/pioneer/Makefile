@@ -1,5 +1,5 @@
 PORTNAME=	pioneer
-DISTVERSION=	20230203
+DISTVERSION=	20240314
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -23,6 +23,7 @@ LICENSE_PERMS_DejaVu=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_IUP=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_FreeBSD_13=	fails to build
 # XXX: if you have similar error, try adding failing arch to USE_CHRONO condition in contrib/profiler/Profiler.h
 BROKEN_xxx=		fails to build: contrib/profiler/Profiler.h:158:51: inconsistent operand constraints in an 'asm'
 
@@ -39,10 +40,11 @@ GH_ACCOUNT=	pioneerspacesim
 ALL_TARGET=	all build-data
 CMAKE_ARGS=	-DPIONEER_DATA_DIR:PATH="${DATADIR}/data"
 CMAKE_ON=	USE_SYSTEM_LIBGLEW USE_SYSTEM_LIBLUA
+CMAKE_OFF=	FMT_INSTALL
 
-PORTDATA=	data
-PORTDOCS=	AUTHORS.txt Changelog.txt Modelviewer.txt Quickstart.txt \
-		README.md
+PORTDATA=	*
+PORTDOCS=	AUTHORS.txt Changelog.txt Quickstart.txt \
+		README.md editor.txt
 
 SUB_FILES=	pkg-message
 
@@ -54,17 +56,6 @@ PROFILER_DESC=		Build with internal profiler
 DOCS_SUB_LIST=		QUICKSTART_PATH="${DOCSDIR}"
 DOCS_SUB_LIST_OFF=	QUICKSTART_PATH="https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${GH_TAGNAME}"
 PROFILER_CMAKE_BOOL=	PROFILER_ENABLED
-
-post-patch:
-	@${REINPLACE_CMD} -e '/^include(FindGit/d ; \
-		/TIMESTAMP PROJECT_VERSION/s|.*|set(PROJECT_VERSION "${GH_TAGNAME}")|' \
-		${WRKSRC}/CMakeLists.txt
-
-post-install:
-.for f in modelcompiler savegamedump
-	${MV} ${STAGEDIR}${PREFIX}/bin/${f} \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-${f}
-.endfor
 
 post-install-DOCS-on:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})

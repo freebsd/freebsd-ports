@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.4.5
+DISTVERSION=	2024.4.8
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,6 +27,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
+		arbitrary-1.3.2 \
 		arrayvec-0.5.2 \
 		assert_cmd-2.0.14 \
 		async-compression-0.4.8 \
@@ -41,12 +42,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bstr-1.9.1 \
 		built-0.7.2 \
 		bumpalo-3.16.0 \
-		bytecount-0.6.7 \
+		bytecount-0.6.8 \
 		byteorder-1.5.0 \
 		bytes-1.6.0 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.0.94 \
+		cc-1.0.95 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		ci_info-0.14.14 \
@@ -73,12 +74,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.19 \
 		crypto-common-0.1.6 \
-		ctor-0.2.7 \
+		ctor-0.2.8 \
 		curve25519-dalek-4.1.2 \
 		curve25519-dalek-derive-0.1.1 \
 		demand-1.1.0 \
 		der-0.7.9 \
 		deranged-0.3.11 \
+		derive_arbitrary-1.3.2 \
 		diff-0.1.13 \
 		difflib-0.4.0 \
 		digest-0.10.7 \
@@ -100,7 +102,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		eyre-0.6.12 \
 		fastrand-1.9.0 \
 		fastrand-2.0.2 \
-		fiat-crypto-0.2.7 \
+		fiat-crypto-0.2.8 \
 		filetime-0.2.23 \
 		fixedbitset-0.4.2 \
 		flate2-1.0.28 \
@@ -154,7 +156,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ipnet-2.9.0 \
 		itertools-0.12.1 \
 		itoa-1.0.11 \
-		jobserver-0.1.30 \
+		jobserver-0.1.31 \
 		js-sys-0.3.69 \
 		kdl-4.6.0 \
 		lazy_static-1.4.0 \
@@ -211,7 +213,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pretty_assertions-1.4.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.80 \
+		proc-macro2-1.0.81 \
 		quick-xml-0.23.1 \
 		quote-1.0.36 \
 		rand-0.8.5 \
@@ -225,13 +227,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-syntax-0.8.3 \
 		reqwest-0.11.27 \
 		ring-0.17.8 \
-		rmp-0.8.12 \
-		rmp-serde-1.1.2 \
+		rmp-0.8.14 \
+		rmp-serde-1.2.0 \
 		roff-0.2.1 \
 		rustc-demangle-0.1.23 \
 		rustc_version-0.4.0 \
-		rustix-0.38.32 \
-		rustls-0.21.10 \
+		rustix-0.38.34 \
+		rustls-0.21.11 \
 		rustls-native-certs-0.6.3 \
 		rustls-pemfile-1.0.4 \
 		rustls-webpki-0.101.7 \
@@ -245,9 +247,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		self-replace-1.3.7 \
 		self_update-0.39.0 \
 		semver-1.0.22 \
-		serde-1.0.197 \
-		serde_derive-1.0.197 \
-		serde_json-1.0.115 \
+		serde-1.0.198 \
+		serde_derive-1.0.198 \
+		serde_json-1.0.116 \
 		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.8 \
@@ -256,7 +258,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		shell-escape-0.1.5 \
 		shell-words-1.1.0 \
 		signal-hook-0.3.17 \
-		signal-hook-registry-1.4.1 \
+		signal-hook-registry-1.4.2 \
 		signature-2.2.0 \
 		similar-2.5.0 \
 		simplelog-0.12.2 \
@@ -269,7 +271,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strum_macros-0.26.2 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.59 \
+		syn-2.0.60 \
 		sync_wrapper-0.1.2 \
 		sys-info-0.9.1 \
 		system-configuration-0.5.1 \
@@ -285,8 +287,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		test-case-3.3.1 \
 		test-case-core-3.3.1 \
 		test-case-macros-3.3.1 \
-		thiserror-1.0.58 \
-		thiserror-impl-1.0.58 \
+		thiserror-1.0.59 \
+		thiserror-impl-1.0.59 \
 		thread_local-1.1.8 \
 		time-0.3.36 \
 		time-core-0.1.2 \
@@ -299,7 +301,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-util-0.7.10 \
 		toml-0.8.12 \
 		toml_datetime-0.6.5 \
-		toml_edit-0.22.9 \
+		toml_edit-0.22.12 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
 		tracing-core-0.1.32 \
@@ -374,7 +376,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		xx-0.2.5 \
 		yansi-0.5.1 \
 		zeroize-1.7.0 \
-		zip-0.6.6 \
+		zip-1.1.1 \
 		zipsign-api-0.1.1
 
 OPENSSLINC=	/usr/include

@@ -12,6 +12,9 @@ WWW=		https://github.com/django-ldapdb/django-ldapdb
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	not compatible with Django >= 4.x, upstream no longer maintained
+EXPIRATION_DATE=2024-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=2.2:www/py-django32@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-ldap>=3.0:net/py-python-ldap@${PY_FLAVOR}
 

@@ -1,8 +1,11 @@
 PORTNAME=	audacity
 DISTVERSIONPREFIX=	Audacity-
-DISTVERSION=	3.4.2
-PORTREVISION=	3
+DISTVERSION=	3.5.0
 CATEGORIES=	audio
+
+PATCH_SITES=	https://github.com/audacity/audacity/commit/
+# FreeBSD compilation fixes: https://github.com/audacity/audacity/pull/6331
+PATCHFILES+=	4191cfb8376d19d044cadaf31214182375a9af55.patch:-p1
 
 MAINTAINER=	xxjack12xx@gmail.com
 COMMENT=	GUI editor for digital audio waveforms
@@ -13,18 +16,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	conan:sysutils/conan \
 		rapidjson>0:devel/rapidjson
-LIB_DEPENDS=	libasound.so:audio/alsa-lib \
-		libcurl.so:ftp/curl \
-		libexpat.so:textproc/expat2 \
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		liblilv-0.so:audio/lilv \
 		libmp3lame.so:audio/lame \
 		libmpg123.so:audio/mpg123 \
-		libopenjp2.so:graphics/openjpeg \
 		libopus.so:audio/opus \
 		libopusfile.so:audio/opusfile \
 		libportaudio.so:audio/portaudio \
 		libportmidi.so:audio/portmidi \
-		libpng.so:graphics/png \
 		libserd-0.so:devel/serd \
 		libsndfile.so:audio/libsndfile \
 		libsord-0.so:devel/sord \
@@ -32,19 +31,17 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libsratom-0.so:audio/sratom \
 		libsqlite3.so:databases/sqlite3 \
 		libsuil-0.so:audio/suil \
-		libturbojpeg.so:graphics/libjpeg-turbo \
 		libwavpack.so:audio/wavpack \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		cmake compiler:c++20-lang cpe desktop-file-utils gettext \
 		gnome libtool python:build pkgconfig shared-mime-info
+CPE_VENDOR=	audacityteam
 
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_WX=		3.2+
-CPE_VENDOR=	audacityteam
 WX_COMPS=	wx
-PORTDOCS=	README.md
 
 CMAKE_ARGS=	-DAUDACITY_BUILD_LEVEL=2 \
 		-Daudacity_lib_preference:STRING=system \
@@ -74,12 +71,17 @@ CMAKE_OFF=	audacity_has_audiocom_upload audacity_conan_enabled audacity_conan_fo
 		audacity_has_crashreports audacity_has_networking audacity_has_updates_check audacity_has_url_schemes_support \
 		audacity_has_tests audacity_has_vst3 audacity_perform_codesign audacity_use_pch
 
+# TODO: fix NLS support properly
+PLIST_SUB+=	NLS=""
+PORTDOCS=	README.md
+
 OPTIONS_DEFINE=		DEBUG DOCS FFMPEG FLAC ID3TAG LADSPA MANUAL \
 			OGG SBSMS SOUNDTOUCH TWOLAME VAMP \
 			VORBIS VST
 OPTIONS_DEFAULT=	FFMPEG FLAC ID3TAG LADSPA OGG SBSMS \
 			SOUNDTOUCH TWOLAME VAMP VORBIS VST
 OPTIONS_EXCLUDE_i386=	SBSMS
+OPTIONS_SUB=		yes
 
 MANUAL_DESC=		Include manual
 SBSMS_DESC=		Use libsbsms for pitch and tempo changing
@@ -94,51 +96,47 @@ DOCS_BUILD_DEPENDS=	docbook-to-man:textproc/docbook-to-man \
 			docbook2man:textproc/docbook-utils
 DOCS_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
-FFMPEG_CMAKE_ON=	-Daudacity_use_ffmpeg:STRING=loaded
-FFMPEG_CMAKE_OFF=	-Daudacity_use_ffmpeg:STRING=off
 FFMPEG_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libavcodec.pc:multimedia/ffmpeg
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+FFMPEG_CMAKE_ON=	-Daudacity_use_ffmpeg:STRING=loaded
+FFMPEG_CMAKE_OFF=	-Daudacity_use_ffmpeg:STRING=off
 
+FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_CMAKE_ON=		-Daudacity_use_libflac:STRING=system
 FLAC_CMAKE_OFF=		-Daudacity_use_libflac:STRING=off
-FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 
+ID3TAG_LIB_DEPENDS=	libid3tag.so:audio/libid3tag
 ID3TAG_CMAKE_ON=	-Daudacity_use_libid3tag:STRING=system
 ID3TAG_CMAKE_OFF=	-Daudacity_use_libid3tag:STRING=off
-ID3TAG_LIB_DEPENDS=	libid3tag.so:audio/libid3tag
 
-LADSPA_CMAKE_BOOL=	audacity_use_ladspa
 LADSPA_RUN_DEPENDS=	listplugins:audio/ladspa
+LADSPA_CMAKE_BOOL=	audacity_use_ladspa
 
 MANUAL_CMAKE_BOOL=	audacity_package_manual
 
-# TODO: fix NLS support properly
-PLIST_SUB+=		NLS=""
-OPTIONS_SUB=		yes
-
+OGG_LIB_DEPENDS=	libogg.so:audio/libogg
 OGG_CMAKE_ON=		-Daudacity_use_libogg:STRING=system
 OGG_CMAKE_OFF=		-Daudacity_use_libogg:STRING=off
-OGG_LIB_DEPENDS=	libogg.so:audio/libogg
 
 SBSMS_CMAKE_ON=		-Daudacity_use_sbsms:STRING=local
 SBSMS_CMAKE_OFF=	-Daudacity_use_sbsms:STRING=off
 
+SOUNDTOUCH_LIB_DEPENDS=	libSoundTouch.so:audio/soundtouch
 SOUNDTOUCH_CMAKE_ON=	-Daudacity_use_soundtouch:STRING=system
 SOUNDTOUCH_CMAKE_OFF=	-Daudacity_use_soundtouch:STRING=off
-SOUNDTOUCH_LIB_DEPENDS=	libSoundTouch.so:audio/soundtouch
 
+TWOLAME_LIB_DEPENDS=	libtwolame.so:audio/twolame
 TWOLAME_CMAKE_ON=	-Daudacity_use_twolame:STRING=system
 TWOLAME_CMAKE_OFF=	-Daudacity_use_twolame:STRING=off
-TWOLAME_LIB_DEPENDS=	libtwolame.so:audio/twolame
 
+VAMP_LIB_DEPENDS=	libvamp-hostsdk.so:audio/vamp-plugin-sdk
 VAMP_CMAKE_ON=		-Daudacity_use_vamp:STRING=system
 VAMP_CMAKE_OFF=		-Daudacity_use_vamp:STRING=off
-VAMP_LIB_DEPENDS=	libvamp-hostsdk.so:audio/vamp-plugin-sdk
 
-VORBIS_CMAKE_ON=	-Daudacity_use_libvorbis:STRING=system
-VORBIS_CMAKE_OFF=	-Daudacity_use_libvorbis:STRING=off
 VORBIS_LIB_DEPENDS=	libogg.so:audio/libogg \
 			libvorbis.so:audio/libvorbis
+VORBIS_CMAKE_ON=	-Daudacity_use_libvorbis:STRING=system
+VORBIS_CMAKE_OFF=	-Daudacity_use_libvorbis:STRING=off
 
 VST_CMAKE_BOOL=		audacity_use_vst
 

@@ -1,4 +1,4 @@
---- components/supervised_user/core/browser/supervised_user_service.cc.orig	2024-03-22 14:16:19 UTC
+--- components/supervised_user/core/browser/supervised_user_service.cc.orig	2024-04-23 07:42:17 UTC
 +++ components/supervised_user/core/browser/supervised_user_service.cc
 @@ -170,7 +170,7 @@ FirstTimeInterstitialBannerState SupervisedUserService
      const FirstTimeInterstitialBannerState original_state) {
@@ -6,6 +6,6 @@
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_IOS)
 +    BUILDFLAG(IS_IOS) || BUILDFLAG(IS_BSD)
-   if (supervised_user::CanDisplayFirstTimeInterstitialBanner()) {
-     if (original_state != FirstTimeInterstitialBannerState::kSetupComplete &&
-         can_show_first_time_interstitial_banner_) {
+   if (original_state != FirstTimeInterstitialBannerState::kSetupComplete &&
+       can_show_first_time_interstitial_banner_) {
+     target_state = FirstTimeInterstitialBannerState::kNeedToShow;

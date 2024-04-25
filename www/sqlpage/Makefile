@@ -2,7 +2,7 @@
 
 PORTNAME=	sqlpage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.2
+DISTVERSION=	0.20.4
 CATEGORIES=	www databases
 MASTER_SITES=	https://cdn.jsdelivr.net/npm/:npm
 DISTFILES=	${NPM_DISTFILES}
@@ -31,7 +31,8 @@ NPM_DISTFILES=	apexcharts@3.47.0/dist/apexcharts.min.js:npm \
 		@tabler/core@1.0.0-beta20/dist/css/tabler-vendors.min.css:npm \
 		@tabler/core@1.0.0-beta20/dist/js/tabler.min.js:npm \
 		list.js-fixed@2.3.4/dist/list.min.js:npm \
-		@tabler/icons-sprite@3.0.1/dist/tabler-sprite.svg:npm
+		@tabler/icons-sprite@3.2.0/dist/tabler-sprite.svg:npm \
+		tom-select@2.3.1/dist/js/tom-select.popular.min.js:npm
 
 post-extract:
 		cd ${DISTDIR}; ${PAX} -rw ${NPM_DISTFILES:C/\/.*//g} ${WRKSRC}

@@ -1,5 +1,5 @@
---- src/attack.c.orig	2023-11-30 02:05:44.000000000 -0500
-+++ src/attack.c	2024-01-26 17:29:41.957545000 -0500
+--- src/attack.c	2024-04-24 02:59:35.930683000 -0500
++++ src/attack.c	2024-04-24 03:02:33.794371000 -0500
 @@ -31,7 +31,6 @@
  #include "utils.h"
  
@@ -8,7 +8,7 @@
  #include <errno.h> /* for errno() */
  #include <fcntl.h>
  #include <glib.h>
-@@ -1614,13 +1613,13 @@
+@@ -1541,13 +1540,13 @@
  
    gettimeofday (&now, NULL);
    if (test_alive_hosts_only)

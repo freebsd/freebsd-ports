@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-10-11 10:37:50.000000000 -0500
-+++ CMakeLists.txt	2021-10-27 21:54:45.470593000 -0500
-@@ -113,7 +113,7 @@
+--- CMakeLists.txt	2024-03-19 05:02:18.000000000 -0500
++++ CMakeLists.txt	2024-04-24 02:53:41.119060000 -0500
+@@ -99,7 +99,7 @@
  endif (SYSCONF_INSTALL_DIR)
  
  if (NOT SYSCONFDIR)
@@ -9,7 +9,7 @@
  endif (NOT SYSCONFDIR)
  
  if (NOT EXEC_PREFIX)
-@@ -150,7 +150,7 @@
+@@ -136,7 +136,7 @@
  endif (NOT DATADIR)
  
  if (NOT OPENVAS_RUN_DIR)
@@ -17,17 +17,17 @@
 +  set (OPENVAS_RUN_DIR "${LOCALSTATEDIR}/run/ospd")
  endif (NOT OPENVAS_RUN_DIR)
  
- set (OPENVAS_DATA_DIR    "${DATADIR}/openvas")
-@@ -199,7 +199,7 @@
- configure_file (doc/openvas.8.in doc/openvas.8 @ONLY)
+ if (NOT DEFINED BUILD_WITH_NETSNMP)
+@@ -185,7 +185,7 @@
+ # Configure Doxyfile with version number
+ configure_file (doc/man/openvas.8.in doc/man/openvas.8 @ONLY)
  configure_file (VERSION.in VERSION @ONLY)
- configure_file (tools/greenbone-nvt-sync.in tools/greenbone-nvt-sync @ONLY)
 -configure_file (src/openvas_log_conf.cmake_in src/openvas_log.conf)
 +configure_file (src/openvas_log_conf.cmake_in src/openvas_log.conf.sample)
  
- ## Testing
  
-@@ -214,7 +214,7 @@
+ ## Testing
+@@ -201,7 +201,7 @@
    set (COVERAGE_FLAGS "--coverage")
  endif (ENABLE_COVERAGE)
  

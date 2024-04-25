@@ -1,6 +1,6 @@
---- aten/src/ATen/cpu/vec/vec256/vec256_bfloat16.h.orig	2023-10-12 12:49:42 UTC
+--- aten/src/ATen/cpu/vec/vec256/vec256_bfloat16.h.orig	2024-03-27 22:28:51 UTC
 +++ aten/src/ATen/cpu/vec/vec256/vec256_bfloat16.h
-@@ -266,7 +266,7 @@ static_assert( (public)
+@@ -265,7 +265,7 @@ static_assert( (public)
      }
      return b;
    }

@@ -112,6 +112,9 @@ RB_SET_CONF_VAR=	${SH} -c \
 			'${REINPLACE_CMD} -E -e "s,(CONFIG\[\"$$0\"\][[:space:]]*=[[:space:]]*)(\(?)(.*)(\)?),\1\2$$1\4," ${WRKSRC}/rbconfig.rb' \
 			--
 
+post-extract-DOCS-on:
+	${MV} ${WRKSRC}/ChangeLog ${WRKSRC}/doc/ChangeLog
+
 post-patch:
 # We get these from other ports
 .for d in bin/* ext/dbm ext/gdbm ext/win32* lib/bundler* libexec/bundler* \
@@ -187,7 +190,6 @@ post-install-DOCS-on:
 .endfor
 	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${RUBY_DOCDIR}/)
 	${INSTALL_DATA} ${WRKSRC}/COPYING*	\
-			${WRKSRC}/ChangeLog	\
 			${WRKSRC}/LEGAL		\
 			${WRKSRC}/README*	\
 			${STAGEDIR}${RUBY_DOCDIR}/

@@ -1,0 +1,3 @@
+A fast & natively cross-platform Android OTA payload extractor written in Go.
+Extracting images from Android OTA packages is very useful for various purposes.
+For example, patching the boot image to install Magisk without TWRP.

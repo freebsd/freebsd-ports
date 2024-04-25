@@ -1,5 +1,3 @@
-TIMESTAMP = 1713532880
-SHA256 (freerdp-3.5.0.tar.gz) = 13c37e875c1f26f78526e58aa63303b04221e393fde61e6106ce72402a63b529
-SIZE (freerdp-3.5.0.tar.gz) = 9335565
-SHA256 (5583fec47bbca9b68cd811c12e1ae3d5cdbfaee3.patch) = 9ca12ff93fb2bb0d50e5cd38d491a5ac10b6c60c08eb57fa5ddeb4c6f089c1fe
-SIZE (5583fec47bbca9b68cd811c12e1ae3d5cdbfaee3.patch) = 1553
+TIMESTAMP = 1713795685
+SHA256 (freerdp-3.5.1.tar.gz) = 28036fd3c7d23ad320fd3eb2463119d1bde0dddb624b5a8353bf43197f1044c0
+SIZE (freerdp-3.5.1.tar.gz) = 9338947

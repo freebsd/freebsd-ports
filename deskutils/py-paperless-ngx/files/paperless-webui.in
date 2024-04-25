@@ -11,16 +11,22 @@
 # paperless_webui_enable (bool):	Set to "NO" by default.
 #					Set it to "YES" to enable
 #					paperless_webui
-# paperless_webui_log_facility(str):	Set to "daemon" by default.
+# paperless_webui_user (str):		Set to "paperless" by default.
+#					User to run webui.
+# paperless_webui_log_facility (str):	Set to "daemon" by default.
 #					WebUI logging syslog facility.
-# paperless_webui_log_priority(str):	Set to "notice" by default.
+# paperless_webui_log_priority (str):	Set to "notice" by default.
 #					WebUI logging syslog priority.
-# paperless_webui_log_tag(str):		Set to "paperless-webui" by default.
+# paperless_webui_log_tag (str):	Set to "paperless-webui" by default.
 #					WebUI logging syslog tag.
-# paperless_webui_restart_delay(int):	Set to "5" by default.
+# paperless_webui_listen_address (str):	Set to "127.0.0.1" by default.
+#					IP address to listen on.
+# paperless_webui_listen_port (int):	Set to "8000" by default.
+#					Port to listen on.
+# paperless_webui_restart_delay (int):	Set to "5" by default.
 #					WebUI automatic restart delay in
 #					seconds.
-# paperless_webui_secret_key(str):	Set to
+# paperless_webui_secret_key (str):	Set to
 #					"%%PREFIX%%/etc/paperless_secret_key"
 #					by default. Load PAPERLESS_SECRET_KEY
 #					from this file from start, in case it
@@ -36,7 +42,8 @@
 name="paperless_webui"
 rcvar="${name}_enable"
 
-# Set defaults
+# read configuration and set defaults
+load_rc_config "$name"
 paperless_webui_enable=${paperless_webui_enable:-"NO"}
 paperless_webui_daemon_user=${paperless_webui_user:-"paperless"}
 paperless_webui_log_facility=${paperless_webui_log_facility:-"daemon"}
@@ -87,5 +94,4 @@ paperless_webui_prestart()
 	fi
 }
 
-load_rc_config ${name}
 run_rc_command "$1"

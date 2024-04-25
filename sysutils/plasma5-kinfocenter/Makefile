@@ -7,7 +7,6 @@ COMMENT=	Plasma5 utility providing system information
 WWW=		https://www.kde.org/plasma-desktop
 
 RUN_DEPENDS=	clinfo:devel/clinfo \
-		dmidecode:sysutils/dmidecode  \
 		glxinfo:graphics/mesa-demos \
 		lscpu:sysutils/lscpu \
 		vulkaninfo:graphics/vulkan-tools \
@@ -27,6 +26,12 @@ USE_XORG=	ice sm x11 xext
 
 # TODO	-- this should be handled correctly...
 LDFLAGS+=-ldevinfo
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386
+RUN_DEPENDS+=	dmidecode:sysutils/dmidecode
+.endif
 
 # install freebsd-logo and distrorc
 post-install:

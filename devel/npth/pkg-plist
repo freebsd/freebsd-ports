@@ -1,6 +1,6 @@
-bin/npth-config
 include/npth.h
 lib/libnpth.so
 lib/libnpth.so.0
-lib/libnpth.so.0.1.2
+lib/libnpth.so.0.2.0
+libdata/pkgconfig/npth.pc
 share/aclocal/npth.m4

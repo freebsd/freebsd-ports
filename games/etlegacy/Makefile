@@ -63,6 +63,7 @@ PLIST_SUB+=	I386="" \
 		AMD64="@comment " \
 		POWERPC="@comment " \
 		POWERPC64="@comment " \
+		POWERPC64LE="@comment " \
 		ARMV7="@comment "
 .elif ${ARCH} == "amd64"
 PLIST_SUB+=	I386="@comment " \
@@ -70,6 +71,7 @@ PLIST_SUB+=	I386="@comment " \
 		AMD64="" \
 		POWERPC="@comment " \
 		POWERPC64="@comment " \
+		POWERPC64LE="@comment " \
 		ARMV7="@comment "
 .elif ${ARCH} == "aarch64"
 PLIST_SUB+=	I386="@comment " \
@@ -77,6 +79,7 @@ PLIST_SUB+=	I386="@comment " \
 		AMD64="@comment " \
 		POWERPC="@comment " \
 		POWERPC64="@comment " \
+		POWERPC64LE="@comment " \
 		ARMV7="@comment "
 .elif ${ARCH} == "powerpc"
 PLIST_SUB+=	I386="@comment " \
@@ -84,13 +87,23 @@ PLIST_SUB+=	I386="@comment " \
 		AMD64="@comment " \
 		POWERPC="" \
 		POWERPC64="@comment " \
+		POWERPC64LE="@comment " \
 		ARMV7="@comment "
-.elif ${ARCH:Mpowerpc64*}
+.elif ${ARCH} == powerpc64
 PLIST_SUB+=	I386="@comment " \
 		AARCH64="@comment " \
 		AMD64="@comment " \
 		POWERPC="@comment " \
 		POWERPC64="" \
+		POWERPC64LE="@comment " \
+		ARMV7="@comment "
+.elif ${ARCH} == powerpc64le
+PLIST_SUB+=	I386="@comment " \
+		AARCH64="@comment " \
+		AMD64="@comment " \
+		POWERPC="@comment " \
+		POWERPC64="@comment " \
+		POWERPC64LE="" \
 		ARMV7="@comment "
 .elif ${ARCH} == "armv7"
 PLIST_SUB+=	I386="@comment " \
@@ -98,6 +111,7 @@ PLIST_SUB+=	I386="@comment " \
 		AMD64="@comment " \
 		POWERPC="@comment " \
 		POWERPC64="@comment " \
+		POWERPC64LE="@comment " \
 		ARMV7=""
 .endif
 

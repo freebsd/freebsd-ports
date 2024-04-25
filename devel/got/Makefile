@@ -1,5 +1,5 @@
 PORTNAME=	got
-DISTVERSION=	0.97
+DISTVERSION=	0.98
 CATEGORIES=	devel
 MASTER_SITES=	https://gameoftrees.org/releases/
 
@@ -10,7 +10,7 @@ WWW=		https://gameoftrees.org
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-USES=		uidfix
+USES=		localbase:ldflags uidfix
 
 CONFLICTS_INSTALL=	p5-App-GitGot
 
@@ -27,8 +27,19 @@ post-extract:
 # The regression test suite requires:
 #  installed got
 #  installed git
+#  installed perl and HTTP::Daemon
 #  ssh to 127.0.0.1
 regress:
 	@(cd ${WRKSRC}/regress && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} regress)
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# When using LibreSSL use its own libtls, but when using OpenSSL
+# use libtls from libretls.
+.if ${SSL_DEFAULT:Mlibressl*}
+#	/* empty */
+.else
+LIB_DEPENDS+=	libtls.so:security/libretls
+.endif # SSL_DEFAULT
+
+.include <bsd.port.post.mk>

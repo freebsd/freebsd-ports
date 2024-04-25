@@ -37,6 +37,7 @@
     SUBDIR += deforaos-player
     SUBDIR += dirac
     SUBDIR += dragon
+    SUBDIR += droidcam
     SUBDIR += dtv-scan-tables
     SUBDIR += dumpmpeg
     SUBDIR += dv2sub

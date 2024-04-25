@@ -1,5 +1,6 @@
 PORTNAME=	tg_owt
 PORTVERSION=	0.0.20231221
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 
 USES=		cmake gl pkgconfig xorg
 USE_XORG=	x11 xcomposite xdamage xrender xrandr xtst
-USE_GL=		gbm
+USE_GL=		gbm gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	desktop-app
 GH_TAGNAME=	afd9d5d

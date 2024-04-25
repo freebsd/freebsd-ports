@@ -1,10 +1,11 @@
 PORTNAME=	hyprlock
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0
+DISTVERSION=	0.3.0
 CATEGORIES=	x11 wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	e040c56ad294.patch:-p1 # https://github.com/hyprwm/hyprlock/pull/195
+PATCHFILES+=	d9a6229434fb.patch:-p1 # -G Ninja
+PATCHFILES+=	8658386f212f.patch:-p1 # https://github.com/hyprwm/hyprlock/issues/289
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Hyprland's GPU-accelerated screen locking utility #'

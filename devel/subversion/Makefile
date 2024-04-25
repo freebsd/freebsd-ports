@@ -1,6 +1,6 @@
-PORTREVISION=	6
+PORTREVISION=	7
 
-MAINTAINER=	lev@FreeBSD.org
+MAINTAINER=	michaelo@apache.org
 COMMENT=	Version control system
 WWW=		https://subversion.apache.org/
 

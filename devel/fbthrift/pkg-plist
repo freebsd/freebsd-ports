@@ -416,7 +416,6 @@ include/thrift/lib/cpp2/security/extensions/ThriftParametersContext.h
 include/thrift/lib/cpp2/security/extensions/ThriftParametersServerExtension.h
 include/thrift/lib/cpp2/security/extensions/Types.h
 include/thrift/lib/cpp2/server/AdaptiveConcurrency.h
-include/thrift/lib/cpp2/server/BaseThriftServer.h
 include/thrift/lib/cpp2/server/CPUConcurrencyController.h
 include/thrift/lib/cpp2/server/ConcurrencyControllerBase.h
 include/thrift/lib/cpp2/server/ConcurrencyControllerInterface.h
@@ -438,7 +437,9 @@ include/thrift/lib/cpp2/server/MonitoringServerInterface.h
 include/thrift/lib/cpp2/server/ParallelConcurrencyController.h
 include/thrift/lib/cpp2/server/PerturbSource.h
 include/thrift/lib/cpp2/server/PolledServiceHealth.h
+include/thrift/lib/cpp2/server/PreprocessFunctions.h
 include/thrift/lib/cpp2/server/PreprocessParams.h
+include/thrift/lib/cpp2/server/PreprocessResult.h
 include/thrift/lib/cpp2/server/ReactiveToggle.h
 include/thrift/lib/cpp2/server/RequestCompletionCallback.h
 include/thrift/lib/cpp2/server/RequestDebugLog.h
@@ -449,6 +450,7 @@ include/thrift/lib/cpp2/server/ResourcePool.h
 include/thrift/lib/cpp2/server/ResourcePoolHandle.h
 include/thrift/lib/cpp2/server/ResourcePoolSet.h
 include/thrift/lib/cpp2/server/RoundRobinRequestPile.h
+include/thrift/lib/cpp2/server/SEParallelConcurrencyController.h
 include/thrift/lib/cpp2/server/SecurityServerInterface.h
 include/thrift/lib/cpp2/server/ServerAttribute.h
 include/thrift/lib/cpp2/server/ServerConfigs.h
@@ -605,6 +607,7 @@ include/thrift/lib/cpp2/util/EmptyAsyncProcessor.h
 include/thrift/lib/cpp2/util/Ewma.h
 include/thrift/lib/cpp2/util/EwmaRate.h
 include/thrift/lib/cpp2/util/Frozen2ViewHelpers.h
+include/thrift/lib/cpp2/util/IntrusiveSharedPtr.h
 include/thrift/lib/cpp2/util/LegacyRequestExpiryGuard.h
 include/thrift/lib/cpp2/util/ManagedStringView.h
 include/thrift/lib/cpp2/util/MethodMetadata.h

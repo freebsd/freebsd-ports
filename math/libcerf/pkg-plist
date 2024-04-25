@@ -5,7 +5,7 @@ lib/cmake/cerf/cerfTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/cerf/cerfTargets.cmake
 lib/libcerf.so
 lib/libcerf.so.2
-lib/libcerf.so.2.3
+lib/libcerf.so.2.4
 libdata/pkgconfig/libcerf.pc
 share/man/man3/cdawson.3.gz
 share/man/man3/cerf.3.gz

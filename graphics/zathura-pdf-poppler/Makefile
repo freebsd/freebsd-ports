@@ -1,23 +1,22 @@
 PORTNAME=	zathura-pdf-poppler
-DISTVERSION=	0.3.1
-PORTREVISION=	6
+DISTVERSION=	0.3.2
 CATEGORIES=	graphics
 MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mew14930xvi@inbox.lv
 COMMENT=	Poppler render PDF plugin for Zathura PDF viewer
 WWW=		https://pwmt.org/projects/zathura/plugins/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zathura:graphics/zathura
+BUILD_DEPENDS=	zathura>=0.5.3:graphics/zathura
 LIB_DEPENDS=	libgirara-gtk3.so:x11-toolkits/girara \
 		libpoppler-glib.so:graphics/poppler-glib
-RUN_DEPENDS=	zathura:graphics/zathura
+RUN_DEPENDS=	zathura>=0.5.3:graphics/zathura
 
 USES=		compiler:c11 desktop-file-utils gnome meson ninja pkgconfig
-USE_GNOME=	cairo glib20 gtk30
+USE_GNOME=	cairo glib20
 
 CONFLICTS=	zathura-pdf-mupdf
 

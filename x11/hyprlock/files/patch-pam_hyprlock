@@ -1,5 +1,5 @@
-"login" has "auth sufficient pam_self.so" but a screen locker is
-supposed to ask for password regardless.
+"login" and "su" have "auth sufficient pam_self.so" but a screen
+locker is supposed to ask for password regardless.
 
 pam_unix(8) requires root priveleges to access master.passwd(5),
 so try authenticating via setuid helper first.
@@ -13,4 +13,15 @@ so try authenticating via setuid helper first.
  
 -auth        include     login
 +auth        include     unix-selfauth
+ 
+--- src/core/Password.cpp.orig	2024-04-08 14:39:01 UTC
++++ src/core/Password.cpp
+@@ -70,7 +70,7 @@ std::shared_ptr<CPassword::SVerificationResult> CPassw
+             return true;
+         };
+ 
+-        result->realized = auth("hyprlock") || auth("su") || true;
++        result->realized = auth("hyprlock") || true;
+         g_pHyprlock->addTimer(std::chrono::milliseconds(1), passwordCheckTimerCallback, nullptr);
+     }).detach();
  

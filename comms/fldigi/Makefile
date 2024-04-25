@@ -1,6 +1,5 @@
 PORTNAME=	fldigi
-DISTVERSION=	4.2.04
-PORTREVISION=	1
+DISTVERSION=	4.2.05
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/fldigi/${PORTNAME} \
 		http://www.w1hkj.com/files/fldigi/
@@ -17,13 +16,12 @@ BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		xsltproc:textproc/libxslt
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libpng.so:graphics/png \
 		libportaudio.so:audio/portaudio \
 		libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile \
 		libudev.so:devel/libudev-devd
 
-USES=		autoreconf compiler:c++11-lib desktop-file-utils gmake jpeg \
+USES=		autoreconf:build compiler:c++11-lib desktop-file-utils gmake jpeg \
 		perl5 pkgconfig shebangfix xorg
 USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 

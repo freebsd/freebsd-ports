@@ -1,5 +1,5 @@
 PORTNAME=	openvas
-DISTVERSION=	22.7.9
+DISTVERSION=	23.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -19,7 +19,8 @@ LIB_DEPENDS=	libgvm_base.so:security/gvm-libs \
 		libssh.so:security/libssh \
 		libgnutls.so:security/gnutls \
 		libnetsnmp.so:net-mgmt/net-snmp \
-		libjson-glib-1.0.so:devel/json-glib
+		libjson-glib-1.0.so:devel/json-glib \
+		libcurl.so:ftp/curl
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}impacket>=0:net/py-impacket@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}greenbone-feed-sync>0:security/py-greenbone-feed-sync@${PY_FLAVOR} \
 		redis-server:databases/redis \

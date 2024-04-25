@@ -1,11 +1,6 @@
 PORTNAME=	freetype-gl
-DISTVERSION=	g20210208
-PORTREVISION=	4
+DISTVERSION=	g20240122
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	a38359cdcd97bfcf5d02dd65c66f516eac8208ad.patch:-p1 # https://github.com/rougier/freetype-gl/pull/233: Remove the STATIC requirement from the library
-PATCHFILES+=	00a13d4c9e31f9c4e68e8ab30e2f7ec5b0e4bf60.patch:-p1 # https://github.com/rougier/freetype-gl/pull/235: Fix Fontconfig dependency name in demos
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C OpenGL Freetype engine library
@@ -17,15 +12,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 USES=		cmake:noninja gl magick:test,nox11
-USE_GL=		glew
+USE_GL=		gl glew glu
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rougier
-GH_TAGNAME=	647b062
+GH_TAGNAME=	9543576
 
-CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_OFF=	freetype-gl_BUILD_APIDOC freetype-gl_BUILD_TESTS
+CMAKE_ON=	freetype-gl_BUILD_SHARED
+CMAKE_OFF=	freetype-gl_BUILD_APIDOC freetype-gl_BUILD_TESTS \
+		FIND_LIBRARY_USE_LIB64_PATHS
 
 LDFLAGS+=	-L${LOCALBASE}/lib -lGLEW -lfreetype # https://github.com/rougier/freetype-gl/issues/236
 
@@ -33,7 +29,6 @@ OPTIONS_DEFINE=		DEMOS
 OPTIONS_SUB=		yes
 
 DEMOS_DESC=		Build and install demo programs
-DEMOS_USE=		GL=gl,glu
 DEMOS_CMAKE_BOOL=	freetype-gl_BUILD_DEMOS
 DEMOS_LIB_DEPENDS=	libAntTweakBar.so:graphics/anttweakbar \
 			libfontconfig.so:x11-fonts/fontconfig \
