@@ -1,7 +1,8 @@
 PORTNAME=	uconvert
-DISTVERSION=	1.01
-CATEGORIES=	emulators graphics
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.01
+PORTREVISION=	1
+CATEGORIES=	emulators graphics
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Bitmap converter into Atari-specific formats

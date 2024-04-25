@@ -1,7 +1,7 @@
 PORTNAME=	grafx2
 PORTVERSION=	2.8
 DISTVERSIONSUFFIX=	.3091-HEAD-src
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://pulkomandy.tk/projects/GrafX2/downloads/ \
 		LOCAL/ehaupt

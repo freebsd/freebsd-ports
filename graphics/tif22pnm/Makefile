@@ -1,6 +1,6 @@
 PORTNAME=	tif22pnm
 PORTVERSION=	0.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://pts.szit.bme.hu/
 

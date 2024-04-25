@@ -1,6 +1,6 @@
 PORTNAME=	librasterlite2
 PORTVERSION=	1.1.0
-PORTREVISION=	8
+PORTREVISION=	9
 DISTVERSIONSUFFIX=-beta1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/librasterlite2-sources/

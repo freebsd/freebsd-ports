@@ -1,6 +1,6 @@
 PORTNAME=	leptonica
 DISTVERSION=	1.82.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/DanBloomberg/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		http://www.${PORTNAME}.org/source/

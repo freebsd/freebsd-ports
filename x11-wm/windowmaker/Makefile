@@ -1,6 +1,6 @@
 PORTNAME=	windowmaker
 PORTVERSION=	0.96.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	https://www.windowmaker.org/pub/source/release/ \
 		https://github.com/window-maker/wmaker/releases/download/wmaker-${PORTVERSION}/ LOCAL/danfe
