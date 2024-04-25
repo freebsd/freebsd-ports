@@ -1,14 +1,13 @@
 PORTNAME=	pharo
-DISTVERSION=	10.0.9
-DISTVERSIONSUFFIX=	de76067
-PORTREVISION=	3
+DISTVERSION=	10.2.0
+DISTVERSIONSUFFIX=	f4c5e2a
 CATEGORIES=	lang
 MASTER_SITES=	http://files.pharo.org/vm/pharo-spur64-headless/Linux-x86_64/source/
 DISTNAME=	PharoVM-${DISTVERSION}-${DISTVERSIONSUFFIX}-Linux-x86_64-c-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Smalltalk-inspired language and environment
-WWW=		http://www.pharo.org/
+WWW=		https://www.pharo.org/
 
 LICENSE=	MIT
 
