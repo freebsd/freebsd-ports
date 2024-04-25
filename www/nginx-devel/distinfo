@@ -1,6 +1,6 @@
-TIMESTAMP = 1713445894
-SHA256 (nginx-1.25.5.tar.gz) = 2fe2294f8af4144e7e842eaea884182a84ee7970e11046ba98194400902bbec0
-SIZE (nginx-1.25.5.tar.gz) = 1244060
+TIMESTAMP = 1714007538
+SHA256 (nginx-1.26.0.tar.gz) = d2e6c8439d6c6db5015d8eaab2470ab52aef85a7bf363182879977e084370497
+SIZE (nginx-1.26.0.tar.gz) = 1244118
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
 SIZE (nginx_mogilefs_module-1.0.4.tar.gz) = 11208
 SHA256 (ngx_http_redis-0.3.9.tar.gz) = 21f87540f0a44b23ffa5df16fb3d788bc90803b255ef14f9c26e3847a6f26f46
