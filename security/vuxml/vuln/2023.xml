@@ -8265,7 +8265,7 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <affects>
       <package>
 	<name>glpi</name>
-	<range><lt>10.0.7</lt></range>
+	<range><lt>10.0.7,1</lt></range>
       </package>
     </affects>
     <description>
@@ -8305,6 +8305,7 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2023-03-20</discovery>
       <entry>2023-05-08</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 

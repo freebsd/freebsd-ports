@@ -1,3 +1,558 @@
+  <vuln vid="10e86b16-6836-11ee-b06f-0050569ceb3a">
+    <topic>Unallowed PHP script execution in GLPI</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><lt>10.0.10,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>From the GLPI 10.0.10 Changelog:</p>
+	<blockquote
+	cite="https://github.com/glpi-project/glpi/releases/tag/10.0.10">
+	<p>You will find below security issues fixed in this bugfixes version:
+	[SECURITY - Critical] Unallowed PHP script execution (CVE-2023-42802).</p>
+	</blockquote>
+	<p>The mentioned CVE is invalid</p>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-42802</cvename>
+      <url>https://github.com/glpi-project/glpi/releases/tag/10.0.10</url>
+    </references>
+    <dates>
+      <discovery>2023-09-27</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="894f2491-6834-11ee-b06f-0050569ceb3a">
+    <topic>glpi-project -- SQL injection in ITIL actors in GLPI</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><ge>10.0.8,1</ge><lt>10.0.10,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/security/advisories/GHSA-x3jp-69f2-p84w">
+	  <p>GLPI stands for Gestionnaire Libre de Parc Informatique is a Free
+	Asset and IT Management Software package, that provides ITIL Service
+	Desk features, licenses tracking and software auditing.  The ITIL
+	actors input field from the Ticket form can be used to perform a
+	SQL injection.  Users are advised to upgrade to version 10.0.10.
+	There are no known workarounds for this vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-42461</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-42461</url>
+    </references>
+    <dates>
+      <discovery>2023-09-27</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="54e5573a-6834-11ee-b06f-0050569ceb3a">
+    <topic>Phishing through a login page malicious URL in GLPI</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><ge>10.0.8,1</ge><lt>10.0.10,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/security/advisories/GHSA-2hcg-75jj-hghp">
+	  <p>GLPI stands for Gestionnaire Libre de Parc Informatique is a Free
+	Asset and IT Management Software package, that provides ITIL Service
+	Desk features, licenses tracking and software auditing.  The lack
+	of path filtering on the GLPI URL may allow an attacker to transmit
+	a malicious URL of login page that can be used to attempt a phishing
+	attack on user credentials.  Users are advised to upgrade to version
+	10.0.10.  There are no known workarounds for this vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-41888</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-41888</url>
+    </references>
+    <dates>
+      <discovery>2023-09-27</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="20302cbc-6834-11ee-b06f-0050569ceb3a">
+    <topic>Users login enumeration by unauthenticated user in GLPI</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><lt>10.0.10,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/security/advisories/GHSA-5cf4-6q6r-49x9">
+	  <p>GLPI stands for Gestionnaire Libre de Parc Informatique is a Free
+	Asset and IT Management Software package, that provides ITIL Service
+	Desk features, licenses tracking and software auditing.  An
+	unauthenticated user can enumerate users logins.  Users are advised
+	to upgrade to version 10.0.10.  There are no known workarounds for
+	this vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-41323</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-41323</url>
+    </references>
+    <dates>
+      <discovery>2023-09-27</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ae8b1445-6833-11ee-b06f-0050569ceb3a">
+    <topic>Privilege Escalation from technician to super-admin in GLPI</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><ge>9.1.0,1</ge><lt>10.0.10,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/security/advisories/GHSA-9j8m-7563-8xvr">
+	  <p>GLPI stands for Gestionnaire Libre de Parc Informatique is a Free
+	Asset and IT Management Software package, that provides ITIL Service
+	Desk features, licenses tracking and software auditing.  A user
+	with write access to another user can make requests to change the
+	latter&apos;s password and then take control of their account.
+	Users are advised to upgrade to version 10.0.10.  There are no known
+	work around for this vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-41322</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-41322</url>
+    </references>
+    <dates>
+      <discovery>2023-09-27</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6851f3bb-6833-11ee-b06f-0050569ceb3a">
+    <topic>Sensitive fields enumeration through API in GLPI</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><ge>9.1.1,1</ge><lt>10.0.10,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/security/advisories/GHSA-3fxw-j5rj-w836">
+	  <p>GLPI stands for Gestionnaire Libre de Parc Informatique is a Free
+	Asset and IT Management Software package, that provides ITIL Service
+	Desk features, licenses tracking and software auditing.  An API
+	user can enumerate sensitive fields values on resources on which
+	he has read access.  Users are advised to upgrade to version 10.0.10.
+	There are no known workarounds for this vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-41321</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-41321</url>
+    </references>
+    <dates>
+      <discovery>2023-09-27</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="df71f5aa-6831-11ee-b06f-0050569ceb3a">
+    <topic>File deletion through document upload process in GLPI</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><ge>10.0.0,1</ge><lt>10.0.10,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/security/advisories/GHSA-hm76-jh96-7j75">
+	  <p>GLPI stands for Gestionnaire Libre de Parc Informatique is a Free
+	Asset and IT Management Software package, that provides ITIL Service
+	Desk features, licenses tracking and software auditing.  The document
+	upload process can be diverted to delete some files.  Users are
+	advised to upgrade to version 10.0.10.  There are no known workarounds
+	for this vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-42462</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-42462</url>
+    </references>
+    <dates>
+      <discovery>2023-09-27</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="95c4ec45-6831-11ee-b06f-0050569ceb3a">
+    <topic>Account takeover through API in GLPI</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><ge>9.3.0,1</ge><lt>10.0.10,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/security/advisories/GHSA-58wj-8jhx-jpm3">
+	  <p>GLPI stands for Gestionnaire Libre de Parc Informatique is a Free
+	Asset and IT Management Software package, that provides ITIL Service
+	Desk features, licenses tracking and software auditing.  An API
+	user that have read access on users resource can steal accounts of
+	other users.  Users are advised to upgrade to version 10.0.10.
+	There are no known workarounds for this vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-41324</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-41324</url>
+    </references>
+    <dates>
+      <discovery>2023-09-27</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="040e69f1-6831-11ee-b06f-0050569ceb3a">
+    <topic>Account takeover via Kanban feature in GLPI</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><ge>9.5.0,1</ge><lt>10.0.10,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/security/advisories/GHSA-5wj6-hp4c-j5q9">
+	  <p>GLPI stands for Gestionnaire Libre de Parc Informatique is a Free
+	Asset and IT Management Software package, that provides ITIL Service
+	Desk features, licenses tracking and software auditing.  A logged
+	user from any profile can hijack the Kanban feature to alter any
+	user field, and end-up with stealing its account.  Users are advised
+	to upgrade to version 10.0.10.  There are no known workarounds for
+	this vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-41326</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-41326</url>
+    </references>
+    <dates>
+      <discovery>2023-09-27</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6f6518ab-6830-11ee-b06f-0050569ceb3a">
+    <topic>Account takeover via SQL Injection in UI layout preferences in GLPI</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><ge>10.0.0,1</ge><lt>10.0.10,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/security/advisories/GHSA-mv2r-gpw3-g476">
+	  <p>GLPI stands for Gestionnaire Libre de Parc Informatique is a Free
+	Asset and IT Management Software package, that provides ITIL Service
+	Desk features, licenses tracking and software auditing.  UI layout
+	preferences management can be hijacked to lead to SQL injection.
+	This injection can be use to takeover an administrator account.
+	Users are advised to upgrade to version 10.0.10.  There are no known
+	workarounds for this vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-41320</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-41320</url>
+    </references>
+    <dates>
+      <discovery>2023-09-27</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="257e1bf0-682f-11ee-b06f-0050569ceb3a">
+    <topic>GLPI vulnerable to SQL injection via dashboard administration</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><ge>9.5.0,1</ge><lt>10.0.9,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/releases/tag/10.0.9">
+	  <p>GLPI is a Free Asset and IT Management Software package, Data center
+	management, ITIL Service Desk, licenses tracking and software
+	auditing.  An administrator can trigger SQL injection via dashboards
+	administration.  This vulnerability has been patched in version
+	10.0.9.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-37278</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-37278</url>
+    </references>
+    <dates>
+      <discovery>2023-07-13</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="40173815-6827-11ee-b06f-0050569ceb3a">
+    <topic>GLPI vulnerable to unauthorized access to User data</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><lt>10.0.8,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/releases/tag/10.0.8">
+	  <p>GLPI is a free asset and IT management software package.  Versions
+	of the software starting with 0.68 and prior to 10.0.8 have an
+	incorrect rights check on a on a file accessible by an authenticated
+	user.  This allows access to the list of all users and their personal
+	information.  Users should upgrade to version 10.0.8 to receive a
+	patch.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-34106</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-34106</url>
+    </references>
+    <dates>
+      <discovery>2023-07-05</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1fe40200-6823-11ee-b06f-0050569ceb3a">
+    <topic>GLPI vulnerable to unauthorized access to KnowbaseItem data</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><ge>9.2.0,1</ge><lt>10.0.8,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/releases/tag/10.0.8">
+	  <p>GLPI is a free asset and IT management software package.  Versions
+	of the software starting with 9.2.0 and prior to 10.0.8 have an
+	incorrect rights check on a on a file accessible by an authenticated
+	user, allows access to the view all KnowbaseItems.  Version 10.0.8
+	has a patch for this issue.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-34107</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-34107</url>
+    </references>
+    <dates>
+      <discovery>2023-07-05</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b14a6ddc-6821-11ee-b06f-0050569ceb3a">
+    <topic>GLPI vulnerable to reflected XSS in search pages</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><ge>9.4.0,1</ge><lt>10.0.8,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/releases/tag/10.0.8">
+	  <p>GLPI is a free asset and IT management software package.  Starting
+	in version 9.4.0 and prior to version 10.0.8, a malicious link can
+	be crafted by an unauthenticated user that can exploit a reflected
+	XSS in case any authenticated user opens the crafted link.  Users
+	should upgrade to version 10.0.8 to receive a patch.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-34244</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-34244</url>
+    </references>
+    <dates>
+      <discovery>2023-07-05</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="95fde6bc-6821-11ee-b06f-0050569ceb3a">
+    <topic>GLPI vulnerable to unauthenticated access to Dashboard data</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><ge>9.5.0,1</ge><lt>10.0.8,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/releases/tag/10.0.8">
+	  <p>GLPI is a free asset and IT management software package.  Starting
+	in version 9.5.0 and prior to version 10.0.8, an incorrect rights
+	check on a file allows an unauthenticated user to be able to access
+	dashboards data.  Version 10.0.8 contains a patch for this issue.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-35940</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-35940</url>
+    </references>
+    <dates>
+      <discovery>2023-07-05</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="717efd8a-6821-11ee-b06f-0050569ceb3a">
+    <topic>GLPI vulnerable to unauthorized access to Dashboard data</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><ge>9.5.0,1</ge><lt>10.0.8,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/releases/tag/10.0.8">
+	  <p>GLPI is a free asset and IT management software package.  Starting
+	in version 9.5.0 and prior to version 10.0.8, an incorrect rights
+	check on a on a file accessible by an authenticated user (or not
+	for certain actions), allows a threat actor to interact, modify,
+	or see Dashboard data.  Version 10.0.8 contains a patch for this
+	issue.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-35939</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-35939</url>
+    </references>
+    <dates>
+      <discovery>2023-07-05</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="548a4163-6821-11ee-b06f-0050569ceb3a">
+    <topic>GLPI vulnerable to SQL injection through Computer Virtual Machine information</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><lt>10.0.8,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/releases/tag/10.0.8">
+	  <p>GLPI is a free asset and IT management software package.  Starting
+	in version 0.80 and prior to version 10.0.8, Computer Virtual Machine
+	form and GLPI inventory request can be used to perform a SQL injection
+	attack.  Version 10.0.8 has a patch for this issue.  As a workaround,
+	one may disable native inventory.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-36808</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-36808</url>
+    </references>
+    <dates>
+      <discovery>2023-07-05</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e44e5ace-6820-11ee-b06f-0050569ceb3a">
+    <topic>GLPI vulnerable to SQL injection via inventory agent request</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><ge>10.0.0,1</ge><lt>10.0.8,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/releases/tag/10.0.8">
+	  <p>GLPI is a free asset and IT management software package.  Starting
+	in version 10.0.0 and prior to version 10.0.8, GLPI inventory
+	endpoint can be used to drive a SQL injection attack.  By default,
+	GLPI inventory endpoint requires no authentication.  Version 10.0.8
+	has a patch for this issue.  As a workaround, one may disable native
+	inventory.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-35924</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-35924</url>
+    </references>
+    <dates>
+      <discovery>2023-07-05</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bdfa6c04-027a-11ef-9c21-901b0e9408dc">
     <topic>py-matrix-synapse -- weakness in auth chain indexing allows DoS</topic>
     <affects>
