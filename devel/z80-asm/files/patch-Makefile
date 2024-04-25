@@ -1,0 +1,43 @@
+--- Makefile.orig	2006-10-04 15:26:50 UTC
++++ Makefile
+@@ -30,16 +30,17 @@ endif
+  MONI=z80-mon.exe
+ endif
+ 
+-CC=	gcc
++CC?=	gcc
+ CFLAGS=-O2 -Wall -D$(ZZ) -D$(SYSTEM) $(DEFINES) -W -Wstrict-prototypes \
+-       -Wno-parentheses -fomit-frame-pointer -falign-functions=0
++       -Wno-self-assign -Wno-parentheses -fomit-frame-pointer -falign-functions=0
+ LDFLAGS=
+ 
+ all:
+ 	cd hardware; $(MAKE) SYSTEM=$(SYSTEM) DEFINES="-D$(ZZZ) -D$(SYSTEM) $(DEFINES)" hard.a
+-	make $(ASM)
+-	make $(MONI)
+-	cd hardware; $(MAKE) SYSTEM=$(SYSTEM) DEFINES="-D$(ZZZ) -D$(SYSTEM) $(DEFINES)"
++	$(MAKE) $(ASM)
++	$(MAKE) $(MONI)
++	# Commenting out this line as binaries produced are not installed
++	# cd hardware; $(MAKE) SYSTEM=$(SYSTEM) DEFINES="-D$(ZZZ) -D$(SYSTEM) $(DEFINES)"
+ 
+ clean:
+ 	$(RM) *.o
+@@ -48,7 +49,7 @@ clean:
+ 	$(RM) asm.a
+ 	$(RM) cpu.a
+ 	$(RM) .bus_proto
+-	cd hardware; make SYSTEM=$(SYSTEM) clean
++	cd hardware; $(MAKE) SYSTEM=$(SYSTEM) clean
+ 
+ install:
+ 	chmod a+rx $(ASM) $(MONI); cp -p $(ASM) $(MONI) $(BIN_DIR)
+@@ -118,6 +119,6 @@ $(ASM): z80-asm.o dummy.o asm.a $(HW)
+ 
+ 
+ $(ASM): z80-asm.o dummy.o asm.a $(HW)
+-	gcc -lc -o $(ASM) z80-asm.o dummy.o asm.a $(HW)
++	$(CC) -lc -o $(ASM) z80-asm.o dummy.o asm.a $(HW)
+ $(MONI): z80-mon.o cpu.a console.o asm.a $(HW)
+-	gcc -lc -o $(MONI) z80-mon.o cpu.a console.o asm.a $(HW)
++	$(CC) -lc -o $(MONI) z80-mon.o cpu.a console.o asm.a $(HW)

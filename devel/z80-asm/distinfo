@@ -1,4 +1,3 @@
-SHA256 (z80-asm/z80-asm-2.3.tar.gz) = d221ba488294e3e1ef0472425f696635768de4b565bdf47abaee5df0a5fe179a
-SIZE (z80-asm/z80-asm-2.3.tar.gz) = 527292
-SHA256 (z80-asm/diff_2.3_2.4-pre3.gz) = a00fda33ecb2271842fac4f10de5fe2da5a307ba05694c3fb3d16f6c56b82d8a
-SIZE (z80-asm/diff_2.3_2.4-pre3.gz) = 33063
+TIMESTAMP = 1703778570
+SHA256 (z80-asm/z80-asm-current.tar.gz) = 3c2197389a3b4c891f3b85a8725213b59eb1955ea53b251eed546c4d3bb64cb0
+SIZE (z80-asm/z80-asm-current.tar.gz) = 3582101
