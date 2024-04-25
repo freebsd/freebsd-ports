@@ -1,4 +1,3 @@
-=> SHA256 Checksum OK for gleam-lang-gleam-v1.1.0_GH0.tar.gz.
 CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
 		aho-corasick-1.1.3 \
