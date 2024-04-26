@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2024-04-25 19:30:16 UTC
++++ Makefile.in
+@@ -370,7 +370,7 @@ AM_DISTCHECK_CONFIGURE_FLAGS = \
+ 	--enable-cvg \
+ 	--enable-gotd
+ 
+-SUBDIRS = compat libexec got tog gotadmin template gotwebd \
++SUBDIRS = compat libexec got tog gotadmin template \
+ 	$(am__append_1) $(am__append_2)
+ EXTRA_DIST = CHANGES CHANGELOG LICENCE README.portable util/got-portable-ver.sh
+ LDADD = $(LIBOBJS) $(am__append_3)

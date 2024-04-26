@@ -1,0 +1,15 @@
+--- configure.orig	2024-04-25 19:31:02 UTC
++++ configure
+@@ -10046,9 +10046,9 @@ fi
+ 
+ fi
+ 
+-if test "x$found_libevent" = xno; then
+-	as_fn_error $? "\"libevent not found\"" "$LINENO" 5
+-fi
++#if test "x$found_libevent" = xno; then
++#	as_fn_error $? "\"libevent not found\"" "$LINENO" 5
++#fi
+ 
+ ac_fn_c_check_func "$LINENO" "uuid_create" "ac_cv_func_uuid_create"
+ if test "x$ac_cv_func_uuid_create" = xyes
