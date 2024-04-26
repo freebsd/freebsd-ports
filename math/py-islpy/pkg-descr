@@ -1,0 +1,17 @@
+islpy is a Python wrapper around Sven Verdoolaege's isl, a library for
+manipulating sets and relations of integer points bounded by linear
+constraints.
+
+Supported operations on sets include:
+* intersection, union, set difference,
+* emptiness check,
+* convex hull,
+* (integer) affine hull,
+* integer projection,
+* computing the lexicographic minimum using parametric integer programming,
+* coalescing,
+* parametric vertex enumeration.
+
+It also includes an ILP solver based on generalized basis reduction, transitive
+closures on maps (which may encode infinite graphs), dependence analysis and
+bounds on piecewise step-polynomials.
