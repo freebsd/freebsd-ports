@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+
+  Accelerated math library OpenBLAS can speed up xnec2c EM simulations 
+  for faster operation: pkg install openblas
+EOM
+}
+]
