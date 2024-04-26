@@ -1,6 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	jql-v
-DISTVERSION=	7.1.7
+DISTVERSION=	7.1.8
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +24,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.81 \
+		anyhow-1.0.82 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
 		bitflags-2.4.1 \
@@ -41,7 +41,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		clap_derive-4.5.4 \
 		clap_lex-0.7.0 \
 		colorchoice-1.0.0 \
-		colored_json-4.1.0 \
+		colored_json-5.0.0 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
 		crossbeam-deque-0.8.4 \
@@ -87,15 +87,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustix-0.38.28 \
 		ryu-1.0.16 \
 		same-file-1.0.6 \
-		serde-1.0.197 \
-		serde_derive-1.0.197 \
-		serde_json-1.0.115 \
+		serde-1.0.198 \
+		serde_derive-1.0.198 \
+		serde_json-1.0.116 \
 		serde_stacker-0.1.11 \
 		stacker-0.1.15 \
 		strsim-0.11.0 \
 		syn-2.0.48 \
-		thiserror-1.0.58 \
-		thiserror-impl-1.0.58 \
+		thiserror-1.0.59 \
+		thiserror-impl-1.0.59 \
 		tinytemplate-1.2.1 \
 		tokio-1.37.0 \
 		tokio-macros-2.2.0 \
@@ -130,8 +130,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		winnow-0.6.5 \
-		yansi-0.5.1
+		winnow-0.6.6 \
+		yansi-1.0.1
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
