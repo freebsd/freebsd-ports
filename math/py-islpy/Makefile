@@ -25,9 +25,6 @@ USE_PYTHON=	pep517 autoplist pytest
 
 SHEBANG_FILES=	configure.py
 
-xCXXFLAGS+=	-I${WRKSRC}/isl/include \
-		-I${WRKSRC}/isl-supplementary
-
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/test
 
