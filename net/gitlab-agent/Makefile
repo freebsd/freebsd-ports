@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-agent
-PORTVERSION=	16.11.0
+PORTVERSION=	16.11.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -17,12 +17,12 @@ USES=		go:modules,1.22
 GO_MODULE=	gitlab.com/gitlab-org/cluster-integration/gitlab-agent/v16
 
 _BUILD_DATE=	$$(date -u "+%Y-%m-%d-%H%M UTC")
+GO_TARGET=     ./cmd/kas
 GO_BUILDFLAGS= -tags="tracer_static,tracer_static_jaeger" \
 		-ldflags=" \
 		-X 'gitlab.com/gitlab-org/cluster-integration/gitlab-agent/v16/cmd.Version=v${PORTVERSION}' \
 		-X 'gitlab.com/gitlab-org/cluster-integration/gitlab-agent/v16/cmd.Commit=${GL_TAGNAME:C/^(........).*/\1/}' \
 		-X 'gitlab.com/gitlab-org/cluster-integration/gitlab-agent/v16/cmd.BuildTime=${_BUILD_DATE}'"
-GO_TARGET=     ./cmd/kas
 
 PLIST_FILES=	bin/kas
 
