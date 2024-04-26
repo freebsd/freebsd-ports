@@ -39,6 +39,13 @@ LADSPA_CMAKE_BOOL=	BUILD_LADSPA_PLUGIN
 VST3_CMAKE_BOOL=	BUILD_VST3_PLUGIN
 VST3_BROKEN=		fails to build with juce-7.0.6, see https://github.com/werman/noise-suppression-for-voice/issues/177
 
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 180
+# Work around https://github.com/llvm/llvm-project/issues/88592
+CXXFLAGS+=	-fclang-abi-compat=17
+.endif
+
 post-extract: # remove bundled JUCE
 	@${RM} -rf ${WRKSRC}/external/JUCE
 
@@ -60,4 +67,4 @@ post-install-VST3-on:
 
 # the LADSPA plugin can be used directly from PulseAudio's config file
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
