@@ -1,0 +1,5 @@
+GRM helps you manage git repositories in a declarative way. Configure your
+repositories in a TOML or YAML file, GRM does the rest.
+
+Also, GRM can be used to work with git worktrees in an opinionated,
+straightforward fashion.

@@ -813,6 +813,7 @@
     SUBDIR += git-modes
     SUBDIR += git-p4
     SUBDIR += git-prev-next
+    SUBDIR += git-repo-manager
     SUBDIR += git-review
     SUBDIR += git-subrepo
     SUBDIR += git-svn
