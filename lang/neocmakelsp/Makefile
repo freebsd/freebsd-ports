@@ -1,6 +1,6 @@
 PORTNAME=	neocmakelsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.22
+DISTVERSION=	0.6.23
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,14 +23,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.81 \
-		async-trait-0.1.79 \
+		anyhow-1.0.82 \
+		async-trait-0.1.80 \
 		auto_impl-1.2.0 \
 		autocfg-1.2.0 \
 		backtrace-0.3.71 \
 		bitflags-1.3.2 \
 		bytes-1.6.0 \
-		cc-1.0.90 \
+		cc-1.0.94 \
 		cfg-if-1.0.0 \
 		clap-4.5.4 \
 		clap_builder-4.5.2 \
@@ -54,7 +54,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		futures-sink-0.3.30 \
 		futures-task-0.3.30 \
 		futures-util-0.3.30 \
-		getrandom-0.2.12 \
+		getrandom-0.2.14 \
 		gimli-0.28.1 \
 		glob-0.3.1 \
 		hashbrown-0.14.3 \
@@ -84,8 +84,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pin-project-internal-1.1.5 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
-		proc-macro2-1.0.79 \
-		quote-1.0.35 \
+		proc-macro2-1.0.80 \
+		quote-1.0.36 \
 		redox_syscall-0.4.1 \
 		regex-1.10.4 \
 		regex-automata-0.4.6 \
@@ -97,7 +97,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde-1.0.197 \
 		serde_derive-1.0.197 \
 		serde_json-1.0.115 \
-		serde_repr-0.1.18 \
+		serde_repr-0.1.19 \
 		sharded-slab-0.1.7 \
 		signal-hook-registry-1.4.1 \
 		slab-0.4.9 \
@@ -105,7 +105,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		socket2-0.5.6 \
 		strsim-0.11.1 \
 		syn-1.0.109 \
-		syn-2.0.58 \
+		syn-2.0.59 \
 		termcolor-1.4.1 \
 		thread_local-1.1.8 \
 		tiny-keccak-2.0.2 \
@@ -124,7 +124,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tracing-core-0.1.32 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.18 \
-		tree-sitter-0.22.2 \
+		tree-sitter-0.22.5 \
 		tree-sitter-cmake-0.4.3 \
 		trim-in-place-0.1.7 \
 		unicode-bidi-0.3.15 \
@@ -142,21 +142,22 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.4 \
+		windows-targets-0.52.5 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_gnullvm-0.52.5 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.4 \
+		windows_aarch64_msvc-0.52.5 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.4 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.4 \
+		windows_i686_msvc-0.52.5 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.4
+		windows_x86_64_msvc-0.52.5
 
 PLIST_FILES=	bin/${PORTNAME}
 
