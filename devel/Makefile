@@ -5210,6 +5210,7 @@
     SUBDIR += py-pbr
     SUBDIR += py-pbs-installer
     SUBDIR += py-pcodedmp
+    SUBDIR += py-pcpp
     SUBDIR += py-pdm
     SUBDIR += py-pdm-autoexport
     SUBDIR += py-pdm-backend

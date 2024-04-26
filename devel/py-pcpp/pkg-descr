@@ -1,0 +1,3 @@
+pcpp is a pure universal Python C (pre-)preprocessor implementation very useful
+for pre-preprocessing header only C++ libraries into single file includes and
+other such build or packaging stage malarky.
