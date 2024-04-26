@@ -201,12 +201,10 @@ do-configure:
 # Rust doesn't call the system compiler with the full version of the target.
 # This makes powerpc miscompile due to the secure-plt ABI change.
 # Additionally, force using ld.bfd to work around a linking problem in rustc_mir
-	@${PRINTF} '#!/bin/sh\nexec ${CC} "$$@" --target=powerpc-unknown-freebsd13.0' > ${WRKDIR}/cc-wrapper
+	@${PRINTF} '#!/bin/sh\nexec ${CC} "$$@" --target=powerpc-unknown-freebsd13.2' > ${WRKDIR}/cc-wrapper
 	@${CHMOD} +x ${WRKDIR}/cc-wrapper
-	@${PRINTF} '#!/bin/sh\nexec ${CXX} "$$@" --target=powerpc-unknown-freebsd13.0' > ${WRKDIR}/cxx-wrapper
+	@${PRINTF} '#!/bin/sh\nexec ${CXX} "$$@" --target=powerpc-unknown-freebsd13.2' > ${WRKDIR}/cxx-wrapper
 	@${CHMOD} +x ${WRKDIR}/cxx-wrapper
-	@${PRINTF} '#!/bin/sh\nexec ${CC} -fuse-ld=bfd "$$@" --target=powerpc-unknown-freebsd13.0' > ${WRKDIR}/ld-wrapper
-	@${CHMOD} +x ${WRKDIR}/ld-wrapper
 .endif
 .for _target in ${_RUST_TARGETS}
 	@${ECHO_CMD} '[target.${_target}]' >> ${WRKSRC}/config.toml
@@ -218,11 +216,7 @@ do-configure:
 	@${ECHO_CMD} 'cc="${CC}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'cxx="${CXX}"' >> ${WRKSRC}/config.toml
 .endif
-.if ${ARCH} == powerpc
-	@${ECHO_CMD} 'linker="${WRKDIR}/ld-wrapper"' >> ${WRKSRC}/config.toml
-.else
 	@${ECHO_CMD} 'linker="${CC}"' >> ${WRKSRC}/config.toml
-.endif
 .if ${PORT_OPTIONS:MPORT_LLVM}
 	@${ECHO_CMD} 'llvm-config="${LOCALBASE}/bin/${LLVM_CONFIG}"' >> ${WRKSRC}/config.toml
 .endif
