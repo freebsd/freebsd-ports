@@ -2168,6 +2168,7 @@ www/py-WebTest|www/py-webtest|2023-06-08|Use lowercase PORTNAME and path
 security/py-sequoia||2023-06-09|Deprecated upstream, broken as based on older dependency
 audio/hvl2wav|audio/ocp|2023-06-10|Has expired: Abandoned upstream, use audio/ocp instead
 x11/thinglaunch|x11/thingylaunch|2023-06-10|Has expired: Abandonware, please use x11/thingylaunch instead
+devel/kiwix-lib|devel/libkiwix|2023-06-12|Renamed to match upstream naming
 sysutils/intel-nvmupdate|sysutils/intel-nvmupdate-40g|2023-06-14|Moved to sysutils/intel-nvmupdate-40g, which is 40G-generation specific port to make space for 10G and 100G generations
 sysutils/intel-qcu|sysutils/intel-epct|2023-06-14|Moved to sysutils/intel-epct
 multimedia/obs-qtwebkit||2023-06-16|Has expired: OBS ships with their own browser plugin from version 25 onwards
