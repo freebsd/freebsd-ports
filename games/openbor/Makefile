@@ -1,7 +1,7 @@
 PORTNAME=	openbor
 # Hint: svn revision is git rev-list --count ${GH_TAGNAME}
-PORTVERSION?=	7691
-PORTREVISION?=	2
+PORTVERSION?=	7743
+PORTREVISION?=	0
 CATEGORIES=	games
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -15,7 +15,10 @@ MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	2D side scrolling engine for beat 'em ups, shooters, and more #'
 WWW=		https://www.chronocrash.com/
 
-LICENSE=	BSD3CLAUSE GPLv2+
+LICENSE=	BSD3CLAUSE
+.if ${PORTVERSION} < 7696
+LICENSE+=	GPLv2+
+.endif
 .if ${PORTVERSION} >= 4134
 LICENSE+=	ISCL
 .endif
@@ -35,7 +38,7 @@ PORTSCOUT=	ignore:1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DCurrent
-GH_TAGNAME?=	cbade65a
+GH_TAGNAME?=	7eedd899
 
 USES+=		cpe gmake pkgconfig sdl
 .if ${PORTVERSION} < 4433

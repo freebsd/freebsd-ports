@@ -1,0 +1,13 @@
+--- Makefile.orig	2025-05-19 16:26:01 UTC
++++ Makefile
+@@ -255,10 +255,6 @@ GFX 	        = source/gfxlib/bilinear.o               
+                   source/gfxlib/scanline.o                                                          \
+                   source/gfxlib/simple2x.o                                                          \
+                   source/gfxlib/tv2x.o
+-endif
+-
+-ifdef BUILD_MMX
+-GFX 	       += source/gfxlib/bilinearmmx.o
+ endif
+ 
+ GAME	        = source/gamelib/draw.o                                                             \
