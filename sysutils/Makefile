@@ -1680,6 +1680,7 @@
     SUBDIR += zbackup
     SUBDIR += zeitgeist
     SUBDIR += zellij
+    SUBDIR += zelta
     SUBDIR += zeroer
     SUBDIR += zetaback
     SUBDIR += zetaback-devel
