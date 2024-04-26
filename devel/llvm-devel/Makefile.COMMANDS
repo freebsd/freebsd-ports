@@ -114,7 +114,6 @@ FLANG_COMMANDS=	\
 		f18-parse-demo \
 		fir-opt \
 		flang-new \
-		flang-to-external-fc \
 		tco
 
 LIT_COMMANDS=	\
@@ -153,6 +152,4 @@ MLIR_COMMANDS=	\
 		tblgen-lsp-server \
 		tblgen-to-irdl
 
-OPENMP_COMMANDS=	\
-		llvm-omp-device-info \
-		llvm-omp-kernel-replay
+OPENMP_COMMANDS=
