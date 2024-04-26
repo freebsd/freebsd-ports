@@ -1,11 +1,7 @@
 PORTNAME=	audacity
 DISTVERSIONPREFIX=	Audacity-
-DISTVERSION=	3.5.0
+DISTVERSION=	3.5.1
 CATEGORIES=	audio
-
-PATCH_SITES=	https://github.com/audacity/audacity/commit/
-# FreeBSD compilation fixes: https://github.com/audacity/audacity/pull/6331
-PATCHFILES+=	4191cfb8376d19d044cadaf31214182375a9af55.patch:-p1
 
 MAINTAINER=	xxjack12xx@gmail.com
 COMMENT=	GUI editor for digital audio waveforms
