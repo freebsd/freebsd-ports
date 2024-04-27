@@ -1,6 +1,6 @@
 PORTNAME=	strawberry-graphql
 DISTVERSION=	0.224.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -57,7 +57,7 @@ DEBUG-SERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libcst>=0.4.7:devel/py-libcst@$
 DEBUG_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}libcst>=0.4.7:devel/py-libcst@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}rich>=12.0.0:textproc/py-rich@${PY_FLAVOR}
 DJANGO_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}asgiref>=3.2:www/py-asgiref@${PY_FLAVOR} \
-				${PYTHON_PKGNAMEPREFIX}django32>=3.2:www/py-django32@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}django42>=3.2:www/py-django42@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}pytest-django>0:devel/py-pytest-django@${PY_FLAVOR}
 FASTAPI_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}fastapi>=0.62.5:www/py-fastapi@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}multipart>=0.0.7:devel/py-multipart@${PY_FLAVOR}

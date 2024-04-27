@@ -1,5 +1,6 @@
 PORTNAME=	djangorestframework
 PORTVERSION=	3.14.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
@@ -12,7 +13,7 @@ WWW=		https://www.django-rest-framework.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.0:www/py-django32@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=3.0:www/py-django42@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR}
 
 USES=		python

@@ -2,7 +2,7 @@ PORTNAME=	seahub
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${SEAHUB_VER}
 DISTVERSIONSUFFIX=	-server
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -12,11 +12,11 @@ WWW=		https://github.com/haiwen/seahub
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=0:www/py-django32@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=0:www/py-django42@${PY_FLAVOR}
 
 RUN_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/www/haiwen/seafile-server/seafile/bin/seaf-server:net-mgmt/seafile-server \
-		${PYTHON_PKGNAMEPREFIX}django32>=0:www/py-django32@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django42>=0:www/py-django42@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-statici18n>=2.3:www/py-django-statici18n@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-webpack-loader>=1.7:www/py-django-webpack-loader@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-picklefield>=3.1:www/py-django-picklefield@${PY_FLAVOR} \

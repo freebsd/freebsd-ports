@@ -1,6 +1,7 @@
 PORTNAME=	dpaste
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.8
+PORTREVISION=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}django-
 
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 EXPIRATION_DATE=2024-04-30
 BROKEN=		does not work with py-pygments >= 2.12.0 and required static files (css + js), which must be compiled via Node.js, are not packaged.
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2:www/py-django32@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=3.2:www/py-django42@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj-database-url>=0.5.0:www/py-dj-database-url@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-csp>=3.6:www/py-django-csp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-staticinline>=1.0:www/py-django-staticinline@${PY_FLAVOR} \
