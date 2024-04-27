@@ -1,6 +1,5 @@
 PORTNAME=	uim
 PORTVERSION=	1.9.0.b.${SNAPDATE}
-PORTREVISION=	3
 CATEGORIES?=	textproc
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
@@ -22,11 +21,11 @@ USE_LDCONFIG=	yes
 USE_GNOME+=	glib20 intltool
 
 USE_GITHUB=	yes
-GH_TAGNAME=	15f0788
+GH_TAGNAME=	f7cdc9d
 GH_TUPLE=	uim:sigscheme:beb8fbd:sigscheme \
 		uim:libgcroots:d362356:libgcroots
 
-SNAPDATE=	20220927
+SNAPDATE=	20240306
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
