@@ -400,6 +400,7 @@
     SUBDIR += py-SQSnobFit
     SUBDIR += py-SimpleSoapy
     SUBDIR += py-SoapySDR
+    SUBDIR += py-accelerate
     SUBDIR += py-alive-progress
     SUBDIR += py-apache-beam
     SUBDIR += py-ascii-magic
