@@ -5,13 +5,16 @@ include/rtc/common.hpp
 include/rtc/configuration.hpp
 include/rtc/datachannel.hpp
 include/rtc/description.hpp
+include/rtc/frameinfo.hpp
 include/rtc/global.hpp
+include/rtc/h264rtpdepacketizer.hpp
 include/rtc/h264rtppacketizer.hpp
 include/rtc/h265nalunit.hpp
 include/rtc/h265rtppacketizer.hpp
 include/rtc/mediahandler.hpp
 include/rtc/message.hpp
 include/rtc/nalunit.hpp
+include/rtc/pacinghandler.hpp
 include/rtc/peerconnection.hpp
 include/rtc/plihandler.hpp
 include/rtc/reliability.hpp
@@ -21,10 +24,12 @@ include/rtc/rtcpnackresponder.hpp
 include/rtc/rtcpreceivingsession.hpp
 include/rtc/rtcpsrreporter.hpp
 include/rtc/rtp.hpp
+include/rtc/rtpdepacketizer.hpp
 include/rtc/rtppacketizationconfig.hpp
 include/rtc/rtppacketizer.hpp
 include/rtc/track.hpp
 include/rtc/utils.hpp
+include/rtc/version.h
 include/rtc/websocket.hpp
 include/rtc/websocketserver.hpp
 lib/cmake/LibDataChannel/LibDataChannelConfig.cmake
@@ -32,5 +37,5 @@ lib/cmake/LibDataChannel/LibDataChannelConfigVersion.cmake
 lib/cmake/LibDataChannel/LibDataChannelTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LibDataChannel/LibDataChannelTargets.cmake
 lib/libdatachannel.so
-lib/libdatachannel.so.0.20
-lib/libdatachannel.so.0.20.3
+lib/libdatachannel.so.0.21
+lib/libdatachannel.so.0.21.0
