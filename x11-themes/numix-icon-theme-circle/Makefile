@@ -1,5 +1,5 @@
 PORTNAME=	numix-icon-theme-circle
-DISTVERSION=	24.02.05
+DISTVERSION=	24.04.22
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
