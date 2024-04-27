@@ -3905,6 +3905,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/mat/tests/ex261.c
 %%DATADIR%%/examples/src/mat/tests/ex262f.F90
 %%DATADIR%%/examples/src/mat/tests/ex263.c
+%%DATADIR%%/examples/src/mat/tests/ex264.c
 %%DATADIR%%/examples/src/mat/tests/ex27.c
 %%DATADIR%%/examples/src/mat/tests/ex28.c
 %%DATADIR%%/examples/src/mat/tests/ex29.c
