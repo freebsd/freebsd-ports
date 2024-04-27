@@ -1,5 +1,5 @@
 PORTNAME=	matcha-gtk-themes
-DISTVERSION=	2021-11-29
+DISTVERSION=	2023-10-30
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
