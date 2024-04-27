@@ -11,7 +11,7 @@ WWW=		https://gameoftrees.org
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-USES=		localbase ssl
+USES=		localbase pkgconfig ssl
 
 CONFLICTS_INSTALL=	p5-App-GitGot
 
