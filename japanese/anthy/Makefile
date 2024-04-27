@@ -25,18 +25,12 @@ DOCSDIR=	${PREFIX}/share/doc/ja/anthy
 ELISPDIR=	share/emacs/site-lisp/anthy
 PLIST_SUB=	ELISPDIR=${ELISPDIR}
 
-OPTIONS_DEFINE=	2CHDIC ODIC GSKKDIC DOCS
+OPTIONS_DEFINE=	ODIC GSKKDIC DOCS
 
-2CHDIC_DESC=	2ch Dictionary
 ODIC_DESC=	Okinawa Dictionary
 GSKKDIC_DESC=	SKK Dictionary
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:M2CHDIC}
-MASTER_SITES+=	http://omaemona.sourceforge.net/packages/Zisyo/:2chdic
-DISTFILES+=	2ch.t:2chdic
-.endif
 
 .if ${PORT_OPTIONS:MODIC}
 MASTER_SITES+=	http://www.ofug.net/~yamajun/files/:odic
@@ -53,12 +47,6 @@ GSKK_VERS=	gskk-20041208
 .endif
 
 post-extract:
-.if ${PORT_OPTIONS:M2CHDIC}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/2ch.t ${WRKSRC}/mkworddic
-	${PRINTF} "/mkworddic\\\\/base.t/a\\\\\\nread @top_srcdir@/mkworddic/2ch.t\\n" | \
-	${REINPLACE_CMD} -f /dev/stdin ${WRKSRC}/mkworddic/dict.args.in
-.endif
-
 .if ${PORT_OPTIONS:MODIC}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${ODIC_SRCS} ${WRKSRC}/mkworddic
 	${PRINTF} "/mkworddic\\\\/base.t/a\\\\\\nread @top_srcdir@/mkworddic/${ODIC_SRCS}\\n" | \
