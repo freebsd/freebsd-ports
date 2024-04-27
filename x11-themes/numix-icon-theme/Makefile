@@ -1,5 +1,5 @@
 PORTNAME=	numix-icon-theme
-PORTVERSION=	23.12.02
+DISTVERSION=	24.04.22
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -8,8 +8,6 @@ WWW=		https://numixproject.github.io
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/license
-
-USES=		gnome
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	numixproject

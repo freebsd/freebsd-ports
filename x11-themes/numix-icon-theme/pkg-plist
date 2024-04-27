@@ -8144,6 +8144,8 @@ share/icons/Numix/16/mimetypes/application-x-neo-geo-pocket-color-rom.svg
 share/icons/Numix/16/mimetypes/application-x-neo-geo-pocket-rom.svg
 share/icons/Numix/16/mimetypes/application-x-nes-rom.svg
 share/icons/Numix/16/mimetypes/application-x-nintendo-ds-rom.svg
+share/icons/Numix/16/mimetypes/application-x-nintendo-switch-xci.svg
+share/icons/Numix/16/mimetypes/application-x-nx-xci.svg
 share/icons/Numix/16/mimetypes/application-x-nzb.svg
 share/icons/Numix/16/mimetypes/application-x-object.svg
 share/icons/Numix/16/mimetypes/application-x-ole-storage.svg
@@ -9453,6 +9455,9 @@ share/icons/Numix/16/panel/kazam-countdown.svg
 share/icons/Numix/16/panel/kazam-paused.svg
 share/icons/Numix/16/panel/kazam-recording.svg
 share/icons/Numix/16/panel/kazam-stopped.svg
+share/icons/Numix/16/panel/network-bluetooth-activated-symbolic.svg
+share/icons/Numix/16/panel/network-bluetooth-inactive-symbolic.svg
+share/icons/Numix/16/panel/network-bluetooth-symbolic.svg
 share/icons/Numix/16/panel/nvidia-panel.svg
 share/icons/Numix/16/panel/qtox-away.svg
 share/icons/Numix/16/panel/qtox-busy.svg
@@ -13595,6 +13600,8 @@ share/icons/Numix/22/mimetypes/application-x-neo-geo-pocket-color-rom.svg
 share/icons/Numix/22/mimetypes/application-x-neo-geo-pocket-rom.svg
 share/icons/Numix/22/mimetypes/application-x-nes-rom.svg
 share/icons/Numix/22/mimetypes/application-x-nintendo-ds-rom.svg
+share/icons/Numix/22/mimetypes/application-x-nintendo-switch-xci.svg
+share/icons/Numix/22/mimetypes/application-x-nx-xci.svg
 share/icons/Numix/22/mimetypes/application-x-nzb.svg
 share/icons/Numix/22/mimetypes/application-x-object.svg
 share/icons/Numix/22/mimetypes/application-x-ole-storage.svg
@@ -18743,6 +18750,8 @@ share/icons/Numix/24/mimetypes/application-x-neo-geo-pocket-color-rom.svg
 share/icons/Numix/24/mimetypes/application-x-neo-geo-pocket-rom.svg
 share/icons/Numix/24/mimetypes/application-x-nes-rom.svg
 share/icons/Numix/24/mimetypes/application-x-nintendo-ds-rom.svg
+share/icons/Numix/24/mimetypes/application-x-nintendo-switch-xci.svg
+share/icons/Numix/24/mimetypes/application-x-nx-xci.svg
 share/icons/Numix/24/mimetypes/application-x-object.svg
 share/icons/Numix/24/mimetypes/application-x-ole-storage.svg
 share/icons/Numix/24/mimetypes/application-x-openteacher.svg
@@ -23872,6 +23881,8 @@ share/icons/Numix/32/mimetypes/application-x-neo-geo-pocket-color-rom.svg
 share/icons/Numix/32/mimetypes/application-x-neo-geo-pocket-rom.svg
 share/icons/Numix/32/mimetypes/application-x-nes-rom.svg
 share/icons/Numix/32/mimetypes/application-x-nintendo-ds-rom.svg
+share/icons/Numix/32/mimetypes/application-x-nintendo-switch-xci.svg
+share/icons/Numix/32/mimetypes/application-x-nx-xci.svg
 share/icons/Numix/32/mimetypes/application-x-nzb.svg
 share/icons/Numix/32/mimetypes/application-x-object.svg
 share/icons/Numix/32/mimetypes/application-x-ole-storage.svg
@@ -26305,6 +26316,8 @@ share/icons/Numix/48/mimetypes/application-x-neo-geo-pocket-color-rom.svg
 share/icons/Numix/48/mimetypes/application-x-neo-geo-pocket-rom.svg
 share/icons/Numix/48/mimetypes/application-x-nes-rom.svg
 share/icons/Numix/48/mimetypes/application-x-nintendo-ds-rom.svg
+share/icons/Numix/48/mimetypes/application-x-nintendo-switch-xci.svg
+share/icons/Numix/48/mimetypes/application-x-nx-xci.svg
 share/icons/Numix/48/mimetypes/application-x-object.svg
 share/icons/Numix/48/mimetypes/application-x-ole-storage.svg
 share/icons/Numix/48/mimetypes/application-x-openteacher.svg
@@ -28794,6 +28807,8 @@ share/icons/Numix/64/mimetypes/application-x-neo-geo-pocket-color-rom.svg
 share/icons/Numix/64/mimetypes/application-x-neo-geo-pocket-rom.svg
 share/icons/Numix/64/mimetypes/application-x-nes-rom.svg
 share/icons/Numix/64/mimetypes/application-x-nintendo-ds-rom.svg
+share/icons/Numix/64/mimetypes/application-x-nintendo-switch-xci.svg
+share/icons/Numix/64/mimetypes/application-x-nx-xci.svg
 share/icons/Numix/64/mimetypes/application-x-nzb.svg
 share/icons/Numix/64/mimetypes/application-x-object.svg
 share/icons/Numix/64/mimetypes/application-x-ole-storage.svg
