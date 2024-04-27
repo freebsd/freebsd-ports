@@ -1,5 +1,5 @@
 PORTNAME=	canta-icon-theme
-DISTVERSION=	2020-05-17
+DISTVERSION=	2021-09-08
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
