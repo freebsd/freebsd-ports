@@ -1,3 +1,34 @@
+  <vuln vid="5da8b1e6-0591-11ef-9e00-080027957747">
+    <topic>GLPI -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><lt>10.0.15,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GLPI team reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/releases/tag/10.0.15">
+	  <p>GLPI 10.0.15 Changelog</p>
+	  <ul>
+	    <li>[SECURITY - high] Authenticated SQL injection from map search (CVE-2024-31456)</li>
+	    <li>[SECURITY - high] Account takeover via SQL Injection in saved searches feature (CVE-2024-29889)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-31456</cvename>
+      <cvename>CVE-2024-29889</cvename>
+      <url>https://github.com/glpi-project/glpi/releases/tag/10.0.15</url>
+    </references>
+    <dates>
+      <discovery>2024-04-03</discovery>
+      <entry>2024-04-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b3affee8-04d1-11ef-8928-901b0ef714d4">
     <topic>py-social-auth-app-django -- Improper Handling of Case Sensitivity</topic>
     <affects>
