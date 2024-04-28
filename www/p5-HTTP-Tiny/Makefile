@@ -1,5 +1,6 @@
 PORTNAME=	HTTP-Tiny
 PORTVERSION=	0.088
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,17 +20,18 @@ NO_ARCH=	yes
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
-OPTIONS_DEFINE=	COOKIE HTTPS IO_SOCKET_IP
-OPTIONS_DEFAULT=COOKIE HTTPS IO_SOCKET_IP
+OPTIONS_DEFINE=		CERTS COOKIE HTTPS IO_SOCKET_IP
+OPTIONS_DEFAULT=	CERTS COOKIE HTTPS IO_SOCKET_IP
+CERTS_DESC=		Install the Mozilla CA cert bundle
 IO_SOCKET_IP_DESC=	Use IO::Socket:IP instead of IO::Socket::INET
 
 COOKIE_BUILD_DEPENDS=	p5-HTTP-CookieJar>=0.001:www/p5-HTTP-CookieJar
 COOKIE_RUN_DEPENDS=	p5-HTTP-CookieJar>=0.001:www/p5-HTTP-CookieJar
 HTTPS_BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.42:security/p5-IO-Socket-SSL \
-			p5-Mozilla-CA>=20160104:www/p5-Mozilla-CA \
 			p5-Net-SSLeay>=1.49:security/p5-Net-SSLeay
 HTTPS_RUN_DEPENDS=	p5-IO-Socket-SSL>=1.42:security/p5-IO-Socket-SSL \
-			p5-Mozilla-CA>=20160104:www/p5-Mozilla-CA \
 			p5-Net-SSLeay>=1.49:security/p5-Net-SSLeay
+CERTS_BUILD_DEPENDS=	p5-Mozilla-CA>=20160104:www/p5-Mozilla-CA
+CERTS_RUN_DEPENDS=	p5-Mozilla-CA>=20160104:www/p5-Mozilla-CA
 
 .include <bsd.port.mk>
