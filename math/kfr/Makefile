@@ -9,6 +9,7 @@ WWW=		https://github.com/kfrlib/kfr
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_i386=	architecture mismatch in cmake, see https://github.com/kfrlib/kfr/issues/222
 ONLY_FOR_ARCHS=		aarch64 amd64 armv7 i386
 ONLY_FOR_ARCHS_REASON=	only x86, x86_64, ARM (ARMv7+ hf) and AArch64 (aka ARM64) are supported, see https://github.com/kfrlib/kfr/issues/158#issuecomment-1204723324
 
