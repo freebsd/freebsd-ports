@@ -10,6 +10,10 @@ WWW=		https://github.com/holmium/dnsforwarder
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandoned, upstream repo is removed
+EXPIRATION_DATE=2024-05-31
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		localbase
