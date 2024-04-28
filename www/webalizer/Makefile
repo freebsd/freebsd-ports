@@ -1,6 +1,6 @@
 PORTNAME=	webalizer
 PORTVERSION=	2.23.8
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/:main \
 		http://flags.blogpotato.de/zip/:flags
@@ -38,7 +38,7 @@ OPTIONS_SINGLE_DB=	BDB1 BDB
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=yes
 GEODB_DESC=Enable Webalizers IP-Database support
-WEBALIZER_CONV_DESC=Japanese character code convert patch
+WEBALIZER_CONV_DESC=Japanese character code convert to EUC-JP
 FULL_CGI_REFS_DESC=Show full cgi parameters in referers
 CLICKABLE_REFERER_DESC=Make referers clickable
 IP_AS_HOSTNAME_DESC=Show IP as hostname when IP does not resolve
@@ -60,7 +60,6 @@ WEBALIZER_CONV_USES=		iconv
 WEBALIZER_CONV_CONFIGURE_ON=	--enable-mininls
 WEBALIZER_CONV_CPPFLAGS=	-I${LOCALBASE}/include
 WEBALIZER_CONV_LIBS=		-L${LOCALBASE}/lib ${ICONV_LIB}
-WEBALIZER_CONV_BROKEN=		no conversion from UTF-8 needed
 FULL_CGI_REFS_CFLAGS=		-DUSE_FULL_CGI_REFS
 CLICKABLE_REFERER_CFLAGS=	-DUSE_CLICKABLE_REFERER
 IP_AS_HOSTNAME_CFLAGS=		-DUSE_IP_AS_HOSTNAME
@@ -105,8 +104,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/-src$//}
 PLIST_SUB+=	PKGNAMEPREFIX=${PKGNAMEPREFIX}
 SUPP_LANG=	albanian arabic catalan chinese croatian czech danish dutch \
 		english estonian finnish french galician german greek \
-		hungarian icelandic indonesian italian japanese korean \
-		latvian lithuanian malay norwegian polish portuguese \
+		hungarian icelandic indonesian italian japanese japanese-utf8 \
+		korean latvian lithuanian malay norwegian polish portuguese \
 		portuguese_brazil romanian romanian-iso-8859-2 russian \
 		serbian simplified_chinese slovak slovene spanish swedish \
 		thai turkish ukrainian
@@ -116,10 +115,17 @@ CONFIGURE_ARGS+=	--with-language=${WEBALIZER_LANG}
 .endif
 
 .if ${PORT_OPTIONS:MWEBALIZER_CONV}
+.if ${WEBALIZER_LANG} != japanese
+BROKEN=		no conversion from UTF-8 needed
+.endif
 #	The patch file is written by URASHIMA Akira
 #	see http://tyche.pu-toyama.ac.jp/~a-urasim/webalizer/
 EXTRA_PATCHES+=		${FILESDIR}/webalizer-a-urasim_2.patch
 .endif
+
+post-extract:
+	${CP} -p ${WRKSRC}/lang/webalizer_lang.japanese \
+		${WRKSRC}/lang/webalizer_lang.japanese-utf8
 
 pre-configure:
 	${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|" \
@@ -142,6 +148,12 @@ pre-configure:
 		-e "s|GeoIP[.]h|maxminddb.h|" \
 		-e "s|-lGeoIP|-lmaxminddb|" \
 		${WRKSRC}/configure
+.endif
+.if defined(WEBALIZER_LANG)
+.if ${WEBALIZER_LANG} == japanese
+	${REINPLACE_CMD} -e 's|charset=UTF-8|charset=x-euc-jp|' \
+		${WRKSRC}/sample.conf
+.endif
 .endif
 
 .if !defined(WEBALIZER_LANG)

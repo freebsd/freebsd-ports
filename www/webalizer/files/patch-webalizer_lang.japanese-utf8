@@ -1,5 +1,5 @@
---- lang/webalizer_lang.japanese.orig	2008-07-01 22:24:12 UTC
-+++ lang/webalizer_lang.japanese
+--- lang/webalizer_lang.japanese-utf8.orig	2008-07-01 22:24:12 UTC
++++ lang/webalizer_lang.japanese-utf8
 @@ -186,16 +186,16 @@ char *h_msg[]= {
  
  /* header strings */
