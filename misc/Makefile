@@ -408,6 +408,7 @@
     SUBDIR += py-boost-histogram
     SUBDIR += py-censys
     SUBDIR += py-cinder
+    SUBDIR += py-codecarbon
     SUBDIR += py-colorbrewer
     SUBDIR += py-colored
     SUBDIR += py-crudini
