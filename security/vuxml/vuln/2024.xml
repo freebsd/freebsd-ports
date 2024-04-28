@@ -11,6 +11,7 @@
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GitHub Advisory Database:</p>
 	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2024-32879">
 	  <p>Python Social Auth is a social authentication/registration mechanism. Prior to version 5.4.1, due to default case-insensitive collation in MySQL or MariaDB databases, third-party authentication user IDs are not case-sensitive and could cause different IDs to match. This issue has been addressed by a fix released in version 5.4.1. An immediate workaround would be to change collation of the affected field.</p>
 	</blockquote>
