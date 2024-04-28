@@ -1,6 +1,6 @@
 PORTNAME=	git-repo-manager
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.15
+DISTVERSION=	0.7.16
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,131 +17,131 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	hakoerber
 
-CARGO_CRATES=	aho-corasick-1.1.2 \
-		anstream-0.6.4 \
-		anstyle-1.0.4 \
-		anstyle-parse-0.2.2 \
-		anstyle-query-1.0.0 \
-		anstyle-wincon-3.0.1 \
+CARGO_CRATES=	aho-corasick-1.1.3 \
+		anstream-0.6.13 \
+		anstyle-1.0.6 \
+		anstyle-parse-0.2.3 \
+		anstyle-query-1.0.2 \
+		anstyle-wincon-3.0.2 \
 		async-channel-1.9.0 \
-		autocfg-1.1.0 \
+		autocfg-1.2.0 \
 		bitflags-1.3.2 \
-		bitflags-2.4.1 \
-		bytes-1.5.0 \
+		bitflags-2.5.0 \
+		bytes-1.6.0 \
 		castaway-0.1.2 \
-		cc-1.0.83 \
+		cc-1.0.95 \
 		cfg-if-1.0.0 \
-		clap-4.4.7 \
-		clap_builder-4.4.7 \
+		clap-4.4.18 \
+		clap_builder-4.4.18 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \
 		colorchoice-1.0.0 \
-		comfy-table-7.1.0 \
-		concurrent-queue-2.3.0 \
-		console-0.15.7 \
-		crossbeam-utils-0.8.16 \
+		comfy-table-7.1.1 \
+		concurrent-queue-2.5.0 \
+		console-0.15.8 \
+		crossbeam-utils-0.8.19 \
 		crossterm-0.27.0 \
 		crossterm_winapi-0.9.1 \
-		curl-0.4.44 \
-		curl-sys-0.4.68+curl-8.4.0 \
+		curl-0.4.46 \
+		curl-sys-0.4.72+curl-8.6.0 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
 		encode_unicode-0.3.6 \
-		encoding_rs-0.8.33 \
+		encoding_rs-0.8.34 \
 		equivalent-1.0.1 \
 		event-listener-2.5.3 \
 		fastrand-1.9.0 \
 		fnv-1.0.7 \
-		form_urlencoded-1.2.0 \
+		form_urlencoded-1.2.1 \
 		fuchsia-cprng-0.1.1 \
-		futures-core-0.3.29 \
-		futures-io-0.3.29 \
+		futures-core-0.3.30 \
+		futures-io-0.3.30 \
 		futures-lite-1.13.0 \
-		getrandom-0.2.10 \
-		git2-0.18.1 \
-		hashbrown-0.14.2 \
+		getrandom-0.2.14 \
+		git2-0.18.3 \
+		hashbrown-0.14.3 \
 		heck-0.4.1 \
-		http-0.2.9 \
-		idna-0.4.0 \
-		indexmap-2.1.0 \
+		http-0.2.12 \
+		idna-0.5.0 \
+		indexmap-2.2.6 \
 		instant-0.1.12 \
 		isahc-1.7.2 \
-		itoa-1.0.9 \
-		jobserver-0.1.27 \
+		itoa-1.0.11 \
+		jobserver-0.1.31 \
 		lazy_static-1.4.0 \
-		libc-0.2.150 \
-		libgit2-sys-0.16.1+1.7.1 \
-		libnghttp2-sys-0.1.8+1.55.1 \
-		libredox-0.0.1 \
+		libc-0.2.153 \
+		libgit2-sys-0.16.2+1.7.2 \
+		libnghttp2-sys-0.1.10+1.61.0 \
+		libredox-0.1.3 \
 		libssh2-sys-0.3.0 \
-		libz-sys-1.1.12 \
-		lock_api-0.4.11 \
-		log-0.4.20 \
-		memchr-2.6.4 \
+		libz-sys-1.1.16 \
+		lock_api-0.4.12 \
+		log-0.4.21 \
+		memchr-2.7.2 \
 		mime-0.3.17 \
-		once_cell-1.18.0 \
+		once_cell-1.19.0 \
 		openssl-probe-0.1.5 \
-		openssl-src-300.1.6+3.1.4 \
-		openssl-sys-0.9.95 \
+		openssl-src-300.2.3+3.2.1 \
+		openssl-sys-0.9.102 \
 		option-ext-0.2.0 \
 		parking-2.2.0 \
-		parking_lot-0.12.1 \
-		parking_lot_core-0.9.9 \
+		parking_lot-0.12.2 \
+		parking_lot_core-0.9.10 \
 		parse_link_header-0.3.3 \
-		percent-encoding-2.3.0 \
-		pin-project-1.1.3 \
-		pin-project-internal-1.1.3 \
-		pin-project-lite-0.2.13 \
-		pkg-config-0.3.27 \
+		percent-encoding-2.3.1 \
+		pin-project-1.1.5 \
+		pin-project-internal-1.1.5 \
+		pin-project-lite-0.2.14 \
+		pkg-config-0.3.30 \
 		polling-2.8.0 \
-		proc-macro2-1.0.69 \
-		quote-1.0.33 \
+		proc-macro2-1.0.81 \
+		quote-1.0.36 \
 		rand-0.4.6 \
 		rand_core-0.3.1 \
 		rand_core-0.4.2 \
 		rdrand-0.4.0 \
-		redox_syscall-0.4.1 \
-		redox_users-0.4.4 \
-		regex-1.10.2 \
-		regex-automata-0.4.3 \
-		regex-syntax-0.8.2 \
+		redox_syscall-0.5.1 \
+		redox_users-0.4.5 \
+		regex-1.10.4 \
+		regex-automata-0.4.6 \
+		regex-syntax-0.8.3 \
 		remove_dir_all-0.5.3 \
-		rustversion-1.0.14 \
-		ryu-1.0.15 \
-		schannel-0.1.22 \
+		rustversion-1.0.15 \
+		ryu-1.0.17 \
+		schannel-0.1.23 \
 		scopeguard-1.2.0 \
-		serde-1.0.190 \
-		serde_derive-1.0.190 \
-		serde_json-1.0.108 \
-		serde_spanned-0.6.4 \
-		serde_yaml-0.9.27 \
+		serde-1.0.199 \
+		serde_derive-1.0.199 \
+		serde_json-1.0.116 \
+		serde_spanned-0.6.5 \
+		serde_yaml-0.9.34+deprecated \
 		shellexpand-3.1.0 \
 		slab-0.4.9 \
 		sluice-0.5.5 \
-		smallvec-1.11.1 \
-		socket2-0.4.10 \
+		smallvec-1.13.2 \
+		socket2-0.5.6 \
 		strsim-0.10.0 \
-		strum-0.25.0 \
-		strum_macros-0.25.3 \
-		syn-2.0.39 \
+		strum-0.26.2 \
+		strum_macros-0.26.2 \
+		syn-2.0.60 \
 		tempdir-0.3.7 \
-		thiserror-1.0.50 \
-		thiserror-impl-1.0.50 \
+		thiserror-1.0.59 \
+		thiserror-impl-1.0.59 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		toml-0.8.6 \
+		toml-0.8.12 \
 		toml_datetime-0.6.5 \
-		toml_edit-0.20.7 \
+		toml_edit-0.22.12 \
 		tracing-0.1.40 \
 		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
 		tracing-futures-0.2.5 \
-		unicode-bidi-0.3.13 \
+		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
-		unicode-normalization-0.1.22 \
-		unicode-width-0.1.11 \
-		unsafe-libyaml-0.2.9 \
-		url-2.4.1 \
+		unicode-normalization-0.1.23 \
+		unicode-width-0.1.12 \
+		unsafe-libyaml-0.2.11 \
+		url-2.5.0 \
 		url-escape-0.1.1 \
 		utf8parse-0.2.1 \
 		vcpkg-0.2.15 \
@@ -150,25 +150,26 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
-		windows-targets-0.42.2 \
+		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows_aarch64_gnullvm-0.42.2 \
+		windows-targets-0.52.5 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_gnullvm-0.52.5 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_i686_gnu-0.42.2 \
+		windows_aarch64_msvc-0.52.5 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_msvc-0.42.2 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
 		windows_i686_msvc-0.48.5 \
-		windows_x86_64_gnu-0.42.2 \
+		windows_i686_msvc-0.52.5 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
-		winnow-0.5.19
+		windows_x86_64_msvc-0.52.5 \
+		winnow-0.6.7
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
