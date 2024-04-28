@@ -10,7 +10,7 @@ WWW=		https://www.glfw.org/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		cmake:insource localbase zip
+USES=		cmake:insource localbase:ldflags zip
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
@@ -61,6 +61,12 @@ X11_USES=	xorg
 X11_USE=	XORG=x11,xcursor,xi,xinerama,xrandr,xxf86vm
 X11_CMAKE_BOOL=	GLFW_BUILD_X11
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEXAMPLES} && ${PORT_OPTIONS:MPREEDIT}
+LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig
+.endif
+
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/docs/html/search
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
@@ -77,8 +83,8 @@ do-install-EXAMPLES-on:
 		${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/tests && ${INSTALL_PROGRAM} \
 		allocator clipboard cursor empty events gamma glfwinfo icon \
-		iconify inputlag joysticks monitors msaa reopen tearing threads \
-		timeout title triangle-vulkan window \
+		iconify input_text inputlag joysticks monitors msaa reopen \
+		tearing threads timeout title triangle-vulkan window \
 		${STAGEDIR}${EXAMPLESDIR}/tests
 
 .include <bsd.port.mk>
