@@ -3198,3 +3198,4 @@ multimedia/flvtool++||2024-04-21|Has expired: Abandonware, consider using multim
 www/mod_tidy||2024-04-24|Has expired: Last upstream release was in 2005
 net-p2p/go-prysm||2024-04-24|Has expired: Broken for more than 6 months
 x11-toolkits/p5-Gtk2-Ex-Dialogs||2024-04-24|Has expired: No longer works with modern Gtk2
+math/mathlibtools||2024-04-28|Project is obsolete and archived on GitHub since Aug 2023, not compatible with math/lean4

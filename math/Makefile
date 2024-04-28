@@ -488,7 +488,6 @@
     SUBDIR += math77
     SUBDIR += mathgl
     SUBDIR += mathicsscript
-    SUBDIR += mathlibtools
     SUBDIR += mathmod
     SUBDIR += mathomatic
     SUBDIR += mathpresso
