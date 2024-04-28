@@ -11,6 +11,8 @@ WWW=		https://hyperswitch.io/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: error[E0412]: cannot find type `AtomicU128` in module `core::sync::atomic`
+
 LIB_DEPENDS=	librdkafka.so:net/librdkafka \
 		libzstd.so:archivers/zstd
 
