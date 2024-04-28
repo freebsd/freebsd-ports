@@ -38,6 +38,7 @@ SHEBANG_FILES=	tools/seafile-admin
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SSL_CFLAGS="${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl \
 		-lcrypto" PKG_CONFIG_PATH="${WRKDIR}/pkgconfig"
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 
 PATHFIX_MAKEFILEIN=	Makefile.am
 
