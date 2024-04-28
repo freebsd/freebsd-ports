@@ -34,6 +34,9 @@ do-install-DOCS-on:
 		"! ( -name Makefile -o -name *\.[17] -o -name *\.xml )"
 	${MV} ${STAGEDIR}${DOCSDIR}/index.html.in ${STAGEDIR}${DOCSDIR}/index.html
 
+pre-build:
+	${CP} ${FILESDIR}/giflib-logo.gif ${WRKSRC}/doc
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 	${STRIP_CMD} --strip-unneeded ${STAGEDIR}${PREFIX}/lib/libgif.so.7.2.0
