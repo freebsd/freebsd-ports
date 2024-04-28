@@ -1,6 +1,6 @@
 PORTNAME=	webalizer
 PORTVERSION=	2.23.8
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/:main \
 		http://flags.blogpotato.de/zip/:flags
@@ -16,6 +16,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS+=	libpng.so:graphics/png
 
+USES=		iconv:build
 GNU_CONFIGURE=	yes
 DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR?=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
@@ -102,14 +103,38 @@ DOC1=		CHANGES Copyright INSTALL \
 EXAMPLES1=	msfree.png sample.conf webalizer.png
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src$//}
 PLIST_SUB+=	PKGNAMEPREFIX=${PKGNAMEPREFIX}
-SUPP_LANG=	albanian arabic catalan chinese croatian czech danish dutch \
-		english estonian finnish french galician german greek \
-		hungarian icelandic indonesian italian japanese japanese-utf8 \
-		korean latvian lithuanian malay norwegian polish portuguese \
-		portuguese_brazil romanian romanian-iso-8859-2 russian \
-		serbian simplified_chinese slovak slovene spanish swedish \
-		thai turkish ukrainian
-
+CHARSETS=	ISO-8859-1 ISO-8859-2 ISO-8859-5 ISO-8859-7 ISO-8859-13 \
+		ISO-8859-15 BIG5 EUC-CN EUC-JP EUC-KR TIS620 WINDOWS-1250
+CHARSET_ISO-8859-1=	catalan danish finnish french galician galician \
+			german icelandic norwegian portuguese \
+			portuguese_brazil spanish swedish
+CHARSET_ISO-8859-2=	czech hungarian polish slovak
+CHARSET_ISO-8859-7=	greek
+CHARSET_ISO-8859-5=	russian ukrainian
+CHARSET_ISO-8859-13=	latvian lithuanian 
+CHARSET_ISO-8859-15=	estonian
+CHARSET_BIG5=	chinese
+CHARSET_EUC-CN=	simplified_chinese
+CHARSET_EUC-JP=	japanese
+CHARSET_EUC-KR=	korean
+CHARSET_TIS620=	thai
+CHARSET_WINDOWS-1250=	slovene
+SUPP_LANG=	albanian arabic catalan catalan-utf8 chinese chinese-utf8 \
+		croatian czech czech-utf8 danish danish-utf8 dutch english \
+		estonian estonian-utf8 finnish finnish-utf8 \
+		french french-utf8 galician galician-utf8 german german-utf8 \
+		greek greek-utf8 hungarian hungarian-utf8 \
+		icelandic icelandic-uf8 indonesian italian \
+		japanese japanese-utf8 korean korean-utf8 \
+		latvian latvian-utf8 lithuanian lithuanian-utf8 malay \
+		norwegian norwegian-utf8 polish polish-utf8 \
+		portuguese portuguese-utf8 \
+		portuguese_brazil portuguese_brazil-utf8 \
+		romanian romanian-iso-8859-2 russian russian-utf8 \
+		serbian simplified_chinese simplified_chinese-utf8 \
+		slovak slovak-utf8 slovene slovene-utf8 spanish spanish-utf8 \
+		swedish swedish-utf8 thai thai-utf8 turkish \
+		ukrainian ukrainian-utf8
 .if defined(WEBALIZER_LANG)
 CONFIGURE_ARGS+=	--with-language=${WEBALIZER_LANG}
 .endif
@@ -122,10 +147,6 @@ BROKEN=		no conversion from UTF-8 needed
 #	see http://tyche.pu-toyama.ac.jp/~a-urasim/webalizer/
 EXTRA_PATCHES+=		${FILESDIR}/webalizer-a-urasim_2.patch
 .endif
-
-post-extract:
-	${CP} -p ${WRKSRC}/lang/webalizer_lang.japanese \
-		${WRKSRC}/lang/webalizer_lang.japanese-utf8
 
 pre-configure:
 	${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|" \
@@ -149,6 +170,12 @@ pre-configure:
 		-e "s|-lGeoIP|-lmaxminddb|" \
 		${WRKSRC}/configure
 .endif
+.for charset in ${CHARSETS}
+.for i in ${CHARSET_${charset}}
+	${ICONV_CMD} -f ${charset} -t UTF-8 ${WRKSRC}/lang/webalizer_lang.${i} \
+		> ${WRKSRC}/lang/webalizer_lang.${i}-utf8
+.endfor
+.endfor
 .if defined(WEBALIZER_LANG)
 .if ${WEBALIZER_LANG} == japanese
 	${REINPLACE_CMD} -e 's|charset=UTF-8|charset=x-euc-jp|' \
