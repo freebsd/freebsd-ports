@@ -1,13 +1,11 @@
 PORTNAME=	sway
-DISTVERSION=	0.3.2
-PORTREVISION=	1
+DISTVERSION=	0.4
 CATEGORIES=	x11-wm wayland
 PKGNAMESUFFIX=	${GH_PROJECT:S/${PORTNAME}//}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	cd9d1038a822.patch:-p1 # https://github.com/swaywm/sway/pull/5090
-PATCHFILES+=	f98ca3ab7ca1.patch:-p1 # https://github.com/swaywm/sway/pull/5090
-PATCHFILES+=	c47aa61c6492.patch:-p1 # https://github.com/WillPower3309/swayfx/pull/209
+PATCHFILES+=	1f1c83e83a1a.patch:-p1 # https://github.com/swaywm/sway/pull/5090
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Sway, but with eye candy!
@@ -23,13 +21,13 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libudev.so:devel/libudev-devd \
 		libpcre2-8.so:devel/pcre2 \
 		libwayland-egl.so:graphics/wayland \
+		libscenefx.so:x11-toolkits/scenefx \
 		libwlroots.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		compiler:c11 gl gnome meson pkgconfig xorg
+USES=		compiler:c11 gnome meson pkgconfig xorg
 USE_GITHUB=	yes
-USE_GL=		egl glesv2
 USE_GNOME=	cairo pango
 USE_XORG=	pixman
 GH_ACCOUNT=	WillPower3309
@@ -68,5 +66,4 @@ post-patch:
 		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
 		${WRKSRC}/meson.build
 
-.include "${.CURDIR:H:H}/x11-toolkits/wlroots016/override.mk"
 .include <bsd.port.mk>
