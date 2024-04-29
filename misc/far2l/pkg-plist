@@ -380,6 +380,8 @@ share/applications/far2l.desktop
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/scons.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/sh-keywords.ent.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/sh.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/scripts/shell-bash.hrc
+%%DATADIR%%/Plugins/colorer/base/hrc/scripts/shell-posix.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/solution.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/squirrel.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/scripts/tex.hrc
@@ -521,6 +523,8 @@ share/applications/far2l.desktop
 %%DATADIR%%/trash.sh
 %%DATADIR%%/unmount.sh
 %%DATADIR%%/view.sh
+%%DATADIR%%/wslgclip.sh
+%%DATADIR%%/wslgclip.vbs
 %%DATADIR%%/xlats.ini
 share/icons/far2l.svg
 share/icons/hicolor/1024x1024/apps/far2l.svg
