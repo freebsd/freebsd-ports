@@ -4432,6 +4432,7 @@
     SUBDIR += py-beniget
     SUBDIR += py-bidict
     SUBDIR += py-billiard
+    SUBDIR += py-binary_file_search
     SUBDIR += py-binaryornot
     SUBDIR += py-biplist
     SUBDIR += py-bitarray
