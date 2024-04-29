@@ -1,6 +1,6 @@
 PORTNAME=	mbdyn
 DISTVERSION=	1.7.3
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	science
 MASTER_SITES=	https://www.mbdyn.org/userfiles/downloads/
 
