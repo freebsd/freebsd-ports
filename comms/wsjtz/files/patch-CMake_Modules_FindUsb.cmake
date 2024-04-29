@@ -1,6 +1,6 @@
---- CMake/Modules/FindUsb.cmake	2021-11-30 23:55:50.616592000 -0500
-+++ CMake/Modules/FindUsb.cmake	2021-11-30 23:56:00.350981000 -0500
-@@ -27,7 +27,7 @@
+--- CMake/Modules/FindUsb.cmake.orig	2021-12-28 16:31:58 UTC
++++ CMake/Modules/FindUsb.cmake
+@@ -27,7 +27,7 @@ libfind_pkg_detect (Usb usb-1.0
  endif ()
  libfind_pkg_detect (Usb usb-1.0
    FIND_PATH libusb.h PATH_SUFFIXES libusb-1.0
