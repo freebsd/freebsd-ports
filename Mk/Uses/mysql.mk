@@ -5,8 +5,8 @@
 #
 # version	If no version is given (by the maintainer via the port), try to
 #		find the currently installed version.  Fall back to default if
-#		necessary (MariaDB-10.11 = 10.11m, look at bsd.default-versions.mk
-#		for possible values).
+#		necessary (MySQL-8.0 = 80, look at bsd.default-versions.mk for
+#		possible values).
 # client	Depends on the libmysqlclient library (default)
 # server 	Depend on the server at run/build time. If none of these is
 #		set, depends on the client.
