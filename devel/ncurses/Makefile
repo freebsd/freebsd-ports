@@ -1,9 +1,7 @@
 PORTNAME=	ncurses
-DISTVERSION=	6.4
-PORTREVISION=	1
+DISTVERSION=	6.5
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.invisible-island.net/${PORTNAME}/ \
-		https://invisible-mirror.net/archives/ncurses/
+MASTER_SITES=	https://invisible-mirror.net/archives/ncurses/
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -20,7 +18,6 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	test/tracemunch
 
 GNU_CONFIGURE=		yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=		--datadir=${PREFIX}/share \
 			--with-terminfo-dirs="${PREFIX}/share/terminfo:${LOCALBASE}/share/site-terminfo" \
 			--disable-home-terminfo \
