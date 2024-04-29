@@ -687,6 +687,33 @@
     </dates>
   </vuln>
 
+  <vuln vid="1af16f2b-023c-11ef-8791-6805ca2fa271">
+    <topic>powerdns-recursor -- denial of service</topic>
+    <affects>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><lt>5.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://blog.powerdns.com/2024/04/24/powerdns-recursor-4-8-8-4-9-5-5-0-4-released">
+	  <p>PowerDNS Security Advisory 2024-02: if recursive forwarding is configured,
+	   crafted responses can lead to a denial of service in Recursor</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-25583</cvename>
+      <url>https://docs.powerdns.com/recursor/security-advisories/powerdns-advisory-2024-02.html</url>
+    </references>
+    <dates>
+      <discovery>2024-04-24</discovery>
+      <entry>2024-04-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bb49f1fa-00da-11ef-92b7-589cfc023192">
     <topic>GLPI -- multiple vulnerabilities</topic>
     <affects>
