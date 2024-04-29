@@ -689,6 +689,7 @@ sysutils/bareos17-client-static||2021-12-05|Has expired: Deprecated, no new rele
 sysutils/bareos17-server|sysutils/bareos18-server|2021-12-05|Has expired: Deprecated, no new release since 2020
 www/bareos17-webui|www/bareos18-webui|2021-12-05|Has expired: Deprecated, no new release since 2020
 math/eigen2||2021-12-07|Has expired: No longer available upstream, no consumers in ports
+misc/opensubdiv|graphics/opensubdiv|2021-12-07|remove duplicate
 emulators/qemu41||2021-12-10|Has expired: Use emulators/qemu or emulators/qemu-devel
 security/putty-gtk2||2021-12-15|Has expired: putty-gtk2 is being phased out
 games/xnethack-nox11|games/xnethack@nox11|2021-12-16|Turned into flavor
