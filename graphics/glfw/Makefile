@@ -65,7 +65,6 @@ X11_CMAKE_BOOL=	GLFW_BUILD_X11
 
 .if ${PORT_OPTIONS:MEXAMPLES} && ${PORT_OPTIONS:MPREEDIT}
 LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig
-TESTS_FILES=	input_text
 .endif
 
 do-install-DOCS-on:
@@ -84,9 +83,8 @@ do-install-EXAMPLES-on:
 		${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/tests && ${INSTALL_PROGRAM} \
 		allocator clipboard cursor empty events gamma glfwinfo icon \
-		iconify inputlag joysticks monitors msaa reopen \
+		iconify input_text inputlag joysticks monitors msaa reopen \
 		tearing threads timeout title triangle-vulkan window \
-		${TESTS_FILES} \
 		${STAGEDIR}${EXAMPLESDIR}/tests
 
 .include <bsd.port.mk>
