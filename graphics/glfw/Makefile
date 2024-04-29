@@ -3,7 +3,7 @@ DISTVERSION=	3.4
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/glfw/glfw/releases/download/${DISTVERSION}/
 
-MAINTAINER=	eduardo@FreeBSD.org
+MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Portable framework for OpenGL development
 WWW=		https://www.glfw.org/
 
