@@ -7906,7 +7906,6 @@
     SUBDIR += tkcvs
     SUBDIR += tkp4
     SUBDIR += tl-expected
-    SUBDIR += tla
     SUBDIR += tllist
     SUBDIR += tlsh
     SUBDIR += tlx

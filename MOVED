@@ -3219,3 +3219,4 @@ multimedia/librtmp||2024-04-30|Has expired: Depends on legacy functionality of O
 multimedia/rtmpdump||2024-04-30|Has expired: Depends on deprecated library librtmp, consider migrating to multimedia/ffmpeg
 multimedia/rubygem-paperclip-av-transcoder||2024-04-30|Has expired: Depends on deprecated port devel/rubygem-paperclip-rails5
 benchmarks/iozone21||2024-04-30|Has expired: Abandoned and obsolete version, superseded by benchmarks/iozone (3.x). Consider also migrating to benchmarks/fio
+devel/tla||2024-04-30|Has expired: Deprecated and obsolete revision control system, consider migrating to devel/git or devel/mercurial
