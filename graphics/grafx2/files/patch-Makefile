@@ -1,6 +1,6 @@
---- Makefile.orig	2021-03-24 19:59:20 UTC
+--- Makefile.orig	2024-04-29 15:47:02 UTC
 +++ Makefile
-@@ -1242,7 +1242,8 @@ install : $(BIN)
+@@ -1250,7 +1250,8 @@ install : $(BIN)
  	test -d $(DESTDIR)$(datadir)/grafx2/fonts || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/fonts
  	test -d $(DESTDIR)$(datadir)/grafx2/skins || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/skins
  	test -d $(DESTDIR)$(datadir)/grafx2/scripts || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts
