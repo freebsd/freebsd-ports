@@ -47,6 +47,7 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.27
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.28
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.29
+%%DATADIR%%/%%EMACS_VER%%/etc/NEWS.unknown
 %%DATADIR%%/%%EMACS_VER%%/etc/NEXTSTEP
 %%DATADIR%%/%%EMACS_VER%%/etc/NXML-NEWS
 %%DATADIR%%/%%EMACS_VER%%/etc/ORG-NEWS
@@ -2196,6 +2197,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/mml2015.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnagent.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnagent.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnatom.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnatom.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnbabyl.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnbabyl.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nndiary.el.gz
@@ -2208,6 +2211,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nndraft.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nneething.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nneething.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnfeed.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnfeed.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnfolder.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnfolder.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nngateway.el.gz
