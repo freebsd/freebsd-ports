@@ -3213,3 +3213,4 @@ misc/firestring||2024-04-30|Has expired: Upstream is gone and last release in 20
 dns/firedns||2024-04-30|Has expired: Abandonware, upstream is gone and last release in 2004 and it also depends on unfetchable misc/firestring. Consider dns/c-ares
 sysutils/libretto-config||2024-04-30|Has expired: Utility for obsolete hardware released 20 years ago
 sysutils/dolly||2024-04-30|Has expired: Abandonware, upstream is gone
+sysutils/atitvout||2024-04-30|Has expired: Obsolete, utility for hardware released over 20 years ago
