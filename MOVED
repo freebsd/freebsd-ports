@@ -3214,3 +3214,6 @@ dns/firedns||2024-04-30|Has expired: Abandonware, upstream is gone and last rele
 sysutils/libretto-config||2024-04-30|Has expired: Utility for obsolete hardware released 20 years ago
 sysutils/dolly||2024-04-30|Has expired: Abandonware, upstream is gone
 sysutils/atitvout||2024-04-30|Has expired: Obsolete, utility for hardware released over 20 years ago
+multimedia/py-librtmp||2024-04-30|Has expired: Depends on deprecated library librtmp
+multimedia/librtmp||2024-04-30|Has expired: Depends on legacy functionality of OpenSSL and superseded by multimedia/ffmpeg
+multimedia/rtmpdump||2024-04-30|Has expired: Depends on deprecated library librtmp, consider migrating to multimedia/ffmpeg
