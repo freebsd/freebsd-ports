@@ -66,7 +66,6 @@
     SUBDIR += dynip
     SUBDIR += encrypted-dns-server
     SUBDIR += fastresolve
-    SUBDIR += firedns
     SUBDIR += flamethrower
     SUBDIR += fpdns
     SUBDIR += gdnsd2

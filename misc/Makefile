@@ -109,7 +109,6 @@
     SUBDIR += figlet
     SUBDIR += figlet-fonts
     SUBDIR += findutils
-    SUBDIR += firestring
     SUBDIR += flag
     SUBDIR += flashlight
     SUBDIR += fortune-mod-bible
