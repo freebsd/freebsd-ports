@@ -1,32 +1,30 @@
 PORTNAME=	amsynth
-DISTVERSION=	1.11.0
-PORTREVISION=	5
+DISTVERSION=	1.13.3
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/amsynth/amsynth/releases/download/release-${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Analog modelling software synth
 WWW=		https://amsynth.github.io/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		error: no matching function for call to 'lo_server_add_method'
-
-BUILD_DEPENDS=	dssi>0:audio/dssi
+BUILD_DEPENDS=	dssi>0:audio/dssi \
+		lv2>0:audio/lv2
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libjack.so:audio/jack \
 		liblash.so:audio/lash \
-		liblo.so:audio/liblo \
-		libsndfile.so:audio/libsndfile
+		liblo.so:audio/liblo
 RUN_DEPENDS=	dssi>0:audio/dssi
 
 USES=		compiler:c++11-lang gettext-tools gmake gnome libtool localbase \
-		pkgconfig
+		pkgconfig xorg
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 intltool pango
-
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
@@ -37,7 +35,6 @@ OPTIONS_SUB=		yes
 MANPAGES_BUILD_DEPENDS=		pandoc:textproc/hs-pandoc
 MANPAGES_CONFIGURE_WITH=	pandoc
 
-NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 post-install:
