@@ -3205,3 +3205,4 @@ lang/tcl9|lang/tcl90|2024-04-30|Renamed for consistency with the 8.x series port
 deskutils/aspostit||2024-04-30|Has expired: Unmaintained, last upstream release in 2001
 x11-toolkits/p5-Tk-FileDialog||2024-04-30|Has expired: Does not work with recent Tk versions
 www/py-django-dpaste||2024-04-30|Has expired
+dns/bind916|dns/bind918|2024-04-30|Has expired: End of life, please migrate to a newer version of BIND9
