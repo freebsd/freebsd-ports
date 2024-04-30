@@ -3221,3 +3221,4 @@ multimedia/rubygem-paperclip-av-transcoder||2024-04-30|Has expired: Depends on d
 benchmarks/iozone21||2024-04-30|Has expired: Abandoned and obsolete version, superseded by benchmarks/iozone (3.x). Consider also migrating to benchmarks/fio
 devel/tla||2024-04-30|Has expired: Deprecated and obsolete revision control system, consider migrating to devel/git or devel/mercurial
 devel/configkit||2024-04-30|Has expired: Depends on deprecated port devel/libphk
+devel/libphk||2024-04-30|Has expired: Superseded by various other projects
