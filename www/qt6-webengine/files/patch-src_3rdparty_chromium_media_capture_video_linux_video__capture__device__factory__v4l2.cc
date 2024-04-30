@@ -1,10 +1,10 @@
---- src/3rdparty/chromium/media/capture/video/linux/video_capture_device_factory_v4l2.cc.orig	2023-04-05 11:05:06 UTC
+--- src/3rdparty/chromium/media/capture/video/linux/video_capture_device_factory_v4l2.cc.orig	2023-05-02 13:49:23 UTC
 +++ src/3rdparty/chromium/media/capture/video/linux/video_capture_device_factory_v4l2.cc
 @@ -75,6 +75,9 @@ class DevVideoFilePathsDeviceProvider
      : public VideoCaptureDeviceFactoryV4L2::DeviceProvider {
   public:
    void GetDeviceIds(std::vector<std::string>* target_container) override {
-+#if defined(OS_OPENBSD)
++#if BUILDFLAG(IS_OPENBSD)
 +    target_container->emplace_back("/dev/video");
 +#else
      const base::FilePath path("/dev/");
@@ -18,7 +18,7 @@
    }
  
    std::string GetDeviceModelId(const std::string& device_id) override {
-+#if defined(OS_OPENBSD)
++#if BUILDFLAG(IS_OPENBSD)
 +    return std::string();
 +#endif
      const std::string file_name = ExtractFileNameFromDeviceId(device_id);
@@ -28,7 +28,7 @@
    }
  
    std::string GetDeviceDisplayName(const std::string& device_id) override {
-+#if defined(OS_OPENBSD)
++#if BUILDFLAG(IS_OPENBSD)
 +    return std::string();
 +#endif
      const std::string file_name = ExtractFileNameFromDeviceId(device_id);

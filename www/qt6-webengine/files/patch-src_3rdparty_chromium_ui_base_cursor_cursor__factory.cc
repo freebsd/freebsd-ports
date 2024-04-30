@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/ui/base/cursor/cursor_factory.cc.orig	2023-03-09 06:31:50 UTC
+--- src/3rdparty/chromium/ui/base/cursor/cursor_factory.cc.orig	2023-09-13 12:11:42 UTC
 +++ src/3rdparty/chromium/ui/base/cursor/cursor_factory.cc
-@@ -89,7 +89,7 @@ void CursorFactory::ObserveThemeChanges() {
- 
- void CursorFactory::SetDeviceScaleFactor(float scale) {}
+@@ -98,7 +98,7 @@ void CursorFactory::ObserveThemeChanges() {
+   NOTIMPLEMENTED();
+ }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

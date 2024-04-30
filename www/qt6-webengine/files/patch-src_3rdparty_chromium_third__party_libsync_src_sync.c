@@ -1,16 +1,16 @@
---- src/3rdparty/chromium/third_party/libsync/src/sync.c.orig	2023-02-08 09:03:45 UTC
+--- src/3rdparty/chromium/third_party/libsync/src/sync.c.orig	2023-10-11 18:22:24 UTC
 +++ src/3rdparty/chromium/third_party/libsync/src/sync.c
-@@ -17,7 +17,9 @@
+@@ -17,8 +17,8 @@
   */
  
  #include <fcntl.h>
-+#if !defined(__OpenBSD__)
- #include <malloc.h>
-+#endif
+-#include <malloc.h>
  #include <stdint.h>
++#include <stdlib.h>
  #include <string.h>
  #include <errno.h>
-@@ -29,6 +31,12 @@
+ #include <poll.h>
+@@ -29,6 +29,12 @@
  
  #include <sync/sync.h>
  

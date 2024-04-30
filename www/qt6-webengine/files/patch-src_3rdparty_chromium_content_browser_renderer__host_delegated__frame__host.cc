@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/browser/renderer_host/delegated_frame_host.cc.orig	2023-02-08 09:03:45 UTC
+--- src/3rdparty/chromium/content/browser/renderer_host/delegated_frame_host.cc.orig	2023-09-13 12:11:42 UTC
 +++ src/3rdparty/chromium/content/browser/renderer_host/delegated_frame_host.cc
-@@ -295,7 +295,7 @@ void DelegatedFrameHost::EmbedSurface(
+@@ -312,7 +312,7 @@ void DelegatedFrameHost::EmbedSurface(
  
    if (!primary_surface_id ||
        primary_surface_id->local_surface_id() != local_surface_id_) {

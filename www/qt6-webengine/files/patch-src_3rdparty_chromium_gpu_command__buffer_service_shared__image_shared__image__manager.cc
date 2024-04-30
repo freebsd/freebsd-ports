@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/gpu/command_buffer/service/shared_image/shared_image_manager.cc.orig	2023-04-05 11:05:06 UTC
+--- src/3rdparty/chromium/gpu/command_buffer/service/shared_image/shared_image_manager.cc.orig	2023-09-13 12:11:42 UTC
 +++ src/3rdparty/chromium/gpu/command_buffer/service/shared_image/shared_image_manager.cc
-@@ -481,7 +481,7 @@ bool SharedImageManager::SupportsScanoutImages() {
+@@ -507,7 +507,7 @@ bool SharedImageManager::SupportsScanoutImages() {
    return true;
  #elif BUILDFLAG(IS_ANDROID)
    return base::AndroidHardwareBufferCompat::IsSupportAvailable();

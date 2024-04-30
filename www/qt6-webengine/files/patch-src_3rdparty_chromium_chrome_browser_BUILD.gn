@@ -1,0 +1,16 @@
+--- src/3rdparty/chromium/chrome/browser/BUILD.gn.orig	2023-12-12 22:08:45 UTC
++++ src/3rdparty/chromium/chrome/browser/BUILD.gn
+@@ -6312,6 +6312,13 @@ static_library("browser") {
+     }
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "metrics/bluetooth_metrics_provider.cc",
++      "metrics/bluetooth_metrics_provider.h",
++    ]
++  }
++
+   if (is_linux && use_dbus) {
+     sources += [
+       "dbus_memory_pressure_evaluator_linux.cc",

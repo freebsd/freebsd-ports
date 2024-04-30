@@ -6,7 +6,9 @@ include/shiboken6/bindingmanager.h
 include/shiboken6/bufferprocs_py37.h
 include/shiboken6/gilstate.h
 include/shiboken6/helper.h
+include/shiboken6/pep384ext.h
 include/shiboken6/pep384impl.h
+include/shiboken6/pyobjectholder.h
 include/shiboken6/sbkarrayconverter.h
 include/shiboken6/sbkcontainer.h
 include/shiboken6/sbkconverter.h
@@ -43,7 +45,7 @@ lib/cmake/Shiboken6Tools/Shiboken6ToolsConfigVersion.cmake
 lib/cmake/Shiboken6Tools/Shiboken6ToolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Shiboken6Tools/Shiboken6ToolsTargets.cmake
 lib/libshiboken6.abi3.so
-lib/libshiboken6.abi3.so.6.6
+lib/libshiboken6.abi3.so.6.7
 lib/libshiboken6.abi3.so.%%DISTVERSION%%
 %%PYTHON_SITELIBDIR%%/shiboken6/Shiboken.abi3.so
 %%PYTHON_SITELIBDIR%%/shiboken6/Shiboken.pyi

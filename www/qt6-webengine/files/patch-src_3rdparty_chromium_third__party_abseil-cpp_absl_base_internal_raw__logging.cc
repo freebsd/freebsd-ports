@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/abseil-cpp/absl/base/internal/raw_logging.cc.orig	2023-03-09 06:31:50 UTC
+--- src/3rdparty/chromium/third_party/abseil-cpp/absl/base/internal/raw_logging.cc.orig	2023-08-17 07:33:31 UTC
 +++ src/3rdparty/chromium/third_party/abseil-cpp/absl/base/internal/raw_logging.cc
-@@ -52,10 +52,12 @@
+@@ -56,10 +56,12 @@
  // ABSL_HAVE_SYSCALL_WRITE is defined when the platform provides the syscall
  //   syscall(SYS_write, /*int*/ fd, /*char* */ buf, /*size_t*/ len);
  // for low level operations that want to avoid libc.

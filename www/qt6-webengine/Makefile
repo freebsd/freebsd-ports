@@ -12,7 +12,7 @@
 
 PORTNAME?=	webengine
 DISTVERSION=	${QT6_VERSION}
-PORTREVISION?=	1 # Master port for print/qt6-pdf. Please keep this line.
+PORTREVISION?=	0 # Master port for print/qt6-pdf. Please keep this line.
 CATEGORIES?=	www
 PKGNAMEPREFIX=	qt6-
 
@@ -101,10 +101,11 @@ DO_MAKE_BUILD=	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} -j1 $
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 .if !defined(BUILD_QTPDF)
-OPTIONS_DEFINE=		CUPS
-OPTIONS_DEFAULT=	ALSA CUPS
+OPTIONS_DEFINE=		CUPS DRIVER
+OPTIONS_DEFAULT=	ALSA CUPS DRIVER
 OPTIONS_SINGLE=		AUDIO
 OPTIONS_SINGLE_AUDIO=	ALSA PULSEAUDIO SNDIO
+OPTIONS_SUB=		yes
 
 AUDIO_DESC=		Audio backend
 
@@ -121,6 +122,10 @@ CUPS_LIB_DEPENDS=	libcups.so:print/cups \
 			libtiff.so:graphics/tiff
 CUPS_CMAKE_ON=		-DQT_FEATURE_webengine_printing_and_pdf:BOOL=ON
 CUPS_CMAKE_OFF=		-DQT_FEATURE_webengine_printing_and_pdf:BOOL=OFF
+
+DRIVER_DESC=		Install WebEngineDriver
+DRIVER_CMAKE_ON=	-DQT_FEATURE_webenginedriver:BOOL=ON
+DRIVER_CMAKE_OFF=	-DQT_FEATURE_webenginedriver:BOOL=OFF
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CMAKE_ON=	-DQT_FEATURE_webengine_system_pulseaudio:BOOL=ON
@@ -164,5 +169,16 @@ pre-configure:
 	cd ${WRKSRC}/src/3rdparty/chromium && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
 		${SYS_LIBS} || ${FALSE}
+
+.if !defined(BUILD_QTPDF)
+post-install:
+# Fix for deskutils/calibre, perhaps others, where this empty directory
+# is created during build causing a fs-violation.
+	${MKDIR} ${STAGEDIR}${QT_DATADIR}/resources/locales
+
+post-install-DRIVER-on:
+	${STRIP_CMD} ${STAGEDIR}${QT_TOOLDIR}/webenginedriver
+
+.endif
 
 .include <bsd.port.post.mk>

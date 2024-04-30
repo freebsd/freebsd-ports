@@ -37,7 +37,7 @@
 %%QT_DOCDIR%%/qtdoc/activeqt-testcon.html
 %%QT_DOCDIR%%/qtdoc/android-3rdparty-libs.html
 %%QT_DOCDIR%%/qtdoc/android-build-environment-variables.html
-%%QT_DOCDIR%%/qtdoc/android-building-user-projects.html
+%%QT_DOCDIR%%/qtdoc/android-building-projects-from-commandline.html
 %%QT_DOCDIR%%/qtdoc/android-building.html
 %%QT_DOCDIR%%/qtdoc/android-emojis.html
 %%QT_DOCDIR%%/qtdoc/android-environment-variables.html
@@ -116,12 +116,14 @@
 %%QT_DOCDIR%%/qtdoc/images/btn_prev.png
 %%QT_DOCDIR%%/qtdoc/images/bullet_dn.png
 %%QT_DOCDIR%%/qtdoc/images/bullet_sq.png
+%%QT_DOCDIR%%/qtdoc/images/car_configurator_overview.png
 %%QT_DOCDIR%%/qtdoc/images/coffee_machine_modify.png
 %%QT_DOCDIR%%/qtdoc/images/coffee_machine_overview.png
 %%QT_DOCDIR%%/qtdoc/images/coffee_machine_selection.png
 %%QT_DOCDIR%%/qtdoc/images/colorpalette_editing.png
 %%QT_DOCDIR%%/qtdoc/images/colorpalette_listing.png
 %%QT_DOCDIR%%/qtdoc/images/colorpalette_urlselection.png
+%%QT_DOCDIR%%/qtdoc/images/colorpalette_userlisting.png
 %%QT_DOCDIR%%/qtdoc/images/controls.png
 %%QT_DOCDIR%%/qtdoc/images/deployment-mac-application.png
 %%QT_DOCDIR%%/qtdoc/images/deployment-mac-bundlestructure.png
@@ -147,6 +149,7 @@
 %%QT_DOCDIR%%/qtdoc/images/icon_Tools.png
 %%QT_DOCDIR%%/qtdoc/images/integrity-os.png
 %%QT_DOCDIR%%/qtdoc/images/layout-examples.png
+%%QT_DOCDIR%%/qtdoc/images/lightningviewer.jpg
 %%QT_DOCDIR%%/qtdoc/images/logo.png
 %%QT_DOCDIR%%/qtdoc/images/mainscreen.png
 %%QT_DOCDIR%%/qtdoc/images/maintenancetool.png
@@ -156,6 +159,7 @@
 %%QT_DOCDIR%%/qtdoc/images/nmvurCcsWos.jpg
 %%QT_DOCDIR%%/qtdoc/images/ok.png
 %%QT_DOCDIR%%/qtdoc/images/open-project.png
+%%QT_DOCDIR%%/qtdoc/images/osmbuildings.jpg
 %%QT_DOCDIR%%/qtdoc/images/piemenu.gif
 %%QT_DOCDIR%%/qtdoc/images/project-structure.png
 %%QT_DOCDIR%%/qtdoc/images/project_structure.png
@@ -170,6 +174,7 @@
 %%QT_DOCDIR%%/qtdoc/images/qml-uses-visual-opacity.png
 %%QT_DOCDIR%%/qtdoc/images/qml-uses-visual-rectangles.png
 %%QT_DOCDIR%%/qtdoc/images/qml-uses-visual-transforms.png
+%%QT_DOCDIR%%/qtdoc/images/qt-android-architecture.drawio.svg
 %%QT_DOCDIR%%/qtdoc/images/qt-codesample.png
 %%QT_DOCDIR%%/qtdoc/images/qt-edu-apply.png
 %%QT_DOCDIR%%/qtdoc/images/qt-edu-browse-qbsp.png
@@ -192,7 +197,6 @@
 %%QT_DOCDIR%%/qtdoc/images/qt-edu-qbsp-download.png
 %%QT_DOCDIR%%/qtdoc/images/qt-edu-qbsp.png
 %%QT_DOCDIR%%/qtdoc/images/qt-embedded-fontfeatures.png
-%%QT_DOCDIR%%/qtdoc/images/qt_android_architecture.png
 %%QT_DOCDIR%%/qtdoc/images/qtcreator-clazy-checks-for-porting-to-qt6.png
 %%QT_DOCDIR%%/qtdoc/images/qtcreator-create-templates.png
 %%QT_DOCDIR%%/qtdoc/images/qtcreator-qt-quick-editors.png
@@ -279,6 +283,7 @@
 %%QT_DOCDIR%%/qtdoc/newclasses64.html
 %%QT_DOCDIR%%/qtdoc/newclasses65.html
 %%QT_DOCDIR%%/qtdoc/newclasses66.html
+%%QT_DOCDIR%%/qtdoc/newclasses67.html
 %%QT_DOCDIR%%/qtdoc/obsoleteclasses.html
 %%QT_DOCDIR%%/qtdoc/obsoleteqmltypes.html
 %%QT_DOCDIR%%/qtdoc/overviews-main.html
@@ -325,6 +330,7 @@
 %%QT_DOCDIR%%/qtdoc/qtdoc-attribution-thermostatexample-phosphoricons.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-attribution-todolistexample-materialicons.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-calqlatr-example.html
+%%QT_DOCDIR%%/qtdoc/qtdoc-demos-car-configurator-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-clocks-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-coffee-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-colorpaletteclient-example.html
@@ -333,7 +339,9 @@
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-documentviewer-plugins-txtviewer-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-fx-material-showroom-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-hangman-example.html
+%%QT_DOCDIR%%/qtdoc/qtdoc-demos-lightningviewer-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-mediaplayer-example.html
+%%QT_DOCDIR%%/qtdoc/qtdoc-demos-osmbuildings-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-photosurface-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-robotarm-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-rssnews-example.html
@@ -406,6 +414,7 @@
 %%QT_DOCDIR%%/qtdoc/uic.html
 %%QT_DOCDIR%%/qtdoc/unicode.html
 %%QT_DOCDIR%%/qtdoc/unix-signals.html
+%%QT_DOCDIR%%/qtdoc/vxworks.html
 %%QT_DOCDIR%%/qtdoc/wasm.html
 %%QT_DOCDIR%%/qtdoc/wayland-and-qt.html
 %%QT_DOCDIR%%/qtdoc/webos.html
@@ -416,6 +425,7 @@
 %%QT_DOCDIR%%/qtdoc/whatsnew64.html
 %%QT_DOCDIR%%/qtdoc/whatsnew65.html
 %%QT_DOCDIR%%/qtdoc/whatsnew66.html
+%%QT_DOCDIR%%/qtdoc/whatsnew67.html
 %%QT_DOCDIR%%/qtdoc/whatsnewqt6.html
 %%QT_DOCDIR%%/qtdoc/why-moc.html
 %%QT_DOCDIR%%/qtdoc/windows-building.html

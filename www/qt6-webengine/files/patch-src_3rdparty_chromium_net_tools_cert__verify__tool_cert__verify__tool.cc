@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/tools/cert_verify_tool/cert_verify_tool.cc.orig	2023-03-09 06:31:50 UTC
+--- src/3rdparty/chromium/net/tools/cert_verify_tool/cert_verify_tool.cc.orig	2023-05-31 08:12:17 UTC
 +++ src/3rdparty/chromium/net/tools/cert_verify_tool/cert_verify_tool.cc
 @@ -31,7 +31,7 @@
  #include "net/url_request/url_request_context_builder.h"
@@ -18,21 +18,21 @@
    // On Linux, use a fixed ProxyConfigService, since the default one
    // depends on glib.
    //
-@@ -222,7 +222,7 @@ std::unique_ptr<CertVerifyImpl> CreateCertVerifyImplFr
-     base::StringPiece impl_name,
+@@ -223,7 +223,7 @@ std::unique_ptr<CertVerifyImpl> CreateCertVerifyImplFr
      scoped_refptr<net::CertNetFetcher> cert_net_fetcher,
+     scoped_refptr<net::CRLSet> crl_set,
      RootStoreType root_store_type) {
--#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
-+#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) || BUILDFLAG(IS_BSD)
+-#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || \
++#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || \
+       BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(CHROME_ROOT_STORE_ONLY))
    if (impl_name == "platform") {
      if (root_store_type != RootStoreType::kSystem) {
-       std::cerr << "WARNING: platform verifier not supported with "
-@@ -534,7 +534,7 @@ int main(int argc, char** argv) {
+@@ -537,7 +537,7 @@ int main(int argc, char** argv) {
    std::string impls_str = command_line.GetSwitchValueASCII("impls");
    if (impls_str.empty()) {
      // Default value.
--#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
-+#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) || BUILDFLAG(IS_BSD)
+-#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || \
++#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || \
+       BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(CHROME_ROOT_STORE_ONLY))
      impls_str = "platform,";
  #endif
-     impls_str += "builtin,pathbuilder";

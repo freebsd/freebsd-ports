@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/memory/madv_free_discardable_memory_posix.cc.orig	2023-08-16 19:50:41 UTC
+--- src/3rdparty/chromium/base/memory/madv_free_discardable_memory_posix.cc.orig	2023-05-31 08:12:17 UTC
 +++ src/3rdparty/chromium/base/memory/madv_free_discardable_memory_posix.cc
-@@ -299,6 +299,10 @@ bool MadvFreeDiscardableMemoryPosix::IsResident() cons
+@@ -306,6 +306,10 @@ void MadvFreeDiscardableMemoryPosix::SetKeepMemoryForT
  
  bool MadvFreeDiscardableMemoryPosix::IsResident() const {
    DFAKE_SCOPED_RECURSIVE_LOCK(thread_collision_warner_);
@@ -11,7 +11,7 @@
  #if BUILDFLAG(IS_APPLE)
    std::vector<char> vec(allocated_pages_);
  #else
-@@ -314,6 +318,7 @@ bool MadvFreeDiscardableMemoryPosix::IsResident() cons
+@@ -321,6 +325,7 @@ bool MadvFreeDiscardableMemoryPosix::IsResident() cons
        return false;
    }
    return true;

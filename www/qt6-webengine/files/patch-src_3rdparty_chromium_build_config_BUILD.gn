@@ -1,22 +1,13 @@
---- src/3rdparty/chromium/build/config/BUILD.gn.orig	2023-08-16 19:50:41 UTC
+--- src/3rdparty/chromium/build/config/BUILD.gn.orig	2023-12-12 22:08:45 UTC
 +++ src/3rdparty/chromium/build/config/BUILD.gn
-@@ -222,13 +222,17 @@ config("default_libs") {
-       "CoreText.framework",
-       "Foundation.framework",
-     ]
--  } else if (is_linux || is_chromeos) {
-+  } else if ((is_linux && !is_bsd) || is_chromeos) {
-     libs = [
-       "dl",
-       "pthread",
-       "rt",
-     ]
--  }
+@@ -218,6 +218,10 @@ config("default_libs") {
+     # Targets should choose to explicitly link frameworks they require. Since
+     # linking can have run-time side effects, nothing should be listed here.
+     libs = []
 +  } else if (is_bsd) {
 +    libs = [
 +      "pthread",
 +    ]
-+ }
- }
- 
- group("common_deps") {
+   } else if (is_linux || is_chromeos) {
+     libs = [
+       "dl",

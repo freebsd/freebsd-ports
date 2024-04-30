@@ -1,15 +1,15 @@
---- src/3rdparty/chromium/base/trace_event/malloc_dump_provider.cc.orig	2023-02-08 09:03:45 UTC
+--- src/3rdparty/chromium/base/trace_event/malloc_dump_provider.cc.orig	2023-09-13 12:11:42 UTC
 +++ src/3rdparty/chromium/base/trace_event/malloc_dump_provider.cc
 @@ -25,6 +25,8 @@
  
  #if BUILDFLAG(IS_APPLE)
  #include <malloc/malloc.h>
-+#elif defined(OS_BSD)
++#elif BUILDFLAG(IS_BSD)
 +#include <stdlib.h>
  #else
  #include <malloc.h>
  #endif
-@@ -187,7 +189,7 @@ void ReportAppleAllocStats(size_t* total_virtual_size,
+@@ -188,7 +190,7 @@ void ReportAppleAllocStats(size_t* total_virtual_size,
  
  #if (BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC) && BUILDFLAG(IS_ANDROID)) || \
      (!BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC) && !BUILDFLAG(IS_WIN) &&    \
@@ -18,11 +18,11 @@
  void ReportMallinfoStats(ProcessMemoryDump* pmd,
                           size_t* total_virtual_size,
                           size_t* resident_size,
-@@ -358,6 +360,9 @@ bool MallocDumpProvider::OnMemoryDump(const MemoryDump
+@@ -359,6 +361,9 @@ bool MallocDumpProvider::OnMemoryDump(const MemoryDump
                       &allocated_objects_count);
  #elif BUILDFLAG(IS_FUCHSIA)
  // TODO(fuchsia): Port, see https://crbug.com/706592.
-+#elif defined(OS_BSD)
++#elif BUILDFLAG(IS_BSD)
 +  total_virtual_size = 0;
 +  allocated_objects_size = 0;
  #else

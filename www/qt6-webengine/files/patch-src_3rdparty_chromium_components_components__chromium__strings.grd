@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/components_chromium_strings.grd.orig	2023-02-08 09:03:45 UTC
+--- src/3rdparty/chromium/components/components_chromium_strings.grd.orig	2023-08-17 07:33:31 UTC
 +++ src/3rdparty/chromium/components/components_chromium_strings.grd
-@@ -220,7 +220,7 @@
+@@ -226,7 +226,7 @@
          </message>
        </if>
        <!-- The ChromeOS version of this string is defined in //components/error_page_strings.grdp. -->

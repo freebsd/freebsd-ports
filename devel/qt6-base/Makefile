@@ -3,6 +3,9 @@ DISTVERSION=	${QT6_VERSION}
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt6-
 
+PATCH_SITES=	https://github.com/qt/qtbase/commit/
+PATCHFILES+=	7c4e1357e49baebdd2d20710fccb5604cbb36c0d.patch:-p1 # CVE-2024-33861
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt base (core, gui, widgets, network,...)
 
@@ -55,7 +58,6 @@ CMAKE_OFF+=	FEATURE_sql_mysql \
 SHEBANG_FILES=	${WRKSRC}/mkspecs/features/uikit/device_destinations.sh \
 		${WRKSRC}/mkspecs/features/uikit/devices.py \
 		${WRKSRC}/mkspecs/features/data/mac/objc_namespace.sh \
-		${WRKSRC}/util/android/android_emulator_launcher.sh \
 		${WRKSRC}/util/testrunner/qt-testrunner.py \
 		${WRKSRC}/util/testrunner/sanitizer-testrunner.py
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}

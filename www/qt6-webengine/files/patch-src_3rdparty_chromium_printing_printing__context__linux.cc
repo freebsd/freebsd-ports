@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/printing/printing_context_linux.cc.orig	2023-04-05 11:05:06 UTC
+--- src/3rdparty/chromium/printing/printing_context_linux.cc.orig	2023-10-11 18:22:24 UTC
 +++ src/3rdparty/chromium/printing/printing_context_linux.cc
-@@ -19,7 +19,7 @@
- #include "printing/units.h"
+@@ -23,7 +23,7 @@
+ #endif
  
  // Avoid using LinuxUi on Fuchsia.
 -#if BUILDFLAG(IS_LINUX)
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -68,7 +68,7 @@ mojom::ResultCode PrintingContextLinux::UseDefaultSett
+@@ -72,7 +72,7 @@ mojom::ResultCode PrintingContextLinux::UseDefaultSett
  
    ResetSettings();
  
@@ -18,7 +18,7 @@
    if (!ui::LinuxUi::instance())
      return mojom::ResultCode::kSuccess;
  
-@@ -84,7 +84,7 @@ mojom::ResultCode PrintingContextLinux::UseDefaultSett
+@@ -88,7 +88,7 @@ mojom::ResultCode PrintingContextLinux::UseDefaultSett
  }
  
  gfx::Size PrintingContextLinux::GetPdfPaperSizeDeviceUnits() {
@@ -27,7 +27,7 @@
    if (ui::LinuxUi::instance())
      return ui::LinuxUi::instance()->GetPdfPaperSize(this);
  #endif
-@@ -97,7 +97,7 @@ mojom::ResultCode PrintingContextLinux::UpdatePrinterS
+@@ -101,7 +101,7 @@ mojom::ResultCode PrintingContextLinux::UpdatePrinterS
    DCHECK(!printer_settings.show_system_dialog);
    DCHECK(!in_print_job_);
  

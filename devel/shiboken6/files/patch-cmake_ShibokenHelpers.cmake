@@ -1,8 +1,8 @@
 We don't need bash for a simple export command.
 
---- cmake/ShibokenHelpers.cmake.orig	2023-10-14 09:37:51 UTC
+--- cmake/ShibokenHelpers.cmake.orig	2024-04-05 12:14:13 UTC
 +++ cmake/ShibokenHelpers.cmake
-@@ -772,7 +772,7 @@ $@")
+@@ -769,7 +769,7 @@ $@")
  $@")
      else()
          string(REPLACE ";" ":" path_dirs_native "${path_dirs_native}")

@@ -8,6 +8,8 @@
 %%PYSIDE_BINDIR_REL%%/deploy_lib/__pycache__/commands%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYSIDE_BINDIR_REL%%/deploy_lib/__pycache__/config%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYSIDE_BINDIR_REL%%/deploy_lib/__pycache__/config%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYSIDE_BINDIR_REL%%/deploy_lib/__pycache__/dependency_util%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYSIDE_BINDIR_REL%%/deploy_lib/__pycache__/dependency_util%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYSIDE_BINDIR_REL%%/deploy_lib/__pycache__/deploy_util%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYSIDE_BINDIR_REL%%/deploy_lib/__pycache__/deploy_util%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYSIDE_BINDIR_REL%%/deploy_lib/__pycache__/nuitka_helper%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -31,6 +33,7 @@
 %%PYSIDE_BINDIR_REL%%/deploy_lib/commands.py
 %%PYSIDE_BINDIR_REL%%/deploy_lib/config.py
 %%PYSIDE_BINDIR_REL%%/deploy_lib/default.spec
+%%PYSIDE_BINDIR_REL%%/deploy_lib/dependency_util.py
 %%PYSIDE_BINDIR_REL%%/deploy_lib/deploy_util.py
 %%PYSIDE_BINDIR_REL%%/deploy_lib/nuitka_helper.py
 %%PYSIDE_BINDIR_REL%%/deploy_lib/pyside_icon.icns

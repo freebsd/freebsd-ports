@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/boringssl/src/util/generate_build_files.py.orig	2023-04-05 11:05:06 UTC
+--- src/3rdparty/chromium/third_party/boringssl/src/util/generate_build_files.py.orig	2023-10-11 18:22:24 UTC
 +++ src/3rdparty/chromium/third_party/boringssl/src/util/generate_build_files.py
-@@ -785,10 +785,10 @@ def main(platforms):
+@@ -766,10 +766,10 @@ def main(platforms):
    ]
  
    # Generate err_data.c
@@ -15,7 +15,7 @@
    crypto_c_files.append('err_data.c')
    crypto_c_files.sort()
  
-@@ -801,11 +801,11 @@ def main(platforms):
+@@ -780,11 +780,11 @@ def main(platforms):
    crypto_test_files = []
    if EMBED_TEST_DATA:
      # Generate crypto_test_data.cc
@@ -29,6 +29,6 @@
 +#          ['go', 'run', 'util/embed_test_data.go'] + cmake['CRYPTO_TEST_DATA'],
 +#          cwd='src',
 +#          stdout=out)
-     crypto_test_files += ['crypto_test_data.cc']
+     crypto_test_files.append('crypto_test_data.cc')
  
-   crypto_test_files += FindCFiles(os.path.join('src', 'crypto'), OnlyTests)
+   crypto_test_files += PrefixWithSrc(cmake['CRYPTO_TEST_SOURCES'])

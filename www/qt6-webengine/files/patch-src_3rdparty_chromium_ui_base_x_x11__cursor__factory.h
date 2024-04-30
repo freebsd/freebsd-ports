@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/base/x/x11_cursor_factory.h.orig	2023-01-11 09:17:16 UTC
+--- src/3rdparty/chromium/ui/base/x/x11_cursor_factory.h.orig	2023-08-17 07:33:31 UTC
 +++ src/3rdparty/chromium/ui/base/x/x11_cursor_factory.h
 @@ -20,7 +20,7 @@ namespace ui {
  class X11Cursor;
@@ -9,7 +9,7 @@
  class LinuxUi;
  #endif
  
-@@ -59,7 +59,7 @@ class COMPONENT_EXPORT(UI_BASE_X) X11CursorFactory
+@@ -60,7 +60,7 @@ class COMPONENT_EXPORT(UI_BASE_X) X11CursorFactory
  
    std::map<mojom::CursorType, scoped_refptr<X11Cursor>> default_cursors_;
  

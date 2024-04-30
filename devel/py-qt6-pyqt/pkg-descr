@@ -1,2 +1,8 @@
-PyQt6 is a set of Python bindings for Qt6 application framework.
-This package provides the QtCore module.
+PyQt6 is a comprehensive set of Python bindings for Qt6. It is
+implemented as more than 35 extension modules and enables Python
+to be used as an alternative application development language to
+C++ on all supported platforms.
+
+PyQt6 may also be embedded in C++ based applications to allow users
+of those applications to configure or enhance the functionality of
+those applications.

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/dns/BUILD.gn.orig	2023-02-08 09:03:45 UTC
+--- src/3rdparty/chromium/net/dns/BUILD.gn.orig	2023-08-17 07:33:31 UTC
 +++ src/3rdparty/chromium/net/dns/BUILD.gn
-@@ -124,7 +124,7 @@ source_set("dns") {
+@@ -128,7 +128,7 @@ source_set("dns") {
        "dns_config_service_android.cc",
        "dns_config_service_android.h",
      ]
@@ -9,16 +9,26 @@
      sources += [
        "dns_config_service_linux.cc",
        "dns_config_service_linux.h",
-@@ -165,6 +165,7 @@ source_set("dns") {
+@@ -162,6 +162,9 @@ source_set("dns") {
+   }
+
+   deps = [ "//net:net_deps" ]
++  if (is_bsd) {
++    deps += [ "//components/services/screen_ai/buildflags" ]
++  }
+
+   public_deps = [
+     ":dns_client",
+@@ -169,6 +172,7 @@ source_set("dns") {
      ":host_resolver_manager",
      ":mdns_client",
      "//net:net_public_deps",
 +    "//printing/buildflags",
    ]
- 
+
    allow_circular_includes_from = [
-@@ -428,9 +429,9 @@ source_set("tests") {
- 
+@@ -436,9 +440,9 @@ source_set("tests") {
+
    if (is_android) {
      sources += [ "dns_config_service_android_unittest.cc" ]
 -  } else if (is_linux) {
@@ -28,4 +38,4 @@
 +  } else if (is_posix && !is_bsd) {
      sources += [ "dns_config_service_posix_unittest.cc" ]
    }
- 
+

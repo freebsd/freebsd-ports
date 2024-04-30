@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/video/video_encode_accelerator_adapter.cc.orig	2023-04-05 11:05:06 UTC
+--- src/3rdparty/chromium/media/video/video_encode_accelerator_adapter.cc.orig	2023-09-13 12:11:42 UTC
 +++ src/3rdparty/chromium/media/video/video_encode_accelerator_adapter.cc
 @@ -140,7 +140,7 @@ VideoEncodeAccelerator::Config SetUpVeaConfig(
    if (is_rgb)

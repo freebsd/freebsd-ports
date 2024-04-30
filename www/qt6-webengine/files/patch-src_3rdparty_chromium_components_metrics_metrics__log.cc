@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/metrics/metrics_log.cc.orig	2023-01-11 09:17:16 UTC
+--- src/3rdparty/chromium/components/metrics/metrics_log.cc.orig	2023-10-11 18:22:24 UTC
 +++ src/3rdparty/chromium/components/metrics/metrics_log.cc
 @@ -53,7 +53,7 @@
  #include "base/win/current_module.h"
@@ -9,7 +9,7 @@
  #include "base/environment.h"
  #include "base/nix/xdg_util.h"
  #endif
-@@ -123,7 +123,7 @@ void RecordCurrentTime(
+@@ -139,7 +139,7 @@ void RecordCurrentTime(
    }
  }
  
@@ -18,7 +18,7 @@
  metrics::SystemProfileProto::OS::XdgSessionType ToProtoSessionType(
      base::nix::SessionType session_type) {
    switch (session_type) {
-@@ -375,7 +375,7 @@ void MetricsLog::RecordCoreSystemProfile(
+@@ -399,7 +399,7 @@ void MetricsLog::RecordCoreSystemProfile(
  // OperatingSystemVersion refers to the ChromeOS release version.
  #if BUILDFLAG(IS_CHROMEOS_ASH)
    os->set_kernel_version(base::SysInfo::KernelVersion());
@@ -27,7 +27,7 @@
    // Linux operating system version is copied over into kernel version to be
    // consistent.
    os->set_kernel_version(base::SysInfo::OperatingSystemVersion());
-@@ -392,7 +392,7 @@ void MetricsLog::RecordCoreSystemProfile(
+@@ -416,7 +416,7 @@ void MetricsLog::RecordCoreSystemProfile(
    os->set_build_number(base::SysInfo::GetIOSBuildNumber());
  #endif
  

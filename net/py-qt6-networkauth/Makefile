@@ -11,11 +11,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt6 toolkit, QtNetworkAuth module
 WWW=		https://riverbankcomputing.com/software/pyqt
 
-LIB_DEPENDS=	libqscintilla2_qt6.so:devel/qscintilla2-qt6
-
 USES=		gl pyqt:6 python qt:6
-USE_GL=		gl
-USE_LOCALE=	C.UTF-8
+USE_GL=		opengl
 USE_PYQT=	sip:build pyqt6 qtbuilder
 USE_PYTHON=	concurrent flavors
 USE_QT=		base networkauth

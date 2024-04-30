@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/process/process_posix.cc.orig	2023-04-05 11:05:06 UTC
+--- src/3rdparty/chromium/base/process/process_posix.cc.orig	2023-09-13 12:11:42 UTC
 +++ src/3rdparty/chromium/base/process/process_posix.cc
 @@ -23,10 +23,15 @@
  #include "base/trace_event/base_tracing.h"
@@ -9,7 +9,7 @@
  #include <sys/event.h>
  #endif
  
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +#include <sys/types.h>
 +#include <sys/sysctl.h> 
 +#endif
@@ -35,21 +35,21 @@
      // On Mac we can wait on non child processes.
      return WaitForSingleNonChildProcess(handle, timeout);
  #else
-@@ -387,7 +392,55 @@ void Process::Exited(int exit_code) const {
+@@ -387,7 +392,56 @@ void Process::Exited(int exit_code) const {
  
- int Process::GetPriority() const {
+ int Process::GetOSPriority() const {
    DCHECK(IsValid());
 +// avoid pledge(2) violation
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +  return 0;
 +#else
    return getpriority(PRIO_PROCESS, static_cast<id_t>(process_));
 +#endif
-+}
+ }
 +
 +Time Process::CreationTime() const {
 +// avoid ps pledge in the network process
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
 +  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid(),
 +               sizeof(struct kinfo_proc), 0 };
 +  struct kinfo_proc *info = nullptr;
@@ -57,7 +57,7 @@
 +#endif
 +  Time ct = Time();
 +
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
 +  if (sysctl(mib, std::size(mib), NULL, &info_size, NULL, 0) < 0)
 +    goto out;
 +
@@ -77,17 +77,18 @@
 +  return ct;
 +}
 +
-+bool Process::IsProcessBackgrounded() const {
++#if BUILDFLAG(IS_BSD)
++Process::Priority Process::GetPriority() const {
++  return Priority::kUserBlocking;
++}
++
++bool Process::SetPriority(Priority priority) {
 +  return false;
 +}
-+ 
-+bool Process::SetProcessBackgrounded(bool value) {
++
++bool Process::CanSetPriority() {
 +  return false;
 +}
-+ 
-+// static
-+bool Process::CanBackgroundProcesses() {
-+  return false;
- }
++#endif
  
  }  // namespace base

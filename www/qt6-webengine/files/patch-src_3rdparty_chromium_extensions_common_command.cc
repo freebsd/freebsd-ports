@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/extensions/common/command.cc.orig	2022-11-30 08:12:58 UTC
+--- src/3rdparty/chromium/extensions/common/command.cc.orig	2023-10-11 18:22:24 UTC
 +++ src/3rdparty/chromium/extensions/common/command.cc
-@@ -280,7 +280,7 @@ std::string Command::CommandPlatform() {
+@@ -282,7 +282,7 @@ std::string Command::CommandPlatform() {
    return values::kKeybindingPlatformMac;
  #elif BUILDFLAG(IS_CHROMEOS)
    return values::kKeybindingPlatformChromeOs;

@@ -1,10 +1,10 @@
---- src/3rdparty/chromium/base/allocator/partition_allocator/starscan/stack/stack.cc.orig	2023-04-05 11:05:06 UTC
+--- src/3rdparty/chromium/base/allocator/partition_allocator/starscan/stack/stack.cc.orig	2023-09-13 12:11:42 UTC
 +++ src/3rdparty/chromium/base/allocator/partition_allocator/starscan/stack/stack.cc
 @@ -18,6 +18,10 @@
  #include <pthread.h>
  #endif
  
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +#include <pthread_np.h>
 +#endif
 +

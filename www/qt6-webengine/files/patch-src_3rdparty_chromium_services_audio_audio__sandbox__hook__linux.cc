@@ -1,10 +1,10 @@
---- src/3rdparty/chromium/services/audio/audio_sandbox_hook_linux.cc.orig	2022-02-07 13:39:41 UTC
+--- src/3rdparty/chromium/services/audio/audio_sandbox_hook_linux.cc.orig	2023-09-13 12:11:42 UTC
 +++ src/3rdparty/chromium/services/audio/audio_sandbox_hook_linux.cc
 @@ -143,6 +143,7 @@ void AddPulseAudioFilePermissions(
  }
  #endif
  
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
  std::vector<BrokerFilePermission> GetAudioFilePermissions() {
    std::vector<BrokerFilePermission> permissions{
        BrokerFilePermission::ReadOnly("/dev/urandom"),
@@ -17,7 +17,7 @@
  }  // namespace
  
  bool AudioPreSandboxHook(sandbox::policy::SandboxLinux::Options options) {
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
    LoadAudioLibraries();
    auto* instance = sandbox::policy::SandboxLinux::GetInstance();
    instance->StartBrokerProcess(MakeBrokerCommandSet({

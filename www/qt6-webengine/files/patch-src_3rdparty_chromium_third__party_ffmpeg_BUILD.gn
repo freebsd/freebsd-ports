@@ -1,0 +1,10 @@
+--- src/3rdparty/chromium/third_party/ffmpeg/BUILD.gn.orig	2023-12-12 22:08:45 UTC
++++ src/3rdparty/chromium/third_party/ffmpeg/BUILD.gn
+@@ -357,7 +357,6 @@ target(link_target_type, "ffmpeg_internal") {
+       libs += [
+         "m",
+         "z",
+-        "rt",
+       ]
+     }
+     if (is_component_ffmpeg) {

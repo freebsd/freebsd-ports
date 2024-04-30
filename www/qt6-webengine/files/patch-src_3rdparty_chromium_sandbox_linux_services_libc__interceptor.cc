@@ -1,10 +1,10 @@
---- src/3rdparty/chromium/sandbox/linux/services/libc_interceptor.cc.orig	2023-01-11 09:17:16 UTC
+--- src/3rdparty/chromium/sandbox/linux/services/libc_interceptor.cc.orig	2023-09-13 12:11:42 UTC
 +++ src/3rdparty/chromium/sandbox/linux/services/libc_interceptor.cc
 @@ -12,7 +12,9 @@
  #include <stddef.h>
  #include <stdint.h>
  #include <string.h>
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
  #include <sys/prctl.h>
 +#endif
  #include <sys/socket.h>

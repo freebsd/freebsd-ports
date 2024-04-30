@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/media/capture/video/fake_video_capture_device_factory.cc.orig	2023-04-05 11:05:06 UTC
+--- src/3rdparty/chromium/media/capture/video/fake_video_capture_device_factory.cc.orig	2023-08-17 07:33:31 UTC
 +++ src/3rdparty/chromium/media/capture/video/fake_video_capture_device_factory.cc
-@@ -213,7 +213,7 @@ void FakeVideoCaptureDeviceFactory::GetDevicesInfo(
+@@ -229,7 +229,7 @@ void FakeVideoCaptureDeviceFactory::GetDevicesInfo(
    int entry_index = 0;
    for (const auto& entry : devices_config_) {
      VideoCaptureApi api =

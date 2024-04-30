@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/process/process_metrics.h.orig	2023-03-09 06:31:50 UTC
+--- src/3rdparty/chromium/base/process/process_metrics.h.orig	2023-09-13 12:11:42 UTC
 +++ src/3rdparty/chromium/base/process/process_metrics.h
 @@ -37,7 +37,7 @@
  #endif
@@ -54,7 +54,7 @@
    int CalculateIdleWakeupsPerSecond(uint64_t absolute_idle_wakeups);
  #endif
  #if BUILDFLAG(IS_APPLE)
-@@ -263,9 +263,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -266,9 +266,7 @@ class BASE_EXPORT ProcessMetrics {
    // Used to store the previous times and CPU usage counts so we can
    // compute the CPU usage between calls.
    TimeTicks last_cpu_time_;
@@ -64,7 +64,7 @@
  
  #if BUILDFLAG(IS_WIN)
    TimeTicks last_cpu_time_for_precise_cpu_usage_;
-@@ -273,7 +271,7 @@ class BASE_EXPORT ProcessMetrics {
+@@ -276,7 +274,7 @@ class BASE_EXPORT ProcessMetrics {
  #endif
  
  #if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

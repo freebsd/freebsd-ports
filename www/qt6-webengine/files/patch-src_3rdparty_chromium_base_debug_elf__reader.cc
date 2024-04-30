@@ -1,10 +1,10 @@
---- src/3rdparty/chromium/base/debug/elf_reader.cc.orig	2022-08-31 12:19:35 UTC
+--- src/3rdparty/chromium/base/debug/elf_reader.cc.orig	2023-09-13 12:11:42 UTC
 +++ src/3rdparty/chromium/base/debug/elf_reader.cc
 @@ -78,6 +78,7 @@ size_t ReadElfBuildId(const void* elf_mapped_base,
      bool found = false;
      while (current_section < section_end) {
        current_note = reinterpret_cast<const Nhdr*>(current_section);
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
        if (current_note->n_type == NT_GNU_BUILD_ID) {
          StringPiece note_name(current_section + sizeof(Nhdr),
                                current_note->n_namesz);

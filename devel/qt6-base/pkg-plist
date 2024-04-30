@@ -30,7 +30,6 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qabstractitemmodel_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qabstractproxymodel_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qanimationgroup_p.h
-%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qatomicscopedvaluerollback_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbytearray_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbytedata_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcalendarbackend_p.h
@@ -42,6 +41,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcore_unix_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcoreapplication_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcorecmdlineargs_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcoreevent_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdatastream_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdataurl_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qdatetime_p.h
@@ -72,6 +72,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfsfileengine_iterator_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfsfileengine_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfunctions_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfutex_freebsd_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfutex_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfutureinterface_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfuturewatcher_p.h
@@ -144,6 +145,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsharedmemory_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsimd_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsimd_x86_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsingleshottimer_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qspan_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstorageinfo_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstringalgorithms_p.h
@@ -200,6 +202,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/QAtomicInt
 %%QT_INCDIR%%/QtCore/QAtomicInteger
 %%QT_INCDIR%%/QtCore/QAtomicPointer
+%%QT_INCDIR%%/QtCore/QAtomicScopedValueRollback
 %%QT_INCDIR%%/QtCore/QBEInteger
 %%QT_INCDIR%%/QtCore/QBaseIterator
 %%QT_INCDIR%%/QtCore/QBasicMutex
@@ -252,7 +255,6 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/QDeadlineTimer
 %%QT_INCDIR%%/QtCore/QDebug
 %%QT_INCDIR%%/QtCore/QDebugStateSaver
-%%QT_INCDIR%%/QtCore/QDeferredDeleteEvent
 %%QT_INCDIR%%/QtCore/QDir
 %%QT_INCDIR%%/QtCore/QDirIterator
 %%QT_INCDIR%%/QtCore/QDynamicPropertyChangeEvent
@@ -461,11 +463,13 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/QSocketDescriptor
 %%QT_INCDIR%%/QtCore/QSocketNotifier
 %%QT_INCDIR%%/QtCore/QSortFilterProxyModel
+%%QT_INCDIR%%/QtCore/QSpan
 %%QT_INCDIR%%/QtCore/QSpecialInteger
 %%QT_INCDIR%%/QtCore/QStack
 %%QT_INCDIR%%/QtCore/QStandardPaths
 %%QT_INCDIR%%/QtCore/QStaticByteArrayMatcher
 %%QT_INCDIR%%/QtCore/QStaticByteArrayMatcherBase
+%%QT_INCDIR%%/QtCore/QStaticLatin1StringMatcher
 %%QT_INCDIR%%/QtCore/QStaticPlugin
 %%QT_INCDIR%%/QtCore/QStorageInfo
 %%QT_INCDIR%%/QtCore/QString
@@ -487,6 +491,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/QSystemSemaphore
 %%QT_INCDIR%%/QtCore/QTaggedIterator
 %%QT_INCDIR%%/QtCore/QTaggedPointer
+%%QT_INCDIR%%/QtCore/QTemplatedMetaMethodReturnArgument
 %%QT_INCDIR%%/QtCore/QTemporaryDir
 %%QT_INCDIR%%/QtCore/QTemporaryFile
 %%QT_INCDIR%%/QtCore/QTextBoundaryFinder
@@ -589,8 +594,10 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/q20chrono.h
 %%QT_INCDIR%%/QtCore/q20functional.h
 %%QT_INCDIR%%/QtCore/q20iterator.h
+%%QT_INCDIR%%/QtCore/q20map.h
 %%QT_INCDIR%%/QtCore/q20memory.h
 %%QT_INCDIR%%/QtCore/q20type_traits.h
+%%QT_INCDIR%%/QtCore/q20vector.h
 %%QT_INCDIR%%/QtCore/q23functional.h
 %%QT_INCDIR%%/QtCore/q23utility.h
 %%QT_INCDIR%%/QtCore/qabstractanimation.h
@@ -609,6 +616,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/qassociativeiterable.h
 %%QT_INCDIR%%/QtCore/qatomic.h
 %%QT_INCDIR%%/QtCore/qatomic_cxx11.h
+%%QT_INCDIR%%/QtCore/qatomicscopedvaluerollback.h
 %%QT_INCDIR%%/QtCore/qbasicatomic.h
 %%QT_INCDIR%%/QtCore/qbasictimer.h
 %%QT_INCDIR%%/QtCore/qbindingstorage.h
@@ -634,6 +642,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/qcommandlineparser.h
 %%QT_INCDIR%%/QtCore/qcompare.h
 %%QT_INCDIR%%/QtCore/qcompare_impl.h
+%%QT_INCDIR%%/QtCore/qcomparehelpers.h
 %%QT_INCDIR%%/QtCore/qcompilerdetection.h
 %%QT_INCDIR%%/QtCore/qconcatenatetablesproxymodel.h
 %%QT_INCDIR%%/QtCore/qconfig.h
@@ -765,8 +774,10 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/qsize.h
 %%QT_INCDIR%%/QtCore/qsocketnotifier.h
 %%QT_INCDIR%%/QtCore/qsortfilterproxymodel.h
+%%QT_INCDIR%%/QtCore/qspan.h
 %%QT_INCDIR%%/QtCore/qstack.h
 %%QT_INCDIR%%/QtCore/qstandardpaths.h
+%%QT_INCDIR%%/QtCore/qstaticlatin1stringmatcher.h
 %%QT_INCDIR%%/QtCore/qstorageinfo.h
 %%QT_INCDIR%%/QtCore/qstring.h
 %%QT_INCDIR%%/QtCore/qstringalgorithms.h
@@ -813,6 +824,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/qtransposeproxymodel.h
 %%QT_INCDIR%%/QtCore/qtresource.h
 %%QT_INCDIR%%/QtCore/qtsan_impl.h
+%%QT_INCDIR%%/QtCore/qtsymbolmacros.h
 %%QT_INCDIR%%/QtCore/qttranslation.h
 %%QT_INCDIR%%/QtCore/qttypetraits.h
 %%QT_INCDIR%%/QtCore/qtversion.h
@@ -838,6 +850,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/qxmlstream.h
 %%QT_INCDIR%%/QtCore/qxpfunctional.h
 %%QT_INCDIR%%/QtCore/qxptype_traits.h
+%%QT_INCDIR%%/QtCore/qyieldcpu.h
 %%QT_INCDIR%%/QtDBus/%%FULLVER%%/QtDBus/private/dbus_minimal_p.h
 %%QT_INCDIR%%/QtDBus/%%FULLVER%%/QtDBus/private/qdbus_symbols_p.h
 %%QT_INCDIR%%/QtDBus/%%FULLVER%%/QtDBus/private/qdbusabstractadaptor_p.h
@@ -892,7 +905,6 @@ bin/qmake6
 %%QT_INCDIR%%/QtDBus/qdbuserror.h
 %%QT_INCDIR%%/QtDBus/qdbusextratypes.h
 %%QT_INCDIR%%/QtDBus/qdbusinterface.h
-%%QT_INCDIR%%/QtDBus/qdbusmacros.h
 %%QT_INCDIR%%/QtDBus/qdbusmessage.h
 %%QT_INCDIR%%/QtDBus/qdbusmetatype.h
 %%QT_INCDIR%%/QtDBus/qdbuspendingcall.h
@@ -1129,6 +1141,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/qpa/qplatformintegration.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/qpa/qplatformintegrationfactory_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/qpa/qplatformintegrationplugin.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/qpa/qplatformkeymapper.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/qpa/qplatformmenu.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/qpa/qplatformmenu_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/qpa/qplatformnativeinterface.h
@@ -1192,6 +1205,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtGui/QBrush
 %%QT_INCDIR%%/QtGui/QBrushData
 %%QT_INCDIR%%/QtGui/QBrushDataPointerDeleter
+%%QT_INCDIR%%/QtGui/QChildWindowEvent
 %%QT_INCDIR%%/QtGui/QClipboard
 %%QT_INCDIR%%/QtGui/QCloseEvent
 %%QT_INCDIR%%/QtGui/QColor
@@ -1462,6 +1476,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtGui/qrgba64.h
 %%QT_INCDIR%%/QtGui/qrgbafloat.h
 %%QT_INCDIR%%/QtGui/qscreen.h
+%%QT_INCDIR%%/QtGui/qscreen_platform.h
 %%QT_INCDIR%%/QtGui/qsessionmanager.h
 %%QT_INCDIR%%/QtGui/qshortcut.h
 %%QT_INCDIR%%/QtGui/qstandarditemmodel.h
@@ -1544,6 +1559,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhostinfo_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhsts_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhstsstore_p.h
+%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhttp2connection_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhttp2protocolhandler_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhttpheaderparser_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhttpmultipart_p.h
@@ -1581,8 +1597,11 @@ bin/qmake6
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkreplyhttpimpl_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkreplyimpl_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkrequest_p.h
+%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkrequestfactory_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qocsp_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qocspresponse_p.h
+%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qrestaccessmanager_p.h
+%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qrestreply_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsocks5socketengine_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qssl_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsslcertificate_p.h
@@ -1612,6 +1631,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtNetwork/QDnsTextRecord
 %%DTLS%%%%QT_INCDIR%%/QtNetwork/QDtls
 %%DTLS%%%%QT_INCDIR%%/QtNetwork/QDtlsClientVerifier
+%%QT_INCDIR%%/QtNetwork/QHttpHeaders
 %%QT_INCDIR%%/QtNetwork/QHostAddress
 %%QT_INCDIR%%/QtNetwork/QHostInfo
 %%QT_INCDIR%%/QtNetwork/QHstsPolicy
@@ -1636,8 +1656,10 @@ bin/qmake6
 %%QT_INCDIR%%/QtNetwork/QNetworkProxyQuery
 %%QT_INCDIR%%/QtNetwork/QNetworkReply
 %%QT_INCDIR%%/QtNetwork/QNetworkRequest
+%%QT_INCDIR%%/QtNetwork/QNetworkRequestFactory
 %%QT_INCDIR%%/QtNetwork/QOcspResponse
 %%QT_INCDIR%%/QtNetwork/QPasswordDigestor
+%%QT_INCDIR%%/QtNetwork/QRestReply
 %%QT_INCDIR%%/QtNetwork/QSsl
 %%QT_INCDIR%%/QtNetwork/QSslCertificate
 %%QT_INCDIR%%/QtNetwork/QSslCertificateExtension
@@ -1667,6 +1689,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtNetwork/qhstspolicy.h
 %%QT_INCDIR%%/QtNetwork/qhttp1configuration.h
 %%QT_INCDIR%%/QtNetwork/qhttp2configuration.h
+%%QT_INCDIR%%/QtNetwork/qhttpheaders.h
 %%QT_INCDIR%%/QtNetwork/qhttpmultipart.h
 %%QT_INCDIR%%/QtNetwork/qlocalserver.h
 %%QT_INCDIR%%/QtNetwork/qlocalsocket.h
@@ -1680,8 +1703,11 @@ bin/qmake6
 %%QT_INCDIR%%/QtNetwork/qnetworkproxy.h
 %%QT_INCDIR%%/QtNetwork/qnetworkreply.h
 %%QT_INCDIR%%/QtNetwork/qnetworkrequest.h
+%%QT_INCDIR%%/QtNetwork/qnetworkrequestfactory.h
 %%QT_INCDIR%%/QtNetwork/qocspresponse.h
 %%QT_INCDIR%%/QtNetwork/qpassworddigestor.h
+%%QT_INCDIR%%/QtNetwork/qrestaccessmanager.h
+%%QT_INCDIR%%/QtNetwork/qrestreply.h
 %%QT_INCDIR%%/QtNetwork/qssl.h
 %%QT_INCDIR%%/QtNetwork/qsslcertificate.h
 %%QT_INCDIR%%/QtNetwork/qsslcertificateextension.h
@@ -1887,7 +1913,6 @@ bin/qmake6
 %%QT_INCDIR%%/QtSql/QtSql
 %%QT_INCDIR%%/QtSql/QtSqlDepends
 %%QT_INCDIR%%/QtSql/QtSqlVersion
-%%QT_INCDIR%%/QtSql/qsql.h
 %%QT_INCDIR%%/QtSql/qsqldatabase.h
 %%QT_INCDIR%%/QtSql/qsqldriver.h
 %%QT_INCDIR%%/QtSql/qsqldriverplugin.h
@@ -1913,6 +1938,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qbenchmarkmetric_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qbenchmarkperfevents_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qbenchmarktimemeasurers_p.h
+%%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qcomparisontesthelper_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qcsvbenchmarklogger_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qemulationdetector_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qjunittestlogger_p.h
@@ -1959,7 +1985,6 @@ bin/qmake6
 %%QT_INCDIR%%/QtTest/qbenchmarkmetric.h
 %%QT_INCDIR%%/QtTest/qsignalspy.h
 %%QT_INCDIR%%/QtTest/qtest.h
-%%QT_INCDIR%%/QtTest/qtest_global.h
 %%QT_INCDIR%%/QtTest/qtest_gui.h
 %%QT_INCDIR%%/QtTest/qtest_network.h
 %%QT_INCDIR%%/QtTest/qtest_widgets.h
@@ -2052,6 +2077,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qplaintextedit_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qproxystyle_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qpushbutton_p.h
+%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qrhiwidget_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qscrollarea_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qscrollbar_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qscroller_p.h
@@ -2205,6 +2231,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtWidgets/QProxyStyle
 %%QT_INCDIR%%/QtWidgets/QPushButton
 %%QT_INCDIR%%/QtWidgets/QRadioButton
+%%QT_INCDIR%%/QtWidgets/QRhiWidget
 %%QT_INCDIR%%/QtWidgets/QRubberBand
 %%QT_INCDIR%%/QtWidgets/QScrollArea
 %%QT_INCDIR%%/QtWidgets/QScrollBar
@@ -2369,6 +2396,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtWidgets/qproxystyle.h
 %%QT_INCDIR%%/QtWidgets/qpushbutton.h
 %%QT_INCDIR%%/QtWidgets/qradiobutton.h
+%%QT_INCDIR%%/QtWidgets/qrhiwidget.h
 %%QT_INCDIR%%/QtWidgets/qrubberband.h
 %%QT_INCDIR%%/QtWidgets/qscrollarea.h
 %%QT_INCDIR%%/QtWidgets/qscrollbar.h
@@ -2478,6 +2506,7 @@ lib/cmake/Qt6/FindMySQL.cmake
 lib/cmake/Qt6/FindOracle.cmake
 lib/cmake/Qt6/FindPPS.cmake
 lib/cmake/Qt6/FindPostgreSQL.cmake
+lib/cmake/Qt6/FindRenderDoc.cmake
 lib/cmake/Qt6/FindSlog2.cmake
 lib/cmake/Qt6/FindTslib.cmake
 lib/cmake/Qt6/FindWrapAtomic.cmake
@@ -2667,6 +2696,7 @@ lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in
 lib/cmake/Qt6Core/Qt6CoreDependencies.cmake
 lib/cmake/Qt6Core/Qt6CoreDeploySupport.cmake
 lib/cmake/Qt6Core/Qt6CoreMacros.cmake
+lib/cmake/Qt6Core/Qt6CoreResourceInit.in.cpp
 lib/cmake/Qt6Core/Qt6CoreTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Core/Qt6CoreTargets.cmake
 lib/cmake/Qt6Core/Qt6CoreVersionlessTargets.cmake
@@ -3074,8 +3104,8 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_LIBDIR%%/metatypes/qt6widgets_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%X11%%%%QT_LIBDIR%%/metatypes/qt6xcbqpaprivate_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%QT_LIBDIR%%/metatypes/qt6xml_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%DEBUG%%%%QT_LIBDIR%%/objects-Debug/ExampleIconsPrivate_resources_1/.rcc/qrc_example_icons.cpp.o
-%%NO_DEBUG%%%%QT_LIBDIR%%/objects-Release/ExampleIconsPrivate_resources_1/.rcc/qrc_example_icons.cpp.o
+%%DEBUG%%%%QT_LIBDIR%%/objects-Debug/ExampleIconsPrivate_resources_1/.rcc/qrc_example_icons_init.cpp.o
+%%NO_DEBUG%%%%QT_LIBDIR%%/objects-Release/ExampleIconsPrivate_resources_1/.rcc/qrc_example_icons_init.cpp.o
 %%QT_MKSPECDIR%%/aix-g++-64/qmake.conf
 %%QT_MKSPECDIR%%/aix-g++-64/qplatformdefs.h
 %%QT_MKSPECDIR%%/aix-g++/qmake.conf
@@ -3132,6 +3162,7 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/common/uikit/clang.conf
 %%QT_MKSPECDIR%%/common/uikit/qmake.conf
 %%QT_MKSPECDIR%%/common/unix.conf
+%%QT_MKSPECDIR%%/common/vxworks/qplatformdefs.h
 %%QT_MKSPECDIR%%/common/wasm/qplatformdefs.h
 %%QT_MKSPECDIR%%/common/wasm/wasm.conf
 %%QT_MKSPECDIR%%/common/watchos.conf
@@ -3527,6 +3558,7 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/unsupported/vxworks-simpentium-dcc/qplatformdefs.h
 %%QT_MKSPECDIR%%/unsupported/vxworks-simpentium-g++/qmake.conf
 %%QT_MKSPECDIR%%/unsupported/vxworks-simpentium-g++/qplatformdefs.h
+%%QT_MKSPECDIR%%/vxworks-clang/qplatformdefs.h
 %%QT_MKSPECDIR%%/wasm-emscripten-64/qmake.conf
 %%QT_MKSPECDIR%%/wasm-emscripten-64/qplatformdefs.h
 %%QT_MKSPECDIR%%/wasm-emscripten/qmake.conf
@@ -3582,7 +3614,6 @@ libdata/pkgconfig/Qt6Sql.pc
 libdata/pkgconfig/Qt6Test.pc
 libdata/pkgconfig/Qt6Widgets.pc
 libdata/pkgconfig/Qt6Xml.pc
-%%QT_TOOLDIR%%/android_emulator_launcher.sh
 %%QT_TOOLDIR%%/cmake_automoc_parser
 %%QT_TOOLDIR%%/ensure_pro_file.cmake
 %%QT_TOOLDIR%%/moc
@@ -3726,6 +3757,7 @@ libdata/pkgconfig/Qt6Xml.pc
 %%QT_DOCDIR%%/global/template/style/online.css
 %%QT_DOCDIR%%/global/template/style/tech_preview.svg
 %%QT_DOCDIR%%/global/template/style/theqtcompany.png
+%%QT_DOCDIR%%/global/warninglimit.qdocconf
 %%QT_DATADIR%%/modules/Concurrent.json
 %%QT_DATADIR%%/modules/Core.json
 %%QT_DATADIR%%/modules/DBus.json

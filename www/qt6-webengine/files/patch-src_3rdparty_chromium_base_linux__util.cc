@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/linux_util.cc.orig	2022-08-31 12:19:35 UTC
+--- src/3rdparty/chromium/base/linux_util.cc.orig	2023-09-13 12:11:42 UTC
 +++ src/3rdparty/chromium/base/linux_util.cc
 @@ -15,6 +15,7 @@
  
@@ -12,7 +12,7 @@
  }
  
  bool GetThreadsForProcess(pid_t pid, std::vector<pid_t>* tids) {
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +  return false;
 +#else
    // 25 > strlen("/proc//task") + strlen(std::to_string(INT_MAX)) + 1 = 22

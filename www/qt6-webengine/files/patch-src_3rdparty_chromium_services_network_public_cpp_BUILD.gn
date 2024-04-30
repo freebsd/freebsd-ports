@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/services/network/public/cpp/BUILD.gn.orig	2023-12-12 22:08:45 UTC
++++ src/3rdparty/chromium/services/network/public/cpp/BUILD.gn
+@@ -481,7 +481,7 @@ jumbo_component("cpp_base") {
+     sources += [ "transferable_directory_fuchsia.cc" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     sources += [
+       "network_interface_change_listener_mojom_traits.cc",
+       "network_interface_change_listener_mojom_traits.h",
