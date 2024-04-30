@@ -3202,3 +3202,4 @@ x11-toolkits/p5-Gtk2-Ex-Dialogs||2024-04-24|Has expired: No longer works with mo
 math/mathlibtools||2024-04-28|Project is obsolete and archived on GitHub since Aug 2023, not compatible with math/lean4
 emulators/qemu7@tools|emulators/qemu@tools|2024-04-29|Use emulators/qemu@tools instead
 lang/tcl9|lang/tcl90|2024-04-30|Renamed for consistency with the 8.x series ports
+deskutils/aspostit||2024-04-30|Has expired: Unmaintained, last upstream release in 2001
