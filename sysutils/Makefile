@@ -301,7 +301,6 @@
     SUBDIR += di
     SUBDIR += diffoci
     SUBDIR += digdag
-    SUBDIR += dim
     SUBDIR += dirdiff
     SUBDIR += direnv
     SUBDIR += direvent
