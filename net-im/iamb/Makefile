@@ -1,0 +1,27 @@
+PORTNAME=	iamb
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.0.9
+CATEGORIES=	net-im
+
+MAINTAINER=	ashish@FreeBSD.org
+COMMENT=	Matrix client for Vim addicts
+WWW=		https://iamb.chat/
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/oniguruma.pc:devel/oniguruma
+
+USES=		cargo ssl
+USE_GITHUB=	yes
+GH_ACCOUNT=	ulyssa
+
+PLIST_FILES=	bin/iamb \
+		share/man/man1/iamb.1.gz \
+		share/man/man5/iamb.5.gz
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/docs/iamb.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_DATA} ${WRKSRC}/docs/iamb.5 ${STAGEDIR}${PREFIX}/share/man/man5
+
+.include <bsd.port.mk>

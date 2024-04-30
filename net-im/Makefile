@@ -26,6 +26,7 @@
     SUBDIR += gotktrix
     SUBDIR += gotosocial
     SUBDIR += gurk-rs
+    SUBDIR += iamb
     SUBDIR += icmpchat
     SUBDIR += icqlib
     SUBDIR += jabberd
