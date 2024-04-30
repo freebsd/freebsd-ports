@@ -1,2 +1,2 @@
-lnav is an ncurses based log file viewer, with syntax highlighting,
+lnav is an ncurses-based log file viewer, with syntax highlighting,
 filtering, tab completion for most operations, and sessions support.
