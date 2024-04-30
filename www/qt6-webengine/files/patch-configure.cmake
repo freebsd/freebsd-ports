@@ -1,6 +1,6 @@
---- configure.cmake.orig	2024-02-10 00:23:21 UTC
+--- configure.cmake.orig	2023-12-12 22:08:45 UTC
 +++ configure.cmake
-@@ -67,7 +67,7 @@ endif()
+@@ -68,7 +68,7 @@ endif()
  endif()
  
  #### Tests
@@ -9,7 +9,7 @@
     check_for_ulimit()
  endif()
  
-@@ -427,7 +427,7 @@ qt_feature("webengine-ozone-x11" PRIVATE
+@@ -428,7 +428,7 @@ qt_feature("webengine-ozone-x11" PRIVATE
  
  qt_feature("webengine-ozone-x11" PRIVATE
      LABEL "Support GLX on qpa-xcb"
@@ -18,7 +18,7 @@
          AND TARGET Qt::Gui
          AND QT_FEATURE_xcb
          AND X11_FOUND
-@@ -464,12 +464,12 @@ add_check_for_support(
+@@ -465,12 +465,12 @@ add_check_for_support(
  )
  add_check_for_support(
     MODULES QtWebEngine
@@ -28,9 +28,9 @@
  )
  add_check_for_support(
     MODULES QtPdf
--   CONDITION LINUX OR (WIN32 AND NOT WIN_ARM_64) OR MACOS OR IOS OR (ANDROID AND NOT CMAKE_HOST_WIN32)
-+   CONDITION LINUX OR (WIN32 AND NOT WIN_ARM_64) OR MACOS OR IOS OR (ANDROID AND NOT CMAKE_HOST_WIN32) OR FREEBSD
-    MESSAGE "Build can be done only on Linux, Windows, macO, iOS and Android(on non-Windows hosts only)."
+-   CONDITION LINUX OR (WIN32 AND NOT WIN_ARM_64) OR MACOS OR IOS OR ANDROID
++   CONDITION LINUX OR (WIN32 AND NOT WIN_ARM_64) OR MACOS OR IOS OR ANDROID OR FREEBSD
+    MESSAGE "Build can be done only on Linux, Windows, macO, iOS and Android."
  )
  if(LINUX AND CMAKE_CROSSCOMPILING)
 @@ -492,13 +492,6 @@ add_check_for_support(

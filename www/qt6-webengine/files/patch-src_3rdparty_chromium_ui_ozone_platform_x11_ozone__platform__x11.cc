@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/ozone/platform/x11/ozone_platform_x11.cc.orig	2023-03-09 06:31:50 UTC
+--- src/3rdparty/chromium/ui/ozone/platform/x11/ozone_platform_x11.cc.orig	2023-10-11 18:22:24 UTC
 +++ src/3rdparty/chromium/ui/ozone/platform/x11/ozone_platform_x11.cc
 @@ -196,7 +196,7 @@ class OzonePlatformX11 : public OzonePlatform,
        properties->supports_global_application_menus = true;

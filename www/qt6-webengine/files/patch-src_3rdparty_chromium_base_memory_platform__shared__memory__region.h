@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/memory/platform_shared_memory_region.h.orig	2022-06-17 14:20:10 UTC
+--- src/3rdparty/chromium/base/memory/platform_shared_memory_region.h.orig	2023-07-16 15:47:57 UTC
 +++ src/3rdparty/chromium/base/memory/platform_shared_memory_region.h
 @@ -16,7 +16,7 @@
  
@@ -18,7 +18,7 @@
    // Structure to limit access to executable region creation.
    struct ExecutableRegion {
     private:
-@@ -211,7 +211,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
+@@ -215,7 +215,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
                             CheckPlatformHandlePermissionsCorrespondToMode);
    static PlatformSharedMemoryRegion Create(Mode mode,
                                             size_t size

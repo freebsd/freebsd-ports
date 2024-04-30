@@ -1,6 +1,26 @@
---- src/3rdparty/chromium/third_party/zlib/BUILD.gn.orig	2023-08-16 19:50:41 UTC
+--- src/3rdparty/chromium/third_party/zlib/BUILD.gn.orig	2023-12-12 22:08:45 UTC
 +++ src/3rdparty/chromium/third_party/zlib/BUILD.gn
-@@ -455,7 +455,7 @@ static_library("bundled_minizip") {
+@@ -139,7 +139,7 @@ if (use_arm_neon_optimizations) {
+     defines = [ "CRC32_ARMV8_CRC32" ]
+     if (is_android) {
+       defines += [ "ARMV8_OS_ANDROID" ]
+-    } else if (is_linux || is_chromeos) {
++    } else if ((is_linux || is_chromeos) && !is_bsd) {
+       defines += [ "ARMV8_OS_LINUX" ]
+     } else if (is_mac) {
+       defines += [ "ARMV8_OS_MACOS" ]
+@@ -149,6 +149,10 @@ if (use_arm_neon_optimizations) {
+       defines += [ "ARMV8_OS_FUCHSIA" ]
+     } else if (is_win) {
+       defines += [ "ARMV8_OS_WINDOWS" ]
++    } else if (is_openbsd) {
++      defines += [ "ARMV8_OS_OPENBSD" ]
++    } else if (is_freebsd) {
++      defines += [ "ARMV8_OS_FREEBSD" ]
+     } else {
+       assert(false, "Unsupported ARM OS")
+     }
+@@ -462,7 +466,7 @@ static_library("bundled_minizip") {
      ]
    }
  

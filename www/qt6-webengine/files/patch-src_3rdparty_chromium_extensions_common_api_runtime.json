@@ -1,12 +1,10 @@
---- src/3rdparty/chromium/extensions/common/api/runtime.json.orig	2022-08-31 12:19:35 UTC
+--- src/3rdparty/chromium/extensions/common/api/runtime.json.orig	2023-09-13 12:11:42 UTC
 +++ src/3rdparty/chromium/extensions/common/api/runtime.json
-@@ -86,7 +86,8 @@
-           "cros",
-           "linux",
-           "openbsd",
--          "fuchsia"
-+          "fuchsia",
-+          "freebsd"
+@@ -89,6 +89,7 @@
+             {"name": "cros", "description": "Specifies the Chrome operating system."},
+             {"name": "linux", "description": "Specifies the Linux operating system."},
+             {"name": "openbsd", "description": "Specifies the OpenBSD operating system."},
++            {"name": "freebsd", "description": "Specifies the FreeBSD operating system."},
+             {"name": "fuchsia", "description": "Specifies the Fuchsia operating system."}
          ]
        },
-       {

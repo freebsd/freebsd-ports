@@ -1,14 +1,14 @@
---- src/core/api/configure.cmake.orig	2023-11-20 16:08:07 UTC
+--- src/core/api/configure.cmake.orig	2023-12-12 22:08:45 UTC
 +++ src/core/api/configure.cmake
 @@ -10,6 +10,7 @@ if(NOT QT_CONFIGURE_RUNNING)
-     if(PkgConfig_FOUND)
+     if(PkgConfig_FOUND AND QT_FEATURE_pkg_config)
          pkg_check_modules(ALSA alsa IMPORTED_TARGET)
          pkg_check_modules(PULSEAUDIO libpulse>=0.9.10 libpulse-mainloop-glib)
 +        pkg_check_modules(SNDIO libsndio)
          pkg_check_modules(XDAMAGE xdamage)
          pkg_check_modules(POPPLER_CPP poppler-cpp IMPORTED_TARGET)
          pkg_check_modules(GBM gbm)
-@@ -84,6 +85,11 @@ qt_feature("webengine-printing-and-pdf" PRIVATE
+@@ -90,6 +91,11 @@ qt_feature("webengine-printing-and-pdf" PRIVATE
      CONDITION TARGET Qt::PrintSupport AND QT_FEATURE_printer AND
      (CUPS_FOUND OR WIN32)
  )
@@ -20,7 +20,7 @@
  qt_feature("webengine-pepper-plugins" PRIVATE
      LABEL "Pepper Plugins"
      PURPOSE "Enables use of Pepper plugins."
-@@ -164,7 +170,7 @@ qt_feature("webengine-vaapi" PRIVATE
+@@ -170,7 +176,7 @@ qt_feature("webengine-vaapi" PRIVATE
      PURPOSE "Enables support for VA-API hardware acceleration"
      AUTODETECT GBM_FOUND AND LIBVA_FOUND AND QT_FEATURE_vulkan
      # hardware accelerated encoding requires bundled libvpx
@@ -29,7 +29,7 @@
  )
  # internal testing feature
  qt_feature("webengine-system-poppler" PRIVATE
-@@ -199,15 +205,19 @@ qt_configure_add_summary_entry(
+@@ -205,15 +211,19 @@ qt_configure_add_summary_entry(
  )
  qt_configure_add_summary_entry(
      ARGS "webengine-vaapi"

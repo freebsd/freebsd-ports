@@ -18,15 +18,15 @@ LIB_DEPENDS=	libshiboken6.abi${PYTHON_MAJOR_VER}.so:devel/shiboken6@${PY_FLAVOR}
 		libxkbcommon.so:x11/libxkbcommon \
 		libzstd.so:archivers/zstd
 
-USES=		cmake gl llvm:lib python qt:6 shebangfix tar:xz
-USE_GL=		gl
+USES=		cmake gl llvm:lib,noexport python qt:6 shebangfix tar:xz
+USE_GL=		opengl
 USE_PYTHON=	flavors
 USE_QT=		base declarative languageserver tools
 
 SHEBANG_FILES=	pyside_tool.py qtpy2cpp_lib/tests/baseline/basic_test.py
 
 PLIST_SUB=	PYSIDE_BINDIR_REL=${PYSIDE_BINDIR_REL}
-WRKSRC=		${WRKDIR}/pyside-setup-everywhere-src-${PYSIDE6_VERSION}/sources/pyside-tools
+WRKSRC_SUBDIR=	sources/pyside-tools
 
 PYSIDE_RELNAME=		${PORTNAME}
 PYSIDE_BINDIR_REL?=	bin/${PYSIDE_RELNAME}
@@ -41,6 +41,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PYSIDE_BINDIR_REL}
 	@${MV} ${STAGEDIR}${PREFIX}/${PYSIDE_RELNAME} ${STAGEDIR}${PREFIX}/bin
 # These directories contain templates that should not be byte-compiled.
+# Temporarily relocate them to avoid errors.
 	@${MV} ${STAGEDIR}${PREFIX}/${PYSIDE_BINDIR_REL}/deploy_lib/android/recipes ${WRKDIR}
 
 .for d in deploy_lib project qtpy2cpp_lib
@@ -52,6 +53,8 @@ post-install:
 		${STAGEDIR}${PREFIX}/${PYSIDE_BINDIR_REL}/${d}
 .endfor
 
+# Move the aforementioned templates back into STAGEDIR after the byte-compiling
+# operation has finished.
 	@${MV} ${WRKDIR}/recipes ${STAGEDIR}${PREFIX}/${PYSIDE_BINDIR_REL}/deploy_lib/android
 
 .include <bsd.port.mk>

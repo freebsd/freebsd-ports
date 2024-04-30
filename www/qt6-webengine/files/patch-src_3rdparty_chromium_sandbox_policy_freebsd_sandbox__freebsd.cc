@@ -120,7 +120,7 @@
 +      base::FilePath cache_directory, local_directory;
 +
 +      base::PathService::Get(base::DIR_CACHE, &cache_directory);
-+      base::PathService::Get(base::DIR_HOME, &local_directory);
++      base::PathService::Get(base::DIR_HOME, &local_directory);   
 +
 +      cache_directory = cache_directory.AppendASCII("chromium");
 +      local_directory = local_directory.AppendASCII(".local").AppendASCII("share").AppendASCII("applications");

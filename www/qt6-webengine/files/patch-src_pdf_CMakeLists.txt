@@ -1,16 +1,16 @@
---- src/pdf/CMakeLists.txt.orig	2023-10-03 19:49:54 UTC
+--- src/pdf/CMakeLists.txt.orig	2023-12-12 22:08:45 UTC
 +++ src/pdf/CMakeLists.txt
 @@ -71,7 +71,7 @@ add_dependencies(docs generate_pdf_attributions)
  #   TOOLCHAIN SETUP
  ##
  
--if(LINUX OR MINGW)
-+if(LINUX OR MINGW OR FREEBSD)
+-if(LINUX OR MINGW OR ANDROID)
++if(LINUX OR MINGW OR ANDROID OR FREEBSD)
      setup_toolchains()
  endif()
  
-@@ -134,7 +134,7 @@ foreach(arch ${archs})
-           strip_absolute_paths_from_debug_symbols=false
+@@ -138,7 +138,7 @@ foreach(arch ${archs})
+           v8_enable_webassembly=false
          )
  
 -        if(LINUX OR ANDROID)

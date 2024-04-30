@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/zygote/zygote_linux.cc.orig	2023-02-08 09:03:45 UTC
+--- src/3rdparty/chromium/content/zygote/zygote_linux.cc.orig	2023-09-13 12:11:42 UTC
 +++ src/3rdparty/chromium/content/zygote/zygote_linux.cc
 @@ -1,6 +1,7 @@
  // Copyright 2012 The Chromium Authors
@@ -8,7 +8,7 @@
  
  #include "content/zygote/zygote_linux.h"
  
-@@ -706,3 +707,4 @@ void Zygote::HandleReinitializeLoggingRequest(base::Pi
+@@ -707,3 +708,4 @@ void Zygote::HandleReinitializeLoggingRequest(base::Pi
  }
  
  }  // namespace content

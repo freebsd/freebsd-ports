@@ -1,0 +1,20 @@
+--- src/3rdparty/chromium/content/gpu/BUILD.gn.orig	2023-12-12 22:08:45 UTC
++++ src/3rdparty/chromium/content/gpu/BUILD.gn
+@@ -107,6 +107,17 @@ target(link_target_type, "gpu_sources") {
+     }
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "gpu_sandbox_hook_linux.cc",
++      "gpu_sandbox_hook_linux.h",
++    ]
++    sources += [
++      "gpu_sandbox_hook_bsd.cc",
++      "gpu_sandbox_hook_bsd.h",
++    ]
++  }
++
+   if (is_chromeos_ash) {
+     deps += [
+       "//components/services/font/public/cpp",

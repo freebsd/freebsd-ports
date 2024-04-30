@@ -1,23 +1,26 @@
---- src/3rdparty/chromium/content/utility/utility_main.cc.orig	2023-08-16 19:50:41 UTC
+--- src/3rdparty/chromium/content/utility/utility_main.cc.orig	2023-12-12 22:08:45 UTC
 +++ src/3rdparty/chromium/content/utility/utility_main.cc
-@@ -31,7 +31,7 @@
+@@ -34,7 +34,7 @@
  #include "third_party/icu/source/common/unicode/unistr.h"
  #include "third_party/icu/source/i18n/unicode/timezone.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ #include "base/file_descriptor_store.h"
+ #include "base/files/file_util.h"
+ #include "base/pickle.h"
+@@ -42,7 +42,9 @@
  #include "content/utility/speech/speech_recognition_sandbox_hook_linux.h"
  #include "gpu/config/gpu_info_collector.h"
  #include "media/gpu/sandbox/hardware_video_encoding_sandbox_hook_linux.h"
-@@ -42,15 +42,21 @@
- #if BUILDFLAG(ENABLE_PRINTING)
- #include "printing/sandbox/print_backend_sandbox_hook_linux.h"
- #endif
 +#if !BUILDFLAG(IS_BSD)
  #include "sandbox/policy/linux/sandbox_linux.h"
 +#endif
  #include "services/audio/audio_sandbox_hook_linux.h"
  #include "services/network/network_sandbox_hook_linux.h"
+ // gn check is not smart enough to realize that this include only applies to
+@@ -54,10 +56,14 @@
+ #endif
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
@@ -26,13 +29,13 @@
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
  
 +#if BUILDFLAG(IS_BSD)
-+#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#include "sandbox/policy/sandbox.h"
 +#endif
 +
  #if BUILDFLAG(IS_CHROMEOS_ASH)
  #include "chromeos/ash/components/assistant/buildflags.h"
  #include "chromeos/ash/services/ime/ime_sandbox_hook.h"
-@@ -62,7 +68,7 @@
+@@ -69,7 +75,7 @@
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
  #if (BUILDFLAG(ENABLE_SCREEN_AI_SERVICE) && \
@@ -41,12 +44,17 @@
  #include "components/services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.h"  // nogncheck
  #endif
  
-@@ -83,10 +89,10 @@ namespace {
+@@ -95,7 +101,7 @@ namespace {
  
  namespace {
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ std::vector<std::string> GetNetworkContextsParentDirectories() {
+   base::MemoryMappedFile::Region region;
+   base::ScopedFD read_pipe_fd = base::FileDescriptorStore::GetInstance().TakeFD(
+@@ -123,7 +129,7 @@ bool ShouldUseAmdGpuPolicy(sandbox::mojom::Sandbox san
+ 
  bool ShouldUseAmdGpuPolicy(sandbox::mojom::Sandbox sandbox_type) {
    const bool obtain_gpu_info =
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
@@ -54,7 +62,7 @@
        sandbox_type == sandbox::mojom::Sandbox::kHardwareVideoDecoding ||
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
        sandbox_type == sandbox::mojom::Sandbox::kHardwareVideoEncoding;
-@@ -168,7 +174,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -239,7 +245,7 @@ int UtilityMain(MainFunctionParams parameters) {
      }
    }
  
@@ -63,7 +71,7 @@
    // Initializes the sandbox before any threads are created.
    // TODO(jorgelo): move this after GTK initialization when we enable a strict
    // Seccomp-BPF policy.
-@@ -200,7 +206,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -272,7 +278,7 @@ int UtilityMain(MainFunctionParams parameters) {
  #endif
        break;
  #endif
@@ -72,7 +80,7 @@
      case sandbox::mojom::Sandbox::kHardwareVideoDecoding:
        pre_sandbox_hook =
            base::BindOnce(&media::HardwareVideoDecodingPreSandboxHook);
-@@ -227,6 +233,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -299,6 +305,7 @@ int UtilityMain(MainFunctionParams parameters) {
      default:
        break;
    }
@@ -80,7 +88,7 @@
    if (!sandbox::policy::IsUnsandboxedSandboxType(sandbox_type) &&
        (parameters.zygote_child || !pre_sandbox_hook.is_null())) {
      sandbox::policy::SandboxLinux::Options sandbox_options;
-@@ -235,6 +242,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -307,6 +314,11 @@ int UtilityMain(MainFunctionParams parameters) {
      sandbox::policy::Sandbox::Initialize(
          sandbox_type, std::move(pre_sandbox_hook), sandbox_options);
    }
@@ -89,6 +97,6 @@
 +      sandbox_type, std::move(pre_sandbox_hook),
 +      sandbox::policy::SandboxLinux::Options());
 +#endif
- #elif BUILDFLAG(IS_WIN)
-   g_utility_target_services = parameters.sandbox_info->target_services;
- #endif
+ 
+   // Start the HangWatcher now that the sandbox is engaged, if it hasn't
+   // already been started.

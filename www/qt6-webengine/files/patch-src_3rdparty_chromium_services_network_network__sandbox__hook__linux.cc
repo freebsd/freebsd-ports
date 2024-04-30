@@ -1,26 +1,37 @@
---- src/3rdparty/chromium/services/network/network_sandbox_hook_linux.cc.orig	2022-03-19 12:56:15 UTC
+--- src/3rdparty/chromium/services/network/network_sandbox_hook_linux.cc.orig	2023-05-31 08:12:17 UTC
 +++ src/3rdparty/chromium/services/network/network_sandbox_hook_linux.cc
-@@ -26,12 +26,15 @@ sandbox::syscall_broker::BrokerCommandSet GetNetworkBr
-   });
- }
+@@ -14,11 +14,14 @@
+ #include "sandbox/policy/features.h"
+ #include "third_party/abseil-cpp/absl/types/optional.h"
  
-+#if !defined(OS_BSD)
- std::vector<BrokerFilePermission> GetNetworkFilePermissions() {
-   // TODO(tsepez): remove universal permission under filesystem root.
-   return {BrokerFilePermission::ReadWriteCreateRecursive("/")};
- }
++#if !BUILDFLAG(IS_BSD)
+ using sandbox::syscall_broker::BrokerFilePermission;
+ using sandbox::syscall_broker::MakeBrokerCommandSet;
 +#endif
  
- bool NetworkPreSandboxHook(sandbox::policy::SandboxLinux::Options options) {
-+#if !defined(OS_BSD)
-   auto* instance = sandbox::policy::SandboxLinux::GetInstance();
+ namespace network {
  
-   instance->StartBrokerProcess(
-@@ -39,6 +42,7 @@ bool NetworkPreSandboxHook(sandbox::policy::SandboxLin
++#if !BUILDFLAG(IS_BSD)
+ sandbox::syscall_broker::BrokerCommandSet GetNetworkBrokerCommandSet() {
+   return MakeBrokerCommandSet({
+       sandbox::syscall_broker::COMMAND_ACCESS,
+@@ -102,9 +105,11 @@ void LoadNetworkLibraries() {
+   }
+ }
+ #endif  // BUILDFLAG(IS_CHROMEOS)
++#endif
+ 
+ bool NetworkPreSandboxHook(std::vector<std::string> network_context_parent_dirs,
+                            sandbox::policy::SandboxLinux::Options options) {
++#if !BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(IS_CHROMEOS)
+   LoadNetworkLibraries();
+ #endif
+@@ -117,6 +122,7 @@ bool NetworkPreSandboxHook(std::vector<std::string> ne
+       GetNetworkBrokerCommandSet(),
+       GetNetworkFilePermissions(std::move(network_context_parent_dirs)),
        sandbox::policy::SandboxLinux::PreSandboxHook(), options);
- 
-   instance->EngageNamespaceSandboxIfPossible();
 +#endif
+ 
    return true;
  }
- 

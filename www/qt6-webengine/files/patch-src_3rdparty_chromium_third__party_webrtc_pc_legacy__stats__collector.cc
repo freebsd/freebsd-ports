@@ -14,9 +14,9 @@ Date:   2023-12-21T14:08:26+01:00
     Reviewed-by: Henrik Boström <hbos@webrtc.org>
     Cr-Commit-Position: refs/heads/main@{#41432}
 
---- src/3rdparty/chromium/third_party/webrtc/pc/legacy_stats_collector.cc.orig	2023-11-20 16:08:07 UTC
+--- src/3rdparty/chromium/third_party/webrtc/pc/legacy_stats_collector.cc.orig	2024-02-10 00:27:53 UTC
 +++ src/3rdparty/chromium/third_party/webrtc/pc/legacy_stats_collector.cc
-@@ -189,9 +189,10 @@ void ExtractStats(const cricket::VoiceReceiverInfo& in
+@@ -188,9 +188,10 @@ void ExtractStats(const cricket::VoiceReceiverInfo& in
        {StatsReport::kStatsValueNameAccelerateRate, info.accelerate_rate},
        {StatsReport::kStatsValueNamePreemptiveExpandRate,
         info.preemptive_expand_rate},
@@ -29,7 +29,7 @@ Date:   2023-12-21T14:08:26+01:00
  
    const IntForAdd ints[] = {
        {StatsReport::kStatsValueNameCurrentDelayMs, info.delay_estimate_ms},
-@@ -245,9 +246,10 @@ void ExtractStats(const cricket::VoiceSenderInfo& info
+@@ -244,9 +245,10 @@ void ExtractStats(const cricket::VoiceSenderInfo& info
    SetAudioProcessingStats(report, info.apm_statistics);
  
    const FloatForAdd floats[] = {
@@ -42,7 +42,7 @@ Date:   2023-12-21T14:08:26+01:00
  
    RTC_DCHECK_GE(info.audio_level, 0);
    const IntForAdd ints[] = {
-@@ -341,7 +343,8 @@ void ExtractStats(const cricket::VideoReceiverInfo& in
+@@ -340,7 +342,8 @@ void ExtractStats(const cricket::VideoReceiverInfo& in
        {StatsReport::kStatsValueNamePlisSent, info.plis_sent},
        {StatsReport::kStatsValueNameRenderDelayMs, info.render_delay_ms},
        {StatsReport::kStatsValueNameTargetDelayMs, info.target_delay_ms},
@@ -52,21 +52,21 @@ Date:   2023-12-21T14:08:26+01:00
    };
  
    for (const auto& i : ints)
-@@ -385,15 +388,19 @@ void ExtractStats(const cricket::VideoSenderInfo& info
+@@ -384,15 +387,19 @@ void ExtractStats(const cricket::VideoSenderInfo& info
         info.encode_usage_percent},
-       {StatsReport::kStatsValueNameFirsReceived, info.firs_rcvd},
+       {StatsReport::kStatsValueNameFirsReceived, info.firs_received},
        {StatsReport::kStatsValueNameFrameHeightSent, info.send_frame_height},
 -      {StatsReport::kStatsValueNameFrameRateInput, round(info.framerate_input)},
 +      {StatsReport::kStatsValueNameFrameRateInput,
 +       static_cast<int>(round(info.framerate_input))},
        {StatsReport::kStatsValueNameFrameRateSent, info.framerate_sent},
        {StatsReport::kStatsValueNameFrameWidthSent, info.send_frame_width},
--      {StatsReport::kStatsValueNameNacksReceived, info.nacks_rcvd},
+-      {StatsReport::kStatsValueNameNacksReceived, info.nacks_received},
 +      {StatsReport::kStatsValueNameNacksReceived,
-+       static_cast<int>(info.nacks_rcvd)},
++       static_cast<int>(info.nacks_received)},
        {StatsReport::kStatsValueNamePacketsLost, info.packets_lost},
        {StatsReport::kStatsValueNamePacketsSent, info.packets_sent},
-       {StatsReport::kStatsValueNamePlisReceived, info.plis_rcvd},
+       {StatsReport::kStatsValueNamePlisReceived, info.plis_received},
 -      {StatsReport::kStatsValueNameFramesEncoded, info.frames_encoded},
 -      {StatsReport::kStatsValueNameHugeFramesSent, info.huge_frames_sent},
 +      {StatsReport::kStatsValueNameFramesEncoded,
@@ -76,7 +76,7 @@ Date:   2023-12-21T14:08:26+01:00
    };
  
    for (const auto& i : ints)
-@@ -782,19 +789,25 @@ StatsReport* LegacyStatsCollector::AddConnectionInfoRe
+@@ -780,19 +787,25 @@ StatsReport* LegacyStatsCollector::AddConnectionInfoRe
                  AddCandidateReport(remote_candidate_stats, false)->id());
  
    const Int64ForAdd int64s[] = {

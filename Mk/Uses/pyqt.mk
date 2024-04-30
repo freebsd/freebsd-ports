@@ -50,28 +50,35 @@ _PYQT_VERSION=	0
 PYQT_MAINTAINER=	kde@FreeBSD.org
 
 MASTER_SITE_RIVERBANK=	https://www.riverbankcomputing.com/static/Downloads/%SUBDIR%/
+MASTER_SITE_RBDEV=	https://www.riverbankcomputing.com/pypi/packages/%SUBDIR%/
 
-MASTER_SITES_SIP=	https://pypi.python.org/packages/source/s/sip/
-MASTER_SITES_PYQT5=	https://pypi.python.org/packages/source/P/PyQt5/
-MASTER_SITES_PYQT6=	https://pypi.python.org/packages/source/P/PyQt6/
+MASTER_SITES_SIP=	PYPI/source/s/sip
+MASTER_SITES_PYQT5=	PYPI/source/P/PyQt5
+MASTER_SITES_PYQT6=	PYPI/source/P/PyQt6 \
+			RBDEV/PyQt6
 MASTER_SITES_PYQT=	${MASTER_SITES_PYQT${_PYQT_VERSION}}
-MASTER_SITES_PYQT5SIP=	https://pypi.python.org/packages/source/P/PyQt5-sip/
-MASTER_SITES_PYQT6SIP=	https://pypi.python.org/packages/source/P/PyQt6-sip/
+MASTER_SITES_PYQT5SIP=	PYPI/source/P/PyQt5-sip
+MASTER_SITES_PYQT6SIP=	PYPI/source/P/PyQt6-sip
 MASTER_SITES_PYQTSIP=	${MASTER_SITES_PYQT${_PYQT_VERSION}SIP}
-MASTER_SITES_PYQT63D=	https://pypi.python.org/packages/source/P/PyQt6-3D/
+MASTER_SITES_PYQT63D=	PYPI/source/P/PyQt6-3D \
+			RBDEV/PyQt6-3D
 MASTER_SITES_PYQT3D=	${MASTER_SITES_PYQT${_PYQT_VERSION}3D}
-MASTER_SITES_PYQT5CHART=	https://pypi.python.org/packages/source/P/PyQtChart/
-MASTER_SITES_PYQT6CHART=	https://pypi.python.org/packages/source/P/PyQt6-Charts/
+MASTER_SITES_PYQT5CHART=	PYPI/source/P/PyQtChart
+MASTER_SITES_PYQT6CHART=	PYPI/source/P/PyQt6-Charts \
+				RBDEV/PyQt6-Charts
 MASTER_SITES_PYQTCHART=		${MASTER_SITES_PYQT${_PYQT_VERSION}CHART}
-MASTER_SITES_PYQT6DATAVIS3D=	https://pypi.python.org/packages/source/P/PyQt6-DataVisualization/
+MASTER_SITES_PYQT6DATAVIS3D=	PYPI/source/P/PyQt6-DataVisualization \
+				RBDEV/PyQt6-DataVisualization
 MASTER_SITES_PYQTDATAVIS3D=	${MASTER_SITES_PYQT${_PYQT_VERSION}DATAVIS3D}
-MASTER_SITES_PYQT5NETWORKAUTH=	https://pypi.python.org/packages/source/P/PyQtNetworkAuth/
-MASTER_SITES_PYQT6NETWORKAUTH=	https://pypi.python.org/packages/source/P/PyQt6-NetworkAuth/
-MASTER_SITES_PYQTNETWORKAUTH=		${MASTER_SITES_PYQT${_PYQT_VERSION}NETWORKAUTH}
-MASTER_SITES_PYQTBUILDER=	https://pypi.io/packages/source/P/PyQt-builder/
-MASTER_SITES_PYQT5WEBENGINE=	https://pypi.python.org/packages/source/P/PyQtWebEngine/
-MASTER_SITES_PYQT6WEBENGINE=	https://pypi.python.org/packages/source/P/PyQt6-WebEngine/
-MASTER_SITES_PYQTWEBENGINE=		${MASTER_SITES_PYQT${_PYQT_VERSION}WEBENGINE}
+MASTER_SITES_PYQT5NETWORKAUTH=	PYPI/source/P/PyQtNetworkAuth
+MASTER_SITES_PYQT6NETWORKAUTH=	PYPI/source/P/PyQt6-NetworkAuth \
+				RBDEV/PyQt6-NetworkAuth
+MASTER_SITES_PYQTNETWORKAUTH=	${MASTER_SITES_PYQT${_PYQT_VERSION}NETWORKAUTH}
+MASTER_SITES_PYQTBUILDER=	PYPI/source/P/PyQt-builder
+MASTER_SITES_PYQT5WEBENGINE=	PYPI/source/P/PyQtWebEngine
+MASTER_SITES_PYQT6WEBENGINE=	PYPI/source/P/PyQt6-WebEngine \
+				RBDEV/PyQt6-WebEngine
+MASTER_SITES_PYQTWEBENGINE=	${MASTER_SITES_PYQT${_PYQT_VERSION}WEBENGINE}
 #https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.12.0/QScintilla_src-2.12.0.tar.gz
 MASTER_SITES_QSCI2=	RIVERBANK/QScintilla/${PORTVERSION} \
 			SF/pyqt/QScintilla2/QScintilla-${PORTVERSION} \
@@ -89,17 +96,19 @@ SIP_VERSION=		6.8.3	# ,1
 SIP4_VERSION=		4.19.25
 QSCI2_VERSION=		2.14.1
 PYQT5_VERSION=		5.15.10
-PYQT6_VERSION=		6.6.1
-PYQT63D_VERSION=	6.6.0
+PYQT6_VERSION=		6.7.0
+PYQT63D_VERSION=	6.7.0
 PYQT5CHART_VERSION=	5.15.6
-PYQT6CHART_VERSION=	6.6.0
-PYQT6DATAVIS3D_VERSION=	6.6.0
+PYQT6CHART_VERSION=	6.7.0
+PYQT6DATAVIS3D_VERSION=	6.7.0
 PYQT5NETWORKAUTH_VERSION=5.15.5
-PYQT6NETWORKAUTH_VERSION=6.6.0
+PYQT6NETWORKAUTH_VERSION=6.7.0
 PYQT5WEBENGINE_VERSION=	5.15.6
-PYQT6WEBENGINE_VERSION=	6.6.0
+PYQT6WEBENGINE_VERSION=	6.7.0
 PYQT5SIP_VERSION=	12.13.0
 PYQT6SIP_VERSION=	13.6.0
+# PyQt-builder >= 1.16.0 requires setuptools >= 64
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=270358
 PYQTBUILDER_VERSION=	1.15.4
 
 SIP4_DISTNAME=		sip-${SIP4_VERSION}
@@ -160,10 +169,9 @@ py-webengine_PATH=		${PYQT_PY_RELNAME}-webengine>=${PYQTWEBENGINE_VERSION}
 
 # PORT
 py-sip_PORT=			devel/py-sip
-py-qtbuilder_PORT=		devel/py-qtbuilder
 py-pysip_PORT=			devel/${PYQT_RELNAME}-sip
 py-qscintilla2_PORT=		devel/${PYQT_RELNAME}-qscintilla2
-py-positioning_PORT=		devel/${PYQT_RELNAME}-positioning
+py-qtbuilder_PORT=		devel/py-qtbuilder
 py-pyqt5_PORT=			devel/${PYQT_RELNAME}-pyqt
 py-pyqt6_PORT=			devel/${PYQT_RELNAME}-pyqt
 py-3d_PORT=			graphics/${PYQT_RELNAME}-3d

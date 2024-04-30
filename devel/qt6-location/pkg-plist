@@ -6,6 +6,7 @@
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qdeclarativecirclemapitem_p_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qdeclarativecontactdetails_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qdeclarativegeocodemodel_p.h
+%%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qdeclarativegeojsondata_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qdeclarativegeomap_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qdeclarativegeomapcopyrightsnotice_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qdeclarativegeomapitembase_p.h

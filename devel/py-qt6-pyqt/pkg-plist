@@ -154,6 +154,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpycore_qlist.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpycore_qmap.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpycore_qset.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpycore_std_optional.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpycore_std_pair.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpycore_virtual_error_handler.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qrandom.sip
@@ -195,6 +196,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qtranslator.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qtransposeproxymodel.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qtversion.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qtyperevision.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qtypes.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qurl.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qurlquery.sip
@@ -205,6 +207,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qwaitcondition.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qwineventnotifier.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qxmlstream.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qyieldcpu.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtDBus/QtDBus.toml
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtDBus/QtDBusmod.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtDBus/qdbusabstractadaptor.sip
@@ -378,6 +381,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qpymultimedia_qlist.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qscreencapture.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qsoundeffect.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qtvideo.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qvideoframe.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qvideoframeformat.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qvideosink.sip
@@ -397,6 +401,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qhstspolicy.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qhttp1configuration.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qhttp2configuration.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qhttpheaders.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qhttpmultipart.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qlocalserver.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qlocalsocket.sip
@@ -563,6 +568,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtQuick/qsgrendernode.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtQuick/qsgsimplerectnode.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtQuick/qsgsimpletexturenode.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtQuick/qsgtextnode.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtQuick/qsgtexture.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtQuick/qsgtexture_platform.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtQuick/qsgtexturematerial.sip
@@ -634,6 +640,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSvg/QtSvgmod.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSvg/qsvggenerator.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSvg/qsvgrenderer.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSvg/qtsvgglobal.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSvgWidgets/QtSvgWidgets.toml
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSvgWidgets/QtSvgWidgetsmod.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSvgWidgets/qgraphicssvgitem.sip
@@ -878,6 +885,8 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/uic/widget-plugins/__pycache__/qscintilla%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/PyQt6/uic/widget-plugins/__pycache__/qtcharts%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/PyQt6/uic/widget-plugins/__pycache__/qtcharts%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/PyQt6/uic/widget-plugins/__pycache__/qtopenglwidgets%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/PyQt6/uic/widget-plugins/__pycache__/qtopenglwidgets%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/PyQt6/uic/widget-plugins/__pycache__/qtprintsupport%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/PyQt6/uic/widget-plugins/__pycache__/qtprintsupport%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/PyQt6/uic/widget-plugins/__pycache__/qtquickwidgets%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -887,6 +896,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/uic/widget-plugins/qaxcontainer.py
 %%PYTHON_SITELIBDIR%%/PyQt6/uic/widget-plugins/qscintilla.py
 %%PYTHON_SITELIBDIR%%/PyQt6/uic/widget-plugins/qtcharts.py
+%%PYTHON_SITELIBDIR%%/PyQt6/uic/widget-plugins/qtopenglwidgets.py
 %%PYTHON_SITELIBDIR%%/PyQt6/uic/widget-plugins/qtprintsupport.py
 %%PYTHON_SITELIBDIR%%/PyQt6/uic/widget-plugins/qtquickwidgets.py
 %%PYTHON_SITELIBDIR%%/PyQt6/uic/widget-plugins/qtwebenginewidgets.py

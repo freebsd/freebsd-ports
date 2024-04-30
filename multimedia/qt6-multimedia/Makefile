@@ -3,6 +3,9 @@ DISTVERSION=	${QT6_VERSION}
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	qt6-
 
+PATCH_SITES=	https://github.com/qt/qtmultimedia/commit/
+PATCHFILES+=	7fcea568c9c64f3bcebda21f0df02aa0107dfd0c.patch:-p1
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt audio, video, radio and camera support module
 

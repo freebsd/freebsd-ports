@@ -1,4 +1,4 @@
---- data/shiboken6.pc.in.orig	2023-10-14 09:37:51 UTC
+--- data/shiboken6.pc.in.orig	2024-04-05 12:14:13 UTC
 +++ data/shiboken6.pc.in
 @@ -8,5 +8,5 @@ Version: @shiboken6_VERSION@
  Name: shiboken6
@@ -6,4 +6,4 @@
  Version: @shiboken6_VERSION@
 -Libs: @SHIBOKEN_PYTHON_LIBRARIES@ -L${libdir} -lshiboken6@shiboken6_SUFFIX@@PYTHON_SHARED_LIBRARY_SUFFIX@@LIBRARY_OUTPUT_SUFFIX@
 +Libs: @SHIBOKEN_PYTHON_LIBRARIES@ -L${libdir} -lshiboken6@shiboken6_SUFFIX@@PYTHON_SHARED_LIBRARY_SUFFIX@@LIBRARY_OUTPUT_SUFFIX@ -lexecinfo
- Cflags: -I@PYTHON_INCLUDE_DIRS@ -I${includedir}/@shiboken6_SUFFIX@@SBK_PKG_CONFIG_PY_DEBUG_DEFINITION@
+ Cflags: -I@Python_INCLUDE_DIRS@ -I${includedir}/@shiboken6_SUFFIX@@SBK_PKG_CONFIG_PY_DEBUG_DEFINITION@

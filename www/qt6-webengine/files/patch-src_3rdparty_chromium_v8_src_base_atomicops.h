@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/v8/src/base/atomicops.h.orig	2022-06-17 14:20:10 UTC
+--- src/3rdparty/chromium/v8/src/base/atomicops.h.orig	2023-09-13 12:11:42 UTC
 +++ src/3rdparty/chromium/v8/src/base/atomicops.h
 @@ -57,10 +57,10 @@ using Atomic64 = SbAtomic64;
  using Atomic8 = char;
@@ -13,7 +13,7 @@
  using Atomic64 = int64_t;
  #else
  using Atomic64 = intptr_t;
-@@ -258,7 +258,7 @@ inline Atomic32 SeqCst_Load(volatile const Atomic32* p
+@@ -266,7 +266,7 @@ inline Atomic32 SeqCst_Load(volatile const Atomic32* p
                                     std::memory_order_seq_cst);
  }
  

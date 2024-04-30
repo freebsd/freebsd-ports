@@ -1,16 +1,19 @@
---- src/3rdparty/chromium/content/browser/child_process_launcher_helper_linux.cc.orig	2023-03-09 06:31:50 UTC
+--- src/3rdparty/chromium/content/browser/child_process_launcher_helper_linux.cc.orig	2023-12-12 22:08:45 UTC
 +++ src/3rdparty/chromium/content/browser/child_process_launcher_helper_linux.cc
-@@ -20,7 +20,9 @@
+@@ -21,8 +21,12 @@
  #include "content/public/common/result_codes.h"
  #include "content/public/common/sandboxed_process_launcher_delegate.h"
  #include "content/public/common/zygote/sandbox_support_linux.h"
 +#if !BUILDFLAG(IS_BSD)
  #include "content/public/common/zygote/zygote_handle.h"
-+#endif
  #include "sandbox/policy/linux/sandbox_linux.h"
++#else
++#include "sandbox/policy/sandbox.h"
++#endif
  
  namespace content {
-@@ -45,14 +47,20 @@ ChildProcessLauncherHelper::GetFilesToMap() {
+ namespace internal {
+@@ -46,14 +50,20 @@ bool ChildProcessLauncherHelper::IsUsingLaunchOptions(
  }
  
  bool ChildProcessLauncherHelper::IsUsingLaunchOptions() {
@@ -31,7 +34,7 @@
      // Convert FD mapping to FileHandleMappingVector
      options->fds_to_remap = files_to_register.GetMappingWithIDAdjustment(
          base::GlobalDescriptors::kBaseDescriptor);
-@@ -64,7 +72,9 @@ bool ChildProcessLauncherHelper::BeforeLaunchOnLaunche
+@@ -65,7 +75,9 @@ bool ChildProcessLauncherHelper::BeforeLaunchOnLaunche
  
      options->environment = delegate_->GetEnvironment();
    } else {
@@ -41,7 +44,7 @@
      // Environment variables could be supported in the future, but are not
      // currently supported when launching with the zygote.
      DCHECK(delegate_->GetEnvironment().empty());
-@@ -81,6 +91,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -82,6 +94,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
      int* launch_result) {
    *is_synchronous_launch = true;
    Process process;
@@ -49,7 +52,7 @@
    ZygoteCommunication* zygote_handle = GetZygoteForLaunch();
    if (zygote_handle) {
      // TODO(crbug.com/569191): If chrome supported multiple zygotes they could
-@@ -91,7 +102,6 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -92,7 +105,6 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
          GetProcessType());
      *launch_result = LAUNCH_RESULT_SUCCESS;
  
@@ -57,7 +60,7 @@
      if (handle) {
        // It could be a renderer process or an utility process.
        int oom_score = content::kMiscOomScore;
-@@ -100,15 +110,17 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -101,15 +113,17 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
          oom_score = content::kLowestRendererOomScore;
        ZygoteHostImpl::GetInstance()->AdjustRendererOOMScore(handle, oom_score);
      }
@@ -76,7 +79,7 @@
  
  #if BUILDFLAG(IS_CHROMEOS)
    if (GetProcessType() == switches::kRendererProcess) {
-@@ -130,10 +142,14 @@ ChildProcessTerminationInfo ChildProcessLauncherHelper
+@@ -131,10 +145,14 @@ ChildProcessTerminationInfo ChildProcessLauncherHelper
      const ChildProcessLauncherHelper::Process& process,
      bool known_dead) {
    ChildProcessTerminationInfo info;
@@ -91,7 +94,7 @@
      info.status = base::GetKnownDeadTerminationStatus(process.process.Handle(),
                                                        &info.exit_code);
    } else {
-@@ -157,13 +173,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
+@@ -160,13 +178,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
    DCHECK(CurrentlyOnProcessLauncherTaskRunner());
    process.process.Terminate(RESULT_CODE_NORMAL_EXIT, false);
    // On POSIX, we must additionally reap the child.
@@ -108,9 +111,9 @@
 +#endif
  }
  
- void ChildProcessLauncherHelper::SetProcessBackgroundedOnLauncherThread(
-@@ -174,11 +194,13 @@ void ChildProcessLauncherHelper::SetProcessBackgrounde
-     process.SetProcessBackgrounded(is_background);
+ void ChildProcessLauncherHelper::SetProcessPriorityOnLauncherThread(
+@@ -178,11 +200,13 @@ void ChildProcessLauncherHelper::SetProcessPriorityOnL
+   }
  }
  
 +#if !BUILDFLAG(IS_BSD)

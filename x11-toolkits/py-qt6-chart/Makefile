@@ -13,14 +13,11 @@ WWW=		https://riverbankcomputing.com/software/pyqtchart
 
 LICENSE=	${PYQT6_LICENSE}
 
-LIB_DEPENDS=	libqscintilla2_qt6.so:devel/qscintilla2-qt6
-
 USES=		gl pyqt:6 python qt:6
-USE_GL=		gl
-USE_LOCALE=	C.UTF-8
+USE_GL=		opengl
 USE_PYQT=	sip:build pyqt6 qtbuilder
 USE_PYTHON=	concurrent flavors
-USE_QT=		base charts declarative
+USE_QT=		base charts
 
 PLIST_SUB=	PYQTCHART_VERSION=${DISTVERSION}
 

@@ -8,6 +8,7 @@ include/PySide6/QtBluetooth/pyside6_qtbluetooth_python.h
 include/PySide6/QtCharts/pyside6_qtcharts_python.h
 include/PySide6/QtConcurrent/pyside6_qtconcurrent_python.h
 include/PySide6/QtCore/pyside6_qtcore_python.h
+include/PySide6/QtCore/qiopipe.h
 include/PySide6/QtCore/qtcorehelper.h
 include/PySide6/QtDBus/pyside6_qtdbus_python.h
 include/PySide6/QtDBus/qtdbushelper.h
@@ -38,6 +39,7 @@ include/PySide6/QtQml/pyside6_qtqml_python.h
 include/PySide6/QtQuick/pyside6_qtquick_python.h
 include/PySide6/QtQuick3D/pyside6_qtquick3d_python.h
 include/PySide6/QtQuickControls2/pyside6_qtquickcontrols2_python.h
+include/PySide6/QtQuickTest/pyside6_qtquicktest_python.h
 include/PySide6/QtQuickWidgets/pyside6_qtquickwidgets_python.h
 include/PySide6/QtRemoteObjects/pyside6_qtremoteobjects_python.h
 include/PySide6/QtScxml/pyside6_qtscxml_python.h
@@ -117,10 +119,10 @@ lib/cmake/PySide6Qml/PySide6QmlConfigVersion.cmake
 lib/cmake/PySide6Qml/PySide6QmlTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/PySide6Qml/PySide6QmlTargets.cmake
 lib/libpyside6.abi3.so
-lib/libpyside6.abi3.so.6.6
+lib/libpyside6.abi3.so.6.7
 lib/libpyside6.abi3.so.%%DISTVERSION%%
 lib/libpyside6qml.abi3.so
-lib/libpyside6qml.abi3.so.6.6
+lib/libpyside6qml.abi3.so.6.7
 lib/libpyside6qml.abi3.so.%%DISTVERSION%%
 %%PYTHON_SITELIBDIR%%/PySide6/Qt3DAnimation.abi3.so
 %%PYTHON_SITELIBDIR%%/PySide6/Qt3DAnimation.pyi
@@ -201,6 +203,8 @@ lib/libpyside6qml.abi3.so.%%DISTVERSION%%
 %%PYTHON_SITELIBDIR%%/PySide6/QtQuick3D.pyi
 %%PYTHON_SITELIBDIR%%/PySide6/QtQuickControls2.abi3.so
 %%PYTHON_SITELIBDIR%%/PySide6/QtQuickControls2.pyi
+%%PYTHON_SITELIBDIR%%/PySide6/QtQuickTest.abi3.so
+%%PYTHON_SITELIBDIR%%/PySide6/QtQuickTest.pyi
 %%PYTHON_SITELIBDIR%%/PySide6/QtQuickWidgets.abi3.so
 %%PYTHON_SITELIBDIR%%/PySide6/QtQuickWidgets.pyi
 %%PYTHON_SITELIBDIR%%/PySide6/QtRemoteObjects.abi3.so
@@ -273,9 +277,11 @@ share/PySide6/glue/qtmultimedia.cpp
 share/PySide6/glue/qtnetwork.cpp
 share/PySide6/glue/qtnetworkauth.cpp
 share/PySide6/glue/qtopengl.cpp
+share/PySide6/glue/qtpositioning.cpp
 share/PySide6/glue/qtprintsupport.cpp
 share/PySide6/glue/qtqml.cpp
 share/PySide6/glue/qtquick.cpp
+share/PySide6/glue/qtquicktest.cpp
 share/PySide6/glue/qtserialbus.cpp
 share/PySide6/glue/qtsql.cpp
 share/PySide6/glue/qtstatemachine.cpp
@@ -360,6 +366,7 @@ share/PySide6/typesystems/typesystem_qml.xml
 share/PySide6/typesystems/typesystem_quick.xml
 share/PySide6/typesystems/typesystem_quick3d.xml
 share/PySide6/typesystems/typesystem_quickcontrols2.xml
+share/PySide6/typesystems/typesystem_quicktest.xml
 share/PySide6/typesystems/typesystem_quickwidgets.xml
 share/PySide6/typesystems/typesystem_remoteobjects.xml
 share/PySide6/typesystems/typesystem_scxml.xml

@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/base/base_switches.h.orig	2022-08-31 12:19:35 UTC
+--- src/3rdparty/chromium/base/base_switches.h.orig	2023-10-11 18:22:24 UTC
 +++ src/3rdparty/chromium/base/base_switches.h
-@@ -60,7 +60,7 @@ extern const char kEnableIdleTracing[];
- extern const char kForceFieldTrialParams[];
+@@ -62,7 +62,7 @@ extern const char kPackageVersionName[];
+ extern const char kPackageVersionCode[];
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

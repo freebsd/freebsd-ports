@@ -1,4 +1,4 @@
---- src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h.orig	2023-09-13 16:02:48 UTC
+--- src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h.orig	2023-09-15 10:20:51 UTC
 +++ src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h
 @@ -46,6 +46,13 @@ QT_BEGIN_NAMESPACE
  
@@ -78,7 +78,7 @@
  void q_SSL_free(SSL *a);
  STACK_OF(SSL_CIPHER) *q_SSL_get_ciphers(const SSL *a);
  const SSL_CIPHER *q_SSL_get_current_cipher(SSL *a);
-@@ -536,14 +568,26 @@ void q_PKCS12_free(PKCS12 *pkcs12);
+@@ -537,14 +569,26 @@ void q_PKCS12_free(PKCS12 *pkcs12);
  #define q_BIO_get_mem_data(b, pp) (int)q_BIO_ctrl(b,BIO_CTRL_INFO,0,(char *)pp)
  #define q_BIO_pending(b) (int)q_BIO_ctrl(b,BIO_CTRL_PENDING,0,NULL)
  #define q_SSL_CTX_set_mode(ctx,op) q_SSL_CTX_ctrl((ctx),SSL_CTRL_MODE,(op),NULL)
@@ -105,7 +105,7 @@
  #define q_sk_SSL_CIPHER_value(st, i) q_SKM_sk_value(SSL_CIPHER, (st), (i))
  #define q_SSL_CTX_add_extra_chain_cert(ctx,x509) \
          q_SSL_CTX_ctrl(ctx,SSL_CTRL_EXTRA_CHAIN_CERT,0,(char *)x509)
-@@ -645,7 +689,11 @@ int q_OCSP_id_get0_info(ASN1_OCTET_STRING **piNameHash
+@@ -646,7 +690,11 @@ int q_OCSP_id_get0_info(ASN1_OCTET_STRING **piNameHash
  int q_OCSP_id_get0_info(ASN1_OCTET_STRING **piNameHash, ASN1_OBJECT **pmd, ASN1_OCTET_STRING **pikeyHash,
                          ASN1_INTEGER **pserial, OCSP_CERTID *cid);
  
@@ -117,7 +117,7 @@
  OCSP_CERTID *q_OCSP_cert_to_id(const EVP_MD *dgst, X509 *subject, X509 *issuer);
  void q_OCSP_CERTID_free(OCSP_CERTID *cid);
  int q_OCSP_id_cmp(OCSP_CERTID *a, OCSP_CERTID *b);
-@@ -664,8 +712,15 @@ void *q_CRYPTO_malloc(size_t num, const char *file, in
+@@ -665,8 +713,15 @@ void *q_CRYPTO_malloc(size_t num, const char *file, in
  
  void *q_CRYPTO_malloc(size_t num, const char *file, int line);
  #define q_OPENSSL_malloc(num) q_CRYPTO_malloc(num, "", 0)
@@ -133,7 +133,7 @@
  int q_CRYPTO_memcmp(const void * in_a, const void * in_b, size_t len);
  
  void q_SSL_set_info_callback(SSL *ssl, void (*cb) (const SSL *ssl, int type, int val));
-@@ -729,7 +784,11 @@ int q_RSA_bits(RSA *a);
+@@ -730,7 +785,11 @@ int q_RSA_bits(RSA *a);
  
  int q_DH_bits(DH *dh);
  int q_RSA_bits(RSA *a);

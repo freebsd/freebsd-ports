@@ -5,28 +5,33 @@ MASTER_SITES=	QT/official_releases/QtForPython/shiboken6/PySide6-${DISTVERSION}-
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyside-setup-everywhere-src-${DISTVERSION}
 
+PATCH_SITES=	https://github.com/qtproject/pyside-pyside-setup/commit/
+PATCHFILES+=	3b2ad15ec75b082699dbde6c695c19b467eb0008.patch:-p1 # Adapt to revert of QAudio->QtAudio namespace renaming
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python Qt bindings for Qt 6
 WWW=		https://wiki.qt.io/Qt_for_Python
 
 LICENSE=	LGPL3
 
+BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 LIB_DEPENDS=	libshiboken6.abi${PYTHON_MAJOR_VER}.so:devel/shiboken6@${PY_FLAVOR} \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		cmake gl llvm:lib python qt:6 tar:xz
-USE_GL=		gl
+USES=		cmake gl llvm:lib,noexport python qt:6 tar:xz
+USE_GL=		opengl
 USE_LDCONFIG=	yes
 USE_PYTHON=	flavors
 USE_QT=		3d base charts connectivity datavis3d declarative doc graphs \
 		httpserver imageformats location multimedia networkauth pdf \
 		positioning quick3d quicktimeline remoteobjects scxml sensors \
 		serialbus serialport shadertools speech svg tools translations \
-		wayland webchannel websockets
+		webchannel websockets
 
-CMAKE_ARGS=	-DPYTHON_EXECUTABLE=${PYTHON_CMD}
+CONFIGURE_ENV=	LLVM_INSTALL_DIR="${LLVM_PREFIX}/lib/cmake/llvm"
 
-WRKSRC=		${WRKDIR}/pyside-setup-everywhere-src-${PYSIDE6_VERSION}/sources/pyside6
+PATCH_WRKSRC=	${WRKSRC:H:H}
+WRKSRC_SUBDIR=	sources/pyside6
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 .include <bsd.port.pre.mk>

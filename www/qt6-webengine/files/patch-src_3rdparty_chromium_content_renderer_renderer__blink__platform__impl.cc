@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/renderer/renderer_blink_platform_impl.cc.orig	2023-04-05 11:05:06 UTC
+--- src/3rdparty/chromium/content/renderer/renderer_blink_platform_impl.cc.orig	2023-10-11 18:22:24 UTC
 +++ src/3rdparty/chromium/content/renderer/renderer_blink_platform_impl.cc
-@@ -111,7 +111,7 @@
+@@ -114,7 +114,7 @@
  
  #if BUILDFLAG(IS_MAC)
  #include "content/child/child_process_sandbox_support_impl_mac.h"
@@ -9,8 +9,15 @@
  #include "content/child/child_process_sandbox_support_impl_linux.h"
  #endif
  
-@@ -177,7 +177,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+@@ -182,13 +182,13 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+       sudden_termination_disables_(0),
+       is_locked_to_site_(false),
        main_thread_scheduler_(main_thread_scheduler) {
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+   sk_sp<font_service::FontLoader> font_loader;
+ #endif
+ 
    // RenderThread may not exist in some tests.
    if (RenderThreadImpl::current()) {
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -18,7 +25,7 @@
      mojo::PendingRemote<font_service::mojom::FontService> font_service;
      RenderThreadImpl::current()->BindHostReceiver(
          font_service.InitWithNewPipeAndPassReceiver());
-@@ -187,7 +187,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+@@ -197,7 +197,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
  #endif
    }
  
@@ -27,7 +34,7 @@
    if (sandboxEnabled()) {
  #if BUILDFLAG(IS_MAC)
      sandbox_support_ = std::make_unique<WebSandboxSupportMac>();
-@@ -245,7 +245,7 @@ void RendererBlinkPlatformImpl::SetThreadType(base::Pl
+@@ -255,7 +255,7 @@ void RendererBlinkPlatformImpl::SetThreadType(base::Pl
  #endif
  
  blink::WebSandboxSupport* RendererBlinkPlatformImpl::GetSandboxSupport() {

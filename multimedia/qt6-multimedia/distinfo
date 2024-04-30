@@ -1,3 +1,5 @@
-TIMESTAMP = 1711663460
-SHA256 (KDE/Qt/6.6.3/qtmultimedia-everywhere-src-6.6.3.tar.xz) = be00f830d2b14c9a12f3b6812ba3a23fdaaceb2dd9c1c6394c329c8bf6e53ab2
-SIZE (KDE/Qt/6.6.3/qtmultimedia-everywhere-src-6.6.3.tar.xz) = 8266612
+TIMESTAMP = 1712784204
+SHA256 (KDE/Qt/6.7.0/qtmultimedia-everywhere-src-6.7.0.tar.xz) = f394bae49e3d4ee6a3b0c9e1e5e31bb870cc04a4b44f4cda3615baf7bd078c70
+SIZE (KDE/Qt/6.7.0/qtmultimedia-everywhere-src-6.7.0.tar.xz) = 8315312
+SHA256 (KDE/Qt/6.7.0/7fcea568c9c64f3bcebda21f0df02aa0107dfd0c.patch) = ccaf3db6425e43ae19354ae797dbff66176e63a7c31238bbeb90dd10cf940e03
+SIZE (KDE/Qt/6.7.0/7fcea568c9c64f3bcebda21f0df02aa0107dfd0c.patch) = 8797

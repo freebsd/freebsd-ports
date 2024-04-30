@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/process/process_metrics_openbsd.cc.orig	2023-03-09 06:31:50 UTC
+--- src/3rdparty/chromium/base/process/process_metrics_openbsd.cc.orig	2023-09-13 12:11:42 UTC
 +++ src/3rdparty/chromium/base/process/process_metrics_openbsd.cc
 @@ -6,14 +6,23 @@
  
@@ -83,13 +83,14 @@
  size_t GetSystemCommitCharge() {
    int mib[] = { CTL_VM, VM_METER };
    int pagesize;
-@@ -84,6 +67,129 @@ size_t GetSystemCommitCharge() {
+@@ -84,6 +67,133 @@ size_t GetSystemCommitCharge() {
    pagesize = getpagesize();
  
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
 +}
 +
 +int ProcessMetrics::GetOpenFdCount() const {
++#if 0
 +  struct kinfo_file *files;
 +  kvm_t *kd = NULL;
 +  int total_count = 0;
@@ -108,10 +109,13 @@
 +
 +out:
 +  return total_count;
++#endif
++  return getdtablecount();
 +}
 +
 +int ProcessMetrics::GetOpenFdSoftLimit() const {
-+  return GetMaxFds();
++  return getdtablesize();
++//  return GetMaxFds();
 +}
 +
 +uint64_t ProcessMetrics::GetVmSwapBytes() const {

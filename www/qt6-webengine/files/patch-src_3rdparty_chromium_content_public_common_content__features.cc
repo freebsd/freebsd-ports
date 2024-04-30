@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/public/common/content_features.cc.orig	2023-08-16 19:50:41 UTC
+--- src/3rdparty/chromium/content/public/common/content_features.cc.orig	2023-12-12 22:08:45 UTC
 +++ src/3rdparty/chromium/content/public/common/content_features.cc
-@@ -39,7 +39,7 @@ CONSTINIT const base::Feature kAudioServiceOutOfProces
+@@ -53,7 +53,7 @@ CONSTINIT const base::Feature kAudioServiceOutOfProces
               "AudioServiceOutOfProcess",
  // TODO(crbug.com/1052397): Remove !IS_CHROMEOS_LACROS once lacros starts being
  // built with OS_CHROMEOS instead of OS_LINUX.
@@ -9,7 +9,7 @@
      (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -51,7 +51,7 @@ CONSTINIT const base::Feature kAudioServiceSandbox(
+@@ -65,7 +65,7 @@ CONSTINIT const base::Feature kAudioServiceSandbox(
  // kAudioServiceOutOfProcess feature is enabled.
  CONSTINIT const base::Feature kAudioServiceSandbox(
               "AudioServiceSandbox",
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -547,7 +547,7 @@ BASE_FEATURE(kGreaseUACH, "GreaseUACH", base::FEATURE_
+@@ -553,7 +553,7 @@ BASE_FEATURE(kGreaseUACH, "GreaseUACH", base::FEATURE_
  // (activated by kUserAgentClientHint)
  BASE_FEATURE(kGreaseUACH, "GreaseUACH", base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -27,7 +27,7 @@
  // Supports proxying thread type changes of renderer processes to browser
  // process and having browser process handle adjusting thread properties (nice
  // value, c-group, latency sensitivity...) for renderers which have sandbox
-@@ -1367,7 +1367,7 @@ CONSTINIT const base::Feature kWebAssemblyTrapHandler(
+@@ -1463,7 +1463,7 @@ CONSTINIT const base::Feature kWebAssemblyTrapHandler(
  CONSTINIT const base::Feature kWebAssemblyTrapHandler(
               "WebAssemblyTrapHandler",
  #if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
@@ -36,7 +36,7 @@
       defined(ARCH_CPU_X86_64)) ||                                           \
      (BUILDFLAG(IS_MAC) && defined(ARCH_CPU_ARM64))
               base::FEATURE_ENABLED_BY_DEFAULT
-@@ -1425,7 +1425,11 @@ BASE_FEATURE(kWebUICodeCache,
+@@ -1515,7 +1515,11 @@ BASE_FEATURE(kWebUICodeCache,
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb

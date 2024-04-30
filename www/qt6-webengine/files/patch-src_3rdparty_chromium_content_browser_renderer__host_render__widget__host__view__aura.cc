@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/browser/renderer_host/render_widget_host_view_aura.cc.orig	2023-04-05 11:05:06 UTC
+--- src/3rdparty/chromium/content/browser/renderer_host/render_widget_host_view_aura.cc.orig	2023-10-11 18:22:24 UTC
 +++ src/3rdparty/chromium/content/browser/renderer_host/render_widget_host_view_aura.cc
-@@ -119,7 +119,7 @@
+@@ -121,7 +121,7 @@
  #include "ui/gfx/gdi_util.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "content/browser/accessibility/browser_accessibility_auralinux.h"
  #include "ui/base/ime/linux/text_edit_command_auralinux.h"
  #include "ui/linux/linux_ui.h"
-@@ -452,7 +452,7 @@ gfx::NativeViewAccessible RenderWidgetHostViewAura::Ge
+@@ -461,7 +461,7 @@ gfx::NativeViewAccessible RenderWidgetHostViewAura::Ge
      return ToBrowserAccessibilityWin(manager->GetBrowserAccessibilityRoot())
          ->GetCOM();
  
@@ -18,7 +18,7 @@
    BrowserAccessibilityManager* manager =
        host()->GetOrCreateRootBrowserAccessibilityManager();
    if (manager && manager->GetBrowserAccessibilityRoot())
-@@ -1588,7 +1588,7 @@ bool RenderWidgetHostViewAura::ShouldDoLearning() {
+@@ -1720,7 +1720,7 @@ bool RenderWidgetHostViewAura::ShouldDoLearning() {
    return GetTextInputManager() && GetTextInputManager()->should_do_learning();
  }
  
@@ -27,7 +27,7 @@
  bool RenderWidgetHostViewAura::SetCompositionFromExistingText(
      const gfx::Range& range,
      const std::vector<ui::ImeTextSpan>& ui_ime_text_spans) {
-@@ -2420,7 +2420,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
+@@ -2565,7 +2565,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
  }
  
  bool RenderWidgetHostViewAura::NeedsMouseCapture() {
@@ -36,7 +36,7 @@
    return NeedsInputGrab();
  #else
    return false;
-@@ -2597,7 +2597,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
+@@ -2748,7 +2748,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
    if (!target_host)
      return;
  
@@ -44,4 +44,4 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    auto* linux_ui = ui::LinuxUi::instance();
    std::vector<ui::TextEditCommandAuraLinux> commands;
-   if (!event.skip_in_browser && linux_ui && event.os_event &&
+   if (!event.skip_if_unhandled && linux_ui && event.os_event &&

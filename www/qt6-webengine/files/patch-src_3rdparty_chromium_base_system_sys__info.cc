@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/system/sys_info.cc.orig	2023-03-09 06:31:50 UTC
+--- src/3rdparty/chromium/base/system/sys_info.cc.orig	2023-09-13 12:11:42 UTC
 +++ src/3rdparty/chromium/base/system/sys_info.cc
-@@ -106,7 +106,7 @@ std::string SysInfo::HardwareModelName() {
+@@ -166,7 +166,7 @@ std::string SysInfo::HardwareModelName() {
  #endif
  
  void SysInfo::GetHardwareInfo(base::OnceCallback<void(HardwareInfo)> callback) {

@@ -1,11 +1,11 @@
---- src/3rdparty/chromium/components/network_session_configurator/browser/network_session_configurator.cc.orig	2023-04-05 11:05:06 UTC
+--- src/3rdparty/chromium/components/network_session_configurator/browser/network_session_configurator.cc.orig	2023-09-13 12:11:42 UTC
 +++ src/3rdparty/chromium/components/network_session_configurator/browser/network_session_configurator.cc
-@@ -807,7 +807,7 @@ net::URLRequestContextBuilder::HttpCacheParams::Type C
-   }
- #endif  // #if !BUILDFLAG(IS_ANDROID)
- 
--#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+@@ -793,7 +793,7 @@ net::URLRequestContextBuilder::HttpCacheParams::Type C
+   // backport, having it behave differently than in stable would be a bigger
+   // problem. TODO: Does this work in later macOS releases?
+ #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
+-    BUILDFLAG(IS_MAC)
++    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
    return net::URLRequestContextBuilder::HttpCacheParams::DISK_SIMPLE;
  #else
    return net::URLRequestContextBuilder::HttpCacheParams::DISK_BLOCKFILE;

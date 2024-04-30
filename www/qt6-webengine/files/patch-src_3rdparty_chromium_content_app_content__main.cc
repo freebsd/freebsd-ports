@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/app/content_main.cc.orig	2023-08-16 19:50:41 UTC
+--- src/3rdparty/chromium/content/app/content_main.cc.orig	2023-12-12 22:08:45 UTC
 +++ src/3rdparty/chromium/content/app/content_main.cc
 @@ -207,7 +207,7 @@ RunContentProcess(ContentMainParams params,
      base::EnableTerminationOnOutOfMemory();

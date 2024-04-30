@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/browser/scheduler/responsiveness/jank_monitor_impl.cc.orig	2023-01-11 09:17:16 UTC
+--- src/3rdparty/chromium/content/browser/scheduler/responsiveness/jank_monitor_impl.cc.orig	2023-08-17 07:33:31 UTC
 +++ src/3rdparty/chromium/content/browser/scheduler/responsiveness/jank_monitor_impl.cc
-@@ -334,7 +334,7 @@ void JankMonitorImpl::ThreadExecutionState::DidRunTask
+@@ -340,7 +340,7 @@ void JankMonitorImpl::ThreadExecutionState::DidRunTask
      // in context menus, among others). Simply ignore the mismatches for now.
      // See https://crbug.com/929813 for the details of why the mismatch
      // happens.
