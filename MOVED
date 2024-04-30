@@ -3208,3 +3208,4 @@ www/py-django-dpaste||2024-04-30|Has expired
 dns/bind916|dns/bind918|2024-04-30|Has expired: End of life, please migrate to a newer version of BIND9
 devel/rubygem-ruby_dep||2024-04-30|Has expired: Upstream official support to Ruby 2.x only and is inactive for 7.5 years. And there is no dependent ports
 databases/pgsphere||2024-04-30|Has expired: The repository has been archived by the owner on 2023-08-09 and is inactive for almost 4.5 years
+games/residualvm||2024-04-30|Has expired: Obsolete, merged with ScummVM Oct 9, 2020

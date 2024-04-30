@@ -859,7 +859,6 @@
     SUBDIR += reminiscence
     SUBDIR += renpy
     SUBDIR += rescue
-    SUBDIR += residualvm
     SUBDIR += retroarch
     SUBDIR += retroarch-assets
     SUBDIR += rezerwar
