@@ -3204,3 +3204,4 @@ emulators/qemu7@tools|emulators/qemu@tools|2024-04-29|Use emulators/qemu@tools i
 lang/tcl9|lang/tcl90|2024-04-30|Renamed for consistency with the 8.x series ports
 deskutils/aspostit||2024-04-30|Has expired: Unmaintained, last upstream release in 2001
 x11-toolkits/p5-Tk-FileDialog||2024-04-30|Has expired: Does not work with recent Tk versions
+www/py-django-dpaste||2024-04-30|Has expired
