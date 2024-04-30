@@ -1,5 +1,3 @@
-TIMESTAMP = 1713845017
-SHA256 (google-filament-v1.51.5_GH0.tar.gz) = d207bbc618570d8a93191cab3bbaf26fbf2513e9e605b8f66df176ec687b4cb7
-SIZE (google-filament-v1.51.5_GH0.tar.gz) = 502719827
-SHA256 (a5bba37dc5463b6e7c428437c8cd3c5792b72dab.patch) = 68831a15f3995455ba71fc73717d66fbeb0528e99941c7a4c3f5e53dd9c64b8e
-SIZE (a5bba37dc5463b6e7c428437c8cd3c5792b72dab.patch) = 1071
+TIMESTAMP = 1714452890
+SHA256 (google-filament-v1.51.6_GH0.tar.gz) = 5fe4abed9578ad795a296b9763b69bd69607cd04b4ab00f19175db9acda7dc14
+SIZE (google-filament-v1.51.6_GH0.tar.gz) = 502715768
