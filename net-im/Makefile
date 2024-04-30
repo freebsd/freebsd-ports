@@ -29,7 +29,6 @@
     SUBDIR += iamb
     SUBDIR += icmpchat
     SUBDIR += icqlib
-    SUBDIR += jabberd
     SUBDIR += jarl
     SUBDIR += jicofo
     SUBDIR += jitsi-meet-full

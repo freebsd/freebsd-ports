@@ -3225,3 +3225,4 @@ devel/libphk||2024-04-30|Has expired: Superseded by various other projects
 games/2048-qt||2024-04-30|Has expired: Unmaintained, last upstream release in 2016
 devel/cdash||2024-04-30|Has expired: Very outdated version that's unsupported upstream
 sysutils/dim||2024-04-30|Has expired: Abandonware, upstream stopped development in 2005
+net-im/jabberd||2024-04-30|Has expired: No longer developed as of 2019, consider using net-im/ejabberd
