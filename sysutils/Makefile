@@ -323,7 +323,6 @@
     SUBDIR += docker-registry
     SUBDIR += doctl
     SUBDIR += doinkd
-    SUBDIR += dolly
     SUBDIR += downtimed
     SUBDIR += dsbbatmon
     SUBDIR += dsbdriverd
