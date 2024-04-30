@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 NOT_FOR_ARCHS=		mips mips64
 NOT_FOR_ARCHS_REASON=	SSP is currently broken on MIPS
 
-OPTIONS_DEFINE=	IPV6 MFD_REWRITES PERL PERL_EMBEDDED PYTHON DUMMY TKMIB \
+OPTIONS_DEFINE=	MFD_REWRITES PERL PERL_EMBEDDED PYTHON DUMMY TKMIB \
 		MYSQL AX_SOCKONLY UNPRIVILEGED SMUX DOCS JAIL AX_DISABLE_TRAP \
 		TLS NEWSYSLOG NOLIBPKG SCTP
 OPTIONS_DEFAULT=PERL PERL_EMBEDDED DUMMY SMUX NEWSYSLOG
@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 		--with-sys-location="${NET_SNMP_SYS_LOCATION}" \
 		--with-logfile="${NET_SNMP_LOGFILE}" \
 		--with-persistent-directory="${NET_SNMP_PERSISTENTDIR}" \
-		--with-gnu-ld --without-libwrap \
+		--with-gnu-ld --without-libwrap --enable-ipv6 \
 		--with-ldflags="-lm -lkvm -ldevstat -L${PKG_PREFIX}/lib -L${LOCALBASE}/lib ${LCRYPTO}"
 SUB_FILES=	pkg-message
 
@@ -129,14 +129,6 @@ CONFIGURE_ARGS+=--disable-snmptrapd-subagent
 CONFIGURE_ARGS+=--enable-agentx-dom-sock-only
 .endif
 
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=--enable-ipv6
-# --with-transport="UDPIPv6 TCPIPv6" --with-modules=mibII/ipv6"
-PLIST_SUB+=	WITH_IPV6=""
-.else
-PLIST_SUB+=	WITH_IPV6="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MUNPRIVILEGED}
 CONFIGURE_ARGS+=--without-root-access
 .endif
@@ -152,10 +144,6 @@ NET_SNMP_SYS_LOCATION?=	somewhere
 NET_SNMP_LOGFILE?=	/var/log/snmpd.log
 NET_SNMP_PERSISTENTDIR?=/var/net-snmp
 NET_SNMP_WITH_MIB_MODULE_LIST+=	host disman/event-mib mibII/mta_sendmail mibII/tcpTable ucd-snmp/diskio
-
-.if ${OPSYS} == FreeBSD
-NET_SNMP_WITHOUT_MIB_MODULE_LIST+=	mibII/ipv6
-.endif
 
 .if ${PORT_OPTIONS:MSCTP}
 NET_SNMP_WITH_MIB_MODULE_LIST+=	sctp-mib
