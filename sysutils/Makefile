@@ -827,7 +827,6 @@
     SUBDIR += nix
     SUBDIR += nmdaemon
     SUBDIR += nmrpflash
-    SUBDIR += no-login
     SUBDIR += node_exporter
     SUBDIR += nomad
     SUBDIR += nomad-pot-driver

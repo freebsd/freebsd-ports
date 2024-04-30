@@ -3227,3 +3227,4 @@ devel/cdash||2024-04-30|Has expired: Very outdated version that's unsupported up
 sysutils/dim||2024-04-30|Has expired: Abandonware, upstream stopped development in 2005
 net-im/jabberd||2024-04-30|Has expired: No longer developed as of 2019, consider using net-im/ejabberd
 irc/miau||2024-04-30|Has expired: Abandoned upstream, last release in 2010 and no activity since 2014. Consider migrating to irc/soju or irc/znc
+sysutils/no-login||2024-04-30|Has expired: Obsolete, use nologin in base
