@@ -1,6 +1,6 @@
 PORTNAME=	tcl
 DISTVERSION=	${TCL_VERSION}${TCL_RC}
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	SF/tcl/Tcl/${TCL_VERSION} \
 		TCLTK/tcl8_7
@@ -55,9 +55,9 @@ CONFIGURE_ARGS=	--enable-shared \
 		--with-system-libtommath
 LDFLAGS+=	-Wl,-z,muldefs
 
-TCL_VERSION=	9.0b1
+TCL_VERSION=	9.0b2
 TCL_VER=	9.0
-TCL_RC=
+TCL_RC=		rc1
 SHORT_TCL_VER=	${TCL_VER:S/.//}
 MAN_SUFFIX=	${PKGBASE}
 
