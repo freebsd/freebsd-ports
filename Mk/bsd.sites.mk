@@ -171,6 +171,13 @@ MASTER_SITE_EPEL7+= \
 	http://dl.fedoraproject.org/pub/epel/7/SRPMS/Packages/%SUBDIR%/:SOURCE
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_RPMFUSION9)
+MASTER_SITE_RPMFUSION9+= \
+	https://ftp.icm.edu.pl/pub/Linux/dist/rpmfusion/free/el/updates/9/aarch64/%SUBDIR%/:DEFAULT,aarch64 \
+	https://ftp.icm.edu.pl/pub/Linux/dist/rpmfusion/free/el/updates/9/x86_64/%SUBDIR%/:DEFAULT,amd64 \
+	https://ftp.icm.edu.pl/pub/Linux/dist/rpmfusion/free/el/updates/9/SRPMS/%SUBDIR%/:DEFAULT,SOURCE
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_FARSIGHT)
 MASTER_SITE_FARSIGHT+= \
 	https://dl.farsightsecurity.com/dist/%SUBDIR%/
