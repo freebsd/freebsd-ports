@@ -1,6 +1,6 @@
---- cpp/src/Ice/Thread.cpp.orig	2021-06-21 14:44:58 UTC
+--- cpp/src/Ice/Thread.cpp.orig	2023-11-06 09:24:19 UTC
 +++ cpp/src/Ice/Thread.cpp
-@@ -724,6 +724,12 @@ IceUtil::Thread::start(size_t stackSize, bool realtime
+@@ -482,6 +482,12 @@ IceUtil::Thread::start(size_t stackSize, bool realtime
              stackSize = stackSize / 4096 * 4096 + 4096;
          }
  #endif

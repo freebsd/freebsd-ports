@@ -1,6 +1,6 @@
---- cpp/test/Ice/info/AllTests.cpp.orig	2021-06-21 14:44:58 UTC
+--- cpp/test/Ice/info/AllTests.cpp.orig	2023-11-06 09:24:19 UTC
 +++ cpp/test/Ice/info/AllTests.cpp
-@@ -125,13 +125,13 @@ allTests(Test::TestHelper* helper)
+@@ -116,13 +116,13 @@ allTests(Test::TestHelper* helper)
              test(ipEndpoint);
              test(ipEndpoint->type() == Ice::TCPEndpointType || ipEndpoint->type() == Ice::SSLEndpointType ||
                  ipEndpoint->type() == Ice::WSEndpointType || ipEndpoint->type() == Ice::WSSEndpointType);
@@ -16,7 +16,7 @@
              test(udpEndpoint->datagram());
              test(udpEndpoint->port > 0);
  
-@@ -214,8 +214,8 @@ allTests(Test::TestHelper* helper)
+@@ -205,8 +205,8 @@ allTests(Test::TestHelper* helper)
          test(info->remotePort == port);
          if(defaultHost == "127.0.0.1")
          {
@@ -25,9 +25,9 @@
 +            test(info->remoteAddress == defaultHost || inFreeBSDJail());
 +            test(info->localAddress == defaultHost || inFreeBSDJail());
          }
- #if !defined(ICE_OS_UWP)
          test(info->rcvSize >= 1024);
-@@ -275,8 +275,8 @@ allTests(Test::TestHelper* helper)
+         test(info->sndSize >= 2048);
+@@ -264,8 +264,8 @@ allTests(Test::TestHelper* helper)
          test(udpinfo->remotePort == port);
          if(defaultHost == "127.0.0.1")
          {
@@ -36,5 +36,5 @@
 +            test(udpinfo->remoteAddress == defaultHost || inFreeBSDJail());
 +            test(udpinfo->localAddress == defaultHost || inFreeBSDJail());
          }
- 
- #if !defined(ICE_OS_UWP)
+         test(udpinfo->rcvSize >= 2048);
+         test(udpinfo->sndSize >= 1024);

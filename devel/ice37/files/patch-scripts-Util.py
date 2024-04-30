@@ -1,6 +1,6 @@
---- scripts/Util.py.orig	2022-01-15 23:22:20 UTC
+--- scripts/Util.py.orig	2024-04-27 11:12:29 UTC
 +++ scripts/Util.py
-@@ -263,7 +263,7 @@ class Platform(object):
+@@ -259,7 +259,7 @@ class Platform(object):
          elif Mapping.getByName("cpp"):
              cwd = Mapping.getByName("cpp").getPath()
  
@@ -9,7 +9,7 @@
          for l in output.split("\n"):
              match = re.match(r'^.*:.*: (.*) = (.*)', l)
              if match and match.group(1):
-@@ -348,6 +348,29 @@ class AIX(Platform):
+@@ -344,6 +344,29 @@ class AIX(Platform):
      def getInstallDir(self):
          return "/opt/freeware"
  
@@ -39,7 +39,7 @@
  class Linux(Platform):
  
      def __init__(self):
-@@ -1443,7 +1466,7 @@
+@@ -1441,7 +1464,7 @@ class SliceTranslator(ProcessFromBinDir, ProcessIsRele
          # Look for slice2py installed by pip if not found in the bin directory
          #
          if self.exe == "slice2py":
@@ -48,7 +48,7 @@
              if not os.path.exists(translator):
                  translator = sys.executable + " -m slice2py"
              return (translator + " " + args).strip()
-@@ -4059,6 +4082,8 @@ if sys.platform == "darwin":
+@@ -3909,6 +3932,8 @@ if sys.platform == "darwin":
      platform = Darwin()
  elif sys.platform.startswith("aix"):
      platform = AIX()

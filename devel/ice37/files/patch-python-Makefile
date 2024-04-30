@@ -1,6 +1,6 @@
---- python/Makefile.orig	2021-06-21 14:44:58 UTC
+--- python/Makefile.orig	2023-11-06 09:24:19 UTC
 +++ python/Makefile
-@@ -14,7 +14,7 @@ include $(top_srcdir)/config/Make.rules
+@@ -10,7 +10,7 @@ include $(top_srcdir)/config/Make.rules
  #
  # Load C++ dependencies
  #

@@ -1,4 +1,4 @@
---- scripts/Glacier2Util.py.orig	2022-01-15 23:22:20 UTC
+--- scripts/Glacier2Util.py.orig	2024-04-27 11:12:29 UTC
 +++ scripts/Glacier2Util.py
 @@ -17,10 +17,13 @@ class Glacier2Router(ProcessFromBinDir, ProcessIsRelea
          return self.exe + "_32" if current.config.buildPlatform == "ppc" else self.exe
