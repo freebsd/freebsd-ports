@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240430:
+  AFFECTS: audio/py-pyradio
+  AUTHOR: nivit@FreeBSD.org
+
+  The new version of Pyradio moves some data files to new locations.
+  To see what it really does, run pyradio from a terminal the first time.
+  Besides that, the recordings are moved/saved into ~/pyradio-recordings.
+  You can change that directory in the config file.
+
+  For more details, see
+
+  https://github.com/coderholic/pyradio/releases/tag/0.9.3
+
 20240423:
   AFFECTS: textproc/vale
   AUTHOR: bofh@FreeBSD.org
