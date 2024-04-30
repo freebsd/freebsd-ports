@@ -34,7 +34,6 @@ include/glaze/compare/compare.hpp
 include/glaze/concepts/container_concepts.hpp
 include/glaze/core/common.hpp
 include/glaze/core/context.hpp
-include/glaze/core/macros.hpp
 include/glaze/core/meta.hpp
 include/glaze/core/opts.hpp
 include/glaze/core/ptr.hpp
