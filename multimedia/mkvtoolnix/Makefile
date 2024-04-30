@@ -1,5 +1,5 @@
 PORTNAME=	mkvtoolnix
-PORTVERSION=	83.0
+PORTVERSION=	84.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
@@ -50,13 +50,13 @@ BINARY_ALIAS=	qmake=${QMAKE} \
 		uic=${UIC}
 
 # Flavor handling
-_USES_qt6=		compiler:c++17-lang desktop-file-utils gl iconv localbase \
+_USES_qt6=		compiler:c++20-lang desktop-file-utils gl iconv localbase \
 			pkgconfig qmake:no_env qt:6 shared-mime-info tar:xz
 _USE_GL_qt6=		gl opengl
 _USE_QT_qt6=		base declarative multimedia svg tools
 _PLIST_SUB_qt6=		GUI=
 _CONFIGURE_ARGS_nogui=	--disable-gui
-_USES_nogui=		compiler:c++17-lang iconv localbase pkgconfig qmake:no_env \
+_USES_nogui=		compiler:c++20-lang iconv localbase pkgconfig qmake:no_env \
 			qt:6 tar:xz
 _USE_QT_nogui=		base multimedia svg tools:build
 _PLIST_SUB_nogui=	GUI="@comment "
