@@ -431,6 +431,7 @@ include/thrift/lib/cpp2/server/InternalPriorityRequestPile.h
 include/thrift/lib/cpp2/server/LegacyHeaderRoutingHandler.h
 include/thrift/lib/cpp2/server/LoggingEvent.h
 include/thrift/lib/cpp2/server/LoggingEventHelper.h
+include/thrift/lib/cpp2/server/LoggingEventTransportMetadata.h
 include/thrift/lib/cpp2/server/MemoryTracker.h
 include/thrift/lib/cpp2/server/MonitoringMethodNames.h
 include/thrift/lib/cpp2/server/MonitoringServerInterface.h
