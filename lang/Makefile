@@ -94,7 +94,6 @@
     SUBDIR += gcc13-devel
     SUBDIR += gcc14-devel
     SUBDIR += gcc15-devel
-    SUBDIR += gcc48
     SUBDIR += gcc6-aux
     SUBDIR += gcc9
     SUBDIR += gforth
