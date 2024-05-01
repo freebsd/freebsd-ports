@@ -3,7 +3,7 @@ using plugins of your choice. You will need to rebuild this port
 manually if one of your plugins gets updated.
 
 Caddy is a high-performance webserver with a simple config format,
-out-of-the-box HTTP/3 support, and automatica transparent ACME
+out-of-the-box HTTP/3 support, and automatic transparent ACME
 certificate provisioning.
 
 NOTE: THIS PORT BYPASSES EVERY SINGLE ONE OF FREEBSD'S CHECKSUM-
