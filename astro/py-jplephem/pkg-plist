@@ -18,8 +18,8 @@
 %%PYTHON_SITELIBDIR%%/jplephem/__pycache__/exceptions.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/jplephem/__pycache__/excerpter.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/jplephem/__pycache__/excerpter.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/jplephem/__pycache__/jpltest.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/jplephem/__pycache__/jpltest.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/jplephem/__pycache__/calendar.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/jplephem/__pycache__/calendar.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/jplephem/__pycache__/names.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/jplephem/__pycache__/names.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/jplephem/__pycache__/pck.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -35,7 +35,7 @@
 %%PYTHON_SITELIBDIR%%/jplephem/ephem.py
 %%PYTHON_SITELIBDIR%%/jplephem/exceptions.py
 %%PYTHON_SITELIBDIR%%/jplephem/excerpter.py
-%%PYTHON_SITELIBDIR%%/jplephem/jpltest.py
+%%PYTHON_SITELIBDIR%%/jplephem/calendar.py
 %%PYTHON_SITELIBDIR%%/jplephem/names.py
 %%PYTHON_SITELIBDIR%%/jplephem/pck.py
 %%PYTHON_SITELIBDIR%%/jplephem/spk.py
