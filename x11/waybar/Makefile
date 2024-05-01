@@ -172,4 +172,24 @@ pre-test:
 		${TOUCH} ${WRKDIR}/.meson_build_tests; \
 	fi
 
+# XXX Drop after FreeBSD 13.3 EOL around 2025-07-01 (don't forget distinfo)
+.if ${CXX} == c++ && exists(/usr/include/c++/v1/__chrono/concepts.h) && \
+    !exists(/usr/include/c++/v1/__chrono/tzdb.h) || make(makesum) || make(fetch)
+USES+=		cmake:indirect
+CMAKE_ARGS=	-B ${WRKDIR}/libcxx_build -S ${WRKSRC_libcxx}/libcxx
+CMAKE_OFF=	LIBCXX_INCLUDE_BENCHMARKS
+CMAKE_INSTALL_PREFIX=	${WRKDIR}/libcxx_prefix
+
+# XXX Move into separate port and standardize via USES
+GH_TUPLE+=	llvm:llvm-project:llvmorg-16.0.1:libcxx
+CXXFLAGS+=	-nostdinc++ -isystem${WRKDIR}/libcxx_prefix/include/c++/v1
+# Don't link against new libc++ as it's not necessary
+#LDFLAGS+=	-nostdlib++ -L${WRKDIR}/libcxx_prefix/lib -l:libc++.a -lcxxrt
+
+pre-configure:	bundled-libcxx
+bundled-libcxx:
+	@${SETENVI} ${WRK_ENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS}
+	@${DO_MAKE_BUILD:NDESTDIR*} install -C ${WRKDIR}/libcxx_build
+.endif # exists(/usr/include/c++/v1/__chrono/concepts.h)
+
 .include <bsd.port.mk>
