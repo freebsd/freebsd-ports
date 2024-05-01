@@ -9,6 +9,8 @@ WWW=		https://github.com/dbus2/busd
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 
+IGNORE=		https://github.com/dbus2/busd/issues/86
+
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	dbus2
