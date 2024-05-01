@@ -1,6 +1,5 @@
 PORTNAME=	redis
-DISTVERSION=	7.2.4.20240229
-PORTREVISION=	1
+DISTVERSION=	7.2.4.20240425
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-devel
 
@@ -8,13 +7,18 @@ MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Persistent key-value database with built-in net interface
 WWW=		https://redis.io/
 
-LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	RSALv2 SSPLv1
+LICENSE_COMB=	dual
+LICENSE_NAME_RSALv2=	Redis Source Available License v2
+LICENSE_NAME_SSPLv1=	Server Side Public License v1
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_PERMS_RSALv2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES+=		compiler:c11 cpe gmake tcl:test
 CPE_VENDOR=	redislabs
 USE_GITHUB=	yes
-GH_TAGNAME=	f17381a38
+GH_TAGNAME=	f95031c47
 USE_RC_SUBR=	redis sentinel
 
 MAKE_ENV=	OPTIMIZATION= \
