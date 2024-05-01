@@ -10,7 +10,6 @@ WWW=		https://eclipse-ecal.github.io/ecal/index.html
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN=		broken by devel/spdlog update to 1.14.0, see https://github.com/eclipse-ecal/ecal/issues/1577
 BROKEN_armv7=	link fails: undefined reference due to --no-allow-shlib-undefined: absl::lts_20230125::hash_internal::CityHash32(char const*, unsigned int)
 BROKEN_i386=	link fails: undefined reference due to --no-allow-shlib-undefined: absl::lts_20230125::hash_internal::CityHash32(char const*, unsigned int)
 
