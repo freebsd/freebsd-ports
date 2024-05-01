@@ -147,14 +147,4 @@ include/kfr/version.hpp
 lib/cmake/kfr/KFRConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/kfr/KFRConfig.cmake
 lib/cmake/kfr/KFRConfigVersion.cmake
-lib/libkfr_dft_avx.so
-lib/libkfr_dft_avx2.so
-lib/libkfr_dft_avx512.so
-lib/libkfr_dft_sse2.so
-lib/libkfr_dft_sse41.so
-lib/libkfr_dsp_avx.so
-lib/libkfr_dsp_avx2.so
-lib/libkfr_dsp_avx512.so
-lib/libkfr_dsp_sse2.so
-lib/libkfr_dsp_sse41.so
 lib/libkfr_io.so
