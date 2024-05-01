@@ -87,7 +87,7 @@ OPTIONS_EXCLUDE+=	OPENVINO
 .endif
 
 OPTIONS_RADIO=	RTMP SSL
-OPTIONS_RADIO_RTMP=	GCRYPT GMP LIBRTMP
+OPTIONS_RADIO_RTMP=	GCRYPT GMP
 OPTIONS_RADIO_SSL=	GNUTLS MBEDTLS OPENSSL
 OPTIONS_GROUP=	LICENSE
 OPTIONS_GROUP_LICENSE=	GPL3 NONFREE
@@ -135,7 +135,6 @@ SVTAV1_DESC=	AV1 encoding via SVT-AV1
 SVTHEVC_DESC=	HEVC encoding via SVT-HEVC
 SVTVP9_DESC=	VP9 encoding via SVT-VP9
 LIBPLACEBO_DESC=GPU filters from libplacebo
-LIBRTMP_DESC=	${RTMP_DESC} via librtmp
 TENSORFLOW_DESC=TensorFlow as a DNN module backend for DNN based filters like sr
 TESSERACT_DESC=	Optical Character Recognition via Tesseract
 THEORA_DESC=	Encoding support for theora via libtheora
@@ -456,10 +455,6 @@ RUBBERBAND_CONFIGURE_ENABLE=	librubberband
 
 # rtcpu
 RTCPU_CONFIGURE_ENABLE=	runtime-cpudetect
-
-# rtmp
-LIBRTMP_LIB_DEPENDS=	librtmp.so:multimedia/librtmp
-LIBRTMP_CONFIGURE_ENABLE=	librtmp
 
 # sdl
 SDL_USES=		sdl
