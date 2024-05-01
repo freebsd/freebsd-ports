@@ -1,6 +1,5 @@
 PORTNAME=	doas
-PORTVERSION=	6.3p9
-PORTREVISION=	1
+PORTVERSION=	6.3p10
 CATEGORIES=	security
 
 MAINTAINER=	jsmith@resonatingmedia.com
