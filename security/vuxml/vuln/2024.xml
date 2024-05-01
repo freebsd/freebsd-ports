@@ -1,3 +1,29 @@
+  <vuln vid="da4adc02-07f4-11ef-960d-5404a68ad561">
+    <topic>hcode -- buffer overflow in mail.c</topic>
+    <affects>
+      <package>
+	<name>ko-hcode</name>
+	<range><lt>2.1.3_2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The openSUSE project reports:</p>
+	<blockquote cite="https://bugzilla.suse.com/show_bug.cgi?id=1223534">
+	  <p>The problematic function in question is putSDN() in mail.c. The static variable `cp` is used as an index for a fixed-sized buffer `ibuf`. There is a range check: `if ( cp >= HDR_BUF_LEN ) ...` but under certain circumstances, cp can be incremented beyond the buffer size, leading to a buffer overwrite</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-34020</cvename>
+      <url>https://bugzilla.suse.com/show_bug.cgi?id=1223534</url>
+    </references>
+    <dates>
+      <discovery>2024-04-29</discovery>
+      <entry>2024-05-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5da8b1e6-0591-11ef-9e00-080027957747">
     <topic>GLPI -- multiple vulnerabilities</topic>
     <affects>
