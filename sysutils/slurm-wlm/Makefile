@@ -1,11 +1,10 @@
 PORTNAME=	slurm
-DISTVERSION=	23.11.1
-PORTREVISION=	2
+DISTVERSION=	23.11.6
 CATEGORIES=	sysutils
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Simple Linux Utility for Resource Management
 WWW=		https://slurm.schedmd.com/
 
@@ -45,6 +44,7 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 PLIST_SUB=	PORTVERSION="${DISTVERSION}" VER="${DISTVERSION:R}"
 SHEBANG_FILES=	doc/html/shtml2html.py doc/man/man2html.py
+PORTDOCS=	*
 
 OPTIONS_DEFINE=		CURL DOCS GUI HDF5 HWLOC IPMI RRD
 OPTIONS_DEFAULT=	HDF5 HWLOC
