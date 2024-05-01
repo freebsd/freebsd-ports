@@ -1,5 +1,5 @@
 PORTNAME=	appointments
-PORTVERSION=	2.0.7
+PORTVERSION=	2.1.0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/raw/${DISTVERSIONPREFIX}${DISTVERSION}/build/artifacts/appstore/
 DISTVERSIONPREFIX=	v
@@ -12,13 +12,10 @@ WWW=		https://apps.nextcloud.com/apps/appointments
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NEXTCLOUD_RUN_DEPENDS=	26
+NEXTCLOUD_RUN_DEPENDS=	27
 
 USES=		nextcloud php:flavors
 
 GH_ACCOUNT=	SergeyMosin
-
-post-patch:
-	${RMDIR} ${WRKSRC}/lib/CalDAV
 
 .include <bsd.port.mk>
