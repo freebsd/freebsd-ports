@@ -19,7 +19,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	thedodd
 
-CARGO_FEATURES=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/sse sse2/} # add sse sse2 features only on i386
+RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
 
 CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
@@ -463,12 +463,6 @@ OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/${PORTNAME}
-
-#.include <bsd.port.pre.mk>
-
-#.if ${ARCH} == amd64
-#CARGO_FEATURES=	${ARCH:S/i386/sse sse2/}
-#.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
