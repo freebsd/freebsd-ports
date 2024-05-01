@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	conan:sysutils/conan \
 		rapidjson>0:devel/rapidjson
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libharfbuzz.so:print/harfbuzz \
 		liblilv-0.so:audio/lilv \
 		libmp3lame.so:audio/lame \
 		libmpg123.so:audio/mpg123 \
@@ -27,8 +28,8 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libsratom-0.so:audio/sratom \
 		libsqlite3.so:databases/sqlite3 \
 		libsuil-0.so:audio/suil \
-		libwavpack.so:audio/wavpack \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libwavpack.so:audio/wavpack
 
 USES=		cmake compiler:c++20-lang cpe desktop-file-utils gettext \
 		gnome libtool python:build pkgconfig shared-mime-info
@@ -72,8 +73,7 @@ PLIST_SUB+=	NLS=""
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=		DEBUG DOCS FFMPEG FLAC ID3TAG LADSPA MANUAL \
-			OGG SBSMS SOUNDTOUCH TWOLAME VAMP \
-			VORBIS VST
+			OGG SBSMS SOUNDTOUCH TWOLAME VAMP VORBIS VST
 OPTIONS_DEFAULT=	FFMPEG FLAC ID3TAG LADSPA OGG SBSMS \
 			SOUNDTOUCH TWOLAME VAMP VORBIS VST
 OPTIONS_EXCLUDE_i386=	SBSMS
@@ -90,10 +90,9 @@ DEBUG_CMAKE_ON=		wxWidgets_USE_DEBUG
 
 DOCS_BUILD_DEPENDS=	docbook-to-man:textproc/docbook-to-man \
 			docbook2man:textproc/docbook-utils
-DOCS_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 FFMPEG_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libavcodec.pc:multimedia/ffmpeg
-FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+FFMPEG_RUN_DEPENDS=	${LOCALBASE}/lib/libavformat.so:multimedia/ffmpeg
 FFMPEG_CMAKE_ON=	-Daudacity_use_ffmpeg:STRING=loaded
 FFMPEG_CMAKE_OFF=	-Daudacity_use_ffmpeg:STRING=off
 
