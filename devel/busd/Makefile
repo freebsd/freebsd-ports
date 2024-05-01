@@ -1,5 +1,6 @@
 PORTNAME=	busd
 DISTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -8,8 +9,6 @@ WWW=		https://github.com/dbus2/busd
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
-
-IGNORE=		https://github.com/dbus2/busd/issues/86
 
 USES=		cargo
 USE_GITHUB=	yes

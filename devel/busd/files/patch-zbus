@@ -1,0 +1,28 @@
+https://github.com/dbus2/zbus/pull/757
+
+--- cargo-crates/zbus-4.2.0/src/connection/handshake/common.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/zbus-4.2.0/src/connection/handshake/common.rs
+@@ -122,17 +122,13 @@ impl Common {
+                 if self.first_command {
+                     // The first command is sent by the client so we can assume it's the server.
+                     self.first_command = false;
+-                    // leading 0 is sent separately for `freebsd` and `dragonfly`.
+-                    #[cfg(not(any(target_os = "freebsd", target_os = "dragonfly")))]
+-                    {
+-                        if self.recv_buffer[0] != b'\0' {
+-                            return Err(Error::Handshake(
+-                                "First client byte is not NUL!".to_string(),
+-                            ));
+-                        }
+-
+-                        start_index = 1;
++                    if self.recv_buffer[0] != b'\0' {
++                        return Err(Error::Handshake(
++                            "First client byte is not NUL!".to_string(),
++                        ));
+                     }
++
++                    start_index = 1;
+                 };
+ 
+                 let line_bytes = self.recv_buffer.drain(..=lf_index);
