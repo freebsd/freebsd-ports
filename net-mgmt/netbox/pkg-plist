@@ -1023,6 +1023,7 @@
 %%DATADIR%%/templates/dcim/devicetype/base.html
 %%DATADIR%%/templates/dcim/devicetype/component_templates.html
 %%DATADIR%%/templates/dcim/frontport.html
+%%DATADIR%%/templates/dcim/htmx/cable_edit.html
 %%DATADIR%%/templates/dcim/inc/cable_termination.html
 %%DATADIR%%/templates/dcim/inc/cable_toggle_buttons.html
 %%DATADIR%%/templates/dcim/inc/connection_endpoints.html
