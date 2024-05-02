@@ -1,3 +1,39 @@
+  <vuln vid="f69415aa-086e-11ef-9f97-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>124.0.6367.118</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>124.0.6367.118</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/04/stable-channel-update-for-desktop_30.html">
+	 <p>This update includes 2 security fixes:</p>
+	 <ul>
+	    <li>[335003891] High CVE-2024-4331: Use after free in Picture In Picture. Reported by Zhenghang Xiao (@Kipreyyy) on 2024-04-16</li>
+	    <li>[333508731] High CVE-2024-4368: Use after free in Dawn. Reported by wgslfuzz on 2024-04-09</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-4058</cvename>
+      <cvename>CVE-2024-4059</cvename>
+      <cvename>CVE-2024-4060</cvename>
+      <url>https://chromereleases.googleblog.com/2024/04/stable-channel-update-for-desktop_30.html</url>
+    </references>
+    <dates>
+      <discovery>2024-04-30</discovery>
+      <entry>2024-05-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4a1e2bad-0836-11ef-9fd2-1c697a616631">
     <topic>R -- arbitrary code execution vulnerability</topic>
     <affects>
