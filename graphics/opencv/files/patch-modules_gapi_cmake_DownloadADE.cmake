@@ -1,12 +1,12 @@
 The ade distdata is downloaded and moved to the proper location by the ports 
 framework.
 
---- modules/gapi/cmake/DownloadADE.cmake.orig	2021-07-05 12:03:22 UTC
+--- modules/gapi/cmake/DownloadADE.cmake.orig	2023-12-27 16:46:55 UTC
 +++ modules/gapi/cmake/DownloadADE.cmake
-@@ -2,22 +2,18 @@ set(ade_src_dir "${OpenCV_BINARY_DIR}/3rdparty/ade")
- set(ade_filename "v0.1.1f.zip")
- set(ade_subdir "ade-0.1.1f")
- set(ade_md5 "b624b995ec9c439cbc2e9e6ee940d3a2")
+@@ -2,18 +2,12 @@ set(ade_md5 "dbb095a8bf3008e91edbbf45d8d34885")
+ set(ade_filename "v0.1.2d.zip")
+ set(ade_subdir "ade-0.1.2d")
+ set(ade_md5 "dbb095a8bf3008e91edbbf45d8d34885")
 -ocv_download(FILENAME ${ade_filename}
 -             HASH ${ade_md5}
 -             URL
@@ -17,20 +17,14 @@ framework.
 -             ID ADE
 -             STATUS res
 -             UNPACK RELATIVE_URL)
- 
+-
 -if (NOT res)
-+set(file_id ade-0.1.1f/CMakeLists.txt)
++set(file_id ade-0.1.2d/CMakeLists.txt)
 +set(FILENAME ${ade_src_dir}/${file_id})
 +if(EXISTS ${FILENAME})
 +    message("++ ade: Using prefetched ${file_id}")
 +else()
 +    message(WARNING "++ ade: Could not find ${file_id} in ${FILENAME}")
      return()
--endif()
-+ endif()
+ endif()
  
- set(ADE_root "${ade_src_dir}/${ade_subdir}/sources/ade")
-+
- file(GLOB_RECURSE ADE_sources "${ADE_root}/source/*.cpp")
- file(GLOB_RECURSE ADE_include "${ADE_root}/include/ade/*.hpp")
- add_library(ade STATIC ${OPENCV_3RDPARTY_EXCLUDE_FROM_ALL}
