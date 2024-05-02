@@ -1,3 +1,29 @@
+  <vuln vid="4a1e2bad-0836-11ef-9fd2-1c697a616631">
+    <topic>R -- arbitrary code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>R</name>
+	<range><lt>4.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>HiddenLayer Research reports:</p>
+	<blockquote cite="https://hiddenlayer.com/research/r-bitrary-code-execution/">
+	  <p>Deserialization of untrusted data can occur in the R statistical programming language, enabling a maliciously crafted RDS (R Data Serialization) formatted file or R package to run arbitrary code on an end user's system.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-27322</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-27322</url>
+    </references>
+    <dates>
+      <discovery>2024-04-29</discovery>
+      <entry>2024-05-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="da4adc02-07f4-11ef-960d-5404a68ad561">
     <topic>hcode -- buffer overflow in mail.c</topic>
     <affects>
