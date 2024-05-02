@@ -55,6 +55,7 @@ bin/lynx
 %%PORTDOCS%%%%DOCSDIR%%/samples/lynxdump
 %%PORTDOCS%%%%DOCSDIR%%/samples/mailcap
 %%PORTDOCS%%%%DOCSDIR%%/samples/mailto-form.pl
+%%PORTDOCS%%%%DOCSDIR%%/samples/mhtml-tool
 %%PORTDOCS%%%%DOCSDIR%%/samples/midnight.lss
 %%PORTDOCS%%%%DOCSDIR%%/samples/mild-colors.lss
 %%PORTDOCS%%%%DOCSDIR%%/samples/mime.types
