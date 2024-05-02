@@ -20,7 +20,7 @@ rcvar=gunicorn_enable
 load_rc_config $name
 
 : ${gunicorn_enable:=NO}
-: ${gunicorn_config=%%PREFIX%%/gunicorn/gunicorn.conf.py}
+: ${gunicorn_config=%%PREFIX%%/etc/gunicorn/gunicorn.conf.py}
 : ${gunicorn_user=%%USERS%%}
 : ${gunicorn_group=%%GROUPS%%}
 
