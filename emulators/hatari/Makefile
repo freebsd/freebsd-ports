@@ -1,44 +1,57 @@
 PORTNAME=	hatari
-PORTVERSION=	2.3.1
-PORTREVISION=	3
+PORTVERSION=	2.5.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.tuxfamily.org/hatari/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laurent.chardon@gmail.com
 COMMENT=	Atari ST emulator
 WWW=		https://hatari.tuxfamily.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
-BROKEN_armv6=		fails to configure: CMake Error: Generator: execution of make failed
+BROKEN_armv6=	fails to configure: CMake Error: Generator: execution of make failed
 
-LIB_DEPENDS=	libportaudio.so:audio/portaudio \
-		libpng.so:graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libudev.so:devel/libudev-devd \
+		libreadline.so:devel/readline \
+		libcapstone.so:devel/capstone
 
 USES=		cmake desktop-file-utils gnome python readline \
-		sdl shared-mime-info shebangfix tar:bzip2 xorg
-USE_GNOME=	gtk30
+		sdl shared-mime-info shebangfix tar:bzip2 xorg iconv
+USE_GNOME=	gtk30 pygobject3
 USE_XORG=	sm ice x11 xext
+USE_SDL=	sdl2
 
 SHEBANG_FILES=	python-ui/*.py tools/*.py \
 		tools/debugger/*.py tools/hconsole/*.py
 
-CMAKE_ARGS=	-DETCDIR:PATH="${PREFIX}/etc" \
-		-DREADLINE_FOUND:BOOL=ON
+CMAKE_ARGS=	-DETCDIR:PATH="${PREFIX}/etc"
 
-#		-DMANDIR:PATH="share/man/man1"
-OPTIONS_DEFINE=		DEBUG DOCS SDL2 WINUAE
+OPTIONS_DEFINE=		DEBUG DOCS DSP TRACE SMALL
+OPTIONS_DEFAULT=	DOCS DSP TRACE
 
-DEBUG_CFLAGS_OFF=	-DNDEBUG
-SDL2_DESC=		Use SDL2 libraries instead of SDL 1.2
-SDL2_USES=		iconv
-SDL2_USE=		sdl=sdl2
-SDL2_USE_OFF=		sdl=sdl
-SDL2_CMAKE_BOOL=	ENABLE_SDL2
-SDL2_CFLAGS=		-I${ICONV_INCLUDE_PATH}
-WINUAE_DESC=		Build with WinUAE CPU core
-WINUAE_CMAKE_BOOL=	ENABLE_WINUAE_CPU
+DEBUG_DESC=		Build with debug information
+DOCS_DESC=		Install extra documentation
+DSP_DESC=		DSP 56k emulator for Falcon mode
+TRACE_DESC=		Tracing messages for debugging
+SMALL_DESC=		Use less memory at the expense of emulation speed
+
+DSP_CMAKE_BOOL=		ENABLE_DSP_EMU
+TRACE_CMAKE_BOOL=	ENABLE_TRACING
+SMALL_CMAKE_BOOL=	ENABLE_SMALL_MEM
+
+TEST_TARGET=	test
+
+.include <bsd.port.options.mk>
+
+# CMAKE_ARGS CMAKE_BUILD_TYPE is getting overriden
+.if ${PORT_OPTIONS:MDEBUG}
+CMAKE_BUILD_TYPE=Debug
+INSTALL_TARGET=install
+.else
+CMAKE_BUILD_TYPE=Release
+.endif
 
 post-patch:
 .for i in doc/*.1 python-ui/*.1 tools/*.1 tools/debugger/*.1 tools/hconsole/*.1 tools/hmsa/*.1

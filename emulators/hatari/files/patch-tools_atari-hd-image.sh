@@ -1,13 +1,13 @@
---- tools/atari-hd-image.sh.orig	2022-02-26 12:11:11 UTC
+--- tools/atari-hd-image.sh.orig	2024-04-26 10:23:56 UTC
 +++ tools/atari-hd-image.sh
-@@ -33,8 +33,8 @@ PATH=/sbin:$PATH
+@@ -33,8 +33,8 @@ export PATH
  export PATH
  
  # check tools
--if [ -z "$(which mkdosfs)" ] || [ -z "$(which python)" ]; then
--	echo "ERROR: either mkdosfs or python tool missing!"
+-if [ -z "$(which mkdosfs)" ] || [ -z "$(which python3)" ]; then
+-	echo "ERROR: either mkdosfs or python3 missing!"
 +if [ -z "$(which mkdosfs)" ] || [ -z "$(which %%PYTHON_VERSION%%)" ]; then
-+	echo "ERROR: either mkdosfs or %%PYTHON_VERSION%% tool missing!"
++	echo "ERROR: either mkdosfs or %%PYTHON_VERSION%% missing!"
  	exit 1
  fi
  
@@ -15,10 +15,10 @@
  # - http://en.wikipedia.org/wiki/File_Allocation_Table#Boot_Sector
  # For DOS MBR, the values are little endian.
  # -----------
--python << EOF
+-python3 << EOF
 -#!/usr/bin/env python3
 +%%PYTHON_VERSION%% << EOF
-+#!/usr/bin/env %%PYTHON_VERSION%%3
++#!/usr/bin/env %%PYTHON_VERSION%%
  mbr = bytearray(512)
  
  def set_long(idx, value):
