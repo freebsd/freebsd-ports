@@ -1,6 +1,6 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	22.1.3
+DISTVERSION=	22.1.4
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
@@ -191,7 +191,7 @@ MP1+=	bsmtp.1 bregex.1 bwild.1 bareos-tray-monitor.1
 MAKE_ENV+=	MAN8="${MP8}" MAN1="${MP1}"
 
 post-patch:
-	@${REINPLACE_CMD}  '124,129d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD}  '133,138d' ${WRKSRC}/CMakeLists.txt
 .if ${PKGNAMESUFFIX} == "22-server"
 	@${REINPLACE_CMD}  '51d' ${WRKSRC}/core/src/plugins/CMakeLists.txt
 .endif
