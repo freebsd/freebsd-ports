@@ -1,0 +1,20 @@
+#!/bin/sh
+
+get_pa_sock_path()
+{
+	PA_SOCK_PATH=$(sockstat | awk -v me=$(whoami) -F'[ \t]+' '
+		$1 == me && $2 == "pulseaudio" && $6 ~ /native/ {
+			print $6;
+			exit 0
+		}'
+	)
+}
+
+get_pa_sock_path
+[ -S "$PA_SOCK_PATH" ] && export PULSE_SERVER=unix:$PA_SOCK_PATH && export PULSE_COOKIE="~/.config/pulse/cookie"
+
+export CHROME_PATH="%%DATADIR%%/chrome"
+export CHROME_WRAPPER="$(readlink -f "$0")"
+export LIBGL_DRI3_DISABLE=1
+
+exec "$CHROME_PATH" --no-sandbox --no-zygote --test-type --v=0 --password-store=basic "$@"
