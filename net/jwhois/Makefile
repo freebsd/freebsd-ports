@@ -1,6 +1,6 @@
 PORTNAME=	jwhois
 PORTVERSION=	4.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net
 MASTER_SITES=	GNU \
 		https://dl.fedoraproject.org/pub/fedora/linux/development/rawhide/Everything/source/tree/Packages/j/:srpm

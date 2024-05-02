@@ -1,6 +1,6 @@
 PORTNAME=	lynx
 DISTVERSION=	${VERSION}.${MINOR_VERSION:S/.//}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese www
 MASTER_SITES=	http://invisible-mirror.net/archives/lynx/tarballs/
 PKGNAMESUFFIX=	-current

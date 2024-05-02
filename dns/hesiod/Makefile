@@ -1,6 +1,6 @@
 PORTNAME=	hesiod
 PORTVERSION=	3.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	dns
 MASTER_SITES=	https://BSDforge.com/projects/source/dns/hesiod/
 
