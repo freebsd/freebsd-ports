@@ -1,7 +1,11 @@
 PORTNAME=	amsynth
 DISTVERSION=	1.13.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/amsynth/amsynth/releases/download/release-${DISTVERSION}/
+
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES=	6fb79100a6254220e5adc69a1428572539ecc377.patch:-p1 # Stop using namespace std; https://github.com/amsynth/amsynth/issues/233
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Analog modelling software synth
