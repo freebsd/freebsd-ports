@@ -1,10 +1,16 @@
---- usr/bin/r7-office-imageviewer.orig	2022-12-11 00:52:25 UTC
+--- usr/bin/r7-office-imageviewer.orig	2023-06-30 12:57:17 UTC
 +++ usr/bin/r7-office-imageviewer
-@@ -1,5 +1,6 @@
+@@ -1,4 +1,12 @@
  #!/bin/sh
  
 -DIR=/opt/r7-office/mediaviewer
 +DIR=%%LOCALBASE%%/share/r7-office/mediaviewer
- export LD_LIBRARY_PATH=$DIR:$LD_LIBRARY_PATH
++
++export LIBGL_DRI3_DISABLE=1
++export LANG=ru_RU.UTF-8
 +export LC_CTYPE=ru_RU.UTF-8
++
++export LD_LIBRARY_PATH=$DIR:$DIR/R7Modules:$DIR/converter:$DIR_MV:$UDEV_PATH:$LD_LIBRARY_PATH
++export VLC_PLUGIN_PATH=$DIR_MV/plugins
++
  exec $DIR/ImageViewer "$@"

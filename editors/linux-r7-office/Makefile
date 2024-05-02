@@ -1,10 +1,10 @@
 PORTNAME=	r7-office
-PORTVERSION=	7.2.2
-PORTREVISION=	1
+PORTVERSION=	2024.1.1
+DISTVERSIONSUFFIX=	-373.el8
 CATEGORIES=	editors linux russian
-MASTER_SITES=	https://download.r7-office.ru/ubuntu/
-DISTNAME=	r7-office
-EXTRACT_SUFX=	.deb
+MASTER_SITES=	https://download.r7-office.ru/centos/
+PKGNAMEPREFIX=	linux-
+EXTRACT_SUFX=	.x86_64.rpm
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Russian office suite
@@ -17,24 +17,20 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 ONLY_FOR_ARCHS=	amd64
 
-USES=		desktop-file-utils linux shebangfix tar:xz
+USES=		desktop-file-utils linux:rl9 shared-mime-info shebangfix tar:xz
 
-USE_LINUX=	alsalib base cups-libs gtk3 pulseaudio-libs systemd-libs nss \
-		xorglibs
-
-SHEBANG_FILES=	opt/r7-office/desktopeditors/converter/.system/check.sh
+USE_LINUX=	alsalib base cups-libs curl gstreamer1-libav gtk3 opus \
+		pulseaudio-libs nss p11-kit systemd-libs xorglibs
 
 WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 PLIST_SUB=	LINUXBASE=${LINUXBASE}
 STRIP=
 
-post-extract:
-	cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} data.tar.xz ${EXTRACT_AFTER_ARGS}
-
 post-patch:
-	${REINPLACE_CMD} -i '' 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKDIR}/usr/bin/r7-office-*
-	${REINPLACE_CMD} -i '' 's|/usr/bin/|${PREFIX}/bin/|' ${WRKDIR}/usr/share/applications/*.desktop
+	${REINPLACE_CMD} -i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKDIR}/usr/bin/r7-office-*
+	${REINPLACE_CMD} -i '' -e 's|/usr/bin/|${PREFIX}/bin/|' -e 's|P7|Р7|' \
+		${WRKDIR}/usr/share/applications/*.desktop
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/usr/bin/r7-office-* ${STAGEDIR}${PREFIX}/bin/
@@ -45,7 +41,9 @@ do-install:
 	${RLN} ${STAGEDIR}${DATADIR}/desktopeditors/asc-de-256.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/r7-office.png
 
+	${RM} ${STAGEDIR}${PREFIX}/bin/*.orig
 	${RM} ${STAGEDIR}${PREFIX}/share/flyfm/templates/.source/*
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/flyfm/templates/.source
 .for f in new.docx new.pptx new.xlsx
 	${RLN} ${STAGEDIR}${DATADIR}/desktopeditors/converter/empty/${f} \
 		${STAGEDIR}${PREFIX}/share/flyfm/templates/.source/${f}
