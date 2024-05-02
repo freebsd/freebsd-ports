@@ -1,15 +1,15 @@
---- core/cmake/BareosSetVariableDefaults.cmake	2020-01-31 16:21:15.864122000 -0500
-+++ core/cmake/BareosSetVariableDefaults.cmake	2020-01-31 16:23:58.960984000 -0500
-@@ -641,7 +641,11 @@
- set(PACKAGE_URL "\"\"")
+--- core/cmake/BareosSetVariableDefaults.cmake	2024-02-28 05:24:21.000000000 -0500
++++ core/cmake/BareosSetVariableDefaults.cmake	2024-05-02 00:57:55.264449000 -0500
+@@ -568,8 +568,10 @@
+ set(PACKAGE_STRING "\"${CMAKE_PROJECT_NAME} ${BAREOS_NUMERIC_VERSION}\"")
  set(PACKAGE_VERSION "\"${BAREOS_NUMERIC_VERSION}\"")
  
--set(ENABLE_NLS 1)
+-if(NOT DEFINED ENABLE_NLS)
+-  set(ENABLE_NLS 1)
 +if(nls)
 +  SET(ENABLE_NLS 1)
 +else()
 +  SET(ENABLE_NLS 0)
-+endif()
+ endif()
  
  if(HAVE_WIN32)
- 
