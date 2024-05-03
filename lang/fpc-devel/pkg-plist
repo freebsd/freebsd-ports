@@ -2814,6 +2814,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/webidl/webidlscanner.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/webidl/webidlscanner.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/webidl/webidltopas.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/webidl/webidltopas.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/webidl/webidltopas.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/webidl/webidltopas2js.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/webidl/webidltopas2js.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/webidl/webidltowasmjob.o
