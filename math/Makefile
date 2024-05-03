@@ -653,6 +653,7 @@
     SUBDIR += octave-forge-symbolic
     SUBDIR += octave-forge-tablicious
     SUBDIR += octave-forge-tcl-octave
+    SUBDIR += octave-forge-timer
     SUBDIR += octave-forge-tsa
     SUBDIR += octave-forge-velas
     SUBDIR += octave-forge-video
