@@ -25,7 +25,7 @@ GH_TUPLE=	\
 		google:googletest:8b4817e3:google_test/third-party/google-test
 USE_LDCONFIG=	yes
 
-CMAKE_OFF=	BUILD_UNITTESTS BUILD_EXAMPLES BUILD_BENCHMARKS WITH_WERROR
+CMAKE_OFF=	BUILD_UNITTESTS BUILD_EXAMPLES BUILD_BENCHMARKS
 CMAKE_OFF+=	WITH_NTL # https://gitlab.com/palisade/palisade-development/-/issues/180
 CMAKE_ARGS=	-DWITH_NTL=Y # libntl.so will be discontinued in 1.11, see https://gitlab.com/palisade/palisade-development/-/issues/180
 CMAKE_TESTING_ON=	BUILD_UNITTESTS
