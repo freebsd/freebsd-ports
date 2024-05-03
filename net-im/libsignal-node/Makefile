@@ -1,11 +1,11 @@
 PORTNAME=	libsignal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.42.0
+DISTVERSION=	0.45.0
 CATEGORIES=	net-im
 PKGNAMESUFFIX=	-node
 DISTFILES=	libsignal-node-${DISTVERSION}-yarn-cache.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Platform-agnostic APIs used by the official Signal clients and servers
 WWW=		https://github.com/signalapp/libsignal
 
@@ -23,6 +23,12 @@ BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 USES=		cargo gmake python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	signalapp
+# to get the GH_TUPLE
+# git clone git@github.com:signalapp/boring.git
+# cd boring
+# git checkout correct_tag (grep boring Makefile.crates)
+# git submodule update --init --recursive
+# the hash for boringssl and fips should be printed on screen 
 GH_TUPLE=	google:boringssl:44b3df6f03d85c901767250329c571db405122d5:boringssl \
 		google:boringssl:853ca1ea1168dff08011e5d42d94609cc0ca2e27:boringssl_fips
 
@@ -77,10 +83,11 @@ post-patch:
 	${REINPLACE_CMD} "s#python3#${PYTHON_CMD}#" \
 		${WRKSRC}/node/binding.gyp
 
-# Check hash here: https://github.com/signalapp/boring/tree/libsignal/boring-sys/deps
+# to get the hash:
+# fetch -o - https://raw.githubusercontent.com/signalapp/libsignal/v0.45.0/Cargo.lock | grep https://github.com/signalapp/boring
 post-extract:
-	${MV} ${WRKDIR}/boringssl-44b3df6f03d85c901767250329c571db405122d5/* ${WRKDIR}/boring-8245063ae6eb97d909982b89fad45bb7f0a2a1a0/boring-sys/deps/boringssl
-	${MV} ${WRKDIR}/boringssl-853ca1ea1168dff08011e5d42d94609cc0ca2e27/* ${WRKDIR}/boring-8245063ae6eb97d909982b89fad45bb7f0a2a1a0/boring-sys/deps/boringssl-fips
+	${MV} ${WRKDIR}/boringssl-44b3df6f03d85c901767250329c571db405122d5/* ${WRKDIR}/boring-signal-v4.6.0/boring-sys/deps/boringssl
+	${MV} ${WRKDIR}/boringssl-853ca1ea1168dff08011e5d42d94609cc0ca2e27/* ${WRKDIR}/boring-signal-v4.6.0/boring-sys/deps/boringssl-fips
 
 	${CP} ${FILESDIR}/node/package.json ${WRKSRC}/node
 
