@@ -1,5 +1,5 @@
 PORTNAME=	libpfctl
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/kp/
 
@@ -38,7 +38,7 @@ do-install:
 
 .if defined(MAINTAINER_MODE)
 upload:
-	for version in 13.2 13.3 14.0; \
+	for version in 13.2 13.3 14.0 14.1; \
 	do \
 		cd /usr/src/lib && \
 		git archive --format=tar.gz \
