@@ -1,6 +1,6 @@
 PORTNAME=	simde
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
+DISTVERSION=	0.8.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +20,7 @@ MESON_ARGS=	-Dtests=false
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-do-test: # several tests fail, see https://github.com/simd-everywhere/simde/issues/1014
+do-test: # tests fail to link, see https://github.com/simd-everywhere/simde/issues/1014
 	@${RM} -r ${BUILD_WRKSRC}/*
 	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS:S/Dtests=false/Dtests=true/}
 	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${TEST_TARGET}
