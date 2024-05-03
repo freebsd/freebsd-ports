@@ -10,7 +10,7 @@ LICENSE=	PostgreSQL
 
 LIB_DEPENDS=	libssh2.so:security/libssh2
 
-USES=		autoreconf:build compiler:c++11-lib gmake gnome pgsql:11+
+USES=		autoreconf:build compiler:c++11-lib gmake gnome pgsql
 USE_CXXSTD=	c++11
 USE_GITHUB=	yes
 GH_ACCOUNT=	allentc
