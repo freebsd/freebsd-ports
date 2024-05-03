@@ -196,6 +196,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		epaint-0.23.0 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
+		error-chain-0.12.4 \
 		error-code-2.3.1 \
 		error-code-3.2.0 \
 		euc-0.5.3 \
@@ -259,7 +260,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		gpu-descriptor-0.2.4 \
 		gpu-descriptor-types-0.1.2 \
 		guillotiere-0.6.2 \
-		h2-0.3.25 \
+		h2-0.3.26 \
 		half-2.4.0 \
 		hash32-0.2.1 \
 		hashbrown-0.9.1 \
@@ -467,6 +468,8 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		profiling-procmacros-1.0.15 \
 		prometheus-0.13.3 \
 		prometheus-hyper-0.1.5 \
+		protocol-3.4.0 \
+		protocol-derive-3.4.0 \
 		psm-0.1.21 \
 		quick-error-1.2.3 \
 		quick-xml-0.30.0 \
@@ -522,7 +525,7 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		rustc_version-0.2.3 \
 		rustc_version-0.4.0 \
 		rustix-0.38.32 \
-		rustls-0.21.10 \
+		rustls-0.21.12 \
 		rustls-native-certs-0.6.3 \
 		rustls-pemfile-1.0.4 \
 		rustls-webpki-0.101.7 \
