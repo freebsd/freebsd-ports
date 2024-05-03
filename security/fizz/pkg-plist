@@ -100,6 +100,7 @@ include/fizz/experimental/util/CertExtraction.h
 include/fizz/extensions/delegatedcred/DelegatedCredentialCertManager.h
 include/fizz/extensions/delegatedcred/DelegatedCredentialClientExtension.h
 include/fizz/extensions/delegatedcred/DelegatedCredentialFactory.h
+include/fizz/extensions/delegatedcred/DelegatedCredentialPemUtils.h
 include/fizz/extensions/delegatedcred/DelegatedCredentialUtils.h
 include/fizz/extensions/delegatedcred/PeerDelegatedCredential-inl.h
 include/fizz/extensions/delegatedcred/PeerDelegatedCredential.h
