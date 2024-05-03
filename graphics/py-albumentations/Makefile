@@ -1,5 +1,5 @@
 PORTNAME=	albumentations
-DISTVERSION=	1.4.4
+DISTVERSION=	1.4.5
 CATEGORIES=	graphics python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}deepdiff>0:devel/py-deepdiff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytorch>0:misc/py-pytorch@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist pytest # 83 tests fail, see https://github.com/albumentations-team/albumentations/issues/1505
+USE_PYTHON=	distutils autoplist pytest # 10 errors in tests
 
 NO_ARCH=	yes
 
