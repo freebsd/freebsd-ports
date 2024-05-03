@@ -10,6 +10,9 @@ WWW=		https://adzapper.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Obsolete, no longer provides reasonable amount of filtering
+EXPIRATION_DATE=2024-06-30
+
 USES=		perl5 shebangfix
 SHEBANG_FILES=	scripts/squid_redirect-nodata scripts/wrapzap scripts/zapchain
 USE_PERL5=	run
