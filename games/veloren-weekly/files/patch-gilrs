@@ -23,9 +23,9 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
    |                |      help: a similar name exists in the module: `event`
    |                no `epoll` in `sys`
 
---- Cargo.lock.orig	2024-04-03 20:23:33 UTC
+--- Cargo.lock.orig	2024-05-03 21:08:24 UTC
 +++ Cargo.lock
-@@ -2484,9 +2484,9 @@ name = "gilrs"
+@@ -2494,9 +2494,9 @@ dependencies = [
  
  [[package]]
  name = "gilrs"
@@ -37,7 +37,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  dependencies = [
   "fnv",
   "gilrs-core",
-@@ -2498,24 +2498,23 @@ name = "gilrs-core"
+@@ -2508,24 +2508,23 @@ dependencies = [
  
  [[package]]
  name = "gilrs-core"
@@ -66,10 +66,11 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  ]
  
  [[package]]
-@@ -3151,17 +3150,6 @@ dependencies = [
+@@ -3160,17 +3159,6 @@ dependencies = [
+  "libc",
  ]
  
- [[package]]
+-[[package]]
 -name = "inotify"
 -version = "0.10.2"
 -source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -80,11 +81,10 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
 - "libc",
 -]
 -
--[[package]]
+ [[package]]
  name = "inotify-sys"
  version = "0.1.5"
- source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -3212,9 +3200,9 @@ name = "io-kit-sys"
+@@ -3222,9 +3210,9 @@ dependencies = [
  
  [[package]]
  name = "io-kit-sys"
@@ -96,10 +96,12 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  dependencies = [
   "core-foundation-sys",
   "mach2",
-@@ -3971,6 +3959,17 @@ name = "nix"
+@@ -3979,6 +3967,17 @@ dependencies = [
+  "memoffset 0.6.5",
+ ]
  
- [[package]]
- name = "nix"
++[[package]]
++name = "nix"
 +version = "0.26.4"
 +source = "registry+https://github.com/rust-lang/crates.io-index"
 +checksum = "598beaf3cc6fdd9a5dfb1630c2800c7acd31df7aaf0f565796fba2b53ca1af1b"
@@ -109,12 +111,10 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
 + "libc",
 +]
 +
-+[[package]]
-+name = "nix"
+ [[package]]
+ name = "nix"
  version = "0.28.0"
- source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "ab2156c4fce2f8df6c499cc1c763e4394b7482525bf2a9701c9d79d215f519e4"
-@@ -4017,7 +4016,7 @@ dependencies = [
+@@ -4027,7 +4026,7 @@ dependencies = [
   "crossbeam-channel",
   "filetime",
   "fsevent-sys",
@@ -123,15 +123,6 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
   "kqueue",
   "libc",
   "log",
-@@ -6618,7 +6617,7 @@ dependencies = [
- source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "97fee6b57c6a41524a810daee9286c02d7752c4253064d0b05472833a438f675"
- dependencies = [
-- "cfg-if 1.0.0",
-+ "cfg-if 0.1.10",
-  "rand 0.8.5",
-  "static_assertions",
- ]
 --- cargo-crates/gilrs-0.10.2/examples/ev.rs.orig	1970-01-01 00:00:00 UTC
 +++ cargo-crates/gilrs-0.10.2/examples/ev.rs
 @@ -9,6 +9,8 @@ use std::process;
