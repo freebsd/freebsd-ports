@@ -471,6 +471,8 @@ include/thrift/lib/cpp2/server/TokenBucketConcurrencyController.h
 include/thrift/lib/cpp2/server/TransportRoutingHandler.h
 include/thrift/lib/cpp2/server/WeightedRequestPileQueue-inl.h
 include/thrift/lib/cpp2/server/WeightedRequestPileQueue.h
+include/thrift/lib/cpp2/server/metrics/MetricCollector.h
+include/thrift/lib/cpp2/server/metrics/tests/Utils.h
 include/thrift/lib/cpp2/server/peeking/PeekingManager.h
 include/thrift/lib/cpp2/server/peeking/TLSHelper.h
 include/thrift/lib/cpp2/server/test/util/MockServerConfigs.h
