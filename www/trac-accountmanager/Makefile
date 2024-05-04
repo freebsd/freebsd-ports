@@ -1,5 +1,5 @@
 PORTNAME=	accountmanager
-PORTVERSION=	0.5.${REV}
+PORTVERSION=	0.6.${REV}
 CATEGORIES=	www devel python
 MASTER_SITES=	https://trac-hacks.org/browser/accountmanagerplugin/
 PKGNAMEPREFIX=	trac-
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	tracd:www/trac
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
-REV=			18614
+REV=			18634
 WRKSRC=			${WRKDIR}/trunk
 USES=			python zip
 USE_PYTHON=		distutils autoplist
