@@ -8,6 +8,9 @@ MAINTAINER=	dan@algenta.com
 COMMENT=	Java DNS update client for the ThatIP protocol
 WWW=		https://www.thatip.com/
 
+DEPRECATED=	Obsolete, use dns/dnsmax-perl
+EXPIRATION_DATE=2022-05-31
+
 LICENSE=	GPLv2
 
 USES=		zip
