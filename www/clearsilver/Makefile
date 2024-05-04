@@ -9,7 +9,6 @@ COMMENT=	Fast, powerful, and language-neutral template system
 WWW=		http://www.clearsilver.net/
 
 DEPRECATED=     Abandonware and outdated, last release in 2017 no activity since 2019
-EXPIRATION_DATE=2024-06-30
 
 USES=		gmake
 GNU_CONFIGURE=	yes
