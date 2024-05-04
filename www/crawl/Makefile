@@ -11,7 +11,7 @@ WWW=		https://www.monkey.org/~provos/crawl/
 LICENSE=	BSD4CLAUSE
 
 DEPRECATED=	Abandonware and obsolete, last release in 2003 and no longer developed. Consider using ftp/wget
-EXPIRATION_DATE=2022-06-30
+EXPIRATION_DATE=2024-06-30
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 
