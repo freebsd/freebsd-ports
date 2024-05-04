@@ -58,6 +58,7 @@
     SUBDIR += apache-xmlbeans
     SUBDIR += apertium
     SUBDIR += apertium-eng
+    SUBDIR += aq
     SUBDIR += arianna
     SUBDIR += asciidoc
     SUBDIR += asm-xml
