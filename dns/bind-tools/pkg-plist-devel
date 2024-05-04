@@ -6,6 +6,7 @@ bin/dnssec-dsfromkey
 bin/dnssec-importkey
 bin/dnssec-keyfromlabel
 bin/dnssec-keygen
+bin/dnssec-ksr
 bin/dnssec-revoke
 bin/dnssec-settime
 bin/dnssec-signzone
@@ -16,15 +17,15 @@ bin/named-rrchecker
 bin/nsec3hash
 bin/nslookup
 bin/nsupdate
-lib/bind-tools/libdns-9.19.23.so
+lib/bind-tools/libdns-9.19.24.so
 lib/bind-tools/libdns.so
-lib/bind-tools/libisc-9.19.23.so
+lib/bind-tools/libisc-9.19.24.so
 lib/bind-tools/libisc.so
-lib/bind-tools/libisccc-9.19.23.so
+lib/bind-tools/libisccc-9.19.24.so
 lib/bind-tools/libisccc.so
-lib/bind-tools/libisccfg-9.19.23.so
+lib/bind-tools/libisccfg-9.19.24.so
 lib/bind-tools/libisccfg.so
-lib/bind-tools/libns-9.19.23.so
+lib/bind-tools/libns-9.19.24.so
 lib/bind-tools/libns.so
 share/man/man1/arpaname.1.gz
 share/man/man1/delv.1.gz
@@ -34,6 +35,7 @@ share/man/man1/dnssec-dsfromkey.1.gz
 share/man/man1/dnssec-importkey.1.gz
 share/man/man1/dnssec-keyfromlabel.1.gz
 share/man/man1/dnssec-keygen.1.gz
+share/man/man1/dnssec-ksr.1.gz
 share/man/man1/dnssec-revoke.1.gz
 share/man/man1/dnssec-settime.1.gz
 share/man/man1/dnssec-signzone.1.gz
