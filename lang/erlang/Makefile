@@ -1,6 +1,6 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	25.3.2.11
+DISTVERSION=	25.3.2.12
 PORTEPOCH=	4
 CATEGORIES=	lang parallel java
 DIST_SUBDIR=	erlang
@@ -17,7 +17,7 @@ CPE_PRODUCT=	erlang/otp
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	erlang:otp,corba
 GH_PROJECT=	otp:otp corba:corba
-GH_TAGNAME=	5.1:corba
+GH_TAGNAME=	5.2:corba
 USE_PERL5=	build
 USE_RC_SUBR=	epmd
 
@@ -85,10 +85,8 @@ JAVA_VARS=			USE_JAVA=yes
 KQUEUE_CONFIGURE_ENABLE=	kernel-poll
 MANPAGES_RUN_DEPENDS=		${LOCALBASE}/etc/man.d/erlang.conf:lang/erlang-man
 ODBC_LIB_DEPENDS=		libodbc.so:databases/unixODBC
-ODBC_USES=			localbase
+ODBC_USES=			localbase:ldflags
 ODBC_CONFIGURE_WITH=		odbc
-ODBC_CFLAGS=			-I/usr/local/include
-ODBC_LDFLAGS=			-L/usr/local/lib
 OPENSSL_USES=			ssl
 OPENSSL_CONFIGURE_WITH=		ssl=${OPENSSLBASE}
 PDF_IMPLIES=			FOP
