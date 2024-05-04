@@ -1,5 +1,5 @@
 PORTNAME=	schismtracker
-DISTVERSION=	20240426
+DISTVERSION=	20240503
 DISTVERSIONSUFFIX=	.source
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/schismtracker/schismtracker/releases/download/${PORTVERSION}/
