@@ -1,5 +1,5 @@
 PORTNAME=	rye
-DISTVERSION=	0.32.0
+DISTVERSION=	0.33.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -45,9 +45,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bzip2-0.4.4 \
 		bzip2-sys-0.1.11+1.0.8 \
 		cc-1.0.83 \
-		cfb-0.7.3 \
 		cfg-if-1.0.0 \
-		cfg_aliases-0.1.1 \
 		chacha20-0.9.1 \
 		chacha20poly1305-0.10.1 \
 		charset-0.1.3 \
@@ -61,7 +59,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		configparser-3.0.4 \
 		console-0.15.8 \
 		cookie-factory-0.3.2 \
-		core-foundation-sys-0.8.6 \
 		cpufeatures-0.2.12 \
 		crc32fast-1.3.2 \
 		crossbeam-utils-0.8.19 \
@@ -71,16 +68,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		curl-sys-0.4.71+curl-8.6.0 \
 		curve25519-dalek-4.1.2 \
 		curve25519-dalek-derive-0.1.1 \
-		darling-0.14.4 \
-		darling_core-0.14.4 \
-		darling_macro-0.14.4 \
 		dashmap-5.5.3 \
 		data-encoding-2.5.0 \
-		decompress-0.6.0 \
 		deranged-0.3.11 \
-		derive_builder-0.12.0 \
-		derive_builder_core-0.12.0 \
-		derive_builder_macro-0.12.0 \
 		deunicode-1.4.2 \
 		digest-0.10.7 \
 		displaydoc-0.2.4 \
@@ -100,7 +90,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		fluent-bundle-0.15.2 \
 		fluent-langneg-0.13.0 \
 		fluent-syntax-0.11.0 \
-		fnv-1.0.7 \
 		form_urlencoded-1.2.1 \
 		fs-err-2.11.0 \
 		fs2-0.4.3 \
@@ -121,11 +110,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		i18n-embed-0.14.1 \
 		i18n-embed-fl-0.7.0 \
 		i18n-embed-impl-0.8.3 \
-		ident_case-1.0.1 \
 		idna-0.5.0 \
 		indexmap-2.2.2 \
 		indicatif-0.17.7 \
-		infer-0.12.0 \
 		inout-0.1.3 \
 		insta-1.35.1 \
 		insta-cmd-0.5.0 \
@@ -150,9 +137,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.2 \
 		nix-0.27.1 \
-		nix-0.28.0 \
 		nom-7.1.3 \
-		ntapi-0.4.1 \
 		num-conv-0.1.0 \
 		number_prefix-0.4.0 \
 		object-0.32.2 \
@@ -234,7 +219,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
 		syn-2.0.48 \
-		sysinfo-0.30.7 \
 		tar-0.4.40 \
 		target-lexicon-0.12.13 \
 		tempfile-3.9.0 \
@@ -269,7 +253,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		untrusted-0.9.0 \
 		ureq-2.9.1 \
 		url-2.5.0 \
-		uuid-1.7.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		walkdir-2.4.0 \
@@ -285,8 +268,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-0.52.0 \
-		windows-core-0.52.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
@@ -316,9 +297,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		zeroize-1.7.0 \
 		zeroize_derive-1.4.2 \
 		zip-0.6.6 \
-		zstd-0.12.4 \
 		zstd-0.13.0 \
-		zstd-safe-6.0.6 \
 		zstd-safe-7.0.0 \
 		zstd-sys-2.0.9+zstd.1.5.5 \
 		monotrail-utils@git+https://github.com/konstin/poc-monotrail?rev=e0251f68c254f834180198b8677fcf85d4b6a844\#e0251f68c254f834180198b8677fcf85d4b6a844 \
