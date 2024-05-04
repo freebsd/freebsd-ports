@@ -14,8 +14,6 @@ USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	gleam-lang
 
-.include "Makefile.deps"
-
 RUSTFLAGS+=	--cap-lints=warn
 
 PORTSCOUT=	limit:[0-9.]+
