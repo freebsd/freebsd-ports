@@ -21,6 +21,18 @@ RUN_DEPENDS=	libfmt>0:devel/libfmt \
 
 USES=		cmake:testing compiler:c++14-lang localbase:ldflags tar:bz2
 
+EXTRACT_AFTER_ARGS=	--exclude dev/asio \
+			--exclude dev/asio_mxxru \
+			--exclude dev/catch2 \
+			--exclude dev/fmt \
+			--exclude dev/fmt_mxxru \
+			--exclude dev/nodejs/http_parser/http-parser.* \
+			--exclude dev/nodejs/http_parser_mxxru \
+			--exclude dev/rapidjson \
+			--exclude dev/rapidjson_mxxru \
+			--exclude dev/so_5 \
+			--exclude dev/timertt
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 WRKSRC_SUBDIR=	dev
 
@@ -38,18 +50,5 @@ SAMPLES_CXXFLAGS+=	-I${WRKSRC}/clara
 SAMPLES_CMAKE_BOOL=	RESTINIO_SAMPLE RESTINIO_INSTALL_SAMPLES
 SAMPLES_VARS_OFF=	NO_ARCH=yes
 SAMPLES_BUILD_DEPENDS=	json-dto>0:devel/json-dto
-
-post-extract:
-	${RM} -rf ${WRKSRC}/asio
-	${RM} -rf ${WRKSRC}/asio_mxxru
-	${RM} -rf ${WRKSRC}/catch2
-	${RM} -rf ${WRKSRC}/fmt
-	${RM} -rf ${WRKSRC}/fmt_mxxru
-	${RM} -rf ${WRKSRC}/nodejs/http_parser/http-parser.*
-	${RM} -rf ${WRKSRC}/nodejs/http_parser_mxxru
-	${RM} -rf ${WRKSRC}/rapidjson
-	${RM} -rf ${WRKSRC}/rapidjson_mxxru
-	${RM} -rf ${WRKSRC}/so_5
-	${RM} -rf ${WRKSRC}/timertt
 
 .include <bsd.port.mk>
