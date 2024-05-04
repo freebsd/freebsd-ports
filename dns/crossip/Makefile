@@ -9,7 +9,7 @@ COMMENT=	Java DNS update client for the ThatIP protocol
 WWW=		https://www.thatip.com/
 
 DEPRECATED=	Obsolete, use dns/dnsmax-perl
-EXPIRATION_DATE=2022-05-31
+EXPIRATION_DATE=2024-05-31
 
 LICENSE=	GPLv2
 
