@@ -21,7 +21,7 @@ load_rc_config $name
 : ${znapzend_enable:=NO}
 
 extra_commands=reload
-command_interpreter=/usr/local/bin/perl
+command_interpreter=%%LOCALBASE%%/bin/perl
 sig_reload=HUP
 pidfile=/var/run/${name}.pid
 command=%%PREFIX%%/bin/${name}
