@@ -1,6 +1,5 @@
 PORTNAME=	pixmap
-DISTVERSION=	0.4-12
-PORTREVISION=	1
+DISTVERSION=	0.4-13
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,6 +9,6 @@ WWW=		https://cran.r-project.org/web/packages/pixmap/
 
 LICENSE=	GPLv2
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>
