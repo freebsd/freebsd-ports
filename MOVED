@@ -3230,3 +3230,4 @@ irc/miau||2024-04-30|Has expired: Abandoned upstream, last release in 2010 and n
 sysutils/no-login||2024-04-30|Has expired: Obsolete, use nologin in base
 lang/gcc48||2024-05-01|Has expired: Unsupported by upstream since 2015. Use GCC 10 or newer instead
 multimedia/rubygem-paperclip-av-transcoder-rails50||2024-05-04|Has expired: Depends on deprecated port devel/rubygem-paperclip-rails50
+devel/rubygem-paperclip-rails50||2024-05-04|Has expired: Upstream repo archived Jul 13, 2023. Upstream recommends using Rails' own ActiveStorage

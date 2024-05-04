@@ -7286,7 +7286,6 @@
     SUBDIR += rubygem-paint
     SUBDIR += rubygem-pairing_heap
     SUBDIR += rubygem-paperclip-rails5
-    SUBDIR += rubygem-paperclip-rails50
     SUBDIR += rubygem-parser
     SUBDIR += rubygem-pastel
     SUBDIR += rubygem-patch_finder
