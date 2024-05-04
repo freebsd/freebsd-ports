@@ -1,3 +1,5 @@
-TIMESTAMP = 1708670363
+TIMESTAMP = 1714791425
 SHA256 (KDE/frameworks/6.0.0/kimageformats-6.0.0.tar.xz) = 1ddd28f2fb8ac2c95556f792418c2b6190a04050ac31b27aa82ea11c1af0879c
 SIZE (KDE/frameworks/6.0.0/kimageformats-6.0.0.tar.xz) = 15920356
+SHA256 (KDE/frameworks/6.0.0/c2c12b1d7e38728e7533f1346deca0270973d22d.patch) = d1f4dd9590a8b51acfde4a8c6e5a998c12305094a25234efcdab7908a681de1d
+SIZE (KDE/frameworks/6.0.0/c2c12b1d7e38728e7533f1346deca0270973d22d.patch) = 887
