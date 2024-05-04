@@ -15,12 +15,12 @@ include/e-antic/renfxx_fwd.hpp
 include/libeantic/local.h
 lib/libeantic.a
 lib/libeantic.so
-lib/libeantic.so.1
-lib/libeantic.so.1.0.5
+lib/libeantic.so.3
+lib/libeantic.so.3.0.2
 lib/libeanticxx.a
 lib/libeanticxx.so
-lib/libeanticxx.so.1
-lib/libeanticxx.so.1.0.5
+lib/libeanticxx.so.3
+lib/libeanticxx.so.3.0.2
 %%PYTHON_SITELIBDIR%%/pyeantic-%%VER%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
 %%PYTHON_SITELIBDIR%%/pyeantic-%%VER%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/pyeantic-%%VER%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
