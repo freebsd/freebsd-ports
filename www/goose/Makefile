@@ -9,6 +9,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line Google search utility
 WWW=		https://goose-search.sourceforge.net/
 
+BROKEN=		Relies on Google API serivce from 2003
+DEPRECATED=	Abandonware, last update in 2003 and upstream is dead
+EXPIRATION_DATE=2024-05-31
+
 RUN_DEPENDS=	p5-SOAP-Lite>=0:net/p5-SOAP-Lite \
 		p5-HTML-Tree>=0:www/p5-HTML-Tree \
 		p5-HTML-Format>=0:textproc/p5-HTML-Format \
