@@ -10,6 +10,7 @@ include/KF6/KWidgetsAddons/KCollapsibleGroupBox
 include/KF6/KWidgetsAddons/KColorButton
 include/KF6/KWidgetsAddons/KColorCombo
 include/KF6/KWidgetsAddons/KColumnResizer
+include/KF6/KWidgetsAddons/KContextualHelpButton
 include/KF6/KWidgetsAddons/KCursor
 include/KF6/KWidgetsAddons/KDateComboBox
 include/KF6/KWidgetsAddons/KDatePicker
@@ -94,6 +95,7 @@ include/KF6/KWidgetsAddons/kcollapsiblegroupbox.h
 include/KF6/KWidgetsAddons/kcolorbutton.h
 include/KF6/KWidgetsAddons/kcolorcombo.h
 include/KF6/KWidgetsAddons/kcolumnresizer.h
+include/KF6/KWidgetsAddons/kcontextualhelpbutton.h
 include/KF6/KWidgetsAddons/kcursor.h
 include/KF6/KWidgetsAddons/kdatecombobox.h
 include/KF6/KWidgetsAddons/kdatepicker.h

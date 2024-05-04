@@ -69,6 +69,7 @@ include/KF6/Attica/attica/metadata.h
 include/KF6/Attica/attica/person.h
 include/KF6/Attica/attica/platformdependent.h
 include/KF6/Attica/attica/platformdependent_v2.h
+include/KF6/Attica/attica/platformdependent_v3.h
 include/KF6/Attica/attica/postjob.h
 include/KF6/Attica/attica/privatedata.h
 include/KF6/Attica/attica/project.h
@@ -86,8 +87,8 @@ lib/cmake/KF6Attica/KF6AtticaConfigVersion.cmake
 lib/cmake/KF6Attica/KF6AtticaTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6Attica/KF6AtticaTargets.cmake
 lib/libKF6Attica.so
-lib/libKF6Attica.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6Attica.so.6
+lib/libKF6Attica.so.%%KDE_FRAMEWORKS_VERSION%%
 libdata/pkgconfig/KF6Attica.pc
 share/qlogging-categories6/attica.categories
 share/qlogging-categories6/attica.renamecategories

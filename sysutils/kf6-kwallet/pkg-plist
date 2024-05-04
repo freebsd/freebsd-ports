@@ -152,3 +152,4 @@ share/locale/zh_TW/LC_MESSAGES/kwallet6-query.mo
 share/locale/zh_TW/LC_MESSAGES/kwalletd6.mo
 share/qlogging-categories6/kwallet.categories
 share/qlogging-categories6/kwallet.renamecategories
+share/xdg-desktop-portal/portals/kwallet.portal
