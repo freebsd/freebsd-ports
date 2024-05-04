@@ -1,6 +1,6 @@
 PORTNAME=	fend
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.6
+DISTVERSION=	1.4.7
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,14 +15,14 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	printfn
 
-CARGO_CRATES=	base64-0.21.7 \
+CARGO_CRATES=	base64-0.22.1 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
-		bumpalo-3.15.4 \
-		cc-1.0.90 \
+		bumpalo-3.16.0 \
+		cc-1.0.96 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
-		clipboard-win-5.3.0 \
+		clipboard-win-5.3.1 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.6 \
 		ctrlc-3.4.4 \
@@ -30,20 +30,20 @@ CARGO_CRATES=	base64-0.21.7 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
 		error-code-3.2.0 \
-		fastrand-2.0.2 \
+		fastrand-2.1.0 \
 		fd-lock-4.0.2 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.1 \
-		getrandom-0.2.12 \
-		hashbrown-0.14.3 \
+		getrandom-0.2.14 \
+		hashbrown-0.14.5 \
 		home-0.5.9 \
 		idna-0.5.0 \
 		indexmap-2.2.6 \
 		instant-0.1.12 \
 		js-sys-0.3.69 \
 		lazy_static-1.4.0 \
-		libc-0.2.153 \
+		libc-0.2.154 \
 		linux-raw-sys-0.4.13 \
 		log-0.4.21 \
 		memchr-2.7.2 \
@@ -54,45 +54,45 @@ CARGO_CRATES=	base64-0.21.7 \
 		openssl-0.10.64 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.101 \
+		openssl-sys-0.9.102 \
 		percent-encoding-2.3.1 \
 		pkg-config-0.3.30 \
 		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.79 \
-		quote-1.0.35 \
+		proc-macro2-1.0.81 \
+		quote-1.0.36 \
 		radix_trie-0.2.1 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		ring-0.17.8 \
-		rustix-0.38.32 \
-		rustls-0.22.3 \
-		rustls-pki-types-1.4.1 \
-		rustls-webpki-0.102.2 \
+		rustix-0.38.34 \
+		rustls-0.22.4 \
+		rustls-pki-types-1.5.0 \
+		rustls-webpki-0.102.3 \
 		rustyline-14.0.0 \
 		schannel-0.1.23 \
-		security-framework-2.9.2 \
-		security-framework-sys-2.9.1 \
-		serde-1.0.197 \
-		serde_derive-1.0.197 \
+		security-framework-2.10.0 \
+		security-framework-sys-2.10.0 \
+		serde-1.0.200 \
+		serde_derive-1.0.200 \
 		serde_spanned-0.6.5 \
 		smallvec-1.13.2 \
 		spin-0.9.8 \
 		subtle-2.5.0 \
-		syn-2.0.55 \
+		syn-2.0.60 \
 		tempfile-3.10.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
 		toml-0.8.12 \
 		toml_datetime-0.6.5 \
-		toml_edit-0.22.9 \
+		toml_edit-0.22.12 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.23 \
 		unicode-segmentation-1.11.0 \
-		unicode-width-0.1.11 \
+		unicode-width-0.1.12 \
 		untrusted-0.9.0 \
-		ureq-2.9.6 \
+		ureq-2.9.7 \
 		url-2.5.0 \
 		utf8parse-0.2.1 \
 		vcpkg-0.2.15 \
@@ -105,15 +105,16 @@ CARGO_CRATES=	base64-0.21.7 \
 		web-sys-0.3.69 \
 		webpki-roots-0.26.1 \
 		windows-sys-0.52.0 \
-		windows-targets-0.52.4 \
-		windows_aarch64_gnullvm-0.52.4 \
-		windows_aarch64_msvc-0.52.4 \
-		windows_i686_gnu-0.52.4 \
-		windows_i686_msvc-0.52.4 \
-		windows_x86_64_gnu-0.52.4 \
-		windows_x86_64_gnullvm-0.52.4 \
-		windows_x86_64_msvc-0.52.4 \
-		winnow-0.6.5 \
+		windows-targets-0.52.5 \
+		windows_aarch64_gnullvm-0.52.5 \
+		windows_aarch64_msvc-0.52.5 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
+		windows_i686_msvc-0.52.5 \
+		windows_x86_64_gnu-0.52.5 \
+		windows_x86_64_gnullvm-0.52.5 \
+		windows_x86_64_msvc-0.52.5 \
+		winnow-0.6.7 \
 		zeroize-1.7.0
 
 OPENSSLINC=	/usr/include
