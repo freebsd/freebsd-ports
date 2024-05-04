@@ -6,10 +6,13 @@ DISTNAME=	iTop-${PORTVERSION}-4463
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, web based IT Service Management tool
-WWW=		https://www.combodo.com/
+WWW=		https://github.com/Combodo/iTop
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKDIR}/LICENSE
+
+DEPRECATED=	Outdated, current version is 5 years old and unsupported upstream
+EXPIRATION_DATE=2024-06-30
 
 RUN_DEPENDS=	${LOCALBASE}/bin/dot:graphics/graphviz
 
