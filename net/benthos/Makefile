@@ -1,5 +1,5 @@
 PORTNAME=	benthos
-PORTVERSION=	4.27.0
+DISTVERSION=	4.27.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -11,12 +11,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
-USE_GITHUB=	yes
-GH_ACCOUNT=	benthosdev
 USE_RC_SUBR=	benthos
 
 GO_MODULE=	github.com/benthosdev/benthos/v4
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_TARGET=	./cmd/benthos
 
 USERS=		benthos
