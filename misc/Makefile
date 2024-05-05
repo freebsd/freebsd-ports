@@ -22,6 +22,7 @@
     SUBDIR += bb
     SUBDIR += bbjd
     SUBDIR += bdelta
+    SUBDIR += bedrust
     SUBDIR += bestfit
     SUBDIR += bible-kjv
     SUBDIR += biblesync
