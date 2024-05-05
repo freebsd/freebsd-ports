@@ -1,11 +1,11 @@
---- Makefile.in.orig	2024-04-25 19:30:16 UTC
+--- Makefile.in.orig	2024-05-05 20:54:52 UTC
 +++ Makefile.in
-@@ -370,7 +370,7 @@ AM_DISTCHECK_CONFIGURE_FLAGS = \
- 	--enable-cvg \
- 	--enable-gotd
- 
--SUBDIRS = compat libexec got tog gotadmin template gotwebd \
-+SUBDIRS = compat libexec got tog gotadmin template \
- 	$(am__append_1) $(am__append_2)
- EXTRA_DIST = CHANGES CHANGELOG LICENCE README.portable util/got-portable-ver.sh
- LDADD = $(LIBOBJS) $(am__append_3)
+@@ -366,7 +366,7 @@ AM_DISTCHECK_CONFIGURE_FLAGS = --enable-cvg
+ # whether the end-user will enable this; this step is here so that all the
+ # relevant files are included in the distribution.
+ AM_DISTCHECK_CONFIGURE_FLAGS = --enable-cvg
+-SUBDIRS = compat gitwrapper got gotadmin gotctl gotd gotsh gotwebd \
++SUBDIRS = compat got gotadmin \
+ 	libexec template tog $(am__append_1)
+ EXTRA_DIST = CHANGES \
+ 	     CHANGELOG \

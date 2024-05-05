@@ -1,5 +1,5 @@
 PORTNAME=	got
-DISTVERSION=	0.98.2
+DISTVERSION=	0.99
 CATEGORIES=	devel
 MASTER_SITES=	https://gameoftrees.org/releases/portable/
 DISTNAME=	got-portable-${DISTVERSION}
@@ -16,6 +16,14 @@ USES=		localbase pkgconfig ssl
 CONFLICTS_INSTALL=	p5-App-GitGot
 
 GNU_CONFIGURE=	Yes
+
+# The regression test suite requires:
+#  installed got
+#  installed git
+#  installed perl and HTTP::Daemon
+#  ssh to 127.0.0.1
+tests:
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} tests)
 
 .include <bsd.port.pre.mk>
 
