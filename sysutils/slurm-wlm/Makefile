@@ -150,6 +150,9 @@ pre-configure:
 .elif ${ARCH} == powerpc64
 	${FIND} ${LLD2FIX:C|^|${WRKSRC}/src/|} -name Makefile.in | ${XARGS}	\
 		${REINPLACE_CMD} -e 's|-r -o|-r -m elf64ppc -o|'
+.elif ${ARCH} == aarch64
+	${FIND} ${LLD2FIX:C|^|${WRKSRC}/src/|} -name Makefile.in | ${XARGS}	\
+		${REINPLACE_CMD} -e 's|-r -o|-r -m aarch64elf -o|'
 .else
 	${FIND} ${LLD2FIX:C|^|${WRKSRC}/src/|} -name Makefile.in | ${XARGS}	\
 		${REINPLACE_CMD} -e 's|-r -o|-r -m elf_${ARCH} -o|'
