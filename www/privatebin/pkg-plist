@@ -10,6 +10,8 @@
 %%WWWDIR%%/browserconfig.xml
 %%WWWDIR%%/cfg/.htaccess
 %%WWWDIR%%/cfg/conf.sample.php
+%%WWWDIR%%/composer.json
+%%WWWDIR%%/composer.lock
 %%WWWDIR%%/css/bootstrap/bootstrap-3.4.1.css
 %%WWWDIR%%/css/bootstrap/bootstrap-theme-3.4.1.css
 %%WWWDIR%%/css/bootstrap/darkstrap-0.9.3.css
@@ -19,6 +21,10 @@
 %%WWWDIR%%/css/bootstrap/fonts/glyphicons-halflings-regular.woff
 %%WWWDIR%%/css/bootstrap/fonts/glyphicons-halflings-regular.woff2
 %%WWWDIR%%/css/bootstrap/privatebin.css
+%%WWWDIR%%/css/bootstrap5/bootstrap-5.3.3.css
+%%WWWDIR%%/css/bootstrap5/bootstrap.rtl-5.3.3.css
+%%WWWDIR%%/css/bootstrap5/privatebin.css
+%%WWWDIR%%/css/common.css
 %%WWWDIR%%/css/noscript.css
 %%WWWDIR%%/css/prettify/desert.css
 %%WWWDIR%%/css/prettify/doxy.css
@@ -62,6 +68,7 @@
 %%WWWDIR%%/i18n/tr.json
 %%WWWDIR%%/i18n/uk.json
 %%WWWDIR%%/i18n/zh.json
+%%WWWDIR%%/img/bootstrap-icons.svg
 %%WWWDIR%%/img/android-chrome-192x192.png
 %%WWWDIR%%/img/android-chrome-512x512.png
 %%WWWDIR%%/img/apple-touch-icon.png
@@ -90,9 +97,11 @@
 %%WWWDIR%%/js/base-x-4.0.0.js
 %%WWWDIR%%/js/base64-1.7.js
 %%WWWDIR%%/js/bootstrap-3.4.1.js
+%%WWWDIR%%/js/bootstrap-5.3.3.js
 %%WWWDIR%%/js/comment.jsonld
 %%WWWDIR%%/js/commentmeta.jsonld
-%%WWWDIR%%/js/jquery-3.7.0.js
+%%WWWDIR%%/js/dark-mode-switch.js
+%%WWWDIR%%/js/jquery-3.7.1.js
 %%WWWDIR%%/js/kjua-0.9.0.js
 %%WWWDIR%%/js/legacy.js
 %%WWWDIR%%/js/package-lock.json
@@ -101,7 +110,7 @@
 %%WWWDIR%%/js/pastemeta.jsonld
 %%WWWDIR%%/js/prettify.js
 %%WWWDIR%%/js/privatebin.js
-%%WWWDIR%%/js/purify-3.0.8.js
+%%WWWDIR%%/js/purify-3.1.2.js
 %%WWWDIR%%/js/rawinflate-0.3.js
 %%WWWDIR%%/js/showdown-2.1.0.js
 %%WWWDIR%%/js/types.jsonld
@@ -135,6 +144,7 @@
 %%WWWDIR%%/robots.txt
 %%WWWDIR%%/tpl/.htaccess
 %%WWWDIR%%/tpl/bootstrap.php
+%%WWWDIR%%/tpl/bootstrap5.php
 %%WWWDIR%%/tpl/page.php
 %%WWWDIR%%/tpl/yourlsproxy.php
 %%WWWDIR%%/vendor/.htaccess
