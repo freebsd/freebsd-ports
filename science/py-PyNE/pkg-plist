@@ -231,7 +231,6 @@ lib/libpyne.so
 %%PYTHON_SITELIBDIR%%/pyne/source.pxd
 %%PYTHON_SITELIBDIR%%/pyne/source.so
 %%PYTHON_SITELIBDIR%%/pyne/source_sampling.pxd
-%%PYTHON_SITELIBDIR%%/pyne/source_sampling.so
 %%PYTHON_SITELIBDIR%%/pyne/spatialsolver.py
 %%PYTHON_SITELIBDIR%%/pyne/spectanalysis.py
 %%PYTHON_SITELIBDIR%%/pyne/stlcontainers.pxd
