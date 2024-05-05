@@ -1,2 +1,5 @@
-SHA256 (tkcvs-8.2.3.tar.gz) = 4bfb29dd9ffbbbc1e6e611e1c772af745d742d336e797bf056dbf70116b8e32a
-SIZE (tkcvs-8.2.3.tar.gz) = 570910
+TIMESTAMP = 1709844381
+SHA256 (tkcvs_9.3.3.tar.gz) = 350cf2aa37b3aa2d7b84d6f971b7108c0914eb66d5523d28a81146dc410978c9
+SIZE (tkcvs_9.3.3.tar.gz) = 671572
+SHA256 (tkcvs.tgz) = 0f47cc5605445ba06d4d1b8cb5ddad878dec1a9a274e3590a686b8dbbbff9b2e
+SIZE (tkcvs.tgz) = 6544
