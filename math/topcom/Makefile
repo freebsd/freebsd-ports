@@ -1,13 +1,12 @@
 PORTNAME=	topcom
-DISTVERSION=	0.17.8
-PORTREVISION=	1
+DISTVERSION=	1.1.2
 CATEGORIES=	math
-MASTER_SITES=	http://www.rambau.wm.uni-bayreuth.de/Software/
-DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
+MASTER_SITES=	https://www.wm.uni-bayreuth.de/de/team/rambau_joerg/TOPCOM-Downloads/
+DISTNAME=	${PORTNAME:tu}-${DISTVERSION:S/./_/g}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Computing triangulations of point configurations and oriented matroids
-WWW=		http://www.rambau.wm.uni-bayreuth.de/TOPCOM/
+WWW=		https://www.wm.uni-bayreuth.de/de/team/rambau_joerg/TOPCOM/index.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -15,8 +14,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcddgmp.so:math/cddlib \
 		libgmp.so:math/gmp
 
-USES=		autoreconf gmake localbase:ldflags
+USES=		autoreconf gmake localbase:ldflags tar:tgz
+
 GNU_CONFIGURE=	yes
+
+EXTRACT_AFTER_ARGS=	--exclude ${PORTNAME}-${DISTVERSION}/external \
+			--no-same-owner --no-same-permissions
 
 CFLAGS+=	-I${LOCALBASE}/include/cdd/
 LDFLAGS+=	-lgmp -lgmpxx -lcddgmp
@@ -31,9 +34,6 @@ SOPLEX_DESC=		Build with SoPlex linear programming problem solver
 SOPLEX_CXXFLAGS=	-I${LOCALBASE}/include/soplex
 SOPLEX_LIB_DEPENDS=	libsoplex.so:math/SoPlex
 SOPLEX_BROKEN=		not compatible with SoPlex-5.0.2 - missing header, reported to the upstream author vie e-mail
-
-post-extract:
-	@${RM} -r ${WRKSRC}/external
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile*" \
