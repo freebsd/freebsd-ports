@@ -275,7 +275,7 @@ svxlink:*:331:
 keycloak:*:332:
 honeytrap:*:333:
 percona:*:334:
-# free: 335
+benthos:*:335:
 # free: 336
 daapd:*:337:
 murmur:*:338:
