@@ -1,0 +1,7 @@
+--- CMakeLists.txt.orig	2024-05-05 07:06:42 UTC
++++ CMakeLists.txt
+@@ -12,4 +12,3 @@ add_subdirectory(TopologicCore)
+ 
+ # Sub-projects
+ add_subdirectory(TopologicCore)
+-add_subdirectory(TopologicPythonBindings)

@@ -1,8 +1,6 @@
 PORTNAME=	topologic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0-3
-PORTREVISION=	2
-DISTVERSIONSUFFIX=	-gdbddce9
+DISTVERSION=	6.0.2
 CATEGORIES=	math
 PKGNAMESUFFIX=	-space-modeling-library
 
@@ -13,11 +11,12 @@ WWW=		https://topologic.app/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libTKernel.so:cad/opencascade \
+LIB_DEPENDS=	libtbb.so:devel/onetbb \
+		libTKernel.so:cad/opencascade \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		cmake compiler:c++14-lang localbase:ldflags
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/TopologicCore
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wassimj
