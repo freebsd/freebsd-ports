@@ -1,3 +1,3 @@
-TIMESTAMP = 1542734899
-SHA256 (torsocks-2.3.0.tar.xz) = b9f1b981d6b3fd4e1820de1eee325f8a7038c84765d5a6cd9af12571d5cc3622
-SIZE (torsocks-2.3.0.tar.xz) = 313072
+TIMESTAMP = 1714938830
+SHA256 (core-torsocks-afe9dea542a8b495dbbbbe5e4b98a33cde06729b_GL0.tar.gz) = 38ac126f992cffcd4a94994e55e9a3fd1fc9d46e11a26d06d4680ef4c32f48f7
+SIZE (core-torsocks-afe9dea542a8b495dbbbbe5e4b98a33cde06729b_GL0.tar.gz) = 119001
