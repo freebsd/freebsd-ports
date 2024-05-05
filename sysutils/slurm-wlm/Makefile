@@ -143,8 +143,19 @@ pre-configure:
 		${ECHO_CMD} "********************************************"; \
 		false; \
 	fi
+.if ${ARCH} == powerpc64le
+	${FIND} ${LLD2FIX:C|^|${WRKSRC}/src/|} -name Makefile.in | ${XARGS}	\
+		${REINPLACE_CMD} -e 's|-r -o|-r -m elf64lppc -o|'
+.elif ${ARCH} == powerpc64
+	${FIND} ${LLD2FIX:C|^|${WRKSRC}/src/|} -name Makefile.in | ${XARGS}	\
+		${REINPLACE_CMD} -e 's|-r -o|-r -m elf64ppc -o|'
+.elif ${ARCH} == aarch64
+	${FIND} ${LLD2FIX:C|^|${WRKSRC}/src/|} -name Makefile.in | ${XARGS}	\
+		${REINPLACE_CMD} -e 's|-r -o|-r -m aarch64elf -o|'
+.else
 	${FIND} ${LLD2FIX:C|^|${WRKSRC}/src/|} -name Makefile.in | ${XARGS}	\
 		${REINPLACE_CMD} -e 's|-r -o|-r -m elf_${ARCH} -o|'
+.endif
 	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS}	\
 		${REINPLACE_CMD} -e 's|htmldir = \$${datadir.*$$|htmldir = @htmldir@|'
 
