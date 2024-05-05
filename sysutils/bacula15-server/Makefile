@@ -133,10 +133,10 @@ MTX_RUN_DEPENDS=	${LOCALBASE}/sbin/mtx:misc/mtx
 
 .endif
 
-.include <bsd.port.pre.mk>
+S3_CONFIGURE_ARGS=	--enable-s3
+S3_LIB_DEPENDS=	libs3.so:sysutils/bacula-libs3
 
-MS3_CONFIGURE_ARGS=	--enable-s3
-MS3_LIB_DEPENDS=	libs3.so:sysutils/bacula-libs3
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_CLIENT_ONLY)
 MP8+=		bacula.8 bacula-fd.8 bconsole.8
