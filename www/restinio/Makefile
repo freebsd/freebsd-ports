@@ -21,17 +21,18 @@ RUN_DEPENDS=	libfmt>0:devel/libfmt \
 
 USES=		cmake:testing compiler:c++14-lang localbase:ldflags tar:bz2
 
-EXTRACT_AFTER_ARGS=	--exclude dev/asio \
-			--exclude dev/asio_mxxru \
-			--exclude dev/catch2 \
-			--exclude dev/fmt \
-			--exclude dev/fmt_mxxru \
-			--exclude dev/nodejs/http_parser/http-parser.* \
-			--exclude dev/nodejs/http_parser_mxxru \
-			--exclude dev/rapidjson \
-			--exclude dev/rapidjson_mxxru \
-			--exclude dev/so_5 \
-			--exclude dev/timertt
+EXTRACT_AFTER_ARGS=	--exclude ${PORTNAME}-${DISTVERSION}/dev/asio \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/asio_mxxru \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/catch2 \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/fmt \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/fmt_mxxru \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/nodejs/http_parser/http_parser.* \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/nodejs/http_parser_mxxru \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/rapidjson \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/rapidjson_mxxru \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/so_5 \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/timertt \
+			--no-same-owner --no-same-permissions
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 WRKSRC_SUBDIR=	dev
