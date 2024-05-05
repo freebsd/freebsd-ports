@@ -1,3 +1,3 @@
-TIMESTAMP = 1712628689
-SHA256 (fastapi-0.110.1.tar.gz) = 6feac43ec359dfe4f45b2c18ec8c94edb8dc2dfc461d417d9e626590c071baad
-SIZE (fastapi-0.110.1.tar.gz) = 11977267
+TIMESTAMP = 1714736297
+SHA256 (fastapi-0.111.0.tar.gz) = b9db9dd147c91cb8b769f7183535773d8741dd46f9dc6676cd82eab510228cd7
+SIZE (fastapi-0.111.0.tar.gz) = 288414
