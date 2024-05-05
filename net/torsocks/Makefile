@@ -1,6 +1,6 @@
 PORTNAME=	torsocks
 DISTVERSION=	2.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net security
 MASTER_SITES=	https://people.torproject.org/~dgoulet/${PORTNAME}/
 
@@ -15,7 +15,7 @@ USES=		alias gmake libtool tar:xz
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/torsocks
 
 SUB_FILES=	pkg-message
 
