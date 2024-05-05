@@ -63,10 +63,11 @@ TCMALLOC_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
 
 PORTSCOUT=	limit:^.*[0-9]\.[0-9] # prevent tags like 'show'
 
-post-install: # workaround for https://github.com/chipsalliance/Surelog/issues/3596
-	@${RMDIR} \
-		${STAGEDIR}${DATADIR}/pkg/work \
-		${STAGEDIR}${DATADIR}/pkg \
+post-install:
+	# workaround for https://github.com/chipsalliance/Surelog/issues/3965
+	# - surelog fails to create package files on some systems, and succeeds on others
+	# - so we remove this directory altogether for now
+	@${RM} -r \
 		${STAGEDIR}${DATADIR}
 
 post-test:
