@@ -550,6 +550,7 @@ bin/column_cat
 bin/compute_ROI_stats.tcsh
 bin/convert_cdiflist_to_grads.py
 bin/count
+bin/count_afni
 bin/dcm2niix_afni
 bin/demo.fixed.niml.do
 bin/demo.mobile.niml.do
@@ -685,6 +686,7 @@ bin/unWarpEPI.py
 bin/uniq_images
 bin/waver
 bin/whereami
+bin/whereami_afni
 bin/whirlgif
 bin/xmat_tool.py
 etc/mri/afni.cshrc
