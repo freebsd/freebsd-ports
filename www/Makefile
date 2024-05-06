@@ -491,6 +491,7 @@
     SUBDIR += onionshare-cli
     SUBDIR += onlyoffice-documentserver
     SUBDIR += opencart
+    SUBDIR += openemr
     SUBDIR += openresty
     SUBDIR += orangehrm
     SUBDIR += osrm-backend
