@@ -39,8 +39,6 @@ ALL_TARGET=	default
 
 DISLIN_VERSION=	11.5
 
-MAKE_JOBS_UNSAFE=	yes # fix build on quarterly (not latest) when mod_2f2.mod isn't found due to commands mis-order
-
 BINARY_ALIAS=	ifort=gfortran${GCC_DEFAULT} \
 		gcc=${CC}
 
