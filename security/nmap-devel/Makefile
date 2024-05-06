@@ -21,6 +21,11 @@ LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror pkg-sell
 LIB_DEPENDS=	libpcre2-16.so:devel/pcre2
 
 USES=		gmake cpe libtool
+
+# XXX limit results if we do a grep in the sources!
+EXTRACT_AFTER_ARGS=	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/mswin32 \
+			--no-same-owner --no-same-permissions
+
 USE_GITHUB=	yes
 GH_TAGNAME=	036714cde
 NMAP_COMMIT_DATE=	20240327
@@ -57,10 +62,6 @@ DOCS=	CHANGELOG HACKING
 STRIP_FILES+=	nmap nping
 
 .include <bsd.port.options.mk>
-
-# XXX limit results if we do a grep in the sources!
-post-extract:
-	@${RM} -r ${WRKSRC}/mswin32
 
 .if exists(/usr/lib/libibverbs.a)
 # Link with libibverbs is needed by static libpcap
