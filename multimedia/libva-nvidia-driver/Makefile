@@ -1,16 +1,10 @@
 PORTNAME=	libva-nvidia-driver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.11
+DISTVERSION=	0.0.12
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	8e8d49e11772.patch:-p1 # https://github.com/elFarto/nvidia-vaapi-driver/pull/220
-PATCHFILES+=	5dc46a5a2fab.patch:-p1 # https://github.com/elFarto/nvidia-vaapi-driver/pull/220
-PATCHFILES+=	22be7754bee5.patch:-p1 # https://github.com/elFarto/nvidia-vaapi-driver/pull/220
-PATCHFILES+=	119a5a3ac448.patch:-p1 # https://github.com/elFarto/nvidia-vaapi-driver/pull/220
-PATCHFILES+=	39c08a61a888.patch:-p1 # https://github.com/elFarto/nvidia-vaapi-driver/pull/220
-PATCHFILES+=	fc1afd905f8c.patch:-p1 # https://github.com/elFarto/nvidia-vaapi-driver/pull/220
-PATCHFILES+=	97430842d11a.patch:-p1 # https://github.com/elFarto/nvidia-vaapi-driver/pull/220
+PATCHFILES+=	27a41fc60989.patch:-p1 # https://github.com/elFarto/nvidia-vaapi-driver/pull/291
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	NVDEC-based backend for VAAPI
