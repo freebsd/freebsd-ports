@@ -1,6 +1,6 @@
 PORTNAME=	supertuxkart
 DISTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/supertuxkart/stk-code/releases/download/${DISTVERSION}/
 DISTNAME=	SuperTuxKart-${DISTVERSION}-src
@@ -14,12 +14,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_i386=	ld: error: cannot preempt symbol: alcOpenDevice
 
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
-		libcurl.so:ftp/curl \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libangelscript.so:lang/angelscript \
 		libmcpp.so:devel/mcpp
 
-USES=		alias cmake compiler:c++11-lib pkgconfig ssl tar:xz
+USES=		alias cmake compiler:c++11-lib pkgconfig sqlite ssl tar:xz
 CMAKE_OFF=	USE_WIIUSE
 CMAKE_OFF+=	BUILD_RECORDER
 CMAKE_OFF+=	USE_SYSTEM_ENET  # bundled enet is required for IPv6 support
@@ -52,12 +51,8 @@ SERVER_ONLY_USE_OFF=	GL=gl,glu SDL=sdl2 XORG=x11,xrandr
 
 # make sure that bundled libraries are not used
 post-extract:
-.for bundled in wiiuse angelscipt mcpp
+.for bundled in wiiuse angelscript mcpp
 	@${RM} -rf ${WRKSRC}/lib/${bundled}
 .endfor
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|Icon=.*|Icon=${PREFIX}/share/icons/hicolor/128x128/apps/supertuxkart.png|' \
-		${WRKSRC}/data/${PORTNAME}.desktop
 
 .include <bsd.port.mk>
