@@ -223,6 +223,8 @@ share/locale/eo/LC_MESSAGES/purpose_kdeconnectsms.mo
 share/locale/eo/LC_MESSAGES/purpose_ktp-sendfile.mo
 share/locale/eo/LC_MESSAGES/purpose_nextcloud.mo
 share/locale/eo/LC_MESSAGES/purpose_pastebin.mo
+share/locale/eo/LC_MESSAGES/purpose_phabricator.mo
+share/locale/eo/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/eo/LC_MESSAGES/purpose_saveas.mo
 share/locale/eo/LC_MESSAGES/purpose_youtube.mo
 share/locale/es/LC_MESSAGES/libpurpose_quick.mo
@@ -534,6 +536,8 @@ share/locale/ro/LC_MESSAGES/purpose_kdeconnectsms.mo
 share/locale/ro/LC_MESSAGES/purpose_ktp-sendfile.mo
 share/locale/ro/LC_MESSAGES/purpose_nextcloud.mo
 share/locale/ro/LC_MESSAGES/purpose_pastebin.mo
+share/locale/ro/LC_MESSAGES/purpose_phabricator.mo
+share/locale/ro/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/ro/LC_MESSAGES/purpose_saveas.mo
 share/locale/ro/LC_MESSAGES/purpose_youtube.mo
 share/locale/ru/LC_MESSAGES/libpurpose_quick.mo
