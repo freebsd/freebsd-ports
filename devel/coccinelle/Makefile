@@ -1,11 +1,13 @@
 PORTNAME=	coccinelle
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program matching and transformation engine
 WWW=		http://coccinelle.lip6.fr/
+
+EXTRA_PATCHES=	${FILESDIR}/0001-Fix-263-wrong-default-path-for-COCCINELLE_HOME.patch:-p1
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
@@ -23,7 +25,6 @@ BINARY_ALIAS=	make=${LOCALBASE}/bin/gmake
 SHEBANG_FILES=	tools/pycocci
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	PYTHON="${PYTHON_CMD}" PYVER="${PYTHON_VER}"
 MAKE_ARGS=	PYTHON_VERSION="${PYTHON_VER}"
 
