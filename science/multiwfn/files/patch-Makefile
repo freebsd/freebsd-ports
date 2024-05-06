@@ -1,6 +1,6 @@
 --- Makefile.orig	2023-02-06 10:17:38 UTC
 +++ Makefile
-@@ -1,6 +1,6 @@
+@@ -1,6 +1,6 @@ SIMD = -msse3
  SIMD = -msse3
 -OPT = -O2 -qopenmp -qopenmp-link=static -threads -qopt-matmul $(SIMD) -diag-disable 8290,8291,6371,10316,6178 -fpp -mkl -static-intel -DINTEL_MKL
 -OPT1 = -O1 -qopenmp -qopenmp-link=static -threads $(SIMD) -diag-disable 8290,8291,6371,10316,6178 -fpp -mkl -static-intel -DINTEL_MKL
@@ -9,7 +9,7 @@
  #Options in the next line is for debugging purpose
  #OPTDBG = -O0 -qopenmp -diag-disable 8290,8291,6371 -threads -qopenmp-link=static -debug all -g -traceback -check all -fstack-protector -fpp -mkl -static-intel
  
-@@ -43,10 +43,10 @@ default : $(objects)
+@@ -43,10 +43,10 @@ GUI: $(objects)
  	@echo " ------------------------------------------------------ "
  
  GUI: $(objects)
@@ -22,7 +22,16 @@
  
  clean:
  	rm -f $(EXE) *.o *.mod
-@@ -230,7 +230,7 @@ cp2kmate.o : cp2kmate.f90 $(modules)
+@@ -80,7 +80,7 @@ util.o : util.f90 define.o
+ util.o : util.f90 define.o
+ 	$(FC) $(OPT) -c util.f90
+ 
+-function.o : function.f90 define.o util.o Bspline.o libreta.o
++function.o : function.f90 define.o util.o Bspline.o libreta.o 2F2.f90.o # add 2F2.f90.o to fix dependency problem when mod_2f2.mod isn't found
+ 	$(FC) $(OPT) -c function.f90
+ 
+ plot.o : plot.f90 define.o util.o
+@@ -230,7 +230,7 @@ noGUI/dislin_d_empty.o : noGUI/dislin_d_empty.f90
  
  
  noGUI/dislin_d_empty.o : noGUI/dislin_d_empty.f90
@@ -31,7 +40,7 @@
  
  
  # Interfaces of libreta-ESP to Multiwfn
-@@ -241,10 +241,10 @@ libreta.o: ${LIBRETAPATH}/libreta.f90 hrr_012345.o blo
+@@ -241,10 +241,10 @@ hrr_012345.o: ${LIBRETAPATH}/hrr_012345.f90
  # Pure libreta files for ESP
  
  hrr_012345.o: ${LIBRETAPATH}/hrr_012345.f90
