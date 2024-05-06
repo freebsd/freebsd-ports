@@ -1,6 +1,6 @@
---- OrthancServer/Resources/Configuration.json.orig	2021-01-29 09:36:16 UTC
+--- OrthancServer/Resources/Configuration.json.orig	2023-07-04 14:39:31 UTC
 +++ OrthancServer/Resources/Configuration.json
-@@ -10,12 +10,12 @@
+@@ -15,12 +15,12 @@
    // Path to the directory that holds the heavyweight files (i.e. the
    // raw DICOM instances). Backslashes must be either escaped by
    // doubling them, or replaced by forward slashes "/".
@@ -15,7 +15,7 @@
  
    // Path to the directory where Orthanc stores its large temporary
    // files. The content of this folder can be safely deleted once
-@@ -53,6 +53,7 @@
+@@ -83,6 +83,7 @@
    // find shared libraries. Backslashes must be either escaped by
    // doubling them, or replaced by forward slashes "/".
    "Plugins" : [
