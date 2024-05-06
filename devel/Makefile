@@ -454,6 +454,7 @@
     SUBDIR += containers
     SUBDIR += convco
     SUBDIR += corrade
+    SUBDIR += corrosion
     SUBDIR += courier-unicode
     SUBDIR += coursier
     SUBDIR += covtool
