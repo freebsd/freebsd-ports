@@ -1,6 +1,6 @@
 PORTNAME=	quagga
 PORTVERSION=	1.2.4
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/Quagga/quagga/releases/download/${DISTNAME}/ \
 		http://www.grosbein.net/freebsd/distfiles/ \
@@ -116,7 +116,7 @@ post-install:
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLEGACY}
-CONFLICTS=		frr7 openbgpd pimd
+CONFLICTS=		frr* openbgpd pimd
 USE_LDCONFIG=		yes
 .else
 PKGNAMESUFFIX=		-compat
