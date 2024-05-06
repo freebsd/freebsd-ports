@@ -119,6 +119,8 @@ PROC2FIX=	common/callerid.c common/fd.c common/fetch_config.c	\
 LLD2FIX=	api plugins/openapi sacctmgr sackd scontrol scrontab scrun	\
 		slurmctld slurmd/slurmd squeue
 
+.include <bsd.port.options.mk>
+
 # Hack around nonfunctional --disable-gtktest flag
 pre-configure-GUI-off:
 	${REINPLACE_CMD} -e 's|min_gtk_version=.*|min_gtk_version=2000.0.0|' \
