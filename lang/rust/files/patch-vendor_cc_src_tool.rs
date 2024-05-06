@@ -8,13 +8,12 @@ until LLVM can be updated to use libc++ by default.
 
 https://reviews.llvm.org/D77776
 
---- vendor/cc/src/lib.rs.orig	2021-03-04 20:58:54 UTC
-+++ vendor/cc/src/lib.rs
-@@ -2659,24 +2659,7 @@ impl Tool {
-     }
+--- vendor/cc/src/tool.rs.orig	2024-03-18 11:23:17 UTC
++++ vendor/cc/src/tool.rs
+@@ -122,22 +122,7 @@ impl Tool {
+         };
  
-     fn with_features(path: PathBuf, clang_driver: Option<&str>, cuda: bool) -> Self {
--        // Try to detect family of the tool from its name, falling back to Gnu.
+         // Try to detect family of the tool from its name, falling back to Gnu.
 -        let family = if let Some(fname) = path.file_name().and_then(|p| p.to_str()) {
 -            if fname.contains("clang-cl") {
 -                ToolFamily::Msvc { clang_cl: true }
@@ -26,13 +25,12 @@ https://reviews.llvm.org/D77776
 -                    _ => ToolFamily::Clang,
 -                }
 -            } else {
--                ToolFamily::Gnu
+-                detect_family(&path)
 -            }
 -        } else {
--            ToolFamily::Gnu
+-            detect_family(&path)
 -        };
--
 +        let family = ToolFamily::Gnu;
+ 
          Tool {
-             path: path,
-             cc_wrapper_path: None,
+             path,

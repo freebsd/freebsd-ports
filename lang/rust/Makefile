@@ -1,6 +1,6 @@
 PORTNAME=	rust
-PORTVERSION?=	1.77.0
-PORTREVISION?=	1
+PORTVERSION?=	1.78.0
+PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		https://dev-static.rust-lang.org/dist/:src \
@@ -34,7 +34,6 @@ CPE_VENDOR=	rust-lang
 
 MAKE_ENV=	DESTDIR=${STAGEDIR} \
 		LIBGIT2_NO_PKG_CONFIG=1 \
-		RUST_BACKTRACE=1 \
 		OPENSSL_DIR="${OPENSSLBASE}"
 TEST_ENV=	${MAKE_ENV} \
 		ALLOW_NONZERO_RLIMIT_CORE=1
@@ -68,8 +67,8 @@ WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown 
 			_RUST_TARGETS+=wasm32-unknown-unknown
 
 # See WRKSRC/src/stage0.json for the date and version values
-BOOTSTRAPS_DATE?=		2024-02-08
-RUST_BOOTSTRAP_VERSION?=	1.76.0
+BOOTSTRAPS_DATE?=		2024-03-21
+RUST_BOOTSTRAP_VERSION?=	1.77.0
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
@@ -107,6 +106,10 @@ MAKE_ENV+=	RUSTFLAGS="-L/usr/local/lib/gcc${GCC_DEFAULT}"
 .elif !defined(NIGHTLY_DATE)
 _RUST_TOOLS+=	rls
 _COMPONENTS+=	rls-${_PACKAGE_VERS}-${_RUST_TARGET}
+.endif
+
+.if ${ARCH} != powerpc64le
+MAKE_ENV+=	RUST_BACKTRACE=1
 .endif
 
 # per https://rust-lang.github.io/rustup/concepts/components.html
