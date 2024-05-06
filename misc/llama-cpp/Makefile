@@ -10,6 +10,8 @@ WWW=		https://github.com/ggerganov/llama.cpp
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=278810
+
 USES=		cmake:testing compiler:c++11-lang python:run shebangfix
 USE_LDCONFIG=	yes
 
