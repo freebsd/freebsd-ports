@@ -23,6 +23,10 @@ USES=		cmake compiler:c11 localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	werman
 
+# Remove bundled library
+EXTRACT_AFTER_ARGS=	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/external/JUCE \
+			--no-same-owner --no-same-permissions
+
 CMAKE_OFF=	BUILD_TESTS
 CMAKE_OFF+=	BUILD_VST_PLUGIN # https://github.com/werman/noise-suppression-for-voice/issues/65
 CXXFLAGS+=	-DJUCE_CUSTOM_VST3_SDK=1 -DJUCE_INCLUDE_PNGLIB_CODE=0
@@ -45,9 +49,6 @@ VST3_BROKEN=		fails to build with juce-7.0.6, see https://github.com/werman/nois
 # Work around https://github.com/llvm/llvm-project/issues/88592
 CXXFLAGS+=	-fclang-abi-compat=17
 .endif
-
-post-extract: # remove bundled JUCE
-	@${RM} -rf ${WRKSRC}/external/JUCE
 
 post-install: # move plugins to a proper place: workaround for https://github.com/juce-framework/JUCE/issues/1237 and strip binaries
 	@${MV} ${STAGEDIR}${WRKDIR}/.lv2 ${STAGEDIR}${PREFIX}/lib/lv2
