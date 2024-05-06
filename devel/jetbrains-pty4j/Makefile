@@ -1,5 +1,5 @@
 PORTNAME=	pty4j
-PORTVERSION=	0.12.25
+PORTVERSION=	0.12.26
 CATEGORIES=	devel java
 PKGNAMEPREFIX=	jetbrains-
 DIST_SUBDIR=	jetbrains
@@ -11,20 +11,20 @@ WWW=		https://github.com/JetBrains/pty4j
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 
 USES=		gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	JetBrains
 GH_PROJECT=	pty4j
-GH_TAGNAME=	673a524230c1a46782211e77b1750877b3aa71f7
+GH_TAGNAME=	d99aca3680e5e302d1a88cfd191a14532d33d0b4
 
-DATADIR=	${PREFIX}/share/jetbrains/${PORTNAME}
-
-ALL_TARGET=	linux_${ARCH:S/amd64/x86_64/:S/powerpc64le/ppc64le/}
-BUILD_WRKSRC=	${WRKSRC}/native
 MAKEFILE=	Makefile_freebsd
+ALL_TARGET=	linux_${ARCH:S/amd64/x86_64/:S/powerpc64le/ppc64le/}
+DATADIR=	${PREFIX}/share/jetbrains/${PORTNAME}
+EXTRACT_AFTER_ARGS=	--exclude os # Don't extract bundled binaries
+BUILD_WRKSRC=	${WRKSRC}/native
 PLIST_FILES=	share/jetbrains/${PORTNAME}/${ARCH}/libpty.so
 
 .include <bsd.port.options.mk>
