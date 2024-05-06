@@ -1,6 +1,5 @@
 PORTNAME=	simutrans
-DISTVERSION=	123-0-1
-PORTREVISION=	1
+DISTVERSION=	124-0
 CATEGORIES=	games
 MASTER_SITES=	SF/simutrans/simutrans/${DISTVERSION}
 DISTNAME=	simutrans-src-${DISTVERSION}
@@ -18,16 +17,14 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++11-lib pkgconfig sdl zip
+USES=		cmake compiler:c++14-lang pkgconfig sdl zip
 USE_SDL=	sdl2
-
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_CCache \
 		CMAKE_DISABLE_FIND_PACKAGE_Git \
 		CMAKE_DISABLE_FIND_PACKAGE_Subversion
+CMAKE_ARGS=	-DSIMUTRANS_USE_REVISION=1
 
-NO_WRKSUBDIR=	yes
-
-SUB_FILES=	simutrans
+WRKSRC=		${WRKDIR}/simutrans-Nightly
 
 PORTDATA=	*
 PORTDOCS=	change_request.txt \
@@ -59,17 +56,7 @@ FLUIDSYNTH_DESC=		Enable FluidSynth for MIDI playback
 FLUIDSYNTH_LIB_DEPENDS=		libfluidsynth.so:audio/fluidsynth
 FLUIDSYNTH_CMAKE_BOOL=		SIMUTRANS_USE_FLUIDSYNTH_MIDI
 
-do-install:
-	@cd ${WRKSRC}/simutrans && ${COPYTREE_SHARE} \
-		"ai config font music script text themes" ${STAGEDIR}${DATADIR}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/simutrans/simutrans \
-		${STAGEDIR}${PREFIX}/libexec/simutrans
-	${INSTALL_SCRIPT} ${WRKDIR}/simutrans ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${WRKSRC}/simutrans.svg \
-		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/
-
-do-install-DOCS-on:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/simutrans && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
