@@ -1,11 +1,14 @@
---- cmake/version.cmake.orig	2017-10-13 23:15:05 UTC
+--- cmake/version.cmake.orig	2022-09-29 21:46:35 UTC
 +++ cmake/version.cmake
-@@ -1,7 +1,4 @@
--execute_process(COMMAND git log --oneline COMMAND wc -l OUTPUT_VARIABLE BUILD_NUMBER OUTPUT_STRIP_TRAILING_WHITESPACE)
--if(BUILD_NUMBER STREQUAL "")
--	set(BUILD_NUMBER 0)
--endif()
-+set(BUILD_NUMBER 0)
+@@ -1,9 +1,7 @@
+-execute_process(COMMAND git rev-parse --short HEAD RESULT_VARIABLE RETURN_CODE OUTPUT_VARIABLE BUILD_VERSION OUTPUT_STRIP_TRAILING_WHITESPACE)
++set(BUILD_VERSION 0)
  
- configure_file(
- 	"${SRC}"
+-if(RETURN_CODE EQUAL 0)
+ 	configure_file(
+ 		"${SRC}"
+ 		"${DST}"
+ 		@ONLY
+ 	)
+-endif()
+\ No newline at end of file
