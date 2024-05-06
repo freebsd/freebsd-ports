@@ -1,6 +1,5 @@
 PORTNAME=	fcitx5-qt
-DISTVERSION=	5.0.17
-PORTREVISION=	1
+DISTVERSION=	5.1.6
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
@@ -22,25 +21,27 @@ FLAVOR?=	${FLAVORS:[1]}
 qt5_PKGNAMESUFFIX=	5
 qt6_PKGNAMESUFFIX=	6
 
-USES=		cmake compiler:c++17-lang gettext-tools kde:5 pkgconfig tar:xz \
+USES=		cmake compiler:c++17-lang gettext-tools kde:5 pkgconfig tar:zst \
 		xorg
 
 CMAKE_OFF?=	ENABLE_QT4
 
 .if ${FLAVOR} == qt5
 USES+=		qt:5
-USE_QT=		concurrent core dbus gui widgets xml buildtools:build \
+USE_QT=		concurrent core dbus gui widgets buildtools:build \
 		qmake:build
 CMAKE_ON=	ENABLE_QT5
 CMAKE_OFF+=	ENABLE_QT6
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-CMakeLists.txt
 RUN_DEPENDS=	fcitx5-qt-common>=${DISTVERSION}:textproc/fcitx5-qt-common
 .elif ${FLAVOR} == qt6
-USES+=		qt:6
-USE_QT=		base
+USES+=		qt:6 gl
+USE_GL=		gl opengl
+USE_QT=		base wayland
 CMAKE_ON=	ENABLE_QT6
 CMAKE_OFF+=	ENABLE_QT5
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-CMakeLists.txt
+LIB_DEPENDS+=	libwayland-client.so:graphics/wayland
 RUN_DEPENDS=	fcitx5-qt-common>=${DISTVERSION}:textproc/fcitx5-qt-common
 .endif
 
