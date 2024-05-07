@@ -5,7 +5,7 @@ CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mstucchi@ripe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python wrapper around the RIPE Atlas API
 WWW=		https://github.com/RIPE-NCC/ripe-atlas-cousteau
 
