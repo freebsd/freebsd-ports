@@ -138,6 +138,13 @@ include/folly/channels/ProxyChannel.h
 include/folly/channels/RateLimiter.h
 include/folly/channels/Transform-inl.h
 include/folly/channels/Transform.h
+include/folly/channels/detail/AtomicQueue.h
+include/folly/channels/detail/ChannelBridge.h
+include/folly/channels/detail/FunctionTraits.h
+include/folly/channels/detail/IntrusivePtr.h
+include/folly/channels/detail/MultiplexerTraits.h
+include/folly/channels/detail/PointerVariant.h
+include/folly/channels/detail/Utility.h
 include/folly/chrono/Clock.h
 include/folly/chrono/Conv.h
 include/folly/chrono/Hardware.h
@@ -268,8 +275,8 @@ include/folly/executors/QueueObserver.h
 include/folly/executors/QueuedImmediateExecutor.h
 include/folly/executors/ScheduledExecutor.h
 include/folly/executors/SequencedExecutor.h
-include/folly/executors/SerialExecutor.h
 include/folly/executors/SerialExecutor-inl.h
+include/folly/executors/SerialExecutor.h
 include/folly/executors/SerializedExecutor.h
 include/folly/executors/SoftRealTimeExecutor.h
 include/folly/executors/StrandExecutor.h
@@ -322,7 +329,6 @@ include/folly/experimental/TestUtil.h
 include/folly/experimental/ThreadedRepeatingFunctionRunner.h
 include/folly/experimental/TimerFD.h
 include/folly/experimental/TimerFDTimeoutManager.h
-include/folly/experimental/TupleOps.h
 include/folly/experimental/bser/Bser.h
 include/folly/experimental/channels/Channel-fwd.h
 include/folly/experimental/channels/Channel-inl.h
