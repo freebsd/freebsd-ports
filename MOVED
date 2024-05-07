@@ -3233,3 +3233,4 @@ multimedia/rubygem-paperclip-av-transcoder-rails50||2024-05-04|Has expired: Depe
 devel/rubygem-paperclip-rails50||2024-05-04|Has expired: Upstream repo archived Jul 13, 2023. Upstream recommends using Rails' own ActiveStorage
 devel/rubygem-paperclip-rails5||2024-05-04|Has expired: Upstream repo archived Jul 13, 2023. Upstream recommends using Rails' own ActiveStorage
 biology/pbseqan|biology/seqan|2024-05-05|Has expired: Upstream merged into SeqAn project: Use biology/seqan
+archivers/xpk||2024-05-07|Has expired: Unmaintained, upstream last release in 2002
