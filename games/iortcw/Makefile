@@ -30,7 +30,7 @@ MAKE_ARGS=	BINDIR="${STAGEDIR}${PREFIX}/bin" \
 
 LDFLAGS_i386=	-Wl,-znotext
 
-PLIST_SUB=	ARCH="${ARCH:S/amd64/x86_64/:S/i386/x86/}" \
+PLIST_SUB=	ARCH="${ARCH:S/amd64/x86_64/:S/i386/x86/:S/powerpc$/ppc/:S/powerpc64$/ppc64/}" \
 		WOLFDIR="${WOLFDIR}"
 
 SUB_FILES=	iowolfded iowolfmp iowolfsp pkg-message
