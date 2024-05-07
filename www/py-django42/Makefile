@@ -1,6 +1,5 @@
 PORTNAME=	django
-PORTVERSION=	4.2.11
-PORTREVISION=	1
+PORTVERSION=	4.2.12
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://media.djangoproject.com/releases/${PORTVERSION:R}/
@@ -26,6 +25,8 @@ USES=		cpe python shebangfix
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
 PLIST_FILES=	share/man/man1/django-admin.1.gz
