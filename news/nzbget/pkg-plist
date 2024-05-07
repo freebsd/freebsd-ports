@@ -1,17 +1,17 @@
 bin/nzbget
-@sample etc/nzbget.conf.sample
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%ETCDIR%%.conf
+%%ETCDIR%%.conf.sample
+%%DATADIR%%/doc/COPYING
+%%DATADIR%%/doc/ChangeLog.md
 %%DATADIR%%/nzbget.conf
-%%DATADIR%%/scripts/EMail.py
-%%DATADIR%%/scripts/Logger.py
 %%DATADIR%%/webui/config.js
+%%DATADIR%%/webui/dark-theme.css
 %%DATADIR%%/webui/downloads.js
 %%DATADIR%%/webui/edit.js
 %%DATADIR%%/webui/fasttable.js
 %%DATADIR%%/webui/feed.js
 %%DATADIR%%/webui/history.js
+%%DATADIR%%/webui/img/download-16.ico
 %%DATADIR%%/webui/img/download-anim-green-2x.png
 %%DATADIR%%/webui/img/download-anim-orange-2x.png
 %%DATADIR%%/webui/img/favicon-256x256-opaque.png
@@ -31,8 +31,10 @@ bin/nzbget
 %%DATADIR%%/webui/lib/elycharts.min.js
 %%DATADIR%%/webui/lib/jquery.js
 %%DATADIR%%/webui/lib/jquery.min.js
+%%DATADIR%%/webui/lib/material-icons.woff2
 %%DATADIR%%/webui/lib/raphael.js
 %%DATADIR%%/webui/lib/raphael.min.js
+%%DATADIR%%/webui/light-theme.css
 %%DATADIR%%/webui/messages.js
 %%DATADIR%%/webui/status.js
 %%DATADIR%%/webui/style.css
