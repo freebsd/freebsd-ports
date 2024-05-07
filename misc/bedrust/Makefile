@@ -1,6 +1,6 @@
 PORTNAME=	bedrust
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.3
+DISTVERSION=	0.7.4
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
