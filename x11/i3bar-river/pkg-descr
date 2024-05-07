@@ -1,1 +1,2 @@
-This is a port of i3bar for river and Hyprland.
+This is a port of i3bar for wlroots-based window managers.
+Tags/workspaces are implemented for river and hyprland.
