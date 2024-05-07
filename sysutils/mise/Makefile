@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.5.2
+DISTVERSION=	2024.5.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,16 +22,16 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		android_system_properties-0.1.5 \
 		ansi-str-0.8.0 \
 		ansitok-0.2.0 \
-		anstream-0.6.13 \
-		anstyle-1.0.6 \
-		anstyle-parse-0.2.3 \
-		anstyle-query-1.0.2 \
-		anstyle-wincon-3.0.2 \
+		anstream-0.6.14 \
+		anstyle-1.0.7 \
+		anstyle-parse-0.2.4 \
+		anstyle-query-1.0.3 \
+		anstyle-wincon-3.0.3 \
 		arbitrary-1.3.2 \
 		arrayvec-0.5.2 \
 		assert_cmd-2.0.14 \
 		async-compression-0.4.9 \
-		autocfg-1.2.0 \
+		autocfg-1.3.0 \
 		backtrace-0.3.71 \
 		base64-0.21.7 \
 		base64-0.22.1 \
@@ -47,7 +47,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytes-1.6.0 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.0.96 \
+		cc-1.0.97 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		ci_info-0.14.14 \
@@ -60,7 +60,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		color-print-0.3.6 \
 		color-print-proc-macro-0.3.6 \
 		color-spantrace-0.2.1 \
-		colorchoice-1.0.0 \
+		colorchoice-1.0.1 \
 		confique-0.2.5 \
 		confique-macro-0.0.9 \
 		console-0.15.8 \
@@ -84,6 +84,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		diff-0.1.13 \
 		difflib-0.4.0 \
 		digest-0.10.7 \
+		displaydoc-0.2.4 \
 		doc-comment-0.3.3 \
 		dotenvy-0.15.7 \
 		duct-0.13.7 \
@@ -120,7 +121,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		futures-task-0.3.30 \
 		futures-util-0.3.30 \
 		generic-array-0.14.7 \
-		getrandom-0.2.14 \
+		getrandom-0.2.15 \
 		gimli-0.28.1 \
 		git2-0.18.3 \
 		globset-0.4.14 \
@@ -154,6 +155,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		insta-1.38.0 \
 		instant-0.1.12 \
 		ipnet-2.9.0 \
+		is_terminal_polyfill-1.70.0 \
 		itertools-0.12.1 \
 		itoa-1.0.11 \
 		jobserver-0.1.31 \
@@ -177,8 +179,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
 		num-conv-0.1.0 \
-		num-traits-0.2.18 \
+		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
+		num_enum-0.7.2 \
+		num_enum_derive-0.7.2 \
 		num_threads-0.1.7 \
 		number_prefix-0.4.0 \
 		object-0.32.2 \
@@ -211,6 +215,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
 		pretty_assertions-1.4.0 \
+		proc-macro-crate-3.1.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.81 \
@@ -242,8 +247,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		same-file-1.0.6 \
 		schannel-0.1.23 \
 		sct-0.7.1 \
-		security-framework-2.10.0 \
-		security-framework-sys-2.10.0 \
+		security-framework-2.11.0 \
+		security-framework-sys-2.11.0 \
 		self-replace-1.3.7 \
 		self_update-0.39.0 \
 		semver-1.0.22 \
@@ -298,9 +303,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-1.37.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \
-		tokio-util-0.7.10 \
+		tokio-util-0.7.11 \
 		toml-0.8.12 \
 		toml_datetime-0.6.5 \
+		toml_edit-0.21.1 \
 		toml_edit-0.22.12 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
@@ -369,14 +375,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.5 \
-		winnow-0.6.7 \
+		winnow-0.5.40 \
+		winnow-0.6.8 \
 		winreg-0.50.0 \
 		winsafe-0.0.19 \
 		xattr-1.3.1 \
 		xx-0.2.5 \
 		yansi-0.5.1 \
 		zeroize-1.7.0 \
-		zip-1.1.3 \
+		zip-1.2.0 \
 		zipsign-api-0.1.1
 
 OPENSSLINC=	/usr/include
