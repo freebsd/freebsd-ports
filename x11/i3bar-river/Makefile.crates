@@ -63,7 +63,7 @@ CARGO_CRATES=	anstyle-1.0.7 \
 		unicode-ident-1.0.12 \
 		version-compare-0.2.0 \
 		wayrs-client-1.1.1 \
-		wayrs-core-1.0.1 \
+		wayrs-core-1.0.2 \
 		wayrs-proto-parser-2.0.1 \
 		wayrs-protocols-0.14.1 \
 		wayrs-scanner-0.14.1 \
