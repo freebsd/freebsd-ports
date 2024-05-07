@@ -1,5 +1,5 @@
 PORTNAME=	mkdocstrings
-DISTVERSION=	0.25.0
+DISTVERSION=	0.25.1
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -30,7 +30,8 @@ USE_PYTHON=	autoplist pep517 pytest
 # mkdocs-gen-files (not in Ports tree, yet).
 # The same applies to "test_plugin" which requires markdown-exec (not in Ports
 # tree yet).
-PYTEST_IGNORED_TESTS=	test_sphinx_load_mkdocstrings_inventory_file test_plugin
+# The test_no_double_toc tests, on the other hand, require py-markdown >= 3.6.
+PYTEST_IGNORED_TESTS=	test_sphinx_load_mkdocstrings_inventory_file test_plugin test_no_double_toc
 
 # Required otherwise the build process tries to get the current version via git
 MAKE_ENV=	PDM_BUILD_SCM_VERSION=${DISTVERSION}
