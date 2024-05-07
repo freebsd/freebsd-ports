@@ -14,11 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 
-FETCH_DEPENDS=	yarn-node20>0:www/yarn-node20
-EXTRACT_DEPENDS=yarn-node20>0:www/yarn-node20
+FETCH_DEPENDS=	yarn-node${NODEJS_VERSION}>0:www/yarn-node${NODEJS_VERSION}
+EXTRACT_DEPENDS=yarn-node${NODEJS_VERSION}>0:www/yarn-node${NODEJS_VERSION}
 BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		protoc:devel/protobuf \
-		yarn:www/yarn-node18
+		yarn:www/yarn-node${NODEJS_VERSION}
 
 USES=		cargo gmake python:build
 USE_GITHUB=	yes
@@ -28,7 +28,7 @@ GH_ACCOUNT=	signalapp
 # cd boring
 # git checkout correct_tag (grep boring Makefile.crates)
 # git submodule update --init --recursive
-# the hash for boringssl and fips should be printed on screen 
+# the hash for boringssl and fips should be printed on screen
 GH_TUPLE=	google:boringssl:44b3df6f03d85c901767250329c571db405122d5:boringssl \
 		google:boringssl:853ca1ea1168dff08011e5d42d94609cc0ca2e27:boringssl_fips
 
@@ -46,6 +46,7 @@ USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/libsignal_node.so
 
+NODEJS_VERSION=	20
 NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/:S/i386/ia32/:C/powerpc64.*/ppc64/}
 NPM_RINGRTC_DIR=	npm-@signalapp-ringrtc-2.36.0-67d1b48bd4c1ea31c155ea14a0bd28f04e46eff5-integrity
 NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.39.1-15b41f15c516ae3eecf8a098a9c9c7aac00444d7-integrity
