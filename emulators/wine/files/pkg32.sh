@@ -14,7 +14,6 @@ then
   ln -s /usr/share/keys/pkg "$I386_ROOT/usr/share/keys/pkg"
 fi
 
-ABI=$(pkg config ABI | sed s/amd64/i386/)
 # Show what we're going to do, then do it.
-echo pkg -o ABI="$ABI" -o INSTALL_AS_USER=true -o RUN_SCRIPTS=false --rootdir "$I386_ROOT" "$@"
-exec pkg -o ABI="$ABI" -o INSTALL_AS_USER=true -o RUN_SCRIPTS=false --rootdir "$I386_ROOT" "$@"
+echo pkg -o ABI_FILE=/usr/lib32/libc.so.7 -o INSTALL_AS_USER=true -o RUN_SCRIPTS=false --rootdir "$I386_ROOT" "$@"
+exec pkg -o ABI_FILE=/usr/lib32/libc.so.7 -o INSTALL_AS_USER=true -o RUN_SCRIPTS=false --rootdir "$I386_ROOT" "$@"
