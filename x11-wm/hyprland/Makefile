@@ -1,7 +1,11 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.40.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	ec092bd601d9.patch:-p1 # hyprwayland-scanner 0.3.5
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
@@ -11,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		hyprwayland-scanner>=0.3.4:devel/hyprwayland-scanner \
+		hyprwayland-scanner>=0.3.5:devel/hyprwayland-scanner \
 		wayland-protocols>=1.35:graphics/wayland-protocols
 LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libtomlplusplus.so:devel/tomlplusplus \
