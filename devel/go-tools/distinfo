@@ -1,5 +1,5 @@
-TIMESTAMP = 1712310965
-SHA256 (go/devel_go-tools/tools-v0.20.0/v0.20.0.mod) = 79697f2d515d81d53deefa0d23aa941edb93dd2c4a5c21c299d43206841a51d9
-SIZE (go/devel_go-tools/tools-v0.20.0/v0.20.0.mod) = 278
-SHA256 (go/devel_go-tools/tools-v0.20.0/v0.20.0.zip) = f9537c85fc51e59299b627c842381f97cabde123f9fc40a0da51eec0d637dbd9
-SIZE (go/devel_go-tools/tools-v0.20.0/v0.20.0.zip) = 3138024
+TIMESTAMP = 1715097024
+SHA256 (go/devel_go-tools/tools-v0.21.0/v0.21.0.mod) = 4525dad4f5723d1e409f6a398c1ae7fd5e2c637d43a5caeb49844077b91c9eeb
+SIZE (go/devel_go-tools/tools-v0.21.0/v0.21.0.mod) = 339
+SHA256 (go/devel_go-tools/tools-v0.21.0/v0.21.0.zip) = 1099b286fba466d61da042e950e7da3cc0373260e95fe116bf61cfb6ec4828a8
+SIZE (go/devel_go-tools/tools-v0.21.0/v0.21.0.zip) = 3151802
