@@ -1,6 +1,5 @@
 PORTNAME=	pdfarranger
-DISTVERSION=	1.10.0
-PORTREVISION=	4
+DISTVERSION=	1.10.1
 CATEGORIES=	print
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,9 +16,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-dateutil>0:devel/py-python-dateutil@$
 		poppler-glib>0:graphics/poppler-glib
 
 USES=		gettext gnome python
-USE_PYTHON=	distutils
-USE_GNOME=	gtk30 intltool:build
 USE_GITHUB=	yes
+USE_GNOME=	gtk30 intltool:build
+USE_PYTHON=	distutils
 
 NO_ARCH=	yes
 
