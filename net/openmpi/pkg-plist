@@ -97,8 +97,8 @@ libdata/pkgconfig/pmix.pc
 %%MPIDIR%%/include/openmpi/mpiext/mpiext_ftmpi_c.h
 %%MPIDIR%%/include/openmpi/mpiext/mpiext_ftmpi_mpifh.h
 %%MPIDIR%%/include/openmpi/mpiext/mpiext_rocm_c.h
-%%MPIDIR%%/include/openmpi/mpiext/mpiext_shortfloat_c.h
-%%MPIDIR%%/include/openmpi/mpiext/mpiext_shortfloat_mpifh.h
+%%SHORTFLOAT%%%%MPIDIR%%/include/openmpi/mpiext/mpiext_shortfloat_c.h
+%%SHORTFLOAT%%%%MPIDIR%%/include/openmpi/mpiext/mpiext_shortfloat_mpifh.h
 %%MPIDIR%%/include/pmix.h
 %%MPIDIR%%/include/pmix/src/class/pmix_bitmap.h
 %%MPIDIR%%/include/pmix/src/class/pmix_hash_table.h
