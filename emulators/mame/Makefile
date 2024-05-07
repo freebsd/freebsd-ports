@@ -190,6 +190,10 @@ _TOOLS_MANUALS=		-name *.1 -depth 1 -type f -and -not -type d -and -not \
 MAKE_ENV+=	PTR64=1
 .endif
 
+.if ${ARCH} == aarch64 || ${ARCH} == armv7
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-3rdparty_lzma_C_AesOpt.c
+.endif
+
 # Compiling with -pg (PROFILE) causes the linker to run out of memory on i386,
 # build with less profiling data:
 .if ${ARCH:Mi386}
