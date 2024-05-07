@@ -1,0 +1,49 @@
+--- CMakeLists.txt.orig	2024-05-01 16:16:27 UTC
++++ CMakeLists.txt
+@@ -404,12 +404,12 @@ set_option(SDL_ASSEMBLY            "Enable assembly ro
+ option_string(SDL_ASSERTIONS "Enable internal sanity checks (auto/disabled/release/enabled/paranoid)" "auto")
+ #set_option(SDL_DEPENDENCY_TRACKING "Use gcc -MMD -MT dependency tracking" ON)
+ set_option(SDL_ASSEMBLY            "Enable assembly routines" ${OPT_DEF_ASM})
+-dep_option(SDL_SSEMATH             "Allow GCC to use SSE floating point math" ON "SDL_ASSEMBLY;SDL_CPU_X86 OR SDL_CPU_X64" OFF)
++#[[ dep_option(SDL_SSEMATH             "Allow GCC to use SSE floating point math" ON "SDL_ASSEMBLY;SDL_CPU_X86 OR SDL_CPU_X64" OFF)
+ dep_option(SDL_SSE                 "Use SSE assembly routines" ON "SDL_ASSEMBLY;SDL_CPU_X86 OR SDL_CPU_X64" OFF)
+ dep_option(SDL_SSE2                "Use SSE2 assembly routines" ON "SDL_ASSEMBLY;SDL_CPU_X86 OR SDL_CPU_X64" OFF)
+ dep_option(SDL_SSE3                "Use SSE3 assembly routines" ON "SDL_ASSEMBLY;SDL_CPU_X86 OR SDL_CPU_X64" OFF)
+ dep_option(SDL_MMX                 "Use MMX assembly routines" ON "SDL_ASSEMBLY;SDL_CPU_X86 OR SDL_CPU_X64" OFF)
+-dep_option(SDL_3DNOW               "Use 3Dnow! MMX assembly routines" ON "SDL_ASSEMBLY;SDL_CPU_X86 OR SDL_CPU_X64" OFF)
++dep_option(SDL_3DNOW               "Use 3Dnow! MMX assembly routines" ON "SDL_ASSEMBLY;SDL_CPU_X86 OR SDL_CPU_X64" OFF) ]]
+ dep_option(SDL_ALTIVEC             "Use Altivec assembly routines" ON "SDL_ASSEMBLY" OFF)
+ dep_option(SDL_ARMSIMD             "Use SIMD assembly blitters on ARM" OFF "SDL_ASSEMBLY;SDL_CPU_ARM32" OFF)
+ dep_option(SDL_ARMNEON             "Use NEON assembly blitters on ARM" OFF "SDL_ASSEMBLY;SDL_CPU_ARM32" OFF)
+@@ -758,7 +758,7 @@ if(SDL_ASSEMBLY)
+     # TODO: Those all seem to be quite GCC specific - needs to be
+     # reworked for better compiler support
+     set(HAVE_ASSEMBLY TRUE)
+-    if(SDL_MMX)
++#[[ if(SDL_MMX)
+       set(CMAKE_REQUIRED_FLAGS "-mmmx")
+       check_c_source_compiles("
+           #ifdef __MINGW32__
+@@ -881,7 +881,7 @@ if(SDL_ASSEMBLY)
+       endif()
+     else()
+       set(HAVE_SSEMATH TRUE)
+-    endif()
++    endif() ]]
+ 
+     check_include_file("immintrin.h" HAVE_IMMINTRIN_H)
+ 
+@@ -1613,9 +1613,11 @@ elseif(UNIX AND NOT APPLE AND NOT RISCOS AND NOT HAIKU
+       endif()
+ 
+       if(FREEBSD AND NOT HAVE_INOTIFY)
+-        pkg_search_module(INOTIFY libinotify)
+-        if(INOTIFY_FOUND)
++        pkg_search_module(PC_INOTIFY libinotify)
++        if(PC_INOTIFY_FOUND)
+           set(HAVE_INOTIFY 1)
++          find_path(INOTIFY_INCLUDE_DIRS NAMES sys/inotify.h REQUIRED HINTS ${PC_INOTIFY_INCLUDE_DIRS})
++          find_library(INOTIFY_LIBRARIES NAMES inotify REQUIRED HINTS ${PC_INOTIFY_LIBRARY_DIRS})
+           target_include_directories(sdl-build-options INTERFACE "${INOTIFY_INCLUDE_DIRS}")
+           list(APPEND EXTRA_LIBS ${INOTIFY_LIBRARIES})
+         endif()

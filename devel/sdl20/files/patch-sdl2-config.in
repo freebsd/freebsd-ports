@@ -1,0 +1,12 @@
+TODO: fix all ports which require this and remove this patch
+--- sdl2-config.in.orig	2024-04-14 09:17:31 UTC
++++ sdl2-config.in
+@@ -46,7 +46,7 @@ while test $# -gt 0; do
+       echo @SDL_VERSION@
+       ;;
+     --cflags)
+-      echo -I@includedir@/SDL2 @SDL_CFLAGS@
++      echo -I@includedir@ -I@includedir@/SDL2 @SDL_CFLAGS@
+       ;;
+ @ENABLE_SHARED_TRUE@    --libs)
+ @ENABLE_SHARED_TRUE@      echo -L@libdir@ @SDL_RLD_FLAGS@ @SDL_LIBS@
