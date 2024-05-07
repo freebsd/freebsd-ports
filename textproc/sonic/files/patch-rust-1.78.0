@@ -1,0 +1,24 @@
+error: unnecessary qualification
+   --> src/store/fst.rs:690:36
+    |
+690 | ...                   if std::fs::rename(&bucket_tmp_path, &bucket_final_path).is_ok() {
+    |                          ^^^^^^^^^^^^^^^
+    |
+note: the lint level is defined here
+   --> src/main.rs:8:44
+    |
+8   | #![deny(unstable_features, unused_imports, unused_qualifications, clippy::all)]
+    |                                            ^^^^^^^^^^^^^^^^^^^^^
+
+
+--- src/main.rs.orig	2024-05-07 13:15:44.243643000 +0200
++++ src/main.rs	2024-05-07 13:15:53.870691000 +0200
+@@ -5,7 +5,7 @@
+ // License: Mozilla Public License v2.0 (MPL v2.0)
+ 
+ #![cfg_attr(feature = "benchmark", feature(test))]
+-#![deny(unstable_features, unused_imports, unused_qualifications, clippy::all)]
++#![deny(unstable_features, unused_imports, clippy::all)]
+ 
+ #[macro_use]
+ extern crate log;
