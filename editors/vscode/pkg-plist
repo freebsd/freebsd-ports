@@ -493,10 +493,11 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/README.md
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/ThirdPartyNotices.txt
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/ci.yml
-%%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/84b6bc62673660f3ffa2.module.wasm
-%%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/9.extension.web.js
-%%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/94625be35e004f01f9d5.module.wasm
+%%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/425.heapsnapshotWorker.js
+%%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/848.extension.web.js
+%%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/a443ca1a33b96237dd48.module.wasm
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/cpu-client.bundle.js
+%%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/dbd61d846b1102299709.module.wasm
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/extension.js
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/extension.web.js
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/heap-client.bundle.js
@@ -882,7 +883,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/loader.js
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/break.mp3
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/chatRequestSent.mp3
-%%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/chatResponsePending.mp3
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/chatResponseReceived1.mp3
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/chatResponseReceived2.mp3
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/chatResponseReceived3.mp3
@@ -894,6 +894,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/error.mp3
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/foldedAreas.mp3
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/format.mp3
+%%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/progress.mp3
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/quickFixes.mp3
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/save.mp3
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/taskCompleted.mp3
