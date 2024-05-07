@@ -1,4 +1,4 @@
-TIMESTAMP = 1714797856
+TIMESTAMP = 1715056052
 SHA256 (rust/crates/base64-0.22.1.crate) = 72b3254f16251a8381aa12e40e3c4d2f0199f8c6508fbecb9d91f575e0fbb8c6
 SIZE (rust/crates/base64-0.22.1.crate) = 81597
 SHA256 (rust/crates/bitflags-1.3.2.crate) = bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a
@@ -201,5 +201,5 @@ SHA256 (rust/crates/winnow-0.6.7.crate) = 14b9415ee827af173ebb3f15f9083df5a122eb
 SIZE (rust/crates/winnow-0.6.7.crate) = 159491
 SHA256 (rust/crates/zeroize-1.7.0.crate) = 525b4ec142c6b68a2d10f01f7bbf6755599ca3f81ea53b8431b7dd348f5fdb2d
 SIZE (rust/crates/zeroize-1.7.0.crate) = 19039
-SHA256 (printfn-fend-v1.4.7_GH0.tar.gz) = a881e210e07ba1c3de1a89d755852359a636afe4091de65c4846767c69dd7f72
-SIZE (printfn-fend-v1.4.7_GH0.tar.gz) = 183437
+SHA256 (printfn-fend-v1.4.8_GH0.tar.gz) = 5e973bf7f53416039d5efc2f2ec360add5184625644e986808c21e5bd292fc58
+SIZE (printfn-fend-v1.4.8_GH0.tar.gz) = 183916
