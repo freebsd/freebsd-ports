@@ -1,7 +1,6 @@
 PORTNAME=	conduit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
-PORTREVISION=	6
+DISTVERSION=	0.7.0
 CATEGORIES=	net-im
 PKGNAMEPREFIX=	matrix-
 
@@ -31,7 +30,7 @@ DBDIR=		/var/db/${PORTNAME}
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	famedly
-GL_TAGNAME=	0c2cfda3ae923d9e922d5edf379e4d8976a52d4e
+GL_TAGNAME=	a854ce5cf64103d83b721fb124262fb52466a646
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/conduit.toml,${PREFIX}/etc/conduit.toml,' \
@@ -40,6 +39,8 @@ post-patch:
 		${WRKSRC}/conduit-example.toml
 
 post-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/conduit-example.toml ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.toml.sample
 	@${MKDIR} ${STAGEDIR}${DBDIR}
 
