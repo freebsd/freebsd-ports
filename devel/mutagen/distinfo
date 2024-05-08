@@ -1,5 +1,5 @@
-TIMESTAMP = 1706829040
-SHA256 (go/devel_mutagen/mutagen-v0.17.5/v0.17.5.mod) = 56a9005a847a827a7747d0bf7ac8b901196490adc5eae66c5dbe2f400505f601
-SIZE (go/devel_mutagen/mutagen-v0.17.5/v0.17.5.mod) = 1578
-SHA256 (go/devel_mutagen/mutagen-v0.17.5/v0.17.5.zip) = 4a3e02aecd9834ec72e63a9a91ab2006ededd15dee03c284818103575556542b
-SIZE (go/devel_mutagen/mutagen-v0.17.5/v0.17.5.zip) = 961624
+TIMESTAMP = 1714871403
+SHA256 (go/devel_mutagen/mutagen-v0.17.6/v0.17.6.mod) = 02fc9841ce334b25586282aca86f701b7df6b5d544d3635cfc25d97e5904ee07
+SIZE (go/devel_mutagen/mutagen-v0.17.6/v0.17.6.mod) = 1578
+SHA256 (go/devel_mutagen/mutagen-v0.17.6/v0.17.6.zip) = 651ffaa78c0da7bbfba5f5dd20fc910da956e3c73e16f5ef2b9a68360c7900b1
+SIZE (go/devel_mutagen/mutagen-v0.17.6/v0.17.6.zip) = 961634

@@ -1,5 +1,5 @@
 PORTNAME=	WinFF
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/WinFF/winff/archive/refs/tags/

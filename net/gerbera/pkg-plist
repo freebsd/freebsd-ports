@@ -50,14 +50,14 @@ bin/gerbera
 %%DATADIR%%/web/js/jquery.gerbera.tree.js
 %%DATADIR%%/web/js/jquery.gerbera.tweak.js
 %%DATADIR%%/web/mr_reg.xml
-%%DATADIR%%/web/vendor/bootstrap/css/bootstrap-grid.min.css
-%%DATADIR%%/web/vendor/bootstrap/css/bootstrap-grid.min.css.map
-%%DATADIR%%/web/vendor/bootstrap/css/bootstrap-reboot.min.css
-%%DATADIR%%/web/vendor/bootstrap/css/bootstrap-reboot.min.css.map
-%%DATADIR%%/web/vendor/bootstrap/css/bootstrap.min.css
-%%DATADIR%%/web/vendor/bootstrap/css/bootstrap.min.css.map
-%%DATADIR%%/web/vendor/bootstrap/js/bootstrap.min.js
-%%DATADIR%%/web/vendor/bootstrap/js/bootstrap.min.js.map
+%%DATADIR%%/web/vendor/bootstrap-4.6.2/css/bootstrap-grid.min.css
+%%DATADIR%%/web/vendor/bootstrap-4.6.2/css/bootstrap-grid.min.css.map
+%%DATADIR%%/web/vendor/bootstrap-4.6.2/css/bootstrap-reboot.min.css
+%%DATADIR%%/web/vendor/bootstrap-4.6.2/css/bootstrap-reboot.min.css.map
+%%DATADIR%%/web/vendor/bootstrap-4.6.2/css/bootstrap.min.css
+%%DATADIR%%/web/vendor/bootstrap-4.6.2/css/bootstrap.min.css.map
+%%DATADIR%%/web/vendor/bootstrap-4.6.2/js/bootstrap.min.js
+%%DATADIR%%/web/vendor/bootstrap-4.6.2/js/bootstrap.min.js.map
 %%DATADIR%%/web/vendor/font-awesome/css/font-awesome.css
 %%DATADIR%%/web/vendor/font-awesome/css/font-awesome.min.css
 %%DATADIR%%/web/vendor/font-awesome/fonts/FontAwesome.otf
@@ -66,8 +66,8 @@ bin/gerbera
 %%DATADIR%%/web/vendor/font-awesome/fonts/fontawesome-webfont.ttf
 %%DATADIR%%/web/vendor/font-awesome/fonts/fontawesome-webfont.woff
 %%DATADIR%%/web/vendor/font-awesome/fonts/fontawesome-webfont.woff2
-%%DATADIR%%/web/vendor/jquery/jquery.min.js
-%%DATADIR%%/web/vendor/jquery/jquery.min.map
+%%DATADIR%%/web/vendor/jquery/jquery-3.7.1.min.js
+%%DATADIR%%/web/vendor/jquery/jquery-3.7.1.min.map
 %%DATADIR%%/web/vendor/jquery/jquery-ui.min.js
 %%DATADIR%%/web/vendor/js-cookie.min.js
 %%DATADIR%%/web/vendor/lato/LICENCE.md
@@ -77,7 +77,8 @@ bin/gerbera
 %%DATADIR%%/web/vendor/md5.min.js.map
 %%DATADIR%%/web/vendor/popper/popper.min.js
 %%DATADIR%%/web/vendor/popper/popper.min.js.map
-%%DATADIR%%/web/vendor/tether/tether.min.js
+%%DATADIR%%/web/vendor/tether/tether-2.0.0.min.css
+%%DATADIR%%/web/vendor/tether/tether-2.0.0.min.js
 share/man/man1/gerbera.1.gz
 @owner %%USER%%
 @group %%GROUP%%

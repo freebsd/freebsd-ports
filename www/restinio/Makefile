@@ -21,6 +21,19 @@ RUN_DEPENDS=	libfmt>0:devel/libfmt \
 
 USES=		cmake:testing compiler:c++14-lang localbase:ldflags tar:bz2
 
+EXTRACT_AFTER_ARGS=	--exclude ${PORTNAME}-${DISTVERSION}/dev/asio \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/asio_mxxru \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/catch2 \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/fmt \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/fmt_mxxru \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/nodejs/http_parser/http_parser.* \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/nodejs/http_parser_mxxru \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/rapidjson \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/rapidjson_mxxru \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/so_5 \
+			--exclude ${PORTNAME}-${DISTVERSION}/dev/timertt \
+			--no-same-owner --no-same-permissions
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 WRKSRC_SUBDIR=	dev
 
@@ -38,18 +51,5 @@ SAMPLES_CXXFLAGS+=	-I${WRKSRC}/clara
 SAMPLES_CMAKE_BOOL=	RESTINIO_SAMPLE RESTINIO_INSTALL_SAMPLES
 SAMPLES_VARS_OFF=	NO_ARCH=yes
 SAMPLES_BUILD_DEPENDS=	json-dto>0:devel/json-dto
-
-post-extract:
-	${RM} -rf ${WRKSRC}/asio
-	${RM} -rf ${WRKSRC}/asio_mxxru
-	${RM} -rf ${WRKSRC}/catch2
-	${RM} -rf ${WRKSRC}/fmt
-	${RM} -rf ${WRKSRC}/fmt_mxxru
-	${RM} -rf ${WRKSRC}/nodejs/http_parser/http-parser.*
-	${RM} -rf ${WRKSRC}/nodejs/http_parser_mxxru
-	${RM} -rf ${WRKSRC}/rapidjson
-	${RM} -rf ${WRKSRC}/rapidjson_mxxru
-	${RM} -rf ${WRKSRC}/so_5
-	${RM} -rf ${WRKSRC}/timertt
 
 .include <bsd.port.mk>

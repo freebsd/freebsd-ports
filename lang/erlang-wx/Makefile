@@ -1,6 +1,6 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	25.3.2.11
+DISTVERSION=	25.3.2.12
 PORTEPOCH=	1
 CATEGORIES=	lang parallel
 PKGNAMESUFFIX=	-wx
@@ -12,8 +12,8 @@ WWW=		https://www.erlang.org/
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	erlang>=24.0:lang/erlang
-RUN_DEPENDS=	erlang>=24.0:lang/erlang
+BUILD_DEPENDS=	erlang>=25.0:lang/erlang
+RUN_DEPENDS=	erlang>=25.0:lang/erlang
 
 USES=		autoreconf:build gl gmake perl5 xorg
 USE_GITHUB=	yes

@@ -1,6 +1,5 @@
 PORTNAME=	fcitx5
-DISTVERSION=	5.0.23
-PORTREVISION=	1
+DISTVERSION=	5.1.9
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:dict
@@ -8,9 +7,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${SPELL_EN_DICT_TAR}:dict
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-
-PATCH_SITES=	https://github.com/fcitx/${PORTNAME}/commit/
-PATCHFILES=	7fb3a5500270877d93b61b11b2a17b9b8f6a506b.patch:-p1
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	New implementation of the Fcitx IME framework
@@ -21,18 +17,18 @@ LICENSE=	LGPL21+
 BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		uthash>=0:devel/uthash
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
-		libevent.so:devel/libevent \
 		libexpat.so:textproc/expat2 \
 		libfmt.so:devel/libfmt \
 		libjson-c.so:devel/json-c \
 		libuuid.so:misc/e2fsprogs-libuuid \
+		libuv.so:devel/libuv \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		xkeyboard-config>=0:x11/xkeyboard-config
 
 # gettext-tools for both build-time hard requirement and Fcitx5 helper shell scripts
 USES=		cmake compiler:c++17-lang gettext-runtime \
-		gettext-tools:build,run gl gnome kde:5 pkgconfig tar:xz
+		gettext-tools:build,run gnome kde:5 pkgconfig tar:zst
 
 PLIST_SUB=	VER=${DISTVERSION}
 
@@ -55,8 +51,7 @@ X11_RUN_DEPENDS=	xcb-imdkit>=1.0.3:x11/xcb-imdkit
 
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols \
 			wayland-scanner:graphics/wayland
-WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
-			libwayland-egl.so:graphics/wayland
+WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
 ENCHANT_DESC=		Dictionary/spellchecking framework
 ENCHANT_LIB_DEPENDS=	libenchant-2.so:textproc/enchant2
@@ -66,7 +61,6 @@ CMAKE_ON=	FCITX5_DOWNLOAD_DISALLOWED SYSTEM_USE_UTHASH
 CMAKE_OFF=	ENABLE_TEST
 MAKE_ENV=	FCITX5_DOWNLOAD_DISALLOWED=TRUE
 
-USE_GL=		egl
 USE_GNOME=	cairo gdkpixbuf2 glib20 pango
 USE_KDE=	ecm
 

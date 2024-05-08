@@ -1,6 +1,6 @@
 PORTNAME=	rawstudio
 PORTVERSION=	2.0
-PORTREVISION=	25
+PORTREVISION=	26
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawstudio.org/files/release/
 

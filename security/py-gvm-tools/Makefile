@@ -1,7 +1,6 @@
 PORTNAME=	gvm-tools
-DISTVERSION=	24.1.0
+DISTVERSION=	24.3.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -28,6 +27,6 @@ post-extract:
 	${MV} ${WRKSRC}/scripts ${WRKSRC}/gvmtools/
 
 post-patch:
-	${REINPLACE_CMD} '30,31d' ${WRKSRC}/pyproject.toml
+	${REINPLACE_CMD} '31,32d' ${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>

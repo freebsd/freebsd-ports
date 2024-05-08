@@ -689,6 +689,7 @@ sysutils/bareos17-client-static||2021-12-05|Has expired: Deprecated, no new rele
 sysutils/bareos17-server|sysutils/bareos18-server|2021-12-05|Has expired: Deprecated, no new release since 2020
 www/bareos17-webui|www/bareos18-webui|2021-12-05|Has expired: Deprecated, no new release since 2020
 math/eigen2||2021-12-07|Has expired: No longer available upstream, no consumers in ports
+misc/opensubdiv|graphics/opensubdiv|2021-12-07|remove duplicate
 emulators/qemu41||2021-12-10|Has expired: Use emulators/qemu or emulators/qemu-devel
 security/putty-gtk2||2021-12-15|Has expired: putty-gtk2 is being phased out
 games/xnethack-nox11|games/xnethack@nox11|2021-12-16|Turned into flavor
@@ -2168,6 +2169,7 @@ www/py-WebTest|www/py-webtest|2023-06-08|Use lowercase PORTNAME and path
 security/py-sequoia||2023-06-09|Deprecated upstream, broken as based on older dependency
 audio/hvl2wav|audio/ocp|2023-06-10|Has expired: Abandoned upstream, use audio/ocp instead
 x11/thinglaunch|x11/thingylaunch|2023-06-10|Has expired: Abandonware, please use x11/thingylaunch instead
+devel/kiwix-lib|devel/libkiwix|2023-06-12|Renamed to match upstream naming
 sysutils/intel-nvmupdate|sysutils/intel-nvmupdate-40g|2023-06-14|Moved to sysutils/intel-nvmupdate-40g, which is 40G-generation specific port to make space for 10G and 100G generations
 sysutils/intel-qcu|sysutils/intel-epct|2023-06-14|Moved to sysutils/intel-epct
 multimedia/obs-qtwebkit||2023-06-16|Has expired: OBS ships with their own browser plugin from version 25 onwards
@@ -3194,3 +3196,41 @@ net/gost||2024-04-18|Has expired: Requires deprecated lang/go119
 lang/go119||2024-04-18|Has expired: Upsrteam EOL reached on 2023-09-06
 www/gitlab-ce|www/gitlab@ce|2024-04-21|Move www/gitlab-ce to www/gitlab and added flavor ce and ee
 multimedia/flvtool++||2024-04-21|Has expired: Abandonware, consider using multimedia/flvmeta
+www/mod_tidy||2024-04-24|Has expired: Last upstream release was in 2005
+net-p2p/go-prysm||2024-04-24|Has expired: Broken for more than 6 months
+x11-toolkits/p5-Gtk2-Ex-Dialogs||2024-04-24|Has expired: No longer works with modern Gtk2
+math/mathlibtools||2024-04-28|Project is obsolete and archived on GitHub since Aug 2023, not compatible with math/lean4
+emulators/qemu7@tools|emulators/qemu@tools|2024-04-29|Use emulators/qemu@tools instead
+lang/tcl9|lang/tcl90|2024-04-30|Renamed for consistency with the 8.x series ports
+deskutils/aspostit||2024-04-30|Has expired: Unmaintained, last upstream release in 2001
+x11-toolkits/p5-Tk-FileDialog||2024-04-30|Has expired: Does not work with recent Tk versions
+www/py-django-dpaste||2024-04-30|Has expired
+dns/bind916|dns/bind918|2024-04-30|Has expired: End of life, please migrate to a newer version of BIND9
+devel/rubygem-ruby_dep||2024-04-30|Has expired: Upstream official support to Ruby 2.x only and is inactive for 7.5 years. And there is no dependent ports
+databases/pgsphere||2024-04-30|Has expired: The repository has been archived by the owner on 2023-08-09 and is inactive for almost 4.5 years
+games/residualvm||2024-04-30|Has expired: Obsolete, merged with ScummVM Oct 9, 2020
+misc/firestring||2024-04-30|Has expired: Upstream is gone and last release in 2004
+dns/firedns||2024-04-30|Has expired: Abandonware, upstream is gone and last release in 2004 and it also depends on unfetchable misc/firestring. Consider dns/c-ares
+sysutils/libretto-config||2024-04-30|Has expired: Utility for obsolete hardware released 20 years ago
+sysutils/dolly||2024-04-30|Has expired: Abandonware, upstream is gone
+sysutils/atitvout||2024-04-30|Has expired: Obsolete, utility for hardware released over 20 years ago
+multimedia/py-librtmp||2024-04-30|Has expired: Depends on deprecated library librtmp
+multimedia/librtmp||2024-04-30|Has expired: Depends on legacy functionality of OpenSSL and superseded by multimedia/ffmpeg
+multimedia/rtmpdump||2024-04-30|Has expired: Depends on deprecated library librtmp, consider migrating to multimedia/ffmpeg
+multimedia/rubygem-paperclip-av-transcoder||2024-04-30|Has expired: Depends on deprecated port devel/rubygem-paperclip-rails5
+benchmarks/iozone21||2024-04-30|Has expired: Abandoned and obsolete version, superseded by benchmarks/iozone (3.x). Consider also migrating to benchmarks/fio
+devel/tla||2024-04-30|Has expired: Deprecated and obsolete revision control system, consider migrating to devel/git or devel/mercurial
+devel/configkit||2024-04-30|Has expired: Depends on deprecated port devel/libphk
+devel/libphk||2024-04-30|Has expired: Superseded by various other projects
+games/2048-qt||2024-04-30|Has expired: Unmaintained, last upstream release in 2016
+devel/cdash||2024-04-30|Has expired: Very outdated version that's unsupported upstream
+sysutils/dim||2024-04-30|Has expired: Abandonware, upstream stopped development in 2005
+net-im/jabberd||2024-04-30|Has expired: No longer developed as of 2019, consider using net-im/ejabberd
+irc/miau||2024-04-30|Has expired: Abandoned upstream, last release in 2010 and no activity since 2014. Consider migrating to irc/soju or irc/znc
+sysutils/no-login||2024-04-30|Has expired: Obsolete, use nologin in base
+lang/gcc48||2024-05-01|Has expired: Unsupported by upstream since 2015. Use GCC 10 or newer instead
+multimedia/rubygem-paperclip-av-transcoder-rails50||2024-05-04|Has expired: Depends on deprecated port devel/rubygem-paperclip-rails50
+devel/rubygem-paperclip-rails50||2024-05-04|Has expired: Upstream repo archived Jul 13, 2023. Upstream recommends using Rails' own ActiveStorage
+devel/rubygem-paperclip-rails5||2024-05-04|Has expired: Upstream repo archived Jul 13, 2023. Upstream recommends using Rails' own ActiveStorage
+biology/pbseqan|biology/seqan|2024-05-05|Has expired: Upstream merged into SeqAn project: Use biology/seqan
+archivers/xpk||2024-05-07|Has expired: Unmaintained, upstream last release in 2002

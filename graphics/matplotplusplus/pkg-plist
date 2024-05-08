@@ -27,6 +27,8 @@ include/matplot/core/figure_registry.h
 include/matplot/core/figure_type.h
 include/matplot/core/legend.h
 include/matplot/core/line_spec.h
+include/matplot/detail/config.h
+include/matplot/detail/exports.h
 include/matplot/freestanding/axes_functions.h
 include/matplot/freestanding/axes_lim.h
 include/matplot/freestanding/figure_functions.h
@@ -47,3 +49,4 @@ lib/cmake/Matplot++/Matplot++ConfigVersion.cmake
 lib/cmake/Matplot++/Matplot++Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Matplot++/Matplot++Targets.cmake
 lib/libmatplot.so
+lib/libmatplot.so.1.2.0

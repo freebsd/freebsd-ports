@@ -17,6 +17,9 @@ include/gcem_incl/erf.hpp
 include/gcem_incl/erf_inv.hpp
 include/gcem_incl/exp.hpp
 include/gcem_incl/expm1.hpp
+include/gcem_incl/fabs.hpp
+include/gcem_incl/fabsf.hpp
+include/gcem_incl/fabsl.hpp
 include/gcem_incl/factorial.hpp
 include/gcem_incl/find_exponent.hpp
 include/gcem_incl/find_fraction.hpp

@@ -1,4 +1,3 @@
-@comment bin/h2o-httpclient
 @dir(%%H2O_USER%%,%%H2O_GROUP%%,0750) %%H2O_LOGDIR%%
 @sample %%ETCDIR%%/h2o.conf.sample
 %%DATADIR%%/annotate-backtrace-symbols
@@ -126,6 +125,35 @@ include/h2o/token.h
 include/h2o/url.h
 include/h2o/version.h
 include/h2o/websocket.h
+include/picotls.h
+include/picotls/asn1.h
+include/picotls/certificate_compression.h
+include/picotls/ffx.h
+include/picotls/fusion.h
+include/picotls/mbedtls.h
+include/picotls/minicrypto.h
+include/picotls/openssl.h
+include/picotls/pembase64.h
+include/picotls/ptlsbcrypt.h
+include/quicly.h
+include/quicly/cc.h
+include/quicly/cid.h
+include/quicly/constants.h
+include/quicly/defaults.h
+include/quicly/frame.h
+include/quicly/linklist.h
+include/quicly/local_cid.h
+include/quicly/loss.h
+include/quicly/maxsender.h
+include/quicly/pacer.h
+include/quicly/ranges.h
+include/quicly/rate.h
+include/quicly/recvstate.h
+include/quicly/remote_cid.h
+include/quicly/retire_cid.h
+include/quicly/sendstate.h
+include/quicly/sentmap.h
+include/quicly/streambuf.h
 libdata/pkgconfig/libh2o-evloop.pc
 libdata/pkgconfig/libh2o.pc
 share/man/man5/h2o.conf.5.gz

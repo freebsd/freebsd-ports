@@ -1,41 +1,38 @@
 PORTNAME=	pv
-PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTVERSION=	1.8.9
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.ivarch.com/programs/sources/
+MASTER_SITES=	https://www.ivarch.com/programs/sources/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Pipe throughput monitor
 WWW=		https://www.ivarch.com/programs/pv.shtml
 
-LICENSE=	ART20
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
-USES=	tar:bzip2 gmake
-
-CONFLICTS=	waon
+USES=		gmake
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-MAKE_ENV+=	LD=${LD}
 
-PLIST_FILES=	bin/pv share/man/man1/pv.1.gz
+CONFLICTS=	waon
 
 PORTDOCS=	README.md INSTALL NEWS.md TODO.md
 
-OPTIONS_DEFINE=	DOCS NLS LFS
-OPTIONS_DEFAULT=	LFS
-NLS_CONFIGURE_ON=	--enable-static-nls
-NLS_CONFIGURE_OFF=	--disable-nls
-LFS_CONFIGURE_ENABLE=	lfs
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=		yes
+
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
-	@${CP} ${WRKSRC}/README.md ${WRKSRC}/doc
+	@${CP} ${WRKSRC}/README.md ${WRKSRC}/docs
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pv
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

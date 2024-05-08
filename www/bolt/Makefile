@@ -6,10 +6,13 @@ MASTER_SITES=	https://bolt.cm/distribution/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sophisticated, lightweight & simple CMS
-WWW=		https://bolt.cm/
+WWW=		https://github.com/bolt/core
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+DEPRECATED=	Outdated and unsupported, current version is several years old and unsupported upstream
+EXPIRATION_DATE=2024-06-30
 
 USES=		cpe php:web
 CPE_VENDOR=	${PORTNAME}cms

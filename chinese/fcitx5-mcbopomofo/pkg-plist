@@ -1,8 +1,10 @@
 lib/fcitx5/mcbopomofo.so
 share/fcitx5/addon/mcbopomofo.conf
 share/fcitx5/data/mcbopomofo-add-phrase-hook.sh
+share/fcitx5/data/mcbopomofo-associated-phrases-v2.txt
 share/fcitx5/data/mcbopomofo-data-plain-bpmf.txt
 share/fcitx5/data/mcbopomofo-data.txt
+share/fcitx5/data/mcbopomofo-dictionary-service.json
 share/fcitx5/inputmethod/mcbopomofo-plain.conf
 share/fcitx5/inputmethod/mcbopomofo.conf
 share/icons/hicolor/24x24/apps/fcitx-mcbopomofo.png

@@ -1,7 +1,6 @@
 PORTNAME=	eternalterminal
 DISTVERSIONPREFIX=	et-v
-DISTVERSION=	6.2.8
-PORTREVISION=	1
+DISTVERSION=	6.2.9
 CATEGORIES=	net
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -10,6 +9,8 @@ WWW=		https://eternalterminal.dev/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_FreeBSD_13=	OpenSSL versions prior to 3.0.0 are not supported
 
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
 		libsodium.so:security/libsodium \
@@ -28,12 +29,7 @@ CONFLICTS_INSTALL=	linux-enemyterritory # bin/et
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' ${WRKSRC}/rc.d/etserver
 
-# Install manually to avoid extra files: https://github.com/MisterTea/EternalTerminal/issues/601
-do-install:
-.for exec in et etserver etterminal htm htmd
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${exec} \
-			${STAGEDIR}${PREFIX}/bin
-.endfor
+post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/etserver
 	${INSTALL_DATA} ${WRKSRC}/etc/et.cfg \
 		${STAGEDIR}${PREFIX}/etc/etserver/et.cfg.sample

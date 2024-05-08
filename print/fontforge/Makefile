@@ -1,5 +1,6 @@
 PORTNAME=	fontforge
 DISTVERSION=	20230101
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 

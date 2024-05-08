@@ -1,0 +1,15 @@
+bin/zelta
+bin/zeport
+bin/zmatch
+bin/zpull
+bin/zsync
+@sample %%ETCDIR%%/zelta.conf.sample
+@sample %%ETCDIR%%/zelta.env.sample
+%%DATADIR%%/zelta-endpoint.awk
+%%DATADIR%%/zelta-match.awk
+%%DATADIR%%/zelta-policy.awk
+%%DATADIR%%/zelta-reconcile.awk
+%%DATADIR%%/zelta-replicate.awk
+%%DATADIR%%/zelta-report.awk
+%%DATADIR%%/zelta-snapshot.awk
+%%DATADIR%%/zelta-usage.sh

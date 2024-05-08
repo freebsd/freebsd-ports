@@ -1,25 +1,26 @@
 PORTNAME=	wmmp
-PORTVERSION=	0.12.6
+DISTVERSION=	0.12.6
 PORTREVISION=	1
 CATEGORIES=	audio windowmaker
+MASTER_SITES=	https://codeberg.org/beastieboy/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
-MAINTAINER=	nicolasherry@gmail.com
+MAINTAINER=	beastieboy@beastieboy.net
 COMMENT=	Dockable musicpd client applet for Window Maker
-WWW=		https://github.com/yogsothoth/wmmp
+WWW=		https://codeberg.org/beastieboy/wmmp
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake xorg
-USE_GITHUB=	yes
-GH_ACCOUNT=	yogsothoth
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_XORG=	xpm x11 xext
 
-PLIST_FILES=	bin/WMmp share/man/man1/WMmp.1.gz
+PLIST_FILES=	bin/WMmp \
+		share/man/man1/WMmp.1.gz
 
 post-patch:
-	${REINPLACE_CMD} -e 's|DESTINATION $${CMAKE_INSTALL_PREFIX}/man/man1|DESTINATION $${CMAKE_INSTALL_PREFIX}/share/man/man1|' \
-		${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e 's|/man/man1|/share/man/man1|g' \
+		${PATCH_WRKSRC}/CMakeLists.txt
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/WMmp

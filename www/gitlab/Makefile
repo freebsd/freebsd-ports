@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-${FLAVOR:Uce}
-PORTVERSION=	16.11.0
+PORTVERSION=	16.11.1
 DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
@@ -29,7 +29,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 MY_DEPENDS=	git>=2.41.0:devel/git \
 	gitaly>=${PORTVERSION}:devel/gitaly \
 	gitlab-elasticsearch-indexer>=4.8.0:textproc/gitlab-elasticsearch-indexer \
-	gitlab-agent>=16.10.1:net/gitlab-agent \
+	gitlab-agent>=${PORTVERSION}:net/gitlab-agent \
 	gitlab-pages>=${PORTVERSION}:www/gitlab-pages \
 	gitlab-shell>=14.35.0:devel/gitlab-shell \
 	gitlab-workhorse>=${PORTVERSION}:www/gitlab-workhorse \

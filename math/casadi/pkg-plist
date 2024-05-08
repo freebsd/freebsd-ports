@@ -23,6 +23,7 @@ include/casadi/core/dple.hpp
 include/casadi/core/exception.hpp
 include/casadi/core/expm.hpp
 include/casadi/core/external.hpp
+include/casadi/core/fmu.hpp
 include/casadi/core/function.hpp
 include/casadi/core/generic_expression.hpp
 include/casadi/core/generic_matrix.hpp
@@ -131,6 +132,7 @@ include/casadi/core/sx.hpp
 include/casadi/core/sx_elem.hpp
 include/casadi/core/sx_fwd.hpp
 include/casadi/core/timing.hpp
+include/casadi/core/tools.hpp
 include/casadi/core/xml_file.hpp
 include/casadi/core/xml_node.hpp
 include/casadi/mem.h

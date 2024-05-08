@@ -1,5 +1,5 @@
 PORTNAME=	gcc
-PORTVERSION=	14.0.1.s20240414
+PORTVERSION=	14.0.1.s20240503
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
@@ -35,7 +35,7 @@ CPE_VERSION=	${GCC_VERSION}
 # of executables and directories once installed.  A PORTVERSION of
 # Y.2.1.s20140817 results in values of Y-20140817, Y.2.1, and Y
 # for these three.
-DIST_VERSION=	${PORTVERSION:C/([0-9]+).*\.s([0-9]+)/\1-\2/}
+DIST_VERSION=	14.1.0-RC-20240503
 GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).*/\1/}
 CFLAGS:=	${CFLAGS:N-mretpoline} -D__USE_ISOC11
@@ -83,7 +83,11 @@ USE_GCC=	yes
 USE_GCC=	yes
 .endif
 
+.if ${ARCH} == i386
+LANGUAGES:=	c,c++,objc,fortran
+.else
 LANGUAGES:=	c,c++,objc,fortran,jit
+.endif
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 TARGLIB32=	${PREFIX}/lib32	# The version information is added later
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}

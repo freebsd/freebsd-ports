@@ -1,6 +1,5 @@
 PORTNAME=	libffi
-DISTVERSION=	3.4.4
-PORTREVISION=	1
+DISTVERSION=	3.4.6
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 

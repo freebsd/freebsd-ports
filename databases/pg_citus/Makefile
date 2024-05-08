@@ -1,5 +1,5 @@
 PORTNAME=	citus
-PORTVERSION=	12.1.2
+PORTVERSION=	12.1.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	pg_
@@ -10,8 +10,7 @@ WWW=		https://www.citusdata.com/
 
 LICENSE=	AGPLv3
 
-USES=		compiler:c11 gmake pgsql:14+ autoreconf readline ssl \
-		gettext-runtime
+USES=		compiler:c11 gmake pgsql:14+ autoreconf ssl
 
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd

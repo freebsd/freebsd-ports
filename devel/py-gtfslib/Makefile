@@ -10,6 +10,9 @@ WWW=		https://pypi.org/project/gtfslib/
 
 LICENSE=	GPLv3+
 
+DEPRECATED=	Depends on expired databases/py-sqlalchemy11
+EXPIRATION_DATE=2024-06-04
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy11>=0.6.1:databases/py-sqlalchemy11@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docopt>=0.6:devel/py-docopt@${PY_FLAVOR} \

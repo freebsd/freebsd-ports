@@ -1,0 +1,3 @@
+jqp is a TUI playground for exploring jq.
+
+This application utilizes the implementation of jq written in Go, gojq.

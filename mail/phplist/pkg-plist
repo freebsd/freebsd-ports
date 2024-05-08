@@ -431,9 +431,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/inc/random_compat/random.php
 %%WWWDIR%%/lists/admin/inc/unregister_globals.php
 %%WWWDIR%%/lists/admin/inc/userlib.php
-%%WWWDIR%%/lists/admin/inc/UUID.old..php
 %%WWWDIR%%/lists/admin/inc/UUID.php
-%%WWWDIR%%/lists/admin/inc/UUID2.php
 %%WWWDIR%%/lists/admin/index.php
 %%WWWDIR%%/lists/admin/info/.php_cs
 %%WWWDIR%%/lists/admin/info/composer.json
@@ -1696,6 +1694,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/Common/DAO/ConfigTrait.php
 %%WWWDIR%%/lists/admin/plugins/Common/DAO/Lists.php
 %%WWWDIR%%/lists/admin/plugins/Common/DAO/ListsTrait.php
+%%WWWDIR%%/lists/admin/plugins/Common/DAO/ListUserTrait.php
 %%WWWDIR%%/lists/admin/plugins/Common/DAO/Message.php
 %%WWWDIR%%/lists/admin/plugins/Common/DAO/MessageTrait.php
 %%WWWDIR%%/lists/admin/plugins/Common/DAO/TemplateTrait.php
@@ -1747,30 +1746,10 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/Common/widget_attributeform.tpl.php
 %%WWWDIR%%/lists/admin/plugins/Common/Widget.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/Autoloader.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/BaseController.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/class_map.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/config_file.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/Config.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/Controller.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/ControllerFactory.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/ControllerFactoryBase.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/DAO/Attribute.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/DAO/Config.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/DAO/List.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/DAO/Message.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/DAO/User.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/DAO.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/DB.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/DBResultIterator.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/dialog_js.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/Exception.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/ExportCSV.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/ExportXML.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/functions.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/HelpManager.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/HtmlToPdf.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/I18N.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/IExportable.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/image.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/images/add.png
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/images/attach.png
@@ -1792,8 +1771,6 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/images/up.png
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/images/user.png
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/images/yes.png
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/ImageTag.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/IPopulator.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/lan/translations_de.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/lan/translations_en.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/lan/translations_es.php
@@ -1803,19 +1780,9 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/lan/translations_ru.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/lan/translations_zh_TW.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/licence.txt
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/Listing.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/Logger.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/Main.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/Model.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/PageLink.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/Pager.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/PageURL.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/phpinfo.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/polyfill.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/Populator.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/session.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/Tabs.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/Toolbar.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/ui/default/dialog.js
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/ui/dressprow/dialog.js
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/ui/phplist-ui-bootlist/dialog.js
@@ -1904,6 +1871,14 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/jmathai/php-multi-curl/src/MultiCurlSequence.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/katzgrau/klogger/README.markdown
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/katzgrau/klogger/src/Logger.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/kodus/db-cache/src/Database/Adapter.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/kodus/db-cache/src/Database/CacheEntry.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/kodus/db-cache/src/Database/InvalidArgumentException.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/kodus/db-cache/src/Database/MySQLAdapter.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/kodus/db-cache/src/Database/PostgreSQLAdapter.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/kodus/db-cache/src/DatabaseCache.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/kodus/file-cache/src/FileCache.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/kodus/file-cache/src/InvalidArgumentException.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/mouf/picotainer/src/Picotainer.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/mouf/picotainer/src/PicotainerNotFoundException.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/pelago/emogrifier/LICENSE
@@ -1930,6 +1905,10 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/psr/log/Psr/Log/LoggerTrait.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/psr/log/Psr/Log/LogLevel.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/psr/log/Psr/Log/NullLogger.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/psr/simple-cache/LICENSE.md
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/psr/simple-cache/src/CacheException.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/psr/simple-cache/src/CacheInterface.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/psr/simple-cache/src/InvalidArgumentException.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/sabberworm/php-css-parser/LICENSE
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/sabberworm/php-css-parser/src/Comment/Comment.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/sabberworm/php-css-parser/src/Comment/Commentable.php
@@ -2058,8 +2037,6 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/symfony/polyfill-php80/Resources/stubs/ValueError.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/version.txt
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/WebblerListing.php
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/Widget.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin.php
 %%WWWDIR%%/lists/admin/plugins/COPYING.txt
 %%WWWDIR%%/lists/admin/plugins/dateplaceholder.php
@@ -5553,6 +5530,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/service-contracts/ServiceSubscriberInterface.php
 %%WWWDIR%%/lists/base/vendor/symfony/service-contracts/ServiceSubscriberTrait.php
 %%WWWDIR%%/lists/base/vendor/symfony/service-contracts/Test/ServiceLocatorTest.php
+%%WWWDIR%%/lists/base/vendor/symfony/service-contracts/Test/ServiceLocatorTestCase.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/.appveyor.yml
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/.editorconfig
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/.github/build-packages.php
@@ -12735,6 +12713,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/twig/twig/src/Sandbox/SecurityNotAllowedTagError.php
 %%WWWDIR%%/lists/base/vendor/twig/twig/src/Sandbox/SecurityPolicy.php
 %%WWWDIR%%/lists/base/vendor/twig/twig/src/Sandbox/SecurityPolicyInterface.php
+%%WWWDIR%%/lists/base/vendor/twig/twig/src/Sandbox/SourcePolicyInterface.php
 %%WWWDIR%%/lists/base/vendor/twig/twig/src/Source.php
 %%WWWDIR%%/lists/base/vendor/twig/twig/src/Template.php
 %%WWWDIR%%/lists/base/vendor/twig/twig/src/TemplateWrapper.php
@@ -12903,13 +12882,3 @@ bin/phplist
 @postexec chown %%WWWOWN%%:%%WWWGRP%% %B/${WWWDIR_REL}/admin/plugins
 @postexec chown %%WWWOWN%%:%%WWWGRP%% %B/${WWWDIR_REL}/config
 @postexec chown %%WWWOWN%%:%%WWWGRP%% %B/${WWWDIR_REL}/images
-%%PORTDOCS%%%%DOCSDIR%%/README.batches
-%%PORTDOCS%%%%DOCSDIR%%/README.bounces
-%%PORTDOCS%%%%DOCSDIR%%/README.commandline
-%%PORTDOCS%%%%DOCSDIR%%/README.passwords
-%%PORTDOCS%%%%DOCSDIR%%/README.repetition
-%%PORTDOCS%%%%DOCSDIR%%/README.robots
-%%PORTDOCS%%%%DOCSDIR%%/README.rssfeeds
-%%PORTDOCS%%%%DOCSDIR%%/README.security
-%%PORTDOCS%%%%DOCSDIR%%/README.usertables
-%%PORTDOCS%%%%DOCSDIR%%/README.utf8

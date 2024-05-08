@@ -46,6 +46,7 @@ include/spdlog/formatter.h
 include/spdlog/fwd.h
 include/spdlog/logger-inl.h
 include/spdlog/logger.h
+include/spdlog/mdc.h
 include/spdlog/pattern_formatter-inl.h
 include/spdlog/pattern_formatter.h
 include/spdlog/sinks/android_sink.h
@@ -92,6 +93,6 @@ lib/cmake/spdlog/spdlogConfigTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/spdlog/spdlogConfigTargets.cmake
 lib/cmake/spdlog/spdlogConfigVersion.cmake
 lib/libspdlog.so
-lib/libspdlog.so.1.13
+lib/libspdlog.so.1.14
 lib/libspdlog.so.%%SOVERSION%%
 libdata/pkgconfig/spdlog.pc

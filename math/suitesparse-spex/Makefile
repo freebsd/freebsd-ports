@@ -1,5 +1,5 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	2.3.2
+PORTVERSION=	3.1.0
 CATEGORIES=	math
 
 COMMENT=	Sparse Left-looking Integer-Preserving LU Factorization
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp	\
 		libamd.so:math/suitesparse-amd	\
 		libcolamd.so:math/suitesparse-colamd
 
-USES=		localbase:ldflags
+USES=		localbase:ldflags python
 LDFLAGS+=	-lm
 
 MPORTNAME=	SPEX

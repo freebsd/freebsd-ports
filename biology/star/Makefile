@@ -26,13 +26,14 @@ USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	alexdobin
 
+EXTRACT_AFTER_ARGS=	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/source/htslib --no-same-owner --no-same-permissions
+
 WRKSRC_SUBDIR=	source
 MAKE_FLAGS=	HTSLIB='' CXXFLAGS_SIMD=""
 
 PLIST_FILES=	bin/STAR
 
 post-patch:
-	${RM} -rf ${WRKSRC}/htslib
 	${REINPLACE_CMD} \
 		-e 's|"htslib/htslib/sam.h"|<htslib/sam.h>|g' \
 		-e 's|"htslib/htslib/kstring.h"|<htslib/kstring.h>|g' \

@@ -185,7 +185,6 @@
 %%WWWDIR%%/objects/Skeleton.js
 %%WWWDIR%%/objects/SkinnedMesh.js
 %%WWWDIR%%/objects/Sprite.js
-%%WWWDIR%%/renderers/WebGL1Renderer.js
 %%WWWDIR%%/renderers/WebGL3DRenderTarget.js
 %%WWWDIR%%/renderers/WebGLArrayRenderTarget.js
 %%WWWDIR%%/renderers/WebGLCubeRenderTarget.js
@@ -243,7 +242,6 @@
 %%WWWDIR%%/renderers/shaders/ShaderChunk/gradientmap_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/iridescence_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/iridescence_pars_fragment.glsl.js
-%%WWWDIR%%/renderers/shaders/ShaderChunk/lightmap_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/lightmap_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/lights_fragment_begin.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/lights_fragment_end.glsl.js

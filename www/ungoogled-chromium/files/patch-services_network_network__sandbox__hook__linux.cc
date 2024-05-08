@@ -1,4 +1,4 @@
---- services/network/network_sandbox_hook_linux.cc.orig	2024-03-22 14:16:19 UTC
+--- services/network/network_sandbox_hook_linux.cc.orig	2024-04-23 07:42:17 UTC
 +++ services/network/network_sandbox_hook_linux.cc
 @@ -15,11 +15,14 @@
  #include "sandbox/linux/syscall_broker/broker_file_permission.h"
@@ -30,7 +30,7 @@
 @@ -118,6 +123,7 @@ bool NetworkPreSandboxHook(std::vector<std::string> ne
        GetNetworkBrokerCommandSet(),
        GetNetworkFilePermissions(std::move(network_context_parent_dirs)),
-       sandbox::policy::SandboxLinux::PreSandboxHook(), options);
+       options);
 +#endif
  
    return true;

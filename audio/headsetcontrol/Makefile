@@ -1,5 +1,5 @@
 PORTNAME=	headsetcontrol
-DISTVERSION=	2.7.0
+DISTVERSION=	3.0.0
 CATEGORIES=	audio
 
 MAINTAINER=	Alexander88207@protonmail.com

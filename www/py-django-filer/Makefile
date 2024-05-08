@@ -1,5 +1,6 @@
 PORTNAME=	django-filer
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +12,7 @@ WWW=		https://github.com/stefanfoulis/django-filer
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2<5.1:www/py-django32@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=3.2<5.1:www/py-django42@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-easy-thumbnails>0:graphics/py-django-easy-thumbnails@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-polymorphic>0:www/py-django-polymorphic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}

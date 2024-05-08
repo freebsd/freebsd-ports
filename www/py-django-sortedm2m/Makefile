@@ -1,6 +1,6 @@
 PORTNAME=	django-sortedm2m
 PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MASTER_SITES=	PYPI
@@ -12,7 +12,7 @@ WWW=		https://github.com/gregmuellegger/django-sortedm2m
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=2.2:www/py-django32@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=2.2:www/py-django42@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist

@@ -275,7 +275,19 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/projtoolbaricons/default_16x16/open.png
 %%DATADIR%%/data/projtoolbaricons/default_16x16/readme.txt
 %%DATADIR%%/data/projtoolbaricons/default_16x16/readme2.txt
+%%DATADIR%%/data/projtoolbaricons/default_16x16/recents.png
 %%DATADIR%%/data/projtoolbaricons/default_16x16/save.png
+%%DATADIR%%/data/projtoolbaricons/default_white_16x16/add-dir.png
+%%DATADIR%%/data/projtoolbaricons/default_white_16x16/add-file.png
+%%DATADIR%%/data/projtoolbaricons/default_white_16x16/cfg.png
+%%DATADIR%%/data/projtoolbaricons/default_white_16x16/del.png
+%%DATADIR%%/data/projtoolbaricons/default_white_16x16/license.txt
+%%DATADIR%%/data/projtoolbaricons/default_white_16x16/open.png
+%%DATADIR%%/data/projtoolbaricons/default_white_16x16/readme.txt
+%%DATADIR%%/data/projtoolbaricons/default_white_16x16/readme2.txt
+%%DATADIR%%/data/projtoolbaricons/default_white_16x16/recents.png
+%%DATADIR%%/data/projtoolbaricons/default_white_16x16/save-min.png
+%%DATADIR%%/data/projtoolbaricons/default_white_16x16/save.png
 %%DATADIR%%/data/projtoolbaricons/feather_black_16x16/add-dir.png
 %%DATADIR%%/data/projtoolbaricons/feather_black_16x16/add-dir.svg
 %%DATADIR%%/data/projtoolbaricons/feather_black_16x16/add-file.png
@@ -287,6 +299,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/projtoolbaricons/feather_black_16x16/license.txt
 %%DATADIR%%/data/projtoolbaricons/feather_black_16x16/open.png
 %%DATADIR%%/data/projtoolbaricons/feather_black_16x16/open.svg
+%%DATADIR%%/data/projtoolbaricons/feather_black_16x16/recents.png
 %%DATADIR%%/data/projtoolbaricons/feather_black_16x16/save.png
 %%DATADIR%%/data/projtoolbaricons/feather_black_16x16/save.svg
 %%DATADIR%%/data/projtoolbaricons/feather_white_16x16/add-dir.png
@@ -300,6 +313,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/projtoolbaricons/feather_white_16x16/license.txt
 %%DATADIR%%/data/projtoolbaricons/feather_white_16x16/open.png
 %%DATADIR%%/data/projtoolbaricons/feather_white_16x16/open.svg
+%%DATADIR%%/data/projtoolbaricons/feather_white_16x16/recents.png
 %%DATADIR%%/data/projtoolbaricons/feather_white_16x16/save.png
 %%DATADIR%%/data/projtoolbaricons/feather_white_16x16/save.svg
 %%DATADIR%%/data/sideicons/common_20x20/console.png

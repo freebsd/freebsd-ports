@@ -1,6 +1,6 @@
 PORTNAME=	ringrtc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.39.3
+DISTVERSION=	2.40.0
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/mikael/ringrtc/:base \
 		LOCAL/mikael/ringrtc/:boringssl \
@@ -31,7 +31,7 @@ DISTFILES=	base-${BASE_REV}.tar.gz:base \
 		testing-${TESTING_REV}.tar.gz:testing \
 		opus-${OPUS_REV}.tar.gz:opus
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Middleware library for Signal-Desktop
 WWW=		https://github.com/signalapp/ringrtc
 
@@ -55,7 +55,7 @@ GH_TUPLE=	signalapp:ringrtc:${DISTVERSIONPREFIX}${DISTVERSION} \
 		signalapp:webrtc:${WEBRTC_REV}:webrtc
 
 # sh net-im/signal-desktop/get_deps.sh
-WEBRTC_REV=	6261d
+WEBRTC_REV=	6261e
 
 # modify webrtc_fetch.sh, then sh webrtc_fetch.sh
 BASE_REV=		36ecc8e397422620def3bb19a7ba392810ca2442
@@ -71,7 +71,7 @@ LIBYUV_REV=		04821d1e7d60845525e8db55c7bcd41ef5be9406
 NASM_REV=		f477acb1049f5e043904b87b825c5915084a9a29
 TESTING_REV=		450bfd79ee0369ac1a5465a12820b5d94a5956be
 THIRD_PARTY_REV=	692fab5c0074bc6fa486dce1a4aa7b2cc5609928
-OPUS_REV=		593419e833acab4d15b4901fe156177fb7315468
+OPUS_REV=		0e30966b198ad28943799eaf5b3b08100b6f70c3
 
 BINARY_ALIAS=	vpython3=${PYTHON_CMD}
 

@@ -1,6 +1,6 @@
 PORTNAME=	h2o
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0-dev.20240314
+DISTVERSION=	2.3.0-dev.20240411
 CATEGORIES=	www
 
 MAINTAINER=	dch@FreeBSD.org
@@ -13,23 +13,24 @@ LICENSE_COMB=	multi
 BROKEN_armv6=	fails to compile: asm_arm.inc:139:36: '.syntax divided' arm assembly not supported
 BROKEN_armv7=	fails to compile: asm_arm.inc:139:36: '.syntax divided' arm assembly not supported
 
-BUILD_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
-LIB_DEPENDS=	libuv.so:devel/libuv
+LIB_DEPENDS=	libhiredis.so:databases/hiredis \
+		libyaml.so:textproc/libyaml
 
-USES=		cmake:noninja compiler:c11 cpe perl5 pkgconfig shebangfix ssl
+USES=		cmake compiler:c11 cpe pathfix perl5 pkgconfig shebangfix ssl
 CPE_VENDOR=	dena
 USE_GITHUB=	yes
-GH_TAGNAME=	7545f5f
-
-USE_LDCONFIG=	yes
+GH_TAGNAME=	222b36d
+USE_LDCONFIG=	YES
 USE_RC_SUBR=	${PORTNAME}
 
 SHEBANG_FILES=	share/h2o/start_server
 
-CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=OFF
+CMAKE_ON=	BUILD_SHARED_LIBS
+
+EXTRACT_AFTER_ARGS=	--exclude deps/hiredis --exclude deps/yaml/include
 
 SUB_FILES=	${PORTNAME} ${PORTNAME}.conf.sample
-SUB_LIST+=	H2O_GROUP=${H2O_GROUP} \
+SUB_LIST=	H2O_GROUP=${H2O_GROUP} \
 		H2O_LOGDIR=${H2O_LOGDIR} \
 		H2O_USER=${H2O_USER}
 
@@ -49,26 +50,28 @@ OPTIONS_DEFINE=		DOCS MRUBY
 OPTIONS_DEFAULT=	MRUBY
 OPTIONS_SUB=		yes
 MRUBY_DESC=		Build with embedded mruby handler support
-MRUBY_USES=		bison ruby:build
+MRUBY_BUILD_DEPENDS+=	rubygem-rake>=0:devel/rubygem-rake
+MRUBY_USES=		bison libtool ruby:build
 MRUBY_CMAKE_BOOL=	WITH_MRUBY
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == i386
-CMAKE_ARGS+=	-DWITH_FUSION=OFF
-.endif
-
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == amd64 && defined(CPUTYPE) && ${MACHINE_CPU:Mavx2}
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-cputype-defined
+CMAKE_ON+=	WITH_FUSION
+.else
+CMAKE_OFF+=	WITH_FUSION
+.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR} \
 		${STAGEDIR}${H2O_LOGDIR}
-	${INSTALL_DATA} \
-		${WRKDIR}/${PORTNAME}.conf.sample \
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.conf.sample \
 		${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md \
+		${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

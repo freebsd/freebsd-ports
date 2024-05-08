@@ -1,5 +1,5 @@
-TIMESTAMP = 1705307676
-SHA256 (ergochat-ergo-v2.13.0_GH0.tar.gz) = 85a1e5501d4a4cb05b263de4b59e1fb20896963a2fd053483c90b40e4b31c4ab
-SIZE (ergochat-ergo-v2.13.0_GH0.tar.gz) = 3668775
+TIMESTAMP = 1715055968
+SHA256 (ergochat-ergo-v2.13.1_GH0.tar.gz) = be2b938d35e7022bf347d70f627ec8cbe8c9836abe1cc3635048e35e61dca5cf
+SIZE (ergochat-ergo-v2.13.1_GH0.tar.gz) = 3668644
 SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
 SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234

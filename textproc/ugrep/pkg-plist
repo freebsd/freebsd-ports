@@ -1,9 +1,11 @@
 bin/ug
 bin/ugrep
+bin/ugrep-indexer
 bin/ug+
 bin/ugrep+
 share/man/man1/ug.1.gz
 share/man/man1/ugrep.1.gz
+share/man/man1/ugrep-indexer.1.gz
 %%DATADIR%%/patterns/README.md
 %%DATADIR%%/patterns/c++/README.md
 %%DATADIR%%/patterns/c++/classes

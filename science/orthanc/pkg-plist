@@ -11,10 +11,15 @@
 bin/OrthancRecoverCompressedFile
 include/orthanc/OrthancCDatabasePlugin.h
 include/orthanc/OrthancCPlugin.h
+include/orthanc/OrthancDatabasePlugin.proto
 sbin/Orthanc
+%%DATADIR%%/plugins/libDelayedDeletion.so
+%%DATADIR%%/plugins/libDelayedDeletion.so.%%DISTVERSION%%
 %%DATADIR%%/plugins/libHousekeeper.so
 %%DATADIR%%/plugins/libHousekeeper.so.%%DISTVERSION%%
 %%DATADIR%%/plugins/libModalityWorklists.so
 %%DATADIR%%/plugins/libModalityWorklists.so.%%DISTVERSION%%
+%%DATADIR%%/plugins/libMultitenantDicom.so
+%%DATADIR%%/plugins/libMultitenantDicom.so.%%DISTVERSION%%
 %%DATADIR%%/plugins/libServeFolders.so
 %%DATADIR%%/plugins/libServeFolders.so.%%DISTVERSION%%

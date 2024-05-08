@@ -371,11 +371,6 @@ USES+=		pkgconfig
 CPPFLAGS+=	-DU_USING_ICU_NAMESPACE=1
 .endif
 
-.if ${PHP_MODNAME} == "json"
-CONFIGURE_ARGS+=	--enable-json
-BUILD_DEPENDS=		re2c:devel/re2c
-.endif
-
 .if ${PHP_MODNAME} == "ldap"
 LIB_DEPENDS+=libsasl2.so:security/cyrus-sasl2
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE} --with-ldap-sasl=${LOCALBASE}

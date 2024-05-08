@@ -115,7 +115,7 @@ OPENH264_LIB_DEPENDS=	libopenh264.so:multimedia/openh264
 OPENH264_CMAKE_BOOL=	WITH_OPENH264
 
 # LoadLibraryA("libpcsclite.so")
-PCSC_LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
+PCSC_RUN_DEPENDS=	${LOCALBASE}/lib/libpcsclite.so:devel/pcsc-lite
 PCSC_CMAKE_BOOL=	WITH_PCSC
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio

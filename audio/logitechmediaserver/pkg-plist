@@ -2019,6 +2019,9 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Plugin/ACLFiletest/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/ACLFiletest/install.xml
 %%SLIMDIR%%/Slim/Plugin/ACLFiletest/strings.txt
+%%SLIMDIR%%/Slim/Plugin/Analytics/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/Analytics/install.xml
+%%SLIMDIR%%/Slim/Plugin/Analytics/strings.txt
 %%SLIMDIR%%/Slim/Plugin/AudioAddict/API.pm
 %%SLIMDIR%%/Slim/Plugin/AudioAddict/HTML/EN/plugins/AudioAddict/settings.html
 %%SLIMDIR%%/Slim/Plugin/AudioAddict/Plugin.pm

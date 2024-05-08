@@ -3,7 +3,6 @@
     SUBDIR += 0ad
     SUBDIR += 0verkill
     SUBDIR += 2048
-    SUBDIR += 2048-qt
     SUBDIR += 3dc
     SUBDIR += 3dpong
     SUBDIR += 3omns
@@ -859,7 +858,6 @@
     SUBDIR += reminiscence
     SUBDIR += renpy
     SUBDIR += rescue
-    SUBDIR += residualvm
     SUBDIR += retroarch
     SUBDIR += retroarch-assets
     SUBDIR += rezerwar

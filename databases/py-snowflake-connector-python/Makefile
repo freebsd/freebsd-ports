@@ -1,6 +1,5 @@
 PORTNAME=	snowflake-connector-python
-PORTVERSION=	3.5.0
-PORTREVISION=	1
+DISTVERSION=	3.8.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +21,6 @@ USE_PYTHON=	autoplist concurrent distutils
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>0.24.0,<2.0.0:devel/py-asn1crypto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cffi>=1.9,<2:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cryptography>=3.1.0:security/py-cryptography@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oscrypto<2.0:security/py-oscrypto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>=16.2.0:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt<3.0:www/py-pyjwt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR} \

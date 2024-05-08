@@ -1,5 +1,6 @@
 PORTNAME=	gloox
 DISTVERSION=	1.0.24
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://camaya.net/download/
 

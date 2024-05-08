@@ -1,5 +1,5 @@
 PORTNAME=	fcitx5-lua
-DISTVERSION=	5.0.10
+DISTVERSION=	5.0.13
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt
 LIB_DEPENDS=	libFcitx5Core.so:textproc/fcitx5
 
 USES=		cmake compiler:c++17-lang gettext-tools kde:5 lua:53 pkgconfig \
-		tar:xz
+		tar:zst
 
 USE_KDE=	ecm
 

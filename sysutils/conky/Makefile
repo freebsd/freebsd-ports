@@ -1,5 +1,5 @@
 PORTNAME=	conky
-PORTVERSION=	1.20.1
+PORTVERSION=	1.20.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/brndnmtthws/conky
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	gsed:textproc/gsed
+BUILD_DEPENDS=	gperf:devel/gperf \
+		gsed:textproc/gsed
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USES=		cmake compiler:c++11-lib cpe gettext-runtime iconv \
@@ -76,7 +77,8 @@ LUA_CAIRO_IMPLIES=	X11
 LUA_CAIRO_USES=		gnome
 LUA_CAIRO_USE=		GNOME=cairo
 LUA_CAIRO_CMAKE_BOOL=	BUILD_LUA_CAIRO
-LUA_CAIRO_PLIST_FILES=	lib/conky/libcairo.so
+LUA_CAIRO_PLIST_FILES=	lib/conky/libcairo.so \
+			lib/conky/libcairo_xlib.so
 
 LUA_IMLIB2_IMPLIES=	IMLIB2 X11
 LUA_IMLIB2_CMAKE_BOOL=	BUILD_LUA_IMLIB2

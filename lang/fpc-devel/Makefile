@@ -1,5 +1,5 @@
 PORTNAME=	fpc
-PORTVERSION=	3.3.1.20240323
+PORTVERSION=	3.3.1.20240503
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/acm/freepascal/:bootstrap \
 		LOCAL/acm/freepascal/:man
@@ -28,7 +28,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com/freepascal.org
 GL_ACCOUNT=	fpc
 GL_PROJECT=	source
-GL_TAGNAME=	cf6b38c35fe0295adb97500fd3a17d693bac6dba
+GL_TAGNAME=	edc1c79cbb2925e9f0d1b929d8da01348eeedc35
 
 FPCSRCDIR=	source-${GL_TAGNAME}
 

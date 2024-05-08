@@ -1,3 +1,4 @@
+bin/fcitx5-qt5-immodule-probing
 include/Fcitx5Qt5/Fcitx5Qt5DBusAddons/fcitx5qt5dbusaddons_export.h
 include/Fcitx5Qt5/Fcitx5Qt5DBusAddons/fcitxqtcontrollerproxy.h
 include/Fcitx5Qt5/Fcitx5Qt5DBusAddons/fcitxqtdbustypes.h

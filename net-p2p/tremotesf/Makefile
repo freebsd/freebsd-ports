@@ -1,5 +1,5 @@
 PORTNAME=	tremotesf
-DISTVERSION=	2.6.1
+DISTVERSION=	2.6.3
 CATEGORIES=	net-p2p
 
 MAINTAINER=	vsasjason@gmail.com
@@ -19,7 +19,8 @@ qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
 qt6_PKGNAMESUFFIX=	-qt6
 qt6_CONFLICTS_INSTALL=	${PORTNAME}
 
-USES=		cmake:testing desktop-file-utils gettext-tools pkgconfig xorg
+USES=		cmake:testing compiler:c++20-lang desktop-file-utils \
+		gettext-tools pkgconfig xorg
 
 .if ${FLAVOR} == qt5
 USES+=		kde:5 qt:5

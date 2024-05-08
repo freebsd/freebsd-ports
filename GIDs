@@ -275,7 +275,7 @@ svxlink:*:331:
 keycloak:*:332:
 honeytrap:*:333:
 percona:*:334:
-# free: 335
+benthos:*:335:
 # free: 336
 daapd:*:337:
 murmur:*:338:
@@ -283,7 +283,7 @@ mumble-server:*:339:
 wildfire:*:340:
 stunnel:*:341:
 openfire:*:342:
-# free: 343
+gunicorn:*:343:
 # free: 344
 # free: 345
 # free: 346

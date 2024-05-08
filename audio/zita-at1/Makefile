@@ -1,5 +1,5 @@
 PORTNAME=	zita-at1
-DISTVERSION=	0.8.1
+DISTVERSION=	0.8.2
 CATEGORIES=	audio
 MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 

@@ -1,4 +1,4 @@
---- net/tools/cert_verify_tool/cert_verify_tool.cc.orig	2024-02-25 20:22:18 UTC
+--- net/tools/cert_verify_tool/cert_verify_tool.cc.orig	2024-04-23 07:42:17 UTC
 +++ net/tools/cert_verify_tool/cert_verify_tool.cc
 @@ -33,7 +33,7 @@
  #include "third_party/boringssl/src/pki/trust_store.h"
@@ -18,7 +18,7 @@
    // On Linux, use a fixed ProxyConfigService, since the default one
    // depends on glib.
    //
-@@ -566,7 +566,7 @@ int main(int argc, char** argv) {
+@@ -571,7 +571,7 @@ int main(int argc, char** argv) {
    std::string impls_str = command_line.GetSwitchValueASCII("impls");
    if (impls_str.empty()) {
      // Default value.

@@ -10,6 +10,8 @@ WWW=		https://www.opennn.net/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_armv7=	gcc13 fails: error: use of built-in trait '__remove_cvref(_InIter1)' in function signature, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=278630
+
 USES=		cmake:testing dos2unix
 USE_LDCONFIG=	yes
 

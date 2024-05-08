@@ -1,5 +1,6 @@
 PORTNAME=	mate-desktop
 PORTVERSION=	1.28.1
+PORTREVISION=	1
 CATEGORIES=	x11 mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -16,6 +17,7 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification
 BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes
+RUN_DEPENDS=	dconf-editor:devel/dconf-editor
 
 PORTSCOUT=	limitw:1,even
 

@@ -7,8 +7,8 @@
 MusicFolder = "%%DATADIR%%/music"
 # Folder to store application data (database, cache, etc.)
 #DataFolder 	= "/var/db/navidrome"
-# How frequently to scan for changes in your music library. Set it to 0 to disable scans
-#ScanInterval = "1m"
+# How frequently to scan for changes in your music library using cron syntax. Set it to 0 to disable scans
+#ScanSchedule	= "@every 1m"
 
 # Log level. Useful for troubleshooting. Possible values: error, info, debug, trace. Default: info
 LogLevel	= "info"

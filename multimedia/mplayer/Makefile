@@ -11,7 +11,7 @@ WWW=		http://www.mplayerhq.hu/
 OPTIONS_DEFINE=	AALIB AMR_NB AMR_WB ASS BLURAY CACA CDIO DV DVDNAV \
 		ENCA FONTCONFIG FRIBIDI GIF GNUTLS GSM GUI IPV6 JACK \
 		JPEG LADSPA LIBMNG LIRC LZO NAS NLS OPENAL OPENGL \
-		OPENJPEG OPUS PULSEAUDIO RTMP \
+		OPENJPEG OPUS PULSEAUDIO \
 		SDL SKINS SNDIO SMB SPEEX SVGALIB V4L VDPAU VPX \
 		X11 X11DGA X11VM XINERAMA XVIDEO XVMC
 
@@ -57,7 +57,8 @@ CONFIGURE_ARGS+=	--disable-arts \
 			--disable-mencoder \
 			--disable-mpg123 \
 			--disable-musepack \
-			--disable-theora
+			--disable-theora \
+			--disable-librtmp
 
 .include "${.CURDIR}/../../multimedia/mplayer/Makefile.options"
 

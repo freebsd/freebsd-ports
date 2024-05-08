@@ -6,7 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Program for programming the on-chip memory of Atmel AVR CPUs
-WWW=		https://www.nongnu.org/avrdude/
+WWW=		https://github.com/avrdudes/avrdude/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

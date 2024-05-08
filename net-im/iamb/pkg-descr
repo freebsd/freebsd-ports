@@ -1,0 +1,12 @@
+iamb is a Matrix client for the terminal that uses Vim keybindings. It
+includes support for:
+
+ o Threads, spaces, E2EE, and read receipts
+ o Image previews in terminals that support it (sixels, Kitty, and
+   iTerm2), or using pixelated blocks for those that don't
+ o Notifications via terminal bell or desktop environment
+ o Creating, joining, and leaving rooms
+ o Sending and accepting room invitations
+ o Editing, redacting, and reacting to messages
+ o Custom keybindings
+ o Multiple profiles

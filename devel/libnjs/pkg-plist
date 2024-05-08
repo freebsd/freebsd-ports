@@ -17,11 +17,9 @@ include/njs_dtoa.h
 include/njs_encoding.h
 include/njs_error.h
 include/njs_event.h
-include/njs_file.h
 include/njs_flathsh.h
 include/njs_function.h
 include/njs_generator.h
-include/njs_hash.h
 include/njs_iterator.h
 include/njs_json.h
 include/njs_lexer_tables.h
@@ -51,7 +49,6 @@ include/njs_str.h
 include/njs_string.h
 include/njs_strtod.h
 include/njs_symbol.h
-include/njs_time.h
 include/njs_trace.h
 include/njs_typed_array.h
 include/njs_types.h

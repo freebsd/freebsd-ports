@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/src/partition_alloc/BUILD.gn.orig	2024-03-22 14:16:19 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/BUILD.gn.orig	2024-04-23 07:42:17 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/BUILD.gn
-@@ -858,7 +858,7 @@ if (is_clang_or_gcc) {
+@@ -851,7 +851,7 @@ if (is_clang_or_gcc) {
          configs -= [ "//build/config/compiler:enable_arc" ]
        }
      }

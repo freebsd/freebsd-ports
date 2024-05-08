@@ -1,6 +1,6 @@
 PORTNAME=	einops
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.8.0
 CATEGORIES=	misc # machine-learning
 #MASTER_SITES=	PYPI # some test files are missing in the PYPI tarball
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

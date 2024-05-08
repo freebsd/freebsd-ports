@@ -1,4 +1,4 @@
---- chrome/common/chrome_features.cc.orig	2024-03-22 14:16:19 UTC
+--- chrome/common/chrome_features.cc.orig	2024-04-23 07:42:17 UTC
 +++ chrome/common/chrome_features.cc
 @@ -81,7 +81,7 @@ BASE_FEATURE(kUseAdHocSigningForWebAppShims,
  #endif  // BUILDFLAG(IS_MAC)
@@ -18,7 +18,7 @@
  // Enables the Restart background mode optimization. When all Chrome UI is
  // closed and it goes in the background, allows to restart the browser to
  // discard memory.
-@@ -321,7 +321,7 @@ BASE_FEATURE(kDesktopPWAsEnforceWebAppSettingsPolicy,
+@@ -302,7 +302,7 @@ BASE_FEATURE(kDesktopPWAsEnforceWebAppSettingsPolicy,
  BASE_FEATURE(kDesktopPWAsRunOnOsLogin,
               "DesktopPWAsRunOnOsLogin",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -27,7 +27,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -360,7 +360,7 @@ BASE_FEATURE(kDesktopPWAsTabStripSettings,
+@@ -341,7 +341,7 @@ BASE_FEATURE(kDesktopPWAsTabStripSettings,
               base::FEATURE_DISABLED_BY_DEFAULT);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -36,16 +36,16 @@
  // Controls whether Chrome Apps are supported. See https://crbug.com/1221251.
  // If the feature is disabled, Chrome Apps continue to work. If enabled, Chrome
  // Apps will not launch and will be marked in the UI as deprecated.
-@@ -394,7 +394,7 @@ const base::FeatureParam<bool> kDnsOverHttpsFallbackPa
- const base::FeatureParam<bool> kDnsOverHttpsShowUiParam {
-   &kDnsOverHttps, "ShowUi",
+@@ -375,7 +375,7 @@ const base::FeatureParam<bool> kDnsOverHttpsFallbackPa
+ const base::FeatureParam<bool> kDnsOverHttpsShowUiParam{&kDnsOverHttps,
+                                                         "ShowUi",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX)
 +    BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-       true
+                                                         true
  #else
-       false
-@@ -969,7 +969,7 @@ BASE_FEATURE(kLacrosSharedComponentsDir,
+                                                         false
+@@ -913,7 +913,7 @@ BASE_FEATURE(kLacrosSharedComponentsDir,
               base::FEATURE_ENABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -54,7 +54,7 @@
  BASE_FEATURE(kLinuxLowMemoryMonitor,
               "LinuxLowMemoryMonitor",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -982,7 +982,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
+@@ -926,7 +926,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
      &kLinuxLowMemoryMonitor, "critical_level", 255};
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

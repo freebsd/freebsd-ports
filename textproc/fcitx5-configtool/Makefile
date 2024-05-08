@@ -1,6 +1,5 @@
 PORTNAME=	fcitx5-configtool
-DISTVERSION=	5.0.17
-PORTREVISION=	2
+DISTVERSION=	5.1.5
 CATEGORIES=	textproc x11
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
@@ -21,18 +20,19 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		xkeyboard-config>=0:x11/xkeyboard-config
 
 USES=		cmake compiler:c++17-lang gettext-tools kde:5 pkgconfig qt:5 \
-		tar:xz xorg
+		tar:zst xorg
 
 PLIST_SUB=	VER=${PORTVERSION}
 
-USE_KDE=	config coreaddons ecm i18n iconthemes itemviews kdeclarative \
-		kirigami2 package plasma-framework service widgetsaddons
-USE_QT=		concurrent core dbus declarative gui quickcontrols2 widgets \
+USE_KDE=	config coreaddons ecm i18n iconthemes itemviews \
+		kdeclarative kirigami2 package plasma-framework service \
+		widgetsaddons
+USE_QT=		concurrent core dbus declarative gui widgets \
 		x11extras buildtools:build qmake:build
 USE_XORG=	x11 xkbfile
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	ENABLE_CONFIG_QT ENABLE_KCM
-CMAKE_OFF=	ENABLE_TEST
+CMAKE_OFF=	ENABLE_TEST USE_QT6
 
 .include <bsd.port.mk>

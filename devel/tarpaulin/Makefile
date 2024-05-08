@@ -1,5 +1,5 @@
 PORTNAME=	tarpaulin
-DISTVERSION=	0.28.0
+DISTVERSION=	0.29.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -47,7 +47,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cc-1.0.92 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
-		chrono-0.4.37 \
+		chrono-0.4.38 \
 		clap-2.34.0 \
 		clap-4.5.4 \
 		clap_builder-4.5.2 \
@@ -117,7 +117,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		libssh2-sys-0.3.0 \
 		libz-sys-1.1.16 \
 		linux-raw-sys-0.4.13 \
-		llvm_profparser-0.4.0 \
+		llvm_profparser-0.5.0 \
 		log-0.4.21 \
 		matchers-0.1.0 \
 		md5-0.7.0 \
@@ -149,7 +149,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pkg-config-0.3.30 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.79 \
+		proc-macro2-1.0.81 \
 		procfs-0.16.0 \
 		procfs-core-0.16.0 \
 		quick-error-1.2.3 \
@@ -173,9 +173,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		security-framework-2.10.0 \
 		security-framework-sys-2.10.0 \
 		semver-1.0.22 \
-		serde-1.0.197 \
-		serde_derive-1.0.197 \
-		serde_json-1.0.115 \
+		serde-1.0.200 \
+		serde_derive-1.0.200 \
+		serde_json-1.0.116 \
 		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
 		sharded-slab-0.1.7 \
@@ -212,6 +212,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tracing-core-0.1.32 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.18 \
+		tracing-test-0.2.4 \
+		tracing-test-macro-0.2.4 \
 		try-lock-0.2.5 \
 		twox-hash-1.6.3 \
 		unicase-2.7.0 \

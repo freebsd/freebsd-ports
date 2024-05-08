@@ -31,6 +31,7 @@
     SUBDIR += eclipse-findbugs
     SUBDIR += eclipse-pydev
     SUBDIR += eclipse-shelled
+    SUBDIR += eclipse-yaml-editor
     SUBDIR += hamcrest
     SUBDIR += icedtea-web
     SUBDIR += infobus

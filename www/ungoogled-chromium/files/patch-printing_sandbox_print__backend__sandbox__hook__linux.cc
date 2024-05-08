@@ -1,4 +1,4 @@
---- printing/sandbox/print_backend_sandbox_hook_linux.cc.orig	2023-05-05 12:12:41 UTC
+--- printing/sandbox/print_backend_sandbox_hook_linux.cc.orig	2024-04-23 07:42:17 UTC
 +++ printing/sandbox/print_backend_sandbox_hook_linux.cc
 @@ -10,20 +10,27 @@
  #include "base/path_service.h"
@@ -40,8 +40,8 @@
  #if BUILDFLAG(IS_CHROMEOS) && BUILDFLAG(USE_CUPS)
    // Create the socket connections to the CUPS server before engaging the
    // sandbox, since new connections cannot be made after that.
-@@ -92,6 +101,7 @@ bool PrintBackendPreSandboxHook(
-       sandbox::policy::SandboxLinux::PreSandboxHook(), options);
+@@ -91,6 +100,7 @@ bool PrintBackendPreSandboxHook(
+                                GetPrintBackendFilePermissions(), options);
  
    instance->EngageNamespaceSandboxIfPossible();
 +#endif

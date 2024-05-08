@@ -488,7 +488,6 @@
     SUBDIR += math77
     SUBDIR += mathgl
     SUBDIR += mathicsscript
-    SUBDIR += mathlibtools
     SUBDIR += mathmod
     SUBDIR += mathomatic
     SUBDIR += mathpresso
@@ -654,6 +653,7 @@
     SUBDIR += octave-forge-symbolic
     SUBDIR += octave-forge-tablicious
     SUBDIR += octave-forge-tcl-octave
+    SUBDIR += octave-forge-timer
     SUBDIR += octave-forge-tsa
     SUBDIR += octave-forge-velas
     SUBDIR += octave-forge-video
@@ -962,6 +962,7 @@
     SUBDIR += py-intspan
     SUBDIR += py-iohexperimenter
     SUBDIR += py-ipyopt
+    SUBDIR += py-islpy
     SUBDIR += py-isosurfaces
     SUBDIR += py-jacobi
     SUBDIR += py-jax

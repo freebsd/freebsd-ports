@@ -1,6 +1,6 @@
 PORTNAME=	pytorch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.1
+DISTVERSION=	2.2.2
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	${PORTNAME}
@@ -66,6 +66,8 @@ post-patch:
 	@cd ${WRKSRC} && for f in $$(${GREP} -rl "include <malloc\.h>" * | ${GREP} -E "\.(c|cpp|h|hpp)$$"); do \
 	  ${REINPLACE_CMD} -i'' -E "s|include <malloc\.h>|include <stdlib.h>|" $$f; \
 	done
+	# remove bundled fmt
+	@${RM} -r ${WRKSRC}/third_party/fmt
 
 post-install:
 	# functorch.so is installed back into the source directory, see https://github.com/pytorch/pytorch/issues/91524

@@ -12,7 +12,7 @@ WWW=		https://github.com/rbarrois/python-semanticversion
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=1.1:www/py-django32@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=1.1:www/py-django42@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils nose2

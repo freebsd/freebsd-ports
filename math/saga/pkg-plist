@@ -213,6 +213,8 @@ share/man/man1/saga_cmd.1.gz
 share/man/man1/saga_gui.1.gz
 share/metainfo/org.saga-gis.saga-gui.appdata.xml
 share/pixmaps/saga.png
+%%DATADIR%%/debug/README.md
+%%DATADIR%%/debug/gdb_saga_api_pp.py
 %%DATADIR%%/docs/saga_on_mac.md
 %%DATADIR%%/docs/saga_on_mac_build.sh
 %%DATADIR%%/docs/saga_python_example.bat

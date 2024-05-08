@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2021-02-08 14:51:20 UTC
+--- CMakeLists.txt.orig	2022-04-18 18:07:26 UTC
 +++ CMakeLists.txt
 @@ -141,6 +141,12 @@ attach a debugger which will then receive the console 
  # install locations
@@ -13,7 +13,7 @@
  if (APPLE)
    set (CMAKE_INSTALL_BINDIR ${CMAKE_PROJECT_NAME}.app/Contents/MacOS)
    set (CMAKE_INSTALL_DATAROOTDIR ${CMAKE_PROJECT_NAME}.app/Contents/Resources)
-@@ -847,8 +853,20 @@ find_package (Boost 1.62 REQUIRED COMPONENTS log_setup
+@@ -875,8 +881,20 @@ find_package (Boost 1.62 REQUIRED COMPONENTS log_setup
  #
  # OpenMP
  #
@@ -35,7 +35,16 @@
  #
  # fftw3 single precision library
  #
-@@ -1135,7 +1153,7 @@ add_executable (encode77 lib/77bit/encode77.f90)
+@@ -923,7 +941,7 @@ set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra")
+ #
+ set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra")
+ 
+-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wall -Wextra -fexceptions -frtti")
++set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wall -Wno-vla -Wextra -fexceptions -frtti")
+ 
+ if (NOT APPLE)
+   set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-pragmas")
+@@ -1169,7 +1187,7 @@ add_executable (wsprsim ${wsprsim_CSRCS})
  target_link_libraries (encode77 wsjt_fort wsjt_cxx)
  
  add_executable (wsprsim ${wsprsim_CSRCS})
@@ -44,7 +53,7 @@
  
  add_executable (jt4code lib/jt4code.f90)
  target_link_libraries (jt4code wsjt_fort wsjt_cxx)
-@@ -1177,6 +1195,12 @@ target_link_libraries (ldpcsim240_74 wsjt_fort wsjt_cx
+@@ -1211,6 +1229,12 @@ endif(WSJT_BUILD_UTILS)
  
  endif(WSJT_BUILD_UTILS)
  
@@ -57,7 +66,7 @@
  add_executable (fmtave lib/fmtave.f90)
  
  add_executable (fcal lib/fcal.f90)
-@@ -1561,12 +1585,12 @@ install (PROGRAMS
+@@ -1601,12 +1625,12 @@ install (PROGRAMS
    RENAME rigctld-wsjtx${CMAKE_EXECUTABLE_SUFFIX}
    )
  

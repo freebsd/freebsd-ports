@@ -280,7 +280,7 @@ svxlink:*:331:331::0:0:svxlink server:/nonexistent:/usr/sbin/nologin
 keycloak:*:332:332::0:0:keycloak server:/nonexistent:/usr/sbin/nologin
 honeytrap:*:333:333::0:0:HoneyTrap Daemon:/nonexistent:/usr/sbin/nologin
 percona:*:334:334::0:0:Percona Daemons:/nonexistent:/usr/sbin/nologin
-# free: 335
+benthos:*:335:335::0:0:Benthos Daemon:/nonexistent:/usr/sbin/nologin
 _pma:*:336:80::0:0:phpMyAdmin Owner:/nonexistent:/usr/sbin/nologin
 daapd:*:337:337::0:0:daapd User:/nonexistent:/usr/sbin/nologin
 murmur:*:338:338::0:0:& User:/nonexistent:/usr/sbin/nologin
@@ -288,7 +288,7 @@ mumble-server:*:339:339::0:0:& User:/nonexistent:/usr/sbin/nologin
 wildfire:*:340:340::0:0:Wildfire Daemon:/nonexistent:/usr/sbin/nologin
 stunnel:*:341:341::0:0:Stunnel Daemon:/nonexistent:/usr/sbin/nologin
 openfire:*:342:342::0:0:Openfire IM Daemon:/nonexistent:/usr/sbin/nologin
-# free: 343
+gunicorn:*:343:343::0:0:Gunicorn Daemon:/nonexistent:/usr/sbin/nologin
 # free: 344
 # free: 345
 # free: 346

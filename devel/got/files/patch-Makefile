@@ -1,8 +1,0 @@
---- Makefile.orig	2021-04-10 22:50:22 UTC
-+++ Makefile
-@@ -1,4 +1,4 @@
--SUBDIR = libexec got tog gotadmin
-+SUBDIR = openbsd-compat libexec got tog gotadmin
- 
- .PHONY: release dist
- 

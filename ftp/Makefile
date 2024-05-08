@@ -83,6 +83,7 @@
     SUBDIR += tnftpd
     SUBDIR += twoftpd
     SUBDIR += uftp
+    SUBDIR += unftp
     SUBDIR += vsftpd
     SUBDIR += vsftpd-ext
     SUBDIR += waiho

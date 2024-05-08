@@ -1,6 +1,6 @@
 PORTNAME=	metasploit
 DISTVERSION=	6.3.50
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -47,6 +47,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		rubygem-metasploit-payloads>=2.0.161:security/rubygem-metasploit-payloads \
 		rubygem-metasploit_data_models>=0:security/rubygem-metasploit_data_models \
 		rubygem-metasploit_payloads-mettle>=1.0.26:security/rubygem-metasploit_payloads-mettle \
+		rubygem-mini_portile2>=2.8.2:devel/rubygem-mini_portile2 \
 		rubygem-mqtt>=0:net/rubygem-mqtt \
 		rubygem-msgpack>=0:devel/rubygem-msgpack \
 		rubygem-nessus_rest>=0:security/rubygem-nessus_rest \
@@ -93,7 +94,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		rubygem-ruby_smb>=0:net/rubygem-ruby_smb \
 		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
 		rubygem-rubyzip>=0:archivers/rubygem-rubyzip \
-		rubygem-sinatra>=0:www/rubygem-sinatra \
+		rubygem-sinatra2>=0:www/rubygem-sinatra2 \
 		rubygem-sqlite3>=0:databases/rubygem-sqlite3 \
 		rubygem-sshkey>=0:security/rubygem-sshkey \
 		rubygem-swagger-blocks>=0:devel/rubygem-swagger-blocks \

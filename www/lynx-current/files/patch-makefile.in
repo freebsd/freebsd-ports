@@ -1,15 +1,15 @@
---- makefile.in.orig	2023-06-13 14:30:49 UTC
+--- makefile.in.orig	2024-05-02 14:02:41 UTC
 +++ makefile.in
-@@ -327,7 +327,7 @@ install-doc : $(DOCDIR) $(HELPDIR)
- 		cd $(HELPDIR) && rm -f $$name ;\
- 		r= ;\
- 		test "$(LN_S)" = "ln -s" || r=`echo $(helpdir)|sed -e "s%[^/]\+%..%g" -e "s%^.%%"`; \
--		cd $(HELPDIR) && ( $(LN_S) $$r$(docdir)/$$name . || cp $(DOCDIR)/$$name . );\
-+		cd $(HELPDIR) && ( $(LN_S) ../doc/lynx/$$name . || cp $(DOCDIR)/$$name . );\
+@@ -329,7 +329,7 @@ install-doc : $(DOCDIR) $(HELPDIR)
+ 		echo ".. relative: $$r"; \
+ 		for name in COPYING COPYHEADER; do \
+ 		cd $(HELPDIR) && rm -f $$name;\
+-		cd $(HELPDIR) && ( $(LN_S) $$r/$$name $$name || cp $(DOCDIR)/$$name . );\
++		cd $(HELPDIR) && ( $(LN_S) ../doc/lynx/$$name $$name || cp $(DOCDIR)/$$name . );\
  		done';\
- 	$(SHELL) -c 'set -x; \
- 		case `id|sed -e "s/(.*//"` in \
-@@ -405,14 +405,10 @@ install-help : htmlized_cfg help_files.sed $(HELPDIR) 
+ 	$(SHELL) -c '\
+ 		i=`id|sed -e "s/(.*//"`; \
+@@ -409,14 +409,10 @@ install-help : htmlized_cfg help_files.sed $(HELPDIR) 
  		if test "$(COMPRESS_PROG)" != "" ; then \
  			(cd $(HELPDIR) && $(COMPRESS_PROG) $$files ) \
  		fi'
@@ -28,18 +28,18 @@
  	@ECHO_CC@sed	-e '/^HELPFILE:http/s!^!#!' \
  		-e '/^#HELPFILE:file/s!#!!' \
  		$(SYSCONFDIR)/lynx.tmp | \
-@@ -420,8 +416,8 @@ install-help : htmlized_cfg help_files.sed $(HELPDIR) 
+@@ -424,8 +420,8 @@ install-help : htmlized_cfg help_files.sed $(HELPDIR) 
  	$(SHELL) $(scripts_dir)/cfg_path.sh lynx_doc  $(helpdir) | \
  	sed	-e '/^HELPFILE:file/s!$$!$(COMPRESS_EXT)!' \
  		-e '/^HELPFILE:file/s!$(COMPRESS_EXT)$(COMPRESS_EXT)$$!$(COMPRESS_EXT)!' \
 -		>$(SYSCONFDIR)/lynx.cfg ;\
 -	chmod 644 $(SYSCONFDIR)/lynx.cfg ;\
-+		>$(SYSCONFDIR)/lynx.cfg.sample; \
-+	chmod 644 $(SYSCONFDIR)/lynx.cfg.sample; \
++		>$(SYSCONFDIR)/lynx.cfg.sample ;\
++	chmod 644 $(SYSCONFDIR)/lynx.cfg.sample ;\
  	rm -f $(SYSCONFDIR)/lynx.tmp
  
  LYHelp.h : help_files.sed $(srcdir)/LYHelp.hin
-@@ -444,17 +440,15 @@ cfg_defs.h : $(scripts_dir)/cfg_defs.sh $(scripts_dir)
+@@ -448,17 +444,15 @@ install-cfg : $(SYSCONFDIR)
  	@$(SHELL) -c 'SHELL=$(SHELL) FGREP="$(FGREP)" $(SHELL) $(scripts_dir)/cfg_defs.sh $(srcdir)'
  
  install-cfg : $(SYSCONFDIR)

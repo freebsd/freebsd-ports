@@ -1,0 +1,2 @@
+samplerate is a wrapper around Erik de Castro Lopo's libsamplerate (aka Secret
+Rabbit Code) for high-quality sample rate conversion.

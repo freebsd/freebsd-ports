@@ -98,6 +98,7 @@ include/wangle/ssl/SSLStats.h
 include/wangle/ssl/SSLUtil.h
 include/wangle/ssl/ServerSSLContext.h
 include/wangle/ssl/TLSCredProcessor.h
+include/wangle/ssl/TLSInMemoryTicketProcessor.h
 include/wangle/ssl/TLSTicketKeyManager.h
 include/wangle/ssl/TLSTicketKeySeeds.h
 include/wangle/ssl/test/TicketUtil.h

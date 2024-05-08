@@ -1,5 +1,0 @@
-Miscellaneous tools that can be used without the rest of QEMU
-
-* qemu-img: QEMU disk image utility
-* qemu-io:  QEMU disk exerciser
-* qemu-nbd: QEMU disk network block device server

@@ -155,6 +155,7 @@
     SUBDIR += hashcash
     SUBDIR += hbiff
     SUBDIR += heirloom-mailx
+    SUBDIR += hydroxide
     SUBDIR += ifile
     SUBDIR += im
     SUBDIR += imapdedup

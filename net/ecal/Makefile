@@ -1,7 +1,6 @@
 PORTNAME=	ecal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.12.1
-PORTREVISION=	5
+DISTVERSION=	5.13.0
 CATEGORIES=	net devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +15,8 @@ BROKEN_i386=	link fails: undefined reference due to --no-allow-shlib-undefined: 
 
 BUILD_DEPENDS=	asio>0:net/asio \
 		termcolor>0:devel/termcolor
-LIB_DEPENDS=	libcurl.so:ftp/curl \
+LIB_DEPENDS=	libabsl_hash.so:devel/abseil \
+		libcurl.so:ftp/curl \
 		libfmt.so:devel/libfmt \
 		libfineftp-server.so:ftp/fineftp-server \
 		libftxui-component.so:devel/ftxui \
@@ -24,20 +24,21 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libprotobuf.so:devel/protobuf \
 		libqwt.so:x11-toolkits/qwt6@qt5 \
 		libspdlog.so:devel/spdlog \
+		libsysinfo.so:devel/libsysinfo \
 		libtinyxml2.so:textproc/tinyxml2 \
 		libyaml-cpp.so:devel/yaml-cpp
 		# binaries aren't linked with libfineftp-server.so, see https://github.com/continental/ecal/issues/381; same with libcurl.so
 
 USES=		cmake compiler:c++17-lang desktop-file-utils localbase:ldflags pkgconfig qt:5 shared-mime-info
-USE_QT=		core gui widgets buildtools:build qmake:build
+USE_QT=		concurrent core gui widgets buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	eclipse-ecal
-GH_TUPLE=	eclipse-ecal:tcp_pubsub:f59da78:tcp_pubsub/thirdparty/tcp_pubsub \
-		brofield:simpleini:9b3ed7e:simpleini/thirdparty/simpleini \
-		steinwurf:recycle:c542570:recycle/thirdparty/recycle \
-		xguerin:tclap:349170a:tclap/thirdparty/tclap
+GH_TUPLE=	eclipse-ecal:tcp_pubsub:b0393e4:tcp_pubsub/thirdparty/tcp_pubsub/tcp_pubsub \
+		brofield:simpleini:9b3ed7e:simpleini/thirdparty/simpleini/simpleini \
+		steinwurf:recycle:c542570:recycle/thirdparty/recycle/recycle \
+		xguerin:tclap:349170a:tclap/thirdparty/tclap/tclap
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_SAMPLES \

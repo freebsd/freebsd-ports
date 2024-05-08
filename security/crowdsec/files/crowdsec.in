@@ -20,7 +20,6 @@
 . /etc/rc.subr
 
 name=crowdsec
-desc="Crowdsec Agent"
 rcvar=crowdsec_enable
 
 load_rc_config "$name"
@@ -30,95 +29,81 @@ load_rc_config "$name"
 : "${crowdsec_machine_name:=localhost}"
 : "${crowdsec_flags:=}"
 
-pidfile=/var/run/${name}.pid
+pidfile=/var/run/${name}_daemon.pid
+pidfile_crowdsec=/var/run/${name}.pid
 required_files="$crowdsec_config"
-command="%%PREFIX%%/bin/${name}"
-start_cmd="${name}_start"
-stop_cmd="${name}_stop"
+command="/usr/sbin/daemon"
+command_crowdsec="%%PREFIX%%/bin/crowdsec"
+command_cscli="%%PREFIX%%/bin/cscli"
+command_args="-f -P ${pidfile} -p ${pidfile_crowdsec} -r -R 10 -t \"${name}\" -- ${command_crowdsec} -c ${crowdsec_config} ${crowdsec_flags}"
+reload_cmd="${name}_reload"
 start_precmd="${name}_precmd"
 configtest_cmd="${name}_configtest"
+reload_precmd="${name}_configtest"
+restart_precmd="${name}_configtest"
+stop_precmd="${name}_stop_precmd"
+stop_postcmd="${name}_stop_postcmd"
 extra_commands="configtest reload"
+
+crowdsec_stop_precmd() {
+    # take note of the pid, because sbin/daemon will remove the file
+    # without waiting for crowdsec to exit
+    if [ -r "$pidfile_crowdsec" ]; then
+        _CROWDSECPID="$(check_pidfile "$pidfile_crowdsec" "$command_crowdsec")"
+        export _CROWDSECPID
+    fi
+}
+
+crowdsec_stop_postcmd() {
+    # wait for process to exit before restarting, or it will find the http port in use
+    if [ -n "$_CROWDSECPID" ]; then
+        wait_for_pids "$_CROWDSECPID"
+    fi
+}
 
 crowdsec_precmd() {
     cs_cli() {
-        "%%PREFIX%%/bin/cscli" -c "${crowdsec_config}" "$@"
+        "$command_cscli" -c "$crowdsec_config" "$@"
     }
+
     Config() {
         cs_cli config show --key "Config.$1"
     }
 
-    HUB_DIR=$(Config ConfigPaths.HubDir)
-    if ! ls -1qA "$HUB_DIR"/* >/dev/null 2>&1; then
-        echo "Fetching hub inventory"
-        cs_cli hub update || :
-    fi
-
-    CONFIG_DIR=$(Config ConfigPaths.ConfigDir)
-
     # Is the LAPI enabled on this node?
-    if [ "$(cs_cli config show --key Config.API.Server.Enable)" != "false" ]; then
-
-        # There are no machines, we create the main one
-        if [ "$(cs_cli machines list -o json)" = "[]" ]; then
+    if [ "$(Config API.Server.Enable)" != "false" ]; then
+        # There are no machines, we create one for cscli & log processor
+        if [ "$(cs_cli machines list -o json --error)" = "[]" ]; then
             echo "Registering LAPI"
             cs_cli machines add "${crowdsec_machine_name}" --auto --force --error || :
         fi
+
+        CONFIG_DIR=$(Config ConfigPaths.ConfigDir)
 
         # Register to the central server to receive the community blocklist and more
         if [ ! -s "${CONFIG_DIR}/online_api_credentials.yaml" ]; then
             echo "Registering CAPI"
             cs_cli capi register || :
         fi
-
     fi
 
-    # This would work but takes 30secs to timeout while reading the metrics, because crowdsec is not running yet.
-    #    cs_cli collections inspect crowdsecurity/freebsd 2>/dev/null | grep ^installed | grep -q true || \
-    #        cs_cli collections install crowdsecurity/freebsd || :
-
-    # So we just check for the file
-    if [ ! -e "${CONFIG_DIR}/collections/freebsd.yaml" ]; then
+    # install the collection for the first time, or if it has been removed
+    cs_cli collections inspect crowdsecurity/freebsd --no-metrics 2>/dev/null | grep ^installed | grep -q true || \
         cs_cli collections install crowdsecurity/freebsd || :
-    fi
 }
 
-crowdsec_stop()
-{
-    if [ ! -f "$pidfile" ]; then
-        echo "${name} is not running."
-        return
-    fi
-    pid=$(cat "$pidfile")
-    if kill -0 "$pid" >/dev/null 2>&1; then
-        echo "Stopping ${name}."
-        kill -s TERM "$pid" >/dev/null 2>&1
-        # shellcheck disable=SC2034
-        for i in $(seq 1 20); do
-            sleep 1
-            if ! kill -0 "$pid" >/dev/null 2>&1; then
-                rm -f "$pidfile"
-                return
-            fi
-        done
-        echo "Timeout, terminating ${name} with SIGKILL."
-        kill -s KILL "$pid" >/dev/null 2>&1
-        rm -f "$pidfile"
-    else
-        echo "${name} is not running."
-    fi
-}
-
-crowdsec_start()
-{
-    /usr/sbin/daemon -f -p "$pidfile" -t "$desc" -- \
-        "$command" -c "$crowdsec_config" ${crowdsec_flags}
-}
-
-crowdsec_configtest()
-{
+crowdsec_configtest() {
     echo "Performing sanity check on ${name} configuration."
-    if "$command" -c "$crowdsec_config" -t -error; then
-        echo "Configuration test OK"
+    if ! "$command_crowdsec" -c "$crowdsec_config" -t -error; then
+        exit 1
+    fi
+    echo "Configuration test OK"
+}
+
+crowdsec_reload() {
+    echo "Reloading configuration"
+    if [ -r "$pidfile_crowdsec" ]; then
+        kill -HUP "$(check_pidfile "$pidfile_crowdsec" "${command_crowdsec}")"
     fi
 }
 

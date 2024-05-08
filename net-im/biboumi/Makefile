@@ -1,6 +1,6 @@
 PORTNAME=	biboumi
 DISTVERSION=	9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	https://git.louiz.org/biboumi/snapshot/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

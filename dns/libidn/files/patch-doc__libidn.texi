@@ -1,6 +1,6 @@
---- doc/libidn.texi.orig	Thu Jan 22 20:48:25 2004
-+++ doc/libidn.texi	Thu Jan 22 20:48:45 2004
-@@ -1271,8 +1271,7 @@
+--- doc/libidn.texi.orig	2024-01-12 22:30:50 UTC
++++ doc/libidn.texi
+@@ -1518,8 +1518,7 @@ Accessing a specific StringPrep profile directly:
  Accessing a specific StringPrep profile directly:
  
  @example

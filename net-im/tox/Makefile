@@ -1,7 +1,6 @@
 PORTNAME=	toxcore
-PORTVERSION=	0.2.18
+PORTVERSION=	0.2.19
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	net-im net-p2p
 
@@ -25,12 +24,12 @@ TEST_DEPENDS=	opencv_visualisation:graphics/opencv
 USE_GITHUB=	yes
 GH_ACCOUNT=	TokTok camgunz:cmp
 GH_PROJECT=	c-toxcore cmp:cmp
-GH_TAGNAME=	4c3737d1a172ee74d2b35b5fd6865d1fe9dac7af:cmp
+GH_TAGNAME=	643e6a62d4eb0ec2277de269cda33da02cba2756:cmp
 GH_SUBDIR=	third_party/cmp:cmp
 
 CPE_VENDOR=	toktok
 
-USES=		cmake compiler:c11 cpe libtool pathfix pkgconfig
+USES=		cmake cpe libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 PLIST_SUB=	VER=${PORTVERSION:C/0.//}.0 SO=2
 

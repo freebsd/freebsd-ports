@@ -1,6 +1,6 @@
---- src/ssl.c.orig	2023-08-08 09:33:37 UTC
+--- src/ssl.c.orig	2024-03-14 06:01:10 UTC
 +++ src/ssl.c
-@@ -1182,7 +1182,9 @@ void init_openssl(void)
+@@ -1185,7 +1185,9 @@ void init_openssl(void)
      SSL_library_init();
      OpenSSL_add_all_algorithms();
  #if H2O_CAN_OSSL_ASYNC

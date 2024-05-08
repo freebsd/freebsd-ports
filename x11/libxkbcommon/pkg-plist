@@ -18,12 +18,14 @@ lib/libxkbregistry.so.0.0.0
 libdata/pkgconfig/xkbcommon.pc
 %%X11%%libdata/pkgconfig/xkbcommon-x11.pc
 libdata/pkgconfig/xkbregistry.pc
+libexec/xkbcommon/xkbcli-compile-compose
 libexec/xkbcommon/xkbcli-compile-keymap
 libexec/xkbcommon/xkbcli-how-to-type
 %%EVDEV%%libexec/xkbcommon/xkbcli-interactive-evdev
 %%WAYLAND%%libexec/xkbcommon/xkbcli-interactive-wayland
 %%X11%%libexec/xkbcommon/xkbcli-interactive-x11
 libexec/xkbcommon/xkbcli-list
+share/man/man1/xkbcli-compile-compose.1.gz
 share/man/man1/xkbcli-compile-keymap.1.gz
 share/man/man1/xkbcli-how-to-type.1.gz
 %%EVDEV%%share/man/man1/xkbcli-interactive-evdev.1.gz

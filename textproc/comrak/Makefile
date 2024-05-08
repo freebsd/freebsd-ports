@@ -1,5 +1,5 @@
 PORTNAME=	comrak
-DISTVERSION=	0.22.0
+DISTVERSION=	0.23.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,6 +25,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
+		bitflags-2.5.0 \
 		byteorder-1.4.3 \
 		cc-1.0.78 \
 		cfg-if-1.0.0 \
@@ -44,27 +45,31 @@ CARGO_CRATES=	adler-1.0.2 \
 		dirs-sys-0.3.7 \
 		emojis-0.5.2 \
 		entities-1.0.1 \
+		equivalent-1.0.1 \
 		errno-0.3.8 \
 		fancy-regex-0.7.1 \
-		fastrand-1.8.0 \
+		fastrand-2.0.2 \
 		flate2-1.0.25 \
 		fnv-1.0.7 \
 		getrandom-0.1.16 \
 		getrandom-0.2.8 \
 		hashbrown-0.12.3 \
+		hashbrown-0.14.3 \
 		heck-0.4.0 \
 		hermit-abi-0.2.6 \
 		ident_case-1.0.1 \
+		in-place-0.2.0 \
 		indexmap-1.9.2 \
-		instant-0.1.12 \
+		indexmap-2.2.6 \
 		io-lifetimes-1.0.3 \
 		is-terminal-0.4.2 \
 		itoa-1.0.5 \
 		lazy_static-1.4.0 \
-		libc-0.2.139 \
+		libc-0.2.153 \
 		line-wrap-0.1.1 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.1.4 \
+		linux-raw-sys-0.4.13 \
 		memchr-2.5.0 \
 		miniz_oxide-0.6.2 \
 		ntest-0.9.0 \
@@ -99,6 +104,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		regex-1.7.0 \
 		regex-syntax-0.6.28 \
 		rustix-0.36.17 \
+		rustix-0.38.32 \
 		rusty-fork-0.3.0 \
 		ryu-1.0.12 \
 		safemem-0.3.3 \
@@ -106,13 +112,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		serde-1.0.152 \
 		serde_derive-1.0.152 \
 		serde_json-1.0.91 \
+		serde_spanned-0.6.5 \
 		shell-words-1.1.0 \
 		siphasher-0.3.10 \
 		slug-0.1.4 \
 		strsim-0.10.0 \
 		syn-1.0.107 \
 		syntect-5.0.0 \
-		tempfile-3.4.0 \
+		tempfile-3.10.1 \
 		termcolor-1.1.3 \
 		terminal_size-0.2.3 \
 		thiserror-1.0.38 \
@@ -121,6 +128,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		time-core-0.1.0 \
 		time-macros-0.2.6 \
 		toml-0.5.10 \
+		toml-0.8.12 \
+		toml_datetime-0.6.5 \
+		toml_edit-0.22.9 \
 		typed-arena-2.0.1 \
 		unicode-ident-1.0.6 \
 		unicode_categories-0.1.1 \
@@ -152,6 +162,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		windows_x86_64_gnullvm-0.52.4 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.52.4 \
+		winnow-0.6.6 \
 		xdg-2.4.1 \
 		xml-rs-0.8.14 \
 		yaml-rust-0.4.5

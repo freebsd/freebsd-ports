@@ -13,6 +13,9 @@ WWW=		https://alembic.zzzcomputing.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired databases/py-sqlalchemy12
+EXPIRATION_DATE=2024-06-04
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-dateutil>=0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mako>=0:textproc/py-mako@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-editor>=0.3:devel/py-python-editor@${PY_FLAVOR} \

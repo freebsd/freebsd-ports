@@ -1,8 +1,8 @@
 PORTNAME=	rttr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.6-16
-PORTREVISION=	3
 DISTVERSIONSUFFIX=	-gb3a131c
+PORTREVISION=	3
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/rttrorg/rttr/commit/
@@ -25,11 +25,10 @@ CMAKE_OFF=	BUILD_DOCUMENTATION \
 		BUILD_UNIT_TESTS \
 		BUILD_EXAMPLES
 
-PORTSCOUT=	limit:^0\.
+EXTRACT_AFTER_ARGS=	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/3rd_party/chaiscript-* \
+			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/3rd_party/rapidjson-* \
+			--no-same-owner --no-same-permissions
 
-post-extract:
-	${RM} -r ${WRKSRC}/3rd_party/rapidjson-1.1.0/
-	${RM} -r ${WRKSRC}/3rd_party/chaiscript-devel/
-	${RM} -r ${WRKSRC}/3rd_party/chaiscript-6.1.0/
+PORTSCOUT=	limit:^0\.
 
 .include <bsd.port.mk>

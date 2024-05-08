@@ -1,7 +1,6 @@
 PORTNAME=	wireproxy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.7
-PORTREVISION=	2
+DISTVERSION=	1.0.9
 CATEGORIES=	net
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
-GO_MODULE=	github.com/octeep/wireproxy
+GO_MODULE=	github.com/pufferffish/wireproxy
 GO_TARGET=	./cmd/wireproxy
 
 PLIST_FILES=	bin/wireproxy

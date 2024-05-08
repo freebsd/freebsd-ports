@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Determine the malware activity on a network
 WWW=		http://nepenthes.carnivore.it/
 
+DEPRECATED=	Abandonware, last update in 2008 and upstream is gone.
+EXPIRATION_DATE=2024-05-31
+
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libadns.so:dns/adns \
 		libcurl.so:ftp/curl \

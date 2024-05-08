@@ -297,6 +297,23 @@ share/applications/furnace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/other/papers/screenshot3.png
 %%PORTDOCS%%%%DOCSDIR%%/other/papers/unifont-license.txt
 %%PORTDOCS%%%%DOCSDIR%%/other/papers/zsm-format.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/bifurcator.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/sid2.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/5e01.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/bifurcator.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/sid2.md
+%%PORTDOCS%%%%DOCSDIR%%/other/papers/oldflags.md
+%%DATADIR%%/demos/misc/Special Stage Sonic 3 (GBA).fur
+%%DATADIR%%/demos/misc/Weightlessness_ES5506.fur
+%%DATADIR%%/demos/misc/ZetaForceLevel2.fur
+%%DATADIR%%/demos/misc/biffy_bifurcator.fur
+%%DATADIR%%/demos/misc/brokenspace-msm5232.fur
+%%DATADIR%%/demos/misc/cavedotwave-msm5232.fur
+%%DATADIR%%/demos/multichip/Sunset Hill Zone Act 2.fur
+%%DATADIR%%/demos/nes/infinity.fur
+%%DATADIR%%/demos/virtualboy/wavetablehell4-vb.fur
+%%DATADIR%%/instruments/OPL/2OP Compressed Snare C-3 (Part 1).fui
+%%DATADIR%%/instruments/OPL/2OP Compressed Snare C-3 (Part 2).fui
 %%DATADIR%%/demos/README.md
 %%DATADIR%%/demos/amiga/a_wave_powerhouse.fur
 %%DATADIR%%/demos/amiga/bruno_time.fur
@@ -1799,3 +1816,4 @@ share/icons/hicolor/512x512/apps/furnace.png
 share/icons/hicolor/512x512@2/apps/furnace.png
 share/icons/hicolor/64x64/apps/furnace.png
 share/icons/hicolor/64x64@2/apps/furnace.png
+share/mime/packages/furnace.xml

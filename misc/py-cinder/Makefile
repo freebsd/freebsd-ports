@@ -13,6 +13,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=	pkg-static: py39-sqlalchemy12-1.2.19 conflicts with py39-sqlalchemy14-1.4.50 (installs files into the same place).  Problematic file: /usr/local/share/doc/py39-sqlalchemy/_images/sqla_arch_small.png
+DEPRECATED=	Depends on expired databases/py-sqlalchemy12
+EXPIRATION_DATE=2024-06-04
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel@${PY_FLAVOR} \

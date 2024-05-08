@@ -20,8 +20,6 @@ share/applications/grafx2.desktop
 %%DATADIR%%/gfx2def.ini
 %%DATADIR%%/gfx2.png
 %%DATADIR%%/skins/skin_chrisfx.png
-%%DATADIR%%/skins/unicode_0390-03C9.png
-%%DATADIR%%/skins/unicode_3040-309F.png
 %%LUA%%%%DATADIR%%/scripts/samples/brush/ApplyColor.lua
 %%LUA%%%%DATADIR%%/scripts/samples/brush/Fisheye.lua
 %%LUA%%%%DATADIR%%/scripts/samples/brush/GrayscaleAvg.lua
@@ -81,6 +79,10 @@ share/applications/grafx2.desktop
 %%LUA%%%%DATADIR%%/scripts/samples/picture/thomson/ostro_to7.lua
 %%LUA%%%%DATADIR%%/scripts/samples/picture/thomson/ostro_to8.lua
 %%LUA%%%%DATADIR%%/scripts/samples/picture/thomson/ostro_to9.lua
+%%DATADIR%%/fonts/5pxtinyfont.png
+%%DATADIR%%/fonts/GrafX2_Black.gif
+%%DATADIR%%/fonts/GrafX2_Dark.gif
+%%DATADIR%%/fonts/colorfont.pcx
 %%DATADIR%%/skins/font_Classic.png
 %%DATADIR%%/skins/font_DPaint.png
 %%DATADIR%%/skins/font_Fairlight.png
@@ -89,10 +91,12 @@ share/applications/grafx2.desktop
 %%DATADIR%%/skins/font_Seen.png
 %%DATADIR%%/skins/skin_Aurora.png
 %%DATADIR%%/skins/skin_DPaint.png
+%%DATADIR%%/skins/skin_black.png
 %%DATADIR%%/skins/skin_classic.png
+%%DATADIR%%/skins/skin_klin.png
 %%DATADIR%%/skins/skin_modern.png
 %%DATADIR%%/skins/skin_scenish.png
 %%DATADIR%%/skins/unicode_0410-044F.png
 share/icons/hicolor/scalable/apps/grafx2.svg
 share/icons/hicolor/scalable/apps/grafx2.xpm
-share/metainfo/grafx2.appdata.xml
+share/metainfo/eu.grafx2.grafx2.metainfo.xml

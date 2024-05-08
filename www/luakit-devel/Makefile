@@ -1,7 +1,6 @@
 PORTNAME=	luakit
-DISTVERSION=	2.3.3-0
-DISTVERSIONSUFFIX=	-g68e4ffc
-PORTREVISION=	3
+DISTVERSION=	2.3.6-7
+DISTVERSIONSUFFIX=	-g0bc0e39
 PORTEPOCH=	2
 CATEGORIES=	www
 PKGNAMESUFFIX=	-devel
@@ -13,17 +12,13 @@ WWW=		https://luakit.github.io
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.GPLv3
 
-BUILD_DEPENDS=	help2man:misc/help2man \
-		${LUA_MODLIBDIR}/lfs.so:devel/luafilesystem@${LUA_FLAVOR}
-LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
-		libharfbuzz.so:print/harfbuzz \
+BUILD_DEPENDS=	${LUA_MODLIBDIR}/lfs.so:devel/luafilesystem@${LUA_FLAVOR}
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libsoup-2.4.so:devel/libsoup \
-		libfreetype.so:print/freetype2 \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
-		libfontconfig.so:x11-fonts/fontconfig
+		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}luafilesystem>=0:devel/luafilesystem@${LUA_FLAVOR}
 
-USES=		compiler:c++11-lang desktop-file-utils gettext-runtime gmake \
+USES=		compiler:c++11-lang desktop-file-utils gmake \
 		gnome lua:51 pkgconfig sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	luakit
@@ -37,6 +32,7 @@ PORTDATA=	*
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS LUAJIT
+OPTIONS_DEFAULT=	LUAJIT
 LUAJIT_DESC=	Use the Just-In-Time compiler for lua
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 LUAJIT_MAKE_ARGS=	USE_LUAJIT=1
@@ -44,9 +40,9 @@ LUAJIT_MAKE_ARGS_OFF=	USE_LUAJIT=0
 
 post-extract:
 	@${REINPLACE_CMD} -e \
-		's|share/man|man| ; s|luakit/doc|doc/luakit| ; \
+		's|luakit/doc|doc/luakit| ; \
 		s|/etc/xdg|${PREFIX}/etc/xdg| ; \
-		s|gnu99|gnu11| ; s|-ggdb||' \
+		s|-ggdb||' \
 		${WRKSRC}/config.mk
 	@${REINPLACE_CMD} -e 's|bin/env lua|&${LUA_VER_STR}|' \
 		${WRKSRC}/build-utils/gentokens.lua

@@ -1,5 +1,6 @@
 PORTNAME=	mandelbulber
 DISTVERSION=	2.31-1
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org

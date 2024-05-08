@@ -20,7 +20,6 @@ include/TopologicCore/EdgeFactory.h
 include/TopologicCore/Face.h
 include/TopologicCore/FaceFactory.h
 include/TopologicCore/Geometry.h
-include/TopologicCore/GlobalCluster.h
 include/TopologicCore/Graph.h
 include/TopologicCore/InstanceGUIDManager.h
 include/TopologicCore/IntAttribute.h
@@ -42,6 +41,7 @@ include/TopologicCore/Utilities/CellUtility.h
 include/TopologicCore/Utilities/Direction.h
 include/TopologicCore/Utilities/EdgeUtility.h
 include/TopologicCore/Utilities/FaceUtility.h
+include/TopologicCore/Utilities/Guid.h
 include/TopologicCore/Utilities/ShellUtility.h
 include/TopologicCore/Utilities/TopologyUtility.h
 include/TopologicCore/Utilities/TransformationMatrix2D.h
@@ -52,6 +52,6 @@ include/TopologicCore/Vertex.h
 include/TopologicCore/VertexFactory.h
 include/TopologicCore/Wire.h
 include/TopologicCore/WireFactory.h
-lib/libTopologicCore.so
-lib/libTopologicCore.so.0
-lib/libTopologicCore.so.0.0.0
+lib/TopologicCore/libTopologicCore.so
+lib/TopologicCore/libTopologicCore.so.6
+lib/TopologicCore/libTopologicCore.so.6.0.0

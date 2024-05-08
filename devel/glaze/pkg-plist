@@ -34,7 +34,6 @@ include/glaze/compare/compare.hpp
 include/glaze/concepts/container_concepts.hpp
 include/glaze/core/common.hpp
 include/glaze/core/context.hpp
-include/glaze/core/macros.hpp
 include/glaze/core/meta.hpp
 include/glaze/core/opts.hpp
 include/glaze/core/ptr.hpp
@@ -66,6 +65,7 @@ include/glaze/json/json_format.hpp
 include/glaze/json/json_ptr.hpp
 include/glaze/json/json_t.hpp
 include/glaze/json/manage.hpp
+include/glaze/json/max_write_precision.hpp
 include/glaze/json/minify.hpp
 include/glaze/json/ndjson.hpp
 include/glaze/json/prettify.hpp

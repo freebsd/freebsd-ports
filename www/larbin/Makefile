@@ -11,6 +11,9 @@ WWW=		http://www.ailleret.com/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware, obsolete web crawler
+EXPIRATION_DATE=2024-05-31
+
 BUILD_DEPENDS=	bash:shells/bash \
 		makedepend:devel/makedepend
 

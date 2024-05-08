@@ -1,5 +1,5 @@
 PORTNAME=	fluentd
-PORTVERSION=	1.16.5
+PORTVERSION=	1.17.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,12 +10,15 @@ WWW=		https://fluentd.org/
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	\
+	rubygem-base64>=0.2<0.3:converters/rubygem-base64 \
 	rubygem-bundler>=0:sysutils/rubygem-bundler \
 	rubygem-cool.io>=1.4.5<2.0.0:devel/rubygem-cool.io \
+	rubygem-csv>=3.2:devel/rubygem-csv \
+	rubygem-drb>=2.2<2.3:devel/rubygem-drb \
 	rubygem-http_parser.rb>=0.5.1<0.9.0:net/rubygem-http_parser.rb \
 	rubygem-msgpack>=1.3.1<2.0.0:devel/rubygem-msgpack \
 	rubygem-serverengine>=2.2.5<3.0.0:net/rubygem-serverengine \
-	rubygem-sigdump>=0.2.2<0.3:devel/rubygem-sigdump \
+	rubygem-sigdump>=0.2.5<0.3:devel/rubygem-sigdump \
 	rubygem-strptime>=0.2.2<1.0.0:devel/rubygem-strptime \
 	rubygem-tzinfo1>=1.0<3.0:devel/rubygem-tzinfo1 \
 	rubygem-tzinfo-data>=1.0<2:devel/rubygem-tzinfo-data \

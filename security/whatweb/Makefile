@@ -1,6 +1,6 @@
 PORTNAME=	whatweb
 DISTVERSION=	0.5.5-${GH_TAGNAME}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security www
 
 MAINTAINER=	jamie@catflap.org
@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_TUPLE=	urbanadventurer:WhatWeb:1b35169
 
-RUN_DEPENDS=	rubygem-public_suffix>0:dns/rubygem-public_suffix \
+RUN_DEPENDS=	rubygem-json>=0:devel/rubygem-json \
+		rubygem-public_suffix>0:dns/rubygem-public_suffix \
 		rubygem-ipaddr>0:net/rubygem-ipaddr \
 		rubygem-addressable>0:www/rubygem-addressable
 

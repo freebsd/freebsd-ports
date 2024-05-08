@@ -1,0 +1,13 @@
+--- pyproject.toml.orig	2024-04-26 04:10:10 UTC
++++ pyproject.toml
+@@ -12,10 +12,8 @@ requires = [
+     "setuptools>=64;python_version>='3.12'",
+ 
+     "wheel>=0.34.2",
+-    "cmake>=3.18",
+     "scikit-build",
+     "nanobind",
+-    "ninja",
+     "pcpp",
+ ]
+ build-backend = "setuptools.build_meta"

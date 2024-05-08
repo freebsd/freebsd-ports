@@ -21,6 +21,7 @@ include/LibIME/libime/core/userlanguagemodel.h
 include/LibIME/libime/core/utils.h
 include/LibIME/libime/pinyin/libimepinyin_export.h
 include/LibIME/libime/pinyin/pinyincontext.h
+include/LibIME/libime/pinyin/pinyincorrectionprofile.h
 include/LibIME/libime/pinyin/pinyindata.h
 include/LibIME/libime/pinyin/pinyindecoder.h
 include/LibIME/libime/pinyin/pinyindictionary.h
@@ -28,6 +29,7 @@ include/LibIME/libime/pinyin/pinyinencoder.h
 include/LibIME/libime/pinyin/pinyinime.h
 include/LibIME/libime/pinyin/pinyinmatchstate.h
 include/LibIME/libime/pinyin/pinyinmatchstate_p.h
+include/LibIME/libime/pinyin/pinyinprediction.h
 include/LibIME/libime/pinyin/shuangpindata.h
 include/LibIME/libime/pinyin/shuangpinprofile.h
 include/LibIME/libime/table/autophrasedict.h

@@ -1,3 +1,3 @@
-TIMESTAMP = 1713580980
-SHA256 (pytorch-lightning-2.2.2.tar.gz) = db4035785022aeeccc9163469d703c605078df0115175e14035690ad49b0ae76
-SIZE (pytorch-lightning-2.2.2.tar.gz) = 615520
+TIMESTAMP = 1713946858
+SHA256 (pytorch-lightning-2.2.3.tar.gz) = 8bc606c3719b4546f122023ff47a146faf82a96a56cdfb79ac8a70b0ec905783
+SIZE (pytorch-lightning-2.2.3.tar.gz) = 615734

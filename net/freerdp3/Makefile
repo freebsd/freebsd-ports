@@ -132,7 +132,7 @@ OPUS_LIB_DEPENDS=	libopus.so:audio/opus
 OPUS_CMAKE_BOOL=	WITH_OPUS
 
 # LoadLibraryA("libpcsclite.so")
-PCSC_LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
+PCSC_RUN_DEPENDS=	${LOCALBASE}/lib/libpcsclite.so:devel/pcsc-lite
 PCSC_CMAKE_BOOL=	WITH_PCSC
 
 PKCS11_BUILD_DEPENDS=	${LOCALBASE}/include/pkcs11-helper-1.0/pkcs11.h:security/pkcs11-helper

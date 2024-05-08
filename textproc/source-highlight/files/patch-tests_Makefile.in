@@ -1,6 +1,15 @@
---- tests/Makefile.in.orig	2016-08-25 16:54:10 UTC
+--- tests/Makefile.in.orig	2024-04-23 17:29:34 UTC
 +++ tests/Makefile.in
-@@ -2108,7 +2108,7 @@ check_defaults:
+@@ -14,6 +14,8 @@
+ 
+ @SET_MAKE@
+ 
++.NOTPARALLEL: # some of the java-related tests can't run in parallel
++
+ # Copyright (C) 1999-2008 Lorenzo Bettini <http://www.lorenzobettini.it>
+ #  
+ # This file is free software; as a special exception the author gives
+@@ -2240,7 +2242,7 @@ check_defaults:
  @NO_CTAGS_FALSE@	sed -itesttmp -e 's/\_tmp\.h/\.h/g' test_refs_tmp.h.html test_refs_tmp.cpp.html
  @NO_CTAGS_FALSE@	sed -itesttmp -e 's/\_tmp\.cpp/\.cpp/g' test_refs_tmp.h.html test_refs_tmp.cpp.html
  @NO_CTAGS_FALSE@	$(CPP2LATEX_WREFS) -i $(srcdir)/test.h -o test_ref.out.tex $(CTAGS_COMMAND_TMP)

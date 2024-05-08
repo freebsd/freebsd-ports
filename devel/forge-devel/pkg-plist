@@ -17,8 +17,6 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-gogs.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-issue.el
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-issue.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-list.el
-%%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-list.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-notify.el
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-notify.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-post.el
@@ -27,12 +25,18 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-pullreq.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-repo.el
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-repo.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-repos.el
+%%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-repos.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-revnote.el
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-revnote.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-semi.el
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-semi.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-tablist.el
+%%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-tablist.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-topic.el
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-topic.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-topics.el
+%%EMACS_VERSION_SITE_LISPDIR%%/forge/forge-topics.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge.el
 %%EMACS_VERSION_SITE_LISPDIR%%/forge/forge.elc
 %%PDF%%%%DOCSDIR%%/forge.pdf

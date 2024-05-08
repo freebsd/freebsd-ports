@@ -11,6 +11,9 @@ WWW=		https://dnrd.sourceforge.net/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware, last release in 2007 and last activity in 2010. Consider using Unbound, dns/dnsmasq or dns/blocky
+EXPIRATION_DATE=2024-05-31
+
 USES=		cpe gmake
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes

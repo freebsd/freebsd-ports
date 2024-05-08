@@ -1,7 +1,6 @@
 PORTNAME=	ntpsec
 DISTVERSIONPREFIX=	NTPsec_
-DISTVERSION=	1_2_2a
-PORTREVISION=	1
+DISTVERSION=	1_2_3
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -36,8 +35,15 @@ REFCLOCKS_VARS=	CONFIGURE_ARGS+=--refclock=all
 
 PORTSCOUT=	limit:^\d+\. # prevent alpha-numeric strings
 
-post-install: # autoplist: plist varies depending on the python version
+post-install:
+	# autoplist: plist varies depending on the python version
 	@cd ${STAGEDIR}${PREFIX} && \
 		${FIND} * -type f -or -type l | ${SED} -e 's|^share/man/.*|&.gz|' >> ${TMPPLIST}
+	# strip binaries
+	@${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/bin/ntpfrob \
+		${STAGEDIR}${PREFIX}/bin/ntptime \
+		${STAGEDIR}${PREFIX}/lib/libntpc.so.1.1.0 \
+		${STAGEDIR}${PREFIX}/sbin/ntpd
 
 .include <bsd.port.mk>

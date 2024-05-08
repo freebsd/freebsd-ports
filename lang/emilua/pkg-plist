@@ -7,6 +7,7 @@ include/emilua/condition_variable.hpp
 include/emilua/config.h
 include/emilua/core.hpp
 include/emilua/detail/core.hpp
+include/emilua/detail/landlock.hpp
 include/emilua/fiber.hpp
 include/emilua/file.hpp
 include/emilua/file_descriptor.hpp
@@ -34,7 +35,7 @@ include/emilua/unix.hpp
 include/emilua/windows.hpp
 lib/libemilua.so
 lib/libemilua.so.0
-lib/libemilua.so.0.6.0
+lib/libemilua.so.0.7.2
 libdata/pkgconfig/emilua.pc
 libexec/emilua/emilua_gperf.awk
 share/man/man1/emilua.1.gz
@@ -55,12 +56,13 @@ share/man/man3em/filesystem.cap_get_file.3em.gz
 share/man/man3em/filesystem.cap_set_file.3em.gz
 share/man/man3em/filesystem.chmod.3em.gz
 share/man/man3em/filesystem.chown.3em.gz
+share/man/man3em/filesystem.chroot.3em.gz
 share/man/man3em/filesystem.clock.3em.gz
 share/man/man3em/filesystem.copy.3em.gz
 share/man/man3em/filesystem.copy_file.3em.gz
 share/man/man3em/filesystem.copy_symlink.3em.gz
 share/man/man3em/filesystem.create_directory.3em.gz
-share/man/man3em/filesystem.create_hard_link.3em.gz
+share/man/man3em/filesystem.create_hardlink.3em.gz
 share/man/man3em/filesystem.create_symlink.3em.gz
 share/man/man3em/filesystem.current_working_directory.3em.gz
 share/man/man3em/filesystem.directory_entry.3em.gz
@@ -68,7 +70,7 @@ share/man/man3em/filesystem.directory_iterator.3em.gz
 share/man/man3em/filesystem.equivalent.3em.gz
 share/man/man3em/filesystem.exists.3em.gz
 share/man/man3em/filesystem.file_size.3em.gz
-share/man/man3em/filesystem.hard_link_count.3em.gz
+share/man/man3em/filesystem.hardlink_count.3em.gz
 share/man/man3em/filesystem.is_block_file.3em.gz
 share/man/man3em/filesystem.is_character_file.3em.gz
 share/man/man3em/filesystem.is_directory.3em.gz
@@ -80,6 +82,7 @@ share/man/man3em/filesystem.is_socket.3em.gz
 share/man/man3em/filesystem.is_symlink.3em.gz
 share/man/man3em/filesystem.last_write_time.3em.gz
 share/man/man3em/filesystem.makedev.3em.gz
+share/man/man3em/filesystem.mkdir.3em.gz
 share/man/man3em/filesystem.mkfifo.3em.gz
 share/man/man3em/filesystem.mknod.3em.gz
 share/man/man3em/filesystem.mode.3em.gz
@@ -100,6 +103,7 @@ share/man/man3em/format.3em.gz
 share/man/man3em/future.3em.gz
 share/man/man3em/generic_error.3em.gz
 share/man/man3em/inbox.3em.gz
+share/man/man3em/init.script.3em.gz
 share/man/man3em/ip.address.3em.gz
 share/man/man3em/ip.address_info_flag.3em.gz
 share/man/man3em/ip.connect.3em.gz
@@ -147,8 +151,13 @@ share/man/man3em/system.jail_remove.3em.gz
 share/man/man3em/system.jail_set.3em.gz
 share/man/man3em/system.jailparam_all.3em.gz
 share/man/man3em/system.kill.3em.gz
+share/man/man3em/system.landlock_add_rule.3em.gz
+share/man/man3em/system.landlock_create_ruleset.3em.gz
+share/man/man3em/system.landlock_restrict_self.3em.gz
 share/man/man3em/system.linux_capabilities.3em.gz
 share/man/man3em/system.out.3em.gz
+share/man/man3em/system.seccomp_set_mode_filter.3em.gz
+share/man/man3em/system.set_no_new_privs.3em.gz
 share/man/man3em/system.setgroups.3em.gz
 share/man/man3em/system.setpgid.3em.gz
 share/man/man3em/system.setresgid.3em.gz
@@ -179,7 +188,9 @@ share/man/man3em/unix.stream_socket.3em.gz
 share/man/man7/emilua-alternatives.7.gz
 share/man/man7/emilua-embedding.7.gz
 share/man/man7/emilua-errors.7.gz
+share/man/man7/emilua-filesystem.7.gz
 share/man/man7/emilua-getting-started.7.gz
+share/man/man7/emilua-internals-sandboxes.7.gz
 share/man/man7/emilua-internals.7.gz
 share/man/man7/emilua-interruption.7.gz
 share/man/man7/emilua-linux_namespaces.7.gz

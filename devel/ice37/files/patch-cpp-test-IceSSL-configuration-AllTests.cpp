@@ -1,6 +1,6 @@
---- cpp/test/IceSSL/configuration/AllTests.cpp.orig	2021-06-21 14:44:58 UTC
+--- cpp/test/IceSSL/configuration/AllTests.cpp.orig	2023-11-06 09:24:19 UTC
 +++ cpp/test/IceSSL/configuration/AllTests.cpp
-@@ -743,7 +743,11 @@ allTests(Test::TestHelper* helper, const string& /*tes
+@@ -588,7 +588,11 @@ allTests(Test::TestHelper* helper, const string& /*tes
          openSSLVersion = plugin->getOpenSSLVersion();
          comm->destroy();
      }
@@ -12,7 +12,7 @@
  #endif
  
      IceSSL::ConnectionInfoPtr info;
-@@ -2681,6 +2685,7 @@ allTests(Test::TestHelper* helper, const string& /*tes
+@@ -2528,6 +2532,7 @@ allTests(Test::TestHelper* helper, const string& /*tes
      }
  
      {
@@ -20,11 +20,11 @@
          //
          // This should fail because we disabled all anonymous ciphers and the server doesn't
          // provide a certificate.
-@@ -2718,6 +2723,7 @@ allTests(Test::TestHelper* helper, const string& /*tes
+@@ -2710,6 +2715,7 @@ allTests(Test::TestHelper* helper, const string& /*tes
          }
          fact->destroyServer(server);
          comm->destroy();
 +#endif
      }
- #    ifdef ICE_USE_SECURE_TRANSPORT
+ 
      {

@@ -10,6 +10,8 @@ WWW=		https://abella-prover.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		until https://github.com/abella-prover/abella/issues/154 is resolved
+
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild \
 		ocamlfind:devel/ocaml-findlib
 

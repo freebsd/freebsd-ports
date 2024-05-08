@@ -23,7 +23,7 @@
 .\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 .\" THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 .\"
-.Dd February 22, 2024
+.Dd April 24, 2024
 .Dt PAPERLESS-NGX 7
 .Os
 .Sh NAME
@@ -120,6 +120,12 @@ Modify
 to match the configured credentials (when running on localhost,
 it is possible to use no special credentials).
 .Pp
+In case redis is not running on localhost, an ACL entry needs to
+be added to grant permissions to the user used to access the instance:
+.Bd -literal -offset indent
+user paperlessusername on +@all -@admin ~* &*
+.Ed
+.Pp
 The URL paperless is hosted on needs to be configued by setting
 .Va PAPERLESS_URL ,
 it is also possible to tune
@@ -159,8 +165,8 @@ In order to process scanned documents using machine learning,
 paperless-ngx requires NLTK (natural language toolkit) data.
 The required files can be downloaded by using these commands:
 .Bd -literal -offset indent
-%%PYTHON_CMD%% -m nltk.downloader \\
-  stopwords punkt -d /var/db/paperless/nltkdata
+su -l paperless -c '%%PYTHON_CMD%% -m nltk.downloader \\
+  stopwords snowball_data punkt -d /var/db/paperless/nltkdata'
 .Ed
 .Pp
 Normally, the document classifier is run automatically by
@@ -178,6 +184,18 @@ It can be enabled and started like this:
 service paperless-flower enable
 service paperless-flower start
 .Ed
+.Sh JBIG2 ENCODING
+In case a binary named `jbig2enc' is found in $PATH, textproc/py-ocrmypdf
+will automatically pick it up to encode PDFs with it.
+.Pp
+A patch to add a port skeleton for jbig2enc for manual building
+on a local ports tree can be found here:
+.Pa https://people.freebsd.org/~grembo/graphics-jbig2enc.patch
+.Pp
+There are various considerations to be made when using jbig2enc,
+including potential patent claims and regulatory requirements,
+see also
+.Pa https://en.wikipedia.org/wiki/JBIG2 .
 .Sh WEB UI SETUP
 Before using the web ui, make sure to create a super user and assign
 a password

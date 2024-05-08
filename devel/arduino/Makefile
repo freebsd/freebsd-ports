@@ -34,6 +34,13 @@ CONFLICTS_INSTALL=	arduino18
 NO_BUILD=	yes
 USE_LDCONFIG=	${PREFIX}/arduino/lib
 
+# Remove broken jar, and Linux C6 based libraries.
+# This port relys on comms/RXTX working without Linux C6 compatibility.
+EXTRACT_AFTER_ARGS=	--exclude hardware/tools \
+			--exclude lib/RXTXcomm.jar \
+			--exclude lib/librxtxSerial.so \
+			--exclude lib/librxtxSerial64.so
+
 PLIST_SUB=	ARCH=${ARCH:S|i386||:S|amd64|64|}
 
 SUB_FILES=	arduino pkg-message
@@ -81,18 +88,9 @@ INSLIST+=	examples
 FIND_EXPR=	"${FIND_EXCLUDES} -prune"
 
 post-patch:
-	${RM} -r ${WRKSRC}/hardware/tools/
 	${MKDIR} ${WRKSRC}/hardware/tools/avr/
 	${LN} -s ${PREFIX}/bin ${WRKSRC}/hardware/tools/avr/bin
 	${LN} -s ${PREFIX}/etc ${WRKSRC}/hardware/tools/avr/etc
-
-	# Remove broken jar, and Linux C6 based libraries.
-	${RM} ${WRKSRC}/lib/RXTXcomm.jar
-
-	# This port relys on comms/RXTX working without Linux C6 compatibility.
-	${RM} ${WRKSRC}/lib/librxtxSerial.so
-	${RM} ${WRKSRC}/lib/librxtxSerial64.so
-
 	# Map the RXTX port for our use
 	${LN} -s ${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar ${WRKSRC}/lib/RXTXcomm.jar
 

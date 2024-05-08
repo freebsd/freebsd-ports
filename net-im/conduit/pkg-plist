@@ -1,3 +1,17 @@
 bin/%%PORTNAME%%
 @sample etc/conduit.toml.sample
+%%DOCSDIR%%/SUMMARY.md
+%%DOCSDIR%%/appservices.md
+%%DOCSDIR%%/configuration.md
+%%DOCSDIR%%/deploying.md
+%%DOCSDIR%%/deploying/debian.md
+%%DOCSDIR%%/deploying/docker-compose.for-traefik.yml
+%%DOCSDIR%%/deploying/docker-compose.override.yml
+%%DOCSDIR%%/deploying/docker-compose.with-traefik.yml
+%%DOCSDIR%%/deploying/docker-compose.yml
+%%DOCSDIR%%/deploying/docker.md
+%%DOCSDIR%%/deploying/generic.md
+%%DOCSDIR%%/deploying/nixos.md
+%%DOCSDIR%%/introduction.md
+%%DOCSDIR%%/turn.md
 @dir %%DBDIR%%

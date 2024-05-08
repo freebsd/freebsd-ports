@@ -16,6 +16,7 @@ share/fcitx5/inputmethod/stroke5.conf
 share/fcitx5/inputmethod/t9.conf
 share/fcitx5/inputmethod/wu.conf
 share/fcitx5/inputmethod/wubi-large.conf
+share/fcitx5/inputmethod/wubi98-large.conf
 share/fcitx5/inputmethod/wubi98-pinyin.conf
 share/fcitx5/inputmethod/wubi98-single.conf
 share/fcitx5/inputmethod/wubi98.conf
@@ -40,6 +41,7 @@ share/fcitx5/table/stroke5.main.dict
 share/fcitx5/table/t9.main.dict
 share/fcitx5/table/wu.main.dict
 share/fcitx5/table/wubi-large.main.dict
+share/fcitx5/table/wubi98-large.main.dict
 share/fcitx5/table/wubi98-pinyin.main.dict
 share/fcitx5/table/wubi98-single.main.dict
 share/fcitx5/table/wubi98.main.dict

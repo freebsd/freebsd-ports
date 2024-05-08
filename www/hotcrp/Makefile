@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web based conference management software
 WWW=		https://www.read.seas.harvard.edu/~kohler/hotcrp/
 
+DEPRECATED=	Outdated, current version was released in 2018 and is unsupported upstream
+EXPIRATION_DATE=2024-05-31
+
 RUN_DEPENDS=	pdftohtml:graphics/poppler-utils \
 		zip:archivers/zip
 
