@@ -10,6 +10,8 @@ WWW=		https://arrow.apache.org/datafusion
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
+BROKEN_i386=	compilation fails: this arithmetic operation will overflow, see https://github.com/purpleprotocol/mimalloc_rust/issues/116
+
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo
