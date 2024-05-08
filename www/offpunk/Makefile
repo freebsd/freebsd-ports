@@ -1,5 +1,5 @@
 PORTNAME=	offpunk
-PORTVERSION=	1.10
+PORTVERSION=	2.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 MASTER_SITES=	https://git.sr.ht/~lioploum/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
@@ -11,6 +11,7 @@ WWW=		https://sr.ht/~lioploum/offpunk/
 LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>0:devel/py-flit-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography@${PY_FLAVOR} \
@@ -21,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FL
 
 USES=		python shebangfix
 USE_PYTHON=	autoplist pep517
-SHEBANG_FILES=	offpunk.py
+SHEBANG_FILES=	ansicat.py netcache.py offpunk.py opnk.py
 
 NO_ARCH=	yes
 
