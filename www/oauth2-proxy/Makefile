@@ -1,7 +1,7 @@
 PORTNAME=	oauth2-proxy
 PORTVERSION=	7.5.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 
 MAINTAINER=	freebsd@rheinwolf.de
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
-USE_RC_SUBR=	oauth2-proxy
+USE_RC_SUBR=	oauth2_proxy
 
 USE_GITHUB=	yes
 GH_TUPLE=	\

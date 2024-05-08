@@ -16,21 +16,35 @@
 
 . /etc/rc.subr
 
-name=oauth2_proxy
-rcvar=oauth2_proxy_enable
+case $0 in
+/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	name=$_file
+	;;
+*)
+	name=$0
+	;;
+esac
+ 
+name=${name##*/}
+rcvar=${name}_enable
 desc="OAuth 2.0 proxy server"
 
-load_rc_config $name
+load_rc_config "$name"
 
-: ${oauth2_proxy_enable:=NO}
-: ${oauth2_proxy_user:=%%USER%%}
-: ${oauth2_proxy_group:=%%GROUP%%}
-: ${oauth2_proxy_flags:=""}
-: ${oauth2_proxy_restart:=60}
+eval "${rcvar}=\${${rcvar}:-'NO'}"
+eval "_oauth2_proxy_user=\${${name}_user:-'%%USER%%'}"
+eval "_oauth2_proxy_group=\${${name}_group:-'%%GROUP%%'}"
+eval "_oauth2_proxy_flags=\${${name}_flags:-''}"
+eval "_oauth2_proxy_restart=\${${name}_restart:-'60'}"
 
-pidfile=%%RUN_DIR%%/%%PORTNAME%%.pid
+configname=$(echo ${name}.cfg | sed -e 's:_:-:g')
+
+pidfile=%%RUN_DIR%%/${name}.pid
+childpidfile=%%RUN_DIR%%/${name}_child.pid
 command=/usr/sbin/daemon
-command_args="-u ${oauth2_proxy_user} -o %%LOG_DIR%%/%%PORTNAME%%.out -t %%PORTNAME%% -R ${oauth2_proxy_restart} -P ${pidfile}"
+command_args="-u ${_oauth2_proxy_user} -o %%LOG_DIR%%/${name}.out -t ${name} -R ${_oauth2_proxy_restart} -P ${pidfile} -p ${childpidfile}"
 
 start_cmd="oauth2_proxy_start"
 stop_cmd="oauth2_proxy_stop"
@@ -38,19 +52,19 @@ stop_cmd="oauth2_proxy_stop"
 oauth2_proxy_start()
 {
 	if [ ! -d "%%LOG_DIR%%" ]; then
-		install -d -o ${oauth2_proxy_user} %%LOG_DIR%%
+		install -d -o ${_oauth2_proxy_user} %%LOG_DIR%%
 	fi
 	if [ ! -d "%%RUN_DIR%%" ]; then
-		install -d -o ${oauth2_proxy_user} %%RUN_DIR%%
+		install -d -o ${_oauth2_proxy_user} %%RUN_DIR%%
 	fi
 
-	chown -R ${oauth2_proxy_user} %%LOG_DIR%%
+	chown -R ${_oauth2_proxy_user} %%LOG_DIR%%
 
-	echo "Starting %%PORTNAME%%."
+	echo "Starting ${name}."
         ${command} ${command_args} \
                 %%PREFIX%%/bin/%%PORTNAME%% \
-                --config %%PREFIX%%/etc/%%PORTNAME%%.cfg \
-                ${oauth2_proxy_flags}
+                --config %%PREFIX%%/etc/${configname} \
+                ${_oauth2_proxy_flags}
 }
 
 oauth2_proxy_stop()
@@ -58,7 +72,7 @@ oauth2_proxy_stop()
     local pid_daemon
     local pid_child
 
-    echo "Stopping %%PORTNAME%%."
+    echo "Stopping ${name}."
 
     pid_daemon=$(check_pidfile ${pidfile} ${command})
     if [ ! -z "${pid_daemon}" ]; then
@@ -66,7 +80,7 @@ oauth2_proxy_stop()
     fi
 
 
-    pid_child=$(pgrep -U ${oauth2_proxy_user} -f %%PREFIX%%/bin/%%PORTNAME%%)
+    pid_child=$(check_pidfile ${childpidfile} %%PREFIX%%/bin/%%PORTNAME%%)
     if [ ! -z "${pid_child}" ]; then
         kill -TERM ${pid_child}
     fi

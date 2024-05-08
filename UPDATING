@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+202408:
+  AFFECTS: www/oauth2-proxy
+  AUTHOR: netchild@FreeBSD.org
+
+  The start script is converted to be instance aware.  To use it:
+   - cp /usr/local/etc/oauth2-proxy.cfg.sample /usr/local/etc/oauth2-proxy-myapp.cfg
+   - vi /usr/local/etc/oauth2-proxy-myapp.cfg
+   - ln -s oauth2_proxy /usr/local/etc/rc.d/oauth2_proxy_myapp
+   - sysctl oauth2_proxy_myapp_enable=YES
+   - service oauth2_proxy_myapp start
+  This allows to easily start multiple instances on the same system.
+
+  As part of this, the start script was renamed to oauth2_proxy. This only
+  affects manual restarts, no change in rc.conf is needed.
+
 20240430:
   AFFECTS: audio/py-pyradio
   AUTHOR: nivit@FreeBSD.org
