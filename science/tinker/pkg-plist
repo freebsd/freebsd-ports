@@ -64,7 +64,6 @@ bin/xyzint
 bin/xyzmol2
 bin/xyzpdb
 %%DATADIR%%/params/0README
-%%DATADIR%%/params/amber14sb.prm
 %%DATADIR%%/params/amber94.prm
 %%DATADIR%%/params/amber96.prm
 %%DATADIR%%/params/amber98.prm
@@ -94,7 +93,6 @@ bin/xyzpdb
 %%DATADIR%%/params/mmff.prm
 %%DATADIR%%/params/oplsaa.prm
 %%DATADIR%%/params/oplsaal.prm
-%%DATADIR%%/params/oplsaam.prm
 %%DATADIR%%/params/oplsua.prm
 %%DATADIR%%/params/smoothaa.prm
 %%DATADIR%%/params/smoothua.prm
