@@ -17,6 +17,15 @@
      endif()
  endif(UNIX)
  
+@@ -474,7 +475,7 @@ if(POWER)
+     # IBM Power8
+     option(ENABLE_ALTIVEC "Enable ALTIVEC profiling instrumentation" ON)
+     if(ENABLE_ALTIVEC)
+-        add_definitions(-DHAVE_ALTIVEC=1 -maltivec -mabi=altivec)
++        add_definitions(-DHAVE_ALTIVEC=1 -maltivec)
+         add_definitions(-flax-vector-conversions -fpermissive)
+     else()
+         add_definitions(-DHAVE_ALTIVEC=0)
 @@ -593,12 +594,6 @@
          ARCHIVE DESTINATION ${LIB_INSTALL_DIR})
  endif()
