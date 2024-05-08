@@ -1,4 +1,4 @@
-% sed -i .orig 's|, "patches/[^"]*".freeze||g; s|, "ports/[^"]*".freeze||g' nokogiri.gemspec
+% sed -i .orig 's|, "patches/[^"]*".freeze||g; s|, "ports/[^"]*".freeze||g; /mini_portile2/d' nokogiri.gemspec
 
 --- nokogiri.gemspec.orig	2024-03-24 09:46:21 UTC
 +++ nokogiri.gemspec
@@ -11,3 +11,11 @@
    s.homepage = "https://nokogiri.org".freeze
    s.licenses = ["MIT".freeze]
    s.rdoc_options = ["--main".freeze, "README.md".freeze]
+@@ -26,7 +26,6 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<mini_portile2>.freeze, ["~> 2.8.2".freeze])
+   s.add_runtime_dependency(%q<racc>.freeze, ["~> 1.4".freeze])
+ end
+ 
