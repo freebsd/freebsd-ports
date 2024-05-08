@@ -1,3 +1,35 @@
+  <vuln vid="059a99a9-45e0-492b-b9f9-5a79573c8eb6">
+    <topic>electron29 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron29</name>
+	<range><lt>29.3.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v29.3.2">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-4060.</li>
+	    <li>Security: backported fix for CVE-2024-4058.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-4060</cvename>
+      <url>https://github.com/advisories/GHSA-4qw6-vwc8-mh38</url>
+      <cvename>CVE-2024-4058</cvename>
+      <url>https://github.com/advisories/GHSA-23rw-79p3-xgcm</url>
+    </references>
+    <dates>
+      <discovery>2024-05-03</discovery>
+      <entry>2024-05-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f69415aa-086e-11ef-9f97-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
