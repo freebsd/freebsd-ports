@@ -23,8 +23,7 @@ ONLY_FOR_ARCHS_REASON=	not yet supported
 BUILD_DEPENDS=	icu>=71:devel/icu \
 		llvm${_LLVM_VER}>=0:devel/llvm${_LLVM_VER}
 
-LIB_DEPENDS=	liblzma.so:archivers/lzma \
-		libzstd.so:archivers/zstd
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cmake compiler:c++11-lang localbase:ldflags tar:xz
 CMAKE_ARGS+=	-DZIG_TARGET_MCPU=baseline # ensure we run everywhere
