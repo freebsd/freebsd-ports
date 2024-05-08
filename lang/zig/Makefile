@@ -29,7 +29,7 @@ USES=		cmake compiler:c++11-lang localbase:ldflags tar:xz
 CMAKE_ARGS+=	-DZIG_TARGET_MCPU=baseline # ensure we run everywhere
 CMAKE_ON=	THREADS_PREFER_PTHREAD_FLAG
 
-CONFLICTS_INSTALL=	zig010
+CONFLICTS_INSTALL=	zig0* zig-devel
 
 OPTIONS_DEFINE=		DOCS STATIC
 OPTIONS_DEFAULT=	DOCS
