@@ -1,6 +1,7 @@
 PORTNAME=	gnustep-gui
 DISTVERSIONPREFIX=	gui-
 DISTVERSION=	0_30_0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnustep
 
 MAINTAINER=	ports@FreeBSD.org

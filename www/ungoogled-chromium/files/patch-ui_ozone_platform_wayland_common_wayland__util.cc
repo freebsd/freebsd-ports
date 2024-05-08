@@ -1,6 +1,6 @@
---- ui/ozone/platform/wayland/common/wayland_util.cc.orig	2024-02-03 15:42:55 UTC
+--- ui/ozone/platform/wayland/common/wayland_util.cc.orig	2024-04-23 07:42:17 UTC
 +++ ui/ozone/platform/wayland/common/wayland_util.cc
-@@ -335,7 +335,7 @@ void TransformToWlArray(
+@@ -337,7 +337,7 @@ void TransformToWlArray(
  }
  
  base::TimeTicks EventMillisecondsToTimeTicks(uint32_t milliseconds) {

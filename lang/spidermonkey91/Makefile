@@ -1,6 +1,6 @@
 PORTNAME=	spidermonkey
 DISTVERSION=	91.13.0
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	lang
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source
 PKGNAMESUFFIX=	${SP_VER}
@@ -64,8 +64,6 @@ CONFIGURE_ENV+=	LLVM_CONFIG=llvm-config${LLVM_VERSION} \
 
 .if ${ARCH} == amd64
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
-.elif ${ARCH} == powerpc
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-config_makefiles_rust.mk
 .endif
 
 # Require newer Clang than what's in base system unless user opted out

@@ -1,4 +1,4 @@
---- Makefile.orig	2024-02-23 00:37:50 UTC
+--- Makefile.orig	2024-04-29 16:19:22 UTC
 +++ Makefile
 @@ -606,16 +606,16 @@ mandir = $(prefix)/share/man
  prefix = $(HOME)
@@ -32,20 +32,20 @@
  XGETTEXT = xgettext
  MSGCAT = msgcat
  MSGFMT = msgfmt
-@@ -1665,9 +1665,9 @@ ifndef NO_OPENSSL
+@@ -1671,9 +1671,9 @@ ifndef NO_OPENSSL
  
  ifndef NO_OPENSSL
  	OPENSSL_LIBSSL = -lssl
--	ifdef OPENSSLDIR
+-        ifdef OPENSSLDIR
 -		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
 -		OPENSSL_LINK = $(call libpath_template,$(OPENSSLDIR)/$(lib))
 +	ifdef OPENSSLBASE
 +		BASIC_CFLAGS += -I$(OPENSSLBASE)/include
 +		OPENSSL_LINK = -L$(OPENSSLBASE)/$(lib) $(CC_LD_DYNPATH)$(OPENSSLBASE)/$(lib)
- 	else
+         else
  		OPENSSL_LINK =
- 	endif
-@@ -2574,7 +2574,7 @@ else # NO_PERL
+         endif
+@@ -2580,7 +2580,7 @@ else # NO_PERL
  	chmod +x $@+ && \
  	mv $@+ $@
  else # NO_PERL
@@ -54,7 +54,7 @@
  	$(QUIET_GEN) \
  	sed -e '1s|#!.*/sh|#!$(SHELL_PATH_SQ)|' \
  	    -e 's|@@REASON@@|NO_PERL=$(NO_PERL)|g' \
-@@ -2590,7 +2590,7 @@ $(SCRIPT_PYTHON_GEN): % : %.py
+@@ -2596,7 +2596,7 @@ $(SCRIPT_PYTHON_GEN): % : %.py
  $(SCRIPT_PYTHON_GEN): GIT-CFLAGS GIT-PREFIX GIT-PYTHON-VARS
  $(SCRIPT_PYTHON_GEN): % : %.py
  	$(QUIET_GEN) \
@@ -63,7 +63,7 @@
  	    $< >$@+ && \
  	chmod +x $@+ && \
  	mv $@+ $@
-@@ -3467,7 +3467,7 @@ install: all
+@@ -3473,7 +3473,7 @@ install: all
  	$(INSTALL) $(SCRIPTS) '$(DESTDIR_SQ)$(gitexec_instdir_SQ)'
  	$(INSTALL) -m 644 $(SCRIPT_LIB) '$(DESTDIR_SQ)$(gitexec_instdir_SQ)'
  	$(INSTALL) $(INSTALL_STRIP) $(install_bindir_xprograms) '$(DESTDIR_SQ)$(bindir_SQ)'

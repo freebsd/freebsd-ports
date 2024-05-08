@@ -1,5 +1,5 @@
 PORTNAME=	vkpeak
-DISTVERSION=	20230812
+DISTVERSION=	20240505
 CATEGORIES=	benchmarks
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ USES=		cmake compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	nihui
 GH_TUPLE=	KhronosGroup:glslang:12.3.1-11-g4420f9b3:nglslang/ncnn/glslang \
-		Tencent:ncnn:20230517-57-ge80fcbca:ncnn/ncnn
+		Tencent:ncnn:20240410-9-gb8fefb97:ncnn/ncnn
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:

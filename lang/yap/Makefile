@@ -54,7 +54,7 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
 
 .if ${OPSYS} == FreeBSD && ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 180
 pre-configure:
-	${REINPLACE_CMD} 's/-export-dynamic/-Wl,--export-dynamic/' \
+	${REINPLACE_CMD} 's/ -export-dynamic/ -Wl,--export-dynamic/' \
 		${WRKSRC}/configure ${WRKSRC}/packages/cplint/slipcase/Makefile.in
 .endif
 

@@ -76,7 +76,7 @@ if [ -n "${GROUPS}" ]; then
 			cat >> "${dp_UG_INSTALL}" <<-eot2
 			if ! \${PW} groupshow $group >/dev/null 2>&1; then
 			  echo "Creating group '$group' with gid '$gid'"
-			  \${PW} groupadd $group -g $gid
+			  \${PW} groupadd $group -g $gid || exit \$?
 			else
 			  echo "Using existing group '$group'"
 			fi
@@ -129,7 +129,7 @@ if [ -n "${USERS}" ]; then
 			cat >> "${dp_UG_INSTALL}" <<-eot2
 			if ! \${PW} usershow $login >/dev/null 2>&1; then
 			  echo "Creating user '$login' with uid '$uid'"
-			  \${PW} useradd $login -u $uid -g $gid $class -c "$gecos" -d $homedir -s $shell
+			  \${PW} useradd $login -u $uid -g $gid $class -c "$gecos" -d $homedir -s $shell || exit \$?
 			else
 			  echo "Using existing user '$login'"
 			fi
@@ -185,7 +185,7 @@ if [ -n "${GROUPS}" ]; then
 						cat >> "${dp_UG_INSTALL}" <<-eot2
 						if ! \${PW} groupshow ${group} | grep -qw ${login}; then
 						  echo "Adding user '${login}' to group '${group}'"
-						  \${PW} groupmod ${group} -m ${login}
+						  \${PW} groupmod ${group} -m ${login} || exit \$?
 						fi
 						eot2
 					fi

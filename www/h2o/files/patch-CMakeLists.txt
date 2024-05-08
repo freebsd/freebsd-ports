@@ -1,0 +1,98 @@
+--- CMakeLists.txt.orig	2024-03-14 06:01:10 UTC
++++ CMakeLists.txt
+@@ -174,7 +174,6 @@ INCLUDE_DIRECTORIES(
+     deps/cloexec
+     deps/brotli/c/include
+     deps/golombset
+-    deps/hiredis
+     deps/libgkc
+     deps/libyrmcds
+     deps/klib
+@@ -186,7 +185,6 @@ INCLUDE_DIRECTORIES(
+     deps/picotls/deps/micro-ecc
+     deps/picotls/include
+     deps/quicly/include
+-    deps/yaml/include
+     deps/yoml
+     ${CMAKE_CURRENT_BINARY_DIR})
+ 
+@@ -257,6 +255,23 @@ ENDIF (PKG_CONFIG_FOUND)
+     ENDIF (LIBCAP_FOUND)
+ ENDIF (PKG_CONFIG_FOUND)
+ 
++IF (PKG_CONFIG_FOUND)
++  PKG_CHECK_MODULES(HIREDIS hiredis)
++  IF (HIREDIS_FOUND)
++        INCLUDE_DIRECTORIES(${HIREDIS_INCLUDE_DIRS})
++        LINK_DIRECTORIES(${HIREDIS_LIBRARY_DIRS})
++    ENDIF (HIREDIS_FOUND)
++ENDIF (PKG_CONFIG_FOUND)
++
++IF (PKG_CONFIG_FOUND)
++  PKG_CHECK_MODULES(LIBYAML yaml-0.1)
++  IF (LIBYAML_FOUND)
++        INCLUDE_DIRECTORIES(${LIBYAML_INCLUDE_DIRS})
++        LINK_DIRECTORIES(${LIBYAML_LIBRARY_DIRS})
++    ENDIF (LIBYAML_FOUND)
++ENDIF (PKG_CONFIG_FOUND)
++
++
+ SET(CC_WARNING_FLAGS "-Wall -Wno-unused-value -Wno-unused-function -Wno-nullability-completeness -Wno-expansion-to-defined -Werror=implicit-function-declaration -Werror=incompatible-pointer-types")
+ 
+ IF ("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
+@@ -269,7 +284,7 @@ ENDIF ()
+ ENDIF ()
+ 
+ # setup compile flags
+-SET(CMAKE_C_FLAGS "-g3 ${CC_WARNING_FLAGS} ${CMAKE_C_FLAGS} -DH2O_ROOT=\"${CMAKE_INSTALL_PREFIX}\" -DH2O_CONFIG_PATH=\"${CMAKE_INSTALL_FULL_SYSCONFDIR}/h2o.conf\"")
++SET(CMAKE_C_FLAGS "${CC_WARNING_FLAGS} ${CMAKE_C_FLAGS} -DH2O_ROOT=\"${CMAKE_INSTALL_PREFIX}\" -DH2O_CONFIG_PATH=\"${CMAKE_INSTALL_FULL_SYSCONFDIR}/h2o.conf\"")
+ IF (WITH_DTRACE)
+     SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DPICOTLS_USE_DTRACE=1 -DQUICLY_USE_DTRACE=1 -DH2O_USE_DTRACE=1")
+ ENDIF ()
+@@ -339,11 +354,6 @@ SET(LIB_SOURCE_FILES
+ 
+ SET(LIB_SOURCE_FILES
+     deps/cloexec/cloexec.c
+-    deps/hiredis/async.c
+-    deps/hiredis/hiredis.c
+-    deps/hiredis/net.c
+-    deps/hiredis/read.c
+-    deps/hiredis/sds.c
+     deps/libgkc/gkc.c
+     deps/libyrmcds/close.c
+     deps/libyrmcds/connect.c
+@@ -497,7 +507,6 @@ SET(UNIT_TEST_SOURCE_FILES
+ 
+ SET(UNIT_TEST_SOURCE_FILES
+     ${LIB_SOURCE_FILES}
+-    ${LIBYAML_SOURCE_FILES}
+     ${BROTLI_SOURCE_FILES}
+     deps/picotest/picotest.c
+     t/00unit/test.c
+@@ -710,6 +719,10 @@ TARGET_LINK_LIBRARIES(h2o-httpclient libh2o-evloop ${E
+     COMPILE_FLAGS "-DH2O_USE_LIBUV=0")
+ TARGET_LINK_LIBRARIES(h2o-httpclient libh2o-evloop ${EXTRA_LIBS})
+ 
++IF (HIREDIS_FOUND)
++   TARGET_LINK_LIBRARIES(h2o-httpclient ${HIREDIS_LIBRARIES})
++ENDIF (HIREDIS_FOUND)
++
+ SET_TARGET_PROPERTIES(examples-socket-client-evloop PROPERTIES
+     COMPILE_FLAGS "-DH2O_USE_LIBUV=0"
+     EXCLUDE_FROM_ALL 1)
+@@ -788,6 +801,15 @@ TARGET_LINK_LIBRARIES(h2o ${OPENSSL_LIBRARIES} ${CMAKE
+ SET_TARGET_PROPERTIES(h2o PROPERTIES COMPILE_FLAGS "${STANDALONE_COMPILE_FLAGS}")
+ TARGET_INCLUDE_DIRECTORIES(h2o PUBLIC ${OPENSSL_INCLUDE_DIR})
+ TARGET_LINK_LIBRARIES(h2o ${OPENSSL_LIBRARIES} ${CMAKE_DL_LIBS})
++IF (HIREDIS_FOUND)
++   TARGET_INCLUDE_DIRECTORIES(h2o PUBLIC ${HIREDIS_INCLUDE_DIRS})
++   TARGET_LINK_LIBRARIES(h2o ${HIREDIS_LIBRARIES})
++ENDIF (HIREDIS_FOUND)
++
++IF (LIBYAML_FOUND)
++   TARGET_INCLUDE_DIRECTORIES(h2o PUBLIC ${LIBYXML_INCLUDE_DIRS})
++   TARGET_LINK_LIBRARIES(h2o ${LIBYAML_LIBRARIES})
++ENDIF (LIBYAML_FOUND)
+ IF (WITH_MRUBY)
+     TARGET_INCLUDE_DIRECTORIES(h2o BEFORE PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/deps/mruby/include ${CMAKE_CURRENT_SOURCE_DIR}/deps/mruby-input-stream/src)
+     # note: the paths need to be determined before libmruby.flags.mak is generated

@@ -9,6 +9,9 @@ WWW=		http://www.bleb.org/software/bkmrkconv/
 
 LICENSE=	ART10
 
+DEPRECATED=	Obsolete utility, generated files are already in a readable format
+EXPIRATION_DATE=2024-05-31
+
 USES=		perl5
 NO_BUILD=	yes
 NO_ARCH=	yes

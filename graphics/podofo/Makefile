@@ -1,5 +1,6 @@
 PORTNAME=	podofo
 PORTVERSION=	0.10.3
+PORTREVISION=	2
 CATEGORIES=	graphics print
 
 MAINTAINER=	sunpoet@FreeBSD.org

@@ -1,11 +1,11 @@
---- lua/CMakeLists.txt.orig	2024-04-17 02:04:14 UTC
+--- lua/CMakeLists.txt.orig	2024-04-24 13:56:28 UTC
 +++ lua/CMakeLists.txt
-@@ -30,6 +30,8 @@ if(BUILD_X11)
-     get_filename_component(X11_SM_LIB_PATH ${X11_SM_LIB} DIRECTORY)
-     link_directories(${X11_SM_LIB_PATH})
+@@ -28,6 +28,8 @@ if(BUILD_LUA_CAIRO)
+ if(BUILD_LUA_CAIRO)
+   include_directories(${luacairo_includes} ${CMAKE_CURRENT_SOURCE_DIR})
  
-+    link_directories(${LIBS})
++  link_directories(${LIBS})
 +
-     # cairo_set_dash() needs this special hack to work properly if you have a
-     # better solution, please let me know
-     wrap_tolua(luacairo_src cairo.pkg libcairo.patch)
+   # cairo_set_dash() needs this special hack to work properly if you have a
+   # better solution, please let me know
+   wrap_tolua(luacairo_src cairo.pkg libcairo.patch)

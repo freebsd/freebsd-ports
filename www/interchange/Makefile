@@ -11,6 +11,9 @@ WWW=		https://www.icdevgroup.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Outdated, current version was released in 2010 is unsupported upstream
+EXPIRATION_DATE=2024-06-30
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Safe-Hole>=0.10:security/p5-Safe-Hole \
 		p5-URI>=1.37:net/p5-URI \

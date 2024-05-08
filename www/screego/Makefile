@@ -1471,7 +1471,7 @@ DISTFILES=	@babel/code-frame/-/code-frame-7.8.3.tgz:yarn \
 		yargs/-/yargs-13.3.2.tgz:yarn
 EXTRACT_ONLY=	${DISTFILES:N*\:yarn*:C/:.*$//}
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Screen sharing server based on WebRTC
 WWW=		https://github.com/screego/server
 

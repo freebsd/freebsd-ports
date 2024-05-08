@@ -1,6 +1,6 @@
-TIMESTAMP = 1710284573
-SHA256 (unit-1.32.0.tar.gz) = 4b5e9be3f3990fceabf06292c2b7853667aceb71fd8de5dc67cb7fb05d247a20
-SIZE (unit-1.32.0.tar.gz) = 937300
+TIMESTAMP = 1714515235
+SHA256 (unit-1.32.1.tar.gz) = 0e440ef63a3adf9400db978a64fc84e1eb8887f61a04ccff284c3f682fb83ea2
+SIZE (unit-1.32.1.tar.gz) = 937669
 SHA256 (classgraph-4.8.165.jar) = 5258d9218fc6413f4d14218a5a6e784528e349f60f48883b77de74bb478ebafd
 SIZE (classgraph-4.8.165.jar) = 562061
 SHA256 (ecj-3.26.0.jar) = ac0ba5876eaf7ebb47749a0d1be179c51f194b9dd0b875d1c09e1b530f5a2db5

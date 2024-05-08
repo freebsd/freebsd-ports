@@ -1,5 +1,6 @@
 PORTNAME=	freediameter
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.freediameter.net/hg/freeDiameter/archive/
 DISTNAME=	${PORTNAME:S/d/D/}-${PORTVERSION}

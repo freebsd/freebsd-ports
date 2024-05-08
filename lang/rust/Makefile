@@ -1,6 +1,6 @@
 PORTNAME=	rust
 PORTVERSION?=	1.77.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		https://dev-static.rust-lang.org/dist/:src \
@@ -34,6 +34,7 @@ CPE_VENDOR=	rust-lang
 
 MAKE_ENV=	DESTDIR=${STAGEDIR} \
 		LIBGIT2_NO_PKG_CONFIG=1 \
+		RUST_BACKTRACE=1 \
 		OPENSSL_DIR="${OPENSSLBASE}"
 TEST_ENV=	${MAKE_ENV} \
 		ALLOW_NONZERO_RLIMIT_CORE=1
@@ -101,13 +102,9 @@ IGNORE=		is only for FreeBSD
 .if ${ARCH} == powerpc
 LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
 MAKE_ENV+=	RUSTFLAGS="-L/usr/local/lib/gcc${GCC_DEFAULT}"
-.else
-MAKE_ENV+=	RUST_BACKTRACE=1
-.endif
-
 # rls doesn't build on rust nightly
 # rls needs 64-bit atomics: it doesn't build on powerpc
-.if !defined(NIGHTLY_DATE) && ${ARCH} != powerpc
+.elif !defined(NIGHTLY_DATE)
 _RUST_TOOLS+=	rls
 _COMPONENTS+=	rls-${_PACKAGE_VERS}-${_RUST_TARGET}
 .endif
@@ -201,12 +198,10 @@ do-configure:
 # Rust doesn't call the system compiler with the full version of the target.
 # This makes powerpc miscompile due to the secure-plt ABI change.
 # Additionally, force using ld.bfd to work around a linking problem in rustc_mir
-	@${PRINTF} '#!/bin/sh\nexec ${CC} "$$@" --target=powerpc-unknown-freebsd13.0' > ${WRKDIR}/cc-wrapper
+	@${PRINTF} '#!/bin/sh\nexec ${CC} "$$@" --target=powerpc-unknown-freebsd13.2' > ${WRKDIR}/cc-wrapper
 	@${CHMOD} +x ${WRKDIR}/cc-wrapper
-	@${PRINTF} '#!/bin/sh\nexec ${CXX} "$$@" --target=powerpc-unknown-freebsd13.0' > ${WRKDIR}/cxx-wrapper
+	@${PRINTF} '#!/bin/sh\nexec ${CXX} "$$@" --target=powerpc-unknown-freebsd13.2' > ${WRKDIR}/cxx-wrapper
 	@${CHMOD} +x ${WRKDIR}/cxx-wrapper
-	@${PRINTF} '#!/bin/sh\nexec ${CC} -fuse-ld=bfd "$$@" --target=powerpc-unknown-freebsd13.0' > ${WRKDIR}/ld-wrapper
-	@${CHMOD} +x ${WRKDIR}/ld-wrapper
 .endif
 .for _target in ${_RUST_TARGETS}
 	@${ECHO_CMD} '[target.${_target}]' >> ${WRKSRC}/config.toml
@@ -218,11 +213,7 @@ do-configure:
 	@${ECHO_CMD} 'cc="${CC}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'cxx="${CXX}"' >> ${WRKSRC}/config.toml
 .endif
-.if ${ARCH} == powerpc
-	@${ECHO_CMD} 'linker="${WRKDIR}/ld-wrapper"' >> ${WRKSRC}/config.toml
-.else
 	@${ECHO_CMD} 'linker="${CC}"' >> ${WRKSRC}/config.toml
-.endif
 .if ${PORT_OPTIONS:MPORT_LLVM}
 	@${ECHO_CMD} 'llvm-config="${LOCALBASE}/bin/${LLVM_CONFIG}"' >> ${WRKSRC}/config.toml
 .endif

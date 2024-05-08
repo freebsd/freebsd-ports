@@ -1,4 +1,4 @@
---- base/posix/unix_domain_socket.cc.orig	2022-10-01 07:40:07 UTC
+--- base/posix/unix_domain_socket.cc.orig	2024-04-23 07:42:17 UTC
 +++ base/posix/unix_domain_socket.cc
 @@ -51,7 +51,7 @@ bool CreateSocketPair(ScopedFD* one, ScopedFD* two) {
  
@@ -9,6 +9,24 @@
    const int enable = 1;
    return setsockopt(fd, SOL_SOCKET, SO_PASSCRED, &enable, sizeof(enable)) == 0;
  #else
+@@ -77,7 +77,7 @@ bool UnixDomainSocket::SendMsg(int fd,
+ 
+     struct cmsghdr* cmsg;
+     msg.msg_control = control_buffer;
+-#if BUILDFLAG(IS_APPLE)
++#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_BSD)
+     msg.msg_controllen = checked_cast<socklen_t>(control_len);
+ #else
+     msg.msg_controllen = control_len;
+@@ -85,7 +85,7 @@ bool UnixDomainSocket::SendMsg(int fd,
+     cmsg = CMSG_FIRSTHDR(&msg);
+     cmsg->cmsg_level = SOL_SOCKET;
+     cmsg->cmsg_type = SCM_RIGHTS;
+-#if BUILDFLAG(IS_APPLE)
++#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_BSD)
+     cmsg->cmsg_len = checked_cast<u_int>(CMSG_LEN(sizeof(int) * fds.size()));
+ #else
+     cmsg->cmsg_len = CMSG_LEN(sizeof(int) * fds.size());
 @@ -149,7 +149,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
  
    const size_t kControlBufferSize =

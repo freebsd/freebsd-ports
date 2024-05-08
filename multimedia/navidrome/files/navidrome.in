@@ -9,7 +9,7 @@
 #
 # %%PORTNAME%%_enable (bool):		Set to YES to enable %%PORTNAME%%
 #					Default: NO
-# %%PORTNAME%%_config (str):		%%PORTNAME%% configration file
+# %%PORTNAME%%_config (str):		%%PORTNAME%% configuration file
 #					Default: %%ETCDIR%%/config.toml
 # %%PORTNAME%%_datafolder (str):	%%PORTNAME%% Folder to store application data 
 #					Default: %%NAVIDROMEUSER%%

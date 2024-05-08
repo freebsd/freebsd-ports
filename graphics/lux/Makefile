@@ -1,6 +1,5 @@
 PORTNAME=	lux
-DISTVERSION=	1.1.8
-PORTREVISION=	1
+DISTVERSION=	1.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/kfj/pv/get/
 PKGNAMESUFFIX=	-pv	# distinguish from www/lux
@@ -18,18 +17,21 @@ BROKEN_armv6=	address space exhaustion in compiler
 LIB_DEPENDS=	libhwy.so:devel/highway \
 		libsfml-window.so:devel/sfml \
 		libexiv2.so:graphics/exiv2 \
-		libvigraimpex.so:graphics/vigra
+		libvigraimpex.so:graphics/vigra \
+		libOpenImageIO.so:graphics/openimageio
 RUN_DEPENDS=	${GUIFONT}:x11-fonts/noto-sans-basic
 GUIFONT=	${LOCALBASE}/share/fonts/noto/NotoSans-Regular.ttf
 
-USES=		cmake desktop-file-utils dos2unix pkgconfig tar:bz2
+USES=		cmake desktop-file-utils dos2unix localbase:ldflags pkgconfig tar:bz2 gl
+USE_GL=		gl
+
 DOS2UNIX_FILES=	tinyfiledialogs.c
 CMAKE_ON=	USE_HWY_LIBRARY
 CXXFLAGS+=	-Wno-deprecated-declarations
 CONFLICTS=	lux
 
 WRKSRC=		${WRKDIR}/kfj-pv-${COMMIT}
-COMMIT=		15b1fd742285
+COMMIT=		02d14627bc75
 OPTIONS_DEFINE_amd64=	SSSE3 SSE42 AVX AVX2 AVX512
 OPTIONS_DEFINE_i386=	SSE2 SSSE3 SSE42 AVX AVX2 AVX512
 OPTIONS_DEFAULT_amd64=	SSSE3 SSE42 AVX AVX2 AVX512

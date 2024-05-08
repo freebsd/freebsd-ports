@@ -1,0 +1,19 @@
+--- test/mpi/configure.ac.orig	2024-04-20 15:21:29 UTC
++++ test/mpi/configure.ac
+@@ -488,16 +488,6 @@ fi
+     AC_DEFINE(HAVE_THREADCOMM, 1, [Define if MPIX_Threadcomm is available])
+ fi
+ 
+-# First, determine whether we are/can support the language bindings
+-#
+-# Since F90/F90FLAGS are replaced by FC/FCFLAGS, rather than silently
+-# substituting them, i.e. FC=$F90 and FCFLAGS=$F90FLAGS, we choose to emit
+-# an error message and abort to avoid any ambiguous/hidden bug in choosing
+-# Fortran90 compilers.
+-if test -n "$F90" -o -n "$F90FLAGS" ; then
+-    AC_MSG_ERROR([F90 and F90FLAGS are replaced by FC and FCFLAGS respectively in this configure, please unset F90/F90FLAGS and set FC/FCFLAGS instead and rerun configure again.])
+-fi
+-
+ # errordir is substituted into the testlist file as errors when the
+ # tests should check error handling and as a comment (#) otherwise.
+ errordir="#"

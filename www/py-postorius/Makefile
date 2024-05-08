@@ -1,5 +1,6 @@
 PORTNAME=	postorius
 PORTVERSION=	1.3.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-mailman3>=1.3.10:mail/py-django-mailman3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django32>=3.2<4.3:www/py-django32@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django42>=3.2<4.3:www/py-django42@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mailmanclient>=3.3.3:mail/py-mailmanclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}readme-renderer>=0:devel/py-readme-renderer@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=0:www/py-beautifulsoup@${PY_FLAVOR} \

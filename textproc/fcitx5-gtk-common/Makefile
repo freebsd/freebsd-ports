@@ -4,6 +4,7 @@ PKGNAMESUFFIX=	-common
 
 MASTERDIR=	${.CURDIR}/../fcitx5-gtk
 
+LIB_DEPENDS=	# empty
 RUN_DEPENDS=	# empty
 
 PLIST=	${MASTERDIR}/pkg-plist.common

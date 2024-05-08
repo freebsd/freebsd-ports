@@ -1,6 +1,5 @@
 PORTNAME=	ebumeter
-DISTVERSION=	0.4.2
-PORTREVISION=	2
+DISTVERSION=	0.5.1
 CATEGORIES=	audio
 MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libclthreads.so:devel/clthreads \
 		libsndfile.so:audio/libsndfile \
 		libzita-resampler.so:audio/zita-resampler
 
-USES=		gmake localbase:ldflags pkgconfig tar:bz2 xorg
+USES=		gmake localbase:ldflags pkgconfig tar:xz xorg
 USE_XORG=	x11 xft
 
 WRKSRC_SUBDIR=	source

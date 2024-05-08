@@ -1,6 +1,5 @@
 PORTNAME=	strawberry-graphql
-DISTVERSION=	0.224.1
-PORTREVISION=	1
+DISTVERSION=	0.227.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.7.0:devel/py-python-dateu
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.5.0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist pep517
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
@@ -57,7 +56,7 @@ DEBUG-SERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libcst>=0.4.7:devel/py-libcst@$
 DEBUG_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}libcst>=0.4.7:devel/py-libcst@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}rich>=12.0.0:textproc/py-rich@${PY_FLAVOR}
 DJANGO_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}asgiref>=3.2:www/py-asgiref@${PY_FLAVOR} \
-				${PYTHON_PKGNAMEPREFIX}django32>=3.2:www/py-django32@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}django42>=3.2:www/py-django42@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}pytest-django>0:devel/py-pytest-django@${PY_FLAVOR}
 FASTAPI_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}fastapi>=0.62.5:www/py-fastapi@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}multipart>=0.0.7:devel/py-multipart@${PY_FLAVOR}
@@ -71,6 +70,11 @@ PYDANTIC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pydantic2>1.6.1:devel/py-pydantic2
 
 .if ${PYTHON_REL} < 30900
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}astunparse>=1.6.3:devel/py-astunparse@${PY_FLAVOR}
+
+. if ${PORT_OPTIONS:MCLI}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}graphlib-backport>0:graphics/py-graphlib-backport@${PY_FLAVOR}
+. endif
+
 .endif
 
 .include <bsd.port.post.mk>

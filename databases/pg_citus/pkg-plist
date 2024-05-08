@@ -82,7 +82,6 @@ include/postgresql/server/distributed/pg_dist_rebalance_strategy.h
 include/postgresql/server/distributed/pg_dist_schema.h
 include/postgresql/server/distributed/pg_dist_shard.h
 include/postgresql/server/distributed/pg_dist_transaction.h
-include/postgresql/server/distributed/pg_version_constants.h
 include/postgresql/server/distributed/placement_access.h
 include/postgresql/server/distributed/placement_connection.h
 include/postgresql/server/distributed/priority.h

@@ -11,6 +11,10 @@ WWW=		https://cssed.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Not compatible with Python 3.x
+DEPRECATED=	Abandonware and broken, doesn't work with Python 3.x
+EXPIRATION_DATE=2024-05-31
+
 USES=		compiler:c++11-lang dos2unix gettext gnome localbase pathfix \
 		pkgconfig
 DOS2UNIX_FILES=	scintilla/gtk/ScintillaGTK.cxx

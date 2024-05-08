@@ -1,5 +1,5 @@
 PORTNAME=	R
-DISTVERSION=	4.3.3
+DISTVERSION=	4.4.0
 CATEGORIES=	math lang
 MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
 
@@ -13,6 +13,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
 
 BUILD_DEPENDS=	texi2any:print/texinfo
 LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libdeflate.so:archivers/libdeflate \
 		libpcre2-8.so:devel/pcre2
 # R packages may require GNU make or cmake to build
 RUN_DEPENDS=	cmake:devel/cmake-core \
@@ -129,7 +130,6 @@ LLD_UNSAFE=	yes
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} \
 		-e "s|%%FULLVER%%|${DISTVERSION}|" \
 		-e "s|%%MAJORVER%%|${_MAJORVER}|" \

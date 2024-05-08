@@ -1,5 +1,6 @@
 PORTNAME=	csvkit
-PORTVERSION=	1.5.0
+PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,8 +19,31 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}agate>=1.6.3:textproc/py-agate@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy20>=0:databases/py-sqlalchemy20@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xlrd>=0:textproc/py-xlrd@${PY_FLAVOR}
 
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}coverage>=4.4.2:devel/py-coverage@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils pytest
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+# Failures of the two listed tests are due to sqlite and not the csvkit code itself.
+#
+# E       sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: Chicago%
+# E       [SQL: SELECT text FROM testfixed_converted WHERE text LIKE "Chicago%"]
+# E       (Background on this error at: https://sqlalche.me/e/20/e3q8)
+#
+# >       self.assertEqual(output, '9,748.346\n')
+# E       AssertionError: '9748.346\n' != '9,748.346\n'
+# E       - 9748.346
+# E       + 9,748.346
+# E       ?  +
+
+PYTEST_BROKEN_TESTS=	test_query_text test_decimal_format
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31000
+RUN_DEPENDS+=   ${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-metadata@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>

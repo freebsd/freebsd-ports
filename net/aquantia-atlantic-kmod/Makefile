@@ -1,9 +1,9 @@
 PORTNAME=	aquantia-atlantic-kmod
 PORTVERSION=	0.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aquantia AQtion (Atlantic) Network Driver (Development Preview)
 WWW=		https://github.com/Aquantia/aqtion-freebsd
 

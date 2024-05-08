@@ -1,4 +1,5 @@
 include/suitesparse/SPEX.h
+include/suitesparse/spex_python_connect.h
 lib/cmake/SPEX/FindGMP.cmake
 lib/cmake/SPEX/FindMPFR.cmake
 lib/cmake/SPEX/SPEXConfig.cmake
@@ -7,8 +8,11 @@ lib/cmake/SPEX/SPEXTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SPEX/SPEXTargets.cmake
 lib/libspex.a
 lib/libspex.so
-lib/libspex.so.2
+lib/libspex.so.3
 lib/libspex.so.%%VER%%
+lib/libspexpython.so
+lib/libspexpython.so.3
+lib/libspexpython.so.%%VER%%
 libdata/pkgconfig/SPEX.pc
 %%PORTDOCS%%%%DOCSDIR%%/SPEX_README.md
 %%PORTDOCS%%%%DOCSDIR%%/SPEX_UserGuide.pdf

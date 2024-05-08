@@ -1,6 +1,7 @@
 PORTNAME=	fcitx5-m17n
-PORTVERSION=	5.0.11
+PORTVERSION=	5.1.1
 CATEGORIES=	textproc
+MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Multilingualization support for Fcitx5
@@ -12,9 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt
 LIB_DEPENDS=	libFcitx5Core.so:textproc/fcitx5 \
 		libm17n.so:devel/m17n-lib
 
-USES=		cmake gettext pkgconfig
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	fcitx
+USES=		cmake gettext pkgconfig tar:zst
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	fredapi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.1
+DISTVERSION=	0.5.2
 CATEGORIES=	finance python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,9 +12,7 @@ WWW=		https://github.com/mortada/fredapi
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=0.15:math/py-pandas@${PY_FLAVOR}
-BUILD_DEPENDS=	${PY_DEPENDS}
-RUN_DEPENDS=	${PY_DEPENDS}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist pytest # 1 test fails, see https://github.com/mortada/fredapi/issues/60

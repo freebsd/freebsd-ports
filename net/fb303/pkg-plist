@@ -44,6 +44,7 @@ include/fb303/thrift/gen-cpp2/fb303_core_metadata.h
 include/fb303/thrift/gen-cpp2/fb303_core_types.h
 include/fb303/thrift/gen-cpp2/fb303_core_types.tcc
 include/fb303/thrift/gen-cpp2/fb303_core_types_custom_protocol.h
+@dir include/fb303/thrift/mocks
 @dir include/fb303/thrift/services
 include/thrift-files/fb303/thrift/fb303_core.thrift
 lib/cmake/fb303/fb303-config.cmake

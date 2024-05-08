@@ -1,5 +1,5 @@
 PORTNAME=	ladybird
-PORTVERSION=	g20240226
+PORTVERSION=	g20240505
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/unicode-org/cldr-json/releases/download/${CLDRVERSION}/:cldr \
 		https://www.unicode.org/Public/${UCDVERSION}/ucd/:ucd \
@@ -34,7 +34,7 @@ USES=		cmake:testing compiler:c++20-lang gl localbase:ldflags python:build qt:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	SerenityOS
 GH_PROJECT=	serenity
-GH_TAGNAME=	a8a1d8746e28e743a7d86e6e660140fc28949e4f
+GH_TAGNAME=	3a7bea7402e879f731c9f4802cec84921f496942
 USE_GL=		egl
 USE_LDCONFIG=	yes
 USE_QT=		base tools:build wayland multimedia

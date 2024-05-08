@@ -50,13 +50,11 @@
  #PAPERLESS_TASK_WORKERS=1
  #PAPERLESS_THREADS_PER_WORKER=1
  #PAPERLESS_TIME_ZONE=UTC
-@@ -92,3 +106,9 @@
+@@ -92,3 +106,7 @@
  
  #PAPERLESS_CONVERT_BINARY=/usr/bin/convert
  #PAPERLESS_GS_BINARY=/usr/bin/gs
 +
-+# NLTK settings
-+NLTK_DIR=/var/db/paperless/nltk_data
-+#NLTK_ENABLED=yes
-+# below defaults to OCR_LANGUAGE
-+#NLTK_LANGUAGE=
++# NLTK settings - see `man 7 paperless`
++PAPERLESS_NLTK_DIR=/var/db/paperless/nltkdata
++PAPERLESS_ENABLE_NLTK=yes

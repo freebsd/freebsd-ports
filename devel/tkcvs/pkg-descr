@@ -1,7 +1,7 @@
-TkCVS is a Tcl/Tk-based graphical interface to the CVS, and Subversion
-configuration management systems. It will also help with RCS. The user
-interface is consistent across Unix/Linux, Windows, and MacOS X. TkDiff
-is included for browsing and merging your changes.
+TkCVS is a Tcl/Tk-based graphical interface to the CVS, Subversion, and
+GIT configuration management systems. It will also help with RCS. The
+user interface is consistent across Unix/Linux, Windows, and MacOS X.
+TkDiff is included for browsing and merging your changes.
 
 It shows the status of the files in the current working directory, and
 has tools for tagging, merging, importing, exporting, checking in/out,

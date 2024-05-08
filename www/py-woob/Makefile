@@ -49,7 +49,7 @@ USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=		CLICOLOR NSS RTMPDUMP
+OPTIONS_DEFINE=		CLICOLOR NSS
 OPTIONS_DEFAULT=	CLICOLOR NSS
 
 CLICOLOR_DESC=		Color command line interface
@@ -57,8 +57,6 @@ CLICOLOR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}termcolor>0:devel/py-termcolor@${PY
 
 NSS_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 			${PYTHON_PKGNAMEPREFIX}python-nss>0:security/py-python-nss@${PY_FLAVOR}
-
-RTMPDUMP_RUN_DEPENDS=	rtmpdump:multimedia/rtmpdump
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/ssl/certs|${LOCALBASE}/etc/ssl|g' ${WRKSRC}/woob/browser/nss.py

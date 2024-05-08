@@ -1,6 +1,6 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	21.1.8
+DISTVERSION=	21.1.9
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
@@ -196,7 +196,7 @@ MP1+=	bsmtp.1 bregex.1 bwild.1 bareos-tray-monitor.1
 MAKE_ENV+=	MAN8="${MP8}" MAN1="${MP1}"
 
 post-patch:
-	@${REINPLACE_CMD}  '120,123d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD}  '129,132d' ${WRKSRC}/CMakeLists.txt
 .if ${PKGNAMESUFFIX} == "21-server"
 	@${REINPLACE_CMD}  '51d' ${WRKSRC}/core/src/plugins/CMakeLists.txt
 .endif
@@ -218,7 +218,7 @@ post-extract:
 post-install:
 .if defined(WITH_CLIENT_ONLY)
 	${MKDIR} ${STAGEDIR}${ETCDIR}/bconsole.d/
-	${MV} ${STAGEDIR}${ETCDIR}/bconsole.conf ${STAGEDIR}${ETCDIR}/bconsole.d/bconsole.conf.sample
+	${CP} ${STAGEDIR}${ETCDIR}/bconsole.conf.sample ${STAGEDIR}${ETCDIR}/bconsole.d/bconsole.conf.sample
 .else
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bareos ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${FILESDIR}/bareos-barcodes ${STAGEDIR}${ETCDIR}/bareos-barcodes.sample

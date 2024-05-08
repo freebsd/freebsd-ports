@@ -1,5 +1,6 @@
 PORTNAME=	django-recaptcha
 PORTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/django-recaptcha/django-recaptcha
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=1.11<4.0:www/py-django32@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>0:www/py-django42@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils

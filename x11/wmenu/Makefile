@@ -1,5 +1,5 @@
 PORTNAME=	wmenu
-DISTVERSION=	0.1.7
+DISTVERSION=	0.1.8
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~adnano/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -27,6 +27,7 @@ LDFLAGS+=	`pkg-config --libs epoll-shim`
 .endif
 
 PLIST_FILES=	bin/wmenu \
+		bin/wmenu-run \
 		share/man/man1/wmenu.1.gz
 
 .include <bsd.port.mk>

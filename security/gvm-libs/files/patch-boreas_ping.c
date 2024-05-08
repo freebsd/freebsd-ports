@@ -1,20 +1,20 @@
---- boreas/ping.c	2022-07-18 03:40:56.000000000 -0500
-+++ boreas/ping.c	2022-07-31 17:59:55.449717000 -0500
-@@ -27,9 +27,13 @@
+--- boreas/ping.c	2024-04-22 03:55:15.000000000 -0500
++++ boreas/ping.c	2024-04-24 02:34:16.020861000 -0500
+@@ -13,9 +13,13 @@
  #include <errno.h>
  #include <glib.h>
  #include <ifaddrs.h> /* for getifaddrs() */
 +#if defined __linux__
  #include <linux/sockios.h>
 +#endif
- #include <netinet/icmp6.h>
 +#include <sys/types.h>
+ #include <netinet/icmp6.h>
  #include <netinet/in.h>
 +#include <netinet/ip.h>
  #include <netinet/ip6.h>
  #include <netinet/ip_icmp.h>
  #include <netinet/tcp.h>
-@@ -37,7 +41,6 @@
+@@ -23,7 +27,6 @@
  #include <sys/ioctl.h>
  #include <sys/socket.h>
  #include <sys/time.h>
@@ -22,7 +22,7 @@
  #include <unistd.h>
  
  #undef G_LOG_DOMAIN
-@@ -106,7 +109,11 @@
+@@ -102,7 +105,11 @@
    int cur_so_sendbuf = -1;
  
    /* Get the current size of the output queue size */
@@ -34,7 +34,7 @@
      {
        g_warning ("%s: ioctl error: %s", __func__, strerror (errno));
        usleep (100000);
-@@ -122,7 +129,11 @@
+@@ -118,7 +125,11 @@
        while (cur_so_sendbuf >= so_sndbuf)
          {
            usleep (100000);
@@ -46,16 +46,32 @@
              {
                g_warning ("%s: ioctl error: %s", __func__, strerror (errno));
                usleep (100000);
-@@ -209,12 +220,22 @@
+@@ -198,21 +209,38 @@
+ 
+   int len;
+   int datalen = 56;
++#ifdef __FreeBSD__
++  struct icmp *icmp;
++#else
+   struct icmphdr *icmp;
++#endif
+ 
+   /* Throttling related variables */
+   static int so_sndbuf = -1; // socket send buffer
    static int init = -1;
  
-   icmp = (struct icmphdr *) sendbuf;
 +#ifdef __FreeBSD__
++  icmp = (struct icmp *) sendbuf;
 +  icmp->icmp_type = ICMP_ECHO;
 +  icmp->icmp_code = 0;
++  icmp->icmp_id = get_echo_id ();
++  icmp->icmp_seq = 0x0100;
 +#else
+   icmp = (struct icmphdr *) sendbuf;
    icmp->type = ICMP_ECHO;
    icmp->code = 0;
+   icmp->un.echo.id = get_echo_id ();
+   icmp->un.echo.sequence = 0x0100;
 +#endif
  
    len = 8 + datalen;
@@ -69,32 +85,32 @@
  
    memset (&soca, 0, sizeof (soca));
    soca.sin_family = AF_INET;
-@@ -287,7 +308,11 @@
+@@ -285,7 +313,11 @@
          }
        else
          {
--          dst4.s_addr = dst6_p->s6_addr32[3];
 +#ifdef __FreeBSD__
-+      dst4.s_addr = dst6_p->s6_addr[12];
++          dst4.s_addr = dst6_p->s6_addr[12];
 +#else
-+      dst4.s_addr = dst6_p->s6_addr32[3];
+           dst4.s_addr = dst6_p->s6_addr32[3];
 +#endif
            send_icmp_v4 (scanner->icmpv4soc, dst4_p);
          }
        if (grace_period > 0)
-@@ -552,7 +577,11 @@
+@@ -550,7 +582,11 @@
      }
    else
      {
+-      dst4.s_addr = dst6_p->s6_addr32[3];
 +#ifdef __FreeBSD__
-+      dst4.s_addr = dst6_p->s6_addr[12];
++       dst4.s_addr = dst6_p->s6_addr[12];
 +#else
-       dst4.s_addr = dst6_p->s6_addr32[3];
++       dst4.s_addr = dst6_p->s6_addr32[3];
 +#endif
        send_tcp_v4 (scanner, dst4_p);
      }
  }
-@@ -602,7 +631,11 @@
+@@ -600,7 +636,11 @@
        /* Need to transform the IPv6 mapped IPv4 address back to an IPv4 string.
         * We can not just use the host_value_str as it might be an IPv4 mapped
         * IPv6 string. */

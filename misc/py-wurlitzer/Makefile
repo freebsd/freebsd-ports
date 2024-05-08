@@ -1,6 +1,5 @@
 PORTNAME=	wurlitzer
-PORTVERSION=	3.0.3
-PORTREVISION=	1
+PORTVERSION=	3.1.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +20,7 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
+# make tests: 14 passed, 1 skipped (test.py:168: requires _get_max_pipe_size)
 TEST_ARGS=	test.py
 
 .include <bsd.port.mk>

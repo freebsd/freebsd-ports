@@ -422,7 +422,6 @@
     SUBDIR += mod_scgi
     SUBDIR += mod_security
     SUBDIR += mod_setenvifplus
-    SUBDIR += mod_tidy
     SUBDIR += mod_umask
     SUBDIR += mod_webauth
     SUBDIR += mod_webkit
@@ -492,6 +491,7 @@
     SUBDIR += onionshare-cli
     SUBDIR += onlyoffice-documentserver
     SUBDIR += opencart
+    SUBDIR += openemr
     SUBDIR += openresty
     SUBDIR += orangehrm
     SUBDIR += osrm-backend
@@ -1551,7 +1551,6 @@
     SUBDIR += py-django-csp
     SUBDIR += py-django-debreach
     SUBDIR += py-django-debug-toolbar
-    SUBDIR += py-django-dpaste
     SUBDIR += py-django-extensions
     SUBDIR += py-django-filer
     SUBDIR += py-django-filter
@@ -2368,6 +2367,7 @@
     SUBDIR += tdom
     SUBDIR += template_
     SUBDIR += templatelite
+    SUBDIR += tgpt
     SUBDIR += thirtybees
     SUBDIR += threejs
     SUBDIR += threema-web
@@ -2384,6 +2384,7 @@
     SUBDIR += tokyopromenade
     SUBDIR += tomcat-devel
     SUBDIR += tomcat-native
+    SUBDIR += tomcat-native2
     SUBDIR += tomcat101
     SUBDIR += tomcat85
     SUBDIR += tomcat9

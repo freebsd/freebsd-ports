@@ -1,5 +1,5 @@
 PORTNAME=	libcerf
-DISTVERSION=	2.3
+DISTVERSION=	2.4
 CATEGORIES=	math
 MASTER_SITES=	https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}

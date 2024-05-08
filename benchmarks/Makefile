@@ -34,7 +34,6 @@
     SUBDIR += ior
     SUBDIR += iorate
     SUBDIR += iozone
-    SUBDIR += iozone21
     SUBDIR += ipc-bench
     SUBDIR += iperf
     SUBDIR += iperf3

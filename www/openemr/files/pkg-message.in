@@ -1,0 +1,26 @@
+[
+{ type: install
+  message: <<EOM
+
+1) Add the following to your Apache configuration file
+   httpd.conf, and restart the server:
+
+   Alias /openemr %%PREFIX%%/%%OPENEMRDIR%%/
+   AcceptPathInfo On
+   <Directory %%PREFIX%%/%%OPENEMRDIR%%/>
+      AllowOverride None
+      Require all granted
+   </Directory>
+
+2) Visit your OpenEMR site with a browser (i.e.,
+   http://your.server.com/openemr/), and you should
+   be taken to the install script, which will lead
+   you through the installation step by step.
+
+For more information, see the INSTALL DOCUMENTATION:
+
+   https://www.open-emr.org/wiki/index.php/OpenEMR_Installation_Guides
+
+EOM
+}
+]

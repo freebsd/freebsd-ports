@@ -1,5 +1,5 @@
 PORTNAME=	pycharm-ce
-PORTVERSION=	2023.3.5
+PORTVERSION=	2024.1.1
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
@@ -24,6 +24,22 @@ SHEBANG_FILES=	plugins/python-ce/helpers/pycodestyle-2.10.0.py \
 		plugins/python-ce/helpers/pycodestyle.py \
 		plugins/python-ce/helpers/typeshed/scripts/sync_tensorflow_protobuf_stubs.sh
 
+# Ignore:
+# - non-native binaries
+# - the bundled native Pty4J support libraries, they are replaced by java/jetbrains-pty4j
+# - bundled linux-only JRE
+EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/bin/*fsnotifier* \
+			--exclude ${DISTNAME}/bin/*.so \
+			--exclude ${DISTNAME}/bin/repair \
+			--exclude ${DISTNAME}/bin/restarter \
+			--exclude ${DISTNAME}/lib/*.so \
+			--exclude ${DISTNAME}/plugins/*.so \
+			--exclude ${DISTNAME}/plugins/cwm-plugin/quiche-native \
+			--exclude ${DISTNAME}/plugins/python-ce/helpers/pydev/pydevd_attach_to_process \
+			--exclude ${DISTNAME}/lib/pty4j \
+			--exclude ${DISTNAME}/jbr \
+			--no-same-owner --no-same-permissions
+
 NO_BUILD=	yes
 
 .include "${.CURDIR}/../../java/intellij/common.mk"
@@ -31,17 +47,8 @@ NO_BUILD=	yes
 SUB_FILES+=	${PORTNAME}.desktop pkg-message pycharm
 SUB_LIST+=	IDEA_HOME=${IDEA_HOME}
 
-# Remove non-native binaries
 post-extract:
-	@${RM} ${WRKSRC}/bin/*fsnotifier* ${WRKSRC}/bin/*.so ${WRKSRC}/bin/repair ${WRKSRC}/bin/restarter
-	@${FIND} ${WRKSRC}/lib ${WRKSRC}/plugins -name '*.so' -delete
 	@${FIND} ${WRKSRC}/lib ${WRKSRC}/plugins -type d -empty -delete
-	@${RM} -r ${WRKSRC}/plugins/cwm-plugin/quiche-native
-	@${RM} -r ${WRKSRC}/plugins/python-ce/helpers/pydev/pydevd_attach_to_process
-# Remove the bundled native Pty4J support libraries, they are replaced by java/jetbrains-pty4j
-	@${RM} -r ${WRKSRC}/lib/pty4j
-# Remove bundled linux-only JRE
-	@${RM} -r ${WRKSRC}/jbr
 # TODO: Remove and enable fsnotifier when devel/libinotify is fixed
 # Disable filewatcher warning message on IDEA startup
 	${ECHO} "idea.filewatcher.disabled=true" >> ${WRKSRC}/bin/idea.properties

@@ -1,17 +1,19 @@
 PORTNAME=	digikam
-DISTVERSION=	8.2.0
-PORTREVISION=	3
+DISTVERSION=	8.3.0
+PORTREVISION=	1
+DISTVERSIONSUFFIX=	-1
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION} \
-		https://files.kde.org/digikam/%SUBDIR%/:aesthetic,face,shape \
-		https://kde-applicationdata.mirrors.omnilance.com/digikam/%SUBDIR%/:aesthetic,face,shape \
-		https://mirrors.ocf.berkeley.edu/kde-applicationdata/digikam/%SUBDIR%/:aesthetic,face,shape
+		https://files.kde.org/digikam/%SUBDIR%/:aesthetic,autotags,face,shape \
+		https://kde-applicationdata.mirrors.omnilance.com/digikam/%SUBDIR%/:aesthetic,autotags,face,shape \
+		https://mirrors.ocf.berkeley.edu/kde-applicationdata/digikam/%SUBDIR%/:aesthetic,autotags,face,shape
 MASTER_SITE_SUBDIR=	aestheticdetector/:aesthetic \
+			autotags/:autotags \
 			facesengine/dnnface/:face \
 			facesengine/shape-predictor/:shape
 # One bit changed in the naming convention ..
 DISTFILES=	digiKam-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}
-DIST_SUBDIR=	KDE/${PORTNAME}/${PORTVERSION}
+DIST_SUBDIR=	KDE/${PORTNAME}
 EXTRACT_ONLY=	digiKam-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}
 
 MAINTAINER=	kde@FreeBSD.org
@@ -21,61 +23,65 @@ WWW=		https://www.digikam.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
 LIB_DEPENDS=	libKF5Sane.so:graphics/libksane \
-		libboost_graph.so:devel/boost-libs \
 		libexiv2.so:graphics/exiv2 \
 		libexpat.so:textproc/expat2 \
 		libgphoto2.so:graphics/libgphoto2 \
-		libicalss.so:devel/libical \
 		libjasper.so:graphics/jasper \
 		liblcms2.so:graphics/lcms2 \
 		liblensfun.so:graphics/lensfun \
 		libopencv_core.so:graphics/opencv \
 		libheif.so:graphics/libheif \
-		libpgf.so:graphics/libpgf \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libx265.so:multimedia/x265
+RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 
 USES=		bison cmake compiler:c++17-lang desktop-file-utils eigen:3 gl \
 		gnome jpeg kde:5 magick pkgconfig qt:5 \
 		shebangfix tar:xz xorg
-USE_GL=		gl glu
+USE_GL=		opengl glu
 USE_GNOME=	glib20 libxml2 libxslt
-USE_KDE=	archive auth bookmarks calendarcore codecs completion config \
-		configwidgets coreaddons crash doctools filemetadata guiaddons \
-		i18n iconthemes itemmodels itemviews jobwidgets \
-		kdelibs4support kio libkipi marble notifications notifyconfig \
-		parts service solid sonnet textwidgets threadweaver \
-		unitconversion widgetsaddons windowsystem xmlgui \
+USE_KDE=	auth calendarcore codecs completion config configwidgets \
+		coreaddons doctools filemetadata i18n iconthemes jobwidgets \
+		kio notifications notifyconfig service solid sonnet \
+		threadweaver widgetsaddons windowsystem xmlgui \
 		ecm:build
+USE_LDCONFIG=	yes
 USE_QT=		concurrent core dbus declarative gui location network \
-		networkauth opengl printsupport sql webchannel webengine \
+		networkauth opengl printsupport sql svg webchannel webengine \
 		widgets x11extras xml xmlpatterns \
 		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xext
 
-USE_LDCONFIG=	yes
 SHEBANG_FILES=	core/data/scripts/digitaglinktree/digitaglinktree
-
-WITH_CCACHE_BUILD=	yes
 
 CMAKE_ON=	BUILD_WITH_CCACHE DIGIKAMSC_COMPILE_DIGIKAM ENABLE_KFILEMETADATASUPPORT \
 		CMAKE_DISABLE_FIND_PACKAGE_VAAPI
 
-OPTIONS_DEFINE=		FACEDETECT KDEPIM MEDIAPLAYER NLS
-OPTIONS_GROUP=		MP
-MP_DESC=		Media player options
-OPTIONS_GROUP_MP=	OPENAL PORTAUDIO PULSEAUDIO
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+
+PLIST_SUB=	SHLIB_VER=${DISTVERSION}
+
+WITH_CCACHE_BUILD=	yes
+
+OPTIONS_DEFINE=		AUTOTAGS FACEDETECT KDEPIM MEDIAPLAYER NLS
 OPTIONS_MULTI=		DB
 DB_DESC=		Database options
 OPTIONS_MULTI_DB=	MYSQL MYSQL_INTERNAL SQLITE3
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE:NFACEDETECT} \
-			${OPTIONS_GROUP_MP:NPORTAUDIO:NPULSEAUDIO} \
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE:NAUTOTAGS:NFACEDETECT} \
 			${OPTIONS_MULTI_DB:NMYSQL_INTERNAL}
 OPTIONS_SUB=		yes
 
-FACEDETECT_DESC=	Install data required for face detection (~420MB)
+AUTOTAGS_DESC=		Install data required for autotagging (~436 MiB)
+AUTOTAGS_DISTFILES=	classification_classes_ILSVRC2012.txt:autotags \
+			coco.names:autotags \
+			resnet50.onnx:autotags \
+			yolov5n_batch_16_s320.onnx:autotags \
+			yolov5x_batch_16_s320.onnx:autotags
+
+FACEDETECT_DESC=	Install data required for face detection (~419 MiB)
 FACEDETECT_DISTFILES=	weights_inceptionv3_299.pb:aesthetic \
 			deploy.prototxt:face \
 			openface_nn4.small2.v1.t7:face \
@@ -85,14 +91,14 @@ FACEDETECT_DISTFILES=	weights_inceptionv3_299.pb:aesthetic \
 			shapepredictor.dat:shape
 
 KDEPIM_DESC=		KDEPim Addressbook support
-KDEPIM_USE=		KDE=akonadi,akonadicontacts,contacts,grantleetheme
 KDEPIM_USES=		grantlee:5
+KDEPIM_USE=		KDE=akonadi,akonadicontacts,contacts,grantleetheme,itemmodels
 KDEPIM_CMAKE_BOOL=	ENABLE_AKONADICONTACTSUPPORT
 
 MEDIAPLAYER_DESC=		Enable media player
-MEDIAPLAYER_LIB_DEPENDS=	libass.so:multimedia/libass \
-				libavcodec.so:multimedia/ffmpeg
-MEDIAPLAYER_USE=		XORG=xv
+MEDIAPLAYER_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+				libvdpau.so:multimedia/libvdpau
+MEDIAPLAYER_USE=		QT=multimedia XORG=xv
 MEDIAPLAYER_CMAKE_BOOL=		ENABLE_MEDIAPLAYER
 MEDIAPLAYER_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_FFmpeg
 
@@ -108,25 +114,17 @@ MYSQL_INTERNAL_VARS=		IGNORE_WITH_MYSQL="80 81"
 MYSQL_INTERNAL_IMPLIES=		MYSQL
 
 NLS_DESC=		Digikam i18n translations
-NLS_CMAKE_BOOL=		DIGIKAMSC_COMPILE_PO
-NLS_USES=		gettext
+NLS_USES=		gettext-tools
 NLS_USE=		KDE=i18n
-
-OPENAL_USES=		openal
-OPENAL_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenAL
-OPENAL_IMPLIES=		MEDIAPLAYER
-
-PORTAUDIO_LIB_DEPENDS=		libportaudio.so:audio/portaudio
-PORTAUDIO_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Portaudio
-PORTAUDIO_IMPLIES=		MEDIAPLAYER
-
-PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
-PULSEAUDIO_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_PulseAudio
-PULSEAUDIO_IMPLIES=		MEDIAPLAYER
+NLS_CMAKE_BOOL=		DIGIKAMSC_COMPILE_PO
 
 SQLITE3_USE=		QT=sql-sqlite3:run
 
-PLIST_SUB=		SHLIB_VER=${DISTVERSION}
+post-install-AUTOTAGS-on:
+	@${MKDIR} ${STAGEDIR}${DATADIR}/facesengine
+.for f in ${AUTOTAGS_DISTFILES:C/:.*//}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${f} ${STAGEDIR}${DATADIR}/facesengine
+.endfor
 
 post-install-FACEDETECT-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/facesengine

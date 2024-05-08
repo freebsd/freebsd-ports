@@ -1,6 +1,6 @@
 PORTNAME=	wsjtz
 DISTVERSION=	2.5.4-1.22
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/wsjt-z/Source
 
@@ -8,30 +8,25 @@ MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Clone of WSJT-X software with additional features
 WWW=		https://sourceforge.net/projects/wsjt-z/
 
-CONFLICTS=	wsjtx
-
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
-		autoconf>=2.69:devel/autoconf \
-		automake>=1.16.1:devel/automake \
-		a2x:textproc/asciidoc \
-		boost-libs>0:devel/boost-libs \
-		libtool:devel/libtool \
-		${LOCALBASE}/share/xsl/docbook:textproc/docbook-xsl
-LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+LIB_DEPENDS=	libboost_log_setup.so:devel/boost-libs \
+		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
-		libxslt.so:textproc/libxslt \
 		libhamlib.so:comms/hamlib \
-		libreadline.so:devel/readline \
-		libportaudio.so:audio/portaudio
+		libreadline.so:devel/readline
+BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook:textproc/docbook-xsl \
+		a2x:textproc/asciidoc \
+		asciidoctor:textproc/rubygem-asciidoctor \
+		boost-libs>0:devel/boost-libs \
+		libtool:devel/libtool
 
-USES=		cmake compiler:c++11-lib fortran gl \
-		makeinfo pkgconfig qt:5 zip
-USE_GL=		glu
-USE_QT=		core gui network widgets \
-		multimedia concurrent printsupport serialport sql sql-sqlite3 \
-		testlib buildtools:build linguisttools:build qmake:build
+USES=		cmake compiler:c++14-lang fortran makeinfo pkgconfig qt:5 zip
+USE_QT=		concurrent core gui multimedia network printsupport serialport \
+		sql sql-sqlite3 testlib widgets buildtools:build \
+		linguisttools:build qmake:build
+
+CONFLICTS=	wsjtx
 
 CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH+=${LOCALBASE}/wsjtx/lib \
 		-DLOCALBASE::STRING="${LOCALBASE}"

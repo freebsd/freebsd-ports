@@ -1,6 +1,5 @@
 PORTNAME=	moab
-DISTVERSION=	5.3.1
-PORTREVISION=	5
+DISTVERSION=	5.5.1
 CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 
@@ -24,7 +23,7 @@ CMAKE_ARGS=	-DBLAS_LIBRARIES:STRING=${LOCALBASE}/lib/libopenblas.so \
 
 BB_ACCOUNT=	fathomteam
 BB_PROJECT=	${PORTNAME}
-BB_COMMIT=	65880ffe833d
+BB_COMMIT=	0c84f0d50f3f
 
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 
@@ -36,7 +35,7 @@ MPI_CMAKE_BOOL=		ENABLE_MPI
 MPI_LIB_DEPENDS=	libmpi_cxx.so:net/openmpi4
 MPI_VARS=		CXX=${LOCALBASE}/mpi/openmpi/bin/mpic++ CC=${LOCALBASE}/mpi/openmpi/bin/mpicc
 MPI_VARS+=		CONFLICTS_BUILD=mpich # otherwise bin/hexmodops gets linked with libmpi.so:net/mpich
-MPI_VARS_OFF=		USES=compiler:c++11-lang
+MPI_VARS_OFF=		USES+=compiler:c++11-lang
 
 post-install:
 	# docs are just readmes

@@ -4,4 +4,25 @@
   Please see `man paperless-ngx' for details on how to configure paperless.
 EOM
 }
+{ type: upgrade
+  message: <<EOM
+After each upgrade, please check for differences between your config and
+the sample configuration installed by the package:
+
+    diff -u %%PREFIX%%/etc/paperless.conf \
+           %%PREFIX%%/etc/paperless.conf.sample
+
+Then merge in changes as required by editing
+%%PREFIX%%/etc/paperless.conf.
+EOM
+}
+{ type: upgrade
+  maximum_version: "2.7.2_1"
+  message: <<EOM
+Configuration of NLTK data has been fixed in port version 2.7.2_1.
+
+Please modify your %%PREFIX%%/etc/paperless.conf based on
+`*NLTK*` settings found in %%PREFIX%%/etc/paperless.conf.sample.
+EOM
+}
 ]

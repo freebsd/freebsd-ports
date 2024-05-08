@@ -1,7 +1,7 @@
 PORTNAME=	lazarus
-DISTVERSION=	3.3.1.20240323
+DISTVERSION=	3.3.1.20240503
 PKGNAMESUFFIX?=  -gtk2-devel
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	editors devel
 DIST_SUBDIR=	freepascal
 
@@ -21,12 +21,12 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_GITLAB=	yes
 GL_ACCOUNT=	freepascal.org/lazarus
 GL_PROJECT=	${PORTNAME}
-GL_COMMIT=	db6ed214b9647d2729a5cde1c69893048ce0b18c
+GL_COMMIT=	045c0c6596007b4dea47733bb649f775da81786b
 
 USES=		desktop-file-utils fpc:run gettext gmake iconv shared-mime-info xorg
 USE_XORG=	x11
 WANT_FPC_DEVEL=	yes
-OPT?=		"-Sgic "
+OPT?=		"-Sgic -Ur"
 
 MAKE_ENV=	OPT=${OPT}
 PLIST=		${WRKDIR}/pkg-plist

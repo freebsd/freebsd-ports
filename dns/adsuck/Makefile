@@ -10,6 +10,9 @@ MAINTAINER=	phil@philpep.org
 COMMENT=	DNS relay for ad blocking
 WWW=		http://opensource.conformal.com/wiki/Adsuck
 
+DEPRECATED=	Obsolete, no longer relevant
+EXPIRATION_DATE=2024-05-31
+
 LICENSE=	ISCL
 
 LIB_DEPENDS+=	libevent.so:devel/libevent \

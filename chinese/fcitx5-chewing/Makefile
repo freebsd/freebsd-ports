@@ -1,5 +1,5 @@
 PORTNAME=	fcitx5-chewing
-DISTVERSION=	5.0.14
+DISTVERSION=	5.1.3
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt
 LIB_DEPENDS=	libchewing.so:chinese/libchewing \
 		libFcitx5Core.so:textproc/fcitx5
 
-USES=		compiler:c++17-lang gettext-tools cmake kde:5 pkgconfig tar:xz
+USES=		compiler:c++17-lang gettext-tools cmake kde:5 pkgconfig tar:zst
 
 USE_KDE=	ecm
 

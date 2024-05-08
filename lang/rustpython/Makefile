@@ -1,6 +1,5 @@
 PORTNAME=	rustpython
-DISTVERSION=	0.3.0
-PORTREVISION=	2
+DISTVERSION=	0.3.1
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,8 +20,9 @@ GH_PROJECT=	RustPython
 CARGO_CRATES=	Inflector-0.11.4 \
 		adler-1.0.2 \
 		adler32-1.2.0 \
-		ahash-0.7.6 \
+		ahash-0.8.11 \
 		aho-corasick-0.7.20 \
+		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		ansi_term-0.12.1 \
 		anyhow-1.0.69 \
@@ -34,11 +34,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		autocfg-1.1.0 \
 		base64-0.13.1 \
 		bitflags-1.3.2 \
-		bitflags-2.3.1 \
+		bitflags-2.5.0 \
 		blake2-0.10.6 \
-		block-buffer-0.9.0 \
 		block-buffer-0.10.3 \
-		block-padding-0.2.1 \
 		bstr-0.2.17 \
 		bumpalo-3.12.0 \
 		byteorder-1.4.3 \
@@ -48,9 +46,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cast-0.3.0 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
-		chrono-0.4.23 \
+		cfg_aliases-0.1.1 \
+		chrono-0.4.37 \
 		clap-2.34.0 \
-		clipboard-win-4.5.0 \
+		clipboard-win-5.0.0 \
 		codespan-reporting-0.11.1 \
 		console-0.15.5 \
 		console_error_panic_hook-0.1.7 \
@@ -58,7 +57,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.3 \
 		cpufeatures-0.2.5 \
-		cpython-0.7.1 \
 		cranelift-0.88.2 \
 		cranelift-bforest-0.88.2 \
 		cranelift-codegen-0.88.2 \
@@ -76,7 +74,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		crossbeam-channel-0.5.6 \
 		crossbeam-deque-0.8.2 \
 		crossbeam-epoch-0.9.13 \
-		crossbeam-utils-0.8.16 \
+		crossbeam-utils-0.8.19 \
 		crunchy-0.2.2 \
 		crypto-common-0.1.6 \
 		csv-1.2.0 \
@@ -86,51 +84,52 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cxxbridge-flags-1.0.91 \
 		cxxbridge-macro-1.0.91 \
 		derive_more-0.99.17 \
-		digest-0.9.0 \
 		digest-0.10.6 \
 		dirs-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
-		dns-lookup-1.0.8 \
+		dns-lookup-2.0.4 \
 		dyn-clone-1.0.10 \
 		either-1.8.1 \
 		embed-doc-image-0.1.4 \
 		encode_unicode-0.3.6 \
 		endian-type-0.1.2 \
 		env_logger-0.9.3 \
-		errno-0.3.1 \
-		errno-dragonfly-0.1.2 \
-		error-code-2.3.1 \
+		equivalent-1.0.1 \
+		errno-0.3.8 \
+		error-code-3.0.0 \
 		exitcode-1.1.2 \
-		fd-lock-3.0.12 \
+		fd-lock-4.0.2 \
 		flame-0.2.2 \
 		flamer-0.4.0 \
 		flamescope-0.1.2 \
-		flate2-1.0.25 \
+		flate2-1.0.28 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		fxhash-0.2.1 \
 		generic-array-0.14.6 \
 		gethostname-0.2.3 \
-		getrandom-0.1.16 \
-		getrandom-0.2.8 \
+		getopts-0.2.21 \
+		getrandom-0.2.14 \
 		glob-0.3.1 \
 		half-1.8.2 \
 		hashbrown-0.12.3 \
+		hashbrown-0.14.3 \
 		heck-0.4.1 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.2.6 \
-		hermit-abi-0.3.1 \
 		hex-0.4.3 \
 		hexf-parse-0.2.1 \
+		home-0.5.9 \
 		iana-time-zone-0.1.53 \
 		iana-time-zone-haiku-0.1.1 \
-		indexmap-1.9.2 \
-		insta-1.28.0 \
-		io-lifetimes-1.0.10 \
-		is-macro-0.2.2 \
-		itertools-0.9.0 \
+		indexmap-1.9.3 \
+		indexmap-2.2.6 \
+		indoc-2.0.4 \
+		insta-1.38.0 \
+		is-macro-0.3.0 \
 		itertools-0.10.5 \
+		itertools-0.11.0 \
 		itoa-1.0.5 \
 		js-sys-0.3.61 \
 		keccak-0.1.3 \
@@ -140,51 +139,52 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lexical-parse-float-0.8.5 \
 		lexical-parse-integer-0.8.6 \
 		lexical-util-0.8.5 \
-		libc-0.2.141 \
+		libc-0.2.153 \
 		libffi-3.1.0 \
 		libffi-sys-2.1.0 \
 		libsqlite3-sys-0.25.2 \
 		libz-sys-1.1.8 \
 		link-cplusplus-1.0.8 \
 		linked-hash-map-0.5.6 \
-		linux-raw-sys-0.3.1 \
+		linux-raw-sys-0.4.12 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
-		lz4_flex-0.9.5 \
-		mac_address-1.1.4 \
+		lz4_flex-0.11.1 \
+		mac_address-1.1.5 \
 		mach-0.3.2 \
-		malachite-0.3.2 \
-		malachite-base-0.3.2 \
-		malachite-bigint-0.1.0 \
-		malachite-nz-0.3.2 \
-		malachite-q-0.3.2 \
+		malachite-0.4.4 \
+		malachite-base-0.4.4 \
+		malachite-bigint-0.2.0 \
+		malachite-nz-0.4.4 \
+		malachite-q-0.4.4 \
 		maplit-1.0.2 \
 		matches-0.1.10 \
 		md-5-0.10.5 \
-		memchr-2.5.0 \
+		memchr-2.7.2 \
 		memmap2-0.5.8 \
 		memoffset-0.6.5 \
 		memoffset-0.7.1 \
-		miniz_oxide-0.6.2 \
+		memoffset-0.9.1 \
+		miniz_oxide-0.7.2 \
 		mt19937-2.0.1 \
 		nibble_vec-0.1.0 \
 		nix-0.23.2 \
-		nix-0.26.2 \
+		nix-0.27.1 \
+		nix-0.28.0 \
 		nom8-0.2.0 \
 		num-complex-0.4.3 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
 		num_cpus-1.15.0 \
-		num_enum-0.5.9 \
-		num_enum_derive-0.5.9 \
-		once_cell-1.17.1 \
+		num_enum-0.7.2 \
+		num_enum_derive-0.7.2 \
+		once_cell-1.19.0 \
 		oorandom-11.1.3 \
-		opaque-debug-0.3.0 \
-		openssl-0.10.55 \
+		openssl-0.10.62 \
 		openssl-macros-0.1.0 \
 		openssl-probe-0.1.5 \
-		openssl-src-111.25.0+1.1.1t \
-		openssl-sys-0.9.90 \
+		openssl-src-300.2.1+3.2.0 \
+		openssl-sys-0.9.98 \
 		optional-0.5.0 \
 		page_size-0.4.2 \
 		parking_lot-0.12.1 \
@@ -194,27 +194,27 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		phf_codegen-0.11.1 \
 		phf_generator-0.11.1 \
 		phf_shared-0.11.1 \
-		pin-utils-0.1.0 \
 		pkg-config-0.3.26 \
 		plotters-0.3.4 \
 		plotters-backend-0.3.4 \
 		plotters-svg-0.3.3 \
 		pmutil-0.5.3 \
+		pmutil-0.6.1 \
 		ppv-lite86-0.2.17 \
 		proc-macro-crate-1.3.0 \
-		proc-macro2-1.0.66 \
-		puruspe-0.1.5 \
-		python3-sys-0.7.1 \
-		quote-1.0.23 \
+		proc-macro2-1.0.79 \
+		puruspe-0.2.4 \
+		pyo3-0.20.2 \
+		pyo3-build-config-0.20.2 \
+		pyo3-ffi-0.20.2 \
+		pyo3-macros-0.20.2 \
+		pyo3-macros-backend-0.20.2 \
+		quote-1.0.33 \
 		radium-0.7.0 \
 		radix_trie-0.2.1 \
-		rand-0.7.3 \
 		rand-0.8.5 \
-		rand_chacha-0.2.2 \
 		rand_chacha-0.3.1 \
-		rand_core-0.5.1 \
 		rand_core-0.6.4 \
-		rand_hc-0.2.0 \
 		rayon-1.6.1 \
 		rayon-core-1.10.2 \
 		redox_syscall-0.1.57 \
@@ -225,16 +225,16 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.28 \
 		region-2.2.0 \
-		result-like-0.4.5 \
-		result-like-derive-0.4.5 \
+		result-like-0.4.6 \
+		result-like-derive-0.4.6 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
-		rustix-0.37.11 \
+		rustix-0.38.28 \
 		rustversion-1.0.11 \
-		rustyline-11.0.0 \
-		ryu-1.0.12 \
+		rustyline-14.0.0 \
+		ryu-1.0.15 \
 		same-file-1.0.6 \
-		schannel-0.1.21 \
+		schannel-0.1.22 \
 		scopeguard-1.1.0 \
 		scratch-1.0.3 \
 		semver-1.0.16 \
@@ -245,21 +245,19 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serde_json-1.0.93 \
 		sha-1-0.10.1 \
 		sha2-0.10.6 \
-		sha3-0.9.1 \
 		sha3-0.10.6 \
 		similar-2.2.1 \
 		siphasher-0.3.10 \
 		slice-group-by-0.3.0 \
 		smallvec-1.10.0 \
-		socket2-0.4.7 \
-		sre-engine-0.4.1 \
+		socket2-0.5.5 \
 		static_assertions-1.1.0 \
-		str-buf-1.0.6 \
 		strsim-0.8.0 \
 		strum-0.24.1 \
 		strum_macros-0.24.3 \
 		subtle-2.4.1 \
-		syn-1.0.107 \
+		syn-1.0.109 \
+		syn-2.0.32 \
 		syn-ext-0.4.0 \
 		system-configuration-0.5.0 \
 		system-configuration-sys-0.5.0 \
@@ -272,7 +270,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		thiserror-impl-1.0.38 \
 		thread-id-3.3.0 \
 		thread_local-1.1.7 \
-		time-0.1.45 \
+		time-0.3.20 \
+		time-core-0.1.0 \
 		timsort-0.1.2 \
 		tiny-keccak-2.0.2 \
 		tinytemplate-1.2.1 \
@@ -301,6 +300,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		unicode-normalization-0.1.22 \
 		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.10 \
+		unicode_names2-1.1.0 \
+		unicode_names2_generator-1.1.0 \
+		unindent-0.2.3 \
 		utf8parse-0.2.0 \
 		uuid-1.3.0 \
 		uuid-macro-internal-1.3.0 \
@@ -309,8 +311,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		version_check-0.9.4 \
 		volatile-0.3.0 \
 		walkdir-2.3.2 \
-		wasi-0.9.0+wasi-snapshot-preview1 \
-		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.84 \
 		wasm-bindgen-backend-0.2.84 \
@@ -320,48 +320,53 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		wasm-bindgen-shared-0.2.84 \
 		web-sys-0.3.61 \
 		which-4.4.0 \
-		widestring-0.5.1 \
+		widestring-1.1.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-0.39.0 \
+		windows-0.52.0 \
+		windows-core-0.52.0 \
 		windows-sys-0.36.1 \
 		windows-sys-0.42.0 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
 		windows-targets-0.42.1 \
-		windows-targets-0.48.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.0 \
 		windows_aarch64_gnullvm-0.42.1 \
-		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.0 \
 		windows_aarch64_msvc-0.36.1 \
-		windows_aarch64_msvc-0.39.0 \
 		windows_aarch64_msvc-0.42.1 \
-		windows_aarch64_msvc-0.48.0 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.0 \
 		windows_i686_gnu-0.36.1 \
-		windows_i686_gnu-0.39.0 \
 		windows_i686_gnu-0.42.1 \
-		windows_i686_gnu-0.48.0 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.0 \
 		windows_i686_msvc-0.36.1 \
-		windows_i686_msvc-0.39.0 \
 		windows_i686_msvc-0.42.1 \
-		windows_i686_msvc-0.48.0 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.0 \
 		windows_x86_64_gnu-0.36.1 \
-		windows_x86_64_gnu-0.39.0 \
 		windows_x86_64_gnu-0.42.1 \
-		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.0 \
 		windows_x86_64_gnullvm-0.42.1 \
-		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.36.1 \
-		windows_x86_64_msvc-0.39.0 \
 		windows_x86_64_msvc-0.42.1 \
-		windows_x86_64_msvc-0.48.0 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.0 \
 		winreg-0.10.1 \
 		xml-rs-0.8.14 \
-		yaml-rust-0.4.5 \
+		zerocopy-0.7.32 \
+		zerocopy-derive-0.7.32 \
 		rustpython-doc@git+https://github.com/RustPython/__doc__?tag=0.3.0\#8b62ce5d796d68a091969c9fa5406276cb483f79 \
-		unicode_names2@git+https://github.com/youknowone/unicode_names2.git?rev=4ce16aa85cbcdd9cc830410f1a72ef9a235f2fde\#4ce16aa85cbcdd9cc830410f1a72ef9a235f2fde \
-		rustpython-ast,rustpython-format,rustpython-literal,rustpython-parser,rustpython-parser-core,rustpython-parser-vendored@git+https://github.com/RustPython/Parser.git?tag=0.3.0\#a1e4336f7043807eda8a5ecb15d4115172cc4a7e
+		rustpython-ast,rustpython-format,rustpython-literal,rustpython-parser,rustpython-parser-core,rustpython-parser-vendored@git+https://github.com/RustPython/Parser.git?rev=a95045bc627b2fbf84caf4f010e521846be7b37f\#a95045bc627b2fbf84caf4f010e521846be7b37f
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib

@@ -1,8 +1,7 @@
 PORTNAME=	orthanc
-DISTVERSION=	1.11.0
-PORTREVISION=	12
+DISTVERSION=	1.12.3
 CATEGORIES=	science
-MASTER_SITES=	https://www.orthanc-server.com/downloads/get.php?path=/orthanc/
+MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc/
 DISTNAME=	Orthanc-${PORTVERSION}
 
 MAINTAINER=	maintainer.freebsd@xpoundit.com
@@ -12,6 +11,8 @@ WWW=		https://www.orthanc-server.com/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	protoc:devel/protobuf
+
 LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libcivetweb.so:www/civetweb \
 		libcurl.so:ftp/curl \
@@ -20,9 +21,10 @@ LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libicuuc.so:devel/icu \
 		libjsoncpp.so:devel/jsoncpp \
 		libpng16.so:graphics/png \
+		libprotobuf.so:devel/protobuf \
 		libpugixml.so:textproc/pugixml \
 		libtiff.so:graphics/tiff \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/e2fsprogs-libuuid \
 
 USES=		cmake gnome iconv jpeg lua python:build sqlite ssl
 USE_GNOME=	libxml2

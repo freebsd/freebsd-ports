@@ -1067,6 +1067,8 @@
 %%WWWDIR%%/assets/js/vendor.min.js
 %%WWWDIR%%/cli
 %%WWWDIR%%/config.default.php
+%%WWWDIR%%/custom-hooks/install-custom-hooks.sh
+%%WWWDIR%%/custom-hooks/post-checkout
 %%WWWDIR%%/data/.htaccess
 %%WWWDIR%%/data/web.config
 %%WWWDIR%%/favicon.ico
@@ -2066,6 +2068,7 @@
 %%WWWDIR%%/vendor/symfony/service-contracts/ServiceSubscriberInterface.php
 %%WWWDIR%%/vendor/symfony/service-contracts/ServiceSubscriberTrait.php
 %%WWWDIR%%/vendor/symfony/service-contracts/Test/ServiceLocatorTest.php
+%%WWWDIR%%/vendor/symfony/service-contracts/Test/ServiceLocatorTestCase.php
 %%WWWDIR%%/vendor/symfony/string/AbstractString.php
 %%WWWDIR%%/vendor/symfony/string/AbstractUnicodeString.php
 %%WWWDIR%%/vendor/symfony/string/ByteString.php

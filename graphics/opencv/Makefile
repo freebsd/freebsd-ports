@@ -1,10 +1,6 @@
 PORTNAME=	opencv
-DISTVERSION=	4.6.0
-PORTREVISION=	17
+DISTVERSION=	4.9.0
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES=	496eed950f6d0e7fd92619d47e3cec8f06e96ace.patch:-p1
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Open Source Computer Vision library
@@ -36,10 +32,12 @@ GH_TAGNAME=	v0.1.1f:ade \
 		8afa57abc8229d611c4937165d20e2a2d9fc5a12:face \
 		a56b6ac6f030c312b2dce17430eef13aed9af274:ippicv
 
-CMAKE_ON=	OPENCV_GENERATE_PKGCONFIG
+CMAKE_ON=	OPENCV_GENERATE_PKGCONFIG \
+		OPENCV_SKIP_CMAKE_CXX_STANDARD
 CMAKE_OFF=	OPENCV_GENERATE_SETUPVARS \
 		BUILD_opencv_python2 \
 		BUILD_TESTS
+CMAKE_OFF+=	WITH_OBSENSOR # linux/uvcvideo.h is included when WITH_OBSENSOR is enabled
 CMAKE_ARGS=	-DOPENCV_EXTRA_MODULES_PATH="${WRKSRC}/contrib/modules"
 
 DATADIR=	${PREFIX}/share/${PORTNAME}4
@@ -101,8 +99,7 @@ PATENTED_DESC=		Enable patented 2d feature detection USE AT OWN RISK
 PATENTED_CMAKE_BOOL=	OPENCV_ENABLE_NONFREE
 
 PROTOBUF_DESC=		Enable protobuf support, builds dnn modules
-PROTOBUF_CMAKE_BOOL=	WITH_PROTOBUF
-PROTOBUF_LIB_DEPENDS=	libprotobuf.so:devel/protobuf
+PROTOBUF_CMAKE_BOOL=	WITH_PROTOBUF # by default the bundled protobuf is built
 
 PYTHON_DESC=		Enable Python Support 3.6 or greater
 PYTHON_BUILD_DEPENDS=	${PYNUMPY}

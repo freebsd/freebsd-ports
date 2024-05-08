@@ -1,3 +1,5 @@
-TIMESTAMP = 1560369510
+TIMESTAMP = 1706094385
 SHA256 (mkcue_1.orig.tar.gz) = 2aaf57da4d0f2e24329d5e952e90ec182d4aa82e4b2e025283e42370f9494867
 SIZE (mkcue_1.orig.tar.gz) = 80650
+SHA256 (mkcue_1-7.debian.tar.xz) = 5d3eed6b3c43f34459f94420aaea1f5decda64274db676d336282fba3574db6c
+SIZE (mkcue_1-7.debian.tar.xz) = 5760

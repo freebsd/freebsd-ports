@@ -1,4 +1,4 @@
---- mojo/public/tools/bindings/mojom.gni.orig	2024-02-25 20:22:18 UTC
+--- mojo/public/tools/bindings/mojom.gni.orig	2024-04-23 07:42:17 UTC
 +++ mojo/public/tools/bindings/mojom.gni
 @@ -748,6 +748,16 @@ template("mojom") {
        enabled_features += [ "is_apple" ]
@@ -16,4 +16,4 @@
 +
      action(parser_target_name) {
        allow_remote = true
-       custom_processor = "mojom_parser"
+ 

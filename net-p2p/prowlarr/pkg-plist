@@ -153,6 +153,8 @@
 %%DATADIR%%/bin/Microsoft.AspNetCore.WebSockets.dll
 %%DATADIR%%/bin/Microsoft.AspNetCore.WebUtilities.dll
 %%DATADIR%%/bin/Microsoft.AspNetCore.dll
+%%DATADIR%%/bin/Microsoft.Bcl.AsyncInterfaces.dll
+%%DATADIR%%/bin/Microsoft.Bcl.TimeProvider.dll
 %%DATADIR%%/bin/Microsoft.CSharp.dll
 %%DATADIR%%/bin/Microsoft.Data.SqlClient.dll
 %%DATADIR%%/bin/Microsoft.Extensions.Caching.Abstractions.dll
@@ -224,6 +226,8 @@
 %%DATADIR%%/bin/Newtonsoft.Json.dll
 %%DATADIR%%/bin/Npgsql.dll
 %%DATADIR%%/bin/Polly.Contrib.WaitAndRetry.dll
+%%DATADIR%%/bin/Polly.Core.dll
+%%DATADIR%%/bin/Polly.dll
 %%DATADIR%%/bin/Prowlarr
 %%DATADIR%%/bin/Prowlarr.Api.V1.deps.json
 %%DATADIR%%/bin/Prowlarr.Api.V1.dll
@@ -436,13 +440,13 @@
 %%DATADIR%%/bin/System.Xml.XmlSerializer.dll
 %%DATADIR%%/bin/System.Xml.dll
 %%DATADIR%%/bin/System.dll
-%%DATADIR%%/bin/UI/300-8365e007427b1ba26698.js
-%%DATADIR%%/bin/UI/300-8365e007427b1ba26698.js.map
+%%DATADIR%%/bin/UI/300-3eb331ac86426d4ad535.js
+%%DATADIR%%/bin/UI/300-3eb331ac86426d4ad535.js.map
 %%DATADIR%%/bin/UI/318-83bc9e14e66a3685bdcd.js
 %%DATADIR%%/bin/UI/318-83bc9e14e66a3685bdcd.js.LICENSE.txt
 %%DATADIR%%/bin/UI/318-83bc9e14e66a3685bdcd.js.map
-%%DATADIR%%/bin/UI/Content/300-512c2a9279695c76b633.css
-%%DATADIR%%/bin/UI/Content/300-512c2a9279695c76b633.css.map
+%%DATADIR%%/bin/UI/Content/300-b237ba4971440978d9da.css
+%%DATADIR%%/bin/UI/Content/300-b237ba4971440978d9da.css.map
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.ttf
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.woff
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.woff2
@@ -486,8 +490,8 @@
 %%DATADIR%%/bin/UI/Content/robots.txt
 %%DATADIR%%/bin/UI/Content/styles.css
 %%DATADIR%%/bin/UI/Content/styles.css.map
-%%DATADIR%%/bin/UI/index-e68744dfef4989d8a6f6.js
-%%DATADIR%%/bin/UI/index-e68744dfef4989d8a6f6.js.map
+%%DATADIR%%/bin/UI/index-0f4f758ee3dc70d37149.js
+%%DATADIR%%/bin/UI/index-0f4f758ee3dc70d37149.js.map
 %%DATADIR%%/bin/UI/index.html
 %%DATADIR%%/bin/UI/login.html
 %%DATADIR%%/bin/UI/oauth.html

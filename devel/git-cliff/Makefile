@@ -22,6 +22,8 @@ GH_ACCOUNT=	orhun
 WRKSRC_SUBDIR=	git-cliff
 CARGO_CARGOLOCK=	${WRKSRC}/../Cargo.lock
 
+RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
+
 CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
 		adler32-1.2.0 \

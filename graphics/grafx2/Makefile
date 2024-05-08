@@ -1,7 +1,7 @@
 PORTNAME=	grafx2
-PORTVERSION=	2.8
-DISTVERSIONSUFFIX=	.3091-HEAD-src
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.9
+DISTVERSIONSUFFIX=	.3219
 CATEGORIES=	graphics
 MASTER_SITES=	http://pulkomandy.tk/projects/GrafX2/downloads/ \
 		LOCAL/ehaupt
@@ -16,8 +16,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libX11.so:x11/libX11
 
-USES=		desktop-file-utils gmake gnome iconv:wchar_t pkgconfig sdl \
-		tar:tgz
+USES=		desktop-file-utils gmake gnome iconv:wchar_t pkgconfig sdl
 USE_SDL=	image2 sdl2
 
 MAKE_ENV+=	API=${GRAFX2_API} \
@@ -25,7 +24,7 @@ MAKE_ENV+=	API=${GRAFX2_API} \
 
 CFLAGS+=	-DHAVE_SYS_PARAM_H -DHAVE_SYS_UCRED_H -DHAVE_SYS_MOUNT_H
 
-WRKSRC=		${WRKDIR}/grafx2
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX}${PORTVERSION}
 WRKSRC_SUBDIR=	src
 
 OPTIONS_DEFINE=		LUA TTF

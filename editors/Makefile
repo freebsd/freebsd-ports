@@ -233,6 +233,7 @@
     SUBDIR += pluma-plugins
     SUBDIR += poedit
     SUBDIR += poke
+    SUBDIR += pragtical
     SUBDIR += psgml
     SUBDIR += puff
     SUBDIR += py-babi

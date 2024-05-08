@@ -1,14 +1,16 @@
 PORTNAME=	meilisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.6
+DISTVERSION=	1.8.0
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/meilisearch/mini-dashboard/releases/download/v${DASHBOARD_VERSION}/build.zip?dummy=/:mini_dashboard_assets \
-		https://download.johtani.info/:lindera_unidic \
-		SF/mecab/mecab-ipadic/2.7.0-20070801/:mecab_ipadic \
+		https://github.com/lindera-morphology/unidic-mecab/archive/refs/tags/2.1.2.tar.gz?dummy=/:lindera_unidic \
+		https://github.com/lindera-morphology/mecab-ipadic/archive/refs/tags/2.7.0-20070801.tar.gz?dummy=/:mecab_ipadic \
+		https://github.com/lindera-morphology/mecab-ko-dic/archive/refs/tags/2.1.1-20180720.tar.gz?dummy=/:mecab_ko_dic \
 		https://milli-benchmarks.fra1.digitaloceanspaces.com/datasets/:benchmark
 DISTFILES=	${MINIDASHBOARDFILE}:mini_dashboard_assets \
 		mecab-ipadic-2.7.0-20070801.tar.gz:mecab_ipadic \
-		unidic-mecab-2.1.2_src.zip:lindera_unidic \
+		unidic-mecab-2.1.2.tar.gz:lindera_unidic \
+		mecab-ko-dic-2.1.1-20180720.tar.gz:mecab_ko_dic \
 		smol-songs.csv.gz:benchmark \
 		smol-songs-1_2.csv.gz:benchmark \
 		smol-songs-3_4.csv.gz:benchmark \
@@ -23,7 +25,7 @@ DISTFILES=	${MINIDASHBOARDFILE}:mini_dashboard_assets \
 		movies-4_4.json.gz:benchmark \
 		nested_movies.json.gz:benchmark \
 		smol-all-countries.jsonl.gz:benchmark
-EXTRACT_ONLY=	${DISTFILES:N*\:benchmark:N*\:lindera_unidic:C/:.*//}
+EXTRACT_ONLY=	${DISTFILES:N*\:benchmark:N*\:lindera_unidic:N*\:mecab_ipadic:N*\:mecab_ko_dic:C/:.*//}
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Powerful, fast, and an easy to use search engine
@@ -56,7 +58,9 @@ post-patch:
 	${REINPLACE_CMD} -e 's,%%MINIDASHBOARDFILE%%,${DISTDIR}/${MINIDASHBOARDFILE},'  \
 		${WRKSRC}/meilisearch/build.rs
 	${REINPLACE_CMD} -e 's,%%DISTDIR%%,${DISTDIR},'  \
-		${CARGO_VENDOR_DIR}/lindera-unidic-0.27.2/build.rs
+		${CARGO_VENDOR_DIR}/lindera-unidic-0.30.0/build.rs \
+		${CARGO_VENDOR_DIR}/lindera-ipadic-0.30.0/build.rs \
+		${CARGO_VENDOR_DIR}/lindera-ko-dic-0.30.0/build.rs
 	${GREP} -F -R -l %%WRKDIR%% ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's,%%WRKDIR%%,${WRKDIR},'
 

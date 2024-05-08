@@ -1,6 +1,6 @@
 PORTNAME=	libgeotiff
 PORTVERSION=	1.7.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	https://download.osgeo.org/geotiff/libgeotiff/ \
 		LOCAL/sunpoet

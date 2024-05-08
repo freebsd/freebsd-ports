@@ -1,6 +1,6 @@
---- Radio.cpp.orig	2021-02-01 18:08:30 UTC
+--- Radio.cpp.orig	2021-12-28 16:31:58 UTC
 +++ Radio.cpp
-@@ -45,7 +45,7 @@ namespace Radio
+@@ -54,7 +54,7 @@ namespace Radio
      value *= std::pow (10., scale);
      if (ok)
        {
@@ -9,7 +9,7 @@
            {
              value = 0.;
              *ok = false;
-@@ -70,7 +70,7 @@ namespace Radio
+@@ -92,7 +92,7 @@ namespace Radio
      if (ok)
        {
          if (value < -std::numeric_limits<Frequency>::max ()

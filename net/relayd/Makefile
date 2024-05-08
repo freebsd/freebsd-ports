@@ -1,5 +1,5 @@
 PORTNAME=	relayd
-DISTVERSION=	7.4.2024.01.15-p0
+DISTVERSION=	7.4.2024.01.15-p1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/KlaraSystems/freebsd-relayd/releases/download/${DISTVERSION}/
 

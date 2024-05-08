@@ -1,17 +1,16 @@
 PORTNAME=	fcitx5-gtk
-DISTVERSION=	5.0.23
-PORTREVISION=	1
+DISTVERSION=	5.1.3
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
 MAINTAINER=	khng@FreeBSD.org
-COMMENT?=	Fcitx support for GTK ${FLAVOR}
+COMMENT?=	Fcitx support for GTK (${FLAVOR})
 WWW=		https://github.com/fcitx/fcitx5-gtk
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt
 
-LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
+LIB_DEPENDS?=	libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS?=	fcitx5-gtk-common>=${DISTVERSION}:textproc/fcitx5-gtk-common
 
 FLAVORS?=	gtk3 gtk2 gtk4
@@ -21,8 +20,8 @@ gtk2_PKGNAMESUFFIX=	2
 gtk3_PKGNAMESUFFIX=	3
 gtk4_PKGNAMESUFFIX=	4
 
-USES=		cmake compiler:c++17-lang gettext-tools gnome kde:5 pkgconfig \
-		tar:xz xorg
+USES=		cmake compiler:c++17-lang gnome kde:5 pkgconfig \
+		tar:zst xorg
 
 USE_GNOME=	cairo gdkpixbuf2 glib20 introspection
 USE_KDE=	ecm

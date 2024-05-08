@@ -1,14 +1,14 @@
---- make/Makefile.orig	2024-04-08 01:19:41 UTC
+--- make/Makefile.orig	2024-05-04 16:08:28 UTC
 +++ make/Makefile
-@@ -86,7 +86,7 @@ F77FLAGS = -c
+@@ -68,7 +68,7 @@ F77FLAGS = -c
  
  F77 = gfortran
  F77FLAGS = -c
 -OPTFLAGS = -Ofast -march=native -fopenmp
 +OPTFLAGS = -Ofast $(PORT_SIMD_FLAGS) -fopenmp
- #OPTFLAGS = -Ofast -fopenmp
- #OPTFLAGS = -Og -g -fbacktrace -fcheck=bounds -Wunused -Wmaybe-uninitialized
- LIBDIR = -L. -L$(TINKER_LIBDIR)/macos
+ OPTFLAGS = -Ofast -fopenmp
+ OPTFLAGS = -Og -g -fbacktrace -fcheck=bounds -Wunused -Wmaybe-uninitialized
+ LIBDIR = -L. -L$(TINKER_LIBDIR)/linux -Wl,--no-as-needed -ldl
 @@ -829,138 +829,138 @@ rename_bin:
  	cat *.f *.c > tinker.txt
  

@@ -1,7 +1,6 @@
 PORTNAME=	qdrant
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.2
-PORTREVISION=	1
+DISTVERSION=	1.9.0
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -38,7 +37,6 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		actix-web-4.5.1 \
 		actix-web-codegen-4.2.0 \
 		actix-web-extras-0.1.0 \
-		actix-web-httpauth-0.8.1 \
 		actix-web-validator-5.0.1 \
 		addr2line-0.19.0 \
 		adler-1.0.2 \
@@ -57,15 +55,14 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-3.0.1 \
 		antidote-1.0.0 \
-		anyhow-1.0.80 \
+		anyhow-1.0.82 \
 		approx-0.5.1 \
-		arc-swap-1.7.0 \
+		arc-swap-1.7.1 \
 		arrayvec-0.4.12 \
 		arrayvec-0.7.2 \
-		async-recursion-1.0.5 \
 		async-stream-0.3.3 \
 		async-stream-impl-0.3.3 \
-		async-trait-0.1.77 \
+		async-trait-0.1.80 \
 		atomic_refcell-0.1.13 \
 		atomicwrites-0.4.3 \
 		autocfg-1.1.0 \
@@ -74,6 +71,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		backtrace-0.3.67 \
 		base64-0.13.1 \
 		base64-0.21.0 \
+		base64-0.22.0 \
 		base64ct-1.6.0 \
 		bincode-1.3.3 \
 		bindgen-0.69.4 \
@@ -89,8 +87,8 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		brotli-decompressor-2.3.2 \
 		bumpalo-3.11.1 \
 		bytemuck-1.12.3 \
-		byteorder-1.4.3 \
-		bytes-1.5.0 \
+		byteorder-1.5.0 \
+		bytes-1.6.0 \
 		bytestring-1.2.0 \
 		bzip2-0.4.4 \
 		bzip2-sys-0.1.11+1.0.8 \
@@ -100,17 +98,17 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
 		cgroups-rs-0.3.4 \
-		charabia-0.8.7 \
-		chrono-0.4.34 \
+		charabia-0.8.8 \
+		chrono-0.4.38 \
 		ci_info-0.10.2 \
 		ciborium-0.2.0 \
 		ciborium-io-0.2.0 \
 		ciborium-ll-0.2.0 \
 		cipher-0.4.4 \
 		clang-sys-1.4.0 \
-		clap-4.5.2 \
+		clap-4.5.4 \
 		clap_builder-4.5.2 \
-		clap_derive-4.5.0 \
+		clap_derive-4.5.4 \
 		clap_lex-0.7.0 \
 		codespan-reporting-0.11.1 \
 		colorchoice-1.0.0 \
@@ -126,12 +124,11 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		convert_case-0.4.0 \
 		convert_case-0.6.0 \
 		cookie-0.16.2 \
-		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.6 \
 		cow-utils-0.1.2 \
 		cpp_demangle-0.4.2 \
 		cpufeatures-0.2.5 \
-		crc32c-0.6.4 \
+		crc32c-0.6.5 \
 		crc32fast-1.3.2 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
@@ -168,10 +165,9 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		encoding-index-singlebyte-1.20141219.5 \
 		encoding-index-tradchinese-1.20141219.5 \
 		encoding_index_tests-0.1.4 \
-		encoding_rs-0.8.32 \
+		encoding_rs-0.8.33 \
 		encoding_rs_io-0.1.7 \
 		env_filter-0.1.0 \
-		env_logger-0.10.2 \
 		env_logger-0.11.3 \
 		envmnt-0.8.4 \
 		equivalent-1.0.1 \
@@ -181,14 +177,14 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		filetime-0.2.19 \
 		findshlibs-0.10.2 \
 		fixedbitset-0.4.2 \
-		flate2-1.0.26 \
+		flate2-1.0.28 \
 		float_next_after-1.0.0 \
 		fnv-1.0.7 \
 		foreign-types-0.5.0 \
 		foreign-types-macros-0.2.3 \
 		foreign-types-shared-0.3.1 \
 		form_urlencoded-1.2.1 \
-		fs4-0.7.0 \
+		fs4-0.8.2 \
 		fs_extra-1.3.0 \
 		fsio-0.1.3 \
 		fst-0.4.7 \
@@ -210,14 +206,15 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		geo-0.28.0 \
 		geo-types-0.7.13 \
 		geographiclib-rs-0.2.3 \
-		geohash-0.13.0 \
+		geohash-0.13.1 \
 		getopts-0.2.21 \
 		getrandom-0.1.16 \
 		getrandom-0.2.11 \
 		getset-0.1.2 \
 		gimli-0.27.0 \
 		glob-0.3.1 \
-		h2-0.3.24 \
+		h2-0.3.26 \
+		h2-0.4.4 \
 		half-1.8.2 \
 		hash32-0.3.1 \
 		hashbrown-0.12.3 \
@@ -226,21 +223,26 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		hashring-0.3.3 \
 		hdrhistogram-7.5.2 \
 		heapless-0.8.0 \
-		heck-0.4.0 \
+		heck-0.4.1 \
+		heck-0.5.0 \
 		hermit-abi-0.3.3 \
 		hex-0.4.3 \
 		hmac-0.12.1 \
 		http-0.2.9 \
 		http-1.0.0 \
 		http-body-0.4.5 \
+		http-body-1.0.0 \
+		http-body-util-0.1.1 \
 		http-range-0.1.5 \
 		http-serde-2.0.0 \
 		httparse-1.8.0 \
 		httpdate-1.0.2 \
 		humantime-2.1.0 \
 		hyper-0.14.26 \
-		hyper-rustls-0.24.0 \
+		hyper-1.2.0 \
+		hyper-rustls-0.26.0 \
 		hyper-timeout-0.4.1 \
+		hyper-util-0.1.3 \
 		iana-time-zone-0.1.53 \
 		iana-time-zone-haiku-0.1.1 \
 		ident_case-1.0.1 \
@@ -249,7 +251,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		if_chain-1.0.2 \
 		impl-more-0.1.6 \
 		indexmap-1.9.2 \
-		indexmap-2.2.5 \
+		indexmap-2.2.6 \
 		indicatif-0.17.8 \
 		inferno-0.11.18 \
 		inout-0.1.3 \
@@ -266,9 +268,9 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		itoa-1.0.5 \
 		jieba-rs-0.6.8 \
 		jobserver-0.1.25 \
-		js-sys-0.3.60 \
+		js-sys-0.3.69 \
 		json5-0.4.1 \
-		jsonwebtoken-9.2.0 \
+		jsonwebtoken-9.3.0 \
 		language-tags-0.3.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
@@ -277,18 +279,18 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		libm-0.2.6 \
 		librocksdb-sys-0.16.0+8.10.0 \
 		libz-sys-1.1.8 \
-		lindera-cc-cedict-builder-0.27.2 \
-		lindera-compress-0.27.2 \
-		lindera-core-0.27.2 \
-		lindera-decompress-0.27.2 \
-		lindera-dictionary-0.27.2 \
-		lindera-ipadic-builder-0.27.2 \
-		lindera-ipadic-neologd-builder-0.27.2 \
-		lindera-ko-dic-0.27.2 \
-		lindera-ko-dic-builder-0.27.2 \
-		lindera-tokenizer-0.27.2 \
-		lindera-unidic-0.27.2 \
-		lindera-unidic-builder-0.27.2 \
+		lindera-cc-cedict-builder-0.28.0 \
+		lindera-compress-0.28.0 \
+		lindera-core-0.28.0 \
+		lindera-decompress-0.28.0 \
+		lindera-dictionary-0.28.0 \
+		lindera-ipadic-builder-0.28.0 \
+		lindera-ipadic-neologd-builder-0.28.0 \
+		lindera-ko-dic-0.28.0 \
+		lindera-ko-dic-builder-0.28.0 \
+		lindera-tokenizer-0.28.0 \
+		lindera-unidic-0.28.0 \
+		lindera-unidic-builder-0.28.0 \
 		link-cplusplus-1.0.8 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.3.8 \
@@ -408,7 +410,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		rand_distr-0.4.3 \
 		rand_hc-0.2.0 \
 		rand_xorshift-0.3.0 \
-		rayon-1.9.0 \
+		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.4.1 \
@@ -418,7 +420,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		regex-syntax-0.7.2 \
 		regex-syntax-0.8.2 \
 		relative-path-1.8.0 \
-		reqwest-0.11.23 \
+		reqwest-0.12.3 \
 		rgb-0.8.34 \
 		ring-0.16.20 \
 		ring-0.17.5 \
@@ -431,20 +433,19 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		rstack-0.3.3 \
 		rstack-self-0.3.0 \
 		rstar-0.12.0 \
-		rstest-0.18.2 \
-		rstest_macros-0.18.2 \
+		rstest-0.19.0 \
+		rstest_macros-0.19.0 \
 		rust-ini-0.19.0 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
 		rustix-0.37.27 \
 		rustix-0.38.31 \
-		rustls-0.21.10 \
-		rustls-0.22.2 \
+		rustls-0.21.11 \
+		rustls-0.22.4 \
 		rustls-pemfile-1.0.3 \
-		rustls-pemfile-2.1.1 \
-		rustls-pki-types-1.3.1 \
-		rustls-webpki-0.100.2 \
+		rustls-pemfile-2.1.2 \
+		rustls-pki-types-1.4.1 \
 		rustls-webpki-0.101.7 \
 		rustls-webpki-0.102.2 \
 		rustversion-1.0.11 \
@@ -468,7 +469,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		serde_cbor-0.11.2 \
 		serde_derive-1.0.197 \
 		serde_derive_internals-0.26.0 \
-		serde_json-1.0.114 \
+		serde_json-1.0.115 \
 		serde_plain-1.0.1 \
 		serde_qs-0.10.1 \
 		serde_spanned-0.6.5 \
@@ -487,37 +488,35 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		slog-2.7.0 \
 		slog-scope-4.4.0 \
 		slog-stdlog-4.1.1 \
-		smallvec-1.13.1 \
+		smallvec-1.13.2 \
 		smol_str-0.2.1 \
 		socket2-0.4.9 \
 		socket2-0.5.5 \
 		spade-2.4.1 \
-		sparse-0.1.0 \
 		spin-0.5.2 \
 		spin-0.9.8 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
-		storage-0.2.0 \
 		str_stack-0.1.0 \
 		strsim-0.10.0 \
 		strsim-0.11.0 \
+		strum-0.26.2 \
+		strum_macros-0.26.2 \
 		subtle-2.5.0 \
 		symbolic-common-12.2.0 \
 		symbolic-demangle-12.2.0 \
 		syn-1.0.107 \
 		syn-2.0.48 \
-		sync_wrapper-0.1.1 \
+		sync_wrapper-0.1.2 \
 		sys-info-0.9.1 \
-		sysinfo-0.30.7 \
-		system-configuration-0.5.1 \
-		system-configuration-sys-0.5.0 \
+		sysinfo-0.30.10 \
 		tap-1.0.1 \
 		tar-0.4.40 \
 		tempfile-3.10.1 \
 		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
-		thiserror-1.0.57 \
-		thiserror-impl-1.0.57 \
+		thiserror-1.0.58 \
+		thiserror-impl-1.0.58 \
 		thread-id-4.0.0 \
 		thread-priority-0.16.0 \
 		thread_local-1.1.7 \
@@ -530,7 +529,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.36.0 \
+		tokio-1.37.0 \
 		tokio-io-timeout-1.2.0 \
 		tokio-macros-2.2.0 \
 		tokio-rustls-0.24.1 \
@@ -541,7 +540,6 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		toml-0.8.9 \
 		toml_datetime-0.6.5 \
 		toml_edit-0.21.1 \
-		tonic-0.9.2 \
 		tonic-build-0.10.2 \
 		tonic-reflection-0.9.2 \
 		tower-0.4.13 \
@@ -571,10 +569,10 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		untrusted-0.9.0 \
 		unwind-0.4.1 \
 		unwind-sys-0.1.3 \
-		ureq-2.7.1 \
+		ureq-2.9.6 \
 		url-2.5.0 \
 		utf8parse-0.2.1 \
-		uuid-1.7.0 \
+		uuid-1.8.0 \
 		v_htmlescape-0.15.8 \
 		validator-0.16.1 \
 		validator_derive-0.16.0 \
@@ -587,23 +585,21 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		want-0.3.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.83 \
-		wasm-bindgen-backend-0.2.83 \
-		wasm-bindgen-futures-0.4.33 \
-		wasm-bindgen-macro-0.2.83 \
-		wasm-bindgen-macro-support-0.2.83 \
-		wasm-bindgen-shared-0.2.83 \
-		wasm-streams-0.3.0 \
-		web-sys-0.3.60 \
-		webpki-roots-0.23.1 \
-		webpki-roots-0.25.2 \
+		wasm-bindgen-0.2.92 \
+		wasm-bindgen-backend-0.2.92 \
+		wasm-bindgen-futures-0.4.42 \
+		wasm-bindgen-macro-0.2.92 \
+		wasm-bindgen-macro-support-0.2.92 \
+		wasm-bindgen-shared-0.2.92 \
+		wasm-streams-0.4.0 \
+		web-sys-0.3.69 \
+		webpki-roots-0.26.1 \
 		whatlang-0.16.4 \
 		which-4.3.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		winnow-0.5.37 \
 		windows-0.48.0 \
 		windows-0.52.0 \
 		windows-core-0.52.0 \
@@ -635,7 +631,8 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.0 \
 		windows_x86_64_msvc-0.52.0 \
-		winreg-0.50.0 \
+		winnow-0.5.37 \
+		winreg-0.52.0 \
 		wyz-0.5.1 \
 		xattr-1.0.1 \
 		yada-0.5.0 \
@@ -651,9 +648,9 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-safe-7.0.0 \
 		zstd-sys-2.0.9+zstd.1.5.5 \
-		quantization@git+https://github.com/qdrant/quantization.git\#939fdb627a8edcf92fd71e3c79017156690850e9 \
-		tonic@git+https://github.com/qdrant/tonic?branch=v0.9.2-patched\#060ab88c87955adc59d46a44b4e3b72cb4cc1522 \
-		wal@git+https://github.com/qdrant/wal.git?rev=fad0e7c48be58d8e7db4cc739acd9b1cf6735de0\#fad0e7c48be58d8e7db4cc739acd9b1cf6735de0
+		wal@git+https://github.com/qdrant/wal.git?rev=a7870900f29811a24e20882887d60e6a2febf945\#a7870900f29811a24e20882887d60e6a2febf945 \
+		quantization@git+https://github.com/qdrant/quantization.git\#14f42f944358b4e95c482892dc4ead019809a448 \
+		tonic@git+https://github.com/qdrant/tonic?branch=v0.9.2-patched\#060ab88c87955adc59d46a44b4e3b72cb4cc1522
 
 QDRANT_DBDIR?=	/var/db/qdrant
 QDRANT_USER?=	nobody

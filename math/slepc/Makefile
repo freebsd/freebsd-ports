@@ -1,5 +1,5 @@
 PORTNAME=	slepc
-DISTVERSION=	3.21.0
+DISTVERSION=	3.21.1
 CATEGORIES=	math devel
 MASTER_SITES=	http://slepc.upv.es/download/distrib/
 

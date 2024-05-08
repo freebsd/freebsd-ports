@@ -66,6 +66,11 @@ CFLAGS+=       -Wno-error=bitwise-instead-of-logical
 CFLAGS+=       -Wno-error=unsafe-buffer-usage
 .endif
 
+# Fixes build failure for Clang 18.1.4
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500018 && ${CHOSEN_COMPILER_TYPE} == clang
+CFLAGS+=       -Wno-error=switch-default
+.endif
+
 # Prepare for Qt5-5.15
 CFLAGS+=	-Wno-deprecated
 

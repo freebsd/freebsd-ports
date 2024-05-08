@@ -1,5 +1,5 @@
 PORTNAME=	irb
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/ruby/irb
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-rdoc>=0:devel/rubygem-rdoc \
+RUN_DEPENDS=	rubygem-rdoc>=4.0.0:devel/rubygem-rdoc \
 		rubygem-reline>=0.4.2:devel/rubygem-reline
 
 USES=		gem

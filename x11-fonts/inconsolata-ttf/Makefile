@@ -1,34 +1,33 @@
 PORTNAME=	inconsolata-ttf
-PORTVERSION=	2.001
-PORTREVISION=	1
+DISTVERSION=	3.000
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
+MASTER_SITES=	https://github.com/googlefonts/Inconsolata/releases/download/v${DISTVERSION}/
+DISTNAME=	fonts_ttf
+EXTRACT_SUFX=	.zip
+DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Monospaced truetype font
 WWW=		https://fonts.google.com/specimen/Inconsolata
 
 LICENSE=	OFL11
-LICENSE_FILE=	${WRKSRC}/OFL.txt
 
+USES=		fonts
+
+EXTRACT_AFTER_ARGS=	--include fonts/ttf/Inconsolata-Bold.ttf \
+			--include fonts/ttf/Inconsolata-Regular.ttf \
+			--strip-components 2 \
+			--no-same-owner --no-same-permissions
 NO_ARCH=	yes
-USES=		fonts xorg
-USE_GITHUB=	yes
-GH_ACCOUNT=	google
-GH_PROJECT=	fonts
-GH_TAGNAME=	efcbdc5
-FONTNAME=	inconsolata
-USE_XORG=	x11
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+
 PLIST_FILES=	${FONTSDIR}/Inconsolata-Bold.ttf \
 		${FONTSDIR}/Inconsolata-Regular.ttf
-NO_BUILD=	yes
-
-WRKSRC_SUBDIR=	ofl/${FONTNAME}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Inconsolata-Bold.ttf \
-			${WRKSRC}/Inconsolata-Regular.ttf \
-			${STAGEDIR}/${FONTSDIR}
+	@${MKDIR} ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}/${FONTSDIR}
 
 .include <bsd.port.mk>

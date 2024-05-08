@@ -103,9 +103,6 @@ PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 
 RTCPU_CONFIGURE_ON=	--enable-runtime-cpudetection
 
-RTMP_LIB_DEPENDS=	librtmp.so:multimedia/librtmp
-RTMP_CONFIGURE_OFF=	--disable-librtmp
-
 SDL_USE=		SDL=sdl
 SDL_USES=		sdl
 SDL_LIB_DEPENDS=	libaa.so:graphics/aalib

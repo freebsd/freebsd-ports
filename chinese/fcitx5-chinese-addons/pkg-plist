@@ -15,6 +15,7 @@ lib/fcitx5/libpinyin.so
 lib/fcitx5/libpinyinhelper.so
 lib/fcitx5/libpunctuation.so
 lib/fcitx5/libtable.so
+lib/fcitx5/qt5/libcustomphraseeditor.so
 lib/fcitx5/qt5/libpinyindictmanager.so
 share/fcitx5/addon/chttrans.conf
 share/fcitx5/addon/cloudpinyin.conf
@@ -36,7 +37,7 @@ share/fcitx5/inputmethod/wbx.conf
 share/fcitx5/inputmethod/zrm.conf
 share/fcitx5/lua/imeapi/extensions/pinyin.lua
 share/fcitx5/pinyin/chaizi.dict
-share/fcitx5/pinyin/emoji.dict
+share/fcitx5/pinyin/symbols
 share/fcitx5/pinyinhelper/py_stroke.mb
 share/fcitx5/pinyinhelper/py_table.mb
 share/fcitx5/punctuation/punc.mb.zh_CN

@@ -1,6 +1,6 @@
 PORTNAME=	hcode
 PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	korean
 MASTER_SITES=	http://ftp.kaist.ac.kr/hangul/incoming/ \
 		ftp://ftp.kaist.ac.kr/hangul/incoming/ \

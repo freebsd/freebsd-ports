@@ -1,8 +1,9 @@
 PORTNAME=	drf-spectacular-sidecar
-DISTVERSION=	2024.4.1
+DISTVERSION=	2024.5.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj42-
+DISTNAME=	drf_spectacular_sidecar-${DISTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Serve self-contained Swagger UI/Redoc distribution builds with Django

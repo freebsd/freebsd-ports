@@ -1,7 +1,6 @@
 PORTNAME=	glaxnimate
-DISTVERSION=	0.5.3
+DISTVERSION=	0.5.4
 CATEGORIES=	graphics
-PKGNAMESUFFIX=	-${FLAVOR}
 
 PATCH_SITES=	https://gitlab.com/${GL_ACCOUNT}/${PORTNAME}/-/commit/
 PATCHFILES+=	6f312a0b93208255b2903f6d3105cc36cfc6b6c7.patch:-p1 # Fix build with Qt 6.5.x
@@ -19,25 +18,13 @@ BUILD_DEPENDS=	pip:devel/py-pip@${PY_FLAVOR}
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libpotrace.so:graphics/libpotrace
 
-FLAVORS=		qt5 qt6
-FLAVOR?=		${FLAVORS:[1]}
-qt5_CONFLICTS_INSTALL=	glaxnimate glaxnimate-qt6
-qt6_CONFLICTS_INSTALL=	glaxnimate glaxnimate-qt5
-
 USES=		cmake compiler:c++17-lang desktop-file-utils gl libarchive \
-		python qt:${FLAVOR:S/qt//}
+		python qt:6
 USE_GL=		gl
-_USE_QT5=	concurrent core gui network svg xml widgets buildtools:build \
-		linguisttools:build qmake:build uitools:build
-_USE_QT6=	base svg tools
-USE_QT=		${_USE_QT${FLAVOR:S/qt//}}
+USE_QT=		base svg tools
 
-_CMAKE_ON_qt5=	WITH_QT5
-_CMAKE_ON_qt6=	WITH_QT6
-_CMAKE_OFF_qt5=	WITH_QT6
-_CMAKE_OFF_qt6=	WITH_QT5
-CMAKE_ON=	${_CMAKE_ON_${FLAVOR}}
-CMAKE_OFF=	${_CMAKE_OFF_${FLAVOR}}
+CMAKE_ON=	WITH_QT6
+CMAKE_OFF=	WITH_QT5
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	mattbas

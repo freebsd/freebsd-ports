@@ -1,6 +1,6 @@
 PORTNAME=	furnace
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.2
+DISTVERSION=	0.6.3
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -15,15 +15,15 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		librtmidi.so:audio/rtmidi \
 		libsndfile.so:audio/libsndfile
 
-USES=		cmake gl localbase:ldflags pkgconfig sdl tar:xz
+USES=		cmake desktop-file-utils gl localbase:ldflags pkgconfig sdl \
+		shared-mime-info tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	tildearrow
-GH_TUPLE=	libsdl-org:SDL:ffa78e6b:sdl/extern/SDL \
-		superctr:adpcm:ef7a2171:adpcm/extern/adpcm \
-		dbry:adpcm-xq:6220fed7:adpcmxq/extern/adpcm-xq \
-		fmtlib:fmt:e57ca2e3:fmt/extern/fmt \
-		libsndfile:libsndfile:ca200890:libsndfile/extern/libsndfile \
-		PortAudio:portaudio:6ee9836a:portaudio/extern/portaudio
+GH_TUPLE=	libsdl-org:SDL:ffa78e6be:sdl/extern/SDL \
+		superctr:adpcm:ef7a21715:adpcm/extern/adpcm \
+		fmtlib:fmt:e57ca2e36:fmt/extern/fmt \
+		libsndfile:libsndfile:ca2008903:libsndfile/extern/libsndfile \
+		PortAudio:portaudio:6ee9836a0:portaudio/extern/portaudio
 USE_GL=		gl
 USE_SDL=	sdl2
 

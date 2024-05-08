@@ -1,16 +1,17 @@
 #!/bin/sh
 
-test -x /usr/local/bin/cscli || exit 0
+test -x %%PREFIX%%/bin/cscli || exit 0
+
+# splay hub upgrade and crowdsec reload
+sleep "$(jot -r 1 1 300)"
 
 # favor the opnsense plugin's cron if it's there
 test -e /usr/local/etc/cron.d/oscrowdsec.cron && exit 0
 
-/usr/local/bin/cscli --error -o human hub update
+%%PREFIX%%/bin/cscli --error -o human hub update
 
-upgraded=$(/usr/local/bin/cscli --error -o human hub upgrade)
+upgraded=$(%%PREFIX%%/bin/cscli --error -o human hub upgrade)
 if [ -n "$upgraded" ]; then
-    # splay initial metrics push
-    sleep "$(jot -r 1 1 60)"
     service crowdsec onestatus && service crowdsec onereload
 fi
 

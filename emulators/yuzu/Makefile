@@ -7,7 +7,9 @@ MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb
 .else
 MASTER_SITES=	LOCAL/jbeich:gamedb
 .endif
+MASTER_SITES+=	https://codeberg.org/TxzK/${PORTNAME}/archive/${GH_TAGNAME}${EXTRACT_SUFX}?dummy=/
 DISTFILES=	${PORTNAME}-s20230424/compatibility_list.json:gamedb
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTFILES:N*\:gamedb:C/\:.*//}
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -48,7 +50,7 @@ qt5_OPTIONS_SLAVE=	QT5
 qt5_OPTIONS_EXCLUDE=	QT6
 qt6_CONFLICTS_INSTALL=	${PORTNAME}-qt5
 
-USE_GITHUB=	yes
+USE_GITHUB=	nodefault
 GH_ACCOUNT=	yuzu-mirror
 GH_TAGNAME=	15e6e48bef
 GH_TUPLE=	yuzu-mirror:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
@@ -66,6 +68,7 @@ GH_TUPLE=	yuzu-mirror:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 
 USES=		cmake:testing elfctl localbase:ldflags pkgconfig sdl ssl
 USE_SDL=	sdl2
+WRKSRC=		${WRKDIR}/${PORTNAME}
 CMAKE_ON=	Boost_USE_STATIC_LIBS
 CMAKE_ON+=	BUNDLE_SPEEX # only used by cubeb tests
 CMAKE_ON+=	CMAKE_DISABLE_FIND_PACKAGE_LLVM # only need Demangle but llvm* is huge

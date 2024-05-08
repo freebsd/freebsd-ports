@@ -370,7 +370,6 @@
     SUBDIR += ccls
     SUBDIR += ccrtp
     SUBDIR += cctz
-    SUBDIR += cdash
     SUBDIR += cdecl
     SUBDIR += cdialog
     SUBDIR += cdk
@@ -450,12 +449,12 @@
     SUBDIR += concurrencpp
     SUBDIR += concurrencykit
     SUBDIR += concurrentqueue
-    SUBDIR += configkit
     SUBDIR += cons
     SUBDIR += cons-test
     SUBDIR += containers
     SUBDIR += convco
     SUBDIR += corrade
+    SUBDIR += corrosion
     SUBDIR += courier-unicode
     SUBDIR += coursier
     SUBDIR += covtool
@@ -813,6 +812,7 @@
     SUBDIR += git-modes
     SUBDIR += git-p4
     SUBDIR += git-prev-next
+    SUBDIR += git-repo-manager
     SUBDIR += git-review
     SUBDIR += git-subrepo
     SUBDIR += git-svn
@@ -1365,7 +1365,6 @@
     SUBDIR += libpeas
     SUBDIR += libpff
     SUBDIR += libphdi
-    SUBDIR += libphk
     SUBDIR += libphonenumber
     SUBDIR += libplist
     SUBDIR += libpo6
@@ -4431,6 +4430,7 @@
     SUBDIR += py-beniget
     SUBDIR += py-bidict
     SUBDIR += py-billiard
+    SUBDIR += py-binary_file_search
     SUBDIR += py-binaryornot
     SUBDIR += py-biplist
     SUBDIR += py-bitarray
@@ -5094,6 +5094,7 @@
     SUBDIR += py-mypy_extensions
     SUBDIR += py-mystic
     SUBDIR += py-naiveBayesClassifier
+    SUBDIR += py-nanobind
     SUBDIR += py-nanotime
     SUBDIR += py-natsort
     SUBDIR += py-natural
@@ -5209,6 +5210,7 @@
     SUBDIR += py-pbr
     SUBDIR += py-pbs-installer
     SUBDIR += py-pcodedmp
+    SUBDIR += py-pcpp
     SUBDIR += py-pdm
     SUBDIR += py-pdm-autoexport
     SUBDIR += py-pdm-backend
@@ -5397,6 +5399,7 @@
     SUBDIR += py-pymsgbox
     SUBDIR += py-pymtbl
     SUBDIR += py-pynest2d
+    SUBDIR += py-pynvml
     SUBDIR += py-pyopencl
     SUBDIR += py-pyparsing
     SUBDIR += py-pyparsing2
@@ -5820,6 +5823,7 @@
     SUBDIR += py-types-Werkzeug
     SUBDIR += py-types-click
     SUBDIR += py-types-cryptography
+    SUBDIR += py-types-decorator
     SUBDIR += py-types-docutils
     SUBDIR += py-types-futures
     SUBDIR += py-types-jsonschema
@@ -7282,8 +7286,6 @@
     SUBDIR += rubygem-p4ruby
     SUBDIR += rubygem-paint
     SUBDIR += rubygem-pairing_heap
-    SUBDIR += rubygem-paperclip-rails5
-    SUBDIR += rubygem-paperclip-rails50
     SUBDIR += rubygem-parser
     SUBDIR += rubygem-pastel
     SUBDIR += rubygem-patch_finder
@@ -7448,7 +7450,6 @@
     SUBDIR += rubygem-ruby-statistics
     SUBDIR += rubygem-ruby2_keywords
     SUBDIR += rubygem-ruby2ruby
-    SUBDIR += rubygem-ruby_dep
     SUBDIR += rubygem-ruby_memcheck
     SUBDIR += rubygem-ruby_parser
     SUBDIR += rubygem-rubygems-mirror
@@ -7902,7 +7903,6 @@
     SUBDIR += tkcvs
     SUBDIR += tkp4
     SUBDIR += tl-expected
-    SUBDIR += tla
     SUBDIR += tllist
     SUBDIR += tlsh
     SUBDIR += tlx

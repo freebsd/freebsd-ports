@@ -10,6 +10,7 @@ WWW=		https://lean-lang.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compilation fails: ../../.build/stage1/lib/temp/Init/Coe.depend: No such file or directory
 BROKEN_i386=	linking fails: INTERNAL PANIC: out of memory (during: Linking runLinter)
 
 BUILD_DEPENDS=	bash:shells/bash

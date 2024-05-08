@@ -1,5 +1,5 @@
 PORTNAME=	qemu
-PORTVERSION=	7.2.10
+PORTVERSION=	7.2.11
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -10,44 +10,35 @@ WWW=		https://www.qemu.org/
 
 LICENSE=	GPLv2
 
-.if ${FLAVOR:U} != tools
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64
 # At the moment it broken on powerpc64le
 # We need to check if it build with other ARCHS
-.endif
+
+DEPRECATED=		qemu 9.X.X is out, so time to retire this one
+EXPIRATION_DATE=	2024-06-30
 
 BUILD_DEPENDS=	bash:shells/bash
-.if ${FLAVOR:U} != tools
 LIB_DEPENDS+=	libfdt.so:sysutils/dtc \
 		libzstd.so:archivers/zstd \
 		libslirp.so:net/libslirp
-.endif
-.if (${FLAVOR:U} != nox11 && ${FLAVOR:U} != tools)
+.if ${FLAVOR:U} != nox11
 LIB_DEPENDS+=	libepoxy.so:graphics/libepoxy
 .endif
 
-FLAVORS=			default nox11 tools
+FLAVORS=			default nox11
 FLAVOR?=			${FLAVORS:[1]}
 default_PKGNAMESUFFIX=		7
 default_CONFLICTS_INSTALL=	qemu-devel qemu-nox11 qemu-tools qemu-utils \
-				qemu6*
+				qemu8*
 nox11_PKGNAMESUFFIX=		7-nox11
-nox11_CONFLICTS_INSTALL=	qemu qemu-devel qemu6*
+nox11_CONFLICTS_INSTALL=	qemu qemu-devel qemu7*
 nox11_COMMENT=			(without X11)
-tools_PKGNAMESUFFIX=		7-tools
-tools_COMMENT=			(tools only)
-tools_CONFLICTS_INSTALL=	qemu qemu-devel qemu-nox11 qemu-utils qemu6* \
-				qemu-guest-agent
-tools_DESCR=			${.CURDIR}/pkg-descr-tools
-tools_PLIST=			${.CURDIR}/pkg-plist-tools
 
 USES=		cpe gmake gnome ninja perl5 pkgconfig python:build tar:xz
 USE_GNOME=	glib20
 USE_PERL5=	build
-.if ${FLAVOR:U} != tools
 USES+=		iconv:wchar_t
-.endif
-.if (${FLAVOR:U} != nox11 && ${FLAVOR:U} != tools)
+.if ${FLAVOR:U} != nox11
 USE_GNOME+=	cairo
 .endif
 
@@ -65,41 +56,8 @@ CONFIGURE_ARGS+=	--cc=${CC} \
 			--mandir=${PREFIX}/share/man \
 			--prefix=${PREFIX} \
 			--python=${PYTHON_CMD}
-.if ${FLAVOR:U} != tools
 CONFIGURE_ARGS+=	--enable-fdt=system \
 			--enable-netmap
-.endif
-.if ${FLAVOR:U} == tools
-CONFIGURE_ARGS+=	--disable-attr \
-			--disable-blobs \
-			--disable-brlapi \
-			--disable-bzip2 \
-			--disable-cap-ng \
-			--disable-coroutine-pool \
-			--disable-curses \
-			--disable-fdt \
-			--disable-gcrypt \
-			--disable-glusterfs \
-			--disable-libnfs \
-			--disable-libusb \
-			--disable-lzo \
-			--disable-netmap \
-			--disable-nettle \
-			--disable-numa \
-			--disable-rbd \
-			--disable-rdma \
-			--disable-seccomp \
-			--disable-smartcard \
-			--disable-snappy \
-			--disable-spice \
-			--disable-system \
-			--disable-tpm \
-			--disable-user \
-			--disable-vhost-net \
-			--disable-virtfs \
-			--disable-vnc \
-			--enable-tools
-.endif
 
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 WITHOUT_CPU_CFLAGS=	yes #to avoid problems with register allocation
@@ -117,12 +75,6 @@ OPTIONS_SINGLE=			NCURSES
 OPTIONS_SINGLE_NCURSES=		NCURSES_BASE NCURSES_DEFAULT NCURSES_PORT
 .if ${FLAVOR:U} == nox11
 OPTIONS_EXCLUDE:=		GTK3 OPENGL X11
-.endif
-.if ${FLAVOR:U} == tools
-OPTIONS_EXCLUDE:=		CAPSTONE CDROM_DMA CURL DEBUG GNUTLS GTK3 ISCSI \
-				JPEG NCURSES NCURSES_BASE NCURSES_DEFAULT \
-				NCURSES_PORT OPENGL PNG SAMBA SASL STATIC_LINK \
-				USBREDIR VDE X11 X86_TARGETS
 .endif
 OPTIONS_SUB=			yes
 CAPSTONE_DESC=			Disassembly framework support
@@ -188,8 +140,7 @@ X11_USE=			GNOME=gdkpixbuf2 \
 				SDL=sdl2 \
 				XORG=x11,xext
 X11_CONFIGURE_ENABLE=		sdl
-.if (empty(FLAVOR) || ${FLAVOR:U} == default || ${FLAVOR:U} == nox11) && \
-	(${FLAVOR:U} != tools || ${PKGNAMESUFFIX} != "-guest-agent")
+.if (empty(FLAVOR) || ${FLAVOR:U} == default || ${FLAVOR:U} == nox11)
 X86_TARGETS_USES_OFF=		xorg
 X86_TARGETS_USE_OFF=		XORG=pixman,x11
 X86_TARGETS_CONFIGURE_ON=	--target-list='i386-softmmu i386-bsd-user x86_64-softmmu x86_64-bsd-user'
@@ -197,8 +148,7 @@ X86_TARGETS_CONFIGURE_ON=	--target-list='i386-softmmu i386-bsd-user x86_64-softm
 
 .include <bsd.port.options.mk>
 
-.if (empty(FLAVOR) || ${FLAVOR:U} == default || ${FLAVOR:U} == nox11) && \
-	(${FLAVOR:U} != tools || ${PKGNAMESUFFIX} != "-guest-agent")
+.if (empty(FLAVOR) || ${FLAVOR:U} == default || ${FLAVOR:U} == nox11)
 .if ${ARCH} == "amd64"
 MAKE_ARGS+=	ARCH=x86_64
 .endif
@@ -231,10 +181,8 @@ do-install:
 
 .if !target(post-install)
 post-install:
-.if ${FLAVOR:U} != tools
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${STAGEDIR}${PREFIX}/etc
-.endif
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qemu-*
 
 post-install-DOCS-on:

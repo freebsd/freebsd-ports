@@ -1,6 +1,7 @@
 PORTNAME=	openra
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	20210321
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://download.ip2location.com/lite/:ip2location
 DISTFILES=	IP2LOCATION-LITE-DB1.IPV6.BIN.ZIP:ip2location

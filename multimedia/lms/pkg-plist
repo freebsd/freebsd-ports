@@ -29,7 +29,7 @@ lib/liblmssubsonic.so
 %%DATADIR%%/approot/error.xml
 %%DATADIR%%/approot/explore.xml
 %%DATADIR%%/approot/images/unknown-artist.jpg
-%%DATADIR%%/approot/images/unknown-cover.jpg
+%%DATADIR%%/approot/images/unknown-cover.svg
 %%DATADIR%%/approot/login.xml
 %%DATADIR%%/approot/main.xml
 %%DATADIR%%/approot/mediaplayer.xml

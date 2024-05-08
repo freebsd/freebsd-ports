@@ -1,8 +1,0 @@
---- meson.build.orig	2021-07-09 05:00:19 UTC
-+++ meson.build
-@@ -34,4 +34,5 @@ pkgconf.generate(
-   libglu,
-   name : 'glu',
-   description : 'Mesa OpenGL Utility Library',
-+  requires: dep_gl
- )

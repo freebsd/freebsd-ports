@@ -12,6 +12,9 @@ WWW=		https://findingscience.com/mod_auth_openid/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expired devel/libopkele
+EXPIRATION_DATE=2024-05-24
+
 LIB_DEPENDS=	libopkele.so:devel/libopkele \
 		libsqlite3.so:databases/sqlite3
 

@@ -1,5 +1,6 @@
 PORTNAME=	PyNE
 DISTVERSION=	0.7.8
+PORTREVISION=	1
 CATEGORIES=	science # physics
 MASTER_SITES=	https://raw.githubusercontent.com/pyne/data/master/:decay \
 		https://raw.githubusercontent.com/pyne/data/master/:cram \
@@ -80,5 +81,8 @@ do-install:
 		${STAGEDIR}${LOCALBASE}/lib/lib*.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/pyne/*.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/pyne/xs/models.so
+
+# CAVEAT: due to the failure to find MOAB-5.5.1 the file pyne/source_sampling.so isn't built, and is removed from plist
+#         - see https://github.com/pyne/pyne/issues/1537
 
 .include <bsd.port.mk>

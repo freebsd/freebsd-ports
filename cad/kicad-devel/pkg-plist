@@ -21,6 +21,7 @@ lib/kicad/plugins/3d/libs3d_plugin_idf.so
 lib/kicad/plugins/3d/libs3d_plugin_oce.so
 lib/kicad/plugins/3d/libs3d_plugin_vrml.so
 lib/libkiapi.so
+lib/libkiapi.so.8.99.0
 lib/libkicad_3dsg.so
 lib/libkicad_3dsg.so.2.0.0
 lib/libkicommon.so

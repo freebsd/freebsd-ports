@@ -1,6 +1,7 @@
 bin/got
 bin/gotadmin
 bin/tog
+libexec/got-fetch-http
 libexec/got-fetch-pack
 libexec/got-index-pack
 libexec/got-read-blob

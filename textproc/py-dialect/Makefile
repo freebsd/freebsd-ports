@@ -1,5 +1,5 @@
 PORTNAME=	dialect
-DISTVERSION=	2.2.0
+DISTVERSION=	2.3.0
 CATEGORIES=	textproc gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/dialect-app/dialect
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
+BUILD_DEPENDS=	appstreamcli:devel/appstream \
 		blueprint-compiler:devel/blueprint-compiler
 LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gTTS>0:audio/py-gtts@${PY_FLAVOR} \
@@ -21,7 +21,7 @@ USES=		desktop-file-utils gettext-tools gnome gstreamer meson \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dialect-app
-GH_TUPLE=	dialect-app:po:9155653c4493730508989617d8bf86980e6029ae:po/po
+GH_TUPLE=	dialect-app:po:5dc38d6bf510db873a4972fe2b0695239aa6bf00:po/po
 
 USE_GNOME=	glib20 gtk40 introspection:build libadwaita pygobject3
 GLIB_SCHEMAS=	app.drey.Dialect.gschema.xml
@@ -42,4 +42,10 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31000
+IGNORE=		requires Python 3.10+
+.endif
+
+.include <bsd.port.post.mk>

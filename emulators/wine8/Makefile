@@ -1,6 +1,6 @@
 PORTNAME=	wine
 DISTVERSION=	8.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/8.0/
 PKGNAMESUFFIX=	8

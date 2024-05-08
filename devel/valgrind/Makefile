@@ -1,6 +1,5 @@
 PORTNAME=	valgrind
-PORTVERSION=	3.22.0
-PORTREVISION=	1
+PORTVERSION=	3.23.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/valgrind
@@ -12,7 +11,7 @@ WWW=		https://www.valgrind.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 USES=		autoreconf cpe gmake pathfix perl5 pkgconfig shebangfix \
 		python:3.9+,run tar:bz2
@@ -21,7 +20,6 @@ SHEBANG_FILES=	callgrind/callgrind_annotate.in callgrind/callgrind_control.in \
 		cachegrind/cg_merge.in cachegrind/cg_diff.in \
 		cachegrind/cg_annotate.in
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL}
 
 SSP_UNSAFE=	yes
@@ -69,9 +67,19 @@ IGNORE=			please either install the lib32 distribution or unset the 32BIT option
 .  endif
 PLIST_SUB+=		X86=""
 . endif
-.else
+PLIST_SUB+=		AARCH64="@comment "
+.endif
+
+.if ${ARCH} == "i386"
 PLIST_SUB+=		AMD64="@comment " \
-			X86=""
+			X86="" \
+			AARCH64="@comment "
+.endif
+
+.if ${ARCH} == "aarch64"
+PLIST_SUB+=		AMD64="@comment " \
+			X86="@comment " \
+			AARCH64=""
 .endif
 
 post-patch-DOCS-off:

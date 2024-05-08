@@ -1,6 +1,5 @@
 PORTNAME=	selene
-DISTVERSION=	0.26.1
-PORTREVISION=	3
+DISTVERSION=	0.27.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,7 +26,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		backtrace-0.3.67 \
-		base64-0.13.1 \
+		base64-0.21.7 \
 		beef-0.5.2 \
 		bitflags-1.3.2 \
 		bstr-1.1.0 \
@@ -112,26 +111,25 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		regex-1.7.1 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.28 \
-		ring-0.16.20 \
 		ring-0.17.3 \
 		rustc-demangle-0.1.21 \
 		rustc_version-0.4.0 \
-		rustls-0.20.8 \
+		rustls-0.21.10 \
+		rustls-webpki-0.101.7 \
 		rustversion-1.0.11 \
 		ryu-1.0.12 \
 		scoped-tls-1.0.1 \
 		scratch-1.0.3 \
-		sct-0.7.0 \
+		sct-0.7.1 \
 		semver-1.0.16 \
 		serde-1.0.152 \
 		serde_derive-1.0.152 \
-		serde_json-1.0.91 \
+		serde_json-1.0.99 \
 		serde_spanned-0.6.1 \
 		serde_yaml-0.9.16 \
 		sharded-slab-0.1.4 \
 		smallvec-1.10.0 \
 		smol_str-0.1.23 \
-		spin-0.5.2 \
 		spin-0.9.8 \
 		strsim-0.8.0 \
 		structopt-0.3.26 \
@@ -163,9 +161,8 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		unicode-segmentation-1.10.0 \
 		unicode-width-0.1.10 \
 		unsafe-libyaml-0.2.5 \
-		untrusted-0.7.1 \
 		untrusted-0.9.0 \
-		ureq-2.6.2 \
+		ureq-2.9.1 \
 		url-2.3.1 \
 		valuable-0.1.0 \
 		vec_map-0.8.2 \
@@ -177,9 +174,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		wasm-bindgen-macro-0.2.83 \
 		wasm-bindgen-macro-support-0.2.83 \
 		wasm-bindgen-shared-0.2.83 \
-		web-sys-0.3.60 \
-		webpki-0.22.4 \
-		webpki-roots-0.22.6 \
+		webpki-roots-0.25.3 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \

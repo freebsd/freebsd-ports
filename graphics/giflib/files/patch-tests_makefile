@@ -1,14 +1,5 @@
 --- tests/makefile.orig	2019-03-28 17:05:25 UTC
 +++ tests/makefile
-@@ -3,6 +3,8 @@
- 
- .SUFFIXES: .gif .rgb
- 
-+export LD_LIBRARY_PATH=$(CURDIR)/..
-+
- # This is what to do by default
- test: render-regress \
- 	gifbuild-regress \
 @@ -104,10 +106,10 @@ giffilter-regress:
  
  giffix-rebuild:

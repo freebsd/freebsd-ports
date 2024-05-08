@@ -1,6 +1,6 @@
 PORTNAME=	cpu_features
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.9.0
 CATEGORIES=	devel
 
 MAINTAINER=	skreuzer@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=		aarch64 armv6 armv7 mips mips64 riscv64
 NOT_FOR_ARCHS_REASON=	assumes android if on ARM or MIPS; not ported to riscv64
 
-USES=		cmake:testing # 3 tests fail, see https://github.com/google/cpu_features/issues/215
+USES=		cmake:testing
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 

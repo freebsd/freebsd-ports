@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The geekest content helper management system
 WWW=		http://chems.sf.net
 
+DEPRECATED=	Abandonware, last release in 2009 and no activity since upstream
+EXPIRATION_DATE=2024-05-31
+
 NO_BUILD=	yes
 USES=		zip php
 USE_PHP=	xml iconv gd

@@ -1,8 +1,6 @@
 #!/bin/sh
 
-WEBRTC_REV=6261d
-OPUS_BRANCH=6261
-# XXX also change fetch opus
+WEBRTC_REV=6261e
 
 base_url="https://chromium.googlesource.com/chromium/src/base.git/+archive/"
 boringssl_url="https://boringssl.googlesource.com/boringssl.git/+archive/"
@@ -76,54 +74,32 @@ third_party_hash=$(grep 'third_party@' /tmp/DEPS | awk -F '@' '{print $2}' | sed
 printf "THIRD_PARTY_REV=\t${third_party_hash}\n"
 printf "THIRD_PARTY_REV=\t${third_party_hash}\n" | portedit merge -i Makefile
 
-mkdir dist_tmp
-echo "fetch -o dist_tmp/base-${base_hash}.tar.gz ${base_url}${base_hash}.tar.gz"
-echo "fetch -o dist_tmp/boringssl-${boringssl_hash}.tar.gz ${boringssl_url}${boringssl_hash}.tar.gz"
-echo "fetch -o dist_tmp/build-${build_hash}.tar.gz ${build_url}${build_hash}.tar.gz"
-echo "fetch -o dist_tmp/buildtools-${buildtools_hash}.tar.gz ${buildtools_url}${buildtools_hash}.tar.gz"
-echo "fetch -o dist_tmp/catapult-${catapult_hash}.tar.gz ${catapult_url}${catapult_hash}.tar.gz"
-echo "fetch -o dist_tmp/icu-${icu_hash}.tar.gz ${icu_url}${icu_hash}.tar.gz"
-echo "fetch -o dist_tmp/libjpeg_turbo-${libjpeg_turbo_hash}.tar.gz ${libjpeg_turbo_url}${libjpeg_turbo_hash}.tar.gz"
-echo "fetch -o dist_tmp/libsrtp-${libsrtp_hash}.tar.gz ${libsrtp_url}${libsrtp_hash}.tar.gz"
-echo "fetch -o dist_tmp/libvpx-${libvpx_hash}.tar.gz ${libvpx_url}${libvpx_hash}.tar.gz"
-echo "fetch -o dist_tmp/libyuv-${libyuv_hash}.tar.gz ${libyuv_url}${libyuv_hash}.tar.gz"
-echo "fetch -o dist_tmp/nasm-${nasm_hash}.tar.gz ${nasm_url}${nasm_hash}.tar.gz"
-echo "fetch -o dist_tmp/opus-${opus_hash}.tar.gz https://codeload.github.com/signalapp/opus/tar.gz/webrtc-${OPUS_BRANCH}?dummy=/"
-echo "fetch -o dist_tmp/testing-${testing_hash}.tar.gz ${testing_url}${testing_hash}.tar.gz"
-echo "fetch -o dist_tmp/third_party-${third_party_hash}.tar.gz ${third_party_url}${third_party_hash}.tar.gz"
+mkdir -p dist_good
 
-exit
+for c in base boringssl build buildtools catapult icu libjpeg_turbo libsrtp libvpx libyuv nasm testing third_party
+do
+	hash=$(echo ${c}_hash)
+	eval "hash=\$$hash"
 
-mkdir -p base boringssl build buildtools catapult icu libjpeg_turbo libsrtp libvpx libyuv nasm opus testing third_party
-tar xf dist_tmp/base-${base_hash}.tar.gz -C base
-tar xf dist_tmp/boringssl-${boringssl_hash}.tar.gz -C boringssl
-tar xf dist_tmp/build-${build_hash}.tar.gz -C build
-tar xf dist_tmp/buildtools-${buildtools_hash}.tar.gz -C buildtools
-tar xf dist_tmp/catapult-${catapult_hash}.tar.gz -C catapult
-tar xf dist_tmp/icu-${icu_hash}.tar.gz -C icu
-tar xf dist_tmp/libjpeg_turbo-${libjpeg_turbo_hash}.tar.gz -C libjpeg_turbo
-tar xf dist_tmp/libsrtp-${libsrtp_hash}.tar.gz -C libsrtp
-tar xf dist_tmp/libvpx-${libvpx_hash}.tar.gz -C libvpx
-tar xf dist_tmp/libyuv-${libyuv_hash}.tar.gz -C libyuv
-tar xf dist_tmp/nasm-${nasm_hash}.tar.gz -C nasm
-tar xf dist_tmp/opus-${opus_hash}.tar.gz -C opus --strip-components 1
-tar xf dist_tmp/testing-${testing_hash}.tar.gz -C testing
-tar xf dist_tmp/third_party-${third_party_hash}.tar.gz -C third_party
+	if [ ! -f /usr/ports/distfiles/${c}-${hash}.tar.gz ] && [ ! -f dist_good/${c}-${hash}.tar.gz ]; then
+		url=$(echo ${c}_url)
+		eval "url=\$$url"
 
-mkdir dist_good
-tar czf dist_good/base-${base_hash}.tar.gz base
-tar czf dist_good/boringssl-${boringssl_hash}.tar.gz boringssl
-tar czf dist_good/build-${build_hash}.tar.gz build
-tar czf dist_good/buildtools-${buildtools_hash}.tar.gz buildtools
-tar czf dist_good/catapult-${catapult_hash}.tar.gz catapult
-tar czf dist_good/icu-${icu_hash}.tar.gz icu
-tar czf dist_good/libjpeg_turbo-${libjpeg_turbo_hash}.tar.gz libjpeg_turbo
-tar czf dist_good/libsrtp-${libsrtp_hash}.tar.gz libsrtp
-tar czf dist_good/libvpx-${libvpx_hash}.tar.gz libvpx
-tar czf dist_good/libyuv-${libyuv_hash}.tar.gz libyuv
-tar czf dist_good/nasm-${nasm_hash}.tar.gz nasm
-tar czf dist_good/opus-${opus_hash}.tar.gz opus
-tar czf dist_good/testing-${testing_hash}.tar.gz testing
-tar czf dist_good/third_party-${third_party_hash}.tar.gz third_party
+		echo "Fetching ${url}${hash}.tar.gz"
 
-rm -rf base boringssl build buildtools catapult icu libjpeg_turbo libsrtp libvpx libyuv nasm opus testing third_party
+		mkdir -p ${c}
+		fetch -qo - ${url}${hash}.tar.gz | tar xf - -C ${c}
+		tar czf dist_good/${c}-${hash}.tar.gz ${c}
+		rm -rf ${c}
+	fi
+done
+
+if [ ! -f /usr/ports/distfiles/opus-${opus_hash}.tar.gz ] && [ ! -f dist_good/opus-${opus_hash}.tar.gz ]; then
+	echo "Fetching Opus"
+	mkdir -p opus
+	fetch -qo - https://codeload.github.com/xiph/opus/tar.gz/${opus_hash}?dummy=/ | tar xf - -C opus --strip-components 1
+	tar czf dist_good/opus-${opus_hash}.tar.gz opus
+	rm -rf dist_tmp/opus-${opus_hash}.tar.gz opus
+fi
+
+echo "Copy dist_good/* in /usr/ports/distfiles and run make makesum"

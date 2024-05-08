@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2023-03-21 22:56:18 UTC
+--- CMakeLists.txt.orig	2023-04-17 13:00:42 UTC
 +++ CMakeLists.txt
 @@ -184,6 +184,12 @@ set_target_properties(openshot-audio PROPERTIES
    EXPORT_NAME Audio  # Exports as OpenShot::Audio target
@@ -34,7 +34,7 @@
  else()
    # For EXPORTED Config
    set(NEED_ALSA FALSE)
-@@ -274,10 +281,51 @@ endif()
+@@ -274,10 +281,67 @@ endif()
  
  # ZLIB -- uses IMPORTED target ZLIB::ZLIB which has existed since CMake 3.1
  find_package(ZLIB REQUIRED)
@@ -43,24 +43,35 @@
  
 +# EXECINFO, SYSINFO
 +include(CheckFunctionExists)
-+check_function_exists("backtrace" FUNCTION_BACKTRACE_FOUND)
++include(CheckLibraryExists)
++check_function_exists(backtrace FUNCTION_BACKTRACE_FOUND)
 +if(NOT FUNCTION_BACKTRACE_FOUND)
 +	find_library(EXECINFO_LIBRARY NAMES execinfo)
-+	if(NOT EXECINFO_LIBRARY)
-+		message(FATAL_ERROR "${EXECINFO_LIBRARY}")
-+	endif(NOT EXECINFO_LIBRARY)
-+	target_link_libraries(openshot-audio PRIVATE ${EXECINFO_LIBRARY})
++	if(EXECINFO_LIBRARY)
++		unset(FUNCTION_BACKTRACE_FOUND CACHE)
++		check_library_exists(${EXECINFO_LIBRARY} backtrace "" FUNCTION_BACKTRACE_FOUND)
++	endif(EXECINFO_LIBRARY)
 +endif(NOT FUNCTION_BACKTRACE_FOUND)
-+unset(FUNCTION_BACKTRACE_FOUND)
-+check_function_exists("sysinfo" FUNCTION_SYSINFO_FOUND)
++if(NOT FUNCTION_BACKTRACE_FOUND)
++	message(FATAL_ERROR "backtrace - ${FUNCTION_BACKTRACE_FOUND}")
++endif(NOT FUNCTION_BACKTRACE_FOUND)
++if(EXECINFO_LIBRARY)
++	target_link_libraries(openshot-audio PRIVATE ${EXECINFO_LIBRARY})
++endif(EXECINFO_LIBRARY)
++check_function_exists(sysinfo FUNCTION_SYSINFO_FOUND)
 +if(NOT FUNCTION_SYSINFO_FOUND)
 +	find_library(SYSINFO_LIBRARY NAMES sysinfo)
-+	if(NOT SYSINFO_LIBRARY)
-+		message(FATAL_ERROR "${SYSINFO_LIBRARY}")
-+	endif(NOT SYSINFO_LIBRARY)
-+	target_link_libraries(openshot-audio PRIVATE ${SYSINFO_LIBRARY})
++	if(SYSINFO_LIBRARY)
++		unset(FUNCTION_SYSINFO_FOUND CACHE)
++		check_library_exists(${SYSINFO_LIBRARY} sysinfo "" FUNCTION_SYSINFO_FOUND)
++	endif(SYSINFO_LIBRARY)
 +endif(NOT FUNCTION_SYSINFO_FOUND)
-+unset(FUNCTION_SYSINFO_FOUND)
++if(NOT FUNCTION_SYSINFO_FOUND)
++	message(FATAL_ERROR "sysinfo - ${FUNCTION_SYSINFO_FOUND}")
++endif(NOT FUNCTION_SYSINFO_FOUND)
++if(SYSINFO_LIBRARY)
++	target_link_libraries(openshot-audio PRIVATE ${SYSINFO_LIBRARY})
++endif(SYSINFO_LIBRARY)
 +
 +# JACK
 +if(ENABLE_JACK)
@@ -80,6 +91,11 @@
 +	endif(NOT TARGET JACK::JACK)
 +	target_link_libraries(openshot-audio PRIVATE JACK::JACK)
 +	target_compile_definitions(openshot-audio PRIVATE JUCE_JACK=1)
++	if(DEFINED JUCE_JACK_CLIENT_NAME AND NOT JUCE_JACK_CLIENT_NAME STREQUAL "")
++		target_compile_definitions(openshot-audio PRIVATE "JUCE_JACK_CLIENT_NAME=\"${JUCE_JACK_CLIENT_NAME}\"")
++	else(DEFINED JUCE_JACK_CLIENT_NAME AND NOT JUCE_JACK_CLIENT_NAME STREQUAL "")
++		target_compile_definitions(openshot-audio PRIVATE "JUCE_JACK_CLIENT_NAME=\"${PROJECT_NAME}\"")
++	endif(DEFINED JUCE_JACK_CLIENT_NAME AND NOT JUCE_JACK_CLIENT_NAME STREQUAL "")
 +endif(ENABLE_JACK)
 +
  # Link with dynamic loader for platform

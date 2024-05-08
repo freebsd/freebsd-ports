@@ -1,6 +1,5 @@
 PORTNAME=	giflib
-PORTVERSION=	5.2.1
-PORTREVISION=	1
+PORTVERSION=	5.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -14,19 +13,29 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 TEST_DEPENDS=	ghead:sysutils/coreutils
 
 USES=		cpe gmake
-USE_LDCONFIG=	yes
-CFLAGS+=	-DHAVE_REALLOCARRAY
-MAKE_ARGS=	CC=${CC} LDFLAGS="${LDFLAGS}" MANDIR=${PREFIX}/share/man OFLAGS="${CFLAGS}" PREFIX="${PREFIX}"
 CPE_VENDOR=	giflib_project
+USE_LDCONFIG=	yes
+
+MAKE_ARGS=	CC=${CC} \
+		LDFLAGS="${LDFLAGS}" \
+		OFLAGS="${CFLAGS}" \
+		PREFIX="${PREFIX}"
+TEST_TARGET=	check
+
+CFLAGS+=	-DHAVE_REALLOCARRAY
 
 CONFLICTS_INSTALL=	giftool
 
 OPTIONS_DEFINE=	DOCS
-TEST_TARGET=	check
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! ( -name Makefile -o -name *\.1 -o -name *\.in -o -name *\.xml )"
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
+		"! ( -name Makefile -o -name *\.[17] -o -name *\.xml )"
+	${MV} ${STAGEDIR}${DOCSDIR}/index.html.in ${STAGEDIR}${DOCSDIR}/index.html
+
+pre-build:
+	${CP} ${FILESDIR}/giflib-logo.gif ${WRKSRC}/doc
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*

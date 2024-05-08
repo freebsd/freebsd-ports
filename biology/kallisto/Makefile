@@ -1,6 +1,7 @@
 PORTNAME=		kallisto
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.50.1
+PORTREVISION=		1
 PORTEPOCH=		1
 CATEGORIES=		biology
 
@@ -22,6 +23,8 @@ USES=		cmake:noninja compiler:c++11-lang gmake localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	pachterlab
 
+EXTRACT_AFTER_ARGS=	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/ext/htslib --no-same-owner --no-same-permissions
+
 SUB_FILES=	kallisto-test
 
 PORTEXAMPLES=		*
@@ -38,9 +41,6 @@ MAKE_JOBS_UNSAFE=	yes
 LDFLAGS+=		-lhts -lz
 
 OPTIONS_DEFINE=	EXAMPLES
-
-post-extract:
-	${RM} -rf ${WRKSRC}/ext/htslib
 
 post-install-EXAMPLES-on:
 	${INSTALL_SCRIPT} ${WRKDIR}/kallisto-test ${STAGEDIR}${PREFIX}/bin

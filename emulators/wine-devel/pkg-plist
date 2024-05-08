@@ -541,6 +541,8 @@ include/wine/windows/highlevelmonitorconfigurationapi.h
 include/wine/windows/hlguids.h
 include/wine/windows/hlink.h
 include/wine/windows/hlink.idl
+include/wine/windows/holographicspaceinterop.h
+include/wine/windows/holographicspaceinterop.idl
 include/wine/windows/hrtfapoapi.h
 include/wine/windows/hrtfapoapi.idl
 include/wine/windows/hstring.h
@@ -1637,6 +1639,7 @@ lib/wine/%%WINEARCH%%-unix/libd3d11.a
 lib/wine/%%WINEARCH%%-unix/libd3d8.a
 lib/wine/%%WINEARCH%%-unix/libd3d9.a
 lib/wine/%%WINEARCH%%-unix/libd3dcompiler.a
+lib/wine/%%WINEARCH%%-unix/libd3dcompiler_39.a
 lib/wine/%%WINEARCH%%-unix/libd3dcompiler_43.a
 lib/wine/%%WINEARCH%%-unix/libd3dcompiler_46.a
 lib/wine/%%WINEARCH%%-unix/libd3drm.a
@@ -1675,6 +1678,7 @@ lib/wine/%%WINEARCH%%-unix/libdxguid.a
 lib/wine/%%WINEARCH%%-unix/libdxva2.a
 lib/wine/%%WINEARCH%%-unix/libevr.a
 lib/wine/%%WINEARCH%%-unix/libfaultrep.a
+lib/wine/%%WINEARCH%%-unix/libfltmgr.a
 lib/wine/%%WINEARCH%%-unix/libgdi32.a
 lib/wine/%%WINEARCH%%-unix/libgdiplus.a
 lib/wine/%%WINEARCH%%-unix/libglu32.a
@@ -3118,6 +3122,7 @@ lib/wine/%%WINEARCH%%-windows/xmllite.dll
 lib/wine/%%WINEARCH%%-windows/xolehlp.dll
 lib/wine/%%WINEARCH%%-windows/xpsprint.dll
 lib/wine/%%WINEARCH%%-windows/xpssvcs.dll
+share/applications/wine.desktop
 %%WINE32%%share/man/de.UTF-8/man1/wine.1.gz
 share/man/de.UTF-8/man1/winemaker.1.gz
 share/man/de.UTF-8/man1/wineserver.1.gz
@@ -3147,7 +3152,6 @@ share/man/man1/wineserver.1.gz
 share/man/man1/wmc.1.gz
 share/man/man1/wrc.1.gz
 %%WINE32%%share/man/pl.UTF-8/man1/wine.1.gz
-share/applications/wine.desktop
 %%DATADIR%%/nls/c_037.nls
 %%DATADIR%%/nls/c_10000.nls
 %%DATADIR%%/nls/c_10001.nls

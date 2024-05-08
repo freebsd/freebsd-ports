@@ -386,7 +386,7 @@
     <affects>
       <package>
 	<name>glpi</name>
-	<range><lt>9.4.6</lt></range>
+	<range><lt>9.4.6,1</lt></range>
       </package>
     </affects>
     <description>
@@ -405,6 +405,7 @@
     <dates>
       <discovery>2020-01-02</discovery>
       <entry>2020-01-02</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 
@@ -413,7 +414,7 @@
     <affects>
       <package>
 	<name>glpi</name>
-	<range><lt>9.5.3</lt></range>
+	<range><lt>9.5.3,1</lt></range>
       </package>
     </affects>
     <description>
@@ -431,6 +432,7 @@
     <dates>
       <discovery>2020-10-22</discovery>
       <entry>2020-10-22</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 
@@ -439,7 +441,7 @@
     <affects>
       <package>
 	<name>glpi</name>
-	<range><lt>9.5.3</lt></range>
+	<range><lt>9.5.3,1</lt></range>
       </package>
     </affects>
     <description>
@@ -457,6 +459,7 @@
     <dates>
       <discovery>2020-10-22</discovery>
       <entry>2020-10-22</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 
@@ -465,8 +468,7 @@
     <affects>
       <package>
 	<name>glpi</name>
-	<range><gt>9.5.0</gt></range>
-	<range><lt>9.5.3</lt></range>
+	<range><ge>9.5.0,1</ge><lt>9.5.3,1</lt></range>
       </package>
     </affects>
     <description>
@@ -486,6 +488,7 @@
     <dates>
       <discovery>2020-10-01</discovery>
       <entry>2020-10-01</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 
@@ -494,8 +497,7 @@
     <affects>
       <package>
 	<name>glpi</name>
-	<range><gt>9.1</gt></range>
-	<range><lt>9.5.2</lt></range>
+	<range><ge>9.1,1</ge><lt>9.5.2,1</lt></range>
       </package>
     </affects>
     <description>
@@ -514,6 +516,7 @@
     <dates>
       <discovery>2020-06-25</discovery>
       <entry>2020-06-25</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 
@@ -522,8 +525,7 @@
     <affects>
       <package>
 	<name>glpi</name>
-	<range><gt>9.5.0</gt></range>
-	<range><lt>9.5.2</lt></range>
+	<range><ge>9.5.0,1</ge><lt>9.5.2,1</lt></range>
       </package>
     </affects>
     <description>
@@ -542,6 +544,7 @@
     <dates>
       <discovery>2020-06-25</discovery>
       <entry>2020-06-25</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 
@@ -550,8 +553,7 @@
     <affects>
       <package>
 	<name>glpi</name>
-	<range><gt>0.65</gt></range>
-	<range><lt>9.5.2</lt></range>
+	<range><lt>9.5.2,1</lt></range>
       </package>
     </affects>
     <description>
@@ -570,6 +572,7 @@
     <dates>
       <discovery>2020-06-25</discovery>
       <entry>2020-06-25</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 
@@ -578,8 +581,7 @@
     <affects>
       <package>
 	<name>glpi</name>
-	<range><gt>0.68</gt></range>
-	<range><lt>9.5.2</lt></range>
+	<range><lt>9.5.2,1</lt></range>
       </package>
     </affects>
     <description>
@@ -598,6 +600,7 @@
     <dates>
       <discovery>2020-06-25</discovery>
       <entry>2020-06-25</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 
@@ -606,8 +609,7 @@
     <affects>
       <package>
 	<name>glpi</name>
-	<range><gt>0.70</gt></range>
-	<range><lt>9.5.2</lt></range>
+	<range><lt>9.5.2,1</lt></range>
       </package>
     </affects>
     <description>
@@ -626,6 +628,7 @@
     <dates>
       <discovery>2020-06-25</discovery>
       <entry>2020-06-25</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 
@@ -634,8 +637,7 @@
     <affects>
       <package>
 	<name>glpi</name>
-	<range><gt>9.5.0</gt></range>
-	<range><lt>9.5.1</lt></range>
+	<range><ge>9.5.0,1</ge><lt>9.5.1,1</lt></range>
       </package>
     </affects>
     <description>
@@ -655,6 +657,7 @@
     <dates>
       <discovery>2020-06-25</discovery>
       <entry>2020-06-25</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 
@@ -663,8 +666,7 @@
     <affects>
       <package>
 	<name>glpi</name>
-	<range><gt>0.68.1</gt></range>
-	<range><lt>9.4.6</lt></range>
+	<range><lt>9.4.6,1</lt></range>
       </package>
     </affects>
     <description>
@@ -683,6 +685,7 @@
     <dates>
       <discovery>2020-03-30</discovery>
       <entry>2020-03-30</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 
@@ -691,7 +694,7 @@
     <affects>
       <package>
 	<name>glpi</name>
-	<range><lt>9.4.6</lt></range>
+	<range><lt>9.4.6,1</lt></range>
       </package>
     </affects>
     <description>
@@ -710,6 +713,7 @@
     <dates>
       <discovery>2020-03-30</discovery>
       <entry>2020-03-30</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 
@@ -718,7 +722,7 @@
     <affects>
       <package>
 	<name>glpi</name>
-	<range><lt>9.4.6</lt></range>
+	<range><lt>9.4.6,1</lt></range>
       </package>
     </affects>
     <description>
@@ -738,6 +742,7 @@
     <dates>
       <discovery>2020-03-30</discovery>
       <entry>2020-03-30</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 
@@ -746,8 +751,7 @@
     <affects>
       <package>
 	<name>glpi</name>
-	<range><gt>0.83.3</gt></range>
-	<range><lt>9.4.6</lt></range>
+	<range><ge>0.83.3,1</ge><lt>9.4.6,1</lt></range>
       </package>
     </affects>
     <description>
@@ -767,6 +771,7 @@
     <dates>
       <discovery>2020-03-30</discovery>
       <entry>2020-03-30</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 
@@ -775,7 +780,7 @@
     <affects>
       <package>
 	<name>glpi</name>
-	<range><lt>9.4.6</lt></range>
+	<range><lt>9.4.6,1</lt></range>
       </package>
     </affects>
     <description>
@@ -795,6 +800,7 @@
     <dates>
       <discovery>2020-03-30</discovery>
       <entry>2020-03-30</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 
@@ -803,8 +809,7 @@
     <affects>
       <package>
 	<name>glpi</name>
-	<range><gt>9.1</gt></range>
-	<range><lt>9.4.6</lt></range>
+	<range><ge>9.1,1</ge><lt>9.4.6,1</lt></range>
       </package>
     </affects>
     <description>
@@ -824,6 +829,7 @@
     <dates>
       <discovery>2020-03-30</discovery>
       <entry>2020-03-30</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 
@@ -832,7 +838,7 @@
     <affects>
       <package>
 	<name>glpi</name>
-	<range><lt>9.4.6</lt></range>
+	<range><lt>9.4.6,1</lt></range>
       </package>
     </affects>
     <description>
@@ -850,6 +856,7 @@
     <dates>
       <discovery>2020-03-30</discovery>
       <entry>2020-03-30</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 
@@ -858,7 +865,7 @@
     <affects>
       <package>
 	<name>glpi</name>
-	<range><lt>9.5.0</lt></range>
+	<range><lt>9.5.0,1</lt></range>
       </package>
     </affects>
     <description>
@@ -878,6 +885,7 @@
     <dates>
       <discovery>2020-03-30</discovery>
       <entry>2020-03-30</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 
@@ -886,7 +894,7 @@
     <affects>
       <package>
 	<name>glpi</name>
-	<range><lt>9.4.4</lt></range>
+	<range><lt>9.4.4,1</lt></range>
       </package>
     </affects>
     <description>
@@ -906,6 +914,7 @@
     <dates>
       <discovery>2019-08-05</discovery>
       <entry>2019-08-05</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 
@@ -9011,7 +9020,7 @@ Workaround:
     <affects>
       <package>
 	<name>glpi</name>
-	<range><lt>9.4.3</lt></range>
+	<range><lt>9.4.3,1</lt></range>
       </package>
     </affects>
     <description>
@@ -9031,6 +9040,7 @@ Workaround:
     <dates>
       <discovery>2019-02-25</discovery>
       <entry>2020-05-09</entry>
+      <modified>2024-04-25</modified>
     </dates>
   </vuln>
 

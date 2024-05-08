@@ -1,5 +1,6 @@
 PORTNAME=	loudmouth
 DISTVERSION=	1.5.4
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://mcabber.com/files/loudmouth/ \
 		http://www.lilotux.net/~mikael/mcabber/files/loudmouth/

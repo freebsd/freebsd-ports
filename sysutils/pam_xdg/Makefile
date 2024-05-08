@@ -1,5 +1,5 @@
 PORTNAME=	pam_xdg
-DISTVERSION=	0.8.2
+DISTVERSION=	0.8.3
 CATEGORIES=	sysutils wayland
 MASTER_SITES=	https://ftp.sdaoden.eu/
 
@@ -10,12 +10,9 @@ WWW=		https://www.sdaoden.eu/code.html#s-toolbox
 LICENSE=	ISCL
 
 USES=		uidfix
+SUB_FILES=	pkg-message
 PLIST_FILES=	lib/${PORTNAME}.so \
 		share/man/man8/${PORTNAME}.8.gz
-
-.if exists(/usr/lib/pam_xdg.so)
-IGNORE=		module name conflict with a different implementation in base system
-.endif
 
 # makefile is too crufty, so roll our own
 MAKEFILE=	bsd.lib.mk

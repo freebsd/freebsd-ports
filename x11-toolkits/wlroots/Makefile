@@ -1,6 +1,5 @@
 PORTNAME=	wlroots
-DISTVERSION=	0.17.2
-PORTREVISION=	1
+DISTVERSION=	0.17.3
 CATEGORIES=	x11-toolkits
 
 PATCH_SITES+=	https://github.com/swaywm/${GL_PROJECT}/commit/:github

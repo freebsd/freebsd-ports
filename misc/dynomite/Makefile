@@ -1,7 +1,6 @@
 PORTNAME=	dynomite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.22
-PORTREVISION=	1
+DISTVERSION=	0.7.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,6 +24,8 @@ GH_ACCOUNT=	Netflix
 
 CFLAGS+=	-fcommon
 LDFLAGS+=	-lexecinfo
+
+TEST_TARGET=	check
 
 PLIST_FILES=	bin/dynomite-hash-tool \
 		sbin/dynomite \

@@ -81,6 +81,7 @@ include/qemu-plugin.h
 %%DATADIR%%/firmware/60-edk2-i386.json
 %%DATADIR%%/firmware/60-edk2-x86_64.json
 %%DATADIR%%/hppa-firmware.img
+%%DATADIR%%/hppa-firmware64.img
 %%DATADIR%%/keymaps/ar
 %%DATADIR%%/keymaps/bepo
 %%DATADIR%%/keymaps/cz

@@ -1,4 +1,4 @@
---- php/Makefile.orig	2021-06-21 14:44:58 UTC
+--- php/Makefile.orig	2023-11-06 09:24:19 UTC
 +++ php/Makefile
 @@ -10,8 +10,8 @@ include $(top_srcdir)/config/Make.rules
  #

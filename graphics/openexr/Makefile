@@ -40,12 +40,22 @@ BUILD_DEPENDS?=	help2man:misc/help2man
 LIB_DEPENDS?=	libImath-3_1.so.29:math/Imath \
 		libdeflate.so:archivers/libdeflate
 
-USES?=		cmake compiler:c++14-lang cpe pathfix pkgconfig
+USES?=		cmake:testing compiler:c++14-lang cpe pathfix pkgconfig
 
 #USE_GITHUB=	yes
 #GH_TUPLE=	AcademySoftwareFoundation:openexr:v${PORTVERSION}
 
 USE_LDCONFIG=	yes
+
+CMAKE_TESTING_ON=	BUILD_TESTING \
+			OPENEXR_TEST_LIBRARIES \
+			OPENEXR_TEST_PYTHON \
+			OPENEXR_TEST_TOOLS
+
+CMAKE_OFF=	BUILD_TESTING \
+		OPENEXR_TEST_LIBRARIES \
+		OPENEXR_TEST_PYTHON \
+		OPENEXR_TEST_TOOLS
 
 CMAKE_ARGS?=	-DCMAKE_DEBUG_POSTFIX=
 
@@ -103,9 +113,6 @@ post-install-EXAMPLES-on:
 post-install-EXAMPLES-off:
 	${RM} -R ${STAGEDIR}${PREFIX}/share/doc/OpenEXR/examples/
 	@${RMDIR} ${STAGEDIR}${PREFIX}/share/doc/OpenEXR 2>/dev/null || :
-
-do-test:
-	cd ${BUILD_WRKSRC} && ctest -j ${MAKE_JOBS_NUMBER}
 
 .endif
 .include <bsd.port.mk>

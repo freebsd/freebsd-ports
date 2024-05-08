@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2022-12-23 09:10:20 UTC
+--- CMakeLists.txt.orig	2024-04-24 12:44:35 UTC
 +++ CMakeLists.txt
-@@ -231,7 +231,7 @@ endif()
+@@ -236,7 +236,7 @@ find_package(CMakeFunctions REQUIRED)
  
  find_package(CMakeFunctions REQUIRED)
  

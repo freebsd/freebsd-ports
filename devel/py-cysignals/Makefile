@@ -1,6 +1,5 @@
 PORTNAME=	cysignals
-PORTVERSION=	1.11.2
-PORTREVISION=	1
+PORTVERSION=	1.11.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,13 +10,16 @@ WWW=		https://pypi.org/project/cysignals/
 
 LICENSE=	LGPL3
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorlog>0:devel/py-colorlog@${PY_FLAVOR}
 LIB_DEPENDS=	libpari.so:math/pari
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorlog>0:devel/py-colorlog@${PY_FLAVOR}
 
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	sagemath
 
-USES=		autoreconf:build compiler:c++11-lang gettext localbase python
+USES=		compiler:c++11-lang gettext localbase python
 USE_PYTHON=	cython distutils
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 TEST_TARGET=	check
 
@@ -30,9 +32,9 @@ DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.6,1:textproc/py-sphinx@${PY
 DOCS_USES=		gmake
 PORTDOCS=		*
 
-pre-configure:
-	${REINPLACE_CMD} -e '/^PYTHON/s|python3|${PYTHON_CMD}|'	\
-		${WRKSRC}/Makefile
+pre-configure-DOCS-on:
+	${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|'	\
+		${WRKSRC}/docs/Makefile
 
 do-build-DOCS-on:
 	(cd ${WRKSRC}/docs && ${GMAKE} html)

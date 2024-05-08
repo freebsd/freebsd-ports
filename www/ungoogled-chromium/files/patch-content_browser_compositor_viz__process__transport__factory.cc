@@ -1,6 +1,6 @@
---- content/browser/compositor/viz_process_transport_factory.cc.orig	2024-02-03 15:42:55 UTC
+--- content/browser/compositor/viz_process_transport_factory.cc.orig	2024-04-23 07:42:17 UTC
 +++ content/browser/compositor/viz_process_transport_factory.cc
-@@ -118,7 +118,7 @@ class HostDisplayClient : public viz::HostDisplayClien
+@@ -105,7 +105,7 @@ class HostDisplayClient : public viz::HostDisplayClien
    HostDisplayClient& operator=(const HostDisplayClient&) = delete;
  
    // viz::HostDisplayClient:

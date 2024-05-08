@@ -1,8 +1,8 @@
---- components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h.orig	2024-02-03 15:42:55 UTC
+--- components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h.orig	2024-04-23 07:42:17 UTC
 +++ components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h
-@@ -210,7 +210,7 @@ class VIZ_SERVICE_EXPORT RootCompositorFrameSinkImpl
-   // to actually unref.
-   LocalSurfaceId to_evict_on_next_draw_and_swap_ = LocalSurfaceId();
+@@ -209,7 +209,7 @@ class VIZ_SERVICE_EXPORT RootCompositorFrameSinkImpl
+   // See comments on `EvictionHandler`.
+   EvictionHandler eviction_handler_;
  
 -#if BUILDFLAG(IS_LINUX) && BUILDFLAG(IS_OZONE_X11)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(IS_OZONE_X11)

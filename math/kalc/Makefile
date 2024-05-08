@@ -1,6 +1,6 @@
 PORTNAME=	kalc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.2
+DISTVERSION=	1.1.3
 CATEGORIES=	math
 PKGNAMESUFFIX=	-calculator
 
@@ -45,22 +45,22 @@ CARGO_CRATES=	autocfg-1.2.0 \
 		option-ext-0.2.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.9 \
-		proc-macro2-1.0.79 \
+		proc-macro2-1.0.81 \
 		quote-1.0.36 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.5 \
 		rug-1.24.1 \
-		rustix-0.38.32 \
+		rustix-0.38.34 \
 		scopeguard-1.2.0 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.3 \
-		signal-hook-registry-1.4.1 \
+		signal-hook-registry-1.4.2 \
 		smallvec-1.13.2 \
-		syn-2.0.58 \
+		syn-2.0.60 \
 		tempfile-3.10.1 \
 		term_size-0.3.2 \
-		thiserror-1.0.58 \
-		thiserror-impl-1.0.58 \
+		thiserror-1.0.59 \
+		thiserror-impl-1.0.59 \
 		unicode-ident-1.0.12 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \

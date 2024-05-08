@@ -1,6 +1,7 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
 DISTVERSION=	23.3.4.20
+PORTREVISION=	1
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime23
 DIST_SUBDIR=	erlang
@@ -12,14 +13,13 @@ WWW=		https://www.erlang.org/
 LICENSE=	APACHE20
 
 USES=		autoreconf:build compiler cpe gmake ncurses perl5
+CPE_VENDOR=	erlang
+CPE_PRODUCT=	erlang/otp
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	erlang:otp,corba
 GH_PROJECT=	otp:otp corba:corba
-GH_TAGNAME=	5.1:corba
+GH_TAGNAME=	5.2:corba
 USE_PERL5=	build
-
-CPE_VENDOR=	erlang
-CPE_PRODUCT=	erlang/otp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-smp-support

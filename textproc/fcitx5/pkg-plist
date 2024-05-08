@@ -2,6 +2,7 @@ bin/fcitx5
 bin/fcitx5-configtool
 bin/fcitx5-diagnose
 bin/fcitx5-remote
+etc/xdg/Xwayland-session.d/20-fcitx-x11
 etc/xdg/autostart/org.fcitx.Fcitx5.desktop
 include/Fcitx5/Config/fcitx-config/configuration.h
 include/Fcitx5/Config/fcitx-config/dbushelper.h
@@ -64,6 +65,7 @@ include/Fcitx5/Utils/fcitx-utils/dbus/message.h
 include/Fcitx5/Utils/fcitx-utils/dbus/message_details.h
 include/Fcitx5/Utils/fcitx-utils/dbus/objectvtable.h
 include/Fcitx5/Utils/fcitx-utils/dbus/servicewatcher.h
+include/Fcitx5/Utils/fcitx-utils/dbus/variant.h
 include/Fcitx5/Utils/fcitx-utils/element.h
 include/Fcitx5/Utils/fcitx-utils/event.h
 include/Fcitx5/Utils/fcitx-utils/eventdispatcher.h
@@ -157,6 +159,7 @@ lib/fcitx5/libtestfrontend.so
 lib/fcitx5/libtestim.so
 lib/fcitx5/libtestui.so
 lib/fcitx5/libunicode.so
+lib/fcitx5/libvirtualkeyboard.so
 lib/fcitx5/libwayland.so
 lib/fcitx5/libwaylandim.so
 lib/fcitx5/libxcb.so
@@ -176,6 +179,7 @@ libdata/pkgconfig/Fcitx5Core.pc
 libdata/pkgconfig/Fcitx5Module.pc
 libdata/pkgconfig/Fcitx5Utils.pc
 share/applications/fcitx5-configtool.desktop
+share/applications/fcitx5-wayland-launcher.desktop
 share/applications/org.fcitx.Fcitx5.desktop
 share/dbus-1/services/org.fcitx.Fcitx5.service
 %%DATADIR%%/addon/classicui.conf
@@ -193,6 +197,7 @@ share/dbus-1/services/org.fcitx.Fcitx5.service
 %%DATADIR%%/addon/quickphrase.conf
 %%DATADIR%%/addon/spell.conf
 %%DATADIR%%/addon/unicode.conf
+%%DATADIR%%/addon/virtualkeyboard.conf
 %%DATADIR%%/addon/wayland.conf
 %%DATADIR%%/addon/waylandim.conf
 %%DATADIR%%/addon/xcb.conf
@@ -390,12 +395,15 @@ share/dbus-1/services/org.fcitx.Fcitx5.service
 %%DATADIR%%/testing/addon/testim.conf
 %%DATADIR%%/testing/addon/testui.conf
 %%DATADIR%%/themes/default/arrow.png
-%%DATADIR%%/themes/default/highlight.png
 %%DATADIR%%/themes/default/next.png
-%%DATADIR%%/themes/default/panel.png
 %%DATADIR%%/themes/default/prev.png
 %%DATADIR%%/themes/default/radio.png
 %%DATADIR%%/themes/default/theme.conf
+%%DATADIR%%/themes/default-dark/arrow.png
+%%DATADIR%%/themes/default-dark/next.png
+%%DATADIR%%/themes/default-dark/prev.png
+%%DATADIR%%/themes/default-dark/radio.png
+%%DATADIR%%/themes/default-dark/theme.conf
 %%DATADIR%%/unicode/charselectdata
 share/icons/hicolor/128x128/apps/fcitx.png
 share/icons/hicolor/128x128/apps/org.fcitx.Fcitx5.png

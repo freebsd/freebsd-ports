@@ -20,13 +20,13 @@ TEST_DEPENDS=	cppunit>0:devel/cppunit
 USES=		bison gmake libtool localbase pkgconfig
 USE_LDCONFIG=	yes
 
-CXXFLAGS+=	-Wno-c2x-extensions # workaround for https://github.com/OpenLightingProject/ola/issues/1962
 LDFLAGS+=	-lprotobuf # workaround for https://github.com/OpenLightingProject/ola/issues/1871
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-CONFIGURE_ARGS=	--disable-unittests --disable-examples
+CONFIGURE_ARGS=		--disable-unittests --disable-examples
+CONFIGURE_ARGS+=	--disable-fatal-warnings # see https://github.com/OpenLightingProject/ola/issues/1962
 
 TEST_TARGET=	check
 INSTALL_TARGET=	install-strip

@@ -1,3 +1,3 @@
 Limine is a modern, advanced, portable, multiprotocol bootloader
-mainly targetting OS/kernel developers, but also capable of being
-a fast Linux bootloader, amongst other things.
+and boot manager, mainly targetting OS/kernel developers, but also
+capable of being a fast Linux bootloader, amongst other things.

@@ -275,7 +275,6 @@
     SUBDIR += xarchiver
     SUBDIR += xdms
     SUBDIR += xmill
-    SUBDIR += xpk
     SUBDIR += zchunk
     SUBDIR += zip
     SUBDIR += zipmix

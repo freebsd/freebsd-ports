@@ -1,4 +1,4 @@
-lib/fcitx5/hangul.so
+lib/fcitx5/libhangul.so
 share/fcitx5/addon/hangul.conf
 share/fcitx5/hangul/symbol.txt
 share/fcitx5/inputmethod/hangul.conf

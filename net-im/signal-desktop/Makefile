@@ -1,7 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.5.0
-PORTREVISION=	1
+DISTVERSION=	7.7.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		LOCAL/mikael/signal-desktop/:sqlite \
@@ -11,7 +10,7 @@ DISTFILES=	signal-desktop-${DISTVERSION}-yarn-cache.tar.gz:yarn \
 		signal-desktop-6.37.0-npm-cache.tar.gz:npm \
 		${SQLCIPHER}.tar.gz:sqlcipher
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Cross-platform centralized encrypted messaging service
 WWW=		https://signal.org/
 
@@ -88,8 +87,8 @@ _BUILD_DATE=	$$(date +'%s')
 ELECTRON_VER_MAJOR=	29
 
 # sh get_deps.sh
-NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.42.0-259d87233f1e065ae93cf8fe758bcc2461e3e814-integrity
-NPM_RINGRTC_DIR=	npm-@signalapp-ringrtc-2.39.3-8809af30bd56b3ac2e6db3c27d64b6458984e292-integrity
+NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.45.0-c6b9125bd7bded0fd349484df264ee2763f8b714-integrity
+NPM_RINGRTC_DIR=	npm-@signalapp-ringrtc-2.40.0-1d1bf88e8032e344cf3f83cd517d474b18ec5892-integrity
 NPM_SQLITE3_DIR=	npm-@signalapp-better-sqlite3-8.7.1-0a09293aa833b836ec6b17f6ab0e790097f3fdeb-integrity
 NPM_ESBUILD_VERS=	0.18.20
 SQLCIPHER=		sqlcipher-4.5.5-fts5-fix--3.0.7--0.2.1-ef53ea45ed92b928ecfd33c552d8d405263e86e63dec38e1ec63e1b0193b630b

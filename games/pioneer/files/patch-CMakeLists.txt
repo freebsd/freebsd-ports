@@ -1,12 +1,18 @@
---- CMakeLists.txt.orig	2023-02-03 14:29:13 UTC
+--- CMakeLists.txt.orig	2024-03-14 20:05:43 UTC
 +++ CMakeLists.txt
-@@ -71,6 +71,9 @@ if (HAS_FECLEAREXCEPT AND HAS_FEENABLEEXCEPT AND HAS_F
- 	set(HAS_FPE_OPS ON)
- endif()
+@@ -336,6 +336,7 @@ add_executable(modelcompiler src/modelcompiler.cpp)
+ add_executable(${PROJECT_NAME} WIN32 src/main.cpp ${RESOURCES})
+ add_executable(unittest ${UNITTEST_CXX_FILES})
+ add_executable(modelcompiler src/modelcompiler.cpp)
++set_target_properties(modelcompiler PROPERTIES OUTPUT_NAME pioneer-modelcompiler)
+ add_executable(savegamedump
+ 	src/savegamedump.cpp
+ 	src/JsonUtils.cpp
+@@ -345,6 +346,7 @@ add_executable(savegamedump
+ 	src/Lang.cpp
+ 	${FILESYSTEM_CXX_FILES}
+ )
++set_target_properties(savegamedump PROPERTIES OUTPUT_NAME pioneer-savegamedump)
  
-+include(CheckCXXSourceCompiles)
-+check_cxx_source_compiles("#include <cstddef>\nvoid foo(size_t){}; void foo(unsigned int){};int main(){}" SIZE_T_AND_UNSIGNED_INT_ARE_DIFFERENT_TYPES)
-+
- if (NOT CMAKE_BUILD_TYPE)
- 	set(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING
- 		"Choose the type of build, options are: None(CMAKE_CXX_FLAGS or CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel."
+ find_program(NATURALDOCS NAMES naturaldocs)
+ if (NATURALDOCS)

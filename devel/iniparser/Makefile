@@ -1,23 +1,29 @@
 PORTNAME=	iniparser
-PORTVERSION=	4.1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	4.2
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Free stand-alone ini file parsing library
 WWW=		https://github.com/ndevilla/iniparser
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake
-ALL_TARGET=
+TEST_DEPENDS=	bash>0:shells/bash
 
+USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	ndevilla
 
-PLIST_FILES=	include/dictionary.h include/iniparser.h lib/libiniparser.a \
-		lib/libiniparser.so lib/libiniparser.so.1
+ALL_TARGET=	default
+TEST_TARGET=	check
+
+PLIST_FILES=	include/dictionary.h \
+		include/iniparser.h \
+		lib/libiniparser.a \
+		lib/libiniparser.so \
+		lib/libiniparser.so.1
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/dictionary.h ${STAGEDIR}${PREFIX}/include

@@ -1,6 +1,5 @@
 PORTNAME=	pcsc-tools
-PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTVERSION=	1.7.1
 CATEGORIES=	security
 MASTER_SITES=	https://pcsc-tools.apdu.fr/
 

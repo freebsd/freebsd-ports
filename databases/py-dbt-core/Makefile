@@ -1,6 +1,6 @@
 PORTNAME=	dbt-core
-PORTVERSION=	1.7.3
-PORTREVISION=	2
+DISTVERSION=	1.7.11
+PORTREVISION=	0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ WWW=		https://github.com/dbt-labs/dbt-core
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}agate>=1.7,<2:textproc/py-agate@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.2,<4:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.3,<4:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mashumaro>=3.9,<4:devel/py-mashumaro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>0.5.6:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}logbook>0:devel/py-logbook@${PY_FLAVOR} \
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}agate>=1.7,<2:textproc/py-agate@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.2.3,<0.6:databases/py-sqlparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dbt-extractor>=0.5:devel/py-dbt-extractor@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}minimal-snowplow-tracker>=0.0.2,<0.1:devel/py-minimal-snowplow-tracker@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dbt-semantic-interfaces>=0.4.0,<0.5:databases/py-dbt-semantic-interfaces@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dbt-semantic-interfaces>=0.4.2:databases/py-dbt-semantic-interfaces@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=3.0:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>20.9:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=4.0.0:devel/py-protobuf@${PY_FLAVOR} \

@@ -1,5 +1,5 @@
 PORTNAME=	focuswriter
-DISTVERSION=	1.8.6
+DISTVERSION=	1.8.7
 CATEGORIES=	editors
 MASTER_SITES=	https://gottcode.org/${PORTNAME}/
 
@@ -16,13 +16,12 @@ LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gl iconv pkgconfig \
 		qt:6 tar:bz2
-USE_GL=		gl
+USE_GL=		opengl
 USE_QT=		base multimedia tools:build
 
-PORTDATA=		*
-PORTDOCS=		CREDITS ChangeLog README
-OPTIONS_DEFINE=		DOCS LTO
-OPTIONS_DEFAULT=	LTO
+PORTDATA=	*
+PORTDOCS=	CREDITS ChangeLog README
+OPTIONS_DEFINE=	DOCS LTO
 
 LTO_CMAKE_BOOL=	ENABLE_LINK_TIME_OPTIMIZATION
 

@@ -106,6 +106,11 @@ include/ecal/ecal_util.h
 include/ecal/ecalc.h
 include/ecal/ecalc_types.h
 include/ecal/ecaltime/pb/sim_time.pb.h
+include/ecal/measurement/base/reader.h
+include/ecal/measurement/base/types.h
+include/ecal/measurement/base/writer.h
+include/ecal/measurement/hdf5/reader.h
+include/ecal/measurement/hdf5/writer.h
 include/ecal/measurement/imeasurement.h
 include/ecal/measurement/measurement.h
 include/ecal/measurement/omeasurement.h
@@ -222,6 +227,7 @@ lib/libecaltime-localtime.so.%%VERSION%%
 lib/libecaltime-simtime.so
 lib/libecaltime-simtime.so.5
 lib/libecaltime-simtime.so.%%VERSION%%
+lib/libmeasurement_hdf5.so
 lib/libsys_core.so
 share/applications/ecal_launcher.desktop
 share/applications/ecal_mon_gui.desktop
@@ -260,6 +266,8 @@ share/applications/ecal_sys_gui.desktop
 %%DATADIR%%/samples/cpp/benchmarks/many_connections_rec/src/many_connections_rec.cpp
 %%DATADIR%%/samples/cpp/benchmarks/many_connections_snd/CMakeLists.txt
 %%DATADIR%%/samples/cpp/benchmarks/many_connections_snd/src/many_connections_snd.cpp
+%%DATADIR%%/samples/cpp/benchmarks/measurement/CMakeLists.txt
+%%DATADIR%%/samples/cpp/benchmarks/measurement/src/main.cpp
 %%DATADIR%%/samples/cpp/benchmarks/multiple_rec_cb/CMakeLists.txt
 %%DATADIR%%/samples/cpp/benchmarks/multiple_rec_cb/src/main.cpp
 %%DATADIR%%/samples/cpp/benchmarks/multiple_rec_cb/src/multiple_rec_cb.cpp
@@ -289,6 +297,15 @@ share/applications/ecal_sys_gui.desktop
 %%DATADIR%%/samples/cpp/benchmarks/performance_snd/CMakeLists.txt
 %%DATADIR%%/samples/cpp/benchmarks/performance_snd/src/binary_payload_writer.h
 %%DATADIR%%/samples/cpp/benchmarks/performance_snd/src/performance_snd.cpp
+%%DATADIR%%/samples/cpp/benchmarks/perftool/CMakeLists.txt
+%%DATADIR%%/samples/cpp/benchmarks/perftool/Readme.md
+%%DATADIR%%/samples/cpp/benchmarks/perftool/src/main.cpp
+%%DATADIR%%/samples/cpp/benchmarks/perftool/src/publisher.cpp
+%%DATADIR%%/samples/cpp/benchmarks/perftool/src/publisher.h
+%%DATADIR%%/samples/cpp/benchmarks/perftool/src/publisher_statistics.h
+%%DATADIR%%/samples/cpp/benchmarks/perftool/src/subscriber.cpp
+%%DATADIR%%/samples/cpp/benchmarks/perftool/src/subscriber.h
+%%DATADIR%%/samples/cpp/benchmarks/perftool/src/subscriber_statistics.h
 %%DATADIR%%/samples/cpp/benchmarks/pubsub_throughput/CMakeLists.txt
 %%DATADIR%%/samples/cpp/benchmarks/pubsub_throughput/src/binary_payload_writer.h
 %%DATADIR%%/samples/cpp/benchmarks/pubsub_throughput/src/pubsub_throughput.cpp
@@ -302,10 +319,6 @@ share/applications/ecal_sys_gui.desktop
 %%DATADIR%%/samples/cpp/measurement/measurement_write/src/protobuf/animal.proto
 %%DATADIR%%/samples/cpp/measurement/measurement_write/src/protobuf/house.proto
 %%DATADIR%%/samples/cpp/measurement/measurement_write/src/protobuf/person.proto
-%%DATADIR%%/samples/cpp/misc/event_rec/CMakeLists.txt
-%%DATADIR%%/samples/cpp/misc/event_rec/src/event_rec.cpp
-%%DATADIR%%/samples/cpp/misc/event_snd/CMakeLists.txt
-%%DATADIR%%/samples/cpp/misc/event_snd/src/event_snd.cpp
 %%DATADIR%%/samples/cpp/misc/process/CMakeLists.txt
 %%DATADIR%%/samples/cpp/misc/process/src/process.cpp
 %%DATADIR%%/samples/cpp/misc/time/CMakeLists.txt
@@ -364,6 +377,11 @@ share/applications/ecal_sys_gui.desktop
 %%DATADIR%%/samples/cpp/pubsub/flatbuffer/monster_snd/monster_snd.cpp
 %%DATADIR%%/samples/cpp/pubsub/msgpack/address_rec/src/address_rec.cpp
 %%DATADIR%%/samples/cpp/pubsub/msgpack/address_snd/src/address_snd.cpp
+%%DATADIR%%/samples/cpp/pubsub/protobuf/person_loopback/CMakeLists.txt
+%%DATADIR%%/samples/cpp/pubsub/protobuf/person_loopback/src/person_loopback.cpp
+%%DATADIR%%/samples/cpp/pubsub/protobuf/person_loopback/src/protobuf/animal.proto
+%%DATADIR%%/samples/cpp/pubsub/protobuf/person_loopback/src/protobuf/house.proto
+%%DATADIR%%/samples/cpp/pubsub/protobuf/person_loopback/src/protobuf/person.proto
 %%DATADIR%%/samples/cpp/pubsub/protobuf/person_rec/CMakeLists.txt
 %%DATADIR%%/samples/cpp/pubsub/protobuf/person_rec/src/person_rec.cpp
 %%DATADIR%%/samples/cpp/pubsub/protobuf/person_rec/src/protobuf/animal.proto

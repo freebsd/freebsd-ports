@@ -1,5 +1,5 @@
 PORTNAME=	wifibox-alpine
-PORTVERSION=	20240328
+PORTVERSION=	20240506
 CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
@@ -93,7 +93,7 @@ _GITHUB_SITE=	https://github.com/pgj/freebsd-wifibox-alpine/releases/download
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	pgj
 GH_PROJECT=	freebsd-wifibox-alpine:scripts
-GH_TAGNAME=	fe9b384e45c57b0cfafe5e5b3931ba163f4230fd:scripts
+GH_TAGNAME=	3ce5b1faf48ef4b9d52c38bf518aa612242fba3f:scripts
 
 ALPINE_VERSION=	3.19.1
 ALPINE_DATE=	2024.03.23
@@ -160,9 +160,19 @@ _IPW2200_FIRMWARE=	iwi/ipw2200-bss \
 _MT76_FIRMWARE=		2135e201e7a9339e018d4e2d4a33c73266e674d7
 
 _LINUX64_KMOD!=		(kldstat -qn linux64 && echo "found") || echo ""
+_LINUX_EMUL_PATH!=	(sysctl -qn compat.linux.emul_path) || echo ""
+_LINUX_EP_EXISTS!=	(test -d "${_LINUX_EMUL_PATH}" && echo "found") || echo ""
 
-.if empty(_LINUX64_KMOD)
+.if empty(IGNORE) && empty(_LINUX64_KMOD)
 IGNORE=	needs the linux64 kernel module to build
+.endif
+
+.if empty(IGNORE) && empty(_LINUX_EMUL_PATH)
+IGNORE=	needs compat.linux.emul_path to be set
+.endif
+
+.if empty(IGNORE) && empty(_LINUX_EP_EXISTS)
+IGNORE= needs compat.linux.emul_path to point to an existing directory
 .endif
 
 pre-everything::
@@ -302,7 +312,7 @@ LINUX_FIRMWARE+=	${L${fw_opt}_FILES}
 
 RTL8821CE_VERSION=	20240120
 RTW88_VERSION=		20240316
-RTW89_VERSION=		20240310
+RTW89_VERSION=		20240106
 BROADCOM_WL_VERSION=	6.30.223.271
 
 _LINUX_LTS_MAJOR=	${LINUX_LTS_VERSION:C/^([0-9]*)\..*/\1/}

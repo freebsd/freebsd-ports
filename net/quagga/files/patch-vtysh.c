@@ -19,7 +19,7 @@
 +    return;
 +
 +  s = strrchr(vtysh_pager_name, '/');
-+  s = (s == NULL ? vtysh_pager_name : s++);
++  s = (s == NULL ? vtysh_pager_name : s + 1);
 +  if (strcmp(s, "more") != 0 && strcmp(s, "less") != 0)
 +    return;
 +

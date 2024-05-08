@@ -79,7 +79,7 @@ _EMACS_RUN_DEP=		yes
 
 # Only set FLAVORS when...
 .  if defined(_EMACS_RUN_DEP) && !defined(_EMACS_NOFLAVORS)
-FLAVORS=	full canna nox devel_full devel_nox
+FLAVORS=	full canna nox wayland devel_full devel_nox
 # Sort the default to be first
 .    if defined(EMACS_DEFAULT)
 FLAVORS:=	${EMACS_DEFAULT} ${FLAVORS:N${EMACS_DEFAULT}}

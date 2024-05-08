@@ -1,6 +1,6 @@
 PORTNAME=	ilias
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.0_beta3
+DISTVERSION=	9.0
 CATEGORIES=	www education
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
@@ -15,18 +15,20 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/Auth/Auth.php:security/pear-Auth@${PHP_FLAV
 		${LOCALBASE}/share/pear/HTML/Template/IT.php:devel/pear-HTML_Template_IT@${PHP_FLAVOR} \
 		${LOCALBASE}/share/pear/MDB2.php:databases/pear-MDB2@${PHP_FLAVOR} \
 		${LOCALBASE}/share/pear/PEAR.php:devel/pear@${PHP_FLAVOR} \
+		${PECL_PKGNAMEPREFIX}imagick>=0:graphics/pecl-imagick@${PHP_FLAVOR} \
 		${UNZIP_CMD}:archivers/unzip \
 		composer:devel/php-composer@${PHP_FLAVOR} \
 		sudo:security/sudo \
 		zip:archivers/zip
 
-USES=		cpe jpeg magick:6,run php:flavors
+USES=		cpe jpeg magick:7,run php:flavors
 USE_GITHUB=	yes
 GH_ACCOUNT=	ILIAS-eLearning
 GH_PROJECT=	ILIAS
-USE_PHP=	curl dom gd ldap fileinfo \
+USE_PHP=	curl dom gd ldap fileinfo iconv \
 		pdo_mysql session simplexml soap \
-		tokenizer xmlrpc xmlwriter xsl zlib
+		tokenizer xmlrpc xmlwriter xmlreader \
+		xsl zip zlib
 
 CONFLICTS=	ilias6
 

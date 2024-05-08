@@ -1,7 +1,6 @@
 PORTNAME=	topologic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
-PORTREVISION=	3
+DISTVERSION=	6.0.3
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-space-modeling-library
@@ -13,8 +12,8 @@ WWW=		https://topologic.app/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-LIB_DEPENDS=	libTopologicCore.so:math/topologic \
-		libTKernel.so:cad/opencascade
+BUILD_DEPENDS=	pybind11>0:devel/pybind11
+LIB_DEPENDS=	libTopologicCore.so:math/topologic
 
 USES=		cmake compiler:c++17-lang localbase:ldflags python
 
@@ -22,17 +21,24 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	wassimj
 GH_PROJECT=	Topologic
 
-WRKSRC_SUBDIR=	Python-Bindings
+WRKSRC_SUBDIR=	TopologicPythonBindings
 
-CXXFLAGS+=	-I${LOCALBASE}/include/OpenCASCADE
+CXXFLAGS+=	-I${LOCALBASE}/include/OpenCASCADE \
+		-I${LOCALBASE}/include/TopologicCore
+LDFLAGS+=	-L${LOCALBASE}/lib/TopologicCore
 
-PLIST_FILES=	${PYTHON_SITELIBDIR}/topologic${PYTHON_EXT_SUFFIX}.so
+PLIST_FILES=	${PYTHON_SITELIBDIR}/topologic_core${PYTHON_EXT_SUFFIX}.so
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 do-install: # workaround for https://github.com/wassimj/Topologic/issues/34
 	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-	${INSTALL_LIB} ${BUILD_WRKSRC}/topologic${PYTHON_EXT_SUFFIX}.so ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	${INSTALL_LIB} ${BUILD_WRKSRC}/topologic_core${PYTHON_EXT_SUFFIX}.so ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-do-test: install
-	${PYTHON_CMD} ${WRKSRC}/test/topologictest01.py
+do-test:
+.for tst in topologictest01 topologictest02
+	${ECHO} "====> Running test ${tst}"
+	${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${WRKSRC}/test/${tst}.py
+.endfor
 
 .include <bsd.port.mk>

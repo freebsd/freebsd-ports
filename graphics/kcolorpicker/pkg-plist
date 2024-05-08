@@ -1,7 +1,7 @@
 include/kColorPicker-Qt%%QT_VER%%/kColorPicker/KColorPicker.h
 include/kColorPicker-Qt%%QT_VER%%/kColorPicker/KColorPickerExport.h
-lib/cmake/kColorPicker-Qt%%QT_VER%%/kColorPicker-Qt%%QT_VER%%-targets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/kColorPicker-Qt%%QT_VER%%/kColorPicker-Qt%%QT_VER%%-targets.cmake
+lib/cmake/kColorPicker-Qt%%QT_VER%%/kColorPicker-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/kColorPicker-Qt%%QT_VER%%/kColorPicker-targets.cmake
 lib/cmake/kColorPicker-Qt%%QT_VER%%/kColorPicker-Qt%%QT_VER%%Config-version.cmake
 lib/cmake/kColorPicker-Qt%%QT_VER%%/kColorPicker-Qt%%QT_VER%%Config.cmake
 lib/libkColorPicker-Qt%%QT_VER%%.so

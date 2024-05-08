@@ -1,5 +1,5 @@
 PORTNAME=	magic
-DISTVERSION=	8.3.459
+DISTVERSION=	8.3.474
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/magic/archive/
 
@@ -8,7 +8,7 @@ COMMENT=	Interactive editor for VLSI layouts
 WWW=		http://opencircuitdesign.com/magic/
 
 LICENSE=	MIT
-LICENSE_FILE=	${FILESDIR}/license.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libBLT25.so:x11-toolkits/blt \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -27,8 +27,6 @@ CONFIGURE_ARGS=	--with-opengl \
 CONFIGURE_WRKSRC=	${WRKSRC}/scripts
 
 ALL_TARGET=	tcllibrary
-
-CFLAGS+=	-Wno-return-type # workaround for https://github.com/RTimothyEdwards/magic/issues/67
 
 DESKTOP_ENTRIES="Magic" "" "" "${PORTNAME}" "" ""
 

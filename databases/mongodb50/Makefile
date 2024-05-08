@@ -1,7 +1,7 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	5.0.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -63,7 +63,7 @@ USERS=		mongodb
 GROUPS=		mongodb
 
 OPTIONS_DEFINE=		LTO SASL SSL NOAVX
-OPTIONS_DEFAULT=	SASL SSL
+OPTIONS_DEFAULT=	SASL SSL NOAVX
 
 NOAVX_DESC=	"Disable AVX instructions on amd64 (Sandybridge+)"
 
