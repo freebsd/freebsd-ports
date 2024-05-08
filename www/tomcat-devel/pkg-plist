@@ -27,7 +27,7 @@
 %%T%%/lib/catalina-storeconfig.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
-%%T%%/lib/ecj-4.30.jar
+%%T%%/lib/ecj-4.31.jar
 %%T%%/lib/el-api.jar
 %%T%%/lib/jakartaee-migration-1.0.8-shaded.jar
 %%T%%/lib/jasper-el.jar
@@ -105,6 +105,12 @@
 %%DOCS%%%%T%%/webapps/docs/architecture/requestProcess/authentication-process.png
 %%DOCS%%%%T%%/webapps/docs/architecture/requestProcess/request-process.png
 %%DOCS%%%%T%%/webapps/docs/architecture/startup.html
+%%DOCS%%%%T%%/webapps/docs/architecture/startup/1_catalina_load.svg
+%%DOCS%%%%T%%/webapps/docs/architecture/startup/2_catalina_initliaze.svg
+%%DOCS%%%%T%%/webapps/docs/architecture/startup/3_catalina_start_1.svg
+%%DOCS%%%%T%%/webapps/docs/architecture/startup/4_catalina_start_2.svg
+%%DOCS%%%%T%%/webapps/docs/architecture/startup/5_catalina_start_3.svg
+%%DOCS%%%%T%%/webapps/docs/architecture/startup/6_catalina_start_4.svg
 %%DOCS%%%%T%%/webapps/docs/architecture/startup/serverStartup.pdf
 %%DOCS%%%%T%%/webapps/docs/architecture/startup/serverStartup.txt
 %%DOCS%%%%T%%/webapps/docs/balancer-howto.html
