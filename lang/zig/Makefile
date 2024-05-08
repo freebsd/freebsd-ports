@@ -48,11 +48,9 @@ post-configure-STATIC-on:
 	@${REINPLACE_CMD} 's/-Wl,-Bdynamic//' \
 		${BUILD_WRKSRC}/build.ninja
 
-post-build:
-	@${RM} -rf ${STAGEDIR}/wrkdirs
-
 post-install:
 	@${RM} -rf ${WRKDIR}/.build
+	@${RM} -rf ${STAGEDIR}/wrkdirs
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/std

@@ -1,4 +1,6 @@
 @dir lib/zig/std/compress/deflate/testdata
+@dir lib/zig/std/compress/lzma/testdata
+@dir lib/zig/std/compress/xz/testdata
 @dir lib/zig/std/net
 @dir lib/zig/std/tz
 @dir lib/zig/std/unicode
