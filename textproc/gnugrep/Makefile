@@ -22,7 +22,7 @@ INFO=		grep
 CPE_VENDOR=	gnu
 
 OPTIONS_DEFINE=		COMPAT ICONV LIBSIGSEGV NLS PCRE
-OPTIONS_DEFAULT=	COMPAT ICONV PCRE
+OPTIONS_DEFAULT=	ICONV PCRE
 COMPAT_DESC=		Create g-prefixless compatibility symlinks
 LIBSIGSEGV_DESC=	Use alternative page fault handler (GNU libsigsegv)
 OPTIONS_SUB=		yes
