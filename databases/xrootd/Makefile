@@ -12,6 +12,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPL
 
+BROKEN_armv7=	compilation fails: non-constant-expression cannot be narrowed from type 'time_t' (aka 'long long') to 'long' in initializer list, see https://github.com/xrootd/xrootd/issues/2272
+
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtinyxml.so:textproc/tinyxml \
