@@ -28,28 +28,21 @@ FWMANAGER_DESC=	Build with mstfwmanager and mstarchive
 STATIC_DESC=	Static binary (disable curl support)
 
 ADAB_CONFIGURE_ON=	--enable-adb-generic-tools
-ADAB_BUILD_DEPENDS=	${LOCALBASE}/lib/libboost_regex.a:devel/boost-libs
 ADAB_LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 FWMANAGER_CONFIGURE_ON=	--enable-fw-mgr
-FWMANAGER_BUILD_DEPENDS=	${LOCALBASE}/lib/libboost_regex.a:devel/boost-libs
 FWMANAGER_LIB_DEPENDS=	libcurl.so:ftp/curl \
-						libxml2.so.2:textproc/libxml2
+			libxml2.so.2:textproc/libxml2
 
 post-patch:
 	@${ECHO} '#define TOOLS_GIT_SHA "N/A"' >  ${WRKSRC}/common/gitversion.h
 	@${MKDIR} ${WRKSRC}/config
-	# ADAB and FWMANAGER options depends of libboost, so statically link this
-	# lib to avoid installing 220MB of lib dependency.
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/mlxlink/Makefile.am \
-		${WRKSRC}/mlxarchive/Makefile.am \
-		${WRKSRC}/mlxreg/Makefile.am
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mstflint/python_tools/rreg_access.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mstflint/python_tools/ccmdif.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mstflint/python_tools/cmtcr.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mstflint/python_tools/c_dev_mgt.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mstflint/sdk/libresource_dump_sdk.so
 
 .include <bsd.port.mk>
