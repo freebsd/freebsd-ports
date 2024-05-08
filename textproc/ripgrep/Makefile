@@ -36,8 +36,8 @@ PCRE2_DESC=	${PCRE_DESC} version 2
 PCRE2_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 PCRE2_VARS=	CARGO_FEATURES+=pcre2
 
-SIMD_MAKE_ENV=	RUSTC_BOOTSTRAP=encoding_rs,packed_simd
-SIMD_VARS=	CARGO_FEATURES+=simd-accel ${SIMD_VARS_${ARCH}}
+SIMD_MAKE_ENV=	RUSTC_BOOTSTRAP=encoding_rs
+SIMD_VARS=	${SIMD_VARS_${ARCH}}
 SIMD_VARS_i386=	RUSTFLAGS+="-C target-feature=+sse2"
 
 post-install:

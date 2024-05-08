@@ -1,0 +1,506 @@
+From 9bd30e8e48b139c3f5ebe8587abff6fff7add45b Mon Sep 17 00:00:00 2001
+From: Andrew Gallant <jamslam@gmail.com>
+Date: Thu, 7 Mar 2024 09:38:22 -0500
+Subject: [PATCH] deps: update everything
+
+---
+ Cargo.lock | 103 +++++++++++++++++++++++++----------------------------
+ 1 file changed, 48 insertions(+), 55 deletions(-)
+
+diff --git a/Cargo.lock b/Cargo.lock
+index cb1065d46..45f56f74a 100644
+--- Cargo.lock
++++ Cargo.lock
+@@ -13,9 +13,9 @@ dependencies = [
+ 
+ [[package]]
+ name = "anyhow"
+-version = "1.0.79"
++version = "1.0.80"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "080e9890a082662b09c1ad45f567faeeb47f22b5fb23895fbe1e651e718e25ca"
++checksum = "5ad32ce52e4161730f7098c077cd2ed6229b5804ccf99e5366be1ab72a98b4e1"
+ 
+ [[package]]
+ name = "autocfg"
+@@ -25,9 +25,9 @@ checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
+ 
+ [[package]]
+ name = "bstr"
+-version = "1.9.0"
++version = "1.9.1"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "c48f0051a4b4c5e0b6d365cd04af53aeaa209e3cc15ec2cdb69e73cc87fbd0dc"
++checksum = "05efc5cfd9110c8416e471df0e96702d58690178e206e61b7173706673c93706"
+ dependencies = [
+  "memchr",
+  "regex-automata",
+@@ -36,9 +36,9 @@ dependencies = [
+ 
+ [[package]]
+ name = "cc"
+-version = "1.0.83"
++version = "1.0.90"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "f1174fb0b6ec23863f8b971027804a42614e347eafb0a95bf0b12cdae21fc4d0"
++checksum = "8cd6604a82acf3039f1144f54b8eb34e91ffba622051189e71b781822d5ee1f5"
+ dependencies = [
+  "jobserver",
+  "libc",
+@@ -52,44 +52,37 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
+ 
+ [[package]]
+ name = "crossbeam-channel"
+-version = "0.5.10"
++version = "0.5.12"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "82a9b73a36529d9c47029b9fb3a6f0ea3cc916a261195352ba19e770fc1748b2"
++checksum = "ab3db02a9c5b5121e1e42fbdb1aeb65f5e02624cc58c43f2884c6ccac0b82f95"
+ dependencies = [
+- "cfg-if",
+  "crossbeam-utils",
+ ]
+ 
+ [[package]]
+ name = "crossbeam-deque"
+-version = "0.8.4"
++version = "0.8.5"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "fca89a0e215bab21874660c67903c5f143333cab1da83d041c7ded6053774751"
++checksum = "613f8cc01fe9cf1a3eb3d7f488fd2fa8388403e97039e2f73692932e291a770d"
+ dependencies = [
+- "cfg-if",
+  "crossbeam-epoch",
+  "crossbeam-utils",
+ ]
+ 
+ [[package]]
+ name = "crossbeam-epoch"
+-version = "0.9.17"
++version = "0.9.18"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "0e3681d554572a651dda4186cd47240627c3d0114d45a95f6ad27f2f22e7548d"
++checksum = "5b82ac4a3c2ca9c3460964f020e1402edd5753411d7737aa39c3714ad1b5420e"
+ dependencies = [
+- "autocfg",
+- "cfg-if",
+  "crossbeam-utils",
+ ]
+ 
+ [[package]]
+ name = "crossbeam-utils"
+-version = "0.8.18"
++version = "0.8.19"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "c3a430a770ebd84726f584a90ee7f020d28db52c6d02138900f22341f866d39c"
+-dependencies = [
+- "cfg-if",
+-]
++checksum = "248e3bacc7dc6baa3b21e405ee045c3047101a49145e7e9eca583ab4c2ca5345"
+ 
+ [[package]]
+ name = "encoding_rs"
+@@ -257,9 +250,9 @@ dependencies = [
+ 
+ [[package]]
+ name = "jobserver"
+-version = "0.1.27"
++version = "0.1.28"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "8c37f63953c4c63420ed5fd3d6d398c719489b9f872b9fa683262f8edd363c7d"
++checksum = "ab46a6e9526ddef3ae7f787c06f0f2600639ba80ea3eade3d8e670a2230f51d6"
+ dependencies = [
+  "libc",
+ ]
+@@ -272,9 +265,9 @@ checksum = "baff4b617f7df3d896f97fe922b64817f6cd9a756bb81d40f8883f2f66dcb401"
+ 
+ [[package]]
+ name = "libc"
+-version = "0.2.151"
++version = "0.2.153"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "302d7ab3130588088d277783b1e2d2e10c9e9e4a16dd9050e6ec93fb3e7048f4"
++checksum = "9c198f91728a82281a64e1f4f9eeb25d82cb32a5de251c6bd1b5154d63a8e7bd"
+ 
+ [[package]]
+ name = "libm"
+@@ -284,9 +277,9 @@ checksum = "4ec2a862134d2a7d32d7983ddcdd1c4923530833c9f2ea1a44fc5fa473989058"
+ 
+ [[package]]
+ name = "log"
+-version = "0.4.20"
++version = "0.4.21"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "b5e6163cb8c49088c2c36f57875e58ccd8c87c7427f7fbd50ea6710b2f3f2e8f"
++checksum = "90ed8c1e510134f979dbc4f070f87d4313098b704861a105fe34231c70a3901c"
+ 
+ [[package]]
+ name = "memchr"
+@@ -296,18 +289,18 @@ checksum = "523dc4f511e55ab87b694dc30d0f820d60906ef06413f93d4d7a1385599cc149"
+ 
+ [[package]]
+ name = "memmap2"
+-version = "0.9.3"
++version = "0.9.4"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "45fd3a57831bf88bc63f8cebc0cf956116276e97fef3966103e96416209f7c92"
++checksum = "fe751422e4a8caa417e13c3ea66452215d7d63e19e604f4980461212f3ae1322"
+ dependencies = [
+  "libc",
+ ]
+ 
+ [[package]]
+ name = "num-traits"
+-version = "0.2.17"
++version = "0.2.18"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "39e3200413f237f41ab11ad6d161bc7239c84dcb631773ccd7de3dfe4b5c267c"
++checksum = "da0df0e5185db44f69b44f26786fe401b6c293d1907744beaa7fa62b2e5a517a"
+ dependencies = [
+  "autocfg",
+  "libm",
+@@ -347,15 +340,15 @@ dependencies = [
+ 
+ [[package]]
+ name = "pkg-config"
+-version = "0.3.28"
++version = "0.3.30"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "69d3587f8a9e599cc7ec2c00e331f71c4e69a5f9a4b8a6efd5b07466b9736f9a"
++checksum = "d231b230927b5e4ad203db57bbcbee2802f6bce620b1e4a9024a07d94e2907ec"
+ 
+ [[package]]
+ name = "proc-macro2"
+-version = "1.0.76"
++version = "1.0.78"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "95fc56cda0b5c3325f5fbbd7ff9fda9e02bb00bb3dac51252d2f1bfa1cb8cc8c"
++checksum = "e2422ad645d89c99f8f3e6b88a9fdeca7fabeac836b1002371c4367c8f984aae"
+ dependencies = [
+  "unicode-ident",
+ ]
+@@ -371,9 +364,9 @@ dependencies = [
+ 
+ [[package]]
+ name = "regex"
+-version = "1.10.2"
++version = "1.10.3"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "380b951a9c5e80ddfd6136919eef32310721aa4aacd4889a8d39124b026ab343"
++checksum = "b62dbe01f0b06f9d8dc7d49e05a0785f153b00b2c227856282f671e0318c9b15"
+ dependencies = [
+  "aho-corasick",
+  "memchr",
+@@ -383,9 +376,9 @@ dependencies = [
+ 
+ [[package]]
+ name = "regex-automata"
+-version = "0.4.3"
++version = "0.4.6"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "5f804c7828047e88b2d32e2d7fe5a105da8ee3264f01902f796c8e067dc2483f"
++checksum = "86b83b8b9847f9bf95ef68afb0b8e6cdb80f498442f5179a29fad448fcc1eaea"
+ dependencies = [
+  "aho-corasick",
+  "memchr",
+@@ -419,9 +412,9 @@ dependencies = [
+ 
+ [[package]]
+ name = "ryu"
+-version = "1.0.16"
++version = "1.0.17"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "f98d2aa92eebf49b69786be48e4477826b256916e84a57ff2a4f21923b48eb4c"
++checksum = "e86697c916019a8588c99b5fac3cead74ec0b4b819707a682fd4d23fa0ce1ba1"
+ 
+ [[package]]
+ name = "same-file"
+@@ -434,18 +427,18 @@ dependencies = [
+ 
+ [[package]]
+ name = "serde"
+-version = "1.0.195"
++version = "1.0.197"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "63261df402c67811e9ac6def069e4786148c4563f4b50fd4bf30aa370d626b02"
++checksum = "3fb1c873e1b9b056a4dc4c0c198b24c3ffa059243875552b2bd0933b1aee4ce2"
+ dependencies = [
+  "serde_derive",
+ ]
+ 
+ [[package]]
+ name = "serde_derive"
+-version = "1.0.195"
++version = "1.0.197"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "46fe8f8603d81ba86327b23a2e9cdf49e1255fb94a4c5f297f6ee0547178ea2c"
++checksum = "7eb0b34b42edc17f6b7cac84a52a1c5f0e1bb2227e997ca9011ea3dd34e8610b"
+ dependencies = [
+  "proc-macro2",
+  "quote",
+@@ -454,9 +447,9 @@ dependencies = [
+ 
+ [[package]]
+ name = "serde_json"
+-version = "1.0.111"
++version = "1.0.114"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "176e46fa42316f18edd598015a5166857fc835ec732f5215eac6b7bdbf0a84f4"
++checksum = "c5f09b1bd632ef549eaa9f60a1f8de742bdbc698e6cee2095fc84dde5f549ae0"
+ dependencies = [
+  "itoa",
+  "ryu",
+@@ -465,9 +458,9 @@ dependencies = [
+ 
+ [[package]]
+ name = "syn"
+-version = "2.0.48"
++version = "2.0.52"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "0f3531638e407dfc0814761abb7c00a5b54992b849452a0646b7f65c9f770f3f"
++checksum = "b699d15b36d1f02c3e7c69f8ffef53de37aefae075d8488d4ba1a7788d574a07"
+ dependencies = [
+  "proc-macro2",
+  "quote",
+@@ -476,18 +469,18 @@ dependencies = [
+ 
+ [[package]]
+ name = "termcolor"
+-version = "1.4.0"
++version = "1.4.1"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "ff1bc3d3f05aff0403e8ac0d92ced918ec05b666a43f83297ccef5bea8a3d449"
++checksum = "06794f8f6c5c898b3275aebefa6b8a1cb24cd2c6c79397ab15774837a0bc5755"
+ dependencies = [
+  "winapi-util",
+ ]
+ 
+ [[package]]
+ name = "textwrap"
+-version = "0.16.0"
++version = "0.16.1"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "222a222a5bfe1bba4a77b45ec488a741b3cb8872e5e499451fd7d0129c9c7c3d"
++checksum = "23d434d3f8967a09480fb04132ebe0a3e088c173e6d0ee7897abbdf4eab0f8b9"
+ 
+ [[package]]
+ name = "unicode-ident"
+@@ -497,9 +490,9 @@ checksum = "3354b9ac3fae1ff6755cb6db53683adb661634f67557942dea4facebec0fee4b"
+ 
+ [[package]]
+ name = "walkdir"
+-version = "2.4.0"
++version = "2.5.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "d71d857dc86794ca4c280d616f7da00d2dbfd8cd788846559a6813e6aa4b54ee"
++checksum = "29790946404f91d9c5d06f9874efddea1dc06c5efe94541a7d6863108e3a5e4b"
+ dependencies = [
+  "same-file",
+  "winapi-util",
+From e9abbc1a02de29dbe60e1b625d540c58759b23a6 Mon Sep 17 00:00:00 2001
+From: Andrew Gallant <jamslam@gmail.com>
+Date: Thu, 7 Mar 2024 09:31:22 -0500
+Subject: [PATCH] cargo: nuke 'simd-accel' from orbit
+
+This feature causes nothing but problems and is frequently broken. The
+only optimization it was enabling were SIMD optimizations for
+transcoding. In particular, for UTF-16 transcoding. This is performed by
+the [`encoding_rs`](https://github.com/hsivonen/encoding_rs) crate,
+which specifically uses unstable portable SIMD APIs instead of the
+stable non-portable SIMD APIs.
+
+SIMD optimizations that apply to search have long been making use of
+stable APIs, and are automatically enabled when your target supports
+them. This is, IMO, the correct user experience and one that
+`encoding_rs` refuses to support. I'm done dealing with it, so
+transcoding will only use scalar code until the SIMD optimizations in
+`encoding_rs` work on stable. (This doesn't mean that `encoding_rs` has
+to change. This could also be fixed by stabilizing `std::simd`.)
+
+Fixes #2748
+---
+ CHANGELOG.md                     |  5 +++++
+ Cargo.lock                       | 33 --------------------------------
+ Cargo.toml                       |  1 -
+ README.md                        | 22 +++++++--------------
+ crates/core/flags/doc/version.rs |  3 ---
+ crates/grep/Cargo.toml           |  4 ++--
+ crates/searcher/Cargo.toml       |  5 ++---
+ 7 files changed, 16 insertions(+), 57 deletions(-)
+
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index fafff6e5f..8f737f8c6 100644
+--- CHANGELOG.md
++++ CHANGELOG.md
+@@ -2,6 +2,11 @@ TBD
+ ===
+ Unreleased changes. Release notes have not yet been written.
+ 
++Miscellaneous:
++
++* [MISC #2748](https://github.com/BurntSushi/ripgrep/issues/2748):
++  Remove ripgrep's `simd-accel` feature because it was frequently broken.
++
+ 
+ 14.1.0 (2024-01-06)
+ ===================
+diff --git a/Cargo.lock b/Cargo.lock
+index 45f56f74a..603bdcba2 100644
+--- Cargo.lock
++++ Cargo.lock
+@@ -17,12 +17,6 @@ version = "1.0.80"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+ checksum = "5ad32ce52e4161730f7098c077cd2ed6229b5804ccf99e5366be1ab72a98b4e1"
+ 
+-[[package]]
+-name = "autocfg"
+-version = "1.1.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
+-
+ [[package]]
+ name = "bstr"
+ version = "1.9.1"
+@@ -91,7 +85,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
+ checksum = "7268b386296a025e474d5140678f75d6de9493ae55a5d709eeb9dd08149945e1"
+ dependencies = [
+  "cfg-if",
+- "packed_simd",
+ ]
+ 
+ [[package]]
+@@ -269,12 +262,6 @@ version = "0.2.153"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+ checksum = "9c198f91728a82281a64e1f4f9eeb25d82cb32a5de251c6bd1b5154d63a8e7bd"
+ 
+-[[package]]
+-name = "libm"
+-version = "0.2.8"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "4ec2a862134d2a7d32d7983ddcdd1c4923530833c9f2ea1a44fc5fa473989058"
+-
+ [[package]]
+ name = "log"
+ version = "0.4.21"
+@@ -296,26 +283,6 @@ dependencies = [
+  "libc",
+ ]
+ 
+-[[package]]
+-name = "num-traits"
+-version = "0.2.18"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "da0df0e5185db44f69b44f26786fe401b6c293d1907744beaa7fa62b2e5a517a"
+-dependencies = [
+- "autocfg",
+- "libm",
+-]
+-
+-[[package]]
+-name = "packed_simd"
+-version = "0.3.9"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "1f9f08af0c877571712e2e3e686ad79efad9657dbf0f7c3c8ba943ff6c38932d"
+-dependencies = [
+- "cfg-if",
+- "num-traits",
+-]
+-
+ [[package]]
+ name = "pcre2"
+ version = "0.2.6"
+diff --git a/Cargo.toml b/Cargo.toml
+index da350bc81..6bb068b81 100644
+--- Cargo.toml
++++ Cargo.toml
+@@ -68,7 +68,6 @@ serde_derive = "1.0.77"
+ walkdir = "2"
+ 
+ [features]
+-simd-accel = ["grep/simd-accel"]
+ pcre2 = ["grep/pcre2"]
+ 
+ [profile.release]
+diff --git a/README.md b/README.md
+index 0821fab58..251c85630 100644
+--- README.md
++++ README.md
+@@ -432,18 +432,13 @@ $ ./target/release/rg --version
+ 0.1.3
+ ```
+ 
+-If you have a Rust nightly compiler and a recent Intel CPU, then you can enable
+-additional optional SIMD acceleration like so:
+-
+-```
+-RUSTFLAGS="-C target-cpu=native" cargo build --release --features 'simd-accel'
+-```
+-
+-The `simd-accel` feature enables SIMD support in certain ripgrep dependencies
+-(responsible for transcoding). They are not necessary to get SIMD optimizations
+-for search; those are enabled automatically. Hopefully, some day, the
+-`simd-accel` feature will similarly become unnecessary. **WARNING:** Currently,
+-enabling this option can increase compilation times dramatically.
++**NOTE:** In the past, ripgrep supported a `simd-accel` Cargo feature when
++using a Rust nightly compiler. This only benefited UTF-16 transcoding.
++Since it required unstable features, this build mode was prone to breakage.
++Because of that, support for it has been removed. If you want SIMD
++optimizations for UTF-16 transcoding, then you'll have to petition the
++[`encoding_rs`](https://github.com/hsivonen/encoding_rs) project to use stable
++APIs.
+ 
+ Finally, optional PCRE2 support can be built with ripgrep by enabling the
+ `pcre2` feature:
+@@ -452,9 +447,6 @@ Finally, optional PCRE2 support can be built with ripgrep by enabling the
+ $ cargo build --release --features 'pcre2'
+ ```
+ 
+-(Tip: use `--features 'pcre2 simd-accel'` to also include compile time SIMD
+-optimizations, which will only work with a nightly compiler.)
+-
+ Enabling the PCRE2 feature works with a stable Rust compiler and will
+ attempt to automatically find and link with your system's PCRE2 library via
+ `pkg-config`. If one doesn't exist, then ripgrep will build PCRE2 from source
+diff --git a/crates/core/flags/doc/version.rs b/crates/core/flags/doc/version.rs
+index 8e52861f2..d238ba0cd 100644
+--- crates/core/flags/doc/version.rs
++++ crates/core/flags/doc/version.rs
+@@ -161,9 +161,6 @@ fn compile_cpu_features() -> Vec<String> {
+ fn features() -> Vec<String> {
+     let mut features = vec![];
+ 
+-    let simd_accel = cfg!(feature = "simd-accel");
+-    features.push(format!("{sign}simd-accel", sign = sign(simd_accel)));
+-
+     let pcre2 = cfg!(feature = "pcre2");
+     features.push(format!("{sign}pcre2", sign = sign(pcre2)));
+ 
+diff --git a/crates/grep/Cargo.toml b/crates/grep/Cargo.toml
+index 48369c867..a615f48f4 100644
+--- crates/grep/Cargo.toml
++++ crates/grep/Cargo.toml
+@@ -26,8 +26,8 @@ termcolor = "1.0.4"
+ walkdir = "2.2.7"
+ 
+ [features]
+-simd-accel = ["grep-searcher/simd-accel"]
+ pcre2 = ["grep-pcre2"]
+ 
+-# This feature is DEPRECATED. Runtime dispatch is used for SIMD now.
++# These features are DEPRECATED. Runtime dispatch is used for SIMD now.
++simd-accel = []
+ avx-accel = []
+diff --git a/crates/searcher/Cargo.toml b/crates/searcher/Cargo.toml
+index eeb805d3c..05ccad3f9 100644
+--- crates/searcher/Cargo.toml
++++ crates/searcher/Cargo.toml
+@@ -27,7 +27,6 @@ grep-regex = { version = "0.1.12", path = "../regex" }
+ regex = "1.9.5"
+ 
+ [features]
+-simd-accel = ["encoding_rs/simd-accel"]
+-
+-# This feature is DEPRECATED. Runtime dispatch is used for SIMD now.
++# These features are DEPRECATED. Runtime dispatch is used for SIMD now.
++simd-accel = []
+ avx-accel = []

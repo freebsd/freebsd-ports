@@ -1,46 +1,42 @@
 CARGO_CRATES=	aho-corasick-1.1.2 \
-		anyhow-1.0.79 \
-		autocfg-1.1.0 \
-		bstr-1.9.0 \
-		cc-1.0.83 \
+		anyhow-1.0.80 \
+		bstr-1.9.1 \
+		cc-1.0.90 \
 		cfg-if-1.0.0 \
-		crossbeam-channel-0.5.10 \
-		crossbeam-deque-0.8.4 \
-		crossbeam-epoch-0.9.17 \
-		crossbeam-utils-0.8.18 \
+		crossbeam-channel-0.5.12 \
+		crossbeam-deque-0.8.5 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.19 \
 		encoding_rs-0.8.33 \
 		encoding_rs_io-0.1.7 \
 		glob-0.3.1 \
 		itoa-1.0.10 \
 		jemalloc-sys-0.5.4+5.3.0-patched \
 		jemallocator-0.5.4 \
-		jobserver-0.1.27 \
+		jobserver-0.1.28 \
 		lexopt-0.3.0 \
-		libc-0.2.151 \
-		libm-0.2.8 \
-		log-0.4.20 \
+		libc-0.2.153 \
+		log-0.4.21 \
 		memchr-2.7.1 \
-		memmap2-0.9.3 \
-		num-traits-0.2.17 \
-		packed_simd-0.3.9 \
+		memmap2-0.9.4 \
 		pcre2-0.2.6 \
 		pcre2-sys-0.2.8 \
-		pkg-config-0.3.28 \
-		proc-macro2-1.0.76 \
+		pkg-config-0.3.30 \
+		proc-macro2-1.0.78 \
 		quote-1.0.35 \
-		regex-1.10.2 \
-		regex-automata-0.4.3 \
+		regex-1.10.3 \
+		regex-automata-0.4.6 \
 		regex-syntax-0.8.2 \
-		ryu-1.0.16 \
+		ryu-1.0.17 \
 		same-file-1.0.6 \
-		serde-1.0.195 \
-		serde_derive-1.0.195 \
-		serde_json-1.0.111 \
-		syn-2.0.48 \
-		termcolor-1.4.0 \
-		textwrap-0.16.0 \
+		serde-1.0.197 \
+		serde_derive-1.0.197 \
+		serde_json-1.0.114 \
+		syn-2.0.52 \
+		termcolor-1.4.1 \
+		textwrap-0.16.1 \
 		unicode-ident-1.0.12 \
-		walkdir-2.4.0 \
+		walkdir-2.5.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.6 \
