@@ -10,14 +10,14 @@ WWW=		https://karlsruhemis.github.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_armv7=	gcc13 fails: error: use of built-in trait '__remove_cvref(_InIter1)' in function signature, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=278630
+#BROKEN_armv7=	gcc13 fails: error: use of built-in trait '__remove_cvref(_InIter1)' in function signature, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=278630
 
 USES=		cmake
 USE_LDCONFIG=	yes
 
-.if !exists(/usr/include/omp.h)
-USES+=		compiler:gcc-c++11-lib
-.endif
+#.if !exists(/usr/include/omp.h)
+#USES+=		compiler:gcc-c++11-lib
+#.endif
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	KarlsruheMIS
