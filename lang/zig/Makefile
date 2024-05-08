@@ -1,12 +1,8 @@
 PORTNAME=	zig
-DISTVERSION=	0.11.0
-PORTREVISION=	1
+DISTVERSION=	0.12.0
 CATEGORIES=	lang
 MASTER_SITES=	https://ziglang.org/download/${DISTVERSION}/ \
 		https://ziglang.org/builds/
-# fetch prebuilt platform-independent docs
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		zig-freebsd-x86_64-${DISTVERSION}${EXTRACT_SUFX}
 
 PATCH_SITES=	https://github.com/ziglang/${PORTNAME}/commit/
 
@@ -40,7 +36,7 @@ STATIC_RUN_DEPENDS_OFF=	llvm${_LLVM_VER}>=0:devel/llvm${_LLVM_VER}
 STATIC_CMAKE_BOOL=	ZIG_STATIC
 STATIC_LDFLAGS=		-licudata -licuuc -llzma -lm -lmd -lxml2 -lz -lzstd
 
-_LLVM_VER=	16
+_LLVM_VER=	17
 _ZIG_BIN=	${STAGEDIR}${PREFIX}/bin/zig
 
 post-configure-STATIC-on:
@@ -53,8 +49,8 @@ post-install:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/std
-.for f in langref.html std/data.js std/main.js std/index.html
-	${INSTALL_MAN} ${WRKDIR}/zig-freebsd-x86_64-${DISTVERSION}/doc/${f} \
+.for f in index.html main.js
+	${INSTALL_MAN} ${WRKSRC}/lib/docs/${f} \
 		${STAGEDIR}${DOCSDIR}/${f}
 .endfor
 

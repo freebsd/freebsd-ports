@@ -11,7 +11,7 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols \
-		zig>=0.11.0:lang/zig
+		zig011>=0.11.0:lang/zig011
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	unix-selfauth-helper>0:security/unix-selfauth-helper

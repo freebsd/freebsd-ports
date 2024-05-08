@@ -9,8 +9,8 @@ WWW=		https://github.com/zigtools/zls
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zig>=0.11.0:lang/zig
-RUN_DEPENDS=	zig:lang/zig
+BUILD_DEPENDS=	zig011>=0.11.0:lang/zig011
+RUN_DEPENDS=	zig:lang/zig011
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zigtools

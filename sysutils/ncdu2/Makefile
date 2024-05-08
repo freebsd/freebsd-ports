@@ -12,7 +12,7 @@ WWW=		https://dev.yorhel.nl/ncdu \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSES/MIT.txt
 
-BUILD_DEPENDS=	zig>=0.11<0.11_99:lang/zig
+BUILD_DEPENDS=	zig011>=0.11<0.11_99:lang/zig011
 
 USES=		ncurses
 

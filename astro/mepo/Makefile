@@ -11,7 +11,7 @@ LICENSE=	GPLv3+ OFL11
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zig>=0.11.0:lang/zig
+BUILD_DEPENDS=	zig011>=0.11.0:lang/zig011
 LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	jq:textproc/jq
 
