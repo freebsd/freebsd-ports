@@ -12,6 +12,8 @@ WWW=		https://web.archive.org/web/20201126135328/http://allacrost.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		uses incompatible C++ features from different C++ standards that can't be built together due to feature deprecation restrictions
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
