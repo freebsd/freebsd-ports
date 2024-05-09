@@ -7,20 +7,16 @@ include/PCSC/winscard.h
 include/PCSC/wintypes.h
 lib/libpcsclite.so
 lib/libpcsclite.so.1
-lib/libpcsclite.so.1.0.0
+lib/libpcsclite_real.so
+lib/libpcsclite_real.so.1
 lib/libpcscspy.so
 lib/libpcscspy.so.0
-lib/libpcscspy.so.0.0.0
 libdata/pkgconfig/libpcsclite.pc
 sbin/pcscd
-%%PORTDOCS%%%%DOCSDIR%%/README.polkit
-%%PORTDOCS%%%%DOCSDIR%%/install_spy.sh
-%%PORTDOCS%%%%DOCSDIR%%/uninstall_spy.sh
+%%PORTDOCS%%%%DOCSDIR%%/setup_spy.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.am
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcsc_demo.c
 share/man/man1/pcsc-spy.1.gz
-share/man/man5/reader.conf.5.gz
 share/man/man8/pcscd.8.gz
 %%POLKIT%%share/polkit-1/actions/org.debian.pcsc-lite.policy
 @dir lib/pcsc/services
