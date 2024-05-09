@@ -1,3 +1,37 @@
+  <vuln vid="d53c30c1-0d7b-11ef-ba02-6cc21735f730">
+    <topic>PostgreSQL server -- Potentially allowing authenicated database users to see data that they shouldn't.</topic>
+    <affects>
+      <package>
+	<name>postgresql-server</name>
+	<range><lt>16.3</lt></range>
+	<range><lt>15.7</lt></range>
+	<range><lt>14.12</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL project reports:</p>
+	<blockquote cite="https://www.postgresql.org/support/security/CVE-2024-4317/">
+	  <p>
+	    A security vulnerability was found in the system views pg_stats_ext
+	    and pg_stats_ext_exprs, potentially allowing authenticated database
+	    users to see data they shouldn't.  If this is of concern in your
+	    installation, run the SQL script /usr/local/share/postgresql/fix-CVE-2024-4317.sql
+	    for each of your databases. See the link for details.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-4317</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2024-4317/</url>
+    </references>
+    <dates>
+      <discovery>2024-05-09</discovery>
+      <entry>2024-05-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ee6936da-0ddd-11ef-9c21-901b0e9408dc">
     <topic>tailscale -- Insufficient inbound packet filtering in subnet routers and exit nodes</topic>
     <affects>
