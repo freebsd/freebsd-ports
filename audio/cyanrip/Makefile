@@ -5,7 +5,8 @@ PORTREVISION=	1
 CATEGORIES=	audio
 
 PATCH_SITES=	https://github.com/cyanreg/${PORTNAME}/commit/
-PATCHFILES=	e75ed1c51d333ec37bb51fbfb7597ca4059cc298.patch:-p1
+PATCHFILES=	e75ed1c51d333ec37bb51fbfb7597ca4059cc298.patch:-p1 \
+		5a3b98a0d060c76678385026cadf5cd5565bc9a6.patch:-p1
 
 MAINTAINER=	diizzy@FreeBSD.org
 COMMENT=	Audio CD ripper with command-line interface and focus on accuracy
