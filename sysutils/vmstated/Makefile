@@ -1,6 +1,5 @@
 PORTNAME=	vmstated
-DISTVERSION=	0.04
-PORTREVISION=	1
+DISTVERSION=	0.10
 CATEGORIES=	sysutils
 
 MAINTAINER=	freebsd@ny-central.org
@@ -9,15 +8,14 @@ WWW=		https://github.com/christian-moerz/vmstated
 
 LICENSE=	BSD2CLAUSE
 
+ONLY_FOR_ARCHS=	aarch64 amd64
+NOT_FOR_ARCHS_REASON=	only available where bhyve is
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	christian-moerz
 GH_PROJECT=	vmstated
 
 post-patch:
 	${REINPLACE_CMD} "s@PREFIX@${PREFIX}@g" "${WRKSRC}/rc/vmstated"
-	# Fix man path
-	${REINPLACE_CMD} \
-		'20 s|$${MANPREFIX}|$${PREFIX}/share|' \
-		"${WRKSRC}/src/vmstatedctl/Makefile"
 
 .include <bsd.port.mk>

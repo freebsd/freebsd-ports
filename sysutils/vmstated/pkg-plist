@@ -1,5 +1,9 @@
 bin/vmstatedctl
 etc/rc.d/vmstated
+%%ETCDIR%%/testvm/bhyve.conf.sample
+%%ETCDIR%%/testvm/config.sample
+%%ETCDIR%%/testvm/start_network.sample
+%%ETCDIR%%/testvm/stop_network.sample
 sbin/vmstated
 share/man/man1/vmstatedctl.1.gz
 share/man/man8/vmstated.8.gz
