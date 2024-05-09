@@ -4,6 +4,9 @@ CATEGORIES=	dns
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${DISTVERSION}
 
+PATCH_SITES=	https://github.com/PowerDNS/pdns/commit/
+PATCHFILES=	c6b1e59f3b413493551910a7d0a3e9206d488599.patch:-p1
+
 MAINTAINER=	tremere@cainites.net
 COMMENT=	Advanced DNS server with multiple backends including SQL
 WWW=		https://www.powerdns.com/auth.html
