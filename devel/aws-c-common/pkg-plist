@@ -60,7 +60,6 @@ include/aws/common/posix/common.inl
 include/aws/common/predicates.h
 include/aws/common/priority_queue.h
 include/aws/common/process.h
-include/aws/common/promise.h
 include/aws/common/ref_count.h
 include/aws/common/ring_buffer.h
 include/aws/common/ring_buffer.inl
