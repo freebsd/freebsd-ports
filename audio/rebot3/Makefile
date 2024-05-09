@@ -11,6 +11,9 @@ WWW=		http://www.headmqa.com/rebot3/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on legacy service/protocol that's requires registration
+EXPIRATION_DATE=2024-05-31
+
 RUN_DEPENDS=	p5-CDDB>=0:audio/p5-CDDB \
 		p5-MP3-ID3v1Tag>=0:audio/p5-MP3-ID3v1Tag
 
