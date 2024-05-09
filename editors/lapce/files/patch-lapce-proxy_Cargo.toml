@@ -1,13 +1,11 @@
-Do not use vendored openssl
-
---- lapce-proxy/Cargo.toml.orig	2023-11-01 10:54:40 UTC
+--- lapce-proxy/Cargo.toml.orig	2024-05-08 07:36:00 UTC
 +++ lapce-proxy/Cargo.toml
-@@ -48,7 +48,7 @@ libc = "0.2"
- libc = "0.2"
+@@ -51,7 +51,7 @@ libc          = "0.2"
+ libc          = "0.2"
  
  # git
--git2 = { version = "0.18.1", features = ["vendored-openssl"] }
-+git2 = { version = "0.18.1" }
+-git2 = { version = "0.18.2", features = ["vendored-openssl"] }
++git2 = { version = "0.18.2" }
  
  # deleting files
  trash = "3.0.6"
