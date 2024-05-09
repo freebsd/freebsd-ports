@@ -1,5 +1,6 @@
 PORTNAME=	veloren
 PORTVERSION=	s20240509
+PORTREVISION=	1
 CATEGORIES=	games wayland
 PKGNAMESUFFIX=	-weekly
 
@@ -18,7 +19,8 @@ ONLY_FOR_ARCHS_REASON=	unsupported platform by https://github.com/wasmerio/wasme
 LIB_DEPENDS=	libzstd.so:archivers/zstd \
 		libasound.so:audio/alsa-lib \
 		libudev.so:devel/libudev-devd \
-		libshaderc_shared.so:graphics/shaderc
+		libshaderc_shared.so:graphics/shaderc \
+		libxkbcommon-x11.so:x11/libxkbcommon
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins \
 		${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
 
