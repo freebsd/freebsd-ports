@@ -62,10 +62,22 @@ NB. If you're not using a checksumming filesystem like ZFS, you might
     wish to enable data checksumming. It can be enabled during
     the initdb phase, by adding the "--data-checksums" flag to
     the postgresql_initdb_flags rcvar. Otherwise you can enable it later by
-    pg_checksums.  Check the initdb(1) manpage for more info
+    using pg_checksums.  Check the initdb(1) manpage for more info
     and make sure you understand the performance implications.
 
 ======================================================================
+
+SECURITY ADVICE
+
+If upgradring from a version 15.x < 15.7:
+A security vulnerability was found in the system views pg_stats_ext
+and pg_stats_ext_exprs, potentially allowing authenticated database
+users to see data they shouldn't.  If this is of concern in your
+installation, run the SQL script %%DATADIR%%/fix-CVE-2024-4317.sql
+for each of your databases. For details, see
+https://www.postgresql.org/support/security/CVE-2024-4317/
+
+
 EOM
 }
 ]

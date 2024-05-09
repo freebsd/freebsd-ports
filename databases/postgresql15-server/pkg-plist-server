@@ -786,6 +786,7 @@ lib/postgresql/utf8_and_win.so
 %%DATADIR%%/errcodes.txt
 %%DATADIR%%/extension/plpgsql--1.0.sql
 %%DATADIR%%/extension/plpgsql.control
+%%DATADIR%%/fix-CVE-2024-4317.sql
 %%DATADIR%%/information_schema.sql
 %%DATADIR%%/pg_hba.conf.sample
 %%DATADIR%%/pg_ident.conf.sample

@@ -1,5 +1,5 @@
 PORTNAME?=	postgresql
-DISTVERSION?=	16.2
+DISTVERSION?=	16.3
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
 PORTREVISION?=	0
@@ -81,7 +81,7 @@ CONFIGURE_ENV+=	PATH=${PREFIX}/bin:${PATH}
 .endif
 
 .if defined(SERVER_ONLY)
-OPTIONS_DEFINE=	DTRACE LDAP INTDATE TZDATA XML DOCS
+OPTIONS_DEFINE=	DTRACE LDAP TZDATA XML DOCS
 LDAP_DESC=	Build with LDAP authentication support
 TZDATA_DESC=	Use internal timezone database
 XML_DESC=	Build with XML data type
@@ -113,12 +113,6 @@ LLVM_CONFIGURE_WITH=	llvm
 LLVM_CONFIGURE_ENV=	LLVM_CONFIG=${LLVM_CONFIG} \
 			CLANG=${LOCALBASE}/bin/clang${LLVM_VERSION}
 LLVM_USES=		llvm:max=15,min=11,lib
-
-# See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
-# (requires dump/restore if modified.)
-OPTIONS_DEFINE+=	INTDATE
-INTDATE_DESC=		Builds with 64-bit date/time type
-OPTIONS_DEFAULT+=	INTDATE
 
 CONFIGURE_ARGS+=	--with-icu
 LIB_DEPENDS+=		libicudata.so:devel/icu
@@ -161,8 +155,6 @@ XML_CONFIGURE_WITH=	libxml
 XML_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 TZDATA_CONFIGURE_OFF=	--with-system-tzdata=/usr/share/zoneinfo
-
-INTDATE_CONFIGURE_OFF=	--disable-integer-datetimes
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
