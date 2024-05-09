@@ -5,7 +5,7 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-202408:
+20240508:
   AFFECTS: www/oauth2-proxy
   AUTHOR: netchild@FreeBSD.org
 
