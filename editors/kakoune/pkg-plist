@@ -63,6 +63,7 @@ libexec/kak/kak
 %%DATADIR%%/rc/filetype/d.kak
 %%DATADIR%%/rc/filetype/dart.kak
 %%DATADIR%%/rc/filetype/dhall.kak
+%%DATADIR%%/rc/filetype/diff-parse.pl
 %%DATADIR%%/rc/filetype/diff.kak
 %%DATADIR%%/rc/filetype/dockerfile.kak
 %%DATADIR%%/rc/filetype/elixir.kak
@@ -84,6 +85,8 @@ libexec/kak/kak
 %%DATADIR%%/rc/filetype/gluon.kak
 %%DATADIR%%/rc/filetype/go.kak
 %%DATADIR%%/rc/filetype/graphql.kak
+%%DATADIR%%/rc/filetype/gren.kak
+%%DATADIR%%/rc/filetype/groovy.kak
 %%DATADIR%%/rc/filetype/haml.kak
 %%DATADIR%%/rc/filetype/hare.kak
 %%DATADIR%%/rc/filetype/haskell.kak
@@ -117,10 +120,12 @@ libexec/kak/kak
 %%DATADIR%%/rc/filetype/ninja.kak
 %%DATADIR%%/rc/filetype/nix.kak
 %%DATADIR%%/rc/filetype/ocaml.kak
+%%DATADIR%%/rc/filetype/odin.kak
 %%DATADIR%%/rc/filetype/pascal.kak
 %%DATADIR%%/rc/filetype/perl.kak
 %%DATADIR%%/rc/filetype/php.kak
 %%DATADIR%%/rc/filetype/pony.kak
+%%DATADIR%%/rc/filetype/prolog.kak
 %%DATADIR%%/rc/filetype/protobuf.kak
 %%DATADIR%%/rc/filetype/pug.kak
 %%DATADIR%%/rc/filetype/purescript.kak
@@ -141,6 +146,7 @@ libexec/kak/kak
 %%DATADIR%%/rc/filetype/swift.kak
 %%DATADIR%%/rc/filetype/systemd.kak
 %%DATADIR%%/rc/filetype/taskpaper.kak
+%%DATADIR%%/rc/filetype/tcl.kak
 %%DATADIR%%/rc/filetype/terraform.kak
 %%DATADIR%%/rc/filetype/toml.kak
 %%DATADIR%%/rc/filetype/troff.kak
@@ -162,13 +168,18 @@ libexec/kak/kak
 %%DATADIR%%/rc/tools/git.kak
 %%DATADIR%%/rc/tools/go/gopls.kak
 %%DATADIR%%/rc/tools/grep.kak
+%%DATADIR%%/rc/tools/jump.kak
 %%DATADIR%%/rc/tools/lint.asciidoc
 %%DATADIR%%/rc/tools/lint.kak
 %%DATADIR%%/rc/tools/make.kak
 %%DATADIR%%/rc/tools/man.kak
+%%DATADIR%%/rc/tools/menu.kak
+%%DATADIR%%/rc/tools/patch-range.pl
+%%DATADIR%%/rc/tools/patch.kak
 %%DATADIR%%/rc/tools/python/jedi.kak
 %%DATADIR%%/rc/tools/rust/racer.kak
 %%DATADIR%%/rc/tools/spell.kak
+%%DATADIR%%/rc/windowing/appleterminal.kak
 %%DATADIR%%/rc/windowing/detection.kak
 %%DATADIR%%/rc/windowing/iterm.kak
 %%DATADIR%%/rc/windowing/kitty.kak

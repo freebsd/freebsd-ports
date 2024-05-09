@@ -1,5 +1,5 @@
 PORTNAME=	kakoune
-DISTVERSION=	2023.08.05
+DISTVERSION=	2024.05.09
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/mawww/kakoune/releases/download/v${DISTVERSION}/
 
@@ -8,7 +8,7 @@ COMMENT=	Modal code editor with a focus on interactivity
 WWW=		https://kakoune.org
 
 LICENSE=	UNLICENSE
-LICENSE_FILE=	${WRKSRC:H}/UNLICENSE
+LICENSE_FILE=	${WRKSRC}/UNLICENSE
 
 RUN_DEPENDS=	setsid:sysutils/setsid
 
@@ -16,7 +16,6 @@ USES=		compiler:c++20-lang gmake tar:bzip2
 DATADIR=	${PREFIX}/share/kak
 DOCSDIR=	${PREFIX}/share/doc/kak
 PATCH_WRKSRC=	${WRKSRC:H}
-WRKSRC_SUBDIR=	src
 
 OPTIONS_DEFINE=	DEBUG DOCS
 
@@ -24,12 +23,6 @@ DEBUG_MAKE_ARGS=	debug=yes
 DEBUG_MAKE_ARGS_OFF=	debug=no
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 1302506
-PATCHFILES=	344d31f42b8ced12626d4f87a22ffa5a671668fd.patch
-PATCH_SITES=	https://github.com/mawww/kakoune/commit/
-PATCH_DIST_STRIP=	-p1
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/-O3/d' \
