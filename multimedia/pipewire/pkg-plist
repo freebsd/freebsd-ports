@@ -267,12 +267,12 @@ lib/pipewire-0.3/libpipewire-module-protocol-native.so
 lib/pipewire-0.3/libpipewire-module-protocol-pulse.so
 lib/pipewire-0.3/libpipewire-module-protocol-simple.so
 %%PULSEAUDIO%%lib/pipewire-0.3/libpipewire-module-pulse-tunnel.so
-%%PULSEAUDIO%%lib/pipewire-0.3/libpipewire-module-raop-discover.so
+%%AVAHI%%lib/pipewire-0.3/libpipewire-module-raop-discover.so
 lib/pipewire-0.3/libpipewire-module-raop-sink.so
 lib/pipewire-0.3/libpipewire-module-rt.so
 lib/pipewire-0.3/libpipewire-module-rtkit.so
 lib/pipewire-0.3/libpipewire-module-rtp-sap.so
-%%PULSEAUDIO%%lib/pipewire-0.3/libpipewire-module-rtp-session.so
+%%AVAHI%%lib/pipewire-0.3/libpipewire-module-rtp-session.so
 lib/pipewire-0.3/libpipewire-module-rtp-sink.so
 lib/pipewire-0.3/libpipewire-module-rtp-source.so
 lib/pipewire-0.3/libpipewire-module-session-manager.so
@@ -283,7 +283,7 @@ lib/pipewire-0.3/libpipewire-module-spa-node.so
 lib/pipewire-0.3/libpipewire-module-vban-recv.so
 lib/pipewire-0.3/libpipewire-module-vban-send.so
 %%X11_BELL%%lib/pipewire-0.3/libpipewire-module-x11-bell.so
-%%PULSEAUDIO%%lib/pipewire-0.3/libpipewire-module-zeroconf-discover.so
+%%AVAHI%%lib/pipewire-0.3/libpipewire-module-zeroconf-discover.so
 lib/spa-0.2/aec/libspa-aec-null.so
 lib/spa-0.2/aec/libspa-aec-webrtc.so
 lib/spa-0.2/audioconvert/libspa-audioconvert.so

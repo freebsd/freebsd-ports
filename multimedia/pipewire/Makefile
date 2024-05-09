@@ -1,5 +1,6 @@
 PORTNAME=	pipewire
 DISTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -29,9 +30,14 @@ GL_SITE=	https://gitlab.freedesktop.org
 SHEBANG_FILES=	doc/*.py
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		DOCS DOXYGEN GSTREAMER JACK LV2 PULSEAUDIO SDL VULKAN X11_BELL
-OPTIONS_DEFAULT=	GSTREAMER JACK
+OPTIONS_DEFINE=		AVAHI DOCS DOXYGEN GSTREAMER JACK LV2 PULSEAUDIO SDL VULKAN X11_BELL
+OPTIONS_DEFAULT=	GSTREAMER PULSEAUDIO
 OPTIONS_SUB=		yes
+
+AVAHI_DESC=		Automatic service discovery for the Pulseaudio module via Avahi
+AVAHI_IMPLIES=		PULSEAUDIO
+AVAHI_MESON_ENABLED=	avahi
+AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_MESON_ENABLED=	docs
@@ -47,10 +53,8 @@ LV2_DESC=		Support lv2-based audio plugins via lilv
 LV2_LIB_DEPENDS=	liblilv-0.so:audio/lilv
 LV2_MESON_ENABLED=	lv2
 
-PULSEAUDIO_MESON_ENABLED=	avahi libpulse
-PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio \
-				libavahi-common.so:net/avahi-app \
-				libavahi-client.so:net/avahi-app
+PULSEAUDIO_MESON_ENABLED=	libpulse
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 
 SDL_MESON_ENABLED=	sdl2
 SDL_USES=		sdl
@@ -70,7 +74,7 @@ X11_BELL_MESON_ENABLED=	libcanberra x11 x11-xfixes
 MESON_ARGS=	-D pw-cat=enabled \
 		-D v4l2=enabled \
 		-D raop=enabled \
-		-Dsession-managers='[]' \
+		-D session-managers='[]' \
 		-D alsa=disabled \
 		-D pipewire-alsa=disabled \
 		-D avb=disabled \
@@ -78,7 +82,7 @@ MESON_ARGS=	-D pw-cat=enabled \
 		-D man=disabled \
 		-D libcamera=disabled \
 		-D roc=disabled \
-		-Dselinux=disabled \
+		-D selinux=disabled \
 		-D systemd=disabled \
 		-D pipewire-v4l2=disabled \
 		-D libmysofa=disabled \
