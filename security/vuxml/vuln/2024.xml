@@ -1,3 +1,52 @@
+  <vuln vid="fbc2c629-0dc5-11ef-9850-001b217b3468">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>16.11.0</ge><lt>16.11.2</lt></range>
+	<range><ge>16.10.0</ge><lt>16.10.5</lt></range>
+	<range><ge>10.6.0</ge><lt>16.9.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/05/08/patch-release-gitlab-16-11-2-released/">
+	  <p>ReDoS in branch search when using wildcards</p>
+	  <p>ReDoS in markdown render pipeline</p>
+	  <p>Redos on Discord integrations</p>
+	  <p>Redos on Google Chat Integration</p>
+	  <p>Denial of Service Attack via Pin Menu</p>
+	  <p>DoS by filtering tags and branches via the API</p>
+	  <p>MR approval via CSRF in SAML SSO</p>
+	  <p>Banned user from groups can read issues updates via the api</p>
+	  <p>Require confirmation before linking JWT identity</p>
+	  <p>View confidential issues title and description of any public project via export</p>
+	  <p>SSRF via Github importer</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-2878</cvename>
+      <cvename>CVE-2024-2651</cvename>
+      <cvename>CVE-2023-6682</cvename>
+      <cvename>CVE-2023-6688</cvename>
+      <cvename>CVE-2024-2454</cvename>
+      <cvename>CVE-2024-4539</cvename>
+      <cvename>CVE-2024-4597</cvename>
+      <cvename>CVE-2024-1539</cvename>
+      <cvename>CVE-2024-1211</cvename>
+      <cvename>CVE-2024-3976</cvename>
+      <cvename>CVE-2023-6195</cvename>
+      <url>https://about.gitlab.com/releases/2024/05/08/patch-release-gitlab-16-11-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-05-08</discovery>
+      <entry>2024-05-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="059a99a9-45e0-492b-b9f9-5a79573c8eb6">
     <topic>electron29 -- multiple vulnerabilities</topic>
     <affects>
