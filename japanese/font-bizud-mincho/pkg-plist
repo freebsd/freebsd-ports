@@ -1,0 +1,8 @@
+%%FONTSDIR%%/BIZUDMincho-Bold.ttf
+%%FONTSDIR%%/BIZUDMincho-Regular.ttf
+%%FONTSDIR%%/BIZUDPMincho-Bold.ttf
+%%FONTSDIR%%/BIZUDPMincho-Regular.ttf
+etc/fonts/conf.avail/20-unhint-bizud-mincho.conf
+etc/fonts/conf.avail/62-fonts-bizud-mincho.conf
+etc/fonts/conf.d/20-unhint-bizud-mincho.conf
+etc/fonts/conf.d/62-fonts-bizud-mincho.conf

@@ -62,6 +62,7 @@
     SUBDIR += font-aozoramincho
     SUBDIR += font-ayu18
     SUBDIR += font-ayu20
+    SUBDIR += font-bizud-mincho
     SUBDIR += font-cica
     SUBDIR += font-elisa10
     SUBDIR += font-elisa8
