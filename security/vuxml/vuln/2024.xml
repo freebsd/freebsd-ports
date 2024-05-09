@@ -1,3 +1,35 @@
+  <vuln vid="ec994672-5284-49a5-a7fc-93c02126e5fb">
+    <topic>electron29 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron29</name>
+	<range><lt>29.3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v29.3.3">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-3914.</li>
+	    <li>Security: backported fix for CVE-2024-4558.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-3914</cvename>
+      <url>https://github.com/advisories/GHSA-jv87-hfr8-8j2r</url>
+      <cvename>CVE-2024-4558</cvename>
+      <url>https://github.com/advisories/GHSA-r4j8-j63p-24j8</url>
+    </references>
+    <dates>
+      <discovery>2024-05-09</discovery>
+      <entry>2024-05-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fbc2c629-0dc5-11ef-9850-001b217b3468">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
