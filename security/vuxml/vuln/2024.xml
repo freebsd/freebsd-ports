@@ -1,3 +1,33 @@
+  <vuln vid="ee6936da-0ddd-11ef-9c21-901b0e9408dc">
+    <topic>tailscale -- Insufficient inbound packet filtering in subnet routers and exit nodes</topic>
+    <affects>
+      <package>
+	<name>tailscale</name>
+	<range><lt>1.66.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tailscale team reports:</p>
+	<blockquote cite="https://tailscale.com/security-bulletins#ts-2024-005">
+	  <p>In Tailscale versions earlier than 1.66.0, exit nodes,
+	  subnet routers, and app connectors, could allow inbound
+	  connections to other tailnet nodes from their local area
+	  network (LAN). This vulnerability only affects Linux exit
+	  nodes, subnet routers, and app connectors in tailnets where
+	  ACLs allow "src": "*", such as with default ACLs.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://tailscale.com/security-bulletins#ts-2024-005</url>
+    </references>
+    <dates>
+      <discovery>2024-05-08</discovery>
+      <entry>2024-05-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ec994672-5284-49a5-a7fc-93c02126e5fb">
     <topic>electron29 -- multiple vulnerabilities</topic>
     <affects>
