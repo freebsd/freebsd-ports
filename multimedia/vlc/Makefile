@@ -1,6 +1,6 @@
 PORTNAME=	vlc
 DISTVERSION=	3.0.20
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio net www
 MASTER_SITES=	https://get.videolan.org/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -52,15 +52,16 @@ CONFIGURE_ARGS=	--enable-avcodec --enable-avformat --enable-dvbpsi \
 		--enable-fontconfig --enable-freetype --enable-libgcrypt \
 		--enable-libxml2 --enable-oss --enable-postproc \
 		--enable-swscale --enable-vlc \
-		--disable-alsa --disable-archive --disable-chromaprint --disable-crystalhd \
-		--disable-dc1394 --disable-decklink --disable-dsm \
-		--disable-dv1394 --disable-fdkaac --disable-gst-decode \
-		--disable-gles2 --disable-kai --disable-kate --disable-kva --disable-mpg123 \
-		--disable-vnc --disable-opencv --disable-projectm --disable-schroedinger \
-		--disable-secret --disable-soxr --disable-telx \
-		--disable-tiger --disable-tremor --disable-udev \
-		--disable-update-check --disable-vsxu \
-		--disable-wasapi --disable-x26410b \
+		--disable-alsa --disable-archive --disable-chromaprint \
+		--disable-crystalhd --disable-dc1394 --disable-decklink \
+		--disable-dsm --disable-dv1394 --disable-fdkaac \
+		--disable-gst-decode --disable-gles2 --disable-kai \
+		--disable-kate --disable-kva --disable-libcddb \
+		--disable-mpg123--disable-vnc --disable-opencv \
+		--disable-projectm --disable-schroedinger --disable-secret \
+		--disable-soxr --disable-telx --disable-tiger \
+		--disable-tremor --disable-udev --disable-update-check \
+		--disable-vsxu --disable-wasapi --disable-x26410b \
 		--with-kde-solid=${PREFIX}/share/solid/actions \
 		ac_cv_search_pthread_rwlock_init=-pthread \
 		BUILDCC="${CC}"
@@ -339,8 +340,7 @@ V4L_CONFIGURE_ENABLE=	v4l2
 VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
 VAAPI_CONFIGURE_ENABLE=	libva
 
-VCD_LIB_DEPENDS=	libcddb.so:audio/libcddb
-VCD_CONFIGURE_ENABLE=	vcd libcddb
+VCD_CONFIGURE_ENABLE=	vcd
 
 VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_ENABLE=	vdpau
