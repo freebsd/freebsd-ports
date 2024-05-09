@@ -624,6 +624,7 @@ include/wine/windows/lmcons.h
 include/wine/windows/lmerr.h
 include/wine/windows/lmjoin.h
 include/wine/windows/lmmsg.h
+include/wine/windows/lmremutl.h
 include/wine/windows/lmserver.h
 include/wine/windows/lmshare.h
 include/wine/windows/lmstats.h
