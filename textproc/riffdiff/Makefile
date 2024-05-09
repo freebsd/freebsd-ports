@@ -1,5 +1,5 @@
 PORTNAME=	riffdiff
-DISTVERSION=	3.1.0
+DISTVERSION=	3.1.3
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -53,6 +53,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		lazy_static-1.4.0 \
 		libc-0.2.140 \
 		linux-raw-sys-0.1.4 \
+		log-0.4.21 \
 		memchr-2.5.0 \
 		miniz_oxide-0.4.3 \
 		num_cpus-1.13.0 \
