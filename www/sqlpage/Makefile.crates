@@ -22,12 +22,12 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		allocator-api2-0.2.18 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.6.13 \
-		anstyle-1.0.6 \
-		anstyle-parse-0.2.3 \
-		anstyle-query-1.0.2 \
-		anstyle-wincon-3.0.2 \
-		anyhow-1.0.82 \
+		anstream-0.6.14 \
+		anstyle-1.0.7 \
+		anstyle-parse-0.2.4 \
+		anstyle-query-1.0.3 \
+		anstyle-wincon-3.0.3 \
+		anyhow-1.0.83 \
 		argon2-0.5.3 \
 		asn1-rs-0.5.2 \
 		asn1-rs-derive-0.4.0 \
@@ -37,37 +37,37 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		async-io-2.3.2 \
 		async-lock-3.3.0 \
 		async-net-2.0.0 \
-		async-recursion-1.1.0 \
+		async-recursion-1.1.1 \
 		async-stream-0.3.5 \
 		async-stream-impl-0.3.5 \
-		async-task-4.7.0 \
+		async-task-4.7.1 \
 		async-trait-0.1.80 \
 		async-web-client-0.5.1 \
 		atoi-2.0.0 \
 		atomic-waker-1.1.2 \
-		autocfg-1.2.0 \
+		autocfg-1.3.0 \
 		awc-3.4.0 \
 		backtrace-0.3.71 \
 		base64-0.13.1 \
 		base64-0.21.7 \
-		base64-0.22.0 \
+		base64-0.22.1 \
 		base64ct-1.6.0 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
 		blake2-0.10.6 \
 		block-buffer-0.10.4 \
-		blocking-1.5.1 \
+		blocking-1.6.0 \
 		brotli-3.5.0 \
 		brotli-decompressor-2.5.1 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
 		bytes-1.6.0 \
 		bytestring-1.3.1 \
-		cc-1.0.95 \
+		cc-1.0.97 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
-		colorchoice-1.0.0 \
-		concurrent-queue-2.4.0 \
+		colorchoice-1.0.1 \
+		concurrent-queue-2.5.0 \
 		config-0.14.0 \
 		const-oid-0.9.6 \
 		const-random-0.1.18 \
@@ -91,7 +91,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		darling_core-0.20.8 \
 		darling_macro-0.20.8 \
 		dary_heap-0.3.6 \
-		data-encoding-2.5.0 \
+		data-encoding-2.6.0 \
 		der-0.7.9 \
 		der-parser-8.2.0 \
 		deranged-0.3.11 \
@@ -107,15 +107,15 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		env_filter-0.1.0 \
 		env_logger-0.11.3 \
 		equivalent-1.0.1 \
-		errno-0.3.8 \
+		errno-0.3.9 \
 		event-listener-3.1.0 \
 		event-listener-4.0.3 \
 		event-listener-5.3.0 \
 		event-listener-strategy-0.4.0 \
-		event-listener-strategy-0.5.1 \
-		fastrand-2.0.2 \
+		event-listener-strategy-0.5.2 \
+		fastrand-2.1.0 \
 		finl_unicode-1.2.0 \
-		flate2-1.0.28 \
+		flate2-1.0.30 \
 		flume-0.11.0 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.1 \
@@ -132,16 +132,16 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		futures-task-0.3.30 \
 		futures-util-0.3.30 \
 		generic-array-0.14.7 \
-		getrandom-0.2.14 \
+		getrandom-0.2.15 \
 		gimli-0.28.1 \
 		gloo-net-0.2.6 \
 		gloo-utils-0.1.7 \
 		h2-0.3.26 \
 		handlebars-5.1.2 \
 		hashbrown-0.13.2 \
-		hashbrown-0.14.3 \
-		hashlink-0.8.4 \
-		heck-0.4.1 \
+		hashbrown-0.14.5 \
+		hashlink-0.9.0 \
+		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		hex-0.4.3 \
 		hkdf-0.12.4 \
@@ -161,6 +161,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		include_dir-0.7.3 \
 		include_dir_macros-0.7.3 \
 		indexmap-2.2.6 \
+		is_terminal_polyfill-1.70.0 \
 		itertools-0.12.1 \
 		itoa-1.0.11 \
 		jobserver-0.1.31 \
@@ -171,9 +172,9 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		lambda_runtime_api_client-0.7.0 \
 		language-tags-0.3.2 \
 		lazy_static-1.4.0 \
-		libc-0.2.153 \
-		libflate-2.0.0 \
-		libflate_lz77-2.0.0 \
+		libc-0.2.154 \
+		libflate-2.1.0 \
+		libflate_lz77-2.1.0 \
 		libm-0.2.8 \
 		libredox-0.1.3 \
 		libsqlite3-sys-0.28.0 \
@@ -181,9 +182,9 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		linux-raw-sys-0.4.13 \
 		local-channel-0.1.5 \
 		local-waker-0.1.4 \
-		lock_api-0.4.11 \
+		lock_api-0.4.12 \
 		log-0.4.21 \
-		markdown-1.0.0-alpha.16 \
+		markdown-1.0.0-alpha.17 \
 		md-5-0.10.6 \
 		memchr-2.7.2 \
 		mime-0.3.17 \
@@ -192,12 +193,12 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		miniz_oxide-0.7.2 \
 		mio-0.8.11 \
 		nom-7.1.3 \
-		num-bigint-0.4.4 \
+		num-bigint-0.4.5 \
 		num-bigint-dig-0.8.4 \
 		num-conv-0.1.0 \
 		num-integer-0.1.46 \
-		num-iter-0.1.44 \
-		num-traits-0.2.18 \
+		num-iter-0.1.45 \
+		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
 		object-0.32.2 \
 		oid-registry-0.6.1 \
@@ -205,19 +206,19 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		option-ext-0.2.0 \
 		ordered-multimap-0.6.0 \
 		parking-2.2.0 \
-		parking_lot-0.12.1 \
-		parking_lot_core-0.9.9 \
+		parking_lot-0.12.2 \
+		parking_lot_core-0.9.10 \
 		parse-size-1.0.0 \
 		password-hash-0.5.0 \
-		paste-1.0.14 \
+		paste-1.0.15 \
 		pathdiff-0.2.1 \
 		pem-3.0.4 \
 		pem-rfc7468-0.7.0 \
 		percent-encoding-2.3.1 \
-		pest-2.7.9 \
-		pest_derive-2.7.9 \
-		pest_generator-2.7.9 \
-		pest_meta-2.7.9 \
+		pest-2.7.10 \
+		pest_derive-2.7.10 \
+		pest_generator-2.7.10 \
+		pest_meta-2.7.10 \
 		pin-project-1.1.5 \
 		pin-project-internal-1.1.5 \
 		pin-project-lite-0.2.14 \
@@ -229,13 +230,14 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		polling-3.7.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.81 \
+		proc-macro2-1.0.82 \
 		quote-1.0.36 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		rcgen-0.12.1 \
 		redox_syscall-0.4.1 \
+		redox_syscall-0.5.1 \
 		redox_users-0.4.5 \
 		regex-1.10.4 \
 		regex-automata-0.4.6 \
@@ -245,21 +247,21 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		ron-0.8.1 \
 		rsa-0.9.6 \
 		rust-ini-0.19.0 \
-		rustc-demangle-0.1.23 \
+		rustc-demangle-0.1.24 \
 		rustc_version-0.4.0 \
 		rusticata-macros-4.1.0 \
 		rustix-0.38.34 \
 		rustls-0.22.4 \
 		rustls-acme-0.9.2 \
 		rustls-pemfile-2.1.2 \
-		rustls-pki-types-1.4.1 \
+		rustls-pki-types-1.7.0 \
 		rustls-webpki-0.102.3 \
-		ryu-1.0.17 \
+		ryu-1.0.18 \
 		scopeguard-1.2.0 \
-		semver-1.0.22 \
-		serde-1.0.198 \
-		serde_derive-1.0.198 \
-		serde_json-1.0.116 \
+		semver-1.0.23 \
+		serde-1.0.201 \
+		serde_derive-1.0.201 \
+		serde_json-1.0.117 \
 		serde_plain-1.0.2 \
 		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
@@ -269,26 +271,26 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		signature-2.2.0 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
-		socket2-0.5.6 \
+		socket2-0.5.7 \
 		spin-0.5.2 \
 		spin-0.9.8 \
 		spki-0.7.3 \
 		sqlformat-0.2.3 \
-		sqlparser-0.45.0 \
+		sqlparser-0.46.0 \
 		sqlparser_derive-0.2.2 \
-		sqlx-core-oldapi-0.6.20 \
-		sqlx-macros-oldapi-0.6.20 \
-		sqlx-oldapi-0.6.20 \
-		sqlx-rt-oldapi-0.6.20 \
+		sqlx-core-oldapi-0.6.22 \
+		sqlx-macros-oldapi-0.6.22 \
+		sqlx-oldapi-0.6.22 \
+		sqlx-rt-oldapi-0.6.22 \
 		stringprep-0.1.4 \
 		strsim-0.10.0 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.60 \
+		syn-2.0.61 \
 		synstructure-0.12.6 \
 		tempfile-3.10.1 \
-		thiserror-1.0.59 \
-		thiserror-impl-1.0.59 \
+		thiserror-1.0.60 \
+		thiserror-impl-1.0.60 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
@@ -299,7 +301,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		tokio-macros-2.2.0 \
 		tokio-rustls-0.25.0 \
 		tokio-stream-0.1.15 \
-		tokio-util-0.7.10 \
+		tokio-util-0.7.11 \
 		toml-0.8.12 \
 		toml_datetime-0.6.5 \
 		toml_edit-0.22.12 \
@@ -358,12 +360,12 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.5 \
-		winnow-0.6.6 \
+		winnow-0.6.8 \
 		x509-parser-0.15.1 \
 		yaml-rust-0.4.5 \
 		yasna-0.5.2 \
-		zerocopy-0.7.32 \
-		zerocopy-derive-0.7.32 \
+		zerocopy-0.7.34 \
+		zerocopy-derive-0.7.34 \
 		zeroize-1.7.0 \
 		zstd-0.13.1 \
 		zstd-safe-7.1.0 \
