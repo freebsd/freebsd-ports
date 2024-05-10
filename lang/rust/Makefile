@@ -153,7 +153,9 @@ do-configure:
 	@cd ${WRKDIR}/${_component}-*-${OPSYS:tl} && \
 		${SH} install.sh --prefix=${WRKDIR}/bootstrap --verbose
 .endfor
+.if !defined(NIGHTLY_DATE)
 	@${ECHO_CMD} 'changelog-seen=2' > ${WRKSRC}/config.toml
+.endif
 	@${ECHO_CMD} '[build]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'build-dir="${WRKDIR}/_build"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'build-stage=2' >> ${WRKSRC}/config.toml
