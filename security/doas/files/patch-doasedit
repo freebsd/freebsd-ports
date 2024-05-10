@@ -1,4 +1,4 @@
---- doasedit.orig	2021-09-13 18:56:31 UTC
+--- doasedit.orig	2024-05-10 17:16:18 UTC
 +++ doasedit
 @@ -30,7 +30,7 @@ then
     exit 3
@@ -6,6 +6,6 @@
  
 -temp_file=$(mktemp --tmpdir doasedit.XXXXXXXX)
 +temp_file=$(mktemp -t /tmp)
- if [ ! $? ]
+ if [ ! -r "$temp_file" ]
  then
-    echo "Could not create temporary file."
+    echo "Was unable to create temporary file."
