@@ -1,5 +1,5 @@
 PORTNAME=	monaspace
-DISTVERSION=	1.000
+DISTVERSION=	1.101
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/githubnext/monaspace/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}
