@@ -79,6 +79,11 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
+.if ${PORT_OPTIONS:ML0}
+# PR 278869 - level-zero is broken
+IGNORE=	is currently not working with the L0 option. Unset L0
+.endif
+
 .if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} == 170
 # linker error when compiling with llvm 17.0.6 on CURRENT - PR 276035
 # To be removed with llvm-18
