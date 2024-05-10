@@ -1,23 +1,18 @@
---- Makefile.orig	2023-08-24 16:20:21 UTC
+--- Makefile.orig	2024-04-30 17:45:14 UTC
 +++ Makefile
-@@ -210,7 +210,6 @@ endif
- JL_PRIVATE_LIBS-$(USE_SYSTEM_LAPACK) += $(LIBLAPACKNAME)
- endif
- 
--JL_PRIVATE_LIBS-$(USE_SYSTEM_CSL) += libgfortran libquadmath libstdc++ libgcc_s libgomp libssp libatomic
- ifeq ($(OS),Darwin)
- JL_PRIVATE_LIBS-$(USE_SYSTEM_CSL) += libc++
- endif
-@@ -236,7 +235,7 @@ endef
+@@ -265,9 +265,9 @@ endef
  endef
  
  
--install: $(build_depsbindir)/stringreplace $(BUILDROOT)/doc/_build/html/en/index.html
+-install: $(build_depsbindir)/stringreplace docs
 +install: $(build_depsbindir)/stringreplace
  	@$(MAKE) $(QUIET_MAKE) $(JULIA_BUILD_MODE)
- 	@for subdir in $(bindir) $(datarootdir)/julia/stdlib/$(VERSDIR) $(docdir) $(man1dir) $(includedir)/julia $(libdir) $(private_libdir) $(sysconfdir) $(private_libexecdir); do \
+-	@for subdir in $(bindir) $(datarootdir)/julia/stdlib/$(VERSDIR) $(docdir) $(man1dir) $(includedir)/julia $(libdir) $(private_libdir) $(sysconfdir) $(private_libexecdir); do \
++	@for subdir in $(bindir) $(datarootdir)/julia/stdlib/$(VERSDIR) $(man1dir) $(includedir)/julia $(libdir) $(private_libdir) $(sysconfdir) $(private_libexecdir); do \
  		mkdir -p $(DESTDIR)$$subdir; \
-@@ -339,8 +338,6 @@ endif
+ 	done
+ 
+@@ -366,8 +366,6 @@ endif
  	cp -R -L $(JULIAHOME)/base/* $(DESTDIR)$(datarootdir)/julia/base
  	cp -R -L $(JULIAHOME)/test/* $(DESTDIR)$(datarootdir)/julia/test
  	cp -R -L $(build_datarootdir)/julia/* $(DESTDIR)$(datarootdir)/julia
@@ -26,46 +21,26 @@
  	# Remove various files which should not be installed
  	-rm -f $(DESTDIR)$(datarootdir)/julia/base/version_git.sh
  	-rm -f $(DESTDIR)$(datarootdir)/julia/test/Makefile
-@@ -350,12 +347,6 @@ endif
- 	-rm -f $(DESTDIR)$(datarootdir)/julia/stdlib/$(VERSDIR)/*/build-checked
- 	# Copy in beautiful new man page
- 	$(INSTALL_F) $(build_man1dir)/julia.1 $(DESTDIR)$(man1dir)/
--	# Copy .desktop file
--	mkdir -p $(DESTDIR)$(datarootdir)/applications/
--	$(INSTALL_F) $(JULIAHOME)/contrib/julia.desktop $(DESTDIR)$(datarootdir)/applications/
--	# Install appdata file
--	mkdir -p $(DESTDIR)$(datarootdir)/appdata/
--	$(INSTALL_F) $(JULIAHOME)/contrib/julia.appdata.xml $(DESTDIR)$(datarootdir)/appdata/
- 
- 	# Update RPATH entries and JL_SYSTEM_IMAGE_PATH if $(private_libdir_rel) != $(build_private_libdir_rel)
- ifneq ($(private_libdir_rel),$(build_private_libdir_rel))
-@@ -430,26 +421,16 @@ endif
- endif
- endif
- 
--ifeq ($(OS),FreeBSD)
--	# On FreeBSD, remove the build's libdir from each library's RPATH
--	$(JULIAHOME)/contrib/fixup-rpath.sh "$(PATCHELF)" $(DESTDIR)$(libdir) $(build_libdir)
--	$(JULIAHOME)/contrib/fixup-rpath.sh "$(PATCHELF)" $(DESTDIR)$(private_libdir) $(build_libdir)
--	$(JULIAHOME)/contrib/fixup-rpath.sh "$(PATCHELF)" $(DESTDIR)$(bindir) $(build_libdir)
--	# Set libgfortran's RPATH to ORIGIN instead of GCCPATH. It's only libgfortran that
--	# needs to be fixed here, as libgcc_s and libquadmath don't have RPATHs set. If we
--	# don't set libgfortran's RPATH, it won't be able to find its friends on systems
--	# that don't have the exact GCC port installed used for the build.
+@@ -462,9 +460,9 @@ ifeq ($(OS),FreeBSD)
+ 	# needs to be fixed here, as libgcc_s and libquadmath don't have RPATHs set. If we
+ 	# don't set libgfortran's RPATH, it won't be able to find its friends on systems
+ 	# that don't have the exact GCC port installed used for the build.
 -	for lib in $(DESTDIR)$(private_libdir)/libgfortran*$(SHLIB_EXT)*; do \
 -		$(PATCHELF) $(PATCHELF_SET_RPATH_ARG) '$$ORIGIN' $$lib; \
 -	done
--endif
--
- 	mkdir -p $(DESTDIR)$(sysconfdir)
- 	cp -R $(build_sysconfdir)/julia $(DESTDIR)$(sysconfdir)/
++	#for lib in $(DESTDIR)$(private_libdir)/libgfortran*$(SHLIB_EXT)*; do \
++	#	$(PATCHELF) $(PATCHELF_SET_RPATH_ARG) '$$ORIGIN' $$lib; \
++	#done
+ endif
  
+ 	mkdir -p $(DESTDIR)$(sysconfdir)
+@@ -473,6 +471,10 @@ endif
  ifeq ($(DARWIN_FRAMEWORK),1)
  	$(MAKE) -C $(JULIAHOME)/contrib/mac/framework frameworknoinstall
  endif
 +
-+install-docs:
-+	#Copy documentation
++install-docs: docs
++	# Copy documentation
 +	cp -R -L $(BUILDROOT)/doc/_build/html $(DESTDIR)$(docdir)/
  
  distclean:

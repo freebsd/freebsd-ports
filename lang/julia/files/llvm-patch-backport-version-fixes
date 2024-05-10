@@ -140,17 +140,21 @@ index 000000000000..0c2a3c38c78c
 @@ -0,0 +1 @@
 +LLVMRemarkVersion
 diff --git openmp/libomptarget/plugins/exports openmp/libomptarget/plugins/exports
-index 8664a2e493ee..cc7beda183af 100644
+index 84381af3724d..cc7beda183af 100644
 --- openmp/libomptarget/plugins/exports
 +++ openmp/libomptarget/plugins/exports
-@@ -1,36 +1,6 @@
+@@ -1,40 +1,6 @@
  VERS1.0 {
    global:
+-    __tgt_rtl_init_plugin;
+-    __tgt_rtl_deinit_plugin;
 -    __tgt_rtl_is_valid_binary;
+-    __tgt_rtl_is_valid_binary_info;
 -    __tgt_rtl_is_data_exchangable;
 -    __tgt_rtl_number_of_devices;
 -    __tgt_rtl_init_requires;
 -    __tgt_rtl_init_device;
+-    __tgt_rtl_deinit_device;
 -    __tgt_rtl_load_binary;
 -    __tgt_rtl_data_alloc;
 -    __tgt_rtl_data_submit;
@@ -182,10 +186,10 @@ index 8664a2e493ee..cc7beda183af 100644
      *;
  };
 diff --git openmp/libomptarget/src/exports openmp/libomptarget/src/exports
-index 0ef4c8cce521..425a6fad49cf 100644
+index 35a665a98c27..cedefc996a29 100644
 --- openmp/libomptarget/src/exports
 +++ openmp/libomptarget/src/exports
-@@ -48,7 +48,6 @@ VERS1.0 {
+@@ -51,7 +51,6 @@ VERS1.0 {
      omp_get_interop_int;
      omp_get_interop_name;
      omp_get_interop_type_desc;
@@ -194,7 +198,7 @@ index 0ef4c8cce521..425a6fad49cf 100644
      __tgt_interop_use;
      __tgt_interop_destroy;
 diff --git openmp/runtime/cmake/LibompHandleFlags.cmake openmp/runtime/cmake/LibompHandleFlags.cmake
-index 9e19e59ba17d..1ddbc870e0f1 100644
+index 6643ea392f80..fb1825df71d6 100644
 --- openmp/runtime/cmake/LibompHandleFlags.cmake
 +++ openmp/runtime/cmake/LibompHandleFlags.cmake
 @@ -98,7 +98,6 @@ function(libomp_get_ldflags ldflags)
@@ -206,7 +210,7 @@ index 9e19e59ba17d..1ddbc870e0f1 100644
    libomp_append(ldflags_local "-Wl,--version-script=${LIBOMP_SRC_DIR}/exports_so.txt" LIBOMP_HAVE_VERSION_SCRIPT_FLAG)
    libomp_append(ldflags_local -static-libgcc LIBOMP_HAVE_STATIC_LIBGCC_FLAG)
 diff --git openmp/runtime/cmake/config-ix.cmake openmp/runtime/cmake/config-ix.cmake
-index 0fe1266b0067..d3806a446743 100644
+index bd7585545b72..f8d52f3c3e43 100644
 --- openmp/runtime/cmake/config-ix.cmake
 +++ openmp/runtime/cmake/config-ix.cmake
 @@ -131,9 +131,8 @@ if(WIN32)
@@ -302,10 +306,10 @@ index 000000000000..912d160e7c06
 +
 +# end of file #
 diff --git openmp/runtime/src/kmp_runtime.cpp openmp/runtime/src/kmp_runtime.cpp
-index e1af2f43dae7..3db713e8c88b 100644
+index b8d470528798..6edbe6d2d74e 100644
 --- openmp/runtime/src/kmp_runtime.cpp
 +++ openmp/runtime/src/kmp_runtime.cpp
-@@ -9156,3 +9156,20 @@ void __kmp_set_nesting_mode_threads() {
+@@ -9181,3 +9181,20 @@ void __kmp_set_nesting_mode_threads() {
    if (__kmp_nesting_mode == 1) // turn on nesting for this case only
      set__max_active_levels(thread, __kmp_nesting_mode_nlevels);
  }
@@ -348,7 +352,7 @@ index 48d31e5ee7b7..5937f8026e39 100644
 +}
 +#endif
 diff --git openmp/runtime/src/z_Linux_util.cpp openmp/runtime/src/z_Linux_util.cpp
-index 5cd6ad6a0339..f6cad7b5320a 100644
+index 91edf0254a77..0669b208ce62 100644
 --- openmp/runtime/src/z_Linux_util.cpp
 +++ openmp/runtime/src/z_Linux_util.cpp
 @@ -987,7 +987,7 @@ void __kmp_exit_thread(int exit_status) {

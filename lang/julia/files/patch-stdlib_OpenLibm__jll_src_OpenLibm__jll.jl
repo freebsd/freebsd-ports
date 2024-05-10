@@ -1,4 +1,4 @@
---- stdlib/OpenLibm_jll/src/OpenLibm_jll.jl.orig	2022-11-21 01:47:29 UTC
+--- stdlib/OpenLibm_jll/src/OpenLibm_jll.jl.orig	2024-04-30 17:45:14 UTC
 +++ stdlib/OpenLibm_jll/src/OpenLibm_jll.jl
 @@ -22,7 +22,7 @@ else
  elseif Sys.isapple()

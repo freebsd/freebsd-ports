@@ -1,4 +1,4 @@
---- stdlib/MbedTLS_jll/src/MbedTLS_jll.jl.orig	2022-11-21 01:45:43 UTC
+--- stdlib/MbedTLS_jll/src/MbedTLS_jll.jl.orig	2024-04-30 17:45:14 UTC
 +++ stdlib/MbedTLS_jll/src/MbedTLS_jll.jl
 @@ -31,9 +31,9 @@ else
      const libmbedtls = "@rpath/libmbedtls.14.dylib"
