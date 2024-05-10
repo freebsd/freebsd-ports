@@ -1,6 +1,6 @@
-%%DOCSDIR%%/ANNOUNCE
+%%DOCSDIR%%/ANNOUNCE.md
 %%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/README
+%%DOCSDIR%%/README.md
 %%PULSEAUDIO%%wine-proton/lib/wine/%%WINEARCH%%-unix/winepulse.so
 %%PULSEAUDIO%%wine-proton/lib/wine/%%WINEARCH%%-windows/winepulse.drv
 %%WINE32%%wine-proton/bin/wine.bin
@@ -77,7 +77,9 @@
 %%WINE64%%wine-proton/bin/wine64.bin
 %%WINE64%%wine-proton/bin/wineserver
 %%WINE64%%wine-proton/lib/wine/%%WINEARCH%%-unix/libwow64.a
-%%WINE64%%wine-proton/lib/wine/%%WINEARCH%%-windows/libwow64.a
+%%WINE64%%wine-proton/lib/wine/%%WINEARCH%%-unix/winewayland.so
+%%WINE64%%wine-proton/lib/wine/%%WINEARCH%%-windows/vcruntime140_1.dll
+%%WINE64%%wine-proton/lib/wine/%%WINEARCH%%-windows/winewayland.drv
 %%WINE64%%wine-proton/lib/wine/%%WINEARCH%%-windows/wow64.dll
 %%WINE64%%wine-proton/lib/wine/%%WINEARCH%%-windows/wow64cpu.dll
 %%WINE64%%wine-proton/lib/wine/%%WINEARCH%%-windows/wow64win.dll
@@ -104,6 +106,7 @@ wine-proton/bin/winemine
 wine-proton/bin/winepath
 wine-proton/bin/wmc
 wine-proton/bin/wrc
+wine-proton/lib/wine/%%WINEARCH%%-unix/amd_ags_x64.so
 wine-proton/lib/wine/%%WINEARCH%%-unix/avicap32.so
 wine-proton/lib/wine/%%WINEARCH%%-unix/bcrypt.so
 wine-proton/lib/wine/%%WINEARCH%%-unix/crypt32.so
@@ -125,6 +128,7 @@ wine-proton/lib/wine/%%WINEARCH%%-unix/libavicap32.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libavifil32.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libavrt.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libbcrypt.a
+wine-proton/lib/wine/%%WINEARCH%%-unix/libbluetoothapis.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libcabinet.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libcards.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libcfgmgr32.a
@@ -132,6 +136,7 @@ wine-proton/lib/wine/%%WINEARCH%%-unix/libclusapi.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libcombase.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libcomctl32.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libcomdlg32.a
+wine-proton/lib/wine/%%WINEARCH%%-unix/libcoml2.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libcompstui.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libcomsvcs.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libcredui.a
@@ -315,8 +320,6 @@ wine-proton/lib/wine/%%WINEARCH%%-unix/libwevtapi.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libwin32u.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libwindowscodecs.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libwindowscodecsext.a
-wine-proton/lib/wine/%%WINEARCH%%-unix/libwine.so.1
-wine-proton/lib/wine/%%WINEARCH%%-unix/libwine.so.1.0
 wine-proton/lib/wine/%%WINEARCH%%-unix/libwinecrt0.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libwined3d.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libwinegstreamer.a
@@ -325,7 +328,6 @@ wine-proton/lib/wine/%%WINEARCH%%-unix/libwinhttp.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libwininet.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libwinmm.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libwinnls32.a
-wine-proton/lib/wine/%%WINEARCH%%-unix/libwinscard.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libwinspool.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libwintab32.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libwintrust.a
@@ -339,6 +341,7 @@ wine-proton/lib/wine/%%WINEARCH%%-unix/libwsdapi.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libwsnmp32.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libwsock32.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libwtsapi32.a
+wine-proton/lib/wine/%%WINEARCH%%-unix/libxaudio2_8.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libxinput.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/libxmllite.a
 wine-proton/lib/wine/%%WINEARCH%%-unix/localspl.so
@@ -355,10 +358,10 @@ wine-proton/lib/wine/%%WINEARCH%%-unix/win32u.so
 wine-proton/lib/wine/%%WINEARCH%%-unix/winebus.so
 wine-proton/lib/wine/%%WINEARCH%%-unix/winegstreamer.so
 wine-proton/lib/wine/%%WINEARCH%%-unix/wineoss.so
+wine-proton/lib/wine/%%WINEARCH%%-unix/wineps.so
 wine-proton/lib/wine/%%WINEARCH%%-unix/winevulkan.so
 wine-proton/lib/wine/%%WINEARCH%%-unix/winex11.so
 wine-proton/lib/wine/%%WINEARCH%%-unix/winspool.so
-wine-proton/lib/wine/%%WINEARCH%%-unix/wpcap.so
 wine-proton/lib/wine/%%WINEARCH%%-unix/ws2_32.so
 wine-proton/lib/wine/%%WINEARCH%%-windows/acledit.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/aclui.dll
@@ -375,6 +378,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/amstream.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/apisetschema.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/apphelp.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/appwiz.cpl
+wine-proton/lib/wine/%%WINEARCH%%-windows/appxdeploymentclient.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/arp.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/aspnet_regiis.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/atiadlxx.dll
@@ -392,6 +396,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/avicap32.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/avifil32.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/avrt.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/bcrypt.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/bcryptprimitives.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/belauncher.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/bluetoothapis.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/browseui.dll
@@ -412,6 +417,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/combase.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/comcat.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/comctl32.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/comdlg32.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/coml2.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/compstui.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/comsvcs.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/concrt140.dll
@@ -437,6 +443,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/d3d10.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/d3d10core.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/d3d11.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/d3d12.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/d3d12core.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/d3d8.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/d3d8thk.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/d3d9.dll
@@ -542,6 +549,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/dswave.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/dwmapi.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/dwrite.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/dx8vb.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/dxcore.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/dxdiag.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/dxdiagn.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/dxgi.dll
@@ -570,9 +578,11 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/gameux.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/gamingtcui.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/gdi32.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/gdiplus.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/geolocation.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/getminidump.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/glu32.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/gpkcsp.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/graphicscapture.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/hal.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/hh.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/hhctrl.ocx
@@ -582,8 +592,10 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/hidparse.sys
 wine-proton/lib/wine/%%WINEARCH%%-windows/hlink.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/hnetcfg.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/hostname.exe
+wine-proton/lib/wine/%%WINEARCH%%-windows/hrtfapo.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/http.sys
 wine-proton/lib/wine/%%WINEARCH%%-windows/httpapi.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/hvsimanagementapi.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/ia2comproxy.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/icacls.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/iccvid.dll
@@ -613,6 +625,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/jscript.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/jsproxy.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/kernel32.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/kernelbase.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/klist.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/ksecdd.sys
 wine-proton/lib/wine/%%WINEARCH%%-windows/ksproxy.ax
 wine-proton/lib/wine/%%WINEARCH%%-windows/ksuser.dll
@@ -633,6 +646,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/libavicap32.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libavifil32.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libavrt.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libbcrypt.a
+wine-proton/lib/wine/%%WINEARCH%%-windows/libbluetoothapis.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libcabinet.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libcards.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libcfgmgr32.a
@@ -640,6 +654,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/libclusapi.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libcombase.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libcomctl32.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libcomdlg32.a
+wine-proton/lib/wine/%%WINEARCH%%-windows/libcoml2.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libcompstui.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libcomsvcs.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libcredui.a
@@ -831,7 +846,6 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/libwinhttp.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libwininet.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libwinmm.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libwinnls32.a
-wine-proton/lib/wine/%%WINEARCH%%-windows/libwinscard.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libwinspool.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libwintab32.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libwintrust.a
@@ -840,11 +854,13 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/libwldap32.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libwmcodecdspuuid.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libwmvcore.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libwnaspi32.a
+wine-proton/lib/wine/%%WINEARCH%%-windows/libwow64.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libws2_32.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libwsdapi.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libwsnmp32.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libwsock32.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libwtsapi32.a
+wine-proton/lib/wine/%%WINEARCH%%-windows/libxaudio2_8.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libxinput.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libxmllite.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/light.msstyles
@@ -853,6 +869,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/localspl.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/localui.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/lodctr.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/lz32.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/magnification.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/mapi32.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/mapistub.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/mciavi32.dll
@@ -922,6 +939,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/msscript.ocx
 wine-proton/lib/wine/%%WINEARCH%%-windows/mssign32.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/mssip32.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/mstask.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/msttsengine.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/msv1_0.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/msvcirt.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/msvcm80.dll
@@ -934,6 +952,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/msvcp120.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/msvcp140_1.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/msvcp140_2.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/msvcp140_atomic_wait.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/msvcp140_codecvt_ids.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/msvcp140.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/msvcp60.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/msvcp70.dll
@@ -1009,6 +1028,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/photometadatahandler.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/pidgen.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/ping.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/plugplay.exe
+wine-proton/lib/wine/%%WINEARCH%%-windows/pnputil.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/powershell.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/powrprof.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/presentationfontcache.exe
@@ -1054,6 +1074,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/sapi.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/sas.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/sc.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/scarddlg.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/scardsvr.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/sccbase.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/schannel.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/schedsvc.dll
@@ -1091,6 +1112,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/spoolsv.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/sppc.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/srclient.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/srvcli.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/srvsvc.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/sspicli.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/start.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/stdole2.tlb
@@ -1141,7 +1163,6 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/vcomp110.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/vcomp120.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/vcomp140.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/vcomp90.dll
-wine-proton/lib/wine/%%WINEARCH%%-windows/vcruntime140_1.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/vcruntime140.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/vdmdbg.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/version.dll
@@ -1164,14 +1185,24 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/whoami.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/wiaservc.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/wimgapi.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/win32u.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/windows.applicationmodel.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/windows.devices.bluetooth.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/windows.devices.enumeration.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/windows.devices.usb.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/windows.gaming.input.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/windows.gaming.ui.gamebar.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/windows.globalization.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/windows.media.devices.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/windows.media.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/windows.media.mediacontrol.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/windows.media.speech.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/windows.networking.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/windows.networking.hostname.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/windows.perception.stub.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/windows.security.credentials.ui.userconsentverifier.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/windows.storage.applicationdata.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/windows.system.profile.systemmanufacturers.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/windows.ui.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/windowscodecs.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/windowscodecsext.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/wineboot.exe
@@ -1186,6 +1217,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/winefile.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/winegstreamer.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/winehid.sys
 wine-proton/lib/wine/%%WINEARCH%%-windows/winemapi.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/winemenubuilder.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/winemine.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/winemsibuilder.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/wineoss.drv
@@ -1202,7 +1234,6 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/winmgmt.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/winmm.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/winnls32.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/winprint.dll
-wine-proton/lib/wine/%%WINEARCH%%-windows/winscard.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/winspool.drv
 wine-proton/lib/wine/%%WINEARCH%%-windows/winsta.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/wintab32.dll
@@ -1213,6 +1244,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/winver.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/wlanapi.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/wlanui.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/wldap32.dll
+wine-proton/lib/wine/%%WINEARCH%%-windows/wldp.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/wmasf.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/wmi.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/wmic.exe
@@ -1225,7 +1257,6 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/wnaspi32.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/wofutil.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/wordpad.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/wpc.dll
-wine-proton/lib/wine/%%WINEARCH%%-windows/wpcap.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/write.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/ws2_32.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/wscript.exe
