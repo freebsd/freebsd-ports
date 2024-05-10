@@ -1,6 +1,6 @@
 PORTNAME=	urbackup-server
 DISTVERSION=	2.5.26
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	archivers
 MASTER_SITES=	https://hndl.urbackup.org/Server/${DISTVERSION}/
 
@@ -24,6 +24,14 @@ USE_RC_SUBR=	urbackup_server
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-packaging --with-mountvhd --without-embedded-sqlite3 --without-embedded-lmdb --without-embedded-lua
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+.include <bsd.port.options.mk>
+
+# Fix segmentation fault, PR 266531
+# see also 5a19c08: security/cryptopp: Update to 8.7.0
+.if ${ARCH} == i386 || ${ARCH} == amd64
+CXXFLAGS+=	-DCRYPTOPP_DISABLE_ASM
+.endif
 
 SUB_FILES=	pkg-message urbackupsrv.conf.sample-daemon
 
