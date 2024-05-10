@@ -1,6 +1,6 @@
 PORTNAME=	syncthingtray
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.2
+DISTVERSION=	1.5.3
 CATEGORIES=	deskutils
 
 MAINTAINER=	dsh@bamus.cz
@@ -33,7 +33,7 @@ CMAKE_SOURCE_PATH=	${WRKDIR}/subdirs/syncthingtray
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	Martchus:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION}:syncthingtray/../syncthingtray \
-		Martchus:cpp-utilities:v5.24.7:cpputilities/../c++utilities \
+		Martchus:cpp-utilities:v5.24.8:cpputilities/../c++utilities \
 		Martchus:qtutilities:v6.14.0:qtutilities/../qtutilities \
 		Martchus:qtforkawesome:v0.2.0:qtforkawesome/../qtforkawesome \
 		ForkAwesome:Fork-Awesome:4fef70f:ForkAwesome/../forkawesome \
