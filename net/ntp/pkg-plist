@@ -21,6 +21,7 @@ sbin/ntptime
 sbin/sntp
 sbin/update-leap
 %%PERL_UTILS%%share/ntp/lib/NTP/Util.pm
+%%PORTDOCS%%%%DOCSDIR%%/.datecheck
 %%PORTDOCS%%%%DOCSDIR%%/access.html
 %%PORTDOCS%%%%DOCSDIR%%/accopt.html
 %%PORTDOCS%%%%DOCSDIR%%/assoc.html
@@ -118,6 +119,7 @@ sbin/update-leap
 %%PORTDOCS%%%%DOCSDIR%%/hints/winnt.html
 %%PORTDOCS%%%%DOCSDIR%%/history.html
 %%PORTDOCS%%%%DOCSDIR%%/howto.html
+%%PORTDOCS%%%%DOCSDIR%%/html/.datecheck
 %%PORTDOCS%%%%DOCSDIR%%/html/access.html
 %%PORTDOCS%%%%DOCSDIR%%/html/accopt.html
 %%PORTDOCS%%%%DOCSDIR%%/html/assoc.html

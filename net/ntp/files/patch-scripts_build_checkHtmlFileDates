@@ -1,14 +1,15 @@
---- scripts/build/checkHtmlFileDates.orig	2021-10-15 20:33:38.712582000 -0700
-+++ scripts/build/checkHtmlFileDates	2021-10-15 20:37:19.867441000 -0700
-@@ -1,16 +1,3 @@
- #! /bin/sh
+--- scripts/build/checkHtmlFileDates.orig	2024-05-10 08:05:57.221756000 -0700
++++ scripts/build/checkHtmlFileDates	2024-05-10 08:07:53.965997000 -0700
+@@ -18,17 +18,5 @@
  
--bk version > /dev/null 2>&1 || exit 0
--
--for i in `find * -type f -name '*.html' -print | grep -v SCCS/`
+ # Do nothing if the directory is not a BK repo,
+ # or if BK is not even installed.
+-bk status > /dev/null 2>&1 || exit 0
+ 
+-for i in `echo *.html`
 -do
 -    # echo $i
--    set `bk diffs $i | wc -l`
+-    set `bk diff --normal $i | wc -l`
 -    lines=$1
 -    case "$lines" in
 -     0) ;;
