@@ -1,0 +1,36 @@
+https://github.com/rustls/rustls-native-certs/issues/28
+https://github.com/rustls/rustls-native-certs/commit/8162b232045e
+
+--- cargo-crates/rustls-native-certs-0.6.3/src/unix.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/rustls-native-certs-0.6.3/src/unix.rs
+@@ -1,13 +1,27 @@ use crate::Certificate;
+ use crate::load_pem_certs;
+ use crate::Certificate;
+ 
++use std::fs;
+ use std::io::Error;
+ 
+ pub fn load_native_certs() -> Result<Vec<Certificate>, Error> {
+     let likely_locations = openssl_probe::probe();
+ 
+-    match likely_locations.cert_file {
+-        Some(cert_file) => load_pem_certs(&cert_file),
+-        None => Ok(Vec::new()),
++    let mut certs = match likely_locations.cert_file {
++        Some(cert_file) => load_pem_certs(&cert_file)?,
++        None => Vec::new(),
++    };
++
++    if let Some(cert_dir) = likely_locations.cert_dir {
++        let dir_reader = fs::read_dir(cert_dir)?;
++        for entry in dir_reader {
++            let entry = entry?;
++            let path = entry.path();
++            if fs::metadata(&path)?.is_file() {
++                certs.append(&mut load_pem_certs(&path)?);
++            }
++        }
+     }
++
++    Ok(certs)
+ }
