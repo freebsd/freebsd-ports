@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240509:
+  AFFECTS: databases/timescaledb
+  AUTHOR: kbowling@FreeBSD.org
+
+  The Foreign Key storage in hypertables has changed in an incompatible way,
+  after runing ALTER EXTENSION, you must run the SQL script here:
+  https://github.com/timescale/timescaledb-extras/blob/master/utils/2.15.X-fix_hypertable_foreign_keys.sql
+
+  For more details, see
+
+  https://github.com/timescale/timescaledb/pull/6797
+
 20240508:
   AFFECTS: www/oauth2-proxy
   AUTHOR: netchild@FreeBSD.org
