@@ -1,6 +1,6 @@
 PORTNAME=	urbackup-client
 DISTVERSION=	2.5.20.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	archivers
 MASTER_SITES=	https://hndl.urbackup.org/Client/${DISTVERSION:R}/
 
@@ -39,6 +39,14 @@ GUI_CONFIGURE_OFF=	--enable-headless
 
 CONFFILES=	mariadbdump.conf mariadbxtrabackup.conf postgresbase.conf \
 		postgresqldump.conf
+
+.include <bsd.port.options.mk>
+
+# Fix segmentation fault, PR 266531
+# see also 5a19c08: security/cryptopp: Update to 8.7.0
+.if ${ARCH} == i386 || ${ARCH} == amd64
+CXXFLAGS+=	-DCRYPTOPP_DISABLE_ASM
+.endif
 
 post-patch:
 	@${SED} -i "" -e "s:%%PREFIX%%:${PREFIX}:g" \
