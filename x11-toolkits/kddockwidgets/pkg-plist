@@ -122,6 +122,6 @@ lib/cmake/KDDockWidgets/KDDockWidgetsConfigVersion.cmake
 lib/cmake/KDDockWidgets/KDDockWidgetsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KDDockWidgets/KDDockWidgetsTargets.cmake
 lib/libkddockwidgets.so
-lib/libkddockwidgets.so.2.0
-lib/libkddockwidgets.so.2.0.0
+lib/libkddockwidgets.so.2.1
+lib/libkddockwidgets.so.2.1.0
 %%QT_MKSPECDIR%%/modules/qt_KDDockWidgets.pri

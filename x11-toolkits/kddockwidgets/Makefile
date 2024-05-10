@@ -1,6 +1,6 @@
 PORTNAME=	kddockwidgets
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
+DISTVERSION=	2.1.0
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libspdlog.so:devel/spdlog
 
-USES=		cmake:testing qt:5
+USES=		cmake:testing compiler:c++17-lang qt:5
 USE_QT=		core declarative gui network quickcontrols2 widgets x11extras \
 		buildtools:build qmake:build testlib:build
 USE_LDCONFIG=	yes
