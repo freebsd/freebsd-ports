@@ -90,8 +90,6 @@ WAZUHMOD770=	/etc/shared/default /logs /queue/alerts /queue/fim \
 
 WAZUHPREFIX=	/var/ossec
 
-FBSD_MAJOR_VERSION=13
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000
