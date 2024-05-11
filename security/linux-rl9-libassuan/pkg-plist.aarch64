@@ -1,0 +1,8 @@
+usr/lib/.build-id/a7/3c0fd6cc95fc75d4834bba4645bb2b42f3b46d
+usr/lib64/libassuan.so.0
+usr/lib64/libassuan.so.0.8.5
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/licenses/libassuan/COPYING
+usr/share/licenses/libassuan/COPYING.LIB

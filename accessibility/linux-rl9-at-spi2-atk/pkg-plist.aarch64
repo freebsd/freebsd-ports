@@ -1,0 +1,9 @@
+usr/lib/.build-id/1a/ff6e431c1a2a9ca1916f2f03ccd4679f59a7ba
+usr/lib/.build-id/c1/99b5f9c63848fbda34d4130e920922b6644348
+usr/lib64/gnome-settings-daemon-3.0/gtk-modules/at-spi2-atk.desktop
+usr/lib64/gtk-2.0/modules/libatk-bridge.so
+usr/lib64/libatk-bridge-2.0.so.0
+usr/lib64/libatk-bridge-2.0.so.0.0.0
+%%PORTDOCS%%usr/share/doc/at-spi2-atk/AUTHORS
+%%PORTDOCS%%usr/share/doc/at-spi2-atk/README
+usr/share/licenses/at-spi2-atk/COPYING

@@ -1,0 +1,8 @@
+usr/lib/.build-id/b7/e7c44bb967e99694a558e24ea0267c19dfda3e
+usr/lib64/libgcrypt.so.20
+usr/lib64/libgcrypt.so.20.4.0
+%%PORTDOCS%%usr/share/doc/libgcrypt/AUTHORS
+%%PORTDOCS%%usr/share/doc/libgcrypt/NEWS
+%%PORTDOCS%%usr/share/doc/libgcrypt/THANKS
+usr/share/licenses/libgcrypt/COPYING.LIB
+@dir etc/gcrypt

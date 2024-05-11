@@ -1,0 +1,17 @@
+usr/lib/.build-id/89/49a93f6fff81d1876db13d8abc05bf4f50672b
+usr/lib/.build-id/8a/eaced21aa7de66802d16c200fa30ae581b4dfb
+usr/lib/.build-id/d8/0ca989aa8dbd0f0e6b958849203b525f074bc2
+usr/lib/.build-id/d9/3c2c5e4cf9fe8927c7e1f155e75ab8af7d0b80
+usr/lib/.build-id/e8/dadc4c72148857dd4d1eb7f0d84b8c30a78521
+usr/lib64/libevent-2.1.so.7
+usr/lib64/libevent-2.1.so.7.0.1
+usr/lib64/libevent_core-2.1.so.7
+usr/lib64/libevent_core-2.1.so.7.0.1
+usr/lib64/libevent_extra-2.1.so.7
+usr/lib64/libevent_extra-2.1.so.7.0.1
+usr/lib64/libevent_openssl-2.1.so.7
+usr/lib64/libevent_openssl-2.1.so.7.0.1
+usr/lib64/libevent_pthreads-2.1.so.7
+usr/lib64/libevent_pthreads-2.1.so.7.0.1
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+usr/share/licenses/libevent/LICENSE

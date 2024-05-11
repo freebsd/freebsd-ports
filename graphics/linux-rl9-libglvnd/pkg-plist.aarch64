@@ -1,0 +1,15 @@
+usr/lib/.build-id/01/d3426a65507a9af63a2a081062f4ce22d105c1
+usr/lib/.build-id/75/bbddb18aea4c32b3e0052b4dcf59b580082bd2
+usr/lib/.build-id/b7/8db27afd5b7f20e7a37c52f45f5dc979de377d
+usr/lib/.build-id/c0/ee037cd3863a1614064c61cacb5fe860144e9e
+usr/lib/.build-id/ca/d8695b8559f2fcf3a2c61fd212b9685c4aeb3f
+usr/lib/.build-id/e7/a241c49c9bacbfb0af8bb5365dcedf157d9771
+usr/lib/.build-id/f6/103c8afca5cf34d48be4a30a7d981bbf9ada9a
+usr/lib64/libEGL.so.1.1.0
+usr/lib64/libGL.so.1.7.0
+usr/lib64/libGLESv1_CM.so.1.2.0
+usr/lib64/libGLESv2.so.2.1.0
+usr/lib64/libGLX.so.0.0.0
+usr/lib64/libGLdispatch.so.0.0.0
+usr/lib64/libOpenGL.so.0.0.0
+%%PORTDOCS%%usr/share/doc/libglvnd/README.md

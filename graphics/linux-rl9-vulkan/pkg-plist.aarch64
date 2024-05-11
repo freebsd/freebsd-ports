@@ -1,0 +1,12 @@
+usr/lib/.build-id/ab/8e0273a6bff4fe0c1625c7120c3591567383d4
+usr/lib64/libvulkan.so.1
+usr/lib64/libvulkan.so.1.3.250
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+usr/share/licenses/vulkan-loader/LICENSE.txt
+@dir %%ETCDIR%%/explicit_layer.d
+@dir %%ETCDIR%%/icd.d
+@dir %%ETCDIR%%/implicit_layer.d
+@dir %%DATADIR%%/explicit_layer.d
+@dir %%DATADIR%%/icd.d
+@dir %%DATADIR%%/implicit_layer.d

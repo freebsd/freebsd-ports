@@ -1,0 +1,9 @@
+usr/lib/.build-id/f8/b6a9ab46e56625fd4dc7061273b59be23c081f
+usr/lib64/libopenjp2.so.2.4.0
+usr/lib64/libopenjp2.so.7
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.md
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/THANKS.md
+usr/share/licenses/openjpeg2/LICENSE
+usr/share/man/man3/libopenjp2.3.gz

@@ -1,0 +1,10 @@
+etc/vdpau_wrapper.cfg
+usr/lib/.build-id/06/3ab33e073727ebcf4dedcf5b2104761de79746
+usr/lib/.build-id/40/de01050a011a097cea5be1dea88aba68e86802
+usr/lib64/libvdpau.so.1
+usr/lib64/libvdpau.so.1.0.0
+usr/lib64/vdpau/libvdpau_trace.so
+usr/lib64/vdpau/libvdpau_trace.so.1
+usr/lib64/vdpau/libvdpau_trace.so.1.0.0
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+usr/share/licenses/libvdpau/COPYING
