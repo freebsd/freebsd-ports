@@ -167,7 +167,11 @@ post-patch:
 	@${RM} -r ${REMOVE_DIRS:S|^|${WRKSRC}/|}
 	@${RM} ${REMOVE_FILES:S|^|${WRKSRC}/|}
 	@${FIND} ${WRKSRC}/usr -type d -empty -not -path '*/lib*/gio/*' -delete
+.if ${ARCH} == aarch64
+	${BRANDELF} -t Linux ${WRKSRC}/usr/lib/ld-linux-*
+.else
 	${BRANDELF} -t Linux ${WRKSRC}/usr/lib64/ld-linux-*.so.2
+.endif
 
 post-install:
 	${RM} -r ${STAGEDIR}${LOCALBASE}

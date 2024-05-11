@@ -1,0 +1,5 @@
+usr/lib64/libasound.so
+usr/lib64/libatopology.so
+usr/lib64/pkgconfig/alsa-topology.pc
+usr/lib64/pkgconfig/alsa.pc
+usr/share/aclocal/alsa.m4

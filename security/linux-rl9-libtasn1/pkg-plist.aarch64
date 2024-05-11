@@ -1,0 +1,9 @@
+usr/lib/.build-id/f4/3a0eebed60e9810dd8c712ea2fd6489bde7cc2
+usr/lib64/libtasn1.so.6
+usr/lib64/libtasn1.so.6.6.0
+%%PORTDOCS%%usr/share/doc/libtasn1/AUTHORS
+%%PORTDOCS%%usr/share/doc/libtasn1/NEWS
+%%PORTDOCS%%usr/share/doc/libtasn1/README.md
+usr/share/licenses/libtasn1/COPYING
+usr/share/licenses/libtasn1/COPYING.LESSER
+usr/share/licenses/libtasn1/LICENSE

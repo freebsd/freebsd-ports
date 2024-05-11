@@ -1,0 +1,9 @@
+usr/bin/gr2fonttest
+usr/lib/.build-id/16/1aa05e76d30f15cfa9a40e6e240604314d0ae7
+usr/lib/.build-id/96/2479da2a7d26f8ad09170d407b02c462e81af2
+usr/lib64/libgraphite2.so.3
+usr/lib64/libgraphite2.so.3.2.1
+%%PORTDOCS%%usr/share/doc/graphite2/ChangeLog
+%%PORTDOCS%%usr/share/doc/graphite2/README.md
+usr/share/licenses/graphite2/COPYING
+usr/share/licenses/graphite2/LICENSE
