@@ -1,8 +1,9 @@
 PORTNAME=	buildbot-waterfall-view
-DISTVERSION=	3.11.1
+DISTVERSION=	3.11.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	buildbot_waterfall_view-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Buildbot Waterfall View plugin
