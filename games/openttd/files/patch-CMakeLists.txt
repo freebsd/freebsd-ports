@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-07-29 23:01:44 UTC
+--- CMakeLists.txt.orig	2024-04-13 12:55:23 UTC
 +++ CMakeLists.txt
-@@ -129,11 +129,14 @@ if(NOT OPTION_DEDICATED)
+@@ -143,11 +143,14 @@ if(NOT OPTION_DEDICATED)
          find_package(Allegro)
          if(NOT APPLE)
              find_package(Freetype)
@@ -13,16 +13,21 @@
 +if(WITH_FLUIDSYNTH)
              find_package(Fluidsynth)
 +endif()
-             find_package(Fontconfig)
-             find_package(ICU OPTIONAL_COMPONENTS i18n lx)
-         endif()
-@@ -260,7 +263,9 @@ link_package(LIBLZMA TARGET LibLZMA::LibLZMA ENCOURAGE
- link_package(LZO)
+             if(Freetype_FOUND)
+                 find_package(Fontconfig)
+             endif()
+@@ -323,9 +326,14 @@ if(NOT EMSCRIPTEN)
+ endif()
  
  if(NOT OPTION_DEDICATED)
 +  if(WITH_FLUIDSYNTH)
      link_package(Fluidsynth)
 +  endif()
++  if(NOT WITH_SDL2)
      link_package(SDL)
++  else()
      link_package(SDL2 TARGET SDL2::SDL2)
++  endif()
      link_package(Allegro)
+     link_package(FREETYPE TARGET Freetype::Freetype)
+     link_package(Fontconfig TARGET Fontconfig::Fontconfig)

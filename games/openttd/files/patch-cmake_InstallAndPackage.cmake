@@ -12,8 +12,8 @@
              COMPONENT manual)
  endif()
  
--if(UNIX AND NOT APPLE)
-+if(UNIX AND NOT APPLE AND NOT OPTION_DEDICATED)
+-if(UNIX AND NOT APPLE AND NOT EMSCRIPTEN)
++if(UNIX AND NOT APPLE AND NOT EMSCRIPTEN AND NOT OPTION_DEDICATED)
      install(DIRECTORY
                      ${CMAKE_BINARY_DIR}/media/icons
                      ${CMAKE_BINARY_DIR}/media/pixmaps

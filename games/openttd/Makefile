@@ -1,5 +1,5 @@
 PORTNAME=	openttd
-DISTVERSION=	13.4
+DISTVERSION=	14.1
 CATEGORIES=	games
 MASTER_SITES=	https://cdn.openttd.org/openttd-releases/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
@@ -10,8 +10,9 @@ WWW=		https://www.openttd.org/
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpng.so:graphics/png \
-		liblzo2.so:archivers/lzo2
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		liblzo2.so:archivers/lzo2 \
+		libpng.so:graphics/png
 
 USES=		cmake compiler:c++17-lang cpe pkgconfig tar:xz
 CMAKE_ARGS=	-DCMAKE_INSTALL_BINDIR:PATH=bin \
@@ -34,14 +35,13 @@ SDL1_CMAKE_OFF=	-DWITH_SDL2:BOOL=ON
 SDL1_VARS_OFF=	_SDL_VERSION=sdl2
 
 SERVER_DESC=		Build dedicated server only (no GUI)
-SERVER_USES_OFF=	gnome sdl
+SERVER_USES_OFF=	sdl
 SERVER_USE_OFF=		SDL=${_SDL_VERSION}
 SERVER_CMAKE_ON=	-DOPTION_DEDICATED:BOOL=ON
 SERVER_LIB_DEPENDS_OFF=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2 \
-			libicui18n.so:devel/icu \
-			libicu-le-hb.so:devel/icu-le-hb \
-			libiculx.so:devel/icu-lx
+			libharfbuzz.so:print/harfbuzz \
+			libicui18n.so:devel/icu
 SERVER_VARS=		USE_RC_SUBR=${PORTNAME}
 
 post-install-SERVER-on:
