@@ -4,6 +4,9 @@ PORTREVISION=	1
 CATEGORIES=	multimedia wayland
 MASTER_SITES=	https://github.com/ammen99/wf-recorder/releases/download/v${DISTVERSION}/
 
+PATCH_SITES=	https://github.com/ammen99/${PORTNAME}/commit/
+PATCHFILES+=	239829231e6b.patch:-p1 # https://github.com/ammen99/wf-recorder/pull/262
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Screen recorder for wlroots-based compositors
 WWW=		https://github.com/ammen99/wf-recorder
