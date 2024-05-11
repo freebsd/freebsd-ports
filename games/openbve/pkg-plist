@@ -757,6 +757,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/RouteViewer/station_end.png
 %%DATADIR%%/Data/RouteViewer/station_start.png
 %%DATADIR%%/Data/RouteViewer/stop.png
+%%DATADIR%%/Data/RouteViewer/switchevent.png
 %%DATADIR%%/Data/RouteViewer/switchsound.png
 %%DATADIR%%/Data/RouteViewer/transponder.png
 %%DATADIR%%/Data/RouteViewer/weather.png
