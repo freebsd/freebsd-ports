@@ -1,0 +1,10 @@
+--- chrome/browser/devtools/BUILD.gn.orig	2024-04-30 23:46:45 UTC
++++ chrome/browser/devtools/BUILD.gn
+@@ -113,6 +113,7 @@ static_library("devtools") {
+     "//chrome/browser/autofill:autofill",
+     "//components/autofill/content/browser:browser",
+     "//components/autofill/core/browser:browser",
++    "//components/enterprise/buildflags",
+     "//components/paint_preview/buildflags:buildflags",
+     "//content/public/browser",
+     "//net",
