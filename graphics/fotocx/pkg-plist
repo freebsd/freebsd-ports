@@ -1,8 +1,9 @@
 bin/fotocx
 share/applications/fotocx.desktop
 %%DATADIR%%/data/CIE1931.jpg
-%%DATADIR%%/data/KB_shortcuts_F
-%%DATADIR%%/data/capskeys
+%%DATADIR%%/data/KB_shortcuts_G
+%%DATADIR%%/data/README_G
+%%DATADIR%%/data/capskeys_G
 %%DATADIR%%/data/custom_kernel/blur5
 %%DATADIR%%/data/custom_kernel/brighten3
 %%DATADIR%%/data/custom_kernel/color lines 3
@@ -21,17 +22,15 @@ share/applications/fotocx.desktop
 %%DATADIR%%/data/custom_kernel/sharpen3
 %%DATADIR%%/data/custom_kernel/sharpen5
 %%DATADIR%%/data/custom_kernel/sketch3
-%%DATADIR%%/data/custom_kernel/sobel v+h
-%%DATADIR%%/data/custom_menu
+%%DATADIR%%/data/custom_kernel/sobel3 v+h
+%%DATADIR%%/data/custom_kernel/sobel5 v+h
+%%DATADIR%%/data/custom_menu_G
 %%DATADIR%%/data/custom_scripts/brightness and white point
 %%DATADIR%%/data/custom_scripts/cartoon-emboss
-%%DATADIR%%/data/custom_scripts/denoise-sharpen
+%%DATADIR%%/data/custom_scripts/ektar film process
 %%DATADIR%%/data/custom_scripts/emboss-test
-%%DATADIR%%/data/custom_scripts/line-drawing-emboss
-%%DATADIR%%/data/custom_scripts/painting-texture
-%%DATADIR%%/data/custom_scripts/sketch-cartoon-emboss
-%%DATADIR%%/data/map_regions
-%%DATADIR%%/data/meta_picklist_E
+%%DATADIR%%/data/map_regions_G
+%%DATADIR%%/data/meta_picklist_G
 %%DATADIR%%/data/palettes/Bears.gpl
 %%DATADIR%%/data/palettes/Bgold.gpl
 %%DATADIR%%/data/palettes/Blues.gpl
@@ -114,8 +113,8 @@ share/applications/fotocx.desktop
 %%DATADIR%%/data/patterns/wall-grey.jpg
 %%DATADIR%%/data/patterns/wet-turquoise.jpg
 %%DATADIR%%/data/patterns/wood.jpg
-%%DATADIR%%/data/plugins
-%%DATADIR%%/data/raw_loader_commands
+%%DATADIR%%/data/plugins_G
+%%DATADIR%%/data/raw_commands_G
 %%DATADIR%%/data/slideshow-tone.oga
 %%DATADIR%%/data/tags_defined
 %%DATADIR%%/data/userguide
@@ -176,8 +175,6 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/choose-captions.png
 %%DATADIR%%/images/chromatic.png
 %%DATADIR%%/images/chromaticA.png
-%%DATADIR%%/images/color-depth1.png
-%%DATADIR%%/images/color-depth2.png
 %%DATADIR%%/images/color-mode.png
 %%DATADIR%%/images/color-mode2.png
 %%DATADIR%%/images/color-negative.jpg
@@ -209,7 +206,7 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/edit-any-metadata.png
 %%DATADIR%%/images/edit-bookmarks.png
 %%DATADIR%%/images/edit-dist.png
-%%DATADIR%%/images/edit-metadata.png
+%%DATADIR%%/images/edit-meta.jpg
 %%DATADIR%%/images/edit.png
 %%DATADIR%%/images/effects.png
 %%DATADIR%%/images/emboss.png
@@ -228,7 +225,8 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/fix-motion-blur.png
 %%DATADIR%%/images/fix-motion-blur1.jpg
 %%DATADIR%%/images/flatten-photo1.png
-%%DATADIR%%/images/flatten-photo2.png
+%%DATADIR%%/images/flatten-photo2.jpg
+%%DATADIR%%/images/flatten-photo3.jpg
 %%DATADIR%%/images/flatten1.png
 %%DATADIR%%/images/flatten2.png
 %%DATADIR%%/images/folder-tree.png
@@ -310,7 +308,7 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/permissions.png
 %%DATADIR%%/images/perspective1.png
 %%DATADIR%%/images/perspective2.png
-%%DATADIR%%/images/plugins-edit.png
+%%DATADIR%%/images/plugins-edit.jpg
 %%DATADIR%%/images/plugins.png
 %%DATADIR%%/images/prev-next.png
 %%DATADIR%%/images/print-margins.png
@@ -344,6 +342,8 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/select-area.jpg
 %%DATADIR%%/images/select-image-files.jpg
 %%DATADIR%%/images/select.png
+%%DATADIR%%/images/set-colors1.jpg
+%%DATADIR%%/images/set-colors2.jpg
 %%DATADIR%%/images/settings.jpg
 %%DATADIR%%/images/sharpen.png
 %%DATADIR%%/images/shift-colors.png
@@ -356,13 +356,13 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/soft-focus2.png
 %%DATADIR%%/images/sphere.png
 %%DATADIR%%/images/sphere2.jpg
+%%DATADIR%%/images/stack-layers.png
 %%DATADIR%%/images/stack-noise.png
-%%DATADIR%%/images/stack-noise2.png
+%%DATADIR%%/images/stack-noise2.jpg
 %%DATADIR%%/images/stack-paint.png
 %%DATADIR%%/images/stack-paint2.jpg
 %%DATADIR%%/images/stack-split.png
 %%DATADIR%%/images/stack-split2.png
-%%DATADIR%%/images/stack-versions.png
 %%DATADIR%%/images/texture.png
 %%DATADIR%%/images/texture2.png
 %%DATADIR%%/images/tiles2a.png
