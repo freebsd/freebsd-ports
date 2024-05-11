@@ -1,9 +1,27 @@
---- src/3rdparty/chromium/content/browser/BUILD.gn.orig	2021-12-15 16:12:54 UTC
+--- src/3rdparty/chromium/content/browser/BUILD.gn.orig	2024-03-26 14:47:34 UTC
 +++ src/3rdparty/chromium/content/browser/BUILD.gn
-@@ -2090,6 +2090,15 @@ jumbo_static_library("browser") {
+@@ -9,6 +9,7 @@ import("//chromeos/assistant/assistant.gni")
+ import("//build/config/linux/pangocairo/pangocairo.gni")
+ import("//build/config/ui.gni")
+ import("//chromeos/assistant/assistant.gni")
++import("//components/spellcheck/spellcheck_build_features.gni")
+ import("//components/ui_devtools/devtools.gni")
+ import("//content/common/features.gni")
+ import("//content/public/common/zygote/features.gni")
+@@ -166,6 +167,7 @@ jumbo_static_library("browser") {
+     "//components/services/storage/dom_storage:local_storage_proto",
+     "//components/services/storage/public/cpp",
+     "//components/services/storage/public/mojom",
++    "//components/spellcheck:buildflags",
+     "//components/system_media_controls",
+     "//components/tracing:startup_tracing",
+     "//components/ui_devtools",
+@@ -2088,6 +2090,15 @@ jumbo_static_library("browser") {
+   if (is_desktop_linux && enable_web_speech) {
+     sources += [ "speech/tts_linux.cc" ]
      deps += [ "//third_party/speech-dispatcher" ]
-   }
- 
++  }
++
 +  if (is_bsd) {
 +    sources -= [
 +      "sandbox_host_linux.cc",
@@ -11,8 +29,6 @@
 +      "sandbox_ipc_linux.cc",
 +      "sandbox_ipc_linux.h",
 +    ]
-+  }
-+
+   }
+ 
    # ChromeOS also defines linux but their memory-monitors conflict.
-   if (is_chromeos) {
-     sources += [
