@@ -1,6 +1,6 @@
---- Makefile.in.orig	2023-03-01 22:59:32 UTC
+--- Makefile.in.orig	2024-02-01 22:56:12 UTC
 +++ Makefile.in
-@@ -494,7 +494,7 @@ NEVER_NAMES_LT = -o -name .libs -o -name '*.lo'
+@@ -497,7 +497,7 @@ NEVER_NAMES_LT = -o -name .libs -o -name '*.lo'
  NEVER_NAMES_LT = -o -name .libs -o -name '*.lo'
  
  # Files not to be distributed

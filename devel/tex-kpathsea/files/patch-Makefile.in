@@ -1,4 +1,4 @@
---- Makefile.in.orig	2023-04-02 15:35:03 UTC
+--- Makefile.in.orig	2024-05-11 23:34:39 UTC
 +++ Makefile.in
 @@ -364,7 +364,7 @@ DATA = $(dist_noinst_DATA) $(pkgconfig_DATA)
      *) (install-info --version) >/dev/null 2>&1;; \
@@ -9,7 +9,7 @@
  	$(noinst_HEADERS)
  RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
    distclean-recursive maintainer-clean-recursive
-@@ -2103,7 +2103,7 @@ installdirs-am:
+@@ -2104,7 +2104,7 @@ installdirs-am:
  
  installdirs: installdirs-recursive
  installdirs-am:

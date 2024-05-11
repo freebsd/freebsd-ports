@@ -1,9 +1,9 @@
 PORTNAME=	texlive
-PORTVERSION=	${TEXLIVE_VERSION}
+DISTVERSION=	${TEXLIVE_VERSION}
 CATEGORIES=	print
 MASTER_SITES=	LOCAL/tex
 PKGNAMESUFFIX=	-texmf-source
-DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}-freebsd
+DISTNAME=	${PORTNAME}-${DISTVERSION}${PKGNAMESUFFIX}-freebsd
 DIST_SUBDIR=	TeX
 
 MAINTAINER=	tex@FreeBSD.org
@@ -32,14 +32,13 @@ do-install:
 	${FIND} -s ${STAGEDIR}${PREFIX}/share/texmf-dist -type d -empty | ${SORT} -r | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/#@dir #' >> ${TMPPLIST}
 
-
 .if defined(MAINTAINER_MODE)
 _INCLUDE_FILES=	source
 _EXCLUDE_FILES=	source/fonts/japanese-otf source/luatex source/platex \
 		source/fonts/japanese-otf-uptex source/xmltex \
 		source/fonts/uptex source/jadetex \
 		source/lambda source/lualatex source/uplatex source/xelatex
-_WRKSRC=	${WRKDIR}/texlive-20230313-texmf-source
+_WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}${PKGNAMESUFFIX}
 
 _maintainer-extract:
 	${MAKE} clean
@@ -75,9 +74,9 @@ _maintainer-patch: _maintainer-extract
 
 _maintainer-dist: _maintainer-patch
 	${TAR} --options xz:compression-level=9 -Jcvf \
-		${WRKDIR}/texlive-20230313-texmf-source-freebsd.tar.xz \
-		-C ${WRKDIR} ${PORTNAME}-${TEXLIVE_VERSION}${PKGNAMESUFFIX}
-	scp ${WRKDIR}/texlive-20230313-texmf-freebsd.tar.xz \
+		${WRKDIR}/${DISTFILES} \
+		-C ${WRKDIR} ${PORTNAME}-${DISTVERSION}${PKGNAMESUFFIX}
+	scp ${WRKDIR}/${DISTFILES} \
 		bofh@freefall.freebsd.org://home/tex/public_distfiles/
 
 .endif

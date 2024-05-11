@@ -1,6 +1,6 @@
---- texk/ttf2pk2/configure.orig	2019-03-25 17:27:50 UTC
+--- texk/ttf2pk2/configure.orig	2023-12-23 16:57:39 UTC
 +++ texk/ttf2pk2/configure
-@@ -15266,8 +15266,8 @@ else
+@@ -16465,8 +16465,8 @@ if $FT2_CONFIG --ftversion >/dev/null 2>&1; then
    PKG_CONFIG="$ac_cv_prog_PKG_CONFIG"
  fi
  if $FT2_CONFIG --ftversion >/dev/null 2>&1; then

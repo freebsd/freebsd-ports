@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20240529:
+  AFFECTS: users of TeX*
+  AUTHOR: bofh@FreeBSD.org
+
+  TeX system has been updated to 2024 from 2023. Normal pkg upgrade or
+  portmaster -a should handle all the upgrade properly. In case not please
+  create a ticket or send a mail to tex@FreeBSD.org
+
+  Previously users have reported to delete texlive-texmf prior to
+  starting update, or pkg-static will indicate there is a conflict
+  during the upgrade of texlive-base :
+
+  # pkg remove texlive-texmf
+
+20240529:
   AFFECTS: users of python
   AUTHOR: rm@FreeBSD.org
 

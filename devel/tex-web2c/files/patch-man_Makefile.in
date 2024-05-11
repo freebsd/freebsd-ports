@@ -1,6 +1,6 @@
---- man/Makefile.in.orig	2023-04-06 19:09:14 UTC
+--- man/Makefile.in.orig	2024-05-13 11:29:09 UTC
 +++ man/Makefile.in
-@@ -478,11 +478,7 @@ otangle_man_sources = ofm2opl.man opl2ofm.man ovf2ovp.
+@@ -483,11 +483,7 @@ otangle_man_sources = ofm2opl.man opl2ofm.man ovf2ovp.
  
  pdftex_man_sources = pdftex.man pdftosrc.man ttf2afm.man
  otangle_man_sources = ofm2opl.man opl2ofm.man ovf2ovp.man ovp2ovf.man

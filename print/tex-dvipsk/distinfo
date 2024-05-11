@@ -1,5 +1,5 @@
-TIMESTAMP = 1698419926
-SHA256 (TeX/texlive-20230313-source.tar.xz) = 3878aa0e1ed0301c053b0e2ee4e9ad999c441345f4882e79bdd1c8f4ce9e79b9
-SIZE (TeX/texlive-20230313-source.tar.xz) = 68630148
-SHA256 (TeX/tex-dvipsk-20230313-freebsd.tar.xz) = 8356e2ebcd561de3afdc778bcdbd0f0f5cfaa9249a9415988aebb764fe3f107e
-SIZE (TeX/tex-dvipsk-20230313-freebsd.tar.xz) = 2728208
+TIMESTAMP = 1716888992
+SHA256 (TeX/texlive-20240312-source.tar.xz) = 7b6d87cf01661670fac45c93126bed97b9843139ed510f975d047ea938b6fe96
+SIZE (TeX/texlive-20240312-source.tar.xz) = 70140588
+SHA256 (TeX/tex-dvipsk-20240312-freebsd.tar.xz) = 847e70fcb2614969632522125c770a32418af00cba64b1d76edd285d7848c918
+SIZE (TeX/tex-dvipsk-20240312-freebsd.tar.xz) = 2833992

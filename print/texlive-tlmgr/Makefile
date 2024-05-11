@@ -1,13 +1,12 @@
 PORTNAME=	texlive
-PORTVERSION=	${TEXLIVE_VERSION}
+DISTVERSION=	${TEXLIVE_VERSION}
 CATEGORIES=	print perl5
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
 PKGNAMESUFFIX=	-tlmgr
-DISTFILES=	${PORTNAME}-${PORTVERSION}-extra${EXTRACT_SUFX} \
-		${PORTNAME}-${PORTVERSION}-source${EXTRACT_SUFX} \
-		${TLPKG_FILE}.tar.gz
+DISTFILES=	${PORTNAME}-${DISTVERSION}-extra${EXTRACT_SUFX} \
+		${PORTNAME}-${DISTVERSION}-source${EXTRACT_SUFX}
 DIST_SUBDIR=	TeX
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-extra${EXTRACT_SUFX}
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}-extra${EXTRACT_SUFX}
 
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeXLive manager modules
@@ -22,40 +21,37 @@ USE_TEX=	kpathsea
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-TLPKG_FILE=			${PORTNAME}-${TEXLIVE_YEAR}0311-tlpdb-full
 EXTRACT_AFTER_ARGS_SOURCE=	| ${TAR} -xf - -C ${WRKDIR} \
 				--no-same-permission --no-same-owner \
-				${PORTNAME}-${PORTVERSION}-source/texk/texlive/linked_scripts/texlive \
-				${PORTNAME}-${PORTVERSION}-source/build-aux/config.guess
+				${PORTNAME}-${DISTVERSION}-source/texk/texlive/linked_scripts/texlive \
+				${PORTNAME}-${DISTVERSION}-source/build-aux/config.guess
 
 PATCH_WRKSRC=	${WRKDIR}
 
 post-extract:
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${PORTVERSION}-source${EXTRACT_SUFX} \
+	${CAT} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${DISTVERSION}-source${EXTRACT_SUFX} \
 	    ${EXTRACT_AFTER_ARGS_SOURCE}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/scripts/texlive
 	${INSTALL_SCRIPT} \
-	    ${WRKDIR}/${PORTNAME}-${PORTVERSION}-source/texk/texlive/linked_scripts/texlive/tlmgr.pl \
+	    ${WRKDIR}/${PORTNAME}-${DISTVERSION}-source/texk/texlive/linked_scripts/texlive/tlmgr.pl \
 	    ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/scripts/texlive
 	cd ${STAGEDIR}${PREFIX}/bin && \
 	    ${LN} -s ../${TEXMFDISTDIR}/scripts/texlive/tlmgr.pl tlmgr
-	# texlive-20230313-source/build-aux/config.guess
-	# /usr/local/share/tlpkg/installer/config.guess
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/TeXLive
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}-extra/tlpkg/TeXLive/*.pm \
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${DISTVERSION}-extra/tlpkg/TeXLive/*.pm \
 	    ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/TeXLive
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}-extra/tlpkg/TeXLive/trans.pl \
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${DISTVERSION}-extra/tlpkg/TeXLive/trans.pl \
 	    ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/TeXLive
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}
 	${TOUCH} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/.texlive-tlmgr
 	${MKDIR} ${STAGEDIR}/var/db/tlpkg/installer
 	${TOUCH} ${STAGEDIR}/var/db/tlpkg/tlmgr.log
-	${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${TLPKG_FILE}.tar.gz -C \
-	    ${STAGEDIR}/var/db/tlpkg/ texlive.tlpdb
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${DISTVERSION}-extra/tlpkg/texlive.tlpdb \
+	    ${STAGEDIR}/var/db/tlpkg
 	${INSTALL_SCRIPT} \
-	    ${WRKDIR}/${PORTNAME}-${PORTVERSION}-source/build-aux/config.guess \
+	    ${WRKDIR}/${PORTNAME}-${DISTVERSION}-source/build-aux/config.guess \
 	    ${STAGEDIR}/var/db/tlpkg/installer/
 	${INSTALL_DATA} ${LOCALBASE}/share/texmf-dist/web2c/texmf.cnf \
 	    ${STAGEDIR}/var/db/tlpkg

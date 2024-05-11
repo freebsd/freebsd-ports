@@ -1,4 +1,4 @@
---- texk/lcdf-typetools/lcdf-typetools-src/Makefile.in.orig	2020-11-19 18:31:09 UTC
+--- texk/lcdf-typetools/lcdf-typetools-src/Makefile.in.orig	2023-08-31 23:02:37 UTC
 +++ texk/lcdf-typetools/lcdf-typetools-src/Makefile.in
 @@ -163,8 +163,8 @@ am__uninstall_files_from_dir = { \
      || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
@@ -11,7 +11,7 @@
  RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
    distclean-recursive maintainer-clean-recursive
  am__recursive_targets = \
-@@ -717,7 +717,7 @@ info: info-recursive
+@@ -721,7 +721,7 @@ info-am:
  
  info-am:
  

@@ -1,9 +1,9 @@
 PORTNAME=	texlive
-PORTVERSION=	${TEXLIVE_VERSION}
+DISTVERSION=	${TEXLIVE_VERSION}
 CATEGORIES=	print
 MASTER_SITES=	LOCAL/tex
 PKGNAMESUFFIX=	-texmf
-DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}-freebsd
+DISTNAME=	${PORTNAME}-${DISTVERSION}${PKGNAMESUFFIX}-freebsd
 DIST_SUBDIR=	TeX
 EXTRACT_ONLY=
 
@@ -12,10 +12,8 @@ COMMENT=	TeX Live Typesetting System, texmf Tree
 WWW=		https://tug.org/texlive/
 
 # Reduce DEPENDS temporarily
-#USES=		cpe python:run tar:xz tex
 USES=		cpe tar:xz tex
 CPE_VENDOR=	tug
-#USE_TEX=	base basic:extract texhash tlmgr:run
 USE_TEX=	texhash tlmgr:run
 
 NO_ARCH=	yes
@@ -128,9 +126,9 @@ _maintainer-patch: _maintainer-extract
 
 _maintainer-dist: _maintainer-patch
 	${TAR} --options xz:compression-level=9 -Jcvf \
-		${WRKDIR}/texlive-20230313-texmf-freebsd.tar.xz \
+		${WRKDIR}/texlive-${TEXLIVE_VERSION}-texmf-freebsd.tar.xz \
 		-C ${WRKDIR} ${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
-	scp ${WRKDIR}/texlive-20230313-texmf-freebsd.tar.xz \
+	scp ${WRKDIR}/texlive-${TEXLIVE_VERSION}-texmf-freebsd.tar.xz \
 		bofh@freefall.freebsd.org://home/tex/public_distfiles/
 
 .endif

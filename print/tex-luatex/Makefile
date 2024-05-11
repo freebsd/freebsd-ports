@@ -1,6 +1,5 @@
 PORTNAME=	luatex
-PORTVERSION=	1.16.0
-PORTREVISION=	1
+DISTVERSION=	${TEXLIVE_VERSION}
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
 PKGNAMEPREFIX=	tex-
@@ -60,9 +59,7 @@ EXTRACT_FILES_TEXMF=		texmf-dist/doc/lualatex texmf-dist/doc/luatex \
 				texmf-dist/fonts/map/luatex \
 				texmf-dist/tex/luatex \
 				texmf-dist/tex/generic/config/luatex-unicode-letters.tex \
-				texmf-dist/tex/generic/config/luatexiniconfig.tex \
 				texmf-dist/tex/generic/context/luatex \
-				texmf-dist/tex/latex/latexconfig/lualatexquotejobname.tex \
 				texmf-dist/tex/latex/latexconfig/lualatexiniconfig.tex \
 				texmf-dist/tex/lualatex
 WRKSRC=				${WRKDIR}/${DISTNAME}/texk/web2c

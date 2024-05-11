@@ -1,36 +1,15 @@
---- texmf.cnf.orig	2023-02-25 22:59:04 UTC
+--- texmf.cnf.orig	2024-02-23 16:44:23 UTC
 +++ texmf.cnf
-@@ -1,13 +1,13 @@
- % original texmf.cnf -- runtime path configuration file for kpathsea.
- % Public domain.
--% 
-+%
- % If you modify this original file, YOUR CHANGES WILL BE LOST when it is
- % updated.  Instead, put your changes -- and only your changes, not an
- % entire copy! -- in ../../texmf.cnf.  That is, if this file is
- % installed in /some/path/to/texlive/2023/texmf-dist/web2c/texmf.cnf,
- % put your custom settings in /some/path/to/texlive/2023/texmf.cnf.
- % (Below, we use YYYY in place of the specific year.)
--% 
-+%
- % What follows is a super-summary of what this .cnf file can
- % contain. Please read the Kpathsea manual for more information.
- %
-@@ -55,11 +55,11 @@
- % Redistributors will probably want $SELFAUTODIR/share, i.e., /usr/share.
- % Kpathsea sets (in kpathsea/progname.c):
- % SELFAUTOLOC (directory of the binary=/usr/local/texlive/YYYY/bin/i386-linux),
--% SELFAUTODIR (its parent = /usr/local/texlive/YYYY/bin), 
-+% SELFAUTODIR (its parent = /usr/local/texlive/YYYY/bin),
+@@ -59,7 +59,7 @@
  % SELFAUTOPARENT (its grandparent = /usr/local/texlive/YYYY), and
  % SELFAUTOGRANDPARENT (its great-grandparent = /usr/local/texlive).
  % Sorry for the off-by-one-generation names.
 -TEXMFROOT = $SELFAUTOPARENT
 +TEXMFROOT = $SELFAUTODIR/share
  
- % The main tree of distributed packages and programs:
- TEXMFDIST = $TEXMFROOT/texmf-dist
-@@ -69,7 +69,7 @@ TEXMFMAIN = $TEXMFDIST
+ % The various texmf trees used by TeX Live, follow.
+ % They must must all have the TDS directory structure (https://tug.org/tds).
+@@ -72,7 +72,7 @@ TEXMFMAIN = $TEXMFDIST
  TEXMFMAIN = $TEXMFDIST
  
  % Local additions to the distribution trees.
@@ -39,79 +18,7 @@
  
  % TEXMFSYSVAR, where *-sys store cached runtime data.
  TEXMFSYSVAR = $TEXMFROOT/texmf-var
-@@ -99,12 +99,12 @@ TEXMFAUXTREES = {}
- %
- % For texconfig to work properly, TEXMFCONFIG and TEXMFVAR should be named
- % explicitly and before other trees.
--% 
-+%
- % TEXMFLOCAL precedes TEXMFDIST because locally-installed versions
- % should take precedence over distribution files -- although it is
- % generally a source of confusion to have different versions of a
- % package installed, whatever the trees, so try to avoid it.
--% 
-+%
- % The odd-looking $TEXMFAUXTREES$TEXMF... construct is so that if no auxtree is
- % ever defined (the 99% common case), no extra elements will be added to
- % the search paths. tlmgr takes care to end any value with a trailing comma.
-@@ -452,7 +452,7 @@ MAILCAPLIBDIR = $TEXMFROOT/etc
- % Default settings for the fontconfig library as used by the Windows
- % versions of xetex/xdvipdfmx.  Not used by xetex on Unixish systems.
- % ConTeXT MkIV (all platforms) also use these values.
--% 
-+%
- FONTCONFIG_FILE = fonts.conf
- FONTCONFIG_PATH = $TEXMFSYSVAR/fonts/conf
- FC_CACHEDIR = $TEXMFSYSVAR/fonts/cache
-@@ -499,12 +499,12 @@ DVIPDFMXINPUTS = $TEXMF/dvipdfmx
- DVIPDFMXINPUTS = $TEXMF/dvipdfmx
- 
- % Lua needs to look in TEXINPUTS for lua scripts distributed with packages.
--% 
-+%
- % But we can't simply use $TEXINPUTS, since then if TEXINPUTS is set in
- % the environment with a colon, say, TEXINPUTS=/some/dir:, the intended
- % default expansion of TEXINPUTS will not happen and .lua files under
- % the /tex/ tree will not be found.
--% 
-+%
- % So, duplicate the TEXINPUTS.*lualatex values as LUAINPUTS.*lualatex.
- % The default LUAINPUTS suffices for luatex and dviluatex.
- %
-@@ -542,14 +542,14 @@ RUBYINPUTS   = $TEXMFDOTDIR;$TEXMF/scripts/{$progname,
- % paradoxical), but the compile-time default in paths.h is built from it.
- % The SELFAUTO* variables are set automatically from the location of
- % argv[0], in kpse_set_program_name.
--% 
-+%
- % This main texmf.cnf file is installed, for a release YYYY, in a
- % directory such as /usr/local/texlive/YYYY/texmf-dist/web2c/texmf.cnf.
- % Since this file is subject to future updates, the TeX Live installer
- % or human administrator may also create a file
- % /usr/local/texlive/YYYY/texmf.cnf; any settings in this latter file
- % will take precedence over the distributed one.
--% 
-+%
- % For security reasons, it is best not to include . in this path.
- %
- % The idea behind this lengthy definition: for each of
-@@ -558,13 +558,13 @@ RUBYINPUTS   = $TEXMFDOTDIR;$TEXMF/scripts/{$progname,
- % then the subdirectories ./texmf-local, texmf-dist, ./texmf.
- % At any given installation, most of these directories will not exist,
- % but they all turn out to be useful somewhere.
--% 
-+%
- % Special addition -- we want to include one more directory: the
- % great-grandparent's texmf-local, because that is how TL is installed
- % by default.  That is, given a binary
- % /usr/local/texlive/YYYY/bin/PLATFORM/kpsewhich, it should find
- % /usr/local/texlive/texmf-local/web2c/texmf.cnf.  I.e., not under YYYY.
--% 
-+%
- % As a result, we cannot use actual brace expansion in the definition,
- % since we don't want to scatter ../'s throughout the value.  Hence we
- % explicitly list every directory.  Arguably more understandable anyway.
-@@ -578,6 +578,7 @@ $SELFAUTOLOC/texmf/web2c,\
+@@ -583,6 +583,7 @@ $SELFAUTOLOC/texmf/web2c,\
  $SELFAUTOLOC/texmf-dist/web2c,\
  $SELFAUTOLOC/texmf/web2c,\
  \
@@ -119,24 +26,7 @@
  $SELFAUTODIR,\
  $SELFAUTODIR/share/texmf-local/web2c,\
  $SELFAUTODIR/share/texmf-dist/web2c,\
-@@ -634,14 +635,14 @@ shell_escape = p
- shell_escape = p
- 
- % No spaces in this command list.
--% 
-+%
- % The programs listed here are as safe as any we know: they either do
- % not write any output files, respect openout_any, or have hard-coded
- % restrictions similar to or higher than openout_any=p.  They also have
- % no features to invoke arbitrary other programs, and no known
- % exploitable bugs.  All to the best of our knowledge.  They also have
- % practical use for being called from TeX.
--% 
-+%
- shell_escape_commands = \
- bibtex,bibtex8,\
- extractbb,\
-@@ -813,7 +814,7 @@ pool_size = 6250000
+@@ -832,7 +833,7 @@ pool_size = 6250000
  pool_size = 6250000
  % Minimum pool space after TeX's own strings; must be at least
  % 25000 less than pool_size, but doesn't need to be nearly that large.
@@ -145,7 +35,7 @@
  % Maximum number of strings.
  max_strings = 500000
  % Min pool space left after loading .fmt.
-@@ -825,7 +826,7 @@ strings_free = 100
+@@ -844,7 +845,7 @@ strings_free = 100
  % expansion works by writing material into the buffer and reparsing the
  % line.  As a consequence, certain constructs require the buffer to be
  % very large, even though most documents can be handled with a small value.
@@ -154,7 +44,7 @@
  
  % Hyphenation trie.  The maximum possible is 4194303 (ssup_trie_size in
  % the sources), but we don't need that much.  The value here suffices
-@@ -837,8 +838,8 @@ hyph_size = 8191        % prime number of hyphenation 
+@@ -856,8 +857,8 @@ hyph_size = 8191        % prime number of hyphenation
  hyph_size = 8191        % prime number of hyphenation exceptions, >610, <65535
                          % http://primes.utm.edu/curios/page.php/8191.html
                          % dynamically increased as necessary, so not important.

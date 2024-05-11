@@ -8,8 +8,6 @@
 %%TEXMFDISTDIR%%/tex/xmltex/base/mathml2.xmt
 %%TEXMFDISTDIR%%/tex/xmltex/base/sec.xmt
 %%TEXMFDISTDIR%%/tex/xmltex/base/windows-1250.xmt
-%%TEXMFDISTDIR%%/tex/xmltex/xmltexconfig/pdfxmltex.ini
-%%TEXMFDISTDIR%%/tex/xmltex/xmltexconfig/xmltex.ini
 %%TEXMFDISTDIR%%/tex/xmltex/passivetex/mlnames.sty
 %%TEXMFDISTDIR%%/tex/xmltex/passivetex/teislides.xmt
 %%TEXMFDISTDIR%%/tex/xmltex/passivetex/fotex.xmt

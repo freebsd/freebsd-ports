@@ -1,6 +1,5 @@
 PORTNAME=	kpathsea
-PORTVERSION=	6.3.5
-PORTREVISION=	1
+DISTVERSION=	6.4.0
 CATEGORIES=	devel
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
 PKGNAMEPREFIX=	tex-
@@ -16,7 +15,6 @@ USES=		libtool pathfix tar:xz tex
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 

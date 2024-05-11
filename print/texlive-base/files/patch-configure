@@ -1,6 +1,6 @@
---- configure.orig	2023-03-09 23:07:06 UTC
+--- configure.orig	2024-03-10 21:37:05 UTC
 +++ configure
-@@ -6840,7 +6840,16 @@ fi
+@@ -6926,7 +6926,16 @@ fi
      as_fn_error $? "Sorry, \`--with-system-teckit' requires \`--with-system-zlib'" "$LINENO" 5
    fi
  fi
@@ -17,7 +17,7 @@
  test "x$need_teckit" = xyes && {
    need_zlib=yes
  }
-@@ -23067,8 +23076,8 @@ if $FT2_CONFIG --ftversion >/dev/null 2>&1; then
+@@ -23616,8 +23625,8 @@ if $FT2_CONFIG --ftversion >/dev/null 2>&1; then
    PKG_CONFIG="$ac_cv_prog_PKG_CONFIG"
  fi
  if $FT2_CONFIG --ftversion >/dev/null 2>&1; then
@@ -28,7 +28,7 @@
  elif $PKG_CONFIG --libs freetype2 >/dev/null 2>&1; then
    FREETYPE2_INCLUDES=`$PKG_CONFIG --cflags freetype2`
    FREETYPE2_LIBS=`$PKG_CONFIG --libs freetype2`
-@@ -23133,11 +23142,12 @@ fi
+@@ -23691,11 +23700,12 @@ fi
    as_fn_error $? "did not find graphite2" "$LINENO" 5
  fi
  

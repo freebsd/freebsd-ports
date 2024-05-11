@@ -1,4 +1,4 @@
---- texk/bibtex-x/Makefile.in.orig	2023-03-01 22:59:32 UTC
+--- texk/bibtex-x/Makefile.in.orig	2023-12-16 06:51:56 UTC
 +++ texk/bibtex-x/Makefile.in
 @@ -123,9 +123,7 @@ CONFIG_CLEAN_VPATH_FILES =
  CONFIG_CLEAN_VPATH_FILES =
@@ -69,7 +69,7 @@
  SOURCES = $(bibtex8_SOURCES) $(bibtexu_SOURCES) \
  	$(nodist_EXTRA_bibtexu_SOURCES)
  DIST_SOURCES = $(bibtex8_SOURCES) $(bibtexu_SOURCES)
-@@ -774,7 +772,7 @@ stamp-h1: $(srcdir)/config.h.in $(top_builddir)/config
+@@ -775,7 +773,7 @@ stamp-h1: $(srcdir)/config.h.in $(top_builddir)/config
  stamp-h1: $(srcdir)/config.h.in $(top_builddir)/config.status
  	@rm -f stamp-h1
  	cd $(top_builddir) && $(SHELL) ./config.status config.h
@@ -78,7 +78,7 @@
  	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
  	rm -f stamp-h1
  	touch $@
-@@ -831,11 +829,11 @@ clean-binPROGRAMS:
+@@ -832,11 +830,11 @@ clean-binPROGRAMS:
  	echo " rm -f" $$list; \
  	rm -f $$list
  
@@ -92,7 +92,7 @@
  	@rm -f bibtexu$(EXEEXT)
  	$(AM_V_CXXLD)$(CXXLINK) $(bibtexu_OBJECTS) $(bibtexu_LDADD) $(LIBS)
  
-@@ -1408,7 +1406,7 @@ $(TEST_SUITE_LOG): $(TEST_LOGS)
+@@ -1409,7 +1407,7 @@ $(TEST_SUITE_LOG): $(TEST_LOGS)
  	fi;								\
  	$$success || exit 1
  
@@ -101,7 +101,7 @@
  	@list='$(RECHECK_LOGS)';           test -z "$$list" || rm -f $$list
  	@list='$(RECHECK_LOGS:.log=.trs)'; test -z "$$list" || rm -f $$list
  	@test -z "$(TEST_SUITE_LOG)" || rm -f $(TEST_SUITE_LOG)
-@@ -1418,7 +1416,7 @@ check-TESTS: 
+@@ -1419,7 +1417,7 @@ check-TESTS:
  	log_list=`echo $$log_list`; trs_list=`echo $$trs_list`; \
  	$(MAKE) $(AM_MAKEFLAGS) $(TEST_SUITE_LOG) TEST_LOGS="$$log_list"; \
  	exit $$?;
@@ -110,7 +110,7 @@
  	@test -z "$(TEST_SUITE_LOG)" || rm -f $(TEST_SUITE_LOG)
  	@set +e; $(am__set_TESTS_bases); \
  	bases=`for i in $$bases; do echo $$i; done \
-@@ -1620,7 +1618,7 @@ installdirs:
+@@ -1621,7 +1619,7 @@ installdirs:
  check: check-am
  all-am: Makefile $(PROGRAMS) $(MANS) $(DATA) config.h
  installdirs:
@@ -119,7 +119,7 @@
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-am
-@@ -1692,8 +1690,7 @@ info-am:
+@@ -1693,8 +1691,7 @@ info-am:
  
  info-am:
  

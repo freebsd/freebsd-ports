@@ -1,6 +1,6 @@
---- texk/dvipng/configure.orig	2023-03-08 17:05:16 UTC
+--- texk/dvipng/configure.orig	2023-12-23 16:57:39 UTC
 +++ texk/dvipng/configure
-@@ -17556,8 +17556,8 @@ if $FT2_CONFIG --ftversion >/dev/null 2>&1; then
+@@ -17725,8 +17725,8 @@ if $FT2_CONFIG --ftversion >/dev/null 2>&1; then
    PKG_CONFIG="$ac_cv_prog_PKG_CONFIG"
  fi
  if $FT2_CONFIG --ftversion >/dev/null 2>&1; then

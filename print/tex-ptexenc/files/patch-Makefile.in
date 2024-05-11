@@ -1,6 +1,6 @@
---- Makefile.in.orig	2023-04-02 22:35:25 UTC
+--- Makefile.in.orig	2024-05-12 00:15:23 UTC
 +++ Makefile.in
-@@ -404,7 +404,8 @@ nobase_include_HEADERS = \
+@@ -591,7 +591,8 @@ nobase_include_HEADERS = \
  libptexenc_la_LIBADD = $(KPATHSEA_LIBS)
  nobase_include_HEADERS = \
  	ptexenc/ptexenc.h \
