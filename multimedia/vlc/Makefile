@@ -57,7 +57,7 @@ CONFIGURE_ARGS=	--enable-avcodec --enable-avformat --enable-dvbpsi \
 		--disable-dsm --disable-dv1394 --disable-fdkaac \
 		--disable-gst-decode --disable-gles2 --disable-kai \
 		--disable-kate --disable-kva --disable-libcddb \
-		--disable-mpg123--disable-vnc --disable-opencv \
+		--disable-mpg123 --disable-vnc --disable-opencv \
 		--disable-projectm --disable-schroedinger --disable-secret \
 		--disable-soxr --disable-telx --disable-tiger \
 		--disable-tremor --disable-udev --disable-update-check \
