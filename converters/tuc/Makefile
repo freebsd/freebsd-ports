@@ -15,6 +15,8 @@ LICENSE_TEXT=	Author does not allow CD-ROM distribution
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 BROKEN=		unfetchable 6 times in 2 weeks - Host does not resolve  
+DEPRECATED=	Dead upstream and unfetchable
+EXPIRATION_DATE=2024-05-31
 
 PLIST_FILES=	bin/tuc \
 		share/man/man1/tuc.1.gz
