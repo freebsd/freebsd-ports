@@ -4033,6 +4033,11 @@ share/foomatic/db/source/PPD/Oki/OK5700_a.ppd.gz
 share/foomatic/db/source/PPD/Oki/OK5900_a.ppd.gz
 share/foomatic/db/source/PPD/Oki/OK6100_a.ppd.gz
 share/foomatic/db/source/PPD/Oki/OK8800_a.ppd.gz
+share/foomatic/db/source/PPD/Oki/OKB430_a.ppd.gz
+share/foomatic/db/source/PPD/Oki/OKB440_a.ppd.gz
+share/foomatic/db/source/PPD/Oki/OKC321_a110.ppd.gz
+share/foomatic/db/source/PPD/Oki/OKC331_a110.ppd.gz
+share/foomatic/db/source/PPD/Oki/OKC531_a110.ppd.gz
 share/foomatic/db/source/PPD/Oki/ok4300u1.ppd.gz
 share/foomatic/db/source/PPD/Oki/ok4350u1.ppd.gz
 share/foomatic/db/source/PPD/Oki/ok5300u1.ppd.gz
