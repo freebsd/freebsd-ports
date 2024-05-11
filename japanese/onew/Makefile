@@ -10,6 +10,8 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Library for Japanese Input Methods
 
 BROKEN=		Doesn't fetch (NXDOMAIN)
+DEPRECATED=	Unfetchabled and listed BROKEN for over year
+EXPIRATION_DATE=2024-05-31
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=
