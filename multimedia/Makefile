@@ -348,6 +348,7 @@
     SUBDIR += subtitleoffsetmodifier
     SUBDIR += subtools
     SUBDIR += svt-av1
+    SUBDIR += svt-av1-psy
     SUBDIR += svt-hevc
     SUBDIR += svt-vp9
     SUBDIR += syncplay

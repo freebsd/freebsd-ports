@@ -1,0 +1,4 @@
+SVT-AV1-PSY is the Scalable Video Technology for AV1 (SVT-AV1 Encoder
+and Decoder) with perceptual enhancements for psychovisually optimal
+AV1 encoding. The goal is to create the best encoding implementation
+for perceptual quality with AV1.

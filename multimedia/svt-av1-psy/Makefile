@@ -1,11 +1,11 @@
-PORTNAME=	svt-av1
+PORTNAME=	svt-av1-psy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
+DISTVERSION=	2.0.0-A
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Scalable AV1 encoder
-WWW=		https://01.org/svt
+COMMENT=	Scalable AV1 encoder with psychovisually enhancements
+WWW=		https://github.com/gianni-rosato/svt-av1-psy
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE MIT
 LICENSE_COMB=	multi
@@ -17,14 +17,13 @@ BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}
 BUILD_DEPENDS_amd64=	nasm:devel/nasm
 
 USES=		cmake compiler:c11
-USE_GITLAB=	yes
+USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-GL_ACCOUNT=	AOMediaCodec
-GL_PROJECT=	SVT-AV1
+GH_ACCOUNT=	gianni-rosato
 CMAKE_ON=	ENABLE_NASM
 CMAKE_OFF=	NATIVE
 
-CONFLICTS_INSTALL=	svt-av1-psy # bin/SvtAv1EncApp
+CONFLICTS_INSTALL=	svt-av1 # bin/SvtAv1EncApp
 
 OPTIONS_DEFINE=	LTO
 OPTIONS_DEFAULT=LTO
