@@ -9,7 +9,17 @@
      sources += [
        "dns_config_service_linux.cc",
        "dns_config_service_linux.h",
-@@ -165,6 +165,7 @@ source_set("dns") {
+@@ -158,6 +158,9 @@ source_set("dns") {
+   }
+ 
+   deps = [ "//net:net_deps" ]
++  if (is_bsd) {
++    deps += [ "//components/services/screen_ai/buildflags" ]
++  }
+ 
+   public_deps = [
+     ":dns_client",
+@@ -165,6 +168,7 @@ source_set("dns") {
      ":host_resolver_manager",
      ":mdns_client",
      "//net:net_public_deps",
