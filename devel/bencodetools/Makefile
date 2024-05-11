@@ -1,5 +1,5 @@
 PORTNAME=	bencodetools
-PORTVERSION=	g20221122
+PORTVERSION=	1.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	bash:shells/bash
 USES=		shebangfix
 USE_GITLAB=	yes
 GL_ACCOUNT=	heikkiorsila
-GL_TAGNAME=	f08cb85806d5b188f3af04cd21393dd8eb51b287
+GL_TAGNAME=	3b28b62e1815d817cb39d609902f99c551aaa9dc
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	configure
