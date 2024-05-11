@@ -1,5 +1,5 @@
 PORTNAME=	libzakalwe
-DISTVERSION=	g20230909
+DISTVERSION=	1.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	bash:shells/bash
 USES=		gmake shebangfix
 USE_GITLAB=	yes
 GL_ACCOUNT=	hors
-GL_TAGNAME=	521bc3ba81d78859fb3cabae88dae6ebe41f9c03
+GL_TAGNAME=	b53b65812353e472588e1b24ead12891f174760a
 
 SHEBANG_FILES=	configure
 
