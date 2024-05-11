@@ -15,6 +15,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		fails to build, configure: error: Cannot find the ELFIO headers
+DEPRECATED=	Marked BROKEN for over a year
+EXPIRATION_DATE=2024-05-31
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		elfio>0:devel/elfio \
