@@ -20,7 +20,7 @@ share/applications/org.gnome.Shotwell-Viewer.desktop
 share/applications/org.gnome.Shotwell.Auth.desktop
 share/applications/org.gnome.Shotwell.desktop
 share/apport/package-hooks/shotwell.py
-share/dbus-1/services/org.gnome.Shotwell.Faces1.service
+%%FACED%%share/dbus-1/services/org.gnome.Shotwell.Faces1.service
 share/glib-2.0/schemas/org.gnome.shotwell-extras.gschema.xml
 share/glib-2.0/schemas/org.gnome.shotwell.gschema.xml
 share/help/C/shotwell/figures/Shotwell.svg
@@ -689,7 +689,7 @@ share/locale/zh_CN/LC_MESSAGES/shotwell.mo
 share/locale/zh_HK/LC_MESSAGES/shotwell.mo
 share/locale/zh_TW/LC_MESSAGES/shotwell.mo
 share/metainfo/org.gnome.Shotwell.appdata.xml
-%%DATADIR%%/facedetect/deploy.prototxt
+%%FACED%%%%DATADIR%%/facedetect/deploy.prototxt
 %%FACED%%%%DATADIR%%/facedetect/haarcascade_frontalface_alt.xml
 %%FACED%%%%DATADIR%%/facedetect/haarcascade_profileface.xml
 %%FACED%%%%DATADIR%%/facedetect/openface.nn4.small2.v1.t7
