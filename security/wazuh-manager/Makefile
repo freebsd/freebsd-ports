@@ -1,6 +1,6 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.7.3
+DISTVERSION=	4.7.4
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/24/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
@@ -134,7 +134,7 @@ WZPYTHONWHEELS=	aiohttp-3.9.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		multidict-5.1.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		numpy-1.21.6-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		psutil-5.8.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		pyarrow-13.0.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		pyarrow-15.0.2-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		PyYAML-6.0.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		SQLAlchemy-1.3.11-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		uvloop-0.15.2-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
@@ -146,16 +146,23 @@ FBSD_RELEASE=	freebsd_${UNAME_r:S/./_/g:S/-/_/g}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "aarch64"
+FBSD13_PATCH_LEVEL=	_p1
+.endif
+
 .if ${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000
-FBSD_VERSION_BASE=freebsd_13_2_release_p8
+FBSD_VERSION_BASE=freebsd_13_3_release${FBSD13_PATCH_LEVEL}
+FBSD_MAJOR_VERSION=13
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd13-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .elif ${OSVERSION} >= 1400000 && ${OSVERSION} < 1500000
-FBSD_VERSION_BASE=freebsd_14_0_release_p3
+FBSD_VERSION_BASE=freebsd_14_0_release_p6
+FBSD_MAJOR_VERSION=14
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd14-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .elif ${OSVERSION} >= 1500000
 FBSD_VERSION_BASE=freebsd_15_0_current
+FBSD_MAJOR_VERSION=15
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd15-${ARCH}-${DISTVERSION}
 DISTFILES+=     ${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .else

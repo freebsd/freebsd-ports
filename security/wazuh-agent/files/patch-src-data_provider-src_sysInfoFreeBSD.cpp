@@ -1,5 +1,5 @@
---- src/data_provider/src/sysInfoFreeBSD.cpp	2023-12-15 11:15:49.000000000 -0500
-+++ src/data_provider/src/sysInfoFreeBSD.cpp	2023-12-22 12:02:24.020462000 -0500
+--- src/data_provider/src/sysInfoFreeBSD.cpp	2024-04-25 01:44:26.000000000 -0700
++++ src/data_provider/src/sysInfoFreeBSD.cpp	2024-05-10 01:08:00.203056000 -0700
 @@ -11,6 +11,7 @@
  #include "sysInfo.hpp"
  #include "cmdHelper.h"
@@ -95,15 +95,17 @@
      if (uname(&uts) >= 0)
      {
          ret["sysname"] = uts.sysname;
-@@ -215,18 +234,133 @@
+@@ -215,18 +234,137 @@
  
  nlohmann::json SysInfo::getPorts() const
  {
 -    // Currently not supported for this OS.
 -    return nlohmann::json {};
+-}
 +    const auto query{Utils::exec(R"(sockstat -46qs)")};
 +    nlohmann::json ports {};
-+
+ 
+-void SysInfo::getProcessesInfo(std::function<void(nlohmann::json&)> /*callback*/) const
 +    if (!query.empty())
 +    {
 +        const auto lines{Utils::split(Utils::trimToOneSpace(query), '\n')};
@@ -114,15 +116,19 @@
 +            std::string localport = "";
 +            std::string remoteip = "";
 +            std::string remoteport = "";
++            std::string statedata = "";
 +            const auto data{Utils::split(line, ' ')};
 +            auto localdata{Utils::split(data[5], ':')};
 +            auto remotedata{Utils::split(data[6], ':')};
-+            auto statedata{Utils::toLowerCase(data[7])};
 +
 +            localip = localdata[0];
 +            localport = localdata[1];
 +            remoteip = remotedata[0];
 +            remoteport = remotedata[1];
++
++            if((data[4] != "udp4") && (data[4] != "udp6")) {
++              statedata = Utils::toLowerCase(data[7]);
++            }
 +
 +            if(statedata == "listen") {
 +              statedata = "listening";
@@ -148,7 +154,7 @@
 +              remoteport = remotedata[3];
 +            } else if(remoteport == "*") {
 +                remoteip = "";
-+                remoteport = "";
++                remoteport = "0";
 +            }
 +
 +            if(data[0] != "?") {
@@ -171,9 +177,8 @@
 +    }
 +
 +    return ports;
- }
- 
--void SysInfo::getProcessesInfo(std::function<void(nlohmann::json&)> /*callback*/) const
++}
++
 +void SysInfo::getProcessesInfo(std::function<void(nlohmann::json&)> callback) const
  {
 -    // Currently not supported for this OS.
@@ -234,7 +239,7 @@
  
      if (!query.empty())
      {
-@@ -235,18 +369,22 @@
+@@ -235,18 +373,22 @@
          for (const auto& line : lines)
          {
              const auto data{Utils::split(line, '|')};

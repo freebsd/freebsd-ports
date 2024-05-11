@@ -1,5 +1,5 @@
 PORTNAME=	wazuh
-DISTVERSION=	4.7.3
+DISTVERSION=	4.7.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/24/libraries/sources/:wazuh_sources
@@ -90,7 +90,19 @@ WAZUHMOD770=	/etc/shared/default /logs /queue/alerts /queue/fim \
 
 WAZUHPREFIX=	/var/ossec
 
+FBSD_MAJOR_VERSION=13
+
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000
+FBSD_MAJOR_VERSION=13
+.elif ${OSVERSION} >= 1400000 && ${OSVERSION} < 1500000
+FBSD_MAJOR_VERSION=14
+.elif ${OSVERSION} >= 1500000
+FBSD_MAJOR_VERSION=15
+.else
+IGNORE=		FreeBSD ${OSVERSION} ${ARCH} is not supported
+.endif
 
 post-extract:
 .for FILE in ${EXTERNAL_DISTFILES}
@@ -103,6 +115,7 @@ post-extract:
 
 post-patch:
 	${REINPLACE_CMD} -e 's|CC=|CC?=|g' -e 's|AR=|AR?=|g' ${WRKSRC}/src/external/bzip2/Makefile
+	${REINPLACE_CMD} -e 's|%%FBSD_MAJOR_VERSION%%|${FBSD_MAJOR_VERSION}|g' ${WRKSRC}/etc/ossec-agent.conf
 
 do-build:
 	cd ${WRKSRC}/src/ && ${SETENV} ${MAKE_ENV} STAGEDIR=${STAGEDIR} \
