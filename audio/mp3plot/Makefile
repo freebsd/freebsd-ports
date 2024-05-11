@@ -9,6 +9,8 @@ COMMENT=	MP3 bitrate plot tool
 WWW=		https://p.outlyer.net/mp3plot/
 
 BROKEN=		fails to build with newest Boost
+DEPRECATED=	Dead upstream and fails to build
+EXPIRATION_DATE=2024-05-31
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
