@@ -22,8 +22,8 @@ help: a similar name exists in the module
 23 |     EPROTONOSUPPORT, EPROTOTYPE, ERANGE, EROFS, ESPIPE, ESRCH, VTIME, ETIMEDOUT, ETXTBSY,
    |                                                                ~~~~~
 
---- cargo-crates/ffmpeg-the-third-1.2.2+ffmpeg-6.0/src/util/error.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/ffmpeg-the-third-1.2.2+ffmpeg-6.0/src/util/error.rs
+--- cargo-crates/ffmpeg-the-third-2.0.1+ffmpeg-7.0/src/util/error.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/ffmpeg-the-third-2.0.1+ffmpeg-7.0/src/util/error.rs
 @@ -19,10 +19,10 @@ pub use libc::{
      EBUSY, ECANCELED, ECHILD, ECONNABORTED, ECONNREFUSED, ECONNRESET, EDEADLK, EDESTADDRREQ, EDOM,
      EEXIST, EFAULT, EFBIG, EHOSTUNREACH, EIDRM, EILSEQ, EINPROGRESS, EINTR, EINVAL, EIO, EISCONN,
