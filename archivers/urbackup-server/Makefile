@@ -1,10 +1,9 @@
 PORTNAME=	urbackup-server
-DISTVERSION=	2.5.26
-PORTREVISION=	5
+DISTVERSION=	2.5.33
 CATEGORIES=	archivers
 MASTER_SITES=	https://hndl.urbackup.org/Server/${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ek@purplehat.org
 COMMENT=	Server component of the UrBackup backup system
 WWW=		https://www.urbackup.org
 
