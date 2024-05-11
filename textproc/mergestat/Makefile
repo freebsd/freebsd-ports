@@ -12,6 +12,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		fails to build
+DEPRECATED=	Marked BROKEN for over a year
+EXPIRATION_DATE=2024-05-31
 
 BUILD_DEPENDS=	sqlite3>=3.0.0:databases/sqlite3
 LIB_DEPENDS=	libgit2.so:devel/libgit2
