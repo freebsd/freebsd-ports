@@ -146,11 +146,11 @@ share/man/man3/dnsjit.output.tcpcli.3.gz
 share/man/man3/dnsjit.output.tlscli.3.gz
 share/man/man3/dnsjit.output.udpcli.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/capture.lua
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/count-pkts-per-ip.lua
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dumpdns-qr.lua
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dumpdns.lua
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dumpdns2pcap.lua
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/filter_rcode.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcap2tcpdns.lua
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/qr-multi-pcap-state.lua
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/readme.lua
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/replay.lua

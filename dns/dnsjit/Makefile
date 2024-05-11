@@ -1,8 +1,7 @@
 PORTNAME=	dnsjit
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.3
-PORTREVISION=	1
+DISTVERSION=	1.3.0
 CATEGORIES=	dns net
+MASTER_SITES=	https://www.dns-oarc.net/files/${PORTNAME}/
 
 MAINTAINER=	freebsd@dns.company
 COMMENT=	Engine for capturing, parsing and replaying DNS
@@ -14,16 +13,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libck.so:devel/concurrencykit \
 		libgnutls.so:security/gnutls \
 		liblmdb.so:databases/lmdb \
-		libpcap.so:net/libpcap \
 		liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd
-		# Mind PR 262976 about libpcap
 
-USES=		autoreconf libtool luajit pkgconfig
-USE_GITHUB=	yes
-GH_ACCOUNT=	DNS-OARC
+USES=		libtool localbase luajit pkgconfig
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
+
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 OPTIONS_DEFINE=	EXAMPLES
 
