@@ -171,6 +171,7 @@ FREERDP_CONFIGURE_ENABLE=	freerdp
 FREERDP_CONFIGURE_ENV=	FREERDP_CFLAGS="-I${LOCALBASE}/include/freerdp2 \
 					-I${LOCALBASE}/include/winpr2" \
 			FREERDP_LIBS="-L${LOCALBASE}/lib"
+FREERDP_CFLAGS=		-Wno-error=incompatible-function-pointer-types
 
 FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 FRIBIDI_CONFIGURE_ENABLE=	fribidi
