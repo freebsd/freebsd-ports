@@ -221,8 +221,9 @@ lib/libtogl.a
 %%PYTHON_SITELIBDIR%%/netgen/NgOCC.py
 %%PYTHON_SITELIBDIR%%/netgen/__init__.py
 %%PYTHON_SITELIBDIR%%/netgen/__main__.py
-%%PYTHON_SITELIBDIR%%/netgen/config.py
-%%PYTHON_SITELIBDIR%%/netgen/config_cli.py
+%%PYTHON_SITELIBDIR%%/netgen/config/__init__.py
+%%PYTHON_SITELIBDIR%%/netgen/config/__main__.py
+%%PYTHON_SITELIBDIR%%/netgen/config/config.py
 %%PYTHON_SITELIBDIR%%/netgen/csg.py
 %%PYTHON_SITELIBDIR%%/netgen/geom2d.py
 %%PYTHON_SITELIBDIR%%/netgen/gui.py
