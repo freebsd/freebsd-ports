@@ -1,5 +1,6 @@
 PORTNAME=	ccid
 PORTVERSION=	1.5.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://ccid.apdu.fr/files/
 
@@ -20,6 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers \
 		--enable-ccidtwindir=${PREFIX}/lib/pcsc/drivers/serial
 
+LDFLAGS=	-pthread
 INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	bin/RSA_SecurID_getpasswd \
