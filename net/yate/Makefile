@@ -12,6 +12,8 @@ WWW=		http://yate.null.ro
 LICENSE=	GPLv2
 
 BROKEN=		Unfetchable
+DEPRECATED=	Abandoned upstream and unfetchable
+EXPIRATION_DATE=2024-05-31
 
 ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
 
