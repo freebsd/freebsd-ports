@@ -3234,3 +3234,10 @@ devel/rubygem-paperclip-rails50||2024-05-04|Has expired: Upstream repo archived 
 devel/rubygem-paperclip-rails5||2024-05-04|Has expired: Upstream repo archived Jul 13, 2023. Upstream recommends using Rails' own ActiveStorage
 biology/pbseqan|biology/seqan|2024-05-05|Has expired: Upstream merged into SeqAn project: Use biology/seqan
 archivers/xpk||2024-05-07|Has expired: Unmaintained, upstream last release in 2002
+www/py-dj42-channels-redis|www/py-channels-redis|2024-05-12|Renamed after all Django consumers were switched from Django 3.2 to Django 4.2 to have a consistent naming scheme
+www/py-dj42-django-auditlog|www/py-django-auditlog|2024-05-12|Renamed after all Django consumers were switched from Django 3.2 to Django 4.2 to have a consistent naming scheme
+www/py-dj42-django-celery-results|www/py-django-celery-results|2024-05-12|Renamed after all Django consumers were switched from Django 3.2 to Django 4.2 to have a consistent naming scheme
+www/py-dj42-django-compression-middleware|www/py-django-compression-middleware|2024-05-12|Renamed after all Django consumers were switched from Django 3.2 to Django 4.2 to have a consistent naming scheme
+www/py-dj42-django-multiselectfield|www/py-django-multiselectfield|2024-05-12|Renamed after all Django consumers were switched from Django 3.2 to Django 4.2 to have a consistent naming scheme
+www/py-dj42-djangorestframework-guardian|www/py-djangorestframework-guardian|2024-05-12|Renamed after all Django consumers were switched from Django 3.2 to Django 4.2 to have a consistent naming scheme
+www/py-dj42-drf-writable-nested|www/py-drf-writable-nested|2024-05-12|Renamed after all Django consumers were switched from Django 3.2 to Django 4.2 to have a consistent naming scheme

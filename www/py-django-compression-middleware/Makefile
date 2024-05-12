@@ -2,7 +2,7 @@ PORTNAME=	django-compression-middleware
 PORTVERSION=	0.5.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj42-
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Django middleware to compress responses using several algorithms

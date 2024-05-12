@@ -1,7 +1,7 @@
 PORTNAME=	paperless-ngx
 PORTVERSION=	2.7.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/:webui \
 		GH:gh
@@ -18,17 +18,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bleach>=6.1.0:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}concurrent-log-handler>=0.9.19:sysutils/py-concurrent-log-handler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateparser>=1.1.4:devel/py-dateparser@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-channels-redis>=4.2.0:www/py-dj42-channels-redis@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-allauth>=0.59.0:www/py-dj42-django-allauth@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-auditlog>=2.3.0:www/py-dj42-django-auditlog@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-celery-results>=2.5.1:www/py-dj42-django-celery-results@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-compression-middleware>=0.5.0:www/py-dj42-django-compression-middleware@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-cors-headers>=4.3.1:www/py-dj42-django-cors-headers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-extensions>=3.2.3:www/py-dj42-django-extensions@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-filter>=23.5:www/py-dj42-django-filter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-multiselectfield>=0.1.12:www/py-dj42-django-multiselectfield@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-djangorestframework-guardian>=0.3.0:www/py-dj42-djangorestframework-guardian@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-drf-writable-nested>=0.7.0:www/py-dj42-drf-writable-nested@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}channels-redis>=4.2.0:www/py-channels-redis@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-allauth>=0.59.0:www/py-django-allauth@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-auditlog>=2.3.0:www/py-django-auditlog@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-celery-results>=2.5.1:www/py-django-celery-results@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-compression-middleware>=0.5.0:www/py-django-compression-middleware@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-cors-headers>=4.3.1:www/py-django-cors-headers@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-extensions>=3.2.3:www/py-django-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-filter>=23.5:www/py-django-filter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-multiselectfield>=0.1.12:www/py-django-multiselectfield@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}djangorestframework-guardian>=0.3.0:www/py-djangorestframework-guardian@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}drf-writable-nested>=0.7.0:www/py-drf-writable-nested@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.13.1:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flower>=2.0.1:www/py-flower@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gotenberg-client>=0.5.0:converters/py-gotenberg-client@${PY_FLAVOR} \
