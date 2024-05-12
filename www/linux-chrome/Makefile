@@ -10,8 +10,8 @@ MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Google web browser based on WebKit
 WWW=		https://www.chromium.org/Home
 
-RUN_DEPENDS=	linux-rl9-wget>0:ftp/linux-wget \
-		linux-rl9-gnupg2>0:security/linux-gnupg \
+RUN_DEPENDS=	linux-rl9-wget>0:ftp/linux-rl9-wget \
+		linux-rl9-gnupg2>0:security/linux-rl9-gnupg \
 		update-mime-database:misc/shared-mime-info
 
 USES=		cpe desktop-file-utils gnome linux:rl9 shared-mime-info shebangfix
