@@ -1,6 +1,6 @@
---- modules/Makefile.in.orig	2021-02-09 15:56:37 UTC
+--- modules/Makefile.in.orig	2024-01-15 13:41:34 UTC
 +++ modules/Makefile.in
-@@ -374,7 +374,7 @@ server/mgcpgw.yate: LOCALFLAGS = -I@top_srcdir@/libs/y
+@@ -375,7 +375,7 @@ server/lksctp.yate: EXTERNFLAGS = @SCTP_FLAGS@
  server/mgcpgw.yate: LOCALLIBS = -lyatemgcp -L../libs/ysdp -lyatesdp
  
  server/lksctp.yate: EXTERNFLAGS = @SCTP_FLAGS@

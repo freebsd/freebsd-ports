@@ -1,6 +1,6 @@
---- Makefile.in.orig	2017-03-28 09:13:41 UTC
+--- Makefile.in.orig	2024-01-15 13:41:34 UTC
 +++ Makefile.in
-@@ -230,8 +230,8 @@ install-noconf: all
+@@ -235,8 +235,8 @@ install-noconf: all
  	for i in $(MAN8) ; do \
  	    install -m 0644 @srcdir@/docs/man/$$i "$(DESTDIR)$(mandir)/man8/" ; \
  	done
@@ -11,7 +11,20 @@
  	@mkdir -p "$(DESTDIR)$(incdir)/" && \
  	for i in $(INCS) ; do \
  	    install -m 0644 @srcdir@/$$i "$(DESTDIR)$(incdir)/" ; \
-@@ -270,7 +270,7 @@ uninstall uninstall-root:
+@@ -262,9 +262,9 @@ install-api: $(APIDOCS)
+ 
+ install-api: $(APIDOCS)
+ 	@mkdir -p "$(DESTDIR)$(docdir)/api/" && \
+-	install -m 0644 @srcdir@/docs/*.html "$(DESTDIR)$(docdir)/" && \
+-	test -f "$(APIINDEX)" && \
+-	install -m 0644 @srcdir@/docs/api/*.* "$(DESTDIR)$(docdir)/api/"
++	install -m 0644 @srcdir@/docs/*.html "$(DESTDIR)$(docdir)/" #&& \
++#	test -f "$(APIINDEX)" && \
++#	install -m 0644 @srcdir@/docs/api/*.* "$(DESTDIR)$(docdir)/api/"
+ 
+ uninstall uninstall-root:
+ 	@-for i in $(SLIBS) ; do \
+@@ -275,7 +275,7 @@ uninstall uninstall-root:
  	@-for i in $(PROGS) yate-config ; do \
  	    rm "$(DESTDIR)$(bindir)/$$i" ; \
  	done

@@ -1,6 +1,6 @@
---- configure.ac.orig	2018-04-05 08:59:36 UTC
+--- configure.ac.orig	2024-01-15 13:41:34 UTC
 +++ configure.ac
-@@ -109,7 +109,8 @@ if [[ "x$ac_cv_no_overload_virt" = "xyes
+@@ -113,7 +113,8 @@ AC_MSG_RESULT([$ac_cv_no_overload_virt])
  fi
  AC_MSG_RESULT([$ac_cv_no_overload_virt])
  
