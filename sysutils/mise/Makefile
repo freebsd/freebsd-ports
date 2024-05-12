@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.5.3
+DISTVERSION=	2024.5.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,7 +30,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		arbitrary-1.3.2 \
 		arrayvec-0.5.2 \
 		assert_cmd-2.0.14 \
-		async-compression-0.4.9 \
+		async-compression-0.4.10 \
 		autocfg-1.3.0 \
 		backtrace-0.3.71 \
 		base64-0.21.7 \
@@ -97,7 +97,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		envmnt-0.10.4 \
 		equivalent-1.0.1 \
 		errno-0.2.8 \
-		errno-0.3.8 \
+		errno-0.3.9 \
 		errno-dragonfly-0.1.2 \
 		exec-0.3.1 \
 		eyre-0.6.12 \
@@ -181,8 +181,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		num-conv-0.1.0 \
 		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
-		num_enum-0.7.2 \
-		num_enum_derive-0.7.2 \
 		num_threads-0.1.7 \
 		number_prefix-0.4.0 \
 		object-0.32.2 \
@@ -194,7 +192,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		os_pipe-1.1.5 \
 		owo-colors-3.5.0 \
 		papergrid-0.11.0 \
-		paste-1.0.14 \
+		paste-1.0.15 \
 		path-absolutize-3.1.1 \
 		path-dedot-3.1.1 \
 		percent-encoding-2.3.1 \
@@ -202,7 +200,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pest_derive-2.7.10 \
 		pest_generator-2.7.10 \
 		pest_meta-2.7.10 \
-		petgraph-0.6.4 \
+		petgraph-0.6.5 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		pkcs8-0.10.2 \
@@ -215,10 +213,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
 		pretty_assertions-1.4.0 \
-		proc-macro-crate-3.1.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.81 \
+		proc-macro2-1.0.82 \
 		quick-xml-0.23.1 \
 		quote-1.0.36 \
 		rand-0.8.5 \
@@ -235,15 +232,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rmp-0.8.14 \
 		rmp-serde-1.3.0 \
 		roff-0.2.1 \
-		rustc-demangle-0.1.23 \
+		rustc-demangle-0.1.24 \
 		rustc_version-0.4.0 \
 		rustix-0.38.34 \
 		rustls-0.21.12 \
 		rustls-native-certs-0.6.3 \
 		rustls-pemfile-1.0.4 \
 		rustls-webpki-0.101.7 \
-		rustversion-1.0.15 \
-		ryu-1.0.17 \
+		rustversion-1.0.16 \
+		ryu-1.0.18 \
 		same-file-1.0.6 \
 		schannel-0.1.23 \
 		sct-0.7.1 \
@@ -251,10 +248,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		security-framework-sys-2.11.0 \
 		self-replace-1.3.7 \
 		self_update-0.39.0 \
-		semver-1.0.22 \
-		serde-1.0.200 \
-		serde_derive-1.0.200 \
-		serde_json-1.0.116 \
+		semver-1.0.23 \
+		serde-1.0.201 \
+		serde_derive-1.0.201 \
+		serde_json-1.0.117 \
 		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.8 \
@@ -276,7 +273,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strum_macros-0.26.2 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.60 \
+		syn-2.0.63 \
 		sync_wrapper-0.1.2 \
 		sys-info-0.9.1 \
 		system-configuration-0.5.1 \
@@ -292,8 +289,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		test-case-3.3.1 \
 		test-case-core-3.3.1 \
 		test-case-macros-3.3.1 \
-		thiserror-1.0.59 \
-		thiserror-impl-1.0.59 \
+		thiserror-1.0.60 \
+		thiserror-impl-1.0.60 \
 		thread_local-1.1.8 \
 		time-0.3.36 \
 		time-core-0.1.2 \
@@ -306,7 +303,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-util-0.7.11 \
 		toml-0.8.12 \
 		toml_datetime-0.6.5 \
-		toml_edit-0.21.1 \
 		toml_edit-0.22.12 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
@@ -375,7 +371,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.5 \
-		winnow-0.5.40 \
 		winnow-0.6.8 \
 		winreg-0.50.0 \
 		winsafe-0.0.19 \
@@ -383,7 +378,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		xx-0.2.5 \
 		yansi-0.5.1 \
 		zeroize-1.7.0 \
-		zip-1.2.0 \
+		zip-1.2.3 \
 		zipsign-api-0.1.1
 
 OPENSSLINC=	/usr/include
