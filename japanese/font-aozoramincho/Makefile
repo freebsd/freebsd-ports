@@ -2,14 +2,14 @@ PORTNAME=	aozoramincho
 PORTVERSION=	0.1
 PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://blueskis.wktk.so/AozoraMincho/archive/v${PORTVERSION}/
+MASTER_SITES=	https://web.archive.org/web/20200321102301/http://blueskis.wktk.so/AozoraMincho/archive/v${PORTVERSION}/
 PKGNAMEPREFIX=	ja-font-
 DISTNAME=	${PORTNAME}-readme-ttf
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Aozora Mincho Japanese TrueType fonts
-WWW=		http://blueskis.wktk.so/AozoraMincho/
+WWW=		http://blueskis.wktk.so/AozoraMincho/index.html
 
 USES=		fonts:fc zip
 FONTPATHSPEC=	${FONTNAME}:pri=60
