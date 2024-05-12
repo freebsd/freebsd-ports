@@ -1,7 +1,6 @@
 PORTNAME=	mako
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.0
-PORTREVISION=	1
+DISTVERSION=	1.9.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		wayland-protocols>=1.21:graphics/wayland-protocols
+		wayland-protocols>=1.32:graphics/wayland-protocols
 LIB_DEPENDS=	libbasu.so:devel/basu \
 		libepoll-shim.so:devel/libepoll-shim \
 		libwayland-client.so:graphics/wayland
@@ -42,6 +41,6 @@ post-patch:
 # Respect PREFIX for icons
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},g' \
 		${WRKSRC}/icon.c \
-		${WRKSRC}/${PORTNAME}.5.scd
+		${WRKSRC}/doc/${PORTNAME}.5.scd
 
 .include <bsd.port.mk>
