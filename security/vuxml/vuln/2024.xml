@@ -1,3 +1,36 @@
+  <vuln vid="3cf8ea44-1029-11ef-9f97-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>124.0.6367.201</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>124.0.6367.201</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/05/stable-channel-update-for-desktop_9.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[339266700] High CVE-2024-4671: Use after free in Visuals. Reported by Anonymous on 2024-05-07</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-4671</cvename>
+      <url>https://chromereleases.googleblog.com/2024/05/stable-channel-update-for-desktop_9.html</url>
+    </references>
+    <dates>
+      <discovery>2024-05-09</discovery>
+      <entry>2024-05-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d53c30c1-0d7b-11ef-ba02-6cc21735f730">
     <topic>PostgreSQL server -- Potentially allowing authenicated database users to see data that they shouldn't.</topic>
     <affects>
