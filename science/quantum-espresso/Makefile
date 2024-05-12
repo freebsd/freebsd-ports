@@ -11,6 +11,7 @@ WWW=		https://www.quantum-espresso.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/License
 
+BROKEN_aarch64=	compilation fails: cannot find an intrinsic module named 'ieee_arithmetic', see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=278942
 BROKEN_armv6=	fails to build: gfortran8: error: iotk_base_tmp.f90: No such file or directory
 BROKEN_armv7=	fails to build: gfortran8: error: iotk_base_tmp.f90: No such file or directory
 
