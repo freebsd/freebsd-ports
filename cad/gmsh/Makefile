@@ -6,7 +6,7 @@ MASTER_SITES=	http://gmsh.info/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 DIST_SUBDIR=	gmsh
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatic 3D finite element mesh generator
 WWW=		https://www.geuz.org/gmsh/
 
