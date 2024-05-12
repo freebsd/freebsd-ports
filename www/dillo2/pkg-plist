@@ -5,6 +5,7 @@ bin/dpidc
 @sample etc/dillo/dillorc.sample
 @sample etc/dillo/domainrc.sample
 @sample etc/dillo/dpidrc.sample
+@sample etc/dillo/hsts_preload.sample
 @sample etc/dillo/keysrc.sample
 libexec/dillo/dpi/bookmarks/bookmarks.dpi
 libexec/dillo/dpi/cookies/cookies.dpi
@@ -13,7 +14,9 @@ libexec/dillo/dpi/downloads/downloads.dpi
 libexec/dillo/dpi/file/file.dpi
 libexec/dillo/dpi/ftp/ftp.filter.dpi
 libexec/dillo/dpi/hello/hello.filter.dpi
-libexec/dillo/dpi/https/https.filter.dpi
 libexec/dillo/dpi/vsource/vsource.filter.dpi
+share/applications/dillo.desktop
+share/icons/hicolor/128x128/apps/dillo.png
+share/icons/hicolor/48x48/apps/dillo.png
 share/man/man1/dillo.1.gz
 @dir libexec/dillo/hyphenation

@@ -1,8 +1,7 @@
 PORTNAME=	dillo
-PORTVERSION=	3.0.5
-PORTREVISION=	5
+PORTVERSION=	3.1.0
 CATEGORIES=	www
-MASTER_SITES=	http://www.dillo.org/download/ \
+MASTER_SITES=	https://github.com/dillo-browser/dillo/releases/download/v3.1.0/ \
 		LOCAL/bf/dillo/ \
 		TEX/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/:hyphen
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -11,7 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Fast, small graphical Web browser built upon fltk
-WWW=		https://www.dillo.org/
+WWW=		https://dillo-browser.github.io/dillo.org.html
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -37,11 +36,10 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=		COOKIES DEBUG DOCS HYPHENATION IPV6 JPEG PNG SSL \
 			THREADS
-OPTIONS_DEFAULT=	COOKIES IPV6 JPEG PNG SSL THREADS
+OPTIONS_DEFAULT=	COOKIES IPV6 JPEG PNG THREADS
 
 COOKIES_DESC=		Cookie support
 HYPHENATION_DESC=	Hyphenation file(s) for HYPHENATION_LANGS
-SSL_DESC=		Experimental HTTPS support
 
 DEBUG_CONFIGURE_ENABLE=	gprof rtfl
 
@@ -54,10 +52,6 @@ JPEG_USES=		jpeg
 
 PNG_CONFIGURE_ENABLE=	png
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
-
-SSL_USES=		ssl
-SSL_CONFIGURE_ENABLE=	ssl
-SSL_EXTRA_PATCHES=	${PATCHDIR}/extra-patches-openssl
 
 THREADS_CONFIGURE_ENABLE=	threaded-dns
 
@@ -90,11 +84,13 @@ post-patch:
 	@${MV} ${WRKSRC}/dillorc ${WRKSRC}/dillorc.sample
 	@${MV} ${WRKSRC}/dpid/dpidrc.in ${WRKSRC}/dpid/dpidrc.sample.in
 	@${MV} ${WRKSRC}/src/domainrc ${WRKSRC}/src/domainrc.sample
+	@${MV} ${WRKSRC}/src/hsts_preload ${WRKSRC}/src/hsts_preload.sample
 	@${MV} ${WRKSRC}/src/keysrc ${WRKSRC}/src/keysrc.sample
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|dillorc|dillorc.sample|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|dpidrc|dpidrc.sample|g" ${WRKSRC}/dpid/Makefile.in
 	@${REINPLACE_CMD} -E "s/(domain|keys)rc/&.sample/g" ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -E "s/hsts_preload/hsts_preload.sample/g" ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e "s|/lib/dillo|/libexec/dillo|" \
 		${WRKSRC}/dillo-install-hyphenation \
 		${WRKSRC}/doc/dillo.1.in \
