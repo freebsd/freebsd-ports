@@ -1,4 +1,4 @@
---- chrome/browser/prefs/browser_prefs.cc.orig	2024-04-23 07:42:17 UTC
+--- chrome/browser/prefs/browser_prefs.cc.orig	2024-05-11 05:39:22 UTC
 +++ chrome/browser/prefs/browser_prefs.cc
 @@ -485,18 +485,18 @@
  #endif
@@ -31,7 +31,7 @@
  #include "ui/color/system_theme.h"
  #endif
  
-@@ -1711,7 +1711,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+@@ -1718,7 +1718,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
    registry->RegisterBooleanPref(prefs::kOopPrintDriversAllowedByPolicy, true);
  #endif
  
@@ -40,7 +40,7 @@
    registry->RegisterBooleanPref(prefs::kChromeForTestingAllowed, true);
  #endif
  
-@@ -2053,12 +2053,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -2060,12 +2060,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
