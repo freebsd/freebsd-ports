@@ -1,0 +1,20 @@
+invalid_mut was renamed to without_provenance_mut
+in https://github.com/rust-lang/rust/commit/b58f647d5488dce73bba517907c44af2c2a618c4
+
+error[E0425]: cannot find function `invalid_mut` in module `core::ptr`
+   --> /wrkdirs/usr/ports/games/veloren-weekly/work/shred-5d52c6fc390dd04c12158633e77591f6523d1f85/src/meta.rs:402:38
+    |
+402 |         let invalid_ptr = core::ptr::invalid_mut::<R>((self as *mut Self).addr());
+    |                                      ^^^^^^^^^^^ not found in `core::ptr`
+
+--- ../shred-5d52c6fc390dd04c12158633e77591f6523d1f85/src/meta.rs.orig	2024-05-07 13:31:09.835758000 +0200
++++ ../shred-5d52c6fc390dd04c12158633e77591f6523d1f85/src/meta.rs	2024-05-07 13:31:24.927663000 +0200
+@@ -399,7 +399,7 @@ impl<T: ?Sized> MetaTable<T> {
+     {
+         let ty_id = TypeId::of::<R>();
+         // use self.addr() for unpredictable address to use for checking consistency below
+-        let invalid_ptr = core::ptr::invalid_mut::<R>((self as *mut Self).addr());
++        let invalid_ptr = core::ptr::without_provenance_mut::<R>((self as *mut Self).addr());
+         let trait_ptr = <T as CastFrom<R>>::cast(invalid_ptr);
+         // assert that address not changed (to catch some mistakes in CastFrom impl)
+         assert_eq!(

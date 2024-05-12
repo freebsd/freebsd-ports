@@ -1,0 +1,16 @@
+packed_simd doesn't compile with rust 1.78.0
+Part of the issue is fixed with https://github.com/yoanlcq/vek/pull/95/files
+but it's not enough, packed_simd2 is used here:
+https://gitlab.com/veloren/veloren/-/blob/master/world/src/sim/erosion.rs?ref_type=heads#L16
+
+--- world/Cargo.toml.orig	2024-05-10 18:54:20.494825000 +0200
++++ world/Cargo.toml	2024-05-10 18:54:43.257129000 +0200
+@@ -11,7 +11,7 @@ cli = ["clap", "signal-hook", "indicatif"]
+ bin_compression = ["lz-fear", "deflate", "flate2", "image/jpeg", "num-traits", "fallible-iterator", "rstar", "cli"]
+ cli = ["clap", "signal-hook", "indicatif"]
+ 
+-default = ["simd"]
++#default = ["simd"]
+ 
+ [dependencies]
+ common = { package = "veloren-common", path = "../common" }
