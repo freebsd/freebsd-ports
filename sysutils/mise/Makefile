@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.5.5
+DISTVERSION=	2024.5.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -376,6 +376,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		winsafe-0.0.19 \
 		xattr-1.3.1 \
 		xx-0.2.5 \
+		xx-0.5.1 \
 		yansi-0.5.1 \
 		zeroize-1.7.0 \
 		zip-1.2.3 \
