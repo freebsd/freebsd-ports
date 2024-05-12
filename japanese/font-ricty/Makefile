@@ -1,6 +1,6 @@
 PORTNAME=	ricty
 PORTVERSION=	4.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	https://rictyfonts.github.io/files/
 PKGNAMEPREFIX=	ja-font-
@@ -53,8 +53,8 @@ do-extract:
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${SH} ${DISTDIR}/${DIST_SUBDIR}/ricty_generator-${PORTVERSION}.sh \
-			${LOCALBASE}/share/fonts/inconsolata/Inconsolata-Regular.ttf \
-			${LOCALBASE}/share/fonts/inconsolata/Inconsolata-Bold.ttf \
+			${LOCALBASE}/share/fonts/inconsolata-ttf/Inconsolata-Regular.ttf \
+			${LOCALBASE}/share/fonts/inconsolata-ttf/Inconsolata-Bold.ttf \
 			${LOCALBASE}/share/fonts/migu/migu-1m-regular.ttf \
 			${LOCALBASE}/share/fonts/migu/migu-1m-bold.ttf
 
