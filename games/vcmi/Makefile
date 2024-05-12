@@ -1,6 +1,5 @@
 PORTNAME=	vcmi
-PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTVERSION=	1.5.0
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -18,6 +17,9 @@ RUN_DEPENDS=	bash:shells/bash
 
 USES=		cmake pkgconfig sdl shebangfix
 USE_GITHUB=	yes
+GH_PROJECT=	innoextract:inex
+GH_TAGNAME=	9977089:inex
+GH_SUBDIR=	launcher/lib/innoextract:inex
 USE_SDL=	image2 mixer2 sdl2 ttf2
 SHEBANG_FILES=	vcmibuilder
 CMAKE_ARGS=	-DCMAKE_INSTALL_RPATH_USE_LINK_PATH:BOOL=ON \
