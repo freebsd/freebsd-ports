@@ -1,30 +1,24 @@
 PORTNAME=	hotcrp
-PORTVERSION=	2.102
-PORTREVISION=	18
+PORTVERSION=	3.0.0
 CATEGORIES=	www
-MASTER_SITES=	http://www.read.seas.harvard.edu/~kohler/hotcrp/
+MASTER_SITES=	${WWW}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Web based conference management software
+COMMENT=	Web-based conference management software
 WWW=		https://www.read.seas.harvard.edu/~kohler/hotcrp/
-
-DEPRECATED=	Outdated, current version was released in 2018 and is unsupported upstream
-EXPIRATION_DATE=2024-05-31
-
-RUN_DEPENDS=	pdftohtml:graphics/poppler-utils \
-		zip:archivers/zip
-
-USES=		php mysql:server
-USE_PHP=	mysqli gd session ctype
-
-NO_BUILD=	yes
-SUB_FILES=	pkg-message
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+RUN_DEPENDS=	pdftohtml:graphics/poppler-utils
+
+USES=		php mysql:server
+USE_PHP=	ctype gd mysqli session zlib
+
+NO_BUILD=	yes
+SUB_FILES=	pkg-message
+
 do-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>
