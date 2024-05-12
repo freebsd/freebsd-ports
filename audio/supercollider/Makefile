@@ -1,12 +1,8 @@
 PORTNAME=	supercollider
-DISTVERSION=	3.11.2
-PORTREVISION=	7
+DISTVERSION=	3.13.0
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/supercollider/supercollider/releases/download/Version-${PORTVERSION}/
 DISTNAME=	SuperCollider-${PORTVERSION}-Source
-
-PATCH_SITES=	https://github.com/supercollider/supercollider/commit/
-PATCHFILES=	b9dd70c4c8d61c93d7a70645e0bd18fa76e6834e.patch:-p1
 
 MAINTAINER=	ports@nicandneal.net
 COMMENT=	Programming language for real time audio synthesis
@@ -23,19 +19,25 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 
 USES=		cmake compiler:c++11-lang iconv localbase pkgconfig \
 		qt:5 readline shared-mime-info tar:bzip2 xorg
+USE_QT_amd64=	webengine
+USE_QT_i386=	webengine
 USE_QT=		buildtools:build concurrent core declarative gui linguisttools location \
 		network opengl printsupport qmake:build sensors \
-		sql widgets websockets webchannel svg
+		sql widgets websockets webchannel svg ${USE_QT_${ARCH}}
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 
+CMAKE_ARGS_nox86=	-DSSE:BOOL=FALSE \
+			-DSSE2:BOOL=FALSE \
+			-DSC_USE_QTWEBENGINE:BOOL=FALSE
 CMAKE_ARGS=	-DCMAKE_PREFIX_PATH=${LOCALBASE}/lib/qt5 \
 		-DLIBUSB_1_INCLUDE_DIR=/usr/include \
 		-DLIBUSB_1_LIBRARY=/usr/lib/libusb.so \
 		-DLIBSCSYNTH=ON \
 		-DSYSTEM_BOOST=ON \
 		-DSYSTEM_YAMLCPP=ON \
-		-DSC_ABLETON_LINK=OFF
+		-DSC_ABLETON_LINK=OFF \
+		${ARCH:Namd64:Ni386:C/.*/${CMAKE_ARGS_nox86}/}
 
 DESKTOP_ENTRIES="SuperCollider IDE" "" "${LOCALBASE}/share/pixmaps/sc_ide.svg" \
 		"scide" "" false
@@ -53,12 +55,7 @@ AVAHI_CMAKE_BOOL_OFF=	NO_AVAHI
 HELP_CMAKE_BOOL=	INSTALL_HELP
 SUPERNOVA_CMAKE_BOOL=	SUPERNOVA
 
-.include <bsd.port.pre.mk>
+post-patch:
+	${CP} ${WRKSRC}/external_libraries/boost/boost/filesystem/string_file.hpp ${WRKSRC}/include/common
 
-.if ! ${ARCH} == amd64 && ! ${ARCH} == i386
-CMAKE_ARGS+=	-DSSE:BOOL=FALSE -DSSE2:BOOL=FALSE -DSC_USE_QTWEBENGINE:BOOL=FALSE
-.else
-USE_QT+=	webengine
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

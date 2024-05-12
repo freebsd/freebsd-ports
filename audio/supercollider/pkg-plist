@@ -13,11 +13,13 @@ include/SuperCollider/common/SC_Types.h
 include/SuperCollider/common/SC_fftlib.h
 include/SuperCollider/common/clz.h
 include/SuperCollider/common/function_attributes.h
+include/SuperCollider/common/string_file.hpp
 include/SuperCollider/common/wintime.h
 include/SuperCollider/lang/SC_LanguageClient.h
 include/SuperCollider/plugin_interface/FFT_UGens.h
 include/SuperCollider/plugin_interface/Hash.h
 include/SuperCollider/plugin_interface/SCComplex.h
+include/SuperCollider/plugin_interface/SC_BelaScope.h
 include/SuperCollider/plugin_interface/SC_BufGen.h
 include/SuperCollider/plugin_interface/SC_Complex.h
 include/SuperCollider/plugin_interface/SC_Constants.h
@@ -50,6 +52,8 @@ include/SuperCollider/server/SC_WorldOptions.h
 %%SUPERNOVA%%lib/SuperCollider/plugins/DelayUGens_supernova.so
 %%SUPERNOVA%%lib/SuperCollider/plugins/DemandUGens.so
 %%SUPERNOVA%%lib/SuperCollider/plugins/DemandUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/DemoUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/DemoUGens_supernova.so
 %%SUPERNOVA%%lib/SuperCollider/plugins/DiskIO_UGens.so
 %%SUPERNOVA%%lib/SuperCollider/plugins/DiskIO_UGens_supernova.so
 %%SUPERNOVA%%lib/SuperCollider/plugins/DynNoiseUGens.so
@@ -118,6 +122,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/APF.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/AbstractDispatcher.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/AbstractFunction.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/AbstractGridLines.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/AbstractIn.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/AbstractMessageMatcher.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/AbstractOut.schelp
@@ -131,6 +136,8 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/AmpComp.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/AmpCompA.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Amplitude.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/AnalogIn.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/AnalogOut.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/AppClock.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/ApplicationStart.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Archive.schelp
@@ -160,6 +167,8 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/BasicOpUGen.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/BeatTrack.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/BeatTrack2.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/BelaScope.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/BelaScopeOut.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/BendResponder.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/BiPanB2.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/BinaryOpFunction.schelp
@@ -193,6 +202,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/CCResponder.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/COsc.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/CSVFileReader.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/CallOnce.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Changed.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/ChaosGen.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Char.schelp
@@ -213,6 +223,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/CompanderD.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Complex.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/CompositeView.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/CondVar.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Condition.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/ContiguousBlockAllocator.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Control.schelp
@@ -234,6 +245,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/Dbufrd.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Dbufwr.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Dconst.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/Ddup.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/DebugNodeWatcher.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Decay.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Decay2.schelp
@@ -254,10 +266,14 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/Dialog.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Dibrown.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Dictionary.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/DigitalIO.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/DigitalIn.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/DigitalOut.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/DiskIn.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/DiskOut.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Diwhite.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Document.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/DoesNotUnderstandError.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Done.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/DoubleArray.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Download.schelp
@@ -310,6 +326,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/EventStreamPlayer.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Exception.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/ExpRand.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/ExponentialGridLines.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/FBSineC.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/FBSineL.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/FBSineN.schelp
@@ -330,6 +347,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/FlowVar.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/FlowView.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Fold.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/FoldIndex.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Font.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Formant.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Formlet.schelp
@@ -484,10 +502,12 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/LinXFade2.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Line.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/LineLayout.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/LinearGridLines.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Linen.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/LinkClock.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/LinkedList.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/LinkedListNode.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/LinuxPlatform.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/List.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/ListPattern.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/ListView.schelp
@@ -539,6 +559,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/MultiOutUGen.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/MultiSliderView.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/MultiTap.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/MultiplexAnalogIn.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/NAryOpFunction.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/NAryOpStream.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/NRand.schelp
@@ -681,6 +702,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pdict.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pdiff.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pdrop.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/Pdup.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/PdurStutter.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Peak.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/PeakFollower.schelp
@@ -688,6 +710,8 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/Penvir.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pevent.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pexprand.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/PfadeIn.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/PfadeOut.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pfin.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pfindur.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pfinval.schelp
@@ -704,6 +728,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pget.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pgpar.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pgroup.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/Pgtpar.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Phasor.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Phprand.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pif.schelp
@@ -778,6 +803,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/PstepNadd.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/PstepNfunc.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pstutter.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/Psubdivide.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pswitch.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pswitch1.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Psym.schelp
@@ -899,6 +925,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/SoundFileView.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/SoundIn.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/SparseArray.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/Spawner.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Spec.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/SpecCentroid.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/SpecFlatness.schelp
@@ -1030,6 +1057,8 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Guides/Multichannel-Expansion.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/News-3_10.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/News-3_11.schelp
+%%HELP%%share/SuperCollider/HelpSource/Guides/News-3_12.schelp
+%%HELP%%share/SuperCollider/HelpSource/Guides/News-3_13.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/News-3_5.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/News-3_6.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/News-3_7.schelp
@@ -1054,6 +1083,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Guides/Tracing-Processes.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/UGens-and-Synths.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/Understanding-Errors.schelp
+%%HELP%%share/SuperCollider/HelpSource/Guides/UserFAQ.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/UsingExtensions.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/UsingMIDI.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/UsingQuarks.schelp
@@ -1279,6 +1309,8 @@ share/SuperCollider/README.md
 share/SuperCollider/README_LINUX.md
 share/SuperCollider/SCClassLibrary/Common/Audio/BEQSuite.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/BasicOpsUGen.sc
+share/SuperCollider/SCClassLibrary/Common/Audio/Bela/BelaScope.sc
+share/SuperCollider/SCClassLibrary/Common/Audio/Bela/BelaUGens.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/BufIO.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/Chaos.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/Compander.sc
@@ -1355,6 +1387,7 @@ share/SuperCollider/SCClassLibrary/Common/Collections/String.sc
 share/SuperCollider/SCClassLibrary/Common/Collections/linux/extString_linux.sc
 share/SuperCollider/SCClassLibrary/Common/Collections/osx/extString_osx.sc
 share/SuperCollider/SCClassLibrary/Common/Collections/windows/extString_windows.sc
+share/SuperCollider/SCClassLibrary/Common/Control/BelaServerOptions.sc
 share/SuperCollider/SCClassLibrary/Common/Control/Buffer.sc
 share/SuperCollider/SCClassLibrary/Common/Control/Bus.sc
 share/SuperCollider/SCClassLibrary/Common/Control/Engine.sc
@@ -1399,6 +1432,7 @@ share/SuperCollider/SCClassLibrary/Common/Core/Boolean.sc
 share/SuperCollider/SCClassLibrary/Common/Core/Char.sc
 share/SuperCollider/SCClassLibrary/Common/Core/Clock.sc
 share/SuperCollider/SCClassLibrary/Common/Core/Color.sc
+share/SuperCollider/SCClassLibrary/Common/Core/CondVar.sc
 share/SuperCollider/SCClassLibrary/Common/Core/Condition.sc
 share/SuperCollider/SCClassLibrary/Common/Core/Error.sc
 share/SuperCollider/SCClassLibrary/Common/Core/Finalize.sc
@@ -1451,7 +1485,6 @@ share/SuperCollider/SCClassLibrary/Common/GUI/Base/QObject.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/Base/QPalette.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/Base/QPen.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/Base/QPenPrinter.sc
-share/SuperCollider/SCClassLibrary/Common/GUI/Base/QQuartzComposerView.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/Base/QRangeSlider.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/Base/QSlider.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/Base/QSlider2D.sc
@@ -1618,7 +1651,18 @@ share/SuperCollider/SCClassLibrary/deprecated/3.10/deprecated-3.10.sc
 share/SuperCollider/SCClassLibrary/deprecated/3.10/osc/OSCpathResponder.sc
 share/SuperCollider/SCClassLibrary/deprecated/3.10/osc/OSCresponder.sc
 share/SuperCollider/SCClassLibrary/deprecated/3.11/deprecated-3.11.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.12/deprecated-3.12.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.13/GUI/Grid.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.13/GUI/QQuartzComposerView.sc
 share/SuperCollider/SCClassLibrary/scide_scqt/ScIDE.sc
+share/SuperCollider/examples/Bela/bela_example_analogin.scd
+share/SuperCollider/examples/Bela/bela_example_analogin_2.scd
+share/SuperCollider/examples/Bela/bela_example_analogout.scd
+share/SuperCollider/examples/Bela/bela_example_digital.scd
+share/SuperCollider/examples/Bela/bela_example_digitalio.scd
+share/SuperCollider/examples/Bela/bela_example_digitalout.scd
+share/SuperCollider/examples/Bela/bela_start_scsynth.scd
+share/SuperCollider/examples/Bela/bela_test_cases.scd
 share/SuperCollider/examples/GUI examples/ColorBrowser.scd
 share/SuperCollider/examples/GUI examples/GUI_examples1.scd
 share/SuperCollider/examples/GUI examples/GUI_examples2.scd
@@ -1694,8 +1738,8 @@ share/SuperCollider/translations/scide_ru.qm
 share/SuperCollider/translations/scide_sl.qm
 share/SuperCollider/translations/scide_sv.qm
 share/SuperCollider/translations/scide_zh.qm
+share/icons/hicolor/32x32/apps/supercollider.xpm
+share/icons/hicolor/48x48/apps/supercollider.png
+share/icons/hicolor/scalable/apps/sc_ide.svg
 share/mime/packages/supercollider.xml
-share/pixmaps/sc_ide.svg
-share/pixmaps/supercollider.png
-share/pixmaps/supercollider.xpm
 @dir share/SuperCollider/SCClassLibrary/External
