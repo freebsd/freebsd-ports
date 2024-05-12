@@ -1,0 +1,7 @@
+Superfile is a terminal file manager, allowing you to manage files on
+the terminal in much the same way as you would do in a graphical file
+manager.
+
+Superfile requires that you use one of the Nerd Fonts as your terminal
+font.  Install x11-fonts/nerd-fonts on your client and set up one of
+these fonts if you encounter graphical glitches.
