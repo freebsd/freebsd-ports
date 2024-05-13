@@ -26,6 +26,7 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--with-libevent-dir=${PREFIX} --with-mantype=man
+CONFIGURE_ARGS+=	--without-zlib-version-check # fix build by disabling zlib version check
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/ikeca.cnf \
