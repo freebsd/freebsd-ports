@@ -1,12 +1,12 @@
---- pueue_lib/Cargo.toml.orig	2023-03-31 21:47:57 UTC
+--- pueue_lib/Cargo.toml.orig	2024-05-13 20:16:13 UTC
 +++ pueue_lib/Cargo.toml
-@@ -63,9 +63,4 @@ winapi = { version = "0.3", features = [
+@@ -64,9 +64,4 @@ winapi = { version = "0.3", features = [
  
  # Unix
  [target.'cfg(unix)'.dependencies]
--libproc = "0.13.0"
+-libproc = "0.14.2"
  whoami = "1"
 -
 -# Linux only
 -[target.'cfg(target_os = "linux")'.dependencies]
--procfs = { version = "0.14.2", default-features = false }
+-procfs = { version = "0.16", default-features = false }

@@ -1,13 +1,13 @@
---- Cargo.lock.orig	2023-03-31 21:34:05 UTC
+--- Cargo.lock.orig	2024-05-13 20:12:04 UTC
 +++ Cargo.lock
-@@ -855,17 +855,6 @@ dependencies = [
+@@ -810,17 +810,6 @@ dependencies = [
  ]
  
  [[package]]
 -name = "libproc"
--version = "0.13.0"
+-version = "0.14.2"
 -source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "8b18cbf29f8ff3542ba22bdce9ac610fcb75d74bb4e2b306b2a2762242025b4f"
+-checksum = "229004ebba9d1d5caf41623f1523b6d52abb47d9f6ab87f7e6fc992e3b854aef"
 -dependencies = [
 - "bindgen",
 - "errno",
@@ -15,30 +15,30 @@
 -]
 -
 -[[package]]
- name = "link-cplusplus"
- version = "1.0.8"
+ name = "libredox"
+ version = "0.0.1"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -1204,19 +1193,6 @@ dependencies = [
+@@ -1130,19 +1119,6 @@ dependencies = [
  ]
  
  [[package]]
 -name = "procfs"
--version = "0.14.2"
+-version = "0.16.0"
 -source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "b1de8dacb0873f77e6aefc6d71e044761fcc68060290f5b1089fcdf84626bb69"
+-checksum = "731e0d9356b0c25f16f33b5be79b1c57b562f141ebfcdb0ad8ac2c13a24293b4"
 -dependencies = [
-- "bitflags",
-- "byteorder",
+- "bitflags 2.4.2",
 - "hex",
 - "lazy_static",
+- "procfs-core",
 - "rustix",
 -]
 -
 -[[package]]
- name = "pueue"
- version = "3.1.2"
- dependencies = [
-@@ -1237,7 +1213,6 @@ dependencies = [
+ name = "procfs-core"
+ version = "0.16.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -1173,7 +1149,6 @@ dependencies = [
   "pest",
   "pest_derive",
   "pretty_assertions",
@@ -46,15 +46,15 @@
   "pueue-lib",
   "rstest",
   "serde",
-@@ -1267,11 +1242,9 @@ dependencies = [
-  "chrono",
+@@ -1204,11 +1179,9 @@ dependencies = [
   "command-group",
   "dirs",
+  "handlebars",
 - "libproc",
   "log",
   "portpicker",
   "pretty_assertions",
 - "procfs",
-  "rand 0.8.5",
+  "rand",
   "rcgen",
   "rev_buf_reader",
