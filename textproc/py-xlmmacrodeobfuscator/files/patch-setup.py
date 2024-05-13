@@ -1,5 +1,14 @@
---- setup.py.orig	2022-10-03 07:48:40 UTC
+--- setup.py.orig	2024-05-13 02:14:33 UTC
 +++ setup.py
+@@ -18,7 +18,7 @@ setup(
+ }
+ 
+ setup(
+-    name="XLMMacroDeobfuscator",
++    name="xlmmacrodeobfuscator",
+     version=__version__,
+     author="Amirreza Niakanlahiji",
+     author_email="aniak2@uis.edu",
 @@ -35,9 +35,9 @@ setup(
      python_requires='>=3.4',
      install_requires=[
