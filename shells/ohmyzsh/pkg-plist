@@ -25,6 +25,7 @@
 %%DATADIR%%/lib/prompt_info_functions.zsh
 %%DATADIR%%/lib/spectrum.zsh
 %%DATADIR%%/lib/termsupport.zsh
+%%DATADIR%%/lib/tests/cli.test.zsh
 %%DATADIR%%/lib/theme-and-appearance.zsh
 %%DATADIR%%/lib/vcs_info.zsh
 %%DATADIR%%/oh-my-zsh.sh
@@ -565,6 +566,8 @@
 %%DATADIR%%/plugins/powify/_powify
 %%DATADIR%%/plugins/pre-commit/README.md
 %%DATADIR%%/plugins/pre-commit/pre-commit.plugin.zsh
+%%DATADIR%%/plugins/procs/README.md
+%%DATADIR%%/plugins/procs/procs.plugin.zsh
 %%DATADIR%%/plugins/profiles/README.md
 %%DATADIR%%/plugins/profiles/profiles.plugin.zsh
 %%DATADIR%%/plugins/pyenv/README.md
