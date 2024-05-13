@@ -1,0 +1,8 @@
+--- pyproject.toml.orig	2024-03-09 18:55:18 UTC
++++ pyproject.toml
+@@ -2,5 +2,4 @@ requires = [
+ requires = [
+     'scikit-build',
+     'cython',
+-    'cmake',
+ ]
