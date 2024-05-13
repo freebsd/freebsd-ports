@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2024-02-25 00:30:13 UTC
++++ pyproject.toml
+@@ -3,5 +3,5 @@ requires = [
+     "setuptools",
+     "versioneer", 
+     "wheel",
+-    "oldest-supported-numpy"
++    "numpy"
+ ]
