@@ -1,5 +1,6 @@
 PORTNAME=	lux
 DISTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/kfj/pv/get/
 PKGNAMESUFFIX=	-pv	# distinguish from www/lux
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libhwy.so:devel/highway \
 		libexiv2.so:graphics/exiv2 \
 		libvigraimpex.so:graphics/vigra \
 		libOpenImageIO.so:graphics/openimageio
-RUN_DEPENDS=	${GUIFONT}:x11-fonts/noto-sans-basic
+RUN_DEPENDS=	${GUIFONT}:x11-fonts/noto-sans
 GUIFONT=	${LOCALBASE}/share/fonts/noto/NotoSans-Regular.ttf
 
 USES=		cmake desktop-file-utils dos2unix localbase:ldflags pkgconfig tar:bz2 gl
