@@ -1,5 +1,6 @@
 PORTNAME=	tornado
 PORTVERSION=	5.1.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +12,11 @@ WWW=		https://www.tornadoweb.org/
 
 LICENSE=	APACHE20
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		cpe python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}tornado \
 			${PYTHON_PKGNAMEPREFIX}tornado4 \
