@@ -22,6 +22,7 @@ steam-utils/lib32/noepollexcl/noepollexcl.so
 steam-utils/lib32/pathfix/pathfix.so
 steam-utils/lib32/protonfix/protonfix.so
 steam-utils/lib32/shmfix/shmfix.so
+steam-utils/lib32/steamclient/dt_init-fix.so
 steam-utils/lib32/steamfix/steamfix.so
 steam-utils/lib64/fakepulse/libpulse.so.0
 steam-utils/lib64/fakeudev/libudev.so.0
@@ -45,6 +46,7 @@ steam-utils/lxbin/xdg-user-dir
 steam-utils/lxbin/xrandr
 steam-utils/lxbin/zenity
 steam-utils/tools/LSU_FreeBSD_Wine/compatibilitytool.vdf
+steam-utils/tools/LSU_FreeBSD_Wine/patch-dt_init.rb
 steam-utils/tools/LSU_FreeBSD_Wine/run.rb
 steam-utils/tools/LSU_FreeBSD_Wine/run.sh
 steam-utils/tools/LSU_FreeBSD_Wine/toolmanifest.vdf

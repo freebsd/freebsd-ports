@@ -29,7 +29,7 @@ Native Proton setup (optional, semi-experimental):
 
 1. Run `sudo pkg install wine-proton libc6-shim python3`.
 2. Run `%%LOCALBASE%%/wine-proton/bin/pkg32.sh install wine-proton mesa-dri`.
-3. In Steam install Proton 8.0 (appid 2348590).
+3. In Steam install the matching Proton version (appid 2348590 for 8.0, 2805730 for 9.0, etc).
 
 To enable it right click a game title in Steam, click Properties,
 click Compatibility, select "FreeBSD Wine (emulators/wine-proton)".
