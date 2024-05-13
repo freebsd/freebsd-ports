@@ -4,7 +4,7 @@ DISTVERSION=	2.0.0-A
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Scalable AV1 encoder with psychovisually enhancements
+COMMENT=	Scalable AV1 encoder focused on perceptual quality
 WWW=		https://github.com/gianni-rosato/svt-av1-psy
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE MIT
