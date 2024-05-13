@@ -22,7 +22,7 @@
 ### DateTime::Format::Natural 0.67
 ### DateTime::Locale 0.40
 ### DBI 1.37
-### DBIx::SearchBuilder 1.77
+### DBIx::SearchBuilder 1.80
 ### Devel::GlobalDestruction
 ### Devel::StackTrace 1.19
 ### Digest::base                                perl std
@@ -104,7 +104,7 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-Convert-Color>0:graphics/p5-Convert-Color				\
 		p5-Crypt-Eksblowfish>0:security/p5-Crypt-Eksblowfish			\
 		p5-DBI>=1.37:databases/p5-DBI						\
-		p5-DBIx-SearchBuilder>=1.77:databases/p5-DBIx-SearchBuilder		\
+		p5-DBIx-SearchBuilder>=1.80:databases/p5-DBIx-SearchBuilder		\
 		p5-Data-GUID>0:devel/p5-Data-GUID					\
 		p5-Data-ICal>0:deskutils/p5-Data-ICal					\
 		p5-Data-Page>0:databases/p5-Data-Page					\
