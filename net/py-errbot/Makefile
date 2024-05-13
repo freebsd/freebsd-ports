@@ -1,5 +1,6 @@
 PORTNAME=	errbot
 PORTVERSION=	6.2.0
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +13,8 @@ WWW=		https://errbot.readthedocs.io/en/latest/ \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansi>=0.3.6:devel/py-ansi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorlog>=6.7.0:devel/py-colorlog@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}daemonize>=2.5.0:devel/py-daemonize@${PY_FLAVOR} \
@@ -26,7 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansi>=0.3.6:devel/py-ansi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webtest>=3.0.0:www/py-webtest@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
