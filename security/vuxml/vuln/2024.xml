@@ -1,4 +1,36 @@
-  <vuln vid="5afd64ae-122a-11ef-8eed-1c697a616631">
+  <vuln vid="f2d8342f-1134-11ef-8791-6805ca2fa271">
+    <topic>dnsdist -- Transfer requests received over DoH can lead to a denial of service</topic>
+    <affects>
+      <package>
+	<name>dnsdist</name>
+	<range><lt>1.9.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Security Advisory reports:</p>
+	<blockquote cite="https://dnsdist.org/security-advisories/index.html">
+	  <p>When incoming DNS over HTTPS support is enabled using the nghttp2 provider,
+	    and queries are routed to a tcp-only or DNS over TLS backend, an attacker can
+	    trigger an assertion failure in DNSdist by sending a request for a zone transfer (AXFR
+	    or IXFR) over DNS over HTTPS, causing the process to stop and thus leading to a
+	    Denial of Service. DNS over HTTPS is not enabled by default, and backends are using
+	    plain DNS (Do53) by default.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-25581</cvename>
+      <url>https://dnsdist.org/security-advisories/powerdns-advisory-for-dnsdist-2024-03.html</url>
+    </references>
+    <dates>
+      <discovery>2024-05-13</discovery>
+      <entry>2024-05-13</entry>
+    </dates>
+  </vuln>
+
+<vuln vid="5afd64ae-122a-11ef-8eed-1c697a616631">
     <topic>Intel CPUs -- multiple vulnerabilities</topic>
     <affects>
       <package>
