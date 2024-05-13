@@ -211,6 +211,7 @@
     SUBDIR += noto-sans-khmer
     SUBDIR += noto-sans-kr
     SUBDIR += noto-sans-lao
+    SUBDIR += noto-sans-math
     SUBDIR += noto-sans-mono
     SUBDIR += noto-sans-myanmar
     SUBDIR += noto-sans-sc
