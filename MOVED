@@ -3241,3 +3241,4 @@ www/py-dj42-django-compression-middleware|www/py-django-compression-middleware|2
 www/py-dj42-django-multiselectfield|www/py-django-multiselectfield|2024-05-12|Renamed after all Django consumers were switched from Django 3.2 to Django 4.2 to have a consistent naming scheme
 www/py-dj42-djangorestframework-guardian|www/py-djangorestframework-guardian|2024-05-12|Renamed after all Django consumers were switched from Django 3.2 to Django 4.2 to have a consistent naming scheme
 www/py-dj42-drf-writable-nested|www/py-drf-writable-nested|2024-05-12|Renamed after all Django consumers were switched from Django 3.2 to Django 4.2 to have a consistent naming scheme
+textproc/py-rss2gen|textproc/py-pyrss2gen|2024-05-13|Move textproc/py-rss2gen to textproc/py-pyrss2gen
