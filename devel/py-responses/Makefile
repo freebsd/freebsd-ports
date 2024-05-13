@@ -1,5 +1,6 @@
 PORTNAME=	responses
 PORTVERSION=	0.25.0
+PORTREVISION=	1
 CATEGORIES=	devel www python
 MASTER_SITES=	PYPI \
 		https://github.com/getsentry/responses/releases/download/${PORTVERSION}/
@@ -12,6 +13,8 @@ WWW=		https://github.com/getsentry/responses
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.30.0<3.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.25.10,1<3.0,1:net/py-urllib3@${PY_FLAVOR}
@@ -26,7 +29,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=6.0.0:devel/py-coverage@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}types-requests>=0:devel/py-types-requests@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils pytest
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
