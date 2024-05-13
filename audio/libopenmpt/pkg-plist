@@ -21,6 +21,7 @@ libdata/pkgconfig/libopenmpt.pc
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libopenmpt_example_c.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libopenmpt_example_c_mem.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/libopenmpt_example_c_pipe.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libopenmpt_example_c_probe.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libopenmpt_example_c_stdout.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libopenmpt_example_c_unsafe.c
