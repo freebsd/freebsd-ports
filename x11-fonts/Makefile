@@ -199,7 +199,6 @@
     SUBDIR += noto-sans
     SUBDIR += noto-sans-arabic
     SUBDIR += noto-sans-armenian
-    SUBDIR += noto-sans-basic
     SUBDIR += noto-sans-bengali
     SUBDIR += noto-sans-cham
     SUBDIR += noto-sans-cherokee
