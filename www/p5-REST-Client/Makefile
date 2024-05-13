@@ -1,10 +1,10 @@
 PORTNAME=	REST-Client
-PORTVERSION=	273
+PORTVERSION=	274
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	michelle@sorbs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple client for interacting with RESTful http/https resources
 WWW=		https://metacpan.org/release/REST-Client
 

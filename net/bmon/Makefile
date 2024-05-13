@@ -1,10 +1,10 @@
 PORTNAME=	bmon
 PORTVERSION=	4.0
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
-MAINTAINER=	michelle@sorbs.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Human-readable bandwidth monitor and rate estimator
 WWW=		https://github.com/tgraf/bmon
 
