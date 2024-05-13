@@ -20,8 +20,8 @@ WWW=		http://www.kornshell.com/
 
 LICENSE=	EPL
 
-HASH=		8f84f4b2
-AST_COMMIT_DATE=	2024.04.05
+HASH=		2e8aeee9
+AST_COMMIT_DATE=	2024.04.06
 
 USES=		compiler:c11
 
