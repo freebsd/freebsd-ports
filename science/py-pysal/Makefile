@@ -1,5 +1,6 @@
 PORTNAME=	pysal
 PORTVERSION=	23.1
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +12,8 @@ WWW=		https://pysal.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}access>=1.1.8:science/py-access@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}esda>=2.4.1:science/py-esda@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}giddy>=2.3.3:graphics/py-giddy@${PY_FLAVOR} \
@@ -31,7 +34,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}access>=1.1.8:science/py-access@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}tobler>=0.8.2:science/py-tobler@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
