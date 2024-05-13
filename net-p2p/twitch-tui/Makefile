@@ -1,6 +1,6 @@
 PORTNAME=	twitch-tui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.7
+DISTVERSION=	2.6.8
 CATEGORIES=	net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,7 +31,6 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		anstyle-wincon-3.0.1 \
 		autocfg-1.1.0 \
 		backtrace-0.3.68 \
-		base64-0.21.7 \
 		base64-0.22.0 \
 		bit_field-0.10.2 \
 		bitflags-1.3.2 \
@@ -216,13 +215,13 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		scopeguard-1.2.0 \
 		security-framework-2.9.2 \
 		security-framework-sys-2.9.1 \
-		serde-1.0.196 \
-		serde_derive-1.0.196 \
+		serde-1.0.199 \
+		serde_derive-1.0.199 \
 		serde_json-1.0.113 \
 		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
-		serde_with-3.6.0 \
-		serde_with_macros-3.6.0 \
+		serde_with-3.8.1 \
+		serde_with_macros-3.8.1 \
 		sharded-slab-0.1.4 \
 		shell-words-1.1.0 \
 		signal-hook-0.3.17 \
@@ -280,7 +279,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		unicode-linebreak-0.1.5 \
 		unicode-normalization-0.1.22 \
 		unicode-segmentation-1.11.0 \
-		unicode-width-0.1.11 \
+		unicode-width-0.1.12 \
 		url-2.4.0 \
 		utf8parse-0.2.1 \
 		valuable-0.1.0 \
