@@ -1,6 +1,6 @@
 PORTNAME=	sakisafe
 DISTVERSION=	2.2.1
-PORTERVISION=	1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://git.qorg11.net/sakisafe.git/snapshot/
 

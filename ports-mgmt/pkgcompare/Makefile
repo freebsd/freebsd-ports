@@ -1,6 +1,6 @@
 PORTNAME=	pkgcompare
 PORTVERSION=	1.1
-PORTREVIDSION=	1
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	waitman@waitman.net

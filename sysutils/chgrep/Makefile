@@ -1,6 +1,6 @@
 PORTNAME=	chgrep
 PORTVERSION=	1.2.4
-PORTREVIDSION=	1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bmk-it.com/projects/chgrep/files/
 

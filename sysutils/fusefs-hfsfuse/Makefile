@@ -1,6 +1,6 @@
 PORTNAME=	hfsfuse
 DISTVERSION=	0.132
-PORTREIVSION=	1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/0x09/hfsfuse/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	fusefs-

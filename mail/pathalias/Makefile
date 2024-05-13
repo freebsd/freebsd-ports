@@ -1,6 +1,6 @@
 PORTNAME=	pathalias
 PORTVERSION=	9.16
-PORTREVISIOMN=	1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/approved/
 
