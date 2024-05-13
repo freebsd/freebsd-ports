@@ -1,11 +1,10 @@
 PORTNAME=	DBIx-SearchBuilder
-PORTVERSION=	1.77
-PORTREVISION=	1
+PORTVERSION=	1.80
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Perl extension for easy SQL SELECT Statement generation
 WWW=		https://metacpan.org/release/DBIx-SearchBuilder
 
