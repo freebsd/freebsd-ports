@@ -10,7 +10,15 @@
  	elif echo ${linkervers} | grep -q 'Solaris Link Editor' ; then
  		LD_FLAVOR=sun
  		SHLIB_MKMAP=no
-@@ -788,6 +791,8 @@ makebuild ()
+@@ -511,7 +514,6 @@ maketools ()
+ 
+ 	probeld
+ 	probenm
+-	probear
+ 	${HAVECXX} && probecxx
+ 
+ 	cd ${OBJDIR}
+@@ -788,6 +790,8 @@ makebuild ()
  	     -o ${MACHINE#evbearm} != ${MACHINE} \
  	     -o ${MACHINE#evbppc} != ${MACHINE} ]; then
  		DIRS_emul=sys/rump/kern/lib/libsys_linux
@@ -19,7 +27,7 @@
  	fi
  	${SYS_SUNOS} && appendvar DIRS_emul sys/rump/kern/lib/libsys_sunos
  	if ${HIJACK}; then
-@@ -1059,6 +1064,7 @@ evaltoolchain ()
+@@ -1059,6 +1063,7 @@ evaltoolchain ()
  		;;
  	*-freebsd*)
  		RUMPKERN_UNDEF='-U__FreeBSD__'
