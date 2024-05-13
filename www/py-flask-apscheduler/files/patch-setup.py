@@ -1,5 +1,14 @@
 --- setup.py.orig	2023-11-07 12:41:21 UTC
 +++ setup.py
+@@ -4,7 +4,7 @@ setup(
+     long_description = fh.read()
+ 
+ setup(
+-    name="Flask-APScheduler",
++    name="flask-apscheduler",
+     version="1.13.1",
+     packages=["flask_apscheduler"],
+     url="https://github.com/viniciuschiele/flask-apscheduler",
 @@ -17,7 +17,6 @@ setup(
      keywords=["apscheduler", "scheduler", "scheduling", "cron"],
      python_requires=">=3.8",
