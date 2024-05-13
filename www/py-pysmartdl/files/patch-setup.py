@@ -1,6 +1,13 @@
 --- setup.py.orig	2020-09-19 15:39:42 UTC
 +++ setup.py
-@@ -11,7 +11,7 @@ setup(
+@@ -5,13 +5,13 @@ setup(
+ release_posttag = ""
+ 
+ setup(
+-    name='pySmartDL',
++    name='pysmartdl',
+     version=pySmartDL.__version__ + release_posttag,
+     url='http://pypi.python.org/pypi/pySmartDL/',
      author='Itay Brandes',
      author_email='brandes.itay+pysmartdl@gmail.com',
      license='Public Domain',
