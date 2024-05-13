@@ -1,7 +1,7 @@
---- data/io.elementary.terminal.gschema.xml.orig	2021-07-15 21:30:31 UTC
+--- data/io.elementary.terminal.gschema.xml.orig	2023-04-04 17:39:57 UTC
 +++ data/io.elementary.terminal.gschema.xml
-@@ -155,7 +155,7 @@
-       <description>Defines the encoding to be used by the terminal.</description>
+@@ -164,7 +164,7 @@
+       <description>DEPRECATED: This key is deprecated and ignored.</description>
      </key>
      <key name="font" type="s">
 -      <default>""</default>
