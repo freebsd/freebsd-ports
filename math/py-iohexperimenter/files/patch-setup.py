@@ -1,6 +1,11 @@
---- setup.py.orig	2021-01-29 16:13:26 UTC
+--- setup.py.orig	2024-04-27 13:56:50 UTC
 +++ setup.py
-@@ -43,7 +43,7 @@ setup(
+@@ -39,11 +39,11 @@ setup(
+ 
+ 
+ setup(
+-    name="IOHexperimenter",
++    name="iohexperimenter",
      version=__version__,
      author="Furong Ye, Diederick Vermetten, and Hao Wang",
      author_email="f.ye@liacs.leidenuniv.nl",
