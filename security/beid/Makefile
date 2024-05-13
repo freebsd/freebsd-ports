@@ -1,6 +1,6 @@
 PORTNAME=	beid
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.1.15
+DISTVERSION=	5.1.18
 CATEGORIES=	security
 
 MAINTAINER=	tijl@FreeBSD.org
@@ -17,18 +17,18 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libproxy.so:net/libproxy
 RUN_DEPENDS=	pinentry:security/pinentry
 
+USES=		autoreconf gettext-tools gmake gnome libtool pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Fedict
 GH_PROJECT=	eid-mw
-
-USES=		autoreconf compiler:c++11-lang gettext-tools gmake gnome \
-		libtool pkgconfig ssl
 USE_GNOME=	gtk30 libxml2
 GLIB_SCHEMAS=	eid-viewer.gschema.xml
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-p11kit --disable-static --with-gtkvers=3 \
+CONFIGURE_ARGS=	--disable-p11kit \
+		--disable-static \
 		--enable-webextension \
+		--with-gtkvers=3 \
 		--with-mozext=${PREFIX}/lib/firefox/distribution/extensions \
 		SSL_CFLAGS="-I${OPENSSLINC}" \
 		SSL_LIBS="-L${OPENSSLLIB} -lcrypto" \
@@ -38,8 +38,8 @@ INSTALL_TARGET=	install-strip
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${ECHO_CMD} ${DISTVERSION}-${GH_TAGNAME} > ${WRKSRC}/.version
