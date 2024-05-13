@@ -1,9 +1,11 @@
 --- pyproject.toml.orig	2023-07-18 17:51:04 UTC
 +++ pyproject.toml
-@@ -3,5 +3,5 @@ requires = [
+@@ -2,6 +2,6 @@ requires = [
+ requires = [
    "setuptools",
    "wheel",
-   "cython<3",
+-  "cython<3",
 -  "oldest-supported-numpy"
++  "cython",
 +  "numpy"
  ]
