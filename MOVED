@@ -3249,3 +3249,4 @@ x11-fonts/noto-sans-mono-extra|x11-fonts/noto-sans-mono|2024-05-13|Remove obsole
 x11-fonts/noto-sans-symbols-basic|x11-fonts/noto-sans-symbols|2024-05-13|Remove obsoleted port. Use x11-fonts/noto-sans-symbols instead
 x11-fonts/noto-sans-symbols-extra|x11-fonts/noto-sans-symbols|2024-05-13|Remove obsoleted port. Use x11-fonts/noto-sans-symbols instead
 x11-fonts/noto-serif-basic|x11-fonts/noto-serif|2024-05-13|Remove obsoleted port. Use x11-fonts/noto-serif instead
+x11-fonts/noto-serif-extra|x11-fonts/noto-serif|2024-05-13|Remove obsoleted port. Use x11-fonts/noto-serif instead
