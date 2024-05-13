@@ -1,5 +1,6 @@
 PORTNAME=	pyprind
 PORTVERSION=	2.11.3
+PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +13,12 @@ WWW=		https://github.com/rasbt/pyprind
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=3.2.0:sysutils/py-psutil@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils nose
+USE_PYTHON=	autoplist concurrent pep517 nose
 
 NO_ARCH=	yes
 
