@@ -1,5 +1,6 @@
 PORTNAME=	stack-data
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,9 @@ WWW=		https://github.com/alexmojaki/stack_data
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=3.4.3:devel/py-setuptools-scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=44:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=3.4.3:devel/py-setuptools-scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asttokens>=2.1.0:devel/py-asttokens@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}executing>=1.2.0:devel/py-executing@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pure-eval>=0:devel/py-pure-eval@${PY_FLAVOR}
@@ -22,7 +25,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}littleutils>=0:devel/py-littleutils@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}typeguard>=0:devel/py-typeguard@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
