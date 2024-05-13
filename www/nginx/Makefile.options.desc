@@ -82,6 +82,7 @@ IPV6_DESC=			Enable IPv6 support
 LET_DESC=			3rd party let module
 LINK_DESC=			3rd party link function module
 LUA_DESC=			3rd party lua module
+LUASTREAM_DESC=			3rd party lua stream module
 MAILGRP_DESC=			Modules that require MAIL module
 MAIL_DESC=			Enable IMAP4/POP3/SMTP proxy module
 MAIL_IMAP_DESC=			Enable IMAP4 proxy module

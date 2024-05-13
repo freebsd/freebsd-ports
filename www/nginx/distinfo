@@ -143,3 +143,5 @@ SHA256 (tg123-websockify-nginx-module-c11bc9a_GH0.tar.gz) = aca454bffcee2476dc92
 SIZE (tg123-websockify-nginx-module-c11bc9a_GH0.tar.gz) = 14646
 SHA256 (openresty-xss-nginx-module-v0.06_GH0.tar.gz) = 0b12bbc53a41f3e3d6df419c173b8c87434be3e6cd255a8193aa91345a2de6cf
 SIZE (openresty-xss-nginx-module-v0.06_GH0.tar.gz) = 12448
+SHA256 (openresty-stream-lua-nginx-module-v0.0.14_GH0.tar.gz) = 8e2ff6ad5f91127da3c01757e7e654f1addf9769450d9159601d2cc153953c47
+SIZE (openresty-stream-lua-nginx-module-v0.0.14_GH0.tar.gz) = 381313
