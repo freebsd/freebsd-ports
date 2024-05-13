@@ -224,7 +224,6 @@
     SUBDIR += noto-sc
     SUBDIR += noto-serif
     SUBDIR += noto-serif-armenian
-    SUBDIR += noto-serif-basic
     SUBDIR += noto-serif-bengali
     SUBDIR += noto-serif-devanagari
     SUBDIR += noto-serif-display
