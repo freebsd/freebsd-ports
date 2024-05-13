@@ -1,5 +1,5 @@
 PORTNAME=	hyperrogue
-PORTVERSION=	13.0d
+PORTVERSION=	13.0i
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		compiler:c++11-lang gl gmake localbase:ldflags sdl xorg
+USES=		compiler:c++14-lang gl gmake localbase:ldflags sdl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	zenorogue
 USE_SDL=	sdl mixer gfx ttf
