@@ -216,7 +216,6 @@
     SUBDIR += noto-sans-sc
     SUBDIR += noto-sans-sinhala
     SUBDIR += noto-sans-symbols
-    SUBDIR += noto-sans-symbols-basic
     SUBDIR += noto-sans-symbols-extra
     SUBDIR += noto-sans-symbols2
     SUBDIR += noto-sans-tamil
