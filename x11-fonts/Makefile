@@ -214,6 +214,7 @@
     SUBDIR += noto-sans-math
     SUBDIR += noto-sans-mono
     SUBDIR += noto-sans-myanmar
+    SUBDIR += noto-sans-runic
     SUBDIR += noto-sans-sc
     SUBDIR += noto-sans-sinhala
     SUBDIR += noto-sans-symbols
