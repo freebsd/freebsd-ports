@@ -32,7 +32,6 @@ include/openssl/ecdsa.h
 include/openssl/engine.h
 include/openssl/err.h
 include/openssl/evp.h
-include/openssl/gost.h
 include/openssl/hkdf.h
 include/openssl/hmac.h
 include/openssl/idea.h
@@ -53,6 +52,7 @@ include/openssl/pem2.h
 include/openssl/pkcs12.h
 include/openssl/pkcs7.h
 include/openssl/poly1305.h
+include/openssl/posix_time.h
 include/openssl/rand.h
 include/openssl/rc2.h
 include/openssl/rc4.h
