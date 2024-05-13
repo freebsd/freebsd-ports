@@ -196,6 +196,7 @@
     SUBDIR += noto-kr
     SUBDIR += noto-kufi-arabic
     SUBDIR += noto-naskh-arabic
+    SUBDIR += noto-sans
     SUBDIR += noto-sans-arabic
     SUBDIR += noto-sans-armenian
     SUBDIR += noto-sans-basic
