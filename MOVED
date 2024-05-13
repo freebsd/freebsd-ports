@@ -3245,3 +3245,4 @@ textproc/py-rss2gen|textproc/py-pyrss2gen|2024-05-13|Move textproc/py-rss2gen to
 x11-fonts/noto-sans-basic|x11-fonts/noto-sans|2024-05-13|Remove obsoleted port. Use x11-fonts/noto-sans instead
 x11-fonts/noto-sans-extra|x11-fonts/noto-sans|2024-05-13|Remove obsoleted port. Use x11-fonts/noto-sans instead
 x11-fonts/noto-sans-mono-basic|x11-fonts/noto-sans-mono|2024-05-13|Remove obsoleted port. Use x11-fonts/noto-sans-mono instead
+x11-fonts/noto-sans-mono-extra|x11-fonts/noto-sans-mono|2024-05-13|Remove obsoleted port. Use x11-fonts/noto-sans-mono instead

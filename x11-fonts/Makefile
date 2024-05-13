@@ -212,7 +212,6 @@
     SUBDIR += noto-sans-kr
     SUBDIR += noto-sans-lao
     SUBDIR += noto-sans-mono
-    SUBDIR += noto-sans-mono-extra
     SUBDIR += noto-sans-myanmar
     SUBDIR += noto-sans-sc
     SUBDIR += noto-sans-sinhala
