@@ -1,6 +1,11 @@
---- setup.py.orig	2022-07-13 18:09:08 UTC
+--- setup.py.orig	2022-11-09 23:21:58 UTC
 +++ setup.py
-@@ -31,9 +31,6 @@ install_reqs = [
+@@ -27,13 +27,10 @@ install_reqs = [
+ install_reqs = [
+     'requests >= 2.16.2',
+     'six >= 1.12.0',
+-    'stone >= 2.*',
++    'stone >= 2.0',
  ]
  
  setup_requires = [
