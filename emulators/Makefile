@@ -66,6 +66,7 @@
     SUBDIR += linux-c7
     SUBDIR += linux-power10-functional-sim
     SUBDIR += linux-power9-functional-sim
+    SUBDIR += linux-rl9
     SUBDIR += linux_base-c7
     SUBDIR += linux_base-rl9
     SUBDIR += magia
