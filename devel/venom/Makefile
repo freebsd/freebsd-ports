@@ -9,7 +9,7 @@ COMMENT=	Manage and run integration tests with efficiency
 WWW=		https://github.com/ovh/venom
 
 LICENSE=	APACHE20
-LICENSE_FILES=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 

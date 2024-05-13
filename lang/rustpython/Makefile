@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=	fails to compile, see https://github.com/rusqlite/rusqlite/issues/1440
-BROKEN_i396=	fails to compile, see https://github.com/RustPython/RustPython/issues/5318
+BROKEN_i386=	fails to compile, see https://github.com/RustPython/RustPython/issues/5318
 
 USES=		cargo
 

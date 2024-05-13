@@ -9,7 +9,7 @@ COMMENT=	Electronic health records and medical practice management application
 WWW=		https://www.open-emr.org/
 
 LICENSE=	GPLv3
-LICENSE_FILES=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe php:flavors
 USE_PHP=	ctype curl gd json ldap mcrypt \
