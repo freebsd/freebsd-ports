@@ -1,6 +1,6 @@
 PORTNAME=	noto
 PORTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 PKGNAMESUFFIX=	-basic
 
@@ -9,11 +9,11 @@ COMMENT=	Google Noto Fonts family (Basic)
 WWW=		https://fonts.google.com/noto \
 		https://github.com/notofonts/notofonts.github.io
 
-RUN_DEPENDS=	noto-sans-basic>=0:x11-fonts/noto-sans-basic \
-		noto-sans-mono-basic>=0:x11-fonts/noto-sans-mono-basic \
-		noto-sans-symbols-basic>=0:x11-fonts/noto-sans-symbols-basic \
+RUN_DEPENDS=	noto-sans>=0:x11-fonts/noto-sans \
+		noto-sans-mono>=0:x11-fonts/noto-sans-mono \
+		noto-sans-symbols>=0:x11-fonts/noto-sans-symbols \
 		noto-sans-symbols2>=0:x11-fonts/noto-sans-symbols2 \
-		noto-serif-basic>=0:x11-fonts/noto-serif-basic
+		noto-serif>=0:x11-fonts/noto-serif
 
 USES=		metaport
 
