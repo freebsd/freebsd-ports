@@ -204,7 +204,6 @@
     SUBDIR += noto-sans-cherokee
     SUBDIR += noto-sans-devanagari
     SUBDIR += noto-sans-ethiopic
-    SUBDIR += noto-sans-extra
     SUBDIR += noto-sans-georgian
     SUBDIR += noto-sans-hebrew
     SUBDIR += noto-sans-hk
