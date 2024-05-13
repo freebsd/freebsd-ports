@@ -17,8 +17,9 @@ load_rc_config $name
 
 : ${gitea_user:="%%GITUSER%%"}
 : ${gitea_enable:="NO"}
+: ${gitea_configcheck_enable:="YES"}
 : ${gitea_facility:="daemon"}
-: ${gitea_priority:="debug"}
+: ${gitea_priority:="info"}
 : ${gitea_shared:="%%PREFIX%%/share/${name}"}
 : ${gitea_custom:="%%PREFIX%%/etc/${name}"}
 
@@ -29,6 +30,7 @@ githome="$(eval echo ~${gitea_user})"
 pidfile="/var/run/${name}.pid"
 
 start_cmd="${name}_start"
+start_precmd="${name}_prestart"
 
 gitea_start() {
 	for d in /var/db/gitea /var/log/gitea; do
@@ -46,6 +48,18 @@ gitea_start() {
 		"PATH=%%PREFIX%%/bin:${PATH}" \
 		"USER=${gitea_user}" \
 		$command
+}
+
+gitea_prestart() {
+	if checkyesno gitea_configcheck_enable; then
+		if su -m ${gitea_user} -c "%%PREFIX%%/sbin/${name} doctor check >/dev/null"; then
+		else
+			echo "cannot start ${name} because of configuration errors. Run" >&2
+			echo "    su -m git -c '${name} doctor check'" >&2
+			echo "for further details"
+			return 1
+		fi
+	fi
 }
 
 run_rc_command "$1"

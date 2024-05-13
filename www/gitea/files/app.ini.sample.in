@@ -10,10 +10,10 @@
 # JWT_SECRET, and SECRET_KEY variables.  SECRET_KEY is a password of your
 # choosing, INTERNAL_TOKEN is a 64-byte random number in BASE64 encoding,
 # JWT_SECRET is a 32-byte random number in BASE64 encoding.
-# 
+#
 # You can generate the token using for example:
 #   openssl rand -base64 64
-# 
+#
 # You can let Gitea add these to the config for you; you need to make
 # app.ini writeable by the git user.
 #
@@ -24,15 +24,15 @@
 # If you'd rather use the web-based installer, remove this conf/app.ini file
 # and make %%PREFIX%%/etc/gitea/conf writeable to the git user.
 
-APP_NAME = Gitea: Git with a cup of tea
-RUN_USER = %%GITUSER%%
+APP_NAME = Gitea: A self-hosted lightweight software forge
 RUN_MODE = prod
+RUN_USER = %%GITUSER%%
 
 [database]
 DB_TYPE  = sqlite3
 HOST     = 127.0.0.1:3306
 NAME     = gitea
-PASSWD   = 
+PASSWD   =
 PATH     = /var/db/gitea/gitea.db
 SSL_MODE = disable
 USER     = root
@@ -41,19 +41,19 @@ USER     = root
 ISSUE_INDEXER_PATH = /var/db/gitea/indexers/issues.bleve
 
 [log]
-ROOT_PATH = /var/log/gitea
-MODE      = file
 LEVEL     = Info
+MODE      = file
+ROOT_PATH = /var/log/gitea
 
 [mailer]
 ENABLED = false
 
 [oauth2]
-JWT_SECRET = D56bmu6xCtEKs9vKKgMKnsa4X9FDwo64HVyaS4fQ4mY
+JWT_SECRET = CHANGE_ME
 
 [picture]
 AVATAR_UPLOAD_PATH      = /var/db/gitea/data/avatars
-DISABLE_GRAVATAR        = false
+DISABLE_GRAVATAR        = true
 ENABLE_FEDERATED_AVATAR = false
 
 [repository]
@@ -66,28 +66,28 @@ SCRIPT_TYPE = sh
 TEMP_PATH = /var/db/gitea/data/tmp/uploads
 
 [security]
-INSTALL_LOCK = true
-INTERNAL_TOKEN = 1FFhAklka01JhgJTRUrFujWYiv4ijqcTIfXJ9o4n1fWxz+XVQdXhrqDTlsnD7fvz7gugdhgkx0FY2Lx6IBdPQw==
-SECRET_KEY   = ChangeMeBeforeRunning
+INSTALL_LOCK   = true
+INTERNAL_TOKEN = CHANGE_ME
+SECRET_KEY     = CHANGE_ME
 
 [session]
-PROVIDER = file
+PROVIDER        = file
 PROVIDER_CONFIG = /var/db/gitea/data/sessions
 
 [server]
-DOMAIN       = localhost
-HTTP_ADDR    = 127.0.0.1
-HTTP_PORT    = 3000
-ROOT_URL     = http://localhost:3000/
-DISABLE_SSH  = false
-SSH_DOMAIN   = %(DOMAIN)s
-SSH_PORT     = 22
-OFFLINE_MODE = false
 APP_DATA_PATH = /var/db/gitea/data
+DISABLE_SSH   = false
+DOMAIN        = localhost
+HTTP_ADDR     = 127.0.0.1
+HTTP_PORT     = 3000
+OFFLINE_MODE  = false
+ROOT_URL      = http://localhost:3000/
+SSH_DOMAIN    = %(DOMAIN)s
+SSH_PORT      = 22
 
 [service]
-REGISTER_EMAIL_CONFIRM = false
-ENABLE_NOTIFY_MAIL     = false
 DISABLE_REGISTRATION   = false
 ENABLE_CAPTCHA         = true
+ENABLE_NOTIFY_MAIL     = false
+REGISTER_EMAIL_CONFIRM = false
 REQUIRE_SIGNIN_VIEW    = false
