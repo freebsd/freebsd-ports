@@ -1,5 +1,6 @@
 PORTNAME=	quilt3
 PORTVERSION=	5.4.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +12,8 @@ WWW=		https://github.com/quiltdata/quilt
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aws-requests-auth>=0.4.2:devel/py-aws-requests-auth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}boto3>=1.10.0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonlines>=1.2.0:devel/py-jsonlines@${PY_FLAVOR} \
@@ -23,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aws-requests-auth>=0.4.2:devel/py-aws-reques
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.32:misc/py-tqdm@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
