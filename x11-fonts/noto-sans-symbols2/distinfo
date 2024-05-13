@@ -1,3 +1,5 @@
-TIMESTAMP = 1710676091
-SHA256 (Noto/NotoSansSymbols2-v2.008.zip) = 346c930bbe8eb946701a05c54e9c11a2094dee1d93c387bf1771c0a3e335688f
-SIZE (Noto/NotoSansSymbols2-v2.008.zip) = 2331441
+TIMESTAMP = 1712354461
+SHA256 (Noto/SansSymbols2/2.008/LICENSE) = f2095b08bed08b23a6fe26112fcd679a2bee3f002eef077eb05d215ed1051bd8
+SIZE (Noto/SansSymbols2/2.008/LICENSE) = 4374
+SHA256 (Noto/SansSymbols2/2.008/NotoSansSymbols2-Regular.ttf) = c4a0a80f0041ce4be81e2478faad22776d23edb98ae3f0d19bd37044820ecf9d
+SIZE (Noto/SansSymbols2/2.008/NotoSansSymbols2-Regular.ttf) = 671568
