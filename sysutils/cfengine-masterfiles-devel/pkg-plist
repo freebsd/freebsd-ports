@@ -82,7 +82,6 @@
 %%EXAMPLESDIR%%/masterfiles/templates/cf-hub.service.mustache
 %%EXAMPLESDIR%%/masterfiles/templates/cf-monitord.service.mustache
 %%EXAMPLESDIR%%/masterfiles/templates/cf-postgres.service.mustache
-%%EXAMPLESDIR%%/masterfiles/templates/cf-runalerts.service.mustache
 %%EXAMPLESDIR%%/masterfiles/templates/cf-serverd.service.mustache
 %%EXAMPLESDIR%%/masterfiles/templates/cfengine3.service.mustache
 %%EXAMPLESDIR%%/masterfiles/templates/cfengine_watchdog.mustache
