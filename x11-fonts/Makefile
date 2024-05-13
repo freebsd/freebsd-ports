@@ -228,6 +228,7 @@
     SUBDIR += noto-sans-telugu
     SUBDIR += noto-sans-thai
     SUBDIR += noto-sc
+    SUBDIR += noto-serif
     SUBDIR += noto-serif-armenian
     SUBDIR += noto-serif-basic
     SUBDIR += noto-serif-bengali
