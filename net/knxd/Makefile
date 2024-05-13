@@ -1,11 +1,10 @@
 PORTNAME=	knxd
-PORTVERSION=	0.14.59
-PORTREVISION=	1
+PORTVERSION=	0.14.61
 CATEGORIES=	net
 
 # make is compatible with fmt >= 10, https://github.com/knxd/knxd/pull/549
-PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES=	797283251470786bffd6586571407337da899d30.patch:-p1
+#PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+#PATCHFILES=	797283251470786bffd6586571407337da899d30.patch:-p1
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Advanced router/gateway for KNX
