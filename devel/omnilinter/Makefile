@@ -1,5 +1,6 @@
 PORTNAME=	omnilinter
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
