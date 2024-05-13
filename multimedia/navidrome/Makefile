@@ -1,6 +1,7 @@
 PORTNAME=	navidrome
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.52.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freebsd.org/~kbowling/distfiles/:npmcache
 DISTFILES=	${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache
@@ -116,7 +117,6 @@ GH_TUPLE=	\
 		uber-go:multierr:v1.11.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		unrolled:secure:v1.14.0:unrolled_secure/vendor/github.com/unrolled/secure \
 		xrash:smetrics:5f08fbb34913:xrash_smetrics/vendor/github.com/xrash/smetrics
-
 
 _BUILD_SHA=	92a98cd
 
