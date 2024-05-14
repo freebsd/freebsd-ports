@@ -1,0 +1,100 @@
+https://github.com/lapce/floem/pull/443
+
+--- ../floem-8f5a9c5c2bee1bb0355c7a058b6e39be42878534/src/app_handle.rs.orig	2024-05-13 13:05:01 UTC
++++ ../floem-8f5a9c5c2bee1bb0355c7a058b6e39be42878534/src/app_handle.rs
+@@ -85,7 +85,7 @@ impl ApplicationHandle {
+                         }
+                     }
+                 }
+-                #[cfg(target_os = "linux")]
++                #[cfg(any(target_os = "linux", target_os = "freebsd"))]
+                 AppUpdateEvent::MenuAction {
+                     window_id,
+                     action_id,
+--- ../floem-8f5a9c5c2bee1bb0355c7a058b6e39be42878534/src/app.rs.orig	2024-05-13 13:04:56.470939000 +0200
++++ ../floem-8f5a9c5c2bee1bb0355c7a058b6e39be42878534/src/app.rs	2024-05-13 13:05:40.873460000 +0200
+@@ -64,7 +64,7 @@ pub(crate) enum AppUpdateEvent {
+     RequestTimer {
+         timer: Timer,
+     },
+-    #[cfg(target_os = "linux")]
++    #[cfg(any(target_os = "linux", target_os = "freebsd"))]
+     MenuAction {
+         window_id: WindowId,
+         action_id: usize,
+--- ../floem-8f5a9c5c2bee1bb0355c7a058b6e39be42878534/src/window_handle.rs.orig	2024-05-13 13:05:07.252707000 +0200
++++ ../floem-8f5a9c5c2bee1bb0355c7a058b6e39be42878534/src/window_handle.rs	2024-05-13 13:15:25.162556000 +0200
+@@ -17,9 +17,9 @@ use peniko::kurbo::{Affine, Point, Rect, Size, Vec2};
+ use image::DynamicImage;
+ use peniko::kurbo::{Affine, Point, Rect, Size, Vec2};
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(any(target_os = "linux", target_os = "freebsd"))]
+ use crate::unit::UnitExt;
+-#[cfg(target_os = "linux")]
++#[cfg(any(target_os = "linux", target_os = "freebsd"))]
+ use crate::views::{container, stack};
+ use crate::{
+     animate::{AnimPropKind, AnimUpdateMsg, AnimValue, AnimatedProp, SizeUnit},
+@@ -73,7 +73,7 @@ pub(crate) struct WindowHandle {
+     pub(crate) cursor_position: Point,
+     pub(crate) window_position: Point,
+     pub(crate) last_pointer_down: Option<(u8, Point, Instant)>,
+-    #[cfg(target_os = "linux")]
++    #[cfg(any(target_os = "linux", target_os = "freebsd"))]
+     pub(crate) context_menu: RwSignal<Option<(Menu, Point)>>,
+ }
+ 
+@@ -96,13 +96,13 @@ impl WindowHandle {
+ 
+         set_current_view(id);
+ 
+-        #[cfg(target_os = "linux")]
++        #[cfg(any(target_os = "linux", target_os = "freebsd"))]
+         let context_menu = scope.create_rw_signal(None);
+ 
+-        #[cfg(not(target_os = "linux"))]
++        #[cfg(not(any(target_os = "linux", target_os = "freebsd")))]
+         let view = with_scope(scope, move || view_fn(window_id));
+ 
+-        #[cfg(target_os = "linux")]
++        #[cfg(any(target_os = "linux", target_os = "freebsd"))]
+         let view = with_scope(scope, move || {
+             stack((
+                 container(view_fn(window_id)).style(|s| s.size(100.pct(), 100.pct())),
+@@ -139,7 +139,7 @@ impl WindowHandle {
+             modifiers: Modifiers::default(),
+             cursor_position: Point::ZERO,
+             window_position: Point::ZERO,
+-            #[cfg(target_os = "linux")]
++            #[cfg(any(target_os = "linux", target_os = "freebsd"))]
+             context_menu,
+             last_pointer_down: None,
+         };
+@@ -835,7 +835,7 @@ impl WindowHandle {
+                         self.show_context_menu(platform_menu, pos);
+                         #[cfg(target_os = "windows")]
+                         self.show_context_menu(platform_menu, pos);
+-                        #[cfg(target_os = "linux")]
++                        #[cfg(any(target_os = "linux", target_os = "freebsd"))]
+                         self.show_context_menu(menu, platform_menu, pos);
+                     }
+                     UpdateMessage::WindowMenu { menu } => {
+@@ -1139,7 +1139,7 @@ impl WindowHandle {
+         }
+     }
+ 
+-    #[cfg(target_os = "linux")]
++    #[cfg(any(target_os = "linux", target_os = "freebsd"))]
+     fn show_context_menu(
+         &self,
+         menu: Menu,
+@@ -1199,7 +1199,7 @@ pub(crate) fn set_current_view(id: ViewId) {
+     });
+ }
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(any(target_os = "linux", target_os = "freebsd"))]
+ fn context_menu_view(
+     cx: Scope,
+     window_id: WindowId,
