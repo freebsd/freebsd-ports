@@ -9,10 +9,12 @@ DISTFILES=	${PPORTNAME}-${DVERSION}${EXTRACT_SUFX}:percona \
 
 MAINTAINER=	eugene@zhegan.in
 COMMENT=	Open-source backup tool for InnoDB and XtraDB
-WWW=		https://www.percona.com/doc/percona-xtrabackup/
+WWW=		https://docs.percona.com/percona-xtrabackup/8.0/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+ONLY_FOR_ARCHS=	amd64 i386
 
 RUN_DEPENDS=	qpress:archivers/qpress
 
