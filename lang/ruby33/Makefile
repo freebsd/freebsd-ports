@@ -20,11 +20,21 @@ BUILD_DEPENDS=	libffi>=0:devel/libffi
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 RUN_DEPENDS=	libffi>=0:devel/libffi
 
-USES=		autoreconf cpe ruby:none ssl tar:xz
+USES=		autoreconf cpe localbase ruby:none ssl tar:xz
 CPE_VENDOR=	ruby-lang
 CPE_VERSION=	${RUBY_RELVERSION}
 CPE_UPDATE=	p${RUBY_PATCHLEVEL}
 USE_LDCONFIG=	yes
+
+# We get these from other ports
+EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/bin/gem \
+			--exclude ${DISTNAME}/ext/win32* \
+			--exclude ${DISTNAME}/lib/bundler* \
+			--exclude ${DISTNAME}/libexec/bundler \
+			--exclude ${DISTNAME}/man/erb.1 \
+			--exclude ${DISTNAME}/man/irb.1 \
+			--exclude ${DISTNAME}/man/ri.1 \
+			--no-same-owner --no-same-permissions
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
@@ -37,9 +47,8 @@ CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--with-vendordir="${PREFIX}/lib/ruby/vendor_ruby"
 CONFIGURE_ENV=	debugflags=
 
-CPPFLAGS+=	-I${LOCALBASE}/include
 # Keep this, else ruby will fail to load libraries dependent of libpthread.
-LIBS+=		-lpthread -L${LOCALBASE}/lib
+LIBS+=		-lpthread
 WRKSRC=		${RUBY_WRKSRC}
 
 RUBY_VER=	3.3
@@ -114,13 +123,6 @@ RB_SET_CONF_VAR=	${SH} -c \
 
 post-extract-DOCS-on:
 	${MV} ${WRKSRC}/ChangeLog ${WRKSRC}/doc/ChangeLog
-
-post-patch:
-# We get these from other ports
-.for d in bin/* ext/dbm ext/gdbm ext/win32* lib/bundler* libexec/bundler* \
-	man/bundle* man/erb.1 man/gemfile* man/irb.1 man/ri.1
-	@${RM} -r ${BUILD_WRKSRC}/${d}
-.endfor
 
 post-build:
 #
