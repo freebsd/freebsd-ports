@@ -57,7 +57,7 @@ LDFLAGS+=	-Wl,-z,muldefs
 
 TCL_VERSION=	9.0b2
 TCL_VER=	9.0
-TCL_RC=		rc1
+TCL_RC=		rc2
 SHORT_TCL_VER=	${TCL_VER:S/.//}
 MAN_SUFFIX=	${PKGBASE}
 
