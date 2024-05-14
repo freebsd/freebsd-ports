@@ -1,8 +1,8 @@
 PORTNAME=	iperf
-DISTVERSION=	3.16
-PORTREVISION=	1
+DISTVERSION=	3.17.1
 CATEGORIES=	benchmarks
-MASTER_SITES=	https://downloads.es.net/pub/iperf/
+MASTER_SITES=	https://github.com/esnet/${PORTNAME}/releases/download/${DISTVERSION}/ \
+		https://downloads.es.net/pub/${PORTNAME}/
 PKGNAMESUFFIX=	3
 
 MAINTAINER=	bmah@FreeBSD.org
@@ -13,16 +13,14 @@ LICENSE=	BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
 USES=		cpe libtool ssl
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+CPE_VENDOR=	iperf_project
 USE_LDCONFIG=	yes
 
-CPE_VENDOR=	iperf_project
-
+GNU_CONFIGURE=	yes
 PORTDOCS=	README.md RELNOTES.md
 
-# Set ${DOCSDIR} to avoid conflict with benchmarks/iperf ${DOCSDIR}
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+# Set ${DOCSDIR} to avoid conflict with benchmarks/iperf
+DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 
 OPTIONS_DEFINE=	DOCS STATIC
 OPTIONS_SUB=	yes
