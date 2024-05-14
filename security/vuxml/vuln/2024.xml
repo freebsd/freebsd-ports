@@ -1,3 +1,59 @@
+  <vuln vid="5afd64ae-122a-11ef-8eed-1c697a616631">
+    <topic>Intel CPUs -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cpu-microcode-intel</name>
+	<range><lt>20240514</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Intel reports:</p>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01036.html">
+	 <p>
+	  Potential security vulnerabilities in some Intel Trust Domain
+	  Extensions (TDX) module software may allow escalation of
+	  privilege. Improper input validation in some Intel TDX module
+	  software before version 1.5.05.46.698 may allow a privileged user to
+	  potentially enable escalation of privilege via local access.  Intel
+	  is releasing firmware updates to mitigate these potential
+	  vulnerabilities.
+	 </p>
+	</blockquote>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01051.html">
+	 <p>
+	  A potential security vulnerability in some Intel Processors may
+	  allow information disclosure.  Hardware logic contains race
+	  conditions in some Intel Processors that may allow an authenticated
+	  user to potentially enable partial information disclosure via local
+	  access. Intel is releasing microcode updates to mitigate this
+	  potential vulnerability.
+	 </p>
+	</blockquote>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01052.html">
+	 <p>
+	  A potential security vulnerability in Intel Core Ultra Processors
+	  may allow denial of service.  Sequence of processor instructions
+	  leads to unexpected behavior in Intel Core Ultra Processors may
+	  allow an authenticated user to potentially enable denial of service
+	  via local access.  Intel is releasing microcode updates to mitigate
+	  this potential vulnerability.
+	 </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-45745</cvename>
+      <cvename>CVE-2023-45733</cvename>
+      <cvename>CVE-2023-46103</cvename>
+      <url>https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files/releases/tag/microcode-20240514</url>
+    </references>
+    <dates>
+      <discovery>2024-05-14</discovery>
+      <entry>2024-05-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8e0e8b56-11c6-11ef-9f97-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
