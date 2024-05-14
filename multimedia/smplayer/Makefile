@@ -1,7 +1,8 @@
 PORTNAME=	smplayer
 DISTVERSION=	24.5.0
 CATEGORIES=	multimedia audio kde
-MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION} \
+MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION:S/4/3/} \
+		SF/${PORTNAME}/SMPlayer/${PORTVERSION} \
 		https://github.com/${PORTNAME}-dev/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	vvd@FreeBSD.org
