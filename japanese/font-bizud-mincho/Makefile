@@ -1,34 +1,36 @@
 PORTNAME=	bizud-mincho
-DISTVERSIONPREFIX=	v
 DISTVERSION=	1.06
 CATEGORIES=	japanese x11-fonts
+MASTER_SITES=	https://github.com/googlefonts/morisawa-biz-ud-mincho/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	ja-font-
+DISTNAME=	morisawa-biz-ud-mincho-fonts
+EXTRACT_SUFX=	.zip
+DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	mew14930xvi@inbox.lv
 COMMENT=	Morisawa BIZ UD Mincho fonts
 WWW=		https://github.com/googlefonts/morisawa-biz-ud-mincho
 
 LICENSE=	OFL11
-LICENSE_FILE=	${WRKSRC}/OFL.txt
 
 USES=		fonts:fc
-FONTPATHSPEC=	${FONTNAME}:pri=60
+
+EXTRACT_AFTER_ARGS=	--include morisawa-biz-ud-mincho-fonts/fonts/ttf/*.ttf \
+			--strip-components 3 \
+			--no-same-owner --no-same-permissions
+
 NO_ARCH=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+
+FONTPATHSPEC=	${FONTNAME}:pri=60
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
 SUB_FILES=	pkg-install
-PORTDOCS=	AUTHORS.txt CONTRIBUTORS.txt README.md
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	googlefonts
-GH_PROJECT=	morisawa-biz-ud-mincho
-
-OPTIONS_DEFINE=	DOCS
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/fonts/ttf/* ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d
 	${INSTALL_DATA} ${FILESDIR}/20-unhint-${FONTNAME}.conf \
@@ -38,9 +40,5 @@ do-install:
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/20-unhint-${FONTNAME}.conf
 	${LN} -s -f ../conf.avail/62-fonts-${FONTNAME}.conf \
 	    ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/62-fonts-${FONTNAME}.conf
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
