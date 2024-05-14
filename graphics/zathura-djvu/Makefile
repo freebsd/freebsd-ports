@@ -1,6 +1,6 @@
 PORTNAME=	zathura-djvu
 DISTVERSION=	0.2.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/
 
@@ -11,7 +11,8 @@ WWW=		https://pwmt.org/projects/zathura/plugins/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre
+LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre \
+		libgirara-gtk3.so:x11-toolkits/girara
 BUILD_DEPENDS=	zathura:graphics/zathura
 RUN_DEPENDS=	zathura:graphics/zathura
 
