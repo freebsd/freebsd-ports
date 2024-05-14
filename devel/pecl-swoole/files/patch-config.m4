@@ -1,4 +1,4 @@
---- config.m4.orig	2023-09-29 09:24:26 UTC
+--- config.m4.orig	2024-05-10 04:53:26 UTC
 +++ config.m4
 @@ -369,7 +369,7 @@ if test "$PHP_SWOOLE" != "no"; then
      AC_CHECK_LIB(c, poll, AC_DEFINE(HAVE_POLL, 1, [have poll]))
