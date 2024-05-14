@@ -1,6 +1,6 @@
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.38.0
+DISTVERSION=	0.39.0
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.15:graphics/wayland-protocols
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
+		libudev.so:devel/libudev-devd \
 		libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
@@ -26,7 +27,7 @@ USE_GNOME=	cairo gnomedesktop3
 USE_XORG=	pixman xcb
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World/Phosh
-GL_TUPLE=	World/Phosh:gmobile:v0.0.6:gmobile/subprojects/gmobile
+GL_TUPLE=	World/Phosh:gmobile:v0.2.0:gmobile/subprojects/gmobile
 MESON_ARGS=	-Dembed-wlroots=disabled
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man5/${PORTNAME}.ini.5.gz \
@@ -39,7 +40,8 @@ OPTIONS_DEFAULT=MANPAGES
 
 MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
 MANPAGES_MESON_TRUE=	man
-MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
+MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz \
+			share/man/man5/${PORTNAME}.gsettings.5.gz
 
 .ifdef GL_TUPLE
 post-configure:
