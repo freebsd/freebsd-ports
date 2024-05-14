@@ -136,6 +136,7 @@ include/wine/windows/asynot.idl
 include/wine/windows/asysta.idl
 include/wine/windows/atlbase.h
 include/wine/windows/atlcom.h
+include/wine/windows/atldef.h
 include/wine/windows/atliface.h
 include/wine/windows/atliface.idl
 include/wine/windows/atlthunk.h
