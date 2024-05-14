@@ -833,6 +833,7 @@ share/man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.43.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.44.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.45.0.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.45.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
