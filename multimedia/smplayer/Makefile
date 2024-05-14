@@ -1,7 +1,8 @@
 PORTNAME=	smplayer
-DISTVERSION=	23.12.0
+DISTVERSION=	24.5.0
 CATEGORIES=	multimedia audio kde
-MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION} \
+		https://github.com/${PORTNAME}-dev/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Complete front-end based on Qt for mplayer
@@ -22,9 +23,6 @@ USE_XORG=	x11 xext
 QMAKE_ARGS=	"DEFINES_DISABLED+=MPLAYER2_SUPPORT"
 MAKE_ENV=	DESTDIR=${STAGEDIR} LRELEASE=${LRELEASE}
 ALL_TARGET=	src/smplayer
-
-# Do not use unstable versions
-PORTSCOUT=	site:http://sourceforge.net/projects/smplayer/files/Unstable/releases/
 
 SUB_FILES=	pkg-message
 
