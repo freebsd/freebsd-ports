@@ -8,6 +8,12 @@
 # snmpd_enable="YES"
 # snmpd_flags="<set as needed>"
 # snmpd_conffile="<set as needed>"
+#
+# Add the following line to make snmpd drop privileges after initialization.
+# This might invalidate existing SNMPv3 users.
+#
+# snmpd_sugid="YES"
+#
 
 . /etc/rc.subr
 
@@ -18,6 +24,7 @@ load_rc_config snmpd
 
 snmpd_enable=${snmpd_enable:-"NO"}
 snmpd_flush_cache=${snmpd_flush_cache-"NO"}
+snmpd_sugid=${snmpd_sugid:-"NO"}
 
 pidfile=${snmpd_pidfile:-"/var/run/net_snmpd.pid"}
 
@@ -57,7 +64,11 @@ net_snmpd_precmd () {
 	if [ -n "${snmpd_conffile_set}" ]; then
 		rc_flags="-c ${snmpd_conffile_set#,} ${rc_flags}"
 	fi
-	rc_flags="-u snmpd -g snmpd -p ${pidfile} ${rc_flags}"
+	if checkyesno snmpd_sugid; then
+		rc_flags="-u snmpd -g snmpd ${rc_flags}"
+	fi
+
+	rc_flags="-p ${pidfile} ${rc_flags}"
 }
 
 run_rc_command "$1"
