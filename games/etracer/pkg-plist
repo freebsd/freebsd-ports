@@ -475,6 +475,7 @@ share/metainfo/net.sourceforge.extremetuxracer.metainfo.xml
 %%DATADIR%%/translations/it_IT.lst
 %%DATADIR%%/translations/languages.lst
 %%DATADIR%%/translations/pl_PL.lst
+%%DATADIR%%/translations/pt_PT.lst
 %%DATADIR%%/translations/ro_RO.lst
 %%DATADIR%%/translations/se_SE.lst
 %%DATADIR%%/translations/xx_XX.lst
