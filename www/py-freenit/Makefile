@@ -1,11 +1,11 @@
 PORTNAME=	freenit
-DISTVERSION=	0.3.2
+DISTVERSION=	0.3.3
 CATEGORIES=	www devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	meka@tilda.center
-COMMENT=	REST API framework based on Flask-Smorest
+COMMENT=	REST API framework based on FastAPI
 WWW=		https://github.com/freenit-framework/backend
 
 LICENSE=	BSD2CLAUSE
