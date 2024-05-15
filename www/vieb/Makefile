@@ -13,6 +13,9 @@ WWW=		https://vieb.dev
 
 LICENSE=	GPLv3+
 
+DEPRECATED=	Outdated and depends on expired (and blacklisted) devel/electron25
+EXPIRATION_DATE=2024-06-15
+
 USES=		desktop-file-utils electronfix:25
 
 NO_BUILD=	yes
