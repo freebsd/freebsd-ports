@@ -11,7 +11,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	protoc:devel/protobuf \
 		${PY_SETUPTOOLS}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf@${PY_FLAVOR} \
+		${PY_SETUPTOOLS} # for the pkg_resources package
 TEST_DEPENDS=	scons:devel/scons
 
 USES=		cmake python shebangfix
