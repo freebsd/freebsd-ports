@@ -1,6 +1,5 @@
 PORTNAME=	xwayland
-PORTVERSION=	23.2.7
-PORTREVISION=	1
+PORTVERSION=	24.1.0
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
@@ -45,7 +44,7 @@ DEFAULT_FONTPATH_LIST= \
 	${FONTPATH_ROOT}/75dpi/ \
 	catalogue:${FONTPATHD}
 
-OPTIONS_DEFINE=		CSD EI NVIDIA
+OPTIONS_DEFINE=		CSD EI
 OPTIONS_DEFAULT=	CSD EI
 
 CSD_DESC=		Client-side decorations via libdecor
@@ -55,9 +54,5 @@ CSD_MESON_TRUE=		libdecor
 EI_DESC=		Emulated input via libei
 EI_LIB_DEPENDS=		libei.so:x11/libei
 EI_MESON_OFF=		-Dxwayland_ei=false
-
-NVIDIA_DESC=		EGLStream support for glamor on Xwayland
-NVIDIA_BUILD_DEPENDS=	egl-wayland>0:graphics/egl-wayland
-NVIDIA_MESON_TRUE=	xwayland_eglstream
 
 .include <bsd.port.mk>
