@@ -1,9 +1,6 @@
 PORTNAME=	octave-forge-queueing
-PORTVERSION=	1.2.7
-PORTREVISION=	6
+DISTVERSION=	1.2.8
 CATEGORIES=	math
-MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
-DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
@@ -12,11 +9,12 @@ WWW=		https://packages.octave.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
-BROKEN=		does not install with octave version >= 9.1.0
-
 USES=		octave
+USE_GITHUB=	yes
+GH_ACCOUNT=	mmarzolla
+GH_PROJECT=	queueing
 
-OCTAVE_SRC=		${OCTAVE_PKGNAME}
+OCTAVE_SRC=	${OCTAVE_PKGNAME}-${DISTVERSION}
 
 NO_ARCH=	yes
 NO_BUILD=	yes
