@@ -6,6 +6,7 @@ bin/morbo
 %%SITE_PERL%%/Mojo/Asset/File.pm
 %%SITE_PERL%%/Mojo/Asset/Memory.pm
 %%SITE_PERL%%/Mojo/Base.pm
+%%SITE_PERL%%/Mojo/BaseUtil.pm
 %%SITE_PERL%%/Mojo/ByteStream.pm
 %%SITE_PERL%%/Mojo/Cache.pm
 %%SITE_PERL%%/Mojo/Collection.pm
@@ -151,6 +152,7 @@ bin/morbo
 %%PERL5_MAN3%%/Mojo::Asset::File.3.gz
 %%PERL5_MAN3%%/Mojo::Asset::Memory.3.gz
 %%PERL5_MAN3%%/Mojo::Base.3.gz
+%%PERL5_MAN3%%/Mojo::BaseUtil.3.gz
 %%PERL5_MAN3%%/Mojo::ByteStream.3.gz
 %%PERL5_MAN3%%/Mojo::Cache.3.gz
 %%PERL5_MAN3%%/Mojo::Collection.3.gz
