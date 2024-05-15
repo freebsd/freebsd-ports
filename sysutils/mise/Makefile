@@ -1,7 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.5.9
-PORTREVISION=	1
+DISTVERSION=	2024.5.15
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +10,10 @@ WWW=		https://github.com/jdx/mise
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo
+LIB_DEPENDS=	libgit2.so:devel/libgit2 \
+		libssh2.so:security/libssh2
+
+USES=		cargo pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jdx
@@ -115,9 +117,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		form_urlencoded-1.2.1 \
 		fsio-0.4.0 \
 		fslock-0.2.1 \
+		futures-0.3.30 \
 		futures-channel-0.3.30 \
 		futures-core-0.3.30 \
+		futures-executor-0.3.30 \
 		futures-io-0.3.30 \
+		futures-macro-0.3.30 \
 		futures-sink-0.3.30 \
 		futures-task-0.3.30 \
 		futures-util-0.3.30 \
@@ -136,6 +141,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		home-0.5.9 \
+		homedir-0.2.1 \
 		http-0.2.12 \
 		http-body-0.4.6 \
 		httparse-1.8.0 \
@@ -165,11 +171,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lazy_static-1.4.0 \
 		libc-0.2.154 \
 		libgit2-sys-0.16.2+1.7.2 \
+		libssh2-sys-0.3.0 \
 		libz-sys-1.1.16 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.13 \
 		log-0.4.21 \
 		memchr-2.7.2 \
+		memoffset-0.7.1 \
 		miette-5.10.0 \
 		miette-derive-5.10.0 \
 		mime-0.3.17 \
@@ -177,6 +185,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		miniz_oxide-0.7.2 \
 		mio-0.8.11 \
 		native-tls-0.2.11 \
+		nix-0.26.4 \
 		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
 		num-conv-0.1.0 \
@@ -348,11 +357,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		web-sys-0.3.69 \
 		webpki-roots-0.25.4 \
 		which-6.0.1 \
+		widestring-1.1.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.8 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.52.0 \
 		windows-core-0.52.0 \
+		windows-implement-0.52.0 \
+		windows-interface-0.52.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
@@ -375,8 +388,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		winnow-0.6.8 \
 		winreg-0.50.0 \
 		winsafe-0.0.19 \
+		wmi-0.13.3 \
 		xattr-1.3.1 \
 		xx-0.5.1 \
+		xx-1.1.1 \
 		yansi-0.5.1 \
 		zeroize-1.7.0 \
 		zip-1.2.3 \
