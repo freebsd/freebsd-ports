@@ -1,6 +1,5 @@
 PORTNAME=	calendar
-DISTVERSION=	6.1.2
-PORTREVISION=	2
+DISTVERSION=	7.0.0
 CATEGORIES=	deskutils
 PKGNAMEPREFIX=	elementary-
 
@@ -11,8 +10,7 @@ WWW=		https://github.com/elementary/calendar
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
-		libchamplain-0.12.so:graphics/libchamplain \
+LIB_DEPENDS=	libchamplain-0.12.so:graphics/libchamplain \
 		libclutter-1.0.so:graphics/clutter \
 		libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
 		libfolks.so:net-im/folks \
@@ -21,15 +19,16 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libgeocode-glib.so:net/geocode-glib \
 		libgranite.so:x11-toolkits/granite \
 		libhandy-1.so:x11-toolkits/libhandy \
-		libical.so:devel/libical \
-		libnotify.so:devel/libnotify \
+		libical-glib.so:devel/libical \
+		libportal.so:deskutils/libportal \
+		libportal-gtk3.so:deskutils/libportal-gtk3 \
 		libsoup-2.4.so:devel/libsoup
 RUN_DEPENDS=	consolekit2>0:sysutils/consolekit2
 
 USES=		desktop-file-utils gettext gnome meson pkgconfig vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
-USE_GNOME=	gdkpixbuf2 glib20 gtk30 evolutiondataserver3
+USE_GNOME=	evolutiondataserver3 gdkpixbuf2 glib20 gtk30
 GLIB_SCHEMAS=	io.elementary.calendar.gschema.xml
 
 .include <bsd.port.mk>
