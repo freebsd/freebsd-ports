@@ -83,7 +83,6 @@
     SUBDIR += rubygem-lita-irc
     SUBDIR += rubygem-net-irc
     SUBDIR += scrollz
-    SUBDIR += sic
     SUBDIR += simpleirc
     SUBDIR += smartirc4net
     SUBDIR += smuxi
