@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.32-16431 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-gb7a882f42b
+DISTVERSION=	0.0.32-16472 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gba379ceba2
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -28,6 +28,7 @@ GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.14.0-2-g8b43a97:hidapi/3rdparty/hidapi/hidapi \
 		RPCS3:soundtouch:2.3.1-68-g394e1f5:soundtouch/3rdparty/SoundTouch/soundtouch \
 		asmjit:asmjit:416f735:asmjit/3rdparty/asmjit/asmjit \
+		facebook:zstd:v1.4.7-2181-g97291fc5:zstd/3rdparty/zstd/zstd \
 		jbeder:yaml-cpp:0.8.0-11-g456c68f:yamlcpp/3rdparty/yaml-cpp/yaml-cpp \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-323-ge867c06:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
 		KhronosGroup:SPIRV-Tools:v2023.5.rc1:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
