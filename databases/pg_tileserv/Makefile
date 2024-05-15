@@ -1,7 +1,6 @@
 PORTNAME=	pg_tileserv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.9
-PORTREVISION=	12
+DISTVERSION=	1.0.11
 CATEGORIES=	databases
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://github.com/crunchydata/pg_tileserv/issues
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		go:1.20,modules
+USES=		go:1.21,modules
 USE_GITHUB=	nodefault
 GH_TUPLE=	golang:sys:v0.6.0:sys
 GO_MODULE=	github.com/crunchydata/pg_tileserv

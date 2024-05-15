@@ -1,7 +1,7 @@
-TIMESTAMP = 1679154903
-SHA256 (go/databases_pg_tileserv/pg_tileserv-v1.0.9/v1.0.9.mod) = 7e1507419e12c656b79df9d382b93cff41a3e07f2930dfa196af32d91ac5ac93
-SIZE (go/databases_pg_tileserv/pg_tileserv-v1.0.9/v1.0.9.mod) = 570
-SHA256 (go/databases_pg_tileserv/pg_tileserv-v1.0.9/v1.0.9.zip) = e957c97526178d3c28f35ba0009e0f48dd972bd1a2f089e84eaaf1d6cab51e19
-SIZE (go/databases_pg_tileserv/pg_tileserv-v1.0.9/v1.0.9.zip) = 3066303
-SHA256 (go/databases_pg_tileserv/pg_tileserv-v1.0.9/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
-SIZE (go/databases_pg_tileserv/pg_tileserv-v1.0.9/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
+TIMESTAMP = 1715804076
+SHA256 (go/databases_pg_tileserv/pg_tileserv-v1.0.11/v1.0.11.mod) = 4c090f5b3e85be185fee48bf1aa2b21390e83748b894bdb5f43edde512a54084
+SIZE (go/databases_pg_tileserv/pg_tileserv-v1.0.11/v1.0.11.mod) = 2775
+SHA256 (go/databases_pg_tileserv/pg_tileserv-v1.0.11/v1.0.11.zip) = 8b255cdca543c83e1c301c1f59a0987ca9168e17f47c7fd7e37f94f98698ed31
+SIZE (go/databases_pg_tileserv/pg_tileserv-v1.0.11/v1.0.11.zip) = 3068750
+SHA256 (go/databases_pg_tileserv/pg_tileserv-v1.0.11/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go/databases_pg_tileserv/pg_tileserv-v1.0.11/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
