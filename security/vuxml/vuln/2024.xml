@@ -1,3 +1,42 @@
+  <vuln vid="e79cc4e2-12d7-11ef-83d8-4ccc6adda413">
+    <topic>qt6-base (core module) -- Invalid pointer in QStringConverter</topic>
+    <affects>
+      <package>
+	<name>qt6-base</name>
+	<range><ge>6.5.0</ge><le>6.5.5</le></range>
+	<range><ge>6.6.0</ge><lt>6.7.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Andy Shaw reports:</p>
+	<blockquote cite="https://www.qt.io/blog/security-advisory-qstringconverter">
+	  <p>QStringConverter has an invalid pointer being passed as a callback
+	    which can allow modification of the stack. Qt itself is not vulnerable
+	    to remote attack however an application using QStringDecoder either
+	    directly or indirectly can be vulnerable.</p>
+	  <p>This requires:</p>
+	  <ol>
+	    <li>the attacker be able to tell the application a specific codec to use</li>
+	    <li>the attacker be able to feed the application data in a specific way to cause the desired modification</li>
+	    <li>the attacker what in the stack will get modified, which requires knowing the build of the application (and not all builds will be vulnerable)</li>
+	    <li>the modification do anything in particular that is useful to the attacker, besides maybe crashing the application</li>
+	  </ol>
+	  <p>Qt does not automatically use any of those codecs, so this needs the application
+	    to implement something using QStringDecoder to be vulnerable.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-33861</cvename>
+      <url>https://www.qt.io/blog/security-advisory-qstringconverter</url>
+    </references>
+    <dates>
+      <discovery>2024-05-02</discovery>
+      <entry>2024-05-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f2d8342f-1134-11ef-8791-6805ca2fa271">
     <topic>dnsdist -- Transfer requests received over DoH can lead to a denial of service</topic>
     <affects>
@@ -30,7 +69,7 @@
     </dates>
   </vuln>
 
-<vuln vid="5afd64ae-122a-11ef-8eed-1c697a616631">
+  <vuln vid="5afd64ae-122a-11ef-8eed-1c697a616631">
     <topic>Intel CPUs -- multiple vulnerabilities</topic>
     <affects>
       <package>
