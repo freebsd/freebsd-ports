@@ -1,5 +1,5 @@
 PORTNAME=	scikit-build-core
-DISTVERSION=	0.9.3
+DISTVERSION=	0.9.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,8 +34,7 @@ py310_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}exceptiongroup>0:devel/py-exceptiongro
 
 USES=		python:3.9+
 USE_PYTHON=	pep517 autoplist pytest
-# 4 tests fail, see https://github.com/scikit-build/scikit-build-core/issues/531
-# tests fail to run, see https://github.com/scikit-build/scikit-build-core/issues/598
+# 22 errors during tests, see https://github.com/scikit-build/scikit-build-core/issues/531
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
