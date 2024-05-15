@@ -98,3 +98,4 @@ share/man/man1/wat2wasm.1.gz
 %%DATADIR%%/wasm2c/wasm-rt-exceptions-impl.c
 %%DATADIR%%/wasm2c/wasm-rt-impl.c
 %%DATADIR%%/wasm2c/wasm-rt-impl.h
+%%DATADIR%%/wasm2c/wasm-rt-mem-impl.c
