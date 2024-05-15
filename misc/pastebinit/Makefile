@@ -1,5 +1,5 @@
 PORTNAME=	pastebinit
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.0
 CATEGORIES=	misc python
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -36,6 +36,6 @@ do-install-PASTEBINS-on:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
