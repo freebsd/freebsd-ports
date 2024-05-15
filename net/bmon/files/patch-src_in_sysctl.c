@@ -1,5 +1,5 @@
---- src/in_sysctl.c.orig	2017-05-18 12:03:29.320093000 -0700
-+++ src/in_sysctl.c	2017-05-18 12:17:31.135080000 -0700
+--- src/in_sysctl.c.orig	2024-05-14 12:03:29 UTC
++++ src/in_sysctl.c
 @@ -232,7 +232,7 @@ sysctl_read(void)
  		snprintf(info_buf, sizeof(info_buf), "%ju", (uintmax_t)ifm->ifm_data.ifi_metric);
  		element_update_info(e, "Metric", info_buf);
