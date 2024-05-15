@@ -4,6 +4,7 @@ share/bash-completion/completions/fastfetch
 share/fish/vendor_completions.d/fastfetch.fish
 share/man/man1/fastfetch.1.gz
 %%DATADIR%%/presets/all.jsonc
+%%DATADIR%%/presets/archey.jsonc
 %%DATADIR%%/presets/btw.jsonc
 %%DATADIR%%/presets/ci.jsonc
 %%DATADIR%%/presets/examples/10.jsonc
