@@ -1,6 +1,6 @@
 PORTNAME=	cdrdao
 DISTVERSION=	1_2_5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/rel_${DISTVERSION}/ \
 		SF/${PORTNAME}/rel_${DISTVERSION}
