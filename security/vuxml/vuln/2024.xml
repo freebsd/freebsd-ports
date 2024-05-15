@@ -1,3 +1,62 @@
+  <vuln vid="c6f03ea6-12de-11ef-83d8-4ccc6adda413">
+    <topic>qt6-webengine -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>qt6-webengine</name>
+	<range><lt>6.7.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qt qtwebengine-chromium repo reports:</p>
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=118-based">
+	  <p>Backports for 16 security bugs in Chromium:</p>
+	  <ul>
+	    <li>CVE-2024-2625: Object lifecycle issue in V8</li>
+	    <li>CVE-2024-2626: Out of bounds read in Swiftshader</li>
+	    <li>CVE-2024-2885: Use after free in Dawn</li>
+	    <li>CVE-2024-2887: Type Confusion in WebAssembly</li>
+	    <li>CVE-2024-3157: Out of bounds write in Compositing</li>
+	    <li>CVE-2024-3159: Out of bounds memory access in V8</li>
+	    <li>CVE-2024-3516: Heap buffer overflow in ANGLE</li>
+	    <li>CVE-2024-3837: Use after free in QUIC</li>
+	    <li>CVE-2024-3839: Out of bounds read in Fonts</li>
+	    <li>CVE-2024-3914: Use after free in V8</li>
+	    <li>CVE-2024-3840: Insufficient policy enforcement in Site Isolation</li>
+	    <li>CVE-2024-4058: Type Confusion in ANGLE</li>
+	    <li>CVE-2024-4060: Use after free in Dawn</li>
+	    <li>CVE-2024-4331: Use after free in Picture In Picture</li>
+	    <li>CVE-2024-4368: Use after free in Dawn</li>
+	    <li>CVE-2024-4671: Use after free in Visuals</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-2625</cvename>
+      <cvename>CVE-2024-2626</cvename>
+      <cvename>CVE-2024-2885</cvename>
+      <cvename>CVE-2024-2887</cvename>
+      <cvename>CVE-2024-3157</cvename>
+      <cvename>CVE-2024-3159</cvename>
+      <cvename>CVE-2024-3516</cvename>
+      <cvename>CVE-2024-3837</cvename>
+      <cvename>CVE-2024-3839</cvename>
+      <cvename>CVE-2024-3914</cvename>
+      <cvename>CVE-2024-3840</cvename>
+      <cvename>CVE-2024-4058</cvename>
+      <cvename>CVE-2024-4060</cvename>
+      <cvename>CVE-2024-4331</cvename>
+      <cvename>CVE-2024-4368</cvename>
+      <cvename>CVE-2024-4671</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=118-based</url>
+    </references>
+    <dates>
+      <discovery>2024-04-03</discovery>
+      <entry>2024-05-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e79cc4e2-12d7-11ef-83d8-4ccc6adda413">
     <topic>qt6-base (core module) -- Invalid pointer in QStringConverter</topic>
     <affects>
