@@ -1,5 +1,5 @@
 PORTNAME=	mnn
-DISTVERSION=	2.8.1
+DISTVERSION=	2.9.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
