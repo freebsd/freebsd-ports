@@ -1,0 +1,199 @@
+From cd10f3ba0d83f34ca978cc4c7a552b72fdd068aa Mon Sep 17 00:00:00 2001
+From: David Tolnay <dtolnay@gmail.com>
+Date: Tue, 28 Nov 2023 11:18:39 -0800
+Subject: [PATCH 1/2] Flatten cursor.kind() matching in Item::parse down to one
+ match
+
+---
+ bindgen/ir/item.rs | 84 ++++++++++++++++++++++------------------------
+ 1 file changed, 41 insertions(+), 43 deletions(-)
+
+diff --git bindgen/ir/item.rs bindgen/ir/item.rs
+index 0556452bfa..4f2d361e51 100644
+--- third_party/rust/bindgen/ir/item.rs
++++ third_party/rust/bindgen/ir/item.rs
+@@ -1427,53 +1427,52 @@
+             }
+         }
+ 
+-        // Guess how does clang treat extern "C" blocks?
+-        if cursor.kind() == CXCursor_UnexposedDecl {
+-            Err(ParseError::Recurse)
+-        } else {
++        match cursor.kind() {
++            // Guess how does clang treat extern "C" blocks?
++            CXCursor_UnexposedDecl => Err(ParseError::Recurse),
++
+             // We allowlist cursors here known to be unhandled, to prevent being
+             // too noisy about this.
+-            match cursor.kind() {
+-                CXCursor_MacroDefinition |
+-                CXCursor_MacroExpansion |
+-                CXCursor_UsingDeclaration |
+-                CXCursor_UsingDirective |
+-                CXCursor_StaticAssert |
+-                CXCursor_FunctionTemplate => {
+-                    debug!(
+-                        "Unhandled cursor kind {:?}: {:?}",
+-                        cursor.kind(),
+-                        cursor
+-                    );
+-                }
+-                CXCursor_InclusionDirective => {
+-                    let file = cursor.get_included_file_name();
+-                    match file {
+-                        None => {
+-                            warn!(
+-                                "Inclusion of a nameless file in {:?}",
+-                                cursor
+-                            );
+-                        }
+-                        Some(filename) => {
+-                            ctx.include_file(filename);
+-                        }
+-                    }
+-                }
+-                _ => {
+-                    // ignore toplevel operator overloads
+-                    let spelling = cursor.spelling();
+-                    if !spelling.starts_with("operator") {
++            CXCursor_MacroDefinition |
++            CXCursor_MacroExpansion |
++            CXCursor_UsingDeclaration |
++            CXCursor_UsingDirective |
++            CXCursor_StaticAssert |
++            CXCursor_FunctionTemplate => {
++                debug!(
++                    "Unhandled cursor kind {:?}: {:?}",
++                    cursor.kind(),
++                    cursor
++                );
++                Err(ParseError::Continue)
++            }
++            CXCursor_InclusionDirective => {
++                let file = cursor.get_included_file_name();
++                match file {
++                    None => {
+                         warn!(
+-                            "Unhandled cursor kind {:?}: {:?}",
+-                            cursor.kind(),
++                            "Inclusion of a nameless file in {:?}",
+                             cursor
+                         );
+                     }
++                    Some(filename) => {
++                        ctx.include_file(filename);
++                    }
+                 }
++                Err(ParseError::Continue)
++            }
++            _ => {
++                // ignore toplevel operator overloads
++                let spelling = cursor.spelling();
++                if !spelling.starts_with("operator") {
++                    warn!(
++                        "Unhandled cursor kind {:?}: {:?}",
++                        cursor.kind(),
++                        cursor
++                    );
++                }
++                Err(ParseError::Continue)
+             }
+-
+-            Err(ParseError::Continue)
+         }
+     }
+ 
+
+From 2997017b5a3065b83e9d76f0080d6cb99c94c0c1 Mon Sep 17 00:00:00 2001
+From: David Tolnay <dtolnay@gmail.com>
+Date: Tue, 28 Nov 2023 11:21:18 -0800
+Subject: [PATCH 2/2] Handle CXCursor_LinkageSpec in Clang 18+
+
+---
+ bindgen/ir/item.rs | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+diff --git bindgen/ir/item.rs bindgen/ir/item.rs
+index 4f2d361e51..dd587b088b 100644
+--- third_party/rust/bindgen/ir/item.rs
++++ third_party/rust/bindgen/ir/item.rs
+@@ -1433,8 +1433,11 @@ impl Item {
+         }
+ 
+         match cursor.kind() {
+-            // Guess how does clang treat extern "C" blocks?
+-            CXCursor_UnexposedDecl => Err(ParseError::Recurse),
++            // On Clang 18+, extern "C" is reported accurately as a LinkageSpec.
++            // Older LLVM treat it as UnexposedDecl.
++            CXCursor_LinkageSpec | CXCursor_UnexposedDecl => {
++                Err(ParseError::Recurse)
++            }
+ 
+             // We allowlist cursors here known to be unhandled, to prevent being
+             // too noisy about this.
+diff --git dom/media/gmp-plugin-openh264/gmp-fake-openh264.cpp dom/media/gmp-plugin-openh264/gmp-fake-openh264.cpp
+--- dom/media/gmp-plugin-openh264/gmp-fake-openh264.cpp
++++ dom/media/gmp-plugin-openh264/gmp-fake-openh264.cpp
+@@ -97,11 +97,11 @@
+     uint32_t width_;
+     uint32_t height_;
+     uint8_t y_;
+     uint8_t u_;
+     uint8_t v_;
+-    uint32_t timestamp_;
++    uint64_t timestamp_;
+   } idr_nalu;
+ };
+ #pragma pack(pop)
+ 
+ #define ENCODED_FRAME_MAGIC 0x004000b8
+diff --git dom/media/gtest/TestGMPRemoveAndDelete.cpp dom/media/gtest/TestGMPRemoveAndDelete.cpp
+--- dom/media/gtest/TestGMPRemoveAndDelete.cpp
++++ dom/media/gtest/TestGMPRemoveAndDelete.cpp
+@@ -359,11 +359,11 @@
+       uint32_t width_;
+       uint32_t height_;
+       uint8_t y_;
+       uint8_t u_;
+       uint8_t v_;
+-      uint32_t timestamp_;
++      uint64_t timestamp_;
+     } idr_nalu;
+   };
+ #pragma pack(pop)
+ 
+   GMPVideoFrame* absFrame;
+diff --git dom/media/webrtc/libwebrtcglue/WebrtcGmpVideoCodec.h dom/media/webrtc/libwebrtcglue/WebrtcGmpVideoCodec.h
+--- dom/media/webrtc/libwebrtcglue/WebrtcGmpVideoCodec.h
++++ dom/media/webrtc/libwebrtcglue/WebrtcGmpVideoCodec.h
+@@ -300,11 +300,11 @@
+ 
+   struct InputImageData {
+     int64_t timestamp_us;
+   };
+   // Map rtp time -> input image data
+-  DataMutex<std::map<uint32_t, InputImageData>> mInputImageMap;
++  DataMutex<std::map<uint64_t, InputImageData>> mInputImageMap;
+ 
+   MediaEventProducer<uint64_t> mInitPluginEvent;
+   MediaEventProducer<uint64_t> mReleasePluginEvent;
+ };
+ 
+diff --git dom/media/webrtc/libwebrtcglue/WebrtcGmpVideoCodec.cpp dom/media/webrtc/libwebrtcglue/WebrtcGmpVideoCodec.cpp
+--- dom/media/webrtc/libwebrtcglue/WebrtcGmpVideoCodec.cpp
++++ dom/media/webrtc/libwebrtcglue/WebrtcGmpVideoCodec.cpp
+@@ -538,11 +538,11 @@
+     return;
+   }
+ 
+   webrtc::VideoFrameType ft;
+   GmpFrameTypeToWebrtcFrameType(aEncodedFrame->FrameType(), &ft);
+-  uint32_t timestamp = (aEncodedFrame->TimeStamp() * 90ll + 999) / 1000;
++  uint64_t timestamp = (aEncodedFrame->TimeStamp() * 90ll + 999) / 1000;
+ 
+   GMP_LOG_DEBUG("GMP Encoded: %" PRIu64 ", type %d, len %d",
+                 aEncodedFrame->TimeStamp(), aEncodedFrame->BufferType(),
+                 aEncodedFrame->Size());
+ 
+
