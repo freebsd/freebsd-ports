@@ -2168,6 +2168,7 @@
     SUBDIR += rubygem-passenger
     SUBDIR += rubygem-patron
     SUBDIR += rubygem-platform-api
+    SUBDIR += rubygem-possessive
     SUBDIR += rubygem-propshaft
     SUBDIR += rubygem-propshaft-rails70
     SUBDIR += rubygem-protocol-hpack
