@@ -10,6 +10,7 @@ COMMENT=	Run Tartiflette GraphQL Engine through aiohttp
 WWW=		https://github.com/tartiflette/tartiflette-aiohttp
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
