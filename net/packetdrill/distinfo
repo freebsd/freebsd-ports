@@ -1,3 +1,3 @@
-TIMESTAMP = 1688051642
-SHA256 (freebsd-net-packetdrill-0.0.2023062500-aebdc35_GH0.tar.gz) = c1f0fa965d345aa6aa3ab81bdd224dddea90ac0bc1fa6458e12af23e48e62d2c
-SIZE (freebsd-net-packetdrill-0.0.2023062500-aebdc35_GH0.tar.gz) = 364128
+TIMESTAMP = 1715873669
+SHA256 (freebsd-net-packetdrill-0.0.20240408-cf1e7b7_GH0.tar.gz) = bd23290907c1d77ea5316ec16c8233f92e8e826bb86d3ecf0e1023725973e5e6
+SIZE (freebsd-net-packetdrill-0.0.20240408-cf1e7b7_GH0.tar.gz) = 365606
