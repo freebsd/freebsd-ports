@@ -59,7 +59,7 @@ IGNORE=		requires Python 3.10 or later
 .endif
 
 post-build-HTMLDOCS-on:
-	cd ${WRKSRC}/docs && ${GMAKE} html SPHINXBUILD=sphinx-build-${PYTHON_VER}
+	cd ${WRKSRC}/docs && ${MAKE_CMD} html SPHINXBUILD=sphinx-build-${PYTHON_VER}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/man/* ${STAGEDIR}/${PREFIX}/share/man/man1
