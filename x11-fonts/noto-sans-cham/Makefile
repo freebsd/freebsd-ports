@@ -1,28 +1,42 @@
 PORTNAME=	noto
 PORTVERSION=	2.004
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/notofonts/cham/releases/download/NotoSansCham-v${PORTVERSION}/
+MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoSansCham-v${PORTVERSION}/fonts/ \
+		https://github.com/notofonts/notofonts.github.io/raw/NotoSansCham-v${PORTVERSION}/fonts/NotoSansCham/hinted/ttf/:fonts
 PKGNAMESUFFIX=	-sans-cham
-DISTNAME=	NotoSansCham-v${PORTVERSION}
-DIST_SUBDIR=	Noto
+DISTFILES=	LICENSE \
+		${FONTS:S|$|:fonts|}
+DIST_SUBDIR=	Noto/SansCham/${PORTVERSION}
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Noto Sans Cham
 WWW=		https://fonts.google.com/noto \
 		https://notofonts.github.io/ \
-		https://github.com/notofonts/cham
+		https://github.com/notofonts/cham \
+		https://github.com/notofonts/notofonts.github.io/tree/main/fonts/NotoSansCham
 
 LICENSE=	OFL11
-LICENSE_FILE=	${WRKSRC}/OFL.txt
+LICENSE_FILE=	${DISTDIR}/${DIST_SUBDIR}/LICENSE
 
-USES=		fonts zip
+USES=		fonts
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+FONTS=		NotoSansCham-Black.ttf \
+		NotoSansCham-Bold.ttf \
+		NotoSansCham-ExtraBold.ttf \
+		NotoSansCham-ExtraLight.ttf \
+		NotoSansCham-Light.ttf \
+		NotoSansCham-Medium.ttf \
+		NotoSansCham-Regular.ttf \
+		NotoSansCham-SemiBold.ttf \
+		NotoSansCham-Thin.ttf
+
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/NotoSansCham/hinted/ttf/*.ttf ${STAGEDIR}${FONTSDIR}
+	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${FONTS} ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>
