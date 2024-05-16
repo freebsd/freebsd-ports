@@ -1,0 +1,3 @@
+BulletTrain's super load and authorize resource function
+
+It is heavily based on cancancan's load_and_authorize_resource method.
