@@ -39,14 +39,17 @@ DIST_SUBDIR=	go/${PKGORIGIN:S,/,_,g}/${DISTNAME}
 EXTRACT_ONLY+=	${DISTFILES:N*.mod\:*:N*.mod:C/:.*//}
 _USES_fetch+=	800:go-post-fetch
 go-post-fetch:
-	@${ECHO_MSG} "Copy go.mod as go mod download will modify it, which breaks checksum check"
-	@(cd ${DISTDIR}/${DIST_SUBDIR}; ${CP} go.mod go.mod.orig)
-	@${ECHO_MSG} "===> Fetching ${GO_MODNAME} dependencies";
-	@(cd ${DISTDIR}/${DIST_SUBDIR}; \
-		[ -e go.mod ] || ${RLN} ${GO_MODFILE} go.mod; \
-		${SETENV} ${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x all)
-	@${ECHO_MSG} "Restore previous go.mod"
-	@(cd ${DISTDIR}/${DIST_SUBDIR}; ${MV} go.mod.orig go.mod)
+	@if [ ! -e ${DISTDIR}/${DIST_SUBDIR}/.go-post-fetch-done ]; then\
+		${ECHO_MSG} "Copy go.mod as go mod download will modify it, which breaks checksum check" ;\
+		(cd ${DISTDIR}/${DIST_SUBDIR}; ${CP} go.mod go.mod.orig) ;\
+		${ECHO_MSG} "===> Fetching ${GO_MODNAME} dependencies";\
+		(cd ${DISTDIR}/${DIST_SUBDIR}; \
+			[ -e go.mod ] || ${RLN} ${GO_MODFILE} go.mod; \
+			${SETENV} ${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x all) ;\
+		${ECHO_MSG} "Restore previous go.mod" ;\
+		(cd ${DISTDIR}/${DIST_SUBDIR}; ${MV} go.mod.orig go.mod) ;\
+		${TOUCH} ${DISTDIR}/${DIST_SUBDIR}/.go-post-fetch-done;\
+	fi;
 # ---------------------------
 
 VARLOGDIR=	/var/log/gitlab-shell
@@ -82,4 +85,11 @@ post-install:
 		${SED} -E -e '/sample$$/ s#^#@sample #; \
 		s#${DATADIR_REL}/bin#@(,,555) ${DATADIR_REL}/bin#; ' >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+go-pre-delete-distfiles:
+	@if [ -e ${DISTDIR}/${DIST_SUBDIR}/.go-post-fetch-done ]; then\
+		${RM} ${DISTDIR}/${DIST_SUBDIR}/.go-post-fetch-done || ${TRUE};\
+	fi
+
+.include <bsd.port.pre.mk>
+delete-distfiles: go-pre-delete-distfiles
+.include <bsd.port.post.mk>
