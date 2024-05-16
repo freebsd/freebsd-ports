@@ -1974,6 +1974,7 @@
     SUBDIR += rubygem-bullet_train-scope_validator
     SUBDIR += rubygem-bullet_train-super_load_and_authorize_resource
     SUBDIR += rubygem-bullet_train-themes
+    SUBDIR += rubygem-cable_ready
     SUBDIR += rubygem-cal-heatmap-rails
     SUBDIR += rubygem-carrierwave
     SUBDIR += rubygem-carrierwave1

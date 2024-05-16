@@ -1,0 +1,4 @@
+CableReady helps you create great real-time user experiences by making it simple
+to trigger client-side DOM changes from server-side Ruby. It establishes a
+standard for interacting with the client via ActionCable web sockets. No need
+for custom JavaScript.
