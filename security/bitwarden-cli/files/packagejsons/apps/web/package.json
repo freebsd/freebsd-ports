@@ -1,6 +1,6 @@
 {
   "name": "@bitwarden/web-vault",
-  "version": "2024.3.1",
+  "version": "2024.4.2",
   "scripts": {
     "build:oss": "webpack",
     "build:bit": "webpack -c ../../bitwarden_license/bit-web/webpack.config.js",
@@ -8,7 +8,7 @@
     "build:bit:watch": "webpack serve -c ../../bitwarden_license/bit-web/webpack.config.js",
     "build:bit:dev": "cross-env ENV=development npm run build:bit",
     "build:bit:dev:analyze": "cross-env LOGGING=false webpack -c ../../bitwarden_license/bit-web/webpack.config.js --profile --json > stats.json && npx webpack-bundle-analyzer stats.json build/",
-    "build:bit:dev:watch": "cross-env ENV=development npm run build:bit:watch",
+    "build:bit:dev:watch": "cross-env ENV=development NODE_OPTIONS=\"--max-old-space-size=8192\" npm run build:bit:watch",
     "build:bit:qa": "cross-env NODE_ENV=production ENV=qa npm run build:bit",
     "build:bit:euprd": "cross-env NODE_ENV=production ENV=euprd npm run build:bit",
     "build:bit:euqa": "cross-env NODE_ENV=production ENV=euqa npm run build:bit",

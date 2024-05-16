@@ -1,6 +1,6 @@
 PORTNAME=	bitwarden-cli
 DISTVERSIONPREFIX=	cli-v
-DISTVERSION=	2024.3.1
+DISTVERSION=	2024.4.1
 CATEGORIES=	security
 MASTER_SITES=	https://nodejs.org/dist/v${PKG_NODE_VER}/:node
 DISTFILES=	node-v${PKG_NODE_VER}${EXTRACT_SUFX}:node \
