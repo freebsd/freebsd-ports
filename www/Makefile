@@ -1983,6 +1983,7 @@
     SUBDIR += rubygem-chosen-rails
     SUBDIR += rubygem-chromedriver-helper
     SUBDIR += rubygem-circuitbox
+    SUBDIR += rubygem-cloudinary
     SUBDIR += rubygem-cookiejar
     SUBDIR += rubygem-crass
     SUBDIR += rubygem-cssbundling-rails
