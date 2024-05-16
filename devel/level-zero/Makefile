@@ -18,7 +18,6 @@ USES=		cmake compiler:c++14-lang localbase:ldflags pathfix
 
 CXXFLAGS+=	-DSPDLOG_FMT_EXTERNAL
 LDFLAGS+=	-lfmt
-PIE_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
