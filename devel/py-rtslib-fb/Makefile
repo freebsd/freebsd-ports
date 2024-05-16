@@ -10,6 +10,7 @@ COMMENT=	API for Linux kernel SCSI target (aka LIO)
 WWW=		https://github.com/open-iscsi/rtslib-fb
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
