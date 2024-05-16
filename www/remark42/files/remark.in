@@ -120,6 +120,7 @@ load_rc_config ${name}
 : ${remark_telegram_token:=""}
 : ${remark_telegram_timeout:=""}
 : ${remark_smtp_host:=""}
+: ${remark_smtp_insecure_skip_verify:=""}
 : ${remark_smtp_port:=""}
 : ${remark_smtp_username:=""}
 : ${remark_smtp_password:=""}
@@ -134,6 +135,7 @@ load_rc_config ${name}
 : ${remark_ssl_acme_location:=""}
 : ${remark_ssl_acme_email:=""}
 : ${remark_max_comment_size:=""}
+: ${remark_min_comment_size:=""}
 : ${remark_max_votes:=""}
 : ${remark_votes_ip:=""}
 : ${remark_anon_vote:=""}
@@ -157,6 +159,7 @@ load_rc_config ${name}
 : ${remark_remark_web_root:=""}
 : ${remark_update_limit:=""}
 : ${remark_subscribers_only:=""}
+: ${remark_disable_fancy_html_formatting:=""}
 : ${remark_disable_signature:=""}
 : ${remark_admin_passwd:=""}
 : ${remark_debug:=""}
@@ -250,13 +253,13 @@ remark_precmd()
 	export_variables NOTIFY_USERS NOTIFY_ADMINS NOTIFY_QUEUE NOTIFY_TELEGRAM_CHAN NOTIFY_SLACK_TOKEN NOTIFY_SLACK_CHAN
 	export_variables NOTIFY_WEBHOOK_URL NOTIFY_WEBHOOK_TEMPLATE NOTIFY_WEBHOOK_HEADERS NOTIFY_WEBHOOK_TIMEOUT
 	export_variables NOTIFY_EMAIL_FROM NOTIFY_EMAIL_VERIFICATION_SUBJ TELEGRAM_TOKEN TELEGRAM_TIMEOUT
-	export_variables SMTP_HOST SMTP_PORT SMTP_USERNAME SMTP_PASSWORD SMTP_LOGIN_AUTH SMTP_TLS
+	export_variables SMTP_HOST SMTP_INSECURE_SKIP_VERIFY SMTP_PORT SMTP_USERNAME SMTP_PASSWORD SMTP_LOGIN_AUTH SMTP_TLS
 	export_variables SMTP_STARTTLS SMTP_TIMEOUT SSL_TYPE SSL_PORT SSL_CERT SSL_KEY SSL_ACME_LOCATION
-	export_variables SSL_ACME_EMAIL MAX_COMMENT_SIZE MAX_VOTES VOTES_IP ANON_VOTE VOTES_IP_TIME
+	export_variables SSL_ACME_EMAIL MAX_COMMENT_SIZE MIN_COMMENT_SIZE MAX_VOTES VOTES_IP ANON_VOTE VOTES_IP_TIME
 	export_variables LOW_SCORE CRITICAL_SCORE POSITIVE_SCORE RESTRICTED_WORDS RESTRICTED_NAMES
 	export_variables EDIT_TIME ADMIN_EDIT READONLY_AGE IMAGE_PROXY_HTTP2HTTPS IMAGE_PROXY_CACHE_EXTERNAL
 	export_variables EMOJI SIMPLE_VIEW PROXY_CORS ALLOWED_HOSTS REMARK_ADDRESS REMARK_PORT REMARK_WEB_ROOT
-	export_variables UPDATE_LIMIT SUBSCRIBERS_ONLY DISABLE_SIGNATURE ADMIN_PASSWD DEBUG
+	export_variables UPDATE_LIMIT SUBSCRIBERS_ONLY DISABLE_FANCY_HTML_FORMATTING DISABLE_SIGNATURE ADMIN_PASSWD DEBUG
 }
 
 pidfile="%%REMARK_PIDDIR%%${name}.pid"
