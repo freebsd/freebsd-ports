@@ -466,6 +466,7 @@
     SUBDIR += wf-shell
     SUBDIR += windowtolayer
     SUBDIR += wl-clipboard
+    SUBDIR += wl-kbptr
     SUBDIR += wl-mirror
     SUBDIR += wlogout
     SUBDIR += wlopm
