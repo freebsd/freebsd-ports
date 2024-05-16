@@ -1,3 +1,11 @@
-TIMESTAMP = 1710676057
-SHA256 (Noto/NotoNaskhArabic-v2.018.zip) = 3c5dce5eebe2b8bd9e2d208872c5b6d51d1a2a99bd77528d4d72651a00b164f0
-SIZE (Noto/NotoNaskhArabic-v2.018.zip) = 3501911
+TIMESTAMP = 1715677656
+SHA256 (Noto/NaskhArabic/2.018/LICENSE) = f2095b08bed08b23a6fe26112fcd679a2bee3f002eef077eb05d215ed1051bd8
+SIZE (Noto/NaskhArabic/2.018/LICENSE) = 4374
+SHA256 (Noto/NaskhArabic/2.018/NotoNaskhArabic-Bold.ttf) = 6a6abacebd8f08cf24cda234770d9eabfd35fe7bb76c5dd66ae99e86f630bf92
+SIZE (Noto/NaskhArabic/2.018/NotoNaskhArabic-Bold.ttf) = 298672
+SHA256 (Noto/NaskhArabic/2.018/NotoNaskhArabic-Medium.ttf) = 7808a7ed4f26fa202dc04be6e68ea6e2e5f1dd0ec2623e589f1eac4df1cfeef5
+SIZE (Noto/NaskhArabic/2.018/NotoNaskhArabic-Medium.ttf) = 278536
+SHA256 (Noto/NaskhArabic/2.018/NotoNaskhArabic-Regular.ttf) = a9662e3ee87c3f9640ad25ba33078298cddab197a3e8da75a3b1feea42b85ef3
+SIZE (Noto/NaskhArabic/2.018/NotoNaskhArabic-Regular.ttf) = 260252
+SHA256 (Noto/NaskhArabic/2.018/NotoNaskhArabic-SemiBold.ttf) = d7097725c75736288b05724339df8b23674c7ddcee3dc004e25b36e26fc2d5a4
+SIZE (Noto/NaskhArabic/2.018/NotoNaskhArabic-SemiBold.ttf) = 280216
