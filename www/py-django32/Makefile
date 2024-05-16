@@ -59,7 +59,7 @@ MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mysqlclient>=1.3.13:databases/py-mysql
 SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 post-build-HTMLDOCS-on:
-	cd ${WRKSRC}/docs && ${GMAKE} html SPHINXBUILD=sphinx-build-${PYTHON_VER}
+	cd ${WRKSRC}/docs && ${MAKE_CMD} html SPHINXBUILD=sphinx-build-${PYTHON_VER}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/man/* ${STAGEDIR}/${PREFIX}/share/man/man1
