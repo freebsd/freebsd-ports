@@ -1,0 +1,8 @@
+--- Cargo.toml.orig	2024-05-16 16:36:36 UTC
++++ Cargo.toml
+@@ -5,5 +5,3 @@ members = [
+   "ocrs-cli",
+ ]
+ 
+-[lints.clippy]
+-too_many_arguments = "allow"
