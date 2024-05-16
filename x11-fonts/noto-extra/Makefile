@@ -1,6 +1,6 @@
 PORTNAME=	noto
 PORTVERSION=	2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fonts
 PKGNAMESUFFIX=	-extra
 
@@ -10,6 +10,7 @@ WWW=		https://fonts.google.com/noto \
 		https://github.com/notofonts/notofonts.github.io
 
 RUN_DEPENDS=	noto-kufi-arabic>=0:x11-fonts/noto-kufi-arabic \
+		noto-music>=0:x11-fonts/noto-music \
 		noto-naskh-arabic>=0:x11-fonts/noto-naskh-arabic \
 		noto-sans-arabic>=0:x11-fonts/noto-sans-arabic \
 		noto-sans-armenian>=0:x11-fonts/noto-sans-armenian \
@@ -25,6 +26,7 @@ RUN_DEPENDS=	noto-kufi-arabic>=0:x11-fonts/noto-kufi-arabic \
 		noto-sans-math>=0:x11-fonts/noto-sans-math \
 		noto-sans-myanmar>=0:x11-fonts/noto-sans-myanmar \
 		noto-sans-runic>=0:x11-fonts/noto-sans-runic \
+		noto-sans-sign-writing>=0:x11-fonts/noto-sans-sign-writing \
 		noto-sans-sinhala>=0:x11-fonts/noto-sans-sinhala \
 		noto-sans-tamil>=0:x11-fonts/noto-sans-tamil \
 		noto-sans-telugu>=0:x11-fonts/noto-sans-telugu \
