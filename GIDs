@@ -305,7 +305,7 @@ httptunnel:*:361:
 readarr:*:362:
 hostd:*:363:
 walletd:*:364:
-# free: 365
+renterd:*:365:
 # free: 366
 # free: 367
 # free: 368
