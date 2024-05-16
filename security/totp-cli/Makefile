@@ -6,7 +6,8 @@ CATEGORIES=	security
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Authy/Google Authenticator like TOTP CLI tool
-WWW=		https://github.com/yitsushi/totp-cli
+WWW=		https://yitsushi.github.io/totp-cli/ \
+		https://github.com/yitsushi/totp-cli
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
