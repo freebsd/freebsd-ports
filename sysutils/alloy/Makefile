@@ -4,7 +4,7 @@ PORTREVISION=	7
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
-MAINTAINER=	contact@zach.fi
+MAINTAINER=	zach.leslie@grafana.com
 COMMENT=	OpenTelemetry Collector distribution with programmable pipelines
 
 LICENSE=	MIT
