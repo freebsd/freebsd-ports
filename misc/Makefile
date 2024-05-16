@@ -198,6 +198,7 @@
     SUBDIR += iso-codes
     SUBDIR += jargon
     SUBDIR += jbidwatcher
+    SUBDIR += jirust
     SUBDIR += jojodiff
     SUBDIR += json-tui
     SUBDIR += kbdscan
