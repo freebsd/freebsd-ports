@@ -1,6 +1,6 @@
 PORTNAME=	alloy
 PORTVERSION=	1.0.0
-PORTREVISION=	7
+PORTREVISION=	1
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -25,8 +25,8 @@ GO_BUILDFLAGS=	-ldflags='-X github.com/grafana/alloy/internal/build.Version=v${P
 USE_RC_SUBR=	alloy
 
  # Copy the go.mod so we can get all the dist files during fetch.
-_USES_fetch+= 600:go-pre-fetch
-go-pre-fetch:
+_USES_fetch+= 600:go-syntax-fetch
+go-syntax-fetch:
 	@${ECHO_MSG} "===> Fetching ${GO_MODNAME}/syntax dependency";
 	(cd ${DISTDIR}/${DIST_SUBDIR}; [ -e syntax/go.mod ] || mkdir syntax/; \
 		tar -xzf grafana-alloy-v${PORTVERSION}_GH0.tar.gz ${PORTNAME}-${PORTVERSION}/syntax/go.mod; \
