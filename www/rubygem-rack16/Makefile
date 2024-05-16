@@ -24,7 +24,7 @@ SHEBANG_LANG=	rackup
 rackup_OLD_CMD=	../../bin/rackup
 rackup_CMD=	${LOCALBASE}/bin/rackup
 
-# Avoid CONFLICTS_INSTALL with www/rubygem-rack
+# Avoid CONFLICTS_INSTALL with www/rubygem-rackup
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/rackup
 
