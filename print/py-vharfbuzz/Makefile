@@ -10,6 +10,7 @@ COMMENT=	User-friendlier way to use Harfbuzz in Python
 WWW=		https://github.com/simoncozens/vharfbuzz
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
