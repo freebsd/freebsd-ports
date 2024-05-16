@@ -17,8 +17,9 @@ load_rc_config $name
 
 : ${forgejo_user:="%%GITUSER%%"}
 : ${forgejo_enable:="NO"}
+: ${forgejo_configcheck_enable:="YES"}
 : ${forgejo_facility:="daemon"}
-: ${forgejo_priority:="debug"}
+: ${forgejo_priority:="info"}
 : ${forgejo_shared:="%%PREFIX%%/share/${name}"}
 : ${forgejo_custom:="%%PREFIX%%/etc/${name}"}
 
@@ -29,6 +30,7 @@ githome="$(eval echo ~${forgejo_user})"
 pidfile="/var/run/${name}.pid"
 
 start_cmd="${name}_start"
+start_precmd="${name}_prestart"
 
 forgejo_start() {
 	for d in /var/db/forgejo /var/log/forgejo; do
@@ -46,6 +48,18 @@ forgejo_start() {
 		"PATH=%%PREFIX%%/bin:${PATH}" \
 		"USER=${forgejo_user}" \
 		$command
+}
+
+forgejo_prestart() {
+	if checkyesno forgejo_configcheck_enable; then
+		if su -m ${forgejo_user} -c "%%PREFIX%%/sbin/${name} doctor check >/dev/null"; then
+		else
+			echo "cannot start ${name} because of configuration errors. Run" >&2
+			echo "    su -m git -c '${name} doctor check'" >&2
+			echo "for further details"
+			return 1
+		fi
+	fi
 }
 
 run_rc_command "$1"
