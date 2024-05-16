@@ -1,4 +1,4 @@
-TIMESTAMP = 1713765934
+TIMESTAMP = 1715831944
 SHA256 (rust/crates/aho-corasick-1.1.3.crate) = 8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916
 SIZE (rust/crates/aho-corasick-1.1.3.crate) = 183311
 SHA256 (rust/crates/android-tzdata-0.1.1.crate) = e999941b234f3131b00bc13c22d06e8c5ff726d1b6318ac7eb276997bbb4fef0
@@ -385,5 +385,5 @@ SHA256 (rust/crates/winnow-0.6.5.crate) = dffa400e67ed5a4dd237983829e66475f0a4a2
 SIZE (rust/crates/winnow-0.6.5.crate) = 159316
 SHA256 (rust/crates/yansi-0.5.1.crate) = 09041cd90cf85f7f8b2df60c646f853b7f535ce68f85244eb6731cf89fa498ec
 SIZE (rust/crates/yansi-0.5.1.crate) = 16525
-SHA256 (sourcefrog-cargo-mutants-v24.4.0_GH0.tar.gz) = 0ec7e2082b6e713e443220f445cade98affebb3d852c29a0dc30a1e8486ae45e
-SIZE (sourcefrog-cargo-mutants-v24.4.0_GH0.tar.gz) = 213972
+SHA256 (sourcefrog-cargo-mutants-v24.5.0_GH0.tar.gz) = 2d82f9586a5503495688e8a280dfebd7747401e022292f4bda98d002755774ff
+SIZE (sourcefrog-cargo-mutants-v24.5.0_GH0.tar.gz) = 220795
