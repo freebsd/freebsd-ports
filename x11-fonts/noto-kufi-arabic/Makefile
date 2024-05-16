@@ -1,5 +1,5 @@
 PORTNAME=	noto
-PORTVERSION=	2.019
+PORTVERSION=	2.109
 CATEGORIES=	x11-fonts
 #MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoKufiArabic-v${PORTVERSION}/fonts/ \
 #		https://github.com/notofonts/notofonts.github.io/raw/NotoKufiArabic-v${PORTVERSION}/fonts/NotoKufiArabic/hinted/ttf/:fonts
