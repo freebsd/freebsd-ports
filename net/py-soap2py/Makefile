@@ -10,6 +10,9 @@ WWW=		https://github.com/pysimplesoap/pysimplesoap
 
 LICENSE=	LGPL3+
 
+DEPRECATED=	Use net/py-pysimplesoap instead
+EXPIRATION_DATE=2024-05-31
+
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
