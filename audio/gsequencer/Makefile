@@ -1,8 +1,6 @@
 PORTNAME=	gsequencer
-DISTVERSION=	6.5.2
-PORTREVISION=	1
+DISTVERSION=	6.12.5
 CATEGORIES=	audio
-MASTER_SITES=	SAVANNAH/gsequencer/${DISTVERSION:R}.x
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Advanced Gtk+ sequencer
@@ -12,6 +10,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	dssi>0:audio/dssi \
+		gtkdocize:textproc/gtk-doc \
 		lv2>0:audio/lv2
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfftw3.so:math/fftw3 \
@@ -29,12 +28,14 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 RUN_DEPENDS=	dssi>0:audio/dssi
 
-USES=		desktop-file-utils gettext-runtime gettext-tools gmake gnome gstreamer libtool localbase pkgconfig shared-mime-info xorg
+USES=		autoreconf desktop-file-utils gettext-runtime gettext-tools gmake gnome gstreamer libtool localbase pkgconfig shared-mime-info xorg
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk40 libxml2 pango
 USE_XORG=	x11
 USE_GCC=	yes # the project uses gnu99 extensions, clang fails even with USE_CSTD=gnu99. Suggestions how to build with clang are welcome.
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
@@ -56,12 +57,15 @@ DOCS_USE=			GNOME=libxslt:build
 DOCS_ALL_TARGET=		html
 DOCS_INSTALL_TARGET=		install-html
 
-JACK_CONFIGURE_ENABLE=		jack
+JACK_CONFIGURE_ENABLE=		jack # the JACK option is probably broken, see https://github.com/gsequencer/gsequencer/issues/62
 JACK_LIB_DEPENDS=		libjack.so:audio/jack
 
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 
 PORTDOCS=	*
+
+post-extract:
+	${RM} ${WRKSRC}/configure.ac.orig
 
 .include <bsd.port.mk>
