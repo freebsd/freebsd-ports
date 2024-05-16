@@ -17,6 +17,9 @@ BROKEN_SSL=	libressl libressl-devel
 BROKEN_SSL_REASON=	Node.js ${PORTVERSION:R:R}.x requires OpenSSL or the BUNDLED_SSL option enabled
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
+DEPRECATED=	Node.js 21.* will reach its EoL on 2024-06-01. Use Node.js 22.* (www/node22) instead
+EXPIRATION_DATE=2024-06-30
+
 BUILD_DEPENDS=	brotli>=1.0.9,1:archivers/brotli \
 		c-ares>=1.17.2:dns/c-ares \
 		libnghttp2>=1.45.1:www/libnghttp2 \
