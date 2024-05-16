@@ -6,5 +6,3 @@ largely inspired from Symfony's EventDispatcher component.
 
 Using an event dispatcher is a great way to write loosely coupled extensible
 code, having each part only communicate using light events.
-
-See also: https://github.com/python-whistle/whistle
