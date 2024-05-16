@@ -20,9 +20,8 @@ USE_PERL5=	build
 
 CONFIGURE_ARGS=	--enable-ld-version-script \
 		--enable-static
-CONFIGURE_ENV=	PKG_CONFIG_PATH=${LOCALBASE}/libdata/pkgconfig
-INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 INFO=		ksba
