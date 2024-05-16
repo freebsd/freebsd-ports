@@ -106,7 +106,7 @@ PLIST_SUB+=	NO_MCA_PATCHER_OVERWRITE="@comment "
 PLIST_SUB+=	NO_MCA_PATCHER_OVERWRITE=""
 .endif
 
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 170
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 170 && !${ARCH:Mpowerpc*}
 PLIST_SUB+=	SHORTFLOAT=""
 .else
 PLIST_SUB+=	SHORTFLOAT="@comment "
