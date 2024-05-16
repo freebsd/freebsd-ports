@@ -1,0 +1,2 @@
+Unicode::Version.unicode_version makes it easy to check for Unicode and Emoji
+support of your current Ruby (and older Rubies).
