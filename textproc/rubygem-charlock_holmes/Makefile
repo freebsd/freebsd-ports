@@ -5,7 +5,7 @@ CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Gems for character encoding detection
+COMMENT=	Provide binary and text detection as well as text transcoding using libicu
 WWW=		https://github.com/brianmario/charlock_holmes
 
 LICENSE=	MIT
