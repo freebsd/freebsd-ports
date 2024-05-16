@@ -19,13 +19,14 @@ rcvar=${name}_enable
 load_rc_config $name
 : ${garage_enable="NO"}
 : ${garage_config="%%PREFIX%%/etc/garage.toml"}
+: ${garage_log_file="/var/log/garage.log"}
 
-command="%%PREFIX%%/bin/${name}"
+command=/usr/sbin/daemon
+procname="%%PREFIX%%/bin/${name}"
 required_files=${garage_config}
-command_args="-c ${garage_config} server"
+pidfile=/var/run/${name}.pid
+command_args="-p $pidfile -H -o ${garage_log_file} -f $procname -c ${garage_config} server"
 
-start_cmd="${command} -c ${garage_config} server"
-stop_cmd="pkill -15 ${name}"
-status_cmd="${command} status"
+status_cmd="$procname -c ${garage_config} status"
 
 run_rc_command "$1"
