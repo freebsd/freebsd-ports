@@ -31,6 +31,9 @@ GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/Contr
 GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/ControlsPalette.gorm/data.info
 GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/ControlsPalette.gorm/objects.gorm
 GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/ControlsPalette.tiff
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormCellSizeInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormCellSizeInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormCellSizeInspector.gorm/objects.gorm
 GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSBoxInspector.gorm/data.classes
 GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSBoxInspector.gorm/data.info
 GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSBoxInspector.gorm/objects.gorm
@@ -109,6 +112,7 @@ GNUstep/System/Applications/Gorm.app/Resources/Defaults.plist
 GNUstep/System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm/data.classes
 GNUstep/System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm/data.info
 GNUstep/System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/Gorm.rtfd/TXT.rtf
 GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormClassEditor.gorm/data.classes
 GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormClassEditor.gorm/data.info
 GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormClassEditor.gorm/objects.gorm
@@ -289,6 +293,7 @@ GNUstep/System/Library/Headers/GormCore/GormClassManager.h
 GNUstep/System/Library/Headers/GormCore/GormClassPanelController.h
 GNUstep/System/Library/Headers/GormCore/GormConnectionInspector.h
 GNUstep/System/Library/Headers/GormCore/GormControlEditor.h
+GNUstep/System/Library/Headers/GormCore/GormCore.h
 GNUstep/System/Library/Headers/GormCore/GormCustomClassInspector.h
 GNUstep/System/Library/Headers/GormCore/GormCustomView.h
 GNUstep/System/Library/Headers/GormCore/GormDocument.h
@@ -345,6 +350,7 @@ GNUstep/System/Library/Headers/GormCore/NSCell+GormAdditions.h
 GNUstep/System/Library/Headers/GormCore/NSColorWell+GormExtensions.h
 GNUstep/System/Library/Headers/GormCore/NSFontManager+GormExtensions.h
 GNUstep/System/Library/Headers/GormCore/NSView+GormExtensions.h
+GNUstep/System/Library/Headers/GormObjCHeaderParser/GormObjCHeaderParser.h
 GNUstep/System/Library/Headers/GormObjCHeaderParser/NSScanner+OCHeaderParser.h
 GNUstep/System/Library/Headers/GormObjCHeaderParser/OCClass.h
 GNUstep/System/Library/Headers/GormObjCHeaderParser/OCHeaderParser.h
@@ -358,6 +364,7 @@ GNUstep/System/Library/Headers/GormPrefs/GormHeadersPref.h
 GNUstep/System/Library/Headers/GormPrefs/GormPalettesPref.h
 GNUstep/System/Library/Headers/GormPrefs/GormPluginsPref.h
 GNUstep/System/Library/Headers/GormPrefs/GormPrefController.h
+GNUstep/System/Library/Headers/GormPrefs/GormPrefs.h
 GNUstep/System/Library/Headers/GormPrefs/GormShelfPref.h
 GNUstep/System/Library/Headers/InterfaceBuilder/IBApplicationAdditions.h
 GNUstep/System/Library/Headers/InterfaceBuilder/IBCellAdditions.h
@@ -385,12 +392,12 @@ GNUstep/System/Library/Libraries/libGorm.so
 GNUstep/System/Library/Libraries/libGorm.so.1
 GNUstep/System/Library/Libraries/libGorm.so.1.1.0
 GNUstep/System/Library/Libraries/libGormCore.so
-GNUstep/System/Library/Libraries/libGormCore.so.%%VERSION%%
 GNUstep/System/Library/Libraries/libGormCore.so.1
+GNUstep/System/Library/Libraries/libGormCore.so.%%VERSION%%
 GNUstep/System/Library/Libraries/libGormObjCHeaderParser.so
 GNUstep/System/Library/Libraries/libGormObjCHeaderParser.so.1
 GNUstep/System/Library/Libraries/libGormObjCHeaderParser.so.1.1.0
 GNUstep/System/Library/Libraries/libGormPrefs.so
-GNUstep/System/Library/Libraries/libGormPrefs.so.%%VERSION%%
 GNUstep/System/Library/Libraries/libGormPrefs.so.1
+GNUstep/System/Library/Libraries/libGormPrefs.so.%%VERSION%%
 GNUstep/System/Tools/Gorm
