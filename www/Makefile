@@ -1969,6 +1969,7 @@
     SUBDIR += rubygem-bullet_train
     SUBDIR += rubygem-bullet_train-fields
     SUBDIR += rubygem-bullet_train-has_uuid
+    SUBDIR += rubygem-bullet_train-roles
     SUBDIR += rubygem-cal-heatmap-rails
     SUBDIR += rubygem-carrierwave
     SUBDIR += rubygem-carrierwave1
