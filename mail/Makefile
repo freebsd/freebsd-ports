@@ -619,6 +619,7 @@
     SUBDIR += rubygem-premailer-rails-rails60
     SUBDIR += rubygem-premailer-rails-rails61
     SUBDIR += rubygem-premailer-rails-rails70
+    SUBDIR += rubygem-premailer-rails-rails71
     SUBDIR += rubygem-premailer-rails110-rails70
     SUBDIR += rubygem-rmail
     SUBDIR += rubygem-roadie
