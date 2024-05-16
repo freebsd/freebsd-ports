@@ -1,6 +1,7 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	7.0.9
+PORTREVISION=	1
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -75,7 +76,7 @@ GROUPS=		mongodb
 
 OPTIONS_DEFINE=		LTO SASL SSL NOAVX
 OPTIONS_DEFINE_aarch64=	ARMV80A
-OPTIONS_DEFAULT=	SASL SSL
+OPTIONS_DEFAULT=	SASL SSL NOAVX
 
 # MongoDB on non-LSE ARM cpu like Raspberry Pi can work but is unsupported upstream.
 # Can give corruption on high concurrency.
