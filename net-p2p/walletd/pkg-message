@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+The program walletd has been installed. To enable it at boot time,
+add it to /etc/rc.conf with the following command:
+sysrc walletd_enable="YES"
+You must also set a password in %%PREFIX%%/etc/walletd.conf to access the UI
+EOM
+}
+]

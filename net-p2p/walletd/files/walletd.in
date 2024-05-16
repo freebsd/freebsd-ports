@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# PROVIDE: walletd
+# REQUIRE: LOGIN FILESYSTEMS netwait
+# KEYWORD: SHUTDOWN
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# walletd_enable (bool):	Set to NO by default.
+#			Set it to YES to enable doormand.
+# walletd_datadir (path):	Set to /var/lib/walletd by default.
+#
+# walletd_passwordfile (filepath): set the UI password there.
+#                       by default located in %%PREFIX%%/etc/walletd.conf 
+
+. /etc/rc.subr
+
+name=walletd
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${walletd_enable:=NO}
+: ${walletd_executable:="%%PREFIX%%/bin/walletd"}
+: ${walletd_datadir:="/var/lib/walletd"}
+: ${walletd_passwordfile:="%%PREFIX%%/etc/walletd.conf"}
+
+walletd_env=$(cat ${walletd_passwordfile})
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-r -f -H \
+  -o \"/var/log/${name}.log\" \
+  -P \"${pidfile}\" \
+  -u %%USERS%% \"${walletd_executable}\" \
+  --dir \"${walletd_datadir}\""
+
+
+run_rc_command "$1"

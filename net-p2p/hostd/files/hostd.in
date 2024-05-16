@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# PROVIDE: hostd
+# REQUIRE: LOGIN FILESYSTEMS netwait
+# KEYWORD: SHUTDOWN
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# hostd_enable (bool):	Set to NO by default.
+#			Set it to YES to enable doormand.
+# hostd_config (path):	Set to %%PREFIX%%/etc/hostd.yml
+#			by default.
+
+. /etc/rc.subr
+
+name=hostd
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${hostd_enable:=NO}
+: ${hostd_executable:="%%PREFIX%%/bin/hostd"}
+: ${hostd_config:="%%PREFIX%%/etc/hostd.yml"}
+
+hostd_env="HOSTD_CONFIG_FILE=${hostd_config}"
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-r -f -H \
+  -o \"/var/log/${name}.log\" \
+  -P \"${pidfile}\" \
+  -u %%USERS%% \"${hostd_executable}\""
+
+
+run_rc_command "$1"
