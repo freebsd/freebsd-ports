@@ -1971,6 +1971,7 @@
     SUBDIR += rubygem-bullet_train-has_uuid
     SUBDIR += rubygem-bullet_train-roles
     SUBDIR += rubygem-bullet_train-routes
+    SUBDIR += rubygem-bullet_train-scope_validator
     SUBDIR += rubygem-cal-heatmap-rails
     SUBDIR += rubygem-carrierwave
     SUBDIR += rubygem-carrierwave1
