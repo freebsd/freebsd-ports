@@ -1,11 +1,7 @@
 PORTNAME=	wl-kbptr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0
-PORTREVISION=	1
+DISTVERSION=	0.2.1
 CATEGORIES=	x11 wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	ee21ec7a37e8.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Control the mouse pointer with the keyboard on Wayland
