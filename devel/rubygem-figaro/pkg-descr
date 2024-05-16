@@ -1,0 +1,8 @@
+Figaro provides simple, Heroku-friendly Rails app configuration using ENV and a
+single YAML file.
+
+Figaro was written to make it easy to securely configure Rails applications.
+
+Configuration values often include sensitive information. Figaro strives to be
+secure by default by encouraging a convention that keeps configuration out of
+Git.
