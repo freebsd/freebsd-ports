@@ -32,6 +32,6 @@ OPTIONS_DEFINE=	REST_FRAMEWORK
 OPTIONS_DEFAULT=REST_FRAMEWORK
 REST_FRAMEWORK_DESC=	REST framework support
 
-REST_FRAMEWORK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.6.3:www/py-djangorestframework@${PY_FLAVOR}
+REST_FRAMEWORK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.6.3,1:www/py-djangorestframework@${PY_FLAVOR}
 
 .include <bsd.port.mk>
