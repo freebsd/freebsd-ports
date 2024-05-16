@@ -965,6 +965,7 @@
     SUBDIR += rubygem-mario-redis-lock
     SUBDIR += rubygem-memcache
     SUBDIR += rubygem-memcache-client
+    SUBDIR += rubygem-microscope
     SUBDIR += rubygem-mysql
     SUBDIR += rubygem-mysql2
     SUBDIR += rubygem-neighbor
