@@ -18,8 +18,8 @@ USES=		bison:build fuse gmake python:build shebangfix
 SHEBANG_FILES=	../../arch/lkl/scripts/headers_install.py
 BINARY_ALIAS=	sed=gsed \
 		stat=gnustat
-USE_BINUTILS=	yes
-USE_GCC=	yes
+USE_BINUTILS=	yes:build
+USE_GCC=	yes:build
 USE_GITHUB=	yes
 GH_PROJECT=	linux
 GH_TAGNAME=	86dd3afb590eccc1903611bdaa8bac87757eb80d
