@@ -1,0 +1,9 @@
+Thread::Local provides a simple high level interface for per-class thread
+locals. Implements a standard interface for "shared global state". It avoids
+reinventing thread-local semantics in your own code by using this
+implementation.
+
+Features:
+- Convert global state to thread local state easily.
+- Avoid race conditions and data corruption.
+- Provides a standard interface for policy driven design.
