@@ -1,6 +1,7 @@
 PORTNAME=	surelog
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.83
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -52,8 +53,8 @@ OPTIONS_DEFINE=		PYTHON TCMALLOC
 OPTIONS_DEFAULT=	PYTHON TCMALLOC # should be the same TCMALLOC default as in cad/yosys, cad/uhdm because surelog's lib is used in the yosys plugin cad/yosys-systemverilog
 OPTIONS_SUB=		yes
 
-PYTHON_USES=		python:3.10 # it needs 3.9.19 while we have 3.9.18
-PYTHON_USES_OFF=	python:3.10,build
+PYTHON_USES=		python
+PYTHON_USES_OFF=	python:build
 PYTHON_BUILD_DEPENDS=	swig:devel/swig
 PYTHON_CMAKE_BOOL=	SURELOG_WITH_PYTHON
 PYTHON_CMAKE_ON=	-DFREEBSD_PYTHON_DISTVERSION=${PYTHON_DISTVERSION}

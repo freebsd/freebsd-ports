@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.8.0:devel/py-six@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	allflavors autoplist concurrent pep517 # allflavors because cad/surelog needs 3.10
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
