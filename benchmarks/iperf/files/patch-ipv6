@@ -1,0 +1,32 @@
+--- src/iperf_multicast_api.c.orig	2024-04-07 03:47:17 UTC
++++ src/iperf_multicast_api.c
+@@ -175,6 +175,7 @@ static int iperf_multicast_join_v6 (struct thread_Sett
+ 
+ 
+ static int iperf_multicast_join_v6 (struct thread_Settings *inSettings) {
++#if HAVE_IPV6
+ #if (HAVE_DECL_IPV6_JOIN_GROUP || HAVE_DECL_IPV6_ADD_MEMBERSHIP)
+ #if HAVE_STRUCT_IPV6_MREQ
+     struct ipv6_mreq mreq;
+@@ -191,11 +192,12 @@ static int iperf_multicast_join_v6 (struct thread_Sett
+     return ((rc == 0) ? IPERF_MULTICAST_JOIN_SUCCESS : IPERF_MULTICAST_JOIN_FAIL);
+ #endif
+ #endif
++#endif
+     return IPERF_MULTICAST_JOIN_UNSUPPORTED;
+-
+ }
+ 
+ static int iperf_multicast_join_v6_pi (struct thread_Settings *inSettings) {
++#if HAVE_IPV6
+ #if HAVE_DECL_MCAST_JOIN_GROUP
+     int rc = -1;
+     struct group_req group_req;
+@@ -208,6 +210,7 @@ static int iperf_multicast_join_v6_pi (struct thread_S
+ 		    (socklen_t) sizeof(struct group_source_req));
+     FAIL_errno(rc == SOCKET_ERROR, "mcast v6 join group", inSettings);
+     return ((rc == 0) ? IPERF_MULTICAST_JOIN_SUCCESS : IPERF_MULTICAST_JOIN_FAIL);
++#endif
+ #endif
+     return IPERF_MULTICAST_JOIN_UNSUPPORTED;
+ }
