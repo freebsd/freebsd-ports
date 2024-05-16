@@ -7274,6 +7274,7 @@
     SUBDIR += rubygem-newrelic-grape
     SUBDIR += rubygem-newrelic_rpm
     SUBDIR += rubygem-nice-ffi
+    SUBDIR += rubygem-nice_partials
     SUBDIR += rubygem-nio4r
     SUBDIR += rubygem-nori
     SUBDIR += rubygem-notiffany
