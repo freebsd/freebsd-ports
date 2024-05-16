@@ -6899,6 +6899,7 @@
     SUBDIR += rubygem-descendants_tracker
     SUBDIR += rubygem-device_detector
     SUBDIR += rubygem-devise
+    SUBDIR += rubygem-devise-pwned_password
     SUBDIR += rubygem-devise-rails5
     SUBDIR += rubygem-devise-rails52
     SUBDIR += rubygem-devise-rails60
