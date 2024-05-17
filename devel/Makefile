@@ -328,6 +328,7 @@
     SUBDIR += bsdcflow
     SUBDIR += bsddialog
     SUBDIR += bsdowl
+    SUBDIR += buf
     SUBDIR += bugzilla44
     SUBDIR += bugzilla50
     SUBDIR += build
