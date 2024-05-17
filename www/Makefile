@@ -2454,6 +2454,7 @@
     SUBDIR += twms
     SUBDIR += typo3-11
     SUBDIR += typo3-12
+    SUBDIR += typo3-13
     SUBDIR += uchiwa
     SUBDIR += ufdbguard
     SUBDIR += ulfius
