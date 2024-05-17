@@ -78,6 +78,7 @@
 %%WINE64%%wine-proton/bin/wineserver
 %%WINE64%%wine-proton/lib/wine/%%WINEARCH%%-unix/libwow64.a
 %%WINE64%%wine-proton/lib/wine/%%WINEARCH%%-unix/winewayland.so
+%%WINE64%%wine-proton/lib/wine/%%WINEARCH%%-windows/libwow64.a
 %%WINE64%%wine-proton/lib/wine/%%WINEARCH%%-windows/vcruntime140_1.dll
 %%WINE64%%wine-proton/lib/wine/%%WINEARCH%%-windows/winewayland.drv
 %%WINE64%%wine-proton/lib/wine/%%WINEARCH%%-windows/wow64.dll
@@ -854,7 +855,6 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/libwldap32.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libwmcodecdspuuid.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libwmvcore.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libwnaspi32.a
-wine-proton/lib/wine/%%WINEARCH%%-windows/libwow64.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libws2_32.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libwsdapi.a
 wine-proton/lib/wine/%%WINEARCH%%-windows/libwsnmp32.a
