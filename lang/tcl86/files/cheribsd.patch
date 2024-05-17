@@ -479,3 +479,22 @@ index ffb70e1b7..aa1955bdf 100644
      newSockState->channel = Tcl_CreateChannel(&tcpChannelType, channelName,
  	    newSockState, TCL_READABLE | TCL_WRITABLE);
  
+diff --git unix/tclUnixThrd.c unix/tclUnixThrd.c
+index afb795d89..b1f54d39d 100644
+--- unix/tclUnixThrd.c
++++ unix/tclUnixThrd.c
+@@ -159,11 +159,11 @@ Tcl_JoinThread(
+ {
+ #ifdef TCL_THREADS
+     int result;
+-    unsigned long retcode, *retcodePtr = &retcode;
++    void *retcode, **retcodePtr = &retcode;
+ 
+-    result = pthread_join((pthread_t) threadId, (void**) retcodePtr);
++    result = pthread_join((pthread_t) threadId, retcodePtr);
+     if (state) {
+-	*state = (int) retcode;
++	*state = PTR2INT(retcode);
+     }
+     return (result == 0) ? TCL_OK : TCL_ERROR;
+ #else
