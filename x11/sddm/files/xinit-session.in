@@ -7,9 +7,9 @@
 
 RC="$HOME/.xinitrc"
 if [ ! -f "$RC" ] ; then
-	RC="@@LOCALBASE@@/etc/X11/xinit/xinitrc"
+	RC="%%LOCALBASE%%/etc/X11/xinit/xinitrc"
 	# But that one needs at least xterm to do something useful
-	if [ ! -x @@LOCALBASE@@/bin/xterm ] ; then
+	if [ ! -x %%LOCALBASE%%/bin/xterm ] ; then
 		RC=""
 	fi
 fi
@@ -18,5 +18,5 @@ if [ -n "$RC" -a -f "$RC" ] ; then
 	test -x "$RC" && exec "$RC"
 	test -f "$RC" && exec /bin/sh "$RC"
 else
-	exec @@LOCALBASE@@/bin/xmessage -geometry +0+0 "There is no user-session or usable default with xterm"
+	exec %%LOCALBASE%%/bin/xmessage -geometry +0+0 "There is no user-session or usable default with xterm"
 fi

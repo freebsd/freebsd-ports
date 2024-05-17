@@ -1,6 +1,5 @@
 PORTNAME=	sddm
-PORTVERSION=	0.20.0
-PORTREVISION=	3
+PORTVERSION=	0.21.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11
 
@@ -23,10 +22,9 @@ RUN_DEPENDS=	consolekit2>1.2.5:sysutils/consolekit2 \
 		xauth:x11/xauth \
 		xmessage:x11/xmessage
 
-USES=		cmake compiler:c++11-lang cpe kde:5 pkgconfig python:build qt:5 xorg
+USES=		cmake compiler:c++17-lang cpe pkgconfig python:build qt:5 xorg
 CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
-USE_KDE=	ecm:build
 USE_QT=		core declarative dbus gui network \
 		buildtools:build linguisttools:build declarative-test:build \
 		qmake:build testlib:build
@@ -43,7 +41,8 @@ CMAKE_ARGS=	-DUID_MIN=1000 \
 		-DSDDM_INITIAL_VT=7
 
 USE_RC_SUBR=	sddm
-SUB_FILES=	xinitrc.desktop
+SUB_FILES=	xinit-session \
+		xinitrc.desktop
 
 USERS=		sddm
 GROUPS=		sddm
@@ -54,14 +53,15 @@ post-patch:
 		-e 's#/usr/share/#${LOCALBASE}/share/#' \
 		-e 's#%%LOCALBASE%%#${LOCALBASE}#g' \
 		${WRKSRC}/data/scripts/Xsession \
-		${WRKSRC}/src/common/Configuration.h
+		${WRKSRC}/src/common/Configuration.h \
+		${WRKSRC}/src/greeter/waylandkeyboardbackend.cpp
 
 post-install:
 # Install xsession.desktop to launch .xinitrc via sddm.
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/xsessions
+	${INSTALL_DATA} ${FILESDIR}/sddm.conf.default ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKDIR}/xinitrc.desktop ${STAGEDIR}${PREFIX}/share/xsessions
-	${INSTALL_SCRIPT} ${FILESDIR}/xinit-session ${STAGEDIR}${PREFIX}/share/sddm/scripts
-	${REINPLACE_CMD} -e 's#@@LOCALBASE@@#${LOCALBASE}#' ${STAGEDIR}${PREFIX}/share/sddm/scripts/xinit-session
+	${INSTALL_SCRIPT} ${WRKDIR}/xinit-session ${STAGEDIR}${PREFIX}/share/sddm/scripts
 	${MV} ${STAGEDIR}${PREFIX}/etc/pam.d/sddm ${STAGEDIR}${PREFIX}/etc/pam.d/sddm.default
 	${MV} ${STAGEDIR}${PREFIX}/etc/pam.d/sddm-autologin ${STAGEDIR}${PREFIX}/etc/pam.d/sddm-autologin.default
 	${MV} ${STAGEDIR}${PREFIX}/etc/pam.d/sddm-greeter ${STAGEDIR}${PREFIX}/etc/pam.d/sddm-greeter.default
