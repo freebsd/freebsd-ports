@@ -30,6 +30,8 @@ CONFIGURE_ARGS=	--disable-update-databases \
 		--with-icon-path=${PREFIX}/share/pixmaps
 INSTALL_TARGET=	install-strip
 
+PORTSCOUT=	skipv:2.2.15fp
+
 OPTIONS_DEFINE=		DEBUG DOCS NLS TIDY
 OPTIONS_DEFAULT=	GTK3
 OPTIONS_SINGLE=		TOOLKIT
