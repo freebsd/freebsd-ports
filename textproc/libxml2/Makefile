@@ -55,6 +55,12 @@ post-patch:
 post-install:
 .if defined(LIBXML2_SLAVE)
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_LIBDIR}/site-packages/libxml2mod.so
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-f -d ${PYTHONPREFIX_SITELIBDIR} \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		-f -d ${PYTHONPREFIX_SITELIBDIR} \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 .endif
 
 .include <bsd.port.mk>
