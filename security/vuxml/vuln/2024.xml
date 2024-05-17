@@ -1,3 +1,32 @@
+  <vuln vid="a431676c-f86c-4371-b48a-b7d2b0bec3a3">
+    <topic>electron29 -- setuid() does not affect libuv's internal io_uring</topic>
+    <affects>
+      <package>
+	<name>electron29</name>
+	<range><lt>29.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v29.4.0">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Backported fix for CVE-2024-22017.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-22017</cvename>
+      <url>https://github.com/advisories/GHSA-vr4q-vx84-9g5x</url>
+    </references>
+    <dates>
+      <discovery>2024-05-15</discovery>
+      <entry>2024-05-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c6f03ea6-12de-11ef-83d8-4ccc6adda413">
     <topic>qt6-webengine -- Multiple vulnerabilities</topic>
     <affects>
