@@ -1,5 +1,6 @@
 invalid_mut was renamed to without_provenance_mut
 in https://github.com/rust-lang/rust/commit/b58f647d5488dce73bba517907c44af2c2a618c4
+https://github.com/amethyst/shred/commit/68c05e7c628a0ae70996637507753e103a03aa95
 
 error[E0425]: cannot find function `invalid_mut` in module `core::ptr`
    --> /wrkdirs/usr/ports/games/veloren-weekly/work/shred-5d52c6fc390dd04c12158633e77591f6523d1f85/src/meta.rs:402:38
