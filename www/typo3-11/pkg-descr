@@ -1,5 +1,5 @@
-This is the stable version with long-term support (LTS). We provide free
-maintenance bug fixes until April 2023 and security updates until October 2024.
+This is the old stable version with long-term support (LTS). We provide free security
+updates until October 2024.
 
 * Unified editor experience
 * Advanced Filelist module
@@ -9,11 +9,11 @@ maintenance bug fixes until April 2023 and security updates until October 2024.
 * And many improvements for developers
 
 System requirements
-* PHP 7.4, 8.0, 8.1
+* PHP 7.4, 8.0, 8.1, 8.2, 8.3
 * MariaDB 10.2.7+ / Microsoft SQL Server / MySQL 5.7.9+ / PostgreSQL / SQLite
 * Modern Browsers
 * Detailed list of requirements:
-	https://get.typo3.org/version/11#system-requirements
+  https://get.typo3.org/version/11#system-requirements
 
 Supported Until
 Free: 2024-10-31
