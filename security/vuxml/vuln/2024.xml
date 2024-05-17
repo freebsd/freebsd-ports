@@ -1,3 +1,51 @@
+  <vuln vid="b88aa380-1442-11ef-a490-84a93843eb75">
+    <topic>OpenSSL -- Denial of Service vulnerability</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>3.0.13_4,1</lt></range>
+      </package>
+      <package>
+	<name>openssl31</name>
+	<range><lt>3.1.5_4</lt></range>
+      </package>
+      <package>
+	<name>openssl32</name>
+	<range><lt>3.2.1_4</lt></range>
+      </package>
+      <package>
+	<name>openssl33</name>
+	<range><lt>3.3.0_1</lt></range>
+      </package>
+      <package>
+	<name>openssl-quictls</name>
+	<range><lt>3.0.13_4</lt></range>
+      </package>
+      <package>
+	<name>openssl31-quictls</name>
+	<range><lt>3.1.5_4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20240516.txt">
+	  <p>Excessive time spent checking DSA keys and parameters (Low)</p>
+	  <p>Checking excessively long DSA keys or parameters may be very
+	    slow.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-4603</cvename>
+      <url>https://www.openssl.org/news/secadv/20240516.txt</url>
+    </references>
+    <dates>
+      <discovery>2024-05-16</discovery>
+      <entry>2024-05-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a431676c-f86c-4371-b48a-b7d2b0bec3a3">
     <topic>electron29 -- setuid() does not affect libuv's internal io_uring</topic>
     <affects>
