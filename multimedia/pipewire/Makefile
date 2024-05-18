@@ -78,6 +78,7 @@ MESON_ARGS=	-D pw-cat=enabled \
 		-D man=disabled \
 		-D libcamera=disabled \
 		-D roc=disabled \
+		-D sdl2=disabled \
 		-D selinux=disabled \
 		-D systemd=disabled \
 		-D pipewire-v4l2=disabled \
