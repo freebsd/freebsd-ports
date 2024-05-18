@@ -1,9 +1,9 @@
 PORTNAME=	qtawesome
 PORTVERSION=	20150319
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics devel
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Embed Font Awesome glyphs in Qt-applications
 WWW=		https://github.com/gamecreature/QtAwesome
 

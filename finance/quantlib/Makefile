@@ -1,11 +1,11 @@
 PORTNAME=	quantlib
 PORTVERSION=	1.32
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance math devel
 MASTER_SITES=	http://github.com/lballabio/QuantLib/releases/download/v${PORTVERSION}/
 DISTNAME=	QuantLib-${PORTVERSION}
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	C++ library for quantitative finance
 WWW=		https://www.quantlib.org/
 

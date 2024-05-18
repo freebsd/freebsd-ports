@@ -1,10 +1,11 @@
 PORTNAME=	smbnetfs
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/SMBNetFS-${PORTVERSION}
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Mount smb shares (Fuse filesystem)
 WWW=		https://sourceforge.net/projects/smbnetfs/
 

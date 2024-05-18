@@ -1,9 +1,9 @@
 PORTNAME=	lz4json
 PORTVERSION=	20191229
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers www
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Unpack Mozilla lz4json files, such as bookmarks and session restore
 WWW=		https://github.com/andikleen/lz4json
 

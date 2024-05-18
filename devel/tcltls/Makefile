@@ -1,10 +1,11 @@
 PORTNAME=	tcltls
 PORTVERSION=	1.7.22
+PORTREVISION=	1
 CATEGORIES=	devel security tcl
 MASTER_SITES=	http://core.tcl.tk/tcltls/uv/ \
 		http://tcltls.rkeene.org/uv/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Dynamically loadable SSL extensions for TCL
 WWW=		https://core.tcl.tk/tcltls
 

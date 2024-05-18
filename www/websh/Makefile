@@ -1,11 +1,11 @@
 PORTNAME=	websh
 PORTVERSION=	3.6.0b5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www tcl
 MASTER_SITES=	https://archive.apache.org/dist/tcl/${PORTNAME}/source/
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Embeds a TCL8 interpreter in the Apache server
 WWW=		https://tcl.apache.org/websh/
 

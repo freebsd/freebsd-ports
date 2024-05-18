@@ -1,12 +1,12 @@
 PORTNAME=	siod
 PORTVERSION=	3.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://people.delphiforums.com/gjc/
 DISTNAME=	siod
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}	# Upstream aren't versioned :(
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Small footprint implementation of the Scheme programming language
 WWW=		https://people.delphiforums.com/gjc/siod.html
 

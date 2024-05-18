@@ -1,9 +1,10 @@
 PORTNAME=	pdfcrack
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	security print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Cracking tool for password-protected PDF-files
 WWW=		https://sourceforge.net/projects/pdfcrack/
 

@@ -1,10 +1,11 @@
 PORTNAME=	ExifRead
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Read Exif metadata from tiff and jpeg files
 WWW=		https://github.com/ianare/exif-py
 

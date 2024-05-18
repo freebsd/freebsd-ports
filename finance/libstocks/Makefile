@@ -1,9 +1,10 @@
 PORTNAME=	libstocks
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	finance devel
 MASTER_SITES=	SF
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	C library which can be used to fetch stocks quotes
 WWW=		https://libstocks.sourceforge.net/
 

@@ -1,10 +1,10 @@
 PORTNAME=	jbigkit
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.cl.cam.ac.uk/~mgk25/download/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Lossless compression for bi-level images such as scanned pages, faxes
 WWW=		https://www.cl.cam.ac.uk/~mgk25/jbigkit/
 

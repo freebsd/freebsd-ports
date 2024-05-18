@@ -1,13 +1,13 @@
 PORTNAME=	scm
 PORTVERSION=	5f3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU:scm	\
 		http://groups.csail.mit.edu/mac/ftpdir/scm/:psd1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:scm slib-psd1-3.tar.gz:psd1
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Scheme interpreter
 WWW=		https://people.csail.mit.edu/jaffer/SCM
 

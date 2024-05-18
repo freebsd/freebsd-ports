@@ -1,11 +1,11 @@
 PORTNAME=	libmng
 PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION} \
 		http://www.libmng.com/download/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Multiple-image Network Graphics (MNG) reference library
 WWW=		https://sourceforge.net/projects/libmng/
 

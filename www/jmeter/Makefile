@@ -1,10 +1,10 @@
 PORTNAME=	apache-jmeter
 PORTVERSION=	2.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www benchmarks java
 MASTER_SITES=	https://archive.apache.org/dist/jmeter/binaries/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Functional behaviour load and performance test application
 WWW=		https://jmeter.apache.org/
 

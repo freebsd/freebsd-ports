@@ -1,10 +1,11 @@
 PORTNAME=	tDOM
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://tdom.org/downloads/
 DISTNAME=	${PORTNAME:tl}-${PORTVERSION}-src
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	High performance processing of XML and HTML data with Tcl
 WWW=		http://www.tdom.org/
 

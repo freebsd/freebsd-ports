@@ -1,12 +1,12 @@
 PORTNAME=	Trf
 PORTVERSION=	2.1.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel tcl
 MASTER_SITES=	SF/tcltrf/tcltrf/${PORTVERSION}
 PKGNAMEPREFIX=	tcl-
 DISTNAME=	trf${PORTVERSION}
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Data conversion, digests, compression, error-correction for Tcl
 WWW=		https://wiki.tcl-lang.org/479
 

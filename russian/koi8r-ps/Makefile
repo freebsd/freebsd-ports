@@ -1,6 +1,6 @@
 PORTNAME=	koi8rPS
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	russian print
 MASTER_SITES=	ftp://ftp.redcom.ru/pub/X/psfonts/ \
 		ftp://ftp.kapella.gpi.ru/pub/cyrillic/psfonts/
@@ -8,7 +8,7 @@ DISTFILES=	gs-type1_koi8_fonts.tgz gs-type1_koi8_afm.tgz \
 		XFree86-Type1_fonts.dir.scale.gz
 EXTRACT_ONLY=
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Add Russian (KOI8) fonts to your PostScript fonts collection
 
 DIST_SUBDIR=	koi8r-ps

@@ -1,10 +1,10 @@
 PORTNAME=	purple-gowhatsapp
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.13.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-im
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	WhatsApp plugin for libpurple
 WWW=		https://github.com/hoehermann/purple-gowhatsapp
 

@@ -1,11 +1,11 @@
 PORTNAME=	cyr-rfx-${CYR_RFX_ENCODING}
 PORTVERSION=	1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-fonts ukrainian russian
 MASTER_SITES=	http://www.inp.nsk.su/~bolkhov/files/fonts/cyr-rfx/srctgz/
 EXTRACT_SUFX=	.bdfs.tgz
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Cyrillic X11 bitmap fonts from CYR-RFX project
 WWW=		https://www.inp.nsk.su/~bolkhov/files/fonts/cyr-rfx/00index.en.html
 

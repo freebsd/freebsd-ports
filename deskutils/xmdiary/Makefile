@@ -1,10 +1,10 @@
 PORTNAME=	xmdiary
 PORTVERSION=	3.0.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils
 MASTER_SITES=	XCONTRIB/office
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Personal and group calendar utility
 
 # Converted from NO_CDROM

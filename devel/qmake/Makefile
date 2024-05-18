@@ -1,12 +1,12 @@
 PORTNAME=	qmake
 PORTVERSION=	3.3.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	QT/archive/qt/${PORTVERSION:R:R}
 DISTNAME=	qt-x11-free-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	The build utility of the Qt 3 project
 WWW=		http://doc.qt.digia.com/3.3/index.html
 

@@ -1,11 +1,11 @@
 PORTNAME=	tclhttpd
 PORTVERSION=	3.5.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www tcl
 MASTER_SITES=	TCLTK/httpd
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Http-server implemented in TCL
 WWW=		https://www.tcl.tk/software/tclhttpd/
 

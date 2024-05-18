@@ -1,11 +1,11 @@
 PORTNAME=	libimg
 PORTVERSION=	1.4.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	graphics tk tcl
 MASTER_SITES=	SF/tkimg/tkimg/${PORTVERSION:R}/tkimg%20${PORTVERSION}
 DISTNAME=	Img-${PORTVERSION}-Source
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Library of image format handlers for Tk4.1 and later
 WWW=		https://sourceforge.net/projects/tkimg/
 

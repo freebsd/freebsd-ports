@@ -1,10 +1,10 @@
 PORTNAME=	sst
 PORTVERSION=	1.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://utcc.utoronto.ca/~pkern/stuff/sst/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Simple SSL tunneling tool (uses netcat)
 WWW=		https://utcc.utoronto.ca/~pkern/stuff/sst/
 

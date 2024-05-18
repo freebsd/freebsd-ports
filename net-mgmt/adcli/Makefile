@@ -1,10 +1,10 @@
 PORTNAME=	adcli
 PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt net security
 MASTER_SITES=	https://gitlab.freedesktop.org/realmd/adcli/-/archive/${PORTVERSION}/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Tool for performing actions on an Active Directory domain
 WWW=		https://www.freedesktop.org/software/realmd/adcli/adcli.html
 

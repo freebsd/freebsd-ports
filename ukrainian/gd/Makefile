@@ -1,7 +1,7 @@
 MASTERDIR=	${.CURDIR:H:H}/graphics/gd
 CATEGORIES=	ukrainian
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Graphics library for fast image creation with KOI8-U support
 
 BUILD_DEPENDS=	${NONEXISTENT}:x11-fonts/geminifonts:fetch

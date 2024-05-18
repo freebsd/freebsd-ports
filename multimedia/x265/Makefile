@@ -1,13 +1,13 @@
 PORTNAME=	x265
 PORTVERSION=	3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/multicoreware/x265_git/get/${BB_TAG}.tar.gz?meow=/
 
 PATCH_SITES=   https://bitbucket.org/multicoreware/x265_git/commits/8f18e3ad32684eee95e885e718655f93951128c3/raw/
 PATCHFILES+=   x265-asm-warnings.patch:-p1
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	H.265/High Efficiency Video Coding (HEVC) format
 WWW=		https://www.x265.org/
 

@@ -1,8 +1,9 @@
 PORTNAME=	lepton
 PORTVERSION=	0.2022.04.13
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Tool for manipulating files in LEP image format
 WWW=		https://github.com/dropbox/lepton
 

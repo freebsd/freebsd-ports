@@ -1,13 +1,13 @@
 PORTNAME=	monaco
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	ukrainian x11-fonts
 MASTER_SITES=	http://www.brama.com/compute/unix/
 PKGNAMEPREFIX=	koi8-u-
 PKGNAMESUFFIX=	-x11
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Collection of 5 "fixed" fonts for X11 from www.brama.com
 WWW=		http://www.brama.com/compute/unix.html
 
