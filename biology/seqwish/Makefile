@@ -1,6 +1,6 @@
 PORTNAME=	seqwish
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.9
+DISTVERSION=	0.7.10
 CATEGORIES=	biology
 MASTER_SITES=	https://github.com/ekg/seqwish/releases/download/v${DISTVERSION}/
 
