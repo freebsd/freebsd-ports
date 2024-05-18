@@ -12,7 +12,9 @@ WWW=		https://botan.randombit.net/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-BROKEN_armv6=	include/arm_neon.h:28:2: error: "NEON support not enabled"
+BROKEN_amd64=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=279136
+BROKEN_aarch64=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=279136
+BROKEN_FreeBSD_13=	compilation fails: no member named 'find' in namespace 'std::ranges'
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
