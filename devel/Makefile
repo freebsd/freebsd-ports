@@ -964,6 +964,7 @@
     SUBDIR += hs-threadscope
     SUBDIR += htable
     SUBDIR += hub
+    SUBDIR += hvm
     SUBDIR += hwloc
     SUBDIR += hwloc2
     SUBDIR += hyperscan
