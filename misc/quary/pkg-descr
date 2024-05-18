@@ -1,0 +1,9 @@
+Quary is a VSCode Extension (Interface) & Rust-based CLI (Core) for
+Business Intelligence for engineers.
+
+With Quary, engineers can:
+* Connect to their Database
+* Write SQL queries to transform, organize, and document tables in a database
+* Create charts, dashboards and reports (in development)
+* Test, collaborate & refactor iteratively through version control
+* Deploy the organised, documented model back up to the database

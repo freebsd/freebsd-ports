@@ -529,6 +529,7 @@
     SUBDIR += qt6-examples
     SUBDIR += qt6ct
     SUBDIR += quantum++
+    SUBDIR += quary
     SUBDIR += randomx
     SUBDIR += raspberrypi-gpioshutdown
     SUBDIR += raspberrypi-userland
