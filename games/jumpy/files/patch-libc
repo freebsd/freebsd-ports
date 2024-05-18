@@ -1,0 +1,42 @@
+https://github.com/rust-lang/libc/issues/3711
+
+--- cargo-crates/libc-0.2.153/src/unix/bsd/freebsdlike/mod.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/libc-0.2.153/src/unix/bsd/freebsdlike/mod.rs
+@@ -1015,6 +1015,37 @@ pub const LOCAL_PEERCRED: ::c_int = 1;
+ 
+ pub const LOCAL_PEERCRED: ::c_int = 1;
+ 
++// net/route.h
++pub const RTF_GATEWAY: ::c_int = 0x2;
++pub const RTA_IFP: ::c_int = 0x10;
++pub const RTAX_DST: ::c_int = 0;
++pub const RTAX_GATEWAY: ::c_int = 1;
++pub const RTAX_NETMASK: ::c_int = 2;
++pub const RTAX_IFP: ::c_int = 4;
++pub const RTAX_BRD: ::c_int = 7;
++pub const RTAX_MAX: ::c_int = 8;
++pub const RTM_VERSION: ::c_int = 5;
++
++// Message types
++pub const RTM_ADD: ::c_int = 0x1;
++pub const RTM_DELETE: ::c_int = 0x2;
++pub const RTM_CHANGE: ::c_int = 0x3;
++pub const RTM_GET: ::c_int = 0x4;
++pub const RTM_LOSING: ::c_int = 0x5;
++pub const RTM_REDIRECT: ::c_int = 0x6;
++pub const RTM_MISS: ::c_int = 0x7;
++pub const RTM_LOCK: ::c_int = 0x8;
++pub const RTM_OLDADD: ::c_int = 0x9;
++pub const RTM_OLDDEL: ::c_int = 0xa;
++pub const RTM_RESOLVE: ::c_int = 0xb;
++pub const RTM_NEWADDR: ::c_int = 0xc;
++pub const RTM_DELADDR: ::c_int = 0xd;
++pub const RTM_IFINFO: ::c_int = 0xe;
++pub const RTM_NEWMADDR: ::c_int = 0xf;
++pub const RTM_DELMADDR: ::c_int = 0x10;
++pub const RTM_IFANNOUNCE: ::c_int = 0x11;
++pub const RTM_IEEE80211: ::c_int = 0x12;
++
+ pub const SHUT_RD: ::c_int = 0;
+ pub const SHUT_WR: ::c_int = 1;
+ pub const SHUT_RDWR: ::c_int = 2;
