@@ -1467,6 +1467,7 @@ include/qgis/qgsrastertransparencywidget.h
 include/qgis/qgsrasterviewport.h
 include/qgis/qgsratiolockbutton.h
 include/qgis/qgsray3d.h
+include/qgis/qgsraycastingutils.h
 include/qgis/qgsreadwritecontext.h
 include/qgis/qgsreadwritelocker.h
 include/qgis/qgsrecentcoordinatereferencesystemsmodel.h
@@ -3692,6 +3693,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/i18n/qgis_ja.qm
 %%DATADIR%%/i18n/qgis_ko.qm
 %%DATADIR%%/i18n/qgis_lt.qm
+%%DATADIR%%/i18n/qgis_lv.qm
 %%DATADIR%%/i18n/qgis_nb.qm
 %%DATADIR%%/i18n/qgis_nl.qm
 %%DATADIR%%/i18n/qgis_pl.qm
