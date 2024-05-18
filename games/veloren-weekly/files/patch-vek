@@ -1,20 +1,25 @@
 Avoid downgrading to Stable despite RUSTC_BOOTSTRAP
 
-error[E0658]: platform intrinsics are experimental and possibly buggy
-  --> src/simd_llvm.rs:13:8
+error[E0658]: use of unstable library feature 'portable_simd'
+  --> cargo-crates/vek-0.17.0/src/vec.rs:18:5
    |
-13 | extern "platform-intrinsic" {
-   |        ^^^^^^^^^^^^^^^^^^^^
+18 | use std::simd::SimdElement;
+   |     ^^^^^^^^^^^^^^^^^^^^^^
    |
-   = note: see issue #27731 <https://github.com/rust-lang/rust/issues/27731> for more information
-   = help: add `#![feature(platform_intrinsics)]` to the crate attributes to enable
+   = note: see issue #86656 <https://github.com/rust-lang/rust/issues/86656> for more information
+   = help: add `#![feature(portable_simd)]` to the crate attributes to enable
+   = note: this compiler was built on 2024-04-29; consider upgrading it if it is out of date
 
---- cargo-crates/vek-0.16.1/build.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/vek-0.16.1/build.rs
-@@ -4,19 +4,6 @@ fn main() {
+--- cargo-crates/vek-0.17.0/build.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/vek-0.17.0/build.rs
+@@ -4,23 +4,6 @@ fn main() {
  fn main() {
      assert!(version().unwrap().major >= 1);
  
+-    println!("cargo:rustc-check-cfg=cfg(stable)");
+-    println!("cargo:rustc-check-cfg=cfg(beta)");
+-    println!("cargo:rustc-check-cfg=cfg(nightly)");
+-    println!("cargo:rustc-check-cfg=cfg(dev)");
 -    match version_meta().unwrap().channel {
 -        Channel::Stable => {
 -            println!("cargo:rustc-cfg=stable");
