@@ -1,4 +1,3 @@
-%%DNSTAP%%bin/dnstap-read
 bin/named-checkconf
 bin/named-checkzone
 bin/named-compilezone
@@ -266,7 +265,7 @@ lib/libns-9.18.27.so
 @comment share/man/man1/dnssec-settime.1.gz
 @comment share/man/man1/dnssec-signzone.1.gz
 @comment share/man/man1/dnssec-verify.1.gz
-%%DNSTAP%%share/man/man1/dnstap-read.1.gz
+@comment share/man/man1/dnstap-read.1.gz
 @comment share/man/man1/host.1.gz
 @comment share/man/man1/mdig.1.gz
 share/man/man1/named-checkconf.1.gz
