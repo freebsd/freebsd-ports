@@ -1,3 +1,45 @@
+  <vuln vid="f393b5a7-1535-11ef-8064-c5610a6efffb">
+    <topic>Arti -- Security issues related to circuit construction</topic>
+    <affects>
+      <package>
+	<name>arti</name>
+	<range><lt>1.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tor Project reports:</p>
+	<blockquote cite="https://blog.torproject.org/arti_1_2_3_released/">
+		<p>
+			When building anonymizing circuits to or from an onion
+			service with 'lite' vanguards (the default) enabled, the
+			circuit manager code would build the circuits with one
+			hop too few.
+		</p>
+		<p>
+			When 'full' vanguards are enabled, some circuits are
+			supposed to be built with an extra hop to minimize the
+			linkability of the guard nodes. In some circumstances,
+			the circuit manager would build circuits with one hop
+			too few, making it easier for an adversary to discover
+			the L2 and L3 guards of the affected clients and
+			services.
+		</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-35313</cvename>
+      <url>https://gitlab.torproject.org/tpo/core/arti/-/issues/1400</url>
+      <cvename>CVE-2024-35312</cvename>
+      <url>https://gitlab.torproject.org/tpo/core/arti/-/issues/1409</url>
+    </references>
+    <dates>
+      <discovery>2024-05-14</discovery>
+      <entry>2024-05-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b88aa380-1442-11ef-a490-84a93843eb75">
     <topic>OpenSSL -- Denial of Service vulnerability</topic>
     <affects>
