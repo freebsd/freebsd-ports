@@ -1,6 +1,6 @@
---- ui/gtk/gtk_compat.cc.orig	2023-10-25 09:13:45 UTC
+--- ui/gtk/gtk_compat.cc.orig	2024-05-17 08:12:16 UTC
 +++ ui/gtk/gtk_compat.cc
-@@ -62,22 +62,38 @@ auto DlCast(void* symbol) {
+@@ -62,22 +62,38 @@ void* GetLibGio() {
  }
  
  void* GetLibGio() {
@@ -39,7 +39,7 @@
    return libgtk4;
  }
  
-@@ -124,7 +140,11 @@ gfx::Insets InsetsFromGtkBorder(const GtkBorder& borde
+@@ -130,7 +146,11 @@ void* GetLibGdkPixbuf() {
  }  // namespace
  
  void* GetLibGdkPixbuf() {
