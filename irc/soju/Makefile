@@ -1,7 +1,7 @@
 PORTNAME=	soju
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	irc
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -22,12 +22,11 @@ USERS=			soju
 GROUPS=			soju
 SUB_LIST=		USER=${USERS}
 USE_RC_SUBR=		${PORTNAME}
-GO_BUILDFLAGS+=	-tags=libsqlite3
 CGO_LDFLAGS+=		-lsqlite3
 GO_MODULE=		git.sr.ht/~emersion/soju
 CONTRIBS=		./contrib/znc-import ./contrib/migrate-db \
 			./contrib/migrate-logs
-MAKE_ENV+=		${GO_ENV} \
+MAKE_ENV+=		${GO_ENV} GOFLAGS="${GOFLAGS} -tags=libsqlite3,pam" \
 			MANDIR=share/man \
 			PREFIX=${PREFIX} \
 			RUNDIR=/var/run \
