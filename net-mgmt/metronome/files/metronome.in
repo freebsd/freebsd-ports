@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# PROVIDE: metronome
+# REQUIRE: DAEMON SERVERS
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable metronome:
+#
+# metronome_enable="YES"
+#
+# The next lines are optional since they have defaults
+#
+# metronome_carbonaddress="<set as needed>"
+# metronome_wsaddress="<set as needed>"
+# metronome_statsdir="<set as needed>"
+#
+
+. /etc/rc.subr
+
+name=metronome
+rcvar=${name}_enable
+
+load_rc_config ${name}
+: ${metronome_enable:=NO}
+: ${metronome_carbonaddress:=127.0.0.1:2003}
+: ${metronome_wsaddress:=127.0.0.1:8000}
+: ${metronome_statsdir:=%%METRONOME_DBDIR%%}
+
+pidfile=/var/run/${name}.pid
+actual_command="%%PREFIX%%/bin/${name} --daemon 0 --carbon-address ${metronome_carbonaddress} --webserver-address ${metronome_wsaddress} --stats-directory ${metronome_statsdir}"
+command=/usr/sbin/daemon
+command_args="-c -f -r -u %%METRONOME_USER%% -P ${pidfile} -- ${actual_command}"
+
+run_rc_command "$1"

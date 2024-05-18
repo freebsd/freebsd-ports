@@ -18,3 +18,4 @@ bin/msubmit
 %%DATADIR%%/html/legend.css
 %%DATADIR%%/html/lines.css
 %%DATADIR%%/html/local.js
+@dir(%%METRONOME_USER%%, %%METRONOME_USER%%, ) %%METRONOME_DBDIR%%
