@@ -8,7 +8,7 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Preferences manager for the Openbox window manager
 WWW=		http://openbox.org/wiki/Obconf
 
-LICENSE=		GPLv2
+LICENSE=		GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
