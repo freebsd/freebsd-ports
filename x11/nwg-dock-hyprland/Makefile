@@ -1,7 +1,6 @@
 PORTNAME=	nwg-dock-hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.8
-PORTREVISION=	1
+DISTVERSION=	0.1.9
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,8 +18,8 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 GH_ACCOUNT=	nwg-piotr
 GH_TUPLE=	allan-simon:go-singleinstance:d0997106ab37:allan_simon_go_singleinstance/vendor/github.com/allan-simon/go-singleinstance \
-		dlasky:gotk3-layershell:b0c42cd8474f:dlasky_gotk3_layershell/vendor/github.com/dlasky/gotk3-layershell \
-		golang:sys:v0.19.0:golang_sys/vendor/golang.org/x/sys \
+		dlasky:gotk3-layershell:5c5115f0d774:dlasky_gotk3_layershell/vendor/github.com/dlasky/gotk3-layershell \
+		golang:sys:v0.20.0:golang_sys/vendor/golang.org/x/sys \
 		gotk3:gotk3:v0.6.3:gotk3_gotk3/vendor/github.com/gotk3/gotk3 \
 		sirupsen:logrus:v1.9.3:sirupsen_logrus/vendor/github.com/sirupsen/logrus
 CGO_LDFLAGS+=	-Wl,--as-needed # harfbuzz, freetype2
