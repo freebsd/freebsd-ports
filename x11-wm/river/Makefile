@@ -1,6 +1,6 @@
 PORTNAME=	river
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
+DISTVERSION=	0.3.1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -26,7 +26,7 @@ GH_ACCOUNT=	riverwm
 GH_TUPLE=	ifreund:zig-pixman:70bff91:zig_pixman/deps/zig-pixman \
 		ifreund:zig-wayland:73fed09:zig_wayland/deps/zig-wayland \
 		ifreund:zig-xkbcommon:7e09b38:zig_xkbcommon/deps/zig-xkbcommon \
-		swaywm:zig-wlroots:a579f9f:zig_wlroots/deps/zig-wlroots
+		swaywm:zig-wlroots:5bc01a9:zig_wlroots/deps/zig-wlroots
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		${WITH_DEBUG:D:U-Doptimize=ReleaseFast} \
