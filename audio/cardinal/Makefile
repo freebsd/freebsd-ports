@@ -12,6 +12,8 @@ WWW=		https://cardinal.kx.studio/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compilation fails due to the variable name conflict with base header, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=279134
+
 BUILD_DEPENDS=	${LOCALBASE}/include/FuzzySearchDatabase.hpp:textproc/fuzzysearchdatabase \
 		bash:shells/bash \
 		cmake:devel/cmake-core
