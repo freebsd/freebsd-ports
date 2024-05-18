@@ -1,7 +1,6 @@
 PORTNAME=	get_iplayer
-DISTVERSION=	3.34
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	3.35
 CATEGORIES=	multimedia net
 
 MAINTAINER=	jamie@catflap.org
@@ -37,12 +36,12 @@ PLIST_FILES=	bin/${PORTNAME} ${SCRIPTS:S,^,${WWWDIR_REL}/,} \
 
 PORTDOCS=	CHANGELOG.md README.md
 
-OPTIONS_DEFINE=	DOCS FFMPEG ATOMICPARSLEY
-OPTIONS_DEFAULT=	FFMPEG ATOMICPARSLEY
-FFMPEG_DESC=	Enable file conversion using FFmpeg
-FFMPEG_RUN_DEPENDS=	ffmpeg>=0:multimedia/ffmpeg
-ATOMICPARSLEY_DESC=	Enable tagging of media files
+OPTIONS_DEFINE=			ATOMICPARSLEY DOCS FFMPEG
+OPTIONS_DEFAULT=		ATOMICPARSLEY FFMPEG
+ATOMICPARSLEY_DESC=		Enable tagging of media files
+FFMPEG_DESC=			Enable file conversion using FFmpeg
 ATOMICPARSLEY_RUN_DEPENDS=	atomicparsley>=0:multimedia/atomicparsley
+FFMPEG_RUN_DEPENDS=		ffmpeg>=0:multimedia/ffmpeg
 
 post-patch:
 	${REINPLACE_CMD} -e "108,110c\\${.newline}	\$$opt_cmdline->{getiplayer} = \"${PREFIX}/bin/${PORTNAME}\";" \
