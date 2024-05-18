@@ -10,6 +10,7 @@ bin/dnssec-revoke
 bin/dnssec-settime
 bin/dnssec-signzone
 bin/dnssec-verify
+%%DNSTAP%%bin/dnstap-read
 bin/host
 bin/mdig
 bin/named-rrchecker
@@ -42,7 +43,7 @@ share/man/man1/dnssec-revoke.1.gz
 share/man/man1/dnssec-settime.1.gz
 share/man/man1/dnssec-signzone.1.gz
 share/man/man1/dnssec-verify.1.gz
-@comment share/man/man1/dnstap-read.1.gz
+%%DNSTAP%%share/man/man1/dnstap-read.1.gz
 share/man/man1/host.1.gz
 share/man/man1/mdig.1.gz
 @comment share/man/man1/named-checkconf.1.gz
