@@ -1,6 +1,6 @@
---- interpreter/CMakeLists.txt.orig	2023-12-09 12:40:45 UTC
+--- interpreter/CMakeLists.txt.orig	2024-04-01 14:54:49 UTC
 +++ interpreter/CMakeLists.txt
-@@ -81,21 +81,17 @@ set(LLVM_ABI_BREAKING_CHECKS FORCE_OFF CACHE BOOL "" F
+@@ -81,21 +81,17 @@ set(CMAKE_REQUIRED_QUIET 1)  # Make the configuration 
  
  set(CMAKE_REQUIRED_QUIET 1)  # Make the configuration of LLVM quiet
  
