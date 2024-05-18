@@ -2545,6 +2545,7 @@
     SUBDIR += yarn-node18
     SUBDIR += yarn-node20
     SUBDIR += yarn-node21
+    SUBDIR += yarn-node22
     SUBDIR += yarr
     SUBDIR += yaws
     SUBDIR += you-get
