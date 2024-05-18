@@ -220,6 +220,7 @@ bin/xpdtest
 %%NOT_INSTALLED_ON_AARCH64%%%%ETCDIR%%/cling/libc.modulemap
 %%NOT_INSTALLED_ON_AARCH64%%%%ETCDIR%%/cling/module.modulemap
 %%NOT_INSTALLED_ON_AARCH64%%%%ETCDIR%%/cling/std.modulemap
+%%NOT_INSTALLED_ON_AARCH64%%%%ETCDIR%%/cling/std_fbsd.modulemap
 %%NOT_INSTALLED_ON_AARCH64%%%%ETCDIR%%/cling/tinyxml2.modulemap
 %%NOT_INSTALLED_ON_AARCH64%%%%ETCDIR%%/cling/vc.modulemap
 %%ONLY_INSTALLED_ON_AARCH64%%%%ETCDIR%%/allDict.cxx.pch
@@ -977,6 +978,7 @@ include/root/RConfig.h
 include/root/RConfigOptions.h
 include/root/RConfigure.h
 include/root/RGitCommit.h
+include/root/ROOT.modulemap
 %%ROOT7%%include/root/ROOT/Browsable/RAnyObjectHolder.hxx
 %%ROOT7%%include/root/ROOT/Browsable/RElement.hxx
 %%ROOT7%%include/root/ROOT/Browsable/RGroup.hxx
@@ -3147,9 +3149,6 @@ include/root/TXMLNode.h
 include/root/TXMLParser.h
 include/root/TXMLPlayer.h
 include/root/TXMLSetup.h
-include/root/TXNetFile.h
-include/root/TXNetFileStager.h
-include/root/TXNetSystem.h
 include/root/TXTRU.h
 include/root/TZIPFile.h
 include/root/ThreadLocalStorage.h
@@ -3164,7 +3163,6 @@ include/root/ZipLZMA.h
 include/root/ZipZSTD.h
 include/root/cfortran.h
 include/root/compiledata.h
-include/root/module.modulemap
 include/root/root_std_complex.h
 include/root/snprintf.h
 include/root/strlcpy.h
@@ -3322,7 +3320,6 @@ lib/root/%%AARCH64_PCM_PREFIX%%Minuit%%AARCH64_PCM_SUFFIX%%.pcm
 lib/root/%%AARCH64_PCM_PREFIX%%Minuit2%%AARCH64_PCM_SUFFIX%%.pcm
 %%NOT_INSTALLED_ON_AARCH64%%lib/root/MultiProc.pcm
 lib/root/%%AARCH64_PCM_PREFIX%%Net%%AARCH64_PCM_SUFFIX%%.pcm
-lib/root/%%AARCH64_PCM_PREFIX%%Netx%%AARCH64_PCM_SUFFIX%%.pcm
 lib/root/%%AARCH64_PCM_PREFIX%%NetxNG%%AARCH64_PCM_SUFFIX%%.pcm
 %%PGSQL%%lib/root/%%AARCH64_PCM_PREFIX%%PgSQL%%AARCH64_PCM_SUFFIX%%.pcm
 lib/root/%%AARCH64_PCM_PREFIX%%Physics%%AARCH64_PCM_SUFFIX%%.pcm
@@ -3832,9 +3829,6 @@ lib/root/libNet.so
 lib/root/libNet.so.%%SHLIB_SHVER%%
 lib/root/libNet.so.%%SHLIB_VER%%
 %%ONLY_INSTALLED_ON_AARCH64%%lib/root/libNetx.rootmap
-lib/root/libNetx.so
-lib/root/libNetx.so.%%SHLIB_SHVER%%
-lib/root/libNetx.so.%%SHLIB_VER%%
 %%ONLY_INSTALLED_ON_AARCH64%%lib/root/libNetxNG.rootmap
 lib/root/libNetxNG.so
 lib/root/libNetxNG.so.%%SHLIB_SHVER%%
@@ -4144,7 +4138,6 @@ lib/root/libXMLIO.so.%%SHLIB_VER%%
 lib/root/libXMLParser.so
 lib/root/libXMLParser.so.%%SHLIB_SHVER%%
 lib/root/libXMLParser.so.%%SHLIB_VER%%
-%%NOT_INSTALLED_ON_AARCH64%%lib/root/libc.pcm
 lib/root/libcomplexDict.rootmap
 lib/root/libcomplexDict.so
 lib/root/libcomplexDict.so.%%SHLIB_SHVER%%
@@ -4217,6 +4210,7 @@ lib/root/libvectorDict.so.%%SHLIB_SHVER%%
 lib/root/libvectorDict.so.%%SHLIB_VER%%
 %%NOT_INSTALLED_ON_AARCH64%%lib/root/modules.idx
 %%NOT_INSTALLED_ON_AARCH64%%lib/root/std.pcm
+%%ONLY_INSTALLED_ON_FBSD14%%lib/root/std_config.pcm
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/DEVELOPMENT.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL

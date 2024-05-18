@@ -1,0 +1,23 @@
+--- core/clingutils/CMakeLists.txt.orig	2024-04-12 17:58:43 UTC
++++ core/clingutils/CMakeLists.txt
+@@ -123,6 +123,20 @@ if (runtime_cxxmodules)
+   if (CMAKE_SYSTEM_NAME MATCHES Darwin AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL 15.0.0.15000309)
+     set(custom_modulemaps ${custom_modulemaps} std_darwin.modulemap)
+   endif()
++  #[[
++  FreeBSD port maintainer note:
++  Related to upstream PR https://github.com/root-project/root/pull/14920.
++  Depending on a given system's version of LLVM, the standard library module.modulemap file
++  distributed with the OS might cause ROOT to fail to build, because the module.modulemap
++  file needs patching.
++  The port patch removes the implicit use of the system's module.modulemap file and applies,
++  explicitly, the same module.modulemap file - with modifications, if needed.
++  The (modified) module.modulemap file is provided by the port in
++  ${PATCHDIR}/interpreter-cling-include-cling-std__fbsd${OSREL}.modulemap.
++  ]]#
++  if (CMAKE_SYSTEM_NAME MATCHES FreeBSD)
++    set(custom_modulemaps ${custom_modulemaps} std_fbsd.modulemap)
++  endif()
+ 
+   if (NOT libcxx)
+     if (MSVC)

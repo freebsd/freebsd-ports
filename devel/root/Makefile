@@ -1,6 +1,5 @@
 PORTNAME=	root
-DISTVERSION=	6.30.02
-PORTREVISION=	1
+DISTVERSION=	6.30.06
 CATEGORIES=	devel science math parallel python
 MASTER_SITES=	https://root.cern/download/
 DISTFILES=	${PORTNAME}_v${DISTVERSION}.source${EXTRACT_SUFX}
@@ -33,10 +32,26 @@ USES=		cmake compiler:c++17-lang desktop-file-utils \
 		gnome iconv shebangfix ssl
 USE_GNOME=	libxml2
 
-SHEBANG_FILES=	config/rootssh etc/dictpch/makepch.py etc/proof/utils/circle.sh \
-		etc/proof/utils/crypt etc/proof/utils/pps \
-		etc/proof/utils/proofctl.sh etc/proof/utils/proofinstall.sh \
+SHEBANG_FILES=	main/python/rootbrowse.py \
+		main/python/rootcp.py \
+		main/python/rootdrawtree.py \
+		main/python/rooteventselector.py \
+		main/python/rootls.py \
+		main/python/rootmkdir.py \
+		main/python/rootmv.py \
+		main/python/rootprint.py \
+		main/python/rootrm.py \
+		main/python/rootslimtree.py \
+		config/rootssh \
+		etc/dictpch/makepch.py \
+		etc/proof/utils/circle.sh \
+		etc/proof/utils/crypt \
+		etc/proof/utils/pps \
+		etc/proof/utils/proofctl.sh \
+		etc/proof/utils/proofinstall.sh \
 		etc/pdg_table_update.py
+# add a port-specific shebang to be replaced
+python_OLD_CMD+=	"/usr/bin/env @python@"
 
 # Flags and environment variables for building
 CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17
@@ -52,6 +67,7 @@ OPTIONS_SUB=	yes
 
 # Option: MYSQL
 MYSQL_DESC=		Enable MySQL bindings
+MYSQL_LIB_DEPENDS=	libunwind.so:devel/libunwind
 MYSQL_USES=		mysql
 MYSQL_CMAKE_BOOL=	mysql
 
@@ -95,11 +111,26 @@ PLIST_SUB+=	SHLIB_SHVER="${DISTVERSION:R}" \
 		SHLIB_VER="${DISTVERSION}"
 
 # Some .modulemap, .pcm and .idx files are not installed on aarch64, a few .pcm files are exclusive to aarch64 and files LIBRARY.pcm are renamed libLIBRARY_rdict.pcm on aarch64
-.if ${ARCH} == "aarch64"
+.if ${OPSYS} == FreeBSD && ${ARCH} == "aarch64"
 PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="@comment " ONLY_INSTALLED_ON_AARCH64="" AARCH64_PCM_PREFIX="lib" AARCH64_PCM_SUFFIX="_rdict"
 .else
 PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="" ONLY_INSTALLED_ON_AARCH64="@comment " AARCH64_PCM_PREFIX="" AARCH64_PCM_SUFFIX=""
 .endif
+
+# std_config.pcm exclusive to FreeBSD 14
+.if ${OPSYS} == FreeBSD && (1400000 <= ${OSVERSION} && ${OSVERSION} < 1500000)
+PLIST_SUB+=	ONLY_INSTALLED_ON_FBSD14=""
+.else
+PLIST_SUB+=	ONLY_INSTALLED_ON_FBSD14="@comment "
+.endif
+
+# Port patch removes implicit use of system's module.modulemap and applies
+# explicit use of the same module.modulemap, with modifications, provided
+# by the port
+post-patch:
+	${CP} \
+  ${PATCHDIR}/interpreter-cling-include-cling-std__fbsd${OSREL}.modulemap \
+  ${WRKSRC}/interpreter/cling/include/cling/std_fbsd.modulemap
 
 # The following two files should not be staged. This happens even when PYROOT option is OFF.
 post-install:
