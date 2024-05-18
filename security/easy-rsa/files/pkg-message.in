@@ -1,0 +1,15 @@
+
+NOTE: easyrsa will require you to initialize a PKI upon first use.
+
+ONLY for the very first run for a new PKI, do something such as this,
+assuming you will have its data in $HOME/my_new_pki:
+
+  easyrsa --pki-dir=$HOME/my_new_pki init-pki # DANGEROUS - DESTROYS ~/my_new_pki
+
+See %%PREFIX%%/share/doc/easy-rsa/README.quickstart.md for further information.
+
+An on-line help is available, you can run:
+
+  easyrsa help          # for help on commands
+  easyrsa help options  # for help on options
+
