@@ -788,6 +788,7 @@
     SUBDIR += pear-Image_Graph
     SUBDIR += pear-Image_GraphViz
     SUBDIR += pear-Image_Transform
+    SUBDIR += pecl-geospatial
     SUBDIR += pecl-imagick
     SUBDIR += pecl-qrencode
     SUBDIR += pecl-vips
