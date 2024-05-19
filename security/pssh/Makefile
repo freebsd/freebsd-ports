@@ -1,7 +1,7 @@
 PORTNAME=	pssh
-PORTVERSION=	2.3.5
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.3.5
+PORTREVISION=	1
 CATEGORIES=	security net sysutils
 
 MAINTAINER=	timp87@gmail.com
@@ -21,4 +21,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lilydjwg
 
 NO_ARCH=	yes
+
 .include <bsd.port.mk>
