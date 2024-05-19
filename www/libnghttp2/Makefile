@@ -1,5 +1,5 @@
 PORTNAME=	nghttp2
-PORTVERSION=	1.62.0
+PORTVERSION=	1.62.1
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/nghttp2/nghttp2/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	lib
