@@ -4,7 +4,8 @@ CATEGORIES=	security
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PKCS11 bindings for PHP
-WWW=		https://github.com/gamringer/php-pkcs11
+WWW=		https://pecl.php.net/package/PKCS11 \
+		https://github.com/gamringer/php-pkcs11
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
