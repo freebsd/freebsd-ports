@@ -1,5 +1,5 @@
 PORTNAME=	cable_ready
-PORTVERSION=	5.0.3
+PORTVERSION=	5.0.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-actionpack71>=5.2:www/rubygem-actionpack71 \
 		rubygem-actionview71>=5.2:devel/rubygem-actionview71 \
 		rubygem-activesupport71>=5.2:devel/rubygem-activesupport71 \
+		rubygem-observer>=0.1<1:devel/rubygem-observer \
 		rubygem-railties71>=5.2:www/rubygem-railties71 \
 		rubygem-thread-local>=1.1.0:devel/rubygem-thread-local
 
