@@ -352,6 +352,7 @@
     SUBDIR += cargo-about
     SUBDIR += cargo-bloat
     SUBDIR += cargo-c
+    SUBDIR += cargo-cache
     SUBDIR += cargo-depgraph
     SUBDIR += cargo-generate
     SUBDIR += cargo-hack
