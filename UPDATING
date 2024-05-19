@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240517:
+  AFFECTS: comms/tio
+  AUTHOR: diizzy@FreeBSD.org
+
+  As of 3.1 upstream have reworked configuration file layout and syntax
+  so older configurations will not work.
+
+  For more details, see
+
+  https://github.com/tio/tio/releases/tag/v3.1
+
 20240513:
   AFFECTS: users of security/libressl
   AUTHOR: brnrd@FreeBSD.org
