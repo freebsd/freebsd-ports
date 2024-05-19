@@ -1,5 +1,5 @@
 PORTNAME=	multi_xml
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,8 @@ WWW=		https://github.com/sferik/multi_xml
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+RUN_DEPENDS=	rubygem-bigdecimal>=3.1<4:math/rubygem-bigdecimal
 
 USES=		cpe gem
 
