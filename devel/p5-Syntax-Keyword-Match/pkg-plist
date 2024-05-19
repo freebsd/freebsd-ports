@@ -1,3 +1,5 @@
 %%SITE_ARCH%%/Syntax/Keyword/Match.pm
+%%SITE_ARCH%%/Syntax/Keyword/Match/Deparse.pm
 %%SITE_ARCH%%/auto/Syntax/Keyword/Match/Match.so
 %%PERL5_MAN3%%/Syntax::Keyword::Match.3.gz
+%%PERL5_MAN3%%/Syntax::Keyword::Match::Deparse.3.gz
