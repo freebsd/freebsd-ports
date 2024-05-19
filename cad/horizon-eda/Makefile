@@ -1,11 +1,7 @@
 PORTNAME=	horizon-eda
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.0
-PORTREVISION=	4
+DISTVERSION=	2.6.0
 CATEGORIES=	cad
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	1efad3028a1953af2cf62b518a54ffeb309977bc.patch:-p1 # https://github.com/horizon-eda/horizon/issues/727
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	EDA package for printed circuit board design
@@ -15,26 +11,25 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/optional.hpp:devel/boost-libs \
+		cmake:devel/cmake-core \
 		cppzmq>0:net/cppzmq \
 		glm>0:math/glm
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libepoxy.so:graphics/libepoxy \
+		libfreeimage.so:graphics/freeimage \
 		libgit2.so:devel/libgit2 \
-		libharfbuzz.so:print/harfbuzz \
 		libpng16.so:graphics/png \
 		libpodofo09.so:graphics/podofo09 \
+		libspnav.so:misc/libspnav \
 		libTKDESTEP.so:cad/opencascade \
 		libuuid.so:misc/e2fsprogs-libuuid \
-		libzip.so:archivers/libzip \
 		libzmq.so:net/libzmq4
 
-USES=		desktop-file-utils gmake gnome libarchive llvm:15 localbase pkgconfig python:build sqlite # compiler:c++17-lang; llvm:15 is a workaround for bug#263870
+USES=		desktop-file-utils gnome libarchive localbase meson pkgconfig python:build sqlite
 USE_GNOME=	atkmm gdkpixbuf2 gtkmm30 librsvg2
 
 USE_GITHUB=	yes
 GH_PROJECT=	horizon
-
-MAKE_ARGS=	DEBUGFLAGS= OPTIMIZE=
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 

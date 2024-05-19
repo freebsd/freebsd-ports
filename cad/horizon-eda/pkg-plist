@@ -6,4 +6,6 @@ share/icons/hicolor/256x256/apps/org.horizon_eda.HorizonEDA.png
 share/icons/hicolor/32x32/apps/org.horizon_eda.HorizonEDA.png
 share/icons/hicolor/64x64/apps/org.horizon_eda.HorizonEDA.png
 share/icons/hicolor/scalable/apps/org.horizon_eda.HorizonEDA.svg
+share/man/man1/horizon-eda.1.gz
+share/man/man1/horizon-imp.1.gz
 share/metainfo/org.horizon_eda.HorizonEDA.metainfo.xml
