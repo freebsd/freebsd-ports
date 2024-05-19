@@ -1,6 +1,7 @@
 PORTNAME=	gitlab-${FLAVOR:Uce}
 PORTVERSION=	16.11.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
 .endif
@@ -85,14 +86,14 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-validates_hostname>=1.0.13<1.1.0:dns/rubygem-validates_hostname \
 	rubygem-rubyzip>=2.3.2<2.4:archivers/rubygem-rubyzip \
 	rubygem-acme-client>=2.0.9<3:security/rubygem-acme-client \
-	rubygem-browser>=5.3.1<5.4:www/rubygem-browser \
+	rubygem-browser5>=5.3.1<5.4:www/rubygem-browser5 \
 	rubygem-ohai>=18.1<19:sysutils/rubygem-ohai \
 	rubygem-gpgme>=2.0.23<2.1.0:security/rubygem-gpgme \
 	rubygem-gitlab_omniauth-ldap>=2.2.0<2.3.0:net/rubygem-gitlab_omniauth-ldap \
 	rubygem-net-ldap017>=0.17.1<0.18:net/rubygem-net-ldap017 \
 	rubygem-grape>=2.0.0<2.1:devel/rubygem-grape \
 	rubygem-grape-entity>=0.10.2<0.11.0,1:devel/rubygem-grape-entity \
-	rubygem-grape-swagger>=2.0.2<2.1:devel/rubygem-grape-swagger \
+	rubygem-grape-swagger20>=2.0.2<2.1:devel/rubygem-grape-swagger20 \
 	rubygem-grape-swagger-entity>=0.5.1<0.6:devel/rubygem-grape-swagger-entity \
 	rubygem-grape-path-helpers>=2.0.1<2.1:devel/rubygem-grape-path-helpers \
 	rubygem-rack-cors>=2.0.1<2.1:www/rubygem-rack-cors \
@@ -165,11 +166,11 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-sidekiq71>=7.1.6<7.2:devel/rubygem-sidekiq71 \
 	rubygem-sidekiq-cron-rails70>=1.12.0<1.13:devel/rubygem-sidekiq-cron-rails70 \
 	rubygem-fugit18>=1.8.1<1.9:devel/rubygem-fugit18 \
-	rubygem-httparty>=0.21.0<0.22:www/rubygem-httparty \
+	rubygem-httparty021>=0.21.0<0.22:www/rubygem-httparty021 \
 	rubygem-rainbow>=3.1.1<4.0:devel/rubygem-rainbow \
 	rubygem-ruby-progressbar>=1.11<2:devel/rubygem-ruby-progressbar \
 	rubygem-re2>=2.7.0<2.8:devel/rubygem-re2 \
-	rubygem-semver_dialects>=2.0.2<3:devel/rubygem-semver_dialects \
+	rubygem-semver_dialects2>=2.0.2<3:devel/rubygem-semver_dialects2 \
 	rubygem-version_sorter>=2.3<3:textproc/rubygem-version_sorter \
 	rubygem-js_regex>=3.8<4.0:textproc/rubygem-js_regex \
 	rubygem-device_detector>=0:devel/rubygem-device_detector \
