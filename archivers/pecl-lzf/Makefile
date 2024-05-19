@@ -5,7 +5,8 @@ DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Handles LZF de/compression
-WWW=		https://pecl.php.net/package/lzf
+WWW=		https://pecl.php.net/package/lzf \
+		https://github.com/php/pecl-file_formats-lzf
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
