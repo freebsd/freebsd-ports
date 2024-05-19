@@ -12,6 +12,9 @@ WWW=		http://www.mit.edu/people/marc/pks/
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on deprecated Oracle Berkeley DB 5.3 and last release back in 2003
+EXPIRATION_DATE=2024-06-30
+
 USES=		bdb ssl
 USE_RC_SUBR=	pksd
 
