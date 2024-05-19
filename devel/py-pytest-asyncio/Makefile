@@ -1,8 +1,9 @@
 PORTNAME=	pytest-asyncio
-PORTVERSION=	0.23.6
+DISTVERSION=	0.23.7
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pytest_asyncio-${DISTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Py.test plugin providing fixtures and markers for asyncio
