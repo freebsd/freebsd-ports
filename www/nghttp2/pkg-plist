@@ -5,6 +5,7 @@
 %%APP%%bin/nghttpd
 %%APP%%bin/nghttpx
 @sample etc/nghttpx/nghttpx.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/README.rst
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/client
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/client.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/deflate
