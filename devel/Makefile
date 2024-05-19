@@ -5439,6 +5439,7 @@
     SUBDIR += py-pyproject-api
     SUBDIR += py-pyproject-flake8
     SUBDIR += py-pyproject-fmt
+    SUBDIR += py-pyproject-fmt-rust
     SUBDIR += py-pyproject-metadata
     SUBDIR += py-pyproject_hooks
     SUBDIR += py-pypugjs
