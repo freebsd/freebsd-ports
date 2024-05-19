@@ -7,7 +7,7 @@ COMMENT=	Machine interface driver for the LLDB debugger
 WWW=		https://lldb.llvm.org/
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 USES=		cmake llvm:lib,noexport
 
