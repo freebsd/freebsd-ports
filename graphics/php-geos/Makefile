@@ -1,11 +1,12 @@
 PORTNAME=	geos
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	https://git.osgeo.org/gogs/geos/php-geos/archive/ \
-		LOCAL/sunpoet/php-geos
+#MASTER_SITES=	https://git.osgeo.org/gogs/geos/php-geos/archive/ \
+#		LOCAL/sunpoet/php-geos
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 DISTNAME=	${DISTVERSION}
-DIST_SUBDIR=	php-geos
+#DIST_SUBDIR=	php-geos
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP bindings for GEOS
@@ -21,6 +22,11 @@ LIB_DEPENDS=	libgeos_c.so:graphics/geos
 
 USES=		localbase:ldflags php:ext
 
-WRKSRC=		${WRKDIR}/php-geos
+USE_GITHUB=	yes
+GH_ACCOUNT=	libgeos
+GH_PROJECT=	php-geos
+GH_TAGNAME=	dfe1ab1
+
+#WRKSRC=		${WRKDIR}/php-geos
 
 .include <bsd.port.mk>
