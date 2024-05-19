@@ -1,8 +1,9 @@
 PORTNAME=	psycopg-pool
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.2
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	psycopg_pool-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Connection Pool for Psycopg
