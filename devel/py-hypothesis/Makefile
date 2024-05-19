@@ -40,7 +40,7 @@ PANDAS_DESC=		Pandas support
 PYTEST_DESC=		pytest support
 PYTZ_DESC=		Timezone support
 REDIS_DESC=		Redis support
-ZONEINFO_DESC=	Zone
+ZONEINFO_DESC=		Zoneinfo support
 
 CLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>=19.10b0:devel/py-black@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}click>=7.0:devel/py-click@${PY_FLAVOR} \
