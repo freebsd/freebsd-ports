@@ -12,9 +12,7 @@ WWW=		https://botan.randombit.net/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-BROKEN_FreeBSD_13=	compilation fails: no member named 'find' in namespace 'std::ranges'
-
-LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/asio.hpp:devel/boost-libs
 
 USES=		compiler:c++20-lang cpe gmake llvm:17 shebangfix tar:xz # llvm:17 fixes build failure, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=279136
 CPE_VENDOR=	${PORTNAME}_project
@@ -85,6 +83,11 @@ PLIST_SUB+=	HAS_PROCESSOR_RNG="@comment "
 #.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ) || ${OSVERSION} < 1300000 )
 #USES+=	llvm:max=15,min=14
 #.endif
+
+.if ${OPSYS} == FreeBSD && ( ( ${OSVERSION} >= 1400000 && ${OSVERSION} < 1400091 ) || ( ${OSVERSION} < 1302507 ) )
+# libc++ does not carry std::ranges::find, redirect to boost::range::find:
+EXTRA_PATCHES+= ${FILESDIR}/extrapatch-src_tests_unit__x509.cpp
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^optimization_flags .*|optimization_flags "${CXXFLAGS}"|' \
