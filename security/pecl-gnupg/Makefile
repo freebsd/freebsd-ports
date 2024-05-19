@@ -4,7 +4,8 @@ CATEGORIES=	security
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PECL wrapper around the gpgme library
-WWW=		https://pecl.php.net/package/gnupg
+WWW=		https://pecl.php.net/package/gnupg \
+		https://github.com/php-gnupg/php-gnupg
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
