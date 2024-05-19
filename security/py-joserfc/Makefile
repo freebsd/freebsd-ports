@@ -1,12 +1,12 @@
 PORTNAME=	joserfc
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ultimate Python library for JOSE RFCs
-WWW=		https://jose.authlib.org/en/dev/ \
+WWW=		https://jose.authlib.org/en/ \
 		https://github.com/authlib/joserfc
 
 LICENSE=	BSD3CLAUSE
