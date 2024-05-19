@@ -354,6 +354,7 @@
     SUBDIR += cargo-c
     SUBDIR += cargo-depgraph
     SUBDIR += cargo-generate
+    SUBDIR += cargo-hack
     SUBDIR += cargo-leptos
     SUBDIR += cargo-mutants
     SUBDIR += cask
