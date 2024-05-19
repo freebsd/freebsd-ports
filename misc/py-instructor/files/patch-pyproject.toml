@@ -1,0 +1,13 @@
+Obtained from:	https://github.com/jxnl/instructor/commit/c6273700c9ef7eea4acb88ac9eebb559d300a6a2
+
+--- pyproject.toml.orig	2024-01-23 17:39:46 UTC
++++ pyproject.toml
+@@ -13,7 +13,7 @@ docstring-parser = "^0.15"
+ openai = "^1.1.0"
+ pydantic = "^2.0.2"
+ docstring-parser = "^0.15"
+-typer = "^0.9.0"
++typer = ">=0.9.0,<1.0.0"
+ rich = "^13.7.0"
+ aiohttp = "^3.9.1"
+ 
