@@ -356,6 +356,7 @@
     SUBDIR += cargo-generate
     SUBDIR += cargo-hack
     SUBDIR += cargo-leptos
+    SUBDIR += cargo-llvm-cov
     SUBDIR += cargo-mutants
     SUBDIR += cask
     SUBDIR += catch
