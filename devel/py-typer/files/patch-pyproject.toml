@@ -1,9 +1,0 @@
---- pyproject.toml.orig	2022-11-05 19:43:29 UTC
-+++ pyproject.toml
-@@ -1,5 +1,5 @@
- [build-system]
--requires = ["flit_core >=2,<3"]
-+requires = ["flit_core >=2,<4"]
- build-backend = "flit_core.buildapi"
- 
- [tool.flit.metadata]
