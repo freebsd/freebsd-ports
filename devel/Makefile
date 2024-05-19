@@ -6985,6 +6985,7 @@
     SUBDIR += rubygem-ffi-yajl
     SUBDIR += rubygem-fiber-annotation
     SUBDIR += rubygem-fiber-local
+    SUBDIR += rubygem-fiber-storage
     SUBDIR += rubygem-fiddle
     SUBDIR += rubygem-figaro
     SUBDIR += rubygem-file-tail
