@@ -1,4 +1,4 @@
 bin/make2build
-%%PERL5_MAN3%%/Module::Build::Convert.3.gz
 %%SITE_PERL%%/Module/Build/Convert.pm
 %%PERL5_MAN1%%/make2build.1.gz
+%%PERL5_MAN3%%/Module::Build::Convert.3.gz
