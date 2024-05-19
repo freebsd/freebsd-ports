@@ -1,3 +1,33 @@
+  <vuln vid="d58455cc-159e-11ef-83d8-4ccc6adda413">
+    <topic>qt5-webengine -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>qt5-webengine</name>
+	<range><lt>5.15.16.p9_2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=87-based">
+	  <p>Backports for 2 security bugs in Chromium:</p>
+	  <ul>
+	    <li>CVE-2024-3157: Out of bounds write in Compositing</li>
+	    <li>CVE-2024-3516: Heap buffer overflow in ANGLE</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>2024-3157</cvename>
+      <cvename>2024-3516</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=87-based</url>
+    </references>
+    <dates>
+      <discovery>2024-04-16</discovery>
+      <entry>2024-05-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f393b5a7-1535-11ef-8064-c5610a6efffb">
     <topic>Arti -- Security issues related to circuit construction</topic>
     <affects>
