@@ -20,7 +20,6 @@ USE_LDCONFIG=	yes
 SHEBANG_GLOB=	*.t *.sh
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-doxygen
 
 INSTALL_TARGET=	install-strip
