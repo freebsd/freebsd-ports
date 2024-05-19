@@ -1,6 +1,6 @@
---- cmake/objects.cmake.orig	2024-02-07 14:23:49 UTC
+--- cmake/objects.cmake.orig	2024-05-08 08:20:47 UTC
 +++ cmake/objects.cmake
-@@ -54,31 +54,6 @@ set(LIBDDWAF_SOURCE
+@@ -68,31 +68,6 @@ set(LIBDDWAF_SOURCE
      ${libddwaf_SOURCE_DIR}/src/libcxx-compat/monotonic_buffer_resource.cpp
      ${libddwaf_SOURCE_DIR}/src/vendor/fmt/format.cc
      ${libddwaf_SOURCE_DIR}/src/vendor/radixlib/radixlib.c
@@ -32,7 +32,7 @@
  )
  
  set(LIBDDWAF_PUBLIC_INCLUDES ${libddwaf_SOURCE_DIR}/include)
-@@ -86,11 +61,25 @@ set(LIBDDWAF_PRIVATE_INCLUDES
+@@ -100,12 +75,25 @@ set(LIBDDWAF_PRIVATE_INCLUDES
  set(LIBDDWAF_PRIVATE_INCLUDES
      ${libddwaf_SOURCE_DIR}/src
      ${libddwaf_SOURCE_DIR}/src/vendor
@@ -40,8 +40,8 @@
      ${libddwaf_SOURCE_DIR}/src/vendor/radixlib/
 -    ${libddwaf_SOURCE_DIR}/src/vendor/lua-aho-corasick/
 -    ${libddwaf_SOURCE_DIR}/src/vendor/utf8proc/
--    ${libddwaf_SOURCE_DIR}/src/vendor/re2/)
-+)
+-    ${libddwaf_SOURCE_DIR}/src/vendor/re2/
+ )
 +
 +find_library(LIBAC ac)
 +if (LIBAC)
@@ -61,4 +61,4 @@
 +endif()
  
  function(gen_objects target_name)
-     add_library(${target_name} OBJECT ${LIBDDWAF_SOURCE})
+     add_library(${target_name} OBJECT ${LIBDDWAF_SOURCE} )
