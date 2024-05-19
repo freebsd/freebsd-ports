@@ -1,6 +1,6 @@
---- src/ruby/ext/grpc/extconf.rb.orig	2023-12-08 17:22:30 UTC
+--- src/ruby/ext/grpc/extconf.rb.orig	2024-05-18 09:15:48 UTC
 +++ src/ruby/ext/grpc/extconf.rb
-@@ -96,11 +96,11 @@ if apple_toolchain && !cross_compiling
+@@ -96,9 +96,9 @@ end
  end
  
  # Don't embed on TruffleRuby (constant-time crypto is unsafe with Sulong, slow build times)
@@ -10,12 +10,9 @@
 -ENV['EMBED_ZLIB'] = (RUBY_ENGINE != 'truffleruby').to_s
 +ENV['EMBED_ZLIB'] = 'false'
  
--ENV['EMBED_CARES'] = 'true'
-+ENV['EMBED_CARES'] = 'false'
- 
  ENV['ARCH_FLAGS'] = RbConfig::CONFIG['ARCH_FLAG']
  if apple_toolchain && !cross_compiling
-@@ -125,30 +125,10 @@ ENV['BUILDDIR'] = output_dir
+@@ -122,30 +122,10 @@ strip_tool += ' -x' if apple_toolchain
  strip_tool = RbConfig::CONFIG['STRIP']
  strip_tool += ' -x' if apple_toolchain
  
@@ -46,7 +43,7 @@
  def have_ruby_abi_version()
    return true if RUBY_ENGINE == 'truffleruby'
    # ruby_abi_version is only available in development versions: https://github.com/ruby/ruby/pull/6231
-@@ -177,13 +157,12 @@ def ext_export_filename()
+@@ -174,13 +154,12 @@ ext_export_file = File.join(grpc_root, 'src', 'ruby', 
  end
  
  ext_export_file = File.join(grpc_root, 'src', 'ruby', 'ext', 'grpc', ext_export_filename())
