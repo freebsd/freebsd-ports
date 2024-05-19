@@ -1,0 +1,11 @@
+--- gemdiff.gemspec.orig	2024-05-18 16:49:52 UTC
++++ gemdiff.gemspec
+@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<launchy>.freeze, ["~> 2.4".freeze])
++  s.add_runtime_dependency(%q<launchy>.freeze, [">= 2.4".freeze])
+   s.add_runtime_dependency(%q<octokit>.freeze, ["~> 8.0".freeze])
+   s.add_runtime_dependency(%q<faraday-retry>.freeze, ["~> 2.2".freeze])
+   s.add_runtime_dependency(%q<thor>.freeze, ["~> 1.0".freeze])
