@@ -7159,6 +7159,7 @@
     SUBDIR += rubygem-io-event
     SUBDIR += rubygem-io-like
     SUBDIR += rubygem-io-nonblock
+    SUBDIR += rubygem-io-stream
     SUBDIR += rubygem-io-wait
     SUBDIR += rubygem-io-wait01
     SUBDIR += rubygem-iobuffer
