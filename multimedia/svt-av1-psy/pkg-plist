@@ -13,6 +13,6 @@ lib/libSvtAv1Dec.so.0
 lib/libSvtAv1Dec.so.0.8.7
 lib/libSvtAv1Enc.so
 lib/libSvtAv1Enc.so.2
-lib/libSvtAv1Enc.so.2.0.0
+lib/libSvtAv1Enc.so.2.1.0
 libdata/pkgconfig/SvtAv1Dec.pc
 libdata/pkgconfig/SvtAv1Enc.pc
