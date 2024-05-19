@@ -349,6 +349,7 @@
     SUBDIR += capslock
     SUBDIR += capstone
     SUBDIR += capstone4
+    SUBDIR += cargo-about
     SUBDIR += cargo-bloat
     SUBDIR += cargo-c
     SUBDIR += cargo-depgraph
