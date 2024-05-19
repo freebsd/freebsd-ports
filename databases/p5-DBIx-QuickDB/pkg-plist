@@ -1,6 +1,9 @@
 %%SITE_PERL%%/DBIx/QuickDB.pm
 %%SITE_PERL%%/DBIx/QuickDB/Driver.pm
+%%SITE_PERL%%/DBIx/QuickDB/Driver/MariaDB.pm
 %%SITE_PERL%%/DBIx/QuickDB/Driver/MySQL.pm
+%%SITE_PERL%%/DBIx/QuickDB/Driver/MySQL/Base.pm
+%%SITE_PERL%%/DBIx/QuickDB/Driver/Percona.pm
 %%SITE_PERL%%/DBIx/QuickDB/Driver/PostgreSQL.pm
 %%SITE_PERL%%/DBIx/QuickDB/Driver/SQLite.pm
 %%SITE_PERL%%/DBIx/QuickDB/Pool.pm
@@ -10,7 +13,10 @@
 %%SITE_PERL%%/Test2/Tools/QuickDB.pm
 %%PERL5_MAN3%%/DBIx::QuickDB.3.gz
 %%PERL5_MAN3%%/DBIx::QuickDB::Driver.3.gz
+%%PERL5_MAN3%%/DBIx::QuickDB::Driver::MariaDB.3.gz
 %%PERL5_MAN3%%/DBIx::QuickDB::Driver::MySQL.3.gz
+%%PERL5_MAN3%%/DBIx::QuickDB::Driver::MySQL::Base.3.gz
+%%PERL5_MAN3%%/DBIx::QuickDB::Driver::Percona.3.gz
 %%PERL5_MAN3%%/DBIx::QuickDB::Driver::PostgreSQL.3.gz
 %%PERL5_MAN3%%/DBIx::QuickDB::Driver::SQLite.3.gz
 %%PERL5_MAN3%%/DBIx::QuickDB::Pool.3.gz

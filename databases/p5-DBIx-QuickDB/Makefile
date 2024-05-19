@@ -1,5 +1,5 @@
 PORTNAME=	DBIx-QuickDB
-PORTVERSION=	0.000026
+PORTVERSION=	0.000033
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,11 +13,11 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
+RUN_DEPENDS=	p5-Capture-Tiny>=0.20:devel/p5-Capture-Tiny \
+		p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
 		p5-Importer>=0.024:devel/p5-Importer \
 		p5-Module-Pluggable>=2.7:devel/p5-Module-Pluggable \
 		p5-Test2-Suite>=0.000097:devel/p5-Test2-Suite
-TEST_DEPENDS=	p5-Capture-Tiny>=0.20:devel/p5-Capture-Tiny
 
 USES=		perl5
 USE_PERL5=	configure
