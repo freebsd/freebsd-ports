@@ -2,9 +2,7 @@ PORTNAME=	psutils
 PORTVERSION=	1.17
 PORTREVISION=	6
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk/pub/ajcd/ \
-		ftp://ftp.knackered.org/pub/psutils/ \
-		TEX/obsolete/support/psutils \
+MASTER_SITES=	TEX/obsolete/support/psutils \
 		https://ftp.osuosl.org/pub/blfs/conglomeration/psutils/
 DISTNAME=	psutils-p17
 
