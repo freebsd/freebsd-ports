@@ -1,6 +1,5 @@
-PORTNAME=	tarpaulin
-DISTVERSION=	0.29.1
-PORTREVISION=	1
+PORTNAME=	cargo-tarpaulin
+DISTVERSION=	0.30.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,6 +18,7 @@ USES=		cargo localbase:ldflags
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xd009642
+GH_PROJECT=	tarpaulin
 
 CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
@@ -26,15 +26,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		ansi_term-0.12.1 \
-		anstream-0.6.13 \
-		anstyle-1.0.6 \
-		anstyle-parse-0.2.3 \
-		anstyle-query-1.0.2 \
-		anstyle-wincon-3.0.2 \
-		anyhow-1.0.82 \
-		atty-0.2.14 \
-		autocfg-1.2.0 \
+		anstream-0.6.14 \
+		anstyle-1.0.7 \
+		anstyle-parse-0.2.4 \
+		anstyle-query-1.0.3 \
+		anstyle-wincon-3.0.3 \
+		anyhow-1.0.83 \
+		autocfg-1.3.0 \
 		backtrace-0.3.71 \
 		base64-0.21.7 \
 		bitflags-1.3.2 \
@@ -45,17 +43,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		camino-1.1.6 \
 		cargo-platform-0.1.8 \
 		cargo_metadata-0.18.1 \
-		cc-1.0.92 \
+		cc-1.0.97 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
 		chrono-0.4.38 \
-		clap-2.34.0 \
 		clap-4.5.4 \
 		clap_builder-4.5.2 \
 		clap_derive-4.5.4 \
 		clap_lex-0.7.0 \
-		colorchoice-1.0.0 \
-		convert_case-0.6.0 \
+		colorchoice-1.0.1 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.6 \
 		coveralls-api-0.6.0 \
@@ -63,13 +59,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		deflate-1.0.0 \
 		derive_more-0.99.17 \
 		encoding_rs-0.8.34 \
-		enum-display-0.1.4 \
-		enum-display-macro-0.1.4 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
 		fallible-iterator-0.3.0 \
-		fastrand-2.0.2 \
-		flate2-1.0.28 \
+		fastrand-2.1.0 \
+		flate2-1.0.30 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
@@ -87,10 +81,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		gzip-header-1.0.0 \
 		h2-0.3.26 \
 		hashbrown-0.11.2 \
-		hashbrown-0.14.3 \
-		heck-0.3.3 \
+		hashbrown-0.14.5 \
 		heck-0.5.0 \
-		hermit-abi-0.1.19 \
 		hermit-abi-0.3.9 \
 		hex-0.4.3 \
 		http-0.2.12 \
@@ -107,13 +99,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		indexmap-1.8.2 \
 		indexmap-2.2.6 \
 		ipnet-2.9.0 \
+		is_terminal_polyfill-1.70.0 \
 		itoa-1.0.11 \
-		jobserver-0.1.29 \
+		jobserver-0.1.31 \
 		js-sys-0.3.69 \
 		lazy_static-1.4.0 \
 		lcov-0.8.1 \
 		leb128-0.2.5 \
-		libc-0.2.153 \
+		libc-0.2.154 \
 		libgit2-sys-0.16.2+1.7.2 \
 		libssh2-sys-0.3.0 \
 		libz-sys-1.1.16 \
@@ -132,7 +125,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		nix-0.28.0 \
 		nom-7.1.3 \
 		nu-ansi-term-0.46.0 \
-		num-traits-0.2.18 \
+		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
 		object-0.26.2 \
 		object-0.32.2 \
@@ -148,9 +141,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.30 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.81 \
+		proc-macro2-1.0.82 \
 		procfs-0.16.0 \
 		procfs-core-0.16.0 \
 		quick-error-1.2.3 \
@@ -162,51 +153,47 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.8.3 \
 		reqwest-0.11.27 \
-		rustc-demangle-0.1.23 \
+		rustc-demangle-0.1.24 \
 		rustc_version-0.4.0 \
-		rustix-0.38.32 \
+		rustix-0.38.34 \
 		rustls-pemfile-1.0.4 \
 		rusty-fork-0.3.0 \
 		ruzstd-0.6.0 \
-		ryu-1.0.17 \
+		ryu-1.0.18 \
 		same-file-1.0.6 \
 		schannel-0.1.23 \
-		security-framework-2.10.0 \
-		security-framework-sys-2.10.0 \
-		semver-1.0.22 \
-		serde-1.0.200 \
-		serde_derive-1.0.200 \
-		serde_json-1.0.116 \
+		security-framework-2.11.0 \
+		security-framework-sys-2.11.0 \
+		semver-1.0.23 \
+		serde-1.0.201 \
+		serde_derive-1.0.201 \
+		serde_json-1.0.117 \
 		serde_spanned-0.6.5 \
 		serde_urlencoded-0.7.1 \
 		sharded-slab-0.1.7 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
-		socket2-0.5.6 \
+		socket2-0.5.7 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
-		strsim-0.8.0 \
 		strsim-0.11.1 \
-		structopt-0.3.26 \
-		structopt-derive-0.4.18 \
 		syn-1.0.109 \
-		syn-2.0.58 \
+		syn-2.0.61 \
 		sync_wrapper-0.1.2 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
 		tempfile-3.10.1 \
-		textwrap-0.11.0 \
-		thiserror-1.0.58 \
-		thiserror-impl-1.0.58 \
+		thiserror-1.0.60 \
+		thiserror-impl-1.0.60 \
 		thread_local-1.1.8 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.37.0 \
 		tokio-native-tls-0.3.1 \
-		tokio-util-0.7.10 \
+		tokio-util-0.7.11 \
 		toml-0.8.12 \
 		toml_datetime-0.6.5 \
-		toml_edit-0.22.9 \
+		toml_edit-0.22.12 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
 		tracing-attributes-0.1.27 \
@@ -221,13 +208,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.23 \
-		unicode-segmentation-1.11.0 \
-		unicode-width-0.1.11 \
 		url-2.5.0 \
 		utf8parse-0.2.1 \
 		valuable-0.1.0 \
 		vcpkg-0.2.15 \
-		vec_map-0.8.2 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
 		walkdir-2.5.0 \
@@ -242,28 +226,29 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		web-sys-0.3.69 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.6 \
+		winapi-util-0.1.8 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-core-0.52.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.4 \
+		windows-targets-0.52.5 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_gnullvm-0.52.5 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.4 \
+		windows_aarch64_msvc-0.52.5 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.4 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.4 \
+		windows_i686_msvc-0.52.5 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.4 \
-		winnow-0.6.6 \
+		windows_x86_64_msvc-0.52.5 \
+		winnow-0.6.8 \
 		winreg-0.50.0
 
 OPENSSLINC=	/usr/include

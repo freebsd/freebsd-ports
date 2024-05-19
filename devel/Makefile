@@ -359,6 +359,7 @@
     SUBDIR += cargo-leptos
     SUBDIR += cargo-llvm-cov
     SUBDIR += cargo-mutants
+    SUBDIR += cargo-tarpaulin
     SUBDIR += cargo-udeps
     SUBDIR += cask
     SUBDIR += catch
@@ -7901,7 +7902,6 @@
     SUBDIR += tagref
     SUBDIR += tailor
     SUBDIR += talloc
-    SUBDIR += tarpaulin
     SUBDIR += taskctl
     SUBDIR += taskflow
     SUBDIR += tass64
