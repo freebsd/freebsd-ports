@@ -7520,6 +7520,7 @@
     SUBDIR += rubygem-semver_dialects
     SUBDIR += rubygem-semver_dialects1
     SUBDIR += rubygem-semver_dialects12
+    SUBDIR += rubygem-semver_dialects2
     SUBDIR += rubygem-semverse
     SUBDIR += rubygem-sentry-rails
     SUBDIR += rubygem-sentry-raven
