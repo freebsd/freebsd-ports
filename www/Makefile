@@ -485,6 +485,7 @@
     SUBDIR += npm-node18
     SUBDIR += npm-node20
     SUBDIR += npm-node21
+    SUBDIR += npm-node22
     SUBDIR += oauth2-proxy
     SUBDIR += obhttpd
     SUBDIR += offpunk
