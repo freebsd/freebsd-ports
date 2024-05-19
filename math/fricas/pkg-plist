@@ -165,7 +165,6 @@ lib/fricas/target/%%HOST_ARCH%%/algebra/CVMP.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/CYCGRP.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/CYCLES.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/CYCLOT2.fasl
-lib/fricas/target/%%HOST_ARCH%%/algebra/CYCLOTOM.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/DBASE.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/DBLRESP.fasl
 lib/fricas/target/%%HOST_ARCH%%/algebra/DCPO.fasl
@@ -2706,7 +2705,6 @@ lib/fricas/target/%%HOST_ARCH%%/src/algebra/crfp.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/curve.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/cycles.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/cyclo.spad
-lib/fricas/target/%%HOST_ARCH%%/src/algebra/cyclotom.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/cyldec.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/ddfact.spad
 lib/fricas/target/%%HOST_ARCH%%/src/algebra/defaults.spad
