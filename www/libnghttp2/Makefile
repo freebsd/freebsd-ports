@@ -1,5 +1,5 @@
 PORTNAME=	nghttp2
-PORTVERSION=	1.61.0
+PORTVERSION=	1.62.0
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/nghttp2/nghttp2/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	lib
@@ -12,12 +12,12 @@ WWW=		https://nghttp2.org/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++14-lang cpe libtool pathfix pkgconfig tar:xz
+USES=		compiler:c++20-lang cpe libtool pathfix pkgconfig tar:xz
 
 CONFIGURE_ARGS=	--enable-lib-only
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_CXXSTD=	c++14
+USE_CXXSTD=	c++20
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
