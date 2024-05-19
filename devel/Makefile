@@ -4316,6 +4316,7 @@
     SUBDIR += py-aspy.yaml
     SUBDIR += py-assertpy
     SUBDIR += py-ast-decompiler
+    SUBDIR += py-ast2json
     SUBDIR += py-asteval
     SUBDIR += py-astor
     SUBDIR += py-astroid
