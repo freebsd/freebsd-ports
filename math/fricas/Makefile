@@ -12,7 +12,8 @@ WWW=		https://fricas.sourceforge.net/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license/LICENSE.AXIOM
 
-BROKEN_i386=	build fails, reported to ML
+BROKEN=		fails to build
+#BROKEN_i386=	build fails, reported to ML
 
 BUILD_DEPENDS=	sbcl:lang/sbcl
 RUN_DEPENDS=	rlwrap:devel/rlwrap
