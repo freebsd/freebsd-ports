@@ -805,7 +805,6 @@ share/kvirc/%%VER%%/defscript/toolbars.kvs
 %%DOCS%%share/kvirc/%%VER%%/help/en/doc_perl_and_kvs.html
 %%DOCS%%share/kvirc/%%VER%%/help/en/doc_python_and_kvs.html
 %%DOCS%%share/kvirc/%%VER%%/help/en/doc_registered_users.html
-%%DOCS%%share/kvirc/%%VER%%/help/en/doc_rfc2812.html
 %%DOCS%%share/kvirc/%%VER%%/help/en/doc_rfc2812wrappers.html
 %%DOCS%%share/kvirc/%%VER%%/help/en/doc_script_localization.html
 %%DOCS%%share/kvirc/%%VER%%/help/en/doc_selfarithmetic.html
