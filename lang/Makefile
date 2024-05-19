@@ -12,6 +12,7 @@
     SUBDIR += awka
     SUBDIR += bas2tap
     SUBDIR += basic256
+    SUBDIR += bend
     SUBDIR += bsh
     SUBDIR += bwbasic
     SUBDIR += c
