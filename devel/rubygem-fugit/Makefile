@@ -1,5 +1,5 @@
 PORTNAME=	fugit
-PORTVERSION=	1.10.1
+PORTVERSION=	1.11.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/floraison/fugit
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-et-orbi>=1.2.7<2:devel/rubygem-et-orbi \
+RUN_DEPENDS=	rubygem-et-orbi>=1.2.11<2:devel/rubygem-et-orbi \
 		rubygem-raabro>=1.4<2:textproc/rubygem-raabro
 
 USES=		gem
