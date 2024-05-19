@@ -1,6 +1,6 @@
 PORTNAME=	spacy
 PORTVERSION=	3.7.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -37,7 +37,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}catalogue>=2.0.6<2.1.0:devel/py-catalogue@${
 		${PYTHON_PKGNAMEPREFIX}srsly>=2.4.3<3.0.0:devel/py-srsly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}thinc8>=8.2.2<8.3.0:devel/py-thinc8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.38.0<5.0.0:misc/py-tqdm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typer>=0.3.0<0.10.0:devel/py-typer@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typer>=0.3.0:devel/py-typer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wasabi>=0.9.1<1.2.0:textproc/py-wasabi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}weasel>=0.1.0<0.5.0:devel/py-weasel@${PY_FLAVOR}
 
