@@ -10,6 +10,7 @@ ports for ease of upgrading:
 	devel/rubygem-irb:		irb - Interactive Ruby
 	devel/rubygem-minitest:		minitest - Complete suite of testing facilities
 	devel/rubygem-power_assert:	power_assert - Power Assert for Ruby
+	devel/rubygem-racc:		racc - LALR(1) parser generator for Ruby
 	devel/rubygem-rake:		rake - Ruby Make
 	devel/rubygem-rbs:		rbs - Language for type signatures for Ruby and standard library definitions
 	devel/rubygem-rdoc:		rdoc - Ruby Documentation System
@@ -24,12 +25,6 @@ ports for ease of upgrading:
 	sysutils/rubygem-bundler:	bundler - Tool that manages gem dependencies for ruby applications
 	textproc/rubygem-rexml:		rexml - XML toolkit for Ruby
 	www/rubygem-rss:		rss - Family of libraries that support various formats of XML "feeds"
-
-And some of the standard libraries are provided as separate ports
-since they require extra dependencies:
-
-	databases/rubygem-dbm:	DBM module
-	databases/rubygem-gdbm:	GDBM module
 
 Install them as occasion demands.
 EOM
