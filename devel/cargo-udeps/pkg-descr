@@ -1,0 +1,2 @@
+cargo-udeps is a RUst cargo plugin allowing to find unused dependencies in
+Cargo.toml.
