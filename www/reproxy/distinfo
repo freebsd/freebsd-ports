@@ -1,5 +1,3 @@
-TIMESTAMP = 1679135608
-SHA256 (umputun-reproxy-v0.11.0_GH0.tar.gz) = fa8ae8eb2f92c6c49fa68dcce08cad50a37d8eb424a9765e0c43629ae111743b
-SIZE (umputun-reproxy-v0.11.0_GH0.tar.gz) = 2893531
-SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
-SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
+TIMESTAMP = 1707197375
+SHA256 (umputun-reproxy-v1.1.1_GH0.tar.gz) = 595af6971ea6be9f5f4a3e92c9c9ad9024c93c353456cd3d8d9efa9786679c1e
+SIZE (umputun-reproxy-v1.1.1_GH0.tar.gz) = 3166619
