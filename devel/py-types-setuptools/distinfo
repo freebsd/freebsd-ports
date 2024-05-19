@@ -1,3 +1,3 @@
-TIMESTAMP = 1701363726
-SHA256 (types-setuptools-69.0.0.0.tar.gz) = b0a06219f628c6527b2f8ce770a4f47550e00d3e8c3ad83e2dc31bc6e6eda95d
-SIZE (types-setuptools-69.0.0.0.tar.gz) = 33164
+TIMESTAMP = 1715842768
+SHA256 (types-setuptools-69.5.0.20240513.tar.gz) = 3a8ccea3e3f1f639856a1dd622be282f74e94e00fdc364630240f999cc9594fc
+SIZE (types-setuptools-69.5.0.20240513.tar.gz) = 37766
