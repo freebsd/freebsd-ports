@@ -26,6 +26,6 @@ USE_PYTHON=	pep517 concurrent autoplist pytest # tests can't find the module las
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-NOARCH=		yes
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
