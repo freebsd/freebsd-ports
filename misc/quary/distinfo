@@ -1,4 +1,4 @@
-TIMESTAMP = 1716049478
+TIMESTAMP = 1716103068
 SHA256 (rust/crates/addr2line-0.21.0.crate) = 8a30b2e23b9e17a9f90641c7ab1549cd9b44f296d3ccbf309d2863cfe398a0cb
 SIZE (rust/crates/addr2line-0.21.0.crate) = 40807
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -921,5 +921,5 @@ SHA256 (rust/crates/zerocopy-derive-0.7.32.crate) = 9ce1b18ccd8e73a9321186f97e46
 SIZE (rust/crates/zerocopy-derive-0.7.32.crate) = 37623
 SHA256 (rust/crates/zeroize-1.7.0.crate) = 525b4ec142c6b68a2d10f01f7bbf6755599ca3f81ea53b8431b7dd348f5fdb2d
 SIZE (rust/crates/zeroize-1.7.0.crate) = 19039
-SHA256 (quarylabs-quary-v0.1.1-3-g5fad18d_GH0.tar.gz) = 5407263a49e97eb12c6275554023832eb22b027f65565cbfa1ec2a560e824d70
-SIZE (quarylabs-quary-v0.1.1-3-g5fad18d_GH0.tar.gz) = 9553732
+SHA256 (quarylabs-quary-v0.1.2-g5fad18d_GH0.tar.gz) = b4ebdd1038c3ab33ecef7c443c3155241f329601f0efa3a8ccb2b6df3ac7ad1f
+SIZE (quarylabs-quary-v0.1.2-g5fad18d_GH0.tar.gz) = 9553659
