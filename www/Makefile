@@ -1967,6 +1967,7 @@
     SUBDIR += rubygem-bluecloth
     SUBDIR += rubygem-bootstrap-sass
     SUBDIR += rubygem-browser
+    SUBDIR += rubygem-browser5
     SUBDIR += rubygem-bullet_train
     SUBDIR += rubygem-bullet_train-fields
     SUBDIR += rubygem-bullet_train-has_uuid
