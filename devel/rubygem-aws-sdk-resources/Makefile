@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.191.0
+PORTVERSION=	3.192.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -320,6 +320,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-rolesanywhere>=1<2:devel/rubygem-aws-sdk-rolesanywhere \
 		rubygem-aws-sdk-route53>=1<2:devel/rubygem-aws-sdk-route53 \
 		rubygem-aws-sdk-route53domains>=1<2:devel/rubygem-aws-sdk-route53domains \
+		rubygem-aws-sdk-route53profiles>=1<2:devel/rubygem-aws-sdk-route53profiles \
 		rubygem-aws-sdk-route53recoverycluster>=1<2:devel/rubygem-aws-sdk-route53recoverycluster \
 		rubygem-aws-sdk-route53recoverycontrolconfig>=1<2:devel/rubygem-aws-sdk-route53recoverycontrolconfig \
 		rubygem-aws-sdk-route53recoveryreadiness>=1<2:devel/rubygem-aws-sdk-route53recoveryreadiness \
