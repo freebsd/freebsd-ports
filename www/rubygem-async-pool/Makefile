@@ -1,13 +1,15 @@
 PORTNAME=	async-pool
-PORTVERSION=	0.4.0
+PORTVERSION=	0.6.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Redis client library
-WWW=		https://github.com/socketry/async-pool
+WWW=		https://socketry.github.io/async-pool/ \
+		https://github.com/socketry/async-pool
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/license.md
 
 RUN_DEPENDS=	rubygem-async>=1.25:devel/rubygem-async
 
