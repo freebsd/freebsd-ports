@@ -239,6 +239,7 @@
     SUBDIR += libpri
     SUBDIR += librepo
     SUBDIR += libsolv
+    SUBDIR += libspnav
     SUBDIR += libsupertone
     SUBDIR += libsweep-lidar
     SUBDIR += libutf
