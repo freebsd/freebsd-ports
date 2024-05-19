@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -52,7 +52,7 @@ dependencies = [
+   "tomlkit>=0.11.1",
+   "userpath~=1.7",
+   "uv>=0.1.35",
+-  "virtualenv>=20.26.1",
++  "virtualenv>=20.26.0",
+   "zstandard<1",
+ ]
+ dynamic = ["version"]
