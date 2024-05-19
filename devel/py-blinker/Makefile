@@ -1,5 +1,5 @@
 PORTNAME=	blinker
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/pallets-eco/blinker/releases/download/${PORTVERSION}/
@@ -11,7 +11,7 @@ WWW=		https://pythonhosted.org/blinker/ \
 		https://github.com/pallets-eco/blinker
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.rst
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=0<4:devel/py-flit-core@${PY_FLAVOR}
 
