@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2024-05-10 15:15:21 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=64", "wheel", "pybind11", "Cython"]
++requires = ["setuptools>=61", "wheel", "pybind11", "Cython"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
