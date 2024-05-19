@@ -5,7 +5,8 @@ CATEGORIES=	devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP extension for expect library
-WWW=		https://pecl.php.net/package/expect
+WWW=		https://pecl.php.net/package/expect \
+		https://github.com/sibaz/pecl-expect
 
 LICENSE=	PHP301
 
