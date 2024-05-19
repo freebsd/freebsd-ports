@@ -1,6 +1,6 @@
---- pyproject.toml.orig	2024-02-26 16:12:32 UTC
+--- pyproject.toml.orig	2024-05-08 13:44:40 UTC
 +++ pyproject.toml
-@@ -41,7 +41,7 @@ installer = "^0.7.0"
+@@ -41,11 +41,11 @@ installer = "^0.7.0"
  fastjsonschema = "^2.18.0"
  importlib-metadata = { version = ">=4.4", python = "<3.10" }
  installer = "^0.7.0"
@@ -9,3 +9,8 @@
  # packaging uses calver, so version is unclamped
  packaging = ">=23.1"
  pexpect = "^4.7.0"
+-pkginfo = "^1.10"
++pkginfo = "^1.9.4"
+ platformdirs = ">=3.0.0,<5"
+ pyproject-hooks = "^1.0.0"
+ requests = "^2.26"
