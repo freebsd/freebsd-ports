@@ -23,7 +23,7 @@ PLIST_FILES=	sbin/mydumper sbin/myloader
 
 USE_GITHUB=	yes
 
-PORTSCOUT=	skipv:${DISTVERSION},v${DISTVERSION}
+PORTSCOUT=	ignore:1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mydumper ${WRKSRC}/myloader ${STAGEDIR}${PREFIX}/sbin/
