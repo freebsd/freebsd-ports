@@ -354,6 +354,7 @@
     SUBDIR += cargo-c
     SUBDIR += cargo-cache
     SUBDIR += cargo-depgraph
+    SUBDIR += cargo-edit
     SUBDIR += cargo-generate
     SUBDIR += cargo-hack
     SUBDIR += cargo-leptos

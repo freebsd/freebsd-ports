@@ -1,0 +1,276 @@
+PORTNAME=	cargo-edit
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.12.2
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Rust: Utility for managing cargo dependencies from the command line
+WWW=		http://killercup.github.io/cargo-edit/
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libssh2.so:security/libssh2
+
+USES=		cargo localbase:ldflags ssl
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	killercup
+
+CARGO_CRATES=	adler-1.0.2 \
+		aho-corasick-1.0.4 \
+		anstream-0.3.2 \
+		anstream-0.5.0 \
+		anstyle-1.0.3 \
+		anstyle-parse-0.2.1 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-1.0.2 \
+		anstyle-wincon-2.1.0 \
+		anyhow-1.0.75 \
+		assert_cmd-2.0.12 \
+		assert_fs-1.0.13 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		base16ct-0.2.0 \
+		base64-0.21.3 \
+		base64ct-1.6.0 \
+		bitflags-1.3.2 \
+		bitflags-2.4.0 \
+		block-buffer-0.10.4 \
+		bstr-1.6.0 \
+		bumpalo-3.13.0 \
+		byteorder-1.4.3 \
+		camino-1.1.6 \
+		cargo-platform-0.1.3 \
+		cargo_metadata-0.15.4 \
+		cc-1.0.83 \
+		cfg-if-1.0.0 \
+		clap-4.4.2 \
+		clap-cargo-0.12.0 \
+		clap_builder-4.4.2 \
+		clap_derive-4.4.2 \
+		clap_lex-0.5.1 \
+		colorchoice-1.0.0 \
+		concolor-control-0.0.7 \
+		concolor-query-0.0.4 \
+		const-oid-0.9.5 \
+		content_inspector-0.2.4 \
+		core-foundation-0.9.3 \
+		core-foundation-sys-0.8.4 \
+		cpufeatures-0.2.9 \
+		crates-index-0.19.13 \
+		crc32fast-1.3.2 \
+		crossbeam-channel-0.5.8 \
+		crossbeam-deque-0.8.3 \
+		crossbeam-epoch-0.9.15 \
+		crossbeam-utils-0.8.16 \
+		crypto-bigint-0.5.2 \
+		crypto-common-0.1.6 \
+		ct-codecs-1.1.1 \
+		curl-0.4.44 \
+		curl-sys-0.4.65+curl-8.2.1 \
+		der-0.7.8 \
+		deranged-0.3.8 \
+		difflib-0.4.0 \
+		digest-0.10.7 \
+		doc-comment-0.3.3 \
+		dunce-1.0.4 \
+		ecdsa-0.16.8 \
+		ed25519-compact-2.0.4 \
+		either-1.9.0 \
+		elliptic-curve-0.13.5 \
+		env_proxy-0.4.1 \
+		equivalent-1.0.1 \
+		errno-0.3.2 \
+		errno-dragonfly-0.1.2 \
+		fastrand-2.0.0 \
+		ff-0.13.0 \
+		fiat-crypto-0.1.20 \
+		filetime-0.2.22 \
+		flate2-1.0.27 \
+		float-cmp-0.9.0 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.2.0 \
+		generic-array-0.14.7 \
+		getrandom-0.2.10 \
+		git2-0.17.2 \
+		glob-0.3.1 \
+		globset-0.4.13 \
+		globwalk-0.8.1 \
+		group-0.13.0 \
+		hashbrown-0.12.3 \
+		hashbrown-0.14.0 \
+		heck-0.4.1 \
+		hermit-abi-0.1.19 \
+		hermit-abi-0.3.2 \
+		hex-0.4.3 \
+		hkdf-0.12.3 \
+		hmac-0.12.1 \
+		home-0.5.5 \
+		humantime-2.1.0 \
+		humantime-serde-1.1.1 \
+		idna-0.4.0 \
+		ignore-0.4.20 \
+		indexmap-1.9.3 \
+		indexmap-2.0.0 \
+		io-lifetimes-1.0.11 \
+		is-terminal-0.4.9 \
+		itertools-0.10.5 \
+		itoa-1.0.9 \
+		jobserver-0.1.26 \
+		js-sys-0.3.64 \
+		lazy_static-1.4.0 \
+		libc-0.2.147 \
+		libgit2-sys-0.15.2+1.6.4 \
+		libssh2-sys-0.3.0 \
+		libz-sys-1.1.12 \
+		linux-raw-sys-0.3.8 \
+		linux-raw-sys-0.4.5 \
+		log-0.4.20 \
+		memchr-2.5.0 \
+		memoffset-0.9.0 \
+		miniz_oxide-0.7.1 \
+		miow-0.6.0 \
+		native-tls-0.2.11 \
+		normalize-line-endings-0.3.0 \
+		num-traits-0.2.16 \
+		num_cpus-1.16.0 \
+		once_cell-1.18.0 \
+		openssl-0.10.56 \
+		openssl-macros-0.1.1 \
+		openssl-probe-0.1.5 \
+		openssl-src-111.27.0+1.1.1v \
+		openssl-sys-0.9.91 \
+		orion-0.17.5 \
+		os_pipe-1.1.4 \
+		p384-0.13.0 \
+		pasetors-0.6.7 \
+		pathdiff-0.2.1 \
+		pem-rfc7468-0.7.0 \
+		percent-encoding-2.3.0 \
+		pin-project-lite-0.2.13 \
+		pkcs8-0.10.2 \
+		pkg-config-0.3.27 \
+		predicates-3.0.3 \
+		predicates-core-1.0.6 \
+		predicates-tree-1.0.9 \
+		primeorder-0.13.2 \
+		proc-macro2-1.0.66 \
+		quote-1.0.33 \
+		rand_core-0.6.4 \
+		rayon-1.7.0 \
+		rayon-core-1.11.0 \
+		redox_syscall-0.3.5 \
+		regex-1.9.4 \
+		regex-automata-0.3.7 \
+		regex-syntax-0.7.5 \
+		rfc6979-0.4.0 \
+		ring-0.16.20 \
+		rustc-hash-1.1.0 \
+		rustix-0.37.23 \
+		rustix-0.38.9 \
+		rustls-0.21.6 \
+		rustls-webpki-0.100.2 \
+		rustls-webpki-0.101.4 \
+		ryu-1.0.15 \
+		same-file-1.0.6 \
+		schannel-0.1.22 \
+		scopeguard-1.2.0 \
+		sct-0.7.0 \
+		sec1-0.7.3 \
+		security-framework-2.9.2 \
+		security-framework-sys-2.9.1 \
+		semver-1.0.18 \
+		serde-1.0.188 \
+		serde_derive-1.0.188 \
+		serde_json-1.0.105 \
+		serde_spanned-0.6.3 \
+		sha2-0.10.7 \
+		shell-escape-0.1.5 \
+		shlex-1.1.0 \
+		signature-2.1.0 \
+		similar-2.2.1 \
+		smol_str-0.2.0 \
+		snapbox-0.4.12 \
+		snapbox-macros-0.3.5 \
+		socket2-0.4.9 \
+		socks-0.3.4 \
+		spin-0.5.2 \
+		spki-0.7.2 \
+		strsim-0.10.0 \
+		subprocess-0.2.9 \
+		subtle-2.5.0 \
+		syn-2.0.29 \
+		tar-0.4.40 \
+		tempfile-3.8.0 \
+		termcolor-1.2.0 \
+		terminal_size-0.2.6 \
+		termtree-0.4.1 \
+		thiserror-1.0.47 \
+		thiserror-impl-1.0.47 \
+		thread_local-1.1.7 \
+		time-0.3.28 \
+		time-core-0.1.1 \
+		time-macros-0.2.14 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.1 \
+		toml-0.7.6 \
+		toml_datetime-0.6.3 \
+		toml_edit-0.19.14 \
+		tracing-0.1.37 \
+		tracing-attributes-0.1.26 \
+		tracing-core-0.1.31 \
+		trycmd-0.14.17 \
+		typenum-1.16.0 \
+		unicode-bidi-0.3.13 \
+		unicode-ident-1.0.11 \
+		unicode-normalization-0.1.22 \
+		untrusted-0.7.1 \
+		ureq-2.7.1 \
+		url-2.4.0 \
+		utf8parse-0.2.1 \
+		vcpkg-0.2.15 \
+		version_check-0.9.4 \
+		wait-timeout-0.2.0 \
+		walkdir-2.3.3 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.87 \
+		wasm-bindgen-backend-0.2.87 \
+		wasm-bindgen-macro-0.2.87 \
+		wasm-bindgen-macro-support-0.2.87 \
+		wasm-bindgen-shared-0.2.87 \
+		web-sys-0.3.64 \
+		webpki-roots-0.23.1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.48.5 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_msvc-0.48.5 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_msvc-0.48.5 \
+		winnow-0.5.15 \
+		zeroize-1.6.0 \
+		cargo-test-macro,cargo-test-support,cargo-util,crates-io@git+https://github.com/rust-lang/cargo\#2a6f7f6efe118ed9b82dfff4591fac70b4bca790
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
+
+PLIST_FILES=	bin/cargo-add \
+		bin/cargo-rm \
+		bin/cargo-set-version \
+		bin/cargo-upgrade
+
+post-install:
+.for exe in ${PLIST_FILES}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${exe}
+.endfor
+
+.include <bsd.port.mk>
