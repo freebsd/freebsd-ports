@@ -1,0 +1,2 @@
+IO::Endpoint provides a separation of concerns interface for IO endpoints. This
+allows you to write code which is agnostic to the underlying IO implementation.
