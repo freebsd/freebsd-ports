@@ -1948,6 +1948,7 @@
     SUBDIR += p5-CPAN-Recent-Uploads
     SUBDIR += p5-CPAN-Reporter
     SUBDIR += p5-CPAN-Reporter-Smoker
+    SUBDIR += p5-CPAN-Requirements-Dynamic
     SUBDIR += p5-CPAN-SQLite
     SUBDIR += p5-CPAN-Site
     SUBDIR += p5-CPAN-Testers-Common-Client
