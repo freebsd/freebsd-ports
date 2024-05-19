@@ -1,5 +1,5 @@
 PORTNAME=	rubocop-ast
-PORTVERSION=	1.31.2
+PORTVERSION=	1.31.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/rubocop/rubocop-ast
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-parser>=3.3.0.4:devel/rubygem-parser
+RUN_DEPENDS=	rubygem-parser>=3.3.1.0:devel/rubygem-parser
 
 USES=		gem
 
