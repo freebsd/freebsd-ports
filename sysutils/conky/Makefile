@@ -1,5 +1,5 @@
 PORTNAME=	conky
-PORTVERSION=	1.21.0
+PORTVERSION=	1.21.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -28,8 +28,7 @@ CMAKE_ARGS=	-DAPP_SED=${LOCALBASE}/bin/gsed \
 CONFLICTS?=	conky-awesome
 
 SLAVEDIRS=	sysutils/conky-awesome
-PLIST_FILES=	bin/conky \
-		lib/libVc.a
+PLIST_FILES=	bin/conky
 PORTDOCS=	config_settings.yaml lua.yaml variables.yaml
 PORTEXAMPLES=	conky.conf conky_no_x11.conf convert.lua
 
@@ -163,9 +162,5 @@ post-install-DOCS-on:
 .for FILE in ${PORTDOCS}
 	${INSTALL_MAN} ${WRKSRC}/doc/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-
-post-install:
-	${RM} -rf ${STAGEDIR}${PREFIX}/include
-	${RM} -rf ${STAGEDIR}${PREFIX}/lib/cmake
 
 .include <bsd.port.mk>
