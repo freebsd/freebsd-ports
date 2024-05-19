@@ -1,6 +1,14 @@
---- core.pro.orig	2022-03-03 00:56:25 UTC
+--- core.pro.orig	2021-12-26 02:33:45 UTC
 +++ core.pro
-@@ -10,8 +10,8 @@ SUBDIRS+= lumina-desktop \
+@@ -4,14 +4,16 @@ include("../OS-detect.pri")
+ TEMPLATE = subdirs
+ CONFIG += recursive
+ 
++# lumina-checkpass is needed for 1.6.2, since code replacing
++# xscreensaver is enabled
+ SUBDIRS+= lumina-desktop \
+ 	lumina-session \
+ 	lumina-open \
  	lumina-info \
  	lumina-pingcursor \
  	$${PWD}/../../icon-theme \
