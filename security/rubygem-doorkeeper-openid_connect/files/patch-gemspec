@@ -1,0 +1,13 @@
+Obtained from:	https://github.com/doorkeeper-gem/doorkeeper-openid_connect/commit/f9a6660bdcad5550c1c965b7f1a071123e98fb52
+
+--- doorkeeper-openid_connect.gemspec.orig	2024-05-18 23:22:47 UTC
++++ doorkeeper-openid_connect.gemspec
+@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<doorkeeper>.freeze, [">= 5.5".freeze, "< 5.7".freeze])
++  s.add_runtime_dependency(%q<doorkeeper>.freeze, [">= 5.5".freeze, "< 5.8".freeze])
+   s.add_runtime_dependency(%q<jwt>.freeze, [">= 2.5".freeze])
+   s.add_development_dependency(%q<conventional-changelog>.freeze, ["~> 1.2".freeze])
+   s.add_development_dependency(%q<factory_bot>.freeze, [">= 0".freeze])
