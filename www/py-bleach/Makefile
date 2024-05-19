@@ -31,6 +31,6 @@ OPTIONS_DEFINE=	CSS
 OPTIONS_DEFAULT=CSS
 CSS_DESC=	CSS support
 
-CSS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tinycss2>=1.1.0<1.3:textproc/py-tinycss2@${PY_FLAVOR}
+CSS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tinycss2>=1.1.0<1.4:textproc/py-tinycss2@${PY_FLAVOR}
 
 .include <bsd.port.mk>
