@@ -1,5 +1,5 @@
-TIMESTAMP = 1710712340
-SHA256 (go/textproc_minify/minify-v2.20.19/v2.20.19.mod) = 33ad26e466a28c5e51943ae288a630cf3f07717d86ca5676cb34dc40c7e01c63
-SIZE (go/textproc_minify/minify-v2.20.19/v2.20.19.mod) = 476
-SHA256 (go/textproc_minify/minify-v2.20.19/v2.20.19.zip) = 5ae0cd494798e8b0625d210864281076bb3cd6c026409518f711ad7c80c3b3e5
-SIZE (go/textproc_minify/minify-v2.20.19/v2.20.19.zip) = 7117609
+TIMESTAMP = 1715842550
+SHA256 (go/textproc_minify/minify-v2.20.21/v2.20.21.mod) = 1dd51c6ecb299065485bbd27b55ebba79d4d31a023c3cc03dafd1c14a6252345
+SIZE (go/textproc_minify/minify-v2.20.21/v2.20.21.mod) = 476
+SHA256 (go/textproc_minify/minify-v2.20.21/v2.20.21.zip) = 1cb7c6713bebe348a96e556ac40738399ca35dc23707a08942a18469b5bfa0a8
+SIZE (go/textproc_minify/minify-v2.20.21/v2.20.21.zip) = 7819302
