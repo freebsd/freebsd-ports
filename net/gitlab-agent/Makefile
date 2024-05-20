@@ -1,7 +1,6 @@
 PORTNAME=	gitlab-agent
-PORTVERSION=	16.11.2
+PORTVERSION=	17.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -15,7 +14,7 @@ BUILD_DEPENDS=	git>=0:devel/git \
 		golangci-lint>=0:devel/golangci-lint
 
 USES=		go:modules,1.22
-GO_MODULE=	gitlab.com/gitlab-org/cluster-integration/gitlab-agent/v16
+GO_MODULE=	gitlab.com/gitlab-org/cluster-integration/gitlab-agent/v17
 
 _BUILD_DATE=	$$(date -u "+%Y-%m-%d-%H%M UTC")
 GO_TARGET=     ./cmd/kas

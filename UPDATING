@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240521:
+  AFFECTS: www/gitlab
+  AUTHOR: mfechner@FreeBSD.org
+
+  Make sure you upgrade first to 16.11.x before you upgrade to the today
+  released version 17.0.0.
+
+  For more details see:
+  https://gitlab.fechner.net/mfechner/Gitlab-docu/-/blob/master/update/16.11-17.0-freebsd.md
+
 20240517:
   AFFECTS: comms/tio
   AUTHOR: diizzy@FreeBSD.org
