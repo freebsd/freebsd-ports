@@ -1,6 +1,6 @@
 PORTNAME=	nbclassic
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyter/nbclassic/releases/download/v${PORTVERSION}/

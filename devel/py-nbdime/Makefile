@@ -1,5 +1,6 @@
 PORTNAME=	nbdime
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyter/nbdime/releases/download/${PORTVERSION}/

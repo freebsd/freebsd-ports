@@ -1,5 +1,6 @@
 PORTNAME=		sogo
 PORTVERSION=		5.10.0
+PORTREVISION=	1
 CATEGORIES=		www gnustep
 MASTER_SITES=		https://packages.sogo.nu/sources/
 DISTNAME=		SOGo-${PORTVERSION}

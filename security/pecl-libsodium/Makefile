@@ -1,5 +1,6 @@
 PORTNAME=	libsodium
 PORTVERSION=	2.0.23
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	sunpoet@FreeBSD.org

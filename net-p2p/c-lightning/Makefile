@@ -5,6 +5,7 @@ DISTVERSIONPREFIX=	v
 # and uncomment the following two lines (use for example -git-HEAD or -git-f8d8348c)
 #PORTVERSION=	0
 #PKGNAMESUFFIX=	-git-f8d8348c
+PORTREVISION=	1
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	vd@FreeBSD.org
