@@ -1,6 +1,6 @@
---- src/juce_plugin/CMakeLists.txt.orig	2022-07-28 08:24:44 UTC
+--- src/juce_plugin/CMakeLists.txt.orig	2024-05-18 14:43:53 UTC
 +++ src/juce_plugin/CMakeLists.txt
-@@ -87,14 +89,14 @@ function(compile_plugins formats suffix default_channe
+@@ -88,14 +88,14 @@ function(compile_plugins formats suffix default_channe
      # JUCE has a terrible idea of installing plugin during the BUILD process instead of during the INSTALL,
      # also JUCE wants to install its headers which we don't want at all.
      # So it's easier to handle it ourselves.
@@ -19,10 +19,3 @@
              endif ()
          endforeach ()
      endif ()
-@@ -135,4 +137,4 @@ endif ()
- 
- if (FORMATS)
-     compile_plugins("${FORMATS}" "" 1)
--endif ()
-\ No newline at end of file
-+endif ()
