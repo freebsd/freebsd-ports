@@ -17,12 +17,13 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=0<2:devel/rubygem-concurrent-ruby \
 		rubygem-redis-client>=0.14.0:databases/rubygem-redis-client
 
 USES=		cpe gem
+CPE_VENDOR=	contribsys
 
 NO_ARCH=	yes
+PORTSCOUT=	limit:^7\.1\.
 
 PLIST_FILES=	bin/sidekiq \
 		bin/sidekiqmon
 
-CPE_VENDOR=	contribsys
 
 .include <bsd.port.mk>
