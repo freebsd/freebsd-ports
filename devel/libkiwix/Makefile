@@ -1,6 +1,5 @@
 PORTNAME=	libkiwix
-DISTVERSION=	12.1.0
-PORTREVISION=	2
+DISTVERSION=	13.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	olce.freebsd.ports@certner.fr
@@ -21,7 +20,7 @@ LIB_DEPENDS=	libzim.so:devel/libzim \
 		libcurl.so:ftp/curl \
 		libmicrohttpd.so:www/libmicrohttpd
 
-USES=		compiler:c++11-lang meson pkgconfig python shebangfix
+USES=		compiler:c++17-lang meson pkgconfig python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	kiwix
 GH_TUPLE=	kiwix:${PORTNAME}:${PORTVERSION}:DEFAULT \
