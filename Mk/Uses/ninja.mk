@@ -2,18 +2,19 @@
 #
 # Feature:		ninja
 # Usage:		USES=ninja
-# Valid ARGS:		build, make (default), run
+# Valid ARGS:		build, make (default), run, samurai
 #
 # build			add a build dependency on ninja
 # make			use ninja for the build instead of make, implies "build"
 # run			add a run dependency on ninja
+# samurai		use samurai irregardless of NINJA_DEFAULT (implies make)
 #
 # MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_NINJA_MK)
 _INCLUDE_USES_NINJA_MK=	yes
 
-_valid_ARGS=	build make run
+_valid_ARGS=	build make run samurai
 
 .  for _arg in ${ninja_ARGS}
 .    if empty(_valid_ARGS:M${_arg})
@@ -23,16 +24,19 @@ IGNORE=	'USES+= ninja:${ninja_ARGS}' usage: argument [${_arg}] is not recognized
 
 .  if empty(ninja_ARGS)
 ninja_ARGS+=	make
+.  elif !empty(ninja_ARGS:Msamurai)
+_SAMURAI_FROM_ARGS=     yes
+ninja_ARGS+=	make
 .  endif
 
 .  if ${ninja_ARGS:Mmake}
 ninja_ARGS+=	build
 .  endif
 
-.  if ${NINJA_DEFAULT} == ninja
+.  if ${NINJA_DEFAULT} == ninja && !defined(_SAMURAI_FROM_ARGS)
 NINJA_CMD=	ninja
 _NINJA_PORT=	devel/ninja
-.  elif ${NINJA_DEFAULT} == samurai
+.  elif ${NINJA_DEFAULT} == samurai || defined(_SAMURAI_FROM_ARGS)
 NINJA_CMD=	samu
 _NINJA_PORT=	devel/samurai
 MAKE_ENV+=	SAMUFLAGS="-v -j${MAKE_JOBS_NUMBER}"
@@ -56,7 +60,7 @@ MAKE_ENV+=	NINJA_STATUS="[%p %s/%t] "
 .  endif
 
 .  if ${ninja_ARGS:Mmake}
-.    if ${NINJA_DEFAULT} == ninja
+.    if ${NINJA_DEFAULT} == ninja && !defined(_SAMURAI_FROM_ARGS)
 # samu does not support GNU-style args, so we cannot just append
 # -v last.  samu gets this via SAMUFLAGS above but ninja does not
 # support an equivalent environment variable.
