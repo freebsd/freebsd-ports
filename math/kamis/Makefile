@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake
 USE_LDCONFIG=	yes
 
-#.if !exists(/usr/include/omp.h)
-#USES+=		compiler:gcc-c++11-lib
-#.endif
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	KarlsruheMIS
