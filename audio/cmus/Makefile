@@ -150,7 +150,8 @@ post-configure:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cmus*
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/cmus/[io]p/*.so
+	@${FIND} ${STAGEDIR}${PREFIX}/lib -path '${STAGEDIR}${PREFIX}/lib/cmus/*' \
+		-name '*.so*' -exec ${STRIP_CMD} {} +
 # Install bash and zsh completion files
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/contrib/cmus.bash-completion \
