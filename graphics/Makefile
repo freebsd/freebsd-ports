@@ -620,6 +620,7 @@
     SUBDIR += ocaml-lablgl
     SUBDIR += ocrad
     SUBDIR += ocrs
+    SUBDIR += oculante
     SUBDIR += ogre3d
     SUBDIR += ogre3d19
     SUBDIR += oidn
