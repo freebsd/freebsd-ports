@@ -1,5 +1,5 @@
 PORTNAME=	sentry-ruby
-PORTVERSION=	5.10.0
+PORTVERSION=	5.17.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/getsentry/sentry-ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0.2<2:devel/rubygem-concurrent-ruby
+RUN_DEPENDS=	rubygem-bigdecimal>0:math/rubygem-bigdecimal \
+		rubygem-concurrent-ruby>=1.0.2<2:devel/rubygem-concurrent-ruby
 
 USES=		gem
 
