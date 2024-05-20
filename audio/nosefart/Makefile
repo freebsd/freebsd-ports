@@ -16,10 +16,12 @@ MAKE_ENV=	INSTALL="${INSTALL}" COPY="${COPY}" STRIP="${STRIP}" \
 		BINGRP="${BINGRP}" BINMODE="${BINMODE}" BINOWN="${BINOWN}"
 CPE_VENDOR=	nosefart_project
 
-PLIST_FILES=	bin/nosefart
+EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/nsfobj \
+			--exclude *.bat \
+			--exclude *.exe \
+			--no-same-owner --no-same-permissions
 
-pre-build:
-	@${RM} -r ${BUILD_WRKSRC}/nsfobj
+PLIST_FILES=	bin/nosefart
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nsfobj/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
