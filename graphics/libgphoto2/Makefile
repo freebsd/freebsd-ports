@@ -1,6 +1,5 @@
 PORTNAME=	libgphoto2
-PORTVERSION=	2.5.26
-PORTREVISION=	3
+PORTVERSION=	2.5.31
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 
@@ -13,19 +12,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=		compiler:c11 gmake gnome iconv libtool localbase pathfix \
-		pkgconfig tar:bzip2
-USE_CSTD=	gnu99
+USES=		gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	libxml2
-
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ENV=	LTDLINCL="-I${LOCALBASE}/include" \
-		LIBLTDL="-L${LOCALBASE}/lib -lltdl" \
-		PATH="${PATH:C,${HOME}/bin,,}" \
-		ac_cv_path_DOT=false \
-		ac_cv_path_DOXYGEN=false \
-		udevscriptdir=${WRKDIR}
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 PATHFIX_MAKEFILEIN=	Makefile.in \
@@ -33,7 +22,7 @@ PATHFIX_MAKEFILEIN=	Makefile.in \
 			libgphoto2_port/Makefile.in \
 			libgphoto2_port/configure
 
-PLIST_SUB=	VERSION="${PORTVERSION}" VERSION_PORT=0.12.0
+PLIST_SUB=	VERSION=${PORTVERSION} VERSION_PORT=0.12.2
 
 OPTIONS_DEFINE=	CURL DOCS GD JPEG LIBEXIF NLS
 OPTIONS_DEFAULT=	CURL GD JPEG LIBEXIF
@@ -49,13 +38,13 @@ GD_CONFIGURE_OFF=	--with-gdlib=no
 
 JPEG_DESC=	JPEG image mangling support
 JPEG_USES=		jpeg
-JPEG_CONFIGURE_WITH=	jpeg
+JPEG_CONFIGURE_OFF=	--without-jpeg
 
 LIBEXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
 LIBEXIF_CONFIGURE_OFF=	--with-libexif=no
 
 NLS_USES=		gettext
-NLS_CONFIGURE_ENABLE=	nls
+NLS_CONFIGURE_OFF=	--disable-nls
 
 post-patch:
 .for i in configure libgphoto2_port/configure
@@ -67,8 +56,5 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^doc_DATA/s|COPYING||' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e \
-		'/^SUBDIRS/s|linux-hotplug||' \
-		${WRKSRC}/packaging/Makefile.in
 
 .include <bsd.port.mk>
