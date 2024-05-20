@@ -1,5 +1,5 @@
 PORTNAME=	enumerable-statistics
-PORTVERSION=	2.0.7
+PORTVERSION=	2.0.8
 CATEGORIES=	math rubygems
 MASTER_SITES=	RG
 
