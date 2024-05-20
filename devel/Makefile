@@ -353,6 +353,7 @@
     SUBDIR += cargo-bloat
     SUBDIR += cargo-c
     SUBDIR += cargo-cache
+    SUBDIR += cargo-deny
     SUBDIR += cargo-depgraph
     SUBDIR += cargo-edit
     SUBDIR += cargo-generate
