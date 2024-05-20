@@ -18,8 +18,8 @@
 	</body>
     </description>
     <references>
-      <cvename>2024-3157</cvename>
-      <cvename>2024-3516</cvename>
+      <cvename>CVE-2024-3157</cvename>
+      <cvename>CVE-2024-3516</cvename>
       <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=87-based</url>
     </references>
     <dates>
