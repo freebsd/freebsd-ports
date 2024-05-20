@@ -457,10 +457,10 @@ index b5d102b..a6dab35 100644
  #define BRANCH_AND_LINK_TO_REG blr
  #define BRANCH_TO_REG br
 diff --git src/aarch64/sysv.S src/aarch64/sysv.S
-index eeaf3f8..e22d040 100644
+index eeaf3f8..706cdeb 100644
 --- src/aarch64/sysv.S
 +++ src/aarch64/sysv.S
-@@ -46,40 +46,60 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+@@ -46,40 +46,71 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
  # define BE(X)	0
  #endif
  
@@ -490,6 +490,17 @@ index eeaf3f8..e22d040 100644
  #define PTR_SIZE	8
 +#endif
 +#define GP_REG_SIZE	8
++#endif
++
++#ifdef __ARM_MORELLO_PURECAP_BENCHMARK_ABI
++#define BR_PTR_REG(n)	INT_REG(n)
++#define RETURN							\
++	and	x30, x30, #~1;					\
++	ret	x30
++#else
++#define BR_PTR_REG(n)	PTR_REG(n)
++#define RETURN							\
++	ret
  #endif
  
  	.text
@@ -525,12 +536,21 @@ index eeaf3f8..e22d040 100644
  
  	/* Use a stack frame allocated by our caller.  */
  #if defined(HAVE_PTRAUTH) && defined(__APPLE__)
-@@ -87,25 +107,29 @@ CNAME(ffi_call_SYSV):
+@@ -87,25 +118,29 @@ CNAME(ffi_call_SYSV):
  	 * used to sign the lr.  In order to allow unwinding through this
  	 * function it is necessary to point the cfa at the signing register.
  	 */
 -	cfi_def_cfa(x1, 0);
 +	cfi_def_cfa(GP_REG(1), 0);
++#else
++	cfi_def_cfa(GP_REG(1), CALL_FRAME_SIZE);
++#endif
++	stp	GP_REG(29), GP_REG(30), [PTR_REG(1)]
++	mov	GP_REG(9), sp
++	str	GP_REG(9), [PTR_REG(1), #4*GP_REG_SIZE]
++	mov	GP_REG(29), GP_REG(1)
++#ifdef __CHERI_PURE_CAPABILITY__
++	scvalue	csp, csp, x0	/* restore stack bounds on context */
  #else
 -	cfi_def_cfa(x1, 40);
 -#endif
@@ -545,15 +565,6 @@ index eeaf3f8..e22d040 100644
 -
 -	mov	x9, x2			/* save fn */
 -	mov	x8, x3			/* install structure return */
-+	cfi_def_cfa(GP_REG(1), CALL_FRAME_SIZE);
-+#endif
-+	stp	GP_REG(29), GP_REG(30), [PTR_REG(1)]
-+	mov	GP_REG(9), sp
-+	str	GP_REG(9), [PTR_REG(1), #4*GP_REG_SIZE]
-+	mov	GP_REG(29), GP_REG(1)
-+#ifdef __CHERI_PURE_CAPABILITY__
-+	scvalue	csp, csp, x0	/* restore stack bounds on context */
-+#else
 +	mov	sp, GP_REG(0)
 +#endif
 +	cfi_def_cfa_register(GP_REG(29))
@@ -571,7 +582,7 @@ index eeaf3f8..e22d040 100644
  
  	/* Load the vector argument passing registers, if necessary.  */
  	tbz	w4, #AARCH64_FLAG_ARG_V_BIT, 1f
-@@ -116,30 +140,37 @@ CNAME(ffi_call_SYSV):
+@@ -116,30 +151,32 @@ CNAME(ffi_call_SYSV):
  1:
  	/* Load the core argument passing registers, including
  	   the structure return pointer.  */
@@ -588,7 +599,7 @@ index eeaf3f8..e22d040 100644
  	add	sp, sp, #CALL_CONTEXT_SIZE
  
 -	BRANCH_AND_LINK_TO_REG     x9			/* call fn */
-+	BRANCH_AND_LINK_TO_REG     PTR_REG(9)			/* call fn */
++	BRANCH_AND_LINK_TO_REG     BR_PTR_REG(9)			/* call fn */
  
 -	ldp	x3, x4, [x29, #16]	/* reload rvalue and flags */
 +	ldp	GP_REG(3), GP_REG(4), [PTR_REG(29), #2*GP_REG_SIZE]	/* reload rvalue and flags */
@@ -608,21 +619,16 @@ index eeaf3f8..e22d040 100644
  
  	/* Save the return value as directed.  */
 -	adr	x5, 0f
-+#ifdef __CHERI_PURE_CAPABILITY__
-+	/* We have to ensure that the LSB remains set to stay in C64 mode. */
-+	adr	GP_REG(5), 0f+1
-+#else
 +	adr	GP_REG(5), 0f
-+#endif
  	and	w4, w4, #AARCH64_RET_MASK
 -	add	x5, x5, x4, lsl #3
 -	br	x5
 +	add	PTR_REG(5), PTR_REG(5), INT_REG(4), lsl #3
-+	br	PTR_REG(5)
++	br	INT_REG(5)
  
  	/* Note that each table entry is 2 insns, and thus 8 bytes.
  	   For integer data, note that we're storing into ffi_arg
-@@ -148,11 +179,11 @@ CNAME(ffi_call_SYSV):
+@@ -148,11 +185,11 @@ CNAME(ffi_call_SYSV):
  	.align	4
  0:	b 99f				/* VOID */
  	nop
@@ -637,7 +643,7 @@ index eeaf3f8..e22d040 100644
  	b 99f
  4:	brk	#1000			/* UNUSED */
  	b 99f
-@@ -162,66 +193,67 @@ CNAME(ffi_call_SYSV):
+@@ -162,66 +199,63 @@ CNAME(ffi_call_SYSV):
  	b 99f
  7:	brk	#1000			/* UNUSED */
  	b 99f
@@ -711,12 +717,9 @@ index eeaf3f8..e22d040 100644
  	/* Return now that result has been populated. */
  99:
 -	AUTH_LR_WITH_REG(x2)
+-	ret
 +	AUTH_LR_WITH_REG(PTR_REG(2))
-+#ifdef __CHERI_PURE_CAPABILITY__
-+	ret c30
-+#else
- 	ret
-+#endif
++	RETURN
  
  	cfi_endproc
  
@@ -727,7 +730,7 @@ index eeaf3f8..e22d040 100644
  	.size CNAME(ffi_call_SYSV), .-CNAME(ffi_call_SYSV)
  #endif
  
-@@ -244,13 +276,18 @@ CNAME(ffi_call_SYSV):
+@@ -244,13 +278,18 @@ CNAME(ffi_call_SYSV):
  #define ffi_closure_SYSV_FS (8*2 + CALL_CONTEXT_SIZE + 64)
  
  	.align 4
@@ -749,7 +752,7 @@ index eeaf3f8..e22d040 100644
  
  	/* Save the argument passing vector registers.  */
  	stp     q0, q1, [sp, #16 + 0]
-@@ -260,58 +297,63 @@ CNAME(ffi_closure_SYSV_V):
+@@ -260,58 +299,63 @@ CNAME(ffi_closure_SYSV_V):
  	b	0f
  	cfi_endproc
  
@@ -820,7 +823,7 @@ index eeaf3f8..e22d040 100644
 -	br	x1
 +	add	PTR_REG(1), PTR_REG(1), INT_REG(0), lsl #3
 +	add	PTR_REG(3), sp, #16+CALL_CONTEXT_SIZE
-+	br	PTR_REG(1)
++	br	BR_PTR_REG(1)
  
  	/* Note that each table entry is 2 insns, and thus 8 bytes.  */
  	.align	4
@@ -837,7 +840,7 @@ index eeaf3f8..e22d040 100644
  	nop
  4:	brk	#1000			/* UNUSED */
  	nop
-@@ -321,93 +363,94 @@ CNAME(ffi_closure_SYSV):
+@@ -321,93 +365,94 @@ CNAME(ffi_closure_SYSV):
  	nop
  7:	brk	#1000			/* UNUSED */
  	nop
@@ -964,7 +967,7 @@ index eeaf3f8..e22d040 100644
  	.size	CNAME(ffi_closure_SYSV_alt), . - CNAME(ffi_closure_SYSV_alt)
  #endif
  
-@@ -431,22 +474,24 @@ CNAME(ffi_closure_SYSV_alt):
+@@ -431,22 +476,24 @@ CNAME(ffi_closure_SYSV_alt):
   * - restore the stack pointer to what it was when the trampoline was invoked.
   */
  	.align	AARCH64_TRAMP_MAP_SHIFT
@@ -989,7 +992,7 @@ index eeaf3f8..e22d040 100644
 +	str	GP_REG(17), [sp, #GP_REG_SIZE]		/* Save data on stack */
 +	adr	GP_REG(17), #16372		/* Get code address */
 +	ldr	GP_REG(17), [PTR_REG(17)]		/* Load code address into x17 */
-+	br	PTR_REG(17)			/* Jump to code */
++	br	BR_PTR_REG(17)			/* Jump to code */
  	.endr
  
 -	.globl CNAME(trampoline_code_table)
@@ -999,7 +1002,7 @@ index eeaf3f8..e22d040 100644
  	.size	CNAME(trampoline_code_table), . - CNAME(trampoline_code_table)
  #endif
  	.align	AARCH64_TRAMP_MAP_SHIFT
-@@ -457,18 +502,20 @@ CNAME(trampoline_code_table):
+@@ -457,18 +504,20 @@ CNAME(trampoline_code_table):
  #ifdef __MACH__
  #include <mach/machine/vm_param.h>
      .align PAGE_MAX_SHIFT
@@ -1015,7 +1018,7 @@ index eeaf3f8..e22d040 100644
 -    br x16
 +    adr PTR_REG(16), -PAGE_MAX_SIZE
 +    ldp GP_REG(17), GP_REG(16), [PTR_REG(16)]
-+    br PTR_REG(16)
++    br BR_PTR_REG(16)
  	nop		/* each entry in the trampoline config page is 2*sizeof(void*) so the trampoline itself cannot be smaller than 16 bytes */
      .endr
  
@@ -1026,7 +1029,7 @@ index eeaf3f8..e22d040 100644
      	.size	CNAME(ffi_closure_trampoline_table_page), . - CNAME(ffi_closure_trampoline_table_page)
      #endif
  #endif
-@@ -477,12 +524,17 @@ CNAME(ffi_closure_trampoline_table_page):
+@@ -477,12 +526,17 @@ CNAME(ffi_closure_trampoline_table_page):
  
  #ifdef FFI_GO_CLOSURES
  	.align 4
@@ -1047,7 +1050,7 @@ index eeaf3f8..e22d040 100644
  
  	/* Save the argument passing vector registers.  */
  	stp     q0, q1, [sp, #16 + 0]
-@@ -492,39 +544,38 @@ CNAME(ffi_go_closure_SYSV_V):
+@@ -492,39 +546,38 @@ CNAME(ffi_go_closure_SYSV_V):
  	b	0f
  	cfi_endproc
  
@@ -1706,6 +1709,129 @@ index 522d0b0..3f7fee4 100644
 +#endif
      .cfi_endproc
      .size ffi_go_closure_asm, .-ffi_go_closure_asm
+diff --git testsuite/lib/target-libpath.exp testsuite/lib/target-libpath.exp
+index e33a656..abb2f10 100644
+--- testsuite/lib/target-libpath.exp
++++ testsuite/lib/target-libpath.exp
+@@ -24,6 +24,9 @@ set orig_ld_libraryn32_path_saved 0
+ set orig_ld_library64_path_saved 0
+ set orig_ld_library_path_32_saved 0
+ set orig_ld_library_path_64_saved 0
++set orig_ld_64_library_path_saved 0
++set orig_ld_64c_library_path_saved 0
++set orig_ld_64cb_library_path_saved 0
+ set orig_dyld_library_path_saved 0
+ set orig_path_saved 0
+ 
+@@ -41,6 +44,9 @@ proc set_ld_library_path_env_vars { } {
+   global orig_ld_library64_path_saved
+   global orig_ld_library_path_32_saved
+   global orig_ld_library_path_64_saved
++  global orig_ld_64_library_path_saved
++  global orig_ld_64c_library_path_saved
++  global orig_ld_64cb_library_path_saved
+   global orig_dyld_library_path_saved
+   global orig_path_saved
+   global orig_ld_library_path
+@@ -50,6 +56,9 @@ proc set_ld_library_path_env_vars { } {
+   global orig_ld_library64_path
+   global orig_ld_library_path_32
+   global orig_ld_library_path_64
++  global orig_ld_64_library_path
++  global orig_ld_64c_library_path
++  global orig_ld_64cb_library_path
+   global orig_dyld_library_path
+   global orig_path
+   global GCC_EXEC_PREFIX
+@@ -98,6 +107,18 @@ proc set_ld_library_path_env_vars { } {
+       set orig_ld_library_path_64 "$env(LD_LIBRARY_PATH_64)"
+       set orig_ld_library_path_64_saved 1
+     }
++    if [info exists env(LD_64_LIBRARY_PATH)] {
++      set orig_ld_64_library_path "$env(LD_64_LIBRARY_PATH)"
++      set orig_ld_64_library_path_saved 1
++    }
++    if [info exists env(LD_64C_LIBRARY_PATH)] {
++      set orig_ld_64c_library_path "$env(LD_64C_LIBRARY_PATH)"
++      set orig_ld_64c_library_path_saved 1
++    }
++    if [info exists env(LD_64CB_LIBRARY_PATH)] {
++      set orig_ld_64cb_library_path "$env(LD_64CB_LIBRARY_PATH)"
++      set orig_ld_64cb_library_path_saved 1
++    }
+     if [info exists env(DYLD_LIBRARY_PATH)] {
+       set orig_dyld_library_path "$env(DYLD_LIBRARY_PATH)"
+       set orig_dyld_library_path_saved 1
+@@ -170,6 +191,27 @@ proc set_ld_library_path_env_vars { } {
+   } else {
+     setenv LD_LIBRARY_PATH_64 "$ld_library_path"
+   }
++  if { $orig_ld_64_library_path_saved } {
++    setenv LD_64_LIBRARY_PATH "$ld_library_path:$orig_ld_64_library_path"
++  } elseif { $orig_ld_library_path_saved } {
++    setenv LD_64_LIBRARY_PATH "$ld_library_path:$orig_ld_library_path"
++  } else {
++    setenv LD_64_LIBRARY_PATH "$ld_library_path"
++  }
++  if { $orig_ld_64c_library_path_saved } {
++    setenv LD_64C_LIBRARY_PATH "$ld_library_path:$orig_ld_64c_library_path"
++  } elseif { $orig_ld_library_path_saved } {
++    setenv LD_64C_LIBRARY_PATH "$ld_library_path:$orig_ld_library_path"
++  } else {
++    setenv LD_64C_LIBRARY_PATH "$ld_library_path"
++  }
++  if { $orig_ld_64cb_library_path_saved } {
++    setenv LD_64CB_LIBRARY_PATH "$ld_library_path:$orig_ld_64cb_library_path"
++  } elseif { $orig_ld_library_path_saved } {
++    setenv LD_64CB_LIBRARY_PATH "$ld_library_path:$orig_ld_library_path"
++  } else {
++    setenv LD_64CB_LIBRARY_PATH "$ld_library_path"
++  }
+   if { $orig_dyld_library_path_saved } {
+     setenv DYLD_LIBRARY_PATH "$ld_library_path:$orig_dyld_library_path"
+   } else {
+@@ -199,6 +241,9 @@ proc restore_ld_library_path_env_vars { } {
+   global orig_ld_library64_path_saved
+   global orig_ld_library_path_32_saved
+   global orig_ld_library_path_64_saved
++  global orig_ld_64_library_path_saved
++  global orig_ld_64c_library_path_saved
++  global orig_ld_64cb_library_path_saved
+   global orig_dyld_library_path_saved
+   global orig_path_saved
+   global orig_ld_library_path
+@@ -208,6 +253,9 @@ proc restore_ld_library_path_env_vars { } {
+   global orig_ld_library64_path
+   global orig_ld_library_path_32
+   global orig_ld_library_path_64
++  global orig_ld_64_library_path
++  global orig_ld_64c_library_path
++  global orig_ld_64cb_library_path
+   global orig_dyld_library_path
+   global orig_path
+ 
+@@ -250,6 +298,21 @@ proc restore_ld_library_path_env_vars { } {
+   } elseif [info exists env(LD_LIBRARY_PATH_64)] {
+     unsetenv LD_LIBRARY_PATH_64
+   }
++  if { $orig_ld_64_library_path_saved } {
++    setenv LD_64_LIBRARY_PATH "$orig_ld_64_library_path"
++  } elseif [info exists env(LD_64_LIBRARY_PATH)] {
++    unsetenv LD_64_LIBRARY_PATH
++  }
++  if { $orig_ld_64c_library_path_saved } {
++    setenv LD_64C_LIBRARY_PATH "$orig_ld_64c_library_path"
++  } elseif [info exists env(LD_64C_LIBRARY_PATH)] {
++    unsetenv LD_64C_LIBRARY_PATH
++  }
++  if { $orig_ld_64cb_library_path_saved } {
++    setenv LD_64CB_LIBRARY_PATH "$orig_ld_64cb_library_path"
++  } elseif [info exists env(LD_64CB_LIBRARY_PATH)] {
++    unsetenv LD_64CB_LIBRARY_PATH
++  }
+   if { $orig_dyld_library_path_saved } {
+     setenv DYLD_LIBRARY_PATH "$orig_dyld_library_path"
+   } elseif [info exists env(DYLD_LIBRARY_PATH)] {
 diff --git testsuite/libffi.bhaible/test-call.c testsuite/libffi.bhaible/test-call.c
 index 4887e00..4d8b4f0 100644
 --- testsuite/libffi.bhaible/test-call.c
