@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.5.16
+DISTVERSION=	2024.5.18
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,7 +50,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytes-1.6.0 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.0.97 \
+		cc-1.0.98 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		ci_info-0.14.14 \
@@ -75,12 +75,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		crc32fast-1.4.0 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
-		crossbeam-utils-0.8.19 \
+		crossbeam-utils-0.8.20 \
 		crypto-common-0.1.6 \
 		ctor-0.2.8 \
 		curve25519-dalek-4.1.2 \
 		curve25519-dalek-derive-0.1.1 \
-		demand-1.1.2 \
+		demand-1.2.2 \
 		der-0.7.9 \
 		deranged-0.3.11 \
 		derive_arbitrary-1.3.2 \
@@ -94,9 +94,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		dunce-1.0.4 \
 		ed25519-2.2.3 \
 		ed25519-dalek-2.1.1 \
-		either-1.11.0 \
+		either-1.12.0 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.34 \
+		env_filter-0.1.0 \
+		env_logger-0.11.3 \
 		envmnt-0.10.4 \
 		equivalent-1.0.1 \
 		errno-0.2.8 \
@@ -159,8 +161,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		indexmap-2.2.6 \
 		indicatif-0.17.8 \
 		indoc-2.0.5 \
-		insta-1.38.0 \
-		instant-0.1.12 \
+		insta-1.39.0 \
+		instant-0.1.13 \
 		ipnet-2.9.0 \
 		is_terminal_polyfill-1.70.0 \
 		itertools-0.12.1 \
@@ -169,25 +171,27 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		js-sys-0.3.69 \
 		kdl-4.6.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.154 \
+		libc-0.2.155 \
 		libgit2-sys-0.16.2+1.7.2 \
 		libssh2-sys-0.3.0 \
 		libz-sys-1.1.16 \
 		linked-hash-map-0.5.6 \
-		linux-raw-sys-0.4.13 \
+		linux-raw-sys-0.4.14 \
 		log-0.4.21 \
+		matchers-0.1.0 \
 		memchr-2.7.2 \
 		memoffset-0.7.1 \
 		miette-5.10.0 \
 		miette-derive-5.10.0 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
-		miniz_oxide-0.7.2 \
+		miniz_oxide-0.7.3 \
 		mio-0.8.11 \
 		native-tls-0.2.11 \
 		nix-0.26.4 \
 		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
+		nu-ansi-term-0.46.0 \
 		num-conv-0.1.0 \
 		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
@@ -200,6 +204,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		openssl-probe-0.1.5 \
 		openssl-sys-0.9.102 \
 		os_pipe-1.1.5 \
+		overload-0.1.1 \
 		owo-colors-3.5.0 \
 		papergrid-0.11.0 \
 		paste-1.0.15 \
@@ -225,7 +230,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pretty_assertions-1.4.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.82 \
+		proc-macro2-1.0.83 \
 		quick-xml-0.23.1 \
 		quote-1.0.36 \
 		rand-0.8.5 \
@@ -235,7 +240,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
 		regex-1.10.4 \
+		regex-automata-0.1.10 \
 		regex-automata-0.4.6 \
+		regex-syntax-0.6.29 \
 		regex-syntax-0.8.3 \
 		reqwest-0.11.27 \
 		ring-0.17.8 \
@@ -259,10 +266,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		self-replace-1.3.7 \
 		self_update-0.39.0 \
 		semver-1.0.23 \
-		serde-1.0.201 \
-		serde_derive-1.0.201 \
+		serde-1.0.202 \
+		serde_derive-1.0.202 \
 		serde_json-1.0.117 \
-		serde_spanned-0.6.5 \
+		serde_spanned-0.6.6 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.8 \
 		sharded-slab-0.1.7 \
@@ -283,7 +290,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strum_macros-0.26.2 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.63 \
+		syn-2.0.65 \
 		sync_wrapper-0.1.2 \
 		sys-info-0.9.1 \
 		system-configuration-0.5.1 \
@@ -299,8 +306,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		test-case-3.3.1 \
 		test-case-core-3.3.1 \
 		test-case-macros-3.3.1 \
-		thiserror-1.0.60 \
-		thiserror-impl-1.0.60 \
+		test-log-0.2.16 \
+		test-log-macros-0.2.16 \
+		thiserror-1.0.61 \
+		thiserror-impl-1.0.61 \
 		thread_local-1.1.8 \
 		time-0.3.36 \
 		time-core-0.1.2 \
@@ -311,13 +320,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \
 		tokio-util-0.7.11 \
-		toml-0.8.12 \
-		toml_datetime-0.6.5 \
-		toml_edit-0.22.12 \
+		toml-0.8.13 \
+		toml_datetime-0.6.6 \
+		toml_edit-0.22.13 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
 		tracing-core-0.1.32 \
 		tracing-error-0.2.0 \
+		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.18 \
 		try-lock-0.2.5 \
 		typenum-1.17.0 \
@@ -394,7 +404,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		xx-1.1.1 \
 		yansi-0.5.1 \
 		zeroize-1.7.0 \
-		zip-1.2.3 \
+		zip-1.3.0 \
 		zipsign-api-0.1.1
 
 OPENSSLINC=	/usr/include
