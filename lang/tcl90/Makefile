@@ -57,7 +57,7 @@ LDFLAGS+=	-Wl,-z,muldefs
 
 TCL_VERSION=	9.0b2
 TCL_VER=	9.0
-TCL_RC=		rc2
+TCL_RC=
 SHORT_TCL_VER=	${TCL_VER:S/.//}
 MAN_SUFFIX=	${PKGBASE}
 
@@ -101,5 +101,8 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e '/Target=/s|.$$Section$$Suffix|$$Suffix.$$Section|' \
 		${WRKSRC}/installManPage
+
+post-install:
+	${LN} -s libtcl${TCL_VER}.so ${STAGEDIR}${PREFIX}/lib/libtcl${SHORT_TCL_VER}.so
 
 .include <bsd.port.mk>
