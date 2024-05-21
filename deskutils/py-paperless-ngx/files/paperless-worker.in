@@ -34,7 +34,8 @@ paperless_worker_log_priority=${paperless_worker_log_priority:-"notice"}
 paperless_worker_log_tag=${paperless_worker_log_tag:-"paperless-worker"}
 
 paperless_worker_env="LANG=en_US.UTF-8 PATH=$PATH:%%PREFIX%%/bin \
-  PYTHONPATH=%%PYTHONPREFIX_SITELIBDIR%%/paperless"
+  PYTHONPATH=%%PYTHONPREFIX_SITELIBDIR%%/paperless \
+  OMP_NUM_THREADS=1"
 
 pidfile="/var/run/paperless/worker.pid"
 procname="%%PYTHON_CMD%%"
