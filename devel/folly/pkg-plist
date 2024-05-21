@@ -110,6 +110,8 @@ include/folly/Uri.h
 include/folly/Utility.h
 include/folly/Varint.h
 include/folly/VirtualExecutor.h
+include/folly/algorithm/simd/FindFixed.h
+include/folly/algorithm/simd/Movemask.h
 include/folly/base64.h
 include/folly/channels/Channel-fwd.h
 include/folly/channels/Channel-inl.h
@@ -157,6 +159,9 @@ include/folly/compression/CompressionCoreLocalContextPool.h
 include/folly/compression/Utils.h
 include/folly/compression/Zlib.h
 include/folly/compression/Zstd.h
+include/folly/compression/elias_fano/BitVectorCoding.h
+include/folly/compression/elias_fano/CodingDetail.h
+include/folly/compression/elias_fano/EliasFanoCoding.h
 include/folly/concurrency/AtomicSharedPtr.h
 include/folly/concurrency/CacheLocality.h
 include/folly/concurrency/ConcurrentHashMap.h
@@ -169,6 +174,7 @@ include/folly/concurrency/ThreadCachedSynchronized.h
 include/folly/concurrency/UnboundedQueue.h
 include/folly/concurrency/detail/AtomicSharedPtr-detail.h
 include/folly/concurrency/detail/ConcurrentHashMap-detail.h
+include/folly/concurrency/memory/AtomicReadMostlyMainPtr.h
 include/folly/container/Access.h
 include/folly/container/Array.h
 include/folly/container/BitIterator.h
@@ -178,12 +184,15 @@ include/folly/container/F14Map-fwd.h
 include/folly/container/F14Map.h
 include/folly/container/F14Set-fwd.h
 include/folly/container/F14Set.h
+include/folly/container/FBVector.h
 include/folly/container/Foreach-inl.h
 include/folly/container/Foreach.h
 include/folly/container/HeterogeneousAccess-fwd.h
 include/folly/container/HeterogeneousAccess.h
 include/folly/container/IntrusiveHeap.h
+include/folly/container/IntrusiveList.h
 include/folly/container/Iterator.h
+include/folly/container/MapUtil.h
 include/folly/container/Merge.h
 include/folly/container/Reserve.h
 include/folly/container/SparseByteSet.h
@@ -201,6 +210,8 @@ include/folly/container/detail/Util.h
 include/folly/container/detail/tape_detail.h
 include/folly/container/heap_vector_types.h
 include/folly/container/range_traits.h
+include/folly/container/small_vector.h
+include/folly/container/sorted_vector_types.h
 include/folly/container/tape.h
 include/folly/container/test/F14TestUtil.h
 include/folly/container/test/TrackingTypes.h
@@ -284,6 +295,7 @@ include/folly/executors/ThreadPoolExecutor.h
 include/folly/executors/ThreadedExecutor.h
 include/folly/executors/TimedDrivableExecutor.h
 include/folly/executors/TimekeeperScheduledExecutor.h
+include/folly/executors/VirtualExecutor.h
 include/folly/executors/task_queue/BlockingQueue.h
 include/folly/executors/task_queue/LifoSemMPMCQueue.h
 include/folly/executors/task_queue/PriorityLifoSemMPMCQueue.h
@@ -307,7 +319,6 @@ include/folly/experimental/EventCount.h
 include/folly/experimental/ExecutionObserver.h
 include/folly/experimental/FlatCombiningPriorityQueue.h
 include/folly/experimental/FunctionScheduler.h
-include/folly/experimental/FutureDAG.h
 include/folly/experimental/Instructions.h
 include/folly/experimental/JSONSchema.h
 include/folly/experimental/JemallocHugePageAllocator.h
@@ -445,8 +456,8 @@ include/folly/experimental/io/EventBasePoller.h
 include/folly/experimental/io/FsUtil.h
 include/folly/experimental/io/HugePages.h
 include/folly/experimental/io/IoUring.h
-include/folly/experimental/io/IoUringBase.h
 include/folly/experimental/io/IoUringBackend.h
+include/folly/experimental/io/IoUringBase.h
 include/folly/experimental/io/IoUringEvent.h
 include/folly/experimental/io/IoUringEventBaseLocal.h
 include/folly/experimental/io/IoUringProvidedBufferRing.h
@@ -671,6 +682,7 @@ include/folly/io/async/test/Util.h
 include/folly/io/coro/ServerSocket.h
 include/folly/io/coro/Transport.h
 include/folly/io/coro/TransportCallbackBase.h
+include/folly/json.h
 include/folly/json/DynamicConverter.h
 include/folly/json/DynamicParser-inl.h
 include/folly/json/DynamicParser.h
@@ -683,7 +695,6 @@ include/folly/json/dynamic.h
 include/folly/json/json.h
 include/folly/json/json_patch.h
 include/folly/json/json_pointer.h
-include/folly/json.h
 include/folly/json_patch.h
 include/folly/json_pointer.h
 include/folly/lang/Access.h
@@ -767,6 +778,18 @@ include/folly/net/TcpInfo.h
 include/folly/net/TcpInfoDispatcher.h
 include/folly/net/TcpInfoTypes.h
 include/folly/net/detail/SocketFileDescriptorMap.h
+include/folly/observer/CoreCachedObserver.h
+include/folly/observer/HazptrObserver.h
+include/folly/observer/Observable-inl.h
+include/folly/observer/Observable.h
+include/folly/observer/Observer-inl.h
+include/folly/observer/Observer-pre.h
+include/folly/observer/Observer.h
+include/folly/observer/ReadMostlyTLObserver.h
+include/folly/observer/SimpleObservable-inl.h
+include/folly/observer/SimpleObservable.h
+include/folly/observer/WithJitter-inl.h
+include/folly/observer/WithJitter.h
 include/folly/poly/Nullable.h
 include/folly/poly/Regular.h
 include/folly/portability/Asm.h
@@ -865,6 +888,8 @@ include/folly/synchronization/CallOnce.h
 include/folly/synchronization/DelayedInit.h
 include/folly/synchronization/DistributedMutex-inl.h
 include/folly/synchronization/DistributedMutex.h
+include/folly/synchronization/EventCount.h
+include/folly/synchronization/FlatCombining.h
 include/folly/synchronization/Hazptr-fwd.h
 include/folly/synchronization/Hazptr.h
 include/folly/synchronization/HazptrDomain.h
@@ -904,6 +929,7 @@ include/folly/synchronization/example/HazptrSWMRSet.h
 include/folly/synchronization/example/HazptrWideCAS.h
 include/folly/synchronization/test/Semaphore.h
 include/folly/system/AtFork.h
+include/folly/system/EnvUtil.h
 include/folly/system/HardwareConcurrency.h
 include/folly/system/MemoryMapping.h
 include/folly/system/Pid.h
@@ -915,7 +941,7 @@ include/folly/test/TestUtils.h
 include/folly/tracing/AsyncStack-inl.h
 include/folly/tracing/AsyncStack.h
 include/folly/tracing/ScopedTraceSection.h
-include/folly/tracing/StaticTracepoint-ELFx86.h
+include/folly/tracing/StaticTracepoint-ELF.h
 include/folly/tracing/StaticTracepoint.h
 lib/cmake/folly/folly-config.cmake
 lib/cmake/folly/folly-targets-%%CMAKE_BUILD_TYPE%%.cmake
