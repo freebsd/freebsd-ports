@@ -34,6 +34,7 @@
     SUBDIR += ethash
     SUBDIR += go-ethereum
     SUBDIR += gtk-gnutella
+    SUBDIR += intermodal
     SUBDIR += jackett
     SUBDIR += jigdo
     SUBDIR += ktorrent
