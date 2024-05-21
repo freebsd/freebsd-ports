@@ -25,9 +25,6 @@ NLS_MAKE_ARGS_OFF=	WITHOUT_GETTEXT=1
 NLS_LDFLAGS=		-lintl
 NLS_USES=		gettext localbase:ldflags
 
-post-patch:
-	@${RM} ${WRKSRC}/gnu/*.o
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/getopt
 
