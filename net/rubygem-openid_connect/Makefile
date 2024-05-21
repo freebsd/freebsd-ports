@@ -1,5 +1,6 @@
 PORTNAME=	openid_connect
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/nov/openid_connect
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activemodel61>=0:databases/rubygem-activemodel61 \
+RUN_DEPENDS=	rubygem-activemodel70>=0:databases/rubygem-activemodel70 \
 		rubygem-attr_required>=1.0.0:devel/rubygem-attr_required \
 		rubygem-json-jwt115>=1.5.0:www/rubygem-json-jwt115 \
 		rubygem-net-smtp>=0:mail/rubygem-net-smtp \
