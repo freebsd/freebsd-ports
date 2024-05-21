@@ -21,6 +21,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 .if !defined(MASTERDIR)
 
 USES=		tar:bzip2 gmake cpe
+
+# XXX limit results if we do a grep in the sources!
+EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/mswin32 \
+			--no-same-owner --no-same-permissions
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
@@ -53,10 +58,6 @@ CONFIGURE_ARGS+=--without-localdirs \
 		--without-nmap-update
 
 .include <bsd.port.options.mk>
-
-# XXX limit results if we do a grep in the sources!
-post-extract:
-	@${RM} -r ${WRKSRC}/mswin32
 
 .if exists(/usr/lib/libibverbs.a)
 # Link with libibverbs is needed by static libpcap
