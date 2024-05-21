@@ -1,3 +1,31 @@
+  <vuln vid="e020b0fd-1751-11ef-a490-84a93843eb75">
+    <topic>Roundcube -- Cross-site scripting vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>roundcube</name>
+	<range><lt>1.6.7,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Roundcube project reports:</p>
+	<blockquote cite="https://roundcube.net/news/2024/05/19/security-updates-1.6.7-and-1.5.7">
+	  <p>cross-site scripting (XSS) vulnerability in handling SVG
+	    animate attributes.</p>
+	  <p>cross-site scripting (XSS) vulnerability in handling list
+	    columns from user preferences.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://roundcube.net/news/2024/05/19/security-updates-1.6.7-and-1.5.7</url>
+    </references>
+    <dates>
+      <discovery>2024-05-19</discovery>
+      <entry>2024-05-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d58455cc-159e-11ef-83d8-4ccc6adda413">
     <topic>qt5-webengine -- Multiple vulnerabilities</topic>
     <affects>
