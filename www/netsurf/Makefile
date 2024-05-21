@@ -1,5 +1,6 @@
 PORTNAME=	netsurf
 PORTVERSION=	3.11
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.netsurf-browser.org/netsurf/releases/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -10,11 +11,12 @@ WWW=		https://www.netsurf-browser.org/
 
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	duk:lang/duktape \
 		nsgenbind:devel/nsgenbind \
 		p5-HTML-Parser>=3.72:www/p5-HTML-Parser \
-		xxd:editors/vim
+		xxd:sysutils/xxd
 LIB_DEPENDS=	libcss.so:textproc/libcss \
 		libcurl.so:ftp/curl \
 		libdom.so:www/libdom \
