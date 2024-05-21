@@ -10,7 +10,7 @@ WWW=		http://pgsimilarity.projects.pgfoundry.org
 
 LICENSE=	BSD3CLAUSE
 
-USES=		gmake pgsql:11+
+USES=		gmake pgsql:11-15
 USE_GITHUB=	yes
 GH_ACCOUNT=	eulerto
 GH_TAGNAME=	be1a8b0
