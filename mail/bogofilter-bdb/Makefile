@@ -11,6 +11,9 @@ WWW=		https://bogofilter.sourceforge.io/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	The Berkeley DB database interface is obsolescent.
+EXPIRATION_DATE=2025-06-30
+
 .if !defined(MASTERDIR) || ${MASTERDIR} == ${.CURDIR}
 # building master port
 USES+=		bdb:5+
@@ -59,7 +62,7 @@ post-patch:
 		${WRKSRC}/src/tests/Makefile.in
 
 post-build:
-	cd ${WRKSRC}/src && ${SETENV} SHELL=${SH} ${MAKE_CMD} ${TEST_TARGET} ${_MAKE_JOBS} SHELL=${SH} \
+	cd ${WRKSRC}/src && ${SETENVI} SHELL=${SH} ${MAKE_CMD} ${TEST_TARGET} ${_MAKE_JOBS} SHELL=${SH} \
 		|| { r=$$? ; head -n30000 ${WRKSRC}/src/tests/test-suite.log ; exit $$r ; }
 
 post-install:
