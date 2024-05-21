@@ -351,6 +351,7 @@ include/thrift/lib/cpp2/protocol/CompactV1Protocol-inl.h
 include/thrift/lib/cpp2/protocol/CompactV1Protocol.h
 include/thrift/lib/cpp2/protocol/Cpp2Ops-inl.h
 include/thrift/lib/cpp2/protocol/Cpp2Ops.h
+include/thrift/lib/cpp2/protocol/CursorBasedSerializer.h
 include/thrift/lib/cpp2/protocol/DebugProtocol.h
 include/thrift/lib/cpp2/protocol/FieldMask.h
 include/thrift/lib/cpp2/protocol/FieldMaskRef.h
@@ -374,6 +375,7 @@ include/thrift/lib/cpp2/protocol/TableBasedSerializer.h
 include/thrift/lib/cpp2/protocol/TableBasedSerializerImpl.h
 include/thrift/lib/cpp2/protocol/Traits.h
 include/thrift/lib/cpp2/protocol/VirtualProtocol.h
+include/thrift/lib/cpp2/protocol/detail/CursorBasedSerialization.h
 include/thrift/lib/cpp2/protocol/detail/FieldMask.h
 include/thrift/lib/cpp2/protocol/detail/FieldMaskUtil.h
 include/thrift/lib/cpp2/protocol/detail/Object.h
@@ -435,6 +437,7 @@ include/thrift/lib/cpp2/server/LoggingEventTransportMetadata.h
 include/thrift/lib/cpp2/server/MemoryTracker.h
 include/thrift/lib/cpp2/server/MonitoringMethodNames.h
 include/thrift/lib/cpp2/server/MonitoringServerInterface.h
+include/thrift/lib/cpp2/server/Overload.h
 include/thrift/lib/cpp2/server/ParallelConcurrencyController.h
 include/thrift/lib/cpp2/server/PerturbSource.h
 include/thrift/lib/cpp2/server/PolledServiceHealth.h
