@@ -1,3 +1,44 @@
+  <vuln vid="f848ef90-1848-11ef-9850-001b217b3468">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.0.0</ge><lt>17.0.1</lt></range>
+	<range><ge>16.11.0</ge><lt>16.11.3</lt></range>
+	<range><ge>11.11</ge><lt>16.10.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/05/22/patch-release-gitlab-17-0-1-released/">
+	  <p>1-click account takeover via XSS in the code editor in gitlab.com</p>
+	  <p>A DOS vulnerability in the 'description' field of the runner</p>
+	  <p>CSRF via K8s cluster-integration</p>
+	  <p>Using Set Pipeline Status of a Commit API incorrectly create a new pipeline when SHA and pipeline_id did not match</p>
+	  <p>Redos on wiki render API/Page</p>
+	  <p>Resource exhaustion and denial of service with test_report API calls</p>
+	  <p>Guest user can view dependency lists of private projects through job artifacts</p>
+	  <p>Stored XSS via PDFjs</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-4835</cvename>
+      <cvename>CVE-2024-2874</cvename>
+      <cvename>CVE-2023-7045</cvename>
+      <cvename>CVE-2023-6502</cvename>
+      <cvename>CVE-2024-1947</cvename>
+      <cvename>CVE-2024-4367</cvename>
+      <url>https://about.gitlab.com/releases/2024/05/22/patch-release-gitlab-17-0-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-05-22</discovery>
+      <entry>2024-05-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8247af0d-183b-11ef-9f97-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
