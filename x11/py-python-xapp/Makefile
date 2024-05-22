@@ -1,5 +1,5 @@
 PORTNAME=	python-xapp
-DISTVERSION=	2.2.2
+DISTVERSION=	2.4.1
 CATEGORIES=	x11 gnome
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	gnome
@@ -13,11 +13,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR}
 
-USES=		gnome python shebangfix
+USES=		gnome meson python shebangfix
 
 USE_GNOME=	pygobject3
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	flavors
 SHEBANG_GLOB=	*.py
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
