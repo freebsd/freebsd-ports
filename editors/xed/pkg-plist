@@ -51,7 +51,6 @@ lib/xed/plugins/time.plugin
 lib/xed/plugins/trailsave.plugin
 lib/xed/plugins/wordcompletion.plugin
 libdata/pkgconfig/xed.pc
-share/man/man1/xed.1.gz
 share/applications/xed.desktop
 share/dbus-1/services/org.x.editor.service
 %%PORTDOCS%%share/gtk-doc/html/xed/XedApp.html
@@ -315,6 +314,7 @@ share/locale/zgh/LC_MESSAGES/xed.mo
 share/locale/zh_CN/LC_MESSAGES/xed.mo
 share/locale/zh_HK/LC_MESSAGES/xed.mo
 share/locale/zh_TW/LC_MESSAGES/xed.mo
+share/man/man1/xed.1.gz
 share/metainfo/xed.appdata.xml
 %%DATADIR%%/gir-1.0/Xed-1.0.gir
 %%DATADIR%%/icons/xed-plugin.png
