@@ -1,8 +1,12 @@
 PORTNAME=	diskcache
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.6.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	b89111d.patch:-p1 # https://github.com/grantjenks/python-diskcache/pull/311
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Disk and file backed persistent cache
