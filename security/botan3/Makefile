@@ -12,13 +12,11 @@ WWW=		https://botan.randombit.net/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-BROKEN_amd64=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=279136
-BROKEN_aarch64=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=279136
 BROKEN_FreeBSD_13=	compilation fails: no member named 'find' in namespace 'std::ranges'
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
-USES=		compiler:c++20-lang cpe gmake shebangfix tar:xz
+USES=		compiler:c++20-lang cpe gmake llvm:17 shebangfix tar:xz
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 
