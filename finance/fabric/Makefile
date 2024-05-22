@@ -1,7 +1,6 @@
 PORTNAME=	fabric
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.7
-PORTREVISION=	1
+DISTVERSION=	2.5.8
 CATEGORIES=	finance
 PKGNAMESUFFIX=	-hyperledger
 
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc # compilation fails on non-64-bit systems: fabric-amcl/core/FP256BN/FP.go:111:19: cannot convert MConst (constant 30564559323915749 of type Chunk) to type int
 
-USES=		go:modules
+USES=		go:1.22,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyperledger
 
@@ -137,6 +136,7 @@ GH_TUPLE=	\
 		tedsuo:ifrit:dd274de71113:tedsuo_ifrit/vendor/github.com/tedsuo/ifrit \
 		uber-go:multierr:v1.11.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		uber-go:zap:v1.26.0:uber_go_zap/vendor/go.uber.org/zap
+
 
 PROGS=		configtxgen \
 		configtxlator \

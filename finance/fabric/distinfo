@@ -1,6 +1,6 @@
-TIMESTAMP = 1713280987
-SHA256 (hyperledger-fabric-v2.5.7_GH0.tar.gz) = 32ca0b0b85c8b15a28ae0b5b479a1c088f6a3ff7459bbdd0509cb3e2d65f0699
-SIZE (hyperledger-fabric-v2.5.7_GH0.tar.gz) = 28247962
+TIMESTAMP = 1716350970
+SHA256 (hyperledger-fabric-v2.5.8_GH0.tar.gz) = ea2acd7fe5803796f9da64b7e7da11ae2fe825fccfaf2edc9a71ca5ac70760a3
+SIZE (hyperledger-fabric-v2.5.8_GH0.tar.gz) = 28246298
 SHA256 (Azure-go-ansiterm-d185dfc1b5a1_GH0.tar.gz) = 1a061bad3379d8f955a3c2bd34c2927f2e561e7a11418dda2927eb222e3cbbc5
 SIZE (Azure-go-ansiterm-d185dfc1b5a1_GH0.tar.gz) = 21650
 SHA256 (DataDog-zstd-v1.4.5_GH0.tar.gz) = be75f3ea541bb7bb02c2329059ad81dff504087f89970426d23252e502a0f899
