@@ -1,0 +1,13 @@
+%%OCAML_SITELIBDIR%%/domain-name/META
+%%OCAML_SITELIBDIR%%/domain-name/domain_name.a
+%%OCAML_SITELIBDIR%%/domain-name/domain_name.cma
+%%OCAML_SITELIBDIR%%/domain-name/domain_name.cmi
+%%OCAML_SITELIBDIR%%/domain-name/domain_name.cmt
+%%OCAML_SITELIBDIR%%/domain-name/domain_name.cmti
+%%OCAML_SITELIBDIR%%/domain-name/domain_name.cmx
+%%OCAML_SITELIBDIR%%/domain-name/domain_name.cmxa
+%%OCAML_SITELIBDIR%%/domain-name/domain_name.cmxs
+%%OCAML_SITELIBDIR%%/domain-name/domain_name.ml
+%%OCAML_SITELIBDIR%%/domain-name/domain_name.mli
+%%OCAML_SITELIBDIR%%/domain-name/dune-package
+%%OCAML_SITELIBDIR%%/domain-name/opam

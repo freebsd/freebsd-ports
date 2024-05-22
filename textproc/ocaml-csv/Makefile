@@ -1,6 +1,6 @@
 PORTNAME=	ocaml-csv
 PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	https://forge.ocamlcore.org/frs/download.php/420/
 

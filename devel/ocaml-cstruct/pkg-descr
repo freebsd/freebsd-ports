@@ -1,0 +1,18 @@
+This library for OCaml contains functionnality to access
+datastructures using a determined byte-layouts such as networking
+datagrams or binay file formats (e.g.).
+
+A PPX syntax extension is provided to allow the definition of
+byte-layouts in the form of "cstruct" type definitions -- looking much
+alike the well-known structure declaration of the C programming
+language (hence the name of this library) --, and to generate accessor
+functions to manipule its members.
+
+In addition to those core features, the library contains accessory
+functions allowing:
+
+- The representation of "cstruct" as S-expression;
+
+- I/O operations over the Unix OCaml library and the Lwt cooperative
+  threading library. The async integration is currently not provided
+  by this port (patch welcome!).

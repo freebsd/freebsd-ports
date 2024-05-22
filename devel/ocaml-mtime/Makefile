@@ -1,5 +1,6 @@
 PORTNAME=	mtime
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://erratique.ch/software/mtime/releases/
 PKGNAMEPREFIX=	ocaml-

@@ -1,5 +1,6 @@
 PORTNAME=	rresult
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://erratique.ch/software/rresult/releases/
 PKGNAMEPREFIX=	ocaml-

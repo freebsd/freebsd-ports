@@ -2291,7 +2291,6 @@ www/kristall||2023-07-02|Has expired: Requires older openssl
 sysutils/cfengine-masterfiles318||2023-07-02|Has expired: Expire one year after cfengine-masterfiles 3.19.0 released
 sysutils/cfengine318||2023-07-02|Has expired: Expire one year after cfengine 3.19.0 released
 devel/linux-c7-dbus-glib||2023-07-02|Merged into devel/linux-c7-dbus-libs
-devel/ocaml-sexplib|devel/ocaml-sexplib0|2023-07-05|Project renamed
 net/nuster||2023-07-08|Has expired: Does not support OpenSSL 3 and upstream last release was in 2020
 devel/godot2-tools|devel/godot-tools|2023-07-08|Has expired: Requires legacy OpenSSL 1.1.1 so use devel/godot
 devel/rubygem-aws-sdk-core3172|devel/rubygem-aws-sdk-core|2023-07-09|Remove obsoleted port. Use devel/rubygem-aws-sdk-core instead

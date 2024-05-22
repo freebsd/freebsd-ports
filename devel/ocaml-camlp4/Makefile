@@ -1,9 +1,10 @@
 PORTNAME=	camlp4
 PORTVERSION=	4.14+1
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	michipili@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System for writing extensible parsers for OCaml
 WWW=		https://github.com/ocaml/camlp4
 

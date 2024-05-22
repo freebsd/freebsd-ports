@@ -21,11 +21,11 @@ PORTDOCS=	CHANGES.md LICENSE README.md
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e "s/(name ${PORTNAME})/&\n (version ${PORTVERSION})/" \
 		${WRKSRC}/dune-project
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/${PORTNAME}/camlp_streams.cmxs
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/${PORTNAME}/camlp_streams.cmxs
 
 .include <bsd.port.mk>

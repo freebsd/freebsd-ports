@@ -1,6 +1,5 @@
 PORTNAME=	menhir
-PORTVERSION=	20170712
-PORTREVISION=	2
+PORTVERSION=	20231231
 CATEGORIES=	devel
 MASTER_SITES=	http://cristal.inria.fr/~fpottier/menhir/
 
@@ -11,32 +10,23 @@ WWW=		http://cristal.inria.fr/~fpottier/menhir
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
-
-USES=		gmake shebangfix
+USES=		ocaml:dune
+USE_GITLAB=	yes
 USE_OCAML=	yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAMLFIND_PLIST=	yes
-OCAML_PKGDIRS=		menhirLib
+GL_SITE=	https://gitlab.inria.fr/
+GL_ACCOUNT=	fpottier
+OCAML_PACKAGES=		menhir menhirLib menhirSdk
+DUNE_INSTALL_TARGETS=	${OCAML_PACKAGES}
 
-SHEBANG_FILES=	demos/find-menhir.sh
-MAKE_JOBS_UNSAFE=	yes
-
-DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
-
-PORTDOCS=	*
+DOCSDIR=	${OCAML_DOCSDIR}
+PORTDOCS=	${OCAML_PACKAGES:@p@$p@}
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|doc/menhir|doc/ocaml/menhir| ; \
-		 s| \($$(bindir)\)| $${DESTDIR}\1| ; \
-		 s| \($$(libdir)\)| $${DESTDIR}\1| ; \
-		 s| \($$(docdir)\)| $${DESTDIR}\1| ; \
-		 s| \($$(mandir)\)| $${DESTDIR}\1|' ${WRKSRC}/Makefile
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/menhir
+	@${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/menhirLib/menhirLib.cmxs \
+		${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/menhirSdk/menhirSdk.cmxs
 
 .include <bsd.port.mk>

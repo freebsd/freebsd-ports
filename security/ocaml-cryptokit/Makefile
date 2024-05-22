@@ -1,34 +1,33 @@
 PORTNAME=	cryptokit
-PORTVERSION=	1.11
-PORTREVISION=	1
+PORTVERSION=	1.19
 CATEGORIES=	security
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Variety of cryptographic primitives for Objective Caml
-WWW=		http://cristal.inria.fr/~xleroy/software.html
+WWW=		https://github.com/xavierleroy/cryptokit
 
-BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild \
-		${LOCALBASE}/${OCAML_SITELIBDIR}/zarith/META:math/ocaml-zarith
+LICENSE=	LGPL20+ # with a special exception to clause 6
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DESTDIRNAME=	destdir
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--docdir ${OCAML_DOCSDIR}
+BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/zarith/META:math/ocaml-zarith
+RUN_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/zarith/META:math/ocaml-zarith
 
+USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	xavierleroy
 GH_TAGNAME=	release${PORTVERSION:S/.//g}
-
 USE_OCAML=	yes
 USE_OCAML_LDCONFIG=	yes
-USE_OCAML_FINDLIB=	yes
-USE_OCAMLFIND_PLIST=	yes
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_ALL_TARGET=	doc
+post-install:
+	@${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/cryptokit/dllcryptokit_stubs.so \
+		${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/cryptokit/cryptokit.cmxs
 
 .include <bsd.port.mk>

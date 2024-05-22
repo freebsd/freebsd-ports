@@ -1,0 +1,13 @@
+%%OCAML_SITELIBDIR%%/ppx_derivers/META
+%%OCAML_SITELIBDIR%%/ppx_derivers/dune-package
+%%OCAML_SITELIBDIR%%/ppx_derivers/opam
+%%OCAML_SITELIBDIR%%/ppx_derivers/ppx_derivers.a
+%%OCAML_SITELIBDIR%%/ppx_derivers/ppx_derivers.cma
+%%OCAML_SITELIBDIR%%/ppx_derivers/ppx_derivers.cmi
+%%OCAML_SITELIBDIR%%/ppx_derivers/ppx_derivers.cmt
+%%OCAML_SITELIBDIR%%/ppx_derivers/ppx_derivers.cmti
+%%OCAML_SITELIBDIR%%/ppx_derivers/ppx_derivers.cmx
+%%OCAML_SITELIBDIR%%/ppx_derivers/ppx_derivers.cmxa
+%%OCAML_SITELIBDIR%%/ppx_derivers/ppx_derivers.cmxs
+%%OCAML_SITELIBDIR%%/ppx_derivers/ppx_derivers.ml
+%%OCAML_SITELIBDIR%%/ppx_derivers/ppx_derivers.mli
