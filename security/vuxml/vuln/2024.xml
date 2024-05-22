@@ -1,3 +1,50 @@
+  <vuln vid="8247af0d-183b-11ef-9f97-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>125.0.6422.76</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>125.0.6422.76</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/05/stable-channel-update-for-desktop_21.html">
+	 <p>This update includes 15 security fixes:</p>
+	 <ul>
+	    <li>[336012573] High CVE-2024-5157: Use after free in Scheduling. Reported by Looben Yang on 2024-04-21</li>
+	    <li>[338908243] High CVE-2024-5158: Type Confusion in V8. Reported by Zhenghang Xiao (@Kipreyyy) on 2024-05-06</li>
+	    <li>[335613092] High CVE-2024-5159: Heap buffer overflow in ANGLE. Reported by David Sievers (@loknop) on 2024-04-18</li>
+	    <li>[338161969] High CVE-2024-5160: Heap buffer overflow in Dawn. Reported by wgslfuzz on 2024-05-01</li>
+	    <li>[340221135] High CVE-2024-4947: Type Confusion in V8. Reported by Vasily Berdnikov (@vaber_b) and Boris Larin (@oct0xor) of Kaspersky on 2024-05-13</li>
+	    <li>[333414294] High CVE-2024-4948: Use after free in Dawn. Reported by wgslfuzz on 2024-04-09</li>
+	    <li>[326607001] Medium CVE-2024-4949: Use after free in V8. Reported by Ganjiang Zhou(@refrain_areu) of ChaMd5-H1 team on 2024-02-24</li>
+	    <li>[40065403] Low CVE-2024-4950: Inappropriate implementation in Downloads. Reported by Shaheen Fazim on 2023-06-06</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-5157</cvename>
+      <cvename>CVE-2024-5158</cvename>
+      <cvename>CVE-2024-5159</cvename>
+      <cvename>CVE-2024-5160</cvename>
+      <cvename>CVE-2024-4947</cvename>
+      <cvename>CVE-2024-4948</cvename>
+      <cvename>CVE-2024-4949</cvename>
+      <cvename>CVE-2024-4950</cvename>
+      <url>https://chromereleases.googleblog.com/2024/05/stable-channel-update-for-desktop_21.html</url>
+    </references>
+    <dates>
+      <discovery>2024-05-21</discovery>
+      <entry>2024-05-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9bcff2c4-1779-11ef-b489-b42e991fc52e">
     <topic>Openfire administration console authentication bypass</topic>
     <affects>
