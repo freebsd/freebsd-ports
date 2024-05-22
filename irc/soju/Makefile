@@ -1,7 +1,6 @@
 PORTNAME=	soju
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
-PORTREVISION=	7
+DISTVERSION=	0.8.0
 CATEGORIES=	irc
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules,no_targets sqlite:3
 USE_GITHUB=	nodefault
-GH_TUPLE=	golang:sys:v0.13.0:sys
+GH_TUPLE=	golang:sys:v0.18.0:sys
 
 OPTIONS_DEFAULT=	DOCS
 OPTIONS_DEFINE=		DOCS
@@ -52,6 +51,7 @@ post-patch:
 	@${REINPLACE_CMD} -r -e 's,[$$]\(([^)]+)\),$${\1},g' \
 		-e 's,(/cmd/sojuctl)$$,\1 ${CONTRIBS},' \
 		-e '/^config_path/s,=.*$$,= ${ETCDIR}/config,' \
+		-e '/^RUNDIR/s,=.*$$,= /var/run,' \
 		-e '/^commands/s,$$, ${CONTRIBS:T},' \
 		-e '/^sojudb/s,^,${CONTRIBS:T} ,' \
 		-e '/^\.PHONY/s,$$, ${CONTRIBS:T},' \
@@ -67,5 +67,6 @@ post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/${EXE} ${STAGEDIR}${PREFIX}/bin/soju-${EXE}
 .endfor
 	${MV} ${STAGEDIR}${ETCDIR}/config ${STAGEDIR}${ETCDIR}/config.sample
+	${FIND} ${STAGEDIR}${PREFIX}/bin -type f -exec ${STRIP_CMD} {} \;
 
 .include <bsd.port.mk>
