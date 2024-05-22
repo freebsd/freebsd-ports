@@ -16,7 +16,7 @@ BROKEN_FreeBSD_13=	compilation fails: no member named 'find' in namespace 'std::
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
-USES=		compiler:c++20-lang cpe gmake llvm:17 shebangfix tar:xz
+USES=		compiler:c++20-lang cpe gmake llvm:17 shebangfix tar:xz # llvm:17 fixes build failure, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=279136
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 
