@@ -1,9 +1,6 @@
-# FATAL: Makefile: order must be PORTNAME/PORTVERSION/DISTVERSIONPREFIX/DISTVERSION/DISTVERSIONSUFFIX/PORTREVISION/PORTEPOCH/CATEGORIES/MASTER_SITES/MASTER_SITE_SUBDIR/PROJECTHOST/PKGNAMEPREFIX/PKGNAMESUFFIX/DISTNAME/EXTRACT_SUFX/DISTFILES(_\w+)?/DIST_SUBDIR/EXTRACT_ONLY.
-
 PORTNAME=	sqlpage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.5
-PORTREVISION=	1
+DISTVERSION=	0.21.0
 CATEGORIES=	www databases
 MASTER_SITES=	https://cdn.jsdelivr.net/npm/:npm
 DISTFILES=	${NPM_DISTFILES}
@@ -27,12 +24,12 @@ GH_PROJECT=	SQLpage
 USERS=		sqlpage
 GROUPS=		sqlpage
 
-NPM_DISTFILES=	apexcharts@3.47.0/dist/apexcharts.min.js:npm \
+NPM_DISTFILES=	apexcharts@3.49.1/dist/apexcharts.min.js:npm \
 		@tabler/core@1.0.0-beta20/dist/css/tabler.min.css:npm \
 		@tabler/core@1.0.0-beta20/dist/css/tabler-vendors.min.css:npm \
 		@tabler/core@1.0.0-beta20/dist/js/tabler.min.js:npm \
 		list.js-fixed@2.3.4/dist/list.min.js:npm \
-		@tabler/icons-sprite@3.2.0/dist/tabler-sprite.svg:npm \
+		@tabler/icons-sprite@3.4.0/dist/tabler-sprite.svg:npm \
 		tom-select@2.3.1/dist/js/tom-select.popular.min.js:npm
 
 post-extract:
