@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.32-16488 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g8dac5e34be
+DISTVERSION=	0.0.32-16618 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gbceaf46e2f
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -33,8 +33,10 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.14.0-2-g8b43a97:hidapi/3rdparty/hidapi/hidapi \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-323-ge867c06:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
 		KhronosGroup:SPIRV-Tools:v2023.5.rc1:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
 		KhronosGroup:glslang:13.1.1:glslang/3rdparty/glslang/glslang \
+		kcat:openal-soft:1.23.1:openal_soft/3rdparty/OpenAL/openal-soft \
 		kinetiknz:cubeb:cubeb-0.2-1425-g88585b6:cubeb/3rdparty/cubeb/cubeb \
 		miniupnp:miniupnp:miniupnpd_2_3_6:miniupnp/3rdparty/miniupnp/miniupnp \
+		nothings:stb:013ac3b:stb/3rdparty/stblib/stb \
 		wolfSSL:wolfssl:v5.7.0-stable:wolfssl/3rdparty/wolfssl/wolfssl
 
 USES=		cmake elfctl gl iconv:wchar_t llvm:min=16,lib localbase:ldflags \
@@ -95,13 +97,27 @@ post-patch:
 		-e '/GIT_VERSION/s/local_build/${GH_TAGNAME:C/[^-]*-//}/' \
 		${WRKSRC}/${PORTNAME}/git-version.cmake
 
-# XXX Drop after FreeBSD 13.2 EOL around 2024-07-01
-.if !exists(/usr/include/c++/v1/__ranges/as_rvalue_view.h)
+# XXX Drop after FreeBSD 13.2 EOL around 2024-07-01 (don't forget distinfo)
+.if ${CXX} == c++ && exists(/usr/lib/libc++.so)
+.if !exists(/usr/include/c++/v1/__ranges/as_rvalue_view.h) || make(makesum) || make(fetch)
+USES+=		llvm:min=16,build,export
 PATH:=		${LLVM_PREFIX}/bin:${PATH} # XXX _CMAKE_TOOLCHAIN_SUFFIX vs. devel/llvm*
-CC=		clang${LLVM_VERSION}
-CXX=		clang++${LLVM_VERSION}
-CPP=		clang-cpp${LLVM_VERSION}
 CONFIGURE_ENV+=	CC="${CC}" CXX="${CXX}" CPP="${CPP}"
+
+# XXX Move into separate port and standardize via USES
+GH_TUPLE+=	llvm:llvm-project:llvmorg-16.0.1:libcxx
+CXXFLAGS+=	-nostdinc++ -isystem${WRKDIR}/libcxx_prefix/include/c++/v1
+# Don't link against new libc++ as it's not necessary
+#LDFLAGS+=	-nostdlib++ -L${WRKDIR}/libcxx_prefix/lib -l:libc++.a -lcxxrt
+
+pre-configure:	bundled-libcxx
+bundled-libcxx:
+	@${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} \
+		-DLIBCXX_INCLUDE_BENCHMARKS:BOOL=OFF \
+		-DCMAKE_INSTALL_PREFIX:PATH=${WRKDIR}/libcxx_prefix \
+		-B ${WRKDIR}/libcxx_build -S ${WRKSRC_libcxx}/libcxx
+	@${DO_MAKE_BUILD:NDESTDIR*} install -C ${WRKDIR}/libcxx_build
 .endif
+.endif # exists(/usr/lib/libc++.so)
 
 .include <bsd.port.mk>
