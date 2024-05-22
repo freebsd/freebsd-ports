@@ -1845,6 +1845,7 @@
     SUBDIR += py-sseclient
     SUBDIR += py-starlette
     SUBDIR += py-strawberry-graphql-django
+    SUBDIR += py-streamlit
     SUBDIR += py-swapper
     SUBDIR += py-textile
     SUBDIR += py-ticketutil
