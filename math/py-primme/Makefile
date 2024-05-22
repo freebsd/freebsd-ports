@@ -1,6 +1,5 @@
 PORTNAME=	primme
-DISTVERSION=	3.2.1
-PORTREVISION=	1
+DISTVERSION=	3.2.2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,16 +10,20 @@ WWW=		https://www.cs.wm.edu/~andreas/software/
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
-LIB_DEPENDS=	libprimme.so:math/primme
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+LIB_DEPENDS=	libprimme.so:math/primme \
+		libblas.so:math/blas \
+		liblapack.so:math/lapack
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
 USES=		fortran gmake localbase:ldflags python shebangfix
-USE_PYTHON=	distutils cython autoplist
+USE_PYTHON=	pep517 cython autoplist
 
 TEST_TARGET=	test
 
