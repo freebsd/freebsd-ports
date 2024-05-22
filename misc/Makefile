@@ -423,6 +423,7 @@
     SUBDIR += py-facenet-pytorch
     SUBDIR += py-fast-histogram
     SUBDIR += py-fastscapelib
+    SUBDIR += py-files-to-prompt
     SUBDIR += py-fleep
     SUBDIR += py-fuzzy
     SUBDIR += py-gluoncv
