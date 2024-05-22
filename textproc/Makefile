@@ -1376,6 +1376,7 @@
     SUBDIR += py-gensim
     SUBDIR += py-gi-docgen
     SUBDIR += py-grapheme
+    SUBDIR += py-grep-ast
     SUBDIR += py-griffe
     SUBDIR += py-guess-language
     SUBDIR += py-hashids
