@@ -17,10 +17,6 @@ USES=		go:modules
 
 GO_MODULE=	github.com/mjl-/mox
 
-xUSE_GITHUB=	yes
-xGH_ACCOUNT=	mudler
-xGH_PROJECT=	LocalAI
-
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
