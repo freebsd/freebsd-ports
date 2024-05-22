@@ -1,4 +1,4 @@
---- chrome/browser/extensions/api/settings_private/prefs_util.cc.orig	2024-04-19 13:02:56 UTC
+--- chrome/browser/extensions/api/settings_private/prefs_util.cc.orig	2024-05-21 18:07:39 UTC
 +++ chrome/browser/extensions/api/settings_private/prefs_util.cc
 @@ -204,7 +204,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
    (*s_allowlist)[::prefs::kSidePanelHorizontalAlignment] =
@@ -9,7 +9,7 @@
    (*s_allowlist)[::prefs::kUseCustomChromeFrame] =
        settings_api::PrefType::kBoolean;
  #endif
-@@ -213,7 +213,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
+@@ -215,7 +215,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
    // Appearance settings.
    (*s_allowlist)[::prefs::kCurrentThemeID] = settings_api::PrefType::kString;
    (*s_allowlist)[::prefs::kPolicyThemeColor] = settings_api::PrefType::kNumber;

@@ -1,5 +1,5 @@
 PORTNAME=	chromium
-PORTVERSION=	124.0.6367.207
+PORTVERSION=	125.0.6422.76
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:external
@@ -34,8 +34,10 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
 		libspeechd.so:accessibility/speech-dispatcher \
+		libasound.so:audio/alsa-lib \
 		libFLAC.so:audio/flac \
 		libopus.so:audio/opus \
+		libsndio.so:audio/sndio \
 		libspeex.so:audio/speex \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
@@ -126,6 +128,11 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		extra_ldflags="${LDFLAGS}" \
 		ffmpeg_branding="${FFMPEG_BRAND}"
 
+# Audio backends
+GN_ARGS+=	use_alsa=true \
+		use_pulseaudio=true \
+		use_sndio=true
+
 # TODO: investigate building with these options:
 # use_system_minigbm
 GN_BOOTSTRAP_FLAGS=	--no-clean --no-rebuild --skip-generate-buildfiles
@@ -140,10 +147,8 @@ SUB_FILES=	chromium-browser.desktop chrome
 SUB_LIST+=	COMMENT="${COMMENT}"
 
 OPTIONS_DEFINE=		CODECS CUPS DEBUG DRIVER KERBEROS LTO PIPEWIRE TEST WIDEVINE
-OPTIONS_DEFAULT=	CODECS CUPS DRIVER KERBEROS PIPEWIRE SNDIO
+OPTIONS_DEFAULT=	CODECS CUPS DRIVER KERBEROS PIPEWIRE
 OPTIONS_EXCLUDE_aarch64=LTO
-OPTIONS_GROUP=		AUDIO
-OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO SNDIO
 OPTIONS_RADIO=		KERBEROS
 OPTIONS_RADIO_KERBEROS=	HEIMDAL HEIMDAL_BASE MIT
 OPTIONS_SUB=		yes
@@ -152,12 +157,6 @@ DRIVER_DESC=		Install chromedriver
 HEIMDAL_BASE_DESC=	Heimdal Kerberos (base)
 HEIMDAL_DESC=		Heimdal Kerberos (security/heimdal)
 MIT_DESC=		MIT Kerberos (security/krb5)
-
-ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins \
-			alsa-lib>=1.1.1_1:audio/alsa-lib
-ALSA_VARS=		GN_ARGS+=use_alsa=true
-ALSA_VARS_OFF=		GN_ARGS+=use_alsa=false
 
 CODECS_VARS=		GN_ARGS+=proprietary_codecs=true \
 			FFMPEG_BRAND="Chrome"
@@ -202,18 +201,6 @@ PIPEWIRE_VARS=		GN_ARGS+=rtc_use_pipewire=true \
 PIPEWIRE_VARS_OFF=	GN_ARGS+=rtc_use_pipewire=false \
 			GN_ARGS+=rtc_link_pipewire=false
 
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
-PULSEAUDIO_VARS=	GN_ARGS+=use_pulseaudio=true
-PULSEAUDIO_VARS_OFF=	GN_ARGS+=use_pulseaudio=false
-
-# With SNDIO=on we exclude audio_manager_linux from the build (see
-# media/audio/BUILD.gn) and use audio_manager_openbsd which does not
-# support falling back to ALSA or PulseAudio.
-SNDIO_PREVENTS=		ALSA PULSEAUDIO
-SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
-SNDIO_VARS=		GN_ARGS+=use_sndio=true
-SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
-
 WIDEVINE_DESC=		Depend on foreign-cdm to enable playback of DRM content
 WIDEVINE_RUN_DEPENDS=	foreign-cdm>0:www/foreign-cdm
 
@@ -229,8 +216,8 @@ TEST_ALL_TARGET=	${TEST_TARGETS}
 IGNORE=		you have selected HEIMDAL_BASE but do not have Heimdal installed in base
 .endif
 
-.if ${COMPILER_VERSION} < 170
-LLVM_DEFAULT=		17
+.if ${COMPILER_VERSION} < 180
+LLVM_DEFAULT=		18
 BUILD_DEPENDS+=		clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 BINARY_ALIAS+=		cpp=${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT} \
 			cc=${LOCALBASE}/bin/clang${LLVM_DEFAULT} \
@@ -258,7 +245,7 @@ PLIST_SUB+=	NOT_AARCH64=""
 FFMPEG_TARGET=	ia32
 .endif
 
-FFMPEG_BDIR=	${WRKSRC}/build.${FFMPEG_TARGET}.freebsd/${FFMPEG_BRAND}
+FFMPEG_BDIR=	${WRKSRC}/third_party/ffmpeg/build.${FFMPEG_TARGET}.freebsd/${FFMPEG_BRAND}
 FFMPEG_CDIR=	${WRKSRC}/third_party/ffmpeg/chromium/config/${FFMPEG_BRAND}/freebsd/${FFMPEG_TARGET}
 
 # Allow relocations against read-only segments (override lld default)
@@ -296,8 +283,8 @@ pre-configure:
 		dav1d flac fontconfig freetype harfbuzz-ng icu libdrm libevent libpng \
 		libusb libwebp libxml libxslt openh264 opus || ${FALSE}
 	# Chromium uses an unreleased version of FFmpeg, so configure it
-	cd ${WRKSRC}/third_party/ffmpeg && \
-		${PYTHON_CMD} chromium/scripts/build_ffmpeg.py freebsd ${FFMPEG_TARGET} \
+	cd ${WRKSRC}/media/ffmpeg && \
+		${PYTHON_CMD} scripts/build_ffmpeg.py freebsd ${FFMPEG_TARGET} \
 		--config-only --branding=${FFMPEG_BRAND}
 	cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h
 	${MKDIR} ${FFMPEG_CDIR}

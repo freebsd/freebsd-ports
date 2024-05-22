@@ -1,6 +1,6 @@
---- base/files/file_util_unittest.cc.orig	2024-04-19 13:02:56 UTC
+--- base/files/file_util_unittest.cc.orig	2024-05-21 18:07:39 UTC
 +++ base/files/file_util_unittest.cc
-@@ -3870,7 +3870,7 @@ TEST_F(FileUtilTest, ReadFileToStringWithNamedPipe) {
+@@ -3772,7 +3772,7 @@ TEST_F(FileUtilTest, ReadFileToStringWithNamedPipe) {
  }
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -9,7 +9,7 @@
  TEST_F(FileUtilTest, ReadFileToStringWithProcFileSystem) {
    FilePath file_path("/proc/cpuinfo");
    std::string data = "temp";
-@@ -4651,7 +4651,7 @@ TEST(FileUtilMultiThreadedTest, MultiThreadedTempFiles
+@@ -4553,7 +4553,7 @@ TEST(FileUtilMultiThreadedTest, MultiThreadedTempFiles
                  NULL);
  #else
      size_t bytes_written =
