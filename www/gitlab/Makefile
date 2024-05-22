@@ -1,7 +1,7 @@
 PORTNAME=	gitlab-${FLAVOR:Uce}
 PORTVERSION=	17.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
 .endif
@@ -307,12 +307,13 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 	${MY_DEPENDS}
 
-RUN_DEPENDS=	${MY_DEPENDS}
+RUN_DEPENDS=	gmake>=4.4.1:devel/gmake \
+	${MY_DEPENDS}
 
 FLAVORS=	ce ee
 FLAVOR?=	${FLAVORS:[1]}
 
-USES=		nodejs:env ruby shebangfix
+USES=		nodejs:env python:run ruby shebangfix
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
