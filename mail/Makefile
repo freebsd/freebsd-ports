@@ -246,6 +246,7 @@
     SUBDIR += mls
     SUBDIR += mmh
     SUBDIR += mmr
+    SUBDIR += mox
     SUBDIR += mpop
     SUBDIR += msglint
     SUBDIR += msmtp
