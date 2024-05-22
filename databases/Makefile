@@ -823,6 +823,7 @@
     SUBDIR += py-sqlglot
     SUBDIR += py-sqlite-anyio
     SUBDIR += py-sqlite-fts4
+    SUBDIR += py-sqlite-migrate
     SUBDIR += py-sqlite-utils
     SUBDIR += py-sqlite3
     SUBDIR += py-sqlobject
