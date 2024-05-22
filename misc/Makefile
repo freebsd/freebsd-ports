@@ -404,6 +404,7 @@
     SUBDIR += py-SoapySDR
     SUBDIR += py-accelerate
     SUBDIR += py-alive-progress
+    SUBDIR += py-anthropic
     SUBDIR += py-apache-beam
     SUBDIR += py-ascii-magic
     SUBDIR += py-ast-comments
