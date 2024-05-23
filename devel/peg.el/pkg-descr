@@ -1,0 +1,8 @@
+This package implements Parsing Expression Grammars for Emacs Lisp.
+
+Parsing Expression Grammars (PEG) are a formalism in the spirit of
+Context Free Grammars (CFG) with some simplifications which makes the
+implementation of PEGs as recursive descent parsers particularly
+simple and easy to understand [Ford, Baker].
+
+PEGs are more expressive than regexps and potentially easier to use.
