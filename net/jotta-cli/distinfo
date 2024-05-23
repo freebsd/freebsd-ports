@@ -1,5 +1,5 @@
 TIMESTAMP = 1688752625
-SHA256 (jotta-cli-0.15.98319_freebsd_amd64.tar.gz) = e7b9a9ad092e670e561c8f27660eba2b7b1ca56c30e167d03e84a8708d97b5d9
-SIZE (jotta-cli-0.15.98319_freebsd_amd64.tar.gz) = 14414411
-SHA256 (jotta-cli-0.15.98319_freebsd_386.tar.gz) = f3d05675185aad457e430c0baa704f159bcf3a471c4b3df33f09c1964f478154
-SIZE (jotta-cli-0.15.98319_freebsd_386.tar.gz) = 13907173
+SHA256 (jotta-cli-0.15.109709_freebsd_amd64.tar.gz) = 8732833166df1cd38a83b84b87632ba8705ad8d7e700b48d182c969cf193c718
+SIZE (jotta-cli-0.15.109709_freebsd_amd64.tar.gz) = 14946124
+SHA256 (jotta-cli-0.15.109709_freebsd_386.tar.gz) = d1e31ad74d39f059e1ab67293a51441666198bc1ab9f88160169e6adf08a8712
+SIZE (jotta-cli-0.15.109709_freebsd_386.tar.gz) = 14322173
