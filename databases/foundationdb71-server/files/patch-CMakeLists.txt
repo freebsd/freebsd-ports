@@ -1,15 +1,12 @@
---- CMakeLists.txt.orig	2022-09-19 11:42:41 UTC
+--- CMakeLists.txt.orig	2024-01-17 13:58:04 UTC
 +++ CMakeLists.txt
-@@ -183,9 +183,13 @@ add_subdirectory(fdbbackup)
-   add_subdirectory(fdbservice)
+@@ -184,8 +184,10 @@ else()
  endif()
  add_subdirectory(fdbbackup)
--add_subdirectory(contrib)
-+if(WITH_CONTRIB)
-+  add_subdirectory(contrib)
-+endif()
- add_subdirectory(tests)
+ add_subdirectory(contrib)
+-add_subdirectory(tests)
 -add_subdirectory(flowbench EXCLUDE_FROM_ALL)
++#add_subdirectory(tests)
 +if(WITH_FLOWBENCH)
 +  add_subdirectory(flowbench EXCLUDE_FROM_ALL)
 +endif()

@@ -14,13 +14,13 @@ restart-delay = 60
 # initial-restart-delay = 0
 # restart-backoff = 60
 # restart-delay-reset-interval = 60
-cluster-file = %%FOUNDATIONDB_ETCDIR%%/fdb.cluster
+cluster-file = %%ETCDIR%%/fdb.cluster
 # delete-envvars =
 # kill-on-configuration-change = true
 
 ## Default parameters for individual fdbserver processes
 [fdbserver]
-command = %%PREFIX%%/bin/fdbserver
+command = %%PREFIX%%/sbin/fdbserver
 public-address = auto:$ID
 listen-address = public
 datadir = %%FOUNDATIONDB_DBDIR%%/data/$ID
@@ -41,7 +41,7 @@ logdir = %%FOUNDATIONDB_LOGDIR%%
 [fdbserver.4500]
 
 [backup_agent]
-command = %%PREFIX%%/bin/backup_agent
+command = %%PREFIX%%/lib/foundationdb/backup_agent/backup_agent
 logdir = %%FOUNDATIONDB_LOGDIR%%
 
 [backup_agent.1]

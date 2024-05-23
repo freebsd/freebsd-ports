@@ -29,7 +29,7 @@ load_rc_config "$name"
 start_precmd="foundationdb_start_precmd"
 
 pidfile="/var/run/fdbmonitor.pid"
-command=%%PREFIX%%/bin/fdbmonitor
+command=%%PREFIX%%/sbin/fdbmonitor
 command_args="--conffile ${foundationdb_config} --lockfile ${pidfile} --daemonize"
 
 foundationdb_start_precmd()
