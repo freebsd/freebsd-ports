@@ -1,9 +1,8 @@
 PORTNAME=	radicale
-PORTVERSION=	3.1.9
+PORTVERSION=	3.2.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Radicale-${PORTVERSION}
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Python based CalDAV/CardDAV server
@@ -17,6 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=0:security/py-bcrypt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}passlib>=0:security/py-passlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vobject>=0.9.6:deskutils/py-vobject@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.7.3:devel/py-python-dateutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pika>=1.1.0:devel/py-pika@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}defusedxml>0:devel/py-defusedxml@${PY_FLAVOR}
 
 USES=		cpe python
