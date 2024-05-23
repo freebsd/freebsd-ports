@@ -52,6 +52,8 @@ Modules/%%MODULES_VERSION%%/share/vim/vimfiles/ftdetect/modulefile.vim
 Modules/%%MODULES_VERSION%%/share/vim/vimfiles/ftplugin/modulefile.vim
 Modules/%%MODULES_VERSION%%/share/vim/vimfiles/syntax/modulefile.vim
 Modules/versions/%%MODULES_VERSION%%
+etc/profile.d/module.csh
+etc/profile.d/module.sh
 share/man/man1/ml.1.gz
 share/man/man1/module.1.gz
 share/man/man5/modulefile.5.gz
