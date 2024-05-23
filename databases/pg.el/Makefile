@@ -1,6 +1,7 @@
 PORTNAME=	pg.el
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.34
+PORTREVISION=	1
 CATEGORIES=	databases elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -9,6 +10,9 @@ COMMENT=	PostgreSQL Elisp interface
 WWW=		https://github.com/emarsden/pg-el
 
 LICENSE=	GPLv2+
+
+BUILD_DEPENDS=	peg.el${EMACS_PKGNAMESUFFIX}>1.0:devel/peg.el@${EMACS_FLAVOR}
+RUN_DEPENDS=	peg.el${EMACS_PKGNAMESUFFIX}>1.0:devel/peg.el@${EMACS_FLAVOR}
 
 USES=		emacs
 
@@ -29,7 +33,8 @@ OPTIONS_DEFINE=	DOCS
 
 do-build:
 	(cd ${WRKSRC} \
-	&& ${EMACS_CMD} -Q -batch -L . -f batch-byte-compile *.el)
+	&& ${EMACS_CMD} -Q -batch -L . -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} \
+	-f batch-byte-compile *.el)
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
