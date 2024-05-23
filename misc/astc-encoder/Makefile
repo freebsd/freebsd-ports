@@ -1,6 +1,9 @@
 PORTNAME=	astc-encoder
-DISTVERSION=	4.7.0
+DISTVERSION=	4.8.0
 CATEGORIES=	misc
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	f1756a58e896bc05caf80d203509bb2aa94aaa25.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Texture compressor for Adaptive Scalable Texture Compression format
