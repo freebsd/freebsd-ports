@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	2024-05-21 09:44:13 UTC
++++ CMakeLists.txt
+@@ -44,12 +44,9 @@ mark_as_advanced(STRICT_NLOHMANN_JSON_VERSION)
+ mark_as_advanced(ONLY_BUILD_SOLIDITY_LIBRARIES)
+ mark_as_advanced(STRICT_NLOHMANN_JSON_VERSION)
+ 
+-# Setup cccache.
+-include(EthCcache)
+-
+ # Let's find our dependencies
+ include(EthDependencies)
+-if (NOT USE_SYSTEM_LIBRARIES)
++if (USE_SYSTEM_LIBRARIES)
+   include(fmtlib)
+   include(nlohmann-json)
+   include(range-v3)
