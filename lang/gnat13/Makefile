@@ -85,6 +85,8 @@ GNAT12_BUILD_DEPENDS=		gnat12>0:lang/gnat12
 GNAT12_VARS=			_GNAT12_PATH=${LOCALBASE}/gnat12/bin
 .if exists(/usr/lib32/libc.so)
 MULTILIB_CONFIGURE_ENABLE=	multilib
+.else
+CONFIGURE_ARGS+=		--disable-multilib
 .endif
 NLS_CONFIGURE_ON=		--enable-nls
 NLS_CONFIGURE_OFF=		--disable-nls
