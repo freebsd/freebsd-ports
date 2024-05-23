@@ -1,6 +1,6 @@
 PORTNAME=	neocmakelsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.25
+DISTVERSION=	0.6.26
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,6 +30,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		backtrace-0.3.71 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
+		bstr-1.9.1 \
 		bytes-1.6.0 \
 		cc-1.0.98 \
 		cfg-if-1.0.0 \
@@ -41,6 +42,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		colorchoice-1.0.1 \
 		const-random-0.1.18 \
 		const-random-macro-0.1.16 \
+		crossbeam-deque-0.8.5 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.20 \
 		crunchy-0.2.2 \
 		csv-1.3.0 \
 		csv-core-0.1.11 \
@@ -58,10 +62,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		getrandom-0.2.15 \
 		gimli-0.28.1 \
 		glob-0.3.1 \
+		globset-0.4.14 \
 		hashbrown-0.14.5 \
 		hermit-abi-0.3.9 \
 		httparse-1.8.0 \
 		idna-0.5.0 \
+		ignore-0.4.22 \
 		is_terminal_polyfill-1.70.0 \
 		itoa-1.0.11 \
 		lazy_static-1.4.0 \
@@ -95,6 +101,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rust-ini-0.21.0 \
 		rustc-demangle-0.1.24 \
 		ryu-1.0.18 \
+		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		serde-1.0.202 \
 		serde_derive-1.0.202 \
@@ -136,6 +143,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		url-2.5.0 \
 		utf8parse-0.2.1 \
 		valuable-0.1.0 \
+		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
