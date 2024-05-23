@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.cc.orig	2024-04-23 07:42:17 UTC
+--- components/feature_engagement/public/feature_constants.cc.orig	2024-05-23 20:04:36 UTC
 +++ components/feature_engagement/public/feature_constants.cc
 @@ -18,7 +18,7 @@ BASE_FEATURE(kIPHDemoMode, "IPH_DemoMode", base::FEATU
  BASE_FEATURE(kIPHDummyFeature, "IPH_Dummy", base::FEATURE_DISABLED_BY_DEFAULT);
@@ -9,17 +9,16 @@
  BASE_FEATURE(kIPHBatterySaverModeFeature,
               "IPH_BatterySaverMode",
               base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -584,7 +584,8 @@ BASE_FEATURE(kDefaultBrowserTriggerCriteriaExperiment,
+@@ -577,7 +577,7 @@ BASE_FEATURE(kDefaultBrowserTriggerCriteriaExperiment,
+ 
  #endif  // BUILDFLAG(IS_IOS)
  
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || \
-+    BUILDFLAG(IS_BSD)
- BASE_FEATURE(kIPHAutofillExternalAccountProfileSuggestionFeature,
-              "IPH_AutofillExternalAccountProfileSuggestion",
-              base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -712,7 +713,7 @@ BASE_FEATURE(kIPHScalableIphGamingFeature,
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || \
+     BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
+ BASE_FEATURE(kIPHAutofillCreditCardBenefitFeature,
+              "IPH_AutofillCreditCardBenefit",
+@@ -712,7 +712,7 @@ BASE_FEATURE(kIPHScalableIphGamingFeature,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif
  

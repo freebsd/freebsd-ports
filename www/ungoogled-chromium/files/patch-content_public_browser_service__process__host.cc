@@ -1,6 +1,6 @@
---- content/public/browser/service_process_host.cc.orig	2024-04-23 07:42:17 UTC
+--- content/public/browser/service_process_host.cc.orig	2024-05-23 20:04:36 UTC
 +++ content/public/browser/service_process_host.cc
-@@ -76,7 +76,7 @@ ServiceProcessHost::Options& ServiceProcessHost::Optio
+@@ -70,7 +70,7 @@ ServiceProcessHost::Options::WithPreloadedLibraries(
  
  ServiceProcessHost::Options& ServiceProcessHost::Options::WithGpuClient(
      base::PassKey<ServiceProcessHostGpuClient> passkey) {

@@ -1,4 +1,4 @@
---- v8/src/flags/flags.cc.orig	2024-04-23 07:42:17 UTC
+--- v8/src/flags/flags.cc.orig	2024-05-23 20:04:36 UTC
 +++ v8/src/flags/flags.cc
 @@ -15,6 +15,10 @@
  #include <set>
@@ -23,7 +23,7 @@
  
  // {v8_flags} needs to be aligned to a memory page, and the size needs to be a
  // multiple of a page size. This is required for memory-protection of the memory
-@@ -789,6 +797,10 @@ void FlagList::FreezeFlags() {
+@@ -807,6 +815,10 @@ void FlagList::FreezeFlags() {
    // Note that for string flags we only protect the pointer itself, but not the
    // string storage. TODO(12887): Fix this.
    base::OS::SetDataReadOnly(&v8_flags, sizeof(v8_flags));

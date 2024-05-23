@@ -1,6 +1,6 @@
---- chrome/browser/browser_process_impl.cc.orig	2024-03-22 14:16:19 UTC
+--- chrome/browser/browser_process_impl.cc.orig	2024-05-23 20:04:36 UTC
 +++ chrome/browser/browser_process_impl.cc
-@@ -223,7 +223,7 @@
+@@ -229,7 +229,7 @@
  #include "chrome/browser/ui/profiles/profile_picker.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/error_reporting/chrome_js_error_report_processor.h"  // nogncheck
  #endif
  
-@@ -1258,7 +1258,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+@@ -1273,7 +1273,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
  
    ApplyMetricsReportingPolicy();
  
@@ -18,7 +18,7 @@
    ChromeJsErrorReportProcessor::Create();
  #endif
  
-@@ -1518,7 +1518,7 @@ void BrowserProcessImpl::Unpin() {
+@@ -1578,7 +1578,7 @@ void BrowserProcessImpl::Unpin() {
  // Mac is currently not supported.
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

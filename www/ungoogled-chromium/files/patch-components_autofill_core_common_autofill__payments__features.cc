@@ -1,6 +1,6 @@
---- components/autofill/core/common/autofill_payments_features.cc.orig	2024-04-23 07:42:17 UTC
+--- components/autofill/core/common/autofill_payments_features.cc.orig	2024-05-23 20:04:36 UTC
 +++ components/autofill/core/common/autofill_payments_features.cc
-@@ -276,7 +276,7 @@ BASE_FEATURE(kAutofillEnableVirtualCards,
+@@ -272,7 +272,7 @@ BASE_FEATURE(kAutofillEnableVirtualCards,
  bool ShouldShowImprovedUserConsentForCreditCardSave() {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

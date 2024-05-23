@@ -1,5 +1,5 @@
---- base/allocator/partition_allocator/src/partition_alloc/starscan/stack/stack.cc.orig	2023-12-23 12:33:28 UTC
-+++ base/allocator/partition_allocator/src/partition_alloc/starscan/stack/stack.cc
+--- base/allocator/partition_allocator/src/partition_alloc/stack/stack.cc.orig	2024-05-23 20:04:36 UTC
++++ base/allocator/partition_allocator/src/partition_alloc/stack/stack.cc
 @@ -18,6 +18,10 @@
  #include <pthread.h>
  #endif

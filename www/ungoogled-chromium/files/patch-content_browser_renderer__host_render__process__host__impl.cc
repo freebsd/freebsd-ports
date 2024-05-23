@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_process_host_impl.cc.orig	2024-04-23 07:42:17 UTC
+--- content/browser/renderer_host/render_process_host_impl.cc.orig	2024-05-23 20:04:36 UTC
 +++ content/browser/renderer_host/render_process_host_impl.cc
 @@ -226,7 +226,7 @@
  #include "third_party/blink/public/mojom/android_font_lookup/android_font_lookup.mojom.h"
@@ -18,7 +18,7 @@
    struct rlimit limit;
    if (getrlimit(RLIMIT_NPROC, &limit) != 0)
      return kUnknownPlatformProcessLimit;
-@@ -1150,7 +1150,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
+@@ -1154,7 +1154,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
    IOThreadHostImpl& operator=(const IOThreadHostImpl& other) = delete;
  
    void SetPid(base::ProcessId child_pid) {
@@ -27,7 +27,7 @@
      child_thread_type_switcher_.SetPid(child_pid);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
    }
-@@ -1167,7 +1167,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
+@@ -1171,7 +1171,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
          return;
      }
  
@@ -36,7 +36,7 @@
      if (auto font_receiver = receiver.As<font_service::mojom::FontService>()) {
        ConnectToFontService(std::move(font_receiver));
        return;
-@@ -1261,7 +1261,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
+@@ -1265,7 +1265,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
    std::unique_ptr<service_manager::BinderRegistry> binders_;
    mojo::Receiver<mojom::ChildProcessHost> receiver_{this};
  
@@ -45,7 +45,7 @@
    mojo::Remote<media::mojom::VideoEncodeAcceleratorProviderFactory>
        video_encode_accelerator_factory_remote_;
    ChildThreadTypeSwitcher child_thread_type_switcher_;
-@@ -3354,7 +3354,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
+@@ -3363,7 +3363,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
              base::TimeTicks::UnixEpoch().since_origin().InMicroseconds()));
    }
  
@@ -54,7 +54,7 @@
    // Append `kDisableVideoCaptureUseGpuMemoryBuffer` flag if there is no support
    // for NV12 GPU memory buffer.
    if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled() &&
-@@ -3413,6 +3413,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3422,6 +3422,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
      switches::kDisableSpeechAPI,
      switches::kDisableThreadedCompositing,
      switches::kDisableTouchDragDrop,

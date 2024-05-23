@@ -1,4 +1,4 @@
---- chrome/common/chrome_paths.cc.orig	2024-03-22 14:16:19 UTC
+--- chrome/common/chrome_paths.cc.orig	2024-05-23 20:04:36 UTC
 +++ chrome/common/chrome_paths.cc
 @@ -30,7 +30,7 @@
  #include "base/apple/foundation_util.h"
@@ -36,7 +36,7 @@
        if (!GetUserDownloadsDirectorySafe(&cur)) {
          return false;
        }
-@@ -544,7 +544,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -541,7 +541,7 @@ bool PathProvider(int key, base::FilePath* result) {
          return false;
        }
        break;
@@ -45,7 +45,7 @@
      case chrome::DIR_POLICY_FILES: {
        cur = base::FilePath(policy::kPolicyPath);
        break;
-@@ -555,7 +555,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -552,7 +552,7 @@ bool PathProvider(int key, base::FilePath* result) {
  #if BUILDFLAG(IS_CHROMEOS_ASH) ||                              \
      ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
       BUILDFLAG(CHROMIUM_BRANDING)) ||                          \
@@ -54,7 +54,7 @@
      case chrome::DIR_USER_EXTERNAL_EXTENSIONS: {
        if (!base::PathService::Get(chrome::DIR_USER_DATA, &cur)) {
          return false;
-@@ -564,7 +564,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -561,7 +561,7 @@ bool PathProvider(int key, base::FilePath* result) {
        break;
      }
  #endif
@@ -63,7 +63,7 @@
      case chrome::DIR_STANDALONE_EXTERNAL_EXTENSIONS: {
        cur = base::FilePath(kFilepathSinglePrefExtensions);
        break;
-@@ -612,7 +612,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -609,7 +609,7 @@ bool PathProvider(int key, base::FilePath* result) {
  #endif
  
  #if BUILDFLAG(ENABLE_EXTENSIONS) && \
@@ -72,7 +72,7 @@
      case chrome::DIR_NATIVE_MESSAGING:
  #if BUILDFLAG(IS_MAC)
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
-@@ -626,9 +626,12 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -623,9 +623,12 @@ bool PathProvider(int key, base::FilePath* result) {
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
        cur = base::FilePath(
            FILE_PATH_LITERAL("/etc/opt/chrome/native-messaging-hosts"));

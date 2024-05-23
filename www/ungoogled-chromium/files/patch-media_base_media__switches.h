@@ -1,6 +1,17 @@
---- media/base/media_switches.h.orig	2024-04-23 07:42:17 UTC
+--- media/base/media_switches.h.orig	2024-05-23 20:04:36 UTC
 +++ media/base/media_switches.h
-@@ -315,7 +315,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kPlatformHEVCEncoder
+@@ -43,6 +43,10 @@ MEDIA_EXPORT extern const char kDisableBackgroundMedia
+ 
+ MEDIA_EXPORT extern const char kReportVp9AsAnUnsupportedMimeType[];
+ 
++#if BUILDFLAG(IS_BSD)
++MEDIA_EXPORT extern const char kAudioBackend[];
++#endif
++
+ #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FREEBSD) || \
+     BUILDFLAG(IS_SOLARIS)
+ MEDIA_EXPORT extern const char kAlsaInputDevice[];
+@@ -314,7 +318,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kPlatformHEVCEncoder
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kPlaybackSpeedButton);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kPreloadMediaEngagementData);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kPreloadMetadataSuspend);
@@ -9,7 +20,7 @@
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kPulseaudioLoopbackForCast);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kPulseaudioLoopbackForScreenShare);
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -333,7 +333,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kUnifiedAutoplay);
+@@ -332,7 +336,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kUnifiedAutoplay);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseAndroidOverlayForSecureOnly);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseDecoderStreamForWebRTC);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseFakeDeviceForMediaStream);
@@ -18,7 +29,7 @@
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiVideoDecodeLinux);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiVideoDecodeLinuxGL);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiVideoEncodeLinux);
-@@ -352,7 +352,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiH264TemporalLa
+@@ -351,7 +355,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiH264TemporalLa
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiVp8TemporalLayerHWEncoding);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiVp9SModeHWEncoding);
  #endif  // defined(ARCH_CPU_X86_FAMILY) && BUILDFLAG(IS_CHROMEOS)
@@ -27,7 +38,7 @@
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kV4L2FlatVideoDecoder);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kV4L2FlatStatefulVideoDecoder);
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
-@@ -491,7 +491,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseOutOfProcessVide
+@@ -490,7 +494,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseOutOfProcessVide
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseGTFOOutOfProcessVideoDecoding);
  #endif  // BUILDFLAG(ALLOW_OOP_VIDEO_DECODER)
  

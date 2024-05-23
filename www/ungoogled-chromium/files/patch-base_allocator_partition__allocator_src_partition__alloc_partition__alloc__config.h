@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_config.h.orig	2024-04-23 07:42:17 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_config.h.orig	2024-05-23 20:04:36 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/partition_alloc_config.h
-@@ -251,7 +251,7 @@ constexpr bool kUseLazyCommit = false;
+@@ -231,7 +231,7 @@ constexpr bool kUseLazyCommit = false;
  // On these platforms, lock all the partitions before fork(), and unlock after.
  // This may be required on more platforms in the future.
  #define PA_CONFIG_HAS_ATFORK_HANDLER() \
@@ -9,7 +9,7 @@
  
  // PartitionAlloc uses PartitionRootEnumerator to acquire all
  // PartitionRoots at BeforeFork and to release at AfterFork.
-@@ -299,7 +299,7 @@ constexpr bool kUseLazyCommit = false;
+@@ -278,7 +278,7 @@ constexpr bool kUseLazyCommit = false;
  //
  // Also enabled on ARM64 macOS and iOS, as the 16kiB pages on this platform lead
  // to larger slot spans.

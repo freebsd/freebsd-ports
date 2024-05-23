@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h.orig	2024-02-25 20:22:18 UTC
+--- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h.orig	2024-05-23 20:04:36 UTC
 +++ chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h
 @@ -73,7 +73,7 @@ class SigninViewControllerDelegateViews
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT) || BUILDFLAG(IS_CHROMEOS_LACROS)
@@ -9,7 +9,7 @@
    static std::unique_ptr<views::WebView>
    CreateManagedUserNoticeConfirmationWebView(
        Browser* browser,
-@@ -138,7 +138,7 @@ class SigninViewControllerDelegateViews
+@@ -139,7 +139,7 @@ class SigninViewControllerDelegateViews
        InitializeSigninWebDialogUI initialize_signin_web_dialog_ui);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

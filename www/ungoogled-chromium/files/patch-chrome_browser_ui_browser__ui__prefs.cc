@@ -1,6 +1,6 @@
---- chrome/browser/ui/browser_ui_prefs.cc.orig	2024-04-23 07:42:17 UTC
+--- chrome/browser/ui/browser_ui_prefs.cc.orig	2024-05-23 20:04:36 UTC
 +++ chrome/browser/ui/browser_ui_prefs.cc
-@@ -168,7 +168,7 @@ void RegisterBrowserUserPrefs(user_prefs::PrefRegistry
+@@ -175,7 +175,7 @@ void RegisterBrowserUserPrefs(user_prefs::PrefRegistry
    registry->RegisterDictionaryPref(prefs::kHttpsUpgradeFallbacks);
    registry->RegisterDictionaryPref(prefs::kHttpsUpgradeNavigations);
    registry->RegisterBooleanPref(prefs::kHttpsOnlyModeAutoEnabled, false);
