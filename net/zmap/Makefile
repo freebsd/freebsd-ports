@@ -1,6 +1,7 @@
 PORTNAME=	zmap
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/judy/judy/Judy-1.0.5/:judy
 DISTFILES=	Judy-1.0.5.tar.gz:judy
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	gengetopt>0:devel/gengetopt \
 		gmake:devel/gmake
-LIB_DEPENDS=	libdnet.so:net/libdnet \
+LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libgmp.so:math/gmp \
 		libunistring.so:devel/libunistring
 
@@ -30,19 +31,6 @@ LDFLAGS+=	-L${JUDY_WRKSRC}/src/obj/.libs
 CMAKE_ON=	FORCE_CONF_INSTALL
 
 MANPAGE=	zblacklist.1 zmap.1 ztee.1
-
-OPTIONS_DEFINE=	REDIS MONGO JSON
-OPTIONS_DEFAULT=JSON
-JSON_DESC=	Build with support for JSON
-
-REDIS_LIB_DEPENDS=	libhiredis.so:databases/hiredis
-REDIS_CMAKE_BOOL=	WITH_REDIS
-
-MONGO_LIB_DEPENDS=	libmongoc-1.0.so:devel/mongo-c-driver
-MONGO_CMAKE_BOOL=	WITH_MONGO
-
-JSON_LIB_DEPENDS=	libjson-c.so:devel/json-c
-JSON_CMAKE_BOOL=	WITH_JSON
 
 pre-build: # build the Judy library
 	@cd ${JUDY_WRKSRC} && \
