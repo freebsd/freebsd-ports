@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240522:
+  AFFECTS: net-p2p/transmission-daemon
+
+  The web interface has been separated from the daemon port into its own port.
+  This allows users of transmission-gtk and transmission-qt to install the web
+  interface.
+
 20240521:
   AFFECTS: www/gitlab
   AUTHOR: mfechner@FreeBSD.org

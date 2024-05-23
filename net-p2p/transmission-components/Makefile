@@ -1,6 +1,6 @@
 PORTNAME=	transmission
 DISTVERSION=	4.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libb64.so:converters/libb64 \
 		libpsl.so:dns/libpsl \
 		libutp.so:net-p2p/libutp
 
-FLAVORS=			cli docs daemon gtk qt utils
+FLAVORS=			cli docs daemon gtk qt utils web
 FLAVOR?=			${FLAVORS:[1]}
 .for flavor in ${FLAVORS}
 ${flavor}_PKGNAMESUFFIX=	-${flavor}
@@ -77,6 +77,13 @@ USE_RC_SUBR=	transmission
 USES=		cpe tar:xz
 .endif
 
+.if ${FLAVOR} == web
+USES=		cpe tar:xz
+NO_ARCH=	yes
+NO_BUILD=	yes
+#PORTDATA=	public_html
+.endif
+
 CMAKE_ON=	USE_SYSTEM_B64 USE_SYSTEM_DEFLATE USE_SYSTEM_DHT \
 		USE_SYSTEM_EVENT2 USE_SYSTEM_MINIUPNPC USE_SYSTEM_NATPMP \
 		USE_SYSTEM_PSL USE_SYSTEM_UTP
@@ -96,7 +103,7 @@ CMAKE_OFF+=	ENABLE_DAEMON ENABLE_GTK ENABLE_QT ENABLE_UTILS INSTALL_WEB
 
 .if ${FLAVOR} == daemon
 CMAKE_ON+=	ENABLE_DAEMON
-CMAKE_OFF+=	ENABLE_CLI ENABLE_GTK ENABLE_QT ENABLE_UTILS
+CMAKE_OFF+=	ENABLE_CLI ENABLE_GTK ENABLE_QT ENABLE_UTILS INSTALL_WEB
 .endif
 
 .if ${FLAVOR} == gtk
@@ -120,8 +127,8 @@ CMAKE_OFF+=	ENABLE_CLI ENABLE_DAEMON ENABLE_GTK ENABLE_QT ENABLE_TESTS \
 OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME}/${FLAVOR}-options
 
 .if ${FLAVOR:Mdaemon}
-OPTIONS_DEFINE=		NLS TESTS WEB
-OPTIONS_DEFAULT=	NLS WEB
+OPTIONS_DEFINE=		NLS TESTS
+OPTIONS_DEFAULT=	NLS 
 .endif
 
 .if ${FLAVOR:Mdocs}
@@ -142,7 +149,7 @@ qt_DESC=	Build QT client
 TESTS_DESC=	Build & run unit tests
 utils_DESC=	Build utilities (create, edit, remote, show)
 cli_DESC=	Build command-line client (deprecated)
-WEB_DESC=	Install web client (implies daemon)
+#web_DESC=	Install web interface
 
 NLS_USES=	gettext-runtime:lib
 NLS_CMAKE_BOOL=	ENABLE_NLS
@@ -179,6 +186,11 @@ post-install:
 .if ${FLAVOR} == daemon
 post-install:
 	        ${MKDIR} ${STAGEDIR}${ETCDIR}/home
+.endif
+
+.if ${FLAVOR} == web
+do-install:
+		( cd ${WRKSRC}/web && ${COPYTREE_SHARE} public_html ${STAGEDIR}${DATADIR} )
 .endif
 
 post-install-TESTS-on:

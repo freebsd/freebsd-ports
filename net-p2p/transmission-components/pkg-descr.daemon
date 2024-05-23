@@ -1,9 +1,4 @@
 The transmission-daemon is a daemon-based Transmission session that can be
 controlled via RPC by transmission-remote (see transmission-utils) and
 other Transmission BiTtorrent client such as GTK+ and CLI interface.
-
-Transmission Web Interface (Clutch) is a WebUI for the Transmission BitTorrent
-client. It allows you to manage your torrents from anywhere you can access the
-internet, and runs on OS X and various flavors of *nix. It provides most of
-the basic features of the desktop client, including torrent upload, torrent
-start/stop, file path selection, speed limiting etc.
+The daemon may also be controlled by installing the web interface.
