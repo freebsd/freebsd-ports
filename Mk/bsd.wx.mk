@@ -1,6 +1,5 @@
 # bsd.wx.mk - Support for wxWidgets based ports.
 #
-#
 # The following variables can be defined in a port that uses the wxWidgets
 # library, contributed libraries, WxPython and/or more wxWidgets related
 # components (with run and/or build dependencies). It can be used after and/or
@@ -56,7 +55,7 @@
 #		  contain multiple versions in order of preference (last ones
 #		  are tried first).
 # WANT_WXGTK_VER - Set to the preferred GTK version, "2" or "3", "3" being
-#		  the default (only applicable to wxWidgets 3.0 for now).
+#		  the default.
 #
 # The following variables are intended for the user and can be defined in
 # make.conf.
@@ -132,7 +131,7 @@ _WX_PORT_python_3.2=	x11-toolkits/py-wxPython4@${PY_FLAVOR}
 _WX_FILE_python_3.2=	${PYTHON_SITELIBDIR}/wx/__init__.py
 
 # wxgtk 3.2
-_WX_PORT_wx_3.2=	x11-toolkits/wxgtk32
+_WX_PORT_wx_3.2=	x11-toolkits/wxgtk32@${_GTKFLAVOR}
 _WX_LIB_wx_3.2=		wx_baseu-3.2
 
 # Set _WX_SHVER_comp_ver to 0 and _WX_FILE_comp_ver for libs appropriately.
@@ -398,12 +397,8 @@ _WX_VER=		${ver}
 # Set variables.
 #
 
-.  if ${_WX_VER} == 3.2
-_GTKVER=	3
-.  elif ${_WX_VER} == 3.0
 _GTKVER=	${WANT_WXGTK_VER:U3}
 _GTKFLAVOR=	gtk${_GTKVER}
-.  endif
 
 WX_CONFIG?=		${LOCALBASE}/bin/wxgtk${_GTKVER}${_WX_UC}-${_WX_VER}-config
 WXRC_CMD?=		${LOCALBASE}/bin/wxrc-gtk${_GTKVER}${_WX_UC}-${_WX_VER}
