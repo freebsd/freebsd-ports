@@ -1,7 +1,6 @@
 PORTNAME=	quary
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.2
-DISTVERSIONSUFFIX=	-g5fad18d
+DISTVERSION=	0.1.5
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -71,7 +70,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytecheck-0.6.12 \
 		bytecheck_derive-0.6.12 \
 		byteorder-1.5.0 \
-		bytes-1.5.0 \
+		bytes-1.6.0 \
 		cast-0.3.0 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
@@ -334,7 +333,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde-1.0.197 \
 		serde-wasm-bindgen-0.6.5 \
 		serde_derive-1.0.197 \
-		serde_json-1.0.114 \
+		serde_json-1.0.117 \
 		serde_repr-0.1.19 \
 		serde_urlencoded-0.7.1 \
 		serde_with-3.8.1 \
@@ -432,15 +431,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasite-0.1.0 \
 		wasm-bindgen-0.2.92 \
 		wasm-bindgen-backend-0.2.92 \
-		wasm-bindgen-futures-0.4.41 \
+		wasm-bindgen-futures-0.4.42 \
 		wasm-bindgen-macro-0.2.92 \
 		wasm-bindgen-macro-support-0.2.92 \
 		wasm-bindgen-shared-0.2.92 \
-		wasm-bindgen-test-0.3.41 \
-		wasm-bindgen-test-macro-0.3.41 \
+		wasm-bindgen-test-0.3.42 \
+		wasm-bindgen-test-macro-0.3.42 \
 		wasm-streams-0.4.0 \
 		wasm-timer-0.2.5 \
-		web-sys-0.3.68 \
+		web-sys-0.3.69 \
 		webpki-roots-0.25.4 \
 		webpki-roots-0.26.1 \
 		which-4.4.2 \
