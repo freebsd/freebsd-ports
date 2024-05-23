@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.5.20
+DISTVERSION=	2024.5.21
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -43,7 +43,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bitflags-2.5.0 \
 		block-buffer-0.10.4 \
 		bstr-1.9.1 \
-		built-0.7.2 \
+		built-0.7.3 \
 		bumpalo-3.16.0 \
 		bytecount-0.6.8 \
 		byteorder-1.5.0 \
@@ -177,6 +177,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		libz-sys-1.1.16 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
+		lockfree-object-pool-0.1.6 \
 		log-0.4.21 \
 		matchers-0.1.0 \
 		memchr-2.7.2 \
@@ -279,6 +280,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		signal-hook-0.3.17 \
 		signal-hook-registry-1.4.2 \
 		signature-2.2.0 \
+		simd-adler32-0.3.7 \
 		similar-2.5.0 \
 		simplelog-0.12.2 \
 		slab-0.4.9 \
@@ -404,8 +406,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		xx-1.1.1 \
 		yansi-0.5.1 \
 		zeroize-1.7.0 \
-		zip-1.3.0 \
-		zipsign-api-0.1.1
+		zip-1.3.1 \
+		zipsign-api-0.1.1 \
+		zopfli-0.8.1
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
