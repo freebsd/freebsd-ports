@@ -43,7 +43,7 @@ java_options=" 	-server -jar ${openfire_javargs} \
 		-DopenfireHome=${openfire_home} \
 		-Dlog4j.configurationFile=${openfire_libdir}/log4j2.xml"
 
-java_command="	%%LOCALBASE%%/bin/java ${java_options} \
+java_command="	%%LOCALBASE%%/openjdk%%JAVA_VERSION%%/bin/java ${java_options} \
 		%%DATADIR%%/lib/startup.jar"
 
 # Subvert the check_pid_file procname check.
