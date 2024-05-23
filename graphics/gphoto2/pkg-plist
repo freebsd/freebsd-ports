@@ -1,5 +1,4 @@
 bin/gphoto2
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/test-hook.sh
 %%NLS%%share/locale/az/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gphoto2.mo
