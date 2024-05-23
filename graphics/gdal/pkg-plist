@@ -279,7 +279,7 @@ share/bash-completion/completions/ogrtindex
 %%DATADIR%%/jpfgdgml_WL.gfs
 %%DATADIR%%/jpfgdgml_WStrA.gfs
 %%DATADIR%%/jpfgdgml_WStrL.gfs
-%%DATADIR%%/netcdf_config.xsd
+%%NETCDF%%%%DATADIR%%/netcdf_config.xsd
 %%DATADIR%%/nitf_spec.xml
 %%DATADIR%%/nitf_spec.xsd
 %%DATADIR%%/ogrinfo_output.schema.json
