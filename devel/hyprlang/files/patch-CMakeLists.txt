@@ -1,0 +1,13 @@
+https://github.com/hyprwm/hyprlang/issues/46
+
+--- CMakeLists.txt.orig	2024-05-23 10:00:09 UTC
++++ CMakeLists.txt
+@@ -45,7 +45,7 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+     # probably evil. Arch's clang is very outdated tho...
+     target_compile_options(hyprlang PUBLIC -std=gnu++2b -D__cpp_concepts=202002L -Wno-macro-redefined)
+     add_compile_options(-stdlib=libc++)
+-    add_link_options(-stdlib=libc++ -lc++abi)
++    add_link_options(-stdlib=libc++)
+     message(STATUS "Using clang++ to compile hyprlang")
+ endif()
+ 
