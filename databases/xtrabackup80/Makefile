@@ -80,6 +80,10 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libunwind.so:devel/libunwind \
 		libzstd.so:archivers/zstd
 
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 180
+CXXFLAGS+=	-Wno-enum-constexpr-conversion
+.endif
+
 .for component in EDITLINE ICU LIBEVENT PROTOBUF RAPIDJSON ZSTD
 CMAKE_ARGS+=	-DWITH_${component}:STRING=system
 .endfor
