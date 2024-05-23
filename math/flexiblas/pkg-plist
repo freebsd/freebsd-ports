@@ -13,6 +13,7 @@ include/flexiblas/flexiblas_backend.h
 include/flexiblas/flexiblas_config.h
 include/flexiblas/flexiblas_dummy_cblas.h
 include/flexiblas/flexiblas_dummy_fortran.h
+include/flexiblas/flexiblas_fortran_char_len.h
 include/flexiblas/flexiblas_fortran_mangle.h
 include/flexiblas/flexiblas_mgmt.h
 include/flexiblas/flexiblas_real_calls.h
