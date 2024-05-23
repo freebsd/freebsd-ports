@@ -1,5 +1,5 @@
 bin/sympow
-lib/sympow/new_data
+libexec/sympow/new_data
 share/man/man1/sympow.1.gz
 %%DATADIR%%/datafiles/A012M.bin
 %%DATADIR%%/datafiles/A012M.txt
