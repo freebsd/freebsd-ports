@@ -1,5 +1,6 @@
 PORTNAME=	minetest_game
 PORTVERSION=	5.8.0
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -10,7 +11,7 @@ LICENSE=	LGPL21+ CC-BY-SA-3.0
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	minetest:games/minetest
+RUN_DEPENDS=	minetest>=0:games/minetest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	minetest
