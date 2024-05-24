@@ -19,9 +19,6 @@ USE_XORG=	xcb
 GH_ACCOUNT=	Supreeeme
 PLIST_FILES=	bin/${PORTNAME}
 
-# https://github.com/juliuskreutz/xcb-util-cursor-rs/issues/1
-CARGO_ENV+=	CPATH="${LOCALBASE}/include"
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,"llvm-config,"${LLVM_CONFIG},' \
 		${WRKSRC_crate_clang-sys}/build/common.rs \
