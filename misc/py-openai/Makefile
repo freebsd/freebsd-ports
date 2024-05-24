@@ -1,5 +1,5 @@
 PORTNAME=	openai
-DISTVERSION=	1.30.1
+DISTVERSION=	1.30.2
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,7 @@ RUN_DEPENDS+=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=1.2.3:math/py-pandas@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	pep517 concurrent autoplist
 
 NO_ARCH=	yes
 
