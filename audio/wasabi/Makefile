@@ -10,6 +10,8 @@ WWW=		https://github.com/arduano/wasabi
 
 LICENSE=	APACHE20 # Don't Be a Dick Public License based on Apache 2.0, see http://www.dbad-license.org/
 
+BROKEN=		rust code incompatible with latest rust-nightly, see https://github.com/arduano/wasabi/issues/60
+
 BUILD_DEPENDS=	rust-nightly>0:lang/rust-nightly
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
