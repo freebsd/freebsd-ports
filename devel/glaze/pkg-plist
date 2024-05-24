@@ -28,6 +28,7 @@ include/glaze/binary/header.hpp
 include/glaze/binary/ptr.hpp
 include/glaze/binary/read.hpp
 include/glaze/binary/skip.hpp
+include/glaze/binary/wrappers.hpp
 include/glaze/binary/write.hpp
 include/glaze/compare/approx.hpp
 include/glaze/compare/compare.hpp
@@ -38,6 +39,9 @@ include/glaze/core/meta.hpp
 include/glaze/core/opts.hpp
 include/glaze/core/ptr.hpp
 include/glaze/core/read.hpp
+include/glaze/core/reflection_tuple.hpp
+include/glaze/core/seek.hpp
+include/glaze/core/wrappers.hpp
 include/glaze/core/write.hpp
 include/glaze/core/write_chars.hpp
 include/glaze/csv.hpp
@@ -70,12 +74,12 @@ include/glaze/json/minify.hpp
 include/glaze/json/ndjson.hpp
 include/glaze/json/prettify.hpp
 include/glaze/json/ptr.hpp
-include/glaze/json/quoted.hpp
 include/glaze/json/raw_string.hpp
 include/glaze/json/read.hpp
 include/glaze/json/schema.hpp
 include/glaze/json/skip.hpp
 include/glaze/json/study.hpp
+include/glaze/json/wrappers.hpp
 include/glaze/json/write.hpp
 include/glaze/record/recorder.hpp
 include/glaze/reflection/get_name.hpp
