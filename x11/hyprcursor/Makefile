@@ -1,6 +1,6 @@
 PORTNAME=	hyprcursor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.8
+DISTVERSION=	0.1.9
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,7 +20,6 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo librsvg2
 GH_ACCOUNT=	hyprwm
 PLIST_SUB=	VERSION=${DISTVERSION:C/-.*//}
-PLIST_SUB=	VERSION=0.1.7 # XXX 0.1.8 workaround
 
 # XXX Drop after FreeBSD 14.0 EOL around 2025-03-01
 .if exists(/usr/lib/libc++.so) && !exists(/usr/include/c++/v1/__format/write_escaped.h)
