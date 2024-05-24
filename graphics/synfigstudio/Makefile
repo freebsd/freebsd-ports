@@ -1,7 +1,6 @@
 PORTNAME=	synfigstudio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.4
-PORTREVISION=	10
+DISTVERSION=	1.4.5
 CATEGORIES=	graphics multimedia
 
 MAINTAINER=	portmaster@BSDforge.com
@@ -10,7 +9,7 @@ WWW=		https://www.synfig.org/
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	etl>=1.2.2:devel/etl \
+BUILD_DEPENDS=	etl>=1.4.5:devel/etl \
 		gsed:textproc/gsed
 LIB_DEPENDS=	libImath.so:math/Imath \
 		libavcodec.so:multimedia/ffmpeg \
@@ -34,15 +33,15 @@ GH_PROJECT=	synfig
 USE_GNOME=	gdkpixbuf2 gtkmm30 intltool
 USE_LDCONFIG=	yes
 
-PORTSCOUT=	limitw:1,even
-
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-update-mimedb
 INSTALL_TARGET=	install-strip
-WRKSRC_SUBDIR=	synfig-studio
 
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 
-CONFIGURE_ARGS=	--disable-update-mimedb
+PORTSCOUT=	limitw:1,even
+
+WRKSRC_SUBDIR=	synfig-studio
 
 OPTIONS_DEFINE=	DOCS JACK NLS
 OPTIONS_SUB=	yes
