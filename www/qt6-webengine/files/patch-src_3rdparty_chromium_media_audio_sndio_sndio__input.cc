@@ -13,7 +13,7 @@
 +
 +namespace media {
 +
-+static const SampleFormat kSampleFormat = kSampleFormatS16;
++static const SampleFormat kSampleFormatAI = kSampleFormatS16;
 +
 +void SndioAudioInputStream::OnMoveCallback(void *arg, int delta)
 +{
@@ -59,7 +59,7 @@
 +  sio_initpar(&par);
 +  par.rate = params.sample_rate();
 +  par.rchan = params.channels();
-+  par.bits = SampleFormatToBitsPerChannel(kSampleFormat);
++  par.bits = SampleFormatToBitsPerChannel(kSampleFormatAI);
 +  par.bps = par.bits / 8;
 +  par.sig = sig = par.bits != 8 ? 1 : 0;
 +  par.le = SIO_LE_NATIVE;
@@ -79,7 +79,7 @@
 +
 +  if (par.rate  != (unsigned int)params.sample_rate() ||
 +      par.rchan != (unsigned int)params.channels() ||
-+      par.bits  != (unsigned int)SampleFormatToBitsPerChannel(kSampleFormat) ||
++      par.bits  != (unsigned int)SampleFormatToBitsPerChannel(kSampleFormatAI) ||
 +      par.sig   != (unsigned int)sig ||
 +      (par.bps > 1 && par.le != SIO_LE_NATIVE) ||
 +      (par.bits != par.bps * 8)) {
@@ -87,7 +87,7 @@
 +    goto bad_close;
 +  }
 +  state = kStopped;
-+  buffer = new char[audio_bus->frames() * params.GetBytesPerFrame(kSampleFormat)];
++  buffer = new char[audio_bus->frames() * params.GetBytesPerFrame(kSampleFormatAI)];
 +  sio_onmove(hdl, &OnMoveCallback, this);
 +  return OpenOutcome::kSuccess;
 +bad_close:
@@ -176,7 +176,7 @@
 +    GetAgcVolume(&normalized_volume);
 +
 +    // read one block
-+    todo = nframes * params.GetBytesPerFrame(kSampleFormat);
++    todo = nframes * params.GetBytesPerFrame(kSampleFormatAI);
 +    data = buffer;
 +    while (todo > 0) {
 +      n = sio_read(hdl, data, todo);

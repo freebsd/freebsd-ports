@@ -14,7 +14,7 @@
 +
 +namespace media {
 +
-+static const SampleFormat kSampleFormat = kSampleFormatS16;
++static const SampleFormat kSampleFormatAO = kSampleFormatS16;
 +
 +void SndioAudioOutputStream::OnMoveCallback(void *arg, int delta) {
 +  SndioAudioOutputStream* self = static_cast<SndioAudioOutputStream*>(arg);
@@ -58,7 +58,7 @@
 +  state = kStopped;
 +  volpending = 0;
 +  vol = SIO_MAXVOL;
-+  buffer = new char[audio_bus->frames() * params.GetBytesPerFrame(kSampleFormat)];
++  buffer = new char[audio_bus->frames() * params.GetBytesPerFrame(kSampleFormatAO)];
 +  return true;
 +}
 +
@@ -80,7 +80,7 @@
 +  sio_initpar(&par);
 +  par.rate = params.sample_rate();
 +  par.pchan = params.channels();
-+  par.bits = SampleFormatToBitsPerChannel(kSampleFormat);
++  par.bits = SampleFormatToBitsPerChannel(kSampleFormatAO);
 +  par.bps = par.bits / 8;
 +  par.sig = sig = par.bits != 8 ? 1 : 0;
 +  par.le = SIO_LE_NATIVE;
@@ -98,7 +98,7 @@
 +  }
 +  if (par.rate  != (unsigned int)params.sample_rate() ||
 +      par.pchan != (unsigned int)params.channels() ||
-+      par.bits  != (unsigned int)SampleFormatToBitsPerChannel(kSampleFormat) ||
++      par.bits  != (unsigned int)SampleFormatToBitsPerChannel(kSampleFormatAO) ||
 +      par.sig   != (unsigned int)sig ||
 +      (par.bps > 1 && par.le != SIO_LE_NATIVE) ||
 +      (par.bits != par.bps * 8)) {
@@ -170,12 +170,12 @@
 +    if (count == 0) {
 +      // We have to submit something to the device
 +      count = audio_bus->frames();
-+      memset(buffer, 0, count * params.GetBytesPerFrame(kSampleFormat));
++      memset(buffer, 0, count * params.GetBytesPerFrame(kSampleFormatAO));
 +      LOG(WARNING) << "No data to play, running empty cycle.";
 +    }
 +
 +    // Submit data to the device
-+    avail = count * params.GetBytesPerFrame(kSampleFormat);
++    avail = count * params.GetBytesPerFrame(kSampleFormatAO);
 +    result = sio_write(hdl, buffer, avail);
 +    if (result == 0) {
 +      LOG(WARNING) << "Audio device disconnected.";
