@@ -1,0 +1,63 @@
+diff --git tty-term.c tty-term.c
+index fdf0c4fa..873e1ce2 100644
+--- tty-term.c
++++ tty-term.c
+@@ -762,33 +762,53 @@ tty_term_string(struct tty_term *term, enum tty_code_code code)
+ const char *
+ tty_term_string1(struct tty_term *term, enum tty_code_code code, int a)
+ {
+-	return (tparm((char *) tty_term_string(term, code), a, 0, 0, 0, 0, 0, 0, 0, 0));
++	const char	*x = tty_term_string(term, code), *s;
++	s = tiparm_s(1, 0, x, a);
++	if (s == NULL)
++		fatalx("could not expand %s", tty_term_codes[code].name);
++	return (s);
+ }
+ 
+ const char *
+ tty_term_string2(struct tty_term *term, enum tty_code_code code, int a, int b)
+ {
+-	return (tparm((char *) tty_term_string(term, code), a, b, 0, 0, 0, 0, 0, 0, 0));
++	const char	*x = tty_term_string(term, code), *s;
++	s = tiparm_s(2, 0, x, a, b);
++	if (s == NULL)
++		fatalx("could not expand %s", tty_term_codes[code].name);
++	return (s);
+ }
+ 
+ const char *
+ tty_term_string3(struct tty_term *term, enum tty_code_code code, int a, int b,
+     int c)
+ {
+-	return (tparm((char *) tty_term_string(term, code), a, b, c, 0, 0, 0, 0, 0, 0));
++	const char	*x = tty_term_string(term, code), *s;
++	s = tiparm_s(3, 0, x, a, b, c);
++	if (s == NULL)
++		fatalx("could not expand %s", tty_term_codes[code].name);
++	return (s);
+ }
+ 
+ const char *
+ tty_term_ptr1(struct tty_term *term, enum tty_code_code code, const void *a)
+ {
+-	return (tparm((char *) tty_term_string(term, code), (long)a, 0, 0, 0, 0, 0, 0, 0, 0));
++	const char	*x = tty_term_string(term, code), *s;
++	s = tiparm_s(1, 1, x, a);
++	if (s == NULL)
++		fatalx("could not expand %s", tty_term_codes[code].name);
++	return (s);
+ }
+ 
+ const char *
+ tty_term_ptr2(struct tty_term *term, enum tty_code_code code, const void *a,
+     const void *b)
+ {
+-	return (tparm((char *) tty_term_string(term, code), (long)a, (long)b, 0, 0, 0, 0, 0, 0, 0));
++	const char	*x = tty_term_string(term, code), *s;
++	s = tiparm_s(2, 3, x, a, b);
++	if (s == NULL)
++		fatalx("could not expand %s", tty_term_codes[code].name);
++	return (s);
+ }
+ 
+ int
