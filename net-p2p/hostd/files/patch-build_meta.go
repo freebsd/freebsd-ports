@@ -11,5 +11,5 @@
 -	buildTime = 0
 +	commit = "8860607"
 +	version = "v1.1.0"
-+	buildTime = 1716220285
++	buildTime = BUILDTIME
  )
