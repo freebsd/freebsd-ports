@@ -9,6 +9,9 @@ WWW=		https://bird.network.cz/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Upstream EOL was for the end of 2023
+EXPIRATION_DATE=	2024-07-31
+
 FLAVORS=	ipv4 ipv6
 ipv6_PKGNAMESUFFIX=	6
 
