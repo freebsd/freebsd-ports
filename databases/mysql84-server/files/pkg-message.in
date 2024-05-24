@@ -1,0 +1,21 @@
+[
+{ type: install
+  message: <<EOM
+There is no initial password for first time use of MySQL.
+Keep in mind to reset it to a secure password.
+
+MySQL 8.4 has a default %%ETCDIR%%/my.cnf,
+remember to replace it with your own
+or set `mysql_optfile="$YOUR_CNF_FILE` in rc.conf.
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+As of MySQL 8.0.16, the MySQL server performs the upgrade tasks previously
+handled by mysql_upgrade. Consequently, mysql_upgrade is unneeded and is
+deprecated as of that version, and will be removed in a future MySQL version.
+Because mysql_upgrade no longer performs upgrade tasks,
+it exits with status 0 unconditionally. 
+EOM
+}
+]

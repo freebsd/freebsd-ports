@@ -1,0 +1,64 @@
+--- libmysql/CMakeLists.txt.orig	2024-04-10 06:26:28 UTC
++++ libmysql/CMakeLists.txt
+@@ -214,6 +214,11 @@ ENDIF()
+     ../sql-common/mysql_native_authentication_client.cc)
+ ENDIF()
+ 
++INCLUDE(${MYSQL_CMAKE_SCRIPT_DIR}/compile_flags.cmake)
++IF (CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++  ADD_COMPILE_FLAGS(${CLIENT_SOURCES} COMPILE_FLAGS "-fPIC")
++ENDIF()
++
+ #
+ # Include protocol tracing infrastructure and the test
+ # trace plugin if enabled by build options.
+@@ -308,10 +313,18 @@ ADD_SUBDIRECTORY(fido_client)
+ ADD_SUBDIRECTORY(fido_client)
+ 
+ # Merge several convenience libraries into one big mysqlclient
++IF(WITHOUT_CLIENTLIBS)
+ MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE}
+   COMPONENT Development
+   LINK_LIBRARIES ${LIBS_TO_LINK}
++  SKIP_INSTALL
+   )
++ELSE()
++MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE}
++  COMPONENT Development
++  LINK_LIBRARIES ${LIBS_TO_LINK}
++  )
++ENDIF()
+ 
+ # Visual Studio users need debug  static library for debug projects
+ IF(MSVC)
+@@ -358,6 +371,7 @@ ENDIF()
+ 
+ # Merge several convenience libraries into one big mysqlclient
+ # and link them together into shared library.
++IF(WITHOUT_CLIENTLIBS)
+ MERGE_LIBRARIES_SHARED(libmysql ${LIBS_TO_MERGE}
+   EXPORTS
+   ${CLIENT_API_FUNCTIONS}
+@@ -365,11 +379,21 @@ MERGE_LIBRARIES_SHARED(libmysql ${LIBS_TO_MERGE}
+   ${CLIENT_API_NONBLOCKING_FUNCTIONS}
+   COMPONENT SharedLibraries
+   LINK_LIBRARIES ${LIBS_TO_LINK}
++  SKIP_INSTALL
++  )
++ELSE()
++MERGE_LIBRARIES_SHARED(libmysql ${LIBS_TO_MERGE}
++  EXPORTS
++  ${CLIENT_API_FUNCTIONS}
++  ${CLIENT_API_FUNCTIONS_UNDOCUMENTED}
++  ${CLIENT_API_NONBLOCKING_FUNCTIONS}
++  COMPONENT SharedLibraries
++  LINK_LIBRARIES ${LIBS_TO_LINK}
+   ${UNIX_OUTPUT_NAME}
+   ${UNIX_SOVERSION}
+   ${UNIX_VERSION}
+   )
+-
++ENDIF()
+ # Downgrade warning for strncat in my_crypt_genhash.
+ IF((WITH_LTO OR CMAKE_COMPILER_FLAG_WITH_LTO) AND MY_COMPILER_IS_GNU)
+   MY_TARGET_LINK_OPTIONS(libmysql "-Wno-error=stringop-truncation")
