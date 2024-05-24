@@ -1,6 +1,6 @@
 PORTNAME=       renterd
 DISTVERSIONPREFIX=	v
-DISTVERSION=    1.0.6
+DISTVERSION=    1.0.7
 CATEGORIES=     net-p2p
 
 MAINTAINER=     bruno@tinkerbox.org
