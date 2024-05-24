@@ -8,7 +8,7 @@
 #
 # minetest_enable (bool):  Set to "NO" by default
 #                          Set it to "YES" to enable minetest server
-# minetest_conffile (str): Path to config file (required).
+# minetest_config (str):   Path to config file (required).
 #                          (default: /usr/local/etc/minetest.conf)
 # minetest_rundir (str):   Path to directory holding a pidfile.
 #                          (default: /var/run/minetest)
@@ -20,6 +20,10 @@
 #                          (default: /var/log/minetest)
 # minetest_dbdir (str):    Path to world database directory
 #                          (default: /var/db/minetest)
+# minetest_gameid (str):   Path to world database directory
+#                          (default: minetest_game)
+# minetest_args (str):     Additional arguments to minetestserver
+#                          (default: "")
 
 . /etc/rc.subr
 
@@ -29,34 +33,26 @@ rcvar=minetest_enable
 load_rc_config ${name}
 
 : ${minetest_enable="NO"}
-: ${minetest_config="/usr/local/etc/minetest.conf"}
+: ${minetest_config="%%PREFIX%%/etc/minetest.conf"}
 : ${minetest_rundir="/var/run/minetest"}
 : ${minetest_user="minetest"}
 : ${minetest_group="minetest"}
 : ${minetest_logdir="/var/log/minetest"}
 : ${minetest_dbdir="/var/db/minetest"}
-: ${minetest_args:="--logfile ${minetest_logdir}/debug.log --world ${minetest_dbdir}/world ${minetest_flags}"}
-
-pidfile=
-
-case "${minetest_args}" in
-*--config\ *)
-	echo "Warning \$minetest_args includes --config option." \
-	     "Please use \$minetest_conffile instead."
-	;;
-*)
-	minetest_args="--config ${minetest_config} ${minetest_args}"
-	;;
-esac
+: ${minetest_gameid="minetest_game"}
+: ${minetest_args=""}
 
 command=/usr/sbin/daemon
 procname=/usr/local/bin/minetestserver
 pidfile=${minetest_rundir}/minetest.pid
-command_args="-c -f -p ${pidfile} /usr/bin/env HOME='${minetest_dbdir}' ${procname} ${minetest_args}"
+command_args="-c -f -p ${pidfile} /usr/bin/env HOME='${minetest_dbdir}' ${procname} --config ${minetest_config} --logfile ${minetest_logdir}/debug.log --world ${minetest_dbdir}/world --gameid ${minetest_gameid} ${minetest_args}"
 required_files=${minetest_config}
 start_precmd=minetest_prestart
 
 minetest_prestart () {
+	if ! ${procname} --gameid list | grep -q "."; then
+		echo "Warning: no games installed (\`${procname} --gameid list\` is empty). You may want to install games/minetest_game or other games from https://content.minetest.net/." 1>&2
+	fi
 	if [ ! -d ${minetest_rundir} ]; then
 		mkdir -m 755 -p ${minetest_rundir}
 		chown -R ${minetest_user}:${minetest_group} ${minetest_rundir}
