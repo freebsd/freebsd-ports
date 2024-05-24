@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240604:
+  AFFECTS: net-mgmt/net-snmp
+  AUTHOR: markj@FreeBSD.org
+
+  The net-snmp port's newsyslog(8) configuration has been updated such
+  that the snmpd log file will be owned by the snmpd user following log
+  rotation.  This is done to make it easier to run snmpd as the snmpd
+  user rather than as root, using the snmpd_sugid rc.conf option.
+  For now snmpd still runs as root by default.  This is expected to change
+  in the future.
+
 20240529:
   AFFECTS: users of TeX*
   AUTHOR: bofh@FreeBSD.org
