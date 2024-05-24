@@ -5,7 +5,8 @@ CATEGORIES=	net security pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Radius client library for PHP
-WWW=		https://pecl.php.net/package/radius
+WWW=		https://pecl.php.net/package/radius \
+		https://github.com/LawnGnome/php-radius
 
 LICENSE=	BSD3CLAUSE
 

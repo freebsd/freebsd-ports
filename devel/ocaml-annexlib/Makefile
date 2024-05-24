@@ -1,6 +1,6 @@
 PORTNAME=	annexlib
 PORTVERSION=	0.13.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	http://raevnos.pennmush.org/code/extlib/
 PKGNAMEPREFIX=	ocaml-

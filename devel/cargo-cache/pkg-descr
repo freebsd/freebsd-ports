@@ -1,0 +1,19 @@
+cargo-cache is a Cargo plugin that allows to display information on the cargo
+cache (`~/.cargo/` or `$CARGO_HOME`). Optional cache pruning.
+
+Key Features:
+* check the size of the cargo cache and its components (cmd: `cargo cache`)
+* do a simple cleanup removing checkouts but keeping original files needed for
+  reconstruction on disk (`--autoclean`)
+* clean up everything (cargo will re-download as needed)
+* dry-run to see what would be removed (`--dry-run`)
+* recompress git repos (`--gc`)
+* search cache via regex queries (`cargo cache query "reg.*x"`)
+* print crates that take the most space (`--top-cache-items`)
+* alternative registries supported
+* remove files older or younger than X (`--remove-if-{older,younger}-than`)
+* builds and runs on `stable`, `beta` and `nightly` channel
+* purge cache entries not unused to build a specified crate (`cargo cache
+  clean-unref`)
+* print size stats on a local sccache build cache  (`cargo cache sc`)
+* verify extracted crate sources (`cargo cache verify`)

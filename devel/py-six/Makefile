@@ -15,7 +15,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>=0:databases/py-gdbm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	allflavors autoplist concurrent distutils pytest
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
 

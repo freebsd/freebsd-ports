@@ -1,6 +1,5 @@
 PORTNAME=	pip-audit
-PORTVERSION=	2.7.2
-PORTREVISION=	1
+PORTVERSION=	2.7.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/pypa/pip-audit/releases/download/v${PORTVERSION}/

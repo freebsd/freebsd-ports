@@ -1,6 +1,6 @@
---- chrome/browser/ui/ui_features.h.orig	2024-04-23 07:42:17 UTC
+--- chrome/browser/ui/ui_features.h.orig	2024-05-23 20:04:36 UTC
 +++ chrome/browser/ui/ui_features.h
-@@ -264,7 +264,7 @@ BASE_DECLARE_FEATURE(kToolbarUseHardwareBitmapDraw);
+@@ -279,7 +279,7 @@ bool IsToolbarPinningEnabled();
  
  BASE_DECLARE_FEATURE(kTopChromeWebUIUsesSpareRenderer);
  

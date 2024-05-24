@@ -1,5 +1,6 @@
 PORTNAME=	prosody-modules
 DISTVERSION=	20240330
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://hg.prosody.im/${PORTNAME}/archive/
 DISTNAME=	70fa3f8de249

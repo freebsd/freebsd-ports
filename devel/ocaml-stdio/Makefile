@@ -1,5 +1,5 @@
 PORTNAME=	stdio
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
@@ -25,6 +25,11 @@ PORTDOCS=	CHANGES.md LICENSE.md README.md odoc-pages
 OPTIONS_DEFINE=	DOCS
 
 SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e "s/(lang dune 3.11)/(lang dune 3.7)/" \
+		${WRKSRC}/dune-project
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/${PORTNAME}/${PORTNAME}.cmxs

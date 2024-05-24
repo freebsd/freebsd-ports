@@ -1,5 +1,5 @@
 PORTNAME=	premailer-rails
-PORTVERSION=	1.10.3
+PORTVERSION=	1.12.0
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails61
@@ -12,6 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-actionmailer61>=3:mail/rubygem-actionmailer61 \
+		rubygem-net-smtp>=0:mail/rubygem-net-smtp \
 		rubygem-premailer>=1.7.9<2:mail/rubygem-premailer
 
 USES=		gem

@@ -1,13 +1,13 @@
 PORTNAME=	relatorio
-PORTVERSION=	0.10.1
-PORTREVISION=	1
+PORTVERSION=	0.10.2
 CATEGORIES=	print python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Templating library able to output odt and pdf files
-WWW=		https://hg.tryton.org/relatorio
+WWW=		https://docs.tryton.org/relatorio/latest/ \
+		https://github.com/tryton/relatorio
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

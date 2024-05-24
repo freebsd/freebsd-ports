@@ -1,13 +1,15 @@
 PORTNAME=	protocol-websocket
-PORTVERSION=	0.12.1
+PORTVERSION=	0.13.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Low-level implementation of the WebSocket protocol
-WWW=		https://github.com/socketry/protocol-websocket
+WWW=		https://socketry.github.io/protocol-websocket/ \
+		https://github.com/socketry/protocol-websocket
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/license.md
 
 RUN_DEPENDS=	rubygem-protocol-http>=0.2<1:www/rubygem-protocol-http
 

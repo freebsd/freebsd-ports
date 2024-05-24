@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mechanism for annotating fibers
-WWW=		https://github.com/ioquatix/fiber-annotation
+WWW=		https://ioquatix.github.io/fiber-annotation/ \
+		https://github.com/ioquatix/fiber-annotation
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.md

@@ -1,6 +1,6 @@
 PORTNAME=	classes
 PORTVERSION=	4.00
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/
 PKGNAMEPREFIX=	ocaml-

@@ -1,11 +1,11 @@
 PORTNAME=	jin
 PORTVERSION=	2.14.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Graphical client for chess servers
 WWW=		https://www.jinchess.com/
 

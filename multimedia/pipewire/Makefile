@@ -1,6 +1,6 @@
 PORTNAME=	pipewire
 DISTVERSION=	1.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -30,7 +30,7 @@ GL_SITE=	https://gitlab.freedesktop.org
 SHEBANG_FILES=	doc/*.py
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		AVAHI DOCS DOXYGEN GSTREAMER JACK LV2 PULSEAUDIO SDL VULKAN X11_BELL
+OPTIONS_DEFINE=		AVAHI DOCS DOXYGEN GSTREAMER JACK LV2 PULSEAUDIO VULKAN X11_BELL
 OPTIONS_DEFAULT=	GSTREAMER JACK
 OPTIONS_SUB=		yes
 
@@ -56,10 +56,6 @@ LV2_MESON_ENABLED=	lv2
 PULSEAUDIO_MESON_ENABLED=	libpulse
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 
-SDL_MESON_ENABLED=	sdl2
-SDL_USES=		sdl
-SDL_USE=		sdl=sdl2
-
 VULKAN_DESC=		Enable Vulkan integration
 VULKAN_MESON_ENABLED=	vulkan
 VULKAN_BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
@@ -82,6 +78,7 @@ MESON_ARGS=	-D pw-cat=enabled \
 		-D man=disabled \
 		-D libcamera=disabled \
 		-D roc=disabled \
+		-D sdl2=disabled \
 		-D selinux=disabled \
 		-D systemd=disabled \
 		-D pipewire-v4l2=disabled \

@@ -27,35 +27,36 @@
  dependencies = [
   "cmake",
   "libc",
---- voxygen/Cargo.toml.orig	2024-02-07 19:13:27 UTC
+--- voxygen/Cargo.toml.orig	2024-05-20 18:26:00 UTC
 +++ voxygen/Cargo.toml
-@@ -29,14 +29,13 @@ egui-ui = ["voxygen-egui", "egui", "egui_wgpu_backend"
- tracy-memory = ["tracy"] # enables heap profiling with tracy
- plugins = ["client/plugins", "common-assets/plugins"]
+@@ -32,7 +32,6 @@ egui-ui = ["voxygen-egui", "egui", "egui_wgpu_backend"
+ tracy-memory = ["tracy"]                                                       # enables heap profiling with tracy
+ plugins = ["client/plugins", "common-assets/plugins", "server/plugins"]
  egui-ui = ["voxygen-egui", "egui", "egui_wgpu_backend", "egui_winit_platform"]
 -shaderc-from-source = ["shaderc/build-from-source"]
  discord = ["discord-sdk"]
  bin_img-export = ["common-assets"]
  
- # We don't ship egui with published release builds so a separate feature is required that excludes it.
- default-publish = ["singleplayer", "native-dialog", "plugins", "discord", "simd"]
+@@ -45,7 +44,7 @@ default-publish = [
+     "simd",
+ ]
  # Temp for bug on current wgpu version that has access violation in vulkan when constructing egui pipeline
 -default-no-egui = ["default-publish", "hot-reloading", "shaderc-from-source"]
 +default-no-egui = ["default-publish", "hot-reloading"]
  default = ["default-no-egui", "egui-ui"]
  
  [dependencies]
-@@ -60,9 +59,7 @@ bytemuck = { version="1.7", features=["derive"] }
- wgpu = { version = "0.18.0", default-features = false, features = ["trace", "spirv", "glsl"] }
+@@ -73,9 +72,7 @@ bytemuck = { version = "1.7", features = ["derive"] }
+ ] }
  wgpu-profiler = "0.15.0"
- bytemuck = { version="1.7", features=["derive"] }
+ bytemuck = { version = "1.7", features = ["derive"] }
 -# shaderc = "0.8.0"
 -# Working around a current bug in shaderc that causes it to use the system installation even if we specify compile from source
 -shaderc = { git = "https://github.com/pythonesque/shaderc-rs", rev = "f2605a02062834019bedff911aee2fd2998c49f9" }
 +shaderc = "0.8.0"
- # cmake crate used by shaderc, newer version 0.1.46 uses a new cmake command that is not available in our CI cmake version
- # see https://github.com/alexcrichton/cmake-rs/issues/131
- cmake = "=0.1.45"
+ 
+ # Ui
+ conrod_core = { git = "https://gitlab.com/veloren/conrod.git", branch = "copypasta_0.7" }
 --- cargo-crates/shaderc-sys-0.8.3/build/build.rs.orig	1970-01-01 00:00:00 UTC
 +++ cargo-crates/shaderc-sys-0.8.3/build/build.rs
 @@ -309,10 +309,13 @@ fn main() {

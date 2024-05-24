@@ -1,7 +1,6 @@
 PORTNAME=	noise-suppression-for-voice
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.03
-PORTREVISION=	2
+DISTVERSION=	1.10
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -27,6 +26,7 @@ GH_ACCOUNT=	werman
 EXTRACT_AFTER_ARGS=	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/external/JUCE \
 			--no-same-owner --no-same-permissions
 
+CMAKE_ON=	USE_SYSTEM_JUCE
 CMAKE_OFF=	BUILD_TESTS
 CMAKE_OFF+=	BUILD_VST_PLUGIN # https://github.com/werman/noise-suppression-for-voice/issues/65
 CXXFLAGS+=	-DJUCE_CUSTOM_VST3_SDK=1 -DJUCE_INCLUDE_PNGLIB_CODE=0

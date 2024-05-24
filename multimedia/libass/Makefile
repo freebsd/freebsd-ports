@@ -1,6 +1,5 @@
 PORTNAME=	libass
-DISTVERSION=	0.17.1
-PORTREVISION=	2
+DISTVERSION=	0.17.2
 CATEGORIES=	multimedia devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 

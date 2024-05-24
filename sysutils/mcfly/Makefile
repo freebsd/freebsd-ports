@@ -1,7 +1,6 @@
 PORTNAME=	mcfly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.5
-PORTREVISION=	1
+DISTVERSION=	0.8.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +18,6 @@ GH_ACCOUNT=	cantino
 CARGO_CRATES=	adler32-1.2.0 \
 		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
-		allocator-api2-0.2.18 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.6.14 \
@@ -74,7 +72,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		dirs-sys-0.4.1 \
 		dirs-sys-next-0.1.2 \
 		dlv-list-0.5.2 \
-		either-1.11.0 \
+		either-1.12.0 \
 		equivalent-1.0.1 \
 		fallible-iterator-0.3.0 \
 		fallible-streaming-iterator-0.1.9 \
@@ -87,7 +85,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		gif-0.10.3 \
 		hashbrown-0.13.2 \
 		hashbrown-0.14.5 \
-		hashlink-0.9.0 \
+		hashlink-0.9.1 \
 		heck-0.5.0 \
 		humantime-2.1.0 \
 		iana-time-zone-0.1.60 \
@@ -102,7 +100,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		js-sys-0.3.69 \
 		json5-0.4.1 \
 		lazy_static-1.4.0 \
-		libc-0.2.154 \
+		libc-0.2.155 \
 		libredox-0.1.3 \
 		libsqlite3-sys-0.28.0 \
 		linked-hash-map-0.5.6 \
@@ -159,10 +157,10 @@ CARGO_CRATES=	adler32-1.2.0 \
 		ryu-1.0.18 \
 		scoped_threadpool-0.1.9 \
 		scopeguard-1.2.0 \
-		serde-1.0.201 \
-		serde_derive-1.0.201 \
+		serde-1.0.202 \
+		serde_derive-1.0.202 \
 		serde_json-1.0.117 \
-		serde_spanned-0.6.5 \
+		serde_spanned-0.6.6 \
 		sha2-0.10.8 \
 		shellexpand-3.1.0 \
 		signal-hook-0.3.17 \
@@ -171,14 +169,14 @@ CARGO_CRATES=	adler32-1.2.0 \
 		smallvec-1.13.2 \
 		strsim-0.11.1 \
 		syn-0.15.44 \
-		syn-2.0.63 \
-		thiserror-1.0.60 \
-		thiserror-impl-1.0.60 \
+		syn-2.0.64 \
+		thiserror-1.0.61 \
+		thiserror-impl-1.0.61 \
 		tiff-0.3.1 \
 		tiny-keccak-2.0.2 \
-		toml-0.8.12 \
-		toml_datetime-0.6.5 \
-		toml_edit-0.22.12 \
+		toml-0.8.13 \
+		toml_datetime-0.6.6 \
+		toml_edit-0.22.13 \
 		typenum-1.17.0 \
 		ucd-trie-0.1.6 \
 		unicode-ident-1.0.12 \

@@ -1,10 +1,10 @@
 PORTNAME=	rxp
 PORTVERSION=	1.4.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/richard/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Validating XML parser written in C
 WWW=		https://www.cogsci.ed.ac.uk/~richard/rxp.html
 

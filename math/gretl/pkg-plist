@@ -141,8 +141,8 @@ lib/gretl-gtk%%GTK_VER%%/vif.so
 %%GUI%%lib/gretl-gtk%%GTK_VER%%/xlsx_import.so
 %%GUI%%lib/gretl-gtk%%GTK_VER%%/xml_get.so
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.47
-lib/libgretl-1.0.so.47.0.0
+lib/libgretl-1.0.so.48
+lib/libgretl-1.0.so.48.0.0
 libdata/pkgconfig/gretl.pc
 %%GUI%%share/applications/gretl.desktop
 %%GUI%%share/applications/gretl_edit.desktop
@@ -435,11 +435,13 @@ libdata/pkgconfig/gretl.pc
 %%ADDONS%%%%DATADIR%%/functions/gig/gig.gfn
 %%ADDONS%%%%DATADIR%%/functions/gig/gig.pdf
 %%DATADIR%%/functions/gretlfunc.dtd
+%%DATADIR%%/functions/gretlfunc.xsd
 %%ADDONS%%%%DATADIR%%/functions/ivpanel/ivpanel.gfn
 %%ADDONS%%%%DATADIR%%/functions/ivpanel/ivpanel.pdf
 %%ADDONS%%%%DATADIR%%/functions/logging/logging.gfn
 %%ADDONS%%%%DATADIR%%/functions/logging/logging.pdf
 %%ADDONS%%%%DATADIR%%/functions/regls/examples/README.txt
+%%ADDONS%%%%DATADIR%%/functions/regls/examples/doc.inp
 %%ADDONS%%%%DATADIR%%/functions/regls/examples/elnet_sequence.inp
 %%ADDONS%%%%DATADIR%%/functions/regls/examples/fat.inp
 %%ADDONS%%%%DATADIR%%/functions/regls/examples/fatplus.inp

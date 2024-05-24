@@ -9,6 +9,8 @@ WWW=		https://github.com/Code-Militia/jirust
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: undefined symbol: __atomic_is_lock_free
+
 BUILD_DEPENDS=	gmake:devel/gmake
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 

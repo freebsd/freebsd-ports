@@ -1,5 +1,5 @@
 PORTNAME=	pysubs2
-DISTVERSION=	1.6.1
+DISTVERSION=	1.7.1
 CATEGORIES=	multimedia python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,11 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # 4 tests fail, see https://github.com/tkarabela/pysubs2/issues/75
+USE_PYTHON=	pep517 autoplist pytest
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+BINARY_ALIAS=	python=${PYTHON_CMD} # only for tests
 
 NO_ARCH=	yes
 

@@ -1,10 +1,11 @@
 PORTNAME=	dispy
 PORTVERSION=	4.10.6
+PORTREVISION=	1
 CATEGORIES=	devel net
 MASTER_SITES=	SF/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Distributed and Parallel Computing with/for Python
 WWW=		http://dispy.sourceforge.net/
 

@@ -1,12 +1,8 @@
 PORTNAME=	zig
-DISTVERSION=	0.11.0
-PORTREVISION=	1
+DISTVERSION=	0.12.0
 CATEGORIES=	lang
 MASTER_SITES=	https://ziglang.org/download/${DISTVERSION}/ \
 		https://ziglang.org/builds/
-# fetch prebuilt platform-independent docs
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		zig-freebsd-x86_64-${DISTVERSION}${EXTRACT_SUFX}
 
 PATCH_SITES=	https://github.com/ziglang/${PORTNAME}/commit/
 
@@ -23,14 +19,13 @@ ONLY_FOR_ARCHS_REASON=	not yet supported
 BUILD_DEPENDS=	icu>=71:devel/icu \
 		llvm${_LLVM_VER}>=0:devel/llvm${_LLVM_VER}
 
-LIB_DEPENDS=	liblzma.so:archivers/lzma \
-		libzstd.so:archivers/zstd
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cmake compiler:c++11-lang localbase:ldflags tar:xz
 CMAKE_ARGS+=	-DZIG_TARGET_MCPU=baseline # ensure we run everywhere
 CMAKE_ON=	THREADS_PREFER_PTHREAD_FLAG
 
-CONFLICTS_INSTALL=	zig010
+CONFLICTS_INSTALL=	zig0* zig-devel
 
 OPTIONS_DEFINE=		DOCS STATIC
 OPTIONS_DEFAULT=	DOCS
@@ -41,23 +36,21 @@ STATIC_RUN_DEPENDS_OFF=	llvm${_LLVM_VER}>=0:devel/llvm${_LLVM_VER}
 STATIC_CMAKE_BOOL=	ZIG_STATIC
 STATIC_LDFLAGS=		-licudata -licuuc -llzma -lm -lmd -lxml2 -lz -lzstd
 
-_LLVM_VER=	16
+_LLVM_VER=	17
 _ZIG_BIN=	${STAGEDIR}${PREFIX}/bin/zig
 
 post-configure-STATIC-on:
 	@${REINPLACE_CMD} 's/-Wl,-Bdynamic//' \
 		${BUILD_WRKSRC}/build.ninja
 
-post-build:
-	@${RM} -rf ${STAGEDIR}/wrkdirs
-
 post-install:
 	@${RM} -rf ${WRKDIR}/.build
+	@${RM} -rf ${STAGEDIR}/wrkdirs
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/std
-.for f in langref.html std/data.js std/main.js std/index.html
-	${INSTALL_MAN} ${WRKDIR}/zig-freebsd-x86_64-${DISTVERSION}/doc/${f} \
+.for f in index.html main.js
+	${INSTALL_MAN} ${WRKSRC}/lib/docs/${f} \
 		${STAGEDIR}${DOCSDIR}/${f}
 .endfor
 

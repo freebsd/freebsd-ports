@@ -1,6 +1,5 @@
 PORTNAME=	gnudatalanguage
-PORTVERSION=	1.0.4
-PORTREVISION=	3
+PORTVERSION=	1.0.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	science lang
 .if defined(BUILD_PYTHON_MODULE)
@@ -13,7 +12,8 @@ WWW=		https://github.com/gnudatalanguage/gdl
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS+=	libgeotiff.so:graphics/libgeotiff\
+LIB_DEPENDS+=	libGraphicsMagick.so:graphics/GraphicsMagick	\
+		libgeotiff.so:graphics/libgeotiff	\
 		libexpat.so:textproc/expat2	\
 		libplplot.so:math/plplot	\
 		libtiff.so:graphics/tiff	\
@@ -38,7 +38,8 @@ USE_XORG=	x11 sm ice xext
 CMAKE_ARGS=	-DREADLINEDIR:STRING="/usr"	\
 		-DOPENMP:BOOL=ON		\
 		-DNCURSESDIR:STRING="/usr"	\
-		-DPYTHON:BOOL=NO
+		-DGRAPHICSMAGICK:BOOL=YES	\
+		-DX11:BOOL=ON
 CPPFLAGS+=	${CFLAGS} -fno-inline -DNPY_NO_DEPRECATED_API -DNPY_1_7_API_VERSION
 CXXFLAGS+=	-std=gnu++11
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
@@ -49,9 +50,9 @@ SLAVEDIRS=	science/py-gnudatalanguage
 # Upstream prefer GraphicsMagick over ImageMackick
 # see https://github.com/gnudatalanguage/gdl/issues/611
 # and https://github.com/gnudatalanguage/gdl/issues/1044 for ImageMagick 7
-OPTIONS_DEFINE=	EIGEN EXAMPLES FFTW GLPK GRAPHICSMAGICK GRIB HDF5 LIBPROJ4	\
+OPTIONS_DEFINE=	EIGEN EXAMPLES FFTW GLPK GRIB HDF5 LIBPROJ4	\
 		MPICH NETCDF PYTHON QHULL UDUNITS
-OPTIONS_DEFAULT=EIGEN FFTW GLPK GRAPHICSMAGICK GRIB HDF5 LIBPROJ4 NETCDF PYTHON	\
+OPTIONS_DEFAULT=EIGEN FFTW GLPK GRIB HDF5 LIBPROJ4 NETCDF PYTHON	\
 		QHULL UDUNITS
 
 EIGEN_DESC=		Eigen3 support (boost performance)
@@ -68,16 +69,6 @@ GLPK_DESC=		Support GLPK for Simplex (Linear programming)
 GLPK_LIB_DEPENDS=	libglpk.so:math/glpk
 GLPK_CMAKE_ON=		-DGLPK=ON:BOOL=YES
 GLPK_CMAKE_OFF=		-DGLPK=OFF:BOOL=NO
-
-GRAPHICSMAGICK_DESC=		Support GraphicsMagick
-GRAPHICSMAGICK_LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick
-GRAPHICSMAGICK_CMAKE_ON=	-DGRAPHICSMAGICK:BOOL=YES
-GRAPHICSMAGICK_CMAKE_OFF=	-DGRAPHICSMAGICK:BOOL=NO
-# Temporary swith to ImageMagick
-#IMAGEMAGICK_DESC=	Support ImageMagick
-#IMAGEMAGICK_LIB_DEPENDS=libMagick++-7.so:graphics/ImageMagick7
-#IMAGEMAGICK_CMAKE_ON=	-DGRAPHICSMAGICK:BOOL=NO -DMAGICK:BOOL=YES -DMAGICKDIR=${LOCALBASE}
-#IMAGEMAGICK_CMAKE_OFF=	-DMAGICK:BOOL=NO
 
 GRIB_DESC=		Support GRIB messages
 GRIB_LIB_DEPENDS=	libeccodes.so:science/eccodes

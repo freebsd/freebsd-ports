@@ -1,6 +1,6 @@
---- components/viz/service/display_embedder/skia_output_surface_impl.cc.orig	2024-04-26 05:03:53 UTC
+--- components/viz/service/display_embedder/skia_output_surface_impl.cc.orig	2024-05-23 20:04:36 UTC
 +++ components/viz/service/display_embedder/skia_output_surface_impl.cc
-@@ -1527,7 +1527,7 @@ GrBackendFormat SkiaOutputSurfaceImpl::GetGrBackendFor
+@@ -1503,7 +1503,7 @@ GrBackendFormat SkiaOutputSurfaceImpl::GetGrBackendFor
                                            ->GetVulkanPhysicalDevice(),
                                        VK_IMAGE_TILING_OPTIMAL, vk_format,
                                        si_format, yuv_color_space, ycbcr_info);

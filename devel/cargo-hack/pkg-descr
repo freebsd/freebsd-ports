@@ -1,0 +1,2 @@
+cargo-hack is a Rust cargo subcommand to provide various options useful for
+testing and continuous integration.

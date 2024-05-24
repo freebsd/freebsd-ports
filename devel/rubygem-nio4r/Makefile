@@ -1,5 +1,5 @@
 PORTNAME=	nio4r
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -8,6 +8,7 @@ COMMENT=	Cross-platform asynchronous I/O primitives
 WWW=		https://github.com/socketry/nio4r
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/license.md
 
 USES=		gem
 

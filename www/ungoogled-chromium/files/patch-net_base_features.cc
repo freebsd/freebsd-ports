@@ -1,4 +1,4 @@
---- net/base/features.cc.orig	2024-04-23 07:42:17 UTC
+--- net/base/features.cc.orig	2024-05-23 20:04:36 UTC
 +++ net/base/features.cc
 @@ -28,7 +28,7 @@ BASE_FEATURE(kCapReferrerToOriginOnCrossOrigin,
  BASE_FEATURE(kAsyncDns,
@@ -9,7 +9,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -506,7 +506,12 @@ BASE_FEATURE(kSpdyHeadersToHttpResponseUseBuilder,
+@@ -534,7 +534,12 @@ BASE_FEATURE(kSpdyHeadersToHttpResponseUseBuilder,
               "SpdyHeadersToHttpResponseUseBuilder",
               base::FEATURE_DISABLED_BY_DEFAULT);
  
@@ -20,5 +20,5 @@
 +BASE_FEATURE(kReceiveEcn, "ReceiveEcn", base::FEATURE_DISABLED_BY_DEFAULT);
 +#endif
  
- // TODO(crbug.com/634470): Remove this feature flag in January 2024 if the new
- // limit sticks.
+ BASE_FEATURE(kUseNewAlpsCodepointHttp2,
+              "UseNewAlpsCodepointHttp2",

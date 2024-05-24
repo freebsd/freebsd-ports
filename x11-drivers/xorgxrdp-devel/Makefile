@@ -2,7 +2,7 @@ PORTNAME=	xorgxrdp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.1
 # Be sure to bump PORTREVISION after xorg-server update to force rebuild
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	xrdp
@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	neutrinolabs
-GH_TUPLE=	neutrinolabs:xrdp:v0.10.0-beta.3:xrdp
+GH_TUPLE=	neutrinolabs:xrdp:v0.10.0:xrdp
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
@@ -33,7 +33,7 @@ CONFIGURE_ENV=	XRDP_CFLAGS=-I${WRKSRC_xrdp}/common
 CONFLICTS=	xorgxrdp
 
 OPTIONS_DEFINE=	DEBUG DRI3
-OPTIONS_DEFAULT=
+OPTIONS_DEFAULT=	DRI3
 
 DRI3_DESC=	DRI3/Glamor OpenGL Support
 DRI3_CONFIGURE_ENABLE=	glamor

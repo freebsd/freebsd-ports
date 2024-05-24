@@ -33,12 +33,19 @@ CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD} \
 
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=		ATLAS FLOAT HWLOC LEGACY OPENMP SIMD
+OPTIONS_DEFINE=		ATLAS FLOAT HWLOC LEGACY SIMD
 OPTIONS_SINGLE=		MP OPENCL
 OPTIONS_SINGLE_MP=	NOMP MPICH OPENMPI THREAD_MPI
 OPTIONS_SINGLE_OPENCL=	OPENCL_NONE OPENCL_ICD OPENCL_SYCL
-OPTIONS_DEFAULT=	HWLOC LEGACY OPENCL_NONE OPENMP THREAD_MPI # FLOAT should not be a default because science/votca needs double precision. This is likely the same for many other uses.
+OPTIONS_DEFAULT=	HWLOC LEGACY OPENCL_NONE THREAD_MPI # FLOAT should not be a default because science/votca needs double precision. This is likely the same for many other uses.
 OPTIONS_SUB=		yes
+
+.if exists(/usr/include/omp.h)
+OPTIONS_DEFINE+=	OPENMP
+OPTIONS_DEFAULT+=	OPENMP
+.else
+CMAKE_OFF+=		GMX_OPENMP
+.endif
 
 ATLAS_DESC=		Use ATLAS for BLAS and LAPACK
 ATLAS_USES=		blaslapack:atlas
@@ -80,8 +87,6 @@ OPENCL_SYCL_LIB_DEPENDS=	libhipSYCL-rt.so:lang/opensycl
 OPENCL_SYCL_IMPLIES=	FLOAT
 OPENCL_SYCL_BROKEN=	configure uses a wrong namespace to find CYCL, see https://gitlab.com/gromacs/gromacs/-/issues/4838
 
-OPENMP_CMAKE_BOOL=	GMX_OPENMP
-
 SIMD_CMAKE_OFF=		-DGMX_SIMD:STRING="None"
 SIMD_CMAKE_ON=		-DGMX_SIMD:STRING="AUTO"
 
@@ -95,6 +100,7 @@ MPICH_CMAKE_ON=		-DGMX_MPI:BOOL=ON \
 			-DMPI_C_COMPILER:FILEPATH="${LOCALBASE}/bin/mpicc"
 MPICH_PLIST_SUB=	SUFFIX_MPI="_mpi"
 
+OPENMP_CMAKE_BOOL=	GMX_OPENMP
 OPENMPI_BUILD_DEPENDS=	openmpi>0:net/openmpi
 OPENMPI_RUN_DEPENDS=	openmpi>0:net/openmpi
 OPENMPI_CMAKE_ON=	-DGMX_MPI:BOOL=ON \

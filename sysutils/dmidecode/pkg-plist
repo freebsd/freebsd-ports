@@ -3,6 +3,10 @@ etc/periodic/daily/dmidecode
 sbin/dmidecode
 %%X86%%sbin/ownership
 %%X86%%sbin/vpddecode
+%%X86%%share/bash-completion/completions/biosdecode
+share/bash-completion/completions/dmidecode
+%%X86%%share/bash-completion/completions/ownership
+%%X86%%share/bash-completion/completions/vpddecode
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README

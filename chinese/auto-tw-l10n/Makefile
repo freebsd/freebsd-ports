@@ -4,6 +4,7 @@ CATEGORIES=	chinese
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatic localization for Traditional Chinese locale
+WWW=		https://github.com/BSDTW/auto-tw-l10n
 
 NO_ARCH=	yes
 NO_BUILD=	yes

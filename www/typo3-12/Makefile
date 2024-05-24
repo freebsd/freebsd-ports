@@ -12,8 +12,6 @@ WWW=		https://typo3.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-IGNORE_WITH_PHP=	83
-
 USES=		cpe php:web,flavors shebangfix
 # php openssl extension is required but it's statically linked in default php
 USE_PHP=	ctype dom fileinfo filter gd intl mbstring pdo session \
@@ -31,7 +29,7 @@ SUB_LIST+=	PREFIX=${PREFIX} \
 
 PORT_V_MAJOR=	12
 PORT_V_MINOR=	4
-PORT_V_PATCH=	11
+PORT_V_PATCH=	15
 
 TYPO3DIR=	www/${PORTNAME}-${PORT_V_MAJOR}
 

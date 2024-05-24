@@ -1,7 +1,7 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	7.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -49,6 +49,15 @@ USE_RC_SUBR=	mongod
 
 SHEBANG_FILES=	buildscripts/scons.py
 python_OLD_CMD=	@python_interpreter@
+
+EXTRACT_AFTER_ARGS=	--exclude src/third_party/pcre2 \
+			--exclude src/third_party/snappy-* \
+			--exclude src/third_party/libstemmer_c \
+			--exclude src/third_party/unwind \
+			--exclude src/third_party/yaml-cpp \
+			--exclude src/third_party/zlib-* \
+			--exclude src/third_party/zstandard \
+			--no-same-owner --no-same-permissions
 
 MAKE_ARGS=	--allocator=system \
 		--cxx-std=20 \
@@ -115,14 +124,6 @@ MOZJS_ARCH=	${ARCH}
 .endif
 
 post-patch:
-	${RM} -rf ${WRKSRC}/src/third_party/pcre2
-	${RM} -rf ${WRKSRC}/src/third_party/snappy-*
-	${RM} -rf ${WRKSRC}/src/third_party/libstemmer_c
-	${RM} -rf ${WRKSRC}/src/third_party/unwind
-	${RM} -rf ${WRKSRC}/src/third_party/yaml-cpp
-	${RM} -rf ${WRKSRC}/src/third_party/zlib-*
-	${RM} -rf ${WRKSRC}/src/third_party/zstandard
-
 # fix build with python-3.11
 	${REINPLACE_CMD} -e 's#rU#r#g' ${WRKDIR}/spidermonkey-${MOZJS_TAG}/python/mozbuild/mozbuild/util.py
 	${REINPLACE_CMD} -e 's#rU#r#g' ${WRKDIR}/spidermonkey-${MOZJS_TAG}/python/mozbuild/mozbuild/preprocessor.py

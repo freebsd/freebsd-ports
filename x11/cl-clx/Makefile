@@ -1,6 +1,5 @@
 PORTNAME=	clx
-DISTVERSION=	0.7.5-65
-DISTVERSIONSUFFIX=	-g8e07155
+DISTVERSION=	0.7.6
 CATEGORIES=	x11 lisp
 PKGNAMEPREFIX=	cl-
 
@@ -10,9 +9,7 @@ WWW=		https://www.cliki.net/CLX
 
 LICENSE=	MIT
 
-USES=		tar:tgz
-
-USES+=		makeinfo
+USES=		makeinfo tar:tgz
 USE_ASDF=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	sharplispers

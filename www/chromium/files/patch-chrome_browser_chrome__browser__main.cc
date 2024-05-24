@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_main.cc.orig	2024-04-19 13:02:56 UTC
+--- chrome/browser/chrome_browser_main.cc.orig	2024-05-21 18:07:39 UTC
 +++ chrome/browser/chrome_browser_main.cc
 @@ -246,15 +246,15 @@
  
@@ -80,7 +80,7 @@
    metrics::DesktopSessionDurationTracker::Initialize();
    ProfileActivityMetricsRecorder::Initialize();
    TouchModeStatsTracker::Initialize(
-@@ -1328,7 +1328,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
+@@ -1322,7 +1322,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
  #endif  // BUILDFLAG(IS_WIN)
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -89,7 +89,7 @@
    // Delete the media history database if it still exists.
    // TODO(crbug.com/1198344): Remove this.
    base::ThreadPool::PostTask(
-@@ -1377,7 +1377,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
+@@ -1371,7 +1371,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
        *UrlLanguageHistogramFactory::GetForBrowserContext(profile));
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -98,7 +98,7 @@
    if (headless::IsHeadlessMode()) {
      headless::ReportHeadlessActionMetrics();
    }
-@@ -1485,7 +1485,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
+@@ -1481,7 +1481,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
    // In headless mode provide alternate SelectFileDialog factory overriding
    // any platform specific SelectFileDialog implementation that may have been
    // set.
@@ -107,7 +107,7 @@
    if (headless::IsHeadlessMode()) {
      headless::HeadlessSelectFileDialogFactory::SetUp();
    }
-@@ -2030,7 +2030,7 @@ bool ChromeBrowserMainParts::ProcessSingletonNotificat
+@@ -2026,7 +2026,7 @@ bool ChromeBrowserMainParts::ProcessSingletonNotificat
  
    // Drop the request if headless mode is in effect or the request is from
    // a headless Chrome process.

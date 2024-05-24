@@ -1,13 +1,13 @@
 PORTNAME=	beecrypt
 PORTVERSION=	4.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF
 
 PATCHFILES=	mpntrbits.patch
 PATCH_SITES=	http://sourceforge.net/p/beecrypt/patches/_discuss/thread/bff89ba1/5387/attachment/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Open source cryptographic library
 WWW=		https://sourceforge.net/projects/beecrypt/
 

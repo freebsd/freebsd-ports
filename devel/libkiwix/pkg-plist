@@ -7,10 +7,8 @@ include/kiwix/downloader.h
 include/kiwix/kiwix_config.h
 include/kiwix/kiwixserve.h
 include/kiwix/library.h
-include/kiwix/libxml_dumper.h
 include/kiwix/manager.h
 include/kiwix/name_mapper.h
-include/kiwix/opds_dumper.h
 include/kiwix/search_renderer.h
 include/kiwix/server.h
 include/kiwix/tools.h

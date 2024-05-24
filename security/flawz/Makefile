@@ -1,0 +1,269 @@
+PORTNAME=	flawz
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.1
+CATEGORIES=	security
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Terminal UI for browsing security vulnerabilities (CVEs)
+WWW=		https://github.com/orhun/flawz
+
+LICENSE=	APACHE20 MIT
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+
+USES=		cargo sqlite ssl
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	orhun
+
+CARGO_CRATES=	addr2line-0.21.0 \
+		adler-1.0.2 \
+		ahash-0.8.11 \
+		aho-corasick-1.1.3 \
+		allocator-api2-0.2.18 \
+		android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
+		ansi_term-0.12.1 \
+		anstream-0.6.14 \
+		anstyle-1.0.7 \
+		anstyle-parse-0.2.4 \
+		anstyle-query-1.0.3 \
+		anstyle-wincon-3.0.3 \
+		atomic-waker-1.1.2 \
+		atty-0.2.14 \
+		autocfg-1.3.0 \
+		backtrace-0.3.71 \
+		base64-0.22.1 \
+		bitflags-1.3.2 \
+		bitflags-2.5.0 \
+		bumpalo-3.16.0 \
+		bytes-1.6.0 \
+		cassowary-0.3.0 \
+		castaway-0.2.2 \
+		cc-1.0.98 \
+		cfg-if-1.0.0 \
+		chrono-0.4.38 \
+		clap-2.34.0 \
+		clap-4.5.4 \
+		clap_builder-4.5.2 \
+		clap_complete-4.5.2 \
+		clap_derive-4.5.4 \
+		clap_lex-0.7.0 \
+		clap_mangen-0.2.20 \
+		colorchoice-1.0.1 \
+		compact_str-0.7.1 \
+		core-foundation-0.9.4 \
+		core-foundation-sys-0.8.6 \
+		crc32fast-1.4.0 \
+		crossterm-0.27.0 \
+		crossterm_winapi-0.9.1 \
+		darling-0.20.9 \
+		darling_core-0.20.9 \
+		darling_macro-0.20.9 \
+		derive-getters-0.3.0 \
+		derive_setters-0.1.6 \
+		either-1.12.0 \
+		encoding_rs-0.8.34 \
+		env_filter-0.1.0 \
+		env_logger-0.11.3 \
+		equivalent-1.0.1 \
+		errno-0.3.9 \
+		fallible-iterator-0.3.0 \
+		fallible-streaming-iterator-0.1.9 \
+		fastrand-2.1.0 \
+		flate2-1.0.30 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.2.1 \
+		futures-channel-0.3.30 \
+		futures-core-0.3.30 \
+		futures-io-0.3.30 \
+		futures-sink-0.3.30 \
+		futures-task-0.3.30 \
+		futures-util-0.3.30 \
+		gimli-0.28.1 \
+		h2-0.4.5 \
+		hashbrown-0.14.5 \
+		hashlink-0.9.1 \
+		heck-0.4.1 \
+		heck-0.5.0 \
+		hermit-abi-0.1.19 \
+		hermit-abi-0.3.9 \
+		home-0.5.9 \
+		http-1.1.0 \
+		http-body-1.0.0 \
+		http-body-util-0.1.1 \
+		httparse-1.8.0 \
+		humansize-1.1.1 \
+		humantime-2.1.0 \
+		hyper-1.3.1 \
+		hyper-tls-0.6.0 \
+		hyper-util-0.1.3 \
+		iana-time-zone-0.1.60 \
+		iana-time-zone-haiku-0.1.2 \
+		ident_case-1.0.1 \
+		idna-0.5.0 \
+		indexmap-2.2.6 \
+		indoc-2.0.5 \
+		ipnet-2.9.0 \
+		is_terminal_polyfill-1.70.0 \
+		itertools-0.12.1 \
+		itoa-1.0.11 \
+		js-sys-0.3.69 \
+		lazy_static-1.4.0 \
+		libc-0.2.155 \
+		libsqlite3-sys-0.28.0 \
+		linux-raw-sys-0.4.14 \
+		lock_api-0.4.12 \
+		log-0.4.21 \
+		lru-0.12.3 \
+		memchr-2.7.2 \
+		mime-0.3.17 \
+		miniz_oxide-0.7.3 \
+		mio-0.8.11 \
+		native-tls-0.2.11 \
+		num-traits-0.2.19 \
+		num_cpus-1.16.0 \
+		nvd_cve-0.2.0 \
+		object-0.32.2 \
+		once_cell-1.19.0 \
+		openssl-0.10.64 \
+		openssl-macros-0.1.1 \
+		openssl-probe-0.1.5 \
+		openssl-sys-0.9.102 \
+		parking_lot-0.12.2 \
+		parking_lot_core-0.9.10 \
+		paste-1.0.15 \
+		percent-encoding-2.3.1 \
+		pin-project-1.1.5 \
+		pin-project-internal-1.1.5 \
+		pin-project-lite-0.2.14 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.30 \
+		proc-macro2-1.0.83 \
+		progress-0.2.0 \
+		quote-1.0.36 \
+		ratatui-0.26.2 \
+		redox_syscall-0.5.1 \
+		regex-1.10.4 \
+		regex-automata-0.4.6 \
+		regex-syntax-0.8.3 \
+		reqwest-0.12.4 \
+		roff-0.2.1 \
+		rusqlite-0.31.0 \
+		rustc-demangle-0.1.24 \
+		rustix-0.38.34 \
+		rustls-pemfile-2.1.2 \
+		rustls-pki-types-1.7.0 \
+		rustversion-1.0.17 \
+		ryu-1.0.18 \
+		schannel-0.1.23 \
+		scopeguard-1.2.0 \
+		security-framework-2.11.0 \
+		security-framework-sys-2.11.0 \
+		serde-1.0.202 \
+		serde_derive-1.0.202 \
+		serde_json-1.0.117 \
+		serde_urlencoded-0.7.1 \
+		signal-hook-0.3.17 \
+		signal-hook-mio-0.2.3 \
+		signal-hook-registry-1.4.2 \
+		slab-0.4.9 \
+		smallvec-1.13.2 \
+		smawk-0.3.2 \
+		socket2-0.5.7 \
+		stability-0.2.0 \
+		static_assertions-1.1.0 \
+		strsim-0.8.0 \
+		strsim-0.11.1 \
+		strum-0.26.2 \
+		strum_macros-0.26.2 \
+		syn-1.0.109 \
+		syn-2.0.65 \
+		sync_wrapper-0.1.2 \
+		system-configuration-0.5.1 \
+		system-configuration-sys-0.5.0 \
+		tempfile-3.10.1 \
+		terminal_size-0.1.17 \
+		terminal_size-0.3.0 \
+		textwrap-0.11.0 \
+		textwrap-0.16.1 \
+		thiserror-1.0.61 \
+		thiserror-impl-1.0.61 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.1 \
+		tokio-1.37.0 \
+		tokio-native-tls-0.3.1 \
+		tokio-util-0.7.11 \
+		tower-0.4.13 \
+		tower-layer-0.3.2 \
+		tower-service-0.3.2 \
+		tracing-0.1.40 \
+		tracing-core-0.1.32 \
+		try-lock-0.2.5 \
+		tui-input-0.8.0 \
+		tui-popup-0.3.1 \
+		unicode-bidi-0.3.15 \
+		unicode-ident-1.0.12 \
+		unicode-linebreak-0.1.5 \
+		unicode-normalization-0.1.23 \
+		unicode-segmentation-1.11.0 \
+		unicode-width-0.1.12 \
+		url-2.5.0 \
+		utf8parse-0.2.1 \
+		vcpkg-0.2.15 \
+		vec_map-0.8.2 \
+		version_check-0.9.4 \
+		want-0.3.1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.92 \
+		wasm-bindgen-backend-0.2.92 \
+		wasm-bindgen-futures-0.4.42 \
+		wasm-bindgen-macro-0.2.92 \
+		wasm-bindgen-macro-support-0.2.92 \
+		wasm-bindgen-shared-0.2.92 \
+		web-sys-0.3.69 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-core-0.52.0 \
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.5 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.5 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.5 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.5 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.5 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.5 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.5 \
+		winreg-0.52.0 \
+		zerocopy-0.7.34 \
+		zerocopy-derive-0.7.34
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
+
+PROGS=		bin/${PORTNAME} \
+		bin/${PORTNAME}-completions \
+		bin/${PORTNAME}-mangen
+
+PLIST_FILES=	${PROGS}
+
+post-install:
+.for prog in ${PROGS}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${prog}
+.endfor
+
+.include <bsd.port.mk>

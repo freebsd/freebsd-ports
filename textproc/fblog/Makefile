@@ -1,7 +1,6 @@
 PORTNAME=	fblog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.9.0
-PORTREVISION=	1
+DISTVERSION=	4.10.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,104 +16,120 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	brocode
 
 CARGO_CRATES=	aho-corasick-1.1.3 \
-		anstream-0.6.13 \
-		anstyle-1.0.6 \
-		anstyle-parse-0.2.3 \
-		anstyle-query-1.0.2 \
-		anstyle-wincon-3.0.2 \
-		autocfg-1.2.0 \
+		android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
+		anstream-0.6.14 \
+		anstyle-1.0.7 \
+		anstyle-parse-0.2.4 \
+		anstyle-query-1.0.3 \
+		anstyle-wincon-3.0.3 \
+		autocfg-1.3.0 \
 		bitflags-2.5.0 \
 		block-buffer-0.10.4 \
 		bstr-1.9.1 \
-		cc-1.0.90 \
+		bumpalo-3.16.0 \
+		cc-1.0.98 \
 		cfg-if-1.0.0 \
+		chrono-0.4.38 \
 		clap-4.5.4 \
 		clap_builder-4.5.2 \
-		clap_complete-4.5.1 \
+		clap_complete-4.5.2 \
 		clap_derive-4.5.4 \
 		clap_lex-0.7.0 \
-		colorchoice-1.0.0 \
+		colorchoice-1.0.1 \
+		core-foundation-sys-0.8.6 \
 		cpufeatures-0.2.12 \
 		crypto-common-0.1.6 \
 		digest-0.10.7 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
-		either-1.10.0 \
+		either-1.12.0 \
 		equivalent-1.0.1 \
-		errno-0.3.8 \
+		errno-0.3.9 \
 		generic-array-0.14.7 \
-		getrandom-0.2.12 \
+		getrandom-0.2.15 \
 		handlebars-5.1.2 \
-		hashbrown-0.14.3 \
+		hashbrown-0.14.5 \
 		heck-0.5.0 \
 		home-0.5.9 \
+		iana-time-zone-0.1.60 \
+		iana-time-zone-haiku-0.1.2 \
 		indexmap-2.2.6 \
+		is_terminal_polyfill-1.70.0 \
 		itoa-1.0.11 \
+		js-sys-0.3.69 \
 		lazy_static-1.4.0 \
-		libc-0.2.153 \
+		libc-0.2.155 \
 		libredox-0.1.3 \
-		linux-raw-sys-0.4.13 \
+		linux-raw-sys-0.4.14 \
 		log-0.4.21 \
 		lua-src-546.0.2 \
-		luajit-src-210.5.7+d06beb0 \
+		luajit-src-210.5.8+5790d25 \
 		memchr-2.7.2 \
-		mlua-0.9.6 \
-		mlua-sys-0.5.1 \
-		num-traits-0.2.18 \
+		mlua-0.9.8 \
+		mlua-sys-0.6.0 \
+		num-traits-0.2.19 \
 		once_cell-1.19.0 \
 		option-ext-0.2.0 \
-		pest-2.7.9 \
-		pest_derive-2.7.9 \
-		pest_generator-2.7.9 \
-		pest_meta-2.7.9 \
+		pest-2.7.10 \
+		pest_derive-2.7.10 \
+		pest_generator-2.7.10 \
+		pest_meta-2.7.10 \
 		pkg-config-0.3.30 \
-		proc-macro2-1.0.79 \
-		quote-1.0.35 \
+		proc-macro2-1.0.83 \
+		quote-1.0.36 \
 		redox_users-0.4.5 \
 		regex-1.10.4 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.8.3 \
 		rustc-hash-1.1.0 \
-		rustix-0.38.32 \
-		ryu-1.0.17 \
-		serde-1.0.197 \
-		serde_derive-1.0.197 \
-		serde_json-1.0.115 \
-		serde_spanned-0.6.5 \
+		rustix-0.38.34 \
+		ryu-1.0.18 \
+		serde-1.0.202 \
+		serde_derive-1.0.202 \
+		serde_json-1.0.117 \
+		serde_spanned-0.6.6 \
 		sha2-0.10.8 \
 		strsim-0.11.1 \
-		syn-2.0.58 \
-		thiserror-1.0.58 \
-		thiserror-impl-1.0.58 \
-		toml-0.8.12 \
-		toml_datetime-0.6.5 \
-		toml_edit-0.22.9 \
+		syn-2.0.65 \
+		thiserror-1.0.61 \
+		thiserror-impl-1.0.61 \
+		toml-0.8.13 \
+		toml_datetime-0.6.6 \
+		toml_edit-0.22.13 \
 		typenum-1.17.0 \
 		ucd-trie-0.1.6 \
 		unicode-ident-1.0.12 \
 		utf8parse-0.2.1 \
 		version_check-0.9.4 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.92 \
+		wasm-bindgen-backend-0.2.92 \
+		wasm-bindgen-macro-0.2.92 \
+		wasm-bindgen-macro-support-0.2.92 \
+		wasm-bindgen-shared-0.2.92 \
 		which-6.0.1 \
+		windows-core-0.52.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.4 \
+		windows-targets-0.52.5 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_gnullvm-0.52.5 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.4 \
+		windows_aarch64_msvc-0.52.5 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.4 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.4 \
+		windows_i686_msvc-0.52.5 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.4 \
-		winnow-0.6.5 \
+		windows_x86_64_msvc-0.52.5 \
+		winnow-0.6.8 \
 		winsafe-0.0.19 \
 		yansi-1.0.1
 

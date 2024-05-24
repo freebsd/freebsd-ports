@@ -14,4 +14,6 @@ RUN_DEPENDS=	rubygem-addressable>=2.5.2:www/rubygem-addressable
 
 USES=		gem
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

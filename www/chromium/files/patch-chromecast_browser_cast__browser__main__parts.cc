@@ -1,15 +1,15 @@
---- chromecast/browser/cast_browser_main_parts.cc.orig	2023-07-16 15:47:57 UTC
+--- chromecast/browser/cast_browser_main_parts.cc.orig	2024-05-21 18:07:39 UTC
 +++ chromecast/browser/cast_browser_main_parts.cc
-@@ -90,7 +90,7 @@
- #include "ui/base/ui_base_switches.h"
- #include "ui/gl/gl_switches.h"
+@@ -94,7 +94,7 @@
+ #include "ui/ozone/public/ozone_platform.h"
+ #endif  // BUILDFLAG(IS_OZONE)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include <fontconfig/fontconfig.h>
  #include <signal.h>
  #include <sys/prctl.h>
-@@ -263,7 +263,7 @@ class CastViewsDelegate : public views::ViewsDelegate 
+@@ -267,7 +267,7 @@ class CastViewsDelegate : public views::ViewsDelegate 
  
  #endif  // defined(USE_AURA)
  
@@ -18,7 +18,7 @@
  
  base::FilePath GetApplicationFontsDir() {
    std::unique_ptr<base::Environment> env(base::Environment::Create());
-@@ -309,7 +309,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
+@@ -313,7 +313,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
      {cc::switches::kDisableThreadedAnimation, ""},
  #endif  // BUILDFLAG(IS_ANDROID)
  #endif  // BUILDFLAG(IS_CAST_AUDIO_ONLY)
@@ -27,7 +27,7 @@
  #if defined(ARCH_CPU_X86_FAMILY)
      // This is needed for now to enable the x11 Ozone platform to work with
      // current Linux/NVidia OpenGL drivers.
-@@ -479,7 +479,7 @@ void CastBrowserMainParts::ToolkitInitialized() {
+@@ -490,7 +490,7 @@ void CastBrowserMainParts::ToolkitInitialized() {
      views_delegate_ = std::make_unique<CastViewsDelegate>();
  #endif  // defined(USE_AURA)
  

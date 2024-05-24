@@ -1,10 +1,10 @@
 PORTNAME=	tkp4
 PORTVERSION=	1.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel tk
 MASTER_SITES=	http://www.timshel.ca/tkp4/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Tcl/Tk frontends to Perforce's p4
 WWW=		https://www.timshel.ca/tkp4/
 

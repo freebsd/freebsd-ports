@@ -1,0 +1,15 @@
+%%PYTHON_SITELIBDIR%%/ast2json/__init__.py
+%%PYTHON_SITELIBDIR%%/ast2json/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ast2json/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ast2json/__pycache__/ast2json%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ast2json/__pycache__/ast2json%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ast2json/__pycache__/types%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ast2json/__pycache__/types%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ast2json/ast2json.py
+%%PYTHON_SITELIBDIR%%/ast2json/py2/__init__.py
+%%PYTHON_SITELIBDIR%%/ast2json/py2/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ast2json/py2/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ast2json/py3/__init__.py
+%%PYTHON_SITELIBDIR%%/ast2json/py3/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ast2json/py3/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ast2json/types.py

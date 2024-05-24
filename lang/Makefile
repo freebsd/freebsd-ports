@@ -12,6 +12,7 @@
     SUBDIR += awka
     SUBDIR += bas2tap
     SUBDIR += basic256
+    SUBDIR += bend
     SUBDIR += bsh
     SUBDIR += bwbasic
     SUBDIR += c
@@ -389,5 +390,6 @@
     SUBDIR += zig
     SUBDIR += zig-devel
     SUBDIR += zig010
+    SUBDIR += zig011
 
 .include <bsd.port.subdir.mk>

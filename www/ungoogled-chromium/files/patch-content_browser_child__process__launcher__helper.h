@@ -1,8 +1,8 @@
---- content/browser/child_process_launcher_helper.h.orig	2024-04-23 07:42:17 UTC
+--- content/browser/child_process_launcher_helper.h.orig	2024-05-23 20:04:36 UTC
 +++ content/browser/child_process_launcher_helper.h
-@@ -293,7 +293,7 @@ class ChildProcessLauncherHelper
-   std::unique_ptr<SandboxedProcessLauncherDelegate> delegate_;
-   base::WeakPtr<ChildProcessLauncher> child_process_launcher_;
+@@ -304,7 +304,7 @@ class ChildProcessLauncherHelper
+   std::optional<base::ProcessId> process_id_ = std::nullopt;
+ #endif  // BUILDFLAG(IS_CHROMEOS)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

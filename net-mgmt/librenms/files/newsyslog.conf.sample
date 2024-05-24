@@ -2,6 +2,5 @@
 #
 # see newsyslog.conf(5) for details
 #
-# logfilename                           [owner:group]    mode count size when  flags [/pid_file] [sig_num]
-/var/log/librenms/librenms.log	        www:www          644  7	    *    $D0   J     /var/run/librenms/librenms.pid
-/var/log/librenms/librenms-service.log	www:www	         644  7	    *    $D0   J     /var/run/librenms/librenms.pid
+# logfilename                   [owner:group]    mode count size when  flags [/pid_file] [sig_num]
+/var/log/librenms/*.log	        www:www          644  14    *    $D0   -     /var/run/librenms/librenms.pid

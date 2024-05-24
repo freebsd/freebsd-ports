@@ -1,0 +1,132 @@
+PORTNAME=	cargo-cache
+DISTVERSION=	0.8.3
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Rust: Manage cargo cache, print sizes of dirs, remove dirs selectively
+WWW=		https://github.com/matthiaskrgr/cargo-cache
+
+LICENSE=	APACHE20 MIT
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	matthiaskrgr
+
+CARGO_CRATES=	adler-1.0.2 \
+		aho-corasick-0.7.18 \
+		ansi_term-0.12.1 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		bitflags-1.3.2 \
+		camino-1.0.9 \
+		cargo-platform-0.1.2 \
+		cargo_metadata-0.15.0 \
+		cc-1.0.73 \
+		cfg-if-1.0.0 \
+		chrono-0.4.19 \
+		clap-3.2.15 \
+		clap_lex-0.2.4 \
+		crc32fast-1.3.2 \
+		crossbeam-channel-0.5.6 \
+		crossbeam-deque-0.8.2 \
+		crossbeam-epoch-0.9.10 \
+		crossbeam-utils-0.8.11 \
+		ctor-0.1.22 \
+		diff-0.1.13 \
+		dirs-next-2.0.0 \
+		dirs-sys-next-0.1.2 \
+		either-1.7.0 \
+		fastrand-1.8.0 \
+		filetime-0.2.17 \
+		flate2-1.0.24 \
+		form_urlencoded-1.0.1 \
+		fs_extra-1.2.0 \
+		getrandom-0.2.7 \
+		git2-0.14.2 \
+		hashbrown-0.12.3 \
+		hermit-abi-0.1.19 \
+		home-0.5.3 \
+		humansize-1.1.1 \
+		idna-0.2.3 \
+		indexmap-1.9.1 \
+		instant-0.1.12 \
+		itoa-1.0.2 \
+		jobserver-0.1.24 \
+		libc-0.2.126 \
+		libgit2-sys-0.13.2+1.4.2 \
+		libz-sys-1.1.8 \
+		log-0.4.17 \
+		matches-0.1.9 \
+		memchr-2.5.0 \
+		memoffset-0.6.5 \
+		miniz_oxide-0.5.3 \
+		num-integer-0.1.45 \
+		num-traits-0.2.15 \
+		num_cpus-1.13.1 \
+		once_cell-1.13.0 \
+		os_str_bytes-6.2.0 \
+		output_vt100-0.1.3 \
+		path-slash-0.2.0 \
+		percent-encoding-2.1.0 \
+		pkg-config-0.3.25 \
+		pretty_assertions-1.2.1 \
+		proc-macro2-1.0.42 \
+		quote-1.0.20 \
+		rayon-1.5.3 \
+		rayon-core-1.9.3 \
+		redox_syscall-0.2.15 \
+		redox_users-0.4.3 \
+		regex-1.6.0 \
+		regex-syntax-0.6.27 \
+		remove_dir_all-0.5.3 \
+		remove_dir_all-0.7.0 \
+		rustc_tools_util-0.2.0 \
+		ryu-1.0.10 \
+		same-file-1.0.6 \
+		scopeguard-1.1.0 \
+		semver-1.0.12 \
+		serde-1.0.140 \
+		serde_derive-1.0.140 \
+		serde_json-1.0.82 \
+		strsim-0.10.0 \
+		syn-1.0.98 \
+		tar-0.4.38 \
+		tempfile-3.3.0 \
+		termcolor-1.1.3 \
+		terminal_size-0.1.17 \
+		textwrap-0.15.0 \
+		thiserror-1.0.31 \
+		thiserror-impl-1.0.31 \
+		time-0.1.44 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.0 \
+		unicode-bidi-0.3.8 \
+		unicode-ident-1.0.2 \
+		unicode-normalization-0.1.21 \
+		url-2.2.2 \
+		vcpkg-0.2.15 \
+		walkdir-2.3.2 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.36.1 \
+		windows_aarch64_msvc-0.36.1 \
+		windows_i686_gnu-0.36.1 \
+		windows_i686_msvc-0.36.1 \
+		windows_x86_64_gnu-0.36.1 \
+		windows_x86_64_msvc-0.36.1 \
+		xattr-0.2.3
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

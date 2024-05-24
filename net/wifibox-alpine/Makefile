@@ -95,31 +95,15 @@ GH_ACCOUNT=	pgj
 GH_PROJECT=	freebsd-wifibox-alpine:scripts
 GH_TAGNAME=	3ce5b1faf48ef4b9d52c38bf518aa612242fba3f:scripts
 
-ALPINE_VERSION=	3.19.1
-ALPINE_DATE=	2024.03.23
-
+ALPINE_VERSION=		3.19.1
 LINUX_LTS_VERSION=	6.6.22-r1
 LINUX_EDGE_VERSION=	6.8.1-r1
-
-_ALPINE_VER=	${ALPINE_VERSION:C@([0-9]+)\.([0-9]+).*@\1.\2@}
-_ALPINE_SITE1=	https://dl-cdn.alpinelinux.org/alpine/v${_ALPINE_VER}
-
-_ALPINE_BASE=	https://mirror.fel.cvut.cz
-
-.if defined(ALPINE_DATE)
-_SNAPSHOT=     	${ALPINE_DATE:S/./-/g}
-_ALPINE_SITE2=  ${_ALPINE_BASE}/alpine/snapshots/${_SNAPSHOT}/v${_ALPINE_VER}
-.else
-_ALPINE_SITE2=	${_ALPINE_BASE}/alpine/v${_ALPINE_VER}
-.endif
 
 _LINUXFW_SITE=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/
 _LINUXFW_TAG=	20240312
 _LINUXFW=	linux-firmware-${_LINUXFW_TAG}
 
-MASTER_SITES+=	${_ALPINE_SITE1}/releases/x86_64/:rootfs \
-		${_ALPINE_SITE2}/main/x86_64/:main_packages \
-		${_ALPINE_SITE2}/community/x86_64/:community_packages \
+MASTER_SITES+=	${_GITHUB_SITE}/upstream/:upstream \
 		${_GITHUB_SITE}/packages/:custom_packages \
 		${_LINUXFW_SITE}/linux-firmware.git/snapshot/:linux_firmware \
 		https://sources.openwrt.org/:openwrt \
@@ -287,7 +271,7 @@ PORT_OPTIONS+=		FW_${flavor:tu}
 .endfor
 
 DIST_SUBDIR=	wifibox-alpine
-DISTFILES+=	${_MINIROOTFS}:rootfs
+DISTFILES+=	${_MINIROOTFS}:upstream
 
 LFW_ATH10K_FILES=	ath10k
 LFW_ATH11K_FILES=	ath11k
@@ -381,10 +365,8 @@ DISTFILES+=	${_LINUXFWFILE}:linux_firmware
 .for package in ${_PACKAGES}
 .if ${package:M*\:wifibox}
 DISTFILES+=	${package:C@^([^:]*):wifibox$@\1@}.apk:custom_packages
-.elif ${package:M*\:community}
-DISTFILES+=	${package:C@^([^:]*):community$@\1@}.apk:community_packages
 .else
-DISTFILES+=	${package:C@^([^:]*):wifibox$@\1@}.apk:main_packages
+DISTFILES+=	${package:C@^([^:]*):wifibox$@\1@}.apk:upstream
 .endif
 _APK_FILES+=	${_DISTDIR}/${package:C@^([^:]*):.*$@\1@}.apk
 .endfor
@@ -491,16 +473,5 @@ MAKE_ARGS+=	VERSION=${PORTVERSION} \
 .if defined(FIRMWARE_FILES)
 MAKE_ARGS+=	FIRMWARE_FILES=${FIRMWARE_FILES}
 .endif
-
-.if make(check-alpine-packages)
-_APK_FETCH!=	${MAKE} fetch-urlall-list | ${GREP} apk | ${GREP} -v distcache
-.endif
-
-check-alpine-packages:
-.for apk in ${_APK_FETCH}
-	@${ECHO} -n "${apk:C@^.*/([0-9A-za-z\._-]*)@\1@} (${apk})..."
-	@${FETCH_CMD} -s ${apk} > /dev/null
-	@${ECHO} "OK"
-.endfor
 
 .include <bsd.port.mk>

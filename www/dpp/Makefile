@@ -1,5 +1,6 @@
 PORTNAME=	dpp
 DISTVERSION=	10.0.29
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	https://github.com/brainboxdotcc/DPP/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-discord

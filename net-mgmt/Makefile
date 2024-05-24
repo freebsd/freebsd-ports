@@ -74,6 +74,7 @@
     SUBDIR += flowd
     SUBDIR += flowviewer
     SUBDIR += fprobe
+    SUBDIR += geom-exporter
     SUBDIR += gnu-ipcalc
     SUBDIR += gping
     SUBDIR += grepcidr

@@ -1,6 +1,6 @@
 PORTNAME=	scanlogd
 PORTVERSION=	2.2.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://openwall.com/scanlogd/ \
 		ftp://ftp.openwall.com/pub/projects/scanlogd/ \

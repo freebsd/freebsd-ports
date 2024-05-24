@@ -71,6 +71,7 @@ bin/use-devel-assertos
 %%SITE_PERL%%/Devel/AssertOS/OS400.pm
 %%SITE_PERL%%/Devel/AssertOS/OSF.pm
 %%SITE_PERL%%/Devel/AssertOS/OSFeatures/POSIXShellRedirection.pm
+%%SITE_PERL%%/Devel/AssertOS/OSFeatures/Release.pm
 %%SITE_PERL%%/Devel/AssertOS/OSFeatures/Systemd.pm
 %%SITE_PERL%%/Devel/AssertOS/OpenBSD.pm
 %%SITE_PERL%%/Devel/AssertOS/POSIXBC.pm
@@ -165,6 +166,7 @@ bin/use-devel-assertos
 %%PERL5_MAN3%%/Devel::AssertOS::OS400.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::OSF.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::OSFeatures::POSIXShellRedirection.3.gz
+%%PERL5_MAN3%%/Devel::AssertOS::OSFeatures::Release.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::OSFeatures::Systemd.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::OpenBSD.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::POSIXBC.3.gz

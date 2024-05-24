@@ -1,6 +1,6 @@
 PORTNAME=	getdns
 PORTVERSION=	1.5.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	dns
 MASTER_SITES=	https://getdnsapi.net/dist/ \
 		ZI \

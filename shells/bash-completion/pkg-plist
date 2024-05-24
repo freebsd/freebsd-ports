@@ -1,8 +1,4 @@
 etc/bash_completion.d/000_bash_completion_compat.bash
-etc/bash_completion.d/make
-etc/bash_completion.d/mandoc
-etc/bash_completion.d/pkg
-etc/bash_completion.d/service
 libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/bash_completion
 %%DATADIR%%/bash_completion.sh
@@ -25,6 +21,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/_ansible-pull
 %%DATADIR%%/completions/_ansible-vault
 %%DATADIR%%/completions/_arduino-cli
+%%DATADIR%%/completions/_bao
 %%DATADIR%%/completions/_black
 %%DATADIR%%/completions/_blackd
 %%DATADIR%%/completions/_buf
@@ -43,6 +40,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/_datree
 %%DATADIR%%/completions/_deno
 %%DATADIR%%/completions/_diesel
+%%DATADIR%%/completions/_dlv
 %%DATADIR%%/completions/_dmesg
 %%DATADIR%%/completions/_docker
 %%DATADIR%%/completions/_dprint
@@ -60,12 +58,14 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/_gopherjs
 %%DATADIR%%/completions/_goreleaser
 %%DATADIR%%/completions/_gsctl
+%%DATADIR%%/completions/_gup
 %%DATADIR%%/completions/_helm
 %%DATADIR%%/completions/_hexdump
 %%DATADIR%%/completions/_httpx
 %%DATADIR%%/completions/_hugo
 %%DATADIR%%/completions/_hwclock
 %%DATADIR%%/completions/_ignite
+%%DATADIR%%/completions/_incus
 %%DATADIR%%/completions/_infracost
 %%DATADIR%%/completions/_ionice
 %%DATADIR%%/completions/_istioctl
@@ -139,6 +139,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/_terraform
 %%DATADIR%%/completions/_tkn
 %%DATADIR%%/completions/_tkn-pac
+%%DATADIR%%/completions/_tofu
 %%DATADIR%%/completions/_tokio-console
 %%DATADIR%%/completions/_trivy
 %%DATADIR%%/completions/_udevadm
@@ -153,6 +154,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/_xm
 %%DATADIR%%/completions/_yq
 %%DATADIR%%/completions/_yum
+%%DATADIR%%/completions/_zarf
 %%DATADIR%%/completions/_zitadel
 %%DATADIR%%/completions/a2x
 %%DATADIR%%/completions/abook
@@ -304,6 +306,7 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/completions/ebtables
 %%DATADIR%%/completions/ecryptfs-migrate-home
 %%DATADIR%%/completions/edquota
+%%DATADIR%%/completions/env
 %%DATADIR%%/completions/eog
 %%DATADIR%%/completions/ether-wake
 %%DATADIR%%/completions/etherwake

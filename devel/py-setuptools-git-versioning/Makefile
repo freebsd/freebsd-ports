@@ -1,8 +1,8 @@
 PORTNAME=	setuptools-git-versioning
-PORTVERSION=	1.13.6
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/dolfinus/setuptools-git-versioning/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org

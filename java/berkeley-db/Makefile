@@ -1,11 +1,12 @@
 PORTNAME=	je
 PORTVERSION=	7.5.11
+PORTREVISION=	1
 CATEGORIES=	java databases
 MASTER_SITES=	http://download.oracle.com/berkeley-db/	\
 		http://download-east.oracle.com/berkeley-db/	\
 		http://download-west.oracle.com/berkeley-db/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Berkeley DB Java Edition
 WWW=		https://www.oracle.com/database/technologies/related/berkeleydb.html
 

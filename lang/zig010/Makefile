@@ -1,6 +1,6 @@
 PORTNAME=	zig
 DISTVERSION=	0.10.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://ziglang.org/download/${DISTVERSION}/ \
 		https://ziglang.org/builds/
@@ -24,14 +24,11 @@ ONLY_FOR_ARCHS_REASON=	not yet supported
 BUILD_DEPENDS=	icu>=71:devel/icu \
 		llvm${_LLVM_VER}>=0:devel/llvm${_LLVM_VER}
 
-LIB_DEPENDS=	liblzma.so:archivers/lzma \
-		libzstd.so:archivers/zstd
-
 USES=		cmake compiler:c++11-lang localbase:ldflags tar:xz
 CMAKE_ON=	THREADS_PREFER_PTHREAD_FLAG
 CMAKE_ARGS+=	-DZIG_TARGET_MCPU=baseline # ensure we run everywhere
 
-CONFLICTS_INSTALL=	zig
+CONFLICTS_INSTALL=	zig zig011 zig-devel
 PORTSCOUT=	limit:^0\.10\.
 
 OPTIONS_DEFINE=		DOCS STATIC

@@ -1,10 +1,11 @@
 PORTNAME=	libgpc
 PORTVERSION=	2.32
+PORTREVISION=	1
 CATEGORIES=	devel math graphics
 MASTER_SITES=	http://www.cs.man.ac.uk/~toby/alan/software/assets/
 DISTNAME=	gpc${PORTVERSION:S/.//}
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Generic Polygon Clipper
 WWW=		http://www.cs.man.ac.uk/~toby/alan/software/
 

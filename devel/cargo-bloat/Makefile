@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Find out what takes most of the space in your executable
+COMMENT=	Rust: Find out what takes most of the space in your executable
 WWW=		https://github.com/RazrFalcon/cargo-bloat
 
 LICENSE=	MIT

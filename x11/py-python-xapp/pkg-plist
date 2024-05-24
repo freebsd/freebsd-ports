@@ -1,0 +1,4 @@
+%%PYTHON_SITELIBDIR%%/xapp/GSettingsWidgets.py
+%%PYTHON_SITELIBDIR%%/xapp/SettingsWidgets.py
+%%PYTHON_SITELIBDIR%%/xapp/__init__.py
+%%PYTHON_SITELIBDIR%%/xapp/os.py

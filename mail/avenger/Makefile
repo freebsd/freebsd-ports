@@ -11,6 +11,9 @@ WWW=		https://www.mailavenger.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on deprecated Oracle Berkeley DB 5.3 and upstream is dead
+EXPIRATION_DATE=2024-06-30
+
 USES=		bdb ssl
 USE_CXXSTD=	c++14
 

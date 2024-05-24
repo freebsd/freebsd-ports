@@ -1,5 +1,5 @@
 PORTNAME=	hitimes
-PORTVERSION=	2.0.0
+PORTVERSION=	3.0.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -8,7 +8,7 @@ COMMENT=	High resolution timer library for Ruby
 WWW=		https://github.com/copiousfreetime/hitimes
 
 LICENSE=	ISCL
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		gem
 

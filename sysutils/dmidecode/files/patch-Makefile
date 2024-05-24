@@ -1,4 +1,4 @@
---- Makefile.orig	2020-10-14 12:51:11 UTC
+--- Makefile.orig	2024-04-24 09:26:16 UTC
 +++ Makefile
 @@ -12,7 +12,7 @@
  #   (at your option) any later version.
@@ -9,7 +9,7 @@
  # Base CFLAGS can be overridden by environment
  CFLAGS ?= -O2
  # When debugging, disable -O2 and enable -g
-@@ -28,19 +28,20 @@ CFLAGS += -D_FILE_OFFSET_BITS=64
+@@ -28,20 +28,21 @@ CFLAGS += -D_FILE_OFFSET_BITS=64
  #CFLAGS += -DALIGNMENT_WORKAROUND
  
  # Pass linker flags here (can be set from environment too)
@@ -24,6 +24,8 @@
  mandir  = $(prefix)/share/man
  man8dir = $(mandir)/man8
  docdir  = $(prefix)/share/doc/dmidecode
+-compdir = $(shell pkg-config --variable=completionsdir bash-completion 2>/dev/null || echo $(prefix)/etc/bash_completion.d)
++compdir = $(prefix)/share/bash-completion/completions
  
  INSTALL         := install
 -INSTALL_DATA    := $(INSTALL) -m 644
@@ -34,3 +36,13 @@
  RM              := rm -f
  
  # BSD make provides $MACHINE, but GNU make doesn't
+@@ -146,8 +147,8 @@ install-completion :
+ 	$(RM) -r $(DESTDIR)$(docdir)
+ 
+ install-completion :
+-	if [ -d $(compdir) ] ; then \
+ 	$(INSTALL_DIR) $(DESTDIR)$(compdir) ; \
++	if [ -d $(DESTDIR)$(compdir) ] ; then \
+ 	for program in $(PROGRAMS) ; do \
+ 	$(INSTALL_DATA) completion/$$program.bash $(DESTDIR)$(compdir)/$$program ; done ; \
+ 	fi

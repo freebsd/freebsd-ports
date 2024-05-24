@@ -1,9 +1,8 @@
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	textproc gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 COMMENT=	Python interface for XML parser library for GNOME
-MASTERDIR=	${.CURDIR}/../libxml2
 
 USES+=		gnome python shebangfix
 USE_GNOME=	libxml2
@@ -14,19 +13,15 @@ SHEBANG_FILES=	*.py doc/*.py python/*.py python/tests/*.py
 # multiple versions are installed
 CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD}
 
+MASTERDIR=	${.CURDIR}/../libxml2
+
+DESCR=		${.CURDIR}/pkg-descr
+PLIST=		${.CURDIR}/pkg-plist
+
 OPTIONS_EXCLUDE=	${OPTIONS_DEFINE}
 
 # Tell master port we're a slave port
 LIBXML2_SLAVE=	python
-# Grab pkg-descr from slave port
-DESCR=		${.CURDIR}/pkg-descr
-
-# Don't append pkg-plist from master port
-PLIST=
-
-PLIST_FILES=	${PYTHON_SITELIBDIR}/drv_libxml2.py \
-		${PYTHON_SITELIBDIR}/libxml2.py \
-		${PYTHON_SITELIBDIR}/libxml2mod.so
 
 do-install:
 		${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}

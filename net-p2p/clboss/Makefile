@@ -8,6 +8,7 @@ DISTVERSION=	0.13.1
 .if defined(DISTVERSIONSUFFIX)
 PKGNAMESUFFIX=	-devel
 .endif
+PORTREVISION=	1
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	vd@FreeBSD.org

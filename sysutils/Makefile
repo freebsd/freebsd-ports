@@ -367,6 +367,7 @@
     SUBDIR += egress-monitor
     SUBDIR += eject
     SUBDIR += eksctl
+    SUBDIR += elfx86exts
     SUBDIR += endian
     SUBDIR += enteruser
     SUBDIR += entr
@@ -1424,6 +1425,7 @@
     SUBDIR += syslinux
     SUBDIR += syslog-ng
     SUBDIR += syslogger
+    SUBDIR += systeroid
     SUBDIR += sysvbanner
     SUBDIR += szyszka
     SUBDIR += tai64nfrac

@@ -9,6 +9,8 @@ WWW=		https://rustscan.github.io/RustScan/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	ring-0.17.8 crate fails to build
+
 RUN_DEPENDS=	nmap>0:security/nmap
 
 USES=		cargo

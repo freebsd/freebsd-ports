@@ -1,5 +1,5 @@
 PORTNAME=	tinyproxy
-PORTVERSION=	1.11.1
+PORTVERSION=	1.11.2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/tinyproxy/tinyproxy/releases/download/${PORTVERSION}/

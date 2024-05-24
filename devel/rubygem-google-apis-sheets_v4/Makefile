@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-sheets_v4
-PORTVERSION=	0.29.0
+PORTVERSION=	0.31.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

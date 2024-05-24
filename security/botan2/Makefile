@@ -78,6 +78,9 @@ SQLITE3_CONFIGURE_WITH=	sqlite3
 CONFIGURE_ARGS+=	--cc-abi="-march=armv8-a+crypto"
 .elif ${ARCH} == powerpc64
 CONFIGURE_ARGS+=	--cpu="ppc64"
+.if !defined(MACHINE_CPU) || (defined(MACHINE_CPU) && !${MACHINE_ABI:Mvsx2})
+CONFIGURE_ARGS+=	--disable-powercrypto
+.endif
 .elif ${ARCH} == powerpc64le
 CONFIGURE_ARGS+=	--cpu="ppc64le"
 .endif

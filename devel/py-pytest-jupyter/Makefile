@@ -1,5 +1,6 @@
 PORTNAME=	pytest-jupyter
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyter-server/pytest-jupyter/releases/download/v${PORTVERSION}/

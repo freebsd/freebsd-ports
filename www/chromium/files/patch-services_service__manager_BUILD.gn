@@ -1,6 +1,6 @@
---- services/service_manager/BUILD.gn.orig	2021-12-31 00:57:38 UTC
+--- services/service_manager/BUILD.gn.orig	2024-05-21 18:07:39 UTC
 +++ services/service_manager/BUILD.gn
-@@ -67,7 +67,7 @@ source_set("service_manager") {
+@@ -66,7 +66,7 @@ source_set("service_manager") {
      ]
    }
  

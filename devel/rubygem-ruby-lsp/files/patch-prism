@@ -1,81 +1,156 @@
-Obtained from:	https://github.com/Shopify/ruby-lsp/pull/1953
+Obtained from:	https://github.com/Shopify/ruby-lsp/commit/e3c0f201239b56f47c5c6bdd3d034ea6b0bda5f9
 
---- lib/ruby_indexer/lib/ruby_indexer/collector.rb.orig	2024-04-20 14:51:21 UTC
-+++ lib/ruby_indexer/lib/ruby_indexer/collector.rb
-@@ -7,7 +7,7 @@ module RubyIndexer
+--- lib/core_ext/uri.rb.orig	2024-05-17 18:30:23 UTC
++++ lib/core_ext/uri.rb
+@@ -11,6 +11,9 @@ module URI
+         # On Windows, if the path begins with the disk name, we need to add a leading slash to make it a valid URI
+         escaped_path = if /^[A-Z]:/i.match?(path)
+           DEFAULT_PARSER.escape("/#{path}")
++        elsif path.start_with?("//?/")
++          # Some paths on Windows start with "//?/". This is a special prefix that allows for long file paths
++          DEFAULT_PARSER.escape(path.delete_prefix("//?"))
+         else
+           DEFAULT_PARSER.escape(path)
+         end
+--- lib/ruby_lsp/listeners/document_highlight.rb.orig	2024-05-17 18:30:23 UTC
++++ lib/ruby_lsp/listeners/document_highlight.rb
+@@ -271,7 +271,7 @@ module RubyLsp
+       def on_constant_path_node_enter(node)
+         return unless matches?(node, CONSTANT_PATH_NODES)
  
-     LEAVE_EVENT = T.let(Object.new.freeze, Object)
+-        add_highlight(Constant::DocumentHighlightKind::READ, node.location)
++        add_highlight(Constant::DocumentHighlightKind::READ, node.name_loc)
+       end
  
--    sig { params(index: Index, parse_result: Prism::ParseResult, file_path: String).void }
-+    sig { params(index: Index, parse_result: Prism::ParseResult[Prism::ProgramNode], file_path: String).void }
-     def initialize(index, parse_result, file_path)
-       @index = index
-       @file_path = file_path
---- lib/ruby_lsp/document.rb.orig	2024-04-20 14:51:21 UTC
-+++ lib/ruby_lsp/document.rb
-@@ -8,7 +8,7 @@ module RubyLsp
- 
-     abstract!
- 
--    sig { returns(Prism::ParseResult) }
-+    sig { returns(Prism::ParseResult[Prism::ProgramNode]) }
-     attr_reader :parse_result
- 
-     sig { returns(String) }
-@@ -31,7 +31,7 @@ module RubyLsp
-       @version = T.let(version, Integer)
-       @uri = T.let(uri, URI::Generic)
-       @needs_parsing = T.let(true, T::Boolean)
--      @parse_result = T.let(parse, Prism::ParseResult)
-+      @parse_result = T.let(parse, Prism::ParseResult[Prism::ProgramNode])
-     end
- 
-     sig { returns(Prism::ProgramNode) }
-@@ -93,7 +93,7 @@ module RubyLsp
-       @cache.clear
-     end
- 
--    sig { abstract.returns(Prism::ParseResult) }
-+    sig { abstract.returns(Prism::ParseResult[Prism::ProgramNode]) }
-     def parse; end
- 
-     sig { returns(T::Boolean) }
---- lib/ruby_lsp/internal.rb.orig	2024-04-20 14:51:21 UTC
-+++ lib/ruby_lsp/internal.rb
-@@ -19,6 +19,14 @@ require "language_server-protocol"
- require "prism/visitor"
- require "language_server-protocol"
- 
-+# Prism v0.26.0 introduced generics for ParseResult, but it causes some problems so the intention is to remove it.
-+# Once that is done, we can remove this patch.
-+module Prism
-+  class ParseResult
-+    extend T::Generic
-+  end
-+end
-+
- require "ruby-lsp"
- require "ruby_lsp/base_server"
- require "ruby_indexer/ruby_indexer"
---- lib/ruby_lsp/listeners/document_link.rb.orig	2024-04-20 14:51:21 UTC
+       sig { params(node: Prism::ConstantReadNode).void }
+--- lib/ruby_lsp/listeners/document_link.rb.orig	2024-05-17 18:30:23 UTC
 +++ lib/ruby_lsp/listeners/document_link.rb
-@@ -124,7 +124,7 @@ module RubyLsp
-         match = comment.location.slice.match(%r{source://.*#\d+$})
-         return unless match
+@@ -30,7 +30,7 @@ module RubyLsp
+                 lookup[spec.name] = {}
+                 lookup[spec.name][spec.version.to_s] = {}
  
--        uri = T.cast(URI(T.must(match[0])), URI::Source)
-+        uri = T.cast(URI(match[0]), URI::Source)
-         gem_version = resolve_version(uri)
-         return if gem_version.nil?
+-                Dir.glob("**/*.rb", base: "#{spec.full_gem_path}/").each do |path|
++                Dir.glob("**/*.rb", base: "#{spec.full_gem_path.delete_prefix("//?/")}/").each do |path|
+                   lookup[spec.name][spec.version.to_s][path] = "#{spec.full_gem_path}/#{path}"
+                 end
+               end
+--- lib/ruby_lsp/listeners/semantic_highlighting.rb.orig	2024-05-17 18:30:23 UTC
++++ lib/ruby_lsp/listeners/semantic_highlighting.rb
+@@ -58,6 +58,7 @@ module RubyLsp
+           :on_constant_operator_write_node_enter,
+           :on_constant_or_write_node_enter,
+           :on_constant_target_node_enter,
++          :on_constant_path_node_enter,
+           :on_local_variable_and_write_node_enter,
+           :on_local_variable_operator_write_node_enter,
+           :on_local_variable_or_write_node_enter,
+@@ -302,17 +303,64 @@ module RubyLsp
+       def on_class_node_enter(node)
+         return unless visible?(node, @range)
  
---- lib/ruby_lsp/ruby_document.rb.orig	2024-04-20 14:51:21 UTC
-+++ lib/ruby_lsp/ruby_document.rb
-@@ -3,7 +3,7 @@ module RubyLsp
+-        @response_builder.add_token(node.constant_path.location, :class, [:declaration])
++        constant_path = node.constant_path
  
- module RubyLsp
-   class RubyDocument < Document
--    sig { override.returns(Prism::ParseResult) }
-+    sig { override.returns(Prism::ParseResult[Prism::ProgramNode]) }
-     def parse
-       return @parse_result unless @needs_parsing
++        if constant_path.is_a?(Prism::ConstantReadNode)
++          @response_builder.add_token(constant_path.location, :class, [:declaration])
++        else
++          each_constant_path_part(constant_path) do |part|
++            loc = case part
++            when Prism::ConstantPathNode
++              part.name_loc
++            when Prism::ConstantReadNode
++              part.location
++            end
++            next unless loc
++
++            @response_builder.add_token(loc, :class, [:declaration])
++          end
++        end
++
+         superclass = node.superclass
+-        @response_builder.add_token(superclass.location, :class) if superclass
++
++        if superclass.is_a?(Prism::ConstantReadNode)
++          @response_builder.add_token(superclass.location, :class)
++        elsif superclass
++          each_constant_path_part(superclass) do |part|
++            loc = case part
++            when Prism::ConstantPathNode
++              part.name_loc
++            when Prism::ConstantReadNode
++              part.location
++            end
++            next unless loc
++
++            @response_builder.add_token(loc, :class)
++          end
++        end
+       end
  
+       sig { params(node: Prism::ModuleNode).void }
+       def on_module_node_enter(node)
+         return unless visible?(node, @range)
+ 
+-        @response_builder.add_token(node.constant_path.location, :namespace, [:declaration])
++        constant_path = node.constant_path
++
++        if constant_path.is_a?(Prism::ConstantReadNode)
++          @response_builder.add_token(constant_path.location, :namespace, [:declaration])
++        else
++          each_constant_path_part(constant_path) do |part|
++            loc = case part
++            when Prism::ConstantPathNode
++              part.name_loc
++            when Prism::ConstantReadNode
++              part.location
++            end
++            next unless loc
++
++            @response_builder.add_token(loc, :namespace, [:declaration])
++          end
++        end
+       end
+ 
+       sig { params(node: Prism::ImplicitNode).void }
+@@ -325,6 +373,14 @@ module RubyLsp
+       sig { params(node: Prism::ImplicitNode).void }
+       def on_implicit_node_leave(node)
+         @inside_implicit_node = false
++      end
++
++      sig { params(node: Prism::ConstantPathNode).void }
++      def on_constant_path_node_enter(node)
++        return if @inside_implicit_node
++        return unless visible?(node, @range)
++
++        @response_builder.add_token(node.name_loc, :namespace)
+       end
+ 
+       private
+--- lib/ruby_lsp/requests/support/common.rb.orig	2024-05-17 18:30:23 UTC
++++ lib/ruby_lsp/requests/support/common.rb
+@@ -167,6 +167,24 @@ module RubyLsp
+             constant_name(path)
+           end
+         end
++
++        # Iterates over each part of a constant path, so that we can easily push response items for each section of the
++        # name. For example, for `Foo::Bar::Baz`, this method will invoke the block with `Foo`, then `Bar` and finally
++        # `Baz`.
++        sig do
++          params(
++            node: Prism::Node,
++            block: T.proc.params(part: Prism::Node).void,
++          ).void
++        end
++        def each_constant_path_part(node, &block)
++          current = T.let(node, T.nilable(Prism::Node))
++
++          while current.is_a?(Prism::ConstantPathNode)
++            block.call(current)
++            current = current.parent
++          end
++        end
+       end
+     end
+   end

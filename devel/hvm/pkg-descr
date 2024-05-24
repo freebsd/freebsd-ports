@@ -1,0 +1,11 @@
+HVM2 is a h=Higher-order Virtual Machine 2.
+
+HVM2 is a massively parallel interaction combinator evaluator.
+
+By compiling programs from high-level languages (such as Python and Haskell) to
+HVM, one can run these languages directly on massively parallel hardware, like
+GPUs, with near-ideal speedup.
+
+HVM2 is the successor to HVM1, a 2022 prototype of this concept. Compared to its
+predecessor, HVM2 is simpler, faster and, most importantly, more correct. HOC
+provides long-term support for all features listed on its paper.

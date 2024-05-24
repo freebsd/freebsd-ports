@@ -9,7 +9,7 @@ WWW=		https://github.com/apache/couchdb-erlfdb
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libfdb_c.so:databases/foundationdb
+LIB_DEPENDS=	libfdb_c.so:databases/foundationdb71-client
 
 USES=		erlang:rebar3,enc
 USE_GITHUB=	yes

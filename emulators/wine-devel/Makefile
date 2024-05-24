@@ -28,7 +28,6 @@ CPE_VENDOR=	winehq
 CONFLICTS_INSTALL=	wine
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=--verbose \
 		--disable-kerberos \
 		--disable-tests \

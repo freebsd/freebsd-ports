@@ -250,6 +250,7 @@
     SUBDIR += rolo
     SUBDIR += rubygem-shellplay
     SUBDIR += rubygem-taskjuggler
+    SUBDIR += rwpspread
     SUBDIR += semantik
     SUBDIR += showdown
     SUBDIR += sigi

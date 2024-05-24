@@ -1,6 +1,6 @@
 PORTNAME=	vacation
 PORTVERSION=	3.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -11,7 +11,7 @@ WWW=		https://www.linux.it/~md/software/
 
 PORTSCOUT=	ignore:1
 
-USES=		bdb
+USES=		bdb:18
 
 CFLAGS+=	-L${LOCALBASE}/lib
 

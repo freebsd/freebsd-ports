@@ -1,0 +1,1 @@
+sqlite-anyio provides asynchronous client for SQLite using AnyIO.

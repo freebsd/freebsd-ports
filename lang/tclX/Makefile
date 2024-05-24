@@ -1,6 +1,6 @@
 PORTNAME=	tclX
 PORTVERSION=	8.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang tcl devel
 MASTER_SITES=	SF/${PORTNAME:tl}/TclX/${PORTVERSION}:tclx \
     		http://core.tcl.tk/tclconfig/raw/:tclm4
@@ -9,7 +9,7 @@ DISTFILES=	tclx${PORTVERSION}${EXTRACT_SUFX}:tclx \
 EXTRACT_ONLY=	tclx${PORTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Extended TCL
 WWW=		https://tclx.sourceforge.net/
 

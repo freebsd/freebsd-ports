@@ -1,5 +1,5 @@
 PORTNAME=	libnpupnp
-DISTVERSION=	6.1.1
+DISTVERSION=	6.1.2
 CATEGORIES=	net
 MASTER_SITES=	https://www.lesbonscomptes.com/upmpdcli/downloads/
 
@@ -14,10 +14,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libmicrohttpd.so:www/libmicrohttpd
 
-USES=		compiler:c++17-lang libtool localbase pkgconfig
-GNU_CONFIGURE=	yes
+USES=		compiler:c++17-lang localbase:ldflags meson pkgconfig
 USE_LDCONFIG=	yes
 
-INSTALL_TARGET=	install-strip
+MESON_ARGS=	-Dunspecified_server=false \
+		-Dtestmains=false
 
 .include <bsd.port.mk>

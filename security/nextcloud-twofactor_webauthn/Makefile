@@ -1,6 +1,7 @@
 PORTNAME=	twofactor_webauthn
 PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	brnrd@FreeBSD.org

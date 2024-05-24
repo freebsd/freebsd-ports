@@ -1,6 +1,6 @@
 PORTNAME=	rapid-photo-downloader
 DISTVERSION=	0.9.26
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	https://launchpad.net/rapid/pyqt/${PORTVERSION}/+download/
 

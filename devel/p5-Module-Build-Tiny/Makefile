@@ -3,7 +3,7 @@
 # Mk/Uses/perl5.mk.
 
 PORTNAME=	Module-Build-Tiny
-PORTVERSION=	0.047
+PORTVERSION=	0.048
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-ExtUtils-Config>=0.003:devel/p5-ExtUtils-Config \
+RUN_DEPENDS=	p5-CPAN-Requirements-Dynamic>=0:devel/p5-CPAN-Requirements-Dynamic \
+		p5-ExtUtils-Config>=0.003:devel/p5-ExtUtils-Config \
 		p5-ExtUtils-Helpers>=0.020:devel/p5-ExtUtils-Helpers \
 		p5-ExtUtils-InstallPaths>=0.002:devel/p5-ExtUtils-InstallPaths
 

@@ -15,6 +15,7 @@ include/tcl%%TCL_VER%%/tclTomMathDecls.h
 include/tcl%%TCL_VER%%/tclUnixPort.h
 lib/libtclstub%%TCL_VER%%.a
 lib/libtcl%%TCL_VER%%.so
+lib/libtcl%%PKGNAMESUFFIX%%.so
 lib/tcl%%TCL_VER%%/auto.tcl
 lib/tcl%%TCL_VER%%/clock.tcl
 lib/tcl%%TCL_VER%%/cookiejar0.2/cookiejar.tcl

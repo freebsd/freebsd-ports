@@ -1,8 +1,7 @@
 PORTNAME=	mls
-PORTVERSION=	1.3
-PORTREVISION=	3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.4b1
 CATEGORIES=	mail
-MASTER_SITES=	https://www.marki-online.net/MLS/
 
 MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Program for generating various statistics on emails
@@ -12,6 +11,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.gz
 
 USES=		tar:tgz
+USE_GITHUB=	yes
+GH_ACCOUNT=	marki555
+GH_PROJECT=	MailListStat
 
 MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	mls

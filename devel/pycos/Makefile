@@ -1,11 +1,11 @@
 PORTNAME=	pycos
 PORTVERSION=	4.8.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel net
 MASTER_SITES=	SF/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Concurrent, Asynchronous, Distributed, Communicating Tasks with Python
 WWW=		https://pycos.sourceforge.io/
 

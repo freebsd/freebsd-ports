@@ -1,5 +1,6 @@
 PORTNAME=	smart_proxy_salt
 PORTVERSION=	5.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 

@@ -1,6 +1,6 @@
---- chrome/browser/prefs/browser_prefs.cc.orig	2024-05-01 07:03:57 UTC
+--- chrome/browser/prefs/browser_prefs.cc.orig	2024-05-21 18:07:39 UTC
 +++ chrome/browser/prefs/browser_prefs.cc
-@@ -488,18 +488,18 @@
+@@ -487,18 +487,18 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -22,7 +22,7 @@
  #include "chrome/browser/enterprise/signin/enterprise_signin_prefs.h"
  #endif
  
-@@ -534,7 +534,7 @@
+@@ -533,7 +533,7 @@
  #include "chrome/browser/sessions/session_service_log.h"
  #endif
  
@@ -31,7 +31,7 @@
  #include "ui/color/system_theme.h"
  #endif
  
-@@ -1722,7 +1722,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+@@ -1771,7 +1771,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
    registry->RegisterBooleanPref(prefs::kOopPrintDriversAllowedByPolicy, true);
  #endif
  
@@ -40,7 +40,7 @@
    registry->RegisterBooleanPref(prefs::kChromeForTestingAllowed, true);
  #endif
  
-@@ -2067,12 +2067,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -2118,12 +2118,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

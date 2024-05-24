@@ -1,7 +1,6 @@
 PORTNAME=	forgejo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.21.10-0
-PORTREVISION=	2
+DISTVERSION=	7.0.2
 CATEGORIES=	www
 MASTER_SITES=	https://codeberg.org/forgejo/forgejo/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 DISTNAME=	forgejo-src-${DISTVERSION}
@@ -15,12 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git
 
-USES=			cpe gmake go:1.21,no_targets
+USES=			cpe gmake go:1.22,no_targets
 USE_RC_SUBR=	forgejo
 
 EXTRACT_AFTER_ARGS=	--strip-components 1
-SUB_FILES+=	app.ini.sample
-SUB_LIST+=	GITUSER=${USERS}
+SUB_FILES=	app.ini.sample pkg-message
+SUB_LIST=	GITUSER=${USERS}
 
 NO_WRKSUBDIR=	yes
 
@@ -54,10 +53,11 @@ DAEMONARGS=	-f
 SUB_LIST+=	DAEMONARGS="${DAEMONARGS}"
 
 SSP_UNSAFE=	true
-# Default LDFLAGS are incompatible with build
-MAKE_ENV=	LDFLAGS="${LDFLAGS} ${EXTRA_LDFLAGS}"
+LDFLAGS+=	"'-X "code.gitea.io/gitea/modules/setting.CustomPath=${PREFIX}/etc/forgejo"'"
+LDFLAGS+=	"'-X "code.gitea.io/gitea/modules/setting.AppWorkPath=${PREFIX}/share/forgejo"'"
 MAKE_ARGS=	GOPATH=${WRKDIR} \
-		TAGS="${GO_TAGS}"
+		TAGS="${GO_TAGS}" \
+		GOFLAGS="-buildvcs=false"
 ALL_TARGET=	backend
 MAKE_JOBS_UNSAFE=	yes
 

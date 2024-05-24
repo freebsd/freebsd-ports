@@ -13,6 +13,9 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE_GPL2
 LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on deprecated graphics/ming
+EXPIRATION_DATE=2024-06-30
+
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgif.so:graphics/giflib \
 		libming.so:graphics/ming \

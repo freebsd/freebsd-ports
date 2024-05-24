@@ -1,7 +1,6 @@
 PORTNAME=	navidrome
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.52.0
-PORTREVISION=	1
+DISTVERSION=	0.52.5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freebsd.org/~kbowling/distfiles/:npmcache
 DISTFILES=	${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache
@@ -18,7 +17,7 @@ BUILD_DEPENDS+=	npm>0:www/npm
 LIB_DEPENDS+=	libtag.so:audio/taglib
 RUN_DEPENDS+=	ffmpeg:multimedia/ffmpeg
 
-USES=		cpe go:modules pkgconfig
+USES=		cpe go:1.22,modules pkgconfig
 USE_GITHUB=	yes
 USE_RC_SUBR=	${PORTNAME}
 GH_TUPLE=	\
@@ -47,19 +46,19 @@ GH_TUPLE=	\
 		go-chi:jwtauth:v5.3.1:go_chi_jwtauth_v5/vendor/github.com/go-chi/jwtauth/v5 \
 		go-ini:ini:v1.67.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-logr:logr:v1.4.1:go_logr_logr/vendor/github.com/go-logr/logr \
-		go-task:slim-sprig:52ccab3ef572:go_task_slim_sprig/vendor/github.com/go-task/slim-sprig \
+		go-task:slim-sprig:v3.0.0:go_task_slim_sprig_v3/vendor/github.com/go-task/slim-sprig/v3 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		goccy:go-json:v0.10.2:goccy_go_json/vendor/github.com/goccy/go-json \
-		golang:crypto:v0.22.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:exp:fe59bbe5cc7f:golang_exp/vendor/golang.org/x/exp \
-		golang:image:v0.15.0:golang_image/vendor/golang.org/x/image \
-		golang:net:v0.24.0:golang_net/vendor/golang.org/x/net \
+		golang:crypto:v0.23.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:exp:9bf2ced13842:golang_exp/vendor/golang.org/x/exp \
+		golang:image:v0.16.0:golang_image/vendor/golang.org/x/image \
+		golang:net:v0.25.0:golang_net/vendor/golang.org/x/net \
 		golang:sync:v0.7.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.19.0:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.14.0:golang_text/vendor/golang.org/x/text \
-		golang:tools:v0.20.0:golang_tools/vendor/golang.org/x/tools \
+		golang:sys:v0.20.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.15.0:golang_text/vendor/golang.org/x/text \
+		golang:tools:v0.21.0:golang_tools/vendor/golang.org/x/tools \
 		google:go-cmp:v0.6.0:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:pprof:e72429f035bd:google_pprof/vendor/github.com/google/pprof \
+		google:pprof:a892ee059fd6:google_pprof/vendor/github.com/google/pprof \
 		google:uuid:v1.6.0:google_uuid/vendor/github.com/google/uuid \
 		google:wire:v0.6.0:google_wire/vendor/github.com/google/wire \
 		gorilla:css:v1.0.0:gorilla_css/vendor/github.com/gorilla/css \
@@ -87,9 +86,9 @@ GH_TUPLE=	\
 		mileusna:useragent:v1.3.4:mileusna_useragent/vendor/github.com/mileusna/useragent \
 		mitchellh:mapstructure:v1.5.0:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		natefinch:npipe:c1b8fa8bdcce:natefinch_npipe/vendor/gopkg.in/natefinch/npipe.v2 \
-		onsi:ginkgo:v2.17.1:onsi_ginkgo_v2/vendor/github.com/onsi/ginkgo/v2 \
-		onsi:gomega:v1.33.0:onsi_gomega/vendor/github.com/onsi/gomega \
-		pelletier:go-toml:v2.2.1:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
+		onsi:ginkgo:v2.17.3:onsi_ginkgo_v2/vendor/github.com/onsi/ginkgo/v2 \
+		onsi:gomega:v1.33.1:onsi_gomega/vendor/github.com/onsi/gomega \
+		pelletier:go-toml:v2.2.2:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
 		pmezard:go-difflib:5d4384ee4fb2:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		pocketbase:dbx:v1.10.1:pocketbase_dbx/vendor/github.com/pocketbase/dbx \
 		pressly:goose:v3.20.0:pressly_goose_v3/vendor/github.com/pressly/goose/v3 \
@@ -118,7 +117,7 @@ GH_TUPLE=	\
 		unrolled:secure:v1.14.0:unrolled_secure/vendor/github.com/unrolled/secure \
 		xrash:smetrics:5f08fbb34913:xrash_smetrics/vendor/github.com/xrash/smetrics
 
-_BUILD_SHA=	92a98cd
+_BUILD_SHA=	c556088
 
 GO_BUILDFLAGS=	-ldflags="-X github.com/navidrome/navidrome/consts.gitSha=${_BUILD_SHA} -X github.com/navidrome/navidrome/consts.gitTag=${GH_TAGNAME}-FREEBSD" -tags=netgo
 

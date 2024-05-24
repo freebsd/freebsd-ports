@@ -1,5 +1,5 @@
 PORTNAME=	bcrypt_pbkdf
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 

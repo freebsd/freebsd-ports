@@ -1,6 +1,6 @@
 PORTNAME=	fvwm
 PORTVERSION=	2.6.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/fvwmorg/fvwm/releases/download/${PORTVERSION}/ \
 		http://fvwm.sourceforge.net/generated/icon_download/ \
@@ -12,6 +12,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Popular virtual window manager for X
 WWW=		https://www.fvwm.org/
+
+LICENSE=		GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	gm4:devel/m4 \
 		p5-XML-Parser>=0:textproc/p5-XML-Parser

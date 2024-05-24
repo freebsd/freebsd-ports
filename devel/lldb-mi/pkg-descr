@@ -1,0 +1,5 @@
+LLDB is a next generation, high-performance debugger. It is built as a set of
+reusable components which highly leverage existing libraries in the larger LLVM
+Project, such as the Clang expression parser and LLVM disassembler.
+
+lldb-mi is console program that allows programmatic access to a debugging session.

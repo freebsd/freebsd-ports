@@ -1,0 +1,13 @@
+TIMESTAMP = 1715895537
+SHA256 (linux-firmware/ath12kfw/ath12k/WCN7850/hw2.0/amss.bin?h=20240513) = b15b21fd99baafd5dad81b6d6fa054df023363029821eb67dd674a438b9fd78d
+SIZE (linux-firmware/ath12kfw/ath12k/WCN7850/hw2.0/amss.bin?h=20240513) = 6000704
+SHA256 (linux-firmware/ath12kfw/ath12k/WCN7850/hw2.0/board-2.bin?h=20240513) = 92357946083541fc3370a152df57cb5a74cd28adcdc78339e57d8c98e42526cd
+SIZE (linux-firmware/ath12kfw/ath12k/WCN7850/hw2.0/board-2.bin?h=20240513) = 382856
+SHA256 (linux-firmware/ath12kfw/ath12k/WCN7850/hw2.0/m3.bin?h=20240513) = 97eca0829a1da06bfcb000863f585e2c64ee7febae29f4822097dea1986d919b
+SIZE (linux-firmware/ath12kfw/ath12k/WCN7850/hw2.0/m3.bin?h=20240513) = 299660
+SHA256 (linux-firmware/ath12kfw/ath12k/WCN7850/hw2.0/Notice.txt?h=20240513) = 515bf4c9d620a87458e4447fe01a0e9bc384d1c3e0037cc4c3d2037b1ff25525
+SIZE (linux-firmware/ath12kfw/ath12k/WCN7850/hw2.0/Notice.txt?h=20240513) = 142991
+SHA256 (linux-firmware/ath12kfw/LICENSE.QualcommAtheros_ath10k?h=20240513) = 337a55102138d7baa143ee4a4c6c91693e0113fece35d380b2a12109e8c23b3f
+SIZE (linux-firmware/ath12kfw/LICENSE.QualcommAtheros_ath10k?h=20240513) = 2713
+SHA256 (linux-firmware/ath12kfw/WHENCE?h=20240513) = 09453d13d522ce48c11fd37a04bc4a46b88792bc6e51c3b73cdcc5acb364e763
+SIZE (linux-firmware/ath12kfw/WHENCE?h=20240513) = 274394

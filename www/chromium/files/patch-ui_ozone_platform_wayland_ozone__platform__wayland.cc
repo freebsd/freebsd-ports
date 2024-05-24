@@ -1,4 +1,4 @@
---- ui/ozone/platform/wayland/ozone_platform_wayland.cc.orig	2024-04-19 13:02:56 UTC
+--- ui/ozone/platform/wayland/ozone_platform_wayland.cc.orig	2024-05-21 18:07:39 UTC
 +++ ui/ozone/platform/wayland/ozone_platform_wayland.cc
 @@ -67,13 +67,13 @@
  #include "ui/events/ozone/layout/stub/stub_keyboard_layout_engine.h"
@@ -43,7 +43,7 @@
        // TODO(crbug.com/40800718): Revisit (and maybe remove) once proper
        // support, probably backed by org.freedesktop.portal.Screenshot.PickColor
        // API is implemented. Note: this is restricted to Linux Desktop as Lacros
-@@ -532,7 +532,7 @@ class OzonePlatformWayland : public OzonePlatform,
+@@ -535,7 +535,7 @@ class OzonePlatformWayland : public OzonePlatform,
    DrmRenderNodePathFinder path_finder_;
  #endif
  

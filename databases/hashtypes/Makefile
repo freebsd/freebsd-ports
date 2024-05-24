@@ -1,13 +1,12 @@
 PORTNAME=	hashtypes
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	databases security
-MASTER_SITES=	http://api.pgxn.org/dist/hashtypes/${PORTVERSION}/ \
-		http://oss-files.dreamindustries.co/mirror/
+MASTER_SITES=	http://api.pgxn.org/dist/hashtypes/${PORTVERSION}/
 
 PATCH_SITES=	https://github.com/adjust/${PORTNAME}/commit/
-PATCHFILES+=	1c08e29edab2541ab06bd1c990ae68beb417e542.patch:-p1
+PATCHFILES+=	ab246c12a673b071f5270118027342edd6322ed1.patch:-p1
 
-MAINTAINER=	oss-contrib@dreamindustries.co
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hash data types for PostgreSQL
 WWW=		https://pgxn.org/dist/hashtypes/
 

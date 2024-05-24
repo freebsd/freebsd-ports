@@ -1,5 +1,5 @@
 PORTNAME=	fontbakery
-PORTVERSION=	0.12.2
+PORTVERSION=	0.12.6
 CATEGORIES=	print python
 MASTER_SITES=	PYPI \
 		https://github.com/fonttools/fontbakery/releases/download/v${PORTVERSION}/
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=6.2:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beziers>=0.5.0<0.6:graphics/py-beziers@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beziers>=0.6.0<0.7:graphics/py-beziers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cmarkgfm>=0.4:textproc/py-cmarkgfm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fonttools>=4.46.0:print/py-fonttools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}freetype-py>=0:print/py-freetype-py@${PY_FLAVOR} \
@@ -57,9 +57,9 @@ GOOGLEFONTS_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}axisregistry>=0.4.9<0.5:x11-fonts
 			${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.7.1:www/py-beautifulsoup@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}dehinter>=3.1.0:print/py-dehinter@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}fonttools>=0:print/py-fonttools@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}gflanguages>=0.5.17<0.6:x11-fonts/py-gflanguages@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}gflanguages>=0.6.0<0.7:x11-fonts/py-gflanguages@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}gfsubsets>=2024.2.5:x11-fonts/py-gfsubsets@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}glyphsets>=0.6.19<0.7:print/py-glyphsets@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}glyphsets>=1.0.0<2:print/py-glyphsets@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}protobuf>=3.7.0,1:devel/py-protobuf@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}shaperglot>=0.5.0<0.6:x11-fonts/py-shaperglot@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}unicodedata2>=0:devel/py-unicodedata2@${PY_FLAVOR}

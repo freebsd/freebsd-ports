@@ -307,6 +307,7 @@ share/osinfo/os/fedoraproject.org/fedora-37.xml
 share/osinfo/os/fedoraproject.org/fedora-38.xml
 share/osinfo/os/fedoraproject.org/fedora-39.xml
 share/osinfo/os/fedoraproject.org/fedora-4.xml
+share/osinfo/os/fedoraproject.org/fedora-40.xml
 share/osinfo/os/fedoraproject.org/fedora-5.xml
 share/osinfo/os/fedoraproject.org/fedora-6.xml
 share/osinfo/os/fedoraproject.org/fedora-7.xml
@@ -327,6 +328,7 @@ share/osinfo/os/fedoraproject.org/silverblue-36.xml
 share/osinfo/os/fedoraproject.org/silverblue-37.xml
 share/osinfo/os/fedoraproject.org/silverblue-38.xml
 share/osinfo/os/fedoraproject.org/silverblue-39.xml
+share/osinfo/os/fedoraproject.org/silverblue-40.xml
 share/osinfo/os/fedoraproject.org/silverblue-rawhide.xml
 share/osinfo/os/fedoraproject.org/silverblue-unknown.xml
 share/osinfo/os/freebsd.org/freebsd-1.0.xml
@@ -501,6 +503,7 @@ share/osinfo/os/microsoft.com/winnt-3.1.xml
 share/osinfo/os/microsoft.com/winnt-3.5.xml
 share/osinfo/os/microsoft.com/winnt-3.51.xml
 share/osinfo/os/microsoft.com/winnt-4.0.xml
+share/osinfo/os/miraclelinux.com/miraclelinux-8-unknown.xml
 share/osinfo/os/miraclelinux.com/miraclelinux-8.4.xml
 share/osinfo/os/miraclelinux.com/miraclelinux-9-unknown.xml
 share/osinfo/os/miraclelinux.com/miraclelinux-9.0.xml
@@ -574,6 +577,7 @@ share/osinfo/os/openbsd.org/openbsd-7.1.xml
 share/osinfo/os/openbsd.org/openbsd-7.2.xml
 share/osinfo/os/openbsd.org/openbsd-7.3.xml
 share/osinfo/os/openbsd.org/openbsd-7.4.xml
+share/osinfo/os/openbsd.org/openbsd-7.5.xml
 share/osinfo/os/openindiana.org/hipster-rolling.xml
 share/osinfo/os/opensuse.org/opensuse-10.2.xml
 share/osinfo/os/opensuse.org/opensuse-10.3.xml
@@ -640,6 +644,7 @@ share/osinfo/os/oracle.com/ol-7.8.xml
 share/osinfo/os/oracle.com/ol-7.9.xml
 share/osinfo/os/oracle.com/ol-8.0.xml
 share/osinfo/os/oracle.com/ol-8.1.xml
+share/osinfo/os/oracle.com/ol-8.10.xml
 share/osinfo/os/oracle.com/ol-8.2.xml
 share/osinfo/os/oracle.com/ol-8.3.xml
 share/osinfo/os/oracle.com/ol-8.4.xml
@@ -653,6 +658,7 @@ share/osinfo/os/oracle.com/ol-9.0.xml
 share/osinfo/os/oracle.com/ol-9.1.xml
 share/osinfo/os/oracle.com/ol-9.2.xml
 share/osinfo/os/oracle.com/ol-9.3.xml
+share/osinfo/os/oracle.com/ol-9.4.xml
 share/osinfo/os/oracle.com/solaris-11.xml
 share/osinfo/os/pureos.net/pureos-10.xml
 share/osinfo/os/pureos.net/pureos-8.xml
@@ -738,6 +744,7 @@ share/osinfo/os/redhat.com/rhel-9.1.xml
 share/osinfo/os/redhat.com/rhel-9.2.xml
 share/osinfo/os/redhat.com/rhel-9.3.xml
 share/osinfo/os/redhat.com/rhel-9.4.xml
+share/osinfo/os/redhat.com/rhel-9.5.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.2.xml

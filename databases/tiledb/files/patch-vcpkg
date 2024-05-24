@@ -1,0 +1,13 @@
+--- cmake/Options/BuildOptions.cmake.orig	2024-05-02 16:58:42 UTC
++++ cmake/Options/BuildOptions.cmake
+@@ -48,10 +48,6 @@ endif()
+   endif()
+ endif()
+ 
+-if (NOT TILEDB_VCPKG)
+-  message(FATAL_ERROR "Disabling TILEDB_VCPKG is not supported.")
+-endif()
+-
+ # enable assertions by default for debug builds
+ if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+   set(TILEDB_ASSERTIONS TRUE)

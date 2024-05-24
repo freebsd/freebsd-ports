@@ -1,3 +1,3 @@
-TIMESTAMP = 1703588050
-SHA256 (rubygem/sentry-sidekiq-5.10.0.gem) = cc81018d0733fb1be3fb5641c9e0b61030bbeaa1d0b23ca64797d70def7aea1a
-SIZE (rubygem/sentry-sidekiq-5.10.0.gem) = 11264
+TIMESTAMP = 1716140288
+SHA256 (rubygem/sentry-sidekiq-5.17.3.gem) = d0714a218999e41e38127d0c174e0ee62a32b069f92e85b544e0c2125eca2c58
+SIZE (rubygem/sentry-sidekiq-5.17.3.gem) = 12800

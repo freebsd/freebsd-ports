@@ -55,23 +55,23 @@ LDFLAGS_i386=	-latomic -Wl,-rpath=${PREFIX}/lib/gcc${GCCVER} -Wl,-rpath=${PREFIX
 PLIST=		${PKGDIR}/pkg-plist.i386
 USE_LDCONFIG=	${PREFIX}/lib/private
 
-BUILD_DEPENDS=	c++${GCCVER}:lang/gcc${GCCVER}
-LIB_DEPENDS=	libcurl.so:ftp/curl \
+BUILD_DEPENDS+=	c++${GCCVER}:lang/gcc${GCCVER}
+LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libev.so:devel/libev \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
 		libunwind.so:devel/libunwind
 
-RUN_DEPENDS=	${PREFIX}/lib/gcc${GCCVER}/libatomic.so.1:lang/gcc${GCCVER}
+RUN_DEPENDS+=	${PREFIX}/lib/gcc${GCCVER}/libatomic.so.1:lang/gcc${GCCVER}
 
 .for component in EDITLINE ICU LIBEVENT PROTOBUF RAPIDJSON ZSTD
 CMAKE_ARGS+=	-DWITH_${component}:STRING=bundled
 .endfor
 .else
-BUILD_DEPENDS=	protobuf>=3.0:devel/protobuf \
+BUILD_DEPENDS+=	protobuf>=3.0:devel/protobuf \
 		rapidjson>=1.1.0:devel/rapidjson \
 		libevent>=2.1:devel/libevent
-LIB_DEPENDS=	libcurl.so:ftp/curl \
+LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libev.so:devel/libev \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
@@ -79,6 +79,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libprotobuf-lite.so:devel/protobuf \
 		libunwind.so:devel/libunwind \
 		libzstd.so:archivers/zstd
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 180
+CXXFLAGS+=	-Wno-enum-constexpr-conversion
+.endif
 
 .for component in EDITLINE ICU LIBEVENT PROTOBUF RAPIDJSON ZSTD
 CMAKE_ARGS+=	-DWITH_${component}:STRING=system

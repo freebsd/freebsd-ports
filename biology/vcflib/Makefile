@@ -39,6 +39,7 @@ OPTIONS_SUB=		yes
 
 ZIG_DESC=		Include Zig language support
 
+# FIXME: https://github.com/vcflib/vcflib/issues/399
 ZIG_BUILD_DEPENDS=	zig010>0:lang/zig010
 
 CMAKE_ARGS+=	-DWFA_GITMODULE=OFF -DWFALIB=${LOCALBASE}/lib/libwfa2.so

@@ -1,5 +1,5 @@
 PORTNAME=	browser
-PORTVERSION=	5.3.1
+PORTVERSION=	6.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -8,6 +8,8 @@ COMMENT=	Web browser detection for Ruby
 WWW=		https://github.com/fnando/browser
 
 LICENSE=	MIT
+
+BROKEN_RUBY31=	yes
 
 USES=		gem
 

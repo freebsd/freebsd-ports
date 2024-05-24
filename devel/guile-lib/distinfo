@@ -1,3 +1,3 @@
-TIMESTAMP = 1711860473
-SHA256 (guile-lib-0.2.8.tar.gz) = c3b3fd07af7c6492b91aab70ae99bfea1a138b7b00b2674cfbc0c74b94d051ee
-SIZE (guile-lib-0.2.8.tar.gz) = 409592
+TIMESTAMP = 1715842512
+SHA256 (guile-lib-0.2.8.1.tar.gz) = 1374c2d839e6a33d190cd1dabd9c7f87753f8384f55b866f3e142155c22b49b1
+SIZE (guile-lib-0.2.8.1.tar.gz) = 461345

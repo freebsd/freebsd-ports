@@ -23,21 +23,21 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
    |                |      help: a similar name exists in the module: `event`
    |                no `epoll` in `sys`
 
---- Cargo.lock.orig	2024-05-03 21:08:24 UTC
+--- Cargo.lock.orig	2024-05-20 18:26:00 UTC
 +++ Cargo.lock
-@@ -2494,9 +2494,9 @@ dependencies = [
+@@ -2515,9 +2515,9 @@ name = "gilrs"
  
  [[package]]
  name = "gilrs"
--version = "0.10.6"
+-version = "0.10.7"
 +version = "0.10.2"
  source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "499067aa54af19f88732dc418f61f23d5912de1518665bb0eca034ca0d07574c"
+-checksum = "b54e5e39844ab5cddaf3bbbdfdc2923a6cb34e36818b95618da4e3f26302c24c"
 +checksum = "62fd19844d0eb919aca41d3e4ea0e0b6bf60e1e827558b101c269015b8f5f27a"
  dependencies = [
   "fnv",
   "gilrs-core",
-@@ -2508,24 +2508,23 @@ dependencies = [
+@@ -2529,18 +2529,17 @@ name = "gilrs-core"
  
  [[package]]
  name = "gilrs-core"
@@ -59,18 +59,10 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
   "serde",
   "uuid",
   "vec_map",
-  "wasm-bindgen",
-  "web-sys",
-- "windows 0.54.0",
-+ "windows 0.51.1",
+@@ -3179,17 +3178,6 @@ dependencies = [
  ]
  
  [[package]]
-@@ -3160,17 +3159,6 @@ dependencies = [
-  "libc",
- ]
- 
--[[package]]
 -name = "inotify"
 -version = "0.10.2"
 -source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -81,10 +73,11 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
 - "libc",
 -]
 -
- [[package]]
+-[[package]]
  name = "inotify-sys"
  version = "0.1.5"
-@@ -3222,9 +3210,9 @@ dependencies = [
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -3240,9 +3228,9 @@ name = "io-kit-sys"
  
  [[package]]
  name = "io-kit-sys"
@@ -96,10 +89,12 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  dependencies = [
   "core-foundation-sys",
   "mach2",
-@@ -3979,6 +3967,17 @@ dependencies = [
+@@ -4011,6 +3999,17 @@ dependencies = [
+  "cfg-if 1.0.0",
+  "libc",
   "memoffset 0.6.5",
- ]
- 
++]
++
 +[[package]]
 +name = "nix"
 +version = "0.26.4"
@@ -109,12 +104,10 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
 + "bitflags 1.3.2",
 + "cfg-if 1.0.0",
 + "libc",
-+]
-+
+ ]
+ 
  [[package]]
- name = "nix"
- version = "0.28.0"
-@@ -4027,7 +4026,7 @@ dependencies = [
+@@ -4061,7 +4060,7 @@ dependencies = [
   "crossbeam-channel",
   "filetime",
   "fsevent-sys",

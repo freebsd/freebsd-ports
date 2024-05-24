@@ -1,6 +1,7 @@
 PORTNAME=	twofactor_nextcloud_notification
 PORTVERSION=	3.9.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	brnrd@FreeBSD.org

@@ -36,6 +36,7 @@ bin/pptemplate
 %%SITE_ARCH%%/PDL/Demos.pm
 %%SITE_ARCH%%/PDL/Demos/BAD_demo.pm
 %%SITE_ARCH%%/PDL/Demos/Cartography_demo.pm
+%%SITE_ARCH%%/PDL/Demos/Func_demo.pm
 %%SITE_ARCH%%/PDL/Demos/General.pm
 %%SITE_ARCH%%/PDL/Demos/Sound.pm
 %%SITE_ARCH%%/PDL/Demos/Transform_demo.pm

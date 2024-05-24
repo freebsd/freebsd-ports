@@ -1,11 +1,14 @@
 PORTNAME=	curvedns
 PORTVERSION=	0.88.b
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	dns
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Forwarder adding DNSCurve to an authoritative nameserver
 WWW=		https://curvedns.on2it.net/
+
+DEPRECATED=	Protocol never gained traction and is superseded by DoT and DoH
+EXPIRATION_DATE=2024-05-31
 
 LIB_DEPENDS=	libev.so:devel/libev \
 		libsodium.so:security/libsodium

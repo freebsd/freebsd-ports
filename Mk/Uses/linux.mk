@@ -114,6 +114,7 @@ _linux_${linux_ARGS}_libpciaccess=	linux-${linux_ARGS}-libpciaccess>0:devel/linu
 _linux_rl9_libproxy=			linux-rl9-libproxy>0:net/linux-rl9-libproxy
 _linux_rl9_libpsl=			linux-rl9-libpsl>0:dns/linux-rl9-libpsl
 _linux_${linux_ARGS}_librsvg2=		linux-${linux_ARGS}-librsvg2>0:graphics/linux-${linux_ARGS}-librsvg2
+_linux_rl9_libsecret=			linux-rl9-libsecret>0:security/linux-rl9-libsecret
 _linux_${linux_ARGS}_libsigc++20=	linux-${linux_ARGS}-libsigc++20>0:devel/linux-${linux_ARGS}-libsigc++20
 _linux_rl9_libsigsegv=			linux-${linux_ARGS}-libsigsegv>0:devel/linux-${linux_ARGS}-libsigsegv
 _linux_rl9_libsoup=			linux-${linux_ARGS}-libsoup>0:devel/linux-${linux_ARGS}-libsoup

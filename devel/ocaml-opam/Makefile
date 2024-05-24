@@ -1,6 +1,5 @@
 PORTNAME=	opam
-DISTVERSION=	2.1.5
-PORTREVISION=	3
+DISTVERSION=	2.1.6
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ocaml/opam/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	ocaml-
@@ -14,14 +13,12 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	curl:ftp/curl \
 		gpatch:devel/patch \
-		gmake:devel/gmake \
-		${RUN_DEPENDS_${ARCH}}
-RUN_DEPENDS_armv6=	${LOCALBASE}/bin/as:devel/binutils
-RUN_DEPENDS_armv7=	${LOCALBASE}/bin/as:devel/binutils
+		gmake:devel/gmake
 
 USES=		gmake
 ARCH!=		uname -p
 .if ${ARCH} == armv6 || ${ARCH} == armv7
+RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 USE_BINUTILS=	yes
 .endif
 
@@ -35,6 +32,7 @@ ALL_TARGET=	cold-lib-ext cold-all
 LDFLAGS_armv6=	-Wl,-z,notext
 LDFLAGS_armv7=	-Wl,-z,notext
 LDFLAGS_powerpc=	-Wl,-z,notext
+LDFLAGS_i386=	-Wl,-z,notext
 LDFLAGS+=	${LDFLAGS_${ARCH}}
 
 NOPRECIOUSMAKEVARS=	yes

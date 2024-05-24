@@ -1,8 +1,9 @@
 PORTNAME=	flake8-bugbear
-PORTVERSION=	24.2.6
+PORTVERSION=	24.4.26
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	flake8_bugbear-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Plugin for flake8 finding likely bugs and design problems

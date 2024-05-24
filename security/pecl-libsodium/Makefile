@@ -1,10 +1,12 @@
 PORTNAME=	libsodium
 PORTVERSION=	2.0.23
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP wrapper for the Sodium cryptographic library
-WWW=		https://pecl.php.net/package/libsodium
+WWW=		https://pecl.php.net/package/libsodium \
+		https://github.com/jedisct1/libsodium-php
 
 LICENSE=	BSD2CLAUSE
 

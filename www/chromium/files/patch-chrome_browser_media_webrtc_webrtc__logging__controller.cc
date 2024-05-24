@@ -1,4 +1,4 @@
---- chrome/browser/media/webrtc/webrtc_logging_controller.cc.orig	2024-01-30 07:53:34 UTC
+--- chrome/browser/media/webrtc/webrtc_logging_controller.cc.orig	2024-05-21 18:07:39 UTC
 +++ chrome/browser/media/webrtc/webrtc_logging_controller.cc
 @@ -25,10 +25,10 @@
  #include "components/webrtc_logging/browser/text_log_list.h"
@@ -30,4 +30,4 @@
 +#endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  
  void WebRtcLoggingController::OnRtpPacket(
-     std::unique_ptr<uint8_t[]> packet_header,
+     base::HeapArray<uint8_t> packet_header,

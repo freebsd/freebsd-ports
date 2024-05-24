@@ -1,7 +1,6 @@
 PORTNAME=	uni
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -15,13 +14,11 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	arp242
 
-GH_TUPLE=	arp242:termtext:v1.1.0:arp242_termtext/vendor/zgo.at/termtext \
-		arp242:zli:c6675b0b020a:arp242_zli/vendor/zgo.at/zli \
-		arp242:zstd:51d9aeb81421:arp242_zstd/vendor/zgo.at/zstd \
-		golang:sys:v0.14.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.14.0:golang_term/vendor/golang.org/x/term \
-		mattn:go-runewidth:v0.0.15:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg
+GH_TUPLE=	arp242:runewidth:v0.1.0:arp242_runewidth/vendor/zgo.at/runewidth	\
+		arp242:termtext:v1.5.0:arp242_termtext/vendor/zgo.at/termtext	\
+		arp242:zli:91dbcffb2960:arp242_zli/vendor/zgo.at/zli	\
+		arp242:zstd:10baa641d7d0:arp242_zstd/vendor/zgo.at/zstd	\
+		rivo:uniseg:v0.4.7:rivo_uniseg/vendor/github.com/rivo/uniseg
 
 GO_BUILDFLAGS=	-ldflags "-X main.version=${PORTVERSION}" -buildvcs=false
 

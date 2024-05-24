@@ -1,5 +1,5 @@
 PORTNAME=	gruff
-PORTVERSION=	0.24.0
+PORTVERSION=	0.25.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,9 @@ WWW=		https://github.com/topfunky/gruff
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-histogram>=0:graphics/rubygem-histogram \
-		rubygem-rmagick>=5.3:graphics/rubygem-rmagick
+RUN_DEPENDS=	rubygem-bigdecimal>=3.0:math/rubygem-bigdecimal \
+		rubygem-histogram>=0:graphics/rubygem-histogram \
+		rubygem-rmagick>=5.5:graphics/rubygem-rmagick
 
 USES=		gem
 

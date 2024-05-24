@@ -1,6 +1,6 @@
 PORTNAME=	isync
 DISTVERSION=	1.4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -13,19 +13,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
-USES=		alias bdb compiler:c11 cpe perl5 ssl
+USES=		alias compiler:c11 cpe perl5 ssl
 CPE_VENDOR=	isync_project
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
 
+CONFIGURE_ENV+=	ac_cv_berkdb4=no
 CONFIGURE_ARGS=	--with-sasl=${LOCALBASE} \
 		--with-ssl=${OPENSSLLIB:H}
 
 MAKE_ARGS+=	SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
-
-CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
-LDFLAGS+=	-L${BDB_LIB_DIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in

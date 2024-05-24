@@ -1,7 +1,6 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.17.0
-PORTREVISION=	1
+DISTVERSION=	2.18.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,51 +17,53 @@ GH_ACCOUNT=	Canop
 
 CARGO_CRATES=	adler-1.0.2 \
 		ahash-0.8.11 \
-		aho-corasick-1.1.2 \
+		aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.6.13 \
-		anstyle-1.0.6 \
-		anstyle-parse-0.2.3 \
-		anstyle-query-1.0.2 \
-		anstyle-wincon-3.0.2 \
-		anyhow-1.0.80 \
-		arc-swap-1.7.0 \
+		anstream-0.6.14 \
+		anstyle-1.0.7 \
+		anstyle-parse-0.2.4 \
+		anstyle-query-1.0.3 \
+		anstyle-wincon-3.0.3 \
+		anyhow-1.0.86 \
+		arc-swap-1.7.1 \
 		arrayvec-0.5.2 \
 		arrayvec-0.7.4 \
-		autocfg-1.1.0 \
+		autocfg-1.3.0 \
 		bitflags-1.3.2 \
-		bitflags-2.4.2 \
+		bitflags-2.5.0 \
 		bstr-1.9.1 \
 		btoi-0.4.3 \
-		bumpalo-3.15.3 \
-		bytes-1.5.0 \
+		bumpalo-3.16.0 \
+		bytes-1.6.0 \
 		bytesize-1.3.0 \
-		camino-1.1.6 \
-		cargo-platform-0.1.7 \
+		camino-1.1.7 \
+		cargo-platform-0.1.8 \
 		cargo_metadata-0.18.1 \
-		cc-1.0.89 \
+		cc-1.0.98 \
 		cfg-if-1.0.0 \
-		chrono-0.4.34 \
-		clap-4.5.1 \
+		cfg_aliases-0.1.1 \
+		chrono-0.4.38 \
+		clap-4.5.4 \
 		clap-help-1.2.0 \
-		clap_builder-4.5.1 \
-		clap_derive-4.5.0 \
+		clap_builder-4.5.2 \
+		clap_derive-4.5.4 \
 		clap_lex-0.7.0 \
 		cli-log-2.0.0 \
-		clru-0.6.1 \
-		colorchoice-1.0.0 \
+		clru-0.6.2 \
+		colorchoice-1.0.1 \
 		coolor-0.9.0 \
 		core-foundation-sys-0.8.6 \
-		crc32fast-1.4.0 \
-		crokey-0.6.3 \
-		crokey-proc_macros-0.6.3 \
+		crc32fast-1.4.2 \
+		crokey-0.6.4 \
+		crokey-1.0.0 \
+		crokey-proc_macros-0.6.4 \
 		crossbeam-0.8.4 \
-		crossbeam-channel-0.5.12 \
+		crossbeam-channel-0.5.13 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-queue-0.3.11 \
-		crossbeam-utils-0.8.19 \
+		crossbeam-utils-0.8.20 \
 		crossterm-0.27.0 \
 		crossterm_winapi-0.9.1 \
 		dashmap-5.5.3 \
@@ -70,82 +71,83 @@ CARGO_CRATES=	adler-1.0.2 \
 		directories-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
 		dunce-1.0.4 \
-		either-1.10.0 \
-		encoding_rs-0.8.33 \
+		either-1.12.0 \
+		encoding_rs-0.8.34 \
 		equivalent-1.0.1 \
-		errno-0.3.8 \
+		errno-0.3.9 \
 		faster-hex-0.9.0 \
-		fastrand-2.0.1 \
+		fastrand-2.1.0 \
 		file-size-1.0.3 \
 		filetime-0.2.23 \
-		flate2-1.0.28 \
+		flate2-1.0.30 \
 		form_urlencoded-1.2.1 \
 		fsevent-sys-4.1.0 \
-		getrandom-0.2.12 \
+		getrandom-0.2.15 \
 		gix-0.58.0 \
 		gix-actor-0.30.0 \
 		gix-archive-0.9.0 \
-		gix-attributes-0.22.1 \
-		gix-bitmap-0.2.10 \
-		gix-chunk-0.4.7 \
-		gix-command-0.3.5 \
-		gix-commitgraph-0.24.1 \
+		gix-attributes-0.22.2 \
+		gix-bitmap-0.2.11 \
+		gix-chunk-0.4.8 \
+		gix-command-0.3.6 \
+		gix-commitgraph-0.24.2 \
 		gix-config-0.34.0 \
-		gix-config-value-0.14.5 \
-		gix-credentials-0.24.1 \
-		gix-date-0.8.4 \
+		gix-config-value-0.14.6 \
+		gix-credentials-0.24.2 \
+		gix-date-0.8.6 \
 		gix-diff-0.40.0 \
 		gix-discover-0.29.0 \
-		gix-features-0.38.0 \
+		gix-features-0.38.1 \
 		gix-filter-0.9.0 \
-		gix-fs-0.10.0 \
-		gix-glob-0.16.1 \
-		gix-hash-0.14.1 \
-		gix-hashtable-0.5.1 \
-		gix-ignore-0.11.1 \
+		gix-fs-0.10.2 \
+		gix-glob-0.16.2 \
+		gix-hash-0.14.2 \
+		gix-hashtable-0.5.2 \
+		gix-ignore-0.11.2 \
 		gix-index-0.29.0 \
-		gix-lock-13.1.0 \
-		gix-macros-0.1.3 \
+		gix-lock-13.1.1 \
+		gix-macros-0.1.4 \
 		gix-mailmap-0.22.0 \
 		gix-negotiate-0.12.0 \
 		gix-object-0.41.0 \
 		gix-odb-0.57.0 \
 		gix-pack-0.47.0 \
-		gix-packetline-blocking-0.17.3 \
-		gix-path-0.10.6 \
+		gix-packetline-blocking-0.17.4 \
+		gix-path-0.10.7 \
 		gix-pathspec-0.6.0 \
-		gix-prompt-0.8.3 \
-		gix-quote-0.4.11 \
+		gix-prompt-0.8.4 \
+		gix-quote-0.4.12 \
 		gix-ref-0.41.0 \
 		gix-refspec-0.22.0 \
 		gix-revision-0.26.0 \
 		gix-revwalk-0.12.0 \
-		gix-sec-0.10.5 \
+		gix-sec-0.10.6 \
 		gix-status-0.5.0 \
 		gix-submodule-0.8.0 \
-		gix-tempfile-13.1.0 \
-		gix-trace-0.1.7 \
+		gix-tempfile-13.1.1 \
+		gix-trace-0.1.9 \
 		gix-traverse-0.37.0 \
-		gix-url-0.27.1 \
-		gix-utils-0.1.10 \
-		gix-validate-0.8.3 \
+		gix-url-0.27.3 \
+		gix-utils-0.1.12 \
+		gix-validate-0.8.4 \
 		gix-worktree-0.30.0 \
 		gix-worktree-state-0.7.0 \
 		gix-worktree-stream-0.9.0 \
 		hashbrown-0.12.3 \
-		hashbrown-0.14.3 \
-		heck-0.4.1 \
+		hashbrown-0.14.5 \
+		heck-0.5.0 \
 		home-0.5.9 \
 		human_format-1.1.0 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
 		imara-diff-0.1.5 \
-		indexmap-2.2.5 \
+		indexmap-2.2.6 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		io-close-0.3.7 \
-		itoa-1.0.10 \
+		is_terminal_polyfill-1.70.0 \
+		itoa-1.0.11 \
 		js-sys-0.3.69 \
 		jwalk-0.8.1 \
 		kqueue-1.0.8 \
@@ -153,77 +155,77 @@ CARGO_CRATES=	adler-1.0.2 \
 		kstring-2.0.0 \
 		lazy-regex-3.1.0 \
 		lazy-regex-proc_macros-3.1.0 \
-		libc-0.2.153 \
-		libredox-0.0.1 \
-		linux-raw-sys-0.4.13 \
-		lock_api-0.4.11 \
+		libc-0.2.155 \
+		libredox-0.1.3 \
+		linux-raw-sys-0.4.14 \
+		lock_api-0.4.12 \
 		log-0.4.21 \
-		memchr-2.7.1 \
+		memchr-2.7.2 \
 		memmap2-0.9.4 \
-		memoffset-0.6.5 \
 		minimad-0.13.0 \
-		miniz_oxide-0.7.2 \
+		miniz_oxide-0.7.3 \
 		mio-0.8.11 \
-		nix-0.22.3 \
+		nix-0.28.0 \
 		notify-6.1.1 \
 		num-conv-0.1.0 \
-		num-traits-0.2.18 \
+		num-traits-0.2.19 \
 		num_threads-0.1.7 \
 		once_cell-1.19.0 \
-		parking_lot-0.12.1 \
-		parking_lot_core-0.9.9 \
+		parking_lot-0.12.2 \
+		parking_lot_core-0.9.10 \
 		percent-encoding-2.3.1 \
 		powerfmt-0.2.0 \
-		proc-macro2-1.0.78 \
+		proc-macro2-1.0.83 \
 		proc-status-0.1.1 \
 		prodash-28.0.0 \
-		quote-1.0.35 \
-		rayon-1.9.0 \
+		quote-1.0.36 \
+		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
-		redox_users-0.4.4 \
-		regex-1.10.3 \
+		redox_syscall-0.5.1 \
+		redox_users-0.4.5 \
+		regex-1.10.4 \
 		regex-automata-0.4.6 \
-		regex-syntax-0.8.2 \
-		rustix-0.38.31 \
-		ryu-1.0.17 \
+		regex-syntax-0.8.3 \
+		rustix-0.38.34 \
+		ryu-1.0.18 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		semver-1.0.22 \
-		serde-1.0.197 \
-		serde_derive-1.0.197 \
-		serde_json-1.0.114 \
-		serde_spanned-0.6.5 \
+		semver-1.0.23 \
+		serde-1.0.202 \
+		serde_derive-1.0.202 \
+		serde_json-1.0.117 \
+		serde_spanned-0.6.6 \
 		sha1_smol-1.0.0 \
 		shell-words-1.1.0 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.3 \
-		signal-hook-registry-1.4.1 \
-		smallvec-1.13.1 \
+		signal-hook-registry-1.4.2 \
+		smallvec-1.13.2 \
 		static_assertions-1.1.0 \
 		strict-0.2.0 \
-		strsim-0.11.0 \
+		strsim-0.11.1 \
 		syn-1.0.109 \
-		syn-2.0.52 \
+		syn-2.0.65 \
 		tempfile-3.10.1 \
-		termimad-0.29.1 \
-		terminal-light-1.2.0 \
-		thiserror-1.0.57 \
-		thiserror-impl-1.0.57 \
-		time-0.3.34 \
+		termimad-0.29.2 \
+		terminal-light-1.4.0 \
+		thiserror-1.0.61 \
+		thiserror-impl-1.0.61 \
+		time-0.3.36 \
 		time-core-0.1.2 \
-		time-macros-0.2.17 \
+		time-macros-0.2.18 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		toml-0.7.8 \
-		toml_datetime-0.6.5 \
-		toml_edit-0.19.15 \
-		uluru-3.0.0 \
+		toml-0.8.13 \
+		toml_datetime-0.6.6 \
+		toml_edit-0.22.13 \
+		uluru-3.1.0 \
 		unicode-bidi-0.3.15 \
 		unicode-bom-2.0.3 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.23 \
-		unicode-width-0.1.11 \
+		unicode-width-0.1.12 \
 		url-2.5.0 \
 		utf8parse-0.2.1 \
 		version_check-0.9.4 \
@@ -238,31 +240,33 @@ CARGO_CRATES=	adler-1.0.2 \
 		wasm-bindgen-shared-0.2.92 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.6 \
+		winapi-util-0.1.8 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-core-0.52.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.4 \
+		windows-targets-0.52.5 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_gnullvm-0.52.5 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.4 \
+		windows_aarch64_msvc-0.52.5 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.4 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.4 \
+		windows_i686_msvc-0.52.5 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.4 \
+		windows_x86_64_msvc-0.52.5 \
 		winnow-0.5.40 \
-		xterm-query-0.2.0 \
-		zerocopy-0.7.32 \
-		zerocopy-derive-0.7.32
+		winnow-0.6.8 \
+		xterm-query-0.4.0 \
+		zerocopy-0.7.34 \
+		zerocopy-derive-0.7.34
 
 PLIST_FILES=	bin/${PORTNAME}
 

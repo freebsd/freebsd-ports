@@ -12,6 +12,9 @@ COMMENT=	PDF generation library
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
+DEPRECATED=	Depends on deprecated Oracle Berkeley DB 5.3 and upstream is dead
+EXPIRATION_DATE=2024-06-30
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 

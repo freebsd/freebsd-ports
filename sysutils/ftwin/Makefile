@@ -1,6 +1,6 @@
 PORTNAME=	ftwin
 PORTVERSION=	0.8.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	shoesoft@gmx.net
@@ -17,13 +17,14 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libpcre.so:devel/pcre \
 		libpuzzle.so:graphics/libpuzzle
 
-USES=		autoreconf bdb libarchive pkgconfig tar:bzip2
+USES=		autoreconf libarchive pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-archive=${LOCALBASE}
 USE_GITHUB=	yes
 GH_ACCOUNT=	fpesce
 GH_TAGNAME=	3355fd9
+LDFLAGS+=	-Wl,--as-needed
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
 PORTDOCS=	AUTHORS EXAMPLES TODO CHANGES KNOWN_BUGS VERSION README

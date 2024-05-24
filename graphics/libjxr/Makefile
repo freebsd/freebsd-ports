@@ -1,12 +1,12 @@
 PORTNAME=	jxrlib
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	DEBIAN
 DISTFILES=	jxrlib_${PORTVERSION}.orig.tar.gz	\
 		jxrlib_${PORTVERSION}-6.debian.tar.xz
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Library for JPEG XR, a.k.a. Windows MediaTM Photo
 WWW=		https://jxrlib.codeplex.com/
 

@@ -6,6 +6,7 @@
 %%ASDF_PATHNAME%%/clx.asd
 %%ASDF_PATHNAME%%/clx.lisp
 %%ASDF_PATHNAME%%/cmudep.lisp
+%%ASDF_PATHNAME%%/common.lisp
 %%ASDF_PATHNAME%%/debug/debug.lisp
 %%ASDF_PATHNAME%%/debug/describe.lisp
 %%ASDF_PATHNAME%%/debug/event-test.lisp

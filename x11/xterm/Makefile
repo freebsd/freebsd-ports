@@ -1,5 +1,5 @@
 PORTNAME=	xterm
-DISTVERSION=	391
+DISTVERSION=	392
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.invisible-island.net/xterm/:src1 \
 		https://invisible-mirror.net/archives/xterm/:src1 \

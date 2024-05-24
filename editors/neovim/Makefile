@@ -1,7 +1,6 @@
 PORTNAME=	neovim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.5
-PORTREVISION=	1
+DISTVERSION=	0.10.0
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -11,8 +10,8 @@ WWW=		https://neovim.io/
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	gperf:devel/gperf \
-		${LUA_MODLIBDIR}/bit.so:devel/lua-bitop@${LUA_FLAVOR} \
-		${LUA_MODLIBDIR}/lpeg.so:devel/lua-lpeg@${LUA_FLAVOR}
+		${LUA_REFMODLIBDIR}/bit.so:devel/lua-bitop@${LUA_FLAVOR} \
+		${LUA_REFMODLIBDIR}/lpeg.so:devel/lua-lpeg@${LUA_FLAVOR}
 LIB_DEPENDS=	libluv.so:devel/luv \
 		libmsgpack-c.so:devel/msgpack-c \
 		libtermkey.so:devel/libtermkey \
@@ -20,19 +19,23 @@ LIB_DEPENDS=	libluv.so:devel/luv \
 		libunibilium.so:devel/unibilium \
 		libuv.so:devel/libuv \
 		libvterm.so:devel/libvterm
+RUN_DEPENDS=	${LUA_REFMODLIBDIR}/bit.so:devel/lua-bitop@${LUA_FLAVOR} \
+		${LUA_REFMODLIBDIR}/lpeg.so:devel/lua-lpeg@${LUA_FLAVOR}
 
-USES=		cmake cpe gettext iconv lua:52,build luajit pathfix pkgconfig
+USES=		cmake cpe gettext iconv lua:51,build luajit \
+		desktop-file-utils pathfix pkgconfig
 USE_GITHUB=	yes
 GH_TUPLE=	libmpack:libmpack:1.0.5:libmpack \
-		libmpack:libmpack-lua:1.0.9:libmpack_lua
-PORTSCOUT=	limit:^[0-9\.v]+$$
+		libmpack:libmpack-lua:1.0.12:libmpack_lua
 
 CMAKE_ARGS=	-DLUA_PRG:FILEPATH="${LUA_CMD}" \
 		-DCMAKE_INSTALL_MANDIR:PATH="${PREFIX}/share/man" \
-		-DDEPS_PREFIX:PATH="${LOCALBASE}"
+		-DDEPS_PREFIX:PATH="${LOCALBASE}" \
+		-DCMAKE_LIBRARY_PATH:PATH="${LOCALBASE}/lib/lua/${LUA_VER}"
 CFLAGS+=	-I${LOCALBASE}/include
 
 DATADIR=	${PREFIX}/share/nvim
+PORTSCOUT=	limit:^[0-9\.v]+$$
 PORTDATA=	runtime
 
 OPTIONS_DEFINE=	NLS PYNVIM
@@ -41,19 +44,8 @@ OPTIONS_SUB=	yes
 PYNVIM_DESC=	Enable support for plugins written in python
 
 NLS_CMAKE_BOOL=		ENABLE_LIBINTL
+
 PYNVIM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pynvim>=0.3.0:editors/py-pynvim@${PY_FLAVOR}
 PYNVIM_USES=		python:run
-
-post-patch-NLS-off:
-	${REINPLACE_CMD} -e '/add_subdirectory(po)/d' ${WRKSRC}/src/nvim/CMakeLists.txt
-
-pre-build:
-	${LN} -s ${WRKSRC_libmpack} ${WRKSRC_libmpack_lua}/mpack-src
-	${MKDIR} ${BUILD_WRKSRC}/src/nvim
-	(cd ${WRKSRC_libmpack_lua} && ${CC} ${CFLAGS} -fPIC \
-		-I${LUA_INCDIR} -shared lmpack.c -o \
-		${BUILD_WRKSRC}/src/nvim/mpack.so \
-		${LUA_LIBDIR}/liblua-${LUA_VER}.so)
-	${LN} -s ${BUILD_WRKSRC}/src/nvim/mpack.so ${BUILD_WRKSRC}/runtime/mpack.so
 
 .include <bsd.port.mk>

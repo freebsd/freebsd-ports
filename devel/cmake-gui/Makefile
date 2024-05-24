@@ -1,7 +1,7 @@
 PORTNAME=	cmake
 DISTVERSION=	${_CMAKE_VERSION}
 CATEGORIES=	devel
-PKGNAMESUFFIX=	-gui-${FLAVOR}
+PKGNAMESUFFIX=	-gui
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt-based GUI for CMake
@@ -17,19 +17,13 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libuv.so:devel/libuv \
 		librhash.so:security/rhash
 
-FLAVORS=		qt6 qt5
-FLAVOR?=		qt6
-qt5_CONFLICTS_INSTALL=	cmake-gui-qt6
-qt6_CONFLICTS_INSTALL=	cmake-gui-qt5
-
 USES=		cmake:run,insource compiler:c++11-lang desktop-file-utils libarchive \
-		python:build shared-mime-info qt:${FLAVOR:S/qt//}
-_USE_QT_qt5=	core gui widgets buildtools:build qmake:build
-_USE_QT_qt6=	base
-USE_QT=		${_USE_QT_${FLAVOR}}
+		python:build shared-mime-info qt:6
+USE_QT=		base
+
 CMAKE_ARGS=	-DCMAKE_DATA_DIR:STRING="/${DATADIR_REL}" \
 		-DCMAKE_DOC_DIR:STRING="/${DOCSDIR_REL}" \
-		-DCMake_QT_MAJOR_VERSION=${FLAVOR:S/qt//}
+		-DCMake_QT_MAJOR_VERSION=6
 CMAKE_ON=	BUILD_QtDialog \
 		CMAKE_USE_SYSTEM_CURL \
 		CMAKE_USE_SYSTEM_EXPAT \

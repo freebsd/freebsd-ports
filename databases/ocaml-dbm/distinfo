@@ -1,2 +1,3 @@
-SHA256 (camldbm-1.0.tgz) = 19741fa7827c306ae43b18170b01f5547326ec7ea6c2f4bd80c93439b5ff538f
-SIZE (camldbm-1.0.tgz) = 14397
+TIMESTAMP = 1710705889
+SHA256 (ocaml-dbm-camldbm-1.3_GH0.tar.gz) = 126fd020be0dd13be7e8854fcd3637392ff039c8b865243bb4dad15a954a0da7
+SIZE (ocaml-dbm-camldbm-1.3_GH0.tar.gz) = 14831

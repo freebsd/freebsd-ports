@@ -1,17 +1,17 @@
 --- pyproject.toml.orig	2020-02-02 00:00:00 UTC
 +++ pyproject.toml
-@@ -43,7 +43,7 @@ dependencies = [
-     "chardet>=3.0",
+@@ -45,7 +45,7 @@ dependencies = [
+     "pydantic>=2.0",
      "requests>=2.10",
      "humanize>=4.2",
 -    "tabulate>=0.8.10",
 +    "tabulate>=0.8.9",
-     # TODO: remove the limit when https://github.com/python-jsonschema/jsonschema/issues/1119 is resolved
-     "jsonschema<4.18",
+     "jsonschema>=4.20",
      "simpleeval>=0.9.11",
-@@ -94,7 +94,7 @@ mysql = ["sqlalchemy>=1.4", "pymysql>=1.0"]
+     "stringcase>=1.2",
+@@ -93,7 +93,7 @@ parquet = ["fastparquet>=0.8"]
  ods = ["ezodf>=0.3", "lxml>=4.0"]
- pandas = ["pandas>=1.0"]
+ pandas = ["pyarrow>=14.0", "pandas>=1.0"]
  parquet = ["fastparquet>=0.8"]
 -postgresql = ["sqlalchemy>=1.4", "psycopg>=3.0", "psycopg2>=2.9"]
 +postgresql = ["sqlalchemy>=1.4", "psycopg>=3.0"]

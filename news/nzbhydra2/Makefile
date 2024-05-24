@@ -13,9 +13,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
-USES=		python zip
+USES=		python
 USE_JAVA=	yes
 USE_RC_SUBR=	nzbhydra2
+
+EXTRACT_SUFX=	.zip
+EXTRACT_AFTER_ARGS=	--exclude executables \
+			--exclude other \
+			--exclude WindowsService \
+			--exclude *.exe \
+			--exclude nzbhydra2wrapper.py \
+			--no-same-owner --no-same-permissions
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -37,13 +45,6 @@ PLIST_FILES=	${DATADIR}/lib/core-${DISTVERSION}-exec.jar \
 		${DATADIR}/changelog.md \
 		${DATADIR}/readme.md \
 		${DATADIR}/LICENSE
-
-post-extract:
-	# Cleanup unnecessary files
-	@${RM} -r ${WRKSRC}/systemd ${WRKSRC}/sysv ${WRKSRC}/rc.d \
-		${WRKSRC}/upstart ${WRKSRC}/nzbhydra2wrapper.py  \
-		${WRKSRC}/other ${WRKSRC}/executables ${WRKSRC}/WindowsService \
-		${WRKSRC}/NZBHydra2*
 
 do-install:
 	@${MKDIR} ${STAGEDIR}/${DATADIR}

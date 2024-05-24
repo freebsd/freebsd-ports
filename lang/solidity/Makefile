@@ -1,5 +1,5 @@
 PORTNAME=	solidity
-PORTVERSION=	0.8.25
+PORTVERSION=	0.8.26
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ethereum/solidity/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -15,8 +15,8 @@ NOT_FOR_ARCHS_REASON=	solidity currently does not support big endian systems
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs \
 		libfmt>=0:devel/libfmt \
+		nlohmann-json>=0:devel/nlohmann-json \
 		range-v3>=0:devel/range-v3
-LIB_DEPENDS=	libjsoncpp.so:devel/jsoncpp
 
 USES=		cmake compiler:c++14-lang cpe
 CPE_VENDOR=	${PORTNAME}lang
@@ -33,9 +33,10 @@ CVC4_CMAKE_OFF=	USE_CVC4
 CVC4_BROKEN=	solidity uses cvc4 which has been succeeded by cvc5
 
 CMAKE_ARGS+=	-DUSE_LD_GOLD=OFF -DTESTS=OFF \
+		-DUSE_SYSTEM_LIBRARIES=ON \
 		-DRANGE_V3_INCLUDE_DIR="${LOCALBASE}/include" \
-		-DJSONCPP_INCLUDE_DIR:STRING="${LOCALBASE}/include/jsoncpp" \
-		-DJSONCPP_LIB_DIR:STRING="${LOCALBASE}/lib" \
+		-DNLOHMANN_JSON_INCLUDE_DIR="${LOCALBASE}/include" \
+		-DSTRICT_NLOHMANN_JSON_VERSION=OFF \
 		-DSTRICT_Z3_VERSION=OFF
 
 PLIST_FILES=	bin/solc \
@@ -48,7 +49,7 @@ CXXFLAGS+=	-Wno-unqualified-std-cast-call
 .endif
 
 pre-patch:
-		@${CP} ${FILESDIR}/fmtlib.cmake ${FILESDIR}/jsoncpp.cmake ${WRKSRC}/cmake/
-		@${REINPLACE_CMD} '/EthCcache/d' ${WRKSRC}/CMakeLists.txt
+		@${CP} ${FILESDIR}/fmtlib.cmake ${WRKSRC}/cmake/
+		#@${REINPLACE_CMD} '/EthCcache/d' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

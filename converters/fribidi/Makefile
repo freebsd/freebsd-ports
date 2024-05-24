@@ -1,6 +1,5 @@
 PORTNAME=	fribidi
-DISTVERSION=	1.0.13
-PORTREVISION=	1
+DISTVERSION=	1.0.14
 CATEGORIES=	converters
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 

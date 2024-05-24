@@ -1,11 +1,12 @@
 PORTNAME=	protocol-http2
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Low level implementation of the HTTP/2 protocol
-WWW=		https://github.com/socketry/protocol-http2
+WWW=		https://socketry.github.io/protocol-http2/ \
+		https://github.com/socketry/protocol-http2
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.md

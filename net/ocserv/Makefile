@@ -1,5 +1,5 @@
 PORTNAME=	ocserv
-DISTVERSION=	1.2.4
+DISTVERSION=	1.3.0
 CATEGORIES=	net net-vpn security
 MASTER_SITES=	https://www.infradead.org/ocserv/download/
 
@@ -11,7 +11,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash \
-		gsed:textproc/gsed
+		gsed:textproc/gsed \
+		ipcalc:net-mgmt/ipcalc
 LIB_DEPENDS=	libev.so:devel/libev \
 		libgnutls.so:security/gnutls \
 		libiconv.so:converters/libiconv \

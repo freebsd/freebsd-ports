@@ -1,10 +1,10 @@
 PORTNAME=	Mowitz
 PORTVERSION=	0.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://siag.nu/pub/mowitz/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Mowitz ("More widgets") library
 WWW=		https://siag.nu/mowitz/
 

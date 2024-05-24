@@ -1,5 +1,5 @@
 PORTNAME=	pycharm-pro
-DISTVERSION=	2023.3.5
+DISTVERSION=	2024.1.1
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/
 DISTNAME=	pycharm-professional-${PORTVERSION}
@@ -24,6 +24,20 @@ CPE_VENDOR=	jetbrains
 USE_JAVA=	yes
 JAVA_VERSION=	17+
 
+# Remove the bundled native Pty4J support libraries, they are replaced
+# by devel/jetbrains-pty4j
+# Remove bundled linux-only JRE
+EXTRACT_AFTER_ARGS=	--exclude pycharm-${PORTVERSION}/bin/*fsnotifier* \
+			--exclude pycharm-${PORTVERSION}/bin/*.so \
+			--exclude pycharm-${PORTVERSION}/bin/repair \
+			--exclude pycharm-${PORTVERSION}/lib/*.so \
+			--exclude pycharm-${PORTVERSION}/plugins/*.so \
+			--exclude pycharm-${PORTVERSION}/plugins/cwm-plugin/quiche-native \
+			--exclude pycharm-${PORTVERSION}/plugins/python/helpers/pydev/pydevd_attach_to_process \
+			--exclude pycharm-${PORTVERSION}/lib/pty4j \
+			--exclude pycharm-${PORTVERSION}/jbr \
+			--no-same-owner --no-same-permissions
+
 WRKSRC=		${WRKDIR}/pycharm-${PORTVERSION}
 
 NO_ARCH=	yes
@@ -36,16 +50,7 @@ SUB_LIST+=	IDEA_HOME=${IDEA_HOME}
 
 # Remove non-native binaries
 post-extract:
-	@${RM} ${WRKSRC}/bin/*fsnotifier* ${WRKSRC}/bin/*.so ${WRKSRC}/bin/repair
-	@${FIND} ${WRKSRC}/lib ${WRKSRC}/plugins -name '*.so' -delete
 	@${FIND} ${WRKSRC}/lib ${WRKSRC}/plugins -type d -empty -delete
-	@${RM} -r ${WRKSRC}/plugins/cwm-plugin/quiche-native
-	@${RM} -r ${WRKSRC}/plugins/python/helpers/pydev/pydevd_attach_to_process
-# Remove the bundled native Pty4J support libraries, they are replaced
-# by devel/jetbrains-pty4j
-	@${RM} -r ${WRKSRC}/lib/pty4j
-# Remove bundled linux-only JRE
-	@${RM} -r ${WRKSRC}/jbr
 # TODO: Remove and enable fsnotifier when devel/libinotify is fixed
 # Disable filewatcher warning message on IDEA startup
 	${ECHO} "idea.filewatcher.disabled=true" >> ${WRKSRC}/bin/idea.properties

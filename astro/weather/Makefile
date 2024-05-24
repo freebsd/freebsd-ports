@@ -1,5 +1,5 @@
 PORTNAME=	weather
-PORTVERSION=	2.4.4
+PORTVERSION=	2.5.0
 CATEGORIES=	astro python
 MASTER_SITES=	http://fungi.yuggoth.org/weather/src/ \
 		LOCAL/sunpoet
@@ -11,7 +11,7 @@ WWW=		http://fungi.yuggoth.org/weather/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python shebangfix tar:xz
+USES=		python:3.9+ shebangfix tar:xz
 
 NO_ARCH=	yes
 NO_BUILD=	yes

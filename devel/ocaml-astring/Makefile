@@ -1,5 +1,6 @@
 PORTNAME=	astring
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://erratique.ch/software/astring/releases/
 PKGNAMEPREFIX=	ocaml-

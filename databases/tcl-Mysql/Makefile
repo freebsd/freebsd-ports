@@ -1,11 +1,11 @@
 PORTNAME=	${TCL_NODOT}-sql
 PORTVERSION=	20000114
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	databases tcl
 MASTER_SITES=	SF/tcl-sql/tcl-sql/${PORTVERSION}
 DISTNAME=	tcl-sql-${PORTVERSION}
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	TCL module for accessing MySQL databases
 WWW=		https://sourceforge.net/projects/tcl-sql/
 

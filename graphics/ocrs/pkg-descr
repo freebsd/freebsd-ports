@@ -1,0 +1,16 @@
+ocrs is a Rust library and CLI tool for extracting text from images, also
+known as OCR (Optical Character Recognition).
+
+The goal is to create a modern OCR engine that:
+- Works well on a wide variety of images (scanned documents, photos containing
+  text, screenshots etc.) with zero or much less preprocessing effort compared
+  to earlier engines like [Tesseract][tesseract]. This is achieved by using
+  machine learning more extensively in the pipeline.
+- Is easy to compile and run across a variety of platforms, including
+  WebAssembly
+- Is trained on open and liberally licensed datasets
+- Has a codebase that is easy to understand and modify
+
+Under the hood, the library uses neural network models trained in
+PyTorch, which are then exported to ONNX and executed using
+the RTen engine.

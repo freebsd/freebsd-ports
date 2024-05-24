@@ -1,27 +1,23 @@
 # pkg-help formatted with fmt 59 63
 
 PORTNAME=	bind
-PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
+DISTVERSION=	9.19.24
 .if defined(BIND_TOOLS_SLAVE)
 # dns/bind-tools here
-PORTREVISION=	2
+PORTREVISION=	1
 .else
 # XXX: correct version
 # dns/bind9xx here
-PORTREVISION=	2
+PORTREVISION=	1
 .endif
 CATEGORIES=	dns net
-# XXX: put the ISC master_site
-#MASTER_SITES=	ISC/bind9/${ISCVERSION}
-MASTER_SITES=	LOCAL/mat/bind
+MASTER_SITES=	ISC/bind9/${DISTVERSION}
 .if defined(BIND_TOOLS_SLAVE)
 PKGNAMESUFFIX=	-tools
 .else
 # XXX: correct SUFFIX.
 PKGNAMESUFFIX=	9-devel
 .endif
-# XXX: correct DISTNAME.
-#DISTNAME=	${PORTNAME}-${ISCVERSION}
 
 MAINTAINER=	mat@FreeBSD.org
 WWW=		https://www.isc.org/bind/
@@ -41,35 +37,25 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libuv.so:devel/libuv \
 		libnghttp2.so:www/libnghttp2 \
+		liburcu.so:sysutils/liburcu \
 		libxml2.so:textproc/libxml2
 
 .if !defined(BIND_TOOLS_SLAVE)
 RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 .endif
 
-# XXX: remove tar:bz2
-USES=		autoreconf compiler:c11 cpe libedit libtool pkgconfig ssl tar:bz2
-# ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.19.3.2022.06.16
-# XXX: Remove gitlab
-USE_GITLAB=	yes
-GL_SITE=	https://gitlab.isc.org
-GL_ACCOUNT=	isc-projects
-GL_PROJECT=	bind9
-GL_TAGNAME=	84854b3f22b885ba4cfbf34697de4fbed1cad0a2
+USES=		autoreconf compiler:c11 cpe libedit libtool pkgconfig ssl tar:xz
 
 CPE_VENDOR=	isc
-CPE_VERSION=	${ISCVERSION:C/-.*//}
-.if ${ISCVERSION:M*-*}
-CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
+CPE_VERSION=	${DISTVERSION:C/-.*//}
+.if ${DISTVERSION:M*-*}
+CPE_UPDATE=	${DISTVERSION:C/.*-//:tl}
 .endif
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS=	--disable-linux-caps \
-		--localstatedir=/var \
+CONFIGURE_ARGS=	--localstatedir=/var \
 		--sysconfdir=${ETCDIR} \
-		--with-dlopen=yes \
 		--with-libxml2 \
 		--with-openssl=${OPENSSLBASE} \
 		--enable-dnsrps \
@@ -104,7 +90,7 @@ OPTIONS_SINGLE=		GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 
 .if defined(BIND_TOOLS_SLAVE)
-OPTIONS_EXCLUDE=	DNSTAP DOCS GEOIP LMDB \
+OPTIONS_EXCLUDE=	DOCS GEOIP LMDB \
 			OVERRIDECACHE QUERYTRACE START_LATE \
 			TCP_FASTOPEN
 .endif	# BIND_TOOLS_SLAVE
@@ -189,6 +175,10 @@ USE_PERL5=		build
 BUILD_DEPENDS+=		cmocka>0:sysutils/cmocka
 .endif
 
+.if !${PORT_OPTIONS:MDOCS}
+CONFIGURE_ENV+=		ac_cv_path_SPHINX_BUILD=
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} == base
@@ -197,10 +187,7 @@ SUB_LIST+=	ENGINES=/usr/lib/engines
 SUB_LIST+=	ENGINES=${LOCALBASE}/lib/engines
 .endif
 
-# XXX: Remove first REINPLACE_CMD
 post-patch:
-	@${REINPLACE_CMD} -e '/^m4_define(\[bind_SRCID/s/\[m4.*\]/${GL_TAGNAME}/' \
-		${WRKSRC}/configure.ac
 .for FILE in check/named-checkconf.rst named/named.rst nsupdate/nsupdate.rst \
 	rndc/rndc.rst
 	@${REINPLACE_CMD} -e 's#/etc/named.conf#${ETCDIR}/named.conf#g' \
@@ -223,10 +210,6 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/localhost-reverse.db ${STAGEDIR}${ETCDIR}/primary
 	${INSTALL_DATA} ${FILESDIR}/BIND.chroot.dist ${STAGEDIR}${PREFIX}/etc/mtree/BIND.chroot.dist.sample
 	${INSTALL_DATA} ${FILESDIR}/BIND.chroot.local.dist ${STAGEDIR}${PREFIX}/etc/mtree/BIND.chroot.local.dist.sample
-	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
-		${STAGEDIR}${ETCDIR}/rndc.conf.sample
-# FIXME: this is strange.
-	@${RM} -rf ${STAGEDIR}/wrkdirs
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/arm

@@ -1,6 +1,6 @@
---- net/tools/cert_verify_tool/cert_verify_comparision_tool.cc.orig	2024-02-23 21:04:38 UTC
+--- net/tools/cert_verify_tool/cert_verify_comparision_tool.cc.orig	2024-05-21 18:07:39 UTC
 +++ net/tools/cert_verify_tool/cert_verify_comparision_tool.cc
-@@ -35,7 +35,7 @@
+@@ -36,7 +36,7 @@
  #include "net/url_request/url_request_context_builder.h"
  #include "net/url_request/url_request_context_getter.h"
  
@@ -9,7 +9,7 @@
  #include "net/proxy_resolution/proxy_config.h"
  #include "net/proxy_resolution/proxy_config_service_fixed.h"
  #endif
-@@ -55,7 +55,7 @@ void SetUpOnNetworkThread(
+@@ -56,7 +56,7 @@ void SetUpOnNetworkThread(
      base::WaitableEvent* initialization_complete_event) {
    net::URLRequestContextBuilder url_request_context_builder;
    url_request_context_builder.set_user_agent(GetUserAgent());
@@ -18,9 +18,9 @@
    // On Linux, use a fixed ProxyConfigService, since the default one
    // depends on glib.
    //
-@@ -123,7 +123,7 @@ class CertVerifyImpl {
+@@ -124,7 +124,7 @@ class CertVerifyImpl {
  std::unique_ptr<CertVerifyImpl> CreateCertVerifyImplFromName(
-     base::StringPiece impl_name,
+     std::string_view impl_name,
      scoped_refptr<net::CertNetFetcher> cert_net_fetcher) {
 -#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || \
 +#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || \

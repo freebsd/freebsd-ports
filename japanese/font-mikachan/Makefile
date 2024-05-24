@@ -1,7 +1,7 @@
 PORTNAME=	mikachan
 PORTVERSION=	9.1
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://mikachan.sourceforge.jp/
+MASTER_SITES=	https://web.archive.org/web/20210224080535/http://mikachan.osdn.jp/
 PKGNAMEPREFIX=	ja-font-
 DISTNAME=	ver${PORTVERSION}
 EXTRACT_SUFX=	.lzh

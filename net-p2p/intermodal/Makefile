@@ -1,0 +1,209 @@
+PORTNAME=	intermodal
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.13
+CATEGORIES=	net-p2p
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	CL utility for BitTorrent torrent file creation, verification, etc
+WWW=		https://imdl.io
+
+LICENSE=	CC0-1.0
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	casey
+
+CARGO_CRATES=	addr2line-0.13.0 \
+		adler-0.2.3 \
+		aho-corasick-0.7.13 \
+		ansi_term-0.11.0 \
+		ansi_term-0.12.1 \
+		array-init-0.0.4 \
+		askama-0.9.0 \
+		askama_derive-0.9.0 \
+		askama_escape-0.3.0 \
+		askama_shared-0.9.1 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		backtrace-0.3.51 \
+		bendy-0.3.2 \
+		bitflags-1.2.1 \
+		bstr-0.2.13 \
+		bumpalo-3.4.0 \
+		byteorder-1.3.4 \
+		cargo_toml-0.8.1 \
+		cast-0.2.3 \
+		cc-1.0.60 \
+		cfg-if-0.1.10 \
+		chrono-0.4.19 \
+		clap-2.33.3 \
+		console-0.12.0 \
+		criterion-0.3.3 \
+		criterion-plot-0.4.3 \
+		crossbeam-channel-0.4.4 \
+		crossbeam-deque-0.7.3 \
+		crossbeam-epoch-0.8.2 \
+		crossbeam-utils-0.7.2 \
+		csv-1.1.3 \
+		csv-core-0.1.10 \
+		ctor-0.1.16 \
+		darling-0.10.2 \
+		darling_core-0.10.2 \
+		darling_macro-0.10.2 \
+		difference-2.0.0 \
+		doc-comment-0.3.3 \
+		dtoa-0.4.6 \
+		either-1.6.1 \
+		encode_unicode-0.3.6 \
+		env_logger-0.7.1 \
+		failure-0.1.8 \
+		failure_derive-0.1.8 \
+		fehler-1.0.0 \
+		fehler-macros-1.0.0 \
+		fnv-1.0.7 \
+		fs_extra-1.2.0 \
+		getrandom-0.1.15 \
+		gimli-0.22.0 \
+		git2-0.13.11 \
+		globset-0.4.5 \
+		half-1.6.0 \
+		heck-0.3.1 \
+		hermit-abi-0.1.16 \
+		hex-0.4.2 \
+		humansize-1.1.0 \
+		humantime-1.3.0 \
+		ident_case-1.0.1 \
+		idna-0.2.0 \
+		ignore-0.4.16 \
+		imdl-indicatif-0.14.0 \
+		itertools-0.9.0 \
+		itoa-0.4.6 \
+		jobserver-0.1.21 \
+		js-sys-0.3.45 \
+		lazy_static-1.4.0 \
+		lexiclean-0.0.1 \
+		libc-0.2.78 \
+		libgit2-sys-0.12.13+1.0.1 \
+		libssh2-sys-0.2.19 \
+		libz-sys-1.1.2 \
+		linked-hash-map-0.5.3 \
+		log-0.4.11 \
+		matches-0.1.8 \
+		maybe-uninit-2.0.0 \
+		md5-0.7.0 \
+		memchr-2.3.3 \
+		memoffset-0.5.6 \
+		miniz_oxide-0.4.2 \
+		nodrop-0.1.14 \
+		nom-5.1.2 \
+		num-integer-0.1.43 \
+		num-traits-0.2.12 \
+		num_cpus-1.13.0 \
+		number_prefix-0.3.0 \
+		object-0.20.0 \
+		once_cell-1.12.0 \
+		oorandom-11.1.2 \
+		open-1.4.0 \
+		openssl-probe-0.1.2 \
+		openssl-sys-0.9.80 \
+		output_vt100-0.1.2 \
+		percent-encoding-2.1.0 \
+		pkg-config-0.3.18 \
+		plotters-0.2.15 \
+		ppv-lite86-0.2.9 \
+		pretty_assertions-0.6.1 \
+		pretty_env_logger-0.4.0 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.24 \
+		quick-error-1.2.3 \
+		quote-1.0.7 \
+		rand-0.7.3 \
+		rand_chacha-0.2.2 \
+		rand_core-0.5.1 \
+		rand_hc-0.2.0 \
+		rayon-1.4.1 \
+		rayon-core-1.8.1 \
+		redox_syscall-0.1.57 \
+		regex-1.3.9 \
+		regex-automata-0.1.9 \
+		regex-syntax-0.6.18 \
+		remove_dir_all-0.5.3 \
+		rustc-demangle-0.1.16 \
+		rustc_version-0.2.3 \
+		ryu-1.0.5 \
+		same-file-1.0.6 \
+		scopeguard-1.1.0 \
+		semver-0.9.0 \
+		semver-parser-0.7.0 \
+		serde-1.0.116 \
+		serde-hex-0.1.0 \
+		serde_bytes-0.11.5 \
+		serde_cbor-0.11.1 \
+		serde_derive-1.0.116 \
+		serde_json-1.0.58 \
+		serde_with-1.5.0 \
+		serde_with_macros-1.2.0 \
+		serde_yaml-0.8.13 \
+		sha1-0.6.0 \
+		smallvec-0.6.13 \
+		snafu-0.6.9 \
+		snafu-derive-0.6.9 \
+		static_assertions-1.1.0 \
+		strsim-0.8.0 \
+		strsim-0.9.3 \
+		structopt-0.3.18 \
+		structopt-derive-0.4.11 \
+		strum-0.18.0 \
+		strum-0.19.2 \
+		strum_macros-0.18.0 \
+		strum_macros-0.19.2 \
+		syn-1.0.42 \
+		synstructure-0.12.4 \
+		tempfile-3.1.0 \
+		temptree-0.0.0 \
+		term_size-0.3.2 \
+		termcolor-1.1.0 \
+		terminal_size-0.1.13 \
+		termios-0.3.2 \
+		textwrap-0.11.0 \
+		thread_local-1.1.4 \
+		time-0.1.44 \
+		tinytemplate-1.1.0 \
+		tinyvec-0.3.4 \
+		toml-0.5.6 \
+		unicode-bidi-0.3.4 \
+		unicode-normalization-0.1.13 \
+		unicode-segmentation-1.6.0 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.1 \
+		url-2.1.1 \
+		vcpkg-0.2.10 \
+		vec_map-0.8.2 \
+		version_check-0.9.2 \
+		walkdir-2.3.1 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.68 \
+		wasm-bindgen-backend-0.2.68 \
+		wasm-bindgen-macro-0.2.68 \
+		wasm-bindgen-macro-support-0.2.68 \
+		wasm-bindgen-shared-0.2.68 \
+		web-sys-0.3.45 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		yaml-rust-0.4.4
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
+
+PLIST_FILES=	bin/imdl
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/imdl
+
+.include <bsd.port.mk>

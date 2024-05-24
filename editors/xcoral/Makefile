@@ -1,13 +1,13 @@
 PORTNAME=	xcoral
 PORTVERSION=	3.47
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors
 MASTER_SITES=	http://xcoral.free.fr/
 
 PATCH_SITES=	http://aldan.algebra.com/~mi/port-stuff/
 PATCHFILES=	xcoral-alpheus-and-peneus-2020.patch.bz2
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Multiwindow mouse-based text editor for X
 WWW=		http://xcoral.free.fr/
 

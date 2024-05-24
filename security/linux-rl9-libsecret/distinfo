@@ -1,0 +1,7 @@
+TIMESTAMP = 1716192661
+SHA256 (rocky/l/libsecret-0.20.4-4.el9.aarch64.rpm) = 952c22fa51a9e9acffd4d072d1606f27f45861ab167ea727d3e6bd8a0f8072db
+SIZE (rocky/l/libsecret-0.20.4-4.el9.aarch64.rpm) = 159270
+SHA256 (rocky/l/libsecret-0.20.4-4.el9.x86_64.rpm) = 27b6dc9dde386ee9de16b53144b252dbbcdcea614dc56ab2fe3e1423c004eea1
+SIZE (rocky/l/libsecret-0.20.4-4.el9.x86_64.rpm) = 161035
+SHA256 (rocky/l/libsecret-0.20.4-4.el9.src.rpm) = 3961aeb933cdf1f0cb847411a628e0f4679dfc831d78e082fc798c512f838818
+SIZE (rocky/l/libsecret-0.20.4-4.el9.src.rpm) = 541154

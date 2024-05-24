@@ -1,0 +1,9 @@
+Library to help in writing OCaml PPX rewriters, which can be used to
+extend the syntax of an OCaml programs. PPX rewriters are a powerfull
+alternative to the older camlp4/campl5 technology, and they can also
+be composed.
+
+This PPX library provides facilities to, under other, work at the
+level of the OCaml's abstract syntax tree (AST), write driver
+front-ends for the OCaml compiler, parse an OCaml expression as an
+AST, etc.

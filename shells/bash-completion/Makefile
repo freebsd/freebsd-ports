@@ -1,24 +1,20 @@
 PORTNAME=	bash-completion
-PORTVERSION=	2.13.0
-PORTREVISION=	1
+PORTVERSION=	2.14.0
 PORTEPOCH=	2
 CATEGORIES=	shells
+MASTER_SITES=	https://github.com/scop/bash-completion/releases/download/${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Programmable completion library for Bash
 WWW=		https://github.com/scop/bash-completion
 
-# bash-completion is licensed under GPLv2+
-# bash-completion-freebsd is licensed under BSD2CLAUSE
-LICENSE=	BSD2CLAUSE GPLv2+
-LICENSE_COMB=	multi
-LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/freebsd/LICENSE
-LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	runtest:misc/dejagnu \
 		${LOCALBASE}/lib/tcllib/cmdline/cmdline.tcl:devel/tcllib
 
-USES=		autoreconf gmake pathfix
+USES=		autoreconf gmake pathfix tar:xz
 
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
@@ -26,23 +22,21 @@ NO_ARCH=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	RUNFILE=${DATADIR}/bash_completion.sh
 
-GH_ACCOUNT=	scop
-USE_GITHUB=	yes
-GH_TUPLE=	0mp:bash-completion-freebsd:1.2.0:freebsd/freebsd
-
 PORTSCOUT=	limit:^[0-9\.]*$$
 
-OPTIONS_DEFINE=	CMAKE_MODULES
+OPTIONS_DEFINE=	CMAKE_MODULES FREEBSD
 OPTIONS_SINGLE=	BASH
 OPTIONS_SINGLE_BASH=	BASH_SHARED BASH_STATIC
-OPTIONS_DEFAULT=BASH_SHARED CMAKE_MODULES
+OPTIONS_DEFAULT=BASH_SHARED CMAKE_MODULES FREEBSD
 OPTIONS_SUB=	yes
 BASH_SHARED_DESC=	Use shells/bash as backend
 BASH_STATIC_DESC=	Use shells/bash-static as backend
 CMAKE_MODULES_DESC=	Install bash-completion modules for cmake
+FREEBSD_DESC=		Add FreeBSD-specific completion
 
 BASH_SHARED_RUN_DEPENDS=bash:shells/bash
 BASH_STATIC_RUN_DEPENDS=bash:shells/bash-static
+FREEBSD_RUN_DEPENDS=	bash-completion-freebsd>=0:shells/bash-completion-freebsd
 
 .include <bsd.port.pre.mk>
 
@@ -61,7 +55,6 @@ post-configure:
 			${WRKSRC}/completions/*
 
 post-install:
-	cd ${WRKSRC}/freebsd/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS}
 	${RM} ${STAGEDIR}${DATADIR}/completions/makepkg
 
 do-test:

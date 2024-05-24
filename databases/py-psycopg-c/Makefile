@@ -1,8 +1,9 @@
 PORTNAME=	psycopg-c
-PORTVERSION=	3.1.18
+PORTVERSION=	3.1.19
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	psycopg_c-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PostgreSQL database adapter for Python - C optimization distribution

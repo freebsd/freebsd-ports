@@ -1,0 +1,2 @@
+Wraps OCaml compiler internal libraries into a reduced set of
+libraries, to reduce the pollution of the toplevel module namespace.

@@ -1,7 +1,7 @@
 PORTNAME=	ninja
 PORTVERSION=	1.11.1
 DISTVERSIONPREFIX=	v
-PORTEPOCH=	2
+PORTEPOCH=	4
 CATEGORIES=	devel
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,11 +11,9 @@ WWW=		https://ninja-build.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	ninja-build
-
-CONFLICTS=	irc/ninja
-USES=		python
 
 PORTSCOUT=	limit:^1\.
 
@@ -28,12 +26,24 @@ OPTIONS_DEFAULT=	BASH ZSH
 BASH_PLIST_FILES=	share/bash-completion/completions/ninja
 ZSH_PLIST_FILES=	share/zsh/site-functions/_ninja
 
+# Set up the environment variables that ninja's configure.py recognizes and
+# respect building with ccache.
+NINJA_ENV=	AR="${AR}" \
+		CFLAGS="${CFLAGS}" \
+		CXXFLAGS="${CXXFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
+.if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
+NINJA_ENV+=	CXX="${CCACHE_BIN} ${CXX}"
+.else
+NINJA_ENV+=	CXX="${CXX}"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} "s/'-g', //" ${WRKSRC}/configure.py
 
 do-build:
 	@(cd ${WRKSRC} && \
-		CXX="${CXX}" CFLAGS="${CXXFLAGS}" ${PYTHON_CMD} configure.py --bootstrap)
+		${SETENVI} ${CONFIGURE_ENV} ${NINJA_ENV} ${PYTHON_CMD} configure.py --bootstrap --verbose)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ninja ${STAGEDIR}${PREFIX}/bin

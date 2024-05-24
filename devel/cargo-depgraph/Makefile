@@ -5,7 +5,7 @@ PORTREVISION=	5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Create dependency graphs for cargo projects using 'cargo metadata'
+COMMENT=	Rust: Create dependency graphs for cargo projects
 WWW=		https://github.com/jplatte/cargo-depgraph
 
 LICENSE=	GPLv3

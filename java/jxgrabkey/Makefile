@@ -1,10 +1,11 @@
 PORTNAME=	jxgrabkey
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${PORTVERSION}_src${EXTRACT_SUFX}
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	JNI library for easy use of global X11 hotkeys from Java
 WWW=		https://jxgrabkey.sourceforge.net/
 

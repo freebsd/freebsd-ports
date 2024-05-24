@@ -1,10 +1,10 @@
 PORTNAME=	ocaml-gsl
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.19.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math
 
-MAINTAINER=	michipili@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interface to GSL for the Objective Caml language
 WWW=		http://oandrieu.nerim.net/ocaml/gsl/
 

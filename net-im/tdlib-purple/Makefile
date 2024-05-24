@@ -1,12 +1,13 @@
 PORTNAME=	tdlib-purple
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 PATCH_SITES=	https://github.com/ars3niy/tdlib-purple/commit/
 PATCHFILES+=	8c87b899ddbec32.patch:-p1 # https://github.com/ars3niy/tdlib-purple/pull/154
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Telegram plugin for libpurple, using tdlib
 WWW=		https://github.com/ars3niy/tdlib-purple
 

@@ -1,4 +1,4 @@
---- v8/src/base/platform/platform-posix.cc.orig	2024-03-22 14:16:19 UTC
+--- v8/src/base/platform/platform-posix.cc.orig	2024-05-23 20:04:36 UTC
 +++ v8/src/base/platform/platform-posix.cc
 @@ -54,7 +54,7 @@
  #if V8_OS_DARWIN
@@ -18,7 +18,7 @@
  #define MAP_ANONYMOUS MAP_ANON
  #endif
  
-@@ -303,8 +303,15 @@ void OS::SetRandomMmapSeed(int64_t seed) {
+@@ -305,8 +305,15 @@ void OS::SetRandomMmapSeed(int64_t seed) {
    }
  }
  
@@ -34,7 +34,7 @@
    uintptr_t raw_addr;
    {
      MutexGuard guard(rng_mutex.Pointer());
-@@ -399,6 +406,7 @@ void* OS::GetRandomMmapAddr() {
+@@ -401,6 +408,7 @@ void* OS::GetRandomMmapAddr() {
  #endif
    return reinterpret_cast<void*>(raw_addr);
  }

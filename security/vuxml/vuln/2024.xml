@@ -1,3 +1,307 @@
+  <vuln vid="f848ef90-1848-11ef-9850-001b217b3468">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.0.0</ge><lt>17.0.1</lt></range>
+	<range><ge>16.11.0</ge><lt>16.11.3</lt></range>
+	<range><ge>11.11</ge><lt>16.10.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/05/22/patch-release-gitlab-17-0-1-released/">
+	  <p>1-click account takeover via XSS in the code editor in gitlab.com</p>
+	  <p>A DOS vulnerability in the 'description' field of the runner</p>
+	  <p>CSRF via K8s cluster-integration</p>
+	  <p>Using Set Pipeline Status of a Commit API incorrectly create a new pipeline when SHA and pipeline_id did not match</p>
+	  <p>Redos on wiki render API/Page</p>
+	  <p>Resource exhaustion and denial of service with test_report API calls</p>
+	  <p>Guest user can view dependency lists of private projects through job artifacts</p>
+	  <p>Stored XSS via PDFjs</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-4835</cvename>
+      <cvename>CVE-2024-2874</cvename>
+      <cvename>CVE-2023-7045</cvename>
+      <cvename>CVE-2023-6502</cvename>
+      <cvename>CVE-2024-1947</cvename>
+      <cvename>CVE-2024-4367</cvename>
+      <url>https://about.gitlab.com/releases/2024/05/22/patch-release-gitlab-17-0-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-05-22</discovery>
+      <entry>2024-05-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8247af0d-183b-11ef-9f97-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>125.0.6422.76</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>125.0.6422.76</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/05/stable-channel-update-for-desktop_21.html">
+	 <p>This update includes 15 security fixes:</p>
+	 <ul>
+	    <li>[336012573] High CVE-2024-5157: Use after free in Scheduling. Reported by Looben Yang on 2024-04-21</li>
+	    <li>[338908243] High CVE-2024-5158: Type Confusion in V8. Reported by Zhenghang Xiao (@Kipreyyy) on 2024-05-06</li>
+	    <li>[335613092] High CVE-2024-5159: Heap buffer overflow in ANGLE. Reported by David Sievers (@loknop) on 2024-04-18</li>
+	    <li>[338161969] High CVE-2024-5160: Heap buffer overflow in Dawn. Reported by wgslfuzz on 2024-05-01</li>
+	    <li>[340221135] High CVE-2024-4947: Type Confusion in V8. Reported by Vasily Berdnikov (@vaber_b) and Boris Larin (@oct0xor) of Kaspersky on 2024-05-13</li>
+	    <li>[333414294] High CVE-2024-4948: Use after free in Dawn. Reported by wgslfuzz on 2024-04-09</li>
+	    <li>[326607001] Medium CVE-2024-4949: Use after free in V8. Reported by Ganjiang Zhou(@refrain_areu) of ChaMd5-H1 team on 2024-02-24</li>
+	    <li>[40065403] Low CVE-2024-4950: Inappropriate implementation in Downloads. Reported by Shaheen Fazim on 2023-06-06</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-5157</cvename>
+      <cvename>CVE-2024-5158</cvename>
+      <cvename>CVE-2024-5159</cvename>
+      <cvename>CVE-2024-5160</cvename>
+      <cvename>CVE-2024-4947</cvename>
+      <cvename>CVE-2024-4948</cvename>
+      <cvename>CVE-2024-4949</cvename>
+      <cvename>CVE-2024-4950</cvename>
+      <url>https://chromereleases.googleblog.com/2024/05/stable-channel-update-for-desktop_21.html</url>
+    </references>
+    <dates>
+      <discovery>2024-05-21</discovery>
+      <entry>2024-05-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9bcff2c4-1779-11ef-b489-b42e991fc52e">
+    <topic>Openfire administration console authentication bypass</topic>
+    <affects>
+      <package>
+	<name>openfire</name>
+	<range><lt>4.6.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="http://packetstormsecurity.com/files/173607/Openfire-Authentication-Bypass-Remote-Code-Execution.html">
+	  <p>Openfire&apos;s administrative console, a web-based
+	application, was found to be vulnerable to a path traversal attack
+	via the setup environment.  This permitted an unauthenticated user
+	to use the unauthenticated Openfire Setup Environment in an already
+	configured Openfire environment to access restricted pages in the
+	Openfire Admin Console reserved for administrative users.  This
+	vulnerability affects all versions of Openfire that have been
+	released since April 2015, starting with version 3.10.0.  The problem
+	has been patched in Openfire release 4.7.5 and 4.6.8, and further
+	improvements will be included in the yet-to-be released first version
+	on the 4.8 branch (which is expected to be version 4.8.0).  Users
+	are advised to upgrade.  If an Openfire upgrade isnt available for
+	a specific release, or isnt quickly actionable, users may see the
+	linked github advisory (GHSA-gw42-f939-fhvm) for mitigation advice.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-32315</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-32315</url>
+    </references>
+    <dates>
+      <discovery>2023-05-26</discovery>
+      <entry>2024-05-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e020b0fd-1751-11ef-a490-84a93843eb75">
+    <topic>Roundcube -- Cross-site scripting vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>roundcube</name>
+	<range><lt>1.6.7,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Roundcube project reports:</p>
+	<blockquote cite="https://roundcube.net/news/2024/05/19/security-updates-1.6.7-and-1.5.7">
+	  <p>cross-site scripting (XSS) vulnerability in handling SVG
+	    animate attributes.</p>
+	  <p>cross-site scripting (XSS) vulnerability in handling list
+	    columns from user preferences.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://roundcube.net/news/2024/05/19/security-updates-1.6.7-and-1.5.7</url>
+    </references>
+    <dates>
+      <discovery>2024-05-19</discovery>
+      <entry>2024-05-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d58455cc-159e-11ef-83d8-4ccc6adda413">
+    <topic>qt5-webengine -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>qt5-webengine</name>
+	<range><lt>5.15.16.p9_2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=87-based">
+	  <p>Backports for 2 security bugs in Chromium:</p>
+	  <ul>
+	    <li>CVE-2024-3157: Out of bounds write in Compositing</li>
+	    <li>CVE-2024-3516: Heap buffer overflow in ANGLE</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-3157</cvename>
+      <cvename>CVE-2024-3516</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=87-based</url>
+    </references>
+    <dates>
+      <discovery>2024-04-16</discovery>
+      <entry>2024-05-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f393b5a7-1535-11ef-8064-c5610a6efffb">
+    <topic>Arti -- Security issues related to circuit construction</topic>
+    <affects>
+      <package>
+	<name>arti</name>
+	<range><lt>1.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tor Project reports:</p>
+	<blockquote cite="https://blog.torproject.org/arti_1_2_3_released/">
+		<p>
+			When building anonymizing circuits to or from an onion
+			service with 'lite' vanguards (the default) enabled, the
+			circuit manager code would build the circuits with one
+			hop too few.
+		</p>
+		<p>
+			When 'full' vanguards are enabled, some circuits are
+			supposed to be built with an extra hop to minimize the
+			linkability of the guard nodes. In some circumstances,
+			the circuit manager would build circuits with one hop
+			too few, making it easier for an adversary to discover
+			the L2 and L3 guards of the affected clients and
+			services.
+		</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-35313</cvename>
+      <url>https://gitlab.torproject.org/tpo/core/arti/-/issues/1400</url>
+      <cvename>CVE-2024-35312</cvename>
+      <url>https://gitlab.torproject.org/tpo/core/arti/-/issues/1409</url>
+    </references>
+    <dates>
+      <discovery>2024-05-14</discovery>
+      <entry>2024-05-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b88aa380-1442-11ef-a490-84a93843eb75">
+    <topic>OpenSSL -- Denial of Service vulnerability</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>3.0.13_4,1</lt></range>
+      </package>
+      <package>
+	<name>openssl31</name>
+	<range><lt>3.1.5_4</lt></range>
+      </package>
+      <package>
+	<name>openssl32</name>
+	<range><lt>3.2.1_4</lt></range>
+      </package>
+      <package>
+	<name>openssl33</name>
+	<range><lt>3.3.0_1</lt></range>
+      </package>
+      <package>
+	<name>openssl-quictls</name>
+	<range><lt>3.0.13_4</lt></range>
+      </package>
+      <package>
+	<name>openssl31-quictls</name>
+	<range><lt>3.1.5_4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20240516.txt">
+	  <p>Excessive time spent checking DSA keys and parameters (Low)</p>
+	  <p>Checking excessively long DSA keys or parameters may be very
+	    slow.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-4603</cvename>
+      <url>https://www.openssl.org/news/secadv/20240516.txt</url>
+    </references>
+    <dates>
+      <discovery>2024-05-16</discovery>
+      <entry>2024-05-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a431676c-f86c-4371-b48a-b7d2b0bec3a3">
+    <topic>electron29 -- setuid() does not affect libuv's internal io_uring</topic>
+    <affects>
+      <package>
+	<name>electron29</name>
+	<range><lt>29.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v29.4.0">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Backported fix for CVE-2024-22017.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-22017</cvename>
+      <url>https://github.com/advisories/GHSA-vr4q-vx84-9g5x</url>
+    </references>
+    <dates>
+      <discovery>2024-05-15</discovery>
+      <entry>2024-05-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c6f03ea6-12de-11ef-83d8-4ccc6adda413">
     <topic>qt6-webengine -- Multiple vulnerabilities</topic>
     <affects>

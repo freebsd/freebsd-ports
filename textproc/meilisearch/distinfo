@@ -1,4 +1,4 @@
-TIMESTAMP = 1714992944
+TIMESTAMP = 1716406881
 SHA256 (meilisearch-mini-dashboard-build-0.2.13.zip) = 541134a4f83e6311758245929ce97e38c39c9c2d95bb259db31496b0833b1183
 SIZE (meilisearch-mini-dashboard-build-0.2.13.zip) = 1213802
 SHA256 (mecab-ipadic-2.7.0-20070801.tar.gz) = b62f527d881c504576baed9c6ef6561554658b175ce6ae0096a60307e49e3523
@@ -1181,5 +1181,5 @@ SHA256 (kilork-actix-web-static-files-2d3b6160f0de4ba061c5d76b5704f34fb677f6df_G
 SIZE (kilork-actix-web-static-files-2d3b6160f0de4ba061c5d76b5704f34fb677f6df_GH0.tar.gz) = 9586
 SHA256 (dureuill-hf-hub-88d4f11cb9fa079f2912bacb96f5080b16825ce8_GH0.tar.gz) = be0882d9ab9e6f6827e2ae3c2f90f12814b79df16e33cd78ad9590e16256f888
 SIZE (dureuill-hf-hub-88d4f11cb9fa079f2912bacb96f5080b16825ce8_GH0.tar.gz) = 14797
-SHA256 (meilisearch-meilisearch-v1.8.0_GH0.tar.gz) = 2b2b49d37ace92e6d4c36ffe548c7417c4a563d028b3452cdb42b646af98218e
-SIZE (meilisearch-meilisearch-v1.8.0_GH0.tar.gz) = 14926316
+SHA256 (meilisearch-meilisearch-v1.8.1_GH0.tar.gz) = 1b75e79065435faecc250590cc2389f23728c9a5832df782d42114ed596d7131
+SIZE (meilisearch-meilisearch-v1.8.1_GH0.tar.gz) = 14926554

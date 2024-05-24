@@ -1,11 +1,11 @@
 PORTNAME=	jode
 PORTVERSION=	1.1.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.1.2-pre1
 DISTNAME=	${PORTNAME}-${VENDOR_VERSION}
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Java package containing a decompiler and an optimizer for Java
 WWW=		https://jode.sourceforge.net/
 

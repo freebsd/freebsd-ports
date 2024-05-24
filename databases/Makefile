@@ -69,7 +69,10 @@
     SUBDIR += firebird40-client
     SUBDIR += firebird40-server
     SUBDIR += fortytwo-bdb
-    SUBDIR += foundationdb
+    SUBDIR += foundationdb71-client
+    SUBDIR += foundationdb71-server
+    SUBDIR += foundationdb73-client
+    SUBDIR += foundationdb73-server
     SUBDIR += frece
     SUBDIR += freetds
     SUBDIR += freetds-devel
@@ -821,7 +824,9 @@
     SUBDIR += py-sqlalchemy20
     SUBDIR += py-sqlcipher3
     SUBDIR += py-sqlglot
+    SUBDIR += py-sqlite-anyio
     SUBDIR += py-sqlite-fts4
+    SUBDIR += py-sqlite-migrate
     SUBDIR += py-sqlite-utils
     SUBDIR += py-sqlite3
     SUBDIR += py-sqlobject
@@ -915,6 +920,7 @@
     SUBDIR += rubygem-dbd-pg
     SUBDIR += rubygem-dbd-sqlite3
     SUBDIR += rubygem-dbf
+    SUBDIR += rubygem-dbf4
     SUBDIR += rubygem-dbi
     SUBDIR += rubygem-dbm
     SUBDIR += rubygem-discard-rails61

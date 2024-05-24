@@ -1,11 +1,12 @@
 PORTNAME=	async-io
-PORTVERSION=	1.42.1
+PORTVERSION=	1.43.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides support for asynchronous TCP, UDP, Unix, and SSL sockets
-WWW=		https://github.com/socketry/async-io
+WWW=		https://socketry.github.io/async-io/ \
+		https://github.com/socketry/async-io
 
 LICENSE=	MIT
 

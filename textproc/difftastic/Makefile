@@ -1,6 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.57.0
-PORTREVISION=	1
+DISTVERSION=	0.58.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -20,12 +19,11 @@ PLIST_FILES=	bin/difft
 CARGO_CRATES=	ahash-0.8.11 \
 		aho-corasick-1.1.3 \
 		allocator-api2-0.2.16 \
-		assert_cmd-2.0.5 \
+		assert_cmd-2.0.8 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
-		bstr-0.2.17 \
 		bstr-1.9.1 \
 		bumpalo-3.14.0 \
 		cc-1.0.90 \
@@ -81,7 +79,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		mio-0.8.11 \
 		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
-		num-traits-0.2.18 \
+		num-traits-0.2.19 \
 		once_cell-1.19.0 \
 		os_str_bytes-6.6.1 \
 		owo-colors-3.5.0 \
@@ -100,7 +98,6 @@ CARGO_CRATES=	ahash-0.8.11 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
 		regex-1.9.6 \
-		regex-automata-0.1.10 \
 		regex-automata-0.3.9 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.7.5 \

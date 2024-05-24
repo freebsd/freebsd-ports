@@ -1,0 +1,2 @@
+cargo-about is a Rust cargo plugin for generating a license listing for all
+dependencies of a crate.

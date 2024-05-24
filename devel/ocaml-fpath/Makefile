@@ -1,5 +1,6 @@
 PORTNAME=	fpath
 PORTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://erratique.ch/software/fpath/releases/
 PKGNAMEPREFIX=	ocaml-

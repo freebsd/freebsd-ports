@@ -1,3 +1,3 @@
-TIMESTAMP = 1577523948
-SHA256 (rubygem/rb-inotify-0.10.1.gem) = 050062d4f31d307cca52c3f6a7f4b946df8de25fc4bd373e1a5142e41034a7ca
-SIZE (rubygem/rb-inotify-0.10.1.gem) = 15872
+TIMESTAMP = 1716142198
+SHA256 (rubygem/rb-inotify-0.11.0.gem) = 73d69c682bb713a98c16b21679663f029155ab78705f76e20d6ca56dc54a1d9e
+SIZE (rubygem/rb-inotify-0.11.0.gem) = 16384

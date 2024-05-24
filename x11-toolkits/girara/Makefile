@@ -7,6 +7,9 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	GTK3 Interface Library for Zathura PDF Viewer
 WWW=		https://pwmt.org/projects/girara/
 
+LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		compiler:c11 gnome meson pathfix pkgconfig tar:xz
 PATHFIX_MAKEFILEIN=	Makefile
 USE_GNOME=	cairo glib20 gtk30

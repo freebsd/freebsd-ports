@@ -1,0 +1,1 @@
+cargo-deny is a cargo plugin for linting dependencies of Rust projects.

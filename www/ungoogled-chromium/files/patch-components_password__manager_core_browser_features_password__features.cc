@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/features/password_features.cc.orig	2024-04-23 07:42:17 UTC
+--- components/password_manager/core/browser/features/password_features.cc.orig	2024-05-23 20:04:36 UTC
 +++ components/password_manager/core/browser/features/password_features.cc
-@@ -30,7 +30,7 @@ BASE_FEATURE(kButterOnDesktopFollowup,
+@@ -36,7 +36,7 @@ BASE_FEATURE(kClearUndecryptablePasswords,
  
  BASE_FEATURE(kClearUndecryptablePasswordsOnSync,
               "ClearUndecryptablePasswordsInSync",
@@ -9,7 +9,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -99,7 +99,7 @@ BASE_FEATURE(kPasswordManualFallbackAvailable,
+@@ -100,7 +100,7 @@ BASE_FEATURE(kPasswordManualFallbackAvailable,
               "PasswordManualFallbackAvailable",
               base::FEATURE_DISABLED_BY_DEFAULT);
  
@@ -17,4 +17,4 @@
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  BASE_FEATURE(kRestartToGainAccessToKeychain,
               "RestartToGainAccessToKeychain",
-              base::FEATURE_ENABLED_BY_DEFAULT);
+ #if BUILDFLAG(IS_MAC)

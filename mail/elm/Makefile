@@ -1,11 +1,11 @@
 PORTNAME=	elm
 PORTVERSION=	2.5.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	http://instinct.org/elm/files/tarballs/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Once-popular mail user agent, version 2.5.x
 WWW=		https://instinct.org/elm/
 

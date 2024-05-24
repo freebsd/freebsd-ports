@@ -87,6 +87,8 @@ GCC6AUX_BUILD_DEPENDS=		gcc6-aux>0:lang/gcc6-aux
 GCC6AUX_VARS=			_GCC6AUX_PATH=${LOCALBASE}/gcc6-aux/bin
 .if exists(/usr/lib32/libc.so)
 MULTILIB_CONFIGURE_ENABLE=	multilib
+.else
+CONFIGURE_ARGS+=		--disable-multilib
 .endif
 NLS_CONFIGURE_ON=		--enable-nls
 NLS_CONFIGURE_OFF=		--disable-nls

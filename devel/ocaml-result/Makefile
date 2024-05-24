@@ -1,6 +1,6 @@
 PORTNAME=	result
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
@@ -22,5 +22,8 @@ ALL_TARGET=	default
 MAKE_ENV=	LIBDIR=${PREFIX}/${OCAML_SITELIBDIR}
 
 OPTIONS_DEFINE=	DOCS
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/result/result.cmxs
 
 .include <bsd.port.mk>

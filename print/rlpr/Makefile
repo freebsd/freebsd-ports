@@ -1,12 +1,12 @@
 PORTNAME=	rlpr
 PORTVERSION=	2.06
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print net
 MASTER_SITES=	http://fossies.org/unix/misc/old/	\
 		http://linuxfocus.org/~guido/	\
 		http://truffula.com/rlpr/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Send print jobs to lpd servers anywhere on a network
 WWW=		http://freecode.com/projects/rlpr
 

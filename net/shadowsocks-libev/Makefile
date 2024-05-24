@@ -1,7 +1,7 @@
 PORTNAME=	shadowsocks-libev
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 
 MAINTAINER=	xiaoding+freebsd@xiaoding.org

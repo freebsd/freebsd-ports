@@ -233,8 +233,9 @@ NAXSI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-naxsi-libinjection__sqli_c \
 
 NJS_GH_TUPLE=		nginx:njs:0.8.4:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
+NJS_IMPLIES=		STREAM
 
-NJS_XML_IMPLIES=	NJS
+NJS_XML_IMPLIES=	HTTP NJS
 NJS_XML_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 			libxslt.so:textproc/libxslt
 

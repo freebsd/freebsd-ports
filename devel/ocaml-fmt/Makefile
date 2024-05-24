@@ -1,5 +1,6 @@
 PORTNAME=	fmt
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://erratique.ch/software/fmt/releases/
 PKGNAMEPREFIX=	ocaml-

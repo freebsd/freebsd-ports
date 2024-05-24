@@ -1,11 +1,11 @@
 PORTNAME=	udt
 PORTVERSION=	4.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF
 DISTNAME=	udt.sdk.${PORTVERSION}
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	C++ library containing the UDT API implementation
 WWW=		http://udt.sourceforge.net/
 

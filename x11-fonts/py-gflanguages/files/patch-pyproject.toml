@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-05-16 08:51:11 UTC
++++ pyproject.toml
+@@ -22,7 +22,7 @@ dependencies = [
+ ]
+ 
+ dependencies = [
+-   "protobuf>=3.7.0, <4"
++   "protobuf>=3.7.0"
+ ]
+ 
+ [project.optional-dependencies]

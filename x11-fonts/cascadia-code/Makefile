@@ -1,5 +1,5 @@
 PORTNAME=	cascadia-code
-PORTVERSION=	2111.01
+PORTVERSION=	2404.23
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/microsoft/cascadia-code/releases/download/v${PORTVERSION}/
 DISTNAME=	CascadiaCode-${PORTVERSION}

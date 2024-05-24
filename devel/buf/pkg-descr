@@ -1,0 +1,9 @@
+The buf CLI is the tool for working with Protocol Buffers. It provides:
+* A linter that enforces good API design choices and structure.
+* A breaking change detector that enforces compatibility at the source code
+  or wire level.
+* A generator that invokes your plugins based on configurable templates.
+* A formatter that formats your Protobuf files in accordance with industry
+  standards.
+* Integration with the Buf Schema Registry, including full dependency
+  management.

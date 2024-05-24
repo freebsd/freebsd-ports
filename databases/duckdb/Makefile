@@ -1,6 +1,6 @@
 PORTNAME=	duckdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.2
+DISTVERSION=	0.10.3
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake:testing compiler:c++11-lang ssl
 USE_GITHUB=	yes
-GH_TUPLE=	duckdb:sqlite_scanner:091197e:sqlite/extension/sqlite_scanner
+GH_TUPLE=	duckdb:sqlite_scanner:50b7870:sqlite/extension/sqlite_scanner
+# the list of out-of-tree extensions is here: .github/config/out_of_tree_extensions.cmake
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_UNITTESTS

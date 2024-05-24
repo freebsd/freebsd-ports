@@ -1,36 +1,38 @@
-PORTNAME=		tkshape
-PORTVERSION=		0.4
-PORTREVISION=		3
-CATEGORIES=		x11-toolkits
-MASTER_SITES=		http://www.cs.man.ac.uk/~fellowsd/tcl/ \
-			http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
-DISTNAME=		shape${PORTVERSION:S/.//g}
+PORTNAME=	tkshape
+PORTVERSION=	0.4
+PORTREVISION=	4
+CATEGORIES=	x11-toolkits
+MASTER_SITES=	http://www.cs.man.ac.uk/~fellowsd/tcl/
+DISTNAME=	shape${PORTVERSION:S/.//g}
 
-MAINTAINER=		nivit@FreeBSD.org
-COMMENT=		Tk library to access to X Shaped Window Extension
+MAINTAINER=	nivit@FreeBSD.org
+COMMENT=	Tk library to access to X Shaped Window Extension
 WWW=		https://www.cs.man.ac.uk/~fellowsd/tcl/shapeidx.html
 
-USES=			gmake tk xorg
+LICENSE=	TKSHAPE
+LICENSE_NAME=	TKSHAPE License
+LICENSE_FILE=	${WRKSRC}/license.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USE_XORG=		x11 xext
+USES=		gmake tk xorg
+USE_LDCONFIG=	yes
+USE_XORG=	x11 xext
 
-PLIST_SUB=		PORTNAME="${PORTNAME}"
-
-USE_LDCONFIG=		yes
+PLIST_SUB=	PORTNAME="${PORTNAME}"
 
 OPTIONS_DEFINE=		MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
-MANPAGES_DESC=	Install manual pages
+MANPAGES_DESC=		Install manual pages
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES}
-PLIST_SUB+=		MAN=""
+PLIST_SUB+=	MAN=""
 .else
-PLIST_SUB+=		MAN="@comment "
+PLIST_SUB+=	MAN="@comment "
 .endif
 
-WRKSRC=			${WRKDIR}/${PORTNAME:C/^tk//1}${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME:C/^tk//1}${PORTVERSION}
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-tclconf=${TCL_LIBDIR} \
@@ -38,10 +40,9 @@ CONFIGURE_ARGS=		--with-tclconf=${TCL_LIBDIR} \
 CONFIGURE_WRKSRC=	${WRKSRC}/unix
 BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
 
-WHERE_REPLACE=		${WRKSRC}/demos
-REPLACE_FILES=		${WHERE_REPLACE}/dragger.tcl \
-			${WHERE_REPLACE}/fancytext.tcl \
-			${WHERE_REPLACE}/fingerprint.tcl
+WHERE_REPLACE=	${WRKSRC}/demos
+REPLACE_FILES=	${WHERE_REPLACE}/dragger.tcl ${WHERE_REPLACE}/fancytext.tcl \
+		${WHERE_REPLACE}/fingerprint.tcl
 
 post-patch: .SILENT
 	for FILE in ${REPLACE_FILES}; do \
@@ -51,14 +52,13 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's,(^CFLAGS = )-g,\1${CFLAGS},' \
 		${BUILD_WRKSRC}/Makefile.in
 
-FIND_DIRS=		-type d \! -empty
-FIND_DEMOS=		demos -type f -and -name "*.tcl" -maxdepth 1
-FIND_IMAGES=		demos/images -type f \
-			-and \( -name "*.gif" -or -name "*.xbm" \
-			-or -name "*.cur" \)
+FIND_DIRS=	-type d \! -empty
+FIND_DEMOS=	demos -type f -and -name "*.tcl" -maxdepth 1
+FIND_IMAGES=	demos/images -type f -and \( -name "*.gif" -or -name "*.xbm" \
+		-or -name "*.cur" \)
 
-TARGET_DIR=		${STAGEDIR}${PREFIX}/lib/${PORTNAME}
-MANPAGES=		CombShape.3 QuryShape.3 shape.n
+TARGET_DIR=	${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+MANPAGES=	CombShape.3 QuryShape.3 shape.n
 
 do-install:
 # script, library

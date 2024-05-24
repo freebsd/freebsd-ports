@@ -1,5 +1,6 @@
 PORTNAME=	libfpx
 DISTVERSION=	1.3.1-10
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://imagemagick.mirrorcatalogs.com/delegates/	\
 		http://www.imagemagick.org/download/delegates/	\
@@ -10,7 +11,7 @@ MASTER_SITES=	http://imagemagick.mirrorcatalogs.com/delegates/	\
 		ftp://mirror.checkdomain.de/imagemagick/delegates/	\
 		http://image_magick.veidrodis.com/image_magick/delegates/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@virtual-estates.net
 COMMENT=	Library routines for working with Flashpix images
 WWW=		https://www.i3a.org/
 

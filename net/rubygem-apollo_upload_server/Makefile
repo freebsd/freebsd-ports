@@ -1,5 +1,5 @@
 PORTNAME=	apollo_upload_server
-PORTVERSION=	2.1.5
+PORTVERSION=	2.1.6
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

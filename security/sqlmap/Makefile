@@ -1,5 +1,5 @@
 PORTNAME=	sqlmap
-PORTVERSION=	1.3.12
+PORTVERSION=	1.8
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,10 +11,12 @@ WWW=		https://sqlmap.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/sqlmap/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		python shebangfix
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 
 SHEBANG_FILES=	*.py sqlmap/extra/shutils/*.sh sqlmap/extra/shutils/*.py
 NO_ARCH=	yes

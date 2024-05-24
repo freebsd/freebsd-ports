@@ -4,6 +4,7 @@
 %%SITE_PERL%%/Net/SAML2/Binding/Redirect.pm
 %%SITE_PERL%%/Net/SAML2/Binding/SOAP.pm
 %%SITE_PERL%%/Net/SAML2/IdP.pm
+%%SITE_PERL%%/Net/SAML2/Object/Response.pm
 %%SITE_PERL%%/Net/SAML2/Protocol/Artifact.pm
 %%SITE_PERL%%/Net/SAML2/Protocol/ArtifactResolve.pm
 %%SITE_PERL%%/Net/SAML2/Protocol/Assertion.pm
@@ -24,6 +25,7 @@
 %%PERL5_MAN3%%/Net::SAML2::Binding::Redirect.3.gz
 %%PERL5_MAN3%%/Net::SAML2::Binding::SOAP.3.gz
 %%PERL5_MAN3%%/Net::SAML2::IdP.3.gz
+%%PERL5_MAN3%%/Net::SAML2::Object::Response.3.gz
 %%PERL5_MAN3%%/Net::SAML2::Protocol::Artifact.3.gz
 %%PERL5_MAN3%%/Net::SAML2::Protocol::ArtifactResolve.3.gz
 %%PERL5_MAN3%%/Net::SAML2::Protocol::Assertion.3.gz

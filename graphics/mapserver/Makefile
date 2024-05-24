@@ -1,6 +1,6 @@
 PORTNAME=		mapserver
 PORTVERSION=		8.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=		graphics www geography
 MASTER_SITES=		https://download.osgeo.org/mapserver/
 
