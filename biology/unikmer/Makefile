@@ -23,6 +23,8 @@ GO_TARGET=	./${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
 
+PORTSCOUT=	ignore:0.20.0 # ignore bogus version
+
 pre-patch:
 	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
 	${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
