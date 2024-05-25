@@ -1,6 +1,6 @@
 PORTNAME=	ghdl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.0
+DISTVERSION=	4.1.0
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,8 +23,6 @@ USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 
-LLVMVER=	15 # last supported version, see https://github.com/ghdl/ghdl/blob/master/configure#L317
-
 OPTIONS_DEFINE=		SYNTH
 OPTIONS_SINGLE=		BACKEND
 OPTIONS_SINGLE_BACKEND=	MCODE LLVM
@@ -34,17 +32,14 @@ OPTIONS_SUB=		yes
 MCODE_DESC=		Use the MCODE backend
 # MCODE is enabled by default and doesn't require any configuration options
 
-LLVM_DESC=		Code generator is LLVM
-LLVM_USES=		ncurses
-LLVM_CONFIGURE_ON=	--with-llvm-config=${LOCALBASE}/bin/llvm-config${LLVMVER}
-LLVM_BUILD_DEPENDS=	llvm-config${LLVMVER}:devel/llvm${LLVMVER}
-LLVM_RUN_DEPENDS=	llc${LLVMVER}:devel/llvm${LLVMVER}
+LLVM_USES=		llvm:15,lib ncurses
+LLVM_CONFIGURE_ON=	--with-llvm-config=${LOCALBASE}/bin/llvm-config${LLVM_VERSION}
 
 SYNTH_DESC=		Enable Synthesis Features in ghdl
 SYNTH_CONFIGURE_ON=	--enable-synth
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libghdl-4_0_0.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libghdl-${DISTVERSION:S/./_/g}.so
 
 post-install-MCODE-on:
 	@${STRIP_CMD} \
