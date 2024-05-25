@@ -7,7 +7,7 @@
 +#elif defined(LIBRESSL_VERSION_NUMBER)
 +int check_openssl_compatibility()
 +{
-+  return 1;
++  return 0;
 +}
  #else
  #include <openssl/evp.h>
