@@ -1,6 +1,5 @@
 PORTNAME=	fox
-PORTVERSION=	1.6.57
-PORTREVISION=	4
+PORTVERSION=	1.6.58
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/
@@ -18,11 +17,11 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 
 USES=		compiler:features gl jpeg libtool localbase:ldflags pathfix xorg
 USE_GL=		gl glu
-USE_XORG=	x11 xext xfixes
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--with-opengl --with-x --with-xim
 USE_LDCONFIG=	yes
+USE_XORG=	x11 xext xfixes
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-opengl --with-x --with-xim
 
 CPPFLAGS+=	-fPIC -Dregister=
 
@@ -36,36 +35,40 @@ OPTIONS_DEFAULT=	SHM XCURSOR XFT XINPUT XRANDR XRENDER
 OPTIONS_SUB=		yes
 
 APPS_DESC=		Install sample applications
+
 DEBUG_CONFIGURE_ON=	--enable-debug
 DEBUG_CONFIGURE_OFF=	--enable-release
+
 PROFILE_CONFIGURE_ON=	--with-profiling=gprof
+
 SHM_DESC=		Shared Memory support
 SHM_CONFIGURE_ON=	--with-xshm=yes
 SHM_CONFIGURE_OFF=	--with-xshm=no
-XCURSOR_USES=		xorg
+
 XCURSOR_USE=		xorg=xcursor
 XCURSOR_CONFIGURE_ON=	--with-xcursor=yes
 XCURSOR_CONFIGURE_OFF=	--with-xcursor=no
-XFT_USES=		pkgconfig xorg
-XFT_USE=		xorg=xft
+
 XFT_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 			libfontconfig.so:x11-fonts/fontconfig
+XFT_USES=		pkgconfig
+XFT_USE=		xorg=xft
 XFT_CONFIGURE_ON=	--with-xft=yes
 XFT_CONFIGURE_OFF=	--with-xft=no
 XFT_CPPFLAGS=		$$(pkg-config freetype2 --cflags)
 XFT_LDFLAGS=		$$(pkg-config freetype2 --libs)
 XFT_IMPLIES=		XRENDER
+
 XINPUT_DESC=		X Input extension library support
-XINPUT_USES=		xorg
 XINPUT_USE=		xorg=xi
 XINPUT_CONFIGURE_ON=	--with-xinput=yes
 XINPUT_CONFIGURE_OFF=	--with-xinput=no
-XRANDR_USES=		xorg
+
 XRANDR_USE=		xorg=xrandr
 XRANDR_CONFIGURE_ON=	--with-xrandr=yes
 XRANDR_CONFIGURE_OFF=	--with-xrandr=no
+
 XRENDER_DESC=		X Render extension library support
-XRENDER_USES=		xorg
 XRENDER_USE=		xorg=xrender
 XRENDER_CONFIGURE_ON=	--with-xrender=yes
 XRENDER_CONFIGURE_OFF=	--with-xrender=no
