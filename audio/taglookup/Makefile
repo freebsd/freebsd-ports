@@ -11,6 +11,9 @@ WWW=		https://www.kamaz.org.uk/taglookup
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete, depends on legacy service that is defunct once again
+EXPIRATION_DATE=2024-06-14
+
 LIB_DEPENDS=	libcddb.so:audio/libcddb \
 		libtag.so:audio/taglib
 
