@@ -1,3 +1,44 @@
+  <vuln vid="43d1c381-a3e5-4a1d-b3ed-f37b61a451af">
+    <topic>electron28 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron28</name>
+	<range><lt>28.3.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v28.3.2">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-4948.</li>
+	    <li>Security: backported fix for CVE-2024-3914.</li>
+	    <li>Security: backported fix for CVE-2024-4060.</li>
+	    <li>Security: backported fix for CVE-2024-4058.</li>
+	    <li>Security: backported fix for CVE-2024-4558.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-4948</cvename>
+      <url>https://github.com/advisories/GHSA-xvp9-87cv-m4fv</url>
+      <cvename>CVE-2024-3914</cvename>
+      <url>https://github.com/advisories/GHSA-jv87-hfr8-8j2r</url>
+      <cvename>CVE-2024-4060</cvename>
+      <url>https://github.com/advisories/GHSA-4qw6-vwc8-mh38</url>
+      <cvename>CVE-2024-4058</cvename>
+      <url>https://github.com/advisories/GHSA-23rw-79p3-xgcm</url>
+      <cvename>CVE-2024-4558</cvename>
+      <url>https://github.com/advisories/GHSA-r4j8-j63p-24j8</url>
+    </references>
+    <dates>
+      <discovery>2024-05-22</discovery>
+      <entry>2024-05-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f5fa174d-19de-11ef-83d8-4ccc6adda413">
     <topic>QtNetworkAuth -- predicatable seeding of PRNG in QAbstractOAuth</topic>
     <affects>
