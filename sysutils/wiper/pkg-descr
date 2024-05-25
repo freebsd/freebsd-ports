@@ -1,0 +1,10 @@
+Wiper is a handy command-line tool made with Rust. It's perfect for anyone
+looking to quickly spot which folders are eating up all the disk space.
+Easy to use, it gives you a clear visual breakdown of directory sizes, so you
+can clean things up without a hassle.
+
+Features:
+- Fast and Efficient: Quickly scans directories and subdirectories to provide
+  size metrics.
+- Cross-Platform: Works on Linux, Windows, and macOS.
+- User-Friendly Output: Displays results in an easily understandable format.
