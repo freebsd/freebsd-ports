@@ -1,6 +1,6 @@
 PORTNAME=	flawz
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.1
+DISTVERSION=	0.2.0
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -37,11 +37,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		base64-0.22.1 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
+		block2-0.5.1 \
 		bumpalo-3.16.0 \
 		bytes-1.6.0 \
 		cassowary-0.3.0 \
 		castaway-0.2.2 \
 		cc-1.0.98 \
+		cesu8-1.1.0 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		clap-2.34.0 \
@@ -52,16 +54,17 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		clap_lex-0.7.0 \
 		clap_mangen-0.2.20 \
 		colorchoice-1.0.1 \
+		combine-4.6.7 \
 		compact_str-0.7.1 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.6 \
-		crc32fast-1.4.0 \
+		crc32fast-1.4.2 \
 		crossterm-0.27.0 \
 		crossterm_winapi-0.9.1 \
 		darling-0.20.9 \
 		darling_core-0.20.9 \
 		darling_macro-0.20.9 \
-		derive-getters-0.3.0 \
+		derive-getters-0.4.0 \
 		derive_setters-0.1.6 \
 		either-1.12.0 \
 		encoding_rs-0.8.34 \
@@ -100,17 +103,18 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		humantime-2.1.0 \
 		hyper-1.3.1 \
 		hyper-tls-0.6.0 \
-		hyper-util-0.1.3 \
+		hyper-util-0.1.4 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
 		ident_case-1.0.1 \
 		idna-0.5.0 \
 		indexmap-2.2.6 \
-		indoc-2.0.5 \
 		ipnet-2.9.0 \
 		is_terminal_polyfill-1.70.0 \
 		itertools-0.12.1 \
 		itoa-1.0.11 \
+		jni-0.21.1 \
+		jni-sys-0.3.0 \
 		js-sys-0.3.69 \
 		lazy_static-1.4.0 \
 		libc-0.2.155 \
@@ -124,9 +128,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		miniz_oxide-0.7.3 \
 		mio-0.8.11 \
 		native-tls-0.2.11 \
+		ndk-context-0.1.1 \
 		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
 		nvd_cve-0.2.0 \
+		objc-sys-0.3.5 \
+		objc2-0.5.2 \
+		objc2-encode-4.0.3 \
+		objc2-foundation-0.2.2 \
 		object-0.32.2 \
 		once_cell-1.19.0 \
 		openssl-0.10.64 \
@@ -145,7 +154,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		proc-macro2-1.0.83 \
 		progress-0.2.0 \
 		quote-1.0.36 \
-		ratatui-0.26.2 \
+		ratatui-0.26.3 \
 		redox_syscall-0.5.1 \
 		regex-1.10.4 \
 		regex-automata-0.4.6 \
@@ -159,6 +168,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustls-pki-types-1.7.0 \
 		rustversion-1.0.17 \
 		ryu-1.0.18 \
+		same-file-1.0.6 \
 		schannel-0.1.23 \
 		scopeguard-1.2.0 \
 		security-framework-2.11.0 \
@@ -180,8 +190,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strsim-0.11.1 \
 		strum-0.26.2 \
 		strum_macros-0.26.2 \
-		syn-1.0.109 \
-		syn-2.0.65 \
+		syn-2.0.66 \
 		sync_wrapper-0.1.2 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
@@ -204,18 +213,20 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tracing-core-0.1.32 \
 		try-lock-0.2.5 \
 		tui-input-0.8.0 \
-		tui-popup-0.3.1 \
+		tui-popup-0.3.2 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
 		unicode-linebreak-0.1.5 \
 		unicode-normalization-0.1.23 \
 		unicode-segmentation-1.11.0 \
+		unicode-truncate-1.0.0 \
 		unicode-width-0.1.12 \
 		url-2.5.0 \
 		utf8parse-0.2.1 \
 		vcpkg-0.2.15 \
 		vec_map-0.8.2 \
 		version_check-0.9.4 \
+		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.92 \
@@ -225,27 +236,38 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-support-0.2.92 \
 		wasm-bindgen-shared-0.2.92 \
 		web-sys-0.3.69 \
+		webbrowser-1.0.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.8 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-core-0.52.0 \
+		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
+		windows-targets-0.42.2 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.5 \
+		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.5 \
+		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.5 \
+		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.5 \
 		windows_i686_gnullvm-0.52.5 \
+		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.5 \
+		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.5 \
+		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.5 \
+		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.5 \
 		winreg-0.52.0 \
