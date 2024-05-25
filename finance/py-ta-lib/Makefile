@@ -1,5 +1,5 @@
 PORTNAME=	ta-lib # provides Python namespace 'talib'
-DISTVERSION=	0.4.28
+DISTVERSION=	0.4.29
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +19,8 @@ RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python
 USE_PYTHON=	distutils cython autoplist pytest # pytest fails to find the library, see https://github.com/pytest-dev/pytest/issues/10885
+
+WRKSRC=		${WRKDIR}/ta_lib-${DISTVERSION}
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests
