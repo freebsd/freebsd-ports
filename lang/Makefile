@@ -3,6 +3,7 @@
     SUBDIR += abcl
     SUBDIR += alchemist.el
     SUBDIR += algol68g
+    SUBDIR += amber
     SUBDIR += angelscript
     SUBDIR += antimony
     SUBDIR += apache-commons-jelly
