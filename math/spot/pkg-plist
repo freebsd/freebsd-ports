@@ -139,6 +139,7 @@ include/spot/twaalgos/dtwasat.hh
 include/spot/twaalgos/dualize.hh
 include/spot/twaalgos/emptiness.hh
 include/spot/twaalgos/emptiness_stats.hh
+include/spot/twaalgos/forq_contains.hh
 include/spot/twaalgos/game.hh
 include/spot/twaalgos/genem.hh
 include/spot/twaalgos/gfguarantee.hh
