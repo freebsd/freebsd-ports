@@ -1,3 +1,32 @@
+  <vuln vid="04e78f32-04b2-4c23-bfae-72600842d317">
+    <topic>electron29 -- use after free in Dawn</topic>
+    <affects>
+      <package>
+	<name>electron29</name>
+	<range><lt>29.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v29.4.1">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-4948.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-4948</cvename>
+      <url>https://github.com/advisories/GHSA-xvp9-87cv-m4fv</url>
+    </references>
+    <dates>
+      <discovery>2024-05-22</discovery>
+      <entry>2024-05-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="43d1c381-a3e5-4a1d-b3ed-f37b61a451af">
     <topic>electron28 -- multiple vulnerabilities</topic>
     <affects>
