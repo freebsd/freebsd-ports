@@ -1,31 +1,32 @@
 PORTNAME=	unieject
-PORTVERSION=	6
-PORTREVISION=	8
+DISTVERSION=	6
+PORTREVISION=	9
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eject(1) replacement
-WWW=		http://flameeyes.is-a-geek.org/projects #unieject
+WWW=		https://github.com/Flameeyes/unieject
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware, upstream repo deprecated May 17, 2020
+EXPIRATION_DATE=2024-07-31
+
 LIB_DEPENDS=	libconfuse.so:devel/libconfuse \
-		libpcre.so:devel/pcre \
 		libcdio.so:sysutils/libcdio
 
-USES=		gettext gnome iconv libtool pathfix pkgconfig tar:bzip2
+USES=		gettext gnome iconv libtool localbase:ldflags \
+		pathfix pkgconfig tar:bzip2
 USE_GNOME=	glib20
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--disable-doc
 USE_LDCONFIG=	yes
-LLD_UNSAFE=	yes
+
+GNU_CONFIGURE=	yes
+
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--disable-doc
 
 post-patch:
 	@${REINPLACE_CMD} -e \
