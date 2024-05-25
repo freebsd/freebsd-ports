@@ -1,0 +1,23 @@
+Database migrations written in Go
+
+Drivers supported:
+ - PostgreSQL
+ - PGX v4 / v5
+ - Redshift
+ - Ql
+ - Cassandra / ScyllaDB
+ - SQLite
+ - SQLite3
+ - SQLCipher
+ - MySQL / MariaDB
+ - Neo4j
+ - MongoDB
+ - CrateDB
+ - Shell
+ - Google Cloud Spanner
+ - CockroachDB
+ - YugabyteDB
+ - ClickHouse
+ - Firebird
+ - MS SQL Server
+ - rqlite

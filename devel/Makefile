@@ -887,6 +887,7 @@
     SUBDIR += gogs
     SUBDIR += golangci-lint
     SUBDIR += golint
+    SUBDIR += gomigrate
     SUBDIR += google-cloud-cpp
     SUBDIR += google-perftools
     SUBDIR += google-styleguide
