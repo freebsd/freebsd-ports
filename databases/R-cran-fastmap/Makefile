@@ -1,5 +1,5 @@
 PORTNAME=	fastmap
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,6 +10,6 @@ WWW=		https://cran.r-project.org/web/packages/fastmap/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.note
 
-USES=		cran:auto-plist,compiles
+USES=		compiler:c++17-lang cran:auto-plist,compiles
 
 .include <bsd.port.mk>
