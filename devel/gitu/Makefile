@@ -1,7 +1,6 @@
 PORTNAME=	gitu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.2
-PORTREVISION=	1
+DISTVERSION=	0.20.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -41,7 +40,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		castaway-0.2.2 \
 		cc-1.0.95 \
 		cfg-if-1.0.0 \
-		chrono-0.4.37 \
+		chrono-0.4.38 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
@@ -71,7 +70,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		errno-0.3.8 \
 		error-code-3.2.0 \
 		etcetera-0.8.0 \
-		figment-0.10.16 \
+		figment-0.10.18 \
 		form_urlencoded-1.2.1 \
 		gethostname-0.4.3 \
 		git-version-0.3.9 \
@@ -126,7 +125,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		pretty_assertions-1.4.0 \
 		proc-macro2-1.0.79 \
 		quote-1.0.35 \
-		ratatui-0.26.1 \
+		ratatui-0.26.2 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.1.57 \
@@ -142,8 +141,8 @@ CARGO_CRATES=	ahash-0.8.11 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		semver-1.0.22 \
-		serde-1.0.197 \
-		serde_derive-1.0.197 \
+		serde-1.0.199 \
+		serde_derive-1.0.199 \
 		serde_json-1.0.115 \
 		serde_spanned-0.6.5 \
 		signal-hook-0.3.17 \
@@ -152,7 +151,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		similar-2.5.0 \
 		simple-logging-2.0.2 \
 		smallvec-1.13.2 \
-		stability-0.1.1 \
+		stability-0.2.0 \
 		static_assertions-1.1.0 \
 		strsim-0.11.0 \
 		strum-0.26.2 \
@@ -174,6 +173,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		tree-sitter-c-0.20.8 \
 		tree-sitter-c-sharp-0.20.0 \
 		tree-sitter-cpp-0.20.5 \
+		tree-sitter-elixir-0.1.1 \
 		tree-sitter-go-0.20.0 \
 		tree-sitter-haskell-0.15.0 \
 		tree-sitter-highlight-0.20.1 \
@@ -189,13 +189,13 @@ CARGO_CRATES=	ahash-0.8.11 \
 		tree-sitter-scala-0.20.3 \
 		tree-sitter-toml-0.20.0 \
 		tree-sitter-typescript-0.20.5 \
-		tui-prompts-0.3.10 \
+		tui-prompts-0.3.11 \
 		uncased-0.9.10 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.23 \
 		unicode-segmentation-1.11.0 \
-		unicode-width-0.1.11 \
+		unicode-width-0.1.12 \
 		url-2.5.0 \
 		utf8parse-0.2.1 \
 		vcpkg-0.2.15 \
