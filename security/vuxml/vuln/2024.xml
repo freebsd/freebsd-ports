@@ -1,3 +1,38 @@
+  <vuln vid="f5fa174d-19de-11ef-83d8-4ccc6adda413">
+    <topic>QtNetworkAuth -- predicatable seeding of PRNG in QAbstractOAuth</topic>
+    <affects>
+      <package>
+	<name>qt5-networkauth</name>
+	<range><lt>5.15.13_1</lt></range>
+      </package>
+      <package>
+	<name>qt6-networkauth</name>
+	<range><lt>6.7.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Andy Shaw reports:</p>
+	<blockquote cite="https://www.qt.io/blog/security-advisory-qstringconverter-0">
+	  <p>The OAuth1 implementation in QtNetworkAuth created nonces using
+	    a PRNG that was seeded with a predictable seed.</p>
+	  <p>This means that an attacker that can somehow control the time of
+	    the first OAuth1 flow of the process has a high chance of predicting
+	    the nonce used in said OAuth flow.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-36048</cvename>
+      <url>https://www.qt.io/blog/security-advisory-qstringconverter-0</url>
+      <url>https://codereview.qt-project.org/c/qt/qtnetworkauth/+/560317</url>
+    </references>
+    <dates>
+      <discovery>2024-05-08</discovery>
+      <entry>2024-05-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f848ef90-1848-11ef-9850-001b217b3468">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
