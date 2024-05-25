@@ -1,4 +1,13 @@
 bin/nvim
+lib/nvim/parser/bash.so
+lib/nvim/parser/c.so
+lib/nvim/parser/lua.so
+lib/nvim/parser/markdown.so
+lib/nvim/parser/markdown_inline.so
+lib/nvim/parser/python.so
+lib/nvim/parser/query.so
+lib/nvim/parser/vim.so
+lib/nvim/parser/vimdoc.so
 share/man/man1/nvim.1.gz
 share/applications/nvim.desktop
 share/icons/hicolor/128x128/apps/nvim.png
@@ -32,4 +41,3 @@ share/icons/hicolor/128x128/apps/nvim.png
 %%NLS%%share/locale/vi/LC_MESSAGES/nvim.mo
 %%NLS%%share/locale/zh_CN.UTF-8/LC_MESSAGES/nvim.mo
 %%NLS%%share/locale/zh_TW.UTF-8/LC_MESSAGES/nvim.mo
-@dir lib/nvim
