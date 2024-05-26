@@ -1,5 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	1.26.0
+DISTVERSION=	1.27.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,18 +30,23 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		blake3-1.5.1 \
 		block-buffer-0.10.4 \
 		bstr-0.2.17 \
-		camino-1.1.6 \
-		cc-1.0.97 \
+		camino-1.1.7 \
+		cc-1.0.98 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
 		clap-2.34.0 \
+		clap-4.5.4 \
+		clap_builder-4.5.2 \
+		clap_complete-4.5.2 \
+		clap_lex-0.7.0 \
+		clap_mangen-0.2.20 \
 		colorchoice-1.0.1 \
 		constant_time_eq-0.3.0 \
 		cpufeatures-0.2.12 \
 		cradle-0.2.2 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
-		crossbeam-utils-0.8.19 \
+		crossbeam-utils-0.8.20 \
 		crypto-common-0.1.6 \
 		ctrlc-3.4.4 \
 		derivative-2.2.0 \
@@ -51,7 +56,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		dirs-sys-0.4.1 \
 		dotenvy-0.15.7 \
 		edit-distance-2.1.0 \
-		either-1.11.0 \
+		either-1.12.0 \
 		env_filter-0.1.0 \
 		env_logger-0.11.3 \
 		errno-0.3.9 \
@@ -71,22 +76,27 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		itoa-1.0.11 \
 		lazy_static-1.4.0 \
 		lexiclean-0.0.1 \
-		libc-0.2.154 \
+		libc-0.2.155 \
 		libredox-0.1.3 \
-		linux-raw-sys-0.4.13 \
+		linux-raw-sys-0.4.14 \
 		log-0.4.21 \
 		memchr-2.7.2 \
 		memmap2-0.9.4 \
 		nix-0.28.0 \
 		num_cpus-1.16.0 \
 		option-ext-0.2.0 \
+		percent-encoding-2.3.1 \
+		ppv-lite86-0.2.17 \
 		pretty_assertions-1.4.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.82 \
+		proc-macro2-1.0.83 \
 		pulldown-cmark-0.9.6 \
 		pulldown-cmark-to-cmark-10.0.4 \
 		quote-1.0.36 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_users-0.4.5 \
@@ -94,31 +104,34 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.8.3 \
+		roff-0.2.1 \
 		rustix-0.38.34 \
-		rustversion-1.0.16 \
+		rustversion-1.0.17 \
 		ryu-1.0.18 \
 		semver-1.0.23 \
-		serde-1.0.201 \
-		serde_derive-1.0.201 \
+		serde-1.0.202 \
+		serde_derive-1.0.202 \
 		serde_json-1.0.117 \
 		sha2-0.10.8 \
+		shellexpand-3.1.0 \
 		similar-2.5.0 \
-		snafu-0.8.2 \
-		snafu-derive-0.8.2 \
+		snafu-0.8.3 \
+		snafu-derive-0.8.3 \
 		strsim-0.8.0 \
+		strsim-0.11.1 \
 		structopt-0.3.26 \
 		structopt-derive-0.4.18 \
 		strum-0.26.2 \
 		strum_macros-0.26.2 \
 		syn-1.0.109 \
-		syn-2.0.63 \
+		syn-2.0.66 \
 		target-2.0.1 \
 		tempfile-3.10.1 \
 		temptree-0.2.0 \
-		term_size-0.3.2 \
+		terminal_size-0.3.0 \
 		textwrap-0.11.0 \
-		thiserror-1.0.60 \
-		thiserror-impl-1.0.60 \
+		thiserror-1.0.61 \
+		thiserror-impl-1.0.61 \
 		typed-arena-2.0.2 \
 		typenum-1.17.0 \
 		unicase-2.7.0 \
