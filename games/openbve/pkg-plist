@@ -55,6 +55,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Compatibility/RoutePatches/Holland.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/HongKong.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/Hungary.xml
+%%DATADIR%%/Data/Compatibility/RoutePatches/Indonesia.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/Italy.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/Japan.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/Misc.xml
@@ -689,6 +690,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Menu/route_error.png
 %%DATADIR%%/Data/Menu/route_unknown.png
 %%DATADIR%%/Data/Menu/train_error.png
+%%DATADIR%%/Data/Menu/train_link.png
 %%DATADIR%%/Data/Menu/train_unknown.png
 %%DATADIR%%/Data/Menu/xbox.png
 %%DATADIR%%/Data/Menu/zuki.png
