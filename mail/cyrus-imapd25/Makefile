@@ -48,7 +48,7 @@ OPTIONS_DEFAULT=	BDB IDLED
 OPTIONS_SUB=		yes
 AUTOCREATE_DESC=	Enable autocreate support
 AUTOCREATE_CONFIGURE_ENABLE=	autocreate
-BDB_USES=		bdb
+BDB_USES=		bdb:18
 BDB_CONFIGURE_ON=	--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 			--with-bdb-libdir=${LOCALBASE}/lib
 CLAMAV_DESC=		Use ClamAV
