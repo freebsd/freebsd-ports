@@ -1,5 +1,5 @@
 PORTNAME=	peripheral.joystick
-DISTVERSION=	21.1.11
+DISTVERSION=	21.1.15
 DISTVERSIONSUFFIX=	-Omega
 CATEGORIES=	multimedia
 
