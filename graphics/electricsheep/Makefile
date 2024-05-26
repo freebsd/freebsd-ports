@@ -12,6 +12,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months and fails to compile bumping it to latest commit
+EXPIRATION_DATE=2024-06-14
 
 BUILD_DEPENDS=	flam3-animate:graphics/flam3
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
