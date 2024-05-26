@@ -1,7 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	jql-v
-DISTVERSION=	7.1.8
-PORTREVISION=	1
+DISTVERSION=	7.1.9
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +24,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.82 \
+		anyhow-1.0.86 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
 		bitflags-2.4.1 \
@@ -88,15 +87,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustix-0.38.28 \
 		ryu-1.0.16 \
 		same-file-1.0.6 \
-		serde-1.0.198 \
-		serde_derive-1.0.198 \
-		serde_json-1.0.116 \
+		serde-1.0.202 \
+		serde_derive-1.0.202 \
+		serde_json-1.0.117 \
 		serde_stacker-0.1.11 \
 		stacker-0.1.15 \
 		strsim-0.11.0 \
 		syn-2.0.48 \
-		thiserror-1.0.59 \
-		thiserror-impl-1.0.59 \
+		thiserror-1.0.61 \
+		thiserror-impl-1.0.61 \
 		tinytemplate-1.2.1 \
 		tokio-1.37.0 \
 		tokio-macros-2.2.0 \
@@ -131,7 +130,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		winnow-0.6.6 \
+		winnow-0.6.8 \
 		yansi-1.0.1
 PLIST_FILES=	bin/${PORTNAME}
 
