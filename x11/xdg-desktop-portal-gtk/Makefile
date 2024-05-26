@@ -14,7 +14,7 @@ BUILD_DEPENDS=	xdg-desktop-portal>0:deskutils/xdg-desktop-portal
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	xdg-desktop-portal>0:deskutils/xdg-desktop-portal
 
-USES=		desktop-file-utils gettext gmake gnome libtool meson pkgconfig
+USES=		desktop-file-utils gettext gmake gnome meson pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk30 gnomedesktop3
 
 USE_GITHUB=	yes

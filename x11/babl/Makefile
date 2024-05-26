@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2
 
-USES=		gnome libtool localbase meson pathfix pkgconfig tar:xz vala:build
+USES=		gnome localbase meson pathfix pkgconfig tar:xz vala:build
 
 USE_LDCONFIG=	yes
 USE_GNOME=	introspection:build

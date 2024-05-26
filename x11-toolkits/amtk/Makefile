@@ -13,7 +13,7 @@ LICENSE=	LGPL21
 
 BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
 
-USES=		gettext gmake gnome libtool meson pkgconfig tar:xz
+USES=		gettext gmake gnome meson pkgconfig tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection
 
 .include <bsd.port.mk>
