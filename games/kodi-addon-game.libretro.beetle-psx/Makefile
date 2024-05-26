@@ -1,7 +1,7 @@
 PORTNAME=	game.libretro.beetle-psx
 PORTVERSION=	0.9.44.43
 DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
