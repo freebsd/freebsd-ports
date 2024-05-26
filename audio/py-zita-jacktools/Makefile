@@ -1,5 +1,5 @@
 PORTNAME=	zita-jacktools
-DISTVERSION=	1.6.1
+DISTVERSION=	1.7.2
 CATEGORIES=	audio python
 MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
