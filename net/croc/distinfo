@@ -1,6 +1,6 @@
-TIMESTAMP = 1716660857
-SHA256 (schollz-croc-v10.0.3_GH0.tar.gz) = 123c483cfce163ede49c64e9f57cc83bcce7e43190b0bf2550fd346d980e3a6f
-SIZE (schollz-croc-v10.0.3_GH0.tar.gz) = 514224
+TIMESTAMP = 1716700717
+SHA256 (schollz-croc-v10.0.4_GH0.tar.gz) = ca373c086995f4f415fb2a79526577fbc1cc5eb260caf750180a7773f7cd373f
+SIZE (schollz-croc-v10.0.4_GH0.tar.gz) = 514219
 SHA256 (OneOfOne-xxhash-v1.2.8_GH0.tar.gz) = 93af6ad43643a0c61bd548e4e0f0cf37a389ddcd8651ac16f81f9c45207e1bd2
 SIZE (OneOfOne-xxhash-v1.2.8_GH0.tar.gz) = 15513
 SHA256 (cespare-xxhash-v1.1.0_GH0.tar.gz) = 9418be390574092f0ca989b9ae2f5450270ead8125a635a100850b28c8c9c495
