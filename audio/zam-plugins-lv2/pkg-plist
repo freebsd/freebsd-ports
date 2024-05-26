@@ -12,6 +12,7 @@ bin/ZamGate
 bin/ZamGateX2
 bin/ZamGrains
 bin/ZamHeadX2
+bin/ZamNoise
 bin/ZamPhono
 bin/ZamTube
 bin/ZamVerb
@@ -29,6 +30,7 @@ lib/clap/ZamGate.clap
 lib/clap/ZamGateX2.clap
 lib/clap/ZamGrains.clap
 lib/clap/ZamHeadX2.clap
+lib/clap/ZamNoise.clap
 lib/clap/ZamPhono.clap
 lib/clap/ZamTube.clap
 lib/clap/ZamVerb.clap
@@ -44,6 +46,7 @@ lib/ladspa/ZamGEQ31-ladspa.so
 lib/ladspa/ZamGate-ladspa.so
 lib/ladspa/ZamGateX2-ladspa.so
 lib/ladspa/ZamGrains-ladspa.so
+lib/ladspa/ZamNoise-ladspa.so
 lib/ladspa/ZamTube-ladspa.so
 lib/lv2/ZaMaximX2.lv2/ZaMaximX2_dsp.so
 lib/lv2/ZaMaximX2.lv2/ZaMaximX2_dsp.ttl
@@ -128,6 +131,12 @@ lib/lv2/ZamHeadX2.lv2/ZamHeadX2_ui.so
 lib/lv2/ZamHeadX2.lv2/ZamHeadX2_ui.ttl
 lib/lv2/ZamHeadX2.lv2/manifest.ttl
 lib/lv2/ZamHeadX2.lv2/presets.ttl
+lib/lv2/ZamNoise.lv2/ZamNoise_dsp.so
+lib/lv2/ZamNoise.lv2/ZamNoise_dsp.ttl
+lib/lv2/ZamNoise.lv2/ZamNoise_ui.so
+lib/lv2/ZamNoise.lv2/ZamNoise_ui.ttl
+lib/lv2/ZamNoise.lv2/manifest.ttl
+lib/lv2/ZamNoise.lv2/presets.ttl
 lib/lv2/ZamPhono.lv2/ZamPhono_dsp.so
 lib/lv2/ZamPhono.lv2/ZamPhono_dsp.ttl
 lib/lv2/ZamPhono.lv2/ZamPhono_ui.so
@@ -160,6 +169,7 @@ lib/vst/ZamGate-vst.so
 lib/vst/ZamGateX2-vst.so
 lib/vst/ZamGrains-vst.so
 lib/vst/ZamHeadX2-vst.so
+lib/vst/ZamNoise-vst.so
 lib/vst/ZamPhono-vst.so
 lib/vst/ZamTube-vst.so
 lib/vst/ZamVerb-vst.so
