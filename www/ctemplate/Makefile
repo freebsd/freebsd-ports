@@ -9,6 +9,9 @@ WWW=		https://ctemplate.sourceforge.net/
 
 LICENSE=	NONE
 
+DEPRECATED=	Abandonware and obsolete, last release in 2008 and never gained any traction
+EXPIRATION_DATE=2024-06-14
+
 USES=		gmake
 GNU_CONFIGURE=	yes
 
