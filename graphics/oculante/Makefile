@@ -8,6 +8,8 @@ WWW=		https://github.com/woelper/oculante
 
 LICENSE=	MIT
 
+BROKEN_i386=	compilation failure, see https://github.com/etemesi254/zune-image/issues/205
+
 BUILD_DEPENDS=	convert:graphics/ImageMagick7
 
 USES=		cargo python:build
