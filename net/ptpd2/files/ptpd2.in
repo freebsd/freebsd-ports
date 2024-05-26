@@ -8,15 +8,21 @@
 #
 # ptpd2_enable (bool):	Set to "NO" by default
 #			Set it to "YES" to enable ptpd
+# ptp2_configfile (str): Set to "/usr/local/etc/ptpd2/ptpd2.conf" by default
 
 . /etc/rc.subr
 
-name="ptpd2"
+name=ptpd2
 rcvar=ptpd2_enable
 
-command="%%PREFIX%%/sbin/${name}"
+load_rc_config "${name}"
 
-ptpd2_enable=${ptpd2_enable:-"NO"}
+: ${ptpd2_enable:=NO}
+: ${ptpd2_configfile:=/usr/local/etc/ptpd2/ptpd2.conf}
 
-load_rc_config $name
+required_files="${ptpd2_configfile}"
+
+command="/usr/local/sbin/${name}"
+command_args="-c ${ptpd2_configfile}"
+
 run_rc_command "$1"
