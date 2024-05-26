@@ -1,6 +1,7 @@
 PORTNAME=	inputstream.adaptive
 DISTVERSION=	21.4.8
 DISTVERSIONSUFFIX=	-Omega
+PORTREVISION=	1
 CATEGORIES=	multimedia
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -13,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	googletest>0:devel/googletest \
 		rapidjson>0:devel/rapidjson
-LIB_DEPENDS=	libexpat.so:textproc/expat2
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libpugixml.so:textproc/pugixml
 
 USES=		cmake compiler:c++14-lang kodi
 USE_GITHUB=	yes
