@@ -14,6 +14,9 @@ LICENSE_NAME=	Eduard Bloch license
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Outdated and unsupported version, current version was released in 2020 and upstream is still active
+EXPIRATION_DATE=2024-06-14
+
 USES=		compiler:c++11-lang cmake cpe tar:xz
 CPE_VENDOR=	${PORTNAME}_project
 
