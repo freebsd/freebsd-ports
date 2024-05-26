@@ -10,6 +10,7 @@ WWW=		https://fishfolk.org/games/punchy/
 
 LICENSE=	CC-BY-NC-4.0 MIT
 LICENSE_COMB=	multi
+LICENSE_DISTFILES_CC-BY-NC-4.0=	${DISTNAME}${EXTRACT_SUFX}
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libudev.so:devel/libudev-devd
