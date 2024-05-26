@@ -3254,3 +3254,4 @@ irc/sic||2024-05-15|Has expired: Last upstream release was in 2001 and no upstre
 devel/tarpaulin|devel/cargo-tarpaulin|2024-05-19|Rename port and package to reflect that this is a Cargo plugin
 sysutils/uutils-coreutils|sysutils/rust-coreutils|2024-05-21|Remove duplicate
 databases/foundationdb|databases/foundationdb71-server|2024-05-23|Reintegrated into databases/foundationdb71-server
+devel/py-dj42-graphene-django|devel/py-graphene-django300|2024-05-26|Renamed to py-graphene-django300 for backwards compatibility with net-mgmt/netbox
