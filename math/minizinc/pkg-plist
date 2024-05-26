@@ -71,6 +71,8 @@ include/minizinc/solvers/MIP/MIP_solverinstance.hpp
 include/minizinc/solvers/MIP/MIP_wrap.hh
 include/minizinc/solvers/MIP/MIP_xpress_solverfactory.hh
 include/minizinc/solvers/MIP/MIP_xpress_wrap.hh
+include/minizinc/solvers/atlantis_solverfactory.hh
+include/minizinc/solvers/atlantis_solverinstance.hh
 include/minizinc/solvers/chuffed_solverfactory.hh
 include/minizinc/solvers/chuffed_solverinstance.hh
 include/minizinc/solvers/fzn_solverfactory.hh
