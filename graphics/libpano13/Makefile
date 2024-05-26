@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		cmake:testing cpe jpeg libtool pathfix perl5 pkgconfig
+USES=		cmake:testing cpe jpeg pathfix perl5 pkgconfig
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 USE_PERL5=	build	# for pod2man

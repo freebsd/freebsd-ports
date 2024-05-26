@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/container/small_vector.hpp:devel/boost
 		gsed:textproc/gsed
 RUN_DEPENDS=	poppler-data>0:graphics/poppler-data
 
-USES=		cmake:insource compiler:c++17-lang cpe gnome gperf jpeg libtool \
+USES=		cmake:insource compiler:c++17-lang cpe gnome gperf jpeg \
 		localbase pathfix pkgconfig tar:xz
 CPE_VENDOR=	freedesktop
 USE_GNOME=	cairo libxml2

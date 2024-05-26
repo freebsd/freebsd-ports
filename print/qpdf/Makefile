@@ -12,7 +12,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART20=	${WRKSRC}/Artistic-2.0
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.txt
 
-USES=		compiler:c++11-lang cmake cpe jpeg libtool localbase
+USES=		compiler:c++11-lang cmake cpe jpeg localbase
 USE_LDCONFIG=	yes
 CPE_VENDOR=	qpdf_project
 

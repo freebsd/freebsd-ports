@@ -15,7 +15,7 @@ LIB_DEPENDS=	libboost_chrono.so:devel/boost-libs \
 		libboost_random.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs
 
-USES=		cmake compiler:c++17-lang iconv:wchar_t libtool localbase:ldflags pathfix pkgconfig python:test shebangfix ssl
+USES=		cmake compiler:c++17-lang iconv:wchar_t localbase:ldflags pathfix pkgconfig python:test shebangfix ssl
 SHEBANG_FILES=	test/socks.py test/web_server.py
 USE_LDCONFIG=	yes
 

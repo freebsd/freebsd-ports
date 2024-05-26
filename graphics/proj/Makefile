@@ -16,7 +16,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtiff.so:graphics/tiff
 #RUN_DEPENDS=	proj-data>=0:graphics/proj-data
 
-USES=		compiler:c++11-lang cmake cpe libtool pathfix pkgconfig sqlite
+USES=		compiler:c++11-lang cmake cpe pathfix pkgconfig sqlite
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_TESTING

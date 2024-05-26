@@ -41,7 +41,7 @@ LIB_DEPENDS=
 gtk_LIB_DEPENDS=	libayatana-appindicator3.so:devel/libayatana-appindicator \
 			libharfbuzz.so:print/harfbuzz
 
-USES=		cmake cpe iconv libtool localbase pkgconfig ssl tar:xz
+USES=		cmake cpe iconv localbase pkgconfig ssl tar:xz
 
 CPE_VENDOR=	transmissionbt
 CPE_PRODUCT=	transmission

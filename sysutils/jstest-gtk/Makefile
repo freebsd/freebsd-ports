@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/joystick.h:devel/evdev-proto
 
-USES=		cmake compiler:c++11-lang gnome libtool localbase:ldflags \
+USES=		cmake compiler:c++11-lang gnome localbase:ldflags \
 		pkgconfig xorg
 USE_GNOME=	gtkmm30 libsigc++20
 USE_XORG=	x11

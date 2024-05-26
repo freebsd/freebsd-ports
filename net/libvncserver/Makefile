@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpng.so:graphics/png \
 		liblzo2.so:archivers/lzo2
 
-USES=		cmake cpe jpeg libtool pathfix pkgconfig
+USES=		cmake cpe jpeg pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	libvncserver_project

@@ -30,7 +30,7 @@ GH_SUBDIR=	third_party/cmp:cmp
 
 CPE_VENDOR=	toktok
 
-USES=		cmake cpe libtool pathfix pkgconfig
+USES=		cmake cpe pathfix pkgconfig
 USE_LDCONFIG=	yes
 PLIST_SUB=	VER=${PORTVERSION:C/0.//}.0 SO=2
 
