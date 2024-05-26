@@ -1,5 +1,5 @@
 PORTNAME=	uv
-DISTVERSION=	0.1.45
+DISTVERSION=	0.2.4
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -270,6 +270,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		paste-1.0.15 \
 		path-absolutize-3.1.1 \
 		path-dedot-3.1.1 \
+		path-slash-0.2.1 \
 		pathdiff-0.2.1 \
 		percent-encoding-2.3.1 \
 		pest-2.7.10 \
@@ -396,6 +397,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tap-1.0.1 \
 		target-lexicon-0.12.14 \
 		temp-dir-0.1.13 \
+		temp-env-0.3.6 \
 		tempfile-3.10.1 \
 		terminal_size-0.3.0 \
 		termtree-0.4.1 \
@@ -433,7 +435,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
 		tracing-durations-export-0.2.0 \
-		tracing-indicatif-0.3.6 \
 		tracing-log-0.2.0 \
 		tracing-serde-0.1.3 \
 		tracing-subscriber-0.3.18 \
@@ -465,9 +466,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		valuable-0.1.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
-		vt100-0.15.2 \
-		vte-0.11.1 \
-		vte_generate_state_changes-0.1.1 \
 		wait-timeout-0.2.0 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
