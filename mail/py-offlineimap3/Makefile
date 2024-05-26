@@ -1,7 +1,6 @@
 PORTNAME=	offlineimap3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.0.0-18
-PORTREVISION=	1
+DISTVERSION=	8.0.0-37
 DISTVERSIONSUFFIX=	-g${GH_TAGNAME}
 CATEGORIES=	mail python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,11 +16,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 # https://github.com/OfflineIMAP/offlineimap3/issues/110
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distro>=0:sysutils/py-distro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}imaplib2>=3.5:mail/py-imaplib2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}keyring>0:security/py-keyring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rfc6555>=0:mail/py-rfc6555@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=2020.6.20:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distro>=0:sysutils/py-distro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}imaplib2>=3.5:mail/py-imaplib2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}keyring>0:security/py-keyring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rfc6555>=0:mail/py-rfc6555@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.25.9:net/py-urllib3@${PY_FLAVOR}
@@ -32,7 +33,7 @@ USES=		python
 # https://github.com/OfflineIMAP/offlineimap3/issues/111
 USE_GITHUB=	yes
 GH_ACCOUNT=	OfflineIMAP
-GH_TAGNAME=	253f97a3e947
+GH_TAGNAME=	d29a4dc459401f8a78e347cb0f8ae7670add0975
 
 USE_PYTHON=	autoplist concurrent distutils pytest
 
