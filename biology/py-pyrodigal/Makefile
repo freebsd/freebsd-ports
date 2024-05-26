@@ -1,12 +1,12 @@
 PORTNAME=	pyrodigal
-DISTVERSION=	3.4.0
+DISTVERSION=	3.4.1
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python binding for Prodigal, an ORF finder for genomes and metagenomes
-WWW=		https://github.com/althonos/pyrodigal
+WWW=		https://github.com/althonos/pyrodigal/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
