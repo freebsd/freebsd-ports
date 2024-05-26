@@ -1,11 +1,10 @@
 PORTNAME=	jellyfin
-DISTVERSION=	10.8.13
-PORTREVISION=	1
+DISTVERSION=	10.9.2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/Thefrank/jellyfin-server-freebsd/releases/download/v${DISTVERSION}/
-DISTFILES=	jellyfin-combined_${DISTVERSION}_freebsd-${ARCH}.tar.gz \
+DISTFILES=	jellyfin-combined_${DISTVERSION}_freebsd.${OSVER}-${ARCH}.tar.gz \
 		libSkiaSharp.so
-EXTRACT_ONLY=	jellyfin-combined_${DISTVERSION}_freebsd-${ARCH}.tar.gz
+EXTRACT_ONLY=	jellyfin-combined_${DISTVERSION}_freebsd.${OSVER}-${ARCH}.tar.gz
 
 MAINTAINER=	michiel@vanbaak.eu
 COMMENT=	Jellyfin Server Component with WebUI
@@ -42,6 +41,13 @@ USERS=		jellyfin
 GROUPS=		jellyfin
 
 .include <bsd.port.options.mk>
+
+# use the freebsd 14 build on current
+.if ${OSVERSION} < 1400000
+OSVER=	13
+.else
+OSVER=	14
+.endif
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}/${LOCALBASE}/jellyfin "! ( -type f -name *\.so -or -type f -name "jellyfin" )"
