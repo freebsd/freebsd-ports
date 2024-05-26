@@ -318,7 +318,7 @@ qt-quick3d_PORT=	x11-toolkits/${_QT_RELNAME}-quick3d
 qt-quick3d_LIB=		libQt${_QT_LIBVER}Quick3D.so
 
 qt-quick3dphysics_PORT=	science/${_QT_RELNAME}-quick3dphysics
-qt_quick3dphysics_LIB=	libQt${_QT_LIBVER}Quick3DPhysics.so
+qt-quick3dphysics_LIB=	libQt${_QT_LIBVER}Quick3DPhysics.so
 
 qt-quickcontrols_PORT=	x11-toolkits/${_QT_RELNAME}-quickcontrols
 qt-quickcontrols_PATH=	${LOCALBASE}/${QT_QMLDIR_REL}/QtQuick/Controls/qmldir
