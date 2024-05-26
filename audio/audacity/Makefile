@@ -32,7 +32,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libwavpack.so:audio/wavpack
 
 USES=		cmake compiler:c++20-lang cpe desktop-file-utils gettext \
-		gnome libtool python:build pkgconfig shared-mime-info
+		gnome python:build pkgconfig shared-mime-info
 CPE_VENDOR=	audacityteam
 
 USE_GITHUB=	yes
