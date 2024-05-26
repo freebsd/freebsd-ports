@@ -225,10 +225,12 @@ can_mount()
     if ! load_kld $kld; then
         return 1
     fi
-    if [ $(${SYSCTL_N} security.jail.jailed) -eq 0 ] ||
-        [ $(${SYSCTL_N} security.jail.mount_allowed) -eq 1 ] ||
-        [ $(${SYSCTL_N} security.jail.mount_${kld}_allowed) -eq 1 ]; then
-            return 0
+    if [ $(${SYSCTL_N} security.jail.jailed) -eq 0 ]; then
+        return 0
+    fi
+    if [ $(${SYSCTL_N} security.jail.mount_allowed) -eq 1 ] &&
+       [ $(${SYSCTL_N} security.jail.mount_${kld}_allowed) -eq 1 ]; then
+        return 0
     fi
     return 1
 }
