@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.5.21
+DISTVERSION=	2024.5.22
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -80,7 +80,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ctor-0.2.8 \
 		curve25519-dalek-4.1.2 \
 		curve25519-dalek-derive-0.1.1 \
-		demand-1.2.2 \
+		demand-1.2.3 \
 		der-0.7.9 \
 		deranged-0.3.11 \
 		derive_arbitrary-1.3.2 \
@@ -174,10 +174,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		libc-0.2.155 \
 		libgit2-sys-0.16.2+1.7.2 \
 		libssh2-sys-0.3.0 \
-		libz-sys-1.1.16 \
+		libz-sys-1.1.18 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
-		lockfree-object-pool-0.1.6 \
 		log-0.4.21 \
 		matchers-0.1.0 \
 		memchr-2.7.2 \
@@ -196,6 +195,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		num-conv-0.1.0 \
 		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
+		num_enum-0.7.2 \
+		num_enum_derive-0.7.2 \
 		num_threads-0.1.7 \
 		number_prefix-0.4.0 \
 		object-0.32.2 \
@@ -229,6 +230,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
 		pretty_assertions-1.4.0 \
+		proc-macro-crate-3.1.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.83 \
@@ -280,7 +282,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		signal-hook-0.3.17 \
 		signal-hook-registry-1.4.2 \
 		signature-2.2.0 \
-		simd-adler32-0.3.7 \
 		similar-2.5.0 \
 		simplelog-0.12.2 \
 		slab-0.4.9 \
@@ -292,7 +293,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strum_macros-0.26.2 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.65 \
+		syn-2.0.66 \
 		sync_wrapper-0.1.2 \
 		sys-info-0.9.1 \
 		system-configuration-0.5.1 \
@@ -324,6 +325,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-util-0.7.11 \
 		toml-0.8.13 \
 		toml_datetime-0.6.6 \
+		toml_edit-0.21.1 \
 		toml_edit-0.22.13 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
@@ -397,18 +399,18 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.5 \
+		winnow-0.5.40 \
 		winnow-0.6.8 \
 		winreg-0.50.0 \
 		winsafe-0.0.19 \
 		wmi-0.13.3 \
 		xattr-1.3.1 \
 		xx-0.5.1 \
-		xx-1.1.1 \
+		xx-1.1.4 \
 		yansi-0.5.1 \
 		zeroize-1.7.0 \
-		zip-1.3.1 \
-		zipsign-api-0.1.1 \
-		zopfli-0.8.1
+		zip-1.1.4 \
+		zipsign-api-0.1.1
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
