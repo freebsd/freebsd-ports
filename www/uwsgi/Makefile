@@ -3,7 +3,7 @@ PORTVERSION=	2.0.21
 CATEGORIES=	www python
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Developer-friendly WSGI server which uses uwsgi protocol
 WWW=		https://projects.unbit.it/uwsgi/
 
