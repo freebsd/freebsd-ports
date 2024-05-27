@@ -11,6 +11,9 @@ WWW=		https://github.com/rq/django-rq
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Obsolete, please use devel/py-django-rq instead
+EXPIRATION_DATE=2024-06-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=3.2:www/py-django42@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}redis>=3:databases/py-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rq>=1.14:devel/py-rq@${PY_FLAVOR}

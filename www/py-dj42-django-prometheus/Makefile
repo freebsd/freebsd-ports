@@ -10,6 +10,9 @@ WWW=		https://github.com/korfuri/django-prometheus
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Obsolete, please use www/py-django-prometheus instead
+EXPIRATION_DATE=2024-06-15
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=3.2:www/py-django42@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prometheus-client>=0.7:net-mgmt/py-prometheus-client@${PY_FLAVOR}

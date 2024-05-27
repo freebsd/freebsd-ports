@@ -12,6 +12,9 @@ WWW=		https://github.com/ivelum/djangoql
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete, please use www/py-djangoql instead
+EXPIRATION_DATE=2024-06-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>0:www/py-django42@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ply>=3.8:devel/py-ply@${PY_FLAVOR}
 

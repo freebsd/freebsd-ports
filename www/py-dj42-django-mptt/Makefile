@@ -11,6 +11,9 @@ WWW=		https://github.com/django-mptt/django-mptt
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete, please use www/py-django-mptt instead
+EXPIRATION_DATE=2024-06-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=2.2:www/py-django42@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}dj42-django-js-asset>0:www/py-dj42-django-js-asset@${PY_FLAVOR}
 

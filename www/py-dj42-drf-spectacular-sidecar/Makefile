@@ -12,6 +12,9 @@ WWW=		https://github.com/tfranzel/drf-spectacular
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete, please use www/py-drf-spectacular-sidecar instead
+EXPIRATION_DATE=2024-06-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=2.2:www/py-django42@${PY_FLAVOR}
 
 USES=		python

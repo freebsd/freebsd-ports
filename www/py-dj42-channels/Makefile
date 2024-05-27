@@ -12,6 +12,9 @@ WWW=		https://channels.readthedocs.io/en/latest/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete, please use www/py-channels instead
+EXPIRATION_DATE=2024-06-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgiref>=3.5.0<4:www/py-asgiref@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django42>=3.2:www/py-django42@${PY_FLAVOR}
 

@@ -11,6 +11,9 @@ WWW=		https://github.com/jazzband/django-taggit
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete, please use www/py-django-taggit instead
+EXPIRATION_DATE=2024-06-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=4.1:www/py-django42@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dj42-djangorestframework>0:www/py-dj42-djangorestframework@${PY_FLAVOR}
 

@@ -12,6 +12,9 @@ WWW=		https://github.com/mfogel/django-timezone-field
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Obsolete, please use www/py-django-timezone-field instead
+EXPIRATION_DATE=2024-06-15
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=3.2:www/py-django42@${PY_FLAVOR}
 

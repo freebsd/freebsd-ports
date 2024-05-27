@@ -11,6 +11,9 @@ WWW=		https://github.com/django-crispy-forms/django-crispy-forms
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Obsolete, please use www/py-django-crispy-forms instead
+EXPIRATION_DATE=2024-06-15
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=0:www/py-django42@${PY_FLAVOR}

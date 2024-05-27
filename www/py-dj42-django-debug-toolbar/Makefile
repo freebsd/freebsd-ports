@@ -12,6 +12,9 @@ WWW=		https://github.com/jazzband/django-debug-toolbar
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete, please use www/py-django-debug-toolbar instead
+EXPIRATION_DATE=2024-06-15
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=3.2.4:www/py-django42@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.2.0:databases/py-sqlparse@${PY_FLAVOR}
