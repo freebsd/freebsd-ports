@@ -2,12 +2,12 @@ PORTNAME=	abiword
 PORTVERSION=	3.0.5
 PORTREVISION=	9
 CATEGORIES=	editors
-MASTER_SITES=	http://www.abisource.com/downloads/abiword/${PORTVERSION}/source/
+MASTER_SITES=	https://dev.alpinelinux.org/archive/${PORTNAME}/
 DIST_SUBDIR=	AbiWord
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Open-source, cross-platform WYSIWYG word processor
-WWW=		https://www.abisource.com/
+WWW=		https://gitlab.gnome.org/World/AbiWord
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
