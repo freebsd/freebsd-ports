@@ -1,7 +1,7 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.7.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -81,7 +81,7 @@ S3_DESC=	Amazon S3 backend support
 SENTRY_DESC=	Sentry monitoring support
 
 GIT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dulwich>0:devel/py-dulwich@${PY_FLAVOR}
-LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dj42-django-auth-ldap>0:www/py-dj42-django-auth-ldap
+LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-auth-ldap>0:www/py-django-auth-ldap
 S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR}
 SENTRY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sentry-sdk>0:devel/py-sentry-sdk@${PY_FLAVOR}
 
