@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 
 GNU_CONFIGURE=	yes
-USES=		bison gmake shebangfix tar:bzip2 pgsql
+USES=		bison gmake shebangfix tar:bzip2 pgsql:12-15
 WANT_PGSQL=	server
 USE_RC_SUBR=	slon
 SHEBANG_FILES=	tools/altperl/slonik_restart_node.pl
