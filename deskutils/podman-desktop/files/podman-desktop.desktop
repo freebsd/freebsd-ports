@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Podman Desktop
+Comment=Graphical tool for developing on containers and Kubernetes
+Icon=podman-desktop
+Exec=podman-desktop %u
+Categories=Development;
