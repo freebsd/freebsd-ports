@@ -11,6 +11,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	fails to compile: error: static_assert failed due to requirement 'sizeof(hipsycl::glue::unique_id) == 2 * sizeof(void *)'
+BROKEN_FreeBSD_13_armv7=	configure fails: Cannot run simple program using std::filesystem
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 
