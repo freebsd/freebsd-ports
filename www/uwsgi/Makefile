@@ -1,9 +1,9 @@
 PORTNAME=	uwsgi
-PORTVERSION=	2.0.21
+PORTVERSION=	2.0.25.1
 CATEGORIES=	www python
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Developer-friendly WSGI server which uses uwsgi protocol
 WWW=		https://projects.unbit.it/uwsgi/
 
