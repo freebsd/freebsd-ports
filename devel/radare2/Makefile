@@ -1,5 +1,5 @@
 PORTNAME=	radare2
-DISTVERSION=	5.9.0
+DISTVERSION=	5.9.2
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -25,7 +25,6 @@ GH_SUBDIR=	libr/arch/p/arm/v35/arch-arm64:arm64 \
 GH_TAGNAME=	55d73c6:arm64 f270a6c:armv7
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-syscapstone
 
 MAKE_ENV+=	HOST_CC=${CC}
