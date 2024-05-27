@@ -540,7 +540,7 @@ PROGS=		uv \
 
 PLIST_FILES=	${PROGS:S/^/bin\//}
 
-PORTSCOUT=	ignore:perma-31 # portscout picked up this non-existent tag
+PORTSCOUT=	limit:^[0-9].*$$ # portscout picked up this non-existent tag
 
 do-install:
 	# workaround for error: found a virtual manifest at `xx` instead of a package manifest
