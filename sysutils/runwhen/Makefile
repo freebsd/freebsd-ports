@@ -1,6 +1,6 @@
 PORTNAME=	runwhen
 DISTVERSION=	2021.04.30
-PORTREVISION=   2
+PORTREVISION=   3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://code.dogmap.org/runwhen/releases/
 
@@ -11,7 +11,7 @@ WWW=		http://code.dogmap.org/runwhen/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/package/LICENSE
 
-BUILD_DEPENDS=  skalibs>=2.13.1.1:devel/skalibs
+BUILD_DEPENDS=  skalibs>=2.14.1.1:devel/skalibs
 LIB_DEPENDS=	libskarnet.so:devel/skalibs
 
 USES=		localbase tar:bzip2
