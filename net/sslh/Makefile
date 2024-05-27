@@ -1,7 +1,6 @@
 PORTNAME=	sslh
-PORTVERSION=	1.22c
+PORTVERSION=	2.1.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -12,12 +11,15 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
-		libpcre2-8.so:devel/pcre2
+		libpcre2-8.so:devel/pcre2 \
+		libev.so:devel/libev
 
 USES=		gmake
 USE_RC_SUBR=	sslh
 USE_GITHUB=	yes
 GH_ACCOUNT=	yrutschle
+
+GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	EXAMPLES LIBWRAP
 OPTIONS_DEFAULT=LIBWRAP
@@ -29,6 +31,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	sbin/sslh-fork \
 		sbin/sslh-select \
+		sbin/sslh-ev \
 		"@sample etc/sslh.conf.sample" \
 		share/man/man8/sslh.8.gz
 
@@ -42,6 +45,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sslh-fork ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/sslh-select ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/sslh-ev ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/basic.cfg \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/sslh.8.gz ${STAGEDIR}${PREFIX}/share/man/man8
