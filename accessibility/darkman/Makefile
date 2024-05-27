@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.1
 CATEGORIES=	accessibility wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for dark-mode and light-mode transitions
 WWW=		https://gitlab.com/WhyNotHugo/darkman
 
