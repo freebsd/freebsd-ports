@@ -1,5 +1,5 @@
 PORTNAME=	Pyomo
-DISTVERSION=	6.7.1
+DISTVERSION=	6.7.2
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,14 +10,15 @@ WWW=		https://github.com/Pyomo/pyomo
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
+		glpsol:math/glpk
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-parallel>0:devel/py-pytest-parallel@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils cython concurrent autoplist pytest # 1 test fails but it is known to be broken by the upstream, see https://github.com/Pyomo/pyomo/issues/2547
+USE_PYTHON=	distutils cython concurrent autoplist pytest # tests fail to run, see https://github.com/Pyomo/pyomo/issues/3274
 
 USE_GITHUB=	yes
 GH_PROJECT=	pyomo
