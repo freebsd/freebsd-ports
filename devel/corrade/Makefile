@@ -12,6 +12,9 @@ WWW=		https://magnum.graphics/corrade/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_13_armv7=	compilation fails: error: use of undeclared identifier 'vshrn_high_n_u16'
+BROKEN_FreeBSD_14_armv7=	compilation fails: error: use of undeclared identifier 'vshrn_high_n_u16'
+
 USES=		cmake:testing compiler:c++14-lang
 USE_LDCONFIG=	yes
 
