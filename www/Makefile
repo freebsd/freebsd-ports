@@ -175,6 +175,7 @@
     SUBDIR += faup
     SUBDIR += fcgi
     SUBDIR += fcgiwrap
+    SUBDIR += feroxbuster
     SUBDIR += ffproxy
     SUBDIR += ffsend
     SUBDIR += fgallery
