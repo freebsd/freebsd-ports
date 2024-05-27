@@ -41,7 +41,8 @@ OPTIONS_DEFAULT=DRM OPENGL VULKAN X11
 OPTIONS_SUB=	yes
 
 DRM_DESC=		KMS console support
-DRM_BUILD_DEPENDS=	hwdata>0:misc/hwdata
+DRM_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+			hwdata>0:misc/hwdata
 DRM_LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 			libliftoff.so:graphics/libliftoff \
 			libdisplay-info.so:sysutils/libdisplay-info \
