@@ -1,0 +1,4 @@
+Shed Skin is a transpiler, that can translate pure, but implicitly statically
+typed Python 3 programs into optimized C++. It can generate stand-alone
+programs or extension modules that can be imported and used in larger Python
+programs.
