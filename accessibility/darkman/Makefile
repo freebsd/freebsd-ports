@@ -4,7 +4,7 @@ DISTVERSION=	1.5.4
 PORTREVISION=	11
 CATEGORIES=	accessibility wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for dark-mode and light-mode transitions
 WWW=		https://gitlab.com/WhyNotHugo/darkman
 
