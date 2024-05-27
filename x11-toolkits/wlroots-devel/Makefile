@@ -1,7 +1,7 @@
 PORTNAME=	wlroots
 DISTVERSION=	0.17.0-312
 DISTVERSIONSUFFIX=	-gb1b34cd665
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	-devel
 
@@ -9,6 +9,7 @@ PATCH_SITES+=	https://github.com/hyprwm/wlroots-hyprland/raw/5c1d51c5a279/patche
 PATCHFILES+=	surface-nondivisible-by-scale.patch:-p1:hyprland
 PATCHFILES+=	nvidia-hardware-cursors.patch:-p1:hyprland
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
+PATCHFILES+=	cc6a7a04418f.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4697
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library (development snapshot)

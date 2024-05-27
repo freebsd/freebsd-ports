@@ -5,3 +5,5 @@ SHA256 (surface-nondivisible-by-scale.patch) = e9b9f9a537090627ea4fac0b5a101d8ff
 SIZE (surface-nondivisible-by-scale.patch) = 1778
 SHA256 (nvidia-hardware-cursors.patch) = ed4720310d61068b24ebd4a30767556cb7590acfd5c66c95d7408a0c95539dbc
 SIZE (nvidia-hardware-cursors.patch) = 12545
+SHA256 (cc6a7a04418f.patch) = eb2bf98b372b668f773dbb1e3108bff16fefcc51be148775e6517ea4c9d35d83
+SIZE (cc6a7a04418f.patch) = 1291

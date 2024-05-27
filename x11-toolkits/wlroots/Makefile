@@ -1,8 +1,10 @@
 PORTNAME=	wlroots
 DISTVERSION=	0.17.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 
+PATCH_SITES+=	https://github.com/swaywm/${GL_PROJECT}/commit/:github
+PATCHFILES+=	7f9bc2d1e0b8.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4697
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 
 MAINTAINER=	jbeich@FreeBSD.org

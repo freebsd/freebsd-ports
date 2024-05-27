@@ -1,5 +1,5 @@
 include/libliftoff.h
 lib/libliftoff.so
 lib/libliftoff.so.0
-lib/libliftoff.so.0.4.1
+lib/libliftoff.so.0.5.0
 libdata/pkgconfig/libliftoff.pc
