@@ -1,7 +1,6 @@
 PORTNAME=	veryl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
-PORTREVISION=	1
+DISTVERSION=	0.10.1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +24,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		adler-1.0.2 \
 		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
-		ammonia-3.3.0 \
+		ammonia-4.0.0 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
@@ -35,11 +34,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.83 \
+		anyhow-1.0.86 \
 		arc-swap-1.7.1 \
 		arrayvec-0.7.4 \
 		assert_cmd-2.0.14 \
-		async-channel-2.2.1 \
+		async-channel-2.3.1 \
 		async-trait-0.1.80 \
 		atoi-2.0.0 \
 		atty-0.2.14 \
@@ -102,6 +101,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		darling_macro-0.20.8 \
 		dashmap-5.5.3 \
 		data-encoding-2.6.0 \
+		dbus-0.9.7 \
 		debugid-0.8.0 \
 		deranged-0.3.11 \
 		derive_builder-0.20.0 \
@@ -211,7 +211,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		hickory-resolver-0.24.1 \
 		home-0.5.9 \
 		hostname-0.3.1 \
-		html5ever-0.26.0 \
+		html5ever-0.27.0 \
 		http-0.2.12 \
 		http-1.1.0 \
 		http-body-0.4.6 \
@@ -240,7 +240,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		is-terminal-0.4.12 \
 		is_ci-1.2.0 \
 		itertools-0.10.5 \
-		itertools-0.12.1 \
+		itertools-0.13.0 \
 		itoa-1.0.11 \
 		js-sys-0.3.69 \
 		jwalk-0.8.1 \
@@ -250,6 +250,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lalr-0.0.2 \
 		lazy_static-1.4.0 \
 		libc-0.2.154 \
+		libdbus-sys-0.2.5 \
 		libredox-0.1.3 \
 		line-col-0.2.1 \
 		linked-hash-map-0.5.6 \
@@ -260,10 +261,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lsp-types-0.94.1 \
 		mac-0.1.1 \
 		maplit-1.0.2 \
-		markup5ever-0.11.0 \
+		markup5ever-0.12.1 \
 		match_cfg-0.1.0 \
 		maybe-async-0.2.10 \
-		mdbook-0.4.37 \
+		mdbook-0.4.40 \
 		mdbook-wavedrom-0.10.0 \
 		memchr-2.7.2 \
 		memmap2-0.5.10 \
@@ -289,16 +290,16 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		object-0.32.2 \
 		once_cell-1.19.0 \
 		oorandom-11.1.3 \
-		opener-0.6.1 \
+		opener-0.7.0 \
 		option-ext-0.2.0 \
 		owo-colors-3.5.0 \
 		owo-colors-4.0.0 \
 		parking-2.2.0 \
 		parking_lot-0.12.2 \
 		parking_lot_core-0.9.10 \
-		parol-0.28.0 \
+		parol-0.29.0 \
 		parol-macros-0.2.0 \
-		parol_runtime-0.21.0 \
+		parol_runtime-0.22.0 \
 		paste-1.0.15 \
 		pathdiff-0.2.1 \
 		percent-encoding-2.3.1 \
@@ -306,15 +307,18 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pest_derive-2.7.10 \
 		pest_generator-2.7.10 \
 		pest_meta-2.7.10 \
-		petgraph-0.6.4 \
-		phf-0.10.1 \
-		phf_codegen-0.10.0 \
+		petgraph-0.6.5 \
+		phf-0.11.2 \
+		phf_codegen-0.11.2 \
 		phf_generator-0.10.0 \
+		phf_generator-0.11.2 \
 		phf_shared-0.10.0 \
+		phf_shared-0.11.2 \
 		pin-project-1.1.5 \
 		pin-project-internal-1.1.5 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
+		pkg-config-0.3.30 \
 		plotters-0.3.5 \
 		plotters-backend-0.3.5 \
 		plotters-svg-0.3.5 \
@@ -329,7 +333,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		prodash-23.1.2 \
 		pulldown-cmark-0.9.6 \
 		pulldown-cmark-0.10.3 \
+		pulldown-cmark-0.11.0 \
 		pulldown-cmark-escape-0.10.1 \
+		pulldown-cmark-escape-0.11.0 \
 		quick-error-1.2.3 \
 		quick-error-2.0.1 \
 		quick-xml-0.26.0 \
@@ -363,8 +369,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		scopeguard-1.2.0 \
 		sct-0.7.1 \
 		semver-1.0.23 \
-		serde-1.0.201 \
-		serde_derive-1.0.201 \
+		serde-1.0.202 \
+		serde_derive-1.0.202 \
 		serde_json-1.0.117 \
 		serde_regex-1.1.0 \
 		serde_repr-0.1.19 \
@@ -398,7 +404,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		supports-unicode-2.1.0 \
 		symbolic-common-12.8.0 \
 		symbolic-demangle-12.8.0 \
-		syn-1.0.109 \
 		syn-2.0.60 \
 		sync_wrapper-0.1.2 \
 		syntree-0.14.5 \
@@ -413,8 +418,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		termtree-0.4.1 \
 		textwrap-0.11.0 \
 		textwrap-0.15.2 \
-		thiserror-1.0.60 \
-		thiserror-impl-1.0.60 \
+		thiserror-1.0.61 \
+		thiserror-impl-1.0.61 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
