@@ -1,8 +1,8 @@
---- src/helpers/process.cc.orig	2020-07-10 23:44:17 UTC
-+++ src/helpers/process.cc
-@@ -34,6 +34,11 @@
- #include <malloc.h>
- #endif
+--- src/main/process.cc.orig	2024-05-17 14:59:20 UTC
++++ src/main/process.cc
+@@ -60,6 +60,11 @@ extern "C" {
+ #include <daq.h>
+ }
  
 +/* sighandler_t is GNU extension */
 +#ifndef HAVE_SIGHANDLER_T
@@ -10,5 +10,5 @@
 +#endif
 +
  #include <csignal>
+ #include <fstream>
  #include <iostream>
- 
