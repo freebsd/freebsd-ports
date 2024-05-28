@@ -1,3 +1,3 @@
-TIMESTAMP = 1635635258
-SHA256 (xorg/lib/libXfixes-6.0.0.tar.bz2) = a7c1a24da53e0b46cac5aea79094b4b2257321c621b258729bc3139149245b4c
-SIZE (xorg/lib/libXfixes-6.0.0.tar.bz2) = 297270
+TIMESTAMP = 1716926504
+SHA256 (xorg/lib/libXfixes-6.0.1.tar.xz) = b695f93cd2499421ab02d22744458e650ccc88c1d4c8130d60200213abc02d58
+SIZE (xorg/lib/libXfixes-6.0.1.tar.xz) = 265636
