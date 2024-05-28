@@ -1,6 +1,5 @@
 PORTNAME=	astrometry
-PORTVERSION=	0.94
-PORTREVISION=	1
+PORTVERSION=	0.95
 CATEGORIES=	astro
 MASTER_SITES=	https://github.com/dstndstn/${PORTNAME}.net/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}.net-${PORTVERSION}
@@ -66,6 +65,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libastrometry.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_LIBDIR}/astrometry/solver/_solver${PYTHON_EXT_SUFFIX}.so
 	@${REINPLACE_CMD} -i '' \
 		-e 's|${STAGEDIR}/usr/local/data|${DATADIR}|' \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.cfg
