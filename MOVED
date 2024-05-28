@@ -3256,3 +3256,4 @@ sysutils/uutils-coreutils|sysutils/rust-coreutils|2024-05-21|Remove duplicate
 databases/foundationdb|databases/foundationdb71-server|2024-05-23|Reintegrated into databases/foundationdb71-server
 devel/py-dj42-graphene-django|devel/py-graphene-django300|2024-05-26|Renamed to py-graphene-django300 for backwards compatibility with net-mgmt/netbox
 devel/rubygem-jira-ruby21|devel/rubygem-jira-ruby|2024-05-28|Remove obsoleted port. Use devel/rubygem-jira-ruby instead
+devel/rubygem-semver_dialects1|devel/rubygem-semver_dialects|2024-05-28|Remove obsoleted port. Use devel/rubygem-semver_dialects instead
