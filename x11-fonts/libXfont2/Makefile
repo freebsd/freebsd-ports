@@ -1,6 +1,5 @@
 PORTNAME=	libXfont2
-PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTVERSION=	2.0.6
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-USES=		xorg xorg-cat:lib
+USES=		tar:xz xorg xorg-cat:lib
 USE_XORG=	xorgproto xtrans fontenc
 INSTALL_TARGET=	install-strip
 #USES+=	cpe
