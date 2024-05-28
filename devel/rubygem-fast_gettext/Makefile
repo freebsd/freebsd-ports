@@ -1,5 +1,5 @@
 PORTNAME=	fast_gettext
-PORTVERSION=	2.4.0
+PORTVERSION=	3.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
