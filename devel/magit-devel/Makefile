@@ -57,6 +57,7 @@ LIBEGIT2_BUILD_DEPENDS_OFF=	git:devel/git
 LIBEGIT2_RUN_DEPENDS=		libegit2${EMACS_PKGNAMESUFFIX}>=g20200515:devel/libegit2@${EMACS_FLAVOR}
 LIBEGIT2_RUN_DEPENDS_OFF=	git:devel/git
 LIBEGIT2_VARS=			MAKE_ENV+=BUILD_MAGIT_LIBGIT=true
+PDF_BROKEN=			Does not build with texinfo
 PDF_BUILD_DEPENDS=		texi2pdf:print/texinfo
 PDF_USES=			tex
 PDF_USE=			TEX=dvipdfmx:build
