@@ -1,12 +1,12 @@
 PORTNAME=	noto
-PORTVERSION=	2.005
+PORTVERSION=	2.006
 CATEGORIES=	x11-fonts
 #MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoSerifDevanagari-v${PORTVERSION}/fonts/ \
 #		https://github.com/notofonts/notofonts.github.io/raw/NotoSerifDevanagari-v${PORTVERSION}/fonts/NotoSerifDevanagari/hinted/ttf/:fonts
 #MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/noto-monthly-release-23.4.1/fonts/ \
 #		https://github.com/notofonts/notofonts.github.io/raw/noto-monthly-release-23.4.1/fonts/NotoSerifDevanagari/hinted/ttf/:fonts
-MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoZnamennyMusicalNotation-v1.003/fonts/ \
-		https://github.com/notofonts/notofonts.github.io/raw/NotoZnamennyMusicalNotation-v1.003/fonts/NotoSerifDevanagari/hinted/ttf/:fonts
+MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/4107892fb07b01fbccc96e43638028f6bf127a4a/fonts/ \
+		https://github.com/notofonts/notofonts.github.io/raw/4107892fb07b01fbccc96e43638028f6bf127a4a/fonts/NotoSerifDevanagari/hinted/ttf/:fonts
 PKGNAMESUFFIX=	-serif-devanagari
 DISTFILES=	LICENSE \
 		${FONTS:S|$|:fonts|}
