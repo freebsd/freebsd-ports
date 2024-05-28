@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.192.0
+PORTVERSION=	3.193.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-account>=1<2:devel/rubygem-aws-sdk-account \
 		rubygem-aws-sdk-acm>=1<2:devel/rubygem-aws-sdk-acm \
 		rubygem-aws-sdk-acmpca>=1<2:devel/rubygem-aws-sdk-acmpca \
-		rubygem-aws-sdk-alexaforbusiness>=1<2:devel/rubygem-aws-sdk-alexaforbusiness \
 		rubygem-aws-sdk-amplify>=1<2:devel/rubygem-aws-sdk-amplify \
 		rubygem-aws-sdk-amplifybackend>=1<2:devel/rubygem-aws-sdk-amplifybackend \
 		rubygem-aws-sdk-amplifyuibuilder>=1<2:devel/rubygem-aws-sdk-amplifyuibuilder \
@@ -173,7 +172,6 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-guardduty>=1<2:devel/rubygem-aws-sdk-guardduty \
 		rubygem-aws-sdk-health>=1<2:devel/rubygem-aws-sdk-health \
 		rubygem-aws-sdk-healthlake>=1<2:devel/rubygem-aws-sdk-healthlake \
-		rubygem-aws-sdk-honeycode>=1<2:devel/rubygem-aws-sdk-honeycode \
 		rubygem-aws-sdk-iam>=1<2:devel/rubygem-aws-sdk-iam \
 		rubygem-aws-sdk-identitystore>=1<2:devel/rubygem-aws-sdk-identitystore \
 		rubygem-aws-sdk-imagebuilder>=1<2:devel/rubygem-aws-sdk-imagebuilder \
@@ -233,6 +231,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-lookoutmetrics>=1<2:devel/rubygem-aws-sdk-lookoutmetrics \
 		rubygem-aws-sdk-machinelearning>=1<2:devel/rubygem-aws-sdk-machinelearning \
 		rubygem-aws-sdk-macie2>=1<2:devel/rubygem-aws-sdk-macie2 \
+		rubygem-aws-sdk-mailmanager>=1<2:devel/rubygem-aws-sdk-mailmanager \
 		rubygem-aws-sdk-mainframemodernization>=1<2:devel/rubygem-aws-sdk-mainframemodernization \
 		rubygem-aws-sdk-managedblockchain>=1<2:devel/rubygem-aws-sdk-managedblockchain \
 		rubygem-aws-sdk-managedblockchainquery>=1<2:devel/rubygem-aws-sdk-managedblockchainquery \
