@@ -16,6 +16,7 @@ bin/trace_analyzer
 bin/write_stress
 include/rocksdb/advanced_cache.h
 include/rocksdb/advanced_options.h
+include/rocksdb/attribute_groups.h
 include/rocksdb/block_cache_trace_writer.h
 include/rocksdb/c.h
 include/rocksdb/cache.h
@@ -45,6 +46,7 @@ include/rocksdb/functor_wrapper.h
 include/rocksdb/io_status.h
 include/rocksdb/iostats_context.h
 include/rocksdb/iterator.h
+include/rocksdb/iterator_base.h
 include/rocksdb/ldb_tool.h
 include/rocksdb/listener.h
 include/rocksdb/memory_allocator.h
@@ -111,6 +113,7 @@ include/rocksdb/utilities/table_properties_collectors.h
 include/rocksdb/utilities/transaction.h
 include/rocksdb/utilities/transaction_db.h
 include/rocksdb/utilities/transaction_db_mutex.h
+include/rocksdb/utilities/types_util.h
 include/rocksdb/utilities/write_batch_with_index.h
 include/rocksdb/version.h
 include/rocksdb/wal_filter.h
