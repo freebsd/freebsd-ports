@@ -18,15 +18,6 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 
 USES=		cmake cpe localbase:ldflags jpeg pathfix pkgconfig
 
-# Clean up bundled libraries
-EXTRACT_AFTER_ARGS=	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/thirdparty/astyle \
-			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/thirdparty/include \
-			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/thirdparty/liblcms2 \
-			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/thirdparty/libpng \
-			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/thirdparty/libtiff \
-			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/thirdparty/libz \
-			--no-same-owner --no-same-permissions
-
 CMAKE_OFF=	BUILD_DOC \
 		BUILD_JAVA \
 		BUILD_JPIP \
@@ -48,5 +39,24 @@ GH_ACCOUNT=	uclouvain
 USE_GITHUB=	yes
 
 CPE_VENDOR=	uclouvain
+
+# Clean up bundled libraries
+.if !defined(MAINTAINER_MODE)
+EXTRACT_AFTER_ARGS=	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/thirdparty/astyle \
+			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/thirdparty/include \
+			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/thirdparty/liblcms2 \
+			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/thirdparty/libpng \
+			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/thirdparty/libtiff \
+			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/thirdparty/libz \
+			--no-same-owner --no-same-permissions
+.else
+post-patch:
+	@${RM} -r ${WRKSRC}/thirdparty/astyle/
+	@${RM} -r ${WRKSRC}/thirdparty/include/
+	@${RM} -r ${WRKSRC}/thirdparty/liblcms2/
+	@${RM} -r ${WRKSRC}/thirdparty/libpng/
+	@${RM} -r ${WRKSRC}/thirdparty/libtiff/
+	@${RM} -r ${WRKSRC}/thirdparty/libz/
+.endif
 
 .include <bsd.port.mk>
