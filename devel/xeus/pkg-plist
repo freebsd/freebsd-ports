@@ -1,13 +1,16 @@
+include/xeus/xbasic_fixed_string.hpp
 include/xeus/xcomm.hpp
 include/xeus/xcontrol_messenger.hpp
 include/xeus/xdebugger.hpp
 include/xeus/xeus.hpp
 include/xeus/xeus_context.hpp
 include/xeus/xguid.hpp
+include/xeus/xhash.hpp
 include/xeus/xhelper.hpp
 include/xeus/xhistory_manager.hpp
 include/xeus/xinput.hpp
 include/xeus/xinterpreter.hpp
+include/xeus/xjson.hpp
 include/xeus/xkernel.hpp
 include/xeus/xkernel_configuration.hpp
 include/xeus/xlogger.hpp
@@ -25,5 +28,5 @@ lib/cmake/xeus/xeusTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/xeus/xeusTargets.cmake
 lib/libxeus.a
 lib/libxeus.so
-lib/libxeus.so.10
-lib/libxeus.so.10.3.0
+lib/libxeus.so.11
+lib/libxeus.so.11.0.0
