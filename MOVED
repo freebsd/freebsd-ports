@@ -3258,3 +3258,4 @@ devel/py-dj42-graphene-django|devel/py-graphene-django300|2024-05-26|Renamed to 
 devel/rubygem-jira-ruby21|devel/rubygem-jira-ruby|2024-05-28|Remove obsoleted port. Use devel/rubygem-jira-ruby instead
 devel/rubygem-semver_dialects1|devel/rubygem-semver_dialects|2024-05-28|Remove obsoleted port. Use devel/rubygem-semver_dialects instead
 devel/rubygem-semver_dialects12|devel/rubygem-semver_dialects|2024-05-28|Remove obsoleted port. Use devel/rubygem-semver_dialects instead
+devel/rubygem-xdg3|devel/rubygem-xdg|2024-05-28|Remove obsoleted port. Use devel/rubygem-xdg instead
