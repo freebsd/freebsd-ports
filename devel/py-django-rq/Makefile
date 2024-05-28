@@ -23,9 +23,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-redis>=0:www/py-django-redis@${PY_FL
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
-TEST_ENV=	PYTHONPATH="."
-
 NO_ARCH=	yes
+TEST_ENV=	PYTHONPATH=.
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*django-rq
 
