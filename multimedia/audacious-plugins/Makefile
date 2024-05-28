@@ -4,6 +4,9 @@ PORTREVISION=	4
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
+PATCH_SITES=	https://github.com/audacious-media-player/${PORTNAME}/commit/
+PATCHFILES=	1f0bc4c6940d27905d11e3324e30c6a63fad6392.patch:-p1
+
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Plugins needed for audacious
 WWW=		https://audacious-media-player.org/
