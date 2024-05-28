@@ -7775,7 +7775,6 @@
     SUBDIR += rubygem-wmi-lite
     SUBDIR += rubygem-xdg
     SUBDIR += rubygem-xdg2
-    SUBDIR += rubygem-xdg4
     SUBDIR += rubygem-xdg5
     SUBDIR += rubygem-xdg6
     SUBDIR += rubygem-xdg7
