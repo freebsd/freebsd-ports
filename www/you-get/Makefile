@@ -1,8 +1,8 @@
 PORTNAME=	you-get
-PORTVERSION=	0.4.1650
-PORTREVISION=	2
+PORTVERSION=	0.4.1700
 CATEGORIES=	www
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/soimort/you-get/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dumb downloader that scrapes the web
