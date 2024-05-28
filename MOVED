@@ -3263,3 +3263,4 @@ devel/rubygem-xdg4|devel/rubygem-xdg|2024-05-28|Remove obsoleted port. Use devel
 devel/rubygem-xdg5|devel/rubygem-xdg|2024-05-28|Remove obsoleted port. Use devel/rubygem-xdg instead
 devel/rubygem-xdg6|devel/rubygem-xdg|2024-05-28|Remove obsoleted port. Use devel/rubygem-xdg instead
 graphics/rubygem-mini_magick410|graphics/rubygem-mini_magick|2024-05-28|Remove obsoleted port. Use graphics/rubygem-mini_magick instead
+textproc/rubygem-sassc22|textproc/rubygem-sassc|2024-05-28|Remove obsoleted port. Use textproc/rubygem-sassc instead
