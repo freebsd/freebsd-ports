@@ -49,7 +49,7 @@ RUN_DEPENDS=	rubygem-actioncable71>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem
 		rubygem-rexml>=0:textproc/rubygem-rexml \
 		rubygem-selenium-webdriver>=4.11.0:www/rubygem-selenium-webdriver \
 		rubygem-sprockets-rails-rails71>=2.0.0:devel/rubygem-sprockets-rails-rails71 \
-		rubygem-sqlite3>=1.6.6<2:databases/rubygem-sqlite3 \
+		rubygem-sqlite3>=1.6.6:databases/rubygem-sqlite3 \
 		rubygem-stimulus-rails>=0:www/rubygem-stimulus-rails \
 		rubygem-sucker_punch>=0:devel/rubygem-sucker_punch \
 		rubygem-tailwindcss-rails>=0:www/rubygem-tailwindcss-rails \
