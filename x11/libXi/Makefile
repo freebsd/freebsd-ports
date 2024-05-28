@@ -1,6 +1,5 @@
 PORTNAME=	libXi
-DISTVERSION=	1.8
-PORTREVISION=	1
+DISTVERSION=	1.8.1
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -10,13 +9,12 @@ WWW=		https://www.freedesktop.org/Software/xlibs
 
 LICENSE=	MIT
 
-USES=		cpe xorg xorg-cat:lib
+USES=		cpe tar:xz xorg xorg-cat:lib
 CPE_VENDOR=	x.org
 USE_XORG=	x11 xext xfixes xorgproto
 
 INSTALL_TARGET=	install-strip
 
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=--disable-docs \
 		--disable-specs \
 		--without-xmlto \
