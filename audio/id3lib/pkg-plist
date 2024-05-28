@@ -5,9 +5,13 @@ bin/id3tag
 include/id3.h
 include/id3/field.h
 include/id3/globals.h
+include/id3/helpers.h
 include/id3/id3lib_frame.h
 include/id3/id3lib_streams.h
 include/id3/id3lib_strings.h
+include/id3/io_decorators.h
+include/id3/io_helpers.h
+include/id3/io_strings.h
 include/id3/misc_support.h
 include/id3/reader.h
 include/id3/readers.h
@@ -16,7 +20,10 @@ include/id3/tag.h
 include/id3/utils.h
 include/id3/writer.h
 include/id3/writers.h
-lib/libid3-3.8.so.3
-lib/libid3-3.8.so.3.0.0
-lib/libid3.a
 lib/libid3.so
+lib/libid3.so.3.8.3
+libdata/pkgconfig/id3lib.pc
+share/man/man1/id3convert.1.gz
+share/man/man1/id3cp.1.gz
+share/man/man1/id3info.1.gz
+share/man/man1/id3tag.1.gz
