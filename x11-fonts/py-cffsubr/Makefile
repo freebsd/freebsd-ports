@@ -21,12 +21,17 @@ RUN_DEPENDS=	tx:x11-fonts/afdko \
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
-# Remove bundled libraries
-EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/external \
-			--no-same-owner --no-same-permissions
-
 NO_ARCH=	yes
 PLIST_FILES=	${PYTHON_SITELIBDIR}/cffsubr/tx
+
+# Clean up bundled libraries
+.if !defined(MAINTAINER_MODE)
+EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/external \
+			--no-same-owner --no-same-permissions
+.else
+post-patch:
+	@${RM} -r ${WRKSRC}/external/
+.endif
 
 post-install:
 	${LN} -s ${LOCALBASE}/bin/tx ${STAGEDIR}${PYTHON_SITELIBDIR}/cffsubr/tx
