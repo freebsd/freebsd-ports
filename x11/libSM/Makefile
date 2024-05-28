@@ -1,6 +1,5 @@
 PORTNAME=	libSM
-PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTVERSION=	1.2.4
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -10,7 +9,7 @@ WWW=		https://www.freedesktop.org/Software/xlibs
 
 LICENSE=	MIT
 
-USES=		pathfix xorg xorg-cat:lib
+USES=		pathfix tar:xz xorg xorg-cat:lib
 USE_XORG=	ice xorgproto xtrans
 
 CONFIGURE_ARGS+=--disable-docs --without-xmlto
