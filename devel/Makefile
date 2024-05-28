@@ -5796,6 +5796,7 @@
     SUBDIR += py-tartiflette
     SUBDIR += py-tartiflette-aiohttp
     SUBDIR += py-taskflow
+    SUBDIR += py-taskgroup
     SUBDIR += py-tasklib
     SUBDIR += py-tblib
     SUBDIR += py-tdworkflow
