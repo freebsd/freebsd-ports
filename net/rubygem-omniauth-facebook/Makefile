@@ -1,6 +1,5 @@
 PORTNAME=	omniauth-facebook
-PORTVERSION=	9.0.0
-PORTREVISION=	1
+PORTVERSION=	10.0.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +9,8 @@ WWW=		https://github.com/simi/omniauth-facebook
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-omniauth-oauth2>=1.2:net/rubygem-omniauth-oauth2
+RUN_DEPENDS=	rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
+		rubygem-omniauth-oauth2>=1.2<3:net/rubygem-omniauth-oauth2
 
 USES=		gem
 
