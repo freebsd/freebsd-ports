@@ -1,3 +1,51 @@
+  <vuln vid="73a697d7-1d0f-11ef-a490-84a93843eb75">
+    <topic>OpenSSL -- Use after free vulnerability</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>3.0.13_5,1</lt></range>
+      </package>
+      <package>
+	<name>openssl31</name>
+	<range><lt>3.1.5_5</lt></range>
+      </package>
+      <package>
+	<name>openssl32</name>
+	<range><lt>3.2.1_5</lt></range>
+      </package>
+      <package>
+	<name>openssl33</name>
+	<range><lt>3.3.0_2</lt></range>
+      </package>
+      <package>
+	<name>openssl-quictls</name>
+	<range><lt>3.0.13_5</lt></range>
+      </package>
+      <package>
+	<name>openssl31-quictls</name>
+	<range><lt>3.1.5_5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20240528.txt">
+	  <p>Use After Free with SSL_free_buffers (low).</p>
+	  <p>Calling the OpenSSL API function SSL_free_buffers may cause
+	    memory to be accessed that was previously freed in some situations</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-4741</cvename>
+      <url>https://www.openssl.org/news/secadv/20240528.txt</url>
+    </references>
+    <dates>
+      <discovery>2024-05-28</discovery>
+      <entry>2024-05-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="04e78f32-04b2-4c23-bfae-72600842d317">
     <topic>electron29 -- use after free in Dawn</topic>
     <affects>
