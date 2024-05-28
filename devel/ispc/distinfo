@@ -1,5 +1,5 @@
-TIMESTAMP = 1708144651
-SHA256 (ispc-ispc-v1.23.0_GH0.tar.gz) = 9dd5e24ecc5496d74022cf74b38cacad079c2a5432e9ae9f5bf8a655b85b5744
-SIZE (ispc-ispc-v1.23.0_GH0.tar.gz) = 19624959
+TIMESTAMP = 1716879870
+SHA256 (ispc-ispc-v1.24.0_GH0.tar.gz) = a45ec5402d8a3b23d752125a083fa031becf093b8304ccec55b1c2f37b5479c3
+SIZE (ispc-ispc-v1.24.0_GH0.tar.gz) = 19673937
 SHA256 (google-googletest-6a7ed31_GH0.tar.gz) = f488bc430d2b5fdbc51711b142fd50dbf0f33012fa65c5f8e7d4f908ed935bcf
 SIZE (google-googletest-6a7ed31_GH0.tar.gz) = 904250
