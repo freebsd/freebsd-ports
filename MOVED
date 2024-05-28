@@ -3267,3 +3267,4 @@ textproc/rubygem-sassc22|textproc/rubygem-sassc|2024-05-28|Remove obsoleted port
 databases/rubygem-flipper-active_record-rails61|databases/rubygem-flipper-active_record|2024-05-28|Remove obsoleted port. Use databases/rubygem-flipper-active_record instead
 devel/rubygem-flipper-active_support_cache_store-rails61|devel/rubygem-flipper-active_support_cache_store|2024-05-28|Remove obsoleted port. Use devel/rubygem-flipper-active_support_cache_store instead
 devel/rubygem-flipper025|devel/rubygem-flipper|2024-05-28|Remove obsoleted port. Use devel/rubygem-flipper instead
+www/rubygem-rqrcode2|www/rubygem-rqrcode|2024-05-28|Remove obsoleted port. Use www/rubygem-rqrcode instead

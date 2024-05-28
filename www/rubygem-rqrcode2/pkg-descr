@@ -1,3 +1,0 @@
-rQRCode is a library for encoding QRCodes in Ruby. It has a simple interface
-with all the standard qrcode options. It was adapted from the Javascript
-library by Kazuhiko Arase.
