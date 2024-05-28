@@ -1,9 +1,8 @@
 PORTNAME=	libgeotiff
-PORTVERSION=	1.7.1
-PORTREVISION=	8
+PORTVERSION=	1.7.3
 CATEGORIES=	graphics
-MASTER_SITES=	https://download.osgeo.org/geotiff/libgeotiff/ \
-		LOCAL/sunpoet
+MASTER_SITES=	https://github.com/OSGeo/libgeotiff/releases/download/${PORTVERSION}/ \
+		https://download.osgeo.org/geotiff/libgeotiff/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for reading and writing GeoTIFF information tags
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libjbig.so:graphics/jbigkit \
 		libproj.so:graphics/proj \
 		libtiff.so:graphics/tiff
 
-USES=		jpeg libtool
+USES=		jpeg libtool pathfix
 
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--disable-doxygen-chi \
