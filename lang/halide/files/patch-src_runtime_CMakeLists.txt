@@ -1,0 +1,10 @@
+--- src/runtime/CMakeLists.txt.orig	2024-05-28 01:51:11 UTC
++++ src/runtime/CMakeLists.txt
+@@ -150,6 +150,7 @@ set(RUNTIME_CXX_FLAGS
+ # Note: ensure that these flags match the flags in the Makefile.
+ # Note: this always uses Clang-from-LLVM for compilation, so none of these flags should need conditionalization.
+ set(RUNTIME_CXX_FLAGS
++    -Dfopen64=fopen
+     -O3
+     -std=c++17
+     -ffreestanding
