@@ -1,0 +1,11 @@
+--- gettext-setup.gemspec.orig	2024-05-28 14:37:46 UTC
++++ gettext-setup.gemspec
+@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<fast_gettext>.freeze, ["~> 2.1".freeze])
++  s.add_runtime_dependency(%q<fast_gettext>.freeze, [">= 2.1".freeze])
+   s.add_runtime_dependency(%q<gettext>.freeze, ["~> 3.4".freeze])
+   s.add_runtime_dependency(%q<locale>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<bundler>.freeze, [">= 0".freeze])
