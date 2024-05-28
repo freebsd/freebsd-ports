@@ -1,5 +1,5 @@
 PORTNAME=	tooz
-PORTVERSION=	6.1.0
+PORTVERSION=	6.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -37,6 +37,7 @@ REDIS_DESC=	Redis support
 
 CONSUL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-consul2>=0.0.16:sysutils/py-python-consul2@${PY_FLAVOR}
 POSTGRESQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.5:databases/py-psycopg2@${PY_FLAVOR}
-REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=4.0.0:databases/py-redis@${PY_FLAVOR}
+REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=20.4.0:devel/py-packaging@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}redis>=4.0.0:databases/py-redis@${PY_FLAVOR}
 
 .include <bsd.port.mk>
