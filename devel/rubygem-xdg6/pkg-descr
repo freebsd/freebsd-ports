@@ -1,9 +1,0 @@
-XDG provides an easy to use Ruby library for working with XDG standards.
-
-Presently, it only supports the XDG Base Directory Standard.
-
-If your program utilizes user or system-wide support files (e.g. configuration
-files), you owe it to yourself to checkout the XDG base directory standard.
-
-You can learn more about the standard at:
-http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
