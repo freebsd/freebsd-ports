@@ -6,10 +6,17 @@ bin/zsync
 @sample %%ETCDIR%%/zelta.conf.sample
 @sample %%ETCDIR%%/zelta.env.sample
 %%DATADIR%%/zelta-endpoint.awk
+%%DATADIR%%/zelta-match-pipe.awk
 %%DATADIR%%/zelta-match.awk
 %%DATADIR%%/zelta-policy.awk
-%%DATADIR%%/zelta-reconcile.awk
 %%DATADIR%%/zelta-replicate.awk
 %%DATADIR%%/zelta-report.awk
+%%DATADIR%%/zelta-sendopts.awk
 %%DATADIR%%/zelta-snapshot.awk
 %%DATADIR%%/zelta-usage.sh
+share/man/man8/zelta-backup.8.gz
+share/man/man8/zelta-clone.8.gz
+share/man/man8/zelta-match.8.gz
+share/man/man8/zelta-policy.8.gz
+share/man/man8/zelta-sync.8.gz
+share/man/man8/zelta.8.gz
