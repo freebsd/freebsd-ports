@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+export OMP_NUM_THREADS=1
+exec \
+  %%PYTHON_CMD%% \
+  %%PYTHONPREFIX_SITELIBDIR%%/paperless/manage.py \
+  "$@"
