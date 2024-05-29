@@ -1,6 +1,6 @@
 PORTNAME=	xwayland-satellite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2
+DISTVERSION=	0.3
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org

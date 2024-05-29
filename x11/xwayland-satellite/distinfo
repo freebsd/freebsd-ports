@@ -1,4 +1,4 @@
-TIMESTAMP = 1716004369
+TIMESTAMP = 1716949864
 SHA256 (rust/crates/aho-corasick-1.1.3.crate) = 8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916
 SIZE (rust/crates/aho-corasick-1.1.3.crate) = 183311
 SHA256 (rust/crates/anstream-0.6.14.crate) = 418c75fa768af9c03be99d17643f93f79bbba589895012a80e3452a19ddda15b
@@ -161,5 +161,5 @@ SHA256 (rust/crates/xcb-util-cursor-0.3.2.crate) = 42cca04fb82324e278cdcc920289a
 SIZE (rust/crates/xcb-util-cursor-0.3.2.crate) = 8624
 SHA256 (rust/crates/xcb-util-cursor-sys-0.1.3.crate) = b13724e3af85816d1bbd617cc899b9ff7a55ca53413c4cc5c269e8c62bcc1702
 SIZE (rust/crates/xcb-util-cursor-sys-0.1.3.crate) = 6339
-SHA256 (Supreeeme-xwayland-satellite-v0.2_GH0.tar.gz) = 867950b973262d10eff0824a02e3a00f7361aec4e7dc27b0980ffee006213c78
-SIZE (Supreeeme-xwayland-satellite-v0.2_GH0.tar.gz) = 51903
+SHA256 (Supreeeme-xwayland-satellite-v0.3_GH0.tar.gz) = b8276272f9ab76d72595e31c431921e2aeb090526993b5fc6067e1ac672c3595
+SIZE (Supreeeme-xwayland-satellite-v0.3_GH0.tar.gz) = 54745
