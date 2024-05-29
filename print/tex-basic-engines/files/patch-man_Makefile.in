@@ -11,8 +11,8 @@
 -man1_links = cweb:ctangle cweb:cweave ctwill:ctwill-proofsort \
 -	ctwill:ctwill-refsort ctwill:ctwill-twinx $(am__append_2) \
 +man1_links = $(am__append_2) \
-	$(am__append_4) $(am__append_6) $(am__append_7) \
-	$(am__append_11) $(am__append_13) $(am__append_15) \
+ 	$(am__append_4) $(am__append_6) $(am__append_7) \
+ 	$(am__append_11) $(am__append_13) $(am__append_15) \
 -	$(am__append_18) latex-dev:pdflatex-dev latex-dev:xelatex-dev \
 -	latex-dev:lualatex-dev latex-dev:dvilualatex-dev \
 -	latex-dev:platex-dev latex-dev:uplatex-dev

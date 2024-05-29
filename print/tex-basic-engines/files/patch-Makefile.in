@@ -26,7 +26,7 @@
  lib_LTLIBRARIES = $(am__append_127)
 -dist_man_MANS = synctexdir/man1/synctex.1 synctexdir/man5/synctex.5
 +dist_man_MANS =
- nodist_man_MANS =
+ nodist_man_MANS = 
  TEST_EXTENSIONS = .pl .test
  #
 @@ -3655,8 +3653,6 @@ bin_links = $(am__append_5) $(am__append_14) $(am__app
@@ -35,6 +35,6 @@
  	$(am__append_49) $(am__append_54) $(am__append_67) \
 -	upbibtex$(EXEEXT):pbibtex updvitype$(EXEEXT):pdvitype \
 -	uppltotf$(EXEEXT):ppltotf uptftopl$(EXEEXT):ptftopl \
-	$(am__append_78) $(am__append_79) $(am__append_80) \
-	$(am__append_94) $(am__append_99) $(am__append_104) \
-	$(am__append_109)
+ 	$(am__append_78) $(am__append_79) $(am__append_80) \
+ 	$(am__append_94) $(am__append_99) $(am__append_104) \
+ 	$(am__append_109)
