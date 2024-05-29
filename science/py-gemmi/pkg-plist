@@ -22,4 +22,5 @@
 %%PYTHON_SITELIBDIR%%/gemmi/examples/refln-stats.py
 %%PYTHON_SITELIBDIR%%/gemmi/examples/simple_search.py
 %%PYTHON_SITELIBDIR%%/gemmi/examples/sub_ccd.py
+%%PYTHON_SITELIBDIR%%/gemmi/examples/to_rdkit.py
 %%PYTHON_SITELIBDIR%%/gemmi/examples/weight.py
