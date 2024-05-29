@@ -1,11 +1,11 @@
 PORTNAME=	openshadinglanguage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.13.0
+DISTVERSION=	1.12.14.0
 # PORTREVISION must be set with ?= so as not to stomp over
 # py-openimageio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	4
+PORTREVISION?=	0
 CATEGORIES?=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -23,9 +23,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libOpenImageIO.so:graphics/openimageio \
 		libpugixml.so:textproc/pugixml
 
-USES=		bison cmake compiler:c++14-lang llvm:max=15,lib localbase ncurses qt:5
-
-USE_QT=		buildtools:build qmake:build
+USES=		bison cmake compiler:c++14-lang llvm:max=15,lib localbase ncurses
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AcademySoftwareFoundation
@@ -40,9 +38,8 @@ OPTIONS_SUB=		yes
 
 OSLTOY_DESC=		Interactive shader edit and visualize tool
 OSLTOY_CMAKE_BOOL=	USE_QT
-OSLTOY_USE=		QT=buildtools:build,core,gui,qmake:build,widgets
-
-#CXXFLAGS+=	-I${STAGEDIR}/include
+OSLTOY_USES=		qt:6 gl
+OSLTOY_USE=		GL=gl,opengl QT=base
 
 # DISTVERSION has an extra digit which isn't in the lib name
 # for LIBVERS we want the first three digits
