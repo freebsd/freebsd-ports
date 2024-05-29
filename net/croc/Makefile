@@ -1,5 +1,5 @@
 PORTNAME=	croc
-PORTVERSION=	10.0.5
+PORTVERSION=	10.0.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -30,6 +30,7 @@ GH_TUPLE=	OneOfOne:xxhash:v1.2.8:oneofone_xxhash/vendor/github.com/OneOfOne/xxha
 		golang:time:v0.5.0:golang_time/vendor/golang.org/x/time \
 		kalafut:imohash:v1.0.3:kalafut_imohash/vendor/github.com/kalafut/imohash \
 		magisterquis:connectproxy:3582e84f0c9b:magisterquis_connectproxy/vendor/github.com/magisterquis/connectproxy \
+		minio:highwayhash:v1.0.2:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		mitchellh:colorstring:d06e56a500db:mitchellh_colorstring/vendor/github.com/mitchellh/colorstring \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		rivo:uniseg:v0.4.7:rivo_uniseg/vendor/github.com/rivo/uniseg \
