@@ -40,26 +40,26 @@
 +  my $temp = "$root/tlpkg/temp";
    TeXLive::TLUtils::mkdirhier($temp);
    tlwarn("$prg: warning: backup option not implemented for infrastructure "
-	  . " update on Windows; continuing anyway.\n")
+          . " update on Windows; continuing anyway.\n") 
 @@ -5449,15 +5452,14 @@ sub uninstall_texlive {
    system("rm", "-rf", "$texmfsysvar");
-
+ 
    print "misc... ";
 -  system("rm", "-rf", "$Master/readme-html.dir");
 -  system("rm", "-rf", "$Master/readme-txt.dir");
 +  system("rm", "-rf", "$Master/tlpkg/readme-html.dir");
 +  system("rm", "-rf", "$Master/tlpkg/readme-txt.dir");
    for my $f (qw/doc.html index.html install-tl install-tl.log
-		 LICENSE.CTAN LICENSE.TL README README.usergroups
-		 release-texlive.txt texmf.cnf texmfcnf.lua
-		/) {
+                 LICENSE.CTAN LICENSE.TL README README.usergroups
+                 release-texlive.txt texmf.cnf texmfcnf.lua
+                /) {
 -    system("rm", "-f", "$Master/$f");
 +    system("rm", "-f", "$Master/tlpkg/$f");
    }
 -  finddepth(sub { rmdir; }, $Master);
    rmdir($Master);
    print "done.\n";
-
+   
 @@ -6397,7 +6399,7 @@ sub action_conf {
        $fn || ( $fn = "$TEXMFCONFIG/tlmgr/config" ) ;
        $cf = TeXLive::TLConfFile->new($fn, "#", "=");
