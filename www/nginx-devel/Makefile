@@ -1,6 +1,5 @@
 PORTNAME?=	nginx
-PORTVERSION=	1.26.0
-PORTREVISION=	2
+PORTVERSION=	1.27.0
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -16,7 +15,7 @@ LICENSE_FILE?=	${WRKSRC}/LICENSE
 
 CONFLICTS_INSTALL=	nginx
 
-PORTSCOUT=	limit:^1\.2[6-7]\.[0-9]*
+PORTSCOUT=	limit:^1\.2[7-8]\.[0-9]*
 
 USES=		cpe
 
