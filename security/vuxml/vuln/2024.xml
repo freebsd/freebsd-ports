@@ -1,3 +1,36 @@
+  <vuln vid="6926d038-1db4-11ef-9f97-a8a1599412c6">
+    <topic>chromium -- security fix</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>125.0.6422.112</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>125.0.6422.112</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/05/stable-channel-update-for-desktop_23.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[341663589] High CVE-2024-5274: Type Confusion in V8. Reported by Clément Lecigne of Google's Threat Analysis Group and Brendon Tiszka of Chrome Security on 2024-05-20</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-5274</cvename>
+      <url>https://chromereleases.googleblog.com/2024/05/stable-channel-update-for-desktop_23.html</url>
+    </references>
+    <dates>
+      <discovery>2024-05-23</discovery>
+      <entry>2024-05-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="73a697d7-1d0f-11ef-a490-84a93843eb75">
     <topic>OpenSSL -- Use after free vulnerability</topic>
     <affects>
