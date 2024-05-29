@@ -1,4 +1,4 @@
-TIMESTAMP = 1715826346
+TIMESTAMP = 1716959793
 SHA256 (rust/crates/addr-0.15.6.crate) = a93b8a41dbe230ad5087cc721f8d41611de654542180586b315d9f4cf6b72bef
 SIZE (rust/crates/addr-0.15.6.crate) = 92595
 SHA256 (rust/crates/addr2line-0.19.0.crate) = a76fd60b23679b7d19bd066031410fb7e458ccc5e958eb5c325888ce4baedc97
@@ -1119,5 +1119,5 @@ SHA256 (rust/crates/zeroize-1.6.0.crate) = 2a0956f1ba7c7909bfb66c2e9e4124ab6f648
 SIZE (rust/crates/zeroize-1.6.0.crate) = 19049
 SHA256 (rust/crates/zstd-sys-2.0.8+zstd.1.5.5.crate) = 5556e6ee25d32df2586c098bbfa278803692a20d0ab9565e049480d52707ec8c
 SIZE (rust/crates/zstd-sys-2.0.8+zstd.1.5.5.crate) = 736270
-SHA256 (Code-Militia-jirust-1.1.7_GH0.tar.gz) = d80277bf3a35cdcef62359c5c021f73ad33d58397cb69c0b1fdbc7f4f6206375
-SIZE (Code-Militia-jirust-1.1.7_GH0.tar.gz) = 73733
+SHA256 (Code-Militia-jirust-1.2.0_GH0.tar.gz) = 98a8ad90fbe24521e7cab00d4fed708b617dbafca2661891094e4434a5c1ab56
+SIZE (Code-Militia-jirust-1.2.0_GH0.tar.gz) = 76728
