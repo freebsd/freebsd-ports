@@ -24,6 +24,7 @@ include/glaze/api/type_support.hpp
 include/glaze/api/xxh64.hpp
 include/glaze/binary.hpp
 include/glaze/binary/beve_to_json.hpp
+include/glaze/binary/custom.hpp
 include/glaze/binary/header.hpp
 include/glaze/binary/ptr.hpp
 include/glaze/binary/read.hpp
