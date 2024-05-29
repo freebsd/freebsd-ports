@@ -1,11 +1,11 @@
 PORTNAME=	openimageio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.13.0
+DISTVERSION=	2.5.8.0
 # PORTREVISION must be set with ?= so as not to stomp over
 # py-openimageio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	10
+PORTREVISION?=	0
 CATEGORIES?=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -28,18 +28,18 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp
 
-USES=		cmake jpeg compiler:c++14-lang iconv:wchar_t qt:5
-
-USE_QT+=	buildtools:build qmake:build
+USES=		cmake jpeg compiler:c++17-lang iconv:wchar_t
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	OpenImageIO
-GH_PROJECT=	oiio
+GH_ACCOUNT=	AcademySoftwareFoundation
+GH_PROJECT=	OpenImageIO
 
+CMAKE_ARGS=	-DCMAKE_CXX_STANDARD:INTEGER=17 # OpenVDB uses the C++17 STL
+# feature std::tuple_size_v; since the slave port py-openimageio excludes
+# options - this is a global line here
 CMAKE_OFF=	BUILDSTATIC INSTALL_FONTS LINKSTATIC NOTHREADS \
 		STOP_ON_WARNING USE_OPENSSL OIIO_DOWNLOAD_MISSING_TESTDATA \
 		USE_Package
-CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17 # OpenVDB uses the C++17 STL feature std::tuple_size_v; since the slave port py-openimageio excludes options - this is a global line here
 
 OPTIONS_DEFINE=		DICOM DOCS FFMPEG FREETYPE GIF IMAGEVIEWER \
 			OPENCV OPENJPEG PTEX RAW TBB TEST TOOLS VDB
@@ -65,11 +65,10 @@ GIF_CMAKE_BOOL=		USE_GIF
 GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 
 IMAGEVIEWER_DESC=	Build image viewer (requires Qt)
-IMAGEVIEWER_USES=	gl
+IMAGEVIEWER_USES=	gl qt:6
 IMAGEVIEWER_IMPLIES=	TOOLS
-IMAGEVIEWER_CMAKE_BOOL=	USE_QT USE_OPENGL
-IMAGEVIEWER_USE=	GL=gl,glu,glew \
-			QT=buildtools,core,gui,opengl,qmake:build,widgets
+IMAGEVIEWER_CMAKE_BOOL=	USE_OPENGL USE_QT
+IMAGEVIEWER_USE=	GL=gl,glu,glew QT=base
 
 OPENCV_CMAKE_BOOL=	USE_OPENCV
 OPENCV_IMPLIES=		OPENJPEG
@@ -105,8 +104,7 @@ SHL1=		${PORTVERSION:R:R:R}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," \
-	${WRKSRC}/src/cmake/modules/FindPtex.cmake \
-	${WRKSRC}/src/cmake/modules/FindJPEGTurbo.cmake
+	${WRKSRC}/src/cmake/modules/FindPtex.cmake
 
 .include <bsd.port.options.mk>
 

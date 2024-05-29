@@ -15,6 +15,7 @@ include/OpenImageIO/color.h
 include/OpenImageIO/dassert.h
 include/OpenImageIO/deepdata.h
 include/OpenImageIO/detail/farmhash.h
+include/OpenImageIO/detail/fmt/chrono.h
 include/OpenImageIO/detail/fmt/core.h
 include/OpenImageIO/detail/fmt/format-inl.h
 include/OpenImageIO/detail/fmt/format.h
