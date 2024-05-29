@@ -1,6 +1,7 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
 DISTVERSION=	25.3.2.12
+PORTREVISION=	1
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime25
 DIST_SUBDIR=	erlang
@@ -17,7 +18,7 @@ CPE_PRODUCT=	erlang/otp
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	erlang:otp,corba
 GH_PROJECT=	otp:otp corba:corba
-GH_TAGNAME=	5.2:corba
+GH_TAGNAME=	5.2.1:corba
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
