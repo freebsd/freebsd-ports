@@ -28,6 +28,6 @@
  lib_LTLIBRARIES = $(am__append_127)
 -dist_man_MANS = synctexdir/man1/synctex.1 synctexdir/man5/synctex.5
 +dist_man_MANS =
- nodist_man_MANS =
+ nodist_man_MANS = 
  TEST_EXTENSIONS = .pl .test
  #
