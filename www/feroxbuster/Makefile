@@ -10,6 +10,8 @@ WWW=		https://epi052.github.io/feroxbuster/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: error: undefined symbol: __atomic_is_lock_free
+
 USES=		cargo gmake perl5
 USE_PERL5=	build
 
