@@ -1,6 +1,7 @@
 PORTNAME=	xcaddy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	www
 DIST_SUBDIR=	xcaddy
 
@@ -10,6 +11,9 @@ WWW=		https://github.com/caddyserver/xcaddy
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+# xcaddy actually needs to run the go command to perform builds
+RUN_DEPENDS=	go:lang/go
 
 USES=		go:modules
 
