@@ -1,10 +1,11 @@
-noseOfYeti creates a custom Python codec that lets you write your tests using an
-RSpec inspired DSL (i.e. `describe` and `it` blocks). It uses the fact that you
-can register a codec that is able to modify a Python file before executing it.
-Using this we can make it so that when Python imports a file with a particular
-encoding as the first line of the file it will be intercepted and potentially
-rewritten into something else before the import continues.
+noseOfYeti creates a custom Python codec that lets you write your tests
+using an RSpec inspired DSL (i.e. `describe` and `it` blocks). It uses the
+fact that you can register a codec that is able to modify a Python file
+before executing it.  Using this we can make it so that when Python imports
+a file with a particular encoding as the first line of the file it will be
+intercepted and potentially rewritten into something else before the import
+continues.
 
 noseOfYeti uses this technique to translate from the DSL it defines, into
-Python classes and functions that then will be executed by your test framework
-of choice.
+Python classes and functions that then will be executed by your test
+framework of choice.
