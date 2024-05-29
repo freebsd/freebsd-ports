@@ -63,6 +63,8 @@ include/opensubdiv/osd/nonCopyable.h
 @comment include/opensubdiv/osd/ompKernel.h
 %%OPENCL%%include/opensubdiv/osd/opencl.h
 include/opensubdiv/osd/opengl.h
+include/opensubdiv/osd/patchBasis.h
+include/opensubdiv/osd/patchBasisTypes.h
 %%TBB%%include/opensubdiv/osd/tbbEvaluator.h
 %%TBB%%include/opensubdiv/osd/tbbKernel.h
 include/opensubdiv/osd/types.h
@@ -102,11 +104,21 @@ lib/libosdGPU.so.%%LIBVERS%%
 %%EXAMPLES%%%%EXAMPLESDIR%%/glShareTopology
 %%EXAMPLES%%%%EXAMPLESDIR%%/glStencilViewer
 %%EXAMPLES%%%%EXAMPLESDIR%%/glViewer
+%%TEST%%tests/opensubdiv/bfr_evaluate
 %%TEST%%tests/opensubdiv/far_perf
 @comment %%TEST%%tests/opensubdiv/far_regression
 @comment %%TEST%%tests/opensubdiv/hbr_baseline
 @comment %%TEST%%tests/opensubdiv/hbr_regression
 @comment %%TEST%%tests/opensubdiv/osd_regression
+%%TUTORIALS%%%%DATADIR%%/tutorials/bfr_tutorial_1_1
+%%TUTORIALS%%%%DATADIR%%/tutorials/bfr_tutorial_1_2
+%%TUTORIALS%%%%DATADIR%%/tutorials/bfr_tutorial_1_3
+%%TUTORIALS%%%%DATADIR%%/tutorials/bfr_tutorial_1_4
+%%TUTORIALS%%%%DATADIR%%/tutorials/bfr_tutorial_1_5
+%%TUTORIALS%%%%DATADIR%%/tutorials/bfr_tutorial_2_1
+%%TUTORIALS%%%%DATADIR%%/tutorials/bfr_tutorial_2_2
+%%TUTORIALS%%%%DATADIR%%/tutorials/bfr_tutorial_3_1
+%%TUTORIALS%%%%DATADIR%%/tutorials/bfr_tutorial_3_2
 %%TUTORIALS%%%%DATADIR%%/tutorials/far_tutorial_1_1
 %%TUTORIALS%%%%DATADIR%%/tutorials/far_tutorial_1_2
 %%TUTORIALS%%%%DATADIR%%/tutorials/far_tutorial_2_1
