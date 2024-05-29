@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2024-05-29 12:19:48 UTC
++++ CMakeLists.txt
+@@ -181,7 +181,7 @@ foreach (cminpack_lib ${cminpack_libs})
+   endif ()
+   configure_file (cmake/cminpack.pc.in ${pkg_conf_file} @ONLY)
+   install (FILES ${pkg_conf_file}
+-    DESTINATION ${CMINPACK_LIB_INSTALL_DIR}/pkgconfig/ COMPONENT pkgconfig)
++    DESTINATION libdata/pkgconfig/ COMPONENT pkgconfig)
+ 
+ endforeach ()
+ 
