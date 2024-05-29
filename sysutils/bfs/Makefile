@@ -1,5 +1,6 @@
 PORTNAME=	bfs
 DISTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -28,7 +29,7 @@ ONIGURUMA_DESC=		Oniguruma regular expression support
 RELEASE_DESC=		Enable optimizations, disable assertions
 
 ONIGURUMA_LIB_DEPENDS=		libonig.so:devel/oniguruma
-ONIGURUMA_CONFIGURE_WITHE=	oniguruma
+ONIGURUMA_CONFIGURE_WITH=	oniguruma
 
 RELEASE_CONFIGURE_ENABLE=	release
 
