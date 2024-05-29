@@ -1,3 +1,3 @@
-TIMESTAMP = 1560369708
-SHA256 (xorg/lib/libFS-1.0.8.tar.bz2) = c8e13727149b2ddfe40912027459b2522042e3844c5cd228c3300fe5eef6bd0f
-SIZE (xorg/lib/libFS-1.0.8.tar.bz2) = 347880
+TIMESTAMP = 1716965228
+SHA256 (xorg/lib/libFS-1.0.9.tar.xz) = 597379438b3242ccc7d7b0fc432dc6c844eca0d4a82a7b82518bfeb203fc208a
+SIZE (xorg/lib/libFS-1.0.9.tar.xz) = 287416
