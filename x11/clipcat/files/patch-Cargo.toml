@@ -1,0 +1,18 @@
+--- Cargo.toml.orig	2024-05-26 16:03:19 UTC
++++ Cargo.toml
+@@ -62,7 +62,6 @@ unused_macro_rules                      = "deny"
+ unused_import_braces                    = "deny"
+ unused_lifetimes                        = "deny"
+ unused_macro_rules                      = "deny"
+-unused_qualifications                   = "deny"
+ unused_results                          = "deny"
+ variant_size_differences                = "deny"
+ 
+@@ -80,7 +79,6 @@ const_item_mutation                      = "deny"
+ confusable_idents                        = "deny"
+ const_evaluatable_unchecked              = "deny"
+ const_item_mutation                      = "deny"
+-dead_code                                = "deny"
+ deprecated                               = "deny"
+ deprecated_where_clause_location         = "deny"
+ deref_into_dyn_supertrait                = "deny"
