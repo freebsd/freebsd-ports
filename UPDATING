@@ -5,6 +5,39 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240529:
+  AFFECTS: users of python
+  AUTHOR: rm@FreeBSD.org
+
+  The default version of python3 and python was switched to 3.11.
+
+  For ports users wanting to keep version 3.9 as default,
+  add DEFAULT_VERSIONS+= python=3.9 python3=3.9 to make.conf
+
+  Following procedures may ease the upgrade:
+
+  For users of pre-build packages:
+  # sh
+  # for i in $(pkg query -g %n 'py39-*'); do pkg set -yn ${i}:py311-${i#py39-}; done
+  # pkg upgrade
+
+  For portmaster users:
+  # sh
+  # portmaster -o lang/python311 python39
+  # REINSTALL="$(pkg info -o "*py39*" | awk '{printf "%s ", $2}')"
+  # pkg delete -f "*py39*"
+  # portmaster $REINSTALL
+  # REBUILD=$(pkg query -g "%n:%dn" '*' | grep py3 | grep -v py311 | cut -d : -f 1 | sort -u)
+  # portmaster $REBUILD
+  # REBUILD2=$(pkg list | grep python-39 | xargs pkg which | awk '{print $6}' | sort -u)
+  # portmaster $REBUILD2
+
+  Final steps (for pre-built packages & portmaster):
+
+  If no longer required, Python 3.9 can be removed via
+  "pkg remove python39" and the directory /usr/local/lib/python3.9 can
+  then be deleted afterwards, if not empty.
+
 20240522:
   AFFECTS: net-p2p/transmission-daemon
 
