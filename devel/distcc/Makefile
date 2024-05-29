@@ -10,6 +10,10 @@ WWW=		https://distcc.github.io/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+FLAVORS=	default pump
+FLAVOR?=	${FLAVORS:[1]}
+pump_PKGNAMESUFFIX=	-pump
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libiberty.a:devel/gnulibiberty
 LIB_DEPENDS=	libpopt.so:devel/popt
 
@@ -41,6 +45,10 @@ PLIST_FILES=	${_BIN_FILES:S|^|bin/|} \
 		etc/default/distcc
 
 OPTIONS_DEFINE=		AVAHI CLANGLINK DOCS IPV6 LLVMLINK PUMP GUI
+
+.if ${FLAVOR:U} == pump
+OPTIONS_DEFAULT+=	PUMP
+.endif
 
 CLANGLINK_DESC=	Create clang compiler links if clang is installed
 GUI_DESC=	Build GUI distcc monitor
