@@ -38,7 +38,7 @@ you update your ports collection, before attempting any port upgrades.
   For portmaster users:
   # sh
   # portmaster -o lang/python311 python39
-  # REINSTALL="$(pkg info -o "*py39*" | awk '{printf "%s ", $2}')"
+  # REINSTALL="$(pkg info -oq '*py39*')"
   # pkg delete -f "*py39*"
   # portmaster $REINSTALL
   # REBUILD=$(pkg query -g "%n:%dn" '*' | grep py3 | grep -v py311 | cut -d : -f 1 | sort -u)
