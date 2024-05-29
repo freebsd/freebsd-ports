@@ -135,7 +135,7 @@ PYCRYPTOGRAPHY_DEFAULT?=	rust
 PYCRYPTOGRAPHY_DEFAULT?=	legacy
 .  endif
 # Possible values: 3.8, 3.9, 3.10, 3.11
-PYTHON_DEFAULT?=	3.9
+PYTHON_DEFAULT?=	3.11
 # Possible values: 2.7
 PYTHON2_DEFAULT?=	2.7
 # Possible values: 3.1, 3.2, 3.3
