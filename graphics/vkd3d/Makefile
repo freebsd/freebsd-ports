@@ -1,5 +1,5 @@
 PORTNAME=	vkd3d
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	graphics
 MASTER_SITES=	https://dl.winehq.org/${PORTNAME}/source/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -20,6 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 USES=		bison gmake libtool localbase ncurses pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	vkd3d_cv_cflags__flto_auto=no # XXX strip(1) and llvm-strip(1) fail
 CONFIGURE_ARGS=	--disable-doxygen-doc --with-spirv-tools
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
@@ -33,7 +34,7 @@ CONFIGURE_ENV+=	NCURSES_CFLAGS=" " NCURSES_LIBS="-lncurses" NCURSES_VERSION=unus
 # XXX Move to a separate port (a la graphics/vulkan-headers) and maybe make
 #     graphics/spirv-tools depend on it as well
 USE_GITHUB=	nodefault
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-350-gb73e168:headers/external/spirv-headers
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-357-g49a1fce:headers/external/spirv-headers
 CPPFLAGS+=	-isystem${WRKSRC}/external/spirv-headers/include
 
 OPTIONS_DEFINE=	EXAMPLES
