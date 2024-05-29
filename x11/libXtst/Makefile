@@ -1,6 +1,5 @@
 PORTNAME=	libXtst
-PORTVERSION=	1.2.3
-PORTREVISION=	3
+PORTVERSION=	1.2.4
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -9,12 +8,11 @@ WWW=		https://www.freedesktop.org/Software/xorg
 
 LICENSE=	MIT
 
-USES=		cpe xorg xorg-cat:lib
+USES=		cpe tar:xz xorg xorg-cat:lib
 USE_XORG=	x11 xext xi xorgproto
 CPE_PRODUCT=	libxtst
 CPE_VENDOR=	x
 
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=--disable-specs --without-xmlto
 
 post-patch:
