@@ -1,10 +1,7 @@
 PORTNAME=	simpleviewer
-PORTVERSION=	3.1.7
-PORTREVISION=	21
+PORTVERSION=	3.1.9
 CATEGORIES=	graphics
-MASTER_SITES=	https://bitbucket.org/andreyu/simple-viewer-gl/get/
-DISTNAME=	v${PORTVERSION}	# version tag, has no embedded ${PORTNAME}
-DIST_SUBDIR=	${PORTNAME}	# and that's why we need ${DIST_SUBDIR}
+MASTER_SITES=	https://bitbucket.org/andreyu/simple-viewer-gl/get/${BB_COMMIT}.tar.bz2?dummy=/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Small and simple image viewer based on OpenGL
@@ -25,7 +22,8 @@ CMAKE_ARGS=	-DAPP_VERSION_MAJOR:STRING=${PORTVERSION:S/./ /g:[1]} \
 		-DAPP_VERSION_MINOR:STRING=${PORTVERSION:S/./ /g:[2]} \
 		-DAPP_VERSION_RELEASE:STRING=${PORTVERSION:S/./ /g:[3]}
 
-WRKSRC=		${WRKDIR}/andreyu-simple-viewer-gl-d8928067922d
+BB_COMMIT=	cded7dfe23c4
+WRKSRC=		${WRKDIR}/andreyu-simple-viewer-gl-${BB_COMMIT}
 
 PLIST_FILES=	bin/sviewgl ${DATADIR_REL}/Icon-1024.png \
 		${DATADIR_REL}/Icon-16.png ${DATADIR_REL}/Icon-32.png
