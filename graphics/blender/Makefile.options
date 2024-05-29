@@ -41,6 +41,7 @@ OPTIONS_DEFINE=		\
 	OPENPGL		\
 	OPENSUBDIV	\
 	OPENVDB		\
+	OPENXR		\
 	POTRACE		\
 	PUGIXML		\
 	PULSEAUDIO	\
@@ -145,6 +146,7 @@ OPENJPEG_DESC=		Enhanced JPEG (jpeg2000) graphics support
 OPENPGL_DESC=		Open Path Guiding in Cycles
 OPENSUBDIV_DESC=	Use the OpenSubDiv library for surface subdivision
 OPENVDB_DESC=		Use openVDB library for volumetric data
+OPENXR_DESC=		Enable VR features through the OpenXR specification
 POTRACE_DESC=		Enable features using libpotrace
 PUGIXML_DESC=		Enable pugixml support
 QUADRIFLOW_DESC=	Enable quadriflow remesher

@@ -1,6 +1,5 @@
 PORTNAME=	blender
-DISTVERSION=	3.6.1
-PORTREVISION=	11
+DISTVERSION=	4.0.2
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -27,7 +26,7 @@ RUN_DEPENDS=	${PYNUMPY}
 # libraries are used, if either of the most common options in blender
 # are set. We will pull boost in just to be on the safe side.
 
-USES=		cmake compiler:c++17-lang cpe gl jpeg llvm:min=9,max=15 \
+USES=		cmake compiler:c++17-lang cpe gl jpeg llvm:max=15 \
 		python:3.10 shebangfix tar:xz xorg
 USE_XORG=	x11 xext xfixes xmu xrender
 USE_GL=		gl glu glew
@@ -44,6 +43,7 @@ CFLAGS_gcc=	-Wno-float-conversion
 CFLAGS_i386=	-march=i586
 CXXFLAGS+=	-DGLOG_USE_GLOG_EXPORT
 CXXFLAGS_i386=	-march=i586
+LDFLAGS+=	-lexecinfo
 
 PLIST_SUB+=	VER=${DISTVERSION:R}
 OPTIONS_SUB=	yes
@@ -98,7 +98,8 @@ FFMPEG_LIB_DEPENDS=		libavutil.so:multimedia/ffmpeg \
 				libflite.so:audio/flite
 FFMPEG_LDFLAGS=			-L${LOCALBASE}/lib -lflite -lflite_cmu_us_kal -lflite_cmulex -lflite_usenglish
 FFTW3_CMAKE_BOOL=		WITH_FFTW3
-FFTW3_LIB_DEPENDS=		libfftw3.so:math/fftw3
+FFTW3_LIB_DEPENDS=		libfftw3.so:math/fftw3 \
+				libfftw3f.so:math/fftw3-float
 FRAMESERVER_CMAKE_BOOL=		WITH_IMAGE_FRAMESERVER
 FREESTYLE_CMAKE_BOOL=		WITH_FREESTYLE
 HARU_CMAKE_BOOL=		WITH_HARU
@@ -161,6 +162,8 @@ OPENVDB_IMPLIES=		TBB
 OPENVDB_CMAKE_BOOL=		WITH_OPENVDB WITH_OPENVDB_BLOSC
 OPENVDB_LIB_DEPENDS=		libblosc.so:archivers/c-blosc \
 				libopenvdb.so:misc/openvdb
+OPENXR_CMAKE_BOOL=		WITH_XR_OPENXR
+OPENXR_LIB_DEPENDS=		libopenxr_loader.so:graphics/openxr
 POTRACE_CMAKE_BOOL=		WITH_POTRACE
 POTRACE_LIB_DEPENDS=		libpotrace.so:graphics/libpotrace
 PUGIXML_CMAKE_BOOL=		WITH_PUGIXML
