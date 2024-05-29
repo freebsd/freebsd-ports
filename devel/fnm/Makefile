@@ -1,7 +1,6 @@
 PORTNAME=	fnm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.35.1
-PORTREVISION=	7
+DISTVERSION=	1.36.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,8 +25,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		aho-corasick-1.0.2 \
 		alloc-no-stdlib-2.0.4 \
 		alloc-stdlib-0.2.2 \
-		android-tzdata-0.1.1 \
-		android_system_properties-0.1.5 \
 		anstream-0.3.2 \
 		anstyle-1.0.1 \
 		anstyle-parse-0.2.1 \
@@ -51,7 +48,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		bzip2-sys-0.1.11+1.0.8 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
-		chrono-0.4.26 \
+		chrono-0.4.38 \
 		cipher-0.4.4 \
 		clap-4.3.10 \
 		clap_builder-4.3.10 \
@@ -60,6 +57,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		clap_lex-0.5.0 \
 		colorchoice-1.0.0 \
 		colored-2.0.4 \
+		console-0.15.7 \
 		constant_time_eq-0.1.5 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.4 \
@@ -79,6 +77,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		duct-0.13.6 \
 		either-1.8.1 \
 		embed-resource-1.8.0 \
+		encode_unicode-0.3.6 \
 		encoding_rs-0.8.32 \
 		encoding_rs_io-0.1.7 \
 		env_logger-0.10.0 \
@@ -110,10 +109,9 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		humantime-2.1.0 \
 		hyper-0.14.27 \
 		hyper-rustls-0.24.0 \
-		iana-time-zone-0.1.57 \
-		iana-time-zone-haiku-0.1.2 \
 		idna-0.4.0 \
 		indexmap-1.9.3 \
+		indicatif-0.17.8 \
 		indoc-2.0.2 \
 		inout-0.1.3 \
 		instant-0.1.12 \
@@ -143,6 +141,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		ntapi-0.4.1 \
 		num-traits-0.2.15 \
 		num_cpus-1.16.0 \
+		number_prefix-0.4.0 \
 		object-0.30.4 \
 		once_cell-1.18.0 \
 		openssl-probe-0.1.5 \
@@ -154,6 +153,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.27 \
+		portable-atomic-1.4.2 \
 		pretty_assertions-1.4.0 \
 		proc-macro2-1.0.63 \
 		quote-1.0.29 \
@@ -202,7 +202,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		test-log-0.2.12 \
 		thiserror-1.0.44 \
 		thiserror-impl-1.0.44 \
-		time-0.1.45 \
 		time-0.3.22 \
 		time-core-0.1.1 \
 		tinyvec-1.6.0 \
@@ -219,6 +218,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		unicode-bidi-0.3.13 \
 		unicode-ident-1.0.9 \
 		unicode-normalization-0.1.22 \
+		unicode-segmentation-1.11.0 \
 		unicode-width-0.1.10 \
 		untrusted-0.7.1 \
 		url-2.4.0 \
@@ -227,7 +227,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		vswhom-0.1.0 \
 		vswhom-sys-0.1.2 \
 		want-0.3.1 \
-		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.87 \
 		wasm-bindgen-backend-0.2.87 \
@@ -242,9 +241,10 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-0.48.0 \
 		windows-sys-0.42.0 \
+		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
+		windows-targets-0.42.2 \
 		windows-targets-0.48.1 \
 		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.0 \
