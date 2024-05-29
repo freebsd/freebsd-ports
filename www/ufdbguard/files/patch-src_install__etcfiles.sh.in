@@ -1,4 +1,4 @@
---- src/install_etcfiles.sh.in.orig	2019-02-27 23:03:09 UTC
+--- src/install_etcfiles.sh.in.orig	2024-03-22 12:30:31 UTC
 +++ src/install_etcfiles.sh.in
 @@ -22,19 +22,6 @@ else
     DESTDIR=""
@@ -20,7 +20,7 @@
  OS="@ufdb_os_type@"
  INITDIR="@ufdb_initdir@"
  
-@@ -281,12 +268,10 @@ fix_piddir_permissions () {
+@@ -293,12 +280,10 @@ fix_piddir_permissions () {
  
  
  case $OS in

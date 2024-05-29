@@ -3,10 +3,6 @@
   message: <<EOM
 Please, note the following statements about %%PORTNAME%% port:
 
-    o it's decided during compilation if ufdbguardd will work through Unix
-      or TCP socket. It's set to Unix socket by default and if you want it
-      to work via TCP socket unset UNIXSOCKETS port option and rebuild it.
-
     o ufdbUpdate script is left in non-working state for now.
       The only purpose of this script is to download URLfilterDB updates
       using paid subscription and to run it by cron. The script implies on

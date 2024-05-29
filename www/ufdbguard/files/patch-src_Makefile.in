@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2019-02-04 19:45:45 UTC
+--- src/Makefile.in.orig	2024-03-21 13:58:11 UTC
 +++ src/Makefile.in
-@@ -227,7 +227,7 @@ install.bin: ufdbGenTable ufdbAnalyse ufdbhttpd create
+@@ -237,7 +237,7 @@ install.bin: ufdbGenTable ufdbAnalyse ufdbhttpd create
  	$(INSTALL_PROGRAM) ufdb_top_urls.pl $(DESTDIR)$(bindir)/ufdb_top_urls
  	$(INSTALL_PROGRAM) ufdb_top_users.pl $(DESTDIR)$(bindir)/ufdb_top_users
  	@if [ -f ufdbpeek ] ; then $(INSTALL_PROGRAM) ufdbpeek $(DESTDIR)$(bindir)/ufdbpeek ; fi
@@ -9,7 +9,7 @@
  
  install.pid::
  	if [ $(piddir) != /var/tmp ] ; then $(INSTALL) -d $(DESTDIR)$(piddir) ; fi
-@@ -239,10 +239,10 @@ install.update::
+@@ -249,10 +249,10 @@ install.update::
  
  install.security::
  	echo "Installing SSL root certificates"
@@ -22,3 +22,11 @@
  
  install.debug::
  	-if [ -x /usr/bin/debuginfo-install ] ; then /usr/bin/debuginfo-install glibc ; fi
+@@ -269,7 +269,6 @@ install.log::
+ 
+ createdirs::
+ 	echo "Creating directories ..."
+-	$(INSTALL) -d $(DESTDIR)/usr/lib/systemd/system
+ 	$(INSTALL) -d $(DESTDIR)$(bindir) 
+ 	$(INSTALL) -o $(RUNAS) -d $(DESTDIR)$(logdir) 
+ 	$(INSTALL) -d $(DESTDIR)$(cfgdir)

@@ -1,6 +1,5 @@
 PORTNAME=	ufdbGuard
-PORTVERSION=	1.35.3
-PORTREVISION=	1
+PORTVERSION=	1.35.7
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME:tl}/1.35
 
@@ -17,43 +16,40 @@ USE_RC_SUBR=	ufdbguardd
 SHEBANG_FILES=	samples/URLblocked.cgi
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} \
-		--with-ssl-lib=${OPENSSLLIB} \
-		--with-ssl-inc=${OPENSSLINC} \
-		--with-bz2=/usr \
+CONFIGURE_ARGS=	--with-bz2-inc=/usr/include \
 		--with-bz2-lib=/usr/lib \
-		--with-bz2-inc=/usr/include \
-		--with-ufdb-user=root \
-		--with-ufdb-mandir=${PREFIX}/share/man \
-		--with-ufdb-logdir=${LOGDIR} \
-		--with-ufdb-piddir=${RUNDIR} \
-		--with-ufdb-samplesdir=${EXAMPLESDIR} \
+		--with-bz2=/usr \
+		--with-ssl-inc=${OPENSSLINC} \
+		--with-ssl-lib=${OPENSSLLIB} \
+		--with-ssl=${OPENSSLBASE} \
 		--with-ufdb-config=${ETCDIR} \
 		--with-ufdb-dbhome=${DBDIR} \
-		--with-ufdb-imagesdir=${EXAMPLESDIR}/images
+		--with-ufdb-imagesdir=${EXAMPLESDIR}/images \
+		--with-ufdb-logdir=${LOGDIR} \
+		--with-ufdb-mandir=${PREFIX}/share/man \
+		--with-ufdb-piddir=${RUNDIR} \
+		--with-ufdb-samplesdir=${EXAMPLESDIR} \
+		--with-ufdb-user=root
 
 MAKE_JOBS_UNSAFE=	yes
 
 SUB_FILES=	pkg-message
 
-SUB_LIST=	PORTNAME=${PORTNAME} \
-		USERS=${USERS} \
+SUB_LIST=	DBDIR=${DBDIR} \
+		PORTNAME=${PORTNAME} \
 		RUNDIR=${RUNDIR} \
-		DBDIR=${DBDIR}
+		USERS=${USERS}
 
 USERS=		ufdb
 GROUPS=		${USERS}
 
-PLIST_SUB=	USERS=${USERS} \
+PLIST_SUB=	DBDIR=${DBDIR} \
 		GROUPS=${GROUPS} \
+		LOGDIR=${LOGDIR} \
 		RUNDIR=${RUNDIR} \
-		DBDIR=${DBDIR} \
-		LOGDIR=${LOGDIR}
+		USERS=${USERS}
 
-OPTIONS_DEFINE=	UNIXSOCKETS EXAMPLES
-
-UNIXSOCKETS_DESC=	Unix sockets support
-UNIXSOCKETS_CONFIGURE_WITH=	unix-sockets
+OPTIONS_DEFINE=	EXAMPLES
 
 DBDIR=		/var/db/${PORTNAME}
 LOGDIR=		/var/log/${PORTNAME}
