@@ -1,5 +1,6 @@
 PORTNAME=	calibre
 PORTVERSION=	7.11.0
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -61,7 +62,7 @@ RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}apsw>=3.43.0.0:databases/py-apsw@${PY_FLAVO
 			xdg-open:devel/xdg-utils
 
 USES=		desktop-file-utils gettext-runtime:build gl localbase:ldflags \
-		pkgconfig pyqt:6 python qt:6 shared-mime-info shebangfix sqlite ssl \
+		pkgconfig pyqt:6 python:3.11+ qt:6 shared-mime-info shebangfix sqlite ssl \
 		tar:xz xorg
 USE_GL=		opengl
 USE_PYQT=	pyqt6 pysip qtbuilder sip webengine
