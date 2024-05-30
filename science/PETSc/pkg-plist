@@ -2792,6 +2792,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/ksp/tests/output/ex39_fgmres_cheby_hybrid.out
 %%DATADIR%%/examples/src/ksp/ksp/tests/output/ex3_1.out
 %%DATADIR%%/examples/src/ksp/ksp/tests/output/ex3_2.out
+%%DATADIR%%/examples/src/ksp/ksp/tests/output/ex3_build_solution.out
 %%DATADIR%%/examples/src/ksp/ksp/tests/output/ex3_chebyest.out
 %%DATADIR%%/examples/src/ksp/ksp/tests/output/ex3_chebynoest.out
 %%DATADIR%%/examples/src/ksp/ksp/tests/output/ex3_gamg_provided_not_ok.out
@@ -5703,6 +5704,11 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/snes/tutorials/output/ex71_2d_tri_p2_p1_conv_gmg_vcycle.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex71_2d_tri_p2_p1_conv_u0_alpha.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex73f90t_1.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex73f90t_objective-false.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex73f90t_objective-true.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex73f90t_snes_linesearch_type-bt.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex73f90t_snes_linesearch_type-cp.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex73f90t_snes_linesearch_type-l2.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex75_0.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex76_2d_tri_p2_p1_p1.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex76_2d_tri_p2_p1_p1_conv.out
