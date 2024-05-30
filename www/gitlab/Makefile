@@ -4,6 +4,7 @@ DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
 .endif
+PORTREVISION=	1
 
 CATEGORIES=	www devel
 
