@@ -1,6 +1,6 @@
---- tool/rbinstall.rb.orig	2023-05-12 09:25:10 UTC
+--- tool/rbinstall.rb.orig	2024-05-30 00:23:11 UTC
 +++ tool/rbinstall.rb
-@@ -909,169 +909,6 @@ end
+@@ -970,169 +970,6 @@ end
  
  # :startdoc:
  
@@ -62,7 +62,7 @@
 -    spec = load_gemspec("#{base}/#{src}")
 -    file_collector = RbInstall::Specs::FileCollector.for(srcdir, dir, src)
 -    files = file_collector.collect
--    if file_collector.skip_install?(files)
+-    if files.empty?
 -      next
 -    end
 -    spec.files = files
