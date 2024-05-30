@@ -1195,7 +1195,6 @@
     SUBDIR += vips
     SUBDIR += visprint
     SUBDIR += viu
-    SUBDIR += vkd3d
     SUBDIR += volpack
     SUBDIR += vp
     SUBDIR += vpaint
