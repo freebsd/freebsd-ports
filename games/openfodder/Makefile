@@ -1,9 +1,6 @@
 PORTNAME=	OpenFodder
-DISTVERSION=	1.8.0
+DISTVERSION=	1.9.0
 CATEGORIES=	games
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	a5eac175f940.patch:-p1 # https://github.com/OpenFodder/openfodder/issues/89
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Open source port of Cannon Fodder
@@ -20,8 +17,8 @@ LICENSE_FILE_ZLIB=	${WRKSRC}/COPYING.ZLIB.txt
 USES=		compiler:c++14-lang sdl
 USE_GITHUB=	yes
 USE_SDL=	mixer2
-GH_TUPLE=	${PORTNAME}:data:1.7.0:data/Run \
-		${PORTNAME}:scripts:c6f3076:scripts/Run/Scripts
+GH_TUPLE=	${PORTNAME}:data:1.8.0-1-g070a608:data/Run \
+		${PORTNAME}:scripts:dad0473:scripts/Run/Scripts
 GH_PROJECT=	${PORTNAME:tl}
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/${PORTNAME:tl}.desktop \
