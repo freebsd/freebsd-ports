@@ -14,6 +14,9 @@ LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LGPLv2.1.txt
 LICENSE_FILE_MIT=	${WRKSRC}/COPYING.MIT.txt
 LICENSE_FILE_ZLIB=	${WRKSRC}/COPYING.ZLIB.txt
 
+BROKEN_armv6=	https://github.com/OpenFodder/openfodder/issues/89
+BROKEN_armv7=	https://github.com/OpenFodder/openfodder/issues/89
+
 USES=		compiler:c++14-lang sdl
 USE_GITHUB=	yes
 USE_SDL=	mixer2
