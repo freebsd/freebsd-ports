@@ -1,4 +1,4 @@
---- src/_cffi_src/openssl/crypto.py.orig	2023-03-22 07:29:15 UTC
+--- src/_cffi_src/openssl/crypto.py.orig	2021-08-24 17:02:37 UTC
 +++ src/_cffi_src/openssl/crypto.py
 @@ -74,11 +74,8 @@ CUSTOMIZATIONS = """
  # define OPENSSL_DIR             SSLEAY_DIR
@@ -49,7 +49,7 @@
  #else
 --- src/_cffi_src/openssl/dh.py.orig	2021-08-24 17:17:17 UTC
 +++ src/_cffi_src/openssl/dh.py
-@@ -37,117 +37,9 @@ int Cryptography_i2d_DHxparams_bio(BIO *bp, DH *x);
+@@ -37,117 +37,9 @@ CUSTOMIZATIONS = """
  """
  
  CUSTOMIZATIONS = """
@@ -169,21 +169,26 @@
  /* Define our own to simplify support across all versions. */
 --- src/_cffi_src/openssl/fips.py.orig	2021-08-24 17:17:17 UTC
 +++ src/_cffi_src/openssl/fips.py
-@@ -17,11 +17,5 @@ int FIPS_mode(void);
+@@ -12,16 +12,8 @@ FUNCTIONS = """
+ """
+ 
+ FUNCTIONS = """
+-int FIPS_mode_set(int);
+-int FIPS_mode(void);
  """
  
  CUSTOMIZATIONS = """
 -#if CRYPTOGRAPHY_IS_LIBRESSL
--static const long Cryptography_HAS_FIPS = 0;
+ static const long Cryptography_HAS_FIPS = 0;
 -int (*FIPS_mode_set)(int) = NULL;
 -int (*FIPS_mode)(void) = NULL;
 -#else
- static const long Cryptography_HAS_FIPS = 1;
+-static const long Cryptography_HAS_FIPS = 1;
 -#endif
  """
 --- src/_cffi_src/openssl/ocsp.py.orig	2021-08-24 17:17:17 UTC
 +++ src/_cffi_src/openssl/ocsp.py
-@@ -77,7 +77,6 @@ int i2d_OCSP_RESPDATA(OCSP_RESPDATA *, unsigned char *
+@@ -77,7 +77,6 @@ CUSTOMIZATIONS = """
  
  CUSTOMIZATIONS = """
  #if ( \
@@ -256,7 +261,7 @@
  """
 --- src/_cffi_src/openssl/ssl.py.orig	2021-08-24 17:17:17 UTC
 +++ src/_cffi_src/openssl/ssl.py
-@@ -515,12 +515,7 @@ CUSTOMIZATIONS = """
+@@ -515,12 +515,7 @@ static const long Cryptography_HAS_TLSEXT_HOSTNAME = 1
  // users have upgraded. PersistentlyDeprecated2020
  static const long Cryptography_HAS_TLSEXT_HOSTNAME = 1;
  
@@ -280,7 +285,7 @@
  #endif
 --- src/_cffi_src/openssl/x509.py.orig	2021-08-24 17:02:37 UTC
 +++ src/_cffi_src/openssl/x509.py
-@@ -276,33 +276,8 @@ void X509_REQ_get0_signature(const X509_REQ *, const A
+@@ -276,33 +276,8 @@ CUSTOMIZATIONS = """
  """
  
  CUSTOMIZATIONS = """
