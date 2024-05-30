@@ -29,9 +29,10 @@ if [ ! -d "${CHECKOUT}" ] ; then
 fi
 
 # Update the checkout of the required branch
+git -C "${CHECKOUT}" fetch --tags && \
 git -C "${CHECKOUT}" checkout "${BRANCH}" && \
-git -C "${CHECKOUT}" pull --ff-only --rebase --autostash && \
-git -C "${CHECKOUT}" submodule update
+git -C "${CHECKOUT}" pull --no-ff --rebase --autostash && \
+git -C "${CHECKOUT}" submodule update --force --checkout
 
 if [ $? -ne 0 ] ; then
 	echo "Failed to update ${CHECKOUT}"
@@ -46,14 +47,19 @@ DISTNAME="kde-${PROJECT}-${VERSION}p${PATCH_COUNT}"
 DISTFILE_TAR="${BASE_DIRECTORY}/${DISTNAME}.tar"
 DISTFILE="${DISTFILE_TAR}.xz"
 
-# Tar and compress distfile
-git -C ${CHECKOUT} archive --format=tar --prefix="${DISTNAME}/" HEAD --output ${DISTFILE_TAR} && \
-git -C ${CHECKOUT} submodule foreach --recursive "git archive --prefix="${DISTNAME}"/\$path/ --output=${BASE_DIRECTORY}/\$sha1.tar HEAD && tar -r --file=${DISTFILE_TAR} @${BASE_DIRECTORY}/\$sha1.tar && rm ${BASE_DIRECTORY}/\$sha1.tar" && \
-xz ${DISTFILE_TAR}
+# Tar and compress distfile if it does not exist
+if [ ! -f "${DISTFILE}" ] ; then
 
-if [ $? -ne 0 ] ; then
-	echo "Failed to create tarball ${DISTFILE}"
-	exit 1
+	git -C ${CHECKOUT} archive --format=tar --prefix="${DISTNAME}/" HEAD --output ${DISTFILE_TAR} && \
+	git -C ${CHECKOUT} submodule foreach --recursive "git archive --prefix="${DISTNAME}"/\$path/ --output=${BASE_DIRECTORY}/\$sha1.tar HEAD && tar -r --file=${DISTFILE_TAR} @${BASE_DIRECTORY}/\$sha1.tar && rm ${BASE_DIRECTORY}/\$sha1.tar" && \
+	xz ${DISTFILE_TAR}
+
+	if [ $? -ne 0 ] ; then
+		echo "Failed to create tarball ${DISTFILE}"
+		exit 1
+	fi
+else
+	echo "Distfile already exists, skipping creation."
 fi
 
 # Print out information required in qt-dist.mk
