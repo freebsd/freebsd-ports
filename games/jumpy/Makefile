@@ -24,7 +24,7 @@ WITHOUT_LTO=	yes # XXX bug 277333 # bevy_dylib
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 
-.if ${MACHINE_ARCH} == i386
+.if ${MACHINE_ARCH} == i386 || "${MACHINE_ARCH:Marmv?}" != ""
 # https://github.com/rust-lang/rust/issues/85598
 CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
 # https://github.com/briansmith/ring/issues/1793#issuecomment-1793243725
