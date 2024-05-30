@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.5.24
+DISTVERSION=	2024.5.25
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -53,6 +53,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cc-1.0.98 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
+		chrono-tz-0.9.0 \
+		chrono-tz-build-0.3.0 \
 		ci_info-0.14.14 \
 		clap-4.5.4 \
 		clap_builder-4.5.2 \
@@ -84,6 +86,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		der-0.7.9 \
 		deranged-0.3.11 \
 		derive_arbitrary-1.3.2 \
+		deunicode-1.6.0 \
 		diff-0.1.13 \
 		difflib-0.4.0 \
 		digest-0.10.7 \
@@ -145,6 +148,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		http-body-1.0.0 \
 		http-body-util-0.1.1 \
 		httparse-1.8.0 \
+		humansize-2.1.3 \
 		humantime-2.1.0 \
 		hyper-1.3.1 \
 		hyper-rustls-0.26.0 \
@@ -172,6 +176,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lazy_static-1.4.0 \
 		libc-0.2.155 \
 		libgit2-sys-0.16.2+1.7.2 \
+		libm-0.2.8 \
 		libssh2-sys-0.3.0 \
 		libz-sys-1.1.18 \
 		linked-hash-map-0.5.6 \
@@ -207,6 +212,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		overload-0.1.1 \
 		owo-colors-3.5.0 \
 		papergrid-0.11.0 \
+		parse-zoneinfo-0.3.1 \
 		paste-1.0.15 \
 		path-absolutize-3.1.1 \
 		path-dedot-3.1.1 \
@@ -216,6 +222,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pest_generator-2.7.10 \
 		pest_meta-2.7.10 \
 		petgraph-0.6.5 \
+		phf-0.11.2 \
+		phf_codegen-0.11.2 \
+		phf_generator-0.11.2 \
+		phf_shared-0.11.2 \
 		pin-project-1.1.5 \
 		pin-project-internal-1.1.5 \
 		pin-project-lite-0.2.14 \
@@ -284,7 +294,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		simd-adler32-0.3.7 \
 		similar-2.5.0 \
 		simplelog-0.12.2 \
+		siphasher-0.3.11 \
 		slab-0.4.9 \
+		slug-0.1.5 \
 		smallvec-1.13.2 \
 		socket2-0.5.7 \
 		spin-0.9.8 \
@@ -399,7 +411,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.5 \
-		winnow-0.6.8 \
+		winnow-0.6.9 \
 		winreg-0.52.0 \
 		winsafe-0.0.19 \
 		wmi-0.13.3 \
