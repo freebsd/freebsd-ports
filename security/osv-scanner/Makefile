@@ -1,7 +1,6 @@
 PORTNAME=	osv-scanner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.1
-PORTREVISION=	4
+DISTVERSION=	1.8.2
 CATEGORIES=	security
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:1.21,modules
 
 _BUILD_VERSION=	${DISTVERSION}
-_BUILD_COMMIT=	43dda7a
+_BUILD_COMMIT=	1ea785e
 _BUILD_DATE=	$$(date +%Y-%m-%d)
 
 GO_MODULE=	github.com/google/${PORTNAME}
@@ -29,6 +28,10 @@ PORTDOCS=	CHANGELOG.md CONTRIBUTING.md README.md
 PLIST_FILES=	${GO_TARGET:C/.\/cmd/bin/}
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,%%GO_SUFFIX%%,${GO_SUFFIX},' \
+		${WRKSRC}/internal/sourceanalysis/go.go
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
