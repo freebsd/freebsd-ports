@@ -20,9 +20,4 @@ USE_LDCONFIG=	yes
 GH_ACCOUNT=	selmf
 CMAKE_TESTING_ON=	BUILD_INTEGRATION_TESTS BUILD_UNIT_TESTS
 
-post-patch:
-.if ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
-	@${REINPLACE_CMD} 's/ -flto//' ${WRKSRC}/CMakeLists.txt
-.endif
-
 .include <bsd.port.mk>
