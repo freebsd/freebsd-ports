@@ -1,7 +1,7 @@
 PORTNAME=	pynest2d
 # XXX there is no 4.13.1
 DISTVERSION=	4.12.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpolyclipping.so:graphics/polyclipping \
 		libboost_system.so:devel/boost-libs \
 		libnlopt.so:math/nlopt
 
-USES=		python cmake compiler:c++11-lang pyqt:5 pkgconfig
+USES=		python:3.9 cmake compiler:c++11-lang pyqt:5 pkgconfig
 USE_PYTHON=	flavors
 
 USE_GITHUB=	yes
