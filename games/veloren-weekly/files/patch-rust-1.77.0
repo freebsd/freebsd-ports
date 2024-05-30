@@ -12,18 +12,9 @@ error[E0425]: cannot find function `without_provenance_mut` in module `core::ptr
 402 |         let invalid_ptr = core::ptr::without_provenance_mut::<R>((self as *mut Self).addr());
     |                                      ^^^^^^^^^^^^^^^^^^^^^^ not found in `core::ptr`
 
---- Cargo.lock.orig	2024-05-20 18:26:00 UTC
+--- Cargo.lock.orig	2024-05-29 15:52:55 UTC
 +++ Cargo.lock
-@@ -495,7 +495,7 @@ dependencies = [
-  "bitflags 2.5.0",
-  "cexpr",
-  "clang-sys",
-- "itertools 0.10.5",
-+ "itertools 0.12.1",
-  "lazy_static",
-  "lazycell",
-  "proc-macro2 1.0.83",
-@@ -6744,12 +6744,12 @@ name = "treeculler"
+@@ -6819,12 +6819,12 @@ dependencies = [
  
  [[package]]
  name = "treeculler"
@@ -39,18 +30,7 @@ error[E0425]: cannot find function `without_provenance_mut` in module `core::ptr
  ]
  
  [[package]]
-@@ -6776,8 +6776,8 @@ dependencies = [
- source = "registry+https://github.com/rust-lang/crates.io-index"
- checksum = "97fee6b57c6a41524a810daee9286c02d7752c4253064d0b05472833a438f675"
- dependencies = [
-- "cfg-if 0.1.10",
-- "rand 0.7.3",
-+ "cfg-if 1.0.0",
-+ "rand 0.8.5",
-  "static_assertions",
- ]
- 
-@@ -6941,9 +6941,9 @@ name = "vek"
+@@ -7010,9 +7010,9 @@ dependencies = [
  
  [[package]]
  name = "vek"
@@ -62,7 +42,7 @@ error[E0425]: cannot find function `without_provenance_mut` in module `core::ptr
  dependencies = [
   "approx 0.5.1",
   "num-integer",
-@@ -6973,7 +6973,7 @@ dependencies = [
+@@ -7042,7 +7042,7 @@ dependencies = [
   "specs",
   "tokio",
   "tracing",
@@ -71,7 +51,7 @@ error[E0425]: cannot find function `without_provenance_mut` in module `core::ptr
   "veloren-client-i18n",
   "veloren-common",
   "veloren-common-base",
-@@ -7044,7 +7044,7 @@ dependencies = [
+@@ -7113,7 +7113,7 @@ dependencies = [
   "tracing",
   "tracing-subscriber",
   "uuid",
@@ -80,7 +60,7 @@ error[E0425]: cannot find function `without_provenance_mut` in module `core::ptr
   "veloren-common-assets",
   "veloren-common-base",
   "veloren-common-i18n",
-@@ -7129,7 +7129,7 @@ dependencies = [
+@@ -7198,7 +7198,7 @@ dependencies = [
   "specs",
   "sum_type",
   "tracing",
@@ -89,7 +69,7 @@ error[E0425]: cannot find function `without_provenance_mut` in module `core::ptr
   "veloren-common",
  ]
  
-@@ -7153,7 +7153,7 @@ dependencies = [
+@@ -7222,7 +7222,7 @@ dependencies = [
   "timer-queue",
   "toml 0.8.13",
   "tracing",
@@ -98,7 +78,7 @@ error[E0425]: cannot find function `without_provenance_mut` in module `core::ptr
   "veloren-common",
   "veloren-common-assets",
   "veloren-common-base",
-@@ -7173,7 +7173,7 @@ dependencies = [
+@@ -7242,7 +7242,7 @@ dependencies = [
   "rayon",
   "specs",
   "tracing",
@@ -107,7 +87,7 @@ error[E0425]: cannot find function `without_provenance_mut` in module `core::ptr
   "veloren-common",
   "veloren-common-base",
   "veloren-common-ecs",
-@@ -7257,7 +7257,7 @@ dependencies = [
+@@ -7326,7 +7326,7 @@ dependencies = [
   "serde",
   "slotmap",
   "tracing",
@@ -116,7 +96,7 @@ error[E0425]: cannot find function `without_provenance_mut` in module `core::ptr
   "veloren-common",
   "veloren-world",
  ]
-@@ -7300,7 +7300,7 @@ dependencies = [
+@@ -7369,7 +7369,7 @@ dependencies = [
   "strum 0.24.1",
   "tokio",
   "tracing",
@@ -125,7 +105,7 @@ error[E0425]: cannot find function `without_provenance_mut` in module `core::ptr
   "veloren-common",
   "veloren-common-base",
   "veloren-common-ecs",
-@@ -7323,7 +7323,7 @@ dependencies = [
+@@ -7392,7 +7392,7 @@ dependencies = [
   "rand 0.8.5",
   "specs",
   "tracing",
@@ -134,7 +114,7 @@ error[E0425]: cannot find function `without_provenance_mut` in module `core::ptr
   "veloren-common",
   "veloren-common-base",
   "veloren-common-dynlib",
-@@ -7420,7 +7420,7 @@ dependencies = [
+@@ -7489,7 +7489,7 @@ dependencies = [
   "tokio",
   "tracing",
   "treeculler",
@@ -143,7 +123,7 @@ error[E0425]: cannot find function `without_provenance_mut` in module `core::ptr
   "veloren-client",
   "veloren-client-i18n",
   "veloren-common",
-@@ -7448,7 +7448,7 @@ dependencies = [
+@@ -7517,7 +7517,7 @@ version = "0.10.0"
  dependencies = [
   "bytemuck",
   "lazy_static",
@@ -152,7 +132,7 @@ error[E0425]: cannot find function `without_provenance_mut` in module `core::ptr
   "veloren-common",
   "veloren-common-dynlib",
  ]
-@@ -7516,7 +7516,7 @@ dependencies = [
+@@ -7585,7 +7585,7 @@ dependencies = [
   "svg_fmt",
   "tracing",
   "tracing-subscriber",
