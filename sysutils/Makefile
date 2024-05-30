@@ -621,6 +621,7 @@
     SUBDIR += jdupes
     SUBDIR += jest
     SUBDIR += jkill
+    SUBDIR += joshuto
     SUBDIR += jps
     SUBDIR += jruls
     SUBDIR += jstest-gtk
