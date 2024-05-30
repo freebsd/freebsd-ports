@@ -168,6 +168,7 @@ include/utils/debug.h
 include/utils/generic/Mutex.h
 include/utils/memalign.h
 include/utils/ostream.h
+include/utils/sstream.h
 include/utils/unwindows.h
 include/viewer/AutomationEngine.h
 include/viewer/AutomationSpec.h
