@@ -1,5 +1,5 @@
---- cargo-crates/relm4-icons-0.8.2/build.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/relm4-icons-0.8.2/build.rs
+--- cargo-crates/relm4-icons-0.8.3/build.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/relm4-icons-0.8.3/build.rs
 @@ -52,7 +52,7 @@ fn main() {
      let mut manifest_dir = Path::new(&out_dir).canonicalize().unwrap();
      eprintln!("Canonical manifest dir: {manifest_dir:?}");
