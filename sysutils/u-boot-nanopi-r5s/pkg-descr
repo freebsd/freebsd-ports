@@ -1,0 +1,6 @@
+U-Boot loader and related files for the FriendlyARM NanoPi-R5S
+
+To install this bootloader on an sdcard just do:
+
+dd if=/usr/local/share/u-boot/u-boot-nanopi-r5s/idbloader.img of=/path/to/sdcarddevice seek=64 bs=512 conv=sync
+dd if=/usr/local/share/u-boot/u-boot-nanopi-r5s/u-boot.itb of=/path/to/sdcarddevice seek=16384 bs=512 conv=sync
