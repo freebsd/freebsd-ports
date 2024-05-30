@@ -1,5 +1,6 @@
 PORTNAME=	libSavitar
 DISTVERSION=	4.13.1
+PORTREVISION=	1
 CATEGORIES=	devel cad
 DIST_SUBDIR=	Ultimaker
 
@@ -9,6 +10,9 @@ WWW=		https://github.com/Ultimaker/libSavitar
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Fails to build with modern python
+EXPIRATION_DATE=	2024-06-29
 
 BUILD_DEPENDS=	sip:devel/py-sip4
 LIB_DEPENDS=	libpugixml.so:textproc/pugixml
