@@ -1,0 +1,4 @@
+Firmware binary blobs from Rockchip for booting on RK356X SoCs.
+Binary blobs are taken directly from https://github.com/rockchip-linux/rkbin
+and re-distributed which avoid downloading a lot of useless files that
+we don't want.
