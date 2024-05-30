@@ -1,6 +1,6 @@
 PORTNAME=	sip4
 PORTVERSION=	${SIP4_VERSION}
-PORTREVISION=	2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	https://www.riverbankcomputing.com/static/Downloads/sip/${SIP4_VERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python to C and C++ bindings generator
 WWW=		http://www.riverbankcomputing.co.uk/software/sip/
 
-USES=		python:3.9 pyqt:sip
+USES=		python pyqt:sip
 USE_PYTHON=	concurrent py3kplist flavors
 USE_PYQT=	#
 
