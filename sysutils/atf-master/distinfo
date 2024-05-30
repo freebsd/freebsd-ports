@@ -1,3 +1,3 @@
-TIMESTAMP = 1702053250
-SHA256 (ARM-software-arm-trusted-firmware-v2.10.0_GH0.tar.gz) = 696b8e53923aac4474532da7dd681f0bd044b329732facd65aeabea3e61adca9
-SIZE (ARM-software-arm-trusted-firmware-v2.10.0_GH0.tar.gz) = 7816577
+TIMESTAMP = 1717061866
+SHA256 (ARM-software-arm-trusted-firmware-v2.10.4-lts-v2.10.4_GH0.tar.gz) = ba215404fe9db26e5f2cef3fdce17b7c8ed344a2a1d592dd01a5f1c5e72cfdbd
+SIZE (ARM-software-arm-trusted-firmware-v2.10.4-lts-v2.10.4_GH0.tar.gz) = 7823337

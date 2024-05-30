@@ -15,7 +15,7 @@ USES=	gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	ARM-software
 GH_PROJECT=	arm-trusted-firmware
-GH_TAGNAME=	${ATF_VERSION}
+GH_TAGNAME=	lts-${ATF_VERSION}
 
 SSP_UNSAFE=	yes
 MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-"
@@ -23,7 +23,7 @@ ATF_TARGET?=	bl31
 ALL_TARGET=	ARCH="aarch64" PLAT=${PLAT} V=1 CFLAGS= HOSTCC=${CC} ${ATF_TARGET}
 
 # Default to the latest release
-ATF_VERSION?=	v2.10.0
+ATF_VERSION?=	v2.10.4
 
 PLIST_FILES?=	${PREFIX}/share/${PORTNAME}-${PLAT}/${BL31:T}
 .if defined(FIP)
