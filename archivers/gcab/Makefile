@@ -1,6 +1,5 @@
 PORTNAME=	gcab
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.6
 CATEGORIES=	archivers gnome
 MASTER_SITES=	GNOME
 
@@ -12,8 +11,8 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe gettext gnome meson pkgconfig tar:xz vala:build
-USE_GNOME=	glib20 introspection:build
 CPE_VENDOR=	gnome
+USE_GNOME=	glib20 introspection:build
 
 MESON_ARGS=	-Ddocs=false
 
