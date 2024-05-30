@@ -526,7 +526,7 @@
  ##tldbg _KPSE_LIB_FLAGS_TL: mpfi (mpfi) .
 @@ -28087,413 +27577,6 @@ fi
  ${top_builddir}/../../libs/mpfi/include/mpfi.h:
-	cd ${top_builddir}/../../libs/mpfi && $(MAKE) $(AM_MAKEFLAGS) rebuild'
+ 	cd ${top_builddir}/../../libs/mpfi && $(MAKE) $(AM_MAKEFLAGS) rebuild'
  fi
 -
 -##tldbg _KPSE_LIB_FLAGS: Setup xpdf (-lxpdf) flags.
@@ -935,6 +935,6 @@
 -fi
 -
 -fi # end xetex for icu/graphite
-
+ 
  # Check size of off_t (using <kpathsea/config.h>)
  eval CPPFLAGS=\"$KPATHSEA_INCLUDES \$CPPFLAGS\"
