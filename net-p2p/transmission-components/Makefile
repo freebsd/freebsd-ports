@@ -1,6 +1,6 @@
 PORTNAME=	transmission
-DISTVERSION=	4.0.5
-PORTREVISION=	2
+DISTVERSION=	4.0.6
+PORTREVISION=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fast_float/fast_float.h:math/fast_float \
 		${LOCALBASE}/include/fmt/format.h:devel/libfmt \
-		${LOCALBASE}/include/utf8cpp/utf8.h:devel/utf8cpp
+		${LOCALBASE}/include/utf8cpp/utf8.h:devel/utf8cpp \
+		${LOCALBASE}/include/rapidjson/rapidjson.h:devel/rapidjson
 
 LIB_DEPENDS=	libb64.so:converters/libb64 \
 		libcurl.so:ftp/curl \
@@ -56,6 +57,7 @@ EXTRACT_AFTER_ARGS=	--exclude third-party/dht \
 			--exclude third-party/libpsl \
 			--exclude third-party/libutp \
 			--exclude third-party/miniupnpc \
+			--exclude third-party/rapidjson \
 			--exclude third-party/utfcpp
 
 .if ${FLAVOR} == gtk
@@ -149,7 +151,6 @@ qt_DESC=	Build QT client
 TESTS_DESC=	Build & run unit tests
 utils_DESC=	Build utilities (create, edit, remote, show)
 cli_DESC=	Build command-line client (deprecated)
-#web_DESC=	Install web interface
 
 NLS_USES=	gettext-runtime:lib
 NLS_CMAKE_BOOL=	ENABLE_NLS
