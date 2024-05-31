@@ -1,5 +1,5 @@
 PORTNAME=	nvme-cli
-PORTVERSION=	1.8.1
+PORTVERSION=	2.11
 CATEGORIES=	sysutils
 
 MAINTAINER=	imp@FreeBSD.org
@@ -8,15 +8,21 @@ WWW=		https://github.com/linux-nvme/nvme-cli
 
 LICENSE=	GPLv2
 
-# only tested on amd64, all other archs are no-go until we're sure amd64 works.
-# And there's plenty in amd64 that compiles, but won't run (eg using /sys/, etc)
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	aarch64 amd64
 
-USES=		gmake
+BUILD_DEPENDS=	bash>0:shells/bash \
+		freebsd-nvme-shim>0:devel/freebsd-nvme-shim \
+		swig:devel/swig
+LIB_DEPENDS=	libnvme.so:devel/libnvme
+
+USES=		meson pkgconfig
+
+MESON_ARGS=	-Ddocs=man -Djson-c=disabled
+CXXFLAGS+=	-I${LOCALBASE}/include/freebsd-nvme-shim
+CFLAGS+=	-I${LOCALBASE}/include/freebsd-nvme-shim
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	bsdimp
-GH_TAGNAME=	c92d871
-
-PLIST_FILES=	sbin/nvme
+GH_TAGNAME=	freebsd-${PORTVERSION}
 
 .include <bsd.port.mk>
