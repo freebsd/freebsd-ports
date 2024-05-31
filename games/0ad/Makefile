@@ -32,7 +32,7 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libfmt.so:devel/libfmt
 
 USES=		compiler:c++11-lib desktop-file-utils dos2unix gmake gnome \
-		iconv openal:al perl5 pkgconfig python:build sdl tar:xz \
+		iconv openal:al perl5 pkgconfig python:3.9,build sdl tar:xz \
 		xorg
 USE_GNOME=	libxml2
 USE_GL=		gl
