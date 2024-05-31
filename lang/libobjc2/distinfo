@@ -1,5 +1,3 @@
-TIMESTAMP = 1598301863
-SHA256 (gnustep-libobjc2-v2.1_GH0.tar.gz) = 78fc3711db14bf863040ae98f7bdca08f41623ebeaf7efaea7dd49a38b5f054c
-SIZE (gnustep-libobjc2-v2.1_GH0.tar.gz) = 200290
-SHA256 (Tessil-robin-map-757de82_GH0.tar.gz) = b365d847a23ce48a4e5c76c4a8194693f18323bf7cacdc0f57ada92ee275bd45
-SIZE (Tessil-robin-map-757de82_GH0.tar.gz) = 63288
+TIMESTAMP = 1717156055
+SHA256 (gnustep-libobjc2-v2.2.1_GH0.tar.gz) = 768ea8c5bd0999a29b5d15781125494f986456c1dc5c51d370fb31852cd31ea1
+SIZE (gnustep-libobjc2-v2.2.1_GH0.tar.gz) = 205087

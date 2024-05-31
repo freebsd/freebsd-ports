@@ -1,0 +1,41 @@
+--- CMakeLists.txt.orig	2024-03-21 16:06:36 UTC
++++ CMakeLists.txt
+@@ -29,9 +29,10 @@ INCLUDE (FetchContent)
+ INCLUDE (CheckCXXSourceCompiles)
+ INCLUDE (FetchContent)
+ 
++include_directories(${LOCALBASE}/include)
++
+ set(libobjc_VERSION 4.6)
+ 
+-
+ if (MSVC)
+ 	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /EHas")
+ 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHas")
+@@ -128,17 +129,6 @@ endif ()
+ 	list(APPEND libobjc_C_SRCS eh_personality.c)
+ endif ()
+ 
+-find_package(tsl-robin-map)
+-
+-if (NOT tsl-robin-map_FOUND)
+-	FetchContent_Declare(
+-		robinmap
+-		GIT_REPOSITORY https://github.com/Tessil/robin-map/
+-		GIT_TAG        v1.2.1)
+-
+-	FetchContent_MakeAvailable(robinmap)
+-endif()
+-
+ if (WIN32)
+ 	set(OLD_ABI_COMPAT_DEFAULT false)
+ else()
+@@ -255,8 +245,6 @@ endif()
+ if (WIN32 AND NOT MINGW)
+ 	target_link_libraries(objc ntdll.dll)
+ endif()
+-
+-target_link_libraries(objc tsl::robin_map)
+ 
+ set_target_properties(objc PROPERTIES
+ 	LINKER_LANGUAGE C
