@@ -1,5 +1,6 @@
 PORTNAME=	root
 DISTVERSION=	6.30.06
+PORTREVISION=	1
 CATEGORIES=	devel science math parallel python
 MASTER_SITES=	https://root.cern/download/
 DISTFILES=	${PORTNAME}_v${DISTVERSION}.source${EXTRACT_SUFX}
@@ -56,7 +57,7 @@ python_OLD_CMD+=	"/usr/bin/env @python@"
 # Flags and environment variables for building
 CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17
 CMAKE_ON=	gnuinstall soversion mathmore
-CMAKE_OFF=	builtin_gtest clad
+CMAKE_OFF=	builtin_davix builtin_gtest clad davix
 CONFIGURE_WRKSRC?=	${WRKDIR}/.build
 MAKE_ENV+=		ROOTSYS=${CONFIGURE_WRKSRC}
 
@@ -107,7 +108,8 @@ X11_CMAKE_BOOL=		x11
 
 .include <bsd.port.options.mk>
 
-PLIST_SUB+=	SHLIB_SHVER="${DISTVERSION:R}" \
+PLIST_SUB+=	PYVER="${PYTHON_VER:S/./_/}" \
+		SHLIB_SHVER="${DISTVERSION:R}" \
 		SHLIB_VER="${DISTVERSION}"
 
 # Some .modulemap, .pcm and .idx files are not installed on aarch64, a few .pcm files are exclusive to aarch64 and files LIBRARY.pcm are renamed libLIBRARY_rdict.pcm on aarch64
@@ -117,6 +119,9 @@ PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="@comment " ONLY_INSTALLED_ON_AARCH64="" AA
 PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="" ONLY_INSTALLED_ON_AARCH64="@comment " AARCH64_PCM_PREFIX="" AARCH64_PCM_SUFFIX=""
 .endif
 
+.if ${OPSYS} == FreeBSD && ${ARCH} == "aarch64" && ${OSVERSION} > 1499999
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-interpreter_cling_lib_Interpreter_Interpreter.cpp.15aarch64
+.endif
 # std_config.pcm exclusive to FreeBSD 14
 .if ${OPSYS} == FreeBSD && (1400000 <= ${OSVERSION} && ${OSVERSION} < 1500000)
 PLIST_SUB+=	ONLY_INSTALLED_ON_FBSD14=""
@@ -134,8 +139,6 @@ post-patch:
 
 # The following two files should not be staged. This happens even when PYROOT option is OFF.
 post-install:
-	${RM} ${STAGEDIR}${PREFIX}/lib/root/__pycache__/cmdLineUtils.cpython-39.pyc
-	${RM} ${STAGEDIR}${PREFIX}/lib/root/__pycache__/cmdLineUtils.cpython-39.opt-1.pyc
-	${RMDIR} ${STAGEDIR}${PREFIX}/lib/root/__pycache__
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/root/__pycache__
 
 .include <bsd.port.mk>
