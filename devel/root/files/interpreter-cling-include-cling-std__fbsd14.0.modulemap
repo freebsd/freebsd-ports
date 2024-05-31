@@ -1,5 +1,5 @@
 // FreeBSD port maintainer note:
-// Taken from 
+// Taken from
 // https://github.com/freebsd/freebsd-src/blob/release/14.0.0/lib/libc%2B%2B/module.modulemap
 // on 2024-05-15.
 
