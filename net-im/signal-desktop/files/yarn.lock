@@ -1359,10 +1359,10 @@
     minimist "^1.2.6"
     plist "^3.0.5"
 
-"@electron/symbolicate-mac@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@electron/symbolicate-mac/-/symbolicate-mac-2.0.2.tgz#e3df3a62d3d48444c97f251fdd5cede1bfeef546"
-  integrity sha512-ysQQk1XrTILQXCoi7l4pa3J8qA5RMfcRNjow1tFdZGEwmV6FK6X3hpGbo94Gsv4z+6m+gTspdrVANFbpT2Tx2w==
+"@electron/symbolicate-mac@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@electron/symbolicate-mac/-/symbolicate-mac-2.1.0.tgz#94e559b7ade72c2b06885c03bb8e10cb8a1b2529"
+  integrity sha512-IOn78ATkPgtMSyK6tUToA4npOCMOnOLT4umhlEDPLpLMqNMeTR+2HlL/rHmTK4IlP5Pzd/GqqF2cQ4NtNRRV6Q==
   dependencies:
     got "^11.8.2"
     mkdirp "^1.0.4"
@@ -3873,19 +3873,19 @@
     bindings "^1.5.0"
     tar "^6.1.0"
 
-"@signalapp/libsignal-client@0.45.0":
-  version "0.45.0"
-  resolved "https://registry.yarnpkg.com/@signalapp/libsignal-client/-/libsignal-client-0.45.0.tgz#c6b9125bd7bded0fd349484df264ee2763f8b714"
-  integrity sha512-jCP8NHeqVLECjfboTNJJGLtTiY6BLcAg0W9/OUkgFNXLPjKIig9RaRWtYIq5DjcN4Zis5o16X4v+DKMMLOy5Sw==
+"@signalapp/libsignal-client@0.46.2":
+  version "0.46.2"
+  resolved "https://registry.yarnpkg.com/@signalapp/libsignal-client/-/libsignal-client-0.46.2.tgz#5f6139a7f585259dc5603ef27990b345afbbcc60"
+  integrity sha512-N6nfIkp3tkMQ1SCYMEOp8jdCiikWjjvkvHAp0M+FMA6dkrhj011nvDWjRAWNj+mCGmJCrLEqrhahaDKChWwHsg==
   dependencies:
     node-gyp-build "^4.2.3"
     type-fest "^3.5.0"
     uuid "^8.3.0"
 
-"@signalapp/ringrtc@2.41.0":
-  version "2.41.0"
-  resolved "https://registry.yarnpkg.com/@signalapp/ringrtc/-/ringrtc-2.41.0.tgz#430b9545e04cabc728e91d62f9badaba18e2406c"
-  integrity sha512-cERXbaNY+hHOeIGmYAGi9AlXaAlv+GSWM6IYtR5F+ikTl1WzeIK+9hK+QvJLDHJNBHSXPUAvmILwqHD/64L+RQ==
+"@signalapp/ringrtc@2.42.0":
+  version "2.42.0"
+  resolved "https://registry.yarnpkg.com/@signalapp/ringrtc/-/ringrtc-2.42.0.tgz#de6e58bf780279dad63a3877b79643b7dace461f"
+  integrity sha512-kysZs+NyDoSLQMK5Vxbz4InbCYfDYI4W2iMbSrVoT38ZYonS0nCw9rtHHhyzf8c433lCcfrauLISqHncnJQJQw==
   dependencies:
     https-proxy-agent "7.0.1"
     tar "^6.2.1"
@@ -9114,10 +9114,10 @@ electron-window@^0.8.0:
   dependencies:
     is-electron-renderer "^2.0.0"
 
-electron@29.1.5:
-  version "29.1.5"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-29.1.5.tgz#b745b4d201c1ac9f84d6aa034126288dde34d5a1"
-  integrity sha512-1uWGRw/ffA62lcrklxGUgVxVtOHojsg/nwsYr+/F9cVjipZJn8iPv/ABGIIexhmUqWcho8BqfTJ4osCBa29gBg==
+electron@30.0.6:
+  version "30.0.6"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-30.0.6.tgz#9ddea5f68396ecca88ad7c2c466a30fc9c16144b"
+  integrity sha512-PkhEPFdpYcTzjAO3gMHZ+map7g2+xCrMDedo/L1i0ir2BRXvAB93IkTJX497U6Srb/09r2cFt+k20VPNVCdw3Q==
   dependencies:
     "@electron/get" "^2.0.0"
     "@types/node" "^20.9.0"
