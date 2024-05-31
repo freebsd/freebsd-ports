@@ -2,6 +2,7 @@ bin/bibtex
 bin/ctangle
 bin/ctie
 bin/ctwill
+bin/ctwill-proofsort
 bin/ctwill-refsort
 bin/ctwill-twinx
 bin/cweave
@@ -35,6 +36,7 @@ bin/tangle
 bin/tftopl
 bin/tie
 bin/twill
+bin/twill-refsort
 bin/updvitomp
 bin/upmpost
 bin/vftovp
@@ -43,6 +45,7 @@ bin/weave
 share/man/man1/bibtex.1.gz
 share/man/man1/ctangle.1.gz
 share/man/man1/ctie.1.gz
+share/man/man1/ctwill-proofsort.1.gz
 share/man/man1/ctwill-refsort.1.gz
 share/man/man1/ctwill-twinx.1.gz
 share/man/man1/ctwill.1.gz
@@ -72,6 +75,7 @@ share/man/man1/tangle.1.gz
 share/man/man1/tftopl.1.gz
 share/man/man1/tie.1.gz
 share/man/man1/twill.1.gz
+share/man/man1/twill-refsort.1.gz
 share/man/man1/uplatex-dev.1.gz
 share/man/man1/vftovp.1.gz
 share/man/man1/vptovf.1.gz

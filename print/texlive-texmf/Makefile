@@ -28,6 +28,10 @@ do-install:
 	${TAR} -Jxf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		-C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner
+	@${REINPLACE_CMD} -i '' -E -e '1s|/bin/python3|${python_CMD}|' \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/tex/latex/prettytok/prettytok-decode-8bit.py
+	${REINPLACE_CMD} -i '' -e '1s|/usr/bin/perl|${perl_CMD}|' \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/eolang/eolang.pl
 	${FIND} -s ${STAGEDIR}${PREFIX}/share/texmf-dist -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	${FIND} -s ${STAGEDIR}${PREFIX}/share/texmf-dist -type d -empty | ${SORT} -r | \
@@ -107,22 +111,14 @@ _maintainer-patch: _maintainer-extract
 	${REINPLACE_CMD} -i '' \
 		's/\\def\\magyar@sugg@ie@low#1#2#3/\\def\\magyar@sugg@ie@low\\protect #1#2#3/' \
 		${WRKSRC}/texmf-dist/tex/generic/babel-hungarian/magyar.ldf
-	${REINPLACE_CMD} -i '' -e '1s|/bin/bash|${bash_CMD}|' \
-		${WRKSRC}/texmf-dist/scripts/logicpuzzle/createlpsudoku \
-		${WRKSRC}/texmf-dist/scripts/logicpuzzle/lpsmag
-	${REINPLACE_CMD} -i '' -e '1s|/usr/bin/perl|${perl_CMD}|' \
-		${WRKSRC}/texmf-dist/scripts/mycv/mycv_split_contents.pl
-	@${REINPLACE_CMD} -i '' -E -e '1s|/usr/bin/env python[23]?|${python_CMD}|; \
-		1s|/usr/bin/python|${python_CMD}|;' \
-		${WRKSRC}/texmf-dist/asymptote/GUI/*.py \
-		${WRKSRC}/texmf-dist/scripts/webquiz/webquiz \
-		${WRKSRC}/texmf-dist/scripts/*/*.py \
-		${WRKSRC}/texmf-dist/tex/latex/wargame/*.py
-	@${REINPLACE_CMD} -i '' -E -e '/ec\.tex/d' \
-		${WRKSRC}/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-zh-latn-pinyin.tex \
-		${WRKSRC}/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-la-x-liturgic.tex
-	@${REINPLACE_CMD} -i '' -e '1s|/usr/bin/luatex|${LOCALBASE}/bin/luatex|' \
-		${WRKSRC}/texmf-dist/tex/generic/pgfplots/lua/*.lua
+	${FIND} ${WRKSRC} -type f | \
+		${XARGS} ${REINPLACE_CMD} -i '' -E -e '1s|/bin/bash|${bash_CMD}|; \
+		1s|/usr/bin/perl|${perl_CMD}|; \
+		1s|/usr/bin/env python[23]?|${python_CMD}|; \
+		1s|/usr/bin/python|${python_CMD}|; \
+		1s|/bin/python3|${python_CMD}|; \
+		/ec\.tex/d; \
+		1s|/usr/bin/luatex|${LOCALBASE}/bin/luatex|'
 
 _maintainer-dist: _maintainer-patch
 	${TAR} --options xz:compression-level=9 -Jcvf \

@@ -1,3 +1,4 @@
+bin/ptekf
 include/ptexenc/ptexenc.h
 include/ptexenc/unicode-jp.h
 include/ptexenc/unicode.h
@@ -6,3 +7,4 @@ lib/libptexenc.so
 lib/libptexenc.so.1
 lib/libptexenc.so.%%VERSION%%
 libdata/pkgconfig/ptexenc.pc
+share/man/man1/ptekf.1.gz

@@ -62,10 +62,19 @@
  proglib = lib/lib.a
  
  #EXTRA_LIBRARIES += libluasocket.a liblua53socket.a libluajitsocket.a
+@@ -3146,7 +3138,7 @@ lib_LTLIBRARIES = $(am__append_127)
+ EXTRA_LTLIBRARIES = libsynctex.la
+ lib_LIBRARIES = $(am__append_128)
+ lib_LTLIBRARIES = $(am__append_127)
+-dist_man_MANS = synctexdir/man1/synctex.1 synctexdir/man5/synctex.5
++dist_man_MANS =
+ nodist_man_MANS = 
+ TEST_EXTENSIONS = .pl .test
+ #
 @@ -3652,14 +3644,7 @@ TRIPTRAP = $(am__append_7) $(am__append_17) $(am__appe
  	$(am__append_35) $(am__append_43) $(am__append_59) \
  	$(am__append_63) $(am__append_69) $(am__append_74) \
-	$(am__append_82)
+ 	$(am__append_82)
 -bin_links = $(am__append_5) $(am__append_14) $(am__append_15) \
 -	$(am__append_24) $(am__append_33) $(am__append_41) \
 -	$(am__append_49) $(am__append_54) $(am__append_67) \
@@ -77,8 +86,27 @@
 +bin_links = $(am__append_75) $(am__append_81)
  install_exe_links = $(am__append_12) $(am__append_22) $(am__append_31) \
  	$(am__append_39) $(am__append_47) $(am__append_52) \
-	$(am__append_92) $(am__append_97) $(am__append_102) \
-@@ -21452,9 +21437,6 @@ $(proglib): $(proglib_sources)
+ 	$(am__append_92) $(am__append_97) $(am__append_102) \
+@@ -3833,7 +3818,7 @@ nodist_twill_SOURCES = twill.c twill.h
+ nodist_vptovf_SOURCES = vptovf.c vptovf.h
+ nodist_weave_SOURCES = weave.c weave.h
+ nodist_twill_SOURCES = twill.c twill.h
+-dist_bin_SCRIPTS = cwebdir/ctwill-proofsort cwebdir/twill-refsort
++dist_bin_SCRIPTS =
+ nodist_ctie_SOURCES = ctie.c
+ nodist_cweave_SOURCES = cweave.c cweb.c
+ nodist_ctwill_SOURCES = ctwill.c cweb.c
+@@ -4622,8 +4607,7 @@ euptex_tests = \
+ # At the moment, these are the only man pages handled in the
+ # conglomerated web2c/Makefile[.am]. (All the others are in man/.)
+ # If that changes, have to set at top level and use +=.
+-@HITEX_TRUE@man1_MANS = hitexdir/man/hishrink.man hitexdir/man/histretch.man \
+-@HITEX_TRUE@            hitexdir/man/hitex.man
++@HITEX_TRUE@man1_MANS =
+ 
+ hitex_CPPFLAGS = $(AM_CPPFLAGS) $(ZLIB_INCLUDES) -I$(srcdir)/libmd5 \
+ 	-DINIT -DSTAT -DWEB2CVERSION="\"${WEB2CVERSION}\""
+@@ -21452,9 +21436,6 @@ $(proglib): $(proglib_sources)
  @KPATHSEA_RULE@
  @PTEXENC_RULE@
  @ZLIB_RULE@

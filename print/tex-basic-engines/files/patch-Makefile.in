@@ -38,3 +38,12 @@
  	$(am__append_78) $(am__append_79) $(am__append_80) \
  	$(am__append_94) $(am__append_99) $(am__append_104) \
  	$(am__append_109)
+@@ -3833,7 +3829,7 @@ nodist_twill_SOURCES = twill.c twill.h
+ nodist_vptovf_SOURCES = vptovf.c vptovf.h
+ nodist_weave_SOURCES = weave.c weave.h
+ nodist_twill_SOURCES = twill.c twill.h
+-dist_bin_SCRIPTS = cwebdir/ctwill-proofsort cwebdir/twill-refsort
++dist_bin_SCRIPTS =
+ nodist_ctie_SOURCES = ctie.c
+ nodist_cweave_SOURCES = cweave.c cweb.c
+ nodist_ctwill_SOURCES = ctwill.c cweb.c

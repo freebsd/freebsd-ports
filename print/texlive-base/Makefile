@@ -133,7 +133,12 @@ EXCLUDE_FILES=	${DISTNAME}/texk/web2c \
 		${DISTNAME}/texk/dvipdfm-x \
 		${DISTNAME}/texk/dvipsk \
 		${DISTNAME}/utils/t1utils \
-		${DISTNAME}/utils/xpdfopen
+		${DISTNAME}/utils/xpdfopen \
+		${DISTNAME}/texk/texlive/linked_scripts/eolang/eolang.pl \
+		${DISTNAME}/texk/texlive/linked_scripts/memoize/memoize-clean.pl \
+		${DISTNAME}/texk/texlive/linked_scripts/memoize/memoize-clean.py \
+		${DISTNAME}/texk/texlive/linked_scripts/memoize/memoize-extract.py \
+		${DISTNAME}/texk/texlive/linked_scripts/runtexshebang/runtexshebang.lua
 
 post-extract:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
@@ -147,8 +152,6 @@ post-patch:
 		${WRKSRC}/texk/texlive/linked_scripts/texlive/fmtutil-sys.sh
 	${REINPLACE_CMD} -e 's|exec updmap|exec ${PREFIX}/bin/updmap|' \
 		${WRKSRC}/texk/texlive/linked_scripts/texlive/updmap-sys.sh
-	${REINPLACE_CMD} -e '/tlmgr/d' \
-		${WRKSRC}/texk/texlive/linked_scripts/Makefile.in
 
 post-install-fmtutil:
 	for D in ${TEXHASHDIRS}; do \

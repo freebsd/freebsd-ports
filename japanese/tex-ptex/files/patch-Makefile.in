@@ -55,6 +55,15 @@
  install_exe_links = $(am__append_12) $(am__append_22) $(am__append_31) \
  	$(am__append_39) $(am__append_47) $(am__append_52) \
  	$(am__append_92) $(am__append_97) $(am__append_102) \
+@@ -3833,7 +3816,7 @@ nodist_twill_SOURCES = twill.c twill.h
+ nodist_vptovf_SOURCES = vptovf.c vptovf.h
+ nodist_weave_SOURCES = weave.c weave.h
+ nodist_twill_SOURCES = twill.c twill.h
+-dist_bin_SCRIPTS = cwebdir/ctwill-proofsort cwebdir/twill-refsort
++dist_bin_SCRIPTS =
+ nodist_ctie_SOURCES = ctie.c
+ nodist_cweave_SOURCES = cweave.c cweb.c
+ nodist_ctwill_SOURCES = ctwill.c cweb.c
 @@ -4622,8 +4605,7 @@ euptex_tests = \
  # At the moment, these are the only man pages handled in the
  # conglomerated web2c/Makefile[.am]. (All the others are in man/.)

@@ -39,6 +39,15 @@
  proglib = lib/lib.a
  
  #EXTRA_LIBRARIES += libluasocket.a liblua53socket.a libluajitsocket.a
+@@ -3833,7 +3823,7 @@ nodist_twill_SOURCES = twill.c twill.h
+ nodist_vptovf_SOURCES = vptovf.c vptovf.h
+ nodist_weave_SOURCES = weave.c weave.h
+ nodist_twill_SOURCES = twill.c twill.h
+-dist_bin_SCRIPTS = cwebdir/ctwill-proofsort cwebdir/twill-refsort
++dist_bin_SCRIPTS =
+ nodist_ctie_SOURCES = ctie.c
+ nodist_cweave_SOURCES = cweave.c cweb.c
+ nodist_ctwill_SOURCES = ctwill.c cweb.c
 @@ -19689,7 +19679,7 @@ install-am: all-am
  uninstall: uninstall-recursive
  
@@ -50,7 +59,7 @@
  install-strip:
 @@ -20621,7 +20611,6 @@ install-exec-am: install-binPROGRAMS install-dist_binS
  install-exec-am: install-binPROGRAMS install-dist_binSCRIPTS \
-	install-libLIBRARIES install-libLTLIBRARIES
+ 	install-libLIBRARIES install-libLTLIBRARIES
  	@$(NORMAL_INSTALL)
 -	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
  install-html: install-html-recursive
