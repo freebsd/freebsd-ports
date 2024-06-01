@@ -1,0 +1,11 @@
+--- configure.ac.orig	2024-05-21 17:19:57 UTC
++++ configure.ac
+@@ -746,7 +746,7 @@ if test $ol_enable_perl != no ; then
+ 			PERL_CPPFLAGS="$PERL_CPPFLAGS $opt"
+ 		done
+ 		PERL_LDFLAGS=""
+-		for opt in `$PERLBIN" -MExtUtils::Embed -e ldopts`; do
++		for opt in `$PERLBIN -MExtUtils::Embed -e ldopts`; do
+ 			case "$opt" in
+ 			"-lc" )
+ 				continue;;
