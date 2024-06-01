@@ -10,9 +10,6 @@ WWW=		https://github.com/master-of-zen/Av1an
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN_aarch64=	https://github.com/shssoichiro/ffmpeg-the-third/issues/63
-BROKEN_armv7=	https://github.com/shssoichiro/ffmpeg-the-third/issues/63
-
 BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}
 BUILD_DEPENDS_amd64=	nasm:devel/nasm
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
