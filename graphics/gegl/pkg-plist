@@ -115,10 +115,11 @@ lib/gegl-%%GEGL_VER%%/grey2.json
 lib/gegl-%%GEGL_VER%%/jpg-load.so
 lib/gegl-%%GEGL_VER%%/jpg-save.so
 %%LCMS2%%lib/gegl-%%GEGL_VER%%/lcms-from-profile.so
+%%UMFPACK%%lib/gegl-%%GEGL_VER%%/matting-levin.so
 %%CAIRO%%lib/gegl-%%GEGL_VER%%/npd.so
 lib/gegl-%%GEGL_VER%%/npy-save.so
 %%CAIRO%%lib/gegl-%%GEGL_VER%%/path.so
-%%POPPLER%%lib/gegl-%%GEGL_VER%%/pdf-load.so
+%%CAIRO%%%%POPPLER%%lib/gegl-%%GEGL_VER%%/pdf-load.so
 %%PIXBUF%%lib/gegl-%%GEGL_VER%%/pixbuf-load.so
 %%PIXBUF%%lib/gegl-%%GEGL_VER%%/pixbuf-save.so
 lib/gegl-%%GEGL_VER%%/png-load.so
@@ -131,8 +132,8 @@ lib/gegl-%%GEGL_VER%%/rgbe-save.so
 %%SDL%%lib/gegl-%%GEGL_VER%%/sdl2-display.so
 lib/gegl-%%GEGL_VER%%/seamless-clone-compose.so
 lib/gegl-%%GEGL_VER%%/seamless-clone.so
-%%LIBRSVG2%%lib/gegl-%%GEGL_VER%%/svg-load.so
-%%PANGOCAIRO%%lib/gegl-%%GEGL_VER%%/text.so
+%%CAIRO%%%%LIBRSVG2%%lib/gegl-%%GEGL_VER%%/svg-load.so
+%%CAIRO%%%%PANGO%%lib/gegl-%%GEGL_VER%%/text.so
 %%TIFF%%lib/gegl-%%GEGL_VER%%/tiff-load.so
 %%TIFF%%lib/gegl-%%GEGL_VER%%/tiff-save.so
 lib/gegl-%%GEGL_VER%%/transformops.so
