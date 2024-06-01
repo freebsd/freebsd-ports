@@ -6,7 +6,6 @@ lib/lfortran_intrinsic_ieee_arithmetic.mod
 lib/lfortran_intrinsic_iso_c_binding.mod
 lib/lfortran_intrinsic_iso_fortran_env.mod
 lib/lfortran_intrinsic_math.mod
-lib/lfortran_intrinsic_sin.mod
 lib/lfortran_intrinsic_string.mod
 lib/liblfortran_runtime.so
 lib/liblfortran_runtime.so.0
