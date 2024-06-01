@@ -3,8 +3,8 @@
 %%EXAMPLES%%bin/batched-bench
 %%EXAMPLES%%bin/beam-search
 %%EXAMPLES%%bin/benchmark
+%%EXAMPLES%%bin/convert-hf-to-gguf.py
 %%EXAMPLES%%bin/convert-llama2c-to-ggml
-%%EXAMPLES%%bin/convert.py
 %%EXAMPLES%%bin/embedding
 %%EXAMPLES%%bin/eval-callback
 %%EXAMPLES%%bin/export-lora
