@@ -41,7 +41,7 @@ MAKE_ENV+=	INSTALL_INFO=install-info \
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	lisp info
 
-CONFLICTS=	forge-emacs*
+CONFLICTS_INSTALL=	forge-emacs*
 
 NO_ARCH=	yes
 
@@ -56,7 +56,6 @@ PDF_DESC=	Build and install PDF document
 DOCS_BUILD_DEPENDS=	gsed:textproc/gsed
 DOCS_ALL_TARGET=	html
 DOCS_BINARY_ALIAS=	sed=gsed
-PDF_BROKEN=		Does not build with texinfo
 PDF_BUILD_DEPENDS=	texi2pdf:print/texinfo
 PDF_USES=		tex
 PDF_USE=		TEX=dvipdfmx:build
