@@ -5,7 +5,7 @@ DISTVERSION=	2.3.2
 # py-opencolorio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -18,8 +18,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libImath.so:math/Imath \
 		libpystring.so:devel/pystring \
-		libyaml-cpp.so:devel/yaml-cpp \
-		libzstd.so:archivers/zstd
+		libyaml-cpp.so:devel/yaml-cpp
+
 USES=		alias cmake compiler:c++14-lang localbase:ldflags \
 		pkgconfig minizip:ng
 
@@ -32,14 +32,14 @@ GH_PROJECT=	OpenColorIO
 CMAKE_OFF=	OCIO_BUILD_JAVA OCIO_BUILD_JNIGLUE OCIO_BUILD_NUKE \
 		OCIO_BUILD_TESTS OCIO_BUILD_GPU_TESTS
 
+PLIST_SUB=	SHL3=${PORTVERSION} SHL2=${PORTVERSION:R}
+
 OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	DOCS
 OPTIONS_SUB=		yes
 
-DOCS_CMAKE_BOOL=	OCIO_BUILD_DOCS
 DOCS_BUILD_DEPENDS=	doxygen>0:devel/doxygen
-
-PLIST_SUB=	SHL3=${PORTVERSION} SHL2=${PORTVERSION:R}
+DOCS_CMAKE_BOOL=	OCIO_BUILD_DOCS
 
 .include <bsd.port.options.mk>
 
@@ -64,33 +64,30 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}breathe>=0:devel/py-breathe@${PY_FLAVOR} 
 
 .if defined(OCIO_SLAVE) && ${OCIO_SLAVE} == tools
 LIB_DEPENDS+=	liblcms2.so:graphics/lcms2 \
-		libOpenColorIO.so:graphics/opencolorio \
 		libOpenImageIO.so:graphics/openimageio \
-		libopencv_core.so:graphics/opencv \
 		libOpenEXR.so:graphics/openexr
+USES+=		gl xorg
+USE_GL=		gl glu glut glew opengl
+USE_XORG=	xi xmu
+CMAKE_ARGS+=	-DCMAKE_CXX_STANDARD=14
 CMAKE_ON+=	OCIO_BUILD_APPS USE_EXTERNAL_LCMS
 CMAKE_OFF+=	BUILD_SHARED_LIBS OCIO_BUILD_DOCS \
 		OCIO_BUILD_PYGLUE OCIO_BUILD_PYTHON
-CMAKE_ARGS+=	-DCMAKE_CXX_STANDARD=14
 LDFLAGS+=	-lOpenImageIO_Util
-USES+=		gl xorg
-USE_GL=		egl gl glu glut glew
-USE_XORG=	xi xmu
 PLIST=		${PKGDIR}/pkg-plist-tools
 
 .elif defined(OCIO_SLAVE) && ${OCIO_SLAVE} == pymodule
 BUILD_DEPENDS+=	pybind11>0:devel/pybind11
 LIB_DEPENDS+=	libOpenColorIO.so:graphics/opencolorio
-# textproc/py-sphinx_press_theme doesn't support py3.6
 USES+=		python
-LDFLAGS+=	-lOpenColorIO
+USE_PYTHON=	concurrent flavors
+CMAKE_ARGS+=	-DOCIO_PYTHON_VERSION=${PYTHON_VER}
 CMAKE_ON+=	OCIO_BUILD_PYTHON
 CMAKE_OFF+=	OCIO_BUILD_APPS BUILD_SHARED_LIBS OCIO_BUILD_DOCS \
 		OCIO_BUILD_TESTS OCIO_BUILD_GPU_TESTS
-CMAKE_ARGS+=	-DOCIO_PYTHON_VERSION=${PYTHON_VER}
+LDFLAGS+=	-lOpenColorIO
 PLIST=		${PKGDIR}/pkg-plist-pyglue
 # concurrent allows docs to not collide with master port
-USE_PYTHON=	concurrent flavors
 
 .else # master port
 # we enable pyglue in master port. This makes the python module
@@ -98,26 +95,21 @@ USE_PYTHON=	concurrent flavors
 # but only install the python module with the py-opencolorio port
 # this makes it easier to allow multiple python versions installed
 BUILD_DEPENDS+=	pybind11>0:devel/pybind11
+USES+=		python:build xorg
+USE_LDCONFIG=	yes
+USE_XORG=	xi xmu
+CMAKE_ARGS+=	-DOCIO_PYTHON_VERSION=${PYTHON_VER}
 CMAKE_ON+=	BUILD_SHARED_LIBS OCIO_BUILD_PYGLUE OCIO_BUILD_PYTHON
 CMAKE_OFF+=	OCIO_BUILD_APPS
-CMAKE_ARGS+=	-DOCIO_PYTHON_VERSION=${PYTHON_VER}
-USES+=		gl python:build xorg
-USE_GL=		gl glu glut glew
-USE_XORG=	xi xmu
-USE_LDCONFIG=	yes
 PLIST=		${PKGDIR}/pkg-plist ${PKGDIR}/pkg-plist-docs
 .endif
 
 post-install:
 	@cd ${STAGEDIR}${PREFIX} && ${RM} -r share/ocio
 .if defined(OCIO_SLAVE)
-	@cd ${STAGEDIR}${PREFIX} && ${RM} -r include libdata lib/cmake lib/libOpenColorIO.a
-.endif
-.if !defined(OCIO_SLAVE) || (defined(OCIO_SLAVE) && ${OCIO_SLAVE} != pymodule)
-	@cd ${STAGEDIR}${PREFIX} && ${RM} -r lib/libOpenColorIO*.a lib/python*
-.endif
-.if defined(OCIO_SLAVE) && ${OCIO_SLAVE} == tools
-	${RM} -r ${STAGEDIR}${PREFIX}/share/OpenColorIO
+	@cd ${STAGEDIR}${PREFIX} && ${RM} -r include lib/cmake lib/libOpenColorIO*.a libdata share/OpenColorIO
+.else
+	@cd ${STAGEDIR}${PREFIX} && ${RM} -r lib/python*
 .endif
 
 post-install-DOCS-on:
