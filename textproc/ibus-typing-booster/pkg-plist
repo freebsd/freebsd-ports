@@ -104,6 +104,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotations/no.xml
 %%DATADIR%%/data/annotations/nso.xml
 %%DATADIR%%/data/annotations/oc.xml
+%%DATADIR%%/data/annotations/om.xml
 %%DATADIR%%/data/annotations/or.xml
 %%DATADIR%%/data/annotations/pa_Arab.xml
 %%DATADIR%%/data/annotations/pa.xml
