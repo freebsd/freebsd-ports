@@ -5,3 +5,5 @@ SHA256 (OpenFodder-data-1.7.0_GH0.tar.gz) = a5d39084e4d0e272ac8fa86f931e86923b70
 SIZE (OpenFodder-data-1.7.0_GH0.tar.gz) = 3384943
 SHA256 (OpenFodder-scripts-c6f3076_GH0.tar.gz) = 3fbb82605c8bfbc3404220cee2044c368f0f82cdf23f9adcb6144e7743cf9c71
 SIZE (OpenFodder-scripts-c6f3076_GH0.tar.gz) = 50622
+SHA256 (a5eac175f940.patch) = 13a656f7548e31ea9cb296534545dd2e5dde322f2df6e2e799dc905d3d265bcf
+SIZE (a5eac175f940.patch) = 1141
