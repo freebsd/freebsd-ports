@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.5.25
+DISTVERSION=	2024.5.28
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,7 +33,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		arbitrary-1.3.2 \
 		arrayvec-0.5.2 \
 		assert_cmd-2.0.14 \
-		async-compression-0.4.10 \
+		async-compression-0.4.11 \
 		autocfg-1.3.0 \
 		backtrace-0.3.71 \
 		base64-0.21.7 \
@@ -330,7 +330,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		time-macros-0.2.18 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.37.0 \
+		tokio-1.38.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.25.0 \
 		tokio-util-0.7.11 \
