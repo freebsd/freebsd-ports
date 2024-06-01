@@ -1,0 +1,29 @@
+--- tools/Makefile.am.orig	2024-05-30 10:27:11 UTC
++++ tools/Makefile.am
+@@ -68,11 +68,11 @@ if BUILD_GTHUMB
+ ## Does not work:
+ #thumbnailerdir=$(datadir)/thumbnailers
+ ## Needs to be in /usr/share/thumbnailers
+-thumbnailerdir=/usr/share/thumbnailers
++thumbnailerdir=$(datadir)/thumbnailers
+ thumbnailer_in_files=$(top_srcdir)/tools/gnome_u7shapes.thumbnailer.in
+ thumbnailer_DATA=$(thumbnailer_in_files:.thumbnailer.in=.thumbnailer)
+ gnome_shp_thumbnailer_DATA=x-shapefile.xml
+-gnome_shp_thumbnailerdir=$(DESTDIR)$(datadir)/mime/packages
++gnome_shp_thumbnailerdir=$(datadir)/mime/packages
+ 
+ # Rule to make the service file with bindir expanded
+ $(thumbnailer_DATA): $(thumbnailer_in_files)
+@@ -117,10 +117,10 @@ install-data-hook:
+ 
+ if BUILD_GTHUMB
+ install-data-hook:
+-	update-mime-database $(DESTDIR)$(datadir)/mime || :
++	:
+ 
+ uninstall-hook:
+-	update-mime-database $(DESTDIR)$(datadir)/mime || :
++	:
+ else
+ install-data-hook:
+ uninstall-hook:

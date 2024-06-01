@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+ Please, read %%DOCSDIR%%/README for additional information.
+EOM
+}
+]

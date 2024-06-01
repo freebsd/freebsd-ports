@@ -1,0 +1,13 @@
+--- mapedit/Makefile.am.orig	2024-05-30 10:27:11 UTC
++++ mapedit/Makefile.am
+@@ -103,8 +103,8 @@ install-exec-local:
+ 
+ if GIMP_PLUGIN
+ install-exec-local:
+-	install -d $(DESTDIR)$(GIMP_PLUGIN_PREFIX)
+-	install -c $(GIMP_PLUGINS) $(DESTDIR)$(GIMP_PLUGIN_PREFIX)
++	$(MKDIR_P) $(DESTDIR)$(GIMP_PLUGIN_PREFIX)
++	$(INSTALL_PROGRAM) $(GIMP_PLUGINS) $(DESTDIR)$(GIMP_PLUGIN_PREFIX)
+ else
+ install-exec-local:
+ endif
