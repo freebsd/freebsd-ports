@@ -502,6 +502,7 @@ lib/calibre/calibre/ebooks/oeb/polish/utils.py
 lib/calibre/calibre/ebooks/oeb/reader.py
 lib/calibre/calibre/ebooks/oeb/stylizer.py
 lib/calibre/calibre/ebooks/oeb/transforms/__init__.py
+lib/calibre/calibre/ebooks/oeb/transforms/alt_text.py
 lib/calibre/calibre/ebooks/oeb/transforms/cover.py
 lib/calibre/calibre/ebooks/oeb/transforms/data_url.py
 lib/calibre/calibre/ebooks/oeb/transforms/embed_fonts.py
