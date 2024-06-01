@@ -2,6 +2,9 @@ PORTNAME=	OpenFodder
 DISTVERSION=	1.8.0
 CATEGORIES=	games
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	a5eac175f940.patch:-p1 # https://github.com/OpenFodder/openfodder/issues/89
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Open source port of Cannon Fodder
 WWW=		http://openfodder.com/
@@ -13,9 +16,6 @@ LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LGPLv2.1.txt
 LICENSE_FILE_MIT=	${WRKSRC}/COPYING.MIT.txt
 LICENSE_FILE_ZLIB=	${WRKSRC}/COPYING.ZLIB.txt
-
-BROKEN_armv6=	https://github.com/OpenFodder/openfodder/issues/89
-BROKEN_armv7=	https://github.com/OpenFodder/openfodder/issues/89
 
 USES=		compiler:c++14-lang sdl
 USE_GITHUB=	yes
