@@ -1,6 +1,14 @@
 --- modules/javafx.media/src/main/native/gstreamer/projects/linux/avplugin/Makefile.orig	2020-07-17 10:21:33 UTC
 +++ modules/javafx.media/src/main/native/gstreamer/projects/linux/avplugin/Makefile
-@@ -41,25 +41,16 @@ endif
+@@ -24,7 +24,6 @@ CFLAGS = -fPIC                   \
+          -fstack-protector       \
+          -Werror=implicit-function-declaration \
+          -Werror=trampolines     \
+-         -msse2                  \
+          -fbuiltin               \
+          -DHAVE_STDINT_H         \
+          -DLINUX                 \
+@@ -41,25 +40,16 @@ PACKAGES_LIBS     := $(shell pkg-config --libs glib-2.
  PACKAGES_INCLUDES := $(shell pkg-config --cflags glib-2.0)
  PACKAGES_LIBS     := $(shell pkg-config --libs glib-2.0 gobject-2.0)
  
