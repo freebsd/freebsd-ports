@@ -1,5 +1,5 @@
 PORTNAME=	lynx
-PORTVERSION=	2.9.1
+PORTVERSION=	2.9.2
 CATEGORIES=	www
 MASTER_SITES=	http://invisible-mirror.net/archives/lynx/tarballs/ \
 		ftp://ftp.invisible-island.net/lynx/tarballs/
