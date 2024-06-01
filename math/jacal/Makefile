@@ -10,6 +10,8 @@ WWW=		https://people.csail.mit.edu/jaffer/JACAL
 
 LICENSE=	GPLv3
 
+BROKEN=		Distfile hash mismatch
+
 RUN_DEPENDS=	scm:lang/scm \
 		${LOCALBASE}/share/slib/require.scm:lang/slib
 
