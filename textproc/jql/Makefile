@@ -1,6 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	jql-v
-DISTVERSION=	7.1.10
+DISTVERSION=	7.1.11
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -94,8 +94,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		thiserror-1.0.61 \
 		thiserror-impl-1.0.61 \
 		tinytemplate-1.2.1 \
-		tokio-1.37.0 \
-		tokio-macros-2.2.0 \
+		tokio-1.38.0 \
+		tokio-macros-2.3.0 \
 		unicode-ident-1.0.12 \
 		utf8parse-0.2.1 \
 		walkdir-2.5.0 \
@@ -119,7 +119,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.52.5 \
-		winnow-0.6.8 \
+		winnow-0.6.9 \
 		yansi-1.0.1
 PLIST_FILES=	bin/${PORTNAME}
 
