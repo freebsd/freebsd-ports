@@ -1,6 +1,6 @@
 PORTNAME=	shadowsocks-rust
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.19.0
+DISTVERSION=	1.19.2
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ USE_RC_SUBR=	sslocal-rust \
 USE_GITHUB=	yes
 GH_ACCOUNT=	shadowsocks
 
-CARGO_CRATES=	addr2line-0.21.0 \
+CARGO_CRATES=	addr2line-0.22.0 \
 		adler-1.0.2 \
 		aead-0.5.2 \
 		aes-0.8.4 \
@@ -39,15 +39,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		async-trait-0.1.80 \
 		atomic-waker-1.1.2 \
 		autocfg-1.3.0 \
-		aws-lc-rs-1.7.2 \
-		aws-lc-sys-0.17.0 \
-		backtrace-0.3.71 \
+		backtrace-0.3.72 \
 		base16ct-0.2.0 \
 		base64-0.13.1 \
 		base64-0.21.7 \
 		base64-0.22.1 \
 		base64ct-1.6.0 \
-		bindgen-0.69.4 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
@@ -66,14 +63,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		camellia-0.1.0 \
 		cc-1.0.98 \
 		ccm-0.5.0 \
-		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.9.1 \
 		chacha20poly1305-0.10.1 \
 		chrono-0.4.38 \
 		cipher-0.4.4 \
-		clang-sys-1.7.0 \
 		clap-4.5.4 \
 		clap_builder-4.5.2 \
 		clap_lex-0.7.0 \
@@ -103,10 +98,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		digest-0.10.7 \
 		directories-5.0.1 \
 		dirs-sys-0.4.1 \
-		dunce-1.0.4 \
 		ecdsa-0.16.9 \
 		ed25519-2.2.3 \
-		either-1.12.0 \
 		elliptic-curve-0.13.8 \
 		encoding_rs-0.8.34 \
 		enum-as-inner-0.6.0 \
@@ -114,7 +107,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		env_logger-0.11.3 \
 		equivalent-1.0.1 \
 		errno-0.3.9 \
-		etherparse-0.14.3 \
+		etherparse-0.15.0 \
 		fastrand-1.9.0 \
 		fastrand-2.1.0 \
 		ff-0.13.0 \
@@ -124,7 +117,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.1 \
 		fs2-0.4.3 \
-		fs_extra-1.3.0 \
 		fsevent-sys-4.1.0 \
 		funty-2.0.0 \
 		futures-0.3.30 \
@@ -140,8 +132,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		generic-array-0.14.7 \
 		getrandom-0.2.15 \
 		ghash-0.5.1 \
-		gimli-0.28.1 \
-		glob-0.3.1 \
+		gimli-0.29.0 \
 		group-0.13.0 \
 		h2-0.3.26 \
 		h2-0.4.5 \
@@ -157,7 +148,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hickory-resolver-0.24.1 \
 		hkdf-0.12.4 \
 		hmac-0.12.1 \
-		home-0.5.9 \
 		hostname-0.3.1 \
 		http-0.2.12 \
 		http-1.1.0 \
@@ -169,7 +159,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hyper-1.3.1 \
 		hyper-rustls-0.26.0 \
 		hyper-tls-0.6.0 \
-		hyper-util-0.1.4 \
+		hyper-util-0.1.5 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.4.0 \
@@ -179,12 +169,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		inotify-sys-0.1.5 \
 		inout-0.1.3 \
 		instant-0.1.13 \
-		ioctl-sys-0.8.0 \
 		ipconfig-0.3.2 \
 		ipnet-2.9.0 \
 		iprange-0.6.7 \
 		is_terminal_polyfill-1.70.0 \
-		itertools-0.12.1 \
 		itoa-1.0.11 \
 		jemalloc-sys-0.5.4+5.3.0-patched \
 		jemallocator-0.5.4 \
@@ -194,7 +182,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.4.0 \
-		lazycell-1.3.0 \
 		libc-0.2.155 \
 		libloading-0.8.3 \
 		libmimalloc-sys-0.1.38 \
@@ -214,20 +201,17 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		memchr-2.7.2 \
 		mimalloc-0.1.42 \
 		mime-0.3.17 \
-		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.3 \
 		mio-0.8.11 \
-		mirai-annotations-1.12.0 \
-		native-tls-0.2.11 \
+		native-tls-0.2.12 \
 		nix-0.29.0 \
-		nom-7.1.3 \
 		notify-6.1.1 \
 		nu-ansi-term-0.46.0 \
 		num-conv-0.1.0 \
 		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
 		num_threads-0.1.7 \
-		object-0.32.2 \
+		object-0.35.0 \
 		once_cell-1.19.0 \
 		opaque-debug-0.3.1 \
 		openssl-0.10.64 \
@@ -244,7 +228,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.8.6 \
 		parking_lot_core-0.9.10 \
-		paste-1.0.15 \
 		percent-encoding-2.3.1 \
 		pest-2.7.10 \
 		pest_derive-2.7.10 \
@@ -260,11 +243,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		polyval-0.6.2 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
-		prettyplease-0.2.20 \
 		primeorder-0.13.6 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.83 \
+		proc-macro2-1.0.84 \
 		qrcode-0.14.0 \
 		quick-error-1.2.3 \
 		quinn-0.10.2 \
@@ -298,7 +280,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustix-0.38.34 \
 		rustls-0.21.12 \
 		rustls-0.22.4 \
-		rustls-0.23.8 \
 		rustls-native-certs-0.6.3 \
 		rustls-native-certs-0.7.0 \
 		rustls-pemfile-1.0.4 \
@@ -315,10 +296,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		security-framework-2.11.0 \
 		security-framework-sys-2.11.0 \
 		sendfd-0.4.3 \
-		serde-1.0.202 \
+		serde-1.0.203 \
 		serde-value-0.7.0 \
 		serde_bytes-0.11.14 \
-		serde_derive-1.0.202 \
+		serde_derive-1.0.203 \
 		serde_json-1.0.117 \
 		serde_urlencoded-0.7.1 \
 		serde_yaml-0.9.34+deprecated \
@@ -326,7 +307,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		sha2-0.10.8 \
 		shadowsocks-crypto-0.5.4 \
 		sharded-slab-0.1.7 \
-		shlex-1.3.0 \
 		signal-hook-registry-1.4.2 \
 		signature-2.2.0 \
 		siphasher-1.0.1 \
@@ -364,12 +344,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		time-macros-0.2.18 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.37.0 \
-		tokio-macros-2.2.0 \
+		tokio-1.38.0 \
+		tokio-macros-2.3.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \
 		tokio-rustls-0.25.0 \
-		tokio-rustls-0.26.0 \
 		tokio-tfo-0.3.1 \
 		tokio-util-0.7.11 \
 		tower-0.4.13 \
@@ -381,7 +360,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.18 \
 		try-lock-0.2.5 \
-		tun-0.6.1 \
+		tun2-1.3.1 \
 		typemap-ors-1.0.0 \
 		typenum-1.17.0 \
 		ucd-trie-0.1.6 \
@@ -411,14 +390,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		web-sys-0.3.69 \
 		webpki-roots-0.25.4 \
 		webpki-roots-0.26.1 \
-		which-4.4.2 \
 		widestring-1.1.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.8 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-0.51.1 \
-		windows-core-0.51.1 \
+		windows-0.52.0 \
 		windows-core-0.52.0 \
 		windows-service-0.7.0 \
 		windows-sys-0.48.0 \
@@ -442,13 +419,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_msvc-0.52.5 \
 		winreg-0.50.0 \
 		winreg-0.52.0 \
-		wintun-0.3.2 \
+		wintun-0.4.0 \
 		wyz-0.5.1 \
 		xdg-2.5.2 \
 		zerocopy-0.7.34 \
 		zerocopy-derive-0.7.34 \
-		zeroize-1.7.0 \
-		zeroize_derive-1.4.2 \
+		zeroize-1.8.1 \
 		zstd-0.9.2+zstd.1.5.1 \
 		zstd-safe-4.1.3+zstd.1.5.1 \
 		zstd-sys-1.6.2+zstd.1.5.1
