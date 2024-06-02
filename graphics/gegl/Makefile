@@ -120,7 +120,8 @@ TIFF_MESON_ENABLED=	libtiff
 UMFPACK_LIB_DEPENDS=	libumfpack.so:math/suitesparse-umfpack
 UMFPACK_MESON_ENABLED=	umfpack
 
-V4L_BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat
+V4L_BUILD_DEPENDS=	libv4l>0:multimedia/libv4l \
+			v4l_compat>=0:multimedia/v4l_compat
 V4L_RUN_DEPENDS=	libv4l>0:multimedia/libv4l
 V4L_MESON_ENABLED=	libv4l libv4l2
 V4L_VARS=		LICENSE+=LGPL20+
