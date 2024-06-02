@@ -1,5 +1,6 @@
 PORTNAME=	pkcrack
-PORTVERSION=	1.2.3
+DISTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack/ \
 		LOCAL/ehaupt
@@ -13,9 +14,8 @@ LICENSE_NAME=	pkcrack non-commercial license
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/doc/README
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-USES=		gmake
+WRKSRC_SUBDIR=	src
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PLIST_FILES=	bin/pkcrack \
 		bin/pkextract \
 		bin/pkfindkey \
@@ -24,6 +24,12 @@ PLIST_FILES=	bin/pkcrack \
 PORTDOCS=	README pkzip.ps.gz
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|ifdef|.ifdef|g' \
+	    ${PATCH_WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|endif|.endif|g' \
+	    ${PATCH_WRKSRC}/Makefile
 
 do-install:
 .for f in pkcrack zipdecrypt
