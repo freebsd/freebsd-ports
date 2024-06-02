@@ -1,6 +1,6 @@
 PORTNAME=	bcrypt
 DISTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://bcrypt.sourceforge.net/ \
 		LOCAL/ehaupt
@@ -18,6 +18,9 @@ PLIST_FILES=	bin/bcrypt \
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
+
+DEPRECATED=	Hasn't seen updates in 15 years, insecure Blowfish ECB mode, unauthenticated encryption
+EXPIRATION_DATE=2024-07-02
 
 post-patch:
 	@${REINPLACE_CMD} -E 's/^(CC|CFLAGS|LDFLAGS|PREFIX)\ /\1?/' \
