@@ -970,6 +970,7 @@
     SUBDIR += py-liboqs-python
     SUBDIR += py-m2crypto
     SUBDIR += py-maec
+    SUBDIR += py-makepasswd
     SUBDIR += py-merkletools
     SUBDIR += py-mixbox
     SUBDIR += py-mnemonic

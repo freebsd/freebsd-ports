@@ -1,0 +1,1 @@
+mkpasswd encrypts the given password with the crypt(3) libc function, using the given salt.
