@@ -27,7 +27,8 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 RUN_DEPENDS=	javavm:java/javavmwrapper \
 		xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype
 
-USES=		compiler:features cpe gmake iconv jpeg pkgconfig xorg
+USES=		compiler:features cpe elfctl gmake iconv jpeg \
+		pkgconfig proccontrol xorg
 USE_XORG=	x11 xext xi xrandr xrender xt xtst
 
 CPE_VENDOR=	oracle
@@ -48,6 +49,8 @@ MAKE_ENV=	LANG="C" \
 		CXX=${CXX} \
 		CPP=${CPP} \
 		MAKEFLAGS=""
+
+PROCCONTROL_MODE=protmax:disable wxmap:enable
 
 JDK_OSARCH=	bsd-${ARCH:S/amd64/x86_64/:S/i386/x86/:S/powerpc64/ppc64/}
 JDK_BUILDDIR=	${WRKSRC}/build/${JDK_OSARCH}-${JDK_BUILD_JVM}-${JDK_BUILD_TYPE}
@@ -184,7 +187,10 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${INSTALLDIR}
 	@cd ${JDK_IMAGEDIR} && ${COPYTREE_SHARE} . ${STAGEDIR}${INSTALLDIR}
 	@cd ${STAGEDIR}${INSTALLDIR} && \
-		${FIND} bin -type f -exec ${CHMOD} ${BINMODE} {} \;
+	${FIND} bin -type f -exec \
+		${ELFCTL} -e +noprotmax,wxneeded {} \; && \
+	${FIND} bin -type f -exec \
+		${CHMOD} ${BINMODE} {} \;
 	@${CHMOD} ${BINMODE} ${STAGEDIR}${INSTALLDIR}/lib/jspawnhelper
 	@${ECHO} "@javavm ${INSTALLDIR}/bin/java" >> ${TMPPLIST}
 	@${FIND} ${STAGEDIR}${INSTALLDIR} -not -type d | ${SORT} | \

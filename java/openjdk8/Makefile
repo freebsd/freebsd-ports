@@ -23,7 +23,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 RUN_DEPENDS=	javavm:java/javavmwrapper \
 		dejavu>0:x11-fonts/dejavu
 
-USES=		compiler:features cpe gmake iconv pkgconfig
+USES=		compiler:features cpe elfctl gmake iconv pkgconfig proccontrol
 
 CPE_VENDOR=	oracle
 
@@ -38,6 +38,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	CLASSPATH="" JAVA_HOME="" LD_LIBRARY_PATH=""
 MAKE_ENV+=	IGNORE_OLD_CONFIG=true
 MAKE_ENV+=	COMPILER_WARNINGS_FATAL="false"
+
+PROCCONTROL_MODE=protmax:disable wxmap:enable
 
 JDK_BUILDDIR=	${WRKSRC}/build/${JDK_OSARCH}-normal-${JDK_BUILD_JVM}-${JDK_BUILD_TYPE}
 .if !defined(BUILD_JRE)
@@ -268,11 +270,11 @@ post-patch-ALSA-off:
 
 post-build:
 .if !defined(BUILD_JRE)
-	@${BOOTSTRAPJDKDIR}/bin/jar cfe \
+	${PROCCONTROL_EXEC} ${BOOTSTRAPJDKDIR}/bin/jar cfe \
 	    ${JRE_IMAGEDIR}/lib/compilefontconfig.jar \
 	    build.tools.compilefontconfig.CompileFontConfig \
 	    -C ${JDK_BUILDDIR}/jdk/btclasses build/tools/compilefontconfig
-	@${BOOTSTRAPJDKDIR}/bin/jar cfe \
+	${PROCCONTROL_EXEC} ${BOOTSTRAPJDKDIR}/bin/jar cfe \
 	    ${JRE_IMAGEDIR}/lib/javazic.jar \
 	    build.tools.tzdb.TzdbZoneRulesCompiler \
 	    -C ${JDK_BUILDDIR}/jdk/btclasses build/tools/tzdb
@@ -291,14 +293,22 @@ do-install:
 .if !defined(BUILD_JRE)
 	@cd ${JDK_IMAGEDIR} && ${COPYTREE_SHARE} . ${STAGEDIR}${INSTALLDIR}
 	@cd ${STAGEDIR}${INSTALLDIR} && \
+	${FIND} bin jre/bin -type f ! -name *.cgi \
+		-exec ${ELFCTL} -e +noprotmax,wxneeded {} \; && \
 	${FIND} bin jre/bin -type f -exec ${CHMOD} ${BINMODE} {} \; && \
+	${ELFCTL} -e +noprotmax,wxneeded jre/${JDK_JVMDIR}/jexec \
+	    jre/${JDK_JVMDIR}/jspawnhelper ${JDK_JVMDIR}/jexec && \
 	${CHMOD} ${BINMODE} jre/${JDK_JVMDIR}/jexec \
 	    jre/${JDK_JVMDIR}/jspawnhelper ${JDK_JVMDIR}/jexec
 	@${ECHO_CMD} "@dir ${INSTALLDIR}/jre/lib/applet" >> ${TMPPLIST}
 .else
 	@cd ${JRE_IMAGEDIR} && ${COPYTREE_SHARE} . ${STAGEDIR}${INSTALLDIR}
 	@cd ${STAGEDIR}${INSTALLDIR} && \
+	${FIND} bin -type f ! -name *.cgi \
+		-exec ${ELFCTL} -e +noprotmax,wxneeded {} \; && \
 	${FIND} bin -type f -exec ${CHMOD} ${BINMODE} {} \; && \
+	${ELFCTL} -e +noprotmax,wxneeded ${JDK_JVMDIR}/jexec \
+		${JDK_JVMDIR}/jspawnhelper && \
 	${CHMOD} ${BINMODE} ${JDK_JVMDIR}/jexec ${JDK_JVMDIR}/jspawnhelper
 	@${ECHO_CMD} "@dir ${INSTALLDIR}/lib/applet" >> ${TMPPLIST}
 .endif
