@@ -1,8 +1,8 @@
---- CMakeLists.txt.orig	2023-06-24 20:00:30 UTC
+--- CMakeLists.txt.orig	2024-05-31 11:34:43 UTC
 +++ CMakeLists.txt
-@@ -100,11 +100,13 @@ option(ENABLE_HEADLESS       "Compile the headless bin
- option(ENABLE_NLS            "Enable Native Language Support"           ON)
- option(ENABLE_LARGEFILE      "Enable Large File Support"                ON)
+@@ -102,11 +102,13 @@ option(ENABLE_ALIAS          "Enable Alias plugin"    
+ option(ENABLE_ZSTD           "Enable Zstandard compression"             ON)
+ option(ENABLE_CJSON          "Enable cJSON support"                     ON)
  option(ENABLE_ALIAS          "Enable Alias plugin"                      ON)
 +option(ENABLE_BACKTRACE      "Enable backtraces (via libexecinfo)"      ON)
  option(ENABLE_BUFLIST        "Enable Buflist plugin"                    ON)
@@ -14,17 +14,17 @@
  option(ENABLE_IRC            "Enable IRC plugin"                        ON)
  option(ENABLE_LOGGER         "Enable Logger plugin"                     ON)
  option(ENABLE_RELAY          "Enable Relay plugin"                      ON)
-@@ -217,6 +219,7 @@ endif()
+@@ -208,6 +210,7 @@ add_definitions(-DHAVE_GCRYPT)
  # Check for libgcrypt
- find_package(GCRYPT REQUIRED)
+ pkg_check_modules(LIBGCRYPT REQUIRED libgcrypt)
  add_definitions(-DHAVE_GCRYPT)
 +add_definitions(${GCRYPT_CFLAGS})
- list(APPEND EXTRA_LIBS ${GCRYPT_LDFLAGS})
+ include_directories(${LIBGCRYPT_INCLUDE_DIRS})
+ list(APPEND EXTRA_LIBS ${LIBGCRYPT_LDFLAGS})
  
- # Check for GnuTLS
-@@ -232,10 +235,12 @@ find_package(ZLIB REQUIRED)
- # Check for zstd
- pkg_check_modules(LIBZSTD REQUIRED libzstd)
+@@ -233,10 +236,12 @@ endif()
+   add_definitions(-DHAVE_CJSON)
+ endif()
  
 -# Check for iconv
 -find_package(Iconv)
@@ -39,7 +39,7 @@
  endif()
  
  # Check for CURL
-@@ -304,10 +309,10 @@ add_custom_target(dist
+@@ -311,10 +316,10 @@ set(exec_prefix "\${prefix}")
  set(PACKAGE "${PROJECT_NAME}")
  set(prefix "${CMAKE_INSTALL_PREFIX}")
  set(exec_prefix "\${prefix}")
