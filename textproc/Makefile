@@ -2017,6 +2017,7 @@
     SUBDIR += stardict-dictd_mova
     SUBDIR += stardict-rptts
     SUBDIR += stardict3
+    SUBDIR += sttr
     SUBDIR += sv-aspell
     SUBDIR += sv-hunspell
     SUBDIR += sv-mythes
