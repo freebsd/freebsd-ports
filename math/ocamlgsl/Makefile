@@ -1,43 +1,56 @@
 PORTNAME=	ocaml-gsl
-DISTVERSIONPREFIX=v
-DISTVERSION=	1.19.1
-PORTREVISION=	8
+DISTVERSION=	1.25.0
 CATEGORIES=	math
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interface to GSL for the Objective Caml language
-WWW=		http://oandrieu.nerim.net/ocaml/gsl/
+WWW=		https://mmottl.github.io/gsl-ocaml
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-LIB_DEPENDS=	libgsl.so:math/gsl
-BUILD_DEPENDS=	gawk:lang/gawk \
-		ocamlbuild:devel/ocaml-ocamlbuild \
-		${OCAMLC_DEPEND}
-RUN_DEPENDS=	ocamlfind:devel/ocaml-findlib
+NOT_FOR_ARCHS=		armv6
+NOT_FOR_ARCHS_REASON=	architectures with double-word alignment for doubles are not supported
+
+BUILD_DEPENDS=		ocaml-base>=0:devel/ocaml-base \
+			ocaml-stdio>=0:devel/ocaml-stdio
+LIB_DEPENDS=		libgsl.so:math/gsl
+
+USES=			blaslapack:openblas ocaml:dune pkgconfig
+USE_OCAML=		YES
+USE_OCAML_LDCONFIG=	YES
+OCAML_LDLIBS=		gsl
+OCAML_PACKAGES=		gsl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmottl
 GH_PROJECT=	gsl-ocaml
 
-USES=			gmake
-USE_OCAML=		YES
-USE_OCAML_FINDLIB=	YES
-USE_OCAML_CAMLP4=	YES
-USE_OCAML_LDCONFIG=	YES
-OCAML_PKGDIRS=		gsl
-HAS_CONFIGURE=		YES
-MAKE_JOBS_UNSAFE=	yes
+MAKE_ENV=	GSL_CBLAS_LIB="${BLASLIB}"
+DOCSDIR=	${OCAML_DOCSDIR}/gsl
+EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/gsl
 
-NOT_FOR_ARCHS=		armv6
-NOT_FOR_ARCHS_REASON=	architectures with double-word alignment for doubles are not supported
+PORTDOCS=	CHANGES.md LICENSE.md README.md
+PORTEXAMPLES=	*
 
-DOCSDIR=	${LOCALBASE}/share/doc
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-OPTIONS_DEFINE=	DOCS
+post-patch:
+	@${REINPLACE_CMD} \
+		-e "s/(name gsl)/&\n(version ${PORTVERSION})/" \
+		${WRKSRC}/dune-project
 
-post-configure:
-	@${ECHO_CMD} 'stagedir="${STAGEDIR}"' >> ${WRKSRC}/setup.data
-	@${ECHO_CMD} 'docdir="$$datarootdir/doc/ocaml/$$pkg_name"' >> ${WRKSRC}/setup.data
+post-install:
+	@${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/gsl/dllgsl_stubs.so \
+		${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/gsl/gsl.cmxs
+# cleanup from previous OCAML_LDLIBS
+	@${ECHO_CMD} @postexec ${SED} -i "''" -e \
+		"'/^${PREFIX:S#/#\/#g}\/${OCAML_SITELIBDIR:S#/#\/#g}\/ocaml-gsl$$/d'" \
+		%D/${OCAML_LDCONF}  >> ${TMPPLIST}
+
+post-install-EXAMPLES-on:
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
