@@ -1,6 +1,6 @@
 PORTNAME=	gitui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.26.2	# After update, `make patch` and `make cargo-crates > Makefile.crates` to avoid fetching vendored openssl-src
+DISTVERSION=	0.26.3	# After update, `make patch` and `make cargo-crates > Makefile.crates` to avoid fetching vendored openssl-src
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
