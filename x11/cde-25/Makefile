@@ -63,6 +63,7 @@ SUB_FILES=	pkg-message
 CFLAGS+=	-Wno-register -Wno-incompatible-function-pointer-types \
 		-Wno-implicit-function-declaration
 LDFLAGS+=	-z muldefs #--allow-multiple-definition
+LDFLAGS+=	-lutil
 
 pre-configure:
 	@cd ${WRKSRC} && ./autogen.sh
