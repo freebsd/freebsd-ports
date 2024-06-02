@@ -14,6 +14,8 @@ WWW=		https://github.com/bjodah/levmar
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		doesn't build with Python-3.11, 4 authors were notified via e-mail on 2024-06-02
+
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack
