@@ -1,6 +1,6 @@
 PORTNAME=	neocmakelsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.26
+DISTVERSION=	0.6.27
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	Decodetalkers
 
-CARGO_CRATES=	addr2line-0.21.0 \
+CARGO_CRATES=	addr2line-0.22.0 \
 		adler-1.0.2 \
 		aho-corasick-1.1.3 \
 		anstream-0.6.14 \
@@ -27,7 +27,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		async-trait-0.1.80 \
 		auto_impl-1.2.0 \
 		autocfg-1.3.0 \
-		backtrace-0.3.71 \
+		backtrace-0.3.72 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
 		bstr-1.9.1 \
@@ -50,6 +50,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		csv-core-0.1.11 \
 		dashmap-5.5.3 \
 		dlv-list-0.5.2 \
+		equivalent-1.0.1 \
 		form_urlencoded-1.2.1 \
 		futures-0.3.30 \
 		futures-channel-0.3.30 \
@@ -60,7 +61,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		futures-task-0.3.30 \
 		futures-util-0.3.30 \
 		getrandom-0.2.15 \
-		gimli-0.28.1 \
+		gimli-0.29.0 \
 		glob-0.3.1 \
 		globset-0.4.14 \
 		hashbrown-0.14.5 \
@@ -68,6 +69,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		httparse-1.8.0 \
 		idna-0.5.0 \
 		ignore-0.4.22 \
+		indexmap-2.2.6 \
 		is_terminal_polyfill-1.70.0 \
 		itoa-1.0.11 \
 		lazy_static-1.4.0 \
@@ -81,18 +83,18 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		nu-ansi-term-0.46.0 \
 		nu-ansi-term-0.50.0 \
 		num_cpus-1.16.0 \
-		object-0.32.2 \
+		object-0.35.0 \
 		once_cell-1.19.0 \
 		ordered-multimap-0.7.3 \
 		overload-0.1.1 \
-		parking_lot-0.12.2 \
+		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		percent-encoding-2.3.1 \
 		pin-project-1.1.5 \
 		pin-project-internal-1.1.5 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
-		proc-macro2-1.0.83 \
+		proc-macro2-1.0.84 \
 		quote-1.0.36 \
 		redox_syscall-0.5.1 \
 		regex-1.10.4 \
@@ -103,10 +105,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		serde-1.0.202 \
-		serde_derive-1.0.202 \
+		serde-1.0.203 \
+		serde_derive-1.0.203 \
 		serde_json-1.0.117 \
 		serde_repr-0.1.19 \
+		serde_spanned-0.6.6 \
 		sharded-slab-0.1.7 \
 		signal-hook-registry-1.4.2 \
 		slab-0.4.9 \
@@ -114,15 +117,18 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		socket2-0.5.7 \
 		strsim-0.11.1 \
 		syn-1.0.109 \
-		syn-2.0.65 \
+		syn-2.0.66 \
 		termcolor-1.4.1 \
 		thread_local-1.1.8 \
 		tiny-keccak-2.0.2 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.37.0 \
-		tokio-macros-2.2.0 \
+		tokio-1.38.0 \
+		tokio-macros-2.3.0 \
 		tokio-util-0.7.11 \
+		toml-0.8.13 \
+		toml_datetime-0.6.6 \
+		toml_edit-0.22.13 \
 		tower-0.4.13 \
 		tower-layer-0.3.2 \
 		tower-lsp-0.20.0 \
@@ -167,7 +173,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.5
+		windows_x86_64_msvc-0.52.5 \
+		winnow-0.6.9
 
 PLIST_FILES=	bin/${PORTNAME}
 
