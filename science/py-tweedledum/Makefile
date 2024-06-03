@@ -1,6 +1,6 @@
 PORTNAME=	tweedledum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.1
+DISTVERSION=	1.1.1-20221123
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,10 +21,15 @@ USE_PYTHON=	distutils autoplist pytest # tests fail to run, see https://github.c
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	boschmitt
+GH_TAGNAME=	9d3a2fa
+GH_TUPLE=	pybind:pybind11:v2.12.0:pybind11
 
-.include <bsd.port.options.mk>
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1400000
-USE_GCC=	12
-.endif
+#MAKE_ENV=	CMAKE_ARGS=-DTWEEDLEDUM_USE_EXTERNAL_PYBIND11=ON # external pybind11 should work but it fails to configure
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/python/test
+
+post-extract:
+	@${RM} -r ${WRKSRC}/external/pybind11
+	@${CP} -r ${WRKSRC_pybind11} ${WRKSRC}/external/pybind11
 
 .include <bsd.port.mk>
