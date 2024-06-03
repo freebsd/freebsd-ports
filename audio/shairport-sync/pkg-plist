@@ -1,3 +1,3 @@
 bin/shairport-sync
-share/man/man7/shairport-sync.7.gz
+share/man/man1/shairport-sync.1.gz
 @sample etc/shairport-sync.conf.sample
