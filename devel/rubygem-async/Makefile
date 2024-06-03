@@ -10,8 +10,6 @@ WWW=		https://socketry.github.io/async/ \
 
 LICENSE=	MIT
 
-BROKEN_RUBY30=	yes
-
 RUN_DEPENDS=	rubygem-console>=1.25.2<2:devel/rubygem-console \
 		rubygem-fiber-annotation>=0:devel/rubygem-fiber-annotation \
 		rubygem-io-event>=1.5.1<2:devel/rubygem-io-event \
