@@ -124,47 +124,6 @@
  
        if test "$want_optimize" = "yes"; then
          { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking if compiler accepts optimizer enabling options" >&5
-@@ -29748,31 +29753,31 @@ printf "%s\n" "found" >&6; }
-     ;;
-   off)
-         LIB_RTMP="-lrtmp"
-+        LD_RTMP=""
-+        CPP_RTMP=""
-+        DIR_RTMP=""
-     ;;
-   *)
-         LIB_RTMP="-lrtmp"
-+        LD_RTMP="-L${PREFIX_RTMP}/lib$libsuff"
-+        CPP_RTMP="-I${PREFIX_RTMP}/include"
-+        DIR_RTMP="${PREFIX_RTMP}/lib$libsuff"
-     PREFIX_RTMP=$OPT_LIBRTMP
-     ;;
-   esac
- 
--    if test -n "$PREFIX_RTMP"; then
--    LD_RTMP=-L${PREFIX_RTMP}/lib$libsuff
--    CPP_RTMP=-I${PREFIX_RTMP}/include
--    DIR_RTMP=${PREFIX_RTMP}/lib$libsuff
--  fi
--
-   LDFLAGS="$LDFLAGS $LD_RTMP"
-   CPPFLAGS="$CPPFLAGS $CPP_RTMP"
-   LIBS="$LIB_RTMP $LIBS"
- 
--  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for RTMP_Init in -lrtmp" >&5
--printf %s "checking for RTMP_Init in -lrtmp... " >&6; }
-+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for RTMP_Init in $LIB_RTMP" >&5
-+printf %s "checking for RTMP_Init in $LIB_RTMP... " >&6; }
- if test ${ac_cv_lib_rtmp_RTMP_Init+y}
- then :
-   printf %s "(cached) " >&6
- else $as_nop
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lrtmp  $LIBS"
-+LIBS="$LIBS"
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
 @@ -45884,9 +45889,10 @@ printf "%s\n" "$as_me: LIBS note: LIBS should only be 
        -I*)
          xc_bad_var_ldflags=yes
