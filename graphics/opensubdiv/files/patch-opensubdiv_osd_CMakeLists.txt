@@ -1,6 +1,6 @@
---- opensubdiv/osd/CMakeLists.txt.orig	2022-09-26 18:17:44 UTC
+--- opensubdiv/osd/CMakeLists.txt.orig	2023-09-14 19:19:06 UTC
 +++ opensubdiv/osd/CMakeLists.txt
-@@ -76,6 +76,8 @@ if(OPENMP_FOUND )
+@@ -81,6 +81,8 @@ if(OPENMP_FOUND )
  
      if (CMAKE_COMPILER_IS_GNUCXX)
          list(APPEND PLATFORM_CPU_LIBRARIES gomp)
@@ -9,7 +9,7 @@
      endif()
  endif()
  
-@@ -96,10 +98,6 @@ if( TBB_FOUND )
+@@ -99,10 +101,6 @@ if( TBB_FOUND )
      )
  
      list(APPEND PUBLIC_HEADER_FILES ${TBB_PUBLIC_HEADERS})
@@ -19,4 +19,4 @@
 -    endif()
  
      list(APPEND PLATFORM_CPU_LIBRARIES
-         ${TBB_LIBRARIES}
+         TBB::tbb
