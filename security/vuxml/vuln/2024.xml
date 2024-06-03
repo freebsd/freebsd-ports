@@ -1,3 +1,48 @@
+  <vuln vid="b058380e-21a4-11ef-8a0f-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>125.0.6422.141</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>125.0.6422.141</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/05/stable-channel-update-for-desktop_30.html">
+	 <p>This update includes 11 security fixes:</p>
+	 <ul>
+	    <li>[339877165] High CVE-2024-5493: Heap buffer overflow in WebRTC. Reported by Cassidy Kim(@cassidy6564) on 2024-05-11</li>
+	    <li>[338071106] High CVE-2024-5494: Use after free in Dawn. Reported by wgslfuzz on 2024-05-01</li>
+	    <li>[338103465] High CVE-2024-5495: Use after free in Dawn. Reported by wgslfuzz on 2024-05-01</li>
+	    <li>[338929744] High CVE-2024-5496: Use after free in Media Session. Reported by Cassidy Kim(@cassidy6564) on 2024-05-06</li>
+	    <li>[339061099] High CVE-2024-5497: Out of bounds memory access in Keyboard Inputs. Reported by zh1x1an1221 of Ant Group Tianqiong Security Lab on 2024-05-07</li>
+	    <li>[339588211] High CVE-2024-5498: Use after free in Presentation API. Reported by anymous on 2024-05-09</li>
+	    <li>[339877167] High CVE-2024-5499: Out of bounds write in Streams API. Reported by anonymous on 2024-05-11</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-5493</cvename>
+      <cvename>CVE-2024-5494</cvename>
+      <cvename>CVE-2024-5495</cvename>
+      <cvename>CVE-2024-5496</cvename>
+      <cvename>CVE-2024-5497</cvename>
+      <cvename>CVE-2024-5498</cvename>
+      <cvename>CVE-2024-5499</cvename>
+      <url>https://chromereleases.googleblog.com/2024/05/stable-channel-update-for-desktop_30.html</url>
+    </references>
+    <dates>
+      <discovery>2024-05-30</discovery>
+      <entry>2024-06-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="320a19f7-1ddd-11ef-a2ae-8c164567ca3c">
     <topic>nginx-devel -- Multiple Vulnerabilities in HTTP/3</topic>
     <affects>
