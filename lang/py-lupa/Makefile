@@ -1,7 +1,8 @@
 PORTNAME=	lupa
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	lang python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/scoder/lupa/releases/download/lupa-${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
