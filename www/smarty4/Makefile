@@ -1,12 +1,13 @@
 PORTNAME=	smarty
-PORTVERSION=	4.5.2
+PORTVERSION=	4.5.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMESUFFIX=	4${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP compiling template engine
-WWW=		https://www.smarty.net/
+WWW=		https://www.smarty.net/ \
+		https://github.com/smarty-php/smarty
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
