@@ -1722,6 +1722,7 @@
     SUBDIR += ocaml-cppo
     SUBDIR += ocaml-csexp
     SUBDIR += ocaml-cstruct
+    SUBDIR += ocaml-curses
     SUBDIR += ocaml-domain-name
     SUBDIR += ocaml-dune
     SUBDIR += ocaml-extlib
