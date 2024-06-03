@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-elasticache
-PORTVERSION=	1.101.0
+PORTVERSION=	1.102.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
