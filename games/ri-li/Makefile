@@ -1,7 +1,6 @@
 PORTNAME=	Ri-li
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.4
-PORTREVISION=	1
+DISTVERSION=	3.1.5
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -19,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	petitlapin
 GH_PROJECT=	Li-Ri
 USE_SDL=	sdl2 mixer2
-CMAKE_ON=	USE_CONAN  # doesn't really use conan, just handles system depends properly
+CMAKE_ON=	USE_SYSTEM_SIMPLEINI
 CMAKE_ARGS=	-DLIRI_DATA_DIR="${DATADIR}"
 
 DATADIR=	${PREFIX}/share/Li-ri
