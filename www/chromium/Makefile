@@ -91,8 +91,7 @@ USE_QT=		buildtools:build
 SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper buildtools/linux64/clang-format
 
 MAKE_ARGS=	-C out/${BUILDTYPE}
-#ALL_TARGET=	chrome
-ALL_TARGET=	chromium_sqlite3
+ALL_TARGET=	chrome
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} \
 		moc=${PREFIX}/bin/moc-qt5
