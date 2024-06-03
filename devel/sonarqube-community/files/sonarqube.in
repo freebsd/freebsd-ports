@@ -24,6 +24,7 @@ rcvar=%%APP_NAME%%_enable
 %%APP_NAME%%_parameters=${%%APP_NAME%%_parameters:-"-Xms32m -Xmx32m -Djava.net.preferIPv4Stack=true"}
 %%APP_NAME%%_logfile=${%%APP_NAME%%_logfile:-"%%LOG_DIR%%/daemon.log"}
 %%APP_NAME%%_pidpath=${%%APP_NAME%%_pidpath:-"%%PID_DIR%%"}
+%%APP_NAME%%_svcj_options=${%%APP_NAME%%_svcj_options:-"net_basic"}
 
 sup_pidfile=${%%APP_NAME%%_pidpath}/%%APP_NAME%%_supervisor.pid
 main_pidfile=${%%APP_NAME%%_pidpath}/%%APP_NAME%%.pid

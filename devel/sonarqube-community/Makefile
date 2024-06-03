@@ -1,6 +1,6 @@
 PORTNAME=	sonarqube
 DISTVERSION=	10.5.1.90531
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel security www java
 MASTER_SITES=	https://binaries.sonarsource.com/Distribution/sonarqube/:m_core \
 		https://binaries.sonarsource.com/Distribution/sonar-csharp-plugin/:m_csharp \
