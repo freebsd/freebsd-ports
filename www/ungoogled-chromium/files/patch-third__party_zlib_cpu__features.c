@@ -1,4 +1,4 @@
---- third_party/zlib/cpu_features.c.orig	2024-04-23 07:42:17 UTC
+--- third_party/zlib/cpu_features.c.orig	2024-06-03 12:28:28 UTC
 +++ third_party/zlib/cpu_features.c
 @@ -39,7 +39,8 @@ int ZLIB_INTERNAL riscv_cpu_enable_vclmul = 0;
  #ifndef CPU_NO_SIMD
@@ -44,7 +44,7 @@
 +    if (ID_AA64ISAR0_AES(cpu_id) >= ID_AA64ISAR0_AES_PMULL)
 +        arm_cpu_enable_pmull = 1;
 +
-+    if (ID_AA64ISAR0_AES(cpu_id) >= ID_AA64ISAR0_CRC32_BASE)
++    if (ID_AA64ISAR0_CRC32(cpu_id) >= ID_AA64ISAR0_CRC32_BASE)
 +        arm_cpu_enable_crc32 = 1;
  #elif defined(ARMV8_OS_FUCHSIA)
      uint32_t features;

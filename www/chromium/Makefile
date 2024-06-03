@@ -1,5 +1,5 @@
 PORTNAME=	chromium
-PORTVERSION=	125.0.6422.112
+PORTVERSION=	125.0.6422.141
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 CATEGORIES=	www wayland
@@ -91,7 +91,8 @@ USE_QT=		buildtools:build
 SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper buildtools/linux64/clang-format
 
 MAKE_ARGS=	-C out/${BUILDTYPE}
-ALL_TARGET=	chrome
+#ALL_TARGET=	chrome
+ALL_TARGET=	chromium_sqlite3
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} \
 		moc=${PREFIX}/bin/moc-qt5
