@@ -1,0 +1,13 @@
+--- components/paint_preview/common/proto/paint_preview.proto.orig	2021-12-14 11:45:03 UTC
++++ components/paint_preview/common/proto/paint_preview.proto
+@@ -82,8 +82,8 @@ message PaintPreviewFrameProto {
+ // Stores Chrome version.
+ // NEXT_TAG = 5
+ message ChromeVersionProto {
+-  optional uint64 major = 1;
+-  optional uint64 minor = 2;
++  optional uint64 gmajor = 1;
++  optional uint64 gminor = 2;
+   optional uint64 build = 3;
+   optional uint64 patch = 4;
+ }

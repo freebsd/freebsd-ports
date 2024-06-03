@@ -1,0 +1,11 @@
+--- build/config/clang/BUILD.gn.orig	2024-04-15 20:33:42 UTC
++++ build/config/clang/BUILD.gn
+@@ -203,7 +203,7 @@ clang_lib("compiler_builtins") {
+ 
+ # Adds a dependency on the Clang runtime library clang_rt.builtins.
+ clang_lib("compiler_builtins") {
+-  if (!toolchain_has_rust) {
++  if (!toolchain_has_rust || is_bsd) {
+     # Since there's no Rust in the toolchain, there's no concern that we'll use
+     # the Rust stdlib's intrinsics here.
+     #

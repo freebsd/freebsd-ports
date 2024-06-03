@@ -1,0 +1,27 @@
+--- build/linux/unbundle/libwebp.gn.orig	2024-04-15 20:33:43 UTC
++++ build/linux/unbundle/libwebp.gn
+@@ -22,6 +22,8 @@ shim_headers("libwebp_shim") {
+     "webp/mux.h",
+     "webp/mux_types.h",
+     "webp/types.h",
++    "webp/sharpyuv/sharpyuv.h",
++    "webp/sharpyuv/sharpyuv_csp.h",
+   ]
+ }
+ 
+@@ -30,6 +32,14 @@ source_set("libwebp_webp") {
+   public_configs = [ ":system_libwebp" ]
+ }
+ 
++source_set("libwebp_sharpyuv") {
++  deps = [ ":libwebp_shim" ]
++  public_configs = [ ":system_libwebp" ]
++}
++
+ group("libwebp") {
+-  deps = [ ":libwebp_webp" ]
++  deps = [
++    ":libwebp_webp",
++    ":libwebp_sharpyuv",
++  ]
+ }

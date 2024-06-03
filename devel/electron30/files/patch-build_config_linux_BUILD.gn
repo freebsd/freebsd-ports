@@ -1,0 +1,11 @@
+--- build/config/linux/BUILD.gn.orig	2022-05-19 14:06:27 UTC
++++ build/config/linux/BUILD.gn
+@@ -41,7 +41,7 @@ config("runtime_library") {
+   }
+ 
+   if ((!is_chromeos || default_toolchain != "//build/toolchain/cros:target") &&
+-      (!use_custom_libcxx || current_cpu == "mipsel")) {
++      (!use_custom_libcxx || current_cpu == "mipsel") && !is_bsd) {
+     libs = [ "atomic" ]
+   }
+ }
