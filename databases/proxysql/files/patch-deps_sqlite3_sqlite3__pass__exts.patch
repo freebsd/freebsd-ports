@@ -1,0 +1,11 @@
+--- deps/sqlite3/sqlite3_pass_exts.patch.orig	2024-06-03 21:25:24 UTC
++++ deps/sqlite3/sqlite3_pass_exts.patch
+@@ -11,7 +11,7 @@
+ +////////////////////////////////////////////////////////////////////////////////
+ +
+ +// ctype.h
+-+extern int toupper (int __c) __THROW;
+++extern int toupper (int __c);
+ +
+ +// SHA256_crypt
+ +char * sha256_crypt_r (const char *key, const char *salt, char *buffer, int buflen);
