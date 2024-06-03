@@ -1,4 +1,4 @@
---- travis.gemspec.orig	2024-04-07 06:58:13 UTC
+--- travis.gemspec.orig	2024-06-01 13:17:20 UTC
 +++ travis.gemspec
 @@ -21,11 +21,11 @@ Gem::Specification.new do |s|
  
@@ -13,4 +13,4 @@
 +  s.add_runtime_dependency(%q<json_pure>.freeze, ["~> 2.6".freeze, ">= 2.6.3".freeze])
    s.add_runtime_dependency(%q<launchy>.freeze, ["~> 2.5.2".freeze])
    s.add_runtime_dependency(%q<pusher-client>.freeze, ["~> 0.6.2".freeze])
-   s.add_development_dependency(%q<rack-test>.freeze, ["~> 2.1.0".freeze])
+   s.add_runtime_dependency(%q<rack-test>.freeze, ["~> 2.1.0".freeze])
