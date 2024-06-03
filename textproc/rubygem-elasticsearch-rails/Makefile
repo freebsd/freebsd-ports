@@ -1,5 +1,5 @@
 PORTNAME=	elasticsearch-rails
-PORTVERSION=	7.2.1
+PORTVERSION=	8.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
