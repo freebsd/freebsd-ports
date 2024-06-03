@@ -817,7 +817,7 @@ lib/node_modules/npm/node_modules/ci-info/index.js
 lib/node_modules/npm/node_modules/ci-info/package.json
 lib/node_modules/npm/node_modules/ci-info/vendors.json
 lib/node_modules/npm/node_modules/cidr-regex/LICENSE
-lib/node_modules/npm/node_modules/cidr-regex/index.js
+lib/node_modules/npm/node_modules/cidr-regex/dist/index.js
 lib/node_modules/npm/node_modules/cidr-regex/package.json
 lib/node_modules/npm/node_modules/clean-stack/index.js
 lib/node_modules/npm/node_modules/clean-stack/license
@@ -1099,7 +1099,7 @@ lib/node_modules/npm/node_modules/ip-address/package.json
 lib/node_modules/npm/node_modules/ip-regex/index.js
 lib/node_modules/npm/node_modules/ip-regex/license
 lib/node_modules/npm/node_modules/ip-regex/package.json
-lib/node_modules/npm/node_modules/is-cidr/index.js
+lib/node_modules/npm/node_modules/is-cidr/dist/index.js
 lib/node_modules/npm/node_modules/is-cidr/package.json
 lib/node_modules/npm/node_modules/is-core-module/LICENSE
 lib/node_modules/npm/node_modules/is-core-module/core.json
