@@ -1,5 +1,5 @@
 PORTNAME=	attr_json
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
