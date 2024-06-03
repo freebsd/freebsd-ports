@@ -23,6 +23,6 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource/ZenLib/Project/GNU/Library
 
-MEDIAINFO_VERSION=	24.04
+MEDIAINFO_VERSION=	24.05
 
 .include <bsd.port.mk>
