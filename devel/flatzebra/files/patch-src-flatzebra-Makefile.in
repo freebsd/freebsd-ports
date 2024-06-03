@@ -1,22 +1,21 @@
---- src/flatzebra/Makefile.in.orig	2012-07-14 05:41:48.000000000 +0200
-+++ src/flatzebra/Makefile.in	2013-06-06 16:56:34.000000000 +0200
-@@ -120,7 +120,7 @@
- ETAGS = etags
- CTAGS = ctags
+--- src/flatzebra/Makefile.in.orig	2024-05-29 10:49:11 UTC
++++ src/flatzebra/Makefile.in
+@@ -466,7 +466,7 @@ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS)
+ am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/depcomp \
+ 	$(top_srcdir)/test-driver
  DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 -pkgincludedir = $(includedir)/$(PACKAGE)-$(API)/$(PACKAGE)
 +pkgincludedir = $(includedir)/$(PACKAGE)
  ACLOCAL = @ACLOCAL@
  AMTAR = @AMTAR@
- API = @API@
-@@ -274,8 +274,8 @@
- 	font_13x7.xpm
+ AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
+@@ -670,8 +670,8 @@ libflatzebra_0_2_la_CXXFLAGS = \
+ 	roundbeetle/WhiteNoiseSource.h
  
- libflatzebra_0_1_la_CXXFLAGS = \
--	$(SDL_CFLAGS) \
--	-I$(top_srcdir)/src
-+	-I$(top_srcdir)/src \
-+	$(SDL_CFLAGS)
+ libflatzebra_0_2_la_CXXFLAGS = \
+-	$(SDL2_CFLAGS) \
+ 	-I$(top_srcdir)/src \
++	$(SDL2_CFLAGS) \
+ 	-DPKGPIXMAPDIR=\"$(pkgpixmapdir)\" \
+ 	$(W_SUGGEST_OVERRIDE)
  
- libflatzebra_0_1_la_LIBADD = \
- 	$(SDL_LIBS)

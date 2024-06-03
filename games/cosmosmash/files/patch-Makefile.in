@@ -1,0 +1,10 @@
+--- Makefile.in.orig	2024-05-05 17:23:54 UTC
++++ Makefile.in
+@@ -345,7 +345,6 @@ doc_DATA = \
+ man_MANS = doc/cosmosmash.6
+ doc_DATA = \
+ 	AUTHORS \
+-	COPYING \
+ 	NEWS \
+ 	README \
+ 	THANKS
