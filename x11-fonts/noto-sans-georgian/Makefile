@@ -1,7 +1,7 @@
 PORTNAME=	noto
 PORTVERSION=	2.005
 CATEGORIES=	x11-fonts
-#MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoSansGeorgian-v${PORTVERSION}/ \
+#MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoSansGeorgian-v${PORTVERSION}/fonts/ \
 		https://github.com/notofonts/notofonts.github.io/raw/NotoSansGeorgian-v${PORTVERSION}/fonts/NotoSansGeorgian/hinted/ttf/:fonts
 MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/noto-monthly-release-24.3.1/fonts/ \
 		https://github.com/notofonts/notofonts.github.io/raw/noto-monthly-release-24.3.1/fonts/NotoSansGeorgian/hinted/ttf/:fonts
