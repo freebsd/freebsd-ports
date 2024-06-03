@@ -1,7 +1,7 @@
 PORTNAME=	noto
 PORTVERSION=	2.002
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/notofonts/noto-cjk/raw/Serif${PORTVERSION}/ \
+MASTER_SITES=	https://github.com/notofonts/noto-cjk/raw/Serif${PORTVERSION}/Serif/ \
 		https://github.com/notofonts/noto-cjk/raw/Serif${PORTVERSION}/Serif/OTF/TraditionalChineseHK/:cjk \
 		https://github.com/notofonts/noto-cjk/raw/Serif${PORTVERSION}/Serif/SubsetOTF/HK/:subset
 PKGNAMESUFFIX=	-serif-hk
