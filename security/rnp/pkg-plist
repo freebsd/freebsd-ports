@@ -7,7 +7,6 @@ lib/cmake/rnp/rnp-config-version.cmake
 lib/cmake/rnp/rnp-config.cmake
 lib/cmake/rnp/rnp-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/rnp/rnp-targets.cmake
-lib/librnp.a
 lib/librnp.so
 lib/librnp.so.0
 lib/librnp.so.%%VERS%%
