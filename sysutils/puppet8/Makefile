@@ -11,8 +11,6 @@ WWW=		https://puppet.com/docs/puppet/latest/puppet_index.html
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_RUBY30=	yes
-
 RUN_DEPENDS=	rubygem-concurrent-ruby>1.0:devel/rubygem-concurrent-ruby \
 		rubygem-deep_merge>1.0:devel/rubygem-deep_merge \
 		rubygem-facter>=4.0:sysutils/rubygem-facter \
