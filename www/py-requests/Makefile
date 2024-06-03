@@ -1,5 +1,5 @@
 PORTNAME=	requests
-PORTVERSION=	2.32.2
+PORTVERSION=	2.32.3
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://github.com/psf/requests/releases/download/v${PORTVERSION}/
