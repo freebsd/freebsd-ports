@@ -13,7 +13,13 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plac>=0:devel/py-plac@${PY_FLAVOR}
 
-USES=		python:3.10
+USES=		python
 USE_PYTHON=	autoplist distutils
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} > 31100
+BROKEN=		modern python is not supported
+.endif
+
+.include <bsd.port.post.mk>
