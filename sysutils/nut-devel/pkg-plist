@@ -293,3 +293,4 @@ sbin/upssched
 @dir(%%NUT_USER%%,%%NUT_GROUP%%,750) %%STATEDIR%%
 @dir libexec/nut
 @dir(%%NUT_USER%%,%%NUT_GROUP%%,) /var/log/nut
+%%PORTDOCS%%@dir %%DOCSDIR%%/html-man
