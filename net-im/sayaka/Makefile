@@ -22,6 +22,8 @@ PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
+CXXFLAGS+=	-Wno-error=vla-cxx-extension
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/sayaka ${STAGEDIR}${PREFIX}/bin
 
