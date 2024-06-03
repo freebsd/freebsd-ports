@@ -1,7 +1,7 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.40.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \
 		libuuid.so:misc/e2fsprogs-libuuid \
-		libwlroots.so:x11-toolkits/wlroots \
+		libwlroots-0.18.so:x11-toolkits/wlroots-devel \
 		libhyprcursor.so:x11/hyprcursor \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
@@ -125,12 +125,6 @@ bundled-libcxx:
 .endif
 .endif # exists(/usr/lib/libc++.so)
 
-.include "${.CURDIR:H:H}/x11-toolkits/wlroots-devel/override.mk"
-post-patch:	wlroots-devel-patch
-wlroots-devel-patch:
-# Prefer <wlr/*> headers (used by <hyprland/*>) from wlroots-devel
-	@${REINPLACE_CMD} -i .devel "/subdirs/s|''|'../wlroots-devel/include', &|" \
-		${WRKSRC}/meson.build
 .include <bsd.port.mk>
 
 # XXX Work around !target(makesum)

@@ -1,7 +1,7 @@
 PORTNAME=	wlroots
 DISTVERSION=	0.17.0-312
 DISTVERSIONSUFFIX=	-gb1b34cd665
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	-devel
 
@@ -10,6 +10,7 @@ PATCHFILES+=	surface-nondivisible-by-scale.patch:-p1:hyprland
 PATCHFILES+=	nvidia-hardware-cursors.patch:-p1:hyprland
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	cc6a7a04418f.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4697
+PATCHFILES+=	4b4f76cc1357.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4614
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library (development snapshot)
@@ -30,12 +31,9 @@ USE_XORG=	pixman
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 MESON_ARGS=	-Dexamples=false -Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
+PLIST_SUB=	SUFFIX=-0.18
 
-.ifdef PKGNAMESUFFIX
 PORTSCOUT=	ignore:1
-PREFIX=		${LOCALBASE}/${PKGBASE} # avoid conflict with the default
-MESON_ARGS+=	-Ddatadir="${LOCALBASE}/share"
-.endif
 
 OPTIONS_DEFINE=	DRM OPENGL VULKAN X11
 OPTIONS_DEFAULT=DRM OPENGL VULKAN X11
