@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
 .endif
-PORTREVISION=	1
+PORTREVISION=	2
 
 CATEGORIES=	www devel
 
@@ -128,7 +128,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-google-cloud-compute-v1>=2.6.0<2.7:net/rubygem-google-cloud-compute-v1 \
 	rubygem-seed-fu>=2.3.7<2.4.0:databases/rubygem-seed-fu \
 	rubygem-elasticsearch-model713>=7.2<8:textproc/rubygem-elasticsearch-model713 \
-	rubygem-elasticsearch-rails>=7.2<8:textproc/rubygem-elasticsearch-rails \
+	rubygem-elasticsearch-rails7>=7.2<8:textproc/rubygem-elasticsearch-rails7 \
 	rubygem-elasticsearch-api713>=7.13.3<7.13.4:textproc/rubygem-elasticsearch-api713 \
 	rubygem-aws-sdk-core>=3.194.2<4:devel/rubygem-aws-sdk-core \
 	rubygem-aws-sdk-cloudformation>=1<2:devel/rubygem-aws-sdk-cloudformation \
