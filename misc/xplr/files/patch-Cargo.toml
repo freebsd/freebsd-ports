@@ -1,11 +1,9 @@
---- Cargo.toml.orig	2024-04-06 21:00:14 UTC
+--- Cargo.toml.orig	2024-06-03 20:09:13 UTC
 +++ Cargo.toml
-@@ -73,7 +73,7 @@ version = "0.9.6"
+@@ -90,5 +90,5 @@ strip = true
+ strip = true
  
- [dependencies.mlua]
- version = "0.9.6"
--features = ['luajit', 'vendored', 'serialize', 'send']
-+features = ['luajit', 'serialize', 'send']
- 
- [dependencies.tui-input]
- version = "0.8.0"
+ [features]
+-default = ["vendored-lua"]
++default = []
+ vendored-lua = ["mlua/vendored"]
