@@ -13,8 +13,8 @@ WWW=		https://sourceforge.net/p/cdesktopenv/wiki/Home/
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber
 GH_PROJECT=	cdesktopenv-code
-GH_TAGNAME=	847987410
-COMMIT_DATE=	2024.03.02
+GH_TAGNAME=	3fa42c44a
+COMMIT_DATE=	2024.06.02
 
 LICENSE=	LGPL21
 
@@ -70,7 +70,6 @@ SUB_FILES=	pkg-message
 CFLAGS+=	-Wno-register -Wno-incompatible-function-pointer-types \
 		-Wno-implicit-function-declaration
 LDFLAGS+=	-z muldefs #--allow-multiple-definition
-LDFLAGS+=	-lutil
 
 pre-configure:
 	@cd ${WRKSRC} && ./autogen.sh
