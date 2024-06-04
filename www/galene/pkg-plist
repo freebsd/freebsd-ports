@@ -1,6 +1,9 @@
 bin/galene
 %%DATADIR%%/404.css
 %%DATADIR%%/404.html
+%%DATADIR%%/change-password.css
+%%DATADIR%%/change-password.html
+%%DATADIR%%/change-password.js
 %%DATADIR%%/common.css
 %%DATADIR%%/external/contextual/LICENSE
 %%DATADIR%%/external/contextual/contextual.css
@@ -31,6 +34,7 @@ bin/galene
 %%DATADIR%%/index.html
 %%DATADIR%%/mainpage.css
 %%DATADIR%%/mainpage.js
+%%DATADIR%%/management.js
 %%DATADIR%%/protocol.js
 %%DATADIR%%/stats.html
 %%DATADIR%%/stats.js
