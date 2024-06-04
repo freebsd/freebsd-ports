@@ -14,12 +14,9 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plac>=0:devel/py-plac@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist cython distutils
 
-.include <bsd.port.pre.mk>
+post-patch:
+	cython-${PYTHON_VER} ${WRKSRC}/pywgsim/wgsim_lib.pyx
 
-.if ${PYTHON_REL} > 31100
-BROKEN=		modern python is not supported
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
