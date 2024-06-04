@@ -13,8 +13,8 @@ PATCHFILES+=	dd03d839ab56.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlr
 PATCHFILES+=	17b2b0663372.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3478
 PATCHFILES+=	347b32642fb6.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3318
 PATCHFILES+=	7b8609eeb67b.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3857
-PATCHFILES+=	faa631c348d9.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4005
 PATCHFILES+=	bb32349c9776.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3501
+PATCHFILES+=	faa631c348d9.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4005
 PATCHFILES+=	822eb07eaca3.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4005
 PATCHFILES+=	4b4f76cc1357.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4614
 
