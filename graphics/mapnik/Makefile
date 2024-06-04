@@ -1,16 +1,18 @@
 PORTNAME=	mapnik
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://github.com/mapnik/mapnik/releases/download/${DISTVERSIONFULL}/
 
-PATCH_SITES=	https://github.com/mapnik/mapnik/commit/ \
-		https://gitlab.archlinux.org/archlinux/packaging/packages/mapnik/-/raw/f9f723222c0af50e4db747e7c4e8138dbc769f53/
+PATCH_SITES=	https://github.com/mapnik/mapnik/commit/
 PATCHFILES=	8944e81367d2b3b91a41e24116e1813c01491e5d.patch \
 		83779b7b6bdd229740b1b5e12a4a8fe27114cb7d.patch \
 		7f0daee8b37d8cf6eff32529b1762ffd5104f3f3.patch \
-		boost-1.83.patch
+		7da9009e7ffffb0b9429890f6f13fee837ac320f.patch \
+		26eb76cc07210d564d80d98948770c94d27c5243.patch \
+		08886e3b90f4d448308a46031eede879bb6ed74a.patch \
+		5f1be6bba520151575811b13499a867c0f1dde2c.patch
 PATCH_DIST_STRIP=	-p1 -F3
 
 MAINTAINER=	david.hummel@gmail.com
