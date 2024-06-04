@@ -1,6 +1,6 @@
 PORTNAME?=	nginx
 PORTVERSION=	1.27.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -244,7 +244,7 @@ CFLAGS+=	-DNDEBUG
 CONFIGURE_ENV+=	EXTRA_PRE_CXXFLAGS="-std=c++14"
 .endif
 
-.if empty(PORT_OPTIONS:MMODSECURITY3) && empty(PORT_OPTIONS:MPASSENGER)
+.if empty(PORT_OPTIONS:MMODSECURITY3)
 CONFIGURE_ARGS+=	--with-ld-opt="-L ${LOCALBASE}/lib"
 .else
 CONFIGURE_ARGS+=	--with-ld-opt="-L ${LOCALBASE}/lib -lpcre"
