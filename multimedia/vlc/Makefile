@@ -1,6 +1,6 @@
 PORTNAME=	vlc
 DISTVERSION=	3.0.20
-PORTREVISION=	7
+PORTREVISION=	9
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio net www
 MASTER_SITES=	https://get.videolan.org/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -59,6 +59,7 @@ CONFIGURE_ARGS=	--enable-avcodec --enable-avformat --enable-dvbpsi \
 CONFIGURE_ARGS+=--enable-debug
 .endif
 INSTALL_TARGET=	install-strip
+CFLAGS+=	-Wno-unreachable-code-generic-assoc
 CFLAGS_i386=	-fomit-frame-pointer
 ELF_FEATURES=	+noaslr:bin/.libs/vlc # See PR 270038
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
@@ -204,7 +205,7 @@ LIBPLACEBO_LIB_DEPENDS=	libplacebo.so:graphics/libplacebo
 LIBPLACEBO_CONFIGURE_ENABLE=	libplacebo
 
 LIBRSVG2_USE=			GNOME=librsvg2,cairo
-LIBRSVG2_CONFIGURE_ENABLE=	svg
+LIBRSVG2_CONFIGURE_ENABLE=	svg svgdec
 
 LIBSSH2_LIB_DEPENDS=	libssh2.so:security/libssh2
 LIBSSH2_CONFIGURE_ENABLE=	sftp
