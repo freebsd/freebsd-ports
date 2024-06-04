@@ -1,7 +1,13 @@
 bin/clibtool
+bin/clibtool-ar
 bin/clibtool-shared
 bin/clibtool-static
+bin/dclibtool
+bin/dclibtool-ar
+bin/dclibtool-shared
+bin/dclibtool-static
 bin/dlibtool
+bin/dlibtool-ar
 bin/dlibtool-shared
 bin/dlibtool-static
 bin/rclibtool
@@ -9,5 +15,10 @@ bin/rdclibtool
 bin/rdlibtool
 bin/rlibtool
 bin/slibtool
+bin/slibtool-ar
 bin/slibtool-shared
 bin/slibtool-static
+bin/slibtoolize
+%%DATADIR%%/ltmain.sh
+%%DATADIR%%/slibtool.m4
+%%DATADIR%%/slibtool.sh
