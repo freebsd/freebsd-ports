@@ -25,6 +25,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	EXAMPLES
 
+post-patch:
+	cython-${PYTHON_VER} ${WRKSRC}/mtbl.pyx
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/mtbl*.so
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
