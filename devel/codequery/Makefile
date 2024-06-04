@@ -1,6 +1,6 @@
 PORTNAME=	codequery
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.27.0
+DISTVERSION=	1.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -10,12 +10,11 @@ WWW=		https://ruben2020.github.io/codequery/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		cmake compiler:c++11-lang qt:5 sqlite
+USES=		cmake gl qt:6 sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	ruben2020
-
-USE_QT=		concurrent core gui widgets xml buildtools:build \
-		linguisttools:build qmake:build
+USE_GL=		opengl
+USE_QT=		5compat base translations
 
 DESKTOP_ENTRIES=	"CodeQuery" \
 			"" \
