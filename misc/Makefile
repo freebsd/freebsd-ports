@@ -543,6 +543,7 @@
     SUBDIR += ree
     SUBDIR += retry
     SUBDIR += rfc
+    SUBDIR += rgb-tui
     SUBDIR += ringtonetools
     SUBDIR += rname
     SUBDIR += rpl
