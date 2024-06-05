@@ -1,7 +1,6 @@
 PORTNAME=	git-cliff
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.2
-PORTREVISION=	1
+DISTVERSION=	2.3.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -54,8 +53,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cc-1.0.97 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
-		chrono-tz-0.8.6 \
-		chrono-tz-build-0.2.1 \
+		chrono-tz-0.9.0 \
+		chrono-tz-build-0.3.0 \
 		clap-4.5.4 \
 		clap_builder-4.5.2 \
 		clap_complete-4.5.2 \
@@ -84,6 +83,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		dissimilar-1.0.9 \
 		doc-comment-0.3.3 \
 		document-features-0.2.8 \
+		dyn-clone-1.0.17 \
 		either-1.11.0 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.34 \
@@ -111,7 +111,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		git2-0.18.3 \
 		glob-0.3.1 \
 		globset-0.4.14 \
-		globwalk-0.8.1 \
+		globwalk-0.9.1 \
 		h2-0.3.26 \
 		hashbrown-0.14.5 \
 		heck-0.5.0 \
@@ -173,7 +173,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.2 \
 		mio-0.8.11 \
-		next_version-0.2.16 \
+		next_version-0.2.17 \
 		nom-7.1.3 \
 		num-conv-0.1.0 \
 		num-traits-0.2.19 \
@@ -236,11 +236,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		sct-0.7.1 \
 		secrecy-0.8.0 \
 		semver-1.0.23 \
-		serde-1.0.201 \
-		serde_derive-1.0.201 \
+		serde-1.0.203 \
+		serde_derive-1.0.203 \
 		serde_json-1.0.117 \
 		serde_regex-1.1.0 \
-		serde_spanned-0.6.5 \
+		serde_spanned-0.6.6 \
 		serde_urlencoded-0.7.1 \
 		sha-1-0.10.1 \
 		sha1-0.10.6 \
@@ -261,25 +261,25 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
 		tempfile-3.10.1 \
-		tera-1.19.1 \
+		tera-1.20.0 \
 		termcolor-1.4.1 \
 		terminal_size-0.3.0 \
-		thiserror-1.0.60 \
-		thiserror-impl-1.0.60 \
+		thiserror-1.0.61 \
+		thiserror-impl-1.0.61 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.37.0 \
-		tokio-macros-2.2.0 \
+		tokio-1.38.0 \
+		tokio-macros-2.3.0 \
 		tokio-rustls-0.24.1 \
 		tokio-rustls-0.25.0 \
 		tokio-stream-0.1.15 \
 		tokio-util-0.7.11 \
-		toml-0.8.12 \
-		toml_datetime-0.6.5 \
-		toml_edit-0.22.12 \
+		toml-0.8.13 \
+		toml_datetime-0.6.6 \
+		toml_edit-0.22.13 \
 		tower-0.4.13 \
 		tower-layer-0.3.2 \
 		tower-service-0.3.2 \
