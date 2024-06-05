@@ -1,7 +1,7 @@
 PORTNAME=	triton
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9
-PORTREVISION=	1
+DISTVERSION=	0.9-597
+DISTVERSIONSUFFIX=	-gafb28564
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 LIB_DEPENDS=	libcapstone.so:devel/capstone4 \
 		libz3.so:math/z3
 
-USES=		cmake compiler:c++14-lang shebangfix
+USES=		cmake:testing compiler:c++17-lang shebangfix
 USE_LDCONFIG=	yes
 
 SHEBANG_GLOB=	*.py
@@ -27,6 +27,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	JonathanSalwan
 GH_PROJECT=	Triton
 
+CMAKE_TESTING_ON=	ENABLE_TEST
+
 OPTIONS_DEFINE=		PYTHON
 OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=		yes
@@ -34,6 +36,8 @@ OPTIONS_SUB=		yes
 PYTHON_USES=		python
 PYTHON_USES_OFF=	python:build
 PYTHON_CMAKE_BOOL=	PYTHON_BINDINGS
+PYTHON_CMAKE_ON=	-DPYTHON_EXECUTABLE=${PYTHON_CMD}
+PYTHON_TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lief>0:devel/py-lief@${PY_FLAVOR}
 
 post-install-PYTHON-on:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/triton.so
