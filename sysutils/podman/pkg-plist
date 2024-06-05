@@ -56,6 +56,7 @@ share/man/man1/podman-diff.1.gz
 share/man/man1/podman-events.1.gz
 share/man/man1/podman-exec.1.gz
 share/man/man1/podman-export.1.gz
+share/man/man1/podman-farm-build.1.gz
 share/man/man1/podman-farm-create.1.gz
 share/man/man1/podman-farm-list.1.gz
 share/man/man1/podman-farm-remove.1.gz
@@ -116,6 +117,7 @@ share/man/man1/podman-machine-list.1.gz
 share/man/man1/podman-machine-ls.1.gz
 share/man/man1/podman-machine-os-apply.1.gz
 share/man/man1/podman-machine-os.1.gz
+share/man/man1/podman-machine-reset.1.gz
 share/man/man1/podman-machine-rm.1.gz
 share/man/man1/podman-machine-set.1.gz
 share/man/man1/podman-machine-ssh.1.gz
