@@ -12,6 +12,10 @@ WWW=		https://bitbucket.org/skskeyserver/sks-keyserver/
 
 LICENSE=	GPLv2+
 
+BROKEN=		Unfetchable
+DEPRECATED=	Depends on deprecated port databases/db5
+EXPIRATION_DATE=2024-06-30
+
 BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/num/META:math/ocaml-num
 
 USE_OCAML=	yes
