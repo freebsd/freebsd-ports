@@ -1,4 +1,4 @@
---- filament/backend/src/vulkan/platform/VulkanPlatformAndroidLinuxWindows.cpp.orig	2024-05-29 23:19:39 UTC
+--- filament/backend/src/vulkan/platform/VulkanPlatformAndroidLinuxWindows.cpp.orig	2024-06-03 18:10:41 UTC
 +++ filament/backend/src/vulkan/platform/VulkanPlatformAndroidLinuxWindows.cpp
 @@ -36,7 +36,7 @@
  // Platform specific includes and defines
@@ -21,7 +21,7 @@
 @@ -124,7 +124,7 @@ VulkanPlatform::SurfaceBundle VulkanPlatform::createVk
          VkResult const result = vkCreateAndroidSurfaceKHR(instance, &createInfo, VKALLOC,
                  (VkSurfaceKHR*) &surface);
-         ASSERT_POSTCONDITION(result == VK_SUCCESS, "vkCreateAndroidSurfaceKHR error.");
+         FILAMENT_CHECK_POSTCONDITION(result == VK_SUCCESS) << "vkCreateAndroidSurfaceKHR error.";
 -    #elif defined(__linux__) && defined(FILAMENT_SUPPORTS_WAYLAND)
 +    #elif defined(LINUX_OR_FREEBSD) && defined(FILAMENT_SUPPORTS_WAYLAND)
          wl* ptrval = reinterpret_cast<wl*>(nativeWindow);

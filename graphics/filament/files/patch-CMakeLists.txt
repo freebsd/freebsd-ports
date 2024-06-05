@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-03-01 19:24:13 UTC
+--- CMakeLists.txt.orig	2024-06-03 18:10:41 UTC
 +++ CMakeLists.txt
-@@ -68,7 +68,7 @@ endif()
+@@ -87,7 +87,7 @@ find_program(CCACHE_PROGRAM ccache)
  # Support for ccache
  # ==================================================================================================
  find_program(CCACHE_PROGRAM ccache)
