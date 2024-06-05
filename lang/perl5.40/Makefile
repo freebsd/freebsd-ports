@@ -1,5 +1,5 @@
 PORTNAME=	perl
-DISTVERSION=	${PERL_VERSION}-RC1
+DISTVERSION=	${PERL_VERSION}-RC2
 PORTREVISION=	0
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN/../../src/5.0
@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 
-# Uncomment when the default Perl is switched to 5.3(X+2)
+# Uncomment when the default Perl is switched to 5.42+
 #DEPRECATED=	Support end three years after .0 release, please upgrade to a more recent version of Perl
 #EXPIRATION_DATE=<Release date of .0 + 3 years>
 
