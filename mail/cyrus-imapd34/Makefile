@@ -1,6 +1,6 @@
 PORTNAME=	cyrus-imapd
-PORTVERSION=	3.4.7
-PORTREVISION=	1
+PORTVERSION=	3.4.8
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTNAME}-${PORTVERSION}/
 PKGNAMESUFFIX=	${CYRUS_IMAPD_VER}
@@ -19,8 +19,6 @@ FLAVORS=	basic http
 http_PKGNAMESUFFIX=	${CYRUS_IMAPD_VER}-http
 
 CYRUS_IMAPD_VER=	34
-
-EXTRA_PATCHES=		${FILESDIR}/v34-CVE-2024-34055.patch:-p1
 
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 		libicuuc.so:devel/icu \
