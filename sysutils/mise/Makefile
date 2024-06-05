@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.6.0
+DISTVERSION=	2024.6.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -82,7 +82,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ctor-0.2.8 \
 		curve25519-dalek-4.1.2 \
 		curve25519-dalek-derive-0.1.1 \
-		demand-1.2.3 \
+		demand-1.2.4 \
 		der-0.7.9 \
 		deranged-0.3.11 \
 		derive_arbitrary-1.3.2 \
@@ -242,7 +242,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pretty_assertions-1.4.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.84 \
+		proc-macro2-1.0.85 \
 		quick-xml-0.23.1 \
 		quote-1.0.36 \
 		rand-0.8.5 \
@@ -334,9 +334,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.25.0 \
 		tokio-util-0.7.11 \
-		toml-0.8.13 \
+		toml-0.8.14 \
 		toml_datetime-0.6.6 \
-		toml_edit-0.22.13 \
+		toml_edit-0.22.14 \
 		tower-0.4.13 \
 		tower-layer-0.3.2 \
 		tower-service-0.3.2 \
@@ -411,7 +411,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.5 \
-		winnow-0.6.9 \
+		winnow-0.6.10 \
 		winreg-0.52.0 \
 		winsafe-0.0.19 \
 		wmi-0.13.3 \
@@ -419,7 +419,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		xx-1.1.5 \
 		yansi-0.5.1 \
 		zeroize-1.8.1 \
-		zip-2.1.1 \
+		zip-2.1.2 \
 		zipsign-api-0.1.1 \
 		zopfli-0.8.1
 
