@@ -2,7 +2,7 @@ PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
 DISTVERSION=	27.0
 CATEGORIES=	lang parallel java
-PKGNAMESUFFIX=	-runtime27
+PKGNAMESUFFIX=	-runtime${PORTVERSION:C/\..*//}
 DIST_SUBDIR=	erlang
 
 MAINTAINER=	erlang@FreeBSD.org
@@ -95,6 +95,7 @@ CFLAGS+=	-DMAP_NORESERVE=0
 
 .if ${ARCH} == i386
 MAKE_ARGS+=	ARCH=x86
+CONFIGURE_ARGS+=	--disable-year2038
 .endif
 
 .if ${ARCH} == armv6 || ${ARCH} == armv7
