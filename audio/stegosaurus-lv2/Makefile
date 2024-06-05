@@ -9,6 +9,8 @@ WWW=		https://github.com/mxmilkiib/stegosaurus
 
 LICENSE=	GPLv3
 
+BROKEN=		incompatible with Python-3.11, see https://github.com/mxmilkiib/stegosaurus/issues/7
+
 BUILD_DEPENDS=	lv2>0:audio/lv2
 
 USES=		gnome waf localbase:ldflags pkgconfig xorg
