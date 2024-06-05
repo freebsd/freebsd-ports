@@ -10,6 +10,9 @@ WWW=		http://littlesvr.ca/asunder/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on deprecated library libcddb, consider using audio/cyanrip instead
+EXPIRATION_DATE=2024-06-30
+
 LIB_DEPENDS=	libcddb.so:audio/libcddb \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
