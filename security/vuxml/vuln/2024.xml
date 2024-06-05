@@ -1,3 +1,45 @@
+  <vuln vid="14908bda-232b-11ef-b621-00155d645102">
+    <topic>cyrus-imapd -- unbounded memory allocation</topic>
+    <affects>
+      <package>
+	<name>cyrus-imapd38</name>
+	<range><lt>3.8.2_1</lt></range>
+      </package>
+      <package>
+	<name>cyrus-imapd36</name>
+	<range><lt>3.6.4_1</lt></range>
+      </package>
+      <package>
+	<name>cyrus-imapd34</name>
+	<range><lt>3.4.7_1</lt></range>
+      </package>
+      <package>
+	<name>cyrus-imapd32</name>
+	<name>cyrus-imapd30</name>
+	<name>cyrus-imapd25</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cyrus IMAP 3.8.3 Release Notes states:</p>
+	<blockquote cite="https://www.cyrusimap.org/3.8/imap/download/release-notes/3.8/x/3.8.3.html">
+	  <p>Fixed CVE-2024-34055: Cyrus-IMAP through 3.8.2 and 3.10.0-beta2 allow authenticated attackers to cause unbounded memory allocation by sending many LITERALs in a single command.</p>
+	  <p>The IMAP protocol allows for command arguments to be LITERALs of negotiated length, and for these the server allocates memory to receive the content before instructing the client to proceed. The allocated memory is released when the whole command has been received and processed.</p>
+	  <p>The IMAP protocol has a number commands that specify an unlimited number of arguments, for example SEARCH. Each of these arguments can be a LITERAL, for which memory will be allocated and not released until the entire command has been received and processed. This can run a server out of memory, with varying consequences depending on the server's OOM policy.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-34055</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-34055</url>
+    </references>
+    <dates>
+      <discovery>2024-04-30</discovery>
+      <entry>2024-06-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b058380e-21a4-11ef-8a0f-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
