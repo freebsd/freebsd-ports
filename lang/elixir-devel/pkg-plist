@@ -3,8 +3,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/eex/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/handlebars.templates-K7URE6B4.js
-%%PORTDOCS%%%%DOCSDIR%%/eex/dist/html-BHYOTRCH.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/html-elixir-K5ICTFVY.css
+%%PORTDOCS%%%%DOCSDIR%%/eex/dist/html-Q4PYR6ZR.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -18,7 +18,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/eex/dist/search_data-FADC2839.js
+%%PORTDOCS%%%%DOCSDIR%%/eex/dist/search_data-AFCD616D.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/sidebar_items-0B2B143B.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/EEx.Engine.html
@@ -80,8 +80,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Dict.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/handlebars.templates-K7URE6B4.js
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/html-BHYOTRCH.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/html-elixir-K5ICTFVY.css
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/html-Q4PYR6ZR.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -95,8 +95,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_data-43C97C09.js
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-CD87AFFC.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_data-C9613665.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-975E68CD.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/distributed-tasks.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/docs-tests-and-with.html
@@ -234,8 +234,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/handlebars.templates-K7URE6B4.js
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/html-BHYOTRCH.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/html-elixir-K5ICTFVY.css
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/html-Q4PYR6ZR.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -249,7 +249,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/search_data-479488EF.js
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/search_data-7F7606BC.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/sidebar_items-80595B1B.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.AssertionError.html
@@ -278,8 +278,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/iex/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/handlebars.templates-K7URE6B4.js
-%%PORTDOCS%%%%DOCSDIR%%/iex/dist/html-BHYOTRCH.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/html-elixir-K5ICTFVY.css
+%%PORTDOCS%%%%DOCSDIR%%/iex/dist/html-Q4PYR6ZR.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -293,7 +293,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/iex/dist/search_data-EAFC6DF0.js
+%%PORTDOCS%%%%DOCSDIR%%/iex/dist/search_data-CCD39116.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/sidebar_items-34D826BA.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/IEx.epub
@@ -309,8 +309,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/logger/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/handlebars.templates-K7URE6B4.js
-%%PORTDOCS%%%%DOCSDIR%%/logger/dist/html-BHYOTRCH.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/html-elixir-K5ICTFVY.css
+%%PORTDOCS%%%%DOCSDIR%%/logger/dist/html-Q4PYR6ZR.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -324,7 +324,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/logger/dist/search_data-D5E6BEDA.js
+%%PORTDOCS%%%%DOCSDIR%%/logger/dist/search_data-940261ED.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/sidebar_items-58E83807.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/index.html
@@ -339,8 +339,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/mix/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/handlebars.templates-K7URE6B4.js
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/html-BHYOTRCH.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/html-elixir-K5ICTFVY.css
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/html-Q4PYR6ZR.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -354,8 +354,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/search_data-D7B95BBE.js
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/sidebar_items-A6C90277.js
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/search_data-E2E029C0.js
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/sidebar_items-21E4A115.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/index.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.ElixirVersionError.html
@@ -421,6 +421,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Profile.Cprof.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Profile.Eprof.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Profile.Fprof.html
+%%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Profile.Tprof.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Release.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Release.Init.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.Tasks.Run.html
@@ -1011,6 +1012,7 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.New.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Profile.Cprof.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Profile.Eprof.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Profile.Fprof.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Profile.Tprof.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Release.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Release.Init.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Run.beam
@@ -1102,6 +1104,7 @@ lib/elixir/lib/mix/lib/mix/tasks/new.ex
 lib/elixir/lib/mix/lib/mix/tasks/profile.cprof.ex
 lib/elixir/lib/mix/lib/mix/tasks/profile.eprof.ex
 lib/elixir/lib/mix/lib/mix/tasks/profile.fprof.ex
+lib/elixir/lib/mix/lib/mix/tasks/profile.tprof.ex
 lib/elixir/lib/mix/lib/mix/tasks/release.ex
 lib/elixir/lib/mix/lib/mix/tasks/release.init.ex
 lib/elixir/lib/mix/lib/mix/tasks/run.ex
