@@ -42,6 +42,7 @@
     SUBDIR += cinnamon-session
     SUBDIR += cl-clx
     SUBDIR += cl-clx-sbcl
+    SUBDIR += clip
     SUBDIR += clipcat
     SUBDIR += cliphist
     SUBDIR += clipman
