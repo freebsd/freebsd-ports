@@ -1,6 +1,6 @@
 PORTNAME=	flawz
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0
+DISTVERSION=	0.2.1
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ USES=		cargo sqlite ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	orhun
 
-CARGO_CRATES=	addr2line-0.21.0 \
+CARGO_CRATES=	addr2line-0.22.0 \
 		adler-1.0.2 \
 		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
@@ -33,7 +33,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		atomic-waker-1.1.2 \
 		atty-0.2.14 \
 		autocfg-1.3.0 \
-		backtrace-0.3.71 \
+		backtrace-0.3.72 \
 		base64-0.22.1 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
@@ -86,11 +86,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		futures-sink-0.3.30 \
 		futures-task-0.3.30 \
 		futures-util-0.3.30 \
-		gimli-0.28.1 \
+		gimli-0.29.0 \
 		h2-0.4.5 \
 		hashbrown-0.14.5 \
 		hashlink-0.9.1 \
-		heck-0.4.1 \
 		heck-0.5.0 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.3.9 \
@@ -103,7 +102,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		humantime-2.1.0 \
 		hyper-1.3.1 \
 		hyper-tls-0.6.0 \
-		hyper-util-0.1.4 \
+		hyper-util-0.1.5 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
 		ident_case-1.0.1 \
@@ -116,7 +115,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		jni-0.21.1 \
 		jni-sys-0.3.0 \
 		js-sys-0.3.69 \
-		lazy_static-1.4.0 \
 		libc-0.2.155 \
 		libsqlite3-sys-0.28.0 \
 		linux-raw-sys-0.4.14 \
@@ -127,7 +125,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		mime-0.3.17 \
 		miniz_oxide-0.7.3 \
 		mio-0.8.11 \
-		native-tls-0.2.11 \
+		native-tls-0.2.12 \
 		ndk-context-0.1.1 \
 		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
@@ -136,13 +134,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		objc2-0.5.2 \
 		objc2-encode-4.0.3 \
 		objc2-foundation-0.2.2 \
-		object-0.32.2 \
+		object-0.35.0 \
 		once_cell-1.19.0 \
 		openssl-0.10.64 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
 		openssl-sys-0.9.102 \
-		parking_lot-0.12.2 \
+		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		paste-1.0.15 \
 		percent-encoding-2.3.1 \
@@ -151,7 +149,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.30 \
-		proc-macro2-1.0.83 \
+		proc-macro2-1.0.85 \
 		progress-0.2.0 \
 		quote-1.0.36 \
 		ratatui-0.26.3 \
@@ -173,8 +171,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		scopeguard-1.2.0 \
 		security-framework-2.11.0 \
 		security-framework-sys-2.11.0 \
-		serde-1.0.202 \
-		serde_derive-1.0.202 \
+		serde-1.0.203 \
+		serde_derive-1.0.203 \
 		serde_json-1.0.117 \
 		serde_urlencoded-0.7.1 \
 		signal-hook-0.3.17 \
@@ -189,7 +187,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strsim-0.8.0 \
 		strsim-0.11.1 \
 		strum-0.26.2 \
-		strum_macros-0.26.2 \
+		strum_macros-0.26.3 \
 		syn-2.0.66 \
 		sync_wrapper-0.1.2 \
 		system-configuration-0.5.1 \
@@ -203,7 +201,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		thiserror-impl-1.0.61 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.37.0 \
+		tokio-1.38.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-util-0.7.11 \
 		tower-0.4.13 \
