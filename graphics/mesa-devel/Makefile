@@ -73,7 +73,7 @@ iris_DESC=		Broadwell and newer (implies OPENCL)
 iris_IMPLIES=		OPENCL
 panfrost_DESC=		Midgard, Bifrost
 r600_DESC=		R600, R700, Evergreen, Northern Islands (implies LLVM)
-radeonsi_DESC=		Southern Islands and newer (implies LLVM)
+radeonsi_DESC=		Southern Islands and newer
 
 VULKAN_DESC=		Vulkan drivers
 anv_DESC=		Skylake and newer (implies OPENCL)
@@ -81,7 +81,7 @@ anv_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR}
 anv_MESON_ON=		${"${ARCH:Mamd64}":?:-Dintel-rt=disabled} # https://gitlab.freedesktop.org/mesa/mesa/-/issues/10629
 anv_IMPLIES=		OPENCL
 hasvk_DESC=		Ivy Bridge, Haswell, Broadwell
-radv_DESC=		Southern Islands and newer (implies LLVM)
+radv_DESC=		Southern Islands and newer
 radv_BUILD_DEPENDS=	glslangValidator:graphics/glslang
 
 COINST_DESC=		Allow co-installation with another Mesa port
@@ -100,7 +100,8 @@ LLVM_DESC=		Build with LLVM support (see implies)
 LLVM_USES=		llvm:min=15,lib,noexport
 LLVM_CONFIGURE_ENV=	LLVM_CONFIG=${LLVM_CONFIG}
 LLVM_MESON_ENABLED=	llvm
-.for i in r600 radeonsi radv
+LLVM_MESON_TRUE=	amd-use-llvm
+.for i in r600
 ${i}_IMPLIES+=		LLVM
 .endfor
 
