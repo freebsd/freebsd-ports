@@ -10,7 +10,7 @@ BUILD_DEPENDS=	mcpp:devel/mcpp
 LIB_DEPENDS=	libIce.so.${LIB_VRS}:devel/ice37 \
 		libmcpp.so:devel/mcpp
 
-USES=		gettext-runtime python:-3.9 shebangfix
+USES=		gettext-runtime python shebangfix
 USE_PYTHON=	py3kplist
 SLAVE_PORT=	yes
 MASTERDIR=	${.CURDIR}/../ice37
