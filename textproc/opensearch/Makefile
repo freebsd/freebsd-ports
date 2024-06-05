@@ -1,7 +1,6 @@
 PORTNAME=	opensearch
-DISTVERSION?=	2.11.1
+DISTVERSION?=	2.14.0
 DISTVERSIONSUFFIX=	-linux-x64
-PORTREVISION=	1
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
 
@@ -45,15 +44,6 @@ PLUGINS_CONFIG_FILES?= \
 		opensearch-notifications-core/notifications-core.yml \
 		opensearch-notifications/notifications.yml \
 		opensearch-observability/observability.yml \
-		opensearch-performance-analyzer/agent-stats-metadata \
-		opensearch-performance-analyzer/log4j2.xml \
-		opensearch-performance-analyzer/opensearch_security.policy \
-		opensearch-performance-analyzer/performance-analyzer.properties \
-		opensearch-performance-analyzer/plugin-stats-metadata \
-		opensearch-performance-analyzer/rca.conf \
-		opensearch-performance-analyzer/rca_idle_cluster_manager.conf \
-		opensearch-performance-analyzer/rca_cluster_manager.conf \
-		opensearch-performance-analyzer/supervisord.conf \
 		opensearch-reports-scheduler/reports-scheduler.yml \
 		opensearch-security/action_groups.yml \
 		opensearch-security/allowlist.yml \
@@ -109,7 +99,6 @@ do-install-PLUGINS-on:
 	${MKDIR} ${STAGEDIR}${ETCDIR}/opensearch-notifications-core \
 		 ${STAGEDIR}${ETCDIR}/opensearch-notifications \
 		 ${STAGEDIR}${ETCDIR}/opensearch-observability \
-		 ${STAGEDIR}${ETCDIR}/opensearch-performance-analyzer \
 		 ${STAGEDIR}${ETCDIR}/opensearch-reports-scheduler \
 		 ${STAGEDIR}${ETCDIR}/opensearch-security
 .for f in ${PLUGINS_CONFIG_FILES}
@@ -136,7 +125,6 @@ post-install:
 	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-notifications-core" >> ${TMPPLIST}
 	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-notifications" >> ${TMPPLIST}
 	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-observability" >> ${TMPPLIST}
-	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-performance-analyzer" >> ${TMPPLIST}
 	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-reports-scheduler" >> ${TMPPLIST}
 	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-security" >> ${TMPPLIST}
 .endif
