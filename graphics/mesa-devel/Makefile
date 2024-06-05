@@ -69,14 +69,14 @@ ${j}_VARS+=		${i}_DRIVERS+=${j:S/anv/intel/:S/hasvk/intel_&/:S/radv/amd/}
 
 GALLIUM_DESC=		Unified OpenGL drivers
 crocus_DESC=		Broadwater, Eaglelake, Ironlake, Sandybridge, Ivybridge, Haswell
-iris_DESC=		Broadwell and newer
+iris_DESC=		Broadwell and newer (implies OPENCL)
 iris_IMPLIES=		OPENCL
 panfrost_DESC=		Midgard, Bifrost
 r600_DESC=		R600, R700, Evergreen, Northern Islands (implies LLVM)
 radeonsi_DESC=		Southern Islands and newer (implies LLVM)
 
 VULKAN_DESC=		Vulkan drivers
-anv_DESC=		Skylake and newer
+anv_DESC=		Skylake and newer (implies OPENCL)
 anv_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR}
 anv_MESON_ON=		${"${ARCH:Mamd64}":?:-Dintel-rt=disabled} # https://gitlab.freedesktop.org/mesa/mesa/-/issues/10629
 anv_IMPLIES=		OPENCL
