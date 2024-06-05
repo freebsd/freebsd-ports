@@ -1,7 +1,7 @@
 PORTNAME=	mesa
 DISTVERSION=	24.1-branchpoint-1724
 DISTVERSIONSUFFIX=	-gbc149e03033
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -21,9 +21,9 @@ ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Limited scope: no old drivers and no software rendering. \
 			See also https://mesamatrix.net/
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
+BUILD_DEPENDS=	libglvnd>=1.3.2:graphics/libglvnd \
+		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
-		libOpenGL.so:graphics/libglvnd \
 		libexpat.so:textproc/expat2
 
 USES=		bison cpe compiler:c++11-lib meson pkgconfig python:build shebangfix
