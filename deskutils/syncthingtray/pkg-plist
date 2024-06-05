@@ -6,9 +6,9 @@ share/bash-completion/completions/syncthingtray
 share/icons/hicolor/scalable/apps/syncthingtray.svg
 %%QT5%%share/kservices5/plasma-applet-martchus.syncthingplasmoid.desktop
 %%QT5%%share/kservices5/syncthingfileitemaction.desktop
-share/metainfo/syncthingfileitemaction.appdata.xml
-share/metainfo/syncthingplasmoid.appdata.xml
-share/metainfo/syncthingtray.appdata.xml
+share/metainfo/syncthingfileitemaction.metainfo.xml
+share/metainfo/syncthingplasmoid.metainfo.xml
+share/metainfo/syncthingtray.metainfo.xml
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/CompactRepresentation.qml
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/DetailItem.qml
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/DetailView.qml
