@@ -11,6 +11,8 @@ WWW=		http://deadbeef.sourceforge.net/
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
+BROKEN=		Unfetchable
+
 GNU_CONFIGURE=	yes
 USES=		compiler:c11 desktop-file-utils gettext gmake gnome iconv \
 		libtool pkgconfig shebangfix tar:bzip2
@@ -125,6 +127,7 @@ HOTKEYS_CONFIGURE_OFF=	--disable-hotkeys
 OGG_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 OGG_CONFIGURE_OFF=	--disable-vorbis
 
+FFMPEG_BROKEN=		fails to compile
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libavformat.so:multimedia/ffmpeg \
 		libavutil.so:multimedia/ffmpeg
