@@ -15,8 +15,11 @@ CLAWS_PLUGINS+=	pgp
 
 .for _addon in ${CLAWS_PLUGINS:O}
 . if exists(../claws-mail-${_addon})
+_IGNORE!=	${MAKE} -C ../claws-mail-${_addon} -V IGNORE
+.  if ${_IGNORE} == ""
 OPTIONS_DEFINE+=	${_addon:tu}
 ${_addon:tu}_DESC!=	${MAKE} -C ../claws-mail-${_addon} -V COMMENT
+.  endif
 . endif
 .endfor
 

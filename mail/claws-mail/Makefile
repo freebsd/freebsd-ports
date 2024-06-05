@@ -1,5 +1,4 @@
 PORTNAME=	claws-mail
-PORTREVISION=	3
 CATEGORIES=	mail news
 
 COMMENT=	Lightweight and featureful GTK based e-mail and news client
@@ -8,25 +7,18 @@ WWW=		https://www.claws-mail.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libetpan.so:mail/libetpan \
-		libexpat.so:textproc/expat2 \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
-		libgcrypt.so:security/libgcrypt \
+LIB_DEPENDS=	libetpan.so:mail/libetpan \
 		libgnutls.so:security/gnutls \
-		libharfbuzz.so:print/harfbuzz \
-		libnettle.so:security/nettle \
-		libsasl2.so:security/cyrus-sasl2
+		libnettle.so:security/nettle
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 		mime-support>0:misc/mime-support
 
-USES=		autoreconf compiler:c++11-lang cpe desktop-file-utils gettext \
-		gettext-tools gnome pathfix pkgconfig python shebangfix \
-		ssl xorg
-USE_GNOME=	cairo librsvg2
+USES=		cpe desktop-file-utils pathfix perl5 python shebangfix xorg
+USE_GNOME=	librsvg2
 USE_XORG=	ice sm
 SHEBANG_FILES=	tools/*.pl tools/*.py tools/tb2claws-mail
+
+CPPFLAGS+=	-DGDK_DISABLE_DEPRECATION_WARNINGS
 
 OPTIONS_DEFINE=		COMPFACE DEBUG DOCS ENCHANT IPV6 LDAP NLS STARTUP \
 			THEMES
@@ -55,9 +47,6 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 LDAP_USES=		ldap
 LDAP_CONFIGURE_ENABLE=	ldap
 
-NLS_USES=		gettext-tools
-NLS_CONFIGURE_OFF=	--disable-nls
-
 STARTUP_LIB_DEPENDS=		libstartup-notification-1.so:x11/startup-notification
 STARTUP_CONFIGURE_ENABLE=	startup-notification
 
@@ -66,18 +55,6 @@ THEMES_RUN_DEPENDS=	claws-mail-themes>0:x11-themes/claws-mail-themes
 .include <bsd.port.options.mk>
 MASTER_OPTIONS=	${PORT_OPTIONS}
 .include "Makefile.claws"
-
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gtk20
-
-PLIST_SUB+=	GTK2=""
-.else
-PLIST_SUB+=	GTK2="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGTK3}
-USE_GNOME+=	gtk30
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \

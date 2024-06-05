@@ -3,10 +3,10 @@ PORTNAME=	perl
 COMMENT=	Perl filtering plugin for Claws Mail
 WWW=		https://www.claws-mail.org/plugin.php?plugin=perl
 
-USES+=		perl5 shebangfix
+USES=		perl5 shebangfix
 SHEBANG_FILES=	src/plugins/perl/tools/matcherrc2perlfilter.pl
 
-PLIST_FILES+=	share/claws-mail/matcherrc2perlfilter.pl
+PLIST_FILES=	share/claws-mail/matcherrc2perlfilter.pl
 
 CLAWS_PLUGINS_BUILD=	${PORTNAME}
 
