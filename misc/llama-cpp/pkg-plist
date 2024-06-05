@@ -43,3 +43,4 @@ lib/cmake/Llama/LlamaConfigVersion.cmake
 lib/libggml_shared.so
 lib/libllama.so
 %%EXAMPLES%%lib/libllava_shared.so
+libdata/pkgconfig/llama.pc
