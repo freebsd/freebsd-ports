@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-queueing
 DISTVERSION=	1.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

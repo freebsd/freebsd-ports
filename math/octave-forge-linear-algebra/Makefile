@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-linear-algebra
 PORTVERSION=	2.2.3
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases

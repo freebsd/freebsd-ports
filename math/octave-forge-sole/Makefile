@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-sole
 PORTVERSION=	0.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	https://sourceforge.net/projects/sole/files/latest/
 DISTNAME=	download
