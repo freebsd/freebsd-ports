@@ -1,4 +1,4 @@
---- pkgconfig.py.orig	2012-10-04 07:36:39 UTC
+--- pkgconfig.py.orig	2024-03-04 22:10:19 UTC
 +++ pkgconfig.py
 @@ -117,7 +117,7 @@ if __name__ == "__main__":
  	# Fix search path
