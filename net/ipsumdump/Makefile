@@ -1,6 +1,6 @@
 PORTNAME=	ipsumdump
 DISTVERSION=	1.86
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://read.seas.harvard.edu/~kohler/ipsumdump/
 
