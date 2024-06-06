@@ -13,6 +13,9 @@ WWW=		http://imdbpy.sourceforge.net/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	IMDbPY is now cinemagoer. Use www/py-cinemagoer instead
+EXPIRATION_DATE=2024-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 
 USES=		python
@@ -20,16 +23,9 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_RADIO=	SQLALCHEMY
-OPTIONS_RADIO_SQLALCHEMY=	SQLALCHEMY11 SQLALCHEMY12 SQLALCHEMY13 SQLALCHEMY14
-SQLALCHEMY11_DESC=	Use SQLAlchemy 1.1.x as backend
-SQLALCHEMY12_DESC=	Use SQLAlchemy 1.2.x as backend
-SQLALCHEMY13_DESC=	Use SQLAlchemy 1.3.x as backend
+OPTIONS_DEFINE=	SQLALCHEMY14
 SQLALCHEMY14_DESC=	Use SQLAlchemy 1.4.x as backend
 
-SQLALCHEMY11_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy11>=0:databases/py-sqlalchemy11@${PY_FLAVOR}
-SQLALCHEMY12_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy12>=0:databases/py-sqlalchemy12@${PY_FLAVOR}
-SQLALCHEMY13_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy13>=0:databases/py-sqlalchemy13@${PY_FLAVOR}
 SQLALCHEMY14_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=0:databases/py-sqlalchemy14@${PY_FLAVOR}
 
 .include <bsd.port.mk>
