@@ -1,6 +1,6 @@
 PORTNAME=	eza
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.15
+DISTVERSION=	0.18.17
 CATEGORIES=	sysutils
 
 MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp
@@ -14,12 +14,15 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	eza-community
 
-PLIST_FILES=	bin/${PORTNAME} \
-		etc/bash_completion.d/${PORTNAME}.bash \
-		share/fish/completions/${PORTNAME}.fish \
-		share/zsh/site-functions/_${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	MANPAGES
+OPTIONS_GROUP=	COMPLETIONS
+OPTIONS_GROUP_COMPLETIONS=	BASH FISH ZSH
+
+BASH_PLIST_FILES=	etc/bash_completion.d/${PORTNAME}.bash
+FISH_PLIST_FILES=	share/fish/completions/${PORTNAME}.fish
+ZSH_PLIST_FILES=	share/zsh/site-functions/_${PORTNAME}
 
 MANPAGES_BUILD_DEPENDS=	pandoc:textproc/hs-pandoc
 
@@ -35,13 +38,19 @@ post-build-MANPAGES-on:
 .endfor
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+post-install-BASH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/completions/bash/${PORTNAME} ${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}.bash
+
+post-install-FISH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions
 	${INSTALL_DATA} ${WRKSRC}/completions/fish/${PORTNAME}.fish ${STAGEDIR}${PREFIX}/share/fish/completions/${PORTNAME}.fish
+
+post-install-ZSH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/completions/zsh/_${PORTNAME} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 post-install-MANPAGES-on:
 .for i in ${_MARKDOWN_FILES}
