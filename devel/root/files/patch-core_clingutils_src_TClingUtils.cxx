@@ -1,6 +1,6 @@
---- core/clingutils/src/TClingUtils.cxx.orig	2024-04-12 11:40:01 UTC
+--- core/clingutils/src/TClingUtils.cxx.orig	2024-05-30 18:16:07 UTC
 +++ core/clingutils/src/TClingUtils.cxx
-@@ -3352,8 +3352,13 @@ std::string ROOT::TMetaUtils::GetFileName(const clang:
+@@ -3357,8 +3357,13 @@ std::string ROOT::TMetaUtils::GetFileName(const clang:
        // we trace it back to the top-level system header that includes this
        // declaration.
        if (interp.getCI()->getLangOpts().Modules && !headerFE) {

@@ -4,6 +4,13 @@
 // on 2024-05-15.
 // Outer "module std [system] { }" block has been added.
 // Lines 577-580 of this file have been commented out to fix build on FreeBSD 15.0.
+//
+// Addendum 2024-06-03:
+// src/lib/libc++/module.modulemap are identical on 15.0-CURRENT and 14.1-RELEASE;
+// that of 14.1-RELEASE is located at
+// https://github.com/freebsd/freebsd-src/blob/release/14.1.0/lib/libc%2B%2B/module.modulemap.
+// Symlinking interpreter-cling-include-cling-std__fbsd14.1.modulemap to
+// interpreter-cling-include-cling-std__fbsd15.0.modulemap for patching.
 
 // Main C++ standard library interfaces
 module std [system] {
