@@ -19,17 +19,21 @@ LIB_DEPENDS=	libbtor2parser.so:math/btor2tools \
 		libgmp.so:math/gmp
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cmake:noninja,testing compiler:c++11-lang cpe python:test # ninja fails to build tests
+USES=		cmake:noninja,testing compiler:c++11-lang cpe python:test shebangfix
 
 CPE_VENDOR=	boolector_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Boolector
 
+SHEBANG_GLOB=	*.sh
+
 CMAKE_ON=	BUILD_SHARED_LIBS \
 		USE_GMP
 CMAKE_OFF=	TESTING
-CMAKE_TESTING_ON=	TESTING # tests fail to comile, see https://github.com/Boolector/boolector/issues/216
+CMAKE_TESTING_ON=	TESTING # 1 test hangs, see https://github.com/Boolector/boolector/issues/227
 CMAKE_ARGS=	-DCaDiCaL_INCLUDE_DIR=${LOCALBASE}/include
+
+BINARY_ALIAS=	python=${PYTHON_CMD} python3=${PYTHON_CMD}
 
 .include <bsd.port.mk>
