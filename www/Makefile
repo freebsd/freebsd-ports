@@ -1391,7 +1391,6 @@
     SUBDIR += pear-Services_urlTea
     SUBDIR += pear-Structures_DataGrid_Renderer_Flexy
     SUBDIR += pear-Structures_DataGrid_Renderer_Pager
-    SUBDIR += pear-Structures_DataGrid_Renderer_Smarty
     SUBDIR += pear-Text_Wiki
     SUBDIR += pear-UDDI
     SUBDIR += pear-XML_GRDDL
