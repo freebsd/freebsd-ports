@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2023-10-22 09:46:07 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-  "setuptools >= 65.0.0",
++  "setuptools >= 63.0.0",
+ ]
+ build-backend = "backend"
+ backend-path = ["pep517build"]
