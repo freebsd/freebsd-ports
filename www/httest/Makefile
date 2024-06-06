@@ -1,6 +1,6 @@
 PORTNAME=	httest
 PORTVERSION=	2.4.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/htt/htt${PORTVERSION:R}/${PORTNAME}-${PORTVERSION}
 
@@ -10,19 +10,27 @@ WWW=		https://htt.sourceforge.net/
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Abandonware, no activity from upstream for years and depends on deprecated library devel/pcre
+EXPIRATION_DATE=2024-06-30
+
 BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libgdbm.so:databases/gdbm \
 		libpcre.so:devel/pcre \
 		libapr-1.so:devel/apr1
 
-USES=		iconv lua:-52 libtool bdb ssl
+USES=		iconv lua:-52 libtool ssl
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
-OPTIONS_DEFINE=	EXAMPLES
+CPPFLAGS+=	-I${LUA_INCDIR}
+LDFLAGS+=	-Wl,--as-needed
+
+
+INSTALL_TARGET=		install-strip
+MAKE_JOBS_UNSAFE=	yes
+PORTEXAMPLES=		*
 
 CONFIGURE_ARGS=	--enable-lua-module \
 		--with-apr="${LOCALBASE}/bin" \
@@ -30,13 +38,8 @@ CONFIGURE_ARGS=	--enable-lua-module \
 		--with-lua="${LUA_LIBDIR}" \
 		--with-pcre="${LOCALBASE}/bin" \
 		--with-ssl="${OPENSSLLIB}"
-CPPFLAGS+=	-I${LUA_INCDIR}
 
-PORTEXAMPLES=	*
-
-INSTALL_TARGET=	install-strip
-
-MAKE_JOBS_UNSAFE=	yes
+OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|`$$APR_CONFIG --cflags`||; s|-llua|-llua-${LUA_VER}|g' ${WRKSRC}/configure
