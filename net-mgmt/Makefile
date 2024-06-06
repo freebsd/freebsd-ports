@@ -345,6 +345,7 @@
     SUBDIR += rancid3
     SUBDIR += rate
     SUBDIR += rcpd
+    SUBDIR += realmd
     SUBDIR += remarp
     SUBDIR += resource-agents
     SUBDIR += riemann
