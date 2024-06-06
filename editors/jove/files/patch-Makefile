@@ -1,0 +1,20 @@
+--- Makefile.orig	2024-06-06 03:00:44 UTC
++++ Makefile
+@@ -67,7 +67,7 @@ DETCDIR = $(DESTDIR)$(JETCDIR)
+ 
+ JETCDIR = /etc/jove
+ DETCDIR = $(DESTDIR)$(JETCDIR)
+-JTMPDIR = /var/tmp
++JTMPDIR = /var/lib/jove/tmp
+ JRECDIR = /var/lib/jove/preserve
+ DRECDIR = $(DESTDIR)$(JRECDIR)
+ # Install permission for DRECDIR
+@@ -328,7 +328,7 @@ setmaps.o:	setmaps.c
+ # create a temporary directory to hold some temporary intermediate files that the
+ # Makefile generates, as a precaution against security hole via races (mktemp would be 
+ # better, but we try to keep this Makefile working on old Unix, pre-POSIX, sigh)
+-TDIR=$(JTMPDIR)/jbuild$$$$
++TDIR=/var/tmp/jbuild$$$$
+ TFILE=$(TDIR)/temp
+ 
+ keys.c:	setmaps$(LOCALEXT) keys.txt Makefile .ALWAYS
