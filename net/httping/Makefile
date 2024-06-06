@@ -3,7 +3,7 @@ PORTVERSION=	2.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ping-like tool for HTTP requests
 WWW=		https://github.com/folkertvanheusden/HTTPing
 
