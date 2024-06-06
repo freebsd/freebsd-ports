@@ -25,7 +25,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	EXAMPLES
 
-post-patch:
+pre-build:
 	cython-${PYTHON_VER} ${WRKSRC}/mtbl.pyx
 
 post-install:
