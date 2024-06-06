@@ -5,7 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Play and organize your music collection
-WWW=		http://gnumdk.github.io/lollypop/
+WWW=		https://wiki.gnome.org/Apps/Lollypop
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
