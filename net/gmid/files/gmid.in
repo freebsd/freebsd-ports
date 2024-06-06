@@ -2,7 +2,7 @@
 #
 
 # PROVIDE: gmid
-# REQUIRE: SERVERS
+# REQUIRE: LOGIN SERVERS
 # KEYWORD: shutdown
 
 #
