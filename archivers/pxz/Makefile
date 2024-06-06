@@ -9,6 +9,9 @@ WWW=		https://jnovy.fedorapeople.org/pxz/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Superseded by xz (Utils), support for multithreading is available since 2014
+EXPIRATION_DATE=2024-07-31
+
 USES=		cpe tar:xz
 PLIST_FILES=	bin/pxz share/man/man1/pxz.1.gz
 
