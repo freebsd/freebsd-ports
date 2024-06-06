@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.193.0
+PORTVERSION=	3.194.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -366,6 +366,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-supportapp>=1<2:devel/rubygem-aws-sdk-supportapp \
 		rubygem-aws-sdk-swf>=1<2:devel/rubygem-aws-sdk-swf \
 		rubygem-aws-sdk-synthetics>=1<2:devel/rubygem-aws-sdk-synthetics \
+		rubygem-aws-sdk-taxsettings>=1<2:devel/rubygem-aws-sdk-taxsettings \
 		rubygem-aws-sdk-textract>=1<2:devel/rubygem-aws-sdk-textract \
 		rubygem-aws-sdk-timestreaminfluxdb>=1<2:devel/rubygem-aws-sdk-timestreaminfluxdb \
 		rubygem-aws-sdk-timestreamquery>=1<2:devel/rubygem-aws-sdk-timestreamquery \
