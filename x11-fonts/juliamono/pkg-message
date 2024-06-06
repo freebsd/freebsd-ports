@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+Version 0.055 and up of JuliaMono include color glyphs.  If your application (e.g., xterm(1), urxvt(1)) does not support color glyphs. You may need to change your config
+to use "JuliaMono Latin" instead of "JuliaMono".
+}
+]
