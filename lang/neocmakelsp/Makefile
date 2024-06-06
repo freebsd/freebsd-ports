@@ -1,6 +1,6 @@
 PORTNAME=	neocmakelsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.27
+DISTVERSION=	0.7.3
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -140,7 +140,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.18 \
 		tree-sitter-0.22.6 \
-		tree-sitter-cmake-0.4.3 \
+		tree-sitter-cmake-0.5.0 \
 		trim-in-place-0.1.7 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
