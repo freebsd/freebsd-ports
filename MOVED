@@ -3272,5 +3272,5 @@ net/iaxmodem||2024-05-29|Has expired: outdated and uses end-of-life version of G
 www/mod_auth_openid||2024-05-29|Has expired: Depends on expired devel/libopkele
 devel/libopkele||2024-05-29|Has expired: Last upstream release was in 2009
 graphics/vkd3d||2024-05-30|No consumers in ports
-www/pear-Structures_DataGrid_Renderer_Smarty||2024-06-05|Remove expired port
-net/py-soap2py||2024-06-05|Remove expired port
+www/pear-Structures_DataGrid_Renderer_Smarty||2024-06-06|Remove expired port
+net/py-soap2py||2024-06-06|Remove expired port
