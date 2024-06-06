@@ -73,6 +73,7 @@ iris_DESC=		Broadwell and newer (implies OPENCL)
 iris_IMPLIES=		OPENCL
 panfrost_DESC=		Midgard, Bifrost
 r600_DESC=		R600, R700, Evergreen, Northern Islands (implies LLVM)
+r600_IMPLIES=		LLVM
 radeonsi_DESC=		Southern Islands and newer
 
 VULKAN_DESC=		Vulkan drivers
@@ -97,9 +98,6 @@ LLVM_USES=		llvm:min=15,lib,noexport
 LLVM_CONFIGURE_ENV=	LLVM_CONFIG=${LLVM_CONFIG}
 LLVM_MESON_ENABLED=	llvm
 LLVM_MESON_TRUE=	amd-use-llvm
-.for i in r600
-${i}_IMPLIES+=		LLVM
-.endfor
 
 LTO_MESON_TRUE=		b_lto
 
