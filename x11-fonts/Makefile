@@ -117,6 +117,7 @@
     SUBDIR += freefonts
     SUBDIR += fslsfonts
     SUBDIR += gbdfed
+    SUBDIR += geist-mono
     SUBDIR += geminifonts
     SUBDIR += genryu
     SUBDIR += genseki
