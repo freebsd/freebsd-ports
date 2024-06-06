@@ -14,6 +14,9 @@ LICENSE_FILE=	${WRKSRC}/license.html	#only available as html
 # No fees may be collected for redistribution
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+DEPRECATED=	Obsolete format that never gained traction, consider using audio/flac
+EXPIRATION_DATE=2024-07-31
+
 RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:misc/compat9x
 
 CONFLICTS_INSTALL?=	optimfrog-sse2
