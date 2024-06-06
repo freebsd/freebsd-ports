@@ -1,5 +1,5 @@
 PORTNAME=	mlmmj
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.6
 CATEGORIES=	mail
 MASTER_SITES=	https://codeberg.org/mlmmj/mlmmj/releases/download/RELEASE_${PORTVERSION:S/./_/g}/
 
@@ -33,7 +33,7 @@ BUILD_DEPENDS=		kyua:devel/kyua \
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} \
-		ChangeLog FAQ README* TODO TUNABLES UPGRADE \
+		ChangeLog FAQ README* TODO TUNABLES.md UPGRADE \
 		${STAGEDIR}${DOCSDIR})
 
 post-install-PERL-on:
