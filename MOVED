@@ -3274,3 +3274,4 @@ devel/libopkele||2024-05-29|Has expired: Last upstream release was in 2009
 graphics/vkd3d||2024-05-30|No consumers in ports
 www/pear-Structures_DataGrid_Renderer_Smarty||2024-06-06|Remove expired port
 net/py-soap2py||2024-06-06|Remove expired port
+net/pear-Net_CDDB||2024-06-06|Remove obsoleted port

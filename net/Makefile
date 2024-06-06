@@ -945,7 +945,6 @@
     SUBDIR += pear-Horde_Scribe
     SUBDIR += pear-Horde_Socket_Client
     SUBDIR += pear-Horde_Url
-    SUBDIR += pear-Net_CDDB
     SUBDIR += pear-Net_CheckIP
     SUBDIR += pear-Net_DIME
     SUBDIR += pear-Net_DNSBL
