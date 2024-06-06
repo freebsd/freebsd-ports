@@ -37,7 +37,7 @@ linux_ARGS=		${LINUX_DEFAULT}
 .  if ${linux_ARGS} == c7
 LINUX_DIST_VER?=	7.9.2009
 .  elif ${linux_ARGS} == rl9
-LINUX_DIST_VER?=	9.3
+LINUX_DIST_VER?=	9.4
 .  else
 ERROR+=			"Invalid Linux distribution: ${linux_ARGS}"
 .  endif
@@ -83,6 +83,7 @@ _linux_${linux_ARGS}_fontconfig=	linux-${linux_ARGS}-fontconfig>0:x11-fonts/linu
 _linux_${linux_ARGS}_freetype=		linux-${linux_ARGS}-freetype>0:print/linux-${linux_ARGS}-freetype
 _linux_${linux_ARGS}_fribidi=		linux-${linux_ARGS}-fribidi>0:converters/linux-${linux_ARGS}-fribidi
 _linux_${linux_ARGS}_gdkpixbuf2=	linux-${linux_ARGS}-gdk-pixbuf2>0:graphics/linux-${linux_ARGS}-gdk-pixbuf2
+_linux_rl9_gnupg=			linux-rl9-gnupg2>0:security/linux-rl9-gnupg
 _linux_${linux_ARGS}_gnutls=		linux-${linux_ARGS}-gnutls>0:security/linux-${linux_ARGS}-gnutls
 _linux_${linux_ARGS}_graphite2=		linux-${linux_ARGS}-graphite2>0:graphics/linux-${linux_ARGS}-graphite2
 _linux_${linux_ARGS}_gsm=		linux-${linux_ARGS}-gsm>0:audio/linux-${linux_ARGS}-gsm
@@ -177,6 +178,7 @@ _linux_${linux_ARGS}_userspace-rcu=	linux-${linux_ARGS}-userspace-rcu>0:sysutils
 _linux_rl9_vulkan=			linux-rl9-vulkan-loader>0:graphics/linux-rl9-vulkan
 _linux_${linux_ARGS}_wayland=		linux-${linux_ARGS}-wayland>0:graphics/linux-${linux_ARGS}-wayland
 _linux_rl9_webp=			linux-rl9-libwebp>0:graphics/linux-rl9-webp
+_linux_rl9_wget=			linux-rl9-wget>0:ftp/linux-rl9-wget
 _linux_c7_xcb-util=			linux-c7-xcb-util>0:x11/linux-c7-xcb-util
 _linux_${linux_ARGS}_xorglibs=		linux-${linux_ARGS}-xorg-libs>=7.7:x11/linux-${linux_ARGS}-xorg-libs
 _linux_c7_zlib-devel=			linux-c7-zlib-devel>0:devel/linux-c7-zlib-devel

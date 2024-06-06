@@ -1,5 +1,5 @@
 PORTNAME=	dri
-PORTVERSION=	23.1.4
+PORTVERSION=	23.3.3
 DISTVERSIONSUFFIX=	-1.el9
 CATEGORIES=	graphics linux
 
@@ -11,7 +11,7 @@ USE_LDCONFIG=	yes
 USE_LINUX=	elfutils-libelf expat libdrm libglvnd llvm wayland xorglibs
 USE_LINUX_RPM=	yes
 
-LIB_DISTNAMES=	freeglut-3.2.1-9.el9 \
+LIB_DISTNAMES=	freeglut-3.2.1-10.el9 \
 		mesa-dri-drivers-${DISTVERSIONFULL} \
 		mesa-libEGL-${DISTVERSIONFULL} \
 		mesa-libGL-${DISTVERSIONFULL} \
@@ -22,7 +22,7 @@ LIB_DISTNAMES=	freeglut-3.2.1-9.el9 \
 LIB_DISTNAMES_amd64=	m/mesa-vulkan-drivers-${DISTVERSIONFULL} \
 		m/mesa-libxatracker-${DISTVERSIONFULL}
 
-SRC_DISTFILES=	freeglut-3.2.1-9.el9${SRC_SUFX}:SOURCE \
+SRC_DISTFILES=	freeglut-3.2.1-10.el9${SRC_SUFX}:SOURCE \
 		mesa-${DISTVERSIONFULL}${SRC_SUFX}:SOURCE \
 		mesa-libGLU-9.0.1-6.el9${SRC_SUFX}:SOURCE
 

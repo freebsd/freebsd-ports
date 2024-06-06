@@ -1,6 +1,6 @@
 PORTNAME=	alsa-lib
-PORTVERSION=	1.2.9
-DISTVERSIONSUFFIX=	-1.el9
+PORTVERSION=	1.2.10
+DISTVERSIONSUFFIX=	-2.el9
 CATEGORIES=	audio linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		linux:rl9
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 
-CONFLICTS=	linux-c6-${PORTNAME} linux-c7-${PORTNAME}
+CONFLICTS=	linux-c7-${PORTNAME}
 
 post-patch:
 	@${RM} -r ${WRKSRC}/etc/* ${WRKSRC}/lib/modprobe.d \

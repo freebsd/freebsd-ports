@@ -1,6 +1,6 @@
 usr/bin/curl
-usr/lib/.build-id/61/2d63d68321ebf4bec1c19ef1a1785ec6b66919
-usr/lib/.build-id/fc/bad378d7365ed4d3b346e13f653d3b3d318865
+usr/lib/.build-id/0b/1c347a90608c38b76bcff201ddaa4a0c643091
+usr/lib/.build-id/f3/65cc88a315be5f8c93350628504c45d056b4cb
 usr/lib64/libcurl.so.4
 usr/lib64/libcurl.so.4.7.0
 %%PORTDOCS%%%%DOCSDIR%%/BUGS.md
