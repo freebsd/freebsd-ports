@@ -13,12 +13,11 @@ WWW=		https://nghttp2.org/nghttp3/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++17-lang libtool pathfix pkgconfig tar:xz
+USES=		libtool pathfix pkgconfig tar:xz
 
 CONFIGURE_ARGS=	--enable-lib-only
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
