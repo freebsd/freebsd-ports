@@ -12,6 +12,9 @@ WWW=		https://sidplay2.sourceforge.net/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware and superseded by audio/sidplayfp
+EXPIRATION_DATE=2024-07-31
+
 LIB_DEPENDS=	libsidplay2.so:audio/libsidplay2
 
 GNU_CONFIGURE=	yes
