@@ -1,6 +1,6 @@
---- interpreter/cling/lib/Interpreter/Interpreter.cpp.orig	2024-04-01 14:37:20 UTC
+--- interpreter/cling/lib/Interpreter/Interpreter.cpp.orig	2024-05-30 18:23:48 UTC
 +++ interpreter/cling/lib/Interpreter/Interpreter.cpp
-@@ -876,8 +876,10 @@ namespace cling {
+@@ -889,8 +889,10 @@ namespace cling {
                                      /*AllowExtraSearch*/ true))
        return loadModule(M, complain);
  

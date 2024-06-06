@@ -1,15 +1,6 @@
---- interpreter/cling/lib/Interpreter/Interpreter.cpp.orig	2024-05-19 10:35:56 UTC
+--- interpreter/cling/lib/Interpreter/Interpreter.cpp.orig	2024-05-30 18:23:48 UTC
 +++ interpreter/cling/lib/Interpreter/Interpreter.cpp
-@@ -492,7 +492,7 @@ namespace cling {
-       Strm << "#define __dso_handle ((void*)" << ThisP << ")\n";
- 
-     // C atexit, std::atexit
--    Strm << Linkage << " int atexit(void(*f)()) " << Attr;
-+    Strm << Linkage << " int atexit(void(*f)()) throw () " << Attr;
-     if (EmitDefinitions)
-       Strm << " { return __cxa_atexit((void(*)(void*))f, 0, __dso_handle); }\n";
-     else
-@@ -501,7 +501,7 @@ namespace cling {
+@@ -499,7 +499,7 @@ namespace cling {
  
      // C++ 11 at_quick_exit, std::at_quick_exit
      if (LangOpts.CPlusPlus && LangOpts.CPlusPlus11) {
