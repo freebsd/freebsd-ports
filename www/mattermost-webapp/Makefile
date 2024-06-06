@@ -1,5 +1,5 @@
 PORTNAME=	mattermost-webapp
-PORTVERSION=	9.5.5
+PORTVERSION=	9.5.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://releases.mattermost.com/${PORTVERSION}/
