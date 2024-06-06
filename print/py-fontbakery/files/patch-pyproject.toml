@@ -1,14 +1,14 @@
---- pyproject.toml.orig	2024-04-17 19:14:00 UTC
+--- pyproject.toml.orig	2024-06-04 04:55:58 UTC
 +++ pyproject.toml
 @@ -29,7 +29,7 @@ dependencies = [
  
  dependencies = [
- 	"fontTools >= 4.46.0",
--	"freetype-py < 2.4.0",
-+	"freetype-py",
- 	"opentypespec",
- 	"opentype-sanitizer >= 9.1.0, == 9.*",
- 	"munkres",
+     "fontTools >= 4.46.0",
+-    "freetype-py < 2.4.0",  # see: https://github.com/fonttools/fontbakery/issues/4143
++    "freetype-py",  # see: https://github.com/fonttools/fontbakery/issues/4143
+     "opentypespec",
+     "opentype-sanitizer >= 9.1.0, == 9.*",
+     "munkres",
 @@ -110,7 +110,7 @@ googlefonts = [
      "fonttools[lxml,unicode]",
      # (see https://github.com/googlefonts/gflanguages/pull/7)
