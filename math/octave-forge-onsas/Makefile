@@ -10,6 +10,8 @@ WWW=		https://packages.octave.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
+BROKEN=		does not install properly
+
 USES=		octave
 USE_GITHUB=	yes
 GH_ACCOUNT=	ONSAS
