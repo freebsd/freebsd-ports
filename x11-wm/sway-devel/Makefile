@@ -15,6 +15,8 @@ WWW=		https://swaywm.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build after https://gitlab.freedesktop.org/wlroots/wlroots/-/commit/0686666cf5c0
+
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.24:graphics/wayland-protocols
 LIB_DEPENDS=	libjson-c.so:devel/json-c \

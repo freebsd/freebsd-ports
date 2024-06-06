@@ -17,6 +17,7 @@ include/wlroots%%SUFFIX%%/wlr/interfaces/wlr_tablet_pad.h
 include/wlroots%%SUFFIX%%/wlr/interfaces/wlr_tablet_tool.h
 include/wlroots%%SUFFIX%%/wlr/interfaces/wlr_touch.h
 include/wlroots%%SUFFIX%%/wlr/render/allocator.h
+include/wlroots%%SUFFIX%%/wlr/render/color.h
 include/wlroots%%SUFFIX%%/wlr/render/dmabuf.h
 include/wlroots%%SUFFIX%%/wlr/render/drm_format_set.h
 %%OPENGL%%include/wlroots%%SUFFIX%%/wlr/render/egl.h
@@ -28,6 +29,7 @@ include/wlroots%%SUFFIX%%/wlr/render/swapchain.h
 %%VULKAN%%include/wlroots%%SUFFIX%%/wlr/render/vulkan.h
 include/wlroots%%SUFFIX%%/wlr/render/wlr_renderer.h
 include/wlroots%%SUFFIX%%/wlr/render/wlr_texture.h
+include/wlroots%%SUFFIX%%/wlr/types/wlr_alpha_modifier_v1.h
 include/wlroots%%SUFFIX%%/wlr/types/wlr_buffer.h
 include/wlroots%%SUFFIX%%/wlr/types/wlr_compositor.h
 include/wlroots%%SUFFIX%%/wlr/types/wlr_content_type_v1.h

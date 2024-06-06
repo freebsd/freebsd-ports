@@ -1,13 +1,8 @@
 PORTNAME=	wlroots
-DISTVERSION=	0.17.0-312
-DISTVERSIONSUFFIX=	-gb1b34cd665
-PORTREVISION=	4
+DISTVERSION=	0.17.0-378
+DISTVERSIONSUFFIX=	-g385c9ade5f
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	-devel
-
-PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	cc6a7a04418f.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4697
-PATCHFILES+=	4b4f76cc1357.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4614
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library (development snapshot)
@@ -32,20 +27,27 @@ PLIST_SUB=	SUFFIX=-0.18
 
 PORTSCOUT=	ignore:1
 
-OPTIONS_DEFINE=	DRM OPENGL VULKAN X11
-OPTIONS_DEFAULT=DRM OPENGL VULKAN X11
+OPTIONS_DEFINE=	DRM LCMS2 LIBLIFTOFF OPENGL VULKAN X11
+OPTIONS_DEFAULT=DRM LCMS2 LIBLIFTOFF OPENGL VULKAN X11
 OPTIONS_SUB=	yes
 
 DRM_DESC=		KMS console support
 DRM_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 			hwdata>0:misc/hwdata
 DRM_LIB_DEPENDS=	libudev.so:devel/libudev-devd \
-			libliftoff.so:graphics/libliftoff \
 			libdisplay-info.so:sysutils/libdisplay-info \
 			libseat.so:sysutils/seatd \
 			libinput.so:x11/libinput
 DRM_MESON_ENABLED=	session
 DRM_VARS=		BACKENDS+="drm libinput"
+
+LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
+LCMS2_MESON_ENABLED=	color-management
+
+LIBLIFTOFF_DESC=	libliftoff DRM interface (see WLR_DRM_FORCE_LIBLIFTOFF)
+LIBLIFTOFF_LIB_DEPENDS=	libliftoff.so:graphics/libliftoff
+LIBLIFTOFF_MESON_ENABLED=	libliftoff
+LIBLIFTOFF_IMPLIES=	DRM
 
 OPENGL_RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
 OPENGL_USE=		GL=egl,glesv2
