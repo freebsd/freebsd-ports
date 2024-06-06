@@ -1,5 +1,5 @@
 PORTNAME=	snappy
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 CATEGORIES=	archivers
 
 MAINTAINER=	vanilla@FreeBSD.org
