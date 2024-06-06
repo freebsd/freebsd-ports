@@ -1,6 +1,7 @@
 bin/httping
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/plot-json.py
 %%NLS%%share/locale/nl/LC_MESSAGES/httping.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/httping.mo
 share/man/man1/httping.1.gz
-share/man/nl/man1/httping-nl.1.gz
-share/man/ru/man1/httping-ru.1.gz
