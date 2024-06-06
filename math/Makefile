@@ -189,6 +189,7 @@
     SUBDIR += bcal
     SUBDIR += bcps
     SUBDIR += bitwise
+    SUBDIR += bitwuzla
     SUBDIR += blacs
     SUBDIR += blahtexml
     SUBDIR += blas
