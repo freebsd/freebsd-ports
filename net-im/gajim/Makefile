@@ -1,5 +1,6 @@
 PORTNAME=	gajim
 DISTVERSION=	1.8.4
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://gajim.org/downloads/${DISTVERSION:R}/
 
@@ -21,7 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}css-parser>0:www/py-css-parser@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}precis_i18n>=1.0.0:textproc/py-precis_i18n@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}omemo-dr>0:security/py-omemo-dr@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}omemo-dr>0:security/py-omemo-dr@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qrcode>0:textproc/py-qrcode@${PY_FLAVOR}
 LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 		libgspell-1.so:textproc/gspell
 
