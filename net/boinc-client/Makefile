@@ -1,6 +1,6 @@
 PORTNAME=	boinc-client
-DISTVERSIONPREFIX=	client_release/7.24/
-DISTVERSION=	7.24.3
+DISTVERSIONPREFIX=	client_release/8.0/
+DISTVERSION=	8.0.2
 CATEGORIES=	net
 
 MAINTAINER=	ler@FreeBSD.org
@@ -25,10 +25,6 @@ INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
-
-BOINC_CLIENT_USER?=	boinc
-BOINC_CLIENT_GROUP?=	boinc
-BOINC_CLIENT_HOME?=	/var/db/boinc
 
 SUB_FILES=	pkg-deinstall pkg-install
 SUB_LIST=	BOINC_CLIENT_GROUP="${BOINC_CLIENT_GROUP}" \
@@ -82,6 +78,10 @@ X11_USE=		GL=glut \
 			XORG=x11,xi,xmu,xscrnsaver
 X11_CONFIGURE_OFF=	--without-x \
 			ax_cv_check_glut_libglut=no
+
+BOINC_CLIENT_GROUP?=	boinc
+BOINC_CLIENT_HOME?=	/var/db/boinc
+BOINC_CLIENT_USER?=	boinc
 
 .include <bsd.port.options.mk>
 
