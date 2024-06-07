@@ -11,11 +11,11 @@ WWW=		http://ifcopenshell.org
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
+BROKEN=		error: no viable overloaded '='
+
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libTKernel.so:cad/opencascade740
-
-BROKEN=		error: no viable overloaded '='
 
 USES=		cmake compiler:c++11-lang eigen:3 gnome
 USE_GNOME=	libxml2
@@ -23,6 +23,8 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_PROJECT=	IfcOpenShell
 GH_TAGNAME=	7c61c7d200ff
+
+PORTSCOUT=	limit:^[0-9\.v]+$$
 
 OPTIONS_DEFINE=		PYTHON
 OPTIONS_DEFAULT=	PYTHON
