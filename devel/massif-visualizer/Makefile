@@ -1,6 +1,5 @@
 PORTNAME=	massif-visualizer
-DISTVERSION=	0.7.0
-PORTREVISION=	1
+DISTVERSION=	0.8.0
 CATEGORIES=	devel kde
 
 MAINTAINER=	rodrigo@FreeBSD.org
