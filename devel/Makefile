@@ -7820,6 +7820,7 @@
     SUBDIR += sdl12-compat
     SUBDIR += sdl20
     SUBDIR += sdl2pp
+    SUBDIR += sdl3
     SUBDIR += sdl_console
     SUBDIR += sdlmm
     SUBDIR += sdlskk
