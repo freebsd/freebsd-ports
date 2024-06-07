@@ -7911,6 +7911,7 @@
     SUBDIR += stxxl
     SUBDIR += stylua
     SUBDIR += styx
+    SUBDIR += subprocess
     SUBDIR += subversion
     SUBDIR += subversion-book
     SUBDIR += subversion-lts
