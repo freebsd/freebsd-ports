@@ -1,3 +1,37 @@
+  <vuln vid="91929399-249e-11ef-9296-b42e991fc52e">
+    <topic>kanboard -- Project Takeover via IDOR in ProjectPermissionController</topic>
+    <affects>
+      <package>
+	<name>kanboard</name>
+	<range><lt>1.2.37</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/kanboard/kanboard/commit/b6703688aac8187f5ea4d4d704fc7afeeffeafa7">
+	  <p>Kanboard is project management software that focuses on the Kanban
+	methodology.  The vuln is in app/Controller/ProjectPermissionController.php
+	function addUser().  The users permission to add users to a project
+	only get checked on the URL parameter project_id.  If the user is
+	authorized to add users to this project the request gets processed.
+	The users permission for the POST BODY parameter project_id does
+	not get checked again while processing.  An attacker with the
+	&apos;Project Manager&apos; on a single project may take over any
+	other project.  The vulnerability is fixed in 1.2.37.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-36399</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-36399</url>
+    </references>
+    <dates>
+      <discovery>2024-06-06</discovery>
+      <entry>2024-06-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="14908bda-232b-11ef-b621-00155d645102">
     <topic>cyrus-imapd -- unbounded memory allocation</topic>
     <affects>
