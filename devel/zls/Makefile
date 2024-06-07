@@ -1,5 +1,6 @@
 PORTNAME=	zls
 DISTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://raw.githubusercontent.com/ziglang/:langref
 DISTFILES=	zig/${DISTVERSION}/doc/langref.html.in:langref
