@@ -49,5 +49,7 @@ lib/crowdsec/plugins/notification-sentinel
 lib/crowdsec/plugins/notification-slack
 lib/crowdsec/plugins/notification-splunk
 @dir %%ETCDIR%%/hub
-@dir /var/db/crowdsec/data
+@dir %%ETCDIR%%/acquis.d
 @dir /var/db/crowdsec
+@dir /var/db/crowdsec/data
+@dir /var/db/crowdsec/data/trace
