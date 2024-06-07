@@ -49,8 +49,8 @@ winbind-stop-service = /usr/sbin/service samba_server stop
 sssd-enable-service = /usr/sbin/service sssd enable
 sssd-disable-service = /usr/sbin/service sssd disable
 sssd-restart-service = /usr/sbin/service sssd restart
-sssd-stop-service = /usr/sbin/service sssd stop
-sssd-caches-flush = %%LOCALBASE%%/sbin/sss_cache --users --groups --netgroups --services --autofs-maps
+sssd-stop-service = /usr/sbin/service sssd onestop
+sssd-caches-flush = %%LOCALBASE%%/sbin/sss_cache --users --groups --netgroups --services
 
 [users]
 default-shell = /bin/sh

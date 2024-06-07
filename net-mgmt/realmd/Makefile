@@ -1,5 +1,6 @@
 PORTNAME=	realmd
 PORTVERSION=	0.17.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	fluffy@FreeBSD.org
