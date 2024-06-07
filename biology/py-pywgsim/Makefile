@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plac>=0:devel/py-plac@${PY_FLAVOR}
 USES=		python
 USE_PYTHON=	autoplist cython distutils
 
-post-patch:
+post-configure:
 	cython-${PYTHON_VER} ${WRKSRC}/pywgsim/wgsim_lib.pyx
 
 .include <bsd.port.mk>
