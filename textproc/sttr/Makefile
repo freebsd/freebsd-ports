@@ -52,7 +52,7 @@ GH_TUPLE=	atotto:clipboard:v0.1.4:atotto_clipboard/vendor/github.com/atotto/clip
 		vmihailenco:tagparser:v2.0.0:vmihailenco_tagparser_v2/vendor/github.com/vmihailenco/tagparser/v2 \
 		yuin:goldmark:v1.7.1:yuin_goldmark/vendor/github.com/yuin/goldmark
 
-USE_GITLAB=	yes
+USE_GITLAB=	nodefault
 GL_TUPLE=	abhimanyusharma003:go-ordered-json:7ef32eef8eade06db2cd5b92cb95fac45ae7831c:abhimanyusharma003_go_ordered_json/vendor/gitlab.com/abhimanyusharma003/go-ordered-json
 
 PLIST_FILES=	bin/sttr
