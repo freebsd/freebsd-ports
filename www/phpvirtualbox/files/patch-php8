@@ -178,13 +178,6 @@
  
  		return $log;
  	}
-@@ -5855,4 +5853,4 @@ class vboxconnector {
- 
- 		return @$rcodes['0x'.strtoupper(dechex($c))] . ' (0x'.strtoupper(dechex($c)).')';
- 	}
--}
-\ No newline at end of file
-+}
 --- endpoints/screen.php.orig	2024-06-07 15:46:20 UTC
 +++ endpoints/screen.php
 @@ -87,13 +87,13 @@ try {
