@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		python
 USE_PYTHON=	autoplist cython distutils
 
-post-patch:
+post-configure:
 	cython-${PYTHON_VER} ${WRKSRC}/http_parser/parser.pyx
 
 post-install:
