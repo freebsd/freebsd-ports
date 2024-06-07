@@ -7,6 +7,13 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	DJ mixing application
 WWW=		https://mixxx.org/
 
+PATCH_SITES=	https://github.com/mixxxdj/mixxx/commit/
+PATCHFILES+=	1dd2ae25e065401371800ad76cb813021702a9e1.patch:-p1 # Fix build with Taglib 2.x
+PATCHFILES+=	5afd1186edf22e4ef95966ca7021cc943f5dc7e8.patch:-p1
+PATCHFILES+=	ed547fd2b0f9dee98740fcf32c1307a092470322.patch:-p1
+PATCHFILES+=	c052808ca4b27050e99ce9fab9f0b53e90377eed.patch:-p1
+PATCHFILES+=	c4b3a7e91c56cea7f9bd1c18c1fe01d9da705144.patch:-p1
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
