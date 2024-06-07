@@ -1,3 +1,6 @@
+This file is in the public domain.
+https://github.com/google/shaderc-rs/issues/62
+
 - Restore system shaderc support
 - Detect system shaderc on BSDs
 
