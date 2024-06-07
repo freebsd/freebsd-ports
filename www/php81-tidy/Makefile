@@ -1,4 +1,3 @@
-PORTREVISION=	1
 CATEGORIES=	www
 
 MASTERDIR=	${.CURDIR}/../../lang/php81
