@@ -3,6 +3,7 @@ DISTVERSION?=	2.14.0
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
+PKGNAMESUFFIX?=	#
 
 MAINTAINER=	opensearch@FreeBSD.org
 COMMENT?=	Full-text search engine for Java
@@ -43,7 +44,20 @@ CONFIG_FILES=	opensearch.yml jvm.options log4j2.properties
 PLUGINS_CONFIG_FILES?= \
 		opensearch-notifications-core/notifications-core.yml \
 		opensearch-notifications/notifications.yml \
-		opensearch-observability/observability.yml \
+		opensearch-observability/observability.yml
+.if ${PKGNAMESUFFIX} == "210"
+PLUGINS_CONFIG_FILES+=	\
+		opensearch-performance-analyzer/agent-stats-metadata \
+		opensearch-performance-analyzer/log4j2.xml \
+		opensearch-performance-analyzer/opensearch_security.policy \
+		opensearch-performance-analyzer/performance-analyzer.properties \
+		opensearch-performance-analyzer/plugin-stats-metadata \
+		opensearch-performance-analyzer/rca.conf \
+		opensearch-performance-analyzer/rca_idle_cluster_manager.conf \
+		opensearch-performance-analyzer/rca_cluster_manager.conf \
+		opensearch-performance-analyzer/supervisord.conf
+.endif
+PLUGINS_CONFIG_FILES+= \
 		opensearch-reports-scheduler/reports-scheduler.yml \
 		opensearch-security/action_groups.yml \
 		opensearch-security/allowlist.yml \
@@ -101,6 +115,10 @@ do-install-PLUGINS-on:
 		 ${STAGEDIR}${ETCDIR}/opensearch-observability \
 		 ${STAGEDIR}${ETCDIR}/opensearch-reports-scheduler \
 		 ${STAGEDIR}${ETCDIR}/opensearch-security
+.if ${PKGNAMESUFFIX} == "210"
+	${MKDIR} ${STAGEDIR}${ETCDIR}/opensearch-performance-analyzer
+.endif
+
 .for f in ${PLUGINS_CONFIG_FILES}
 	${INSTALL} ${WRKSRC}/config/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
 	${ECHO} "@sample(opensearch,opensearch,640) ${ETCDIR}/${f}.sample" >> ${TMPPLIST}
@@ -125,6 +143,9 @@ post-install:
 	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-notifications-core" >> ${TMPPLIST}
 	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-notifications" >> ${TMPPLIST}
 	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-observability" >> ${TMPPLIST}
+.if ${PKGNAMESUFFIX} == "210"
+	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-performance-analyzer" >> ${TMPPLIST}
+.endif
 	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-reports-scheduler" >> ${TMPPLIST}
 	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-security" >> ${TMPPLIST}
 .endif
