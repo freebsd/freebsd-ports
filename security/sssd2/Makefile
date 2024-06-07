@@ -54,14 +54,14 @@ LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libunistring.so:devel/libunistring \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-RUN_DEPENDS=	cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
+RUN_DEPENDS=	adcli:net-mgmt/adcli \
+		cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
 
 USES=	autoreconf cpe gettext gmake gssapi:bootstrap,flags,mit iconv ldap \
 	libtool localbase:ldflags pathfix pkgconfig python:3.9+ shebangfix ssl
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 CPE_VENDOR=	fedoraproject
@@ -120,6 +120,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-python_prefix=${PREFIX} \
 		--with-unicode-lib=libunistring
 
+CPPFLAGS+=	-DRENEWAL_PROG_PATH='\"${LOCALBASE}/sbin/adcli\"'
 CFLAGS+=	-fstack-protector-all
 CFLAGS+=	-I${LOCALBASE}/include/samba4
 
