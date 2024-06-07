@@ -1,6 +1,6 @@
 PORTNAME=	hsl
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	2.2.3
+DISTVERSION=	2.2.4
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -24,7 +24,7 @@ INSTALL_TARGET=	install-strip
 PLIST_FILES=	include/coin-or/hsl/CoinHslConfig.h \
 		lib/libcoinhsl.so \
 		lib/libcoinhsl.so.2 \
-		lib/libcoinhsl.so.2.2.3 \
+		lib/libcoinhsl.so.2.2.4 \
 		libdata/pkgconfig/coinhsl.pc
 
 .include <bsd.port.mk>
