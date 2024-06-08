@@ -2,7 +2,7 @@
 #
 # Feature:	blaslapack
 # Usage:	USES=blaslapack or USES=blaslapack:ARGS
-# Valid ARGS:	atlas blis flexiblas netlib (default) openblas
+# Valid ARGS:	atlas blis flexiblas netlib (default) openblas openblas64
 #
 # Provides:	BLASLIB and LAPACKLIB
 #
@@ -13,7 +13,7 @@
 .if !defined(_INCLUDE_USES_BLASLAPACK_MK)
 _INCLUDE_USES_BLASLAPACK_MK=	yes
 
-_valid_ARGS=	atlas blis flexiblas netlib openblas
+_valid_ARGS=	atlas blis flexiblas netlib openblas openblas64
 
 _DEFAULT_BLASLAPACK=	netlib
 
@@ -51,6 +51,12 @@ LIB_DEPENDS+=	libopenblas.so:math/openblas
 _BLASLIB=	openblas
 LAPACKLIB=	-lopenblas
 BLA_VENDOR=	OpenBLAS
+.  elif ${blaslapack_ARGS} == openblas64
+LIB_DEPENDS+=	libopenblas_64.so:math/openblas64
+_BLASLIB=	openblas_64
+LAPACKLIB=	-lopenblas_64
+BLA_VENDOR=	OpenBLAS
+CFLAGS+=	-I${LOCALBASE}/include/openblas64
 .  else
 IGNORE=		USES=blaslapack: invalid arguments: ${blaslapack_ARGS}
 .  endif
