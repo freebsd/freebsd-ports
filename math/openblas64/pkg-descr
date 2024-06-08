@@ -1,0 +1,7 @@
+OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.
+OpenBLAS is an open source project supported by
+Lab of Parallel Software and Computational Science, ISCAS.
+
+NOTE: If you want to specify your CPU microarchitecture manually,
+please use TARGET_CPU_ARCH knob, e.g., "make TARGET_CPU_ARCH=NEHALEM".
+This value is set TARGET build flag.
