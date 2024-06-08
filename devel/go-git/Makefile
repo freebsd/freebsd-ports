@@ -4,7 +4,7 @@ DISTVERSION=	5.10.0
 PORTREVISION=	5
 CATEGORIES=	devel
 
-MAINTAINER=	eduardo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Highly extensible git library in pure Go
 WWW=		https://github.com/go-git/go-git
 
