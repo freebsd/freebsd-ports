@@ -668,6 +668,7 @@
     SUBDIR += onednn
     SUBDIR += onednn252
     SUBDIR += openblas
+    SUBDIR += openblas64
     SUBDIR += openfst
     SUBDIR += openfst-vosk
     SUBDIR += openlibm

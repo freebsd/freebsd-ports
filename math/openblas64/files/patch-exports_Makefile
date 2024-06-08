@@ -1,6 +1,6 @@
---- exports/Makefile.orig	2023-04-01 20:18:01 UTC
+--- exports/Makefile.orig	2024-04-04 20:26:04 UTC
 +++ exports/Makefile
-@@ -222,7 +222,7 @@ else
+@@ -234,7 +234,7 @@ endif
  endif
  	$(CC) $(CFLAGS) $(LDFLAGS)  -shared -o ../$(LIBSONAME) \
  	-Wl,--whole-archive $< -Wl,--no-whole-archive \
