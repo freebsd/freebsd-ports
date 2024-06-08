@@ -1,6 +1,5 @@
 bin/tuxpaint-config
 share/man/man1/tuxpaint-config.1.gz
-share/applications/tuxpaint-config.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.txt
@@ -61,7 +60,6 @@ share/locale/vi/LC_MESSAGES/tuxpaint-config.mo
 share/locale/zh_CN/LC_MESSAGES/tuxpaint-config.mo
 share/locale/zh_TW/LC_MESSAGES/tuxpaint-config.mo
 share/locale/zu/LC_MESSAGES/tuxpaint-config.mo
-share/pixmaps/tuxpaint-config.png
 %%DATADIR%%/images/icon-win32.ico
 %%DATADIR%%/images/icon.png
 %%DATADIR%%/images/icon16x16.png

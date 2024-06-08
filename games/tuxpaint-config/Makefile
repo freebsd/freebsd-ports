@@ -1,6 +1,5 @@
 PORTNAME=	tuxpaint-config
-PORTVERSION=	0.0.21
-PORTREVISION=	2
+PORTVERSION=	0.0.23
 CATEGORIES=	games
 MASTER_SITES=	SF/tuxpaint/${PORTNAME}/${PORTVERSION}
 
@@ -13,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
 LIB_DEPENDS=	libpaper.so:print/libpaper \
 		libfltk.so:x11-toolkits/fltk \
-		libunibreak.so:textproc/libunibreak
+		libunibreak.so:textproc/libunibreak \
+		libSDL2_Pango.so:x11-toolkits/sdl2_pango
 RUN_DEPENDS=	tuxpaint:games/tuxpaint
 
 USES=		gettext gmake pkgconfig
@@ -23,7 +23,7 @@ MAKE_ARGS=	PREFIX="${PREFIX}" \
 		CFLAGS="${CXXFLAGS} ${CPPFLAGS}" \
 		ARCH_LINKS="${LDFLAGS}"
 INSTALL_TARGET=	install-bin install-data install-man install-gettext \
-		install-doc install-gnome
+		install-doc
 MAKE_JOBS_UNSAFE=yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
