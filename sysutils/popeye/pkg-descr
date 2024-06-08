@@ -1,0 +1,2 @@
+Popeye is a utility that scans live Kubernetes clusters and reports
+potential issues with deployed resources and configurations.
