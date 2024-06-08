@@ -1,6 +1,5 @@
 PORTNAME=	riscv-isa-sim
-DISTVERSION=	git
-PORTREVISION=	20211015
+DISTVERSION=	1.1.0-20240531
 CATEGORIES=	emulators
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -15,7 +14,7 @@ NOT_FOR_ARCHS_REASON=	Does not build
 USES=	compiler:c++11-lang gmake shebangfix
 
 GH_ACCOUNT=	riscv
-GH_TAGNAME=	4f12984
+GH_TAGNAME=	00dfa28
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-boost
@@ -33,6 +32,7 @@ STRIP_FILES=	bin/elf2hex \
 		bin/termios-xspike \
 		bin/xspike \
 		lib/libcustomext.so \
+		lib/libriscv.so \
 		lib/libsoftfloat.so
 
 post-patch:
