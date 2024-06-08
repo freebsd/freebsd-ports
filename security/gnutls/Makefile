@@ -1,6 +1,6 @@
 PORTNAME=	gnutls
 DISTVERSION=	3.8.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	GNUPG/${PORTNAME}/v${DISTVERSION:R}
 
@@ -40,7 +40,8 @@ CONFIGURE_ARGS=	--disable-rpath \
 		--without-zstd \
 		--without-tpm \
 		--without-tpm2 \
-		--enable-ld-version-script
+		--enable-ld-version-script \
+		--enable-openssl-compatibility
 
 OPTIONS_DEFINE=		DANE EXAMPLES IDN KTLS MAN3 NLS P11KIT SRP
 OPTIONS_DEFAULT=	IDN KTLS MAN3 P11KIT
