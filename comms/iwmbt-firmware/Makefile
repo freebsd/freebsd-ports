@@ -1,6 +1,6 @@
 PORTNAME=	iwmbt-firmware
-DISTVERSION=	20230515
-DEB_REVISION=	3
+DISTVERSION=	20230625
+DEB_REVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	DEBIAN/pool/non-free-firmware/f/firmware-nonfree/:main \
 		https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/intel/:old
@@ -27,14 +27,14 @@ OLDFW_SUFX=	?id=6be4747ea1d731f661c5320acf3f1273a459d6da
 EXTRACT_CMD=	${AR}
 EXTRACT_BEFORE_ARGS=	-p
 EXTRACT_AFTER_ARGS=	data.tar.xz | ${TAR} -xf - ${EXTRACT_FILES}
-EXTRACT_FILES=	lib/firmware/intel \
+EXTRACT_FILES=	usr/lib/firmware/intel \
 		usr/share/doc/firmware-iwlwifi/copyright
 
 # PR/267581: Downgrade ibt-hw-37.8.10-fw-22.50.19.14.f.bseq to fw_patch_num 36
 post-extract:
-	${CP} ${DISTDIR}/${OLDFW_FILE}${OLDFW_SUFX} ${WRKDIR}/lib/firmware/intel/${OLDFW_FILE}
+	${CP} ${DISTDIR}/${OLDFW_FILE}${OLDFW_SUFX} ${WRKDIR}/usr/lib/firmware/intel/${OLDFW_FILE}
 
 do-install:
-	cd ${WRKDIR}/lib/firmware/intel && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+	cd ${WRKDIR}/usr/lib/firmware/intel && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
