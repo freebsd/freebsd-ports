@@ -1,7 +1,12 @@
 PORTNAME=	tg_owt
 PORTVERSION=	0.0.20231221
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
+
+PATCH_SITES=	https://github.com/desktop-app/tg_owt/commit/
+PATCHFILES=	a264c3311dec000dbe2ad8e3c819364f409d7897.patch \
+		62672f3756ecf218252098211d78c13369ab6d28.patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webrtc library used by telegram-desktop
@@ -12,10 +17,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat \
 		yasm:devel/yasm
-LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
+LIB_DEPENDS=	libabsl_base.so:devel/abseil \
+		libavformat.so:multimedia/ffmpeg \
+		libcrc32c.so:devel/crc32c \
 		libjpeg.so:graphics/jpeg-turbo \
+		libopenh264.so:multimedia/openh264 \
 		libopus.so:audio/opus \
-		libpipewire-0.3.so:multimedia/pipewire
+		libpipewire-0.3.so:multimedia/pipewire \
+		libsrtp2.so:net/libsrtp2 \
+		libvpx.so:multimedia/libvpx
 
 USES=		cmake gl pkgconfig xorg
 USE_XORG=	x11 xcomposite xdamage xrender xrandr xtst
@@ -26,9 +36,16 @@ GH_TAGNAME=	afd9d5d
 
 # libyuv cloned from https://chromium.googlesource.com/libyuv/libyuv
 # when updating port check if hash tag in the submodule was updated
-GH_TUPLE=	abseil:abseil-cpp:8c0b94e:abseilcpp/src/third_party/abseil-cpp \
-		cisco:libsrtp:a566a9:libsrtp/src/third_party/libsrtp \
-		google:crc32c:21fc8ef:crc32c/src/third_party/crc32c/src \
-		klemensn:libyuv:3aae5c7:libyuv/src/third_party/libyuv
+GH_TUPLE=	klemensn:libyuv:3aae5c7:libyuv/src/third_party/libyuv
+
+post-extract:
+		${RM} -rf \
+		${WRKSRC}/src/third-party/abseil-cpp \
+		${WRKSRC}/src/third-party/crc32c \
+		${WRKSRC}/src/third-party/libsrtp \
+		${WRKSRC}/src/third-party/libsrtp_config \
+		${WRKSRC}/src/third-party/libvpx \
+		${WRKSRC}/src/third-party/openh264 \
+		${WRKSRC}/src/third-party/yasm
 
 .include <bsd.port.mk>
