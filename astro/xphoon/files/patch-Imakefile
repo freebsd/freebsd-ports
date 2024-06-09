@@ -1,7 +1,7 @@
 diff --git a/Imakefile.orig b/Imakefile
 index 96d7fd6..73497f4 100644
---- a/Imakefile.orig
-+++ b/Imakefile
+--- Imakefile.orig
++++ Imakefile
 @@ -11,7 +11,7 @@
  
  
