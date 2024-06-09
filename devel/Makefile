@@ -361,6 +361,7 @@
     SUBDIR += cargo-leptos
     SUBDIR += cargo-llvm-cov
     SUBDIR += cargo-mutants
+    SUBDIR += cargo-spellcheck
     SUBDIR += cargo-tarpaulin
     SUBDIR += cargo-udeps
     SUBDIR += cask

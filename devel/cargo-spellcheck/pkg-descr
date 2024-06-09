@@ -1,0 +1,19 @@
+Check spelling with `hunspell` and/or `nlprule`.
+
+Use Cases:
+
+Run `cargo spellcheck --fix` or `cargo spellcheck fix` to fix all your
+documentation comments in order to avoid nasty typos all over your source tree.
+Meant as a helper simplifying review as well as improving CI checks after a
+learning phase for custom/topic specific lingo.
+
+`cargo-spellcheck` is also a valuable tool to run from git commit hooks or CI/CD
+systems.
+
+Examples of use:
+
+Check for spelling and/or grammar mistakes:
+$ cargo spellcheck check
+
+Apply suggestions interactively:
+$ cargo spellcheck fix
