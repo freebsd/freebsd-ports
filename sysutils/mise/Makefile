@@ -5,7 +5,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Runtime Executor (asdf rust clone)
-WWW=		https://github.com/jdx/mise
+WWW=		https://mise.jdx.dev/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
