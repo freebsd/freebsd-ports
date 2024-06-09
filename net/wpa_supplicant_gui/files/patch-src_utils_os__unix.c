@@ -1,13 +1,15 @@
---- src/utils/os_unix.c.orig	2015-09-27 19:02:05 UTC
-+++ src/utils/os_unix.c
-@@ -23,6 +23,10 @@
- #include <mach/mach_time.h>
- #endif /* __MACH__ */
- 
-+#ifdef __FreeBSD__
-+#define fdatasync fsync
+--- src/utils/os_unix.c.orig	2022-01-16 12:51:29.000000000 -0800
++++ src/utils/os_unix.c	2024-06-01 22:03:18.774245000 -0700
+@@ -103,10 +103,12 @@
+ 			break;
+ #endif
+ #ifdef CLOCK_MONOTONIC
++#if !(defined(CLOCK_BOOTTIME) && CLOCK_BOOTTIME == CLOCK_MONOTONIC)
+ 		case CLOCK_MONOTONIC:
+ 			clock_id = CLOCK_REALTIME;
+ 			break;
+ #endif
 +#endif
-+
- #include "os.h"
- #include "common.h"
- 
+ 		case CLOCK_REALTIME:
+ 			return -1;
+ 		}
