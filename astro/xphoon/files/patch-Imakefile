@@ -1,11 +1,13 @@
---- Imakefile.orig	2000-06-13 21:55:44 UTC
+diff --git a/Imakefile.orig b/Imakefile
+index 96d7fd6..73497f4 100644
+--- Imakefile.orig
 +++ Imakefile
 @@ -11,7 +11,7 @@
  
  
  INCLUDES =		-I. -I$(TOP) -I$(TOP)/X11 -I$(TOP)/X11/bitmaps
 -LOCAL_LIBRARIES =	$(XLIB)
-+LOCAL_LIBRARIES =	$(XLIB) -lcompat
++LOCAL_LIBRARIES =	$(XLIB) -lcompat -lutil
  DEPLIBS =		$(DEPXLIB)
  LDLIBS =		-lm
  
