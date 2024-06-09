@@ -1,10 +1,10 @@
 PORTNAME=	xphoon
 PORTVERSION=	20000613
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Set the root window to the moon in its current phase
 WWW=		https://xphoon.sourceforge.net/
 
