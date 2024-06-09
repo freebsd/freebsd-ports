@@ -1,6 +1,6 @@
 PORTNAME=	tg_owt
 PORTVERSION=	0.0.20231221
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 
 PATCH_SITES=	https://github.com/desktop-app/tg_owt/commit/
@@ -41,12 +41,12 @@ GH_TUPLE=	klemensn:libyuv:3aae5c7:libyuv/src/third_party/libyuv
 
 post-extract:
 		${RM} -rf \
-		${WRKSRC}/src/third-party/abseil-cpp \
-		${WRKSRC}/src/third-party/crc32c \
-		${WRKSRC}/src/third-party/libsrtp \
-		${WRKSRC}/src/third-party/libsrtp_config \
-		${WRKSRC}/src/third-party/libvpx \
-		${WRKSRC}/src/third-party/openh264 \
-		${WRKSRC}/src/third-party/yasm
+		${WRKSRC}/src/third_party/abseil-cpp \
+		${WRKSRC}/src/third_party/crc32c \
+		${WRKSRC}/src/third_party/libsrtp \
+		${WRKSRC}/src/third_party/libsrtp_config \
+		${WRKSRC}/src/third_party/libvpx \
+		${WRKSRC}/src/third_party/openh264 \
+		${WRKSRC}/src/third_party/yasm
 
 .include <bsd.port.mk>
