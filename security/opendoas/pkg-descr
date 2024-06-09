@@ -1,0 +1,3 @@
+This is a port of OpenDoas, which in itself is a port of OpenBSD's doas for
+Linux and MacOS. OpenDoas unlike OpenBSD's doas supports persist on FreeBSD
+(and Linux + MacOS).
