@@ -591,6 +591,7 @@
     SUBDIR += padthv1-lv2
     SUBDIR += paman
     SUBDIR += pamixer
+    SUBDIR += pandaresampler
     SUBDIR += paprefs
     SUBDIR += pasystray
     SUBDIR += patchage
