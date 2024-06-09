@@ -21,6 +21,8 @@
 name="postfix"
 rcvar=postfix_enable
 
+: ${postfix_svcj_options:="net_basic"}
+
 load_rc_config $name
 
 : ${postfix_enable:="NO"}
