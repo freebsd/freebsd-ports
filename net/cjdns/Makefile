@@ -11,6 +11,8 @@ WWW=		https://github.com/cjdelisle/cjdns
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		21.1 is incompatible with Puython-3.11, and 22.0 fails to build, see https://github.com/hyperboria/bugs/issues/219
+
 BUILD_DEPENDS=	bash:shells/bash
 
 USES=		gmake nodejs:build python
