@@ -1,6 +1,6 @@
 PORTNAME=	telegram-desktop
 DISTVERSION=	5.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -20,7 +20,6 @@ NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe
 NOT_FOR_ARCHS_REASON=	Only little endian is supported
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
-		microsoft-gsl>0:devel/microsoft-gsl \
 		range-v3>0:devel/range-v3 \
 		tl-expected>0:devel/tl-expected \
 		v4l_compat>0:multimedia/v4l_compat \
@@ -66,8 +65,9 @@ USE_QT=		buildtools:build core dbus declarative gui imageformats network qmake:b
 		svg wayland widgets
 USE_KDE=	coreaddons kimageformats
 .else
-USES+=		qt:6
+USES+=		kde:6 qt:6
 USE_QT=		5compat base declarative imageformats lottie shadertools svg tools:build wayland
+USE_KDE=	coreaddons kimageformats
 .endif
 
 USE_GL=		gl
@@ -77,6 +77,7 @@ USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrandr xrender xtst
 CMAKE_ARGS=	-DTDESKTOP_API_ID=${TELEGRAM_API_ID} -DTDESKTOP_API_HASH=${TELEGRAM_API_HASH} \
 		-DQT_VERSION_MAJOR=${FLAVOR:S/qt//}
 CMAKE_ON=	DESKTOP_APP_USE_PACKAGED DESKTOP_APP_DISABLE_CRASH_REPORTS \
+		DESKTOP_APP_DISABLE_JEMALLOC \
 		DESKTOP_APP_DISABLE_SCUDO \
 		DESKTOP_APP_DISABLE_WAYLAND_INTEGRATION
 
@@ -140,13 +141,9 @@ post-extract:
 		${WRKSRC}/Telegram/ThirdParty/range-v3 \
 		${WRKSRC}/Telegram/ThirdParty/wayland \
 		${WRKSRC}/Telegram/ThirdParty/wayland-protocols \
-		${WRKSRC}/Telegram/ThirdParty/xxHash
-
-.if ${FLAVOR} == qt5
-	${RM} -rf \
+		${WRKSRC}/Telegram/ThirdParty/xxHash \
 		${WRKSRC}/Telegram/ThirdParty/kcoreaddons \
 		${WRKSRC}/Telegram/ThirdParty/kimageformats
-.endif
 
 post-patch:
 	# XXX fix the following on every source file

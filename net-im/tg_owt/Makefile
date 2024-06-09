@@ -1,6 +1,6 @@
 PORTNAME=	tg_owt
 PORTVERSION=	0.0.20231221
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 
 PATCH_SITES=	https://github.com/desktop-app/tg_owt/commit/
@@ -24,6 +24,7 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libopenh264.so:multimedia/openh264 \
 		libopus.so:audio/opus \
 		libpipewire-0.3.so:multimedia/pipewire \
+		libprotobuf.so:devel/protobuf \
 		libsrtp2.so:net/libsrtp2 \
 		libvpx.so:multimedia/libvpx
 
