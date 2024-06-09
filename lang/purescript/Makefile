@@ -1,5 +1,5 @@
 PORTNAME=	purescript
-PORTVERSION=	0.15.14
+PORTVERSION=	0.15.15
 CATEGORIES=	lang
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -7,6 +7,7 @@ COMMENT=	Functional language that compiles to JavaScript
 WWW=		https://www.purescript.org/
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=	compiler crashes
 
