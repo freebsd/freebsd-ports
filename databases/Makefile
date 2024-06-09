@@ -1005,7 +1005,6 @@
     SUBDIR += rubygem-redis-client
     SUBDIR += rubygem-redis-cluster-client
     SUBDIR += rubygem-redis-clustering
-    SUBDIR += rubygem-redis-clustering50
     SUBDIR += rubygem-redis-namespace
     SUBDIR += rubygem-redis-namespace110
     SUBDIR += rubygem-redis4

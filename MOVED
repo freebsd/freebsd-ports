@@ -3276,3 +3276,4 @@ net/py-soap2py||2024-06-06|Remove expired port
 net/pear-Net_CDDB||2024-06-06|Remove obsoleted port
 sysutils/rtsx-kmod||2024-06-08|Present in base since FreeBSD 13
 devel/rubygem-gettext_i18n_rails111|devel/rubygem-gettext_i18n_rails|2024-06-09|Obsolete use devel/rubygem-gettext_i18n_rails instead
+databases/rubygem-redis-clustering50|databases/rubygem-redis-clustering|2024-06-09|Obsolete use databases/rubygem-redis-clustering instead
