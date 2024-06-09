@@ -37,6 +37,7 @@ load_rc_config $name
 
 : ${solr_enable:=NO}
 : ${solr_instance:=/var/db/solr}
+: ${solr_svcj_options:="net_basic"}
 
 solr_start ()
 {
