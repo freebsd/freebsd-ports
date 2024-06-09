@@ -1,5 +1,5 @@
 PORTNAME=	quimup
-PORTVERSION=	2.0.1
+DISTVERSION=	2.1.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Quimup%20${PORTVERSION:R}
 DISTNAME=	Quimup-${PORTVERSION}.source
@@ -22,7 +22,7 @@ CXXFLAGS+=	-std=c++17
 DESKTOP_ENTRIES="Quimup" "MPD client" "quimup" "quimup" \
 		"Audio;AudioVideo;Qt;" true
 
-WRKSRC=		${WRKDIR}/Quimup
+WRKSRC=		${WRKDIR}/Quimup-${PORTVERSION}.source
 
 PLIST_FILES=	bin/quimup \
 		share/pixmaps/quimup.svg
