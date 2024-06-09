@@ -1,6 +1,6 @@
---- scripts/addons/io_scene_gltf2/io/com/gltf2_io_draco_compression_extension.py.orig	2023-02-15 14:57:11 UTC
+--- scripts/addons/io_scene_gltf2/io/com/gltf2_io_draco_compression_extension.py.orig	2023-09-27 15:58:27 UTC
 +++ scripts/addons/io_scene_gltf2/io/com/gltf2_io_draco_compression_extension.py
-@@ -33,7 +33,7 @@ def dll_path() -> Path:
+@@ -34,7 +34,7 @@ def dll_path() -> Path:
          'win32': '{}.dll'.format(lib_name),
          'linux': 'lib{}.so'.format(lib_name),
          'darwin': 'lib{}.dylib'.format(lib_name)

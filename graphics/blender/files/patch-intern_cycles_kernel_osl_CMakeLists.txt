@@ -1,6 +1,6 @@
---- intern/cycles/kernel/osl/CMakeLists.txt.orig	2022-12-30 03:23:58 UTC
+--- intern/cycles/kernel/osl/CMakeLists.txt.orig	2023-09-27 15:54:37 UTC
 +++ intern/cycles/kernel/osl/CMakeLists.txt
-@@ -31,6 +31,7 @@ set(LIB
+@@ -33,6 +33,7 @@ set(LIB
    ${OPENIMAGEIO_LIBRARIES}
    ${PUGIXML_LIBRARIES}
    ${CLANG_LIBRARIES}
