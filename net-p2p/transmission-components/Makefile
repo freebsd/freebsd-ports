@@ -1,6 +1,6 @@
 PORTNAME=	transmission
 DISTVERSION=	4.0.6
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -13,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fast_float/fast_float.h:math/fast_float \
 		${LOCALBASE}/include/fmt/format.h:devel/libfmt \
-		${LOCALBASE}/include/utf8cpp/utf8.h:devel/utf8cpp \
-		${LOCALBASE}/include/rapidjson/rapidjson.h:devel/rapidjson
+		${LOCALBASE}/include/rapidjson/rapidjson.h:devel/rapidjson \
+		${LOCALBASE}/include/utf8cpp/utf8.h:devel/utf8cpp
 
 LIB_DEPENDS=	libb64.so:converters/libb64 \
 		libcurl.so:ftp/curl \
@@ -83,7 +83,6 @@ USES=		cpe tar:xz
 USES=		cpe tar:xz
 NO_ARCH=	yes
 NO_BUILD=	yes
-#PORTDATA=	public_html
 .endif
 
 CMAKE_ON=	USE_SYSTEM_B64 USE_SYSTEM_DEFLATE USE_SYSTEM_DHT \
@@ -109,14 +108,14 @@ CMAKE_OFF+=	ENABLE_CLI ENABLE_GTK ENABLE_QT ENABLE_UTILS INSTALL_WEB
 .endif
 
 .if ${FLAVOR} == gtk
-CMAKE_ON+=	ENABLE_GTK GTK_IS_REQUIRED
 CMAKE_ARGS+=	-DUSE_GTK_VERSION=3
+CMAKE_ON+=	ENABLE_GTK GTK_IS_REQUIRED
 CMAKE_OFF+=	ENABLE_CLI ENABLE_DAEMON ENABLE_UTILS INSTALL_WEB
 .endif
 
 .if ${FLAVOR} == qt
-CMAKE_ON+=	ENABLE_QT QT_IS_REQUIRED
 CMAKE_ARGS+=	-DUSE_QT_VERSION=5
+CMAKE_ON+=	ENABLE_QT QT_IS_REQUIRED
 CMAKE_OFF+=	ENABLE_CLI ENABLE_DAEMON ENABLE_UTILS INSTALL_WEB
 .endif
 
@@ -128,16 +127,15 @@ CMAKE_OFF+=	ENABLE_CLI ENABLE_DAEMON ENABLE_GTK ENABLE_QT ENABLE_TESTS \
 
 OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME}/${FLAVOR}-options
 
-.if ${FLAVOR:Mdaemon}
-OPTIONS_DEFINE=		NLS TESTS
-OPTIONS_DEFAULT=	NLS 
-.endif
-
 .if ${FLAVOR:Mdocs}
 OPTIONS_DEFINE=
 .endif
 
-.if ${FLAVOR:Ndaemon} && ${FLAVOR:Ndocs}
+.if ${FLAVOR:Mweb}
+OPTIONS_DEFINE=
+.endif
+
+.if ${FLAVOR:Nweb} && ${FLAVOR:Ndocs}
 OPTIONS_DEFINE=		NLS TESTS
 OPTIONS_DEFAULT=	NLS
 .endif
@@ -151,6 +149,7 @@ qt_DESC=	Build QT client
 TESTS_DESC=	Build & run unit tests
 utils_DESC=	Build utilities (create, edit, remote, show)
 cli_DESC=	Build command-line client (deprecated)
+web_DESC=	Install web interface
 
 NLS_USES=	gettext-runtime:lib
 NLS_CMAKE_BOOL=	ENABLE_NLS
