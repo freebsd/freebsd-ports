@@ -32,6 +32,8 @@ CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc \
 
 MAKEFILE=	GNUmakefile
 
+CONFLICTS=	doas
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/doas
 
