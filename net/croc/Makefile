@@ -1,5 +1,5 @@
 PORTNAME=	croc
-PORTVERSION=	10.0.7
+PORTVERSION=	10.0.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -22,13 +22,13 @@ GH_TUPLE=	OneOfOne:xxhash:v1.2.8:oneofone_xxhash/vendor/github.com/OneOfOne/xxha
 		denisbrodbeck:machineid:v1.0.1:denisbrodbeck_machineid/vendor/github.com/denisbrodbeck/machineid \
 		go-check:check:10cb98267c6c:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:crypto:v0.23.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:v0.25.0:golang_net/vendor/golang.org/x/net \
-		golang:sys:v0.20.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.20.0:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.15.0:golang_text/vendor/golang.org/x/text \
+		golang:crypto:v0.24.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:v0.26.0:golang_net/vendor/golang.org/x/net \
+		golang:sys:v0.21.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.21.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.16.0:golang_text/vendor/golang.org/x/text \
 		golang:time:v0.5.0:golang_time/vendor/golang.org/x/time \
-		kalafut:imohash:v1.0.3:kalafut_imohash/vendor/github.com/kalafut/imohash \
+		kalafut:imohash:v1.0.4:kalafut_imohash/vendor/github.com/kalafut/imohash \
 		magisterquis:connectproxy:3582e84f0c9b:magisterquis_connectproxy/vendor/github.com/magisterquis/connectproxy \
 		minio:highwayhash:v1.0.2:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		mitchellh:colorstring:d06e56a500db:mitchellh_colorstring/vendor/github.com/mitchellh/colorstring \
