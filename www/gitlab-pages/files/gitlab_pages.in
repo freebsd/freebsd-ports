@@ -32,6 +32,7 @@ load_rc_config $name
 : ${gitlab_pages_group:="gitlab-pages"}
 : ${gitlab_pages_logfile:="/var/log/gitlab_pages.log"}
 : ${gitlab_pages_args:="-config=%%PREFIX%%/share/gitlab-pages/gitlab-pages.conf"}
+: ${gitlab_pages_svcj_options:="net_basic"}
 
 export HOME=${gitlab_pages_dir}
 export PATH=${PATH}:%%PREFIX%%/bin
