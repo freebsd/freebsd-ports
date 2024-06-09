@@ -1,0 +1,24 @@
+--- configure.orig	2012-04-23 17:53:49 UTC
++++ configure
+@@ -13614,6 +13614,13 @@ main ()
+ {
+ 
+             int is_ok = 0;
++#if defined(MARIADB_PACKAGE_VERSION) && defined(MARIADB_PACKAGE_VERSION_ID) && MARIADB_PACKAGE_VERSION_ID >= 30000
++            size_t version;
++            if (mariadb_get_infov(NULL, MARIADB_CLIENT_VERSION_ID, &version) != 0)
++              version = mysql_get_client_version();
++            if (version >= 100000)
++              is_ok = 1;
++#else
+             const char *info = mysql_get_client_info();
+             char *i = strdup(info);
+             char *m = strtok(i, ".");
+@@ -13621,6 +13628,7 @@ main ()
+               if (atoi(m) >= 5)
+                 is_ok = 1;
+             free (i);
++#endif
+             return is_ok ? 0 : 1;
+ 
+   ;
