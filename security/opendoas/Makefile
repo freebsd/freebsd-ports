@@ -2,7 +2,6 @@ PORTNAME=	opendoas
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.8.2
 CATEGORIES=	security
-DISTNAME=	opendoas
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 # pam: always print pam_conv messages to stderr:
