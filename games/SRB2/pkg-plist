@@ -1,5 +1,6 @@
 bin/srb2
-bin/srb2-2.2.9
+%%DATADIR%%/models.dat
+%%DATADIR%%/music.dta
 %%DATADIR%%/patch.pk3
 %%DATADIR%%/player.dta
 %%DATADIR%%/srb2.pk3
