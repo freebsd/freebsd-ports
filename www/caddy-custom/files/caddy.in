@@ -6,7 +6,7 @@
 
 # To enable caddy:
 #
-# - Edit %%PREVIX%%/etc/caddy/Caddyfile
+# - Edit %%PREFIX%%/etc/caddy/Caddyfile
 #   See https://caddyserver.com/docs/
 # - Run 'service enable caddy'
 #
