@@ -52,6 +52,7 @@ include/openturns/BinomialFactory.hxx
 include/openturns/BipartiteGraph.hxx
 include/openturns/Bisection.hxx
 include/openturns/BlendedStep.hxx
+include/openturns/BlockIndependentCopula.hxx
 include/openturns/BlockIndependentDistribution.hxx
 include/openturns/Bonmin.hxx
 include/openturns/BootstrapExperiment.hxx
@@ -129,8 +130,10 @@ include/openturns/CovarianceModel.hxx
 include/openturns/CovarianceModelFactory.hxx
 include/openturns/CovarianceModelFactoryImplementation.hxx
 include/openturns/CovarianceModelImplementation.hxx
+include/openturns/CovariatesResult.hxx
 include/openturns/CrossEntropyImportanceSampling.hxx
 include/openturns/CrossEntropyResult.hxx
+include/openturns/CubaIntegration.hxx
 include/openturns/CumulativeDistributionNetwork.hxx
 include/openturns/Curve.hxx
 include/openturns/DatabaseEvaluation.hxx
@@ -193,6 +196,7 @@ include/openturns/ExpectationSimulationAlgorithm.hxx
 include/openturns/ExpectationSimulationResult.hxx
 include/openturns/Experiment.hxx
 include/openturns/ExperimentImplementation.hxx
+include/openturns/ExperimentIntegration.hxx
 include/openturns/ExpertMixture.hxx
 include/openturns/Exponential.hxx
 include/openturns/ExponentialFactory.hxx
@@ -252,6 +256,7 @@ include/openturns/FunctionalChaosAlgorithm.hxx
 include/openturns/FunctionalChaosRandomVector.hxx
 include/openturns/FunctionalChaosResult.hxx
 include/openturns/FunctionalChaosSobolIndices.hxx
+include/openturns/GSobolUseCase.hxx
 include/openturns/GalambosCopula.hxx
 include/openturns/Gamma.hxx
 include/openturns/GammaFactory.hxx
@@ -272,6 +277,7 @@ include/openturns/GeneralizedExtremeValueFactory.hxx
 include/openturns/GeneralizedExtremeValueValidation.hxx
 include/openturns/GeneralizedPareto.hxx
 include/openturns/GeneralizedParetoFactory.hxx
+include/openturns/GeneralizedParetoValidation.hxx
 include/openturns/Geometric.hxx
 include/openturns/GeometricFactory.hxx
 include/openturns/GeometricProfile.hxx
@@ -363,6 +369,7 @@ include/openturns/InverseTrendEvaluation.hxx
 include/openturns/InverseTrendTransform.hxx
 include/openturns/InverseWishart.hxx
 include/openturns/Ipopt.hxx
+include/openturns/IshigamiUseCase.hxx
 include/openturns/IsotropicCovarianceModel.hxx
 include/openturns/IteratedQuadrature.hxx
 include/openturns/IterativeAlgorithm.hxx
@@ -373,6 +380,7 @@ include/openturns/IterativeThresholdExceedance.hxx
 include/openturns/JacobiFactory.hxx
 include/openturns/JansenSensitivityAlgorithm.hxx
 include/openturns/JoeCopula.hxx
+include/openturns/JointDistribution.hxx
 include/openturns/KDTree.hxx
 include/openturns/KFactorFunctions.hxx
 include/openturns/KFold.hxx
@@ -401,7 +409,6 @@ include/openturns/KrigingRandomVector.hxx
 include/openturns/KrigingResult.hxx
 include/openturns/KroneckerCovarianceModel.hxx
 include/openturns/LARS.hxx
-include/openturns/LHS.hxx
 include/openturns/LHSExperiment.hxx
 include/openturns/LHSResult.hxx
 include/openturns/LaguerreFactory.hxx
@@ -646,6 +653,7 @@ include/openturns/Point.hxx
 include/openturns/PointToFieldConnection.hxx
 include/openturns/PointToFieldFunction.hxx
 include/openturns/PointToFieldFunctionImplementation.hxx
+include/openturns/PointToFieldFunctionalChaosAlgorithm.hxx
 include/openturns/PointToPointConnection.hxx
 include/openturns/PointToPointEvaluation.hxx
 include/openturns/PointWithDescription.hxx
@@ -708,6 +716,7 @@ include/openturns/RandomVectorMetropolisHastings.hxx
 include/openturns/RandomWalk.hxx
 include/openturns/RandomWalkMetropolisHastings.hxx
 include/openturns/RankMCovarianceModel.hxx
+include/openturns/RankSobolSensitivityAlgorithm.hxx
 include/openturns/RatioDistribution.hxx
 include/openturns/Rayleigh.hxx
 include/openturns/RayleighFactory.hxx
@@ -731,6 +740,7 @@ include/openturns/SafeAndSlow.hxx
 include/openturns/SaltelliSensitivityAlgorithm.hxx
 include/openturns/Sample.hxx
 include/openturns/SampleImplementation.hxx
+include/openturns/SamplePartition.hxx
 include/openturns/SamplingStrategy.hxx
 include/openturns/SamplingStrategyImplementation.hxx
 include/openturns/Secant.hxx
@@ -744,6 +754,7 @@ include/openturns/SkellamFactory.hxx
 include/openturns/SklarCopula.hxx
 include/openturns/SmolyakExperiment.hxx
 include/openturns/SmoothedUniform.hxx
+include/openturns/SmoothedUniformFactory.hxx
 include/openturns/SobolIndicesAlgorithm.hxx
 include/openturns/SobolIndicesAlgorithmImplementation.hxx
 include/openturns/SobolIndicesExperiment.hxx
@@ -846,6 +857,7 @@ include/openturns/UniVariatePolynomialImplementation.hxx
 include/openturns/Uniform.hxx
 include/openturns/UniformFactory.hxx
 include/openturns/UniformMuSigma.hxx
+include/openturns/UniformOrderStatistics.hxx
 include/openturns/UniformOverMesh.hxx
 include/openturns/UnionEvent.hxx
 include/openturns/UserDefined.hxx
@@ -964,7 +976,6 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/BasisSequenceFactoryImplementation_doc.i
 %%PYTHON%%include/openturns/swig/BasisSequenceFactory_doc.i
 %%PYTHON%%include/openturns/swig/BasisSequenceImplementation.i
-%%PYTHON%%include/openturns/swig/BasisSequenceImplementation_doc.i
 %%PYTHON%%include/openturns/swig/BasisSequence_doc.i
 %%PYTHON%%include/openturns/swig/Basis_doc.i
 %%PYTHON%%include/openturns/swig/BayesDistribution.i
@@ -991,6 +1002,8 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/Bisection_doc.i
 %%PYTHON%%include/openturns/swig/BlendedStep.i
 %%PYTHON%%include/openturns/swig/BlendedStep_doc.i
+%%PYTHON%%include/openturns/swig/BlockIndependentCopula.i
+%%PYTHON%%include/openturns/swig/BlockIndependentCopula_doc.i
 %%PYTHON%%include/openturns/swig/BlockIndependentDistribution.i
 %%PYTHON%%include/openturns/swig/BlockIndependentDistribution_doc.i
 %%PYTHON%%include/openturns/swig/Bonmin.i
@@ -1077,10 +1090,6 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/ComplexMatrix_doc.i
 %%PYTHON%%include/openturns/swig/ComplexTensor.i
 %%PYTHON%%include/openturns/swig/ComplexTensor_doc.i
-%%PYTHON%%include/openturns/swig/ComposedCopula.i
-%%PYTHON%%include/openturns/swig/ComposedCopula_doc.i
-%%PYTHON%%include/openturns/swig/ComposedDistribution.i
-%%PYTHON%%include/openturns/swig/ComposedDistribution_doc.i
 %%PYTHON%%include/openturns/swig/ComposedEvaluation.i
 %%PYTHON%%include/openturns/swig/ComposedFunction.i
 %%PYTHON%%include/openturns/swig/ComposedFunction_doc.i
@@ -1109,6 +1118,7 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/ConstantStep.i
 %%PYTHON%%include/openturns/swig/ConstantStep_doc.i
 %%PYTHON%%include/openturns/swig/ContinuousDistribution.i
+%%PYTHON%%include/openturns/swig/ContinuousDistribution_doc.i
 %%PYTHON%%include/openturns/swig/Contour.i
 %%PYTHON%%include/openturns/swig/Contour_doc.i
 %%PYTHON%%include/openturns/swig/CorrectedLeaveOneOut.i
@@ -1127,10 +1137,14 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/CovarianceModelImplementation.i
 %%PYTHON%%include/openturns/swig/CovarianceModelImplementation_doc.i
 %%PYTHON%%include/openturns/swig/CovarianceModel_doc.i
+%%PYTHON%%include/openturns/swig/CovariatesResult.i
+%%PYTHON%%include/openturns/swig/CovariatesResult_doc.i
 %%PYTHON%%include/openturns/swig/CrossEntropyImportanceSampling.i
 %%PYTHON%%include/openturns/swig/CrossEntropyImportanceSampling_doc.i
 %%PYTHON%%include/openturns/swig/CrossEntropyResult.i
 %%PYTHON%%include/openturns/swig/CrossEntropyResult_doc.i
+%%PYTHON%%include/openturns/swig/CubaIntegration.i
+%%PYTHON%%include/openturns/swig/CubaIntegration_doc.i
 %%PYTHON%%include/openturns/swig/CumulativeDistributionNetwork.i
 %%PYTHON%%include/openturns/swig/CumulativeDistributionNetwork_doc.i
 %%PYTHON%%include/openturns/swig/Curve.i
@@ -1250,6 +1264,8 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/Experiment.i
 %%PYTHON%%include/openturns/swig/ExperimentImplementation.i
 %%PYTHON%%include/openturns/swig/ExperimentImplementation_doc.i
+%%PYTHON%%include/openturns/swig/ExperimentIntegration.i
+%%PYTHON%%include/openturns/swig/ExperimentIntegration_doc.i
 %%PYTHON%%include/openturns/swig/Experiment_doc.i
 %%PYTHON%%include/openturns/swig/ExpertMixture.i
 %%PYTHON%%include/openturns/swig/ExpertMixture_doc.i
@@ -1400,6 +1416,8 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/GeneralizedPareto.i
 %%PYTHON%%include/openturns/swig/GeneralizedParetoFactory.i
 %%PYTHON%%include/openturns/swig/GeneralizedParetoFactory_doc.i
+%%PYTHON%%include/openturns/swig/GeneralizedParetoValidation.i
+%%PYTHON%%include/openturns/swig/GeneralizedParetoValidation_doc.i
 %%PYTHON%%include/openturns/swig/GeneralizedPareto_doc.i
 %%PYTHON%%include/openturns/swig/Geometric.i
 %%PYTHON%%include/openturns/swig/GeometricFactory.i
@@ -1495,6 +1513,8 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/Hypergeometric_doc.i
 %%PYTHON%%include/openturns/swig/HypothesisTest.i
 %%PYTHON%%include/openturns/swig/HypothesisTest_doc.i
+%%PYTHON%%include/openturns/swig/IdentityFunction.i
+%%PYTHON%%include/openturns/swig/IdentityFunction_doc.i
 %%PYTHON%%include/openturns/swig/IdentityMatrix.i
 %%PYTHON%%include/openturns/swig/IdentityMatrix_doc.i
 %%PYTHON%%include/openturns/swig/ImportanceSamplingExperiment.i
@@ -1577,6 +1597,8 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/JansenSensitivityAlgorithm_doc.i
 %%PYTHON%%include/openturns/swig/JoeCopula.i
 %%PYTHON%%include/openturns/swig/JoeCopula_doc.i
+%%PYTHON%%include/openturns/swig/JointDistribution.i
+%%PYTHON%%include/openturns/swig/JointDistribution_doc.i
 %%PYTHON%%include/openturns/swig/KDTree.i
 %%PYTHON%%include/openturns/swig/KDTree_doc.i
 %%PYTHON%%include/openturns/swig/KFold.i
@@ -1627,12 +1649,10 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/KroneckerCovarianceModel_doc.i
 %%PYTHON%%include/openturns/swig/LARS.i
 %%PYTHON%%include/openturns/swig/LARS_doc.i
-%%PYTHON%%include/openturns/swig/LHS.i
 %%PYTHON%%include/openturns/swig/LHSExperiment.i
 %%PYTHON%%include/openturns/swig/LHSExperiment_doc.i
 %%PYTHON%%include/openturns/swig/LHSResult.i
 %%PYTHON%%include/openturns/swig/LHSResult_doc.i
-%%PYTHON%%include/openturns/swig/LHS_doc.i
 %%PYTHON%%include/openturns/swig/LaguerreFactory.i
 %%PYTHON%%include/openturns/swig/LaguerreFactory_doc.i
 %%PYTHON%%include/openturns/swig/Laplace.i
@@ -1731,6 +1751,7 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/LowDiscrepancySequenceImplementation_doc.i
 %%PYTHON%%include/openturns/swig/LowDiscrepancySequence_doc.i
 %%PYTHON%%include/openturns/swig/MarginalDistribution.i
+%%PYTHON%%include/openturns/swig/MarginalDistribution_doc.i
 %%PYTHON%%include/openturns/swig/MarginalEvaluation.i
 %%PYTHON%%include/openturns/swig/MarginalGradient.i
 %%PYTHON%%include/openturns/swig/MarginalHessian.i
@@ -1973,6 +1994,8 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/PointToFieldFunctionImplementation.i
 %%PYTHON%%include/openturns/swig/PointToFieldFunctionImplementation_doc.i
 %%PYTHON%%include/openturns/swig/PointToFieldFunction_doc.i
+%%PYTHON%%include/openturns/swig/PointToFieldFunctionalChaosAlgorithm.i
+%%PYTHON%%include/openturns/swig/PointToFieldFunctionalChaosAlgorithm_doc.i
 %%PYTHON%%include/openturns/swig/PointToPointConnection.i
 %%PYTHON%%include/openturns/swig/PointToPointConnection_doc.i
 %%PYTHON%%include/openturns/swig/PointToPointEvaluation.i
@@ -2061,6 +2084,8 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/RandomWalk_doc.i
 %%PYTHON%%include/openturns/swig/RankMCovarianceModel.i
 %%PYTHON%%include/openturns/swig/RankMCovarianceModel_doc.i
+%%PYTHON%%include/openturns/swig/RankSobolSensitivityAlgorithm.i
+%%PYTHON%%include/openturns/swig/RankSobolSensitivityAlgorithm_doc.i
 %%PYTHON%%include/openturns/swig/Rayleigh.i
 %%PYTHON%%include/openturns/swig/RayleighFactory.i
 %%PYTHON%%include/openturns/swig/RayleighFactory_doc.i
@@ -2101,6 +2126,8 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/SaltelliSensitivityAlgorithm.i
 %%PYTHON%%include/openturns/swig/SaltelliSensitivityAlgorithm_doc.i
 %%PYTHON%%include/openturns/swig/Sample.i
+%%PYTHON%%include/openturns/swig/SamplePartition.i
+%%PYTHON%%include/openturns/swig/SamplePartition_doc.i
 %%PYTHON%%include/openturns/swig/Sample_doc.i
 %%PYTHON%%include/openturns/swig/SamplingStrategy.i
 %%PYTHON%%include/openturns/swig/SamplingStrategyImplementation.i
@@ -2127,6 +2154,8 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/SmolyakExperiment.i
 %%PYTHON%%include/openturns/swig/SmolyakExperiment_doc.i
 %%PYTHON%%include/openturns/swig/SmoothedUniform.i
+%%PYTHON%%include/openturns/swig/SmoothedUniformFactory.i
+%%PYTHON%%include/openturns/swig/SmoothedUniformFactory_doc.i
 %%PYTHON%%include/openturns/swig/SmoothedUniform_doc.i
 %%PYTHON%%include/openturns/swig/SobolIndicesAlgorithm.i
 %%PYTHON%%include/openturns/swig/SobolIndicesAlgorithmImplementation.i
@@ -2237,7 +2266,7 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/TemperatureProfileImplementation.i
 %%PYTHON%%include/openturns/swig/TemperatureProfileImplementation_doc.i
 %%PYTHON%%include/openturns/swig/TemperatureProfile_doc.i
-%%PYTHON%%include/openturns/swig/Tensor.i%%PYTHON%%
+%%PYTHON%%include/openturns/swig/Tensor.i
 %%PYTHON%%include/openturns/swig/TensorProductExperiment.i
 %%PYTHON%%include/openturns/swig/TensorProductExperiment_doc.i
 %%PYTHON%%include/openturns/swig/Tensor_doc.i
@@ -2320,6 +2349,8 @@ include/openturns/csv_parser_state.hxx
 %%PYTHON%%include/openturns/swig/UniformFactory_doc.i
 %%PYTHON%%include/openturns/swig/UniformMuSigma.i
 %%PYTHON%%include/openturns/swig/UniformMuSigma_doc.i
+%%PYTHON%%include/openturns/swig/UniformOrderStatistics.i
+%%PYTHON%%include/openturns/swig/UniformOrderStatistics_doc.i
 %%PYTHON%%include/openturns/swig/UniformOverMesh.i
 %%PYTHON%%include/openturns/swig/UniformOverMesh_doc.i
 %%PYTHON%%include/openturns/swig/Uniform_doc.i
@@ -2428,10 +2459,9 @@ lib/cmake/openturns/OpenTURNS-Targets.cmake
 lib/cmake/openturns/OpenTURNSConfig.cmake
 lib/cmake/openturns/OpenTURNSConfigVersion.cmake
 lib/libOT.so
-lib/libOT.so.0.23
-lib/libOT.so.0.23.0
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.22.dist-info/METADATA
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.22.dist-info/WHEEL
+lib/libOT.so.0.24
+lib/libOT.so.0.24.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.23.dist-info/METADATA
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/DistFunc.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/FittingTest.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/HypothesisTest.py
@@ -2518,6 +2548,7 @@ lib/libOT.so.0.23.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/chaboche_model.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/coles.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/deflection_tube.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/dowjones.csv
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/fireSatellite_function.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/flood_model.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/fremantle.csv
@@ -2528,6 +2559,7 @@ lib/libOT.so.0.23.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/portpirie.csv
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/racetime.csv
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/rain.csv
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/stiffened_panel.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/stressed_beam.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/venice.csv
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/viscous_free_fall.py
@@ -2537,4 +2569,4 @@ lib/libOT.so.0.23.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/usecases/wooster.csv
 %%PYTHON_SITELIBDIR%%/openturns/viewer.py
 %%PYTHON_SITELIBDIR%%/openturns/weightedexperiment.py
-share/gdb/auto-load/usr/local/lib/libOT.so.0.23.0-gdb.py
+share/gdb/auto-load/usr/local/lib/libOT.so.0.24.0-gdb.py
