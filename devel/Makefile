@@ -7866,6 +7866,7 @@
     SUBDIR += serdisplib
     SUBDIR += sfml
     SUBDIR += sfml1
+    SUBDIR += sfml251
     SUBDIR += sfsexp
     SUBDIR += sgb
     SUBDIR += shadered
