@@ -271,6 +271,7 @@
     SUBDIR += nullmailer
     SUBDIR += openarc
     SUBDIR += opendkim
+    SUBDIR += opendkim-devel
     SUBDIR += opendmarc
     SUBDIR += opensmtpd
     SUBDIR += opensmtpd-extras

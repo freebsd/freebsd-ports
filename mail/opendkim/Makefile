@@ -28,6 +28,8 @@ SHEBANG_FILES=	opendkim/opendkim-genkey* reputation/opendkim-* stats/opendkim-* 
 USE_LDCONFIG=	yes
 TEST_TARGET=	check  # XXX: 1 of 30 tests fails
 
+CONFLICTS_INSTALL=	opendkim-devel
+
 PORTDOCS=	*
 
 CONFIGURE_ARGS+=	--without-tre
