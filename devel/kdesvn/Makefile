@@ -11,6 +11,9 @@ WWW=		https://projects.kde.org/projects/extragear/sdk/kdesvn
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Dwindling amount of users and streamlining of ports for the KDE Team to maintain
+EXPIRATION_DATE=2024-12-31
+
 LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libexpat.so:textproc/expat2 \
 		libgdbm.so:databases/gdbm
