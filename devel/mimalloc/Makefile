@@ -10,7 +10,7 @@ WWW=		https://github.com/microsoft/mimalloc
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++17-lang
+USES=		cmake:testing compiler:c++17-lang pathfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 USE_LDCONFIG=	yes
