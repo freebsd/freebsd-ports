@@ -1,5 +1,6 @@
 PORTNAME=	ncdu
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://dev.yorhel.nl/download/
 PKGNAMESUFFIX=	2
