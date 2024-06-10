@@ -1,3 +1,5 @@
-TIMESTAMP = 1616400767
-SHA256 (ifcopenshell-IfcOpenShell-v0.6.0-7c61c7d200ff_GH0.tar.gz) = 48216ec7073980315d8d592c82891df7e2787c7a704486f34fce3242b40bd835
-SIZE (ifcopenshell-IfcOpenShell-v0.6.0-7c61c7d200ff_GH0.tar.gz) = 8721040
+TIMESTAMP = 1701077111
+SHA256 (IfcOpenShell-IfcOpenShell-v0.7.0.231127_GH0.tar.gz) = 85bc511f307df125caca320c340809e3aae372dfd7edcc5b2a4fd7d3020ae81e
+SIZE (IfcOpenShell-IfcOpenShell-v0.7.0.231127_GH0.tar.gz) = 42587594
+SHA256 (IfcOpenShell-svgfill-4d2aa7a_GH0.tar.gz) = a3b7c2071de17aff1e104d1098dfc9fc2aa9de1eee458ff707295dd728e26ab0
+SIZE (IfcOpenShell-svgfill-4d2aa7a_GH0.tar.gz) = 19877
