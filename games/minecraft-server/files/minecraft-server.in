@@ -5,6 +5,9 @@ if [ "$(id -u)" != "0" ]; then
 	exit 1
 fi
 
-export JAVA_VERSION=17
+if [ -z "${JAVA_VERSION}" ]; then
+	JAVA_VERSION=%%JAVA_VERSION%%
+fi
+export JAVA_VERSION
 cd %%PREFIX%%/minecraft-server
 su -m mcserver -c "%%LOCALBASE%%/bin/java $(cat %%PREFIX%%/etc/minecraft-server/java-args.txt) -jar server.jar nogui"
