@@ -1,5 +1,5 @@
 PORTNAME=	bindfs
-DISTVERSION=	1.17.6
+DISTVERSION=	1.17.7
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://bindfs.org/downloads/
