@@ -69,6 +69,10 @@ lib/cmake/KF6Contacts/KF6ContactsTargets.cmake
 lib/libKF6Contacts.so
 lib/libKF6Contacts.so.6
 lib/libKF6Contacts.so.%%KDE_FRAMEWORKS_VERSION%%
+%%QT_QMLDIR%%/org/kde/contacts/kcontactsqml.qmltypes
+%%QT_QMLDIR%%/org/kde/contacts/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/contacts/libkcontactsqml.so
+%%QT_QMLDIR%%/org/kde/contacts/qmldir
 share/locale/ar/LC_MESSAGES/kcontacts6.mo
 share/locale/ast/LC_MESSAGES/kcontacts6.mo
 share/locale/az/LC_MESSAGES/kcontacts6.mo

@@ -16,6 +16,5 @@ CMAKE_ARGS=	-DPython3_EXECUTABLE:PATH=${PYTHON_CMD} \
 CMAKE_ON=	WITH_ICON_GENERATION
 
 SHEBANG_FILES=	generate-24px-versions.py svg-xml-script-template.py
-NO_ARCH=	yes
 
 .include <bsd.port.mk>

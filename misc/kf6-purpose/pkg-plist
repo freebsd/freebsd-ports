@@ -597,6 +597,7 @@ share/locale/sv/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/sv/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/sv/LC_MESSAGES/purpose6_saveas.mo
 share/locale/sv/LC_MESSAGES/purpose6_youtube.mo
+share/locale/ta/LC_MESSAGES/libpurpose6_quick.mo
 share/locale/ta/LC_MESSAGES/libpurpose6_widgets.mo
 share/locale/ta/LC_MESSAGES/purpose6_bluetooth.mo
 share/locale/ta/LC_MESSAGES/purpose6_fileitemaction.mo

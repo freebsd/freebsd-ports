@@ -25,13 +25,13 @@ lib/cmake/KF6IconThemes/KF6IconThemesConfigVersion.cmake
 lib/cmake/KF6IconThemes/KF6IconThemesTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6IconThemes/KF6IconThemesTargets.cmake
 lib/libKF6IconThemes.so
-lib/libKF6IconThemes.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6IconThemes.so.6
+lib/libKF6IconThemes.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6IconWidgets.so
-lib/libKF6IconWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6IconWidgets.so.6
+lib/libKF6IconWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/designer/kiconthemes6widgets.so
-%%QT_PLUGINDIR%%/iconengines/KIconEnginePlugin.so
+%%QT_PLUGINDIR%%/kiconthemes6/iconengines/KIconEnginePlugin.so
 %%QT_QMLDIR%%/org/kde/iconthemes/iconthemesplugin.qmltypes
 %%QT_QMLDIR%%/org/kde/iconthemes/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/iconthemes/libiconthemesplugin.so

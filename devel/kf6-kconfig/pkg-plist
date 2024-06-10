@@ -26,6 +26,7 @@ include/KF6/KConfigCore/ksharedconfig.h
 include/KF6/KConfigGui/KConfigGui
 include/KF6/KConfigGui/KConfigLoader
 include/KF6/KConfigGui/KConfigSkeleton
+include/KF6/KConfigGui/KStandardActions
 include/KF6/KConfigGui/KStandardShortcut
 include/KF6/KConfigGui/KStandardShortcutWatcher
 include/KF6/KConfigGui/KWindowConfig
@@ -35,6 +36,8 @@ include/KF6/KConfigGui/kconfiggui_export.h
 include/KF6/KConfigGui/kconfigguistaticinitializer.cpp
 include/KF6/KConfigGui/kconfigloader.h
 include/KF6/KConfigGui/kconfigskeleton.h
+include/KF6/KConfigGui/kstandardactions.h
+include/KF6/KConfigGui/kstandardactions_p.h
 include/KF6/KConfigGui/kstandardshortcut.h
 include/KF6/KConfigGui/kstandardshortcutwatcher.h
 include/KF6/KConfigGui/kwindowconfig.h
