@@ -1,5 +1,5 @@
 PORTNAME=	ccls
-DISTVERSION=	0.20231116
+DISTVERSION=	0.20240202
 CATEGORIES=	devel
 
 MAINTAINER=	khng@FreeBSD.org
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	rapidjson>=1.1.0_4:devel/rapidjson
 USES=		cmake compiler:c++17-lang llvm:lib localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	MaskRay
-GH_TAGNAME=	490edc1e0220
+GH_TAGNAME=	${DISTVERSION}
 
 CMAKE_ARGS=	-DCCLS_VERSION:STRING="${DISTVERSION}" \
 		-DClang_DIR:PATH="${LLVM_PREFIX}/lib/cmake/clang" \
