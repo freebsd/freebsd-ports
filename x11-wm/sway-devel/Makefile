@@ -1,12 +1,8 @@
 PORTNAME=	sway
-DISTVERSION=	1.9-125 # git rev-list --count 1.9..
-DISTVERSIONSUFFIX=	-g087226d99
-PORTREVISION=	1
+DISTVERSION=	1.9-143 # git rev-list --count 1.9..
+DISTVERSIONSUFFIX=	-gcc3421076
 CATEGORIES=	x11-wm wayland
 PKGNAMESUFFIX=	-devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	2e9139df664f.patch:-p1 # https://github.com/swaywm/sway/pull/8070
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	i3-compatible Wayland compositor (development snapshot)
@@ -14,8 +10,6 @@ WWW=		https://swaywm.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		fails to build after https://gitlab.freedesktop.org/wlroots/wlroots/-/commit/0686666cf5c0
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.24:graphics/wayland-protocols
@@ -57,7 +51,6 @@ SWAYBG_RUN_DEPENDS=	swaybg:x11/swaybg
 
 X11_USE=		XORG=xcb
 X11_LIB_DEPENDS=	libxcb-icccm.so:x11/xcb-util-wm
-X11_MESON_ENABLED=	xwayland
 
 post-patch:
 # Let @sample handle default files under etc/
