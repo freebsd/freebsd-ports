@@ -22,7 +22,7 @@ LIB_DEPENDS+=	libsvn_client-1.so:devel/subversion
 
 CONFLICTS_INSTALL=	qsvn
 
-USES=		bdb cmake compiler:c++11-lang kde:5 qt:5 tar:xz xorg
+USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons dbusaddons i18n iconthemes itemviews jobwidgets kio \
 		notifications parts service solid sonnet texteditor \
@@ -33,6 +33,8 @@ USE_QT=		concurrent core dbus gui network sql widgets xml \
 USE_XORG=	x11
 
 PORTSCOUT=	ignore:1
+
+LDFLAGS+=	-Wl,--as-needed
 
 post-patch:
 	${REINPLACE_CMD} -e 's#%%EXECINFO%%#${EXECINFO_LDFLAGS} -lexecinfo#' \
