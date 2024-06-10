@@ -20,7 +20,7 @@ PLIST_FILES=	include/${PORTNAME}.hpp \
 		lib/lib${PORTNAME}.so.${PORTVERSION} \
 		libdata/pkgconfig/${PORTNAME}.pc
 
-# XXX Drop after FreeBSD 14.0 EOL around 2025-03-01
+# XXX Drop after FreeBSD 14.0 EOL around 2024-10-01
 .if exists(/usr/lib/libc++.so) && !exists(/usr/include/c++/v1/__format/write_escaped.h)
 CXXFLAGS+=	-fexperimental-library
 .endif

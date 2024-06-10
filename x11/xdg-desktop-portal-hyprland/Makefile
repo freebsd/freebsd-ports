@@ -50,7 +50,7 @@ USES:=		${USES:S/qt:6/qt:5/}
 USE_QT=		qmake:build buildtools:build core gui wayland:run widgets
 .endif
 
-# XXX Drop after FreeBSD 14.0 EOL around 2025-03-01
+# XXX Drop after FreeBSD 14.0 EOL around 2024-10-01
 .if exists(/usr/lib/libc++.so) && !exists(/usr/include/c++/v1/__format/write_escaped.h)
 CXXFLAGS+=	-fexperimental-library
 .endif
