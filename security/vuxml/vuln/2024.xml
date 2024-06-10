@@ -1,3 +1,48 @@
+  <vuln vid="5f608c68-276c-11ef-8caa-0897988a1c07">
+    <topic>Composer -- Multiple command injections via malicious git/hg branch names</topic>
+    <affects>
+      <package>
+	<name>php81-composer</name>
+	<range><lt>2.7.7</lt></range>
+      </package>
+      <package>
+	<name>php82-composer</name>
+	<range><lt>2.7.7</lt></range>
+      </package>
+      <package>
+	<name>php83-composer</name>
+	<range><lt>2.7.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Composer project reports:</p>
+	<blockquote cite="https://github.com/composer/composer/security/advisories/GHSA-47f6-5gq3-vx9c">
+	  <p>The status, reinstall and remove commands with packages
+	  installed from source via git containing specially crafted
+	  branch names in the repository can be used to execute
+	  code.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/composer/composer/security/advisories/GHSA-v9qv-c7wm-wgmf">
+	  <p>The composer install command running inside a git/hg
+	  repository which has specially crafted branch names can
+	  lead to command injection. So this requires cloning
+	  untrusted repositories.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-35241</cvename>
+      <url>https://github.com/composer/composer/security/advisories/GHSA-47f6-5gq3-vx9c</url>
+      <cvename>CVE-2024-35242</cvename>
+      <url>https://github.com/composer/composer/security/advisories/GHSA-v9qv-c7wm-wgmf</url>
+    </references>
+    <dates>
+      <discovery>2024-06-10</discovery>
+      <entry>2024-06-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="91929399-249e-11ef-9296-b42e991fc52e">
     <topic>kanboard -- Project Takeover via IDOR in ProjectPermissionController</topic>
     <affects>
