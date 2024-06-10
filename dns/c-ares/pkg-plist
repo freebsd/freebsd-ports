@@ -15,7 +15,7 @@ lib/cmake/c-ares/c-ares-targets.cmake
 %%STATIC%%lib/libcares_static.a
 lib/libcares.so
 lib/libcares.so.2
-lib/libcares.so.2.13.1
+lib/libcares.so.2.15.0
 libdata/pkgconfig/libcares.pc
 share/man/man1/adig.1.gz
 share/man/man1/ahost.1.gz
@@ -141,6 +141,7 @@ share/man/man3/ares_send_dnsrec.3.gz
 share/man/man3/ares_set_local_dev.3.gz
 share/man/man3/ares_set_local_ip4.3.gz
 share/man/man3/ares_set_local_ip6.3.gz
+share/man/man3/ares_set_server_state_callback.3.gz
 share/man/man3/ares_set_servers.3.gz
 share/man/man3/ares_set_servers_csv.3.gz
 share/man/man3/ares_set_servers_ports.3.gz

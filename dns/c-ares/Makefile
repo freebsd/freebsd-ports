@@ -1,8 +1,7 @@
 PORTNAME=	c-ares
-DISTVERSION=	1.28.1
+DISTVERSION=	1.30.0
 CATEGORIES=	dns
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/cares-${DISTVERSION:S/./_/g}/ \
-		https://c-ares.org/download/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Asynchronous DNS resolver library
