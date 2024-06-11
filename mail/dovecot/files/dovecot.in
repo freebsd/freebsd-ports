@@ -28,6 +28,7 @@ rcvar=dovecot_enable
 load_rc_config ${name}
 : ${dovecot_enable:="NO"}
 : ${dovecot_config:="%%ETCDIR%%/${name}.conf"}
+: ${dovecot_svcj_options:="net_basic"}
 
 command="%%PREFIX%%/sbin/${name}"
 start_precmd="start_precmd"
