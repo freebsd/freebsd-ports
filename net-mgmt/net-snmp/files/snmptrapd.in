@@ -7,19 +7,26 @@
 #
 # snmptrapd_enable="YES"
 #
+# Add the following line to make snmptrapd drop privileges after
+# initialization.  Make sure that configuration files are readable by the snmpd
+# user.
+#
+# snmptrapd_sugid="YES"
+#
 
 snmptrapd_enable=${snmptrapd_enable-"NO"}
 snmptrapd_flags=${snmptrapd_flags-"-p /var/run/snmptrapd.pid"}
+snmptrapd_sugid=${snmptrapd_sugid-"NO"}
 
 . /etc/rc.subr
 
 load_rc_config net_snmptrapd
 
 if [ ! -z "$net_snmptrapd_enable" ]; then
-    echo "Warning: \$net_snmptrapd_enable is obsoleted."
-    echo "         Use \$snmptrapd_enable instead."
-    snmptrapd_enable="$net_snmptrapd_enable"
-    [ ! -z "$net_snmptrapd_flags" ] && snmptrapd_flags="$net_snmptrapd_flags"
+	echo "Warning: \$net_snmptrapd_enable is obsolete."
+	echo "         Use \$snmptrapd_enable instead."
+	snmptrapd_enable="$net_snmptrapd_enable"
+	[ ! -z "$net_snmptrapd_flags" ] && snmptrapd_flags="$net_snmptrapd_flags"
 fi
 
 name=snmptrapd
@@ -29,4 +36,13 @@ command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}.pid
 
 load_rc_config ${name}
+
+start_precmd=snmptrapd_precmd
+
+snmptrapd_precmd() {
+	if checkyesno snmptrapd_sugid; then
+		rc_flags="-u snmpd -g snmpd ${rc_flags}"
+	fi
+}
+
 run_rc_command "$1"
