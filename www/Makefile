@@ -120,7 +120,6 @@
     SUBDIR += cpr
     SUBDIR += crawl
     SUBDIR += css-mode.el
-    SUBDIR += cssed
     SUBDIR += csso
     SUBDIR += csstidy
     SUBDIR += ctemplate
