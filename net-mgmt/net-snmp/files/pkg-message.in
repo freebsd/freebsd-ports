@@ -3,7 +3,7 @@
   message: <<EOM
 **** This port installs snmpd, header files and libraries but does not
      start snmpd by default.
-     If you want to auto-start snmpd and snmptrapd:, add the following to
+     If you want to auto-start snmpd and snmptrapd, add the following to
      /etc/rc.conf:
 
 	snmpd_enable="YES"
