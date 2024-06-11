@@ -10,6 +10,9 @@ WWW=		https://www.datadoghq.com/
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired sysutils/datadog-agent
+EXPIRATION_DATE=2024-07-11
+
 BUILD_DEPENDS=	${PY_SETUPTOOLS}
 
 RUN_DEPENDS=	datadog-agent>=7.24.1:sysutils/datadog-agent \
