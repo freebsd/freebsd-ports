@@ -3283,3 +3283,4 @@ databases/py-alembic14||2024-06-11|Has expired: Depends on expired databases/py-
 deskutils/griffith||2024-06-11|Has expired: Depends on expired databases/py-sqlalchemy12
 misc/py-cinder||2024-06-11|Has expired: Depends on expired databases/py-sqlalchemy12
 databases/py-sqlalchemy12||2024-06-11|Has expired: Upstream makred EOL in Release Status
+devel/py-gtfslib||2024-06-11|Has expired: Depends on expired databases/py-sqlalchemy11
