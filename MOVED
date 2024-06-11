@@ -3297,3 +3297,4 @@ www/chems||2024-06-11|Has expired: Abandonware, last release in 2009 and no acti
 www/cssed||2024-06-11|Has expired: Abandonware and broken, doesn't work with Python 3.x
 www/goose||2024-06-11|Has expired: Abandonware, last update in 2003 and upstream is dead
 www/larbin||2024-06-11|Has expired: Abandonware, obsolete web crawler
+audio/rebot3||2024-06-11|Has expired: Depends on legacy service/protocol that's requires registration
