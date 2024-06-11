@@ -1,12 +1,12 @@
 PORTNAME=	iocage-devel
-PORTVERSION=	1.2.20211001
+PORTVERSION=	1.6.20240531
 PORTEPOCH=	1
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	FreeBSD jail manager written in Python3
-WWW=		https://github.com/iocage/iocage
+WWW=		https://github.com/freebsd/iocage
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -27,16 +27,16 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py-click@${PY_FLAVOR} \
 
 USES=		python
 USE_GITHUB=	yes
-GH_ACCOUNT=	iocage
+GH_ACCOUNT=	freebsd
 GH_PROJECT=	iocage
-GH_TAGNAME=	e94863d4c54f02523fb09e62e48be7db9ac92eda
+GH_TAGNAME=	93779af196efe60396915d1744f07714073a15fa
 
 USE_PYTHON=	autoplist distutils
 
 CONFLICTS=	py*-iocage py*-iocage-devel
 NO_ARCH=	yes
 
-_IOCAGE_LIB_VERSION=	1.2
+_IOCAGE_LIB_VERSION=	1.6
 PLIST_FILES=		${PYTHON_SITELIBDIR}/${PORTNAME:S/-devel//g}_lib-${_IOCAGE_LIB_VERSION}-py${PYTHON_VER}.egg-info/dependency_links.txt \
 			${PYTHON_SITELIBDIR}/${PORTNAME:S/-devel//g}_lib-${_IOCAGE_LIB_VERSION}-py${PYTHON_VER}.egg-info/entry_points.txt \
 			${PYTHON_SITELIBDIR}/${PORTNAME:S/-devel//g}_lib-${_IOCAGE_LIB_VERSION}-py${PYTHON_VER}.egg-info/PKG-INFO \
