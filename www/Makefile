@@ -295,7 +295,6 @@
     SUBDIR += kohana
     SUBDIR += ladybird
     SUBDIR += lagrange
-    SUBDIR += larbin
     SUBDIR += libapreq2
     SUBDIR += libdatachannel
     SUBDIR += libdom
