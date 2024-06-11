@@ -3284,3 +3284,4 @@ deskutils/griffith||2024-06-11|Has expired: Depends on expired databases/py-sqla
 misc/py-cinder||2024-06-11|Has expired: Depends on expired databases/py-sqlalchemy12
 databases/py-sqlalchemy12||2024-06-11|Has expired: Upstream makred EOL in Release Status
 devel/py-gtfslib||2024-06-11|Has expired: Depends on expired databases/py-sqlalchemy11
+databases/py-sqlalchemy11||2024-06-11|Has expired: Upstream makred EOL in Release Status
