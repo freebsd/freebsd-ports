@@ -3295,3 +3295,4 @@ textproc/mergestat||2024-06-11|Has expired: Marked BROKEN for over a year
 www/bkmrkconv||2024-06-11|Has expired: Obsolete utility, generated files are already in a readable format
 www/chems||2024-06-11|Has expired: Abandonware, last release in 2009 and no activity since upstream
 www/cssed||2024-06-11|Has expired: Abandonware and broken, doesn't work with Python 3.x
+www/goose||2024-06-11|Has expired: Abandonware, last update in 2003 and upstream is dead

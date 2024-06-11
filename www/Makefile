@@ -218,7 +218,6 @@
     SUBDIR += gohugo
     SUBDIR += googlebook_dl
     SUBDIR += googler
-    SUBDIR += goose
     SUBDIR += gophernicus
     SUBDIR += gopherus
     SUBDIR += gotty
