@@ -7,6 +7,7 @@ include/reflex/convert.h
 include/reflex/debug.h
 include/reflex/error.h
 include/reflex/flexlexer.h
+include/reflex/fuzzymatcher.h
 include/reflex/input.h
 include/reflex/linematcher.h
 include/reflex/matcher.h
