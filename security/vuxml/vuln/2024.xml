@@ -1,3 +1,38 @@
+  <vuln vid="479df73e-2838-11ef-9cab-4ccc6adda413">
+    <topic>plasma[56]-plasma-workspace -- Unauthorized users can access session manager</topic>
+    <affects>
+      <package>
+	<name>plasma5-plasma-workspace</name>
+	<range><lt>5.27.11.1</lt></range>
+      </package>
+      <package>
+	<name>plasma6-plasma-workspace</name>
+	<range><lt>6.0.4_2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>David Edmundson reports:</p>
+	<blockquote cite="https://kde.org/info/security/advisory-20240531-1.txt">
+	  <p>KSmserver, KDE's XSMP manager, incorrectly allows connections via ICE
+	    based purely on the host, allowing all local connections. This allows
+	    another user on the same machine to gain access to the session
+	    manager.</p>
+	  <p>A well crafted client could use the session restore feature to execute
+	    arbitrary code as the user on the next boot.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-36041</cvename>
+      <url>https://kde.org/info/security/advisory-20240531-1.txt</url>
+    </references>
+    <dates>
+      <discovery>2024-05-31</discovery>
+      <entry>2024-06-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5f608c68-276c-11ef-8caa-0897988a1c07">
     <topic>Composer -- Multiple command injections via malicious git/hg branch names</topic>
     <affects>
