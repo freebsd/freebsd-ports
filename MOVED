@@ -3293,3 +3293,4 @@ dns/crossip|dns/dnsmax-perl|2024-06-11|Has expired: Obsolete, use dns/dnsmax-per
 dns/curvedns||2024-06-11|Has expired: Protocol never gained traction and is superseded by DoT and DoH
 textproc/mergestat||2024-06-11|Has expired: Marked BROKEN for over a year
 www/bkmrkconv||2024-06-11|Has expired: Obsolete utility, generated files are already in a readable format
+www/chems||2024-06-11|Has expired: Abandonware, last release in 2009 and no activity since upstream
