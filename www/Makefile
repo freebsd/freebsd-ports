@@ -75,7 +75,6 @@
     SUBDIR += bareos21-webui
     SUBDIR += bareos22-webui
     SUBDIR += beehive
-    SUBDIR += bkmrkconv
     SUBDIR += bluefish
     SUBDIR += bolt
     SUBDIR += bozohttpd

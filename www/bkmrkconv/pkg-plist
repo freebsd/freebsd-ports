@@ -1,7 +1,0 @@
-bin/bkmrkconv
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%DATADIR%%/dilbert.pl
-%%DATADIR%%/random.pl
-%%DATADIR%%/src/contentspage.html
-%%DATADIR%%/src/linkspage.html
-%%DATADIR%%/src/rootpage.html
