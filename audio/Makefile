@@ -494,7 +494,6 @@
     SUBDIR += mp3guessenc
     SUBDIR += mp3lint
     SUBDIR += mp3mover
-    SUBDIR += mp3plot
     SUBDIR += mp3riot
     SUBDIR += mp3splt
     SUBDIR += mp3stat
