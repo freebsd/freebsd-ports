@@ -1,12 +1,11 @@
 PORTNAME=	unikmer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.1
-PORTREVISION=	13
+DISTVERSION=	0.20.0
 CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Toolkit for nucleic acid k-mer analysis, set operations on k-mers
-WWW=		https://github.com/shenwei356/unikmer
+WWW=		https://github.com/shenwei356/unikmer/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,15 +14,13 @@ TEST_DEPENDS=	csvtk:science/csvtk
 
 USES=		go:modules perl5
 USE_GITHUB=	nodefault
-GH_TUPLE=	golang:sys:v0.6.0:sys
+GH_TUPLE=	golang:sys:v0.21.0:sys
 USE_PERL5=	test
 
 GO_MODULE=	github.com/shenwei356/unikmer
 GO_TARGET=	./${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
-
-PORTSCOUT=	ignore:0.20.0 # ignore bogus version
 
 pre-patch:
 	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
