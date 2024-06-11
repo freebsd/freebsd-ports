@@ -1,5 +1,0 @@
-librtcdcpp is a simple C++ implementation of the WebRTC DataChannels API.
-It was originally written by Andrew Gault and Nick Chadwick, and was inspired in
-by librtcdc.
-Its goal is to be the easiest way to build native WebRTC DataChannels apps
-across PC/Mac/Linux/iOS/Android.

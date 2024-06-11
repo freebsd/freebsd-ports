@@ -315,7 +315,6 @@
     SUBDIR += libresonic-standalone
     SUBDIR += librespeed
     SUBDIR += librewolf
-    SUBDIR += librtcdcpp
     SUBDIR += libwpe
     SUBDIR += libwww
     SUBDIR += lightsquid
