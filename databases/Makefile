@@ -78,7 +78,6 @@
     SUBDIR += freetds-devel
     SUBDIR += frontbase-jdbc
     SUBDIR += futuresql
-    SUBDIR += galera
     SUBDIR += galera26
     SUBDIR += gdbm
     SUBDIR += geoserver-mysql-plugin
