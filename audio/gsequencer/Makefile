@@ -1,5 +1,5 @@
 PORTNAME=	gsequencer
-DISTVERSION=	6.12.5
+DISTVERSION=	6.16.3
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,6 +12,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	dssi>0:audio/dssi \
 		gtkdocize:textproc/gtk-doc \
 		lv2>0:audio/lv2
+BUILD_DEPENDS+=	p5-File-Find-Rule>0:devel/p5-File-Find-Rule # only for bsd steps in custom configure
+BUILD_DEPENDS+=	gsed:textproc/gsed # only for bsd steps in custom configure
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfftw3.so:math/fftw3 \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -28,18 +30,21 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 RUN_DEPENDS=	dssi>0:audio/dssi
 
-USES=		autoreconf desktop-file-utils gettext-runtime gettext-tools gmake gnome gstreamer libtool localbase pkgconfig shared-mime-info xorg
+USES=		autoreconf desktop-file-utils gettext-runtime gettext-tools gmake gnome gstreamer \
+		libtool localbase:ldflags perl5 pkgconfig shared-mime-info
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk40 libxml2 pango
 USE_XORG=	x11
-USE_GCC=	yes # the project uses gnu99 extensions, clang fails even with USE_CSTD=gnu99. Suggestions how to build with clang are welcome.
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
+USE_PERL5=	build # only for custom bsd steps in configure
 
 USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS=	--disable-alsa --enable-oss --disable-introspection --disable-rt
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
+		INTROSPECTION_SCANNER=g-ir-scanner INTROSPECTION_COMPILER=g-ir-compiler MAKE=${GMAKE} CC=${CC} CXX=${CXX} LD=clang
+CONFIGURE_ARGS=	--disable-alsa --enable-oss --enable-introspection --disable-rt
 
 CPPFLAGS+=	-DAGS_LICENSE_FILENAME=\\\"${LOCALBASE}/share/licenses/${PKGNAME}/${LICENSE}\\\" \
 		-DAGS_LOGO_FILENAME=\\\"${DATADIR}/images/ags.png\\\" # there should be no need to supply AGS_LOGO_FILENAME here since the app knows its location
@@ -49,7 +54,8 @@ INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=			DOCS JACK PULSEAUDIO
+OPTIONS_DEFINE=			DOCS JACK PULSEAUDIO X11
+OPTIONS_DEFAULT=		X11
 
 DOCS_CONFIGURE_ON=		HTMLHELP_XSL=${LOCALBASE}/share/xsl/docbook/htmlhelp/htmlhelp.xsl --docdir=${DOCSDIR} --enable-single-docdir
 DOCS_BUILD_DEPENDS=		docbook-xsl>0:textproc/docbook-xsl
@@ -63,9 +69,20 @@ JACK_LIB_DEPENDS=		libjack.so:audio/jack
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 
+X11_CONFIGURE_ENABLE=		x11 # not sure what does X11 support realy mean, because it also shows the window wuth X11=OFF
+X11_USES=			xorg
+
 PORTDOCS=	*
 
 post-extract:
-	${RM} ${WRKSRC}/configure.ac.orig
+	@${RM} ${WRKSRC}/configure.ac.orig
+
+do-configure: # it fails to build with clang without this custom configure step
+	@${ECHO} "==> Configure, patch symbols, and re-run configure again"
+	@cd ${WRKSRC} && \
+		${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS} && \
+		${MAKE_CMD} gen-symbols-all-bsd && \
+		${MAKE_CMD} fix-symbols-all-bsd && \
+		${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS}
 
 .include <bsd.port.mk>
