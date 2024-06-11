@@ -3289,3 +3289,4 @@ www/smarty2||2024-06-11|Has expired: Does not support current php versions in tr
 www/librtcdcpp||2024-06-11|Has expired: Dead upstream fails to build
 audio/mp3plot||2024-06-11|Has expired: Dead upstream and fails to build
 dns/dnsforwarder||2024-06-11|Has expired: Abandoned, upstream repo is removed
+dns/crossip|dns/dnsmax-perl|2024-06-11|Has expired: Obsolete, use dns/dnsmax-perl
