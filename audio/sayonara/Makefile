@@ -1,6 +1,7 @@
 PORTNAME=	sayonara
 DISTVERSION=	1.10.0
 DISTVERSIONSUFFIX=	-stable1
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -12,11 +13,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtag.so:audio/taglib \
 		libmtp.so:multimedia/libmtp
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR}
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gnome gstreamer pkgconfig \
 		qt:5 python shebangfix
 USE_GNOME=	glib20
-USE_GSTREAMER=	flac libav mpg123 ogg opus vorbis
+USE_GSTREAMER=	flac libav mpg123 ogg opus pulse vorbis
 USE_QT=		dbus core gui network sql sql-sqlite3:run svg widgets xml \
 		buildtools:build qmake:build linguisttools:build \
 		testlib:build
