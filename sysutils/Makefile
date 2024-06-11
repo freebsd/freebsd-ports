@@ -565,7 +565,6 @@
     SUBDIR += hostctl
     SUBDIR += hourglass
     SUBDIR += hpacucli
-    SUBDIR += hploscripts
     SUBDIR += hptcli
     SUBDIR += hs-cputype
     SUBDIR += hstr
