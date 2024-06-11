@@ -134,16 +134,16 @@ post-extract:
 		${WRKSRC}/Telegram/ThirdParty/hime \
 		${WRKSRC}/Telegram/ThirdParty/hunspell \
 		${WRKSRC}/Telegram/ThirdParty/jemalloc \
+		${WRKSRC}/Telegram/ThirdParty/jimf \
+		${WRKSRC}/Telegram/ThirdParty/kcoreaddons \
+		${WRKSRC}/Telegram/ThirdParty/kimageformats \
 		${WRKSRC}/Telegram/ThirdParty/lz4 \
 		${WRKSRC}/Telegram/ThirdParty/minizip \
-		${WRKSRC}/Telegram/ThirdParty/jimf \
 		${WRKSRC}/Telegram/ThirdParty/plasma-wayland-protocols \
 		${WRKSRC}/Telegram/ThirdParty/range-v3 \
 		${WRKSRC}/Telegram/ThirdParty/wayland \
 		${WRKSRC}/Telegram/ThirdParty/wayland-protocols \
-		${WRKSRC}/Telegram/ThirdParty/xxHash \
-		${WRKSRC}/Telegram/ThirdParty/kcoreaddons \
-		${WRKSRC}/Telegram/ThirdParty/kimageformats
+		${WRKSRC}/Telegram/ThirdParty/xxHash
 
 post-patch:
 	# XXX fix the following on every source file
