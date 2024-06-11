@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240620:
+  AFFECTS: net-mgmt/net-snmp
+  AUTHOR: markj@FreeBSD.org
+
+  The snmpd and snmptrapd daemons now drop privileges by default when started
+  using the rc scripts provided in the package.  Make sure that snmpd
+  configuration in /usr/local/share/snmp is readable by the "snmpd" user.  If
+  you have defined extension scripts in snmpd.conf, make sure that they can be
+  executed by an unprivileged user.  To revert to the old behavior of always
+  running as root, set snmpd_sugid="NO" or snmptrapd_sugid="NO" in /etc/rc.conf.
+
+  See the snmpd rc script for a hint on how to debug any permission problems
+  that might arise as a result of this change.
+
 20240615:
   AFFECTS: mail/cyrus-imapd25
   AUTHOR: ume@FreeBSD.org

@@ -7,16 +7,16 @@
 #
 # snmptrapd_enable="YES"
 #
-# Add the following line to make snmptrapd drop privileges after
-# initialization.  Make sure that configuration files are readable by the snmpd
-# user.
+# Add the following line to make snmptrapd run as root.  By default it drops
+# privileges after initialization, but some configurations may require root
+# privileges.
 #
-# snmptrapd_sugid="YES"
+# snmptrapd_sugid="NO"
 #
 
 snmptrapd_enable=${snmptrapd_enable-"NO"}
 snmptrapd_flags=${snmptrapd_flags-"-p /var/run/snmptrapd.pid"}
-snmptrapd_sugid=${snmptrapd_sugid-"NO"}
+snmptrapd_sugid=${snmptrapd_sugid-"YES"}
 
 . /etc/rc.subr
 

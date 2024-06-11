@@ -9,11 +9,18 @@
 # snmpd_flags="<set as needed>"
 # snmpd_conffile="<set as needed>"
 #
-# Add the following line to make snmpd drop privileges after initialization.
-# This might invalidate existing SNMPv3 users.  Make sure that configuration
-# files are readable by the snmpd user.
+# Add the following line to make snmpd run as root.  By default it drops
+# privileges after initialization, but some configurations may require
+# root privileges.  In particular, extension scripts may need to be run as root.
 #
-# snmpd_sugid="YES"
+# snmpd_sugid="NO"
+#
+# To troubleshoot permission errors, it may be useful to run snmpd with the
+# following option in rc.conf:
+#
+# snmpd_prepend="ktrace -i -f /tmp/snmpd_ktrace.out"
+#
+# The resulting trace can be inspected with "kdump -f /tmp/snmpd_ktrace.out".
 #
 
 . /etc/rc.subr
@@ -25,7 +32,7 @@ load_rc_config snmpd
 
 snmpd_enable=${snmpd_enable:-"NO"}
 snmpd_flush_cache=${snmpd_flush_cache-"NO"}
-snmpd_sugid=${snmpd_sugid:-"NO"}
+snmpd_sugid=${snmpd_sugid:-"YES"}
 
 pidfile=${snmpd_pidfile:-"/var/run/net_snmpd.pid"}
 
