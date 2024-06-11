@@ -481,7 +481,6 @@
     SUBDIR += mdocml
     SUBDIR += meilisearch
     SUBDIR += meld
-    SUBDIR += mergestat
     SUBDIR += metauml
     SUBDIR += mgdiff
     SUBDIR += mi-aspell
