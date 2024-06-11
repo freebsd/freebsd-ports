@@ -13,7 +13,6 @@
     SUBDIR += c-ares
     SUBDIR += cli53
     SUBDIR += coredns
-    SUBDIR += curvedns
     SUBDIR += ddclient
     SUBDIR += ddns
     SUBDIR += denominator

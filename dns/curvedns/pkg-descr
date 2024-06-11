@@ -1,3 +1,0 @@
-CurveDNS is a forwarding nameserver adding DNSCurve to DNS, and it is
-the first publicly released forwarding implementation that implements
-the DNSCurve protocol.

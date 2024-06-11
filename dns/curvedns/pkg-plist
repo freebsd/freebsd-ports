@@ -1,7 +1,0 @@
-bin/curvedns
-bin/curvedns-keygen
-@(%%CURVE_UID%%,%%CURVE_GID%%,) %%ETCDIR%%/env/UID
-@(%%CURVE_UID%%,%%CURVE_GID%%,) %%ETCDIR%%/env/GID
-@sample(%%CURVE_UID%%,%%CURVE_GID%%,) %%ETCDIR%%/run.sample
-@sample(%%CURVE_UID%%,%%CURVE_GID%%,) %%ETCDIR%%/log/run.sample
-@dir(%%CURVE_UID%%,%%CURVE_GID%%,700) %%ETCDIR%%/env
