@@ -3279,3 +3279,4 @@ devel/rubygem-gettext_i18n_rails111|devel/rubygem-gettext_i18n_rails|2024-06-09|
 databases/rubygem-redis-clustering50|databases/rubygem-redis-clustering|2024-06-09|Obsolete use databases/rubygem-redis-clustering instead
 databases/rubygem-redis50|databases/rubygem-redis|2024-06-09|Obsolete use databases/rubygem-redis instead
 math/py-optuna||2024-06-11|Has expired: Depends on expired databases/py-sqlalchemy12
+databases/py-alembic14||2024-06-11|Has expired: Depends on expired databases/py-sqlalchemy12
