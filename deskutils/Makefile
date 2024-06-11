@@ -105,7 +105,6 @@
     SUBDIR += gpicker
     SUBDIR += grantlee-editor
     SUBDIR += grantleetheme
-    SUBDIR += griffith
     SUBDIR += growl-for-linux
     SUBDIR += gsimplecal
     SUBDIR += gtimer
