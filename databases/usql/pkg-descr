@@ -1,6 +1,6 @@
 usql provides a simple way of working with SQL databases via a command-line
-inspired by PostgreSQL's psql tool and has a few additional features that psql
-does not, such as syntax highlighting and context-based completion.
+inspired by PostgreSQL's psql tool and has a few additional features that
+psql does not, such as syntax highlighting and context-based completion.
 
 Database administrators and developers that would prefer to work with
 non-PostgreSQL databases with a tool like psql, will find usql intuitive,
