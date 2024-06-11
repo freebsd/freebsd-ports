@@ -1,5 +1,5 @@
 PORTNAME=	rust
-PORTVERSION?=	1.78.0
+PORTVERSION?=	1.79.0
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
@@ -67,8 +67,8 @@ WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown 
 			_RUST_TARGETS+=wasm32-unknown-unknown
 
 # See WRKSRC/src/stage0.json for the date and version values
-BOOTSTRAPS_DATE?=		2024-03-21
-RUST_BOOTSTRAP_VERSION?=	1.77.0
+BOOTSTRAPS_DATE?=		2024-05-02
+RUST_BOOTSTRAP_VERSION?=	1.78.0
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
@@ -153,9 +153,6 @@ do-configure:
 	@cd ${WRKDIR}/${_component}-*-${OPSYS:tl} && \
 		${SH} install.sh --prefix=${WRKDIR}/bootstrap --verbose
 .endfor
-.if !defined(NIGHTLY_DATE)
-	@${ECHO_CMD} 'changelog-seen=2' > ${WRKSRC}/config.toml
-.endif
 	@${ECHO_CMD} '[build]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'build-dir="${WRKDIR}/_build"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'build-stage=2' >> ${WRKSRC}/config.toml
