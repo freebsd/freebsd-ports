@@ -1,12 +1,11 @@
 PORTNAME=	schismtracker
-DISTVERSION=	20240529
-DISTVERSIONSUFFIX=	.source
+DISTVERSION=	20240609
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/schismtracker/schismtracker/releases/download/${PORTVERSION}/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Module tracker editor/player resembling impulse tracker
-WWW=		https://schismtracker.org/
+WWW=		https://schismtracker.org/ \
+		https://github.com/schismtracker/schismtracker
 
 LICENSE=	GPLv2
 
@@ -14,13 +13,12 @@ ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc powerpc64 powerpc64le
 
 LIB_DEPENDS=	libFLAC.so:audio/flac
 
-USES=		compiler:c++11-lib desktop-file-utils localbase pkgconfig \
-		python sdl xorg
+USES=		autoreconf compiler:c++11-lib desktop-file-utils localbase \
+		pkgconfig python sdl xorg
+USE_GITHUB=	yes
 USE_SDL=	sdl2
 USE_XORG=	x11 xext xv
 GNU_CONFIGURE=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PLIST_FILES=	bin/schismtracker \
 		share/applications/schism.desktop \
