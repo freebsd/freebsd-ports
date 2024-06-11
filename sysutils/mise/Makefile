@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.6.2
+DISTVERSION=	2024.6.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,14 +50,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytes-1.6.0 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.0.98 \
+		cc-1.0.99 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		chrono-tz-0.9.0 \
 		chrono-tz-build-0.3.0 \
 		ci_info-0.14.14 \
-		clap-4.5.6 \
-		clap_builder-4.5.6 \
+		clap-4.5.7 \
+		clap_builder-4.5.7 \
 		clap_derive-4.5.5 \
 		clap_lex-0.7.1 \
 		clap_mangen-0.2.21 \
@@ -147,7 +147,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		http-1.1.0 \
 		http-body-1.0.0 \
 		http-body-util-0.1.1 \
-		httparse-1.8.0 \
+		httparse-1.9.1 \
 		humansize-2.1.3 \
 		humantime-2.1.0 \
 		hyper-1.3.1 \
@@ -156,7 +156,17 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hyper-util-0.1.5 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
-		idna-0.5.0 \
+		icu_collections-1.5.0 \
+		icu_locid-1.5.0 \
+		icu_locid_transform-1.5.0 \
+		icu_locid_transform_data-1.5.0 \
+		icu_normalizer-1.5.0 \
+		icu_normalizer_data-1.5.0 \
+		icu_properties-1.5.0 \
+		icu_properties_data-1.5.0 \
+		icu_provider-1.5.0 \
+		icu_provider_macros-1.5.0 \
+		idna-1.0.0 \
 		ignore-0.4.22 \
 		indenter-0.3.3 \
 		indexmap-1.9.3 \
@@ -181,6 +191,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		libz-sys-1.1.18 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
+		litemap-0.7.3 \
 		lockfree-object-pool-0.1.6 \
 		log-0.4.21 \
 		matchers-0.1.0 \
@@ -251,11 +262,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
-		regex-1.10.4 \
+		regex-1.10.5 \
 		regex-automata-0.1.10 \
-		regex-automata-0.4.6 \
+		regex-automata-0.4.7 \
 		regex-syntax-0.6.29 \
-		regex-syntax-0.8.3 \
+		regex-syntax-0.8.4 \
 		reqwest-0.12.4 \
 		ring-0.17.8 \
 		rmp-0.8.14 \
@@ -301,6 +312,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		socket2-0.5.7 \
 		spin-0.9.8 \
 		spki-0.7.3 \
+		stable_deref_trait-1.2.0 \
 		strsim-0.11.1 \
 		strum-0.26.2 \
 		strum_macros-0.26.4 \
@@ -308,6 +320,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		syn-1.0.109 \
 		syn-2.0.66 \
 		sync_wrapper-0.1.2 \
+		synstructure-0.13.1 \
 		sys-info-0.9.1 \
 		tabled-0.15.0 \
 		tabled_derive-0.7.0 \
@@ -328,8 +341,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
-		tinyvec-1.6.0 \
-		tinyvec_macros-0.1.1 \
+		tinystr-0.7.6 \
 		tokio-1.38.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.25.0 \
@@ -354,22 +366,22 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unic-segment-0.9.0 \
 		unic-ucd-segment-0.9.0 \
 		unic-ucd-version-0.9.0 \
-		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
-		unicode-normalization-0.1.23 \
 		unicode-segmentation-1.11.0 \
 		unicode-width-0.1.13 \
 		untrusted-0.9.0 \
-		url-2.5.0 \
+		url-2.5.1 \
 		urlencoding-2.1.3 \
 		usage-lib-0.3.0 \
-		utf8parse-0.2.1 \
+		utf16_iter-1.0.5 \
+		utf8_iter-1.0.4 \
+		utf8parse-0.2.2 \
 		valuable-0.1.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		versions-6.2.0 \
 		vte-0.10.1 \
-		vte_generate_state_changes-0.1.1 \
+		vte_generate_state_changes-0.1.2 \
 		wait-timeout-0.2.0 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
@@ -415,10 +427,18 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		winreg-0.52.0 \
 		winsafe-0.0.19 \
 		wmi-0.13.3 \
+		write16-1.0.0 \
+		writeable-0.5.5 \
 		xattr-1.3.1 \
 		xx-1.1.5 \
 		yansi-0.5.1 \
+		yoke-0.7.4 \
+		yoke-derive-0.7.4 \
+		zerofrom-0.1.4 \
+		zerofrom-derive-0.1.4 \
 		zeroize-1.8.1 \
+		zerovec-0.10.2 \
+		zerovec-derive-0.10.2 \
 		zip-2.1.3 \
 		zipsign-api-0.1.1 \
 		zopfli-0.8.1
