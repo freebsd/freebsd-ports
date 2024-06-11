@@ -1,8 +1,0 @@
-@owner cinder
-@dir %%ETCDIR%%
-@sample %%ETCDIR%%/api-paste.ini.sample
-@sample %%ETCDIR%%/cinder.conf.sample
-@owner root
-@sample %%ETCDIR%%/rootwrap.conf.sample
-@dir %%ETCDIR%%/rootwrap.d
-@sample %%ETCDIR%%/rootwrap.d/volume.filters.sample

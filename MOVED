@@ -3281,3 +3281,4 @@ databases/rubygem-redis50|databases/rubygem-redis|2024-06-09|Obsolete use databa
 math/py-optuna||2024-06-11|Has expired: Depends on expired databases/py-sqlalchemy12
 databases/py-alembic14||2024-06-11|Has expired: Depends on expired databases/py-sqlalchemy12
 deskutils/griffith||2024-06-11|Has expired: Depends on expired databases/py-sqlalchemy12
+misc/py-cinder||2024-06-11|Has expired: Depends on expired databases/py-sqlalchemy12
