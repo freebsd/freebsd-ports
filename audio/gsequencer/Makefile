@@ -13,7 +13,6 @@ BUILD_DEPENDS=	dssi>0:audio/dssi \
 		gtkdocize:textproc/gtk-doc \
 		lv2>0:audio/lv2
 BUILD_DEPENDS+=	p5-File-Find-Rule>0:devel/p5-File-Find-Rule # only for bsd steps in custom configure
-BUILD_DEPENDS+=	gsed:textproc/gsed # only for bsd steps in custom configure
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfftw3.so:math/fftw3 \
 		libfontconfig.so:x11-fonts/fontconfig \
