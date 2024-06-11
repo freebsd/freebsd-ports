@@ -2,8 +2,6 @@
 bin/rt
 bin/rt-crontool
 bin/rt-mailgate
-sbin/rt-clean-shorteners
-sbin/rt-email-expiring-auth-tokens
 @dir(root,rt,0750) %%RT_ETC_DIR%%
 @dir(root,rt,0750) %%RT_ETC_DIR%%/RT_SiteConfig.d
 @mode 0440
@@ -357,10 +355,12 @@ sbin/rt-email-expiring-auth-tokens
 sbin/rt-attributes-viewer
 sbin/rt-clean-attributes
 sbin/rt-clean-sessions
+sbin/rt-clean-shorteners
 sbin/rt-dump-initialdata
 sbin/rt-dump-metadata
 sbin/rt-email-dashboards
 sbin/rt-email-digest
+sbin/rt-email-expiring-auth-tokens
 sbin/rt-email-group-admin
 sbin/rt-externalize-attachments
 sbin/rt-fulltext-indexer
