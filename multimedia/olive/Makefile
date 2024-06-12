@@ -11,6 +11,8 @@ WWW=		https://olivevideoeditor.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		incompatible with opencolorio-2.3.2, see https://github.com/olive-editor/olive/issues/2334
+
 BUILD_DEPENDS=	frei0r>0:graphics/frei0r
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libImath-3_1.so:math/Imath \
