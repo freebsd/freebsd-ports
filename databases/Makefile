@@ -1065,7 +1065,6 @@
     SUBDIR += tokyocabinet
     SUBDIR += tokyotyrant
     SUBDIR += trilogy
-    SUBDIR += tsearch_extras
     SUBDIR += tuning-primer
     SUBDIR += twemproxy
     SUBDIR += unixODBC
