@@ -22,6 +22,8 @@ GH_ACCOUNT=	skk-dev
 GH_PROJECT=	dict
 GH_TAGNAME=	b798a46
 
+NOARCH=		yes
+
 .if defined(WITH_SKKJISYO_CDB)
 CDBSUFFIX=		.cdb
 .else
