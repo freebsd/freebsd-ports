@@ -2,7 +2,7 @@ PORTNAME=	minizip-ng
 DISTVERSION=	4.0.6
 CATEGORIES=	archivers
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Fork of the popular minizip found in the zlib distribution
 WWW=		https://github.com/zlib-ng/minizip-ng
 

@@ -5,20 +5,19 @@ CATEGORIES=	archivers
 MASTER_SITES=	SF/libpng/zlib/${PORTVERSION}
 DISTNAME=	zlib-${PORTVERSION}
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Zip library and programs from Zlib distribution
 WWW=		https://www.winimage.com/zLibDll/minizip.html
 
 LICENSE=	ZLIB
 
 USES=		autoreconf cpe libtool pathfix tar:xz
+CPE_VENDOR=	minizip_project
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-demos
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/zlib-${PORTVERSION}/contrib/minizip
-CPE_VENDOR=	minizip_project
 
 post-patch:
 	@${REINPLACE_CMD} 's/#ifdef unix || __APPLE__/#ifdef unix/' ${WRKSRC}/mini???.c
