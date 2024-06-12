@@ -161,15 +161,15 @@ include/highs/qpsolver/dantzigpricing.hpp
 include/highs/qpsolver/devexpricing.hpp
 include/highs/qpsolver/eventhandler.hpp
 include/highs/qpsolver/factor.hpp
-include/highs/qpsolver/feasibility.hpp
+include/highs/qpsolver/feasibility_bounded.hpp
 include/highs/qpsolver/feasibility_highs.hpp
-include/highs/qpsolver/feasibility_quass.hpp
 include/highs/qpsolver/gradient.hpp
 include/highs/qpsolver/instance.hpp
 include/highs/qpsolver/matrix.hpp
 include/highs/qpsolver/perturbation.hpp
 include/highs/qpsolver/pricing.hpp
 include/highs/qpsolver/qpconst.hpp
+include/highs/qpsolver/qpvector.hpp
 include/highs/qpsolver/quass.hpp
 include/highs/qpsolver/ratiotest.hpp
 include/highs/qpsolver/runtime.hpp
@@ -178,7 +178,6 @@ include/highs/qpsolver/settings.hpp
 include/highs/qpsolver/snippets.hpp
 include/highs/qpsolver/statistics.hpp
 include/highs/qpsolver/steepestedgepricing.hpp
-include/highs/qpsolver/vector.hpp
 include/highs/simplex/HApp.h
 include/highs/simplex/HEkk.h
 include/highs/simplex/HEkkDual.h
@@ -214,6 +213,7 @@ include/highs/util/HighsLinearSumBounds.h
 include/highs/util/HighsMatrixPic.h
 include/highs/util/HighsMatrixSlice.h
 include/highs/util/HighsMatrixUtils.h
+include/highs/util/HighsMemoryAllocation.h
 include/highs/util/HighsRandom.h
 include/highs/util/HighsRbTree.h
 include/highs/util/HighsSort.h
@@ -231,5 +231,5 @@ lib/cmake/highs/highs-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/highs/highs-targets.cmake
 lib/libhighs.so
 lib/libhighs.so.1
-lib/libhighs.so.1.7.0
+lib/libhighs.so.1.7.1
 libdata/pkgconfig/highs.pc
