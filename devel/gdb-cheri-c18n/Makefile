@@ -9,11 +9,7 @@ OPTIONS_EXCLUDE=GDB_LINK KGDB
 
 DATADIR?=	${PREFIX}/share/gdb-cheri-c18n
 
-# GDB 14.1 checks if gmp and mpfr headers exist in configure.
-CONFIGURE_ARGS=	--disable-sim \
-		--with-gmp=${LOCALBASE} \
-		--with-mpfr=${LOCALBASE} \
-		--with-gdb-datadir=${LOCALBASE}/share/gdb-cheri-c18n
+CONFIGURE_ARGS=	--with-gdb-datadir=${LOCALBASE}/share/gdb-cheri-c18n
 
 FILESDIR=	${.CURDIR}/../gdb-cheri/files
 
