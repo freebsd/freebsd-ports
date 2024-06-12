@@ -1,6 +1,6 @@
 PORTNAME=	collectd
 PORTVERSION=	5.12.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://storage.googleapis.com/collectd-tarballs/
 PKGNAMESUFFIX=	5
@@ -71,7 +71,7 @@ SNMP_DESC=		Enable SNMP plugin
 STATSD_DESC=		Enable statsd plugin
 TOKYOTYRANT_DESC=	Enable tokyotyrant plugin
 TSDB_DESC=		Enable write_tsdb plugin
-VARNISH_DESC=		Enable varnish 6.x cache statistics
+VARNISH_DESC=		Enable varnish 7.x cache statistics
 VIRT_DESC=		Enable libvirt plugin (requires XML)
 XML_DESC=		Enable XML plugins
 ZOOKEEPER_DESC=		Enable zookeeper plugin
@@ -242,6 +242,7 @@ SIGROK_CONFIGURE_ENABLE=	sigrok
 SIGROK_USES=			gettext-runtime
 SIGROK_BROKEN=			working only with sigrok < 0.4
 
+SLURM_BROKEN=			Does not compile with slurm-wlm >= 21.x
 SLURM_LIB_DEPENDS=		libslurm.so:sysutils/slurm-wlm
 SLURM_CONFIGURE_ENABLE=		slurm
 SLURM_CONFIGURE_WITH=		libslurm=${LOCALBASE}
@@ -259,7 +260,7 @@ TOKYOTYRANT_CONFIGURE_WITH=	libtokyotyrant=${LOCALBASE}
 
 TSDB_CONFIGURE_ENABLE=	write_tsdb
 
-VARNISH_LIB_DEPENDS=		libvarnishapi.so:www/varnish6
+VARNISH_LIB_DEPENDS=		libvarnishapi.so:www/varnish7
 VARNISH_CONFIGURE_ENABLE=	varnish
 
 VIRT_IMPLIES=		XML
