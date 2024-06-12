@@ -972,6 +972,7 @@ lib/libruby%%RUBY_SHLIBVER%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rubygems/spec_fetcher.rb
 %%RUBY_LIBDIR%%/rubygems/specification.rb
 %%RUBY_LIBDIR%%/rubygems/specification_policy.rb
+%%RUBY_LIBDIR%%/rubygems/specification_record.rb
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/rubygems.org/GlobalSignRootCA.pem
 %%RUBY_LIBDIR%%/rubygems/ssl_certs/rubygems.org/GlobalSignRootCA_R3.pem
 %%RUBY_LIBDIR%%/rubygems/stub_specification.rb
@@ -4261,7 +4262,6 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Dependency/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Dependency/prerelease%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Dependency/prerelease-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Gem/Dependency/prioritizes_bundler%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Dependency/requirement-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Dependency/requirements_list-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Dependency/runtime%3f-i.ri
@@ -4358,7 +4358,6 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/runner-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/rustc_dynamic_linker_flags-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/rustc_lib_flags-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/so_ext-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/spec-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/split_flags-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/win_target%3f-i.ri
@@ -4673,6 +4672,7 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/gem-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/gzip_to-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/initialize-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Package/limit_read-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/normalize_path-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/prog_mode-i.ri
@@ -5450,11 +5450,9 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/from_yaml-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/full_name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/gems_dir-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/gemspec_stubs_in-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/has_conflicts%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/homepage-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/initialize_copy-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/installed_stubs-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/invalidate_memoized_attributes-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/keep_only_files_and_directories-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/latest_spec_for-c.ri
@@ -5466,7 +5464,6 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/licenses-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/load-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/load_defaults-c.ri
-%%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/mark_version-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/metadata-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/missing_extensions%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/name-i.ri
@@ -5510,6 +5507,7 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/spec_dir-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/spec_file-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/spec_name-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/specification_record-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/specification_version-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/stubbed%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/stubs-c.ri
@@ -5556,6 +5554,27 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_specification_version-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_unique_links-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_values-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/add_spec-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/all%3d-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/all-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/all_names-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/cdesc-SpecificationRecord.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/dirs_from-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/each-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/find_active_stub_by_path-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/find_all_by_name-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/find_by_path-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/find_inactive_by_path-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/from_path-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/installed_stubs-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/latest_spec_for-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/latest_specs-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/map_stubs-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/remove_spec-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/stubs-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/stubs_for-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationRecord/stubs_for_pattern-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/StreamUI/SilentDownloadReporter/cdesc-SilentDownloadReporter.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/StreamUI/SilentDownloadReporter/done-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/StreamUI/SilentDownloadReporter/fetch-i.ri
@@ -5622,6 +5641,7 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Uninstaller/gem_home-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Uninstaller/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Uninstaller/path_ok%3f-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Uninstaller/plugin_dir_for-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Uninstaller/regenerate_plugins-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Uninstaller/remove-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Uninstaller/remove_all-i.ri
@@ -5776,6 +5796,7 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/Gem/find_spec_for_exe-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/find_unresolved_default_spec-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/finish_resolve-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/freebsd_platform%3f-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/gemdeps-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/host%3d-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/host-c.ri
