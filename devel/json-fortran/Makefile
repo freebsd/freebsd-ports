@@ -1,5 +1,5 @@
 PORTNAME=	json-fortran
-DISTVERSION=	8.5.2
+DISTVERSION=	9.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
