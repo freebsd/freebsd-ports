@@ -3,7 +3,7 @@ PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	osa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ implementation of the OpenTracing API
 WWW=		https://github.com/opentracing/opentracing-cpp
 
