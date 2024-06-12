@@ -1,11 +1,15 @@
---- man/vis.1.orig	2023-02-24 18:24:37 UTC
+--- man/vis.1.orig	2024-05-01 19:49:18 UTC
 +++ man/vis.1
-@@ -260,7 +260,7 @@ currently defers regular expression matching to the un
- It uses what POSIX refers to as
- .Dq Extended Regular Expressions
- as described in
--.Xr regex 7 .
-+.Xr re_format 7 .
- The anchors
- .Ic ^
- and
+@@ -1548,10 +1548,10 @@ if unset.
+ if unset.
+ .
+ .It
+-.Pa /etc/vis
++.Pa %%ETCDIR%%
+ for a system-wide configuration provided by administrator.
+ .It
+-.Pa /usr/local/share/vis
++.Pa %%PREFIX%%/share/vis
+ or
+ .Pa /usr/share/vis
+ depending on the build configuration.
