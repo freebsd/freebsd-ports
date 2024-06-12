@@ -17,6 +17,8 @@
 name="ttrssd"
 rcvar=ttrssd_enable
 
+: ${ttrssd_svcj_options:="net_basic"}
+
 # read settings, set default values
 load_rc_config "${name}"
 : ${ttrssd_enable="NO"}
