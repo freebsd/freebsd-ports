@@ -20,6 +20,7 @@ include/wlroots%%SUFFIX%%/wlr/render/allocator.h
 include/wlroots%%SUFFIX%%/wlr/render/color.h
 include/wlroots%%SUFFIX%%/wlr/render/dmabuf.h
 include/wlroots%%SUFFIX%%/wlr/render/drm_format_set.h
+include/wlroots%%SUFFIX%%/wlr/render/drm_syncobj.h
 %%OPENGL%%include/wlroots%%SUFFIX%%/wlr/render/egl.h
 %%OPENGL%%include/wlroots%%SUFFIX%%/wlr/render/gles2.h
 include/wlroots%%SUFFIX%%/wlr/render/interface.h
@@ -55,6 +56,7 @@ include/wlroots%%SUFFIX%%/wlr/types/wlr_keyboard_group.h
 include/wlroots%%SUFFIX%%/wlr/types/wlr_keyboard_shortcuts_inhibit_v1.h
 include/wlroots%%SUFFIX%%/wlr/types/wlr_layer_shell_v1.h
 include/wlroots%%SUFFIX%%/wlr/types/wlr_linux_dmabuf_v1.h
+include/wlroots%%SUFFIX%%/wlr/types/wlr_linux_drm_syncobj_v1.h
 include/wlroots%%SUFFIX%%/wlr/types/wlr_matrix.h
 include/wlroots%%SUFFIX%%/wlr/types/wlr_output.h
 include/wlroots%%SUFFIX%%/wlr/types/wlr_output_layer.h
