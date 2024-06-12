@@ -1,7 +1,6 @@
 PORTNAME=	spyder
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.5.4
-PORTREVISION=	1
+DISTVERSION=	5.5.5
 CATEGORIES=	devel science python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,16 +31,16 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.0:textproc/py-pygments@${PY_FLAVOR} \
 		pylint${PYTHON_PKGNAMESUFFIX}>=3.1.0:devel/pylint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pylint-venv>=3.0.2:devel/py-pylint-venv@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-lsp-black>=1.2.0:textproc/py-python-lsp-black@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-lsp-black>=2.0.0:textproc/py-python-lsp-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyls-spyder>=0.4.0:textproc/py-pyls-spyder@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qt5-webengine>0:www/py-qt5-webengine@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-lsp-server>=1.7.4:textproc/py-python-lsp-server@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qt5-webengine>=5.10:www/py-qt5-webengine@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-lsp-server>=1.11.0:textproc/py-python-lsp-server@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xdg>=0.26:devel/py-xdg@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyzmq>=22.1.0:net/py-pyzmq@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyzmq>=24.0.0:net/py-pyzmq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}QDarkStyle>=3.2.0:textproc/py-QDarkStyle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qstylizer>=0.2.2:devel/py-qstylizer@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}QtAwesome>=1.2.1:x11-fonts/py-QtAwesome@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qtconsole>=5.5.0:devel/py-qtconsole@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}QtAwesome>=1.3.1:x11-fonts/py-QtAwesome@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qtconsole>=5.5.1:devel/py-qtconsole@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}QtPy>=2.1.0:devel/py-QtPy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rtree>=0.9.7:devel/py-rtree@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>=0.6.6:textproc/py-sphinx@${PY_FLAVOR} \
@@ -62,8 +61,10 @@ NO_ARCH=	yes
 DOCSDIR=	${PYTHON_SITELIBDIR}/spyder
 
 post-patch:
+	# the second regex is to downgrade spyder-kernels requirement to 2.5.1
 	${REINPLACE_CMD} \
-		-E 's|,<[0-9.=]+||' \
+		-E 's|,<[0-9.=]+||; \
+		    s|2\.5\.2|2.5.1|' \
 		${WRKSRC}/setup.py \
 		${WRKSRC}/binder/environment.yml \
 		${WRKSRC}/requirements/main.yml \
