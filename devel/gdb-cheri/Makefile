@@ -21,11 +21,6 @@ DATADIR?=	${PREFIX}/share/gdb
 OPTIONS_DEFAULT+=BUNDLED_READLINE
 OPTIONS_EXCLUDE+=PORT_READLINE
 
-# Use {all,install}-gdb instead of the default all and install targets.
-# gold, ld, libstdcxx and gas cannot be built at the moment.
-ALL_TARGET=	all-gdb
-INSTALL_TARGET=	install-gdb
-
 # CTSRD-CHERI/gdb does not include gdb.1.
 GDB1_SRC=	${FILESDIR}/gdb.1
 # CTSRD-CHERI/gdb does include kgdb.1.
