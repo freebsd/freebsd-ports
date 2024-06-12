@@ -1,6 +1,5 @@
 PORTNAME=	vlc
-DISTVERSION=	3.0.20
-PORTREVISION=	9
+DISTVERSION=	3.0.21
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio net www
 MASTER_SITES=	https://get.videolan.org/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -29,8 +28,9 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 RUN_DEPENDS=	ffmpeg>=3.4.1,1:multimedia/ffmpeg
 
 USES=		compiler:c++17-lang cpe desktop-file-utils elfctl gettext-tools \
-		gmake gnome iconv:wchar_t libtool localbase pathfix pkgconfig \
+		gl gmake gnome iconv:wchar_t libtool localbase pathfix pkgconfig \
 		tar:xz
+USE_GL=		gl
 
 CPE_VENDOR=	videolan
 
@@ -42,7 +42,7 @@ CONFIGURE_ARGS=	--enable-avcodec --enable-avformat --enable-dvbpsi \
 		--enable-fontconfig --enable-freetype --enable-libgcrypt \
 		--enable-libxml2 --enable-oss --enable-postproc \
 		--enable-swscale --enable-vlc \
-		--disable-alsa --disable-archive --disable-aribb25 \
+		--disable-alsa --disable-aribb25 \
 		--disable-chromaprint --disable-crystalhd --disable-dc1394 \
 		--disable-decklink --disable-dsm --disable-dv1394 \
 		--disable-fdkaac --disable-gst-decode --disable-gles2 \
@@ -77,10 +77,10 @@ OPTIONS_DEFINE=	A52 AALIB AOM ARIBSUB ASS AVAHI CACA CHROMECAST DAV1D DBUS DCA \
 		VAAPI VCD VDPAU VORBIS VPX WAYLAND X11 X264 X265 ZVBI
 OPTIONS_DEFINE_powerpc=		ALTIVEC
 OPTIONS_DEFINE_powerpc64=	ALTIVEC
-OPTIONS_DEFAULT=ASS AVAHI DAV1D DBUS DVDNAV DVDREAD GNUTLS HARFBUZZ JPEG \
-		LIVEMEDIA LUA OGG OPTIMIZED_CFLAGS OPUS PNG QT5 SAMPLERATE \
-		SPEEX STREAM TAGLIB THEORA TWOLAME UPNP V4L VAAPI VCD VDPAU \
-		VORBIS WAYLAND X11
+OPTIONS_DEFAULT=ASS AVAHI CHROMECAST DAV1D DBUS DVDNAV DVDREAD GNUTLS HARFBUZZ \
+		JPEG LIVEMEDIA LUA OGG OPTIMIZED_CFLAGS OPUS PNG QT5 SAMPLERATE \
+		SKINS SPEEX STREAM TAGLIB THEORA TWOLAME UPNP V4L VAAPI VCD \
+		VDPAU VORBIS WAYLAND X11
 OPTIONS_DEFAULT_powerpc=	ALTIVEC
 OPTIONS_DEFAULT_powerpc64=	ALTIVEC
 OPTIONS_EXCLUDE=	LIBPLACEBO # https://code.videolan.org/videolan/vlc/-/commit/8e22c39ea3c3
@@ -308,9 +308,9 @@ SIDPLAY_CONFIGURE_ENABLE=	sid
 SIDPLAY_LDFLAGS=	-L${LOCALBASE}/lib/sidplay/builders
 
 SKINS_IMPLIES=		QT5
-SKINS_USES=		xorg
+SKINS_USES=		libarchive xorg
 SKINS_USE=		XORG=xext,xinerama,xpm
-SKINS_CONFIGURE_ENABLE=	skins2
+SKINS_CONFIGURE_ENABLE=	archive skins2
 
 SMB_USES=		samba:lib
 SMB_CONFIGURE_ENABLE=	smbclient
