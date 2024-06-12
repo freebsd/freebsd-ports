@@ -11,6 +11,11 @@ share/man/man1/fastfetch.1.gz
 %%DATADIR%%/presets/examples/11.jsonc
 %%DATADIR%%/presets/examples/12.jsonc
 %%DATADIR%%/presets/examples/13.jsonc
+%%DATADIR%%/presets/examples/14.jsonc
+%%DATADIR%%/presets/examples/15.jsonc
+%%DATADIR%%/presets/examples/16.jsonc
+%%DATADIR%%/presets/examples/17.jsonc
+%%DATADIR%%/presets/examples/18.jsonc
 %%DATADIR%%/presets/examples/2.jsonc
 %%DATADIR%%/presets/examples/3.jsonc
 %%DATADIR%%/presets/examples/4.jsonc
@@ -22,4 +27,5 @@ share/man/man1/fastfetch.1.gz
 %%DATADIR%%/presets/hardware.jsonc
 %%DATADIR%%/presets/neofetch.jsonc
 %%DATADIR%%/presets/paleofetch.jsonc
+%%DATADIR%%/presets/screenfetch.jsonc
 %%DATADIR%%/presets/software.jsonc
