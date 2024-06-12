@@ -36,6 +36,10 @@ CONFIGURE_ARGS+=--program-suffix=${VER} \
 		--with-additional-debug-dirs=${LOCALBASE}/lib/debug \
 		${ICONV_CONFIGURE_ARG} \
 		--without-libunwind-ia64
+# GDB 14.x checks if gmp and mpfr headers exist. We must pass a custom local
+# base to let it find them.
+CONFIGURE_ARGS+=--with-gmp=${LOCALBASE} \
+		--with-mpfr=${LOCALBASE}
 CONFIGURE_OUTSOURCE=	yes
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT
