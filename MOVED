@@ -3301,3 +3301,4 @@ audio/rebot3||2024-06-11|Has expired: Depends on legacy service/protocol that's 
 net/nepenthes||2024-06-11|Has expired: Abandonware, last update in 2008 and upstream is gone
 sysutils/hploscripts||2024-06-11|Has expired: Abandonware, outdated version
 databases/galera|databases/galera26|2024-06-11|Has expired: Does not build. Superseded by galera26
+databases/tsearch_extras||2024-06-12|Has no consumer both in ports and upstream project
