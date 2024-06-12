@@ -1,6 +1,6 @@
 PORTNAME=	tgpt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.4
+DISTVERSION=	2.8.0
 CATEGORIES=	www
 
 MAINTAINER=	nxjoseph@protonmail.com
@@ -14,9 +14,6 @@ USES=		go:1.21
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aandrew-me
-
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
-GO_BUILDFLAGS=	-trimpath -ldflags="-s -w" -o ./build/tgpt
 GH_TUPLE=	andybalholm:brotli:v1.0.5:andybalholm_brotli/vendor/github.com/andybalholm/brotli \
 		atotto:clipboard:v0.1.4:atotto_clipboard/vendor/github.com/atotto/clipboard \
 		aymanbagabas:go-osc52:v2.0.1:aymanbagabas_go_osc52_v2/vendor/github.com/aymanbagabas/go-osc52/v2 \
@@ -56,6 +53,9 @@ GH_TUPLE=	andybalholm:brotli:v1.0.5:andybalholm_brotli/vendor/github.com/andybal
 		rivo:uniseg:v0.4.4:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		stretchr:testify:v1.8.4:stretchr_testify/vendor/github.com/stretchr/testify \
 		tam7t:hpkp:2b70b4024ed5:tam7t_hpkp/vendor/github.com/tam7t/hpkp
+
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
+GO_BUILDFLAGS=	-trimpath -ldflags="-s -w" -o ./build/tgpt
 
 PLIST_FILES=	bin/tgpt
 
