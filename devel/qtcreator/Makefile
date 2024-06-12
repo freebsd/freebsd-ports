@@ -1,5 +1,5 @@
 PORTNAME=	qtcreator
-DISTVERSION=	13.0.1
+DISTVERSION=	13.0.2
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
