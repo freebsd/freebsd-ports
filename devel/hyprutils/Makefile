@@ -10,7 +10,7 @@ WWW=		https://github.com/hyprwm/hyprutils
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lib cmake
+USES=		compiler:c++11-lib cmake:testing
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	hyprwm
