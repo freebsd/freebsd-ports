@@ -1,6 +1,9 @@
 PORTNAME=	pika
-DISTVERSION=	0.24.0
+DISTVERSION=	0.25.0
 CATEGORIES=	devel
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	f4378fc49f9fff14dbb03a1111f8be01f6b0f37c.patch:-p1 # fix assert in the FreeBSD version of get_executable_prefix, https://github.com/pika-org/pika/pull/1171
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for concurrency and parallelism
@@ -13,7 +16,8 @@ BROKEN_aarch64=		compilation error: error: 'regparm' is not valid on this platfo
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
 LIB_DEPENDS=	libfmt.so:devel/libfmt \
-		libhwloc.so:devel/hwloc2
+		libhwloc.so:devel/hwloc2 \
+		libspdlog.so:devel/spdlog
 
 USES=		cmake:testing compiler:c++17-lang
 USE_LDCONFIG=	yes
