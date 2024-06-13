@@ -1,0 +1,10 @@
+include/hyprutils/memory/SharedPtr.hpp
+include/hyprutils/memory/WeakPtr.hpp
+include/hyprutils/signal/Listener.hpp
+include/hyprutils/signal/Signal.hpp
+include/hyprutils/string/String.hpp
+include/hyprutils/string/VarList.hpp
+lib/libhyprutils.so
+lib/libhyprutils.so.0
+lib/libhyprutils.so.0.1.2
+libdata/pkgconfig/hyprutils.pc
