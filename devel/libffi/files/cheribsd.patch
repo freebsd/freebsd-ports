@@ -38,7 +38,7 @@ index 2bd31b0..87f0108 100644
  /* Perform machine dependent cif processing */
  ffi_status ffi_prep_cif_machdep(ffi_cif *cif);
 diff --git src/aarch64/ffi.c src/aarch64/ffi.c
-index 6544ac0..eee752d 100644
+index 6544ac0..e2e94e6 100644
 --- src/aarch64/ffi.c
 +++ src/aarch64/ffi.c
 @@ -20,6 +20,7 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
@@ -49,7 +49,7 @@ index 6544ac0..eee752d 100644
  #include <stdio.h>
  #include <stdlib.h>
  #include <stdint.h>
-@@ -54,10 +55,25 @@ struct _v
+@@ -54,10 +55,28 @@ struct _v
    union _d d[2] __attribute__((aligned(16)));
  };
  
@@ -64,6 +64,9 @@ index 6544ac0..eee752d 100644
    struct _v v[N_V_ARG_REG];
 -  UINT64 x[N_X_ARG_REG];
 +  XREG x[N_X_ARG_REG];
++#ifdef __CHERI_PURE_CAPABILITY__
++  XREG x9;
++#endif
 +};
 +
 +struct call_frame
@@ -76,7 +79,7 @@ index 6544ac0..eee752d 100644
  };
  
  #if FFI_EXEC_TRAMPOLINE_TABLE
-@@ -318,7 +334,7 @@ allocate_and_copy_struct_to_stack (struct arg_state *state, void *stack,
+@@ -318,7 +337,7 @@ allocate_and_copy_struct_to_stack (struct arg_state *state, void *stack,
  }
  
  static ffi_arg
@@ -85,7 +88,7 @@ index 6544ac0..eee752d 100644
  {
    switch (type)
      {
-@@ -377,6 +393,44 @@ extend_integer_type (void *source, int type)
+@@ -377,6 +396,44 @@ extend_integer_type (void *source, int type)
      }
  }
  
@@ -130,7 +133,7 @@ index 6544ac0..eee752d 100644
  #if defined(_MSC_VER)
  void extend_hfa_type (void *dest, void *src, int h);
  #else
-@@ -387,7 +441,11 @@ extend_hfa_type (void *dest, void *src, int h)
+@@ -387,7 +444,11 @@ extend_hfa_type (void *dest, void *src, int h)
    void *x0;
  
    asm volatile (
@@ -142,7 +145,7 @@ index 6544ac0..eee752d 100644
  "	add	%0, %0, %1\n"
  "	br	%0\n"
  "0:	ldp	s16, s17, [%3]\n"	/* S4 */
-@@ -429,8 +487,8 @@ extend_hfa_type (void *dest, void *src, int h)
+@@ -429,8 +490,8 @@ extend_hfa_type (void *dest, void *src, int h)
  "3:	str	q18, [%2, #32]\n"
  "2:	str	q17, [%2, #16]\n"
  "1:	str	q16, [%2]"
@@ -153,7 +156,7 @@ index 6544ac0..eee752d 100644
      : "memory", "v16", "v17", "v18", "v19");
  }
  #endif
-@@ -456,19 +514,19 @@ compress_hfa_type (void *dest, void *reg, int h)
+@@ -456,19 +517,19 @@ compress_hfa_type (void *dest, void *reg, int h)
      case AARCH64_RET_S2:
        asm ("ldp q16, q17, [%1]\n\t"
  	   "st2 { v16.s, v17.s }[0], [%0]"
@@ -176,7 +179,7 @@ index 6544ac0..eee752d 100644
        break;
  
      case AARCH64_RET_D1:
-@@ -484,19 +542,19 @@ compress_hfa_type (void *dest, void *reg, int h)
+@@ -484,19 +545,19 @@ compress_hfa_type (void *dest, void *reg, int h)
      case AARCH64_RET_D2:
        asm ("ldp q16, q17, [%1]\n\t"
  	   "st2 { v16.d, v17.d }[0], [%0]"
@@ -199,7 +202,7 @@ index 6544ac0..eee752d 100644
        break;
  
      default:
-@@ -560,7 +618,7 @@ ffi_prep_cif_machdep (ffi_cif *cif)
+@@ -560,7 +621,7 @@ ffi_prep_cif_machdep (ffi_cif *cif)
        flags = AARCH64_RET_INT64;
        break;
      case FFI_TYPE_POINTER:
@@ -208,7 +211,7 @@ index 6544ac0..eee752d 100644
        break;
  
      case FFI_TYPE_FLOAT:
-@@ -638,7 +696,8 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
+@@ -638,12 +699,32 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
  	      void **avalue, void *closure)
  {
    struct call_context *context;
@@ -216,43 +219,88 @@ index 6544ac0..eee752d 100644
 +  struct call_frame *frame;
 +  void *stack, *rvalue;
    struct arg_state state;
-   size_t stack_bytes, rtype_size, rsize;
+-  size_t stack_bytes, rtype_size, rsize;
++  size_t stack_bytes, rtype_size, rsize, total_length;
++  size_t context_length, context_offset, frame_length, frame_offset;
++  size_t rvalue_length, rvalue_offset, stack_length, stack_offset;
    int i, nargs, flags, isvariadic = 0;
-@@ -670,18 +729,41 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
++  char *cursor;
+   ffi_type *rtype;
+ 
++#ifdef __CHERI_PURE_CAPABILITY__
++#define SUBOBJECT_ALIGNMENT(length)					\
++	~__builtin_cheri_representable_alignment_mask(length) + 1
++#define SUBOBJECT_LENGTH(length)						\
++	__builtin_cheri_round_representable_length(length)
++#else
++#define SUBOBJECT_ALIGNMENT(length) 1
++#define SUBOBJECT_LENGTH(length) length
++#endif
++#define SUBOBJECT_LAYOUT(length, subobj_length, subobj_offset, size, type) \
++	subobj_length = SUBOBJECT_LENGTH(size);				\
++	length = __align_up(length, _Alignof(type));			\
++	length = __align_up(length, SUBOBJECT_ALIGNMENT(subobj_length)); \
++	subobj_offset = length;						\
++	length += subobj_length;
++
+   flags = cif->flags;
+   rtype = cif->rtype;
+   rtype_size = rtype->size;
+@@ -669,19 +750,58 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
+   else if (flags & AARCH64_RET_NEED_COPY)
      rsize = 16;
  
-   /* Allocate consectutive stack for everything we'll need.
+-  /* Allocate consectutive stack for everything we'll need.
 -     The frame uses 40 bytes for: lr, fp, rvalue, flags, sp */
 -  context = alloca (sizeof(struct call_context) + stack_bytes + 40 + rsize);
-+     The frame uses 40/80 bytes for: lr, fp, rvalue, flags, sp */
-+  context = alloca (sizeof(struct call_context) + stack_bytes + sizeof(struct call_frame) + rsize);
-+  _Static_assert(sizeof(struct call_context) == CALL_CONTEXT_SIZE, "");
-+  _Static_assert(sizeof(struct call_frame) == CALL_FRAME_SIZE, "");
-   stack = context + 1;
-+#ifdef __CHERI_PURE_CAPABILITY__
-+  /*
-+   * context is bounded to the alloca size, we want to pass a pointer that
-+   * points just after the alloca with the curretn stack bounds.
-+   */
-+  stack = __builtin_cheri_address_set(__builtin_cheri_stack_get(), (ptraddr_t)stack);
-+#endif
-   frame = (void*)((uintptr_t)stack + (uintptr_t)stack_bytes);
+-  stack = context + 1;
+-  frame = (void*)((uintptr_t)stack + (uintptr_t)stack_bytes);
 -  rvalue = (rsize ? (void*)((uintptr_t)frame + 40) : orig_rvalue);
-+  /* Initialize the frame with 0xaa to detect errors. */
-+  memset(context, 0xaa, sizeof(*context));
-+  memset(frame, 0xaa, sizeof(*frame));
-+  if (rsize) {
-+    /* frame currently has full stack bounds, so we can use it for derivation. */
-+    rvalue = (void*)((uintptr_t)frame + sizeof(struct call_frame));
++  /*
++   * Compute sub-objects' layouts, i.e. sizes and offsets.
++   *
++   * On CHERI-extended architectures, the allocation is appropriately padded to
++   * use precise bounds for sub-objects, including the stack and on-stack
++   * function arguments referenced by the c9 capability register.
++   */
++  total_length = 0;
++  SUBOBJECT_LAYOUT(total_length, context_length, context_offset,
++    sizeof(*context), typeof(*context));
++  _Static_assert(sizeof(*context) == CALL_CONTEXT_SIZE, "");
++  SUBOBJECT_LAYOUT(total_length, stack_length, stack_offset,
++    stack_bytes, max_align_t);
++  SUBOBJECT_LAYOUT(total_length, frame_length, frame_offset, sizeof(*frame),
++    typeof(*frame));
++  _Static_assert(sizeof(*frame) == CALL_FRAME_SIZE, "");
++  SUBOBJECT_LAYOUT(total_length, rvalue_length, rvalue_offset, rsize,
++    max_align_t);
++
++  /*
++   * Allocate consectutive stack for everything we'll need.
++   * The frame uses 40/80 bytes for: lr, fp, rvalue, flags, sp.
++   */
++  context = alloca (total_length);
++
++  cursor = (char *)context;
++  context = (struct call_context *)(cursor + context_offset);
++  stack = (void *)(cursor + stack_offset);
++  frame = (struct call_frame *)(cursor + frame_offset);
 +#ifdef __CHERI_PURE_CAPABILITY__
-+    rvalue = __builtin_cheri_bounds_set(rvalue, rsize);
++  context = __builtin_cheri_bounds_set_exact(context, context_length);
++  stack = __builtin_cheri_bounds_set_exact(stack, stack_length);
++  frame = __builtin_cheri_bounds_set_exact(frame, frame_length);
++#endif
++  /* Initialize the frame with 0xaa to detect errors. */
++  memset(context, 0xaa, context_length);
++  memset(frame, 0xaa, frame_length);
++  if (rsize) {
++    rvalue = (void *)(cursor + rvalue_offset);
++#ifdef __CHERI_PURE_CAPABILITY__
++    rvalue = __builtin_cheri_bounds_set_exact(rvalue, rvalue_length);
 +#endif
 +  } else {
 +    rvalue = orig_rvalue;
 +  }
-+#ifdef __CHERI_PURE_CAPABILITY__
-+  frame = __builtin_cheri_bounds_set(frame, sizeof(*frame));
-+#endif
  
    arg_init (&state, stack_bytes);
    for (i = 0, nargs = cif->nargs; i < nargs; i++)
@@ -264,7 +312,7 @@ index 6544ac0..eee752d 100644
        int h, t;
        void *dest;
  
-@@ -719,7 +801,14 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
+@@ -719,7 +839,14 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
  #ifdef __APPLE__
  		memcpy(d, a, s);
  #else
@@ -280,7 +328,7 @@ index 6544ac0..eee752d 100644
  #endif
  	      }
  	  }
-@@ -731,6 +820,9 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
+@@ -731,6 +858,9 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
  	case FFI_TYPE_STRUCT:
  	case FFI_TYPE_COMPLEX:
  	  {
@@ -290,7 +338,7 @@ index 6544ac0..eee752d 100644
  	    h = is_vfp_type (ty);
  	    if (h)
  	      {
-@@ -760,7 +852,8 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
+@@ -760,7 +890,8 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
                  dest = allocate_to_stack (&state, stack, ty->alignment, s);
                }
  	      }
@@ -300,7 +348,7 @@ index 6544ac0..eee752d 100644
  	      {
  		/* If the argument is a composite type that is larger than 16
  		   bytes, then the argument is copied to memory, and
-@@ -768,22 +861,43 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
+@@ -768,22 +899,43 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
  		dest = allocate_and_copy_struct_to_stack (&state, stack,
  							  ty->alignment, s,
  							  avalue[i]);
@@ -350,7 +398,46 @@ index 6544ac0..eee752d 100644
  		  }
  		else
  		  {
-@@ -895,9 +1009,10 @@ ffi_prep_closure_loc (ffi_closure *closure,
+@@ -813,10 +965,38 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
+ #endif
+     }
+ 
++#ifdef __CHERI_PURE_CAPABILITY__
++  /*
++   * Narrow bounds of c9 to on-stack arguments excluding argument structure
++   * objects passed by value in the function call which were replaced by
++   * pointers to the objects in the on-stack arguments.
++   *
++   * We can use precise bounds for the stack capability because it is already
++   * aligned to a larger size than its effective bounds.
++   */
++  if (state.nsaa > 0) {
++    FFI_ASSERT(SUBOBJECT_LENGTH(state.nsaa) <= stack_length);
++    FFI_ASSERT(stack == __align_up(stack, SUBOBJECT_ALIGNMENT(state.nsaa)));
++    context->x9 = (XREG)__builtin_cheri_bounds_set_exact(stack,
++      SUBOBJECT_LENGTH(state.nsaa));
++  } else {
++    /*
++     * CheriABI requires c9 to be set to NULL if there are no on-stack variadic
++     * arguments. In other cases, we want to clear 0xaa to indicate c9 was
++     * correctly handled.
++     */
++    context->x9 = (XREG)NULL;
++  }
++#endif
++
+   ffi_call_SYSV (context, frame, fn, rvalue, flags, closure);
+ 
+   if (flags & AARCH64_RET_NEED_COPY)
+     memcpy (orig_rvalue, rvalue, rtype_size);
++
++#undef SUBOBJECT_LENGTH
++#undef SUBOBJECT_ALIGNMENT
++#undef SUBOBJECT_LAYOUT
+ }
+ 
+ void
+@@ -895,9 +1075,10 @@ ffi_prep_closure_loc (ffi_closure *closure,
    /* Initialize the dynamic trampoline. */
    memcpy (tramp, trampoline, sizeof(trampoline));
  
@@ -406,7 +493,7 @@ index d5622e1..91585c3 100644
  #endif
  
 diff --git src/aarch64/internal.h src/aarch64/internal.h
-index b5d102b..a6dab35 100644
+index b5d102b..e8c4df6 100644
 --- src/aarch64/internal.h
 +++ src/aarch64/internal.h
 @@ -22,7 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
@@ -418,7 +505,7 @@ index b5d102b..a6dab35 100644
  #define AARCH64_RET_UNUSED4	4
  #define AARCH64_RET_UNUSED5	5
  #define AARCH64_RET_UNUSED6	6
-@@ -64,8 +64,14 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+@@ -64,8 +64,19 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
  #define AARCH64_FLAG_VARARG	(1 << 8)
  
  #define N_X_ARG_REG		8
@@ -429,12 +516,17 @@ index b5d102b..a6dab35 100644
 +#endif
  #define N_V_ARG_REG		8
 -#define CALL_CONTEXT_SIZE	(N_V_ARG_REG * 16 + N_X_ARG_REG * 8)
++#ifdef __CHERI_PURE_CAPABILITY__
++#define CALL_CONTEXT_SIZE						\
++	(N_V_ARG_REG * 16 + N_X_ARG_REG * X_REG_SIZE + X_REG_SIZE)
++#else
 +#define CALL_CONTEXT_SIZE	(N_V_ARG_REG * 16 + N_X_ARG_REG * X_REG_SIZE)
++#endif
 +#define CALL_FRAME_SIZE		(5 * X_REG_SIZE)
  
  #if defined(FFI_EXEC_STATIC_TRAMP)
  /*
-@@ -82,6 +88,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+@@ -82,6 +93,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
  #ifdef LIBFFI_ASM
  
  #ifdef HAVE_PTRAUTH
@@ -444,7 +536,7 @@ index b5d102b..a6dab35 100644
  #define SIGN_LR pacibsp
  #define SIGN_LR_WITH_REG(x) pacib lr, x
  #define AUTH_LR_AND_RET retab
-@@ -91,7 +100,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+@@ -91,7 +105,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
  #else
  #define SIGN_LR
  #define SIGN_LR_WITH_REG(x)
@@ -457,7 +549,7 @@ index b5d102b..a6dab35 100644
  #define BRANCH_AND_LINK_TO_REG blr
  #define BRANCH_TO_REG br
 diff --git src/aarch64/sysv.S src/aarch64/sysv.S
-index eeaf3f8..706cdeb 100644
+index eeaf3f8..becc717 100644
 --- src/aarch64/sysv.S
 +++ src/aarch64/sysv.S
 @@ -46,40 +46,71 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
@@ -571,7 +663,7 @@ index eeaf3f8..706cdeb 100644
 +	cfi_rel_offset (GP_REG(29), 0)
 +	cfi_rel_offset (GP_REG(30), GP_REG_SIZE)
 +
-+	mov	GP_REG(9), GP_REG(2)			/* save fn */
++	mov	GP_REG(10), GP_REG(2)			/* save fn */
 +	mov	GP_REG(8), GP_REG(3)			/* install structure return */
  #ifdef FFI_GO_CLOSURES
 -	mov	x18, x5			/* install static chain */
@@ -582,7 +674,7 @@ index eeaf3f8..706cdeb 100644
  
  	/* Load the vector argument passing registers, if necessary.  */
  	tbz	w4, #AARCH64_FLAG_ARG_V_BIT, 1f
-@@ -116,30 +151,32 @@ CNAME(ffi_call_SYSV):
+@@ -116,30 +151,35 @@ CNAME(ffi_call_SYSV):
  1:
  	/* Load the core argument passing registers, including
  	   the structure return pointer.  */
@@ -594,12 +686,15 @@ index eeaf3f8..706cdeb 100644
 +	ldp     GP_REG(2), GP_REG(3), [sp, #16*N_V_ARG_REG + 2*GP_REG_SIZE]
 +	ldp     GP_REG(4), GP_REG(5), [sp, #16*N_V_ARG_REG + 4*GP_REG_SIZE]
 +	ldp     GP_REG(6), GP_REG(7), [sp, #16*N_V_ARG_REG + 6*GP_REG_SIZE]
++#ifdef __CHERI_PURE_CAPABILITY__
++	ldr     GP_REG(9), [sp, #16*N_V_ARG_REG + 8*GP_REG_SIZE]
++#endif
  
  	/* Deallocate the context, leaving the stacked arguments.  */
  	add	sp, sp, #CALL_CONTEXT_SIZE
  
 -	BRANCH_AND_LINK_TO_REG     x9			/* call fn */
-+	BRANCH_AND_LINK_TO_REG     BR_PTR_REG(9)			/* call fn */
++	BRANCH_AND_LINK_TO_REG     BR_PTR_REG(10)		/* call fn */
  
 -	ldp	x3, x4, [x29, #16]	/* reload rvalue and flags */
 +	ldp	GP_REG(3), GP_REG(4), [PTR_REG(29), #2*GP_REG_SIZE]	/* reload rvalue and flags */
@@ -628,7 +723,7 @@ index eeaf3f8..706cdeb 100644
  
  	/* Note that each table entry is 2 insns, and thus 8 bytes.
  	   For integer data, note that we're storing into ffi_arg
-@@ -148,11 +185,11 @@ CNAME(ffi_call_SYSV):
+@@ -148,11 +188,11 @@ CNAME(ffi_call_SYSV):
  	.align	4
  0:	b 99f				/* VOID */
  	nop
@@ -643,7 +738,7 @@ index eeaf3f8..706cdeb 100644
  	b 99f
  4:	brk	#1000			/* UNUSED */
  	b 99f
-@@ -162,66 +199,63 @@ CNAME(ffi_call_SYSV):
+@@ -162,66 +202,63 @@ CNAME(ffi_call_SYSV):
  	b 99f
  7:	brk	#1000			/* UNUSED */
  	b 99f
@@ -730,7 +825,7 @@ index eeaf3f8..706cdeb 100644
  	.size CNAME(ffi_call_SYSV), .-CNAME(ffi_call_SYSV)
  #endif
  
-@@ -244,13 +278,18 @@ CNAME(ffi_call_SYSV):
+@@ -244,13 +281,18 @@ CNAME(ffi_call_SYSV):
  #define ffi_closure_SYSV_FS (8*2 + CALL_CONTEXT_SIZE + 64)
  
  	.align 4
@@ -752,7 +847,7 @@ index eeaf3f8..706cdeb 100644
  
  	/* Save the argument passing vector registers.  */
  	stp     q0, q1, [sp, #16 + 0]
-@@ -260,58 +299,63 @@ CNAME(ffi_closure_SYSV_V):
+@@ -260,58 +302,63 @@ CNAME(ffi_closure_SYSV_V):
  	b	0f
  	cfi_endproc
  
@@ -840,7 +935,7 @@ index eeaf3f8..706cdeb 100644
  	nop
  4:	brk	#1000			/* UNUSED */
  	nop
-@@ -321,93 +365,94 @@ CNAME(ffi_closure_SYSV):
+@@ -321,93 +368,94 @@ CNAME(ffi_closure_SYSV):
  	nop
  7:	brk	#1000			/* UNUSED */
  	nop
@@ -967,7 +1062,7 @@ index eeaf3f8..706cdeb 100644
  	.size	CNAME(ffi_closure_SYSV_alt), . - CNAME(ffi_closure_SYSV_alt)
  #endif
  
-@@ -431,22 +476,24 @@ CNAME(ffi_closure_SYSV_alt):
+@@ -431,22 +479,24 @@ CNAME(ffi_closure_SYSV_alt):
   * - restore the stack pointer to what it was when the trampoline was invoked.
   */
  	.align	AARCH64_TRAMP_MAP_SHIFT
@@ -1002,7 +1097,7 @@ index eeaf3f8..706cdeb 100644
  	.size	CNAME(trampoline_code_table), . - CNAME(trampoline_code_table)
  #endif
  	.align	AARCH64_TRAMP_MAP_SHIFT
-@@ -457,18 +504,20 @@ CNAME(trampoline_code_table):
+@@ -457,18 +507,20 @@ CNAME(trampoline_code_table):
  #ifdef __MACH__
  #include <mach/machine/vm_param.h>
      .align PAGE_MAX_SHIFT
@@ -1029,7 +1124,7 @@ index eeaf3f8..706cdeb 100644
      	.size	CNAME(ffi_closure_trampoline_table_page), . - CNAME(ffi_closure_trampoline_table_page)
      #endif
  #endif
-@@ -477,12 +526,17 @@ CNAME(ffi_closure_trampoline_table_page):
+@@ -477,12 +529,17 @@ CNAME(ffi_closure_trampoline_table_page):
  
  #ifdef FFI_GO_CLOSURES
  	.align 4
@@ -1050,7 +1145,7 @@ index eeaf3f8..706cdeb 100644
  
  	/* Save the argument passing vector registers.  */
  	stp     q0, q1, [sp, #16 + 0]
-@@ -492,39 +546,38 @@ CNAME(ffi_go_closure_SYSV_V):
+@@ -492,39 +549,38 @@ CNAME(ffi_go_closure_SYSV_V):
  	b	0f
  	cfi_endproc
  
