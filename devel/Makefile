@@ -1226,6 +1226,7 @@
     SUBDIR += libdatovka
     SUBDIR += libdatrie
     SUBDIR += libdbusmenu
+    SUBDIR += libdbusmenu-lxqt
     SUBDIR += libdbusmenu-qt
     SUBDIR += libddoc
     SUBDIR += libddwaf
@@ -1387,6 +1388,7 @@
     SUBDIR += libqb
     SUBDIR += libqcow
     SUBDIR += libqsbr
+    SUBDIR += libqt6xdg
     SUBDIR += libqtxdg
     SUBDIR += libr3
     SUBDIR += librcc
@@ -1608,6 +1610,7 @@
     SUBDIR += luv
     SUBDIR += lwp
     SUBDIR += lxqt-build-tools
+    SUBDIR += lxqt2-build-tools
     SUBDIR += lyra
     SUBDIR += m17n-db
     SUBDIR += m17n-docs
