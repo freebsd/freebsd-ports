@@ -1,3 +1,40 @@
+  <vuln vid="92cd1c03-2940-11ef-bc02-001b217b3468">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.0.0</ge><lt>17.0.2</lt></range>
+	<range><ge>16.11.0</ge><lt>16.11.4</lt></range>
+	<range><ge>5.1</ge><lt>16.10.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/06/12/patch-release-gitlab-17-0-2-released/">
+	  <p>ReDoS in gomod dependency linker</p>
+	  <p>ReDoS in CI interpolation (fix bypass)</p>
+	  <p>ReDoS in Asana integration issue mapping when webhook is called</p>
+	  <p>XSS and content injection when viewing raw XHTML files on iOS devices</p>
+	  <p>Missing agentk request validation could cause KAS to panic</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-1495</cvename>
+      <cvename>CVE-2024-1736</cvename>
+      <cvename>CVE-2024-1963</cvename>
+      <cvename>CVE-2024-4201</cvename>
+      <cvename>CVE-2024-5469</cvename>
+      <url>https://about.gitlab.com/releases/2024/06/12/patch-release-gitlab-17-0-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-06-12</discovery>
+      <entry>2024-06-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="479df73e-2838-11ef-9cab-4ccc6adda413">
     <topic>plasma[56]-plasma-workspace -- Unauthorized users can access session manager</topic>
     <affects>
