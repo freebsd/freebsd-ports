@@ -3304,3 +3304,5 @@ databases/galera|databases/galera26|2024-06-11|Has expired: Does not build. Supe
 databases/tsearch_extras||2024-06-12|Has no consumer both in ports and upstream project
 lang/zig011||2024-06-12|No consumers in ports
 devel/py-ZopeUndo||2024-06-13|No consumers in ports
+multimedia/audacious-qt6|multimedia/audacious|2024-06-13|qt6 flavor is now the default flavor, following upstream change
+multimedia/audacious-plugins-qt6|multimedia/audacious-plugins|2024-06-13|qt6 flavor is now the default flavor, following upstream change
