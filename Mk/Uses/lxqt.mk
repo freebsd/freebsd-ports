@@ -2,26 +2,32 @@
 # life easier, when dealing with ports related to the LXQt Desktop Environment.
 #
 # Feature:	lxqt
-# Usage:	USES=lxqt
-# Valid ARGS:	does not require args
+# Usage:	USES=lxqt:<version>
+# Valid ARGS:	1, 2
 #
 # Available LXQt components are:
 #
-# buildtools	- Helpers CMake modules
-# globalkeys	- Keyboard shortcuts daemon
-# libfmqt	- Libfm Qt bindings
-# lxqt		- LXQt core library
-# qtxdg		- Qt implementation of freedesktop.org xdg specs
+# buildtools / buildtools2	- Helpers CMake modules
+# globalkeys			- Keyboard shortcuts daemon
+# libfmqt / libfmqt6		- Libfm Qt5/Qt6 bindings
+# lxqt				- LXQt core library
+# qtxdg / qt6xdg		- Qt5/Qt6 implementation of freedesktop.org xdg specs
+# sysstat / sysstat-qt6		- Qt5/Qt6 library to query system information
 #
 # MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_LXQT_MK)
 _INCLUDE_USES_LXQT_MK=	yes
 
-.  if !empty(lxqt_ARGS)
-IGNORE=	Incorrect 'USES+=lxqt:${lxqt_ARGS} takes no arguments
+.  if empty(lxqt_ARGS)
+IGNORE=	Incorrect 'USES+=lxqt:${lxqt_ARGS} takes arguments 1 or 2
 .  endif
 
+.  if ${lxqt_ARGS:N1:N2}
+IGNORE=	Unknown argument for USES=lxqt: ${lxqt_ARGS:N1:N2}
+.  endif
+
+_LXQT_VER=	${lxqt_ARGS}
 _LXQT_PROJECT=	${DISTNAME:S/-${DISTVERSION}//:tl}
 
 MASTER_SITE_LXQT+= \
@@ -32,6 +38,7 @@ MASTER_SITE_LXQT_SUBDIR=	${_LXQT_PROJECT}
 MASTER_SITES?=	${MASTER_SITE_LXQT}
 MASTER_SITE_SUBDIR?=	${MASTER_SITE_LXQT_SUBDIR}
 
+DISTNAME=	${PORTNAME:S/2//:S/6//}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 DIST_SUBDIR=	lxqt
 
 PLIST_SUB+=	LXQT_INCLUDEDIR="include/lxqt" \
@@ -42,22 +49,31 @@ PLIST_SUB+=	LXQT_INCLUDEDIR="include/lxqt" \
 CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${PREFIX}/share/man
 
 # Available LXQt components are:
-_USE_LXQT_ALL=	buildtools globalkeys libfmqt lxqt qtxdg
+_USE_LXQT1_ONLY=buildtools libfmqt qtxdg sysstat
+
+_USE_LXQT2_ONLY=buildtools2 globalkeys libfmqt6 lxqt qt6xdg sysstat-qt6
+
+_USE_LXQT_ALL=	${_USE_LXQT${_LXQT_VER}_ONLY}
 
 _DATAROOTDIR=	${LOCALBASE}/share
 
 buildtools_BUILD_DEPENDS=	${_DATAROOTDIR}/cmake/lxqt-build-tools/lxqt-build-tools-config.cmake:devel/lxqt-build-tools
+buildtools2_BUILD_DEPENDS=	${_DATAROOTDIR}/cmake/lxqt2-build-tools/lxqt2-build-tools-config.cmake:devel/lxqt2-build-tools
 
 globalkeys_LIB_DEPENDS=	liblxqt-globalkeys.so:x11/lxqt-globalkeys
-
 globalkeys_USE_LXQT_REQ=	lxqt
 
 libfmqt_LIB_DEPENDS=	libfm-qt.so:x11/libfm-qt
+libfmqt6_LIB_DEPENDS=	libfm-qt6.so:x11/libfm-qt6
 
 lxqt_LIB_DEPENDS=	liblxqt.so:devel/liblxqt
-lxqt_USE_LXQT_REQ=	qtxdg
+lxqt_USE_LXQT_REQ=	qt6xdg
 
 qtxdg_LIB_DEPENDS=	libQt5Xdg.so:devel/libqtxdg
+qt6xdg_LIB_DEPENDS=	libQt6Xdg.so:devel/libqt6xdg
+
+sysstat_LIB_DEPENDS=	libsysstat-qt5:devel/libsysstat
+sysstat-qt6_LIB_DEPENDS=libsysstat-qt6.so:devel/libsysstat-qt6
 
 .  if defined(USE_LXQT)
 

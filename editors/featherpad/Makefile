@@ -1,24 +1,23 @@
 PORTNAME=		featherpad
-PORTVERSION=		1.4.1
+PORTVERSION=		1.5.1
 DISTVERSIONPREFIX=	V
 CATEGORIES=		editors
 
-MAINTAINER=	jsm@FreeBSD.org
-COMMENT=	Lightweight Qt5 plain-text editor
+MAINTAINER=	lxqt@FreeBSD.org
+COMMENT=	Lightweight Qt6 plain-text editor
 WWW=		https://github.com/tsujan/FeatherPad
 
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 
-USES=		compiler:c++11-lang desktop-file-utils pkgconfig cmake qt:5 gl xorg
+USES=		compiler:c++17-lang desktop-file-utils pkgconfig cmake qt:6 gl xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tsujan
 GH_PROJECT=	FeatherPad
 
-USE_QT=		buildtools:build qmake:build core dbus gui printsupport network \
-		svg widgets x11extras linguisttools
+USE_QT=		base:run tools:build svg
 USE_XORG=	x11 sm ice xext
 USE_GL=		gl
 

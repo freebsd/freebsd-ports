@@ -3,7 +3,7 @@ PORTVERSION=	1.4.0
 CATEGORIES=	x11
 MASTER_SITES=	LXQT
 
-MAINTAINER=	jsm@FreeBSD.org
+MAINTAINER=	lxqt@FreeBSD.org
 COMMENT=	Qt port of libfm
 WWW=		https://github.com/lxqt/libfm-qt
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libmenu-cache.so:x11/menu-cache \
 BUILD_DEPENDS=	lxqt-menu-data>=1.4.1:x11/lxqt-menu-data
 RUN_DEPENDS=	lxqt-menu-data>=1.4.1:x11/lxqt-menu-data
 
-USES=	cmake compiler:c++14-lang gettext-runtime lxqt perl5 pkgconfig \
+USES=	cmake compiler:c++14-lang gettext-runtime lxqt:1 perl5 pkgconfig \
 	qt:5 gnome shared-mime-info tar:xz xorg
 USE_PERL5=	build
 USE_QT=	buildtools:build qmake:build core gui linguisttools widgets \

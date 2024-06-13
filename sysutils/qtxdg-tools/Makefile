@@ -1,17 +1,17 @@
 PORTNAME=	qtxdg-tools
-PORTVERSION=	3.12.0
+PORTVERSION=	4.0.0
 CATEGORIES=	sysutils
-MASTER_SITES=	LXQT/${PORTNAME}
+MASTER_SITES=	LXQT
 
-MAINTAINER=	jsm@FreeBSD.org
-COMMENT=	User tools for libqtxdg
+MAINTAINER=	lxqt@FreeBSD.org
+COMMENT=	User tools for libqt6xdg
 WWW=		https://github.com/lxqt/qtxdg-tools
 
 LICENSE=	LGPL21+
 
-USES=		cmake compiler:c++14-lang gnome lxqt pkgconfig qt:5 tar:xz lxqt
+USES=		cmake compiler:c++17-lang gnome pkgconfig lxqt:2 qt:6 tar:xz
 USE_GNOME=	glib20
-USE_QT=		buildtools:build qmake:build core dbus gui svg widgets xml
-USE_LXQT=	buildtools qtxdg
+USE_QT=		tools:build base:run
+USE_LXQT=	buildtools2 qt6xdg
 
 .include <bsd.port.mk>

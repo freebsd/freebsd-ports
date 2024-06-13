@@ -1,0 +1,16 @@
+--- startlxqt.in.orig	2024-06-12 16:03:13 UTC
++++ startlxqt.in
+@@ -6,6 +6,13 @@ contains()
+     [ "$str" = "$substr" -o -z "${str##$substr:*}" -o -z "${str##*:$substr:*}" -o -z "${str%%*:$substr}" ]
+ }
+ 
++if [ -f /var/db/zoneinfo ]; then TZ=`cat /var/db/zoneinfo`;
++        cmp -s /usr/share/zoneinfo/$TZ /etc/localtime
++        if [ $? -eq 0 ]; then
++                export TZ="${TZ}"
++        fi
++fi
++
+ if [ -z "$XDG_DATA_HOME" ]; then
+     export XDG_DATA_HOME="$HOME/.local/share"
+ fi

@@ -27,10 +27,12 @@ share/metainfo/screengrab.metainfo.xml
 %%DATADIR%%/translations/screengrab_it.qm
 %%DATADIR%%/translations/screengrab_ja.qm
 %%DATADIR%%/translations/screengrab_ko.qm
+%%DATADIR%%/translations/screengrab_lg.qm
 %%DATADIR%%/translations/screengrab_lt.qm
 %%DATADIR%%/translations/screengrab_nb_NO.qm
 %%DATADIR%%/translations/screengrab_nl.qm
 %%DATADIR%%/translations/screengrab_oc.qm
+%%DATADIR%%/translations/screengrab_pa.qm
 %%DATADIR%%/translations/screengrab_pl.qm
 %%DATADIR%%/translations/screengrab_pt.qm
 %%DATADIR%%/translations/screengrab_pt_BR.qm
