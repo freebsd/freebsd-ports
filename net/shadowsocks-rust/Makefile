@@ -19,6 +19,8 @@ USE_RC_SUBR=	sslocal-rust \
 USE_GITHUB=	yes
 GH_ACCOUNT=	shadowsocks
 
+RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
+
 CARGO_CRATES=	addr2line-0.22.0 \
 		adler-1.0.2 \
 		aead-0.5.2 \
