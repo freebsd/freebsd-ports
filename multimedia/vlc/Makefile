@@ -1,5 +1,6 @@
 PORTNAME=	vlc
 DISTVERSION=	3.0.21
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio net www
 MASTER_SITES=	https://get.videolan.org/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -30,7 +31,7 @@ RUN_DEPENDS=	ffmpeg>=3.4.1,1:multimedia/ffmpeg
 USES=		compiler:c++17-lang cpe desktop-file-utils elfctl gettext-tools \
 		gl gmake gnome iconv:wchar_t libtool localbase pathfix pkgconfig \
 		tar:xz
-USE_GL=		gl
+USE_GL=		opengl
 
 CPE_VENDOR=	videolan
 
@@ -364,8 +365,8 @@ WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_CONFIGURE_ENABLE=	wayland
 
 X11_LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms
-X11_USES=		gl xorg
-X11_USE=		GL=gl XORG=xcb,xorgproto,sm,ice,x11
+X11_USES=		xorg
+X11_USE=		XORG=xcb,xorgproto,sm,ice,x11
 X11_CONFIGURE_ENABLE=	xcb xvideo
 X11_CONFIGURE_WITH=	x
 
@@ -393,6 +394,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e '\|LIBS|s|-lrt||' \
 		-e 's|LIBS="-llirc_client|LIBS="$$LIBS_lirc|' \
+		-e '/PKG_CONFIG/s|\"gl\"|"opengl"|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${WITH_CDROM_DEVICE}|g' \
 		-e 's|/dev/dvd|${WITH_DVD_DEVICE}|g' \
