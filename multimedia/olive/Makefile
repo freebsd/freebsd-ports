@@ -1,5 +1,5 @@
 PORTNAME=	olive
-DISTVERSION=	0.1.2-20230320
+DISTVERSION=	0.1.2-20240513
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-video-editor
 
@@ -30,7 +30,7 @@ USE_GL=		gl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	olive-editor
-GH_TAGNAME=	8ca1672
+GH_TAGNAME=	f7e1bff
 GH_TUPLE=	olive-editor:core:2777928:core/ext/core \
 		KDAB:KDDockWidgets:8d2d0a5:KDDockWidgets/ext/KDDockWidgets
 
