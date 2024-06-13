@@ -9,6 +9,8 @@ COMMENT=	PostgreSQL extension for vector similarity search
 
 LICENSE=	PostgreSQL
 
+NOT_FOR_ARCHS=		i386
+
 USES=		gmake pgsql:12+
 WANT_PGSQL=	server
 
