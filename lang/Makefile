@@ -391,7 +391,6 @@
     SUBDIR += ypsilon
     SUBDIR += zephir
     SUBDIR += zig
-    SUBDIR += zig-devel
     SUBDIR += zig010
 
 .include <bsd.port.subdir.mk>
