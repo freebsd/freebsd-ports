@@ -250,6 +250,8 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-samba4.so
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/bug13653.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/check_output.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/downgradedatabase.py
+%%PYTHON_SITELIBDIR%%/samba/tests/blackbox/http_chunk.py
+%%PYTHON_SITELIBDIR%%/samba/tests/blackbox/http_content.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/mdsearch.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/ndrdump.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/netads_dns.py
