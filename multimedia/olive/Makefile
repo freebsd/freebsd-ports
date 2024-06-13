@@ -1,8 +1,10 @@
 PORTNAME=	olive
 DISTVERSION=	0.1.2-20230320
-PORTREVISION=	6
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-video-editor
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	311eeb72944f93f873d1cd1784ee2bf423e1e7c2.patch:-p1 # https://github.com/olive-editor/olive/pull/2294, OpenColorIO 2.3 compatibility
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Non-linear video editor
@@ -10,8 +12,6 @@ WWW=		https://olivevideoeditor.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		incompatible with opencolorio-2.3.2, see https://github.com/olive-editor/olive/issues/2334
 
 BUILD_DEPENDS=	frei0r>0:graphics/frei0r
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
