@@ -8,6 +8,7 @@ bin/open
 bin/properties
 bin/view
 include/Desktop/Browser.h
+include/Desktop/Browser/browser.h
 include/Desktop/Browser/desktop.h
 include/Desktop/Browser/plugin.h
 include/Desktop/Browser/vfs.h
