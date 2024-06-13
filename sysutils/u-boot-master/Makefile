@@ -27,7 +27,8 @@ BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 BUILD_DEPENDS+=	e2fsprogs-libuuid>=0:misc/e2fsprogs-libuuid \
 		gnutls>=0:security/gnutls
 
-USES=		bison gmake python:build pkgconfig shebangfix tar:bz2
+USES=		bison compiler:c11 gmake python:build pkgconfig shebangfix ssl \
+		tar:bz2
 BINARY_ALIAS=	bison=${LOCALBASE}/bin/bison dtc=${LOCALBASE}/bin/dtc sed=gsed python3=${PYTHON_CMD}
 
 SHEBANG_FILES=	tools/binman/binman
@@ -36,8 +37,9 @@ UBOOT_DIR=	share/u-boot/${PORTNAME}${PKGNAMESUFFIX}
 INST=		${PREFIX}/${UBOOT_DIR}
 DESCR?=		${.CURDIR}/pkg-descr
 
-MAKE_ENV+=	V=1 CROSS_COMPILE=${CROSS_COMPILE} PYTHON=${PYTHON_CMD} CC=clang
-MAKE_ARGS+=	${ARCHFLAGS}
+MAKE_ENV+=	CROSS_COMPILE=${CROSS_COMPILE} PYTHON=${PYTHON_CMD}
+MAKE_ARGS+=	${ARCHFLAGS} V=1 HOSTCFLAGS="${CFLAGS} -I${OPENSSLINC}" \
+		HOSTLDFLAGS="${LDFLAGS} -L${OPENSSLLIB}"
 
 NO_ARCH=	yes
 
