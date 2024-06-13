@@ -1,6 +1,7 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.41.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -82,6 +83,10 @@ post-patch:
 # Respect PREFIX for wallpapers
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
 		${WRKSRC}/src/render/OpenGL.cpp
+# XXX Replace linprocfs(4) with sysctl(3)
+	@${REINPLACE_CMD} -e 's,/proc,${LINUXBASE}&,g' \
+		${WRKSRC}/src/desktop/Window.cpp \
+		${WRKSRC}/src/plugins/HookSystem.cpp
 
 .ifdef GH_TUPLE
 post-configure:
