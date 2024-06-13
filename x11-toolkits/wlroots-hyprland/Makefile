@@ -8,7 +8,7 @@ PATCH_SITES+=	https://github.com/hyprwm/wlroots-hyprland/raw/5c1d51c5a279/patche
 PATCHFILES+=	surface-nondivisible-by-scale.patch:-p1:hyprland
 PATCHFILES+=	nvidia-hardware-cursors.patch:-p1:hyprland
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	cc6a7a04418f.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4697
+PATCHFILES+=	6e6c4408d36d.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4697
 PATCHFILES+=	4b4f76cc1357.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4614
 
 MAINTAINER=	jbeich@FreeBSD.org
