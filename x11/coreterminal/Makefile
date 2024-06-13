@@ -1,6 +1,6 @@
 PORTNAME=	coreterminal
 DISTVERSION=	4.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://gitlab.com/cubocore/coreterminal
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libqtermwidget5.so:x11-toolkits/qtermwidget \
+LIB_DEPENDS=	libqtermwidget5.so:x11-toolkits/qtermwidget-qt5 \
 		libcprime-core.so:deskutils/libcprime
 RUN_DEPENDS=	coregarage:deskutils/coregarage
 
