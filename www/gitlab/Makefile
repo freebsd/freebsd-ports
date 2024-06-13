@@ -1,17 +1,16 @@
 PORTNAME=	gitlab-${FLAVOR:Uce}
-PORTVERSION=	17.0.1
+PORTVERSION=	17.0.2
 DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
 .endif
-PORTREVISION=	3
 
 CATEGORIES=	www devel
 
 # include patch to fix database migration
 #https://gitlab.com/gitlab-org/gitlab/-/merge_requests/153560.patch
-PATCH_SITES=	https://gitlab.com/gitlab-org/gitlab/-/merge_requests/
-PATCHFILES+=	153560.patch:-p1 # https://gitlab.com/gitlab-org/gitlab/-/merge_requests/153560
+#PATCH_SITES=	https://gitlab.com/gitlab-org/gitlab/-/merge_requests/
+#PATCHFILES+=	153560.patch:-p1 # https://gitlab.com/gitlab-org/gitlab/-/merge_requests/153560
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Web GUI for managing git repositories
@@ -260,7 +259,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-net-ntp>0:net/rubygem-net-ntp \
 	rubygem-ssh_data>=1.3<2:security/rubygem-ssh_data \
 	rubygem-spamcheck>=1.3.0<1.4:net/rubygem-spamcheck \
-	rubygem-gitaly>=17.0.0.pre.rc2<17.1:net/rubygem-gitaly \
+	rubygem-gitaly>=${PORTVERSION}:net/rubygem-gitaly \
 	rubygem-kas-grpc>=0.5.0,1<0.6.0,1:net/rubygem-kas-grpc \
 	rubygem-grpc>=1.63.0<2:net/rubygem-grpc \
 	rubygem-google-protobuf>=3.25.3<4:devel/rubygem-google-protobuf \
