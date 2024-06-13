@@ -49,8 +49,10 @@ include/glaze/csv.hpp
 include/glaze/csv/read.hpp
 include/glaze/csv/write.hpp
 include/glaze/exceptions/binary_exceptions.hpp
+include/glaze/exceptions/core_exceptions.hpp
 include/glaze/exceptions/csv_exceptions.hpp
 include/glaze/exceptions/json_exceptions.hpp
+include/glaze/exceptions/json_schema_exceptions.hpp
 include/glaze/ext/README.md
 include/glaze/ext/cli_menu.hpp
 include/glaze/ext/eigen.hpp
