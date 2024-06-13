@@ -1,6 +1,6 @@
 PORTNAME=	shadowsocks-rust
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.19.3
+DISTVERSION=	1.19.4
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -44,7 +44,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		async-trait-0.1.80 \
 		atomic-waker-1.1.2 \
 		autocfg-1.3.0 \
-		backtrace-0.3.72 \
+		backtrace-0.3.73 \
 		base16ct-0.2.0 \
 		base64-0.13.1 \
 		base64-0.21.7 \
@@ -76,8 +76,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		chacha20poly1305-0.10.1 \
 		chrono-0.4.38 \
 		cipher-0.4.4 \
-		clap-4.5.6 \
-		clap_builder-4.5.6 \
+		clap-4.5.7 \
+		clap_builder-4.5.7 \
 		clap_lex-0.7.1 \
 		cmake-0.1.50 \
 		colorchoice-1.0.1 \
@@ -161,8 +161,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		http-0.2.12 \
 		http-1.1.0 \
 		http-body-1.0.0 \
-		http-body-util-0.1.1 \
-		httparse-1.9.1 \
+		http-body-util-0.1.2 \
+		httparse-1.9.3 \
 		httpdate-1.0.3 \
 		humantime-2.1.0 \
 		hyper-1.3.1 \
@@ -182,7 +182,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		icu_provider-1.5.0 \
 		icu_provider_macros-1.5.0 \
 		idna-0.4.0 \
-		idna-0.5.0 \
 		idna-1.0.0 \
 		indexmap-2.2.6 \
 		inotify-0.9.6 \
@@ -232,7 +231,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
 		num_threads-0.1.7 \
-		object-0.35.0 \
+		object-0.36.0 \
 		once_cell-1.19.0 \
 		opaque-debug-0.3.1 \
 		openssl-0.10.64 \
@@ -349,7 +348,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		syn-2.0.66 \
 		sync_wrapper-0.1.2 \
 		synstructure-0.13.1 \
-		sysexits-0.7.14 \
+		sysexits-0.8.0 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
 		tap-1.0.1 \
