@@ -20,11 +20,6 @@ RUN_DEPENDS=	xdg-desktop-portal>0:deskutils/xdg-desktop-portal \
 		grim:x11/grim \
 		slurp:x11/slurp
 
-FLAVORS=	qt6 qt5
-qt5_PKGNAMESUFFIX=	-qt5
-qt5_CONFLICTS_INSTALL=	${PORTNAME}
-qt6_CONFLICTS_INSTALL=	${PORTNAME}-qt5
-
 USES=		cmake compiler:c++11-lib gl pkgconfig qt:6
 USE_GITHUB=	yes
 USE_GL=		gbm
@@ -37,11 +32,6 @@ PLIST_FILES=	bin/hyprland-share-picker \
 		libexec/${PORTNAME} \
 		share/dbus-1/services/org.freedesktop.impl.portal.desktop.hyprland.service \
 		share/xdg-desktop-portal/portals/hyprland.portal
-
-.if ${FLAVOR:U} == qt5
-USES:=		${USES:S/qt:6/qt:5/}
-USE_QT=		qmake:build buildtools:build core gui wayland:run widgets
-.endif
 
 # XXX Drop after FreeBSD 14.0 EOL around 2024-10-01
 .if exists(/usr/lib/libc++.so) && !exists(/usr/include/c++/v1/__format/write_escaped.h)
