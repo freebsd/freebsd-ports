@@ -4280,7 +4280,6 @@
     SUBDIR += py-PyUtilib
     SUBDIR += py-QtPy
     SUBDIR += py-RPyC
-    SUBDIR += py-ZopeUndo
     SUBDIR += py-about-time
     SUBDIR += py-absl
     SUBDIR += py-absl-py
