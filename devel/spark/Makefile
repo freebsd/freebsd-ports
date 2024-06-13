@@ -14,6 +14,9 @@ WWW=		http://spark.apache.org/
 
 LICENSE=	APACHE20
 
+BROKEN_armv6=	fails to build: maven-assembly-plugin: Failed to retrieve numeric file attributes
+BROKEN_armv7=	fails to build: maven-assembly-plugin: Failed to retrieve numeric file attributes
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsnappyjava.so:archivers/snappy-java \
 		bash:shells/bash \
 		maven>0:devel/maven
@@ -26,9 +29,6 @@ USE_JAVA=	yes
 USE_RC_SUBR=	spark_master spark_worker
 SHEBANG_FILES=	bin/sparkR
 
-MAKE_ENV+=	JAVA_HOME=${JAVA_HOME} \
-		MAVEN_OPTS="-Xmx2g -XX:ReservedCodeCacheSize=2g"
-
 NO_ARCH=	yes
 
 SUB_LIST=	SPARK_GROUP=spark \
@@ -40,6 +40,15 @@ GROUPS=		spark
 PLIST_SUB=	VER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH:Marmv?} || ${ARCH} == "i386"
+MAKE_ENV+=	MAVEN_OPTS="-Xmx1g -XX:ReservedCodeCacheSize=1g" \
+		JAVA_HOME=${JAVA_HOME}
+.else
+MAKE_ENV+=	MAVEN_OPTS="-Xmx2g -XX:ReservedCodeCacheSize=2g" \
+		JAVA_HOME=${JAVA_HOME}
+.endif
+
 
 .if ${ARCH} == "amd64"
 JAVA_ARCH=	x86_64
