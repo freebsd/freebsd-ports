@@ -1,6 +1,6 @@
 PORTNAME=	fnm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.37.0
+DISTVERSION=	1.37.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -53,10 +53,10 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		cipher-0.4.4 \
-		clap-4.5.4 \
-		clap_builder-4.5.2 \
-		clap_complete-4.5.2 \
-		clap_derive-4.5.4 \
+		clap-4.5.7 \
+		clap_builder-4.5.7 \
+		clap_complete-4.5.5 \
+		clap_derive-4.5.5 \
 		clap_lex-0.7.0 \
 		colorchoice-1.0.1 \
 		colored-2.1.0 \
@@ -295,7 +295,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		yansi-0.5.1 \
 		zeroize-1.8.1 \
 		zeroize_derive-1.4.2 \
-		zip-2.1.1 \
+		zip-2.1.2 \
 		zopfli-0.8.1 \
 		zstd-0.13.1 \
 		zstd-safe-7.1.0 \
