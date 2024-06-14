@@ -1,4 +1,13 @@
---- Cargo.toml.orig	2024-04-24 20:32:06 UTC
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=278837#c3
+
+(...)
+2) It's our ports framework that is problematic. It comments out the "git" line in the workspace (dunno why). You can see it by yourself with:
+make extract
+cp xxx/Cargo.toml xxx/Cargo.toml.1
+make configure
+diff -dup xxx/Cargo.toml.1 xxx/Cargo.toml
+
+--- Cargo.toml.orig	2024-06-14 07:52:48 UTC
 +++ Cargo.toml
 @@ -61,6 +61,10 @@ url               = { version = "2.5.0" }
  toml              = { version = "*" }
@@ -11,11 +20,11 @@
  
  lsp-types = { version = "0.95.1", features = ["proposed"] }                                                  # not following semver, so should be locked to patch version updates only
  psp-types = { git = "https://github.com/lapce/psp-types", rev = "f7fea28f59e7b2d6faa1034a21679ad49b3524ad" }
-@@ -75,30 +79,8 @@ floem-editor-core = { git = "https://github.com/lapce/
- # floem-editor-core = { path = "../workspaces/floem/editor-core/", features = ["serde"] }
+@@ -77,30 +81,8 @@ floem-editor-core = { git = "https://github.com/lapce/
+ # floem-editor-core = { path = "../floem/editor-core/", features = ["serde"] }
  
  [patch.crates-io]
--# Temporarily patch lsp-types with a version that supports inline-completion
+-# Temporarily patch lsp-types with a version that adds message-type debug
 -lsp-types = { git = "https://github.com/lapce/lsp-types", rev = "feaa1e2ec80975c9dadd400a238ceacf071058e6" }
 -regalloc2 = { rev = "5d79e12d0a93b10fc181f4da409b4671dd365228", git = "https://github.com/bytecodealliance/regalloc2" }
 -
