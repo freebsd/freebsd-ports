@@ -1,0 +1,10 @@
+--- 3rdparty/solid-lite/CMakeLists.txt.orig	2024-05-30 23:46:53 UTC
++++ 3rdparty/solid-lite/CMakeLists.txt
+@@ -245,6 +245,7 @@ target_link_libraries(
+     solidlite
+     PRIVATE
+         Qt${QT_VERSION_MAJOR}::Core
++        Qt${QT_VERSION_MAJOR}::DBus
+         Qt${QT_VERSION_MAJOR}::Widgets
+         ${solidlite_OPTIONAL_LIBS}
+ )
