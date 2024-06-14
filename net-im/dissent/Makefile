@@ -1,7 +1,6 @@
 PORTNAME=	dissent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.24
-PORTREVISION=	1
+DISTVERSION=	0.0.25
 CATEGORIES=	net-im
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,13 +21,14 @@ GH_TUPLE=	KarpelesLab:weak:v0.1.1:karpeleslab_weak/vendor/github.com/KarpelesLab
 		alessio:shellescape:v1.4.2:alessio_shellescape/vendor/github.com/alessio/shellescape \
 		danieljoos:wincred:v1.2.1:danieljoos_wincred/vendor/github.com/danieljoos/wincred \
 		diamondburned:adaptive:fa139be203a8:diamondburned_adaptive/vendor/github.com/diamondburned/adaptive \
-		diamondburned:arikawa:5aaffc368786:diamondburned_arikawa_v3/vendor/github.com/diamondburned/arikawa/v3 \
-		diamondburned:chatkit:4b8acdf0f84b:diamondburned_chatkit/vendor/github.com/diamondburned/chatkit \
+		diamondburned:arikawa:v3.3.6:diamondburned_arikawa_v3/vendor/github.com/diamondburned/arikawa/v3 \
+		diamondburned:chatkit:5788b19145bc:diamondburned_chatkit/vendor/github.com/diamondburned/chatkit \
 		diamondburned:ctxt:2db38a5d3c12:diamondburned_ctxt/vendor/libdb.so/ctxt \
+		diamondburned:go-emoji:39776eee41ac:diamondburned_go_emoji/vendor/libdb.so/go-emoji \
 		diamondburned:gotk4-adwaita:5f283b5d35bc:diamondburned_gotk4_adwaita_pkg/vendor/github.com/diamondburned/gotk4-adwaita \
-		diamondburned:gotk4:v0.2.2:diamondburned_gotk4_pkg/vendor/github.com/diamondburned/gotk4 \
-		diamondburned:gotkit:6094a5dcd206:diamondburned_gotkit/vendor/github.com/diamondburned/gotkit \
-		diamondburned:ningen:ddbaae4f3f84:diamondburned_ningen_v3/vendor/github.com/diamondburned/ningen/v3 \
+		diamondburned:gotk4:e395a91f5db3:diamondburned_gotk4_pkg/vendor/github.com/diamondburned/gotk4 \
+		diamondburned:gotkit:6aaca1acc990:diamondburned_gotkit/vendor/github.com/diamondburned/gotkit \
+		diamondburned:ningen:96fcee660001:diamondburned_ningen_v3/vendor/github.com/diamondburned/ningen/v3 \
 		dlclark:regexp2:v1.11.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dustin:go-humanize:v1.0.1:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		enescakir:emoji:v1.0.0:enescakir_emoji/vendor/github.com/enescakir/emoji \
@@ -40,6 +40,7 @@ GH_TUPLE=	KarpelesLab:weak:v0.1.1:karpeleslab_weak/vendor/github.com/KarpelesLab
 		golang:net:v0.24.0:golang_net/vendor/golang.org/x/net \
 		golang:sync:v0.7.0:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:v0.19.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.15.0:golang_text/vendor/golang.org/x/text \
 		golang:time:v0.5.0:golang_time/vendor/golang.org/x/time \
 		gorilla:schema:v1.3.0:gorilla_schema/vendor/github.com/gorilla/schema \
 		gorilla:websocket:v1.5.1:gorilla_websocket/vendor/github.com/gorilla/websocket \
@@ -48,6 +49,7 @@ GH_TUPLE=	KarpelesLab:weak:v0.1.1:karpeleslab_weak/vendor/github.com/KarpelesLab
 		lmittmann:tint:v1.0.4:lmittmann_tint/vendor/github.com/lmittmann/tint \
 		mattn:go-isatty:v0.0.20:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
+		puzpuzpuz:xsync:v3.1.0:puzpuzpuz_xsync_v3/vendor/github.com/puzpuzpuz/xsync/v3 \
 		sahilm:fuzzy:v0.1.1:sahilm_fuzzy/vendor/github.com/sahilm/fuzzy \
 		twmb:murmur3:v1.1.8:twmb_murmur3/vendor/github.com/twmb/murmur3 \
 		yalue:merged_fs:v1.3.0:yalue_merged_fs/vendor/github.com/yalue/merged_fs \
