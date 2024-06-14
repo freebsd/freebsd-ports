@@ -22,7 +22,6 @@ libdata/pkgconfig/libseafile.pc
 %%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/seaserv/__pycache__/service.cpython-%%PYTHON_SUFFIX%%.pyc
 %%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/seaserv/api.py
 %%SEAFILE_SERVER%%/seafile/%%PYTHON_SITELIBDIR%%/seaserv/service.py
-%%SEAFILE_SERVER%%/seafile/share/doc/seafile/seafile-tutorial.doc
 %%SEAFILE_SERVER%%/sql/mysql/ccnet.sql
 %%SEAFILE_SERVER%%/sql/mysql/seafile.sql
 %%SEAFILE_SERVER%%/sql/sqlite/config.sql
