@@ -1,7 +1,6 @@
 PORTNAME=	liquid-dsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.2
-PORTREVISION=	1
+DISTVERSION=	1.6.0
 CATEGORIES=	comms
 
 MAINTAINER=	mr@FreeBSD.org
@@ -11,10 +10,9 @@ WWW=		https://liquidsdr.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libfftw3.so:math/fftw3 \
-		libfftw3f.so:math/fftw3-float
+LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
 
-USES=		autoreconf gmake iconv:wchar_t libtool localbase
+USES=		autoreconf gmake libtool localbase
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jgaeddert

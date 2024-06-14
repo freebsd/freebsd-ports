@@ -1,3 +1,5 @@
 include/liquid/liquid.h
 lib/libliquid.a
 lib/libliquid.so
+lib/libliquid.so.1
+lib/libliquid.so.1.6
