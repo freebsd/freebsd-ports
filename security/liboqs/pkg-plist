@@ -20,6 +20,6 @@ lib/cmake/liboqs/liboqsConfigVersion.cmake
 lib/cmake/liboqs/liboqsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/liboqs/liboqsTargets.cmake
 lib/liboqs.so
-lib/liboqs.so.0.10.0
+lib/liboqs.so.0.10.1
 lib/liboqs.so.5
 libdata/pkgconfig/liboqs.pc
