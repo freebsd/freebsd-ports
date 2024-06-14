@@ -1,8 +1,0 @@
---- pueue/Cargo.toml.orig	2024-05-13 20:19:16 UTC
-+++ pueue/Cargo.toml
-@@ -68,5 +68,4 @@ crossterm = { version = "0.27", default-features = fal
- # Test specific dev-dependencies
- [target.'cfg(any(target_os = "linux", target_os = "freebsd"))'.dependencies]
- whoami = "1"
--procfs = { version = "0.16", default-features = false }
- 
