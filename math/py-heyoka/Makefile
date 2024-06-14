@@ -1,7 +1,6 @@
 PORTNAME=	heyoka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
-PORTREVISION=	7
+DISTVERSION=	5.0.0
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -29,7 +28,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		cmake compiler:c++17-lang python
+USES=		cmake compiler:c++17-lang llvm:min=16,build,run python
 USE_PYTHON=	flavors
 
 USE_GITHUB=	yes
