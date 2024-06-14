@@ -1,6 +1,6 @@
 PORTNAME=	jacal
-PORTVERSION=	1c8
-PORTREVISION=	1
+DISTVERSION=	1c8
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/
 
@@ -10,8 +10,6 @@ WWW=		https://people.csail.mit.edu/jaffer/JACAL
 
 LICENSE=	GPLv3
 
-BROKEN=		Distfile hash mismatch
-
 RUN_DEPENDS=	scm:lang/scm \
 		${LOCALBASE}/share/slib/require.scm:lang/slib
 
@@ -19,7 +17,7 @@ USES=		gmake zip
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
-				--mandir=${PREFIX}/share/man
+		--mandir=${PREFIX}/share/man
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
