@@ -1,5 +1,5 @@
 PORTNAME=	sofa
-DISTVERSION=	20210512 # also called Release 18
+DISTVERSION=	20231011 # also called Release 19
 CATEGORIES=	astro devel
 MASTER_SITES=	https://www.iausofa.org/${DISTVERSION:C/(....)(....)/\\1_\\2/}_C/
 DISTNAME=	${PORTNAME}_c-${DISTVERSION}
