@@ -48,6 +48,12 @@ PLUGIN_SCRIPTING_PYTHON_BROKEN=			https://github.com/pawelsalawa/sqlitestudio/is
 PLUGIN_SCRIPTING_TCL_USES=			tcl:87
 PLUGIN_SCRIPTING_TCL_CXXFLAGS=			-I${TCL_INCLUDEDIR}
 
+# workaround for https://github.com/pawelsalawa/sqlitestudio/issues/4999
+ARCH!=						uname -p
+.if ${ARCH} != "amd64" && ${ARCH} != "i386"
+PLUGIN_DB_SQLITE_WX_BROKEN=			Impossible to build on ${ARCH}: it uses SSE SIMD
+.endif
+
 .for opt in ${OPTIONS_GROUP_PLUGINS}
 .  if "${${opt}_BROKEN}" == ""
 OPTIONS_DEFAULT+=	${opt}
