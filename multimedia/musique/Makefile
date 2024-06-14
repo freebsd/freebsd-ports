@@ -1,5 +1,6 @@
 PORTNAME=	musique
 DISTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	rsgain
 DISTVERSION=	3.5.1
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/complexlogic/rsgain/releases/download/v${DISTVERSION}/
