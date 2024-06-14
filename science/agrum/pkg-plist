@@ -941,6 +941,16 @@ lib/libagrum.so.%%VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/causal/_exceptions.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/causal/_types.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/causal/notebook.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/clg/CLG.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/clg/CanonicalForm.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/clg/Constants.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/clg/ForwardSampling.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/clg/GaussianVariable.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/clg/SEM.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/clg/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/clg/inference.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/clg/learning.py
+%%PYTHON%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/clg/notebook.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/config.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/defaults.ini
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/deprecated.py

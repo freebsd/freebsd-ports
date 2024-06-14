@@ -1,6 +1,5 @@
 PORTNAME=	agrum
-DISTVERSION=	1.13.1
-PORTREVISION=	1
+DISTVERSION=	1.14.0
 CATEGORIES=	science math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +17,7 @@ LLD_UNSAFE=	yes
 USE_GITLAB=	yes
 GL_ACCOUNT=	agrumery
 GL_PROJECT=	aGrUM
-GL_TAGNAME=	bb6f02350f594964a972e9420ce55d828af701e4
+GL_TAGNAME=	0fbb07b5031cd3c28a2ca64246fe3d9af0a1ced0
 
 SHEBANG_FILES=	act
 
@@ -56,7 +55,7 @@ PYTHON_RUN_DEPENDS=	${PYNUMPY} \
 
 BINARY_ALIAS=	gcc=${CC} g++=${CXX} # only for tests, see https://gitlab.com/agrumery/aGrUM/-/issues/100
 
-do-test:
+do-test: # tests fail to compile, see https://gitlab.com/agrumery/aGrUM/-/issues/148
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ./act test release agrum -t all
 
