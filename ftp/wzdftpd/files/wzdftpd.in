@@ -17,6 +17,7 @@ name="wzdftpd"
 rcvar=wzdftpd_enable
 command="%%PREFIX%%/sbin/${name}"
 required_files="%%PREFIX%%/etc/wzdftpd/wzd.cfg"
+: ${wzdftpd_svcj_options:="net_basic"}
 
 load_rc_config $name
 run_rc_command "$1"
