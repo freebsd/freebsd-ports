@@ -402,6 +402,7 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/Pango/method.FontFamily.is_monospace.html
 %%PORTDOCS%%share/doc/Pango/method.FontFamily.is_variable.html
 %%PORTDOCS%%share/doc/Pango/method.FontFamily.list_faces.html
+%%PORTDOCS%%share/doc/Pango/method.FontMap.add_font_file.html
 %%PORTDOCS%%share/doc/Pango/method.FontMap.changed.html
 %%PORTDOCS%%share/doc/Pango/method.FontMap.create_context.html
 %%PORTDOCS%%share/doc/Pango/method.FontMap.get_family.html
@@ -451,6 +452,7 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/Pango/method.Item.apply_attrs.html
 %%PORTDOCS%%share/doc/Pango/method.Item.copy.html
 %%PORTDOCS%%share/doc/Pango/method.Item.free.html
+%%PORTDOCS%%share/doc/Pango/method.Item.get_char_offset.html
 %%PORTDOCS%%share/doc/Pango/method.Item.split.html
 %%PORTDOCS%%share/doc/Pango/method.Language.get_sample_string.html
 %%PORTDOCS%%share/doc/Pango/method.Language.get_scripts.html

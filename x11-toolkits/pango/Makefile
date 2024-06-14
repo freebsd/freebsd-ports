@@ -1,6 +1,5 @@
 PORTNAME=	pango
-PORTVERSION=	1.52.2
-PORTREVISION=	1
+PORTVERSION=	1.55.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -26,7 +25,7 @@ USE_LDCONFIG=	yes
 PORTSCOUT=	limit:^1\.[^9]
 
 VERSION=	1.8.0
-LIBVERSION=	0.5200.2
+LIBVERSION=	0.5505.0
 PLIST_SUB=	LIBVERSION=${LIBVERSION} \
 		VERSION=${VERSION}
 
@@ -37,7 +36,7 @@ OPTIONS_SUB=	yes
 THAI_DESC=	Thai language support via libThai
 
 DOCS_BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen
-DOCS_MESON_TRUE=	gtk_doc
+DOCS_MESON_TRUE=	documentation
 
 MANPAGES_BUILD_DEPENDS=	help2man:misc/help2man
 
