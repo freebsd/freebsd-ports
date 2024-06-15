@@ -1,0 +1,12 @@
+jschon is an object-oriented JSON Schema implementation for Python.
+
+Features:
+* JSON Schema validator implementation (drafts 2019-09, 2020-12)
+  * Schema compilation and indexing
+  * $ref loading from local and remote sources
+  * Support for custom keywords, vocabularies and meta-schemas
+  * Support for format validation
+* JSON class implementing the JSON data model
+* JSON Pointer (RFC 6901)
+* JSON Patch (RFC 6902)
+* Relative JSON Pointer (draft)
