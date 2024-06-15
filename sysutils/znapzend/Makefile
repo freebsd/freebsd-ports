@@ -1,5 +1,5 @@
 PORTNAME=	znapzend
-PORTVERSION=	0.22.0
+PORTVERSION=	0.23.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -40,12 +40,5 @@ pre-configure:
 
 post-configure:
 	@${REINPLACE_CMD} -e 's/thirdparty//g' ${WRKSRC}/Makefile
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/ZnapZend
-	@${MV} ${STAGEDIR}${PREFIX}/lib/perl5/lib/*.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
-	@${MV} ${STAGEDIR}${PREFIX}/lib/perl5/lib/ZnapZend/*.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/ZnapZend
-	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/perl5/lib/ZnapZend
-	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/perl5/lib
 
 .include <bsd.port.mk>
