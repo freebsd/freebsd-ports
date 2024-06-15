@@ -1,3 +1,32 @@
+  <vuln vid="219aaa1e-2aff-11ef-ab37-5404a68ad561">
+    <topic>traefik -- Unexpected behavior with IPv4-mapped IPv6 addresses</topic>
+    <affects>
+      <package>
+	<name>traefik</name>
+	<range><lt>2.11.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The traefik authors report:</p>
+	<blockquote cite="https://github.com/traefik/traefik/security/advisories/GHSA-7jmw-8259-q9jx">
+	  <p>There is a vulnerability in Go managing various Is methods
+	     (IsPrivate, IsLoopback, etc) for IPv4-mapped IPv6 addresses.
+	     They didn't work as expected returning false for addresses
+	     which would return true in their traditional IPv4 forms.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-24790</cvename>
+      <url>https://github.com/traefik/traefik/security/advisories/GHSA-7jmw-8259-q9jx</url>
+    </references>
+    <dates>
+      <discovery>2024-06-05</discovery>
+       <entry>2024-06-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a5c64f6f-2af3-11ef-a77e-901b0e9408dc">
     <topic>go -- multiple vulnerabilities</topic>
     <affects>
