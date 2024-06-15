@@ -517,7 +517,6 @@
     SUBDIR += nuspell
     SUBDIR += nux
     SUBDIR += ny-aspell
-    SUBDIR += obsidian
     SUBDIR += ocaml-csv
     SUBDIR += ocaml-expat
     SUBDIR += ocaml-text
