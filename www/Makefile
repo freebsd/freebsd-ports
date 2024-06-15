@@ -1484,7 +1484,6 @@
     SUBDIR += py-dj-database-url
     SUBDIR += py-dj42-channels
     SUBDIR += py-dj42-django-allauth
-    SUBDIR += py-dj42-django-cors-headers
     SUBDIR += py-dj42-django-crispy-forms
     SUBDIR += py-dj42-django-debug-toolbar
     SUBDIR += py-dj42-django-extensions
