@@ -1,6 +1,7 @@
 PORTNAME=	fabric
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.8
+PORTREVISION=	1
 CATEGORIES=	finance
 PKGNAMESUFFIX=	-hyperledger
 
@@ -136,7 +137,6 @@ GH_TUPLE=	\
 		tedsuo:ifrit:dd274de71113:tedsuo_ifrit/vendor/github.com/tedsuo/ifrit \
 		uber-go:multierr:v1.11.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		uber-go:zap:v1.26.0:uber_go_zap/vendor/go.uber.org/zap
-
 
 PROGS=		configtxgen \
 		configtxlator \
