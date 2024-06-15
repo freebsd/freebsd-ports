@@ -1,4 +1,4 @@
-DISTVERSION=	1.21.10
+DISTVERSION=	1.21.11
 # Always set PORTREVISION explicitly as otherwise they are inherited from lang/go-devel
 PORTREVISION=	0
 MASTER_SITES=	https://golang.org/dl/ \
