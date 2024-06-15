@@ -1,4 +1,4 @@
-TIMESTAMP = 1717738513
+TIMESTAMP = 1718428203
 SHA256 (rust/crates/actix-codec-0.5.2.crate) = 5f7b0a21988c1bf877cf4759ef5ddaac04c1c9fe808c9142ecb78ba97d97a28a
 SIZE (rust/crates/actix-codec-0.5.2.crate) = 14085
 SHA256 (rust/crates/actix-http-3.6.0.crate) = d223b13fd481fc0d1f83bb12659ae774d9e3601814c68a0bc539731698cca743
@@ -1403,5 +1403,5 @@ SHA256 (rust/crates/zstd-safe-7.1.0.crate) = 1cd99b45c6bc03a018c8b8a86025678c87e
 SIZE (rust/crates/zstd-safe-7.1.0.crate) = 20792
 SHA256 (rust/crates/zstd-sys-2.0.10+zstd.1.5.6.crate) = c253a4914af5bafc8fa8c86ee400827e83cf6ec01195ec1f1ed8441bf00d65aa
 SIZE (rust/crates/zstd-sys-2.0.10+zstd.1.5.6.crate) = 749088
-SHA256 (surrealdb-surrealdb-v1.5.2_GH0.tar.gz) = 982c012d7774ccd472108629fe815651e6e83fab1c9f351eea3bfd1f080db352
-SIZE (surrealdb-surrealdb-v1.5.2_GH0.tar.gz) = 5840517
+SHA256 (surrealdb-surrealdb-v1.5.3_GH0.tar.gz) = ec4c91c9ed1806d1010de759153bab217d2b7f5fd0ded6a59386f4be515e67d3
+SIZE (surrealdb-surrealdb-v1.5.3_GH0.tar.gz) = 5841809
