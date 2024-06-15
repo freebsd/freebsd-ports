@@ -1490,7 +1490,6 @@
     SUBDIR += py-dj42-django-filter
     SUBDIR += py-dj42-django-graphiql-debug-toolbar
     SUBDIR += py-dj42-django-modelcluster
-    SUBDIR += py-dj42-django-otp
     SUBDIR += py-dj42-django-prometheus
     SUBDIR += py-dj42-django-redis
     SUBDIR += py-dj42-django-rich
