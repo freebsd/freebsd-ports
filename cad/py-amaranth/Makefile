@@ -1,6 +1,6 @@
 PORTNAME=	amaranth
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.5
+DISTVERSION=	0.5.0
 CATEGORIES=	cad python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,6 +13,7 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>0:devel/py-pdm-backend@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jschon>=0.11.1:devel/py-jschon@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyvcd>=0.2.2:cad/py-pyvcd@${PY_FLAVOR}
 TEST_DEPENDS=	sby:cad/symbiyosys \
 		yosys:cad/yosys
