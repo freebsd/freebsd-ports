@@ -3311,3 +3311,4 @@ www/ctemplate||2024-06-15|Has expired: Abandonware and obsolete, last release in
 graphics/electricsheep||2024-06-15|Has expired: Broken for more than 6 months and fails to compile bumping it to latest commit
 www/apt-cacher-ng||2024-06-15|Has expired: Outdated and unsupported version, current version was released in 2020 and upstream is still active
 audio/taglookup||2024-06-15|Has expired: Obsolete, depends on legacy service that is defunct once again
+www/vieb||2024-06-15|Has expired: Outdated and depends on expired (and blacklisted) devel/electron25
