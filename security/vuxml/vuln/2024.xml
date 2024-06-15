@@ -1,3 +1,48 @@
+  <vuln vid="a5c64f6f-2af3-11ef-a77e-901b0e9408dc">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go122</name>
+	<range><lt>1.22.4</lt></range>
+      </package>
+      <package>
+	<name>go121</name>
+	<range><lt>1.21.11</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://go.dev/issue/66869">
+	  <p>archive/zip: mishandling of corrupt central directory record</p>
+	  <p>The archive/zip package's handling of certain types of
+	  invalid zip files differed from the behavior of most zip
+	  implementations. This misalignment could be exploited to
+	  create an zip file with contents that vary depending on the
+	  implementation reading the file. The archive/zip package now
+	  rejects files containing these errors.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/67680">
+	  <p>net/netip: unexpected behavior from Is methods for
+	  IPv4-mapped IPv6 addresses</p>
+	  <p>The various Is methods (IsPrivate, IsLoopback, etc) did
+	  not work as expected for IPv4-mapped IPv6 addresses,
+	  returning false for addresses which would return true in
+	  their traditional IPv4 forms.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-24789</cvename>
+      <cvename>CVE-2024-24790</cvename>
+      <url>https://groups.google.com/g/golang-announce/c/XbxouI9gY7k/m/TuoGEhxIEwAJ</url>
+    </references>
+    <dates>
+      <discovery>2024-06-04</discovery>
+      <entry>2024-06-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="92cd1c03-2940-11ef-bc02-001b217b3468">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
