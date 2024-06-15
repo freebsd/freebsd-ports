@@ -56,7 +56,6 @@
     SUBDIR += anyremote2html
     SUBDIR += apache-mode.el
     SUBDIR += apache24
-    SUBDIR += apt-cacher-ng
     SUBDIR += aquatone
     SUBDIR += archiva
     SUBDIR += aria2

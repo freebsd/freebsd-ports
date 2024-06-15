@@ -3309,3 +3309,4 @@ multimedia/audacious-plugins-qt6|multimedia/audacious-plugins|2024-06-13|qt6 fla
 lang/zig-devel||2024-06-13|Older than lang/zig and no consumers in ports
 www/ctemplate||2024-06-15|Has expired: Abandonware and obsolete, last release in 2008 and never gained any traction
 graphics/electricsheep||2024-06-15|Has expired: Broken for more than 6 months and fails to compile bumping it to latest commit
+www/apt-cacher-ng||2024-06-15|Has expired: Outdated and unsupported version, current version was released in 2020 and upstream is still active
