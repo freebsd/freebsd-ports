@@ -83,7 +83,7 @@ include/libical/vcaltmp.h
 include/libical/vcc.h
 include/libical/vcomponent_cxx.h
 include/libical/vobject.h
-%%GLIB%%lib/cmake/LibIcal/IcalGlibSrcGenerator-release.cmake
+%%GLIB%%lib/cmake/LibIcal/IcalGlibSrcGenerator-%%CMAKE_BUILD_TYPE%%.cmake
 %%GLIB%%lib/cmake/LibIcal/IcalGlibSrcGenerator.cmake
 lib/cmake/LibIcal/LibIcalConfig.cmake
 lib/cmake/LibIcal/LibIcalConfigVersion.cmake
