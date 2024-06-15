@@ -8,6 +8,7 @@
     SUBDIR += eflite
     SUBDIR += feedbackd
     SUBDIR += gammy
+    SUBDIR += gammastep
     SUBDIR += kdeaccessibility
     SUBDIR += kmag
     SUBDIR += kmousetool
