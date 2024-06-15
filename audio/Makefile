@@ -802,7 +802,6 @@
     SUBDIR += synthpod-lv2
     SUBDIR += synthv1-lv2
     SUBDIR += taglib
-    SUBDIR += taglookup
     SUBDIR += tagutil
     SUBDIR += tamgamp-lv2
     SUBDIR += tap-plugins
