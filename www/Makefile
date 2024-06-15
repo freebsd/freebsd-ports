@@ -1503,7 +1503,6 @@
     SUBDIR += py-dj42-django-tables2
     SUBDIR += py-dj42-django-timezone-field
     SUBDIR += py-dj42-django-treebeard
-    SUBDIR += py-dj42-djangoql
     SUBDIR += py-dj42-djangorestframework
     SUBDIR += py-dj42-drf-spectacular
     SUBDIR += py-dj42-drf-spectacular-sidecar
