@@ -1483,7 +1483,6 @@
     SUBDIR += py-daphne
     SUBDIR += py-dj-database-url
     SUBDIR += py-dj42-django-debug-toolbar
-    SUBDIR += py-dj42-djangorestframework
     SUBDIR += py-django-admin-rangefilter
     SUBDIR += py-django-advanced-filters
     SUBDIR += py-django-allauth
