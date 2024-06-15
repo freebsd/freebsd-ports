@@ -3313,3 +3313,4 @@ www/apt-cacher-ng||2024-06-15|Has expired: Outdated and unsupported version, cur
 audio/taglookup||2024-06-15|Has expired: Obsolete, depends on legacy service that is defunct once again
 www/vieb||2024-06-15|Has expired: Outdated and depends on expired (and blacklisted) devel/electron25
 textproc/obsidian||2024-06-15|Has expired: Outdated and depends on expired (and blacklisted) devel/electron25
+devel/electron25||2024-06-15|Has expired: EOLed upstream, switch to newer version
