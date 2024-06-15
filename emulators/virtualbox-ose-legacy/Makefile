@@ -191,7 +191,7 @@ KMK_FLAGS+=	-j${MAKE_JOBS_NUMBER}
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && \
-    (${OSVERSION} < 1302505 || (${OSVERSION} >= 1400000 && ${OSVERSION} < 1400079))
+    ${OSVERSION} >= 1400000 && ${OSVERSION} < 1400079
 # llvm before 15 included in old versions of the FreeBSD 13 and 14 fails to compile
 # this legacy version of virtualbox-ose, force llvm 15 on those versions of the
 # FreeBSD: PR#265539, 279257.

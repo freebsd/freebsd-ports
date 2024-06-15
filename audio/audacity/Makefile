@@ -143,13 +143,6 @@ CMAKE_ARGS+=	-DHAVE_MMX:BOOL=OFF \
 		-DHAVE_SSE2:BOOL=OFF
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1302508
-# Workarounds for buggy libc++ std::conjunction
-EXTRA_PATCHES=	${PATCHDIR}/extra-libraries_lib-utility_TypeList.cpp \
-		${PATCHDIR}/extra-libraries_lib-utility_TypeList.h \
-		${PATCHDIR}/extra-libraries_lib-utility_TypeSwitch.h
-.endif
-
 post-install:
 	@${RM} ${STAGEDIR}${DOCSDIR}/LICENSE.txt
 	#delete empty directories: https://github.com/audacity/audacity/issues/808

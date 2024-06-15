@@ -45,11 +45,6 @@ HPACK_LIB_DEPENDS=	libjansson.so:devel/jansson
 
 .include <bsd.port.options.mk>
 
-.if ${OSREL} == 13.2
-USES+=		llvm
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-compatibility-fix
-.endif
-
 .if ${OSREL} == 14.0
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-compatibility-fix
 .endif

@@ -243,13 +243,6 @@ YARN_TIMESTAMP=	61171200
 .include "Makefile.version"
 .include <bsd.port.pre.mk>
 
-# libc++ < 16 needs these extra patches
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1302507
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-electron_shell_browser_electron__browser__context.h \
-		${PATCHDIR}/extra-patch-electron_shell_browser_ui_gtk_menu__gtk.h \
-		${PATCHDIR}/extra-patch-electron_shell_browser_ui_status__icon__gtk.h
-.endif
-
 .if ${PORT_OPTIONS:MHEIMDAL_BASE} && !exists(/usr/lib/libkrb5.so)
 IGNORE=		you have selected HEIMDAL_BASE but do not have Heimdal installed in base
 .endif

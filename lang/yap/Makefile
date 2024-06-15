@@ -50,7 +50,7 @@ post-build-DOCS-off:
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+.if ${OPSYS} == FreeBSD && ${COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-incompatible-function-pointer-types
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
 .endif

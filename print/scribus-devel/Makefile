@@ -62,7 +62,7 @@ post-patch:
 		${WRKSRC}/scribus/imagedataloaders/scimgdataloader_pdf.cpp \
 		${WRKSRC}/scribus/pdflib_core.h \
 		${WRKSRC}/scribus/pdf_analyzer.h
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+.if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function|' \
 		${WRKSRC}/scribus/desaxe/digester.cpp
 .endif

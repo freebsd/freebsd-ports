@@ -59,7 +59,7 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 150
+.if ${COMPILER_TYPE} == "clang"
 LDFLAGS_i386+=	-Wl,--no-check-dynamic-relocations
 .endif
 

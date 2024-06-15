@@ -60,7 +60,7 @@ TBB_LIB_DEPENDS=	libtbb.so:devel/onetbb
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+.if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function|' \
 		${WRKSRC}/hoomd/ParticleData.cc
 .endif

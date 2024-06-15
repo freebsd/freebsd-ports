@@ -46,7 +46,7 @@ post-install:
 		${FILESDIR}/pkgIndex.tcl >> \
 		${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PORTVERSION}/pkgIndex.tcl
 
-.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 150
+.if ${COMPILER_TYPE} == "clang"
 CFLAGS+=	-std=c90 -Wno-deprecated-non-prototype
 .endif
 

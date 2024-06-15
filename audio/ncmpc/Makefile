@@ -49,7 +49,7 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+.if ${COMPILER_TYPE} == clang
 CPPFLAGS+=	-Wno-error=enum-constexpr-conversion
 .endif
 

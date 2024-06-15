@@ -35,12 +35,6 @@ GH_ACCOUNT=	macs3-project
 GH_PROJECT=	MACS
 SHEBANG_FILES=	test/cmdlinetest* test/prockreport test/*.py test/pyprofile*
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1302509
-IGNORE=		does not run properly on FreeBSD 13.2 and earlier due to use of dynamically loaded libc by py-threadpoolctl.  Please upgrade to a newer FreeBSD or use py-macs2 instead.  See PR 276231
-.endif
-
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/MACS3/*/*.so
 

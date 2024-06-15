@@ -19,11 +19,9 @@ PLIST_FILES=	lib/libretro/bluemsx_libretro.so
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 150
+.if ${COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-error=int-conversion
-.if ${COMPILER_VERSION} >= 160
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
-.endif
 .endif
 
 do-install:

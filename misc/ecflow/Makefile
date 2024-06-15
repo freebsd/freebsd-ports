@@ -33,7 +33,7 @@ CONFLICTS_BUILD=	python27 # build attempts to find python-2.7 and use it
 .include <bsd.port.pre.mk>
 
 #post-patch:
-#.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+#.if ${COMPILER_TYPE} == clang
 #	@${REINPLACE_CMD} -e 's|std::binary_function|std::__binary_function|' \
 #		${WRKSRC}/ACore/src/Str.cpp
 #.endif

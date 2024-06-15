@@ -106,8 +106,7 @@ NLS_USES=	gettext
 .include <bsd.port.pre.mk>
 
 # Before LLVM 17 import into the base system
-.if (${OSVERSION} < 1302510 \
-    || (${OSREL:R} == 14 && ${OSVERSION} < 1400504) \
+.if ((${OSREL:R} == 14 && ${OSVERSION} < 1400504) \
     || (${OSREL:R} == 15 && ${OSVERSION} < 1500006))
 IGNORE=	requires libc++ of LLVM 17 on the base system
 .endif

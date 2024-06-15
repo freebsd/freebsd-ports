@@ -1,8 +1,6 @@
 TIMESTAMP = 1718820477
 SHA256 (winft-como-v0.2.0_GH0.tar.gz) = 24a43c5cb49760eb89f0414aa03f0007441fb2b8ef934e9ccb39af01646a27a9
 SIZE (winft-como-v0.2.0_GH0.tar.gz) = 4164563
-SHA256 (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = b5a9ff1793b1e2d388a3819bf35797002b1d2e40bb35a10c65605e0ea1435271
-SIZE (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = 179289803
 SHA256 (325e41b02b58.patch) = 930ee700ce7d27c9fe4dd6aa0fb4771034ae0bad072b11323f99e8fd524bebf2
 SIZE (325e41b02b58.patch) = 1462
 SHA256 (d250e3a81b91.patch) = 7ed00b787c17b9bcbc33e94162b9281dd935e541b4b88f8ed2ebdf715f7db828

@@ -179,13 +179,6 @@ TESTING_DESC=			Arrow testing libraries
 TESTING_CMAKE_BOOL=		ARROW_TESTING
 TESTING_LIB_DEPENDS=		libgtest.so:devel/googletest
 
-# workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=277953
-OPSYS!=		uname -s # HACK: OPSYS is defined in bsd.port.options.mk which has to be later
-OSVERSION!=	awk '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < ${CROSS_SYSROOT}/usr/include/sys/param.h # HACK: same as above
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1303000
-TESTING_BROKEN=	configure fails because GTest built with C++ level <17 isn't compatible with C++17 used in arrow
-.endif
-
 # form OPTIONS_DEFAULT
 .for opt in ${OPTIONS_GROUP_COMPONENTS}
 .  if "${${opt}_BROKEN}" == ""

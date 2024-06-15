@@ -29,11 +29,4 @@ EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=	build-aux libs/luajit
 WRKSRC=		${WRKDIR}/${DISTNAME}/libs/luajit
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH:Mpowerpc*} && ${COMPILER_VERSION} < 140
-BUILD_DEPENDS+= as:devel/binutils
-CFLAGS+=        -fno-integrated-as
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

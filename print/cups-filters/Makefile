@@ -137,7 +137,7 @@ PSPOPPLER_DESC=			Poppler pdftops(1)
 .include <bsd.port.pre.mk>
 
 #.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+.if ${COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-error=dynamic-exception-spec
 .endif
 

@@ -30,7 +30,7 @@ TEST_CMAKE_BOOL=	CORRADE_BUILD_TESTS
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+.if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's|#include <__tuple>|#include <tuple>|g' \
 		${WRKSRC}/src/Corrade/Utility/StlForwardArray.h \
 		${WRKSRC}/src/Corrade/Utility/StlForwardTuple.h

@@ -38,7 +38,7 @@ TABLE_DICT_TAR=		table-20240108.tar.gz
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+.if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's|std::binary_function|std::__binary_function|' \
 		${WRKSRC}/src/libime/core/kenlm/lm/trie_sort.hh \
 		${WRKSRC}/src/libime/core/kenlm/util/joint_sort.hh \
