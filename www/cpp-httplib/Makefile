@@ -1,6 +1,6 @@
 PORTNAME=	cpp-httplib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.3
+DISTVERSION=	0.16.0
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,6 +27,7 @@ BINARY_ALIAS=	python3=${PYTHON_CMD} # only for tests
 
 PLIST_FILES=	include/httplib.h \
 		lib/cmake/httplib/FindBrotli.cmake \
+		share/doc/httplib/README.md \
 		lib/cmake/httplib/httplibConfig.cmake \
 		lib/cmake/httplib/httplibConfigVersion.cmake \
 		lib/cmake/httplib/httplibTargets.cmake
