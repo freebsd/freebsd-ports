@@ -3315,3 +3315,4 @@ www/vieb||2024-06-15|Has expired: Outdated and depends on expired (and blacklist
 textproc/obsidian||2024-06-15|Has expired: Outdated and depends on expired (and blacklisted) devel/electron25
 devel/electron25||2024-06-15|Has expired: EOLed upstream, switch to newer version
 devel/py-dj42-django-rq|devel/py-django-rq|2024-06-15|Has expired: Obsolete, please use devel/py-django-rq instead
+www/py-dj42-django-taggit|www/py-django-taggit|2024-06-15|Has expired: Obsolete, please use www/py-django-taggit instead
