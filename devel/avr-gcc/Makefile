@@ -1,6 +1,5 @@
 PORTNAME=	gcc
-PORTVERSION=	11.2.0
-PORTREVISION=	3
+PORTVERSION=	14.1.0
 CATEGORIES=	devel
 MASTER_SITES=	GCC
 PKGNAMEPREFIX=	avr-
@@ -80,6 +79,5 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/libcc1.so.0.0.0 \
 		${STAGEDIR}${PREFIX}/lib/gcc/avr/${PORTVERSION}/plugin/libcc1plugin.so.0.0.0 \
 		${STAGEDIR}${PREFIX}/lib/gcc/avr/${PORTVERSION}/plugin/libcp1plugin.so.0.0.0
-	tar -C ${STAGEDIR}${PREFIX} -xj -f ${FILESDIR}/specs-avr-dx.tar.bz2
 
 .include <bsd.port.post.mk>

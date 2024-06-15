@@ -11,7 +11,7 @@
 +	cp ${HOST_SUBDIR}/gcc/options.h libgcc/
 +	cp ${HOST_SUBDIR}/gcc/insn-constants.h libgcc/
 +	cp ${HOST_SUBDIR}/gcc/insn-modes.h libgcc/
-+	cp ${HOST_SUBDIR}/gcc/gcov-iov.h libgcc/
++	cp ${HOST_SUBDIR}/gcc/version.h libgcc/
  	@r=`${PWD_COMMAND}`; export r; \
  	s=`cd $(srcdir); ${PWD_COMMAND}`; export s; \
  	$(NORMAL_TARGET_EXPORTS)  \
