@@ -1487,7 +1487,6 @@
     SUBDIR += py-dj42-django-debug-toolbar
     SUBDIR += py-dj42-django-extensions
     SUBDIR += py-dj42-django-modelcluster
-    SUBDIR += py-dj42-django-redis
     SUBDIR += py-dj42-djangorestframework
     SUBDIR += py-django-admin-rangefilter
     SUBDIR += py-django-advanced-filters
