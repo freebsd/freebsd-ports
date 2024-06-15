@@ -162,7 +162,6 @@
     SUBDIR += egl-wayland
     SUBDIR += eglexternalplatform
     SUBDIR += elastix
-    SUBDIR += electricsheep
     SUBDIR += elementary-photos
     SUBDIR += embree
     SUBDIR += enblend
