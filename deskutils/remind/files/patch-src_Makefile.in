@@ -1,4 +1,4 @@
---- src/Makefile.in.orig	2024-03-01 14:10:26 UTC
+--- src/Makefile.in.orig	2024-06-08 14:57:38 UTC
 +++ src/Makefile.in
 @@ -52,9 +52,12 @@ install: all
  
@@ -14,7 +14,7 @@
  	rm -f $(DESTDIR)$(bindir)/rem > /dev/null 2>&1 || true
  	ln -s remind $(DESTDIR)$(bindir)/rem
  	-mkdir -p $(DESTDIR)$(mandir)/man1 || true
-@@ -66,7 +69,7 @@ install: all
+@@ -67,7 +70,7 @@ install: all
  	-mkdir -p $(DESTDIR)$(prefix)/share/pixmaps
  	-mkdir -p $(DESTDIR)$(prefix)/share/applications
  	$(INSTALL_DATA) $(srcdir)/../resources/tkremind.png $(DESTDIR)$(prefix)/share/pixmaps
@@ -22,4 +22,4 @@
 +	$(INSTALL_DATA) $(srcdir)/../resources/tkremind.desktop $(DESTDIR)$(prefix)/share/applications
  	-if test "$(DESTDIR)" = ""; then \
  	    update-desktop-database < /dev/null > /dev/null 2>&1 ; \
- 	    xdg-icon-resource install --novendor --size 64 $(DESTDIR)$(prefix)/share/pixmaps/tkremind.png < /dev/null > /dev/null 2>&1; \
+ 	    xdg-icon-resource install --novendor --size 64 $(DESTDIR)$(prefix)/share/pixmaps/tkremind.png < /dev/null > /dev/null 2>&1 || true; \

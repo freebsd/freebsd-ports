@@ -1,13 +1,13 @@
---- rem2html/Makefile.in.orig	2022-02-10 22:15:01 UTC
+--- rem2html/Makefile.in.orig	2024-06-08 14:57:38 UTC
 +++ rem2html/Makefile.in
-@@ -12,17 +12,15 @@ all:
+@@ -12,18 +12,15 @@ install:
  	true
  
  install:
 -	@if test "$(PERL)" = "" ; then \
 -	    echo "Not installing rem2html; Perl is required"; exit 0; fi; \
 -	 for m in $(PERLMODS_NEEDED) ; \
--         do \
+-	do \
 -	    $(PERL) -M$$m -e 1 > /dev/null 2>&1; \
 -	    if test $$? != 0 ; then echo "Not installing rem2html; missing $$m"; exit 0; fi; \
 -	done; \
@@ -15,8 +15,9 @@
 -	echo "Installing rem2html in $(DESTDIR)$(bindir)"; \
 -	mkdir -p $(DESTDIR)$(bindir) && sed -e 's|^#!perl|#!$(PERL)|' < rem2html > $(DESTDIR)$(bindir)/rem2html && chmod 755 $(DESTDIR)$(bindir)/rem2html && exit 0; \
 -	exit 1;
+-
 +	@for m in $(PERLMODS_NEEDED) ; \
-+        do \
++	 do \
 +	    $(PERL) -M$$m -e 1 ; \
 +	done
 +	pod2man --center "VERSION @VERSION@" --date "@RELEASE_DATE@" rem2html > rem2html.1 && mkdir -p $(DESTDIR)$(mandir)/man1 && cp rem2html.1 $(DESTDIR)$(mandir)/man1/rem2html.1 || true
