@@ -3357,6 +3357,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-datetree.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-duration.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-duration.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/org/org-element-ast.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/org/org-element-ast.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-element.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-element.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-entities.el.gz
@@ -3694,6 +3696,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/peg.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/perl-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/perl-mode.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/php-ts-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/php-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/prog-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/prog-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/project.el.gz
