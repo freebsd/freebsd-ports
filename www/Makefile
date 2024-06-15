@@ -1492,7 +1492,6 @@
     SUBDIR += py-dj42-django-rich
     SUBDIR += py-dj42-django-timezone-field
     SUBDIR += py-dj42-djangorestframework
-    SUBDIR += py-dj42-drf-spectacular-sidecar
     SUBDIR += py-django-admin-rangefilter
     SUBDIR += py-django-advanced-filters
     SUBDIR += py-django-allauth
