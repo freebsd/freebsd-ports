@@ -122,7 +122,6 @@
     SUBDIR += css-mode.el
     SUBDIR += csso
     SUBDIR += csstidy
-    SUBDIR += ctemplate
     SUBDIR += cutelyst
     SUBDIR += darkhttpd
     SUBDIR += dasherr
