@@ -3317,3 +3317,4 @@ devel/electron25||2024-06-15|Has expired: EOLed upstream, switch to newer versio
 devel/py-dj42-django-rq|devel/py-django-rq|2024-06-15|Has expired: Obsolete, please use devel/py-django-rq instead
 www/py-dj42-django-taggit|www/py-django-taggit|2024-06-15|Has expired: Obsolete, please use www/py-django-taggit instead
 www/py-dj42-djangoql|www/py-djangoql|2024-06-15|Has expired: Obsolete, please use www/py-djangoql instead
+www/py-dj42-django-mptt|www/py-django-mptt|2024-06-15|Has expired: Obsolete, please use www/py-django-mptt instead

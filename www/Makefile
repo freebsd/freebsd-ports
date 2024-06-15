@@ -1494,7 +1494,6 @@
     SUBDIR += py-dj42-django-guardian
     SUBDIR += py-dj42-django-js-asset
     SUBDIR += py-dj42-django-modelcluster
-    SUBDIR += py-dj42-django-mptt
     SUBDIR += py-dj42-django-otp
     SUBDIR += py-dj42-django-permissionedforms
     SUBDIR += py-dj42-django-prometheus
