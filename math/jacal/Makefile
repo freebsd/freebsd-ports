@@ -1,5 +1,5 @@
 PORTNAME=	jacal
-DISTVERSION=	1c8
+PORTVERSION=	1c8
 PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/
