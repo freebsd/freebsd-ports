@@ -1482,7 +1482,6 @@
     SUBDIR += py-cssutils
     SUBDIR += py-daphne
     SUBDIR += py-dj-database-url
-    SUBDIR += py-dj42-django-crispy-forms
     SUBDIR += py-dj42-django-debug-toolbar
     SUBDIR += py-dj42-django-extensions
     SUBDIR += py-dj42-django-modelcluster
