@@ -50,7 +50,7 @@ EBUR128_DEFAULT?=	legacy
 FIREBIRD_DEFAULT?=	3.0
 # Possible values: gfortran
 FORTRAN_DEFAULT?=	gfortran
-# Possible values: 3.2.2, 3.3.1
+# Possible values: 3.2.3, 3.3.1
 .  if !defined(WANT_FPC_DEVEL)
 FPC_DEFAULT?=		3.2.3
 .  else
@@ -75,11 +75,11 @@ GUILE_DEFAULT?=		2.2
 IMAGEMAGICK_DEFAULT?=	7
 # Possible values: 8, 11, 17, 18, 19, 20, 21
 JAVA_DEFAULT?=		8
-# Possible values: 3.2.0, 3.1.0
+# Possible values: 3.4.0, 3.99
 .  if !defined(WANT_LAZARUS_DEVEL)
-LAZARUS_DEFAULT?=	3.2.0
+LAZARUS_DEFAULT?=	3.4.0
 .  else
-LAZARUS_DEFAULT?=	3.3.1
+LAZARUS_DEFAULT?=	3.99
 .  endif
 # Possible values: rust, legacy
 .  if empty(ARCH:Naarch64:Namd64:Narmv7:Ni386:Npowerpc64:Npowerpc64le:Npowerpc:Nriscv64)
