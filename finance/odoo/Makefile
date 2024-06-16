@@ -65,7 +65,6 @@ RUN_DEPENDS=	wkhtmltopdf>0:converters/wkhtmltopdf \
 		${PYTHON_PKGNAMEPREFIX}idna>0:dns/py-idna@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stdnum>0:devel/py-stdnum@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rjsmin>0:archivers/py-rjsmin@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography-legacy>0:security/py-cryptography-legacy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}freezegun>0:devel/py-freezegun@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}GeoIP2>0:net/py-GeoIP2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl@${PY_FLAVOR} \
