@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.6.3
+DISTVERSION=	2024.6.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -134,6 +134,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		getrandom-0.2.15 \
 		gimli-0.28.1 \
 		git2-0.18.3 \
+		glob-0.3.1 \
 		globset-0.4.14 \
 		globwalk-0.9.1 \
 		hashbrown-0.12.3 \
@@ -146,8 +147,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		homedir-0.2.1 \
 		http-1.1.0 \
 		http-body-1.0.0 \
-		http-body-util-0.1.1 \
-		httparse-1.9.1 \
+		http-body-util-0.1.2 \
+		httparse-1.9.3 \
 		humansize-2.1.3 \
 		humantime-2.1.0 \
 		hyper-1.3.1 \
@@ -177,7 +178,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		instant-0.1.13 \
 		ipnet-2.9.0 \
 		is_terminal_polyfill-1.70.0 \
-		itertools-0.12.1 \
 		itertools-0.13.0 \
 		itoa-1.0.11 \
 		jobserver-0.1.31 \
@@ -195,7 +195,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lockfree-object-pool-0.1.6 \
 		log-0.4.21 \
 		matchers-0.1.0 \
-		memchr-2.7.2 \
+		memchr-2.7.4 \
 		memoffset-0.7.1 \
 		miette-5.10.0 \
 		miette-derive-5.10.0 \
@@ -379,7 +379,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		valuable-0.1.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
-		versions-6.2.0 \
+		versions-6.3.0 \
 		vte-0.10.1 \
 		vte_generate_state_changes-0.1.2 \
 		wait-timeout-0.2.0 \
