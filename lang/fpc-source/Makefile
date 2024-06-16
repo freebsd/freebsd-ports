@@ -1,10 +1,7 @@
 PORTNAME=	fpc
-PORTVERSION=	3.2.2
-PORTREVISION=	5
+PORTVERSION=	3.2.3
 DISTVERSIONSUFFIX=.source
 CATEGORIES=	lang
-MASTER_SITES=	SF/freepascal/Source/${PORTVERSION} \
-		https://downloads.freepascal.org/${PORTNAME}/dist/${PORTVERSION}/source/
 PKGNAMESUFFIX=	-source
 DIST_SUBDIR=	freepascal
 
@@ -15,12 +12,18 @@ WWW=		https://www.freepascal.org/
 ONLY_FOR_ARCHS=	amd64 i386
 NO_BUILD=	yes
 
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.com/freepascal.org
+GL_ACCOUNT=	fpc
+GL_PROJECT=	source
+GL_TAGNAME=	3d2b1f062e1e79d64b56a496f9eecd6084fa5803
+
 PLIST=		${WRKDIR}/pkg-plist
 PATCHDIR=	${PORTSDIR}/lang/fpc/files
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/source-${GL_TAGNAME}
 
-FPCSRCDIR=	${PORTNAME}-${PORTVERSION}
+FPCSRCDIR=	source-${GL_TAGNAME}
 
 .include <bsd.port.pre.mk>
 
@@ -33,6 +36,9 @@ FPC_ARCH=	x86_64
 post-patch:
 .if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} -i "" -e 's|900044|${OSVERSION}|g' \
+				-e 's|1201000|${OSVERSION}|g' \
+				-e 's|1200000|${OSVERSION}|g' \
+				-e 's|1400097|${OSVERSION}|g' \
 		${WRKSRC}/rtl/freebsd/${FPC_ARCH}/*.as \
 		${WRKSRC}/rtl/freebsd/${FPC_ARCH}/*.inc
 .else

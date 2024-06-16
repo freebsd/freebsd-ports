@@ -52,7 +52,7 @@ FIREBIRD_DEFAULT?=	3.0
 FORTRAN_DEFAULT?=	gfortran
 # Possible values: 3.2.2, 3.3.1
 .  if !defined(WANT_FPC_DEVEL)
-FPC_DEFAULT?=		3.2.2
+FPC_DEFAULT?=		3.2.3
 .  else
 FPC_DEFAULT?=		3.3.1
 .  endif
