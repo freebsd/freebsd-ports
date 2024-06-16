@@ -9,6 +9,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML diff and merge package
 WWW=		http://www.mangrove.cz/diffmark/
 
+BROKEN=		Unfetchable
+DEPRECATED=	Fails to build with libxml2 2.13.0 (PR 279705)
+EXPIRATION_DATE=2024-07-16
+
 USES=		gnome libtool pkgconfig
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
