@@ -1,12 +1,16 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}.1
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 Plasma workspace
 WWW=		https://www.kde.org/plasma-desktop
 
-LIB_DEPENDS=	libcln.so:math/cln \
+BUILD_DEPENDS=	kio-extras>=23.08.5:devel/kio-extras \
+		wayland-protocols>=1.31:graphics/wayland-protocols
+LIB_DEPENDS=	libKUserFeedbackCore.so:deskutils/kuserfeedback \
+		libcln.so:math/cln \
 		libdbusmenu-qt5.so:devel/libdbusmenu-qt@qt5 \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -18,6 +22,7 @@ LIB_DEPENDS=	libcln.so:math/cln \
 		libxcb-util.so:x11/xcb-util
 RUN_DEPENDS=	ck-launch-session:sysutils/consolekit2 \
 		iceauth:x11/iceauth \
+		kio-extras>=23.08.5:devel/kio-extras \
 		xmessage:x11/xmessage \
 		xrdb:x11/xrdb \
 		xset:x11/xset \
@@ -35,13 +40,13 @@ USE_KDE=	activities activities-stats activitymanagerd archive attica \
 		coreaddons crash dbusaddons emoticons filemetadata globalaccel \
 		guiaddons holidays i18n iconthemes idletime init itemmodels \
 		itemviews jobwidgets js jsembed kcmutils kdeclarative kdesu \
-		kio kscreenlocker kwin layer-shell-qt libkscreen \
-		libksysguard newstuff notifications notifyconfig package parts \
-		people phonon plasma-framework plasma-integration prison pty runner \
-		service solid sonnet syntaxhighlighting texteditor textwidgets \
-		unitconversion wallet wayland widgetsaddons windowsystem \
-		xmlgui xmlrpcclient \
-		doctools:build ecm:build \
+		kio kquickcharts kscreenlocker kwin layer-shell-qt libkexiv2 \
+		libkscreen libksysguard newstuff notifications notifyconfig \
+		package parts people phonon plasma-framework plasma-integration \
+		prison pty runner service solid sonnet syntaxhighlighting \
+		texteditor textwidgets unitconversion wallet wayland \
+		widgetsaddons windowsystem xmlgui xmlrpcclient \
+		doctools:build ecm:build plasma-wayland-protocols:build \
 		breeze-icons:run breeze:run kded:run kquickcharts:run \
 		milou:run oxygen-icons5:run
 USE_QT=		concurrent core dbus declarative graphicaleffects gui network \
@@ -56,8 +61,14 @@ CPE_VENDOR=	kde
 
 CMAKE_OFF=	BUILD_TESTING
 
-# In 5.15 a file was moved from x11/plasma5-plasma-desktop to x11/plasma5-plasma-workspace:
-CONFLICTS_INSTALL=	plasma5-plasma-desktop-5.14.*
+OPTIONS_DEFINE=		PIPEWIRE
+OPTIONS_DEFAULT=	PIPEWIRE
+
+PIPEWIRE_DESC=		Screen capture via PipeWire
+
+PIPEWIRE_LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire
+PIPEWIRE_USE=		KDE=kpipewire
+PIPEWIRE_CMAKE_OFF=	-DDISABLE_PIPEWIRE:BOOL=ON
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
