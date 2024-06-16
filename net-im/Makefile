@@ -108,6 +108,7 @@
     SUBDIR += purple-plugin-pack
     SUBDIR += purple-rocketchat
     SUBDIR += purple-slack
+    SUBDIR += py-apprise
     SUBDIR += py-fbmq
     SUBDIR += py-matrix-synapse
     SUBDIR += py-mattermostdriver
