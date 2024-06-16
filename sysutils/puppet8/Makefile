@@ -1,5 +1,5 @@
 PORTNAME=	puppet
-PORTVERSION=	8.6.0
+PORTVERSION=	8.7.0
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
 PKGNAMESUFFIX=	8
@@ -61,8 +61,7 @@ DISTFILES+=	puppetlabs-${module:C/=.*//}-${module:C/.*=//}.tar.gz:forge
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/puppetlabs/puppet|${ETCDIR}|" \
 		${WRKSRC}/install.rb \
-		${WRKSRC}/lib/puppet/reference/configuration.rb \
-		${WRKSRC}/lib/puppet/util/run_mode.rb
+		${WRKSRC}/lib/puppet/reference/configuration.rb
 	@${REINPLACE_CMD} -e "s|/etc/puppetlabs/code|${ETCDIR}|" \
 		${WRKSRC}/install.rb \
 		${WRKSRC}/lib/puppet/reference/configuration.rb \
@@ -115,7 +114,7 @@ post-install:
 	@${FIND} ${STAGEDIR}${RUBY_SITELIBDIR}/${PORTNAME} -type f | \
 		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/specifications
-	${INSTALL_DATA} ${WRKSRC}/.gemspec ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/specifications/${PORTNAME}-${PORTVERSION}.gemspec
+	${INSTALL_DATA} ${WRKSRC}/puppet.gemspec ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/specifications/${PORTNAME}-${PORTVERSION}.gemspec
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
