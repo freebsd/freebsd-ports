@@ -1,4 +1,4 @@
-TIMESTAMP = 1709863133
+TIMESTAMP = 1718519996
 SHA256 (rust/crates/aho-corasick-1.1.2.crate) = b2969dcb958b36655471fc61f7e416fa76033bdd4bfed0678d8fee1e2d07a1f0
 SIZE (rust/crates/aho-corasick-1.1.2.crate) = 183136
 SHA256 (rust/crates/bitflags-1.3.2.crate) = bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a
@@ -177,5 +177,5 @@ SHA256 (rust/crates/yaml-rust-0.4.5.crate) = 56c1936c4cc7a1c9ab21a1ebb602eb942ba
 SIZE (rust/crates/yaml-rust-0.4.5.crate) = 47783
 SHA256 (typst-typst-v0.10.0_GH0.tar.gz) = f1b7baba3c6f6f37dee6d05c9ab53d2ba5cd879a57b6e726dedf9bc51811e132
 SIZE (typst-typst-v0.10.0_GH0.tar.gz) = 47242138
-SHA256 (astrale-sharp-typstfmt-0.2.9_GH0.tar.gz) = fa24ee1705ff5fec4db45e301d38439d0bd3d6d4ee04b280ba997b2f94ba16d9
-SIZE (astrale-sharp-typstfmt-0.2.9_GH0.tar.gz) = 42209
+SHA256 (astrale-sharp-typstfmt-0.2.10_GH0.tar.gz) = 5a3f413a428b2590552c2d0ab0ab04c7a745e1cca128844b7b82ea49326d65c4
+SIZE (astrale-sharp-typstfmt-0.2.10_GH0.tar.gz) = 41949
