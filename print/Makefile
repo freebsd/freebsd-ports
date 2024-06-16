@@ -43,6 +43,7 @@
     SUBDIR += epson-inkjet-printer-escpr
     SUBDIR += epson-inkjet-printer-escpr2
     SUBDIR += epsonepl
+    SUBDIR += extractpdfmark
     SUBDIR += fig2dev
     SUBDIR += flpsed
     SUBDIR += font-amsfonts
