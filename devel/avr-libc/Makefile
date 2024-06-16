@@ -1,12 +1,15 @@
 PORTNAME=	avr-libc
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	SAVANNAH
+MASTER_SITES=	https://github.com/avrdudes/avr-libc/releases/download/avr-libc-${PORTVERSION:S/./_/g}-release/
+# Cannot use USE_GITHUB since the github source tree lacks the
+# autoconf'ed files needed to build the source code. Only the release
+# files contain them.
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	C and math library for the Atmel AVR controller family
-WWW=		https://savannah.nongnu.org/projects/avr-libc
+WWW=		https://github.com/avrdudes/avr-libc/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -26,7 +29,7 @@ CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
 
 OPTIONS_DEFINE=	DOXYGEN
 
-DOXYGEN_BROKEN=	Build fails without showing any specific error while generating the documentation
+DOXYGEN_BROKEN=	Build requires exactly doxygen 1.9.6
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 		fig2dev:print/fig2dev \
 		jpegtopnm:graphics/netpbm
