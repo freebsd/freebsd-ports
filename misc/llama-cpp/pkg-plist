@@ -6,6 +6,7 @@
 %%EXAMPLES%%bin/llama-bench-matmult
 %%EXAMPLES%%bin/llama-cli
 %%EXAMPLES%%bin/llama-convert-llama2c-to-ggml
+%%EXAMPLES%%bin/llama-cvector-generator
 %%EXAMPLES%%bin/llama-embedding
 %%EXAMPLES%%bin/llama-eval-callback
 %%EXAMPLES%%bin/llama-export-lora
