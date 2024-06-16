@@ -378,6 +378,7 @@
     SUBDIR += tuareg-mode.el
     SUBDIR += twelf
     SUBDIR += typstfmt
+    SUBDIR += typstyle
     SUBDIR += ucc
     SUBDIR += urweb
     SUBDIR += v
