@@ -11,6 +11,9 @@ WWW=		https://metacpan.org/release/XML-DifferenceMarkup
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+DEPRECATED=	Depends on deprecated port textproc/diffmark (PR 279705)
+EXPIRATION_DATE=2024-07-16
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XML-LibXML>=0:textproc/p5-XML-LibXML
 LIB_DEPENDS=	libdiffmark.so:textproc/diffmark
