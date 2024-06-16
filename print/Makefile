@@ -107,6 +107,7 @@
     SUBDIR += magicfilter
     SUBDIR += makeindex
     SUBDIR += mftrace
+    SUBDIR += microtex
     SUBDIR += miktex
     SUBDIR += min12xxw
     SUBDIR += mp-a4

@@ -1,0 +1,4 @@
+MicroTeX is a dynamic, cross-platform, and embeddable LaTeX rendering library.
+Its main purpose is to display mathematical formulas written in LaTeX. It can
+be embedded in applications on various platforms (Android, iOS, Windows, Linux
+GTK, Qt...).
