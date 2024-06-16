@@ -796,19 +796,6 @@ include/tg_owt/modules/audio_coding/test/TestVADDTX.h
 include/tg_owt/modules/audio_coding/test/TwoWayCommunication.h
 include/tg_owt/modules/audio_coding/test/iSACTest.h
 include/tg_owt/modules/audio_coding/test/opus_test.h
-include/tg_owt/modules/audio_device/android/aaudio_player.h
-include/tg_owt/modules/audio_device/android/aaudio_recorder.h
-include/tg_owt/modules/audio_device/android/aaudio_wrapper.h
-include/tg_owt/modules/audio_device/android/audio_common.h
-include/tg_owt/modules/audio_device/android/audio_device_template.h
-include/tg_owt/modules/audio_device/android/audio_manager.h
-include/tg_owt/modules/audio_device/android/audio_record_jni.h
-include/tg_owt/modules/audio_device/android/audio_track_jni.h
-include/tg_owt/modules/audio_device/android/build_info.h
-include/tg_owt/modules/audio_device/android/ensure_initialized.h
-include/tg_owt/modules/audio_device/android/opensles_common.h
-include/tg_owt/modules/audio_device/android/opensles_player.h
-include/tg_owt/modules/audio_device/android/opensles_recorder.h
 include/tg_owt/modules/audio_device/audio_device_buffer.h
 include/tg_owt/modules/audio_device/audio_device_config.h
 include/tg_owt/modules/audio_device/audio_device_generic.h
@@ -834,15 +821,7 @@ include/tg_owt/modules/audio_device/linux/audio_mixer_manager_alsa_linux.h
 include/tg_owt/modules/audio_device/linux/audio_mixer_manager_pulse_linux.h
 include/tg_owt/modules/audio_device/linux/latebindingsymboltable_linux.h
 include/tg_owt/modules/audio_device/linux/pulseaudiosymboltable_linux.h
-include/tg_owt/modules/audio_device/mac/audio_device_mac.h
-include/tg_owt/modules/audio_device/mac/audio_mixer_manager_mac.h
 include/tg_owt/modules/audio_device/mock_audio_device_buffer.h
-include/tg_owt/modules/audio_device/win/audio_device_core_win.h
-include/tg_owt/modules/audio_device/win/audio_device_module_win.h
-include/tg_owt/modules/audio_device/win/core_audio_base_win.h
-include/tg_owt/modules/audio_device/win/core_audio_input_win.h
-include/tg_owt/modules/audio_device/win/core_audio_output_win.h
-include/tg_owt/modules/audio_device/win/core_audio_utility_win.h
 include/tg_owt/modules/audio_mixer/audio_frame_manipulator.h
 include/tg_owt/modules/audio_mixer/audio_mixer_impl.h
 include/tg_owt/modules/audio_mixer/default_output_rate_calculator.h
@@ -1142,14 +1121,6 @@ include/tg_owt/modules/desktop_capture/linux/x11/x_atom_cache.h
 include/tg_owt/modules/desktop_capture/linux/x11/x_error_trap.h
 include/tg_owt/modules/desktop_capture/linux/x11/x_server_pixel_buffer.h
 include/tg_owt/modules/desktop_capture/linux/x11/x_window_property.h
-include/tg_owt/modules/desktop_capture/mac/desktop_configuration.h
-include/tg_owt/modules/desktop_capture/mac/desktop_configuration_monitor.h
-include/tg_owt/modules/desktop_capture/mac/desktop_frame_cgimage.h
-include/tg_owt/modules/desktop_capture/mac/desktop_frame_iosurface.h
-include/tg_owt/modules/desktop_capture/mac/desktop_frame_provider.h
-include/tg_owt/modules/desktop_capture/mac/full_screen_mac_application_handler.h
-include/tg_owt/modules/desktop_capture/mac/screen_capturer_mac.h
-include/tg_owt/modules/desktop_capture/mac/window_list_utils.h
 include/tg_owt/modules/desktop_capture/mock_desktop_capturer_callback.h
 include/tg_owt/modules/desktop_capture/mouse_cursor.h
 include/tg_owt/modules/desktop_capture/mouse_cursor_monitor.h
@@ -1163,35 +1134,6 @@ include/tg_owt/modules/desktop_capture/screen_drawer_lock_posix.h
 include/tg_owt/modules/desktop_capture/shared_desktop_frame.h
 include/tg_owt/modules/desktop_capture/shared_memory.h
 include/tg_owt/modules/desktop_capture/test_utils.h
-include/tg_owt/modules/desktop_capture/win/cursor.h
-include/tg_owt/modules/desktop_capture/win/cursor_unittest_resources.h
-include/tg_owt/modules/desktop_capture/win/d3d_device.h
-include/tg_owt/modules/desktop_capture/win/desktop.h
-include/tg_owt/modules/desktop_capture/win/desktop_capture_utils.h
-include/tg_owt/modules/desktop_capture/win/display_configuration_monitor.h
-include/tg_owt/modules/desktop_capture/win/dxgi_adapter_duplicator.h
-include/tg_owt/modules/desktop_capture/win/dxgi_context.h
-include/tg_owt/modules/desktop_capture/win/dxgi_duplicator_controller.h
-include/tg_owt/modules/desktop_capture/win/dxgi_frame.h
-include/tg_owt/modules/desktop_capture/win/dxgi_output_duplicator.h
-include/tg_owt/modules/desktop_capture/win/dxgi_texture.h
-include/tg_owt/modules/desktop_capture/win/dxgi_texture_mapping.h
-include/tg_owt/modules/desktop_capture/win/dxgi_texture_staging.h
-include/tg_owt/modules/desktop_capture/win/full_screen_win_application_handler.h
-include/tg_owt/modules/desktop_capture/win/scoped_gdi_object.h
-include/tg_owt/modules/desktop_capture/win/scoped_thread_desktop.h
-include/tg_owt/modules/desktop_capture/win/screen_capture_utils.h
-include/tg_owt/modules/desktop_capture/win/screen_capturer_win_directx.h
-include/tg_owt/modules/desktop_capture/win/screen_capturer_win_gdi.h
-include/tg_owt/modules/desktop_capture/win/screen_capturer_win_magnifier.h
-include/tg_owt/modules/desktop_capture/win/selected_window_context.h
-include/tg_owt/modules/desktop_capture/win/test_support/test_window.h
-include/tg_owt/modules/desktop_capture/win/wgc_capture_session.h
-include/tg_owt/modules/desktop_capture/win/wgc_capture_source.h
-include/tg_owt/modules/desktop_capture/win/wgc_capturer_win.h
-include/tg_owt/modules/desktop_capture/win/wgc_desktop_frame.h
-include/tg_owt/modules/desktop_capture/win/window_capture_utils.h
-include/tg_owt/modules/desktop_capture/win/window_capturer_win_gdi.h
 include/tg_owt/modules/desktop_capture/window_finder.h
 include/tg_owt/modules/desktop_capture/window_finder_mac.h
 include/tg_owt/modules/desktop_capture/window_finder_win.h
@@ -1349,10 +1291,6 @@ include/tg_owt/modules/video_capture/video_capture_config.h
 include/tg_owt/modules/video_capture/video_capture_defines.h
 include/tg_owt/modules/video_capture/video_capture_factory.h
 include/tg_owt/modules/video_capture/video_capture_impl.h
-include/tg_owt/modules/video_capture/windows/device_info_ds.h
-include/tg_owt/modules/video_capture/windows/help_functions_ds.h
-include/tg_owt/modules/video_capture/windows/sink_filter_ds.h
-include/tg_owt/modules/video_capture/windows/video_capture_ds.h
 include/tg_owt/modules/video_coding/chain_diff_calculator.h
 include/tg_owt/modules/video_coding/codecs/av1/av1_svc_config.h
 include/tg_owt/modules/video_coding/codecs/av1/dav1d_decoder.h
@@ -1927,14 +1865,6 @@ include/tg_owt/rtc_base/units/unit_base.h
 include/tg_owt/rtc_base/untyped_function.h
 include/tg_owt/rtc_base/virtual_socket_server.h
 include/tg_owt/rtc_base/weak_ptr.h
-include/tg_owt/rtc_base/win/create_direct3d_device.h
-include/tg_owt/rtc_base/win/get_activation_factory.h
-include/tg_owt/rtc_base/win/hstring.h
-include/tg_owt/rtc_base/win/scoped_com_initializer.h
-include/tg_owt/rtc_base/win/windows_version.h
-include/tg_owt/rtc_base/win32.h
-include/tg_owt/rtc_base/win32_socket_init.h
-include/tg_owt/rtc_base/win32_window.h
 include/tg_owt/rtc_base/zero_memory.h
 include/tg_owt/sdk/media_constraints.h
 include/tg_owt/stats/test/rtc_test_stats.h
@@ -2056,7 +1986,6 @@ lib/libtg_owt.a
 @dir include/tg_owt/modules/audio_coding/g3doc
 @dir include/tg_owt/modules/audio_coding/neteq/g3doc
 @dir include/tg_owt/modules/audio_coding/neteq/test/delay_tool
-@dir include/tg_owt/modules/audio_device/android/java/src/org/webrtc/voiceengine
 @dir include/tg_owt/modules/audio_device/g3doc
 @dir include/tg_owt/modules/audio_mixer/g3doc
 @dir include/tg_owt/modules/audio_processing/g3doc
@@ -2066,7 +1995,6 @@ lib/libtg_owt.a
 @dir include/tg_owt/modules/audio_processing/test/py_quality_assessment/output
 @dir include/tg_owt/modules/audio_processing/test/py_quality_assessment/quality_assessment/apm_configs
 @dir include/tg_owt/modules/audio_processing/transient/test
-@dir include/tg_owt/modules/desktop_capture/win/cursor_test_data
 @dir include/tg_owt/modules/pacing/g3doc
 @dir include/tg_owt/modules/utility/source
 @dir include/tg_owt/modules/video_capture/test
