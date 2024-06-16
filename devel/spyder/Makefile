@@ -1,6 +1,7 @@
 PORTNAME=	spyder
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.5.5
+PORTREVISION=	1
 CATEGORIES=	devel science python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -63,8 +64,7 @@ DOCSDIR=	${PYTHON_SITELIBDIR}/spyder
 post-patch:
 	# the second regex is to downgrade spyder-kernels requirement to 2.5.1
 	${REINPLACE_CMD} \
-		-E 's|,<[0-9.=]+||; \
-		    s|2\.5\.2|2.5.1|' \
+		-E 's|,<[0-9.=]+||' \
 		${WRKSRC}/setup.py \
 		${WRKSRC}/binder/environment.yml \
 		${WRKSRC}/requirements/main.yml \
