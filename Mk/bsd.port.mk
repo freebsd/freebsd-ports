@@ -3104,9 +3104,8 @@ check-vulnerable:
 			${SH} ${SCRIPTSDIR}/check-vulnerable.sh
 .    endif
 
-# Quote simply quote all variables, except FETCH_ENV, some ports are creative
-# with it, and it needs to be quoted twice to pass through the echo/eval in
-# do-fetch.
+# Quote all variables except FETCH_ENV. Because some ports are creative,
+# quoting twice is necessary to pass through the echo/eval in do-fetch.
 _DO_FETCH_ENV= \
 			dp_DISABLE_SIZE='${DISABLE_SIZE}' \
 			dp_DISTDIR='${_DISTDIR}' \
