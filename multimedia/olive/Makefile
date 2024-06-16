@@ -34,6 +34,8 @@ GH_TAGNAME=	f7e1bff
 GH_TUPLE=	olive-editor:core:2777928:core/ext/core \
 		KDAB:KDDockWidgets:8d2d0a5:KDDockWidgets/ext/KDDockWidgets
 
+CXXFLAGS_i386=	-sse -sse2
+
 PORTSCOUT=	limit:^.*[1-9]\..* # prevent tags like 20181223
 
 CONFLICTS_BUILD=	opentimelineio # fails to build with the opentimelineio optional dependency, see https://github.com/olive-editor/olive/issues/2201
