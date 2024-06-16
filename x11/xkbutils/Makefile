@@ -3,7 +3,8 @@ PORTVERSION=	1.0.6
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	XKB utility demos
+COMMENT=	Collection of small X Keyboard Extension utilities
+WWW=		https://gitlab.freedesktop.org/xorg/app/xkbutils
 
 LICENSE=	MIT
 
