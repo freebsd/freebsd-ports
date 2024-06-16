@@ -10,6 +10,9 @@ WWW=		https://libiqxmlrpc.wikidot.com/
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Fails to build with libxml2 2.13.0 (PR 279705)
+EXPIRATION_DATE=2024-07-16
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		cmake gnome localbase:ldflags ssl tar:bzip2
