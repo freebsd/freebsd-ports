@@ -129,6 +129,7 @@
 %%DATADIR%%/Definitions/carpt.yml
 %%DATADIR%%/Definitions/cathoderaytube.yml
 %%DATADIR%%/Definitions/catorrent.yml
+%%DATADIR%%/Definitions/cdfile.yml
 %%DATADIR%%/Definitions/centraltorrent.yml
 %%DATADIR%%/Definitions/ceskeforum.yml
 %%DATADIR%%/Definitions/chdbits.yml
@@ -156,6 +157,7 @@
 %%DATADIR%%/Definitions/dasunerwartete.yml
 %%DATADIR%%/Definitions/datascene-api.yml
 %%DATADIR%%/Definitions/deildu.yml
+%%DATADIR%%/Definitions/demonoid.yml
 %%DATADIR%%/Definitions/desitorrents-api.yml
 %%DATADIR%%/Definitions/devil-torrents.yml
 %%DATADIR%%/Definitions/diablotorrent.yml
@@ -258,6 +260,7 @@
 %%DATADIR%%/Definitions/hellashut.yml
 %%DATADIR%%/Definitions/helltorrents.yml
 %%DATADIR%%/Definitions/hhanclub.yml
+%%DATADIR%%/Definitions/homeporntorrents.yml
 %%DATADIR%%/Definitions/houseofdevil.yml
 %%DATADIR%%/Definitions/hqmusic.yml
 %%DATADIR%%/Definitions/hudbt.yml
@@ -538,7 +541,7 @@
 %%DATADIR%%/Definitions/torrentz2nz.yml
 %%DATADIR%%/Definitions/tosky.yml
 %%DATADIR%%/Definitions/totheglory.yml
-%%DATADIR%%/Definitions/totheglorycookie.yml
+%%DATADIR%%/Definitions/totheglory2fa.yml
 %%DATADIR%%/Definitions/trackermk.yml
 %%DATADIR%%/Definitions/traht.yml
 %%DATADIR%%/Definitions/trancetraffic.yml
@@ -561,6 +564,7 @@
 %%DATADIR%%/Definitions/unlimitz.yml
 %%DATADIR%%/Definitions/uploadcx.yml
 %%DATADIR%%/Definitions/utopia.yml
+%%DATADIR%%/Definitions/visionhd-api.yml
 %%DATADIR%%/Definitions/vsthouse.yml
 %%DATADIR%%/Definitions/vstorrent.yml
 %%DATADIR%%/Definitions/vsttorrents.yml
