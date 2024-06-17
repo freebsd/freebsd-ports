@@ -4277,6 +4277,7 @@
     SUBDIR += py-PyExecJS
     SUBDIR += py-PyGithub
     SUBDIR += py-PyLD
+    SUBDIR += py-PyPubSub
     SUBDIR += py-PyUtilib
     SUBDIR += py-QtPy
     SUBDIR += py-RPyC
