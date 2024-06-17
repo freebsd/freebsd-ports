@@ -10,7 +10,7 @@ WWW=		http://mlmmj.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe gmake iconv shebangfix tar:xz pkgconfig
+USES=		cpe iconv shebangfix tar:xz pkgconfig
 SHEBANG_FILES=	contrib/web/perl-user/mlmmj.cgi
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-receive-strip
