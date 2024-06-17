@@ -64,4 +64,4 @@ lib/cmake/zfp/zfp-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/zfp/zfp-targets.cmake
 lib/libzfp.so
 lib/libzfp.so.1
-lib/libzfp.so.1.0.0
+lib/libzfp.so.1.0.1
