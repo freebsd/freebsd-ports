@@ -1143,6 +1143,7 @@
     SUBDIR += scalapackfx
     SUBDIR += scilab
     SUBDIR += scilab-toolbox-swt
+    SUBDIR += scipoptsuite
     SUBDIR += scorec-core
     SUBDIR += scs
     SUBDIR += sdpa
