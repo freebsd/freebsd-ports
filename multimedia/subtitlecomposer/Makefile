@@ -1,6 +1,5 @@
 PORTNAME=	subtitlecomposer
-DISTVERSION=	0.8.0
-PORTREVISION=	1
+DISTVERSION=	0.8.1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libicui18n.so:devel/icu \
 
 USES=		compiler:c++11-lang cmake desktop-file-utils gettext \
 		kde:5 openal pkgconfig qt:5 shared-mime-info ssl tar:xz xorg
-USE_KDE=	bookmarks codecs completion config configwidgets \
+USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons jobwidgets i18n itemviews kio \
 		service solid sonnet textwidgets widgetsaddons \
 		windowsystem xmlgui \
