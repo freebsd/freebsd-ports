@@ -1,0 +1,81 @@
+--- meson.build.orig	2024-06-01 04:56:52 UTC
++++ meson.build
+@@ -40,6 +40,7 @@ sbindir = prefix / get_option('sbindir')
+ mandir = prefix / get_option('mandir')
+ pkgconfdir = prefix / get_option('sysconfdir')
+ sbindir = prefix / get_option('sbindir')
++libexecdir = prefix / get_option('libexecdir')
+ 
+ ##################
+ # Compiler flags #
+@@ -70,7 +71,7 @@ statedir = '-D_PATH_STATEDIR="' + localstatedir + '/ne
+ dversion = '-DVERSION="' + version + '"'
+ messagedir = '-DSERVERTEXT="' + localstatedir + '/netatalk/msg/"'
+ statedir = '-D_PATH_STATEDIR="' + localstatedir + '/netatalk/"'
+-uamdir = '-D_PATH_AFPDUAMPATH="' + libdir + '/netatalk/"'
++uamdir = '-D_PATH_AFPDUAMPATH="' + libexecdir + '/netatalk-uams/"'
+ 
+ ############
+ # Includes #
+@@ -487,6 +488,11 @@ if crypt.found()
+ if crypt.found()
+     cdata.set('HAVE_CRYPT_H', 1)
+     cdata.set('HAVE_LIBCRYPT', 1)
++else
++    crypt = cc.find_library('crypt', has_headers: 'unistd.h', required: false)
++    if crypt.found()
++        cdata.set('HAVE_LIBCRYPT', 1)
++    endif
+ endif
+ 
+ des = cc.find_library('des', required: false)
+@@ -763,19 +769,7 @@ else
+             required: false,
+         )
+ 
+-        if tracker.found()
+-            cdata.set(
+-                'TRACKER_MANAGING_COMMAND',
+-                '"tracker daemon"',
+-            )
+-            cdata.set(
+-                'TRACKER_PREFIX',
+-                '"'
+-                + tracker_sparql.get_variable(pkgconfig: 'prefix')
+-                + '"',
+-            )
+-            tracker_manager += 'tracker'
+-        elif tracker3.found()
++        if tracker3.found()
+             cdata.set('HAVE_TRACKER3', 1)
+             cdata.set(
+                 'TRACKER_MANAGING_COMMAND',
+@@ -816,15 +810,16 @@ else
+             endif
+         endif
+     endif
+-endif
+-
+-have_spotlight = (
++    have_spotlight = (
+     tracker_sparql.found()
+     and tracker_ok
+     and talloc.found()
+     and flex.found()
+     and bison.found()
+ )
++endif
++
++
+ if have_spotlight
+     cdata.set('WITH_SPOTLIGHT', 1)
+ endif
+@@ -1833,6 +1828,8 @@ int deny_severity = 0;
+     tcpwrap_code = '''
+ int allow_severity = 0;
+ int deny_severity = 0;
++
++int hosts_access();
+ 
+ int main(void) {
+ 

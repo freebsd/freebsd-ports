@@ -1,0 +1,14 @@
+--- contrib/shell_utils/meson.build.orig	2024-06-17 15:52:57 UTC
++++ contrib/shell_utils/meson.build
+@@ -24,8 +24,8 @@ endif
+     install_data(asipstatus_script, install_dir: bindir)
+ endif
+ 
+-install_data('fce_ev_script.sh', install_dir: bindir)
++#install_data('fce_ev_script.sh', install_dir: bindir)
+ 
+-install_data('make-casetable.pl', install_dir: bindir)
++#install_data('make-casetable.pl', install_dir: bindir)
+ 
+-install_data('make-precompose.h.pl', install_dir: bindir)
++#install_data('make-precompose.h.pl', install_dir: bindir)
