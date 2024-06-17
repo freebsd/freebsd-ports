@@ -21,4 +21,6 @@ GH_ACCOUNT=	NanoMichael
 GH_PROJECT=	MicroTeX
 GH_TAGNAME=	d87ebec
 
+PORTSCOUT=	skipv:xml-def
+
 .include <bsd.port.mk>
