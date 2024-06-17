@@ -1,7 +1,7 @@
 PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
-DISTVERSION=	21.0.99.1-1057
-DISTVERSIONSUFFIX=	-ga4d298d85
+DISTVERSION=	21.0.99.1-1070
+DISTVERSIONSUFFIX=	-g32e16082c5
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
@@ -42,10 +42,10 @@ MESON_ARGS=	-D${PORTNAME}=true \
 		-Ddefault_font_path="${DEFAULT_FONTPATH_LIST:ts,}"
 PLIST_FILES=	bin/Xwayland \
 		"@comment lib/xorg/protocol.txt" \
-		libdata/pkgconfig/xwayland.pc \
+		share/applications/org.freedesktop.Xwayland.desktop \
 		"@comment share/man/man1/Xserver.1.gz" \
 		share/man/man1/Xwayland.1.gz \
-		share/applications/org.freedesktop.Xwayland.desktop
+		share/pkgconfig/xwayland.pc
 
 # Keep in sync with xorg-server
 FONTPATH_ROOT?=	${LOCALBASE}/share/fonts
