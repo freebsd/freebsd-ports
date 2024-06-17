@@ -1,6 +1,6 @@
 PORTNAME=	rio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0
+DISTVERSION=	0.1.1
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	-terminal-emulator
 
@@ -368,9 +368,9 @@ CARGO_CRATES=	ab_glyph-0.2.25 \
 		web-sys-0.3.69 \
 		web-time-1.1.0 \
 		weezl-0.1.8 \
-		wgpu-0.20.0 \
-		wgpu-core-0.20.0 \
-		wgpu-hal-0.20.0 \
+		wgpu-0.20.1 \
+		wgpu-core-0.21.0 \
+		wgpu-hal-0.21.0 \
 		wgpu-types-0.20.0 \
 		widestring-1.1.0 \
 		winapi-0.3.9 \
