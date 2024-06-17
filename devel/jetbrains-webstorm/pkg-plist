@@ -21,7 +21,7 @@ share/applications/webstorm.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-WS-241.17011.90
+%%DATADIR%%/lib/build-marker-WS-241.17890.13
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/ext/platform-main.jar
 %%DATADIR%%/lib/external-system-rt.jar
