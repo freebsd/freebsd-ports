@@ -1,6 +1,6 @@
 PORTNAME=	gptscript
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
+DISTVERSION=	0.7.1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -28,5 +28,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gptscript-ai
 GH_PROJECT=	py-gptscript
 USE_PYTHON=	autoplist pep517
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's/^\(version = "\)0.5.0\("\)/\1${PORTVERSION}\2/1' \
+		${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>
