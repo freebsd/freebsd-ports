@@ -229,19 +229,19 @@ include/singular/reporter/reporter.h
 include/singular/reporter/s_buff.h
 include/singular/reporter/si_signals.h
 include/singular/singularconfig.h
-lib/libSingular-4.3.2.so
+lib/libSingular-4.4.0.so
 lib/libSingular.a
 lib/libSingular.so
-lib/libfactory-4.3.2.so
+lib/libfactory-4.4.0.so
 lib/libfactory.a
 lib/libfactory.so
 lib/libomalloc-0.9.6.so
 lib/libomalloc.a
 lib/libomalloc.so
-lib/libpolys-4.3.2.so
+lib/libpolys-4.4.0.so
 lib/libpolys.a
 lib/libpolys.so
-lib/libsingular_resources-4.3.2.so
+lib/libsingular_resources-4.4.0.so
 lib/libsingular_resources.a
 lib/libsingular_resources.so
 libdata/pkgconfig/Singular.pc
@@ -504,6 +504,7 @@ share/ml_singular/extract.lib
 %%DATADIR%%/LIB/maxlike.lib
 %%DATADIR%%/LIB/methods.lib
 %%DATADIR%%/LIB/moddiq.lib
+%%DATADIR%%/LIB/modfinduni.lib
 %%DATADIR%%/LIB/modnormal.lib
 %%DATADIR%%/LIB/modstd.lib
 %%DATADIR%%/LIB/modular.lib
@@ -579,6 +580,7 @@ share/ml_singular/extract.lib
 %%DATADIR%%/LIB/rstandard.lib
 %%DATADIR%%/LIB/rwalk.lib
 %%DATADIR%%/LIB/sagbi.lib
+%%DATADIR%%/LIB/sagbiNormaliz.lib
 %%DATADIR%%/LIB/sagbigrob.lib
 %%DATADIR%%/LIB/schreyer.lib
 %%DATADIR%%/LIB/schubert.lib
@@ -592,6 +594,7 @@ share/ml_singular/extract.lib
 %%DATADIR%%/LIB/spectrum.lib
 %%DATADIR%%/LIB/standard.lib
 %%DATADIR%%/LIB/stanleyreisner.lib
+%%DATADIR%%/LIB/stdmodule.lib
 %%DATADIR%%/LIB/stratify.lib
 %%DATADIR%%/LIB/surf.lib
 %%DATADIR%%/LIB/surf_jupyter.lib
@@ -607,6 +610,7 @@ share/ml_singular/extract.lib
 %%DATADIR%%/LIB/toric.lib
 %%DATADIR%%/LIB/triang.lib
 %%DATADIR%%/LIB/tropical.lib
+%%DATADIR%%/LIB/tropicalEllipticCovers.lib
 %%DATADIR%%/LIB/tropicalNewton.lib
 %%DATADIR%%/LIB/tst.lib
 %%DATADIR%%/LIB/weierstr.lib
