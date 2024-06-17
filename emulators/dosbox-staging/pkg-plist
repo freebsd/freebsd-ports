@@ -317,6 +317,7 @@ share/applications/dosbox-staging.desktop
 %%DATADIR%%/mapping/CAPITAL_SMALL.TXT
 %%DATADIR%%/mapping/DECOMPOSITION.TXT
 %%DATADIR%%/mapping/MAIN.TXT
+%%DATADIR%%/translations/br.lng
 %%DATADIR%%/translations/de.lng
 %%DATADIR%%/translations/en.lng
 %%DATADIR%%/translations/es.lng
