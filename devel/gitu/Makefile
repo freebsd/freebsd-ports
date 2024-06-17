@@ -1,6 +1,6 @@
 PORTNAME=	gitu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.1
+DISTVERSION=	0.21.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,12 +26,12 @@ CARGO_CRATES=	ahash-0.8.11 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		arboard-3.3.2 \
+		arboard-3.4.0 \
 		atomic-0.6.0 \
 		autocfg-1.2.0 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
-		block-0.1.6 \
+		block2-0.5.1 \
 		bstr-0.2.17 \
 		bumpalo-3.15.4 \
 		bytemuck-1.15.0 \
@@ -48,7 +48,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		clap_builder-4.5.2 \
 		clap_derive-4.5.4 \
 		clap_lex-0.7.0 \
-		clipboard-win-5.3.0 \
+		clipboard-win-5.3.1 \
 		colorchoice-1.0.0 \
 		compact_str-0.7.1 \
 		console-0.15.8 \
@@ -70,7 +70,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		errno-0.3.8 \
 		error-code-3.2.0 \
 		etcetera-0.8.0 \
-		figment-0.10.18 \
+		figment-0.10.19 \
 		form_urlencoded-1.2.1 \
 		gethostname-0.4.3 \
 		git-version-0.3.9 \
@@ -86,11 +86,11 @@ CARGO_CRATES=	ahash-0.8.11 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
 		indexmap-2.2.6 \
-		indoc-2.0.5 \
-		insta-1.38.0 \
+		insta-1.39.0 \
 		is-terminal-0.4.12 \
 		itertools-0.10.5 \
 		itertools-0.12.1 \
+		itertools-0.13.0 \
 		itoa-1.0.11 \
 		jobserver-0.1.30 \
 		js-sys-0.3.69 \
@@ -103,15 +103,20 @@ CARGO_CRATES=	ahash-0.8.11 \
 		lock_api-0.4.11 \
 		log-0.4.21 \
 		lru-0.12.3 \
-		malloc_buf-0.0.6 \
 		memchr-2.7.2 \
 		minimal-lexical-0.2.1 \
 		mio-0.8.11 \
 		nom-7.1.3 \
 		num-traits-0.2.18 \
-		objc-0.2.7 \
-		objc-foundation-0.1.1 \
-		objc_id-0.1.1 \
+		objc-sys-0.3.5 \
+		objc2-0.5.2 \
+		objc2-app-kit-0.2.2 \
+		objc2-core-data-0.2.2 \
+		objc2-core-image-0.2.2 \
+		objc2-encode-4.0.3 \
+		objc2-foundation-0.2.2 \
+		objc2-metal-0.2.2 \
+		objc2-quartz-core-0.2.2 \
 		once_cell-1.19.0 \
 		oorandom-11.1.3 \
 		parking_lot-0.12.1 \
@@ -125,7 +130,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		pretty_assertions-1.4.0 \
 		proc-macro2-1.0.79 \
 		quote-1.0.35 \
-		ratatui-0.26.2 \
+		ratatui-0.26.3 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.1.57 \
@@ -141,10 +146,10 @@ CARGO_CRATES=	ahash-0.8.11 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		semver-1.0.22 \
-		serde-1.0.199 \
-		serde_derive-1.0.199 \
+		serde-1.0.203 \
+		serde_derive-1.0.203 \
 		serde_json-1.0.115 \
-		serde_spanned-0.6.5 \
+		serde_spanned-0.6.6 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.1 \
@@ -165,9 +170,9 @@ CARGO_CRATES=	ahash-0.8.11 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		toml-0.8.12 \
-		toml_datetime-0.6.5 \
-		toml_edit-0.22.9 \
+		toml-0.8.13 \
+		toml_datetime-0.6.6 \
+		toml_edit-0.22.13 \
 		tree-sitter-0.20.10 \
 		tree-sitter-bash-0.20.5 \
 		tree-sitter-c-0.20.8 \
@@ -189,12 +194,13 @@ CARGO_CRATES=	ahash-0.8.11 \
 		tree-sitter-scala-0.20.3 \
 		tree-sitter-toml-0.20.0 \
 		tree-sitter-typescript-0.20.5 \
-		tui-prompts-0.3.11 \
+		tui-prompts-0.3.12 \
 		uncased-0.9.10 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.23 \
 		unicode-segmentation-1.11.0 \
+		unicode-truncate-1.0.0 \
 		unicode-width-0.1.12 \
 		url-2.5.0 \
 		utf8parse-0.2.1 \
