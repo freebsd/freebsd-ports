@@ -8,7 +8,7 @@ project Construct is
    for Library_Kind use "static";
 
    package Builder is
-      for Default_Switches ("ada") use ("-gnatf", "-gnatws", "-O2");
+      for Default_Switches ("ada") use ("-j0");
    end Builder;
 
 end Construct;
