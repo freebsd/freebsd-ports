@@ -1,6 +1,7 @@
 include/packagekitqt%%QT_VER%%/PackageKit/Daemon
 include/packagekitqt%%QT_VER%%/PackageKit/Details
 include/packagekitqt%%QT_VER%%/PackageKit/Offline
+include/packagekitqt%%QT_VER%%/PackageKit/PackageKitQt
 include/packagekitqt%%QT_VER%%/PackageKit/Transaction
 include/packagekitqt%%QT_VER%%/PackageKit/bitfield.h
 include/packagekitqt%%QT_VER%%/PackageKit/common.h
@@ -8,6 +9,7 @@ include/packagekitqt%%QT_VER%%/PackageKit/daemon.h
 include/packagekitqt%%QT_VER%%/PackageKit/details.h
 include/packagekitqt%%QT_VER%%/PackageKit/offline.h
 include/packagekitqt%%QT_VER%%/PackageKit/packagekitqt_global.h
+include/packagekitqt%%QT_VER%%/PackageKit/qpk-version.h
 include/packagekitqt%%QT_VER%%/PackageKit/transaction.h
 lib/cmake/packagekitqt%%QT_VER%%/PackageKitQtTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/packagekitqt%%QT_VER%%/PackageKitQtTargets.cmake
@@ -15,5 +17,5 @@ lib/cmake/packagekitqt%%QT_VER%%/packagekitqt%%QT_VER%%-config-version.cmake
 lib/cmake/packagekitqt%%QT_VER%%/packagekitqt%%QT_VER%%-config.cmake
 lib/libpackagekitqt%%QT_VER%%.so
 lib/libpackagekitqt%%QT_VER%%.so.1
-lib/libpackagekitqt%%QT_VER%%.so.1.1.1
+lib/libpackagekitqt%%QT_VER%%.so.1.1.2
 libdata/pkgconfig/packagekitqt%%QT_VER%%.pc
