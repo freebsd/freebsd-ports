@@ -1,6 +1,6 @@
 PORTNAME=	pytorch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.2
+DISTVERSION=	2.3.1
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	${PORTNAME}
@@ -37,7 +37,8 @@ CMAKE_ARGS=	-DPSIMD_SOURCE_DIR=${WRKSRC}/third_party/psimd \
 		-DPYTHON_EXECUTABLE=${PYTHON_CMD}
 
 MAKE_ENV=	USE_NINJA=no # ninja breaks for some reason
-LDFLAGS+=	-lexecinfo
+LDFLAGS+=	-lexecinfo \
+		-pthread
 
 BINARY_ALIAS=	make=${GMAKE} git=true
 
