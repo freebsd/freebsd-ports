@@ -1,3 +1,3 @@
-TIMESTAMP = 1674885985
-SHA256 (mypy-boto3-s3-1.26.58.tar.gz) = 02aa9514877147da996ea62e9d3d326d6b33f46c9c20b26f1e45fd125ba03518
-SIZE (mypy-boto3-s3-1.26.58.tar.gz) = 93365
+TIMESTAMP = 1718581959
+SHA256 (mypy_boto3_s3-1.34.120.tar.gz) = d508a7bca6cc1100b2d4c8fc7dc9a0a71f3b2a275338191a0eac161c904ca7bc
+SIZE (mypy_boto3_s3-1.34.120.tar.gz) = 75734
