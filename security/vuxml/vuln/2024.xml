@@ -1,3 +1,39 @@
+  <vuln vid="f0ba7008-2bbd-11ef-b4ca-814a3d504243">
+    <topic>forgejo -- multiple issues</topic>
+    <affects>
+      <package>
+	<name>forgejo</name>
+	<range><lt>7.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The forgejo team reports:</p>
+	<blockquote cite="https://codeberg.org/forgejo/forgejo/src/branch/forgejo/RELEASE-NOTES.md#7-0-4">
+	<p><a href="https://pkg.go.dev/vuln/GO-2024-2888">CVE-2024-24789</a>:
+	The archive/zip package's handling of certain types of invalid
+	zip files differs from the behavior of most zip implementations.
+	This misalignment could be exploited to create an zip file with
+	contents that vary depending on the implementation reading the
+	file.</p>
+	<p>The OAuth2 implementation does not always require authentication
+	for public clients, a requirement of RFC 6749 Section 10.2. A
+	malicious client can impersonate another client and obtain access
+	to protected resources if the impersonated client fails to, or is
+	unable to, keep its client credentials confidential.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-24789</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-24789</url>
+    </references>
+    <dates>
+      <discovery>2024-04-04</discovery>
+      <entry>2024-04-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="219aaa1e-2aff-11ef-ab37-5404a68ad561">
     <topic>traefik -- Unexpected behavior with IPv4-mapped IPv6 addresses</topic>
     <affects>
