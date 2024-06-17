@@ -1,15 +1,15 @@
---- frontend/gtkmm/CMakeLists.txt.orig	2019-12-10 18:37:37 UTC
+--- frontend/gtkmm/CMakeLists.txt.orig	2024-06-16 17:04:35 UTC
 +++ frontend/gtkmm/CMakeLists.txt
-@@ -168,9 +168,9 @@ if (NOT INSTALL_TARGETS_ONLY)
+@@ -239,9 +239,9 @@ if (NOT INSTALL_TARGETS_ONLY)
  	install(FILES    ${CADABRA_IMAGES_DIR}/256x256/cadabra2-gtk.png   DESTINATION ${ICON_PREFIX}/share/icons/hicolor/256x256/apps)
  	install(FILES    ${CADABRA_IMAGES_DIR}/cadabra2-gtk.svg           DESTINATION ${ICON_PREFIX}/share/icons/hicolor/scalable/apps)
- 	install(FILES    ${CADABRA_ROOT_DIR}/config/cadabra2-gtk.desktop  DESTINATION ${ICON_PREFIX}/share/applications)
+ 	install(FILES    ${CADABRA_ROOT_DIR}/config/science.cadabra.cadabra2-gtk.desktop  DESTINATION ${ICON_PREFIX}/share/applications)
 -	install(CODE     "execute_process(COMMAND touch ${ICON_PREFIX_WITH_DESTDIR}/share/icons/hicolor/icon-theme.cache)")
 -	install(CODE     "execute_process(COMMAND gtk-update-icon-cache-3.0 {ICON_PREFIX_WITH_DESTDIR}/share/icons/hicolor)")
 -	install(CODE     "execute_process(COMMAND chmod go+r ${ICON_PREFIX_WITH_DESTDIR}/share/icons/hicolor/icon-theme.cache)")
 +	#install(CODE     "execute_process(COMMAND touch ${ICON_PREFIX_WITH_DESTDIR}/share/icons/hicolor/icon-theme.cache)")
 +	#install(CODE     "execute_process(COMMAND gtk-update-icon-cache-3.0 {ICON_PREFIX_WITH_DESTDIR}/share/icons/hicolor)")
 +	#install(CODE     "execute_process(COMMAND chmod go+r ${ICON_PREFIX_WITH_DESTDIR}/share/icons/hicolor/icon-theme.cache)")
+ 	install(DIRECTORY cdb-icons  DESTINATION ${CMAKE_INSTALL_PREFIX}/share/cadabra2/)  
  
  	# Install shared libraries on Windows. 
- 	# https://stackoverflow.com/questions/32662215/how-do-you-install-gtk-3-0-on-windows
