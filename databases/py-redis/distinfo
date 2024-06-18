@@ -1,3 +1,3 @@
-TIMESTAMP = 1715842658
-SHA256 (redis-5.0.4.tar.gz) = ec31f2ed9675cc54c21ba854cfe0462e6faf1d83c8ce5944709db8a4700b9c61
-SIZE (redis-5.0.4.tar.gz) = 4581983
+TIMESTAMP = 1718580066
+SHA256 (redis-5.0.6.tar.gz) = 38473cd7c6389ad3e44a91f4c3eaf6bcb8a9f746007f29bf4fb20824ff0b2197
+SIZE (redis-5.0.6.tar.gz) = 4582754
