@@ -270,6 +270,7 @@
     SUBDIR += aws-c-sdkutils
     SUBDIR += aws-checksums
     SUBDIR += aws-crt-cpp
+    SUBDIR += aws-crt-ffi
     SUBDIR += aws-sdk-cpp
     SUBDIR += aws-sdk-php
     SUBDIR += axmldec
