@@ -3,6 +3,9 @@ PORTVERSION=	5.20.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	biology devel
 
+PATCH_SITES=	https://github.com/sbmlteam/libsbml/commit/
+PATCHFILES=	a3e217851f18d3c5e8e2b0082fb98176738491e8.patch:-p1
+
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	API Library for Working with SBML File
 WWW=		https://sbml.org/software/libsbml/ \
