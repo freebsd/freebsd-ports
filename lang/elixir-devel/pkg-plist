@@ -18,7 +18,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/eex/dist/search_data-AFCD616D.js
+%%PORTDOCS%%%%DOCSDIR%%/eex/dist/search_data-7E760E32.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/sidebar_items-0B2B143B.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/EEx.Engine.html
@@ -95,8 +95,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_data-B1B33F38.js
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-FF2F8A25.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_data-B32FD923.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-F00B05EE.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/distributed-tasks.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/docs-tests-and-with.html
@@ -249,7 +249,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/search_data-FB8351E9.js
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/search_data-4DC14CE7.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/sidebar_items-80595B1B.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.AssertionError.html
@@ -354,7 +354,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/lato-latin-ext-400-normal-N27NCBWW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/lato-latin-ext-700-normal-Q2L5DVMW.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/search_data-86D5564E.js
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/search_data-17219E4A.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/sidebar_items-21E4A115.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/index.html
