@@ -1,6 +1,6 @@
---- core/thread.cpp.orig	2023-06-24 12:06:59 UTC
+--- core/thread.cpp.orig	2024-06-14 23:02:44 UTC
 +++ core/thread.cpp
-@@ -1,6 +1,8 @@
+@@ -1,11 +1,13 @@
  // Copyright 2009 Intel Corporation
  // SPDX-License-Identifier: Apache-2.0
  
@@ -9,7 +9,13 @@
  #if defined(_MSC_VER)
    #pragma warning (disable : 4146) // unary minus operator applied to unsigned type, result still unsigned
  #endif
-@@ -120,7 +122,7 @@ OIDN_NAMESPACE_BEGIN
+ 
+-#if defined(__linux__)
++#if defined(__linux__) || defined(__FreeBSD__)
+   #include <sched.h>
+   #include <unordered_set>
+ #elif defined(__APPLE__)
+@@ -125,7 +127,7 @@ OIDN_NAMESPACE_BEGIN
        printWarning("SetThreadGroupAffinity failed");
    }
  
@@ -18,16 +24,16 @@
  
    // -----------------------------------------------------------------------------------------------
    // ThreadAffinity: Linux
-@@ -165,7 +167,7 @@ OIDN_NAMESPACE_BEGIN
+@@ -179,7 +181,7 @@ OIDN_NAMESPACE_BEGIN
  
-     for (size_t i = 0; i < threadIds.size(); ++i)
+     for (size_t i = 0; i < threadIDs.size(); ++i)
      {
 -      cpu_set_t affinity;
 +      cpuset_t affinity;
        CPU_ZERO(&affinity);
-       CPU_SET(threadIds[i], &affinity);
+       CPU_SET(threadIDs[i], &affinity);
  
-@@ -182,7 +184,7 @@ OIDN_NAMESPACE_BEGIN
+@@ -196,7 +198,7 @@ OIDN_NAMESPACE_BEGIN
      const pthread_t thread = pthread_self();
  
      // Save the current affinity
@@ -36,7 +42,7 @@
      {
        printWarning("pthread_getaffinity_np failed");
        oldAffinities[threadIndex] = affinities[threadIndex];
-@@ -190,7 +192,7 @@ OIDN_NAMESPACE_BEGIN
+@@ -204,7 +206,7 @@ OIDN_NAMESPACE_BEGIN
      }
  
      // Set the new affinity
@@ -45,7 +51,7 @@
        printWarning("pthread_setaffinity_np failed");
    }
  
-@@ -202,7 +204,7 @@ OIDN_NAMESPACE_BEGIN
+@@ -216,7 +218,7 @@ OIDN_NAMESPACE_BEGIN
      const pthread_t thread = pthread_self();
  
      // Restore the original affinity

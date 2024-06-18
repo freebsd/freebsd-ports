@@ -1,7 +1,6 @@
 PORTNAME=	oidn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.2
-PORTREVISION=	1
+DISTVERSION=	2.3.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://freebsd.org/:weights # bogus URL to make the framework happy, the fetch uses Git URL below
 DISTFILES=	${PORTNAME}-weights-${WEIGHTS_GIT_HASH}${EXTRACT_SUFX}:weights
@@ -49,7 +48,7 @@ OPENIMAGEIO_LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio
 OPENIMAGEIO_IMPLIES=		APPS # OpenImageIO is only used by apps and examples
 
 WEIGHTS_GIT_URL=	https://github.com/OpenImageDenoise/oidn-weights.git
-WEIGHTS_GIT_HASH=	44ff866123ffd6c26bbc27e5e48e8cd4ec8a1a66
+WEIGHTS_GIT_HASH=	28883d1769d5930e13cf7f1676dd852bd81ed9e7
 
 pre-fetch:
 	@if [ "${FORCE_FETCH_ALL}" = "true" ] || ! [ -f "${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-weights-${WEIGHTS_GIT_HASH}${EXTRACT_SUFX}" ]; then \
@@ -59,8 +58,11 @@ pre-fetch:
 		( \
 			${MKDIR} ${WRKDIR}; \
 			HOME=${WRKDIR}; \
+			echo "--1--" && \
 			git config --global filter.lfs.smudge "git-lfs smudge -- %f" && \
+			echo "--2-- WD=`pwd`" && \
 			git clone -q ${WEIGHTS_GIT_URL} ${PORTNAME}-weights-${WEIGHTS_GIT_HASH} && \
+			echo "--3--" && \
 			(cd ${PORTNAME}-weights-${WEIGHTS_GIT_HASH} && git reset -q --hard ${WEIGHTS_GIT_HASH} && ${RM} -r .git) && \
 			${RM} -r ${WRKDIR} \
 		) && \
