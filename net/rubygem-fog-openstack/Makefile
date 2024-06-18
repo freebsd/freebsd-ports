@@ -1,5 +1,5 @@
 PORTNAME=	fog-openstack
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
