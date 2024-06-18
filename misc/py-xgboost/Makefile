@@ -11,6 +11,7 @@ WWW=		https://xgboost.ai/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
+BROKEN_armv7=	compilation fails due to type conversion issues, like on i386, but the upstream says that they don't support 32-bit architectures
 BROKEN_i386=	compilation fails, see https://github.com/dmlc/xgboost/issues/10002
 
 BUILD_DEPENDS=	cmake:devel/cmake-core \
