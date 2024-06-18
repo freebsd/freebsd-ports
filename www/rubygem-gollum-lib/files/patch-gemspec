@@ -1,8 +1,11 @@
---- gollum-lib.gemspec.orig	2024-02-21 10:50:04 UTC
+--- gollum-lib.gemspec.orig	2024-06-18 19:29:51 UTC
 +++ gollum-lib.gemspec
-@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
+@@ -26,9 +26,9 @@ Gem::Specification.new do |s|
+   s.add_runtime_dependency(%q<rouge>.freeze, ["~> 3.1".freeze])
+   s.add_runtime_dependency(%q<nokogiri>.freeze, ["~> 1.8".freeze])
    s.add_runtime_dependency(%q<loofah>.freeze, ["~> 2.3".freeze])
-   s.add_runtime_dependency(%q<github-markup>.freeze, ["~> 4.0".freeze])
+-  s.add_runtime_dependency(%q<github-markup>.freeze, ["~> 4.0".freeze])
++  s.add_runtime_dependency(%q<github-markup>.freeze, [">= 4.0".freeze])
    s.add_runtime_dependency(%q<gemojione>.freeze, ["~> 4.1".freeze])
 -  s.add_runtime_dependency(%q<octicons>.freeze, ["~> 12.0".freeze])
 +  s.add_runtime_dependency(%q<octicons>.freeze, [">= 12.0".freeze])
