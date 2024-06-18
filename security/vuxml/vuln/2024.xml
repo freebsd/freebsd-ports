@@ -1,3 +1,70 @@
+  <vuln vid="453aa0fc-2d91-11ef-8a0f-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>126.0.6478.54</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>126.0.6478.54</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/06/stable-channel-update-for-desktop.html">
+	 <p>This update includes 21 security fixes:</p>
+	 <ul>
+	    <li>[342456991] High CVE-2024-5830: Type Confusion in V8. Reported by Man Yue Mo of GitHub Security Lab on 2024-05-24</li>
+	    <li>[339171223] High CVE-2024-5831: Use after free in Dawn. Reported by wgslfuzz on 2024-05-07</li>
+	    <li>[340196361] High CVE-2024-5832: Use after free in Dawn. Reported by wgslfuzz on 2024-05-13</li>
+	    <li>[342602616] High CVE-2024-5833: Type Confusion in V8. Reported by @ginggilBesel on 2024-05-24</li>
+	    <li>[342840932] High CVE-2024-5834: Inappropriate implementation in Dawn. Reported by gelatin dessert on 2024-05-26</li>
+	    <li>[341991535] High CVE-2024-5835: Heap buffer overflow in Tab Groups. Reported by Weipeng Jiang (@Krace) of VRI on 2024-05-22</li>
+	    <li>[341875171] High CVE-2024-5836: Inappropriate Implementation in DevTools. Reported by Allen Ding on 2024-05-21</li>
+	    <li>[342415789] High CVE-2024-5837: Type Confusion in V8. Reported by Anonymous on 2024-05-23</li>
+	    <li>[342522151] High CVE-2024-5838: Type Confusion in V8. Reported by Zhenghang Xiao (@Kipreyyy) on 2024-05-24</li>
+	    <li>[340122160] Medium CVE-2024-5839: Inappropriate Implementation in Memory Allocator. Reported by Micky on 2024-05-13</li>
+	    <li>[41492103] Medium CVE-2024-5840: Policy Bypass in CORS. Reported by Matt Howard on 2024-01-17</li>
+	    <li>[326765855] Medium CVE-2024-5841: Use after free in V8. Reported by Cassidy Kim(@cassidy6564) on 2024-02-26</li>
+	    <li>[40062622] Medium CVE-2024-5842: Use after free in Browser UI. Reported by Sven Dysthe (@svn_dy) on 2023-01-12</li>
+	    <li>[333940412] Medium CVE-2024-5843: Inappropriate implementation in Downloads. Reported by hjy79425575 on 2024-04-12</li>
+	    <li>[331960660] Medium CVE-2024-5844: Heap buffer overflow in Tab Strip. Reported by Sri on 2024-04-01</li>
+	    <li>[340178596] Medium CVE-2024-5845: Use after free in Audio. Reported by anonymous on 2024-05-13</li>
+	    <li>[341095523] Medium CVE-2024-5846: Use after free in PDFium. Reported by Han Zheng (HexHive) on 2024-05-16</li>
+	    <li>[341313077] Medium CVE-2024-5847: Use after free in PDFium. Reported by Han Zheng (HexHive) on 2024-05-18</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-5830</cvename>
+      <cvename>CVE-2024-5831</cvename>
+      <cvename>CVE-2024-5832</cvename>
+      <cvename>CVE-2024-5833</cvename>
+      <cvename>CVE-2024-5834</cvename>
+      <cvename>CVE-2024-5835</cvename>
+      <cvename>CVE-2024-5836</cvename>
+      <cvename>CVE-2024-5837</cvename>
+      <cvename>CVE-2024-5838</cvename>
+      <cvename>CVE-2024-5839</cvename>
+      <cvename>CVE-2024-5840</cvename>
+      <cvename>CVE-2024-5841</cvename>
+      <cvename>CVE-2024-5842</cvename>
+      <cvename>CVE-2024-5843</cvename>
+      <cvename>CVE-2024-5844</cvename>
+      <cvename>CVE-2024-5845</cvename>
+      <cvename>CVE-2024-5846</cvename>
+      <cvename>CVE-2024-5847</cvename>
+      <url>https://chromereleases.googleblog.com/2024/06/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2024-06-11</discovery>
+      <entry>2024-06-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f0ba7008-2bbd-11ef-b4ca-814a3d504243">
     <topic>forgejo -- multiple issues</topic>
     <affects>
