@@ -1,5 +1,5 @@
 PORTNAME=	async-http
-PORTVERSION=	0.66.3
+PORTVERSION=	0.67.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-async>=2.10.2:devel/rubygem-async \
 		rubygem-io-stream>=0.4<1:devel/rubygem-io-stream \
 		rubygem-protocol-http>=0.26.0<0.27:www/rubygem-protocol-http \
 		rubygem-protocol-http1>=0.19.0<0.20:www/rubygem-protocol-http1 \
-		rubygem-protocol-http2>=0.17.0<0.18:www/rubygem-protocol-http2 \
+		rubygem-protocol-http2>=0.18.0<0.19:www/rubygem-protocol-http2 \
 		rubygem-traces>=0.10.0:devel/rubygem-traces
 
 USES=		gem
