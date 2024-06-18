@@ -25,6 +25,7 @@ include/nettle/ctr.h
 include/nettle/curve25519.h
 include/nettle/curve448.h
 include/nettle/des.h
+include/nettle/drbg-ctr.h
 include/nettle/dsa-compat.h
 include/nettle/dsa.h
 include/nettle/eax.h
@@ -78,11 +79,11 @@ include/nettle/yarrow.h
 lib/libhogweed.a
 lib/libhogweed.so
 lib/libhogweed.so.6
-lib/libhogweed.so.6.8
+lib/libhogweed.so.6.9
 lib/libnettle.a
 lib/libnettle.so
 lib/libnettle.so.8
-lib/libnettle.so.8.8
+lib/libnettle.so.8.9
 libdata/pkgconfig/hogweed.pc
 libdata/pkgconfig/nettle.pc
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
