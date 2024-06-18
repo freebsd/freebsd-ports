@@ -1,5 +1,5 @@
 PORTNAME=	pycharm-pro
-DISTVERSION=	2024.1.2
+DISTVERSION=	2024.1.3
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/
 DISTNAME=	pycharm-professional-${PORTVERSION}

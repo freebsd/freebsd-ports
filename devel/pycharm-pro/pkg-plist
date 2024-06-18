@@ -35,7 +35,7 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/lib/async-profiler/amd64/symsrv.dll
 %%DATADIR%%/lib/async-profiler/libasyncProfiler.dylib
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-PY-241.17011.127
+%%DATADIR%%/lib/build-marker-PY-241.17890.14
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/ext/platform-main.jar
 %%DATADIR%%/lib/external-system-rt.jar
@@ -476,8 +476,8 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/puppet/lib/stubs/stub_functions.rb
 %%DATADIR%%/plugins/pycharm-pro-customization/lib/pycharm-pro-customization.jar
 %%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/lib/pycharm-pro-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-48aec45f0201-7e9c3bbb6e34.ijx
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-48aec45f0201-7e9c3bbb6e34.txt
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-5b207ade9991-7e9c3bbb6e34.ijx
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-5b207ade9991-7e9c3bbb6e34.txt
 %%DATADIR%%/plugins/python-django/lib/python-django.jar
 %%DATADIR%%/plugins/python-jupyter/jupyter-web/113.js
 %%DATADIR%%/plugins/python-jupyter/jupyter-web/186.js
