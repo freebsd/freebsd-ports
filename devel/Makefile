@@ -6912,12 +6912,12 @@
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-danger
     SUBDIR += rubygem-danger-gitlab
+    SUBDIR += rubygem-datadog
     SUBDIR += rubygem-datadog-ci
     SUBDIR += rubygem-date
     SUBDIR += rubygem-ddmemoize
     SUBDIR += rubygem-ddmetrics
     SUBDIR += rubygem-ddplugin
-    SUBDIR += rubygem-ddtrace
     SUBDIR += rubygem-deb_version
     SUBDIR += rubygem-debase-ruby_core_source
     SUBDIR += rubygem-debug

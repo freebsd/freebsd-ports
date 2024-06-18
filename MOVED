@@ -3341,3 +3341,4 @@ www/py-dj42-django-modelcluster|www/py-django-modelcluster|2024-06-15|Has expire
 www/py-dj42-django-extensions|www/py-django-extensions|2024-06-15|Has expired: Obsolete, please use www/py-django-extensions instead
 www/py-dj42-djangorestframework|www/py-djangorestframework|2024-06-15|Has expired: Obsolete, please use www/py-djangorestframework instead
 www/py-dj42-django-debug-toolbar|www/py-django-debug-toolbar|2024-06-15|Has expired: Obsolete, please use www/py-django-debug-toolbar instead
+devel/rubygem-ddtrace|devel/rubygem-datadog|2024-06-18|Move devel/rubygem-ddtrace to devel/rubygem-datadog

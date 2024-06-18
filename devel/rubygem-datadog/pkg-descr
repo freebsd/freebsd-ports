@@ -1,0 +1,3 @@
+datadog is Datadog's client library for Ruby. It includes a suite of tools which
+provide visibility into the performance and security of Ruby applications, to
+enable Ruby developers to identify bottlenecks and other issues.
