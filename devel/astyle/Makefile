@@ -1,7 +1,7 @@
 PORTNAME=	astyle
-PORTVERSION=	3.4.16
+PORTVERSION=	3.5
 CATEGORIES=	devel textproc
-MASTER_SITES=	SF/astyle/astyle/astyle%20${PORTVERSION:R}
+MASTER_SITES=	SF/astyle/astyle/astyle%20${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Source code indenter and formatter for C, C++, C\#, and Java
