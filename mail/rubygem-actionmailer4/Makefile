@@ -6,7 +6,8 @@ PKGNAMESUFFIX=	4
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easy email delivery and testing for Ruby
-WWW=		https://github.com/rails/rails/tree/main/actionmailer
+WWW=		https://rubyonrails.org/ \
+		https://github.com/rails/rails/tree/main/actionmailer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
