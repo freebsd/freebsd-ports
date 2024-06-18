@@ -13,6 +13,9 @@ WWW=		https://github.com/gogo/protobuf
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream officially deprecated this project
+EXPIRATION_DATE=2024-06-30
+
 USES=		cpe go
 
 USE_GITHUB=	yes
