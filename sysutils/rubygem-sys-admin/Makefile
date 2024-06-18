@@ -1,5 +1,5 @@
 PORTNAME=	sys-admin
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.4
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
