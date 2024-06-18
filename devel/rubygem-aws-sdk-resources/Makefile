@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.194.0
+PORTVERSION=	3.197.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -29,11 +29,13 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-applicationcostprofiler>=1<2:devel/rubygem-aws-sdk-applicationcostprofiler \
 		rubygem-aws-sdk-applicationdiscoveryservice>=1<2:devel/rubygem-aws-sdk-applicationdiscoveryservice \
 		rubygem-aws-sdk-applicationinsights>=1<2:devel/rubygem-aws-sdk-applicationinsights \
+		rubygem-aws-sdk-applicationsignals>=1<2:devel/rubygem-aws-sdk-applicationsignals \
 		rubygem-aws-sdk-appmesh>=1<2:devel/rubygem-aws-sdk-appmesh \
 		rubygem-aws-sdk-appregistry>=1<2:devel/rubygem-aws-sdk-appregistry \
 		rubygem-aws-sdk-apprunner>=1<2:devel/rubygem-aws-sdk-apprunner \
 		rubygem-aws-sdk-appstream>=1<2:devel/rubygem-aws-sdk-appstream \
 		rubygem-aws-sdk-appsync>=1<2:devel/rubygem-aws-sdk-appsync \
+		rubygem-aws-sdk-apptest>=1<2:devel/rubygem-aws-sdk-apptest \
 		rubygem-aws-sdk-arczonalshift>=1<2:devel/rubygem-aws-sdk-arczonalshift \
 		rubygem-aws-sdk-artifact>=1<2:devel/rubygem-aws-sdk-artifact \
 		rubygem-aws-sdk-athena>=1<2:devel/rubygem-aws-sdk-athena \
@@ -44,7 +46,6 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-b2bi>=1<2:devel/rubygem-aws-sdk-b2bi \
 		rubygem-aws-sdk-backup>=1<2:devel/rubygem-aws-sdk-backup \
 		rubygem-aws-sdk-backupgateway>=1<2:devel/rubygem-aws-sdk-backupgateway \
-		rubygem-aws-sdk-backupstorage>=1<2:devel/rubygem-aws-sdk-backupstorage \
 		rubygem-aws-sdk-batch>=1<2:devel/rubygem-aws-sdk-batch \
 		rubygem-aws-sdk-bcmdataexports>=1<2:devel/rubygem-aws-sdk-bcmdataexports \
 		rubygem-aws-sdk-bedrock>=1<2:devel/rubygem-aws-sdk-bedrock \
@@ -283,6 +284,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-paymentcryptography>=1<2:devel/rubygem-aws-sdk-paymentcryptography \
 		rubygem-aws-sdk-paymentcryptographydata>=1<2:devel/rubygem-aws-sdk-paymentcryptographydata \
 		rubygem-aws-sdk-pcaconnectorad>=1<2:devel/rubygem-aws-sdk-pcaconnectorad \
+		rubygem-aws-sdk-pcaconnectorscep>=1<2:devel/rubygem-aws-sdk-pcaconnectorscep \
 		rubygem-aws-sdk-personalize>=1<2:devel/rubygem-aws-sdk-personalize \
 		rubygem-aws-sdk-personalizeevents>=1<2:devel/rubygem-aws-sdk-personalizeevents \
 		rubygem-aws-sdk-personalizeruntime>=1<2:devel/rubygem-aws-sdk-personalizeruntime \
