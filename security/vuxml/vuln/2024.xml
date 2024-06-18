@@ -347,11 +347,15 @@
   </vuln>
 
   <vuln vid="320a19f7-1ddd-11ef-a2ae-8c164567ca3c">
-    <topic>nginx-devel -- Multiple Vulnerabilities in HTTP/3</topic>
+    <topic>nginx -- Multiple Vulnerabilities in HTTP/3</topic>
     <affects>
       <package>
 	<name>nginx-devel</name>
 	<range><ge>1.25.0</ge><lt>1.27.0</lt></range>
+      </package>
+      <package>
+	<name>nginx</name>
+	<range><ge>1.26.0</ge><lt>1.26.1</lt></range>
       </package>
     </affects>
     <description>
