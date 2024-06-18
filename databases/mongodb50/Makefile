@@ -1,16 +1,12 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	5.0.26
-PORTREVISION=	3
+DISTVERSION=	5.0.27
 CATEGORIES=	databases net
-MASTER_SITES=	https://fastdl.mongodb.org/src/ \
-		http://fastdl.mongodb.org/src/
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
-DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
 MAINTAINER=	ronald@FreeBSD.org
-COMMENT=	Distributed document-oriented "NoSQL" database (5.0.x Branch)
-WWW=		https://docs.mongodb.com/v5.0/
+COMMENT=	MongoDB Community Edition (5.0.x Branch)
+WWW=		https://www.mongodb.com/docs/v5.0/
 
 LICENSE=	APACHE20 SSPLv1 # mongodb is SSPLv1, C++ driver is APACHE20
 LICENSE_COMB=	multi
@@ -34,6 +30,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		compiler:c++17-lang cpe python:build scons shebangfix
 USE_RC_SUBR=	mongod
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	mongodb
+GH_PROJECT=	mongo
 
 SHEBANG_FILES=	buildscripts/scons.py
 python_OLD_CMD=	@python_interpreter@
@@ -61,6 +61,7 @@ MAKE_ARGS=	--cxx-std=17 \
 		--use-system-zstd \
 		-j ${MAKE_JOBS_NUMBER} \
 		AR=llvm-ar \
+		MONGO_VERSION=${DISTVERSION} \
 		VERBOSE=on
 
 CFLAGS+=	-DBOOST_NO_CXX98_FUNCTION_BASE
