@@ -1,3 +1,3 @@
-TIMESTAMP = 1717245765
-SHA256 (dask_expr-1.1.2.tar.gz) = ce2e3803b638cdc67bc75326e1b0d36ea9d231fdddf086e727145a5a2769bed4
-SIZE (dask_expr-1.1.2.tar.gz) = 188659
+TIMESTAMP = 1718580076
+SHA256 (dask_expr-1.1.3.tar.gz) = ce8e44dfed30b4d9e6a549d0ed8cb5798273645fb9a16733d0687dc84615a94b
+SIZE (dask_expr-1.1.3.tar.gz) = 188833
