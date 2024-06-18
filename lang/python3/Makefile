@@ -1,6 +1,6 @@
 PORTNAME=	python3
 PORTVERSION=	3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang python
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -20,16 +20,15 @@ PLIST_FILES=	bin/2to3-3 \
 		bin/pydoc3 \
 		bin/python3 \
 		bin/python3-config \
+		libdata/pkgconfig/python3-embed.pc \
 		libdata/pkgconfig/python3.pc
 
 do-install:
 .for file in 2to3- idle pydoc python
-	${LN} -sf ${file}${PYTHON_VER} \
-		${STAGEDIR}${PREFIX}/bin/${file}3
+	${LN} -s ${file}${PYTHON_VER} ${STAGEDIR}${PREFIX}/bin/${file}3
 .endfor
-	${LN} -sf python${PYTHON_VER}-config \
-		${STAGEDIR}${PREFIX}/bin/python3-config
-	${LN} -sf python-${PYTHON_VER}.pc \
-		${STAGEDIR}${PREFIX}/libdata/pkgconfig/python3.pc
+	${LN} -s python${PYTHON_VER}-config ${STAGEDIR}${PREFIX}/bin/python3-config
+	${LN} -s python-${PYTHON_VER}.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/python3.pc
+	${LN} -s python-${PYTHON_VER}-embed.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/python3-embed.pc
 
 .include <bsd.port.mk>
