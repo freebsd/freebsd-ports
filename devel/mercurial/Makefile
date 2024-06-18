@@ -1,5 +1,5 @@
 PORTNAME=	mercurial
-PORTVERSION=	6.7.3
+PORTVERSION=	6.7.4
 CATEGORIES=	devel python
 MASTER_SITES=	https://www.mercurial-scm.org/release/
 
