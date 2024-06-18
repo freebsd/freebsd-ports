@@ -6281,6 +6281,7 @@
     SUBDIR += rubygem-aws-sdk-applicationcostprofiler
     SUBDIR += rubygem-aws-sdk-applicationdiscoveryservice
     SUBDIR += rubygem-aws-sdk-applicationinsights
+    SUBDIR += rubygem-aws-sdk-applicationsignals
     SUBDIR += rubygem-aws-sdk-appmesh
     SUBDIR += rubygem-aws-sdk-appregistry
     SUBDIR += rubygem-aws-sdk-apprunner
