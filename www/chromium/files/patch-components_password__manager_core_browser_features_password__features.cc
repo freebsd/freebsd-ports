@@ -1,4 +1,4 @@
---- components/password_manager/core/browser/features/password_features.cc.orig	2024-05-21 18:07:39 UTC
+--- components/password_manager/core/browser/features/password_features.cc.orig	2024-06-17 12:56:06 UTC
 +++ components/password_manager/core/browser/features/password_features.cc
 @@ -36,7 +36,7 @@ BASE_FEATURE(kClearUndecryptablePasswords,
  
@@ -9,7 +9,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -100,7 +100,7 @@ BASE_FEATURE(kPasswordManualFallbackAvailable,
+@@ -98,7 +98,7 @@ BASE_FEATURE(kPasswordManualFallbackAvailable,
               "PasswordManualFallbackAvailable",
               base::FEATURE_DISABLED_BY_DEFAULT);
  

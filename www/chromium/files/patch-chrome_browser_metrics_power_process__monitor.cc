@@ -1,4 +1,4 @@
---- chrome/browser/metrics/power/process_monitor.cc.orig	2024-05-21 18:07:39 UTC
+--- chrome/browser/metrics/power/process_monitor.cc.orig	2024-06-17 12:56:06 UTC
 +++ chrome/browser/metrics/power/process_monitor.cc
 @@ -64,7 +64,7 @@ ProcessMonitor::Metrics SampleMetrics(base::ProcessMet
        process_metrics.GetPlatformIndependentCPUUsage());
@@ -18,7 +18,7 @@
    metrics->idle_wakeups *= factor;
  #endif
  
-@@ -170,7 +170,7 @@ ProcessMonitor::Metrics& operator+=(ProcessMonitor::Me
+@@ -157,7 +157,7 @@ ProcessMonitor::Metrics& operator+=(ProcessMonitor::Me
    }
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

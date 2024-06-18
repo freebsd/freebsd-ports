@@ -1,6 +1,6 @@
---- ui/color/color_id.h.orig	2024-05-21 18:07:39 UTC
+--- ui/color/color_id.h.orig	2024-06-17 12:56:06 UTC
 +++ ui/color/color_id.h
-@@ -626,7 +626,7 @@
+@@ -620,7 +620,7 @@
    \
    E_CPONLY(kColorCrosSysPositive) \
    E_CPONLY(kColorCrosSysComplementVariant)

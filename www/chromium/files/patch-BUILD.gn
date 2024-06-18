@@ -1,4 +1,4 @@
---- BUILD.gn.orig	2024-05-21 18:07:39 UTC
+--- BUILD.gn.orig	2024-06-17 12:56:06 UTC
 +++ BUILD.gn
 @@ -65,7 +65,7 @@ declare_args() {
    root_extra_deps = []
@@ -60,7 +60,7 @@
      script_test("chrome_wpt_tests") {
        script = "//third_party/blink/tools/run_wpt_tests.py"
        args = [
-@@ -1183,7 +1191,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1185,7 +1193,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
@@ -69,7 +69,7 @@
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1192,7 +1200,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1194,7 +1202,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -78,7 +78,7 @@
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1652,7 +1660,7 @@ group("chromium_builder_perf") {
+@@ -1654,7 +1662,7 @@ group("chromium_builder_perf") {
        data_deps += [ "//chrome/test:performance_browser_tests" ]
      }
  

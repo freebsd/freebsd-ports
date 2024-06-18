@@ -1,6 +1,6 @@
---- components/supervised_user/core/common/features.cc.orig	2024-05-21 18:07:39 UTC
+--- components/supervised_user/core/common/features.cc.orig	2024-06-17 12:56:06 UTC
 +++ components/supervised_user/core/common/features.cc
-@@ -62,7 +62,7 @@ BASE_FEATURE(kUpdatedSupervisedUserExtensionApprovalSt
+@@ -59,7 +59,7 @@ BASE_FEATURE(kUpdatedSupervisedUserExtensionApprovalSt
               "UpdatedSupervisedUserExtensionApprovalStrings",
               base::FEATURE_DISABLED_BY_DEFAULT);
  
@@ -9,7 +9,7 @@
  BASE_FEATURE(kEnableExtensionsPermissionsForSupervisedUsersOnDesktop,
               "EnableExtensionsPermissionsForSupervisedUsersOnDesktop",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -73,7 +73,7 @@ bool IsSupervisedUserSkipParentApprovalToInstallExtens
+@@ -70,7 +70,7 @@ bool IsSupervisedUserSkipParentApprovalToInstallExtens
  #if BUILDFLAG(IS_CHROMEOS)
    return base::FeatureList::IsEnabled(
        kEnableSupervisedUserSkipParentApprovalToInstallExtensions);

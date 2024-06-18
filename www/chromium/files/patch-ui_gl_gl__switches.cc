@@ -1,4 +1,4 @@
---- ui/gl/gl_switches.cc.orig	2024-05-21 18:07:39 UTC
+--- ui/gl/gl_switches.cc.orig	2024-06-17 12:56:06 UTC
 +++ ui/gl/gl_switches.cc
 @@ -11,7 +11,7 @@
  #include "base/android/build_info.h"
@@ -9,7 +9,7 @@
  #include <vulkan/vulkan_core.h>
  #include "third_party/angle/src/gpu_info_util/SystemInfo.h"  // nogncheck
  #endif
-@@ -288,7 +288,7 @@ bool IsDefaultANGLEVulkan() {
+@@ -299,7 +299,7 @@ bool IsDefaultANGLEVulkan() {
        base::android::SDK_VERSION_Q)
      return false;
  #endif  // BUILDFLAG(IS_ANDROID)
@@ -18,7 +18,7 @@
    angle::SystemInfo system_info;
    if (!angle::GetSystemInfoVulkan(&system_info))
      return false;
-@@ -300,7 +300,7 @@ bool IsDefaultANGLEVulkan() {
+@@ -311,7 +311,7 @@ bool IsDefaultANGLEVulkan() {
  
    const auto& active_gpu = system_info.gpus[system_info.activeGPUIndex];
  

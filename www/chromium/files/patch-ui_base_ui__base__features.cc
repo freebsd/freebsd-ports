@@ -1,8 +1,8 @@
---- ui/base/ui_base_features.cc.orig	2024-05-21 18:07:39 UTC
+--- ui/base/ui_base_features.cc.orig	2024-06-17 12:56:06 UTC
 +++ ui/base/ui_base_features.cc
 @@ -245,7 +245,7 @@ BASE_FEATURE(kExperimentalFlingAnimation,
               "ExperimentalFlingAnimation",
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if BUILDFLAG(IS_WIN) ||                                   \
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD) ||              \
