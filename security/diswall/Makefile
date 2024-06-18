@@ -18,6 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dis-works
 GH_PROJECT=	diswall-rs
 
+RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
+
 CARGO_CRATES=	adler-1.0.2 \
 		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
