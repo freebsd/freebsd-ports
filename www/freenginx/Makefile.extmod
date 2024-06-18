@@ -2,16 +2,16 @@
 
 OPTIONS_GROUP+=	THIRDPARTYGRP
 # External modules (arrayvar MUST appear after devel_kit for build-dep)
-OPTIONS_GROUP_THIRDPARTYGRP=	AJP AWS_AUTH BROTLI CACHE_PURGE CLOJURE COOKIE_FLAG CT \
+OPTIONS_GROUP_THIRDPARTYGRP=	AJP AWS_AUTH BROTLI CACHE_PURGE CT \
 	DEVEL_KIT ARRAYVAR DRIZZLE DYNAMIC_UPSTREAM ECHO ENCRYPTSESSION \
 	FIPS_CHECK FORMINPUT GRIDFS HEADERS_MORE HTTP_ACCEPT_LANGUAGE HTTP_AUTH_DIGEST \
 	HTTP_AUTH_KRB5 HTTP_AUTH_LDAP HTTP_AUTH_PAM HTTP_DAV_EXT HTTP_EVAL \
 	HTTP_FANCYINDEX HTTP_FOOTER HTTP_GEOIP2 HTTP_IP2LOCATION HTTP_IP2PROXY \
-	HTTP_JSON_STATUS HTTP_MOGILEFS HTTP_MP4_H264 HTTP_NOTICE HTTP_PROXY_CONNECT HTTP_PUSH \
+	HTTP_JSON_STATUS HTTP_MOGILEFS HTTP_NOTICE HTTP_PUSH \
 	HTTP_PUSH_STREAM HTTP_REDIS HTTP_SLICE_AHEAD HTTP_SUBS_FILTER HTTP_TARANTOOL \
 	HTTP_UPLOAD HTTP_UPLOAD_PROGRESS HTTP_UPSTREAM_CHECK HTTP_UPSTREAM_FAIR \
-	HTTP_UPSTREAM_STICKY HTTP_VIDEO_THUMBEXTRACTOR HTTP_ZIP ICONV LET LINK LUA MEMC \
-	MODSECURITY3 NAXSI OPENTRACING PASSENGER POSTGRES RDS_CSV RDS_JSON \
+	HTTP_UPSTREAM_STICKY HTTP_VIDEO_THUMBEXTRACTOR HTTP_ZIP ICONV LET LINK LUA LUASTREAM \
+	MEMC MODSECURITY3 NAXSI PASSENGER POSTGRES RDS_CSV RDS_JSON \
 	REDIS2 RTMP SET_MISC SFLOW SHIBBOLETH SLOWFS_CACHE SRCACHE STS \
 	VOD VTS XSS WEBSOCKIFY
 
@@ -26,26 +26,18 @@ AWS_AUTH_GH_TUPLE=	anomalizer:ngx_aws_auth:21931b2:aws_auth
 AWS_AUTH_VARS=		DSO_EXTMODS+=aws_auth
 
 BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
-BROTLI_GH_TUPLE=	google:ngx_brotli:9aec15e:brotli
+BROTLI_GH_TUPLE=	google:ngx_brotli:a71f931:brotli
 BROTLI_VARS=		DSO_EXTMODS+=brotli
+BROTLI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_brotli_filter_config
 
 CACHE_PURGE_GH_TUPLE=	nginx-modules:ngx_cache_purge:a84b0f3:cache_purge
 CACHE_PURGE_VARS=	DSO_EXTMODS+=cache_purge
 
-CLOJURE_CATEGORIES+=	java
-CLOJURE_USE=		JAVA=yes JAVA_OS=native JAVA_VERSION=1.8 \
-			JAVA_VENDOR=openjdk JAVA_BUILD=yes JAVA_RUN=yes
-CLOJURE_GH_TUPLE=	nginx-clojure:nginx-clojure:v0.6.0:clojure
-CLOJURE_CONFIGURE_ENV=	"JNI_INCS=-I${LOCALBASE}/openjdk8/include -I${LOCALBASE}/openjdk8/include/freebsd"
-CLOJURE_VARS=		DSO_EXTMODS+=clojure CLOJURE_SUBDIR=/src/c
-
-COOKIE_FLAG_GH_TUPLE=	AirisX:nginx_cookie_flag_module:c4ff449:cookie_flag
-COOKIE_FLAG_VARS=	DSO_EXTMODS+=cookie_flag
-
 CT_IMPLIES=		HTTP_SSL
 CT_GH_TUPLE=		grahamedgecombe:nginx-ct:93e9884:ct
 CT_VARS=		DSO_EXTMODS+=ct
-CT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-ct-LibreSSL
+CT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-ct-LibreSSL \
+			${PATCHDIR}/extra-patch-ngx_stream_ssl_ct_module.c
 
 ECHO_GH_TUPLE=		openresty:echo-nginx-module:5a402aa:echo
 ECHO_VARS=		DSO_EXTMODS+=echo
@@ -61,7 +53,7 @@ DYNAMIC_UPSTREAM_IMPLIES=	STREAM
 DYNAMIC_UPSTREAM_GH_TUPLE=	ZigzagAK:ngx_dynamic_upstream:960eef2:dynamic_upstream
 DYNAMIC_UPSTREAM_VARS=		DSO_EXTMODS+=dynamic_upstream
 
-DEVEL_KIT_GH_TUPLE=		vision5:ngx_devel_kit:v0.3.2:devel_kit
+DEVEL_KIT_GH_TUPLE=		vision5:ngx_devel_kit:v0.3.3:devel_kit
 DEVEL_KIT_VARS=			FIRST_DSO_EXTMODS+=devel_kit
 
 ENCRYPTSESSION_IMPLIES=		DEVEL_KIT
@@ -80,7 +72,7 @@ GRIDFS_LIB_DEPENDS=	libbson-1.0.so:devel/libbson \
 			libmongoc-1.0.so:devel/mongo-c-driver
 GRIDFS_VARS=		DSO_EXTMODS+=gridfs GRIDFS_SUBDIR=/nginx-gridfs
 
-HEADERS_MORE_GH_TUPLE=		openresty:headers-more-nginx-module:33b646d:headers_more
+HEADERS_MORE_GH_TUPLE=		openresty:headers-more-nginx-module:06dc0be:headers_more
 HEADERS_MORE_VARS=		DSO_EXTMODS+=headers_more
 
 HTTP_ACCEPT_LANGUAGE_GH_TUPLE=	dvershinin:nginx_accept_language_module:5683967:accept_language
@@ -100,10 +92,6 @@ HTTP_AUTH_LDAP_USES=		ldap
 
 HTTP_AUTH_PAM_GH_TUPLE=		sto:ngx_http_auth_pam_module:v1.5.3:auth_pam
 HTTP_AUTH_PAM_VARS=		DSO_EXTMODS+=auth_pam
-
-HTTP_PROXY_CONNECT_GH_TUPLE=		chobits:ngx_http_proxy_connect_module:75febef:mod_https_connect
-HTTP_PROXY_CONNECT_EXTRA_PATCHES=	${WRKSRC_mod_https_connect}/patch/proxy_connect_rewrite_102101.patch:-p1
-HTTP_PROXY_CONNECT_VARS=		DSO_EXTMODS+=mod_https_connect
 
 HTTP_DAV_EXT_IMPLIES=		HTTP_DAV
 HTTP_DAV_EXT_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
@@ -144,13 +132,6 @@ HTTP_MOGILEFS_DISTFILES=	nginx_mogilefs_module-1.0.4.tar.gz:mogilefs
 HTTP_MOGILEFS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_mogilefs_module.c \
 				${PATCHDIR}/extra-patch-nginx_mogilefs_module-config
 HTTP_MOGILEFS_VARS=		DSO_EXTDIRS+=nginx_mogilefs_module-1.0.4
-
-HTTP_MP4_H264_MASTER_SITES=	http://h264.code-shop.com/download/:mp4streaming
-HTTP_MP4_H264_CONFIGURE_ON=	--with-cc-opt="-DLARGEFILE_SOURCE -DBUILDING_NGINX"
-HTTP_MP4_H264_DISTFILES=	nginx_mod_h264_streaming-2.2.7.tar.gz:mp4streaming
-HTTP_MP4_H264_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_streaming_module.c \
-				${PATCHDIR}/extra-patch-nginx_mod_h264_streaming-config
-HTTP_MP4_H264_VARS=		DSO_EXTDIRS+=nginx_mod_h264_streaming-2.2.7
 
 HTTP_NOTICE_GH_TUPLE=		kr:nginx-notice:3c95966:notice
 HTTP_NOTICE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_notice_module.c \
@@ -206,10 +187,11 @@ HTTP_VIDEO_THUMBEXTRACTOR_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 					libavutil.so:multimedia/ffmpeg \
 					libswscale.so:multimedia/ffmpeg
 HTTP_VIDEO_THUMBEXTRACTOR_USES=		jpeg
-HTTP_VIDEO_THUMBEXTRACTOR_GH_TUPLE=	Novetta:nginx-video-thumbextractor-module:28861f2:vte
+HTTP_VIDEO_THUMBEXTRACTOR_GH_TUPLE=	wandenberg:nginx-video-thumbextractor-module:e81f850:vte
 HTTP_VIDEO_THUMBEXTRACTOR_VARS=		DSO_EXTMODS+=vte
+HTTP_VIDEO_THUMBEXTRACTOR_EXTRA_PATCHES=${PATCHDIR}/extra-patch-nginx-thumbextractor-module-config
 
-HTTP_ZIP_GH_TUPLE=	evanmiller:mod_zip:39dc908:mod_zip
+HTTP_ZIP_GH_TUPLE=	vince2678:mod_zip:5b2604b:mod_zip
 HTTP_ZIP_VARS=		DSO_EXTMODS+=mod_zip
 
 ICONV_IMPLIES=		DEVEL_KIT
@@ -229,6 +211,14 @@ LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.26:lua
 LUA_VARS=		DSO_EXTMODS+=lua
 
+LUASTREAM_IMPLIES=	DEVEL_KIT
+LUASTREAM_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
+LUASTREAM_RUN_DEPENDS=	lua-resty-core>0:www/lua-resty-core
+LUASTREAM_CONFIGURE_ENV=LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
+			LUAJIT_LIB=${LOCALBASE}/lib
+LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:v0.0.14:luastream
+LUASTREAM_VARS=		DSO_EXTMODS+=luastream
+
 LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.4:link
 LINK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-link-function-config \
 			${PATCHDIR}/extra-patch-ngx_link_func_module.c
@@ -243,24 +233,32 @@ MODSECURITY3_GH_TUPLE=		SpiderLabs:ModSecurity-nginx:v1.0.3:modsecurity3
 MODSECURITY3_VARS=		DSO_EXTMODS+=modsecurity3
 
 NAXSI_NGINX_VER=	1.6
-NAXSI_MASTER_SITES=	https://www.github.com/wargio/naxsi/releases/download/${NAXSI_NGINX_VER}/:naxsi
-NAXSI_DISTFILES=	naxsi-${NAXSI_NGINX_VER}-src-with-deps.tar.gz:naxsi
+NAXSI_GH_TUPLE=		wargio:naxsi:${NAXSI_NGINX_VER}:naxsi \
+			libinjection:libinjection:4aa3894:libinjection
 NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
-WRKSRC_naxsi=		${WRKDIR}/naxsi-${NAXSI_NGINX_VER}
+NAXSI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-naxsi-libinjection__sqli_c \
+			${PATCHDIR}/extra-patch-naxsi_config
 
-NJS_GH_TUPLE=		nginx:njs:0.8.0:njs
+NJS_GH_TUPLE=		nginx:njs:0.8.4:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
+NJS_IMPLIES=		STREAM
 
-NJS_XML_IMPLIES=	NJS
+NJS_XML_IMPLIES=	HTTP NJS
 NJS_XML_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 			libxslt.so:textproc/libxslt
 
-OPENTRACING_GH_TUPLE=		opentracing-contrib:nginx-opentracing:v0.24.0:opentracing
-OPENTRACING_LIB_DEPENDS=	libopentracing.so:devel/libopentracing
-OPENTRACING_VARS=		DSO_EXTMODS+=opentracing OPENTRACING_SUBDIR=/opentracing
-OPENTRACING_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-opentracing-opentracing-config
+OTEL_GH_TUPLE=		osokin:nginx-otel:8f0857d:otel
+OTEL_VARS=		DSO_EXTMODS+=otel OTEL_SUBDIR=/
+OTEL_LIB_DEPENDS=	libabsl_base.so:devel/abseil \
+			libcares.so:dns/c-ares \
+			libgrpc.so:devel/grpc \
+			libopentelemetry_common.so:devel/opentelemetry-cpp \
+			libprotobuf.so:devel/protobuf \
+			libre2.so:devel/re2
+OTEL_BUILD_DEPENDS=	${LOCALBASE}/include/opentelemetry/proto/common/v1/common.proto:devel/opentelemetry-proto
+OTEL_CONFIGURE_ENV+=	NGX_OTEL_PROTO_DIR=${PREFIX}/include
 
-PASSENGER_NGINX_VER=	6.0.17
+PASSENGER_NGINX_VER=	6.0.20
 PASSENGER_CATEGORIES=	ruby
 PASSENGER_USES=		ruby
 PASSENGER_BUILD_DEPENDS=${LOCALBASE}/bin/rake:devel/rubygem-rake
