@@ -1,5 +1,5 @@
 PORTNAME=	rubyntlm
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.5
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,8 @@ WWW=		https://github.com/WinRb/rubyntlm
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64
 
 USES=		gem
 
