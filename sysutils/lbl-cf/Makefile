@@ -1,5 +1,5 @@
 PORTNAME=	cf
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 CATEGORIES=	sysutils
 MASTER_SITES=	https://ee.lbl.gov/downloads/cf/ \
 		LOCAL/leres/cf
