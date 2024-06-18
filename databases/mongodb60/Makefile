@@ -1,12 +1,12 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	6.0.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
 MAINTAINER=	ronald@FreeBSD.org
-COMMENT=	Distributed document-oriented "NoSQL" database (6.0.x Branch)
+COMMENT=	MongoDB Community Edition (6.0.x Branch)
 WWW=		https://docs.mongodb.com/v6.0/
 
 LICENSE=	APACHE20 SSPLv1 # mongodb is SSPLv1, C++ driver is APACHE20
@@ -86,7 +86,7 @@ USERS=		mongodb
 GROUPS=		mongodb
 
 OPTIONS_DEFINE=		LTO SASL SSL NOAVX
-OPTIONS_DEFAULT=	LTO SASL SSL NOAVX
+OPTIONS_DEFAULT=	SASL SSL NOAVX
 
 NOAVX_DESC=	"Disable AVX instructions on amd64 (Sandybridge+)"
 
