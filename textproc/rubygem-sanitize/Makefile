@@ -1,5 +1,5 @@
 PORTNAME=	sanitize
-PORTVERSION=	6.1.0
+PORTVERSION=	6.1.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
