@@ -59,6 +59,8 @@ post-patch:
 		${WRKSRC}/src/dData.pas ${WRKSRC}/src/fGrayline.pas
 	${REINPLACE_CMD} -e 's|ifdef LCLQT5|if defined\(LCLQT5\) or defined\(LCLQT6\)|g' \
 		${WRKSRC}/src/lnet/lib/lclnet.pas
+	${REINPLACE_CMD} -e 's|unixutil|Unix|g' -e 's|UnixUtil|Unix|g' \
+		${WRKSRC}/src/lnet/lib/lcommon.pp
 
 post-build:
 	@${RM} ${WRKSRC}/help/cwd.html.*
