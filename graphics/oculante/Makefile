@@ -1,5 +1,6 @@
 PORTNAME=	oculante
 DISTVERSION=	0.8.22
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org

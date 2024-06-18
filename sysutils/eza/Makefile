@@ -1,6 +1,7 @@
 PORTNAME=	eza
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.18.18
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp

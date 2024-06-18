@@ -1,5 +1,6 @@
 PORTNAME=	cargo-cache
 DISTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
