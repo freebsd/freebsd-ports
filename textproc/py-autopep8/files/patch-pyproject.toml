@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-06-16 09:50:19 UTC
++++ pyproject.toml
+@@ -30,7 +30,7 @@ dependencies = [
+ ]
+ requires-python = ">=3.8"
+ dependencies = [
+-    "pycodestyle >= 2.12.0",
++    "pycodestyle >= 2.11.0",
+     "tomli; python_version < '3.11'",
+ ]
+ dynamic = ["version"]
