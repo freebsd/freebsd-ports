@@ -5,6 +5,7 @@ bin/clipfilter
 bin/clipjoin
 %%SITE_PERL%%/Clipboard.pm
 %%SITE_PERL%%/Clipboard/MacPasteboard.pm
+%%SITE_PERL%%/Clipboard/WaylandClipboard.pm
 %%SITE_PERL%%/Clipboard/Win32.pm
 %%SITE_PERL%%/Clipboard/Xclip.pm
 %%SITE_PERL%%/Clipboard/Xsel.pm
@@ -15,6 +16,7 @@ bin/clipjoin
 %%PERL5_MAN1%%/clipjoin.1.gz
 %%PERL5_MAN3%%/Clipboard.3.gz
 %%PERL5_MAN3%%/Clipboard::MacPasteboard.3.gz
+%%PERL5_MAN3%%/Clipboard::WaylandClipboard.3.gz
 %%PERL5_MAN3%%/Clipboard::Win32.3.gz
 %%PERL5_MAN3%%/Clipboard::Xclip.3.gz
 %%PERL5_MAN3%%/Clipboard::Xsel.3.gz
