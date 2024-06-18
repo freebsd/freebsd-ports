@@ -9,5 +9,3 @@ to the cloud.
 
 Image files can furthermore be transformed using on-demand variants for quality,
 aspect ratio, size, or any other MiniMagick or Vips supported transformation.
-
-See also: https://rubyonrails.org/

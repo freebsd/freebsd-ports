@@ -6,7 +6,8 @@ PKGNAMESUFFIX=	52
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Attach cloud and local files in Rails applications
-WWW=		https://github.com/rails/rails/tree/main/activestorage
+WWW=		https://rubyonrails.org/ \
+		https://github.com/rails/rails/tree/main/activestorage
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
