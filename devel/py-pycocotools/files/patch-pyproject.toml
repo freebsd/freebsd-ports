@@ -1,10 +1,10 @@
---- pyproject.toml.orig	2022-11-04 06:39:37 UTC
+--- pyproject.toml.orig	2024-06-17 01:36:18 UTC
 +++ pyproject.toml
-@@ -1,7 +1,7 @@
+@@ -1,7 +1,7 @@ requires = [
  [build-system]
  requires = [
      "cython>=0.27.3",
--    "oldest-supported-numpy",
+-    "numpy>=2.0.0rc1",
 +    "numpy",
      "setuptools>=43.0.0",
      "wheel",
