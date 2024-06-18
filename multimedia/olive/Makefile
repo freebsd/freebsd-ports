@@ -34,7 +34,7 @@ GH_TAGNAME=	f7e1bff
 GH_TUPLE=	olive-editor:core:2777928:core/ext/core \
 		KDAB:KDDockWidgets:8d2d0a5:KDDockWidgets/ext/KDDockWidgets
 
-CXXFLAGS_i386=	-sse -sse2
+CXXFLAGS_i386=	-msse -msse2
 
 PORTSCOUT=	limit:^.*[1-9]\..* # prevent tags like 20181223
 
