@@ -1,5 +1,5 @@
 PORTNAME=	html2text
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/soundasleep/html2text_ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-nokogiri>=1.10.3<2:textproc/rubygem-nokogiri
+RUN_DEPENDS=	rubygem-nokogiri>=1.0<2.0:textproc/rubygem-nokogiri
 
 USES=		gem
 
