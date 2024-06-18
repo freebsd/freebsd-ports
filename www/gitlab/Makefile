@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
 .endif
-
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 # include patch to fix database migration
@@ -57,7 +57,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-bcrypt>=3.1.14<3.2:security/rubygem-bcrypt \
 	rubygem-doorkeeper-rails70>=5.6.6<6:security/rubygem-doorkeeper-rails70 \
 	rubygem-doorkeeper-openid_connect>=1.8.7<2:security/rubygem-doorkeeper-openid_connect \
-	rubygem-rexml>=3.2.6<3.3:textproc/rubygem-rexml \
+	rubygem-rexml32>=3.2.6<3.3:textproc/rubygem-rexml32 \
 	rubygem-ruby-saml115>=1.15.0<1.16:security/rubygem-ruby-saml115 \
 	rubygem-omniauth>=2.1.0<3:security/rubygem-omniauth \
 	rubygem-omniauth-auth0>=3.1.0<3.2.0:net/rubygem-omniauth-auth0 \
@@ -147,7 +147,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-asciidoctor-include-ext>=0.4.0<0.5.0:textproc/rubygem-asciidoctor-include-ext \
 	rubygem-asciidoctor-plantuml00>=0.0.16<0.1:textproc/rubygem-asciidoctor-plantuml00 \
 	rubygem-asciidoctor-kroki>=0.8.0<0.9:textproc/rubygem-asciidoctor-kroki \
-	rubygem-rouge>=4.2.0<4.3:textproc/rubygem-rouge \
+	rubygem-rouge42>=4.2.0<4.3:textproc/rubygem-rouge42 \
 	rubygem-truncato>=0.7.12<0.8.0:textproc/rubygem-truncato \
 	rubygem-nokogiri>=1.16<2:textproc/rubygem-nokogiri \
 	rubygem-gitlab-glfm-markdown>=0.0.16<0.1:textproc/rubygem-gitlab-glfm-markdown \
@@ -244,7 +244,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-gitlab-dangerfiles>=4.7.0<4.8:devel/rubygem-gitlab-dangerfiles \
 	rubygem-license_finder>=7.0.0<8:devel/rubygem-license_finder \
 	rubygem-rspec>=3.0<4:devel/rubygem-rspec \
-	rubygem-octokit>=8.1<9:net/rubygem-octokit \
+	rubygem-octokit8>=8.1<9:net/rubygem-octokit8 \
 	rubygem-gitlab-mail_room>=0.0.24<0.1.0:mail/rubygem-gitlab-mail_room \
 	rubygem-email_reply_trimmer>=0.1<1.0:mail/rubygem-email_reply_trimmer \
 	rubygem-html2text>=0:textproc/rubygem-html2text \
