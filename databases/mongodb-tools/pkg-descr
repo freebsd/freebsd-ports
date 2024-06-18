@@ -1,4 +1,7 @@
-Useful utilities for managing a MongoDB instance written in Go.
+The MongoDB Database Tools are a collection of command-line utilities
+for working with a MongoDB deployment.
+
+The Database Tools include the following binaries:
 
 - bsondump - display BSON files in a human-readable format
 - mongoimport - Convert data from JSON, TSV or CSV and insert them
