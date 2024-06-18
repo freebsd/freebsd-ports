@@ -1,4 +1,4 @@
-TIMESTAMP = 1718427709
+TIMESTAMP = 1718747095
 SHA256 (rust/crates/Inflector-0.11.4.crate) = fe438c63458706e03479442743baae6c88256498e6431708f6dfc520a26515d3
 SIZE (rust/crates/Inflector-0.11.4.crate) = 17438
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -693,5 +693,5 @@ SHA256 (astral-sh-lsp-types-3512a9f33eadc5402cfab1b8f7340824c8ca1439_GH0.tar.gz)
 SIZE (astral-sh-lsp-types-3512a9f33eadc5402cfab1b8f7340824c8ca1439_GH0.tar.gz) = 71124
 SHA256 (salsa-rs-salsa-05b4e3ebdcdc47730cdd359e7e97fb2470527279_GH0.tar.gz) = 7e46cb64ab82b75b31985f368bf6a484c84eb65a6babf663db75a7a7c68e5b48
 SIZE (salsa-rs-salsa-05b4e3ebdcdc47730cdd359e7e97fb2470527279_GH0.tar.gz) = 642965
-SHA256 (charliermarsh-ruff-v0.4.9_GH0.tar.gz) = 815c5b9b316a4d72dc526c6b4b2421df708556294af514e6fe25ff99722d36e3
-SIZE (charliermarsh-ruff-v0.4.9_GH0.tar.gz) = 4869311
+SHA256 (astral-sh-ruff-v0.4.9_GH0.tar.gz) = 815c5b9b316a4d72dc526c6b4b2421df708556294af514e6fe25ff99722d36e3
+SIZE (astral-sh-ruff-v0.4.9_GH0.tar.gz) = 4869311
