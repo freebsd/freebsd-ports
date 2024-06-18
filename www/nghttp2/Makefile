@@ -45,12 +45,12 @@ HPACK_LIB_DEPENDS=	libjansson.so:devel/jansson
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS}_${OSREL:C/\\./-/} == FreeBSD_13-2
-USES+=	llvm
+.if ${OSREL} == 13.2
+USES+=		llvm
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-compatibility-fix
 .endif
 
-.if ${OPSYS}_${OSREL:C/\\./-/} == FreeBSD_14-0
+.if ${OSREL} == 14.0
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-compatibility-fix
 .endif
 
