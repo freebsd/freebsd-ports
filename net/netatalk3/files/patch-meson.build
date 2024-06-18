@@ -17,7 +17,15 @@
  
  ############
  # Includes #
-@@ -487,6 +488,11 @@ if crypt.found()
+@@ -367,6 +368,7 @@ bdb_subdirs = [
+     '/usr',
+ ]
+ bdb_subdirs = [
++    '%%DB_NAME%%',
+     'db4.6',
+     'db4.7',
+     'db4.8',
+@@ -487,6 +489,11 @@ if crypt.found()
  if crypt.found()
      cdata.set('HAVE_CRYPT_H', 1)
      cdata.set('HAVE_LIBCRYPT', 1)
@@ -29,7 +37,7 @@
  endif
  
  des = cc.find_library('des', required: false)
-@@ -763,19 +769,7 @@ else
+@@ -763,19 +770,7 @@ else
              required: false,
          )
  
@@ -50,7 +58,7 @@
              cdata.set('HAVE_TRACKER3', 1)
              cdata.set(
                  'TRACKER_MANAGING_COMMAND',
-@@ -816,15 +810,16 @@ else
+@@ -816,15 +811,16 @@ else
              endif
          endif
      endif
@@ -70,7 +78,7 @@
  if have_spotlight
      cdata.set('WITH_SPOTLIGHT', 1)
  endif
-@@ -1833,6 +1828,8 @@ int deny_severity = 0;
+@@ -1833,6 +1829,8 @@ int deny_severity = 0;
      tcpwrap_code = '''
  int allow_severity = 0;
  int deny_severity = 0;

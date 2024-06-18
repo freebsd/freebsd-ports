@@ -1,5 +1,6 @@
 PORTNAME=	netatalk
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/netatalk-${PORTVERSION:S/./-/g}/
@@ -83,14 +84,12 @@ CONFLICTS=	jday yudit # bin/dbd man/man1/uniconv.1.gz
 
 .if ${PORT_OPTIONS:MAVAHI}=="" && ${PORT_OPTIONS:MMDNSRESPONDER}==""
 SUB_LIST+=	ZEROCONF=""
-MESON_ARGS+=-Denable-zeroconf=false
+MESON_ARGS+=-Denable-zeroconf=disabled
 .endif
 
-#post-patch:
-#	@${REINPLACE_CMD} -e 's|%%DB_NAME%%|${BDB_INCLUDE_DIR:T}| ; \
-#		s|%%DB_LIB%%|-l${BDB_LIB_NAME}|g ; \
-#		s|%%LOCALBASE%%|${LOCALBASE}|g' \
-#		${WRKSRC}/configure
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%DB_NAME%%|${BDB_INCLUDE_DIR:T}|' \
+		${WRKSRC}/meson.build
 #	@${REINPLACE_CMD} -e 's|\.dist|\.sample|g' \
 #		${WRKSRC}/config/Makefile.in
 #	@${REINPLACE_CMD} -e 's|%%PYTHONCMD%%|${PYTHONCMD}|' \
