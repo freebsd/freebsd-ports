@@ -1,6 +1,6 @@
 PORTNAME=	uv
-DISTVERSION=	0.2.11
-PORTREVISION=	1
+DISTVERSION=	0.2.13
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -54,7 +54,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		axoasset-0.9.5 \
 		axoprocess-0.2.0 \
 		axotag-0.2.0 \
-		axoupdater-0.6.5 \
+		axoupdater-0.6.6 \
 		backoff-0.4.0 \
 		backtrace-0.3.72 \
 		backtrace-ext-0.2.1 \
@@ -89,8 +89,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.6 \
-		clap_builder-4.5.6 \
+		clap-4.5.7 \
+		clap_builder-4.5.7 \
 		clap_complete-4.5.2 \
 		clap_complete_command-0.5.1 \
 		clap_complete_fig-4.5.0 \
@@ -104,7 +104,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		colorchoice-1.0.1 \
 		colored-2.1.0 \
 		concurrent-queue-2.5.0 \
-		configparser-3.0.4 \
+		configparser-3.1.0 \
 		console-0.15.8 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.6 \
@@ -185,12 +185,12 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		html-escape-0.2.13 \
 		http-1.1.0 \
 		http-body-1.0.0 \
-		http-body-util-0.1.1 \
+		http-body-util-0.1.2 \
 		http-content-range-0.1.2 \
 		httparse-1.8.0 \
 		httpdate-1.0.3 \
 		hyper-1.3.1 \
-		hyper-rustls-0.26.0 \
+		hyper-rustls-0.27.2 \
 		hyper-util-0.1.5 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
@@ -297,6 +297,9 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		pyo3-log-0.10.0 \
 		pyo3-macros-0.21.2 \
 		pyo3-macros-backend-0.21.2 \
+		quinn-0.11.2 \
+		quinn-proto-0.11.3 \
+		quinn-udp-0.5.2 \
 		quote-1.0.36 \
 		quoted_printable-0.5.0 \
 		radium-0.7.0 \
@@ -311,14 +314,14 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		redox_syscall-0.4.1 \
 		redox_syscall-0.5.1 \
 		redox_users-0.4.5 \
-		reflink-copy-0.1.17 \
+		reflink-copy-0.1.18 \
 		regex-1.10.5 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.8.3 \
 		rend-0.4.2 \
-		reqwest-0.12.4 \
+		reqwest-0.12.5 \
 		reqwest-middleware-0.3.1 \
 		reqwest-retry-0.5.0 \
 		resvg-0.29.0 \
@@ -336,7 +339,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
 		rustix-0.38.34 \
-		rustls-0.22.4 \
+		rustls-0.23.10 \
 		rustls-native-certs-0.7.0 \
 		rustls-pemfile-2.1.2 \
 		rustls-pki-types-1.7.0 \
@@ -384,7 +387,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		svgtypes-0.10.0 \
 		syn-1.0.109 \
 		syn-2.0.66 \
-		sync_wrapper-0.1.2 \
+		sync_wrapper-1.0.1 \
 		sys-info-0.9.1 \
 		tagu-0.1.6 \
 		tap-1.0.1 \
@@ -413,7 +416,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		tl-0.7.8 \
 		tokio-1.38.0 \
 		tokio-macros-2.3.0 \
-		tokio-rustls-0.25.0 \
+		tokio-rustls-0.26.0 \
 		tokio-stream-0.1.15 \
 		tokio-tar-0.3.1 \
 		tokio-util-0.7.11 \
@@ -479,13 +482,13 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		winapi-util-0.1.8 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.52.0 \
-		windows-0.56.0 \
+		windows-0.57.0 \
 		windows-core-0.52.0 \
-		windows-core-0.56.0 \
+		windows-core-0.57.0 \
 		windows-implement-0.52.0 \
-		windows-implement-0.56.0 \
+		windows-implement-0.57.0 \
 		windows-interface-0.52.0 \
-		windows-interface-0.56.0 \
+		windows-interface-0.57.0 \
 		windows-result-0.1.1 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
