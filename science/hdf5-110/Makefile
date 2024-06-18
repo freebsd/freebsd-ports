@@ -1,5 +1,5 @@
 PORTNAME=	hdf5
-PORTVERSION=	1.10.10
+PORTVERSION=	1.10.11
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-${PORTVERSION:R}/${DISTNAME}/src/ \
 		LOCAL/sunpoet
@@ -38,10 +38,10 @@ PORTSCOUT=	limit:^1\.10\.
 OPTIONS_DEFINE=	DEBUG EXAMPLES FORTRAN SZIP
 OPTIONS_RADIO=	SUPPORT
 OPTIONS_RADIO_SUPPORT=	CXX PARALLEL
-OPTIONS_DEFAULT=CXX SZIP
-OPTIONS_DEFAULT+=FORTRAN
+OPTIONS_DEFAULT=CXX FORTRAN SZIP
 OPTIONS_SUB=	yes
 PARALLEL_DESC=	Parallel support
+PARALLEL_IMPLIES=	FORTRAN
 
 CXX_CONFIGURE_ENABLE=	cxx
 DEBUG_CONFIGURE_OFF=	--enable-build-mode=production
@@ -49,9 +49,11 @@ DEBUG_CONFIGURE_ON=	--enable-build-mode=debug
 FORTRAN_CONFIGURE_ENABLE=	fortran
 FORTRAN_CONFIGURE_ENV=	F9X=${FC}
 FORTRAN_USES=		fortran
+PARALLEL_CFLAGS=	${MPI_CFLAGS}
 PARALLEL_CONFIGURE_ENABLE=	parallel
-PARALLEL_LDFLAGS=	-L${LOCALBASE}/lib -lmpi
-PARALLEL_LIB_DEPENDS=	libmpi.so:net/mpich
+PARALLEL_LDFLAGS=	${MPI_LIBS}
+PARALLEL_USES=		mpi pkgconfig
+PARALLEL_VARS=		FCFLAGS+=-I${LOCALBASE}/include
 SZIP_CONFIGURE_ON=	--with-szlib=${LOCALBASE}
 SZIP_LIB_DEPENDS=	libsz.so:science/libaec
 
@@ -69,12 +71,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|libhdf5|libhdf5${PKGNAMESUFFIX}|g' ${WRKSRC}/test/test_libinfo.sh.in
 
 post-install:
+	-${MV} ${STAGEDIR}${PREFIX}/bin/h5cc ${STAGEDIR}${PREFIX}/bin/h5cc${PKGNAMESUFFIX}
+	-${MV} ${STAGEDIR}${PREFIX}/bin/h5fc ${STAGEDIR}${PREFIX}/bin/h5fc${PKGNAMESUFFIX}
+	-${MV} ${STAGEDIR}${PREFIX}/bin/h5pcc ${STAGEDIR}${PREFIX}/bin/h5pcc${PKGNAMESUFFIX}
+	-${MV} ${STAGEDIR}${PREFIX}/bin/h5pfc ${STAGEDIR}${PREFIX}/bin/h5pfc${PKGNAMESUFFIX}
 	${MV} ${STAGEDIR}${PREFIX}/lib/libhdf5.settings	${STAGEDIR}${PREFIX}/lib/libhdf5${PKGNAMESUFFIX}.settings
-
-post-install-CXX-on:
-	${MV} ${STAGEDIR}${PREFIX}/bin/h5cc ${STAGEDIR}${PREFIX}/bin/h5cc${PKGNAMESUFFIX}
-
-post-install-FORTRAN-on:
-	${MV} ${STAGEDIR}${PREFIX}/bin/h5fc ${STAGEDIR}${PREFIX}/bin/h5fc${PKGNAMESUFFIX}
 
 .include <bsd.port.mk>
