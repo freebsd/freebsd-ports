@@ -1,13 +1,13 @@
 PORTNAME=	pooch
-PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTVERSION=	1.8.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fetch your sample data files
-WWW=		https://github.com/fatiando/pooch
+WWW=		https://www.fatiando.org/pooch/latest/ \
+		https://github.com/fatiando/pooch
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
