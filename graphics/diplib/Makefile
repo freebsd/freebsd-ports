@@ -1,5 +1,5 @@
 PORTNAME=	diplib
-DISTVERSION=	3.4.3
+DISTVERSION=	3.5.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org

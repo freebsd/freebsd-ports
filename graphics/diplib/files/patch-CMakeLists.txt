@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2022-10-18 02:45:06 UTC
+--- CMakeLists.txt.orig	2024-06-18 04:45:59 UTC
 +++ CMakeLists.txt
-@@ -95,7 +95,7 @@ add_subdirectory(src)
+@@ -76,7 +76,7 @@ add_subdirectory(src)
  
  ### DIPjavaio
  
--find_package(Java 1.7 COMPONENTS Development)
-+#find_package(Java 1.7 COMPONENTS Development)
+-find_package(Java COMPONENTS Development)
++#find_package(Java COMPONENTS Development)
+ unset(DIP_JAVAIO_INTERFACES)
  if(JAVA_FOUND)
     # Set JAVA_HOME so that the JNI found is from the same JDK as the Java package
-    get_filename_component(JAVA_HOME "${Java_JAVAC_EXECUTABLE}" DIRECTORY) # strip off /javac
