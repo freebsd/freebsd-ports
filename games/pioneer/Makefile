@@ -57,6 +57,12 @@ DOCS_SUB_LIST=		QUICKSTART_PATH="${DOCSDIR}"
 DOCS_SUB_LIST_OFF=	QUICKSTART_PATH="https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${GH_TAGNAME}"
 PROFILER_CMAKE_BOOL=	PROFILER_ENABLED
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+CMAKE_ARGS+=	-DUSE_SSE42:BOOL=OFF
+.endif
+
 post-install-DOCS-on:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 
