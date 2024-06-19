@@ -1,6 +1,6 @@
 PORTNAME=	hyprutils
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.3
+DISTVERSION=	0.1.4
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,11 +10,17 @@ WWW=		https://github.com/hyprwm/hyprutils
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lib cmake:testing
+USES=		compiler:c++11-lib cmake:testing pkgconfig xorg
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
+USE_XORG=	pixman
 GH_ACCOUNT=	hyprwm
 PLIST_SUB=	VERSION=${DISTVERSION:C/-.*//}
+
+# XXX Drop after FreeBSD 14.0 EOL around 2024-10-01
+.if exists(/usr/lib/libc++.so) && !exists(/usr/include/c++/v1/__format/write_escaped.h)
+CXXFLAGS+=	-fexperimental-library
+.endif
 
 # XXX Drop after FreeBSD 13.2 EOL around 2024-07-01 (don't forget distinfo)
 .if ${CXX} == c++ && exists(/usr/lib/libc++.so)

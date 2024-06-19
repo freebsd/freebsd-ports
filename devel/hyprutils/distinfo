@@ -1,5 +1,5 @@
-TIMESTAMP = 1718623481
-SHA256 (hyprwm-hyprutils-v0.1.3_GH0.tar.gz) = 2f84654af9b2efe5be478821e837b1975298292558c4569bd35e065e356a69c7
-SIZE (hyprwm-hyprutils-v0.1.3_GH0.tar.gz) = 11111
+TIMESTAMP = 1718804078
+SHA256 (hyprwm-hyprutils-v0.1.4_GH0.tar.gz) = 9fcf201321f44b7ef82f76fdd8708791f2a9471f13ddea30153ca08caf1cc6bc
+SIZE (hyprwm-hyprutils-v0.1.4_GH0.tar.gz) = 16561
 SHA256 (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = b5a9ff1793b1e2d388a3819bf35797002b1d2e40bb35a10c65605e0ea1435271
 SIZE (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = 179289803
