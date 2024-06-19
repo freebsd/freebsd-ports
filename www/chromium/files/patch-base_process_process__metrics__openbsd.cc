@@ -1,6 +1,6 @@
---- base/process/process_metrics_openbsd.cc.orig	2024-04-19 13:02:56 UTC
+--- base/process/process_metrics_openbsd.cc.orig	2024-06-17 12:56:06 UTC
 +++ base/process/process_metrics_openbsd.cc
-@@ -6,73 +6,49 @@
+@@ -6,75 +6,50 @@
  
  #include <stddef.h>
  #include <stdint.h>
@@ -8,11 +8,11 @@
  #include <sys/param.h>
  #include <sys/sysctl.h>
 +#include <sys/vmmeter.h>
- #include <optional>
  
 +#include <kvm.h>
 +
  #include "base/memory/ptr_util.h"
+ #include "base/types/expected.h"
 +#include "base/values.h"
 +#include "base/notreached.h"
  
@@ -21,8 +21,9 @@
 -namespace {
 +ProcessMetrics::ProcessMetrics(ProcessHandle process) : process_(process) {}
  
--static std::optional<int> GetProcessCPU(pid_t pid) {
-+std::optional<TimeDelta> ProcessMetrics::GetCumulativeCPUUsage() {
+-base::expected<int, ProcessCPUUsageError> GetProcessCPU(pid_t pid) {
++base::expected<TimeDelta, ProcessCPUUsageError>
++ProcessMetrics::GetCumulativeCPUUsage() {
    struct kinfo_proc info;
 -  size_t length;
 -  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, pid,
@@ -31,7 +32,7 @@
 +  struct timeval tv;
  
 -  if (sysctl(mib, std::size(mib), NULL, &length, NULL, 0) < 0) {
--    return std::nullopt;
+-    return base::unexpected(ProcessCPUUsageError::kSystemError);
 -  }
 +  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,
 +                sizeof(struct kinfo_proc), 1 };
@@ -39,15 +40,14 @@
 -  mib[5] = (length / sizeof(struct kinfo_proc));
 -
    if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0) {
--    return std::nullopt;
-+    return std::optional(TimeDelta());
+     return base::unexpected(ProcessCPUUsageError::kSystemError);
    }
  
--  return std::optional(info.p_pctcpu);
+-  return base::ok(info.p_pctcpu);
 +  tv.tv_sec = info.p_rtime_sec;
 +  tv.tv_usec = info.p_rtime_usec;
 +
-+  return std::optional(Microseconds(TimeValToMicroseconds(tv)));
++  return base::ok(Microseconds(TimeValToMicroseconds(tv)));
  }
  
 -}  // namespace
@@ -58,27 +58,29 @@
    return WrapUnique(new ProcessMetrics(process));
  }
  
--std::optional<double> ProcessMetrics::GetPlatformIndependentCPUUsage() {
+-base::expected<double, ProcessCPUUsageError>
+-ProcessMetrics::GetPlatformIndependentCPUUsage() {
 -  TimeTicks time = TimeTicks::Now();
 -
 -  if (last_cpu_time_.is_zero()) {
 -    // First call, just set the last values.
 -    last_cpu_time_ = time;
--    return std::optional(0.0);
+-    return base::ok(0.0);
 -  }
 -
--  const std::optional<int> cpu = GetProcessCPU(process_);
+-  const base::expected<int, ProcessCPUUsageError> cpu = GetProcessCPU(process_);
 -  if (!cpu.has_value()) {
--    return std::nullopt;
+-    return base::unexpected(cpu.error());
 -  }
 -
 -  last_cpu_time_ = time;
--  return std::optional(double{cpu.value()} / FSCALE * 100.0);
+-  return base::ok(double{cpu.value()} / FSCALE * 100.0);
 -}
 -
--std::optional<TimeDelta> ProcessMetrics::GetCumulativeCPUUsage() {
--  NOTREACHED();
--  return std::nullopt;
+-base::expected<TimeDelta, ProcessCPUUsageError>
+-ProcessMetrics::GetCumulativeCPUUsage() {
+-  NOTREACHED_IN_MIGRATION();
+-  return base::unexpected(ProcessCPUUsageError::kNotImplemented);
 -}
 -
 -ProcessMetrics::ProcessMetrics(ProcessHandle process)
@@ -92,7 +94,7 @@
    struct vmtotal vmtotal;
    unsigned long mem_total, mem_free, mem_inactive;
    size_t len = sizeof(vmtotal);
-@@ -84,9 +60,136 @@ size_t GetSystemCommitCharge() {
+@@ -86,9 +61,136 @@ size_t GetSystemCommitCharge() {
    mem_free = vmtotal.t_free;
    mem_inactive = vmtotal.t_vm - vmtotal.t_avm;
  

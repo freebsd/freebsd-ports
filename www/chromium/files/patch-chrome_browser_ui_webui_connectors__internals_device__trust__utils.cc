@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc.orig	2024-04-19 13:02:56 UTC
+--- chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc.orig	2024-05-21 18:07:39 UTC
 +++ chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc
 @@ -7,7 +7,7 @@
  #include "build/build_config.h"
@@ -18,7 +18,7 @@
  
  connectors_internals::mojom::KeyTrustLevel ParseTrustLevel(
      BPKUR::KeyTrustLevel trust_level) {
-@@ -189,7 +189,7 @@ connectors_internals::mojom::CertificateMetadataPtr Co
+@@ -173,7 +173,7 @@ connectors_internals::mojom::CertificateMetadataPtr Co
  }  // namespace
  
  connectors_internals::mojom::KeyInfoPtr GetKeyInfo() {

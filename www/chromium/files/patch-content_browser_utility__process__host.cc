@@ -1,4 +1,4 @@
---- content/browser/utility_process_host.cc.orig	2024-04-19 13:02:56 UTC
+--- content/browser/utility_process_host.cc.orig	2024-06-17 12:56:06 UTC
 +++ content/browser/utility_process_host.cc
 @@ -61,7 +61,7 @@
  #include "content/browser/v8_snapshot_files.h"
@@ -9,7 +9,7 @@
  #include "base/files/file_util.h"
  #include "base/files/scoped_file.h"
  #include "base/pickle.h"
-@@ -75,7 +75,7 @@
+@@ -74,7 +74,7 @@
  #include "services/network/public/mojom/network_service.mojom.h"
  #endif
  
@@ -18,7 +18,7 @@
  #include "base/task/sequenced_task_runner.h"
  #include "components/viz/host/gpu_client.h"
  #include "media/capture/capture_switches.h"
-@@ -86,7 +86,7 @@ namespace content {
+@@ -85,7 +85,7 @@ namespace content {
  
  namespace {
  
@@ -36,7 +36,7 @@
        allowed_gpu_(false),
        gpu_client_(nullptr, base::OnTaskRunnerDeleter(nullptr)),
  #endif
-@@ -234,7 +234,7 @@ void UtilityProcessHost::SetPinUser32() {
+@@ -209,7 +209,7 @@ void UtilityProcessHost::SetPreloadLibraries(
  #endif  // BUILDFLAG(IS_WIN)
  
  void UtilityProcessHost::SetAllowGpuClient() {
@@ -45,8 +45,18 @@
    allowed_gpu_ = true;
  #endif
  }
-@@ -434,7 +434,7 @@ bool UtilityProcessHost::StartProcess() {
-     file_data_->files_to_preload.merge(GetV8SnapshotFilesToPreload());
+@@ -349,6 +349,9 @@ bool UtilityProcessHost::StartProcess() {
+       switches::kFailAudioStreamCreation,
+       switches::kMuteAudio,
+       switches::kUseFileForFakeAudioCapture,
++#if BUILDFLAG(IS_BSD)
++      switches::kAudioBackend,
++#endif
+ #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FREEBSD) || \
+     BUILDFLAG(IS_SOLARIS)
+       switches::kAlsaInputDevice,
+@@ -409,7 +412,7 @@ bool UtilityProcessHost::StartProcess() {
+     file_data_->files_to_preload.merge(GetV8SnapshotFilesToPreload(*cmd_line));
  #endif  // BUILDFLAG(IS_POSIX)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -54,7 +64,7 @@
      // The network service should have access to the parent directories
      // necessary for its usage.
      if (sandbox_type_ == sandbox::mojom::Sandbox::kNetwork) {
-@@ -445,13 +445,13 @@ bool UtilityProcessHost::StartProcess() {
+@@ -420,13 +423,13 @@ bool UtilityProcessHost::StartProcess() {
      }
  #endif  // BUILDFLAG(IS_LINUX)
  

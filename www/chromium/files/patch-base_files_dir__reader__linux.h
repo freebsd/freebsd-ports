@@ -1,6 +1,6 @@
---- base/files/dir_reader_linux.h.orig	2022-08-31 12:19:35 UTC
+--- base/files/dir_reader_linux.h.orig	2024-06-17 12:56:06 UTC
 +++ base/files/dir_reader_linux.h
-@@ -16,10 +16,16 @@
+@@ -21,10 +21,16 @@
  #include "base/logging.h"
  #include "base/posix/eintr_wrapper.h"
  
@@ -17,7 +17,7 @@
  struct linux_dirent {
    uint64_t        d_ino;
    int64_t         d_off;
-@@ -27,6 +33,7 @@ struct linux_dirent {
+@@ -32,6 +38,7 @@ struct linux_dirent {
    unsigned char   d_type;
    char            d_name[0];
  };
@@ -25,7 +25,7 @@
  
  class DirReaderLinux {
   public:
-@@ -61,7 +68,11 @@ class DirReaderLinux {
+@@ -66,7 +73,11 @@ class DirReaderLinux {
      if (offset_ != size_)
        return true;
  

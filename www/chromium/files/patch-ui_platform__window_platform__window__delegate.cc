@@ -1,8 +1,8 @@
---- ui/platform_window/platform_window_delegate.cc.orig	2024-03-22 08:19:40 UTC
+--- ui/platform_window/platform_window_delegate.cc.orig	2024-06-17 12:56:06 UTC
 +++ ui/platform_window/platform_window_delegate.cc
-@@ -48,7 +48,7 @@ PlatformWindowDelegate::PlatformWindowDelegate() = def
- 
- PlatformWindowDelegate::~PlatformWindowDelegate() = default;
+@@ -61,7 +61,7 @@ gfx::Insets PlatformWindowDelegate::CalculateInsetsInD
+   return gfx::Insets();
+ }
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

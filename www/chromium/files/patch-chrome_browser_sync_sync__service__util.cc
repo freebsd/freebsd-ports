@@ -1,4 +1,4 @@
---- chrome/browser/sync/sync_service_util.cc.orig	2023-12-10 06:10:27 UTC
+--- chrome/browser/sync/sync_service_util.cc.orig	2024-05-21 18:07:39 UTC
 +++ chrome/browser/sync/sync_service_util.cc
 @@ -9,7 +9,7 @@
  #include "components/sync/base/features.h"
@@ -9,7 +9,7 @@
  #include "components/variations/service/variations_service.h"
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) ||
          // BUILDFLAG(IS_WIN)
-@@ -22,7 +22,7 @@ bool IsDesktopEnUSLocaleOnlySyncPollFeatureEnabled() {
+@@ -21,7 +21,7 @@ bool IsDesktopEnUSLocaleOnlySyncPollFeatureEnabled() {
    }
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

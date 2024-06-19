@@ -1,4 +1,4 @@
---- media/base/video_frame.cc.orig	2024-04-19 13:02:56 UTC
+--- media/base/video_frame.cc.orig	2024-06-17 12:56:06 UTC
 +++ media/base/video_frame.cc
 @@ -80,7 +80,7 @@ std::string VideoFrame::StorageTypeToString(
        return "OWNED_MEMORY";
@@ -27,16 +27,16 @@
  // This class allows us to embed a vector<ScopedFD> into a scoped_refptr, and
  // thus to have several VideoFrames share the same set of DMABUF FDs.
  class VideoFrame::DmabufHolder
-@@ -636,7 +636,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
-   for (size_t i = 0; i < num_planes; ++i)
+@@ -440,7 +440,7 @@ scoped_refptr<VideoFrame> VideoFrame::CreateFrameForGp
      planes[i].stride = gpu_memory_buffer->stride(i);
+   }
    uint64_t modifier = gfx::NativePixmapHandle::kNoModifier;
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    if (gpu_memory_buffer->GetType() == gfx::NATIVE_PIXMAP) {
      const auto gmb_handle = gpu_memory_buffer->CloneHandle();
      if (gmb_handle.is_null() ||
-@@ -682,7 +682,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
+@@ -778,7 +778,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
    return frame;
  }
  
@@ -45,7 +45,7 @@
  // static
  scoped_refptr<VideoFrame> VideoFrame::WrapExternalDmabufs(
      const VideoFrameLayout& layout,
-@@ -901,7 +901,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
+@@ -997,7 +997,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
      }
    }
  
@@ -54,8 +54,8 @@
    DCHECK(frame->dmabuf_fds_);
    // If there are any |dmabuf_fds_| plugged in, we should refer them too.
    wrapping_frame->dmabuf_fds_ = frame->dmabuf_fds_;
-@@ -1345,7 +1345,7 @@ const gpu::MailboxHolder& VideoFrame::mailbox_holder(
-                         : mailbox_holders_[texture_index];
+@@ -1471,7 +1471,7 @@ scoped_refptr<gpu::ClientSharedImage> VideoFrame::shar
+                         : shared_images_[texture_index];
  }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -63,7 +63,7 @@
  size_t VideoFrame::NumDmabufFds() const {
    return dmabuf_fds_->size();
  }
-@@ -1462,7 +1462,7 @@ VideoFrame::VideoFrame(const VideoFrameLayout& layout,
+@@ -1588,7 +1588,7 @@ VideoFrame::VideoFrame(const VideoFrameLayout& layout,
        storage_type_(storage_type),
        visible_rect_(Intersection(visible_rect, gfx::Rect(layout.coded_size()))),
        natural_size_(natural_size),

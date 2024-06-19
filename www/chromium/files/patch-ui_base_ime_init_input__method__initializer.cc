@@ -1,4 +1,4 @@
---- ui/base/ime/init/input_method_initializer.cc.orig	2024-04-19 13:02:56 UTC
+--- ui/base/ime/init/input_method_initializer.cc.orig	2024-05-21 18:07:39 UTC
 +++ ui/base/ime/init/input_method_initializer.cc
 @@ -10,7 +10,7 @@
  #include "build/chromeos_buildflags.h"
@@ -9,7 +9,7 @@
  #include "ui/base/ime/linux/fake_input_method_context.h"
  #include "ui/base/ime/linux/linux_input_method_context_factory.h"
  #elif BUILDFLAG(IS_WIN)
-@@ -43,7 +43,7 @@ void RestartInputMethod() {
+@@ -33,7 +33,7 @@ void ShutdownInputMethod() {
  }
  
  void InitializeInputMethodForTesting() {
@@ -18,7 +18,7 @@
    GetInputMethodContextFactoryForTest() =
        base::BindRepeating([](LinuxInputMethodContextDelegate* delegate)
                                -> std::unique_ptr<LinuxInputMethodContext> {
-@@ -56,7 +56,7 @@ void InitializeInputMethodForTesting() {
+@@ -46,7 +46,7 @@ void InitializeInputMethodForTesting() {
  
  void ShutdownInputMethodForTesting() {
  #if !BUILDFLAG(IS_CHROMEOS_ASH) && defined(USE_AURA) && \

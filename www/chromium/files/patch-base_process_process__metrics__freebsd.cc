@@ -1,6 +1,6 @@
---- base/process/process_metrics_freebsd.cc.orig	2024-04-20 08:27:55 UTC
+--- base/process/process_metrics_freebsd.cc.orig	2024-06-17 12:56:06 UTC
 +++ base/process/process_metrics_freebsd.cc
-@@ -3,42 +3,57 @@
+@@ -3,44 +3,58 @@
  // found in the LICENSE file.
  
  #include "base/process/process_metrics.h"
@@ -45,8 +45,10 @@
    return WrapUnique(new ProcessMetrics(process));
  }
  
--std::optional<double> ProcessMetrics::GetPlatformIndependentCPUUsage() {
-+std::optional<TimeDelta> ProcessMetrics::GetCumulativeCPUUsage() {
+-base::expected<double, ProcessCPUUsageError>
+-ProcessMetrics::GetPlatformIndependentCPUUsage() {
++base::expected<TimeDelta, ProcessCPUUsageError>
++ProcessMetrics::GetCumulativeCPUUsage() {
    struct kinfo_proc info;
 -  int mib[] = {CTL_KERN, KERN_PROC, KERN_PROC_PID, process_};
 -  size_t length = sizeof(info);
@@ -56,22 +58,23 @@
 +  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_ };
 +
    if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0)
--    return std::nullopt;
-+    return std::optional(TimeDelta());
+-    return base::unexpected(ProcessCPUUsageError::kSystemError);
++    return base::ok(TimeDelta());
  
--  return std::optional(double{info.ki_pctcpu} / FSCALE * 100.0);
-+  return std::optional(Microseconds(info.ki_runtime));
+-  return base::ok(double{info.ki_pctcpu} / FSCALE * 100.0);
++  return base::ok(Microseconds(info.ki_runtime));
  }
  
--std::optional<TimeDelta> ProcessMetrics::GetCumulativeCPUUsage() {
--  NOTREACHED();
--  return std::nullopt;
+-base::expected<TimeDelta, ProcessCPUUsageError>
+-ProcessMetrics::GetCumulativeCPUUsage() {
+-  NOTREACHED_IN_MIGRATION();
+-  return base::unexpected(ProcessCPUUsageError::kNotImplemented);
 -}
 -
  size_t GetSystemCommitCharge() {
    int mib[2], pagesize;
    unsigned long mem_total, mem_free, mem_inactive;
-@@ -60,6 +75,230 @@ size_t GetSystemCommitCharge() {
+@@ -62,6 +76,230 @@ size_t GetSystemCommitCharge() {
    pagesize = getpagesize();
  
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);

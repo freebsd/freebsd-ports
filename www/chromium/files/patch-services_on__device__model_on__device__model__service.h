@@ -1,6 +1,6 @@
---- services/on_device_model/on_device_model_service.h.orig	2024-03-22 08:19:40 UTC
+--- services/on_device_model/on_device_model_service.h.orig	2024-06-17 12:56:06 UTC
 +++ services/on_device_model/on_device_model_service.h
-@@ -20,6 +20,10 @@
+@@ -22,6 +22,10 @@
  #include "sandbox/policy/linux/sandbox_linux.h"
  #endif
  
@@ -11,10 +11,10 @@
  namespace on_device_model {
  
  class COMPONENT_EXPORT(ON_DEVICE_MODEL) OnDeviceModelService
-@@ -29,7 +33,7 @@ class COMPONENT_EXPORT(ON_DEVICE_MODEL) OnDeviceModelS
-   // These are defined separately in pre_sandbox_init.cc for explicit security
-   // review coverage.
-   [[nodiscard]] static bool PreSandboxInit();
+@@ -35,7 +39,7 @@ class COMPONENT_EXPORT(ON_DEVICE_MODEL) OnDeviceModelS
+   // Must be called in the service's process after the run loop finished.
+   [[nodiscard]] static bool Shutdown();
+ 
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    static void AddSandboxLinuxOptions(

@@ -1,9 +1,9 @@
---- ui/color/color_id.h.orig	2024-03-22 08:19:40 UTC
+--- ui/color/color_id.h.orig	2024-06-17 12:56:06 UTC
 +++ ui/color/color_id.h
-@@ -611,7 +611,7 @@
-   E_CPONLY(kColorNativeColor6) \
-   E_CPONLY(kColorNativeBaseColor) \
-   E_CPONLY(kColorNativeSecondaryColor)
+@@ -620,7 +620,7 @@
+   \
+   E_CPONLY(kColorCrosSysPositive) \
+   E_CPONLY(kColorCrosSysComplementVariant)
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #define PLATFORM_SPECIFIC_COLOR_IDS \

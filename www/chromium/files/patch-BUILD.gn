@@ -1,6 +1,6 @@
---- BUILD.gn.orig	2024-04-19 13:02:56 UTC
+--- BUILD.gn.orig	2024-06-17 12:56:06 UTC
 +++ BUILD.gn
-@@ -64,7 +64,7 @@ declare_args() {
+@@ -65,7 +65,7 @@ declare_args() {
    root_extra_deps = []
  }
  
@@ -9,7 +9,7 @@
    # An official (maximally optimized!) component (optimized for build times)
    # build doesn't make sense and usually doesn't work.
    assert(!is_component_build)
-@@ -96,7 +96,6 @@ group("gn_all") {
+@@ -97,7 +97,6 @@ group("gn_all") {
        "//codelabs",
        "//components:components_unittests",
        "//components/gwp_asan:gwp_asan_unittests",
@@ -17,7 +17,7 @@
        "//net:net_unittests",
        "//sandbox:sandbox_unittests",
        "//services:services_unittests",
-@@ -427,7 +426,7 @@ group("gn_all") {
+@@ -428,7 +427,7 @@ group("gn_all") {
        }
      }
  
@@ -26,7 +26,7 @@
        deps += [
          "//third_party/breakpad:breakpad_unittests",
          "//third_party/breakpad:core-2-minidump",
-@@ -627,6 +626,15 @@ group("gn_all") {
+@@ -624,6 +623,15 @@ group("gn_all") {
        }
      }
  
@@ -42,7 +42,7 @@
      if (is_mac) {
        deps += [
          "//third_party/breakpad:dump_syms",
-@@ -673,7 +681,7 @@ group("gn_all") {
+@@ -670,7 +678,7 @@ group("gn_all") {
            host_os == "win") {
          deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
        }
@@ -51,7 +51,7 @@
        deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
      }
  
-@@ -1094,7 +1102,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1090,7 +1098,7 @@ if (use_blink && !is_cronet_build) {
      ]
    }
  

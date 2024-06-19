@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/sync/password_sync_bridge.cc.orig	2024-03-22 08:19:40 UTC
+--- components/password_manager/core/browser/sync/password_sync_bridge.cc.orig	2024-06-17 12:56:06 UTC
 +++ components/password_manager/core/browser/sync/password_sync_bridge.cc
-@@ -195,7 +195,7 @@ bool ShouldRecoverPasswordsDuringMerge() {
+@@ -196,7 +196,7 @@ bool ShouldRecoverPasswordsDuringMerge() {
  }
  
  bool ShouldCleanSyncMetadataDuringStartupWhenDecryptionFails() {

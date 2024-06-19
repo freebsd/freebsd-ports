@@ -1,6 +1,6 @@
---- third_party/perfetto/include/perfetto/base/time.h.orig	2024-01-30 07:53:34 UTC
+--- third_party/perfetto/include/perfetto/base/time.h.orig	2024-05-21 18:07:39 UTC
 +++ third_party/perfetto/include/perfetto/base/time.h
-@@ -193,6 +193,9 @@ inline TimeNanos GetTimeInternalNs(clockid_t clk_id) {
+@@ -201,6 +201,9 @@ inline TimeNanos GetTimeInternalNs(clockid_t clk_id) {
  // Return ns from boot. Conversely to GetWallTimeNs, this clock counts also time
  // during suspend (when supported).
  inline TimeNanos GetBootTimeNs() {
@@ -10,7 +10,7 @@
    // Determine if CLOCK_BOOTTIME is available on the first call.
    static const clockid_t kBootTimeClockSource = [] {
      struct timespec ts = {};
-@@ -200,6 +203,7 @@ inline TimeNanos GetBootTimeNs() {
+@@ -208,6 +211,7 @@ inline TimeNanos GetBootTimeNs() {
      return res == 0 ? CLOCK_BOOTTIME : kWallTimeClockSource;
    }();
    return GetTimeInternalNs(kBootTimeClockSource);
@@ -18,7 +18,7 @@
  }
  
  inline TimeNanos GetWallTimeNs() {
-@@ -207,7 +211,13 @@ inline TimeNanos GetWallTimeNs() {
+@@ -215,7 +219,13 @@ inline TimeNanos GetWallTimeNs() {
  }
  
  inline TimeNanos GetWallTimeRawNs() {

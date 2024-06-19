@@ -1,6 +1,6 @@
---- media/gpu/chromeos/video_decoder_pipeline.cc.orig	2024-04-19 13:02:56 UTC
+--- media/gpu/chromeos/video_decoder_pipeline.cc.orig	2024-06-17 12:56:06 UTC
 +++ media/gpu/chromeos/video_decoder_pipeline.cc
-@@ -1038,7 +1038,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
+@@ -1097,7 +1097,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
    }
  #endif
  
@@ -9,21 +9,21 @@
    // Linux should always use a custom allocator (to allocate buffers using
    // libva) and a PlatformVideoFramePool.
    CHECK(allocator.has_value());
-@@ -1048,7 +1048,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
-   // to create NativePixmap-backed frames.
+@@ -1106,7 +1106,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
+   // VideoFrame::StorageType of VideoFrame::STORAGE_DMABUFS.
    main_frame_pool_->AsPlatformVideoFramePool()->SetCustomFrameAllocator(
-       *allocator, VideoFrame::STORAGE_GPU_MEMORY_BUFFER);
+       *allocator, VideoFrame::STORAGE_DMABUFS);
 -#elif BUILDFLAG(IS_LINUX) && BUILDFLAG(USE_V4L2_CODEC)
 +#elif (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(USE_V4L2_CODEC)
    // Linux w/ V4L2 should not use a custom allocator
    // Only tested with video_decode_accelerator_tests
    // TODO(wenst@) Test with full Chromium Browser
-@@ -1206,7 +1206,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
+@@ -1294,7 +1294,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
               << " VideoFrames";
      auxiliary_frame_pool_->set_parent_task_runner(decoder_task_runner_);
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-     // TODO(nhebert): Change the storage type argument when |allocator| switches
-     // to create NativePixmap-backed frames.
+     // The custom allocator creates frames backed by NativePixmap, which uses a
+     // VideoFrame::StorageType of VideoFrame::STORAGE_DMABUFS.
      auxiliary_frame_pool_->AsPlatformVideoFramePool()->SetCustomFrameAllocator(

@@ -1,6 +1,6 @@
---- net/tools/cert_verify_tool/cert_verify_tool.cc.orig	2024-04-19 13:02:56 UTC
+--- net/tools/cert_verify_tool/cert_verify_tool.cc.orig	2024-06-17 12:56:06 UTC
 +++ net/tools/cert_verify_tool/cert_verify_tool.cc
-@@ -33,7 +33,7 @@
+@@ -34,7 +34,7 @@
  #include "third_party/boringssl/src/pki/trust_store.h"
  #include "third_party/boringssl/src/pki/trust_store_collection.h"
  
@@ -9,7 +9,7 @@
  #include "net/proxy_resolution/proxy_config.h"
  #include "net/proxy_resolution/proxy_config_service_fixed.h"
  #endif
-@@ -65,7 +65,7 @@ void SetUpOnNetworkThread(
+@@ -66,7 +66,7 @@ void SetUpOnNetworkThread(
      base::WaitableEvent* initialization_complete_event) {
    net::URLRequestContextBuilder url_request_context_builder;
    url_request_context_builder.set_user_agent(GetUserAgent());

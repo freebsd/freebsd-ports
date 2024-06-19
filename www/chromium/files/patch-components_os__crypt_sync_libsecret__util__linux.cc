@@ -1,4 +1,4 @@
---- components/os_crypt/sync/libsecret_util_linux.cc.orig	2023-04-28 17:01:32 UTC
+--- components/os_crypt/sync/libsecret_util_linux.cc.orig	2024-05-21 18:07:39 UTC
 +++ components/os_crypt/sync/libsecret_util_linux.cc
 @@ -99,16 +99,22 @@ bool LibsecretLoader::EnsureLibsecretLoaded() {
  
@@ -19,9 +19,9 @@
      // We wanted to use libsecret, but we couldn't load it. Warn, because
      // either the user asked for this, or we autodetected it incorrectly. (Or
      // the system has broken libraries, which is also good to warn about.)
-     // TODO(crbug.com/607435): Channel this message to the user-facing log
+     // TODO(crbug.com/40467093): Channel this message to the user-facing log
 -    VLOG(1) << "Could not load libsecret-1.so.0: " << dlerror();
-+    VLOG(1) << "Could not load << " << kSecretLib << ": " << dlerror();
++    VLOG(1) << "Could not load " << kSecretLib << ": " << dlerror();
      return false;
    }
  

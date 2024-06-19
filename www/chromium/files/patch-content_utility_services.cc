@@ -1,4 +1,4 @@
---- content/utility/services.cc.orig	2024-04-19 13:02:56 UTC
+--- content/utility/services.cc.orig	2024-05-21 18:07:39 UTC
 +++ content/utility/services.cc
 @@ -74,7 +74,7 @@
  extern sandbox::TargetServices* g_utility_target_services;
@@ -52,7 +52,7 @@
  #if BUILDFLAG(IS_CHROMEOS_ASH)
    {
  #else
-@@ -407,7 +407,7 @@ auto RunOOPArcVideoAcceleratorFactoryService(
+@@ -384,7 +384,7 @@ auto RunOOPArcVideoAcceleratorFactoryService(
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) && (BUILDFLAG(USE_VAAPI) ||
          // BUILDFLAG(USE_V4L2_CODEC))
  
@@ -61,7 +61,7 @@
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  auto RunStableVideoDecoderFactoryProcessService(
      mojo::PendingReceiver<
-@@ -418,7 +418,7 @@ auto RunStableVideoDecoderFactoryProcessService(
+@@ -395,7 +395,7 @@ auto RunStableVideoDecoderFactoryProcessService(
  #endif  // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) &&
          // (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  
@@ -70,7 +70,7 @@
  auto RunVideoEncodeAcceleratorProviderFactory(
      mojo::PendingReceiver<media::mojom::VideoEncodeAcceleratorProviderFactory>
          receiver) {
-@@ -441,7 +441,7 @@ void RegisterIOThreadServices(mojo::ServiceFactory& se
+@@ -418,7 +418,7 @@ void RegisterIOThreadServices(mojo::ServiceFactory& se
    // loop of type IO that can get notified when pipes have data.
    services.Add(RunNetworkService);
  
@@ -79,7 +79,7 @@
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
    if (base::FeatureList::IsEnabled(
            features::kRunStableVideoDecoderFactoryProcessServiceOnIOThread)) {
-@@ -493,7 +493,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -470,7 +470,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) && (BUILDFLAG(USE_VAAPI) ||
          // BUILDFLAG(USE_V4L2_CODEC))
  
@@ -88,7 +88,7 @@
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
    if (!base::FeatureList::IsEnabled(
            features::kRunStableVideoDecoderFactoryProcessServiceOnIOThread)) {
-@@ -502,7 +502,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -479,7 +479,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
  #endif  // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) &&
          // (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  

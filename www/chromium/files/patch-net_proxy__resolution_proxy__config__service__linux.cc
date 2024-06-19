@@ -1,4 +1,4 @@
---- net/proxy_resolution/proxy_config_service_linux.cc.orig	2024-02-23 21:04:38 UTC
+--- net/proxy_resolution/proxy_config_service_linux.cc.orig	2024-05-21 18:07:39 UTC
 +++ net/proxy_resolution/proxy_config_service_linux.cc
 @@ -6,7 +6,9 @@
  
@@ -17,7 +17,7 @@
 +#if !BUILDFLAG(IS_BSD)
  // Converts |value| from a decimal string to an int. If there was a failure
  // parsing, returns |default_value|.
- int StringToIntOrDefault(base::StringPiece value, int default_value) {
+ int StringToIntOrDefault(std::string_view value, int default_value) {
 @@ -1033,6 +1036,7 @@ class SettingGetterImplKDE : public ProxyConfigService
    // events on.
    scoped_refptr<base::SequencedTaskRunner> file_task_runner_;

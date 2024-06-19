@@ -1,6 +1,6 @@
---- gpu/vulkan/vulkan_util.cc.orig	2024-04-19 13:02:56 UTC
+--- gpu/vulkan/vulkan_util.cc.orig	2024-05-21 18:07:39 UTC
 +++ gpu/vulkan/vulkan_util.cc
-@@ -467,7 +467,7 @@ bool CheckVulkanCompatibilities(
+@@ -468,7 +468,7 @@ bool CheckVulkanCompatibilities(
      }
    }
  

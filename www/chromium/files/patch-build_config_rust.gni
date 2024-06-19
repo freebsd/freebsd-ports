@@ -1,6 +1,6 @@
---- build/config/rust.gni.orig	2024-04-19 13:02:56 UTC
+--- build/config/rust.gni.orig	2024-05-21 18:07:39 UTC
 +++ build/config/rust.gni
-@@ -277,6 +277,10 @@ if (is_linux || is_chromeos) {
+@@ -272,6 +272,10 @@ if (is_linux || is_chromeos) {
    }
  }
  

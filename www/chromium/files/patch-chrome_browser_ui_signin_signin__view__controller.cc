@@ -1,6 +1,6 @@
---- chrome/browser/ui/signin/signin_view_controller.cc.orig	2024-04-19 13:02:56 UTC
+--- chrome/browser/ui/signin/signin_view_controller.cc.orig	2024-06-17 12:56:06 UTC
 +++ chrome/browser/ui/signin/signin_view_controller.cc
-@@ -255,7 +255,7 @@ void SigninViewController::ShowModalManagedUserNoticeD
+@@ -334,7 +334,7 @@ void SigninViewController::ShowModalManagedUserNoticeD
      bool show_link_data_option,
      signin::SigninChoiceCallback callback) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

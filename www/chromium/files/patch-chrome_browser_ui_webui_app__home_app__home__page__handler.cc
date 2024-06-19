@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/app_home/app_home_page_handler.cc.orig	2024-04-19 13:02:56 UTC
+--- chrome/browser/ui/webui/app_home/app_home_page_handler.cc.orig	2024-05-21 18:07:39 UTC
 +++ chrome/browser/ui/webui/app_home/app_home_page_handler.cc
-@@ -391,7 +391,7 @@ app_home::mojom::AppInfoPtr AppHomePageHandler::Create
+@@ -376,7 +376,7 @@ app_home::mojom::AppInfoPtr AppHomePageHandler::Create
    app_info->start_url = start_url;
  
    bool deprecated_app = false;
@@ -9,7 +9,7 @@
    auto* context = extension_system_->extension_service()->GetBrowserContext();
    deprecated_app =
        extensions::IsExtensionUnsupportedDeprecatedApp(context, extension->id());
-@@ -454,7 +454,7 @@ void AppHomePageHandler::FillExtensionInfoList(
+@@ -439,7 +439,7 @@ void AppHomePageHandler::FillExtensionInfoList(
        continue;
      }
  

@@ -1,4 +1,4 @@
---- services/video_capture/video_capture_service_impl.cc.orig	2024-02-23 21:04:38 UTC
+--- services/video_capture/video_capture_service_impl.cc.orig	2024-06-17 12:56:06 UTC
 +++ services/video_capture/video_capture_service_impl.cc
 @@ -41,7 +41,7 @@
  #include "services/video_capture/lacros/device_factory_adapter_lacros.h"
@@ -18,7 +18,7 @@
  // Intended usage of this class is to create viz::Gpu in utility process and
  // connect to viz::GpuClient of browser process, which will call to Gpu service.
  // Also, this class holds the viz::ContextProvider to listen and monitor Gpu
-@@ -307,7 +307,7 @@ void VideoCaptureServiceImpl::LazyInitializeGpuDepende
+@@ -311,7 +311,7 @@ void VideoCaptureServiceImpl::LazyInitializeGpuDepende
      gpu_dependencies_context_ = std::make_unique<GpuDependenciesContext>();
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH)
@@ -27,7 +27,7 @@
    {
  #else
    if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled()) {
-@@ -421,7 +421,7 @@ void VideoCaptureServiceImpl::OnGpuInfoUpdate(const CH
+@@ -433,7 +433,7 @@ void VideoCaptureServiceImpl::OnGpuInfoUpdate(const CH
  }
  #endif
  

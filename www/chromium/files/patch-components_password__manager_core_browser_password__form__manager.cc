@@ -1,4 +1,4 @@
---- components/password_manager/core/browser/password_form_manager.cc.orig	2024-04-19 13:02:56 UTC
+--- components/password_manager/core/browser/password_form_manager.cc.orig	2024-06-17 12:56:06 UTC
 +++ components/password_manager/core/browser/password_form_manager.cc
 @@ -58,7 +58,7 @@
  #include "components/webauthn/android/webauthn_cred_man_delegate.h"
@@ -9,7 +9,7 @@
  #include "components/os_crypt/sync/os_crypt.h"
  #endif
  
-@@ -229,7 +229,7 @@ bool ShouldUploadCrowdsourcingVotes(const FormOrDigest
+@@ -227,7 +227,7 @@ bool ShouldUploadCrowdsourcingVotes(const FormOrDigest
    return false;
  }
  
@@ -18,7 +18,7 @@
  bool ShouldShowKeychainErrorBubble(
      std::optional<PasswordStoreBackendError> backend_error) {
    if (!backend_error.has_value()) {
-@@ -833,7 +833,7 @@ void PasswordFormManager::OnFetchCompleted() {
+@@ -869,7 +869,7 @@ void PasswordFormManager::OnFetchCompleted() {
          error.value().type);
    }
  

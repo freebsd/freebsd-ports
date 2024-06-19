@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_process_host_impl.h.orig	2024-03-22 08:19:40 UTC
+--- content/browser/renderer_host/render_process_host_impl.h.orig	2024-06-17 12:56:06 UTC
 +++ content/browser/renderer_host/render_process_host_impl.h
-@@ -548,7 +548,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
+@@ -599,7 +599,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
    // Sets this RenderProcessHost to be guest only. For Testing only.
    void SetForGuestsOnlyForTesting();
  

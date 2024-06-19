@@ -1,4 +1,4 @@
---- base/process/process_metrics.cc.orig	2024-04-19 13:02:56 UTC
+--- base/process/process_metrics.cc.orig	2024-05-21 18:07:39 UTC
 +++ base/process/process_metrics.cc
 @@ -17,7 +17,7 @@ namespace base {
  namespace {
@@ -35,9 +35,9 @@
  double ProcessMetrics::GetPlatformIndependentCPUUsage(
      TimeDelta cumulative_cpu) {
    TimeTicks time = TimeTicks::Now();
-@@ -130,10 +129,9 @@ std::optional<double> ProcessMetrics::GetPlatformIndep
-   }
-   return GetPlatformIndependentCPUUsage(cpu_usage.value());
+@@ -129,10 +128,9 @@ ProcessMetrics::GetPlatformIndependentCPUUsage() {
+     return GetPlatformIndependentCPUUsage(cpu_usage);
+   });
  }
 -#endif
  

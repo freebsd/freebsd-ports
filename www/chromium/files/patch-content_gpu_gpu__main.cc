@@ -1,6 +1,6 @@
---- content/gpu/gpu_main.cc.orig	2024-04-19 13:02:56 UTC
+--- content/gpu/gpu_main.cc.orig	2024-06-17 12:56:06 UTC
 +++ content/gpu/gpu_main.cc
-@@ -91,10 +91,14 @@
+@@ -94,10 +94,14 @@
  #include "sandbox/win/src/sandbox.h"
  #endif
  
@@ -16,7 +16,7 @@
  #include "sandbox/policy/sandbox_type.h"
  #endif
  
-@@ -114,7 +118,7 @@ namespace content {
+@@ -117,7 +121,7 @@ namespace content {
  
  namespace {
  
@@ -25,7 +25,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread*,
                         const gpu::GPUInfo*,
                         const gpu::GpuPreferences&);
-@@ -179,7 +183,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+@@ -182,7 +186,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
    bool EnsureSandboxInitialized(gpu::GpuWatchdogThread* watchdog_thread,
                                  const gpu::GPUInfo* gpu_info,
                                  const gpu::GpuPreferences& gpu_prefs) override {
@@ -43,17 +43,17 @@
  #error "Unsupported Linux platform."
  #elif BUILDFLAG(IS_MAC)
      // Cross-process CoreAnimation requires a CFRunLoop to function at all, and
-@@ -328,7 +332,8 @@ int GpuMain(MainFunctionParams parameters) {
-   // before it.
-   InitializeSkia();
+@@ -313,7 +317,8 @@ int GpuMain(MainFunctionParams parameters) {
+ 
+   base::PlatformThread::SetName("CrGpuMain");
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +// XXX BSD
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && !BUILDFLAG(IS_BSD)
    // Thread type delegate of the process should be registered before
-   // first thread type change in ChildProcess constructor.
-   // It also needs to be registered before the process has multiple threads,
-@@ -436,7 +441,7 @@ int GpuMain(MainFunctionParams parameters) {
+   // thread type change below for the main thread and for thread pool in
+   // ChildProcess constructor.
+@@ -443,7 +448,7 @@ int GpuMain(MainFunctionParams parameters) {
  
  namespace {
  
@@ -62,7 +62,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdog_thread,
                         const gpu::GPUInfo* gpu_info,
                         const gpu::GpuPreferences& gpu_prefs) {
-@@ -476,7 +481,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -483,7 +488,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
    sandbox_options.accelerated_video_encode_enabled =
        !gpu_prefs.disable_accelerated_video_encode;
  

@@ -1,6 +1,6 @@
---- services/audio/audio_sandbox_hook_linux.cc.orig	2024-04-19 13:02:56 UTC
+--- services/audio/audio_sandbox_hook_linux.cc.orig	2024-06-17 12:56:06 UTC
 +++ services/audio/audio_sandbox_hook_linux.cc
-@@ -144,6 +144,7 @@ void AddPulseAudioFilePermissions(
+@@ -143,6 +143,7 @@ void AddPulseAudioFilePermissions(
  }
  #endif
  
@@ -8,7 +8,7 @@
  std::vector<BrokerFilePermission> GetAudioFilePermissions() {
    std::vector<BrokerFilePermission> permissions{
        BrokerFilePermission::ReadOnly("/dev/urandom"),
-@@ -172,10 +173,12 @@ void LoadAudioLibraries() {
+@@ -171,10 +172,12 @@ void LoadAudioLibraries() {
      }
    }
  }
@@ -21,8 +21,8 @@
    LoadAudioLibraries();
    auto* instance = sandbox::policy::SandboxLinux::GetInstance();
    instance->StartBrokerProcess(MakeBrokerCommandSet({
-@@ -193,6 +196,7 @@ bool AudioPreSandboxHook(sandbox::policy::SandboxLinux
-   // TODO(https://crbug.com/850878) enable namespace sandbox. Currently, if
+@@ -192,6 +195,7 @@ bool AudioPreSandboxHook(sandbox::policy::SandboxLinux
+   // TODO(crbug.com/40579955) enable namespace sandbox. Currently, if
    // enabled, connect() on pulse native socket fails with ENOENT (called from
    // pa_context_connect).
 +#endif
