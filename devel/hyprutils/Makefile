@@ -14,6 +14,7 @@ USES=		compiler:c++11-lib cmake:testing
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	hyprwm
+PLIST_SUB=	VERSION=${DISTVERSION:C/-.*//}
 
 # XXX Drop after FreeBSD 13.2 EOL around 2024-07-01 (don't forget distinfo)
 .if ${CXX} == c++ && exists(/usr/lib/libc++.so)
