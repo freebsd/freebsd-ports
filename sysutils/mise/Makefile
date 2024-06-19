@@ -1,7 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.6.4
-PORTREVISION=	1
+DISTVERSION=	2024.6.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -149,11 +148,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		http-1.1.0 \
 		http-body-1.0.0 \
 		http-body-util-0.1.2 \
-		httparse-1.9.3 \
+		httparse-1.9.4 \
 		humansize-2.1.3 \
 		humantime-2.1.0 \
 		hyper-1.3.1 \
-		hyper-rustls-0.26.0 \
+		hyper-rustls-0.27.2 \
 		hyper-tls-0.6.0 \
 		hyper-util-0.1.5 \
 		iana-time-zone-0.1.60 \
@@ -202,7 +201,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		miette-derive-5.10.0 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
-		miniz_oxide-0.7.3 \
+		miniz_oxide-0.7.4 \
 		mio-0.8.11 \
 		native-tls-0.2.12 \
 		nix-0.26.4 \
@@ -256,6 +255,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.85 \
 		quick-xml-0.23.1 \
+		quinn-0.11.2 \
+		quinn-proto-0.11.3 \
+		quinn-udp-0.5.2 \
 		quote-1.0.36 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -268,15 +270,16 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.8.4 \
-		reqwest-0.12.4 \
+		reqwest-0.12.5 \
 		ring-0.17.8 \
 		rmp-0.8.14 \
 		rmp-serde-1.3.0 \
 		roff-0.2.1 \
 		rustc-demangle-0.1.24 \
+		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
 		rustix-0.38.34 \
-		rustls-0.22.4 \
+		rustls-0.23.10 \
 		rustls-native-certs-0.7.0 \
 		rustls-pemfile-2.1.2 \
 		rustls-pki-types-1.7.0 \
@@ -320,7 +323,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
 		syn-2.0.66 \
-		sync_wrapper-0.1.2 \
+		sync_wrapper-1.0.1 \
 		synstructure-0.13.1 \
 		sys-info-0.9.1 \
 		tabled-0.15.0 \
@@ -343,9 +346,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
 		tinystr-0.7.6 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.1 \
 		tokio-1.38.0 \
 		tokio-native-tls-0.3.1 \
-		tokio-rustls-0.25.0 \
+		tokio-rustls-0.26.0 \
 		tokio-util-0.7.11 \
 		toml-0.8.14 \
 		toml_datetime-0.6.6 \
@@ -354,6 +359,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tower-layer-0.3.2 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
+		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
 		tracing-error-0.2.0 \
 		tracing-log-0.2.0 \
@@ -394,7 +400,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-support-0.2.92 \
 		wasm-bindgen-shared-0.2.92 \
 		web-sys-0.3.69 \
-		webpki-roots-0.26.2 \
+		webpki-roots-0.26.3 \
 		which-6.0.1 \
 		widestring-1.1.0 \
 		winapi-0.3.9 \
