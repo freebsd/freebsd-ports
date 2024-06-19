@@ -1,8 +1,9 @@
 PORTNAME=	mscompress
 DISTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	archivers
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mew14930xvi@inbox.lv
 COMMENT=	Microsoft "compress.exe/expand.exe" compatible (de)compressor
 WWW=		https://github.com/stapelberg/mscompress
 
