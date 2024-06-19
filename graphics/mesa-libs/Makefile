@@ -75,8 +75,6 @@ MESON_ARGS+=	-Dplatforms="${MESA_PLATFORMS:ts,:tl}"
 LDFLAGS+=-Wl,-z,notext
 .endif
 
-.include "${MASTERDIR}/Makefile.targets"
-
 post-install:
 # Fallback if GLX_EXT_libglvnd is missing or vendor library doesn't exist
 	@${ECHO_CMD} "libGLX_indirect.so.0 libGLX_mesa.so.0" \

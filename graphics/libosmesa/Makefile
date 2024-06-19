@@ -44,8 +44,6 @@ LDFLAGS_i386=		-Wl,-znotext
 
 MESON_ARGS+=	-Dosmesa=true
 
-.include "${MASTERDIR}/Makefile.targets"
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/GL
 	${INSTALL_DATA} ${WRKSRC}/include/GL/osmesa.h \

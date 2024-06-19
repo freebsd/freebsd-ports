@@ -52,8 +52,6 @@ LDFLAGS_i386=		-Wl,-znotext
 
 CONFIGURE_ENV+=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig"
 
-.include "${MASTERDIR}/Makefile.targets"
-
 pre-patch:
 	@if [ -e ${LOCALBASE}/bin/llvm-config${LLVM_VERSION} ] && \
 		! [ -e ${LOCALBASE}/bin/clang${LLVM_VERSION} ]; then \

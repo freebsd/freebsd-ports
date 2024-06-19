@@ -43,5 +43,4 @@ LDFLAGS_i386=		-Wl,-znotext
 
 MESON_ARGS+=	-Dgallium-xa=enabled
 
-.include "${MASTERDIR}/Makefile.targets"
 .include <bsd.port.post.mk>
