@@ -13,6 +13,8 @@ lib/libkcmkwincommon.so.%%VERSION%%
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings_qwidgets/kcm_kwinscreenedges.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings_qwidgets/kcm_kwintouchscreen.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings_qwidgets/kwincompositing.so
+%%QT_QMLDIR%%/org/kde/kwin/private/kdecoration/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/kwin/private/kdecoration/kdecorationprivatedeclarative.qmltypes
 %%QT_QMLDIR%%/org/kde/kwin/private/kdecoration/libkdecorationprivatedeclarative.so
 %%QT_QMLDIR%%/org/kde/kwin/private/kdecoration/qmldir
 libexec/kwin-applywindowdecoration

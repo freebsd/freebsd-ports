@@ -1,6 +1,6 @@
 PORTNAME=	theseus-ship
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.0.0
+DISTVERSION=	6.1.0
 CATEGORIES=	x11-wm # wayland: https://github.com/winft/theseus-ship/issues/9
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -9,8 +9,6 @@ WWW=		https://github.com/winft/theseus-ship
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		fails to build with como-0.2.0
 
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libwayland-server.so:graphics/wayland \
