@@ -32,8 +32,8 @@ include/como/base/wayland/output_helpers.h
 include/como/base/wayland/output_transform.h
 include/como/base/wayland/platform.h
 include/como/base/wayland/platform_helpers.h
-include/como/base/wayland/screen_lock.h
 include/como/base/wayland/server.h
+include/como/base/wayland/server_helpers.h
 include/como/base/wayland/xwl_platform.h
 include/como/base/x11/app_singleton.h
 include/como/base/x11/atoms.h
@@ -78,8 +78,10 @@ include/como/debug/support_info.h
 include/como/debug/ui_debug_console.h
 include/como/desktop/kde/dbus/kwin.h
 include/como/desktop/kde/platform.h
+include/como/desktop/kde/screen_locker.h
 include/como/desktop/kde/service_utils.h
 include/como/desktop/platform.h
+include/como/desktop/screen_locker.h
 include/como/desktop/screen_locker_watcher.h
 include/como/input/backend/wlroots/backend.h
 include/como/input/backend/wlroots/control/control.h
@@ -130,7 +132,6 @@ include/como/input/filters/move_resize.h
 include/como/input/filters/popup.h
 include/como/input/filters/screen_edge.h
 include/como/input/filters/tabbox.h
-include/como/input/filters/terminate_server.h
 include/como/input/filters/virtual_terminal.h
 include/como/input/filters/window_action.h
 include/como/input/filters/window_selector.h
@@ -494,6 +495,7 @@ include/como/win/wayland/plasma_shell.h
 include/como/win/wayland/plasma_window.h
 include/como/win/wayland/popup_placement.h
 include/como/win/wayland/scene.h
+include/como/win/wayland/screen_lock.h
 include/como/win/wayland/session_manager.h
 include/como/win/wayland/setup.h
 include/como/win/wayland/space.h
@@ -635,6 +637,8 @@ lib/libcomo-debug-common.so.0
 lib/libcomo-debug-common.so.%%VERSION%%
 lib/libcomo-debug-wl.so.0
 lib/libcomo-debug-wl.so.%%VERSION%%
+lib/libcomo-desktop-kde-wl.so.0
+lib/libcomo-desktop-kde-wl.so.%%VERSION%%
 lib/libcomo-desktop-kde.so.0
 lib/libcomo-desktop-kde.so.%%VERSION%%
 lib/libcomo-desktop.so.0

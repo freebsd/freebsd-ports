@@ -1,13 +1,11 @@
 PORTNAME=	como
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0
+DISTVERSION=	0.2.0
 CATEGORIES=	x11-toolkits
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	7586d3cd718e.patch:-p1 # https://github.com/winft/como/pull/16
 PATCHFILES+=	325e41b02b58.patch:-p1 # https://github.com/winft/como/pull/22
 PATCHFILES+=	d250e3a81b91.patch:-p1 # https://github.com/winft/como/pull/22
-PATCHFILES+=	9775ff231660.patch:-p1 # https://github.com/winft/como/pull/23
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Compositor Modules for Wayland and X11
@@ -33,7 +31,7 @@ USES=		cmake:testing gettext-tools kde:6 pkgconfig \
 USE_GITHUB=	yes
 USE_KDE=	auth colorscheme config configwidgets coreaddons \
 		decoration ecm:build globalaccel i18n idletime kcmutils \
-		kscreenlocker:build newstuff:build package service svg \
+		kscreenlocker newstuff:build package service svg \
 		widgetsaddons windowsystem
 USE_LDCONFIG=	yes
 USE_QT=		base declarative tools
