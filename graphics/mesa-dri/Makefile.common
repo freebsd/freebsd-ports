@@ -52,7 +52,6 @@ LDFLAGS+=		-B${LOCALBASE}/bin
 PORTSCOUT=	ignore:1
 .endif
 
-python_OLD_CMD=	/usr/bin/env[[:space:]]python2 /usr/bin/python2 /bin/env[[:space:]]python
 SHEBANG_FILES=	src/gallium/*/*/*.py src/gallium/tools/trace/*.py \
 		src/gallium/drivers/svga/svgadump/svga_dump.py \
 		src/mapi/glapi/gen/*.py src/mapi/mapi_abi.py \
