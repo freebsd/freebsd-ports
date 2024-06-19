@@ -9,19 +9,11 @@
 #    - graphics/mesa-libs
 #    - lang/clover
 
-MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
-MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
+MESAVERSION=	24.0.9
 
-MESABASEVERSION=	24.0.9
-# if there is a subversion, don't include the '-' between 7.11-rc2.
-MESASUBVERSION=
+MASTER_SITES=	https://mesa.freedesktop.org/archive/
 
-MASTER_SITES=	https://mesa.freedesktop.org/archive/ \
-		https://mesa.freedesktop.org/archive/${MESABASEVERSION}/ \
-		ftp://ftp.freedesktop.org/pub/mesa/ \
-		ftp://ftp.freedesktop.org/pub/mesa/${MESABASEVERSION}/
-
-DISTFILES=	mesa-${MESADISTVERSION}${EXTRACT_SUFX}
+DISTFILES=	mesa-${MESAVERSION}${EXTRACT_SUFX}
 
 PATCH_SITES=	https://gitlab.freedesktop.org/mesa/mesa/-/commit/
 PATCHFILES+=	4a253aae7ca437201d2a31d2a11a1a5434fe41f1.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/26284
@@ -69,7 +61,7 @@ SHEBANG_FILES=	src/gallium/*/*/*.py src/gallium/tools/trace/*.py \
 
 MASTERDIR=	${.CURDIR:H:H}/graphics/mesa-dri
 PATCHDIR=	${MASTERDIR}/files
-WRKSRC=		${WRKDIR}/mesa-${MESADISTVERSION}
+WRKSRC=		${WRKDIR}/mesa-${MESAVERSION}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 PKGHELP=	${.CURDIR}/pkg-help
