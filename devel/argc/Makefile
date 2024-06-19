@@ -1,7 +1,6 @@
 PORTNAME=	argc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.18.0
-PORTREVISION=	1
+DISTVERSION=	1.19.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -86,6 +85,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		predicates-3.1.0 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
+		proc-macro-crate-3.1.0 \
 		proc-macro2-1.0.84 \
 		quote-1.0.36 \
 		redox_users-0.4.5 \
@@ -94,8 +94,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		regex-syntax-0.8.3 \
 		relative-path-1.9.3 \
 		roff-0.2.1 \
-		rstest-0.19.0 \
-		rstest_macros-0.19.0 \
+		rstest-0.21.0 \
+		rstest_macros-0.21.0 \
 		rustc_version-0.4.0 \
 		rustix-0.38.34 \
 		ryu-1.0.18 \
@@ -115,6 +115,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		thiserror-1.0.61 \
 		thiserror-impl-1.0.61 \
 		threadpool-1.8.1 \
+		toml_datetime-0.6.6 \
+		toml_edit-0.21.1 \
 		unicode-ident-1.0.12 \
 		unicode-linebreak-0.1.5 \
 		unicode-segmentation-1.11.0 \
@@ -143,6 +145,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.5 \
+		winnow-0.5.40 \
 		winsafe-0.0.19
 
 PLIST_FILES=	bin/${PORTNAME}
