@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2024-06-19 20:56:45 UTC
++++ CMakeLists.txt
+@@ -303,7 +303,7 @@ endif()
+   set(ARCH "armv8-a")
+ endif()
+ 
+-if(ARCH_ID STREQUAL "ppc64le")
++if(ARCH_ID STREQUAL "powerpc64le" OR ARCH_ID STREQUAL "ppc64le")
+   set(PPC64LE 1)
+   set(PPC64   0)
+   set(PPC     0)
