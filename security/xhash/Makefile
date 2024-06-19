@@ -1,7 +1,6 @@
 PORTNAME=	xhash
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.1
-PORTREVISION=	1
+DISTVERSION=	3.4.4
 CATEGORIES=	security
 
 MAINTAINER=	rbranco@suse.de
@@ -15,8 +14,8 @@ USES=		go:modules,1.21
 USE_GITHUB=	yes
 GH_ACCOUNT=	ricardobranco777
 GH_TUPLE=	\
-		golang:crypto:v0.23.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sys:v0.20.0:golang_sys/vendor/golang.org/x/sys \
+		golang:crypto:v0.24.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:sys:v0.21.0:golang_sys/vendor/golang.org/x/sys \
 		klauspost:cpuid:v2.0.12:klauspost_cpuid_v2/vendor/github.com/klauspost/cpuid/v2 \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		zeebo:blake3:v0.2.3:zeebo_blake3/vendor/github.com/zeebo/blake3
