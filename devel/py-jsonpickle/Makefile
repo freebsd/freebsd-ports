@@ -1,5 +1,5 @@
 PORTNAME=	jsonpickle
-DISTVERSION=	3.1.0
+DISTVERSION=	3.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,9 +20,12 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py-ecdsa@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymongo>0:databases/py-pymongo@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-black-multipy>0:devel/py-pytest-black-multipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-benchmark>0:devel/py-pytest-benchmark@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-checkdocs>=1.2.3:devel/py-pytest-checkdocs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-flake8>0:devel/py-flake8@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-enabler>=1.0.1:devel/py-pytest-enabler@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-ruff>0:devel/py-pytest-ruff@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>0:science/py-scikit-learn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}simplejson>0:devel/py-simplejson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy14>0:databases/py-sqlalchemy14@${PY_FLAVOR} \
