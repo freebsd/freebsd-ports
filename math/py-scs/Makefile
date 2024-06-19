@@ -1,6 +1,5 @@
 PORTNAME=	scs
-DISTVERSION=	3.2.0
-PORTREVISION=	2
+DISTVERSION=	3.2.4.post2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,12 +11,14 @@ WWW=		https://github.com/cvxgrp/scs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}meson-python>0:devel/meson-python@${PY_FLAVOR} \
+		${PYNUMPY}
+LIB_DEPENDS=	libopenblas.so:math/openblas
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.13.2:science/py-scipy@${PY_FLAVOR}
 
-USES=		python blaslapack:openblas fortran # fortran is for openblas
-USE_PYTHON=	distutils autoplist
+USES=		python blaslapack:openblas fortran localbase:ldflags pkgconfig # fortran is for openblas
+USE_PYTHON=	pep517 autoplist pytest # 2 tests fail, see https://github.com/cvxgrp/scs/issues/273
 
 CONFIGURE_ENV=	BLAS_LAPACK_LIBS="openblas"
 MAKE_ENV=	${CONFIGURE_ENV}
