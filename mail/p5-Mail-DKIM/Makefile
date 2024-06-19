@@ -1,10 +1,10 @@
 PORTNAME=	Mail-DKIM
-PORTVERSION=	1.20240124
+PORTVERSION=	1.20240619
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Perl5 module to process and/or create DKIM email
 WWW=		https://metacpan.org/dist/Mail-DKIM
 
