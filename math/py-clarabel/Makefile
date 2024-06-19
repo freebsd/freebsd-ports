@@ -1,0 +1,297 @@
+PORTNAME=	clarabel
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9.0
+CATEGORIES=	math python
+#MASTER_SITES=	PYPI
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Clarabel conic interior point solver
+WWW=		https://github.com/oxfordcontrol/Clarabel.rs
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.0:devel/py-maturin@${PY_FLAVOR}
+RUN_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
+
+USES=		cargo python
+USE_PYTHON=	pep517 autoplist
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	oxfordcontrol
+GH_PROJECT=	Clarabel.rs
+
+CARGO_CRATES=	accelerate-src-0.3.2 \
+		adler-1.0.2 \
+		aho-corasick-1.1.3 \
+		amd-0.2.2 \
+		android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
+		anyhow-1.0.86 \
+		autocfg-1.3.0 \
+		base16ct-0.2.0 \
+		base64-0.22.1 \
+		bitflags-1.3.2 \
+		bitflags-2.5.0 \
+		blas-0.22.0 \
+		blas-src-0.10.0 \
+		blas-sys-0.7.1 \
+		block-buffer-0.10.4 \
+		bumpalo-3.16.0 \
+		bytemuck-1.16.1 \
+		bytemuck_derive-1.7.0 \
+		byteorder-1.5.0 \
+		cc-1.0.99 \
+		cfg-if-1.0.0 \
+		chrono-0.4.38 \
+		cmake-0.1.50 \
+		coe-rs-0.1.2 \
+		core-foundation-0.9.4 \
+		core-foundation-sys-0.8.6 \
+		cpufeatures-0.2.12 \
+		crc32fast-1.4.2 \
+		crossbeam-deque-0.8.5 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.20 \
+		crunchy-0.2.2 \
+		crypto-common-0.1.6 \
+		darling-0.14.4 \
+		darling-0.20.9 \
+		darling_core-0.14.4 \
+		darling_core-0.20.9 \
+		darling_macro-0.14.4 \
+		darling_macro-0.20.9 \
+		dbgf-0.1.2 \
+		derive_builder-0.11.2 \
+		derive_builder-0.20.0 \
+		derive_builder_core-0.11.2 \
+		derive_builder_core-0.20.0 \
+		derive_builder_macro-0.11.2 \
+		derive_builder_macro-0.20.0 \
+		digest-0.10.7 \
+		directories-5.0.1 \
+		dirs-3.0.2 \
+		dirs-sys-0.3.7 \
+		dirs-sys-0.4.1 \
+		dyn-stack-0.10.0 \
+		either-1.12.0 \
+		enum-as-inner-0.6.0 \
+		enum_dispatch-0.3.13 \
+		equator-0.2.2 \
+		equator-macro-0.2.1 \
+		equivalent-1.0.1 \
+		errno-0.3.9 \
+		faer-0.19.0 \
+		faer-entity-0.19.0 \
+		fastrand-2.1.0 \
+		filetime-0.2.23 \
+		flate2-1.0.30 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.2.1 \
+		gemm-0.18.0 \
+		gemm-c32-0.18.0 \
+		gemm-c64-0.18.0 \
+		gemm-common-0.18.0 \
+		gemm-f16-0.18.0 \
+		gemm-f32-0.18.0 \
+		gemm-f64-0.18.0 \
+		generic-array-0.14.7 \
+		getrandom-0.2.15 \
+		getset-0.1.2 \
+		half-2.4.1 \
+		hashbrown-0.14.5 \
+		heck-0.4.1 \
+		iana-time-zone-0.1.60 \
+		iana-time-zone-haiku-0.1.2 \
+		ident_case-1.0.1 \
+		idna-0.5.0 \
+		indexmap-2.2.6 \
+		indoc-2.0.5 \
+		intel-mkl-src-0.8.1 \
+		intel-mkl-tool-0.8.1 \
+		itertools-0.11.0 \
+		itoa-1.0.11 \
+		js-sys-0.3.69 \
+		lapack-0.19.0 \
+		lapack-src-0.10.0 \
+		lapack-sys-0.14.0 \
+		lazy_static-1.4.0 \
+		libc-0.2.155 \
+		libm-0.2.8 \
+		libredox-0.1.3 \
+		linux-raw-sys-0.4.14 \
+		lock_api-0.4.12 \
+		log-0.4.21 \
+		matrixcompare-0.3.0 \
+		matrixcompare-core-0.1.0 \
+		memchr-2.7.4 \
+		memoffset-0.9.1 \
+		miniz_oxide-0.7.4 \
+		nano-gemm-0.1.2 \
+		nano-gemm-c32-0.1.0 \
+		nano-gemm-c64-0.1.0 \
+		nano-gemm-codegen-0.1.0 \
+		nano-gemm-core-0.1.0 \
+		nano-gemm-f32-0.1.0 \
+		nano-gemm-f64-0.1.0 \
+		native-tls-0.2.12 \
+		netlib-src-0.8.0 \
+		npyz-0.8.3 \
+		num-bigint-0.4.5 \
+		num-complex-0.4.6 \
+		num-derive-0.2.5 \
+		num-integer-0.1.46 \
+		num-traits-0.2.19 \
+		oci-spec-0.6.5 \
+		ocipkg-0.2.9 \
+		once_cell-1.19.0 \
+		openblas-build-0.10.9 \
+		openblas-src-0.10.9 \
+		openssl-0.10.64 \
+		openssl-macros-0.1.1 \
+		openssl-probe-0.1.5 \
+		openssl-sys-0.9.102 \
+		option-ext-0.2.0 \
+		parking_lot-0.12.3 \
+		parking_lot_core-0.9.10 \
+		paste-1.0.15 \
+		percent-encoding-2.3.1 \
+		pest-2.7.10 \
+		pest_derive-2.7.10 \
+		pest_generator-2.7.10 \
+		pest_meta-2.7.10 \
+		pkg-config-0.3.30 \
+		portable-atomic-1.6.0 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-0.4.30 \
+		proc-macro2-1.0.85 \
+		pulp-0.18.21 \
+		py_literal-0.4.0 \
+		pyo3-0.20.3 \
+		pyo3-build-config-0.20.3 \
+		pyo3-ffi-0.20.3 \
+		pyo3-macros-0.20.3 \
+		pyo3-macros-backend-0.20.3 \
+		quote-0.6.13 \
+		quote-1.0.36 \
+		r-src-0.1.0 \
+		rand-0.8.5 \
+		rand_core-0.6.4 \
+		rand_distr-0.4.3 \
+		raw-cpuid-10.7.0 \
+		rayon-1.10.0 \
+		rayon-core-1.12.1 \
+		reborrow-0.5.5 \
+		redox_syscall-0.4.1 \
+		redox_syscall-0.5.2 \
+		redox_users-0.4.5 \
+		regex-1.10.5 \
+		regex-automata-0.4.7 \
+		regex-syntax-0.8.4 \
+		ring-0.17.8 \
+		rustix-0.38.34 \
+		rustls-0.22.4 \
+		rustls-native-certs-0.7.0 \
+		rustls-pemfile-2.1.2 \
+		rustls-pki-types-1.7.0 \
+		rustls-webpki-0.102.4 \
+		ryu-1.0.18 \
+		same-file-1.0.6 \
+		schannel-0.1.23 \
+		scopeguard-1.2.0 \
+		security-framework-2.11.0 \
+		security-framework-sys-2.11.0 \
+		seq-macro-0.3.5 \
+		serde-1.0.203 \
+		serde_derive-1.0.203 \
+		serde_json-1.0.117 \
+		serde_spanned-0.6.6 \
+		sha2-0.10.8 \
+		smallvec-1.13.2 \
+		spin-0.9.8 \
+		strsim-0.10.0 \
+		strsim-0.11.1 \
+		subtle-2.5.0 \
+		syn-0.15.44 \
+		syn-1.0.109 \
+		syn-2.0.66 \
+		sysctl-0.5.5 \
+		tar-0.4.41 \
+		target-lexicon-0.12.14 \
+		tempfile-3.10.1 \
+		thiserror-1.0.61 \
+		thiserror-impl-1.0.61 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.1 \
+		toml-0.8.14 \
+		toml_datetime-0.6.6 \
+		toml_edit-0.22.14 \
+		typenum-1.17.0 \
+		ucd-trie-0.1.6 \
+		unicode-bidi-0.3.15 \
+		unicode-ident-1.0.12 \
+		unicode-normalization-0.1.23 \
+		unicode-xid-0.1.0 \
+		unindent-0.2.3 \
+		untrusted-0.9.0 \
+		ureq-2.9.7 \
+		url-2.5.2 \
+		uuid-1.8.0 \
+		vcpkg-0.2.15 \
+		version_check-0.9.4 \
+		walkdir-2.5.0 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.92 \
+		wasm-bindgen-backend-0.2.92 \
+		wasm-bindgen-macro-0.2.92 \
+		wasm-bindgen-macro-support-0.2.92 \
+		wasm-bindgen-shared-0.2.92 \
+		web-time-0.2.4 \
+		webpki-roots-0.26.3 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.8 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-core-0.52.0 \
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.5 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.5 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.5 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.5 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.5 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.5 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.5 \
+		winnow-0.6.13 \
+		xattr-1.3.1 \
+		zeroize-1.8.1
+
+CARGO_BUILD=	no
+CARGO_INSTALL=	no
+CARGO_TEST=	no
+CARGO_TARGET_DIR=	${WRKSRC}/target
+
+do-test:
+	@cd ${WRKSRC}/examples/python && \
+			for e in `ls example_*.py`; do \
+				${ECHO} "==> Running example $${e}"; \
+				${SETENV} ${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
+				${PYTHON_CMD} $${e}; \
+			done
+
+.include <bsd.port.mk>
