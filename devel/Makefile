@@ -5965,6 +5965,7 @@
     SUBDIR += py-whistle
     SUBDIR += py-widgetsnbextension
     SUBDIR += py-wimpy
+    SUBDIR += py-wirerope
     SUBDIR += py-wlc
     SUBDIR += py-woops
     SUBDIR += py-wrapt
