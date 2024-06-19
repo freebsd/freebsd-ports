@@ -1,6 +1,5 @@
 bin/r7organizer
 share/applications/r7-organizer.desktop
-share/metainfo/ru.r7_office.r7_organizer.appdata.xml
 share/pixmaps/r7-organizer.png
 share/r7-office/organizer/application.ini
 share/r7-office/organizer/chrome/icons/default/default128.png
