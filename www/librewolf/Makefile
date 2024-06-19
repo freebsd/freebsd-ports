@@ -1,6 +1,5 @@
 PORTNAME=	librewolf
-DISTVERSION=	124.0.1-1
-PORTREVISION=	2
+DISTVERSION=	126.0.1-1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/${DISTVERSION:R}-1/
 DISTNAME=	${PORTNAME}-${DISTVERSION:R}-1.source.
@@ -28,7 +27,6 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		nasm:devel/nasm \
 		yasm:devel/yasm \
 		zip:archivers/zip
-EXTRA_PATCHES=	${FILESDIR}/unity-menubar.patch:-p1
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
