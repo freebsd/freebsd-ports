@@ -32,9 +32,10 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
 USES+=	xorg
 .endif
 .endif
+
+LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 .if ${COMPONENT} != osmesa
-LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
-		libexpat.so:textproc/expat2
+LIB_DEPENDS+=	libexpat.so:textproc/expat2
 .endif
 
 USES+=		compiler:c++11-lib bison meson pathfix pkgconfig \
