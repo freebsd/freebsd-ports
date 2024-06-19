@@ -1,7 +1,7 @@
-TIMESTAMP = 1705945731
+TIMESTAMP = 1718812481
 SHA256 (fastfloat-fast_float-v5.2.0_GH0.tar.gz) = 72bbfd1914e414c920e39abdc81378adf910a622b62c45b4c61d344039425d18
 SIZE (fastfloat-fast_float-v5.2.0_GH0.tar.gz) = 84800
 SHA256 (Dav1dde-glad-v2.0.4_GH0.tar.gz) = 02629644c242dcc27c58222bd2c001d5e2f3765dbbcfd796542308bddebab401
 SIZE (Dav1dde-glad-v2.0.4_GH0.tar.gz) = 599932
-SHA256 (libplacebo-v6.338.2.tar.bz2) = 1c02d21720f972cae02111a1286337e9d0e70d623b311a1e4245bac5ce987f28
-SIZE (libplacebo-v6.338.2.tar.bz2) = 697450
+SHA256 (libplacebo-v7.349.0.tar.bz2) = 38c9c75d9c1bb412baf34845d1ca58c41a9804d1d0798091d7a8602a0d7c9aa6
+SIZE (libplacebo-v7.349.0.tar.bz2) = 701309
