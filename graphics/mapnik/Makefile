@@ -1,30 +1,18 @@
 PORTNAME=	mapnik
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.0
-PORTREVISION=	9
+DISTVERSION=	4.0.0
 CATEGORIES=	graphics geography
-MASTER_SITES=	https://github.com/mapnik/mapnik/releases/download/${DISTVERSIONFULL}/
 
-PATCH_SITES=	https://github.com/mapnik/mapnik/commit/
-PATCHFILES=	8944e81367d2b3b91a41e24116e1813c01491e5d.patch \
-		83779b7b6bdd229740b1b5e12a4a8fe27114cb7d.patch \
-		7f0daee8b37d8cf6eff32529b1762ffd5104f3f3.patch \
-		7da9009e7ffffb0b9429890f6f13fee837ac320f.patch \
-		26eb76cc07210d564d80d98948770c94d27c5243.patch \
-		08886e3b90f4d448308a46031eede879bb6ed74a.patch \
-		5f1be6bba520151575811b13499a867c0f1dde2c.patch
-PATCH_DIST_STRIP=	-p1 -F3
-
-MAINTAINER=	david.hummel@gmail.com
+MAINTAINER=	hummeltech@sherpaguru.com
 COMMENT=	Free Toolkit For Developing Mapping Applications
 WWW=		http://www.mapnik.org/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
-LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
-		libboost_program_options.so:devel/boost-libs \
+BUILD_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu \
+		protozero>0:devel/protozero
+LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libboost_regex.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
@@ -32,72 +20,95 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libicuuc.so:devel/icu
 RUN_DEPENDS=	dejavu>0:x11-fonts/dejavu
 
-USES=		compiler:c++14-lang gmake gnome pkgconfig python tar:bzip2
+USE_GITHUB=	yes
+GH_ACCOUNT=	mapnik
+GH_PROJECT=	mapnik
+GH_TUPLE=	mapbox:geometry.hpp:c83a2ab:geometry_hpp/deps/mapbox/geometry \
+		mapbox:polylabel:51f09d0:polylabel/deps/mapbox/polylabel \
+		mapbox:variant:a2a4858:variant/deps/mapbox/variant \
+		catchorg:Catch2:v2.13.10:catch2/test/catch2 \
+		mapnik:test-data:fd9ab43:test_data/test/data
+
+USES=		compiler:c++17-lang cmake:testing gnome pkgconfig
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-MAKE_ARGS=	PYTHON="${PYTHON_CMD}"
-MAKE_ENV=	JOBS=${MAKE_JOBS_NUMBER}
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	CPP_TESTS=False \
-		CUSTOM_CFLAGS="${CFLAGS}" \
-		CUSTOM_CXXFLAGS="${CXXFLAGS}" \
-		CUSTOM_LDFLAGS="${LDFLAGS}" \
-		DEMO=False \
-		DESTDIR="${STAGEDIR}" \
-		INPUT_PLUGINS="`${ECHO} ${INPUT_PLUGINS} | ${TR} ' ' ,`" \
-		PGSQL2SQLITE=True \
-		SVG2PNG=True \
-		SYSTEM_FONTS=${LOCALBASE}/share/fonts/dejavu \
-		XMLPARSER=libxml2
-CONFIGURE_ENV=	PYTHON="${PYTHON_CMD}"
 
-PORTDOCS=	AUTHORS.md CHANGELOG.md CODE_OF_CONDUCT.md INSTALL.md README.md docs/*
-
-INPUT_PLUGINS=	csv raster shape geojson topojson
+CMAKE_ARGS=	-DFONTS_INSTALL_DIR:PATH=share/fonts/dejavu
+CMAKE_ON=	USE_EXTERNAL_MAPBOX_PROTOZERO
 
 OPTIONS_DEFINE=		CAIRO DOCS JPEG PNG PROJ TIFF WEBP
-OPTIONS_DEFAULT=	CAIRO GDAL JPEG OGR PGRASTER PNG POSTGIS PROJ SQLITE3 \
-			TIFF WEBP
-OPTIONS_GROUP=		INPUT
+OPTIONS_DEFAULT=	CAIRO JPEG PNG PROJ TIFF WEBP \
+			GDAL OGR PGRASTER POSTGIS SQLITE3 \
+			TESTING \
+			GEOMETRY_TO_WKB MAPNIK_INDEX MAPNIK_RENDER PGSQL2SQLITE SHAPEINDEX SVG2PNG
+OPTIONS_GROUP=		INPUT TESTS UTILS
 OPTIONS_GROUP_INPUT=	GDAL OGR PGRASTER POSTGIS SQLITE3
+OPTIONS_GROUP_TESTS=	BENCHMARK DEMO_CPP DEMO_VIEWER TESTING
+OPTIONS_GROUP_UTILS=	GEOMETRY_TO_WKB MAPNIK_INDEX MAPNIK_RENDER OGRINDEX PGSQL2SQLITE SHAPEINDEX SVG2PNG
 OPTIONS_SUB=		yes
 
-INPUT_DESC=	Input plugins
-GDAL_DESC=	GDAL input plugin
-OGR_DESC=	OGR input plugin
-POSTGIS_DESC=	PostGIS input plugin
-PGRASTER_DESC=	PGraster input plugin
-SQLITE3_DESC=	SQLite input plugin
+JPEG_CMAKE_BOOL=	USE_JPEG
+JPEG_USES=		jpeg
+PNG_CMAKE_BOOL=		USE_PNG
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
+TIFF_CMAKE_BOOL=	USE_TIFF
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
+WEBP_CMAKE_BOOL=	USE_WEBP
+WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 
-PROJ_DESC=	PROJ support
+CAIRO_DESC=		Enable cairo rendering
+PROJ_DESC=		Enable PROJ support
 
-CAIRO_DESC=	Enable cairo rendering
+INPUT_DESC=		Input plugins
+GDAL_DESC=		GDAL input plugin
+OGR_DESC=		OGR input plugin
+PGRASTER_DESC=		PGraster input plugin
+POSTGIS_DESC=		PostGIS input plugin
+SQLITE3_DESC=		SQLite input plugin
 
-GDAL_VARS=		INPUT_PLUGINS+=gdal
+TESTS_DESC=		Tests & Demos, etc.
+BENCHMARK_DESC=		Benchmark project
+DEMO_CPP_DESC=		Demo c++ application
+DEMO_VIEWER_DESC=	Demo viewer
+TESTING_DESC=		Tests
+
+UTILS_DESC=		Utilities
+GEOMETRY_TO_WKB_DESC=	geometry_to_wkb utility
+MAPNIK_INDEX_DESC=	mapnik_index utility
+MAPNIK_RENDER_DESC=	mapnik_render utility
+OGRINDEX_DESC=		ogrindex utility (currently doesn't build)
+PGSQL2SQLITE_DESC=	pgsql2sqlite utility
+SHAPEINDEX_DESC=	shapeindex utility
+SVG2PNG_DESC=		svg2png utility
+
+CAIRO_CMAKE_BOOL=	USE_CAIRO
+CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
+PROJ_CMAKE_BOOL=	USE_PROJ
+PROJ_LIB_DEPENDS=	libproj.so:graphics/proj
+
+GDAL_CMAKE_BOOL=	USE_PLUGIN_INPUT_GDAL
 GDAL_LIB_DEPENDS=	libgdal.so:graphics/gdal
-OGR_VARS=		INPUT_PLUGINS+=ogr
+OGR_CMAKE_BOOL=		USE_PLUGIN_INPUT_OGR
 OGR_LIB_DEPENDS=	libgdal.so:graphics/gdal
-POSTGIS_VARS=		INPUT_PLUGINS+=postgis
-POSTGIS_USES=		pgsql
-PGRASTER_VARS=		INPUT_PLUGINS+=pgraster
+PGRASTER_CMAKE_BOOL=	USE_PLUGIN_INPUT_PGRASTER
 PGRASTER_USES=		pgsql
-SQLITE3_VARS=		INPUT_PLUGINS+=sqlite
+POSTGIS_CMAKE_BOOL=	USE_PLUGIN_INPUT_POSTGIS
+POSTGIS_USES=		pgsql
+SQLITE3_CMAKE_BOOL=	USE_PLUGIN_INPUT_SQLITE
 SQLITE3_USES=		sqlite:3
 
-PNG_LIB_DEPENDS=	libpng.so:graphics/png
-PNG_MAKE_ARGS_OFF=	PNG=False
-JPEG_USES=		jpeg
-JPEG_MAKE_ARGS_OFF=	JPEG=False
-TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
-TIFF_MAKE_ARGS_OFF=	TIFF=False
-WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
-WEBP_MAKE_ARGS_OFF=	WEBP=False
-PROJ_LIB_DEPENDS=	libproj.so:graphics/proj
-PROJ_MAKE_ARGS_OFF=	PROJ=False
+BENCHMARK_CMAKE_BOOL= 	BUILD_BENCHMARK
+DEMO_CPP_CMAKE_BOOL= 	BUILD_DEMO_CPP
+DEMO_VIEWER_CMAKE_BOOL=	BUILD_DEMO_VIEWER
+TESTING_CMAKE_BOOL=	BUILD_TESTING
 
-CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
-CAIRO_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.2:graphics/py-cairo@${PY_FLAVOR}
-CAIRO_MAKE_ARGS_OFF=	CAIRO=False
+GEOMETRY_TO_WKB_CMAKE_BOOL= 	BUILD_UTILITY_GEOMETRY_TO_WKB
+MAPNIK_INDEX_CMAKE_BOOL= 	BUILD_UTILITY_MAPNIK_INDEX
+MAPNIK_RENDER_CMAKE_BOOL= 	BUILD_UTILITY_MAPNIK_RENDER
+OGRINDEX_CMAKE_BOOL= 		BUILD_UTILITY_OGRINDEX
+PGSQL2SQLITE_CMAKE_BOOL= 	BUILD_UTILITY_PGSQL2SQLITE
+SHAPEINDEX_CMAKE_BOOL= 		BUILD_UTILITY_SHAPEINDEX
+SVG2PNG_CMAKE_BOOL= 		BUILD_UTILITY_SVG2PNG
 
 pre-configure-SQLITE3-on:
 	@if ! ${LOCALBASE}/bin/sqlite3 :memory: 'create virtual table foo using rtree(pkid, xmin, xmax, ymin, ymax)' > /dev/null 2>&1; then \
@@ -109,17 +120,13 @@ pre-configure-SQLITE3-on:
 	fi
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
-		-e 's#/usr/include#${LOCALBASE}/include#g' \
-		-e "s#'/usr/' + LIBDIR_SCHEMA_DEFAULT#'${LOCALBASE}/' + LIBDIR_SCHEMA_DEFAULT#g" \
-		${WRKSRC}/SConstruct
+	@${REINPLACE_CMD} -e 's#GIT_REPOSITORY https://github.com/catchorg/Catch2.git#SOURCE_DIR ${WRKSRC}/test/catch2)#g' \
+		-e 's#GIT_TAG        v2.13.7)##g' \
+		${WRKSRC}/test/CMakeLists.txt
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mapnik-index \
-		${STAGEDIR}${PREFIX}/bin/mapnik-render \
-		${STAGEDIR}${PREFIX}/bin/pgsql2sqlite \
-		${STAGEDIR}${PREFIX}/bin/shapeindex \
-		${STAGEDIR}${PREFIX}/bin/svg2png
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/fonts
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mapnik/input/*.input
 
