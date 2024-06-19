@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	${ELECTRON_VER:S/-beta./.b/}
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/tagattie/FreeBSD-Electron/releases/download/v30.0.9/:chromium \
+MASTER_SITES=	https://github.com/tagattie/FreeBSD-Electron/releases/download/v30.1.1/:chromium \
 		https://commondatastorage.googleapis.com/chromium-nodejs/:chromium_node \
 		https://commondatastorage.googleapis.com/chromium-fonts/:chromium_testfonts
 PKGNAMESUFFIX=	${ELECTRON_VER_MAJOR}
@@ -221,13 +221,13 @@ SNDIO_VARS=		GN_ARGS+=use_sndio=true
 SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
 # See ${WRKSRC}/electron/DEPS for CHROMIUM_VER
-CHROMIUM_VER=			124.0.6367.233
+CHROMIUM_VER=			124.0.6367.243
 # See ${WRKSRC}/third_party/node/node_modules.tar.gz.sha1 for CHROMIUM_NODE_MODULES_HASH
 CHROMIUM_NODE_MODULES_HASH=	97a0b3c4c39cf05de1eafb6ffdec0fddd643f0a2
 # See ${WRKSRC}/third_party/test_fonts/test_fonts.tar.gz.sha1 for CHROMIUM_TEST_FONTS_HASH
 CHROMIUM_TEST_FONTS_HASH=	336e775eec536b2d785cc80eff6ac39051931286
 # See ${WRKSRC}/electron/DEPS for NODE_VER
-NODE_VER=			20.11.1
+NODE_VER=			20.14.0
 # See ${WRKSRC}/electron/DEPS for NAN_VER
 NAN_VER=			e14bdcd1f72d62bca1d541b66da43130384ec213
 # See ${WRKSRC}/electron/DEPS for SQUIRREL_MAC_VER
