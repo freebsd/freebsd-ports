@@ -40,13 +40,6 @@ LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
 USES+=		compiler:c++11-lib bison meson pathfix pkgconfig \
 		python:build shebangfix tar:xz
 
-.if ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
-# --build-id isn't supported by old GNU ld.bfd in base
-# Also ld.bfd have problems that seems related to --as-needed
-USE_BINUTILS=		yes
-LDFLAGS+=		-B${LOCALBASE}/bin
-.endif
-
 # only have one port to check with portscout.
 .if ${PORTNAME} != mesa-dri
 PORTSCOUT=	ignore:1
