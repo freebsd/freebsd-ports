@@ -1,6 +1,6 @@
 PORTNAME=	cinnamon-control-center
 PORTVERSION=	5.4.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils gnome
 DIST_SUBDIR=	gnome
 
