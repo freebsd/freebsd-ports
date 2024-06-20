@@ -1,6 +1,5 @@
 PORTNAME=	drawio
-PORTVERSION=	24.1.0
-PORTREVISION=	2
+PORTVERSION=	24.5.3
 DISTVERSIONPREFIX=	x86_64-
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/jgraph/drawio-desktop/releases/download/v${PORTVERSION}/
@@ -12,7 +11,7 @@ WWW=		https://drawio.com/
 
 LICENSE=	APACHE20
 
-USES=		desktop-file-utils electronfix:28 shared-mime-info
+USES=		desktop-file-utils electronfix:30 shared-mime-info
 
 NO_BUILD=	yes
 SUB_FILES=	drawio
