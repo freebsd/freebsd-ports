@@ -5458,6 +5458,7 @@
     SUBDIR += py-pyparsing2
     SUBDIR += py-pyperclip
     SUBDIR += py-pyperf
+    SUBDIR += py-pyperscan
     SUBDIR += py-pyplusplus
     SUBDIR += py-pyproject-api
     SUBDIR += py-pyproject-flake8
