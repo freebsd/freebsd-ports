@@ -1,3 +1,44 @@
+  <vuln vid="c5415838-2f52-11ef-9cab-4ccc6adda413">
+    <topic>qt6-webengine -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>qt6-webengine</name>
+	<range><lt>6.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Qt qtwebengine-chromium repo reports:</p>
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=118-based">
+	  <p>Backports for 7 security bugs in Chromium:</p>
+	  <ul>
+	    <li>CVE-2024-4948: Use after free in Dawn</li>
+	    <li>CVE-2024-5274: Type Confusion in V8</li>
+	    <li>CVE-2024-5493: Heap buffer overflow in WebRTC</li>
+	    <li>CVE-2024-5494: Use after free in Dawn</li>
+	    <li>CVE-2024-5495: Use after free in Dawn</li>
+	    <li>CVE-2024-5496: Use after free in Media Session</li>
+	    <li>CVE-2024-5499: Out of bounds write in Streams API</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-4948</cvename>
+      <cvename>CVE-2024-5274</cvename>
+      <cvename>CVE-2024-5493</cvename>
+      <cvename>CVE-2024-5494</cvename>
+      <cvename>CVE-2024-5495</cvename>
+      <cvename>CVE-2024-5496</cvename>
+      <cvename>CVE-2024-5499</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=118-based</url>
+    </references>
+    <dates>
+      <discovery>2024-05-31</discovery>
+      <entry>2024-06-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="142c538e-b18f-40a1-afac-c479effadd5c">
     <topic>openvpn -- two security fixes</topic>
     <affects>
