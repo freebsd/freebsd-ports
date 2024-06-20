@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2024-06-17 12:56:06 UTC
+--- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2024-06-20 12:56:26 UTC
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
 @@ -196,7 +196,7 @@
  #include "chrome/browser/ui/webui/chromeos/chrome_url_disabled/chrome_url_disabled_ui.h"
@@ -39,7 +39,7 @@
            || url.host_piece() == chrome::kChromeUILinuxProxyConfigHost
  #endif
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -579,7 +579,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -582,7 +582,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUIMobileSetupHost)
      return &NewWebUI<ash::cellular_setup::MobileSetupUI>;
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
@@ -48,7 +48,7 @@
    if (url.host_piece() == chrome::kChromeUIWebUIJsErrorHost)
      return &NewWebUI<WebUIJsErrorUI>;
  #endif
-@@ -635,7 +635,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -638,7 +638,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUINaClHost)
      return &NewWebUI<NaClUI>;
  #endif
@@ -57,7 +57,7 @@
       defined(TOOLKIT_VIEWS)) ||                         \
      defined(USE_AURA)
    if (url.host_piece() == chrome::kChromeUITabModalConfirmDialogHost)
-@@ -683,26 +683,26 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -686,26 +686,26 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    }
  #endif
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
