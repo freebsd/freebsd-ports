@@ -6,8 +6,6 @@ bin/soplex
 bin/zimpl
 include/blockmemshell/memory.h
 include/dijkstra/dijkstra.h
-include/gcg/bliss_automorph.h
-include/gcg/bliss_automorph.hpp
 include/gcg/branch_bpstrong.h
 include/gcg/branch_empty.h
 include/gcg/branch_generic.h
@@ -40,7 +38,6 @@ include/gcg/dec_densemasterconss.h
 include/gcg/dec_generalmastersetcover.h
 include/gcg/dec_generalmastersetpack.h
 include/gcg/dec_generalmastersetpart.h
-include/gcg/dec_isomorph.h
 include/gcg/dec_mastersetcover.h
 include/gcg/dec_mastersetpack.h
 include/gcg/dec_mastersetpart.h
@@ -394,6 +391,7 @@ include/scip/cons_conjunction.h
 include/scip/cons_countsols.h
 include/scip/cons_cumulative.h
 include/scip/cons_disjunction.h
+include/scip/cons_fixedvar.h
 include/scip/cons_indicator.h
 include/scip/cons_integral.h
 include/scip/cons_knapsack.h
@@ -892,8 +890,9 @@ include/soplex/external/fmt/ostream.h
 include/soplex/external/fmt/posix.h
 include/soplex/external/fmt/printf.h
 include/soplex/external/fmt/ranges.h
+include/soplex/external/zstr/strict_fstream.hpp
+include/soplex/external/zstr/zstr.hpp
 include/soplex/fmt.hpp
-include/soplex/gzstream.h
 include/soplex/idlist.h
 include/soplex/idxset.h
 include/soplex/islist.h
@@ -1090,15 +1089,15 @@ lib/cmake/zimpl/zimpl-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/zimpl/zimpl-targets.cmake
 lib/libgcg.so
 lib/libgcg.so.3.6
-lib/libgcg.so.3.6.1.0
+lib/libgcg.so.3.6.2.0
 lib/libpapilo-core.a
 lib/libscip.so
-lib/libscip.so.9.0
-lib/libscip.so.9.0.1.0
+lib/libscip.so.9.1
+lib/libscip.so.9.1.0.0
 lib/libsoplex-pic.a
 lib/libsoplex.a
 lib/libsoplexshared.so
-lib/libsoplexshared.so.7.0
-lib/libsoplexshared.so.7.0.1.0
+lib/libsoplexshared.so.7.1
+lib/libsoplexshared.so.7.1.0.0
 lib/libzimpl-pic.a
 lib/libzimpl.a

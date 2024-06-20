@@ -1,5 +1,5 @@
 PORTNAME=	scipoptsuite
-DISTVERSION=	9.0.1
+DISTVERSION=	9.1.0
 CATEGORIES=	math
 MASTER_SITES=	https://scipopt.org/download/release/
 
