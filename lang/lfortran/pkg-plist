@@ -11,6 +11,7 @@ lib/liblfortran_runtime.so
 lib/liblfortran_runtime.so.0
 lib/liblfortran_runtime.so.%%VER%%
 lib/liblfortran_runtime_static.a
+lib/omp_lib.mod
 %%DATADIR%%/dat_convert.py
 %%DATADIR%%/dwarf_convert.py
 share/man/man1/lfortran.1.gz
