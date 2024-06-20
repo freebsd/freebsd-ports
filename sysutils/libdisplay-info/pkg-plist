@@ -8,5 +8,5 @@ include/libdisplay-info/gtf.h
 include/libdisplay-info/info.h
 lib/libdisplay-info.so
 lib/libdisplay-info.so.%%VERSION%%
-lib/libdisplay-info.so.1
+lib/libdisplay-info.so.2
 libdata/pkgconfig/libdisplay-info.pc

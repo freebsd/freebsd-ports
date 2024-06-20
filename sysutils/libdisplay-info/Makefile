@@ -1,5 +1,5 @@
 PORTNAME=	libdisplay-info
-DISTVERSION=	0.1.1
+DISTVERSION=	0.2.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org
