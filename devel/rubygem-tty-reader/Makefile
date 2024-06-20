@@ -1,6 +1,6 @@
 PORTNAME=	tty-reader
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-tty-cursor>=0.7<1:devel/rubygem-tty-cursor \
 		rubygem-tty-screen>=0.8<1:devel/rubygem-tty-screen \
-		rubygem-wisper>=2.0:devel/rubygem-wisper
+		rubygem-wisper2>=2.0<3:devel/rubygem-wisper2
 
 USES=		gem
 
