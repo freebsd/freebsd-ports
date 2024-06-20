@@ -1,8 +1,9 @@
 PORTNAME=	aws-sam-translator
-DISTVERSION=	1.83.0
+DISTVERSION=	1.89.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSIONFULL}
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Library that transform SAM templates into AWS CloudFormation templates
