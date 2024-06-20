@@ -1,5 +1,5 @@
 PORTNAME=	keepassxc
-DISTVERSION=	2.7.6
+DISTVERSION=	2.7.9
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/keepassxreboot/keepassxc/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -15,13 +15,10 @@ LICENSE_NAME_NOKIA-LGPL-EXCEPTION=	Nokia Qt LGPL Exception version 1.1
 LICENSE_FILE_NOKIA-LGPL-EXCEPTION=	${WRKSRC}/LICENSE.NOKIA-LGPL-EXCEPTION
 LICENSE_PERMS_NOKIA-LGPL-EXCEPTION=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-DEPRECATED=	Depends on expired security/botan2
-EXPIRATION_DATE=2025-06-21
-
 BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor
 LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libqrencode.so:graphics/libqrencode \
-		libbotan-2.so:security/botan2
+		libbotan-3.so:security/botan3
 
 USES=		cmake compiler:c++17-lang desktop-file-utils pkgconfig qt:5 \
 		readline shared-mime-info tar:xz xorg
@@ -32,7 +29,7 @@ USE_XORG=	x11
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 CMAKE_OFF=	WITH_XC_UPDATECHECK
 
-CONFLICTS_INSTALL=	keepassx-0.* keepassx2 keepassx
+CONFLICTS_INSTALL=	keepassx-0.* keepassx2 keepassx keepassxc276
 
 OPTIONS_DEFINE=		AUTOTYPE BROWSER FDOSECRETS KEESHARE NETWORKING SSHAGENT YUBIKEY TEST
 OPTIONS_DEFAULT=	AUTOTYPE BROWSER FDOSECRETS KEESHARE NETWORKING SSHAGENT YUBIKEY
