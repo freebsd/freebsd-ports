@@ -1,8 +1,9 @@
 PORTNAME=	cfn-lint
-DISTVERSION=	0.83.7
+DISTVERSION=	0.87.6
 CATEGORIES=	devel python textproc
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSIONFULL}
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	AWS CloudFormation Linter
@@ -11,7 +12,7 @@ WWW=		https://pypi.org/project/cfn-lint/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aws-sam-translator>=1.82.0:devel/py-aws-sam-translator@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aws-sam-translator>=1.89.0:devel/py-aws-sam-translator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jschema-to-python>=1.2.3:devel/py-jschema-to-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpatch>0:devel/py-jsonpatch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=3.0<5:devel/py-jsonschema@${PY_FLAVOR} \
