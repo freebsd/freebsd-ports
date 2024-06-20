@@ -85,6 +85,7 @@
 %%QT_DOCDIR%%/qtdoc/functions.html
 %%QT_DOCDIR%%/qtdoc/get-and-install-qt-cli.html
 %%QT_DOCDIR%%/qtdoc/get-and-install-qt.html
+%%QT_DOCDIR%%/qtdoc/getting-sources-from-git.html
 %%QT_DOCDIR%%/qtdoc/gettingstarted.html
 %%QT_DOCDIR%%/qtdoc/gpl.html
 %%QT_DOCDIR%%/qtdoc/groups.html

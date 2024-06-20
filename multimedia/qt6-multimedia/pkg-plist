@@ -14,8 +14,10 @@
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qcameradevice_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qcapturablewindow_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qerrorinfo_p.h
+%%GSTREAMER%%%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qgstreamer_platformspecificinterface_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qimagevideobuffer_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qmaybe_p.h
+%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qmediacapturesession_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qmediaplayer_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qmediarecorder_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qmediastoragelocation_p.h
@@ -45,6 +47,7 @@
 %%PULSEAUDIO%%%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qpulseaudiosource_p.h
 %%PULSEAUDIO%%%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qpulsehelpers_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qsamplecache_p.h
+%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qsymbolsresolveutils_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qtmultimedia-config_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qtmultimediaglobal_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qvideoframe_p.h
@@ -156,8 +159,6 @@
 %%GSTREAMER%%%%QT_INCDIR%%/QtQGstreamerMediaPlugin/%%FULLVER%%/QtQGstreamerMediaPlugin/private/qgstreameraudiodevice_p.h
 %%GSTREAMER%%%%QT_INCDIR%%/QtQGstreamerMediaPlugin/%%FULLVER%%/QtQGstreamerMediaPlugin/private/qgstreameraudioinput_p.h
 %%GSTREAMER%%%%QT_INCDIR%%/QtQGstreamerMediaPlugin/%%FULLVER%%/QtQGstreamerMediaPlugin/private/qgstreameraudiooutput_p.h
-%%GSTREAMER%%%%QT_INCDIR%%/QtQGstreamerMediaPlugin/%%FULLVER%%/QtQGstreamerMediaPlugin/private/qgstreameraudiosink_p.h
-%%GSTREAMER%%%%QT_INCDIR%%/QtQGstreamerMediaPlugin/%%FULLVER%%/QtQGstreamerMediaPlugin/private/qgstreameraudiosource_p.h
 %%GSTREAMER%%%%QT_INCDIR%%/QtQGstreamerMediaPlugin/%%FULLVER%%/QtQGstreamerMediaPlugin/private/qgstreamerbufferprobe_p.h
 %%GSTREAMER%%%%QT_INCDIR%%/QtQGstreamerMediaPlugin/%%FULLVER%%/QtQGstreamerMediaPlugin/private/qgstreamercamera_p.h
 %%GSTREAMER%%%%QT_INCDIR%%/QtQGstreamerMediaPlugin/%%FULLVER%%/QtQGstreamerMediaPlugin/private/qgstreamerformatinfo_p.h
