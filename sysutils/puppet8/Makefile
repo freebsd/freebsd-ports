@@ -1,5 +1,6 @@
 PORTNAME=	puppet
 PORTVERSION=	8.7.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
 PKGNAMESUFFIX=	8
@@ -61,7 +62,8 @@ DISTFILES+=	puppetlabs-${module:C/=.*//}-${module:C/.*=//}.tar.gz:forge
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/puppetlabs/puppet|${ETCDIR}|" \
 		${WRKSRC}/install.rb \
-		${WRKSRC}/lib/puppet/reference/configuration.rb
+		${WRKSRC}/lib/puppet/reference/configuration.rb \
+		${WRKSRC}/lib/puppet/util/run_mode.rb
 	@${REINPLACE_CMD} -e "s|/etc/puppetlabs/code|${ETCDIR}|" \
 		${WRKSRC}/install.rb \
 		${WRKSRC}/lib/puppet/reference/configuration.rb \
