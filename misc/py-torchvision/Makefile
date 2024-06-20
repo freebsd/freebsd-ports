@@ -1,6 +1,6 @@
 PORTNAME=	torchvision
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.2
+DISTVERSION=	0.18.1
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,12 +19,14 @@ PY_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pillow>=5.3.0:graphics/py-pillow@${PY_FLAVOR
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python
+USES=		jpeg python
 USE_PYTHON=	distutils autoplist pytest # tests run in a very high memory ; in 0.17.1 tests fail to run, see https://github.com/pytorch/vision/issues/8278
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pytorch
 GH_PROJECT=	vision
+
+MAKE_ENV=	TORCHVISION_INCLUDE=${LOCALBASE}/include # workaround for build failure suggested here: https://github.com/pytorch/vision/issues/8397#issuecomment-2168351425
 
 post-install: # strip binaries
 	@${STRIP_CMD} \
