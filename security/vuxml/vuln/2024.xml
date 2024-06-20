@@ -1,3 +1,42 @@
+  <vuln vid="007e7e77-2f06-11ef-8a0f-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>126.0.6478.114</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>126.0.6478.114</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/06/stable-channel-update-for-desktop_18.html">
+	 <p>This update includes 6 security fixes:</p>
+	 <ul>
+	    <li>[344608204] High CVE-2024-6100: Type Confusion in V8. Reported by Seunghyun Lee (@0x10n) participating in SSD Secure Disclosure's TyphoonPWN 2024 on 2024-06-04</li>
+	    <li>[343748812] High CVE-2024-6101: Inappropriate implementation in WebAssembly. Reported by @ginggilBesel on 2024-05-31</li>
+	    <li>[339169163] High CVE-2024-6102: Out of bounds memory access in Dawn. Reported by wgslfuzz on 2024-05-07</li>
+	    <li>[344639860] High CVE-2024-6103: Use after free in Dawn. Reported by wgslfuzz on 2024-06-04</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-6100</cvename>
+      <cvename>CVE-2024-6101</cvename>
+      <cvename>CVE-2024-6102</cvename>
+      <cvename>CVE-2024-6103</cvename>
+      <url>https://chromereleases.googleblog.com/2024/06/stable-channel-update-for-desktop_18.html</url>
+    </references>
+    <dates>
+      <discovery>2024-06-18</discovery>
+      <entry>2024-06-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="453aa0fc-2d91-11ef-8a0f-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
