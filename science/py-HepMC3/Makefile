@@ -1,5 +1,5 @@
 PORTNAME=	HepMC3
-DISTVERSION=	3.2.6
+DISTVERSION=	3.3.0
 CATEGORIES=	science
 MASTER_SITES=	http://hepmc.web.cern.ch/hepmc/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 LIB_DEPENDS=	libHepMC3.so:science/hepmc3
 
-USES=		cmake:testing compiler:c++11-lang python
+USES=		cmake compiler:c++11-lang python
 USE_PYTHON=	flavors
 
 WRKSRC_SUBDIR=	python

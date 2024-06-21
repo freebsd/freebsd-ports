@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-04-12 14:19:36 UTC
+--- CMakeLists.txt.orig	2024-06-02 16:17:02 UTC
 +++ CMakeLists.txt
-@@ -6,6 +6,8 @@ SET_PROPERTY (GLOBAL PROPERTY CMAKE_ROLE "PROJECT")
+@@ -6,6 +6,8 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
  endif()
  set(CMAKE_VERBOSE_MAKEFILE ON)
  
@@ -8,20 +8,8 @@
 +
  option(USE_INSTALLED_HEPMC3 "Use HepMC3 bindings as a standalone package" OFF)
  option(RERUN_BINDER "Rerun binder" OFF)
- if (USE_INSTALLED_HEPMC3)
-@@ -314,9 +316,9 @@ if (${ver} STREQUAL 2)
-   unset(_Python2_EXECUTABLE CACHE) # Attempt to make FindPython reenterant
-   unset(_Python2_INCLUDE_DIR CACHE) # Attempt to make FindPython reenterant
-   if (${verminor} STREQUAL X)
--    find_package (Python2 ${ver} COMPONENTS  Interpreter Development.Module)
-+    find_package (xPython2 ${ver} COMPONENTS  Interpreter Development.Module)
-   else()
--    find_package (Python2 ${ver}.${verminor} EXACT COMPONENTS  Interpreter Development.Module)
-+    find_package (xPython2 ${ver}.${verminor} EXACT COMPONENTS  Interpreter Development.Module)
-   endif()
-   if (Python2_VERSION AND Python2_INCLUDE_DIRS AND Python2_EXECUTABLE  ) #something is set
-     SET( Python_VERSION       ${Python2_VERSION})
-@@ -336,7 +338,7 @@ if (${ver} STREQUAL 3)
+ if (RERUN_BINDER)
+@@ -206,7 +208,7 @@ if (${ver} STREQUAL 3)
    unset(Python3_FOUND CACHE)
    unset(Python3_VERSION CACHE)
    unset(Python3_Interpreter_FOUND CACHE)

@@ -1,3 +1,6 @@
-%%PYTHON_SITELIBDIR%%/pyHepMC3-3.2.6-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/pyHepMC3-3.3.0-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/pyHepMC3.search-3.3.0-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/pyHepMC3/__init__.py
 %%PYTHON_SITELIBDIR%%/pyHepMC3/pyHepMC3.so
+%%PYTHON_SITELIBDIR%%/pyHepMC3/search/__init__.py
+%%PYTHON_SITELIBDIR%%/pyHepMC3/search/pyHepMC3search.so
