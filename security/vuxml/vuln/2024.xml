@@ -1,3 +1,39 @@
+  <vuln vid="aa2b65e4-2f63-11ef-9cab-4ccc6adda413">
+    <topic>qt5-webengine -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>qt5-webengine</name>
+	<range><lt>5.15.17.p2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=87-based">
+	  <p>Backports for 5 security bugs in Chromium:</p>
+	  <ul>
+	    <li>CVE-2024-3837: Use after free in QUIC</li>
+	    <li>CVE-2024-3839: Out of bounds read in Fonts</li>
+	    <li>CVE-2024-3914: Use after free in V8</li>
+	    <li>CVE-2024-4058: Type confusion in ANGLE</li>
+	    <li>CVE-2024-4558: Use after free in ANGLE</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-3837</cvename>
+      <cvename>CVE-2024-3839</cvename>
+      <cvename>CVE-2024-3914</cvename>
+      <cvename>CVE-2024-4058</cvename>
+      <cvename>CVE-2024-4558</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=87-based</url>
+    </references>
+    <dates>
+      <discovery>2024-05-31</discovery>
+      <entry>2024-06-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c5415838-2f52-11ef-9cab-4ccc6adda413">
     <topic>qt6-webengine -- Multiple vulnerabilities</topic>
     <affects>
