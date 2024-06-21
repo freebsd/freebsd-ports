@@ -1,5 +1,5 @@
 PORTNAME=	mujs
-DISTVERSION=	1.3.4
+DISTVERSION=	1.3.5
 CATEGORIES=	lang devel
 
 MAINTAINER=	yuri@FreeBSD.org
