@@ -1,6 +1,6 @@
 PORTNAME=	qtractor
-DISTVERSIONPREFIX=	${PORTNAME}_
-DISTVERSION=	0_9_91
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.0
 CATEGORIES=	audio
 MASTER_SITES=	https://download.steinberg.net/sdk_downloads/:vst3sdk
 DISTFILES=	${VST3_SDK_ARCHIVE}:vst3sdk
