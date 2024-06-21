@@ -12,6 +12,8 @@ WWW=		https://github.com/oxfordcontrol/Clarabel.rs
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN_i386=	compilation fails, see https://github.com/sarah-ek/gemm/issues/30
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.0:devel/py-maturin@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
