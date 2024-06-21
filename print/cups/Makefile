@@ -1,8 +1,8 @@
 PORTNAME=	cups
-DISTVERSION=	2.4.8
+DISTVERSION=	2.4.10
 CATEGORIES=	print
-MASTER_SITES=	https://github.com/OpenPrinting/cups/releases/download/v${DISTVERSION}/
-EXTRACT_SUFX=	-source.tar.gz
+MASTER_SITES=	https://github.com/OpenPrinting/${PORTNAME}/releases/download/v${DISTVERSION}/
+DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Common UNIX Printing System
@@ -13,32 +13,36 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:c++11-lang cpe gmake iconv localbase pkgconfig
 CPE_VENDOR=	linuxfoundation
-
-CONFLICTS=	LPRng
-
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--enable-relro						\
-		--with-cups-user=${USERS}				\
-		--with-cups-group=${GROUPS}				\
-		--with-system-groups=wheel				\
-		--with-dbusdir="${PREFIX}/etc/dbus-1"			\
-		--with-icondir="${PREFIX}/share/icons"			\
-		--with-menudir="${DESKTOPDIR}"				\
-		--with-printcap="${PREFIX}/etc/printcap"		\
-		--with-rcdir=no						\
-		--with-optim=" "					\
-		--with-pam-module="unix"				\
-		--without-ondemand
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	cupsd
 
-GROUPS=		cups
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-relro \
+		--with-cups-group=${GROUPS} \
+		--with-cups-user=${USERS} \
+		--with-dbusdir="${PREFIX}/etc/dbus-1" \
+		--with-icondir="${PREFIX}/share/icons" \
+		--with-menudir="${DESKTOPDIR}" \
+		--with-optim=" " \
+		--with-pam-module="unix" \
+		--with-printcap="${PREFIX}/etc/printcap" \
+		--with-rcdir=no \
+		--with-system-groups=wheel \
+		--without-ondemand
+
+CONFLICTS=	LPRng
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+
 USERS=		cups
+GROUPS=		cups
 
 OPTIONS_DEFINE=		AVAHI DBUS DOCS GNUTLS IPPTOOL LIBPAPER NLS X11
 OPTIONS_DEFAULT=	AVAHI DBUS GNUTLS LIBPAPER
 OPTIONS_SUB=		yes
+
+IPPTOOL_DESC=	Internet Printing Protocol testing tool
+X11_DESC=	Install desktop menu item
 
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 AVAHI_CONFIGURE_WITH=	dnssd=avahi
@@ -53,12 +57,9 @@ DBUS_SUB_LIST_OFF=	DBUS_DAEMON=
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_WITH=	tls=gnutls
 
-IPPTOOL_DESC=		Internet Printing Protocol testing tool
+LIBPAPER_LIB_DEPENDS=		libpaper.so:print/libpaper
+LIBPAPER_CONFIGURE_ENABLE=	libpaper
 
-LIBPAPER_LIB_DEPENDS=	libpaper.so:print/libpaper
-LIBPAPER_CONFIGURE_ENABLE=libpaper
-
-X11_DESC=		Install desktop menu item
 X11_BUILD_DEPENDS=	xdg-open:devel/xdg-utils
 X11_RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
