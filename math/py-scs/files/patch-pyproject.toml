@@ -1,10 +1,11 @@
---- pyproject.toml.orig	2024-06-19 18:23:27 UTC
+--- pyproject.toml.orig	2024-06-20 23:14:01 UTC
 +++ pyproject.toml
-@@ -1,6 +1,6 @@ build-backend = 'mesonpy'
+@@ -1,7 +1,7 @@ requires = [
  [build-system]
  build-backend = 'mesonpy'
--requires = ['meson-python', 'oldest-supported-numpy']
-+requires = ['meson-python', 'numpy']
- 
- [project]
- name = 'scs'
+ requires = [
+-  "numpy >= 2.0.0; python_version > '3.8'",
++  "numpy; python_version > '3.8'",
+   "oldest-supported-numpy; python_version <= '3.8'",
+   "meson-python"
+ ]
