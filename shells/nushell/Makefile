@@ -10,6 +10,8 @@ WWW=		https://www.nushell.sh/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	compilation fails, see https://github.com/nushell/nushell/issues/13194
+
 USES=		cargo localbase ssl
 
 USE_GITHUB=	yes
