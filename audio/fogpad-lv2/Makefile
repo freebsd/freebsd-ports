@@ -1,7 +1,7 @@
 PORTNAME=	fogpad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0-3
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	-gc52326b
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
@@ -17,12 +17,13 @@ BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		bash:shells/bash
 LIB_DEPENDS=	liblo.so:audio/liblo
 
-USES=		compiler:c++11-lib gmake gnome pkgconfig shebangfix xorg
+USES=		compiler:c++11-lib gl gmake gnome pkgconfig shebangfix xorg
 SHEBANG_FILES=	dpf/utils/generate-ttl.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmao-org
 GH_PROJECT=	fogpad-port # a more recently updated fork of https://github.com/igorski/fogpad
 GH_TUPLE=	DISTRHO:DPF:4e180a77ec6e93abb021b28495bd84b43498bf31:DISTRHO_DPF/dpf
+USE_GL=		gl
 USE_GNOME=	cairo
 USE_XORG=	x11
 

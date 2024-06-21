@@ -96,13 +96,6 @@ WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
 			libwpe-1.0.so:www/libwpe \
 			libWPEBackend-fdo-1.0.so:www/wpebackend-fdo
 
-pre-configure:
-# .if !exists() evaluates too early before cairo has a chance to be installed
-	@if ! pkg-config --exists cairo-egl; then \
-		${ECHO_MSG} "${PKGNAME}: Needs cairo with OPENGL support enabled."; \
-		${FALSE}; \
-	fi
-
 post-install:
 	@${RLN} ${STAGEDIR}${PREFIX}/libexec/webkit2gtk-4.0/jsc \
 		${STAGEDIR}${PREFIX}/bin/jsc-4
