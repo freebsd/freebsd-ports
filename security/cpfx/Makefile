@@ -1,5 +1,5 @@
 PORTNAME=	cpfx
-DISTVERSION=	g20221025
+DISTVERSION=	g20240515
 CATEGORIES=	security
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -9,8 +9,7 @@ WWW=		https://github.com/li0ard/cpfx
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=2.6.0:devel/py-asn1@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygost>=5.11:security/pygost@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygost>=5.11:security/pygost@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyderasn>=9.3:devel/pyderasn@${PY_FLAVOR}
 
 PLIST_FILES=	bin/cpfx.py bin/schemas.py
@@ -20,7 +19,7 @@ USE_PYTHON=	flavors
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	li0ard
-GH_TAGNAME=	69c3d7d
+GH_TAGNAME=	c177c69
 
 NO_ARCH=	yes
 NO_BUILD=	yes
