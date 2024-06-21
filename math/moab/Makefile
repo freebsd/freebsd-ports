@@ -1,5 +1,6 @@
 PORTNAME=	moab
 DISTVERSION=	5.5.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 
