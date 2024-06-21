@@ -1,14 +1,14 @@
---- aider/scrape.py.orig	2024-05-13 18:19:39 UTC
+--- aider/scrape.py.orig	2024-06-17 03:58:03 UTC
 +++ aider/scrape.py
-@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
- import httpx
+@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
+ import playwright
  import pypandoc
  from bs4 import BeautifulSoup
 -from playwright.sync_api import sync_playwright
  
- from aider import __version__
- 
-@@ -42,14 +41,11 @@ class Scraper:
+ from aider import __version__, urls
+ from aider.dump import dump  # noqa: F401
+@@ -44,14 +43,11 @@ class Scraper:
          """
          Scrape a url and turn it into readable markdown.
  
@@ -25,7 +25,7 @@
  
          if not content:
              return
-@@ -62,49 +58,6 @@ class Scraper:
+@@ -64,51 +60,6 @@ class Scraper:
          return content
  
      # Internals...
@@ -46,7 +46,10 @@
 -            user_agent += " " + aider_user_agent
 -
 -            page = browser.new_page(user_agent=user_agent)
--            page.goto(url)
+-            try:
+-                page.goto(url, wait_until="networkidle", timeout=5000)
+-            except playwright._impl._errors.TimeoutError:
+-                pass
 -            content = page.content()
 -            browser.close()
 -
@@ -71,7 +74,6 @@
 -
 -        self.playwright_instructions_shown = True
 -        return PLAYWRIGHT_INFO
--
+ 
      def scrape_with_httpx(self, url):
          headers = {"User-Agent": f"Mozilla./5.0 ({aider_user_agent})"}
-         try:
