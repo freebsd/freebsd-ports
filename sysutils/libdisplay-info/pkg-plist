@@ -7,6 +7,6 @@ include/libdisplay-info/edid.h
 include/libdisplay-info/gtf.h
 include/libdisplay-info/info.h
 lib/libdisplay-info.so
-lib/libdisplay-info.so.0.1.1
+lib/libdisplay-info.so.%%VERSION%%
 lib/libdisplay-info.so.1
 libdata/pkgconfig/libdisplay-info.pc
