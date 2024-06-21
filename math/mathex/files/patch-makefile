@@ -1,0 +1,22 @@
+--- makefile.orig	2024-06-21 08:45:06 UTC
++++ makefile
+@@ -78,9 +78,9 @@
+ ##############################
+ #  current compiler settings #
+ ##############################
+-CC        = g++
+-CFLAGS = -Wall -ggdb -c -o
+-LFLAGS    = -ggdb -o
++CC        = ${CXX}
++CFLAGS += -fPIC -c -o
++LFLAGS    = ${LDFLAGS} -o
+ # for g++ link  as C++. Thus, is not need to specify stdc++
+ # LIBS      = -lm  -lstdc++
+ LIBS      = -lm
+@@ -162,4 +162,4 @@ clear:
+ clear:
+ 	rm $(OBJECTS)
+ 
+-# end of makefile
+\ No newline at end of file
++# end of makefile

@@ -487,6 +487,7 @@
     SUBDIR += m4rie
     SUBDIR += mate-calc
     SUBDIR += math77
+    SUBDIR += mathex
     SUBDIR += mathgl
     SUBDIR += mathicsscript
     SUBDIR += mathmod
