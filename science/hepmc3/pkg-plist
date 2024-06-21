@@ -38,6 +38,7 @@ include/HepMC3/Reader.h
 include/HepMC3/ReaderAscii.h
 include/HepMC3/ReaderAsciiHepMC2.h
 include/HepMC3/ReaderFactory.h
+include/HepMC3/ReaderFactory_fwd.h
 include/HepMC3/ReaderGZ.h
 include/HepMC3/ReaderHEPEVT.h
 include/HepMC3/ReaderLHEF.h
@@ -65,7 +66,7 @@ include/HepMC3/bxzstr/strict_fstream.hpp
 include/HepMC3/bxzstr/z_stream_wrapper.hpp
 include/HepMC3/bxzstr/zstd_stream_wrapper.hpp
 lib/libHepMC3.so
-lib/libHepMC3.so.3
+lib/libHepMC3.so.4
 lib/libHepMC3search.so
 lib/libHepMC3search.so.5
 share/HepMC3/cmake/HepMC3Config-version.cmake
