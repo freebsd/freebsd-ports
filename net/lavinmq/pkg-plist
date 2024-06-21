@@ -1,7 +1,7 @@
 @dir(lavinmq,lavinmq,750) %%ETCDIR%%
 @dir(lavinmq,lavinmq,750) /var/db/lavinmq
 @dir(lavinmq,lavinmq,750) /var/log/lavinmq
-@sample %%ETCDIR%%/config.ini.sample
+@sample %%ETCDIR%%/lavinmq.ini.sample
 bin/lavinmq
 bin/lavinmqctl
 bin/lavinmqperf

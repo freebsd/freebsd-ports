@@ -14,7 +14,7 @@
 # lavinmq_group (group):	Set group to run lavinmq.
 #			Default is "lavinmq".
 # lavinmq_config (file):	Set lavinmq config file.
-#			Default is "%%ETCDIR%%/lavinmq.conf".
+#			Default is "%%ETCDIR%%/lavinmq.ini".
 # lavinmq_syslog_output_enable (bool):	Set to enable syslog output.
 #					Default is "NO". See daemon(8).
 # lavinmq_syslog_output_priority (str):	Set syslog priority if syslog enabled.
@@ -34,7 +34,7 @@ load_rc_config $name
 : ${lavinmq_run:="/var/run/lavinmq"}
 : ${lavinmq_user:="lavinmq"}
 : ${lavinmq_group:="lavinmq"}
-: ${lavinmq_config:="%%ETCDIR%%/config.ini"}
+: ${lavinmq_config:="%%ETCDIR%%/lavinmq.ini"}
 
 DAEMON=$(/usr/sbin/daemon 2>&1 | grep -q syslog ; echo $?)
 if [ ${DAEMON} -eq 0 ]; then

@@ -1,6 +1,6 @@
 PORTNAME=	lavinmq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.9
+DISTVERSION=	1.2.14
 CATEGORIES=	net
 
 MAINTAINER=	dch@FreeBSD.org
@@ -19,8 +19,8 @@ GH_ACCOUNT=	cloudamqp
 GH_TUPLE=	\
 		84codes:lz4.cr:6cc0d0096207821222317ee02ea23d5296ad4023:a/deps/lz4.cr \
 		84codes:systemd.cr:v2.0.0:systemd/deps/systemd.cr \
-		cloudamqp:amq-protocol.cr:v1.1.12:proto/deps/amq-protocol.cr \
-		cloudamqp:amqp-client.cr:v1.2.1:client/deps/amqp-client.cr \
+		cloudamqp:amq-protocol.cr:v1.1.14:proto/deps/amq-protocol.cr \
+		cloudamqp:amqp-client.cr:v1.2.3:client/deps/amqp-client.cr \
 		luislavena:radix:v0.4.1:radix/deps/radix \
 		tbrand:router.cr:v0.2.8:router/deps/router.cr
 
@@ -57,7 +57,7 @@ post-extract:
 		-e 's,/lib/,/db/,' \
 		-e 's,/tmp/lavinmq-http.sock,/var/run/lavinmq/http.sock,' \
 		-e 's,/tmp/lavinmq.sock,/var/run/lavinmq/amqp.sock,' \
-		${WRKSRC}/extras/config.ini
+		${WRKSRC}/extras/lavinmq.ini
 
 do-build:
 	${MKDIR} ${WRKDIR}/man1
@@ -76,8 +76,8 @@ do-install:
 		${STAGEDIR}/var/db/lavinmq \
 		${STAGEDIR}/var/log/lavinmq \
 		${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_DATA} ${WRKSRC}/extras/config.ini \
-		${STAGEDIR}${ETCDIR}/config.ini.sample
+	${INSTALL_DATA} ${WRKSRC}/extras/lavinmq.ini \
+		${STAGEDIR}${ETCDIR}/lavinmq.ini.sample
 .for f in lavinmq lavinmqctl lavinmqperf
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} \
 		${STAGEDIR}${PREFIX}/bin
