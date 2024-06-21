@@ -1,7 +1,6 @@
 PORTNAME=	neocmakelsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.4
-PORTREVISION=	1
+DISTVERSION=	0.7.5
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,15 +27,15 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		async-trait-0.1.80 \
 		auto_impl-1.2.0 \
 		autocfg-1.3.0 \
-		backtrace-0.3.72 \
+		backtrace-0.3.73 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
 		bstr-1.9.1 \
 		bytes-1.6.0 \
 		cc-1.0.99 \
 		cfg-if-1.0.0 \
-		clap-4.5.6 \
-		clap_builder-4.5.6 \
+		clap-4.5.7 \
+		clap_builder-4.5.7 \
 		clap_lex-0.7.1 \
 		cli-table-0.4.7 \
 		cli-table-derive-0.4.5 \
@@ -50,6 +49,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		csv-1.3.0 \
 		csv-core-0.1.11 \
 		dashmap-5.5.3 \
+		displaydoc-0.2.4 \
 		dlv-list-0.5.2 \
 		equivalent-1.0.1 \
 		form_urlencoded-1.2.1 \
@@ -67,24 +67,35 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		globset-0.4.14 \
 		hashbrown-0.14.5 \
 		hermit-abi-0.3.9 \
-		httparse-1.8.0 \
-		idna-0.5.0 \
+		httparse-1.9.3 \
+		icu_collections-1.5.0 \
+		icu_locid-1.5.0 \
+		icu_locid_transform-1.5.0 \
+		icu_locid_transform_data-1.5.0 \
+		icu_normalizer-1.5.0 \
+		icu_normalizer_data-1.5.0 \
+		icu_properties-1.5.0 \
+		icu_properties_data-1.5.0 \
+		icu_provider-1.5.0 \
+		icu_provider_macros-1.5.0 \
+		idna-1.0.0 \
 		ignore-0.4.22 \
 		indexmap-2.2.6 \
 		is_terminal_polyfill-1.70.0 \
 		itoa-1.0.11 \
 		lazy_static-1.4.0 \
 		libc-0.2.155 \
+		litemap-0.7.3 \
 		lock_api-0.4.12 \
 		log-0.4.21 \
 		lsp-types-0.94.1 \
-		memchr-2.7.2 \
+		memchr-2.7.4 \
 		miniz_oxide-0.7.3 \
 		mio-0.8.11 \
 		nu-ansi-term-0.46.0 \
 		nu-ansi-term-0.50.0 \
 		num_cpus-1.16.0 \
-		object-0.35.0 \
+		object-0.36.0 \
 		once_cell-1.19.0 \
 		ordered-multimap-0.7.3 \
 		overload-0.1.1 \
@@ -97,7 +108,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		pin-utils-0.1.0 \
 		proc-macro2-1.0.85 \
 		quote-1.0.36 \
-		redox_syscall-0.5.1 \
+		redox_syscall-0.5.2 \
 		regex-1.10.5 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.8.4 \
@@ -116,14 +127,15 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
 		socket2-0.5.7 \
+		stable_deref_trait-1.2.0 \
 		strsim-0.11.1 \
 		syn-1.0.109 \
 		syn-2.0.66 \
+		synstructure-0.13.1 \
 		termcolor-1.4.1 \
 		thread_local-1.1.8 \
 		tiny-keccak-2.0.2 \
-		tinyvec-1.6.0 \
-		tinyvec_macros-0.1.1 \
+		tinystr-0.7.6 \
 		tokio-1.38.0 \
 		tokio-macros-2.3.0 \
 		tokio-util-0.7.11 \
@@ -143,11 +155,11 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		tree-sitter-0.22.6 \
 		tree-sitter-cmake-0.5.0 \
 		trim-in-place-0.1.7 \
-		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
-		unicode-normalization-0.1.23 \
 		unicode-width-0.1.13 \
-		url-2.5.0 \
+		url-2.5.1 \
+		utf16_iter-1.0.5 \
+		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
 		valuable-0.1.0 \
 		walkdir-2.5.0 \
@@ -175,7 +187,15 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.5 \
-		winnow-0.6.13
+		winnow-0.6.13 \
+		write16-1.0.0 \
+		writeable-0.5.5 \
+		yoke-0.7.4 \
+		yoke-derive-0.7.4 \
+		zerofrom-0.1.4 \
+		zerofrom-derive-0.1.4 \
+		zerovec-0.10.2 \
+		zerovec-derive-0.10.2
 
 PLIST_FILES=	bin/${PORTNAME}
 
