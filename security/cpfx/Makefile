@@ -9,7 +9,7 @@ WWW=		https://github.com/li0ard/cpfx
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygost>=5.11:security/pygost@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygost>=5.13:security/pygost@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyderasn>=9.3:devel/pyderasn@${PY_FLAVOR}
 
 PLIST_FILES=	bin/cpfx.py bin/schemas.py
