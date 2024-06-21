@@ -1,0 +1,86 @@
+From 57b86d35381ed9bfb7e4be4e6512fb64163dd725 Mon Sep 17 00:00:00 2001
+From: FUTATSUKI Yasuhito <futatuki@yf.bsdclub.org>
+Date: Tue, 27 Feb 2024 14:41:59 +0900
+Subject: [PATCH] Lua: Fix stack level after register odkim functions.
+
+When luaL_setfuncs() is replaced by luaL_newlib() + lua_setglobal()
+in commit 74b3374feee34fba14a0e15f89f049cbe4a3dafd, the commit did
+not take account that lua_setglobal() pops a value from the stack.
+
+Thus, following lua pop(l, 1) tries to pop from empty stack in
+Lua >= 5.2, especially in Lua 5.4, it causes abort().
+
+This fix it.
+
+* miltertest/miltertest.c (main):
+  Don't pop after lua_setglobal() in Lua >= 5.2
+
+* opendkim/opendkim-lua.c
+  (dkimf_lua_setup_hook, dkimf_lua_screen_hook,
+   dkimf_lua_stats_hook, dkimf_lua_final_hook): As above.
+---
+ miltertest/miltertest.c | 2 +-
+ opendkim/opendkim-lua.c | 8 ++++----
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git miltertest/miltertest.c miltertest/miltertest.c
+index b4a345f7..339cfa91 100644
+--- miltertest/miltertest.c
++++ miltertest/miltertest.c
+@@ -4014,8 +4014,8 @@ main(int argc, char **argv)
+ 	lua_setglobal(l, "mt");
+ #else /* LUA_VERSION_NUM >= 502 */
+ 	luaL_register(l, "mt", mt_library);
+-#endif /* LUA_VERSION_NUM >= 502 */
+ 	lua_pop(l, 1);
++#endif /* LUA_VERSION_NUM >= 502 */
+ 
+ 	/* register constants */
+ 	lua_pushnumber(l, MT_HDRINSERT);
+diff --git opendkim/opendkim-lua.c opendkim/opendkim-lua.c
+index 3786aa4b..c1a67f90 100644
+--- opendkim/opendkim-lua.c
++++ opendkim/opendkim-lua.c
+@@ -490,8 +490,8 @@ dkimf_lua_setup_hook(void *ctx, const char *script, size_t scriptlen,
+ 	lua_setglobal(l, "odkim");
+ # else /* LUA_VERSION_NUM >= 502 */
+ 	luaL_register(l, "odkim", dkimf_lua_lib_setup);
+-# endif /* LUA_VERSION_NUM >= 502 */
+ 	lua_pop(l, 1);
++# endif /* LUA_VERSION_NUM >= 502 */
+ 
+ 	/*
+ 	**  Register constants.
+@@ -649,8 +649,8 @@ dkimf_lua_screen_hook(void *ctx, const char *script, size_t scriptlen,
+ 	lua_setglobal(l, "odkim");
+ # else /* LUA_VERSION_NUM >= 502 */
+ 	luaL_register(l, "odkim", dkimf_lua_lib_screen);
+-# endif /* LUA_VERSION_NUM >= 502 */
+ 	lua_pop(l, 1);
++# endif /* LUA_VERSION_NUM >= 502 */
+ 
+ 	/*
+ 	**  Register constants.
+@@ -798,8 +798,8 @@ dkimf_lua_stats_hook(void *ctx, const char *script, size_t scriptlen,
+ 	lua_setglobal(l, "odkim");
+ # else /* LUA_VERSION_NUM >= 502 */
+ 	luaL_register(l, "odkim", dkimf_lua_lib_stats);
+-# endif /* LUA_VERSION_NUM >= 502 */
+ 	lua_pop(l, 1);
++# endif /* LUA_VERSION_NUM >= 502 */
+ 
+ 	/*
+ 	**  Register constants.
+@@ -1039,8 +1039,8 @@ dkimf_lua_final_hook(void *ctx, const char *script, size_t scriptlen,
+ 	lua_setglobal(l, "odkim");
+ # else /* LUA_VERSION_NUM >= 502 */
+ 	luaL_register(l, "odkim", dkimf_lua_lib_final);
+-# endif /* LUA_VERSION_NUM >= 502 */
+ 	lua_pop(l, 1);
++# endif /* LUA_VERSION_NUM >= 502 */
+ 
+ 	/*
+ 	**  Register constants.
+-- 
+2.45.2
+
