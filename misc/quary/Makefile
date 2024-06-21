@@ -1,6 +1,6 @@
 PORTNAME=	quary
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
+DISTVERSION=	0.3.1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -52,6 +52,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		async-stream-impl-0.3.5 \
 		async-trait-0.1.80 \
 		atoi-2.0.0 \
+		atomic-waker-1.1.2 \
 		autocfg-1.3.0 \
 		backtrace-0.3.73 \
 		base64-0.21.7 \
@@ -130,6 +131,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		either-1.12.0 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.34 \
+		enum-as-inner-0.6.0 \
 		equivalent-1.0.1 \
 		errno-0.3.9 \
 		etcetera-0.8.0 \
@@ -143,6 +145,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		flate2-1.0.30 \
 		flume-0.11.0 \
 		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.1 \
 		fragile-2.0.0 \
 		funty-2.0.0 \
@@ -165,6 +169,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		google-cloud-metadata-0.5.0 \
 		google-cloud-token-0.1.2 \
 		h2-0.3.26 \
+		h2-0.4.5 \
 		half-2.4.1 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
@@ -173,6 +178,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		hex-0.4.3 \
+		hickory-proto-0.24.1 \
+		hickory-resolver-0.24.1 \
 		hkdf-0.12.4 \
 		hmac-0.12.1 \
 		home-0.5.9 \
@@ -191,6 +198,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		hyper-rustls-0.24.2 \
 		hyper-rustls-0.25.0 \
 		hyper-rustls-0.26.0 \
+		hyper-tls-0.6.0 \
 		hyper-util-0.1.5 \
 		hyperlocal-next-0.9.0 \
 		iana-time-zone-0.1.60 \
@@ -206,11 +214,13 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		icu_provider-1.5.0 \
 		icu_provider_macros-1.5.0 \
 		ident_case-1.0.1 \
+		idna-0.4.0 \
 		idna-1.0.0 \
 		indexmap-1.9.3 \
 		indexmap-2.2.6 \
 		indicatif-0.17.8 \
 		instant-0.1.13 \
+		ipconfig-0.3.2 \
 		ipnet-2.9.0 \
 		is_terminal_polyfill-1.70.0 \
 		itertools-0.11.0 \
@@ -231,15 +241,17 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		libm-0.2.8 \
 		libredox-0.1.3 \
 		libsqlite3-sys-0.27.0 \
+		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
 		litemap-0.7.3 \
 		lock_api-0.4.12 \
 		log-0.4.21 \
+		lru-cache-0.1.2 \
 		lz4-1.25.0 \
 		lz4-sys-1.9.5 \
 		match_cfg-0.1.0 \
 		md-5-0.10.6 \
-		memchr-2.7.3 \
+		memchr-2.7.4 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.3 \
@@ -247,6 +259,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		mockall-0.12.1 \
 		mockall_derive-0.12.1 \
 		multimap-0.10.0 \
+		native-tls-0.2.12 \
 		nom-7.1.3 \
 		num-0.4.3 \
 		num-bigint-0.4.5 \
@@ -263,7 +276,10 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		object-0.36.0 \
 		object_store-0.9.1 \
 		once_cell-1.19.0 \
+		openssl-0.10.64 \
+		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
+		openssl-sys-0.9.102 \
 		option-ext-0.2.0 \
 		parking_lot-0.11.2 \
 		parking_lot-0.12.3 \
@@ -308,6 +324,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		prost-types-0.12.6 \
 		ptr_meta-0.1.4 \
 		ptr_meta_derive-0.1.4 \
+		quick-error-1.2.3 \
 		quick-xml-0.31.0 \
 		quote-1.0.36 \
 		radium-0.7.0 \
@@ -316,7 +333,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		rand_core-0.6.4 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.4.1 \
-		redox_syscall-0.5.1 \
+		redox_syscall-0.5.2 \
 		redox_users-0.4.5 \
 		regex-1.10.5 \
 		regex-automata-0.4.7 \
@@ -326,6 +343,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		reqwest-0.12.4 \
 		reqwest-middleware-0.3.1 \
 		reqwest-retry-0.5.0 \
+		resolv-conf-0.7.0 \
 		retry-policies-0.3.0 \
 		ring-0.17.8 \
 		rkyv-0.7.44 \
@@ -415,7 +433,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		tar-0.4.41 \
 		tempfile-3.10.1 \
 		termtree-0.4.1 \
-		testcontainers-0.17.0 \
+		testcontainers-0.18.0 \
+		testcontainers-modules-0.6.1 \
 		thiserror-1.0.61 \
 		thiserror-impl-1.0.61 \
 		time-0.3.36 \
@@ -427,6 +446,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.38.0 \
 		tokio-macros-2.3.0 \
+		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \
 		tokio-rustls-0.25.0 \
 		tokio-stream-0.1.15 \
@@ -477,6 +497,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		webpki-roots-0.25.4 \
 		webpki-roots-0.26.2 \
 		whoami-1.5.1 \
+		widestring-1.1.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.8 \
@@ -517,8 +538,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		zerofrom-derive-0.1.4 \
 		zeroize-1.8.1 \
 		zerovec-0.10.2 \
-		zerovec-derive-0.10.2 \
-		testcontainers-modules@git+https://github.com/testcontainers/testcontainers-rs-modules-community\#edf3c6e940521be56edb17b4c74477f5b6a1fada
+		zerovec-derive-0.10.2
 
 PLIST_FILES=	bin/${PORTNAME}
 
