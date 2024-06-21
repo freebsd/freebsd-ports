@@ -4,7 +4,7 @@ CATEGORIES=	math science devel
 MASTER_SITES=	SF/sscilib/mathex
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	C++ library fo parse/evaluate mathematical expression
+COMMENT=	C++ library fo parse/evaluate mathematical expressions
 WWW=		https://sscilib.sourceforge.net/
 
 LICENSE=	LGPL21
