@@ -17,7 +17,7 @@ LIB_DEPENDS=	libdisman.so:x11/disman
 USES=		cmake:testing gettext-tools kde:6 qt:6
 USE_GITHUB=	yes
 USE_KDE=	ecm:build config coreaddons dbusaddons globalaccel i18n \
-		kcmutils layer-shell-qt libplasma windowsystem xmlgui
+		itemmodels:run kcmutils layer-shell-qt libplasma windowsystem xmlgui
 USE_LDCONFIG=	yes
 USE_QT=		base declarative sensors
 GH_ACCOUNT=	winft
