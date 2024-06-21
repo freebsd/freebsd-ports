@@ -1,7 +1,6 @@
 PORTNAME=	shadowsocks-rust
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.20.0
-PORTREVISION=	1
+DISTVERSION=	1.20.1
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -165,11 +164,11 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		http-1.1.0 \
 		http-body-1.0.0 \
 		http-body-util-0.1.2 \
-		httparse-1.9.3 \
+		httparse-1.9.4 \
 		httpdate-1.0.3 \
 		humantime-2.1.0 \
 		hyper-1.3.1 \
-		hyper-rustls-0.26.0 \
+		hyper-rustls-0.27.2 \
 		hyper-tls-0.6.0 \
 		hyper-util-0.1.5 \
 		iana-time-zone-0.1.60 \
@@ -224,7 +223,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		memchr-2.7.4 \
 		mimalloc-0.1.42 \
 		mime-0.3.17 \
-		miniz_oxide-0.7.3 \
+		miniz_oxide-0.7.4 \
 		mio-0.8.11 \
 		native-tls-0.2.12 \
 		nix-0.29.0 \
@@ -273,8 +272,11 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		qrcode-0.14.0 \
 		quick-error-1.2.3 \
 		quinn-0.10.2 \
+		quinn-0.11.2 \
 		quinn-proto-0.10.6 \
+		quinn-proto-0.11.3 \
 		quinn-udp-0.4.1 \
+		quinn-udp-0.5.2 \
 		quote-1.0.36 \
 		radium-0.7.0 \
 		rand-0.8.5 \
@@ -289,7 +291,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.8.4 \
-		reqwest-0.12.4 \
+		reqwest-0.12.5 \
 		resolv-conf-0.7.0 \
 		ring-0.16.20 \
 		ring-0.17.8 \
@@ -302,7 +304,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		rustc-hash-1.1.0 \
 		rustix-0.38.34 \
 		rustls-0.21.12 \
-		rustls-0.22.4 \
+		rustls-0.23.10 \
 		rustls-native-certs-0.6.3 \
 		rustls-native-certs-0.7.0 \
 		rustls-pemfile-1.0.4 \
@@ -349,7 +351,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
 		syn-2.0.66 \
-		sync_wrapper-0.1.2 \
+		sync_wrapper-1.0.1 \
 		synstructure-0.13.1 \
 		sysexits-0.8.0 \
 		system-configuration-0.5.1 \
@@ -373,7 +375,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		tokio-macros-2.3.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \
-		tokio-rustls-0.25.0 \
+		tokio-rustls-0.26.0 \
 		tokio-tfo-0.3.1 \
 		tokio-util-0.7.11 \
 		tower-0.4.13 \
@@ -385,7 +387,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.18 \
 		try-lock-0.2.5 \
-		tun2-2.0.0 \
+		tun2-2.0.1 \
 		typemap-ors-1.0.0 \
 		typenum-1.17.0 \
 		ucd-trie-0.1.6 \
@@ -416,7 +418,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		wasm-bindgen-shared-0.2.92 \
 		web-sys-0.3.69 \
 		webpki-roots-0.25.4 \
-		webpki-roots-0.26.2 \
+		webpki-roots-0.26.3 \
 		widestring-1.1.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -462,7 +464,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		zerovec-derive-0.10.2 \
 		zstd-0.13.1 \
 		zstd-safe-7.1.0 \
-		zstd-sys-2.0.10+zstd.1.5.6
+		zstd-sys-2.0.11+zstd.1.5.6
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
