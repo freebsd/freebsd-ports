@@ -1,28 +1,27 @@
 PORTNAME=	opendbviewer
-PORTVERSION=	1.1.1
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.2.0
 CATEGORIES=	databases
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Simple database explorer
 WWW=		https://github.com/Jet1oeil/opendbviewer
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lang magick:6,build qt:5
+USES=		cmake gl magick:build qt:5 xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	Jet1oeil
-USE_QT=		core gui network sql sql-sqlite3 testlib widgets \
+USE_GL=		egl
+USE_QT=		core dbus gui network sql sql-sqlite3 testlib widgets \
 		buildtools:build linguisttools:build qmake:build
+USE_XORG=	x11 xcb
 
-OPTIONS_DEFINE=		DOCS PGSQL MYSQL
+OPTIONS_DEFINE=		DOCS MYSQL PGSQL
 OPTIONS_DEFAULT=	PGSQL
 
-PGSQL_USE=	QT=sql-pgsql
 MYSQL_USE=	QT=sql-mysql
-
-CMAKE_ARGS+=	-DCMAKE_CXX_STANDARD=11
+PGSQL_USE=	QT=sql-pgsql
 
 .include <bsd.port.mk>
