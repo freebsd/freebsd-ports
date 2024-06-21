@@ -1,6 +1,5 @@
 PORTNAME=	uv
 DISTVERSION=	0.2.13
-PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -534,7 +533,7 @@ PROGS=		uv \
 
 PLIST_FILES=	${PROGS:S/^/bin\//}
 
-PORTSCOUT=	limit:^[0-9].*$$ # portscout picked up this non-existent tag
+PORTSCOUT=	limit:.*\..*$$ # prevent tags like perma-39
 
 do-install:
 	# workaround for error: found a virtual manifest at `xx` instead of a package manifest
