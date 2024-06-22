@@ -203,11 +203,11 @@ PLIST_SUB+=	PYVER="${PYTHON_VER:S/./_/}" \
 		SHLIB_SHVER="${DISTVERSION:R}" \
 		SHLIB_VER="${DISTVERSION}"
 
-# Some .modulemap, .pcm and .idx files are not installed on aarch64, a few .pcm files are exclusive to aarch64 and files LIBRARY.pcm are renamed libLIBRARY_rdict.pcm on aarch64
+# Some .modulemap, .pcm and .idx files are not installed on aarch64, a few headers are only installed on aarch64
 .if ${OPSYS} == FreeBSD && ${ARCH} == "aarch64"
-PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="@comment " ONLY_INSTALLED_ON_AARCH64="" AARCH64_PCM_PREFIX="lib" AARCH64_PCM_SUFFIX="_rdict"
+PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="@comment " ONLY_INSTALLED_ON_AARCH64=""
 .else
-PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="" ONLY_INSTALLED_ON_AARCH64="@comment " AARCH64_PCM_PREFIX="" AARCH64_PCM_SUFFIX=""
+PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="" ONLY_INSTALLED_ON_AARCH64="@comment "
 .endif
 
 # atexit-like commands need 'throw()' specifier on 15aarch64
@@ -217,9 +217,9 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-interpreter_cling_lib_Interpreter_Interpr
 
 # std_config.pcm exclusive to FreeBSD 14.0
 .if ${OPSYS} == FreeBSD && ${OSREL} == 14.0
-PLIST_SUB+=	ONLY_INSTALLED_ON_FBSD14=""
+PLIST_SUB+=	ONLY_INSTALLED_ON_FBSD140=""
 .else
-PLIST_SUB+=	ONLY_INSTALLED_ON_FBSD14="@comment "
+PLIST_SUB+=	ONLY_INSTALLED_ON_FBSD140="@comment "
 .endif
 
 # Port patch removes implicit use of system's module.modulemap and applies
