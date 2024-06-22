@@ -1020,6 +1020,7 @@
     SUBDIR += ipython
     SUBDIR += ireport
     SUBDIR += isa-l
+    SUBDIR += iscd-commons
     SUBDIR += isfreedesktop
     SUBDIR += isl
     SUBDIR += ispc

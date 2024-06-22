@@ -1,0 +1,34 @@
+--- CMakeLists.txt.orig	2021-07-23 10:27:28 UTC
++++ CMakeLists.txt
+@@ -1,6 +1,4 @@ cmake_minimum_required(VERSION 2.8)
+ cmake_minimum_required(VERSION 2.8)
+-set(CMAKE_BUILD_TYPE  "Release")
+-SET(CMAKE_C_FLAGS   "-w -g -O3 -funroll-loops")
+ set(CMAKE_MACOSX_RPATH 1)
+ set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+ 
+@@ -17,7 +15,7 @@ FIND_LIBRARY(          M_LIB m)
+   endif()
+ endif()
+ FIND_LIBRARY(          M_LIB m)
+-SET(                   LIBRARIES ${M_LIB} "-lpthread")
++SET(                   LIBRARIES ${M_LIB} "-pthread")
+ 
+ #Commons library
+ SET(                   SOURCES_DIR sources)
+@@ -25,11 +23,12 @@ add_library(           Commons SHARED ${source_files})
+ file(                  GLOB_RECURSE header_files ${SOURCES_DIR}/*.h)
+ include_directories(   ${SOURCES_DIR})
+ add_library(           Commons SHARED ${source_files})
++set_target_properties( Commons PROPERTIES VERSION 0.0.0 SOVERSION 0)
+ TARGET_LINK_LIBRARIES( Commons ${LIBRARIES})
+ 
+ INSTALL(
+   TARGETS Commons
+-  RUNTIME DESTINATION "$ENV{HOME}/lib"
+-  LIBRARY DESTINATION "$ENV{HOME}/lib")
++  RUNTIME DESTINATION ${Commons_BINARY_DIR}
++  LIBRARY DESTINATION lib${LIB_SUFFIX})
+ 
+-INSTALL(               FILES   ${header_files} DESTINATION "$ENV{HOME}/include")
++INSTALL(               FILES   ${header_files} DESTINATION include/ISCD)
