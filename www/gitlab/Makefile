@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
 .endif
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 # include patch to fix database migration
@@ -87,7 +87,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-gpgme>=2.0.23<2.1.0:security/rubygem-gpgme \
 	rubygem-gitlab_omniauth-ldap>=2.2.0<2.3.0:net/rubygem-gitlab_omniauth-ldap \
 	rubygem-net-ldap017>=0.17.1<0.18:net/rubygem-net-ldap017 \
-	rubygem-grape>=2.0.0<2.1:devel/rubygem-grape \
+	rubygem-grape20>=2.0.0<2.1:devel/rubygem-grape20 \
 	rubygem-grape-entity>=1.0.1<1.1,1:devel/rubygem-grape-entity \
 	rubygem-grape-swagger20>=2.0.2<2.1:devel/rubygem-grape-swagger20 \
 	rubygem-grape-swagger-entity>=0.5.1<0.6:devel/rubygem-grape-swagger-entity \
