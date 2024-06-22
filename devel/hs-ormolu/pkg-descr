@@ -1,6 +1,5 @@
-Ormolu is a formatter for Haskell source aiming to write code in such
-a way so it's easy to modify and maintain. It implements one ?true?
-formatting style which admits no configuration, result in minimal
-diffs and is compatible with modern dialects of Haskell.  Ormolu is
-well-tested and robust so that the formatter can be used in large
-projects.
+Ormolu is a formatter for Haskell source aiming to write code in such a way
+so it's easy to modify and maintain. It implements one ?true?  formatting
+style which admits no configuration, result in minimal diffs and is
+compatible with modern dialects of Haskell.  Ormolu is well-tested and
+robust so that the formatter can be used in large projects.
