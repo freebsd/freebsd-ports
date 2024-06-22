@@ -166,6 +166,7 @@
     SUBDIR += libvdwxc
     SUBDIR += libxc
     SUBDIR += liggghts
+    SUBDIR += linearelasticity
     SUBDIR += linux-zotero
     SUBDIR += luscus
     SUBDIR += m-aneos

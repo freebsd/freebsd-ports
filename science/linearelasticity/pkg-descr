@@ -1,0 +1,6 @@
+Elas, alias Elastic, is a simple yet efficient finite element solver for linear
+elasticity problems in two and three dimensions.
+
+A full description of all parameters and options that can be specified in the
+command line or in a parameter file [file.elas] can be found in the project
+wiki, see <https://github.com/ISCDtoolbox/LinearElasticity/wiki>.
