@@ -1,7 +1,10 @@
 PORTNAME=	libva-intel-driver
 DISTVERSION=	2.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	4206d0e15363.patch:-p1 # https://github.com/intel/intel-vaapi-driver/pull/566
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	VAAPI legacy driver for Intel GMA 4500 (Gen4) to UHD 630 (Gen9.5)

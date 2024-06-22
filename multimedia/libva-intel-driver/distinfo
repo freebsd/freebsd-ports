@@ -1,3 +1,5 @@
 TIMESTAMP = 1590974265
 SHA256 (intel-intel-vaapi-driver-2.4.1_GH0.tar.gz) = 03cd7e16acc94f828b6e7f3087863d8ca06e99ffa3385588005b1984bdd56157
 SIZE (intel-intel-vaapi-driver-2.4.1_GH0.tar.gz) = 3962460
+SHA256 (4206d0e15363.patch) = 047d6bdb32b76efa18a6b6c9786c36cd22a9f0be8d823e691851979c353d098e
+SIZE (4206d0e15363.patch) = 1836
