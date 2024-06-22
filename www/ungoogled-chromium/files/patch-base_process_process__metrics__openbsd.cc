@@ -1,4 +1,4 @@
---- base/process/process_metrics_openbsd.cc.orig	2024-05-23 20:04:36 UTC
+--- base/process/process_metrics_openbsd.cc.orig	2024-06-22 08:49:42 UTC
 +++ base/process/process_metrics_openbsd.cc
 @@ -6,75 +6,50 @@
  
@@ -79,7 +79,7 @@
 -
 -base::expected<TimeDelta, ProcessCPUUsageError>
 -ProcessMetrics::GetCumulativeCPUUsage() {
--  NOTREACHED();
+-  NOTREACHED_IN_MIGRATION();
 -  return base::unexpected(ProcessCPUUsageError::kNotImplemented);
 -}
 -

@@ -1,4 +1,4 @@
---- base/system/sys_info_openbsd.cc.orig	2024-02-25 20:22:18 UTC
+--- base/system/sys_info_openbsd.cc.orig	2024-06-22 08:49:42 UTC
 +++ base/system/sys_info_openbsd.cc
 @@ -3,7 +3,6 @@
  // found in the LICENSE file.
@@ -68,7 +68,7 @@
 +  if (shmmax)
 +    goto out;
    if (sysctl(mib, std::size(mib), &limit, &size, NULL, 0) < 0) {
-     NOTREACHED();
+     NOTREACHED_IN_MIGRATION();
      return 0;
    }
 -  return static_cast<uint64_t>(limit);

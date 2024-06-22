@@ -1,33 +1,15 @@
---- services/device/usb/BUILD.gn.orig	2024-05-23 20:04:36 UTC
+--- services/device/usb/BUILD.gn.orig	2024-06-22 08:49:42 UTC
 +++ services/device/usb/BUILD.gn
-@@ -91,15 +91,17 @@ static_library("usb") {
+@@ -91,7 +91,7 @@ static_library("usb") {
      deps += [ "//third_party/re2" ]
    }
  
 -  if (is_mac) {
--    sources += [
--      "usb_device_handle_mac.cc",
--      "usb_device_handle_mac.h",
--      "usb_device_mac.cc",
--      "usb_device_mac.h",
--      "usb_service_mac.cc",
--      "usb_service_mac.h",
--    ]
 +  if (is_mac || is_openbsd) {
-+    if (is_mac) {
-+      sources += [
-+        "usb_device_handle_mac.cc",
-+        "usb_device_handle_mac.h",
-+        "usb_device_mac.cc",
-+        "usb_device_mac.h",
-+        "usb_service_mac.cc",
-+        "usb_service_mac.h",
-+      ]
-+    }
- 
      # These sources and deps are required for libusb.
-     # TODO(https://crbug.com/1096743) Remove these sources.
-@@ -123,6 +125,13 @@ static_library("usb") {
+     # TODO(crbug.com/40136337) Remove these sources.
+     sources += [
+@@ -114,6 +114,13 @@ static_library("usb") {
      deps += [ "//third_party/libusb" ]
    }
  
@@ -41,7 +23,7 @@
    if (is_linux || is_chromeos) {
      sources += [
        "usb_device_linux.cc",
-@@ -140,7 +149,7 @@ static_library("usb") {
+@@ -131,7 +138,7 @@ static_library("usb") {
      deps += [ "//device/udev_linux" ]
    }
  

@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/fonts/font_platform_data.cc.orig	2023-02-11 09:11:04 UTC
+--- third_party/blink/renderer/platform/fonts/font_platform_data.cc.orig	2024-06-22 08:49:42 UTC
 +++ third_party/blink/renderer/platform/fonts/font_platform_data.cc
-@@ -48,7 +48,7 @@
+@@ -49,7 +49,7 @@
  namespace blink {
  namespace {
  
@@ -9,7 +9,7 @@
  // Getting the system font render style takes a significant amount of time on
  // Linux because looking up fonts using fontconfig can be very slow. We fetch
  // the render style for each font family and text size, while it's very
-@@ -127,7 +127,7 @@ FontPlatformData::FontPlatformData(sk_sp<SkTypeface> t
+@@ -128,7 +128,7 @@ FontPlatformData::FontPlatformData(sk_sp<SkTypeface> t
    style_ = WebFontRenderStyle::GetDefault();
  #if !BUILDFLAG(IS_WIN)
    WebFontRenderStyle system_style;

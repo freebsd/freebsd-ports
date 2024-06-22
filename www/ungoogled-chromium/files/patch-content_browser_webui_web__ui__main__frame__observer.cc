@@ -1,4 +1,4 @@
---- content/browser/webui/web_ui_main_frame_observer.cc.orig	2023-06-05 19:39:05 UTC
+--- content/browser/webui/web_ui_main_frame_observer.cc.orig	2024-06-22 08:49:42 UTC
 +++ content/browser/webui/web_ui_main_frame_observer.cc
 @@ -13,7 +13,7 @@
  #include "content/public/browser/navigation_handle.h"
@@ -29,7 +29,7 @@
      blink::mojom::ConsoleMessageLevel log_level,
 @@ -167,7 +167,7 @@ void WebUIMainFrameObserver::ReadyToCommitNavigation(
  
- // TODO(crbug.com/1129544) This is currently disabled due to Windows DLL
+ // TODO(crbug.com/40149439) This is currently disabled due to Windows DLL
  // thunking issues. Fix & re-enable.
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

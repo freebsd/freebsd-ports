@@ -1,11 +1,11 @@
---- components/media_router/common/media_source.cc.orig	2024-02-25 20:22:18 UTC
+--- components/media_router/common/media_source.cc.orig	2024-06-22 08:49:42 UTC
 +++ components/media_router/common/media_source.cc
-@@ -59,7 +59,7 @@ bool IsSystemAudioCaptureSupported() {
+@@ -57,7 +57,7 @@ bool IsSystemAudioCaptureSupported() {
+   if (!media::IsSystemLoopbackCaptureSupported()) {
+     return false;
    }
- #if BUILDFLAG(IS_MAC)
-   return base::FeatureList::IsEnabled(media::kMacLoopbackAudioForCast);
--#elif BUILDFLAG(IS_LINUX)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    return base::FeatureList::IsEnabled(media::kPulseaudioLoopbackForCast);
  #else
    return true;

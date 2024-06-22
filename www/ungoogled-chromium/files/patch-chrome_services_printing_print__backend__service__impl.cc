@@ -1,4 +1,4 @@
---- chrome/services/printing/print_backend_service_impl.cc.orig	2024-03-22 14:16:19 UTC
+--- chrome/services/printing/print_backend_service_impl.cc.orig	2024-06-22 08:49:42 UTC
 +++ chrome/services/printing/print_backend_service_impl.cc
 @@ -49,7 +49,7 @@
  #include "printing/backend/cups_connection_pool.h"
@@ -16,7 +16,7 @@
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  void InstantiateLinuxUiDelegate() {
-   // TODO(crbug.com/809738)  Until a real UI can be used in a utility process,
+   // TODO(crbug.com/40561724)  Until a real UI can be used in a utility process,
    // need to use the stub version.
 @@ -85,7 +85,7 @@ void InstantiateLinuxUiDelegate() {
  #endif

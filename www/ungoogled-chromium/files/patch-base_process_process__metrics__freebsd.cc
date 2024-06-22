@@ -1,4 +1,4 @@
---- base/process/process_metrics_freebsd.cc.orig	2024-05-23 20:04:36 UTC
+--- base/process/process_metrics_freebsd.cc.orig	2024-06-22 08:49:42 UTC
 +++ base/process/process_metrics_freebsd.cc
 @@ -3,44 +3,58 @@
  // found in the LICENSE file.
@@ -67,7 +67,7 @@
  
 -base::expected<TimeDelta, ProcessCPUUsageError>
 -ProcessMetrics::GetCumulativeCPUUsage() {
--  NOTREACHED();
+-  NOTREACHED_IN_MIGRATION();
 -  return base::unexpected(ProcessCPUUsageError::kNotImplemented);
 -}
 -

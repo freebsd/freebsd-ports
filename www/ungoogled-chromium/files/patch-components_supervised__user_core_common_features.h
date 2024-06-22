@@ -1,6 +1,6 @@
---- components/supervised_user/core/common/features.h.orig	2024-05-23 20:04:36 UTC
+--- components/supervised_user/core/common/features.h.orig	2024-06-22 08:49:42 UTC
 +++ components/supervised_user/core/common/features.h
-@@ -26,7 +26,7 @@ BASE_DECLARE_FEATURE(
+@@ -25,7 +25,7 @@ BASE_DECLARE_FEATURE(
  // Applies new informative strings during the parental extension approval flow.
  BASE_DECLARE_FEATURE(kUpdatedSupervisedUserExtensionApprovalStrings);
  

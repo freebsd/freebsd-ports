@@ -1,11 +1,11 @@
---- base/threading/platform_thread_posix.cc.orig	2024-05-23 20:04:36 UTC
+--- base/threading/platform_thread_posix.cc.orig	2024-06-22 08:49:42 UTC
 +++ base/threading/platform_thread_posix.cc
 @@ -77,11 +77,11 @@ void* ThreadFunc(void* params) {
      if (!thread_params->joinable)
        base::DisallowSingleton();
  
--#if BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC)
-+#if BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC) && !BUILDFLAG(IS_BSD)
+-#if PA_BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC)
++#if PA_BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC) && !BUILDFLAG(IS_BSD)
      partition_alloc::internal::StackTopRegistry::Get().NotifyThreadCreated();
  #endif
  

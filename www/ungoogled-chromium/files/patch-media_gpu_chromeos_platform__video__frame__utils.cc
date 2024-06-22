@@ -1,4 +1,4 @@
---- media/gpu/chromeos/platform_video_frame_utils.cc.orig	2024-05-23 20:04:36 UTC
+--- media/gpu/chromeos/platform_video_frame_utils.cc.orig	2024-06-22 08:49:42 UTC
 +++ media/gpu/chromeos/platform_video_frame_utils.cc
 @@ -68,7 +68,7 @@ static std::unique_ptr<ui::GbmDevice> CreateGbmDevice(
      const base::FilePath dev_path(FILE_PATH_LITERAL(
@@ -18,7 +18,7 @@
          false;
  #endif
      if (is_intel_media_compression_enabled) {
-@@ -349,7 +349,7 @@ scoped_refptr<VideoFrame> CreateVideoFrameFromGpuMemor
+@@ -350,7 +350,7 @@ scoped_refptr<VideoFrame> CreateVideoFrameFromGpuMemor
    const bool is_intel_media_compression_enabled =
  #if BUILDFLAG(IS_CHROMEOS)
        base::FeatureList::IsEnabled(features::kEnableIntelMediaCompression);

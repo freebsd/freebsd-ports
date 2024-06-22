@@ -1,4 +1,4 @@
---- net/tools/net_watcher/net_watcher.cc.orig	2023-02-11 09:11:04 UTC
+--- net/tools/net_watcher/net_watcher.cc.orig	2024-06-22 08:49:42 UTC
 +++ net/tools/net_watcher/net_watcher.cc
 @@ -32,7 +32,7 @@
  #include "net/proxy_resolution/proxy_config_service.h"
@@ -11,7 +11,7 @@
  
 @@ -44,7 +44,7 @@ namespace {
  
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

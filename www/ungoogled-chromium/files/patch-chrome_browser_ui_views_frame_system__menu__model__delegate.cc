@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/system_menu_model_delegate.cc.orig	2023-07-21 09:49:17 UTC
+--- chrome/browser/ui/views/frame/system_menu_model_delegate.cc.orig	2024-06-22 08:49:42 UTC
 +++ chrome/browser/ui/views/frame/system_menu_model_delegate.cc
 @@ -21,7 +21,7 @@
  #include "chromeos/ui/frame/desks/move_to_desks_menu_model.h"
@@ -20,7 +20,7 @@
      return !prefs->GetBoolean(prefs::kUseCustomChromeFrame);
 @@ -58,7 +58,7 @@ bool SystemMenuModelDelegate::IsCommandIdEnabled(int c
  bool SystemMenuModelDelegate::IsCommandIdVisible(int command_id) const {
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
