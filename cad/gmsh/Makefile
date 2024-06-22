@@ -1,5 +1,6 @@
 PORTNAME=	gmsh
 DISTVERSION=	4.13.1
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://gmsh.info/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -13,10 +14,12 @@ LICENSE=	AGPLv3+ APACHE20 GPLv3+ GPLv2+ LGPL21
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	getdp:science/getdp
+BUILD_DEPENDS=	getdp:science/getdp \
+		gmm++>0:math/gmm++
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libgmp.so:math/gmp \
+		libmmg.so:science/mmg \
 		libmetis.so:math/metis \
 		libhdf5.so:science/hdf5 \
 		libpng.so:graphics/png \
