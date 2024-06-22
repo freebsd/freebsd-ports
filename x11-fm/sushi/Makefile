@@ -1,6 +1,6 @@
 PORTNAME=	sushi
 PORTVERSION=	42.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -16,14 +16,14 @@ LIB_DEPENDS=	libgcr-base-3.so:security/gcr \
 		libgjs.so:lang/gjs \
 		libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
 		libclutter-gst-3.0.so:multimedia/clutter-gst3 \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+		libwebkit2gtk-4.1.so:www/webkit2-gtk3 \
 		libmusicbrainz5.so:audio/libmusicbrainz5 \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libclutter-1.0.so:graphics/clutter \
 		libjson-glib-1.0.so:devel/json-glib \
 		libcogl.so:graphics/cogl \
-		libsoup-2.4.so:devel/libsoup \
+		libsoup-3.0.so:devel/libsoup3 \
 		libevdocument3.so:graphics/evince \
 		libepoxy.so:graphics/libepoxy
 RUN_DEPENDS=	nautilus:x11-fm/nautilus

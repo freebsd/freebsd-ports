@@ -1,6 +1,6 @@
 PORTNAME=	webkit
 DISTVERSION=	2.34.6
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	www
 MASTER_SITES=	https://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk3
@@ -31,7 +31,7 @@ LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libopenjp2.so:graphics/openjpeg \
 		libharfbuzz.so:print/harfbuzz \
 		libharfbuzz-icu.so:print/harfbuzz-icu \
-		libsoup-2.4.so:devel/libsoup \
+		libsoup-3.0.so:devel/libsoup3 \
 		libgcrypt.so:security/libgcrypt \
 		libtasn1.so:security/libtasn1 \
 		libwoff2dec.so:devel/woff2
@@ -58,11 +58,12 @@ CMAKE_OFF=		USE_LD_GOLD ${CMAKE_OFF_${ARCH}:U} \
 			USE_SYSTEMD \
 			ENABLE_GAMEPAD
 CMAKE_ON=		ENABLE_MINIBROWSER \
-			USE_SYSTEM_MALLOC \
-			USE_SOUP2
+			USE_SYSTEM_MALLOC
 CMAKE_OFF_armv6=	ENABLE_JIT
 CMAKE_OFF_armv7=	ENABLE_JIT
 INSTALL_TARGET=		install
+
+PLIST_SUB=	API_VERSION=4.1
 
 OPTIONS_DEFINE=		DEBUG GEOIP GSTREAMER WAYLAND
 OPTIONS_DEFAULT=	GEOIP GSTREAMER WAYLAND
@@ -104,13 +105,13 @@ pre-configure:
 	fi
 
 post-install:
-	@${RLN} ${STAGEDIR}${PREFIX}/libexec/webkit2gtk-4.0/jsc \
+	@${RLN} ${STAGEDIR}${PREFIX}/libexec/webkit2gtk-4.1/jsc \
 		${STAGEDIR}${PREFIX}/bin/jsc-4
-	@${RLN} ${STAGEDIR}${PREFIX}/libexec/webkit2gtk-4.0/MiniBrowser \
+	@${RLN} ${STAGEDIR}${PREFIX}/libexec/webkit2gtk-4.1/MiniBrowser \
 		${STAGEDIR}${PREFIX}/bin/MiniBrowser-4
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*.*
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/webkit2gtk-4.0/injected-bundle/*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/webkit2gtk-4.0/*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/webkit2gtk-4.1/injected-bundle/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/webkit2gtk-4.1/*
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/WebKitWebDriver
 
 .include <bsd.port.mk>

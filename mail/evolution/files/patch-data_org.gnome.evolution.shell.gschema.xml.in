@@ -1,0 +1,30 @@
+This patch shows window control buttons in the main Evolution window
+and its dialogue windows while using the Galaxy theme and also shows
+the application menu bar.
+
+--- data/org.gnome.evolution.shell.gschema.xml.in.orig	2023-09-15 05:55:51 UTC
++++ data/org.gnome.evolution.shell.gschema.xml.in
+@@ -73,12 +73,12 @@
+       <_description>The style of the window buttons.  Can be “text”, “icons”, “both”, “toolbar”.  If “toolbar” is set, the style of the buttons is determined by the GNOME toolbar setting.</_description>
+     </key>
+     <key name="menubar-visible" type="b">
+-      <default>false</default>
++      <default>true</default>
+       <_summary>Menubar is visible</_summary>
+       <_description>Whether the menubar should be visible.</_description>
+     </key>
+     <key name="menubar-visible-sub" type="b">
+-      <default>false</default>
++      <default>true</default>
+       <_summary>Menubar is visible</_summary>
+       <_description>Whether the menubar should be visible.</_description>
+     </key>
+@@ -158,7 +158,7 @@
+       <_description>Controls the toolbar icon size. The 'default' value lets the system/code decide what is the best icon size for the toolbar. Changing the option requires application restart.</_description>
+     </key>
+     <key name="use-header-bar" type="b">
+-      <default>true</default>
++      <default>false</default>
+       <_summary>Whether to use header bar in the application</_summary>
+       <_description>When enabled, adds buttons to the header bar. This applies to dialogs as well. Changing the option requires application restart.</_description>
+     </key>

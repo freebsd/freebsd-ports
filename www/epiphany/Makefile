@@ -1,6 +1,6 @@
 PORTNAME=	epiphany
 PORTVERSION=	42.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -26,9 +26,9 @@ LIB_DEPENDS=	libdazzle-1.0.so:x11-toolkits/libdazzle \
 		libnss3.so:security/nss \
 		libp11-kit.so:security/p11-kit \
 		libsecret-1.so:security/libsecret \
-		libsoup-2.4.so:devel/libsoup \
+		libsoup-3.0.so:devel/libsoup3 \
 		libstartup-notification-1.so:x11/startup-notification \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+		libwebkit2gtk-4.1.so:www/webkit2-gtk3
 RUN_DEPENDS=	gnome-icon-theme-symbolic>=0:x11-themes/gnome-icon-theme-symbolic \
 		gnome-icon-theme>=0:misc/gnome-icon-theme \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
@@ -45,7 +45,8 @@ USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3 intlhack libwnck3 libxml2 libxslt
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Db_lundef=false \
-		-Dunit_tests=disabled
+		-Dunit_tests=disabled \
+		-Dsoup2=disabled
 GLIB_SCHEMAS=	org.gnome.Epiphany.enums.xml \
 		org.gnome.epiphany.gschema.xml
 SHEBANG_FILES=	post_install.py

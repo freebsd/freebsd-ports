@@ -1,6 +1,5 @@
 PORTNAME=	webkit
-DISTVERSION=	2.38.3
-PORTREVISION=	4
+DISTVERSION=	2.39.1
 CATEGORIES=	www
 MASTER_SITES=	https://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk4
@@ -37,7 +36,9 @@ LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libsoup-3.0.so:devel/libsoup3 \
 		libtasn1.so:security/libtasn1 \
 		libwebp.so:graphics/webp \
-		libwoff2dec.so:devel/woff2
+		libwoff2dec.so:devel/woff2 \
+		libavif.so:graphics/libavif \
+		liblcms2.so:graphics/lcms2
 
 PORTSCOUT=	limitw:1,even
 
@@ -45,7 +46,7 @@ USES=		bison cmake compiler:c++20-lang cpe gettext gl gnome gperf jpeg \
 		localbase:ldflags perl5 pkgconfig python:build ruby:build \
 		sqlite tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk40 libxml2 libxslt introspection:build
-USE_GL=		egl gl glesv2
+USE_GL=		egl gbm gl glesv2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_XORG=	ice x11 xcomposite xdamage xext xrender xt
@@ -57,11 +58,15 @@ BINARY_ALIAS=		python=${PYTHON_CMD}
 CXXFLAGS+=		-DFIXED_EXECUTABLE_MEMORY_POOL_SIZE_IN_MB=32
 CMAKE_ARGS=		-DPORT=GTK
 CMAKE_OFF=		${CMAKE_OFF_${ARCH}:U} ENABLE_GAMEPAD ENABLE_GLES2 \
-			ENABLE_JOURNALD_LOG USE_LD_GOLD USE_SYSTEMD
+			ENABLE_JOURNALD_LOG USE_LD_GOLD USE_SYSTEMD \
+			USE_GSTREAMER_FULL \
+			ENABLE_MEDIA_RECORDER
 CMAKE_ON=		ENABLE_MINIBROWSER USE_GTK4 USE_SYSTEM_MALLOC
 CMAKE_OFF_armv6=	ENABLE_JIT
 CMAKE_OFF_armv7=	ENABLE_JIT
 INSTALL_TARGET=		install
+
+PLIST_SUB=	API_VERSION=6.0
 
 OPTIONS_DEFINE=		DEBUG GEOIP GSTREAMER WAYLAND
 OPTIONS_DEFAULT=	GEOIP GSTREAMER WAYLAND
@@ -109,15 +114,15 @@ pre-configure:
 	fi
 
 post-install:
-	@${RLN} ${STAGEDIR}${PREFIX}/libexec/webkit2gtk-5.0/jsc \
+	@${RLN} ${STAGEDIR}${PREFIX}/libexec/webkitgtk-6.0/jsc \
 		${STAGEDIR}${PREFIX}/bin/jsc-5
-	@${RLN} ${STAGEDIR}${PREFIX}/libexec/webkit2gtk-5.0/MiniBrowser \
+	@${RLN} ${STAGEDIR}${PREFIX}/libexec/webkitgtk-6.0/MiniBrowser \
 		${STAGEDIR}${PREFIX}/bin/MiniBrowser-5
 	@${MV} ${STAGEDIR}${PREFIX}/bin/WebKitWebDriver \
 		${STAGEDIR}${PREFIX}/bin/WebKitWebDriver-5
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*.*
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/webkit2gtk-5.0/injected-bundle/*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/webkit2gtk-5.0/*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/webkitgtk-6.0/injected-bundle/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/webkitgtk-6.0/*
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/WebKitWebDriver-5
 
 .include <bsd.port.post.mk>

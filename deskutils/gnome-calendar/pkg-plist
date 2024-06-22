@@ -6,6 +6,7 @@ share/icons/hicolor/scalable/apps/org.gnome.Calendar.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.Calendar.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Calendar-symbolic.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Calendar.Devel-symbolic.svg
+share/locale/ab/LC_MESSAGES/gnome-calendar.mo
 share/locale/af/LC_MESSAGES/gnome-calendar.mo
 share/locale/an/LC_MESSAGES/gnome-calendar.mo
 share/locale/ar/LC_MESSAGES/gnome-calendar.mo
@@ -33,12 +34,14 @@ share/locale/ga/LC_MESSAGES/gnome-calendar.mo
 share/locale/gd/LC_MESSAGES/gnome-calendar.mo
 share/locale/gl/LC_MESSAGES/gnome-calendar.mo
 share/locale/he/LC_MESSAGES/gnome-calendar.mo
+share/locale/hi/LC_MESSAGES/gnome-calendar.mo
 share/locale/hr/LC_MESSAGES/gnome-calendar.mo
 share/locale/hu/LC_MESSAGES/gnome-calendar.mo
 share/locale/id/LC_MESSAGES/gnome-calendar.mo
 share/locale/is/LC_MESSAGES/gnome-calendar.mo
 share/locale/it/LC_MESSAGES/gnome-calendar.mo
 share/locale/ja/LC_MESSAGES/gnome-calendar.mo
+share/locale/ka/LC_MESSAGES/gnome-calendar.mo
 share/locale/kab/LC_MESSAGES/gnome-calendar.mo
 share/locale/kk/LC_MESSAGES/gnome-calendar.mo
 share/locale/ko/LC_MESSAGES/gnome-calendar.mo

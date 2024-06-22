@@ -1,3 +1,5 @@
+include/champlain-%%VERSION%%/champlain-gtk/champlain-gtk.h
+include/champlain-%%VERSION%%/champlain-gtk/gtk-champlain-embed.h
 include/champlain-%%VERSION%%/champlain/champlain-adjustment.h
 include/champlain-%%VERSION%%/champlain/champlain-bounding-box.h
 include/champlain-%%VERSION%%/champlain/champlain-coordinate.h
@@ -36,8 +38,6 @@ include/champlain-%%VERSION%%/champlain/champlain-version.h
 include/champlain-%%VERSION%%/champlain/champlain-view.h
 include/champlain-%%VERSION%%/champlain/champlain-viewport.h
 include/champlain-%%VERSION%%/champlain/champlain.h
-include/champlain-%%VERSION%%/champlain-gtk/champlain-gtk.h
-include/champlain-%%VERSION%%/champlain-gtk/gtk-champlain-embed.h
 lib/girepository-1.0/Champlain-%%VERSION%%.typelib
 lib/girepository-1.0/GtkChamplain-%%VERSION%%.typelib
 lib/libchamplain-%%VERSION%%.so
@@ -50,7 +50,7 @@ libdata/pkgconfig/champlain-%%VERSION%%.pc
 libdata/pkgconfig/champlain-gtk-%%VERSION%%.pc
 share/gir-1.0/Champlain-%%VERSION%%.gir
 share/gir-1.0/GtkChamplain-%%VERSION%%.gir
-share/vala/vapi/champlain-%%VERSION%%.vapi
-share/vala/vapi/champlain-gtk-%%VERSION%%.vapi
 share/vala/vapi/champlain-%%VERSION%%.deps
+share/vala/vapi/champlain-%%VERSION%%.vapi
 share/vala/vapi/champlain-gtk-%%VERSION%%.deps
+share/vala/vapi/champlain-gtk-%%VERSION%%.vapi

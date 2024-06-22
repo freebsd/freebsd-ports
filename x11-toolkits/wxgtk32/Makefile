@@ -1,7 +1,7 @@
 PORTNAME=	wx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://github.com/wxWidgets/wxWidgets/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	${_SHORT_WX_VER}-${FLAVOR}
@@ -27,7 +27,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre2-32.so:devel/pcre2 \
 		libpng16.so:graphics/png \
 		libsecret-1.so:security/libsecret \
-		libsoup-2.4.so:devel/libsoup \
+		libsoup-3.0.so:devel/libsoup3 \
 		libtiff.so:graphics/tiff \
 		libwayland-egl.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
@@ -85,7 +85,7 @@ MSPACK_CONFIGURE_WITH=	libmspack
 
 NLS_USES=	gettext
 
-WEBKIT_LIB_DEPENDS=		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+WEBKIT_LIB_DEPENDS=		libwebkit2gtk-4.1.so:www/webkit2-gtk3
 WEBKIT_CONFIGURE_ENABLE=	webview
 
 .if ${FLAVOR} == gtk3

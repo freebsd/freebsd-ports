@@ -1,6 +1,5 @@
 PORTNAME=	evolution
-DISTVERSION=	3.44.4
-PORTREVISION=	4
+DISTVERSION=	3.50.2
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -35,8 +34,9 @@ LIB_DEPENDS=	libcryptui.so:security/libcryptui \
 		libnss3.so:security/nss \
 		libp11-kit.so:security/p11-kit \
 		libsecret-1.so:security/libsecret \
-		libsoup-2.4.so:devel/libsoup \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+		libsoup-3.0.so:devel/libsoup3 \
+		libwebkitgtk-6.0.so:www/webkit2-gtk4 \
+		libwebkit2gtk-4.1.so:www/webkit2-gtk3
 RUN_DEPENDS=	highlight:textproc/highlight \
 		iso-codes>=0:misc/iso-codes
 
@@ -101,7 +101,7 @@ WEATHER_CMAKE_BOOL=	ENABLE_WEATHER
 
 SPAMASSASSIN_DESC=		SpamAssassin spam filtering
 SPAMASSASSIN_CMAKE_ON=		-DWITH_SA_LEARN=${LOCALBASE}/bin/sa-learn \
-				-DWITH_SPAMASSASSIN=${LOCALBASE}/spamassassin
+				-DWITH_SPAMASSASSIN=${LOCALBASE}/bin/spamassassin
 SPAMASSASSIN_CMAKE_OFF=		-DWITH_SPAMASSASSIN=NO
 SPAMASSASSIN_BUILD_DEPENDS=	spamassassin:mail/spamassassin
 SPAMASSASSIN_RUN_DEPENDS=	spamassassin:mail/spamassassin
