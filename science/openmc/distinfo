@@ -1,6 +1,6 @@
-TIMESTAMP = 1712378090
-SHA256 (openmc-dev-openmc-v0.14.0_GH0.tar.gz) = 20ac92cc8d37a8c1180ae2df9f1dd1158f188cbf724ae64c9642db6199f3ee3f
-SIZE (openmc-dev-openmc-v0.14.0_GH0.tar.gz) = 6961858
+TIMESTAMP = 1719035387
+SHA256 (openmc-dev-openmc-v0.15.0_GH0.tar.gz) = 32517c1af1abee615e0b49330fd6eb6d704dd96d903b5b415091aea8aa52bbf0
+SIZE (openmc-dev-openmc-v0.15.0_GH0.tar.gz) = 7810068
 SHA256 (catchorg-Catch2-5a40b22_GH0.tar.gz) = 9f462dbbee9562a2a389755727baaa513fa8b1a7d7bbb97c38c304e2051a88d3
 SIZE (catchorg-Catch2-5a40b22_GH0.tar.gz) = 1106343
 SHA256 (martinmoene-gsl-lite-913e86d_GH0.tar.gz) = 53f4ad67e182d58161ec297593af4139ccb2a8fd712ba9cd77d129b6f87c6b3b
