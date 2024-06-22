@@ -1,3 +1,30 @@
+  <vuln vid="82830965-3073-11ef-a17d-5404a68ad561">
+    <topic>traefik -- Azure Identity Libraries Elevation of Privilege Vulnerability</topic>
+    <affects>
+      <package>
+	<name>traefik</name>
+	<range><lt>2.11.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The traefik authors report:</p>
+	<blockquote cite="https://github.com/traefik/traefik/security/advisories/GHSA-rvj4-q8q5-8grf">
+		<p>There is a vulnerability in Azure Identity Libraries and
+		   Microsoft Authentication Library Elevation of Privilege Vulnerability.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-35255</cvename>
+      <url>https://github.com/traefik/traefik/security/advisories/GHSA-rvj4-q8q5-8grf</url>
+    </references>
+    <dates>
+      <discovery>2024-06-11</discovery>
+      <entry>2024-06-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aa2b65e4-2f63-11ef-9cab-4ccc6adda413">
     <topic>qt5-webengine -- Multiple vulnerabilities</topic>
     <affects>
