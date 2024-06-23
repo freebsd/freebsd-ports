@@ -1,5 +1,5 @@
 PORTNAME=	libdjinterop
-DISTVERSION=	0.20.1
+DISTVERSION=	0.20.2
 CATEGORIES=	audio
 
 MAINTAINER=	vishwin@FreeBSD.org
@@ -15,6 +15,8 @@ USES=		compiler:c++17-lang cmake:testing sqlite
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xsco
+
+USE_LDCONFIG=	yes
 
 PORTSCOUT=	ignore:1 # audio/mixxx dictates us
 PLIST_SUB=	VERSION=${DISTVERSION}
