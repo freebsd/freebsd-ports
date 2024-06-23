@@ -27,13 +27,19 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libmathex.so:math/mathex \
 		libalglib.so:math/alglib \
 		libvoro++.so:science/voro++ \
-		libmesquite.so:math/mesquite \
 		libfreetype.so:print/freetype2 \
-		libtinyxml2.so:textproc/tinyxml2
+		libtinyxml2.so:textproc/tinyxml2 \
+		${LIB_DEPENDS_${ARCH}}
 RUN_DEPENDS=	getdp:science/getdp
 
 USES=		bison compiler:c++14-lang cmake:testing eigen:3 fortran gl	\
 		jpeg localbase tar:tgz xorg
+
+# Only for 64 bits ARCHs
+LIB_DEPENDS_aarch64=	libmesquite.so:math/mesquite
+LIB_DEPENDS_amd64=	libmesquite.so:math/mesquite
+LIB_DEPENDS_powerpc64=	libmesquite.so:math/mesquite
+LIB_DEPENDS_powerpc64le=libmesquite.so:math/mesquite
 
 USE_GL=		gl glu
 USE_XORG=	ice sm x11 xcursor xext xinerama xfixes xft xrender
