@@ -1,7 +1,6 @@
 PORTNAME=	flawz
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.1
-PORTREVISION=	1
+DISTVERSION=	0.2.2
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,12 +28,12 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		anstream-0.6.14 \
 		anstyle-1.0.7 \
 		anstyle-parse-0.2.4 \
-		anstyle-query-1.0.3 \
+		anstyle-query-1.1.0 \
 		anstyle-wincon-3.0.3 \
 		atomic-waker-1.1.2 \
 		atty-0.2.14 \
 		autocfg-1.3.0 \
-		backtrace-0.3.72 \
+		backtrace-0.3.73 \
 		base64-0.22.1 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
@@ -43,17 +42,17 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		bytes-1.6.0 \
 		cassowary-0.3.0 \
 		castaway-0.2.2 \
-		cc-1.0.98 \
+		cc-1.0.99 \
 		cesu8-1.1.0 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		clap-2.34.0 \
-		clap-4.5.4 \
-		clap_builder-4.5.2 \
-		clap_complete-4.5.2 \
-		clap_derive-4.5.4 \
-		clap_lex-0.7.0 \
-		clap_mangen-0.2.20 \
+		clap-4.5.7 \
+		clap_builder-4.5.7 \
+		clap_complete-4.5.6 \
+		clap_derive-4.5.5 \
+		clap_lex-0.7.1 \
+		clap_mangen-0.2.21 \
 		colorchoice-1.0.1 \
 		combine-4.6.7 \
 		compact_str-0.7.1 \
@@ -87,21 +86,22 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		futures-sink-0.3.30 \
 		futures-task-0.3.30 \
 		futures-util-0.3.30 \
+		getrandom-0.2.15 \
 		gimli-0.29.0 \
 		h2-0.4.5 \
 		hashbrown-0.14.5 \
 		hashlink-0.9.1 \
 		heck-0.5.0 \
 		hermit-abi-0.1.19 \
-		hermit-abi-0.3.9 \
 		home-0.5.9 \
 		http-1.1.0 \
 		http-body-1.0.0 \
-		http-body-util-0.1.1 \
-		httparse-1.8.0 \
+		http-body-util-0.1.2 \
+		httparse-1.9.4 \
 		humansize-1.1.1 \
 		humantime-2.1.0 \
 		hyper-1.3.1 \
+		hyper-rustls-0.27.2 \
 		hyper-tls-0.6.0 \
 		hyper-util-0.1.5 \
 		iana-time-zone-0.1.60 \
@@ -122,20 +122,19 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		lock_api-0.4.12 \
 		log-0.4.21 \
 		lru-0.12.3 \
-		memchr-2.7.2 \
+		memchr-2.7.4 \
 		mime-0.3.17 \
-		miniz_oxide-0.7.3 \
+		miniz_oxide-0.7.4 \
 		mio-0.8.11 \
 		native-tls-0.2.12 \
 		ndk-context-0.1.1 \
 		num-traits-0.2.19 \
-		num_cpus-1.16.0 \
 		nvd_cve-0.2.0 \
 		objc-sys-0.3.5 \
 		objc2-0.5.2 \
 		objc2-encode-4.0.3 \
 		objc2-foundation-0.2.2 \
-		object-0.35.0 \
+		object-0.36.0 \
 		once_cell-1.19.0 \
 		openssl-0.10.64 \
 		openssl-macros-0.1.1 \
@@ -150,21 +149,24 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.30 \
-		proc-macro2-1.0.85 \
+		proc-macro2-1.0.86 \
 		progress-0.2.0 \
 		quote-1.0.36 \
 		ratatui-0.26.3 \
-		redox_syscall-0.5.1 \
-		regex-1.10.4 \
-		regex-automata-0.4.6 \
-		regex-syntax-0.8.3 \
-		reqwest-0.12.4 \
+		redox_syscall-0.5.2 \
+		regex-1.10.5 \
+		regex-automata-0.4.7 \
+		regex-syntax-0.8.4 \
+		reqwest-0.12.5 \
+		ring-0.17.8 \
 		roff-0.2.1 \
 		rusqlite-0.31.0 \
 		rustc-demangle-0.1.24 \
 		rustix-0.38.34 \
+		rustls-0.23.10 \
 		rustls-pemfile-2.1.2 \
 		rustls-pki-types-1.7.0 \
+		rustls-webpki-0.102.4 \
 		rustversion-1.0.17 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
@@ -183,14 +185,16 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		smallvec-1.13.2 \
 		smawk-0.3.2 \
 		socket2-0.5.7 \
+		spin-0.9.8 \
 		stability-0.2.0 \
 		static_assertions-1.1.0 \
 		strsim-0.8.0 \
 		strsim-0.11.1 \
 		strum-0.26.2 \
-		strum_macros-0.26.3 \
-		syn-2.0.66 \
-		sync_wrapper-0.1.2 \
+		strum_macros-0.26.4 \
+		subtle-2.6.0 \
+		syn-2.0.67 \
+		sync_wrapper-1.0.1 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
 		tempfile-3.10.1 \
@@ -204,6 +208,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.38.0 \
 		tokio-native-tls-0.3.1 \
+		tokio-rustls-0.26.0 \
 		tokio-util-0.7.11 \
 		tower-0.4.13 \
 		tower-layer-0.3.2 \
@@ -219,9 +224,10 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		unicode-normalization-0.1.23 \
 		unicode-segmentation-1.11.0 \
 		unicode-truncate-1.0.0 \
-		unicode-width-0.1.12 \
-		url-2.5.0 \
-		utf8parse-0.2.1 \
+		unicode-width-0.1.13 \
+		untrusted-0.9.0 \
+		url-2.5.2 \
+		utf8parse-0.2.2 \
 		vcpkg-0.2.15 \
 		vec_map-0.8.2 \
 		version_check-0.9.4 \
@@ -271,7 +277,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		windows_x86_64_msvc-0.52.5 \
 		winreg-0.52.0 \
 		zerocopy-0.7.34 \
-		zerocopy-derive-0.7.34
+		zerocopy-derive-0.7.34 \
+		zeroize-1.8.1
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
