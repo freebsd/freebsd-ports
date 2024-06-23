@@ -1,5 +1,5 @@
 PORTNAME=	ta-lib # provides Python namespace 'talib'
-DISTVERSION=	0.4.30
+DISTVERSION=	0.4.31
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libta_lib.so:devel/ta-lib
 RUN_DEPENDS=	${PYNUMPY}
-TEST_DEPENDS=	misc/py-polars
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}polars>0:misc/py-polars@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils cython autoplist pytest # pytest fails to find the library, see https://github.com/pytest-dev/pytest/issues/10885
