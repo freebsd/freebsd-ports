@@ -1,5 +1,5 @@
 PORTNAME=	faust
-DISTVERSION=	2.72.14
+DISTVERSION=	2.74.6
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 GH_TUPLE=	\
-		grame-cncm:faustlibraries:d28c51f:grame_cncm_faustlibraries/libraries \
+		grame-cncm:faustlibraries:58f6796:grame_cncm_faustlibraries/libraries \
 		ccrma:faust2ck:db879cb:faust2ck/tools/faust2ck
 
 SHEBANG_FILES=	tools/faust2appls/* tools/benchmark/faustbench tools/sound2faust/sound2reader
