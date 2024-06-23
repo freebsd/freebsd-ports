@@ -122,6 +122,10 @@ _COMPONENTS+=	rustc-dev-${_PACKAGE_VERS}-${_RUST_TARGET}
 _COMPONENTS+=	rust-docs-${_PACKAGE_VERS}-wasm32-unknown-unknown rust-docs-json-${_PACKAGE_VERS}-wasm32-unknown-unknown
 .endif
 
+.if exists(${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX})
+EXTRA_PATCHES+=	${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX}
+.endif
+
 .ifdef QEMU_EMULATING
 IGNORE=	fails to build with qemu-user-static
 .endif
