@@ -1,13 +1,13 @@
---- etc/pacman.conf.in.orig	2020-12-03 11:37:30 UTC
+--- etc/pacman.conf.in.orig	2024-03-04 03:07:58 UTC
 +++ etc/pacman.conf.in
-@@ -16,8 +16,8 @@
+@@ -16,8 +16,8 @@ HoldPkg     = pacman glibc
  #GPGDir      = @sysconfdir@/pacman.d/gnupg/
  #HookDir     = @sysconfdir@/pacman.d/hooks/
  HoldPkg     = pacman glibc
 -#XferCommand = /usr/bin/curl -L -C - -f -o %o %u
 -#XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u
-+#XferCommand = @prefix@/bin/curl -L -C - -f -o %o %u
-+#XferCommand = @prefix@/bin/wget --passive-ftp -c -O %o %u
++#XferCommand = @PREFIX@/bin/curl -L -C - -f -o %o %u
++#XferCommand = @PREFIX@/bin/wget --passive-ftp -c -O %o %u
  #CleanMethod = KeepInstalled
  Architecture = auto
  

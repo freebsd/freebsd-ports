@@ -1,12 +1,11 @@
 PORTNAME=	pacman
-DISTVERSION=	6.0.2
-PORTREVISION=	1
+DISTVERSION=	6.1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	https://sources.archlinux.org/other/${PORTNAME}/
+MASTER_SITES=	https://gitlab.archlinux.org/${PORTNAME}/${PORTNAME}/-/releases/v${DISTVERSION}/downloads/
 
 MAINTAINER=	vishwin@vishwin.info
 COMMENT=	Package manager from Arch Linux
-WWW=		https://archlinux.org/pacman/
+WWW=		https://pacman.archlinux.page/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -36,7 +35,7 @@ USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message pkg-deinstall
 SUB_LIST=	PACMAN_ROOT="${PACMAN_ROOT}" PREFIX="${PREFIX}"
-PLIST_SUB=	PACMAN_ROOT="${PACMAN_ROOT:C/^${PREFIX}//}"
+PLIST_SUB=	PACMAN_ROOT="${PACMAN_ROOT:C,^${PREFIX}/,,}"
 
 PORTEXAMPLES=	*
 PKGMESSAGE=	${PKGDIR}/pkg-message-${FLAVOR:U}
@@ -71,7 +70,7 @@ PLIST_DIRS+=	%%PACMAN_ROOT%%/var/cache \
 		/compat
 .endif
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 post-patch:
 .if ${ARCH} == "i386"
@@ -88,4 +87,4 @@ post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/PKGBUILD-example.txt ${STAGEDIR}${EXAMPLESDIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
