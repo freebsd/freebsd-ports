@@ -8,7 +8,7 @@ DISTNAME=	flask_mail-${DISTVERSION}
 MAINTAINER=	john@saltant.com
 COMMENT=	Send SMTP email from a Flask web application
 WWW=		https://flask-mail.readthedocs.io/ \
-		https://github.com/mattupstate/flask-mail
+		https://github.com/pallets-eco/flask-mail
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
