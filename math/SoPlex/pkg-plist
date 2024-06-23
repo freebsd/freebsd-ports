@@ -34,8 +34,9 @@ include/soplex/external/fmt/ostream.h
 include/soplex/external/fmt/posix.h
 include/soplex/external/fmt/printf.h
 include/soplex/external/fmt/ranges.h
+include/soplex/external/zstr/strict_fstream.hpp
+include/soplex/external/zstr/zstr.hpp
 include/soplex/fmt.hpp
-include/soplex/gzstream.h
 include/soplex/idlist.h
 include/soplex/idxset.h
 include/soplex/islist.h
