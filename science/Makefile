@@ -368,6 +368,7 @@
     SUBDIR += py-moltemplate
     SUBDIR += py-mp-api
     SUBDIR += py-mpcontribs-client
+    SUBDIR += py-mplhep
     SUBDIR += py-mplhep-data
     SUBDIR += py-mrchem
     SUBDIR += py-ncrystal
