@@ -40,6 +40,12 @@
 %%PYTHON_SITELIBDIR%%/recordclass/test/__pycache__/test_recordclass.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/test/__pycache__/test_sqlite.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/test/__pycache__/test_sqlite.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/recordclass/test/match/__init__.py
+%%PYTHON_SITELIBDIR%%/recordclass/test/match/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/recordclass/test/match/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/recordclass/test/match/__pycache__/test_dataobject_match.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/recordclass/test/match/__pycache__/test_dataobject_match.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/recordclass/test/match/test_dataobject_match.py
 %%PYTHON_SITELIBDIR%%/recordclass/test/test_arrayclass.py
 %%PYTHON_SITELIBDIR%%/recordclass/test/test_dataobject.py
 %%PYTHON_SITELIBDIR%%/recordclass/test/test_litelist.py
@@ -51,9 +57,12 @@
 %%PYTHON_SITELIBDIR%%/recordclass/test/typing/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/test/typing/__pycache__/test_dataobject.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/test/typing/__pycache__/test_dataobject.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/recordclass/test/typing/__pycache__/test_datastruct.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/recordclass/test/typing/__pycache__/test_datastruct.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/test/typing/__pycache__/test_recordclass.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/test/typing/__pycache__/test_recordclass.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/test/typing/test_dataobject.py
+%%PYTHON_SITELIBDIR%%/recordclass/test/typing/test_datastruct.py
 %%PYTHON_SITELIBDIR%%/recordclass/test/typing/test_recordclass.py
 %%PYTHON_SITELIBDIR%%/recordclass/tools/__init__.py
 %%PYTHON_SITELIBDIR%%/recordclass/tools/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
