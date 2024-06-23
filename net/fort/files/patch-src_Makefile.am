@@ -1,9 +1,9 @@
---- src/Makefile.am.orig	2023-12-14 01:43:09 UTC
+--- src/Makefile.am.orig	2024-06-23 03:52:55 UTC
 +++ src/Makefile.am
-@@ -118,7 +118,7 @@ fort_CFLAGS  = -Wall -Wpedantic
- # Feel free to temporarily remove this one if you're not using gcc 7.3.0.
+@@ -118,7 +118,7 @@ fort_SOURCES += $(ASN_MODULE_SRCS) $(ASN_MODULE_HDRS)
+ fort_CFLAGS  = -Wall -Wpedantic
  #fort_CFLAGS += $(GCC_WARNS)
- fort_CFLAGS += -std=c99 -D_POSIX_C_SOURCE=200809 -D_XOPEN_SOURCE=700
+ fort_CFLAGS += -std=c99 -D_DEFAULT_SOURCE=1 -D_XOPEN_SOURCE=700 -D_BSD_SOURCE=1
 -fort_CFLAGS += -O2 -g $(FORT_FLAGS) ${XML2_CFLAGS}
 +fort_CFLAGS += -O2 -g $(FORT_FLAGS) ${XML2_CFLAGS} ${JANSSON_CFLAGS}
  if BACKTRACE_ENABLED
