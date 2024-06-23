@@ -1,6 +1,6 @@
 PORTNAME=	baresip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.11.0
+DISTVERSION=	3.13.0
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,8 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	baresip
 
 # FIXME values of the next 3 variables taken from source code Makefile
-ABI_MAJOR=	15
-ABI_AGE=	11
+ABI_MAJOR=	16
+ABI_AGE=	13
 ABI_REV=	0
 PLIST_SUB=	ABI_MAJOR=${ABI_MAJOR}
 PLIST_SUB+=	ABI_AGE=${ABI_AGE} \
@@ -61,7 +61,7 @@ MODULES_LIST:=	$(MODULES_LIST);cons;contact;ctrl_tcp
 MODULES_LIST:=	$(MODULES_LIST);debug_cmd;dtls_srtp
 MODULES_LIST:=	$(MODULES_LIST);ebuacip;echo
 MODULES_LIST:=	$(MODULES_LIST);fakevideo;httpd;httpreq;ice;l16
-MODULES_LIST:=	$(MODULES_LIST);menu;mixausrc;mixminus;multicast;mwi;natpmp;netroam
+MODULES_LIST:=	$(MODULES_LIST);menu;mixausrc;mixminus;mwi;natpmp;netroam
 MODULES_LIST:=	$(MODULES_LIST);pcp;presence;rtcpsummary
 MODULES_LIST:=	$(MODULES_LIST);selfview;serreg;srtp;stdio;stun;syslog
 MODULES_LIST:=	$(MODULES_LIST);turn;uuid;vidbridge;vidinfo;vumeter
