@@ -1,3 +1,31 @@
+  <vuln vid="4f6c4c07-3179-11ef-9da5-1c697a616631">
+    <topic>emacs -- arbitrary Shell code evaluation vulnerability</topic>
+    <affects>
+      <package>
+       <name>emacs</name>
+       <name>emacs-canna</name>
+       <name>emacs-nox</name>
+       <name>emacs-wayland</name>
+       <range><lt>29.3_3,3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GNU Emacs developers report:</p>
+	<blockquote cite="https://lists.gnu.org/archive/html/info-gnu-emacs/2024-06/msg00000.html">
+	  <p>Emacs 29.4 is an emergency bugfix release intended to fix a security vulnerability.  Arbitrary shell commands are no longer run when turning on Org mode in order to avoid running malicious code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://seclists.org/oss-sec/2024/q2/296</url>
+    </references>
+    <dates>
+      <discovery>2024-06-22</discovery>
+      <entry>2024-06-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="82830965-3073-11ef-a17d-5404a68ad561">
     <topic>traefik -- Azure Identity Libraries Elevation of Privilege Vulnerability</topic>
     <affects>
