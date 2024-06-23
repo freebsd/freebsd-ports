@@ -21,7 +21,8 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libcolamd.so:math/suitesparse-colamd \
 		libsuitesparseconfig.so:math/suitesparse-config \
 		libumfpack.so:math/suitesparse-umfpack
-TEST_DEPENDS=	git:devel/git \
+TEST_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
+		git:devel/git \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
