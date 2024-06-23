@@ -1,6 +1,6 @@
 PORTNAME=	hist
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.2
+DISTVERSION=	2.7.3
 CATEGORIES=	misc python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,11 +20,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boost-histogram>=1.3.1:misc/py-boost-histogr
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4:devel/py-typing-extensions@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dask>=2022:devel/py-dask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dask-histogram>=2023.1:devel/py-dask-histogram@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mplhep>0:science/py-mplhep@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mpl>=0.12:devel/py-pytest-mpl@${PY_FLAVOR}
-		# tests and plotting also need mplhep>=0.2.16 which isn't yet ported
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest
+USE_PYTHON=	pep517 autoplist pytest # 21 tests fail: _tkinter.TclError: no display name and no $DISPLAY environment variable
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	scikit-hep
