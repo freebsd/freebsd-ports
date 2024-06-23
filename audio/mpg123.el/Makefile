@@ -1,5 +1,6 @@
 PORTNAME=	mpg123.el
 PORTVERSION=	1.65
+PORTREVISION=	1
 CATEGORIES=	audio elisp
 MASTER_SITES=	http://www.gentei.org/~yuuji/software/mpg123el/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
