@@ -1,7 +1,8 @@
 PORTNAME=	shed-skin
-DISTVERSION=	0.9.8
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9.9
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI # no test files
 DISTNAME=	${PORTNAME:S/-/_/g}-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +17,11 @@ RUN_DEPENDS=	boehm-gc>0:devel/boehm-gc \
 		pcre>0:devel/pcre
 
 USES=		python
-USE_PYTHON=	pep517 autoplist
+USE_PYTHON=	pep517 autoplist pytest # 44 tests fail, see https://github.com/shedskin/shedskin/issues/494
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	shedskin
+GH_PROJECT=	shedskin
 
 NO_ARCH=	yes
 
@@ -24,12 +29,15 @@ post-extract:
 	@${RM} ${WRKSRC}/tests/test_ops_assignment/test_ops_assignment.py.orig
 
 post-patch:
-	# the fouth regex below is a workaround for https://github.com/shedskin/shedskin/issues/470
+	# adjust FLAGS placed into generated makefiles
 	@${REINPLACE_CMD} -e ' \
-		s|^CC=.*|CC=${CXX}|; \
-		s|^CCFLAGS=|CCFLAGS?=-I${PREFIX}/include |; \
-		s|^LFLAGS=|LFLAGS=-L${PREFIX}/lib |; \
-		s|^CCFLAGS.*|& -I$$(SHEDSKIN_LIBDIR)|; \
+		s|^CXX?=.*|CXX?=${CXX}|; \
+		s|^CXXFLAGS?=.*|& -I${PREFIX}/include |; \
+		s|^LFLAGS=.*|& -L${PREFIX}/lib |; \
 		' ${WRKSRC}/shedskin/resources/flags/FLAGS
+	# adjust pyproject.toml for the difference between GH and PYPI tarballs
+	@${REINPLACE_CMD} \
+		-e 's/name = "shedskin"/name = "shed-skin"/' \
+		${WRKSRC}/pyproject.toml
 
-.include	<bsd.port.mk>
+.include <bsd.port.mk>
