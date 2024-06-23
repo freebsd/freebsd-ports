@@ -58,11 +58,8 @@ pre-fetch:
 		( \
 			${MKDIR} ${WRKDIR}; \
 			HOME=${WRKDIR}; \
-			echo "--1--" && \
 			git config --global filter.lfs.smudge "git-lfs smudge -- %f" && \
-			echo "--2-- WD=`pwd`" && \
 			git clone -q ${WEIGHTS_GIT_URL} ${PORTNAME}-weights-${WEIGHTS_GIT_HASH} && \
-			echo "--3--" && \
 			(cd ${PORTNAME}-weights-${WEIGHTS_GIT_HASH} && git reset -q --hard ${WEIGHTS_GIT_HASH} && ${RM} -r .git) && \
 			${RM} -r ${WRKDIR} \
 		) && \
