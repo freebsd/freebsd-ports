@@ -1,5 +1,6 @@
 PORTNAME=	hetzner_ddns
 DISTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	filip@parag.rs
