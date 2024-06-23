@@ -1,5 +1,5 @@
 PORTNAME=	libgpg-error
-DISTVERSION=	1.49
+DISTVERSION=	1.50
 CATEGORIES=	security devel
 MASTER_SITES=	GNUPG
 
@@ -17,12 +17,11 @@ CPE_VENDOR=	gnupg
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
+INSTALL_TARGET= install-strip
 
 DOCS=		AUTHORS ChangeLog NEWS README
 INFO=		gpgrt
 
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=		--enable-static=yes \
 			--enable-install-gpg-error-config
 
