@@ -1,7 +1,7 @@
-bin/AusweisApp2
-share/man/man1/AusweisApp2.1.gz
+bin/AusweisApp
 share/applications/com.governikus.ausweisapp2.desktop
-share/icons/hicolor/96x96/apps/AusweisApp2.png
-share/icons/hicolor/scalable/apps/AusweisApp2.svg
+%%DATADIR%%/AusweisApp/AusweisApp.rcc
+share/icons/hicolor/96x96/apps/AusweisApp.png
+share/icons/hicolor/scalable/apps/AusweisApp.svg
+share/man/man1/AusweisApp.1.gz
 share/metainfo/com.governikus.ausweisapp2.metainfo.xml
-%%DATADIR%%/AusweisApp2/AusweisApp2.rcc
