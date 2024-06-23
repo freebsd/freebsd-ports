@@ -1,7 +1,7 @@
-%%PYTHON_SITELIBDIR%%/pyproject_api-1.6.1.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/pyproject_api-1.6.1.dist-info/RECORD
-%%PYTHON_SITELIBDIR%%/pyproject_api-1.6.1.dist-info/WHEEL
-%%PYTHON_SITELIBDIR%%/pyproject_api-1.6.1.dist-info/licenses/LICENSE
+%%PYTHON_SITELIBDIR%%/pyproject_api-%%VER%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/pyproject_api-%%VER%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/pyproject_api-%%VER%%.dist-info/WHEEL
+%%PYTHON_SITELIBDIR%%/pyproject_api-%%VER%%.dist-info/licenses/LICENSE
 %%PYTHON_SITELIBDIR%%/pyproject_api/__init__.py
 %%PYTHON_SITELIBDIR%%/pyproject_api/__main__.py
 %%PYTHON_SITELIBDIR%%/pyproject_api/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
