@@ -22,6 +22,7 @@ load_rc_config ${name}
 
 # set defaults
 kresd_enable=${kresd_enable:-"NO"}
+: ${kresd_svcj_options:="net_basic"}
 kresd_config=${kresd_config:-"%%ETCDIR%%/${name}.conf"}
 kresd_user="%%USERS%%"
 kresd_group="%%GROUPS%%"
