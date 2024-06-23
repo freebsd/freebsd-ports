@@ -1,6 +1,6 @@
 PORTNAME=	neocmakelsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.5
+DISTVERSION=	0.7.6
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -36,6 +36,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		cfg-if-1.0.0 \
 		clap-4.5.7 \
 		clap_builder-4.5.7 \
+		clap_complete-4.5.6 \
+		clap_derive-4.5.5 \
 		clap_lex-0.7.1 \
 		cli-table-0.4.7 \
 		cli-table-derive-0.4.5 \
@@ -66,6 +68,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		glob-0.3.1 \
 		globset-0.4.14 \
 		hashbrown-0.14.5 \
+		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		httparse-1.9.3 \
 		icu_collections-1.5.0 \
