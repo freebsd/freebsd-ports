@@ -4,7 +4,7 @@ CATEGORIES=	math science devel
 MASTER_SITES=	SF/sscilib/mathex
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	C++ library fo parse/evaluate mathematical expressions
+COMMENT=	C++ library to parse/evaluate mathematical expressions
 WWW=		https://sscilib.sourceforge.net/
 
 LICENSE=	LGPL21
@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 PLIST_FILES=	${PREFIX}/include/mathex.h	\
 		${PREFIX}/lib/lib${PORTNAME}.so	\
 		${PREFIX}/lib/lib${PORTNAME}.so.0
-PLIST_FILES+=	${PROGS:C|^|${PREFIX}/bin/|}
+EXAMPLES_PLIST_FILES=	${PROGS:C|^|${PREFIX}/bin/|}
 
 PROGS=		curvetest inttest tabletest userfunctest
 
