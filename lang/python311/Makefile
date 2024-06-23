@@ -28,7 +28,7 @@ SHEBANG_FILES+=	Lib/test/ziptestdata/exe_with_z64 \
 DISABLED_EXTENSIONS=	_sqlite3 _tkinter _gdbm
 CONFIGURE_ARGS+=	--enable-shared --without-ensurepip \
 			--with-system-ffi
-CONFIGURE_ENV+=		OPT="" # Null out OPT to respect user CFLAGS and remove optimizations
+CONFIGURE_ENV+=		OPT="" ac_cv_prog_cc_g=false # Null out OPT to respect user CFLAGS and remove optimizations
 
 INSTALL_TARGET=		altinstall						# Don't want cloberring of unprefixed files
 
@@ -68,7 +68,7 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 LIBMPDEC_CONFIGURE_ON=	--with-system-libmpdec
 LIBMPDEC_LIB_DEPENDS=	libmpdec.so:math/mpdecimal
 
-LTO_CONFIGURE_ON=	--with-lto=thin
+LTO_CONFIGURE_ON=	--with-lto
 
 # Use CPPFLAGS over CFLAGS due to -I ordering, causing elementtree and pyexpat
 # to break in Python 2.7, or preprocessor complaints in Python >= 3.3
