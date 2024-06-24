@@ -1,5 +1,5 @@
   <vuln vid="4f6c4c07-3179-11ef-9da5-1c697a616631">
-    <topic>emacs -- arbitrary Shell code evaluation vulnerability</topic>
+    <topic>emacs -- Arbitrary shell code evaluation vulnerability</topic>
     <affects>
       <package>
        <name>emacs</name>
@@ -7,6 +7,11 @@
        <name>emacs-nox</name>
        <name>emacs-wayland</name>
        <range><lt>29.3_3,3</lt></range>
+      </package>
+      <package>
+       <name>emacs-devel</name>
+       <name>emacs-devel-nox</name>
+       <range><lt>30.0.50.20240615_1,3</lt></range>
       </package>
     </affects>
     <description>
