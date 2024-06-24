@@ -1,6 +1,6 @@
 PORTNAME=	emacs
 DISTVERSION=	29.3
-PORTREVISION=	1
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	editors
 MASTER_SITES=	GNU
@@ -10,7 +10,7 @@ PATCH_SITES+=	https://www.gentei.org/~yuuji/software/emacs29canna/:canna
 PATCHFILES+=	emacs29.1-canna-20230730.diff.xz:-p1:canna
 .endif
 
-PATCH_SITES+=	https://github.com/emacs-devel/emacs/commit/
+PATCH_SITES+=	https://github.com/emacs-mirror/emacs/commit/
 PATCHFILES+=	c645e1d8205f0f0663ec4a2d27575b238c646c7c.patch:-p1
 
 MAINTAINER=	emacs@FreeBSD.org
