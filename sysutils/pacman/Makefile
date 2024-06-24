@@ -3,7 +3,7 @@ DISTVERSION=	6.1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://gitlab.archlinux.org/${PORTNAME}/${PORTNAME}/-/releases/v${DISTVERSION}/downloads/
 
-MAINTAINER=	vishwin@vishwin.info
+MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	Package manager from Arch Linux
 WWW=		https://pacman.archlinux.page/
 
