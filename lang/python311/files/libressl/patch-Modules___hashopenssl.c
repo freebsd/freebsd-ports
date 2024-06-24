@@ -1,4 +1,4 @@
---- Modules/_hashopenssl.c.orig	2023-02-07 13:37:51 UTC
+--- Modules/_hashopenssl.c.orig	2024-04-02 08:25:04 UTC
 +++ Modules/_hashopenssl.c
 @@ -45,10 +45,21 @@
  
@@ -50,7 +50,7 @@
      PY_HASH_ENTRY(NULL, NULL, NULL, 0),
  };
  
-@@ -873,9 +892,12 @@ py_evp_fromname(PyObject *module, const char *digestna
+@@ -874,9 +893,12 @@ py_evp_fromname(PyObject *module, const char *digestna
          goto exit;
      }
  
