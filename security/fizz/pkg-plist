@@ -1,5 +1,7 @@
+include/fizz/backend/openssl/Hasher.h
 include/fizz/backend/openssl/OpenSSL.h
 include/fizz/backend/openssl/OpenSSLFactory.h
+include/fizz/backend/openssl/Properties.h
 include/fizz/backend/openssl/certificate/CertUtils-inl.h
 include/fizz/backend/openssl/certificate/CertUtils.h
 include/fizz/backend/openssl/certificate/OpenSSLPeerCertImpl-inl.h
@@ -18,10 +20,9 @@ include/fizz/backend/openssl/crypto/aead/AESGCM128.h
 include/fizz/backend/openssl/crypto/aead/AESGCM256.h
 include/fizz/backend/openssl/crypto/aead/AESOCB128.h
 include/fizz/backend/openssl/crypto/aead/ChaCha20Poly1305.h
+include/fizz/backend/openssl/crypto/aead/Ciphers.h
 include/fizz/backend/openssl/crypto/aead/OpenSSLEVPCipher-inl.h
 include/fizz/backend/openssl/crypto/aead/OpenSSLEVPCipher.h
-include/fizz/backend/openssl/crypto/exchange/ECCurveKeyExchange.h
-include/fizz/backend/openssl/crypto/exchange/OpenSSLKeyExchange-inl.h
 include/fizz/backend/openssl/crypto/exchange/OpenSSLKeyExchange.h
 include/fizz/backend/openssl/crypto/signature/Signature-inl.h
 include/fizz/backend/openssl/crypto/signature/Signature.h
@@ -52,6 +53,7 @@ include/fizz/compression/ZlibCertificateDecompressor.h
 include/fizz/compression/ZstdCertificateCompressor.h
 include/fizz/compression/ZstdCertificateDecompressor.h
 include/fizz/compression/test/Mocks.h
+include/fizz/crypto/Crypto.h
 include/fizz/crypto/Hkdf.h
 include/fizz/crypto/KeyDerivation.h
 include/fizz/crypto/RandomGenerator.h
@@ -87,12 +89,12 @@ include/fizz/extensions/delegatedcred/DelegatedCredentialCertManager.h
 include/fizz/extensions/delegatedcred/DelegatedCredentialClientCertManager.h
 include/fizz/extensions/delegatedcred/DelegatedCredentialClientExtension.h
 include/fizz/extensions/delegatedcred/DelegatedCredentialFactory.h
-include/fizz/extensions/delegatedcred/DelegatedCredentialPemUtils.h
 include/fizz/extensions/delegatedcred/DelegatedCredentialUtils.h
 include/fizz/extensions/delegatedcred/PeerDelegatedCredential-inl.h
 include/fizz/extensions/delegatedcred/PeerDelegatedCredential.h
 include/fizz/extensions/delegatedcred/SelfDelegatedCredential-inl.h
 include/fizz/extensions/delegatedcred/SelfDelegatedCredential.h
+include/fizz/extensions/delegatedcred/Serialization.h
 include/fizz/extensions/delegatedcred/Types.h
 include/fizz/extensions/exportedauth/ExportedAuthenticator.h
 include/fizz/extensions/exportedauth/Util.h
