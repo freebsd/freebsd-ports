@@ -597,6 +597,8 @@ jellyfin/jellyfin-web/1761ff70438ffa849287.woff2
 jellyfin/jellyfin-web/17864.816e0e6eafe183c89338.chunk.js
 jellyfin/jellyfin-web/17cb3a33fbcec1c1240c.woff2
 jellyfin/jellyfin-web/17e11e78e5e8a4b1be78.woff2
+jellyfin/jellyfin-web/18084.239da02d76e26fda517e.chunk.js
+jellyfin/jellyfin-web/18084.css
 jellyfin/jellyfin-web/180e102b802ac3fd8073.woff2
 jellyfin/jellyfin-web/1824df935981dd972b39.woff2
 jellyfin/jellyfin-web/182642c1d264e7157990.woff2
@@ -866,8 +868,8 @@ jellyfin/jellyfin-web/34f1c34a97c6070975a5.woff2
 jellyfin/jellyfin-web/35090.29e7d34960b24abbef8c.chunk.js
 jellyfin/jellyfin-web/35172.65c2ac8a6faff39eb137.chunk.js
 jellyfin/jellyfin-web/352a45654081fb3b226c.woff2
+jellyfin/jellyfin-web/35308.052a97152d18a257a49f.chunk.js
 jellyfin/jellyfin-web/35308.css
-jellyfin/jellyfin-web/35308.f26cbc1f99e292e94656.chunk.js
 jellyfin/jellyfin-web/3530a0de249eba06d94e.woff2
 jellyfin/jellyfin-web/353b5f2e3623c0e0bdab.woff2
 jellyfin/jellyfin-web/353bee973737e5e9ba0b.woff2
@@ -1197,8 +1199,9 @@ jellyfin/jellyfin-web/5740ab63a0354c432fe8.woff2
 jellyfin/jellyfin-web/57506.css
 jellyfin/jellyfin-web/57663.4a0a3cf21647184072e4.chunk.js
 jellyfin/jellyfin-web/57688.2df46f8e609e152c9b12.chunk.js
-jellyfin/jellyfin-web/57965.981f76c0ccd6c1fab892.chunk.js
-jellyfin/jellyfin-web/57989.29c408085c4b804bb9ab.chunk.js
+jellyfin/jellyfin-web/57949.76df63451096cb929ab8.chunk.js
+jellyfin/jellyfin-web/57965.aebfb5c8f556817d9a21.chunk.js
+jellyfin/jellyfin-web/57989.0a3412ae9be59ae14790.chunk.js
 jellyfin/jellyfin-web/57989.css
 jellyfin/jellyfin-web/57a5de6cb3e21c898ca0.woff2
 jellyfin/jellyfin-web/57eba5e385c201e90ba4.woff2
@@ -1287,7 +1290,7 @@ jellyfin/jellyfin-web/6157.755414f6246906e96f94.chunk.js
 jellyfin/jellyfin-web/61695.c06722de7b40dc449078.chunk.js
 jellyfin/jellyfin-web/6171fbbbf67ea073d45d.woff2
 jellyfin/jellyfin-web/61745.a12f9b94b300c874c5fb.chunk.js
-jellyfin/jellyfin-web/61772.ea4b6fda2103db43d817.chunk.js
+jellyfin/jellyfin-web/61772.bd4512470a08a1fdd924.chunk.js
 jellyfin/jellyfin-web/61910.748f3fcbbfd9d6e6208e.chunk.js
 jellyfin/jellyfin-web/61910.748f3fcbbfd9d6e6208e.chunk.js.LICENSE.txt
 jellyfin/jellyfin-web/61910.css
@@ -1345,8 +1348,6 @@ jellyfin/jellyfin-web/65920.e0ba04c02bf1d9c21e11.chunk.js
 jellyfin/jellyfin-web/66036eeef2e6d391caff.woff2
 jellyfin/jellyfin-web/6609412e568267df4e74.woff2
 jellyfin/jellyfin-web/66124.c6b65153a8e09489b89c.chunk.js
-jellyfin/jellyfin-web/66161.7a633fb7b947bf426a30.chunk.js
-jellyfin/jellyfin-web/66161.css
 jellyfin/jellyfin-web/661b975f785f35407327.woff2
 jellyfin/jellyfin-web/66429.46d365b88e6331aabe7b.chunk.js
 jellyfin/jellyfin-web/6643d7c561fe7bfcfba8.woff2
@@ -1424,7 +1425,7 @@ jellyfin/jellyfin-web/6fb7986d210a1e088370.woff2
 jellyfin/jellyfin-web/6fcdfa554d6bd6088fb1.woff2
 jellyfin/jellyfin-web/6fcf3734949b5ddb572a.woff2
 jellyfin/jellyfin-web/7006.0e66e010907144fcddd5.chunk.js
-jellyfin/jellyfin-web/70179.41a5303ffde1beb038a6.chunk.js
+jellyfin/jellyfin-web/70179.1d01ad9731b58acf2a71.chunk.js
 jellyfin/jellyfin-web/70242.50f1516209af161ccd2c.chunk.js
 jellyfin/jellyfin-web/7029362e008da676db5a.woff2
 jellyfin/jellyfin-web/70356.4afc14f00101664cf3c5.chunk.js
@@ -1469,8 +1470,8 @@ jellyfin/jellyfin-web/72681.f15a67ef9573eeb941c7.chunk.js
 jellyfin/jellyfin-web/72757e1d18e0fa497986.woff2
 jellyfin/jellyfin-web/73041.23668e6acc571aa4cc8e.chunk.js
 jellyfin/jellyfin-web/73073.806c392db1d39e7d95ce.chunk.js
-jellyfin/jellyfin-web/73233.bce0f70761dae6c47906.chunk.js
-jellyfin/jellyfin-web/73233.bce0f70761dae6c47906.chunk.js.LICENSE.txt
+jellyfin/jellyfin-web/73233.4d2a29454aacb263d3bf.chunk.js
+jellyfin/jellyfin-web/73233.4d2a29454aacb263d3bf.chunk.js.LICENSE.txt
 jellyfin/jellyfin-web/7342add5cf2584768f39.woff2
 jellyfin/jellyfin-web/73557.abd19ba36decdede4b55.chunk.js
 jellyfin/jellyfin-web/73653.8004f6663de665b68f13.chunk.js
@@ -1548,7 +1549,7 @@ jellyfin/jellyfin-web/79689.9966294cf3023e27ad8e.chunk.js
 jellyfin/jellyfin-web/79689.css
 jellyfin/jellyfin-web/79718.css
 jellyfin/jellyfin-web/79870.e1aa0430dd129e2e3fb7.chunk.js
-jellyfin/jellyfin-web/79883.e4ea62be83d2d022dc56.chunk.js
+jellyfin/jellyfin-web/79883.07ab24ac771dd1515c67.chunk.js
 jellyfin/jellyfin-web/7a1542d231ba61833416.woff2
 jellyfin/jellyfin-web/7a54230b35618763e901.woff2
 jellyfin/jellyfin-web/7a98199876448e42f762.woff2
@@ -1926,7 +1927,7 @@ jellyfin/jellyfin-web/abe872a06f29dc88808e.woff2
 jellyfin/jellyfin-web/ac28acdb2eb54b035c4e.woff2
 jellyfin/jellyfin-web/ac8fedc5ab0769ed78ab.woff2
 jellyfin/jellyfin-web/acbe0b4ba251a4521c29.woff2
-jellyfin/jellyfin-web/activity.1c75868df3834479b790.chunk.js
+jellyfin/jellyfin-web/activity.62ec82ac8701cfdde45f.chunk.js
 jellyfin/jellyfin-web/ad06b49a79d0a7ff7241.woff2
 jellyfin/jellyfin-web/adb3e5a2440cba7aa4ed.woff2
 jellyfin/jellyfin-web/adb447e9130ac8b428f8.woff2
@@ -2221,8 +2222,8 @@ jellyfin/jellyfin-web/dashboard-apikeys.897d730173d6474b2760.chunk.js
 jellyfin/jellyfin-web/dashboard-dashboard-html.1cc5e3ccaea4ffd9100b.chunk.js
 jellyfin/jellyfin-web/dashboard-dashboard-scss.c6f88c4460b9eb0e96d8.chunk.js
 jellyfin/jellyfin-web/dashboard-dashboard-scss.css
-jellyfin/jellyfin-web/dashboard-dashboard.a2857bd1750b5b33db7f.chunk.js
-jellyfin/jellyfin-web/dashboard-dashboard.a2857bd1750b5b33db7f.chunk.js.LICENSE.txt
+jellyfin/jellyfin-web/dashboard-dashboard.717ea20f5488878c23d3.chunk.js
+jellyfin/jellyfin-web/dashboard-dashboard.717ea20f5488878c23d3.chunk.js.LICENSE.txt
 jellyfin/jellyfin-web/dashboard-dashboard.css
 jellyfin/jellyfin-web/dashboard-devices-device-html.6958395090993bb794a8.chunk.js
 jellyfin/jellyfin-web/dashboard-devices-device.67b578a2309d82328331.chunk.js
@@ -2353,7 +2354,7 @@ jellyfin/jellyfin-web/efc376e3e87e9684cf4e.woff2
 jellyfin/jellyfin-web/efe801fcd02f7cac8e33.woff2
 jellyfin/jellyfin-web/el-json.fc9eb5e95011968a4ef9.chunk.js
 jellyfin/jellyfin-web/en-gb-json.82ed95f640b0538b2c75.chunk.js
-jellyfin/jellyfin-web/en-us-json.aed814678aaadfab3be8.chunk.js
+jellyfin/jellyfin-web/en-us-json.72295a24638e8a565dda.chunk.js
 jellyfin/jellyfin-web/eo-json.8bf85b28fb943743b9a2.chunk.js
 jellyfin/jellyfin-web/es-ar-json.b54c11410a8a0ff82f82.chunk.js
 jellyfin/jellyfin-web/es-json.f39f4527955eb687b2e2.chunk.js
@@ -2555,9 +2556,9 @@ jellyfin/jellyfin-web/mg-json.963c9aa02ad60a2f48e6.chunk.js
 jellyfin/jellyfin-web/mk-json.b4d66453283100586558.chunk.js
 jellyfin/jellyfin-web/ml-json.46174767d9475bc71eb0.chunk.js
 jellyfin/jellyfin-web/mn-json.fcca43bc41c2d46ccd2a.chunk.js
-jellyfin/jellyfin-web/movies-moviecollections.4c845bbb1ec611fae2c4.chunk.js
-jellyfin/jellyfin-web/movies-moviecollections.4c845bbb1ec611fae2c4.chunk.js.LICENSE.txt
 jellyfin/jellyfin-web/movies-moviecollections.css
+jellyfin/jellyfin-web/movies-moviecollections.ff1c945c5b87b72264ee.chunk.js
+jellyfin/jellyfin-web/movies-moviecollections.ff1c945c5b87b72264ee.chunk.js.LICENSE.txt
 jellyfin/jellyfin-web/movies-moviegenres.css
 jellyfin/jellyfin-web/movies-moviegenres.d8d491287479b136b3af.chunk.js
 jellyfin/jellyfin-web/movies-moviegenres.d8d491287479b136b3af.chunk.js.LICENSE.txt
@@ -2686,12 +2687,12 @@ jellyfin/jellyfin-web/photoPlayer-plugin.04319ac45beaf96b0e64.chunk.js
 jellyfin/jellyfin-web/pl-json.e051b04886f158bfd946.chunk.js
 jellyfin/jellyfin-web/playAccessValidation-plugin.72e988f8da43b6452d56.chunk.js
 jellyfin/jellyfin-web/playback-queue-index-html.44a444c26179cbc1ee51.chunk.js
-jellyfin/jellyfin-web/playback-queue.59b9ef2de9c372cefc52.chunk.js
-jellyfin/jellyfin-web/playback-queue.59b9ef2de9c372cefc52.chunk.js.LICENSE.txt
 jellyfin/jellyfin-web/playback-queue.css
+jellyfin/jellyfin-web/playback-queue.e915c78691699b34db7d.chunk.js
+jellyfin/jellyfin-web/playback-queue.e915c78691699b34db7d.chunk.js.LICENSE.txt
 jellyfin/jellyfin-web/playback-trickplay.f3b10364c50045fecddd.chunk.js
 jellyfin/jellyfin-web/playback-video-index-html.e2066c044cbb03d1d7f2.chunk.js
-jellyfin/jellyfin-web/playback-video.7265567fbee96eeab2ec.chunk.js
+jellyfin/jellyfin-web/playback-video.4c5c128439b53dd6fae9.chunk.js
 jellyfin/jellyfin-web/playback-video.css
 jellyfin/jellyfin-web/pr-json.ebd2934674c4ff6f095b.chunk.js
 jellyfin/jellyfin-web/pt-br-json.71ead2e7390b7ea1a7ed.chunk.js
@@ -2708,8 +2709,8 @@ jellyfin/jellyfin-web/routes.css
 jellyfin/jellyfin-web/ru-json.362d85665f7e9b7bd42f.chunk.js
 jellyfin/jellyfin-web/runtime.bundle.js
 jellyfin/jellyfin-web/search.css
-jellyfin/jellyfin-web/search.eecf9741f0f371b75924.chunk.js
-jellyfin/jellyfin-web/search.eecf9741f0f371b75924.chunk.js.LICENSE.txt
+jellyfin/jellyfin-web/search.f4ba51fb960680a69a73.chunk.js
+jellyfin/jellyfin-web/search.f4ba51fb960680a69a73.chunk.js.LICENSE.txt
 jellyfin/jellyfin-web/serviceworker.js
 jellyfin/jellyfin-web/session-addServer-index-html.f7af069cf025b73b94b7.chunk.js
 jellyfin/jellyfin-web/session-addServer.c8eadfb6c91c8fcfa1a8.chunk.js
@@ -2836,7 +2837,7 @@ jellyfin/jellyfin-web/user-playback-index-html.790048974d41c90271a2.chunk.js
 jellyfin/jellyfin-web/user-playback.css
 jellyfin/jellyfin-web/user-playback.d0eeb5d9d46af5b061fe.chunk.js
 jellyfin/jellyfin-web/user-subtitles-index-html.514ead6fd3cfc3016648.chunk.js
-jellyfin/jellyfin-web/user-subtitles.72fd080d2d57f46e5d14.chunk.js
+jellyfin/jellyfin-web/user-subtitles.1d5461b4cb49de160f66.chunk.js
 jellyfin/jellyfin-web/user-subtitles.css
 jellyfin/jellyfin-web/user-userprofile.4e681d0e8676509d4626.chunk.js
 jellyfin/jellyfin-web/user-userprofile.css
