@@ -1,0 +1,3 @@
+sopel-help is a plugin for irc/py-sopel that provides help information
+invoked by the .help command in an IRC chat. It was a built-in
+command, but now it is separate like any other Sopel plugin.
