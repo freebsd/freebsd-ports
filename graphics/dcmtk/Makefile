@@ -34,6 +34,8 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
 TEST_TARGET=	test test-exhaustive
 
+PORTSCOUT=	limit:^.*[0-9].*$$ # prevent tags like latest
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH:Mpowerpc*} && ${COMPILER_VERSION} == 140
