@@ -105,7 +105,7 @@ EMACS_FLAVOR=	full
 .  endif
 
 .  if ${FLAVOR:Mdevel*}
-EMACS_VER=		30.0.50
+EMACS_VER=		31.0.50
 EMACS_PORTDIR=		editors/emacs-devel
 .  else
 EMACS_VER=		29.4
