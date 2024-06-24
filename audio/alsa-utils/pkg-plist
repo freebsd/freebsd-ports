@@ -11,6 +11,7 @@ bin/aplaymidi
 bin/arecord
 bin/arecordmidi
 bin/aseqdump
+bin/aseqsend
 bin/aseqnet
 bin/axfer
 bin/iecset
@@ -34,6 +35,7 @@ lib/udev/90-alsa-restore.rules
 %%MANPAGES%%share/man/man1/arecord.1.gz
 %%MANPAGES%%share/man/man1/arecordmidi.1.gz
 %%MANPAGES%%share/man/man1/aseqdump.1.gz
+%%MANPAGES%%share/man/man1/aseqsend.1.gz
 %%MANPAGES%%share/man/man1/aseqnet.1.gz
 %%MANPAGES%%share/man/man1/axfer-list.1.gz
 %%MANPAGES%%share/man/man1/axfer-transfer.1.gz
