@@ -148,6 +148,7 @@ ZSTD_CONFIGURE_WITH=	zstd
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 SPONSORSHIP_PLATFORMS=	GITHUB:upstream
+GITHUB_UPSTREAM_SPONSOR_HANDLE=	curl
 
 .include <bsd.port.pre.mk>
 
