@@ -1,7 +1,6 @@
 PORTNAME=	lscolors
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.0
-PORTREVISION=	3
+DISTVERSION=	0.18.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,29 +19,29 @@ GH_ACCOUNT=	sharkdp
 
 CARGO_FEATURES=	nu-ansi-term
 CARGO_CRATES=	ansi_term-0.12.1 \
-		autocfg-1.1.0 \
-		bitflags-1.3.2 \
-		bitflags-2.4.2 \
+		autocfg-1.3.0 \
+		bitflags-2.5.0 \
 		cfg-if-1.0.0 \
 		crossterm-0.27.0 \
 		crossterm_winapi-0.9.1 \
-		errno-0.3.8 \
-		fastrand-2.0.1 \
-		libc-0.2.153 \
-		linux-raw-sys-0.4.13 \
-		lock_api-0.4.11 \
+		errno-0.3.9 \
+		fastrand-2.1.0 \
+		libc-0.2.155 \
+		linux-raw-sys-0.4.14 \
+		lock_api-0.4.12 \
 		log-0.4.21 \
 		mio-0.8.11 \
 		nu-ansi-term-0.50.0 \
-		parking_lot-0.12.1 \
-		parking_lot_core-0.9.9 \
-		redox_syscall-0.4.1 \
-		rustix-0.38.31 \
+		owo-colors-4.0.0 \
+		parking_lot-0.12.3 \
+		parking_lot_core-0.9.10 \
+		redox_syscall-0.5.2 \
+		rustix-0.38.34 \
 		scopeguard-1.2.0 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.3 \
-		signal-hook-registry-1.4.1 \
-		smallvec-1.13.1 \
+		signal-hook-registry-1.4.2 \
+		smallvec-1.13.2 \
 		tempfile-3.10.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
@@ -51,21 +50,22 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.4 \
+		windows-targets-0.52.5 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.4 \
+		windows_aarch64_gnullvm-0.52.5 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.4 \
+		windows_aarch64_msvc-0.52.5 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.4 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.4 \
+		windows_i686_msvc-0.52.5 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.4 \
+		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.4
+		windows_x86_64_msvc-0.52.5
 
 PLIST_FILES=	bin/${PORTNAME}
 
