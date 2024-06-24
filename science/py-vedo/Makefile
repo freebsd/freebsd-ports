@@ -1,5 +1,5 @@
 PORTNAME=	vedo
-DISTVERSION=	2023.5.0
+DISTVERSION=	2024.5.2
 CATEGORIES=	science graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,9 +11,9 @@ WWW=		https://vedo.embl.es/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}deprecated>0:devel/py-deprecated@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR} \
 		vtk${VTK_VER:R}>0:math/vtk${VTK_VER:R} \
 		bash:shells/bash
 
@@ -22,7 +22,14 @@ USE_PYTHON=	distutils concurrent autoplist
 
 SHEBANG_GLOB=	*.sh
 
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
 NO_ARCH=	yes
+
+do-test: # run some examples as tests
+.for example in advanced/interpolate_scalar3.py advanced/spline_draw.py advanced/warp6.py simulations/optics_main3.py
+	@${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${WRKSRC}/examples/${example}
+.endfor
 
 .include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>
