@@ -1,4 +1,4 @@
---- ui/base/x/x11_display_util.cc.orig	2024-04-15 20:34:29 UTC
+--- ui/base/x/x11_display_util.cc.orig	2024-06-24 11:27:31 UTC
 +++ ui/base/x/x11_display_util.cc
 @@ -14,7 +14,6 @@
  
@@ -166,7 +166,7 @@
    return displays;
  }
  
-@@ -307,16 +260,7 @@ std::vector<display::Display> BuildDisplaysFromXRandRI
+@@ -308,16 +261,7 @@ std::vector<display::Display> BuildDisplaysFromXRandRI
    auto x_root_window = ui::GetX11RootWindow();
    std::vector<display::Display> displays;
  
@@ -184,7 +184,7 @@
    if (!resources) {
      LOG(ERROR) << "XRandR returned no displays; falling back to root window";
      return GetFallbackDisplayList(primary_scale, primary_display_index_out);
-@@ -325,65 +269,21 @@ std::vector<display::Display> BuildDisplaysFromXRandRI
+@@ -326,65 +270,21 @@ std::vector<display::Display> BuildDisplaysFromXRandRI
    const int depth = connection->default_screen().root_depth;
    const int bits_per_component = DefaultBitsPerComponent();
  
@@ -214,7 +214,7 @@
 -  connection->Flush();
 -
 -  std::vector<x11::Future<x11::GetPropertyReply>> icc_futures{n_iccs};
--  if (!base::CommandLine::ForCurrentProcess()->HasSwitch(switches::kHeadless)) {
+-  if (!command_line->HasSwitch(switches::kHeadless)) {
 -    for (size_t monitor = 0; monitor < n_iccs; ++monitor) {
 -      icc_futures[monitor] = GetIccProfileFuture(connection, monitor);
 -    }
@@ -255,7 +255,7 @@
      if (!output_info) {
        continue;
      }
-@@ -398,16 +298,15 @@ std::vector<display::Display> BuildDisplaysFromXRandRI
+@@ -399,16 +299,15 @@ std::vector<display::Display> BuildDisplaysFromXRandRI
        continue;
      }
  
@@ -277,7 +277,7 @@
      auto output_32 = static_cast<uint32_t>(output_id);
      int64_t display_id =
          output_32 > 0xff ? 0 : edid_parser.GetIndexBasedDisplayId(output_32);
-@@ -462,9 +361,8 @@ std::vector<display::Display> BuildDisplaysFromXRandRI
+@@ -470,9 +369,8 @@ std::vector<display::Display> BuildDisplaysFromXRandRI
      }
  
      if (!display::HasForceDisplayColorProfile()) {
@@ -289,7 +289,7 @@
        gfx::ColorSpace color_space = icc_profile.GetPrimariesOnlyColorSpace();
  
        // Most folks do not have an ICC profile set up, but we still want to
-@@ -509,24 +407,63 @@ std::vector<display::Display> BuildDisplaysFromXRandRI
+@@ -517,24 +415,63 @@ std::vector<display::Display> BuildDisplaysFromXRandRI
      ConvertDisplayBoundsToDips(&displays, *primary_display_index_out);
    }
  
