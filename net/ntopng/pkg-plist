@@ -312,7 +312,6 @@ share/man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/callbacks/minute-delayed/interface/interface_checks.lua
 %%DATADIR%%/scripts/callbacks/minute-delayed/interface/local_network_checks.lua
 %%DATADIR%%/scripts/callbacks/minute-delayed/system/radius_accounting.lua
-%%DATADIR%%/scripts/callbacks/minute/interface/localhosts_stats.lua
 %%DATADIR%%/scripts/callbacks/minute/interface/timeseries.lua
 %%DATADIR%%/scripts/callbacks/minute/system/active_monitoring.lua
 %%DATADIR%%/scripts/callbacks/minute/system/dispatch_message_example.lua
