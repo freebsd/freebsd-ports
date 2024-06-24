@@ -1,6 +1,6 @@
 PORTNAME=	proxygen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.05.20.00
+DISTVERSION=	2024.06.24.00
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,6 +9,8 @@ WWW=		https://github.com/facebook/proxygen
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		link fails: typeinfo for snappy::Source, see https://github.com/facebook/proxygen/issues/503
 
 BUILD_DEPENDS=	bash:shells/bash \
 		gperf>0:devel/gperf
