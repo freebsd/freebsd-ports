@@ -1,6 +1,5 @@
 PORTNAME=	chafa
-PORTVERSION=	1.14.0
-PORTREVISION=	1
+DISTVERSION=	1.14.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://hpjansson.org/chafa/releases/ \
 		https://github.com/hpjansson/chafa/releases/download/${PORTVERSION}/
@@ -14,7 +13,9 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LESSER
 
-LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+LIB_DEPENDS=	libavif.so:graphics/libavif \
+		libfreetype.so:print/freetype2 \
+		libjxl_threads.so:graphics/libjxl \
 		libtiff.so:graphics/tiff \
 		libwebpdemux.so:graphics/webp
 
@@ -31,6 +32,13 @@ CONFIGURE_ENV+=	WEBP_CFLAGS='-lwebp'
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+# Remove when releng/13.2 is EoL
+.if ${OSVERSION} < 1303001 && ${ARCH} == "i386"
+BROKEN=		error: libchafa.so: undefined reference to _mm_extract_epi64
+.endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 \
