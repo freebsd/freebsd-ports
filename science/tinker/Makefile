@@ -1,5 +1,6 @@
 PORTNAME=	tinker
 DISTVERSION=	8.11.3
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://dasher.wustl.edu/tinker/downloads/
 
