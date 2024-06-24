@@ -1,5 +1,5 @@
 PORTNAME=	phpstorm
-PORTVERSION=	2024.1.3
+PORTVERSION=	2024.1.4
 CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/webide/
 PKGNAMEPREFIX=	jetbrains-
@@ -35,7 +35,7 @@ NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
-WRKSRC=		${WRKDIR}/PhpStorm-241.17890.8
+WRKSRC=		${WRKDIR}/PhpStorm-241.18034.69
 
 _PTY4J_ARCH=	freebsd/${ARCH:S/amd64/x86-64/}
 _SQLITE_ARCH=	linux-${ARCH:S/amd64/x86_64/}
