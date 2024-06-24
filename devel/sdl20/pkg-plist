@@ -91,7 +91,7 @@ lib/cmake/SDL2/SDL2testTargets.cmake
 lib/cmake/SDL2/sdlfind.cmake
 lib/libSDL2-2.0.so
 lib/libSDL2-2.0.so.0
-lib/libSDL2-2.0.so.0.3000.3
+lib/libSDL2-2.0.so.0.3000.5
 lib/libSDL2.a
 lib/libSDL2.so
 lib/libSDL2_test.a
