@@ -1,6 +1,6 @@
 OctoSQL is predominantly a CLI tool which lets you query a plethora of
-databases and file formats using SQL through a unified interface, even do JOINs
-between them.
+databases and file formats using SQL through a unified interface, even do
+JOINs between them.
 
-At the same time it's an easily extensible full-blown dataflow engine, and you
-can use it to add a SQL interface to your own applications.
+At the same time it's an easily extensible full-blown dataflow engine, and
+you can use it to add a SQL interface to your own applications.
