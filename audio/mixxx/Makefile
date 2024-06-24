@@ -1,24 +1,26 @@
 PORTNAME=	mixxx
-DISTVERSION=	2.3.6
-PORTREVISION=	2
+DISTVERSION=	2.4.1
 CATEGORIES=	audio
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	4e4d4e866ef86bb4d196a1903778697552cca05a.patch:-p1 \
+		ed547fd2b0f9dee98740fcf32c1307a092470322.patch:-p1 \
+		c052808ca4b27050e99ce9fab9f0b53e90377eed.patch:-p1 \
+		c4b3a7e91c56cea7f9bd1c18c1fe01d9da705144.patch:-p1
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	DJ mixing application
 WWW=		https://mixxx.org/
 
-PATCH_SITES=	https://github.com/mixxxdj/mixxx/commit/
-PATCHFILES+=	1dd2ae25e065401371800ad76cb813021702a9e1.patch:-p1 # Fix build with Taglib 2.x
-PATCHFILES+=	5afd1186edf22e4ef95966ca7021cc943f5dc7e8.patch:-p1
-PATCHFILES+=	ed547fd2b0f9dee98740fcf32c1307a092470322.patch:-p1
-PATCHFILES+=	c052808ca4b27050e99ce9fab9f0b53e90377eed.patch:-p1
-PATCHFILES+=	c4b3a7e91c56cea7f9bd1c18c1fe01d9da705144.patch:-p1
-
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	lv2>=1.14.0:audio/lv2
-LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
+BUILD_DEPENDS=	benchmark>0:devel/benchmark \
+		googletest>0:devel/googletest \
+		lv2>=1.14.0:audio/lv2 \
+		microsoft-gsl>0:devel/microsoft-gsl
+LIB_DEPENDS=	libabsl_base.so:devel/abseil \
+		libchromaprint.so:audio/chromaprint \
 		libFLAC.so:audio/flac \
 		libfftw3.so:math/fftw3 \
 		libhidapi.so:comms/hidapi \
@@ -39,15 +41,15 @@ LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 		libkeyfinder.so:audio/libkeyfinder \
 		libmp3lame.so:audio/lame
 
-USES=		cmake compiler:c++11-lang ebur128 gl iconv ninja qt:5 pkgconfig \
+USES=		cmake:testing compiler:c++20-lang ebur128 gl iconv ninja qt:5 pkgconfig \
 		sqlite ssl xorg
 USE_XORG=	ice sm x11 xext
 USE_GL=		gl glu
 USE_GITHUB=	yes
 GH_ACCOUNT=	mixxxdj
-USE_QT=		buildtools concurrent core dbus gui linguisttools:build network \
-		opengl qmake:build  script scripttools sql sql-sqlite3 svg \
-		testlib x11extras xml xmlpatterns widgets
+USE_QT=		buildtools concurrent core dbus declarative gui linguisttools:build \
+		network opengl printsupport qmake:build sql sql-sqlite3 svg testlib \
+		widgets x11extras xml
 
 CONFLICTS=	mixxx22*
 
@@ -60,7 +62,7 @@ CMAKE_ARGS+=	-DINSTALL_USER_UDEV_RULES:BOOL=OFF \
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		BROADCAST DOCS FFMPEG GPERFTOOLS HID OPUS \
+OPTIONS_DEFINE=		BROADCAST DOCS ENGINEPRIME FFMPEG GPERFTOOLS HID OPUS \
 			QTKEYCHAIN WAVPACK
 OPTIONS_DEFAULT=	BROADCAST FFMPEG HID OPUS QTKEYCHAIN WAVPACK
 OPTIONS_SUB=		yes
@@ -68,6 +70,9 @@ OPTIONS_SUB=		yes
 BROADCAST_DESC=		Live Broadcasting (Shoutcast) support
 #BROADCAST_LIB_DEPENDS=	libshout-idjc.so:audio/shout-idjc
 BROADCAST_CMAKE_BOOL=	BROADCAST
+ENGINEPRIME_DESC=	Denon Engine Prime library export support
+ENGINEPRIME_LIB_DEPENDS=	libdjinterop.so:audio/libdjinterop
+ENGINEPRIME_CMAKE_BOOL=	ENGINEPRIME
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CMAKE_BOOL=	FFMPEG
 GPERFTOOLS_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools

@@ -6,6 +6,7 @@ share/icons/hicolor/32x32/apps/mixxx.png
 share/icons/hicolor/512x512/apps/mixxx.png
 share/icons/hicolor/64x64/apps/mixxx.png
 share/icons/hicolor/scalable/apps/mixxx.svg
+share/icons/hicolor/scalable/apps/mixxx_macos.svg
 share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/controllers/.eslintrc.json
 %%DATADIR%%/controllers/Akai MPD24.midi.xml
@@ -100,6 +101,7 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/controllers/Hercules DJ Control MP3.midi.xml
 %%DATADIR%%/controllers/Hercules DJ Control Steel.midi.xml
 %%DATADIR%%/controllers/Hercules DJControl Compact.midi.xml
+%%DATADIR%%/controllers/Hercules DJControl MIX.midi.xml
 %%DATADIR%%/controllers/Hercules DJControl Starlight.midi.xml
 %%DATADIR%%/controllers/Hercules P32 DJ.midi.xml
 %%DATADIR%%/controllers/Hercules-DJ-Console-4-Mx-scripts.js
@@ -118,6 +120,7 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/controllers/Hercules-DJControl-Compact-scripts.js
 %%DATADIR%%/controllers/Hercules-DJControl-Inpulse-200-script.js
 %%DATADIR%%/controllers/Hercules-DJControl-Inpulse-300-script.js
+%%DATADIR%%/controllers/Hercules-DJControl-MIX-scripts.js
 %%DATADIR%%/controllers/Hercules-DJControl-Starlight-scripts.js
 %%DATADIR%%/controllers/Hercules-P32-scripts.js
 %%DATADIR%%/controllers/Hercules-mp3e2-compat.js
@@ -157,9 +160,11 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/controllers/Nintendo-Wiimote.js
 %%DATADIR%%/controllers/Novation Dicer.midi.xml
 %%DATADIR%%/controllers/Novation Launchpad MK2.midi.xml
+%%DATADIR%%/controllers/Novation Launchpad Mini MK3.midi.xml
 %%DATADIR%%/controllers/Novation Launchpad.midi.xml
 %%DATADIR%%/controllers/Novation-Dicer-scripts.js
 %%DATADIR%%/controllers/Novation-Launchpad MK2-scripts.js
+%%DATADIR%%/controllers/Novation-Launchpad Mini MK3-scripts.js
 %%DATADIR%%/controllers/Novation-Launchpad-Mini-scripts.js
 %%DATADIR%%/controllers/Novation-Launchpad-Mini.midi.xml
 %%DATADIR%%/controllers/Novation-Launchpad-scripts.js
@@ -207,6 +212,8 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/controllers/Pioneer-DDJ-200-scripts.js
 %%DATADIR%%/controllers/Pioneer-DDJ-400-script.js
 %%DATADIR%%/controllers/Pioneer-DDJ-400.midi.xml
+%%DATADIR%%/controllers/Pioneer-DDJ-FLX4-script.js
+%%DATADIR%%/controllers/Pioneer-DDJ-FLX4.midi.xml
 %%DATADIR%%/controllers/Pioneer-DDJ-SB-scripts.js
 %%DATADIR%%/controllers/Pioneer-DDJ-SB.midi.xml
 %%DATADIR%%/controllers/Pioneer-DDJ-SB2-scripts.js
@@ -251,14 +258,18 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/controllers/Traktor Kontrol S2 Mk2.hid.xml
 %%DATADIR%%/controllers/Traktor Kontrol S3.hid.xml
 %%DATADIR%%/controllers/Traktor Kontrol S4 MK2.hid.xml
+%%DATADIR%%/controllers/Traktor Kontrol S4 MK3.hid.xml
 %%DATADIR%%/controllers/Traktor Kontrol X1.midi.xml
+%%DATADIR%%/controllers/Traktor Kontrol Z1.hid.xml
 %%DATADIR%%/controllers/Traktor-Kontrol-F1-scripts.js
 %%DATADIR%%/controllers/Traktor-Kontrol-S2-MK1-hid-scripts.js
 %%DATADIR%%/controllers/Traktor-Kontrol-S2-MK2-hid-scripts.js
 %%DATADIR%%/controllers/Traktor-Kontrol-S2-MK3-hid-scripts.js
 %%DATADIR%%/controllers/Traktor-Kontrol-S3-hid-scripts.js
 %%DATADIR%%/controllers/Traktor-Kontrol-S4-MK2-hid-scripts.js
+%%DATADIR%%/controllers/Traktor-Kontrol-S4-MK3.js
 %%DATADIR%%/controllers/Traktor-Kontrol-X1.js
+%%DATADIR%%/controllers/Traktor-Kontrol-Z1-scripts.js
 %%DATADIR%%/controllers/Vestax Spin.midi.xml
 %%DATADIR%%/controllers/Vestax Typhoon Enhanced.midi.xml
 %%DATADIR%%/controllers/Vestax Typhoon.midi.xml
@@ -278,99 +289,25 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/controllers/Vestax-VCI-400-scripts.js
 %%DATADIR%%/controllers/Wireless DJ App.midi.xml
 %%DATADIR%%/controllers/Wireless-DJ-scripts.js
+%%DATADIR%%/controllers/Yaeltex MiniMixxx.midi.xml
+%%DATADIR%%/controllers/Yaeltex-MiniMixxx-scripts.js
+%%DATADIR%%/controllers/color-mapper-api.d.ts
 %%DATADIR%%/controllers/common-bulk-midi.js
 %%DATADIR%%/controllers/common-controller-scripts.js
 %%DATADIR%%/controllers/common-hid-devices.js
 %%DATADIR%%/controllers/common-hid-packet-parser.js
-%%DATADIR%%/controllers/korg_nanokontrol2.mixco.output.js
-%%DATADIR%%/controllers/korg_nanokontrol2.mixco.output.midi.xml
+%%DATADIR%%/controllers/console-api.d.ts
+%%DATADIR%%/controllers/engine-api.d.ts
+%%DATADIR%%/controllers/hid-controller-api.d.ts
 %%DATADIR%%/controllers/lodash.mixxx.js
-%%DATADIR%%/controllers/maudio_xponent.mixco.output.js
-%%DATADIR%%/controllers/maudio_xponent.mixco.output.midi.xml
 %%DATADIR%%/controllers/midi-components-0.0.js
-%%DATADIR%%/controllers/mixco/README.md
-%%DATADIR%%/controllers/mixco/korg_nanokontrol2.mixco.litcoffee
-%%DATADIR%%/controllers/mixco/maudio_xponent.mixco.litcoffee
-%%DATADIR%%/controllers/mixco/novation_twitch.mixco.js
-%%DATADIR%%/controllers/novation-launchpad/.babelrc
-%%DATADIR%%/controllers/novation-launchpad/.editorconfig
-%%DATADIR%%/controllers/novation-launchpad/.eslintignore
-%%DATADIR%%/controllers/novation-launchpad/.gitignore
-%%DATADIR%%/controllers/novation-launchpad/LICENSE
-%%DATADIR%%/controllers/novation-launchpad/Makefile
-%%DATADIR%%/controllers/novation-launchpad/README.md
-%%DATADIR%%/controllers/novation-launchpad/docs/lp-1.png
-%%DATADIR%%/controllers/novation-launchpad/docs/lp-2.png
-%%DATADIR%%/controllers/novation-launchpad/docs/lp-3.png
-%%DATADIR%%/controllers/novation-launchpad/docs/lp-4.png
-%%DATADIR%%/controllers/novation-launchpad/docs/lp-mki-grande.png
-%%DATADIR%%/controllers/novation-launchpad/docs/lp-mki-juggler.png
-%%DATADIR%%/controllers/novation-launchpad/docs/lp-mki-layout.png
-%%DATADIR%%/controllers/novation-launchpad/docs/lp-mki-sampler.png
-%%DATADIR%%/controllers/novation-launchpad/docs/lp-mki-short.png
-%%DATADIR%%/controllers/novation-launchpad/docs/lp-mki-tall.png
-%%DATADIR%%/controllers/novation-launchpad/lerna.json
-%%DATADIR%%/controllers/novation-launchpad/package.json
-%%DATADIR%%/controllers/novation-launchpad/packages/app/.flowconfig
-%%DATADIR%%/controllers/novation-launchpad/packages/app/flow-typed/mk-specs.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/flow-typed/npm/eventemitter3_v2.x.x.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/package.json
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/Bpm.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/Layout.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/ModifierSidebar.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/PlaylistSidebar.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/Preset.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/Screen.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/controls/beatjump.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/controls/beatloop.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/controls/cue.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/controls/grid.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/controls/hotcue.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/controls/key.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/controls/keyshift.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/controls/load.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/controls/loopIo.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/controls/loopMultiply.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/controls/loopjump.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/controls/nudge.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/controls/pfl.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/controls/play.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/controls/quantize.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/controls/reloop.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/controls/slip.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/controls/sync.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/controls/tap.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/presets/Grande.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/presets/Juggler.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/presets/Sampler.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/presets/Short.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/App/presets/Tall.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/Component.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/Controls/ControlComponent.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/Controls/MidiComponent.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/Launchpad/Button.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/Launchpad/MidiBus.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/Launchpad/index.js
-%%DATADIR%%/controllers/novation-launchpad/packages/app/src/index.js
-%%DATADIR%%/controllers/novation-launchpad/packages/mk-specs@1.0.0/buttons.js
-%%DATADIR%%/controllers/novation-launchpad/packages/mk-specs@1.0.0/colors.js
-%%DATADIR%%/controllers/novation-launchpad/packages/mk-specs@1.0.0/package.json
-%%DATADIR%%/controllers/novation-launchpad/packages/mk-specs@2.0.0/buttons.js
-%%DATADIR%%/controllers/novation-launchpad/packages/mk-specs@2.0.0/colors.js
-%%DATADIR%%/controllers/novation-launchpad/packages/mk-specs@2.0.0/package.json
-%%DATADIR%%/controllers/novation-launchpad/packages/mk1/buttons.js
-%%DATADIR%%/controllers/novation-launchpad/packages/mk1/index.js
-%%DATADIR%%/controllers/novation-launchpad/packages/mk1/package.json
-%%DATADIR%%/controllers/novation-launchpad/packages/mk1/template.xml.ejs
-%%DATADIR%%/controllers/novation-launchpad/packages/mk2/buttons.js
-%%DATADIR%%/controllers/novation-launchpad/packages/mk2/index.js
-%%DATADIR%%/controllers/novation-launchpad/packages/mk2/package.json
-%%DATADIR%%/controllers/novation-launchpad/packages/mk2/template.xml.ejs
-%%DATADIR%%/controllers/novation-launchpad/scripts/compile-mapping.js
-%%DATADIR%%/controllers/novation-launchpad/scripts/compile-scripts.js
-%%DATADIR%%/controllers/novation_twitch.mixco.output.js
-%%DATADIR%%/controllers/novation_twitch.mixco.output.midi.xml
+%%DATADIR%%/controllers/midi-controller-api.d.ts
 %%DATADIR%%/controllers/us428.midi.xml
+%%DATADIR%%/effects/chains/Echoverb HP.xml
+%%DATADIR%%/effects/chains/Filter Echo.xml
+%%DATADIR%%/effects/chains/Mid-Side.xml
+%%DATADIR%%/effects/chains/Side Reverb HP.xml
+%%DATADIR%%/effects/chains/Smooth Growl.xml
 %%DATADIR%%/keyboard/cs_CZ.kbd.cfg
 %%DATADIR%%/keyboard/da_DK.kbd.cfg
 %%DATADIR%%/keyboard/de_CH.kbd.cfg
@@ -383,13 +320,10 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/keyboard/fr_FR.kbd.cfg
 %%DATADIR%%/keyboard/it_IT.kbd.cfg
 %%DATADIR%%/keyboard/ru_RU.kbd.cfg
-%%DATADIR%%/script/.eslintrc.json
-%%DATADIR%%/script/console/__init__.js
-%%DATADIR%%/script/svg/__init__.js
 %%DATADIR%%/skins/Deere (64 Samplers)/sample_decks.xml
 %%DATADIR%%/skins/Deere (64 Samplers)/skin.xml
 %%DATADIR%%/skins/Deere (64 Samplers)/skin_preview.png
-%%DATADIR%%/skins/Deere (64 Samplers)/skin_settings.xml
+%%DATADIR%%/skins/Deere (64 Samplers)/skinsettings_sampler_buttons.xml
 %%DATADIR%%/skins/Deere/auxiliary.xml
 %%DATADIR%%/skins/Deere/auxiliary_unconfigured.xml
 %%DATADIR%%/skins/Deere/beatloop_button.xml
@@ -434,6 +368,10 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Deere/handle-vertical-lime.svg
 %%DATADIR%%/skins/Deere/handle-vertical-orange.svg
 %%DATADIR%%/skins/Deere/handle-vertical-purple.svg
+%%DATADIR%%/skins/Deere/handle-volume-deck1.svg
+%%DATADIR%%/skins/Deere/handle-volume-deck2.svg
+%%DATADIR%%/skins/Deere/handle-volume-deck3.svg
+%%DATADIR%%/skins/Deere/handle-volume-deck4.svg
 %%DATADIR%%/skins/Deere/hide_show_button.xml
 %%DATADIR%%/skins/Deere/hotcue_button.xml
 %%DATADIR%%/skins/Deere/hotcues.xml
@@ -496,6 +434,8 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Deere/icon/ic_fx_mixmode_d+w.svg
 %%DATADIR%%/skins/Deere/icon/ic_fx_mixmode_d-w.svg
 %%DATADIR%%/skins/Deere/icon/ic_headphones_48px.svg
+%%DATADIR%%/skins/Deere/icon/ic_hotcue_loop_dark_48px.svg
+%%DATADIR%%/skins/Deere/icon/ic_hotcue_loop_light_48px.svg
 %%DATADIR%%/skins/Deere/icon/ic_hotcues_earlier_48px.svg
 %%DATADIR%%/skins/Deere/icon/ic_hotcues_later_48px.svg
 %%DATADIR%%/skins/Deere/icon/ic_key_48px.svg
@@ -542,9 +482,13 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Deere/icon/ic_remove_48px.svg
 %%DATADIR%%/skins/Deere/icon/ic_repeat_48px.svg
 %%DATADIR%%/skins/Deere/icon/ic_reverse_48px.svg
+%%DATADIR%%/skins/Deere/icon/ic_settings_22px.svg
 %%DATADIR%%/skins/Deere/icon/ic_settings_48px.svg
 %%DATADIR%%/skins/Deere/icon/ic_slip_48px.svg
 %%DATADIR%%/skins/Deere/icon/ic_spinny_48px.svg
+%%DATADIR%%/skins/Deere/icon/ic_sync_leader_off.svg
+%%DATADIR%%/skins/Deere/icon/ic_sync_leader_off_plain.svg
+%%DATADIR%%/skins/Deere/icon/ic_sync_leader_on.svg
 %%DATADIR%%/skins/Deere/icon/ic_unfold_less_48px.svg
 %%DATADIR%%/skins/Deere/icon/ic_unfold_more_48px.svg
 %%DATADIR%%/skins/Deere/icon/ic_vinylcontrol_1_32px.svg
@@ -604,8 +548,8 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Deere/mixer.xml
 %%DATADIR%%/skins/Deere/mixer_column_eq_left.xml
 %%DATADIR%%/skins/Deere/mixer_column_eq_right.xml
-%%DATADIR%%/skins/Deere/mixer_column_master_vu_2decks.xml
-%%DATADIR%%/skins/Deere/mixer_column_master_vu_4decks.xml
+%%DATADIR%%/skins/Deere/mixer_column_main_vu_2decks.xml
+%%DATADIR%%/skins/Deere/mixer_column_main_vu_4decks.xml
 %%DATADIR%%/skins/Deere/mixer_column_pfl_levels.xml
 %%DATADIR%%/skins/Deere/mixer_column_volume_gain.xml
 %%DATADIR%%/skins/Deere/mixer_controls_2decks_left.xml
@@ -630,6 +574,7 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Deere/skin_settings.xml
 %%DATADIR%%/skins/Deere/skinsettings_button.xml
 %%DATADIR%%/skins/Deere/skinsettings_category_button.xml
+%%DATADIR%%/skins/Deere/skinsettings_sampler_buttons.xml
 %%DATADIR%%/skins/Deere/slider-crossfader-AutoDJ.svg
 %%DATADIR%%/skins/Deere/slider-crossfader.svg
 %%DATADIR%%/skins/Deere/slider-vertical.svg
@@ -655,20 +600,34 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Deere/vumeter_latency.png
 %%DATADIR%%/skins/Deere/vumeter_latency.svg
 %%DATADIR%%/skins/Deere/vumeter_latency.xml
-%%DATADIR%%/skins/Deere/vumeter_master.xml
+%%DATADIR%%/skins/Deere/vumeter_main.xml
 %%DATADIR%%/skins/Deere/vumeter_v.png
 %%DATADIR%%/skins/Deere/vumeter_v.svg
 %%DATADIR%%/skins/Deere/vumeter_v.xml
 %%DATADIR%%/skins/Deere/vumeter_v_bg.png
+%%DATADIR%%/skins/LateNight (64 Samplers)/helpers/skin_settings_samplers.xml
+%%DATADIR%%/skins/LateNight (64 Samplers)/helpers/skin_settings_samplers_64.xml
+%%DATADIR%%/skins/LateNight (64 Samplers)/samplers_rack.xml
+%%DATADIR%%/skins/LateNight (64 Samplers)/skin.xml
+%%DATADIR%%/skins/LateNight (64 Samplers)/skin_preview_Classic.png
+%%DATADIR%%/skins/LateNight (64 Samplers)/skin_preview_PaleMoon.png
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__1.svg
+%%DATADIR%%/skins/LateNight/classic/buttons/btn__1_loop.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__2.svg
+%%DATADIR%%/skins/LateNight/classic/buttons/btn__2_loop.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__3.svg
+%%DATADIR%%/skins/LateNight/classic/buttons/btn__3_loop.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__4.svg
+%%DATADIR%%/skins/LateNight/classic/buttons/btn__4_loop.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__5.svg
+%%DATADIR%%/skins/LateNight/classic/buttons/btn__5_loop.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__6.svg
+%%DATADIR%%/skins/LateNight/classic/buttons/btn__6_loop.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__7.svg
+%%DATADIR%%/skins/LateNight/classic/buttons/btn__7_loop.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__8.svg
+%%DATADIR%%/skins/LateNight/classic/buttons/btn__8_loop.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn___.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn___active.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn___pressed.svg
@@ -736,6 +695,7 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__fx_mixmode_d-w.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__fx_selector_down.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__fx_selector_down_pressed.svg
+%%DATADIR%%/skins/LateNight/classic/buttons/btn__fx_settings.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__fx_toggle.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__fx_toggle_active.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__intro_end.svg
@@ -746,6 +706,7 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__keylock.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__keylock_active_12.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__keylock_active_34.svg
+%%DATADIR%%/skins/LateNight/classic/buttons/btn__leader_deck.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_bpm_down.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_bpm_locked_orange.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_bpm_unlocked_grey.svg
@@ -760,10 +721,8 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_clear_search_focus.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_preview_pause.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_preview_play.svg
-%%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_radio_button_gold_on.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_radio_button_off.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_radio_button_on_yellow.svg
-%%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_radio_button_yellow_on.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_sort_down.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__lib_sort_up.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__loop.svg
@@ -809,6 +768,8 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__split_active.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__star.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__sync_deck.svg
+%%DATADIR%%/skins/LateNight/classic/buttons/btn__sync_leader.svg
+%%DATADIR%%/skins/LateNight/classic/buttons/btn__sync_leader_active.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__sync_sampler.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__xfader_aux_left.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__xfader_aux_left_off.svg
@@ -825,12 +786,14 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__xfader_deck_right_off.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__xfader_deck_right_warning.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__xfader_sampler_left.svg
-%%DATADIR%%/skins/LateNight/classic/buttons/btn__xfader_sampler_master.svg
+%%DATADIR%%/skins/LateNight/classic/buttons/btn__xfader_sampler_main.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn__xfader_sampler_right.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn_elevated_fx.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn_elevated_fx_focus.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn_elevated_fx_selector.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn_elevated_fx_selector_open.svg
+%%DATADIR%%/skins/LateNight/classic/buttons/btn_elevated_headsplit.svg
+%%DATADIR%%/skins/LateNight/classic/buttons/btn_elevated_headsplit_active.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn_elevated_medium.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn_elevated_medium_active.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn_elevated_medium_set.svg
@@ -841,8 +804,6 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/classic/buttons/btn_elevated_square_big.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn_elevated_square_big_active.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn_elevated_square_set.svg
-%%DATADIR%%/skins/LateNight/classic/buttons/btn_elevated_sync.svg
-%%DATADIR%%/skins/LateNight/classic/buttons/btn_elevated_sync_active.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn_elevated_wide.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn_elevated_wide_active.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn_elevated_wide_set.svg
@@ -879,8 +840,6 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/classic/buttons/btn_embedded_square_big.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn_embedded_square_big_active.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn_embedded_square_set.svg
-%%DATADIR%%/skins/LateNight/classic/buttons/btn_embedded_sync.svg
-%%DATADIR%%/skins/LateNight/classic/buttons/btn_embedded_sync_active.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn_embedded_tall.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn_embedded_tall_active.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/btn_embedded_wide.svg
@@ -898,14 +857,14 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/classic/buttons/spinbox_up.svg
 %%DATADIR%%/skins/LateNight/classic/buttons/spinbox_up_pressed.svg
 %%DATADIR%%/skins/LateNight/classic/knobs/knob_bg_fx.svg
-%%DATADIR%%/skins/LateNight/classic/knobs/knob_bg_master.svg
+%%DATADIR%%/skins/LateNight/classic/knobs/knob_bg_main.svg
 %%DATADIR%%/skins/LateNight/classic/knobs/knob_bg_regular.svg
 %%DATADIR%%/skins/LateNight/classic/knobs/knob_bg_small.svg
 %%DATADIR%%/skins/LateNight/classic/knobs/knob_indicator_fx_blue.svg
 %%DATADIR%%/skins/LateNight/classic/knobs/knob_indicator_fx_green.svg
 %%DATADIR%%/skins/LateNight/classic/knobs/knob_indicator_fx_white.svg
-%%DATADIR%%/skins/LateNight/classic/knobs/knob_indicator_master_orange.svg
-%%DATADIR%%/skins/LateNight/classic/knobs/knob_indicator_master_red.svg
+%%DATADIR%%/skins/LateNight/classic/knobs/knob_indicator_main_orange.svg
+%%DATADIR%%/skins/LateNight/classic/knobs/knob_indicator_main_red.svg
 %%DATADIR%%/skins/LateNight/classic/knobs/knob_indicator_regular_blue.svg
 %%DATADIR%%/skins/LateNight/classic/knobs/knob_indicator_regular_green.svg
 %%DATADIR%%/skins/LateNight/classic/knobs/knob_indicator_regular_orange.svg
@@ -955,6 +914,9 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/classic/style/library_branch_closed_selected.svg
 %%DATADIR%%/skins/LateNight/classic/style/library_branch_open.svg
 %%DATADIR%%/skins/LateNight/classic/style/library_branch_open_selected.svg
+%%DATADIR%%/skins/LateNight/classic/style/mark_intro.svg
+%%DATADIR%%/skins/LateNight/classic/style/mark_loop.svg
+%%DATADIR%%/skins/LateNight/classic/style/mark_outro.svg
 %%DATADIR%%/skins/LateNight/classic/style/menu_arrow_white.svg
 %%DATADIR%%/skins/LateNight/classic/style/menu_arrow_yellow.svg
 %%DATADIR%%/skins/LateNight/classic/style/mixxx_logo_small.svg
@@ -1001,7 +963,6 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/controls/button_3state_persist.xml
 %%DATADIR%%/skins/LateNight/controls/button_5state.xml
 %%DATADIR%%/skins/LateNight/controls/button_hotcue.xml
-%%DATADIR%%/skins/LateNight/controls/button_hotcue_inlne_style.xml
 %%DATADIR%%/skins/LateNight/controls/button_special_cue.xml
 %%DATADIR%%/skins/LateNight/controls/button_xfader_aux.xml
 %%DATADIR%%/skins/LateNight/controls/button_xfader_deck.xml
@@ -1033,7 +994,7 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/decks/vinyl_controls.xml
 %%DATADIR%%/skins/LateNight/fx/assign_button.xml
 %%DATADIR%%/skins/LateNight/fx/assign_buttons.xml
-%%DATADIR%%/skins/LateNight/fx/assign_buttons_master.xml
+%%DATADIR%%/skins/LateNight/fx/assign_buttons_main.xml
 %%DATADIR%%/skins/LateNight/fx/focus_button.xml
 %%DATADIR%%/skins/LateNight/fx/meta_knob.xml
 %%DATADIR%%/skins/LateNight/fx/parameter_button.xml
@@ -1045,8 +1006,6 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/fx/unit_parameters_hidden.xml
 %%DATADIR%%/skins/LateNight/fx/unit_parameters_visible.xml
 %%DATADIR%%/skins/LateNight/fx_rack.xml
-%%DATADIR%%/skins/LateNight/helpers/skin_helper_mic_ducking.xml
-%%DATADIR%%/skins/LateNight/helpers/skin_helper_spinny-cover.xml
 %%DATADIR%%/skins/LateNight/helpers/skin_settings_button_2state.xml
 %%DATADIR%%/skins/LateNight/helpers/skin_settings_compact_deck.xml
 %%DATADIR%%/skins/LateNight/helpers/skin_settings_cover.xml
@@ -1057,6 +1016,7 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/helpers/skin_settings_mini_deck.xml
 %%DATADIR%%/skins/LateNight/helpers/skin_settings_numToggle.xml
 %%DATADIR%%/skins/LateNight/helpers/skin_settings_numToggle_header.xml
+%%DATADIR%%/skins/LateNight/helpers/skin_settings_samplers.xml
 %%DATADIR%%/skins/LateNight/library.xml
 %%DATADIR%%/skins/LateNight/mic_aux/aux_unit.xml
 %%DATADIR%%/skins/LateNight/mic_aux/aux_unit_unconfigured.xml
@@ -1075,8 +1035,8 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/misc_res/btn__lib_spinbox_down_white.svg
 %%DATADIR%%/skins/LateNight/misc_res/btn__lib_spinbox_up_black.svg
 %%DATADIR%%/skins/LateNight/misc_res/btn__lib_spinbox_up_white.svg
-%%DATADIR%%/skins/LateNight/misc_res/btn__mastersync_master_off.png
-%%DATADIR%%/skins/LateNight/misc_res/btn__mastersync_master_on.png
+%%DATADIR%%/skins/LateNight/misc_res/btn__mainsync_main_off.png
+%%DATADIR%%/skins/LateNight/misc_res/btn__mainsync_main_on.png
 %%DATADIR%%/skins/LateNight/misc_res/btn__rate_center_cyan.svg
 %%DATADIR%%/skins/LateNight/misc_res/btn__rate_center_off.svg
 %%DATADIR%%/skins/LateNight/misc_res/latency_bg.svg
@@ -1099,7 +1059,7 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/mixer/quick_effect_knob_right.xml
 %%DATADIR%%/skins/LateNight/mixer/singletons.xml
 %%DATADIR%%/skins/LateNight/mixer/vumeter_latency.xml
-%%DATADIR%%/skins/LateNight/mixer/vumeter_master.xml
+%%DATADIR%%/skins/LateNight/mixer/vumeter_main.xml
 %%DATADIR%%/skins/LateNight/mixer/vumeter_single.xml
 %%DATADIR%%/skins/LateNight/mixer/vumeters_compact.xml
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn_.svg
@@ -1107,27 +1067,35 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__1.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__1_active.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__1_active_dark.svg
+%%DATADIR%%/skins/LateNight/palemoon/buttons/btn__1_loop.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__2.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__2_active.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__2_active_dark.svg
+%%DATADIR%%/skins/LateNight/palemoon/buttons/btn__2_loop.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__3.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__3_active.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__3_active_dark.svg
+%%DATADIR%%/skins/LateNight/palemoon/buttons/btn__3_loop.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__4.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__4_active.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__4_active_dark.svg
+%%DATADIR%%/skins/LateNight/palemoon/buttons/btn__4_loop.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__5.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__5_active.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__5_active_dark.svg
+%%DATADIR%%/skins/LateNight/palemoon/buttons/btn__5_loop.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__6.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__6_active.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__6_active_dark.svg
+%%DATADIR%%/skins/LateNight/palemoon/buttons/btn__6_loop.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__7.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__7_active.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__7_active_dark.svg
+%%DATADIR%%/skins/LateNight/palemoon/buttons/btn__7_loop.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__8.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__8_active.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__8_active_dark.svg
+%%DATADIR%%/skins/LateNight/palemoon/buttons/btn__8_loop.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn___active.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn___pressed.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__active.svg
@@ -1200,6 +1168,7 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__fx_mixmode_d+w.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__fx_mixmode_d-w.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__fx_selector_down.svg
+%%DATADIR%%/skins/LateNight/palemoon/buttons/btn__fx_settings.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__fx_toggle.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__fx_toggle_active.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__intro_end.svg
@@ -1291,6 +1260,9 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__star.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__sync_deck.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__sync_deck_active.svg
+%%DATADIR%%/skins/LateNight/palemoon/buttons/btn__sync_leader.svg
+%%DATADIR%%/skins/LateNight/palemoon/buttons/btn__sync_leader_explicit.svg
+%%DATADIR%%/skins/LateNight/palemoon/buttons/btn__sync_leader_implicit.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__sync_sampler.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__sync_sampler_active.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__xfader_aux_left.svg
@@ -1308,7 +1280,7 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__xfader_deck_right_off.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__xfader_deck_right_warning.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__xfader_sampler_left.svg
-%%DATADIR%%/skins/LateNight/palemoon/buttons/btn__xfader_sampler_master.svg
+%%DATADIR%%/skins/LateNight/palemoon/buttons/btn__xfader_sampler_main.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn__xfader_sampler_right.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn_colorpicker.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn_colorpicker_active.svg
@@ -1321,6 +1293,8 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn_embedded_fx_parameter_active.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn_embedded_grid.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn_embedded_grid_active.svg
+%%DATADIR%%/skins/LateNight/palemoon/buttons/btn_embedded_headsplit.svg
+%%DATADIR%%/skins/LateNight/palemoon/buttons/btn_embedded_headsplit_active.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn_embedded_library.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn_embedded_library_active.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn_embedded_library_disabled.svg
@@ -1347,8 +1321,6 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn_embedded_square_big.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn_embedded_square_big_active.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn_embedded_square_set.svg
-%%DATADIR%%/skins/LateNight/palemoon/buttons/btn_embedded_sync.svg
-%%DATADIR%%/skins/LateNight/palemoon/buttons/btn_embedded_sync_active.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn_embedded_tall.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn_embedded_tall_active.svg
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn_embedded_wide.svg
@@ -1356,12 +1328,12 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/palemoon/buttons/btn_flat_square.svg
 %%DATADIR%%/skins/LateNight/palemoon/colorscheme.svg
 %%DATADIR%%/skins/LateNight/palemoon/knobs/knob_bg_fx.svg
-%%DATADIR%%/skins/LateNight/palemoon/knobs/knob_bg_master.svg
+%%DATADIR%%/skins/LateNight/palemoon/knobs/knob_bg_main.svg
 %%DATADIR%%/skins/LateNight/palemoon/knobs/knob_bg_regular.svg
 %%DATADIR%%/skins/LateNight/palemoon/knobs/knob_bg_small.svg
 %%DATADIR%%/skins/LateNight/palemoon/knobs/knob_indicator_fx_grey.svg
-%%DATADIR%%/skins/LateNight/palemoon/knobs/knob_indicator_master_orange.svg
-%%DATADIR%%/skins/LateNight/palemoon/knobs/knob_indicator_master_red.svg
+%%DATADIR%%/skins/LateNight/palemoon/knobs/knob_indicator_main_orange.svg
+%%DATADIR%%/skins/LateNight/palemoon/knobs/knob_indicator_main_red.svg
 %%DATADIR%%/skins/LateNight/palemoon/knobs/knob_indicator_regular_blue.svg
 %%DATADIR%%/skins/LateNight/palemoon/knobs/knob_indicator_regular_green.svg
 %%DATADIR%%/skins/LateNight/palemoon/knobs/knob_indicator_regular_grey.svg
@@ -1453,9 +1425,9 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/LateNight/samplers/sampler.xml
 %%DATADIR%%/skins/LateNight/samplers/sampler_expand_button.xml
 %%DATADIR%%/skins/LateNight/samplers/sampler_mini.xml
-%%DATADIR%%/skins/LateNight/samplers/samplers_16decks.xml
 %%DATADIR%%/skins/LateNight/samplers/samplers_4decks.xml
 %%DATADIR%%/skins/LateNight/samplers/samplers_8decks.xml
+%%DATADIR%%/skins/LateNight/samplers/samplers_row.xml
 %%DATADIR%%/skins/LateNight/samplers/singletons.xml
 %%DATADIR%%/skins/LateNight/samplers_rack.xml
 %%DATADIR%%/skins/LateNight/skin.xml
@@ -1471,6 +1443,7 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Shade/audio_latency/audio_latency_overload.png
 %%DATADIR%%/skins/Shade/audio_latency/audio_latency_overload_back.png
 %%DATADIR%%/skins/Shade/audio_latency/audio_latency_usage.png
+%%DATADIR%%/skins/Shade/audio_latency/audio_latency_usage_back.png
 %%DATADIR%%/skins/Shade/auxiliary.xml
 %%DATADIR%%/skins/Shade/btn/btn_autodj_addrandom.svg
 %%DATADIR%%/skins/Shade/btn/btn_autodj_enable.svg
@@ -1606,6 +1579,7 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Shade/btn/btn_hotcue_8.png
 %%DATADIR%%/skins/Shade/btn/btn_hotcue_8_over.png
 %%DATADIR%%/skins/Shade/btn/btn_hotcue_8_overdown.png
+%%DATADIR%%/skins/Shade/btn/btn_hotcue_loop.png
 %%DATADIR%%/skins/Shade/btn/btn_hotcues.png
 %%DATADIR%%/skins/Shade/btn/btn_intro_cues.png
 %%DATADIR%%/skins/Shade/btn/btn_intro_end.png
@@ -1685,10 +1659,10 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Shade/btn/btn_next_over.png
 %%DATADIR%%/skins/Shade/btn/btn_next_white.png
 %%DATADIR%%/skins/Shade/btn/btn_orientation_microphone_left_over.png
-%%DATADIR%%/skins/Shade/btn/btn_orientation_microphone_master.png
+%%DATADIR%%/skins/Shade/btn/btn_orientation_microphone_main.png
 %%DATADIR%%/skins/Shade/btn/btn_orientation_microphone_right_over.png
 %%DATADIR%%/skins/Shade/btn/btn_orientation_sampler_left_over.png
-%%DATADIR%%/skins/Shade/btn/btn_orientation_sampler_master.png
+%%DATADIR%%/skins/Shade/btn/btn_orientation_sampler_main.png
 %%DATADIR%%/skins/Shade/btn/btn_orientation_sampler_right_over.png
 %%DATADIR%%/skins/Shade/btn/btn_outro_end.png
 %%DATADIR%%/skins/Shade/btn/btn_outro_end_down.png
@@ -1758,6 +1732,7 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Shade/btn/btn_sampler_plus.png
 %%DATADIR%%/skins/Shade/btn/btn_sampler_plus.xcf
 %%DATADIR%%/skins/Shade/btn/btn_save.png
+%%DATADIR%%/skins/Shade/btn/btn_search_down_grey.svg
 %%DATADIR%%/skins/Shade/btn/btn_seek.png
 %%DATADIR%%/skins/Shade/btn/btn_seek_minus.png
 %%DATADIR%%/skins/Shade/btn/btn_seek_plus.png
@@ -2147,8 +2122,8 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Shade/style/tab_vinylcontrol.png
 %%DATADIR%%/skins/Shade/style/tab_vinylcontrol_over.png
 %%DATADIR%%/skins/Shade/style/volume_clipping.png
-%%DATADIR%%/skins/Shade/style/volume_clipping_master.png
-%%DATADIR%%/skins/Shade/style/volume_clipping_master_over.png
+%%DATADIR%%/skins/Shade/style/volume_clipping_main.png
+%%DATADIR%%/skins/Shade/style/volume_clipping_main_over.png
 %%DATADIR%%/skins/Shade/style/volume_clipping_microphone.png
 %%DATADIR%%/skins/Shade/style/volume_clipping_microphone_over.png
 %%DATADIR%%/skins/Shade/style/volume_clipping_over.png
@@ -2157,8 +2132,8 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Shade/style/volume_clipping_sampler.png
 %%DATADIR%%/skins/Shade/style/volume_clipping_sampler_over.png
 %%DATADIR%%/skins/Shade/style/volume_display.png
-%%DATADIR%%/skins/Shade/style/volume_display_master.png
-%%DATADIR%%/skins/Shade/style/volume_display_master_over.png
+%%DATADIR%%/skins/Shade/style/volume_display_main.png
+%%DATADIR%%/skins/Shade/style/volume_display_main_over.png
 %%DATADIR%%/skins/Shade/style/volume_display_microphone.png
 %%DATADIR%%/skins/Shade/style/volume_display_microphone_over.png
 %%DATADIR%%/skins/Shade/style/volume_display_over.png
@@ -2176,26 +2151,21 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Tango (64 Samplers)/sampler_rack.xml
 %%DATADIR%%/skins/Tango (64 Samplers)/skin.xml
 %%DATADIR%%/skins/Tango (64 Samplers)/skin_preview.png
-%%DATADIR%%/skins/Tango (64 Samplers)/skin_settings.xml
 %%DATADIR%%/skins/Tango (64 Samplers)/skin_settings_sampler_rows_64.xml
 %%DATADIR%%/skins/Tango/buttons/btn_.svg
 %%DATADIR%%/skins/Tango/buttons/btn_2decks.svg
 %%DATADIR%%/skins/Tango/buttons/btn_4decks.svg
 %%DATADIR%%/skins/Tango/buttons/btn_arrow_down.svg
-%%DATADIR%%/skins/Tango/buttons/btn_arrow_down_black.svg
-%%DATADIR%%/skins/Tango/buttons/btn_arrow_down_black_hover.svg
+%%DATADIR%%/skins/Tango/buttons/btn_arrow_down_fx.svg
+%%DATADIR%%/skins/Tango/buttons/btn_arrow_down_fx_hover.svg
+%%DATADIR%%/skins/Tango/buttons/btn_arrow_down_fxquick.svg
+%%DATADIR%%/skins/Tango/buttons/btn_arrow_down_fxquick_hover.svg
 %%DATADIR%%/skins/Tango/buttons/btn_arrow_down_hover.svg
 %%DATADIR%%/skins/Tango/buttons/btn_arrow_left.svg
-%%DATADIR%%/skins/Tango/buttons/btn_arrow_left_black.svg
-%%DATADIR%%/skins/Tango/buttons/btn_arrow_left_black_hover.svg
 %%DATADIR%%/skins/Tango/buttons/btn_arrow_left_hover.svg
 %%DATADIR%%/skins/Tango/buttons/btn_arrow_right.svg
-%%DATADIR%%/skins/Tango/buttons/btn_arrow_right_black.svg
-%%DATADIR%%/skins/Tango/buttons/btn_arrow_right_black_hover.svg
 %%DATADIR%%/skins/Tango/buttons/btn_arrow_right_hover.svg
 %%DATADIR%%/skins/Tango/buttons/btn_arrow_up.svg
-%%DATADIR%%/skins/Tango/buttons/btn_arrow_up_black.svg
-%%DATADIR%%/skins/Tango/buttons/btn_arrow_up_black_hover.svg
 %%DATADIR%%/skins/Tango/buttons/btn_arrow_up_hover.svg
 %%DATADIR%%/skins/Tango/buttons/btn_autodj_addrandom.svg
 %%DATADIR%%/skins/Tango/buttons/btn_autodj_enable_off.svg
@@ -2243,15 +2213,15 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Tango/buttons/btn_fx_focus_on_hover.svg
 %%DATADIR%%/skins/Tango/buttons/btn_fx_head_off.svg
 %%DATADIR%%/skins/Tango/buttons/btn_fx_head_on.svg
-%%DATADIR%%/skins/Tango/buttons/btn_fx_master_off.svg
-%%DATADIR%%/skins/Tango/buttons/btn_fx_master_on.svg
+%%DATADIR%%/skins/Tango/buttons/btn_fx_main_off.svg
+%%DATADIR%%/skins/Tango/buttons/btn_fx_main_on.svg
 %%DATADIR%%/skins/Tango/buttons/btn_fx_mixmode_d+w.svg
 %%DATADIR%%/skins/Tango/buttons/btn_fx_mixmode_d-w.svg
-%%DATADIR%%/skins/Tango/buttons/btn_fx_selector_list.svg
-%%DATADIR%%/skins/Tango/buttons/btn_fx_selector_list_hover.svg
 %%DATADIR%%/skins/Tango/buttons/btn_head.svg
 %%DATADIR%%/skins/Tango/buttons/btn_headSplit_off.svg
 %%DATADIR%%/skins/Tango/buttons/btn_headSplit_on.svg
+%%DATADIR%%/skins/Tango/buttons/btn_hotcue_loop_dark.svg
+%%DATADIR%%/skins/Tango/buttons/btn_hotcue_loop_light.svg
 %%DATADIR%%/skins/Tango/buttons/btn_hotcues_earlier.svg
 %%DATADIR%%/skins/Tango/buttons/btn_hotcues_later.svg
 %%DATADIR%%/skins/Tango/buttons/btn_hotcues_off.svg
@@ -2297,11 +2267,13 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Tango/buttons/btn_loop_on.svg
 %%DATADIR%%/skins/Tango/buttons/btn_loop_out.svg
 %%DATADIR%%/skins/Tango/buttons/btn_loop_out_active.svg
+%%DATADIR%%/skins/Tango/buttons/btn_main.svg
+%%DATADIR%%/skins/Tango/buttons/btn_main_head_mixer.svg
+%%DATADIR%%/skins/Tango/buttons/btn_main_vu_label.svg
 %%DATADIR%%/skins/Tango/buttons/btn_mainmenu_checkbox.svg
 %%DATADIR%%/skins/Tango/buttons/btn_mainmenu_checkbox_checked.svg
-%%DATADIR%%/skins/Tango/buttons/btn_master.svg
-%%DATADIR%%/skins/Tango/buttons/btn_master_head_mixer.svg
-%%DATADIR%%/skins/Tango/buttons/btn_master_vu_label.svg
+%%DATADIR%%/skins/Tango/buttons/btn_menu_arrow.svg
+%%DATADIR%%/skins/Tango/buttons/btn_menu_arrow_hover.svg
 %%DATADIR%%/skins/Tango/buttons/btn_mic_aux_mute.svg
 %%DATADIR%%/skins/Tango/buttons/btn_mic_aux_off.svg
 %%DATADIR%%/skins/Tango/buttons/btn_mic_aux_on.svg
@@ -2443,7 +2415,7 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Tango/fx/flow_focus_separator.xml
 %%DATADIR%%/skins/Tango/fx/flow_noFocus_separator.xml
 %%DATADIR%%/skins/Tango/fx/focus_button.xml
-%%DATADIR%%/skins/Tango/fx/master_button.xml
+%%DATADIR%%/skins/Tango/fx/main_button.xml
 %%DATADIR%%/skins/Tango/fx/metaknob.xml
 %%DATADIR%%/skins/Tango/fx/parameter_button.xml
 %%DATADIR%%/skins/Tango/fx/parameter_knob.xml
@@ -2534,7 +2506,7 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Tango/knobs_sliders/knob_bg_booth.svg
 %%DATADIR%%/skins/Tango/knobs_sliders/knob_bg_fx_parameter.svg
 %%DATADIR%%/skins/Tango/knobs_sliders/knob_bg_head.svg
-%%DATADIR%%/skins/Tango/knobs_sliders/knob_bg_master.svg
+%%DATADIR%%/skins/Tango/knobs_sliders/knob_bg_main.svg
 %%DATADIR%%/skins/Tango/knobs_sliders/knob_blue.svg
 %%DATADIR%%/skins/Tango/knobs_sliders/knob_eq_killed.svg
 %%DATADIR%%/skins/Tango/knobs_sliders/knob_fx_yellow.svg
@@ -2557,16 +2529,17 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/skins/Tango/mic_aux_sampler/mic_unit_unconfigured.xml
 %%DATADIR%%/skins/Tango/mic_aux_sampler/sampler.xml
 %%DATADIR%%/skins/Tango/mic_aux_sampler/sampler_row.xml
+%%DATADIR%%/skins/Tango/mixer/eq_button.xml
 %%DATADIR%%/skins/Tango/mixer/eq_knob_left.xml
 %%DATADIR%%/skins/Tango/mixer/eq_knob_right.xml
 %%DATADIR%%/skins/Tango/mixer/mixer_channel_left.xml
 %%DATADIR%%/skins/Tango/mixer/mixer_channel_right.xml
 %%DATADIR%%/skins/Tango/mixer/mixer_headphone.xml
-%%DATADIR%%/skins/Tango/mixer/mixer_master.xml
+%%DATADIR%%/skins/Tango/mixer/mixer_main.xml
 %%DATADIR%%/skins/Tango/mixer/quick_fx_knob_left.xml
 %%DATADIR%%/skins/Tango/mixer/quick_fx_knob_right.xml
 %%DATADIR%%/skins/Tango/mixer/vumeter_floating.xml
-%%DATADIR%%/skins/Tango/mixer/vumeter_master.xml
+%%DATADIR%%/skins/Tango/mixer/vumeter_main.xml
 %%DATADIR%%/skins/Tango/mixer/vumeter_mini.xml
 %%DATADIR%%/skins/Tango/mixer/vumeter_mixer.xml
 %%DATADIR%%/skins/Tango/mixer/vumeter_single.xml
@@ -2589,44 +2562,44 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/translations/mixxx_br.qm
 %%DATADIR%%/translations/mixxx_bs.qm
 %%DATADIR%%/translations/mixxx_ca.qm
-%%DATADIR%%/translations/mixxx_ca_ES.qm
 %%DATADIR%%/translations/mixxx_cs.qm
 %%DATADIR%%/translations/mixxx_da.qm
 %%DATADIR%%/translations/mixxx_de.qm
 %%DATADIR%%/translations/mixxx_el.qm
-%%DATADIR%%/translations/mixxx_el_GR.qm
+%%DATADIR%%/translations/mixxx_en_CA.qm
 %%DATADIR%%/translations/mixxx_en_GB.qm
 %%DATADIR%%/translations/mixxx_eo.qm
 %%DATADIR%%/translations/mixxx_es.qm
+%%DATADIR%%/translations/mixxx_es_419.qm
+%%DATADIR%%/translations/mixxx_es_AR.qm
+%%DATADIR%%/translations/mixxx_es_CO.qm
+%%DATADIR%%/translations/mixxx_es_CR.qm
+%%DATADIR%%/translations/mixxx_es_EC.qm
 %%DATADIR%%/translations/mixxx_es_ES.qm
 %%DATADIR%%/translations/mixxx_es_MX.qm
+%%DATADIR%%/translations/mixxx_es_PA.qm
+%%DATADIR%%/translations/mixxx_es_UY.qm
 %%DATADIR%%/translations/mixxx_et.qm
 %%DATADIR%%/translations/mixxx_eu.qm
 %%DATADIR%%/translations/mixxx_fa.qm
 %%DATADIR%%/translations/mixxx_fi.qm
 %%DATADIR%%/translations/mixxx_fr.qm
-%%DATADIR%%/translations/mixxx_fr_FR.qm
 %%DATADIR%%/translations/mixxx_ga.qm
 %%DATADIR%%/translations/mixxx_gl.qm
 %%DATADIR%%/translations/mixxx_he.qm
-%%DATADIR%%/translations/mixxx_he_IL.qm
 %%DATADIR%%/translations/mixxx_hi_IN.qm
 %%DATADIR%%/translations/mixxx_hr.qm
 %%DATADIR%%/translations/mixxx_hu.qm
 %%DATADIR%%/translations/mixxx_hy.qm
-%%DATADIR%%/translations/mixxx_ia.qm
 %%DATADIR%%/translations/mixxx_id.qm
 %%DATADIR%%/translations/mixxx_is.qm
 %%DATADIR%%/translations/mixxx_it.qm
-%%DATADIR%%/translations/mixxx_it_IT.qm
 %%DATADIR%%/translations/mixxx_ja.qm
 %%DATADIR%%/translations/mixxx_ko.qm
-%%DATADIR%%/translations/mixxx_ky.qm
 %%DATADIR%%/translations/mixxx_lb.qm
 %%DATADIR%%/translations/mixxx_lt.qm
 %%DATADIR%%/translations/mixxx_lv.qm
 %%DATADIR%%/translations/mixxx_mi.qm
-%%DATADIR%%/translations/mixxx_mi_NZ.qm
 %%DATADIR%%/translations/mixxx_mk.qm
 %%DATADIR%%/translations/mixxx_ml.qm
 %%DATADIR%%/translations/mixxx_mn.qm
@@ -2635,8 +2608,6 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/translations/mixxx_my.qm
 %%DATADIR%%/translations/mixxx_nb.qm
 %%DATADIR%%/translations/mixxx_nl.qm
-%%DATADIR%%/translations/mixxx_nl_BE.qm
-%%DATADIR%%/translations/mixxx_nl_NL.qm
 %%DATADIR%%/translations/mixxx_nn.qm
 %%DATADIR%%/translations/mixxx_oc.qm
 %%DATADIR%%/translations/mixxx_pl.qm
@@ -2645,7 +2616,6 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/translations/mixxx_pt_PT.qm
 %%DATADIR%%/translations/mixxx_ro.qm
 %%DATADIR%%/translations/mixxx_ru.qm
-%%DATADIR%%/translations/mixxx_ru_RU.qm
 %%DATADIR%%/translations/mixxx_si.qm
 %%DATADIR%%/translations/mixxx_sk.qm
 %%DATADIR%%/translations/mixxx_sl.qm
@@ -2653,13 +2623,12 @@ share/metainfo/org.mixxx.Mixxx.metainfo.xml
 %%DATADIR%%/translations/mixxx_sq_AL.qm
 %%DATADIR%%/translations/mixxx_sr.qm
 %%DATADIR%%/translations/mixxx_sv.qm
-%%DATADIR%%/translations/mixxx_ta.qm
 %%DATADIR%%/translations/mixxx_te.qm
 %%DATADIR%%/translations/mixxx_tr.qm
 %%DATADIR%%/translations/mixxx_uk.qm
 %%DATADIR%%/translations/mixxx_uz.qm
 %%DATADIR%%/translations/mixxx_vi.qm
+%%DATADIR%%/translations/mixxx_zh.qm
 %%DATADIR%%/translations/mixxx_zh_CN.qm
 %%DATADIR%%/translations/mixxx_zh_HK.qm
-%%DATADIR%%/translations/mixxx_zh_TW.Big5.qm
 %%DATADIR%%/translations/mixxx_zh_TW.qm
