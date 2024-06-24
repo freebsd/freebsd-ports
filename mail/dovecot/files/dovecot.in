@@ -58,15 +58,15 @@ for config in ${dovecot_config}; do
 	required_files="${config}"
 	command_args="-c ${config}"
 	if [ -s ${config} ]; then
-               ${command} ${command_args} -a 2>&1 >/dev/null
-                if [ $? -ne 0 ]; then
-                       echo "==Error=="
-                       echo "Configuration file check failed."
-                       # Use dovecot to print the config error.
-                       ${command} ${command_args} -a
-                       exit $?
-                fi
-		base_dir=$(${command} ${command_args} -a 2>/dev/null | /usr/bin/awk -F '= ' '/^base_dir =/ { print $2 }')
+		doveconf_settings="$(${command} ${command_args} -a 2>/dev/null)"
+		if [ $? -ne 0 ]; then
+			echo "==Error=="
+			echo "Configuration file check failed."
+			# Use dovecot to print the config error.
+			${command} ${command_args} -a
+			exit $?
+		fi
+		base_dir="$(echo "$doveconf_settings" | /usr/bin/awk -F '= ' '/^base_dir =/ { print $2 }')"
 		pidfile="${base_dir}/master.pid"
 	else
 		echo "==Error=="
