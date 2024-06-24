@@ -23,6 +23,7 @@ USE_PYTHON=	pep517 autoplist pytest # 2 tests fail, see https://github.com/cvxgr
 
 CONFIGURE_ENV=	BLAS_LAPACK_LIBS="openblas"
 MAKE_ENV=	${CONFIGURE_ENV}
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_scs_*.so
