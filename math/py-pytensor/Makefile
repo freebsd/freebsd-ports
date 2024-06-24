@@ -1,5 +1,5 @@
 PORTNAME=	pytensor
-DISTVERSION=	2.20.0
+DISTVERSION=	2.23.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,10 +25,8 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python shebangfix
+USES=		python
 USE_PYTHON=	pep517 cython autoplist pytest # tests fail to run, see https://github.com/pymc-devs/pytensor/issues/355
-
-SHEBANG_FILES=	bin/pytensor-cache
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pytensor/scan/scan_perform${PYTHON_EXT_SUFFIX}.so
