@@ -25,10 +25,10 @@ lib/libsss_sudo.so
 lib/nss_sss.so.1
 lib/pam_sss.so
 lib/pam_sss_gss.so
-%%PYTHON_SITELIBDIR%%/SSSDConfig-2.9.4-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/SSSDConfig-2.9.4-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/SSSDConfig-2.9.4-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/SSSDConfig-2.9.4-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/SSSDConfig-2.9.5-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/SSSDConfig-2.9.5-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/SSSDConfig-2.9.5-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/SSSDConfig-2.9.5-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/SSSDConfig/__init__.py
 %%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/ipachangeconf%%PYTHON_EXT_SUFFIX%%.pyc
