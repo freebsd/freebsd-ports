@@ -1,5 +1,6 @@
 PORTNAME=	emacs
 DISTVERSION=	30.0.50.20240615
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -8,6 +9,9 @@ MAINTAINER=	emacs@FreeBSD.org
 COMMENT=	GNU editing macros ${COMMENT_${FLAVOR}}
 WWW=		https://www.gnu.org/software/emacs/
 COMMENT_nox=	(No X flavor)
+
+PATCH_SITES+=  https://github.com/emacs-devel/emacs/commit/
+PATCHFILES+=   c645e1d8205f0f0663ec4a2d27575b238c646c7c.patch:-p1
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
