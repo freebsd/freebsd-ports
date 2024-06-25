@@ -1,3 +1,42 @@
+  <vuln vid="2b68c86a-32d5-11ef-8a0f-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>126.0.6478.126</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>126.0.6478.126</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/06/stable-channel-update-for-desktop_24.html">
+	 <p>This update includes 5 security fixes:</p>
+	 <ul>
+	    <li>[342428008] High CVE-2024-6290: Use after free in Dawn. Reported by wgslfuzz on 2024-05-23</li>
+	    <li>[40942995] High CVE-2024-6291: Use after free in Swiftshader. Reported by Cassidy Kim(@cassidy6564) on 2023-11-15</li>
+	    <li>[342545100] High CVE-2024-6292: Use after free in Dawn. Reported by wgslfuzz on 2024-05-24</li>
+	    <li>[345993680] High CVE-2024-6293: Use after free in Dawn. Reported by wgslfuzz on 2024-06-09</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-6290</cvename>
+      <cvename>CVE-2024-6291</cvename>
+      <cvename>CVE-2024-6292</cvename>
+      <cvename>CVE-2024-6293</cvename>
+      <url>https://chromereleases.googleblog.com/2024/06/stable-channel-update-for-desktop_24.html</url>
+    </references>
+    <dates>
+      <discovery>2024-06-24</discovery>
+      <entry>2024-06-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4f6c4c07-3179-11ef-9da5-1c697a616631">
     <topic>emacs -- Arbitrary shell code evaluation vulnerability</topic>
     <affects>
