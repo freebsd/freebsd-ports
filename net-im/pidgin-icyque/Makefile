@@ -1,6 +1,6 @@
 PORTNAME=	pidgin-icyque
 DISTVERSION=	g20200619
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 
 MAINTAINER=	eugen@FreeBSD.org
@@ -9,6 +9,9 @@ WWW=		https://github.com/EionRobb/icyque
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	ICQ servers shut down
+EXPIRATION_DATE=2024-08-26
 
 BUILD_DEPENDS=	pidgin:net-im/pidgin
 RUN_DEPENDS=	pidgin:net-im/pidgin
