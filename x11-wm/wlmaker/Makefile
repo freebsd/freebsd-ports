@@ -32,9 +32,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		${NULL}
 
 post-patch:
-# Drop dependency on unreleased version of libwayland
-	@${REINPLACE_CMD} -e 's/1\.22\.90/1.22.0/' \
-		${WRKSRC}/CMakeLists.txt
 # Respect PREFIX for icons
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
 		${WRKSRC}/src/decorations.c
