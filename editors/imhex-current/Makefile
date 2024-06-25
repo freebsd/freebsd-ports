@@ -1,5 +1,5 @@
 PORTNAME=	imhex
-PORTVERSION=	1.33.2
+PORTVERSION=	1.34.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~danyspin97/xdgpp/blob/f01f810714443d0f10c333d4d1d9c0383be41375/:xdg \
@@ -27,6 +27,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		Martinsos-edlib-${GH_TAG_EDLIB}_GH0${EXTRACT_SUFX} \
 		fmtlib-fmt-${GH_TAG_FMT}_GH0${EXTRACT_SUFX} \
 		josuttis-jthread-${GH_TAG_JTHREAD}_GH0${EXTRACT_SUFX} \
+		rockdreamer-throwing_ptr-${GH_TAG_THROWING_PTR}_GH0${EXTRACT_SUFX} \
+		sammycage-lunasvg-${GH_TAG_LUNASVG}_GH0${EXTRACT_SUFX} \
 		VirusTotal-yara-${GH_TAG_YARA}_GH0${EXTRACT_SUFX} \
 		WerWolv-HashLibPlus-${GH_TAG_HASHLIBPLUS}_GH0${EXTRACT_SUFX} \
 		WerWolv-ImHex-Patterns-${GH_TAG_IMHEX_PATTERNS}_GH0${EXTRACT_SUFX} \
@@ -61,6 +63,8 @@ GH_TUPLE=	btzy:nativefiledialog-extended:${GH_TAG_NATIVEFILEDIALOG}:nativefiledi
 		Martinsos:edlib:${GH_TAG_EDLIB}:edlib \
 		fmtlib:fmt:${GH_TAG_FMT}:fmt \
 		josuttis:jthread:${GH_TAG_JTHREAD}:jthread \
+		rockdreamer:throwing_ptr:${GH_TAG_THROWING_PTR}:throwing_ptr \
+		sammycage:lunasvg:${GH_TAG_LUNASVG}:lunasvg \
 		VirusTotal:yara:${GH_TAG_YARA}:yara \
 		WerWolv:HashLibPlus:${GH_TAG_HASHLIBPLUS}:hashlibplus \
 		WerWolv:ImHex-Patterns:${GH_TAG_IMHEX_PATTERNS}:imhex_patterns \
@@ -72,13 +76,15 @@ GH_TAG_CAPSTONE=	097c04d
 GH_TAG_CLI11=	20de8b7
 GH_TAG_EDLIB=	931be2b
 GH_TAG_FMT=	67c0c0c
-GH_TAG_HASHLIBPLUS=	7609c54
-GH_TAG_IMHEX_PATTERNS=	ImHex-v1.33.2
+GH_TAG_HASHLIBPLUS=	1823dd1
+GH_TAG_IMHEX_PATTERNS=	ImHex-v1.34.0
 GH_TAG_JTHREAD=	0fa8d39
 GH_TAG_LIBROMFS=	03adcfd
-GH_TAG_LIBWOLV=	6b4a9c7
+GH_TAG_LIBWOLV=	101da16
+GH_TAG_LUNASVG=	17b595a
 GH_TAG_NATIVEFILEDIALOG=	5786fab
-GH_TAG_PATTERN_LANGUAGE=	ImHex-v1.33.2
+GH_TAG_PATTERN_LANGUAGE=	ImHex-v1.34.0
+GH_TAG_THROWING_PTR=	cd28490
 GH_TAG_YARA=	8fa55cd
 
 GL_TAG_IMHEX_BASTION_PATS=	e6deed4
@@ -119,11 +125,13 @@ post-extract:
 	${CP} -R ${WRKSRC_pattern_language}/* ${WRKSRC}/lib/external/pattern_language
 	${CP} -R ${WRKSRC_cli11}/* ${WRKSRC}/lib/external/pattern_language/external/cli11
 	${CP} -R ${WRKSRC_fmt}/* ${WRKSRC}/lib/external/pattern_language/external/fmt
+	${CP} -R ${WRKSRC_throwing_ptr}/* ${WRKSRC}/lib/external/pattern_language/external/throwing_ptr
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/xdg.hpp ${WRKSRC}/lib/third_party/xdgpp
 	${CP} -R ${WRKSRC_capstone}/* ${WRKSRC}/lib/third_party/capstone
 	${CP} -R ${WRKSRC_edlib}/* ${WRKSRC}/lib/third_party/edlib
 	${CP} -R ${WRKSRC_fmt}/* ${WRKSRC}/lib/third_party/fmt
 	${CP} -R ${WRKSRC_hashlibplus}/* ${WRKSRC}/lib/third_party/HashLibPlus
+	${CP} -R ${WRKSRC_lunasvg}/* ${WRKSRC}/lib/third_party/lunasvg
 	${CP} -R ${WRKSRC_nativefiledialog}/* ${WRKSRC}/lib/third_party/nativefiledialog
 	${CP} -R ${WRKSRC_yara}/* ${WRKSRC}/lib/third_party/yara/yara
 	${MKDIR} ${WRKDIR}/.build/_deps/imhex_patterns_src

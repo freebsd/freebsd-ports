@@ -1,7 +1,7 @@
 bin/imhex
 bin/imhex-updater
 lib/libimhex.so
-lib/libimhex.so.1.33.2
+lib/libimhex.so.1.34.0
 share/applications/imhex.desktop
 %%DATADIR%%/constants/crc16.json
 %%DATADIR%%/constants/crc32.json
@@ -93,6 +93,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/patterns/7z.hexpat
 %%DATADIR%%/patterns/adts.hexpat
 %%DATADIR%%/patterns/afe2.hexpat
+%%DATADIR%%/patterns/ani.hexpat
 %%DATADIR%%/patterns/ar.hexpat
 %%DATADIR%%/patterns/aria2.hexpat
 %%DATADIR%%/patterns/arm_cm_vtor.hexpat
@@ -119,6 +120,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/patterns/dicom.hexpat
 %%DATADIR%%/patterns/dmg.hexpat
 %%DATADIR%%/patterns/dsstore.hexpat
+%%DATADIR%%/patterns/dted.hexpat
 %%DATADIR%%/patterns/elf.hexpat
 %%DATADIR%%/patterns/evtx.hexpat
 %%DATADIR%%/patterns/fas_oskasoftware_old.hexpat
@@ -153,6 +155,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/patterns/flac.hexpat
 %%DATADIR%%/patterns/fs.hexpat
 %%DATADIR%%/patterns/gb.hexpat
+%%DATADIR%%/patterns/gguf.hexpat
 %%DATADIR%%/patterns/gif.hexpat
 %%DATADIR%%/patterns/gltf.hexpat
 %%DATADIR%%/patterns/gzip.hexpat
@@ -219,8 +222,11 @@ share/applications/imhex.desktop
 %%DATADIR%%/patterns/wad.hexpat
 %%DATADIR%%/patterns/was_oskasoftware.hexpat
 %%DATADIR%%/patterns/wav.hexpat
+%%DATADIR%%/patterns/wintec_tes.hexpat
 %%DATADIR%%/patterns/xbeh.hexpat
 %%DATADIR%%/patterns/xci.hexpat
+%%DATADIR%%/patterns/xgspak.hexpat
+%%DATADIR%%/patterns/xgstexture.hexpat
 %%DATADIR%%/patterns/xilinx_bit.hexpat
 %%DATADIR%%/patterns/xilinx_bootgen.hexpat
 %%DATADIR%%/patterns/zip.hexpat
@@ -320,8 +326,13 @@ share/applications/imhex.desktop
 %%DATADIR%%/sdk/lib/external/libwolv/tests/hash/source/crc.cpp
 %%DATADIR%%/sdk/lib/external/libwolv/tests/hash/source/uuid.cpp
 %%DATADIR%%/sdk/lib/external/libwolv/tests/io/CMakeLists.txt
+%%DATADIR%%/sdk/lib/external/libwolv/tests/io/include/helper.hpp
 %%DATADIR%%/sdk/lib/external/libwolv/tests/io/source/buffered_reader.cpp
+%%DATADIR%%/sdk/lib/external/libwolv/tests/io/source/file_impl.cpp
+%%DATADIR%%/sdk/lib/external/libwolv/tests/io/source/file_tracker.cpp
 %%DATADIR%%/sdk/lib/external/libwolv/tests/io/source/file.cpp
+%%DATADIR%%/sdk/lib/external/libwolv/tests/io/source/fs.cpp
+%%DATADIR%%/sdk/lib/external/libwolv/tests/io/source/helper.cpp
 %%DATADIR%%/sdk/lib/external/libwolv/tests/utils/CMakeLists.txt
 %%DATADIR%%/sdk/lib/external/libwolv/tests/utils/source/guards.cpp
 %%DATADIR%%/sdk/lib/external/libwolv/tests/utils/source/lock.cpp
@@ -812,8 +823,13 @@ share/applications/imhex.desktop
 %%DATADIR%%/sdk/lib/external/pattern_language/external/libwolv/tests/hash/source/crc.cpp
 %%DATADIR%%/sdk/lib/external/pattern_language/external/libwolv/tests/hash/source/uuid.cpp
 %%DATADIR%%/sdk/lib/external/pattern_language/external/libwolv/tests/io/CMakeLists.txt
+%%DATADIR%%/sdk/lib/external/pattern_language/external/libwolv/tests/io/include/helper.hpp
 %%DATADIR%%/sdk/lib/external/pattern_language/external/libwolv/tests/io/source/buffered_reader.cpp
 %%DATADIR%%/sdk/lib/external/pattern_language/external/libwolv/tests/io/source/file.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/libwolv/tests/io/source/file_impl.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/libwolv/tests/io/source/file_tracker.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/libwolv/tests/io/source/fs.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/libwolv/tests/io/source/helper.cpp
 %%DATADIR%%/sdk/lib/external/pattern_language/external/libwolv/tests/utils/CMakeLists.txt
 %%DATADIR%%/sdk/lib/external/pattern_language/external/libwolv/tests/utils/source/guards.cpp
 %%DATADIR%%/sdk/lib/external/pattern_language/external/libwolv/tests/utils/source/lock.cpp
@@ -872,6 +888,59 @@ share/applications/imhex.desktop
 %%DATADIR%%/sdk/lib/external/pattern_language/external/nlohmann_json/nlohmann_json.natvis
 %%DATADIR%%/sdk/lib/external/pattern_language/external/nlohmann_json/single_include/nlohmann/json_fwd.hpp
 %%DATADIR%%/sdk/lib/external/pattern_language/external/nlohmann_json/single_include/nlohmann/json.hpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/CMakeLists.txt
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/Doxyfile
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/LICENSE
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/README.md
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/appveyor.yml
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/build.py
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/conanfile.py
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/include/throwing/null_ptr_exception.hpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/include/throwing/private/clear_compiler_checks.hpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/include/throwing/private/compiler_checks.hpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/include/throwing/shared_ptr.hpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/include/throwing/unique_ptr.hpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/compile_fail/shared_ptr_to_array.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/compile_fail/unique_ptr_a_copy_assignment.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/compile_fail/unique_ptr_s_copy_assignment.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/compile_fail/unique_ptr_s_operator.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/compile_it.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/shared_ptr_access.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/shared_ptr_assignment.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/shared_ptr_atomic.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/shared_ptr_cast.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/shared_ptr_comparison.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/shared_ptr_construction.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/shared_ptr_enable_shared_from_this.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/shared_ptr_hash.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/shared_ptr_make_shared.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/shared_ptr_ordering.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/shared_ptr_ostream.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/shared_ptr_reset.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/shared_ptr_swap.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/shared_ptr_to_array.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/test_helpers.h
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/test_main.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/unique_ptr_access.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/unique_ptr_assignment.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/unique_ptr_comparison.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/unique_ptr_construction.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/unique_ptr_dereference.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/unique_ptr_hash.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/unique_ptr_make_unique.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/unique_ptr_ostream.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/unique_ptr_%%CMAKE_BUILD_TYPE%%.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/unique_ptr_reset.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/unique_ptr_swap.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/unique_ptr_to_array_access.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/unique_ptr_to_array_assignment.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/unique_ptr_to_array_assignment_from_convertible.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/unique_ptr_to_array_construction.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/unique_ptr_to_array_reset.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/weak_ptr_assignment.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/weak_ptr_construction.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/weak_ptr_modifiers.cpp
+%%DATADIR%%/sdk/lib/external/pattern_language/external/throwing_ptr/tests/weak_ptr_observers.cpp
 %%DATADIR%%/sdk/lib/external/pattern_language/fuzz/CMakeLists.txt
 %%DATADIR%%/sdk/lib/external/pattern_language/fuzz/dict/hexpat.dict
 %%DATADIR%%/sdk/lib/external/pattern_language/fuzz/inputs/a.hexpat
@@ -1022,6 +1091,8 @@ share/applications/imhex.desktop
 %%DATADIR%%/sdk/lib/external/pattern_language/LICENSE
 %%DATADIR%%/sdk/lib/external/pattern_language/README.md
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/CMakeLists.txt
+%%DATADIR%%/sdk/lib/external/pattern_language/tests/files/export/json.json
+%%DATADIR%%/sdk/lib/external/pattern_language/tests/files/export/yaml.yml
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_arrays.hpp
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_attributes.hpp
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_bitfields.hpp
@@ -1030,6 +1101,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_example.hpp
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_extra_semicolon.hpp
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_failing_assert.hpp
+%%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_format.hpp
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_import.hpp
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_include.hpp
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_literals.hpp
@@ -1040,6 +1112,8 @@ share/applications/imhex.desktop
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_padding.hpp
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_placement.hpp
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_pointers.hpp
+%%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_pragmas.hpp
+%%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_pragmas_fail.hpp
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_rvalues.hpp
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_strings.hpp
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_struct_inheritance.hpp
@@ -1047,6 +1121,11 @@ share/applications/imhex.desktop
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_succeeding_assert.hpp
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern_unions.hpp
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/include/test_patterns/test_pattern.hpp
+%%DATADIR%%/sdk/lib/external/pattern_language/tests/integration/integration.py
+%%DATADIR%%/sdk/lib/external/pattern_language/tests/integration/invalid.hexpat
+%%DATADIR%%/sdk/lib/external/pattern_language/tests/integration/test.hexpat
+%%DATADIR%%/sdk/lib/external/pattern_language/tests/integration/test.hexpat.json
+%%DATADIR%%/sdk/lib/external/pattern_language/tests/integration/test_data
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/source/main.cpp
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/source/tests.cpp
 %%DATADIR%%/sdk/lib/external/pattern_language/tests/test_data
@@ -1101,6 +1180,8 @@ share/applications/imhex.desktop
 %%DATADIR%%/sdk/lib/libimhex/include/hex/providers/undo_redo/operations/operation.hpp
 %%DATADIR%%/sdk/lib/libimhex/include/hex/providers/undo_redo/stack.hpp
 %%DATADIR%%/sdk/lib/libimhex/include/hex/subcommands/subcommands.hpp
+%%DATADIR%%/sdk/lib/libimhex/include/hex/test/test_provider.hpp
+%%DATADIR%%/sdk/lib/libimhex/include/hex/test/tests.hpp
 %%DATADIR%%/sdk/lib/libimhex/include/hex/ui/imgui_imhex_extensions.h
 %%DATADIR%%/sdk/lib/libimhex/include/hex/ui/popup.hpp
 %%DATADIR%%/sdk/lib/libimhex/include/hex/ui/toast.hpp
@@ -1310,6 +1391,8 @@ share/applications/imhex.desktop
 %%DATADIR%%/sdk/lib/third_party/imgui/ColorTextEditor/include/TextEditor.h
 %%DATADIR%%/sdk/lib/third_party/imgui/ColorTextEditor/LICENSE.txt
 %%DATADIR%%/sdk/lib/third_party/imgui/ColorTextEditor/README.md
+%%DATADIR%%/sdk/lib/third_party/imgui/cimgui/CMakeLists.txt
+%%DATADIR%%/sdk/lib/third_party/imgui/cimgui/include/cimgui.h
 %%DATADIR%%/sdk/lib/third_party/imgui/custom/CMakeLists.txt
 %%DATADIR%%/sdk/lib/third_party/imgui/custom/include/emscripten_browser_clipboard.h
 %%DATADIR%%/sdk/lib/third_party/imgui/custom/include/imgui_impl_glfw.h
@@ -1397,6 +1480,7 @@ share/metainfo/net.werwolv.imhex.metainfo.xml
 share/pixmaps/imhex.png
 @dir %%DATADIR%%/sdk/lib/libimhex/source
 @dir %%DATADIR%%/sdk/lib/third_party/imgui/ColorTextEditor/source
+@dir %%DATADIR%%/sdk/lib/third_party/imgui/cimgui/source
 @dir %%DATADIR%%/sdk/lib/third_party/imgui/custom/source
 @dir %%DATADIR%%/sdk/lib/third_party/imgui/imgui/source
 @dir %%DATADIR%%/sdk/lib/third_party/imgui/imnodes/source
