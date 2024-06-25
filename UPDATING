@@ -55,6 +55,10 @@ you update your ports collection, before attempting any port upgrades.
   For an in-place upgrade it is important that the MongoDB
   'featureCompatibilityVersion' is set to 5.0.
   See: https://www.mongodb.com/docs/v6.0/release-notes/6.0-upgrade-standalone/#feature-compatibility-version
+  Run these commands in mongodb50 before upgrading (e.g. while unifi is running):
+  $ mongo --port 27117
+  > db.adminCommand( { setFeatureCompatibilityVersion: "5.0" } )
+  > exit
 
   See updating entry 20230310 for a backup/restore upgrade.
 
