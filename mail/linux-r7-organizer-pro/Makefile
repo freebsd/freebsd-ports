@@ -1,6 +1,7 @@
 PORTNAME=	r7-organizer-pro
 PORTVERSION=	2.6.7
 DISTVERSIONSUFFIX=	-1
+PORTREVISION=	1
 CATEGORIES=	mail linux russian
 MASTER_SITES=	https://download.r7-office.ru/organizer/centos/
 PKGNAMEPREFIX=	linux-
@@ -34,8 +35,9 @@ post-patch:
 
 do-install:
 	cd ${WRKDIR}/opt && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share
-	${RM} ${STAGEDIR}${PREFIX}/share/r7-office/organizer/r7organizer
+	${RM} ${STAGEDIR}${PREFIX}/share/r7-office/organizer/r7organizer*
 	${INSTALL_PROGRAM} -C ${WRKDIR}/opt/r7-office/organizer/r7organizer ${STAGEDIR}${PREFIX}/share/r7-office/organizer/r7organizer
+	${INSTALL_PROGRAM} -C ${WRKDIR}/opt/r7-office/organizer/r7organizer-bin ${STAGEDIR}${PREFIX}/share/r7-office/organizer/r7organizer-bin
 	${RLN} ${STAGEDIR}${PREFIX}/share/r7-office/organizer/r7organizer ${STAGEDIR}${PREFIX}/bin/
 	${MV} ${STAGEDIR}${PREFIX}/share/r7-office/organizer/r7-organizer.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${RLN} ${STAGEDIR}${PREFIX}/share/r7-office/organizer/chrome/icons/default/default256.png \
