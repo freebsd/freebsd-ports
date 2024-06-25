@@ -27,18 +27,18 @@ _USE_QT_qt5=	buildtools:build core qmake:build testlib:build xml
 _USE_QT_qt6=	base
 USE_QT=		${_USE_QT_${FLAVOR}}
 
-BINARY_ALIAS=	qhelpgenerator=${QHELPGENERATOR}
-
 PLIST_SUB=	QT_VER=${FLAVOR:S/qt//}
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
-DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
+			dot:graphics/graphviz
 _DOCS_USE_qt5=		QT=help:build
 _DOCS_USE_qt6=		QT=tools:build
 DOCS_USE=		${_DOCS_USE_${FLAVOR}}
 DOCS_QMAKE_ON=		CONFIG+=docs
+DOCS_BINARY_ALIAS=	qhelpgenerator=${QHELPGENERATOR}
 
 pre-configure:
 	${REINPLACE_CMD} -e 's,$$$${INSTALL_LIBDIR},${LOCALBASE}/libdata,' \
