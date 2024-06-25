@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
 MAINTAINER=	ronald@FreeBSD.org
 COMMENT=	MongoDB Community Edition (6.0.x Branch)
-WWW=		https://docs.mongodb.com/v6.0/
+WWW=		https://www.mongodb.com/docs/v6.0/
 
 LICENSE=	APACHE20 SSPLv1 # mongodb is SSPLv1, C++ driver is APACHE20
 LICENSE_COMB=	multi
