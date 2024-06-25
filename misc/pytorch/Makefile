@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_i386=	compilation fails: error: use of undeclared identifier 'AVX2'
 
 BUILD_DEPENDS=	gmake:devel/gmake \
-		${LOCALBASE}/include/fxdiv.h:devel/fxdiv
+		${LOCALBASE}/include/fxdiv.h:devel/fxdiv \
+		${PY_SETUPTOOLS}
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libblis.so:math/blis \
 		libopenblas.so:math/openblas \
