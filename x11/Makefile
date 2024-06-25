@@ -27,6 +27,7 @@
     SUBDIR += bgs
     SUBDIR += bitmap
     SUBDIR += bmpanel2
+    SUBDIR += boomer
     SUBDIR += brisk-menu
     SUBDIR += budgie
     SUBDIR += budgie-desktop
