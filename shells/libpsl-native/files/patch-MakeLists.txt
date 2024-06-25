@@ -1,0 +1,16 @@
+--- CMakeLists.txt.old	2024-06-25 19:48:03.904882000 +0200
++++ CMakeLists.txt	2024-06-25 19:49:39.204205000 +0200
+@@ -13,13 +13,5 @@
+ 
+ set(LIBRARY_OUTPUT_PATH "${PROJECT_SOURCE_DIR}/../powershell-unix")
+ 
+-if (CMAKE_SYSTEM_PROCESSOR MATCHES "arm*")
+     message(STATUS "Building for ARM, no tests")
+     add_subdirectory(src)
+-else ()
+-    # test in BUILD_DIR
+-    message(STATUS "Tests enabled")
+-    enable_testing()
+-    add_subdirectory(src)
+-    add_subdirectory(test)
+-endif ()
