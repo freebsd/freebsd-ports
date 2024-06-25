@@ -26,8 +26,13 @@ lib/libqca-%%QCA_QT_VERSION%%.so.2
 lib/libqca-%%QCA_QT_VERSION%%.so.%%SHLIB_VER%%
 %%BOTAN%%lib/qca-%%QCA_QT_VERSION%%/crypto/libqca-botan.so
 %%SASL%%lib/qca-%%QCA_QT_VERSION%%/crypto/libqca-cyrus-sasl.so
+%%GCRYPT%%lib/qca-%%QCA_QT_VERSION%%/crypto/libqca-gcrypt.so
 %%GNUPG%%lib/qca-%%QCA_QT_VERSION%%/crypto/libqca-gnupg.so
+%%LOGGER%%lib/qca-%%QCA_QT_VERSION%%/crypto/libqca-logger.so
+%%NSS%%lib/qca-%%QCA_QT_VERSION%%/crypto/libqca-nss.so
+%%PKCS11%%lib/qca-%%QCA_QT_VERSION%%/crypto/libqca-pkcs11.so
 %%OPENSSL%%lib/qca-%%QCA_QT_VERSION%%/crypto/libqca-ossl.so
+%%SOFTSTORE%%lib/qca-%%QCA_QT_VERSION%%/crypto/libqca-softstore.so
 %%QT5_ONLY%%%%QT_MKSPECDIR%%/features/crypto.prf
 %%QT5_ONLY%%libdata/pkgconfig/qca2-%%QCA_QT_VERSION%%.pc
 share/man/man1/qcatool-%%QCA_QT_VERSION%%.1.gz
