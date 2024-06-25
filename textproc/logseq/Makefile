@@ -31,9 +31,6 @@ WRKSRC=		${WRKDIR}/Logseq-linux-x64
 RSAPI_HASH=	d731cc44acb903a41c5e0b8dc7e576cc2d35ceb4
 BETTER_SQLITE_VERSION=	9.3.0
 
-SPONSORSHIP_PLATFORMS=			OPENCOLLECTIVE:upstream
-OPENCOLLECTIVE_UPSTREAM_SPONSOR_HANDLE=	logseq
-
 post-patch:
 	${RM} ${WRKSRC}/resources/app/node_modules/@logseq/rsapi-linux-x64-gnu/package.json.orig
 
