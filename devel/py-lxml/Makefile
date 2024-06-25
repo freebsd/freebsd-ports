@@ -31,6 +31,12 @@ PYDISTUTILS_BUILDARGS=		--inplace
 post-extract:
 	@${FIND} ${WRKSRC} -name "*.c" -delete
 
+pre-configure: # remove with update to 5.x
+	@if ! xml2-config --version | ${GREP} -q ^2\.11; then \
+		${REINPLACE_CMD} -e 's|, xmlerror.xmlError\*|, const xmlerror.xmlError*|' \
+			${WRKSRC}/src/lxml/*.pxi; \
+	fi
+
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
 		-name '*.so' -exec ${STRIP_CMD} {} +
