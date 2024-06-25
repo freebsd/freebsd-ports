@@ -3,7 +3,7 @@ PORTVERSION=	5.7.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	science
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bidimensional and tridimensional remeshing
 WWW=		https://www.mmgtools.org/
 
