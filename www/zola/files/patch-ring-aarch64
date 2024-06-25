@@ -1,5 +1,5 @@
---- cargo-crates/ring-0.17.7/Cargo.toml.orig	1970-01-01 00:00:01 UTC
-+++ cargo-crates/ring-0.17.7/Cargo.toml
+--- cargo-crates/ring-0.17.8/Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/ring-0.17.8/Cargo.toml
 @@ -215,7 +215,7 @@ wasm32_unknown_unknown_js = ["getrandom/js"]
  unstable-testing-arm-no-neon = []
  wasm32_unknown_unknown_js = ["getrandom/js"]
@@ -9,8 +9,8 @@
  version = "0.2.148"
  default-features = false
  
---- cargo-crates/ring-0.17.7/src/cpu/arm.rs.orig	1973-11-29 21:33:09 UTC
-+++ cargo-crates/ring-0.17.7/src/cpu/arm.rs
+--- cargo-crates/ring-0.17.8/src/cpu/arm.rs.orig	1973-11-29 21:33:09 UTC
++++ cargo-crates/ring-0.17.8/src/cpu/arm.rs
 @@ -26,29 +26,59 @@
  // detection.
  
