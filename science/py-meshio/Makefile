@@ -11,6 +11,7 @@ WWW=		https://github.com/nschloe/meshio
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYNUMPY}	\
+		${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY}	\
