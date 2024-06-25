@@ -62,12 +62,16 @@ include/glaze/file/file_ops.hpp
 include/glaze/file/file_watch.hpp
 include/glaze/file/hostname_include.hpp
 include/glaze/file/raw_or_file.hpp
+include/glaze/file/read_directory.hpp
+include/glaze/file/write_directory.hpp
+include/glaze/format/format_to.hpp
 include/glaze/glaze.hpp
 include/glaze/glaze_exceptions.hpp
 include/glaze/hardware/volatile_array.hpp
 include/glaze/json.hpp
 include/glaze/json/custom.hpp
 include/glaze/json/invoke.hpp
+include/glaze/json/json_concepts.hpp
 include/glaze/json/json_format.hpp
 include/glaze/json/json_ptr.hpp
 include/glaze/json/json_t.hpp
@@ -84,6 +88,8 @@ include/glaze/json/skip.hpp
 include/glaze/json/study.hpp
 include/glaze/json/wrappers.hpp
 include/glaze/json/write.hpp
+include/glaze/mustache/mustache.hpp
+include/glaze/mustache/stencilcount.hpp
 include/glaze/record/recorder.hpp
 include/glaze/reflection/get_name.hpp
 include/glaze/reflection/reflect.hpp
