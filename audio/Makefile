@@ -889,6 +889,7 @@
     SUBDIR += xsynth-dssi
     SUBDIR += xuidesigner
     SUBDIR += xwave
+    SUBDIR += xwax
     SUBDIR += yell
     SUBDIR += ympd
     SUBDIR += yoshimi
