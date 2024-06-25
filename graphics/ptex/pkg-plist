@@ -6,13 +6,13 @@ include/ptex/PtexPlatform.h
 include/ptex/PtexUtils.h
 include/ptex/PtexVersion.h
 include/ptex/Ptexture.h
+lib/cmake/Ptex/ptex-config-version.cmake
+lib/cmake/Ptex/ptex-config.cmake
+lib/cmake/Ptex/ptex-exports-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Ptex/ptex-exports.cmake
 lib/libPtex.a
 lib/libPtex.so
 lib/libPtex.so.2.4
-share/cmake/Ptex/ptex-config-version.cmake
-share/cmake/Ptex/ptex-config.cmake
-share/cmake/Ptex/ptex-exports-%%CMAKE_BUILD_TYPE%%.cmake
-share/cmake/Ptex/ptex-exports.cmake
 %%PORTDOCS%%%%DOCSDIR%%/PtexCache_8cpp.html
 %%PORTDOCS%%%%DOCSDIR%%/PtexCache_8cpp_source.html
 %%PORTDOCS%%%%DOCSDIR%%/PtexCache_8h.html
@@ -397,3 +397,4 @@ share/cmake/Ptex/ptex-exports.cmake
 %%PORTDOCS%%%%DOCSDIR%%/tab_sd.png
 %%PORTDOCS%%%%DOCSDIR%%/tabs.css
 %%PORTDOCS%%%%DOCSDIR%%/uvellipse.png
+share/pkgconfig/ptex.pc

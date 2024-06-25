@@ -1,11 +1,7 @@
 PORTNAME=	ptex
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.2
-PORTREVISION=	1
+DISTVERSION=	2.4.3
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/wdas/${PORTNAME}/commit/
-PATCHFILES+=	8ff5c3e2cf2d2689ca09fc258da2173bfd57cf84.patch:-p1 # fix builds for FreeBSD
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT=	Per face texture library
