@@ -1,6 +1,5 @@
 PORTNAME=	pycharm-pro
-DISTVERSION=	2024.1.3
-PORTREVISION=	1
+DISTVERSION=	2024.1.4
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/
 DISTNAME=	pycharm-professional-${PORTVERSION}
@@ -32,15 +31,15 @@ SHEBANG_FILES=	plugins/python/helpers/pycodestyle-2.10.0.py \
 # Remove the bundled native Pty4J support libraries, they are replaced
 # by devel/jetbrains-pty4j
 # Remove bundled linux-only JRE
-EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/bin/*fsnotifier* \
-			--exclude ${DISTNAME}/bin/*.so \
-			--exclude ${DISTNAME}/bin/repair \
-			--exclude ${DISTNAME}/lib/*.so \
-			--exclude ${DISTNAME}/plugins/*.so \
-			--exclude ${DISTNAME}/plugins/cwm-plugin/quiche-native \
-			--exclude ${DISTNAME}/plugins/python/helpers/pydev/pydevd_attach_to_process \
-			--exclude ${DISTNAME}/lib/pty4j \
-			--exclude ${DISTNAME}/jbr \
+EXTRACT_AFTER_ARGS=	--exclude pycharm-${PORTVERSION}/bin/*fsnotifier* \
+			--exclude pycharm-${PORTVERSION}/bin/*.so \
+			--exclude pycharm-${PORTVERSION}/bin/repair \
+			--exclude pycharm-${PORTVERSION}/lib/*.so \
+			--exclude pycharm-${PORTVERSION}/plugins/*.so \
+			--exclude pycharm-${PORTVERSION}/plugins/cwm-plugin/quiche-native \
+			--exclude pycharm-${PORTVERSION}/plugins/python/helpers/pydev/pydevd_attach_to_process \
+			--exclude pycharm-${PORTVERSION}/lib/pty4j \
+			--exclude pycharm-${PORTVERSION}/jbr \
 			--no-same-owner --no-same-permissions
 
 WRKSRC=		${WRKDIR}/pycharm-${PORTVERSION}
