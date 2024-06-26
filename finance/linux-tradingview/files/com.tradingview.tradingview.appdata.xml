@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>com.tradingview.tradingview</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>LicenseRef-EULA-1</project_license>
+    <name>TradingView</name>
+    <name xml:lang="ru">TradingView</name>
+    <summary>TradingView desktop application</summary>
+    <summary xml:lang="ru">Приложение TradingView</summary>
+    <description>
+        <p>Experience extra power, extra speed and extra flexibility, all with the same UX you know and love.</p>
+        <p xml:lang="ru">Ощутите дополнительную мощность, дополнительную скорость и дополнительную гибкость — и все это с тем же пользовательским интерфейсом, который вы знаете и любите.</p>
+    </description>
+    <url type="homepage">https://www.tradingview.com/desktop/</url>
+    <url type="help">https://www.tradingview.com/support/</url>
+    <screenshots>
+        <screenshot type="default">
+            <caption>Interface</caption>
+            <caption xml:lang="ru">Интерфейс</caption>
+            <image>https://dashboard.snapcraft.io/site_media/appmedia/2021/07/Desktop-experience-4.png</image>
+        </screenshot>
+        <screenshot type="default">
+            <caption>Multi-monitor support</caption>
+            <caption xml:lang="ru">Поддержка нескольких мониторов</caption>
+            <image>https://dashboard.snapcraft.io/site_media/appmedia/2021/07/Monitors-banner-4.png</image>
+        </screenshot>
+    </screenshots>
+    <launchable type="desktop-id">tradingview.desktop</launchable>
+    <content_rating type="oars-1.0"/>
+    <provides>
+        <binary>tradingview</binary>
+    </provides>
+</component>

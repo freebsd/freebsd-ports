@@ -46,6 +46,7 @@
     SUBDIR += libbtc
     SUBDIR += libofx
     SUBDIR += libstocks
+    SUBDIR += linux-tradingview
     SUBDIR += lnd
     SUBDIR += moneymanagerex
     SUBDIR += myphpmoney
