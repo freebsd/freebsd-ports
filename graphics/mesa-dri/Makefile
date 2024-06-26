@@ -1,5 +1,6 @@
 PORTNAME=	mesa-dri
 PORTVERSION=	${MESAVERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
@@ -10,19 +11,15 @@ LIB_DEPENDS+=	libglapi.so:graphics/mesa-libs
 USES+=		llvm:lib,noexport
 
 OPTIONS_GROUP=			PLATFORM
-OPTIONS_GROUP_PLATFORM=		PLATFORM_X11 PLATFORM_WAYLAND
-PLATFORM_X11_DESC=		Enable X11 support for GBM/EGL
-PLATFORM_WAYLAND_DESC=		Enable Wayland support for GBM/EGL
-PLATFORM_WAYLAND_IMPLIES=	WAYLAND
+OPTIONS_GROUP_PLATFORM=		X11 WAYLAND
+X11_DESC=			Enable X11 support for GBM/EGL
+WAYLAND_DESC=			Enable Wayland support for GBM/EGL and Vulkan
+WAYLAND_BUILD_DEPENDS=		wayland-protocols>=1.8:graphics/wayland-protocols
+WAYLAND_LIB_DEPENDS=		libwayland-client.so:graphics/wayland
 
-OPTIONS_DEFINE=		WAYLAND ZSTD
-OPTIONS_DEFAULT=	WAYLAND PLATFORM_X11 PLATFORM_WAYLAND ZSTD
+OPTIONS_DEFINE=		ZSTD
+OPTIONS_DEFAULT=	WAYLAND X11 ZSTD
 OPTIONS_SUB=		yes
-
-WAYLAND_DESC=		Enable support for the Wayland platform in Vulkan drivers
-WAYLAND_BUILD_DEPENDS=	wayland-protocols>=1.8:graphics/wayland-protocols
-WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
-WAYLAND_IMPLIES=	PLATFORM_WAYLAND
 
 ZSTD_DESC=		Use ZSTD for shader cache
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
@@ -56,15 +53,12 @@ VULKAN_DRIVERS+=	INTEL
 
 LDFLAGS_i386=		-Wl,-znotext
 
-.if ${PORT_OPTIONS:MPLATFORM_X11}
+.if ${PORT_OPTIONS:MX11}
 MESA_PLATFORMS+=	x11
-USE_XORG+=		xorgproto x11 xdamage xext xfixes xshmfence xv
-.if defined(VULKAN_DRIVERS)
-USE_XORG+=		xcb xrandr
-.endif
+USE_XORG+=		xcb xorgproto xrandr x11 xdamage xext xfixes xshmfence xv
 .endif
 
-.if ${PORT_OPTIONS:MPLATFORM_WAYLAND}
+.if ${PORT_OPTIONS:MWAYLAND}
 MESA_PLATFORMS+=	wayland
 .endif
 
