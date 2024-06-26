@@ -84,8 +84,8 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
 		chrono-0.4.38 \
-		chrono-tz-0.8.6 \
-		chrono-tz-build-0.2.1 \
+		chrono-tz-0.9.0 \
+		chrono-tz-build-0.3.0 \
 		chumsky-0.9.3 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
@@ -105,7 +105,6 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		cocoa-0.25.0 \
 		cocoa-foundation-0.1.2 \
 		codespan-reporting-0.11.1 \
-		color_quant-1.1.0 \
 		colorchoice-1.0.1 \
 		com-rs-0.2.1 \
 		combine-4.6.7 \
@@ -174,7 +173,6 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		dirs-sys-0.4.1 \
 		dirs-sys-next-0.1.2 \
 		discord-sdk-0.3.6 \
-		dispatch-0.1.4 \
 		dispatch-0.2.0 \
 		displaydoc-0.2.4 \
 		divrem-1.0.0 \
@@ -248,7 +246,6 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		generic-array-0.14.7 \
 		gethostname-0.2.3 \
 		gethostname-0.4.3 \
-		getrandom-0.1.16 \
 		getrandom-0.2.15 \
 		gilrs-0.10.2 \
 		gilrs-core-0.5.7 \
@@ -300,7 +297,7 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		ident_case-1.0.1 \
 		idna-0.4.0 \
 		idna-0.5.0 \
-		image-0.24.9 \
+		image-0.25.1 \
 		indexmap-2.2.6 \
 		indicatif-0.17.8 \
 		indoc-2.0.5 \
@@ -320,6 +317,7 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		itertools-0.10.5 \
 		itertools-0.11.0 \
 		itertools-0.12.1 \
+		itertools-0.13.0 \
 		itoa-1.0.11 \
 		ittapi-0.4.0 \
 		ittapi-sys-0.4.0 \
@@ -327,7 +325,6 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		jni-0.21.1 \
 		jni-sys-0.3.0 \
 		jobserver-0.1.31 \
-		jpeg-decoder-0.3.1 \
 		js-sys-0.3.69 \
 		khronos-egl-6.0.0 \
 		khronos_api-3.1.0 \
@@ -395,7 +392,7 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		nix-0.25.1 \
 		nix-0.28.0 \
 		nohash-hasher-0.2.0 \
-		noise-0.7.0 \
+		noise-0.9.0 \
 		nom-7.1.3 \
 		notify-6.1.1 \
 		nougat-0.2.4 \
@@ -440,7 +437,6 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		option-ext-0.2.0 \
 		orbclient-0.3.47 \
 		ordered-float-1.1.1 \
-		ordered-float-3.9.2 \
 		ordered-float-4.2.0 \
 		overload-0.1.1 \
 		owned_ttf_parser-0.21.0 \
@@ -495,14 +491,10 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		quote-1.0.36 \
 		radium-0.7.0 \
 		radix_trie-0.2.1 \
-		rand-0.7.3 \
 		rand-0.8.5 \
-		rand_chacha-0.2.2 \
 		rand_chacha-0.3.1 \
-		rand_core-0.5.1 \
 		rand_core-0.6.4 \
-		rand_hc-0.2.0 \
-		rand_xorshift-0.2.0 \
+		rand_xorshift-0.3.0 \
 		range-alloc-0.1.3 \
 		ratatui-0.26.2 \
 		raw-window-handle-0.5.2 \
@@ -613,10 +605,8 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		str-buf-1.0.6 \
 		strict-num-0.1.1 \
 		strsim-0.11.1 \
-		strum-0.24.1 \
-		strum-0.26.2 \
-		strum_macros-0.24.3 \
-		strum_macros-0.26.2 \
+		strum-0.26.3 \
+		strum_macros-0.26.4 \
 		subtle-2.5.0 \
 		sum_type-0.2.0 \
 		svg_fmt-0.4.3 \
@@ -699,7 +689,6 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		versions-5.0.1 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
-		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.92 \
 		wasm-bindgen-backend-0.2.92 \
@@ -828,6 +817,8 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		zstd-0.13.1 \
 		zstd-safe-7.1.0 \
 		zstd-sys-2.0.10+zstd.1.5.6 \
+		zune-core-0.4.12 \
+		zune-jpeg-0.4.11 \
 		keyboard-keynames@git+https://gitlab.com/Imbris/keyboard-keynames.git?tag=veloren-winit-0.28\#fca4bbdfa51bf054b155a455935b3792975c989d \
 		naga,wgpu,wgpu-core,wgpu-hal,wgpu-types@git+https://github.com/Imberflur/wgpu.git?tag=0.18-with-fixes-for-veloren-v1\#df527ef82e2eba827eda9278caa583506a06aa87 \
 		specs,specs-derive@git+https://github.com/amethyst/specs.git?rev=4e2da1df29ee840baa9b936593c45592b7c9ae27\#4e2da1df29ee840baa9b936593c45592b7c9ae27 \
