@@ -13,7 +13,7 @@ include/iv_work.h
 lib/libivykis.a
 lib/libivykis.so
 lib/libivykis.so.0
-lib/libivykis.so.0.6.0
+lib/libivykis.so.0.6.2
 libdata/pkgconfig/ivykis.pc
 share/man/man3/IV_EVENT_INIT.3.gz
 share/man/man3/IV_EVENT_RAW_INIT.3.gz
