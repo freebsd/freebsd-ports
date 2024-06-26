@@ -1,6 +1,5 @@
 PORTNAME=	cosmic-comp
-PORTVERSION=	s20240604
-PORTREVISION=	1
+PORTVERSION=	s20240626
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -23,8 +22,8 @@ USE_GITHUB=	yes
 USE_GL=		gbm
 USE_XORG=	pixman
 GH_ACCOUNT=	pop-os
-GH_TAGNAME=	697ec9e
-GH_TUPLE=	pop-os:iced:0.4.2-1981-g34973a56:iced/../${WRKSRC_crate_iced:T}/iced
+GH_TAGNAME=	9cd553e
+GH_TUPLE=	pop-os:iced:0.4.2-1997-gd0ba4985:iced/../${WRKSRC_crate_iced:T}/iced
 CARGO_FEATURES=	--no-default-features # disable systemd
 PLIST_FILES=	bin/${PORTNAME} \
 		share/wayland-sessions/${PORTNAME:S/-comp//}.desktop \
