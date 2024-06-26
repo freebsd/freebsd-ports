@@ -1,18 +1,20 @@
---- chrome/common/channel_info.h.orig	2023-07-24 14:27:53 UTC
+--- chrome/common/channel_info.h.orig	2024-06-25 12:08:48 UTC
 +++ chrome/common/channel_info.h
-@@ -104,13 +104,13 @@ void ClearChannelForTesting();
+@@ -12,7 +12,7 @@
+ #include "build/build_config.h"
+ #include "build/chromeos_buildflags.h"
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ namespace base {
+ class Environment;
+ }
+@@ -100,7 +100,7 @@ void ClearChannelIdForTesting();
  std::string GetChannelSuffixForDataDir();
  #endif
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  std::string GetChannelSuffixForExtraFlagsEnvVarName();
- #endif
  
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
  // Returns the channel-specific filename of the desktop shortcut used to launch
- // the browser.
- std::string GetDesktopName(base::Environment* env);

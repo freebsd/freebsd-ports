@@ -1,6 +1,6 @@
---- remoting/host/webauthn/remote_webauthn_caller_security_utils.cc.orig	2022-12-01 10:35:46 UTC
+--- remoting/host/webauthn/remote_webauthn_caller_security_utils.cc.orig	2024-06-25 12:08:48 UTC
 +++ remoting/host/webauthn/remote_webauthn_caller_security_utils.cc
-@@ -9,7 +9,7 @@
+@@ -10,7 +10,7 @@
  #include "base/strings/utf_string_conversions.h"
  #include "build/build_config.h"
  
@@ -9,7 +9,7 @@
  #include "base/containers/fixed_flat_set.h"
  #include "base/files/file_path.h"
  #include "base/process/process_handle.h"
-@@ -37,7 +37,7 @@ namespace {
+@@ -38,7 +38,7 @@ namespace {
  
  // No static variables needed for debug builds.
  
@@ -18,7 +18,7 @@
  
  constexpr auto kAllowedCallerPrograms =
      base::MakeFixedFlatSet<base::FilePath::StringPieceType>({
-@@ -81,7 +81,7 @@ bool IsLaunchedByTrustedProcess() {
+@@ -82,7 +82,7 @@ bool IsLaunchedByTrustedProcess() {
  #if !defined(NDEBUG)
    // Just return true on debug builds for the convenience of development.
    return true;

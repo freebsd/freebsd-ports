@@ -1,6 +1,6 @@
---- ui/views/widget/desktop_aura/desktop_drag_drop_client_ozone.h.orig	2023-01-17 19:19:00 UTC
+--- ui/views/widget/desktop_aura/desktop_drag_drop_client_ozone.h.orig	2024-06-25 12:08:48 UTC
 +++ ui/views/widget/desktop_aura/desktop_drag_drop_client_ozone.h
-@@ -66,7 +66,7 @@ class VIEWS_EXPORT DesktopDragDropClientOzone
+@@ -65,7 +65,7 @@ class VIEWS_EXPORT DesktopDragDropClientOzone
      // The offset of |drag_widget_| relative to the mouse position.
      gfx::Vector2d offset;
  
@@ -9,7 +9,7 @@
      // The last received drag location.  The drag widget is moved asynchronously
      // so its position is updated when the UI thread has time for that.  When
      // the first change to the location happens, a call to UpdateDragWidget()
-@@ -87,7 +87,7 @@ class VIEWS_EXPORT DesktopDragDropClientOzone
+@@ -86,7 +86,7 @@ class VIEWS_EXPORT DesktopDragDropClientOzone
        const gfx::Point& root_location,
        int allowed_operations,
        ui::mojom::DragEventSource source) override;

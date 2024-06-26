@@ -1,15 +1,15 @@
---- content/utility/utility_thread_impl.cc.orig	2024-02-04 14:46:08 UTC
+--- content/utility/utility_thread_impl.cc.orig	2024-06-25 12:08:48 UTC
 +++ content/utility/utility_thread_impl.cc
-@@ -32,7 +32,7 @@
+@@ -31,7 +31,7 @@
+ #include "mojo/public/cpp/bindings/pending_receiver.h"
  #include "mojo/public/cpp/bindings/service_factory.h"
- #include "third_party/abseil-cpp/absl/types/optional.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include "content/child/sandboxed_process_thread_type_handler.h"
  #endif
  
-@@ -252,7 +252,8 @@ void UtilityThreadImpl::Init() {
+@@ -251,7 +251,8 @@ void UtilityThreadImpl::Init() {
  
    GetContentClient()->utility()->UtilityThreadStarted();
  

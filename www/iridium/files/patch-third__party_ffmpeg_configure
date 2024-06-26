@@ -1,10 +1,13 @@
---- third_party/ffmpeg/configure.orig	2024-02-04 14:46:08 UTC
+--- third_party/ffmpeg/configure.orig	2024-06-25 12:08:48 UTC
 +++ third_party/ffmpeg/configure
-@@ -5604,6 +5604,7 @@ case $target_os in
-         disable symver
-         ;;
-     freebsd)
-+        enable section_data_rel_ro
-         ;;
-     bsd/os)
-         add_extralibs -lpoll -lgnugetopt
+@@ -6790,8 +6790,8 @@ if ! disabled pthreads && ! enabled w32threads && ! en
+         if enabled pthread_np_h; then
+             hdrs="$hdrs pthread_np.h"
+         fi
+-        check_lib pthread_set_name_np "$hdrs" pthread_set_name_np -lpthread
+-        check_lib pthread_setname_np "$hdrs" pthread_setname_np -lpthread
++        check_lib pthread_set_name_np pthread_np.h pthread_set_name_np -lpthread
++        check_lib pthread_setname_np pthread_np.h pthread_setname_np -lpthread
+     fi
+ fi
+ 

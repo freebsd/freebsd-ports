@@ -1,8 +1,8 @@
---- chrome/test/chromedriver/keycode_text_conversion_unittest.cc.orig	2022-10-05 07:34:01 UTC
+--- chrome/test/chromedriver/keycode_text_conversion_unittest.cc.orig	2024-06-25 12:08:48 UTC
 +++ chrome/test/chromedriver/keycode_text_conversion_unittest.cc
 @@ -67,7 +67,7 @@ std::string ConvertKeyCodeToTextNoError(ui::KeyboardCo
  
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
@@ -11,7 +11,7 @@
  #else
 @@ -104,7 +104,7 @@ TEST(KeycodeTextConversionTest, MAYBE_KeyCodeToText) {
  
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)

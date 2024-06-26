@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_image/shared_image_factory.cc.orig	2023-10-21 11:51:27 UTC
+--- gpu/command_buffer/service/shared_image/shared_image_factory.cc.orig	2024-06-25 12:08:48 UTC
 +++ gpu/command_buffer/service/shared_image/shared_image_factory.cc
-@@ -142,7 +142,7 @@ gfx::GpuMemoryBufferType GetNativeBufferType() {
+@@ -144,7 +144,7 @@ gfx::GpuMemoryBufferType GetNativeBufferType() {
    return gfx::GpuMemoryBufferType::IO_SURFACE_BUFFER;
  #elif BUILDFLAG(IS_ANDROID)
    return gfx::GpuMemoryBufferType::ANDROID_HARDWARE_BUFFER;

@@ -1,4 +1,4 @@
---- media/video/fake_gpu_memory_buffer.cc.orig	2022-03-28 18:11:04 UTC
+--- media/video/fake_gpu_memory_buffer.cc.orig	2024-06-25 12:08:48 UTC
 +++ media/video/fake_gpu_memory_buffer.cc
 @@ -9,7 +9,7 @@
  #include "media/base/format_utils.h"
@@ -9,7 +9,7 @@
  #include <fcntl.h>
  #include <sys/stat.h>
  #include <sys/types.h>
-@@ -47,7 +47,7 @@ class FakeGpuMemoryBufferImpl : public gpu::GpuMemoryB
+@@ -52,7 +52,7 @@ class FakeGpuMemoryBufferImpl : public gpu::GpuMemoryB
  
  }  // namespace
  
@@ -18,7 +18,7 @@
  base::ScopedFD GetDummyFD() {
    base::ScopedFD fd(open("/dev/zero", O_RDWR));
    DCHECK(fd.is_valid());
-@@ -77,7 +77,7 @@ FakeGpuMemoryBuffer::FakeGpuMemoryBuffer(const gfx::Si
+@@ -82,7 +82,7 @@ FakeGpuMemoryBuffer::FakeGpuMemoryBuffer(const gfx::Si
    static base::AtomicSequenceNumber buffer_id_generator;
    handle_.id = gfx::GpuMemoryBufferId(buffer_id_generator.GetNext());
  
@@ -27,12 +27,12 @@
    for (size_t i = 0; i < VideoFrame::NumPlanes(video_pixel_format_); i++) {
      const gfx::Size plane_size_in_bytes =
          VideoFrame::PlaneSize(video_pixel_format_, i, size_);
-@@ -134,7 +134,7 @@ gfx::GpuMemoryBufferHandle FakeGpuMemoryBuffer::CloneH
+@@ -144,7 +144,7 @@ gfx::GpuMemoryBufferHandle FakeGpuMemoryBuffer::CloneH
    gfx::GpuMemoryBufferHandle handle;
    handle.type = gfx::NATIVE_PIXMAP;
    handle.id = handle_.id;
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
    handle.native_pixmap_handle =
        gfx::CloneHandleForIPC(handle_.native_pixmap_handle);
  #endif

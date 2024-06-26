@@ -1,7 +1,7 @@
---- ui/base/x/x11_display_manager.cc.orig	2023-11-22 14:00:11 UTC
+--- ui/base/x/x11_display_manager.cc.orig	2024-06-25 12:08:48 UTC
 +++ ui/base/x/x11_display_manager.cc
-@@ -15,7 +15,7 @@
- #include "ui/gfx/x/x11_atom_cache.h"
+@@ -16,7 +16,7 @@
+ #include "ui/gfx/x/randr.h"
  #include "ui/gfx/x/xproto.h"
  
 -#if BUILDFLAG(IS_LINUX)
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -91,7 +91,7 @@ void XDisplayManager::FetchDisplayList() {
+@@ -92,7 +92,7 @@ void XDisplayManager::FetchDisplayList() {
            ? display::Display::GetForcedDeviceScaleFactor()
            : 1.0f};
    const auto* display_config = &empty_display_config;

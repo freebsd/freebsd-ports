@@ -1,6 +1,6 @@
---- base/process/process_metrics_openbsd.cc.orig	2023-10-21 11:51:27 UTC
+--- base/process/process_metrics_openbsd.cc.orig	2024-06-25 12:08:48 UTC
 +++ base/process/process_metrics_openbsd.cc
-@@ -6,14 +6,23 @@
+@@ -6,75 +6,50 @@
  
  #include <stddef.h>
  #include <stdint.h>
@@ -12,24 +12,18 @@
 +#include <kvm.h>
 +
  #include "base/memory/ptr_util.h"
- #include "base/process/process_metrics_iocounters.h"
+ #include "base/types/expected.h"
 +#include "base/values.h"
 +#include "base/notreached.h"
  
  namespace base {
  
-+ProcessMetrics::ProcessMetrics(ProcessHandle process)
-+    : process_(process) {}
-+
- // static
- std::unique_ptr<ProcessMetrics> ProcessMetrics::CreateProcessMetrics(
-     ProcessHandle process) {
-@@ -24,49 +33,23 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
-   return false;
- }
+-namespace {
++ProcessMetrics::ProcessMetrics(ProcessHandle process) : process_(process) {}
  
--static int GetProcessCPU(pid_t pid) {
-+TimeDelta ProcessMetrics::GetCumulativeCPUUsage() {
+-base::expected<int, ProcessCPUUsageError> GetProcessCPU(pid_t pid) {
++base::expected<TimeDelta, ProcessCPUUsageError>
++ProcessMetrics::GetCumulativeCPUUsage() {
    struct kinfo_proc info;
 -  size_t length;
 -  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, pid,
@@ -37,43 +31,56 @@
 +  size_t length = sizeof(struct kinfo_proc);
 +  struct timeval tv;
  
--  if (sysctl(mib, std::size(mib), NULL, &length, NULL, 0) < 0)
--    return -1;
+-  if (sysctl(mib, std::size(mib), NULL, &length, NULL, 0) < 0) {
+-    return base::unexpected(ProcessCPUUsageError::kSystemError);
+-  }
 +  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,
 +                sizeof(struct kinfo_proc), 1 };
  
 -  mib[5] = (length / sizeof(struct kinfo_proc));
 -
-   if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0)
--    return 0;
-+    return TimeDelta();
+   if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0) {
+     return base::unexpected(ProcessCPUUsageError::kSystemError);
+   }
  
--  return info.p_pctcpu;
--}
+-  return base::ok(info.p_pctcpu);
 +  tv.tv_sec = info.p_rtime_sec;
 +  tv.tv_usec = info.p_rtime_usec;
++
++  return base::ok(Microseconds(TimeValToMicroseconds(tv)));
+ }
  
--double ProcessMetrics::GetPlatformIndependentCPUUsage() {
+-}  // namespace
+-
+ // static
+ std::unique_ptr<ProcessMetrics> ProcessMetrics::CreateProcessMetrics(
+     ProcessHandle process) {
+   return WrapUnique(new ProcessMetrics(process));
+ }
+ 
+-base::expected<double, ProcessCPUUsageError>
+-ProcessMetrics::GetPlatformIndependentCPUUsage() {
 -  TimeTicks time = TimeTicks::Now();
 -
 -  if (last_cpu_time_.is_zero()) {
 -    // First call, just set the last values.
 -    last_cpu_time_ = time;
--    return 0;
+-    return base::ok(0.0);
 -  }
 -
--  int cpu = GetProcessCPU(process_);
+-  const base::expected<int, ProcessCPUUsageError> cpu = GetProcessCPU(process_);
+-  if (!cpu.has_value()) {
+-    return base::unexpected(cpu.error());
+-  }
 -
 -  last_cpu_time_ = time;
--  double percentage = static_cast<double>((cpu * 100.0) / FSCALE);
+-  return base::ok(double{cpu.value()} / FSCALE * 100.0);
+-}
 -
--  return percentage;
-+  return Microseconds(TimeValToMicroseconds(tv));
- }
- 
--TimeDelta ProcessMetrics::GetCumulativeCPUUsage() {
--  NOTREACHED();
--  return TimeDelta();
+-base::expected<TimeDelta, ProcessCPUUsageError>
+-ProcessMetrics::GetCumulativeCPUUsage() {
+-  NOTREACHED_IN_MIGRATION();
+-  return base::unexpected(ProcessCPUUsageError::kNotImplemented);
 -}
 -
 -ProcessMetrics::ProcessMetrics(ProcessHandle process)
@@ -82,9 +89,17 @@
 -
  size_t GetSystemCommitCharge() {
    int mib[] = { CTL_VM, VM_METER };
-   int pagesize;
-@@ -84,6 +67,133 @@ size_t GetSystemCommitCharge() {
-   pagesize = getpagesize();
+-  int pagesize;
++  size_t pagesize;
+   struct vmtotal vmtotal;
+   unsigned long mem_total, mem_free, mem_inactive;
+   size_t len = sizeof(vmtotal);
+@@ -86,9 +61,136 @@ size_t GetSystemCommitCharge() {
+   mem_free = vmtotal.t_free;
+   mem_inactive = vmtotal.t_vm - vmtotal.t_avm;
+ 
+-  pagesize = getpagesize();
++  pagesize = checked_cast<size_t>(getpagesize());
  
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
 +}

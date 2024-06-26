@@ -1,6 +1,14 @@
---- base/system/sys_info_openbsd.cc.orig	2023-11-22 14:00:11 UTC
+--- base/system/sys_info_openbsd.cc.orig	2024-06-25 12:08:48 UTC
 +++ base/system/sys_info_openbsd.cc
-@@ -12,6 +12,7 @@
+@@ -3,7 +3,6 @@
+ // found in the LICENSE file.
+ 
+ #include "base/system/sys_info.h"
+-
+ #include <stddef.h>
+ #include <stdint.h>
+ #include <sys/param.h>
+@@ -12,6 +11,7 @@
  
  #include "base/notreached.h"
  #include "base/posix/sysctl.h"
@@ -8,14 +16,13 @@
  
  namespace {
  
-@@ -27,9 +28,15 @@ uint64_t AmountOfMemory(int pages_name) {
+@@ -27,9 +27,14 @@ uint64_t AmountOfMemory(int pages_name) {
  
  namespace base {
  
 +// pledge(2)
-+int64_t aofpmem = 0;
-+int64_t aofapmem = 0;
-+int64_t shmmax = 0;
++uint64_t aofpmem = 0;
++uint64_t shmmax = 0;
 +char cpumodel[256];
 +
  // static
@@ -25,7 +32,7 @@
    int ncpu;
    size_t size = sizeof(ncpu);
    if (sysctl(mib, std::size(mib), &ncpu, &size, NULL, 0) < 0) {
-@@ -41,10 +48,26 @@ int SysInfo::NumberOfProcessors() {
+@@ -41,10 +46,26 @@ int SysInfo::NumberOfProcessors() {
  
  // static
  uint64_t SysInfo::AmountOfPhysicalMemoryImpl() {
@@ -53,7 +60,7 @@
  uint64_t SysInfo::AmountOfAvailablePhysicalMemoryImpl() {
    // We should add inactive file-backed memory also but there is no such
    // information from OpenBSD unfortunately.
-@@ -56,16 +79,28 @@ uint64_t SysInfo::MaxSharedMemorySize() {
+@@ -56,16 +77,28 @@ uint64_t SysInfo::MaxSharedMemorySize() {
    int mib[] = {CTL_KERN, KERN_SHMINFO, KERN_SHMINFO_SHMMAX};
    size_t limit;
    size_t size = sizeof(limit);
@@ -61,7 +68,7 @@
 +  if (shmmax)
 +    goto out;
    if (sysctl(mib, std::size(mib), &limit, &size, NULL, 0) < 0) {
-     NOTREACHED();
+     NOTREACHED_IN_MIGRATION();
      return 0;
    }
 -  return static_cast<uint64_t>(limit);

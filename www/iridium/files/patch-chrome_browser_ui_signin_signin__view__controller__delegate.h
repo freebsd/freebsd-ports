@@ -1,4 +1,4 @@
---- chrome/browser/ui/signin/signin_view_controller_delegate.h.orig	2023-10-21 11:51:27 UTC
+--- chrome/browser/ui/signin/signin_view_controller_delegate.h.orig	2024-06-25 12:08:48 UTC
 +++ chrome/browser/ui/signin/signin_view_controller_delegate.h
 @@ -81,7 +81,7 @@ class SigninViewControllerDelegate {
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT) || BUILDFLAG(IS_CHROMEOS_LACROS)
@@ -7,5 +7,5 @@
 -    BUILDFLAG(IS_CHROMEOS_LACROS)
 +    BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
    // Returns a platform-specific SigninViewContolllerDelegate instance that
-   // displays the enterprise confirmation modal dialog. The returned object
+   // displays the managed user notice modal dialog. The returned object
    // should delete itself when the window it's managing is closed.

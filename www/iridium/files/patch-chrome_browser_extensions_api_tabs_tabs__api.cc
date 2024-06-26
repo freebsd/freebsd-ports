@@ -1,11 +1,11 @@
---- chrome/browser/extensions/api/tabs/tabs_api.cc.orig	2023-11-22 14:00:11 UTC
+--- chrome/browser/extensions/api/tabs/tabs_api.cc.orig	2024-06-25 12:08:48 UTC
 +++ chrome/browser/extensions/api/tabs/tabs_api.cc
-@@ -861,7 +861,7 @@ ExtensionFunction::ResponseAction WindowsCreateFunctio
- // ui::SHOW_STATE_MINIMIZED above, on Linux the window is not created as
+@@ -890,7 +890,7 @@ ExtensionFunction::ResponseAction WindowsCreateFunctio
  // minimized.
- // TODO(crbug.com/1410400): Remove this workaround when linux is fixed.
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- // TODO(crbug.com/1410400): Find a fix for wayland as well.
- 
- // Must be defined inside IS_LINUX to compile on windows/mac.
+ // TODO(crbug.com/40254339): Remove this workaround when linux is fixed.
+ // TODO(crbug.com/40254339): Find a fix for wayland as well.
+-#if BUILDFLAG(IS_LINUX) && BUILDFLAG(IS_OZONE_X11)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(IS_OZONE_X11)
+   if (new_window->initial_show_state() == ui::SHOW_STATE_MINIMIZED) {
+     new_window->window()->Minimize();
+   }

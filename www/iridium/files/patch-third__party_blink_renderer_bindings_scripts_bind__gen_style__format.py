@@ -1,9 +1,9 @@
---- third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py.orig	2022-03-28 18:11:04 UTC
+--- third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py.orig	2024-06-25 12:08:48 UTC
 +++ third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py
-@@ -28,7 +28,7 @@ def init(root_src_dir, enable_style_format=True):
-     root_src_dir = os.path.abspath(root_src_dir)
+@@ -30,7 +30,7 @@ def init(root_src_dir, enable_style_format=True):
  
      # Determine //buildtools/<platform>/ directory
+     new_path_platform_suffix = ""
 -    if sys.platform.startswith("linux"):
 +    if sys.platform.startswith(("linux","openbsd","freebsd")):
          platform = "linux64"

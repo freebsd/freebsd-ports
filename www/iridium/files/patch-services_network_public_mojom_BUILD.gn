@@ -1,6 +1,6 @@
---- services/network/public/mojom/BUILD.gn.orig	2024-02-04 14:46:08 UTC
+--- services/network/public/mojom/BUILD.gn.orig	2024-06-25 12:08:48 UTC
 +++ services/network/public/mojom/BUILD.gn
-@@ -521,11 +521,11 @@ mojom("url_loader_base") {
+@@ -524,11 +524,11 @@ mojom("url_loader_base") {
    }
  
    enabled_features = []
@@ -11,15 +11,15 @@
  
 -  if (is_linux) {
 +  if (is_linux && !is_bsd) {
-     # TODO(crbug.com/1431866): Remove this once is_linux in the mojom IDL does
+     # TODO(crbug.com/40263697): Remove this once is_linux in the mojom IDL does
      # not include lacros.
      enabled_features += [ "use_network_interface_change_listener" ]
-@@ -1442,7 +1442,7 @@ mojom("mojom") {
+@@ -1489,7 +1489,7 @@ mojom("mojom") {
      }
    }
  
 -  if (is_linux) {
 +  if (is_linux && !is_bsd) {
-     # TODO(crbug.com/1431866): Remove this once is_linux in the mojom IDL does
+     # TODO(crbug.com/40263697): Remove this once is_linux in the mojom IDL does
      # not include lacros.
      enabled_features += [ "use_network_interface_change_listener" ]

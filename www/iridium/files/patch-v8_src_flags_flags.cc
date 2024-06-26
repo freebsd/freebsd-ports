@@ -1,6 +1,6 @@
---- v8/src/flags/flags.cc.orig	2023-11-22 14:00:11 UTC
+--- v8/src/flags/flags.cc.orig	2024-06-25 12:08:48 UTC
 +++ v8/src/flags/flags.cc
-@@ -13,6 +13,10 @@
+@@ -15,6 +15,10 @@
  #include <set>
  #include <sstream>
  
@@ -9,9 +9,9 @@
 +#endif
 +
  #include "src/base/functional.h"
- #include "src/base/logging.h"
+ #include "src/base/lazy-instance.h"
  #include "src/base/platform/platform.h"
-@@ -32,7 +36,11 @@
+@@ -34,7 +38,11 @@
  namespace v8::internal {
  
  // Define {v8_flags}, declared in flags.h.
@@ -23,7 +23,7 @@
  
  // {v8_flags} needs to be aligned to a memory page, and the size needs to be a
  // multiple of a page size. This is required for memory-protection of the memory
-@@ -905,6 +913,10 @@ void FlagList::FreezeFlags() {
+@@ -807,6 +815,10 @@ void FlagList::FreezeFlags() {
    // Note that for string flags we only protect the pointer itself, but not the
    // string storage. TODO(12887): Fix this.
    base::OS::SetDataReadOnly(&v8_flags, sizeof(v8_flags));

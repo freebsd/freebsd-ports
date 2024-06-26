@@ -1,6 +1,15 @@
---- chrome/utility/services.cc.orig	2023-11-22 14:00:11 UTC
+--- chrome/utility/services.cc.orig	2024-06-25 12:08:48 UTC
 +++ chrome/utility/services.cc
-@@ -56,7 +56,7 @@
+@@ -38,7 +38,7 @@
+ #include "services/screen_ai/screen_ai_service_impl.h"  // nogncheck
+ #endif
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "services/passage_embeddings/passage_embeddings_service.h"
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(LINUX)
+ 
+@@ -61,7 +61,7 @@
  #include "chrome/services/system_signals/mac/mac_system_signals_service.h"
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -14,43 +23,43 @@
  #endif
  
 -#if BUILDFLAG(FULL_SAFE_BROWSING) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN))
-+#if BUILDFLAG(FULL_SAFE_BROWSING) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD))
++#if BUILDFLAG(FULL_SAFE_BROWSING) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)) || BUILDFLAG(IS_BSD)
  #include "chrome/services/file_util/document_analysis_service.h"  // nogncheck
  #endif
  
-@@ -218,7 +218,7 @@ auto RunMacNotificationService(
+@@ -221,7 +221,7 @@ auto RunMacNotificationService(
  }
  #endif  // BUILDFLAG(IS_MAC)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- auto RunSystemSignalsService(
-     mojo::PendingReceiver<device_signals::mojom::SystemSignalsService>
+ auto RunPassageEmbeddingsService(
+     mojo::PendingReceiver<passage_embeddings::mojom::PassageEmbeddingsService>
          receiver) {
-@@ -278,7 +278,7 @@ auto RunCupsIppParser(
+@@ -288,7 +288,7 @@ auto RunCupsIppParser(
  }
  #endif
  
 -#if BUILDFLAG(FULL_SAFE_BROWSING) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN))
-+#if BUILDFLAG(FULL_SAFE_BROWSING) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD))
++#if BUILDFLAG(FULL_SAFE_BROWSING) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)) || BUILDFLAG(IS_BSD)
  auto RunDocumentAnalysis(
      mojo::PendingReceiver<chrome::mojom::DocumentAnalysisService> receiver) {
    return std::make_unique<DocumentAnalysisService>(std::move(receiver));
-@@ -466,7 +466,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -494,7 +494,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
    services.Add(RunWindowsIconReader);
  #endif  // BUILDFLAG(IS_WIN)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   services.Add(RunPassageEmbeddingsService);
    services.Add(RunSystemSignalsService);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
- 
-@@ -482,7 +482,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -511,7 +511,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
    services.Add(RunFileUtil);
  #endif
  
 -#if BUILDFLAG(FULL_SAFE_BROWSING) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN))
-+#if BUILDFLAG(FULL_SAFE_BROWSING) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD))
++#if BUILDFLAG(FULL_SAFE_BROWSING) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)) || BUILDFLAG(IS_BSD)
    services.Add(RunDocumentAnalysis);
  #endif
  

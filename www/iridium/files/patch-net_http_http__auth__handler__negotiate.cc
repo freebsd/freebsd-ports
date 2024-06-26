@@ -1,6 +1,6 @@
---- net/http/http_auth_handler_negotiate.cc.orig	2023-10-21 11:51:27 UTC
+--- net/http/http_auth_handler_negotiate.cc.orig	2024-06-25 12:08:48 UTC
 +++ net/http/http_auth_handler_negotiate.cc
-@@ -121,7 +121,7 @@ int HttpAuthHandlerNegotiate::Factory::CreateAuthHandl
+@@ -120,7 +120,7 @@ int HttpAuthHandlerNegotiate::Factory::CreateAuthHandl
  #elif BUILDFLAG(IS_POSIX)
    if (is_unsupported_)
      return ERR_UNSUPPORTED_AUTH_SCHEME;

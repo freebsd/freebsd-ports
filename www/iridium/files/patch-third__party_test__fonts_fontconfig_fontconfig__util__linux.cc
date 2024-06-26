@@ -1,4 +1,4 @@
---- third_party/test_fonts/fontconfig/fontconfig_util_linux.cc.orig	2022-04-01 07:48:30 UTC
+--- third_party/test_fonts/fontconfig/fontconfig_util_linux.cc.orig	2024-06-25 12:08:48 UTC
 +++ third_party/test_fonts/fontconfig/fontconfig_util_linux.cc
 @@ -2,6 +2,8 @@
  // Use of this source code is governed by a BSD-style license that can be
@@ -9,7 +9,7 @@
  #include "third_party/test_fonts/fontconfig/fontconfig_util_linux.h"
  
  #include <fontconfig/fontconfig.h>
-@@ -15,11 +17,15 @@
+@@ -16,11 +18,15 @@
  namespace test_fonts {
  
  std::string GetSysrootDir() {

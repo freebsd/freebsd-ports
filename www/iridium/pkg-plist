@@ -127,6 +127,9 @@ bin/iridium
 %%DATADIR%%/product_logo_48.png
 %%DATADIR%%/protoc
 %%DATADIR%%/resources.pak
+%%DATADIR%%/resources/accessibility/reading_mode_gdocs_helper/content.js
+%%DATADIR%%/resources/accessibility/reading_mode_gdocs_helper/gdocs_script.js
+%%DATADIR%%/resources/accessibility/reading_mode_gdocs_helper_manifest.json
 %%DATADIR%%/resources/inspector_overlay/inspector_overlay_resources.grd
 %%DATADIR%%/resources/inspector_overlay/main.js
 %%DATADIR%%/snapshot_blob.bin

@@ -1,8 +1,8 @@
---- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.cc.orig	2024-02-04 14:46:08 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.cc.orig	2024-06-25 12:08:48 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.cc
-@@ -12,11 +12,11 @@
- #include <string.h>
- #include <unistd.h>
+@@ -13,11 +13,11 @@
+ #include "partition_alloc/partition_alloc_base/posix/eintr_wrapper.h"
+ #include "partition_alloc/partition_alloc_base/strings/safe_sprintf.h"
  
 -#if !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_APPLE)
 +#if !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_APPLE) && !BUILDFLAG(IS_BSD)
@@ -11,9 +11,9 @@
  
 -#if BUILDFLAG(IS_APPLE)
 +#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_BSD)
- #define HAVE_DLADDR
  #include <dlfcn.h>
  #endif
+ 
 @@ -25,7 +25,7 @@ namespace partition_alloc::internal::base::debug {
  
  namespace {
@@ -21,9 +21,9 @@
 -#if !BUILDFLAG(IS_APPLE)
 +#if !BUILDFLAG(IS_APPLE) && !BUILDFLAG(IS_BSD)
  
- constexpr size_t kBufferSize = 4096u;
- 
-@@ -359,7 +359,7 @@ void PrintStackTraceInternal(const void** trace, size_
+ // On Android the 'open' function has two versions:
+ // int open(const char *pathname, int flags);
+@@ -369,7 +369,7 @@ void PrintStackTraceInternal(const void** trace, size_
  }
  #endif  // !BUILDFLAG(IS_APPLE)
  

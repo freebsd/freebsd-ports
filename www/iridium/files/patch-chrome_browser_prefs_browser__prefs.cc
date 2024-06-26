@@ -1,6 +1,6 @@
---- chrome/browser/prefs/browser_prefs.cc.orig	2024-02-04 14:46:08 UTC
+--- chrome/browser/prefs/browser_prefs.cc.orig	2024-06-25 12:08:48 UTC
 +++ chrome/browser/prefs/browser_prefs.cc
-@@ -485,18 +485,18 @@
+@@ -489,18 +489,18 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  #include "components/device_signals/core/browser/pref_names.h"  // nogncheck due to crbug.com/1125897
  #endif
  
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD) || \
@@ -18,11 +18,11 @@
  #endif
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) 
  #include "chrome/browser/enterprise/signin/enterprise_signin_prefs.h"
  #endif
  
-@@ -528,7 +528,7 @@
+@@ -535,7 +535,7 @@
  #include "chrome/browser/sessions/session_service_log.h"
  #endif
  
@@ -31,25 +31,16 @@
  #include "ui/color/system_theme.h"
  #endif
  
-@@ -652,7 +652,7 @@ const char kPluginsPluginsList[] = "plugins.plugins_li
- const char kPluginsShowDetails[] = "plugins.show_details";
+@@ -1861,7 +1861,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+                                 true);
+ #endif  // BUILDFLAG(ENABLE_PDF)
  
- // Deprecated 02/2023.
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- const char kWebAppsUrlHandlerInfo[] = "web_apps.url_handler_info";
- #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+   registry->RegisterBooleanPref(prefs::kChromeForTestingAllowed, true);
+ #endif
  
-@@ -982,7 +982,7 @@ void RegisterLocalStatePrefsForMigration(PrefRegistryS
- #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
- 
-   // Deprecated 02/2023.
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   registry->RegisterDictionaryPref(kWebAppsUrlHandlerInfo);
- #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
- 
-@@ -1959,12 +1959,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -2213,12 +2213,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -64,12 +55,3 @@
    browser_switcher::BrowserSwitcherPrefs::RegisterProfilePrefs(registry);
    enterprise_signin::RegisterProfilePrefs(registry);
  #endif
-@@ -2121,7 +2121,7 @@ void MigrateObsoleteLocalStatePrefs(PrefService* local
- #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
- 
-   // Added 02/2023
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   local_state->ClearPref(kWebAppsUrlHandlerInfo);
- #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
- 

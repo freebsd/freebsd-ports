@@ -1,6 +1,6 @@
---- base/files/file_util_posix.cc.orig	2023-11-22 14:00:11 UTC
+--- base/files/file_util_posix.cc.orig	2024-06-25 12:08:48 UTC
 +++ base/files/file_util_posix.cc
-@@ -756,33 +756,34 @@ bool CreateDirectoryAndGetError(const FilePath& full_p
+@@ -819,33 +819,34 @@ bool CreateDirectoryAndGetError(const FilePath& full_p
                                  File::Error* error) {
    ScopedBlockingCall scoped_blocking_call(
        FROM_HERE, BlockingType::MAY_BLOCK);  // For call to mkdir().

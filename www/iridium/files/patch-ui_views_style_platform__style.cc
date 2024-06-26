@@ -1,4 +1,4 @@
---- ui/views/style/platform_style.cc.orig	2023-03-13 07:33:08 UTC
+--- ui/views/style/platform_style.cc.orig	2024-06-25 12:08:48 UTC
 +++ ui/views/style/platform_style.cc
 @@ -17,7 +17,7 @@
  #include "ui/views/controls/focusable_border.h"
@@ -18,12 +18,12 @@
      false;
  #else
      true;
-@@ -58,7 +58,7 @@ const bool PlatformStyle::kAdjustBubbleIfOffscreen =
- 
+@@ -59,7 +59,7 @@ const bool PlatformStyle::kAdjustBubbleIfOffscreen =
  // static
- std::unique_ptr<ScrollBar> PlatformStyle::CreateScrollBar(bool is_horizontal) {
+ std::unique_ptr<ScrollBar> PlatformStyle::CreateScrollBar(
+     ScrollBar::Orientation orientation) {
 -#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   return std::make_unique<OverlayScrollBar>(is_horizontal);
+   return std::make_unique<OverlayScrollBar>(orientation);
  #else
-   return std::make_unique<ScrollBarViews>(is_horizontal);
+   return std::make_unique<ScrollBarViews>(orientation);

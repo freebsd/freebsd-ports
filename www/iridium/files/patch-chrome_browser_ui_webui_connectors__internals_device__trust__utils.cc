@@ -1,15 +1,15 @@
---- chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc.orig	2023-11-22 14:00:11 UTC
+--- chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc.orig	2024-06-25 12:08:48 UTC
 +++ chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc
-@@ -6,7 +6,7 @@
- 
+@@ -7,7 +7,7 @@
  #include "build/build_config.h"
+ #include "components/enterprise/buildflags/buildflags.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
  #include "base/base64url.h"
  #include "chrome/browser/browser_process.h"
  #include "chrome/browser/policy/chrome_browser_policy_connector.h"
-@@ -29,7 +29,7 @@ namespace utils {
+@@ -38,7 +38,7 @@ namespace enterprise_connectors::utils {
  
  namespace {
  
@@ -18,7 +18,7 @@
  
  connectors_internals::mojom::KeyTrustLevel ParseTrustLevel(
      BPKUR::KeyTrustLevel trust_level) {
-@@ -97,7 +97,7 @@ connectors_internals::mojom::Int32ValuePtr ToMojomValu
+@@ -173,7 +173,7 @@ connectors_internals::mojom::CertificateMetadataPtr Co
  }  // namespace
  
  connectors_internals::mojom::KeyInfoPtr GetKeyInfo() {

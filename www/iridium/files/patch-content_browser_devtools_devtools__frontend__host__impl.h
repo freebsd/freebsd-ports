@@ -1,6 +1,6 @@
---- content/browser/devtools/devtools_frontend_host_impl.h.orig	2023-11-22 14:00:11 UTC
+--- content/browser/devtools/devtools_frontend_host_impl.h.orig	2024-06-25 12:08:48 UTC
 +++ content/browser/devtools/devtools_frontend_host_impl.h
-@@ -33,7 +33,7 @@ class DevToolsFrontendHostImpl : public DevToolsFronte
+@@ -34,7 +34,7 @@ class DevToolsFrontendHostImpl : public DevToolsFronte
  
    void BadMessageReceived() override;
  

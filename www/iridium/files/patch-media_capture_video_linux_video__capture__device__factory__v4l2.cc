@@ -1,6 +1,20 @@
---- media/capture/video/linux/video_capture_device_factory_v4l2.cc.orig	2023-07-24 14:27:53 UTC
+--- media/capture/video/linux/video_capture_device_factory_v4l2.cc.orig	2024-06-25 12:08:48 UTC
 +++ media/capture/video/linux/video_capture_device_factory_v4l2.cc
-@@ -75,6 +75,9 @@ class DevVideoFilePathsDeviceProvider
+@@ -38,6 +38,7 @@ bool CompareCaptureDevices(const VideoCaptureDeviceInf
+   return a.descriptor < b.descriptor;
+ }
+ 
++#if !BUILDFLAG(IS_OPENBSD)
+ // USB VID and PID are both 4 bytes long.
+ const size_t kVidPidSize = 4;
+ const size_t kMaxInterfaceNameSize = 256;
+@@ -70,11 +71,15 @@ std::string ExtractFileNameFromDeviceId(const std::str
+   DCHECK(base::StartsWith(device_id, kDevDir, base::CompareCase::SENSITIVE));
+   return device_id.substr(strlen(kDevDir), device_id.length());
+ }
++#endif
+ 
+ class DevVideoFilePathsDeviceProvider
      : public VideoCaptureDeviceFactoryV4L2::DeviceProvider {
   public:
    void GetDeviceIds(std::vector<std::string>* target_container) override {
@@ -10,7 +24,7 @@
      const base::FilePath path("/dev/");
      base::FileEnumerator enumerator(path, false, base::FileEnumerator::FILES,
                                      "video*");
-@@ -82,9 +85,13 @@ class DevVideoFilePathsDeviceProvider
+@@ -82,9 +87,13 @@ class DevVideoFilePathsDeviceProvider
        const base::FileEnumerator::FileInfo info = enumerator.GetInfo();
        target_container->emplace_back(path.value() + info.GetName().value());
      }
@@ -20,21 +34,33 @@
    std::string GetDeviceModelId(const std::string& device_id) override {
 +#if BUILDFLAG(IS_OPENBSD)
 +    return std::string();
-+#endif
++#else
      const std::string file_name = ExtractFileNameFromDeviceId(device_id);
      std::string usb_id;
      const std::string vid_path =
-@@ -104,6 +111,9 @@ class DevVideoFilePathsDeviceProvider
+@@ -101,9 +110,13 @@ class DevVideoFilePathsDeviceProvider
+     }
+ 
+     return usb_id;
++#endif
    }
  
    std::string GetDeviceDisplayName(const std::string& device_id) override {
 +#if BUILDFLAG(IS_OPENBSD)
 +    return std::string();
-+#endif
++#else
      const std::string file_name = ExtractFileNameFromDeviceId(device_id);
      const std::string interface_path =
          base::StringPrintf(kInterfacePathTemplate, file_name.c_str());
-@@ -219,7 +229,7 @@ void VideoCaptureDeviceFactoryV4L2::GetDevicesInfo(
+@@ -114,6 +127,7 @@ class DevVideoFilePathsDeviceProvider
+       return std::string();
+     }
+     return display_name;
++#endif
+   }
+ };
+ 
+@@ -219,7 +233,7 @@ void VideoCaptureDeviceFactoryV4L2::GetDevicesInfo(
    std::move(callback).Run(std::move(devices_info));
  }
  

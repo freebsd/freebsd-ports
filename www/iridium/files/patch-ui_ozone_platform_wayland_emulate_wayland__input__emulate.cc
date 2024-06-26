@@ -1,8 +1,8 @@
---- ui/ozone/platform/wayland/emulate/wayland_input_emulate.cc.orig	2024-02-04 14:46:08 UTC
+--- ui/ozone/platform/wayland/emulate/wayland_input_emulate.cc.orig	2024-06-25 12:08:48 UTC
 +++ ui/ozone/platform/wayland/emulate/wayland_input_emulate.cc
-@@ -230,7 +230,7 @@ void WaylandInputEmulate::EmulateTouch(int action,
-   wayland_proxy->FlushForTesting();
+@@ -284,7 +284,7 @@ void WaylandInputEmulate::EmulateUpdateDisplay(const s
  }
+ #endif
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

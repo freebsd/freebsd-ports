@@ -1,18 +1,13 @@
---- base/debug/elf_reader.cc.orig	2023-10-21 11:51:27 UTC
+--- base/debug/elf_reader.cc.orig	2024-06-25 12:08:48 UTC
 +++ base/debug/elf_reader.cc
-@@ -78,6 +78,7 @@ size_t ReadElfBuildId(const void* elf_mapped_base,
-     bool found = false;
-     while (current_section < section_end) {
-       current_note = reinterpret_cast<const Nhdr*>(current_section);
-+#if !BUILDFLAG(IS_BSD)
-       if (current_note->n_type == NT_GNU_BUILD_ID) {
-         StringPiece note_name(current_section + sizeof(Nhdr),
-                               current_note->n_namesz);
-@@ -87,6 +88,7 @@ size_t ReadElfBuildId(const void* elf_mapped_base,
-           break;
-         }
-       }
-+#endif
+@@ -50,6 +50,10 @@ using Xword = Elf64_Xword;
  
-       size_t section_size = bits::AlignUp(current_note->n_namesz, 4u) +
-                             bits::AlignUp(current_note->n_descsz, 4u) +
+ constexpr char kGnuNoteName[] = "GNU";
+ 
++#ifndef NT_GNU_BUILD_ID
++#define NT_GNU_BUILD_ID 3
++#endif
++
+ // Returns a pointer to the header of the ELF binary mapped into memory, or a
+ // null pointer if the header is invalid. Here and below |elf_mapped_base| is a
+ // pointer to the start of the ELF image.

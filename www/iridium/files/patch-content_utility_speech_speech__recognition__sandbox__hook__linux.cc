@@ -1,4 +1,4 @@
---- content/utility/speech/speech_recognition_sandbox_hook_linux.cc.orig	2023-01-17 19:19:00 UTC
+--- content/utility/speech/speech_recognition_sandbox_hook_linux.cc.orig	2024-06-25 12:08:48 UTC
 +++ content/utility/speech/speech_recognition_sandbox_hook_linux.cc
 @@ -12,11 +12,14 @@
  #include "sandbox/linux/syscall_broker/broker_command.h"
@@ -27,9 +27,9 @@
  #if BUILDFLAG(ENABLE_SODA_INTEGRATION_TESTS)
    base::FilePath test_binary_path = GetSodaTestBinaryPath();
    DVLOG(0) << "SODA test binary path: " << test_binary_path.value().c_str();
-@@ -77,6 +82,7 @@ bool SpeechRecognitionPreSandboxHook(
-                                sandbox::policy::SandboxLinux::PreSandboxHook(),
-                                options);
+@@ -75,6 +80,7 @@ bool SpeechRecognitionPreSandboxHook(
+                                }),
+                                GetSodaFilePermissions(), options);
    instance->EngageNamespaceSandboxIfPossible();
 +#endif
  
