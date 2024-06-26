@@ -1084,6 +1084,7 @@
     SUBDIR += py-netaddr
     SUBDIR += py-netif
     SUBDIR += py-netifaces
+    SUBDIR += py-netifaces-plus
     SUBDIR += py-netsnmpagent
     SUBDIR += py-nnpy
     SUBDIR += py-ntplib
