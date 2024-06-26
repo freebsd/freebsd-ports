@@ -1,6 +1,6 @@
---- media/audio/sndio/audio_manager_sndio.cc.orig	2024-05-21 18:07:39 UTC
+--- media/audio/sndio/audio_manager_sndio.cc.orig	2024-06-26 15:43:18 UTC
 +++ media/audio/sndio/audio_manager_sndio.cc
-@@ -0,0 +1,240 @@
+@@ -0,0 +1,241 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -207,7 +207,8 @@
 +#if defined(USE_PULSEAUDIO)
 +  pa_threaded_mainloop* pa_mainloop = nullptr;
 +  pa_context* pa_context = nullptr;
-+  if (audio_backend != "sndio" && pulse::InitPulse(&pa_mainloop, &pa_context)) {
++  if ((audio_backend != "sndio" && audio_backend != "alsa") &&
++      pulse::InitPulse(&pa_mainloop, &pa_context)) {
 +    return std::make_unique<AudioManagerPulse>(
 +        std::move(audio_thread), audio_log_factory, pa_mainloop, pa_context);
 +  } else if (audio_backend == "auto") {
@@ -217,7 +218,7 @@
 +#endif
 +
 +#if defined(USE_SNDIO)
-+  if (audio_backend != "pulse") {
++  if (audio_backend != "pulse" && audio_backend != "alsa") {
 +    return std::make_unique<AudioManagerSndio>(std::move(audio_thread),
 +                                              audio_log_factory);
 +  } else if (audio_backend == "auto") {
