@@ -99,7 +99,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		crypto-bigint-0.5.5 \
 		crypto-common-0.1.6 \
 		ctr-0.9.2 \
-		curve25519-dalek-4.1.2 \
+		curve25519-dalek-4.1.3 \
 		curve25519-dalek-derive-0.1.1 \
 		d3d12-0.20.0 \
 		darling-0.14.4 \
@@ -109,10 +109,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		data-encoding-2.5.0 \
 		data-url-0.3.0 \
 		debugid-0.8.0 \
-		deno_ast-0.39.1 \
+		deno_ast-0.39.2 \
 		deno_cache_dir-0.10.0 \
 		deno_config-0.16.4 \
-		deno_core-0.288.0 \
+		deno_core-0.290.0 \
 		deno_core_icudata-0.0.73 \
 		deno_doc-0.139.0 \
 		deno_emit-0.42.0 \
@@ -122,8 +122,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		deno_media_type-0.1.4 \
 		deno_native_certs-0.2.0 \
 		deno_npm-0.21.4 \
-		deno_ops-0.164.0 \
-		deno_semver-0.5.4 \
+		deno_ops-0.166.0 \
+		deno_semver-0.5.6 \
 		deno_task_shell-0.16.1 \
 		deno_terminal-0.1.1 \
 		deno_unsync-0.3.4 \
@@ -274,6 +274,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		instant-0.1.12 \
 		ipconfig-0.3.2 \
 		ipnet-2.9.0 \
+		ipnetwork-0.20.0 \
 		is-docker-0.2.0 \
 		is-macro-0.3.5 \
 		is-terminal-0.4.12 \
@@ -404,7 +405,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pkcs1-0.7.5 \
 		pkcs8-0.10.2 \
 		pkg-config-0.3.30 \
-		platforms-3.4.0 \
 		png-0.17.13 \
 		polyval-0.6.2 \
 		powerfmt-0.2.0 \
@@ -495,7 +495,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serde_repr-0.1.16 \
 		serde_spanned-0.6.6 \
 		serde_urlencoded-0.7.1 \
-		serde_v8-0.197.0 \
+		serde_v8-0.199.0 \
 		sha-1-0.10.0 \
 		sha1-0.10.6 \
 		sha1_smol-1.0.0 \
@@ -533,24 +533,24 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		strum_macros-0.25.3 \
 		subtle-2.5.0 \
 		swc_atoms-0.6.7 \
-		swc_bundler-0.227.0 \
+		swc_bundler-0.228.0 \
 		swc_cached-0.3.20 \
 		swc_common-0.33.26 \
-		swc_config-0.1.13 \
+		swc_config-0.1.14 \
 		swc_config_macro-0.1.4 \
-		swc_ecma_ast-0.113.4 \
-		swc_ecma_codegen-0.149.1 \
+		swc_ecma_ast-0.113.7 \
+		swc_ecma_codegen-0.149.3 \
 		swc_ecma_codegen_macros-0.7.6 \
 		swc_ecma_loader-0.45.28 \
-		swc_ecma_parser-0.144.1 \
-		swc_ecma_transforms_base-0.138.2 \
+		swc_ecma_parser-0.144.3 \
+		swc_ecma_transforms_base-0.138.4 \
 		swc_ecma_transforms_classes-0.127.1 \
 		swc_ecma_transforms_macros-0.5.5 \
-		swc_ecma_transforms_optimization-0.199.1 \
+		swc_ecma_transforms_optimization-0.199.2 \
 		swc_ecma_transforms_proposal-0.172.3 \
 		swc_ecma_transforms_react-0.184.1 \
 		swc_ecma_transforms_typescript-0.189.1 \
-		swc_ecma_utils-0.128.1 \
+		swc_ecma_utils-0.128.3 \
 		swc_ecma_visit-0.99.1 \
 		swc_eq_ignore_macros-0.1.3 \
 		swc_fast_graph-0.21.22 \
