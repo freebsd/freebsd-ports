@@ -285,6 +285,7 @@
     SUBDIR += php83-extensions
     SUBDIR += picoc
     SUBDIR += picolisp
+    SUBDIR += pkl
     SUBDIR += plexil
     SUBDIR += pocl
     SUBDIR += polyml
