@@ -1,10 +1,10 @@
 PORTNAME=	minecraft-server
-DISTVERSION=	1.20.6
+DISTVERSION=	1.21
 CATEGORIES=	games java
-MASTER_SITES=	https://piston-data.mojang.com/v1/objects/145ff0858209bcfc164859ba735d4199aafa1eea/
+MASTER_SITES=	https://piston-data.mojang.com/v1/objects/450698d1863ab5180c25d7c804ef0fe6369dd1ba/
 DISTNAME=	server
 EXTRACT_SUFX=	.jar
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 EXTRACT_ONLY=
 
 MAINTAINER=	freebsd@jonathanprice.org
@@ -22,12 +22,12 @@ JAVA_VERSION=	21
 NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	minecraft-server pkg-deinstall pkg-message
-SUB_LIST=	JAVA_VERSION=${JAVA_VERSION} VERSION=${PORTVERSION}
+SUB_LIST=	JAVA_VERSION=${JAVA_VERSION} VERSION=${DISTVERSION}
 
 USERS=		mcserver
 GROUPS=		${USERS}
 
-PLIST_SUB=	VERSION=${PORTVERSION}
+PLIST_SUB=	VERSION=${DISTVERSION}
 
 CONFIG_FILES=	banned-ips.json banned-players.json eula.txt ops.json \
 		server.properties usercache.json whitelist.json

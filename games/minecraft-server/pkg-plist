@@ -24,7 +24,7 @@ minecraft-server/world
 @rmtry minecraft-server/libraries/com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre.jar
 @rmtry minecraft-server/libraries/com/mojang/authlib/6.0.54/authlib-6.0.54.jar
 @rmtry minecraft-server/libraries/com/mojang/brigadier/1.2.9/brigadier-1.2.9.jar
-@rmtry minecraft-server/libraries/com/mojang/datafixerupper/7.0.14/datafixerupper-7.0.14.jar
+@rmtry minecraft-server/libraries/com/mojang/datafixerupper/8.0.16/datafixerupper-8.0.16.jar
 @rmtry minecraft-server/libraries/com/mojang/logging/1.2.7/logging-1.2.7.jar
 @rmtry minecraft-server/libraries/commons-io/commons-io/2.15.1/commons-io-2.15.1.jar
 @rmtry minecraft-server/libraries/io/netty/netty-buffer/4.1.97.Final/netty-buffer-4.1.97.Final.jar
@@ -48,6 +48,6 @@ minecraft-server/world
 @rmtry minecraft-server/libraries/org/joml/joml/1.10.5/joml-1.10.5.jar
 @rmtry minecraft-server/libraries/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar
 @rmtry minecraft-server/libraries/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar
-@rmtry minecraft-server/versions/1.20.6/server-1.20.6.jar
+@rmtry minecraft-server/versions/%%VERSION%%/server-%%VERSION%%.jar
 @owner
 @group
