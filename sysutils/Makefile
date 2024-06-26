@@ -829,6 +829,7 @@
     SUBDIR += nerdctl
     SUBDIR += netevent
     SUBDIR += nfcutils
+    SUBDIR += ngbuddy
     SUBDIR += nitrogen
     SUBDIR += nix
     SUBDIR += nmdaemon
