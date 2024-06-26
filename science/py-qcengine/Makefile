@@ -1,6 +1,5 @@
 PORTNAME=	qcengine
-DISTVERSION=	0.29.0
-PORTREVISION=	1
+DISTVERSION=	0.30.0
 CATEGORIES=	science python # chemistry
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,7 +35,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		# last dependencies above are for specific quantum chemistry packages to test with TODO torchani,openmm,torsiondrive,mdi
 
 USES=		python
-USE_PYTHON=	distutils concurrent autoplist pytest # 2 tests fail, see https://github.com/MolSSI/QCEngine/issues/377
+USE_PYTHON=	distutils concurrent autoplist pytest # 1 tests fails, see https://github.com/MolSSI/QCEngine/issues/377#issuecomment-2191948293
 
 NO_ARCH=	yes
 
