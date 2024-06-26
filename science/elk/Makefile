@@ -1,8 +1,7 @@
 PORTNAME=	elk
-DISTVERSION=	9.6.8
-PORTREVISION=	1
+DISTVERSION=	10.0.1
 CATEGORIES=	science
-MASTER_SITES=	SF/${PORTNAME}/
+MASTER_SITES=	https://elk.sourceforge.io/
 PKGNAMESUFFIX=	-chemistry
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 
@@ -80,6 +79,6 @@ do-install-EXAMPLES-on:
 do-test: # several tests fail, see https://sourceforge.net/p/elk/discussion/897822/thread/5d7862dd8b/
 	@cd ${WRKSRC}/tests && ./test.sh
 
-# tests crash randomly, see https://sourceforge.net/p/elk/discussion/897820/thread/f7b5859624/
+# 1 test (test_024) fails, reported to dewhurst@mpi-halle.mpg.de on 2026-06-26 (before was: see https://sourceforge.net/p/elk/discussion/897820/thread/f7b5859624/)
 
 .include <bsd.port.post.mk>
