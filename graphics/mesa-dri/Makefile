@@ -56,6 +56,8 @@ LDFLAGS_i386=		-Wl,-znotext
 .if ${PORT_OPTIONS:MX11}
 MESA_PLATFORMS+=	x11
 USE_XORG+=		xcb xorgproto xrandr x11 xdamage xext xfixes xshmfence xv
+.else
+MESON_ARGS+=		-Dxlib-lease=disabled
 .endif
 
 .if ${PORT_OPTIONS:MWAYLAND}

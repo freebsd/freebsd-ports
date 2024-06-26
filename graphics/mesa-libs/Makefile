@@ -57,7 +57,7 @@ USE_XORG+=		xorgproto x11 xcb xdamage xext \
 			xfixes xshmfence xxf86vm xrandr
 PLIST_SUB+=		GLX=""
 .else
-MESON_ARGS+=	-Dglx=disabled
+MESON_ARGS+=	-Dglx=disabled -Dxlib-lease=disabled
 PLIST_SUB+=	GLX="@comment "
 .endif
 
