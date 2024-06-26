@@ -2,4 +2,4 @@ Wayidle waits until the Wayland compositor reports being N seconds
 idle. If a command was specified, it will "exec" into that command,
 otherwise, it will exit zero.
 
-Wayidle is designed for usage is shell scripts or execline scripts.
+Wayidle is primarily designed for usage is scripts.
