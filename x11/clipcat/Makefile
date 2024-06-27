@@ -1,7 +1,6 @@
 PORTNAME=	clipcat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.0
-PORTREVISION=	1
+DISTVERSION=	0.18.1
 CATEGORIES=	x11
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -87,10 +86,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cfg_aliases-0.1.1 \
 		chrono-0.4.38 \
 		clap-3.2.25 \
-		clap-4.5.4 \
-		clap_builder-4.5.2 \
-		clap_complete-4.5.2 \
-		clap_derive-4.5.4 \
+		clap-4.5.7 \
+		clap_builder-4.5.7 \
+		clap_complete-4.5.6 \
+		clap_derive-4.5.5 \
 		clap_lex-0.2.4 \
 		clap_lex-0.7.0 \
 		clipboard-win-5.3.1 \
@@ -182,7 +181,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		getrandom-0.2.15 \
 		gif-0.13.1 \
 		gimli-0.28.1 \
-		git2-0.18.3 \
+		git2-0.19.0 \
 		h2-0.3.26 \
 		half-2.4.1 \
 		hashbrown-0.9.1 \
@@ -199,7 +198,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		http-body-0.4.6 \
 		http-body-1.0.0 \
 		http-body-util-0.1.1 \
-		http-serde-2.1.0 \
+		http-serde-2.1.1 \
 		httparse-1.8.0 \
 		httpdate-1.0.3 \
 		humansize-2.1.3 \
@@ -233,7 +232,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lebe-0.5.2 \
 		libc-0.2.155 \
 		libfuzzer-sys-0.4.7 \
-		libgit2-sys-0.16.2+1.7.2 \
+		libgit2-sys-0.17.0+1.8.1 \
 		libloading-0.8.3 \
 		libm-0.2.8 \
 		libredox-0.1.3 \
@@ -256,6 +255,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.3 \
 		mio-0.8.11 \
+		mio-1.0.0 \
 		multimap-0.10.0 \
 		new_debug_unreachable-1.0.6 \
 		nix-0.24.3 \
@@ -291,7 +291,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		option-ext-0.2.0 \
 		ordered-multimap-0.3.1 \
 		ordered-stream-0.2.0 \
-		os_pipe-1.1.5 \
+		os_pipe-1.2.0 \
 		os_str_bytes-6.6.1 \
 		overload-0.1.1 \
 		parking-2.2.0 \
@@ -335,7 +335,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		redox_syscall-0.4.1 \
 		redox_syscall-0.5.1 \
 		redox_users-0.4.5 \
-		regex-1.10.4 \
+		regex-1.10.5 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.8.3 \
 		resolve-path-0.1.0 \
@@ -351,7 +351,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		semver-1.0.23 \
 		serde-1.0.203 \
 		serde_derive-1.0.203 \
-		serde_json-1.0.117 \
+		serde_json-1.0.118 \
 		serde_path_to_error-0.1.16 \
 		serde_repr-0.1.19 \
 		serde_spanned-0.6.6 \
@@ -360,7 +360,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde_with_macros-3.8.1 \
 		sha1-0.10.6 \
 		sha2-0.10.8 \
-		shadow-rs-0.28.0 \
+		shadow-rs-0.29.0 \
 		sharded-slab-0.1.7 \
 		shlex-1.3.0 \
 		sigfinn-0.2.0 \
@@ -401,15 +401,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		timer-0.2.0 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.37.0 \
+		tokio-1.38.0 \
 		tokio-io-timeout-1.2.0 \
-		tokio-macros-2.2.0 \
+		tokio-macros-2.3.0 \
 		tokio-stream-0.1.15 \
 		tokio-util-0.7.11 \
-		toml-0.8.13 \
+		toml-0.8.14 \
 		toml_datetime-0.6.6 \
 		toml_edit-0.21.1 \
-		toml_edit-0.22.13 \
+		toml_edit-0.22.14 \
 		tonic-0.11.0 \
 		tonic-build-0.11.0 \
 		tower-0.4.13 \
@@ -422,7 +422,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tracing-journald-0.3.0 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.18 \
-		tree_magic_mini-3.1.4 \
+		tree_magic_mini-3.1.5 \
 		try-lock-0.2.5 \
 		tuikit-0.5.0 \
 		typenum-1.17.0 \
@@ -452,12 +452,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-0.2.92 \
 		wasm-bindgen-macro-support-0.2.92 \
 		wasm-bindgen-shared-0.2.92 \
-		wayland-backend-0.3.3 \
-		wayland-client-0.31.2 \
+		wayland-backend-0.3.4 \
+		wayland-client-0.31.3 \
 		wayland-protocols-0.31.2 \
+		wayland-protocols-0.32.1 \
 		wayland-protocols-wlr-0.2.0 \
-		wayland-scanner-0.31.1 \
-		wayland-sys-0.31.1 \
+		wayland-protocols-wlr-0.3.1 \
+		wayland-scanner-0.31.2 \
+		wayland-sys-0.31.2 \
 		weezl-0.1.8 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -492,11 +494,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		winnow-0.5.40 \
 		winnow-0.6.8 \
 		wl-clipboard-rs-0.8.1 \
+		wl-clipboard-rs-0.9.0 \
 		x11rb-0.13.1 \
 		x11rb-protocol-0.13.1 \
 		xdg-home-1.1.0 \
-		zbus-4.2.2 \
-		zbus_macros-4.2.2 \
+		zbus-4.3.0 \
+		zbus_macros-4.3.0 \
 		zbus_names-3.0.0 \
 		zune-core-0.4.12 \
 		zune-inflate-0.2.54 \
