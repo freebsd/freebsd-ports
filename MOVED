@@ -3343,3 +3343,6 @@ www/py-dj42-djangorestframework|www/py-djangorestframework|2024-06-15|Has expire
 www/py-dj42-django-debug-toolbar|www/py-django-debug-toolbar|2024-06-15|Has expired: Obsolete, please use www/py-django-debug-toolbar instead
 devel/rubygem-ddtrace|devel/rubygem-datadog|2024-06-18|Move devel/rubygem-ddtrace to devel/rubygem-datadog
 databases/py-sqlalchemy13||2024-06-24|Has expired: Upstream makred EOL in Release Status
+chinese/oicq||2024-06-27|ICQ Service closed in 2024-06-24
+security/p5-Crypt-OICQ||2024-06-27|ICQ Service closed in 2024-06-24
+net-im/climm||2024-06-27|ICQ Service closed in 2024-06-24

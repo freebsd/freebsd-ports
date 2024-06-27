@@ -69,7 +69,6 @@
     SUBDIR += lunar
     SUBDIR += moettf
     SUBDIR += muni
-    SUBDIR += oicq
     SUBDIR += opencc
     SUBDIR += opendesktop-fonts
     SUBDIR += oto

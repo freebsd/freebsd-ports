@@ -3,7 +3,6 @@
     SUBDIR += beebeep
     SUBDIR += biboumi
     SUBDIR += chatterino2
-    SUBDIR += climm
     SUBDIR += coccinella
     SUBDIR += conduit
     SUBDIR += convey
