@@ -1,7 +1,8 @@
 PORTNAME=	stellarium
-PORTVERSION=	24.1
+PORTVERSION=	24.2
 CATEGORIES=	astro
-MASTER_SITES=	https://github.com/Stellarium/stellarium/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/Stellarium/stellarium/releases/download/v${PORTVERSION}/ \
+		https://mirrors.tuna.tsinghua.edu.cn/github-release/Stellarium/stellarium/v${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat:N*.pdf}
 
@@ -22,10 +23,8 @@ USE_QT=		qmake:build buildtools:build \
 		charts concurrent core gui network opengl widgets
 CMAKE_OFF=	ENABLE_QT6
 
-GUIDE_VERSION=	${PORTVERSION}
-
 PORTDOCS=	CREDITS.md ChangeLog README.md \
-		stellarium_user_guide-${GUIDE_VERSION}-1.pdf
+		stellarium_user_guide-${PORTVERSION}-1.pdf
 
 OPTIONS_DEFINE=		DOCS GPS MORE_STARS MULTIMEDIA NLS SCRIPTS \
 			SHOWMYSKY TELESCOPE TEST TEXTURES WEBENGINE XLSX
@@ -43,8 +42,7 @@ TEXTURES_DESC=		Install better quality textures
 WEBENGINE_DESC=		Get and show extra object information
 XLSX_DESC=		Data export to Excel files support
 
-DOCS_MASTER_SITES=	https://github.com/Stellarium/stellarium/releases/download/v${GUIDE_VERSION}/:ug
-DOCS_DISTFILES=		stellarium_user_guide-${GUIDE_VERSION}-1.pdf:ug
+DOCS_DISTFILES=		stellarium_user_guide-${PORTVERSION}-1.pdf
 
 GPS_LIB_DEPENDS=	libgps.so:astro/gpsd
 GPS_USE=		QT=location,serialport
@@ -91,7 +89,7 @@ DISTFILES+=	stars_4_1v0_2.cat:stars4 stars_5_2v0_1.cat:stars5 \
 .endif
 
 post-extract-DOCS-on:
-	@${LN} -sf ${_DISTDIR}/stellarium_user_guide-${GUIDE_VERSION}-1.pdf \
+	@${LN} -sf ${_DISTDIR}/stellarium_user_guide-${PORTVERSION}-1.pdf \
 		${WRKSRC}
 
 post-install:
