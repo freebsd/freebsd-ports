@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-cpp
-DISTVERSION=	1.11.353
+DISTVERSION=	1.11.357
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -8,8 +8,6 @@ WWW=		https://github.com/aws/aws-sdk-cpp
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		fails to build with latest update devel/aws-crt-cpp; https://github.com/aws/aws-sdk-cpp/issues/3012
 
 LIB_DEPENDS=	libaws-c-auth.so:security/aws-c-auth \
 		libaws-c-cal.so:security/aws-c-cal \
