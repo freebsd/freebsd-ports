@@ -1,3 +1,58 @@
+  <vuln vid="589de937-343f-11ef-8a7b-001b217b3468">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.1.0</ge><lt>17.1.1</lt></range>
+	<range><ge>17.0.0</ge><lt>17.0.3</lt></range>
+	<range><ge>1.0.0</ge><lt>16.11.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/06/26/patch-release-gitlab-17-1-1-released/">
+	  <p>Run pipelines as any user</p>
+	  <p>Stored XSS injected in imported project's commit notes</p>
+	  <p>CSRF on GraphQL API IntrospectionQuery</p>
+	  <p>Remove search results from public projects with unauthorized repos</p>
+	  <p>Cross window forgery in user application OAuth flow</p>
+	  <p>Project maintainers can bypass group's merge request approval policy</p>
+	  <p>ReDoS via custom built markdown page</p>
+	  <p>Private job artifacts can be accessed by any user</p>
+	  <p>Security fixes for banzai pipeline</p>
+	  <p>ReDoS in dependency linker</p>
+	  <p>Denial of service using a crafted OpenAPI file</p>
+	  <p>Merge request title disclosure</p>
+	  <p>Access issues and epics without having an SSO session</p>
+	  <p>Non project member can promote key results to objectives</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-5655</cvename>
+      <cvename>CVE-2024-4901</cvename>
+      <cvename>CVE-2024-4994</cvename>
+      <cvename>CVE-2024-6323</cvename>
+      <cvename>CVE-2024-2177</cvename>
+      <cvename>CVE-2024-5430</cvename>
+      <cvename>CVE-2024-4025</cvename>
+      <cvename>CVE-2024-3959</cvename>
+      <cvename>CVE-2024-4557</cvename>
+      <cvename>CVE-2024-1493</cvename>
+      <cvename>CVE-2024-1816</cvename>
+      <cvename>CVE-2024-2191</cvename>
+      <cvename>CVE-2024-3115</cvename>
+      <cvename>CVE-2024-4011</cvename>
+      <url>https://about.gitlab.com/releases/2024/06/26/patch-release-gitlab-17-1-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-06-26</discovery>
+      <entry>2024-06-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2b68c86a-32d5-11ef-8a0f-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
