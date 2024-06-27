@@ -5,7 +5,7 @@ CATEGORIES=	mail python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Python module for RFC 5451 Authentication-Results headers
 WWW=		https://launchpad.net/authentication-results-python
 
