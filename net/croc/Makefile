@@ -1,7 +1,6 @@
 PORTNAME=	croc
-PORTVERSION=	10.0.8
+PORTVERSION=	10.0.9
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -42,7 +41,7 @@ GH_TUPLE=	OneOfOne:xxhash:v1.2.8:oneofone_xxhash/vendor/github.com/OneOfOne/xxha
 		schollz:mnemonicode:63fa713ece0d:schollz_mnemonicode/vendor/github.com/schollz/mnemonicode \
 		schollz:pake:v3.0.5:schollz_pake_v3/vendor/github.com/schollz/pake/v3 \
 		schollz:peerdiscovery:v1.7.3:schollz_peerdiscovery/vendor/github.com/schollz/peerdiscovery \
-		schollz:progressbar:v3.14.3:schollz_progressbar_v3/vendor/github.com/schollz/progressbar/v3 \
+		schollz:progressbar:v3.14.4:schollz_progressbar_v3/vendor/github.com/schollz/progressbar/v3 \
 		spaolacci:murmur3:v1.1.0:spaolacci_murmur3/vendor/github.com/spaolacci/murmur3 \
 		stretchr:testify:v1.9.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		tscholl2:siec:c2c6f6198406:tscholl2_siec/vendor/github.com/tscholl2/siec \
