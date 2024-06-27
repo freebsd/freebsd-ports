@@ -141,15 +141,15 @@ error[E0425]: cannot find function `without_provenance_mut` in module `core::ptr
   "veloren-common",
   "veloren-common-base",
   "veloren-common-dynlib",
---- Cargo.toml.orig	2024-05-20 18:26:00 UTC
+--- Cargo.toml.orig	2024-06-26 12:12:15 UTC
 +++ Cargo.toml
-@@ -145,7 +145,7 @@ num-traits = { version = "0.2" }
- ordered-float = { version = "3", default-features = true }
+@@ -149,7 +149,7 @@ num-traits = { version = "0.2" }
+ ordered-float = { version = "4.2", default-features = true }
  num = { version = "0.4" }
  num-traits = { version = "0.2" }
 -vek = { version = "0.17.0", features = ["serde"] }
 +vek = { version = "0.16.1", features = ["serde"] }
- itertools = { version = "0.10" }
+ itertools = { version = "0.13" }
  
  serde = { version = "1.0.118", features = ["derive"] }
 --- cargo-crates/shred-0.16.1/src/meta.rs.orig	2006-07-24 01:21:28 UTC
