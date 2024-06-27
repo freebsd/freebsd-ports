@@ -1,6 +1,6 @@
-TIMESTAMP = 1709885458
-SHA256 (libjxl-libjxl-v0.10.2_GH0.tar.gz) = 95e807f63143856dc4d161c071cca01115d2c6405b3d3209854ac6989dc6bb91
-SIZE (libjxl-libjxl-v0.10.2_GH0.tar.gz) = 1912303
+TIMESTAMP = 1719490208
+SHA256 (libjxl-libjxl-v0.10.3_GH0.tar.gz) = e0191411cfcd927eebe5392d030fe4283fe27ba1685ab7265104936e0b4283a6
+SIZE (libjxl-libjxl-v0.10.3_GH0.tar.gz) = 1912351
 SHA256 (jbeich-skcms-42030a7_GH0.tar.gz) = b7537267dd0fda80a98939cc4e4d15614d2d6f433cc8421b797e0f47078c2979
 SIZE (jbeich-skcms-42030a7_GH0.tar.gz) = 10050433
 SHA256 (libjxl-testdata-ff8d743_GH0.tar.gz) = d225523e0576f21b6f8de106d2eac4e07650522bae7b65011993792a4dbc3eda
