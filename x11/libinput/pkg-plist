@@ -5,6 +5,7 @@ lib/libinput.so.10
 lib/libinput.so.10.13.0
 libdata/pkgconfig/libinput.pc
 libexec/libinput/libinput-analyze
+libexec/libinput/libinput-analyze-buttons
 libexec/libinput/libinput-analyze-per-slot-delta
 libexec/libinput/libinput-analyze-recording
 libexec/libinput/libinput-analyze-touch-down-state
@@ -23,6 +24,7 @@ libexec/libinput/libinput-quirks
 libexec/libinput/libinput-record
 libexec/libinput/libinput-replay
 libexec/libinput/libinput-test
+share/man/man1/libinput-analyze-buttons.1.gz
 share/man/man1/libinput-analyze-per-slot-delta.1.gz
 share/man/man1/libinput-analyze-recording.1.gz
 share/man/man1/libinput-analyze-touch-down-state.1.gz

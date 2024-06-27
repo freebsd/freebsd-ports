@@ -1,5 +1,5 @@
 PORTNAME=	libinput
-DISTVERSION=	1.26.0
+DISTVERSION=	1.26.1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -26,7 +26,8 @@ CPE_VENDOR=	freedesktop
 
 MESON_ARGS=	-Ddocumentation=false -Dtests=false
 
-SHEBANG_FILES=	tools/libinput-analyze-per-slot-delta.py \
+SHEBANG_FILES=	tools/libinput-analyze-buttons.py \
+		tools/libinput-analyze-per-slot-delta.py \
 		tools/libinput-analyze-recording.py \
 		tools/libinput-analyze-touch-down-state.py \
 		tools/libinput-measure-fuzz.py \
