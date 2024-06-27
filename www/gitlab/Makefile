@@ -1,10 +1,9 @@
 PORTNAME=	gitlab-${FLAVOR:Uce}
-PORTVERSION=	17.0.2
+PORTVERSION=	17.0.3
 DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
 .endif
-PORTREVISION=	2
 CATEGORIES=	www devel
 
 # include patch to fix database migration
