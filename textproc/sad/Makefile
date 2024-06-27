@@ -1,7 +1,6 @@
 PORTNAME=	sad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.29
-PORTREVISION=	1
+DISTVERSION=	0.4.30
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,9 +29,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytes-1.6.0 \
 		cc-1.0.98 \
 		cfg-if-1.0.0 \
-		clap-4.5.4 \
-		clap_builder-4.5.2 \
-		clap_derive-4.5.4 \
+		clap-4.5.7 \
+		clap_builder-4.5.7 \
+		clap_derive-4.5.5 \
 		clap_lex-0.7.0 \
 		colorchoice-1.0.1 \
 		difflib-0.4.0 \
@@ -64,7 +63,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pin-utils-0.1.0 \
 		proc-macro2-1.0.83 \
 		quote-1.0.36 \
-		regex-1.10.4 \
+		regex-1.10.5 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.8.3 \
 		rustc-demangle-0.1.24 \
@@ -76,10 +75,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strsim-0.11.1 \
 		syn-2.0.66 \
 		terminal_size-0.3.0 \
-		tokio-1.37.0 \
+		tokio-1.38.0 \
 		unicode-ident-1.0.12 \
 		utf8parse-0.2.1 \
-		uuid-1.8.0 \
+		uuid-1.9.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		which-6.0.1 \
 		winapi-0.3.9 \
