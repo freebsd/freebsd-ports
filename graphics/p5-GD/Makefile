@@ -1,5 +1,5 @@
 PORTNAME=	GD
-PORTVERSION=	2.82
+PORTVERSION=	2.83
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,9 +11,11 @@ WWW=		https://metacpan.org/release/GD
 LICENSE=	ART20 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-ExtUtils-PkgConfig>=0:devel/p5-ExtUtils-PkgConfig
+BUILD_DEPENDS=	p5-ExtUtils-PkgConfig>=0:devel/p5-ExtUtils-PkgConfig \
+		p5-File-Which>=0:sysutils/p5-File-Which
 LIB_DEPENDS=	libgd.so:graphics/gd
 TEST_DEPENDS=	p5-Test-NoWarnings>=1.00:devel/p5-Test-NoWarnings
+RUN_DEPENDS=	p5-File-Which>=0:sysutils/p5-File-Which
 
 USES=		perl5
 USE_PERL5=	configure
