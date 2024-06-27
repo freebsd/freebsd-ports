@@ -1,6 +1,6 @@
 PORTNAME=	mesa-dri
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
@@ -10,14 +10,8 @@ LIB_DEPENDS+=	libglapi.so:graphics/mesa-libs
 
 USES+=		llvm:lib,noexport
 
-OPTIONS_GROUP=			PLATFORM
-OPTIONS_GROUP_PLATFORM=		X11 WAYLAND
-X11_DESC=			Enable X11 support for GBM/EGL
-WAYLAND_DESC=			Enable Wayland support for GBM/EGL and Vulkan
-WAYLAND_BUILD_DEPENDS=		wayland-protocols>=1.8:graphics/wayland-protocols
-WAYLAND_LIB_DEPENDS=		libwayland-client.so:graphics/wayland
-
 OPTIONS_DEFINE=		ZSTD
+OPTIONS_GROUP=		GALLIUM PLATFORM VULKAN
 OPTIONS_DEFAULT=	WAYLAND X11 ZSTD
 OPTIONS_SUB=		yes
 
@@ -25,31 +19,51 @@ ZSTD_DESC=		Use ZSTD for shader cache
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 ZSTD_MESON_ENABLED=	zstd
 
+OPTIONS_GROUP_PLATFORM=	X11 WAYLAND
+X11_DESC=		Enable X11 support for GBM/EGL
+WAYLAND_DESC=		Enable Wayland support for GBM/EGL and Vulkan
+WAYLAND_BUILD_DEPENDS=	wayland-protocols>=1.8:graphics/wayland-protocols
+WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
+
+OPTIONS_GROUP_GALLIUM=	crocus i915 iris panfrost r300 r600 radeonsi svga swrast zink
+GALLIUM_DESC=		Unified OpenGL drivers
+crocus_DESC=		Intel GPU Gen4 (Broadwater) to Gen7 (Haswell)
+i915_DESC=		Intel GPU Gen3 (Grantsdale to Pineview)
+iris_DESC=		Intel GPU Gen8 (Broadwell) and newer
+panfrost_DESC=		ARM Midgard and Bifrost
+r300_DESC=		AMD/ATI R300, R400 and R500
+r600_DESC=		AMD/ATI R600, R700, Evergreen, Northern Islands
+radeonsi_DESC=		AMD/ATI Southern Islands and newer
+svga_DESC=		VMWare Virtual GPU
+swrast_DESC=		Software Rasterizer
+zink_DESC=		OpenGL on top of Khronos’ Vulkan API
+
+OPTIONS_EXCLUDE+=	${ARCH:Marmv7:C/.+/crocus i915 iris panfrost r300 r600 radeonsi svga zink/}
+OPTIONS_EXCLUDE+=	${ARCH:Naarch64:C/.+/panfrost/}
+OPTIONS_EXCLUDE+=	${ARCH:Namd64:Ni386:Nx86_64:C/.+/crocus i915 iris svga/}
+MESON_ARGS+=		-Dgallium-drivers=${GALLIUM_DRIVERS:ts,}
+. for _gd in ${OPTIONS_GROUP_GALLIUM}
+OPTIONS_DEFAULT+=	${_gd}
+${_gd}_VARS+=		GALLIUM_DRIVERS+=${_gd}
+. endfor
+
+OPTIONS_GROUP_VULKAN=	anv radv swrast_vk
+VULKAN_DESC=		Vulkan drivers
+anv_DESC=		Intel GPU Gen9 and newer Vulkan support
+radv_DESC=		AMD/ATI Southern Islands and newer Vulkan support
+radv_BUILD_DEPENDS=	glslangValidator:graphics/glslang
+swrast_vk_DESC=		Software Rasterizer Vulkan support
+
+OPTIONS_EXCLUDE+=	${ARCH:Marmv7:C/.+/anv radv/}
+OPTIONS_EXCLUDE+=	${ARCH:Namd64:Ni386:Nx86_64:C/.+/anv/}
+MESON_ARGS+=		-Dvulkan-drivers=${VULKAN_DRIVERS:ts,}
+. for _vd in ${OPTIONS_GROUP_VULKAN}
+OPTIONS_DEFAULT+=	${_vd}
+${_vd}_VARS+=		VULKAN_DRIVERS+=${_vd:S/anv/intel/:S/radv/amd/:S/swrast_vk/swrast/}
+. endfor
+
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
-
-ALL_GALLIUM_DRIVERS=	CROCUS I915 IRIS PANFROST R300 R600 RADEONSI SVGA \
-			SWRAST ZINK
-ALL_VULKAN_DRIVERS=	INTEL AMD SWRAST
-
-GALLIUM_DRIVERS+=	SWRAST \
-			ZINK
-VULKAN_DRIVERS+=	SWRAST	# lavapipe
-
-.if ${ARCH} == aarch64
-GALLIUM_DRIVERS+=	PANFROST
-.endif
-
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 \
- || ${ARCH:Mpowerpc*} || ${ARCH} == riscv64
-GALLIUM_DRIVERS+=	R300 R600 RADEONSI
-VULKAN_DRIVERS+=	AMD
-BUILD_DEPENDS+=		glslangValidator:graphics/glslang
-.endif
-.if ${ARCH} == amd64 || ${ARCH} == i386
-GALLIUM_DRIVERS+=	CROCUS I915 IRIS SVGA
-VULKAN_DRIVERS+=	INTEL
-.endif
 
 LDFLAGS_i386=		-Wl,-znotext
 
@@ -64,9 +78,7 @@ MESON_ARGS+=		-Dxlib-lease=disabled
 MESA_PLATFORMS+=	wayland
 .endif
 
-MESON_ARGS+=	-Dgallium-drivers="${GALLIUM_DRIVERS:ts,:tl}" \
-		-Dvulkan-drivers="${VULKAN_DRIVERS:ts,:tl}" \
-		-Dplatforms="${MESA_PLATFORMS:ts,:tl}"
+MESON_ARGS+=	-Dplatforms="${MESA_PLATFORMS:ts,:tl}"
 
 # Vulkan Video extensions (keep in sync with mesa-gallium-va)
 MESON_ARGS+=	-Dvideo-codecs="vc1dec,h264dec,h264enc,h265dec,h265enc,av1dec,av1enc,vp9dec"
@@ -85,20 +97,20 @@ MESON_ARGS+=	-Dandroid-libbacktrace=disabled \
 		-Dosmesa=false \
 		-Dvalgrind=disabled
 
-.for _gd in ${ALL_GALLIUM_DRIVERS}
+.for _gd in ${OPTIONS_GROUP_GALLIUM}
 . if defined(GALLIUM_DRIVERS) && ${GALLIUM_DRIVERS:M${_gd}}
-PLIST_SUB+=	${_gd}_GDRIVER=""
+PLIST_SUB+=	${_gd}=""
 . else
-PLIST_SUB+=	${_gd}_GDRIVER="@comment "
+PLIST_SUB+=	${_gd}="@comment "
 . endif
 .endfor
 
 PLIST_SUB += ARCH=${ARCH:S/amd/x86_/}
-.for _vd in ${ALL_VULKAN_DRIVERS}
+.for _vd in ${OPTIONS_GROUP_VULKAN}
 . if defined(VULKAN_DRIVERS) && ${VULKAN_DRIVERS:M${_vd}}
-PLIST_SUB+=	${_vd}_VDRIVER=""
+PLIST_SUB+=	${_vd}=""
 . else
-PLIST_SUB+=	${_vd}_VDRIVER="@comment "
+PLIST_SUB+=	${_vd}="@comment "
 . endif
 .endfor
 
