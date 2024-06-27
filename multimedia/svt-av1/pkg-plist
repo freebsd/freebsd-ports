@@ -8,5 +8,5 @@ include/svt-av1/EbSvtAv1Formats.h
 include/svt-av1/EbSvtAv1Metadata.h
 lib/libSvtAv1Enc.so
 lib/libSvtAv1Enc.so.2
-lib/libSvtAv1Enc.so.2.1.1
+lib/libSvtAv1Enc.so.%%VERSION%%
 libdata/pkgconfig/SvtAv1Enc.pc
