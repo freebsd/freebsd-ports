@@ -1,6 +1,6 @@
 PORTNAME=	vulkan-headers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.288
+DISTVERSION=	1.3.289
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,6 +15,11 @@ GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-Headers
 STRIP=		# nothing to strip
 NO_ARCH=	yes
+
+# XXX Add clang-scan-deps to WITH_CLANG_EXTRAS in src.conf(5)
+.if exists(/usr/bin/clang) && !exists(/usr/bin/clang-scan-deps)
+CMAKE_OFF+=	VULKAN_HEADERS_ENABLE_MODULE
+.endif
 
 post-extract:
 # genvk.py requires docgenerator.py from Vulkan-Docs, so drop useless shebang
