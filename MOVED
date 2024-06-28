@@ -3346,3 +3346,4 @@ databases/py-sqlalchemy13||2024-06-24|Has expired: Upstream makred EOL in Releas
 chinese/oicq||2024-06-27|ICQ Service closed in 2024-06-24
 security/p5-Crypt-OICQ||2024-06-27|ICQ Service closed in 2024-06-24
 net-im/climm||2024-06-27|ICQ Service closed in 2024-06-24
+multimedia/emby-server-devel|multimedia/emby-server|2024-06-28|Beta port removed: please use the release port multimedia/emby-server

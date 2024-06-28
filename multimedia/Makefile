@@ -51,7 +51,6 @@
     SUBDIR += dvdstyler
     SUBDIR += elementary-videos
     SUBDIR += emby-server
-    SUBDIR += emby-server-devel
     SUBDIR += emovix
     SUBDIR += ffaudioconverter
     SUBDIR += ffdec
