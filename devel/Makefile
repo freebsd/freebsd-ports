@@ -4672,6 +4672,7 @@
     SUBDIR += py-debtcollector
     SUBDIR += py-debugpy
     SUBDIR += py-debugtools
+    SUBDIR += py-decli
     SUBDIR += py-decopatch
     SUBDIR += py-decorator
     SUBDIR += py-decoratortools
@@ -7139,7 +7140,6 @@
     SUBDIR += rubygem-googleapis-common-protos-types
     SUBDIR += rubygem-graf
     SUBDIR += rubygem-grape
-    SUBDIR += rubygem-grape20
     SUBDIR += rubygem-grape-entity
     SUBDIR += rubygem-grape-path-helpers
     SUBDIR += rubygem-grape-route-helpers
@@ -7147,6 +7147,7 @@
     SUBDIR += rubygem-grape-swagger-entity
     SUBDIR += rubygem-grape-swagger20
     SUBDIR += rubygem-grape1
+    SUBDIR += rubygem-grape20
     SUBDIR += rubygem-grape_logging
     SUBDIR += rubygem-graphiql-rails
     SUBDIR += rubygem-graphlient
