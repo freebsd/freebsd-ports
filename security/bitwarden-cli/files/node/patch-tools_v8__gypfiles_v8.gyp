@@ -1,11 +1,11 @@
---- tools/v8_gypfiles/v8.gyp.orig	2023-03-05 06:42:55 UTC
+--- tools/v8_gypfiles/v8.gyp.orig	2024-02-13 21:43:34 UTC
 +++ tools/v8_gypfiles/v8.gyp
-@@ -977,7 +977,7 @@
+@@ -1083,7 +1083,7 @@
          }],
          # Platforms that don't have Compare-And-Swap (CAS) support need to link atomic library
          # to implement atomic memory access
--        ['v8_current_cpu in ["mips", "mipsel", "mips64", "mips64el", "ppc", "arm", "riscv64", "loong64"]', {
-+        ['v8_current_cpu in ["mips", "mipsel", "mips64", "mips64el", "ppc", "riscv64", "loong64"]', {
+-        ['v8_current_cpu in ["mips64", "mips64el", "ppc", "arm", "riscv64", "loong64"]', {
++        ['v8_current_cpu in ["mips64", "mips64el", "ppc", "riscv64", "loong64"]', {
            'link_settings': {
              'libraries': ['-latomic', ],
            },

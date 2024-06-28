@@ -1,7 +1,7 @@
 {
-  "name": "@bitwarden/vault-export-ui",
+  "name": "@bitwarden/generator-extensions",
   "version": "0.0.0",
-  "description": "Angular components for the Bitwarden vault exporter",
+  "description": "TODO",
   "keywords": [
     "bitwarden"
   ],
@@ -18,9 +18,7 @@
     "build:watch": "npm run clean && tsc -watch"
   },
   "dependencies": {
-    "@bitwarden/common": "file:../../../../common",
-    "@bitwarden/angular": "file:../../../../angular",
-    "@bitwarden/auth": "file:../../../../auth",
-    "@bitwarden/vault-export-core": "file:../vault-export-core"
+    "@bitwarden/common": "file:../../../common",
+    "@bitwarden/generator-core": "file:../core"
   }
 }
