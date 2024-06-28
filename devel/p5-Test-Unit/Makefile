@@ -1,11 +1,10 @@
 PORTNAME=	Test-Unit
-PORTVERSION=	0.25
-PORTREVISION=	3
+PORTVERSION=	0.27
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	PerlUnit testing framework
 WWW=		https://metacpan.org/release/Test-Unit
 
