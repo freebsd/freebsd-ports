@@ -14,9 +14,7 @@
 	<body xmlns="http://www.w3.org/1999/xhtml">
 	<p>cve@mitre.org reports:</p>
 	<blockquote cite="https://frrouting.org/release/9.1.1/">
-	  <p>In FRRouting (FRR) through 9.1, there are multiplecan be a buffer overflow and
-	daemon crash in ospf_te_parse_ri for OSPF LSA packets during an
-	attempt to read Segment Routing subTLVs (their size is not validated).</p>
+	  <p>In FRRouting (FRR) through 9.1, there are multiples vulnerabilities.</p>
 	<ul>
 	 <li>CVE-2024-31950: buffer overflow and daemon crash in ospf_te_parse_ri for OSPF LSA packets</li>
 	 <li>CVE-2024-31951: buffer overflow and daemon crash in ospf_te_parse_ext_link for OSPF LSA packets</li>
