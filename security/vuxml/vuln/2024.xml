@@ -1,3 +1,40 @@
+  <vuln vid="07f0ea8c-356a-11ef-ac6d-a0423f48a938">
+    <topic>frr - Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>frr9</name>
+        <range><lt>9.1.1</lt></range>
+      </package>
+      <package>
+      <name>frr8</name>
+      <range><lt>8.5.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://frrouting.org/release/9.1.1/">
+	  <p>In FRRouting (FRR) through 9.1, there are multiplecan be a buffer overflow and
+	daemon crash in ospf_te_parse_ri for OSPF LSA packets during an
+	attempt to read Segment Routing subTLVs (their size is not validated).</p>
+	<ul>
+	 <li>CVE-2024-31950: buffer overflow and daemon crash in ospf_te_parse_ri for OSPF LSA packets</li>
+	 <li>CVE-2024-31951: buffer overflow and daemon crash in ospf_te_parse_ext_link for OSPF LSA packets</li>
+	</ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-31950</cvename>
+      <cvename>CVE-2024-31951</cvename>
+      <url>https://frrouting.org/release/9.1.1/</url>
+    </references>
+    <dates>
+      <discovery>2024-04-07</discovery>
+      <entry>2024-06-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="589de937-343f-11ef-8a7b-001b217b3468">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
