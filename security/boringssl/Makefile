@@ -1,6 +1,5 @@
 PORTNAME=	boringssl
-PORTVERSION=	0.0.0.0.2024.06.03.01
-PORTREVISION=	1
+PORTVERSION=	0.0.0.0.2024.06.24.01
 CATEGORIES=	security
 MASTER_SITES+=	https://proxy.golang.org/:gomods
 DISTFILES+=	golang.org/x/crypto/@v/v0.17.0.zip:gomods \
@@ -29,7 +28,7 @@ CPE_VENDOR=	google
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	25cf1bb
+GH_TAGNAME=	12f0f4b
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=1
 
 CFLAGS_i386=	-msse2
