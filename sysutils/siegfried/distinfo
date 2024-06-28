@@ -1,5 +1,5 @@
-TIMESTAMP = 1702888538
-SHA256 (go/sysutils_siegfried/siegfried-v1.11.0/v1.11.0.mod) = 299b8dfa76db23950cd44f1234eba2a96d6bac708ae96b6e1ab51d868783c6d1
-SIZE (go/sysutils_siegfried/siegfried-v1.11.0/v1.11.0.mod) = 526
-SHA256 (go/sysutils_siegfried/siegfried-v1.11.0/v1.11.0.zip) = 49a4f402ad77f71b76d7296f2211b405c46530e563f8f1919513330beccf9c3d
-SIZE (go/sysutils_siegfried/siegfried-v1.11.0/v1.11.0.zip) = 17526101
+TIMESTAMP = 1719557927
+SHA256 (go/sysutils_siegfried/siegfried-v1.11.1/v1.11.1.mod) = a221fb98f326508efc20e8af4a5b8112d824a58d383c27c8bb65f643ae07b6cb
+SIZE (go/sysutils_siegfried/siegfried-v1.11.1/v1.11.1.mod) = 526
+SHA256 (go/sysutils_siegfried/siegfried-v1.11.1/v1.11.1.zip) = 018c1631b619611f654e06a04913c490b882f4f2a741fde74ca03f7f0e158794
+SIZE (go/sysutils_siegfried/siegfried-v1.11.1/v1.11.1.zip) = 18146934
