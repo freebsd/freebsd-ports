@@ -93,6 +93,16 @@
  else
   # This is kind of bad, the returned string needs to be re-evaluated before use.
   # The reason for this hack is that the windows kmk_ash cannot deal with $((1+1)).
+@@ -3068,6 +3069,9 @@ ifeq ($(KBUILD_TARGET_ARCH),x86)
+   # (The '<=' operator is for prepending (kmk specific).)
+   VBOX_GCC_OPT <= -march=i586
+  endif
++ ifeq ($(KBUILD_TARGET),freebsd)
++  VBOX_GCC_OPT <= $(VBOX_FREEBSD)
++ endif
+ endif
+ 
+ 
 @@ -4218,6 +4219,7 @@ ifdef VBOX_WITH_RAW_MODE
   TEMPLATE_VBoxRc_TOOL                = $(VBOX_GCC32_TOOL)
   TEMPLATE_VBoxRc_CXXFLAGS            = -fno-pie -nostdinc -g $(VBOX_GCC_pipe) $(VBOX_GCC_WERR) $(VBOX_GCC_PEDANTIC_CXX) $(VBOX_GCC32_Wno-variadic-macros) -fno-exceptions $(VBOX_GCC_GC_OPT) $(VBOX_GCC_GC_FP) -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -fno-strict-aliasing $(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_fvisibility-hidden) $(VBOX_GCC_fvisibility-inlines-hidden) -fno-rtti $(VBOX_GCC_IPRT_FMT_CHECK)
