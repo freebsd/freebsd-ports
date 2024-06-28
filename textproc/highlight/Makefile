@@ -1,20 +1,19 @@
 PORTNAME=	highlight
-PORTVERSION=	4.10
+PORTVERSION=	4.12
 PORTEPOCH=	3
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.andre-simon.de/zip/
+MASTER_SITES=	http://andre-simon.de/zip/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Customizable syntax highlighter
-WWW=		http://www.andre-simon.de/
+WWW=		http://andre-simon.de/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/scoped_array.hpp:devel/boost-libs
 
-USES=		compiler:c++11-lib gmake lua pkgconfig tar:bzip2
-USE_CXXSTD=	c++11
+USES=		gmake lua pkgconfig tar:bzip2
 MAKEFILE=	makefile
 MAKE_ARGS=	CXX="${CXX}" \
 		CFLAGS="${CXXFLAGS} ${CPPFLAGS} -DHAVE_DECL_GETOPT" \

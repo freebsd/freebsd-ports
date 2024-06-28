@@ -158,6 +158,7 @@ share/fish/vendor_completions.d/highlight.fish
 %%DATADIR%%/langDefs/mod2.lang
 %%DATADIR%%/langDefs/mod3.lang
 %%DATADIR%%/langDefs/modelica.lang
+%%DATADIR%%/langDefs/mojo.lang
 %%DATADIR%%/langDefs/moon.lang
 %%DATADIR%%/langDefs/ms.lang
 %%DATADIR%%/langDefs/msl.lang
@@ -299,6 +300,7 @@ share/fish/vendor_completions.d/highlight.fish
 %%DATADIR%%/plugins/outhtml_codefold.lua
 %%DATADIR%%/plugins/outhtml_copy_clipboard.lua
 %%DATADIR%%/plugins/outhtml_curly_brackets_matcher.lua
+%%DATADIR%%/plugins/outhtml_focus.lua
 %%DATADIR%%/plugins/outhtml_ie7_webctrl.lua
 %%DATADIR%%/plugins/outhtml_keyword_matcher.lua
 %%DATADIR%%/plugins/outhtml_ligature_fonts.lua
