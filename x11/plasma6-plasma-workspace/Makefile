@@ -1,14 +1,9 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	2
 CATEGORIES=	x11 kde kde-plasma
 
 COMMENT=	KDE Plasma Workspace
 MAINTAINER=	kde@FreeBSD.org
-
-PATCH_SITES=	https://invent.kde.org/plasma/plasma-workspace/-/commit/
-PATCHFILES+=	8047b93defa4be4c6c1864e93c41fddcef2969bb.patch:-p1 # CVE-2024-36041
-PATCHFILES+=	a061b08e90ec5554d5ff8c57ae1218130c76e27a.patch:-p1 # CVE-2024-36041
 
 BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
@@ -21,7 +16,8 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libwayland-client.so:graphics/wayland \
 		libxcb-image.so:x11/xcb-util-image \
 		libxcb-util.so:x11/xcb-util \
-		libxkbcommon.so:x11/libxkbcommon
+		libxkbcommon.so:x11/libxkbcommon \
+		libQCoro6Core.so:devel/qcoro@qt6
 
 RUN_DEPENDS=	${LOCALBASE}/bin/genv:sysutils/coreutils
 

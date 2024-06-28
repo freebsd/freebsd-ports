@@ -1,7 +1,3 @@
-TIMESTAMP = 1718142565
-SHA256 (KDE/plasma/6.0.4/plasma-workspace-6.0.4.tar.xz) = 7f2c2871c966e66d5de2d63bcb1a554fe00b4da6bde93f69700bd1b1f60dc567
-SIZE (KDE/plasma/6.0.4/plasma-workspace-6.0.4.tar.xz) = 19946316
-SHA256 (KDE/plasma/6.0.4/8047b93defa4be4c6c1864e93c41fddcef2969bb.patch) = 1b231b23a7af7827900666fc844c946892b715c16f01e30640cee0e7800d1ede
-SIZE (KDE/plasma/6.0.4/8047b93defa4be4c6c1864e93c41fddcef2969bb.patch) = 4456
-SHA256 (KDE/plasma/6.0.4/a061b08e90ec5554d5ff8c57ae1218130c76e27a.patch) = f2cbedf331bef5fcae3d622e0ad60e7710e2d2c5e62e3a2f7835986260e78cfb
-SIZE (KDE/plasma/6.0.4/a061b08e90ec5554d5ff8c57ae1218130c76e27a.patch) = 8589
+TIMESTAMP = 1719584237
+SHA256 (KDE/plasma/6.1.0/plasma-workspace-6.1.0.tar.xz) = f4f542e6f201f46080ee6fb966d9f895811a8dcd7d4f18a4c6c48ce0c35a127c
+SIZE (KDE/plasma/6.1.0/plasma-workspace-6.1.0.tar.xz) = 19257156

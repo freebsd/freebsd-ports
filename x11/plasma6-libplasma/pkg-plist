@@ -20,6 +20,7 @@ include/PlasmaQuick/PlasmaQuick/ConfigModel
 include/PlasmaQuick/PlasmaQuick/ConfigView
 include/PlasmaQuick/PlasmaQuick/ContainmentView
 include/PlasmaQuick/PlasmaQuick/Dialog
+include/PlasmaQuick/PlasmaQuick/PlasmaShellWaylandIntegration
 include/PlasmaQuick/PlasmaQuick/PlasmaWindow
 include/PlasmaQuick/PlasmaQuick/PopupPlasmaWindow
 include/PlasmaQuick/PlasmaQuick/QuickViewSharedEngine
@@ -31,6 +32,7 @@ include/PlasmaQuick/plasmaquick/configview.h
 include/PlasmaQuick/plasmaquick/containmentview.h
 include/PlasmaQuick/plasmaquick/dialog.h
 include/PlasmaQuick/plasmaquick/plasmaquick_export.h
+include/PlasmaQuick/plasmaquick/plasmashellwaylandintegration.h
 include/PlasmaQuick/plasmaquick/plasmawindow.h
 include/PlasmaQuick/plasmaquick/popupplasmawindow.h
 include/PlasmaQuick/plasmaquick/quickviewsharedengine.h
@@ -134,6 +136,7 @@ lib/libPlasmaQuick.so.%%KDE_PLASMA_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/extras/Heading.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/Highlight.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/ListItem.qml
+%%QT_QMLDIR%%/org/kde/plasma/extras/ListSectionHeader.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/ModelContextMenu.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/PasswordField.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/PlaceholderMessage.qml
@@ -181,6 +184,7 @@ share/locale/he/LC_MESSAGES/libplasma6.mo
 share/locale/hu/LC_MESSAGES/libplasma6.mo
 share/locale/ia/LC_MESSAGES/libplasma6.mo
 share/locale/id/LC_MESSAGES/libplasma6.mo
+share/locale/is/LC_MESSAGES/libplasma6.mo
 share/locale/it/LC_MESSAGES/libplasma6.mo
 share/locale/ja/LC_MESSAGES/libplasma6.mo
 share/locale/ka/LC_MESSAGES/libplasma6.mo

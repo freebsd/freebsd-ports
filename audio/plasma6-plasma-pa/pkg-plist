@@ -1,3 +1,7 @@
+lib/libplasma-volume.so
+lib/libplasma-volume.so.6
+lib/libplasma-volume.so.%%KDE_PLASMA_VERSION%%
+%%QT_PLUGINDIR%%/kf6/kded/audioshortcutsservice.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_pulseaudio.so
 %%QT_QMLDIR%%/org/kde/plasma/private/volume/PulseObjectFilterModel.qml
 %%QT_QMLDIR%%/org/kde/plasma/private/volume/kde-qmlmodule.version
@@ -88,6 +92,7 @@ share/locale/ko/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/lt/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
+share/locale/lv/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/ml/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
@@ -133,7 +138,6 @@ share/locale/zh_CN/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/metainfo/org.kde.plasma.volume.appdata.xml
-share/plasma/plasmoids/org.kde.plasma.volume/contents/code/icon.js
 share/plasma/plasmoids/org.kde.plasma.volume/contents/config/main.xml
 share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/DeviceListItem.qml
 share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/HorizontalStackView.qml

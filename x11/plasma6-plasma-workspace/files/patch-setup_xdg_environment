@@ -1,6 +1,6 @@
---- startkde/startplasma.cpp.orig	2023-11-29 10:44:01 UTC
+--- startkde/startplasma.cpp.orig	2024-06-28 14:13:43 UTC
 +++ startkde/startplasma.cpp
-@@ -341,7 +341,7 @@ void setupPlasmaEnvironment()
+@@ -362,7 +362,7 @@ void setupPlasmaEnvironment()
      // Add kdedefaults dir to allow config defaults overriding from a writable location
      QByteArray currentConfigDirs = qgetenv("XDG_CONFIG_DIRS");
      if (currentConfigDirs.isEmpty()) {

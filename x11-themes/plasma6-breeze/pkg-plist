@@ -27,6 +27,7 @@ share/icons/Breeze_Light/cursors/9d800788f1b08800ae810202380a0822
 share/icons/Breeze_Light/cursors/a2a266d0498c3104214a47bd64ab0fc8
 share/icons/Breeze_Light/cursors/alias
 share/icons/Breeze_Light/cursors/all-scroll
+share/icons/Breeze_Light/cursors/arrow
 share/icons/Breeze_Light/cursors/b66166c04f8c3109214a4fbd64a50fc8
 share/icons/Breeze_Light/cursors/bottom_left_corner
 share/icons/Breeze_Light/cursors/bottom_right_corner
@@ -304,6 +305,8 @@ share/locale/ko/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/ko/LC_MESSAGES/breeze_style_config.mo
 share/locale/lt/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/lt/LC_MESSAGES/breeze_style_config.mo
+share/locale/lv/LC_MESSAGES/breeze_kwin_deco.mo
+share/locale/lv/LC_MESSAGES/breeze_style_config.mo
 share/locale/ml/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/ml/LC_MESSAGES/breeze_style_config.mo
 share/locale/nb/LC_MESSAGES/breeze_kwin_deco.mo

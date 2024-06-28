@@ -1,6 +1,5 @@
 PORTNAME=	kwin
-DISTVERSION=	${KDE_PLASMA_VERSION}.1
-PORTREVISION=	1
+DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	x11-wm kde kde-plasma
 
 COMMENT=	Easy to use, but flexible, X Window Manager and Wayland Compositor

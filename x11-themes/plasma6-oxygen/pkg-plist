@@ -1,9 +1,9 @@
 bin/oxygen-demo6
 bin/oxygen-settings6
-lib/liboxygenstyle6.so.%%KDE_PLASMA_VERSION%%
 lib/liboxygenstyle6.so.6
-lib/liboxygenstyleconfig6.so.%%KDE_PLASMA_VERSION%%
+lib/liboxygenstyle6.so.%%KDE_PLASMA_VERSION%%
 lib/liboxygenstyleconfig6.so.6
+lib/liboxygenstyleconfig6.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/kstyle_config/kstyle_oxygen_config.so
 %%QT_PLUGINDIR%%/org.kde.kdecoration2.kcm/kcm_oxygendecoration.so
 %%QT_PLUGINDIR%%/org.kde.kdecoration2/org.kde.oxygen.so
@@ -651,6 +651,8 @@ share/locale/lt/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/lt/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/lt/LC_MESSAGES/oxygen_style_config.mo
 share/locale/lt/LC_MESSAGES/oxygen_style_demo.mo
+share/locale/lv/LC_MESSAGES/liboxygenstyleconfig.mo
+share/locale/lv/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/lv/LC_MESSAGES/oxygen_style_config.mo
 share/locale/lv/LC_MESSAGES/oxygen_style_demo.mo
 share/locale/mai/LC_MESSAGES/oxygen_style_config.mo
