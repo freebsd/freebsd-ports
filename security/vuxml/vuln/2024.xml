@@ -1,3 +1,71 @@
+  <vuln vid="0e73964d-053a-481a-bf1c-202948d68484">
+    <topic>electron29 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron29</name>
+	<range><lt>29.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v29.4.3">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-5499.</li>
+	    <li>Security: backported fix for CVE-2024-5493.</li>
+	    <li>Security: backported fix for CVE-2024-5494.</li>
+	    <li>Security: backported fix for CVE-2024-5495.</li>
+	    <li>Security: backported fix for CVE-2024-5496.</li>
+	    <li>Security: backported fix for CVE-2024-5158.</li>
+	    <li>Security: backported fix for CVE-2024-5160.</li>
+	    <li>Security: backported fix for CVE-2024-5157.</li>
+	    <li>Security: backported fix for CVE-2024-5159.</li>
+	    <li>Security: backported fix for CVE-2024-5831.</li>
+	    <li>Security: backported fix for CVE-2024-5832.</li>
+	    <li>Security: backported fix for CVE-2024-6100.</li>
+	    <li>Security: backported fix for CVE-2024-6101.</li>
+	    <li>Security: backported fix for CVE-2024-6103.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-5499</cvename>
+      <url>https://github.com/advisories/GHSA-hqfv-mf6j-g3j6</url>
+      <cvename>CVE-2024-5493</cvename>
+      <url>https://github.com/advisories/GHSA-f6rr-qfxh-hcf9</url>
+      <cvename>CVE-2024-5494</cvename>
+      <url>https://github.com/advisories/GHSA-fv2x-w8xf-gxpq</url>
+      <cvename>CVE-2024-5495</cvename>
+      <url>https://github.com/advisories/GHSA-wrxh-8wc3-33rm</url>
+      <cvename>CVE-2024-5496</cvename>
+      <url>https://github.com/advisories/GHSA-8xgv-q88p-ghq4</url>
+      <cvename>CVE-2024-5158</cvename>
+      <url>https://github.com/advisories/GHSA-4433-jwm9-48r5</url>
+      <cvename>CVE-2024-5160</cvename>
+      <url>https://github.com/advisories/GHSA-c24q-2hx9-mjpc</url>
+      <cvename>CVE-2024-5157</cvename>
+      <url>https://github.com/advisories/GHSA-w7g4-69hj-jcrq</url>
+      <cvename>CVE-2024-5159</cvename>
+      <url>https://github.com/advisories/GHSA-qmp7-vwf7-6g2g</url>
+      <cvename>CVE-2024-5831</cvename>
+      <url>https://github.com/advisories/GHSA-9pmm-wf44-xjqc</url>
+      <cvename>CVE-2024-5832</cvename>
+      <url>https://github.com/advisories/GHSA-rw9q-cwc5-qqp5</url>
+      <cvename>CVE-2024-6100</cvename>
+      <url>https://github.com/advisories/GHSA-g779-vpj7-v6c4</url>
+      <cvename>CVE-2024-6101</cvename>
+      <url>https://github.com/advisories/GHSA-rg42-f9ww-x3w7</url>
+      <cvename>CVE-2024-6103</cvename>
+      <url>https://github.com/advisories/GHSA-ph5m-227m-fc5g</url>
+    </references>
+    <dates>
+      <discovery>2024-06-27</discovery>
+      <entry>2024-06-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="07f0ea8c-356a-11ef-ac6d-a0423f48a938">
     <topic>frr - Multiple vulnerabilities</topic>
     <affects>
