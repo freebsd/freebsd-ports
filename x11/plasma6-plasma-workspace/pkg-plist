@@ -2563,8 +2563,10 @@ share/locale/gl/LC_MESSAGES/kcm_icons.mo
 share/locale/gl/LC_MESSAGES/kcm_lookandfeel.mo
 share/locale/gl/LC_MESSAGES/kcm_nightlight.mo
 share/locale/gl/LC_MESSAGES/kcm_notifications.mo
+share/locale/gl/LC_MESSAGES/kcm_regionandlang.mo
 share/locale/gl/LC_MESSAGES/kcm_soundtheme.mo
 share/locale/gl/LC_MESSAGES/kcm_style.mo
+share/locale/gl/LC_MESSAGES/kcm_users.mo
 share/locale/gl/LC_MESSAGES/kcminit.mo
 share/locale/gl/LC_MESSAGES/kded_devicenotifications.mo
 share/locale/gl/LC_MESSAGES/kfontinst.mo

@@ -270,6 +270,7 @@ share/locale/sr@latin/LC_MESSAGES/powerdevil.mo
 share/locale/sv/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/sv/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/sv/LC_MESSAGES/powerdevil.mo
+share/locale/sv/LC_MESSAGES/powerdevil_osd.mo
 share/locale/ta/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/ta/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/ta/LC_MESSAGES/powerdevil.mo

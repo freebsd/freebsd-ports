@@ -1586,6 +1586,7 @@ share/locale/sv/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
 share/locale/sv/LC_MESSAGES/kcm_kwindecoration.mo
 share/locale/sv/LC_MESSAGES/kcm_kwinrules.mo
 share/locale/sv/LC_MESSAGES/kcm_kwintabbox.mo
+share/locale/sv/LC_MESSAGES/kcm_kwinxwayland.mo
 share/locale/sv/LC_MESSAGES/kcm_virtualkeyboard.mo
 share/locale/sv/LC_MESSAGES/kcmkwincommon.mo
 share/locale/sv/LC_MESSAGES/kcmkwincompositing.mo

@@ -567,6 +567,7 @@ share/locale/sr@latin/LC_MESSAGES/kmimetypefinder.mo
 share/locale/sr@latin/LC_MESSAGES/kstart.mo
 share/locale/sv/LC_MESSAGES/kbroadcastnotification.mo
 share/locale/sv/LC_MESSAGES/kcm_filetypes.mo
+share/locale/sv/LC_MESSAGES/kde-inhibit.mo
 share/locale/sv/LC_MESSAGES/kdesu.mo
 share/locale/sv/LC_MESSAGES/kioclient.mo
 share/locale/sv/LC_MESSAGES/kmimetypefinder.mo

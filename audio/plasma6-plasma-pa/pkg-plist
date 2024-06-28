@@ -1,4 +1,3 @@
-lib/libplasma-volume.so
 lib/libplasma-volume.so.6
 lib/libplasma-volume.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/kf6/kded/audioshortcutsservice.so
