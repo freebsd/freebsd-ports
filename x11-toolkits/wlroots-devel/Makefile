@@ -1,6 +1,6 @@
 PORTNAME=	wlroots
-DISTVERSION=	0.17.0-409
-DISTVERSIONSUFFIX=	-gbf67eb342b
+DISTVERSION=	0.17.0-417
+DISTVERSIONSUFFIX=	-g65e6579c56
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	-devel
 
@@ -24,6 +24,10 @@ USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 MESON_ARGS=	-Dexamples=false -Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
 PLIST_SUB=	SUFFIX=-0.18
+
+# XXX Drop after graphics/wayland >= 1.23 update
+# https://gitlab.freedesktop.org/wayland/wayland/-/merge_requests/401
+MESON_ARGS+=	-Dc_std=c11
 
 PORTSCOUT=	ignore:1
 
