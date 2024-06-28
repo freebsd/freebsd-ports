@@ -1,8 +1,8 @@
-TIMESTAMP = 1711195447
-SHA256 (SaschaWillems-VulkanCapsViewer-3.40_GH0.tar.gz) = 755ee67de736d1f34aa5a2ffc76b3ccb979800a9882eab633f26ef0200c05da7
-SIZE (SaschaWillems-VulkanCapsViewer-3.40_GH0.tar.gz) = 2810587
-SHA256 (KhronosGroup-Vulkan-Headers-v1.3.280_GH0.tar.gz) = 717b49c52dbd37c78cf2f7f0fc715292c42e74841219e6cca918cd293ad5dce4
-SIZE (KhronosGroup-Vulkan-Headers-v1.3.280_GH0.tar.gz) = 2264744
+TIMESTAMP = 1719583076
+SHA256 (SaschaWillems-VulkanCapsViewer-3.41_GH0.tar.gz) = 0881cd3d48d4273a4ee66a3b05cb872dbe3f07a95021714d0e3ff40e215d9488
+SIZE (SaschaWillems-VulkanCapsViewer-3.41_GH0.tar.gz) = 2861799
+SHA256 (KhronosGroup-Vulkan-Headers-v1.3.289_GH0.tar.gz) = fc66db6de66a6e3527c110ff1db77a86ae97804fe7f019725e8d25acdc875c6f
+SIZE (KhronosGroup-Vulkan-Headers-v1.3.289_GH0.tar.gz) = 2281213
 SHA256 (de463e2fce3f.patch) = 67f03cec1e8ac91a1daf09a88aa96cb47c89549f84b4ef8426d180362cd92e02
 SIZE (de463e2fce3f.patch) = 2078
 SHA256 (265922e7ddc9.patch) = 893f57d7f2ec7059d7241fdae47df76e3be6d13de4a6a21ce7d8624d5b67422f
