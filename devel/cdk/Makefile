@@ -1,5 +1,5 @@
 PORTNAME=	cdk
-DISTVERSION=	5.0-20240331
+DISTVERSION=	5.0-20240619
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://invisible-island.net/archives/${PORTNAME}/ \
