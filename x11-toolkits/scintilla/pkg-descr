@@ -5,5 +5,4 @@ styling, error indicators, code completion and call tips. The selection margin
 can contain markers like those used in debuggers to indicate breakpoints and the
 current line. Styling choices are more open than with many editors, allowing the
 use of proportional fonts, bold and italics, multiple foreground and background
-colours and multiple fonts. It comes with complete source code and may be used
-in any free project or commercial product.
+colours and multiple fonts.
