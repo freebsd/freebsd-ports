@@ -1,0 +1,54 @@
+seed: rotation dream build introduce memorandum sphere trouble title pedestrian get conclusion large
+directory: /var/lib/renterd
+shutdownTimeout: 5m0s
+log:
+    level: warn
+    stdout:
+      enabled: true
+      format: human
+      enableANSI: false
+    file:
+      enabled: false
+http:
+    address: localhost:9980
+    password: sia is cool
+bus:
+    announcementMaxAgeHours: 8736
+    bootstrap: true
+    gatewayAddr: :9981
+    persistInterval: 1m0s
+    usedUtxoExpiry: 24h0m0s
+    slabBufferCompleionThreshold: 4096
+worker:
+    enabled: true
+    id: worker
+    busFlushInterval: 5s
+    contractLockTimeout: 30s
+    downloadOverdriveTimeout: 3s
+    uploadOverdriveTimeout: 3s
+    downloadMaxOverdrive: 5
+    downloadMaxMemory: 1073741824
+    uploadMaxMemory: 1073741824
+    uploadMaxOverdrive: 5
+s3:
+    address: localhost:8080
+    enabled: true
+autopilot:
+    enabled: true
+    accountsRefillInterval: 10s
+    heartbeat: 30m0s
+    migrationHealthCutoff: 0.75
+    revisionBroadcastInterval: 168h0m0s
+    revisionSubmissionBuffer: 144
+    scannerInterval: 24h0m0s
+    scannerBatchSize: 1000
+    scannerNumThreads: 100
+    migratorParallelSlabsPerWorker: 1
+database:
+    log:
+        ignoreRecordNotFoundError: true
+        slowThreshold: 100ms
+    mysql:
+        user: renterd
+        database: renterd
+        metricsDatabase: renterd_metrics

@@ -303,9 +303,9 @@ prowlarr:*:359:
 v2ray:*:360:
 httptunnel:*:361:
 readarr:*:362:
-# free: 363
-# free: 364
-# free: 365
+hostd:*:363:
+walletd:*:364:
+renterd:*:365:
 # free: 366
 # free: 367
 # free: 368
