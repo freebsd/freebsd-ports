@@ -1,6 +1,6 @@
---- cegui/src/CMakeLists.txt.orig	2014-07-07 07:06:18 UTC
+--- cegui/src/CMakeLists.txt.orig	2016-04-23 18:19:40 UTC
 +++ cegui/src/CMakeLists.txt
-@@ -93,6 +93,10 @@ elseif (MINGW)
+@@ -99,6 +99,10 @@ elseif (MINGW)
      cegui_target_link_libraries(${CEGUI_TARGET_NAME} ${CMAKE_DL_LIBS})
  endif()
  
