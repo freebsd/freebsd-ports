@@ -15,9 +15,6 @@ WWW=		http://jonls.dk/redshift/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Abandoned upstream, no activity for the past 4 years. Consider using accessibility/sct, accessibility/wlsunset or accessibility/wl-gammarelay-rs
-EXPIRATION_DATE=2024-06-30
-
 LIB_DEPENDS=	libdrm.so:graphics/libdrm
 
 USES=		autoreconf:build gettext gmake gnome libtool localbase \
