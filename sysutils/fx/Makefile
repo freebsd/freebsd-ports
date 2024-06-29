@@ -1,6 +1,5 @@
 PORTNAME=	fx
-DISTVERSION=	34.0.0
-PORTREVISION=	3
+DISTVERSION=	35.0.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -24,18 +23,18 @@ GH_TUPLE=	\
 		charmbracelet:x:4a717d4fb812:charmbracelet_x_teatest/vendor/github.com/charmbracelet/x \
 		containerd:console:v1.0.4:containerd_console/vendor/github.com/containerd/console \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		dlclark:regexp2:v1.10.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
+		dlclark:regexp2:v1.11.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dop251:goja:e401ed450204:dop251_goja/vendor/github.com/dop251/goja \
 		fatih:color:v1.16.0:fatih_color/vendor/github.com/fatih/color \
-		go-sourcemap:sourcemap:v2.1.3:go_sourcemap_sourcemap/vendor/github.com/go-sourcemap/sourcemap \
+		go-sourcemap:sourcemap:v2.1.4:go_sourcemap_sourcemap/vendor/github.com/go-sourcemap/sourcemap \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		goccy:go-yaml:v1.11.3:goccy_go_yaml/vendor/github.com/goccy/go-yaml \
-		golang:sync:v0.6.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.18.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.18.0:golang_term/vendor/golang.org/x/term \
+		golang:sync:v0.7.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.19.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.19.0:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.14.0:golang_text/vendor/golang.org/x/text \
 		golang:xerrors:104605ab7028:golang_xerrors/vendor/golang.org/x/xerrors \
-		google:pprof:f7f687d19a98:google_pprof/vendor/github.com/google/pprof \
+		google:pprof:83162a5b38cd:google_pprof/vendor/github.com/google/pprof \
 		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
 		mattn:go-colorable:v0.1.13:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.20:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
