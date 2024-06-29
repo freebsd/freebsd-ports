@@ -1,0 +1,8 @@
+--- Makefile.orig	2024-04-13 00:41:48 UTC
++++ Makefile
+@@ -2,4 +2,4 @@ test:
+ 
+ 
+ test:
+-	poetry run pytest --durations=20 --timeout=60 -v tests
++	poetry run pytest tests
