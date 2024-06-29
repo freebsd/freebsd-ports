@@ -1,5 +1,6 @@
 PORTNAME=	wine
 DISTVERSION=	9.10
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/9.x/
@@ -40,6 +41,7 @@ CONFIGURE_ARGS+=--verbose \
 		--without-krb5 \
 		--with-mingw CROSSCC="clang" CROSSCFLAGS="-isystem ${FILESDIR}/clang" \
 		--without-netapi \
+		--without-odbc \
 		--without-opencl \
 		--without-osmesa \
 		--without-pcap \
