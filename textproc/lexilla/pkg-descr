@@ -1,0 +1,6 @@
+Lexilla is a free library of language lexers that can be used with the Scintilla
+editing component. Originally, this functionality was incorporated inside
+Scintilla. It has been extracted as a separate project to make it easier for
+contributors to work on support for new languages and to fix bugs in existing
+lexers. It also defines a protocol where projects can implement their own
+lexers and distribute them as they wish.
