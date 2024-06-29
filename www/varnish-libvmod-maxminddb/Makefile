@@ -11,7 +11,8 @@ WWW=		https://github.com/simonvik/libvmod_maxminddb
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		rst2man:textproc/py-docutils@${PY_FLAVOR}
 LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
 USES=		autoreconf compiler:c11 gmake libtool pkgconfig \

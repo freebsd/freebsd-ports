@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON_i386=Requires _Float16
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 		${PYNUMPY} \
 		simde>0:devel/simde \
 		${PYTHON_PKGNAMEPREFIX}cykhash>0:devel/py-cykhash@${PY_FLAVOR} \

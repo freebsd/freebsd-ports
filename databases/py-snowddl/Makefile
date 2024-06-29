@@ -11,6 +11,7 @@ WWW=		https://docs.snowddl.com/
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${PY_DEPENDS} \
+		${PY_SETUPTOOLS} \
 		wheel-${PYTHON_VER}:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_DEPENDS}
 

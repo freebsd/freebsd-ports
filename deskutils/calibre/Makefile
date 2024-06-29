@@ -14,6 +14,7 @@ LICENSE=	GPLv3
 EXTRACT_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 BUILD_DEPENDS=		${LOCALBASE}/bin/cmake:devel/cmake-core \
 			${NONEXISTENT}:misc/iso-codes:extract \
+			${PY_SETUPTOOLS} \
 			${PYTHON_PKGNAMEPREFIX}apsw>=3.43.0.0:databases/py-apsw@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.12.2:www/py-beautifulsoup@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}css-parser>=1.0.10:www/py-css-parser@${PY_FLAVOR} \

@@ -53,7 +53,8 @@ CMAKE_OFF+=	OCIO_USE_SSE2
 # master and pymodule use these
 # DOCS needs to be enabled for python docstrings to be generated
 # py module can still be used without
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}breathe>=0:devel/py-breathe@${PY_FLAVOR} \
+BUILD_DEPENDS+=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}breathe>=0:devel/py-breathe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}recommonmark>=0:textproc/py-recommonmark@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \

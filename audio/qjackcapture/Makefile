@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}natsort>0:devel/py-natsort@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjacklib>0:audio/py-pyjacklib@${PY_FLAVOR}
-BUILD_DEPENDS=	${PY_DEPENDS}
+BUILD_DEPENDS=	${PY_DEPENDS} \
+		${PY_SETUPTOOLS}
 RUN_DEPENDS=	${PY_DEPENDS} \
 		jack_capture:audio/jack-capture
 

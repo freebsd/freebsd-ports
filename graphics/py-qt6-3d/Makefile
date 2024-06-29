@@ -11,6 +11,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt6 3D framework
 WWW=		https://www.riverbankcomputing.com/software/pyqt3d/
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
+
 USES=		gl pyqt:6 python qt:6
 USE_GL=		opengl
 USE_PYQT=	sip:build pyqt6 qtbuilder:build

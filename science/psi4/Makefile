@@ -19,6 +19,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gau2grid>0:math/py-gau2grid@${PY_FLAVOR} \
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		${LOCALBASE}/include/pybind11/pybind11.h:devel/pybind11 \
 		${PY_DEPENDS} \
+		${PY_SETUPTOOLS} \
 		libint2-psi4>0:science/libint2-psi4 # has to be this library
 LIB_DEPENDS=	libgg.so:math/gau2grid \
 		libxc.so:science/libxc

@@ -13,6 +13,8 @@ WWW=		https://riverbankcomputing.com/software/pyqtchart
 
 LICENSE=	${PYQT6_LICENSE}
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
+
 USES=		gl pyqt:6 python qt:6
 USE_GL=		opengl
 USE_PYQT=	sip:build pyqt6 qtbuilder

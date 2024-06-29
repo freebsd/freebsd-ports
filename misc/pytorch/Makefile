@@ -53,6 +53,7 @@ PYTHON_PY_DEPENDS=	${PYNUMPY} \
 			${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 PYTHON_BUILD_DEPENDS=	${PYTHON_PY_DEPENDS} \
+			${PY_SETUPTOOLS} \
 			pybind11>0:devel/pybind11
 PYTHON_RUN_DEPENDS=	${PYTHON_PY_DEPENDS}
 

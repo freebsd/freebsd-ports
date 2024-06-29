@@ -13,7 +13,8 @@ LICENSE=	GPLv3+
 BROKEN_armv6=		fails to link: os-features-test.c:10: undefined symbol 'canonicalize_file_name'
 BROKEN_armv7=		fails to link: os-features-test.c:10: undefined symbol 'canonicalize_file_name'
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYNUMPY}
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libcfitsio.so:astro/cfitsio \
 		libgsl.so:math/gsl \

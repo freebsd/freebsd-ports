@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 BUILD_DEPENDS=	gpsbabel>=1.7.0:astro/gpsbabel \
 		opencl>=0:devel/opencl \
+		${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}cycler>=0.11.0:devel/py-cycler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.8.2:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0.18.2:devel/py-future@${PY_FLAVOR} \

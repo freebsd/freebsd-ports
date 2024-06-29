@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython3>0:lang/cython3 \
+		${PY_SETUPTOOLS} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libblas.so:math/blas \

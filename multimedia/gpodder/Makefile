@@ -10,7 +10,8 @@ WWW=		https://gpodder.github.io/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	intltool-extract:textproc/intltool \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		intltool-extract:textproc/intltool \
 		help2man:misc/help2man
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR} \
