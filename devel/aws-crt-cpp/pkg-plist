@@ -17,6 +17,7 @@ include/aws/crt/Variant.h
 include/aws/crt/auth/Credentials.h
 include/aws/crt/auth/Signing.h
 include/aws/crt/auth/Sigv4Signing.h
+include/aws/crt/cbor/Cbor.h
 include/aws/crt/crypto/HMAC.h
 include/aws/crt/crypto/Hash.h
 include/aws/crt/crypto/SecureRandom.h
