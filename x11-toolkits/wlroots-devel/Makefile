@@ -25,7 +25,7 @@ GL_SITE=	https://gitlab.freedesktop.org
 MESON_ARGS=	-Dexamples=false -Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
 PLIST_SUB=	SUFFIX=-0.18
 
-# XXX Drop after graphics/wayland >= 1.23 update
+# XXX Drop after graphics/wayland >= 1.24 update
 # https://gitlab.freedesktop.org/wayland/wayland/-/merge_requests/401
 MESON_ARGS+=	-Dc_std=c11
 
