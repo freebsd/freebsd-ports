@@ -12,6 +12,8 @@ bin/cgadm
 bin/cgblow
 bin/cgclt
 bin/cglog
+bin/cgplustest
+bin/cgwtest
 etc/rc.d/cego
 include/cego/Cego.h
 include/cego/CegoAVLIndexCursor.h
