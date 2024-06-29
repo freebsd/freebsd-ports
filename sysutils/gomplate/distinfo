@@ -1,5 +1,5 @@
-TIMESTAMP = 1718867669
-SHA256 (go/sysutils_gomplate/gomplate-v4.0.0/v4.0.0.mod) = d73856629f21f8f483449ffa37c87f107ffae7a81a526a9dfe243584b1fd5345
-SIZE (go/sysutils_gomplate/gomplate-v4.0.0/v4.0.0.mod) = 8650
-SHA256 (go/sysutils_gomplate/gomplate-v4.0.0/v4.0.0.zip) = 71f6b11b6787b728bd3807a698c640793bfc6e97f6d5e950d741143e009dc0b8
-SIZE (go/sysutils_gomplate/gomplate-v4.0.0/v4.0.0.zip) = 711726
+TIMESTAMP = 1719647575
+SHA256 (go/sysutils_gomplate/gomplate-v4.0.1/v4.0.1.mod) = 175b63077e0c9351fba047a62fbc111adcde90b11497b1d711bc25d9499dc48f
+SIZE (go/sysutils_gomplate/gomplate-v4.0.1/v4.0.1.mod) = 8651
+SHA256 (go/sysutils_gomplate/gomplate-v4.0.1/v4.0.1.zip) = dc4a5144c2d5ee1c40eaff3a3047c116d3e287dc11e1254716e9809b7befa8fa
+SIZE (go/sysutils_gomplate/gomplate-v4.0.1/v4.0.1.zip) = 715686
