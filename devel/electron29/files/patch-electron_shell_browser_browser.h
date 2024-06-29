@@ -1,4 +1,4 @@
---- electron/shell/browser/browser.h.orig	2024-02-21 16:26:48 UTC
+--- electron/shell/browser/browser.h.orig	2024-06-27 17:50:20 UTC
 +++ electron/shell/browser/browser.h
 @@ -102,7 +102,7 @@ class Browser : public WindowListObserver {
  
@@ -9,7 +9,7 @@
    // get the name, icon and path for an application
    v8::Local<v8::Promise> GetApplicationInfoForProtocol(v8::Isolate* isolate,
                                                         const GURL& url);
-@@ -268,10 +268,10 @@ class Browser : public WindowListObserver {
+@@ -272,10 +272,10 @@ class Browser : public WindowListObserver {
    PCWSTR GetAppUserModelID();
  #endif  // BUILDFLAG(IS_WIN)
  
