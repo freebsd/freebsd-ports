@@ -1,5 +1,6 @@
 PORTNAME=	qqc2-desktop-style
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+KDE_FRAMEWORKS_VERSION=	5.116.1
 CATEGORIES=	x11-themes kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
