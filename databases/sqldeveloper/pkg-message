@@ -20,6 +20,11 @@ Note for MySQL users:
     menu, select Database -> Third Party JDBC Drivers and add the proper jar.
     Do not install 5.1 version of mysql jdbc connector; see
     https://docs.oracle.com/en/database/oracle/sql-developer/18.4/rptig/installing-sql-developer.html#GUID-3F68CF20-D03D-431C-A9A2-0EB971F06448
+
+The Java versions supported by this port are in range from 11 to 17. The default
+is 11. Add DEFAULT_VERSIONS+=java=N to /etc/make.conf if you want to use Java
+"N", but all Java ports will also be affected. Or add SQLDEVELOPER_JAVA_VERSION=N
+to /etc/make.conf if you want to override the Java version for this port only.
 EOM
 }
 ]
