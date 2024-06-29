@@ -1,5 +1,5 @@
 PORTNAME=	calibre
-PORTVERSION=	7.12.0
+PORTVERSION=	7.13.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -71,8 +71,8 @@ USE_RC_SUBR=	calibre
 USE_XORG=	x11 xext xrender
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	kovidgoyal:calibre-translations:ce2962b:translations \
-		LibreOffice:dictionaries:7272a82:hypenation
+GH_TUPLE=	kovidgoyal:calibre-translations:6b7abc0:translations \
+		LibreOffice:dictionaries:fc2dc38:hypenation
 
 SHEBANG_GLOB=	*.py *.recipe *.sh
 python_OLD_CMD=	"/usr/bin/env  python" ${LOCALBASE}/bin/python3
@@ -98,8 +98,6 @@ SUB_LIST=	PYTHON_VERSION=${PYTHON_VERSION}
 ISOCODESWRKSRC!=	${BSDMAKE} -C ${.CURDIR}/../../misc/iso-codes -V WRKSRC
 
 post-extract:
-	@${MV} ${WRKSRC_translations} ${WRKSRC}/src/translations
-	@${CP} ${LOCALBASE}/share/certs/ca-root-nss.crt ${WRKSRC}/resources/mozilla-ca-certs.pem
 	@${CP} ${FILESDIR}/user-agent-data.json ${WRKSRC}/resources
 
 post-patch:
@@ -108,8 +106,6 @@ post-patch:
 		${WRKSRC}/setup/install.py \
 		${WRKSRC}/src/calibre/gui2/dialogs/custom_recipes.py \
 		${WRKSRC}/src/calibre/gui2/preferences/tweaks.py
-	@${REINPLACE_CMD} -e "s|%%ISOCODESWRKSRC%%|${ISOCODESWRKSRC}|" \
-		${WRKSRC}/setup/iso_codes.py
 
 do-configure:
 	# do nothing
@@ -123,6 +119,9 @@ do-build:
 		--system-mathjax \
 		--path-to-mathjax=${LOCALBASE}/www/MathJax3 \
 		--path-to-hyphenation=${WRKSRC_hypenation} \
+		--path-to-translations=${WRKSRC_translations} \
+		--path-to-cacerts=${LOCALBASE}/share/certs/ca-root-nss.crt \
+		--path-to-isocodes=${ISOCODESWRKSRC} --isocodes-extracted \
 	)
 	@${RMDIR} ${LOCALBASE}/libexec/qt6/locales 2>/dev/null || ${TRUE}
 
