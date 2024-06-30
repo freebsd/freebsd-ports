@@ -1,47 +1,33 @@
 PORTNAME=	epdfview
-PORTVERSION=	0.1.8
-PORTREVISION=	66
+DISTVERSION=	0.2.0
 CATEGORIES=	graphics print gnome
-MASTER_SITES=	FRUGALWARE/xapps-extra/${PORTNAME} \
-		ftp://ftp.slackware.com/.1/blfs/conglomeration/${PORTNAME}/ \
-		http://anduin.linuxfromscratch.org/sources/BLFS/conglomeration/${PORTNAME}/ \
-		http://pkgs.fedoraproject.org/repo/pkgs/${PORTNAME}/${DISTNAME}${EXTRACT_SUFX}/e50285b01612169b2594fea375f53ae4/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mew14930xvi@inbox.lv
 COMMENT=	Lightweight PDF document viewer
-WWW=		http://www.emma-soft.com/projects/epdfview/
+WWW=		https://github.com/Flow-It/epdfview_old
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	cppunit-config:devel/cppunit
 LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 
-USES=		compiler:c++11-lang desktop-file-utils gmake gnome iconv \
-		pkgconfig tar:bzip2
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-USE_GNOME=	gtk20 intlhack
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		compiler:c++11-lang desktop-file-utils gnome iconv meson \
+		pkgconfig
 
-OPTIONS_DEFINE=	CUPS NLS
-OPTIONS_DEFAULT=CUPS NLS
-OPTIONS_SUB=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	Flow-It
+GH_PROJECT=	epdfview_old
+GH_TAGNAME=	6f907bd
 
-CUPS_CONFIGURE_WITH=	cups
+USE_GNOME=	glib20 gtk30
+
+OPTIONS_DEFINE=		CUPS NLS
+OPTIONS_DEFAULT=	CUPS NLS
+OPTIONS_SUB=		yes
+
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
-
-NLS_USES=	gettext
-NLS_CPPFLAGS=	-I${LOCALBASE}/include
-NLS_LDFLAGS=	-L${LOCALBASE}/lib
-NLS_CONFIGURE_ENABLE=	nls
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
-		${WRKSRC}/src/gtk/StockIcons.h
-
-post-install:
-	${REINPLACE_CMD} -e 's,Icon.*,Icon=${DATADIR}/pixmaps/icon_epdfview-48.png,' ${WRKSRC}/data/${PORTNAME}.desktop
-	${INSTALL_DATA} ${WRKSRC}/data/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/
+CUPS_MESON_TRUE=	enable-printing
+NLS_USES=		gettext
+NLS_MESON_TRUE=		enable-nls
 
 .include <bsd.port.mk>
