@@ -227,8 +227,8 @@ share/man/man1/aria_dump_log.1.gz
 share/man/man1/aria_ftdump.1.gz
 share/man/man1/aria_pack.1.gz
 share/man/man1/aria_read_log.1.gz
-share/man/man1/galera_new_cluster.1.gz
-share/man/man1/galera_recovery.1.gz
+%%WSREP%%share/man/man1/galera_new_cluster.1.gz
+%%WSREP%%share/man/man1/galera_recovery.1.gz
 share/man/man1/innochecksum.1.gz
 share/man/man1/mariabackup.1.gz
 share/man/man1/mariadb-backup.1.gz
