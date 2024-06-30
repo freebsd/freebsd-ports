@@ -841,6 +841,7 @@
     SUBDIR += py-whisper
     SUBDIR += py-xapian
     SUBDIR += py-zodbpickle
+    SUBDIR += pythoncego
     SUBDIR += qdbm
     SUBDIR += qdbm-plus
     SUBDIR += qdrant
