@@ -1,17 +1,12 @@
-%%HYDRA%%bin/hydra_nameserver
-%%HYDRA%%bin/hydra_persist
-%%HYDRA%%bin/hydra_pmi_proxy
 bin/mpic++
 bin/mpicc
 bin/mpichversion
 bin/mpicxx
 %%EXEC%%bin/mpiexec
 %%EXECGFORKER%%bin/mpiexec.gforker
-%%HYDRA%%bin/mpiexec.hydra
 %%FORTRAN%%bin/mpif77
 %%FORTRAN%%bin/mpif90
 %%FORTRAN%%bin/mpifort
-%%HYDRA%%bin/mpirun
 bin/mpivars
 bin/parkill
 include/mpi.h
