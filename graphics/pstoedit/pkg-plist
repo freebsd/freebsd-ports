@@ -20,7 +20,6 @@ lib/libpstoedit.so.0.0.0
 %%MAGICK%%lib/pstoedit/libp2edrvmagick++.so
 lib/pstoedit/libp2edrvpptx.so
 lib/pstoedit/libp2edrvstd.so
-%%MING%%lib/pstoedit/libp2edrvswf.so
 %%EMF%%lib/pstoedit/libp2edrvwmf.so
 libdata/pkgconfig/pstoedit.pc
 share/man/man1/pstoedit.1.gz
