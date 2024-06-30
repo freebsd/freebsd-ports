@@ -1,7 +1,7 @@
 PORTNAME=		CuraEngine
-PORTEPOCH=		1
 DISTVERSION=		4.13.1
 PORTREVISION=	2
+PORTEPOCH=		1
 CATEGORIES=		cad
 DIST_SUBDIR=		Ultimaker
 
@@ -10,6 +10,9 @@ COMMENT=	Engine of slicing solution for RepRap 3D printers
 WWW=		http://wiki.ultimaker.com/Cura
 
 LICENSE=	AGPLv3
+
+DEPRECATED=	Depends on expired net/libarcus
+EXPIRATION_DATE=2024-07-31
 
 LIB_DEPENDS=	libArcus.so:net/libarcus	\
 		libprotobuf.so:devel/protobuf
