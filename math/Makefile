@@ -55,6 +55,7 @@
     SUBDIR += R-cran-deldir
     SUBDIR += R-cran-dimRed
     SUBDIR += R-cran-dlmodeler
+    SUBDIR += R-cran-doBy
     SUBDIR += R-cran-dplyr
     SUBDIR += R-cran-eRm
     SUBDIR += R-cran-energy
