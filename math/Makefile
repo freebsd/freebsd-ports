@@ -12,6 +12,7 @@
     SUBDIR += R-cran-ChangeAnomalyDetection
     SUBDIR += R-cran-DEoptimR
     SUBDIR += R-cran-DRR
+    SUBDIR += R-cran-Deriv
     SUBDIR += R-cran-DoE.base
     SUBDIR += R-cran-FNN
     SUBDIR += R-cran-Formula
