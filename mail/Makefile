@@ -21,7 +21,6 @@
     SUBDIR += astroid
     SUBDIR += automx
     SUBDIR += autorespond
-    SUBDIR += avenger
     SUBDIR += balsa
     SUBDIR += batv-milter
     SUBDIR += bayespam

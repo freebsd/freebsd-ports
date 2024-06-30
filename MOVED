@@ -3364,3 +3364,4 @@ www/node21||2024-06-30|Has expired: Node.js 21.* will reach its EoL on 2024-06-0
 graphics/py-ming||2024-06-30|Has expired: Depends on deprecated graphics/ming
 graphics/p5-ming||2024-06-30|Has expired: Depends on deprecated graphics/ming
 print/panda||2024-06-30|Has expired: Depends on deprecated Oracle Berkeley DB 5.3 and upstream is dead
+mail/avenger||2024-06-30|Has expired: Depends on deprecated Oracle Berkeley DB 5.3 and upstream is dead
