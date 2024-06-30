@@ -4,7 +4,7 @@
      <comment>Python 3 script</comment>
      <sub-class-of type='text/x-python'/>
      <magic priority="60"><!-- higher priority than text/x-python -->
-+      <match type="string" value="#!/usr/local/bin/python3.8" offset="0" />
++      <match type="string" value="#!%%PYTHON_CMD%%" offset="0" />
        <match type="string" value="#!/bin/python3" offset="0"/>
        <match type="string" value="#! /bin/python3" offset="0"/>
        <match type="string" value='eval \"exec /bin/python3' offset="0"/>
