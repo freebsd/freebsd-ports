@@ -15,6 +15,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR
 LIB_DEPENDS=	libffi.so:devel/libffi \
 		libpcre2-8.so:devel/pcre2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
+TEST_DEPENDS=	dbus-uuidgen:devel/dbus \
+		update-desktop-database:devel/desktop-file-utils \
+		update-mime-database:misc/shared-mime-info
 
 # iconv:wchar_t - our iconv in base doesn't support utf-8 -> wchar_t (boooo)
 # (wchar_t is used by glibmm, rawtherapee triggered this)
@@ -55,7 +58,6 @@ FAM_ALTBACKEND_DESC=	Alternate file monitor backend
 MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
 MANPAGES_MESON_ENABLED=	man-pages
 
-TEST_BUILD_DEPENDS=	dbus-daemon:devel/dbus
 TEST_MESON_TRUE=	tests
 
 .include <bsd.port.pre.mk>
@@ -121,5 +123,8 @@ post-install:
 		${STAGEDIR}${PREFIX}/share/bash-completion/completions/
 .endfor
 	${RM} -r ${STAGEDIR}${PREFIX}/libexec/installed-tests
+
+pre-test:
+	${LOCALBASE}/bin/dbus-uuidgen > /var/lib/dbus/machine-id
 
 .include <bsd.port.post.mk>
