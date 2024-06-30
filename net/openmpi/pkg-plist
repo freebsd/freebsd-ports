@@ -317,8 +317,6 @@ libdata/pkgconfig/pmix.pc
 %%SLURM%%%%MPIDIR%%/lib/pmix/pmix_mca_prm_slurm.la
 %%SLURM%%%%MPIDIR%%/lib/pmix/pmix_mca_prm_slurm.so
 %%MPIDIR%%/lib/pmpi_f08_interfaces.mod
-%%TORQUE%%%%MPIDIR%%/lib/prte/prte_mca_plm_tm.la
-%%TORQUE%%%%MPIDIR%%/lib/prte/prte_mca_plm_tm.so
 %%MPIDIR%%/share/man/man1/mpic++.1.gz
 %%MPIDIR%%/share/man/man1/mpicc.1.gz
 %%MPIDIR%%/share/man/man1/mpicxx.1.gz
@@ -856,7 +854,6 @@ libdata/pkgconfig/pmix.pc
 %%MPIDIR%%/share/prte/help-plm-base.txt
 %%SLURM%%%%MPIDIR%%/share/prte/help-plm-slurm.txt
 %%MPIDIR%%/share/prte/help-plm-ssh.txt
-%%TORQUE%%%%MPIDIR%%/share/prte/help-plm-tm.txt
 %%MPIDIR%%/share/prte/help-prte-filem-raw.txt
 %%MPIDIR%%/share/prte/help-prte-hwloc-base.txt
 %%MPIDIR%%/share/prte/help-prte-info.txt
