@@ -240,7 +240,6 @@
     SUBDIR += consul-alerts
     SUBDIR += consul-replicate
     SUBDIR += consul_exporter
-    SUBDIR += container-diff
     SUBDIR += containerd
     SUBDIR += containers-common
     SUBDIR += contractor

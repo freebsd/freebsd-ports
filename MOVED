@@ -3353,3 +3353,4 @@ www/adzap||2024-06-30|Has expired: Obsolete, no longer provides reasonable amoun
 www/bolt||2024-06-30|Has expired: Outdated and unsupported, current version is several years old and unsupported upstream
 www/interchange||2024-06-30|Has expired: Outdated, current version was released in 2010 is unsupported upstream
 www/itop||2024-06-30|Has expired: Outdated, current version is 5 years old and unsupported upstream
+sysutils/container-diff||2024-06-30|Has expired: The repository has been archived by the owner on 2024-03-28. Upstream suggests diffoci as alternative
