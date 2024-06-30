@@ -1213,7 +1213,6 @@
     SUBDIR += wayland-protocols
     SUBDIR += wayland-utils
     SUBDIR += waylandpp
-    SUBDIR += wdune
     SUBDIR += webp
     SUBDIR += webp-pixbuf-loader
     SUBDIR += wings

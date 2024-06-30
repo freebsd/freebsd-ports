@@ -3370,3 +3370,4 @@ www/py-django32||2024-06-30|Has expired: Django 3.2 is now in Extended Support, 
 net/haproxy20||2024-06-30|Has expired: Upstream EOL reaches on 2024-06-30
 lang/gcc9||2024-06-30|Has expired: Unsupported by upstream. Use GCC 10 or newer instead
 security/p5-Protocol-ACME||2024-06-30|Has expired: upstream maintainer indicated that it is no longer suitable for use
+graphics/wdune||2024-06-30|Has expired: upstream no longer maintained
