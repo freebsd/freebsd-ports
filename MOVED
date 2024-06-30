@@ -3366,3 +3366,4 @@ graphics/p5-ming||2024-06-30|Has expired: Depends on deprecated graphics/ming
 print/panda||2024-06-30|Has expired: Depends on deprecated Oracle Berkeley DB 5.3 and upstream is dead
 mail/avenger||2024-06-30|Has expired: Depends on deprecated Oracle Berkeley DB 5.3 and upstream is dead
 www/py-django-bootstrap-pagination||2024-06-30|Has expired: not compatible with Django 4.2, upstream no longer maintained
+www/py-django32||2024-06-30|Has expired: Django 3.2 is now in Extended Support, receives security fixes only and will reach End-Of-Life in April 2024. Upgrade to a later Django version. See https://www.djangoproject.com/download/

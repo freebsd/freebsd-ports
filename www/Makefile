@@ -1581,7 +1581,6 @@
     SUBDIR += py-django-voting
     SUBDIR += py-django-webpack-loader
     SUBDIR += py-django-widget-tweaks
-    SUBDIR += py-django32
     SUBDIR += py-django42
     SUBDIR += py-django50
     SUBDIR += py-django_compressor
