@@ -129,7 +129,6 @@
     SUBDIR += p5-XML-ApacheFOP
     SUBDIR += p5-XML-Handler-AxPoint
     SUBDIR += p910nd
-    SUBDIR += panda
     SUBDIR += papersize-default-a4
     SUBDIR += papersize-default-letter
     SUBDIR += paps
