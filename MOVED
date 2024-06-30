@@ -3368,3 +3368,4 @@ mail/avenger||2024-06-30|Has expired: Depends on deprecated Oracle Berkeley DB 5
 www/py-django-bootstrap-pagination||2024-06-30|Has expired: not compatible with Django 4.2, upstream no longer maintained
 www/py-django32||2024-06-30|Has expired: Django 3.2 is now in Extended Support, receives security fixes only and will reach End-Of-Life in April 2024. Upgrade to a later Django version. See https://www.djangoproject.com/download/
 net/haproxy20||2024-06-30|Has expired: Upstream EOL reaches on 2024-06-30
+lang/gcc9||2024-06-30|Has expired: Unsupported by upstream. Use GCC 10 or newer instead

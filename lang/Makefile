@@ -99,7 +99,6 @@
     SUBDIR += gcc14-devel
     SUBDIR += gcc15-devel
     SUBDIR += gcc6-aux
-    SUBDIR += gcc9
     SUBDIR += gforth
     SUBDIR += ghc
     SUBDIR += ghc810
