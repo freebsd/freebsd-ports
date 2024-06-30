@@ -1266,7 +1266,6 @@
     SUBDIR += signify
     SUBDIR += signing-party
     SUBDIR += silktools
-    SUBDIR += sks
     SUBDIR += smurflog
     SUBDIR += sniffglue
     SUBDIR += snoopy

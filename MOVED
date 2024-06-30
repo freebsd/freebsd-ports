@@ -3357,3 +3357,4 @@ sysutils/container-diff||2024-06-30|Has expired: The repository has been archive
 emulators/qemu7|emulators/qemu|2024-06-30|Has expired: qemu 9.X.X is out, so time to retire this one
 lang/perl5.34||2024-06-30|Has expired: Support end three years after .0 release, please upgrade to a more recent version of Perl
 www/httest||2024-06-30|Has expired: Abandonware, no activity from upstream for years and depends on deprecated library devel/pcre
+security/sks||2024-06-30|Has expired: Depends on deprecated port databases/db5
