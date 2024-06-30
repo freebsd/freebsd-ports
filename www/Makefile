@@ -266,7 +266,6 @@
     SUBDIR += ikiwiki
     SUBDIR += ilias
     SUBDIR += iridium
-    SUBDIR += itop
     SUBDIR += janus
     SUBDIR += jericho-html
     SUBDIR += jesred
