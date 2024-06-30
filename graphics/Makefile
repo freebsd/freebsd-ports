@@ -772,7 +772,6 @@
     SUBDIR += p5-VCG
     SUBDIR += p5-Visio
     SUBDIR += p5-feedgnuplot
-    SUBDIR += p5-ming
     SUBDIR += panoglview
     SUBDIR += panomatic
     SUBDIR += partio
