@@ -3360,3 +3360,4 @@ www/httest||2024-06-30|Has expired: Abandonware, no activity from upstream for y
 security/sks||2024-06-30|Has expired: Depends on deprecated port databases/db5
 audio/asunder||2024-06-30|Has expired: Depends on deprecated library libcddb, consider using audio/cyanrip instead
 www/py-cookies||2024-06-30|Has expired: Upstream is inactive for many years
+www/node21||2024-06-30|Has expired: Node.js 21.* will reach its EoL on 2024-06-01. Use Node.js 22.* (www/node22) instead
