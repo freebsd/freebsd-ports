@@ -877,7 +877,6 @@
     SUBDIR += go-git
     SUBDIR += go-mode.el
     SUBDIR += go-perf
-    SUBDIR += go-protobuf
     SUBDIR += go-tools
     SUBDIR += go-wire
     SUBDIR += gob2
