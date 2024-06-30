@@ -1,3 +1,55 @@
+  <vuln vid="c742dbe8-3704-11ef-9e6e-b42e991fc52e">
+    <topic>netatalk3 -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>netatalk3</name>
+	<range><lt>3.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://github.com/Netatalk/netatalk/blob/90d91a9ac9a7d6132ab7620d31c8c23400949206/etc/afpd/directory.c#L2333">
+	  <p>This entry documents the following three vulnerabilities:</p>
+	  <ul>
+	    <li>Netatalk before 3.2.1 has an off-by-one error and resultant heap-based
+	buffer overflow because of setting ibuf[len] to &apos;\0&apos; in
+	FPMapName in afp_mapname in etc/afpd/directory.c.  2.4.1 and 3.1.19
+	are also fixed versions.</li>
+	    <li>Netatalk before 3.2.1 has an off-by-one error, and resultant
+	heap-based buffer overflow and segmentation violation, because of
+	incorrectly using FPLoginExt in BN_bin2bn in etc/uams/uams_dhx_pam.c.
+	The original issue 1097 report stated: &apos;The latest version of
+	Netatalk (v3.2.0) contains a security vulnerability.  This vulnerability
+	arises due to a lack of validation for the length field after parsing
+	user-provided data, leading to an out-of-bounds heap write of one
+	byte (\0).  Under specific configurations, this can result in reading
+	metadata of the next heap block, potentially causing a Denial of
+	Service (DoS) under certain heap layouts or with ASAN enabled.  ...
+	    </li>
+	    <li>Netatalk before 3.2.1 has an off-by-one error and resultant heap-based
+	buffer overflow because of setting ibuf[PASSWDLEN] to &apos;\0&apos;
+	in FPLoginExt in login in etc/uams/uams_pam.c.  2.4.1 and 3.1.19
+	are also fixed versions.
+	    </li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-38440</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-38440</url>
+      <cvename>CVE-2024-38441</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-38441</url>
+      <cvename>CVE-2024-38439</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-38439</url>
+    </references>
+    <dates>
+      <discovery>2024-06-16</discovery>
+      <entry>2024-06-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0e73964d-053a-481a-bf1c-202948d68484">
     <topic>electron29 -- multiple vulnerabilities</topic>
     <affects>
