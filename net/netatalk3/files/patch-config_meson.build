@@ -1,4 +1,4 @@
---- config/meson.build.orig	2024-06-01 04:56:52 UTC
+--- config/meson.build.orig	2024-06-29 05:58:36 UTC
 +++ config/meson.build
 @@ -7,23 +7,16 @@ custom_target(
  custom_target(
@@ -14,7 +14,7 @@
  
 -if (
 -    not fs.exists(pkgconfdir / 'afp.conf')
--    or (get_option('enable-overwrite') and fs.exists(pkgconfdir / 'afp.conf'))
+-    or (get_option('with-overwrite') and fs.exists(pkgconfdir / 'afp.conf'))
 -)
 -    install_data(afp_conf, install_dir: pkgconfdir)
 -else
@@ -25,5 +25,5 @@
 -install_data('extmap.conf', install_dir: pkgconfdir)
 +install_data('extmap.conf', rename: 'extmap.conf.sample', install_dir: pkgconfdir)
  
- install_data('netatalk-dbus.conf', install_dir: dbus_sysconf_dir)
+ install_data('netatalk-dbus.conf', install_dir: dbus_sysconf_path)
  
