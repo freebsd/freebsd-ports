@@ -1,6 +1,5 @@
 PORTNAME=	freebsd-sysroot
-DISTVERSION=	a2023-12-30
-PORTREVISION=	3
+DISTVERSION=	a2024-06-30
 CATEGORIES=	devel
 MASTER_SITES=	${_SYSROOT_DIST:@f@https://download.freebsd.org/$f?dummy=/:${FLAVOR}@} \
 		LOCAL/rust:${FLAVOR}
@@ -41,14 +40,14 @@ PLIST=		${.CURDIR}/pkg-plist.${FLAVOR}
 PLIST_SUB=	ROOT=${_SYSROOT:S,^${PREFIX}/,,}
 
 _SYSROOT=				${PREFIX}/${PORTNAME}/${FLAVOR:S/_/-/g}
-_SYSROOT_VER=				13.2-RELEASE
+_SYSROOT_VER=				13.3-RELEASE
 _SYSROOT_DIST=				${_SYSROOT_DIST_${FLAVOR}}
 _SYSROOT_DIST_aarch64=			releases/arm64/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_armv7=			releases/arm/${FLAVOR}/ISO-IMAGES/${_SYSROOT_VER:S/-/ /:[1]}/FreeBSD-${_SYSROOT_VER}-arm-armv7-GENERICSD.img.xz
 _SYSROOT_DIST_amd64=			releases/amd64/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_i386=			releases/i386/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_powerpc=			releases/powerpc/powerpc/${_SYSROOT_VER}/base.txz \
-					gcc12-12.2.0_7.pkg
+					gcc13-13.2.0_4.pkg
 _SYSROOT_DIST_powerpc64=		releases/powerpc/powerpc64/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_powerpc64le=		releases/powerpc/powerpc64le/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_powerpcspe=		releases/powerpc/powerpcspe/${_SYSROOT_VER}/base.txz
@@ -65,10 +64,10 @@ _SYSROOT_EXCLUDE_armv7=			usr/lib/debug/*
 _SYSROOT_ARCH_amd64=			x86_64
 _SYSROOT_ARCH_i386=			i686
 _SYSROOT_LLVM_TRIPLE=			${_SYSROOT_LLVM_TRIPLE_${FLAVOR}:U${_SYSROOT_ARCH_${FLAVOR}:U${FLAVOR}}-unknown-${OPSYS:tl}}
-_SYSROOT_LLVM_TRIPLE_aarch64=		aarch64-unknown-freebsd13.2
-_SYSROOT_LLVM_TRIPLE_armv7=		armv7-unknown-freebsd13.2-gnueabihf
-_SYSROOT_LLVM_TRIPLE_powerpc=		powerpc-unknown-freebsd13.2 # secure-plt
-_SYSROOT_LLVM_TRIPLE_powerpc64=		powerpc64-unknown-freebsd13.2 # elfv2
+_SYSROOT_LLVM_TRIPLE_aarch64=		aarch64-unknown-freebsd13.3
+_SYSROOT_LLVM_TRIPLE_armv7=		armv7-unknown-freebsd13.3-gnueabihf
+_SYSROOT_LLVM_TRIPLE_powerpc=		powerpc-unknown-freebsd13.3 # secure-plt
+_SYSROOT_LLVM_TRIPLE_powerpc64=		powerpc64-unknown-freebsd13.3 # elfv2
 
 .if make(distclean) || make(makesum)
 MASTER_SITES:=	${FLAVORS:O:@_flavor@${:!${SETENV} FLAVOR=${_flavor} ${MAKE} -VMASTER_SITES!}@}
@@ -114,14 +113,14 @@ post-extract:
 .if ${FLAVOR} == powerpc
 	cd ${EXTRACT_WRKDIR} && \
 		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/rust/bootstrap/${FLAVOR}/${_SYSROOT_VER}/${_SYSROOT_DIST_${FLAVOR}:[2]} \
-		-C${STAGEDIR}${_SYSROOT} /usr/local/lib/gcc12
+		-C${STAGEDIR}${_SYSROOT} /usr/local/lib/gcc13
 .endif
 	@${FIND} ${STAGEDIR}${_SYSROOT} -type d -empty -delete
 	@${MV} ${STAGEDIR}${_SYSROOT}/COPYRIGHT ${WRKDIR}
 
 do-install:
 .if ${FLAVOR} == powerpc
-	@${RLN} ${STAGEDIR}${_SYSROOT}/usr/local/lib/gcc12/libatomic.so \
+	@${RLN} ${STAGEDIR}${_SYSROOT}/usr/local/lib/gcc13/libatomic.so \
 		${STAGEDIR}${_SYSROOT}/usr/lib/libatomic.so
 .endif
 	@${MKDIR} ${STAGEDIR}${_SYSROOT}/bin
