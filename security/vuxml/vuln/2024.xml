@@ -70,8 +70,8 @@
     <topic>frr - Multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>frr9</name>
-        <range><lt>9.1.1</lt></range>
+	<name>frr9</name>
+	<range><lt>9.1.1</lt></range>
       </package>
       <package>
       <name>frr8</name>
