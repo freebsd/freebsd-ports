@@ -265,7 +265,6 @@
     SUBDIR += igal2
     SUBDIR += ikiwiki
     SUBDIR += ilias
-    SUBDIR += interchange
     SUBDIR += iridium
     SUBDIR += itop
     SUBDIR += janus

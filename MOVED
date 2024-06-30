@@ -3351,3 +3351,4 @@ devel/go-protobuf||2024-06-30|Has expired: Upstream officially deprecated this p
 www/py-django-ldapdb||2024-06-30|Has expired: not compatible with Django >= 4.x, upstream no longer maintained
 www/adzap||2024-06-30|Has expired: Obsolete, no longer provides reasonable amount of filtering
 www/bolt||2024-06-30|Has expired: Outdated and unsupported, current version is several years old and unsupported upstream
+www/interchange||2024-06-30|Has expired: Outdated, current version was released in 2010 is unsupported upstream
