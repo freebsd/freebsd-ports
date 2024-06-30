@@ -249,7 +249,6 @@
     SUBDIR += html2wml
     SUBDIR += htmlcompressor
     SUBDIR += htmlcxx
-    SUBDIR += httest
     SUBDIR += http-parser
     SUBDIR += http_get
     SUBDIR += http_load
