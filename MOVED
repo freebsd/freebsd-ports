@@ -3349,3 +3349,4 @@ net-im/climm||2024-06-27|ICQ Service closed in 2024-06-24
 multimedia/emby-server-devel|multimedia/emby-server|2024-06-28|Beta port removed: please use the release port multimedia/emby-server
 devel/go-protobuf||2024-06-30|Has expired: Upstream officially deprecated this project
 www/py-django-ldapdb||2024-06-30|Has expired: not compatible with Django >= 4.x, upstream no longer maintained
+www/adzap||2024-06-30|Has expired: Obsolete, no longer provides reasonable amount of filtering
