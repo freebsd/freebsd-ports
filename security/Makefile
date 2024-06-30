@@ -723,7 +723,6 @@
     SUBDIR += p5-POE-Filter-SSL
     SUBDIR += p5-Parse-Snort
     SUBDIR += p5-PerlCryptLib
-    SUBDIR += p5-Protocol-ACME
     SUBDIR += p5-SAVI-Perl
     SUBDIR += p5-SHA
     SUBDIR += p5-Safe-Hole
