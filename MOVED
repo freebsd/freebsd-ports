@@ -3365,3 +3365,4 @@ graphics/py-ming||2024-06-30|Has expired: Depends on deprecated graphics/ming
 graphics/p5-ming||2024-06-30|Has expired: Depends on deprecated graphics/ming
 print/panda||2024-06-30|Has expired: Depends on deprecated Oracle Berkeley DB 5.3 and upstream is dead
 mail/avenger||2024-06-30|Has expired: Depends on deprecated Oracle Berkeley DB 5.3 and upstream is dead
+www/py-django-bootstrap-pagination||2024-06-30|Has expired: not compatible with Django 4.2, upstream no longer maintained
