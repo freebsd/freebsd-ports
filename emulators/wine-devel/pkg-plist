@@ -403,6 +403,8 @@ include/wine/windows/dinput.h
 include/wine/windows/dinputd.h
 include/wine/windows/directmanipulation.h
 include/wine/windows/directmanipulation.idl
+include/wine/windows/dispatcherqueue.h
+include/wine/windows/dispatcherqueue.idl
 include/wine/windows/dispdib.h
 include/wine/windows/dispex.h
 include/wine/windows/dispex.idl
@@ -1643,6 +1645,7 @@ lib/wine/%%WINEARCH%%-windows/concrt140.dll
 lib/wine/%%WINEARCH%%-windows/conhost.exe
 lib/wine/%%WINEARCH%%-windows/connect.dll
 lib/wine/%%WINEARCH%%-windows/control.exe
+lib/wine/%%WINEARCH%%-windows/coremessaging.dll
 lib/wine/%%WINEARCH%%-windows/credui.dll
 lib/wine/%%WINEARCH%%-windows/crtdll.dll
 lib/wine/%%WINEARCH%%-windows/crypt32.dll
