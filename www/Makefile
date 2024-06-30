@@ -2511,7 +2511,6 @@
     SUBDIR += yt-dlp
     SUBDIR += ytdl
     SUBDIR += yuicompressor
-    SUBDIR += zend-framework
     SUBDIR += zenphoto
     SUBDIR += zerowait-httpd
     SUBDIR += zgrab2
