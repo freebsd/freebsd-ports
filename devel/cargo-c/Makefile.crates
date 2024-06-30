@@ -31,11 +31,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		cargo-util-0.2.12 \
 		cargo-util-schemas-0.3.1 \
 		cbindgen-0.26.0 \
-		cc-1.0.101 \
+		cc-1.0.103 \
 		cfg-if-1.0.0 \
-		clap-4.5.7 \
-		clap_builder-4.5.7 \
-		clap_derive-4.5.5 \
+		clap-4.5.8 \
+		clap_builder-4.5.8 \
+		clap_derive-4.5.8 \
 		clap_lex-0.7.1 \
 		clru-0.6.2 \
 		color-print-0.3.6 \
@@ -86,7 +86,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		git2-0.18.3 \
 		git2-curl-0.19.0 \
 		gix-0.63.0 \
-		gix-actor-0.31.2 \
+		gix-actor-0.31.3 \
 		gix-attributes-0.22.2 \
 		gix-bitmap-0.2.11 \
 		gix-chunk-0.4.8 \
@@ -172,7 +172,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		libz-sys-1.1.18 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \
-		log-0.4.21 \
+		log-0.4.22 \
 		matchers-0.1.0 \
 		maybe-async-0.2.10 \
 		memchr-2.7.4 \
