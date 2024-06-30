@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# PROVIDE: kubo_go
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+# kubo_enable (bool):         Set to NO by default
+#                                Set to YES to enable kubo_go
+# kubo_user (str):            Set to %%KUBO_USER%% by default
+#                                Set it to kubo_go daemon user
+# kubo_group (str):           Set to %%KUBO_GROUP%% by default
+#                                Set it to kubo_go daemon group
+# kubo_path (str): 	         Set to %%KUBO_HOME%%/.kubo by default
+#                                Set it to kubo repo path
+# kubo_syslog_priority (str): Set to "info" by default.
+#                                Set it to priority to be used by syslog
+# kubo_syslog_facility (str): Set to "daemon" by default.
+#                                Set it to facility to be used by syslog
+# kubo_syslog_tag (str):      Set to "kubo-go" by default.
+#                                Set it to tag to be used by syslog
+
+. /etc/rc.subr
+
+name=kubo_go
+rcvar=kubo_enable
+load_rc_config $name
+
+: ${kubo_enable:="NO"}
+: ${kubo_user:="%%KUBO_USER%%"}
+: ${kubo_group:="%%KUBO_GROUP%%"}
+: ${kubo_path:="%%KUBO_HOME%%/.kubo"}
+: ${kubo_syslog_priority:="info"}
+: ${kubo_syslog_facility:="daemon"}
+: ${kubo_syslog_tag:="kubo-go"}
+
+pidfile="/var/run/${name}.pid"
+
+command="/usr/sbin/daemon"
+command_args="-S -m 3 -s ${kubo_syslog_priority} -l ${kubo_syslog_facility} -T ${kubo_syslog_tag} -p ${pidfile} /usr/bin/env KUBO_PATH=${kubo_path} ${kubo_env} %%PREFIX%%/bin/kubo-go daemon --init --init-profile=server --migrate=true ${kubo_args}"
+procname="%%PREFIX%%/bin/kubo-go"
+
+start_precmd="kubo_startprecmd"
+
+kubo_startprecmd() {
+  if [ ! -e "${pidfile}" ]; then
+    install -g ${kubo_group} -o ${kubo_user} -- /dev/null "${pidfile}"
+  fi
+}
+
+run_rc_command "$1"

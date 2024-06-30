@@ -1,2 +1,0 @@
-bin/ipfs-go
-@dir(%%IPFS_USER%%,%%IPFS_GROUP%%,755) %%IPFS_HOME%%

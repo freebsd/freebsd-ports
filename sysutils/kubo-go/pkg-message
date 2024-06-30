@@ -3,7 +3,7 @@
   message: <<EOM
 You may wish to install ipfs-go-fs-repo-migrations
 (sysutils/ipfs-go-fs-repo-migrations) in order to do db
-migration with the "ipfs daemon --migrate" command.
+migration with the "kubo daemon --migrate" command.
 EOM
 }
 ]
