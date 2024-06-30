@@ -9,6 +9,9 @@ MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Generates plots and graphs from data
 WWW=		https://ploticus.sourceforge.net/
 
+DEPRECATED=	Depends on expired graphics/ming
+EXPIRATION_DATE=2024-07-31
+
 LIB_DEPENDS=	libgd.so:graphics/gd \
 		libming.so:graphics/ming \
 		libpng.so:graphics/png \
