@@ -3359,3 +3359,4 @@ lang/perl5.34||2024-06-30|Has expired: Support end three years after .0 release,
 www/httest||2024-06-30|Has expired: Abandonware, no activity from upstream for years and depends on deprecated library devel/pcre
 security/sks||2024-06-30|Has expired: Depends on deprecated port databases/db5
 audio/asunder||2024-06-30|Has expired: Depends on deprecated library libcddb, consider using audio/cyanrip instead
+www/py-cookies||2024-06-30|Has expired: Upstream is inactive for many years
