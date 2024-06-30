@@ -3355,3 +3355,4 @@ www/interchange||2024-06-30|Has expired: Outdated, current version was released 
 www/itop||2024-06-30|Has expired: Outdated, current version is 5 years old and unsupported upstream
 sysutils/container-diff||2024-06-30|Has expired: The repository has been archived by the owner on 2024-03-28. Upstream suggests diffoci as alternative
 emulators/qemu7|emulators/qemu|2024-06-30|Has expired: qemu 9.X.X is out, so time to retire this one
+lang/perl5.34||2024-06-30|Has expired: Support end three years after .0 release, please upgrade to a more recent version of Perl
