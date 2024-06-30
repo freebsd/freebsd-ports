@@ -12,6 +12,9 @@ WWW=		https://github.com/Ultimaker/Cura/wiki
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired devel/libsavitar
+EXPIRATION_DATE=2024-07-31
+
 BUILD_DEPENDS=	Uranium>0,1:cad/uranium
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zeroconf>0:net/py-zeroconf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyserial>0:comms/py-pyserial@${PY_FLAVOR} \
