@@ -3350,3 +3350,4 @@ multimedia/emby-server-devel|multimedia/emby-server|2024-06-28|Beta port removed
 devel/go-protobuf||2024-06-30|Has expired: Upstream officially deprecated this project
 www/py-django-ldapdb||2024-06-30|Has expired: not compatible with Django >= 4.x, upstream no longer maintained
 www/adzap||2024-06-30|Has expired: Obsolete, no longer provides reasonable amount of filtering
+www/bolt||2024-06-30|Has expired: Outdated and unsupported, current version is several years old and unsupported upstream

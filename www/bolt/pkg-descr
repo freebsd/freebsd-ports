@@ -1,2 +1,0 @@
-Bolt is a simple CMS written in PHP. It is based on Silex and Symfony
-components, uses Twig and either SQLite, MySQL or PostgreSQL.

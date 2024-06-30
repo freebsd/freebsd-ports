@@ -74,7 +74,6 @@
     SUBDIR += bareos22-webui
     SUBDIR += beehive
     SUBDIR += bluefish
-    SUBDIR += bolt
     SUBDIR += bozohttpd
     SUBDIR += browsh
     SUBDIR += bugzilla2atom

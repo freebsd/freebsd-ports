@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Additional configuration documentation can be found at:
-
-https://docs.bolt.cm/installation
-EOM
-}
-]
