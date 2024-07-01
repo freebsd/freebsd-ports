@@ -50,6 +50,7 @@ ${_gd}_VARS+=		GALLIUM_DRIVERS+=${_gd}
 OPTIONS_GROUP_VULKAN=	anv radv swrast_vk
 VULKAN_DESC=		Vulkan drivers
 anv_DESC=		Intel GPU Gen9 and newer Vulkan support
+anv_BUILD_DEPENDS=	glslangValidator:graphics/glslang
 radv_DESC=		AMD/ATI Southern Islands and newer Vulkan support
 radv_BUILD_DEPENDS=	glslangValidator:graphics/glslang
 swrast_vk_DESC=		Software Rasterizer Vulkan support
