@@ -16,7 +16,6 @@ RUN_DEPENDS=	libgpg-error>=1.32:security/libgpg-error
 USES=		cpe libtool pathfix tar:bzip2
 
 CPE_VENDOR=	gnupg
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
