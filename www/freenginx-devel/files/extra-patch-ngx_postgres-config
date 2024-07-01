@@ -1,0 +1,19 @@
+--- ../ngx_postgres-8aa7359/config.orig	2015-05-26 20:52:25.649166000 +0300
++++ ../ngx_postgres-8aa7359/config	2015-05-26 20:53:10.331122000 +0300
+@@ -48,12 +48,12 @@
+ 
+     if [ $ngx_found = no ]; then
+         # FreeBSD
+-        ngx_feature="libpq library in /usr/local/"
+-        ngx_feature_path="/usr/local/include"
++        ngx_feature="libpq library in %%PREFIX%%/"
++        ngx_feature_path="%%PREFIX%%/include"
+         if [ $NGX_RPATH = YES ]; then
+-            ngx_feature_libs="-R/usr/local/lib -L/usr/local/lib -lpq"
++            ngx_feature_libs="-R%%PREFIX%%/lib -L%%PREFIX%%/lib -lpq"
+         else
+-            ngx_feature_libs="-L/usr/local/lib -lpq"
++            ngx_feature_libs="-L%%PREFIX%%/lib -lpq"
+         fi
+         . auto/feature
+     fi
