@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-pages
-PORTVERSION=	17.0.3
+PORTVERSION=	17.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES+=	https://gitlab.com/gitlab-org/gitlab-pages/-/raw/v${DISTVERSION}/
