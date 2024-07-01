@@ -4,7 +4,7 @@ PORTEPOCH=	1
 CATEGORIES=	net
 
 MAINTAINER=	squat@squat.no
-COMMENT=	UPnP IGD implementation which uses pf
+COMMENT=	Lightweight UPnP IGD & PCP/NAT-PMP daemon which uses pf
 WWW=		http://miniupnp.free.fr/
 
 LICENSE=	BSD3CLAUSE
