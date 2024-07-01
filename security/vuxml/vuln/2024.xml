@@ -1,3 +1,73 @@
+  <vuln vid="d7efc2ad-37af-11ef-b611-84a93843eb75">
+    <topic>Apache httpd -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.60</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd project reports:</p>
+	<blockquote cite="https://httpd.apache.org/security/vulnerabilities_24.html">
+	  <p>DoS by Null pointer in websocket over HTTP/2 (CVE-2024-36387) (Low).
+	    Serving WebSocket protocol upgrades over a HTTP/2 connection could
+	    result in a Null Pointer dereference, leading to a crash of the server
+	    process, degrading performance.</p>
+	  <p>Proxy encoding problem (CVE-2024-38473) (Moderate).
+	    Encoding problem in mod_proxy in Apache HTTP Server 2.4.59 and earlier
+	    allows request URLs with incorrect encoding to be sent to backend
+	    services, potentially bypassing authentication via crafted requests.</p>
+	  <p>Weakness with encoded question marks in backreferences
+	    (CVE-2024-38474) (Important). Substitution encoding issue in
+	    mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows attacker
+	    to execute scripts in directories permitted by the configuration but
+	    not directly reachable by any URL or source disclosure of scripts
+	    meant to only to be executed as CGI.</p>
+	  <p>Weakness in mod_rewrite when first segment of substitution matches
+	    filesystem path (CVE-2024-38475) (Important). Improper escaping of
+	    output in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows
+	    an attacker to map URLs to filesystem locations that are permitted to
+	    be served by the server but are not intentionally/directly reachable
+	    by any URL, resulting in code execution or source code disclosure.
+	    Substitutions in server context that use a backreferences or variables
+	    as the first segment of the substitution are affected. Some unsafe
+	    RewiteRules will be broken by this change and the rewrite flag
+	    "UnsafePrefixStat" can be used to opt back in once ensuring the
+	    substitution is appropriately constrained.</p>
+	  <p>may use exploitable/malicious backend application output to run local
+	    handlers via internal redirect (CVE-2024-38476) (Important).
+	    Vulnerability in core of Apache HTTP Server 2.4.59 and earlier are
+	    vulnerable to information disclosure, SSRF or local script execution
+	    via backend applications whose response headers are malicious or
+	    exploitable.</p>
+	  <p>Crash resulting in Denial of Service in mod_proxy via a malicious
+	    request (CVE-2024-38477) (Important). Null pointer dereference in
+	    mod_proxy in Apache HTTP Server 2.4.59 and earlier allows an attacker
+	    to crash the server via a malicious request.</p>
+	  <p>mod_rewrite proxy handler substitution (CVE-2024-39573) (Moderate).
+	    Potential SSRF in mod_rewrite in Apache HTTP Server 2.4.59 and earlier
+	    allows an attacker to cause unsafe RewriteRules to unexpectedly setup
+	    URL's to be handled by mod_proxy.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-36387</cvename>
+      <cvename>CVE-2024-38473</cvename>
+      <cvename>CVE-2024-38474</cvename>
+      <cvename>CVE-2024-38475</cvename>
+      <cvename>CVE-2024-38476</cvename>
+      <cvename>CVE-2024-38477</cvename>
+      <cvename>CVE-2024-39573</cvename>
+      <url>https://httpd.apache.org/security/vulnerabilities_24.html</url>
+    </references>
+    <dates>
+      <discovery>2024-07-01</discovery>
+      <entry>2024-07-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f1a00122-3797-11ef-b611-84a93843eb75">
     <topic>OpenSSH -- Race condition resulting in potential remote code execution</topic>
     <affects>
