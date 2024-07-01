@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 USES=		bison cmake compiler:c++14-lang gl qt:5
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
-USE_QT=		buildtools:build qmake:build core gui opengl widgets
+USE_QT=		buildtools:build qmake:build core gui linguisttools opengl widgets
 
 MAKE_JOBS_UNSAFE=	yes	# https://github.com/wdas/seexpr/issues/40
 
