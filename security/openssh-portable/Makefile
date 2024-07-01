@@ -23,6 +23,7 @@ GNU_CONFIGURE=		yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=		--prefix=${PREFIX} \
 			--without-zlib-version-check \
+			--with-ssl-engine \
 			--with-mantype=man
 
 ETCOLD=			${PREFIX}/etc
@@ -41,8 +42,8 @@ gssapi_PKGNAMESUFFIX=		-portable-gssapi
 
 OPTIONS_DEFINE=		DOCS PAM TCP_WRAPPERS LIBEDIT BSM \
 			HPN KERB_GSSAPI \
-			LDNS NONECIPHER XMSS FIDO_U2F BLACKLISTD OPENSSL
-OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS LDNS FIDO_U2F OPENSSL
+			LDNS NONECIPHER XMSS FIDO_U2F BLACKLISTD
+OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS LDNS FIDO_U2F
 .if ${FLAVOR:U} == hpn
 OPTIONS_DEFAULT+=	HPN NONECIPHER
 .endif
@@ -63,7 +64,6 @@ NONECIPHER_DESC=	NONE Cipher support
 XMSS_DESC=		XMSS key support (experimental)
 FIDO_U2F_DESC=		FIDO/U2F support (security/libfido2)
 BLACKLISTD_DESC=	FreeBSD blacklistd(8) support
-OPENSSL_DESC=		Use of OpenSSL; when disabled use only limited internal crypto **EXPERIMENTAL**
 
 OPTIONS_SUB=		yes
 
@@ -93,9 +93,6 @@ FIDO_U2F_CONFIGURE_ON=	--with-security-key-builtin
 FIDO_U2F_CONFIGURE_OFF=	--disable-security-key
 
 BLACKLISTD_EXTRA_PATCHES=	${FILESDIR}/extra-patch-blacklistd
-
-OPENSSL_CONFIGURE_ON=	--with-ssl-engine
-OPENSSL_CONFIGURE_OFF=	--without-openssl
 
 ETCDIR?=		${PREFIX}/etc/ssh
 
@@ -212,8 +209,6 @@ post-patch:
 	    ${WRKSRC}/sshd_config.5
 	@${ECHO_CMD} '#define SSH_VERSION_FREEBSD_PORT	"${VERSION_ADDENDUM_DEFAULT}"' >> \
 		${WRKSRC}/version.h
-	@${REINPLACE_CMD} \
-	    -e 's|BLACKLIST_BAD_USER|BLACKLIST_AUTH_FAIL|' ${WRKSRC}/auth.c
 
 post-configure-XMSS-on:
 	@${ECHO_CMD} "#define WITH_XMSS 1" >> ${WRKSRC}/config.h
