@@ -1,7 +1,11 @@
---- configure.orig	2022-03-16 21:59:50 UTC
+--- configure.orig	2013-03-30 17:17:07 UTC
 +++ configure
-@@ -8580,14 +8580,14 @@ echo "${ECHO_T}$tcl_cv_ld_elf" >&6; }
- 	FreeBSD-*|DragonFly-*)
+@@ -8577,17 +8577,17 @@ echo "${ECHO_T}$tcl_cv_ld_elf" >&6; }
+ 	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.a'
+ 	    TCL_LIB_VERSIONS_OK=nodots
+ 	    ;;
+-	FreeBSD-*)
++	FreeBSD-*|DragonFly-*)
  	    # FreeBSD 3.* and greater have ELF.
  	    SHLIB_CFLAGS="-fPIC"
 -	    SHLIB_LD="ld -Bshareable -x"
@@ -18,3 +22,12 @@
  	    if test "${TCL_THREADS}" = "1" ; then
  		# The -pthread needs to go in the CFLAGS, not LIBS
  		LIBS=`echo $LIBS | sed s/-pthread//`
+@@ -9267,7 +9267,7 @@ fi
+ 		    ;;
+ 		IRIX*)
+ 		    ;;
+-		NetBSD-*|FreeBSD-*)
++		NetBSD-*|FreeBSD-*|DragonFly-*)
+ 		    ;;
+ 		Darwin-*)
+ 		    ;;

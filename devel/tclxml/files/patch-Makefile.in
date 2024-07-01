@@ -1,6 +1,17 @@
 --- Makefile.in.orig	2013-03-30 17:17:07 UTC
 +++ Makefile.in
-@@ -423,13 +423,15 @@
+@@ -136,10 +136,6 @@ TCLLIBPATH      = $(top_builddir)
+ EXTRA_PATH	= $(top_builddir):$(TCL_BIN_DIR)
+ #EXTRA_PATH     = $(top_builddir):$(TCL_BIN_DIR):$(TK_BIN_DIR)
+ TCLLIBPATH      = $(top_builddir)
+-TCLSH_ENV	= TCL_LIBRARY=`@CYGPATH@ $(TCL_SRC_DIR)/library` \
+-		  @LD_LIBRARY_PATH_VAR@="$(EXTRA_PATH):$(@LD_LIBRARY_PATH_VAR@)" \
+-		  PATH="$(EXTRA_PATH):$(PATH)" \
+-		  TCLLIBPATH="$(TCLLIBPATH)"
+ #                 TK_LIBRARY=`@CYGPATH@ $(TK_SRC_DIR)/library`
+ 
+ TCLSH_PROG	= @TCLSH_PROG@
+@@ -423,13 +419,15 @@ install-lib-binaries:
  	@mkdir -p $(DESTDIR)$(pkglibdir)
  	@list='$(lib_BINARIES)'; for p in $$list; do \
  	  if test -f $$p; then \
