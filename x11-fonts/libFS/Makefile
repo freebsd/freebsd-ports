@@ -1,6 +1,5 @@
 PORTNAME=	libFS
-PORTVERSION=	1.0.8
-PORTREVISION=	1
+PORTVERSION=	1.0.9
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
@@ -10,7 +9,7 @@ WWW=		https://www.x.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe xorg xorg-cat:lib
+USES=		cpe tar:xz xorg xorg-cat:lib
 USE_XORG=	xorgproto xtrans
 CPE_VENDOR=	x
 CPE_PRODUCT=	libfs
