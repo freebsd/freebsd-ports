@@ -3373,3 +3373,4 @@ security/p5-Protocol-ACME||2024-06-30|Has expired: upstream maintainer indicated
 graphics/wdune||2024-06-30|Has expired: upstream no longer maintained
 www/zend-framework||2024-06-30|Has expired: Deprecated by upstream, and moved to Laminas Project
 sysutils/torque||2024-06-30|Has expired: unfetchable, upstream no longer open source
+lang/icc||2024-07-01|Has expired: This version is EOL since a long time, i386 only, and the current clang based Intel oneAPI DPC++/C++ seems to work

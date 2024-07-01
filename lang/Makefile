@@ -145,7 +145,6 @@
     SUBDIR += hs-koka
     SUBDIR += hs-unlambda
     SUBDIR += huc
-    SUBDIR += icc
     SUBDIR += inko
     SUBDIR += intel-compute-runtime
     SUBDIR += intercal
