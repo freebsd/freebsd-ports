@@ -1,5 +1,5 @@
 bin/ad
-bin/afpldaptest
+%%LDAP%%bin/afpldaptest
 bin/afppasswd
 %%DBUS%%bin/afpstats
 bin/apple_dump

@@ -37,7 +37,30 @@
  endif
  
  des = cc.find_library('des', required: false)
-@@ -822,19 +829,7 @@ else
+@@ -725,12 +732,12 @@ dns_sd_libs = []
+ 
+ dns_sd_libs = []
+ 
+-dns_sd = cc.find_library('dns_sd', required: false)
++dns_sd = cc.find_library('dns_sd', dirs: libsearch_dirs, required: false)
+ if dns_sd.found()
+     dns_sd_libs += dns_sd
+ endif
+ 
+-system = cc.find_library('system', required: false)
++system = cc.find_library('system', dirs: libsearch_dirs, required: false)
+ if dns_sd.found()
+     dns_sd_libs += system
+ endif
+@@ -755,6 +762,7 @@ else
+         cdata.set('HAVE_MDNS', 1)
+         freebsd_zeroconf_daemon = 'mdnsd'
+         zeroconf_provider += 'mDNS'
++        dns_sd_libs += threads
+     else
+         have_zeroconf = avahi.found()
+         if avahi.found()
+@@ -822,19 +830,7 @@ else
              required: false,
          )
  
@@ -58,7 +81,7 @@
              cdata.set('HAVE_TRACKER3', 1)
              cdata.set(
                  'TRACKER_MANAGING_COMMAND',
-@@ -875,7 +870,6 @@ else
+@@ -875,7 +871,6 @@ else
              endif
          endif
      endif
@@ -66,7 +89,7 @@
  
  have_spotlight = (
      tracker_sparql.found()
-@@ -884,6 +878,8 @@ have_spotlight = (
+@@ -884,6 +879,8 @@ have_spotlight = (
      and flex.found()
      and bison.found()
  )
@@ -75,7 +98,7 @@
  if have_spotlight
      cdata.set('WITH_SPOTLIGHT', 1)
  endif
-@@ -1370,7 +1366,7 @@ if iconv_path != ''
+@@ -1370,7 +1367,7 @@ if iconv_path != ''
      endif
      iconv = declare_dependency(
          link_args: libiconv_link_args,
@@ -84,7 +107,12 @@
      )
  endif
  
-@@ -1683,7 +1679,7 @@ else
+@@ -1679,11 +1676,11 @@ enable_shadow = get_option('with-shadow')
+ 
+ enable_shadow = get_option('with-shadow')
+ 
+-if enable_shadow
++if not enable_shadow
      have_shadow = false
  else
      have_shadow = (cc.has_header('shadow.h'))
@@ -93,7 +121,7 @@
          cdata.set('SHADOWPW', 1)
          uams_options += ' SHADOW'
      else
-@@ -1926,6 +1922,8 @@ int deny_severity = 0;
+@@ -1926,6 +1923,8 @@ int deny_severity = 0;
      tcpwrap_code = '''
  int allow_severity = 0;
  int deny_severity = 0;

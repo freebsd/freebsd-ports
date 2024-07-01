@@ -1,5 +1,6 @@
 PORTNAME=	netatalk
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/netatalk-${PORTVERSION:S/./-/g}/
@@ -55,6 +56,7 @@ MDNSRESPONDER_CFLAGS=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 MDNSRESPONDER_LIB_DEPENDS=		libdns_sd.so:net/mDNSResponder
 MDNSRESPONDER_SUB_LIST=	ZEROCONF="mdnsd"
 LDAP_MESON_ON=	-Dwith-ldap-path=${LOCALBASE}
+LDAP_MESON_OFF=	-Dwith-ldap=false
 LDAP_CFLAGS=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LDAP_USES=	ldap
 SENDFILE_MESON_OFF=-Dwith-sendfile=false
