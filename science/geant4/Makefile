@@ -1,6 +1,6 @@
 PORTNAME=		geant4
 DISTVERSIONPREFIX=	v
-DISTVERSION=		11.2.1
+DISTVERSION=		11.2.2
 CATEGORIES=		science parallel devel cad
 MASTER_SITES=		https://cern.ch/geant4-data/releases/ \
 			https://cern.ch/geant4-data/datasets/:data
@@ -57,7 +57,7 @@ G4ABLA_VERSION=			3.3
 G4EMLOW_VERSION=		8.5
 G4ENSDFSTATE_VERSION=		2.3
 G4INCL_VERSION=			1.2
-G4NDL_VERSION=			4.7
+G4NDL_VERSION=			4.7.1
 G4PARTICLEXS_VERSION=		4.0
 G4PhotonEvaporation_VERSION=	5.7
 G4PII_VERSION=			1.3
