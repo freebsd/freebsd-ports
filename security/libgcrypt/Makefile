@@ -16,7 +16,6 @@ RUN_DEPENDS=	libgpg-error>=1.32:security/libgpg-error
 USES=		cpe libtool pathfix tar:bzip2
 
 CPE_VENDOR=	gnupg
-USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-drng-support
