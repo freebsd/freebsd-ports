@@ -1,3 +1,0 @@
-%%SUID%%@(,,4555) bin/intel_backlight
-%%NO_SUID%%@(,,0555) bin/intel_backlight
-share/man/man1/intel_backlight.1.gz

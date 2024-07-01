@@ -363,7 +363,6 @@
     SUBDIR += inkscape
     SUBDIR += inkscape-open-symbols
     SUBDIR += instant-meshes
-    SUBDIR += intel-backlight
     SUBDIR += intergif
     SUBDIR += ipe
     SUBDIR += jalbum
