@@ -44,7 +44,6 @@
     SUBDIR += barnyard2
     SUBDIR += barnyard2-sguil
     SUBDIR += bastillion
-    SUBDIR += bcrypt
     SUBDIR += bcwipe
     SUBDIR += bdes
     SUBDIR += bearssl
