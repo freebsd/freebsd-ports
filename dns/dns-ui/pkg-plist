@@ -60,7 +60,7 @@
 %%WWWDIR%%/public_html/ipaddr/LICENSE
 %%WWWDIR%%/public_html/ipaddr/SOURCE
 %%WWWDIR%%/public_html/ipaddr/ipaddr.min.js
-%%WWWDIR%%/public_html/jquery/jquery-1.11.3.min.js
+%%WWWDIR%%/public_html/jquery/jquery-3.7.1.min.js
 %%WWWDIR%%/public_html/logo-header-opera.png
 %%WWWDIR%%/public_html/screenshot-changelog.png
 %%WWWDIR%%/public_html/screenshot-zoneedit.png
