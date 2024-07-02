@@ -143,6 +143,7 @@
     SUBDIR += py-pyocd-pemicro
     SUBDIR += py-pyserial
     SUBDIR += py-pyserial-asyncio
+    SUBDIR += py-spsdk
     SUBDIR += py-streamdeck
     SUBDIR += py-xmodem
     SUBDIR += pyla

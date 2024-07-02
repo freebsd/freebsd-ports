@@ -1,0 +1,7 @@
+Secure Provisioning SDK is a unified, reliable, and easy to use Python SDK
+library working across the NXP MCU portfolio providing a strong foundation from
+quick customer prototyping up to production deployment.
+
+The library allows the user to connect and communicate with the device,
+configure the device, prepare, download, and upload data including security
+operations.
