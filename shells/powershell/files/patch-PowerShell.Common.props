@@ -1,0 +1,10 @@
+--- PowerShell.Common.props.orig	2023-11-15 23:14:17.000000000 +0100
++++ PowerShell.Common.props	2024-06-26 20:50:16.180186000 +0200
+@@ -142,6 +142,7 @@
+     <LangVersion>11.0</LangVersion>
+ 
+     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
++	<WarningsNotAsErrors>NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>
+     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+     <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
