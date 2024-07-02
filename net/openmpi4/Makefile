@@ -1,8 +1,9 @@
 PORTNAME=	openmpi
 PORTVERSION=	4.1.6
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	https://download.open-mpi.org/release/open-mpi/v${PORTVERSION:R}/
-PKGNAMESUFFIX=	5
+PKGNAMESUFFIX=	4
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High Performance Message Passing Library
