@@ -3375,3 +3375,5 @@ www/zend-framework||2024-06-30|Has expired: Deprecated by upstream, and moved to
 sysutils/torque||2024-06-30|Has expired: unfetchable, upstream no longer open source
 lang/icc||2024-07-01|Has expired: This version is EOL since a long time, i386 only, and the current clang based Intel oneAPI DPC++/C++ seems to work
 graphics/intel-backlight||2024-07-01|Has expired: Use backlight(8)
+www/yarn-node21||2024-07-02|Removed, part of www/node21
+www/npm-node21||2024-07-02|Removed, part of www/node21
