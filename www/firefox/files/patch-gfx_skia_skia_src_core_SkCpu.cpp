@@ -4,13 +4,17 @@ gfx/skia/skia/src/core/SkCpu.cpp:81:27: error: use of undeclared identifier 'get
         uint32_t hwcaps = getauxval(AT_HWCAP);
                           ^
 
---- gfx/skia/skia/src/core/SkCpu.cpp.orig	2020-02-07 22:13:22 UTC
+diff --git gfx/skia/skia/src/core/SkCpu.cpp gfx/skia/skia/src/core/SkCpu.cpp
+index cdac7db2be2c..4da2ee4bd4b4 100644
+--- gfx/skia/skia/src/core/SkCpu.cpp
 +++ gfx/skia/skia/src/core/SkCpu.cpp
-@@ -72,6 +72,23 @@
-         return features;
-     }
+@@ -81,6 +81,22 @@
+         if (hwcap & HWCAP_LOONGARCH_LSX)  { features |= SkCpu::LOONGARCH_SX; }
+         if (hwcap & HWCAP_LOONGARCH_LASX) { features |= SkCpu::LOONGARCH_ASX; }
  
-+#elif defined(SK_CPU_ARM64) && defined(__FreeBSD__)
++        return features;
++    }
++#elif
 +    #include <machine/armreg.h>
 +    #ifndef ID_AA64ISAR0_CRC32_VAL
 +    #define ID_AA64ISAR0_CRC32_VAL ID_AA64ISAR0_CRC32
@@ -24,9 +28,6 @@ gfx/skia/skia/src/core/SkCpu.cpp:81:27: error: use of undeclared identifier 'get
 +        if (ID_AA64ISAR0_CRC32_VAL(id_aa64isar0) == ID_AA64ISAR0_CRC32_BASE) {
 +            features |= SkCpu::CRC32;
 +        }
-+        return features;
-+    }
-+
- #elif defined(SK_CPU_ARM64) && __has_include(<sys/auxv.h>)
-     #include <sys/auxv.h>
- 
+         return features;
+     }
+ #else
