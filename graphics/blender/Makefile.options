@@ -8,15 +8,18 @@ OPTIONS_DEFINE=		\
 	COMPOSITOR	\
 	CYCLES		\
 	CYCLES_EMBR	\
+	CYCLES_ONEAPI	\
 	CYCLES_OSL	\
 	DRACO		\
 	EBOOL		\
 	FFMPEG		\
 	FFTW3		\
 	FREESTYLE	\
+	FRIBIDI		\
+	HARFBUZZ	\
+	HARU		\
 	HEADLESS	\
 	INPUT_NDOF	\
-	HARU		\
 	JACK		\
 	LZO		\
 	LZMA		\
@@ -59,13 +62,16 @@ OPTIONS_DEFAULT=	\
 	COLLADA		\
 	COMPOSITOR	\
 	CYCLES		\
+	CYCLES_ONEAPI	\
 	DRACO		\
 	EBOOL		\
 	FFMPEG		\
 	FFTW3		\
 	FREESTYLE	\
-	INPUT_NDOF	\
+	FRIBIDI		\
+	HARFBUZZ	\
 	HARU		\
+	INPUT_NDOF	\
 	LZO		\
 	LZMA		\
 	MENU		\
@@ -103,18 +109,21 @@ OPTIONS_DEFAULT_powerpc64le=	CAMERATRACK
 ALEMBIC_DESC=		Enable Alembic file support
 AVI_DESC=		Enable Blender's own AVI file support
 BULLET_DESC=		Bullet physics engine
-CINEON_DESC=		CINEON and DPX graphics format support
 CAMERATRACK_DESC=	Camera tracking support (amd64/aarch64/powerpc64/powerpc64le only)
+CINEON_DESC=		CINEON and DPX graphics format support
 COLLADA_DESC=		Enable read/write support for COLLADA files
 COMPOSITOR_DESC=	Use the tile-based nodal compositor
 CYCLES_DESC=		Cycles render engine support
 CYCLES_EMBR_DESC=	Embree support (amd64 only)
+CYCLES_ONEAPI_DESC=	Enable Cycles oneAPI compute support
 CYCLES_OSL_DESC=	Shading support for the cycles render engine
 # this is required to support gltf import/export
 DRACO_DESC=		Install draco python module
 EBOOL_DESC=		Enable exact boolean support
 FFTW3_DESC=		Use fftw for smoke and audio effects
 FREESTYLE_DESC=		Enable advanced edges rendering
+FRIBIDI_DESC=		Enable features using fribidi Unicode Bidirectional Algorithm
+HARFBUZZ_DESC=		Enable features using harfbuzz OpenType text shaping engine
 HARU_DESC=		Enable libharu support
 HEADLESS_DESC=		Disable user interface (for render-farms)
 INPUT_NDOF_DESC=	Enable NDOF input device support
@@ -140,7 +149,7 @@ THUMBNAILER_DESC=	Build blender thumbnailer
 TRACE_DESC=		Enable tracing image to GP stroke
 USD_DESC=		Universal Scene Description Support (aarch64 and amd64 only, broken)
 VULKAN_DESC=		Enable Vulkan as graphics backend (only for development)
-WEBP_DESC=		Enable webp image support
 WAYLAND_DESC=		Wayland support
+WEBP_DESC=		Enable webp image support
 XF86VMODE_DESC=		X11 video mode switching support
 XINPUT_DESC=		X11 Xinput (tablet) support

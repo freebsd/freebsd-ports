@@ -6,6 +6,7 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/datafiles/assets/LICENSE
 %%DATADIR%%/%%VER%%/datafiles/assets/blender_assets.cats.txt
 %%DATADIR%%/%%VER%%/datafiles/assets/geometry_nodes/procedural_hair_node_assets.blend
+%%DATADIR%%/%%VER%%/datafiles/assets/geometry_nodes/smooth_by_angle.blend
 %%OPENCOLORIO%%%%DATADIR%%/%%VER%%/datafiles/colormanagement/config.ocio
 %%OPENCOLORIO%%%%DATADIR%%/%%VER%%/datafiles/colormanagement/filmic/filmic_desat_33.cube
 %%OPENCOLORIO%%%%DATADIR%%/%%VER%%/datafiles/colormanagement/filmic/filmic_to_0-35_1-30.spi1d
@@ -40,6 +41,7 @@ share/applications/blender.desktop
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/fonts/NotoSansHebrew-Regular.woff2
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/fonts/NotoSansJavanese-Regular.woff2
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/fonts/NotoSansKannada-VariableFont_wdth,wght.woff2
+%%NLS%%%%DATADIR%%/%%VER%%/datafiles/fonts/NotoSansKhmer-VariableFont_wdth,wght.woff2
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/fonts/NotoSansMalayalam-VariableFont_wdth,wght.woff2
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/fonts/NotoSansMath-Regular.woff2
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/fonts/NotoSansMyanmar-Regular.woff2
@@ -194,7 +196,6 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.mesh.rip.dat
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.mesh.rip_edge.dat
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.mesh.spin.dat
-%%DATADIR%%/%%VER%%/datafiles/icons/ops.mesh.spin.duplicate.dat
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.mesh.vertices_smooth.dat
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.node.links_cut.dat
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.paint.eyedropper_add.dat
@@ -239,10 +240,12 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.transform.vertex_random.dat
 %%DATADIR%%/%%VER%%/datafiles/icons/ops.view3d.ruler.dat
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/locale/ab/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/%%VER%%/datafiles/locale/be/LC_MESSAGES/blender.mo
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/locale/ar/LC_MESSAGES/blender.mo
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/locale/bg/LC_MESSAGES/blender.mo
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/locale/ca/LC_MESSAGES/blender.mo
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/locale/cs/LC_MESSAGES/blender.mo
+%%NLS%%%%DATADIR%%/%%VER%%/datafiles/locale/da/LC_MESSAGES/blender.mo
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/locale/de/LC_MESSAGES/blender.mo
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/locale/el/LC_MESSAGES/blender.mo
 %%NLS%%%%DATADIR%%/%%VER%%/datafiles/locale/eo/LC_MESSAGES/blender.mo
@@ -569,7 +572,6 @@ share/applications/blender.desktop
 %%CYCLES_OSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/shader/node_mix_float.oso
 %%CYCLES_OSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/shader/node_mix_vector.oso
 %%CYCLES_OSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/shader/node_mix_vector_non_uniform.oso
-%%CYCLES_OSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/shader/node_musgrave_texture.oso
 %%CYCLES_OSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/shader/node_noise.h
 %%CYCLES_OSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/shader/node_noise_texture.oso
 %%CYCLES_OSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/shader/node_normal.oso
@@ -686,7 +688,9 @@ share/applications/blender.desktop
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/device/optix/compat.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/device/optix/globals.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/device/optix/kernel.cu
+%%CYCLES_OSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/device/optix/kernel_osl.cu
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/device/optix/kernel_shader_raytrace.cu
+%%CYCLES_OSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/device/optix/services_optix.cu
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/film/adaptive_sampling.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/film/aov_passes.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/film/cryptomatte_passes.h
@@ -800,7 +804,6 @@ share/applications/blender.desktop
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/svm/math.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/svm/math_util.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/svm/mix.h
-%%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/svm/musgrave.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/svm/node_types_template.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/svm/noise.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/svm/noisetex.h
@@ -829,6 +832,7 @@ share/applications/blender.desktop
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/util/color.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/util/differential.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/util/lookup_table.h
+%%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/util/nanovdb.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/util/profiling.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/util/atomic.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/util/color.h
@@ -1007,6 +1011,7 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_fbx/export_fbx_bin.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_fbx/fbx2json.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_fbx/fbx_utils.py
+%%DATADIR%%/%%VER%%/scripts/addons/io_scene_fbx/fbx_utils_threading.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_fbx/import_fbx.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_fbx/json2fbx.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_fbx/parse_fbx.py
@@ -1020,6 +1025,7 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/com/gltf2_blender_material_helpers.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/com/gltf2_blender_math.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/com/gltf2_blender_ui.py
+%%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/com/gltf2_blender_utils.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/animation/fcurves/gltf2_blender_gather_fcurves_animation.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/animation/fcurves/gltf2_blender_gather_fcurves_channel_target.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/animation/fcurves/gltf2_blender_gather_fcurves_channels.py
@@ -1032,12 +1038,12 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/animation/gltf2_blender_gather_keyframes.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/animation/gltf2_blender_gather_scene_animation.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/animation/gltf2_blender_gather_tracks.py
-%%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/animation/sampled/gltf2_blender_gather_animation_sampling_cache.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/animation/sampled/armature/armature_action_sampled.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/animation/sampled/armature/armature_channel_target.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/animation/sampled/armature/armature_channels.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/animation/sampled/armature/armature_keyframes.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/animation/sampled/armature/armature_sampler.py
+%%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/animation/sampled/gltf2_blender_gather_animation_sampling_cache.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/animation/sampled/object/gltf2_blender_gather_object_action_sampled.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/animation/sampled/object/gltf2_blender_gather_object_channel_target.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/animation/sampled/object/gltf2_blender_gather_object_channels.py
@@ -1066,6 +1072,7 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/gltf2_blender_gather_tree.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/gltf2_blender_get.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/gltf2_blender_gltf2_exporter.py
+%%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/material/extensions/gltf2_blender_gather_materials_anisotropy.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/material/extensions/gltf2_blender_gather_materials_clearcoat.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/material/extensions/gltf2_blender_gather_materials_emission.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/material/extensions/gltf2_blender_gather_materials_ior.py
@@ -1082,14 +1089,9 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/material/gltf2_blender_gather_texture.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/material/gltf2_blender_gather_texture_info.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/exp/material/gltf2_blender_search_node_tree.py
-%%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_KHR_materials_clearcoat.py
-%%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_KHR_materials_ior.py
+%%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_KHR_materials_anisotropy.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_KHR_materials_pbrSpecularGlossiness.py
-%%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_KHR_materials_sheen.py
-%%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_KHR_materials_specular.py
-%%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_KHR_materials_transmission.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_KHR_materials_unlit.py
-%%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_KHR_materials_volume.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_animation.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_animation_node.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_animation_utils.py
@@ -1099,6 +1101,7 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_image.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_light.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_material.py
+%%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_material_utils.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_mesh.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_node.py
 %%DATADIR%%/%%VER%%/scripts/addons/io_scene_gltf2/blender/imp/gltf2_blender_pbrMetallicRoughness.py
@@ -1233,6 +1236,7 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/addons/mesh_tissue/README.md
 %%DATADIR%%/%%VER%%/scripts/addons/mesh_tissue/__init__.py
 %%DATADIR%%/%%VER%%/scripts/addons/mesh_tissue/config.py
+%%DATADIR%%/%%VER%%/scripts/addons/mesh_tissue/contour_curves.py
 %%DATADIR%%/%%VER%%/scripts/addons/mesh_tissue/curves_tools.py
 %%DATADIR%%/%%VER%%/scripts/addons/mesh_tissue/dual_mesh.py
 %%DATADIR%%/%%VER%%/scripts/addons/mesh_tissue/lattice.py
@@ -1240,10 +1244,12 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/addons/mesh_tissue/numba_functions.py
 %%DATADIR%%/%%VER%%/scripts/addons/mesh_tissue/polyhedra.py
 %%DATADIR%%/%%VER%%/scripts/addons/mesh_tissue/tessellate_numpy.py
+%%DATADIR%%/%%VER%%/scripts/addons/mesh_tissue/texture_reaction_diffusion.py
 %%DATADIR%%/%%VER%%/scripts/addons/mesh_tissue/tissue_properties.py
 %%DATADIR%%/%%VER%%/scripts/addons/mesh_tissue/utils.py
 %%DATADIR%%/%%VER%%/scripts/addons/mesh_tissue/utils_pip.py
 %%DATADIR%%/%%VER%%/scripts/addons/mesh_tissue/uv_to_mesh.py
+%%DATADIR%%/%%VER%%/scripts/addons/mesh_tissue/weight_reaction_diffusion.py
 %%DATADIR%%/%%VER%%/scripts/addons/mesh_tissue/weight_tools.py
 %%DATADIR%%/%%VER%%/scripts/addons/mesh_tools/__init__.py
 %%DATADIR%%/%%VER%%/scripts/addons/mesh_tools/face_inset_fillet.py
@@ -1515,12 +1521,6 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/addons/presets/operator/mesh.primitive_xyz_function_surface/sterosphere.py
 %%DATADIR%%/%%VER%%/scripts/addons/presets/operator/mesh.primitive_xyz_function_surface/torus.py
 %%DATADIR%%/%%VER%%/scripts/addons/presets/operator/mesh.primitive_xyz_function_surface/twisted_torus.py
-%%DATADIR%%/%%VER%%/scripts/addons/presets/operator/sun_position/Chongqing.py
-%%DATADIR%%/%%VER%%/scripts/addons/presets/operator/sun_position/Kinshasa.py
-%%DATADIR%%/%%VER%%/scripts/addons/presets/operator/sun_position/London.py
-%%DATADIR%%/%%VER%%/scripts/addons/presets/operator/sun_position/New_York.py
-%%DATADIR%%/%%VER%%/scripts/addons/presets/operator/sun_position/Sao_Paulo.py
-%%DATADIR%%/%%VER%%/scripts/addons/presets/operator/sun_position/Sydney.py
 %%DATADIR%%/%%VER%%/scripts/addons/presets/pov/light/01_(4800K)_Direct_Sun.py
 %%DATADIR%%/%%VER%%/scripts/addons/presets/pov/light/02_(5400K)_High_Noon_Sun.py
 %%DATADIR%%/%%VER%%/scripts/addons/presets/pov/light/03_(6000K)_Daylight_Window.py
@@ -1997,6 +1997,7 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/presets/cycles/sampling/Preview.py
 %%DATADIR%%/%%VER%%/scripts/presets/cycles/viewport_sampling/Final.py
 %%DATADIR%%/%%VER%%/scripts/presets/cycles/viewport_sampling/Preview.py
+%%DATADIR%%/%%VER%%/scripts/presets/eevee/raytracing/Default.py
 %%DATADIR%%/%%VER%%/scripts/presets/ffmpeg/DVD_(note_colon__this_changes_render_resolution).py
 %%DATADIR%%/%%VER%%/scripts/presets/ffmpeg/H264_in_MP4.py
 %%DATADIR%%/%%VER%%/scripts/presets/ffmpeg/H264_in_Matroska.py
@@ -2127,6 +2128,7 @@ share/applications/blender.desktop
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/view3d.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_operators/wm.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_ui/__init__.py
+%%DATADIR%%/%%VER%%/scripts/startup/bl_ui/anim.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_ui/asset_shelf.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_ui/generic_ui_list.py
 %%DATADIR%%/%%VER%%/scripts/startup/bl_ui/node_add_menu.py
@@ -2254,6 +2256,7 @@ share/applications/blender.desktop
 %%DOCSDIR%%/license/GPL-3.0.txt
 %%DOCSDIR%%/license/GPL-license.txt
 %%DOCSDIR%%/license/MIT.txt
+%%DOCSDIR%%/license/MPL-2.0.txt
 %%DOCSDIR%%/license/OpenColorIO.txt
 %%DOCSDIR%%/license/OpenSSL.txt
 %%DOCSDIR%%/license/Python.txt

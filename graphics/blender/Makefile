@@ -1,6 +1,5 @@
 PORTNAME=	blender
-DISTVERSION=	4.0.2
-PORTREVISION=	1
+DISTVERSION=	4.1.1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -28,30 +27,31 @@ RUN_DEPENDS=	${PYNUMPY}
 # libboost_regex.so just acts as a placeholder; several boost
 # libraries are used, if either of the most common options in blender
 # are set. We will pull boost in just to be on the safe side.
-
-USES=		cmake compiler:c++17-lang cpe eigen:3 jpeg llvm:max=15 \
-		python:3.10 shebangfix tar:xz xorg
+USES=		cmake compiler:c++17-lang cpe eigen:3 jpeg llvm:build,run pkgconfig \
+		python:3.11 shebangfix tar:xz xorg
 USE_XORG=	x11 xext xfixes xmu xrender
 
 SHEBANG_FILES=	scripts/modules/bl_i18n_utils/merge_po.py \
 		scripts/modules/bl_i18n_utils/utils_rtl.py \
 		scripts/modules/blend_render_info.py
 
+CMAKE_ARGS=	-DCMAKE_CXX_STANDARD:INTEGER=17 \
+		-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VERSION}"
 .if defined(WITH_DEBUG)
-CMAKE_ARGS=	-DWITH_GHOST_DEBUG:BOOL=ON
+CMAKE_ARGS+=	-DWITH_GHOST_DEBUG:BOOL=ON
 .endif
-CMAKE_ON=	WITH_AUDASPACE WITH_BOOST WITH_GHOST_X11 WITH_GHOST_XDND WITH_HYDRA \
-		WITH_IO_GPENCIL WITH_IO_PLY WITH_IO_STL WITH_IO_WAVEFRONT_OBJ \
-		WITH_OPENGL_BACKEND WITH_PYTHON WITH_SYSTEM_EIGEN3 \
+CMAKE_ON=	WITH_AUDASPACE WITH_BOOST WITH_CLANG WITH_GHOST_X11 WITH_GHOST_XDND \
+		WITH_HYDRA WITH_IO_GPENCIL WITH_IO_PLY WITH_IO_STL WITH_IO_WAVEFRONT_OBJ \
+		WITH_LLVM WITH_OPENGL_BACKEND WITH_PYTHON WITH_SYSTEM_EIGEN3 \
 		WITH_SYSTEM_FREETYPE WITH_X11_XINPUT WITH_X11_XF86VMODE WITH_X11_XFIXES
-CMAKE_OFF=	WITH_GHOST_SDL WITH_GHOST_WAYLAND_DBUS WITH_INSTALL_PORTABLE \
-		WITH_MATERIALX WITH_MEM_JEMALLOC WITH_MEM_VALGRIND WITH_NANOVDB \
-		WITH_PYTHON_INSTALL WITH_PYTHON_INSTALL_NUMPY
+CMAKE_OFF=	WITH_GHOST_SDL WITH_INSTALL_PORTABLE LLVM_STATIC WITH_MATERIALX \
+		WITH_MEM_JEMALLOC WITH_MEM_VALGRIND WITH_NANOVDB WITH_PYTHON_INSTALL \
+		WITH_PYTHON_INSTALL_NUMPY
 
 CFLAGS+=	${CFLAGS_${CHOSEN_COMPILER_TYPE}}
 CFLAGS_gcc=	-Wno-float-conversion
 CXXFLAGS+=	-DGLOG_USE_GLOG_EXPORT
-LDFLAGS+=	-lexecinfo
+LDFLAGS+=	-lexecinfo -Wl,--undefined-version
 
 SUB_FILES=	blender
 PLIST_SUB+=	VER=${DISTVERSION:R}
@@ -80,14 +80,12 @@ CYCLES_LDFLAGS=			-L${LOCALBASE}/lib -lgflags
 CYCLES_EMBR_IMPLIES=		CYCLES
 CYCLES_EMBR_LIB_DEPENDS=	libembree3.so:graphics/embree
 CYCLES_EMBR_CMAKE_BOOL=		WITH_CYCLES_EMBREE
+CYCLES_ONEAPI_LIB_DEPENDS=	libtbb.so:devel/onetbb
+CYCLES_ONEAPI_CMAKE_BOOL=	WITH_CYCLES_DEVICE_ONEAPI
 CYCLES_OSL_IMPLIES=		CYCLES OPENEXR PUGIXML
-CYCLES_OSL_BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 CYCLES_OSL_LIB_DEPENDS=		liboslcomp.so:graphics/openshadinglanguage
-CYCLES_OSL_RUN_DEPENDS=		llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
-CYCLES_OSL_CMAKE_BOOL=		WITH_CYCLES_OSL WITH_LLVM
-CYCLES_OSL_CMAKE_ON=		-DLLVM_STATIC:BOOL=OFF \
-				-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VERSION}" \
-				-DOSL_SHADER_DIR:STRING="${LOCALBASE}/share/openshadinglanguage/shaders"
+CYCLES_OSL_CMAKE_BOOL=		WITH_CYCLES_OSL
+CYCLES_OSL_CMAKE_ON=		-DOSL_SHADER_DIR:STRING="${LOCALBASE}/share/openshadinglanguage/shaders"
 DRACO_USE=			LDCONFIG=${PYTHON_SITELIBDIR}
 DRACO_CMAKE_BOOL=		WITH_DRACO
 EBOOL_LIB_DEPENDS=		libgmp.so:math/gmp
@@ -101,11 +99,16 @@ FFTW3_LIB_DEPENDS=		libfftw3.so:math/fftw3 \
 				libfftw3f.so:math/fftw3-float
 FFTW3_CMAKE_BOOL=		WITH_FFTW3
 FREESTYLE_CMAKE_BOOL=		WITH_FREESTYLE
+FRIBIDI_LIB_DEPENDS=		libfribidi.so:converters/fribidi
+FRIBIDI_CMAKE_BOOL=		WITH_FRIBIDI
+HARFBUZZ_LIB_DEPENDS=		libharfbuzz.so:print/harfbuzz
+HARFBUZZ_CMAKE_BOOL=		WITH_HARFBUZZ
 HARU_LIB_DEPENDS=		libhpdf.so:print/libharu
 HARU_CMAKE_BOOL=		WITH_HARU
 HEADLESS_PREVENTS=		MENU XINPUT XF86VMODE
 HEADLESS_PREVENTS_MSG=		X11 options can't be used in headless mode
 HEADLESS_CMAKE_BOOL=		WITH_HEADLESS
+INPUT_NDOF_LIB_DEPENDS=		libspnav.so:misc/libspnav
 INPUT_NDOF_CMAKE_BOOL=		WITH_INPUT_NDOF
 JACK_LIB_DEPENDS=		libjack.so:audio/jack
 JACK_CMAKE_BOOL=		WITH_JACK WITH_JACK_DYNLOAD
@@ -129,6 +132,7 @@ OPENCOLORIO_LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio \
 				libyaml-cpp.so:devel/yaml-cpp \
 				libexpat.so:textproc/expat2 \
 				libpystring.so:devel/pystring
+OPENCOLORIO_USES=		minizip
 OPENCOLORIO_CMAKE_BOOL=		WITH_OPENCOLORIO
 OPENEXR_LIB_DEPENDS=		libImath.so:math/Imath \
 				libOpenEXR.so:graphics/openexr
@@ -167,9 +171,9 @@ TBB_CMAKE_BOOL=			WITH_TBB
 THUMBNAILER_CMAKE_BOOL=		WITH_BLENDER_THUMBNAILER
 TRACE_LIB_DEPENDS=		libpotrace.so:graphics/libpotrace
 TRACE_CMAKE_BOOL=		WITH_POTRACE
+USD_IMPLIES=			TBB
 USD_BROKEN=			require devel/tbb, which conflicts with devel/onetbb: \
 				https://github.com/PixarAnimationStudios/OpenUSD/issues/1650
-USD_IMPLIES=			TBB
 USD_LIB_DEPENDS=		libusd_usd.so:misc/usd
 USD_CMAKE_BOOL=			WITH_USD
 VULKAN_BUILD_DEPENDS=		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
@@ -183,7 +187,7 @@ WAYLAND_BUILD_DEPENDS=		wayland-protocols>=1.15:graphics/wayland-protocols \
 				wayland>=1.12:graphics/wayland \
 				libdecor>0:x11-toolkits/libdecor
 WAYLAND_LIB_DEPENDS=		libxkbcommon.so:x11/libxkbcommon
-WAYLAND_USES=			pkgconfig
+#WAYLAND_USES=			pkgconfig
 WAYLAND_CMAKE_BOOL=		WITH_GHOST_WAYLAND WITH_GHOST_WAYLAND_LIBDECOR \
 				WITH_GHOST_WAYLAND_DYNLOAD
 WEBP_LIB_DEPENDS=		libwebp.so:graphics/webp
