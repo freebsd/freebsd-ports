@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-04-17 13:00:42 UTC
+--- CMakeLists.txt.orig	2024-05-11 01:22:43 UTC
 +++ CMakeLists.txt
-@@ -184,6 +184,12 @@ set_target_properties(openshot-audio PROPERTIES
+@@ -175,6 +175,12 @@ set_target_properties(openshot-audio PROPERTIES
    EXPORT_NAME Audio  # Exports as OpenShot::Audio target
  )
  
@@ -13,7 +13,7 @@
  # Require language features we use
  if(CMAKE_VERSION VERSION_GREATER 3.8)
    target_compile_features(openshot-audio PUBLIC
-@@ -202,7 +208,8 @@ endif()
+@@ -193,7 +199,8 @@ endif()
  # Enable stack-unwinding support in c objects on gcc-based platforms.
  # Failing to do so will cause your program to be terminated when a png
  # or a jpeg exception is thrown on linux or macosx.
@@ -23,7 +23,7 @@
    target_compile_options(openshot-audio PRIVATE -fexceptions)
  endif()
  
-@@ -265,8 +272,8 @@ if(UNIX AND NOT APPLE)
+@@ -256,8 +263,8 @@ if(UNIX AND NOT APPLE)
        INTERFACE_INCLUDE_DIRECTORIES ${ALSA_INCLUDE_DIR}
        INTERFACE_LINK_LIBRARIES ${ALSA_LIBRARIES})
    endif()
@@ -34,7 +34,7 @@
  else()
    # For EXPORTED Config
    set(NEED_ALSA FALSE)
-@@ -274,10 +281,67 @@ endif()
+@@ -265,10 +272,68 @@ endif()
  
  # ZLIB -- uses IMPORTED target ZLIB::ZLIB which has existed since CMake 3.1
  find_package(ZLIB REQUIRED)
@@ -85,9 +85,10 @@
 +	endif(NOT JACK_FOUND)
 +	if(NOT TARGET JACK::JACK)
 +		add_library(JACK::JACK INTERFACE IMPORTED)
-+		set_target_properties(JACK::JACK PROPERTIES
++		set_target_properties(JACK::JACK
++			PROPERTIES
 +			INTERFACE_INCLUDE_DIRECTORIES ${JACK_INCLUDE_DIRS}
-+			INTERFACE_LINK_LIBRARIES ${JACK_LINK_LIBRARIES})
++			)
 +	endif(NOT TARGET JACK::JACK)
 +	target_link_libraries(openshot-audio PRIVATE JACK::JACK)
 +	target_compile_definitions(openshot-audio PRIVATE JUCE_JACK=1)
