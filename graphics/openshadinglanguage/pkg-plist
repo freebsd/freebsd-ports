@@ -8,10 +8,13 @@ include/OSL/accum.h
 include/OSL/batched_rendererservices.h
 include/OSL/batched_shaderglobals.h
 include/OSL/batched_texture.h
+include/OSL/device_ptr.h
 include/OSL/device_string.h
 include/OSL/dual_vec.h
 include/OSL/dual.h
+include/OSL/encodedtypes.h
 include/OSL/export.h
+include/OSL/fmt_util.h
 include/OSL/genclosure.h
 include/OSL/Imathx/ImathColor.h
 include/OSL/Imathx/ImathFun.h
@@ -19,6 +22,7 @@ include/OSL/Imathx/ImathLimits.h
 include/OSL/Imathx/ImathMatrix.h
 include/OSL/Imathx/ImathVec.h
 include/OSL/Imathx/Imathx.h
+include/OSL/journal.h
 include/OSL/llvm_util.h
 include/OSL/mask.h
 include/OSL/matrix22.h
@@ -37,8 +41,10 @@ include/OSL/sfm_simplex.h
 include/OSL/sfmath.h
 include/OSL/shaderglobals.h
 include/OSL/strdecls.h
+include/OSL/variant.h
 include/OSL/wide.h
 include/OSL/sfm_staticmatrix.h
+lib/cmake/OSL/llvm_macros.cmake
 lib/cmake/OSL/OSLConfig.cmake
 lib/cmake/OSL/OSLConfigVersion.cmake
 lib/cmake/OSL/OSLTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -62,6 +68,7 @@ lib/osl.imageio.so
 libdata/pkgconfig/oslcomp.pc
 libdata/pkgconfig/oslexec.pc
 libdata/pkgconfig/oslquery.pc
+%%DATADIR%%/build-scripts/serialize-bc.py
 %%DATADIR%%/shaders/color2.h
 %%DATADIR%%/shaders/color4.h
 %%DATADIR%%/shaders/emitter.osl

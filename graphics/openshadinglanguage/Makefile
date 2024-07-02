@@ -1,11 +1,11 @@
 PORTNAME=	openshadinglanguage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.14.0
+DISTVERSION=	1.13.10.0
 # PORTREVISION must be set with ?= so as not to stomp over
 # py-openimageio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -17,6 +17,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BROKEN_riscv64=	fails to build: /usr/include/c++/v1/__threading_support:135:3: Unsupported architecture
 
+ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	fails static_assert(sizeof(ustringhash) == sizeof(size_t)
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libImath.so:math/Imath \
 		libOpenEXR.so:graphics/openexr \
@@ -24,13 +27,13 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpartio.so:graphics/partio \
 		libpugixml.so:textproc/pugixml
 
-USES=		bison cmake compiler:c++14-lang llvm:max=15,lib localbase ncurses
+USES=		bison cmake compiler:c++17-lang localbase ncurses
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AcademySoftwareFoundation
 GH_PROJECT=	OpenShadingLanguage
 
-CMAKE_ARGS+=	-DCMAKE_CXX_STANDARD=14 -DCMAKE_INSTALL_DOCDIR:STRING=${DOCSDIR} \
+CMAKE_ARGS+=	-DCMAKE_CXX_STANDARD:INTEGER=17 -DCMAKE_INSTALL_DOCDIR:STRING=${DOCSDIR} \
 		-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VERSION}"
 CMAKE_ON=	ENABLE_RTTI OSL_BUILD_TESTS USE_LIBCPLUSPLUS USE_LLVM_BITCODE
 
@@ -51,6 +54,7 @@ OSLTOY_CMAKE_BOOL=	USE_QT
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%DATADIR%%,${DATADIR},' \
 		-e 's,%%PYCMD%%,${PYTHON_CMD},' \
+		${WRKSRC}/CMakeLists.txt \
 		${WRKSRC}/src/shaders/CMakeLists.txt \
 		${WRKSRC}/src/doc/CMakeLists.txt \
 		${WRKSRC}/src/liboslexec/CMakeLists.txt
@@ -69,10 +73,14 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 	${INSTALL_LIB} ${BUILD_WRKSRC}/lib/python/site-packages/oslquery.so ${STAGEDIR}${PYTHON_SITELIBDIR}
 .else # SLAVE_PORT != yes
-USES+=		python:build
+# using python:env as this port doesn't need to use python
+# a python util script is installed for user consumption
+# it is not required for using the port, only to assist developers using the libs
+USES+=		python:build shebangfix
 USE_LDCONFIG=	yes
 CMAKE_OFF+=	USE_PYTHON
 BINARY_ALIAS+=	python=${PYTHON_CMD}
+SHEBANG_FILES+=	src/build-scripts/serialize-bc.py
 .endif # SLAVE_PORT
 
 .include <bsd.port.mk>
