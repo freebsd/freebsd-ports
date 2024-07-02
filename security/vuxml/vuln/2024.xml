@@ -73,7 +73,7 @@
     <affects>
       <package>
 	<name>openssh-portable</name>
-	<range><lt>9.7_1,1</lt></range>
+	<range><lt>9.7_2,1</lt></range>
       </package>
     </affects>
     <description>
