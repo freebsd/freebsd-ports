@@ -1,6 +1,5 @@
 PORTNAME=	opt_parse_validator
-PORTVERSION=	1.9.3
-PORTREVISION=	1
+PORTVERSION=	1.9.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
