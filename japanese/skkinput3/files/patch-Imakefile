@@ -1,6 +1,6 @@
---- Imakefile.orig	Sun Jul 21 02:47:26 2002
-+++ Imakefile	Wed Aug 14 15:48:59 2002
-@@ -23,8 +23,8 @@
+--- Imakefile.orig	2002-12-06 16:48:21 UTC
++++ Imakefile
+@@ -37,8 +37,8 @@ OBJS            = main.o
  SRCS            = main.c
  OBJS            = main.o
  
