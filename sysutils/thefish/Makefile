@@ -1,29 +1,28 @@
 PORTNAME=	thefish
-PORTVERSION=	0.6.7
-PORTREVISION=	2
+DISTVERSION=	0.6.8
 CATEGORIES=	sysutils
-MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/thefish/
+MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Gtk+/ncurses rc.conf editor/management tool
-WWW=		https://BSDforge.com/projects/sysutils/thefish
+WWW=		https://codeberg.org/BSDforge/${PORTNAME}
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gnome pkgconfig tar:xz
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz
 
-OPTIONS_SINGLE=		X11
-OPTIONS_SINGLE_X11=	GTK2
-OPTIONS_DEFAULT=	GTK2
+USES=		gnome pkgconfig
 
-.include <bsd.port.options.mk>
-
-#.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME=	gtk20
+USE_GNOME=	cairo gdkpixbuf2 gtk20
 MAKE_ENV+=	WITH_GTK=yes
-#.endif
 
-PLIST_FILES=	bin/thefish share/man/man1/thefish.1.gz
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+PLIST_FILES=	bin/thefish \
+		share/man/man1/thefish.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/thefish ${STAGEDIR}${PREFIX}/bin
