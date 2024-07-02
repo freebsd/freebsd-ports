@@ -4,6 +4,8 @@ include/openpgl/cpp/Common.h
 include/openpgl/cpp/Device.h
 include/openpgl/cpp/Distribution.h
 include/openpgl/cpp/Field.h
+include/openpgl/cpp/FieldConfig.h
+include/openpgl/cpp/FieldStatistics.h
 include/openpgl/cpp/OpenPGL.h
 include/openpgl/cpp/PathSegment.h
 include/openpgl/cpp/PathSegmentStorage.h
@@ -16,6 +18,7 @@ include/openpgl/data.h
 include/openpgl/device.h
 include/openpgl/distribution.h
 include/openpgl/field.h
+include/openpgl/fieldstatistics.h
 include/openpgl/openpgl.h
 include/openpgl/pathsegmentstorage.h
 include/openpgl/region.h
