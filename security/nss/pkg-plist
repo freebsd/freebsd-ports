@@ -22,7 +22,6 @@ bin/strsclnt
 bin/symkeyutil
 bin/vfychain
 bin/vfyserv
-include/nss/sslexp.h
 include/nss/base64.h
 include/nss/blapit.h
 include/nss/cert.h
@@ -66,6 +65,7 @@ include/nss/nssckfwt.h
 include/nss/nssckg.h
 include/nss/nssckmdt.h
 include/nss/nssckt.h
+include/nss/nsshash.h
 include/nss/nssilckt.h
 include/nss/nssilock.h
 include/nss/nsslocks.h
@@ -85,7 +85,6 @@ include/nss/pk11priv.h
 include/nss/pk11pub.h
 include/nss/pk11sdr.h
 include/nss/pkcs11.h
-include/nss/pkcs1sig.h
 include/nss/pkcs11f.h
 include/nss/pkcs11n.h
 include/nss/pkcs11p.h
@@ -94,6 +93,7 @@ include/nss/pkcs11u.h
 include/nss/pkcs11uri.h
 include/nss/pkcs12.h
 include/nss/pkcs12t.h
+include/nss/pkcs1sig.h
 include/nss/pkcs7t.h
 include/nss/portreg.h
 include/nss/preenc.h
@@ -119,6 +119,7 @@ include/nss/shsign.h
 include/nss/smime.h
 include/nss/ssl.h
 include/nss/sslerr.h
+include/nss/sslexp.h
 include/nss/sslproto.h
 include/nss/sslt.h
 include/nss/utilmodt.h
