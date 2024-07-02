@@ -1,11 +1,11 @@
 PORTNAME=	openimageio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.8.0
+DISTVERSION=	2.5.12.0
 # PORTREVISION must be set with ?= so as not to stomp over
 # py-openimageio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -56,12 +56,14 @@ OPTIONS_SUB=		yes
 DICOM_DESC=		DICOM/MEDICOM support
 FFMPEG_DESC=		Use FFmpeg to support extra file types
 IMAGEVIEWER_DESC=	Build image viewer (requires Qt)
-PTEX_DESC=		ptex support
+PTEX_DESC=		Per face texture library support
 TBB_DESC=		Intel tbb support
 TOOLS_DESC=		Build CLI tools
 VDB_DESC=		OpenVDB support
 
 DICOM_LIB_DEPENDS=	libdcmimage.so:graphics/dcmtk
+DICOM_USES=		gnome ssl
+DICOM_USE=		gnome=libxml2
 DICOM_CMAKE_BOOL=	USE_DICOM
 
 DOCS_CMAKE_BOOL=	INSTALL_DOCS
@@ -90,6 +92,7 @@ OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
 OPENJPEG_CMAKE_BOOL=	USE_OPENJPEG
 
 PTEX_LIB_DEPENDS=	libPtex.so:graphics/ptex
+PTEX_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Ptex
 
 RAW_LIB_DEPENDS=	libraw_r.so:graphics/libraw
 RAW_CMAKE_BOOL=		USE_LIBRAW
