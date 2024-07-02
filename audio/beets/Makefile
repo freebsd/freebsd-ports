@@ -1,6 +1,6 @@
 PORTNAME=	beets
 DISTVERSION=	1.6.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio python
 MASTER_SITES=	PYPI
 
@@ -70,7 +70,7 @@ EMBYUPDATE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_
 FETCHART_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 FFMPEG_RUN_DEPENDS=	ffmpeg>=2:multimedia/ffmpeg
 IMAGEMAGICK_USES=	magick:run
-IPFS_RUN_DEPENDS=	ipfs-go:sysutils/ipfs-go
+IPFS_RUN_DEPENDS=	kubo:sysutils/kubo-go
 KODIUPDATE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 LASTFM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylast>=0:audio/py-pylast@${PY_FLAVOR}
 LASTIMPORT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
