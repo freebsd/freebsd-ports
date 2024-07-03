@@ -1,6 +1,5 @@
 PORTNAME=	hcloud
-DISTVERSION=	1.35.0
-PORTREVISION=	1
+DISTVERSION=	2.0.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,9 +17,10 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.20,<3:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.7.5:devel/py-python-dateutil@${PY_FLAVOR}
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=7.4:devel/py-coverage@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=7.5:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pylint>=3.0.0:devel/pylint@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mypy>=1.8:devel/py-mypy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-cov>=5:devel/py-pytest-cov@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mypy>=1.10:devel/py-mypy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}types-python-dateutil>=0:devel/py-types-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}types-requests>=0:devel/py-types-requests@${PY_FLAVOR}
 
