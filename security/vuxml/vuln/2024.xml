@@ -73,7 +73,7 @@
     <affects>
       <package>
 	<name>openssh-portable</name>
-	<range><lt>9.7_2,1</lt></range>
+	<range><lt>9.7.p1_2,1</lt></range>
       </package>
     </affects>
     <description>
@@ -91,6 +91,7 @@
     <dates>
       <discovery>2024-07-01</discovery>
       <entry>2024-07-01</entry>
+      <modified>2024-07-03</modified>
     </dates>
   </vuln>
 
