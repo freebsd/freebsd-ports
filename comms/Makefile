@@ -140,6 +140,7 @@
     SUBDIR += py-pylink-square
     SUBDIR += py-pymodbus
     SUBDIR += py-pyocd
+    SUBDIR += py-pyocd-pemicro
     SUBDIR += py-pyserial
     SUBDIR += py-pyserial-asyncio
     SUBDIR += py-streamdeck
