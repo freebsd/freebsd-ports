@@ -1,3 +1,3 @@
-TIMESTAMP = 1712189030
-SHA256 (certbot-2.10.0.tar.gz) = 892aa57d4db74af174aec5e4bb7f7537b200de2545a066c049d03a53215f0e4e
-SIZE (certbot-2.10.0.tar.gz) = 437757
+TIMESTAMP = 1718804862
+SHA256 (certbot-2.11.0.tar.gz) = 257ae1cb0a534373ca50dd807c9ae96f27660e41379c45afb9b50cab0e6a7a97
+SIZE (certbot-2.11.0.tar.gz) = 438415

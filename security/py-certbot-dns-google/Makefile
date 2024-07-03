@@ -1,8 +1,10 @@
 PORTNAME=	certbot-dns-google
 PORTVERSION=	${ACME_VERSION}
 CATEGORIES=	security python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/certbot/certbot/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	certbot_dns_google-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Google Cloud DNS Authenticator plugin for Certbot

@@ -2,7 +2,8 @@ PORTNAME=	certbot
 PORTVERSION=	${ACME_VERSION}
 PORTEPOCH=	1
 CATEGORIES=	security python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/certbot/certbot/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
