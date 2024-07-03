@@ -7,7 +7,8 @@ DISTNAME=	hatch_jupyter_builder-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Hatch plugin to help build Jupyter packages
-WWW=		https://github.com/jupyterlab/hatch-jupyter-builder
+WWW=		https://hatch-jupyter-builder.readthedocs.io/en/latest/ \
+		https://github.com/jupyterlab/hatch-jupyter-builder
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
