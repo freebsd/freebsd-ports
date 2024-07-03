@@ -1,5 +1,6 @@
 PORTNAME=	shibboleth
 PORTVERSION=	4.3.3
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://shibboleth.net/downloads/identity-provider/${PORTVERSION}/ \
 		http://shibboleth.net/downloads/identity-provider/latest4/${PORTVERSION}/ \
@@ -37,7 +38,7 @@ RUNDIR=		/var/run/${PORTNAME}
 USERS=		${SHIBUSER}
 GROUPS=		${SHIBGROUP}
 
-SUB_FILES=	shibboleth
+SUB_FILES=	shibboleth jetty-pid.xml
 
 SUB_LIST+=	SHIBUSER=${SHIBUSER} SHIBGROUP=${SHIBGROUP} \
 		RUNDIR=${RUNDIR} LOGDIR=${LOGDIR}
@@ -59,6 +60,7 @@ do-install:
 .for jar in logback-classic-${LOGBACKVER}.jar logback-core-${LOGBACKVER}.jar
 	${INSTALL_DATA} ${DISTDIR}/${jar} ${STAGEDIR}${WWWDIR}/lib/logging
 .endfor
+	${INSTALL_DATA} ${WRKDIR}/jetty-pid.xml ${STAGEDIR}${WWWDIR}/etc
 	${INSTALL_DATA} ${WRKDIR}/shibboleth ${STAGEDIR}${ETCDIR}/shibboleth-idp
 	${INSTALL_DATA} ${FILESDIR}/index.html ${STAGEDIR}${EXAMPLESDIR}/index.html
 	${INSTALL_SCRIPT} ${FILESDIR}/shibboleth-idp.sh ${STAGEDIR}${PREFIX}/sbin

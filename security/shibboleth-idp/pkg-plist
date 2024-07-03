@@ -255,6 +255,7 @@
 @sample %%EXAMPLESDIR%%/start.d/start.ini %%WWWDIR%%/start.d/start.ini
 @sample %%EXAMPLESDIR%%/webapps/idp.xml %%WWWDIR%%/webapps/idp.xml
 @sample %%EXAMPLESDIR%%/webapps/static.xml %%WWWDIR%%/webapps/static.xml
+%%WWWDIR%%/etc/jetty-pid.xml
 %%WWWDIR%%/lib/logging/logback-classic-%%LOGBACKVER%%.jar
 %%WWWDIR%%/lib/logging/logback-core-%%LOGBACKVER%%.jar
 @dir %%WWWDIR%%/conf
