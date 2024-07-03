@@ -1,5 +1,5 @@
 PORTNAME=	font-manager
-DISTVERSION=	0.8.9
+DISTVERSION=	0.9.0
 CATEGORIES=	x11-fonts gnome
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -14,6 +14,7 @@ BUILD_DEPENDS=	cmake:devel/cmake-core \
 		yelp-build:textproc/yelp-tools
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libgraphene-1.0.so:graphics/graphene \
 		libharfbuzz.so:print/harfbuzz \
 		libjson-glib-1.0.so:devel/json-glib
 
@@ -21,9 +22,9 @@ USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome \
 		meson pkgconfig python shebangfix sqlite vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	FontManager
-USE_GNOME=	cairo glib20 gtk30 libxml2 pango
-GLIB_SCHEMAS=	org.gnome.FontManager.gschema.xml \
-		org.gnome.FontViewer.gschema.xml
+USE_GNOME=	cairo glib20 gtk40 libxml2 pango
+GLIB_SCHEMAS=	com.github.FontManager.FontManager.gschema.xml \
+		com.github.FontManager.FontViewer.gschema.xml
 USE_LDCONFIG=	yes
 
 SHEBANG_GLOB=	*.py
