@@ -12,8 +12,7 @@ WWW=		https://github.com/jupyter/nbclassic
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS} \
-		${PYTHON_PKGNAMEPREFIX}Babel>=0:devel/py-babel@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-packaging>=0.9<2:devel/py-jupyter-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-server>=1.17.0:devel/py-jupyter-server@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipykernel>=0:devel/py-ipykernel@${PY_FLAVOR} \
