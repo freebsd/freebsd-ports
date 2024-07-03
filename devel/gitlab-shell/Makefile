@@ -14,10 +14,12 @@ LICENSE=	MIT
 # https://gitlab.com/gitlab-org/gitlab-shell/-/merge_requests/720
 #BUILD_DEPENDS=	heimdal>=0:security/heimdal
 
-USES=		gmake go:modules,no_targets,1.22 pkgconfig
+USES=		gmake go:modules,no_targets,1.21 pkgconfig
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
+GO_MOD_DIST=	gitlab
+GO_MODULE=	gitlab.com/gitlab-org/gitlab-shell/v14
 
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 # make sure to pass go build options into make process
@@ -26,31 +28,6 @@ ALL_TARGET=	build
 
 USERS=		git
 GROUPS=		git
-
-# for go dependencies
-# Gitlab hosts there dependencies on their own platform and not on go-proxy
-# so we download the required go.mod file from gitlab
-# lines are taken from go.mk
-# ---------------------------
-FETCH_DEPENDS=	${GO_CMD}:${GO_PORT}
-MASTER_SITES+=	https://gitlab.com/gitlab-org/gitlab-shell/-/raw/v${DISTVERSION}/
-DISTFILES+=	go.mod
-DIST_SUBDIR=	go/${PKGORIGIN:S,/,_,g}/${DISTNAME}
-EXTRACT_ONLY+=	${DISTFILES:N*.mod\:*:N*.mod:C/:.*//}
-_USES_fetch+=	800:go-post-fetch
-go-post-fetch:
-	@if [ ! -e ${DISTDIR}/${DIST_SUBDIR}/.go-post-fetch-done ]; then\
-		${ECHO_MSG} "Copy go.mod as go mod download will modify it, which breaks checksum check" ;\
-		(cd ${DISTDIR}/${DIST_SUBDIR}; ${CP} go.mod go.mod.orig) ;\
-		${ECHO_MSG} "===> Fetching ${GO_MODNAME} dependencies";\
-		(cd ${DISTDIR}/${DIST_SUBDIR}; \
-			[ -e go.mod ] || ${RLN} ${GO_MODFILE} go.mod; \
-			${SETENV} ${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x all) ;\
-		${ECHO_MSG} "Restore previous go.mod" ;\
-		(cd ${DISTDIR}/${DIST_SUBDIR}; ${MV} go.mod.orig go.mod) ;\
-		${TOUCH} ${DISTDIR}/${DIST_SUBDIR}/.go-post-fetch-done;\
-	fi;
-# ---------------------------
 
 VARLOGDIR=	/var/log/gitlab-shell
 
@@ -85,11 +62,4 @@ post-install:
 		${SED} -E -e '/sample$$/ s#^#@sample #; \
 		s#${DATADIR_REL}/bin#@(,,555) ${DATADIR_REL}/bin#; ' >> ${TMPPLIST}
 
-go-pre-delete-distfiles:
-	@if [ -e ${DISTDIR}/${DIST_SUBDIR}/.go-post-fetch-done ]; then\
-		${RM} ${DISTDIR}/${DIST_SUBDIR}/.go-post-fetch-done || ${TRUE};\
-	fi
-
-.include <bsd.port.pre.mk>
-delete-distfiles: go-pre-delete-distfiles
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
