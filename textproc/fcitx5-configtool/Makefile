@@ -1,5 +1,5 @@
 PORTNAME=	fcitx5-configtool
-DISTVERSION=	5.1.5
+DISTVERSION=	5.1.6
 CATEGORIES=	textproc x11
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
