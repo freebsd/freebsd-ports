@@ -356,6 +356,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/goshgay.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/gotostage.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/gputechconf.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/graspop.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/gronkh.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/groupon.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/harpodeon.py
@@ -443,6 +444,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/kukululive.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/kuwo.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/la7.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/laracasts.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lastfm.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/laxarxames.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lazy_extractors.py
@@ -507,7 +509,6 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/mgtv.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/microsoftembed.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/microsoftstream.py
-%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/microsoftvirtualacademy.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/mildom.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/minds.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/minoto.py
@@ -796,6 +797,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/spreaker.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/springboardplatform.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/sprout.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/sproutvideo.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/srgssr.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/srmediathek.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/stacommu.py
