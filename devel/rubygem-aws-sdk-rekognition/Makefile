@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-rekognition
-PORTVERSION=	1.97.0
+PORTVERSION=	1.98.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
