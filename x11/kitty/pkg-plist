@@ -15,6 +15,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_actions_1745a1bd.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_binary_478594b0.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_build_7ee1e14e.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_changelog_0413c894.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_clipboard_673291d1.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_color-stack_587105f7.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_conf_6d817f14.png
@@ -41,7 +42,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_hyperlinked_grep_bce050dc.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_icat_8f870112.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_intro_2aa247aa.png
-%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_panel_60319d79.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_panel_acc427d1.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_query_terminal_bcf6bdb9.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_remote_file_c5782e6e.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_ssh_d0cb65fa.png
@@ -769,6 +770,9 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/rc/__pycache__/resize_window%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/kitty/rc/__pycache__/resize_window%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%DATADIR%%/kitty/rc/__pycache__/resize_window%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/kitty/rc/__pycache__/run%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/kitty/rc/__pycache__/run%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%DATADIR%%/kitty/rc/__pycache__/run%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/kitty/rc/__pycache__/scroll_window%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/kitty/rc/__pycache__/scroll_window%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%DATADIR%%/kitty/rc/__pycache__/scroll_window%%PYTHON_EXT_SUFFIX%%.pyc
@@ -840,6 +844,7 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/rc/remove_marker.py
 %%DATADIR%%/kitty/rc/resize_os_window.py
 %%DATADIR%%/kitty/rc/resize_window.py
+%%DATADIR%%/kitty/rc/run.py
 %%DATADIR%%/kitty/rc/scroll_window.py
 %%DATADIR%%/kitty/rc/select_window.py
 %%DATADIR%%/kitty/rc/send_key.py
