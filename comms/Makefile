@@ -137,7 +137,9 @@
     SUBDIR += py-libimobiledevice
     SUBDIR += py-libscrc
     SUBDIR += py-libusbsio
+    SUBDIR += py-pylink-square
     SUBDIR += py-pymodbus
+    SUBDIR += py-pyocd
     SUBDIR += py-pyserial
     SUBDIR += py-pyserial-asyncio
     SUBDIR += py-streamdeck
