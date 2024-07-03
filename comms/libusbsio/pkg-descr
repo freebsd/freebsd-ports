@@ -1,0 +1,5 @@
+The aim of this project is to deliver a dynamic library which enables USB-HID
+communication between PC Host and a target MCU over SPI, I2C or GPIO using a
+USB-connected bridge device.
+
+This port contains the C Libraries for the libusbsio/hidapi framework.
