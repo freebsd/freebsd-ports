@@ -1,30 +1,32 @@
 bin/inspircd
-bin/inspircd-genssl
 bin/inspircd-testssl
-@sample %%ETCDIR%%/examples/codepages/iso-8859-1.conf.example %%ETCDIR%%/iso-8859-1.conf
-@sample %%ETCDIR%%/examples/codepages/iso-8859-2.conf.example %%ETCDIR%%/iso-8859-2.conf
-@sample %%ETCDIR%%/examples/filter.conf.example %%ETCDIR%%/filter.conf
-@sample %%ETCDIR%%/examples/helpop.conf.example %%ETCDIR%%/helpop.conf
-@sample %%ETCDIR%%/examples/inspircd.conf.example %%ETCDIR%%/inspircd.conf
-@sample %%ETCDIR%%/examples/links.conf.example %%ETCDIR%%/links.conf
-@sample %%ETCDIR%%/examples/modules.conf.example %%ETCDIR%%/modules.conf
-@sample %%ETCDIR%%/examples/motd.txt.example %%ETCDIR%%/motd.txt
-@sample %%ETCDIR%%/examples/opermotd.txt.example %%ETCDIR%%/opermotd.txt
-@sample %%ETCDIR%%/examples/opers.conf.example %%ETCDIR%%/opers.conf
-@sample %%ETCDIR%%/examples/quotes.txt.example %%ETCDIR%%/quotes.txt
-%%ETCDIR%%/examples/codepages/ascii.conf.example
-%%ETCDIR%%/examples/codepages/rfc1459.conf.example
-%%ETCDIR%%/examples/codepages/strict-rfc1459.conf.example
-%%ETCDIR%%/examples/providers/dronebl.conf.example
-%%ETCDIR%%/examples/providers/efnet-rbl.conf.example
-%%ETCDIR%%/examples/providers/irccloud.conf.example
-%%ETCDIR%%/examples/providers/torexit.conf.example
-%%ETCDIR%%/examples/services/anope.conf.example
-%%ETCDIR%%/examples/services/atheme.conf.example
-%%ETCDIR%%/examples/services/generic.conf.example
-%%ETCDIR%%/examples/sql/sqloper.mysql.sql
-%%ETCDIR%%/examples/sql/sqloper.pgsql.sql
-%%ETCDIR%%/examples/sql/sqloper.sqlite3.sql
+@sample %%ETCDIR%%/examples/codepages/iso-8859-1.example.conf %%ETCDIR%%/iso-8859-1.conf
+@sample %%ETCDIR%%/examples/codepages/iso-8859-2.example.conf %%ETCDIR%%/iso-8859-2.conf
+@sample %%ETCDIR%%/examples/filter.example.conf %%ETCDIR%%/filter.conf
+@sample %%ETCDIR%%/examples/help.example.conf %%ETCDIR%%/help.conf
+@sample %%ETCDIR%%/examples/inspircd.example.conf %%ETCDIR%%/inspircd.conf
+@sample %%ETCDIR%%/examples/links.example.conf %%ETCDIR%%/links.conf
+@sample %%ETCDIR%%/examples/modules.example.conf %%ETCDIR%%/modules.conf
+@sample %%ETCDIR%%/examples/motd.example.txt %%ETCDIR%%/motd.txt
+@sample %%ETCDIR%%/examples/opermotd.example.txt %%ETCDIR%%/opermotd.txt
+@sample %%ETCDIR%%/examples/opers.example.conf %%ETCDIR%%/opers.conf
+@sample %%ETCDIR%%/examples/quotes.example.txt %%ETCDIR%%/quotes.txt
+%%ETCDIR%%/examples/codepages/ascii.example.conf
+%%ETCDIR%%/examples/codepages/rfc1459.example.conf
+%%ETCDIR%%/examples/codepages/strict-rfc1459.example.conf
+%%ETCDIR%%/examples/providers/dronebl.example.conf
+%%ETCDIR%%/examples/providers/efnet-rbl.example.conf
+%%ETCDIR%%/examples/providers/irccloud.example.conf
+%%ETCDIR%%/examples/providers/torexit.example.conf
+%%ETCDIR%%/examples/services/anope.example.conf
+%%ETCDIR%%/examples/services/atheme.example.conf
+%%ETCDIR%%/examples/services/generic.example.conf
+%%ETCDIR%%/examples/sql/sqloper/mysql.sql
+%%ETCDIR%%/examples/sql/sqloper/pgsql.sql
+%%ETCDIR%%/examples/sql/sqloper/sqlite3.sql
+%%ETCDIR%%/examples/sql/log_sql/mysql.sql
+%%ETCDIR%%/examples/sql/log_sql/pgsql.sql
+%%ETCDIR%%/examples/sql/log_sql/sqlite3.sql
 %%ETCDIR%%/help.txt
 libexec/inspircd/deploy-ssl.sh
 libexec/inspircd/inspircd
@@ -60,14 +62,11 @@ libexec/inspircd/modules/m_banexception.so
 libexec/inspircd/modules/m_banredirect.so
 libexec/inspircd/modules/m_bcrypt.so
 libexec/inspircd/modules/m_blockamsg.so
-libexec/inspircd/modules/m_blockcaps.so
 libexec/inspircd/modules/m_blockcolor.so
 libexec/inspircd/modules/m_botmode.so
 libexec/inspircd/modules/m_callerid.so
 libexec/inspircd/modules/m_cap.so
 libexec/inspircd/modules/m_cban.so
-libexec/inspircd/modules/m_censor.so
-libexec/inspircd/modules/m_cgiirc.so
 libexec/inspircd/modules/m_chancreate.so
 libexec/inspircd/modules/m_chanfilter.so
 libexec/inspircd/modules/m_chanhistory.so
@@ -80,8 +79,6 @@ libexec/inspircd/modules/m_chgident.so
 libexec/inspircd/modules/m_chgname.so
 libexec/inspircd/modules/m_classban.so
 libexec/inspircd/modules/m_clearchan.so
-libexec/inspircd/modules/m_cloaking.so
-libexec/inspircd/modules/m_clones.so
 libexec/inspircd/modules/m_codepage.so
 libexec/inspircd/modules/m_commonchans.so
 libexec/inspircd/modules/m_conn_join.so
@@ -101,19 +98,15 @@ libexec/inspircd/modules/m_disable.so
 libexec/inspircd/modules/m_dnsbl.so
 libexec/inspircd/modules/m_exemptchanops.so
 libexec/inspircd/modules/m_filter.so
-libexec/inspircd/modules/m_flashpolicyd.so
-libexec/inspircd/modules/m_gecosban.so
 libexec/inspircd/modules/m_geoban.so
 libexec/inspircd/modules/m_geoclass.so
 libexec/inspircd/modules/m_globalload.so
 libexec/inspircd/modules/m_globops.so
 libexec/inspircd/modules/m_haproxy.so
-libexec/inspircd/modules/m_helpop.so
 libexec/inspircd/modules/m_hidechans.so
 libexec/inspircd/modules/m_hidelist.so
 libexec/inspircd/modules/m_hidemode.so
 libexec/inspircd/modules/m_hideoper.so
-libexec/inspircd/modules/m_hostchange.so
 libexec/inspircd/modules/m_hostcycle.so
 libexec/inspircd/modules/m_httpd.so
 libexec/inspircd/modules/m_httpd_acl.so
@@ -136,24 +129,18 @@ libexec/inspircd/modules/m_ircv3_sts.so
 libexec/inspircd/modules/m_joinflood.so
 libexec/inspircd/modules/m_kicknorejoin.so
 libexec/inspircd/modules/m_knock.so
-libexec/inspircd/modules/m_lockserv.so
 libexec/inspircd/modules/m_maphide.so
 libexec/inspircd/modules/m_md5.so
 libexec/inspircd/modules/m_messageflood.so
-libexec/inspircd/modules/m_mlock.so
-libexec/inspircd/modules/m_modenotice.so
 libexec/inspircd/modules/m_monitor.so
 libexec/inspircd/modules/m_muteban.so
 libexec/inspircd/modules/m_namedmodes.so
-libexec/inspircd/modules/m_namesx.so
-libexec/inspircd/modules/m_nationalchars.so
 libexec/inspircd/modules/m_nickflood.so
 libexec/inspircd/modules/m_nicklock.so
 libexec/inspircd/modules/m_noctcp.so
 libexec/inspircd/modules/m_nokicks.so
 libexec/inspircd/modules/m_nonicks.so
 libexec/inspircd/modules/m_nonotice.so
-libexec/inspircd/modules/m_nopartmsg.so
 libexec/inspircd/modules/m_ojoin.so
 libexec/inspircd/modules/m_operchans.so
 libexec/inspircd/modules/m_operjoin.so
@@ -187,14 +174,12 @@ libexec/inspircd/modules/m_satopic.so
 libexec/inspircd/modules/m_securelist.so
 libexec/inspircd/modules/m_seenicks.so
 libexec/inspircd/modules/m_serverban.so
-libexec/inspircd/modules/m_services_account.so
-libexec/inspircd/modules/m_servprotect.so
 libexec/inspircd/modules/m_sethost.so
 libexec/inspircd/modules/m_setident.so
 libexec/inspircd/modules/m_setidle.so
 libexec/inspircd/modules/m_setname.so
 libexec/inspircd/modules/m_sha1.so
-libexec/inspircd/modules/m_sha256.so
+libexec/inspircd/modules/m_sha2.so
 libexec/inspircd/modules/m_showfile.so
 libexec/inspircd/modules/m_showwhois.so
 libexec/inspircd/modules/m_shun.so
@@ -206,18 +191,31 @@ libexec/inspircd/modules/m_sslinfo.so
 libexec/inspircd/modules/m_sslmodes.so
 libexec/inspircd/modules/m_starttls.so
 libexec/inspircd/modules/m_stripcolor.so
-libexec/inspircd/modules/m_svshold.so
 libexec/inspircd/modules/m_swhois.so
 libexec/inspircd/modules/m_timedbans.so
 libexec/inspircd/modules/m_tline.so
-libexec/inspircd/modules/m_topiclock.so
 libexec/inspircd/modules/m_uhnames.so
 libexec/inspircd/modules/m_uninvite.so
-libexec/inspircd/modules/m_userip.so
 libexec/inspircd/modules/m_vhost.so
 libexec/inspircd/modules/m_watch.so
 libexec/inspircd/modules/m_websocket.so
 libexec/inspircd/modules/m_xline_db.so
+libexec/inspircd/modules/core_clients.so
+libexec/inspircd/modules/m_account.so
+libexec/inspircd/modules/m_cloak.so
+libexec/inspircd/modules/m_cloak_md5.so
+libexec/inspircd/modules/m_cloak_sha256.so
+libexec/inspircd/modules/m_cloak_static.so
+libexec/inspircd/modules/m_cloak_user.so
+libexec/inspircd/modules/m_gateway.so
+libexec/inspircd/modules/m_help.so
+libexec/inspircd/modules/m_helpmode.so
+libexec/inspircd/modules/m_log_sql.so
+libexec/inspircd/modules/m_multiprefix.so
+libexec/inspircd/modules/m_opmoderated.so
+libexec/inspircd/modules/m_realnameban.so
+libexec/inspircd/modules/m_regex_stdlib.so
+libexec/inspircd/modules/m_services.so
 %%GNUTLS%%libexec/inspircd/modules/m_ssl_gnutls.so
 %%LDAP%%libexec/inspircd/modules/m_ldap.so
 %%LDAP%%libexec/inspircd/modules/m_ldapauth.so
@@ -230,7 +228,6 @@ libexec/inspircd/modules/m_xline_db.so
 %%POSIX%%libexec/inspircd/modules/m_regex_posix.so
 %%SQLITE%%libexec/inspircd/modules/m_sqlite3.so
 %%SSLREHASH%%libexec/inspircd/modules/m_sslrehashsignal.so
-share/man/man1/inspircd-genssl.1.gz
 share/man/man1/inspircd-testssl.1.gz
 share/man/man1/inspircd.1.gz
 @dir(%%INSPIRCD_USER%%,%%INSPIRCD_GROUP%%,750) %%INSPIRCD_DBDIR%%
