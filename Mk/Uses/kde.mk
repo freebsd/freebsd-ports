@@ -100,7 +100,7 @@ KDE_PLASMA5_VERSION?=		5.27.11
 KDE_PLASMA5_BRANCH?=		stable
 
 # Next KDE Plasma desktop
-KDE_PLASMA6_VERSION?=		6.1.1
+KDE_PLASMA6_VERSION?=		6.1.2
 KDE_PLASMA6_BRANCH?=		stable
 
 # Current KDE frameworks.
