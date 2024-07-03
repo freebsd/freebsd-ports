@@ -1,5 +1,5 @@
 PORTNAME=	cfitsio
-PORTVERSION=	4.4.0
+PORTVERSION=	4.4.1
 CATEGORIES=	astro
 MASTER_SITES=	https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
@@ -10,6 +10,11 @@ MASTER_SITES=	https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for reading and writing files in FITS data format
 WWW=		https://heasarc.gsfc.nasa.gov/docs/software/fitsio/
+
+LICENSE=	CFITSIO
+LICENSE_NAME=	CFITSIO License
+LICENSE_FILE=	${WRKSRC}/licenses/License.txt
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libf2c.so:lang/f2c
