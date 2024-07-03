@@ -6,5 +6,3 @@ packages in the PySAL family:
 - Input-and output: libpysal.io
 - Computational geometry: libpysal.cg
 - Built-in example datasets libpysal.examples
-
-See also: https://github.com/pysal/libpysal
