@@ -1,6 +1,6 @@
 PORTNAME=	noto
 PORTVERSION=	2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-fonts
 PKGNAMESUFFIX=	-extra
 
@@ -12,7 +12,9 @@ WWW=		https://fonts.google.com/noto \
 RUN_DEPENDS=	noto-kufi-arabic>=0:x11-fonts/noto-kufi-arabic \
 		noto-music>=0:x11-fonts/noto-music \
 		noto-naskh-arabic>=0:x11-fonts/noto-naskh-arabic \
+		noto-naskh-arabic-ui>=0:x11-fonts/noto-naskh-arabic-ui \
 		noto-sans-arabic>=0:x11-fonts/noto-sans-arabic \
+		noto-sans-arabic-ui>=0:x11-fonts/noto-sans-arabic-ui \
 		noto-sans-armenian>=0:x11-fonts/noto-sans-armenian \
 		noto-sans-bengali>=0:x11-fonts/noto-sans-bengali \
 		noto-sans-cham>=0:x11-fonts/noto-sans-cham \
