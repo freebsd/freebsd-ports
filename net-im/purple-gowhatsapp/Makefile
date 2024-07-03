@@ -1,6 +1,7 @@
 PORTNAME=	purple-gowhatsapp
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.15.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	ports@virtual-estates.net

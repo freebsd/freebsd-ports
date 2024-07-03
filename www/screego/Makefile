@@ -1,7 +1,7 @@
 PORTNAME=	screego
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	www
 MASTER_SITES=	https://registry.yarnpkg.com/:yarn
 DISTFILES=	@babel/code-frame/-/code-frame-7.8.3.tgz:yarn \
