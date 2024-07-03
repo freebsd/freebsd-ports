@@ -21,6 +21,7 @@ include/Fcitx5/Core/fcitx/addoninstance.h
 include/Fcitx5/Core/fcitx/addoninstance_details.h
 include/Fcitx5/Core/fcitx/addonloader.h
 include/Fcitx5/Core/fcitx/addonmanager.h
+include/Fcitx5/Core/fcitx/candidateaction.h
 include/Fcitx5/Core/fcitx/candidatelist.h
 include/Fcitx5/Core/fcitx/event.h
 include/Fcitx5/Core/fcitx/fcitxcore_export.h
