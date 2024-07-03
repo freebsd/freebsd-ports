@@ -136,6 +136,7 @@
     SUBDIR += py-hidapi
     SUBDIR += py-libimobiledevice
     SUBDIR += py-libscrc
+    SUBDIR += py-libusbsio
     SUBDIR += py-pymodbus
     SUBDIR += py-pyserial
     SUBDIR += py-pyserial-asyncio
