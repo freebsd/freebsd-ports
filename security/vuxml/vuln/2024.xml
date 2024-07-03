@@ -1,3 +1,46 @@
+  <vuln vid="b0374722-3912-11ef-a77e-901b0e9408dc">
+    <topic>go -- net/http: denial of service due to improper 100-continue handling</topic>
+    <affects>
+      <package>
+	<name>go122</name>
+	<range><lt>1.22.5</lt></range>
+      </package>
+      <package>
+	<name>go121</name>
+	<range><lt>1.21.12</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://go.dev/issue/67555">
+	  <p>net/http: denial of service due to improper 100-continue handling</p>
+	  <p>The net/http HTTP/1.1 client mishandled the case where a
+	  server responds to a request with an "Expect: 100-continue"
+	  header with a non-informational (200 or higher) status. This
+	  mishandling could leave a client connection in an invalid
+	  state, where the next request sent on the connection will
+	  fail.</p>
+	  <p>An attacker sending a request to a
+	  net/http/httputil.ReverseProxy proxy can exploit this
+	  mishandling to cause a denial of service by sending "Expect:
+	  100-continue" requests which elicit a non-informational
+	  response from the backend. Each such request leaves the
+	  proxy with an invalid connection, and causes one subsequent
+	  request using that connection to fail.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-24791</cvename>
+      <url>https://go.dev/issue/67555</url>
+    </references>
+    <dates>
+      <discovery>2024-07-02</discovery>
+      <entry>2024-07-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d7efc2ad-37af-11ef-b611-84a93843eb75">
     <topic>Apache httpd -- Multiple vulnerabilities</topic>
     <affects>
