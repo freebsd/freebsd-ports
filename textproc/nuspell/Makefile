@@ -18,6 +18,7 @@ USES=		cmake:testing compiler:c++17-lang
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 CMAKE_OFF+=	${CMAKE_TESTING_ON}
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 post-patch:
 # Skip README as it only contains install instructions
