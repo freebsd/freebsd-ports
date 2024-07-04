@@ -4583,6 +4583,7 @@
     SUBDIR += py-cli-helpers
     SUBDIR += py-cliapp
     SUBDIR += py-click
+    SUBDIR += py-click-command-tree
     SUBDIR += py-click-completion
     SUBDIR += py-click-creds
     SUBDIR += py-click-default-group
