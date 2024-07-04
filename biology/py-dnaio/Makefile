@@ -1,10 +1,10 @@
 PORTNAME=	dnaio
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Read and write FASTQ and FASTA
 WWW=		https://pypi.python.org/pypi/dnaio
 
