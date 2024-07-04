@@ -32,6 +32,7 @@
     SUBDIR += R-cran-tth
     SUBDIR += R-cran-utf8
     SUBDIR += R-cran-vroom
+    SUBDIR += R-cran-writexl
     SUBDIR += R-cran-xml2
     SUBDIR += R-cran-xmlparsedata
     SUBDIR += R-cran-xtable
