@@ -1,6 +1,5 @@
 PORTNAME=	mawk
-DISTVERSION=	1.3.4-20240123
-PORTREVISION=	1
+DISTVERSION=	1.3.4-20240622
 CATEGORIES=	lang
 MASTER_SITES=	https://invisible-island.net/archives/mawk/
 
