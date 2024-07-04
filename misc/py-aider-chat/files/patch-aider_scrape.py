@@ -1,21 +1,23 @@
---- aider/scrape.py.orig	2024-06-17 03:58:03 UTC
+--- aider/scrape.py.orig	2024-07-04 14:23:32 UTC
 +++ aider/scrape.py
-@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
- import playwright
+@@ -3,9 +3,7 @@ import sys
+ import re
+ import sys
+ 
+-import playwright
  import pypandoc
- from bs4 import BeautifulSoup
 -from playwright.sync_api import sync_playwright
  
  from aider import __version__, urls
  from aider.dump import dump  # noqa: F401
-@@ -44,14 +43,11 @@ class Scraper:
+@@ -42,14 +40,10 @@ class Scraper:
          """
          Scrape a url and turn it into readable markdown.
  
 -        `url` - the URLto scrape.
 +        `url` - the URL to scrape.
          """
-         self.try_playwright()
+-        self.try_playwright()
  
 -        if self.playwright_available:
 -            content = self.scrape_with_playwright(url)
@@ -25,11 +27,10 @@
  
          if not content:
              return
-@@ -64,51 +60,6 @@ class Scraper:
-         return content
+@@ -62,50 +56,8 @@ class Scraper:
  
      # Internals...
--    def scrape_with_playwright(self, url):
+     def scrape_with_playwright(self, url):
 -        with sync_playwright() as p:
 -            try:
 -                browser = p.chromium.launch()
@@ -59,16 +60,16 @@
 -        if self.playwright_available is not None:
 -            return
 -
--        with sync_playwright() as p:
--            try:
+-        try:
+-            with sync_playwright() as p:
 -                p.chromium.launch()
 -                self.playwright_available = True
--            except Exception:
--                self.playwright_available = False
+-        except Exception:
+             self.playwright_available = False
 -
 -    def get_playwright_instructions(self):
 -        if self.playwright_available in (True, None):
--            return
+             return
 -        if self.playwright_instructions_shown:
 -            return
 -
@@ -76,4 +77,4 @@
 -        return PLAYWRIGHT_INFO
  
      def scrape_with_httpx(self, url):
-         headers = {"User-Agent": f"Mozilla./5.0 ({aider_user_agent})"}
+         import httpx
