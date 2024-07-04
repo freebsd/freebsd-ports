@@ -3,7 +3,7 @@ DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Common libriares for KDEPim
+COMMENT=	Common libraries for KDEPim
 WWW=		https://github.com/KDE/mailcommon
 
 LICENSE=	LGPL21

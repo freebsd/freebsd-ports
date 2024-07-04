@@ -3,7 +3,7 @@ DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Sieve libriares for KDEPim
+COMMENT=	Sieve libraries for KDEPim
 WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
