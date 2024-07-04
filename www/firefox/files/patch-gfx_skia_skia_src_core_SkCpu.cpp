@@ -5,7 +5,7 @@ gfx/skia/skia/src/core/SkCpu.cpp:81:27: error: use of undeclared identifier 'get
                           ^
 
 diff --git gfx/skia/skia/src/core/SkCpu.cpp gfx/skia/skia/src/core/SkCpu.cpp
-index cdac7db2be2c..4da2ee4bd4b4 100644
+index cdac7db2be2c..88391138880a 100644
 --- gfx/skia/skia/src/core/SkCpu.cpp
 +++ gfx/skia/skia/src/core/SkCpu.cpp
 @@ -81,6 +81,22 @@
@@ -14,7 +14,7 @@ index cdac7db2be2c..4da2ee4bd4b4 100644
  
 +        return features;
 +    }
-+#elif
++#elif defined(SK_CPU_ARM64) && defined(__FreeBSD__)
 +    #include <machine/armreg.h>
 +    #ifndef ID_AA64ISAR0_CRC32_VAL
 +    #define ID_AA64ISAR0_CRC32_VAL ID_AA64ISAR0_CRC32
