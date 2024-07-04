@@ -1,3 +1,32 @@
+  <vuln vid="51498ee4-39a1-11ef-b609-002590c1f29c">
+    <topic>Request Tracker -- information exposure vulnerability</topic>
+    <affects>
+      <package>
+       <name>rt50</name>
+       <range><lt>5.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Request Tracker reports:</p>
+	<p>CVE-2024-3262 describes previously viewed pages being stored in the
+	browser cache, which is the typical default behavior of most browsers to
+	enable the "back" button. Someone who gains access to a host computer could
+	potentially view ticket data using the back button, even after logging out
+	of RT. The CVE specifically references RT version 4.4.1, but this behavior
+	is present in most browsers viewing all versions of RT before 5.0.6.</p>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-3262</cvename>
+      <url>https://github.com/advisories/GHSA-6426-p644-ffcf</url>
+    </references>
+    <dates>
+      <discovery>2024-04-04</discovery>
+      <entry>2024-07-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b0374722-3912-11ef-a77e-901b0e9408dc">
     <topic>go -- net/http: denial of service due to improper 100-continue handling</topic>
     <affects>
