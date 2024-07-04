@@ -1,3 +1,3 @@
-TIMESTAMP = 1651004219
-SHA256 (hughsie-libgusb-0.3.10_GH0.tar.gz) = e699b06f4809f9d166b13dc9f5812b0dd026591d3cae90ec5483aa2687f3b80b
-SIZE (hughsie-libgusb-0.3.10_GH0.tar.gz) = 50290
+TIMESTAMP = 1718556835
+SHA256 (libgusb-0.4.9.tar.xz) = 9df5ef301d6a4b361002aa52cce1165a87a89744055879bdbab31e7e86f1e846
+SIZE (libgusb-0.4.9.tar.xz) = 51672
