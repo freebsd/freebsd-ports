@@ -1,0 +1,2 @@
+Lark is a parsing toolkit for Python, built with a focus on ergonomics,
+performance and modularity. Lark can parse all context-free languages.
