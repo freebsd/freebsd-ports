@@ -5,6 +5,34 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240704:
+  AFFECTS: net/xrdp and x11-drivers/xorgxrdp
+  AUTHOR: meta@FreeBSD.org
+
+  xrdp has been updated to the releases of the latest stable branch v0.10.
+  This version significantly improves performance improvement especially if the
+  client is Windows 11. There are to things to be careful about when updating.
+
+  1) Make sure to update both net/xrdp and x11-drivers/xorgxrdp ports
+     simultaneously.
+  2) Config files require manual migration (follow the steps below).
+
+  Review and backup changes you made to xrdp.ini and sesman.ini before updating
+  xrdp. The following example only mentions xrdp.ini however make sure to do the
+  same review, backup and migration for sesman.ini as well.
+
+  Before updating xrdp, review and backup your changes.
+
+  # cd /usr/local/etc/xrdp
+  # diff -u xrdp.ini.sample xrdp.ini > xrdp.ini.diff
+
+  After updating xrdp, migrate your changes to new configuration files.
+  xrdp.ini.sample is replaced with new version at this point. See diff and
+  manually apply changes.
+
+  # cp xrdp.ini.sample xrdp.ini
+  # vi xrdp.ini
+
 20240620:
   AFFECTS: net-mgmt/net-snmp
   AUTHOR: markj@FreeBSD.org
