@@ -91,6 +91,7 @@ include/glaze/json/write.hpp
 include/glaze/mustache/mustache.hpp
 include/glaze/mustache/stencilcount.hpp
 include/glaze/record/recorder.hpp
+include/glaze/reflection/enum_macro.hpp
 include/glaze/reflection/get_name.hpp
 include/glaze/reflection/reflect.hpp
 include/glaze/reflection/to_tuple.hpp

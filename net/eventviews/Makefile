@@ -3,7 +3,7 @@ DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Event view libriares for KDEPim
+COMMENT=	Event view libraries for KDEPim
 WWW=		https://github.com/KDE/mailcommon
 
 LICENSE=	LGPL21
