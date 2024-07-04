@@ -401,6 +401,7 @@
     SUBDIR += mod_mono
     SUBDIR += mod_mpm_itk
     SUBDIR += mod_perl2
+    SUBDIR += mod_php80
     SUBDIR += mod_php81
     SUBDIR += mod_php82
     SUBDIR += mod_php83
@@ -1391,6 +1392,12 @@
     SUBDIR += pglogd
     SUBDIR += phalcon
     SUBDIR += php-google-api-php-client
+    SUBDIR += php80-opcache
+    SUBDIR += php80-session
+    SUBDIR += php80-tidy
+    SUBDIR += php80-opcache
+    SUBDIR += php80-session
+    SUBDIR += php80-tidy
     SUBDIR += php81-opcache
     SUBDIR += php81-session
     SUBDIR += php81-tidy

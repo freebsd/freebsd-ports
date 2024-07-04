@@ -805,6 +805,8 @@
     SUBDIR += phototonic
     SUBDIR += php-facedetect
     SUBDIR += php-geos
+    SUBDIR += php80-exif
+    SUBDIR += php80-gd
     SUBDIR += php81-exif
     SUBDIR += php81-gd
     SUBDIR += php82-exif

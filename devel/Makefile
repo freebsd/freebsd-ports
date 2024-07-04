@@ -4176,6 +4176,16 @@
     SUBDIR += php-ice37
     SUBDIR += php-libawl
     SUBDIR += php-maxminddb
+    SUBDIR += php80-ffi
+    SUBDIR += php80-gettext
+    SUBDIR += php80-intl
+    SUBDIR += php80-pcntl
+    SUBDIR += php80-readline
+    SUBDIR += php80-shmop
+    SUBDIR += php80-sysvmsg
+    SUBDIR += php80-sysvsem
+    SUBDIR += php80-sysvshm
+    SUBDIR += php80-tokenizer
     SUBDIR += php81-ffi
     SUBDIR += php81-gettext
     SUBDIR += php81-intl

@@ -1259,6 +1259,15 @@
     SUBDIR += peco
     SUBDIR += peg
     SUBDIR += perl2html
+    SUBDIR += php80-ctype
+    SUBDIR += php80-dom
+    SUBDIR += php80-enchant
+    SUBDIR += php80-pspell
+    SUBDIR += php80-simplexml
+    SUBDIR += php80-xml
+    SUBDIR += php80-xmlreader
+    SUBDIR += php80-xmlwriter
+    SUBDIR += php80-xsl
     SUBDIR += php81-ctype
     SUBDIR += php81-dom
     SUBDIR += php81-enchant
