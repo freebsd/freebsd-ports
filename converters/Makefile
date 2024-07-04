@@ -149,6 +149,7 @@
     SUBDIR += py-bencode.py
     SUBDIR += py-bencoder
     SUBDIR += py-better-bencode
+    SUBDIR += py-bincopy
     SUBDIR += py-bsdconv
     SUBDIR += py-gotenberg-client
     SUBDIR += py-rencode

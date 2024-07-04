@@ -1,0 +1,2 @@
+Mangling of various file formats that conveys binary information
+(Motorola S-Record, Intel HEX, TI-TXT, Verilog VMEM, ELF and binary files)
