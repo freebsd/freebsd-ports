@@ -4617,6 +4617,7 @@
     SUBDIR += py-columnize
     SUBDIR += py-comm
     SUBDIR += py-commandlines
+    SUBDIR += py-commentjson
     SUBDIR += py-conditional
     SUBDIR += py-confection
     SUBDIR += py-configargparse
