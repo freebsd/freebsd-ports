@@ -5497,6 +5497,7 @@
     SUBDIR += py-pyopencl
     SUBDIR += py-pyparsing
     SUBDIR += py-pyparsing2
+    SUBDIR += py-pypemicro
     SUBDIR += py-pyperclip
     SUBDIR += py-pyperf
     SUBDIR += py-pyperscan
