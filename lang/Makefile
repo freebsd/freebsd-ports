@@ -295,6 +295,7 @@
     SUBDIR += py-dhall
     SUBDIR += py-hy
     SUBDIR += py-lupa
+    SUBDIR += py-sly
     SUBDIR += py-textX
     SUBDIR += python
     SUBDIR += python-doc-html

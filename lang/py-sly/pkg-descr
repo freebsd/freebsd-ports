@@ -1,0 +1,14 @@
+SLY is a 100% Python implementation of the lex and yacc tools commonly used to
+write parsers and compilers. Parsing is based on the same  LALR(1) algorithm
+used by many yacc tools.
+
+SLY provides very extensive error reporting and diagnostic information
+to assist in parser construction. The original implementation was
+developed for instructional purposes. As a result, the system tries to
+identify the most common types of errors made by novice users.
+
+SLY provides full support for empty productions, error recovery,
+precedence specifiers, and moderately ambiguous grammars.
+
+SLY uses various Python metaprogramming features to specify lexers and
+parsers. There are no generated files or extra steps involved.
