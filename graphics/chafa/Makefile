@@ -33,13 +33,6 @@ INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-# Remove when releng/13.2 is EoL
-.if ${OSVERSION} < 1303001 && ${ARCH} == "i386"
-BROKEN=		error: libchafa.so: undefined reference to _mm_extract_epi64
-.endif
-
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
