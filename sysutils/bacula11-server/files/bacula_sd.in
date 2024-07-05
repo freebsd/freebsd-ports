@@ -23,6 +23,7 @@ load_rc_config $name
 : ${bacula_sd_enable="NO"}
 : ${bacula_sd_flags=" -u bacula -g bacula -v -c %%PREFIX%%/etc/bacula/bacula-sd.conf"}
 : ${bacula_sd_pidfile="/var/run/bacula-sd.9103.pid"}
+: ${bacula_sd_svcj_options:="net_basic"}
 
 pidfile="${bacula_sd_pidfile}"
 

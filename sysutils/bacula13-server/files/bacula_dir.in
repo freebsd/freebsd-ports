@@ -23,6 +23,7 @@ load_rc_config $name
 : ${bacula_dir_enable="NO"}
 : ${bacula_dir_flags=" -u bacula -g bacula -v -c %%PREFIX%%/etc/bacula/bacula-dir.conf"}
 : ${bacula_dir_pidfile="/var/run/bacula-dir.9101.pid"}
+: ${bacula_dir_svcj_options:="net_basic"}
 
 pidfile="${bacula_dir_pidfile}"
 

@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240705:
+  AFFECTS: sysutils/bacula*-{client,server}
+  AUTHOR: netchildFreeBSD.org
+
+  The start scripts of bacula have been renamed to bacula_fd, bacula_dir and
+  bacula_sd for improved compatibility with other parts of the
+  system. The automatic start at boot (rc.conf variable settings) is
+  not affected, but if you have some other automatism you may want to
+  change
+    ".../etc/rc.d/bacula-fd"  to ".../etc/rc.d/bacula_fd"
+    ".../etc/rc.d/bacula-dir" to ".../etc/rc.d/bacula_dir"
+    ".../etc/rc.d/bacula-sd"  to ".../etc/rc.d/bacula_sd"
+  or
+    "service bacula-fd ..."  to "service bacula_fd ..."
+    "service bacula-dir ..." to "service bacula_dir ..."
+    "service bacula-sd ..."  to "service bacula_sd ..."
+
 20240704:
   AFFECTS: net/xrdp and x11-drivers/xorgxrdp
   AUTHOR: meta@FreeBSD.org
