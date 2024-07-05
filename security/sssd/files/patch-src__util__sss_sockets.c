@@ -1,6 +1,6 @@
---- src/util/sss_sockets.c.orig	2020-03-17 13:31:28.000000000 +0000
-+++ src/util/sss_sockets.c	2020-10-22 19:39:46.454834000 +0100
-@@ -120,14 +120,16 @@
+--- src/util/sss_sockets.c.orig	2020-03-17 13:31:28 UTC
++++ src/util/sss_sockets.c
+@@ -120,14 +120,16 @@ static errno_t set_fd_common_opts(int fd, int timeout)
          }
  
          milli = timeout * 1000; /* timeout in milliseconds */
@@ -25,7 +25,7 @@
      }
  
      return EOK;
-@@ -230,7 +232,7 @@
+@@ -230,7 +232,7 @@ static void sssd_async_connect_done(struct tevent_cont
  
      talloc_zfree(fde);
  
@@ -34,7 +34,7 @@
          tevent_req_done(req);
      } else {
          ret = errno;
-@@ -313,7 +315,7 @@
+@@ -313,7 +315,7 @@ struct tevent_req *sssd_async_socket_init_send(TALLOC_
            "Using file descriptor [%d] for the connection.\n", state->sd);
  
      subreq = sssd_async_connect_send(state, ev, state->sd,

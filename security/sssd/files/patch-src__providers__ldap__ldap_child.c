@@ -1,8 +1,6 @@
-diff --git src/providers/ldap/ldap_child.c src/providers/ldap/ldap_child.c
-index 368bb91e1..1bc86ecb5 100644
---- src/providers/ldap/ldap_child.c
+--- src/providers/ldap/ldap_child.c.orig	2020-03-17 13:31:28 UTC
 +++ src/providers/ldap/ldap_child.c
-@@ -324,14 +324,14 @@ static krb5_error_code ldap_child_get_tgt_sync(TALLOC_CTX *memctx,
+@@ -324,14 +324,14 @@ static krb5_error_code ldap_child_get_tgt_sync(TALLOC_
              full_princ = talloc_strdup(tmp_ctx, princ_str);
          }
      } else {

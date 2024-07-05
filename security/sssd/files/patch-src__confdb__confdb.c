@@ -1,6 +1,4 @@
-diff --git src/confdb/confdb.c src/confdb/confdb.c
-index e55f88e4e..81fd3417a 100644
---- src/confdb/confdb.c
+--- src/confdb/confdb.c.orig	2020-03-17 13:31:28 UTC
 +++ src/confdb/confdb.c
 @@ -28,6 +28,11 @@
  #include "util/strtonum.h"

@@ -34,8 +34,8 @@ lib/nss_sss.so.2.0.0
 lib/pam_sss.so
 %%PYTHON_SITELIBDIR%%/SSSDConfig-1.16.5-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/SSSDConfig/__init__.py
-%%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/ipachangeconf.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/ipachangeconf%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/SSSDConfig/ipachangeconf.py
 %%PYTHON_SITELIBDIR%%/pyhbac.so
 %%PYTHON_SITELIBDIR%%/pysss.so
@@ -107,9 +107,9 @@ share/man/de/man8/sss_userdel.8.gz
 share/man/de/man8/sss_usermod.8.gz
 share/man/de/man8/sssd.8.gz
 share/man/es/man5/sssd-ldap.5.gz
-share/man/es/man5/sssd.conf.5.gz
 share/man/es/man5/sssd-simple.5.gz
 share/man/es/man5/sssd-sudo.5.gz
+share/man/es/man5/sssd.conf.5.gz
 share/man/es/man8/pam_sss.8.gz
 share/man/es/man8/sss_groupadd.8.gz
 share/man/es/man8/sss_groupdel.8.gz
@@ -179,7 +179,7 @@ share/man/man8/sssd_krb5_locator_plugin.8.gz
 share/man/nl/man8/sss_groupmod.8.gz
 share/man/pt/man8/sss_groupdel.8.gz
 share/man/pt/man8/sss_groupmod.8.gz
-share/man/sv/man5/sssd.conf.5.gz
+share/man/sv/man5/sss-certmap.5.gz
 share/man/sv/man5/sssd-ad.5.gz
 share/man/sv/man5/sssd-ifp.5.gz
 share/man/sv/man5/sssd-ipa.5.gz
@@ -187,7 +187,7 @@ share/man/sv/man5/sssd-krb5.5.gz
 share/man/sv/man5/sssd-ldap.5.gz
 share/man/sv/man5/sssd-simple.5.gz
 share/man/sv/man5/sssd-sudo.5.gz
-share/man/sv/man5/sss-certmap.5.gz
+share/man/sv/man5/sssd.conf.5.gz
 share/man/sv/man8/pam_sss.8.gz
 share/man/sv/man8/sss_cache.8.gz
 share/man/sv/man8/sss_debuglevel.8.gz

@@ -1,6 +1,4 @@
-diff --git src/tests/dlopen-tests.c src/tests/dlopen-tests.c
-index 9a5d3597f..4b469726b 100644
---- src/tests/dlopen-tests.c
+--- src/tests/dlopen-tests.c.orig	2020-03-17 13:31:28 UTC
 +++ src/tests/dlopen-tests.c
 @@ -44,7 +44,7 @@ struct so {
      { "libipa_hbac.so", { LIBPFX"libipa_hbac.so", NULL } },

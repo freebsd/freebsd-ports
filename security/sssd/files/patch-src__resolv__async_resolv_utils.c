@@ -1,6 +1,4 @@
-diff --git src/resolv/async_resolv_utils.c src/resolv/async_resolv_utils.c
-index f86181b91..25323cf7a 100644
---- src/resolv/async_resolv_utils.c
+--- src/resolv/async_resolv_utils.c.orig	2020-03-17 13:31:28 UTC
 +++ src/resolv/async_resolv_utils.c
 @@ -45,7 +45,7 @@ resolv_get_domain_send(TALLOC_CTX *mem_ctx,
      struct resolv_get_domain_state *state = NULL;

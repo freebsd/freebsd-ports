@@ -1,6 +1,4 @@
-diff --git src/providers/ipa/ipa_common.c src/providers/ipa/ipa_common.c
-index 17d14e6b0..681ac8615 100644
---- src/providers/ipa/ipa_common.c
+--- src/providers/ipa/ipa_common.c.orig	2020-03-17 13:31:28 UTC
 +++ src/providers/ipa/ipa_common.c
 @@ -49,7 +49,7 @@ int ipa_get_options(TALLOC_CTX *memctx,
      char *realm;

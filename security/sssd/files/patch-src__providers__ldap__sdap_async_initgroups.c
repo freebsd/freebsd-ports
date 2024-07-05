@@ -1,8 +1,6 @@
-diff --git src/providers/ldap/sdap_async_initgroups.c src/providers/ldap/sdap_async_initgroups.c
-index 620782b6f..9831ac1d6 100644
---- src/providers/ldap/sdap_async_initgroups.c
+--- src/providers/ldap/sdap_async_initgroups.c.orig	2020-03-17 13:31:28 UTC
 +++ src/providers/ldap/sdap_async_initgroups.c
-@@ -45,6 +45,7 @@ errno_t sdap_add_incomplete_groups(struct sysdb_ctx *sysdb,
+@@ -45,6 +45,7 @@ errno_t sdap_add_incomplete_groups(struct sysdb_ctx *s
      const char *uuid = NULL;
      char **missing;
      gid_t gid;
@@ -10,7 +8,7 @@ index 620782b6f..9831ac1d6 100644
      int ret;
      errno_t sret;
      bool in_transaction = false;
-@@ -146,7 +147,8 @@ errno_t sdap_add_incomplete_groups(struct sysdb_ctx *sysdb,
+@@ -146,7 +147,8 @@ errno_t sdap_add_incomplete_groups(struct sysdb_ctx *s
  
                      /* Convert the SID into a UNIX group ID */
                      ret = sdap_idmap_sid_to_unix(opts->idmap_ctx, sid_str,
@@ -20,7 +18,7 @@ index 620782b6f..9831ac1d6 100644
                      if (ret == EOK) {
                          DEBUG(SSSDBG_TRACE_INTERNAL,
                                "Group [%s] has mapped gid [%lu]\n",
-@@ -3305,6 +3307,7 @@ static void sdap_get_initgr_done(struct tevent_req *subreq)
+@@ -3305,6 +3307,7 @@ static void sdap_get_initgr_done(struct tevent_req *su
      int ret;
      TALLOC_CTX *tmp_ctx;
      gid_t primary_gid;
@@ -28,7 +26,7 @@ index 620782b6f..9831ac1d6 100644
      char *gid;
      char *sid_str;
      char *dom_sid_str;
-@@ -3411,8 +3414,9 @@ static void sdap_get_initgr_done(struct tevent_req *subreq)
+@@ -3411,8 +3414,9 @@ static void sdap_get_initgr_done(struct tevent_req *su
  
          /* Convert the SID into a UNIX group ID */
          ret = sdap_idmap_sid_to_unix(opts->idmap_ctx, group_sid_str,

@@ -1,6 +1,4 @@
-diff --git src/util/crypto/libcrypto/crypto_sha512crypt.c src/util/crypto/libcrypto/crypto_sha512crypt.c
-index 2275ccd96..c1e418917 100644
---- src/util/crypto/libcrypto/crypto_sha512crypt.c
+--- src/util/crypto/libcrypto/crypto_sha512crypt.c.orig	2020-03-17 13:31:28 UTC
 +++ src/util/crypto/libcrypto/crypto_sha512crypt.c
 @@ -30,6 +30,13 @@
  

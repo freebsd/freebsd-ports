@@ -1,6 +1,6 @@
---- src/util/util.c	2020-10-20 19:31:51.466783000 +0100
-+++ src/util/util.c	2020-10-20 19:33:20.832098000 +0100
-@@ -830,6 +830,19 @@
+--- src/util/util.c.orig	2020-03-17 13:31:28 UTC
++++ src/util/util.c
+@@ -830,6 +830,19 @@ errno_t sss_fd_nonblocking(int fd)
      return EOK;
  }
  

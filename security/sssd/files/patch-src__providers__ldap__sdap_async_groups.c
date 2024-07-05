@@ -1,6 +1,4 @@
-diff --git src/providers/ldap/sdap_async_groups.c src/providers/ldap/sdap_async_groups.c
-index 09e15bc3d..c74e4c3ea 100644
---- src/providers/ldap/sdap_async_groups.c
+--- src/providers/ldap/sdap_async_groups.c.orig	2020-03-17 13:31:28 UTC
 +++ src/providers/ldap/sdap_async_groups.c
 @@ -505,6 +505,7 @@ static int sdap_save_group(TALLOC_CTX *memctx,
      struct sysdb_attrs *group_attrs;
