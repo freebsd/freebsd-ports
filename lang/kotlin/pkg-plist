@@ -46,12 +46,11 @@ bin/kotlinc-jvm
 %%DATADIR%%/lib/kotlin-stdlib-jdk8-sources.jar
 %%DATADIR%%/lib/kotlin-stdlib-jdk8.jar
 %%DATADIR%%/lib/kotlin-stdlib-js-sources.jar
-%%DATADIR%%/lib/kotlin-stdlib-js.jar
 %%DATADIR%%/lib/kotlin-stdlib-js.klib
 %%DATADIR%%/lib/kotlin-stdlib-sources.jar
 %%DATADIR%%/lib/kotlin-stdlib.jar
 %%DATADIR%%/lib/kotlin-test-js-sources.jar
-%%DATADIR%%/lib/kotlin-test-js.jar
+%%DATADIR%%/lib/kotlin-test-js.klib
 %%DATADIR%%/lib/kotlin-test-junit-sources.jar
 %%DATADIR%%/lib/kotlin-test-junit.jar
 %%DATADIR%%/lib/kotlin-test-junit5-sources.jar
@@ -67,6 +66,7 @@ bin/kotlinc-jvm
 %%DATADIR%%/lib/noarg-compiler-plugin.jar
 %%DATADIR%%/lib/parcelize-compiler.jar
 %%DATADIR%%/lib/parcelize-runtime.jar
+%%DATADIR%%/lib/power-assert-compiler-plugin.jar
 %%DATADIR%%/lib/sam-with-receiver-compiler-plugin.jar
 %%DATADIR%%/lib/scripting-compiler.jar
 %%DATADIR%%/lib/trove4j.jar
