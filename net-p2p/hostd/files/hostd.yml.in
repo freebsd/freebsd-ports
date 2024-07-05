@@ -1,0 +1,28 @@
+directory: /var/lib/hostd
+recoveryPhrase: indicate nature buzz route rude embody engage confirm aspect potato weapon bid
+autoOpenWebUI: true
+http:
+  address: :9980
+  password: sia is cool
+consensus:
+  gatewayAddress: :9981
+  bootstrap: true
+explorer:
+    url: https://api.siascan.com
+rhp2:
+  address: :9982
+rhp3:
+  tcp: :9983
+  websocket: :9984
+log:
+  level: info # global log level
+  stdout:
+    enabled: true # enable logging to stdout
+    level: info # log level for console logger
+    format: human # log format (human, json)
+    enableANSI: false # enable ANSI color codes (disabled on Windows)
+  file:
+    enabled: false # enable logging to file
+    level: info # log level for file logger
+    path: /var/log/hostd.log # the path of the log file
+    format: json # log format (human, json)
