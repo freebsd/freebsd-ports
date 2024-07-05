@@ -279,10 +279,10 @@ lib/php/build/phpize.m4
 lib/php/build/pkg.m4
 lib/php/build/run-tests.php
 lib/php/build/shtool
-%%CGI%%man/man1/php-cgi.1.gz
-man/man1/php-config.1.gz
-%%CLI%%man/man1/php.1.gz
-%%PHPDBG%%man/man1/phpdbg.1.gz
-man/man1/phpize.1.gz
-%%FPM%%man/man8/php-fpm.8.gz
+%%CGI%%share/man/man1/php-cgi.1.gz
+share/man/man1/php-config.1.gz
+%%CLI%%share/man/man1/php.1.gz
+%%PHPDBG%%share/man/man1/phpdbg.1.gz
+share/man/man1/phpize.1.gz
+%%FPM%%share/man/man8/php-fpm.8.gz
 %%FPM%%share/php/fpm/status.html
