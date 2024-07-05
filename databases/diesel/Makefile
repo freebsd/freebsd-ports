@@ -215,6 +215,10 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 
 PLIST_FILES=	bin/${PORTNAME}
 
+post-patch:
+	${CP} ${FILESDIR}/bindings_8_0_35_powerpc64_freebsd.rs \
+		${WRKSRC}/cargo-crates/mysqlclient-sys-0.4.0/bindings/
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
