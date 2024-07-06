@@ -1,6 +1,5 @@
 PORTNAME=	blosc2
-PORTVERSION=	2.6.2
-PORTREVISION=	1
+PORTVERSION=	2.7.0
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +11,7 @@ WWW=		https://github.com/Blosc/python-blosc2
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	c-blosc2>=2.14.3:archivers/c-blosc2 \
+BUILD_DEPENDS=	c-blosc2>=2.15.0:archivers/c-blosc2 \
 		cmake:devel/cmake-core \
 		ninja:devel/ninja \
 		${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
