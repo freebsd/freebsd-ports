@@ -1,6 +1,7 @@
 PORTNAME=	rustls-ffi
-PORTVERSION=	0.13.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	brnrd@FreeBSD.org
@@ -13,18 +14,22 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_ISCL=	${WRKSRC}/LICENSE-ISC
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-USES=		cargo gmake
+BUILD_DEPENDS=	cargo-cbuild:devel/cargo-c
+
+USES=		cargo
+USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rustls
 
-PLIST_FILES=	include/rustls.h \
-		lib/librustls.a
-
 do-build:
-	${MAKE_CMD} -C ${WRKSRC}
+	@${CARGO_CARGO_RUN} cbuild --verbose --verbose ${CARGO_BUILD_ARGS}
 
 do-install:
-	${MAKE_CMD} -C ${WRKSRC} DESTDIR=${STAGEDIR}/${PREFIX} install
+	@${CARGO_CARGO_RUN} cinstall --verbose --verbose \
+	    --destdir "${STAGEDIR}" \
+	    --prefix "${PREFIX}" \
+	    ${CARGO_INSTALL_ARGS}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include <bsd.port.mk>
