@@ -5142,6 +5142,7 @@
     SUBDIR += py-multitasking
     SUBDIR += py-munch
     SUBDIR += py-murmurhash
+    SUBDIR += py-mutf8
     SUBDIR += py-mutmut
     SUBDIR += py-mygpoclient
     SUBDIR += py-mypy
