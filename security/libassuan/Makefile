@@ -1,5 +1,5 @@
 PORTNAME=	libassuan
-PORTVERSION=	2.5.7
+PORTVERSION=	3.0.1
 CATEGORIES=	security devel
 MASTER_SITES=	GNUPG
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libgpg-error.so:security/libgpg-error
 
-USES=		libtool tar:bzip2
+USES=		libtool pathfix tar:bzip2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
