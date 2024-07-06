@@ -1,5 +1,5 @@
 PORTNAME=	datadog-ci
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
