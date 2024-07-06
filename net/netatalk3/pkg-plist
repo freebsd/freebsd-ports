@@ -4,6 +4,7 @@ bin/afppasswd
 %%DBUS%%bin/afpstats
 bin/apple_dump
 bin/asip-status
+bin/cnid2_create
 bin/dbd
 bin/macusers
 bin/netatalk-config
@@ -37,7 +38,6 @@ include/atalk/acl.h
 include/atalk/adouble.h
 include/atalk/afp.h
 include/atalk/bstrlib.h
-include/atalk/cast.h
 include/atalk/cnid.h
 include/atalk/dictionary.h
 include/atalk/ea.h
