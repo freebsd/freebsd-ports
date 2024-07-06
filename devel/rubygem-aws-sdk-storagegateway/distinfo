@@ -1,3 +1,3 @@
-TIMESTAMP = 1718580222
-SHA256 (rubygem/aws-sdk-storagegateway-1.87.0.gem) = c0b1307e4e6f07b766ac6aa3cc8613e45a774578d0ed0d11ca1573566a40765a
-SIZE (rubygem/aws-sdk-storagegateway-1.87.0.gem) = 131072
+TIMESTAMP = 1720023608
+SHA256 (rubygem/aws-sdk-storagegateway-1.89.0.gem) = 418a38d70b1f5b726237636da67658b02beef32b39ab0d2b823b911317defc0b
+SIZE (rubygem/aws-sdk-storagegateway-1.89.0.gem) = 131584
