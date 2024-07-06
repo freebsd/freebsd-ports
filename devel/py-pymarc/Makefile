@@ -1,5 +1,6 @@
 PORTNAME=	pymarc
 PORTVERSION=	5.1.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
@@ -10,9 +11,13 @@ COMMENT=	Read Write And Modify MARC Bibliographic Data
 WWW=		https://gitlab.com/pymarc/pymarc
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils unittest
+USE_PYTHON=	autoplist concurrent pep517 unittest
 
 NO_ARCH=	yes
 
