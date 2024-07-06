@@ -209,6 +209,7 @@ libexec/apache24/mod_log_config.so
 %%STATUS%%libexec/apache24/mod_status.so
 %%SUBSTITUTE%%libexec/apache24/mod_substitute.so
 %%SUEXEC%%libexec/apache24/mod_suexec.so
+%%TLS%%libexec/apache24/mod_tls.so
 %%UNIQUE_ID%%libexec/apache24/mod_unique_id.so
 libexec/apache24/mod_unixd.so
 %%USERDIR%%libexec/apache24/mod_userdir.so
