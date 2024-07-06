@@ -156,7 +156,7 @@ SUBSTITUTE_DESC=		Response content rewrite-like filtering
 SUEXEC_DESC=			Set uid and gid for spawned processes
 SUEXEC_SYSLOG_DESC=		Enable syslog for suexec
 
-TLS_DESC=			TLS support via memory-safe rustls library (Exprimental)
+TLS_DESC=			TLS support via memory-safe rustls library (Experimental)
 
 UNIQUE_ID_DESC=			Per-request unique ids
 UNIXD_DESC=			(required) security for Unix-family platforms

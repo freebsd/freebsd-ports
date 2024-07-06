@@ -1,6 +1,6 @@
 PORTNAME=	apache24
 PORTVERSION=	2.4.61
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	APACHE_HTTPD
 DISTNAME=	httpd-${PORTVERSION}
@@ -94,7 +94,7 @@ SOCACHE_DC_LIB_DEPENDS=		libdistcache.so:security/distcache
 SSL_CONFIGURE_ON=		--with-ssl=${OPENSSLBASE}
 SSL_USES=			ssl
 TLS_CONFIGURE_ON=		--with-rustls=${LOCALBASE}
-TLS_BUILD_DEPENDS=		${LOCALBASE}/lib/librustls.a:security/rustls-ffi
+TLS_LIB_DEPENDS=		librustls.so:security/rustls-ffi
 SUEXEC_SYSLOG_CONFIGURE_ON=	--without-suexec-logfile --with-suexec-syslog
 XML2ENC_USE=			GNOME=libxml2
 XML2ENC_USES=			gnome
