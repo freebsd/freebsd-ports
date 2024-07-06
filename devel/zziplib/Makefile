@@ -1,10 +1,7 @@
 PORTNAME=	zziplib
-PORTVERSION=	0.13.76
+PORTVERSION=	0.13.77
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/gdraheim/zziplib/commit/
-PATCHFILES=	081b8ba4d0417abe6c2d997f5198e23b7fdb2977.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library to provide transparent read access to zipped files
