@@ -4711,6 +4711,7 @@
     SUBDIR += py-dotty-dict
     SUBDIR += py-dpcontracts
     SUBDIR += py-dtfabric
+    SUBDIR += py-dukpy
     SUBDIR += py-dulwich
     SUBDIR += py-dunamai
     SUBDIR += py-durus
