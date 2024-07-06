@@ -11,6 +11,10 @@ WWW=		https://www.nsnam.org/
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to compile
+DEPRECATED=	Outdated and unmaintained for years
+EXPIRATION_DATE=2024-08-06
+
 USES=		compiler:c++11-lib gettext gnome pkgconfig python sqlite \
 		tar:bzip2 waf
 USE_GNOME=	libxml2
