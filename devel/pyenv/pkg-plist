@@ -118,6 +118,7 @@ libexec/pyenv-plugins/python-build/share/python-build/3.12.3
 libexec/pyenv-plugins/python-build/share/python-build/3.12.4
 libexec/pyenv-plugins/python-build/share/python-build/3.13-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.13.0b3
+libexec/pyenv-plugins/python-build/share/python-build/3.13.0b3t
 libexec/pyenv-plugins/python-build/share/python-build/3.13t-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.14-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.14t-dev
@@ -305,6 +306,7 @@ libexec/pyenv-plugins/python-build/share/python-build/anaconda3-2023.07-1
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-2023.07-2
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-2023.09-0
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-2024.02-1
+libexec/pyenv-plugins/python-build/share/python-build/anaconda3-2024.06-1
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-4.0.0
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-4.1.0
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-4.1.1
