@@ -1,5 +1,5 @@
 PORTNAME=	pinentry
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	FLTK version of the GnuPG password dialog
 
