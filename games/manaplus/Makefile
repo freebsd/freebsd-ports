@@ -11,6 +11,9 @@ WWW=		https://www.manaplus.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Fails to build with libxml2 2.13.2 (PR 279705)
+EXPIRATION_DATE=2024-08-06
+
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libpng.so:graphics/png \
 		libcurl.so:ftp/curl
