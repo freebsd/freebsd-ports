@@ -33,9 +33,9 @@ of short-living parent. Only mark the master process that accepts
 connections, do not protect connection handlers spawned from inetd.
 
 
---- sshd.c.orig	2021-04-27 11:49:55.540744000 -0700
-+++ sshd.c	2021-04-27 11:50:20.239225000 -0700
-@@ -46,6 +46,7 @@
+--- sshd.c.orig	2024-06-30 21:36:28.000000000 -0700
++++ sshd.c	2024-07-01 13:44:05.739756000 -0700
+@@ -28,6 +28,7 @@
  
  #include <sys/types.h>
  #include <sys/ioctl.h>
@@ -43,7 +43,7 @@ connections, do not protect connection handlers spawned from inetd.
  #include <sys/socket.h>
  #ifdef HAVE_SYS_STAT_H
  # include <sys/stat.h>
-@@ -85,6 +86,13 @@
+@@ -69,6 +70,13 @@
  #include <prot.h>
  #endif
  
@@ -56,8 +56,8 @@ connections, do not protect connection handlers spawned from inetd.
 +
  #include "xmalloc.h"
  #include "ssh.h"
- #include "ssh2.h"
-@@ -2007,7 +2015,30 @@ main(int ac, char **av)
+ #include "sshpty.h"
+@@ -1671,7 +1679,30 @@ main(int ac, char **av)
  	for (i = 0; i < options.num_log_verbose; i++)
  		log_verbose_add(options.log_verbose[i]);
  
@@ -88,14 +88,14 @@ connections, do not protect connection handlers spawned from inetd.
  	 * If not in debugging mode, not started from inetd and not already
  	 * daemonized (eg re-exec via SIGHUP), disconnect from the controlling
  	 * terminal, and fork.  The original process exits.
-@@ -2022,6 +2053,10 @@ main(int ac, char **av)
- 	}
+@@ -1687,6 +1718,10 @@ main(int ac, char **av)
  	/* Reinitialize the log (because of the fork above). */
  	log_init(__progname, options.log_level, options.log_facility, log_stderr);
-+
+ 
 + 	/* Avoid killing the process in high-pressure swapping environments. */
 + 	if (!inetd_flag && madvise(NULL, 0, MADV_PROTECT) != 0)
 + 		debug("madvise(): %.200s", strerror(errno));
- 
++
  	/*
  	 * Chdir to the root directory so that the current disk can be
+ 	 * unmounted if desired.

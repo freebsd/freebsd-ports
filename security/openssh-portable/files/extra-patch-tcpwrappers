@@ -33,19 +33,11 @@ index 289e13d..e6a900b 100644
  .Xr login.conf 5 ,
  .Xr moduli 5 ,
  .Xr sshd_config 5 ,
-diff --git sshd.c sshd.c
-index 0ade557..045f149 100644
---- sshd.c.orig	2018-04-04 15:34:54.865684000 -0700
-+++ sshd.c	2018-04-04 15:40:20.964130000 -0700
-@@ -1,4 +1,4 @@
--/* $OpenBSD: sshd.c,v 1.506 2018/03/03 03:15:51 djm Exp $ */
-+/* $OpenBSD: sshd.c,v 1.422 2014/03/27 23:01:27 markus Exp $ */
- /*
-  * Author: Tatu Ylonen <ylo@cs.hut.fi>
-  * Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
-@@ -131,6 +131,13 @@
- #include "version.h"
- #include "ssherr.h"
+--- sshd-session.c.orig	2024-07-01 13:26:10.677919000 -0700
++++ sshd-session.c	2024-07-01 13:26:58.873906000 -0700
+@@ -110,6 +110,13 @@
+ #include "srclimit.h"
+ #include "dh.h"
  
 +#ifdef LIBWRAP
 +#include <tcpd.h>
@@ -57,7 +49,7 @@ index 0ade557..045f149 100644
  /* Re-exec fds */
  #define REEXEC_DEVCRYPTO_RESERVED_FD	(STDERR_FILENO + 1)
  #define REEXEC_STARTUP_PIPE_FD		(STDERR_FILENO + 2)
-@@ -2072,6 +2079,25 @@ main(int ac, char **av)
+@@ -1256,7 +1263,26 @@ main(int ac, char **av)
  #endif
  
  	rdomain = ssh_packet_rdomain_in(ssh);
@@ -68,7 +60,7 @@ index 0ade557..045f149 100644
 +	/* Check whether logins are denied from this host. */
 +	if (ssh_packet_connection_is_on_socket(ssh)) {
 +		struct request_info req;
-+
+ 
 +		request_init(&req, RQ_DAEMON, __progname, RQ_FILE, sock_in, 0);
 +		fromhost(&req);
 +
@@ -80,9 +72,10 @@ index 0ade557..045f149 100644
 +		}
 +	}
 +#endif /* LIBWRAP */
- 
++
  	/* Log the connection. */
  	laddr = get_local_ipaddr(sock_in);
+ 	verbose("Connection from %s port %d on %s port %d%s%s%s",
 --- configure.ac.orig	2022-02-23 03:31:11.000000000 -0800
 +++ configure.ac	2022-03-02 12:47:49.958341000 -0800
 @@ -1599,6 +1599,62 @@ else

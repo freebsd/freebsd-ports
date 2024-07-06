@@ -905,9 +905,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  .It Fl r
  Recursively copy entire directories when uploading and downloading.
  Note that
---- work/openssh/ssh.c.orig	2021-04-15 20:55:25.000000000 -0700
-+++ work/openssh/ssh.c	2021-04-28 14:51:04.682167000 -0700
-@@ -1027,6 +1027,14 @@ main(int ac, char **av)
+--- work/openssh/ssh.c.orig	2024-06-30 21:36:28.000000000 -0700
++++ work/openssh/ssh.c	2024-07-01 13:58:31.555859000 -0700
+@@ -1070,6 +1070,14 @@ main(int ac, char **av)
  			break;
  		case 'T':
  			options.request_tty = REQUEST_TTY_NO;
@@ -922,7 +922,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  			break;
  		case 'o':
  			line = xstrdup(optarg);
-@@ -2056,6 +2064,78 @@ ssh_session2_setup(struct ssh *ssh, int id, int succes
+@@ -2159,6 +2167,78 @@ ssh_session2_setup(struct ssh *ssh, int id, int succes
  	    NULL, fileno(stdin), command, environ);
  }
  
@@ -1001,9 +1001,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  /* open new channel for a session */
  static int
  ssh_session2_open(struct ssh *ssh)
-@@ -2082,9 +2162,17 @@ ssh_session2_open(struct ssh *ssh)
- 	if (!isatty(err))
- 		set_nonblock(err);
+@@ -2177,9 +2257,17 @@ ssh_session2_open(struct ssh *ssh)
+ 	if (in == -1 || out == -1 || err == -1)
+ 		fatal("dup() in/out/err failed");
  
 +#ifdef HPN_ENABLED
 +	window = options.hpn_buffer_size;
@@ -1019,9 +1019,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  		window >>= 1;
  		packetmax >>= 1;
  	}
-@@ -2093,6 +2181,12 @@ ssh_session2_open(struct ssh *ssh)
+@@ -2188,6 +2276,12 @@ ssh_session2_open(struct ssh *ssh)
  	    window, packetmax, CHAN_EXTENDED_WRITE,
- 	    "client-session", /*nonblock*/0);
+ 	    "client-session", CHANNEL_NONBLOCK_STDIO);
  
 +#ifdef HPN_ENABLED
 +	if (options.tcp_rcv_buf_poll > 0 && !options.hpn_disabled) {
@@ -1032,9 +1032,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	debug3_f("channel_new: %d", c->self);
  
  	channel_send_open(ssh, c->self);
-@@ -2108,6 +2202,15 @@ ssh_session2(struct ssh *ssh, const struct ssh_conn_in
+@@ -2203,6 +2297,15 @@ ssh_session2(struct ssh *ssh, const struct ssh_conn_in
  {
- 	int r, id = -1;
+ 	int r, interactive, id = -1;
  	char *cp, *tun_fwd_ifname = NULL;
 +
 +#ifdef HPN_ENABLED
@@ -1170,9 +1170,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	if (ssh_packet_connection_is_on_socket(ssh)) {
  		verbose("Authenticated to %s ([%s]:%d) using \"%s\".", host,
  		    ssh_remote_ipaddr(ssh), ssh_remote_port(ssh),
---- work/openssh/sshd.c.orig	2021-09-08 10:00:01.411822000 -0700
-+++ work/openssh/sshd.c	2021-09-08 10:03:02.820813000 -0700
-@@ -1042,6 +1042,10 @@ listen_on_addrs(struct listenaddr *la)
+--- work/openssh/sshd.c.orig	2024-06-30 21:36:28.000000000 -0700
++++ work/openssh/sshd.c	2024-07-01 14:03:40.471948000 -0700
+@@ -742,6 +742,10 @@ listen_on_addrs(struct listenaddr *la)
  	int ret, listen_sock;
  	struct addrinfo *ai;
  	char ntop[NI_MAXHOST], strport[NI_MAXSERV];
@@ -1183,21 +1183,21 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  	for (ai = la->addrs; ai; ai = ai->ai_next) {
  		if (ai->ai_family != AF_INET && ai->ai_family != AF_INET6)
-@@ -1087,6 +1091,13 @@ listen_on_addrs(struct listenaddr *la)
+@@ -786,6 +790,13 @@ listen_on_addrs(struct listenaddr *la)
+ 			sock_set_v6only(listen_sock);
  
  		debug("Bind to port %s on %s.", strport, ntop);
- 
++
 +#ifdef HPN_ENABLED
 +		getsockopt(listen_sock, SOL_SOCKET, SO_RCVBUF,
 +				   &socksize, &socksizelen);
 +		debug("Server TCP RWIN socket size: %d", socksize);
 +		debug("HPN Buffer Size: %d", options.hpn_buffer_size);
 +#endif
-+
+ 
  		/* Bind the socket to the desired port. */
  		if (bind(listen_sock, ai->ai_addr, ai->ai_addrlen) == -1) {
- 			error("Bind to port %s on %s failed: %.200s.",
-@@ -1760,6 +1771,15 @@ main(int ac, char **av)
+@@ -1409,6 +1420,15 @@ main(int ac, char **av)
  	/* Fill in default values for those options not explicitly set. */
  	fill_default_server_options(&options);
  
@@ -1213,9 +1213,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	/* Check that options are sensible */
  	if (options.authorized_keys_command_user == NULL &&
  	    (options.authorized_keys_command != NULL &&
-@@ -2216,6 +2236,11 @@ main(int ac, char **av)
- 	    rdomain == NULL ? "" : "\"");
- 	free(laddr);
+@@ -1742,6 +1762,11 @@ main(int ac, char **av)
+ 	/* This is the child processing a new connection. */
+ 	setproctitle("%s", "[accepted]");
  
 +#ifdef HPN_ENABLED
 +	/* set the HPN options for the child */
@@ -1223,9 +1223,11 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +#endif
 +
  	/*
- 	 * We don't want to listen forever unless the other side
- 	 * successfully authenticates itself.  So we set up an alarm which is
-@@ -2229,7 +2254,7 @@ main(int ac, char **av)
+ 	 * Create a new session and process group since the 4.4BSD
+ 	 * setlogin() affects the entire process group.  We don't
+--- work.clean/openssh-9.8p1/sshd-session.c.orig	2024-07-01 13:54:25.745441000 -0700
++++ work/openssh-9.8p1/sshd-session.c	2024-07-01 13:54:57.335695000 -0700
+@@ -1305,7 +1305,7 @@ main(int ac, char **av)
  		alarm(options.login_grace_time);
  
  	if ((r = kex_exchange_identification(ssh, -1,
@@ -1234,18 +1236,17 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  		sshpkt_fatal(ssh, r, "banner exchange");
  
  	ssh_packet_set_nonblocking(ssh);
-@@ -2392,6 +2417,11 @@ do_ssh2_kex(struct ssh *ssh)
- 	char *myproposal[PROPOSAL_MAX] = { KEX_SERVER };
+@@ -1444,6 +1444,10 @@ do_ssh2_kex(struct ssh *ssh)
  	struct kex *kex;
  	int r;
-+
+ 
 +#ifdef NONE_CIPHER_ENABLED
 +        if (options.none_enabled == 1)
 +                debug ("WARNING: None cipher enabled");
 +#endif
- 
- 	myproposal[PROPOSAL_KEX_ALGS] = compat_kex_proposal(ssh,
- 	    options.kex_algorithms);
+ 	if (options.rekey_limit || options.rekey_interval)
+ 		ssh_packet_set_rekey_limits(ssh, options.rekey_limit,
+ 		    options.rekey_interval);
 --- work.clean/openssh-6.8p1/sshd_config	2015-04-01 22:07:18.248858000 -0500
 +++ work/openssh-6.8p1/sshd_config	2015-04-01 22:16:49.932279000 -0500
 @@ -111,6 +111,20 @@ AuthorizedKeysFile	.ssh/authorized_keys

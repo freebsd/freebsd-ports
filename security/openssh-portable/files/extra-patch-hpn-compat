@@ -31,12 +31,12 @@ r294563 was incomplete; re-add the client-side options as well.
  
  	{ NULL, oBadOption }
  };
---- servconf.c.orig	2023-12-19 17:11:52.320491000 -0800
-+++ servconf.c	2023-12-19 17:12:43.950318000 -0800
-@@ -693,6 +693,10 @@
- 	{ "requiredrsasize", sRequiredRSASize, SSHCFG_ALL },
+--- servconf.c.orig	2024-06-30 21:36:28.000000000 -0700
++++ servconf.c	2024-07-01 13:29:27.091708000 -0700
+@@ -739,6 +739,10 @@ static struct {
  	{ "channeltimeout", sChannelTimeout, SSHCFG_ALL },
  	{ "unusedconnectiontimeout", sUnusedConnectionTimeout, SSHCFG_ALL },
+ 	{ "sshdsessionpath", sSshdSessionPath, SSHCFG_GLOBAL },
 +	{ "noneenabled", sUnsupported, SSHCFG_ALL },
 +	{ "hpndisabled", sDeprecated, SSHCFG_ALL },
 +	{ "hpnbuffersize", sDeprecated, SSHCFG_ALL },
