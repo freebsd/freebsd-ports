@@ -1,3 +1,5 @@
+https://github.com/facebook/rocksdb/commit/b03d4156609dd27f65ad199139eaae722c876b8c
+
 --- db_stress_tool/db_stress_common.cc.orig	2024-05-08 23:03:15 UTC
 +++ db_stress_tool/db_stress_common.cc
 @@ -200,7 +200,7 @@ void CompressedCacheSetCapacityThread(void* v) {
