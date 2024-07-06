@@ -26,6 +26,7 @@ bin/controlchan
 bin/convdate
 bin/ctlinnd
 bin/cvtbatch
+bin/delayer
 bin/docheckgroups
 bin/expire
 bin/expireover
@@ -166,6 +167,7 @@ include/inn/xmalloc.h
 include/inn/xwrite.h
 lib/perl/INN/Config.pm
 lib/perl/INN/Utils/Shlock.pm
+lib/perl/INN/ovsqlite_client.pm
 lib/innreport_inn.pm
 lib/innreport-display.conf
 lib/innshellvars
@@ -186,6 +188,7 @@ lib/libinnstorage.so.%%LIBSTORAGEVER_LONG%%
 @comment --------------------------------------------------------------
 @cwd
 share/man/man1/convdate.1.gz
+share/man/man1/delayer.1.gz
 share/man/man1/fastrm.1.gz
 share/man/man1/gencancel.1.gz
 share/man/man1/getlist.1.gz
@@ -203,6 +206,7 @@ share/man/man1/simpleftp.1.gz
 share/man/man1/sm.1.gz
 share/man/man3/INN::Config.3pm.gz
 share/man/man3/INN::Utils::Shlock.3pm.gz
+share/man/man3/INN::ovsqlite_client.3pm.gz
 share/man/man3/libinn_clientlib.3.gz
 share/man/man3/libinn_dbz.3.gz
 share/man/man3/libinn_inndcomm.3.gz
