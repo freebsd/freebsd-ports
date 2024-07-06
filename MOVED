@@ -3378,3 +3378,4 @@ graphics/intel-backlight||2024-07-01|Has expired: Use backlight(8)
 www/yarn-node21||2024-07-02|Removed, part of www/node21
 www/npm-node21||2024-07-02|Removed, part of www/node21
 security/bcrypt||2024-07-02|Has expired: Hasn't seen updates in 15 years, insecure Blowfish ECB mode, unauthenticated encryption
+devel/py-stackexchange|devel/py-py-stackexchange|2024-07-06|Move devel/py-stackexchange to devel/py-py-stackexchange

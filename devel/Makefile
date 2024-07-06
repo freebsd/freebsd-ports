@@ -5378,6 +5378,7 @@
     SUBDIR += py-py
     SUBDIR += py-py-partiql-parser
     SUBDIR += py-py-serializable
+    SUBDIR += py-py-stackexchange
     SUBDIR += py-py-ubjson
     SUBDIR += py-py3nvml
     SUBDIR += py-pyTooling
@@ -5777,7 +5778,6 @@
     SUBDIR += py-sre-yield
     SUBDIR += py-srsly
     SUBDIR += py-stack-data
-    SUBDIR += py-stackexchange
     SUBDIR += py-statgrab
     SUBDIR += py-statsd
     SUBDIR += py-stdlib-list
