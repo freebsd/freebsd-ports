@@ -5599,6 +5599,7 @@
     SUBDIR += py-python-socketio
     SUBDIR += py-python-statsd
     SUBDIR += py-python-subunit
+    SUBDIR += py-python-xcaplib
     SUBDIR += py-pythonbrew
     SUBDIR += py-pythondialog
     SUBDIR += py-pythonfinder
@@ -5988,7 +5989,6 @@
     SUBDIR += py-xarray-einstats
     SUBDIR += py-xarray-simlab
     SUBDIR += py-xattr
-    SUBDIR += py-xcaplib
     SUBDIR += py-xdg
     SUBDIR += py-xdis
     SUBDIR += py-xdoctest
