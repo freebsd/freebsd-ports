@@ -1,5 +1,5 @@
 PORTNAME=	async-websocket
-PORTVERSION=	0.26.2
+PORTVERSION=	0.27.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/license.md
 
 RUN_DEPENDS=	rubygem-async-http>=0.54<1:www/rubygem-async-http \
 		rubygem-protocol-rack>=0.5<1:www/rubygem-protocol-rack \
-		rubygem-protocol-websocket>=0.14<1:www/rubygem-protocol-websocket
+		rubygem-protocol-websocket>=0.15<1:www/rubygem-protocol-websocket
 
 USES=		gem
 
