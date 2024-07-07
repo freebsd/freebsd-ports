@@ -1,5 +1,5 @@
---- ./kd_generic.c.orig	2003-08-04 21:57:27.000000000 +0200
-+++ ./kd_generic.c	2014-08-15 18:41:14.000000000 +0200
+--- ./kd_generic.c.orig 2024-05-21 01:17:10 UTC
++++ ./kd_generic.c
 @@ -325,13 +325,13 @@
  /* create/open/close/sync */
  
