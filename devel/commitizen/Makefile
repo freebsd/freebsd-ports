@@ -19,7 +19,7 @@ PY_RDEPS=	Jinja2>=2.10.3:devel/py-Jinja2 \
 		decli>=0.6.0:devel/py-decli \
 		importlib-metadata>=4.13:devel/py-importlib-metadata \
 		packaging>=19:devel/py-packaging \
-		pyyaml>=3.08:devel/py-pyyaml
+		pyyaml>=3.08:devel/py-pyyaml \
 		prompt-toolkit>0:devel/py-prompt-toolkit \
 		questionary>=1.9:devel/py-questionary \
 		termcolor>=1.1:devel/py-termcolor \
