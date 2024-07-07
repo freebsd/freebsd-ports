@@ -1,6 +1,6 @@
 PORTNAME=	veryl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.0
+DISTVERSION=	0.11.1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -69,10 +69,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
 		clap-2.34.0 \
-		clap-4.5.7 \
-		clap_builder-4.5.7 \
+		clap-4.5.8 \
+		clap_builder-4.5.8 \
 		clap_complete-4.5.6 \
-		clap_derive-4.5.5 \
+		clap_derive-4.5.8 \
 		clap_lex-0.7.1 \
 		clru-0.6.2 \
 		codespan-reporting-0.11.1 \
@@ -101,6 +101,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		darling_core-0.20.9 \
 		darling_macro-0.20.9 \
 		dashmap-5.5.3 \
+		dashmap-6.0.1 \
 		data-encoding-2.6.0 \
 		dbus-0.9.7 \
 		debugid-0.8.0 \
@@ -260,7 +261,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \
-		log-0.4.21 \
+		log-0.4.22 \
 		lru-cache-0.1.2 \
 		lsp-types-0.94.1 \
 		mac-0.1.1 \
@@ -303,7 +304,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		parking_lot_core-0.9.10 \
 		parol-0.31.0 \
 		parol-macros-0.2.0 \
-		parol_runtime-0.24.0 \
+		parol_runtime-0.24.1 \
 		paste-1.0.15 \
 		pathdiff-0.2.1 \
 		percent-encoding-2.3.1 \
@@ -381,7 +382,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		semver-parser-0.7.0 \
 		serde-1.0.203 \
 		serde_derive-1.0.203 \
-		serde_json-1.0.117 \
+		serde_json-1.0.120 \
 		serde_regex-1.1.0 \
 		serde_repr-0.1.19 \
 		serde_spanned-0.6.6 \
@@ -476,7 +477,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		url-2.5.2 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.2 \
-		uuid-1.8.0 \
+		uuid-1.9.1 \
 		vec_map-0.8.2 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
