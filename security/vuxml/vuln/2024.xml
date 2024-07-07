@@ -1,3 +1,30 @@
+  <vuln vid="767dfb2d-3c9e-11ef-a829-5404a68ad561">
+    <topic>traefik -- Bypassing IP allow-lists via HTTP/3 early data requests</topic>
+    <affects>
+      <package>
+	<name>traefik</name>
+	<range><lt>2.11.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The traefik authors report:</p>
+	<blockquote cite="https://github.com/traefik/traefik/security/advisories/GHSA-gxrv-wf35-62w9">
+		<p>There is a vulnerability in Traefik that allows bypassing IP allow-lists via HTTP/3 early
+		   data requests in QUIC 0-RTT handshakes sent with spoofed IP addresses.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-39321</cvename>
+      <url>https://github.com/traefik/traefik/security/advisories/GHSA-gxrv-wf35-62w9</url>
+    </references>
+    <dates>
+      <discovery>2024-07-02</discovery>
+      <entry>2024-07-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5d921a8c-3a43-11ef-b611-84a93843eb75">
     <topic>Apache httpd -- source code disclosure</topic>
     <affects>
