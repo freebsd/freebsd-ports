@@ -5621,7 +5621,6 @@
     SUBDIR += py-pyxb-x
     SUBDIR += py-pyyaml
     SUBDIR += py-pyyaml-include
-    SUBDIR += py-pyyaml5
     SUBDIR += py-pyyaml_env_tag
     SUBDIR += py-pyzipper
     SUBDIR += py-q
