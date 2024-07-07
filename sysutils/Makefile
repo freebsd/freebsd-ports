@@ -657,6 +657,7 @@
     SUBDIR += kshutdown
     SUBDIR += ksystemlog
     SUBDIR += kubectl
+    SUBDIR += kubie
     SUBDIR += kubo-go
     SUBDIR += kvmclock-kmod
     SUBDIR += lava
