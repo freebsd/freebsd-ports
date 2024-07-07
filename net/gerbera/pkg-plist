@@ -12,8 +12,7 @@ bin/gerbera
 %%DATADIR%%/web/assets/theme/colors.css
 %%DATADIR%%/web/assets/theme/gerbera-logo-white.png
 %%DATADIR%%/web/assets/theme/gerbera.css
-%%DATADIR%%/web/cds.xml
-%%DATADIR%%/web/cm.xml
+%%DATADIR%%/web/assets/theme/home-bg.jpg
 %%DATADIR%%/web/disabled.html
 %%DATADIR%%/web/favicon.ico
 %%DATADIR%%/web/gerbera-config-expert.json
@@ -49,7 +48,9 @@ bin/gerbera
 %%DATADIR%%/web/js/jquery.gerbera.trail.js
 %%DATADIR%%/web/js/jquery.gerbera.tree.js
 %%DATADIR%%/web/js/jquery.gerbera.tweak.js
-%%DATADIR%%/web/mr_reg.xml
+%%DATADIR%%/web/upnp/cds.xml
+%%DATADIR%%/web/upnp/cm.xml
+%%DATADIR%%/web/upnp/mr_reg.xml
 %%DATADIR%%/web/vendor/bootstrap-4.6.2/css/bootstrap-grid.min.css
 %%DATADIR%%/web/vendor/bootstrap-4.6.2/css/bootstrap-grid.min.css.map
 %%DATADIR%%/web/vendor/bootstrap-4.6.2/css/bootstrap-reboot.min.css
