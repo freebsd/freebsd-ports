@@ -1,8 +1,8 @@
 PORTNAME=	pyked
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.1-16
-PORTREVISION=	1
 DISTVERSIONSUFFIX=	-gfcccaf8
+PORTREVISION=	2
 CATEGORIES=	science python
 #MASTER_SITES=	PYPI 0.4.1 is broken there
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}habanero>=0.6.0:www/py-habanero@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pint>=0.7.2:devel/py-pint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uncertainties>=3.0.1:math/py-uncertainties@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=3.12:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=3.12:devel/py-pyyaml@${PY_FLAVOR} \
 
 USES=		python
 USE_PYTHON=	distutils concurrent autoplist

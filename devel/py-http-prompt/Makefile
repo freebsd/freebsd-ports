@@ -1,6 +1,6 @@
 PORTNAME=	http-prompt
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=5.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}parsimonious>=0.6.2:textproc/py-parsimonious@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prompt-toolkit2>=2.0.0<3.0.0:devel/py-prompt-toolkit2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.1.0:textproc/py-pygments@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=3.0:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=3.0:devel/py-pyyaml@${PY_FLAVOR} \
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517

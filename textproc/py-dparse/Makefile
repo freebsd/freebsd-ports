@@ -1,5 +1,6 @@
 PORTNAME=	dparse
 DISTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,7 +29,7 @@ OPTIONS_DEFAULT=	CONDA PIPENV
 CONDA_DESC=	Enable support for Conda YML parsing
 PIPENV_DESC=	Enable support to update Python Pipfiles
 
-CONDA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
+CONDA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
 PIPENV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pipenv>=2022.12.19:devel/py-pipenv@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>

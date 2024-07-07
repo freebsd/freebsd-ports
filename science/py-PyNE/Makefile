@@ -1,6 +1,6 @@
 PORTNAME=	PyNE
 DISTVERSION=	0.7.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science # physics
 MASTER_SITES=	https://raw.githubusercontent.com/pyne/data/master/:decay \
 		https://raw.githubusercontent.com/pyne/data/master/:cram \
@@ -32,7 +32,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tables>0:devel/py-tables@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tables>0:devel/py-tables@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} # the dependency list is only in ubuntu.sh, see https://github.com/pyne/pyne/issues/1518
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} # the dependency list is only in ubuntu.sh, see https://github.com/pyne/pyne/issues/1518
 PY_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}OpenMC>0:science/py-OpenMC@${PY_FLAVOR}
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		${PY_DEPENDS}

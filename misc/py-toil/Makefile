@@ -1,5 +1,6 @@
 PORTNAME=	toil
 DISTVERSION=	7.0.0
+PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}addict>=2.2.1:devel/py-addict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tes>0:misc/py-tes@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.6.2:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.26.0:net/py-urllib3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=6:devel/py-yaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=6:devel/py-pyyaml@${PY_FLAVOR}
 #RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mypy-boto3-s3>=1.28.3:devel/py-mypy-boto3-s3@${PY_FLAVOR} \
 #		${PYTHON_PKGNAMEPREFIX}boto3-stubs>=1.28.3:www/py-boto3-stubs@${PY_FLAVOR} \
 #		${PYTHON_PKGNAMEPREFIX}moto>=5.0.3:devel/py-moto@${PY_FLAVOR}

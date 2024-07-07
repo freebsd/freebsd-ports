@@ -1,6 +1,6 @@
 PORTNAME=	orange3
 DISTVERSION=	3.29.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -37,7 +37,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}serverfiles>0:misc/py-serverfiles@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xlrd>=0.9.2:textproc/py-xlrd@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}XlsxWriter>0:textproc/py-xlsxwriter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
 
 USES=		python pyqt:5
 USE_PYTHON=	distutils cython autoplist noflavors

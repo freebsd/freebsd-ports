@@ -3380,3 +3380,4 @@ www/npm-node21||2024-07-02|Removed, part of www/node21
 security/bcrypt||2024-07-02|Has expired: Hasn't seen updates in 15 years, insecure Blowfish ECB mode, unauthenticated encryption
 devel/py-stackexchange|devel/py-py-stackexchange|2024-07-06|Move devel/py-stackexchange to devel/py-py-stackexchange
 devel/py-xcaplib|devel/py-python-xcaplib|2024-07-06|Move devel/py-xcaplib to devel/py-python-xcaplib
+devel/py-yaml|devel/py-pyyaml|2024-07-07|Move devel/py-yaml to devel/py-pyyaml

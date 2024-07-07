@@ -1,6 +1,6 @@
 PORTNAME=	prospector
 PORTVERSION=	1.10.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dodgy>=0.2.1<0.3.0:devel/py-dodgy@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pylint-django>=2.5<2.6:devel/py-pylint-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pylint-flask>=0.6<0.6_99:devel/py-pylint-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pylint-plugin-utils>=0.7:devel/py-pylint-plugin-utils@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requirements-detector>=1.2.0:devel/py-requirements-detector@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setoptconf>=0.3.0<0.4:devel/py-setoptconf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toml>=0.10.2<0.11.0:textproc/py-toml@${PY_FLAVOR} \
