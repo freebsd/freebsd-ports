@@ -63,6 +63,9 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 CONFIGURE_ENV=	READLINE_CFLAGS="-L${LOCALBASE}/lib"
 ETCDIR=		${PREFIX}/etc/namedb
 
+# FIXME: figure out why build fails if enabled
+CONFIGURE_ARGS+=	--disable-tracing
+
 .if defined(BIND_TOOLS_SLAVE)
 EXTRA_PATCHES=		${PATCHDIR}/extrapatch-bind-tools
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/bind-tools
