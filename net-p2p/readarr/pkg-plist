@@ -272,6 +272,7 @@
 %%DATADIR%%/bin/ServiceUninstall
 %%DATADIR%%/bin/SixLabors.Fonts.dll
 %%DATADIR%%/bin/SixLabors.ImageSharp.dll
+%%DATADIR%%/bin/Swashbuckle.AspNetCore.Annotations.dll
 %%DATADIR%%/bin/Swashbuckle.AspNetCore.Swagger.dll
 %%DATADIR%%/bin/Swashbuckle.AspNetCore.SwaggerGen.dll
 %%DATADIR%%/bin/System.AppContext.dll
