@@ -1,5 +1,5 @@
 PORTNAME=	amber
-DISTVERSION=	0.3.3-alpha
+DISTVERSION=	0.3.4-alpha
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
@@ -17,41 +17,88 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Ph0enixKM
 GH_PROJECT=	Amber
 
-CARGO_CRATES=	anstream-0.6.14 \
+CARGO_CRATES=	aho-corasick-1.1.3 \
+		android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
+		anstream-0.6.14 \
 		anstyle-1.0.7 \
 		anstyle-parse-0.2.4 \
-		anstyle-query-1.0.3 \
+		anstyle-query-1.1.0 \
 		anstyle-wincon-3.0.3 \
-		bitflags-2.5.0 \
+		ascii-1.1.0 \
+		assert_cmd-2.0.14 \
+		autocfg-1.3.0 \
+		bitflags-2.6.0 \
+		bstr-1.9.1 \
+		bumpalo-3.16.0 \
 		capitalize-0.1.0 \
+		cc-1.0.104 \
 		cfg-if-1.0.0 \
-		clap-4.5.4 \
-		clap_builder-4.5.2 \
-		clap_derive-4.5.4 \
-		clap_lex-0.7.0 \
+		chrono-0.4.38 \
+		chunked_transfer-1.5.0 \
+		clap-4.5.8 \
+		clap_builder-4.5.8 \
+		clap_derive-4.5.8 \
+		clap_lex-0.7.1 \
 		colorchoice-1.0.1 \
 		colored-2.1.0 \
-		either-1.12.0 \
+		core-foundation-sys-0.8.6 \
+		difflib-0.4.0 \
+		doc-comment-0.3.3 \
+		either-1.13.0 \
 		errno-0.3.9 \
 		fastrand-2.1.0 \
+		float-cmp-0.9.0 \
+		glob-0.3.1 \
 		heck-0.5.0 \
 		heraclitus-compiler-1.5.8 \
+		httpdate-1.0.3 \
+		iana-time-zone-0.1.60 \
+		iana-time-zone-haiku-0.1.2 \
 		is_terminal_polyfill-1.70.0 \
 		itertools-0.11.0 \
-		lazy_static-1.4.0 \
+		js-sys-0.3.69 \
+		lazy_static-1.5.0 \
 		libc-0.2.155 \
 		linux-raw-sys-0.4.14 \
+		log-0.4.22 \
+		memchr-2.7.4 \
+		normalize-line-endings-0.3.0 \
+		num-traits-0.2.19 \
+		once_cell-1.19.0 \
 		pad-0.1.6 \
-		proc-macro2-1.0.84 \
+		predicates-3.1.0 \
+		predicates-core-1.0.6 \
+		predicates-tree-1.0.9 \
+		proc-macro2-0.4.30 \
+		proc-macro2-1.0.86 \
+		quote-0.6.13 \
 		quote-1.0.36 \
+		regex-1.10.5 \
+		regex-automata-0.4.7 \
+		regex-syntax-0.8.4 \
 		rustix-0.38.34 \
+		serde-1.0.203 \
+		serde_derive-1.0.203 \
 		similar-string-1.4.3 \
 		strsim-0.11.1 \
-		syn-2.0.66 \
+		syn-0.15.44 \
+		syn-2.0.68 \
 		tempfile-3.10.1 \
+		termtree-0.4.1 \
+		test-generator-0.3.1 \
+		tiny_http-0.12.0 \
 		unicode-ident-1.0.12 \
-		unicode-width-0.1.12 \
-		utf8parse-0.2.1 \
+		unicode-width-0.1.13 \
+		unicode-xid-0.1.0 \
+		utf8parse-0.2.2 \
+		wait-timeout-0.2.0 \
+		wasm-bindgen-0.2.92 \
+		wasm-bindgen-backend-0.2.92 \
+		wasm-bindgen-macro-0.2.92 \
+		wasm-bindgen-macro-support-0.2.92 \
+		wasm-bindgen-shared-0.2.92 \
+		windows-core-0.52.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
