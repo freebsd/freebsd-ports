@@ -1,7 +1,7 @@
---- src/slic3r/GUI/wxExtensions.hpp.orig	2023-12-12 14:21:21 UTC
+--- src/slic3r/GUI/wxExtensions.hpp.orig	2024-06-27 09:25:47 UTC
 +++ src/slic3r/GUI/wxExtensions.hpp
-@@ -20,7 +20,7 @@
- #include <functional>
+@@ -21,7 +21,7 @@
+ #include <boost/filesystem.hpp>
  
  
 -#ifndef __linux__

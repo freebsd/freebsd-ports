@@ -1,7 +1,7 @@
---- src/slic3r/CMakeLists.txt.orig	2023-12-12 14:21:21 UTC
+--- src/slic3r/CMakeLists.txt.orig	2024-06-27 09:25:47 UTC
 +++ src/slic3r/CMakeLists.txt
-@@ -333,7 +333,7 @@ set(SLIC3R_GUI_SOURCES
-     Utils/WifiScanner.cpp
+@@ -375,7 +375,7 @@ set(SLIC3R_GUI_SOURCES
+     Utils/PrusaConnect.cpp
  )
  
 -find_package(NanoSVG REQUIRED)
@@ -9,13 +9,12 @@
  
  if (APPLE)
      list(APPEND SLIC3R_GUI_SOURCES
-@@ -362,11 +362,12 @@ endforeach()
+@@ -404,11 +404,11 @@ encoding_check(libslic3r_gui)
  
  encoding_check(libslic3r_gui)
  
--target_link_libraries(libslic3r_gui libslic3r avrdude libcereal imgui GLEW::GLEW OpenGL::GL hidapi libcurl ${wxWidgets_LIBRARIES} NanoSVG::nanosvg NanoSVG::nanosvgrast)
-+# target_link_libraries(libslic3r_gui libslic3r avrdude imgui GLEW::GLEW OpenGL::GL hidapi libcurl ${wxWidgets_LIBRARIES} NanoSVG::nanosvg NanoSVG::nanosvgrast)
-+target_link_libraries(libslic3r_gui libslic3r avrdude imgui GLEW::GLEW OpenGL::GL hidapi libcurl ${wxWidgets_LIBRARIES})
+-target_link_libraries(libslic3r_gui libslic3r avrdude libcereal imgui libvgcode GLEW::GLEW OpenGL::GL hidapi libcurl ${wxWidgets_LIBRARIES} NanoSVG::nanosvg NanoSVG::nanosvgrast)
++target_link_libraries(libslic3r_gui libslic3r avrdude imgui libvgcode GLEW::GLEW OpenGL::GL hidapi libcurl crypto ${wxWidgets_LIBRARIES})
  
  if (MSVC)
      target_link_libraries(libslic3r_gui Setupapi.lib)
