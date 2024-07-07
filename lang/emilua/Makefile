@@ -1,14 +1,16 @@
 PORTNAME=	emilua
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.2
+DISTVERSION=	0.8.4
 CATEGORIES=	lang devel
 
 MAINTAINER=	manipuladordedados@gmail.com
 COMMENT=	Lua execution engine
 WWW=		https://emilua.org/
 
-LICENSE=	BSL
-LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
+LICENSE=	BSL MIT
+LICENSE_COMB=	dual
+LICENSE_FILE_BSL=	${WRKSRC}/LICENSE-BSL-1.0.txt
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT.txt
 
 IGNORE_FreeBSD_12=	not supported by Emilua
 IGNORE_FreeBSD_13=	not supported by Emilua
