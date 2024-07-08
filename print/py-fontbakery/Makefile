@@ -1,6 +1,5 @@
 PORTNAME=	fontbakery
-PORTVERSION=	0.12.7
-PORTREVISION=	1
+PORTVERSION=	0.12.8
 CATEGORIES=	print python
 MASTER_SITES=	PYPI \
 		https://github.com/fonttools/fontbakery/releases/download/v${PORTVERSION}/
@@ -54,11 +53,11 @@ TYPENETWORK_DESC=	Checks for Type Network
 UFO_DESC=		Checks for UFO sources
 
 FONTVAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
-GOOGLEFONTS_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}axisregistry>=0.4.9<0.5:x11-fonts/py-axisregistry@${PY_FLAVOR} \
+GOOGLEFONTS_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}axisregistry>=0.4.10<0.5:x11-fonts/py-axisregistry@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.7.1:www/py-beautifulsoup@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}dehinter>=3.1.0:print/py-dehinter@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}fonttools>=0:print/py-fonttools@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}gflanguages>=0.6.1<0.7:x11-fonts/py-gflanguages@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}gflanguages>=0.6.2<0.7:x11-fonts/py-gflanguages@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}gfsubsets>=2024.5.9:x11-fonts/py-gfsubsets@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}glyphsets>=1.0.0<2:print/py-glyphsets@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}protobuf>=3.7.0,1:devel/py-protobuf@${PY_FLAVOR} \
