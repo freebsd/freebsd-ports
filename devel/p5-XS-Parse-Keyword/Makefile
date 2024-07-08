@@ -1,5 +1,6 @@
 PORTNAME=	XS-Parse-Keyword
 PORTVERSION=	0.43
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -13,7 +14,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-ExtUtils-CChecker>=0.11:devel/p5-ExtUtils-CChecker
+BUILD_DEPENDS=	p5-ExtUtils-CChecker>=0.11:devel/p5-ExtUtils-CChecker \
+		${RUN_DEPENDS}
+RUN_DEPENDS=	p5-File-ShareDir>=1.00:devel/p5-File-ShareDir
 TEST_DEPENDS=	p5-Test2-Suite>=0:devel/p5-Test2-Suite
 
 USES=		perl5
