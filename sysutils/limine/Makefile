@@ -1,5 +1,5 @@
 PORTNAME=	limine
-DISTVERSION=	7.6.0
+DISTVERSION=	7.9.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${PORTNAME}-bootloader/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -21,8 +21,11 @@ MAKEFILE=	GNUmakefile
 
 INSTALL_TARGET=	install-strip
 
-PORTDOCS=	CONFIG.md COPYING PHILOSOPHY.md PROTOCOL.md USAGE.md
+PORTDOCS=	CONFIG.md PHILOSOPHY.md PROTOCOL.md USAGE.md
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e '/COPYING/d' ${WRKSRC}/GNUmakefile.in
 
 .include <bsd.port.mk>
