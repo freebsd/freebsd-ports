@@ -1,11 +1,11 @@
-TIMESTAMP = 1715001749
+TIMESTAMP = 1720467240
 SHA256 (title-sequences.zip) = 24a189cdaf1f78fb6d6caede8f1ab3cedf8ab9f819cd2260a09b2cce4c710d98
 SIZE (title-sequences.zip) = 2547725
-SHA256 (objects.zip) = da017b90a3870649cb4ff22e14edfc746259af048967311d1133cf4c836ae5a0
-SIZE (objects.zip) = 5392108
+SHA256 (objects.zip) = 5a8b54d021e167604051fd508da109d9ebc660638f57252bba729f76bb246387
+SIZE (objects.zip) = 5411575
 SHA256 (openmusic.zip) = c3fac4caa90398a2b4c5bb32e0dd0f44073086fe16121d3dc49b3ca120474068
 SIZE (openmusic.zip) = 40548101
 SHA256 (opensound.zip) = a952148be164c128e4fd3aea96822e5f051edd9a0b1f2c84de7f7628ce3b2e18
 SIZE (opensound.zip) = 4012384
-SHA256 (OpenRCT2-OpenRCT2-v0.4.11_GH0.tar.gz) = d6211dc9651b43315c5d22e30aa41e582bb861d2541b82bb65de8f4f95f0cdef
-SIZE (OpenRCT2-OpenRCT2-v0.4.11_GH0.tar.gz) = 21842033
+SHA256 (OpenRCT2-OpenRCT2-v0.4.12_GH0.tar.gz) = 7446a64a89d05c663c648fbb370b1682c39a7ba3438c603db366dfb1c5bc16e7
+SIZE (OpenRCT2-OpenRCT2-v0.4.12_GH0.tar.gz) = 21881586
