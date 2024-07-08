@@ -1,6 +1,5 @@
 PORTNAME=	scribus
-PORTVERSION=	1.5.8
-PORTREVISION=	26
+DISTVERSION=	1.6.2
 CATEGORIES=	print editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}/ \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -14,12 +13,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
-		libboost_thread.so:devel/boost-libs \
-		libhunspell-1.7.so:textproc/hunspell \
-		libcairo.so:graphics/cairo \
 		librevenge-0.0.so:textproc/librevenge \
 		libcups.so:print/cups \
-		libwpg-0.3.so:graphics/libwpg03 \
 		libcdr-0.1.so:graphics/libcdr01 \
 		libfreehand-0.1.so:graphics/libfreehand \
 		libpagemaker-0.0.so:print/libpagemaker \
@@ -30,45 +25,48 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libpoppler.so:graphics/poppler \
 		libharfbuzz-icu.so:print/harfbuzz-icu \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libpodofo09.so:graphics/podofo09 \
 		libharfbuzz.so:print/harfbuzz \
 		libpng.so:graphics/png \
 		libicuuc.so:devel/icu \
 		libqxp-0.0.so:textproc/libqxp \
 		libzmf-0.0.so:graphics/libzmf
 
-USES=		cmake compiler:c++17-lang desktop-file-utils dos2unix gnome \
-		jpeg pkgconfig python qt:5 shared-mime-info tar:xz
-USE_QT=		buildtools:build core declarative gui linguisttools:build \
-		network opengl printsupport qmake:build widgets xml
-DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
-USE_GNOME=	libxml2
+USES=		cmake compiler:c++17-lang desktop-file-utils gnome jpeg \
+		pkgconfig python qt:5 shared-mime-info tar:xz
+USE_QT=		buildtools:build core gui linguisttools:build network opengl \
+		printsupport qmake:build widgets xml
+USE_GNOME=	cairo libxml2
 
-CMAKE_ARGS+=	-DWANT_HUNSPELL=YES \
-		-DWANT_CPP17=YES \
-		-DCMAKE_COLOR_MAKEFILE:BOOL=ON
+CMAKE_ARGS=	-DWANT_CPP17=YES
 
 CONFLICTS_INSTALL=	scribus
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	BOOST DOCS GRAPHICSMAGICK HUNSPELL OSG PDF
+OPTIONS_DEFAULT=BOOST GRAPHICSMAGICK HUNSPELL OSG PDF
 
-.include <bsd.port.pre.mk>
+BOOST_DESC=	Enable support for Boost-based enhancement
+GRAPHICSMAGICK_DESC=	Use GraphicsMagick for image import support
+HUNSPELL_DESC=	Enable spellchecking via hunspell
+OSG_DESC=	Enable 3D rendering via osg
+PDF_DESC=	Enable PDF export via podofo
 
-# Patch sources to force using include files installed by graphics/podofo09
-post-patch:
-	@${REINPLACE_CMD} -e '/^[\t ]*#include/s|podofo/podofo.h|podofo09/podofo.h|' \
-		${WRKSRC}/scribus/plugins/import/ps/importps.cpp \
-		${WRKSRC}/scribus/plugins/import/ai/importai.cpp \
-		${WRKSRC}/scribus/imagedataloaders/scimgdataloader_pdf.cpp \
-		${WRKSRC}/scribus/pdflib_core.h \
-		${WRKSRC}/scribus/pdf_analyzer.h
-.if ${COMPILER_TYPE} == clang
-	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function|' \
-		${WRKSRC}/scribus/desaxe/digester.cpp
-.endif
+BOOST_BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
+BOOST_CMAKE_BOOL=	WITH_BOOST
+
+GRAPHICSMAGICK_LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick
+GRAPHICSMAGICK_CMAKE_BOOL=	WANT_GRAPHICSMAGICK
+
+HUNSPELL_LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
+HUNSPELL_CMAKE_BOOL=	WANT_HUNSPELL
+
+OSG_LIB_DEPENDS=	libosg.so:graphics/osg
+OSG_CMAKE_BOOL_OFF=	WANT_NOOSG
+
+PDF_LIB_DEPENDS=	libpodofo.so:graphics/podofo
+PDF_CMAKE_BOOL=	WITH_PODOFO
 
 post-install:
-		${LN} -sf ../share/icons/1_5_1/scribus.png \
+		${LN} -sf ../scribus/icons/1_5_1/scribus.png \
 			${STAGEDIR}${PREFIX}/share/pixmaps/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
