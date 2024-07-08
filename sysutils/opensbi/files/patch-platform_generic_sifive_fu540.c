@@ -1,12 +1,13 @@
 --- platform/generic/sifive/fu540.c.orig	2022-06-26 14:27:30 UTC
 +++ platform/generic/sifive/fu540.c
-@@ -11,6 +11,15 @@
+@@ -11,6 +11,16 @@
  #include <sbi_utils/fdt/fdt_helper.h>
  #include <sbi_utils/fdt/fdt_fixup.h>
  
 +extern int need_pmp_war;
 +
-+static int sifive_fu540_early_init(bool cold_boot, const struct fdt_match *match)
++static int sifive_fu540_early_init(bool cold_boot, const void *fdt,
++				    const struct fdt_match *match)
 +{
 +	need_pmp_war = true;
 +
