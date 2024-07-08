@@ -1,0 +1,44 @@
+From b5ffe1f1d6097df6e2f5cc6dd3c968872ec60804 Mon Sep 17 00:00:00 2001
+From: Ameer Hamza <ahamza@ixsystems.com>
+Date: Tue, 2 Apr 2024 23:56:55 +0500
+Subject: [PATCH] zpool_add API changed in upstream zfs master
+
+---
+ libzfs.pyx     | 5 +++--
+ pxd/libzfs.pxd | 2 +-
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/libzfs.pyx b/libzfs.pyx
+index a59fca8..71efa96 100644
+--- a/libzfs.pyx
++++ ./libzfs.pyx
+@@ -3175,13 +3175,14 @@ cdef class ZFSPool(object):
+             hopts = self.root.generate_history_opts(fsopts, '-o')
+             self.root.write_history('zfs create', hopts, name)
+ 
+-    def attach_vdevs(self, vdevs_tree):
++    def attach_vdevs(self, vdevs_tree, check_ashift=0):
+         cdef const char *command = 'zpool add'
+         cdef ZFSVdev vd = self.root.make_vdev_tree(vdevs_tree, {'ashift': self.properties['ashift'].parsed})
+         cdef int ret
++        cdef boolean_t ashift = check_ashift
+ 
+         with nogil:
+-            ret = libzfs.zpool_add(self.handle, vd.nvlist.handle)
++            ret = libzfs.zpool_add(self.handle, vd.nvlist.handle, ashift)
+ 
+         if ret != 0:
+             raise self.root.get_error()
+diff --git a/pxd/libzfs.pxd b/pxd/libzfs.pxd
+index 3ab9374..6afa275 100644
+--- a/pxd/libzfs.pxd
++++ ./pxd/libzfs.pxd
+@@ -228,7 +228,7 @@ cdef extern from "libzfs.h" nogil:
+     extern int zpool_create(libzfs_handle_t *, const char *, nvpair.nvlist_t *,
+         nvpair.nvlist_t *, nvpair.nvlist_t *)
+     extern int zpool_destroy(zpool_handle_t *, const char *)
+-    extern int zpool_add(zpool_handle_t *, nvpair.nvlist_t *)
++    extern int zpool_add(zpool_handle_t *, nvpair.nvlist_t *, boolean_t)
+ 
+     IF HAVE_ZPOOL_SCAN == 3:
+         extern int zpool_scan(zpool_handle_t *, zfs.pool_scan_func_t, zfs.pool_scrub_cmd_t)
