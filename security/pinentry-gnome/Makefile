@@ -1,5 +1,5 @@
 PORTNAME=	pinentry
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	GNOME version of the GnuPG password dialog
 

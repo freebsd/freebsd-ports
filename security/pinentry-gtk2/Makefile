@@ -1,5 +1,5 @@
 PORTNAME=	pinentry
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	GTK 2.0 version of the GnuPG password dialog
 
