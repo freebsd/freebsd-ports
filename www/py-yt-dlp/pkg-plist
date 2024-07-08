@@ -953,6 +953,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/vidio.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/vidlii.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/vidly.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/vidyard.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/viewlift.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/viidea.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/viki.py
@@ -971,6 +972,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/voxmedia.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/vrt.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/vtm.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/vtv.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/vuclip.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/vvvvid.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/walla.py
