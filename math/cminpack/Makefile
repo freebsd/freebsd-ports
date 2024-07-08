@@ -20,6 +20,15 @@ CMAKE_OFF=	USE_BLAS
 
 OPTIONS_DEFINE=	EXAMPLES
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc*}
+PLIST_SUB+=	NOT_POWERPC="@comment "
+.else
+PLIST_SUB+=	NOT_POWERPC=""
+.endif
+
+
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} "*.[ch] testdata" \
