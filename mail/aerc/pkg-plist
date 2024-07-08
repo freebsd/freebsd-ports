@@ -14,6 +14,7 @@ libexec/aerc/filters/wrap
 %%DATADIR%%/stylesets/blue
 %%DATADIR%%/stylesets/default
 %%DATADIR%%/stylesets/dracula
+%%DATADIR%%/stylesets/monochrome
 %%DATADIR%%/stylesets/nord
 %%DATADIR%%/stylesets/pink
 %%DATADIR%%/stylesets/solarized
@@ -33,6 +34,7 @@ share/man/man5/aerc-maildir.5.gz
 share/man/man5/aerc-notmuch.5.gz
 share/man/man5/aerc-sendmail.5.gz
 share/man/man5/aerc-smtp.5.gz
+share/man/man7/aerc-patch.7.gz
 share/man/man7/aerc-stylesets.7.gz
 share/man/man7/aerc-templates.7.gz
 share/man/man7/aerc-tutorial.7.gz
