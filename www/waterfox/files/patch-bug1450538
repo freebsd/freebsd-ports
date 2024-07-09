@@ -1,0 +1,27 @@
+commit 62f1f53340be
+Author: Masatoshi Kimura <VYV03354@nifty.ne.jp>
+Date:   Sat Apr 14 10:29:36 2018 +0900
+
+    Bug 1450538 - Use nsIURI::GetDisplaySpec to compensate a change to nsIURI::GetSpec. r=valentin a=jcristau
+    
+    MozReview-Commit-ID: 5xYAbx78K3q
+    
+    --HG--
+    extra : source : aee0f2f18cde9801a95357c309bcdce7adf0f4f6
+---
+ docshell/base/nsDocShell.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git docshell/base/nsDocShell.cpp docshell/base/nsDocShell.cpp
+index 608977e54ec7..aae0e29265be 100644
+--- docshell/base/nsDocShell.cpp
++++ docshell/base/nsDocShell.cpp
+@@ -13816,7 +13816,7 @@ nsDocShell::OnOverLink(nsIContent* aContent,
+   }
+ 
+   nsAutoCString spec;
+-  rv = aURI->GetSpec(spec);
++  rv = aURI->GetDisplaySpec(spec);
+   NS_ENSURE_SUCCESS(rv, rv);
+ 
+   NS_ConvertUTF8toUTF16 uStr(spec);

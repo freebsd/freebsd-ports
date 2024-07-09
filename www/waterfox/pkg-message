@@ -1,0 +1,41 @@
+======================================================================
+
+Some features available on other platforms are not implemented:
+- Native audio (OSS backend is incomplete, doesn't support WebRTC)
+- Encrypted Media Extensions (requires Widevine CDM binary)
+- Process sandboxing (requires Capsicum backend)
+- Reduced memory usage (requires mozjemalloc)
+- Performance profiling (requires GeckoProfiler)
+- Gamepad API (requires libusbhid backend)
+- WebVR (requires open source runtime)
+- TCP fast open
+
+======================================================================
+
+On FreeBSD < 11.3 Web Content process may frequently crash due to bug 181741.
+If you cannot upgrade try applying the following workaround:
+
+$ sysctl net.local.stream.recvspace=16384
+
+======================================================================
+
+To select non-default audio backend open about:config page and create
+media.cubeb.backend preference. Supported values are: alsa, jack,
+pulse, pulse-rust, oss, sndio. Currently used backend can be inspected
+on about:support page.
+
+======================================================================
+
+smb:// issues (Gvfs/GIO option):
+Network group, machine, and share browsing does not work correctly.
+
+sftp:// (Gvfs/GIO option):
+Only sftp access using public key authentication works.  To easily
+setup public key authentication to "remote_host":
+
+ssh-keygen
+cat ~/.ssh/id_rsa.pub | ssh remote_host "cat >> .ssh/authorized_keys"
+
+The SSH server on remote_host must allow pub key authentication.
+
+======================================================================

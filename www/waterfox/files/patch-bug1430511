@@ -1,0 +1,72 @@
+commit 2050bcb92e39
+Author: Gijs Kruitbosch <gijskruitbosch@gmail.com>
+Date:   Wed Jan 17 00:08:32 2018 +0000
+
+    Bug 1430511, r=jaws
+    
+    --HG--
+    extra : rebase_source : e5ecfb98c1bbd1cd5f9a71be13416a1d041350ef
+---
+ browser/components/preferences/in-content/findInPage.js  | 16 +++++++++++++---
+ .../chrome/browser/preferences/preferences.properties    |  8 +++++---
+ 2 files changed, 18 insertions(+), 6 deletions(-)
+
+diff --git browser/base/content/test/static/browser_misused_characters_in_strings.js browser/base/content/test/static/browser_misused_characters_in_strings.js
+index 9a8168bdb360..10b6796d3580 100644
+--- browser/base/content/test/static/browser_misused_characters_in_strings.js
++++ browser/base/content/test/static/browser_misused_characters_in_strings.js
+@@ -110,7 +110,7 @@ let gWhitelist = [{
+     type: "single-quote"
+   }, {
+     file: "preferences.properties",
+-    key: "searchResults.needHelp2",
++    key: "searchResults.needHelp3",
+     type: "double-quote"
+   }
+ ];
+diff --git browser/components/preferences/in-content-new/findInPage.js browser/components/preferences/in-content-new/findInPage.js
+index a822ec04e728..d54ba7b0e355 100644
+--- browser/components/preferences/in-content-new/findInPage.js
++++ browser/components/preferences/in-content-new/findInPage.js
+@@ -264,9 +264,19 @@ var gSearchResultsPane = {
+           strings.getFormattedString("searchResults.sorryMessageUnix", [this.query]);
+         let helpUrl = Services.urlFormatter.formatURLPref("app.support.baseURL") + "preferences";
+         let brandName = document.getElementById("bundleBrand").getString("brandShortName");
+-        // eslint-disable-next-line no-unsanitized/property
+-        document.getElementById("need-help").innerHTML =
+-          strings.getFormattedString("searchResults.needHelp2", [helpUrl, brandName]);
++        let helpString = strings.getString("searchResults.needHelp3");
++        let helpItems = helpString.split(/%(?:\$1)?S/);
++        let helpContainer = document.getElementById("need-help");
++        helpContainer.innerHTML = "";
++        helpContainer.appendChild(document.createTextNode(helpItems[0]));
++        let link = document.createElement("label");
++        link.className = "text-link";
++        link.setAttribute("href", helpUrl);
++        link.textContent = strings.getFormattedString("searchResults.needHelpSupportLink", [brandName]);
++        helpContainer.appendChild(link);
++        if (helpItems[1]) {
++          helpContainer.appendChild(document.createTextNode(helpItems[1]));
++        }
+       } else {
+         // Creating tooltips for all the instances found
+         this.listSearchTooltips.forEach((anchorNode) => this.createSearchTooltip(anchorNode, this.query));
+diff --git browser/locales/en-US/chrome/browser/preferences/preferences.properties browser/locales/en-US/chrome/browser/preferences/preferences.properties
+index 9066145c3c48..73410a196ebf 100644
+--- browser/locales/en-US/chrome/browser/preferences/preferences.properties
++++ browser/locales/en-US/chrome/browser/preferences/preferences.properties
+@@ -263,9 +263,11 @@ searchInput.labelUnix=Find in Preferences
+ # LOCALIZATION NOTE %S will be replaced by the word being searched
+ searchResults.sorryMessageWin=Sorry! There are no results in Options for “%S”.
+ searchResults.sorryMessageUnix=Sorry! There are no results in Preferences for “%S”.
+-# LOCALIZATION NOTE (searchResults.needHelp2): %1$S is a link to SUMO, %2$S is
+-# the browser name
+-searchResults.needHelp2=Need help? Visit <html:a id="need-help-link" target="_blank" href="%1$S">%2$S Support</html:a>
++# LOCALIZATION NOTE (searchResults.needHelp3): %S will be replaced with a link to the support page.
++# The label of the link is in searchResults.needHelpSupportLink .
++searchResults.needHelp3=Need help? Visit %S
++# LOCALIZATION NOTE (searchResults.needHelpSupportLink): %S will be replaced with the browser name.
++searchResults.needHelpSupportLink=%S Support
+ 
+ # LOCALIZATION NOTE %S is the default value of the `dom.ipc.processCount` pref.
+ defaultContentProcessCount=%S (default)

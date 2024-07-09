@@ -1,0 +1,170 @@
+commit a9bc6108422a
+Author: Karl Tomlinson <karlt+@karlt.net>
+Date:   Tue Oct 17 18:14:43 2017 +1300
+
+    Bug 1408276 - Move to LIFECYCLE_WAITING_FOR_MAIN_THREAD_CLEANUP at end of iteration. r=padenot, a=gchang
+    
+    MozReview-Commit-ID: GbfIOPZPuGu
+    
+    --HG--
+    extra : rebase_source : acc2bcee9a36d2b8f18826f08825895de5df0c1e
+---
+ dom/media/GraphDriver.cpp        | 27 +++++++++++++++++----------
+ dom/media/MediaStreamGraph.cpp   | 32 +++++++++++++++++++++-----------
+ dom/media/MediaStreamGraphImpl.h | 12 +++++++++++-
+ 3 files changed, 49 insertions(+), 22 deletions(-)
+
+diff --git dom/media/GraphDriver.cpp dom/media/GraphDriver.cpp
+index 7f6f386fdaca..13944338e3d7 100644
+--- dom/media/GraphDriver.cpp
++++ dom/media/GraphDriver.cpp
+@@ -284,8 +284,7 @@ SystemClockDriver::IsFallback()
+ void
+ ThreadedDriver::RunThread()
+ {
+-  bool stillProcessing = true;
+-  while (stillProcessing) {
++  while (true) {
+     mIterationStart = IterationEnd();
+     mIterationEnd += GetIntervalForIteration();
+ 
+@@ -324,10 +323,16 @@ ThreadedDriver::RunThread()
+          (long)stateComputedTime,
+          (long)nextStateComputedTime));
+ 
+-    stillProcessing = mGraphImpl->OneIteration(nextStateComputedTime);
++    bool stillProcessing = mGraphImpl->OneIteration(nextStateComputedTime);
+ 
++    if (!stillProcessing) {
++      // Enter shutdown mode. The stable-state handler will detect this
++      // and complete shutdown if the graph does not get restarted.
++      mGraphImpl->SignalMainThreadCleanup();
++      return;
++    }
+     MonitorAutoLock lock(GraphImpl()->GetMonitor());
+-    if (NextDriver() && stillProcessing) {
++    if (NextDriver()) {
+       LOG(LogLevel::Debug, ("Switching to AudioCallbackDriver"));
+       RemoveCallback();
+       NextDriver()->SetGraphTime(this, mIterationStart, mIterationEnd);
+@@ -1009,13 +1014,20 @@ AudioCallbackDriver::DataCallback(const AudioDataValue* aInputBuffer,
+   mGraphImpl->NotifyOutputData(aOutputBuffer, static_cast<size_t>(aFrames),
+                                mSampleRate, mOutputChannels);
+ 
++  if (!stillProcessing) {
++    // Enter shutdown mode. The stable-state handler will detect this
++    // and complete shutdown if the graph does not get restarted.
++    mGraphImpl->SignalMainThreadCleanup();
++    return aFrames - 1;
++  }
++
+   bool switching = false;
+   {
+     MonitorAutoLock mon(mGraphImpl->GetMonitor());
+     switching = !!NextDriver();
+   }
+ 
+-  if (switching && stillProcessing) {
++  if (switching) {
+     // If the audio stream has not been started by the previous driver or
+     // the graph itself, keep it alive.
+     MonitorAutoLock mon(mGraphImpl->GetMonitor());
+@@ -1032,11 +1044,6 @@ AudioCallbackDriver::DataCallback(const AudioDataValue* aInputBuffer,
+     return aFrames - 1;
+   }
+ 
+-  if (!stillProcessing) {
+-    LOG(LogLevel::Debug,
+-        ("Stopping audio thread for MediaStreamGraph %p", this));
+-    return aFrames - 1;
+-  }
+   return aFrames;
+ }
+ 
+diff --git dom/media/MediaStreamGraph.cpp dom/media/MediaStreamGraph.cpp
+index 3a742aafe9b2..6420e038a8fe 100644
+--- dom/media/MediaStreamGraph.cpp
++++ dom/media/MediaStreamGraph.cpp
+@@ -1193,11 +1193,13 @@ MediaStreamGraphImpl::PrepareUpdatesToMainThreadState(bool aFinalUpdate)
+     }
+   }
+ 
+-  // Don't send the message to the main thread if it's not going to have
+-  // any work to do.
+-  if (aFinalUpdate ||
+-      !mUpdateRunnables.IsEmpty() ||
+-      !mStreamUpdates.IsEmpty()) {
++  // If this is the final update, then a stable state event will soon be
++  // posted just before this thread finishes, and so there is no need to also
++  // post here.
++  if (!aFinalUpdate &&
++      // Don't send the message to the main thread if it's not going to have
++      // any work to do.
++      !(mUpdateRunnables.IsEmpty() && mStreamUpdates.IsEmpty())) {
+     EnsureStableStateEventPosted();
+   }
+ }
+@@ -1430,12 +1432,7 @@ MediaStreamGraphImpl::UpdateMainThreadState()
+     (IsEmpty() && mBackMessageQueue.IsEmpty());
+   PrepareUpdatesToMainThreadState(finalUpdate);
+   if (finalUpdate) {
+-    // Enter shutdown mode. The stable-state handler will detect this
+-    // and complete shutdown. Destroy any streams immediately.
+-    LOG(LogLevel::Debug,
+-        ("MediaStreamGraph %p waiting for main thread cleanup", this));
+-    // We'll shut down this graph object if it does not get restarted.
+-    mLifecycleState = LIFECYCLE_WAITING_FOR_MAIN_THREAD_CLEANUP;
++    // Enter shutdown mode when this iteration is completed.
+     // No need to Destroy streams here. The main-thread owner of each
+     // stream is responsible for calling Destroy on them.
+     return false;
+@@ -1861,6 +1858,19 @@ MediaStreamGraphImpl::EnsureStableStateEventPosted()
+   mAbstractMainThread->Dispatch(event.forget());
+ }
+ 
++void
++MediaStreamGraphImpl::SignalMainThreadCleanup()
++{
++  MOZ_ASSERT(mDriver->OnThread());
++
++  MonitorAutoLock lock(mMonitor);
++  LOG(LogLevel::Debug,
++      ("MediaStreamGraph %p waiting for main thread cleanup", this));
++  mLifecycleState =
++    MediaStreamGraphImpl::LIFECYCLE_WAITING_FOR_MAIN_THREAD_CLEANUP;
++  EnsureStableStateEventPosted();
++}
++
+ void
+ MediaStreamGraphImpl::AppendMessage(UniquePtr<ControlMessage> aMessage)
+ {
+diff --git dom/media/MediaStreamGraphImpl.h dom/media/MediaStreamGraphImpl.h
+index dfea12bca3a8..dce49da39166 100644
+--- dom/media/MediaStreamGraphImpl.h
++++ dom/media/MediaStreamGraphImpl.h
+@@ -197,6 +197,14 @@ public:
+    */
+   bool OneIteration(GraphTime aStateEnd);
+ 
++  /**
++   * Called from the driver, when the graph thread is about to stop, to tell
++   * the main thread to attempt to begin cleanup.  The main thread may either
++   * shutdown or revive the graph depending on whether it receives new
++   * messages.
++   */
++  void SignalMainThreadCleanup();
++
+   bool Running() const
+   {
+     mMonitor.AssertCurrentThreadOwns();
+@@ -720,7 +728,9 @@ public:
+     LIFECYCLE_WAITING_FOR_STREAM_DESTRUCTION
+   };
+   /**
+-   * Modified only on the main thread in mMonitor.
++   * Modified only in mMonitor.  Transitions to
++   * LIFECYCLE_WAITING_FOR_MAIN_THREAD_CLEANUP occur on the graph thread at
++   * the end of an iteration.  All other transitions occur on the main thread.
+    */
+   LifecycleState mLifecycleState;
+   /**

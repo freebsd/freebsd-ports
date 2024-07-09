@@ -1,0 +1,66 @@
+commit af4e28ddf70d
+Author: David Keeler <dkeeler@mozilla.com>
+Date:   Wed Mar 28 13:43:03 2018 -0700
+
+    Bug 1424311 - Don't persist the certificate exception dialog's size so it doesn't grow unboundedly. r=jcj, a=RyanVM
+    
+    window.sizeToContent() apparently interacts poorly with windows that have a
+    persisted size (see bug 90276, which is a 5-digit bug that hasn't been touched
+    in over a decade). As a workaround, don't persist the certificate exception
+    dialog's size. This means we have to call window.sizeToContent() more often and
+    unfortunately results in the window growing and shrinking again on Windows, but
+    at least it will always be the "right size" for its content.
+    
+    MozReview-Commit-ID: 9UT3X8IEqZg
+    
+    --HG--
+    extra : source : 02213fd3a9c84544936a6901adb8821e0c0f44b9
+---
+ security/manager/pki/resources/content/exceptionDialog.js  | 3 ++-
+ security/manager/pki/resources/content/exceptionDialog.xul | 2 --
+ 2 files changed, 2 insertions(+), 3 deletions(-)
+
+diff --git security/manager/pki/resources/content/exceptionDialog.js security/manager/pki/resources/content/exceptionDialog.js
+index bf17af169c54..72c7d455e958 100644
+--- security/manager/pki/resources/content/exceptionDialog.js
++++ security/manager/pki/resources/content/exceptionDialog.js
+@@ -59,6 +59,7 @@ function initExceptionDialog() {
+     // Set out parameter to false by default
+     args[0].exceptionAdded = false;
+   }
++  window.sizeToContent();
+ }
+ 
+ /**
+@@ -150,6 +151,7 @@ function resetDialog() {
+   setText("status2LongDescription", "");
+   setText("status3Description", "");
+   setText("status3LongDescription", "");
++  window.sizeToContent();
+ }
+ 
+ /**
+@@ -275,7 +277,6 @@ function updateCertStatus() {
+   }
+ 
+   window.sizeToContent();
+-
+   gNeedReset = true;
+ }
+ 
+diff --git security/manager/pki/resources/content/exceptionDialog.xul security/manager/pki/resources/content/exceptionDialog.xul
+index 6d417f360ccd..b7d85e2930c4 100644
+--- security/manager/pki/resources/content/exceptionDialog.xul
++++ security/manager/pki/resources/content/exceptionDialog.xul
+@@ -14,11 +14,9 @@
+         buttons="cancel,extra1,extra2"
+         buttonlabelextra1="&exceptionMgr.exceptionButton.label;"
+         buttonaccesskeyextra1="&exceptionMgr.exceptionButton.accesskey;"
+-        style="width: 46em; min-height: 38em;"
+         onload="initExceptionDialog();"
+         ondialogextra1="addException();"
+         ondialogextra2="checkCert();"
+-        persist="screenX screenY width height"
+         defaultButton="extra2">
+ 
+   <stringbundleset id="stringbundleset">

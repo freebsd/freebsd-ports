@@ -1,0 +1,25 @@
+commit d6e448266552
+Author: Jan de Mooij <jdemooij@mozilla.com>
+Date:   Wed Apr 25 09:02:12 2018 +0300
+
+    Bug 1447989 - Sweep script types in TypeMonitorResult. r=tcampbell a=lizzard
+    
+    --HG--
+    extra : amend_source : f0b61269c44b087719613e4709a9e802cf9819f1
+---
+ js/src/vm/TypeInference.cpp | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git js/src/vm/TypeInference.cpp js/src/vm/TypeInference.cpp
+index 55897aa816db..4b44353d8d47 100644
+--- js/src/vm/TypeInference.cpp
++++ js/src/vm/TypeInference.cpp
+@@ -3329,6 +3329,8 @@ js::TypeMonitorResult(JSContext* cx, JSScript* script, jsbytecode* pc, StackType
+ 
+     AutoEnterAnalysis enter(cx);
+ 
++    script->maybeSweepTypes(nullptr);
++
+     MOZ_ASSERT(types == TypeScript::BytecodeTypes(script, pc));
+     MOZ_ASSERT(!types->hasType(type));
+ 

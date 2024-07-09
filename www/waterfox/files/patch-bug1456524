@@ -1,0 +1,122 @@
+commit 7813b28f0e98
+Author: Sean Stangl <sstangl@mozilla.com>
+Date:   Thu May 17 14:06:00 2018 -0400
+
+    Bug 1456524 - Maintain MoveResolver invariants. r=jandem, a=RyanVM
+    
+    The MoveResolver is a persistent data structure that requires
+    state to not leak between borrowers. An early-exit optimization
+    in the case of OOM allows for state to leak, leading to impossible
+    move list inputs, tripping assertions.
+    
+    --HG--
+    extra : rebase_source : 38c5d7afaa4b6394ced3266b90032b8e3bdba351
+---
+ js/src/jit/MacroAssembler.h                 | 5 +++++
+ js/src/jit/MoveResolver.cpp                 | 7 +++++++
+ js/src/jit/MoveResolver.h                   | 3 +++
+ js/src/jit/arm/MacroAssembler-arm.cpp       | 2 +-
+ js/src/jit/mips32/MacroAssembler-mips32.cpp | 2 +-
+ js/src/jit/mips64/MacroAssembler-mips64.cpp | 2 +-
+ 6 files changed, 18 insertions(+), 3 deletions(-)
+
+diff --git js/src/jit/MacroAssembler.h js/src/jit/MacroAssembler.h
+index b2cc464aafcc4..cef8c094b70c5 100644
+--- js/src/jit/MacroAssembler.h
++++ js/src/jit/MacroAssembler.h
+@@ -334,6 +334,11 @@ class MacroAssembler : public MacroAssemblerSpecific
+ 
+   public:
+     MoveResolver& moveResolver() {
++        // As an optimization, the MoveResolver is a persistent data structure
++        // shared between visitors in the CodeGenerator. This assertion
++        // checks that state is not leaking from visitor to visitor
++        // via an unresolved addMove().
++        MOZ_ASSERT(moveResolver_.hasNoPendingMoves());
+         return moveResolver_;
+     }
+ 
+diff --git js/src/jit/MoveResolver.cpp js/src/jit/MoveResolver.cpp
+index bd71d0acea44d..d79af5053b79c 100644
+--- js/src/jit/MoveResolver.cpp
++++ js/src/jit/MoveResolver.cpp
+@@ -7,6 +7,7 @@
+ #include "jit/MoveResolver.h"
+ 
+ #include "mozilla/Attributes.h"
++#include "mozilla/ScopeExit.h"
+ 
+ #include "jit/MacroAssembler.h"
+ #include "jit/RegisterSets.h"
+@@ -178,12 +179,18 @@ SplitIntoUpperHalf(const MoveOperand& move)
+ }
+ #endif
+ 
++// Resolves the pending_ list to a list in orderedMoves_.
+ bool
+ MoveResolver::resolve()
+ {
+     resetState();
+     orderedMoves_.clear();
+ 
++    // Upon return from this function, the pending_ list must be cleared.
++    auto clearPending = mozilla::MakeScopeExit([this]() {
++        pending_.clear();
++    });
++
+ #ifdef JS_CODEGEN_ARM
+     // Some of ARM's double registers alias two of its single registers,
+     // but the algorithm below assumes that every register can participate
+diff --git js/src/jit/MoveResolver.h js/src/jit/MoveResolver.h
+index d9a9415488704..d094ee1307563 100644
+--- js/src/jit/MoveResolver.h
++++ js/src/jit/MoveResolver.h
+@@ -333,6 +333,9 @@ class MoveResolver
+     uint32_t numCycles() const {
+         return numCycles_;
+     }
++    bool hasNoPendingMoves() const {
++        return pending_.empty();
++    }
+     void setAllocator(TempAllocator& alloc) {
+         movePool_.setAllocator(alloc);
+     }
+diff --git js/src/jit/arm/MacroAssembler-arm.cpp js/src/jit/arm/MacroAssembler-arm.cpp
+index a3985f2c24d1f..86e86310cc129 100644
+--- js/src/jit/arm/MacroAssembler-arm.cpp
++++ js/src/jit/arm/MacroAssembler-arm.cpp
+@@ -4593,7 +4593,7 @@ MacroAssembler::callWithABIPre(uint32_t* stackAdjust, bool callFromWasm)
+ 
+     // Position all arguments.
+     {
+-        enoughMemory_ = enoughMemory_ && moveResolver_.resolve();
++        enoughMemory_ &= moveResolver_.resolve();
+         if (!enoughMemory_)
+             return;
+ 
+diff --git js/src/jit/mips32/MacroAssembler-mips32.cpp js/src/jit/mips32/MacroAssembler-mips32.cpp
+index 8f2fec7948b75..ef0a9136f4e39 100644
+--- js/src/jit/mips32/MacroAssembler-mips32.cpp
++++ js/src/jit/mips32/MacroAssembler-mips32.cpp
+@@ -2191,7 +2191,7 @@ MacroAssembler::callWithABIPre(uint32_t* stackAdjust, bool callFromWasm)
+ 
+     // Position all arguments.
+     {
+-        enoughMemory_ = enoughMemory_ && moveResolver_.resolve();
++        enoughMemory_ &= moveResolver_.resolve();
+         if (!enoughMemory_)
+             return;
+ 
+diff --git js/src/jit/mips64/MacroAssembler-mips64.cpp js/src/jit/mips64/MacroAssembler-mips64.cpp
+index c944b0427aaee..8eec6bac047e4 100644
+--- js/src/jit/mips64/MacroAssembler-mips64.cpp
++++ js/src/jit/mips64/MacroAssembler-mips64.cpp
+@@ -2040,7 +2040,7 @@ MacroAssembler::callWithABIPre(uint32_t* stackAdjust, bool callFromWasm)
+ 
+     // Position all arguments.
+     {
+-        enoughMemory_ = enoughMemory_ && moveResolver_.resolve();
++        enoughMemory_ &= moveResolver_.resolve();
+         if (!enoughMemory_)
+             return;
+ 

@@ -1,0 +1,48 @@
+commit 4b2bdcc0f926
+Author: Sumit Tiwari <sumi29@gmail.com>
+Date:   Fri Apr 27 18:29:16 2018 -0400
+
+    Bug 1431434 - Merge SweepRegExps with SweepMisc; r=jonco
+    
+    MozReview-Commit-ID: 7EHJ5LOOuLQ
+    
+    --HG--
+    extra : rebase_source : ac054fc26da7238fd5ba3bd63d32c5e136c44c0a
+---
+ js/src/gc/GC.cpp | 9 +--------
+ 1 file changed, 1 insertion(+), 8 deletions(-)
+
+diff --git js/src/jsgc.cpp js/src/jsgc.cpp
+index 2f552a14b5582..e6bc076b7c51c 100644
+--- js/src/jsgc.cpp
++++ js/src/jsgc.cpp
+@@ -5032,13 +5032,6 @@ SweepObjectGroups(JSRuntime* runtime)
+         c->objectGroups.sweep(runtime->defaultFreeOp());
+ }
+ 
+-static void
+-SweepRegExps(JSRuntime* runtime)
+-{
+-    for (GCCompartmentGroupIter c(runtime); !c.done(); c.next())
+-        c->sweepRegExps();
+-}
+-
+ static void
+ SweepMisc(JSRuntime* runtime)
+ {
+@@ -5050,6 +5043,7 @@ SweepMisc(JSRuntime* runtime)
+         c->sweepSelfHostingScriptSource();
+         c->sweepNativeIterators();
+         c->sweepWatchpoints();
++        c->sweepRegExps();
+     }
+ }
+ 
+@@ -5322,7 +5316,6 @@ GCRuntime::beginSweepingSweepGroup()
+ 
+         AutoRunParallelTask sweepCCWrappers(rt, SweepCCWrappers, PhaseKind::SWEEP_CC_WRAPPER, lock);
+         AutoRunParallelTask sweepObjectGroups(rt, SweepObjectGroups, PhaseKind::SWEEP_TYPE_OBJECT, lock);
+-        AutoRunParallelTask sweepRegExps(rt, SweepRegExps, PhaseKind::SWEEP_REGEXP, lock);
+         AutoRunParallelTask sweepMisc(rt, SweepMisc, PhaseKind::SWEEP_MISC, lock);
+         AutoRunParallelTask sweepCompTasks(rt, SweepCompressionTasks, PhaseKind::SWEEP_COMPRESSION, lock);
+         AutoRunParallelTask sweepWeakMaps(rt, SweepWeakMaps, PhaseKind::SWEEP_WEAKMAPS, lock);

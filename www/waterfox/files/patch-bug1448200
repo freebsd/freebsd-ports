@@ -1,0 +1,36 @@
+commit 64e2cd0e1310
+Author: Blake Kaplan <mrbkap@gmail.com>
+Date:   Fri Mar 30 16:15:11 2018 -0700
+
+    Bug 1448200 - Handle the creation of the spellchecker more gracefully. r=Felipe a=lizzard
+    
+    If the user right-clicks on an input field and that click causes us to create
+    a spellchecker, then it won't be initialized in time to show the context menu.
+    Handle that case more gracefully by passing that state up to the parent.
+    
+    MozReview-Commit-ID: 1hjxloq2OLp
+    
+    --HG--
+    extra : source : 8fbafbc46da259a054dd00feb93abc20e3140c56
+    extra : histedit_source : 8f5a1548dad701ac23e34c9a15a59e67b50188c0
+---
+ toolkit/modules/InlineSpellCheckerContent.jsm | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git toolkit/modules/InlineSpellCheckerContent.jsm toolkit/modules/InlineSpellCheckerContent.jsm
+index 5184f1ec7dcb..974fbba879d7 100644
+--- toolkit/modules/InlineSpellCheckerContent.jsm
++++ toolkit/modules/InlineSpellCheckerContent.jsm
+@@ -49,6 +49,12 @@ var InlineSpellCheckerContent = {
+                enableRealTimeSpell: false };
+     }
+ 
++    if (spellChecker.initialSpellCheckPending) {
++      return { canSpellCheck: true,
++               initialSpellCheckPending: true,
++               enableRealTimeSpell: true };
++    }
++
+     let dictionaryList = {};
+     let realSpellChecker = spellChecker.mInlineSpellChecker.spellChecker;
+     realSpellChecker.GetDictionaryList(dictionaryList, {});

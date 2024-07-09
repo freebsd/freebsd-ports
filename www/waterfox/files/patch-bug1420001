@@ -1,0 +1,67 @@
+commit 3bd032461399
+Author: Emilio Cobos Álvarez <emilio@crisal.io>
+Date:   Mon Nov 27 14:57:57 2017 -0600
+
+    Bug 1420001 - style: Disable :visited if the document is being used as an image (from emilio:visited-as-an-image). r=dholbert, a=sledru
+    
+    MozReview-Commit-ID: F9MeT1kXZER
+    Source-Repo: https://github.com/servo/servo
+    Source-Revision: 7c99ae3bb8056f7e30a3b40340200eced385902d
+    
+    --HG--
+    extra : source : ed1802f246cb377522e492bf313038213c114843
+    extra : intermediate-source : d1599028c579f31e1441b9df277bf8f38c0e7f56
+---
+ servo/components/style/gecko/data.rs | 25 +++++++++++++++++++++++--
+ 1 file changed, 23 insertions(+), 2 deletions(-)
+
+diff --git servo/components/style/gecko/data.rs servo/components/style/gecko/data.rs
+index aeab6a938b9f..244fa034ba61 100644
+--- servo/components/style/gecko/data.rs
++++ servo/components/style/gecko/data.rs
+@@ -165,12 +165,20 @@ impl PerDocumentStyleDataImpl {
+     }
+ 
+     /// Returns whether private browsing is enabled.
+-    pub fn is_private_browsing_enabled(&self) -> bool {
++    fn is_private_browsing_enabled(&self) -> bool {
+         let doc =
+             self.stylist.device().pres_context().mDocument.raw::<nsIDocument>();
+         unsafe { bindings::Gecko_IsPrivateBrowsingEnabled(doc) }
+     }
+ 
++    /// Returns whether the document is being used as an image.
++    fn is_being_used_as_an_image(&self) -> bool {
++        let doc =
++            self.stylist.device().pres_context().mDocument.raw::<nsIDocument>();
++
++        unsafe { (*doc).mIsBeingUsedAsImage() }
++    }
++
+     /// Get the default computed values for this document.
+     pub fn default_computed_values(&self) -> &Arc<ComputedValues> {
+         self.stylist.device().default_computed_values_arc()
+@@ -180,9 +188,22 @@ impl PerDocumentStyleDataImpl {
+     fn visited_links_enabled(&self) -> bool {
+         unsafe { bindings::Gecko_AreVisitedLinksEnabled() }
+     }
++
+     /// Returns whether visited styles are enabled.
+     pub fn visited_styles_enabled(&self) -> bool {
+-        self.visited_links_enabled() && !self.is_private_browsing_enabled()
++        if !self.visited_links_enabled() {
++            return false;
++        }
++
++        if self.is_private_browsing_enabled() {
++            return false;
++        }
++
++        if self.is_being_used_as_an_image() {
++            return false;
++        }
++
++        true
+     }
+ 
+     /// Measure heap usage.

@@ -1,0 +1,181 @@
+commit 44b4458e2d21
+Author: Emilio Cobos Álvarez <emilio@crisal.io>
+Date:   Mon Sep 25 18:25:29 2017 +0200
+
+    Bug 1402442 - Properly remove display: contents pseudo-frames. r=mats, a=ritu
+    
+    MozReview-Commit-ID: 4pjVLQfv3YR
+    Signed-off-by: Emilio Cobos Álvarez <emilio@crisal.io>
+    
+    --HG--
+    extra : source : faa69ac1c14b79838cc0aac842b470a110542ebd
+    extra : amend_source : 3a76e0123bf3f7d10295000cc44fd8bdddf700df
+---
+ layout/base/nsCSSFrameConstructor.cpp              | 26 +++++++++++++++-------
+ testing/web-platform/meta/MANIFEST.json            | 25 +++++++++++++++++++++
+ ...dynamic-generated-content-fieldset-001.html.ini |  4 ++++
+ ...dynamic-generated-content-fieldset-001-ref.html | 16 +++++++++++++
+ ...nts-dynamic-generated-content-fieldset-001.html | 26 ++++++++++++++++++++++
+ 5 files changed, 89 insertions(+), 8 deletions(-)
+
+diff --git layout/base/nsCSSFrameConstructor.cpp layout/base/nsCSSFrameConstructor.cpp
+index 99b1211b399b..4fce3fb381a7 100644
+--- layout/base/nsCSSFrameConstructor.cpp
++++ layout/base/nsCSSFrameConstructor.cpp
+@@ -1698,6 +1698,17 @@ nsCSSFrameConstructor::NotifyDestroyingFrame(nsIFrame* aFrame)
+   nsFrameManager::NotifyDestroyingFrame(aFrame);
+ }
+ 
++static bool
++HasGeneratedContent(const nsIContent* aChild)
++{
++  if (!aChild->MayHaveAnonymousChildren()) {
++    return false;
++  }
++
++  return nsLayoutUtils::GetBeforeFrame(aChild) ||
++         nsLayoutUtils::GetAfterFrame(aChild);
++}
++
+ struct nsGenConInitializer {
+   nsAutoPtr<nsGenConNode> mNode;
+   nsGenConList*           mList;
+@@ -8642,16 +8653,15 @@ nsCSSFrameConstructor::ContentRemoved(nsIContent*  aCo
+   MOZ_ASSERT(!childFrame || !GetDisplayContentsStyleFor(aChild),
+              "display:contents nodes shouldn't have a frame");
+   if (!childFrame && GetDisplayContentsStyleFor(aChild)) {
+-    nsIContent* ancestor = aContainer;
+-    MOZ_ASSERT(ancestor, "display: contents on the root?");
+-    while (!ancestor->GetPrimaryFrame()) {
+-      // FIXME(emilio): Should this use the flattened tree parent instead?
+-      ancestor = ancestor->GetParent();
+-      MOZ_ASSERT(ancestor, "we can't have a display: contents subtree root!");
+-    }
++    if (HasGeneratedContent(aChild)) {
++      nsIContent* ancestor = aContainer;
++      MOZ_ASSERT(ancestor, "display: contents on the root?");
++      while (!ancestor->GetPrimaryFrame()) {
++        // FIXME(emilio): Should this use the flattened tree parent instead?
++        ancestor = ancestor->GetParent();
++        MOZ_ASSERT(ancestor, "we can't have a display: contents subtree root!");
++      }
+ 
+-    nsIFrame* ancestorFrame = ancestor->GetPrimaryFrame();
+-    if (ancestorFrame->GetProperty(nsIFrame::GenConProperty())) {
+       *aDidReconstruct = true;
+       LAYOUT_PHASE_TEMP_EXIT();
+ 
+diff --git testing/web-platform/meta/MANIFEST.json testing/web-platform/meta/MANIFEST.json
+index 5f05321c5a70..8aed4a4b5078 100644
+--- testing/web-platform/meta/MANIFEST.json
++++ testing/web-platform/meta/MANIFEST.json
+@@ -102975,6 +102975,18 @@
+      {}
+     ]
+    ],
++   "css/css-display-3/display-contents-dynamic-generated-content-fieldset-001.html": [
++    [
++     "/css/css-display-3/display-contents-dynamic-generated-content-fieldset-001.html",
++     [
++      [
++       "/css/css-display-3/display-contents-dynamic-generated-content-fieldset-001-ref.html",
++       "=="
++      ]
++     ],
++     {}
++    ]
++   ],
+    "css/css-display-3/display-contents-dynamic-inline-flex-001-inline.html": [
+     [
+      "/css/css-display-3/display-contents-dynamic-inline-flex-001-inline.html",
+@@ -227658,6 +227670,11 @@
+      {}
+     ]
+    ],
++   "css/css-display-3/display-contents-dynamic-generated-content-fieldset-001-ref.html": [
++    [
++     {}
++    ]
++   ],
+    "css/css-display-3/display-contents-flex-001-ref.html": [
+     [
+      {}
+@@ -502880,6 +502897,14 @@
+    "a2d7c9368ed8c01ca06c36646666270e85aee070",
+    "reftest"
+   ],
++  "css/css-display-3/display-contents-dynamic-generated-content-fieldset-001-ref.html": [
++   "30ec5c8ddacfbfef8434c37ca7a0a766f2bbc89a",
++   "support"
++  ],
++  "css/css-display-3/display-contents-dynamic-generated-content-fieldset-001.html": [
++   "984bebb3c3b8661aedef4a229848dfa818bb1f4a",
++   "reftest"
++  ],
+   "css/css-display-3/display-contents-dynamic-inline-flex-001-inline.html": [
+    "40fb07e8ada1530e6835ff2d4e49c5571ffb0baa",
+    "reftest"
+diff --git testing/web-platform/meta/css/css-display-3/display-contents-dynamic-generated-content-fieldset-001.html.ini testing/web-platform/meta/css/css-display-3/display-contents-dynamic-generated-content-fieldset-001.html.ini
+new file mode 100644
+index 000000000000..63c7442a2362
+--- /dev/null
++++ testing/web-platform/meta/css/css-display-3/display-contents-dynamic-generated-content-fieldset-001.html.ini
+@@ -0,0 +1,4 @@
++[display-contents-dynamic-generated-content-fieldset-001.html]
++  type: reftest
++  expected:
++    if not stylo: FAIL
+diff --git testing/web-platform/tests/css/css-display-3/display-contents-dynamic-generated-content-fieldset-001-ref.html testing/web-platform/tests/css/css-display-3/display-contents-dynamic-generated-content-fieldset-001-ref.html
+new file mode 100644
+index 000000000000..651bc19b83e9
+--- /dev/null
++++ testing/web-platform/tests/css/css-display-3/display-contents-dynamic-generated-content-fieldset-001-ref.html
+@@ -0,0 +1,16 @@
++<!doctype html>
++<meta charset="utf-8">
++<title>CSS Reftest Reference</title>
++<link rel="author" title="Emilio Cobos Álvarez" href="mailto:emilio@crisal.io">
++<style>
++div {
++  display: contents;
++  border: 10px solid red;
++}
++</style>
++<p>
++  Test passes if there is no red text and no red border.
++</p>
++<fieldset>
++  <div></div>
++</fieldset>
+diff --git testing/web-platform/tests/css/css-display-3/display-contents-dynamic-generated-content-fieldset-001.html testing/web-platform/tests/css/css-display-3/display-contents-dynamic-generated-content-fieldset-001.html
+new file mode 100644
+index 000000000000..8f8a0ba47971
+--- /dev/null
++++ testing/web-platform/tests/css/css-display-3/display-contents-dynamic-generated-content-fieldset-001.html
+@@ -0,0 +1,26 @@
++<!doctype html>
++<meta charset="utf-8">
++<title>CSS Test: Dynamic changes to display: contents generated content in fieldsets.</title>
++<link rel="author" title="Emilio Cobos Álvarez" href="mailto:emilio@crisal.io">
++<link rel="help" href="https://drafts.csswg.org/css-display-3/#valdef-display-contents">
++<link rel="match" href="display-contents-dynamic-generated-content-fieldset-001-ref.html">
++<style>
++.after::after {
++  content: "FAIL";
++  color: red;
++}
++div {
++  display: contents;
++  border: 10px solid red;
++}
++</style>
++<p>
++  Test passes if there is no red text and no red border.
++</p>
++<fieldset>
++  <div class="after"></div>
++</fieldset>
++<script>
++document.body.offsetHeight;
++document.querySelector("div").classList.remove("after");
++</script>

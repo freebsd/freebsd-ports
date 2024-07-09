@@ -1,0 +1,32 @@
+commit f708f8644183
+Author: Julien Cristau <jcristau@mozilla.com>
+Date:   Wed Mar 14 10:39:36 2018 +0100
+
+    Bug 1445582 - Error out when the searchplugins list is empty or a plugin is missing. r=froydnj, a=release
+    
+    MozReview-Commit-ID: DCUEc526d8D
+    
+    --HG--
+    extra : source : 9bdac68266e290963ad3a47cad717339345d1f8a
+    extra : intermediate-source : 031af54f082d87d8a4b0bf6bb09556115ff59f20
+---
+ browser/locales/Makefile.in | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git browser/locales/Makefile.in browser/locales/Makefile.in
+index 6b0455bf0285..f4abd1f5e6ea 100644
+--- browser/locales/Makefile.in
++++ browser/locales/Makefile.in
+@@ -61,10 +61,10 @@ STUB_HOOK = $(NSINSTALL) -D '$(ABS_DIST)/$(PKG_INST_PATH)'; \
+     $(NULL)
+ endif
+ 
+-SEARCHPLUGINS_FILENAMES := $(shell $(call py_action,output_searchplugins_list,$(srcdir)/search/list.json $(AB_CD)))
++SEARCHPLUGINS_FILENAMES := $(or $(shell $(call py_action,output_searchplugins_list,$(srcdir)/search/list.json $(AB_CD))), $(error Missing search plugins))
+ SEARCHPLUGINS_PATH := .deps/generated_$(AB_CD)
+ SEARCHPLUGINS_TARGET := libs searchplugins
+-SEARCHPLUGINS := $(foreach plugin,$(addsuffix .xml,$(SEARCHPLUGINS_FILENAMES)),$(or $(wildcard $(srcdir)/searchplugins/$(plugin)),$(warning Missing searchplugin: $(plugin))))
++SEARCHPLUGINS := $(foreach plugin,$(addsuffix .xml,$(SEARCHPLUGINS_FILENAMES)),$(or $(wildcard $(srcdir)/searchplugins/$(plugin)),$(error Missing searchplugin: $(plugin))))
+ # Some locale-specific search plugins may have preprocessor directives, but the
+ # default en-US ones do not.
+ SEARCHPLUGINS_FLAGS := --silence-missing-directive-warnings

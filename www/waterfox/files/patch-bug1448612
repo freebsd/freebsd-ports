@@ -1,0 +1,72 @@
+commit 2ff478b5f969
+Author: Emilio Cobos Álvarez <emilio@crisal.io>
+Date:   Thu Mar 29 10:02:00 2018 -0400
+
+    Bug 1448612 - Don't take ownership of the stream data too early. r=baku, a=RyanVM
+    
+    MozReview-Commit-ID: 8e8PNR9NvwW
+---
+ dom/fetch/FetchConsumer.cpp | 10 +++-------
+ 1 file changed, 3 insertions(+), 7 deletions(-)
+
+diff --git dom/fetch/FetchConsumer.cpp dom/fetch/FetchConsumer.cpp
+index cde565705188..a374d1fed8c2 100644
+--- dom/fetch/FetchConsumer.cpp
++++ dom/fetch/FetchConsumer.cpp
+@@ -109,13 +109,11 @@ class ContinueConsumeBodyControlRunnable final : public MainThreadWorkerControlR
+   RefPtr<FetchBodyConsumer<Derived>> mFetchBodyConsumer;
+ 
+ public:
+-  ContinueConsumeBodyControlRunnable(FetchBodyConsumer<Derived>* aFetchBodyConsumer,
+-                                     uint8_t* aResult)
++  ContinueConsumeBodyControlRunnable(FetchBodyConsumer<Derived>* aFetchBodyConsumer)
+     : MainThreadWorkerControlRunnable(aFetchBodyConsumer->GetWorkerPrivate())
+     , mFetchBodyConsumer(aFetchBodyConsumer)
+   {
+     MOZ_ASSERT(NS_IsMainThread());
+-    free(aResult);
+   }
+ 
+   bool
+@@ -289,14 +287,12 @@ public:
+     // shutting down procedure.
+ 
+     RefPtr<ContinueConsumeBodyControlRunnable<Derived>> r =
+-      new ContinueConsumeBodyControlRunnable<Derived>(mFetchBodyConsumer,
+-                                                      nonconstResult);
++      new ContinueConsumeBodyControlRunnable<Derived>(mFetchBodyConsumer);
+     if (NS_WARN_IF(!r->Dispatch())) {
+       return NS_ERROR_FAILURE;
+     }
+ 
+-    // FetchBody is responsible for data.
+-    return NS_SUCCESS_ADOPTED_DATA;
++    return NS_OK;
+   }
+ 
+   virtual void BlobStoreCompleted(MutableBlobStorage* aBlobStorage,
+commit 84a72343d0ba
+Author: Ryan VanderMeulen <ryanvm@gmail.com>
+Date:   Thu Mar 29 10:46:07 2018 -0400
+
+    Bug 1448612 - Mark ContinueConsumeBodyControlRunnable as explicit to make the static analysis happy. r=emilio, a=bustage
+    
+    --HG--
+    extra : rebase_source : d11e91ec335292d9448df17a5c05c98f6837884c
+---
+ dom/fetch/FetchConsumer.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git dom/fetch/FetchConsumer.cpp dom/fetch/FetchConsumer.cpp
+index a374d1fed8c2..2771a23843e3 100644
+--- dom/fetch/FetchConsumer.cpp
++++ dom/fetch/FetchConsumer.cpp
+@@ -109,7 +109,7 @@ class ContinueConsumeBodyControlRunnable final : public MainThreadWorkerControlR
+   RefPtr<FetchBodyConsumer<Derived>> mFetchBodyConsumer;
+ 
+ public:
+-  ContinueConsumeBodyControlRunnable(FetchBodyConsumer<Derived>* aFetchBodyConsumer)
++  explicit ContinueConsumeBodyControlRunnable(FetchBodyConsumer<Derived>* aFetchBodyConsumer)
+     : MainThreadWorkerControlRunnable(aFetchBodyConsumer->GetWorkerPrivate())
+     , mFetchBodyConsumer(aFetchBodyConsumer)
+   {

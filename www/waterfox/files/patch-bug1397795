@@ -1,0 +1,61 @@
+commit fc56d498fd83
+Author: Jonathan Watt <jwatt@jwatt.org>
+Date:   Fri Feb 23 10:40:12 2018 +0000
+
+    Bug 1397795 - Fix stack overflow crash due to box-shadow. r=mstange, a=jcristau
+    
+    GetBoxShadowRectForFrame is called while we're calculating the visual
+    overflow bounds for a frame.  So it is not valid for it to use the frame's
+    "current" visual overflow rect (which may be uninitialized or stale).
+    
+    MozReview-Commit-ID: J52dxIMrMg5
+    
+    --HG--
+    extra : source : d7c420c8dc2a6b28500eae0e35cd9f17a22908ec
+---
+ layout/base/nsLayoutUtils.cpp | 22 +++++++++++++---------
+ 1 file changed, 13 insertions(+), 9 deletions(-)
+
+diff --git layout/base/nsLayoutUtils.cpp layout/base/nsLayoutUtils.cpp
+index 53c43f6b3546..f85273fbf232 100644
+--- layout/base/nsLayoutUtils.cpp
++++ layout/base/nsLayoutUtils.cpp
+@@ -8747,25 +8747,29 @@ nsLayoutUtils::GetBoxShadowRectForFrame(nsIFrame* aFrame,
+     return nsRect();
+   }
+ 
+-  bool nativeTheme;
++  nsRect inputRect(nsPoint(0, 0), aFrameSize);
++
++  // According to the CSS spec, box-shadow should be based on the border box.
++  // However, that looks broken when the background extends outside the border
++  // box, as can be the case with native theming.  To fix that we expand the
++  // area that we shadow to include the bounds of any native theme drawing.
+   const nsStyleDisplay* styleDisplay = aFrame->StyleDisplay();
+   nsITheme::Transparency transparency;
+   if (aFrame->IsThemed(styleDisplay, &transparency)) {
+     // For opaque (rectangular) theme widgets we can take the generic
+     // border-box path with border-radius disabled.
+-    nativeTheme = transparency != nsITheme::eOpaque;
+-  } else {
+-    nativeTheme = false;
++    if (transparency != nsITheme::eOpaque) {
++      nsPresContext *presContext = aFrame->PresContext();
++      presContext->GetTheme()->
++        GetWidgetOverflow(presContext->DeviceContext(), aFrame,
++                          styleDisplay->mAppearance, &inputRect);
++    }
+   }
+ 
+-  nsRect frameRect = nativeTheme ?
+-    aFrame->GetVisualOverflowRectRelativeToSelf() :
+-    nsRect(nsPoint(0, 0), aFrameSize);
+-
+   nsRect shadows;
+   int32_t A2D = aFrame->PresContext()->AppUnitsPerDevPixel();
+   for (uint32_t i = 0; i < boxShadows->Length(); ++i) {
+-    nsRect tmpRect = frameRect;
++    nsRect tmpRect = inputRect;
+     nsCSSShadowItem* shadow = boxShadows->ShadowAt(i);
+ 
+     // inset shadows are never painted outside the frame

@@ -1,0 +1,28 @@
+commit 068a8c4feb56
+Author: Oriol Brufau <oriol-bugzilla@hotmail.com>
+Date:   Fri Mar 16 16:58:36 2018 +0100
+
+    Bug 1418009 - Avoid speculative connections on prematurely inserted lazy tabs. r=dao, a=RyanVM
+    
+    MozReview-Commit-ID: 3T8PLBLEGNt
+    
+    --HG--
+    extra : rebase_source : 5839f1ede2a3d939e8bad02520979a8911f69553
+    extra : source : 6d67283033868a54d89a936ba5e336d9bad5c79c
+---
+ browser/components/sessionstore/SessionStore.jsm | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git browser/components/sessionstore/SessionStore.jsm browser/components/sessionstore/SessionStore.jsm
+index dee998cbe7eb..88de8a64f0fc 100644
+--- browser/components/sessionstore/SessionStore.jsm
++++ browser/components/sessionstore/SessionStore.jsm
+@@ -3547,7 +3547,7 @@ var SessionStoreInternal = {
+    *        a tab to speculatively connect on mouse hover.
+    */
+   speculativeConnectOnTabHover(tab) {
+-    if (this._restore_on_demand && !tab.__SS_connectionPrepared && tab.hasAttribute("pending")) {
++    if (tab.__SS_lazyData && !tab.__SS_connectionPrepared) {
+       let url = this.getLazyTabValue(tab, "url");
+       let prepared = this.prepareConnectionToHost(url);
+       // This is used to test if a connection has been made beforehand.

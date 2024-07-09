@@ -1,0 +1,70 @@
+commit 24a8b8309514
+Author: Olli Pettay <Olli.Pettay@helsinki.fi>
+Date:   Tue Nov 28 16:17:17 2017 +0200
+
+    Bug 1414452 - Clear dirAutoSetBy properties iteratively. r=peterv, a=abillings
+    
+    --HG--
+    extra : source : 157a15cd5ecc8706b502f78c51e79b58ac59eaf0
+---
+ dom/base/DirectionalityUtils.cpp | 23 +++++++++++++----------
+ 1 file changed, 13 insertions(+), 10 deletions(-)
+
+diff --git dom/base/DirectionalityUtils.cpp dom/base/DirectionalityUtils.cpp
+index fb443e23688c..f132c8970fe7 100644
+--- dom/base/DirectionalityUtils.cpp
++++ dom/base/DirectionalityUtils.cpp
+@@ -419,7 +419,7 @@ class nsTextNodeDirectionalityMap
+ 
+     nsTextNodeDirectionalityMap* map =
+       reinterpret_cast<nsTextNodeDirectionalityMap * >(aPropertyValue);
+-    map->EnsureMapIsClear(textNode);
++    map->EnsureMapIsClear();
+     delete map;
+   }
+ 
+@@ -548,11 +548,11 @@ private:
+     return OpRemove;
+   }
+ 
+-  static nsCheapSetOperator ClearEntry(nsPtrHashKey<Element>* aEntry, void* aData)
++  static nsCheapSetOperator TakeEntries(nsPtrHashKey<Element>* aEntry, void* aData)
+   {
+-    Element* rootNode = aEntry->GetKey();
+-    rootNode->ClearHasDirAutoSet();
+-    rootNode->DeleteProperty(nsGkAtoms::dirAutoSetBy);
++    AutoTArray<Element*, 8>* entries =
++      static_cast<AutoTArray<Element*, 8>*>(aData);
++    entries->AppendElement(aEntry->GetKey());
+     return OpRemove;
+   }
+ 
+@@ -568,12 +568,15 @@ public:
+     mElements.EnumerateEntries(ResetNodeDirection, &data);
+   }
+ 
+-  void EnsureMapIsClear(nsINode* aTextNode)
++  void EnsureMapIsClear()
+   {
+     AutoRestore<Element*> restore(mElementToBeRemoved);
+-    DebugOnly<uint32_t> clearedEntries =
+-      mElements.EnumerateEntries(ClearEntry, aTextNode);
+-    MOZ_ASSERT(clearedEntries == 0, "Map should be empty already");
++    AutoTArray<Element*, 8> entries;
++    mElements.EnumerateEntries(TakeEntries, &entries);
++    for (Element* el : entries) {
++      el->ClearHasDirAutoSet();
++      el->DeleteProperty(nsGkAtoms::dirAutoSetBy);
++    }
+   }
+ 
+   static void RemoveElementFromMap(nsTextNode* aTextNode, Element* aElement)
+@@ -613,7 +616,7 @@ public:
+   static void EnsureMapIsClearFor(nsINode* aTextNode)
+   {
+     if (aTextNode->HasTextNodeDirectionalityMap()) {
+-      GetDirectionalityMap(aTextNode)->EnsureMapIsClear(aTextNode);
++      GetDirectionalityMap(aTextNode)->EnsureMapIsClear();
+     }
+   }
+ };

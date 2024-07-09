@@ -1,0 +1,43 @@
+commit 6c5f29ecc4a3
+Author: James Teh <jteh@mozilla.com>
+Date:   Thu Apr 19 15:53:25 2018 +1000
+
+    Bug 1454572: nsComputedDOMStyle: Don't crash when used on a detached pseudo-element. r=emilio,xidorn:emilio a=RyanVM
+    
+    This shouldn't normally happen, but it does in some rare cases; e.g. if an accessibility client queries info for a node that is being removed.
+    
+    MozReview-Commit-ID: 3nac9ITN66f
+    
+    --HG--
+    extra : source : 0fcbe086a09ba9e9684f43706290b3e0f2226103
+---
+ layout/style/nsComputedDOMStyle.cpp | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git layout/style/nsComputedDOMStyle.cpp layout/style/nsComputedDOMStyle.cpp
+index 2ab4b28ad42a..f55675ee8ba4 100644
+--- layout/style/nsComputedDOMStyle.cpp
++++ layout/style/nsComputedDOMStyle.cpp
+@@ -686,6 +686,7 @@ nsComputedDOMStyle::DoGetStyleContextNoFlush(Element* aElement,
+                                              AnimationFlag aAnimationFlag)
+ {
+   MOZ_ASSERT(aElement, "NULL element");
++
+   // If the content has a pres shell, we must use it.  Otherwise we'd
+   // potentially mix rule trees by using the wrong pres shell's style
+   // set.  Using the pres shell from the content also means that any
+@@ -728,6 +729,14 @@ nsComputedDOMStyle::DoGetStyleContextNoFlush(Element* aElement,
+     }
+   }
+ 
++  if (aElement->IsInNativeAnonymousSubtree() && !aElement->IsInComposedDoc()) {
++    // Normal web content can't access NAC, but Accessibility, DevTools and
++    // Editor use this same API and this may get called for anonymous content.
++    // Computing the style of a pseudo-element that doesn't have a parent doesn't
++    // really make sense.
++    return nullptr;
++  }
++
+   // XXX the !aElement->IsHTMLElement(nsGkAtoms::area)
+   // check is needed due to bug 135040 (to avoid using
+   // mPrimaryFrame). Remove it once that's fixed.

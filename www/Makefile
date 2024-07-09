@@ -2459,6 +2459,7 @@
     SUBDIR += w3mir
     SUBDIR += wabt
     SUBDIR += wasm-pack
+    SUBDIR += waterfox
     SUBDIR += web2ldap
     SUBDIR += webalizer
     SUBDIR += webbrowser
