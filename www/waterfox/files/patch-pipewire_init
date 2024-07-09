@@ -1,0 +1,105 @@
+    Chase ABI from multimedia/pipewire/files/patch-src_pipewire_pipewire_init
+    
+    Ref: https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
+
+diff --git third_party/libwebrtc/modules/desktop_capture/linux/wayland/shared_screencast_stream.cc third_party/libwebrtc/modules/desktop_capture/linux/wayland/shared_screencast_stream.cc
+index 49b64845100b..283c387db770 100644
+--- third_party/libwebrtc/modules/desktop_capture/linux/wayland/shared_screencast_stream.cc
++++ third_party/libwebrtc/modules/desktop_capture/linux/wayland/shared_screencast_stream.cc
+@@ -402,7 +402,7 @@ bool SharedScreenCastStreamPrivate::StartScreenCastStream(
+ 
+   pw_stream_node_id_ = stream_node_id;
+ 
+-  pw_init(/*argc=*/nullptr, /*argc=*/nullptr);
++  pipewire_init(/*argc=*/nullptr, /*argc=*/nullptr);
+ 
+   pw_main_loop_ = pw_thread_loop_new("pipewire-main-loop", nullptr);
+ 
+diff --git third_party/libwebrtc/modules/desktop_capture/linux/wayland/test/test_screencast_stream_provider.cc third_party/libwebrtc/modules/desktop_capture/linux/wayland/test/test_screencast_stream_provider.cc
+index 3b829959aca8..9bdcdf1ffd51 100644
+--- third_party/libwebrtc/modules/desktop_capture/linux/wayland/test/test_screencast_stream_provider.cc
++++ third_party/libwebrtc/modules/desktop_capture/linux/wayland/test/test_screencast_stream_provider.cc
+@@ -36,7 +36,7 @@ TestScreenCastStreamProvider::TestScreenCastStreamProvider(Observer* observer,
+     return;
+   }
+ 
+-  pw_init(/*argc=*/nullptr, /*argc=*/nullptr);
++  pipewire_init(/*argc=*/nullptr, /*argc=*/nullptr);
+ 
+   pw_main_loop_ = pw_thread_loop_new("pipewire-test-main-loop", nullptr);
+ 
+diff --git third_party/libwebrtc/modules/portal/pipewire.sigs third_party/libwebrtc/modules/portal/pipewire.sigs
+index 139a8c37a551..9fe131d8daa6 100644
+--- third_party/libwebrtc/modules/portal/pipewire.sigs
++++ third_party/libwebrtc/modules/portal/pipewire.sigs
+@@ -15,7 +15,7 @@ pw_loop * pw_loop_new(const spa_dict *props);
+ 
+ 
+ // pipewire.h
+-void pw_init(int *argc, char **argv[]);
++void pipewire_init(int *argc, char **argv[]);
+ const char* pw_get_library_version();
+ 
+ // properties.h
+diff --git third_party/pipewire/libpipewire/mozpipewire.cpp third_party/pipewire/libpipewire/mozpipewire.cpp
+index fbeeb8e5a760..46f768790946 100644
+--- third_party/pipewire/libpipewire/mozpipewire.cpp
++++ third_party/pipewire/libpipewire/mozpipewire.cpp
+@@ -58,7 +58,7 @@ struct pw_context * (*pw_context_new_fn)(struct pw_loop *main_loop,
+                                       struct pw_properties *props,
+                                       size_t user_data_size);
+ static int (*pw_core_disconnect_fn)(struct pw_core *core);
+-static void (*pw_init_fn)(int *argc, char **argv[]);
++static void (*pipewire_init_fn)(int *argc, char **argv[]);
+ static void (*pw_stream_add_listener_fn)(struct pw_stream *stream,
+                                       struct spa_hook *listener,
+                                       const struct pw_stream_events *events,
+@@ -101,7 +101,7 @@ bool IsPwLibraryLoaded() {
+           IS_FUNC_LOADED(pw_context_destroy_fn) &&
+           IS_FUNC_LOADED(pw_context_new_fn) &&
+           IS_FUNC_LOADED(pw_core_disconnect_fn) &&
+-          IS_FUNC_LOADED(pw_init_fn) &&
++          IS_FUNC_LOADED(pipewire_init_fn) &&
+           IS_FUNC_LOADED(pw_stream_add_listener_fn) &&
+           IS_FUNC_LOADED(pw_stream_connect_fn) &&
+           IS_FUNC_LOADED(pw_stream_disconnect_fn) &&
+@@ -142,7 +142,7 @@ bool LoadPWLibrary() {
+     GET_FUNC(pw_context_destroy, pwLib);
+     GET_FUNC(pw_context_new, pwLib);
+     GET_FUNC(pw_core_disconnect, pwLib);
+-    GET_FUNC(pw_init, pwLib);
++    GET_FUNC(pipewire_init, pwLib);
+     GET_FUNC(pw_stream_add_listener, pwLib);
+     GET_FUNC(pw_stream_connect, pwLib);
+     GET_FUNC(pw_stream_disconnect, pwLib);
+@@ -220,12 +220,12 @@ pw_core_disconnect(struct pw_core *core)
+ }
+ 
+ void
+-pw_init(int *argc, char **argv[])
++pipewire_init(int *argc, char **argv[])
+ {
+   if (!LoadPWLibrary()) {
+     return;
+   }
+-  return pw_init_fn(argc, argv);
++  return pipewire_init_fn(argc, argv);
+ }
+ 
+ void
+diff --git third_party/pipewire/pipewire/pipewire.h third_party/pipewire/pipewire/pipewire.h
+index b932103f46e6..2c88e28421ec 100644
+--- third_party/pipewire/pipewire/pipewire.h
++++ third_party/pipewire/pipewire/pipewire.h
+@@ -69,9 +69,9 @@ extern "C" {
+  * \{
+  */
+ void
+-pw_init(int *argc, char **argv[]);
++pipewire_init(int *argc, char **argv[]);
+ 
+-void pw_deinit(void);
++void pipewire_deinit(void);
+ 
+ bool
+ pw_debug_is_category_enabled(const char *name);
