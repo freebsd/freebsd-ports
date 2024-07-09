@@ -1,9 +1,6 @@
 PORTNAME=	pika
-DISTVERSION=	0.25.0
+DISTVERSION=	0.26.0
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	f4378fc49f9fff14dbb03a1111f8be01f6b0f37c.patch:-p1 # fix assert in the FreeBSD version of get_executable_prefix, https://github.com/pika-org/pika/pull/1171
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for concurrency and parallelism
@@ -36,7 +33,7 @@ post-install:
 	@${RM} -r ${STAGEDIR}${DATADIR} # remove copy of license
 
 post-test: # run the tests according to https://pikacpp.org/usage.html#testing (make tests test doesn't work)
-	# some tests fail, see https://github.com/pika-org/pika/issues/895
+	# some tests fail because freebsd_environ isn't initialized, see https://github.com/pika-org/pika/issues/895
 	@cd ${BUILD_WRKSRC} && \
 		${MAKE_CMD} test
 
