@@ -13,7 +13,20 @@
  else(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
    # Use -Wall for clang and gcc.
    if(NOT CMAKE_CXX_FLAGS MATCHES "-Wall")
-@@ -248,8 +250,7 @@ configure_file(
+@@ -83,8 +85,10 @@ else(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
+ 
+   # Disable RTTI.
+-  string(REGEX REPLACE "-frtti" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
++  if (NOT CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
++    string(REGEX REPLACE "-frtti" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
++  endif()
+ endif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+ 
+ # BUILD_SHARED_LIBS is a standard CMake variable, but we declare it here to make
+@@ -248,8 +252,7 @@ configure_file(
    "snappy-stubs-public.h.in"
    "${PROJECT_BINARY_DIR}/snappy-stubs-public.h")
  
@@ -23,7 +36,7 @@
    PRIVATE
      "snappy-internal.h"
      "snappy-stubs-internal.h"
-@@ -270,20 +271,34 @@ target_sources(snappy
+@@ -270,20 +273,34 @@ target_sources(snappy
      $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/snappy-stubs-public.h>
      $<INSTALL_INTERFACE:include/snappy-stubs-public.h>
  )
@@ -62,7 +75,7 @@
  if(SNAPPY_BUILD_TESTS OR SNAPPY_BUILD_BENCHMARKS)
    add_library(snappy_test_support "")
    target_sources(snappy_test_support
-@@ -399,7 +414,7 @@ if(SNAPPY_INSTALL)
+@@ -399,7 +416,7 @@ if(SNAPPY_INSTALL)
  include(GNUInstallDirs)
  
  if(SNAPPY_INSTALL)
