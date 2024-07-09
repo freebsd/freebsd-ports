@@ -1,5 +1,5 @@
---- cargo-crates/lindera-ko-dic-0.30.0/build.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/lindera-ko-dic-0.30.0/build.rs
+--- cargo-crates/lindera-ko-dic-0.31.0/build.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/lindera-ko-dic-0.31.0/build.rs
 @@ -40,10 +40,7 @@ fn main() -> Result<(), Box<dyn Error>> {
          let mut dummy_dict_csv = File::create(input_dir.join("dummy_dict.csv"))?;
          dummy_dict_csv.write_all(

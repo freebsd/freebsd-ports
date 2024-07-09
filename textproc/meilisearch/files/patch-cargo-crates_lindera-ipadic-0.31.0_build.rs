@@ -1,5 +1,5 @@
---- cargo-crates/lindera-ipadic-0.30.0/build.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/lindera-ipadic-0.30.0/build.rs
+--- cargo-crates/lindera-ipadic-0.31.0/build.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/lindera-ipadic-0.31.0/build.rs
 @@ -55,7 +55,7 @@ fn main() -> Result<(), Box<dyn Error>> {
          dummy_matrix_def.write_all(b"0 1 0\n")?;
      } else {
