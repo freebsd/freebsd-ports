@@ -1,7 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	5.0.27
-PORTREVISION=	1
+DISTVERSION=	5.0.28
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -118,5 +117,8 @@ do-install:
 	${MV} ${STAGEDIR}${PREFIX}/${doc} ${STAGEDIR}${DOCSDIR}/
 .endfor
 	${RM} ${STAGEDIR}${PREFIX}/bin/resmoke.py
+
+do-test:
+	${SH} ${FILESDIR}/make.test.sh "${STAGEDIR}${PREFIX}/bin"
 
 .include <bsd.port.post.mk>
