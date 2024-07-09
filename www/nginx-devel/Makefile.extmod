@@ -244,6 +244,10 @@ NJS_GH_TUPLE=		nginx:njs:0.8.5:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 NJS_IMPLIES=		STREAM
 
+NJS_QJS_IMPLIES=	HTTP NJS
+NJS_QJS_LIB_DEPENDS=	libquickjs.so:lang/quickjs
+NJS_QJS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-njs-auto-quickjs
+
 NJS_XML_IMPLIES=	HTTP NJS
 NJS_XML_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 			libxslt.so:textproc/libxslt
