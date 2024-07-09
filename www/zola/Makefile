@@ -10,6 +10,9 @@ WWW=		https://www.getzola.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	the ring crate requires SSE2 instruction on intel cpu
+
 LIB_DEPENDS=	libonig.so:devel/oniguruma \
 		libsass.so:textproc/libsass
 
