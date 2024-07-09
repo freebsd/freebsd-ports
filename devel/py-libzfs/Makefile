@@ -24,7 +24,7 @@ MAKE_ENV=	freebsd_src=${SRC_BASE}
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} >= 1500000
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1500018 || (${OSVERSION} >= 1401000 && ${OSVERSION} < 1500000))
 EXTRA_PATCHES+=	${FILESDIR}/extra-zpool-add.patch
 .endif
 
