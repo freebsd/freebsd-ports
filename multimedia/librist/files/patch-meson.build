@@ -1,0 +1,23 @@
+- workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=280210
+- code uses the c11 feature stdatomic.h while it uses --std=c99
+
+--- meson.build.orig	2024-07-09 22:00:05 UTC
++++ meson.build
+@@ -5,7 +5,7 @@ project('libRIST', 'c',
+ 
+ project('libRIST', 'c',
+ 	version: '0.2.10',
+-	default_options: ['c_std=c99', 'warning_level=3', 'libdir=lib'],
++	default_options: ['c_std=c11', 'warning_level=3', 'libdir=lib'],
+         meson_version: '>= 0.51.0')
+ 
+ cc = meson.get_compiler('c')
+@@ -374,7 +374,7 @@ if get_option('static_analyze')
+ if get_option('static_analyze')
+ 	run_target('cppcheck', command : ['cppcheck',
+ 									  '--quiet',
+-									  '--std=c99',
++									  '--std=c11',
+ 									  '--suppressions-list=' + join_paths(meson.source_root(), 'common/configs/cppcheck-suppressions.txt'),
+ 									  '--project=' + join_paths(meson.build_root(),
+ 									  'compile_commands.json')])

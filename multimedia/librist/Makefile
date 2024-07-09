@@ -9,8 +9,6 @@ WWW=		https://code.videolan.org/rist/librist
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_15=	compilation fails, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=280210
-
 LIB_DEPENDS=	libcjson.so:devel/libcjson \
 		libmbedcrypto.so:security/mbedtls \
 		libmicrohttpd.so:www/libmicrohttpd
