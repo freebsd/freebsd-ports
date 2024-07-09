@@ -13,6 +13,7 @@
 %%EXAMPLES%%bin/llama-finetune
 %%EXAMPLES%%bin/llama-gbnf-validator
 %%EXAMPLES%%bin/llama-gguf
+%%EXAMPLES%%bin/llama-gguf-hash
 %%EXAMPLES%%bin/llama-gguf-split
 %%EXAMPLES%%bin/llama-gritlm
 %%EXAMPLES%%bin/llama-imatrix
