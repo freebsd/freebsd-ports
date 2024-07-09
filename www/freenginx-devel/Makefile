@@ -9,7 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	joneum@FreeBSD.org
 COMMENT?=	Robust and small WWW server
-WWW=		https://nginx.com/
+WWW=		https://freenginx.com/
 
 LICENSE?=	BSD2CLAUSE
 LICENSE_FILE?=	${WRKSRC}/LICENSE
