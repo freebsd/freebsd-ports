@@ -1,0 +1,28 @@
+--- certbot_dns_cloudflare/_internal/dns_cloudflare.py.orig	2024-06-05 21:34:02 UTC
++++ certbot_dns_cloudflare/_internal/dns_cloudflare.py
+@@ -99,12 +99,12 @@ class _CloudflareClient:
+             # We can't use named arguments in this case, as it would break compatibility with
+             # the Cloudflare library since version 2.10.1, as the `token` argument was used for
+             # tokens and keys alike and the `key` argument did not exist in earlier versions.
+-            self.cf = CloudFlare.CloudFlare(email, api_key)
++            self.cf = CloudFlare.CloudFlare(email, api_key, warnings=False)
+         else:
+             # If no email was specified, we're using just a token. Let's use the named argument
+             # for simplicity, which is compatible with all (current) versions of the Cloudflare
+             # library.
+-            self.cf = CloudFlare.CloudFlare(token=api_token)
++            self.cf = CloudFlare.CloudFlare(token=api_token, warnings=False)
+ 
+     def add_txt_record(self, domain: str, record_name: str, record_content: str,
+                        record_ttl: int) -> None:
+--- setup.py.orig	2024-06-05 21:34:03 UTC
++++ setup.py
+@@ -9,7 +9,7 @@ install_requires = [
+ install_requires = [
+     # for now, do not upgrade to cloudflare>=2.20 to avoid deprecation warnings and the breaking
+     # changes in version 3.0. see https://github.com/certbot/certbot/issues/9938
+-    'cloudflare>=1.5.1, <2.20',
++    'cloudflare>=1.5.1, <=2.20',
+     'setuptools>=41.6.0',
+ ]
+ 
