@@ -1,6 +1,5 @@
 PORTNAME=	arcan
-DISTVERSION=	0.6.3
-PORTREVISION=	1
+DISTVERSION=	0.6.3.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -33,12 +32,13 @@ CMAKE_ARGS=	-DDISTR_TAG:STRING="portbld" \
 LDFLAGS+=	-Wl,--as-needed # bzip2, ffmpeg, librt, libutil, lzma, zlib
 LDFLAGS_i386=	-Wl,-z,notext
 
-OPTIONS_DEFINE=	ESPEAK FFMPEG LUAJIT MANPAGES SDL SUID TESSERACT UVC VLC VNC WAYLAND
-OPTIONS_DEFAULT=ESPEAK FFMPEG LUAJIT MANPAGES SDL SUID TESSERACT UVC VLC VNC WAYLAND
+OPTIONS_DEFINE=	ESPEAK FFMPEG HUNSPELL LUAJIT MANPAGES SDL SUID TESSERACT UVC VLC VNC WAYLAND
+OPTIONS_DEFAULT=ESPEAK FFMPEG HUNSPELL LUAJIT MANPAGES SDL SUID TESSERACT UVC VLC VNC WAYLAND
 OPTIONS_SUB=	yes
 
 ESPEAK_LIB_DEPENDS=	libespeak-ng.so:audio/espeak-ng
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+HUNSPELL_LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 
 MANPAGES_USES=		ruby:build
 
@@ -101,6 +101,10 @@ post-patch-FFMPEG-off:
 		${WRKSRC}/a12/CMakeLists.txt \
 		${WRKSRC}/frameserver/decode/default/CMakeLists.txt \
 		${WRKSRC}/frameserver/encode/default/CMakeLists.txt
+
+post-patch-HUNSPELL-off:
+	@${REINPLACE_CMD} -i.nohunspell '/pkg.*HUNSPELL/d' \
+		${WRKSRC}/frameserver/decode/default/CMakeLists.txt
 
 post-patch-TESSERACT-off:
 	@${REINPLACE_CMD} -i.notesseract '/pkg.*tesseract/d' \

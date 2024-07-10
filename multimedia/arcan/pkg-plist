@@ -57,6 +57,10 @@ share/man/man1/arcan_db.1.gz
 %%MANPAGES%%share/man/man3/attrtag_model.3.gz
 %%MANPAGES%%share/man/man3/audio_buffer_size.3.gz
 %%MANPAGES%%share/man/man3/audio_gain.3.gz
+%%MANPAGES%%share/man/man3/audio_listener.3.gz
+%%MANPAGES%%share/man/man3/audio_outputs.3.gz
+%%MANPAGES%%share/man/man3/audio_position.3.gz
+%%MANPAGES%%share/man/man3/audio_reconfigure.3.gz
 %%MANPAGES%%share/man/man3/benchmark_data.3.gz
 %%MANPAGES%%share/man/man3/benchmark_enable.3.gz
 %%MANPAGES%%share/man/man3/benchmark_timestamp.3.gz
@@ -270,6 +274,7 @@ share/man/man1/arcan_db.1.gz
 %%MANPAGES%%share/man/man3/target_updatehandler.3.gz
 %%MANPAGES%%share/man/man3/target_verbose.3.gz
 %%MANPAGES%%share/man/man3/text_dimensions.3.gz
+%%MANPAGES%%share/man/man3/text_surface.3.gz
 %%MANPAGES%%share/man/man3/toggle_mouse_grab.3.gz
 %%MANPAGES%%share/man/man3/transfer_image_transform.3.gz
 %%MANPAGES%%share/man/man3/utf8kind.3.gz
