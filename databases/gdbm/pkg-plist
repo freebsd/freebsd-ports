@@ -21,8 +21,10 @@ lib/libgdbm.so.6.0.0
 %%NLS%%share/locale/fi/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gdbm.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gdbm.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gdbm.mo
