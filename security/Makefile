@@ -745,7 +745,6 @@
     SUBDIR += pam-modules
     SUBDIR += pam-mysql
     SUBDIR += pam-pgsql
-    SUBDIR += pam_fprint
     SUBDIR += pam_google_authenticator
     SUBDIR += pam_helper
     SUBDIR += pam_howdy
