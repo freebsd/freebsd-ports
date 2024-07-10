@@ -1,5 +1,6 @@
 PORTNAME=	librenms
 PORTVERSION=	24.6.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -156,7 +157,8 @@ post-patch:
 		${WRKSRC}/config.php.default \
 		${WRKSRC}/includes/html/output/capture.inc.php \
 		${WRKSRC}/poller-wrapper.py \
-		${WRKSRC}/snmp-scan.py
+		${WRKSRC}/snmp-scan.py \
+		${WRKSRC}/daily.sh
 	${REINPLACE_CMD} 's|%%PORTVERSION%%|${PORTVERSION}|g'              ${WRKSRC}/LibreNMS/Util/Version.php
 	${REINPLACE_CMD} 's|%%RELEASE_TIMESTAMP%%|${_RELEASE_TIMESTAMP}|g' ${WRKSRC}/LibreNMS/Util/Version.php
 	${REINPLACE_CMD} 's|%%WWWDIR%%|${WWWDIR}|g'                        ${WRKSRC}/dist/librenms-scheduler.cron
