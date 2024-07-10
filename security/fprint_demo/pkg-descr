@@ -1,3 +1,0 @@
-fprint_demo is a simple GTK+ application to demonstrate and
-test libfprint's capabilities. It can be used to enroll new finger prints
-as well as verify and delete existing data sets.
