@@ -20,6 +20,7 @@ extra_commands="reload"
 load_rc_config $name
 
 : ${adsuck_enable="NO"}
+: ${adsuck_svcj_options="net_basic"}
 : ${adsuck_flags="-c /var/adsuck -f resolv.conf -r regex Hosts.blc Hosts.pub Hosts.rsk Hosts.trc hosts.small hosts.yoyo"}
 
 run_rc_command "$1"
