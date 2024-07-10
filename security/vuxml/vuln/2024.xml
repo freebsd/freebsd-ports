@@ -1,3 +1,42 @@
+  <vuln vid="171afa61-3eba-11ef-a58f-080027836e8b">
+    <topic>Django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py39-django42</name>
+	<name>py310-django42</name>
+	<name>py311-django42</name>
+	<range><lt>4.2.14</lt></range>
+      </package>
+      <package>
+	<name>py310-django50</name>
+	<name>py311-django50</name>
+	<range><lt>5.0.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Django reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2024/jul/09/security-releases/">
+	  <p>CVE-2024-38875: Potential denial-of-service in django.utils.html.urlize().</p>
+	  <p>CVE-2024-39329: Username enumeration through timing difference for users with unusable passwords.</p>
+	  <p>CVE-2024-39330: Potential directory-traversal in django.core.files.storage.Storage.save().</p>
+	  <p>CVE-2024-39614: Potential denial-of-service in django.utils.translation.get_supported_language_variant().</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+	<cvename>CVE-2024-38875</cvename>
+	<cvename>CVE-2024-39329</cvename>
+	<cvename>CVE-2024-39330</cvename>
+	<cvename>CVE-2024-39614</cvename>
+	<url>https://www.djangoproject.com/weblog/2024/jul/09/security-releases/</url>
+    </references>
+    <dates>
+	<discovery>2024-07-01</discovery>
+	<entry>2024-07-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="767dfb2d-3c9e-11ef-a829-5404a68ad561">
     <topic>traefik -- Bypassing IP allow-lists via HTTP/3 early data requests</topic>
     <affects>
