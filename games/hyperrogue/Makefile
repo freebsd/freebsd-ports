@@ -1,5 +1,5 @@
 PORTNAME=	hyperrogue
-PORTVERSION=	13.0o
+PORTVERSION=	13.0s
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -20,10 +20,8 @@ USE_SDL=	sdl mixer gfx ttf
 USE_GL=		gl glew
 ALL_TARGET=	hyperrogue
 
-PORTSCOUT=	skipv:12.1  # https://github.com/freebsd/portscout/issues/18
-
-# remove -O2, otherwise clang takes gigabytes of memory
-CXXFLAGS:=	${CXXFLAGS:C/-O[0-9]//} -DFHS -DHYPERPATH="\\\"${DATADIR}/\\\""
+CXXFLAGS+=	-DFHS -DHYPERPATH="\\\"${DATADIR}/\\\""
+MAKE_ENV=	HYPERROGUE_USE_PNG=1 HYPERROGUE_USE_GLEW=1
 
 PORTDOCS=	README.md
 PORTDATA=	*
