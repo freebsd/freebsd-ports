@@ -1,6 +1,6 @@
---- tool/rbinstall.rb.orig	2024-05-30 00:23:11 UTC
+--- tool/rbinstall.rb.orig	2024-07-08 23:28:22 UTC
 +++ tool/rbinstall.rb
-@@ -970,169 +970,6 @@ end
+@@ -970,175 +970,6 @@ end
  
  # :startdoc:
  
@@ -121,16 +121,22 @@
 -  File.foreach("#{srcdir}/gems/bundled_gems") do |name|
 -    next if /^\s*(?:#|$)/ =~ name
 -    next unless /^(\S+)\s+(\S+).*/ =~ name
+-    gem = $1
 -    gem_name = "#$1-#$2"
--    # Try to find the gemspec file for C ext gems
--    # ex .bundle/gems/debug-1.7.1/debug-1.7.1.gemspec
--    # This gemspec keep the original dependencies
--    path = "#{srcdir}/.bundle/gems/#{gem_name}/#{gem_name}.gemspec"
+-    # Try to find the original gemspec file
+-    path = "#{srcdir}/.bundle/gems/#{gem_name}/#{gem}.gemspec"
 -    unless File.exist?(path)
--      path = "#{srcdir}/.bundle/specifications/#{gem_name}.gemspec"
+-      # Try to find the gemspec file for C ext gems
+-      # ex .bundle/gems/debug-1.7.1/debug-1.7.1.gemspec
+-      # This gemspec keep the original dependencies
+-      path = "#{srcdir}/.bundle/gems/#{gem_name}/#{gem_name}.gemspec"
 -      unless File.exist?(path)
--         skipped[gem_name] = "gemspec not found"
--         next
+-        # Try to find the gemspec file for gems that hasn't own gemspec
+-        path = "#{srcdir}/.bundle/specifications/#{gem_name}.gemspec"
+-        unless File.exist?(path)
+-          skipped[gem_name] = "gemspec not found"
+-          next
+-        end
 -      end
 -    end
 -    spec = load_gemspec(path, "#{srcdir}/.bundle/gems/#{gem_name}")
