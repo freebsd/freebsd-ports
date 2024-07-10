@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.197.0
+PORTVERSION=	3.198.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -299,6 +299,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-privatenetworks>=1<2:devel/rubygem-aws-sdk-privatenetworks \
 		rubygem-aws-sdk-prometheusservice>=1<2:devel/rubygem-aws-sdk-prometheusservice \
 		rubygem-aws-sdk-proton>=1<2:devel/rubygem-aws-sdk-proton \
+		rubygem-aws-sdk-qapps>=1<2:devel/rubygem-aws-sdk-qapps \
 		rubygem-aws-sdk-qbusiness>=1<2:devel/rubygem-aws-sdk-qbusiness \
 		rubygem-aws-sdk-qconnect>=1<2:devel/rubygem-aws-sdk-qconnect \
 		rubygem-aws-sdk-qldb>=1<2:devel/rubygem-aws-sdk-qldb \
