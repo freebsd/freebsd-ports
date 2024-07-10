@@ -1,5 +1,5 @@
 PORTNAME=	freeradius
-DISTVERSION=	3.2.4
+DISTVERSION=	3.2.5
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/FreeRADIUS/freeradius-server/releases/download/release_${DISTVERSION:S/./_/g}/ \
 		https://freeradius.org/ftp/pub/radius/%SUBDIR%/ \
