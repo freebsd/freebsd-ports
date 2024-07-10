@@ -143,6 +143,7 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/area-blend2.jpg
 %%DATADIR%%/images/area-rescale.png
 %%DATADIR%%/images/area-rescale2.png
+%%DATADIR%%/images/area_fill.png
 %%DATADIR%%/images/batch-change-meta.png
 %%DATADIR%%/images/batch-convert.png
 %%DATADIR%%/images/batch-copy-move.png
@@ -173,8 +174,6 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/cartoon.jpg
 %%DATADIR%%/images/change-alpha.png
 %%DATADIR%%/images/choose-captions.png
-%%DATADIR%%/images/chromatic.png
-%%DATADIR%%/images/chromaticA.png
 %%DATADIR%%/images/color-mode.png
 %%DATADIR%%/images/color-mode2.png
 %%DATADIR%%/images/color-negative.jpg
@@ -224,6 +223,7 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/first-index.png
 %%DATADIR%%/images/fix-motion-blur.png
 %%DATADIR%%/images/fix-motion-blur1.jpg
+%%DATADIR%%/images/flatten-histogram2.png
 %%DATADIR%%/images/flatten-photo1.png
 %%DATADIR%%/images/flatten-photo2.jpg
 %%DATADIR%%/images/flatten-photo3.jpg
@@ -233,6 +233,8 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/folder.png
 %%DATADIR%%/images/fotocx-views.jpg
 %%DATADIR%%/images/fotocx.png
+%%DATADIR%%/images/fringes.png
+%%DATADIR%%/images/fringesA.png
 %%DATADIR%%/images/gallery-screen.png
 %%DATADIR%%/images/gallery-sort.png
 %%DATADIR%%/images/gallery-view.jpg
