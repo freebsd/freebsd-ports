@@ -160,7 +160,6 @@
     SUBDIR += fizz
     SUBDIR += flawfinder
     SUBDIR += flawz
-    SUBDIR += fprint_demo
     SUBDIR += fprintd
     SUBDIR += fragroute
     SUBDIR += fragrouter
