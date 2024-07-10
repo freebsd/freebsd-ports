@@ -5,6 +5,9 @@ CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES=	0901b03bbe6feb96dbc7521b00c3191a53ff79b8.patch:-p1
+
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Some useful routines of C programming (current stable version)
 WWW=		https://www.gtk.org/
