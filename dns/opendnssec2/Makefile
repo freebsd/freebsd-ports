@@ -1,6 +1,6 @@
 PORTNAME=	opendnssec
 DISTVERSION=	2.1.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://dist.opendnssec.org/source/
 PKGNAMESUFFIX=	2
