@@ -1,5 +1,6 @@
 PORTNAME=	fastdfs
 PORTVERSION=	6.0.6
+PORTREVISION=	1
 CATEGORIES=	ftp
 
 MAINTAINER=	daniel@blodan.se
