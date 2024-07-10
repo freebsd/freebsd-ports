@@ -1,5 +1,5 @@
 PORTNAME=	cptutils
-PORTVERSION=	1.81
+PORTVERSION=	1.82
 CATEGORIES=	graphics
 MASTER_SITES=	http://soliton.vm.bytemark.co.uk/pub/jjg/src/
 
