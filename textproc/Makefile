@@ -1553,6 +1553,7 @@
     SUBDIR += py-restructuredtext-lint
     SUBDIR += py-reverend
     SUBDIR += py-rich
+    SUBDIR += py-rich-argparse
     SUBDIR += py-rich-cli
     SUBDIR += py-rich-rst
     SUBDIR += py-rich12
