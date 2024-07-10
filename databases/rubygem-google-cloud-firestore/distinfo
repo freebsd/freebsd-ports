@@ -1,3 +1,3 @@
-TIMESTAMP = 1717662508
-SHA256 (rubygem/google-cloud-firestore-2.15.1.gem) = e4c958ae0598cb4820715c48c5a43ce03ba4dd160df55ea654c17ff5478f338f
-SIZE (rubygem/google-cloud-firestore-2.15.1.gem) = 79872
+TIMESTAMP = 1720608662
+SHA256 (rubygem/google-cloud-firestore-2.16.0.gem) = fc8638d5fce1a78db57e57e5e5d0939a7e02a24affa142cfbc4e91c36dea7cc4
+SIZE (rubygem/google-cloud-firestore-2.16.0.gem) = 80384
