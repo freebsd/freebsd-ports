@@ -5941,6 +5941,7 @@
     SUBDIR += py-vcrpy
     SUBDIR += py-vcver
     SUBDIR += py-vcversioner
+    SUBDIR += py-vendy
     SUBDIR += py-venusian
     SUBDIR += py-verboselogs
     SUBDIR += py-versioneer
