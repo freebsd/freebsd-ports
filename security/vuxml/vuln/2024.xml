@@ -1,3 +1,42 @@
+  <vuln vid="acb4eab6-3f6d-11ef-8657-001b217b3468">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.1.0</ge><lt>17.1.2</lt></range>
+	<range><ge>17.0.0</ge><lt>17.0.4</lt></range>
+	<range><ge>11.8.0</ge><lt>16.11.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/07/10/patch-release-gitlab-17-1-2-released/">
+	  <p>An attacker can run pipeline jobs as an arbitrary user</p>
+	  <p>Developer user with admin_compliance_framework permission can change group URL</p>
+	  <p>Admin push rules custom role allows creation of project level deploy token</p>
+	  <p>Package registry vulnerable to manifest confusion</p>
+	  <p>User with admin_group_member permission can ban group members</p>
+	  <p>Subdomain takeover in GitLab Pages</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-6385</cvename>
+      <cvename>CVE-2024-5257</cvename>
+      <cvename>CVE-2024-5470</cvename>
+      <cvename>CVE-2024-6595</cvename>
+      <cvename>CVE-2024-2880</cvename>
+      <cvename>CVE-2024-5528</cvename>
+      <url>https://about.gitlab.com/releases/2024/07/10/patch-release-gitlab-17-1-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-07-10</discovery>
+      <entry>2024-07-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="171afa61-3eba-11ef-a58f-080027836e8b">
     <topic>Django -- multiple vulnerabilities</topic>
     <affects>
