@@ -1,0 +1,16 @@
+include/libimobiledevice-glue/cbuf.h
+include/libimobiledevice-glue/collection.h
+include/libimobiledevice-glue/glue.h
+include/libimobiledevice-glue/nskeyedarchive.h
+include/libimobiledevice-glue/opack.h
+include/libimobiledevice-glue/sha.h
+include/libimobiledevice-glue/socket.h
+include/libimobiledevice-glue/termcolors.h
+include/libimobiledevice-glue/thread.h
+include/libimobiledevice-glue/tlv.h
+include/libimobiledevice-glue/utils.h
+lib/libimobiledevice-glue-1.0.a
+lib/libimobiledevice-glue-1.0.so
+lib/libimobiledevice-glue-1.0.so.0
+lib/libimobiledevice-glue-1.0.so.0.3.0
+libdata/pkgconfig/libimobiledevice-glue-1.0.pc

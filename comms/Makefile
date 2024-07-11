@@ -75,6 +75,7 @@
     SUBDIR += libfap
     SUBDIR += libfec
     SUBDIR += libimobiledevice
+    SUBDIR += libimobiledevice-glue
     SUBDIR += libirman
     SUBDIR += libmodbus
     SUBDIR += librs232
