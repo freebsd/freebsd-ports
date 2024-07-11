@@ -1,6 +1,6 @@
 PORTNAME=	bogofilter
 DISTVERSION=	1.2.5
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES?=	mail
 MASTER_SITES=	SF/bogofilter/bogofilter-stable/
 PKGNAMESUFFIX?=	-bdb
