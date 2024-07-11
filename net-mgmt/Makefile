@@ -307,6 +307,7 @@
     SUBDIR += prometheus1
     SUBDIR += prometheus2
     SUBDIR += promscale
+    SUBDIR += promxy
     SUBDIR += pushgateway
     SUBDIR += py-adal
     SUBDIR += py-aggregate6
