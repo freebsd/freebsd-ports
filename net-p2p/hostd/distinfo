@@ -1,5 +1,5 @@
-TIMESTAMP = 1716547614
-SHA256 (go/net-p2p_hostd/hostd-v1.1.0/v1.1.0.mod) = 04c5e6d700b065898f098a53be0086116ad19eb7bd9ce13be52748326fb66f24
-SIZE (go/net-p2p_hostd/hostd-v1.1.0/v1.1.0.mod) = 3016
-SHA256 (go/net-p2p_hostd/hostd-v1.1.0/v1.1.0.zip) = 4e51182186cc5b2ffc78b0c61ef9daeb69680cd34040e26f400efba5819a83ef
-SIZE (go/net-p2p_hostd/hostd-v1.1.0/v1.1.0.zip) = 315752
+TIMESTAMP = 1720685942
+SHA256 (go/net-p2p_hostd/hostd-v1.1.1/v1.1.1.mod) = 95799a6ba72849bce3927c537f01497995b8c80cf213a222cab884b82ef2fd33
+SIZE (go/net-p2p_hostd/hostd-v1.1.1/v1.1.1.mod) = 2858
+SHA256 (go/net-p2p_hostd/hostd-v1.1.1/v1.1.1.zip) = a51104319378a8b412dd695f717949b808653b84236502f11e3537bf979daf27
+SIZE (go/net-p2p_hostd/hostd-v1.1.1/v1.1.1.zip) = 319847
