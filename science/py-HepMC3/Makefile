@@ -1,5 +1,5 @@
 PORTNAME=	HepMC3
-DISTVERSION=	3.2.6
+DISTVERSION=	3.3.0
 CATEGORIES=	science
 MASTER_SITES=	http://hepmc.web.cern.ch/hepmc/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,9 +11,11 @@ WWW=		https://hepmc.web.cern.ch/hepmc/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
+BROKEN_i386=	compilation fails, static_assert(sizeof(IntType) <= sizeof(ssize_t), "Implicit narrowing is not permitted."), reported to the ML hepmc-dev@cern.ch on 2024-06-24
+
 LIB_DEPENDS=	libHepMC3.so:science/hepmc3
 
-USES=		cmake:testing compiler:c++11-lang python
+USES=		cmake compiler:c++11-lang python
 USE_PYTHON=	flavors
 
 WRKSRC_SUBDIR=	python

@@ -1,10 +1,10 @@
-PORTREVISION=	5
+PORTREVISION=	1
 PKGNAMESUFFIX=	-tools
 
 COMMENT=	Tools to work with OpenColorIO profiles
 
 MASTERDIR=	${.CURDIR}/../opencolorio
-OCIO_SLAVE=	tools
 OPTIONS_EXCLUDE=	DOCS
+OCIO_SLAVE=	tools
 
 .include "${MASTERDIR}/Makefile"

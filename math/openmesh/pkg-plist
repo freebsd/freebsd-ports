@@ -32,7 +32,7 @@ include/OpenMesh/Core/IO/OMFormatT_impl.hh
 include/OpenMesh/Core/IO/Options.hh
 include/OpenMesh/Core/IO/SR_binary.hh
 include/OpenMesh/Core/IO/SR_binary_spec.hh
-include/OpenMesh/Core/IO/SR_binary_vector_of_bool.inl
+include/OpenMesh/Core/IO/SR_binary_vector_of_bool.hh
 include/OpenMesh/Core/IO/SR_rbo.hh
 include/OpenMesh/Core/IO/SR_store.hh
 include/OpenMesh/Core/IO/SR_types.hh
@@ -137,6 +137,8 @@ include/OpenMesh/Tools/Decimater/ModQuadricT_impl.hh
 include/OpenMesh/Tools/Decimater/ModRoundnessT.hh
 include/OpenMesh/Tools/Decimater/Observer.hh
 include/OpenMesh/Tools/Dualizer/meshDualT.hh
+include/OpenMesh/Tools/HoleFiller/HoleFillerT.hh
+include/OpenMesh/Tools/HoleFiller/HoleFillerT_impl.hh
 include/OpenMesh/Tools/Kernel_OSG/ArrayKernelT.hh
 include/OpenMesh/Tools/Kernel_OSG/AttribKernelT.hh
 include/OpenMesh/Tools/Kernel_OSG/PropertyKernel.hh
@@ -199,10 +201,10 @@ include/OpenMesh/Tools/VDPM/VHierarchyWindow.hh
 include/OpenMesh/Tools/VDPM/ViewingParameters.hh
 lib/libOpenMeshCore.a
 lib/libOpenMeshCore.so
-lib/libOpenMeshCore.so.9.0
+lib/libOpenMeshCore.so.11.0
 lib/libOpenMeshTools.a
 lib/libOpenMeshTools.so
-lib/libOpenMeshTools.so.9.0
+lib/libOpenMeshTools.so.11.0
 libdata/pkgconfig/openmesh.pc
 share/OpenMesh/cmake/OpenMeshConfig-%%CMAKE_BUILD_TYPE%%.cmake
 share/OpenMesh/cmake/OpenMeshConfig.cmake

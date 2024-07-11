@@ -1,5 +1,5 @@
 PORTNAME=	Log-Contextual
-PORTVERSION=	0.009000
+PORTVERSION=	0.009001
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,8 @@ LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Data-Dumper-Concise>=0:devel/p5-Data-Dumper-Concise \
 		p5-Moo>=1.003000:devel/p5-Moo
-TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
+TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
+		p5-Test-Needs>=0:devel/p5-Test-Needs
 
 USES=		perl5
 USE_PERL5=	configure

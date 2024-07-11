@@ -1,6 +1,6 @@
---- configure.orig	2023-04-06 16:57:57 UTC
+--- configure.orig	2024-05-29 12:01:58 UTC
 +++ configure
-@@ -27067,428 +27067,6 @@ esac
+@@ -27496,434 +27496,6 @@ esac
   ;;
  esac
  
@@ -67,8 +67,8 @@
 -then :
 -  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
 -printf "%s\n" "no" >&6; }
--else $as_nop
--
+-else case e in #(
+-  e)
 -    jitlibs="-lc++abi -lpthread"
 -    save_LIBS=$LIBS
 -    LIBS="$LIBS $jitlibs"
@@ -94,18 +94,20 @@
 -printf "%s\n" "\"$jitlibs\"" >&6; }
 -        LIBLUAJIT_LDEXTRA="$LIBLUAJIT_LDEXTRA $jitlibs"
 -
--else $as_nop
--  { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
--printf "%s\n" "$as_me: error: in \`$ac_pwd':" >&2;}
+-else case e in #(
+-  e) { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: error: in '$ac_pwd':" >&5
+-printf "%s\n" "$as_me: error: in '$ac_pwd':" >&2;}
 -as_fn_error $? "luajit could not be linked
--See \`config.log' for more details" "$LINENO" 5; }
--
+-See 'config.log' for more details" "$LINENO" 5; }
+-     ;;
+-esac
 -fi
 -rm -f core conftest.err conftest.$ac_objext conftest.beam \
 -    conftest$ac_exeext conftest.$ac_ext
 -    LIBS=$save_LIBS
 -
--
+- ;;
+-esac
 -fi
 -rm -f core conftest.err conftest.$ac_objext conftest.beam \
 -    conftest$ac_exeext conftest.$ac_ext
@@ -158,8 +160,8 @@
 -if test ${ac_cv_prog_FT2_CONFIG+y}
 -then :
 -  printf %s "(cached) " >&6
--else $as_nop
--  if test -n "$FT2_CONFIG"; then
+-else case e in #(
+-  e) if test -n "$FT2_CONFIG"; then
 -  ac_cv_prog_FT2_CONFIG="$FT2_CONFIG" # Let the user override the test.
 -else
 -as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
@@ -181,7 +183,8 @@
 -  done
 -IFS=$as_save_IFS
 -
--fi
+-fi ;;
+-esac
 -fi
 -FT2_CONFIG=$ac_cv_prog_FT2_CONFIG
 -if test -n "$FT2_CONFIG"; then
@@ -203,8 +206,8 @@
 -if test ${ac_cv_prog_ac_ct_FT2_CONFIG+y}
 -then :
 -  printf %s "(cached) " >&6
--else $as_nop
--  if test -n "$ac_ct_FT2_CONFIG"; then
+-else case e in #(
+-  e) if test -n "$ac_ct_FT2_CONFIG"; then
 -  ac_cv_prog_ac_ct_FT2_CONFIG="$ac_ct_FT2_CONFIG" # Let the user override the test.
 -else
 -as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
@@ -226,7 +229,8 @@
 -  done
 -IFS=$as_save_IFS
 -
--fi
+-fi ;;
+-esac
 -fi
 -ac_ct_FT2_CONFIG=$ac_cv_prog_ac_ct_FT2_CONFIG
 -if test -n "$ac_ct_FT2_CONFIG"; then
@@ -259,8 +263,8 @@
 -if test ${ac_cv_prog_PKG_CONFIG+y}
 -then :
 -  printf %s "(cached) " >&6
--else $as_nop
--  if test -n "$PKG_CONFIG"; then
+-else case e in #(
+-  e) if test -n "$PKG_CONFIG"; then
 -  ac_cv_prog_PKG_CONFIG="$PKG_CONFIG" # Let the user override the test.
 -else
 -as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
@@ -282,7 +286,8 @@
 -  done
 -IFS=$as_save_IFS
 -
--fi
+-fi ;;
+-esac
 -fi
 -PKG_CONFIG=$ac_cv_prog_PKG_CONFIG
 -if test -n "$PKG_CONFIG"; then
@@ -304,8 +309,8 @@
 -if test ${ac_cv_prog_ac_ct_PKG_CONFIG+y}
 -then :
 -  printf %s "(cached) " >&6
--else $as_nop
--  if test -n "$ac_ct_PKG_CONFIG"; then
+-else case e in #(
+-  e) if test -n "$ac_ct_PKG_CONFIG"; then
 -  ac_cv_prog_ac_ct_PKG_CONFIG="$ac_ct_PKG_CONFIG" # Let the user override the test.
 -else
 -as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
@@ -327,7 +332,8 @@
 -  done
 -IFS=$as_save_IFS
 -
--fi
+-fi ;;
+-esac
 -fi
 -ac_ct_PKG_CONFIG=$ac_cv_prog_ac_ct_PKG_CONFIG
 -if test -n "$ac_ct_PKG_CONFIG"; then
@@ -429,7 +435,7 @@
  ##tldbg _KPSE_LIB_FLAGS: Setup potrace (-lpotrace) flags.
  echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=potrace, libname=potrace, options=, tlincl=-IBLD/libs/potrace/include, tllib=BLD/libs/potrace/libpotrace.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/potrace/include/potrace.h.' >&5
  ##tldbg _KPSE_LIB_FLAGS_TL: potrace (potrace) .
-@@ -27530,491 +27108,6 @@ fi
+@@ -27965,88 +27537,6 @@ fi
  	cd ${top_builddir}/../../libs/potrace && $(MAKE) $(AM_MAKEFLAGS) rebuild'
  fi
  
@@ -514,6 +520,14 @@
 -${top_builddir}/../../libs/mpfr/include/mpfr.h:
 -	cd ${top_builddir}/../../libs/mpfr && $(MAKE) $(AM_MAKEFLAGS) rebuild'
 -fi
+-
+ ##tldbg _KPSE_LIB_FLAGS: Setup mpfi (-lmpfi) flags.
+ echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=mpfi, libname=mpfi, options=, tlincl=-IBLD/libs/mpfi/include, tllib=BLD/libs/mpfi/libmpfi.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/mpfi/include/mpfi.h.' >&5
+ ##tldbg _KPSE_LIB_FLAGS_TL: mpfi (mpfi) .
+@@ -28087,413 +27577,6 @@ fi
+ ${top_builddir}/../../libs/mpfi/include/mpfi.h:
+ 	cd ${top_builddir}/../../libs/mpfi && $(MAKE) $(AM_MAKEFLAGS) rebuild'
+ fi
 -
 -##tldbg _KPSE_LIB_FLAGS: Setup xpdf (-lxpdf) flags.
 -echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=xpdf, libname=xpdf, options=, tlincl=-DPDF_PARSER_ONLY -IBLD/libs/xpdf -IBLD/libs/xpdf/goo -IBLD/libs/xpdf/xpdf, tllib=BLD/libs/xpdf/libxpdf.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/xpdf/xpdf/Stream.h.' >&5
@@ -669,8 +683,8 @@
 -if test ${ac_cv_prog_ICU_CONFIG+y}
 -then :
 -  printf %s "(cached) " >&6
--else $as_nop
--  if test -n "$ICU_CONFIG"; then
+-else case e in #(
+-  e) if test -n "$ICU_CONFIG"; then
 -  ac_cv_prog_ICU_CONFIG="$ICU_CONFIG" # Let the user override the test.
 -else
 -as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
@@ -692,7 +706,8 @@
 -  done
 -IFS=$as_save_IFS
 -
--fi
+-fi ;;
+-esac
 -fi
 -ICU_CONFIG=$ac_cv_prog_ICU_CONFIG
 -if test -n "$ICU_CONFIG"; then
@@ -714,8 +729,8 @@
 -if test ${ac_cv_prog_ac_ct_ICU_CONFIG+y}
 -then :
 -  printf %s "(cached) " >&6
--else $as_nop
--  if test -n "$ac_ct_ICU_CONFIG"; then
+-else case e in #(
+-  e) if test -n "$ac_ct_ICU_CONFIG"; then
 -  ac_cv_prog_ac_ct_ICU_CONFIG="$ac_ct_ICU_CONFIG" # Let the user override the test.
 -else
 -as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
@@ -737,7 +752,8 @@
 -  done
 -IFS=$as_save_IFS
 -
--fi
+-fi ;;
+-esac
 -fi
 -ac_ct_ICU_CONFIG=$ac_cv_prog_ac_ct_ICU_CONFIG
 -if test -n "$ac_ct_ICU_CONFIG"; then
@@ -770,8 +786,8 @@
 -if test ${ac_cv_prog_PKG_CONFIG+y}
 -then :
 -  printf %s "(cached) " >&6
--else $as_nop
--  if test -n "$PKG_CONFIG"; then
+-else case e in #(
+-  e) if test -n "$PKG_CONFIG"; then
 -  ac_cv_prog_PKG_CONFIG="$PKG_CONFIG" # Let the user override the test.
 -else
 -as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
@@ -793,7 +809,8 @@
 -  done
 -IFS=$as_save_IFS
 -
--fi
+-fi ;;
+-esac
 -fi
 -PKG_CONFIG=$ac_cv_prog_PKG_CONFIG
 -if test -n "$PKG_CONFIG"; then
@@ -815,8 +832,8 @@
 -if test ${ac_cv_prog_ac_ct_PKG_CONFIG+y}
 -then :
 -  printf %s "(cached) " >&6
--else $as_nop
--  if test -n "$ac_ct_PKG_CONFIG"; then
+-else case e in #(
+-  e) if test -n "$ac_ct_PKG_CONFIG"; then
 -  ac_cv_prog_ac_ct_PKG_CONFIG="$ac_ct_PKG_CONFIG" # Let the user override the test.
 -else
 -as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
@@ -838,7 +855,8 @@
 -  done
 -IFS=$as_save_IFS
 -
--fi
+-fi ;;
+-esac
 -fi
 -ac_ct_PKG_CONFIG=$ac_cv_prog_ac_ct_PKG_CONFIG
 -if test -n "$ac_ct_PKG_CONFIG"; then
@@ -917,13 +935,6 @@
 -fi
 -
 -fi # end xetex for icu/graphite
--
+ 
  # Check size of off_t (using <kpathsea/config.h>)
  eval CPPFLAGS=\"$KPATHSEA_INCLUDES \$CPPFLAGS\"
- eval LIBS=\"$KPATHSEA_LIBS \$LIBS\"
-@@ -31534,5 +30627,3 @@ fi
-   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
- printf "%s\n" "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
- fi
--
--

@@ -1,5 +1,5 @@
 PORTNAME=	ancient
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 
@@ -15,6 +15,7 @@ BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
 USES=		autoreconf gmake libtool pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	temisu
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip

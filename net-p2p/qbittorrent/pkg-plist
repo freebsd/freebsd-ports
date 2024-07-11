@@ -27,4 +27,4 @@ share/icons/hicolor/scalable/status/qbittorrent-tray-dark.svg
 share/icons/hicolor/scalable/status/qbittorrent-tray-light.svg
 share/icons/hicolor/scalable/status/qbittorrent-tray.svg
 share/man/man1/qbittorrent.1.gz
-share/metainfo/org.qbittorrent.qBittorrent.appdata.xml
+share/metainfo/org.qbittorrent.qBittorrent.metainfo.xml

@@ -1,4 +1,4 @@
---- makefile.orig	2022-11-01 21:15:55 UTC
+--- makefile.orig	2024-01-26 19:18:55 UTC
 +++ makefile
 @@ -275,15 +275,15 @@ TRACING =
  #TRACING = -g -fno-omit-frame-pointer -fsanitize=address -fsanitize-recover
@@ -19,7 +19,7 @@
  
  LIBFONT = font
  LIBMAPS = maps
-@@ -295,20 +295,20 @@ CHAROUT	= 0
+@@ -295,21 +295,21 @@ CHAROUT	= 0
  CHARIN	= 1
  CHAROUT	= 0
  
@@ -39,6 +39,7 @@
 -CC	= gcc
 +CC	= cc
  #CC	= bgcc
+ #CC	= clang
  
 -RCOPY	= cp -r
 +RCOPY	= cp -R

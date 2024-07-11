@@ -1,26 +1,20 @@
---- Makefile.orig	2015-05-18 19:48:09 UTC
+--- Makefile.orig	2024-06-24 00:49:39 UTC
 +++ Makefile
-@@ -36,12 +36,12 @@ MKC_DIR = ./mkconfig
+@@ -34,7 +34,7 @@ MKC_DIR = ./mkconfig
  ###
  # installation options
  #
 -prefix = /usr/local
 +prefix ?= /usr/local
- LOCALEDIR = $(prefix)/share/locale
+ PREFIX = $(prefix)
  PROG = di
  MPROG = mi
- #
--INSTALL_DIR = $(prefix)
-+INSTALL_DIR = $(DESTDIR)$(prefix)
- INSTALL_BIN_DIR = $(INSTALL_DIR)/bin
- INST_LOCALEDIR = $(INSTALL_DIR)/share/locale
- TARGET = $(INSTALL_BIN_DIR)/$(PROG)$(EXE_EXT)
-@@ -140,7 +140,7 @@ install-prog:
- 	$(TEST) -d $(INSTALL_BIN_DIR) || $(MKDIR) $(INSTALL_BIN_DIR)
- 	$(CP) -f ./$(FROMDIR)/$(PROG)$(EXE_EXT) $(TARGET)
+@@ -152,7 +152,7 @@ install-prog:
+ 	$(TEST) -d $(INST_BINDIR) || $(MKDIR) $(INST_BINDIR)
+ 	$(CP) -f ./$(FROMDIR)/$(PROG)$(EXE_EXT) $(DITARGET)
  	-$(RM) -f $(MTARGET) > /dev/null 2>&1
--	-$(LN) -s $(PROG)$(EXE_EXT) $(MTARGET)
-+	-( cd $(INSTALL_BIN_DIR) && $(LN) -s $(PROG)$(EXE_EXT) $(MPROG)$(EXE_EXT) )
+-	-$(LN) -s $(DITARGET) $(MTARGET)
++	-$(LN) -s $(PROG)$(EXE_EXT) $(MTARGET)
  	@-test -f $(FROMDIR)/config.h && \
  		grep '^#define _enable_nls 1' $(FROMDIR)/config.h >/dev/null 2>&1 && \
- 		(. ./$(FROMDIR)/di.env; $(MAKE) -e INST_LOCALEDIR="$(INST_LOCALEDIR)" \
+ 		(. ./$(FROMDIR)/di.env; $(MAKE) -e LOCALEDIR="$(LOCALEDIR)" \

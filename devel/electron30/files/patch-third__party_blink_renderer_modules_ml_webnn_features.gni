@@ -1,0 +1,11 @@
+--- third_party/blink/renderer/modules/ml/webnn/features.gni.orig	2024-04-15 20:34:06 UTC
++++ third_party/blink/renderer/modules/ml/webnn/features.gni
+@@ -6,7 +6,7 @@ declare_args() {
+ declare_args() {
+   # This enables building WebNN with XNNPACK. Currently only available for
+   # Windows, macOS and Linux on x64, x86 and arm64.
+-  build_webnn_with_xnnpack = (is_linux || is_win || is_mac) &&
++  build_webnn_with_xnnpack = !is_bsd && (is_linux || is_win || is_mac) &&
+                              (current_cpu == "x64" || current_cpu == "x86" ||
+                               (current_cpu == "arm64" && !is_win))
+ }

@@ -34,6 +34,13 @@ OPTIONS_DEFINE=		DOCS EXAMPLES THREAD
 THREAD_DESC=		Build with THREAD support
 THREAD_ALL_TARGET=	thread
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+CONFIGURE_ARGS+=	--disable-sse2 \
+			--disable-avx
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|="-O "|="$$CFLAGS"|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/PRETTY$$/d' ${WRKSRC}/src/definitions.h

@@ -1,6 +1,7 @@
 PORTNAME=	fabric
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.8
+DISTVERSION=	2.5.9
+PORTREVISION=	1
 CATEGORIES=	finance
 PKGNAMESUFFIX=	-hyperledger
 
@@ -42,6 +43,7 @@ GH_TUPLE=	\
 		consensys:bavard:v0.1.13:consensys_bavard/vendor/github.com/consensys/bavard \
 		consensys:gnark-crypto:v0.12.1:consensys_gnark_crypto/vendor/github.com/consensys/gnark-crypto \
 		containerd:containerd:v1.6.26:containerd_containerd/vendor/github.com/containerd/containerd \
+		containerd:log:v0.1.0:containerd_log/vendor/github.com/containerd/log \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		docker:go-connections:v0.4.0:docker_go_connections/vendor/github.com/docker/go-connections \
 		docker:go-units:v0.5.0:docker_go_units/vendor/github.com/docker/go-units \
@@ -68,9 +70,9 @@ GH_TUPLE=	\
 		golang:crypto:v0.21.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:mod:v0.15.0:golang_mod/vendor/golang.org/x/mod \
 		golang:net:v0.23.0:golang_net/vendor/golang.org/x/net \
-		golang:protobuf:v1.5.3:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:protobuf:v1.5.4:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sync:v0.6.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sync:v0.7.0:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:v0.18.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.14.0:golang_text/vendor/golang.org/x/text \
 		golang:tools:v0.14.0:golang_tools/vendor/golang.org/x/tools \
@@ -99,16 +101,17 @@ GH_TUPLE=	\
 		miekg:pkcs11:v1.1.1:miekg_pkcs11/vendor/github.com/miekg/pkcs11 \
 		mitchellh:mapstructure:v1.4.3:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		mmcloughlin:addchain:v0.4.0:mmcloughlin_addchain/vendor/github.com/mmcloughlin/addchain \
-		moby:moby:v24.0.9:moby_moby/vendor/github.com/docker/docker \
+		moby:docker-image-spec:v1.3.1:moby_docker_image_spec/vendor/github.com/moby/docker-image-spec \
+		moby:moby:v26.1.4:moby_moby/vendor/github.com/docker/docker \
 		moby:patternmatcher:v0.6.0:moby_patternmatcher/vendor/github.com/moby/patternmatcher \
-		moby:sys:sequential/v0.5.0:moby_sys_sequential/vendor/github.com/moby/sys \
+		moby:sys:sequential/v0.5.0:moby_sys_sequential \
+		moby:sys:user/v0.1.0:moby_sys_user/vendor/github.com/moby/sys \
 		moby:term:3f7ff695adc6:moby_term/vendor/github.com/moby/term \
 		morikuni:aec:v1.0.0:morikuni_aec/vendor/github.com/morikuni/aec \
 		onsi:ginkgo:v2.13.2:onsi_ginkgo_v2/vendor/github.com/onsi/ginkgo/v2 \
 		onsi:gomega:v1.29.0:onsi_gomega/vendor/github.com/onsi/gomega \
 		opencontainers:go-digest:v1.0.0:opencontainers_go_digest/vendor/github.com/opencontainers/go-digest \
 		opencontainers:image-spec:v1.1.0-rc6:opencontainers_image_spec/vendor/github.com/opencontainers/image-spec \
-		opencontainers:runc:v1.1.12:opencontainers_runc/vendor/github.com/opencontainers/runc \
 		pelletier:go-toml:v1.9.5:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pierrec:lz4:v2.6.0:pierrec_lz4/vendor/github.com/pierrec/lz4 \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
@@ -117,7 +120,7 @@ GH_TUPLE=	\
 		prometheus:client_model:v0.3.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.32.1:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.8.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
-		protocolbuffers:protobuf-go:v1.33.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		protocolbuffers:protobuf-go:v1.34.2:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rcrowley:go-metrics:cf1acfcdf475:rcrowley_go_metrics/vendor/github.com/rcrowley/go-metrics \
 		rogpeppe:go-internal:v1.11.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		rsc:tmplfunc:v0.0.3:rsc_tmplfunc/vendor/rsc.io/tmplfunc \
@@ -128,15 +131,14 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.0:spf13_viper/vendor/github.com/spf13/viper \
-		stretchr:objx:v0.5.0:stretchr_objx/vendor/github.com/stretchr/objx \
-		stretchr:testify:v1.8.4:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:objx:v0.5.2:stretchr_objx/vendor/github.com/stretchr/objx \
+		stretchr:testify:v1.9.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		sykesm:zap-logfmt:v0.0.4:sykesm_zap_logfmt/vendor/github.com/sykesm/zap-logfmt \
 		syndtr:goleveldb:64b5b1c73954:syndtr_goleveldb/vendor/github.com/syndtr/goleveldb \
 		tedsuo:ifrit:dd274de71113:tedsuo_ifrit/vendor/github.com/tedsuo/ifrit \
 		uber-go:multierr:v1.11.0:uber_go_multierr/vendor/go.uber.org/multierr \
-		uber-go:zap:v1.26.0:uber_go_zap/vendor/go.uber.org/zap
-
+		uber-go:zap:v1.27.0:uber_go_zap/vendor/go.uber.org/zap
 
 PROGS=		configtxgen \
 		configtxlator \
@@ -155,5 +157,7 @@ post-extract:
 	@${RLN} ${WRKSRC_ibm_idemix_aries}/bccsp/schemes/aries ${WRKSRC}/vendor/github.com/IBM/idemix/bccsp/schemes/aries
 	@${RM} -r ${WRKSRC}/vendor/github.com/IBM/idemix/bccsp/schemes/weak-bb
 	@${RLN} ${WRKSRC_ibm_idemix_weak_bb}/bccsp/schemes/weak-bb ${WRKSRC}/vendor/github.com/IBM/idemix/bccsp/schemes/weak-bb
+	@${RM} -r ${WRKSRC}/vendor/github.com/moby/sys/sequential
+	@${RLN} ${WRKSRC_moby_sys_sequential}/sequential ${WRKSRC}/vendor/github.com/moby/sys/sequential
 
 .include <bsd.port.mk>

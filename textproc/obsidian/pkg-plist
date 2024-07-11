@@ -72,9 +72,9 @@ share/applications/obsidian.desktop
 %%DATADIR%%/resources/app.asar
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/btime/binding.node
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/get-fonts/binding.node
-%%DATADIR%%/resources/app.asar.unpacked/node_modules/vibrancy-win/binding.node
 %%DATADIR%%/resources/obsidian.asar
 %%DATADIR%%/snapshot_blob.bin
 %%DATADIR%%/v8_context_snapshot.bin
 %%DATADIR%%/vk_swiftshader_icd.json
+share/metainfo/md.obsidian.obsidian.appdata.xml
 share/pixmaps/obsidian.png

@@ -1,13 +1,11 @@
---- src/compile.lsp.in.orig	2016-12-19 10:25:00 UTC
+--- src/compile.lsp.in.orig	2023-09-08 16:55:48 UTC
 +++ src/compile.lsp.in
-@@ -142,8 +142,9 @@
- #+:wants-dlopen
- ;;;
- ;;; We do not need the -rpath flag for the library, nor -lecl.
-+;;; Patch borrowed from SageMath
- ;;;
--(let* ((c::*ld-shared-flags* #-msvc "@SHARED_LDFLAGS@ @LDFLAGS@ @SONAME_LDFLAGS@ @CORE_LIBS@ @FASL_LIBS@ @LIBS@"
-+(let* ((c::*ld-shared-flags* #-msvc " @IMPLIB_LDFLAGS@ @SHARED_LDFLAGS@ @LDFLAGS@ @SONAME_LDFLAGS@ @CORE_LIBS@ @FASL_LIBS@ @LIBS@"
-                              #+msvc "@SHARED_LDFLAGS@ @LDFLAGS@ @STATICLIBS@ @CLIBS@")
-        (c::*cc-flags* (concatenate 'string "-DECL_API -I@true_builddir@/c " c::*cc-flags*))
-        (extra-args nil))
+@@ -88,7 +88,7 @@
+       c::*ecl-library-directory* "@true_builddir@/")
+ (setf c::*ld-flags* "@LDFLAGS@")
+ #-:wants-dlopen
+-(setf c::*ld-libs* "@LIBPREFIX@ecl.@LIBEXT@ @CORE_LIBS@ @FASL_LIBS@ @LIBS@")
++(setf c::*ld-libs* "@IMPLIB_LDFLAGS@ @LIBPREFIX@ecl.@LIBEXT@ @CORE_LIBS@ @FASL_LIBS@ @LIBS@")
+ #+(and :wants-dlopen (not nonstop))
+ (setf c::*ld-libs*
+       "@SHAREDPREFIX@ecl.@SHAREDEXT@ @LIBS@"

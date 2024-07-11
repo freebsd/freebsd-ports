@@ -1,6 +1,6 @@
 PORTNAME=	wasmer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.0
+DISTVERSION=	4.3.2
 PORTREVISION=	1
 CATEGORIES=	devel
 
@@ -11,8 +11,9 @@ WWW=		https://wasmer.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	only aarch64 and amd64 are supported so far
+NOT_FOR_ARCHS_REASON_aarch64=	Errors during compile
 
 BUILD_DEPENDS=	bash>0:shells/bash \
 		libffi>0:devel/libffi \

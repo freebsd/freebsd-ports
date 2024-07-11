@@ -824,7 +824,7 @@ _encrypted-dns:*:879:
 pyspf-milter:*:880:
 ultimaker:*:881:
 midpoint:*:882:
-ipfs-go:*:883:
+kubo-go:*:883:
 telegraf:*:884:
 tcpdump:*:885:
 miniflux:*:886:

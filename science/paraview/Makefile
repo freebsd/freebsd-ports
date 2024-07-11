@@ -1,6 +1,6 @@
 PORTNAME=	paraview
-DISTVERSION=	${PARAVIEW_VER}.0
-PORTREVISION=	4
+DISTVERSION=	${PARAVIEW_VER}.1
+PORTREVISION=	2
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${PARAVIEW_VER}/
 DISTNAME=	ParaView-v${PORTVERSION}
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${PYNUMPY}	\
 		utf8cpp>0:devel/utf8cpp	\
 		fast_float>0:math/fast_float \
 		nlohmann-json>0:devel/nlohmann-json	\
+		vulkan-headers>0:graphics/vulkan-headers	\
 		${LOCALBASE}/include/exprtk.hpp:math/exprtk	\
 		${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:math/py-matplotlib@${PY_FLAVOR}
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \

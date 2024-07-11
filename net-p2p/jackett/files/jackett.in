@@ -23,7 +23,7 @@ load_rc_config $name
 
 : ${jackett_enable="NO"}
 : ${jackett_user:="jackett"}
-: ${jackett_user:="jackett"}
+: ${jackett_group:="jackett"}
 : ${jackett_data_dir:="%%PREFIX%%/jackett"}
 
 pidfile="${jackett_data_dir}/jackett.pid"

@@ -1,8 +1,8 @@
---- content/browser/v8_snapshot_files.cc.orig	2023-03-10 11:01:21 UTC
+--- content/browser/v8_snapshot_files.cc.orig	2024-06-22 08:49:42 UTC
 +++ content/browser/v8_snapshot_files.cc
-@@ -13,7 +13,7 @@ namespace content {
+@@ -17,7 +17,7 @@ namespace content {
  std::map<std::string, absl::variant<base::FilePath, base::ScopedFD>>
- GetV8SnapshotFilesToPreload() {
+ GetV8SnapshotFilesToPreload(base::CommandLine& process_command_line) {
    std::map<std::string, absl::variant<base::FilePath, base::ScopedFD>> files;
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

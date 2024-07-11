@@ -4,7 +4,7 @@
 When using sccache as a build server (sccache-dist server), make sure
 to follow the instruction in:
 
-  %%DOCSDIR%%docs/DistributedFreeBSD.md
+  %%DOCSDIR%%/docs/DistributedFreeBSD.md
                               
 EOM
 }

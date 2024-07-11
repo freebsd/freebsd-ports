@@ -1,6 +1,6 @@
 PORTNAME=	sound-juicer
 PORTVERSION=	3.38.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -17,7 +17,6 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libmusicbrainz5.so:audio/libmusicbrainz5 \
 		libdiscid.so:audio/libdiscid \
-		libtag.so:audio/taglib \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libbrasero-media3.so:sysutils/brasero \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3

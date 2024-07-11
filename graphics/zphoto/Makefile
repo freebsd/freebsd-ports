@@ -11,6 +11,9 @@ WWW=		http://namazu.org/~satoru/zphoto/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on expired graphics/ming
+EXPIRATION_DATE=2024-07-31
+
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
 		libming.so:graphics/ming \
 		libpopt.so:devel/popt

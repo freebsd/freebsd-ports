@@ -1,5 +1,5 @@
 PORTNAME=	pycharm-pro
-DISTVERSION=	2024.1.1
+DISTVERSION=	2024.1.4
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/
 DISTNAME=	pycharm-professional-${PORTVERSION}
@@ -16,13 +16,17 @@ LICENSE_PERMS=	no-dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		jetbrains-pty4j>=0.12.13:devel/jetbrains-pty4j \
+		jetbrains-restarter>=233.11799.241:devel/jetbrains-restarter \
 		jetbrains-sqlite>=232.8660.185:devel/jetbrains-sqlite
 
-USES=		cpe python:run shebangfix
+USES=		cpe desktop-file-utils python:run shebangfix
 
 CPE_VENDOR=	jetbrains
 USE_JAVA=	yes
 JAVA_VERSION=	17+
+SHEBANG_FILES=	plugins/python/helpers/pycodestyle-2.10.0.py \
+		plugins/python/helpers/pycodestyle.py \
+		plugins/python/helpers/typeshed/scripts/sync_tensorflow_protobuf_stubs.sh
 
 # Remove the bundled native Pty4J support libraries, they are replaced
 # by devel/jetbrains-pty4j
@@ -70,6 +74,8 @@ do-install:
 # Use pty4j replacement provided by devel/jetbrains-pty4j
 	${MKDIR} ${STAGEDIR}${DATADIR}/lib/pty4j/freebsd/x86-64
 	${LN} -sf ../../../../../jetbrains/pty4j/amd64/libpty.so ${STAGEDIR}${DATADIR}/lib/pty4j/freebsd/x86-64/libpty.so
+# Use restarter provided by devel/jetbrains-restarter
+	${LN} -sf ../../jetbrains/restarter/restarter ${STAGEDIR}${DATADIR}/bin/restarter
 # Use sqlite replacement provided by devel/jetbrains-sqlite
 	${MKDIR} ${STAGEDIR}${DATADIR}/lib/native/linux-x86_64
 	${LN} -sf ../../../../jetbrains/sqlite/amd64/libsqliteij.so ${STAGEDIR}${DATADIR}/lib/native/linux-x86_64/libsqliteij.so

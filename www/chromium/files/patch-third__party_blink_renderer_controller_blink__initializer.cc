@@ -1,4 +1,4 @@
---- third_party/blink/renderer/controller/blink_initializer.cc.orig	2024-05-21 18:07:39 UTC
+--- third_party/blink/renderer/controller/blink_initializer.cc.orig	2024-06-17 12:56:06 UTC
 +++ third_party/blink/renderer/controller/blink_initializer.cc
 @@ -81,12 +81,12 @@
  #include "third_party/blink/renderer/controller/private_memory_footprint_provider.h"
@@ -24,7 +24,7 @@
    binders.Add<mojom::blink::MemoryUsageMonitorLinux>(
        ConvertToBaseRepeatingCallback(
            CrossThreadBindRepeating(&MemoryUsageMonitorPosix::Bind)),
-@@ -306,7 +306,7 @@ void BlinkInitializer::RegisterMemoryWatchers(Platform
+@@ -303,7 +303,7 @@ void BlinkInitializer::RegisterMemoryWatchers(Platform
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \

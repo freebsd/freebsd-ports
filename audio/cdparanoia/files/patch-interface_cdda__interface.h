@@ -1,18 +1,20 @@
---- interface/cdda_interface.h.orig	2001-03-24 01:15:46 UTC
+--- interface/cdda_interface.h.orig	2008-09-11 10:43:52 UTC
 +++ interface/cdda_interface.h
-@@ -21,6 +21,11 @@
+@@ -21,6 +21,13 @@
  #include <sys/types.h>
  #include <signal.h>
  
 +#ifdef __FreeBSD__
 +#include <stdio.h>
 +#include <camlib.h>
++
++#define ENOMEDIUM 12345
 +#endif
 +
  #define MAXTRK 100
  
  typedef struct TOC {	/* structure of table of contents */
-@@ -47,13 +52,19 @@ typedef struct cdrom_drive{
+@@ -49,13 +56,19 @@ typedef struct cdrom_drive{
    int opened; /* This struct may just represent a candidate for opening */
  
    char *cdda_device_name;
@@ -34,17 +36,3 @@
    int interface;
    int bigendianp;
    int nsectors;
-@@ -83,9 +94,13 @@ typedef struct cdrom_drive{
-   int is_mmc;
- 
-   /* SCSI command buffer and offset pointers */
-+#ifdef Linux
-   unsigned char *sg;
-   unsigned char *sg_buffer;
-   unsigned char inqbytes[4];
-+#elif defined(__FreeBSD__)
-+  unsigned char *sg_buffer;
-+#endif
- 
-   /* Scsi parameters and state */
-   unsigned char density;

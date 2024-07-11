@@ -11,6 +11,8 @@ rcvar=pdnsd_enable
 command="%%PREFIX%%/sbin/pdnsd"
 command_args="-d"
 required_files="%%PREFIX%%/etc/pdnsd.conf"
+: ${pdnsd_svcj_options:="net_basic"}
+
 load_rc_config $name
 
 run_rc_command "$1"

@@ -1,4 +1,4 @@
---- gpu/command_buffer/common/gpu_memory_buffer_support.cc.orig	2023-10-21 11:51:27 UTC
+--- gpu/command_buffer/common/gpu_memory_buffer_support.cc.orig	2024-06-25 12:08:48 UTC
 +++ gpu/command_buffer/common/gpu_memory_buffer_support.cc
 @@ -182,7 +182,7 @@ uint32_t GetPlatformSpecificTextureTarget() {
  #if BUILDFLAG(IS_MAC)
@@ -9,7 +9,7 @@
    return GL_TEXTURE_EXTERNAL_OES;
  #elif BUILDFLAG(IS_IOS)
    return GL_TEXTURE_2D;
-@@ -217,7 +217,7 @@ GPU_EXPORT bool NativeBufferNeedsPlatformSpecificTextu
+@@ -209,7 +209,7 @@ GPU_EXPORT bool NativeBufferNeedsPlatformSpecificTextu
      gfx::BufferFormat format,
      gfx::BufferPlane plane) {
  #if BUILDFLAG(IS_OZONE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

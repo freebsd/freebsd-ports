@@ -31,6 +31,15 @@ share/icons/hicolor/48x48/actions/xfsm-shutdown.png
 share/icons/hicolor/48x48/actions/xfsm-suspend.png
 share/icons/hicolor/48x48/actions/xfsm-switch-user.png
 share/icons/hicolor/48x48/apps/org.xfce.session.png
+share/icons/hicolor/64x64/apps/org.xfce.session.png
+share/icons/hicolor/96x96/actions/xfsm-hibernate.png
+share/icons/hicolor/96x96/actions/xfsm-lock.png
+share/icons/hicolor/96x96/actions/xfsm-logout.png
+share/icons/hicolor/96x96/actions/xfsm-reboot.png
+share/icons/hicolor/96x96/actions/xfsm-shutdown.png
+share/icons/hicolor/96x96/actions/xfsm-suspend.png
+share/icons/hicolor/96x96/actions/xfsm-switch-user.png
+share/icons/hicolor/96x96/apps/org.xfce.session.png
 share/icons/hicolor/scalable/apps/org.xfce.session.svg
 %%NLS%%share/locale/am/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-session.mo
@@ -100,4 +109,5 @@ share/icons/hicolor/scalable/apps/org.xfce.session.svg
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-session.mo
 share/polkit-1/actions/org.xfce.session.policy
+share/xdg-desktop-portal/xfce-portals.conf
 share/xsessions/xfce.desktop

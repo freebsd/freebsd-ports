@@ -1,9 +1,9 @@
 PORTNAME=	spyder-kernels
-PORTVERSION=	2.5.1
-PORTREVISION=	1
+DISTVERSION=	2.5.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	spyder_kernels-${DISTVERSION}
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Jupyter kernels for the Spyder console
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>0:devel/py-cloudpickle@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=22.1.0:net/py-pyzmq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>0:devel/py-traitlets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wurlitzer>=1.0.3:misc/py-wurlitzer@${PY_FLAVOR}
-# 92 passed, 6 skipped, 5 warnings 
+# 92 passed, 6 skipped, 6 warnings 
 # test_django_settings fail if www/djangoXX not installed
 TEST_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}codecov>0:devel/py-codecov@${PY_FLAVOR} \

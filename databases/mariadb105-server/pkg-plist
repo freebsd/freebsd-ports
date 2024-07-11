@@ -143,6 +143,7 @@ include/mysql/server/mysql/service_my_snprintf.h
 include/mysql/server/mysql/service_progress_report.h
 include/mysql/server/mysql/service_sha1.h
 include/mysql/server/mysql/service_sha2.h
+include/mysql/server/mysql/service_sql.h
 include/mysql/server/mysql/service_thd_alloc.h
 include/mysql/server/mysql/service_thd_autoinc.h
 include/mysql/server/mysql/service_thd_error_context.h

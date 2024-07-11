@@ -33,6 +33,7 @@ include/dftbplus/modfiles/dftbp_common_hamiltoniantypes.mod
 include/dftbplus/modfiles/dftbp_common_memman.mod
 %%MPIX%%include/dftbplus/modfiles/dftbp_common_mpienv.mod
 include/dftbplus/modfiles/dftbp_common_optarg.mod
+include/dftbplus/modfiles/dftbp_common_%%CMAKE_BUILD_TYPE%%.mod
 include/dftbplus/modfiles/dftbp_common_schedule.mod
 include/dftbplus/modfiles/dftbp_common_status.mod
 include/dftbplus/modfiles/dftbp_common_timer.mod

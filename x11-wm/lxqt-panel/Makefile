@@ -1,30 +1,29 @@
 PORTNAME=	lxqt-panel
-PORTVERSION=	1.4.0
+PORTVERSION=	2.0.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	LXQT
 
-MAINTAINER=	jsm@FreeBSD.org
-COMMENT=	Panel for the LXQt desktop
+MAINTAINER=	lxqt@FreeBSD.org
+COMMENT=	Panel for the LXQt2 desktop
 WWW=		https://lxqt-project.org
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt@qt5 \
+LIB_DEPENDS=	libdbusmenu-lxqt.so:devel/libdbusmenu-lxqt \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxcb-util.so:x11/xcb-util \
-		libsysstat-qt5.so:sysutils/libsysstat \
+		libsysstat-qt6.so:sysutils/libsysstat-qt6 \
 		libxcb-image.so:x11/xcb-util-image
-BUILD_DEPENDS=	lxqt-menu-data>=1.4.1:x11/lxqt-menu-data
-RUN_DEPENDS= 	lxqt-menu-data>=1.4.1:x11/lxqt-menu-data
+BUILD_DEPENDS=	lxqt-menu-data>=2.0.0:x11/lxqt-menu-data
+RUN_DEPENDS= 	lxqt-menu-data>=2.0.0:x11/lxqt-menu-data
 
-USES=		cmake compiler:c++17-lang gettext-runtime kde:5 qt:5 gnome \
-		localbase:ldflags lxqt perl5 pkgconfig tar:xz xorg
+USES=		cmake compiler:c++17-lang gettext-runtime kde:6 qt:6 gnome \
+		lxqt:2 localbase:ldflags perl5 pkgconfig tar:xz xorg
 USE_PERL5=	build
-USE_QT=		buildtools:build qmake:build core dbus gui svg widgets \
-		xml concurrent
-USE_KDE=	windowsystem
-USE_LXQT=	buildtools lxqt globalkeys qtxdg
+USE_QT=		base:run tools:build svg
+USE_KDE=	layer-shell-qt windowsystem
+USE_LXQT=	buildtools2 lxqt globalkeys qt6xdg
 USE_XORG=	ice sm x11 xcb xcomposite xdamage xext xfixes xrender xtst
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes

@@ -1,8 +1,8 @@
 PORTNAME=	geos
-PORTVERSION=	3.12.1
+PORTVERSION=	3.12.2
 CATEGORIES=	graphics geography
-MASTER_SITES=	https://download.osgeo.org/geos/ \
-		https://github.com/libgeos/geos/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/libgeos/geos/releases/download/${PORTVERSION}/ \
+		https://download.osgeo.org/geos/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Geometry Engine, Open Source

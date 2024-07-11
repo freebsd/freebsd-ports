@@ -18,6 +18,7 @@ rcvar=opendnssec_enable
 load_rc_config $name
 
 opendnssec_enable=${opendnssec_enable:-"NO"}
+: ${opendnssec_svcj_options:="net_basic"}
 
 start_cmd="${name}_run start"
 stop_cmd="${name}_run stop"

@@ -1,11 +1,12 @@
 PORTNAME=	jellyfin
-DISTVERSION=	10.8.13
-PORTREVISION=	1
+DISTVERSION=	10.9.6
 CATEGORIES=	multimedia
-MASTER_SITES=	https://github.com/Thefrank/jellyfin-server-freebsd/releases/download/v${DISTVERSION}/
-DISTFILES=	jellyfin-combined_${DISTVERSION}_freebsd-${ARCH}.tar.gz \
-		libSkiaSharp.so
-EXTRACT_ONLY=	jellyfin-combined_${DISTVERSION}_freebsd-${ARCH}.tar.gz
+MASTER_SITES+=	https://github.com/Thefrank/jellyfin-server-freebsd/releases/download/v10.9.4/:prebuilt
+DISTFILES+=	${PREFETCH_FILE}:prefetch \
+		libSkiaSharp.so:prebuilt
+EXTRACT_ONLY+=	${PORTNAME}-${PORTNAME}-${GH_TAGNAME}_GH0.tar.gz \
+		${PORTNAME}-${PORTNAME}-web-${GH_TAGNAME}_GH0.tar.gz \
+		${PREFETCH_FILE}
 
 MAINTAINER=	michiel@vanbaak.eu
 COMMENT=	Jellyfin Server Component with WebUI
@@ -14,9 +15,9 @@ WWW=		https://jellyfin.org/
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	multi
 
-ONLY_FOR_ARCHS=	amd64
-
-LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig
+FETCH_DEPENDS=	npm:www/npm${NODEJS_SUFFIX}
+BUILD_DEPENDS=	npm:www/npm${NODEJS_SUFFIX} \
+		dotnet:lang/dotnet
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		ffmpeg>0:multimedia/ffmpeg \
 		icu>0:devel/icu \
@@ -24,31 +25,510 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		libinotify>0:devel/libinotify \
 		libunwind>0:devel/libunwind \
 		mediainfo>0:multimedia/mediainfo
+TEST_DEPENDS=	npm:www/npm${NODEJS_SUFFIX} \
+		dotnet:lang/dotnet
 
-USES=		sqlite:3 ssl:run
+USES=		nodejs:20,build sqlite:3 ssl elfctl
+
+USE_GITHUB=	nodefault
+GH_ACCOUNT=	jellyfin:server,ui
+GH_PROJECT=	jellyfin:server jellyfin-web:ui
+GH_SUBDIR=	${PORTNAME}
+GH_TAGNAME=	v${DISTVERSION}
 USE_RC_SUBR=	jellyfin
 
-NO_BUILD=	YES
+NUGET_GROUPS=	NUGET
+#NUPKG_NUGET must be regenerated every time DISTVERSION is changed
+NUPKG_NUGET=	AsyncKeyedLock:6.4.2 \
+AutoFixture.AutoMoq:4.18.1 \
+AutoFixture.Xunit2:4.18.1 \
+AutoFixture:4.18.1 \
+BDInfo:0.8.0 \
+BlurHashSharp.SkiaSharp:1.3.2 \
+BlurHashSharp:1.3.2 \
+CacheManager.Core:1.2.0 \
+Castle.Core:5.1.1 \
+CommandLineParser:2.9.1 \
+Diacritics:3.3.29 \
+DiscUtils.Core:0.16.13 \
+DiscUtils.Iso9660:0.16.13 \
+DiscUtils.Streams:0.16.13 \
+DiscUtils.Udf:0.16.13 \
+DotNet.Glob:3.1.3 \
+EFCoreSecondLevelCacheInterceptor:4.4.3 \
+EFCoreSecondLevelCacheInterceptor:4.5.0 \
+EasyCaching.Core:1.9.2 \
+ExCSS:4.2.3 \
+FSharp.Core:4.2.3 \
+Fare:2.1.1 \
+FsCheck.Xunit:2.16.6 \
+FsCheck:2.16.6 \
+HarfBuzzSharp.NativeAssets.Linux:7.3.0.2 \
+HarfBuzzSharp.NativeAssets.Win32:7.3.0.2 \
+HarfBuzzSharp.NativeAssets.macOS:7.3.0.2 \
+HarfBuzzSharp:7.3.0.2 \
+Humanizer.Core:2.14.1 \
+ICU4N.Transliterator:60.1.0-alpha.356 \
+ICU4N:60.1.0-alpha.356 \
+IDisposableAnalyzers:4.0.7 \
+J2N:2.0.0 \
+Jellyfin.XmlTv:10.8.0 \
+LrcParser:2023.524.0 \
+MetaBrainz.Common.Json:6.0.2 \
+MetaBrainz.Common:3.0.0 \
+MetaBrainz.MusicBrainz:6.1.0 \
+Microsoft.AspNetCore.Authorization:8.0.4 \
+Microsoft.AspNetCore.Authorization:8.0.6 \
+Microsoft.AspNetCore.Http.Abstractions:2.2.0 \
+Microsoft.AspNetCore.Http.Extensions:2.2.0 \
+Microsoft.AspNetCore.Http.Features:2.2.0 \
+Microsoft.AspNetCore.HttpOverrides:2.2.0 \
+Microsoft.AspNetCore.Metadata:8.0.4 \
+Microsoft.AspNetCore.Metadata:8.0.6 \
+Microsoft.AspNetCore.Mvc.Testing:8.0.4 \
+Microsoft.AspNetCore.TestHost:8.0.4 \
+Microsoft.Bcl.AsyncInterfaces:6.0.0 \
+Microsoft.CodeAnalysis.Analyzers:3.3.3 \
+Microsoft.CodeAnalysis.BannedApiAnalyzers:3.3.4 \
+Microsoft.CodeAnalysis.CSharp.Workspaces:4.5.0 \
+Microsoft.CodeAnalysis.CSharp:4.5.0 \
+Microsoft.CodeAnalysis.Common:4.5.0 \
+Microsoft.CodeAnalysis.Workspaces.Common:4.5.0 \
+Microsoft.CodeCoverage:17.9.0 \
+Microsoft.Data.Sqlite.Core:8.0.4 \
+Microsoft.Data.Sqlite.Core:8.0.6 \
+Microsoft.Data.Sqlite:8.0.4 \
+Microsoft.Data.Sqlite:8.0.6 \
+Microsoft.EntityFrameworkCore.Abstractions:8.0.0 \
+Microsoft.EntityFrameworkCore.Abstractions:8.0.4 \
+Microsoft.EntityFrameworkCore.Abstractions:8.0.6 \
+Microsoft.EntityFrameworkCore.Analyzers:8.0.0 \
+Microsoft.EntityFrameworkCore.Analyzers:8.0.4 \
+Microsoft.EntityFrameworkCore.Analyzers:8.0.6 \
+Microsoft.EntityFrameworkCore.Design:8.0.4 \
+Microsoft.EntityFrameworkCore.Design:8.0.6 \
+Microsoft.EntityFrameworkCore.Relational:8.0.4 \
+Microsoft.EntityFrameworkCore.Relational:8.0.6 \
+Microsoft.EntityFrameworkCore.Sqlite.Core:8.0.4 \
+Microsoft.EntityFrameworkCore.Sqlite.Core:8.0.6 \
+Microsoft.EntityFrameworkCore.Sqlite:8.0.4 \
+Microsoft.EntityFrameworkCore.Sqlite:8.0.6 \
+Microsoft.EntityFrameworkCore.Tools:8.0.4 \
+Microsoft.EntityFrameworkCore.Tools:8.0.6 \
+Microsoft.EntityFrameworkCore:8.0.0 \
+Microsoft.EntityFrameworkCore:8.0.4 \
+Microsoft.EntityFrameworkCore:8.0.6 \
+Microsoft.Extensions.ApiDescription.Server:3.0.0 \
+Microsoft.Extensions.Caching.Abstractions:2.0.0 \
+Microsoft.Extensions.Caching.Abstractions:8.0.0 \
+Microsoft.Extensions.Caching.Memory:2.0.0 \
+Microsoft.Extensions.Caching.Memory:8.0.0 \
+Microsoft.Extensions.Configuration.Abstractions:3.1.0 \
+Microsoft.Extensions.Configuration.Abstractions:6.0.0 \
+Microsoft.Extensions.Configuration.Abstractions:8.0.0 \
+Microsoft.Extensions.Configuration.Binder:3.1.0 \
+Microsoft.Extensions.Configuration.Binder:6.0.0 \
+Microsoft.Extensions.Configuration.Binder:8.0.0 \
+Microsoft.Extensions.Configuration.Binder:8.0.1 \
+Microsoft.Extensions.Configuration.CommandLine:8.0.0 \
+Microsoft.Extensions.Configuration.EnvironmentVariables:8.0.0 \
+Microsoft.Extensions.Configuration.FileExtensions:8.0.0 \
+Microsoft.Extensions.Configuration.Json:8.0.0 \
+Microsoft.Extensions.Configuration.UserSecrets:8.0.0 \
+Microsoft.Extensions.Configuration:3.1.0 \
+Microsoft.Extensions.Configuration:8.0.0 \
+Microsoft.Extensions.DependencyInjection.Abstractions:2.0.0 \
+Microsoft.Extensions.DependencyInjection.Abstractions:2.2.0 \
+Microsoft.Extensions.DependencyInjection.Abstractions:3.1.0 \
+Microsoft.Extensions.DependencyInjection.Abstractions:6.0.0 \
+Microsoft.Extensions.DependencyInjection.Abstractions:8.0.0 \
+Microsoft.Extensions.DependencyInjection.Abstractions:8.0.1 \
+Microsoft.Extensions.DependencyInjection:3.1.0 \
+Microsoft.Extensions.DependencyInjection:6.0.0 \
+Microsoft.Extensions.DependencyInjection:8.0.0 \
+Microsoft.Extensions.DependencyModel:8.0.0 \
+Microsoft.Extensions.Diagnostics.Abstractions:8.0.0 \
+Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions:8.0.4 \
+Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions:8.0.6 \
+Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore:8.0.4 \
+Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore:8.0.6 \
+Microsoft.Extensions.Diagnostics.HealthChecks:8.0.4 \
+Microsoft.Extensions.Diagnostics.HealthChecks:8.0.6 \
+Microsoft.Extensions.Diagnostics:8.0.0 \
+Microsoft.Extensions.FileProviders.Abstractions:2.2.0 \
+Microsoft.Extensions.FileProviders.Abstractions:8.0.0 \
+Microsoft.Extensions.FileProviders.Physical:8.0.0 \
+Microsoft.Extensions.FileSystemGlobbing:8.0.0 \
+Microsoft.Extensions.Hosting.Abstractions:8.0.0 \
+Microsoft.Extensions.Hosting:8.0.0 \
+Microsoft.Extensions.Http:3.1.0 \
+Microsoft.Extensions.Http:8.0.0 \
+Microsoft.Extensions.Logging.Abstractions:3.1.0 \
+Microsoft.Extensions.Logging.Abstractions:6.0.0 \
+Microsoft.Extensions.Logging.Abstractions:8.0.0 \
+Microsoft.Extensions.Logging.Abstractions:8.0.1 \
+Microsoft.Extensions.Logging.Configuration:8.0.0 \
+Microsoft.Extensions.Logging.Console:8.0.0 \
+Microsoft.Extensions.Logging.Debug:8.0.0 \
+Microsoft.Extensions.Logging.EventLog:8.0.0 \
+Microsoft.Extensions.Logging.EventSource:8.0.0 \
+Microsoft.Extensions.Logging:3.1.0 \
+Microsoft.Extensions.Logging:6.0.0 \
+Microsoft.Extensions.Logging:8.0.0 \
+Microsoft.Extensions.ObjectPool:7.0.0 \
+Microsoft.Extensions.Options.ConfigurationExtensions:6.0.0 \
+Microsoft.Extensions.Options.ConfigurationExtensions:8.0.0 \
+Microsoft.Extensions.Options:2.0.0 \
+Microsoft.Extensions.Options:2.2.0 \
+Microsoft.Extensions.Options:3.1.0 \
+Microsoft.Extensions.Options:6.0.0 \
+Microsoft.Extensions.Options:8.0.0 \
+Microsoft.Extensions.Options:8.0.2 \
+Microsoft.Extensions.Primitives:2.0.0 \
+Microsoft.Extensions.Primitives:2.2.0 \
+Microsoft.Extensions.Primitives:3.1.0 \
+Microsoft.Extensions.Primitives:6.0.0 \
+Microsoft.Extensions.Primitives:8.0.0 \
+Microsoft.NET.Test.Sdk:17.9.0 \
+Microsoft.NETCore.Platforms:1.0.1 \
+Microsoft.NETCore.Platforms:1.1.0 \
+Microsoft.NETCore.Platforms:1.1.1 \
+Microsoft.NETCore.Platforms:5.0.0 \
+Microsoft.NETCore.Targets:1.0.1 \
+Microsoft.NETCore.Targets:1.1.0 \
+Microsoft.Net.Http.Headers:2.2.0 \
+Microsoft.OpenApi:1.2.3 \
+Microsoft.TestPlatform.ObjectModel:17.9.0 \
+Microsoft.TestPlatform.TestHost:17.9.0 \
+Microsoft.Win32.Primitives:4.3.0 \
+Microsoft.Win32.Registry:5.0.0 \
+Microsoft.Win32.SystemEvents:7.0.0 \
+MimeTypes:2.4.0 \
+Mono.Nat:3.0.4 \
+Mono.TextTemplating:2.2.1 \
+Moq:4.18.4 \
+NETStandard.Library:1.6.1 \
+NEbml:0.11.0 \
+Newtonsoft.Json:13.0.1 \
+Newtonsoft.Json:13.0.3 \
+PlaylistsNET:1.4.1 \
+SQLitePCLRaw.bundle_e_sqlite3:2.1.6 \
+SQLitePCLRaw.core:2.1.6 \
+SQLitePCLRaw.lib.e_sqlite3:2.1.6 \
+SQLitePCLRaw.provider.e_sqlite3:2.1.6 \
+Serilog.AspNetCore:8.0.1 \
+Serilog.Enrichers.Thread:3.1.0 \
+Serilog.Extensions.Hosting:8.0.0 \
+Serilog.Extensions.Logging:8.0.0 \
+Serilog.Formatting.Compact:2.0.0 \
+Serilog.Settings.Configuration:8.0.0 \
+Serilog.Sinks.Async:1.5.0 \
+Serilog.Sinks.Console:5.0.1 \
+Serilog.Sinks.Debug:2.0.0 \
+Serilog.Sinks.File:5.0.0 \
+Serilog.Sinks.Graylog:3.1.1 \
+Serilog:2.3.0 \
+Serilog:2.9.0 \
+Serilog:2.10.0 \
+Serilog:3.1.1 \
+SerilogAnalyzer:0.15.0 \
+ShimSkiaSharp:1.0.0.18 \
+SkiaSharp.HarfBuzz:2.88.8 \
+SkiaSharp.NativeAssets.Linux:2.88.8 \
+SkiaSharp.NativeAssets.Win32:2.88.8 \
+SkiaSharp.NativeAssets.macOS:2.88.8 \
+SkiaSharp:2.88.8 \
+SmartAnalyzers.MultithreadingAnalyzer:1.1.31 \
+StyleCop.Analyzers.Unstable:1.2.0.556 \
+StyleCop.Analyzers:1.2.0-beta.556 \
+Svg.Custom:1.0.0.18 \
+Svg.Model:1.0.0.18 \
+Svg.Skia:1.0.0.18 \
+Swashbuckle.AspNetCore.ReDoc:6.6.2 \
+Swashbuckle.AspNetCore.Swagger:6.2.3 \
+Swashbuckle.AspNetCore.SwaggerGen:6.2.3 \
+Swashbuckle.AspNetCore.SwaggerUI:6.2.3 \
+Swashbuckle.AspNetCore:6.2.3 \
+System.AppContext:4.3.0 \
+System.Buffers:4.3.0 \
+System.Buffers:4.5.0 \
+System.CodeDom:4.4.0 \
+System.Collections.Concurrent:4.0.12 \
+System.Collections.Concurrent:4.3.0 \
+System.Collections.Immutable:6.0.0 \
+System.Collections:4.0.11 \
+System.Collections:4.3.0 \
+System.ComponentModel.Annotations:4.3.0 \
+System.ComponentModel:4.3.0 \
+System.Composition.AttributedModel:6.0.0 \
+System.Composition.Convention:6.0.0 \
+System.Composition.Hosting:6.0.0 \
+System.Composition.Runtime:6.0.0 \
+System.Composition.TypedParts:6.0.0 \
+System.Composition:6.0.0 \
+System.Console:4.0.0 \
+System.Console:4.3.0 \
+System.Diagnostics.Debug:4.0.11 \
+System.Diagnostics.Debug:4.3.0 \
+System.Diagnostics.DiagnosticSource:4.0.0 \
+System.Diagnostics.DiagnosticSource:4.3.0 \
+System.Diagnostics.DiagnosticSource:6.0.0 \
+System.Diagnostics.DiagnosticSource:8.0.0 \
+System.Diagnostics.EventLog:6.0.0 \
+System.Diagnostics.EventLog:8.0.0 \
+System.Diagnostics.Tools:4.0.1 \
+System.Diagnostics.Tools:4.3.0 \
+System.Diagnostics.Tracing:4.1.0 \
+System.Diagnostics.Tracing:4.3.0 \
+System.Drawing.Common:7.0.0 \
+System.Globalization.Calendars:4.0.1 \
+System.Globalization.Calendars:4.3.0 \
+System.Globalization.Extensions:4.0.1 \
+System.Globalization.Extensions:4.3.0 \
+System.Globalization:4.0.11 \
+System.Globalization:4.3.0 \
+System.IO.Compression.ZipFile:4.3.0 \
+System.IO.Compression:4.3.0 \
+System.IO.FileSystem.Primitives:4.0.1 \
+System.IO.FileSystem.Primitives:4.3.0 \
+System.IO.FileSystem:4.0.1 \
+System.IO.FileSystem:4.3.0 \
+System.IO.Hashing:8.0.0 \
+System.IO.Pipelines:6.0.3 \
+System.IO.Pipelines:8.0.0 \
+System.IO:4.1.0 \
+System.IO:4.3.0 \
+System.Linq.Async:6.0.1 \
+System.Linq.Expressions:4.1.0 \
+System.Linq.Expressions:4.3.0 \
+System.Linq.Queryable:4.0.1 \
+System.Linq:4.1.0 \
+System.Linq:4.3.0 \
+System.Memory:4.5.1 \
+System.Memory:4.5.3 \
+System.Net.Http:4.1.0 \
+System.Net.Http:4.3.0 \
+System.Net.Http:4.3.4 \
+System.Net.Primitives:4.0.11 \
+System.Net.Primitives:4.3.0 \
+System.Net.Requests:4.0.11 \
+System.Net.Sockets:4.3.0 \
+System.Net.WebHeaderCollection:4.0.1 \
+System.ObjectModel:4.0.12 \
+System.ObjectModel:4.3.0 \
+System.Private.Uri:4.3.0 \
+System.Reflection.Emit.ILGeneration:4.0.1 \
+System.Reflection.Emit.ILGeneration:4.3.0 \
+System.Reflection.Emit.Lightweight:4.0.1 \
+System.Reflection.Emit.Lightweight:4.3.0 \
+System.Reflection.Emit:4.0.1 \
+System.Reflection.Emit:4.3.0 \
+System.Reflection.Extensions:4.0.1 \
+System.Reflection.Extensions:4.3.0 \
+System.Reflection.Metadata:1.6.0 \
+System.Reflection.Metadata:6.0.1 \
+System.Reflection.Primitives:4.0.1 \
+System.Reflection.Primitives:4.3.0 \
+System.Reflection.TypeExtensions:4.1.0 \
+System.Reflection.TypeExtensions:4.3.0 \
+System.Reflection:4.1.0 \
+System.Reflection:4.3.0 \
+System.Resources.ResourceManager:4.0.1 \
+System.Resources.ResourceManager:4.3.0 \
+System.Runtime.CompilerServices.Unsafe:4.4.0 \
+System.Runtime.CompilerServices.Unsafe:4.5.1 \
+System.Runtime.CompilerServices.Unsafe:6.0.0 \
+System.Runtime.Extensions:4.1.0 \
+System.Runtime.Extensions:4.3.0 \
+System.Runtime.Handles:4.0.1 \
+System.Runtime.Handles:4.3.0 \
+System.Runtime.InteropServices.RuntimeInformation:4.3.0 \
+System.Runtime.InteropServices:4.1.0 \
+System.Runtime.InteropServices:4.3.0 \
+System.Runtime.Numerics:4.0.1 \
+System.Runtime.Numerics:4.3.0 \
+System.Runtime:4.1.0 \
+System.Runtime:4.3.0 \
+System.Security.AccessControl:5.0.0 \
+System.Security.Cryptography.Algorithms:4.2.0 \
+System.Security.Cryptography.Algorithms:4.3.0 \
+System.Security.Cryptography.Cng:4.2.0 \
+System.Security.Cryptography.Cng:4.3.0 \
+System.Security.Cryptography.Csp:4.0.0 \
+System.Security.Cryptography.Csp:4.3.0 \
+System.Security.Cryptography.Encoding:4.0.0 \
+System.Security.Cryptography.Encoding:4.3.0 \
+System.Security.Cryptography.OpenSsl:4.0.0 \
+System.Security.Cryptography.OpenSsl:4.3.0 \
+System.Security.Cryptography.Primitives:4.0.0 \
+System.Security.Cryptography.Primitives:4.3.0 \
+System.Security.Cryptography.X509Certificates:4.1.0 \
+System.Security.Cryptography.X509Certificates:4.3.0 \
+System.Security.Principal.Windows:5.0.0 \
+System.Text.Encoding.CodePages:6.0.0 \
+System.Text.Encoding.CodePages:8.0.0 \
+System.Text.Encoding.Extensions:4.3.0 \
+System.Text.Encoding:4.0.11 \
+System.Text.Encoding:4.3.0 \
+System.Text.Encodings.Web:4.5.0 \
+System.Text.Encodings.Web:8.0.0 \
+System.Text.Json:8.0.0 \
+System.Text.Json:8.0.3 \
+System.Text.RegularExpressions:4.1.0 \
+System.Text.RegularExpressions:4.3.0 \
+System.Threading.Channels:6.0.0 \
+System.Threading.Tasks.Dataflow:8.0.0 \
+System.Threading.Tasks.Extensions:4.3.0 \
+System.Threading.Tasks.Parallel:4.0.1 \
+System.Threading.Tasks:4.0.11 \
+System.Threading.Tasks:4.3.0 \
+System.Threading.Thread:4.0.0 \
+System.Threading.ThreadPool:4.0.10 \
+System.Threading.Timer:4.0.1 \
+System.Threading.Timer:4.3.0 \
+System.Threading:4.0.11 \
+System.Threading:4.3.0 \
+System.Xml.ReaderWriter:4.3.0 \
+System.Xml.XDocument:4.3.0 \
+TMDbLib:2.2.0 \
+TagLibSharp:2.3.0 \
+UTF.Unknown:2.5.1 \
+Validation:2.4.18 \
+Xunit.Priority:1.1.6 \
+Xunit.SkippableFact:1.4.13 \
+coverlet.collector:6.0.2 \
+libse:4.0.5 \
+prometheus-net.AspNetCore:8.2.1 \
+prometheus-net.DotNetRuntime:4.4.0 \
+prometheus-net:3.1.2 \
+prometheus-net:8.2.1 \
+runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.2 \
+runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.2 \
+runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.2 \
+runtime.native.System.IO.Compression:4.3.0 \
+runtime.native.System.Net.Http:4.0.1 \
+runtime.native.System.Net.Http:4.3.0 \
+runtime.native.System.Security.Cryptography.Apple:4.3.0 \
+runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+runtime.native.System.Security.Cryptography.OpenSsl:4.3.2 \
+runtime.native.System.Security.Cryptography:4.0.0 \
+runtime.native.System:4.0.0 \
+runtime.native.System:4.3.0 \
+runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.2 \
+runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.2 \
+runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.Apple:4.3.0 \
+runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.2 \
+runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.2 \
+runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.2 \
+runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.2 \
+runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.2 \
+xunit.abstractions:2.0.3 \
+xunit.analyzers:1.12.0 \
+xunit.assert:2.7.1 \
+xunit.core:2.7.1 \
+xunit.extensibility.core:2.7.1 \
+xunit.extensibility.execution:2.7.1 \
+xunit.runner.visualstudio:2.5.8 \
+xunit:2.7.1 \
+zlib.net-mutliplatform:1.0.6 \
+runtime.any.system.collections:4.3.0 \
+runtime.any.system.diagnostics.tracing:4.3.0 \
+runtime.any.system.globalization:4.3.0 \
+runtime.any.system.globalization.calendars:4.3.0 \
+runtime.any.system.io:4.3.0 \
+runtime.any.system.reflection:4.3.0 \
+runtime.any.system.reflection.extensions:4.3.0 \
+runtime.any.system.reflection.primitives:4.3.0 \
+runtime.any.system.resources.resourcemanager:4.3.0 \
+runtime.any.system.runtime:4.3.0 \
+runtime.any.system.runtime.handles:4.3.0 \
+runtime.any.system.runtime.interopservices:4.3.0 \
+runtime.any.system.text.encoding:4.3.0 \
+runtime.any.system.text.encoding.extensions:4.3.0 \
+runtime.any.system.threading.tasks:4.3.0 \
+runtime.unix.microsoft.win32.primitives:4.3.0 \
+runtime.unix.system.diagnostics.debug:4.3.0 \
+runtime.unix.system.io.filesystem:4.3.0 \
+runtime.unix.system.net.primitives:4.3.0 \
+runtime.unix.system.private.uri:4.3.0 \
+runtime.unix.system.runtime.extensions:4.3.0
 
 SUB_FILES=	jellyfin pkg-message
 SUB_LIST=	DATADIR=${LOCALBASE}/jellyfin \
 		GROUPS=${GROUPS} \
 		USERS=${USERS}
 
-NO_WRKSUBDIR=	YES
-WRKSRC=		${WRKDIR}/jf
-
 USERS=		jellyfin
 GROUPS=		jellyfin
 
-.include <bsd.port.options.mk>
+DOTNET_ENV=	DOTNET_CLI_HOME=/tmp
+
+#json files must be replaced every time DISTVERSION is updated
+PREFETCH_FILE=	${PORTNAME}-${DISTVERSION}-node-modules${EXTRACT_SUFX}
+PREFETCH_TIMESTAMP=	61171200
+PKG_NODE_VER=	20.14.0
+NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/:S/i386/ia32/}
+
+.include "nuget.mk"
+
+pre-fetch:
+	@-${_NUGET_FETCH}
+	if [ ! -f ${DISTDIR}/${PREFETCH_FILE} ]; then \
+		${MKDIR} ${WRKDIR}/node-modules-cache; \
+		${CP} -R ${FILESDIR}/packagejsons/* ${WRKDIR}/node-modules-cache; \
+		cd ${WRKDIR}/node-modules-cache && \
+		${SETENV} HOME=${WRKDIR} \
+			npm ci --ignore-scripts --no-progress --no-audit --no-fund; \
+		${FIND} ${WRKDIR}/node-modules-cache -depth 1 -print | \
+			${GREP} -v node_modules | ${XARGS} ${RM} -r; \
+		${FIND} ${WRKDIR}/node-modules-cache -type d -exec ${CHMOD} 755 {} ';'; \
+		cd ${WRKDIR}/node-modules-cache && \
+		${MTREE_CMD} -cbnSp node_modules | ${MTREE_CMD} -C | ${SED} \
+			-e 's:time=[0-9.]*:time=${PREFETCH_TIMESTAMP}.000000000:' \
+			-e 's:\([gu]id\)=[0-9]*:\1=0:g' \
+			-e 's:flags=.*:flags=none:' \
+			-e 's:^\.:./node_modules:' > node-modules-cache.mtree; \
+		${TAR} -cz --options 'gzip:!timestamp' \
+			-f ${DISTDIR}/${PREFETCH_FILE} \
+			@node-modules-cache.mtree; \
+		${RM} -r ${WRKDIR}; \
+	fi
+
+post-extract:
+	${MV} ${WRKDIR}/node_modules ${WRKSRC_ui}
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%DISTDIR%%|${DISTDIR}|' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC_server}/nuget.config
+
+do-build:
+	cd ${WRKSRC_ui} && ${SETENV} ${MAKE_ENV} \
+		npm run build:production
+
+	cd ${WRKSRC_server}/ && \
+		${SETENV} ${MAKE_ENV} ${DOTNET_ENV} dotnet restore Jellyfin.Server --runtime freebsd-x64 --packages ${WRKDIR}/packages && \
+		${SETENV} ${MAKE_ENV} ${DOTNET_ENV} dotnet publish Jellyfin.Server --configuration Release --self-contained --runtime freebsd-x64 --packages ${WRKDIR}/packages -o bin/publish "-p:DebugSymbols=false;DebugType=none;UseAppHost=true;PublishReadyToRun=false"
+
+post-build:
+	${MKDIR} ${WRKSRC_server}/bin/publish/jellyfin-web
+	${CP} -r ${WRKSRC_ui}/dist/ ${WRKSRC_server}/bin/publish/jellyfin-web
 
 do-install:
-	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}/${LOCALBASE}/jellyfin "! ( -type f -name *\.so -or -type f -name "jellyfin" )"
-	cd ${WRKSRC} && ${COPYTREE_BIN} . ${STAGEDIR}/${LOCALBASE}/jellyfin " -type f -name "jellyfin" "
-	${INSTALL_DATA} ${DISTDIR}/libSkiaSharp.so ${STAGEDIR}/${LOCALBASE}/jellyfin && ${INSTALL_DATA} ${WRKSRC}/*.so ${STAGEDIR}/${LOCALBASE}/jellyfin
+	cd ${WRKSRC}/bin/publish/ && ${ELFCTL} -e +noaslr ./jellyfin
+	cd ${WRKSRC}/bin/publish/ && ${COPYTREE_SHARE} . ${STAGEDIR}/${LOCALBASE}/jellyfin "! ( -type f -name *\.so -or -type f -name "jellyfin" )"
+	cd ${WRKSRC}/bin/publish/ && ${COPYTREE_BIN} . ${STAGEDIR}/${LOCALBASE}/jellyfin " -type f -name "jellyfin" "
+	${INSTALL_DATA} ${DISTDIR}/libSkiaSharp.so ${STAGEDIR}/${LOCALBASE}/jellyfin && ${INSTALL_DATA} ${WRKSRC}/bin/publish/*.so ${STAGEDIR}/${LOCALBASE}/jellyfin
 
-#This can be done one of a number ways including: symlink, a .config override (using dllmap), or libmap.
 post-install:
 	@${ECHO_CMD} "libe_sqlite3.so libsqlite3.so" \
 		>${STAGEDIR}${PREFIX}/etc/libmap.d/jellyfin.conf

@@ -50,13 +50,13 @@ EBUR128_DEFAULT?=	legacy
 FIREBIRD_DEFAULT?=	3.0
 # Possible values: gfortran
 FORTRAN_DEFAULT?=	gfortran
-# Possible values: 3.2.2, 3.3.1
+# Possible values: 3.2.3, 3.3.1
 .  if !defined(WANT_FPC_DEVEL)
-FPC_DEFAULT?=		3.2.2
+FPC_DEFAULT?=		3.2.3
 .  else
 FPC_DEFAULT?=		3.3.1
 .  endif
-# Possible values: 9, 10, 11, 12, 13, 14, 15
+# Possible values: 10, 11, 12, 13, 14, 15
 # (Any other version is completely unsupported and not meant for general use.)
 GCC_DEFAULT?=		13
 # Possible values: 10
@@ -75,11 +75,11 @@ GUILE_DEFAULT?=		2.2
 IMAGEMAGICK_DEFAULT?=	7
 # Possible values: 8, 11, 17, 18, 19, 20, 21
 JAVA_DEFAULT?=		8
-# Possible values: 3.2.0, 3.1.0
+# Possible values: 3.4.0, 3.99
 .  if !defined(WANT_LAZARUS_DEVEL)
-LAZARUS_DEFAULT?=	3.2.0
+LAZARUS_DEFAULT?=	3.4.0
 .  else
-LAZARUS_DEFAULT?=	3.3.1
+LAZARUS_DEFAULT?=	3.99
 .  endif
 # Possible values: rust, legacy
 .  if empty(ARCH:Naarch64:Namd64:Narmv7:Ni386:Npowerpc64:Npowerpc64le:Npowerpc:Nriscv64)
@@ -101,17 +101,19 @@ LUAJIT_DEFAULT?=	luajit-devel
 .  endif
 # Possible values: 5.10, 5.20, 6.8
 MONO_DEFAULT?=		5.20
-# Possible values: 8.0, 8.1, 10.5m, 10.6m, 10.11m
+# Possible values: 8.0, 8.1, 8.4, 10.5m, 10.6m, 10.11m
 MYSQL_DEFAULT?=		8.0
 # Possible values: ninja, samurai
 NINJA_DEFAULT?=		ninja
-# Possible value: 18, 20, 21, 22, current, lts (Note: current = 22 and lts = 20)
+# Possible value: 18, 20, 22, current, lts (Note: current = 22 and lts = 20)
 NODEJS_DEFAULT?=	lts
 # Possible value: 25, 26
 OPENLDAP_DEFAULT?=	26
-# Possible values: 5.34, 5.36, 5.38, devel
+# Possible values: 5.36, 5.38, 5.40, devel
 .  if !exists(${LOCALBASE}/bin/perl) || (!defined(_PORTS_ENV_CHECK) && \
     defined(PACKAGE_BUILDING))
+# When changing the default here, make sure the DEPRECATED/EXPIRATION lines in
+# the older Perl 5 ports are uncommented at the same time.
 PERL5_DEFAULT?=		5.36
 .  elif !defined(PERL5_DEFAULT)
 # There's no need to replace development versions, like "5.23" with "devel"
@@ -135,7 +137,7 @@ PYCRYPTOGRAPHY_DEFAULT?=	rust
 PYCRYPTOGRAPHY_DEFAULT?=	legacy
 .  endif
 # Possible values: 3.8, 3.9, 3.10, 3.11
-PYTHON_DEFAULT?=	3.9
+PYTHON_DEFAULT?=	3.11
 # Possible values: 2.7
 PYTHON2_DEFAULT?=	2.7
 # Possible values: 3.1, 3.2, 3.3

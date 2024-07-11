@@ -1,13 +1,13 @@
 PORTNAME=	ssocr
-PORTVERSION=	2.23.1
-PORTREVISION=	3
+DISTVERSION=	2.24.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~auerswal/ssocr/ \
 		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	CLI to recognize digits of a seven segment display
-WWW=		https://www.unix-ag.uni-kl.de/~auerswal/ssocr/
+WWW=		https://www.unix-ag.uni-kl.de/~auerswal/ssocr/ \
+		https://github.com/auerswal/ssocr
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,5 +1,7 @@
 %%PYSIDE_BINDIR_REL%%/android_deploy.py
 %%PYSIDE_BINDIR_REL%%/assistant
+%%PYSIDE_BINDIR_REL%%/balsam
+%%PYSIDE_BINDIR_REL%%/balsamui
 %%PYSIDE_BINDIR_REL%%/deploy.py
 %%PYSIDE_BINDIR_REL%%/deploy_lib/__init__.py
 %%PYSIDE_BINDIR_REL%%/deploy_lib/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -66,6 +68,7 @@
 %%PYSIDE_BINDIR_REL%%/qmllint
 %%PYSIDE_BINDIR_REL%%/qmlls
 %%PYSIDE_BINDIR_REL%%/qmltyperegistrar
+%%PYSIDE_BINDIR_REL%%/qsb
 %%PYSIDE_BINDIR_REL%%/qtpy2cpp.py
 %%PYSIDE_BINDIR_REL%%/qtpy2cpp_lib/__pycache__/astdump%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYSIDE_BINDIR_REL%%/qtpy2cpp_lib/__pycache__/astdump%%PYTHON_EXT_SUFFIX%%.pyc

@@ -1,8 +1,12 @@
 PORTNAME=	snuffleupagus
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	b005df2.patch:-p2
 
 MAINTAINER=	franco@opnsense.org
 COMMENT=	Security module for PHP

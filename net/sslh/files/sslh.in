@@ -10,9 +10,10 @@
 # sslh_enable="YES"
 #
 # You can fine tune other variables too:
-# sslh_mode="fork | select"
+# sslh_mode="fork | select | ev"
 # fork: stable but slow performance
-# select: new but high performance
+# select: higher performance, few hundreds of connections
+# ev: uses libev as a backend, thousands of connections
 # sslh_fib: routing table number
 
 sslh_precmd() {

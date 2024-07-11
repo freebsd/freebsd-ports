@@ -1,5 +1,5 @@
 PORTNAME=	calibre
-PORTVERSION=	7.10.0
+PORTVERSION=	7.13.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -14,6 +14,7 @@ LICENSE=	GPLv3
 EXTRACT_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 BUILD_DEPENDS=		${LOCALBASE}/bin/cmake:devel/cmake-core \
 			${NONEXISTENT}:misc/iso-codes:extract \
+			${PY_SETUPTOOLS} \
 			${PYTHON_PKGNAMEPREFIX}apsw>=3.43.0.0:databases/py-apsw@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.12.2:www/py-beautifulsoup@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}css-parser>=1.0.10:www/py-css-parser@${PY_FLAVOR} \
@@ -61,7 +62,7 @@ RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}apsw>=3.43.0.0:databases/py-apsw@${PY_FLAVO
 			xdg-open:devel/xdg-utils
 
 USES=		desktop-file-utils gettext-runtime:build gl localbase:ldflags \
-		pkgconfig pyqt:6 python qt:6 shared-mime-info shebangfix sqlite ssl \
+		pkgconfig pyqt:6 python:3.11+ qt:6 shared-mime-info shebangfix sqlite ssl \
 		tar:xz xorg
 USE_GL=		opengl
 USE_PYQT=	pyqt6 pysip qtbuilder sip webengine
@@ -70,8 +71,8 @@ USE_RC_SUBR=	calibre
 USE_XORG=	x11 xext xrender
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	kovidgoyal:calibre-translations:9741e2c:translations \
-		LibreOffice:dictionaries:8c5b631:hypenation
+GH_TUPLE=	kovidgoyal:calibre-translations:6b7abc0:translations \
+		LibreOffice:dictionaries:fc2dc38:hypenation
 
 SHEBANG_GLOB=	*.py *.recipe *.sh
 python_OLD_CMD=	"/usr/bin/env  python" ${LOCALBASE}/bin/python3
@@ -97,8 +98,6 @@ SUB_LIST=	PYTHON_VERSION=${PYTHON_VERSION}
 ISOCODESWRKSRC!=	${BSDMAKE} -C ${.CURDIR}/../../misc/iso-codes -V WRKSRC
 
 post-extract:
-	@${MV} ${WRKSRC_translations} ${WRKSRC}/src/translations
-	@${CP} ${LOCALBASE}/share/certs/ca-root-nss.crt ${WRKSRC}/resources/mozilla-ca-certs.pem
 	@${CP} ${FILESDIR}/user-agent-data.json ${WRKSRC}/resources
 
 post-patch:
@@ -107,8 +106,6 @@ post-patch:
 		${WRKSRC}/setup/install.py \
 		${WRKSRC}/src/calibre/gui2/dialogs/custom_recipes.py \
 		${WRKSRC}/src/calibre/gui2/preferences/tweaks.py
-	@${REINPLACE_CMD} -e "s|%%ISOCODESWRKSRC%%|${ISOCODESWRKSRC}|" \
-		${WRKSRC}/setup/iso_codes.py
 
 do-configure:
 	# do nothing
@@ -122,6 +119,9 @@ do-build:
 		--system-mathjax \
 		--path-to-mathjax=${LOCALBASE}/www/MathJax3 \
 		--path-to-hyphenation=${WRKSRC_hypenation} \
+		--path-to-translations=${WRKSRC_translations} \
+		--path-to-cacerts=${LOCALBASE}/share/certs/ca-root-nss.crt \
+		--path-to-isocodes=${ISOCODESWRKSRC} --isocodes-extracted \
 	)
 	@${RMDIR} ${LOCALBASE}/libexec/qt6/locales 2>/dev/null || ${TRUE}
 

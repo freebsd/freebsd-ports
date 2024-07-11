@@ -8,6 +8,7 @@ bin/radclient
 bin/radcrypt
 bin/radeapclient
 bin/radlast
+bin/radsecret
 bin/radsniff
 bin/radsqlrelay
 bin/radtest
@@ -134,6 +135,9 @@ include/freeradius/vqp.h
 %%LIBDIR%%/rlm_digest.a
 %%LIBDIR%%/rlm_digest.la
 %%LIBDIR%%/rlm_digest.so
+%%LIBDIR%%/rlm_dpsk.a
+%%LIBDIR%%/rlm_dpsk.la
+%%LIBDIR%%/rlm_dpsk.so
 %%LIBDIR%%/rlm_dynamic_clients.a
 %%LIBDIR%%/rlm_dynamic_clients.la
 %%LIBDIR%%/rlm_dynamic_clients.so
@@ -164,6 +168,9 @@ include/freeradius/vqp.h
 %%LIBDIR%%/rlm_eap_sim.a
 %%LIBDIR%%/rlm_eap_sim.la
 %%LIBDIR%%/rlm_eap_sim.so
+%%LIBDIR%%/rlm_eap_teap.a
+%%LIBDIR%%/rlm_eap_teap.la
+%%LIBDIR%%/rlm_eap_teap.so
 %%LIBDIR%%/rlm_eap_tls.a
 %%LIBDIR%%/rlm_eap_tls.la
 %%LIBDIR%%/rlm_eap_tls.so
@@ -505,6 +512,18 @@ sbin/radmin
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/ROOT/nav.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/ROOT/pages/directories.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/ROOT/pages/index.adoc
+%%PORTDOCS%%%%DOCSDIR%%/antora/modules/concepts/nav.adoc
+%%PORTDOCS%%%%DOCSDIR%%/antora/modules/concepts/pages/aaa.adoc
+%%PORTDOCS%%%%DOCSDIR%%/antora/modules/concepts/pages/index.adoc
+%%PORTDOCS%%%%DOCSDIR%%/antora/modules/concepts/pages/modules/ldap/authentication.adoc
+%%PORTDOCS%%%%DOCSDIR%%/antora/modules/developers/nav.adoc
+%%PORTDOCS%%%%DOCSDIR%%/antora/modules/developers/pages/bugs.adoc
+%%PORTDOCS%%%%DOCSDIR%%/antora/modules/developers/pages/coding-methods.adoc
+%%PORTDOCS%%%%DOCSDIR%%/antora/modules/developers/pages/contributing.adoc
+%%PORTDOCS%%%%DOCSDIR%%/antora/modules/developers/pages/coverage.adoc
+%%PORTDOCS%%%%DOCSDIR%%/antora/modules/developers/pages/index.adoc
+%%PORTDOCS%%%%DOCSDIR%%/antora/modules/developers/pages/profile.adoc
+%%PORTDOCS%%%%DOCSDIR%%/antora/modules/developers/pages/release-method.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/howto/nav.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/howto/pages/index.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/howto/pages/protocols/dhcp/enable.adoc
@@ -524,6 +543,9 @@ sbin/radmin
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/howto/pages/protocols/proxy/radsec_client.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/howto/pages/protocols/proxy/radsec_with_haproxy.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/howto/pages/protocols/proxy/radsec_with_traefik.adoc
+%%PORTDOCS%%%%DOCSDIR%%/antora/modules/howto/pages/monitoring/index.adoc
+%%PORTDOCS%%%%DOCSDIR%%/antora/modules/howto/pages/monitoring/statistics.adoc
+%%PORTDOCS%%%%DOCSDIR%%/antora/modules/howto/pages/simultaneous_use.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/installation/nav.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/installation/pages/dependencies.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/installation/pages/index.adoc
@@ -598,12 +620,12 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/certs/client.key
 %%EXAMPLESDIR%%/raddb/certs/client.p12
 %%EXAMPLESDIR%%/raddb/certs/client.pem
-%%EXAMPLESDIR%%/raddb/certs/dh
 %%EXAMPLESDIR%%/raddb/certs/index.txt
 %%EXAMPLESDIR%%/raddb/certs/index.txt.attr
 %%EXAMPLESDIR%%/raddb/certs/index.txt.attr.old
 %%EXAMPLESDIR%%/raddb/certs/index.txt.old
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/raddb/certs/inner-server.cnf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/raddb/certs/realms/README.md
 %%EXAMPLESDIR%%/raddb/certs/passwords.mk
 %%EXAMPLESDIR%%/raddb/certs/serial
 %%EXAMPLESDIR%%/raddb/certs/serial.old
@@ -637,6 +659,7 @@ sbin/radmin
 %%EXAMPLESDIR%%/raddb/mods-available/dhcp
 %%EXAMPLESDIR%%/raddb/mods-available/dhcp_sqlippool
 %%EXAMPLESDIR%%/raddb/mods-available/digest
+%%EXAMPLESDIR%%/raddb/mods-available/dpsk
 %%EXAMPLESDIR%%/raddb/mods-available/dynamic_clients
 %%EXAMPLESDIR%%/raddb/mods-available/eap
 %%EXAMPLESDIR%%/raddb/mods-available/echo
@@ -904,6 +927,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.alcatel-lucent.aaa
 %%DATADIR%%/dictionary.alcatel.esam
 %%DATADIR%%/dictionary.alcatel.sr
+%%DATADIR%%/dictionary.alphion
 %%DATADIR%%/dictionary.alteon
 %%DATADIR%%/dictionary.altiga
 %%DATADIR%%/dictionary.alvarion
@@ -945,6 +969,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.cisco.vpn3000
 %%DATADIR%%/dictionary.cisco.vpn5000
 %%DATADIR%%/dictionary.citrix
+%%DATADIR%%/dictionary.ckey
 %%DATADIR%%/dictionary.clavister
 %%DATADIR%%/dictionary.cnergee
 %%DATADIR%%/dictionary.colubris
@@ -1028,6 +1053,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.nortel
 %%DATADIR%%/dictionary.ntua
 %%DATADIR%%/dictionary.openser
+%%DATADIR%%/dictionary.openwifi
 %%DATADIR%%/dictionary.packeteer
 %%DATADIR%%/dictionary.paloalto
 %%DATADIR%%/dictionary.patton
@@ -1087,6 +1113,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.shiva
 %%DATADIR%%/dictionary.siemens
 %%DATADIR%%/dictionary.slipstream
+%%DATADIR%%/dictionary.smartsharesystems
 %%DATADIR%%/dictionary.sofaware
 %%DATADIR%%/dictionary.softbank
 %%DATADIR%%/dictionary.sonicwall
@@ -1100,6 +1127,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.telkom
 %%DATADIR%%/dictionary.telrad
 %%DATADIR%%/dictionary.terena
+%%DATADIR%%/dictionary.tplink
 %%DATADIR%%/dictionary.trapeze
 %%DATADIR%%/dictionary.travelping
 %%DATADIR%%/dictionary.tripplite

@@ -1,6 +1,4 @@
-diff --git src/util/crypto/nss/nss_sha512crypt.c src/util/crypto/nss/nss_sha512crypt.c
-index 4d0594d9f..49801222d 100644
---- src/util/crypto/nss/nss_sha512crypt.c
+--- src/util/crypto/nss/nss_sha512crypt.c.orig	2020-03-17 13:31:28 UTC
 +++ src/util/crypto/nss/nss_sha512crypt.c
 @@ -29,6 +29,14 @@
  #include <sechash.h>

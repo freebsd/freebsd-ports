@@ -1,4 +1,4 @@
---- content/browser/child_process_launcher_helper_linux.cc.orig	2024-05-23 20:04:36 UTC
+--- content/browser/child_process_launcher_helper_linux.cc.orig	2024-06-22 08:49:42 UTC
 +++ content/browser/child_process_launcher_helper_linux.cc
 @@ -22,7 +22,9 @@
  #include "content/public/common/result_codes.h"
@@ -48,7 +48,7 @@
 +#if !BUILDFLAG(IS_BSD)
    ZygoteCommunication* zygote_handle = GetZygoteForLaunch();
    if (zygote_handle) {
-     // TODO(crbug.com/569191): If chrome supported multiple zygotes they could
+     // TODO(crbug.com/40448989): If chrome supported multiple zygotes they could
 @@ -93,7 +104,6 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
          GetProcessType());
      *launch_result = LAUNCH_RESULT_SUCCESS;

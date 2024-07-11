@@ -92,6 +92,8 @@ bin/postinst-xfonts
 bin/postrm-debconf
 bin/postrm-icons
 bin/postrm-init
+bin/postrm-init-tmpfiles-purge
+bin/postrm-init-tmpfiles-remove
 bin/postrm-menu
 bin/postrm-menu-method
 bin/postrm-modules

@@ -1,6 +1,5 @@
 PORTNAME=	isomaster
-PORTVERSION=	1.3.16
-PORTREVISION=	2
+PORTVERSION=	1.3.17
 CATEGORIES=	sysutils
 MASTER_SITES=	http://littlesvr.ca/isomaster/releases/
 
@@ -19,7 +18,8 @@ USES=		desktop-file-utils gettext gmake gnome pkgconfig tar:bzip2
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 MAKE_ENV=	DEFAULT_VIEWER="xdg-open" USE_SYSTEM_INIPARSER=1
 
-CPPFLAGS+=	-I${LOCALBASE}/include -Diniparser_setstr=iniparser_set
+CPPFLAGS+=	-I${LOCALBASE}/include/iniparser \
+		-Diniparser_setstr=iniparser_set
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 post-patch:

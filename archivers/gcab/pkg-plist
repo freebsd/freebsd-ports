@@ -7,7 +7,7 @@ include/libgcab-1.0/libgcab/gcab-folder.h
 lib/girepository-1.0/GCab-1.0.typelib
 lib/libgcab-1.0.so
 lib/libgcab-1.0.so.0
-lib/libgcab-1.0.so.0.2.0
+lib/libgcab-1.0.so.0.3.0
 libdata/pkgconfig/libgcab-1.0.pc
 share/man/man1/gcab.1.gz
 share/gir-1.0/GCab-1.0.gir

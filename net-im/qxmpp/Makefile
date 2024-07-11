@@ -1,6 +1,6 @@
 PORTNAME=	qxmpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.0
+DISTVERSION=	1.7.0
 CATEGORIES=	net-im
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -20,6 +20,7 @@ USES=		cmake compiler:c++17-lang pathfix pkgconfig qca \
 		qt:${QT_VER}
 USE_GITHUB=	yes
 GH_ACCOUNT=	qxmpp-project
+USE_LDCONFIG=	yes
 _USE_QT_qt5=	core network xml \
 		buildtools:build qmake:build
 _USE_QT_qt6=	base
@@ -37,11 +38,18 @@ PLIST_SUB=	VERSION=${PORTVERSION} \
 
 QT_VER=		${FLAVOR:S/qt//}
 
-OPTIONS_DEFINE=	TEST
+OPTIONS_DEFINE=		GSTREAMER TEST
+OPTIONS_SUB=		yes
 
-_TEST_USE_QT_qt5=	testlib:build
+GSTREAMER_DESC=		Audio/video support over Jingle via GStreamer
+GSTREAMER_USES=		gnome gstreamer
+GSTREAMER_USE=		GNOME=glib20 \
+			GSTREAMER=good,ugly
+GSTREAMER_CMAKE_BOOL=	WITH_GSTREAMER
+
+_TEST_USE_QT_qt5=	QT=testlib:build
 _TEST_USE_QT_qt6=	# empty
-TEST_USE_QT=		${_FLAVOR_USE_QT_${FLAVOR}}
+TEST_USE=		${_TEST_USE_QT_${FLAVOR}}
 TEST_CMAKE_BOOL=	BUILD_TESTS
 TEST_TEST_TARGET=	test
 

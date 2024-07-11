@@ -1,6 +1,6 @@
 PORTNAME=		openldap
-DISTVERSION=		2.6.7
-PORTREVISION=	1
+DISTVERSION=		2.6.8
+PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		https://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/ \
 			http://gpl.savoirfairelinux.net/pub/mirrors/openldap/%SUBDIR%/ \
@@ -91,6 +91,7 @@ OPTIONS_GROUP_OVLYS+=	LASTBIND
 OPTIONS_GROUP_OVLYS+=	LASTMOD
 OPTIONS_GROUP_OVLYS+=	MEMBEROF
 OPTIONS_GROUP_OVLYS+=	NOPS
+OPTIONS_GROUP_OVLYS+=	NESTGROUP
 OPTIONS_GROUP_OVLYS+=	OTP
 OPTIONS_GROUP_OVLYS+=	PROXYCACHE
 OPTIONS_GROUP_OVLYS+=	PPOLICY
@@ -150,6 +151,7 @@ DYNGROUP_DESC=		With Dynamic Group overlay
 DYNLIST_DESC=		With Dynamic List overlay
 HOMEDIR_DESC=		With Home Directory Management overlay
 MEMBEROF_DESC=		With Reverse Group Membership overlay
+NESTGROUP_DESC=		With nestgroup overlay
 NOPS_DESC=		With nops overlay
 OTP_DESC=		With OTP 2-factor authentication overlay
 PPOLICY_DESC=		With Password Policy overlay
@@ -201,6 +203,7 @@ LLOADD_CONFIGURE_ENABLE=	balancer=mod
 LLOADD_LIB_DEPENDS=		libevent.so:devel/libevent
 MDB_CONFIGURE_ENABLE=		mdb=yes
 MEMBEROF_CONFIGURE_ENABLE=	memberof=mod
+NESTGROUP_CONFIGURE_ENABLE=	nestgroup=mod
 OTP_CONFIGURE_ENABLE=		otp=mod
 PASSWD_CONFIGURE_ENABLE=	passwd=mod
 PERL_CONFIGURE_ENABLE=		perl=mod

@@ -1,5 +1,5 @@
 PORTNAME=	gap
-DISTVERSION=	4.13.0
+DISTVERSION=	4.13.1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/gap-system/gap/releases/download/v${DISTVERSION}/
 

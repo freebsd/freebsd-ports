@@ -2,7 +2,6 @@ include/triton/aarch64.spec
 include/triton/aarch64Cpu.hpp
 include/triton/aarch64Semantics.hpp
 include/triton/aarch64Specifications.hpp
-include/triton/api.hpp
 include/triton/archEnums.hpp
 include/triton/architecture.hpp
 include/triton/arm32.spec
@@ -13,16 +12,19 @@ include/triton/armOperandProperties.hpp
 include/triton/ast.hpp
 include/triton/astContext.hpp
 include/triton/astEnums.hpp
+include/triton/astPcodeRepresentation.hpp
 include/triton/astPythonRepresentation.hpp
 include/triton/astRepresentation.hpp
 include/triton/astRepresentationInterface.hpp
 include/triton/astSmtRepresentation.hpp
+include/triton/basicBlock.hpp
 include/triton/bitsVector.hpp
 include/triton/bitwuzlaSolver.hpp
 include/triton/callbacks.hpp
 include/triton/callbacksEnums.hpp
 include/triton/comparableFunctor.hpp
 include/triton/config.hpp
+include/triton/context.hpp
 include/triton/coreUtils.hpp
 include/triton/cpuInterface.hpp
 include/triton/cpuSize.hpp
@@ -33,6 +35,7 @@ include/triton/immediate.hpp
 include/triton/instruction.hpp
 include/triton/irBuilder.hpp
 include/triton/liftingEngine.hpp
+include/triton/liftingToDot.hpp
 include/triton/liftingToLLVM.hpp
 include/triton/liftingToPython.hpp
 include/triton/liftingToSMT.hpp
@@ -51,6 +54,7 @@ include/triton/solverEngine.hpp
 include/triton/solverEnums.hpp
 include/triton/solverInterface.hpp
 include/triton/solverModel.hpp
+include/triton/stubs.hpp
 include/triton/symbolicEngine.hpp
 include/triton/symbolicEnums.hpp
 include/triton/symbolicExpression.hpp
@@ -63,6 +67,7 @@ include/triton/tritonToBitwuzla.hpp
 include/triton/tritonToLLVM.hpp
 include/triton/tritonToZ3.hpp
 include/triton/tritonTypes.hpp
+include/triton/uintwide_t.h
 include/triton/version.hpp
 include/triton/x86.spec
 include/triton/x8664Cpu.hpp

@@ -1,7 +1,6 @@
 PORTNAME=	doublecmd
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.15
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	x11-fm
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -21,7 +20,7 @@ USES=		desktop-file-utils dos2unix fpc gnome lazarus:flavors xorg
 DOS2UNIX_FILES=	components/multithreadprocs/mtpcpu.pas src/dmhelpmanager.pas
 USE_GITHUB=	yes
 GH_PROJECT=	doublecmd.github.io:help
-GH_TAGNAME=	1.0.10:help
+GH_TAGNAME=	${DISTVERSIONPREFIX}1.1.10:help
 USE_GNOME=	cairo glib20
 USE_XORG=	x11
 
@@ -49,8 +48,8 @@ OPTIONS_DEFAULT=	DSX_LOCATE WCX_BASE64 WCX_CPIO WCX_DEB WCX_RPM WCX_UNRAR \
 
 OPTIONS_GROUP=		DSX WCX WDX WFX WLX
 OPTIONS_GROUP_DSX=	DSX_LOCATE
-OPTIONS_GROUP_WCX=	WCX_BASE64 WCX_CPIO WCX_DEB WCX_RPM WCX_UNBZ2 WCX_UNRAR \
-			WCX_ZIP
+OPTIONS_GROUP_WCX=	WCX_BASE64 WCX_CPIO WCX_DEB WCX_RPM WCX_SEVENZIP \
+			WCX_TORRENT WCX_UNRAR WCX_ZIP
 OPTIONS_GROUP_WDX=	WDX_AUDIOINFO WDX_DEB WDX_RPM WDX_SCRIPTS WDX_TEXTLINE
 OPTIONS_GROUP_WFX=	WFX_FTP WFX_SAMBA
 OPTIONS_GROUP_WLX=	WLX_MPLAYER
@@ -63,7 +62,8 @@ WCX_CPIO_DESC=	CPIO format support
 WCX_DEB_DESC=	Debian package archive support
 WCX_DESC=	Packer plugins to work with archives
 WCX_RPM_DESC=	Red Hat package archive support
-WCX_UNBZ2_DESC=	BZIP2 format support
+WCX_SEVENZIP_DESC=	7z format support (broken yet)
+WCX_TORRENT_DESC=	BitTorrent format support
 WCX_UNRAR_DESC=	RAR format support
 WCX_ZIP_DESC=	ZIP format support
 
@@ -85,6 +85,8 @@ WCX_UNRAR_LIB_DEPENDS=		libunrar.so:archivers/libunrar
 WFX_SAMBA_USES=			samba:lib
 WLX_MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 
+WCX_SEVENZIP_BROKEN=		Not ready yet to use, require unit JwaWinBase
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -96,7 +98,7 @@ LAZARUS_PROJECT_FILES+=	plugins/wfx/ftp/src/ftp.lpi
 .endif
 
 .if ${PORT_OPTIONS:MWCX_BASE64}
-LAZARUS_PROJECT_FILES+= plugins/wcx/base64/src/base64wcx.lpi
+LAZARUS_PROJECT_FILES+=	plugins/wcx/base64/src/base64wcx.lpi
 .endif
 
 .if ${PORT_OPTIONS:MWCX_CPIO}
@@ -107,12 +109,16 @@ LAZARUS_PROJECT_FILES+=	plugins/wcx/cpio/src/cpio.lpi
 LAZARUS_PROJECT_FILES+=	plugins/wcx/deb/src/deb.lpi
 .endif
 
-.if ${PORT_OPTIONS:MWCX_UNBZ2}
-LAZARUS_PROJECT_FILES+=	plugins/wcx/unbz2/src/unbz2.lpi
-.endif
-
 .if ${PORT_OPTIONS:MWCX_RPM}
 LAZARUS_PROJECT_FILES+=	plugins/wcx/rpm/src/rpm.lpi
+.endif
+
+.if ${PORT_OPTIONS:MWCX_SEVENZIP}
+LAZARUS_PROJECT_FILES+=	plugins/wcx/sevenzip/src/SevenZipWcx.lpi
+.endif
+
+.if ${PORT_OPTIONS:MWCX_TORRENT}
+LAZARUS_PROJECT_FILES+=	plugins/wcx/torrent/src/torrent.lpi
 .endif
 
 .if ${PORT_OPTIONS:MWCX_UNRAR}

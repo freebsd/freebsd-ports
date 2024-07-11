@@ -1,6 +1,6 @@
 PORTNAME=	flask-security
 PORTVERSION=	3.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${
 		${PYTHON_PKGNAMEPREFIX}Babel>=0:devel/py-babel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask>=0:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-Login>=0:www/py-flask-login@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Flask-Mail>=0:mail/py-flask-mail@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flask-mail>=0:mail/py-flask-mail@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-Principal>=0:www/py-flask-principal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask_wtf>=0:www/py-flask-wtf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask-babelex>=0:www/py-flask-babelex@${PY_FLAVOR} \
@@ -35,7 +35,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask-sqlalchemy>=0:databases/py-flask-sqla
 		${PYTHON_PKGNAMEPREFIX}pytest4-cov>=0:devel/py-pytest4-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest4-flakes>=0:devel/py-pytest4-flakes@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest4>=0:devel/py-pytest4@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy12>=0:databases/py-sqlalchemy12@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-translations>=0:devel/py-pytest-translations@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-pep8>=0:devel/py-pytest-pep8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask-peewee>=0:www/py-flask-peewee@${PY_FLAVOR} \

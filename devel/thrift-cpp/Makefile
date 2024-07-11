@@ -19,7 +19,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 DISTINFO_FILE=		${.CURDIR}/../thrift/distinfo
 
 USES=			bison cmake pkgconfig compiler:c++11-lang cpe \
-			libtool pathfix ssl
+			pathfix ssl
 CPE_VENDOR=		apache
 USE_LDCONFIG=		yes
 MAKE_JOBS_UNSAFE=	yes

@@ -1,28 +1,32 @@
---- CMakeLists.txt.orig	2024-04-04 19:04:38 UTC
+--- CMakeLists.txt.orig	2024-05-21 19:36:39 UTC
 +++ CMakeLists.txt
-@@ -27,7 +27,7 @@ cmake_minimum_required(VERSION 3.1)
- # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+@@ -53,8 +53,10 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+   add_definitions(-D_HAS_EXCEPTIONS=0)
  
- cmake_minimum_required(VERSION 3.1)
--project(Snappy VERSION 1.1.10 LANGUAGES C CXX)
-+project(Snappy VERSION 1.2.0 LANGUAGES C CXX)
- 
- # C++ standard can be overridden when this is used as a sub-project.
- if(NOT CMAKE_CXX_STANDARD)
-@@ -83,8 +83,10 @@ else(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+   # Disable RTTI.
+-  string(REGEX REPLACE "/GR" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /GR-")
++  if (NOT CMAKE_SYSTEM_NAME MATCHES "FreeBSD") # devel/folly requires RTTI info, see https://github.com/facebook/folly/issues/1606
++    string(REGEX REPLACE "/GR" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /GR-")
++  endif()
+ else(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+   # Use -Wall for clang and gcc.
+   if(NOT CMAKE_CXX_FLAGS MATCHES "-Wall")
+@@ -83,8 +85,10 @@ else(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
  
    # Disable RTTI.
 -  string(REGEX REPLACE "-frtti" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 -  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
-+  if (NOT CMAKE_SYSTEM_NAME MATCHES "FreeBSD") # devel/folly requires RTTI info, see https://github.com/facebook/folly/issues/1606
++  if (NOT CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
 +    string(REGEX REPLACE "-frtti" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 +    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
 +  endif()
  endif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
  
  # BUILD_SHARED_LIBS is a standard CMake variable, but we declare it here to make
-@@ -248,8 +250,7 @@ configure_file(
+@@ -248,8 +252,7 @@ configure_file(
    "snappy-stubs-public.h.in"
    "${PROJECT_BINARY_DIR}/snappy-stubs-public.h")
  
@@ -32,7 +36,7 @@
    PRIVATE
      "snappy-internal.h"
      "snappy-stubs-internal.h"
-@@ -270,20 +271,35 @@ target_sources(snappy
+@@ -270,20 +273,34 @@ target_sources(snappy
      $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/snappy-stubs-public.h>
      $<INSTALL_INTERFACE:include/snappy-stubs-public.h>
  )
@@ -54,25 +58,24 @@
 -  set_target_properties(snappy PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
 -endif(BUILD_SHARED_LIBS)
 +set_target_properties(snappy PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
- 
 +add_library(snappy-static STATIC)
 +target_sources(snappy-static ${SNAPPY_SRCS})
 +target_include_directories(snappy-static ${SNAPPY_INCS})
 +set_target_properties(snappy-static
 +  PROPERTIES VERSION ${PROJECT_VERSION} SOVERSION ${PROJECT_VERSION_MAJOR})
-+
+ 
 +target_compile_definitions(snappy-static PRIVATE -DHAVE_CONFIG_H)
 +
 +if (MSVC)
-+    set_target_properties(snappy-static PROPERTIES OUTPUT_NAME snappy-static)
++  set_target_properties(snappy-static PROPERTIES OUTPUT_NAME snappy-static)
 +else()
-+    set_target_properties(snappy-static PROPERTIES OUTPUT_NAME snappy)
++  set_target_properties(snappy-static PROPERTIES OUTPUT_NAME snappy)
 +endif()
 +
  if(SNAPPY_BUILD_TESTS OR SNAPPY_BUILD_BENCHMARKS)
    add_library(snappy_test_support "")
    target_sources(snappy_test_support
-@@ -399,7 +415,7 @@ if(SNAPPY_INSTALL)
+@@ -399,7 +416,7 @@ if(SNAPPY_INSTALL)
  include(GNUInstallDirs)
  
  if(SNAPPY_INSTALL)

@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/os_integration/web_app_shortcut.cc.orig	2023-09-17 07:59:53 UTC
+--- chrome/browser/web_applications/os_integration/web_app_shortcut.cc.orig	2024-06-22 08:49:42 UTC
 +++ chrome/browser/web_applications/os_integration/web_app_shortcut.cc
 @@ -65,7 +65,7 @@ namespace {
  
@@ -11,7 +11,7 @@
  const int kDesiredIconSizesForShortcut[] = {16, 32, 48, 128, 256, 512};
 @@ -227,7 +227,7 @@ std::unique_ptr<ShortcutInfo> BuildShortcutInfoWithout
  
- // TODO(crbug.com/1416965): Implement tests on Linux for using shortcuts_menu
+ // TODO(crbug.com/40257107): Implement tests on Linux for using shortcuts_menu
  // actions.
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

@@ -1,6 +1,6 @@
---- base/process/process_metrics_freebsd.cc.orig	2023-03-13 07:33:08 UTC
+--- base/process/process_metrics_freebsd.cc.orig	2024-06-25 12:08:48 UTC
 +++ base/process/process_metrics_freebsd.cc
-@@ -3,20 +3,39 @@
+@@ -3,44 +3,58 @@
  // found in the LICENSE file.
  
  #include "base/process/process_metrics.h"
@@ -17,7 +17,6 @@
 +#include <libutil.h>
 +
  #include "base/memory/ptr_util.h"
- #include "base/process/process_metrics_iocounters.h"
 +#include "base/values.h"
  
  namespace base {
@@ -26,28 +25,30 @@
 +  int pagesize = getpagesize();
 +  int pageshift = 0;
  
+-ProcessMetrics::ProcessMetrics(ProcessHandle process)
+-    : process_(process),
+-      last_cpu_(0) {}
 +  while (pagesize > 1) {
 +    pageshift++;
 +    pagesize >>= 1;
 +  }
-+
+ 
 +  return pageshift;
 +}
 +}
 +
- ProcessMetrics::ProcessMetrics(ProcessHandle process)
--    : process_(process),
--      last_cpu_(0) {}
-+    : process_(process) {}
- 
++ProcessMetrics::ProcessMetrics(ProcessHandle process) : process_(process) {}
++
  // static
  std::unique_ptr<ProcessMetrics> ProcessMetrics::CreateProcessMetrics(
-@@ -24,22 +43,19 @@ std::unique_ptr<ProcessMetrics> ProcessMetrics::Create
+     ProcessHandle process) {
    return WrapUnique(new ProcessMetrics(process));
  }
  
--double ProcessMetrics::GetPlatformIndependentCPUUsage() {
-+TimeDelta ProcessMetrics::GetCumulativeCPUUsage() {
+-base::expected<double, ProcessCPUUsageError>
+-ProcessMetrics::GetPlatformIndependentCPUUsage() {
++base::expected<TimeDelta, ProcessCPUUsageError>
++ProcessMetrics::GetCumulativeCPUUsage() {
    struct kinfo_proc info;
 -  int mib[] = {CTL_KERN, KERN_PROC, KERN_PROC_PID, process_};
 -  size_t length = sizeof(info);
@@ -57,22 +58,23 @@
 +  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_ };
 +
    if (sysctl(mib, std::size(mib), &info, &length, NULL, 0) < 0)
--    return 0;
-+    return TimeDelta();
+-    return base::unexpected(ProcessCPUUsageError::kSystemError);
++    return base::ok(TimeDelta());
  
--  return (info.ki_pctcpu / FSCALE) * 100.0;
-+  return Microseconds(info.ki_runtime);
+-  return base::ok(double{info.ki_pctcpu} / FSCALE * 100.0);
++  return base::ok(Microseconds(info.ki_runtime));
  }
  
--TimeDelta ProcessMetrics::GetCumulativeCPUUsage() {
--  NOTREACHED();
--  return TimeDelta();
+-base::expected<TimeDelta, ProcessCPUUsageError>
+-ProcessMetrics::GetCumulativeCPUUsage() {
+-  NOTREACHED_IN_MIGRATION();
+-  return base::unexpected(ProcessCPUUsageError::kNotImplemented);
 -}
 -
- bool ProcessMetrics::GetIOCounters(IoCounters* io_counters) const {
-   return false;
- }
-@@ -65,6 +81,230 @@ size_t GetSystemCommitCharge() {
+ size_t GetSystemCommitCharge() {
+   int mib[2], pagesize;
+   unsigned long mem_total, mem_free, mem_inactive;
+@@ -62,6 +76,230 @@ size_t GetSystemCommitCharge() {
    pagesize = getpagesize();
  
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
@@ -171,7 +173,7 @@
 +    kvm_close(kd);
 +    return 0;
 +  }
-+  
++
 +  size_t rss;
 +
 +  if (nproc > 0) {
@@ -197,7 +199,7 @@
 +    kvm_close(kd);
 +    return 0;
 +  }
-+  
++
 +  size_t swrss;
 +
 +  if (nproc > 0) {
@@ -247,7 +249,7 @@
 +
 +Value::Dict SystemDiskInfo::ToDict() const {
 +  Value::Dict res;
-+ 
++
 +  // Write out uint64_t variables as doubles.
 +  // Note: this may discard some precision, but for JS there's no other option.
 +  res.Set("reads", static_cast<double>(reads));
@@ -263,7 +265,7 @@
 +  res.Set("weighted_io_time", static_cast<double>(weighted_io_time));
 +
 +  NOTIMPLEMENTED();
-+ 
++
 +  return res;
 +}
 +

@@ -39,7 +39,7 @@ export PATH=${PATH}:%%LOCALBASE%%/bin
 name="buildbot_worker"
 desc="Buildbot Buildworker"
 rcvar=buildbot_worker_enable
-command="/usr/local/bin/buildbot-worker-3.9"
+command="/usr/local/bin/buildbot-worker"
 load_rc_config ${name}
 
 # These are just the defaults, they might get overriden for a specific profile.

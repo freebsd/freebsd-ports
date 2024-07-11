@@ -9,19 +9,11 @@
 #    - graphics/mesa-libs
 #    - lang/clover
 
-MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
-MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
+MESAVERSION=	24.0.9
 
-MESABASEVERSION=	24.0.7
-# if there is a subversion, don't include the '-' between 7.11-rc2.
-MESASUBVERSION=
+MASTER_SITES=	https://mesa.freedesktop.org/archive/
 
-MASTER_SITES=	https://mesa.freedesktop.org/archive/ \
-		https://mesa.freedesktop.org/archive/${MESABASEVERSION}/ \
-		ftp://ftp.freedesktop.org/pub/mesa/ \
-		ftp://ftp.freedesktop.org/pub/mesa/${MESABASEVERSION}/
-
-DISTFILES=	mesa-${MESADISTVERSION}${EXTRACT_SUFX}
+DISTFILES=	mesa-${MESAVERSION}${EXTRACT_SUFX}
 
 PATCH_SITES=	https://gitlab.freedesktop.org/mesa/mesa/-/commit/
 PATCHFILES+=	4a253aae7ca437201d2a31d2a11a1a5434fe41f1.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/26284
@@ -36,40 +28,27 @@ COMPONENT=	${PORTNAME:tl:C/^lib//:C/mesa-//}
 
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
 .if ${COMPONENT} != clover
-.if ${PORT_OPTIONS:MPLATFORM_X11}
+.if ${PORT_OPTIONS:MX11}
 USES+=	xorg
 .endif
 .endif
+
+LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 .if ${COMPONENT} != osmesa
-LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
-		libexpat.so:textproc/expat2
+LIB_DEPENDS+=	libexpat.so:textproc/expat2
 .endif
 
 USES+=		compiler:c++11-lib bison meson pathfix pkgconfig \
 		python:build shebangfix tar:xz
-
-.if ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
-# --build-id isn't supported by old GNU ld.bfd in base
-# Also ld.bfd have problems that seems related to --as-needed
-USE_BINUTILS=		yes
-LDFLAGS+=		-B${LOCALBASE}/bin
-.endif
 
 # only have one port to check with portscout.
 .if ${PORTNAME} != mesa-dri
 PORTSCOUT=	ignore:1
 .endif
 
-python_OLD_CMD=	/usr/bin/env[[:space:]]python2 /usr/bin/python2 /bin/env[[:space:]]python
-SHEBANG_FILES=	src/gallium/*/*/*.py src/gallium/tools/trace/*.py \
-		src/gallium/drivers/svga/svgadump/svga_dump.py \
-		src/mapi/glapi/gen/*.py src/mapi/mapi_abi.py \
-		src/mesa/main/get_*.py src/util/format_srgb.py \
-		src/amd/*/*.py src/intel/genxml/gen_pack_header.py
-
 MASTERDIR=	${.CURDIR:H:H}/graphics/mesa-dri
 PATCHDIR=	${MASTERDIR}/files
-WRKSRC=		${WRKDIR}/mesa-${MESADISTVERSION}
+WRKSRC=		${WRKDIR}/mesa-${MESAVERSION}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 PKGHELP=	${.CURDIR}/pkg-help

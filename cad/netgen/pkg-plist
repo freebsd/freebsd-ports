@@ -11,10 +11,14 @@ include/core/hashtable.hpp
 include/core/localheap.hpp
 include/core/logging.hpp
 include/core/memtracer.hpp
+include/core/mpi4py_pycapi.h
 include/core/mpi_wrapper.hpp
 include/core/ngcore.hpp
 include/core/ngcore_api.hpp
 include/core/ngstream.hpp
+include/core/ng_mpi.hpp
+include/core/ng_mpi_generated_declarations.hpp
+include/core/ng_mpi_native.hpp
 include/core/paje_trace.hpp
 include/core/profiler.hpp
 include/core/python_ngcore.hpp
@@ -236,6 +240,7 @@ lib/libtogl.a
 %%PYTHON_SITELIBDIR%%/netgen/stl.py
 %%PYTHON_SITELIBDIR%%/netgen/version.py
 %%PYTHON_SITELIBDIR%%/netgen/webgui.py
+%%PYTHON_SITELIBDIR%%/netgen_mesher-py3.egg-info
 %%PYTHON_SITELIBDIR%%/pyngcore/__init__.py
 %%PYTHON_SITELIBDIR%%/pyngcore/pyngcore%%PYTHON_EXT_SUFFIX%%.so
 %%DATADIR%%/boundarycondition.geo

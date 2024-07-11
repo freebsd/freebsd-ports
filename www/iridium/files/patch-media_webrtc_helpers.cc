@@ -1,11 +1,19 @@
---- media/webrtc/helpers.cc.orig	2023-03-13 07:33:08 UTC
+--- media/webrtc/helpers.cc.orig	2024-06-25 12:08:48 UTC
 +++ media/webrtc/helpers.cc
-@@ -40,7 +40,7 @@ void ConfigAutomaticGainControl(const AudioProcessingS
-     apm_config.gain_controller2.enabled = false;
+@@ -41,14 +41,14 @@ void ConfigAutomaticGainControl(const AudioProcessingS
      return;
    }
+ 
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   // Use the Hybrid AGC setup, which combines the AGC1 input volume controller
-   // and the AGC2 digital adaptive controller.
+   const bool kInputVolumeAdjustmentOverrideAllowed = true;
+ #elif BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
+   const bool kInputVolumeAdjustmentOverrideAllowed = false;
+ #endif
  
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
+   // Use AGC2 digital and input volume controller.
+   // TODO(crbug.com/40872787): Remove `kWebRtcAllowInputVolumeAdjustment` safely
+   // and set `input_volume_controller.enabled` true.

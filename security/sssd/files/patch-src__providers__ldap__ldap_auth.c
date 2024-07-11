@@ -1,6 +1,4 @@
-diff --git src/providers/ldap/ldap_auth.c src/providers/ldap/ldap_auth.c
-index de22689ae..fdfd67cf4 100644
---- src/providers/ldap/ldap_auth.c
+--- src/providers/ldap/ldap_auth.c.orig	2020-03-17 13:31:28 UTC
 +++ src/providers/ldap/ldap_auth.c
 @@ -37,7 +37,6 @@
  #include <sys/time.h>
@@ -33,7 +31,7 @@ index de22689ae..fdfd67cf4 100644
  static errno_t add_expired_warning(struct pam_data *pd, long exp_time)
  {
      int ret;
-@@ -97,9 +112,9 @@ static errno_t check_pwexpire_kerberos(const char *expire_date, time_t now,
+@@ -97,9 +112,9 @@ static errno_t check_pwexpire_kerberos(const char *exp
      }
  
      DEBUG(SSSDBG_TRACE_ALL,
@@ -80,7 +78,7 @@ index de22689ae..fdfd67cf4 100644
          goto immediately;
  
      case SSS_PAM_ACCT_MGMT:
-@@ -1015,7 +1030,7 @@ static void sdap_pam_auth_handler_done(struct tevent_req *subreq)
+@@ -1015,7 +1030,7 @@ static void sdap_pam_auth_handler_done(struct tevent_r
                                  state->be_ctx->domain->pwd_expiration_warning);
          if (ret == EINVAL) {
              /* Unknown password expiration type. */
@@ -89,7 +87,7 @@ index de22689ae..fdfd67cf4 100644
              goto done;
          }
      }
-@@ -1049,7 +1064,7 @@ static void sdap_pam_auth_handler_done(struct tevent_req *subreq)
+@@ -1049,7 +1064,7 @@ static void sdap_pam_auth_handler_done(struct tevent_r
          state->pd->pam_status = PAM_BAD_ITEM;
          break;
      default:
@@ -98,7 +96,7 @@ index de22689ae..fdfd67cf4 100644
          break;
      }
  
-@@ -1271,7 +1286,7 @@ sdap_pam_chpass_handler_send(TALLOC_CTX *mem_ctx,
+@@ -1273,7 +1288,7 @@ sdap_pam_chpass_handler_send(TALLOC_CTX *mem_ctx,
      DEBUG(SSSDBG_OP_FAILURE,
            "starting password change request for user [%s].\n", pd->user);
  
@@ -107,7 +105,7 @@ index de22689ae..fdfd67cf4 100644
  
      if (pd->cmd != SSS_PAM_CHAUTHTOK && pd->cmd != SSS_PAM_CHAUTHTOK_PRELIM) {
          DEBUG(SSSDBG_OP_FAILURE,
-@@ -1282,7 +1297,7 @@ sdap_pam_chpass_handler_send(TALLOC_CTX *mem_ctx,
+@@ -1284,7 +1299,7 @@ sdap_pam_chpass_handler_send(TALLOC_CTX *mem_ctx,
      subreq = auth_send(state, params->ev, auth_ctx,
                         pd->user, pd->authtok, true);
      if (subreq == NULL) {
@@ -116,7 +114,7 @@ index de22689ae..fdfd67cf4 100644
          goto immediately;
      }
  
-@@ -1335,7 +1350,7 @@ static void sdap_pam_chpass_handler_auth_done(struct tevent_req *subreq)
+@@ -1337,7 +1352,7 @@ static void sdap_pam_chpass_handler_auth_done(struct t
              if (ret == ERR_PASSWORD_EXPIRED) {
                  DEBUG(SSSDBG_CRIT_FAILURE, "LDAP provider cannot change "
                        "kerberos passwords.\n");
@@ -125,7 +123,7 @@ index de22689ae..fdfd67cf4 100644
                  goto done;
              }
              break;
-@@ -1344,7 +1359,7 @@ static void sdap_pam_chpass_handler_auth_done(struct tevent_req *subreq)
+@@ -1346,7 +1361,7 @@ static void sdap_pam_chpass_handler_auth_done(struct t
              break;
          default:
              DEBUG(SSSDBG_CRIT_FAILURE, "Unknown password expiration type.\n");
@@ -134,7 +132,7 @@ index de22689ae..fdfd67cf4 100644
                  goto done;
          }
      }
-@@ -1369,7 +1384,7 @@ static void sdap_pam_chpass_handler_auth_done(struct tevent_req *subreq)
+@@ -1371,7 +1386,7 @@ static void sdap_pam_chpass_handler_auth_done(struct t
                  if (subreq == NULL) {
                      DEBUG(SSSDBG_OP_FAILURE, "Failed to change password for "
                            "%s\n", state->pd->user);
@@ -143,7 +141,7 @@ index de22689ae..fdfd67cf4 100644
                      goto done;
                  }
  
-@@ -1401,7 +1416,7 @@ static void sdap_pam_chpass_handler_auth_done(struct tevent_req *subreq)
+@@ -1403,7 +1418,7 @@ static void sdap_pam_chpass_handler_auth_done(struct t
              be_mark_offline(state->be_ctx);
              break;
          default:
@@ -152,7 +150,7 @@ index de22689ae..fdfd67cf4 100644
              break;
          }
  
-@@ -1437,7 +1452,7 @@ static void sdap_pam_chpass_handler_chpass_done(struct tevent_req *subreq)
+@@ -1439,7 +1454,7 @@ static void sdap_pam_chpass_handler_chpass_done(struct
          state->pd->pam_status = PAM_AUTHTOK_ERR;
          break;
      default:
@@ -161,7 +159,7 @@ index de22689ae..fdfd67cf4 100644
          break;
      }
  
-@@ -1463,7 +1478,7 @@ static void sdap_pam_chpass_handler_chpass_done(struct tevent_req *subreq)
+@@ -1465,7 +1480,7 @@ static void sdap_pam_chpass_handler_chpass_done(struct
                                                      state->sh, state->dn,
                                                      lastchanged_name);
          if (subreq == NULL) {
@@ -170,7 +168,7 @@ index de22689ae..fdfd67cf4 100644
              goto done;
          }
  
-@@ -1489,7 +1504,7 @@ static void sdap_pam_chpass_handler_last_done(struct tevent_req *subreq)
+@@ -1491,7 +1506,7 @@ static void sdap_pam_chpass_handler_last_done(struct t
      talloc_free(subreq);
  
      if (ret != EOK) {

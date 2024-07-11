@@ -1,5 +1,5 @@
 PORTNAME=	spotipy
-DISTVERSION=	2.23.0
+DISTVERSION=	2.24.0
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,9 +22,12 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	CACHE DOCS EXAMPLES
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.8.0,1:textproc/py-sphinx@${PY_FLAVOR}
+CACHE_DESC=		Enable a cache handler via pymemcache
+CACHE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymemcache>=4.0.0:databases/py-pymemcache@${PY_FLAVOR}
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.8.0,1:textproc/py-sphinx@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>=1.0.0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
 DOCS_PORTDOCS=		* .buildinfo
 EXAMPLES_PORTEXAMPLES=	*
 

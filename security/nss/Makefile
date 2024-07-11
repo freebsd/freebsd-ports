@@ -1,11 +1,11 @@
 PORTNAME=	nss
-PORTVERSION=	3.99
+PORTVERSION=	3.101
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications
-WWW=		https://developer.mozilla.org/docs/Mozilla/Projects/NSS
+WWW=		https://firefox-source-docs.mozilla.org/security/nss/index.html
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

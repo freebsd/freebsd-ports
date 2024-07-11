@@ -1,6 +1,7 @@
 PORTNAME=	octave-forge-coder
 DISTVERSIONPREFIX=	coder-
 DISTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

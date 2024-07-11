@@ -1,9 +1,0 @@
-bin/protoc-gen-combo
-bin/protoc-gen-gofast
-bin/protoc-gen-gogo
-bin/protoc-gen-gogofast
-bin/protoc-gen-gogofaster
-bin/protoc-gen-gogoslick
-bin/protoc-gen-gogotypes
-bin/protoc-gen-gostring
-bin/protoc-min-version

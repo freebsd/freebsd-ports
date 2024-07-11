@@ -1,6 +1,6 @@
---- remoting/host/evaluate_capability.cc.orig	2022-03-28 18:11:04 UTC
+--- remoting/host/evaluate_capability.cc.orig	2024-06-25 12:08:48 UTC
 +++ remoting/host/evaluate_capability.cc
-@@ -55,7 +55,7 @@ base::FilePath BuildHostBinaryPath() {
+@@ -56,7 +56,7 @@ base::FilePath BuildHostBinaryPath() {
    }
  #endif
  

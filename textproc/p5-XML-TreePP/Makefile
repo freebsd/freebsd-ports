@@ -16,14 +16,16 @@ RUN_DEPENDS=	p5-libwww>=5.811:www/p5-libwww
 TEST_DEPENDS=	p5-HTTP-Lite>=0:www/p5-HTTP-Lite \
 		p5-Tie-IxHash>=0:devel/p5-Tie-IxHash
 
-OPTIONS_DEFINE=	EXAMPLES
-
 USES=		perl5 shebangfix
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 PORTEXAMPLES=	envxml.cgi
 
 SHEBANG_FILES=	example/envxml.cgi
+
+OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

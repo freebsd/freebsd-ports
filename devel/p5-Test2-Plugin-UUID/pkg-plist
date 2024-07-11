@@ -1,2 +1,4 @@
 %%SITE_PERL%%/Test2/Plugin/UUID.pm
+%%SITE_PERL%%/Test2/Util/UUID.pm
 %%PERL5_MAN3%%/Test2::Plugin::UUID.3.gz
+%%PERL5_MAN3%%/Test2::Util::UUID.3.gz

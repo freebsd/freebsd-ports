@@ -11,6 +11,10 @@ COMMENT=	Commodore SID-chip emulator that plays SID music files
 
 LICENSE=	GPLv2+
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandonware and superseded by audio/sidplayfp
+EXPIRATION_DATE=2024-07-31
+
 LIB_DEPENDS=	libsidplay.so:audio/libsidplay
 
 GNU_CONFIGURE=	yes

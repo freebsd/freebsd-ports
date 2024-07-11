@@ -10,6 +10,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for QScintilla2 (PyQt5), QSci module
 WWW=		https://riverbankcomputing.com/software/pyqt
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
 LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5
 
 DISTINFO_FILE=	${.CURDIR:H}/qscintilla2-qt5/distinfo

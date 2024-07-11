@@ -1,4 +1,4 @@
---- media/ffmpeg/scripts/build_ffmpeg.py.orig	2024-05-21 18:07:39 UTC
+--- media/ffmpeg/scripts/build_ffmpeg.py.orig	2024-05-27 14:01:28 UTC
 +++ media/ffmpeg/scripts/build_ffmpeg.py
 @@ -33,7 +33,7 @@ NDK_ROOT_DIR = os.path.abspath(
  SUCCESS_TOKEN = 'THIS_BUILD_WORKED'
@@ -62,16 +62,17 @@
          if target_arch == 'x64':
              if target_os == 'android':
                  configure_flags['Common'].extend([
-@@ -829,8 +830,6 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
+@@ -828,9 +829,6 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
+ 
                  configure_flags['Common'].extend([
                      '--target-os=linux',
-                     '--sysroot=' +
+-                    '--sysroot=' +
 -                    os.path.join(CHROMIUM_ROOT_DIR,
 -                                 'build/linux/debian_bullseye_arm64-sysroot'),
                      # See crbug.com/1467681. These could be removed eventually
                      '--disable-dotprod',
                      '--disable-i8mm',
-@@ -1034,7 +1033,7 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
+@@ -1034,7 +1032,7 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
              'Chrome', configure_flags['Common'] +
              configure_flags['ChromeAndroid'] + configure_args)
  

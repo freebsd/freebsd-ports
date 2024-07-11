@@ -1,6 +1,5 @@
 PORTNAME=	luatex
-PORTVERSION=	1.16.0
-PORTREVISION=	1
+DISTVERSION=	${TEXLIVE_VERSION}
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
 PKGNAMEPREFIX=	tex-
@@ -22,7 +21,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libTECkit.so:textproc/teckit \
 		libzzip.so:devel/zziplib
 
-USES=		gnome libtool localbase pkgconfig tar:xz tex xorg
+USES=		gnome libtool localbase pkgconfig python:env tar:xz tex xorg
 USE_GNOME=	cairo
 USE_LDCONFIG=	yes
 USE_TEX=	fmtutil formats kpathsea texlua texluajit web2c
@@ -60,9 +59,7 @@ EXTRACT_FILES_TEXMF=		texmf-dist/doc/lualatex texmf-dist/doc/luatex \
 				texmf-dist/fonts/map/luatex \
 				texmf-dist/tex/luatex \
 				texmf-dist/tex/generic/config/luatex-unicode-letters.tex \
-				texmf-dist/tex/generic/config/luatexiniconfig.tex \
 				texmf-dist/tex/generic/context/luatex \
-				texmf-dist/tex/latex/latexconfig/lualatexquotejobname.tex \
 				texmf-dist/tex/latex/latexconfig/lualatexiniconfig.tex \
 				texmf-dist/tex/lualatex
 WRKSRC=				${WRKDIR}/${DISTNAME}/texk/web2c
@@ -92,7 +89,10 @@ pre-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-${TEXLIVE_VERSION}-texmf${EXTRACT_SUFX} \
 	    ${EXTRACT_AFTER_ARGS_TEXMF}
 	${REINPLACE_CMD} -i '' -e 's|/bin/bash|${PREFIX}/bin/bash|' \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/lualatex/wallcalendar/doc/examples/diff-cal.sh
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/lualatex/wallcalendar/doc/examples/diff-cal.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/luatex/opbible/examples/make-all
+	${REINPLACE_CMD} -i '' -e 's|/usr/bin/python3|${PYTHON_CMD}|' \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/luatex/opbible/txs-gen/maketxs.py
 
 post-install:
 	${FIND} -s ${STAGEDIR}${PREFIX}/share/texmf-dist -not -type d | ${SORT} | \

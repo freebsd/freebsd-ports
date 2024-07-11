@@ -459,6 +459,11 @@ share/locale/zh_CN/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/zh_CN/LC_MESSAGES/libtextemoticons.mo
 share/locale/zh_CN/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/zh_CN/LC_MESSAGES/libtexttranslator.mo
+share/locale/zh_TW/LC_MESSAGES/libtextaddonswidgets.mo
+share/locale/zh_TW/LC_MESSAGES/libtextautocorrection.mo
+share/locale/zh_TW/LC_MESSAGES/libtextcustomeditor.mo
+share/locale/zh_TW/LC_MESSAGES/libtextedittexttospeech.mo
+share/locale/zh_TW/LC_MESSAGES/libtexttranslator.mo
 share/locale/zh_TW/LC_MESSAGES/libtextgrammarcheck.mo
 share/qlogging-categories5/ktextaddons.categories
 share/qlogging-categories5/ktextaddons.renamecategories

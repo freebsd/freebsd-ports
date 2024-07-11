@@ -1,7 +1,7 @@
-TIMESTAMP = 1707767831
-SHA256 (rocky/v/vulkan-loader-1.3.250.1-1.el9.aarch64.rpm) = dcf1653f0874d1b1045a6658329dda5eac2dec4479e84ec822377f7af0d0e162
-SIZE (rocky/v/vulkan-loader-1.3.250.1-1.el9.aarch64.rpm) = 149743
-SHA256 (rocky/v/vulkan-loader-1.3.250.1-1.el9.x86_64.rpm) = 03f594041c243cf04e94d46ba2733ef5ce2ccd400fb9160af2d0a779d0c63e11
-SIZE (rocky/v/vulkan-loader-1.3.250.1-1.el9.x86_64.rpm) = 143181
-SHA256 (rocky/v/vulkan-loader-1.3.250.1-1.el9.src.rpm) = fc12acd13b343bffd9c783486377d2a3e98229699e8a77a50ca08532ebf97a2e
-SIZE (rocky/v/vulkan-loader-1.3.250.1-1.el9.src.rpm) = 1666235
+TIMESTAMP = 1717509729
+SHA256 (rocky/v/vulkan-loader-1.3.268.0-1.el9.aarch64.rpm) = 9eea3058daa03a35c0b54292f5baf8dbdb161edb6e2a0ddfabe4a6a7af2820e8
+SIZE (rocky/v/vulkan-loader-1.3.268.0-1.el9.aarch64.rpm) = 155308
+SHA256 (rocky/v/vulkan-loader-1.3.268.0-1.el9.x86_64.rpm) = 1082baa4a2b1d1e498641f86033c91031a431e44d7f612d05563c6a881efeb74
+SIZE (rocky/v/vulkan-loader-1.3.268.0-1.el9.x86_64.rpm) = 147824
+SHA256 (rocky/v/vulkan-loader-1.3.268.0-1.el9.src.rpm) = 07776c5fcb01ec4351521d96fc80ddaa7ffe4490d67d94fd97e23308fef10ba2
+SIZE (rocky/v/vulkan-loader-1.3.268.0-1.el9.src.rpm) = 1692538

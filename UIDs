@@ -829,7 +829,7 @@ _encrypted-dns:*:879:879::0:0:encrypted-dns user:/var/empty:/usr/sbin/nologin
 pyspf-milter:*:880:880::0:0:pyspf-milter:/nonexistent:/usr/sbin/nologin
 ultimaker:*:881:881::0:0:Ultimaker user:/nonexistent:/usr/sbin/nologin
 midpoint:*:882:882::0:0:midPoint user:/var/db/midpoint:/usr/sbin/nologin
-ipfs-go:*:883:883::0:0:ipfs-go user:/var/db/ipfs-go:/bin/sh
+kubo-go:*:883:883::0:0:kubo-go user:/var/db/kubo-go:/bin/sh
 telegraf:*:884:884::0:0:telegraf user:/nonexistent:/usr/sbin/nologin
 tcpdump:*:885:885::0:0:tcpdump user:/nonexistent:/usr/sbin/nologin
 miniflux:*:886:886::0:0:Miniflux:/nonexistent:/usr/sbin/nologin

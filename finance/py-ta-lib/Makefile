@@ -1,5 +1,5 @@
 PORTNAME=	ta-lib # provides Python namespace 'talib'
-DISTVERSION=	0.4.28
+DISTVERSION=	0.4.31
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,10 +15,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libta_lib.so:devel/ta-lib
 RUN_DEPENDS=	${PYNUMPY}
-#TEST_DEPENDS=	misc/py-polars - fails to build, see https://github.com/rust-lang/hashbrown/issues/377
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}polars>0:misc/py-polars@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils cython autoplist pytest # pytest fails to find the library, see https://github.com/pytest-dev/pytest/issues/10885
+
+WRKSRC=		${WRKDIR}/ta_lib-${DISTVERSION}
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests

@@ -98,6 +98,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/releases/ocio_2_0.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/releases/ocio_2_1.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/releases/ocio_2_2.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/releases/ocio_2_3.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/requirements.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/toc_redirect.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/tutorials/_index.rst.txt
@@ -208,6 +209,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/releases/ocio_2_0.html
 %%PORTDOCS%%%%DOCSDIR%%/html/releases/ocio_2_1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/releases/ocio_2_2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/releases/ocio_2_3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/requirements.html
 %%PORTDOCS%%%%DOCSDIR%%/html/search.html
 %%PORTDOCS%%%%DOCSDIR%%/html/searchindex.js

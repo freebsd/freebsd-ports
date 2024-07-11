@@ -1,5 +1,6 @@
 PORTNAME=	libosmesa
 PORTVERSION=	${MESAVERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	Off-Screen Mesa implementation of the OpenGL API
@@ -43,8 +44,6 @@ MESON_ARGS+=	-Dgallium-drivers="swrast" \
 LDFLAGS_i386=		-Wl,-znotext
 
 MESON_ARGS+=	-Dosmesa=true
-
-.include "${MASTERDIR}/Makefile.targets"
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/GL

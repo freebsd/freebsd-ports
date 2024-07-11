@@ -8,6 +8,7 @@ share/locale/nl/LC_MESSAGES/srain.mo
 share/locale/ru/LC_MESSAGES/srain.mo
 share/locale/uk/LC_MESSAGES/srain.mo
 share/locale/zh_CN/LC_MESSAGES/srain.mo
+share/locale/fr/LC_MESSAGES/srain.mo
 share/metainfo/im.srain.Srain.metainfo.xml
 %%DATADIR%%/themes/bubble.css
 %%DATADIR%%/themes/default-bubble-dark.css
@@ -95,3 +96,16 @@ share/metainfo/im.srain.Srain.metainfo.xml
 %%PORTDOCS%%%%DOCSDIR%%/html/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/html/start.html
 %%PORTDOCS%%%%DOCSDIR%%/html/support.html
+%%PORTDOCS%%%%DOCSDIR%%/html/.doctrees/blog/introducing-srain.doctree
+%%PORTDOCS%%%%DOCSDIR%%/html/.doctrees/blog/migrate-domain.doctree
+%%PORTDOCS%%%%DOCSDIR%%/html/CNAME
+%%PORTDOCS%%%%DOCSDIR%%/html/_images/cover.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_images/main.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_images/render-message-after.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_images/render-message-before.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_images/theme.png
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/blog/introducing-srain.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/blog/migrate-domain.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/ablog-custom.css
+%%PORTDOCS%%%%DOCSDIR%%/html/blog/introducing-srain.html
+%%PORTDOCS%%%%DOCSDIR%%/html/blog/migrate-domain.html

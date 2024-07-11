@@ -1,0 +1,4 @@
+This port contains common codes used for ISCD softwares (Linear algebra, Chrono,
+I/O...).
+
+See also <https://iscd.sorbonne-universite.fr/resources/>.

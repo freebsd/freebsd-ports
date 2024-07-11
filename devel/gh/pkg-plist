@@ -114,8 +114,10 @@
 %%MANPAGES%%share/man/man1/gh-project-item-delete.1.gz
 %%MANPAGES%%share/man/man1/gh-project-item-edit.1.gz
 %%MANPAGES%%share/man/man1/gh-project-item-list.1.gz
+%%MANPAGES%%share/man/man1/gh-project-link.1.gz
 %%MANPAGES%%share/man/man1/gh-project-list.1.gz
 %%MANPAGES%%share/man/man1/gh-project-mark-template.1.gz
+%%MANPAGES%%share/man/man1/gh-project-unlink.1.gz
 %%MANPAGES%%share/man/man1/gh-project-view.1.gz
 %%MANPAGES%%share/man/man1/gh-project.1.gz
 %%MANPAGES%%share/man/man1/gh-release-create.1.gz

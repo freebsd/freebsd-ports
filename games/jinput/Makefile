@@ -28,7 +28,9 @@ MAVEN_REPO=	-Dmaven.repo.local=${WRKSRC}/repository
 
 pre-build:
 	${CP} ${JAVAJARDIR}/jutils/jutils.jar ${WRKSRC}/repository/net/java/jutils/jutils/1/jutils-1.jar
-	${SED} -i -e '/example/d' ${WRKSRC}/pom.xml # example/ReadAllEvents.java:[5,28] cannot find symbol ...
+	${SED} -i -e '/example/d; s|<arg>-Werror</arg>||' ${WRKSRC}/pom.xml
+	# 1) example/ReadAllEvents.java:[5,28] cannot find symbol ...
+	# 2) [ERROR] warnings found and -Werror specified ...
 
 do-build:
 	cd ${WRKSRC}; \

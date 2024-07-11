@@ -1,7 +1,7 @@
-TIMESTAMP = 1685548493
-SHA256 (go/databases_octosql/octosql-v0.12.2/v0.12.2.mod) = 63077a2ceef1402b8970ecf484743cc2de1468f05b7b8082daa9dfbe5b3a4792
-SIZE (go/databases_octosql/octosql-v0.12.2/v0.12.2.mod) = 3111
-SHA256 (go/databases_octosql/octosql-v0.12.2/v0.12.2.zip) = dfe5971a0e2c468e7a5ae244f692130c9b1b98e90d430cd9d69ed51f8a98431a
-SIZE (go/databases_octosql/octosql-v0.12.2/v0.12.2.zip) = 2336760
-SHA256 (go/databases_octosql/octosql-v0.12.2/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
-SIZE (go/databases_octosql/octosql-v0.12.2/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
+TIMESTAMP = 1719190363
+SHA256 (go/databases_octosql/octosql-v0.13.0/v0.13.0.mod) = 63077a2ceef1402b8970ecf484743cc2de1468f05b7b8082daa9dfbe5b3a4792
+SIZE (go/databases_octosql/octosql-v0.13.0/v0.13.0.mod) = 3111
+SHA256 (go/databases_octosql/octosql-v0.13.0/v0.13.0.zip) = ea6c44356bb18b870bf474068d95df2c63d791a100a37d7fd75671f198205a4c
+SIZE (go/databases_octosql/octosql-v0.13.0/v0.13.0.zip) = 2336822
+SHA256 (go/databases_octosql/octosql-v0.13.0/golang-sys-v0.21.0_GH0.tar.gz) = 06e5676d2c61345151e302c7138dd1282ce8ea3c5a6a5a03b7cb66a16c66dc22
+SIZE (go/databases_octosql/octosql-v0.13.0/golang-sys-v0.21.0_GH0.tar.gz) = 1495683

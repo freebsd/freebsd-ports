@@ -1,5 +1,5 @@
---- src/util/nss_dl_load.c-orig	2020-10-22 17:57:10.433049000 +0100
-+++ src/util/nss_dl_load.c	2020-11-01 13:25:22.636487000 +0000
+--- src/util/nss_dl_load.c.orig	2020-03-17 13:31:28 UTC
++++ src/util/nss_dl_load.c
 @@ -24,6 +24,7 @@
  #include "util/util_errors.h"
  #include "util/debug.h"
@@ -8,7 +8,7 @@
  
  
  #define NSS_FN_NAME "_nss_%s_%s"
-@@ -36,7 +37,8 @@
+@@ -36,7 +37,8 @@ static void *proxy_dlsym(void *handle,
      char *funcname;
      void *funcptr;
  
@@ -18,7 +18,7 @@
      if (funcname == NULL) {
          DEBUG(SSSDBG_CRIT_FAILURE, "talloc_asprintf() failed\n");
          return NULL;
-@@ -78,7 +80,8 @@
+@@ -78,7 +80,8 @@ errno_t sss_load_nss_symbols(struct sss_nss_ops *ops, 
          {(void**)&ops->endservent,      "endservent"}
      };
  

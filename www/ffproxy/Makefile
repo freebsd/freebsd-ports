@@ -1,21 +1,16 @@
 PORTNAME=	ffproxy
-PORTVERSION=	1.6
-PORTREVISION=	1
+DISTVERSION=	1.72
 CATEGORIES=	www
-MASTER_SITES=	http://${PORTNAME}.sourceforge.net/${PORTNAME}/ \
-		http://www.nevm.de/${PORTNAME}/
+MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Filtering HTTP proxy server
-WWW=		https://ffproxy.sourceforge.net
+WWW=		https://codeberg.org/BSDforge/ffproxy
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Abandoned upstream, last update in 2006. Consider using www/squid
-EXPIRATION_DATE=2024-06-30
-
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>

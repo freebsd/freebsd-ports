@@ -1,5 +1,5 @@
 PORTNAME=	spatialindex
-DISTVERSION=	1.9.3
+DISTVERSION=	2.0.0
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libspatialindex/libspatialindex/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}

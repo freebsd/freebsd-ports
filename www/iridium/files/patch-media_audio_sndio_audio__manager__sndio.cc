@@ -1,6 +1,6 @@
---- media/audio/sndio/audio_manager_sndio.cc.orig	2022-12-01 10:35:46 UTC
+--- media/audio/sndio/audio_manager_sndio.cc.orig	2024-06-26 15:43:18 UTC
 +++ media/audio/sndio/audio_manager_sndio.cc
-@@ -0,0 +1,181 @@
+@@ -0,0 +1,241 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -17,17 +17,18 @@
 +#include "media/audio/sndio/sndio_input.h"
 +#include "media/audio/sndio/sndio_output.h"
 +#endif
++#if defined(USE_PULSEAUDIO)
++#include "media/audio/pulse/audio_manager_pulse.h"
++#include "media/audio/pulse/pulse_util.h"
++#endif
++#if defined(USE_ALSA)
++#include "media/audio/alsa/audio_manager_alsa.h"
++#endif
 +#include "media/audio/fake_audio_manager.h"
 +#include "media/base/limits.h"
 +#include "media/base/media_switches.h"
 +
 +namespace media {
-+
-+enum SndioAudioIO {
-+  kPulse,
-+  kSndio,
-+  kAudioIOMax = kSndio
-+};
 +
 +#if defined(USE_SNDIO)
 +// Maximum number of output streams that can be open simultaneously.
@@ -35,6 +36,12 @@
 +
 +// Default sample rate for input and output streams.
 +static const int kDefaultSampleRate = 48000;
++
++#if BUILDFLAG(IS_OPENBSD)
++static const std::string kDefaultAudioBackend = "sndio";
++#else
++static const std::string kDefaultAudioBackend = "auto";
++#endif
 +
 +void AddDefaultDevice(AudioDeviceNames* device_names) {
 +  DCHECK(device_names->empty());
@@ -164,21 +171,74 @@
 +    std::unique_ptr<AudioThread> audio_thread,
 +    AudioLogFactory* audio_log_factory) {
 +  DLOG(WARNING) << "CreateAudioManager";
++  std::string audio_backend = kDefaultAudioBackend;
++
++  std::vector<std::string> kSupportedAudioBackends = {"auto"};
++
++#if defined(USE_SNDIO)
++  kSupportedAudioBackends.push_back(std::string("sndio"));
++#endif
++#if defined(USE_PULSEAUDIO)
++  kSupportedAudioBackends.push_back(std::string("pulse"));
++#endif
++#if defined(USE_ALSA)
++  kSupportedAudioBackends.push_back(std::string("alsa"));
++#endif
++
++  if (base::CommandLine::ForCurrentProcess()->HasSwitch(
++          switches::kAudioBackend)) {
++    audio_backend = base::CommandLine::ForCurrentProcess()->GetSwitchValueASCII(
++        switches::kAudioBackend);
++  }
++
 +  // For testing allow audio output to be disabled.
 +  if (base::CommandLine::ForCurrentProcess()->HasSwitch(
 +          switches::kDisableAudioOutput)) {
 +    return std::make_unique<FakeAudioManager>(std::move(audio_thread),
 +                                              audio_log_factory);
 +  }
-+#if defined(USE_SNDIO)
-+  UMA_HISTOGRAM_ENUMERATION("Media.SndioAudioIO", kSndio, kAudioIOMax + 1);
-+  return std::make_unique<AudioManagerSndio>(std::move(audio_thread),
-+                                            audio_log_factory);
-+#else
-+  return std::make_unique<FakeAudioManager>(std::move(audio_thread),
-+                                            audio_log_factory);
++
++  if (std::find(std::begin(kSupportedAudioBackends), std::end(kSupportedAudioBackends),
++      audio_backend) == std::end(kSupportedAudioBackends)) {
++    LOG(ERROR) << "Unsupported audio backend specified. Falling back to " << kDefaultAudioBackend;
++    audio_backend = kDefaultAudioBackend;
++  }
++
++#if defined(USE_PULSEAUDIO)
++  pa_threaded_mainloop* pa_mainloop = nullptr;
++  pa_context* pa_context = nullptr;
++  if ((audio_backend != "sndio" && audio_backend != "alsa") &&
++      pulse::InitPulse(&pa_mainloop, &pa_context)) {
++    return std::make_unique<AudioManagerPulse>(
++        std::move(audio_thread), audio_log_factory, pa_mainloop, pa_context);
++  } else if (audio_backend == "auto") {
++    LOG(WARNING) << "Falling back to SNDIO for audio output. PulseAudio is not "
++                    "available or could not be initialized.";
++  }
 +#endif
 +
++#if defined(USE_SNDIO)
++  if (audio_backend != "pulse" && audio_backend != "alsa") {
++    return std::make_unique<AudioManagerSndio>(std::move(audio_thread),
++                                              audio_log_factory);
++  } else if (audio_backend == "auto") {
++    LOG(WARNING) << "Falling back to ALSA audio output. SNDIO is not "
++                    "available or could not be initialized.";
++  }
++#endif
++
++#if defined(USE_ALSA)
++  if (audio_backend != "pulse" && audio_backend != "sndio") {
++    return std::make_unique<AudioManagerAlsa>(std::move(audio_thread),
++                                              audio_log_factory);
++  } else if (audio_backend == "auto") {
++    LOG(WARNING) << "Falling back to fake audio output. ALSA is not "
++                    "available or could not be initialized.";
++  }
++#endif
++
++  return std::make_unique<FakeAudioManager>(std::move(audio_thread),
++                                            audio_log_factory);
 +}
 +
 +}  // namespace media

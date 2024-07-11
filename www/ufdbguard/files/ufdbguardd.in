@@ -49,8 +49,6 @@ ufdbguardd_load_rc_config()
 	: ${ufdbguardd_enable:=NO}
 	: ${ufdbguardd_user:=%%USERS%%}
 
-	ufdbguardd_unixsocket="/tmp/ufdbguardd-[0-9]*"
-
 	required_dirs="$ufdbguardd_dbdir %%RUNDIR%%"
 	required_files="$ufdbguardd_conf"
 	pidfile="%%RUNDIR%%/${name}.pid"
@@ -68,19 +66,9 @@ ufdbguardd_configtest()
 	fi
 }
 
-ufdbguardd_checksocket()
-{
-	echo "Checking if $name unix socket exists."
-	if test -e $ufdbguardd_unixsocket; then
-		echo "Unix socket $ufdbguardd_unixsocket exists. Probably stale file after abnormal shutdown. Removing it."
-		rm -f $ufdbguardd_unixsocket
-	fi
-}
-
 ufdbguardd_prestart()
 {
-	ufdbguardd_configtest && \
-	ufdbguardd_checksocket
+	ufdbguardd_configtest
 }
 
 ufdbguardd_rotatelog()

@@ -1,5 +1,5 @@
 PORTNAME=	cardano-db-sync
-PORTVERSION=	13.2.0.1
+PORTVERSION=	13.2.0.2
 CATEGORIES=	net-p2p databases
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
@@ -17,16 +17,16 @@ RUN_DEPENDS=	cardano-node:net-p2p/cardano-node \
 
 USES=		autoreconf:build cabal gmake libtool pkgconfig pgsql:14+
 
-WANT_PGSQL=	server
+WANT_PGSQL=	client server
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	IntersectMBO
 
 GH_TUPLE=	IntersectMBO:libsodium:${LIBSODIUM_HASH}:sodium	\
-		IntersectMBO:cardano-node:34d89af65439db92293b88967c299c20692abc1c:cardano_node/dist-newstyle/src/cardano-n_-76eff2ee0c4853a8 \
-		input-output-hk:persistent-documentation:0e95dbb144b02a2e6bf3a8a7531f4ad2f7d64ce5:persistent_documentation/dist-newstyle/src/persisten_-5150a7c8af66dc1b
+		IntersectMBO:cardano-node:34d89af65439db92293b88967c299c20692abc1c:cardano_node/dist-newstyle/src/cardano-n_-5bf92c55f9471797 \
+		input-output-hk:persistent-documentation:0e95dbb144b02a2e6bf3a8a7531f4ad2f7d64ce5:persistent_documentation/dist-newstyle/src/persisten_-a1243ced6d6a0f35
 
-CARDANO_DB_SYNC_HASH=	ed3dc8bbb79f07c26ec43f10bad661b0bef3b915
+CARDANO_DB_SYNC_HASH=	1f26396e91a0124a545201d4c6519d015b24fa6e
 LIBSODIUM_HASH=		dbb48cce5429cb6585c9034f002568964f1ce567
 
 USE_RC_SUBR=		cardano_db_sync
@@ -48,9 +48,9 @@ USE_CABAL=	Diff-0.5_1 \
 		Unique-0.4.7.9_1 \
 		Win32-network-0.1.1.1:chap \
 		adjunctions-4.4.2_2 \
-		aeson-2.2.1.0_1 \
+		aeson-2.2.1.0_2 \
 		aeson-pretty-0.8.10 \
-		algebraic-graphs-0.7_2 \
+		algebraic-graphs-0.7_3 \
 		ansi-terminal-1.0 \
 		ansi-terminal-types-0.11.5_1 \
 		ansi-wl-pprint-0.6.9_4 \
@@ -85,7 +85,7 @@ USE_CABAL=	Diff-0.5_1 \
 		bitvec-1.1.5.0_1 \
 		blaze-builder-0.4.2.3 \
 		blaze-html-0.9.1.2_4 \
-		blaze-markup-0.8.3.0_1 \
+		blaze-markup-0.8.3.0_2 \
 		boring-0.2.1_1 \
 		brick-2.1.1 \
 		bsb-http-chunked-0.0.0.4_4 \
@@ -130,7 +130,7 @@ USE_CABAL=	Diff-0.5_1 \
 		cardano-strict-containers-0.1.2.1:chap \
 		case-insensitive-1.2.1.0 \
 		cassava-0.5.3.0_5 \
-		cborg-0.2.10.0 \
+		cborg-0.2.10.0_1 \
 		cereal-0.5.8.3 \
 		charset-0.3.10_1 \
 		clock-0.8.4 \
@@ -148,11 +148,11 @@ USE_CABAL=	Diff-0.5_1 \
 		contra-tracer-0.1.0.2:chap \
 		contravariant-1.5.5 \
 		cookie-0.4.6 \
-		criterion-1.6.3.0 \
+		criterion-1.6.3.0_1 \
 		criterion-measurement-0.2.1.0 \
 		crypton-0.34 \
-		crypton-connection-0.3.1 \
-		crypton-x509-1.7.6_1 \
+		crypton-connection-0.3.1_1 \
+		crypton-x509-1.7.6_2 \
 		crypton-x509-store-1.6.9 \
 		crypton-x509-system-1.6.7 \
 		crypton-x509-validation-1.6.12 \
@@ -167,22 +167,22 @@ USE_CABAL=	Diff-0.5_1 \
 		dec-0.0.5_2 \
 		deferred-folds-0.9.18.5 \
 		dense-linear-algebra-0.1.0.0 \
-		dependent-map-0.4.0.0_1 \
+		dependent-map-0.4.0.0_2 \
 		dependent-sum-0.7.2.0_2 \
 		dependent-sum-template-0.1.1.1.0.0.0.1:chap \
 		deque-0.4.4.1 \
 		deriving-aeson-0.2.9_1 \
 		deriving-compat-0.6.5_2 \
-		dictionary-sharing-0.1.0.0_3 \
+		dictionary-sharing-0.1.0.0_4 \
 		digest-0.0.1.7_1 \
 		distributive-0.6.2.1_1 \
-		dlist-1.0_1 \
+		dlist-1.0_2 \
 		dns-3.0.4_1 \
-		doctest-0.22.2 \
-		dom-lt-0.2.3 \
+		doctest-0.22.2_1 \
+		dom-lt-0.2.3_1 \
 		double-conversion-2.0.4.2_2 \
 		easy-file-0.2.5 \
-		either-5.0.2_1 \
+		either-5.0.2_2 \
 		ekg-0.4.0.15.0.0.0.0.2:chap \
 		ekg-core-0.1.1.7.0.0.0.0.1:chap \
 		ekg-forward-0.4_3:chap \
@@ -201,31 +201,31 @@ USE_CABAL=	Diff-0.5_1 \
 		foldl-1.4.15_1 \
 		formatting-7.2.0 \
 		foundation-0.0.30 \
-		free-5.2_4 \
+		free-5.2_5 \
 		fs-api-0.2.0.1:chap \
 		fs-sim-0.2.1.1:chap \
 		generic-data-1.1.0.0_2 \
 		generic-monoid-0.1.0.1_3 \
 		generic-random-1.5.0.1 \
-		generically-0.1.1_2 \
+		generically-0.1.1_3 \
 		generics-sop-0.5.1.3 \
 		genvalidity-1.1.0.0 \
-		ghc-paths-0.1.0.12_5 \
+		ghc-paths-0.1.0.12_6 \
 		graphviz-2999.20.1.0_3 \
 		groups-0.5.3 \
-		half-0.3.1_1 \
+		half-0.3.1_2 \
 		happy-1.20.1.1 \
 		hashable-1.4.3.0_1 \
 		haskell-lexer-1.1.1 \
 		heapwords-0.1.0.2:chap \
-		hedgehog-1.4_5 \
+		hedgehog-1.4_8 \
 		hedgehog-extras-0.4.7.1_1 \
-		hedgehog-quickcheck-0.1.1_6 \
+		hedgehog-quickcheck-0.1.1_7 \
 		hostname-1.0 \
-		hourglass-0.2.12 \
+		hourglass-0.2.12_1 \
 		hsc2hs-0.68.10_2 \
 		hspec-2.11.7 \
-		hspec-core-2.11.7 \
+		hspec-core-2.11.7_1 \
 		hspec-discover-2.11.7 \
 		hspec-expectations-0.8.4_2 \
 		http-api-data-0.5.1 \
@@ -233,7 +233,7 @@ USE_CABAL=	Diff-0.5_1 \
 		http-client-tls-0.3.6.3 \
 		http-conduit-2.3.8.3 \
 		http-date-0.0.11 \
-		http-media-0.8.1.1_1 \
+		http-media-0.8.1.1_2 \
 		http-types-0.12.3 \
 		http2-4.2.2 \
 		indexed-profunctors-0.1.1.1 \
@@ -244,11 +244,11 @@ USE_CABAL=	Diff-0.5_1 \
 		integer-conversion-0.1.0.1_1 \
 		integer-logarithms-1.0.3.1_6 \
 		invariant-0.6.2_2 \
-		io-classes-1.3.1.0 \
+		io-classes-1.3.1.0_1 \
 		io-classes-mtl-0.1.0.2 \
-		io-sim-1.3.1.0_1 \
-		io-streams-1.5.2.2_4 \
-		io-streams-haproxy-1.0.1.0_8 \
+		io-sim-1.3.1.0_2 \
+		io-streams-1.5.2.2_5 \
+		io-streams-haproxy-1.0.1.0_9 \
 		iohk-monitoring-0.1.11.3:chap \
 		iproute-1.7.12 \
 		isomorphism-class-0.1.0.11 \
@@ -257,10 +257,10 @@ USE_CABAL=	Diff-0.5_1 \
 		katip-0.8.7.4 \
 		lazy-search-0.1.3.0 \
 		lazysmallcheck-0.6 \
-		lens-5.2.3_4 \
+		lens-5.2.3_5 \
 		libyaml-0.1.2_1 \
 		lift-type-0.1.1.1 \
-		lifted-async-0.10.2.5 \
+		lifted-async-0.10.2.5_1 \
 		lifted-base-0.2.3.12 \
 		list-t-1.0.5.7 \
 		lobemo-backend-aggregation-0.1.0.0:chap \
@@ -285,7 +285,7 @@ USE_CABAL=	Diff-0.5_1 \
 		monad-logger-0.3.40 \
 		monad-loops-0.4.3 \
 		mono-traversable-1.0.15.3 \
-		monoidal-containers-0.6.4.0_2 \
+		monoidal-containers-0.6.4.0_3 \
 		monoidal-synchronisation-0.1.0.4:chap \
 		mtl-compat-0.2.2 \
 		multiset-0.3.4.3_1 \
@@ -296,14 +296,14 @@ USE_CABAL=	Diff-0.5_1 \
 		network-uri-2.6.4.2_1 \
 		newtype-0.2.2.0_3 \
 		non-integral-1.0.0.0_2:chap \
-		nonempty-vector-0.2.3_1 \
+		nonempty-vector-0.2.3_2 \
 		nothunks-0.1.4_1 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.3_2 \
-		openssl-streams-1.2.3.0_2 \
-		optics-core-0.4.1.1 \
-		optics-extra-0.4.2.1_2 \
-		optics-th-0.4.1_7 \
+		openssl-streams-1.2.3.0_3 \
+		optics-core-0.4.1.1_1 \
+		optics-extra-0.4.2.1_3 \
+		optics-th-0.4.1_8 \
 		optparse-applicative-0.18.1.0 \
 		optparse-applicative-fork-0.18.1.0:chap \
 		ouroboros-consensus-0.13.0.1_3:chap \
@@ -364,24 +364,24 @@ USE_CABAL=	Diff-0.5_1 \
 		semialign-1.3_1 \
 		semigroupoids-6.0.0.1_1 \
 		semigroups-0.20 \
-		serialise-0.2.6.1_2 \
-		servant-0.20.1_2 \
-		servant-server-0.20_4 \
-		servant-swagger-1.2_3 \
+		serialise-0.2.6.1_3 \
+		servant-0.20.1_4 \
+		servant-server-0.20_5 \
+		servant-swagger-1.2_4 \
 		set-algebra-1.1.0.1:chap \
 		show-combinators-0.2.0.0_2 \
-		si-timers-1.3.0.0 \
+		si-timers-1.3.0.0_1 \
 		silently-1.2.5.3 \
 		simple-sendfile-0.2.32 \
 		singleton-bool-0.1.7_1 \
-		size-based-0.1.3.2 \
+		size-based-0.1.3.2_1 \
 		small-steps-1.0.0.0_1:chap \
 		small-steps-test-1.0.0.1:chap \
-		snap-core-1.0.5.1_4 \
-		snap-server-1.1.2.1_3 \
+		snap-core-1.0.5.1_6 \
+		snap-server-1.1.2.1_5 \
 		socks-0.6.1 \
-		some-1.0.6 \
-		sop-core-0.5.0.2_3 \
+		some-1.0.6_1 \
+		sop-core-0.5.0.2_4 \
 		sop-extras-0.1.0.0:chap \
 		split-0.2.4 \
 		splitmix-0.1.0.5_1 \
@@ -397,7 +397,7 @@ USE_CABAL=	Diff-0.5_1 \
 		strict-list-0.1.7.4 \
 		strict-mvar-1.3.0.0 \
 		strict-sop-core-0.1.0.0:chap \
-		strict-stm-1.3.0.0 \
+		strict-stm-1.3.0.0_1 \
 		string-conv-0.2.0 \
 		string-conversions-0.4.0.1_1 \
 		swagger2-2.8.7 \
@@ -407,9 +407,9 @@ USE_CABAL=	Diff-0.5_1 \
 		tasty-1.5_2 \
 		tasty-expected-failure-0.12.3 \
 		tasty-golden-2.3.5 \
-		tasty-hedgehog-1.4.0.2_3 \
+		tasty-hedgehog-1.4.0.2_4 \
 		tasty-hunit-0.10.1 \
-		tasty-quickcheck-0.10.3_1 \
+		tasty-quickcheck-0.10.3_2 \
 		temporary-1.3 \
 		terminal-size-0.3.4 \
 		testing-type-modifiers-0.1.0.1 \
@@ -451,13 +451,13 @@ USE_CABAL=	Diff-0.5_1 \
 		unix-compat-0.7 \
 		unix-time-0.4.11 \
 		unliftio-0.2.25.0 \
-		unliftio-core-0.2.1.0_3 \
+		unliftio-core-0.2.1.0_4 \
 		unordered-containers-0.2.19.1_3 \
 		utf8-string-1.0.2 \
 		uuid-types-1.0.5.1 \
 		validation-selective-0.2.0.0.0.0.0.0.1:chap \
 		validity-0.12.0.2 \
-		vault-0.3.1.5_6 \
+		vault-0.3.1.5_7 \
 		vector-0.13.1.0_1 \
 		vector-algorithms-0.9.0.1.0.0.0.0.1_1:chap \
 		vector-binary-instances-0.2.5.2_5 \
@@ -473,14 +473,14 @@ USE_CABAL=	Diff-0.5_1 \
 		wai-extra-3.1.13.0_1 \
 		wai-logger-2.4.0 \
 		warp-3.3.30 \
-		wide-word-0.1.6.0 \
-		witherable-0.4.2_4 \
+		wide-word-0.1.6.0_2 \
+		witherable-0.4.2_5 \
 		wl-pprint-annotated-0.1.0.1_3 \
 		wl-pprint-text-1.2.0.2_2 \
 		word-wrap-0.5 \
 		word8-0.1.3 \
 		yaml-0.11.11.2_2 \
-		zlib-0.6.3.0_4 \
+		zlib-0.6.3.0_5 \
 		zlib-bindings-0.1.1.5_2
 
 CABAL_PROJECT=		append

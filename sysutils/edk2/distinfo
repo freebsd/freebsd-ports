@@ -1,4 +1,4 @@
-TIMESTAMP = 1693631263
+TIMESTAMP = 1719565938
 SHA256 (tianocore-edk2-g202308-edk2-stable202308_GH0.tar.gz) = 3f1cde1166ad94f86fc2375ee2c3f7f1c16c646b9518de3ff928efd28702ffe1
 SIZE (tianocore-edk2-g202308-edk2-stable202308_GH0.tar.gz) = 16801285
 SHA256 (tianocore-edk2-platforms-e509ac5a72_GH0.tar.gz) = 3b15b5b5c545023de4885a07b42a3426769323e4377fcf2d600b6094bcf4231c
@@ -15,3 +15,5 @@ SHA256 (openssl-openssl-openssl-3.0.9_GH0.tar.gz) = 2eec31f2ac0e126ff68d8107891e
 SIZE (openssl-openssl-openssl-3.0.9_GH0.tar.gz) = 15335782
 SHA256 (tianocore-edk2-cmocka-cmocka-1.1.5-23-g1cc9cde_GH0.tar.gz) = c2fb00395a55abd2ebfc2fcfe2705c7096cedd4416704dbb9237e394607fccb4
 SIZE (tianocore-edk2-cmocka-cmocka-1.1.5-23-g1cc9cde_GH0.tar.gz) = 100320
+SHA256 (ffce430d2b65d508a1604dc986ba16db3583943d.patch) = 2651482dc7c38563c8a1bec95eebb8f93bfe5051f95f5f4a05f201117650385e
+SIZE (ffce430d2b65d508a1604dc986ba16db3583943d.patch) = 3373

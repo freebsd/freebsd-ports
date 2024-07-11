@@ -1,5 +1,5 @@
 PORTNAME=	pika
-DISTVERSION=	0.24.0
+DISTVERSION=	0.26.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,8 @@ BROKEN_aarch64=		compilation error: error: 'regparm' is not valid on this platfo
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
 LIB_DEPENDS=	libfmt.so:devel/libfmt \
-		libhwloc.so:devel/hwloc2
+		libhwloc.so:devel/hwloc2 \
+		libspdlog.so:devel/spdlog
 
 USES=		cmake:testing compiler:c++17-lang
 USE_LDCONFIG=	yes
@@ -32,7 +33,7 @@ post-install:
 	@${RM} -r ${STAGEDIR}${DATADIR} # remove copy of license
 
 post-test: # run the tests according to https://pikacpp.org/usage.html#testing (make tests test doesn't work)
-	# some tests fail, see https://github.com/pika-org/pika/issues/895
+	# some tests fail because freebsd_environ isn't initialized, see https://github.com/pika-org/pika/issues/895
 	@cd ${BUILD_WRKSRC} && \
 		${MAKE_CMD} test
 

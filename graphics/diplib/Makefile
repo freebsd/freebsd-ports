@@ -1,5 +1,5 @@
 PORTNAME=	diplib
-DISTVERSION=	3.4.3
+DISTVERSION=	3.5.1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,6 +10,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_aarch64=	runaway builds, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276690
+BROKEN_i386=	compilation fails: constructor cannot be redeclared, see https://github.com/DIPlib/diplib/issues/162
 
 LIB_DEPENDS=	libglfw.so:graphics/glfw
 

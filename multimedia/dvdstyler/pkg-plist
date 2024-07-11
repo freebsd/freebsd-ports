@@ -116,6 +116,7 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/buttons/pill3.xml
 %%DATADIR%%/buttons/settings.xml
 %%DATADIR%%/buttons/star-frame.xml
+%%DATADIR%%/buttons/star.xml
 %%DATADIR%%/buttons/sticky_note.xml
 %%DATADIR%%/buttons/stone.xml
 %%DATADIR%%/buttons/text-circle-v2.xml

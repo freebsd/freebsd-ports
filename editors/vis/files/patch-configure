@@ -1,19 +1,17 @@
---- configure.orig	2023-02-25 11:16:23 UTC
+--- configure.orig	2024-06-11 20:47:15 UTC
 +++ configure
-@@ -236,7 +236,6 @@ esac
- tryflag CFLAGS -pipe
+@@ -233,14 +233,6 @@ esac
+ AIX)     CFLAGS_STD="$CFLAGS_STD -D_ALL_SOURCE" ;;
+ esac
  
- # Try flags to optimize binary size
+-tryflag CFLAGS -pipe
+-
+-# Try flags to optimize binary size
 -tryflag CFLAGS -O2
- tryflag CFLAGS -ffunction-sections
- tryflag CFLAGS -fdata-sections
- tryldflag LDFLAGS_AUTO -Wl,--gc-sections
-@@ -443,7 +442,7 @@ int main(int argc, char *argv[]) {
- }
- EOF
- 
--	for liblua in lua lua5.4 lua5.3 lua5.2 lua-5.3 lua-5.2 lua54 lua53 lua52; do
-+	for liblua in lua lua5.4 lua5.3 lua5.2 lua-5.4 lua-5.3 lua-5.2 lua54 lua53 lua52; do
- 		printf " checking for %s... " "$liblua"
- 
- 		if test "$have_pkgconfig" = "yes" ; then
+-tryflag CFLAGS -ffunction-sections
+-tryflag CFLAGS -fdata-sections
+-tryldflag LDFLAGS_AUTO -Wl,--gc-sections
+-
+ # Try hardening flags
+ tryflag CFLAGS -fPIE
+ tryflag CFLAGS_AUTO -fstack-protector-all

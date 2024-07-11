@@ -5,7 +5,7 @@
    FEventPipe[0] := -1;
    FEventPipe[1] := -1;
 -  if fpPipe(FEventPipe) < 0 then
-+  if fpPipe(FEventPipe, 0) < 0 then
++  if fpPipe(FEventPipe, longint(0)) < 0 then
      Print(SysErrorMessage(fpGetErrNo))
    else begin
      // Set both ends of pipe non blocking

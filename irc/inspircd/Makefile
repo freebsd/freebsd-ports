@@ -1,7 +1,6 @@
 PORTNAME=	inspircd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.17.0
-PORTREVISION=	1
+DISTVERSION=	4.0.1
 CATEGORIES=	irc
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -103,8 +102,8 @@ _INSPIRCD_LOGDIR?=	/var/log/${PORTNAME}
 _INSPIRCD_RUNDIR?=	/var/run/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|examples/||g' -e 's|\.example||g' ${WRKSRC}/docs/conf/inspircd.conf.example
-	@${REINPLACE_CMD} -e 's|examples/||g' -e 's|\.example||g' ${WRKSRC}/docs/conf/modules.conf.example
+	@${REINPLACE_CMD} -e 's|examples/||g' -e 's|\.example||g' ${WRKSRC}/docs/conf/inspircd.example.conf
+	@${REINPLACE_CMD} -e 's|examples/||g' -e 's|\.example||g' ${WRKSRC}/docs/conf/modules.example.conf
 
 pre-configure:
 	@(cd ${WRKSRC}/src/modules && for m in ${EXTRAS}; do ${RLN} extra/$$m $$m; done)

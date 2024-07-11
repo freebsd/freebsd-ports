@@ -1,6 +1,6 @@
---- third_party/build/os-auto.mak.in.orig	2017-09-22 02:42:22 UTC
+--- third_party/build/os-auto.mak.in.orig	2024-03-08 17:33:31 UTC
 +++ third_party/build/os-auto.mak.in
-@@ -112,8 +112,7 @@ else ifneq ($(findstring mips,@ac_webrtc_instset@),)
+@@ -118,8 +118,7 @@ else # Generic fixed point
  else # Generic fixed point
      WEBRTC_SRC = \
  	      modules/audio_processing/aecm/aecm_core_c.o                \

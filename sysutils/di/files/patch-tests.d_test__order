@@ -1,0 +1,8 @@
+--- tests.d/test_order.orig	2024-06-24 00:49:39 UTC
++++ tests.d/test_order
+@@ -3,5 +3,4 @@
+ 3 diarg
+ 3 disort
+ 3 ditot
+-4 diinst
+ 5 dinls

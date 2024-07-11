@@ -1,5 +1,5 @@
 PORTNAME=	spdep
-DISTVERSION=	1.3-3
+DISTVERSION=	1.3-5
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -14,7 +14,7 @@ RUN_DEPENDS=	R-cran-deldir>0:math/R-cran-deldir \
 		R-cran-s2>0:graphics/R-cran-s2 \
 		R-cran-sf>0:math/R-cran-sf \
 		R-cran-sp>=1.0:math/R-cran-sp \
-		R-cran-spData>=0.2.6.0:math/R-cran-spData \
+		R-cran-spData>=2.3.1:math/R-cran-spData \
 		R-cran-units>0:math/R-cran-units
 
 USES=		cran:auto-plist,compiles

@@ -7,5 +7,7 @@ LIB_DEPENDS=	libgdata.so:devel/libgdata
 
 CLAWS_PLUGINS_BUILD=	${PORTNAME}
 
+IGNORE=		temporarily removed from Claws Mail build
+
 .include "../claws-mail/Makefile.claws"
 .include <bsd.port.mk>

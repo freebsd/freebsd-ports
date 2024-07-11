@@ -5,6 +5,8 @@ include/igraph/igraph_array.h
 include/igraph/igraph_array_pmt.h
 include/igraph/igraph_attributes.h
 include/igraph/igraph_bipartite.h
+include/igraph/igraph_bitset.h
+include/igraph/igraph_bitset_list.h
 include/igraph/igraph_blas.h
 include/igraph/igraph_centrality.h
 include/igraph/igraph_cliques.h
@@ -62,6 +64,7 @@ include/igraph/igraph_progress.h
 include/igraph/igraph_psumtree.h
 include/igraph/igraph_qsort.h
 include/igraph/igraph_random.h
+include/igraph/igraph_reachability.h
 include/igraph/igraph_scan.h
 include/igraph/igraph_separators.h
 include/igraph/igraph_sparsemat.h
@@ -88,5 +91,5 @@ lib/cmake/igraph/igraph-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/igraph/igraph-targets.cmake
 lib/libigraph.so
 lib/libigraph.so.3
-lib/libigraph.so.3.1.1
+lib/libigraph.so.3.1.7
 libdata/pkgconfig/igraph.pc

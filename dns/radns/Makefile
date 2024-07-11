@@ -1,6 +1,6 @@
 PORTNAME=	radns
 DISTVERSION=	20110809-2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://hack.org/mc/hacks/radns/
 

@@ -1,4 +1,4 @@
---- third_party/webrtc/src/webrtc/typedefs.h.orig	2017-01-07 23:05:15 UTC
+--- third_party/webrtc/src/webrtc/typedefs.h.orig      2017-01-07 23:05:15 UTC
 +++ third_party/webrtc/src/webrtc/typedefs.h
 @@ -48,7 +48,19 @@
  #define WEBRTC_ARCH_32_BITS

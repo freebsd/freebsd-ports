@@ -1,7 +1,7 @@
-TIMESTAMP = 1686556069
-SHA256 (rocky/h/harfbuzz-2.7.4-8.el9.aarch64.rpm) = b47a67517cbf58bc96fff46af7e1190680ac544892d45e2a7979d039e9eff12c
-SIZE (rocky/h/harfbuzz-2.7.4-8.el9.aarch64.rpm) = 639259
-SHA256 (rocky/h/harfbuzz-2.7.4-8.el9.x86_64.rpm) = 14a4364a8fc2e4e3507fb32ea9d557c3c8d4f7b3659237ebb5bcc7d12dc019ad
-SIZE (rocky/h/harfbuzz-2.7.4-8.el9.x86_64.rpm) = 639411
-SHA256 (rocky/h/harfbuzz-2.7.4-8.el9.src.rpm) = 17443e9d7ca87d9def9e885fc4694fb740a684f04a7176e28b35a547094413f2
-SIZE (rocky/h/harfbuzz-2.7.4-8.el9.src.rpm) = 9549467
+TIMESTAMP = 1717493951
+SHA256 (rocky/h/harfbuzz-2.7.4-10.el9.aarch64.rpm) = 8417c39121e5162424ac847840981b64184821a16596de0c5c649406ce5c104c
+SIZE (rocky/h/harfbuzz-2.7.4-10.el9.aarch64.rpm) = 639132
+SHA256 (rocky/h/harfbuzz-2.7.4-10.el9.x86_64.rpm) = 266681bfed5f32080ce8c312780f6b504b4da2ad2dae20a5b3f8f7f2a113cca4
+SIZE (rocky/h/harfbuzz-2.7.4-10.el9.x86_64.rpm) = 638224
+SHA256 (rocky/h/harfbuzz-2.7.4-10.el9.src.rpm) = 31b254bce05a216cfa85173c0a811ca78b08efc6066f447a776251c3a405311b
+SIZE (rocky/h/harfbuzz-2.7.4-10.el9.src.rpm) = 9549784

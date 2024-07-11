@@ -45,6 +45,7 @@ rcvar=${name}_enable
 load_rc_config "${name}"
 
 eval "${rcvar}=\${${rcvar}:-'NO'}"
+eval "${name}_svcj_options=\${${name}_svcj_options:-'net_basic'}"
 eval "_openhab_user=\${${name}_user:-'openhab'}"
 eval "_openhab_group=\${${name}_group:-'openhab'}"
 

@@ -1,6 +1,7 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.7.8
+PORTREVISION=	3
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -24,22 +25,22 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # - www/py-dj42-djangorestframework
 #
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=4.2.11<4.3:www/py-django42@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-cors-headers>=4.3.1<5:www/py-dj42-django-cors-headers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-debug-toolbar>=4.3.0<5:www/py-dj42-django-debug-toolbar@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-filter>=23.5<25:www/py-dj42-django-filter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-graphiql-debug-toolbar>=0.2.0<1:www/py-dj42-django-graphiql-debug-toolbar@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-mptt>=0.14.0<0.15:www/py-dj42-django-mptt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-prometheus>=2.3.1<2.4:www/py-dj42-django-prometheus@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-redis>=5.4.0<6:www/py-dj42-django-redis@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-rich>=1.8.0<2:www/py-dj42-django-rich@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-rq>=2.10.2<2.11:devel/py-dj42-django-rq@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-tables2>=2.7.0<2.8:www/py-dj42-django-tables2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-taggit>=5.0.1<6:www/py-dj42-django-taggit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-timezone-field>=6.1.0<7:www/py-dj42-django-timezone-field@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-djangorestframework>=3.14.0<3.15.0:www/py-dj42-djangorestframework@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-drf-spectacular>=0.27.2<1:www/py-dj42-drf-spectacular@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-drf-spectacular-sidecar>=2024.5.1:www/py-dj42-drf-spectacular-sidecar@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-graphene-django>=3.0.0<3.0.0_99:devel/py-dj42-graphene-django@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-cors-headers>=4.3.1<5:www/py-django-cors-headers@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-debug-toolbar>=4.3.0<5:www/py-django-debug-toolbar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-filter>=23.5<25:www/py-django-filter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-graphiql-debug-toolbar>=0.2.0<1:www/py-django-graphiql-debug-toolbar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-mptt>=0.14.0<0.17:www/py-django-mptt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-prometheus>=2.3.1<2.4:www/py-django-prometheus@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-redis>=5.4.0<6:www/py-django-redis@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-rich>=1.8.0<2:www/py-django-rich@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-rq>=2.10.2<2.11:devel/py-django-rq@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-tables2>=2.7.0<2.8:www/py-django-tables2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-taggit>=5.0.1<6:www/py-django-taggit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-timezone-field>=6.1.0<7:www/py-django-timezone-field@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.14.0,1<3.15.0,1:www/py-djangorestframework@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}drf-spectacular>=0.27.2<1:www/py-drf-spectacular@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}drf-spectacular-sidecar>=2024.5.1:www/py-drf-spectacular-sidecar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}graphene-django300>=3.0.0<3.0.0_99:devel/py-graphene-django300@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4<1.1:www/py-django-pglocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bleach>=6.1.0<7:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=6.0.11<7:textproc/py-feedparser@${PY_FLAVOR} \
@@ -57,7 +58,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=4.2.11<4.3:www/py-django42@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}svgwrite>=1.4.3<2:graphics/py-svgwrite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tablib>=3.6.1<4:textproc/py-tablib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzdata>=2024.1:devel/py-tzdata@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=6.0.1<7:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0.1<7:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gunicorn>=21.2.0<23:www/py-gunicorn@${PY_FLAVOR}
 
 USES=		cpe pgsql:12+ python
@@ -80,7 +81,7 @@ S3_DESC=	Amazon S3 backend support
 SENTRY_DESC=	Sentry monitoring support
 
 GIT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dulwich>0:devel/py-dulwich@${PY_FLAVOR}
-LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dj42-django-auth-ldap>0:www/py-dj42-django-auth-ldap
+LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-auth-ldap>0:www/py-django-auth-ldap
 S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR}
 SENTRY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sentry-sdk>0:devel/py-sentry-sdk@${PY_FLAVOR}
 

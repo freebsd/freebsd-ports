@@ -1,6 +1,6 @@
 PORTNAME=	mp3unicode
 PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/downloads/alonbl/mp3unicode/
 

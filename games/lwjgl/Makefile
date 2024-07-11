@@ -1,5 +1,6 @@
 PORTNAME=	lwjgl
 DISTVERSION=	2.9.4.20161208
+PORTREVISION=	1
 CATEGORIES=	games java
 
 MAINTAINER=	freebsd@skinc.ru
@@ -15,24 +16,25 @@ BUILD_DEPENDS=	${JAVAJARDIR}/jutils/jutils.jar:games/jutils \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		dos2unix xorg
+DOS2UNIX_REGEX=	.*.[^jp][^an][^rg]$
+USE_ANT=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	LWJGL
 GH_TAGNAME=	2df01dd
 
-DOS2UNIX_REGEX=	.*.[^jp][^an][^rg]$
-USE_JAVA=	yes
+USE_JAVA=	8
 USE_LDCONFIG=	yes
-USE_ANT=	yes
-USE_XORG=	xcursor xrandr xxf86vm
+USE_XORG=	x11 xcursor xext xrandr xxf86vm
 MAKE_ENV+=	CLASSPATH=${JAVAJARDIR}/jutils/jutils.jar:${JAVAJARDIR}/jinput/jinput.jar:${WRKSRC}/${DISTNAME}/jar/
 ALL_TARGET=	jars compile_native
 
+PLIST_DIRS=	${JAVAJARDIR}/${PORTNAME} \
+		lib/${PORTNAME}
 PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}/${PORTNAME}.jar \
 		${JAVAJARDIR}/${PORTNAME}/${PORTNAME}_test.jar \
 		${JAVAJARDIR}/${PORTNAME}/${PORTNAME}_util.jar \
 		${JAVAJARDIR}/${PORTNAME}/${PORTNAME}_util_applet.jar
-PLIST_DIRS=	${JAVAJARDIR}/${PORTNAME} \
-		lib/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 

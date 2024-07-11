@@ -1,12 +1,11 @@
 PORTNAME=	game.libretro.picodrive
-PORTVERSION=	1.99.0.30
-DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	2
+PORTVERSION=	2.00.0.45
+DISTVERSIONSUFFIX=	-Nexus
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Kodi game addon for Sega - MS/MD/CD/32X (PicoDrive)
-WWW=		https://github.com/libretro/picodrive
+WWW=		https://github.com/kodi-game/game.libretro.picodrive
 
 LICENSE=	GPLv2+
 
@@ -18,7 +17,6 @@ RUN_DEPENDS=	kodi-addon-game.libretro>=0:games/kodi-addon-game.libretro \
 NO_ARCH=	yes
 
 USES=		kodi
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	kodi-game
 

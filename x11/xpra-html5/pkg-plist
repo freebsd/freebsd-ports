@@ -1,4 +1,7 @@
 %%ETCDIR%%/default-settings.txt
+share/xpra/www/clipboard.html
+share/xpra/www/clipboard.html.br
+share/xpra/www/clipboard.html.gz
 share/xpra/www/connect.html
 share/xpra/www/connect.html.br
 share/xpra/www/connect.html.gz
@@ -38,6 +41,7 @@ share/xpra/www/favicon.ico.br
 share/xpra/www/favicon.ico.gz
 share/xpra/www/favicon.png
 share/xpra/www/icons/authentication.png
+share/xpra/www/icons/clipboard.png
 share/xpra/www/icons/close.png
 share/xpra/www/icons/default_cursor.png
 share/xpra/www/icons/empty.png

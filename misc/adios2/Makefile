@@ -1,7 +1,6 @@
 PORTNAME=	adios2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.1
-PORTREVISION=	2
+DISTVERSION=	2.10.1
 CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,22 +19,22 @@ BUILD_DEPENDS=	bash:shells/bash \
 		pybind11>0:devel/pybind11 \
 		${PYTHON_PKGNAMEPREFIX}pybind11>=2.4:devel/py-pybind11@${PY_FLAVOR} \
 		${PY_DEPENDS}
-LIB_DEPENDS=	libblosc.so:archivers/c-blosc \
+LIB_DEPENDS=	libblosc2.so:archivers/c-blosc2 \
 		libepoll-shim.so:devel/libepoll-shim \
 		libfabric.so:net/libfabric \
-		libffi.so:devel/libffi \
 		libhdf5.so:science/hdf5 \
+		liblz4.so:archivers/liblz4 \
 		libmpi.so:net/mpich \
-		libpng.so:graphics/png \
+		libpng16.so:graphics/png \
 		libsodium.so:security/libsodium \
-		libsz.so:science/libaec \
 		libzmq.so:net/libzmq4 \
-		libzfp.so:devel/zfp
+		libzfp.so:devel/zfp \
+		libzstd.so:archivers/zstd
 RUN_DEPENDS=	bash:shells/bash \
 		${PY_DEPENDS}
 
 USES=		bison cmake:testing compiler:c++11-lang fortran localbase:ldflags pkgconfig \
-		perl5 python shebangfix
+		perl5 python shebangfix sqlite
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	cmake/install/post/adios2-config.pre.sh.in cmake/install/post/generate-adios2-config.sh.in \

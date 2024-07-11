@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc.orig	2024-02-04 14:46:08 UTC
+--- chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc.orig	2024-06-25 12:08:48 UTC
 +++ chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc
-@@ -279,7 +279,9 @@ bool ChromeRuntimeAPIDelegate::GetPlatformInfo(Platfor
+@@ -284,7 +284,9 @@ bool ChromeRuntimeAPIDelegate::GetPlatformInfo(Platfor
    } else if (strcmp(os, "linux") == 0) {
      info->os = extensions::api::runtime::PlatformOs::kLinux;
    } else if (strcmp(os, "openbsd") == 0) {
@@ -8,6 +8,6 @@
 +    info->os = extensions::api::runtime::PlatformOs::kLinux;
 +  } else if (strcmp(os, "freebsd") == 0) {
 +    info->os = extensions::api::runtime::PlatformOs::kLinux;
-   } else if (strcmp(os, "fuchsia") == 0) {
-     info->os = extensions::api::runtime::PlatformOs::kFuchsia;
    } else {
+     NOTREACHED() << "Platform not supported: " << os;
+     return false;

@@ -1,5 +1,5 @@
 PORTNAME=	redmine
-PORTVERSION=	5.1.2
+PORTVERSION=	5.1.3
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/

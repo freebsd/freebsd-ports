@@ -1,6 +1,5 @@
 PORTNAME=	mpich
-DISTVERSION=	4.2.1
-PORTREVISION=	1
+DISTVERSION=	4.2.2
 CATEGORIES=	net parallel
 MASTER_SITES=	https://www.mpich.org/static/downloads/${DISTVERSION}/
 
@@ -16,7 +15,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libhwloc.so:devel/hwloc2	\
 		libjson-c.so:devel/json-c	\
 		libfabric.so:net/libfabric	\
-		libslurm.so:sysutils/slurm-wlm	\
 		libepoll-shim.so:devel/libepoll-shim
 
 CONFLICTS=	mpd
@@ -28,7 +26,7 @@ TEST_TARGET=	check
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-OPTIONS_DEFINE=		DOCS FORTRAN L0
+OPTIONS_DEFINE=		DOCS FORTRAN SLURM L0
 OPTIONS_GROUP=		PM
 OPTIONS_GROUP_PM=	GFORKER HYDRA
 OPTIONS_RADIO=		DEFAULTPM
@@ -53,11 +51,14 @@ DEFAULTPM_DESC=	Default process manager
 DGFORKER_DESC=	Make gforker the default process manager
 DHYDRA_DESC=	Make hydra the default process manager
 
-HYDRA_LIB_DEPENDS=	libtorque.so:sysutils/torque
+SLURM_DESC=		Extra Slurm support
+SLURM_LIB_DEPENDS=	libslurm.so:sysutils/slurm-wlm
+SLURM_CONFIGURE_WITH=	slurm
+SLURM_IMPLIES=		HYDRA
 
 L0_DESC=		oneAPI Level Zero support
 L0_LIB_DEPENDS=		libze_loader.so:devel/level-zero
-L0_CONFIGURE_OFF=	--without-ze
+L0_CONFIGURE_WITH=	ze
 
 CONFIGURE_ARGS=	--enable-fast=""	\
 		--with-libfabric=${LOCALBASE} \

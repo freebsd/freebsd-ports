@@ -1,6 +1,6 @@
 PORTNAME=	dynamic_motd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3
+DISTVERSION=	1.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	sstallion@gmail.com

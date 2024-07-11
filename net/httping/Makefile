@@ -1,41 +1,35 @@
 PORTNAME=	httping
-PORTVERSION=	2.9
+PORTVERSION=	3.7a
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ping-like tool for HTTP requests
-WWW=		https://github.com/folkertvanheusden/HTTPing
+WWW=		https://www.vanheusden.com/httping/ \
+		https://github.com/folkertvanheusden/HTTPing
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gettext-runtime gettext-tools gmake localbase:ldflags ssl \
-		tar:tgz
+USES=		cmake pkgconfig localbase:ldflags ssl
+
+CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=${PREFIX}/share/man/man1
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	folkertvanheusden
 GH_PROJECT=	HTTPing
+GH_TAGNAME=	bb94c6d
 
-OPTIONS_DEFINE=		FFTW NCURSES NLS
-OPTIONS_DEFAULT=	NCURSES
-OPTIONS_SUB=		NLS
+OPTIONS_DEFINE=	DOCS FFTW NCURSES NLS
+OPTIONS_DEFAULT=NCURSES
+OPTIONS_SUB=	yes
 
+FFTW_CMAKE_BOOL=	USE_FFTW
 FFTW_LIB_DEPENDS=	libfftw3.so:math/fftw3
-FFTW_MAKE_ENV=		FW=yes
-FFTW_MAKE_ENV_OFF=	FW=no
+NCURSES_CMAKE_BOOL=	USE_TUI
+NCURSES_LDFLAGS=	${NCURSESLIBS}
 NCURSES_USES=		ncurses
-NCURSES_MAKE_ENV=	NC=yes
-NCURSES_MAKE_ENV_OFF=	NC=yes
-NLS_MAKE_ENV_OFF=	NO_GETTEXT=yes
+NLS_CMAKE_BOOL=		USE_GETTEXT
+NLS_USES=		gettext-runtime gettext-tools
 
-.include <bsd.port.pre.mk>
-
-# DragonFly seems to require this
-.if ${OPSYS} == FreeBSD
-MAKE_ENV+=	TFO=yes
-.endif
-
-post-patch-NCURSES-on:
-	@${REINPLACE_CMD} "s/-lncursesw/${NCURSESLIBS}/g" ${WRKSRC}/Makefile
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	mlmmj
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.7
 CATEGORIES=	mail
 MASTER_SITES=	https://codeberg.org/mlmmj/mlmmj/releases/download/RELEASE_${PORTVERSION:S/./_/g}/
 
@@ -27,13 +27,14 @@ PERL_RUN_DEPENDS=	p5-URI>0:net/p5-URI \
 			p5-HTML-Parser>0:www/p5-HTML-Parser
 PHP_USES=		php:web
 
-BUILD_DEPENDS=		kyua:devel/kyua \
+TEST_DEPENDS=		kyua:devel/kyua \
 			atf-sh:devel/atf
+TEST_TARGET=		check
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} \
-		ChangeLog FAQ README* TODO TUNABLES UPGRADE \
+		ChangeLog FAQ README* TODO TUNABLES.md UPGRADE \
 		${STAGEDIR}${DOCSDIR})
 
 post-install-PERL-on:
@@ -44,5 +45,13 @@ post-install-PERL-on:
 post-install-PHP-on:
 	@(cd ${WRKSRC}/contrib/web && ${COPYTREE_SHARE} "php-*" \
 		${STAGEDIR}${WWWDIR})
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_TESTING)
+CONFIGURE_ARGS+=	--enable-tests
+.else
+CONFIGURE_ARGS+=	--disable-tests
+.endif
 
 .include <bsd.port.mk>

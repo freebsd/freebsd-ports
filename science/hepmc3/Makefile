@@ -1,5 +1,5 @@
 PORTNAME=	hepmc3
-DISTVERSION=	3.2.7
+DISTVERSION=	3.3.0
 CATEGORIES=	science
 MASTER_SITES=	https://hepmc.web.cern.ch/hepmc/releases/
 DISTNAME=	HepMC3-${DISTVERSION}

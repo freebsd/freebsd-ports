@@ -1,6 +1,6 @@
-TIMESTAMP = 1714104646
-SHA256 (eclipse-ecal-ecal-v5.13.0_GH0.tar.gz) = d3872ff6492cf0df297ce75b66a813a2e58e47ed54206219d8916cb8aea0c9da
-SIZE (eclipse-ecal-ecal-v5.13.0_GH0.tar.gz) = 10068637
+TIMESTAMP = 1719034192
+SHA256 (eclipse-ecal-ecal-v5.13.2_GH0.tar.gz) = fce0b14757e505b72daacd5ea4f2bbf4c4bd9913f9fbcf0eab65cfc45b221911
+SIZE (eclipse-ecal-ecal-v5.13.2_GH0.tar.gz) = 10070789
 SHA256 (eclipse-ecal-tcp_pubsub-b0393e4_GH0.tar.gz) = 7644e3b3d4b66273b9a77d5b438d28797dc8d7d73361c2aec22eba229b556125
 SIZE (eclipse-ecal-tcp_pubsub-b0393e4_GH0.tar.gz) = 35201
 SHA256 (brofield-simpleini-9b3ed7e_GH0.tar.gz) = e938e6e2db34bc545275b8c7f5808b45f18f33dd752a21d3621b9b1ba1e0385f

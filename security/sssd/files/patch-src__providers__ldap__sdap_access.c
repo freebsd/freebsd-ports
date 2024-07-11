@@ -1,6 +1,4 @@
-diff --git src/providers/ldap/sdap_access.c src/providers/ldap/sdap_access.c
-index dd04ec512..58a3766fc 100644
---- src/providers/ldap/sdap_access.c
+--- src/providers/ldap/sdap_access.c.orig	2020-03-17 13:31:28 UTC
 +++ src/providers/ldap/sdap_access.c
 @@ -562,9 +562,9 @@ bool nds_check_expired(const char *exp_time_str)
  
@@ -15,7 +13,7 @@ index dd04ec512..58a3766fc 100644
  
      if (difftime(now, expire_time) > 0.0) {
          DEBUG(SSSDBG_CONF_SETTINGS, "NDS account expired.\n");
-@@ -1247,7 +1247,7 @@ static errno_t sdap_access_host(struct ldb_message *user_entry)
+@@ -1247,7 +1247,7 @@ static errno_t sdap_access_host(struct ldb_message *us
      struct ldb_message_element *el;
      unsigned int i;
      char *host;
@@ -24,7 +22,7 @@ index dd04ec512..58a3766fc 100644
  
      el = ldb_msg_find_element(user_entry, SYSDB_AUTHORIZED_HOST);
      if (!el || el->num_values == 0) {
-@@ -1255,12 +1255,12 @@ static errno_t sdap_access_host(struct ldb_message *user_entry)
+@@ -1255,12 +1255,12 @@ static errno_t sdap_access_host(struct ldb_message *us
          return ERR_ACCESS_DENIED;
      }
  

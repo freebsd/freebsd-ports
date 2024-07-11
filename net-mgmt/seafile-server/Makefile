@@ -91,8 +91,7 @@ post-patch:
 .endif
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${SEABIN} ${STAGEDIR}${PREFIX}/${SEALIB} \
-		${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/seafile/share/doc/seafile
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SEABIN} ${STAGEDIR}${PREFIX}/${SEALIB}
 .for SERVPROG in seaf-fsck seafserv-gc seaf-fuse seaf-migrate \
 		seaf-server seaf-server-init seafile-controller
 	if [ -e "${STAGEDIR}${PREFIX}/bin/${SERVPROG}" ]; then \
@@ -108,8 +107,6 @@ post-install:
 		${COPYTREE_SHARE} ${PYTHON_VERSION} ${STAGEDIR}${PREFIX}/${SEALIB})
 	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION} \
 		${STAGEDIR}${PREFIX}/bin/seafile-admin
-	${INSTALL_DATA} ${WRKSRC}/doc/seafile-tutorial.doc \
-		${STAGEDIR}${PREFIX}/${SEAFILE_SERVER}/seafile/share/doc/seafile/
 	(cd ${WRKSRC}/scripts && \
 		${COPYTREE_SHARE} "sql" ${STAGEDIR}${PREFIX}/${SEAFILE_SERVER})
 

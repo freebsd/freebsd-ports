@@ -1,6 +1,6 @@
 PORTNAME=	gn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2124
+DISTVERSION=	2175
 CATEGORIES=	devel
 
 MAINTAINER=	o.hushchenkov@gmail.com
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_riscv64=		fails to build: ../src/util/build_config.h:168:2: Please add support for your architecture in build_config.h
 
-USES=		alias compiler:c++17-lang ninja python:build shebangfix
+USES=		alias compiler:c++20-lang ninja python:build shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	cglogic # mirror
 SHEBANG_FILES=	${CONFIGURE_SCRIPT}

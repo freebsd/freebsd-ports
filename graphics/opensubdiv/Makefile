@@ -1,8 +1,8 @@
 PORTNAME=	opensubdiv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3_5_0
-PORTREVISION=	8
-CATEGORIES?=	graphics
+DISTVERSION=	3_6_0
+PORTREVISION=	2
+CATEGORIES=	graphics
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT=	High performance subdivision surface libraries
@@ -13,66 +13,63 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	glfw>3.0.0:graphics/glfw
 
-USES=		cmake gl
+USES=		cmake gl localbase:ldflags
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PixarAnimationStudios
 GH_PROJECT=	OpenSubdiv
 
-USE_GL=		egl gl glu glew
+USE_GL=		opengl
 USE_LDCONFIG=	yes
-CMAKE_ON=	NO_CLEW NO_CUDA NO_DX
+CMAKE_ON=	NO_CLEW NO_CUDA NO_DX NO_METAL
+
+PLIST_SUB+=	LIBVERS=${PORTVERSION}
 
 OPTIONS_DEFINE=		DOCS EXAMPLES OPENCL OPENMP PTEX TBB TEST TUTORIALS
-OPTIONS_DEFAULT=	TBB
-#OPTIONS_EXCLUDE=	EXAMPLES
+OPTIONS_DEFAULT=	PTEX TBB
+OPTIONS_DEFAULT_armv6=
+OPTIONS_DEFAULT_armv7=
+OPTIONS_DEFAULT_OTHER_ARCHS=	OPENMP
 OPTIONS_SUB=		yes
 
-DOCS_CMAKE_BOOL_OFF=	NO_DOC
+PTEX_DESC=		ptex support
+TBB_DESC=		Intel threading building blocks
+TUTORIALS_DESC=		Install tutorial programs
+
 DOCS_BUILD_DEPENDS=	rst2html.py:textproc/py-docutils \
 			doxygen>=1.8.4:devel/doxygen
 DOCS_USES=		python:build
+DOCS_CMAKE_BOOL_OFF=	NO_DOC
 DOCS_PORTDOCS=		*
 
-#EXAMPLES_BROKEN=	ld: error: undefined symbol: glXGetCurrentContext
-#Examples cannot utilize the latest opencl headers
-EXAMPLES_CMAKE_BOOL_OFF=	NO_EXAMPLES
+EXAMPLES_LIB_DEPENDS=	libglfw.so:graphics/glfw
 EXAMPLES_USES=		xorg
 EXAMPLES_USE=		xorg=ice,sm,x11,xcursor,xext,xi,xinerama,xrandr,xxf86vm
-EXAMPLES_LIB_DEPENDS=	libglfw.so:graphics/glfw
+EXAMPLES_CMAKE_BOOL_OFF=	NO_EXAMPLES
 
-OPENCL_CMAKE_BOOL_OFF=	NO_OPENCL
-OPENCL_CFLAGS=		-pthread
 OPENCL_BUILD_DEPENDS=	${LOCALBASE}/include/CL/cl.h:devel/opencl
 OPENCL_LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
-OPENCL_PREVENTS=	EXAMPLES
+OPENCL_USE=		gl=gl
+OPENCL_CMAKE_BOOL_OFF=	NO_OPENCL
+OPENCL_CFLAGS=		-pthread
+OPENCL_LDFLAGS=		-lGLX
 
 OPENMP_CMAKE_BOOL_OFF=	NO_OMP
 
-PTEX_DESC=		ptex support
-PTEX_CMAKE_BOOL_OFF=	NO_PTEX
-PTEX_CMAKE_ON=		-DPTEX_LOCATION:STRING=${LOCALBASE} \
-			-DPTEX_INCLUDE_DIR:STRING=${LOCALBASE}/include/ptex
 PTEX_LIB_DEPENDS=	libPtex.so:graphics/ptex
+PTEX_CMAKE_BOOL_OFF=	NO_PTEX
+PTEX_CMAKE_ON=		-DPTEX_INCLUDE_DIR:STRING=${LOCALBASE}/include/ptex \
+			-DPTEX_LOCATION:STRING=${LOCALBASE}
 
-TBB_DESC=		Intel threading building blocks
-TBB_CMAKE_BOOL_OFF=	NO_TBB
 TBB_LIB_DEPENDS=	libtbb.so:devel/onetbb
+TBB_CMAKE_BOOL_OFF=	NO_TBB
 
-TEST_CMAKE_BOOL_OFF=	NO_REGRESSION NO_TESTS NO_GL_TESTS
 TEST_LIB_DEPENDS=	libglfw.so:graphics/glfw
 TEST_USES=		xorg
 TEST_USE=		xorg=ice,sm,x11,xcursor,xext,xi,xinerama,xrandr,xxf86vm
+TEST_CMAKE_BOOL_OFF=	NO_REGRESSION NO_TESTS
 
-# the tutorials and tests include use of deprecated parts of the library
-# using clang 10 on 32 bit fails to build all tutorials and tests
-# currently 12.1 still works - 11.4 and current fail
-# CMake files and pkg-plist are patched to prevent failing builds
-
-TUTORIALS_DESC=		Install tutorial programs
 TUTORIALS_CMAKE_BOOL_OFF=	NO_TUTORIALS
-
-PLIST_SUB+=		LIBVERS=${PORTVERSION}
 
 post-patch:
 	${FIND} ${WRKSRC}/tutorials -name CMakeLists.txt -exec \

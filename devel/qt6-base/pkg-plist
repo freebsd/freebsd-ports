@@ -1659,6 +1659,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtNetwork/QNetworkRequestFactory
 %%QT_INCDIR%%/QtNetwork/QOcspResponse
 %%QT_INCDIR%%/QtNetwork/QPasswordDigestor
+%%QT_INCDIR%%/QtNetwork/QRestAccessManager
 %%QT_INCDIR%%/QtNetwork/QRestReply
 %%QT_INCDIR%%/QtNetwork/QSsl
 %%QT_INCDIR%%/QtNetwork/QSslCertificate
@@ -3104,8 +3105,8 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_LIBDIR%%/metatypes/qt6widgets_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%X11%%%%QT_LIBDIR%%/metatypes/qt6xcbqpaprivate_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%QT_LIBDIR%%/metatypes/qt6xml_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%DEBUG%%%%QT_LIBDIR%%/objects-Debug/ExampleIconsPrivate_resources_1/.rcc/qrc_example_icons_init.cpp.o
-%%NO_DEBUG%%%%QT_LIBDIR%%/objects-Release/ExampleIconsPrivate_resources_1/.rcc/qrc_example_icons_init.cpp.o
+%%DEBUG%%%%QT_LIBDIR%%/objects-Debug/ExampleIconsPrivate_resources_1/.qt/rcc/qrc_example_icons_init.cpp.o
+%%NO_DEBUG%%%%QT_LIBDIR%%/objects-Release/ExampleIconsPrivate_resources_1/.qt/rcc/qrc_example_icons_init.cpp.o
 %%QT_MKSPECDIR%%/aix-g++-64/qmake.conf
 %%QT_MKSPECDIR%%/aix-g++-64/qplatformdefs.h
 %%QT_MKSPECDIR%%/aix-g++/qmake.conf
@@ -3621,6 +3622,7 @@ libdata/pkgconfig/Qt6Xml.pc
 %%QT_TOOLDIR%%/qt-cmake-private
 %%QT_TOOLDIR%%/qt-cmake-private-install.cmake
 %%QT_TOOLDIR%%/qt-cmake-standalone-test
+%%QT_TOOLDIR%%/qt-internal-configure-examples
 %%QT_TOOLDIR%%/qt-internal-configure-tests
 %%QT_TOOLDIR%%/qt-testrunner.py
 %%QT_TOOLDIR%%/qvkgen

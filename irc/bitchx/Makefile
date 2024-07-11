@@ -7,20 +7,17 @@ MASTER_SITES=	SF/${PORTNAME}/ircii-pana/${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Feature-rich scriptable IRC client
-WWW=		http://www.bitchx.org/
+WWW=		https://bitchx.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USES=		cpe gmake ncurses
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--exec-prefix="${PREFIX}/share" \
 		--bindir="${PREFIX}/bin" \
 		--datadir="${PREFIX}/share" \
 		--libdir="${PREFIX}/share"
-
-MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS_INSTALL?=	zh-bitchx
 
@@ -39,7 +36,7 @@ PLUGINS_DESC=	Build a handful of BitchX plugins
 TOGGLES_DESC=	Disable annoyance toggles
 
 IPV6_CONFIGURE_ENABLE=	ipv6
-PLUGINS_CONFIGURE_WITH=	plugins="${PLUGIN_LIST:C/\$$/,/g}"
+PLUGINS_CONFIGURE_WITH=	plugins="${PLUGIN_LIST:ts,}"
 SSL_USES=		ssl
 SSL_CONFIGURE_WITH=	ssl="${OPENSSLBASE}"
 

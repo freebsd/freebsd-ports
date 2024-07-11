@@ -1,3 +1,3 @@
-TIMESTAMP = 1707772235
-SHA256 (Flask-Limiter-3.5.1.tar.gz) = 8117e1040e5d5c31bf667d3b649fcba325f979d814a3d76a3a2331c3eab63c5e
-SIZE (Flask-Limiter-3.5.1.tar.gz) = 301691
+TIMESTAMP = 1717314975
+SHA256 (flask_limiter-3.7.0.tar.gz) = e474462505f6dd0d776db16c46092e9a065ebcb30b10aed0caf54c6b9a4a471a
+SIZE (flask_limiter-3.7.0.tar.gz) = 301800

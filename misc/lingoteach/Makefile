@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language teaching program with sound
 WWW=		http://www.lingoteach.org
 
+DEPRECATED=	Depends on deprecated port textproc/liblingoteach (PR 279705)
+EXPIRATION_DATE=2024-07-16
+
 LIB_DEPENDS=	liblingoteach.so:textproc/liblingoteach
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-ui-${PORTVERSION}

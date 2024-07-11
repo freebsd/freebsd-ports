@@ -643,14 +643,6 @@
 %%WWWDIR%%/zp-core/js/zp_upload.js
 %%WWWDIR%%/zp-core/libs/class-utf8.php
 %%WWWDIR%%/zp-core/libs/class-zipstream.php
-%%WWWDIR%%/zp-core/libs/exif/exif.php
-%%WWWDIR%%/zp-core/libs/exif/makers/canon.php
-%%WWWDIR%%/zp-core/libs/exif/makers/fujifilm.php
-%%WWWDIR%%/zp-core/libs/exif/makers/gps.php
-%%WWWDIR%%/zp-core/libs/exif/makers/nikon.php
-%%WWWDIR%%/zp-core/libs/exif/makers/olympus.php
-%%WWWDIR%%/zp-core/libs/exif/makers/panasonic.php
-%%WWWDIR%%/zp-core/libs/exif/makers/sanyo.php
 %%WWWDIR%%/zp-core/libs/functions-encryption.php
 %%WWWDIR%%/zp-core/libs/functions-gettext.php
 %%WWWDIR%%/zp-core/libs/functions-htmlawed.php
@@ -810,12 +802,9 @@
 %%WWWDIR%%/zp-core/zp-extensions/class-video.php
 %%WWWDIR%%/zp-core/zp-extensions/class-video/getid3/getid3.lib.php
 %%WWWDIR%%/zp-core/zp-extensions/class-video/getid3/getid3.php
-%%WWWDIR%%/zp-core/zp-extensions/class-video/getid3/license.commercial.txt
 %%WWWDIR%%/zp-core/zp-extensions/class-video/getid3/license.txt
-%%WWWDIR%%/zp-core/zp-extensions/class-video/getid3/module.audio-video.flv.php
 %%WWWDIR%%/zp-core/zp-extensions/class-video/getid3/module.audio-video.mpeg.php
 %%WWWDIR%%/zp-core/zp-extensions/class-video/getid3/module.audio-video.quicktime.php
-%%WWWDIR%%/zp-core/zp-extensions/class-video/getid3/module.audio-video.swf.php
 %%WWWDIR%%/zp-core/zp-extensions/class-video/getid3/module.audio.aac.php
 %%WWWDIR%%/zp-core/zp-extensions/class-video/getid3/module.audio.mp3.php
 %%WWWDIR%%/zp-core/zp-extensions/class-video/getid3/module.tag.apetag.php
@@ -1096,6 +1085,9 @@
 %%WWWDIR%%/zp-core/zp-extensions/exampleMacros.php
 %%WWWDIR%%/zp-core/zp-extensions/favoritesHandler.php
 %%WWWDIR%%/zp-core/zp-extensions/favoritesHandler/class-favorites.php
+%%WWWDIR%%/zp-core/zp-extensions/featured_image.php
+%%WWWDIR%%/zp-core/zp-extensions/featured_image/process_selection.php
+%%WWWDIR%%/zp-core/zp-extensions/featured_image/style.css
 %%WWWDIR%%/zp-core/zp-extensions/flag_thumbnail.php
 %%WWWDIR%%/zp-core/zp-extensions/flag_thumbnail/GPS.png
 %%WWWDIR%%/zp-core/zp-extensions/flag_thumbnail/action.png
@@ -1241,7 +1233,6 @@
 %%WWWDIR%%/zp-core/zp-extensions/rss.php
 %%WWWDIR%%/zp-core/zp-extensions/rss/rss.css
 %%WWWDIR%%/zp-core/zp-extensions/scriptless-socialsharing.php
-%%WWWDIR%%/zp-core/zp-extensions/scriptless-socialsharing/fonts/scriptless-socialbuttons.eot
 %%WWWDIR%%/zp-core/zp-extensions/scriptless-socialsharing/fonts/scriptless-socialbuttons.svg
 %%WWWDIR%%/zp-core/zp-extensions/scriptless-socialsharing/fonts/scriptless-socialbuttons.ttf
 %%WWWDIR%%/zp-core/zp-extensions/scriptless-socialsharing/fonts/scriptless-socialbuttons.woff

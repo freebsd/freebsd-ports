@@ -246,19 +246,8 @@ YARN_TIMESTAMP=	61171200
 IGNORE=		you have selected HEIMDAL_BASE but do not have Heimdal installed in base
 .endif
 
-.if ${COMPILER_VERSION} < 160
-LLVM_DEFAULT=		16
-BUILD_DEPENDS+=		clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-BINARY_ALIAS+=		cpp=${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT} \
-			cc=${LOCALBASE}/bin/clang${LLVM_DEFAULT} \
-			c++=${LOCALBASE}/bin/clang++${LLVM_DEFAULT} \
-			ar=${LOCALBASE}/bin/llvm-ar${LLVM_DEFAULT} \
-			nm=${LOCALBASE}/bin/llvm-nm${LLVM_DEFAULT} \
-			ld=${LOCALBASE}/bin/ld.lld${LLVM_DEFAULT}
-.else
 BINARY_ALIAS+=		ar=/usr/bin/llvm-ar \
 			nm=/usr/bin/llvm-nm
-.endif
 CFLAGS+=		-Wno-error=implicit-function-declaration
 
 .if ${ARCH} == "aarch64"

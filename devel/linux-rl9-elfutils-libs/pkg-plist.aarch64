@@ -1,8 +1,8 @@
-usr/lib/.build-id/5b/778ae28f86e91923d46182aed376e17b5f78b1
-usr/lib/.build-id/6d/003c37df45f33b50db8e5a6e4b22e560db637f
-usr/lib64/libasm-0.189.so
+usr/lib/.build-id/0f/06fc727bd0f885d337b9a2a161ad6991c2b256
+usr/lib/.build-id/4a/ecea9557a457c087d77669861acfafcac7ae59
+usr/lib64/libasm-%%LIBVERSION%%.so
 usr/lib64/libasm.so.1
-usr/lib64/libdw-0.189.so
+usr/lib64/libdw-%%LIBVERSION%%.so
 usr/lib64/libdw.so.1
 usr/share/licenses/elfutils-libs/COPYING-GPLV2
 usr/share/licenses/elfutils-libs/COPYING-LGPLV3

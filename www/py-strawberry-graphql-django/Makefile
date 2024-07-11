@@ -1,5 +1,5 @@
 PORTNAME=	strawberry-graphql-django
-DISTVERSION=	0.39.2
+DISTVERSION=	0.44.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgiref>=3.8:www/py-asgiref@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django42>=3.2:www/py-django42@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}strawberry-graphql>=0.227.1:devel/py-strawberry-graphql@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}strawberry-graphql>=0.234.2:devel/py-strawberry-graphql@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517

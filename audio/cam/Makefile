@@ -9,6 +9,9 @@ COMMENT=	Cpu's Audio Mixer [curses based]
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware and obsolete, consider using audio/mixertui
+EXPIRATION_DATE=2024-07-31
+
 USES=		ncurses tar:tgz
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \

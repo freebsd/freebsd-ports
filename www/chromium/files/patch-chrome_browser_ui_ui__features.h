@@ -1,6 +1,6 @@
---- chrome/browser/ui/ui_features.h.orig	2024-05-21 18:07:39 UTC
+--- chrome/browser/ui/ui_features.h.orig	2024-06-17 12:56:06 UTC
 +++ chrome/browser/ui/ui_features.h
-@@ -279,7 +279,7 @@ bool IsToolbarPinningEnabled();
+@@ -288,7 +288,7 @@ bool IsToolbarPinningEnabled();
  
  BASE_DECLARE_FEATURE(kTopChromeWebUIUsesSpareRenderer);
  

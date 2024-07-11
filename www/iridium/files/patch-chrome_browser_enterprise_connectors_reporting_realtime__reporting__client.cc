@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc.orig	2024-02-04 14:46:08 UTC
+--- chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc.orig	2024-06-25 12:08:48 UTC
 +++ chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc
 @@ -58,7 +58,7 @@
  #include "base/strings/utf_string_conversions.h"
@@ -18,7 +18,7 @@
  void PopulateSignals(base::Value::Dict event,
                       policy::CloudPolicyClient* client,
                       std::string name,
-@@ -427,7 +427,7 @@ void RealtimeReportingClient::ReportPastEvent(const st
+@@ -420,7 +420,7 @@ void RealtimeReportingClient::ReportPastEvent(const st
                             /*include_profile_user_name=*/false);
  }
  
@@ -27,7 +27,7 @@
  
  void AddCrowdstrikeSignalsToEvent(
      base::Value::Dict& event,
-@@ -486,7 +486,7 @@ void RealtimeReportingClient::ReportEventWithTimestamp
+@@ -479,7 +479,7 @@ void RealtimeReportingClient::ReportEventWithTimestamp
    if (include_profile_user_name) {
      event.Set(kKeyProfileUserName, GetProfileUserName());
    }

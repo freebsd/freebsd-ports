@@ -86,6 +86,7 @@ include/scip/cons_conjunction.h
 include/scip/cons_countsols.h
 include/scip/cons_cumulative.h
 include/scip/cons_disjunction.h
+include/scip/cons_fixedvar.h
 include/scip/cons_indicator.h
 include/scip/cons_integral.h
 include/scip/cons_knapsack.h
@@ -567,5 +568,5 @@ lib/cmake/scip/scip-config.cmake
 lib/cmake/scip/scip-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/scip/scip-targets.cmake
 lib/libscip.so
-lib/libscip.so.9.0
-lib/libscip.so.9.0.1.0
+lib/libscip.so.9.1
+lib/libscip.so.9.1.0.0

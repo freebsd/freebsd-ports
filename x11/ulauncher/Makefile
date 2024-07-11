@@ -1,6 +1,6 @@
 PORTNAME=	ulauncher
 PORTVERSION=	5.15.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/Ulauncher/Ulauncher/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR} \
 		${LOCALBASE}/share/gir-1.0/Keybinder-3.0.gir:x11/keybinder-gtk3 \
 		${LOCALBASE}/share/gir-1.0/Notify-0.7.gir:devel/libnotify \
 		${LOCALBASE}/share/gir-1.0/WebKit2-4.0.gir:www/webkit2-gtk3 \
-		wmctrl:x11/wmctrl
+		wmctrl:x11/wmctrl-fork
 
 USES=		gettext-tools gnome python
 USE_GNOME=	gtk30 intltool pygobject3

@@ -21,6 +21,7 @@ load_rc_config ${name}
 
 # set defaults
 krescachegc_enable=${krescachegc_enable:-"NO"}
+: ${krescachegc_svcj_options:="net_basic"}
 krescachegc_millis=${krescachegc_millis:-"1000"}
 
 pidfile="%%RUNDIR%%/${name}.pid"

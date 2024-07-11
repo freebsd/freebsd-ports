@@ -18,6 +18,7 @@ share/man/man1/pcmanfm-qt.1.gz
 %%DATADIR%%/translations/pcmanfm-qt_en_GB.qm
 %%DATADIR%%/translations/pcmanfm-qt_es.qm
 %%DATADIR%%/translations/pcmanfm-qt_et.qm
+%%DATADIR%%/translations/pcmanfm-qt_eu.qm
 %%DATADIR%%/translations/pcmanfm-qt_fi.qm
 %%DATADIR%%/translations/pcmanfm-qt_fil.qm
 %%DATADIR%%/translations/pcmanfm-qt_fr.qm
@@ -32,6 +33,7 @@ share/man/man1/pcmanfm-qt.1.gz
 %%DATADIR%%/translations/pcmanfm-qt_ja.qm
 %%DATADIR%%/translations/pcmanfm-qt_kk.qm
 %%DATADIR%%/translations/pcmanfm-qt_ko.qm
+%%DATADIR%%/translations/pcmanfm-qt_lg.qm
 %%DATADIR%%/translations/pcmanfm-qt_lt.qm
 %%DATADIR%%/translations/pcmanfm-qt_lv.qm
 %%DATADIR%%/translations/pcmanfm-qt_nb_NO.qm

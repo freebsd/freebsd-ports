@@ -5,7 +5,7 @@ CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dutra@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python package for retrieving WHOIS information of domains
 WWW=		https://pypi.org/project/whois/
 

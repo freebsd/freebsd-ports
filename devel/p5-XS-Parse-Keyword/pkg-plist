@@ -5,6 +5,8 @@
 %%SITE_ARCH%%/XS/Parse/Keyword/Builder.pm
 %%SITE_ARCH%%/XS/Parse/Keyword/Builder_data.pm
 %%SITE_ARCH%%/auto/XS/Parse/Keyword/Keyword.so
+%%SITE_ARCH%%/auto/share/dist/XS-Parse-Keyword/include/XSParseInfix.h
+%%SITE_ARCH%%/auto/share/dist/XS-Parse-Keyword/include/XSParseKeyword.h
 %%PERL5_MAN3%%/XS::Parse::Infix.3.gz
 %%PERL5_MAN3%%/XS::Parse::Infix::Builder.3.gz
 %%PERL5_MAN3%%/XS::Parse::Keyword.3.gz

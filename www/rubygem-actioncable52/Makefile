@@ -6,7 +6,8 @@ PKGNAMESUFFIX=	52
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Integrated WebSockets for Rails
-WWW=		https://github.com/rails/rails/tree/main/actioncable
+WWW=		https://rubyonrails.org/ \
+		https://github.com/rails/rails/tree/main/actioncable
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

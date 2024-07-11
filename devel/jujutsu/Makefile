@@ -1,18 +1,18 @@
 PORTNAME=	jujutsu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.1
-PORTREVISION=	1
+DISTVERSION=	0.19.0
 CATEGORIES=	devel
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Git-compatible VCS that is both simple and powerful
-WWW=		https://github.com/martinvonz/jj/README.md
+WWW=		https://github.com/martinvonz/jj/blob/main/README.md
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libssh2.so:security/libssh2 \
-		libzstd.so:archivers/zstd
+LIB_DEPENDS=	libgit2.so:devel/libgit2 \
+                libssh2.so:security/libssh2 \
+                libzstd.so:archivers/zstd
 
 USES=		cargo localbase ssl
 USE_GITHUB=	yes

@@ -1,6 +1,6 @@
---- media/capture/video/fake_video_capture_device_factory.cc.orig	2023-08-28 20:17:35 UTC
+--- media/capture/video/fake_video_capture_device_factory.cc.orig	2024-06-25 12:08:48 UTC
 +++ media/capture/video/fake_video_capture_device_factory.cc
-@@ -229,7 +229,7 @@ void FakeVideoCaptureDeviceFactory::GetDevicesInfo(
+@@ -231,7 +231,7 @@ void FakeVideoCaptureDeviceFactory::GetDevicesInfo(
    int entry_index = 0;
    for (const auto& entry : devices_config_) {
      VideoCaptureApi api =

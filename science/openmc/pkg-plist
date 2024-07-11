@@ -57,6 +57,9 @@ include/openmc/position.h
 include/openmc/progress_bar.h
 include/openmc/random_dist.h
 include/openmc/random_lcg.h
+include/openmc/random_ray/flat_source_domain.h
+include/openmc/random_ray/random_ray.h
+include/openmc/random_ray/random_ray_simulation.h
 include/openmc/reaction.h
 include/openmc/reaction_product.h
 include/openmc/scattdata.h
@@ -89,7 +92,9 @@ include/openmc/tallies/filter_energyfunc.h
 include/openmc/tallies/filter_legendre.h
 include/openmc/tallies/filter_match.h
 include/openmc/tallies/filter_material.h
+include/openmc/tallies/filter_materialfrom.h
 include/openmc/tallies/filter_mesh.h
+include/openmc/tallies/filter_meshborn.h
 include/openmc/tallies/filter_meshsurface.h
 include/openmc/tallies/filter_mu.h
 include/openmc/tallies/filter_particle.h

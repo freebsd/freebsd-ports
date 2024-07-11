@@ -52,8 +52,8 @@ lib/libnutclientstub.so.1
 lib/libnutclientstub.so.1.0.1
 lib/libnutscan.a
 lib/libnutscan.so
-lib/libnutscan.so.2
-lib/libnutscan.so.2.0.5
+lib/libnutscan.so.1
+lib/libnutscan.so.1.1.5
 %%PYTHON_SITELIBDIR%%/PyNUT.py
 %%PYTHON_SITELIBDIR%%/test_nutclient.py
 %%DEV%%libdata/pkgconfig/libnutclient.pc
@@ -293,3 +293,4 @@ sbin/upssched
 @dir(%%NUT_USER%%,%%NUT_GROUP%%,750) %%STATEDIR%%
 @dir libexec/nut
 @dir(%%NUT_USER%%,%%NUT_GROUP%%,) /var/log/nut
+%%PORTDOCS%%@dir %%DOCSDIR%%/html-man

@@ -1,7 +1,6 @@
 PORTNAME=	metaeuk
-DISTVERSION=	6
-DISTVERSIONSUFFIX=	-a5d39d9
-PORTREVISION=	2
+DISTVERSION=	7
+DISTVERSIONSUFFIX=	-bba0d80
 CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,16 +22,14 @@ USE_PERL5=	build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	soedinglab
-GH_TUPLE=	soedinglab:metaeuk-regression:6404519:metaeuk_regression/tests \
-		soedinglab:MMseqs2-Regression:f69b185:MMseqs2_Regression/lib/mmseqs/util/regression
+GH_TUPLE=	soedinglab:metaeuk-regression:f7c3999:metaeuk_regression/tests \
+		soedinglab:MMseqs2-Regression:5e3bc17:MMseqs2_Regression/lib/mmseqs/util/regression
 
 SHEBANG_GLOB=	*.sh
 
 PLIST_FILES=	bin/metaeuk
 
-OPTIONS_DEFINE=		NATIVE
-
-NATIVE_CMAKE_BOOL=	NATIVE_ARCH
+CMAKE_OFF=	NATIVE_ARCH
 
 .include <bsd.port.options.mk>
 

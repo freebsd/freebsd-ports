@@ -1,6 +1,7 @@
 PORTNAME=	ocrs
 DISTVERSIONPREFIX=	ocrs-cli-v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,6 +40,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		flate2-1.0.28 \
 		form_urlencoded-1.2.1 \
 		getrandom-0.2.11 \
+		hermit-abi-0.3.9 \
 		home-0.5.9 \
 		idna-0.5.0 \
 		image-0.25.1 \
@@ -50,6 +52,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		log-0.4.20 \
 		miniz_oxide-0.7.1 \
 		num-traits-0.2.17 \
+		num_cpus-1.16.0 \
 		once_cell-1.19.0 \
 		percent-encoding-2.3.1 \
 		png-0.17.10 \
@@ -58,10 +61,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		ring-0.17.7 \
-		rten-0.9.0 \
-		rten-imageproc-0.9.0 \
-		rten-tensor-0.9.0 \
-		rten-vecmath-0.9.0 \
+		rten-0.10.0 \
+		rten-imageproc-0.10.0 \
+		rten-simd-0.10.0 \
+		rten-tensor-0.10.0 \
+		rten-vecmath-0.10.0 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
 		rustls-0.22.4 \

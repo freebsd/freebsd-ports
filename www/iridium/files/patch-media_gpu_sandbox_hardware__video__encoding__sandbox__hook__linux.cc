@@ -1,4 +1,4 @@
---- media/gpu/sandbox/hardware_video_encoding_sandbox_hook_linux.cc.orig	2023-10-21 11:51:27 UTC
+--- media/gpu/sandbox/hardware_video_encoding_sandbox_hook_linux.cc.orig	2024-06-25 12:08:48 UTC
 +++ media/gpu/sandbox/hardware_video_encoding_sandbox_hook_linux.cc
 @@ -18,12 +18,15 @@
  #include "media/gpu/v4l2/v4l2_device.h"
@@ -16,7 +16,7 @@
    sandbox::syscall_broker::BrokerCommandSet command_set;
    std::vector<BrokerFilePermission> permissions;
  
-@@ -121,6 +124,7 @@ bool HardwareVideoEncodingPreSandboxHook(
+@@ -120,6 +123,7 @@ bool HardwareVideoEncodingPreSandboxHook(
        return false;
      }
    }

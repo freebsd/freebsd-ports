@@ -1,6 +1,6 @@
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.2.44
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.oracle.com/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX?=	-additions-legacy
@@ -46,12 +46,15 @@ CONFLICTS_INSTALL=	virtualbox-ose \
 			virtualbox-ose-lite \
 			virtualbox-ose-nox11
 
+EXTRACT_AFTER_ARGS=	--exclude tools/*.x86 --exclude tools/*.amd64 --exclude Firmware
 PORTSCOUT=	limit:^5\.
 
-OPTIONS_DEFINE=	DBUS DEBUG X11
+OPTIONS_DEFINE=		DBUS DEBUG X11
+OPTIONS_DEFINE_i386=	PAE
 OPTIONS_DEFAULT=	DBUS X11
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
 
+PAE_DESC=		Build kernel modules for PAE-kernels
 DBUS_CONFIGURE_OFF=	--disable-dbus
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DEBUG_CONFIGURE_ON=	--build-debug
@@ -130,6 +133,13 @@ post-patch:
 	    ${WRKSRC}/src/VBox/Runtime/Makefile.kmk \
 	    ${WRKSRC}/src/VBox/Additions/x11/VBoxClient/Makefile.kmk
 	@${ECHO_CMD} 'VBOX_ICONV_DEFS = LIBICONV_PLUG' >> ${WRKSRC}/LocalConfig.kmk
+.endif
+.if ${PORT_OPTIONS:MPAE}
+	@${ECHO_CMD} 'VBOX_FREEBSD = -DPAE' >> ${WRKSRC}/LocalConfig.kmk
+.endif
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400093
+	@${REINPLACE_CMD} -e 's|enum vtype|enum enum_vtype_uint8|g' \
+		${WRKSRC}/src/VBox/Additions/freebsd/vboxvfs/vboxvfs*.[ch]
 .endif
 
 post-patch-X11-on:

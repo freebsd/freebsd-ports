@@ -10,8 +10,8 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Cleaned up MH mailer suite
 WWW=		https://savannah.nongnu.org/projects/nmh/
 
-GIT_TAGNAME=	5718396
-NMH_COMMIT_DATE=	2024.01.21
+GIT_TAGNAME=	86cc564
+NMH_COMMIT_DATE=	2024.04.03
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GIT_TAGNAME}
 

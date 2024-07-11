@@ -1,6 +1,6 @@
 PORTNAME=	pylyzer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.53
+DISTVERSION=	0.0.54
 PORTREVISION=	1
 CATEGORIES=	devel python
 
@@ -40,11 +40,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		crunchy-0.2.2 \
 		derive_more-0.99.17 \
 		either-1.10.0 \
-		els-0.1.48-nightly.0 \
-		erg_common-0.6.36-nightly.0 \
-		erg_compiler-0.6.36-nightly.0 \
-		erg_parser-0.6.36-nightly.0 \
-		erg_proc_macros-0.6.36-nightly.0 \
+		els-0.1.48-nightly.2 \
+		erg_common-0.6.36-nightly.2 \
+		erg_compiler-0.6.36-nightly.2 \
+		erg_parser-0.6.36-nightly.2 \
+		erg_proc_macros-0.6.36-nightly.2 \
 		form_urlencoded-1.2.1 \
 		getopts-0.2.21 \
 		getrandom-0.2.12 \

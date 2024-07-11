@@ -138,6 +138,7 @@ include/mysql/server/mysql/service_md5.h
 include/mysql/server/mysql/service_my_crypt.h
 include/mysql/server/mysql/service_my_print_error.h
 include/mysql/server/mysql/service_my_snprintf.h
+include/mysql/server/mysql/service_print_check_msg.h
 include/mysql/server/mysql/service_progress_report.h
 include/mysql/server/mysql/service_sha1.h
 include/mysql/server/mysql/service_sha2.h
@@ -308,6 +309,7 @@ libexec/mysqld
 @comment share/man/man1/replace.1.gz
 @comment share/man/man1/resolve_stack_dump.1.gz
 @comment share/man/man1/resolveip.1.gz
+%%WSREP%%share/man/man1/wsrep_sst_backup.1.gz
 @comment %%WSREP%%share/man/man1/wsrep_sst_common.1.gz
 @comment %%WSREP%%share/man/man1/wsrep_sst_mariabackup.1.gz
 @comment %%WSREP%%share/man/man1/wsrep_sst_mysqldump.1.gz

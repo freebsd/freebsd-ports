@@ -1,5 +1,5 @@
-TIMESTAMP = 1707058354
-SHA256 (iridium-browser-2024.01.120.tar.xz) = 5a6e4f771ab4402ba590bfe5a213664a40d10bc7a1a72670837c755a0ec6e7ef
-SIZE (iridium-browser-2024.01.120.tar.xz) = 1755770488
-SHA256 (disable-privacy-sandbox-13fc15e4ec454e3397f11bdc1bf2627c121a37e8.patch) = 0565deb50e1206c2fa6d0476474ec9504893fc86b3589467ee2406ad10c915fc
-SIZE (disable-privacy-sandbox-13fc15e4ec454e3397f11bdc1bf2627c121a37e8.patch) = 3437
+TIMESTAMP = 1719317993
+SHA256 (iridium-browser-2024.06.126.2.tar.xz) = 30ec50b4bf7b64f5f1ebeb3b724bc0ee81ed4e9101fd1f9788210da4145c9d38
+SIZE (iridium-browser-2024.06.126.2.tar.xz) = 2296084036
+SHA256 (pulseaudio-16.1.tar.gz) = 027266c62f2a84422ac45fa721a649508f0f1628fb1fd9242315ac54ce2d7c92
+SIZE (pulseaudio-16.1.tar.gz) = 2763111

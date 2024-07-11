@@ -1,6 +1,6 @@
 PORTNAME=	datadog-agent
 DISTVERSION=	7.24.1
-PORTREVISION=	19
+PORTREVISION=	22
 CATEGORIES=	sysutils net www
 
 MAINTAINER=	uros@gruber.si
@@ -313,7 +313,7 @@ DOGSTATSD_VARS=	use_rc_subr+=datadog-dogstatsd
 
 OPTIONS_SUB=	yes
 
-PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
 
 ALL_TARGET=		./cmd/agent
 APM_ALL_TARGET=		./cmd/trace-agent

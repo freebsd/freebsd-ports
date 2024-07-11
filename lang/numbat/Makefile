@@ -1,7 +1,7 @@
 PORTNAME=	numbat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.0
-PORTREVISION=	2
+DISTVERSION=	1.12.0
+PORTREVISION=	1
 CATEGORIES=	lang devel science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -90,10 +90,10 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		home-0.5.9 \
 		html-escape-0.2.13 \
 		http-1.0.0 \
-		iana-time-zone-0.1.59 \
+		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
-		indexmap-2.1.0 \
+		indexmap-2.2.6 \
 		insta-1.34.0 \
 		is-terminal-0.4.10 \
 		itertools-0.10.5 \
@@ -107,6 +107,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		linux-raw-sys-0.4.13 \
 		log-0.4.20 \
 		memchr-2.7.1 \
+		mendeleev-0.8.0 \
 		nibble_vec-0.1.0 \
 		nix-0.27.1 \
 		normalize-line-endings-0.3.0 \
@@ -127,6 +128,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		plotters-0.3.5 \
 		plotters-backend-0.3.5 \
 		plotters-svg-0.3.5 \
+		ppv-lite86-0.2.17 \
 		predicates-3.1.0 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
@@ -136,6 +138,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		quote-1.0.35 \
 		radix_trie-0.2.1 \
 		rand-0.8.5 \
+		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		rayon-1.8.1 \
 		rayon-core-1.12.1 \
@@ -167,6 +170,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		siphasher-0.3.11 \
 		smallvec-1.13.1 \
 		spin-0.9.8 \
+		strfmt-0.2.4 \
 		strsim-0.10.0 \
 		strsim-0.11.0 \
 		subtle-2.5.0 \

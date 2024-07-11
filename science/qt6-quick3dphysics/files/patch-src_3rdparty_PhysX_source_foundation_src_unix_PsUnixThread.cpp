@@ -1,5 +1,5 @@
 Index: src/3rdparty/PhysX/source/foundation/src/unix/PsUnixThread.cpp
---- src/3rdparty/PhysX/source/foundation/src/unix/PsUnixThread.cpp.orig	2023-09-24 11:12:43 UTC
+--- src/3rdparty/PhysX/source/foundation/src/unix/PsUnixThread.cpp.orig	2024-05-09 03:10:14 UTC
 +++ src/3rdparty/PhysX/source/foundation/src/unix/PsUnixThread.cpp
 @@ -36,7 +36,7 @@
  #include "PsThread.h"
@@ -19,22 +19,16 @@ Index: src/3rdparty/PhysX/source/foundation/src/unix/PsUnixThread.cpp
  #include <asm/unistd.h>
  #include <sys/resource.h>
  #endif
-@@ -111,11 +111,11 @@ static void setTid(_ThreadImpl& threadImpl)
+@@ -110,7 +110,7 @@ static void setTid(_ThreadImpl& threadImpl)
  static void setTid(_ThreadImpl& threadImpl)
  {
  // query TID
 -#if PX_PS4 || (defined (TARGET_OS_TV) && TARGET_OS_TV)
 +#if PX_PS4 || (defined (TARGET_OS_TV) && TARGET_OS_TV) || PX_FREEBSD
  // AM: TODO: neither of the below are implemented
--#elif PX_APPLE_FAMILY
-+#elif PX_APPLE_FAMILY || !PX_FREEBSD
+ #elif PX_APPLE_FAMILY
  	threadImpl.tid = syscall(SYS_gettid);
--#elif PX_EMSCRIPTEN
-+#elif PX_EMSCRIPTEN || PX_FREEBSD
- 	threadImpl.tid = pthread_self();
- #else
- 	threadImpl.tid = syscall(__NR_gettid);
-@@ -311,7 +311,7 @@ uint32_t ThreadImpl::setAffinityMask(uint32_t mask)
+@@ -324,7 +324,7 @@ uint32_t ThreadImpl::setAffinityMask(uint32_t mask)
  	{
  #if PX_PS4
  		prevMask = setAffinityMaskPS4(getThread(this)->thread, mask);

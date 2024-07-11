@@ -1,4 +1,4 @@
---- base/base_paths_posix.cc.orig	2023-11-22 14:00:11 UTC
+--- base/base_paths_posix.cc.orig	2024-06-25 12:08:48 UTC
 +++ base/base_paths_posix.cc
 @@ -15,6 +15,7 @@
  #include <ostream>
@@ -23,17 +23,17 @@
  #elif BUILDFLAG(IS_SOLARIS) || BUILDFLAG(IS_AIX)
  #include <stdlib.h>
  #endif
-@@ -48,8 +53,7 @@ bool PathProviderPosix(int key, FilePath* result) {
+@@ -49,8 +54,7 @@ bool PathProviderPosix(int key, FilePath* result) {
        *result = bin_dir;
        return true;
  #elif BUILDFLAG(IS_FREEBSD)
 -      int name[] = { CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1 };
--      absl::optional<std::string> bin_dir = StringSysctl(name, std::size(name));
-+      absl::optional<std::string> bin_dir = StringSysctl({ CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1 });
+-      std::optional<std::string> bin_dir = StringSysctl(name, std::size(name));
++      std::optional<std::string> bin_dir = StringSysctl({ CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1 });
        if (!bin_dir.has_value() || bin_dir.value().length() <= 1) {
-         NOTREACHED() << "Unable to resolve path.";
+         NOTREACHED_IN_MIGRATION() << "Unable to resolve path.";
          return false;
-@@ -65,13 +69,65 @@ bool PathProviderPosix(int key, FilePath* result) {
+@@ -67,13 +71,65 @@ bool PathProviderPosix(int key, FilePath* result) {
        *result = FilePath(bin_dir);
        return true;
  #elif BUILDFLAG(IS_OPENBSD) || BUILDFLAG(IS_AIX)
@@ -73,7 +73,7 @@
 +        goto out;
 +      }
 +
-+      if ((kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, errbuf)) == NULL)
++      if ((kd = kvm_openfiles(NULL, NULL, NULL, (int)KVM_NO_FILES, errbuf)) == NULL)
 +        goto out;
 +
 +      if ((files = kvm_getfiles(kd, KERN_FILE_BYPID, cpid,

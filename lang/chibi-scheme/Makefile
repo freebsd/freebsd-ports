@@ -1,7 +1,5 @@
-#
-
 PORTNAME=	chibi-scheme
-DISTVERSION=	0.10.0
+DISTVERSION=	0.11.0
 CATEGORIES=	lang
 
 MAINTAINER=	gahr@FreeBSD.org

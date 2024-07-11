@@ -1,10 +1,15 @@
 PORTNAME=	chromium
-PORTVERSION=	125.0.6422.76
+PORTVERSION=	126.0.6478.126
+PORTREVISION=	1
+PULSEMV=	16
+PULSEV=		${PULSEMV}.1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
-		https://nerd.hu/distfiles/:external
+		https://nerd.hu/distfiles/:external \
+		https://freedesktop.org/software/pulseaudio/releases/:pulseaudio
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		chrome-linux-${PORTVERSION}-llvm17.profdata${EXTRACT_SUFX}:external
+		chrome-linux-${PORTVERSION}-llvm17.profdata${EXTRACT_SUFX}:external \
+		pulseaudio-${PULSEV}.tar.gz:pulseaudio
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Google web browser based on WebKit
@@ -15,8 +20,7 @@ LICENSE_COMB=	multi
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
-BUILD_DEPENDS=	${LOCALBASE}/include/pulse/pulseaudio.h:audio/pulseaudio \
-		bash:shells/bash \
+BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
 		gperf:devel/gperf \
@@ -125,7 +129,7 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		use_system_libffi=true \
 		use_system_libjpeg=true \
 		use_udev=false \
-		extra_cxxflags="${CXXFLAGS}" \
+		extra_cxxflags="${CXXFLAGS} -I${WRKDIR}/pulseaudio-${PULSEV}/src -DPA_MAJOR=${PULSEMV}" \
 		extra_ldflags="${LDFLAGS}" \
 		ffmpeg_branding="${FFMPEG_BRAND}"
 
@@ -292,6 +296,7 @@ pre-configure:
 .for _e in config.h config.asm config_components.h libavcodec libavformat libavutil
 	-${CP} -pR ${FFMPEG_BDIR}/${_e} ${FFMPEG_CDIR}
 .endfor
+	touch ${WRKDIR}/pulseaudio-${PULSEV}/src/pulse/version.h
 
 do-configure:
 	# GN generator bootstrapping and generating ninja files

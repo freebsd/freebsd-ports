@@ -1,5 +1,5 @@
 PORTNAME=	knot
-DISTVERSION=	3.3.5
+DISTVERSION=	${KNOT_VERSION}
 CATEGORIES=	dns
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		https://dns.company/downloads/knot-dns/
@@ -119,4 +119,5 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 
+.include "knotdns.mk"
 .include <bsd.port.mk>

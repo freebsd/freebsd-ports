@@ -1,12 +1,11 @@
 PORTNAME=	game.libretro.genplus
-PORTVERSION=	1.7.4.40
-DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	1
+PORTVERSION=	1.7.4.62
+DISTVERSIONSUFFIX=	-Nexus
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Kodi game addon for Sega - MS/GG/MD/CD (Genesis Plus GX)
-WWW=		https://github.com/libretro/Genesis-Plus-GX
+WWW=		https://github.com/kodi-game/game.libretro.genplus
 
 LICENSE=	GPLv2+
 

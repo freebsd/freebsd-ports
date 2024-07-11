@@ -1,6 +1,5 @@
 PORTNAME=	dsc
-PORTVERSION=	2.13.0
-PORTREVISION=	1
+PORTVERSION=	2.15.1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.dns-oarc.net/files/dsc/ \
 		https://dns.company/files/dsc/

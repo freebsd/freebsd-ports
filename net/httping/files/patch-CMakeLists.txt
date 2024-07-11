@@ -1,0 +1,30 @@
+--- CMakeLists.txt.orig	2024-05-14 21:12:06 UTC
++++ CMakeLists.txt
+@@ -6,12 +6,12 @@ add_definitions(-DVERSION=\"${VERSION}\")
+ file (STRINGS "version" VERSION)
+ add_definitions(-DVERSION=\"${VERSION}\")
+ 
+-add_definitions(-DLOCALEDIR=\"/usr/local/share/locale\")
++add_definitions(-DLOCALEDIR=\"${CMAKE_INSTALL_PREFIX}/share/locale\")
+ 
+ set(SOURCES  colors.c cookies.c error.c fft.c gen.c help.c http.c io.c kalman.c main.c mssl.c nc.c res.c socks5.c tcp.c utils.c)
+ add_executable(httping ${SOURCES})
+ 
+-target_link_libraries(httping m)
++target_link_libraries(httping intl m)
+ 
+ if (USE_GETTEXT)
+ find_package(Intl REQUIRED)
+@@ -30,10 +30,12 @@ target_compile_options(httping PUBLIC ${NCURSES_CFLAGS
+ target_include_directories(httping PUBLIC ${NCURSES_INCLUDE_DIRS})
+ target_compile_options(httping PUBLIC ${NCURSES_CFLAGS_OTHER})
+ 
++if (USE_FFTW)
+ pkg_check_modules(FFTW3 fftw3)
+ target_link_libraries(httping ${FFTW3_LIBRARIES})
+ target_include_directories(httping PUBLIC ${FFTW3_INCLUDE_DIRS})
+ target_compile_options(httping PUBLIC ${FFTW3_CFLAGS_OTHER})
++endif ()
+ endif ()
+ 
+ pkg_check_modules(SSL libssl)

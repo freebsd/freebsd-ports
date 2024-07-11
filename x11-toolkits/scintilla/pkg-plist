@@ -1,9 +1,10 @@
 include/scintilla/ILexer.h
 include/scintilla/ILoader.h
-include/scintilla/Platform.h
 include/scintilla/Sci_Position.h
-include/scintilla/SciLexer.h
 include/scintilla/Scintilla.h
+include/scintilla/ScintillaCall.h
+include/scintilla/ScintillaMessages.h
+include/scintilla/ScintillaStructures.h
+include/scintilla/ScintillaTypes.h
 include/scintilla/ScintillaWidget.h
-lib/liblexilla.so
 lib/libscintilla.so

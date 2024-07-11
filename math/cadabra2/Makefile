@@ -1,5 +1,5 @@
 PORTNAME=	cadabra2
-DISTVERSION=	2.4.5.7
+DISTVERSION=	2.5.2-20240616
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,6 +14,7 @@ BROKEN_FreeBSD_15=	compilation fails with clang-17, see https://github.com/kpeet
 BUILD_DEPENDS=	${LOCALBASE}/include/websocketpp/client.hpp:devel/websocketpp
 LIB_DEPENDS=	${PY_BOOST} \
 		libboost_system.so:devel/boost-libs \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz \
 		libpcrecpp.so:devel/pcre \
 		libjsoncpp.so:devel/jsoncpp \
@@ -28,6 +29,8 @@ USE_TEX=	base latex texhash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kpeeters
+GH_TAGNAME=	95ca296 # 2.5.2 + fixes for the microtex library
+GH_TUPLE=	kpeeters:MicroTeX:d68cf35:microtex/submodules/microtex
 
 DOS2UNIX_FILES=	cmake/version.cmake
 

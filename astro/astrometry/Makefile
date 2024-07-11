@@ -1,6 +1,5 @@
 PORTNAME=	astrometry
-PORTVERSION=	0.94
-PORTREVISION=	1
+PORTVERSION=	0.95
 CATEGORIES=	astro
 MASTER_SITES=	https://github.com/dstndstn/${PORTNAME}.net/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}.net-${PORTVERSION}
@@ -14,7 +13,8 @@ LICENSE=	GPLv3+
 BROKEN_armv6=		fails to link: os-features-test.c:10: undefined symbol 'canonicalize_file_name'
 BROKEN_armv7=		fails to link: os-features-test.c:10: undefined symbol 'canonicalize_file_name'
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYNUMPY}
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libcfitsio.so:astro/cfitsio \
 		libgsl.so:math/gsl \
@@ -66,6 +66,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libastrometry.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_LIBDIR}/astrometry/solver/_solver${PYTHON_EXT_SUFFIX}.so
 	@${REINPLACE_CMD} -i '' \
 		-e 's|${STAGEDIR}/usr/local/data|${DATADIR}|' \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.cfg

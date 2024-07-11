@@ -1,4 +1,2 @@
 actionpack-xml_parser is an XML parameters parser for Action Pack (removed from
 core in Rails 4.0).
-
-See also: https://rubyonrails.org/

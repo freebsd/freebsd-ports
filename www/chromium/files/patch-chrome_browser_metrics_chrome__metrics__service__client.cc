@@ -1,4 +1,4 @@
---- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2024-05-21 18:07:39 UTC
+--- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2024-06-17 12:56:06 UTC
 +++ chrome/browser/metrics/chrome_metrics_service_client.cc
 @@ -195,7 +195,7 @@
  #include "chrome/notification_helper/notification_helper_constants.h"
@@ -18,7 +18,7 @@
  #include "chrome/browser/metrics/bluetooth_metrics_provider.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
-@@ -574,7 +574,7 @@ void ChromeMetricsServiceClient::RegisterPrefs(PrefReg
+@@ -534,7 +534,7 @@ void ChromeMetricsServiceClient::RegisterPrefs(PrefReg
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -27,7 +27,7 @@
    metrics::structured::StructuredMetricsService::RegisterPrefs(registry);
  
  #if !BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -746,7 +746,7 @@ void ChromeMetricsServiceClient::Initialize() {
+@@ -706,7 +706,7 @@ void ChromeMetricsServiceClient::Initialize() {
      RegisterUKMProviders();
    }
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -36,7 +36,7 @@
    metrics::structured::Recorder::GetInstance()->SetUiTaskRunner(
        base::SequencedTaskRunner::GetCurrentDefault());
  #endif
-@@ -797,7 +797,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -757,7 +757,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<metrics::CPUMetricsProvider>());
  
@@ -45,8 +45,8 @@
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<metrics::MotherboardMetricsProvider>());
  #endif
-@@ -882,7 +882,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+@@ -842,7 +842,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+ // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
 -    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
@@ -54,7 +54,7 @@
    metrics_service_->RegisterMetricsProvider(
        std::make_unique<DesktopPlatformFeaturesMetricsProvider>());
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || (BUILDFLAG(IS_LINUX) ||
-@@ -984,7 +984,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
+@@ -944,7 +944,7 @@ void ChromeMetricsServiceClient::RegisterMetricsServic
        std::make_unique<PowerMetricsProvider>());
  #endif
  
@@ -63,8 +63,8 @@
    metrics_service_->RegisterMetricsProvider(
        metrics::CreateDesktopSessionMetricsProvider());
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || (BUILDFLAG(IS_LINUX)
-@@ -1167,7 +1167,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+@@ -1131,7 +1131,7 @@ bool ChromeMetricsServiceClient::RegisterForProfileEve
+ // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
 -    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
@@ -72,7 +72,7 @@
    // This creates the DesktopProfileSessionDurationsServices if it didn't exist
    // already.
    metrics::DesktopProfileSessionDurationsServiceFactory::GetForBrowserContext(
-@@ -1514,7 +1514,7 @@ void ChromeMetricsServiceClient::CreateStructuredMetri
+@@ -1465,7 +1465,7 @@ void ChromeMetricsServiceClient::CreateStructuredMetri
    recorder =
        std::make_unique<metrics::structured::AshStructuredMetricsRecorder>(
            cros_system_profile_provider_.get());

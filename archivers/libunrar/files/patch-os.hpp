@@ -1,10 +1,10 @@
---- os.hpp.orig	2023-01-17 16:25:54 UTC
+--- os.hpp.orig	2024-05-12 10:19:01 UTC
 +++ os.hpp
-@@ -173,6 +173,10 @@
- #include <locale.h>
+@@ -166,6 +166,10 @@
+ #endif
+ #endif
  
- 
-+#ifdef OPENSSL_AES
++#if defined(OPENSSL_AES)
 +#include <openssl/evp.h>
 +#endif // OPENSSL_AES
 +

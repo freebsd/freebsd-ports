@@ -1,6 +1,6 @@
---- ext/sqlite3/extconf.rb.orig	2023-04-08 07:40:49 UTC
+--- ext/sqlite3/extconf.rb.orig	2024-05-22 11:16:02 UTC
 +++ ext/sqlite3/extconf.rb
-@@ -130,8 +130,6 @@ module Sqlite3
+@@ -136,8 +136,6 @@ module Sqlite3
        end
  
        def minimal_recipe

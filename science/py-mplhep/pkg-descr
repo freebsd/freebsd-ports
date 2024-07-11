@@ -1,0 +1,3 @@
+mplhep is a set of helpers for matplotlib to more easily produce plots typically
+needed in HEP as well as style them in way that's compatible with current
+collaboration requirements (ROOT-like plots for CMS, ATLAS, LHCb, ALICE).

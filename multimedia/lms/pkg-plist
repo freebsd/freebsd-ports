@@ -36,6 +36,7 @@ lib/liblmssubsonic.so
 %%DATADIR%%/approot/messages.xml
 %%DATADIR%%/approot/messages_fr.xml
 %%DATADIR%%/approot/messages_it.xml
+%%DATADIR%%/approot/messages_pl.xml
 %%DATADIR%%/approot/messages_zh.xml
 %%DATADIR%%/approot/misc.xml
 %%DATADIR%%/approot/notifications.xml

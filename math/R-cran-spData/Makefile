@@ -1,5 +1,5 @@
 PORTNAME=	spData
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -9,9 +9,7 @@ WWW=		https://cran.r-project.org/web/packages/spData/
 
 LICENSE=	CC0-1.0
 
-CRAN_DEPENDS=	R-cran-sp>0:math/R-cran-sp
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	R-cran-sp>0:math/R-cran-sp
 
 USES=		cran:auto-plist
 

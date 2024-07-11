@@ -16,8 +16,7 @@ include/libaccounts-glib/libaccounts-glib.h
 lib/girepository-1.0/Accounts-1.0.typelib
 lib/libaccounts-glib.so
 lib/libaccounts-glib.so.0
-lib/libaccounts-glib.so.1.25
-%%PYTHON_SITELIBDIR%%/gi/overrides/Accounts.py
+lib/libaccounts-glib.so.1.27
 libdata/pkgconfig/libaccounts-glib.pc
 share/dbus-1/interfaces/com.google.code.AccountsSSO.Accounts.Manager.xml
 share/gettext/its/accounts-application.its

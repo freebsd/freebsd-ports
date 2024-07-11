@@ -1,7 +1,6 @@
 PORTNAME=	screensaver.stars
-PORTVERSION=	20.1.0
-DISTVERSIONSUFFIX=	-Nexus
-PORTREVISION=	1
+PORTVERSION=	21.0.0.20240219
+DISTVERSIONSUFFIX=	-Omega
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
@@ -13,6 +12,7 @@ LICENSE=	GPLv2+
 USES=		cmake compiler:c++14-lang gl kodi
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
+GH_TAGNAME=	e31111555b41692fd373719a9ba74aba3e7f4790
 USE_CXXSTD=	c++14
 USE_GL=		egl gl glu
 

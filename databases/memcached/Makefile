@@ -1,5 +1,5 @@
 PORTNAME=	memcached
-DISTVERSION=	1.6.27
+DISTVERSION=	1.6.28
 CATEGORIES=	databases
 MASTER_SITES=	http://www.memcached.org/files/ \
 		GENTOO

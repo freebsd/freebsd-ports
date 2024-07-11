@@ -1,6 +1,6 @@
 PORTNAME=	seafile-gui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.0.4
+DISTVERSION=	9.0.6
 CATEGORIES=	net-mgmt devel
 
 MAINTAINER=	ultima@FreeBSD.org

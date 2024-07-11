@@ -1,6 +1,6 @@
---- headless/lib/browser/headless_request_context_manager.cc.orig	2024-02-25 20:22:18 UTC
+--- headless/lib/browser/headless_request_context_manager.cc.orig	2024-06-22 08:49:42 UTC
 +++ headless/lib/browser/headless_request_context_manager.cc
-@@ -64,7 +64,7 @@ void SetCryptKeyOnce(const base::FilePath& user_data_p
+@@ -66,7 +66,7 @@ void SetCryptKeyOnce(const base::FilePath& user_data_p
      return;
    done_once = true;
  

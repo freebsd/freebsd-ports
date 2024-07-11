@@ -1,5 +1,5 @@
 PORTNAME=	cego
-PORTVERSION=	2.49.0
+PORTVERSION=	2.49.4
 
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
@@ -31,8 +31,8 @@ PLIST_SUB+=	USER=${USERS}
 post-patch:
 	${REINPLACE_CMD} -e 's,-O3,,g' \
 		${WRKSRC}/src/Makefile.in \
-		${WRKSRC}/samples/cgplustest/Makefile.in \
-		${WRKSRC}/samples/cgwraptest/Makefile.in
+		${WRKSRC}/cgpluscheck/Makefile.in \
+		${WRKSRC}/cgwrapcheck/Makefile.in
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

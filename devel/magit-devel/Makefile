@@ -1,7 +1,8 @@
 PORTNAME=	magit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.0-959
-DISTVERSIONSUFFIX=	-g7c794201
+DISTVERSION=	3.3.0-995
+PORTREVISION=	2
+DISTVERSIONSUFFIX=	-gf9268a95
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
 
@@ -12,11 +13,11 @@ WWW=		https://magit.vc/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=29.1.3.4:misc/compat.el@${EMACS_FLAVOR} \
+BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=29.1.4.5:misc/compat.el@${EMACS_FLAVOR} \
 		dash.el${EMACS_PKGNAMESUFFIX}>=2.19.1:devel/dash.el@${EMACS_FLAVOR} \
 		transient-devel${EMACS_PKGNAMESUFFIX}>=0.4.3:devel/transient-devel@${EMACS_FLAVOR} \
 		with-editor-devel${EMACS_PKGNAMESUFFIX}>=3.3.2:editors/with-editor-devel@${EMACS_FLAVOR}
-RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=29.1.3.4:misc/compat.el@${EMACS_FLAVOR} \
+RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=29.1.4.5:misc/compat.el@${EMACS_FLAVOR} \
 		dash.el${EMACS_PKGNAMESUFFIX}>=2.19.1:devel/dash.el@${EMACS_FLAVOR} \
 		transient-devel${EMACS_PKGNAMESUFFIX}>=0.4.3:devel/transient-devel@${EMACS_FLAVOR} \
 		with-editor-devel${EMACS_PKGNAMESUFFIX}>=3.3.2:editors/with-editor-devel@${EMACS_FLAVOR}

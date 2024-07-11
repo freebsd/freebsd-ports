@@ -6,6 +6,7 @@ include/mstore/mstore_but14diol.mod
 include/mstore/mstore_data_collection.mod
 include/mstore/mstore_data_record.mod
 include/mstore/mstore_data_store.mod
+include/mstore/mstore_f_block.mod
 include/mstore/mstore_heavy28.mod
 include/mstore/mstore_ice10.mod
 include/mstore/mstore_il16.mod
@@ -21,5 +22,5 @@ lib/cmake/mstore/mstore-targets.cmake
 lib/cmake/mstore/mstore-utils.cmake
 lib/libmstore.so
 lib/libmstore.so.0
-lib/libmstore.so.0.2.0
+lib/libmstore.so.0.3.0
 libdata/pkgconfig/mstore.pc

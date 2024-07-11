@@ -1,6 +1,6 @@
---- third_party/ffmpeg/libavutil/x86/x86inc.asm.orig	2023-07-24 14:27:53 UTC
+--- third_party/ffmpeg/libavutil/x86/x86inc.asm.orig	2024-06-25 12:08:48 UTC
 +++ third_party/ffmpeg/libavutil/x86/x86inc.asm
-@@ -53,6 +53,12 @@
+@@ -46,6 +46,12 @@
      %endif
  %endif
  
@@ -13,7 +13,7 @@
  %define WIN64  0
  %define UNIX64 0
  %if ARCH_X86_64
-@@ -768,6 +774,7 @@ BRANCH_INSTR jz, je, jnz, jne, jl, jle, jnl, jnle, jg,
+@@ -861,6 +867,7 @@ BRANCH_INSTR jz, je, jnz, jne, jl, jle, jnl, jnle, jg,
      %endif
      align function_align
      %2:

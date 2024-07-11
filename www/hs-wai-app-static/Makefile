@@ -1,118 +1,122 @@
 PORTNAME=	wai-app-static
-PORTVERSION=	3.1.8
+PORTVERSION=	3.1.9
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	WAI application for static serving
-WWW=		https://www.yesodweb.com/book/web-application-interface
+WWW=		https://www.yesodweb.com/book/web-application-interface/
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cabal
 
 USE_CABAL=	HUnit-1.6.2.0 \
-		OneTuple-0.4.1.1_1 \
-		QuickCheck-2.14.3 \
+		OneTuple-0.4.2 \
+		QuickCheck-2.15.0.1 \
 		StateVar-1.2.2 \
-		aeson-2.2.1.0_1 \
-		ansi-terminal-1.0.2 \
-		ansi-terminal-types-0.11.5_1 \
+		aeson-2.2.2.0_1 \
+		ansi-terminal-1.1.1 \
+		ansi-terminal-types-1.1 \
 		appar-0.1.8 \
 		asn1-encoding-0.9.6_2 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
-		assoc-1.1_1 \
-		async-2.2.5 \
+		assoc-1.1.1 \
+		async-2.2.5_1 \
 		attoparsec-0.14.4_5 \
-		auto-update-0.1.6 \
-		base-orphans-0.9.1 \
+		auto-update-0.2.0 \
+		base-orphans-0.9.2 \
 		base64-bytestring-1.2.1.0_1 \
 		basement-0.0.16 \
-		bifunctors-5.6.1_2 \
+		bifunctors-5.6.2 \
 		blaze-builder-0.4.2.3 \
-		blaze-html-0.9.1.2_4 \
+		blaze-html-0.9.2.0 \
 		blaze-markup-0.8.3.0_1 \
 		bsb-http-chunked-0.0.0.4_4 \
 		byteorder-1.0.4 \
 		cabal-doctest-1.0.9_3 \
 		call-stack-0.4.0 \
 		case-insensitive-1.2.1.0 \
+		character-ps-0.1 \
 		colour-2.3.6 \
 		comonad-5.0.8_2 \
 		contravariant-1.5.5 \
-		cookie-0.4.6 \
-		crypton-0.34 \
-		crypton-x509-1.7.6_1 \
+		cookie-0.5.0 \
+		crypton-1.0.0 \
+		crypton-x509-1.7.7 \
 		data-default-class-0.1.2.0 \
-		data-fix-0.3.2_5 \
+		data-fix-0.3.3 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0_1 \
 		easy-file-0.2.5 \
-		fast-logger-3.2.2 \
+		fast-logger-3.2.3 \
 		file-embed-0.0.16.0 \
-		foldable1-classes-compat-0.1_4 \
-		generically-0.1.1_2 \
-		hashable-1.4.3.0_1 \
-		hourglass-0.2.12 \
-		hsc2hs-0.68.10_1 \
+		generically-0.1.1_3 \
+		hashable-1.4.4.0_1 \
+		hourglass-0.2.12_1 \
+		hsc2hs-0.68.10_2 \
 		http-date-0.0.11 \
+		http-semantics-0.0.1 \
 		http-types-0.12.4 \
-		http2-5.0.1 \
-		indexed-traversable-0.1.3 \
-		indexed-traversable-instances-0.1.1.2_2 \
-		integer-conversion-0.1.0.1_1 \
-		integer-logarithms-1.0.3.1_5 \
+		http2-5.2.2 \
+		indexed-traversable-0.1.4 \
+		indexed-traversable-instances-0.1.2 \
+		integer-conversion-0.1.1 \
+		integer-logarithms-1.0.3.1_6 \
 		iproute-1.7.12 \
 		memory-0.18.0 \
 		mime-types-0.1.2.0 \
-		network-3.1.4.0_1 \
+		network-3.2.0.0 \
 		network-byte-order-0.1.7 \
-		network-control-0.0.2 \
+		network-control-0.1.0 \
 		network-uri-2.6.4.2_1 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.4 \
 		optparse-applicative-0.18.1.0 \
+		os-string-2.0.3 \
 		pem-0.2.4 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
-		primitive-0.9.0.0 \
+		primitive-0.9.0.0_1 \
 		psqueues-0.2.8.0 \
-		random-1.2.1.1_1 \
+		random-1.2.1.2 \
 		recv-0.1.0 \
 		resourcet-1.3.0 \
 		safe-exceptions-0.1.7.4_1 \
-		scientific-0.3.7.0_7 \
-		semialign-1.3_1 \
-		semigroupoids-6.0.0.1_1 \
+		scientific-0.3.8.0 \
+		semialign-1.3.1 \
+		semigroupoids-6.0.1 \
 		simple-sendfile-0.2.32 \
-		splitmix-0.1.0.5 \
+		splitmix-0.1.0.5_1 \
 		streaming-commons-0.2.2.6_1 \
 		strict-0.5_1 \
-		tagged-0.8.8 \
-		text-iso8601-0.1_1 \
-		text-short-0.1.5_3 \
-		th-abstraction-0.6.0.0_1 \
-		th-compat-0.1.4_4 \
-		these-1.2_1 \
-		time-compat-1.9.6.1_6 \
-		time-manager-0.0.1 \
+		tagged-0.8.8_1 \
+		text-iso8601-0.1.1 \
+		text-short-0.1.6_1 \
+		th-abstraction-0.7.0.0 \
+		th-compat-0.1.5_2 \
+		these-1.2.1 \
+		time-compat-1.9.7 \
+		time-manager-0.1.0 \
 		transformers-compat-0.7.2 \
 		unix-compat-0.7.1 \
-		unix-time-0.4.11 \
+		unix-time-0.4.14 \
 		unliftio-0.2.25.0 \
 		unliftio-core-0.2.1.0_3 \
-		unordered-containers-0.2.20_1 \
-		uuid-types-1.0.5.1 \
-		vault-0.3.1.5_5 \
-		vector-0.13.1.0 \
-		vector-stream-0.1.0.1 \
+		unordered-containers-0.2.20_2 \
+		utf8-string-1.0.2 \
+		uuid-types-1.0.6 \
+		vault-0.3.1.5_7 \
+		vector-0.13.1.0_1 \
+		vector-stream-0.1.0.1_1 \
 		wai-3.2.4 \
-		wai-extra-3.1.14 \
+		wai-extra-3.1.15 \
 		wai-logger-2.4.0 \
-		warp-3.3.31 \
-		witherable-0.4.2_4 \
+		warp-3.4.1 \
+		witherable-0.5 \
 		word8-0.1.3 \
-		zlib-0.6.3.0_4
+		zlib-0.7.1.0
 
 CABAL_EXECUTABLES=	warp
 

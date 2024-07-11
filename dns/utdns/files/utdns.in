@@ -19,6 +19,7 @@ rcvar="${name}_enable"
 load_rc_config ${name}
 
 : ${utdns_enable:="NO"}
+: ${utdns_svcj_options:="net_basic"}
 : ${utdns_flags:=" -b -4 -p 53 0.0.0.0"}
 
 command="%%PREFIX%%/bin/${name}"

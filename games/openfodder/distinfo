@@ -1,7 +1,7 @@
-TIMESTAMP = 1693002763
-SHA256 (OpenFodder-openfodder-1.8.0_GH0.tar.gz) = c46c91e95df693084192f336c168dc14d677ff7630872eb2ad9dc016bf65c582
-SIZE (OpenFodder-openfodder-1.8.0_GH0.tar.gz) = 1470661
-SHA256 (OpenFodder-data-1.7.0_GH0.tar.gz) = a5d39084e4d0e272ac8fa86f931e86923b70e8f84d9c01de47f8f0cd96909124
-SIZE (OpenFodder-data-1.7.0_GH0.tar.gz) = 3384943
-SHA256 (OpenFodder-scripts-c6f3076_GH0.tar.gz) = 3fbb82605c8bfbc3404220cee2044c368f0f82cdf23f9adcb6144e7743cf9c71
-SIZE (OpenFodder-scripts-c6f3076_GH0.tar.gz) = 50622
+TIMESTAMP = 1717297432
+SHA256 (OpenFodder-openfodder-1.9.2_GH0.tar.gz) = 6c97d5f8b5e19d4cda03bfce8c4ab7429de461cf1fdfca805f951408270dd31c
+SIZE (OpenFodder-openfodder-1.9.2_GH0.tar.gz) = 1549207
+SHA256 (OpenFodder-data-1.8.0-1-g070a608_GH0.tar.gz) = c55082fece7fdc4fdb41ef5d77b3c73ead7adf967a7f604cb48b88bc67784b66
+SIZE (OpenFodder-data-1.8.0-1-g070a608_GH0.tar.gz) = 3351603
+SHA256 (OpenFodder-scripts-dad0473_GH0.tar.gz) = 80f33e96acade206203f37bfec325199f748c025f7015b8c59abaecbb984d32d
+SIZE (OpenFodder-scripts-dad0473_GH0.tar.gz) = 50736

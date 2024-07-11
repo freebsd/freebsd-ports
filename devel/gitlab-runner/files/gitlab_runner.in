@@ -30,6 +30,7 @@ load_rc_config $name
 : ${gitlab_runner_user:="gitlab-runner"}
 : ${gitlab_runner_group:="gitlab-runner"}
 : ${gitlab_runner_syslogtag:="gitlab-runner"}
+: ${gitlab_runner_svcj_options:="net_basic"}
 
 export HOME=${gitlab_runner_dir}
 export PATH=${PATH}:%%PREFIX%%/bin

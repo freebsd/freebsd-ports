@@ -1,6 +1,6 @@
 PORTNAME=	qpOASES
 DISTVERSION=	3.2.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 MASTER_SITES=	https://www.coin-or.org/download/source/${PORTNAME}/
 PKGNAMEPREFIX=	coin-or-

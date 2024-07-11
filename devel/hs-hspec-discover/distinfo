@@ -1,3 +1,3 @@
-TIMESTAMP = 1706634584
-SHA256 (cabal/hspec-discover-2.11.7/hspec-discover-2.11.7.tar.gz) = 2862b230bb45eb320dd985659b81b482de98f869f4ed88398555a6a7cd12d82a
-SIZE (cabal/hspec-discover-2.11.7/hspec-discover-2.11.7.tar.gz) = 6896
+TIMESTAMP = 1717151751
+SHA256 (cabal/hspec-discover-2.11.9/hspec-discover-2.11.9.tar.gz) = 176644f3ce2b2e6d3c17b4c0906eb66d365c3f007bc31d47adc11e9bcd049414
+SIZE (cabal/hspec-discover-2.11.9/hspec-discover-2.11.9.tar.gz) = 6894

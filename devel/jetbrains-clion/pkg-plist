@@ -2444,7 +2444,7 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-CL-241.15989.121
+%%DATADIR%%/lib/build-marker-CL-241.18034.45
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/ext/platform-main.jar
 %%DATADIR%%/lib/external-system-rt.jar
@@ -2613,8 +2613,8 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-1d06a55b98c1-91d5c284f522.ijx
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-1d06a55b98c1-91d5c284f522.txt
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-1d06a55b98c1-0b3e54e931b4.ijx
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-1d06a55b98c1-0b3e54e931b4.txt
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/diagnosticMessages.json
@@ -2797,6 +2797,8 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/javascript-plugin/reporting/cypress/cypressSuitNode.js
 %%DATADIR%%/plugins/javascript-plugin/reporting/cypress/cypressTestNode.d.ts
 %%DATADIR%%/plugins/javascript-plugin/reporting/cypress/cypressTestNode.js
+%%DATADIR%%/plugins/javascript-plugin/reporting/cypress/cypressUtils.d.ts
+%%DATADIR%%/plugins/javascript-plugin/reporting/cypress/cypressUtils.js
 %%DATADIR%%/plugins/javascript-plugin/reporting/playwright/playwrightReporter.d.ts
 %%DATADIR%%/plugins/javascript-plugin/reporting/playwright/playwrightReporter.js
 %%DATADIR%%/plugins/javascript-plugin/reporting/playwright/playwrightSuitNode.d.ts

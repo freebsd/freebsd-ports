@@ -1,5 +1,5 @@
-TIMESTAMP = 1715872647
-SHA256 (iqtree-iqtree2-v.2.3.4_GH0.tar.gz) = 35bdac31c5795e5c72e532c2a311aa8266c9d40e7d668ee84c3b6e975af318da
-SIZE (iqtree-iqtree2-v.2.3.4_GH0.tar.gz) = 6568572
-SHA256 (tothuhien-lsd2-26ba127_GH0.tar.gz) = 63226da0e326d9fc47c54e8e380d48e51e923ccc25bd7f286d49b9f49028d1c4
-SIZE (tothuhien-lsd2-26ba127_GH0.tar.gz) = 1079490
+TIMESTAMP = 1719861931
+SHA256 (iqtree-iqtree2-v2.3.5_GH0.tar.gz) = 8e323e0b7c46e97901d3500f11e810703e0e5d25848188047eca9602d03fa6b1
+SIZE (iqtree-iqtree2-v2.3.5_GH0.tar.gz) = 6644556
+SHA256 (tothuhien-lsd2-125720d9da1281642053713d9b094d5bff2ce9cf_GH0.tar.gz) = acab6984ceeb1e1c45f87bfb30cadd18c29b48088912e80521e8c875ce33a50b
+SIZE (tothuhien-lsd2-125720d9da1281642053713d9b094d5bff2ce9cf_GH0.tar.gz) = 592579

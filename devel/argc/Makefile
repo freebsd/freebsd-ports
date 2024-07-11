@@ -1,7 +1,6 @@
 PORTNAME=	argc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.17.0
-PORTREVISION=	1
+DISTVERSION=	1.19.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,12 +18,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sigoden
 
 CARGO_CRATES=	aho-corasick-1.1.3 \
-		anstyle-1.0.6 \
-		anyhow-1.0.82 \
+		anstyle-1.0.7 \
+		anyhow-1.0.86 \
 		assert_cmd-2.0.14 \
 		assert_fs-1.1.1 \
-		autocfg-1.2.0 \
-		base64-0.22.0 \
+		autocfg-1.3.0 \
+		base64-0.22.1 \
 		bitflags-2.5.0 \
 		bstr-1.9.1 \
 		cfg-if-1.0.0 \
@@ -32,16 +31,16 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		convert_case-0.6.0 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
-		crossbeam-utils-0.8.19 \
+		crossbeam-utils-0.8.20 \
 		difflib-0.4.0 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
 		doc-comment-0.3.3 \
-		either-1.11.0 \
+		either-1.12.0 \
 		encode_unicode-0.3.6 \
 		equivalent-1.0.1 \
-		errno-0.3.8 \
-		fastrand-2.0.2 \
+		errno-0.3.9 \
+		fastrand-2.1.0 \
 		float-cmp-0.9.0 \
 		futures-0.3.30 \
 		futures-channel-0.3.30 \
@@ -53,77 +52,80 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		futures-task-0.3.30 \
 		futures-timer-3.0.3 \
 		futures-util-0.3.30 \
-		getrandom-0.2.14 \
+		getrandom-0.2.15 \
 		glob-0.3.1 \
 		globset-0.4.14 \
 		globwalk-0.9.1 \
-		hashbrown-0.14.3 \
+		hashbrown-0.14.5 \
 		hermit-abi-0.3.9 \
 		home-0.5.9 \
 		ignore-0.4.22 \
 		indexmap-2.2.6 \
-		insta-1.38.0 \
+		insta-1.39.0 \
 		itoa-1.0.11 \
 		lazy_static-1.4.0 \
-		libc-0.2.153 \
+		libc-0.2.155 \
 		libredox-0.1.3 \
 		linked-hash-map-0.5.6 \
-		linux-raw-sys-0.4.13 \
+		linux-raw-sys-0.4.14 \
 		log-0.4.21 \
 		memchr-2.7.2 \
 		minimal-lexical-0.2.1 \
 		natord-1.0.9 \
 		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
-		num-traits-0.2.18 \
+		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
+		once_cell-1.19.0 \
 		option-ext-0.2.0 \
+		path-absolutize-3.1.1 \
+		path-dedot-3.1.1 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		predicates-3.1.0 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
-		proc-macro2-1.0.80 \
+		proc-macro-crate-3.1.0 \
+		proc-macro2-1.0.84 \
 		quote-1.0.36 \
 		redox_users-0.4.5 \
 		regex-1.10.4 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.8.3 \
-		relative-path-1.9.2 \
+		relative-path-1.9.3 \
 		roff-0.2.1 \
-		rstest-0.19.0 \
-		rstest_macros-0.19.0 \
+		rstest-0.21.0 \
+		rstest_macros-0.21.0 \
 		rustc_version-0.4.0 \
-		rustix-0.38.32 \
-		ryu-1.0.17 \
+		rustix-0.38.34 \
+		ryu-1.0.18 \
 		same-file-1.0.6 \
-		semver-1.0.22 \
-		serde-1.0.197 \
-		serde_derive-1.0.197 \
-		serde_json-1.0.116 \
+		semver-1.0.23 \
+		serde-1.0.203 \
+		serde_derive-1.0.203 \
+		serde_json-1.0.117 \
 		shell-words-1.1.0 \
 		similar-2.5.0 \
 		slab-0.4.9 \
 		smawk-0.3.2 \
-		syn-2.0.59 \
+		syn-2.0.66 \
 		tempfile-3.10.1 \
 		termtree-0.4.1 \
 		textwrap-0.16.1 \
-		thiserror-1.0.58 \
-		thiserror-impl-1.0.58 \
+		thiserror-1.0.61 \
+		thiserror-impl-1.0.61 \
 		threadpool-1.8.1 \
+		toml_datetime-0.6.6 \
+		toml_edit-0.21.1 \
 		unicode-ident-1.0.12 \
 		unicode-linebreak-0.1.5 \
 		unicode-segmentation-1.11.0 \
-		unicode-width-0.1.11 \
+		unicode-width-0.1.12 \
 		wait-timeout-0.2.0 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		which-6.0.1 \
-		winapi-0.3.9 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.6 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.8 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
@@ -143,6 +145,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.5 \
+		winnow-0.5.40 \
 		winsafe-0.0.19
 
 PLIST_FILES=	bin/${PORTNAME}

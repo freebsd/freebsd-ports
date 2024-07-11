@@ -11,6 +11,9 @@ WWW=		http://epos.ufe.cz/
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi
 
+DEPRECATED=	Abandonware, last release in 2006 and upstream is dead
+EXPIRATION_DATE=2024-07-31
+
 USES=		gmake
 USE_CXXSTD=	gnu++98
 GNU_CONFIGURE=	yes

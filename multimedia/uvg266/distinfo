@@ -1,7 +1,5 @@
-TIMESTAMP = 1695797225
-SHA256 (ultravideo-uvg266-v0.8.0_GH0.tar.gz) = 27e4306577fe646951bd3c12685c1527b41385bfcb95262233669fc7f44f21bd
-SIZE (ultravideo-uvg266-v0.8.0_GH0.tar.gz) = 967123
+TIMESTAMP = 1719827584
+SHA256 (ultravideo-uvg266-v0.8.1_GH0.tar.gz) = 9a2c68f94a1105058d1e654191036423d0a0fcf33b7e790dd63801997540b6ec
+SIZE (ultravideo-uvg266-v0.8.1_GH0.tar.gz) = 967192
 SHA256 (silentbicycle-greatest-v1.0.0_GH0.tar.gz) = 18ee57a34869c6f6ce511cd71a5cc8661801cf69d64c4c66ff76773835df659b
 SIZE (silentbicycle-greatest-v1.0.0_GH0.tar.gz) = 11959
-SHA256 (e5e32d67f43b.patch) = c391c68aa50ceb46ce630cb3c622e6881ae1f89635ad7906336d59a220cf1c2a
-SIZE (e5e32d67f43b.patch) = 744

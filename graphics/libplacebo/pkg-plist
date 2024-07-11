@@ -33,5 +33,5 @@ include/libplacebo/utils/libav_internal.h
 include/libplacebo/utils/upload.h
 include/libplacebo/vulkan.h
 lib/libplacebo.so
-lib/libplacebo.so.338
+lib/libplacebo.so.349
 libdata/pkgconfig/libplacebo.pc

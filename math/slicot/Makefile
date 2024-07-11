@@ -1,12 +1,12 @@
 PORTNAME=	SLICOT
-PORTVERSION=	5.8
+PORTVERSION=	5.9
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Fortran subroutines library for systems and control
-WWW=		http://slicot.org/
+WWW=		https://slicot.org/
 
 LICENSE=	BSD3CLAUSE
 
@@ -15,11 +15,13 @@ GH_PROJECT=	SLICOT-Reference
 
 USES=		blaslapack:openblas fortran
 
-WRKSRC_SUBDIR=	src
-PATCH_WRKSRC=	${WRKDIR}/${GH_PROJECT}-${PORTVERSION}
-MAKEFILE=	makefile
+BINARY_ALIAS=	gfortran=${FC}
+FFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+MAKEFILE=	makefile_Unix
 MAKE_ENV=	FORTRAN=${FC} OPTS="${FFLAGS} -fPIC" LOADER=${FC}	\
-		LOADOPTS="../src/libslicot.a ${FFLAGS} ${BLASLIB} ${LAPACKLIB}"
+		LOADOPTS="${WRKSRC}/slicot.a ${WRKSRC}/lpkaux.a ${LDFLAGS} ${BLASLIB} ${LAPACKLIB}"
+MAKE_JOBS_UNSAFE=yes
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
@@ -27,18 +29,11 @@ PORTDOCS=	*
 
 post-build:
 	(cd ${WRKSRC} &&	\
-	${AR} ${ARFLAGS} libslicot.a *.o &&	\
+	${CP} slicot.a libslicot.a &&	\
 	${FC} ${LDFLAGS} -shared -Wl,-soname=libslicot.so.0	\
-		-o libslicot.so.0.0 *.o ${BLASLIB} ${LAPACKLIB} &&	\
+		-o libslicot.so.0.0 src/*.o ${BLASLIB} ${LAPACKLIB} &&	\
 	${LN} -sf libslicot.so.0.0 libslicot.so.0 &&	\
 	${LN} -sf libslicot.so.0.0 libslicot.so)
-
-pre-configure-EXAMPLES-on:
-	${REINPLACE_CMD} -e 's|\\src\\|/src/|;s|\.obj|.o|g;s|\-exe:|-o |;s|exe;  T|exe;  ./T|'	\
-		${WRKSRC}/../examples/${MAKEFILE}
-
-post-build-EXAMPLES-on:
-	(cd ${WRKSRC}/../examples && ${DO_MAKE_BUILD} ${ALL_TARGET})
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib
@@ -52,17 +47,17 @@ do-install:
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in README.md libindex.html
-	${INSTALL_DATA} ${WRKSRC}/../${f} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-	cd ${WRKSRC}/.. && ${COPYTREE_SHARE} doc ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} doc ${STAGEDIR}${DOCSDIR}
 
 do-install-EXAMPLES-on:
-	${FIND} ${WRKSRC}/../examples -name "T*" -a ! -name "*\.*" |	\
+	${FIND} ${WRKSRC}/examples -name "T*" -a ! -name "*\.*" |	\
 		${XARGS} ${STRIP_CMD}
-	${RM} ${WRKSRC}/../examples/*.o ${WRKSRC}/../examples/makefile.bak	\
-		${WRKSRC}/../examples/makefile.orig
+	${RM} ${WRKSRC}/examples/*.o ${WRKSRC}/../examples/makefile.bak	\
+		${WRKSRC}/examples/makefile.orig
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/../examples &&	\
+	cd ${WRKSRC}/examples &&	\
 		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

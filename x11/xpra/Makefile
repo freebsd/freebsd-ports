@@ -1,6 +1,5 @@
 PORTNAME=	xpra
-PORTVERSION=	5.0.8
-PORTREVISION=	1
+PORTVERSION=	6.0.1
 CATEGORIES=	x11
 MASTER_SITES=	https://xpra.org/src/
 
@@ -10,7 +9,8 @@ WWW=		https://xpra.org/
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	pandoc:textproc/hs-pandoc
+BUILD_DEPENDS=	pandoc:textproc/hs-pandoc \
+		cython-${PYTHON_VER}:lang/cython3@${PY_FLAVOR}
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libbrotlidec.so:archivers/brotli \
 		libdrm.so:graphics/libdrm \
@@ -18,7 +18,8 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		liblz4.so:archivers/liblz4 \
 		libopenh264.so:multimedia/openh264 \
 		libwebp.so:graphics/webp \
-		libx264.so:multimedia/libx264
+		libx264.so:multimedia/libx264 \
+		libxxhash.so:devel/xxhash
 RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}bencode.py>1:converters/py-bencode.py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}brotli>1:archivers/py-brotli@${PY_FLAVOR} \
@@ -41,7 +42,7 @@ USES=		desktop-file-utils gettext-runtime gnome localbase pkgconfig \
 		python shared-mime-info shebangfix tar:xz xorg
 
 USE_GNOME=	cairo gdkpixbuf2 gtk30 pygobject3
-USE_PYTHON=	cryptography cython distutils noflavors
+USE_PYTHON=	cryptography distutils noflavors
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xkbfile xrandr xres xtst
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		PYTHON_SUFFIX=${PYTHON_SUFFIX} \
@@ -51,7 +52,7 @@ SHEBANG_FILES=	fs/lib/cups/backend/xpraforwarder fs/libexec/xpra/auth_dialog \
 		fs/libexec/xpra/xdg-open fs/libexec/xpra/xpra_signal_listener \
 		fs/libexec/xpra/xpra_udev_product_version
 
-OPTIONS_DEFINE=		AVAHI CUPS DOCS GSTREAMER LIBYUV SWSCALE \
+OPTIONS_DEFINE=		AVAHI CUPS DOCS GSTREAMER LIBYUV \
 			WEBCAM
 OPTIONS_DEFAULT=	AVAHI CUPS GSTREAMER
 OPTIONS_SUB=		yes
@@ -61,7 +62,6 @@ CUPS_DESC=	Enable CUPS for printer forwarding
 FFMPEG_DESC=	Enable FFmpeg encoder
 GSTREAMER_DESC=	Enable GStreamer for sound forwarding
 LIBYUV_DESC=	Enable libyuv CSC module (fastest)
-SWSCALE_DESC=	Enable swscale (FFmpeg) CSC module
 WEBCAM_DESC=	Enable webcam forwarding (client only)
 
 AVAHI_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}avahi>0:net/py-avahi@${PY_FLAVOR}
@@ -75,12 +75,11 @@ GSTREAMER_USE=			GSTREAMER=flac,lame,mpg123,ogg,opus,pulse,vorbis,wavpack
 GSTREAMER_VARS=			XPRA_OPTIONS+=sound
 LIBYUV_LIB_DEPENDS=		libyuv.so:graphics/libyuv
 LIBYUV_VARS=			XPRA_OPTIONS+=csc_libyuv
-SWSCALE_VARS=			XPRA_OPTIONS+=csc_swscale
 WEBCAM_RUN_DEPENDS=		opencv>2:graphics/opencv
 WEBCAM_VARS=			XPRA_OPTIONS+=webcam
 
 PYDISTUTILS_PKGNAME=	xpra_all
-XPRA_OPTIONS_ALL+=	${XPRA_OPTIONS_DISABLED} csc_libyuv csc_swscale \
+XPRA_OPTIONS_ALL+=	${XPRA_OPTIONS_DISABLED} csc_libyuv \
 			enc_x264 \
 			mdns printing vpx webcam
 XPRA_OPTIONS=		dec_avcodec2 enc_ffmpeg enc_x264

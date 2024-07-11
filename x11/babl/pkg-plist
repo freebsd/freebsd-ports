@@ -25,6 +25,7 @@ lib/babl-%%BABL_VER%%/cairo.so
 lib/babl-%%BABL_VER%%/double.so
 lib/babl-%%BABL_VER%%/fast-float.so
 lib/babl-%%BABL_VER%%/float.so
+lib/babl-%%BABL_VER%%/formats.so
 lib/babl-%%BABL_VER%%/gegl-fixups.so
 lib/babl-%%BABL_VER%%/gggl-lies.so
 lib/babl-%%BABL_VER%%/gggl-table-lies.so

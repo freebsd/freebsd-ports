@@ -13,12 +13,19 @@ It is required to read the EULA, and then set eula=true
 Without daemon option:
 - To run the server, run %%PREFIX%%/bin/minecraft-server
 - To edit java's parameters, edit %%ETCDIR%%/java-args.txt
+- To run with a specific version of Java, set environment variable JAVA_VERSION,
+  for example:
+    export JAVA_VERSION=22
+    %%PREFIX%%/bin/minecraft-server
+  or:
+    JAVA_VERSION=22 %%PREFIX%%/bin/minecraft-server
 
 With daemon option:
 - The service has been installed with the name 'minecraft'
 - To adjust maximum memory usage (-Xmx), use minecraft_memx= in /etc/rc.conf
 - To adjust initial memory usage (-Xms), use minecraft_mems= in /etc/rc.conf
 - To add other java parameters, use minecraft_args= in /etc/rc.conf
+- To run with a specific version of Java, use minecraft_java_version= in /etc/rc.conf
 - To see the interactive console, type service minecraft console
 EOM
 }

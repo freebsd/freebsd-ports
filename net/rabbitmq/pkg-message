@@ -1,0 +1,24 @@
+[
+{ type: upgrade
+  message: <<EOM
+In preparation for upgrading to future RabbitMQ releases, users *must*
+enable all feature flags before upgrading stepwise to v3.12.13, to be
+able to migrate later to v3.13.0 when it is released in 2024Q2.
+
+See https://www.rabbitmq.com/docs/upgrade for details.
+EOM
+}
+{ type: install
+  message: <<EOM
+First-time users will want to run:
+
+rabbitmq-plugins enable rabbitmq_management
+
+and restart, to enable the web admin console at http://localhost:15672/
+with a default username and password of guest:guest. You should change it..
+
+See https://www.rabbitmq.com/docs for install help, and
+https://www.rabbitmq.com/docs/configure for further options.
+EOM
+}
+]

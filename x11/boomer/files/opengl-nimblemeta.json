@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "metaData": {
+    "url": "https://github.com/nim-lang/opengl",
+    "downloadMethod": "git",
+    "vcsRevision": "8e2e098f82dc5eefd874488c37b5830233cd18f4",
+    "files": [
+      "/opengl/private/types.nim",
+      "/opengl.nim",
+      "/opengl/glu.nim",
+      "/opengl/glut.nim",
+      "/opengl.nimble",
+      "/opengl/private/errors.nim",
+      "/opengl/private/prelude.nim",
+      "/opengl/wingl.nim",
+      "/opengl/private/constants.nim",
+      "/opengl/glx.nim",
+      "/opengl/private/procs.nim"
+    ],
+    "binaries": [],
+    "specialVersions": [
+      "1.2.9"
+    ]
+  }
+}

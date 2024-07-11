@@ -1,5 +1,5 @@
 PORTNAME=	devise-two-factor
-PORTVERSION=	5.0.0
+PORTVERSION=	5.1.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails70

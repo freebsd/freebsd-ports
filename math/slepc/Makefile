@@ -1,5 +1,6 @@
 PORTNAME=	slepc
 DISTVERSION=	3.21.1
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	http://slepc.upv.es/download/distrib/
 
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libmpich.so:net/mpich \
 		libpetsc.so:science/PETSc
 
-USES=		gmake fortran python:3.9 shebangfix xorg
+USES=		gmake fortran python shebangfix xorg
 USE_XORG=	x11 # not really needed, but is inherited from the PETSc setup
 USE_LDCONFIG=	yes
 

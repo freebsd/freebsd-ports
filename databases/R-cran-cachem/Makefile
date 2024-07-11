@@ -1,5 +1,5 @@
 PORTNAME=	cachem
-PORTVERSION=	1.0.8
+PORTVERSION=	1.1.0
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -9,7 +9,7 @@ WWW=		https://cran.r-project.org/web/packages/cachem/
 
 LICENSE=	MIT
 
-CRAN_DEPENDS=	R-cran-fastmap>=1.1.1:databases/R-cran-fastmap \
+CRAN_DEPENDS=	R-cran-fastmap>=1.2.0:databases/R-cran-fastmap \
 		R-cran-rlang>0:devel/R-cran-rlang
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}

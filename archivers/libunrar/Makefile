@@ -1,5 +1,5 @@
 PORTNAME=	libunrar
-PORTVERSION=	6.2.12
+PORTVERSION=	7.0.9
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
@@ -24,7 +24,7 @@ MAKE_ARGS=	AR="${AR}" \
 		CXXFLAGS="${CXXFLAGS} -fPIC" \
 		LDFLAGS="-Wl,-soname,${SONAME} -pthread ${LDFLAGS}" \
 		STRIP="${STRIP_CMD}"
-SONAME=		libunrar.so.6
+SONAME=		libunrar.so.${PORTVERSION:R:R}
 WRKSRC=		${WRKDIR}/unrar
 
 OPTIONS_DEFINE=		OPENSSL_AES

@@ -1,6 +1,6 @@
 PORTNAME=	phpvirtualbox
 DISTVERSION=	5.2-1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 PKGNAMESUFFIX=	-legacy
 
@@ -22,7 +22,8 @@ DOS2UNIX_REGEX=	.*\.(php|txt|js|css|html)
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 ETCDIR=		${WWWDIR}
 
-EXTRA_PATCHES+=	${.CURDIR}/../phpvirtualbox/files/patch-php8
+EXTRA_PATCHES+=	${.CURDIR}/../phpvirtualbox/files/patch-php8 \
+		${.CURDIR}/../phpvirtualbox/files/patch-panes_mediumEncryptionPasswords.html
 
 post-patch:
 	@${MV} ${WRKSRC}/phpvirtualbox.conf ${WRKSRC}/phpvirtualbox-legacy.conf

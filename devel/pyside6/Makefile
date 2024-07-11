@@ -5,9 +5,6 @@ MASTER_SITES=	QT/official_releases/QtForPython/shiboken6/PySide6-${DISTVERSION}-
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyside-setup-everywhere-src-${DISTVERSION}
 
-PATCH_SITES=	https://github.com/qtproject/pyside-pyside-setup/commit/
-PATCHFILES+=	3b2ad15ec75b082699dbde6c695c19b467eb0008.patch:-p1 # Adapt to revert of QAudio->QtAudio namespace renaming
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python Qt bindings for Qt 6
 WWW=		https://wiki.qt.io/Qt_for_Python

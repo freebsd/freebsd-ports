@@ -1,4 +1,4 @@
---- ui/gfx/font_render_params_linux.cc.orig	2022-10-05 07:34:01 UTC
+--- ui/gfx/font_render_params_linux.cc.orig	2024-06-25 12:08:48 UTC
 +++ ui/gfx/font_render_params_linux.cc
 @@ -25,7 +25,7 @@
  #include "ui/gfx/linux/fontconfig_util.h"
@@ -15,6 +15,6 @@
    FontRenderParams params;
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   if (const auto* linux_ui = ui::LinuxUi::instance())
+   if (auto* linux_ui = ui::LinuxUi::instance()) {
      params = linux_ui->GetDefaultFontRenderParams();
- #endif
+   }

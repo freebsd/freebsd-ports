@@ -33,6 +33,7 @@ share/bash-completion/completions/copyq
 %%DATADIR%%/translations/copyq_fa.qm
 %%DATADIR%%/translations/copyq_fi.qm
 %%DATADIR%%/translations/copyq_fr.qm
+%%DATADIR%%/translations/copyq_he.qm
 %%DATADIR%%/translations/copyq_hr.qm
 %%DATADIR%%/translations/copyq_hu.qm
 %%DATADIR%%/translations/copyq_id.qm

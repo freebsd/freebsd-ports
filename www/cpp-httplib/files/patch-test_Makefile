@@ -1,13 +1,13 @@
---- test/Makefile.orig	2022-06-07 13:52:08 UTC
+--- test/Makefile.orig	2024-06-11 22:20:47 UTC
 +++ test/Makefile
-@@ -1,5 +1,5 @@
+@@ -1,5 +1,5 @@ CXX = clang++
  CXX = clang++
 -CXXFLAGS = -g -std=c++11 -I. -Wall -Wextra -Wtype-limits -Wconversion -Wshadow # -fno-exceptions -DCPPHTTPLIB_NO_EXCEPTIONS -fsanitize=address
 +CXXFLAGS += -g -std=c++11 -I. -Wall -Wextra -Wtype-limits -Wconversion -Wshadow # -fno-exceptions -DCPPHTTPLIB_NO_EXCEPTIONS -fsanitize=address
  
- PREFIX = /usr/local
- #PREFIX = $(shell brew --prefix)
-@@ -30,15 +30,15 @@ proxy : test_proxy
+ PREFIX ?= $(shell brew --prefix)
+ 
+@@ -35,15 +35,15 @@ test : test.cc include_httplib.cc ../httplib.h Makefil
  	./test_proxy
  
  test : test.cc include_httplib.cc ../httplib.h Makefile cert.pem

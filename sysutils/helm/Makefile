@@ -1,5 +1,5 @@
 PORTNAME=	helm
-PORTVERSION=	3.14.4
+PORTVERSION=	3.15.2
 DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	sysutils
@@ -12,12 +12,12 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	kubectl:sysutils/kubectl
 
-USES=		cpe go:modules tar:xz
+USES=		cpe go:1.22,modules tar:xz
 
 GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}/v3
 GO_PKGNAME=	k8s.io/helm
 GO_BUILDFLAGS=	-ldflags="-X helm.sh/helm/v3/internal/version.version=v${PORTVERSION} \
-		-X helm.sh/helm/v3/internal/version.gitCommit=81c902a123462fd4052bc5e9aa9c513c4c8fc142"
+		-X helm.sh/helm/v3/internal/version.gitCommit=e211f2aa62992bd72586b395de50979e31231829"
 GO_TARGET=	./cmd/${PORTNAME}
 
 PLIST_FILES=	${GO_TARGET:C/.\/cmd/bin/}

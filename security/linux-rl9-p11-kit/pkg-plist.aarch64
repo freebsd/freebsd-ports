@@ -1,13 +1,13 @@
 usr/bin/p11-kit
 usr/bin/trust
-usr/lib/.build-id/5e/56378de152c9617351bc63b5d4f6b74aadc616
-usr/lib/.build-id/91/426333440f9255080866581c63a2f0922ee1fa
-usr/lib/.build-id/e2/cf9eb02162edb8c4b040114fcd4380328c206b
-usr/lib/.build-id/e3/68d1057a11e0644f416ba130368699849cf05a
-usr/lib/.build-id/f9/c6c968aa107763db72820aae9e7699312e3e24
+usr/lib/.build-id/80/dddaef39d2ae7a45d121f1c889b5820a7019fc
+usr/lib/.build-id/c5/4df42ec7e0908a645c3f073b9305ee40ebd490
+usr/lib/.build-id/ce/6782c450f1aa7ab942a1a4c625a32b224296d6
+usr/lib/.build-id/db/d4aabb7b24acc1a67ed55f0042a5aea9f1126c
+usr/lib/.build-id/f2/59f176057856fb65c6f5a4caf9a0fd717eb07d
 usr/lib64/libnssckbi.so
 usr/lib64/libp11-kit.so.0
-usr/lib64/libp11-kit.so.0.3.0
+usr/lib64/libp11-kit.so.0.3.1
 usr/lib64/p11-kit-proxy.so
 @rmtry usr/lib64/p11-kit-trust.so
 usr/lib64/pkcs11/p11-kit-trust.so
@@ -74,6 +74,7 @@ usr/share/licenses/p11-kit/COPYING
 %%NLS%%usr/share/locale/pt_BR/LC_MESSAGES/p11-kit.mo
 %%NLS%%usr/share/locale/ro/LC_MESSAGES/p11-kit.mo
 %%NLS%%usr/share/locale/ru/LC_MESSAGES/p11-kit.mo
+%%NLS%%usr/share/locale/si/LC_MESSAGES/p11-kit.mo
 %%NLS%%usr/share/locale/sk/LC_MESSAGES/p11-kit.mo
 %%NLS%%usr/share/locale/sl/LC_MESSAGES/p11-kit.mo
 %%NLS%%usr/share/locale/sq/LC_MESSAGES/p11-kit.mo

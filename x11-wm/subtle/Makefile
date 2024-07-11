@@ -28,7 +28,7 @@ post-patch:
 		${WRKSRC}/data/sur/server.rb
 	@${REINPLACE_CMD} -e 's,/etc/xdg,${LOCALBASE}&,' \
 		${WRKSRC}/src/subtle/ruby.c
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+.if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e '/cflags/s/-Wall/-Wall -Wno-error=incompatible-function-pointer-types /g' \
 		${WRKSRC}/Rakefile
 .endif

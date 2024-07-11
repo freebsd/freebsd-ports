@@ -5,6 +5,7 @@ lib/libinput.so.10
 lib/libinput.so.10.13.0
 libdata/pkgconfig/libinput.pc
 libexec/libinput/libinput-analyze
+libexec/libinput/libinput-analyze-buttons
 libexec/libinput/libinput-analyze-per-slot-delta
 libexec/libinput/libinput-analyze-recording
 libexec/libinput/libinput-analyze-touch-down-state
@@ -23,6 +24,7 @@ libexec/libinput/libinput-quirks
 libexec/libinput/libinput-record
 libexec/libinput/libinput-replay
 libexec/libinput/libinput-test
+share/man/man1/libinput-analyze-buttons.1.gz
 share/man/man1/libinput-analyze-per-slot-delta.1.gz
 share/man/man1/libinput-analyze-recording.1.gz
 share/man/man1/libinput-analyze-touch-down-state.1.gz
@@ -55,7 +57,9 @@ share/man/man1/libinput.1.gz
 %%DATADIR%%/30-vendor-cypress.quirks
 %%DATADIR%%/30-vendor-elantech.quirks
 %%DATADIR%%/30-vendor-glorious.quirks
+%%DATADIR%%/30-vendor-huion.quirks
 %%DATADIR%%/30-vendor-ibm.quirks
+%%DATADIR%%/30-vendor-ite.quirks
 %%DATADIR%%/30-vendor-kensington.quirks
 %%DATADIR%%/30-vendor-logitech.quirks
 %%DATADIR%%/30-vendor-madcatz.quirks
@@ -65,6 +69,7 @@ share/man/man1/libinput.1.gz
 %%DATADIR%%/30-vendor-razer.quirks
 %%DATADIR%%/30-vendor-synaptics.quirks
 %%DATADIR%%/30-vendor-trust.quirks
+%%DATADIR%%/30-vendor-uniwill.quirks
 %%DATADIR%%/30-vendor-vmware.quirks
 %%DATADIR%%/30-vendor-wacom.quirks
 %%DATADIR%%/50-system-acer.quirks

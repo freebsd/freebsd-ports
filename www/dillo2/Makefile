@@ -1,5 +1,6 @@
 PORTNAME=	dillo
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/dillo-browser/dillo/releases/download/v3.1.0/ \
 		LOCAL/bf/dillo/ \
@@ -48,7 +49,7 @@ COOKIES_CONFIGURE_ENABLE=	cookies
 IPV6_CONFIGURE_ENABLE=	ipv6
 
 JPEG_CONFIGURE_ENABLE=	jpeg
-JPEG_USES=		jpeg
+JPEG_USES=		jpeg localbase
 
 PNG_CONFIGURE_ENABLE=	png
 PNG_LIB_DEPENDS=	libpng.so:graphics/png

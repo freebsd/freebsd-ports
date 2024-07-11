@@ -1,17 +1,15 @@
 PORTNAME=	ircii
-PORTVERSION=	20210314
-PORTREVISION=	1
+PORTVERSION=	20240111
 CATEGORIES=	irc
-MASTER_SITES=	http://ircii.warped.com/
+MASTER_SITES=	https://ircii.warped.com/
 
 MAINTAINER=	andrew@tao11.riddles.org.uk
 COMMENT=	Small and high extensible IRC client
-WWW=		http://www.eterna.com.au/ircii/
+WWW=		http://www.eterna23.net/ircii/
 
 LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${STAGEDIR}/${PREFIX}/share
 CONFIGURE_ARGS=	--with-warnings
 DATADIR=	${PREFIX}/share/irc
 USES=		cpe iconv ncurses tar:bzip2
@@ -40,7 +38,8 @@ CPPFLAGS+=	-I${ICONV_PREFIX}/include
 LDFLAGS+=	-L${ICONV_PREFIX}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^LDFLAGS =/s/$$/ ${STRIP} ${ICONV_LIB}/' \
+	@${REINPLACE_CMD} -e '/^mandir =/s/@mandir@/$${DESTDIR}&/' \
+		-e '/^LDFLAGS =/s/$$/ ${STRIP} ${ICONV_LIB}/' \
 		-e '/^INCLUDES =/s|$$| -I${ICONV_PREFIX}/include -DHAVE_ICONV_OPEN|' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|PREFIX/|${PREFIX}/|' ${WRKSRC}/doc/ircII.1

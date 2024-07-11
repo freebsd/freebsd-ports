@@ -3250,7 +3250,6 @@ share/pixmaps/scribus.png
 %%DATADIR%%/profiles/sRGB_icc22.icm
 %%DATADIR%%/profiles/sRGB_icc22.txt
 %%DATADIR%%/profiles/srgb.license
-%%DATADIR%%/qml/qtq_test1.qml
 %%DATADIR%%/samples/3columnA4.py
 %%DATADIR%%/samples/3columnUSLTR.py
 %%DATADIR%%/samples/Calender.py

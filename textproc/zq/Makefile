@@ -1,5 +1,4 @@
 PORTNAME=	zq
-PORTREVISION=	2
 
 COMMENT=	Easier and faster alternative to jq
 

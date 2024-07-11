@@ -1,7 +1,7 @@
 PORTNAME=	kitty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.33.1
-PORTREVISION=	2
+DISTVERSION=	0.35.2
+PORTREVISION=	0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -17,8 +17,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>0:textproc/py-furo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx-inline-tabs>0:textproc/py-sphinx-inline-tabs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinxext-opengraph>0:textproc/py-sphinxext-opengraph@${PY_FLAVOR} \
 		roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf \
-		sphinx-build:textproc/py-sphinx@${PY_FLAVOR} \
 		simde>=0.7.6:devel/simde \
+		sphinx-build:textproc/py-sphinx@${PY_FLAVOR} \
 		wayland-protocols>=0:graphics/wayland-protocols
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libdbus-1.so:devel/dbus \
@@ -42,8 +42,7 @@ CPE_VENDOR=	kitty_project
 USE_GL=		gl
 USE_XORG=	x11 xcb xcursor xi xinerama xrandr
 
-SHEBANG_FILES=	build-terminfo count-lines-of-code mypy-editor-integration \
-		update-on-ox
+SHEBANG_FILES=	build-terminfo count-lines-of-code update-on-ox
 SHEBANG_GLOB=	*.py
 
 GO_MODULE=	github.com/kovidgoyal/kitty

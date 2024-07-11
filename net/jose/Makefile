@@ -1,5 +1,5 @@
 PORTNAME=	jose
-DISTVERSION=	13
+DISTVERSION=	14
 CATEGORIES=	net
 
 MAINTAINER=	hdholm@alumni.iastate.edu
@@ -10,13 +10,13 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	a2x:textproc/asciidoc \
-                jq:textproc/jq
+		jq:textproc/jq
 LIB_DEPENDS=	libjansson.so:devel/jansson
 
 USES=		compiler:c11 meson ninja pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	latchset
-GH_TAGNAME=	v13
+GH_TAGNAME=	v14
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip

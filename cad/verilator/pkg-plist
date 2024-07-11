@@ -88,6 +88,8 @@ share/man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/include/verilated_probdist.cpp
 %%DATADIR%%/include/verilated_profiler.cpp
 %%DATADIR%%/include/verilated_profiler.h
+%%DATADIR%%/include/verilated_random.cpp
+%%DATADIR%%/include/verilated_random.h
 %%DATADIR%%/include/verilated_save.cpp
 %%DATADIR%%/include/verilated_save.h
 %%DATADIR%%/include/verilated_sc.h

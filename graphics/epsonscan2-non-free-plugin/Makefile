@@ -1,6 +1,6 @@
 PORTNAME=	epsonscan2-non-free-plugin
 DISTVERSION=	6.6.40.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://download2.ebz.epson.net/${EPSONSCAN2}/common/rpm/x64/:amd64 \
 		https://download2.ebz.epson.net/${EPSONSCAN2}/common/deb/arm/:armv7 \
@@ -26,7 +26,7 @@ LEGAL_TEXT=	License does not permit public sharing or revenue earning, and restr
 ONLY_FOR_ARCHS=	amd64 armv7 armv7rasb i386
 
 RUN_DEPENDS=	epsonscan2:graphics/epsonscan2 \
-		linux_libusb>=13.1.0:devel/linux_libusb
+		linux_libusb-${LINUX_DEFAULT}>=13.1.0:devel/linux_libusb
 
 USES=		linux
 USE_LDCONFIG=	${LINUXBASE}/usr/${LINUX_LIB}/epsonscan2/libexec \

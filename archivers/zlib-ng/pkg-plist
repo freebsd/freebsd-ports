@@ -1,6 +1,8 @@
 include/zconf-ng.h
 include/zlib-ng.h
 include/zlib_name_mangling-ng.h
+lib/cmake/zlib-ng/zlib-ng-config-version.cmake
+lib/cmake/zlib-ng/zlib-ng-config.cmake
 lib/cmake/zlib-ng/zlib-ng-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/zlib-ng/zlib-ng.cmake
 lib/libz-ng.a

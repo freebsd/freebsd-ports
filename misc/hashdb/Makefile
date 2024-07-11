@@ -12,7 +12,8 @@ WWW=		https://github.com/NPS-DEEP/hashdb
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	swig:devel/swig
+BUILD_DEPENDS=	swig:devel/swig \
+		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 LIB_DEPENDS=	libewf.so:devel/libewf
 
 USES=		autoreconf compiler:c++11-lang gmake libtool localbase:ldflags \

@@ -1,7 +1,6 @@
 PORTNAME=	doggo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.7
-PORTREVISION=	5
+DISTVERSION=	1.0.4
 PORTEPOCH=	1
 CATEGORIES=	dns
 
@@ -18,16 +17,22 @@ GO_MODULE=	github.com/mr-karan/doggo
 GO_TARGET=	./cmd/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME} \
+		share/bash-completion/completions/_${PORTNAME} \
 		share/fish/completions/${PORTNAME}.fish \
 		share/zsh/site-functions/_${PORTNAME}
 
-post-install:
-	# install completions
+post-install: # install completions
+	# bash
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
+	${STAGEDIR}${PREFIX}/bin/${PORTNAME} completions bash > \
+		${STAGEDIR}${PREFIX}/share/bash-completion/completions/_${PORTNAME}
+	# fish
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions
-	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.fish \
+	${STAGEDIR}${PREFIX}/bin/${PORTNAME} completions fish > \
 		${STAGEDIR}${PREFIX}/share/fish/completions/${PORTNAME}.fish
+	# zsh
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.zsh \
+	${STAGEDIR}${PREFIX}/bin/${PORTNAME} completions zsh > \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
 
 .include <bsd.port.mk>

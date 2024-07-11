@@ -1,57 +1,54 @@
 OPTIONS_DEFINE=		\
 	ALEMBIC		\
-	ALEMBIC_HDF5	\
 	AVI		\
-	BULLET 		\
-	CAMERATRACK 	\
-	CINEON 		\
+	BULLET		\
+	CAMERATRACK	\
+	CINEON		\
 	COLLADA		\
-	COMPOSITOR 	\
-	CYCLES 		\
-	CYCLESEMBR	\
-	CYCLESOSL 	\
-	DDS 		\
+	COMPOSITOR	\
+	CYCLES		\
+	CYCLES_EMBR	\
+	CYCLES_ONEAPI	\
+	CYCLES_OSL	\
 	DRACO		\
 	EBOOL		\
-	FFMPEG 		\
-	FFTW3 		\
-	FRAMESERVER	\
+	FFMPEG		\
+	FFTW3		\
 	FREESTYLE	\
-	HDR 		\
-	HEADLESS 	\
-	INPUT_NDOF	\
+	FRIBIDI		\
+	HARFBUZZ	\
 	HARU		\
-	JACK 		\
+	HEADLESS	\
+	INPUT_NDOF	\
+	JACK		\
 	LZO		\
 	LZMA		\
-	MENU 		\
-	MOD_BOOLEAN 	\
+	MENU		\
 	MOD_FLUID	\
-	MOD_OCEANSIM 	\
+	MOD_OCEANSIM	\
 	MOD_REMESH	\
-	MOD_SMOKE	\
-	NLS 		\
-	OPENAL 		\
-	OPENCOLORIO 	\
-	OPENEXR 	\
-	OPENIMAGEIO	\
+	NLS		\
+	OPENAL		\
+	OPENCOLORIO	\
+	OPENEXR		\
 	OPENIMAGEDN	\
 	OPENJPEG	\
-	OPENMP 		\
+	OPENMP		\
 	OPENPGL		\
 	OPENSUBDIV	\
 	OPENVDB		\
+	OPENXR		\
 	POTRACE		\
 	PUGIXML		\
 	PULSEAUDIO	\
 	QUADRIFLOW	\
-	RAYOPTIMIZATION	\
 	SDL		\
 	SNDFILE		\
 	TBB		\
-	TIFF		\
 	THUMBNAILER	\
 	TRACE		\
+	USD		\
+	VULKAN		\
 	WAYLAND		\
 	WEBP		\
 	XINPUT		\
@@ -59,35 +56,31 @@ OPTIONS_DEFINE=		\
 
 OPTIONS_DEFAULT=	\
 	ALEMBIC		\
-	ALEMBIC_HDF5	\
 	AVI		\
 	BULLET		\
 	CINEON		\
 	COLLADA		\
 	COMPOSITOR	\
 	CYCLES		\
-	DDS		\
+	CYCLES_ONEAPI	\
 	DRACO		\
 	EBOOL		\
-	FFMPEG 		\
+	FFMPEG		\
 	FFTW3		\
-	FRAMESERVER	\
 	FREESTYLE	\
-	HDR		\
-	INPUT_NDOF	\
+	FRIBIDI		\
+	HARFBUZZ	\
 	HARU		\
+	INPUT_NDOF	\
 	LZO		\
 	LZMA		\
 	MENU		\
-	MOD_BOOLEAN	\
 	MOD_FLUID	\
 	MOD_OCEANSIM	\
 	MOD_REMESH	\
-	MOD_SMOKE	\
 	OPENAL		\
 	OPENCOLORIO	\
 	OPENEXR		\
-	OPENIMAGEIO	\
 	OPENJPEG	\
 	OPENSUBDIV	\
 	OPENVDB		\
@@ -95,10 +88,8 @@ OPTIONS_DEFAULT=	\
 	PUGIXML		\
 	PULSEAUDIO	\
 	QUADRIFLOW	\
-	RAYOPTIMIZATION	\
 	SDL		\
 	TBB		\
-	TIFF		\
 	THUMBNAILER	\
 	TRACE		\
 	WAYLAND		\
@@ -106,54 +97,59 @@ OPTIONS_DEFAULT=	\
 	XINPUT		\
 	XF86VMODE
 
-OPTIONS_DEFAULT_amd64=	CAMERATRACK CYCLESEMBR OPENIMAGEDN OPENPGL
+# CAMERATRACK: libunwind only supports i386/amd64/aarch64/powerpc64/powerpc64le
+# CYCLES_EMBR: embree only supports amd64 and i386
+# OPENIMAGEDN: oidn only supports amd64
+# OPENPGL:     requires supported SIMD ISA - i386/amd64/aarch64/armv6/armv7
+OPTIONS_DEFAULT_aarch64=	CAMERATRACK OPENPGL
+OPTIONS_DEFAULT_amd64=		CAMERATRACK CYCLES_EMBR OPENIMAGEDN OPENPGL
+OPTIONS_DEFAULT_powerpc64=	CAMERATRACK
+OPTIONS_DEFAULT_powerpc64le=	CAMERATRACK
 
 ALEMBIC_DESC=		Enable Alembic file support
-ALEMBIC_HDF5_DESC=	Enable Alembic hdf5 file support
 AVI_DESC=		Enable Blender's own AVI file support
 BULLET_DESC=		Bullet physics engine
+CAMERATRACK_DESC=	Camera tracking support (amd64/aarch64/powerpc64/powerpc64le only)
 CINEON_DESC=		CINEON and DPX graphics format support
-CAMERATRACK_DESC=	Camera tracking support
 COLLADA_DESC=		Enable read/write support for COLLADA files
 COMPOSITOR_DESC=	Use the tile-based nodal compositor
 CYCLES_DESC=		Cycles render engine support
-CYCLESEMBR_DESC=	Embree support (amd64 only)
-CYCLESOSL_DESC=		Shading support for the cycles render engine
-DDS_DESC=		DDS graphics format support
+CYCLES_EMBR_DESC=	Embree support (amd64 only)
+CYCLES_ONEAPI_DESC=	Enable Cycles oneAPI compute support
+CYCLES_OSL_DESC=	Shading support for the cycles render engine
 # this is required to support gltf import/export
 DRACO_DESC=		Install draco python module
 EBOOL_DESC=		Enable exact boolean support
 FFTW3_DESC=		Use fftw for smoke and audio effects
-FRAMESERVER_DESC=	Image FrameServer support for rendering
 FREESTYLE_DESC=		Enable advanced edges rendering
+FRIBIDI_DESC=		Enable features using fribidi Unicode Bidirectional Algorithm
+HARFBUZZ_DESC=		Enable features using harfbuzz OpenType text shaping engine
 HARU_DESC=		Enable libharu support
-HDR_DESC=		Generic high dynamic-range (HDR) support
 HEADLESS_DESC=		Disable user interface (for render-farms)
 INPUT_NDOF_DESC=	Enable NDOF input device support
 LZO_DESC=		Fast compression support
 LZMA_DESC=		Best compression support
 MENU_DESC=		Install desktop menu
-MOD_BOOLEAN_DESC=	Boolean modifier support
 MOD_FLUID_DESC=		Fluid simulation support
 MOD_OCEANSIM_DESC=	Ocean simulation support
 MOD_REMESH_DESC=	Remesh modifier support
-MOD_SMOKE_DESC=		Smoke simulation support
 OPENCOLORIO_DESC=	OpenColorIO-based color management support
-OPENIMAGEIO_DESC=	OpenImageIO image processing support
-OPENIMAGEDN_DESC=	OpenImageDenoise support
-OPENJPEG_DESC=		Enhanced JPEG (jpeg2000) graphics support
-OPENPGL_DESC=		Open Path Guiding in Cycles
+OPENIMAGEDN_DESC=	OpenImageDenoise support (amd64 only)
+OPENJPEG_DESC=		Enhanced JPEG (JPEG 2000) graphics support
+OPENPGL_DESC=		Open Path Guiding in Cycles (aarch64 and amd64 only)
 OPENSUBDIV_DESC=	Use the OpenSubDiv library for surface subdivision
 OPENVDB_DESC=		Use openVDB library for volumetric data
+OPENXR_DESC=		Enable VR features through the OpenXR specification
 POTRACE_DESC=		Enable features using libpotrace
 PUGIXML_DESC=		Enable pugixml support
 QUADRIFLOW_DESC=	Enable quadriflow remesher
-RAYOPTIMIZATION_DESC=	Enable SSE optimizatons for raytracing
 SDL_DESC=		Audio and Joystick support using SDL
 TBB_DESC=		Enable use of Intel's tbb
 THUMBNAILER_DESC=	Build blender thumbnailer
 TRACE_DESC=		Enable tracing image to GP stroke
-WEBP_DESC=		Enable webp image support
+USD_DESC=		Universal Scene Description Support (aarch64 and amd64 only, broken)
+VULKAN_DESC=		Enable Vulkan as graphics backend (only for development)
 WAYLAND_DESC=		Wayland support
-XINPUT_DESC=		X11 Xinput (tablet) support
+WEBP_DESC=		Enable webp image support
 XF86VMODE_DESC=		X11 video mode switching support
+XINPUT_DESC=		X11 Xinput (tablet) support

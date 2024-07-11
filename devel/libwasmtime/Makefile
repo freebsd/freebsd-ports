@@ -1,5 +1,5 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	20.0.2
+PORTVERSION=	21.0.1
 DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	devel
@@ -29,7 +29,7 @@ CARGO_BUILD_ARGS=	-p wasmtime-c-api
 
 CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
-		ahash-0.8.7 \
+		ahash-0.8.11 \
 		aho-corasick-1.0.2 \
 		ambient-authority-0.0.2 \
 		android_system_properties-0.1.5 \
@@ -45,7 +45,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
 		base64-0.21.0 \
-		bincode-1.3.3 \
 		bit-set-0.5.2 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
@@ -78,6 +77,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		clap_builder-4.3.12 \
 		clap_derive-4.3.12 \
 		clap_lex-0.5.0 \
+		cobs-0.2.3 \
 		codespan-reporting-0.11.1 \
 		colorchoice-1.0.0 \
 		compact_str-0.7.1 \
@@ -103,6 +103,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		downcast-rs-1.2.0 \
 		egg-0.6.0 \
 		either-1.6.1 \
+		embedded-io-0.4.0 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.31 \
 		env_logger-0.10.0 \
@@ -133,11 +134,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		generic-array-0.14.5 \
 		getrandom-0.2.9 \
 		gimli-0.28.0 \
-		h2-0.4.2 \
+		h2-0.4.4 \
 		half-1.8.2 \
 		hashbrown-0.12.3 \
 		hashbrown-0.13.2 \
-		hashbrown-0.14.0 \
+		hashbrown-0.14.3 \
 		heck-0.4.0 \
 		hermit-abi-0.3.0 \
 		home-0.5.9 \
@@ -153,7 +154,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		id-arena-2.2.1 \
 		idna-0.3.0 \
 		indexmap-1.9.1 \
-		indexmap-2.0.0 \
+		indexmap-2.2.6 \
 		indexmap-nostd-0.4.0 \
 		indicatif-0.13.0 \
 		instant-0.1.12 \
@@ -187,7 +188,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		memmap2-0.2.3 \
 		memoffset-0.9.0 \
 		miniz_oxide-0.7.1 \
-		mio-0.8.8 \
+		mio-0.8.11 \
 		nu-ansi-term-0.46.0 \
 		num-traits-0.2.15 \
 		num_cpus-1.16.0 \
@@ -210,9 +211,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.29 \
-		plotters-0.3.1 \
-		plotters-backend-0.3.2 \
-		plotters-svg-0.3.1 \
+		postcard-1.0.8 \
 		ppv-lite86-0.2.16 \
 		pretty_env_logger-0.5.0 \
 		proc-macro2-1.0.63 \
@@ -241,7 +240,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
 		rustix-0.38.31 \
-		rustls-0.22.2 \
+		rustls-0.22.4 \
 		rustls-pki-types-1.3.1 \
 		rustls-webpki-0.102.2 \
 		rustversion-1.0.14 \
@@ -328,22 +327,21 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-support-0.2.87 \
 		wasm-bindgen-shared-0.2.87 \
 		wasm-encoder-0.201.0 \
-		wasm-encoder-0.202.0 \
+		wasm-encoder-0.207.0 \
 		wasm-metadata-0.201.0 \
-		wasm-metadata-0.202.0 \
-		wasm-mutate-0.202.0 \
-		wasm-smith-0.202.0 \
+		wasm-metadata-0.207.0 \
+		wasm-mutate-0.207.0 \
+		wasm-smith-0.207.0 \
 		wasmi-0.31.1 \
 		wasmi_arena-0.4.1 \
 		wasmi_core-0.13.0 \
 		wasmparser-0.201.0 \
-		wasmparser-0.202.0 \
+		wasmparser-0.207.0 \
 		wasmparser-nostd-0.100.1 \
-		wasmprinter-0.202.0 \
+		wasmprinter-0.207.0 \
 		wast-35.0.2 \
-		wast-202.0.0 \
-		wat-1.202.0 \
-		web-sys-0.3.57 \
+		wast-207.0.0 \
+		wat-1.207.0 \
 		webpki-roots-0.26.1 \
 		which-5.0.0 \
 		winapi-0.3.9 \
@@ -378,9 +376,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wit-bindgen-rust-0.22.0 \
 		wit-bindgen-rust-macro-0.22.0 \
 		wit-component-0.201.0 \
-		wit-component-0.202.0 \
+		wit-component-0.207.0 \
 		wit-parser-0.201.0 \
-		wit-parser-0.202.0 \
+		wit-parser-0.207.0 \
 		witx-0.9.1 \
 		xattr-1.2.0 \
 		zerocopy-0.7.32 \
@@ -390,8 +388,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		zstd-safe-7.0.0 \
 		zstd-sys-2.0.9+zstd.1.5.5
 
-GH_TUPLE=	WebAssembly:wasi-nn:e2310b8:wasi_nn/crates/wasi-nn/spec \
-		WebAssembly:testsuite:16a839d:testsuite/tests/spec_testsuite \
+GH_TUPLE=	WebAssembly:testsuite:16a839d:testsuite/tests/spec_testsuite \
 		WebAssembly:wasi-testsuite:09517e5:wasi_testsuite/tests/wasi_testsuite/wasi-common \
 		WebAssembly:wasi-threads:e1893c0:wasi_threads/tests/wasi_testsuite/wasi-threads
 

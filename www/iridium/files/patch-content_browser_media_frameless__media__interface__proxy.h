@@ -1,4 +1,4 @@
---- content/browser/media/frameless_media_interface_proxy.h.orig	2022-12-01 10:35:46 UTC
+--- content/browser/media/frameless_media_interface_proxy.h.orig	2024-06-25 12:08:48 UTC
 +++ content/browser/media/frameless_media_interface_proxy.h
 @@ -19,7 +19,7 @@
  #include "mojo/public/cpp/bindings/receiver_set.h"
@@ -9,7 +9,7 @@
  #include "media/mojo/mojom/stable/stable_video_decoder.mojom.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
-@@ -100,7 +100,7 @@ class FramelessMediaInterfaceProxy final
+@@ -105,7 +105,7 @@ class FramelessMediaInterfaceProxy final
    // Connections to the renderer.
    mojo::ReceiverSet<media::mojom::InterfaceFactory> receivers_;
  

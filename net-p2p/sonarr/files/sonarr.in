@@ -52,6 +52,9 @@ start_precmd=${name}_precmd
         export CLR_OPENSSL_VERSION_OVERRIDE=30
     fi
 
+    # Set path so pre and post import scripts work with 3rd party binaries
+    export PATH="/sbin:/bin:/usr/sbin:/usr/bin:%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin"
+
     rc_flags="-r -f -p ${pidfile_child} -P ${pidfile} ${%%PORTNAME%%_exec_dir}/Sonarr --data=${%%PORTNAME%%_data_dir} --nobrowser >> /dev/null 2>&1 ${rc_flags}"
 }
 

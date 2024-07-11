@@ -1,15 +1,14 @@
 %%CLIENT%%bin/boinc
 %%CLIENT%%bin/boinc_client
 %%CLIENT%%bin/boinccmd
-%%CLIENT%%bin/switcher
 %%MANAGER%%bin/boincmgr
 %%MANAGER%%bin/boincscr
 include/boinc/app_ipc.h
 include/boinc/average.h
 include/boinc/base64.h
 include/boinc/boinc_api.h
-include/boinc/boinc_fcgi.h
 include/boinc/boinc_opencl.h
+include/boinc/boinc_stdio.h
 include/boinc/cal_boinc.h
 include/boinc/cc_config.h
 include/boinc/cert_sig.h
@@ -59,21 +58,21 @@ include/boinc/version.h
 lib/libboinc.a
 lib/libboinc_api.a
 lib/libboinc_api.so
-lib/libboinc_api.so.7
-lib/libboinc_api.so.7.20.2
+lib/libboinc_api.so.8
+lib/libboinc_api.so.8.0.2
 lib/libboinc_crypt.a
 lib/libboinc_opencl.a
 lib/libboinc_opencl.so
-lib/libboinc_opencl.so.7
-lib/libboinc_opencl.so.7.20.2
+lib/libboinc_opencl.so.8
+lib/libboinc_opencl.so.8.0.2
 libdata/pkgconfig/libboinc.pc
 libdata/pkgconfig/libboinc_api.pc
 libdata/pkgconfig/libboinc_crypt.pc
 libdata/pkgconfig/libboinc_opencl.pc
 %%X11%%lib/libboinc_graphics2.a
 %%X11%%lib/libboinc_graphics2.so
-%%X11%%lib/libboinc_graphics2.so.7
-%%X11%%lib/libboinc_graphics2.so.7.20.2
+%%X11%%lib/libboinc_graphics2.so.8
+%%X11%%lib/libboinc_graphics2.so.8.0.2
 %%SKINS%%share/boinc/skins/Charity Engine/background_image.png
 %%SKINS%%share/boinc/skins/Charity Engine/ce_about.ico
 %%SKINS%%share/boinc/skins/Charity Engine/ce_icon_play.png

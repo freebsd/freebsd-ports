@@ -1,8 +1,11 @@
 PORTNAME=	radvd
 PORTVERSION=	2.19
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.litech.org/radvd/dist/
+
+PATCH_SITES=	https://github.com/${PORTNAME}-project/${PORTNAME}/commit/
+PATCHFILES=	3f1aeb2.patch:-p1
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Linux/BSD IPv6 router advertisement daemon

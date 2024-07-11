@@ -1,6 +1,6 @@
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.47.0
-PORTREVISION?=	1	# NOTE: when bumping PORTREVISION, also bump ../e2fsprogs/Makefile!
+PORTVERSION=	1.47.1
+PORTREVISION?=	0	# NOTE: when bumping PORTREVISION, also bump ../e2fsprogs/Makefile!
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -39,9 +39,8 @@ CONFIGURE_ARGS?=--disable-fsck \
 		--with-root-prefix='${PREFIX}' \
 		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib -Wl,--rpath -Wl,${LOCALBASE}/lib/e2fsprogs'
 CONFIGURE_ENV?=	LIBS='-Wl,--as-needed ${LIBS} -lexecinfo -lelf'
-# apparently HAVE_PTHREAD_H checks go missing if the FUSEFS option is unset, force it:
-CPPFLAGS+=	-I${WRKSRC}/lib -I${LOCALBASE}/include # -D_EXT2_USE_C_VERSIONS
-CFLAGS+=	-Wno-unused-command-line-argument
+CPPFLAGS+=	${_FUSEFS_CFLAGS} -I${WRKSRC}/lib -I${LOCALBASE}/include
+CFLAGS+=	-Wno-unused-command-line-argument # -D_FILE_OFFSET_BITS=64 # the latter for fuse-libs
 MAKE_ARGS+=	pkgconfigdir='${PREFIX}/libdata/pkgconfig'
 MAKE_ENV+=	CHECK_CMD=@true
 
@@ -70,7 +69,10 @@ BASHTESTS_DESC=	Enable tests that require the GNU bash shell
 LIBUNWIND_DESC=	Backtrace with libunwind (do set WITH_DEBUG_PORTS+=${PKGORIGIN}!)
 
 FUSEFS_CONFIGURE_ENABLE=	fuse2fs
-FUSEFS_USES=		fuse
+FUSEFS_USES=		fuse:3
+# we can't use FUSEFS_CFLAGS, see below for workaround
+FUSEFS_LIBS=		-Wl,--as-needed -lfuse3 -lpthread
+FUSEFS_LDFLAGS=		-L${LOCALBASE}/lib
 
 NLS_USES=		gettext iconv:build
 
@@ -104,6 +106,13 @@ MAKE_ARGS+=	V=1
 
 .if ${MASTERDIR} == ${.CURDIR}
 PKGNAMESUFFIX=	-core
+.endif
+
+.if !empty(PORT_OPTIONS:MFUSEFS)
+# this dance is required becuse the -I must go before the default -I${LOCALBASE}/include, so we can't use FUSEFS_CFLAGS
+_FUSEFS_CFLAGS=	-I${LOCALBASE}/include/fuse3
+.else
+_FUSEFS_CFLAGS=
 .endif
 
 . if ! empty(ARCH:Mpowerpc*)

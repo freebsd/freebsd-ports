@@ -1,4 +1,4 @@
---- pf/obsdrdr.c.orig	2023-02-17 03:09:33 UTC
+--- pf/obsdrdr.c.orig	2024-03-19 23:41:25 UTC
 +++ pf/obsdrdr.c
 @@ -64,6 +64,8 @@
  #include <stdio.h>
@@ -9,7 +9,7 @@
  #include "../macros.h"
  #include "config.h"
  #include "obsdrdr.h"
-@@ -154,7 +156,7 @@ init_redirect(void)
+@@ -155,7 +157,7 @@ init_redirect(void)
  int
  init_redirect(void)
  {
@@ -18,7 +18,7 @@
  	if(dev>=0)
  		shutdown_redirect();
  	dev = open("/dev/pf", O_RDWR);
-@@ -162,14 +164,16 @@ init_redirect(void)
+@@ -163,14 +165,16 @@ init_redirect(void)
  		syslog(LOG_ERR, "open(\"/dev/pf\"): %m");
  		return -1;
  	}
@@ -37,23 +37,33 @@
  	return 0;
  }
  
-@@ -464,6 +468,7 @@ delete_nat_rule(const char * ifname, unsigned short ip
- {
- 	int i, n;
+@@ -471,6 +475,7 @@ delete_nat_rule(const char * ifname, unsigned short ip
+ 	int i, n, r;
+ 	unsigned int tnum;
  	struct pfioc_rule pr;
 +	struct pfctl_rule rule;
  	UNUSED(ifname);
  	if(dev<0) {
  		syslog(LOG_ERR, "pf device is not open");
-@@ -486,19 +491,19 @@ delete_nat_rule(const char * ifname, unsigned short ip
+@@ -486,7 +491,7 @@ delete_nat_rule(const char * ifname, unsigned short ip
+ #endif
+ 	if(ioctl(dev, DIOCGETRULES, &pr) < 0)
+ 	{
+-		syslog(LOG_ERR, "ioctl(dev, DIOCGETRULES, ...): %m");
++		syslog(LOG_ERR, "ioctl(dev, DIOCGETRULES, ...) (%s:%d): %m", __func__, __LINE__);
+ 		return -1;
+ 	}
+ 	n = pr.nr;
+@@ -497,7 +502,7 @@ delete_nat_rule(const char * ifname, unsigned short ip
  	for(i=0; i<n; i++)
  	{
  		pr.nr = i;
 -		if(ioctl(dev, DIOCGETRULE, &pr) < 0)
-+		if (pfctl_get_rule(dev, i, pr.ticket, pr.anchor, pr.action, &rule, pr.anchor_call) < 0)
++		if (pfctl_get_rule(dev, i, pr.ticket, pr.anchor, PF_NAT, &rule, pr.anchor_call) != 0)
  		{
  			syslog(LOG_ERR, "ioctl(dev, DIOCGETRULE): %m");
- 			goto error;
+ 			r = -1;
+@@ -505,12 +510,12 @@ delete_nat_rule(const char * ifname, unsigned short ip
  		}
  #ifdef TEST
  		syslog(LOG_DEBUG, "%2d port=%hu proto=%d addr=%8x    %8x",
@@ -71,23 +81,58 @@
  		{
  			pr.action = PF_CHANGE_GET_TICKET;
  			if(ioctl(dev, DIOCCHANGERULE, &pr) < 0)
-@@ -843,6 +848,7 @@ get_redirect_rule(const char * ifname, unsigned short 
+@@ -842,7 +847,7 @@ get_redirect_rule_count(const char * ifname)
+ #endif
+ 	if(ioctl(dev, DIOCGETRULES, &pr) < 0)
+ 	{
+-		syslog(LOG_ERR, "ioctl(dev, DIOCGETRULES, ...): %m");
++		syslog(LOG_ERR, "ioctl(dev, DIOCGETRULES, ...) (%s:%d): %m", __func__, __LINE__);
+ 		return -1;
+ 	}
+ 	release_ticket(dev, pr.ticket);
+@@ -863,7 +868,9 @@ get_redirect_rule(const char * ifname, unsigned short 
  {
- 	int i, n;
- 	struct pfioc_rule pr;
+ 	int i, n, r;
+ 	unsigned int tnum;
+-	struct pfioc_rule pr;
++	struct pfctl_rules_info info;
 +	struct pfctl_rule rule;
++	char anchor_call[MAXPATHLEN];
  #ifndef PF_NEWSTYLE
  	struct pfioc_pooladdr pp;
  #endif
-@@ -866,37 +872,37 @@ get_redirect_rule(const char * ifname, unsigned short 
+@@ -873,63 +880,57 @@ get_redirect_rule(const char * ifname, unsigned short 
+ 		syslog(LOG_ERR, "pf device is not open");
+ 		return -1;
+ 	}
+-	memset(&pr, 0, sizeof(pr));
+-	strlcpy(pr.anchor, anchor_name, MAXPATHLEN);
+-#ifndef PF_NEWSTYLE
+-	pr.rule.action = PF_RDR;
+-#endif
+-	if(ioctl(dev, DIOCGETRULES, &pr) < 0)
++	if (pfctl_get_rules_info(dev, &info, PF_RDR, anchor_name) != 0)
+ 	{
+-		syslog(LOG_ERR, "ioctl(dev, DIOCGETRULES, ...): %m");
++		syslog(LOG_ERR, "ioctl(dev, DIOCGETRULES, ...) (%s:%d): %m", __func__, __LINE__);
+ 		return -1;
+ 	}
+-	n = pr.nr;
++	n = info.nr;
+ #ifdef PF_RELEASETICKETS
+-	tnum = pr.ticket;
++	tnum = info.ticket;
+ #endif /* PF_RELEASETICKETS */
+ 	r = -2;
  	for(i=0; i<n; i++)
  	{
- 		pr.nr = i;
+-		pr.nr = i;
 -		if(ioctl(dev, DIOCGETRULE, &pr) < 0)
-+		if (pfctl_get_rule(dev, i, pr.ticket, pr.anchor, pr.action, &rule, pr.anchor_call) < 0)
++		if (pfctl_get_rule(dev, i, info.ticket, anchor_name, PF_RDR, &rule, anchor_call) != 0)
  		{
  			syslog(LOG_ERR, "ioctl(dev, DIOCGETRULE): %m");
- 			goto error;
+ 			r = -1;
+ 			break;
  		}
  #ifdef __APPLE__
 -		if( (eport == ntohs(pr.rule.dst.xport.range.port[0]))
@@ -130,7 +175,15 @@
  #endif
  #ifndef PF_NEWSTYLE
  			memset(&pp, 0, sizeof(pp));
-@@ -928,15 +934,15 @@ get_redirect_rule(const char * ifname, unsigned short 
+ 			strlcpy(pp.anchor, anchor_name, MAXPATHLEN);
+ 			pp.r_action = PF_RDR;
+ 			pp.r_num = i;
+-			pp.ticket = pr.ticket;
++			pp.ticket = info.ticket;
+ 			if(ioctl(dev, DIOCGETADDRS, &pp) < 0)
+ 			{
+ 				syslog(LOG_ERR, "ioctl(dev, DIOCGETADDRS, ...): %m");
+@@ -957,15 +958,15 @@ get_redirect_rule(const char * ifname, unsigned short 
  			          iaddr, iaddrlen);
  #endif
  #else
@@ -149,7 +202,7 @@
  #endif
  				{
  					rhost[0] = '\0'; /* empty string */
-@@ -944,10 +950,10 @@ get_redirect_rule(const char * ifname, unsigned short 
+@@ -973,10 +974,10 @@ get_redirect_rule(const char * ifname, unsigned short 
  				else
  				{
  #ifdef PFVAR_NEW_STYLE
@@ -162,23 +215,33 @@
  					          rhost, rhostlen);
  #endif
  				}
-@@ -978,6 +984,7 @@ priv_delete_redirect_rule_check_desc(const char * ifna
- {
- 	int i, n;
+@@ -1010,6 +1011,7 @@ priv_delete_redirect_rule_check_desc(const char * ifna
+ 	int i, n, r;
+ 	unsigned int tnum;
  	struct pfioc_rule pr;
 +	struct pfctl_rule rule;
  	UNUSED(ifname);
  
  	if(dev<0) {
-@@ -998,23 +1005,23 @@ priv_delete_redirect_rule_check_desc(const char * ifna
+@@ -1023,7 +1025,7 @@ priv_delete_redirect_rule_check_desc(const char * ifna
+ #endif
+ 	if(ioctl(dev, DIOCGETRULES, &pr) < 0)
+ 	{
+-		syslog(LOG_ERR, "ioctl(dev, DIOCGETRULES, ...): %m");
++		syslog(LOG_ERR, "ioctl(dev, DIOCGETRULES, ...) (%s:%d): %m", __func__, __LINE__);
+ 		return -1;
+ 	}
+ 	n = pr.nr;
+@@ -1034,24 +1036,24 @@ priv_delete_redirect_rule_check_desc(const char * ifna
  	for(i=0; i<n; i++)
  	{
  		pr.nr = i;
 -		if(ioctl(dev, DIOCGETRULE, &pr) < 0)
-+		if (pfctl_get_rule(dev, i, pr.ticket, pr.anchor, pr.action, &rule, pr.anchor_call) < 0)
++		if (pfctl_get_rule(dev, i, pr.ticket, pr.anchor, PF_RDR, &rule, pr.anchor_call) != 0)
  		{
  			syslog(LOG_ERR, "ioctl(dev, DIOCGETRULE): %m");
- 			goto error;
+ 			r = -1;
+ 			break;
  		}
  #ifdef __APPLE__
 -		if( (eport == ntohs(pr.rule.dst.xport.range.port[0]))
@@ -201,7 +264,7 @@
  			if(iaddr)
  			{
  				/* retrieve internal address */
-@@ -1047,33 +1054,33 @@ priv_delete_redirect_rule_check_desc(const char * ifna
+@@ -1087,33 +1089,33 @@ priv_delete_redirect_rule_check_desc(const char * ifna
  #endif
  			}
  #else
@@ -240,23 +303,41 @@
 -				   (desc && 0 == strcmp(desc, pr.rule.label))) {
 +				if((desc == NULL && rule.label[0][0] == '\0') ||
 +				   (desc && 0 == strcmp(desc, rule.label[0]))) {
- 					return 1;
+ 					r = 1;
+ 					break;
  				}
- 			}
-@@ -1208,6 +1215,7 @@ get_redirect_rule_by_index(int index,
- {
- 	int n;
+@@ -1175,7 +1177,7 @@ priv_delete_filter_rule(const char * ifname, unsigned 
+ 	pr.rule.action = PF_PASS;
+ 	if(ioctl(dev, DIOCGETRULES, &pr) < 0)
+ 	{
+-		syslog(LOG_ERR, "ioctl(dev, DIOCGETRULES, ...): %m");
++		syslog(LOG_ERR, "ioctl(dev, DIOCGETRULES, ...) (%s:%d): %m", __func__, __LINE__);
+ 		return -1;
+ 	}
+ 	n = pr.nr;
+@@ -1275,6 +1277,7 @@ get_redirect_rule_by_index(int index,
+ 	int n, r;
+ 	unsigned int tnum;
  	struct pfioc_rule pr;
 +	struct pfctl_rule rule;
  #ifndef PF_NEWSTYLE
  	struct pfioc_pooladdr pp;
  #endif
-@@ -1231,36 +1239,36 @@ get_redirect_rule_by_index(int index,
+@@ -1291,7 +1294,7 @@ get_redirect_rule_by_index(int index,
+ #endif
+ 	if(ioctl(dev, DIOCGETRULES, &pr) < 0)
+ 	{
+-		syslog(LOG_ERR, "ioctl(dev, DIOCGETRULES, ...): %m");
++		syslog(LOG_ERR, "ioctl(dev, DIOCGETRULES, ...) (%s:%d): %m", __func__, __LINE__);
+ 		return -1;
+ 	}
+ 	n = pr.nr;
+@@ -1302,36 +1305,36 @@ get_redirect_rule_by_index(int index,
  	if(index >= n)
  		goto error;
  	pr.nr = index;
 -	if(ioctl(dev, DIOCGETRULE, &pr) < 0)
-+	if (pfctl_get_rule(dev, index, pr.ticket, pr.anchor, pr.action, &rule, pr.anchor_call) < 0)
++	if (pfctl_get_rule(dev, index, pr.ticket, pr.anchor, PF_RDR, &rule, pr.anchor_call) != 0)
  	{
  		syslog(LOG_ERR, "ioctl(dev, DIOCGETRULE): %m");
  		goto error;
@@ -300,7 +381,7 @@
  #endif
  #ifndef PF_NEWSTYLE
  	memset(&pp, 0, sizeof(pp));
-@@ -1292,15 +1300,15 @@ get_redirect_rule_by_index(int index,
+@@ -1363,15 +1366,15 @@ get_redirect_rule_by_index(int index,
  	          iaddr, iaddrlen);
  #endif
  #else
@@ -319,7 +400,7 @@
  #endif
  		{
  			rhost[0] = '\0'; /* empty string */
-@@ -1308,10 +1316,10 @@ get_redirect_rule_by_index(int index,
+@@ -1379,10 +1382,10 @@ get_redirect_rule_by_index(int index,
  		else
  		{
  #ifdef PFVAR_NEW_STYLE
@@ -332,7 +413,7 @@
  			          rhost, rhostlen);
  #endif
  		}
-@@ -1334,6 +1342,7 @@ get_portmappings_in_range(unsigned short startport, un
+@@ -1406,6 +1409,7 @@ get_portmappings_in_range(unsigned short startport, un
  	int i, n;
  	unsigned short eport;
  	struct pfioc_rule pr;
@@ -340,12 +421,21 @@
  
  	*number = 0;
  	if(dev<0) {
-@@ -1362,19 +1371,19 @@ get_portmappings_in_range(unsigned short startport, un
+@@ -1426,7 +1430,7 @@ get_portmappings_in_range(unsigned short startport, un
+ #endif
+ 	if(ioctl(dev, DIOCGETRULES, &pr) < 0)
+ 	{
+-		syslog(LOG_ERR, "ioctl(dev, DIOCGETRULES, ...): %m");
++		syslog(LOG_ERR, "ioctl(dev, DIOCGETRULES, ...) (%s:%d): %m", __func__, __LINE__);
+ 		free(array);
+ 		return NULL;
+ 	}
+@@ -1437,19 +1441,19 @@ get_portmappings_in_range(unsigned short startport, un
  	for(i=0; i<n; i++)
  	{
  		pr.nr = i;
 -		if(ioctl(dev, DIOCGETRULE, &pr) < 0)
-+		if (pfctl_get_rule(dev, i, pr.ticket, pr.anchor, pr.action, &rule, pr.anchor_call) < 0)
++		if (pfctl_get_rule(dev, i, pr.ticket, pr.anchor, PF_RDR, &rule, pr.anchor_call) != 0)
  		{
  			syslog(LOG_ERR, "ioctl(dev, DIOCGETRULE): %m");
  			continue;

@@ -1,16 +1,12 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	5.0.26
-PORTREVISION=	3
+DISTVERSION=	5.0.28
 CATEGORIES=	databases net
-MASTER_SITES=	https://fastdl.mongodb.org/src/ \
-		http://fastdl.mongodb.org/src/
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
-DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
 MAINTAINER=	ronald@FreeBSD.org
-COMMENT=	Distributed document-oriented "NoSQL" database (5.0.x Branch)
-WWW=		https://docs.mongodb.com/v5.0/
+COMMENT=	MongoDB Community Edition (5.0.x Branch)
+WWW=		https://www.mongodb.com/docs/v5.0/
 
 LICENSE=	APACHE20 SSPLv1 # mongodb is SSPLv1, C++ driver is APACHE20
 LICENSE_COMB=	multi
@@ -21,9 +17,10 @@ LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	only ported to amd64, aarch64, and powerpc64le on FreeBSD; upstream supports arm64, ppc64le, s390x, and x86-64
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah3>0:devel/py-cheetah3@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}cheetah3>0:devel/py-cheetah3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=3.11:devel/py-pyyaml@${PY_FLAVOR}
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre.so:devel/pcre \
 		libsnappy.so:archivers/snappy \
@@ -34,6 +31,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		compiler:c++17-lang cpe python:build scons shebangfix
 USE_RC_SUBR=	mongod
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	mongodb
+GH_PROJECT=	mongo
 
 SHEBANG_FILES=	buildscripts/scons.py
 python_OLD_CMD=	@python_interpreter@
@@ -61,6 +62,7 @@ MAKE_ARGS=	--cxx-std=17 \
 		--use-system-zstd \
 		-j ${MAKE_JOBS_NUMBER} \
 		AR=llvm-ar \
+		MONGO_VERSION=${DISTVERSION} \
 		VERBOSE=on
 
 CFLAGS+=	-DBOOST_NO_CXX98_FUNCTION_BASE
@@ -115,5 +117,8 @@ do-install:
 	${MV} ${STAGEDIR}${PREFIX}/${doc} ${STAGEDIR}${DOCSDIR}/
 .endfor
 	${RM} ${STAGEDIR}${PREFIX}/bin/resmoke.py
+
+do-test:
+	${SH} ${FILESDIR}/make.test.sh "${STAGEDIR}${PREFIX}/bin"
 
 .include <bsd.port.post.mk>

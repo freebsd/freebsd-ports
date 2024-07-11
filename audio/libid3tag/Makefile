@@ -21,4 +21,6 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 CPE_VENDOR=	libid3tag_project
 
+PORTSCOUT=	skipv:1.00.0
+
 .include <bsd.port.mk>

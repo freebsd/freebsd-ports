@@ -1,6 +1,7 @@
 PORTNAME=	forgejo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.0.2
+DISTVERSION=	7.0.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://codeberg.org/forgejo/forgejo/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 DISTNAME=	forgejo-src-${DISTVERSION}
@@ -75,6 +76,10 @@ do-install:
 		${STAGEDIR}${ETCDIR}/conf/app.ini.sample
 	${INSTALL_DATA} ${WRKSRC}/custom/conf/app.example.ini \
 		${STAGEDIR}${ETCDIR}/conf/app.ini.defaults
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}/var/db/forgejo/data
+	${MKDIR} ${STAGEDIR}/var/db/forgejo/forgejo-repositories
+	${MKDIR} ${STAGEDIR}/var/log/forgejo
 
 do-install-BINDATA-off:
 	cd ${WRKSRC} && \

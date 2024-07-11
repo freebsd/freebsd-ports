@@ -12,6 +12,9 @@ WWW=		https://github.com/Ultimaker/libArcus
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Fails to build with modern python
+EXPIRATION_DATE=	2024-06-29
+
 BUILD_DEPENDS=	sip:devel/py-sip4
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 

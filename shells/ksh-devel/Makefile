@@ -10,7 +10,6 @@
 
 PORTNAME=	ksh
 PORTVERSION=	${AST_COMMIT_DATE}
-PORTREVISION=	1
 CATEGORIES=	shells
 PKGNAMESUFFIX=	-devel
 
@@ -20,8 +19,8 @@ WWW=		http://www.kornshell.com/
 
 LICENSE=	EPL
 
-HASH=		2e8aeee9
-AST_COMMIT_DATE=	2024.04.06
+HASH=		9f856b04
+AST_COMMIT_DATE=	2024.07.01
 
 USES=		compiler:c11
 
@@ -48,7 +47,6 @@ KSH93D_DESC=		Install to ${PREFIX}/bin/ksh93d (development)
 CFLAGS+=	-DMAP_TYPE
 LDFLAGS+=	-lm
 MAKE_ENV=	CCFLAGS="-Wno-unused-value -Wno-parentheses -Wno-logical-op-parentheses" CFLAGS="${CFLAGS}"
-
 STATIC_MAKE_ENV=	LDFLAGS+=-static
 
 KSH_PLIST_SUB=		93=""

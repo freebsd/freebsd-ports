@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libCoin.so:graphics/Coin
 
-USES=		cmake:noninja compiler:c++11-lang dos2unix gl libtool \
+USES=		cmake:noninja compiler:c++11-lang dos2unix gl \
 		localbase pathfix pkgconfig qmake:no_env qt:5 xorg
 USE_QT=		buildtools core gui opengl qmake widgets
 USE_GL=		gl glu

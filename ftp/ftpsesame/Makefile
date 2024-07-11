@@ -1,6 +1,6 @@
 PORTNAME=	ftpsesame
 PORTVERSION=	0.95
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.sentia.org/downloads/ \
 		LOCAL/sem

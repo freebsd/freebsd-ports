@@ -1,5 +1,5 @@
 PORTNAME=	onetbb
-PORTVERSION=	2021.12.0
+PORTVERSION=	2021.13.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -11,7 +11,7 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libhwloc.so.15:devel/hwloc2
 
-USES=		cmake compiler:c++11-lang tar:tgz
+USES=		cmake compiler:c++11-lang pathfix tar:tgz
 
 CMAKE_ARGS+=	-DTBB_STRICT:BOOL=FALSE \
 		-DCMAKE_INSTALL_DOCDIR:PATH="${DOCSDIR}" \

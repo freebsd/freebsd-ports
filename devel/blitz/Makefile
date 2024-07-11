@@ -10,7 +10,7 @@ WWW=		https://github.com/blitzpp/blitz
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:noninja libtool localbase python:build
+USES=		cmake:noninja localbase python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	blitzpp
 USE_LDCONFIG=	yes

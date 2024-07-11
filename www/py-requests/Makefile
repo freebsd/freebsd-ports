@@ -1,8 +1,8 @@
 PORTNAME=	requests
-PORTVERSION=	2.31.0
-PORTREVISION=	1
+PORTVERSION=	2.32.3
 CATEGORIES=	www python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/psf/requests/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org

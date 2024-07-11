@@ -1,6 +1,6 @@
---- extensions/common/api/runtime.json.orig	2023-10-21 11:51:27 UTC
+--- extensions/common/api/runtime.json.orig	2024-06-25 12:08:48 UTC
 +++ extensions/common/api/runtime.json
-@@ -89,6 +89,7 @@
+@@ -86,6 +86,7 @@
              {"name": "cros", "description": "Specifies the Chrome operating system."},
              {"name": "linux", "description": "Specifies the Linux operating system."},
              {"name": "openbsd", "description": "Specifies the OpenBSD operating system."},

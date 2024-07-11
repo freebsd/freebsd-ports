@@ -1,5 +1,5 @@
 PORTNAME=	unearth
-PORTVERSION=	0.15.2
+PORTVERSION=	0.16.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,12 +18,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0.27.0<1:www/py-httpx@${PY_FLAVOR} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask>=2.1.2:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-httpserver>=1.0.4:devel/py-pytest-httpserver@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=3.10.0:devel/py-pytest-mock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests-wsgi-adapter>=0.4.1:www/py-requests-wsgi-adapter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}trustme>=0.9.0:security/py-trustme@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}requests-wsgi-adapter>=0.4.1:www/py-requests-wsgi-adapter@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31300
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}trustme>=0.9.0:security/py-trustme@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>

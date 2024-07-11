@@ -1,11 +1,11 @@
 PORTNAME=	mongodb-tools
-DISTVERSION=	100.9.4
-PORTREVISION=	4
+DISTVERSION=	100.9.5
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	ronald@FreeBSD.org
-COMMENT=	Tools for MongoDB 4.4.x and up
-WWW=		https://docs.mongodb.com/database-tools/
+COMMENT=	MongoDB Database Tools
+WWW=		https://www.mongodb.com/docs/database-tools/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

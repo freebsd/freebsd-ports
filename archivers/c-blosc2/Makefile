@@ -1,5 +1,5 @@
 PORTNAME=	c-blosc2
-PORTVERSION=	2.14.4
+PORTVERSION=	2.15.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd
 
-USES=		cmake:testing
+USES=		cmake:testing pathfix
 
 CMAKE_OFF=	BUILD_LITE \
 		DEACTIVATE_AVX2 \

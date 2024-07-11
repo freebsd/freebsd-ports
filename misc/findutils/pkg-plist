@@ -27,6 +27,7 @@ share/man/man5/glocatedb.5.gz
 %%NLS%%share/locale/id/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/it/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/findutils.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/lg/LC_MESSAGES/findutils.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/findutils.mo

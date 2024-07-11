@@ -11,14 +11,17 @@ share/dbus-1/services/app.drey.Dialect.SearchProvider.service
 %%DATADIR%%/dialect/providers/base.py
 %%DATADIR%%/dialect/providers/local.py
 %%DATADIR%%/dialect/providers/modules/bing.py
+%%DATADIR%%/dialect/providers/modules/deepl.py
 %%DATADIR%%/dialect/providers/modules/google.py
 %%DATADIR%%/dialect/providers/modules/libretrans.py
 %%DATADIR%%/dialect/providers/modules/lingva.py
 %%DATADIR%%/dialect/providers/modules/yandex.py
+%%DATADIR%%/dialect/providers/settings.py
 %%DATADIR%%/dialect/providers/soup.py
 %%DATADIR%%/dialect/session.py
 %%DATADIR%%/dialect/settings.py
 %%DATADIR%%/dialect/shortcuts.py
+%%DATADIR%%/dialect/utils.py
 %%DATADIR%%/dialect/widgets/__init__.py
 %%DATADIR%%/dialect/widgets/lang_selector.py
 %%DATADIR%%/dialect/widgets/provider_preferences.py
@@ -43,6 +46,8 @@ share/locale/bn/LC_MESSAGES/dialect-cldr-langs.mo
 share/locale/bn/LC_MESSAGES/dialect.mo
 share/locale/ca/LC_MESSAGES/dialect-cldr-langs.mo
 share/locale/ca/LC_MESSAGES/dialect.mo
+share/locale/ckb/LC_MESSAGES/dialect-cldr-langs.mo
+share/locale/ckb/LC_MESSAGES/dialect.mo
 share/locale/cs/LC_MESSAGES/dialect-cldr-langs.mo
 share/locale/cs/LC_MESSAGES/dialect.mo
 share/locale/da/LC_MESSAGES/dialect-cldr-langs.mo

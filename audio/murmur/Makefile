@@ -1,5 +1,6 @@
 PORTNAME=	murmur
-PORTVERSION=	1.3.4
+DISTVERSION=	1.3.4
+PORTREVISION=	1
 CATEGORIES=	audio net
 
 MAINTAINER=	vvd@FreeBSD.org
@@ -47,7 +48,7 @@ BONJOUR_VARS_OFF=	CONFIG+=no-bonjour
 DBUS_USE=		QT=dbus
 DBUS_VARS_OFF=		CONFIG+=no-dbus
 
-ICE_LIB_DEPENDS=	libIce.so:devel/ice
+ICE_LIB_DEPENDS=	libIce.so:devel/ice37
 ICE_VARS_OFF=		CONFIG+=no-ice
 
 MYSQL_USE=		QT=sql-mysql

@@ -1,5 +1,5 @@
---- configure.ac.orig	2022-04-20 22:38:08.399834000 -0700
-+++ configure.ac	2022-04-20 22:40:50.613092000 -0700
+--- configure.ac.orig	2024-05-21 08:01:41 UTC
++++ configure.ac
 @@ -41,7 +41,6 @@
  AC_LANG([C++])
  AX_CXX_COMPILE_STDCXX([11], [noext])

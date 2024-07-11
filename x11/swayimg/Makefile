@@ -1,8 +1,10 @@
 PORTNAME=	swayimg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2
-PORTREVISION=	1
+DISTVERSION=	2.3
 CATEGORIES=	x11 wayland
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	4100b13c9ee7.patch:-p1 # https://github.com/artemsen/swayimg/pull/152
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Image viewer for Sway/Wayland
@@ -18,6 +20,7 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libxkbcommon.so:x11/libxkbcommon
+TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		meson pkgconfig
 USE_GITHUB=	yes
@@ -89,5 +92,12 @@ post-patch:
 		${WRKSRC}/extra/${PORTNAME}rc \
 		${WRKSRC}/extra/${PORTNAME}rc.5 \
 		${WRKSRC}/src/config.c
+
+pre-test:
+	@if [ ! -e ${WRKDIR}/.meson_build_tests ]; then \
+		${RM} ${CONFIGURE_COOKIE} ${BUILD_COOKIE}; \
+		${MAKE} -C${.CURDIR} build MESON_ARGS="${MESON_ARGS} --reconfigure -Dtests=enabled"; \
+		${TOUCH} ${WRKDIR}/.meson_build_tests; \
+	fi
 
 .include <bsd.port.mk>

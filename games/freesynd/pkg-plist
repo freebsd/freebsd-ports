@@ -1,11 +1,15 @@
 bin/freesynd
-%%DATADIR%%/data/cursors/cursors.png
-%%DATADIR%%/data/lang/english.lng
-%%DATADIR%%/data/lang/french.lng
-%%DATADIR%%/data/lang/german.lng
-%%DATADIR%%/data/lang/italian.lng
-%%DATADIR%%/data/music/assassinate.ogg
-%%DATADIR%%/data/music/intro.ogg
-%%DATADIR%%/data/ref/original_data.crc
-%%DATADIR%%/data/ref/research.dat
-%%DATADIR%%/data/ref/weapons.dat
+@sample %%ETCDIR%%/freesynd.ini.sample
+%%DOCSDIR%%/changelog.gz
+%%DOCSDIR%%/copyright
+%%DATADIR%%/cursors/cursors.png
+%%DATADIR%%/lang/english.lng
+%%DATADIR%%/lang/french.lng
+%%DATADIR%%/lang/german.lng
+%%DATADIR%%/lang/italian.lng
+%%DATADIR%%/music/assassinate.ogg
+%%DATADIR%%/music/intro.ogg
+%%DATADIR%%/ref/original_data.crc
+%%DATADIR%%/ref/research.dat
+%%DATADIR%%/ref/weapons.dat
+%%DOXYGEN%%share/man/man6/freesynd.6.gz

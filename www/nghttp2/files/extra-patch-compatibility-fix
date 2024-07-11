@@ -1,0 +1,11 @@
+--- src/template.h.orig	2024-06-08 10:06:50 UTC
++++ src/template.h
+@@ -444,7 +444,7 @@ inline constexpr bool operator==(const StringRef &lhs,
+          std::equal(std::begin(lhs), std::end(lhs), std::begin(rhs));
+ }
+ 
+-#ifndef __APPLE__
++#ifndef __FreeBSD__
+ inline constexpr std::strong_ordering
+ operator<=>(const StringRef &lhs, const StringRef &rhs) noexcept {
+   return std::lexicographical_compare_three_way(std::begin(lhs), std::end(lhs),

@@ -1,3 +1,3 @@
-TIMESTAMP = 1715843616
-SHA256 (rubygem/aws-sdk-timestreamwrite-1.30.0.gem) = 897ac414fbe0d067aed7f40c87fa227b1091f864e93098beed8b25bc20db3fd0
-SIZE (rubygem/aws-sdk-timestreamwrite-1.30.0.gem) = 44544
+TIMESTAMP = 1720355820
+SHA256 (rubygem/aws-sdk-timestreamwrite-1.34.0.gem) = 5365f9251a2047ddc1527efb49e1c63e95b5c425d8fcc653730ca3d70c470292
+SIZE (rubygem/aws-sdk-timestreamwrite-1.34.0.gem) = 45056

@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-PORTVERSION=	17.0.0
+PORTVERSION=	17.1.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -13,8 +13,8 @@ RUN_DEPENDS=	rubygem-grpc>=1.0<2.0:net/rubygem-grpc
 
 USES=		cpe gem
 
-NO_ARCH=	yes
-
 CPE_VENDOR=	gitlab
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

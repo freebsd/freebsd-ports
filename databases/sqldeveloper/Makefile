@@ -1,7 +1,7 @@
 PORTNAME=	sqldeveloper
 DISTVERSION=	23.1.1.345.2114
 DISTVERSIONSUFFIX=	-no-jre
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases java
 # https://www.oracle.com/tools/downloads/sqldev-downloads.html
 MASTER_SITES=
@@ -20,7 +20,7 @@ RUN_DEPENDS=	openjfx14>=0:java/openjfx14 \
 
 USES=		gnome zip
 USE_JAVA=	yes
-JAVA_VERSION=	11+
+JAVA_VERSION=	${SQLDEVELOPER_JAVA_VERSION:U11 17}
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 NO_ARCH=	yes

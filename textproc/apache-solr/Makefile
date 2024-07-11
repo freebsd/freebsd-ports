@@ -1,6 +1,7 @@
 PORTNAME=	apache-solr
 PORTVERSION=	9.6.0
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	https://archive.apache.org/dist/solr/solr/${PORTVERSION}/
 DISTNAME=	solr-${PORTVERSION}

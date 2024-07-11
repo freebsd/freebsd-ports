@@ -3,9 +3,6 @@ DISTVERSION=	${QT6_VERSION}
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt6-
 
-PATCH_SITES=	https://github.com/qt/qtbase/commit/
-PATCHFILES+=	7c4e1357e49baebdd2d20710fccb5604cbb36c0d.patch:-p1 # CVE-2024-33861
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt base (core, gui, widgets, network,...)
 
@@ -44,7 +41,8 @@ USE_GL=		egl opengl
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 pango
 USE_LOCALE=	C.UTF-8
 CMAKE_ARGS=	-DOPENSSL_ROOT_DIR="${OPENSSLBASE}"
-CMAKE_ON=	QT_AVOID_CMAKE_ARCHIVING_API \
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_LTTngUST \
+		QT_AVOID_CMAKE_ARCHIVING_API \
 		QT_FIND_ALL_PACKAGES_ALWAYS \
 		QT_FEATURE_openssl_linked
 CMAKE_OFF=	QT_FEATURE_eglfs \

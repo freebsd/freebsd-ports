@@ -1,5 +1,5 @@
 PORTNAME=	qcengine
-DISTVERSION=	0.29.0
+DISTVERSION=	0.30.0
 PORTREVISION=	1
 CATEGORIES=	science python # chemistry
 MASTER_SITES=	PYPI
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}py-cpuinfo>0:sysutils/py-py-cpuinfo@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=1.8.2:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qcelemental>=0.24.0:science/py-qcelemental@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		dftd3:science/dftd3 \
 		dftd4:science/dftd4 \
@@ -36,7 +36,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		# last dependencies above are for specific quantum chemistry packages to test with TODO torchani,openmm,torsiondrive,mdi
 
 USES=		python
-USE_PYTHON=	distutils concurrent autoplist pytest # 2 tests fail, see https://github.com/MolSSI/QCEngine/issues/377
+USE_PYTHON=	distutils concurrent autoplist pytest # 1 tests fails, see https://github.com/MolSSI/QCEngine/issues/377#issuecomment-2191948293
 
 NO_ARCH=	yes
 

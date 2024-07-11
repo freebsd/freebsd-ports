@@ -1,6 +1,6 @@
 PORTNAME=	folly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.05.20.00
+DISTVERSION=	2024.07.08.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -46,7 +46,7 @@ CXXFLAGS+=	-fPIC
 CXXFLAGS+=	-DGLOG_USE_GLOG_EXPORT
 CXXFLAGS_powerpc64=	-DFOLLY_QUOTIENT_MULTI_SET_SUPPORTED=0
 
-do-test: # tests fail to configure, see https://github.com/facebook/folly/issues/2188
+do-test: # tests fail to compile, see https://github.com/facebook/folly/issues/2246
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \

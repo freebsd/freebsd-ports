@@ -1,10 +1,10 @@
 PORTNAME=	darkman
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.4
-PORTREVISION=	11
+DISTVERSION=	2.0.1
+PORTREVISION=	2
 CATEGORIES=	accessibility wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for dark-mode and light-mode transitions
 WWW=		https://gitlab.com/WhyNotHugo/darkman
 
@@ -16,11 +16,14 @@ USE_GITHUB=	nodefault
 USE_GITLAB=	yes
 GH_TUPLE=	adrg:xdg:v0.3.3:adrg_xdg/vendor/github.com/adrg/xdg \
 		go-check:check:41f04d3bba15:go_check_check/vendor/gopkg.in/check.v1 \
-		go-yaml:yaml:496545a6307b:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
+		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		godbus:dbus:v5.0.4:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
-		integrii:flaggy:v1.5.2:integrii_flaggy/vendor/github.com/integrii/flaggy \
+		inconshreveable:mousetrap:v1.1.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		kr:pretty:v0.2.0:kr_pretty/vendor/github.com/kr/pretty \
-		sj14:astral:v0.1.2:sj14_astral/vendor/github.com/sj14/astral
+		rxwycdh:rxhash:10b7a38b400d:rxwycdh_rxhash/vendor/github.com/rxwycdh/rxhash \
+		sj14:astral:v0.1.2:sj14_astral/vendor/github.com/sj14/astral \
+		spf13:cobra:v1.7.0:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag
 GL_ACCOUNT=	WhyNotHugo
 GO_TARGET=	./cmd/${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} \
@@ -38,7 +41,12 @@ post-patch:
 # Extract (snapshot) version from the port instead of placeholder
 	@${REINPLACE_CMD} 's/0.0.0-dev/${DISTVERSIONFULL}/' \
 		${WRKSRC}/cmd/${PORTNAME}/main.go
+# Respect PREFIX for system-wide config
+	@${REINPLACE_CMD} 's,/etc,${PREFIX}&,' \
+		${WRKSRC}/configuration.go
 # Respect LOCALBASE for {dark,light}-mode.d scripts
+	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
+		${WRKSRC}/${PORTNAME}.1.scd
 	@${REINPLACE_CMD} 's,/usr/share,${LOCALBASE}/share,' \
 		${WRKSRC}/vendor/github.com/adrg/xdg/paths_unix.go
 # Respect PREFIX for DBus activation

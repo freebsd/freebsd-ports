@@ -1,18 +1,27 @@
---- configure.orig	2021-07-27 17:44:47 UTC
+--- configure.orig	2024-05-21 17:19:57 UTC
 +++ configure
-@@ -16827,9 +16827,9 @@ $as_echo "#define HAVE_UUID_TO_STR 1" >>confdefs.h
+@@ -14157,7 +14157,7 @@ fi
+ 			PERL_CPPFLAGS="$PERL_CPPFLAGS $opt"
+ 		done
+ 		PERL_LDFLAGS=""
+-		for opt in `$PERLBIN" -MExtUtils::Embed -e ldopts`; do
++		for opt in `$PERLBIN -MExtUtils::Embed -e ldopts`; do
+ 			case "$opt" in
+ 			"-lc" )
+ 				continue;;
+@@ -16837,9 +16837,9 @@ if test $have_uuid = no ; then
  fi
  
  if test $have_uuid = no ; then
 -	for ac_header in uuid/uuid.h
-+	for ac_header in xxuuid/uuid.h
++	for ac_header in xxxxuuid/uuid.h
  do :
 -  ac_fn_c_check_header_mongrel "$LINENO" "uuid/uuid.h" "ac_cv_header_uuid_uuid_h" "$ac_includes_default"
-+  ac_fn_c_check_header_mongrel "$LINENO" "xxuuid/uuid.h" "ac_cv_header_uuid_uuid_h" "$ac_includes_default"
++  ac_fn_c_check_header_mongrel "$LINENO" "xxxxuuid/uuid.h" "ac_cv_header_uuid_uuid_h" "$ac_includes_default"
  if test "x$ac_cv_header_uuid_uuid_h" = xyes; then :
    cat >>confdefs.h <<_ACEOF
  #define HAVE_UUID_UUID_H 1
-@@ -22127,7 +22127,7 @@ if ${ac_cv_lib_iodbc_SQLDriverConnect+:} false; then :
+@@ -22346,7 +22346,7 @@ else
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -21,7 +30,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -22175,7 +22175,7 @@ if ${ac_cv_lib_odbc_SQLDriverConnect+:} false; then :
+@@ -22394,7 +22394,7 @@ else
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS

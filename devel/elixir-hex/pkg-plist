@@ -197,4 +197,3 @@ lib/elixir/lib/hex/lib/mix/tasks/hex.retire.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex.search.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex.sponsor.ex
 lib/elixir/lib/hex/lib/mix/tasks/hex.user.ex
-%%PORTDOCS%%%%DOCSDIR%%/README.md

@@ -414,6 +414,7 @@
 %%QT_EXAMPLEDIR%%/bluetooth/shared/Info.qmake.macos.plist
 %%QT_EXAMPLEDIR%%/charts/areachart/areachart.pro
 %%QT_EXAMPLEDIR%%/charts/areachart/main.cpp
+%%QT_EXAMPLEDIR%%/charts/audio/apple/Info.plist.in
 %%QT_EXAMPLEDIR%%/charts/audio/audio.pro
 %%QT_EXAMPLEDIR%%/charts/audio/main.cpp
 %%QT_EXAMPLEDIR%%/charts/audio/widget.cpp
@@ -1947,6 +1948,7 @@
 %%QT_EXAMPLEDIR%%/multimedia/video/doc/images/qmlvideofx-video-pagecurl.jpg
 %%QT_EXAMPLEDIR%%/multimedia/video/doc/src/qmlvideo.qdoc
 %%QT_EXAMPLEDIR%%/multimedia/video/doc/src/qmlvideofx.qdoc
+%%QT_EXAMPLEDIR%%/multimedia/video/qmlvideo/Info.plist
 %%QT_EXAMPLEDIR%%/multimedia/video/qmlvideo/images/folder.png
 %%QT_EXAMPLEDIR%%/multimedia/video/qmlvideo/images/leaves.jpg
 %%QT_EXAMPLEDIR%%/multimedia/video/qmlvideo/images/up.png

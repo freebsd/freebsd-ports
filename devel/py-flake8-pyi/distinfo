@@ -1,3 +1,3 @@
-TIMESTAMP = 1713624690
-SHA256 (flake8_pyi-24.4.1.tar.gz) = ac5678c4775e1d8aaefe17d1704e4783782729f39920c67560c11fae5653cbf9
-SIZE (flake8_pyi-24.4.1.tar.gz) = 61167
+TIMESTAMP = 1718580086
+SHA256 (flake8_pyi-24.6.0.tar.gz) = 74847fe88dba8dc3ccd27091dc5dcbe8993d7616214e4084f33afe469a675b14
+SIZE (flake8_pyi-24.6.0.tar.gz) = 61912

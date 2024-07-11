@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-translate-v2
-PORTVERSION=	0.5.0
+PORTVERSION=	1.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ WWW=		https://cloud.google.com/ruby/docs/reference/google-cloud-translate-v2/lat
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-faraday1>=0.17.3<2.0:www/rubygem-faraday1 \
+RUN_DEPENDS=	rubygem-faraday>=1.0<3.0:www/rubygem-faraday \
 		rubygem-google-cloud-core>=1.6<2:net/rubygem-google-cloud-core \
 		rubygem-googleapis-common-protos>=1.3.10<2.0:devel/rubygem-googleapis-common-protos \
 		rubygem-googleapis-common-protos-types>=1.0.5<2.0:devel/rubygem-googleapis-common-protos-types \

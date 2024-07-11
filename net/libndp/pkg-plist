@@ -3,6 +3,6 @@ include/ndp.h
 lib/libndp.a
 lib/libndp.so
 lib/libndp.so.0
-lib/libndp.so.0.2.0
+lib/libndp.so.0.3.0
 libdata/pkgconfig/libndp.pc
 share/man/man8/ndptool.8.gz

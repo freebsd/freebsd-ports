@@ -1,6 +1,6 @@
 --- src/login.c.orig	2023-06-15 07:30:09 UTC
 +++ src/login.c
-@@ -19,7 +19,7 @@
+@@ -19,9 +19,13 @@
  #include <sys/stat.h>
  #include <sys/wait.h>
  #include <unistd.h>
@@ -8,8 +8,14 @@
 +#include <utmpx.h>
  #include <xcb/xcb.h>
  
++#include <sys/param.h>
++#include <sys/types.h>
++#include <login_cap.h>
++
  int get_free_display()
-@@ -214,13 +214,13 @@ void env_init(struct passwd* pwd)
+ {
+ 	char xlock[1024];
+@@ -214,13 +218,13 @@
  	// clean env
  	environ[0] = NULL;
  	
@@ -25,7 +31,7 @@
  
  	// Set PATH if specified in the configuration
  	if (strlen(config.path))
-@@ -259,9 +259,15 @@ void env_xdg(const char* tty_id, const char* desktop_n
+@@ -259,9 +263,15 @@
  
  void env_xdg(const char* tty_id, const char* desktop_name)
  {
@@ -41,7 +47,7 @@
      setenv("XDG_SESSION_CLASS", "user", 0);
      setenv("XDG_SESSION_ID", "1", 0);
      setenv("XDG_SESSION_DESKTOP", desktop_name, 0);
-@@ -269,8 +275,8 @@ void env_xdg(const char* tty_id, const char* desktop_n
+@@ -269,8 +279,8 @@
      setenv("XDG_VTNR", tty_id, 0);
  }
  
@@ -52,7 +58,7 @@
  	char *username,
  	pid_t display_pid
  ) {
-@@ -281,24 +287,23 @@ void add_utmp_entry(
+@@ -281,24 +291,23 @@
  	/* only correct for ptys named /dev/tty[pqr][0-9a-z] */
  	strcpy(entry->ut_id, ttyname(STDIN_FILENO) + strlen("/dev/tty"));
  
@@ -89,7 +95,28 @@
  }
  
  void xauth(const char* display_name, const char* shell, char* pwd)
-@@ -616,7 +621,7 @@ void auth(
+@@ -598,6 +607,16 @@
+ 			exit(EXIT_FAILURE);
+ 		}
+ 
++		ok = setusercontext(NULL, pwd, pwd->pw_uid, LOGIN_SETALL);
++
++		if (ok != 0)
++		{
++			dgn_throw(DGN_USER_UID);
++			exit(EXIT_FAILURE);
++		}
++
++		/* This is done by setusercontext() on FreeBSD. */
++#if 0
+ 		ok = setgid(pwd->pw_gid);
+ 
+ 		if (ok != 0)
+@@ -613,10 +632,11 @@
+ 			dgn_throw(DGN_USER_UID);
+ 			exit(EXIT_FAILURE);
+ 		}
++#endif
  
  		// get a display
  		char vt[5];
@@ -98,7 +125,7 @@
  
  		// set env (this clears the environment)
  		env_init(pwd);
-@@ -671,13 +676,13 @@ void auth(
+@@ -671,13 +691,13 @@
  	}
  
  	// add utmp audit

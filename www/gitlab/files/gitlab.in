@@ -46,6 +46,7 @@ stop_precmd=${name}_init
 : ${gitlab_mail_room_enable:="NO"}
 : ${gitlab_allow_conflicts:="NO"}
 : ${gitlab_wait:="120"}
+: ${gitlab_svcj_options:="net_basic"}
 
 load_rc_config $name
 

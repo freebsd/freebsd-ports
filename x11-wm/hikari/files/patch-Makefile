@@ -1,5 +1,16 @@
 --- Makefile.orig	2021-04-09 17:37:23 UTC
 +++ Makefile
+@@ -126,8 +126,8 @@ CFLAGS += -Wall -I. -Iinclude -DHIKARI_ETC_PREFIX=${ET
+ 
+ CFLAGS += -Wall -I. -Iinclude -DHIKARI_ETC_PREFIX=${ETC_PREFIX}
+ 
+-WLROOTS_CFLAGS != ${PKG_CONFIG} --cflags wlroots
+-WLROOTS_LIBS != ${PKG_CONFIG} --libs wlroots
++WLROOTS_CFLAGS != ${PKG_CONFIG} --cflags wlroots-0.15
++WLROOTS_LIBS != ${PKG_CONFIG} --libs wlroots-0.15
+ 
+ WLROOTS_CFLAGS += -DWLR_USE_UNSTABLE=1
+ 
 @@ -252,7 +252,7 @@ install: hikari hikari-unlocker share/man/man1/hikari.
  	sed "s,PREFIX,${PREFIX}," etc/hikari/hikari.conf > ${DESTDIR}/${ETC_PREFIX}/etc/hikari/hikari.conf
  	chmod 644 ${DESTDIR}/${ETC_PREFIX}/etc/hikari/hikari.conf

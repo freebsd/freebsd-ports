@@ -1,5 +1,5 @@
 PORTNAME=	gffutils
-DISTVERSION=	0.11.1
+DISTVERSION=	0.13
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +17,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=1.9.4:devel/py-argcomplete@${PY
 		${PYTHON_PKGNAMEPREFIX}six>=1.12.0:devel/py-six@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils concurrent autoplist pytest # tests use nose and therefore don't work, see https://github.com/daler/gffutils/issues/211
+USE_PYTHON=	distutils concurrent autoplist pytest
+
+TEST_ENV=	${MAKE_ENV} \
+		PATH=${STAGEDIR}${PREFIX}/bin:${PATH} \
+		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
+
+# 1 test (test_roundtrip) fails, see test_roundtrip
 
 .include <bsd.port.mk>

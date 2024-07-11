@@ -1,7 +1,6 @@
-diff -ur endpoints/api.php.orig endpoints/api.php
---- endpoints/api.php.orig
+--- endpoints/api.php.orig	2024-06-07 15:46:20 UTC
 +++ endpoints/api.php
-@@ -334,6 +334,9 @@
+@@ -334,6 +334,9 @@ try {
  
  	// Just append to $vbox->errors and let it get
  	// taken care of below
@@ -11,7 +10,7 @@ diff -ur endpoints/api.php.orig endpoints/api.php
  	if(!$vbox || !$vbox->errors) {
  		$vbox->errors = array();
  	}
-@@ -342,7 +345,7 @@
+@@ -342,7 +345,7 @@ try {
  
  
  // Add any messages
@@ -20,7 +19,7 @@ diff -ur endpoints/api.php.orig endpoints/api.php
  	foreach($vbox->messages as $m)
  		$response['messages'][] = 'vboxconnector('.$request['fn'] .'): ' . $m;
  }
-@@ -360,7 +363,7 @@
+@@ -360,7 +363,7 @@ if($vbox && $vbox->errors) {
  		if($e->getCode() == vboxconnector::PHPVB_ERRNO_CONNECT && isset($vbox->settings))
  			$d .= "\n\nLocation:" . $vbox->settings->location;
  
@@ -29,10 +28,9 @@ diff -ur endpoints/api.php.orig endpoints/api.php
  
  		$response['errors'][] = array(
  			'error'=> ($e->getCode() & vboxconnector::PHPVB_ERRNO_HTML ? $e->getMessage() : htmlentities($e->getMessage())),
-diff -ur endpoints/jqueryFileTree.php.orig endpoints/jqueryFileTree.php
---- endpoints/jqueryFileTree.php.orig
+--- endpoints/jqueryFileTree.php.orig	2024-06-07 15:46:20 UTC
 +++ endpoints/jqueryFileTree.php
-@@ -223,6 +223,8 @@
+@@ -223,6 +223,8 @@ function getdir($dir, $dirsOnly=false, $recurse=array(
   */
  function getdir($dir, $dirsOnly=false, $recurse=array()) {
  
@@ -41,7 +39,7 @@ diff -ur endpoints/jqueryFileTree.php.orig endpoints/jqueryFileTree.php
  	if(!$dir) $dir = DSEP;
  
  	$entries = getDirEntries($dir, $dirsOnly);
-@@ -251,9 +253,9 @@
+@@ -251,9 +253,9 @@ function getdir($dir, $dirsOnly=false, $recurse=array(
          	// Push file on to stack
          	} else {
  
@@ -53,10 +51,22 @@ diff -ur endpoints/jqueryFileTree.php.orig endpoints/jqueryFileTree.php
  
                  array_push($dirents, file_entry($path));
          	}
-diff -ur endpoints/lib/language.php.orig endpoints/lib/language.php
---- endpoints/lib/language.php.orig
+--- endpoints/lib/config.php.orig	2024-06-07 15:46:20 UTC
++++ endpoints/lib/config.php
+@@ -141,6 +141,10 @@ class phpVBoxConfigClass {
+ 	 */
+ 	var $eventListenerTimeout = 20;
+ 
++	var $enableHDFlushConfig = false;
++
++	var $authMaster = false;
++
+ 	/**
+ 	 * Read user configuration, apply defaults, and do some sanity checking
+ 	 * @see vboxconnector
+--- endpoints/lib/language.php.orig	2024-06-07 15:46:20 UTC
 +++ endpoints/lib/language.php
-@@ -73,6 +73,8 @@
+@@ -73,6 +73,8 @@ class __vbox_language {
  		$xmlObj = simplexml_load_string(@file_get_contents(VBOX_BASE_LANG_DIR.'/'.$lang.'.xml'));
  		$arrXml = $this->objectsIntoArray($xmlObj);
  
@@ -65,10 +75,9 @@ diff -ur endpoints/lib/language.php.orig endpoints/lib/language.php
  		$lang = array();
  		if(!@$arrXml['context'][0]) $arrXml['context'] = array($arrXml['context']);
  		foreach($arrXml['context'] as $c) {
-diff -ur endpoints/lib/vboxServiceWrappers.php.orig endpoints/lib/vboxServiceWrappers.php
---- endpoints/lib/vboxServiceWrappers.php.orig
+--- endpoints/lib/vboxServiceWrappers.php.orig	2024-06-07 15:46:20 UTC
 +++ endpoints/lib/vboxServiceWrappers.php
-@@ -108,7 +108,7 @@
+@@ -108,7 +108,7 @@ abstract class VBox_Collection implements ArrayAccess,
      }
  
      /** ArrayAccess Functions **/
@@ -77,7 +86,7 @@ diff -ur endpoints/lib/vboxServiceWrappers.php.orig endpoints/lib/vboxServiceWra
      {
          if ($value instanceof $this->_interfaceName)
          {
-@@ -127,49 +127,50 @@
+@@ -127,49 +127,50 @@ abstract class VBox_Collection implements ArrayAccess,
          }
      }
  
@@ -136,10 +145,42 @@ diff -ur endpoints/lib/vboxServiceWrappers.php.orig endpoints/lib/vboxServiceWra
      {
          return count($this->_objects);
      }
-diff -ur endpoints/screen.php.orig endpoints/screen.php
---- endpoints/screen.php.orig
+--- endpoints/lib/vboxconnector.php.orig	2024-06-07 15:46:20 UTC
++++ endpoints/lib/vboxconnector.php
+@@ -112,6 +112,8 @@ class vboxconnector {
+ 	 */
+ 	var $dsep = null;
+ 
++	var $client = null;
++
+ 	/**
+ 	 * Obtain configuration settings and set object vars
+ 	 * @param boolean $useAuthMaster use the authentication master obtained from configuration class
+@@ -387,7 +389,8 @@ class vboxconnector {
+ 
+ 			// The amount of time we will wait for events is determined by
+ 			// the amount of listeners - at least half a second
+-			$listenerWait = max(100,intval(500/count($this->persistentRequest['vboxEventListeners'])));
++			$listenerCount = count($this->persistentRequest['vboxEventListeners']);
++			$listenerWait = max(100,intval(500/($listenerCount > 0 ? $listenerCount : 1)));
+ 		}
+ 
+ 		// Get events from each configured event listener
+@@ -5660,11 +5663,6 @@ class vboxconnector {
+ 			}
+ 		} catch (Exception $null) {}
+ 		$m->releaseRemote();
+-
+-		// Attempt to UTF-8 encode string or json_encode may choke
+-		// and return an empty string
+-		if(function_exists('utf8_encode'))
+-			return utf8_encode($log);
+ 
+ 		return $log;
+ 	}
+--- endpoints/screen.php.orig	2024-06-07 15:46:20 UTC
 +++ endpoints/screen.php
-@@ -87,13 +87,13 @@
+@@ -87,13 +87,13 @@ try {
  
  		// Let the browser cache images for 3 seconds
  		$ctime = 0;
@@ -158,8 +199,8 @@ diff -ur endpoints/screen.php.orig endpoints/screen.php
 +		} else if(strpos($_ENV['HTTP_IF_MODIFIED_SINCE'] ?? '','GMT')) {
  			$ctime = strtotime($_ENV['HTTP_IF_MODIFIED_SINCE']);
  		}
- 
-@@ -164,13 +164,13 @@
+ 		
+@@ -164,13 +164,13 @@ try {
  
  		// Let the browser cache saved state images
  		$ctime = 0;
@@ -178,11 +219,10 @@ diff -ur endpoints/screen.php.orig endpoints/screen.php
 +		} else if(strpos($_ENV['HTTP_IF_MODIFIED_SINCE'] ?? '','GMT')) {
  			$ctime = strtotime($_ENV['HTTP_IF_MODIFIED_SINCE']);
  		}
- 
-diff -ur panes/settingsDisplay.html.orig panes/settingsDisplay.html
---- panes/settingsDisplay.html.orig
+ 		
+--- panes/settingsDisplay.html.orig	2024-06-07 15:46:20 UTC
 +++ panes/settingsDisplay.html
-@@ -77,9 +77,9 @@
+@@ -77,9 +77,9 @@ -->
  		<th><span class='translate'>Authentication Method:</span></th>
  		<td>
               <select name='vboxSettingsDisplayVRDEAuth' id='vboxSettingsDisplayVRDEAuthID' style='width: 100%'>
@@ -195,10 +235,9 @@ diff -ur panes/settingsDisplay.html.orig panes/settingsDisplay.html
               </select>
            </td>
  	</tr>
-diff -ur panes/settingsNetwork.html.orig panes/settingsNetwork.html
---- panes/settingsNetwork.html.orig
+--- panes/settingsNetwork.html.orig	2024-06-07 15:46:20 UTC
 +++ panes/settingsNetwork.html
-@@ -320,7 +320,7 @@
+@@ -320,7 +320,7 @@ function vboxSettingsUpdateNetworkOptions(sel) {
  	}
  
  	// Special case for Internal, Generic, and VDE network selects
@@ -207,37 +246,3 @@ diff -ur panes/settingsNetwork.html.orig panes/settingsNetwork.html
  		$(nsel).jec();
  	}
  	
---- endpoints/lib/config.php.orig
-+++ endpoints/lib/config.php
-@@ -141,6 +141,10 @@
- 	 */
- 	var $eventListenerTimeout = 20;
- 
-+	var $enableHDFlushConfig = false;
-+
-+	var $authMaster = false;
-+
- 	/**
- 	 * Read user configuration, apply defaults, and do some sanity checking
- 	 * @see vboxconnector
---- endpoints/lib/vboxconnector.php.orig
-+++ endpoints/lib/vboxconnector.php
-@@ -112,6 +112,8 @@
- 	 */
- 	var $dsep = null;
- 
-+	var $client = null;
-+
- 	/**
- 	 * Obtain configuration settings and set object vars
- 	 * @param boolean $useAuthMaster use the authentication master obtained from configuration class
-@@ -389,7 +389,8 @@
- 
- 			// The amount of time we will wait for events is determined by
- 			// the amount of listeners - at least half a second
--			$listenerWait = max(100,intval(500/count($this->persistentRequest['vboxEventListeners'])));
-+			$listenerCount = count($this->persistentRequest['vboxEventListeners']);
-+			$listenerWait = max(100,intval(500/($listenerCount > 0 ? $listenerCount : 1)));
- 		}
- 
- 		// Get events from each configured event listener

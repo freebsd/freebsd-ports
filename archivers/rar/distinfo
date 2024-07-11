@@ -1,5 +1,5 @@
-TIMESTAMP = 1709390344
-SHA256 (rarbsd-x32-700.tar.gz) = 87e031c350255c6c871fdeb21315ec971d0c5b049402d29e6f51f52ab31f849e
-SIZE (rarbsd-x32-700.tar.gz) = 741564
-SHA256 (rarbsd-x64-700.tar.gz) = 27278cabfacacda4b8350271836814f493193b38abb059bb3162e7ec648dba30
-SIZE (rarbsd-x64-700.tar.gz) = 745600
+TIMESTAMP = 1716448636
+SHA256 (rarbsd-x32-701.tar.gz) = 987a4df7b691beda9af816852152058e317ede8afd0ea1c9bc3a479fb024b8dd
+SIZE (rarbsd-x32-701.tar.gz) = 742088
+SHA256 (rarbsd-x64-701.tar.gz) = 29d4f65abfedb715e68ac750b95b4a172cfcf815e68a07eb592083c0e3085f46
+SIZE (rarbsd-x64-701.tar.gz) = 744802

@@ -1,7 +1,6 @@
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.25.1-7
-DISTVERSIONSUFFIX= -g2d78ee85
+DISTVERSION=	0.10.0
 PORTEPOCH=	1
 CATEGORIES=	net
 DIST_SUBDIR?=	${PORTNAME}
@@ -10,7 +9,7 @@ PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Open source Remote Desktop Protocol (RDP) server
-WWW=		http://www.xrdp.org/
+WWW=		https://www.xrdp.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -30,8 +29,9 @@ USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 GH_ACCOUNT=	neutrinolabs
-GH_TUPLE=	neutrinolabs:librfxcodec:c537401a:librfxcodec/librfxcodec \
-		neutrinolabs:libpainter:b44f2fa:libpainter/libpainter
+GH_TUPLE=	neutrinolabs:librfxcodec:e8208bf:librfxcodec/librfxcodec \
+		neutrinolabs:libpainter:2255b38:libpainter/libpainter \
+		neutrinolabs:ulalaca-xrdp:f683d17:ulalaca/ulalaca
 
 CONFIGURE_ARGS=	--enable-imlib2 \
 		--enable-jpeg \
@@ -40,6 +40,7 @@ CONFIGURE_ARGS=	--enable-imlib2 \
 		--enable-pixman \
 		--enable-rfxcodec \
 		--enable-strict-locations \
+		--enable-vsock \
 		--localstatedir=/var \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
 LDFLAGS+=	-lssl

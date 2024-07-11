@@ -21,7 +21,7 @@ LIB_DEPENDS=	libshiboken6.abi${PYTHON_MAJOR_VER}.so:devel/shiboken6@${PY_FLAVOR}
 USES=		cmake gl llvm:lib,noexport python qt:6 shebangfix tar:xz
 USE_GL=		opengl
 USE_PYTHON=	flavors
-USE_QT=		base declarative languageserver tools
+USE_QT=		base declarative languageserver quick3d shadertools tools
 
 SHEBANG_FILES=	pyside_tool.py qtpy2cpp_lib/tests/baseline/basic_test.py
 

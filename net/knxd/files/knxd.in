@@ -22,6 +22,7 @@ load_rc_config $name
 : ${knxd_enable:="NO"}
 : ${knxd_config:="%%PREFIX%%/etc/knxd.conf"}
 : ${knxd_flags="${knxd_config}"}
+: ${knxd_svcj_options:="net_basic"}
 
 command="%%PREFIX%%/bin/knxd"
 #command_args=""

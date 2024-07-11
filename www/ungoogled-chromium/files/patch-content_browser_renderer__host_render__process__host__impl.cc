@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_process_host_impl.cc.orig	2024-05-23 20:04:36 UTC
+--- content/browser/renderer_host/render_process_host_impl.cc.orig	2024-06-22 08:49:42 UTC
 +++ content/browser/renderer_host/render_process_host_impl.cc
-@@ -226,7 +226,7 @@
+@@ -224,7 +224,7 @@
  #include "third_party/blink/public/mojom/android_font_lookup/android_font_lookup.mojom.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include <sys/resource.h>
  
  #include "components/services/font/public/mojom/font_service.mojom.h"  // nogncheck
-@@ -968,7 +968,7 @@ static constexpr size_t kUnknownPlatformProcessLimit =
+@@ -965,7 +965,7 @@ static constexpr size_t kUnknownPlatformProcessLimit =
  // to indicate failure and std::numeric_limits<size_t>::max() to indicate
  // unlimited.
  size_t GetPlatformProcessLimit() {
@@ -18,7 +18,7 @@
    struct rlimit limit;
    if (getrlimit(RLIMIT_NPROC, &limit) != 0)
      return kUnknownPlatformProcessLimit;
-@@ -1154,7 +1154,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
+@@ -1151,7 +1151,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
    IOThreadHostImpl& operator=(const IOThreadHostImpl& other) = delete;
  
    void SetPid(base::ProcessId child_pid) {
@@ -27,7 +27,7 @@
      child_thread_type_switcher_.SetPid(child_pid);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
    }
-@@ -1171,7 +1171,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
+@@ -1168,7 +1168,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
          return;
      }
  
@@ -36,7 +36,7 @@
      if (auto font_receiver = receiver.As<font_service::mojom::FontService>()) {
        ConnectToFontService(std::move(font_receiver));
        return;
-@@ -1265,7 +1265,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
+@@ -1262,7 +1262,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
    std::unique_ptr<service_manager::BinderRegistry> binders_;
    mojo::Receiver<mojom::ChildProcessHost> receiver_{this};
  
@@ -45,7 +45,7 @@
    mojo::Remote<media::mojom::VideoEncodeAcceleratorProviderFactory>
        video_encode_accelerator_factory_remote_;
    ChildThreadTypeSwitcher child_thread_type_switcher_;
-@@ -3363,7 +3363,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
+@@ -3380,7 +3380,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
              base::TimeTicks::UnixEpoch().since_origin().InMicroseconds()));
    }
  
@@ -54,7 +54,7 @@
    // Append `kDisableVideoCaptureUseGpuMemoryBuffer` flag if there is no support
    // for NV12 GPU memory buffer.
    if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled() &&
-@@ -3422,6 +3422,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3438,6 +3438,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
      switches::kDisableSpeechAPI,
      switches::kDisableThreadedCompositing,
      switches::kDisableTouchDragDrop,

@@ -49,6 +49,8 @@ lib/libKF6PeopleWidgets.so
 lib/libKF6PeopleWidgets.so.6
 lib/libKF6PeopleWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/kpeople/datasource/KPeopleVCard.so
+%%QT_QMLDIR%%/org/kde/people/KF6PeopleDeclarative.qmltypes
+%%QT_QMLDIR%%/org/kde/people/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/people/libKF6PeopleDeclarative.so
 %%QT_QMLDIR%%/org/kde/people/qmldir
 share/locale/ar/LC_MESSAGES/kpeople6.mo

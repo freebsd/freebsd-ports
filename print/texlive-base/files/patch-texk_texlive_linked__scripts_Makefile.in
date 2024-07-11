@@ -1,6 +1,6 @@
---- texk/texlive/linked_scripts/Makefile.in.orig	2022-02-14 21:00:19 UTC
+--- texk/texlive/linked_scripts/Makefile.in.orig	2024-02-10 23:22:21 UTC
 +++ texk/texlive/linked_scripts/Makefile.in
-@@ -290,8 +290,6 @@ texmf_shell_scripts = \
+@@ -296,8 +296,6 @@ texmf_shell_scripts = \
  	texlive-extra/dvi2fax.sh \
  	texlive-extra/dvired.sh \
  	texlive-extra/fontinst.sh \
@@ -9,7 +9,64 @@
  	texlive-extra/ps2frag.sh \
  	texlive-extra/pslatex.sh \
  	texlive-extra/rubibtex.sh \
-@@ -471,8 +469,6 @@ bin_links = \
+@@ -329,7 +327,6 @@ texmf_other_scripts = \
+ 	bib2gls/bib2gls.sh \
+ 	bib2gls/convertgls2bib.sh \
+ 	bibcop/bibcop.pl \
+-	bibtexperllibs/ltx2unitxt \
+ 	bundledoc/arlatex \
+ 	bundledoc/bundledoc \
+ 	cachepic/cachepic.tlu \
+@@ -356,9 +353,7 @@ texmf_other_scripts = \
+ 	dosepsbin/dosepsbin.pl \
+ 	dviasm/dviasm.py \
+ 	dviinfox/dviinfox.pl \
+-	easydtx/edtx2dtx.pl \
+ 	ebong/ebong.py \
+-	eolang/eolang.pl \
+ 	epspdf/epspdf.tlu \
+ 	epspdf/epspdftk.tcl \
+ 	epstopdf/epstopdf.pl \
+@@ -402,10 +397,6 @@ texmf_other_scripts = \
+ 	make4ht/make4ht \
+ 	match_parens/match_parens \
+ 	mathspic/mathspic.pl \
+-	memoize/memoize-clean.pl \
+-	memoize/memoize-clean.py \
+-	memoize/memoize-extract.pl \
+-	memoize/memoize-extract.py \
+ 	mf2pt1/mf2pt1.pl \
+ 	mkgrkindex/mkgrkindex \
+ 	mkjobtexmf/mkjobtexmf.pl \
+@@ -436,19 +427,16 @@ texmf_other_scripts = \
+ 	pythontex/depythontex.py \
+ 	pythontex/pythontex.py \
+ 	rubik/rubikrotation.pl \
+-	runtexshebang/runtexshebang.lua \
+ 	spix/spix.py \
+ 	splitindex/splitindex.pl \
+ 	srcredact/srcredact.pl \
+ 	sty2dtx/sty2dtx.pl \
+ 	svn-multi/svn-multi.pl \
+ 	tex4ebook/tex4ebook \
+-	texblend/texblend \
+ 	texcount/texcount.pl \
+ 	texdef/texdef.pl \
+ 	texdiff/texdiff \
+ 	texdirflatten/texdirflatten \
+-	texfindpkg/texfindpkg.lua \
+ 	texdoc/texdoc.tlu \
+ 	texfot/texfot.pl \
+ 	texlive/fmtutil-sys.sh \
+@@ -459,7 +447,6 @@ texmf_other_scripts = \
+ 	texlive/mktexpk \
+ 	texlive/mktextfm \
+ 	texlive/rungs.lua \
+-	texlive/tlmgr.pl \
+ 	texlive/updmap-sys.sh \
+ 	texlive/updmap-user.sh \
+ 	texlive/updmap.pl \
+@@ -489,8 +476,6 @@ bin_links = \
  	cluttex:cllualatex \
  	epstopdf:repstopdf \
  	fmtutil:mktexfmt \

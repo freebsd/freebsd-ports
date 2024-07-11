@@ -11,7 +11,8 @@ WWW=		https://wiki.gnome.org/Projects/GnomeShellIntegrationForChrome
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	base64:converters/base64 \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		base64:converters/base64 \
 		gnome-shell>=3.28:x11/gnome-shell \
 		jq:textproc/jq
 

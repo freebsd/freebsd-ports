@@ -27,7 +27,8 @@ BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 BUILD_DEPENDS+=	e2fsprogs-libuuid>=0:misc/e2fsprogs-libuuid \
 		gnutls>=0:security/gnutls
 
-USES=		bison gmake python:build pkgconfig shebangfix tar:bz2
+USES=		bison compiler:c11 gmake python:build pkgconfig shebangfix ssl \
+		tar:bz2
 BINARY_ALIAS=	bison=${LOCALBASE}/bin/bison dtc=${LOCALBASE}/bin/dtc sed=gsed python3=${PYTHON_CMD}
 
 SHEBANG_FILES=	tools/binman/binman
@@ -36,8 +37,9 @@ UBOOT_DIR=	share/u-boot/${PORTNAME}${PKGNAMESUFFIX}
 INST=		${PREFIX}/${UBOOT_DIR}
 DESCR?=		${.CURDIR}/pkg-descr
 
-MAKE_ENV+=	V=1 CROSS_COMPILE=${CROSS_COMPILE} PYTHON=${PYTHON_CMD} CC=clang
-MAKE_ARGS+=	${ARCHFLAGS}
+MAKE_ENV+=	CROSS_COMPILE=${CROSS_COMPILE} PYTHON=${PYTHON_CMD}
+MAKE_ARGS+=	${ARCHFLAGS} V=1 HOSTCFLAGS="${CFLAGS} -I${OPENSSLINC}" \
+		HOSTLDFLAGS="${LDFLAGS} -L${OPENSSLLIB}"
 
 NO_ARCH=	yes
 
@@ -104,6 +106,10 @@ UBOOT_ARCH_RK3328=	aarch64
 UBOOT_PLIST_RK3399=	idbloader.img u-boot.itb
 UBOOT_ARCH_RK3399=	aarch64
 
+# Override for RK356X family
+UBOOT_PLIST_RK356X=	idbloader.img u-boot.itb
+UBOOT_ARCH_RK356X=	aarch64
+
 # Override for ARMADA38X family
 UBOOT_PLIST_ARMADA38X=	u-boot-with-spl.kwb
 UBOOT_METADATA_ARMADA38X_FILES=		${UBOOT_PLIST_ARMADA38X}
@@ -118,7 +124,7 @@ UBOOT_PLIST_QEMU=	u-boot.bin
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
 .endif
-UBOOT_VERSION?=	2024.01
+UBOOT_VERSION?=	2024.04
 
 # If a slave port defines a PORTREVISION use it
 .if defined(U_BOOT_SLAVE_PORTREVISION_${UBOOT_VERSION})
@@ -179,6 +185,13 @@ MAKE_ENV+=	BL31=${LOCALBASE}/share/atf-rk3328/bl31.elf
 BUILD_DEPENDS+=	${LOCALBASE}/share/atf-rk3399/bl31.elf:sysutils/atf-rk3399 \
 		${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR}
 MAKE_ENV+=	BL31=${LOCALBASE}/share/atf-rk3399/bl31.elf
+.endif
+
+.if defined(FAMILY) && ${FAMILY} == rk356X
+BUILD_DEPENDS+=	${LOCALBASE}/share/rkbin/rk35/rk3566_ddr_1056MHz_v1.21.bin:sysutils/rkbin \
+		${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR}
+MAKE_ENV+=	BL31=${LOCALBASE}/share/rkbin/rk35/rk3568_bl31_v1.44.elf \
+		ROCKCHIP_TPL=${LOCALBASE}/share/rkbin/rk35/rk3566_ddr_1056MHz_v1.21.bin
 .endif
 
 # Each u-boot family has different files to include, bring them in.

@@ -1,5 +1,5 @@
 PORTNAME=	memory_profiler
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

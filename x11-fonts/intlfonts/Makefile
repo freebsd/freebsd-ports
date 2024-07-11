@@ -24,10 +24,7 @@ FONTS_ALIAS=	Asian Chinese European Japanese Japanese.X
 
 do-build:
 .for f in ${FONTS}
-	for bdf in ${WRKSRC}/${f}/*.bdf ; do \
-		${ECHO_CMD} $${bdf}; \
-		${LOCALBASE}/bin/bdftopcf $${bdf} | ${GZIP_CMD} > $${bdf%.bdf}.pcf.gz; \
-	done
+	for bdf in ${WRKSRC}/${f}/*.bdf; do ${LOCALBASE}/bin/bdftopcf $${bdf} | ${GZIP_CMD} > $${bdf%.bdf}.pcf.gz; done
 .endfor
 
 do-install:

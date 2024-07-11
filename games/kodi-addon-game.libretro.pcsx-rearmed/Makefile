@@ -1,12 +1,11 @@
 PORTNAME=	game.libretro.pcsx-rearmed
-PORTVERSION=	23.0.0.44
-DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	2
+PORTVERSION=	24.0.0.56
+DISTVERSIONSUFFIX=	-Nexus
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Kodi game addon for Sony - PlayStation (PCSX ReARMed)
-WWW=		https://github.com/libretro/pcsx_rearmed
+WWW=		https://github.com/kodi-game/game.libretro.pcsx-rearmed
 
 LICENSE=	GPLv2+
 

@@ -1,8 +1,10 @@
 PORTNAME=	olive
-DISTVERSION=	0.1.2-20230320
-PORTREVISION=	6
+DISTVERSION=	0.1.2-20240513
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-video-editor
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	311eeb72944f93f873d1cd1784ee2bf423e1e7c2.patch:-p1 # https://github.com/olive-editor/olive/pull/2294, OpenColorIO 2.3 compatibility
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Non-linear video editor
@@ -28,9 +30,11 @@ USE_GL=		gl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	olive-editor
-GH_TAGNAME=	8ca1672
+GH_TAGNAME=	f7e1bff
 GH_TUPLE=	olive-editor:core:2777928:core/ext/core \
 		KDAB:KDDockWidgets:8d2d0a5:KDDockWidgets/ext/KDDockWidgets
+
+CXXFLAGS_i386=	-msse -msse2
 
 PORTSCOUT=	limit:^.*[1-9]\..* # prevent tags like 20181223
 

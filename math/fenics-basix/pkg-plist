@@ -1,5 +1,4 @@
 include/basix/cell.h
-include/basix/docs.h
 include/basix/dof-transformations.h
 include/basix/e-brezzi-douglas-marini.h
 include/basix/e-bubble.h
@@ -25,6 +24,7 @@ include/basix/polynomials.h
 include/basix/polyset.h
 include/basix/precompute.h
 include/basix/quadrature.h
+include/basix/sobolev-spaces.h
 include/basix/version.h
 include/finite-element.h
 lib/cmake/basix/BasixConfig.cmake

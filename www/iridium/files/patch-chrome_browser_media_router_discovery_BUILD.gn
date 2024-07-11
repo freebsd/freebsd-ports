@@ -1,6 +1,6 @@
---- chrome/browser/media/router/discovery/BUILD.gn.orig	2024-02-04 14:46:08 UTC
+--- chrome/browser/media/router/discovery/BUILD.gn.orig	2024-06-25 12:08:48 UTC
 +++ chrome/browser/media/router/discovery/BUILD.gn
-@@ -81,7 +81,7 @@ static_library("discovery") {
+@@ -82,7 +82,7 @@ static_library("discovery") {
    ]
    configs += [ "//build/config/compiler:wexit_time_destructors" ]
  

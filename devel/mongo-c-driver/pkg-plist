@@ -75,7 +75,6 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/_static/_sphinx_javascript_frameworks_compat.js
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/_static/basic.css
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/_static/debug.css
-%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/_static/design-tabs.js
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/_static/doctools.js
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/_static/documentation_options.js

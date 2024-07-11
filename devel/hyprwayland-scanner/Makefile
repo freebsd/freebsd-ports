@@ -1,6 +1,6 @@
 PORTNAME=	hyprwayland-scanner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.8
+DISTVERSION=	0.4.0
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,7 +20,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		lib/cmake/${PORTNAME}/${PORTNAME}-config.cmake \
 		libdata/pkgconfig/${PORTNAME}.pc
 
-# XXX Drop after FreeBSD 14.0 EOL around 2025-03-01
+# XXX Drop after FreeBSD 14.0 EOL around 2024-10-01
 .if exists(/usr/include/c++/v1/__format/format_functions.h) && \
    !exists(/usr/include/c++/v1/__format/write_escaped.h)
 CXXFLAGS+=	-fexperimental-library

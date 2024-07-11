@@ -32,7 +32,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libwavpack.so:audio/wavpack
 
 USES=		cmake compiler:c++20-lang cpe desktop-file-utils gettext \
-		gnome libtool python:build pkgconfig shared-mime-info
+		gnome python:build pkgconfig shared-mime-info
 CPE_VENDOR=	audacityteam
 
 USE_GITHUB=	yes
@@ -141,13 +141,6 @@ VST_CMAKE_BOOL=		audacity_use_vst
 CMAKE_ARGS+=	-DHAVE_MMX:BOOL=OFF \
 		-DHAVE_SSE:BOOL=OFF \
 		-DHAVE_SSE2:BOOL=OFF
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1302508
-# Workarounds for buggy libc++ std::conjunction
-EXTRA_PATCHES=	${PATCHDIR}/extra-libraries_lib-utility_TypeList.cpp \
-		${PATCHDIR}/extra-libraries_lib-utility_TypeList.h \
-		${PATCHDIR}/extra-libraries_lib-utility_TypeSwitch.h
 .endif
 
 post-install:

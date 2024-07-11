@@ -1,3 +1,3 @@
-TIMESTAMP = 1715843216
-SHA256 (rubygem/aws-sdk-guardduty-1.92.0.gem) = 6ab6836a651b46fc09cd67fda98636dabdddaa017bdc131790df11c4d10087b2
-SIZE (rubygem/aws-sdk-guardduty-1.92.0.gem) = 118272
+TIMESTAMP = 1720355434
+SHA256 (rubygem/aws-sdk-guardduty-1.96.0.gem) = 72101aea6e68939a2df2f034e3e18f38653ff52f7c2f88493c2c91d8718bf814
+SIZE (rubygem/aws-sdk-guardduty-1.96.0.gem) = 124416

@@ -59,10 +59,12 @@ include/opensubdiv/osd/glXFBEvaluator.h
 include/opensubdiv/osd/glslPatchShaderSource.h
 include/opensubdiv/osd/mesh.h
 include/opensubdiv/osd/nonCopyable.h
-@comment include/opensubdiv/osd/ompEvaluator.h
-@comment include/opensubdiv/osd/ompKernel.h
+%%OPENMP%%include/opensubdiv/osd/ompEvaluator.h
+%%OPENMP%%include/opensubdiv/osd/ompKernel.h
 %%OPENCL%%include/opensubdiv/osd/opencl.h
 include/opensubdiv/osd/opengl.h
+include/opensubdiv/osd/patchBasis.h
+include/opensubdiv/osd/patchBasisTypes.h
 %%TBB%%include/opensubdiv/osd/tbbEvaluator.h
 %%TBB%%include/opensubdiv/osd/tbbKernel.h
 include/opensubdiv/osd/types.h
@@ -93,7 +95,7 @@ lib/libosdCPU.so.%%LIBVERS%%
 lib/libosdGPU.a
 lib/libosdGPU.so
 lib/libosdGPU.so.%%LIBVERS%%
-@comment %%EXAMPLES%%%%EXAMPLESDIR%%/farViewer
+%%EXAMPLES%%%%EXAMPLESDIR%%/farViewer
 %%EXAMPLES%%%%EXAMPLESDIR%%/glEvalLimit
 %%EXAMPLES%%%%EXAMPLESDIR%%/glFVarViewer
 %%EXAMPLES%%%%EXAMPLESDIR%%/glImaging
@@ -102,11 +104,21 @@ lib/libosdGPU.so.%%LIBVERS%%
 %%EXAMPLES%%%%EXAMPLESDIR%%/glShareTopology
 %%EXAMPLES%%%%EXAMPLESDIR%%/glStencilViewer
 %%EXAMPLES%%%%EXAMPLESDIR%%/glViewer
+%%TEST%%tests/opensubdiv/bfr_evaluate
 %%TEST%%tests/opensubdiv/far_perf
-@comment %%TEST%%tests/opensubdiv/far_regression
-@comment %%TEST%%tests/opensubdiv/hbr_baseline
-@comment %%TEST%%tests/opensubdiv/hbr_regression
-@comment %%TEST%%tests/opensubdiv/osd_regression
+%%TEST%%tests/opensubdiv/far_regression
+%%TEST%%tests/opensubdiv/hbr_baseline
+%%TEST%%tests/opensubdiv/hbr_regression
+%%TEST%%tests/opensubdiv/osd_regression
+%%TUTORIALS%%%%DATADIR%%/tutorials/bfr_tutorial_1_1
+%%TUTORIALS%%%%DATADIR%%/tutorials/bfr_tutorial_1_2
+%%TUTORIALS%%%%DATADIR%%/tutorials/bfr_tutorial_1_3
+%%TUTORIALS%%%%DATADIR%%/tutorials/bfr_tutorial_1_4
+%%TUTORIALS%%%%DATADIR%%/tutorials/bfr_tutorial_1_5
+%%TUTORIALS%%%%DATADIR%%/tutorials/bfr_tutorial_2_1
+%%TUTORIALS%%%%DATADIR%%/tutorials/bfr_tutorial_2_2
+%%TUTORIALS%%%%DATADIR%%/tutorials/bfr_tutorial_3_1
+%%TUTORIALS%%%%DATADIR%%/tutorials/bfr_tutorial_3_2
 %%TUTORIALS%%%%DATADIR%%/tutorials/far_tutorial_1_1
 %%TUTORIALS%%%%DATADIR%%/tutorials/far_tutorial_1_2
 %%TUTORIALS%%%%DATADIR%%/tutorials/far_tutorial_2_1
@@ -119,7 +131,7 @@ lib/libosdGPU.so.%%LIBVERS%%
 %%TUTORIALS%%%%DATADIR%%/tutorials/far_tutorial_5_1
 %%TUTORIALS%%%%DATADIR%%/tutorials/far_tutorial_5_2
 %%TUTORIALS%%%%DATADIR%%/tutorials/far_tutorial_5_3
-@comment %%TUTORIALS%%%%DATADIR%%/tutorials/hbr_tutorial_0
-@comment %%TUTORIALS%%%%DATADIR%%/tutorials/hbr_tutorial_1
-@comment %%TUTORIALS%%%%DATADIR%%/tutorials/hbr_tutorial_2
+%%TUTORIALS%%%%DATADIR%%/tutorials/hbr_tutorial_0
+%%TUTORIALS%%%%DATADIR%%/tutorials/hbr_tutorial_1
+%%TUTORIALS%%%%DATADIR%%/tutorials/hbr_tutorial_2
 %%TUTORIALS%%%%DATADIR%%/tutorials/osd_tutorial_0

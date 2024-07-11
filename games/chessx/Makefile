@@ -34,7 +34,7 @@ STOCKFISH_RUN_DEPENDS=	stockfish:games/stockfish
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+.if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's|std::binary_function|std::__binary_function|' \
 		${WRKSRC}/src/database/polyglotdatabase.cpp
 .endif

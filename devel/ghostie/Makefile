@@ -1,7 +1,7 @@
 PORTNAME=	ghostie
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.1
-PORTREVISION=	13
+DISTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +24,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		async-channel-1.7.1 \
 		async-executor-1.5.0 \
 		async-global-executor-2.3.1 \
-		async-io-1.10.0 \
+		async-io-1.12.0 \
 		async-lock-2.6.0 \
 		async-recursion-0.3.2 \
 		async-std-1.12.0 \
@@ -38,6 +38,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		block-0.1.6 \
 		blocking-1.2.0 \
 		boxfnonce-0.1.1 \
+		bstr-0.2.17 \
 		bumpalo-3.11.1 \
 		byteorder-1.4.3 \
 		bytes-1.3.0 \
@@ -136,7 +137,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		mime-0.3.16 \
 		mio-0.8.5 \
 		native-tls-0.2.11 \
-		nix-0.23.1 \
+		nix-0.23.2 \
 		notify-rust-4.5.10 \
 		ntapi-0.4.0 \
 		num-integer-0.1.45 \
@@ -147,6 +148,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		objc_id-0.1.1 \
 		once_cell-1.16.0 \
 		open-3.2.0 \
+		opener-0.5.0 \
 		openssl-0.10.42 \
 		openssl-macros-0.1.0 \
 		openssl-probe-0.1.5 \
@@ -177,6 +179,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
 		regex-1.7.0 \
+		regex-automata-0.1.10 \
 		regex-syntax-0.6.28 \
 		remove_dir_all-0.5.3 \
 		reqwest-0.11.13 \
@@ -278,10 +281,10 @@ CARGO_CRATES=	ahash-0.7.6 \
 		winreg-0.10.1 \
 		zbus-2.3.2 \
 		zbus_macros-2.3.2 \
-		zbus_names-2.3.0 \
+		zbus_names-2.5.0 \
 		zeroize-1.5.7 \
-		zvariant-3.8.0 \
-		zvariant_derive-3.8.0 \
+		zvariant-3.10.0 \
+		zvariant_derive-3.10.0 \
 		clokwerk@git+https://github.com/attriaayush/clokwerk\#f8180dfe64a98d39a5cded998998a3df8809b92c
 
 OPENSSLINC=	/usr/include

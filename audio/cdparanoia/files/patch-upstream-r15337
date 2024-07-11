@@ -1,0 +1,31 @@
+Commit fix to make debug (no optimization, please)
+
+Commit fix to -p not actually outputting in host byte order (in fact,
+it always get s it reversed regardless of endianness)
+
+Index: Makefile.in
+===================================================================
+--- Makefile.in	(revision 15336)
++++ Makefile.in	(revision 15337)
+@@ -10,7 +10,7 @@
+ @SET_MAKE@
+ FLAGS=@TYPESIZES@ @CFLAGS@
+ OPT=@OPT@ $(FLAGS)
+-DEBUG=@DEBUG@ $(FLAGS)
++DEBUG=@DEBUG@
+ CC=@CC@
+ LD=@CC@
+ LDFLAGS=@LDFLAGS@ $(FLAGS)
+Index: main.c
+===================================================================
+--- main.c	(revision 15336)
++++ main.c	(revision 15337)
+@@ -746,7 +746,7 @@
+       break;
+     case 'p':
+       output_type=0;
+-      output_endian=-1;
++      output_endian=bigendianp();
+       break;
+     case 'r':
+       output_type=0;

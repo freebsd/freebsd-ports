@@ -35,6 +35,7 @@ fdfs_storaged_poststart()
 # read configuration and set defaults
 load_rc_config "$name"
 : ${fdfs_storaged_enable="NO"}
+: ${fdfs_storaged_svcj_options:="net_basic"}
 : ${fdfs_storaged_config="%%PREFIX%%/etc/fdfs/storage.conf"}
 
 command_args="${fdfs_storaged_config}"

@@ -1,9 +1,10 @@
---- Mathics3.egg-info/requires.txt.orig	2023-07-23 21:37:36 UTC
+--- Mathics3.egg-info/requires.txt.orig	2023-11-25 02:22:46 UTC
 +++ Mathics3.egg-info/requires.txt
-@@ -1,5 +1,5 @@
+@@ -1,6 +1,6 @@ scikit-image>=0.17
  Mathics-Scanner>=1.3.0
+ scikit-image>=0.17
 -numpy<1.25
-+numpy<=1.25
++numpy<1.27
  llvmlite
  sympy>=1.8
  pillow>=9.2

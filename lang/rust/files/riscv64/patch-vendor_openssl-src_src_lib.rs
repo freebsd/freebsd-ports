@@ -1,5 +1,5 @@
---- vendor/openssl-src/src/lib.rs.orig	2021-11-04 11:27:54 UTC
-+++ vendor/openssl-src/src/lib.rs
+--- vendor/openssl-src-111.28.1+1.1.1w/src/lib.rs.orig	2021-11-04 11:27:54 UTC
++++ vendor/openssl-src-111.28.1+1.1.1w/src/lib.rs
 @@ -260,6 +260,7 @@ impl Build {
              "powerpc64le-unknown-freebsd" => "BSD-generic64",
              "powerpc64le-unknown-linux-gnu" => "linux-ppc64le",

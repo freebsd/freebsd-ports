@@ -16,6 +16,7 @@
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 dnsproxy_enable=${dnsproxy_enable:-"NO"}
+: ${dnsproxy_svcj_options:="net_basic"}
 command_args=${dnsproxy_flags:-"-c %%ETCDIR%%/dnsproxy.conf -d"}
 
 . /etc/rc.subr

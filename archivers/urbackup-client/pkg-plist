@@ -1,6 +1,5 @@
 bin/blockalign
 bin/urbackupclientctl
-%%GUI%%bin/urbackupclientgui
 sbin/urbackupclientbackend
 share/man/man1/urbackupclientbackend.1.gz
 @mode 0600
@@ -27,30 +26,6 @@ share/urbackup/scripts/setup-postgresbackup
 @sample etc/urbackup/urbackupclient.conf.sample
 etc/newsyslog.conf.d/urbackupclient.conf
 share/urbackup/updates_h.dat
-%%GUI%%share/urbackup/backup-bad.xpm
-%%GUI%%share/urbackup/backup-indexing.xpm
-%%GUI%%share/urbackup/backup-no-recent.xpm
-%%GUI%%share/urbackup/backup-no-server.xpm
-%%GUI%%share/urbackup/backup-ok.xpm
-%%GUI%%share/urbackup/backup-progress-pause.xpm
-%%GUI%%share/urbackup/backup-progress.xpm
-%%GUI%%share/urbackup/info.txt
-%%GUI%%share/urbackup/lang/cs/urbackup.mo
-%%GUI%%share/urbackup/lang/da/urbackup.mo
-%%GUI%%share/urbackup/lang/de/urbackup.mo
-%%GUI%%share/urbackup/lang/es/urbackup.mo
-%%GUI%%share/urbackup/lang/fa/urbackup.mo
-%%GUI%%share/urbackup/lang/fr/urbackup.mo
-%%GUI%%share/urbackup/lang/it/urbackup.mo
-%%GUI%%share/urbackup/lang/nl/urbackup.mo
-%%GUI%%share/urbackup/lang/pl/urbackup.mo
-%%GUI%%share/urbackup/lang/pt_BR/urbackup.mo
-%%GUI%%share/urbackup/lang/ru/urbackup.mo
-%%GUI%%share/urbackup/lang/sk/urbackup.mo
-%%GUI%%share/urbackup/lang/uk/urbackup.mo
-%%GUI%%share/urbackup/lang/zh_CN/urbackup.mo
-%%GUI%%share/urbackup/lang/zh_TW/urbackup.mo
-%%GUI%%share/urbackup/logo1.png
 @dir(,,0700) /var/urbackup/data
 @dir(urbackup,urbackup,0755) /var/urbackup
 @mode 555

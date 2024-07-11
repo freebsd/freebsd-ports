@@ -1,6 +1,7 @@
 PORTNAME=	surrealdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -570,11 +571,11 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		strsim-0.10.0 \
 		strsim-0.11.1 \
 		subtle-2.5.0 \
-		surrealdb-core-1.4.2 \
+		surrealdb-core-1.5.0 \
 		surrealdb-derive-0.12.0 \
 		surrealdb-jsonwebtoken-8.3.0-surreal.1 \
 		surrealdb-tikv-client-0.2.0-surreal.2 \
-		surrealkv-0.1.3 \
+		surrealkv-0.1.6 \
 		surrealml-core-0.1.2 \
 		symbolic-common-12.8.0 \
 		symbolic-demangle-12.8.0 \
@@ -659,7 +660,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		utf8parse-0.2.1 \
 		uuid-1.8.0 \
 		valuable-0.1.0 \
-		vart-0.1.1 \
+		vart-0.2.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		vswhom-0.1.0 \

@@ -17,6 +17,7 @@ lib/libKF6ColorScheme.so.6
 lib/libKF6ColorScheme.so.%%KDE_FRAMEWORKS_VERSION%%
 share/locale/ar/LC_MESSAGES/kcolorscheme6.mo
 share/locale/ast/LC_MESSAGES/kcolorscheme6.mo
+share/locale/be/LC_MESSAGES/kcolorscheme6.mo
 share/locale/bg/LC_MESSAGES/kcolorscheme6.mo
 share/locale/ca/LC_MESSAGES/kcolorscheme6.mo
 share/locale/ca@valencia/LC_MESSAGES/kcolorscheme6.mo

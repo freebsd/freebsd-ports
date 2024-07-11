@@ -24,11 +24,11 @@ bin/zerk
 include/gps.h
 include/libgpsmm.h
 lib/libgps.so
-lib/libgps.so.29
-lib/libgps.so.29.0.0
+lib/libgps.so.30
+lib/libgps.so.30.0.0
 lib/libgpsdpacket.so
-lib/libgpsdpacket.so.29
-lib/libgpsdpacket.so.29.0.0
+lib/libgpsdpacket.so.30
+lib/libgpsdpacket.so.30.0.0
 share/man/man1/cgps.1.gz
 share/man/man1/gegps.1.gz
 share/man/man1/gps.1.gz
@@ -61,6 +61,7 @@ share/man/man8/gpsd.8.gz
 share/man/man8/gpsdctl.8.gz
 share/man/man8/gpsinit.8.gz
 share/man/man8/ppscheck.8.gz
+share/snmp/mibs/gpsd/GPSD-MIB
 %%PYTHON_SITELIBDIR%%/%%PYTHON_EGGINFO%%
 %%PYTHON_SITELIBDIR%%/gps/__init__.py
 %%PYTHON_SITELIBDIR%%/gps/aiogps.py
@@ -80,6 +81,7 @@ libdata/pkgconfig/libgps.pc
 %%DATADIR%%/doc/SUPPORT.adoc
 %%DATADIR%%/doc/build.adoc
 %%DATADIR%%/doc/example1.c.txt
+%%DATADIR%%/doc/example2.py.txt
 %%DATADIR%%/icons/gpsd-logo.png
 sbin/gpsd
 sbin/gpsdctl

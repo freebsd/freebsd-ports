@@ -1,0 +1,26 @@
+--- ../naxsi-1.6/naxsi_src/config.orig	2023-09-27 09:43:18.644606000 -0400
++++ ../naxsi-1.6/naxsi_src/config	2023-09-27 09:44:37.585970000 -0400
+@@ -24,11 +24,6 @@
+ "
+ 
+ # try to use libinjection as system library
+-LIBINJECTION_CFLAGS="$(pkg-config --cflags libinjection)"
+-LIBINJECTION_LIBS="$(pkg-config --libs libinjection)"
+-LIBINJECTION_FOUND="$?"
+-
+-if [ "$LIBINJECTION_FOUND" != "0" ]; then
+     if [ ! -d "$ngx_addon_dir/libinjection/src/" ]; then
+         echo "Cannot find 'libinjection' submodule."
+         exit 1;
+@@ -43,11 +38,6 @@
+         naxsi_sources="$naxsi_sources $ngx_addon_dir/libinjection_ngxbuild/$src_file"
+     done;
+     CFLAGS="$CFLAGS -DLIBINJECTION_VERSION=0 -I$ngx_addon_dir/libinjection_ngxbuild/"
+-else
+-    echo "Using system libinjection"
+-    CFLAGS="$CFLAGS $LIBINJECTION_CFLAGS"
+-    ngx_feature_libs="$LIBINJECTION_LIBS"
+-fi
+ 
+ # NGINX module condfiguration.
+ ngx_addon_name=naxsi

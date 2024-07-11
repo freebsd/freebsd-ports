@@ -1,14 +1,17 @@
 PORTNAME=	countdown
-PORTVERSION=	20150606
+PORTVERSION=	20220903
 CATEGORIES=	deskutils
 MASTER_SITES=	https://acme.com/software/countdown/
-DISTNAME=	countdown_06jun2015
+DISTNAME=	countdown_03Sep2022
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Counts down a specified time interval, beeps, then exits
 WWW=		https://acme.com/software/countdown/
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	ACME
+LICENSE_NAME=	ACME Labs Freeware License
+LICENSE_TEXT=	You may use this software however you like as long as you keep my name on it and don't sue me
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 WRKSRC=		${WRKDIR}/countdown
 

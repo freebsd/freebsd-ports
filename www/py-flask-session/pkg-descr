@@ -1,0 +1,2 @@
+Flask-Session adds session support to your Flask application.
+Session support allows your application to maintain session info.

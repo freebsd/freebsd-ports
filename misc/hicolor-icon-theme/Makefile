@@ -1,5 +1,5 @@
 PORTNAME=	hicolor-icon-theme
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	misc gnome
 MASTER_SITES=	https://icon-theme.freedesktop.org/releases/
 
@@ -10,8 +10,7 @@ WWW=		https://www.freedesktop.org/Standards/icon-theme-spec
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz
-GNU_CONFIGURE=	yes
+USES=		meson tar:xz
 
 NO_ARCH=	yes
 

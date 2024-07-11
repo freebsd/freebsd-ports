@@ -1,5 +1,5 @@
 PORTNAME=	cbsd
-DISTVERSION=	14.0.8
+DISTVERSION=	14.1.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
@@ -9,13 +9,13 @@ WWW=		https://www.bsdstore.ru
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
-		libcurl.so:ftp/curl \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libsqlite3.so:databases/sqlite3 \
 		libssh2.so:security/libssh2
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 		curl:ftp/curl \
-		rsync:net/rsync \
 		jq:textproc/jq \
+		rsync:net/rsync \
 		sqlite3:databases/sqlite3 \
 		sudo:security/sudo
 

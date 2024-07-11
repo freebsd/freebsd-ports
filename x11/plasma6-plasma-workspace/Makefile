@@ -1,6 +1,5 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 COMMENT=	KDE Plasma Workspace
@@ -17,7 +16,8 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libwayland-client.so:graphics/wayland \
 		libxcb-image.so:x11/xcb-util-image \
 		libxcb-util.so:x11/xcb-util \
-		libxkbcommon.so:x11/libxkbcommon
+		libxkbcommon.so:x11/libxkbcommon \
+		libQCoro6Core.so:devel/qcoro@qt6
 
 RUN_DEPENDS=	${LOCALBASE}/bin/genv:sysutils/coreutils
 

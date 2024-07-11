@@ -1,6 +1,5 @@
 PORTNAME=	react
-PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTVERSION=	1.2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://erratique.ch/software/react/releases/
 PKGNAMEPREFIX=	ocaml-
@@ -13,13 +12,14 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
+RUN_DEPENDS=	cppo:devel/ocaml-cppo
 
 USES=		tar:tbz
 USE_OCAML=	yes
 
 USE_OCAML_FINDLIB=	yes
-USE_OCAMLFIND_PLIST=	yes
 USE_OCAML_LDCONFIG=	yes
+USE_OCAMLFIND_PLIST=	yes
 
 do-build:
 	cd ${WRKSRC} && ocamlbuild react.cmxs react.cma react.a

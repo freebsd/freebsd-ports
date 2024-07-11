@@ -1,5 +1,5 @@
 PORTNAME=	pyenv
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 
@@ -26,6 +26,8 @@ post-patch:
 	@${REINPLACE_CMD} ${REINPLACE_ARGS} -e "s|\$${root}/completions|${DATADIR}/completions|g" \
 		${WRKSRC}/libexec/pyenv-init
 	@${RM} ${WRKSRC}/libexec/pyenv.orig
+	@${FIND} ${WRKSRC} -name .gitignore -delete
+	@${FIND} ${WRKSRC} -type d -empty -delete
 
 do-install:
 	CC="${CC}" ${WRKSRC}/src/${CONFIGURE_CMD}

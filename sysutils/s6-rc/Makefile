@@ -1,5 +1,5 @@
 PORTNAME=	s6-rc
-DISTVERSION=	0.5.4.1
+DISTVERSION=	0.5.4.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
@@ -10,23 +10,23 @@ WWW=		https://www.skarnet.org/software/s6-rc/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	execline>=2.9.3.0:lang/execline \
-		skalibs>=2.13.1.1:devel/skalibs \
-		s6>=2.11.3.2:sysutils/s6
-RUN_DEPENDS=	execline>=2.9.3.0:lang/execline \
-		skalibs>=2.13.1.1:devel/skalibs \
-		s6>=2.11.3.2:sysutils/s6
+BUILD_DEPENDS=	execline>=2.9.5.1:lang/execline \
+		skalibs>=2.14.1.1:devel/skalibs \
+		s6>=2.12.0.4:sysutils/s6
+RUN_DEPENDS=	execline>=2.9.5.1:lang/execline \
+		skalibs>=2.14.1.1:devel/skalibs \
+		s6>=2.12.0.4:sysutils/s6
 LIB_DEPENDS=	libs6.so:sysutils/s6 \
 		libskarnet.so:devel/skalibs
 
-USES=		gmake
+FLAVORS=	hier run
+FLAVOR?=	${FLAVORS:[1]}
 
+USES=		gmake
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 
-FLAVORS=	hier run
-FLAVOR?=	${FLAVORS:[1]}
-run_PKGNAMESUFFIX= -run
+run_PKGNAMESUFFIX=	-run
 
 # The only difference between the hier and the run flavors is the default live directory path
 # hard coded into the s6-rc utilities allowing their use without passing -l <live_dir>.

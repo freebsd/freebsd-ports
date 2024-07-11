@@ -1,6 +1,6 @@
 PORTNAME=	nextest
 DISTVERSIONPREFIX=	cargo-nextest-
-DISTVERSION=	0.9.70
+DISTVERSION=	0.9.72
 PORTREVISION=	1
 CATEGORIES=	devel
 
@@ -55,7 +55,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
 		bytes-1.6.0 \
-		camino-1.1.6 \
+		camino-1.1.7 \
 		camino-tempfile-1.1.1 \
 		cargo-platform-0.1.8 \
 		cargo_metadata-0.18.1 \
@@ -94,7 +94,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		dunce-1.0.4 \
 		ed25519-2.2.3 \
 		ed25519-dalek-2.1.1 \
-		either-1.11.0 \
+		either-1.12.0 \
 		enable-ansi-support-0.2.1 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.34 \
@@ -104,11 +104,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		errno-0.3.8 \
 		eyre-0.6.12 \
 		fastrand-1.9.0 \
-		fastrand-2.0.2 \
-		fiat-crypto-0.2.7 \
+		fastrand-2.1.0 \
+		fiat-crypto-0.2.8 \
 		filetime-0.2.23 \
 		fixedbitset-0.4.2 \
-		flate2-1.0.28 \
+		flate2-1.0.29 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
@@ -131,7 +131,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		guppy-workspace-hack-0.1.0 \
 		h2-0.3.26 \
 		hashbrown-0.12.3 \
-		hashbrown-0.14.3 \
+		hashbrown-0.14.5 \
 		hdrhistogram-7.5.4 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
@@ -154,7 +154,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		indexmap-2.2.6 \
 		indicatif-0.17.8 \
 		indoc-2.0.5 \
-		insta-1.38.0 \
+		insta-1.39.0 \
 		instant-0.1.12 \
 		ipnet-2.9.0 \
 		is-terminal-0.4.12 \
@@ -164,7 +164,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		jobserver-0.1.31 \
 		js-sys-0.3.69 \
 		lazy_static-1.4.0 \
-		libc-0.2.153 \
+		libc-0.2.155 \
 		libm-0.2.8 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.13 \
@@ -236,8 +236,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ron-0.8.1 \
 		rustc-demangle-0.1.23 \
 		rustc_version-0.4.0 \
-		rustix-0.38.33 \
-		rustls-0.21.11 \
+		rustix-0.38.34 \
+		rustls-0.21.12 \
 		rustls-pemfile-1.0.4 \
 		rustls-webpki-0.101.7 \
 		rustversion-1.0.15 \
@@ -249,13 +249,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		security-framework-sys-2.10.0 \
 		self-replace-1.3.7 \
 		self_update-0.39.0 \
-		semver-1.0.22 \
-		serde-1.0.198 \
-		serde_derive-1.0.198 \
+		semver-1.0.23 \
+		serde-1.0.202 \
+		serde_derive-1.0.202 \
 		serde_ignored-0.1.10 \
-		serde_json-1.0.116 \
+		serde_json-1.0.117 \
 		serde_path_to_error-0.1.16 \
-		serde_spanned-0.6.5 \
+		serde_spanned-0.6.6 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.8 \
 		sharded-slab-0.1.7 \
@@ -267,7 +267,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
 		smawk-0.3.2 \
-		smol_str-0.2.1 \
+		smol_str-0.2.2 \
 		socket2-0.5.6 \
 		spin-0.9.8 \
 		spki-0.7.3 \
@@ -297,8 +297,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		test-case-macros-3.3.1 \
 		test-strategy-0.3.1 \
 		textwrap-0.16.1 \
-		thiserror-1.0.59 \
-		thiserror-impl-1.0.59 \
+		thiserror-1.0.61 \
+		thiserror-impl-1.0.61 \
 		thread_local-1.1.8 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
@@ -309,9 +309,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-rustls-0.24.1 \
 		tokio-stream-0.1.15 \
 		tokio-util-0.7.10 \
-		toml-0.8.12 \
-		toml_datetime-0.6.5 \
-		toml_edit-0.22.12 \
+		toml-0.8.13 \
+		toml_datetime-0.6.6 \
+		toml_edit-0.22.13 \
 		tonic-0.10.2 \
 		tower-0.4.13 \
 		tower-layer-0.3.2 \
@@ -327,7 +327,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unicode-ident-1.0.12 \
 		unicode-linebreak-0.1.5 \
 		unicode-normalization-0.1.23 \
-		unicode-width-0.1.11 \
+		unicode-width-0.1.12 \
 		untrusted-0.9.0 \
 		url-2.5.0 \
 		urlencoding-2.1.3 \
@@ -382,7 +382,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.5 \
-		winnow-0.6.6 \
+		winnow-0.6.8 \
 		winreg-0.50.0 \
 		xattr-1.3.1 \
 		xxhash-rust-0.8.10 \

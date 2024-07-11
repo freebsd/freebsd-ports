@@ -11,7 +11,7 @@ WWW=		https://thrift.apache.org/
 
 LICENSE=	APACHE20
 
-USES=		bison cmake compiler:c++11-lang cpe libtool pkgconfig
+USES=		bison cmake compiler:c++11-lang cpe pkgconfig
 CPE_VENDOR=	apache
 USE_LDCONFIG=	yes
 

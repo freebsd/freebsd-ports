@@ -1,24 +1,25 @@
 PORTNAME=	amigadepacker
-PORTVERSION=	0.04
-PORTREVISION=	1
+DISTVERSION=	0.04
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://zakalwe.fi/~shd/foss/amigadepacker/ \
 		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tool for depacking some compressed Amiga formats
-WWW=		https://zakalwe.fi/~shd/opensource.html
+WWW=		https://gitlab.com/heikkiorsila/amigadepacker
 
 LICENSE=	GPLv2
 
 USES=		tar:bzip2
-HAS_CONFIGURE=	yes
 USE_CSTD=	gnu89
 
+HAS_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
-ALL_TARGET=	${PORTNAME}
+ALL_TARGET=		${PORTNAME}
 
-PLIST_FILES=	bin/amigadepacker share/man/man1/amigadepacker.1.gz
+PLIST_FILES=	bin/amigadepacker \
+		share/man/man1/amigadepacker.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}/${PREFIX}/bin

@@ -1,15 +1,19 @@
 PORTNAME=	mscompress
-PORTVERSION=	0.3
+DISTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	archivers
-MASTER_SITES=	SUNSITE/utils/compress
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mew14930xvi@inbox.lv
 COMMENT=	Microsoft "compress.exe/expand.exe" compatible (de)compressor
+WWW=		https://github.com/stapelberg/mscompress
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:bzip2
+USES=		autoreconf
+USE_GITHUB=	yes
+GH_ACCOUNT=	stapelberg
+
 HAS_CONFIGURE=	yes
 
 CONFLICTS_INSTALL=	foo2zjs # bin/msexpand
@@ -17,11 +21,5 @@ CONFLICTS_INSTALL=	foo2zjs # bin/msexpand
 PLIST_FILES=	bin/mscompress bin/msexpand \
 		share/man/man1/mscompress.1.gz \
 		share/man/man1/msexpand.1.gz
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mscompress ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/msexpand ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mscompress.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_MAN} ${WRKSRC}/msexpand.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

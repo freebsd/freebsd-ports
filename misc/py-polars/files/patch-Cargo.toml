@@ -1,0 +1,35 @@
+--- Cargo.toml.orig	2024-06-01 09:47:54 UTC
++++ Cargo.toml
+@@ -8,6 +8,7 @@ crate-type = ["cdylib"]
+ crate-type = ["cdylib"]
+ 
+ [dependencies]
++mimalloc = { version = "0.1", default-features = false }
+ polars-core = { workspace = true, features = ["python"] }
+ polars-error = { workspace = true }
+ polars-lazy = { workspace = true, features = ["python"] }
+@@ -96,15 +97,11 @@ features = [
+   "cov",
+ ]
+ 
++
+ [build-dependencies]
+ built = { version = "0.7", features = ["chrono", "git2", "cargo-lock"], optional = true }
+ 
+-[target.'cfg(all(any(not(target_family = "unix"), allocator = "mimalloc"), not(allocator = "default")))'.dependencies]
+-mimalloc = { version = "0.1", default-features = false }
+ 
+-[target.'cfg(all(target_family = "unix", not(allocator = "mimalloc"), not(allocator = "default")))'.dependencies]
+-jemallocator = { version = "0.5", features = ["disable_initial_exec_tls"] }
+-
+ [features]
+ # Features below are only there to enable building a slim binary during development.
+ avro = ["polars/avro"]
+@@ -243,3 +240,7 @@ default = [
+   "all",
+   "nightly",
+ ]
++
++[profile.release]
++opt-level = 2
++debug = false

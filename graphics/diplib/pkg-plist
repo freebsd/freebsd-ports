@@ -25,6 +25,7 @@ include/diplib/graph.h
 include/diplib/histogram.h
 include/diplib/iterators.h
 include/diplib/kernel.h
+include/diplib/label_map.h
 include/diplib/library/clamp_cast.h
 include/diplib/library/copy_buffer.h
 include/diplib/library/datatype.h

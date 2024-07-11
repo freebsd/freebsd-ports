@@ -1,10 +1,10 @@
 unikmer is a golang package and a toolkit for nucleic acid k-mer analysis,
-providing functions including set operation k-mers (sketch) optional with TaxIds
-but without count information.
+providing functions including set operation k-mers (sketch) optional with
+TaxIds but without count information.
 
 K-mers are either encoded (k<=32) or hashed (arbitrary k) into uint64, and
 serialized in binary file with extension .unik.
 
 TaxIds can be assigned when counting k-mers from genome sequences, and LCA
-(Lowest Common Ancestor) is computed during set opertions including computing
-union, intersecton, set difference, unique and repeated k-mers.
+(Lowest Common Ancestor) is computed during set opertions including
+computing union, intersecton, set difference, unique and repeated k-mers.

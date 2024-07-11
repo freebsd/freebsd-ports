@@ -18,6 +18,7 @@ SHEBANG_FILES=	ipcalc
 
 CONFLICTS_INSTALL=	gnu-ipcalc
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/ipcalc

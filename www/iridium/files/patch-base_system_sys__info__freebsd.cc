@@ -1,4 +1,4 @@
---- base/system/sys_info_freebsd.cc.orig	2022-10-05 07:34:01 UTC
+--- base/system/sys_info_freebsd.cc.orig	2024-06-25 12:08:48 UTC
 +++ base/system/sys_info_freebsd.cc
 @@ -9,30 +9,106 @@
  #include <sys/sysctl.h>
@@ -35,7 +35,7 @@
 +    r = sysctlbyname("vm.stats.vm.v_page_size", &page_size, &size, NULL, 0);
 +
 +  if (r == -1) {
-     NOTREACHED();
+     NOTREACHED_IN_MIGRATION();
      return 0;
    }
 -  return static_cast<int64_t>(pages) * page_size;
@@ -93,7 +93,7 @@
    size_t size = sizeof(limit);
 +
    if (sysctlbyname("kern.ipc.shmmax", &limit, &size, NULL, 0) < 0) {
-     NOTREACHED();
+     NOTREACHED_IN_MIGRATION();
      return 0;
    }
 +

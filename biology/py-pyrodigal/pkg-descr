@@ -2,17 +2,17 @@ Pyrodigal is a Python module that provides bindings to Prodigal using Cython.
 
 Features:
 The library now features everything from the original Prodigal CLI:
-* run mode selection: Choose between single mode, using a training sequence to
-  count nucleotide hexamers, or metagenomic mode, using pre-trained data from
-  different organisms (prodigal -p).
-* region masking: Prevent genes from being predicted across regions containing
-  unknown nucleotides (prodigal -m).
-* closed ends: Genes will be identified as running over edges if they are larger
-  than a certain size, but this can be disabled (prodigal -c).
+* run mode selection: Choose between single mode, using a training sequence
+  to count nucleotide hexamers, or metagenomic mode, using pre-trained data
+  from different organisms (prodigal -p).
+* region masking: Prevent genes from being predicted across regions
+  containing unknown nucleotides (prodigal -m).
+* closed ends: Genes will be identified as running over edges if they are
+  larger than a certain size, but this can be disabled (prodigal -c).
 * training configuration: During the training process, a custom translation
-  table can be given (prodigal -g), and the Shine-Dalgarno motif search can be
-  forcefully bypassed (prodigal -n)
-* output files: Output files can be written in a format mostly compatible with
-  the Prodigal binary, including the protein translations in FASTA format
-  (prodigal -a), the gene sequences in FASTA format (prodigal -d), or the
-  potential gene scores in tabular format (prodigal -s).
+  table can be given (prodigal -g), and the Shine-Dalgarno motif search can
+  be forcefully bypassed (prodigal -n)
+* output files: Output files can be written in a format mostly compatible
+  with the Prodigal binary, including the protein translations in FASTA
+  format (prodigal -a), the gene sequences in FASTA format (prodigal -d),
+  or the potential gene scores in tabular format (prodigal -s).

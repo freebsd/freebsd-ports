@@ -1,12 +1,12 @@
 PORTNAME=	tor-browser
-DISTVERSION=	13.5a7
+DISTVERSION=	13.5a9
 PORTREVISION=	1
 CATEGORIES=	www net security wayland
 MASTER_SITES=	TOR \
 		https://build-sources.tbb.torproject.org/:source1 \
 		LOCAL/jsm:source2
 MASTER_SITE_SUBDIR=	torbrowser/${DISTVERSION}
-DISTNAME=	src-firefox-tor-browser-115.10.0esr-13.5-1-build2
+DISTNAME=	src-firefox-tor-browser-115.12.0esr-13.5-1-build2
 DISTFILES=	${DISTNAME}.tar.xz \
 		manual_112141.zip:source1 \
 		firefox-tor-browser-13.0.1-build2-firefox-1l0n-out.tar:source2

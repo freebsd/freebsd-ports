@@ -1,7 +1,7 @@
 PORTNAME=	ja2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.21.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 
 MAINTAINER=	timp87@gmail.com
@@ -14,6 +14,7 @@ LICENSE_NAME_SFI-SCLA=	Strategy First Inc. Source Code License Agreement
 LICENSE_FILE_SFI-SCLA=	${WRKSRC}/SFI\ Source\ Code\ license\ agreement.txt
 LICENSE_PERMS_SFI-SCLA=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell \
 			auto-accept
+LICENSE_DISTFILES_SFI-SCLA=	${DISTNAME}${EXTRACT_SUFX}
 
 # Ignore this if you feel adventurous
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64le

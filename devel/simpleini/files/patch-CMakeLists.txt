@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2023-12-29 02:44:28 UTC
++++ CMakeLists.txt
+@@ -34,6 +34,7 @@ add_library(${EXPORT_NAMESPACE}${PROJECT_NAME} ALIAS $
+ 
+ add_library(${PROJECT_NAME} INTERFACE)
+ add_library(${EXPORT_NAMESPACE}${PROJECT_NAME} ALIAS ${PROJECT_NAME})
++target_compile_definitions(${PROJECT_NAME} INTERFACE SI_NO_CONVERSION)
+ 
+ include(GNUInstallDirs)
+ 

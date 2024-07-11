@@ -4,9 +4,7 @@ Date:   Tue Nov 7 03:35:47 2023 -0700
 
     FreeBSD's PF has a new interface so leverage libpfctl to access it so the right interface is used depending on the version
 
-diff --git src/pf.c src/pf.c
-index 9681d366..eef9540d 100644
---- src/pf.c
+--- src/pf.c.orig	2020-07-20 09:50:14 UTC
 +++ src/pf.c
 @@ -35,6 +35,9 @@
  #endif
@@ -18,12 +16,12 @@ index 9681d366..eef9540d 100644
  
  #ifndef FCNT_NAMES
  #if FCNT_MAX != 3
-@@ -76,6 +79,56 @@ static void pf_submit(char const *type, char const *type_instance, uint64_t val,
+@@ -76,7 +79,57 @@ static void pf_submit(char const *type, char const *ty
    plugin_dispatch_values(&vl);
  } /* void pf_submit */
  
 +#ifdef __FreeBSD__
-+static int pf_read(void) {
+ static int pf_read(void) {
 +  struct pfctl_status *state;
 +  int fd;
 +
@@ -72,9 +70,10 @@ index 9681d366..eef9540d 100644
 +  return 0;
 +} /* int pf_read */
 +#else
- static int pf_read(void) {
++static int pf_read(void) {
    struct pf_status state;
    int fd;
+   int status;
 @@ -119,5 +172,6 @@ static int pf_read(void) {
  
    return 0;

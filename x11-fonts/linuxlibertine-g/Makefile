@@ -14,6 +14,7 @@ USES=		fonts zip
 SUB_FILES=	pkg-message
 
 FONTNAME=	LinLibertineG
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 WRKSRC=	${WRKDIR}/${FONTNAME}

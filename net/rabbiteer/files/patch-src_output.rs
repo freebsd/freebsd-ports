@@ -1,9 +1,11 @@
---- src/output.rs.orig	2018-10-14 20:00:28 UTC
+--- src/output.rs.orig	2018-09-09 07:55:09 UTC
 +++ src/output.rs
-@@ -1,10 +1,9 @@
+@@ -1,10 +1,11 @@
 -use rustc_serialize::json::{self, Json, Object};
 -use rustc_serialize::base64::{self, ToBase64};
 -use amqp::protocol::basic::{Deliver, BasicProperties};
++#![allow(deprecated, soft_unstable)]
++
 +use amqp::protocol::basic::{BasicProperties, Deliver};
  use amqp::{Table, TableEntry};
  use error::RbtError;
@@ -14,7 +16,7 @@
  #[derive(RustcEncodable)]
  struct MsgDeliver {
      consumer_tag: String,
-@@ -27,24 +26,27 @@ struct Msg {
+@@ -27,24 +28,27 @@ struct Msg {
      data: Json,
  }
  
@@ -51,7 +53,7 @@
              headers: Object::new(),
          };
  
-@@ -57,9 +59,9 @@ pub fn build_output(info:bool, deliver:&Deliver,
+@@ -57,9 +61,9 @@ pub fn build_output(info:bool, deliver:&Deliver,
  
          // and put it together
          let msg = Msg {
@@ -64,7 +66,7 @@
          };
  
          // encode
-@@ -67,9 +69,7 @@ pub fn build_output(info:bool, deliver:&Deliver,
+@@ -67,9 +71,7 @@ pub fn build_output(info:bool, deliver:&Deliver,
  
          // convert to bytes
          Ok(js.to_string().as_bytes().to_owned())
@@ -74,7 +76,7 @@
          let content_type = props.content_type.clone().unwrap_or(String::from(""));
  
          match content_type.as_ref() {
-@@ -82,32 +82,26 @@ pub fn build_output(info:bool, deliver:&Deliver,
+@@ -82,32 +84,26 @@ pub fn build_output(info:bool, deliver:&Deliver,
  
                  // convert to bytes
                  Ok(js.to_string().as_bytes().to_owned())
@@ -113,7 +115,7 @@
      let mut ret = Object::new();
      for (skey, entry) in table {
          ret.insert(skey.clone().to_string(), entry_to_json(&entry));
-@@ -115,33 +109,35 @@ fn table_to_json(table:&Table) -> Object {
+@@ -115,33 +111,35 @@ fn table_to_json(table:&Table) -> Object {
      ret
  }
  

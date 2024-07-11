@@ -1,6 +1,6 @@
 PORTNAME=	apron
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.14
+DISTVERSION=	0.9.15
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,9 +17,10 @@ LIB_DEPENDS=	libglpk.so:math/glpk \
 
 USES=		gmake localbase:ldflags
 USE_CXXSTD=	c++14
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	antoinemine
-USE_LDCONFIG=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-prefix ${STAGEDIR}${PREFIX} -no-ocaml -no-java

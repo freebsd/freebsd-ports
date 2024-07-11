@@ -1,4 +1,4 @@
---- media/webrtc/helpers.cc.orig	2024-05-23 20:04:36 UTC
+--- media/webrtc/helpers.cc.orig	2024-06-22 08:49:42 UTC
 +++ media/webrtc/helpers.cc
 @@ -41,14 +41,14 @@ void ConfigAutomaticGainControl(const AudioProcessingS
      return;
@@ -15,5 +15,5 @@
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
    // Use AGC2 digital and input volume controller.
-   // TODO(crbug.com/1375239): Remove `kWebRtcAllowInputVolumeAdjustment` safely
+   // TODO(crbug.com/40872787): Remove `kWebRtcAllowInputVolumeAdjustment` safely
    // and set `input_volume_controller.enabled` true.

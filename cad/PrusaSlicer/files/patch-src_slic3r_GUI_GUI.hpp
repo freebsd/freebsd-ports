@@ -1,6 +1,6 @@
---- src/slic3r/GUI/GUI.hpp.orig	2024-02-29 13:03:32 UTC
+--- src/slic3r/GUI/GUI.hpp.orig	2024-06-27 09:25:47 UTC
 +++ src/slic3r/GUI/GUI.hpp
-@@ -88,7 +88,7 @@ void desktop_open_folder(const boost::filesystem::path
+@@ -74,7 +74,7 @@ void desktop_open_folder(const boost::filesystem::path
  // Ask the destop to open the directory specified by path using the default file explorer.
  void desktop_open_folder(const boost::filesystem::path& path);
  

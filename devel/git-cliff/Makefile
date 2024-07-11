@@ -1,7 +1,6 @@
 PORTNAME=	git-cliff
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.2
-PORTREVISION=	1
+DISTVERSION=	2.4.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -54,14 +53,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cc-1.0.97 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
-		chrono-tz-0.8.6 \
-		chrono-tz-build-0.2.1 \
-		clap-4.5.4 \
-		clap_builder-4.5.2 \
-		clap_complete-4.5.2 \
-		clap_derive-4.5.4 \
+		chrono-tz-0.9.0 \
+		chrono-tz-build-0.3.0 \
+		clap-4.5.7 \
+		clap_builder-4.5.7 \
+		clap_complete-4.5.6 \
+		clap_derive-4.5.5 \
 		clap_lex-0.7.0 \
-		clap_mangen-0.2.20 \
+		clap_mangen-0.2.21 \
 		colorchoice-1.0.1 \
 		config-0.14.0 \
 		console-0.15.8 \
@@ -84,6 +83,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		dissimilar-1.0.9 \
 		doc-comment-0.3.3 \
 		document-features-0.2.8 \
+		dyn-clone-1.0.17 \
 		either-1.11.0 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.34 \
@@ -108,10 +108,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		getrandom-0.2.15 \
 		gimli-0.28.1 \
 		git-conventional-0.12.6 \
-		git2-0.18.3 \
+		git2-0.19.0 \
 		glob-0.3.1 \
 		globset-0.4.14 \
-		globwalk-0.8.1 \
+		globwalk-0.9.1 \
 		h2-0.3.26 \
 		hashbrown-0.14.5 \
 		heck-0.5.0 \
@@ -133,7 +133,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hyper-0.14.28 \
 		hyper-1.3.1 \
 		hyper-rustls-0.24.2 \
-		hyper-rustls-0.26.0 \
+		hyper-rustls-0.27.2 \
 		hyper-util-0.1.3 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
@@ -153,11 +153,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		js-sys-0.3.69 \
 		lazy-regex-3.1.0 \
 		lazy-regex-proc_macros-3.1.0 \
-		lazy_static-1.4.0 \
+		lazy_static-1.5.0 \
 		libc-0.2.154 \
 		libflate-1.4.0 \
 		libflate_lz77-1.2.0 \
-		libgit2-sys-0.16.2+1.7.2 \
+		libgit2-sys-0.17.0+1.8.1 \
 		libm-0.2.8 \
 		libredox-0.1.3 \
 		libz-sys-1.1.16 \
@@ -173,7 +173,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.2 \
 		mio-0.8.11 \
-		next_version-0.2.16 \
+		next_version-0.2.18 \
 		nom-7.1.3 \
 		num-conv-0.1.0 \
 		num-traits-0.2.19 \
@@ -204,17 +204,20 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pretty_assertions-1.4.0 \
 		proc-macro-hack-0.5.20+deprecated \
 		proc-macro2-1.0.82 \
+		quinn-0.11.2 \
+		quinn-proto-0.11.3 \
+		quinn-udp-0.5.2 \
 		quote-1.0.36 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		redox_users-0.4.5 \
 		reflink-copy-0.1.17 \
-		regex-1.10.4 \
+		regex-1.10.5 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.8.3 \
 		reqwest-0.11.27 \
-		reqwest-0.12.4 \
+		reqwest-0.12.5 \
 		reqwest-middleware-0.3.1 \
 		ring-0.17.8 \
 		rle-decode-fast-1.0.3 \
@@ -223,24 +226,26 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rust-embed-impl-8.4.0 \
 		rust-embed-utils-8.4.0 \
 		rustc-demangle-0.1.24 \
+		rustc-hash-1.1.0 \
 		rustix-0.38.34 \
 		rustls-0.21.12 \
 		rustls-0.22.4 \
+		rustls-0.23.10 \
 		rustls-pemfile-1.0.4 \
 		rustls-pemfile-2.1.2 \
 		rustls-pki-types-1.7.0 \
 		rustls-webpki-0.101.7 \
-		rustls-webpki-0.102.3 \
+		rustls-webpki-0.102.4 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		sct-0.7.1 \
 		secrecy-0.8.0 \
 		semver-1.0.23 \
-		serde-1.0.201 \
-		serde_derive-1.0.201 \
-		serde_json-1.0.117 \
+		serde-1.0.203 \
+		serde_derive-1.0.203 \
+		serde_json-1.0.118 \
 		serde_regex-1.1.0 \
-		serde_spanned-0.6.5 \
+		serde_spanned-0.6.6 \
 		serde_urlencoded-0.7.1 \
 		sha-1-0.10.1 \
 		sha1-0.10.6 \
@@ -258,32 +263,34 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		syn-1.0.109 \
 		syn-2.0.63 \
 		sync_wrapper-0.1.2 \
+		sync_wrapper-1.0.1 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
 		tempfile-3.10.1 \
-		tera-1.19.1 \
+		tera-1.20.0 \
 		termcolor-1.4.1 \
 		terminal_size-0.3.0 \
-		thiserror-1.0.60 \
-		thiserror-impl-1.0.60 \
+		thiserror-1.0.61 \
+		thiserror-impl-1.0.61 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.37.0 \
-		tokio-macros-2.2.0 \
+		tokio-1.38.0 \
+		tokio-macros-2.3.0 \
 		tokio-rustls-0.24.1 \
-		tokio-rustls-0.25.0 \
+		tokio-rustls-0.26.0 \
 		tokio-stream-0.1.15 \
 		tokio-util-0.7.11 \
-		toml-0.8.12 \
-		toml_datetime-0.6.5 \
-		toml_edit-0.22.12 \
+		toml-0.8.14 \
+		toml_datetime-0.6.6 \
+		toml_edit-0.22.14 \
 		tower-0.4.13 \
 		tower-layer-0.3.2 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
+		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
 		try-lock-0.2.5 \
 		typenum-1.17.0 \
@@ -302,7 +309,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		untrusted-0.9.0 \
 		update-informer-1.1.0 \
 		ureq-2.9.7 \
-		url-2.5.0 \
+		url-2.5.2 \
 		utf8parse-0.2.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \

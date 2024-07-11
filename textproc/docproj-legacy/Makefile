@@ -55,7 +55,7 @@ _FONTS=		${LOCALBASE}/share/fonts/dejavu/DejaVuSansMono.ttf:x11-fonts/dejavu \
 		${LOCALBASE}/share/fonts/GentiumPlus/GentiumPlus-Regular.ttf:x11-fonts/gentium-plus \
 		${LOCALBASE}/share/fonts/Lohit/Lohit-Bengali.ttf:x11-fonts/lohit
 _FONTS_CJK=	${LOCALBASE}/share/fonts/ipa/ipam.otf:japanese/font-ipa \
-		${LOCALBASE}/share/fonts/nanum-ttf/NanumBarunGothic.ttf:korean/nanumfonts \
+		${LOCALBASE}/share/fonts/nanum/NanumBarunGothic.ttf:korean/nanumfonts \
 		${LOCALBASE}/share/fonts/TrueType/gkai00mp.ttf:chinese/arphicttf
 
 .include <bsd.port.options.mk>

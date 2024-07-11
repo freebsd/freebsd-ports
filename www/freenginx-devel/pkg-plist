@@ -1,0 +1,106 @@
+%%ETCDIR%%/koi-utf
+%%ETCDIR%%/koi-win
+%%ETCDIR%%/win-utf
+%%LINK%%include/ngx_link_func_module.h
+%%NAXSI%%%%ETCDIR%%/naxsi_core.rules
+@sample %%ETCDIR%%/fastcgi_params-dist %%ETCDIR%%/fastcgi_params
+@sample %%ETCDIR%%/mime.types-dist %%ETCDIR%%/mime.types
+@sample %%ETCDIR%%/nginx.conf-dist %%ETCDIR%%/nginx.conf
+@sample %%ETCDIR%%/scgi_params-dist %%ETCDIR%%/scgi_params
+@sample %%ETCDIR%%/uwsgi_params-dist %%ETCDIR%%/uwsgi_params
+%%DSO%%%%AJP%%libexec/freenginx/ngx_http_ajp_module.so
+%%DSO%%%%ARRAYVAR%%libexec/freenginx/ngx_http_array_var_module.so
+%%DSO%%%%AWS_AUTH%%libexec/freenginx/ngx_http_aws_auth_module.so
+%%DSO%%%%BROTLI%%libexec/freenginx/ngx_http_brotli_filter_module.so
+%%DSO%%%%BROTLI%%libexec/freenginx/ngx_http_brotli_static_module.so
+%%DSO%%%%CACHE_PURGE%%libexec/freenginx/ngx_http_cache_purge_module.so
+%%DSO%%%%CT%%libexec/freenginx/ngx_http_ssl_ct_module.so
+%%DSO%%%%CT%%libexec/freenginx/ngx_ssl_ct_module.so
+%%DSO%%%%DEVEL_KIT%%libexec/freenginx/ndk_http_module.so
+%%DSO%%%%DRIZZLE%%libexec/freenginx/ngx_http_drizzle_module.so
+%%DSO%%%%DYNAMIC_UPSTREAM%%libexec/freenginx/ngx_http_dynamic_upstream_module.so
+%%DSO%%%%ECHO%%libexec/freenginx/ngx_http_echo_module.so
+%%DSO%%%%ENCRYPTSESSION%%libexec/freenginx/ngx_http_encrypted_session_module.so
+%%DSO%%%%FIPS_CHECK%%libexec/freenginx/ngx_fips_check_module.so
+%%DSO%%%%FORMINPUT%%libexec/freenginx/ngx_http_form_input_module.so
+%%DSO%%%%GRIDFS%%libexec/freenginx/ngx_http_gridfs_module.so
+%%DSO%%%%HEADERS_MORE%%libexec/freenginx/ngx_http_headers_more_filter_module.so
+%%DSO%%%%HTTP_ACCEPT_LANGUAGE%%libexec/freenginx/ngx_http_accept_language_module.so
+%%DSO%%%%HTTP_AUTH_DIGEST%%libexec/freenginx/ngx_http_auth_digest_module.so
+%%DSO%%%%HTTP_AUTH_KRB5%%libexec/freenginx/ngx_http_auth_spnego_module.so
+%%DSO%%%%HTTP_AUTH_LDAP%%libexec/freenginx/ngx_http_auth_ldap_module.so
+%%DSO%%%%HTTP_AUTH_PAM%%libexec/freenginx/ngx_http_auth_pam_module.so
+%%DSO%%%%HTTP_DAV_EXT%%libexec/freenginx/ngx_http_dav_ext_module.so
+%%DSO%%%%HTTP_EVAL%%libexec/freenginx/ngx_http_eval_module.so
+%%DSO%%%%HTTP_FANCYINDEX%%libexec/freenginx/ngx_http_fancyindex_module.so
+%%DSO%%%%HTTP_FOOTER%%libexec/freenginx/ngx_http_footer_filter_module.so
+%%DSO%%%%HTTP_IMAGE_FILTER%%libexec/freenginx/ngx_http_image_filter_module.so
+%%DSO%%%%HTTP_IP2LOCATION%%libexec/freenginx/ngx_http_ip2location_module.so
+%%DSO%%%%HTTP_IP2PROXY%%libexec/freenginx/ngx_http_ip2proxy_module.so
+%%DSO%%%%HTTP_JSON_STATUS%%libexec/freenginx/ngx_http_json_status_module.so
+%%DSO%%%%HTTP_MOGILEFS%%libexec/freenginx/ngx_http_mogilefs_module.so
+%%DSO%%%%HTTP_NOTICE%%libexec/freenginx/ngx_http_notice_module.so
+%%DSO%%%%HTTP_PERL%%libexec/freenginx/ngx_http_perl_module.so
+%%DSO%%%%HTTP_PUSH_STREAM%%libexec/freenginx/ngx_http_push_stream_module.so
+%%DSO%%%%HTTP_PUSH%%libexec/freenginx/ngx_nchan_module.so
+%%DSO%%%%HTTP_REDIS%%libexec/freenginx/ngx_http_redis_module.so
+%%DSO%%%%HTTP_SUBS_FILTER%%libexec/freenginx/ngx_http_subs_filter_module.so
+%%DSO%%%%HTTP_TARANTOOL%%libexec/freenginx/ngx_http_tnt_module.so
+%%DSO%%%%HTTP_UPLOAD_PROGRESS%%libexec/freenginx/ngx_http_uploadprogress_module.so
+%%DSO%%%%HTTP_UPLOAD%%libexec/freenginx/ngx_http_upload_module.so
+%%DSO%%%%HTTP_UPSTREAM_FAIR%%libexec/freenginx/ngx_http_upstream_fair_module.so
+%%DSO%%%%HTTP_UPSTREAM_STICKY%%libexec/freenginx/ngx_http_sticky_module.so
+%%DSO%%%%HTTP_VIDEO_THUMBEXTRACTOR%%libexec/freenginx/ngx_http_video_thumbextractor_module.so
+%%DSO%%%%HTTP_XSLT%%libexec/freenginx/ngx_http_xslt_filter_module.so
+%%DSO%%%%HTTP_ZIP%%libexec/freenginx/ngx_http_zip_module.so
+%%DSO%%%%HTTP%%%%HTTP_GEOIP2%%libexec/freenginx/ngx_http_geoip2_module.so
+%%DSO%%%%HTTP%%%%NJS%%libexec/freenginx/ngx_http_js_module.so
+%%DSO%%%%ICONV%%libexec/freenginx/ngx_http_iconv_module.so
+%%DSO%%%%LET%%libexec/freenginx/ngx_http_let_module.so
+%%DSO%%%%LINK%%libexec/freenginx/ngx_http_link_func_module.so
+%%DSO%%%%LUA%%libexec/freenginx/ngx_http_lua_module.so
+%%DSO%%%%LUASTREAM%%libexec/freenginx/ngx_stream_lua_module.so
+%%DSO%%%%MAIL%%%%CT%%libexec/freenginx/ngx_mail_ssl_ct_module.so
+%%DSO%%%%MAIL%%libexec/freenginx/ngx_mail_module.so
+%%DSO%%%%MEMC%%libexec/freenginx/ngx_http_memc_module.so
+%%DSO%%%%MODSECURITY3%%libexec/freenginx/ngx_http_modsecurity_module.so
+%%DSO%%%%NAXSI%%libexec/freenginx/ngx_http_naxsi_module.so
+%%DSO%%%%OTEL%%libexec/freenginx/ngx_otel_module.so
+%%DSO%%%%PASSENGER%%libexec/freenginx/ngx_http_passenger_module.so
+%%DSO%%%%POSTGRES%%libexec/freenginx/ngx_postgres_module.so
+%%DSO%%%%RDS_CSV%%libexec/freenginx/ngx_http_rds_csv_filter_module.so
+%%DSO%%%%RDS_JSON%%libexec/freenginx/ngx_http_rds_json_filter_module.so
+%%DSO%%%%REDIS2%%libexec/freenginx/ngx_http_redis2_module.so
+%%DSO%%%%RTMP%%libexec/freenginx/ngx_rtmp_module.so
+%%DSO%%%%SET_MISC%%libexec/freenginx/ngx_http_set_misc_module.so
+%%DSO%%%%SHIBBOLETH%%libexec/freenginx/ngx_http_shibboleth_module.so
+%%DSO%%%%SLOWFS_CACHE%%libexec/freenginx/ngx_http_slowfs_module.so
+%%DSO%%%%SRCACHE%%libexec/freenginx/ngx_http_srcache_filter_module.so
+%%DSO%%%%STREAM%%%%CT%%libexec/freenginx/ngx_stream_ssl_ct_module.so
+%%DSO%%%%STREAM%%%%HTTP_GEOIP2%%libexec/freenginx/ngx_stream_geoip2_module.so
+%%DSO%%%%STREAM%%%%NJS%%libexec/freenginx/ngx_stream_js_module.so
+%%DSO%%%%STREAM%%libexec/freenginx/ngx_stream_module.so
+%%DSO%%%%STS%%libexec/freenginx/ngx_http_stream_server_traffic_status_module.so
+%%DSO%%%%VOD%%libexec/freenginx/ngx_http_vod_module.so
+%%DSO%%%%VTS%%libexec/freenginx/ngx_http_vhost_traffic_status_module.so
+%%DSO%%%%WEBSOCKIFY%%libexec/freenginx/ngx_http_websockify_module.so
+%%DSO%%%%XSS%%libexec/freenginx/ngx_http_xss_filter_module.so
+%%DSO%%%%ZSTD%%libexec/freenginx/ngx_http_zstd_filter_module.so
+%%DSO%%%%ZSTD%%libexec/freenginx/ngx_http_zstd_static_module.so
+%%HTTP_PERL%%%%SITE_ARCH%%/auto/freenginx/freenginx.so
+%%HTTP_PERL%%%%SITE_ARCH%%/freenginx.pm
+sbin/nginx
+share/vim/vimfiles/ftdetect/nginx.vim
+share/vim/vimfiles/ftplugin/nginx.vim
+share/vim/vimfiles/indent/nginx.vim
+share/vim/vimfiles/syntax/nginx.vim
+%%WWW%%@postexec mkdir -p -m 755 %D/www/nginx-dist
+%%WWW%%@postexec if [ ! -d %D/www/freenginx/ ] ; then ln -fs %D/www/freenginx-dist %D/www/freenginx; fi
+%%WWW%%www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
+%%WWW%%www/nginx-dist/index.html
+%%WWW%%www/nginx-dist/50x.html
+%%WWW%%@postexec chmod a-w %D/www/freenginx-dist
+%%WWW%%@postunexec if [ -L %D/www/freenginx ]; then rm -f %D/www/freenginx; fi
+@dir %%NGINX_TMPDIR%%
+@dir %%NGINX_LOGDIR%%
+share/man/man8/nginx.8.gz

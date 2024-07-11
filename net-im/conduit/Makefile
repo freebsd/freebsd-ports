@@ -1,6 +1,6 @@
 PORTNAME=	conduit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.8.0
 PORTREVISION=	1
 CATEGORIES=	net-im
 PKGNAMEPREFIX=	matrix-
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_powerpc64le=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs: # see https://gitlab.com/famedly/conduit/-/issues/416
 
 BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		cargo gmake
 USE_RC_SUBR=	${PORTNAME}
@@ -31,7 +32,7 @@ DBDIR=		/var/db/${PORTNAME}
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	famedly
-GL_TAGNAME=	a854ce5cf64103d83b721fb124262fb52466a646
+GL_TAGNAME=	7a5b8930134cf7ea5ff9880e6fa468b2b3e05c98
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/conduit.toml,${PREFIX}/etc/conduit.toml,' \

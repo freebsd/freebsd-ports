@@ -1,10 +1,10 @@
 PORTNAME=	cutadapt
-DISTVERSION=	4.7
+DISTVERSION=	4.9
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Trim adapters from high-throughput sequencing reads
 WWW=		https://github.com/marcelm/cutadapt/
 

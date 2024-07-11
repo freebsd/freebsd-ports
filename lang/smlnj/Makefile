@@ -38,8 +38,7 @@ RECOMPILE_IMPLIES=	EVERYTHING
 
 .include <bsd.port.pre.mk>
 
-# XXX see FreeBSD PR 247421
-.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 100
+.if ${COMPILER_TYPE} == "clang"
 RUNTIME_SO=
 PLIST_SUB+=	RUNTIME_SO="@comment "
 .else
@@ -47,7 +46,7 @@ RUNTIME_SO=	"${STAGEDIR}${MLBIN}/.run/run.$${ARCH}-$${OPSYS}.so"
 PLIST_SUB+=	RUNTIME_SO=
 .endif
 
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+.if ${COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 

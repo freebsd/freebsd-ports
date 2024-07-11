@@ -1,7 +1,7 @@
 PORTNAME=	or-tools
 DISTVERSIONPREFIX=	v
 DISTVERSION=	9.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,6 +19,7 @@ PY_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}absl-py>0:devel/py-absl-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS} \
+		${PY_SETUPTOOLS} \
 		pybind11>0:devel/pybind11 \
 		protoc-gen-mypy:devel/py-mypy-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \

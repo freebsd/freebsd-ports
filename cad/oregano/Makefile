@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.84.43
 PORTREVISION=	6
 CATEGORIES=	cad
+MASTER_SITES=	https://waf.io/:new_waf # for Python-3.11 compatibility
+DISTFILES=	waf-2.1.1:new_waf
+EXTRACT_ONLY=	${GH_ACCOUNT}-${GH_PROJECT}-${DISTVERSIONFULL}_GH0${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Schematic capture and circuit simulator
@@ -27,6 +30,9 @@ GLIB_SCHEMAS=	io.ahoi.oregano.gschema.xml
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
+
+post-extract: # use newer waf that is Python-3.11 compatible
+	@${CP} ${DISTDIR}/waf-2.1.1 ${WRKSRC}/waf
 
 post-stage:
 	@cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/oregano bin/microtests

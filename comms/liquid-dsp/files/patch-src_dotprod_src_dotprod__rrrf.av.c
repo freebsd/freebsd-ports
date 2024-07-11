@@ -1,4 +1,4 @@
---- src/dotprod/src/dotprod_rrrf.av.c.orig	2018-12-04 23:41:32 UTC
+--- src/dotprod/src/dotprod_rrrf.av.c.orig	2024-06-19 07:25:01 UTC
 +++ src/dotprod/src/dotprod_rrrf.av.c
 @@ -26,6 +26,7 @@
  
@@ -8,7 +8,16 @@
  
  #include "liquid.internal.h"
  
-@@ -163,8 +164,8 @@ void dotprod_rrrf_execute(dotprod_rrrf _q,
+@@ -117,7 +118,7 @@ dotprod_rrrf dotprod_rrrf_create_opt(float *      _h,
+     for (i=0; i<4; i++) {
+         q->h[i] = calloc(1+(q->n+i-1)/4,sizeof(vector float));
+         for (j=0; j<q->n; j++)
+-            e->h[i][j+i] = _h[_rev ? q->n-j-1 : j];
++            q->h[i][j+i] = _h[_rev ? q->n-j-1 : j];
+     }
+ 
+     return q;
+@@ -190,8 +191,8 @@ int dotprod_rrrf_execute(dotprod_rrrf _q,
      union { vector float v; float w[4];} s;
      unsigned int nblocks;
  
@@ -19,7 +28,7 @@
  
      d = (vector float*)_q->h[al];
  
-@@ -173,7 +174,7 @@ void dotprod_rrrf_execute(dotprod_rrrf _q,
+@@ -200,7 +201,7 @@ int dotprod_rrrf_execute(dotprod_rrrf _q,
      // split into four vectors each with four 32-bit
      // partial sums.  Effectively each loop iteration
      // operates on 16 input samples at a time.
@@ -28,7 +37,7 @@
      while (nblocks >= 4) {
          s0 = vec_madd(ar[nblocks-1],d[nblocks-1],s0);
          s1 = vec_madd(ar[nblocks-2],d[nblocks-2],s1);
-@@ -194,7 +195,7 @@ void dotprod_rrrf_execute(dotprod_rrrf _q,
+@@ -221,7 +222,7 @@ int dotprod_rrrf_execute(dotprod_rrrf _q,
      // move the result into the union s (effetively,
      // this loads the four 32-bit values in s0 into
      // the array w).

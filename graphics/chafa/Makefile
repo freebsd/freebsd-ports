@@ -1,6 +1,5 @@
 PORTNAME=	chafa
-PORTVERSION=	1.14.0
-PORTREVISION=	1
+DISTVERSION=	1.14.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://hpjansson.org/chafa/releases/ \
 		https://github.com/hpjansson/chafa/releases/download/${PORTVERSION}/
@@ -14,7 +13,9 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LESSER
 
-LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+LIB_DEPENDS=	libavif.so:graphics/libavif \
+		libfreetype.so:print/freetype2 \
+		libjxl_threads.so:graphics/libjxl \
 		libtiff.so:graphics/tiff \
 		libwebpdemux.so:graphics/webp
 

@@ -9,7 +9,8 @@ WWW=		https://ttmath.org
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-FETCH_DEPENDS=	git:devel/git
+FETCH_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
+		git:devel/git
 
 USES=		cmake:testing
 

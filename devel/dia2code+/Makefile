@@ -12,6 +12,9 @@ WWW=		https://dia2code.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Fails to build with libxml2 2.13.0 (PR 279759)
+EXPIRATION_DATE=2024-07-16
+
 USES=		autoreconf:build compiler:c++11-lib gnome iconv
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes

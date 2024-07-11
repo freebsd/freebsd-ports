@@ -11,7 +11,7 @@ WWW=		https://github.com/avrdudes/avrdude/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool localbase readline cmake
+USES=		localbase readline cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	avrdudes
 GH_PROJECT=	avrdude

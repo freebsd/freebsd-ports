@@ -1,0 +1,13 @@
+Run-time dependency wlroots found: NO (tried pkgconfig and cmake)
+
+--- meson.build.nogit	2023-07-28 14:46:37 UTC
++++ meson.build
+@@ -35,7 +35,7 @@ endif
+   )
+ endif
+ 
+-wlroots        = dependency('wlroots', version: '>= 0.16.0', fallback: ['wlroots', 'wlroots'])
++wlroots        = dependency('wlroots-0.16', fallback: ['wlroots', 'wlroots'])
+ wayland_protos = dependency('wayland-protocols', version: '>=1.14')
+ wayland_server = dependency('wayland-server')
+ xkbcommon      = dependency('xkbcommon')

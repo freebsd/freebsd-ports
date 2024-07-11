@@ -1,8 +1,6 @@
-diff --git src/providers/ad/ad_common.c src/providers/ad/ad_common.c
-index 0d154ca57..407d37a37 100644
---- src/providers/ad/ad_common.c
+--- src/providers/ad/ad_common.c.orig	2020-03-17 13:31:28 UTC
 +++ src/providers/ad/ad_common.c
-@@ -419,7 +419,7 @@ ad_get_common_options(TALLOC_CTX *mem_ctx,
+@@ -420,7 +420,7 @@ ad_get_common_options(TALLOC_CTX *mem_ctx,
      char *server;
      char *realm;
      char *ad_hostname;
@@ -11,7 +9,7 @@ index 0d154ca57..407d37a37 100644
      char *case_sensitive_opt;
      const char *opt_override;
  
-@@ -458,7 +458,7 @@ ad_get_common_options(TALLOC_CTX *mem_ctx,
+@@ -459,7 +459,7 @@ ad_get_common_options(TALLOC_CTX *mem_ctx,
       */
      ad_hostname = dp_opt_get_string(opts->basic, AD_HOSTNAME);
      if (ad_hostname == NULL) {
@@ -20,7 +18,7 @@ index 0d154ca57..407d37a37 100644
          if (gret != 0) {
              ret = errno;
              DEBUG(SSSDBG_FATAL_FAILURE,
-@@ -466,7 +466,7 @@ ad_get_common_options(TALLOC_CTX *mem_ctx,
+@@ -467,7 +467,7 @@ ad_get_common_options(TALLOC_CTX *mem_ctx,
                     strerror(ret));
              goto done;
          }

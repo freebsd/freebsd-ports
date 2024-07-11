@@ -1,5 +1,5 @@
 PORTNAME=	gajim
-DISTVERSION=	1.3.3
+DISTVERSION=	1.9.1
 CATEGORIES=	net-im
 MASTER_SITES=	https://gajim.org/downloads/${DISTVERSION:R}/
 
@@ -10,42 +10,40 @@ WWW=		https://gajim.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}build>0:devel/py-build@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}css-parser>0:www/py-css-parser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keyring>0:security/py-keyring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbxmpp>=1.0.2:net-im/py-nbxmpp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
+		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}precis_i18n>=1.0.0:textproc/py-precis_i18n@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openssl>=0.12:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyasn1>=0:devel/py-pyasn1@${PY_FLAVOR}
-LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
+		${PYTHON_PKGNAMEPREFIX}omemo-dr>0:security/py-omemo-dr@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qrcode>0:textproc/py-qrcode@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}emoji>0:misc/py-emoji@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy20>0:databases/py-sqlalchemy20@${PY_FLAVOR}
+LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
+		libgspell-1.so:textproc/gspell
 
-USES=		cpe gettext gnome python xorg
-USE_PYTHON=	autoplist distutils noflavors
+USES=		cpe gettext gnome python:3.10+ xorg
+USE_PYTHON=	autoplist cryptography pep517 noflavors
 USE_GNOME=	pygobject3
 USE_XORG=	x11 xext xscrnsaver
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${DISTVERSION}
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	DBUS DOCS SPELL OMEMO OPENGPG
-OPTIONS_DEFAULT=DBUS SPELL OMEMO OPENGPG
+OPTIONS_DEFINE=	DBUS DOCS OPENGPG
+OPTIONS_DEFAULT=DBUS OPENGPG
 
-SPELL_DESC=	Spell checking support
-OMEMO_DESC=	OMEMO end-to-end encryption support
 OPENGPG_DESC=	GPG encryption per XEP-0373
 
 # GUPNP_DESC=	UPnP IGD protocol support
-
-# net/py-avahi and net/gupnp-idg is python 2.x only right now
-# AVAHI_RUN_DEPENDS=	avahi-discover:net/py-avahi@${PY_FLAVOR}
 # GUPNP_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gupnp/__init__.py:net/gupnp-igd@${PY_FLAVOR}
 
-OMEMO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-axolotl>0:security/py-python-axolotl@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}qrcode>0:textproc/py-qrcode@${PY_FLAVOR}
 DBUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:devel/py-dbus@${PY_FLAVOR}
 OPENGPG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gpgme>0:security/py-gpgme@${PY_FLAVOR}
-SPELL_LIB_DEPENDS=	libgspell-1.so:textproc/gspell
 
 .include <bsd.port.mk>

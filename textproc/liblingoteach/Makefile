@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for parsing lesson files based on the LingoTeach DTD
 WWW=		http://www.lingoteach.org
 
+DEPRECATED=	Abandonware, last activity 18+ years ago and fails to build with libxml2 2.13.0 (PR 279705)
+EXPIRATION_DATE=2024-07-16
+
 USES=		gmake gnome libtool pathfix pkgconfig
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes

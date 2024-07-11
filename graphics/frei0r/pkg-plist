@@ -53,8 +53,10 @@ lib/frei0r-1/edgeglow.so
 lib/frei0r-1/elastic_scale.so
 lib/frei0r-1/emboss.so
 lib/frei0r-1/equaliz0r.so
+lib/frei0r-1/filmgrain.so
 lib/frei0r-1/flippo.so
 lib/frei0r-1/gamma.so
+lib/frei0r-1/gateweave.so
 lib/frei0r-1/glitch0r.so
 lib/frei0r-1/glow.so
 lib/frei0r-1/grain_extract.so

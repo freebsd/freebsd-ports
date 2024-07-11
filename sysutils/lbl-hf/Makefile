@@ -1,5 +1,5 @@
 PORTNAME=	hf
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	sysutils
 MASTER_SITES=	https://ee.lbl.gov/downloads/hf/ \
 		LOCAL/leres/hf

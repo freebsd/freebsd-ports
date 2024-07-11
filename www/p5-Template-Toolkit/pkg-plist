@@ -1,6 +1,7 @@
 bin/tpage
 bin/ttree
 %%SITE_ARCH%%/Template.pm
+%%SITE_ARCH%%/Template/App/ttree.pm
 %%SITE_ARCH%%/Template/Base.pm
 %%SITE_ARCH%%/Template/Config.pm
 %%SITE_ARCH%%/Template/Constants.pm
@@ -68,6 +69,7 @@ bin/ttree
 %%PERL5_MAN1%%/tpage.1.gz
 %%PERL5_MAN1%%/ttree.1.gz
 %%PERL5_MAN3%%/Template.3.gz
+%%PERL5_MAN3%%/Template::App::ttree.3.gz
 %%PERL5_MAN3%%/Template::Base.3.gz
 %%PERL5_MAN3%%/Template::Config.3.gz
 %%PERL5_MAN3%%/Template::Constants.3.gz

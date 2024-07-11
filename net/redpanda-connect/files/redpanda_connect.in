@@ -1,0 +1,60 @@
+#!/bin/sh
+#
+# PROVIDE: redpanda_connect
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to run NATS:
+#
+# redpanda_connect_enable (bool):	Set it to "YES" to enable redpanda_connect.
+#					Default is "NO".
+# redpanda_connect_user:		User name to run as. default "benthos"
+# redpanda_connect_group:		Group name to run as. default "benthos"
+# redpanda_connect_resources:		Path to redpanda_connect resources files (glob).
+# redpanda_connect_config:		Path to redpanda_connect configuration file.
+# redpanda_connect_watcher (bool):	Set it to "YES" to enable redpanda_connect watcher mode.
+#					Default is "NO".
+# redpanda_connect_options:		Options to pass redpanda_connect
+# 					(e.g. 'streams' for streams mode).
+#
+
+. /etc/rc.subr
+
+name=redpanda_connect
+rcvar=`set_rcvar`
+
+load_rc_config ${name}
+
+: ${redpanda_connect_enable:=NO}
+: ${redpanda_connect_user:=benthos}
+: ${redpanda_connect_group:=benthos}
+: ${redpanda_connect_resources:=""}
+: ${redpanda_connect_config:="%%PREFIX%%/etc/redpanda-connect/config.yaml"}
+: ${redpanda_connect_watcher:=NO}
+: ${redpanda_connect_options=""}
+
+if [ -n "${redpanda_connect_resources}" ]; then
+    redpanda_connect_options="--resources '${redpanda_connect_resources}' ${redpanda_connect_options}"
+fi
+
+if [ -n "${redpanda_connect_config}" ]; then
+    redpanda_connect_options="--config ${redpanda_connect_config} ${redpanda_connect_options}"
+fi
+
+if checkyesno redpanda_connect_watcher; then
+    redpanda_connect_options="--watcher ${redpanda_connect_options}"
+fi
+
+start_precmd=redpanda_connect_start_precmd
+
+pidfile="/var/run/${name}.pid"
+procname=%%PREFIX%%/bin/redpanda-connect
+command=/usr/sbin/daemon
+command_args="-p ${pidfile} ${procname} ${redpanda_connect_options}"
+
+redpanda_connect_start_precmd()
+{
+    install -o ${redpanda_connect_user} -g ${redpanda_connect_group} /dev/null ${pidfile}
+}
+
+run_rc_command "$1"

@@ -1152,13 +1152,13 @@ lib/R/library/survival/doc/compete.pdf
 lib/R/library/survival/doc/concordance.R
 lib/R/library/survival/doc/concordance.Rnw
 lib/R/library/survival/doc/concordance.pdf
-lib/R/library/survival/doc/discrim.R
-lib/R/library/survival/doc/discrim.Rnw
-lib/R/library/survival/doc/discrim.pdf
 lib/R/library/survival/doc/index.html
 lib/R/library/survival/doc/matrix.R
 lib/R/library/survival/doc/matrix.Rnw
 lib/R/library/survival/doc/matrix.pdf
+lib/R/library/survival/doc/methods.R
+lib/R/library/survival/doc/methods.Rnw
+lib/R/library/survival/doc/methods.pdf
 lib/R/library/survival/doc/multi.Rnw
 lib/R/library/survival/doc/multi.pdf
 lib/R/library/survival/doc/other.Rnw

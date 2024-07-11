@@ -1,12 +1,11 @@
 PORTNAME=	game.libretro.fceumm
-PORTVERSION=	0.0.1.41
-DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	1
+PORTVERSION=	0.0.1.55
+DISTVERSIONSUFFIX=	-Nexus
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Kodi game addon for NES / Famicom (FCEUmm)
-WWW=		https://github.com/libretro/libretro-fceumm/
+WWW=		https://github.com/kodi-game/game.libretro.fceumm
 
 LICENSE=	GPLv2+
 

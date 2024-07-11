@@ -2,7 +2,7 @@ PORTNAME=	xtr
 PORTVERSION=	1.50e.0.2
 PORTREVISION=	10
 CATEGORIES=	japanese textproc
-MASTER_SITES=	ftp://ftp.abk.nu/pub/redist/xtr/
+MASTER_SITES=	http://www.gnu-darwin.org/distfiles/
 DISTNAME=	${PORTNAME}1.50e-0.2
 
 MAINTAINER=	ports@FreeBSD.org

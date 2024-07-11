@@ -10,6 +10,9 @@ WWW=		https://github.com/linuxmint/hypnotix
 LICENSE=	GPLv3 PD
 LICENSE_COMB=	multi
 
+DEPRECATED=	Depends on expired www/py-imdbpy (use www/py-cinemagoer instead)
+EXPIRATION_DATE=2024-07-31
+
 LIB_DEPENDS=	libmpv.so:multimedia/mpv \
 		libxapp.so:x11/xapp
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>0:devel/py-gobject3@${PY_FLAVOR} \

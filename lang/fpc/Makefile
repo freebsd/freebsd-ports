@@ -1,13 +1,9 @@
 PORTNAME=	fpc
-PORTVERSION=	3.2.2
-PORTREVISION=	10
+PORTVERSION=	3.2.3
 CATEGORIES=	lang
-MASTER_SITES=	SF/freepascal/Source/${PORTVERSION}:source \
-		https://downloads.freepascal.org/${PORTNAME}/dist/${PORTVERSION}/source/:source \
-		http://leaf.dragonflybsd.org/~marino/dports-src/:DragonFlybootstrap \
+MASTER_SITES=	http://leaf.dragonflybsd.org/~marino/dports-src/:DragonFlybootstrap \
 		LOCAL/acm/freepascal/:bootstrap \
 		LOCAL/acm/freepascal/:man
-DISTFILES=	${DISTNAME:S/$/.source/}${EXTRACT_SUFX}:source
 DIST_SUBDIR=	freepascal
 
 MAINTAINER=	acm@FreeBSD.org
@@ -22,12 +18,16 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 USES+=		gmake iconv
 USE_BINUTILS=	yes
-BOOTVER=	${PORTVERSION}
-MANVER=		${PORTVERSION}
+BOOTVER=	3.2.2
+MANVER=		3.2.2
 
-FPC_LDPATH?=	"${LOCALBASE}/bin/ld.bfd"
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.com/freepascal.org
+GL_ACCOUNT=	fpc
+GL_PROJECT=	source
+GL_TAGNAME=	3d2b1f062e1e79d64b56a496f9eecd6084fa5803
 
-FPCSRCDIR=	${PORTNAME}-${PORTVERSION}
+FPCSRCDIR=	source-${GL_TAGNAME}
 
 .include <bsd.port.pre.mk>
 
@@ -83,12 +83,15 @@ do-extract:
 	@${TAR} -xzf ${_DISTDIR}/fpc-${MANVER}.man.tar.gz --directory ${WRKDIR}
 # unpack source distribution
 	@(cd ${WRKDIR} && ${GZIP_CMD} -dc \
-		${_DISTDIR}/${DISTNAME:S/$/.source/}${EXTRACT_SUFX} | \
+		${_DISTDIR}/${PORTNAME}-source-${GL_TAGNAME}_GL0${EXTRACT_SUFX} | \
 		${TAR} -xf -)
 
 post-patch:
 .if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} -i "" -e 's|900044|${OSVERSION}|g' \
+				-e 's|1201000|${OSVERSION}|g' \
+				-e 's|1200000|${OSVERSION}|g' \
+				-e 's|1400097|${OSVERSION}|g' \
 		${WRKSRC}/rtl/freebsd/${FPC_ARCH}/*.as \
 		${WRKSRC}/rtl/freebsd/${FPC_ARCH}/*.inc
 .else

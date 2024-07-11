@@ -1,5 +1,5 @@
 PORTNAME=	harfbuzz
-DISTVERSION=	8.5.0
+DISTVERSION=	9.0.0
 PORTREVISION?=	0
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/harfbuzz/harfbuzz/releases/download/${DISTVERSION}/
@@ -23,7 +23,7 @@ CPE_VENDOR=	harfbuzz_project
 
 MESON_ARGS=	-Dgraphite2=enabled -Dchafa=disabled -Dtests=disabled
 
-PLIST_SUB+=	LIBVER=0.60850.0
+PLIST_SUB+=	LIBVER=0.60900.0
 
 HARFBUZZ_SLAVE?=	no
 
@@ -39,7 +39,6 @@ DOCS_MESON_ENABLED=	docs
 MESON_ARGS+=	-Dicu=disabled -Dcairo=disabled
 .elif ${HARFBUZZ_SLAVE} == icu
 MESON_ARGS+=	-Dicu=enabled -Dcairo=disabled -Ddocs=disabled
-MESON_ARGS+=	-Dcpp_std=c++17 # https://github.com/harfbuzz/harfbuzz/issues/4671
 LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz \
 		libicudata.so:devel/icu
 

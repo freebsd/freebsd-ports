@@ -32,12 +32,13 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_MULTI=	RP
 RP_DESC=	Routing Protocols
-OPTIONS_MULTI_RP=	BFD BABEL BGP MRT OSPF PIPE RADV RIP RPKI STATIC
-OPTIONS_DEFAULT=	${OPTIONS_MULTI_RP}
+OPTIONS_MULTI_RP=	BFD BABEL BMP BGP MRT OSPF PIPE RADV RIP RPKI STATIC
+OPTIONS_DEFAULT=	BFD BABEL BGP MRT OSPF PIPE RADV RIP RPKI STATIC
 
 BFD_DESC=	Bidirectional Forwarding Detection
 BABEL_DESC=	Babel routing protocol
 BGP_DESC=	Border Gateway Protocol
+BMP_DESC=	BGP Monitoring Protocol
 MRT_DESC=	Dumping Routing Information in MRT Format
 OSPF_DESC=	Open Short Path First
 PIPE_DESC=	PIPE routing
@@ -49,6 +50,7 @@ STATIC_DESC=	Static routing
 BFD_VARS=	rt_prot+=bfd
 BABEL_VARS=	rt_prot+=babel
 BGP_VARS=	rt_prot+=bgp
+BMP_VARS=	rt_prot+=bmp
 MRT_VARS=	rt_prot+=mrt
 OSPF_VARS=	rt_prot+=ospf
 PIPE_VARS=	rt_prot+=pipe

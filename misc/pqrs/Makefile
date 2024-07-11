@@ -1,7 +1,7 @@
 PORTNAME=	pqrs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.1
-PORTREVISION=	9
+DISTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,30 +27,32 @@ CARGO_CRATES=	adler-1.0.2 \
 		aho-corasick-1.0.1 \
 		alloc-no-stdlib-2.0.4 \
 		alloc-stdlib-0.2.2 \
+		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.3.2 \
 		anstyle-1.0.0 \
 		anstyle-parse-0.2.0 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-1.0.1 \
-		arrow-40.0.0 \
-		arrow-arith-40.0.0 \
-		arrow-array-40.0.0 \
-		arrow-buffer-40.0.0 \
-		arrow-cast-40.0.0 \
-		arrow-csv-40.0.0 \
-		arrow-data-40.0.0 \
-		arrow-ipc-40.0.0 \
-		arrow-json-40.0.0 \
-		arrow-ord-40.0.0 \
-		arrow-row-40.0.0 \
-		arrow-schema-40.0.0 \
-		arrow-select-40.0.0 \
-		arrow-string-40.0.0 \
+		arrow-51.0.0 \
+		arrow-arith-51.0.0 \
+		arrow-array-51.0.0 \
+		arrow-buffer-51.0.0 \
+		arrow-cast-51.0.0 \
+		arrow-csv-51.0.0 \
+		arrow-data-51.0.0 \
+		arrow-ipc-51.0.0 \
+		arrow-json-51.0.0 \
+		arrow-ord-51.0.0 \
+		arrow-row-51.0.0 \
+		arrow-schema-51.0.0 \
+		arrow-select-51.0.0 \
+		arrow-string-51.0.0 \
 		assert_cmd-2.0.11 \
+		atoi-2.0.0 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
-		base64-0.21.1 \
+		base64-0.22.1 \
 		bitflags-1.3.2 \
 		brotli-3.3.4 \
 		brotli-decompressor-2.3.4 \
@@ -60,7 +62,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		bytes-1.4.0 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
-		chrono-0.4.24 \
+		chrono-0.4.38 \
 		chrono-tz-0.8.2 \
 		chrono-tz-build-0.1.0 \
 		clap-4.3.0 \
@@ -79,6 +81,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		doc-comment-0.3.3 \
 		either-1.8.1 \
 		env_logger-0.9.3 \
+		equivalent-1.0.1 \
 		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
 		fastrand-1.9.0 \
@@ -87,15 +90,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		float-cmp-0.9.0 \
 		getrandom-0.2.9 \
 		half-2.2.1 \
-		hashbrown-0.12.3 \
-		hashbrown-0.13.2 \
+		hashbrown-0.14.5 \
 		heck-0.4.1 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.3.1 \
 		humantime-2.1.0 \
 		iana-time-zone-0.1.56 \
 		iana-time-zone-haiku-0.1.2 \
-		indexmap-1.9.3 \
+		indexmap-2.2.6 \
 		instant-0.1.12 \
 		integer-encoding-3.0.4 \
 		io-lifetimes-1.0.10 \
@@ -113,23 +115,24 @@ CARGO_CRATES=	adler-1.0.2 \
 		lexical-write-integer-0.8.5 \
 		libc-0.2.144 \
 		libm-0.2.7 \
+		linked-hash-map-0.5.6 \
+		linked_hash_set-0.1.4 \
 		linux-raw-sys-0.3.8 \
 		log-0.4.17 \
-		lz4-1.24.0 \
-		lz4-sys-1.9.4 \
-		memchr-2.5.0 \
+		lz4_flex-0.11.3 \
+		memchr-2.7.2 \
 		miniz_oxide-0.7.1 \
 		normalize-line-endings-0.3.0 \
-		num-0.4.0 \
-		num-bigint-0.4.3 \
-		num-complex-0.4.3 \
-		num-integer-0.1.45 \
-		num-iter-0.1.43 \
-		num-rational-0.4.1 \
-		num-traits-0.2.15 \
+		num-0.4.3 \
+		num-bigint-0.4.5 \
+		num-complex-0.4.6 \
+		num-integer-0.1.46 \
+		num-iter-0.1.45 \
+		num-rational-0.4.2 \
+		num-traits-0.2.19 \
 		once_cell-1.17.1 \
 		ordered-float-2.10.0 \
-		parquet-40.0.0 \
+		parquet-51.0.0 \
 		parse-zoneinfo-0.3.0 \
 		paste-1.0.12 \
 		phf-0.11.1 \
@@ -143,8 +146,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
 		proc-macro-hack-0.5.20+deprecated \
-		proc-macro2-1.0.58 \
-		quote-1.0.27 \
+		proc-macro2-1.0.85 \
+		quote-1.0.36 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
@@ -152,20 +155,21 @@ CARGO_CRATES=	adler-1.0.2 \
 		regex-1.8.2 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.7.2 \
+		regex-syntax-0.8.4 \
 		rustc_version-0.4.0 \
 		rustix-0.37.19 \
-		ryu-1.0.13 \
+		ryu-1.0.18 \
 		same-file-1.0.6 \
 		semver-1.0.17 \
 		seq-macro-0.3.3 \
-		serde-1.0.163 \
-		serde_derive-1.0.163 \
-		serde_json-1.0.96 \
+		serde-1.0.203 \
+		serde_derive-1.0.203 \
+		serde_json-1.0.117 \
 		siphasher-0.3.10 \
 		snap-1.1.0 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
-		syn-2.0.16 \
+		syn-2.0.66 \
 		tempfile-3.5.0 \
 		termcolor-1.2.0 \
 		termtree-0.4.1 \
@@ -194,23 +198,32 @@ CARGO_CRATES=	adler-1.0.2 \
 		windows-sys-0.48.0 \
 		windows-targets-0.42.2 \
 		windows-targets-0.48.0 \
+		windows-targets-0.52.5 \
 		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_gnullvm-0.52.5 \
 		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.48.0 \
+		windows_aarch64_msvc-0.52.5 \
 		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.48.0 \
+		windows_i686_gnu-0.52.5 \
+		windows_i686_gnullvm-0.52.5 \
 		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.48.0 \
+		windows_i686_msvc-0.52.5 \
 		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.0 \
-		zstd-0.12.3+zstd.1.5.2 \
-		zstd-safe-6.0.5+zstd.1.5.4 \
-		zstd-sys-2.0.8+zstd.1.5.5
+		windows_x86_64_msvc-0.52.5 \
+		zstd-0.13.1 \
+		zstd-safe-7.1.0 \
+		zstd-sys-2.0.10+zstd.1.5.6
 
 PLIST_FILES=	bin/${PORTNAME}
 

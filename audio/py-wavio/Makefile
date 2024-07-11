@@ -1,12 +1,12 @@
 PORTNAME=	wavio
-DISTVERSION=	0.0.8
+DISTVERSION=	0.0.9
 CATEGORIES=	audio python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python module for reading and writing WAV files using numpy arrays
-WWW=		https://github.com/WarrenWeckesser/wavio
+WWW=		https://github.com/WarrenWeckesser/wavio/
 
 LICENSE=	BSD2CLAUSE
 

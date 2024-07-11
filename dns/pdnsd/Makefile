@@ -1,6 +1,6 @@
 PORTNAME=	pdnsd
 PORTVERSION=	1.2.9a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://members.home.nl/p.a.rombouts/pdnsd/releases/ \
 		http://distfiles.pirateparty.in/ashish/

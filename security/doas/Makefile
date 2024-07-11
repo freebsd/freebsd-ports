@@ -20,6 +20,8 @@ GH_ACCOUNT=	slicer69
 
 MAKE_ENV+=	TARGETPATH=-DGLOBAL_PATH='\"${_GLOBAL_PATH}\"'
 
+CONFLICTS=	opendoas
+
 BINMODE=	4755
 
 SUB_FILES=	pkg-message

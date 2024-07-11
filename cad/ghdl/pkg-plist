@@ -7,7 +7,7 @@ include/ghdl/vpi_user.h
 %%SYNTH%%include/ghdl/synth.h
 %%SYNTH%%include/ghdl/synth_gates.h
 lib/ghdl/ansi_color.sh
-lib/libghdl-4_0_0.so
+lib/libghdl-4_1_0.so
 lib/libghdl.a
 lib/libghdl.link
 %%LLVM%%lib/ghdl/grt-exec.lst

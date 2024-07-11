@@ -1,6 +1,6 @@
---- texk/texlive/tl_support/Makefile.in.orig	2020-01-31 18:59:27 UTC
+--- texk/texlive/tl_support/Makefile.in.orig	2021-10-04 15:13:00 UTC
 +++ texk/texlive/tl_support/Makefile.in
-@@ -255,8 +255,6 @@ dist_man_MANS = \
+@@ -259,8 +259,6 @@ dist_man_MANS = \
  	fmtutil.1 \
  	fmtutil.cnf.5 \
  	fontinst.1 \
@@ -9,7 +9,7 @@
  	mktexlsr.1 \
  	mktexmf.1 \
  	mktexpk.1 \
-@@ -272,8 +270,6 @@ dist_man_MANS = \
+@@ -276,8 +274,6 @@ man1_links = \
  
  man1_links = \
  	fmtutil:fmtutil-sys \

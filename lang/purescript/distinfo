@@ -1,6 +1,6 @@
-TIMESTAMP = 1706717201
-SHA256 (cabal/purescript-0.15.14/purescript-0.15.14.tar.gz) = 450d8bce772ee0a3b7ded51466543649a105f4aedf2469fe1f7687233b638dd6
-SIZE (cabal/purescript-0.15.14/purescript-0.15.14.tar.gz) = 859908
+TIMESTAMP = 1717180396
+SHA256 (cabal/purescript-0.15.15/purescript-0.15.15.tar.gz) = 9c4a23ea47ff09adc34e260610beabd940ec5c15088234cf120e8660dd220e67
+SIZE (cabal/purescript-0.15.15/purescript-0.15.15.tar.gz) = 860706
 SHA256 (cabal/Cabal-3.6.3.0/Cabal-3.6.3.0.tar.gz) = 2fa1fe88d4a8e8ffbeb45baed5526b1267a2130026c846251ac95c656364ab77
 SIZE (cabal/Cabal-3.6.3.0/Cabal-3.6.3.0.tar.gz) = 608808
 SHA256 (cabal/Glob-0.10.2/Glob-0.10.2.tar.gz) = 6af672ac8427d35cbd42d64142dc288feab266f0be92dae3c696e8860d8173c0

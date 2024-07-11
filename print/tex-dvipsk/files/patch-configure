@@ -1,14 +1,14 @@
---- configure.orig	2015-03-15 17:54:49 UTC
+--- configure.orig	2024-02-05 17:23:27 UTC
 +++ configure
-@@ -778,6 +778,7 @@ with_sysroot
+@@ -804,6 +804,7 @@ with_system_kpathsea
  enable_libtool_lock
  enable_largefile
  with_system_kpathsea
 +with_paper
+ enable_year2038
  '
        ac_precious_vars='build_alias
- host_alias
-@@ -1440,6 +1441,7 @@ Optional Packages:
+@@ -1476,6 +1477,7 @@ Optional Packages:
                            compiler's sysroot if not specified).
    --with-system-kpathsea  use installed kpathsea headers and library (requires
                            pkg-config)
@@ -16,10 +16,12 @@
  
  Some influential environment variables:
    CC          C compiler command
-@@ -15151,6 +15153,102 @@ fi
- ac_config_files="$ac_config_files Makefile"
+@@ -14940,6 +14942,102 @@ fi
+   test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
  
- 
+ fi
++
++
 +eval CPPFLAGS=\"$LIBPAPER_INCLUDES \$CPPFLAGS\"
 +eval LIBS=\"$LIBPAPER_LIBS \$LIBS\"
 +
@@ -114,8 +116,5 @@
 +$as_echo "no" >&6; }
 +fi
 +rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
-+
-+
  
  
- subdirs="$subdirs squeeze"

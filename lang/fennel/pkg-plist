@@ -13,7 +13,6 @@ share/man/man7/fennel-tutorial.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/macros.md
 %%PORTDOCS%%%%DOCSDIR%%/rationale.md
 %%PORTDOCS%%%%DOCSDIR%%/reference.md
-%%PORTDOCS%%%%DOCSDIR%%/release-checklist.md
 %%PORTDOCS%%%%DOCSDIR%%/security.md
 %%PORTDOCS%%%%DOCSDIR%%/setup.md
 %%PORTDOCS%%%%DOCSDIR%%/style.md

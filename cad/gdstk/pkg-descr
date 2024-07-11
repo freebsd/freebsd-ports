@@ -3,7 +3,8 @@ of GDSII and OASIS files. It is also available as a Python module
 meant to be a successor to Gdspy.
 
 Key features for the creation of complex CAD layouts are included:
-* Boolean operations on polygons (AND, OR, NOT, XOR) based on clipping algorithm
+* Boolean operations on polygons (AND, OR, NOT, XOR)
+  based on clipping algorithm
 * Polygon offset (inward and outward rescaling of polygons)
 * Efficient point-in-polygon solutions for large array sets
 

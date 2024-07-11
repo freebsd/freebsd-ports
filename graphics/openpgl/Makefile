@@ -1,7 +1,7 @@
 PORTNAME=	openpgl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
-PORTREVISION=	3
+DISTVERSION=	0.6.0
+PORTREVISION=	1
 #DISTVERSIONSUFFIX=	-beta
 CATEGORIES=	graphics devel
 
@@ -13,18 +13,16 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 # supported processors -
-# arm with NEON/NEON2X and x86_64 with SSE4/AVX2/AVX512
-ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7
+# arm with NEON/NEON2X and x86_64/x86 with SSE/AVX/AVX2/AVX512
+ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386
 ONLY_FOR_ARCHS_REASON=	requires supported SIMD ISA
 
-LIB_DEPENDS=	libembree3.so:graphics/embree \
-		libtbb.so:devel/onetbb
+LIB_DEPENDS=	libtbb.so:devel/onetbb
 
 USES=		cmake compiler:c++11-lib
-USE_LDCONFIG=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenPathGuidingLibrary
+USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 

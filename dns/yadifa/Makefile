@@ -1,7 +1,7 @@
 PORTNAME=	yadifa
-DISTVERSION=	2.6.5
+DISTVERSION=	2.6.6
+DISTVERSIONSUFFIX=	-11255
 PORTREVISION=	1
-DISTVERSIONSUFFIX=	-11201
 CATEGORIES=	dns
 MASTER_SITES=	https://www.yadifa.eu/sites/default/files/releases/ \
 		https://dns.company/downloads/yadifa/

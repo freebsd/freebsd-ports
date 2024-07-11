@@ -1,6 +1,6 @@
 PORTNAME=	libexplain
 PORTVERSION=	1.3.${PATCHLEVEL}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
@@ -13,7 +13,6 @@ LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=	Upstream last release was in 2014
-#BROKEN_FreeBSD_14=	Build fails with lots of error on llvm15
 
 BUILD_DEPENDS=	gsed:textproc/gsed
 RUN_DEPENDS=	lsof:sysutils/lsof
@@ -22,19 +21,12 @@ USES=		bison gettext ghostscript:build gmake groff iconv libtool:build localbase
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	ac_cv_header_linux_kd_h=no
+CFLAGS+=	-Wno-error=int-conversion
 
 OPTIONS_DEFINE=	DOCS
 
 PATCHLEVEL=	D012
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-USES+=		llvm:max=14
-MAKE_JOBS_UNSAFE=	yes
-.endif
 
 .include <bsd.port.pre.mk>
 

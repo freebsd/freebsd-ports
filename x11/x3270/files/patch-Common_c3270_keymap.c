@@ -1,4 +1,4 @@
---- Common/c3270/keymap.c.orig	2024-02-12 06:58:07 UTC
+--- Common/c3270/keymap.c.orig	2024-05-23 04:46:10 UTC
 +++ Common/c3270/keymap.c
 @@ -111,7 +111,7 @@ static int
   * Returns 0 if equal, nonzero if not.

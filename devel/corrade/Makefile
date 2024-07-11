@@ -12,6 +12,9 @@ WWW=		https://magnum.graphics/corrade/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_13_armv7=	compilation fails: error: use of undeclared identifier 'vshrn_high_n_u16'
+BROKEN_FreeBSD_14_armv7=	compilation fails: error: use of undeclared identifier 'vshrn_high_n_u16'
+
 USES=		cmake:testing compiler:c++14-lang
 USE_LDCONFIG=	yes
 
@@ -27,7 +30,7 @@ TEST_CMAKE_BOOL=	CORRADE_BUILD_TESTS
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+.if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's|#include <__tuple>|#include <tuple>|g' \
 		${WRKSRC}/src/Corrade/Utility/StlForwardArray.h \
 		${WRKSRC}/src/Corrade/Utility/StlForwardTuple.h

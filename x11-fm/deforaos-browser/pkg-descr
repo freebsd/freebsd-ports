@@ -1,1 +1,15 @@
-DeforaOS desktop file manager and desktop handler
+The DeforaOS browser is a desktop file manager and desktop handler for
+the DeforaOS desktop.
+
+It supports browsing with multiple layouts (detailed, list, icons, and
+thumbnails), MIME type application association, and file
+manipulation. An application managing the desktop is also provided
+(background, desktop files and application launchers).
+
+It can be extended using a plug-in system, for which the following are
+available:
+
+   - quick preview for a number of file formats
+   - support for git and Subversion repositories
+   - recursive directory tree
+   - file permissions.

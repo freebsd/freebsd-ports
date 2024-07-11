@@ -1,4 +1,4 @@
-TIMESTAMP = 1706685975
+TIMESTAMP = 1716564816
 SHA256 (rust/crates/ahash-0.7.6.crate) = fcb51a0695d8f838b1ee009b3fbf66bda078cd64590202a864a8f3e8c4315c47
 SIZE (rust/crates/ahash-0.7.6.crate) = 38030
 SHA256 (rust/crates/aho-corasick-0.7.18.crate) = 1e37cfd5e7657ada45f742d6e99ca5788580b5c529dc78faf11ece6dc702656f
@@ -571,5 +571,5 @@ SHA256 (open-trade-async-speed-limit-f89f702ae01d4016429543d2f0dda1086157e420_GH
 SIZE (open-trade-async-speed-limit-f89f702ae01d4016429543d2f0dda1086157e420_GH0.tar.gz) = 19735
 SHA256 (open-trade-tokio-socks-3de8300fbce37e2cdaef042e016aa95058d007cf_GH0.tar.gz) = b7e2559a69f67cf2569ae52b779534e355a5cb5a1b6211a0468867b2ee0602c9
 SIZE (open-trade-tokio-socks-3de8300fbce37e2cdaef042e016aa95058d007cf_GH0.tar.gz) = 15074
-SHA256 (rustdesk-rustdesk-server-1.1.10-3_GH0.tar.gz) = ca7203984a798f82651486657ada0968a562f29094ce2c39226ec43278f26b9b
-SIZE (rustdesk-rustdesk-server-1.1.10-3_GH0.tar.gz) = 623978
+SHA256 (rustdesk-rustdesk-server-1.1.11-1_GH0.tar.gz) = 1d5228e3f725534cba2653fe8e6f9da75766bd664e3504d6cc088f9a198544c8
+SIZE (rustdesk-rustdesk-server-1.1.11-1_GH0.tar.gz) = 630346

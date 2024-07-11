@@ -1,11 +1,11 @@
 PORTNAME=	postgrest
 DISTVERSIONPREFIX=	v
-DISTVERSION=	12.0.2
+DISTVERSION=	12.0.3
 CATEGORIES=	www databases haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	PostgREST create a REST API to an existing Postgres database
-WWW=		https://postgrest.org
+WWW=		https://postgrest.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -23,9 +23,6 @@ GH_ACCOUNT=	PostgREST
 USE_RC_SUBR=	postgrest
 
 SKIP_CABAL_PLIST=	yes
-
-POSTGREST_USER?=	postgrest
-POSTGREST_GROUP?=	postgrest
 
 SUB_FILES=	default.conf
 SUB_LIST=	ETCDIR=${ETCDIR} \
@@ -47,6 +44,9 @@ PLIST_SUB=	ETCDIR=${ETCDIR} \
 # 2) make cabal-configure
 # 3) make make-use-cabal && paste the USE_CABAL section to Makefile.modules
 .include "Makefile.modules"
+
+POSTGREST_GROUP?=	postgrest
+POSTGREST_USER?=	postgrest
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}

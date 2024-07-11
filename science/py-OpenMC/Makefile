@@ -1,6 +1,6 @@
 PORTNAME=	OpenMC
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.0
+DISTVERSION=	0.15.0
 CATEGORIES=	science
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -44,5 +44,7 @@ post-install:
 pre-test:
 	# link the library
 	@if ! [ -e ${WRKSRC}/openmc/lib/libopenmc.so ]; then ${LN} -s ${LOCALBASE}/lib/libopenmc.so ${WRKSRC}/openmc/lib/libopenmc.so; fi
+
+# Some tests fail with the message: RuntimeError: No cross_sections.xml file was specified in materials.xml or in the OPENMC_CROSS_SECTIONS environment variable, see https://github.com/openmc-dev/openmc/issues/3053
 
 .include <bsd.port.mk>

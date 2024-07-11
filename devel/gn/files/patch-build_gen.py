@@ -1,16 +1,16 @@
 - .git/ is missing in archive, so use version from environment
 
---- build/gen.py.orig	2023-11-01 07:04:33 UTC
+--- build/gen.py.orig	2024-06-23 08:56:53 UTC
 +++ build/gen.py
-@@ -225,25 +225,16 @@ def GenerateLastCommitPosition(host, header):
- 
+@@ -241,25 +241,16 @@ def GenerateLastCommitPosition(host, header):
+   return ret.returncode == 0 and "#define __GNUC__" in ret.stdout and not "#define __clang__" in ret.stdout
  
  def GenerateLastCommitPosition(host, header):
 -  ROOT_TAG = 'initial-commit'
 -  describe_output = subprocess.check_output(
 -      ['git', 'describe', 'HEAD', '--abbrev=12', '--match', ROOT_TAG],
 -      shell=host.is_windows(), cwd=REPO_ROOT)
--  mo = re.match(ROOT_TAG + '-(\d+)-g([0-9a-f]+)', describe_output.decode())
+-  mo = re.match(ROOT_TAG + r'-(\d+)-g([0-9a-f]+)', describe_output.decode())
 -  if not mo:
 -    raise ValueError(
 -        'Unexpected output from git describe when generating version header')
@@ -30,7 +30,7 @@
  
    # Only write/touch this file if the commit position has changed.
    old_contents = ''
-@@ -286,7 +277,7 @@ def WriteGenericNinja(path, static_libraries, executab
+@@ -302,7 +293,7 @@ def WriteGenericNinja(path, static_libraries, executab
        'msys': 'build_linux.ninja.template',
        'darwin': 'build_mac.ninja.template',
        'linux': 'build_linux.ninja.template',

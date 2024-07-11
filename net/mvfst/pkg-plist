@@ -51,6 +51,7 @@ include/quic/common/FunctionLooper.h
 include/quic/common/IntervalSet-inl.h
 include/quic/common/IntervalSet.h
 include/quic/common/NetworkData.h
+include/quic/common/Optional.h
 include/quic/common/SmallCollections.h
 include/quic/common/SocketUtil.h
 include/quic/common/TimePoints.h
@@ -64,6 +65,8 @@ include/quic/common/events/QuicEventBase.h
 include/quic/common/events/QuicTimer.h
 include/quic/common/testutil/MockAsyncUDPSocket.h
 include/quic/common/third-party/enum.h
+include/quic/common/third-party/optional.h
+include/quic/common/third-party/optional_flag_manipulator_fwd.h
 include/quic/common/udpsocket/FollyQuicAsyncUDPSocket.h
 include/quic/common/udpsocket/LibevQuicAsyncUDPSocket.h
 include/quic/common/udpsocket/QuicAsyncUDPSocket.h
@@ -79,6 +82,7 @@ include/quic/congestion_control/CongestionController.h
 include/quic/congestion_control/CongestionControllerFactory.h
 include/quic/congestion_control/Copa.h
 include/quic/congestion_control/Copa2.h
+include/quic/congestion_control/EcnL4sTracker.h
 include/quic/congestion_control/NewReno.h
 include/quic/congestion_control/Pacer.h
 include/quic/congestion_control/PacketProcessor.h

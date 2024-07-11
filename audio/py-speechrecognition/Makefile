@@ -24,7 +24,13 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+# Clean up bundled binary executables
+.if !defined(MAINTAINER_MODE)
+EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/speech_recognition/flac-* \
+			--no-same-owner --no-same-permissions
+.else
 post-patch:
 	@${RM} ${WRKSRC}/speech_recognition/flac-*
+.endif
 
 .include <bsd.port.mk>

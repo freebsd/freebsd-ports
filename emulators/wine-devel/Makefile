@@ -1,6 +1,5 @@
 PORTNAME=	wine
-DISTVERSION=	9.8
-PORTREVISION=	1
+DISTVERSION=	9.12
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/9.x/
@@ -41,6 +40,7 @@ CONFIGURE_ARGS+=--verbose \
 		--without-krb5 \
 		--with-mingw CROSSCC="clang" CROSSCFLAGS="-isystem ${FILESDIR}/clang" \
 		--without-netapi \
+		--without-odbc \
 		--without-opencl \
 		--without-osmesa \
 		--without-pcap \
@@ -124,10 +124,9 @@ CONFIGURE_ARGS+=	--without-gstreamer
 PLIST_SUB+=		GSTREAMER="@comment "
 .endif
 
-.if ${LLVM_DEFAULT} == 11
-_LLVM_VERSION=	15
-.else
-_LLVM_VERSION=	${LLVM_DEFAULT}
+# Only devel/llvm17 and later come with necessary include files - PR274542
+.if ${LLVM_DEFAULT} < 17
+_LLVM_VERSION=	17
 .endif
 
 .if ${ARCH} == amd64

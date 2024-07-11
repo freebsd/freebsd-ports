@@ -24,6 +24,7 @@ rcvar=vsftpd_enable
 
 load_rc_config "$name"
 : ${vsftpd_enable:="NO"}
+: ${vsftpd_svcj_options:="net_basic"}
 
 command="%%PREFIX%%/libexec/$name"
 required_files="%%PREFIX%%/etc/$name.conf"

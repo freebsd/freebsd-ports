@@ -1,8 +1,10 @@
 PORTNAME=	noto
-PORTVERSION=	2.539
+PORTVERSION=	3.000
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoSansMath-v${PORTVERSION}/fonts/ \
-		https://github.com/notofonts/notofonts.github.io/raw/NotoSansMath-v${PORTVERSION}/fonts/NotoSansMath/hinted/ttf/:fonts
+#MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoSansMath-v${PORTVERSION}/fonts/ \
+#		https://github.com/notofonts/notofonts.github.io/raw/NotoSansMath-v${PORTVERSION}/fonts/NotoSansMath/hinted/ttf/:fonts
+MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/55773c3eb233b5a0eaa07de6226da189b136b4f0/fonts/ \
+		https://github.com/notofonts/notofonts.github.io/raw/55773c3eb233b5a0eaa07de6226da189b136b4f0/fonts/NotoSansMath/hinted/ttf/:fonts
 PKGNAMESUFFIX=	-sans-math
 DISTFILES=	LICENSE \
 		${FONTS:S|$|:fonts|}

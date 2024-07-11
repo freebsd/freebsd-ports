@@ -5,6 +5,8 @@
 %%DATADIR%%/tables/Pl-Pl-g1.utb
 %%DATADIR%%/tables/afr-za-g1.ctb
 %%DATADIR%%/tables/afr-za-g2.ctb
+%%DATADIR%%/tables/akk-borger.utb
+%%DATADIR%%/tables/akk.utb
 %%DATADIR%%/tables/ar-ar-comp8.utb
 %%DATADIR%%/tables/ar-ar-g1.utb
 %%DATADIR%%/tables/ar-ar-g2.ctb
@@ -52,6 +54,7 @@
 %%DATADIR%%/tables/cs-g1.ctb
 %%DATADIR%%/tables/cs.tbl
 %%DATADIR%%/tables/cs-translation.cti
+%%DATADIR%%/tables/cuneiform-transliterated.utb
 %%DATADIR%%/tables/cy-cy-g1.utb
 %%DATADIR%%/tables/cy-cy-g2.ctb
 %%DATADIR%%/tables/cy.tbl
@@ -172,6 +175,7 @@
 %%DATADIR%%/tables/gurumuki.cti
 %%DATADIR%%/tables/gu.tbl
 %%DATADIR%%/tables/haw-us-g1.ctb
+%%DATADIR%%/tables/hbo.utb
 %%DATADIR%%/tables/he-IL-comp8.utb
 %%DATADIR%%/tables/he-IL.utb
 %%DATADIR%%/tables/hi-in-g1.utb
@@ -288,7 +292,6 @@
 %%DATADIR%%/tables/nl-chardefs.uti
 %%DATADIR%%/tables/nl-comp8.utb
 %%DATADIR%%/tables/nl-print.dis
-%%DATADIR%%/tables/nl.tbl
 %%DATADIR%%/tables/nl-unicode.dis
 %%DATADIR%%/tables/no-no-8dot-fallback-6dot-g0.utb
 %%DATADIR%%/tables/no-no-8dot.utb
@@ -351,9 +354,11 @@
 %%DATADIR%%/tables/sot-za-g1.ctb
 %%DATADIR%%/tables/sot-za-g2.ctb
 %%DATADIR%%/tables/spaces.uti
-%%DATADIR%%/tables/sr-chardefs.cti
+%%DATADIR%%/tables/sr-Cyrl.ctb
+%%DATADIR%%/tables/sr-common.cti
+%%DATADIR%%/tables/sr-cyrletters.cti
 %%DATADIR%%/tables/sr-g1.ctb
-%%DATADIR%%/tables/sr.tbl
+%%DATADIR%%/tables/sr-latletters.cti
 %%DATADIR%%/tables/sv-1989.ctb
 %%DATADIR%%/tables/sv-1996.ctb
 %%DATADIR%%/tables/sv-g0.utb
@@ -365,6 +370,7 @@
 %%DATADIR%%/tables/sw-ke-g1-5.ctb
 %%DATADIR%%/tables/sw-ke-g1.utb
 %%DATADIR%%/tables/sw-ke-g2.ctb
+%%DATADIR%%/tables/syc.utb
 %%DATADIR%%/tables/ta.ctb
 %%DATADIR%%/tables/tamil.cti
 %%DATADIR%%/tables/ta-ta-g1.ctb
@@ -383,6 +389,7 @@
 %%DATADIR%%/tables/tsn-za-g1.ctb
 %%DATADIR%%/tables/tsn-za-g2.ctb
 %%DATADIR%%/tables/tt.utb
+%%DATADIR%%/tables/uga.utb
 %%DATADIR%%/tables/ukchardefs.cti
 %%DATADIR%%/tables/ukmaths_single_cell_defs.cti
 %%DATADIR%%/tables/ukmaths_unicode_defs.cti
@@ -411,8 +418,8 @@
 %%DATADIR%%/tables/wordcx.dis
 %%DATADIR%%/tables/xh-za-g1.utb
 %%DATADIR%%/tables/xh-za-g2.ctb
+%%DATADIR%%/tables/yi.utb
 %%DATADIR%%/tables/zh_CHN.tbl
-%%DATADIR%%/tables/zh_HK.tbl
 %%DATADIR%%/tables/zh-chn.ctb
 %%DATADIR%%/tables/zh-hk.ctb
 %%DATADIR%%/tables/zh-tw.ctb
@@ -445,7 +452,7 @@ libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
 lib/liblouis.so.20
-lib/liblouis.so.20.0.17
+lib/liblouis.so.20.0.18
 share/man/man1/lou_allround.1.gz
 share/man/man1/lou_checkhyphens.1.gz
 share/man/man1/lou_checktable.1.gz

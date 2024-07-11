@@ -1,7 +1,7 @@
 PORTNAME=	lazarus
-DISTVERSION=	3.2.0
+DISTVERSION=	3.4.0
 PKGNAMESUFFIX?=  -gtk2
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	editors devel
 DIST_SUBDIR=	freepascal
 
@@ -22,7 +22,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_GITLAB=	yes
 GL_ACCOUNT=	freepascal.org/lazarus
 GL_PROJECT=	${PORTNAME}
-GL_COMMIT=	9c6333cdc4b14205f0098058597835c6fa673ca3
+GL_COMMIT=	34295aa4240319e5179f0ceb7ed86de5104c152a
 
 USES=		desktop-file-utils fpc:run gettext gmake iconv shared-mime-info xorg
 USE_XORG=	x11
@@ -40,7 +40,7 @@ OPTIONS_DEFAULT=	GDB
 .include <bsd.port.options.mk>
 
 LAZARUS_ARCH=	${ARCH:S,amd64,x86_64,}
-LAZARUS_BASE=	3.2.0
+LAZARUS_BASE=	3.4.0
 
 BUILDNAME=	${LAZARUS_ARCH}-${OPSYS:tl}
 LCL_PLATFORM?=	gtk2

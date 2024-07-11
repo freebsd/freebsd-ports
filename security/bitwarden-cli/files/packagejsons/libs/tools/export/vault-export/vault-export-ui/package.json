@@ -20,6 +20,7 @@
   "dependencies": {
     "@bitwarden/common": "file:../../../../common",
     "@bitwarden/angular": "file:../../../../angular",
+    "@bitwarden/auth": "file:../../../../auth",
     "@bitwarden/vault-export-core": "file:../vault-export-core"
   }
 }

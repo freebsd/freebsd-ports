@@ -132,11 +132,8 @@ CONFIGURE_ARGS+=	--enable-debug
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 150
+.if ${COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-error=int-conversion
-.endif
-
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
@@ -148,7 +145,7 @@ FFLAGS+=	-fallow-argument-mismatch
 post-patch:
 	@${REINPLACE_CMD} 's,/usr/local,${LOCALBASE},' ${WRKSRC}/etc/librarypath.xml
 	@${REINPLACE_CMD} -e 's, gfortran, ${FC},' ${WRKSRC}/modules/dynamic_link/src/scripts/configure
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+.if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's|std::filesystem|std::__fs::filesystem|g' \
 		${WRKSRC}/modules/fileio/src/cpp/fullpath.cpp \
 		${WRKSRC}/modules/fileio/sci_gateway/cpp/sci_get_absolute_file_path.cpp

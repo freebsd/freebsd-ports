@@ -1,29 +1,20 @@
---- cmake/modules/FindCrossGUID.cmake.orig	2022-07-08 10:04:52 UTC
+--- cmake/modules/FindCrossGUID.cmake.orig	2024-03-04 21:39:38 UTC
 +++ cmake/modules/FindCrossGUID.cmake
-@@ -45,7 +45,7 @@ else()
-   endif()
+@@ -45,7 +45,7 @@ if(NOT TARGET CrossGUID::CrossGUID)
+       set(CROSSGUID_VERSION ${PC_CROSSGUID_VERSION})
+     endif()
  
-   if(CROSSGUID_FOUND)
 -    find_path(CROSSGUID_INCLUDE_DIR NAMES crossguid/guid.hpp guid.h
 +    find_path(CROSSGUID_INCLUDE_DIR NAMES guid.hpp guid.h
-     PATHS ${PC_CROSSGUID_INCLUDEDIR})
+                                     HINTS ${DEPENDS_PATH}/include ${PC_CROSSGUID_INCLUDEDIR}
+                                     ${${CORE_PLATFORM_LC}_SEARCH_CONFIG}
+                                     NO_CACHE)
+@@ -59,7 +59,7 @@ if(NOT TARGET CrossGUID::CrossGUID)
+                                          NO_CACHE)
  
-     find_library(CROSSGUID_LIBRARY_RELEASE NAMES crossguid
-@@ -53,7 +53,7 @@ else()
-     find_library(CROSSGUID_LIBRARY_DEBUG NAMES crossguidd crossguid-dgb
-           PATHS ${PC_CROSSGUID_LIBDIR})
-   else()
--    find_path(CROSSGUID_INCLUDE_DIR NAMES crossguid/guid.hpp guid.h)
-+    find_path(CROSSGUID_INCLUDE_DIR NAMES guid.hpp guid.h)
-     find_library(CROSSGUID_LIBRARY_RELEASE NAMES crossguid)
-     find_library(CROSSGUID_LIBRARY_DEBUG NAMES crossguidd)
+     # NEW_CROSSGUID >= 0.2.0 release
+-    if(EXISTS "${CROSSGUID_INCLUDE_DIR}/crossguid/guid.hpp")
++    if(EXISTS "${CROSSGUID_INCLUDE_DIR}/guid.hpp")
+       list(APPEND _crossguid_definitions HAVE_NEW_CROSSGUID)
+     endif()
    endif()
-@@ -73,7 +73,7 @@ if(CROSSGUID_FOUND)
-   set(CROSSGUID_INCLUDE_DIRS ${CROSSGUID_INCLUDE_DIR})
- 
-   # NEW_CROSSGUID >= 0.2.0 release
--  if(EXISTS "${CROSSGUID_INCLUDE_DIR}/crossguid/guid.hpp")
-+  if(EXISTS "${CROSSGUID_INCLUDE_DIR}/guid.hpp")
-     list(APPEND CROSSGUID_DEFINITIONS -DHAVE_NEW_CROSSGUID)
-   endif()
- 

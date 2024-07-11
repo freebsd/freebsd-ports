@@ -1,0 +1,388 @@
+commit 3204512f58a1
+Author: Greg V <greg@unrelenting.technology>
+Date:   Sun Dec 6 22:07:00 2020 +0000
+
+    Bug 1680982 - Use evdev instead of the Linux legacy joystick API for gamepads
+    
+    Using evdev is a prerequisite for adding rumble (haptic feedback) and LED support.
+    
+    - BTN_GAMEPAD semantic buttons are interpreted directly,
+    since all kernel drivers are supposed to use them correctly:
+    https://www.kernel.org/doc/html/latest/input/gamepad.html
+    - BTN_JOYSTICK legacy style numbered buttons use the model specific remappers
+    - we support even strange devices that combine both styles in one device
+    - the Linux gamepad module is enabled on FreeBSD and DragonFly, because
+    these kernels provide evdev, and libudev-devd provides enough of libudev
+    (evdev headers are provided by the devel/evdev-proto package)
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D98868
+---
+ dom/gamepad/linux/LinuxGamepad.cpp | 262 ++++++++++++++++++++++++++++++++-----
+ dom/gamepad/moz.build              |   2 +-
+ 2 files changed, 229 insertions(+), 35 deletions(-)
+
+diff --git dom/gamepad/linux/LinuxGamepad.cpp dom/gamepad/linux/LinuxGamepad.cpp
+index deee47b9d267..31f0aad7ae4a 100644
+--- dom/gamepad/linux/LinuxGamepad.cpp
++++ dom/gamepad/linux/LinuxGamepad.cpp
+@@ -5,15 +5,16 @@
+  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ 
+ /*
+- * LinuxGamepadService: A Linux backend for the GamepadService.
+- * Derived from the kernel documentation at
+- * http://www.kernel.org/doc/Documentation/input/joystick-api.txt
++ * LinuxGamepadService: An evdev backend for the GamepadService.
++ *
++ * Ref: https://www.kernel.org/doc/html/latest/input/gamepad.html
+  */
+ #include <algorithm>
++#include <unordered_map>
+ #include <cstddef>
+ 
+ #include <glib.h>
+-#include <linux/joystick.h>
++#include <linux/input.h>
+ #include <stdio.h>
+ #include <stdint.h>
+ #include <sys/ioctl.h>
+@@ -21,10 +22,14 @@
+ #include "nscore.h"
+ #include "mozilla/dom/GamepadHandle.h"
+ #include "mozilla/dom/GamepadPlatformService.h"
++#include "mozilla/dom/GamepadRemapping.h"
+ #include "mozilla/Tainting.h"
+ #include "mozilla/UniquePtr.h"
+ #include "udev.h"
+ 
++#define LONG_BITS (sizeof(long) * 8)
++#define NLONGS(x) (((x) + LONG_BITS - 1) / LONG_BITS)
++
+ namespace {
+ 
+ using namespace mozilla::dom;
+@@ -36,19 +41,29 @@ using mozilla::udev_list_entry;
+ using mozilla::udev_monitor;
+ using mozilla::UniquePtr;
+ 
+-static const float kMaxAxisValue = 32767.0;
+-static const char kJoystickPath[] = "/dev/input/js";
++static const char kEvdevPath[] = "/dev/input/event";
++
++static inline bool TestBit(const unsigned long* arr, int bit) {
++  return !!(arr[bit / LONG_BITS] & (1LL << (bit % LONG_BITS)));
++}
++
++static inline double ScaleAxis(const input_absinfo& info, int value) {
++  return 2.0 * (value - info.minimum) / (double)(info.maximum - info.minimum) -
++         1.0;
++}
+ 
+ // TODO: should find a USB identifier for each device so we can
+ // provide something that persists across connect/disconnect cycles.
+-typedef struct {
++struct Gamepad {
+   GamepadHandle handle;
+-  guint source_id;
+-  int numAxes;
+-  int numButtons;
+-  char idstring[256];
+-  char devpath[PATH_MAX];
+-} Gamepad;
++  RefPtr<GamepadRemapper> remapper = nullptr;
++  guint source_id = UINT_MAX;
++  char idstring[256] = {0};
++  char devpath[PATH_MAX] = {0};
++  uint8_t key_map[KEY_MAX] = {0};
++  uint8_t abs_map[ABS_MAX] = {0};
++  std::unordered_map<uint16_t, input_absinfo> abs_info;
++};
+ 
+ class LinuxGamepadService {
+  public:
+@@ -66,7 +81,7 @@ class LinuxGamepadService {
+   bool is_gamepad(struct udev_device* dev);
+   void ReadUdevChange();
+ 
+-  // handler for data from /dev/input/jsN
++  // handler for data from /dev/input/eventN
+   static gboolean OnGamepadData(GIOChannel* source, GIOCondition condition,
+                                 gpointer data);
+ 
+@@ -114,8 +129,14 @@ void LinuxGamepadService::AddDevice(struct udev_device* dev) {
+   g_io_channel_set_encoding(channel, nullptr, nullptr);
+   g_io_channel_set_buffered(channel, FALSE);
+   int fd = g_io_channel_unix_get_fd(channel);
++
++  struct input_id id {};
++  if (ioctl(fd, EVIOCGID, &id) == -1) {
++    return;
++  }
++
+   char name[128];
+-  if (ioctl(fd, JSIOCGNAME(sizeof(name)), &name) == -1) {
++  if (ioctl(fd, EVIOCGNAME(sizeof(name)), &name) == -1) {
+     strcpy(name, "unknown");
+   }
+   const char* vendor_id =
+@@ -131,20 +152,86 @@ void LinuxGamepadService::AddDevice(struct udev_device* dev) {
+       model_id = mUdev.udev_device_get_sysattr_value(parent, "id/product");
+     }
+   }
++  if (!vendor_id && id.vendor != 0) {
++    vendor_id = (const char*)alloca(5);
++    snprintf((char*)vendor_id, 5, "%04x", id.vendor);
++  }
++  if (!model_id && id.product != 0) {
++    model_id = (const char*)alloca(5);
++    snprintf((char*)model_id, 5, "%04x", id.product);
++  }
+   snprintf(gamepad->idstring, sizeof(gamepad->idstring), "%s-%s-%s",
+            vendor_id ? vendor_id : "unknown", model_id ? model_id : "unknown",
+            name);
+ 
+   char numAxes = 0, numButtons = 0;
+-  ioctl(fd, JSIOCGAXES, &numAxes);
+-  gamepad->numAxes = numAxes;
+-  ioctl(fd, JSIOCGBUTTONS, &numButtons);
+-  gamepad->numButtons = numButtons;
++  unsigned long key_bits[NLONGS(KEY_CNT)] = {0};
++  unsigned long abs_bits[NLONGS(ABS_CNT)] = {0};
++  ioctl(fd, EVIOCGBIT(EV_KEY, sizeof(key_bits)), key_bits);
++  ioctl(fd, EVIOCGBIT(EV_ABS, sizeof(abs_bits)), abs_bits);
++
++  /* Here, we try to support even strange cases where proper semantic
++   * BTN_GAMEPAD button are combined with arbitrary extra buttons. */
++  for (uint16_t i = BTN_JOYSTICK; i < KEY_MAX; i++) {
++    /* Do not map semantic buttons, they are handled directly */
++    if (i == BTN_GAMEPAD) {
++      i = BTN_THUMBR + 1;
++      continue;
++    }
++    if (i == BTN_DPAD_UP) {
++      i = BTN_DPAD_RIGHT + 1;
++      continue;
++    }
++    if (TestBit(key_bits, i)) {
++      gamepad->key_map[i] = numButtons++;
++    }
++  }
++  for (uint16_t i = 0; i < BTN_JOYSTICK; i++) {
++    if (TestBit(key_bits, i)) {
++      gamepad->key_map[i] = numButtons++;
++    }
++  }
++  for (uint16_t i = BTN_GAMEPAD; i <= BTN_THUMBR; i++) {
++    /* But if any semantic event exists, count them all */
++    if (TestBit(key_bits, i)) {
++      numButtons += BUTTON_INDEX_COUNT;
++      break;
++    }
++  }
++  for (uint16_t i = 0; i < ABS_MAX; ++i) {
++    if (TestBit(abs_bits, i)) {
++      gamepad->abs_info.emplace(i, input_absinfo{});
++      if (ioctl(fd, EVIOCGABS(i), &gamepad->abs_info[i]) < 0) {
++        continue;
++      }
++      if (gamepad->abs_info[i].minimum == gamepad->abs_info[i].maximum) {
++        gamepad->abs_info.erase(i);
++        continue;
++      }
++      gamepad->abs_map[i] = numAxes++;
++    }
++  }
++
++  if (numAxes == 0) {
++    NS_WARNING("Gamepad with zero axes detected?");
++  }
++  if (numButtons == 0) {
++    NS_WARNING("Gamepad with zero buttons detected?");
++  }
++
++  bool defaultRemapper = false;
++  RefPtr<GamepadRemapper> remapper =
++      GetGamepadRemapper(id.vendor, id.product, defaultRemapper);
++  MOZ_ASSERT(remapper);
++  remapper->SetAxisCount(numAxes);
++  remapper->SetButtonCount(numButtons);
+ 
+   gamepad->handle = service->AddGamepad(
+-      gamepad->idstring, mozilla::dom::GamepadMappingType::_empty,
+-      mozilla::dom::GamepadHand::_empty, gamepad->numButtons, gamepad->numAxes,
+-      0, 0, 0);  // TODO: Bug 680289, implement gamepad haptics for Linux.
++      gamepad->idstring, remapper->GetMappingType(), GamepadHand::_empty,
++      remapper->GetButtonCount(), remapper->GetAxisCount(), 0,
++      remapper->GetLightIndicatorCount(), remapper->GetTouchEventCount());
++  gamepad->remapper = remapper.forget();
++  // TODO: Bug 680289, implement gamepad haptics for Linux.
+   // TODO: Bug 1523355, implement gamepad lighindicator and touch for Linux.
+ 
+   gamepad->source_id =
+@@ -257,7 +344,7 @@ bool LinuxGamepadService::is_gamepad(struct udev_device* dev) {
+   if (!devpath) {
+     return false;
+   }
+-  if (strncmp(kJoystickPath, devpath, sizeof(kJoystickPath) - 1) != 0) {
++  if (strncmp(kEvdevPath, devpath, sizeof(kEvdevPath) - 1) != 0) {
+     return false;
+   }
+ 
+@@ -292,7 +379,7 @@ gboolean LinuxGamepadService::OnGamepadData(GIOChannel* source,
+   if (condition & G_IO_ERR || condition & G_IO_HUP) return FALSE;
+ 
+   while (true) {
+-    struct js_event event;
++    struct input_event event {};
+     gsize count;
+     GError* err = nullptr;
+     if (g_io_channel_read_chars(source, (gchar*)&event, sizeof(event), &count,
+@@ -301,18 +388,125 @@ gboolean LinuxGamepadService::OnGamepadData(GIOChannel* source,
+       break;
+     }
+ 
+-    // TODO: store device state?
+-    if (event.type & JS_EVENT_INIT) {
+-      continue;
+-    }
+-
+     switch (event.type) {
+-      case JS_EVENT_BUTTON:
+-        service->NewButtonEvent(gamepad->handle, event.number, !!event.value);
++      case EV_KEY:
++        switch (event.code) {
++          /* The gamepad events are meaningful, and according to
++           * https://www.kernel.org/doc/html/latest/input/gamepad.html
++           * "No other devices, that do not look/feel like a gamepad, shall
++           * report these events" */
++          case BTN_SOUTH:
++            service->NewButtonEvent(gamepad->handle, BUTTON_INDEX_PRIMARY,
++                                    !!event.value);
++            break;
++          case BTN_EAST:
++            service->NewButtonEvent(gamepad->handle, BUTTON_INDEX_SECONDARY,
++                                    !!event.value);
++            break;
++          case BTN_NORTH:
++            service->NewButtonEvent(gamepad->handle, BUTTON_INDEX_QUATERNARY,
++                                    !!event.value);
++            break;
++          case BTN_WEST:
++            service->NewButtonEvent(gamepad->handle, BUTTON_INDEX_TERTIARY,
++                                    !!event.value);
++            break;
++          case BTN_TL:
++            service->NewButtonEvent(gamepad->handle, BUTTON_INDEX_LEFT_SHOULDER,
++                                    !!event.value);
++            break;
++          case BTN_TR:
++            service->NewButtonEvent(gamepad->handle,
++                                    BUTTON_INDEX_RIGHT_SHOULDER, !!event.value);
++            break;
++          case BTN_TL2:
++            service->NewButtonEvent(gamepad->handle, BUTTON_INDEX_LEFT_TRIGGER,
++                                    !!event.value);
++            break;
++          case BTN_TR2:
++            service->NewButtonEvent(gamepad->handle, BUTTON_INDEX_RIGHT_TRIGGER,
++                                    !!event.value);
++            break;
++          case BTN_SELECT:
++            service->NewButtonEvent(gamepad->handle, BUTTON_INDEX_BACK_SELECT,
++                                    !!event.value);
++            break;
++          case BTN_START:
++            service->NewButtonEvent(gamepad->handle, BUTTON_INDEX_START,
++                                    !!event.value);
++            break;
++          case BTN_MODE:
++            service->NewButtonEvent(gamepad->handle, BUTTON_INDEX_META,
++                                    !!event.value);
++            break;
++          case BTN_THUMBL:
++            service->NewButtonEvent(
++                gamepad->handle, BUTTON_INDEX_LEFT_THUMBSTICK, !!event.value);
++            break;
++          case BTN_THUMBR:
++            service->NewButtonEvent(
++                gamepad->handle, BUTTON_INDEX_RIGHT_THUMBSTICK, !!event.value);
++            break;
++          case BTN_DPAD_UP:
++            service->NewButtonEvent(gamepad->handle, BUTTON_INDEX_DPAD_UP,
++                                    !!event.value);
++            break;
++          case BTN_DPAD_DOWN:
++            service->NewButtonEvent(gamepad->handle, BUTTON_INDEX_DPAD_DOWN,
++                                    !!event.value);
++            break;
++          case BTN_DPAD_LEFT:
++            service->NewButtonEvent(gamepad->handle, BUTTON_INDEX_DPAD_LEFT,
++                                    !!event.value);
++            break;
++          case BTN_DPAD_RIGHT:
++            service->NewButtonEvent(gamepad->handle, BUTTON_INDEX_DPAD_RIGHT,
++                                    !!event.value);
++            break;
++          default:
++            /* For non-gamepad events, this is the "anything goes" numbered
++             * handling that should be handled with remappers. */
++            gamepad->remapper->RemapButtonEvent(
++                gamepad->handle, gamepad->key_map[event.code], !!event.value);
++            break;
++        }
+         break;
+-      case JS_EVENT_AXIS:
+-        service->NewAxisMoveEvent(gamepad->handle, event.number,
+-                                  ((float)event.value) / kMaxAxisValue);
++      case EV_ABS:
++        if (!gamepad->abs_info.count(event.code)) continue;
++        switch (event.code) {
++          case ABS_HAT0X:
++            service->NewButtonEvent(
++                gamepad->handle, BUTTON_INDEX_DPAD_LEFT,
++                AxisNegativeAsButton(
++                    ScaleAxis(gamepad->abs_info[event.code], event.value)));
++            service->NewButtonEvent(
++                gamepad->handle, BUTTON_INDEX_DPAD_RIGHT,
++                AxisPositiveAsButton(
++                    ScaleAxis(gamepad->abs_info[event.code], event.value)));
++            break;
++          case ABS_HAT0Y:
++            service->NewButtonEvent(
++                gamepad->handle, BUTTON_INDEX_DPAD_UP,
++                AxisNegativeAsButton(
++                    ScaleAxis(gamepad->abs_info[event.code], event.value)));
++            service->NewButtonEvent(
++                gamepad->handle, BUTTON_INDEX_DPAD_DOWN,
++                AxisPositiveAsButton(
++                    ScaleAxis(gamepad->abs_info[event.code], event.value)));
++            break;
++          case ABS_HAT1X:
++          case ABS_HAT1Y:
++          case ABS_HAT2X:
++          case ABS_HAT2Y:
++          case ABS_HAT3X:
++          case ABS_HAT3Y:
++            break;
++          default:
++            gamepad->remapper->RemapAxisMoveEvent(
++                gamepad->handle, gamepad->abs_map[event.code],
++                ScaleAxis(gamepad->abs_info[event.code], event.value));
++            break;
++        }
+         break;
+     }
+   }
+diff --git dom/gamepad/moz.build dom/gamepad/moz.build
+index 5f55d5a95e96..544b7f927736 100644
+--- dom/gamepad/moz.build
++++ dom/gamepad/moz.build
+@@ -59,7 +59,7 @@ elif CONFIG["MOZ_WIDGET_TOOLKIT"] == "windows":
+     UNIFIED_SOURCES += ["windows/WindowsGamepad.cpp"]
+ elif CONFIG["MOZ_WIDGET_TOOLKIT"] == "android":
+     UNIFIED_SOURCES += ["android/AndroidGamepad.cpp"]
+-elif CONFIG["OS_ARCH"] == "Linux":
++elif CONFIG["OS_ARCH"] in ("Linux", "FreeBSD", "DragonFly"):
+     UNIFIED_SOURCES += ["linux/LinuxGamepad.cpp"]
+ else:
+     UNIFIED_SOURCES += ["fallback/FallbackGamepad.cpp"]

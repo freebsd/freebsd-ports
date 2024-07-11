@@ -1,3 +1,3 @@
-TIMESTAMP = 1716142176
-SHA256 (rubygem/aws-sdk-managedgrafana-1.29.0.gem) = 23fb8b703c87231bb9cfbd4fbc64d31c2df991cd7c89951c285e1b3fa9bec1ea
-SIZE (rubygem/aws-sdk-managedgrafana-1.29.0.gem) = 51712
+TIMESTAMP = 1720355562
+SHA256 (rubygem/aws-sdk-managedgrafana-1.33.0.gem) = d61cc1eef1f26309b8746424bc15cbd75a8bea9fb956eeeb57a9f381c69c0757
+SIZE (rubygem/aws-sdk-managedgrafana-1.33.0.gem) = 52224

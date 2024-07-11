@@ -1,6 +1,6 @@
---- components/url_formatter/spoof_checks/idn_spoof_checker.cc.orig	2023-10-21 11:51:27 UTC
+--- components/url_formatter/spoof_checks/idn_spoof_checker.cc.orig	2024-06-25 12:08:48 UTC
 +++ components/url_formatter/spoof_checks/idn_spoof_checker.cc
-@@ -293,7 +293,7 @@ IDNSpoofChecker::IDNSpoofChecker() {
+@@ -294,7 +294,7 @@ IDNSpoofChecker::IDNSpoofChecker() {
    // The ideal fix would be to change the omnibox font used for Thai. In
    // that case, the Linux-only list should be revisited and potentially
    // removed.

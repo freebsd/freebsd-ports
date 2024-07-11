@@ -1,4 +1,4 @@
---- chrome/browser/media/webrtc/webrtc_logging_controller.cc.orig	2023-07-24 14:27:53 UTC
+--- chrome/browser/media/webrtc/webrtc_logging_controller.cc.orig	2024-06-25 12:08:48 UTC
 +++ chrome/browser/media/webrtc/webrtc_logging_controller.cc
 @@ -25,10 +25,10 @@
  #include "components/webrtc_logging/browser/text_log_list.h"
@@ -13,7 +13,7 @@
  
  using webrtc_event_logging::WebRtcEventLogManager;
  
-@@ -284,7 +284,7 @@ void WebRtcLoggingController::StartEventLogging(
+@@ -288,7 +288,7 @@ void WebRtcLoggingController::StartEventLogging(
        web_app_id, callback);
  }
  
@@ -22,7 +22,7 @@
  void WebRtcLoggingController::GetLogsDirectory(
      LogsDirectoryCallback callback,
      LogsDirectoryErrorCallback error_callback) {
-@@ -329,7 +329,7 @@ void WebRtcLoggingController::GrantLogsDirectoryAccess
+@@ -334,7 +334,7 @@ void WebRtcLoggingController::GrantLogsDirectoryAccess
        FROM_HERE,
        base::BindOnce(std::move(callback), file_system.id(), registered_name));
  }
@@ -30,4 +30,4 @@
 +#endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  
  void WebRtcLoggingController::OnRtpPacket(
-     std::unique_ptr<uint8_t[]> packet_header,
+     base::HeapArray<uint8_t> packet_header,

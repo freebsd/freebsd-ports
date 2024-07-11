@@ -126,7 +126,7 @@ pre-build:
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160 && !${PORT_OPTIONS:MPGO}
+.if ${COMPILER_TYPE} == clang && !${PORT_OPTIONS:MPGO}
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 

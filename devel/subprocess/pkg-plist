@@ -1,0 +1,8 @@
+include/subprocess.hpp
+include/subprocess/PipeVar.hpp
+include/subprocess/ProcessBuilder.hpp
+include/subprocess/basic_types.hpp
+include/subprocess/environ.hpp
+include/subprocess/pipe.hpp
+include/subprocess/shell_utils.hpp
+lib/libsubprocess.so

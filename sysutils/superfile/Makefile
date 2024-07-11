@@ -1,7 +1,8 @@
 PORTNAME=	superfile
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.3-0.20240512232412
-DISTVERSIONSUFFIX=	-e7275dfc0dcd
+DISTVERSION=	1.1.3
+PORTREVISION=	1
+PORTEPOCH=1
 CATEGORIES=	sysutils
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -15,6 +16,9 @@ USES=		go:modules
 
 GO_MODULE=	github.com/MHNightCat/superfile
 
-PLIST_FILES=	bin/superfile
+PLIST_FILES=	bin/superfile bin/spf
+
+post-install:
+	${LN}	${STAGEDIR}${PREFIX}/bin/superfile ${STAGEDIR}${PREFIX}/bin/spf
 
 .include <bsd.port.mk>

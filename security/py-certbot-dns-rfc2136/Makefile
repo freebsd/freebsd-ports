@@ -1,8 +1,10 @@
 PORTNAME=	certbot-dns-rfc2136
 PORTVERSION=	${ACME_VERSION}
 CATEGORIES=	security python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/certbot/certbot/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	certbot_dns_rfc2136-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	RFC 2136 DNS Authenticator plugin for Certbot

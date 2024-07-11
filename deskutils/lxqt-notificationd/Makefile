@@ -1,22 +1,21 @@
 PORTNAME=	lxqt-notificationd
-PORTVERSION=	1.4.0
+PORTVERSION=	2.0.1
 CATEGORIES=	deskutils
 MASTER_SITES=	LXQT
 
-MAINTAINER=	jsm@FreeBSD.org
+MAINTAINER=	lxqt@FreeBSD.org
 COMMENT=	LXQt notification daemon
 WWW=		https://lxqt-project.org
 
 LICENSE=	LGPL21+
 
-USES=	cmake compiler:c++14-lang gettext kde:5 lxqt qt:5 \
-	perl5 pkgconfig tar:xz gnome xorg
+USES=		cmake compiler:c++17-lang gettext kde:6 localbase:ldflags lxqt:2 qt:6 \
+		perl5 pkgconfig tar:xz gnome xorg
 USE_PERL5=	build
-USE_QT=	buildtools:build qmake:build dbus core gui \
-	linguisttools svg widgets x11extras xml
-USE_KDE=	windowsystem
-USE_LXQT=	buildtools lxqt
+USE_QT=		base:run tools:build svg
+USE_KDE=	layer-shell-qt windowsystem
 USE_GNOME=	glib20
 USE_XORG=	x11
+USE_LXQT=	buildtools2 lxqt
 
 .include <bsd.port.mk>

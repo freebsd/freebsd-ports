@@ -1,24 +1,21 @@
 PORTNAME=	burgerspace
-PORTVERSION=	1.9.5
-PORTREVISION=	1
+PORTVERSION=	1.10.0
 CATEGORIES=	games
-MASTER_SITES=	http://perso.b2b2c.ca/~sarrazip/dev/ \
-		LOCAL/martymac
+MASTER_SITES=	http://perso.b2b2c.ca/~sarrazip/dev/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	BurgerTime clone
 WWW=		http://sarrazip.com/dev/burgerspace.html
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libflatzebra-0.1.so:devel/flatzebra
+LIB_DEPENDS=	libflatzebra-0.2.so:devel/flatzebra
 
 USES=		pkgconfig sdl
-USE_CXXSTD=	gnu++98
-USE_SDL=	image mixer sdl
+USE_SDL=	sdl2 gfx2 image2 mixer2 ttf2
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PORTDOCS=	AUTHORS NEWS README THANKS
 

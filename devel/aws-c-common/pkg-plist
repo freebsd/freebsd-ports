@@ -12,6 +12,7 @@ include/aws/common/byte_buf.h
 include/aws/common/byte_order.h
 include/aws/common/byte_order.inl
 include/aws/common/cache.h
+include/aws/common/cbor.h
 include/aws/common/clock.h
 include/aws/common/clock.inl
 include/aws/common/command_line_parser.h

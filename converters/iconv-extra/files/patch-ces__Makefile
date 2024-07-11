@@ -1,6 +1,6 @@
---- ces/Makefile.orig	Wed Nov 29 03:42:25 2000
-+++ ces/Makefile	Fri Oct 21 11:24:04 2005
-@@ -4,8 +4,8 @@
+--- ces/Makefile.orig	2000-11-28 18:42:25 UTC
++++ ces/Makefile
+@@ -4,8 +4,8 @@ all:		${CHARSETS_SO}
  all:		${CHARSETS_SO}
  
  .if !defined(ICONVDIR_LIBC)
@@ -11,7 +11,7 @@
  .endif
  
  INTERNALLIB =
-@@ -14,11 +14,11 @@ NOMAN =
+@@ -14,11 +14,11 @@ NOOBJ =
  
  NOOBJ =
  

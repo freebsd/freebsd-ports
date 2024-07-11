@@ -1,0 +1,83 @@
+commit cadd2ca21765ebcb95b77ec94977b4e74e1edc1b
+Author: Dimitry Andric <dim@FreeBSD.org>
+Date:   Sat May 25 19:52:15 2024 +0200
+
+    Merge commit d0be944aa511 from llvm-project (by Simon Pilgrim):
+    
+      [X86] Add slow div64 tuning flag to Nehalem target (#91129)
+    
+      This appears to have been missed because later cpus don't inherit from Nehalem tuning much.
+    
+      Noticed while cleaning up for #90985
+    
+    Merge commit 8b400de79eff from llvm-project (by Simon Pilgrim):
+    
+      [X86] Enable TuningSlowDivide64 on Barcelona/Bobcat/Bulldozer/Ryzen Families (#91277)
+    
+      Despite most AMD cpus having a lower latency for i64 divisions that converge early, we are still better off testing for values representable as i32 and performing a i32 division if possible.
+    
+      All AMD cpus appear to have been missed when we added the "idivq-to-divl" attribute - this patch now matches Intel cpu behaviour (and the x86-64/v2/3/4 levels).
+    
+      Unfortunately the difference in code scheduling means I've had to stop using the update_llc_test_checks script and just use old-fashioned CHECK-DAG checks for divl/divq pairs.
+    
+      Fixes #90985
+    
+    This fixes possibly worse runtime performance on AMD Zen hardware, when
+    using -march=znver4 (or any other znver), as opposed to -march=x86-64-v4
+    or the baseline -march=x86-64. A similar fix is applied for Nehalem.
+    
+    PR:             278908
+    MFC after:      3 days
+
+diff --git llvm/lib/Target/X86/X86.td llvm/lib/Target/X86/X86.td
+index e89ddcc570c9..1aff5f9fad97 100644
+--- llvm/lib/Target/X86/X86.td
++++ llvm/lib/Target/X86/X86.td
+@@ -867,6 +867,7 @@ def ProcessorFeatures {
+   // Nehalem
+   list<SubtargetFeature> NHMFeatures = X86_64V2Features;
+   list<SubtargetFeature> NHMTuning = [TuningMacroFusion,
++                                      TuningSlowDivide64,
+                                       TuningInsertVZEROUPPER,
+                                       TuningNoDomainDelayMov];
+ 
+@@ -1336,6 +1337,7 @@ def ProcessorFeatures {
+                                               FeatureCMOV,
+                                               FeatureX86_64];
+   list<SubtargetFeature> BarcelonaTuning = [TuningFastScalarShiftMasks,
++                                            TuningSlowDivide64,
+                                             TuningSlowSHLD,
+                                             TuningSBBDepBreaking,
+                                             TuningInsertVZEROUPPER];
+@@ -1358,6 +1360,7 @@ def ProcessorFeatures {
+   list<SubtargetFeature> BtVer1Tuning = [TuningFast15ByteNOP,
+                                          TuningFastScalarShiftMasks,
+                                          TuningFastVectorShiftMasks,
++                                         TuningSlowDivide64,
+                                          TuningSlowSHLD,
+                                          TuningSBBDepBreaking,
+                                          TuningInsertVZEROUPPER];
+@@ -1380,6 +1383,7 @@ def ProcessorFeatures {
+                                          TuningFastVectorShiftMasks,
+                                          TuningFastMOVBE,
+                                          TuningSBBDepBreaking,
++                                         TuningSlowDivide64,
+                                          TuningSlowSHLD];
+   list<SubtargetFeature> BtVer2Features =
+     !listconcat(BtVer1Features, BtVer2AdditionalFeatures);
+@@ -1404,6 +1408,7 @@ def ProcessorFeatures {
+                                            FeatureLWP,
+                                            FeatureLAHFSAHF64];
+   list<SubtargetFeature> BdVer1Tuning = [TuningSlowSHLD,
++                                         TuningSlowDivide64,
+                                          TuningFast11ByteNOP,
+                                          TuningFastScalarShiftMasks,
+                                          TuningBranchFusion,
+@@ -1483,6 +1488,7 @@ def ProcessorFeatures {
+                                      TuningFastScalarShiftMasks,
+                                      TuningFastVariablePerLaneShuffle,
+                                      TuningFastMOVBE,
++                                     TuningSlowDivide64,
+                                      TuningSlowSHLD,
+                                      TuningSBBDepBreaking,
+                                      TuningInsertVZEROUPPER,

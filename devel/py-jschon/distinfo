@@ -1,0 +1,11 @@
+TIMESTAMP = 1718439259
+SHA256 (marksparkza-jschon-v0.11.1_GH0.tar.gz) = 575ad63618710a13e6eb7fa96225ebf9820845fdec1d5c75fde33f1f19294e68
+SIZE (marksparkza-jschon-v0.11.1_GH0.tar.gz) = 84003
+SHA256 (json-schema-org-JSON-Schema-Test-Suite-0433a2bf827d3039c272e831049a6e58deab787d_GH0.tar.gz) = 1a6da89452e57b94bc117ace9c760a492c27e0c59540f547577c2b95c4f672c2
+SIZE (json-schema-org-JSON-Schema-Test-Suite-0433a2bf827d3039c272e831049a6e58deab787d_GH0.tar.gz) = 221182
+SHA256 (json-schema-org-json-schema-spec-aaedf928fb5aba87d815d0a7a152e872b13cbb77_GH0.tar.gz) = 660bbbf65911e85e0e39bef01663fbe962f3b003633e2386b4e6b79ba19f4727
+SIZE (json-schema-org-json-schema-spec-aaedf928fb5aba87d815d0a7a152e872b13cbb77_GH0.tar.gz) = 98756
+SHA256 (json-schema-org-json-schema-spec-6b2052df656484d01bdf1969b709dc8845884678_GH0.tar.gz) = ecd400bd7d7921aff5e683e16d677e00913008a86f3575dc8e9e544005b0e4aa
+SIZE (json-schema-org-json-schema-spec-6b2052df656484d01bdf1969b709dc8845884678_GH0.tar.gz) = 107264
+SHA256 (marksparkza-json-schema-spec-2cb7c7447f9b795c9940710bf0eda966a92c937f_GH0.tar.gz) = bba05bc120d23848beedff55a33d479e92ce1d825806a5c400a7b08cda5676f9
+SIZE (marksparkza-json-schema-spec-2cb7c7447f9b795c9940710bf0eda966a92c937f_GH0.tar.gz) = 163737

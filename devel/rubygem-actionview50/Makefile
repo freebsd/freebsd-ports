@@ -6,7 +6,8 @@ PKGNAMESUFFIX=	50
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Rendering framework putting the V in MVC (part of Rails)
-WWW=		https://github.com/rails/rails/tree/main/actionview
+WWW=		https://rubyonrails.org/ \
+		https://github.com/rails/rails/tree/main/actionview
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

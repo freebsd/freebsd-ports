@@ -1,5 +1,5 @@
 PORTNAME=	zig
-DISTVERSION=	0.12.0
+DISTVERSION=	0.12.1
 CATEGORIES=	lang
 MASTER_SITES=	https://ziglang.org/download/${DISTVERSION}/ \
 		https://ziglang.org/builds/
@@ -25,7 +25,7 @@ USES=		cmake compiler:c++11-lang localbase:ldflags tar:xz
 CMAKE_ARGS+=	-DZIG_TARGET_MCPU=baseline # ensure we run everywhere
 CMAKE_ON=	THREADS_PREFER_PTHREAD_FLAG
 
-CONFLICTS_INSTALL=	zig0* zig-devel
+CONFLICTS_INSTALL=	zig0*
 
 OPTIONS_DEFINE=		DOCS STATIC
 OPTIONS_DEFAULT=	DOCS

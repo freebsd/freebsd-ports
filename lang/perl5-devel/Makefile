@@ -1,15 +1,8 @@
 PORTNAME=	perl
-# XXX Remove second line, uncomment first
-#DISTVERSION=	${PERL_VERSION}	# TODO: set EXPIRATION_DATE when .0 is released and remove .r from version.mk
-DISTVERSIONPREFIX=	v
-DISTVERSION=	${GH_TAGNAME:C/^v//:C/-g[0-9a-f]*$//}
-DISTVERSIONSUFFIX=	${GH_TAGNAME:C/.*-g/-g/}
-PORTREVISION=	3
+DISTVERSION=	${PERL_VERSION}
+PORTREVISION=	0
 CATEGORIES=	lang devel perl5
-# XXX Leave only CPAN.
-MASTER_SITES=	LOCAL/mat/perl \
-		GH
-#MASTER_SITES=	CPAN/../../src/5.0
+MASTER_SITES=	CPAN/../../src/5.0
 DIST_SUBDIR=	perl
 
 MAINTAINER=	mat@FreeBSD.org
@@ -21,18 +14,11 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 
-# Uncomment when the default Perl is switched to 5.3(X+2)
+# Uncomment when the default Perl is switched to 5.4(X+2)+
 #DEPRECATED=	Support end three years after .0 release, please upgrade to a more recent version of Perl
 #EXPIRATION_DATE=<Release date of .0 + 3 years>
 
-# XXX releases are .tar.xz, add: tar:xz
-USES=		cpe
-
-# XXX Remove github things.
-USE_GITHUB=	yes
-GH_ACCOUNT=	Perl
-GH_PROJECT=	perl5
-GH_TAGNAME=	v5.39.0-62-gdab8baec2c
+USES=		cpe tar:xz
 
 # Give a hint of where libperl.so can be found.
 USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
@@ -42,8 +28,7 @@ TEST_ENV=	${MAKE_ENV} \
 		LD_LIBRARY_PATH=${WRKSRC} \
 		TEST_JOBS=${MAKE_JOBS_NUMBER}
 
-# XXX uncomment PORTSCOUT line
-#PORTSCOUT=	limit:^${PERL_VER}.
+PORTSCOUT=	limit:^${PERL_VER}.
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure

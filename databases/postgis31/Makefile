@@ -18,7 +18,7 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 		libgdal.so:graphics/gdal
 
 USES=		alias compiler:c++11-lang cpe gmake gnome iconv:wchar_t libtool:keepla \
-		localbase perl5 pkgconfig pgsql:11-14 shebangfix
+		localbase perl5 pkgconfig pgsql shebangfix
 USE_GNOME=	libxml2
 USE_PERL5=	build
 
@@ -66,6 +66,10 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}${DISTVERSIONSUFFIX} \
 		VER=${VER}
 
 .include <bsd.port.pre.mk>
+
+.if ${PGSQL_VER} >= 15
+IGNORE=		Only supported up to pgsql 14
+.endif
 
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 post-patch:

@@ -1,7 +1,7 @@
---- dart/gui/glut/LoadGlut.hpp.orig	2021-11-04 20:43:53 UTC
+--- dart/gui/glut/LoadGlut.hpp.orig	2024-06-25 05:13:56 UTC
 +++ dart/gui/glut/LoadGlut.hpp
 @@ -39,6 +39,8 @@
-   #include <GL/glut.h>
+   #include <cstdlib> // To disable glut::exit() function
  #elif defined(__linux__)
    #include <GL/glut.h>
 +#elif defined(__FreeBSD__)

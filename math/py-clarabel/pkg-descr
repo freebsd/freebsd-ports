@@ -1,0 +1,2 @@
+Clarabel is an implementation of an interior point numerical solver for convex
+optimization problems using a novel homogeneous embedding.

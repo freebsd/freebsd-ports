@@ -16,7 +16,9 @@ include/skalibs/cbuffer.h
 include/skalibs/cdb.h
 include/skalibs/cdbmake.h
 include/skalibs/config.h
+include/skalibs/cspawn.h
 include/skalibs/datastruct.h
+include/skalibs/devino.h
 include/skalibs/direntry.h
 include/skalibs/disize.h
 include/skalibs/diuint.h
@@ -58,6 +60,7 @@ include/skalibs/skaclient.h
 include/skalibs/skalibs.h
 include/skalibs/skamisc.h
 include/skalibs/socket.h
+include/skalibs/stat.h
 include/skalibs/stdcrypto.h
 include/skalibs/stddjb.h
 include/skalibs/stralloc.h
@@ -78,9 +81,10 @@ include/skalibs/unixconnection.h
 include/skalibs/unixmessage.h
 include/skalibs/unixonacid.h
 lib/libskarnet.so
-lib/libskarnet.so.2.13
-lib/libskarnet.so.2.13.1.1
+lib/libskarnet.so.2.14
+lib/libskarnet.so.2.14.1.1
 lib/skalibs/libskarnet.a
+lib/skalibs/sysdeps/pthread.lib
 lib/skalibs/sysdeps/socket.lib
 lib/skalibs/sysdeps/spawn.lib
 lib/skalibs/sysdeps/sysclock.lib
@@ -109,6 +113,7 @@ lib/skalibs/sysdeps/util.lib
 %%PORTDOCS%%%%DOCSDIR%%/libstddjb/bytestr.html
 %%PORTDOCS%%%%DOCSDIR%%/libstddjb/cdb.html
 %%PORTDOCS%%%%DOCSDIR%%/libstddjb/cdbmake.html
+%%PORTDOCS%%%%DOCSDIR%%/libstddjb/cspawn.html
 %%PORTDOCS%%%%DOCSDIR%%/libstddjb/direntry.html
 %%PORTDOCS%%%%DOCSDIR%%/libstddjb/djbtime.html
 %%PORTDOCS%%%%DOCSDIR%%/libstddjb/djbunix.html

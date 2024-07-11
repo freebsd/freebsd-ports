@@ -1,6 +1,5 @@
 PORTNAME=	findutils
-DISTVERSION=	4.9.0
-PORTREVISION=	1
+DISTVERSION=	4.10.0
 CATEGORIES=	misc
 MASTER_SITES=	GNU
 
@@ -16,8 +15,12 @@ CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--program-prefix=g --localstatedir=${LOCALSTATEDIR}
+i386_CONFIGURE_ARGS=	--disable-year2038
+CONFIGURE_ARGS=	--program-prefix=g \
+		--localstatedir=${LOCALSTATEDIR} \
+		${${ARCH}_CONFIGURE_ARGS}
 
+TEST_TARGET=	check
 MAKE_ARGS=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 INFO=		find find-maint
 

@@ -1,0 +1,11 @@
+--- Makefile.config.model.orig	2024-06-14 19:14:25 UTC
++++ Makefile.config.model
+@@ -182,7 +182,7 @@ INSTALL = install
+ SED = sed
+ PERL = perl
+ INSTALL = install
+-INSTALLSTRIP = install --strip
++INSTALLSTRIP = install -s
+ INSTALLd = install -d
+ 
+ OCAMLC = ocamlc.opt

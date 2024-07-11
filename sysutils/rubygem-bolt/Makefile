@@ -1,5 +1,5 @@
 PORTNAME=	bolt
-PORTVERSION=	3.29.0
+PORTVERSION=	3.30.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -14,12 +14,13 @@ RUN_DEPENDS=	r10k:sysutils/rubygem-r10k \
 		rubygem-aws-sdk-ec2>1:devel/rubygem-aws-sdk-ec2 \
 		rubygem-CFPropertyList>=2.2:devel/rubygem-CFPropertyList \
 		rubygem-concurrent-ruby11>=1.0:devel/rubygem-concurrent-ruby11 \
-		rubygem-ffi>=1.13:devel/rubygem-ffi \
+		rubygem-ffi>=1.13<2:devel/rubygem-ffi \
 		rubygem-hiera-eyaml>=3:sysutils/rubygem-hiera-eyaml \
 		rubygem-jwt>=2.2:www/rubygem-jwt \
 		rubygem-logging>=2.2:devel/rubygem-logging \
-		rubygem-net-scp1>=1.2<2:security/rubygem-net-scp1 \
-		rubygem-net-ssh>=4.0:security/rubygem-net-ssh \
+		rubygem-minitar>=0.6:archivers/rubygem-minitar \
+		rubygem-net-scp>=1.2<5:security/rubygem-net-scp \
+		rubygem-net-ssh6>=4.0<8:security/rubygem-net-ssh6 \
 		rubygem-net-ssh-krb>=0.5:security/rubygem-net-ssh-krb \
 		rubygem-orchestrator_client>=0.5:net/rubygem-orchestrator_client \
 		rubygem-puppet-resource_api>=1.8.1:devel/rubygem-puppet-resource_api \

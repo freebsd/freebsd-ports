@@ -1,4 +1,3 @@
-include/clipper/clipper.hpp
 include/gdstk/allocator.hpp
 include/gdstk/array.hpp
 include/gdstk/cell.hpp
@@ -28,4 +27,3 @@ include/gdstk/utils.hpp
 include/gdstk/vec.hpp
 lib/libclipper.so
 lib/libgdstk.so
-libdata/pkgconfig/gdstk.pc

@@ -1,7 +1,7 @@
-TIMESTAMP = 1707694084
-SHA256 (rocky/l/libgfortran-11.4.1-2.1.el9.aarch64.rpm) = 0f433974d7ab4ec5738e5a3a182fec5f99e4b6c27956a82b6c70ae0ef3e14072
-SIZE (rocky/l/libgfortran-11.4.1-2.1.el9.aarch64.rpm) = 448295
-SHA256 (rocky/l/libgfortran-11.4.1-2.1.el9.x86_64.rpm) = dce9c5f4f577839464913ce3da6948774003cdd1b92afcd0c424a92b6329248f
-SIZE (rocky/l/libgfortran-11.4.1-2.1.el9.x86_64.rpm) = 826614
-SHA256 (rocky/g/gcc-11.4.1-2.1.el9.src.rpm) = 179136696b4a635c7e500ba982464c16c2ea8ce1349d05270812fdb88532cb2a
-SIZE (rocky/g/gcc-11.4.1-2.1.el9.src.rpm) = 81805344
+TIMESTAMP = 1717438485
+SHA256 (rocky/l/libgfortran-11.4.1-3.el9.aarch64.rpm) = 0deac61858d76e98ebf7050732d7a4ba8aa233b401c8dd3e1434a8a22e8d7d81
+SIZE (rocky/l/libgfortran-11.4.1-3.el9.aarch64.rpm) = 444989
+SHA256 (rocky/l/libgfortran-11.4.1-3.el9.x86_64.rpm) = 07159a69786e696c08b2b8fcccac397f4a6143ccb503356636435b414e964157
+SIZE (rocky/l/libgfortran-11.4.1-3.el9.x86_64.rpm) = 821179
+SHA256 (rocky/g/gcc-11.4.1-3.el9.src.rpm) = 03749677127f24d0c858bfd8bfcbddbcec71d50f6597ad1639dae731c1c3e63d
+SIZE (rocky/g/gcc-11.4.1-3.el9.src.rpm) = 81823579

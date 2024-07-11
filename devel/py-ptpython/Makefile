@@ -1,6 +1,5 @@
 PORTNAME=	ptpython
-PORTVERSION=	3.0.26
-PORTREVISION=	1
+PORTVERSION=	3.0.27
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +15,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=0:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jedi>=0.16.0:devel/py-jedi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}prompt-toolkit>=3.0.34<3.1.0:devel/py-prompt-toolkit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}prompt-toolkit>=3.0.43<3.1.0:devel/py-prompt-toolkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR}
 
 USES=		python

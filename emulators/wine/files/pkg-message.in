@@ -1,6 +1,9 @@
 [
 { type: install
   message: <<EOM
+If Wine does not appear to start up properly, consider moving away the
+configuration directory ~/.wine and try again.
+
 Some ZFS tuning guides recommend setting KVA_PAGES=512 in your kernel
 configuration.  This is incompatible with Wine.  The maximum possible
 is KVA_PAGES=500, which should still be enough for ZFS.

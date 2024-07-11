@@ -1,5 +1,6 @@
 PORTNAME=	grpc
 PORTVERSION=	1.62.2
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	2
 CATEGORIES=	devel
@@ -52,8 +53,19 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 
 CONFLICTS_INSTALL=	grpc[0-9][0-9][0-9]
 
-post-patch:
 # Clean up bundled libraries
+.if !defined(MAINTAINER_MODE)
+EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/third_party/abseil-cpp/ \
+			--exclude ${DISTNAME}/third_party/benchmark/ \
+			--exclude ${DISTNAME}/third_party/boringssl-with-bazel/ \
+			--exclude ${DISTNAME}/third_party/cares/ \
+			--exclude ${DISTNAME}/third_party/protobuf/ \
+			--exclude ${DISTNAME}/third_party/re2/ \
+			--exclude ${DISTNAME}/third_party/xxhash/ \
+			--exclude ${DISTNAME}/third_party/zlib/ \
+			--no-same-owner --no-same-permissions
+.else
+post-patch:
 	@${RM} -r ${WRKSRC}/third_party/abseil-cpp/
 	@${RM} -r ${WRKSRC}/third_party/benchmark/
 	@${RM} -r ${WRKSRC}/third_party/boringssl-with-bazel/
@@ -64,5 +76,6 @@ post-patch:
 	#@${RM} -r ${WRKSRC}/third_party/utf8_range/
 	@${RM} -r ${WRKSRC}/third_party/xxhash/
 	@${RM} -r ${WRKSRC}/third_party/zlib/
+.endif
 
 .include <bsd.port.mk>

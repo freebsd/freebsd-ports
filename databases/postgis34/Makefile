@@ -1,6 +1,6 @@
 PORTNAME=	postgis
 DISTVERSION=	3.4.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases geography
 MASTER_SITES=	https://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	34
@@ -44,7 +44,6 @@ SFCGAL_DESC=	Enable sfcgal
 TOPOLOGY_DESC=	Topology support
 
 ADDRSTD_CONFIGURE_WITH=		address-standardizer
-ADDRSTD_LIB_DEPENDS=		libpcre.so:devel/pcre
 ADDRSTD_VARS=			WANT_PGSQL+=contrib
 JSON_CONFIGURE_WITH=		json
 JSON_LIB_DEPENDS=		libjson-c.so:devel/json-c

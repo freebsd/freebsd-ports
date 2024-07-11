@@ -1,6 +1,5 @@
 PORTNAME=	deforaos-browser
-PORTVERSION=	0.5.5
-PORTREVISION=	2
+PORTVERSION=	0.6.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/Browser/
 DISTNAME=	Browser-${PORTVERSION}

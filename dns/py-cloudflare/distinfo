@@ -1,3 +1,3 @@
-TIMESTAMP = 1661951068
-SHA256 (cloudflare-2.9.12.tar.gz) = c3e722511cfdb097169a186325fbe8a2b158501169d0f68b679e736f6b0cc030
-SIZE (cloudflare-2.9.12.tar.gz) = 73123
+TIMESTAMP = 1720364903
+SHA256 (cloudflare-2.20.0.tar.gz) = 46aefc39dfaa2365d639b423cec2cd5350ae11153c7247d3eb3545bdcf01a68a
+SIZE (cloudflare-2.20.0.tar.gz) = 120190

@@ -1,8 +1,8 @@
-usr/lib/.build-id/99/daf58272ffe1249568d1a7933685ab5ad8695f
-usr/lib64/.libgnutls.so.30.33.1.hmac
+usr/lib/.build-id/32/8d642e554fe6697d297d5b28ae2e08f17d6a2a
+usr/lib64/.libgnutls.so.30.37.1.hmac
 usr/lib64/.libgnutls.so.30.hmac
 usr/lib64/libgnutls.so.30
-usr/lib64/libgnutls.so.30.33.1
+usr/lib64/libgnutls.so.30.37.1
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.md
@@ -17,10 +17,12 @@ usr/share/licenses/gnutls/LICENSE
 %%NLS%%usr/share/locale/fi/LC_MESSAGES/gnutls.mo
 %%NLS%%usr/share/locale/fr/LC_MESSAGES/gnutls.mo
 %%NLS%%usr/share/locale/it/LC_MESSAGES/gnutls.mo
+%%NLS%%usr/share/locale/ka/LC_MESSAGES/gnutls.mo
 %%NLS%%usr/share/locale/ms/LC_MESSAGES/gnutls.mo
 %%NLS%%usr/share/locale/nl/LC_MESSAGES/gnutls.mo
 %%NLS%%usr/share/locale/pl/LC_MESSAGES/gnutls.mo
 %%NLS%%usr/share/locale/pt_BR/LC_MESSAGES/gnutls.mo
+%%NLS%%usr/share/locale/ro/LC_MESSAGES/gnutls.mo
 %%NLS%%usr/share/locale/sr/LC_MESSAGES/gnutls.mo
 %%NLS%%usr/share/locale/sv/LC_MESSAGES/gnutls.mo
 %%NLS%%usr/share/locale/uk/LC_MESSAGES/gnutls.mo

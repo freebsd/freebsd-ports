@@ -1,8 +1,6 @@
-diff --git src/providers/data_provider_fo.c src/providers/data_provider_fo.c
-index 473b667e5..63f2dd131 100644
---- src/providers/data_provider_fo.c
+--- src/providers/data_provider_fo.c.orig	2020-03-17 13:31:28 UTC
 +++ src/providers/data_provider_fo.c
-@@ -235,18 +235,18 @@ errno_t be_fo_set_dns_srv_lookup_plugin(struct be_ctx *be_ctx,
+@@ -235,18 +235,18 @@ errno_t be_fo_set_dns_srv_lookup_plugin(struct be_ctx 
                                          const char *hostname)
  {
      struct fo_resolve_srv_dns_ctx *srv_ctx = NULL;

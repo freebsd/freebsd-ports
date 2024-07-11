@@ -1,0 +1,5 @@
+TIMESTAMP = 1719737224
+SHA256 (go/sysutils_kubo-go/kubo-v0.29.0/v0.29.0.mod) = 6612cbcd3a7b628723a62f9eb63febaa4f6abe57deaec05ab2f274523eb1727b
+SIZE (go/sysutils_kubo-go/kubo-v0.29.0/v0.29.0.mod) = 12047
+SHA256 (go/sysutils_kubo-go/kubo-v0.29.0/v0.29.0.zip) = f90cb3ed8c05967b31a6330b26d393fd95be314994d56efbb9253380ee5f1f08
+SIZE (go/sysutils_kubo-go/kubo-v0.29.0/v0.29.0.zip) = 4133213

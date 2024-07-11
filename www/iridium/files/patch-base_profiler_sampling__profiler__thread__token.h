@@ -1,6 +1,6 @@
---- base/profiler/sampling_profiler_thread_token.h.orig	2023-03-13 07:33:08 UTC
+--- base/profiler/sampling_profiler_thread_token.h.orig	2024-06-25 12:08:48 UTC
 +++ base/profiler/sampling_profiler_thread_token.h
-@@ -12,7 +12,7 @@
+@@ -13,7 +13,7 @@
  
  #if BUILDFLAG(IS_ANDROID)
  #include <pthread.h>
@@ -9,7 +9,7 @@
  #include <stdint.h>
  #endif
  
-@@ -26,7 +26,7 @@ struct SamplingProfilerThreadToken {
+@@ -27,7 +27,7 @@ struct SamplingProfilerThreadToken {
    PlatformThreadId id;
  #if BUILDFLAG(IS_ANDROID)
    pthread_t pthread_id;

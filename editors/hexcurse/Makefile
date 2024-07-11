@@ -26,4 +26,6 @@ PLIST_FILES=	bin/hexcurse share/man/man1/hexcurse.1.gz
 CFLAGS+=	-Wno-error=deprecated-non-prototype
 .endif
 
+CFLAGS+=	-Wno-error=format-truncation
+
 .include <bsd.port.post.mk>

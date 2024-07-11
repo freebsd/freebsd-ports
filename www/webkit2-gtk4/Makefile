@@ -97,7 +97,7 @@ WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+.if ${COMPILER_TYPE} == clang
 CXXFLAGS+=	-Wno-error=enum-constexpr-conversion
 .endif
 

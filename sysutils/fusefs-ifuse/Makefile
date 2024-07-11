@@ -1,6 +1,6 @@
 PORTNAME=	ifuse
 PORTVERSION=	1.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/libimobiledevice/${PORTNAME}/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	fusefs-

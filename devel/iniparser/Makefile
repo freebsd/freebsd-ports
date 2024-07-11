@@ -1,6 +1,6 @@
 PORTNAME=	iniparser
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.1
+DISTVERSION=	4.2.4
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -10,26 +10,17 @@ WWW=		https://github.com/ndevilla/iniparser
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	bash>0:shells/bash
+USES=		cmake pathfix
+USE_LDCONFIG=	yes
 
-USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	ndevilla
 
-ALL_TARGET=	default
-TEST_TARGET=	check
+PORTDOCS=	*
 
-PLIST_FILES=	include/dictionary.h \
-		include/iniparser.h \
-		lib/libiniparser.a \
-		lib/libiniparser.so \
-		lib/libiniparser.so.1
+OPTIONS_DEFINE=	DOCS
 
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/src/dictionary.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/src/iniparser.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/libiniparser.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_LIB} ${WRKSRC}/libiniparser.so.1 ${STAGEDIR}${PREFIX}/lib
-	@${LN} -sf libiniparser.so.1 ${STAGEDIR}${PREFIX}/lib/libiniparser.so
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOCS_CMAKE_BOOL=	BUILD_DOCS
 
 .include <bsd.port.mk>

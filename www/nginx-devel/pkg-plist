@@ -59,6 +59,7 @@
 %%DSO%%%%LET%%libexec/nginx/ngx_http_let_module.so
 %%DSO%%%%LINK%%libexec/nginx/ngx_http_link_func_module.so
 %%DSO%%%%LUA%%libexec/nginx/ngx_http_lua_module.so
+%%DSO%%%%LUASTREAM%%libexec/nginx/ngx_stream_lua_module.so
 %%DSO%%%%MAIL%%%%CT%%libexec/nginx/ngx_mail_ssl_ct_module.so
 %%DSO%%%%MAIL%%libexec/nginx/ngx_mail_module.so
 %%DSO%%%%MEMC%%libexec/nginx/ngx_http_memc_module.so
@@ -84,6 +85,8 @@
 %%DSO%%%%VTS%%libexec/nginx/ngx_http_vhost_traffic_status_module.so
 %%DSO%%%%WEBSOCKIFY%%libexec/nginx/ngx_http_websockify_module.so
 %%DSO%%%%XSS%%libexec/nginx/ngx_http_xss_filter_module.so
+%%DSO%%%%ZSTD%%libexec/nginx/ngx_http_zstd_filter_module.so
+%%DSO%%%%ZSTD%%libexec/nginx/ngx_http_zstd_static_module.so
 %%HTTP_PERL%%%%SITE_ARCH%%/auto/nginx/nginx.so
 %%HTTP_PERL%%%%SITE_ARCH%%/nginx.pm
 sbin/nginx

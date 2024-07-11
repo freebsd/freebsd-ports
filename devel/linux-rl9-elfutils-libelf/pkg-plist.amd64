@@ -1,5 +1,5 @@
-usr/lib/.build-id/7e/61eb8ebb14f4c803696e0933900510c4a85608
-usr/lib64/libelf-0.189.so
+usr/lib/.build-id/93/8ad3a10aca8cb74c39a81a49ba10bdc2097b8f
+usr/lib64/libelf-%%LIBVERSION%%.so
 usr/lib64/libelf.so.1
 usr/share/licenses/elfutils-libelf/COPYING-GPLV2
 usr/share/licenses/elfutils-libelf/COPYING-LGPLV3

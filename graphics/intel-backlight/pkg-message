@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Users of intel_backlight(1) are encouraged to switch to
-the backlight(8) command, which is shipped with FreeBSD
-since version 13.0.
-EOM
-}
-]

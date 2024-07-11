@@ -1,7 +1,7 @@
 PORTNAME=	containernetworking-plugins
 DISTVERSIONPREFIX=	freebsd-v
 DISTVERSION=	0.5
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	net
 
 MAINTAINER=	dfr@FreeBSD.org

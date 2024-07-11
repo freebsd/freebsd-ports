@@ -1,6 +1,19 @@
---- koch.nim.orig	2023-08-01 01:01:01 UTC
+--- koch.nim.orig	2024-07-05 12:55:45 UTC
 +++ koch.nim
-@@ -145,28 +145,28 @@ proc csource(args: string) =
+@@ -11,9 +11,9 @@ const
+ 
+ const
+   # examples of possible values for repos: Head, ea82b54
+-  NimbleStableCommit = "be2f1309b35a6189ff5eb34a007793e6d3f94157" # master
+-  AtlasStableCommit = "5faec3e9a33afe99a7d22377dd1b45a5391f5504"
+-  ChecksumsStableCommit = "025bcca3915a1b9f19878cea12ad68f9884648fc"
++  NimbleStableCommit = "f8bd7b5fa6ea7a583b411b5959b06e6b5eb23667" # master
++  AtlasStableCommit = "7b780811a168f3f32bff4822369dda46a7f87f9a"
++  ChecksumsStableCommit = "b4c73320253f78e3a265aec6d9e8feb83f97c77b"
+   SatStableCommit = "faf1617f44d7632ee9601ebc13887644925dcc01"
+ 
+   # examples of possible values for fusion: #head, #ea82b54, 1.2.3
+@@ -146,32 +146,32 @@ proc csource(args: string) =
             "--main:compiler/nim.nim compiler/installer.ini $1") %
         [args, VersionAsString, compileNimInst])
  
@@ -19,37 +32,45 @@
 -                  commit = commit, allowBundled = true)
 -  cloneDependency(distDir / "nimble" / distDir, "https://github.com/nim-lang/checksums.git",
 -                commit = ChecksumsStableCommit, allowBundled = true) # or copy it from dist?
+-  cloneDependency(distDir / "nimble" / distDir, "https://github.com/nim-lang/sat.git",
+-                commit = SatStableCommit, allowBundled = true)
 -  # installer.ini expects it under $nim/bin
 -  nimCompile("dist/nimble/src/nimble.nim",
--             options = "-d:release --mm:refc --noNimblePath " & args)
+-             options = "-d:release -d:nimNimbleBootstrap --mm:refc --noNimblePath " & args)
 +#proc bundleNimbleExe(latest: bool, args: string) =
 +#  let commit = if latest: "HEAD" else: NimbleStableCommit
 +#  cloneDependency(distDir, "https://github.com/nim-lang/nimble.git",
 +#                  commit = commit, allowBundled = true)
 +#  cloneDependency(distDir / "nimble" / distDir, "https://github.com/nim-lang/checksums.git",
 +#                commit = ChecksumsStableCommit, allowBundled = true) # or copy it from dist?
++#  cloneDependency(distDir / "nimble" / distDir, "https://github.com/nim-lang/sat.git",
++#                commit = SatStableCommit, allowBundled = true)
 +#  # installer.ini expects it under $nim/bin
 +#  nimCompile("dist/nimble/src/nimble.nim",
-+#             options = "-d:release --mm:refc --noNimblePath " & args)
++#             options = "-d:release -d:nimNimbleBootstrap --mm:refc --noNimblePath " & args)
  
 -proc bundleAtlasExe(latest: bool, args: string) =
 -  let commit = if latest: "HEAD" else: AtlasStableCommit
 -  cloneDependency(distDir, "https://github.com/nim-lang/atlas.git",
 -                  commit = commit, allowBundled = true)
+-  cloneDependency(distDir / "atlas" / distDir, "https://github.com/nim-lang/sat.git",
+-                commit = SatStableCommit, allowBundled = true)
 -  # installer.ini expects it under $nim/bin
 -  nimCompile("dist/atlas/src/atlas.nim",
--             options = "-d:release --noNimblePath " & args)
+-             options = "-d:release --noNimblePath -d:nimAtlasBootstrap " & args)
 +#proc bundleAtlasExe(latest: bool, args: string) =
 +#  let commit = if latest: "HEAD" else: AtlasStableCommit
 +#  cloneDependency(distDir, "https://github.com/nim-lang/atlas.git",
 +#                  commit = commit, allowBundled = true)
++#  cloneDependency(distDir / "atlas" / distDir, "https://github.com/nim-lang/sat.git",
++#                commit = SatStableCommit, allowBundled = true)
 +#  # installer.ini expects it under $nim/bin
 +#  nimCompile("dist/atlas/src/atlas.nim",
-+#             options = "-d:release --noNimblePath " & args)
++#             options = "-d:release --noNimblePath -d:nimAtlasBootstrap " & args)
  
  proc bundleNimsuggest(args: string) =
    nimCompileFold("Compile nimsuggest", "nimsuggest/nimsuggest.nim",
-@@ -203,8 +203,8 @@ proc bundleChecksums(latest: bool) =
+@@ -208,8 +208,8 @@ proc zip(latest: bool; args: string) =
  
  proc zip(latest: bool; args: string) =
    bundleChecksums(latest)
@@ -60,7 +81,7 @@
    bundleNimsuggest(args)
    bundleNimpretty(args)
    bundleWinTools(args)
-@@ -213,15 +213,15 @@ proc zip(latest: bool; args: string) =
+@@ -218,15 +218,15 @@ proc zip(latest: bool; args: string) =
    exec("$# --var:version=$# --var:mingw=none --main:compiler/nim.nim zip compiler/installer.ini" %
         ["tools/niminst/niminst".exe, VersionAsString])
  
@@ -83,7 +104,7 @@
    nimexec("cc -r $2 --var:version=$1 --var:mingw=none --main:compiler/nim.nim scripts compiler/installer.ini" %
         [VersionAsString, compileNimInst])
    exec("$# --var:version=$# --var:mingw=none --main:compiler/nim.nim xz compiler/installer.ini" %
-@@ -257,8 +257,8 @@ proc testTools(args: string = "") =
+@@ -262,8 +262,8 @@ proc nsis(latest: bool; args: string) =
  
  proc nsis(latest: bool; args: string) =
    bundleChecksums(latest)
@@ -94,7 +115,7 @@
    bundleNimsuggest(args)
    bundleWinTools(args)
    # make sure we have generated the niminst executables:
-@@ -521,42 +521,42 @@ proc icTest(args: string) =
+@@ -526,43 +526,43 @@ proc icTest(args: string) =
      exec(cmd)
      inc i
  
@@ -147,25 +168,29 @@
      [hostOS, hostCPU, $int.sizeof, $float.sizeof, $cpuEndian, getCurrentDir()]
  
 -proc installDeps(dep: string, commit = "") =
-+#proc installDeps(dep: string, commit = "") =
-   # the hashes/urls are version controlled here, so can be changed seamlessly
-   # and tied to a nim release (mimicking git submodules)
+-  # the hashes/urls are version controlled here, so can be changed seamlessly
+-  # and tied to a nim release (mimicking git submodules)
 -  var commit = commit
 -  case dep
 -  of "tinyc":
 -    if commit.len == 0: commit = "916cc2f94818a8a382dd8d4b8420978816c1dfb3"
 -    cloneDependency(distDir, "https://github.com/timotheecour/nim-tinyc-archive", commit)
 -  else: doAssert false, "unsupported: " & dep
+-  # xxx: also add linenoise, niminst etc, refs https://github.com/nim-lang/RFCs/issues/206
++#proc installDeps(dep: string, commit = "") =
++#  # the hashes/urls are version controlled here, so can be changed seamlessly
++#  # and tied to a nim release (mimicking git submodules)
 +#  var commit = commit
 +#  case dep
-+  #of "tinyc":
-+  #  if commit.len == 0: commit = "916cc2f94818a8a382dd8d4b8420978816c1dfb3"
-+  #  cloneDependency(distDir, "https://github.com/timotheecour/nim-tinyc-archive", commit)
++#  of "tinyc":
++#    if commit.len == 0: commit = "916cc2f94818a8a382dd8d4b8420978816c1dfb3"
++#    cloneDependency(distDir, "https://github.com/timotheecour/nim-tinyc-archive", commit)
 +#  else: doAssert false, "unsupported: " & dep
-   # xxx: also add linenoise, niminst etc, refs https://github.com/nim-lang/RFCs/issues/206
++#  # xxx: also add linenoise, niminst etc, refs https://github.com/nim-lang/RFCs/issues/206
  
  proc runCI(cmd: string) =
-@@ -679,18 +679,18 @@ proc showHelp(success: bool) =
+   doAssert cmd.len == 0, cmd # avoid silently ignoring
+@@ -684,18 +684,18 @@ proc showHelp(success: bool) =
    quit(HelpText % [VersionAsString & spaces(44-len(VersionAsString)),
                     CompileDate, CompileTime], if success: QuitSuccess else: QuitFailure)
  
@@ -191,7 +216,7 @@
      localDocsOut = ""
      skipIntegrityCheck = false
    while true:
-@@ -726,34 +726,34 @@ when isMainModule:
+@@ -731,34 +731,34 @@ when isMainModule:
        of "distrohelper": geninstall()
        of "install": install(op.cmdLineRest)
        of "testinstall": testUnixInstall(op.cmdLineRest)

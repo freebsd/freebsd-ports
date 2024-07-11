@@ -1,0 +1,16 @@
+Dependency libdisplay-info found: NO found 0.2.0 but need: '< 0.2.0' ; matched: '>= 0.0.0'
+Run-time dependency libdisplay-info found: NO (tried pkgconfig and cmake)
+Looking for a fallback subproject for the dependency libdisplay-info
+
+src/meson.build:29:18: ERROR: Subproject exists but has no meson.build file.
+
+--- src/meson.build.orig	2023-11-21 21:40:30 UTC
++++ src/meson.build
+@@ -28,7 +28,6 @@ displayinfo_dep = dependency(
+ 
+ displayinfo_dep = dependency(
+   'libdisplay-info',
+-  version: ['>= 0.0.0', '< 0.2.0'],
+   fallback: ['libdisplay-info', 'di_dep'],
+   default_options: ['default_library=static'],
+ )

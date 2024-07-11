@@ -9,6 +9,9 @@ WWW=		https://github.com/dylanaraps/pfetch
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+DEPRECATED=	No longer developed, upstream repo archived Apr 26 2024
+EXPIRATION_DATE=2024-07-31
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	dylanaraps
 

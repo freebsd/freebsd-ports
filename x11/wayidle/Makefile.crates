@@ -4,7 +4,7 @@ CARGO_CRATES=	anyhow-1.0.71 \
 		cfg-if-1.0.0 \
 		convert_case-0.6.0 \
 		lexopt-0.3.0 \
-		libc-0.2.144 \
+		libc-0.2.155 \
 		memchr-2.5.0 \
 		memoffset-0.7.1 \
 		nix-0.26.2 \

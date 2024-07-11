@@ -12,7 +12,8 @@ WWW=		https://pypi.org/project/python-poppler-qt5/
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	qmake-qt5:devel/qt5-qmake
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		qmake-qt5:devel/qt5-qmake
 LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
 USES=		compiler:c++17-lang gl pkgconfig pyqt:5 python qt:5

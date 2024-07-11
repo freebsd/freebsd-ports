@@ -12,6 +12,7 @@ WWW=		https://riverbankcomputing.com/software/pyqt \
 
 LICENSE=	GPLv3
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
 LIB_DEPENDS=	libqscintilla2_qt6.so:devel/qscintilla2-qt6
 
 USES=		python pyqt:6 gl qt:6

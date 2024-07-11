@@ -1,0 +1,15 @@
+https://gitlab.com/veloren/veloren/-/issues/1975
+
+--- ../wgpu-0.18-with-fixes-for-veloren-v1/wgpu/src/backend/direct.rs.orig	2024-02-09 04:29:29 UTC
++++ ../wgpu-0.18-with-fixes-for-veloren-v1/wgpu/src/backend/direct.rs
+@@ -2279,9 +2279,7 @@ impl crate::Context for Context {
+             &size
+         )) {
+             Ok(()) => (),
+-            Err(err) => {
+-                self.handle_error_nolabel(&queue_data.error_sink, err, "Queue::write_texture")
+-            }
++            Err(_err) => ()
+         }
+     }
+ 

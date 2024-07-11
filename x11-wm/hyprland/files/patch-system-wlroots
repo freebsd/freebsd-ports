@@ -8,11 +8,19 @@ Allow system wlroots to reduce maintenance (wlroots has tons of options)
  
 -wlroots = subproject('wlroots-hyprland', default_options: ['examples=false', 'renderers=gles2'])
 -have_xwlr = wlroots.get_variable('features').get('xwayland')
-+wlroots = dependency('wlroots', version: ['>=0.18.0', '<0.19.0'], default_options: ['examples=false', 'renderers=gles2'])
++wlroots = dependency('wlroots-hyprland', default_options: ['examples=false', 'renderers=gles2'])
 +have_xwlr = wlroots.get_variable(pkgconfig: 'have_xwayland', internal: 'have_xwayland') == 'true'
  xcb_dep = dependency('xcb', required: get_option('xwayland'))
  
  cmake = import('cmake')
+@@ -89,5 +89,6 @@ import('pkgconfig').generate(
+   url: 'https://github.com/hyprwm/Hyprland',
+   description: 'Hyprland header files',
+   install_dir: pkg_install_dir,
+-  subdirs: ['', 'hyprland/protocols', 'hyprland/wlroots'],
++  subdirs: ['', 'hyprland/protocols'],
++  requires_private: wlroots,
+ )
 --- src/meson.build.orig	2024-04-14 18:48:28 UTC
 +++ src/meson.build
 @@ -9,7 +9,7 @@ executable('Hyprland', src,
@@ -36,12 +44,3 @@ Allow system wlroots to reduce maintenance (wlroots has tons of options)
      // find headers commit
      std::string cmd     = std::format("PKG_CONFIG_PATH=\"{}/share/pkgconfig\" pkgconf --cflags --keep-system-cflags hyprland", DataState::getHeadersPath());
      auto        headers = execAndGet(cmd.c_str());
-@@ -338,7 +335,7 @@ eHeadersErrors CPluginManager::headersValid() {
-         else
-             headers = "";
- 
--        if (PATH.ends_with("protocols") || PATH.ends_with("wlroots-hyprland"))
-+        if (PATH.ends_with("protocols") || PATH.contains("wlroots"))
-             continue;
- 
-         verHeader = removeBeginEndSpacesTabs(PATH.substr(2)) + "/hyprland/src/version.h";

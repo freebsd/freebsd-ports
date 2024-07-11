@@ -1,0 +1,4 @@
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%EMACS_SITE_LISPDIR%%/go-guru.el
+%%EMACS_SITE_LISPDIR%%/go-mode.el
+%%EMACS_SITE_LISPDIR%%/go-rename.el

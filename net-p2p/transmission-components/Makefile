@@ -1,5 +1,5 @@
 PORTNAME=	transmission
-DISTVERSION=	4.0.5
+DISTVERSION=	4.0.6
 PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fast_float/fast_float.h:math/fast_float \
 		${LOCALBASE}/include/fmt/format.h:devel/libfmt \
+		${LOCALBASE}/include/rapidjson/rapidjson.h:devel/rapidjson \
 		${LOCALBASE}/include/utf8cpp/utf8.h:devel/utf8cpp
 
 LIB_DEPENDS=	libb64.so:converters/libb64 \
@@ -25,7 +26,7 @@ LIB_DEPENDS=	libb64.so:converters/libb64 \
 		libpsl.so:dns/libpsl \
 		libutp.so:net-p2p/libutp
 
-FLAVORS=			cli docs daemon gtk qt utils
+FLAVORS=			cli docs daemon gtk qt utils web
 FLAVOR?=			${FLAVORS:[1]}
 .for flavor in ${FLAVORS}
 ${flavor}_PKGNAMESUFFIX=	-${flavor}
@@ -41,7 +42,7 @@ LIB_DEPENDS=
 gtk_LIB_DEPENDS=	libayatana-appindicator3.so:devel/libayatana-appindicator \
 			libharfbuzz.so:print/harfbuzz
 
-USES=		cmake cpe iconv libtool localbase pkgconfig ssl tar:xz
+USES=		cmake cpe iconv localbase pkgconfig ssl tar:xz
 
 CPE_VENDOR=	transmissionbt
 CPE_PRODUCT=	transmission
@@ -56,6 +57,7 @@ EXTRACT_AFTER_ARGS=	--exclude third-party/dht \
 			--exclude third-party/libpsl \
 			--exclude third-party/libutp \
 			--exclude third-party/miniupnpc \
+			--exclude third-party/rapidjson \
 			--exclude third-party/utfcpp
 
 .if ${FLAVOR} == gtk
@@ -77,6 +79,12 @@ USE_RC_SUBR=	transmission
 USES=		cpe tar:xz
 .endif
 
+.if ${FLAVOR} == web
+USES=		cpe tar:xz
+NO_ARCH=	yes
+NO_BUILD=	yes
+.endif
+
 CMAKE_ON=	USE_SYSTEM_B64 USE_SYSTEM_DEFLATE USE_SYSTEM_DHT \
 		USE_SYSTEM_EVENT2 USE_SYSTEM_MINIUPNPC USE_SYSTEM_NATPMP \
 		USE_SYSTEM_PSL USE_SYSTEM_UTP
@@ -96,18 +104,18 @@ CMAKE_OFF+=	ENABLE_DAEMON ENABLE_GTK ENABLE_QT ENABLE_UTILS INSTALL_WEB
 
 .if ${FLAVOR} == daemon
 CMAKE_ON+=	ENABLE_DAEMON
-CMAKE_OFF+=	ENABLE_CLI ENABLE_GTK ENABLE_QT ENABLE_UTILS
+CMAKE_OFF+=	ENABLE_CLI ENABLE_GTK ENABLE_QT ENABLE_UTILS INSTALL_WEB
 .endif
 
 .if ${FLAVOR} == gtk
-CMAKE_ON+=	ENABLE_GTK GTK_IS_REQUIRED
 CMAKE_ARGS+=	-DUSE_GTK_VERSION=3
+CMAKE_ON+=	ENABLE_GTK GTK_IS_REQUIRED
 CMAKE_OFF+=	ENABLE_CLI ENABLE_DAEMON ENABLE_UTILS INSTALL_WEB
 .endif
 
 .if ${FLAVOR} == qt
-CMAKE_ON+=	ENABLE_QT QT_IS_REQUIRED
 CMAKE_ARGS+=	-DUSE_QT_VERSION=5
+CMAKE_ON+=	ENABLE_QT QT_IS_REQUIRED
 CMAKE_OFF+=	ENABLE_CLI ENABLE_DAEMON ENABLE_UTILS INSTALL_WEB
 .endif
 
@@ -119,16 +127,15 @@ CMAKE_OFF+=	ENABLE_CLI ENABLE_DAEMON ENABLE_GTK ENABLE_QT ENABLE_TESTS \
 
 OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME}/${FLAVOR}-options
 
-.if ${FLAVOR:Mdaemon}
-OPTIONS_DEFINE=		NLS TESTS WEB
-OPTIONS_DEFAULT=	NLS WEB
-.endif
-
 .if ${FLAVOR:Mdocs}
 OPTIONS_DEFINE=
 .endif
 
-.if ${FLAVOR:Ndaemon} && ${FLAVOR:Ndocs}
+.if ${FLAVOR:Mweb}
+OPTIONS_DEFINE=
+.endif
+
+.if ${FLAVOR:Nweb} && ${FLAVOR:Ndocs}
 OPTIONS_DEFINE=		NLS TESTS
 OPTIONS_DEFAULT=	NLS
 .endif
@@ -142,7 +149,7 @@ qt_DESC=	Build QT client
 TESTS_DESC=	Build & run unit tests
 utils_DESC=	Build utilities (create, edit, remote, show)
 cli_DESC=	Build command-line client (deprecated)
-WEB_DESC=	Install web client (implies daemon)
+web_DESC=	Install web interface
 
 NLS_USES=	gettext-runtime:lib
 NLS_CMAKE_BOOL=	ENABLE_NLS
@@ -179,6 +186,11 @@ post-install:
 .if ${FLAVOR} == daemon
 post-install:
 	        ${MKDIR} ${STAGEDIR}${ETCDIR}/home
+.endif
+
+.if ${FLAVOR} == web
+do-install:
+		( cd ${WRKSRC}/web && ${COPYTREE_SHARE} public_html ${STAGEDIR}${DATADIR} )
 .endif
 
 post-install-TESTS-on:

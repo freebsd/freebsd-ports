@@ -1,0 +1,11 @@
+--- exports/Makefile.orig	2024-04-04 20:26:04 UTC
++++ exports/Makefile
+@@ -234,7 +234,7 @@ endif
+ endif
+ 	$(CC) $(CFLAGS) $(LDFLAGS)  -shared -o ../$(LIBSONAME) \
+ 	-Wl,--whole-archive $< -Wl,--no-whole-archive \
+-	$(FEXTRALIB) $(EXTRALIB)
++	-Wl,-soname,$(LIBSONAME) $(FEXTRALIB) $(EXTRALIB)
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -w -o linktest linktest.c ../$(LIBSONAME) $(FEXTRALIB) && echo OK.
+ 	rm -f linktest
+ 

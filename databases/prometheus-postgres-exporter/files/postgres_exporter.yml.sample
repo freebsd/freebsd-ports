@@ -1,0 +1,12 @@
+
+# use auth_modules to provide authentication data for connections:
+
+#auth_modules:
+#  my_module:
+#    type: userpass
+#    userpass:
+#      username: prometheus
+#      password: 'a-good-password'
+#    options:
+#      dbname: template1
+#      sslmode: verify-full

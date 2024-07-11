@@ -1,6 +1,6 @@
 PORTNAME=	bbftp-server
 PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	http://software.in2p3.fr/bbftp/dist/ \
 		ftp://ftp.in2p3.fr/pub/bbftp/

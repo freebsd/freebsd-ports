@@ -1,7 +1,6 @@
 PORTNAME=	zelta
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5
-DISTVERSIONSUFFIX=	-beta
+DISTVERSION=	1.0.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	daniel@belltech.it
@@ -33,5 +32,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${_ZELTA_CONF} ${STAGEDIR}${ETCDIR}/${_ZELTA_CONF}.sample
 	${MKDIR} ${STAGEDIR}${_ZELTA_SHARE}
 	${INSTALL_DATA} ${WRKSRC}/share/zelta/* ${STAGEDIR}${_ZELTA_SHARE}
+	${INSTALL_MAN} ${WRKSRC}/doc/*.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

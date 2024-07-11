@@ -1,7 +1,7 @@
---- configure.orig	2023-03-08 17:05:16 UTC
+--- configure.orig	2024-02-01 22:56:12 UTC
 +++ configure
-@@ -1105,6 +1105,8 @@ with_system_teckit
- with_mpfr_libdir
+@@ -1098,6 +1098,8 @@ with_system_teckit
+ with_mpfi_libdir
  with_system_zziplib
  with_system_teckit
 +with_teckit_includes
@@ -9,7 +9,7 @@
  with_system_graphite2
  with_system_harfbuzz
  with_system_icu
-@@ -26977,11 +26979,6 @@ echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=pplib, libn
+@@ -27404,11 +27406,6 @@ echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=pplib, libn
    PPLIB_INCLUDES="-I$kpse_BLD/libs/pplib/include"
    PPLIB_LIBS="$kpse_BLD/libs/pplib/libpplib.a"
    PPLIB_DEPEND='${top_builddir}/../../libs/pplib/libpplib.a'
@@ -21,7 +21,7 @@
  
  ##tldbg _KPSE_LIB_FLAGS: Setup zlib (-lz) flags.
  echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=zlib, libname=z, options=, tlincl=-IBLD/libs/zlib/include, tllib=BLD/libs/zlib/libz.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/zlib/include/zconf.h.' >&5
-@@ -27067,115 +27064,6 @@ esac
+@@ -27496,117 +27493,6 @@ esac
   ;;
  esac
  
@@ -88,8 +88,8 @@
 -then :
 -  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
 -printf "%s\n" "no" >&6; }
--else $as_nop
--
+-else case e in #(
+-  e)
 -    jitlibs="-lc++abi -lpthread"
 -    save_LIBS=$LIBS
 -    LIBS="$LIBS $jitlibs"
@@ -115,18 +115,20 @@
 -printf "%s\n" "\"$jitlibs\"" >&6; }
 -        LIBLUAJIT_LDEXTRA="$LIBLUAJIT_LDEXTRA $jitlibs"
 -
--else $as_nop
--  { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
--printf "%s\n" "$as_me: error: in \`$ac_pwd':" >&2;}
+-else case e in #(
+-  e) { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: error: in '$ac_pwd':" >&5
+-printf "%s\n" "$as_me: error: in '$ac_pwd':" >&2;}
 -as_fn_error $? "luajit could not be linked
--See \`config.log' for more details" "$LINENO" 5; }
--
+-See 'config.log' for more details" "$LINENO" 5; }
+-     ;;
+-esac
 -fi
 -rm -f core conftest.err conftest.$ac_objext conftest.beam \
 -    conftest$ac_exeext conftest.$ac_ext
 -    LIBS=$save_LIBS
 -
--
+- ;;
+-esac
 -fi
 -rm -f core conftest.err conftest.$ac_objext conftest.beam \
 -    conftest$ac_exeext conftest.$ac_ext
@@ -137,7 +139,7 @@
  ##tldbg _KPSE_LIB_FLAGS: Setup libpng (-lpng) flags.
  echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=libpng, libname=png, options=, tlincl=-IBLD/libs/libpng/include, tllib=BLD/libs/libpng/libpng.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/libpng/include/png.h.' >&5
  ##tldbg _KPSE_LIB_FLAGS_TL: libpng (png) .
-@@ -27630,49 +27518,38 @@ test "x$kpse_cv_have_win32" = xno || XPDF_LIBS="$XPDF_
+@@ -28106,49 +27992,38 @@ test "x$kpse_cv_have_win32" = xno || XPDF_LIBS="$XPDF_
  fi
  test "x$kpse_cv_have_win32" = xno || XPDF_LIBS="$XPDF_LIBS -lgdi32"
  
@@ -210,9 +212,3 @@
  else
    TECKIT_INCLUDES="-I$kpse_BLD/libs/teckit/include"
    TECKIT_LIBS="$kpse_BLD/libs/teckit/libTECkit.a"
-@@ -31534,5 +31411,3 @@ fi
-   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
- printf "%s\n" "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
- fi
--
--

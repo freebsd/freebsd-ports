@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "metaData": {
+    "url": "https://github.com/nim-lang/x11",
+    "downloadMethod": "git",
+    "vcsRevision": "29aca5e519ebf5d833f63a6a2769e62ec7bfb83a",
+    "files": [
+      "/x11/xinput.nim",
+      "/x11/xf86vmode.nim",
+      "/x11/keysym.nim",
+      "/x11/cursorfont.nim",
+      "/x11/xinput2.nim",
+      "/x11/xinerama.nim",
+      "/x11.nimble",
+      "/x11/xi.nim",
+      "/x11/xf86dga.nim",
+      "/x11/xkb.nim",
+      "/x11/xrender.nim",
+      "/x11/xutil.nim",
+      "/x11/xi2.nim",
+      "/x11/x11pragma.nim",
+      "/x11/xlib.nim",
+      "/x11/x.nim",
+      "/x11/xresource.nim",
+      "/x11/xv.nim",
+      "/x11/xrandr.nim",
+      "/x11/xkblib.nim",
+      "/x11/xvlib.nim",
+      "/x11/xft.nim",
+      "/x11/xatom.nim",
+      "/x11/xcms.nim",
+      "/x11/xtst.nim",
+      "/x11/xshm.nim"
+    ],
+    "binaries": [],
+    "specialVersions": [
+      "1.2"
+    ]
+  }
+}

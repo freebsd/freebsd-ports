@@ -23,6 +23,7 @@
 # This file can be linted with Tools/scripts/MOVEDlint.awk
 #
 # Port|Moved to|Date|Why
+x11/wmctrl|x11/wmctrl-fork|2024-05-18|Forked due to the upstream being no longer available; the port had no maintainer
 www/wt3|www/wt|2021-01-03|Has expired: Upstream end of life, switch to www/wt instead
 archivers/ecm|archivers/cmdpack|2021-01-04|ECM is now included in cmdpack
 math/qhull5|math/qhull|2021-01-04|Has expired: Legacy version of port no longer required by math/octave
@@ -2945,7 +2946,6 @@ editors/edith||2024-01-17|Has expired: Upstream last release was in 2000
 x11-toolkits/p5-Gtk2-GladeXML||2024-01-17|Has expired: Upstream marked this module as Deprecated
 x11-toolkits/p5-Gtk2-TrayIcon||2024-01-17|Has expired: Upstream marked this module as Deprecated
 editors/led||2024-01-17|Has expired: Last upstream release was in 2002 reconsider using editors/nano
-editors/jove||2024-01-18|Has expired: No upstream update in last 23 years
 editors/impress||2024-01-18|Has expired: Upstream last release was in 2000
 biology/sim4||2024-01-18|Has expired: Upstream last update was in 2005
 x11-wm/w9wm||2024-01-18|Has expired: Last upstream release was in 2002
@@ -3254,3 +3254,131 @@ irc/sic||2024-05-15|Has expired: Last upstream release was in 2001 and no upstre
 devel/tarpaulin|devel/cargo-tarpaulin|2024-05-19|Rename port and package to reflect that this is a Cargo plugin
 sysutils/uutils-coreutils|sysutils/rust-coreutils|2024-05-21|Remove duplicate
 databases/foundationdb|databases/foundationdb71-server|2024-05-23|Reintegrated into databases/foundationdb71-server
+devel/py-dj42-graphene-django|devel/py-graphene-django300|2024-05-26|Renamed to py-graphene-django300 for backwards compatibility with net-mgmt/netbox
+devel/rubygem-jira-ruby21|devel/rubygem-jira-ruby|2024-05-28|Remove obsoleted port. Use devel/rubygem-jira-ruby instead
+devel/rubygem-semver_dialects1|devel/rubygem-semver_dialects|2024-05-28|Remove obsoleted port. Use devel/rubygem-semver_dialects instead
+devel/rubygem-semver_dialects12|devel/rubygem-semver_dialects|2024-05-28|Remove obsoleted port. Use devel/rubygem-semver_dialects instead
+devel/rubygem-xdg3|devel/rubygem-xdg|2024-05-28|Remove obsoleted port. Use devel/rubygem-xdg instead
+devel/rubygem-xdg4|devel/rubygem-xdg|2024-05-28|Remove obsoleted port. Use devel/rubygem-xdg instead
+devel/rubygem-xdg5|devel/rubygem-xdg|2024-05-28|Remove obsoleted port. Use devel/rubygem-xdg instead
+devel/rubygem-xdg6|devel/rubygem-xdg|2024-05-28|Remove obsoleted port. Use devel/rubygem-xdg instead
+graphics/rubygem-mini_magick410|graphics/rubygem-mini_magick|2024-05-28|Remove obsoleted port. Use graphics/rubygem-mini_magick instead
+textproc/rubygem-sassc22|textproc/rubygem-sassc|2024-05-28|Remove obsoleted port. Use textproc/rubygem-sassc instead
+databases/rubygem-flipper-active_record-rails61|databases/rubygem-flipper-active_record|2024-05-28|Remove obsoleted port. Use databases/rubygem-flipper-active_record instead
+devel/rubygem-flipper-active_support_cache_store-rails61|devel/rubygem-flipper-active_support_cache_store|2024-05-28|Remove obsoleted port. Use devel/rubygem-flipper-active_support_cache_store instead
+devel/rubygem-flipper025|devel/rubygem-flipper|2024-05-28|Remove obsoleted port. Use devel/rubygem-flipper instead
+www/rubygem-rqrcode2|www/rubygem-rqrcode|2024-05-28|Remove obsoleted port. Use www/rubygem-rqrcode instead
+net/iaxmodem||2024-05-29|Has expired: outdated and uses end-of-life version of GCC
+www/mod_auth_openid||2024-05-29|Has expired: Depends on expired devel/libopkele
+devel/libopkele||2024-05-29|Has expired: Last upstream release was in 2009
+graphics/vkd3d||2024-05-30|No consumers in ports
+www/pear-Structures_DataGrid_Renderer_Smarty||2024-06-06|Remove expired port
+net/py-soap2py||2024-06-06|Remove expired port
+net/pear-Net_CDDB||2024-06-06|Remove obsoleted port
+sysutils/rtsx-kmod||2024-06-08|Present in base since FreeBSD 13
+devel/rubygem-gettext_i18n_rails111|devel/rubygem-gettext_i18n_rails|2024-06-09|Obsolete use devel/rubygem-gettext_i18n_rails instead
+databases/rubygem-redis-clustering50|databases/rubygem-redis-clustering|2024-06-09|Obsolete use databases/rubygem-redis-clustering instead
+databases/rubygem-redis50|databases/rubygem-redis|2024-06-09|Obsolete use databases/rubygem-redis instead
+math/py-optuna||2024-06-11|Has expired: Depends on expired databases/py-sqlalchemy12
+databases/py-alembic14||2024-06-11|Has expired: Depends on expired databases/py-sqlalchemy12
+deskutils/griffith||2024-06-11|Has expired: Depends on expired databases/py-sqlalchemy12
+misc/py-cinder||2024-06-11|Has expired: Depends on expired databases/py-sqlalchemy12
+databases/py-sqlalchemy12||2024-06-11|Has expired: Upstream makred EOL in Release Status
+devel/py-gtfslib||2024-06-11|Has expired: Depends on expired databases/py-sqlalchemy11
+databases/py-sqlalchemy11||2024-06-11|Has expired: Upstream makred EOL in Release Status
+www/smarty2||2024-06-11|Has expired: Does not support current php versions in tree
+www/librtcdcpp||2024-06-11|Has expired: Dead upstream fails to build
+audio/mp3plot||2024-06-11|Has expired: Dead upstream and fails to build
+dns/dnsforwarder||2024-06-11|Has expired: Abandoned, upstream repo is removed
+dns/crossip|dns/dnsmax-perl|2024-06-11|Has expired: Obsolete, use dns/dnsmax-perl
+dns/curvedns||2024-06-11|Has expired: Protocol never gained traction and is superseded by DoT and DoH
+textproc/mergestat||2024-06-11|Has expired: Marked BROKEN for over a year
+www/bkmrkconv||2024-06-11|Has expired: Obsolete utility, generated files are already in a readable format
+www/chems||2024-06-11|Has expired: Abandonware, last release in 2009 and no activity since upstream
+www/cssed||2024-06-11|Has expired: Abandonware and broken, doesn't work with Python 3.x
+www/goose||2024-06-11|Has expired: Abandonware, last update in 2003 and upstream is dead
+www/larbin||2024-06-11|Has expired: Abandonware, obsolete web crawler
+audio/rebot3||2024-06-11|Has expired: Depends on legacy service/protocol that's requires registration
+net/nepenthes||2024-06-11|Has expired: Abandonware, last update in 2008 and upstream is gone
+sysutils/hploscripts||2024-06-11|Has expired: Abandonware, outdated version
+databases/galera|databases/galera26|2024-06-11|Has expired: Does not build. Superseded by galera26
+databases/tsearch_extras||2024-06-12|Has no consumer both in ports and upstream project
+lang/zig011||2024-06-12|No consumers in ports
+devel/py-ZopeUndo||2024-06-13|No consumers in ports
+multimedia/audacious-qt6|multimedia/audacious|2024-06-13|qt6 flavor is now the default flavor, following upstream change
+multimedia/audacious-plugins-qt6|multimedia/audacious-plugins|2024-06-13|qt6 flavor is now the default flavor, following upstream change
+lang/zig-devel||2024-06-13|Older than lang/zig and no consumers in ports
+www/ctemplate||2024-06-15|Has expired: Abandonware and obsolete, last release in 2008 and never gained any traction
+graphics/electricsheep||2024-06-15|Has expired: Broken for more than 6 months and fails to compile bumping it to latest commit
+www/apt-cacher-ng||2024-06-15|Has expired: Outdated and unsupported version, current version was released in 2020 and upstream is still active
+audio/taglookup||2024-06-15|Has expired: Obsolete, depends on legacy service that is defunct once again
+www/vieb||2024-06-15|Has expired: Outdated and depends on expired (and blacklisted) devel/electron25
+devel/electron25||2024-06-15|Has expired: EOLed upstream, switch to newer version
+devel/py-dj42-django-rq|devel/py-django-rq|2024-06-15|Has expired: Obsolete, please use devel/py-django-rq instead
+www/py-dj42-django-taggit|www/py-django-taggit|2024-06-15|Has expired: Obsolete, please use www/py-django-taggit instead
+www/py-dj42-djangoql|www/py-djangoql|2024-06-15|Has expired: Obsolete, please use www/py-djangoql instead
+www/py-dj42-django-mptt|www/py-django-mptt|2024-06-15|Has expired: Obsolete, please use www/py-django-mptt instead
+www/py-dj42-django-js-asset|www/py-django-js-asset|2024-06-15|Has expired: Obsolete, please use www/py-django-js-asset instead
+www/py-dj42-django-guardian|www/py-django-guardian|2024-06-15|Has expired: Obsolete, please use www/py-django-guardian instead
+www/py-dj42-django-tables2|www/py-django-tables2|2024-06-15|Has expired: Obsolete, please use www/py-django-tables2 instead
+www/py-dj42-django-auth-ldap|www/py-django-auth-ldap|2024-06-15|Has expired: Obsolete, please use www/py-django-auth-ldap instead
+www/py-dj42-django-permissionedforms|www/py-django-permissionedforms|2024-06-15|Has expired: Obsolete, please use www/py-django-permissionedforms instead
+www/py-dj42-django-cors-headers|www/py-django-cors-headers|2024-06-15|Has expired: Obsolete, please use www/py-django-cors-headers instead
+www/py-dj42-django-treebeard|www/py-django-treebeard|2024-06-15|Has expired: Obsolete, please use www/py-django-treebeard instead
+www/py-dj42-django-otp|www/py-django-otp|2024-06-15|Has expired: Obsolete, please use www/py-django-otp instead
+www/py-dj42-django-prometheus|www/py-django-prometheus|2024-06-15|Has expired: Obsolete, please use www/py-django-prometheus instead
+www/py-dj42-channels|www/py-channels|2024-06-15|Has expired: Obsolete, please use www/py-channels instead
+www/py-dj42-django-filter|www/py-django-filter|2024-06-15|Has expired: Obsolete, please use www/py-django-filter instead
+www/py-dj42-drf-spectacular|www/py-drf-spectacular|2024-06-15|Has expired: Obsolete, please use www/py-drf-spectacular instead
+www/py-dj42-drf-spectacular-sidecar|www/py-drf-spectacular-sidecar|2024-06-15|Has expired: Obsolete, please use www/py-drf-spectacular-sidecar instead
+www/py-dj42-django-timezone-field|www/py-django-timezone-field|2024-06-15|Has expired: Obsolete, please use www/py-django-timezone-field instead
+www/py-dj42-django-graphiql-debug-toolbar|www/py-django-graphiql-debug-toolbar|2024-06-15|Has expired: Obsolete, please use www/py-django-graphiql-debug-toolbar instead
+www/py-dj42-django-rich|www/py-django-rich|2024-06-15|Has expired: Obsolete, please use www/py-django-rich instead
+www/py-dj42-django-redis|www/py-django-redis|2024-06-15|Has expired: Obsolete, please use www/py-django-redis instead
+www/py-dj42-django-allauth|www/py-django-allauth|2024-06-15|Has expired: Obsolete, please use www/py-django-allauth instead
+www/py-dj42-django-crispy-forms|www/py-django-crispy-forms|2024-06-15|Has expired: Obsolete, please use www/py-django-crispy-forms instead
+www/py-dj42-django-modelcluster|www/py-django-modelcluster|2024-06-15|Has expired: Obsolete, please use www/py-django-modelcluster instead
+www/py-dj42-django-extensions|www/py-django-extensions|2024-06-15|Has expired: Obsolete, please use www/py-django-extensions instead
+www/py-dj42-djangorestframework|www/py-djangorestframework|2024-06-15|Has expired: Obsolete, please use www/py-djangorestframework instead
+www/py-dj42-django-debug-toolbar|www/py-django-debug-toolbar|2024-06-15|Has expired: Obsolete, please use www/py-django-debug-toolbar instead
+devel/rubygem-ddtrace|devel/rubygem-datadog|2024-06-18|Move devel/rubygem-ddtrace to devel/rubygem-datadog
+databases/py-sqlalchemy13||2024-06-24|Has expired: Upstream makred EOL in Release Status
+chinese/oicq||2024-06-27|ICQ Service closed in 2024-06-24
+security/p5-Crypt-OICQ||2024-06-27|ICQ Service closed in 2024-06-24
+net-im/climm||2024-06-27|ICQ Service closed in 2024-06-24
+multimedia/emby-server-devel|multimedia/emby-server|2024-06-28|Beta port removed: please use the release port multimedia/emby-server
+devel/go-protobuf||2024-06-30|Has expired: Upstream officially deprecated this project
+www/py-django-ldapdb||2024-06-30|Has expired: not compatible with Django >= 4.x, upstream no longer maintained
+www/adzap||2024-06-30|Has expired: Obsolete, no longer provides reasonable amount of filtering
+www/bolt||2024-06-30|Has expired: Outdated and unsupported, current version is several years old and unsupported upstream
+www/interchange||2024-06-30|Has expired: Outdated, current version was released in 2010 is unsupported upstream
+www/itop||2024-06-30|Has expired: Outdated, current version is 5 years old and unsupported upstream
+sysutils/container-diff||2024-06-30|Has expired: The repository has been archived by the owner on 2024-03-28. Upstream suggests diffoci as alternative
+emulators/qemu7|emulators/qemu|2024-06-30|Has expired: qemu 9.X.X is out, so time to retire this one
+lang/perl5.34||2024-06-30|Has expired: Support end three years after .0 release, please upgrade to a more recent version of Perl
+www/httest||2024-06-30|Has expired: Abandonware, no activity from upstream for years and depends on deprecated library devel/pcre
+security/sks||2024-06-30|Has expired: Depends on deprecated port databases/db5
+audio/asunder||2024-06-30|Has expired: Depends on deprecated library libcddb, consider using audio/cyanrip instead
+www/py-cookies||2024-06-30|Has expired: Upstream is inactive for many years
+www/node21||2024-06-30|Has expired: Node.js 21.* will reach its EoL on 2024-06-01. Use Node.js 22.* (www/node22) instead
+graphics/py-ming||2024-06-30|Has expired: Depends on deprecated graphics/ming
+graphics/p5-ming||2024-06-30|Has expired: Depends on deprecated graphics/ming
+print/panda||2024-06-30|Has expired: Depends on deprecated Oracle Berkeley DB 5.3 and upstream is dead
+mail/avenger||2024-06-30|Has expired: Depends on deprecated Oracle Berkeley DB 5.3 and upstream is dead
+www/py-django-bootstrap-pagination||2024-06-30|Has expired: not compatible with Django 4.2, upstream no longer maintained
+www/py-django32||2024-06-30|Has expired: Django 3.2 is now in Extended Support, receives security fixes only and will reach End-Of-Life in April 2024. Upgrade to a later Django version. See https://www.djangoproject.com/download/
+net/haproxy20||2024-06-30|Has expired: Upstream EOL reaches on 2024-06-30
+lang/gcc9||2024-06-30|Has expired: Unsupported by upstream. Use GCC 10 or newer instead
+security/p5-Protocol-ACME||2024-06-30|Has expired: upstream maintainer indicated that it is no longer suitable for use
+graphics/wdune||2024-06-30|Has expired: upstream no longer maintained
+www/zend-framework||2024-06-30|Has expired: Deprecated by upstream, and moved to Laminas Project
+sysutils/torque||2024-06-30|Has expired: unfetchable, upstream no longer open source
+lang/icc||2024-07-01|Has expired: This version is EOL since a long time, i386 only, and the current clang based Intel oneAPI DPC++/C++ seems to work
+graphics/intel-backlight||2024-07-01|Has expired: Use backlight(8)
+www/yarn-node21||2024-07-02|Removed, part of www/node21
+www/npm-node21||2024-07-02|Removed, part of www/node21
+security/bcrypt||2024-07-02|Has expired: Hasn't seen updates in 15 years, insecure Blowfish ECB mode, unauthenticated encryption
+devel/py-stackexchange|devel/py-py-stackexchange|2024-07-06|Move devel/py-stackexchange to devel/py-py-stackexchange
+devel/py-xcaplib|devel/py-python-xcaplib|2024-07-06|Move devel/py-xcaplib to devel/py-python-xcaplib
+devel/py-yaml|devel/py-pyyaml|2024-07-07|Move devel/py-yaml to devel/py-pyyaml
+devel/py-pyyaml5|devel/py-pyyaml|2024-07-07|Remove obsoleted port. Use devel/py-pyyaml instead

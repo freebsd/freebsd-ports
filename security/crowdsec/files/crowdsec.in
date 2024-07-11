@@ -14,8 +14,6 @@
 #				Default is "%%PREFIX%%/etc/crowdsec/config.yaml".
 # crowdsec_machine_name (str):	Name for the crowdsec instance when it's running its own lapi.
 #				Default is "localhost".
-# crowdsec_flags (str):	Set the extra flags to run the agent.
-#				Default is ""
 
 . /etc/rc.subr
 
@@ -27,7 +25,6 @@ load_rc_config "$name"
 : "${crowdsec_enable:=NO}"
 : "${crowdsec_config:=%%PREFIX%%/etc/crowdsec/config.yaml}"
 : "${crowdsec_machine_name:=localhost}"
-: "${crowdsec_flags:=}"
 
 pidfile=/var/run/${name}_daemon.pid
 pidfile_crowdsec=/var/run/${name}.pid
@@ -35,7 +32,7 @@ required_files="$crowdsec_config"
 command="/usr/sbin/daemon"
 command_crowdsec="%%PREFIX%%/bin/crowdsec"
 command_cscli="%%PREFIX%%/bin/cscli"
-command_args="-f -P ${pidfile} -p ${pidfile_crowdsec} -r -R 10 -t \"${name}\" -- ${command_crowdsec} -c ${crowdsec_config} ${crowdsec_flags}"
+command_args="-f -P ${pidfile} -p ${pidfile_crowdsec} -r -R 10 -t \"${name}\" -- ${command_crowdsec} -c ${crowdsec_config}"
 reload_cmd="${name}_reload"
 start_precmd="${name}_precmd"
 configtest_cmd="${name}_configtest"

@@ -15,7 +15,7 @@
  endif
 +ifeq ($(OS), FreeBSD)
 +	FLAGS+= -D_DEFAULT_SOURCE ${CPPFLAGS} ${CFLAGS}
-+	LINK+=  ${LIBS}
++	LINK+=  ${LIBS} -lutil
 +endif
  
  BIND = bin

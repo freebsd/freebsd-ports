@@ -79,7 +79,9 @@ share/man/man1/tofits.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/cel_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cel_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/clipboard.js
 %%PORTDOCS%%%%DOCSDIR%%/html/closed.png
+%%PORTDOCS%%%%DOCSDIR%%/html/cookie.js
 %%PORTDOCS%%%%DOCSDIR%%/html/deprecated.html
 %%PORTDOCS%%%%DOCSDIR%%/html/diagnostics.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dir_af99bb3c152a306abd27951285ad1127.html
@@ -89,6 +91,7 @@ share/man/man1/tofits.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/docd.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.svg
+%%PORTDOCS%%%%DOCSDIR%%/html/doxygen_crawl.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dynsections.js
 %%PORTDOCS%%%%DOCSDIR%%/html/files.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fitshdr_8h.html

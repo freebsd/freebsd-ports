@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc.orig	2024-05-21 18:07:39 UTC
+--- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc.orig	2024-06-17 12:56:06 UTC
 +++ chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc
 @@ -58,7 +58,7 @@ namespace {
  
@@ -8,7 +8,7 @@
 +    BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
  const int kManagedUserNoticeConfirmationDialogWidth = 512;
  const int kManagedUserNoticeConfirmationDialogHeight = 576;
- const int kManagedUserNoticeConfirmationUpdatedDialogWidth = 1024;
+ const int kManagedUserNoticeConfirmationUpdatedDialogWidth = 900;
 @@ -187,7 +187,7 @@ SigninViewControllerDelegateViews::CreateProfileCustom
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT) || BUILDFLAG(IS_CHROMEOS_LACROS)
  

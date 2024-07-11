@@ -1,6 +1,5 @@
 PORTNAME=	loook
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.9.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://mechtilde.de/Loook/Downloads/
 DIST_SUBDIR=	python
@@ -13,9 +12,9 @@ LICENSE=	GPLv2+
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter@${PY_FLAVOR}
 
-USES=		python gettext-tools:build
+USES=		python gettext-tools:build desktop-file-utils
 
-WRKSRC=		${WRKDIR}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/loook.desktop \
 		share/locale/cs/LC_MESSAGES/loook.mo \
@@ -25,16 +24,18 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/locale/fr/LC_MESSAGES/loook.mo \
 		share/locale/it/LC_MESSAGES/loook.mo \
 		share/locale/nl/LC_MESSAGES/loook.mo \
+		share/locale/pt_BR/LC_MESSAGES/loook.mo \
 		share/man/man1/loook.1.gz \
 		share/man/de/man1/loook.1.gz \
 		share/pixmaps/loook.png \
 
-LCMESSAGES=	cs de en es fr it nl
+LCMESSAGES=	cs de en es fr it nl pt_BR
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/python3|${PYTHON_CMD}|' \
 		-e 's|/usr/share/locale/|${PREFIX}/share/locale/|' \
 		${WRKSRC}/${PORTNAME}.py
+	@${MV} -v ${WRKSRC}/loook.pt-br.po ${WRKSRC}/loook.pt_BR.po
 
 do-build:
 .for i in ${LCMESSAGES}

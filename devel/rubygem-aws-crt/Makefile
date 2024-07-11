@@ -1,5 +1,5 @@
 PORTNAME=	aws-crt
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,14 +10,14 @@ WWW=		https://github.com/awslabs/aws-crt-ruby
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+LIB_DEPENDS=	libaws-crt-ffi.so:devel/aws-crt-ffi
 RUN_DEPENDS=	rubygem-ffi>=0:devel/rubygem-ffi
 
-USES=		cmake:indirect gem python:env shebangfix
+USES=		gem
 
-SHEBANG_GLOB=	*.py *.sh
-
-post-install:
-	${RM} -r ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/tmp/
-	${REINPLACE_CMD} -e '/${GEM_LIB_DIR}\/tmp\//d' ${TMPPLIST}
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/ext/compile.rb
+# Clean up bundled libraries
+	@${RM} -r ${WRKSRC}/aws-crt-ffi/
 
 .include <bsd.port.mk>

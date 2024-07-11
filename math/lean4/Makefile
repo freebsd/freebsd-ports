@@ -1,6 +1,6 @@
 PORTNAME=	lean4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.7.0
+DISTVERSION=	4.9.1
 CATEGORIES=	math lang devel # lean4 is primarily a math theorem prover, but it is also a language and a development environment
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,6 +39,8 @@ post-install:
 		lib/lean/libInit_shared.so \
 		lib/lean/libleanshared.so
 
-# 6 tests are known to fail due to bugs in the testcase code, see https://github.com/leanprover/lean4/issues/3179
+# 2 test failures:
+# https://github.com/leanprover/lean4/issues/4396: The test leanlaketest_old times out
+# https://github.com/leanprover/lean4/issues/4397: The test leanlaketest_serve fails: error: unexpected identifier; expected command
 
 .include <bsd.port.mk>

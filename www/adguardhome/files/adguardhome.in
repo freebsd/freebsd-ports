@@ -20,6 +20,7 @@ load_rc_config $name
 : ${adguardhome_group:=%%GROUP%%}
 : ${adguardhome_work_dir:=/var/db/adguardhome}
 : ${adguardhome_work_dir_data:=/var/db/adguardhome/data}
+: ${adguardhome_svcj_options:="net_basic"}
 
 # old values
 : ${adguardhome_config_old:=%%PREFIX%%/bin/AdGuardHome.yaml}

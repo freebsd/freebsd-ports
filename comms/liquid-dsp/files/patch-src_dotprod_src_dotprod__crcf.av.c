@@ -1,4 +1,4 @@
---- src/dotprod/src/dotprod_crcf.av.c.orig	2018-12-04 23:40:11 UTC
+--- src/dotprod/src/dotprod_crcf.av.c.orig	2024-06-19 07:24:39 UTC
 +++ src/dotprod/src/dotprod_crcf.av.c
 @@ -26,6 +26,7 @@
  
@@ -8,7 +8,7 @@
  
  #include "liquid.internal.h"
  
-@@ -168,8 +169,8 @@ void dotprod_crcf_execute(dotprod_crcf    _q,
+@@ -195,8 +196,8 @@ int dotprod_crcf_execute(dotprod_crcf    _q,
      union { vector float v; float w[4];} s;
      unsigned int nblocks;
  
@@ -19,7 +19,7 @@
  
      d = (vector float*)_q->h[al];
  
-@@ -179,7 +180,7 @@ void dotprod_crcf_execute(dotprod_crcf    _q,
+@@ -206,7 +207,7 @@ int dotprod_crcf_execute(dotprod_crcf    _q,
      // split into four vectors each with four 32-bit
      // partial sums.  Effectively each loop iteration
      // operates on 16 input samples at a time.
@@ -28,7 +28,7 @@
      while (nblocks >= 4) {
          s0 = vec_madd(ar[nblocks-1],d[nblocks-1],s0);
          s1 = vec_madd(ar[nblocks-2],d[nblocks-2],s1);
-@@ -200,7 +201,7 @@ void dotprod_crcf_execute(dotprod_crcf    _q,
+@@ -227,7 +228,7 @@ int dotprod_crcf_execute(dotprod_crcf    _q,
      // move the result into the union s (effetively,
      // this loads the four 32-bit values in s0 into
      // the array w).

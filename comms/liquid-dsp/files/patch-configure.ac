@@ -1,6 +1,6 @@
---- configure.ac.orig	2018-12-04 23:39:19 UTC
+--- configure.ac.orig	2024-06-19 10:43:23 UTC
 +++ configure.ac
-@@ -195,7 +195,7 @@ else
+@@ -228,7 +228,7 @@ else
                         src/dotprod/src/dotprod_rrrf.av.o \
                         src/dotprod/src/dotprod_crcf.av.o \
                         src/dotprod/src/sumsq.o"

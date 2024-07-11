@@ -1,12 +1,14 @@
 PORTNAME=	tinyproxy
 PORTVERSION=	1.11.2
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/tinyproxy/tinyproxy/releases/download/${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small, efficient HTTP proxy server
-WWW=		https://tinyproxy.github.io/
+WWW=		https://tinyproxy.github.io/ \
+		https://github.com/tinyproxy/tinyproxy
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

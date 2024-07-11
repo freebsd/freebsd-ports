@@ -19,6 +19,7 @@ command_args="-P $pidfile -l"
 
 load_rc_config $name
 : ${tftpd_enable:="NO"}
+: ${tftpd_svcj_options:="net_basic"}
 : ${tftpd_flags:="-s %%PREFIX%%/tftp"}
 
 run_rc_command "$1"

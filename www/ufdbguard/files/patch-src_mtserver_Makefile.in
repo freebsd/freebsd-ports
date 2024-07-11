@@ -1,11 +1,11 @@
---- src/mtserver/Makefile.in.orig	2020-11-01 13:42:44 UTC
+--- src/mtserver/Makefile.in.orig	2024-03-21 13:58:11 UTC
 +++ src/mtserver/Makefile.in
 @@ -16,7 +16,7 @@
  
  CC      = @CC@ 
  CXX     = @CXX@ 
--CFLAGS  = @CFLAGS@ -I. -I..     # -DUFDB_TEST_PROXY
-+CFLAGS  = @CFLAGS@ -D__BSD_VISIBLE=1 -I. -I..
- CXXFLAGS= @CXXFLAGS@ -I. -I..
+-CFLAGS  = @CFLAGS@ -I. -I.. -Wall -Wextra -Wmissing-prototypes -Wstrict-prototypes -Wold-style-definition
++CFLAGS  = @CFLAGS@ -D__BSD_VISIBLE=1 -I. -I.. -Wall -Wextra -Wmissing-prototypes -Wstrict-prototypes -Wold-style-definition
+ CXXFLAGS= @CXXFLAGS@ -I. -I.. -Wall -Wextra -Wmissing-declarations
  CPPFLAGS= @CPPFLAGS@
- LDFLAGS = @LDFLAGS@
+ LDFLAGS = @LDFLAGS@  # -Wl,-z,relro -Wl,-z,now

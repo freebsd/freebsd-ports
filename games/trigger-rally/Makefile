@@ -38,7 +38,7 @@ OPTIONS_DEFINE=	DOCS
 
 # The following is actually meant for lld 15.0 and later, but the ports
 # framework does not support LINKER_TYPE and LINKER_VERSION yet.
-.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 150
+.if ${COMPILER_TYPE} == "clang"
 # Turn off checking of dynamic relocations, to avoid lld diagnostics about
 # possibly incorrect addend values.
 LDFLAGS_i386+=	-Wl,--no-check-dynamic-relocations

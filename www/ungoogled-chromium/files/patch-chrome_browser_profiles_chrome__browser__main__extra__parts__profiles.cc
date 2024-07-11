@@ -1,6 +1,6 @@
---- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2024-05-23 20:04:36 UTC
+--- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2024-06-22 08:49:42 UTC
 +++ chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
-@@ -325,7 +325,7 @@
+@@ -328,7 +328,7 @@
  #include "chromeos/constants/chromeos_features.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/policy/messaging_layer/util/manual_test_heartbeat_event_factory.h"
  #endif
  
-@@ -409,18 +409,18 @@
+@@ -412,18 +412,18 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -31,7 +31,7 @@
  #include "chrome/browser/browser_switcher/browser_switcher_service_factory.h"
  #include "chrome/browser/enterprise/client_certificates/certificate_provisioning_service_factory.h"
  #include "chrome/browser/enterprise/client_certificates/certificate_store_factory.h"
-@@ -656,7 +656,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -659,7 +659,7 @@ void ChromeBrowserMainExtraPartsProfiles::
    DiceBoundSessionCookieServiceFactory::GetInstance();
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  #endif  // BUILDFLAG(ENABLE_BOUND_SESSION_CREDENTIALS)
@@ -40,7 +40,7 @@
    browser_switcher::BrowserSwitcherServiceFactory::GetInstance();
  #endif
    browser_sync::UserEventServiceFactory::GetInstance();
-@@ -778,26 +778,26 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -784,26 +784,26 @@ void ChromeBrowserMainExtraPartsProfiles::
    enterprise_commands::UserRemoteCommandsServiceFactory::GetInstance();
  #endif
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -72,16 +72,16 @@
    enterprise_signin::EnterpriseSigninServiceFactory::GetInstance();
  #endif
  #if BUILDFLAG(ENABLE_SESSION_SERVICE)
-@@ -921,7 +921,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -929,7 +929,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #endif
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD) || \
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
    metrics::DesktopProfileSessionDurationsServiceFactory::GetInstance();
  #endif
-@@ -1024,7 +1024,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -1030,7 +1030,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #if BUILDFLAG(IS_CHROMEOS)
    policy::PolicyCertServiceFactory::GetInstance();
  #endif
@@ -90,7 +90,7 @@
    policy::ProfileTokenPolicyWebSigninServiceFactory::GetInstance();
    policy::UserPolicyOidcSigninServiceFactory::GetInstance();
  #endif
-@@ -1066,7 +1066,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -1072,7 +1072,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #if !BUILDFLAG(IS_CHROMEOS_ASH) && !BUILDFLAG(IS_ANDROID)
    ProfileStatisticsFactory::GetInstance();
  #endif
@@ -99,7 +99,7 @@
    ProfileTokenWebSigninInterceptorFactory::GetInstance();
    OidcAuthenticationSigninInterceptorFactory::GetInstance();
  #endif
-@@ -1085,7 +1085,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -1091,7 +1091,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #endif
    ReduceAcceptLanguageFactory::GetInstance();
    RendererUpdaterFactory::GetInstance();

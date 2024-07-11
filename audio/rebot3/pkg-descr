@@ -1,5 +1,0 @@
-rebot3.pl renames MP3 files that you have grabbed from audio CDs with
-the track name, number, album, and/or artist. It does so by using
-either a remote CDDB server or a local CDDB created by cd (and other)
-players like xmcd, kscd or xmms. With rebot3.pl you can also add or
-remove ID3 (version 1) tags to/from the MP3 files.

@@ -1,6 +1,6 @@
 PORTNAME=	vitunes
 PORTVERSION=	2.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	http://vitunes.org/files/
 

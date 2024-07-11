@@ -44,7 +44,6 @@
     SUBDIR += barnyard2
     SUBDIR += barnyard2-sguil
     SUBDIR += bastillion
-    SUBDIR += bcrypt
     SUBDIR += bcwipe
     SUBDIR += bdes
     SUBDIR += bearssl
@@ -324,6 +323,7 @@
     SUBDIR += libssh
     SUBDIR += libssh2
     SUBDIR += libtasn1
+    SUBDIR += libtatsu
     SUBDIR += libtomcrypt
     SUBDIR += libu2f-host
     SUBDIR += libuecc
@@ -430,6 +430,7 @@
     SUBDIR += openconnect-gui
     SUBDIR += opencryptoki
     SUBDIR += openct
+    SUBDIR += opendoas
     SUBDIR += openfhe
     SUBDIR += openfortivpn
     SUBDIR += openiked
@@ -567,7 +568,6 @@
     SUBDIR += p5-Crypt-MySQL
     SUBDIR += p5-Crypt-NULL
     SUBDIR += p5-Crypt-OFB
-    SUBDIR += p5-Crypt-OICQ
     SUBDIR += p5-Crypt-OTP
     SUBDIR += p5-Crypt-OpenPGP
     SUBDIR += p5-Crypt-OpenSSL-AES
@@ -723,7 +723,6 @@
     SUBDIR += p5-POE-Filter-SSL
     SUBDIR += p5-Parse-Snort
     SUBDIR += p5-PerlCryptLib
-    SUBDIR += p5-Protocol-ACME
     SUBDIR += p5-SAVI-Perl
     SUBDIR += p5-SHA
     SUBDIR += p5-Safe-Hole
@@ -974,6 +973,7 @@
     SUBDIR += py-maec
     SUBDIR += py-merkletools
     SUBDIR += py-mixbox
+    SUBDIR += py-mkpasswd
     SUBDIR += py-mnemonic
     SUBDIR += py-msoffcrypto-tool
     SUBDIR += py-muacrypt
@@ -1238,6 +1238,7 @@
     SUBDIR += rubygem-vault
     SUBDIR += rubygem-webauthn
     SUBDIR += rubygem-webpush
+    SUBDIR += rustls-ffi
     SUBDIR += rustscan
     SUBDIR += s2n-tls
     SUBDIR += safesh
@@ -1266,7 +1267,6 @@
     SUBDIR += signify
     SUBDIR += signing-party
     SUBDIR += silktools
-    SUBDIR += sks
     SUBDIR += smurflog
     SUBDIR += sniffglue
     SUBDIR += snoopy

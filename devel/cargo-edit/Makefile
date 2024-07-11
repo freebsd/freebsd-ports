@@ -1,6 +1,7 @@
 PORTNAME=	cargo-edit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.2
+DISTVERSION=	0.12.3
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,14 +33,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		base16ct-0.2.0 \
-		base64-0.21.3 \
 		base64ct-1.6.0 \
 		bitflags-1.3.2 \
 		bitflags-2.4.0 \
 		block-buffer-0.10.4 \
 		bstr-1.6.0 \
 		bumpalo-3.13.0 \
-		byteorder-1.4.3 \
 		camino-1.1.6 \
 		cargo-platform-0.1.3 \
 		cargo_metadata-0.15.4 \
@@ -90,8 +89,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		flate2-1.0.27 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
-		foreign-types-0.3.2 \
-		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.0 \
 		generic-array-0.14.7 \
 		getrandom-0.2.10 \
@@ -122,7 +119,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		jobserver-0.1.26 \
 		js-sys-0.3.64 \
 		lazy_static-1.4.0 \
-		libc-0.2.147 \
+		libc-0.2.155 \
 		libgit2-sys-0.15.2+1.6.4 \
 		libssh2-sys-0.3.0 \
 		libz-sys-1.1.12 \
@@ -133,13 +130,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		memoffset-0.9.0 \
 		miniz_oxide-0.7.1 \
 		miow-0.6.0 \
-		native-tls-0.2.11 \
 		normalize-line-endings-0.3.0 \
 		num-traits-0.2.16 \
 		num_cpus-1.16.0 \
 		once_cell-1.18.0 \
-		openssl-0.10.56 \
-		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
 		openssl-src-111.27.0+1.1.1v \
 		openssl-sys-0.9.91 \
@@ -167,21 +161,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		regex-automata-0.3.7 \
 		regex-syntax-0.7.5 \
 		rfc6979-0.4.0 \
-		ring-0.16.20 \
 		rustc-hash-1.1.0 \
 		rustix-0.37.23 \
 		rustix-0.38.9 \
-		rustls-0.21.6 \
-		rustls-webpki-0.100.2 \
-		rustls-webpki-0.101.4 \
 		ryu-1.0.15 \
 		same-file-1.0.6 \
 		schannel-0.1.22 \
 		scopeguard-1.2.0 \
-		sct-0.7.0 \
 		sec1-0.7.3 \
-		security-framework-2.9.2 \
-		security-framework-sys-2.9.1 \
 		semver-1.0.18 \
 		serde-1.0.188 \
 		serde_derive-1.0.188 \
@@ -196,8 +183,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		snapbox-0.4.12 \
 		snapbox-macros-0.3.5 \
 		socket2-0.4.9 \
-		socks-0.3.4 \
-		spin-0.5.2 \
 		spki-0.7.2 \
 		strsim-0.10.0 \
 		subprocess-0.2.9 \
@@ -227,8 +212,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicode-bidi-0.3.13 \
 		unicode-ident-1.0.11 \
 		unicode-normalization-0.1.22 \
-		untrusted-0.7.1 \
-		ureq-2.7.1 \
 		url-2.4.0 \
 		utf8parse-0.2.1 \
 		vcpkg-0.2.15 \
@@ -241,8 +224,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		wasm-bindgen-macro-0.2.87 \
 		wasm-bindgen-macro-support-0.2.87 \
 		wasm-bindgen-shared-0.2.87 \
-		web-sys-0.3.64 \
-		webpki-roots-0.23.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \

@@ -1,0 +1,11 @@
+--- src/plugins/multimedia/ffmpeg/CMakeLists.txt.orig	2024-06-08 01:28:28 UTC
++++ src/plugins/multimedia/ffmpeg/CMakeLists.txt
+@@ -82,7 +82,7 @@ qt_internal_add_plugin(QFFmpegMediaPlugin
+         Qt::CorePrivate
+ )
+ 
+-if (LINUX OR ANDROID)
++if (UNIX OR ANDROID)
+     # We have 2 options: link shared stubs to QFFmpegMediaPlugin vs
+     # static compilation of the needed stubs to the FFmpeg plugin.
+     # Currently, we chose the second option so that user could trivially

@@ -1,8 +1,8 @@
---- base/allocator/dispatcher/tls.h.orig	2023-11-22 14:00:11 UTC
+--- base/allocator/dispatcher/tls.h.orig	2024-06-25 12:08:48 UTC
 +++ base/allocator/dispatcher/tls.h
-@@ -74,7 +74,7 @@ struct BASE_EXPORT MMapAllocator {
-       partition_alloc::PartitionPageSize();
- #elif BUILDFLAG(IS_APPLE)
+@@ -77,7 +77,7 @@ struct BASE_EXPORT MMapAllocator {
+   constexpr static size_t AllocationChunkSize = 16384;
+ #elif BUILDFLAG(IS_ANDROID) && defined(ARCH_CPU_64_BITS)
    constexpr static size_t AllocationChunkSize = 16384;
 -#elif BUILDFLAG(IS_LINUX) && defined(ARCH_CPU_ARM64)
 +#elif (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && defined(ARCH_CPU_ARM64)

@@ -55,6 +55,7 @@ BUILD_DEPENDS_powerpc64le=	libunwind>0:devel/libunwind
 CMAKE_BUILD_TYPE=	Release
 CFLAGS+=		-fPIC
 CFLAGS_aarch64?=	-march=armv8-a+crc+crypto
+CXXFLAGS+=	-Wno-error=enum-constexpr-conversion
 
 CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DINSTALL_LDCONFIGDIR="${LOCALBASE}/libdata/ldconfig" \

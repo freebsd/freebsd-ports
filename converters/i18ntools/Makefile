@@ -11,6 +11,9 @@ WWW=		http://www.whizkidtech.redprince.net/i18n/
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Depends on expired converters/tuc
+EXPIRATION_DATE=2024-07-11
+
 LIB_DEPENDS=	libutf-8.so:converters/libutf-8
 RUN_DEPENDS=	tuc:converters/tuc
 

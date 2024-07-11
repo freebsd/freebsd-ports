@@ -5,6 +5,7 @@ lib/audacious/Container/audpl.so
 lib/audacious/Container/m3u.so
 lib/audacious/Container/pls.so
 lib/audacious/Container/xspf.so
+lib/audacious/Effect/background_music.so
 lib/audacious/Effect/bitcrusher.so
 %%BS2B%%lib/audacious/Effect/bs2b.so
 lib/audacious/Effect/compressor.so
@@ -27,7 +28,8 @@ lib/audacious/General/delete-files.so
 %%GTK%%lib/audacious/General/gtkui.so
 %%GTK%%lib/audacious/General/hotkey.so
 %%LIRC%%lib/audacious/General/lirc.so
-%%QT%%lib/audacious/General/lyricwiki-qt.so
+%%GTK%%lib/audacious/General/lyrics-gtk.so
+%%QT%%lib/audacious/General/lyrics-qt.so
 %%MPRIS%%lib/audacious/General/mpris2.so
 %%NOTIFY%%lib/audacious/General/notify.so
 %%GTK%%lib/audacious/General/playlist-manager.so
@@ -49,7 +51,7 @@ lib/audacious/General/song_change.so
 %%CONSOLE%%lib/audacious/Input/console.so
 %%FFMPEG%%lib/audacious/Input/ffaudio.so
 %%FLAC%%lib/audacious/Input/flacng.so
-lib/audacious/Input/madplug.so
+%%MPG123%%lib/audacious/Input/madplug.so
 lib/audacious/Input/metronom.so
 %%MODPLUG%%lib/audacious/Input/modplug.so
 %%ADPLUG%%lib/audacious/Input/adplug.so

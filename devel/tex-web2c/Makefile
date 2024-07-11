@@ -1,6 +1,5 @@
 PORTNAME=	web2c
-PORTVERSION=	${TEXLIVE_VERSION}
-PORTREVISION=	1
+DISTVERSION=	${TEXLIVE_VERSION}
 CATEGORIES=	devel
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}
 PKGNAMEPREFIX=	tex-
@@ -13,19 +12,19 @@ COMMENT=	TeX implementation translating WEB to C
 LICENSE=	LGPL21+
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
+		libmpfi.so:math/mpfi \
 		libmpfr.so:math/mpfr \
 		libopenjp2.so:graphics/openjpeg \
 		libpng.so:graphics/png \
 		libzzip.so:devel/zziplib
 
-USES=		gnome libtool localbase pathfix pkgconfig tar:xz tex xorg
+USES=		gmake gnome libtool localbase pathfix pkgconfig tar:xz tex xorg
 USE_GNOME=	cairo
 USE_LDCONFIG=	yes
 USE_TEX=	kpathsea ptexenc
 USE_XORG=	pixman
 
 GNU_CONFIGURE=		yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=		--disable-aleph \
 			--disable-eptex \
 			--disable-euptex \
@@ -43,6 +42,7 @@ CONFIGURE_ARGS=		--disable-aleph \
 			--disable-tex \
 			--disable-uptex \
 			--disable-xetex \
+			--with-system-mpfi \
 			--with-system-zlib \
 			--with-system-zziplib \
 			--with-x=no \

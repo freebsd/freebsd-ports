@@ -5,6 +5,7 @@
 %%DATADIR%%/bin/DryIoc.Microsoft.DependencyInjection.dll
 %%DATADIR%%/bin/DryIoc.dll
 %%DATADIR%%/bin/Dynamitey.dll
+%%DATADIR%%/bin/Equ.dll
 %%DATADIR%%/bin/FFMpegCore.dll
 %%DATADIR%%/bin/FluentMigrator.Abstractions.dll
 %%DATADIR%%/bin/FluentMigrator.Extensions.Oracle.dll
@@ -280,6 +281,7 @@
 %%DATADIR%%/bin/Sonarr.pdb
 %%DATADIR%%/bin/Sonarr.runtimeconfig.json
 %%DATADIR%%/bin/Sonarr.xml
+%%DATADIR%%/bin/Swashbuckle.AspNetCore.Annotations.dll
 %%DATADIR%%/bin/Swashbuckle.AspNetCore.Swagger.dll
 %%DATADIR%%/bin/Swashbuckle.AspNetCore.SwaggerGen.dll
 %%DATADIR%%/bin/System.AppContext.dll
@@ -453,13 +455,13 @@
 %%DATADIR%%/bin/System.Xml.XmlSerializer.dll
 %%DATADIR%%/bin/System.Xml.dll
 %%DATADIR%%/bin/System.dll
-%%DATADIR%%/bin/UI/20-c0e6705203ca6a202f18.js
-%%DATADIR%%/bin/UI/20-c0e6705203ca6a202f18.js.map
-%%DATADIR%%/bin/UI/767-f2018ae6702f19c7ceba.js
-%%DATADIR%%/bin/UI/767-f2018ae6702f19c7ceba.js.LICENSE.txt
-%%DATADIR%%/bin/UI/767-f2018ae6702f19c7ceba.js.map
-%%DATADIR%%/bin/UI/Content/20-64c9f9918140f723323d.css
-%%DATADIR%%/bin/UI/Content/20-64c9f9918140f723323d.css.map
+%%DATADIR%%/bin/UI/165-741ea435a5bfcafa2a8d.js
+%%DATADIR%%/bin/UI/165-741ea435a5bfcafa2a8d.js.map
+%%DATADIR%%/bin/UI/767-b358f3ba5f72b363e80a.js
+%%DATADIR%%/bin/UI/767-b358f3ba5f72b363e80a.js.LICENSE.txt
+%%DATADIR%%/bin/UI/767-b358f3ba5f72b363e80a.js.map
+%%DATADIR%%/bin/UI/Content/165-1ae205f1cf0b0d1cc9e7.css
+%%DATADIR%%/bin/UI/Content/165-1ae205f1cf0b0d1cc9e7.css.map
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.ttf
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.woff
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.woff2
@@ -470,8 +472,6 @@
 %%DATADIR%%/bin/UI/Content/Fonts/UbuntuMono-Regular.ttf
 %%DATADIR%%/bin/UI/Content/Fonts/UbuntuMono-Regular.woff
 %%DATADIR%%/bin/UI/Content/Fonts/fonts.css
-%%DATADIR%%/bin/UI/Content/Fonts/text-security-disc.ttf
-%%DATADIR%%/bin/UI/Content/Fonts/text-security-disc.woff
 %%DATADIR%%/bin/UI/Content/Images/404.png
 %%DATADIR%%/bin/UI/Content/Images/Icons/android-chrome-192x192.png
 %%DATADIR%%/bin/UI/Content/Images/Icons/android-chrome-512x512.png
@@ -497,8 +497,8 @@
 %%DATADIR%%/bin/UI/Content/robots.txt
 %%DATADIR%%/bin/UI/Content/styles.css
 %%DATADIR%%/bin/UI/Content/styles.css.map
-%%DATADIR%%/bin/UI/index-4d03d2a3ba7e92c26e75.js
-%%DATADIR%%/bin/UI/index-4d03d2a3ba7e92c26e75.js.map
+%%DATADIR%%/bin/UI/index-5556f0e55db8a42bcc98.js
+%%DATADIR%%/bin/UI/index-5556f0e55db8a42bcc98.js.map
 %%DATADIR%%/bin/UI/index.html
 %%DATADIR%%/bin/UI/login.html
 %%DATADIR%%/bin/UI/oauth.html

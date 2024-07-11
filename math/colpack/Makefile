@@ -12,6 +12,8 @@ WWW=		https://github.com/CSCsw/ColPack
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_13_armv7=	compilation fails: error: expected identifier before '__is_convertible'
+
 USES=		cmake
 USE_LDCONFIG=	yes
 

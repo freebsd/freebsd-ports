@@ -1,23 +1,19 @@
---- Makefile.in.orig	2019-11-12 21:07:28.232238000 +0100
-+++ Makefile.in	2019-11-12 21:08:46.707676000 +0100
-@@ -330,7 +330,7 @@
+--- Makefile.in.orig	2024-05-31 11:23:25 UTC
++++ Makefile.in
+@@ -345,7 +345,7 @@ datarootdir = @datarootdir@
  builddir = @builddir@
  datadir = @datadir@
  datarootdir = @datarootdir@
--docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
-+docdir = $(datadir)/doc/$(PACKAGE)
+-docdir = $(datarootdir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datarootdir)/doc/$(PACKAGE)
  dvidir = @dvidir@
  exec_prefix = @exec_prefix@
  host = @host@
-@@ -366,10 +366,8 @@
+@@ -382,7 +382,6 @@ doc_DATA = \
  pkgconfig_DATA = $(PACKAGE)-$(API).pc
  doc_DATA = \
  	AUTHORS \
 -	COPYING \
  	NEWS \
--	README \
--	THANKS
-+	README
- 
- RPMBUILD = rpmbuild
- M4_MACROS = \
+ 	README \
+ 	THANKS

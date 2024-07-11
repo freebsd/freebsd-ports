@@ -1,6 +1,6 @@
 PORTNAME=	iqtree
-DISTVERSIONPREFIX=	v.
-DISTVERSION=	2.3.4
+DISTVERSIONPREFIX=	v
+DISTVERSION =	2.3.5
 CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -17,11 +17,10 @@ BROKEN_i386=	ld: error: unable to find library -latomic (see bug 230888)
 BROKEN_powerpc64=	fails to build: GCC version must be at least 4.8!
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
-
 USES=		cmake eigen:3
 USE_GITHUB=	yes
 GH_PROJECT=	iqtree2
-GH_TUPLE=	tothuhien:lsd2:26ba127:iqtree2/lsd2
+GH_TUPLE=	tothuhien:lsd2:125720d9da1281642053713d9b094d5bff2ce9cf:tothuhien/lsd2
 
 PLIST_FILES=	bin/iqtree
 PORTEXAMPLES=	custom_distributions.txt example.cf example.nex example.phy \

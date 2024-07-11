@@ -1,6 +1,6 @@
 PORTNAME=	lightgbm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.0
+DISTVERSION=	4.4.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,6 +33,6 @@ CMAKE_ARGS+=	-DUSE_OPENMP:BOOL=OFF
 post-test:
 	@${WRKSRC}/testlightgbm
 
-# tests fail to compile, see https://github.com/microsoft/LightGBM/issues/5976
+# tests fail to open the file examples/binary_classification/binary.test, see https://github.com/microsoft/LightGBM/issues/6486
 
 .include <bsd.port.mk>

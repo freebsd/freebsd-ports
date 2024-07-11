@@ -11,6 +11,8 @@ WWW=		https://mathema.tician.de/software/tagpy
 
 LICENSE=	MIT
 
+BROKEN=		does not build with audio/taglib 2.x
+
 LIB_DEPENDS=	${PY_BOOST} \
 		libtag.so:audio/taglib
 

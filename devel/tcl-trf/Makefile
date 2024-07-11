@@ -48,7 +48,7 @@ PLIST_SUB+=	TCL_DVER=${TCL_VER:C/\.//} VER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 150
+.if ${COMPILER_TYPE} == "clang"
 CFLAGS+=	-Wno-deprecated-non-prototype
 .endif
 

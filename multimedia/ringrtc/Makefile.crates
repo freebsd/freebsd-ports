@@ -57,6 +57,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		core-foundation-sys-0.8.6 \
 		cpufeatures-0.2.12 \
 		crc32fast-1.4.0 \
+		crossbeam-deque-0.8.5 \
+		crossbeam-epoch-0.9.18 \
+		crossbeam-utils-0.8.20 \
 		crypto-common-0.1.6 \
 		crypto-mac-0.11.0 \
 		ctr-0.9.2 \
@@ -102,7 +105,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		getrandom-0.2.12 \
 		ghash-0.5.1 \
 		gimli-0.28.1 \
-		h2-0.3.25 \
+		h2-0.3.26 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.3 \
 		heck-0.4.1 \
@@ -176,7 +179,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.30 \
-		platforms-3.3.0 \
 		plotly-0.8.4 \
 		plotly_derive-0.8.4 \
 		plotly_kaleido-0.8.4 \
@@ -196,6 +198,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
+		rayon-1.10.0 \
+		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.4 \
 		regex-1.10.4 \
@@ -206,7 +210,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc-demangle-0.1.23 \
 		rustc_version-0.4.0 \
 		rustix-0.38.32 \
-		rustls-0.22.3 \
+		rustls-0.22.4 \
 		rustls-pki-types-1.4.0 \
 		rustls-webpki-0.102.2 \
 		rustversion-1.0.14 \
@@ -328,5 +332,5 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		zeroize-1.7.0 \
 		zeroize_derive-1.4.2 \
 		zip-0.5.13 \
-		libsignal-core,poksho,signal-crypto,zkcredential,zkgroup@git+https://github.com/signalapp/libsignal?tag=v0.37.0\#d47f96abff97d19a0b125376737655c268dd20b9 \
-		curve25519-dalek,curve25519-dalek-derive@git+https://github.com/signalapp/curve25519-dalek?tag=signal-curve25519-4.1.1\#a12ab4e58455bb3dc7cd73a0f9f3443507b2854b
+		libsignal-core,poksho,signal-crypto,zkcredential,zkgroup@git+https://github.com/signalapp/libsignal?tag=v0.51.1\#2e2896fc235efa293213dd5f0aff4b1f8528bab2 \
+		curve25519-dalek,curve25519-dalek-derive@git+https://github.com/signalapp/curve25519-dalek?tag=signal-curve25519-4.1.3\#7c6d34756355a3566a704da84dce7b1c039a6572

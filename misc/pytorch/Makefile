@@ -1,6 +1,7 @@
 PORTNAME=	pytorch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.2
+DISTVERSION=	2.3.1
+PORTREVISION=	2
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	${PORTNAME}
@@ -15,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_i386=	compilation fails: error: use of undeclared identifier 'AVX2'
 
 BUILD_DEPENDS=	gmake:devel/gmake \
-		${LOCALBASE}/include/fxdiv.h:devel/fxdiv
+		${LOCALBASE}/include/fxdiv.h:devel/fxdiv \
+		${PY_SETUPTOOLS}
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libblis.so:math/blis \
 		libopenblas.so:math/openblas \
@@ -37,7 +39,8 @@ CMAKE_ARGS=	-DPSIMD_SOURCE_DIR=${WRKSRC}/third_party/psimd \
 		-DPYTHON_EXECUTABLE=${PYTHON_CMD}
 
 MAKE_ENV=	USE_NINJA=no # ninja breaks for some reason
-LDFLAGS+=	-lexecinfo
+LDFLAGS+=	-lexecinfo \
+		-pthread
 
 BINARY_ALIAS=	make=${GMAKE} git=true
 
@@ -48,8 +51,9 @@ OPTIONS_SUB=		yes
 PYTHON_CMAKE_BOOL=	BUILD_PYTHON
 PYTHON_PY_DEPENDS=	${PYNUMPY} \
 			${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
 PYTHON_BUILD_DEPENDS=	${PYTHON_PY_DEPENDS} \
+			${PY_SETUPTOOLS} \
 			pybind11>0:devel/pybind11
 PYTHON_RUN_DEPENDS=	${PYTHON_PY_DEPENDS}
 

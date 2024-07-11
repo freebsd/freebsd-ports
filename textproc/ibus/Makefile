@@ -98,10 +98,6 @@ EMOJIONE_TAG=		ba845a7e24aac26cf3cf22abc19bea215d94fbf3 # 2.2.7
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 46
-USE_GCC=	yes
-.endif
-
 .if ${PORT_OPTIONS:MENGINE} || ${PORT_OPTIONS:MGTK3} || ${PORT_OPTIONS:MDCONF}
 PLIST_SUB+=	COMPDIR=""
 .else

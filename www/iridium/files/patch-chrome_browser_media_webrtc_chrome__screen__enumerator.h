@@ -1,6 +1,6 @@
---- chrome/browser/media/webrtc/chrome_screen_enumerator.h.orig	2023-03-13 07:33:08 UTC
+--- chrome/browser/media/webrtc/chrome_screen_enumerator.h.orig	2024-06-25 12:08:48 UTC
 +++ chrome/browser/media/webrtc/chrome_screen_enumerator.h
-@@ -21,7 +21,7 @@ namespace aura {
+@@ -20,7 +20,7 @@ namespace aura {
  class Window;
  }
  
@@ -10,9 +10,9 @@
  class DesktopCapturer;
  }
 @@ -42,7 +42,7 @@ class ChromeScreenEnumerator : public media::ScreenEnu
- 
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-   static void SetRootWindowsForTesting(std::vector<aura::Window*> root_windows);
+   static void SetRootWindowsForTesting(
+       std::vector<raw_ptr<aura::Window, VectorExperimental>> root_windows);
 -#elif BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    static void SetDesktopCapturerForTesting(

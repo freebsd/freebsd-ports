@@ -25,6 +25,7 @@ share/locale/et/LC_MESSAGES/ksystemstats_plugins.mo
 share/locale/eu/LC_MESSAGES/ksystemstats_plugins.mo
 share/locale/fi/LC_MESSAGES/ksystemstats_plugins.mo
 share/locale/fr/LC_MESSAGES/ksystemstats_plugins.mo
+share/locale/he/LC_MESSAGES/ksystemstats_plugins.mo
 share/locale/hu/LC_MESSAGES/ksystemstats_plugins.mo
 share/locale/ia/LC_MESSAGES/ksystemstats_plugins.mo
 share/locale/id/LC_MESSAGES/ksystemstats_plugins.mo
@@ -44,6 +45,7 @@ share/locale/ru/LC_MESSAGES/ksystemstats_plugins.mo
 share/locale/sk/LC_MESSAGES/ksystemstats_plugins.mo
 share/locale/sl/LC_MESSAGES/ksystemstats_plugins.mo
 share/locale/sv/LC_MESSAGES/ksystemstats_plugins.mo
+share/locale/ta/LC_MESSAGES/ksystemstats_plugins.mo
 share/locale/tr/LC_MESSAGES/ksystemstats_plugins.mo
 share/locale/uk/LC_MESSAGES/ksystemstats_plugins.mo
 share/locale/vi/LC_MESSAGES/ksystemstats_plugins.mo

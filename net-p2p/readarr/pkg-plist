@@ -272,6 +272,7 @@
 %%DATADIR%%/bin/ServiceUninstall
 %%DATADIR%%/bin/SixLabors.Fonts.dll
 %%DATADIR%%/bin/SixLabors.ImageSharp.dll
+%%DATADIR%%/bin/Swashbuckle.AspNetCore.Annotations.dll
 %%DATADIR%%/bin/Swashbuckle.AspNetCore.Swagger.dll
 %%DATADIR%%/bin/Swashbuckle.AspNetCore.SwaggerGen.dll
 %%DATADIR%%/bin/System.AppContext.dll
@@ -447,13 +448,13 @@
 %%DATADIR%%/bin/System.Xml.dll
 %%DATADIR%%/bin/System.dll
 %%DATADIR%%/bin/TagLibSharp.dll
-%%DATADIR%%/bin/UI/571-3e6165956a0c26d8c3d3.js
-%%DATADIR%%/bin/UI/571-3e6165956a0c26d8c3d3.js.map
 %%DATADIR%%/bin/UI/607-678d3c964d6dffc74c37.js
 %%DATADIR%%/bin/UI/607-678d3c964d6dffc74c37.js.LICENSE.txt
 %%DATADIR%%/bin/UI/607-678d3c964d6dffc74c37.js.map
-%%DATADIR%%/bin/UI/Content/571-ddc43e12b3e6eff7260c.css
-%%DATADIR%%/bin/UI/Content/571-ddc43e12b3e6eff7260c.css.map
+%%DATADIR%%/bin/UI/84-96a1cec7cc8f253c3d1d.js
+%%DATADIR%%/bin/UI/84-96a1cec7cc8f253c3d1d.js.map
+%%DATADIR%%/bin/UI/Content/84-46fa18d6f0645c8a854d.css
+%%DATADIR%%/bin/UI/Content/84-46fa18d6f0645c8a854d.css.map
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.ttf
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.woff
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.woff2
@@ -494,8 +495,8 @@
 %%DATADIR%%/bin/UI/Content/robots.txt
 %%DATADIR%%/bin/UI/Content/styles.css
 %%DATADIR%%/bin/UI/Content/styles.css.map
-%%DATADIR%%/bin/UI/index-8e378cf81669dfd916f4.js
-%%DATADIR%%/bin/UI/index-8e378cf81669dfd916f4.js.map
+%%DATADIR%%/bin/UI/index-65db769df340cb1f2a26.js
+%%DATADIR%%/bin/UI/index-65db769df340cb1f2a26.js.map
 %%DATADIR%%/bin/UI/index.html
 %%DATADIR%%/bin/UI/login.html
 %%DATADIR%%/bin/UI/oauth.html

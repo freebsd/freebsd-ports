@@ -1,8 +1,8 @@
---- components/viz/service/display_embedder/software_output_surface.cc.orig	2024-02-25 20:22:18 UTC
+--- components/viz/service/display_embedder/software_output_surface.cc.orig	2024-06-22 08:49:42 UTC
 +++ components/viz/service/display_embedder/software_output_surface.cc
 @@ -124,7 +124,7 @@ void SoftwareOutputSurface::SwapBuffersCallback(base::
        now.SnappedToNextTick(refresh_timebase_, refresh_interval_) - now;
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
@@ -11,7 +11,7 @@
  #endif
 @@ -153,7 +153,7 @@ gfx::OverlayTransform SoftwareOutputSurface::GetDispla
  
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)

@@ -1,4 +1,4 @@
---- content/utility/utility_main.cc.orig	2024-05-23 20:04:36 UTC
+--- content/utility/utility_main.cc.orig	2024-06-22 08:49:42 UTC
 +++ content/utility/utility_main.cc
 @@ -38,17 +38,21 @@
  #include "third_party/icu/source/common/unicode/unistr.h"
@@ -78,8 +78,8 @@
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_WIN)
-@@ -251,7 +262,8 @@ int UtilityMain(MainFunctionParams parameters) {
-     }
+@@ -250,7 +261,8 @@ int UtilityMain(MainFunctionParams parameters) {
+     CHECK(on_device_model::OnDeviceModelService::PreSandboxInit());
    }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -88,7 +88,7 @@
    // Thread type delegate of the process should be registered before first
    // thread type change in ChildProcess constructor. It also needs to be
    // registered before the process has multiple threads, which may race with
-@@ -263,7 +275,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -262,7 +274,7 @@ int UtilityMain(MainFunctionParams parameters) {
    }
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
@@ -97,7 +97,7 @@
    // Initializes the sandbox before any threads are created.
    // TODO(jorgelo): move this after GTK initialization when we enable a strict
    // Seccomp-BPF policy.
-@@ -301,7 +313,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -300,7 +312,7 @@ int UtilityMain(MainFunctionParams parameters) {
                               screen_ai::GetBinaryPathSwitch()));
        break;
  #endif
@@ -106,7 +106,7 @@
      case sandbox::mojom::Sandbox::kHardwareVideoDecoding:
        pre_sandbox_hook =
            base::BindOnce(&media::HardwareVideoDecodingPreSandboxHook);
-@@ -328,6 +340,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -327,6 +339,7 @@ int UtilityMain(MainFunctionParams parameters) {
      default:
        break;
    }
@@ -114,7 +114,7 @@
    if (!sandbox::policy::IsUnsandboxedSandboxType(sandbox_type) &&
        (parameters.zygote_child || !pre_sandbox_hook.is_null())) {
      sandbox_options.use_amd_specific_policies =
-@@ -335,6 +348,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -334,6 +347,11 @@ int UtilityMain(MainFunctionParams parameters) {
      sandbox::policy::Sandbox::Initialize(
          sandbox_type, std::move(pre_sandbox_hook), sandbox_options);
    }

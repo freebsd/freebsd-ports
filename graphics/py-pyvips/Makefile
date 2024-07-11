@@ -24,12 +24,6 @@ USES=		gnome python
 USE_GNOME=	glib20
 USE_PYTHON=	autoplist concurrent pep517
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ((${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000) || ${OSVERSION} >= 1400091)
-CFLAGS+=	-Wno-error=incompatible-function-pointer-types
-.endif
-
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 

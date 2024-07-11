@@ -1,29 +1,23 @@
 PORTNAME=	authres
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Python module for RFC 5451 Authentication-Results headers
-WWW=		https://launchpad.net/authentication-results-python/
+WWW=		https://launchpad.net/authentication-results-python
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
-
-PLIST_SUB=	PORTNAME=${PORTNAME}
-
-PORTDOCS=	CHANGES README
-
-OPTIONS_DEFINE=	DOCS
-
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

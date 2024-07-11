@@ -1,5 +1,6 @@
 PORTNAME=	dtfabric
 PORTVERSION=	20230520
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/libyal/dtfabric/releases/download/${PORTVERSION}/
@@ -12,7 +13,7 @@ WWW=		https://github.com/libyal/dtfabric
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

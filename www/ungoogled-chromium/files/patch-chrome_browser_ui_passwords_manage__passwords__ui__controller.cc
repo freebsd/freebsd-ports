@@ -1,4 +1,4 @@
---- chrome/browser/ui/passwords/manage_passwords_ui_controller.cc.orig	2024-05-23 20:04:36 UTC
+--- chrome/browser/ui/passwords/manage_passwords_ui_controller.cc.orig	2024-06-22 08:49:42 UTC
 +++ chrome/browser/ui/passwords/manage_passwords_ui_controller.cc
 @@ -92,7 +92,7 @@ int ManagePasswordsUIController::save_fallback_timeout
  
@@ -9,7 +9,7 @@
  // Should be kept in sync with constant declared in
  // bubble_controllers/relaunch_chrome_bubble_controller.cc.
  constexpr int kMaxNumberOfTimesKeychainErrorBubbleIsShown = 3;
-@@ -481,7 +481,7 @@ void ManagePasswordsUIController::OnBiometricAuthBefor
+@@ -475,7 +475,7 @@ void ManagePasswordsUIController::OnBiometricAuthBefor
  }
  
  void ManagePasswordsUIController::OnKeychainError() {

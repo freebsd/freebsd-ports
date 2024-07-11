@@ -1,5 +1,0 @@
-TIMESTAMP = 1706918873
-SHA256 (go/sysutils_ipfs-go/ipfs-v0.26.0/v0.26.0.mod) = 93aa3aa155466dd5d68e1898c79eb9715f501de663fb20197e9995b8863280a6
-SIZE (go/sysutils_ipfs-go/ipfs-v0.26.0/v0.26.0.mod) = 12260
-SHA256 (go/sysutils_ipfs-go/ipfs-v0.26.0/v0.26.0.zip) = 0880f8c0dd2b2efeef748cdf5cc8084631016662cb5339f7c1973146cbed2dd2
-SIZE (go/sysutils_ipfs-go/ipfs-v0.26.0/v0.26.0.zip) = 4136356

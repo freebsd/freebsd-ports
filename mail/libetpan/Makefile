@@ -1,5 +1,6 @@
 PORTNAME=	libetpan
 PORTVERSION=	1.9.4
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	sunpoet@FreeBSD.org

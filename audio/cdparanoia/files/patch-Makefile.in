@@ -1,4 +1,4 @@
---- Makefile.in.orig	2001-03-27 22:46:58 UTC
+--- Makefile.in.orig	2019-07-25 21:55:03 UTC
 +++ Makefile.in
 @@ -8,7 +8,7 @@ VPATH=@srcdir@
  srcdir=@srcdir@
@@ -7,23 +7,23 @@
 -FLAGS=@TYPESIZES@ @CFLAGS@
 +FLAGS=@TYPESIZES@ @CPPFLAGS@ @CFLAGS@ -I./interface
  OPT=@OPT@ $(FLAGS)
- DEBUG=@DEBUG@ $(FLAGS)
+ DEBUG=@DEBUG@
  CC=@CC@
 @@ -32,7 +32,7 @@ export VERSION
  
  ifeq ($(STATIC),TRUE)
  	LIBS = interface/libcdda_interface.a paranoia/libcdda_paranoia.a \
--		-static -lm
-+		-lm -lcam
+-		-static -lm -lrt
++		-lm -lrt -lcam
  	LIBDEP = interface/libcdda_interface.a paranoia/libcdda_paranoia.a
  else
- 	LIBS = -lcdda_interface -lcdda_paranoia -lm
-@@ -64,28 +64,27 @@ slib:
+ 	LIBS = -lcdda_interface -lcdda_paranoia -lm -lrt
+@@ -63,28 +63,27 @@ slib:
  	cd paranoia && $(MAKE) slib
  
  install:
 -	$(INSTALL) -d -m 0755 $(BINDIR)
--	$(INSTALL) -m 0755 $(srcdir)/cdparanoia $(BINDIR)
+-	$(INSTALL) -m 755 $(srcdir)/cdparanoia $(BINDIR)
 -	$(INSTALL) -d -m 0755 $(MANDIR)
 -	$(INSTALL) -d -m 0755 $(MANDIR)/man1
 -	$(INSTALL) -m 0644 $(srcdir)/cdparanoia.1 $(MANDIR)/man1
@@ -37,17 +37,17 @@
 -	$(INSTALL) -m 0644 $(srcdir)/interface/libcdda_interface.a $(LIBDIR)
 -	$(INSTALL) -m 0644 $(srcdir)/utils.h $(INCLUDEDIR)
 +	$(INSTALL) -d -m 0755 $(DESTDIR)$(BINDIR)
-+	$(INSTALL) -m 0755 $(srcdir)/cdparanoia $(DESTDIR)$(BINDIR)
++	$(BSD_INSTALL_PROGRAM) $(srcdir)/cdparanoia $(DESTDIR)$(BINDIR)
 +	$(INSTALL) -d -m 0755 $(DESTDIR)$(MANDIR)
 +	$(INSTALL) -d -m 0755 $(DESTDIR)$(MANDIR)/man1
 +	$(INSTALL) -m 0644 $(srcdir)/cdparanoia.1 $(DESTDIR)$(MANDIR)/man1
 +	$(INSTALL) -d -m 0755 $(DESTDIR)$(INCLUDEDIR)
 +	$(INSTALL) -m 0644 $(srcdir)/paranoia/cdda_paranoia.h $(DESTDIR)$(INCLUDEDIR)
 +	$(INSTALL) -d -m 0755 $(DESTDIR)$(LIBDIR)
-+	$(INSTALL) -m 0644 $(srcdir)/paranoia/libcdda_paranoia.so.0.$(VERSION) $(DESTDIR)$(LIBDIR)
++	$(BSD_INSTALL_LIB) $(srcdir)/paranoia/libcdda_paranoia.so.0.$(VERSION) $(DESTDIR)$(LIBDIR)
 +	$(INSTALL) -m 0644 $(srcdir)/paranoia/libcdda_paranoia.a $(DESTDIR)$(LIBDIR)
 +	$(INSTALL) -m 0644 $(srcdir)/interface/cdda_interface.h $(DESTDIR)$(INCLUDEDIR)
-+	$(INSTALL) -m 0644 $(srcdir)/interface/libcdda_interface.so.0.$(VERSION) $(DESTDIR)$(LIBDIR)
++	$(BSD_INSTALL_LIB) $(srcdir)/interface/libcdda_interface.so.0.$(VERSION) $(DESTDIR)$(LIBDIR)
 +	$(INSTALL) -m 0644 $(srcdir)/interface/libcdda_interface.a $(DESTDIR)$(LIBDIR)
  	ln -fs libcdda_interface.so.0.$(VERSION) \
 -		$(LIBDIR)/libcdda_interface.so.0

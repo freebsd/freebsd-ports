@@ -1,10 +1,10 @@
-TIMESTAMP = 1716122329
-SHA256 (ricardobranco777-xhash-v3.3.3_GH0.tar.gz) = 922f1d6f05a4f267e7343450a1a57a7e260d7ea2e726d164532d1d039253be6a
-SIZE (ricardobranco777-xhash-v3.3.3_GH0.tar.gz) = 14963
-SHA256 (golang-crypto-v0.23.0_GH0.tar.gz) = e6cfbf5f44d6b89b748c87fdbabd04c9634c5b825e39032a69854c300be9fb43
-SIZE (golang-crypto-v0.23.0_GH0.tar.gz) = 1813872
-SHA256 (golang-sys-v0.20.0_GH0.tar.gz) = eb2569cab8d7a92ce3afa9119538b61fc03d575c01f1548ec1e152c330ac591d
-SIZE (golang-sys-v0.20.0_GH0.tar.gz) = 1494604
+TIMESTAMP = 1718651667
+SHA256 (ricardobranco777-xhash-v3.4.4_GH0.tar.gz) = 7d8603b2e76d5134b36ffd3666875f12699cbc47c4d60edf23df445b2d64fc1b
+SIZE (ricardobranco777-xhash-v3.4.4_GH0.tar.gz) = 15208
+SHA256 (golang-crypto-v0.24.0_GH0.tar.gz) = 6032a7ed675de75fe10238d0aa19f36a05268b2cd51473834d997b4b282cbf46
+SIZE (golang-crypto-v0.24.0_GH0.tar.gz) = 1814689
+SHA256 (golang-sys-v0.21.0_GH0.tar.gz) = 06e5676d2c61345151e302c7138dd1282ce8ea3c5a6a5a03b7cb66a16c66dc22
+SIZE (golang-sys-v0.21.0_GH0.tar.gz) = 1495683
 SHA256 (klauspost-cpuid-v2.0.12_GH0.tar.gz) = ac723eecde24ff08a2fa4b3989b602ab2ecd607f132845b66c26aae896f7130a
 SIZE (klauspost-cpuid-v2.0.12_GH0.tar.gz) = 343262
 SHA256 (spf13-pflag-v1.0.5_GH0.tar.gz) = 9a2cae1f8e8ab0d2cc8ebe468e871af28d9ac0962cf0520999e3ba85f0c7b808

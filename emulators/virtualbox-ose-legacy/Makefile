@@ -1,11 +1,14 @@
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.2.44
-PORTREVISION?=	17
+PORTREVISION?=	20
 CATEGORIES=	emulators
-MASTER_SITES=	https://download.oracle.com/virtualbox/${PORTVERSION}/
+MASTER_SITES=	https://download.oracle.com/virtualbox/${PORTVERSION}/:src \
+		LOCAL/bofh/emulators/virtualbox-ose-legacy:docs
 PKGNAMESUFFIX?=	-legacy
-DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
-EXTRACT_ONLY=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX}:src \
+		VirtualBox-docs-${PORTVERSION}${EXTRACT_SUFX}:docs
+EXTRACT_ONLY=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} \
+		VirtualBox-docs-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	General-purpose full virtualizer for x86 hardware
@@ -33,7 +36,7 @@ CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-java --passive-mesa
+CONFIGURE_ARGS=	--disable-java --passive-mesa --disable-docs
 CONFIGURE_ARGS+=	--with-gcc="${CC}" --with-g++="${CXX}"
 
 CONFLICTS_INSTALL=	virtualbox-ose-additions-* \
@@ -80,12 +83,6 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 DBUS_CONFIGURE_OFF=	--disable-dbus
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DEBUG_CONFIGURE_ON=	--build-debug
-DOCS_USES=		tex
-DOCS_USE=		TEX=dvipsk:build,formats:build
-DOCS_BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.4/docbookx.dtd:textproc/docbook-xml
-DOCS_CONFIGURE_OFF=	--disable-docs
-DOCS_VARS=		dbkxmldir=${LOCALBASE}/share/xml/docbook/4.4 \
-			dbkxsldir=${LOCALBASE}/share/xsl/docbook
 NLS_IMPLIES=		QT5
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
@@ -112,9 +109,6 @@ WEBSERVICE_BUILD_DEPENDS=	soapcpp2:devel/gsoap
 X11_USES=		sdl xorg
 X11_USE=		SDL=sdl XORG=x11,xcursor,xext,xinerama,xmu,xorgproto,xt
 X11_CONFIGURE_OFF=	--build-headless
-
-ENV=
-.export ENV
 
 PLIST_SUB=	GUEST_VER=${PORTVERSION} \
 		PYTHON_VERU=${PYTHON_VER:S/./_/}${PYTHON_ABIVER} \
@@ -147,6 +141,7 @@ KMK_BUILDTYPE=	release
 
 .if ${PORT_OPTIONS:MGUESTADDITIONS}
 GUESTADDITIONS=	VBoxGuestAdditions_${PORTVERSION}.iso
+DISTFILES+=	${GUESTADDITIONS}:src
 LICENSE+=	Additions
 LICENSE_COMB=	multi
 LICENSE_NAME_Additions=	Guest Additions
@@ -164,7 +159,7 @@ PLIST_SUB+=	QT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MWEBSERVICE}
-USE_RC_SUBR+=	vboxwebsrv
+USE_RC_SUBR+=	vboxinit vboxwebsrv
 VBOX_LINKS+=	vboxwebsrv
 VBOX_UTILS+=	vboxwebsrv webtest
 .endif
@@ -196,11 +191,10 @@ KMK_FLAGS+=	-j${MAKE_JOBS_NUMBER}
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && \
-    (${OSVERSION} < 1302505 || (${OSVERSION} >= 1400000 && ${OSVERSION} < 1400079) || \
-    ${OSVERSION} >= 1400091)
-# llvm 13, 14 and 16 included in FreeBSD fails to compile this legacy version of
-# virtualbox-ose, force llvm 15 on all versions of the FreeBSD except lastest 13
-# and several versions of 14 where the llvm 15 is included: PR#265539.
+    ${OSVERSION} >= 1400000 && ${OSVERSION} < 1400079
+# llvm before 15 included in old versions of the FreeBSD 13 and 14 fails to compile
+# this legacy version of virtualbox-ose, force llvm 15 on those versions of the
+# FreeBSD: PR#265539, 279257.
 # Keep possibility to define different llvm via VBOX_LLVM_VER in make.conf.
 BUILD_DEPENDS+=	clang${VBOX_LLVM_VER}:devel/llvm${VBOX_LLVM_VER}
 CC=		clang${VBOX_LLVM_VER}
@@ -278,10 +272,15 @@ post-patch:
 	    ${WRKSRC}/LocalConfig.kmk
 	@${ECHO_CMD} 'VBOX_PATH_GSOAP_IMPORT = ${PREFIX}/share/gsoap/import' >> \
 	    ${WRKSRC}/LocalConfig.kmk
-	@${ECHO_CMD} 'VBOX_GCC_PEDANTIC_CXX = -Wshadow $$(VBOX_GCC_WARN) -Wno-long-long' >> \
+	@${ECHO_CMD} 'VBOX_GCC_PEDANTIC_CXX = -Wshadow $$(VBOX_GCC_WARN) -Wno-long-long \
+		-Wno-dynamic-exception-spec -D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION' >> \
 	    ${WRKSRC}/LocalConfig.kmk
 	@${REINPLACE_CMD} -E -e '/soap_socket_errno\(/s/(soap_socket_errno)(\([^)]+\))/\1/' \
 		${WRKSRC}/src/VBox/Main/webservice/vboxweb.cpp
+.else
+	@${ECHO_CMD} 'VBOX_GCC_PEDANTIC_CXX = -Wno-dynamic-exception-spec \
+		-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION' >> \
+	    ${WRKSRC}/LocalConfig.kmk
 .endif
 	@${REINPLACE_CMD} -e 's| -finline-limit=8000||' \
 	    -e 's| -mpreferred-stack-boundary=2||' \
@@ -307,6 +306,9 @@ post-patch:
 	    ${WRKSRC}/src/VBox/Runtime/Makefile.kmk
 	@${ECHO_CMD} 'VBOX_ICONV_DEFS = LIBICONV_PLUG' >> ${WRKSRC}/LocalConfig.kmk
 .endif
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && ${ARCH} == i386
+	@${ECHO_CMD} 'VBOX_FREEBSD = -fPIC' >> ${WRKSRC}/LocalConfig.kmk
+.endif
 	@${REINPLACE_CMD} -e 's|%%VBOX_DIR%%|${VBOX_DIR}|g' \
 	    -e 's|%%VBOX_ETC%%|${VBOX_ETC}|g' \
 	    -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
@@ -314,6 +316,10 @@ post-patch:
 	@${REINPLACE_CMD} \
 	    -e 's|^versions =.*|versions = ["${PYTHON_VER}${PYTHON_ABIVER}"]|' \
 	    ${WRKSRC}/src/libs/xpcom18a4/python/gen_python_deps.py
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400093
+	@${REINPLACE_CMD} -e 's|enum vtype|enum enum_vtype_uint8|g' \
+	    ${WRKSRC}/src/VBox/Additions/freebsd/vboxvfs/vboxvfs*.[ch]
+.endif
 
 do-build:
 	cd ${WRKSRC} && ${SH} -c '. ${WRKSRC}/env.sh && \
@@ -363,7 +369,7 @@ do-install:
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${KMK_BUILDDIR}/bin/UserManual*.pdf \
+	${INSTALL_DATA} ${WRKDIR}/VirtualBox-docs-${PORTVERSION}/UserManual.pdf \
 	    ${STAGEDIR}${DOCSDIR}
 .endif
 

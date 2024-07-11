@@ -78,6 +78,7 @@ include/proxygen/lib/http/ProxygenErrorEnum.h
 include/proxygen/lib/http/RFC2616.h
 include/proxygen/lib/http/StatusTypeEnum.h
 include/proxygen/lib/http/SynchronizedLruQuicPskCache.h
+include/proxygen/lib/http/Types.h
 include/proxygen/lib/http/Window.h
 include/proxygen/lib/http/codec/CodecDictionaries.h
 include/proxygen/lib/http/codec/CodecProtocol.h

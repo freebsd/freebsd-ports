@@ -1,15 +1,24 @@
---- seg009.c.orig	2021-07-06 13:10:16 UTC
+--- seg009.c.orig	2023-02-04 09:43:22 UTC
 +++ seg009.c
-@@ -343,7 +343,7 @@ static FILE* open_dat_from_root_or_data_dir(const char
+@@ -340,7 +340,7 @@ static FILE* open_dat_from_root_or_data_dir(const char
  	// if failed, try if the DAT file can be opened in the data/ directory, instead of the main folder
  	if (fp == NULL) {
  		char data_path[POP_MAX_PATH];
 -		snprintf_check(data_path, sizeof(data_path), "data/%s", filename);
 +		snprintf_check(data_path, sizeof(data_path), "%%DATADIR%%/%s", filename);
  
-         if (!file_exists(data_path)) {
-             find_exe_dir();
-@@ -2078,7 +2078,7 @@ const int sound_channel = 0;
+ 		if (!file_exists(data_path)) {
+ 			find_exe_dir();
+@@ -411,7 +411,7 @@ dat_type* open_dat(const char* filename, int optional)
+ 			filename_no_ext[len-4] = '\0'; // terminate, so ".DAT" is deleted from the filename
+ 		}
+ 		char foldername[POP_MAX_PATH];
+-		snprintf_check(foldername,sizeof(foldername),"data/%s",filename_no_ext);
++		snprintf_check(foldername,sizeof(foldername),"%%DATADIR%%/%s",filename_no_ext);
+ 		const char* data_path = locate_file(foldername);
+ 		struct stat path_stat;
+ 		int result = stat(data_path, &path_stat);
+@@ -2120,7 +2120,7 @@ void load_sound_names() {
  const int max_sound_id = 58;
  
  void load_sound_names() {
@@ -18,7 +27,7 @@
  	if (sound_names != NULL) return;
  	FILE* fp = fopen(names_path,"rt");
  	if (fp==NULL) return;
-@@ -2128,7 +2128,7 @@ sound_buffer_type* load_sound(int index) {
+@@ -2170,7 +2170,7 @@ sound_buffer_type* load_sound(int index) {
  					fp = fopen(filename, "rb");
  				}
  				if (fp == NULL && !skip_normal_data_files) {
@@ -27,7 +36,7 @@
  					fp = fopen(locate_file(filename), "rb");
  				}
  				if (fp == NULL) {
-@@ -2495,7 +2495,7 @@ void __pascal far set_gr_mode(byte grmode) {
+@@ -2546,7 +2546,7 @@ void set_gr_mode(byte grmode) {
  #endif
  	}
  
@@ -36,7 +45,7 @@
  	if (icon == NULL) {
  		sdlperror("set_gr_mode: Could not load icon");
  	} else {
-@@ -2754,7 +2754,7 @@ void load_from_opendats_metadata(int resource_id, cons
+@@ -2814,7 +2814,7 @@ void load_from_opendats_metadata(int resource_id, cons
  			if (len >= 5 && filename_no_ext[len-4] == '.') {
  				filename_no_ext[len-4] = '\0'; // terminate, so ".DAT" is deleted from the filename
  			}

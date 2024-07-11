@@ -36,7 +36,7 @@ NLS_CONFIGURE_ENABLE=	nls
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+.if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's|auto_ptr|unique_ptr|' \
 		${WRKSRC}/uilib/ColorCellRenderer.cpp
 .endif

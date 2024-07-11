@@ -1,6 +1,5 @@
 PORTNAME=	ffmpegthumbnailer
-DISTVERSION=	2.2.2.20221021
-PORTREVISION=	2
+DISTVERSION=	2.2.2.20240104
 CATEGORIES=	multimedia graphics
 #MASTER_SITES=	https://github.com/dirkvdb/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 USES=		cmake:testing compiler:c++11-lib gnome jpeg localbase pkgconfig tar:bz2
 USE_GITHUB=	yes
 GH_ACCOUNT=	dirkvdb
-GH_TAGNAME=	e0bf01d
+GH_TAGNAME=	1b5a779
 
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes

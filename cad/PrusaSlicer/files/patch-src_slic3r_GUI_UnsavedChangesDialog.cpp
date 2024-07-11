@@ -1,6 +1,6 @@
---- src/slic3r/GUI/UnsavedChangesDialog.cpp.orig	2023-12-12 14:21:21 UTC
+--- src/slic3r/GUI/UnsavedChangesDialog.cpp.orig	2024-06-27 09:25:47 UTC
 +++ src/slic3r/GUI/UnsavedChangesDialog.cpp
-@@ -31,7 +31,7 @@
+@@ -31,7 +31,7 @@ using boost::optional;
  
  using boost::optional;
  
@@ -9,7 +9,7 @@
  #define wxLinux true
  #else
  #define wxLinux false
-@@ -115,7 +115,7 @@ ModelNode::ModelNode(ModelNode* parent, const wxString
+@@ -111,7 +111,7 @@ ModelNode::ModelNode(ModelNode* parent, const wxString
      UpdateIcons();
  }
  
@@ -18,7 +18,7 @@
  wxIcon ModelNode::get_bitmap(const wxString& color)
  #else
  wxBitmap ModelNode::get_bitmap(const wxString& color)
-@@ -124,7 +124,7 @@ wxBitmap ModelNode::get_bitmap(const wxString& color)
+@@ -120,7 +120,7 @@ wxBitmap ModelNode::get_bitmap(const wxString& color)
      wxBitmap bmp = get_solid_bmp_bundle(64, 16, into_u8(color))->GetBitmapFor(m_parent_win);
      if (!m_toggle)
          bmp = bmp.ConvertToDisabled();
@@ -27,7 +27,7 @@
      return bmp;
  #else
      wxIcon icon;
-@@ -228,7 +228,7 @@ void ModelNode::UpdateIcons()
+@@ -224,7 +224,7 @@ void ModelNode::UpdateIcons()
      if (!m_toggle)
          bmp = bmp.ConvertToDisabled();
  
@@ -36,7 +36,7 @@
      m_icon.CopyFromBitmap(bmp);
  #else
      m_icon = bmp;
-@@ -380,7 +380,7 @@ void DiffModel::GetValue(wxVariant& variant, const wxD
+@@ -376,7 +376,7 @@ void DiffModel::GetValue(wxVariant& variant, const wxD
      case colToggle:
          variant = node->m_toggle;
          break;
@@ -45,7 +45,7 @@
      case colIconText:
          variant << wxDataViewIconText(node->m_text, node->m_icon);
          break;
-@@ -423,7 +423,7 @@ bool DiffModel::SetValue(const wxVariant& variant, con
+@@ -419,7 +419,7 @@ bool DiffModel::SetValue(const wxVariant& variant, con
      case colToggle:
          node->m_toggle = variant.GetBool();
          return true;
@@ -54,7 +54,7 @@
      case colIconText: {
          wxDataViewIconText data;
          data << variant;
-@@ -628,7 +628,7 @@ DiffViewCtrl::DiffViewCtrl(wxWindow* parent, wxSize si
+@@ -647,7 +647,7 @@ void DiffViewCtrl::AppendBmpTextColumn(const wxString&
  void DiffViewCtrl::AppendBmpTextColumn(const wxString& label, unsigned model_column, int width, bool set_expander/* = false*/)
  {
      m_columns_width.emplace(this->GetColumnCount(), width);

@@ -1,6 +1,6 @@
---- texk/texlive/linked_scripts/latexmk/latexmk.pl.orig	2023-03-20 14:47:33 UTC
+--- texk/texlive/linked_scripts/latexmk/latexmk.pl.orig	2024-02-01 21:05:56 UTC
 +++ texk/texlive/linked_scripts/latexmk/latexmk.pl
-@@ -1107,17 +1107,17 @@ else {
+@@ -1156,17 +1156,17 @@ else {
      #
      # The following works on Solaris, LINUX, HP-UX, IRIX
      # Use -f to get full listing, including command line arguments.
@@ -21,7 +21,7 @@
      }
      else {
         $pscmd = "ps -f"; 
-@@ -1134,7 +1134,7 @@ else {
+@@ -1183,7 +1183,7 @@ else {
          # But (19 Aug 2010), the truncation doesn't happen on RHEL4 and 5,
          #    unless the output is written to a terminal.  So the --width 
          #    option is now unnecessary
@@ -30,7 +30,7 @@
      }
      elsif ( $^O eq "darwin" ) {
          # OS-X on Macintosh
-@@ -1155,7 +1155,7 @@ else {
+@@ -1206,7 +1206,7 @@ else {
          $ps_previewer = $ps_previewer_landscape = 'NONE';
          # Others
          $lpr_pdf  = 'lpr %O %S';

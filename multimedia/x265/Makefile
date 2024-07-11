@@ -1,6 +1,6 @@
 PORTNAME=	x265
 PORTVERSION=	3.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/multicoreware/x265_git/get/${BB_TAG}.tar.gz?meow=/
 
@@ -55,7 +55,8 @@ SVTHEVC_DESC=	HEVC encoding via SVT-HEVC
 VMAF_DESC=	Per frame and aggregate VMAF score
 
 USE_LDCONFIG=	yes
-CMAKE_ARGS=	-DENABLE_TESTS=on -DENABLE_HDR10_PLUS:BOOL=true -DGIT_ARCHETYPE=1
+CMAKE_ARGS=	-DENABLE_TESTS=on -DGIT_ARCHETYPE=1
+CMAKE_ON=	ENABLE_HDR10_PLUS
 LDFLAGS_i386=	-Wl,-znotext
 EXTRACT_AFTER_ARGS+=	--exclude compat --exclude md5\.* --strip-components=1
 PATCH_WRKSRC=	${WRKSRC:H}

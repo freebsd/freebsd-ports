@@ -1,6 +1,6 @@
 PORTNAME=	dnsproxy
 PORTVERSION=	1.17
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	dns
 MASTER_SITES=	http://www.wolfermann.org/
 

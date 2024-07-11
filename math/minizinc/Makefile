@@ -1,6 +1,5 @@
 PORTNAME=	minizinc
-DISTVERSION=	2.8.3
-PORTREVISION=	1
+DISTVERSION=	2.8.5
 CATEGORIES=	math lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +15,6 @@ LIB_DEPENDS=	libCbc.so:math/cbc \
 		libCgl.so:math/cgl \
 		libCoinUtils.so:math/coinutils \
 		libgecodekernel.so:math/gecode \
-		libhighs.so:math/highs \
 		libOsi.so:math/osi \
 		libOsiClp.so:math/clp
 

@@ -1,8 +1,10 @@
 PORTNAME=	certbot-dns-ovh
 PORTVERSION=	${ACME_VERSION}
 CATEGORIES=	security python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/certbot/certbot/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	certbot_dns_ovh-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	OVH DNS Authenticator plugin for Certbot

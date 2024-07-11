@@ -1,10 +1,7 @@
 PORTNAME=	wrapland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.600.0
+DISTVERSION=	0.601.0
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	d4d703bc4676.patch:-p1 # https://github.com/winft/wrapland/pull/92
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Qt/C++ library wrapping libwayland

@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	1
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -372,15 +372,6 @@ CONFIGURE_ARGS+=	--disable-skia
 
 .if ${PORT_OPTIONS:MGTK3} && ${PORT_OPTIONS:MKF5}
 CONFIGURE_ARGS+=	--enable-gtk3-kde5
-.endif
-
-.if ${PORT_OPTIONS:MLTO} && ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 130
-LLVM_DEFAULT=	13
-CPP=	${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
-CC=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}
-CXX=	${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-LLD_UNSAFE=	yes
 .endif
 
 .if ${CHOSEN_COMPILER_TYPE} == clang

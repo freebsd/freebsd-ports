@@ -1,5 +1,5 @@
 PORTNAME=	goland
-PORTVERSION=	2024.1.1
+PORTVERSION=	2024.1.4
 CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/go/
 PKGNAMEPREFIX=	jetbrains-
@@ -30,6 +30,9 @@ USE_JAVA=	yes
 JAVA_VERSION=	17+
 
 DATADIR=	${PREFIX}/share/jetbrains/${PORTNAME}
+
+EXTRACT_AFTER_ARGS+=	--exclude GoLand-*/jbr
+
 NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
@@ -58,7 +61,6 @@ do-install:
 		${WRKSRC}/bin/remote-dev-server.sh \
 		${WRKSRC}/bin/repair \
 		${WRKSRC}/bin/restarter \
-		${WRKSRC}/jbr \
 		${WRKSRC}/lib/async-profiler \
 		${WRKSRC}/lib/jna \
 		${WRKSRC}/lib/native \

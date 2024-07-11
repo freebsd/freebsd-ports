@@ -1,8 +1,8 @@
---- ui/message_center/views/message_popup_view.cc.orig	2023-12-10 06:10:27 UTC
+--- ui/message_center/views/message_popup_view.cc.orig	2024-06-17 12:56:06 UTC
 +++ ui/message_center/views/message_popup_view.cc
 @@ -135,7 +135,7 @@ void MessagePopupView::Show() {
    params.z_order = ui::ZOrderLevel::kFloatingWindow;
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)

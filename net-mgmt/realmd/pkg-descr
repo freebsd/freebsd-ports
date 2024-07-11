@@ -1,0 +1,5 @@
+realmd is an on demand system DBus service, which allows callers to 
+configure network authentication and domain membership in a standard way. 
+
+realmd discovers information about the domain or realm automatically and 
+does not require complicated configuration in order to join a domain or realm.

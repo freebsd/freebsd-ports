@@ -26,6 +26,7 @@ libexec/c-lightning/plugins/clnrest/.github/screenshots/Swagger-rpc-method.png
 libexec/c-lightning/plugins/clnrest/.github/screenshots/Swagger.png
 libexec/c-lightning/plugins/clnrest/Makefile
 libexec/c-lightning/plugins/clnrest/__init__.py
+libexec/c-lightning/plugins/clnrest/clnrest
 libexec/c-lightning/plugins/clnrest/clnrest.py
 libexec/c-lightning/plugins/clnrest/poetry.lock
 libexec/c-lightning/plugins/clnrest/pyproject.toml
@@ -46,6 +47,13 @@ libexec/c-lightning/plugins/spenderp
 libexec/c-lightning/plugins/sql
 libexec/c-lightning/plugins/topology
 libexec/c-lightning/plugins/txprepare
+libexec/c-lightning/plugins/wss-proxy/Makefile
+libexec/c-lightning/plugins/wss-proxy/poetry.lock
+libexec/c-lightning/plugins/wss-proxy/pyproject.toml
+libexec/c-lightning/plugins/wss-proxy/requirements.txt
+libexec/c-lightning/plugins/wss-proxy/wss-proxy
+libexec/c-lightning/plugins/wss-proxy/wss-proxy.py
+libexec/c-lightning/plugins/wss-proxy/wss_proxy/__init__.py
 share/doc/c-lightning/LICENSE
 share/doc/c-lightning/README.md
 share/man/man1/lightning-cli.1.gz
@@ -79,11 +87,11 @@ share/man/man7/lightning-datastoreusage.7.gz
 share/man/man7/lightning-decode.7.gz
 share/man/man7/lightning-decodepay.7.gz
 share/man/man7/lightning-deldatastore.7.gz
-share/man/man7/lightning-delexpiredinvoice.7.gz
 share/man/man7/lightning-delforward.7.gz
 share/man/man7/lightning-delinvoice.7.gz
 share/man/man7/lightning-delpay.7.gz
 share/man/man7/lightning-deprecations.7.gz
+share/man/man7/lightning-dev-forget-channel.7.gz
 share/man/man7/lightning-disableinvoicerequest.7.gz
 share/man/man7/lightning-disableoffer.7.gz
 share/man/man7/lightning-disconnect.7.gz
@@ -165,6 +173,7 @@ share/man/man7/lightning-txdiscard.7.gz
 share/man/man7/lightning-txprepare.7.gz
 share/man/man7/lightning-txsend.7.gz
 share/man/man7/lightning-unreserveinputs.7.gz
+share/man/man7/lightning-upgradewallet.7.gz
 share/man/man7/lightning-utxopsbt.7.gz
 share/man/man7/lightning-wait.7.gz
 share/man/man7/lightning-waitanyinvoice.7.gz

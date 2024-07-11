@@ -1,5 +1,5 @@
 PORTNAME=	libsidplayfp
-DISTVERSION=	2.5.0
+DISTVERSION=	2.7.1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -11,10 +11,9 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	libgcrypt-config:security/libgcrypt
-LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
-		libgpg-error.so:security/libgpg-error
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
-USES=		compiler:c++14-lang libtool pathfix pkgconfig
+USES=		compiler:c++17-lang libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -50,7 +49,7 @@ CONFIGURE_ARGS+=	--with-simd=neon
 CONFIGURE_ARGS+=	--with-simd=sse2
 .endif
 
-SIDPLAYFP_SHLIB_VERSION=	6.3.27
+SIDPLAYFP_SHLIB_VERSION=	6.4.31
 STILVIEW_SHLIB_VERSION=		0.0.4
 
 post-build-DOXYGEN-on:

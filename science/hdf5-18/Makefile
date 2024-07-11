@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS_DEFINE=	EXAMPLES FORTRAN SZIP
 
-USES=		cmake:testing cpe libtool:keepla localbase pkgconfig tar:bzip2
+USES=		cmake:testing cpe localbase pkgconfig tar:bzip2
 CPE_VENDOR=	hdfgroup
 USE_LDCONFIG=	yes
 PORTSUFF=	${PORTNAME}${PKGNAMESUFFIX}

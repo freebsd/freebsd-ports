@@ -239,30 +239,12 @@ YARN_TIMESTAMP=	61171200
 .include "Makefile.version"
 .include <bsd.port.pre.mk>
 
-# libc++ < 16 needs these extra patches
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1302507
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-electron_shell_browser_electron__browser__context.h \
-		${PATCHDIR}/extra-patch-electron_shell_browser_ui_gtk_menu__gtk.h \
-		${PATCHDIR}/extra-patch-electron_shell_browser_ui_status__icon__gtk.h
-.endif
-
 .if ${PORT_OPTIONS:MHEIMDAL_BASE} && !exists(/usr/lib/libkrb5.so)
 IGNORE=		you have selected HEIMDAL_BASE but do not have Heimdal installed in base
 .endif
 
-.if ${COMPILER_VERSION} < 160
-LLVM_DEFAULT=		16
-BUILD_DEPENDS+=		clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-BINARY_ALIAS+=		cpp=${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT} \
-			cc=${LOCALBASE}/bin/clang${LLVM_DEFAULT} \
-			c++=${LOCALBASE}/bin/clang++${LLVM_DEFAULT} \
-			ar=${LOCALBASE}/bin/llvm-ar${LLVM_DEFAULT} \
-			nm=${LOCALBASE}/bin/llvm-nm${LLVM_DEFAULT} \
-			ld=${LOCALBASE}/bin/ld.lld${LLVM_DEFAULT}
-.else
 BINARY_ALIAS+=		ar=/usr/bin/llvm-ar \
 			nm=/usr/bin/llvm-nm
-.endif
 CFLAGS+=		-Wno-error=implicit-function-declaration
 
 .if ${ARCH} == "aarch64"

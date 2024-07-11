@@ -1,0 +1,2 @@
+bin/kubo
+@dir(%%KUBO_USER%%,%%KUBO_GROUP%%,755) %%KUBO_HOME%%

@@ -1,6 +1,7 @@
 PORTNAME=	inputstream.adaptive
-DISTVERSION=	20.3.18
-DISTVERSIONSUFFIX=	-Nexus
+DISTVERSION=	21.4.8
+DISTVERSIONSUFFIX=	-Omega
+PORTREVISION=	1
 CATEGORIES=	multimedia
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -11,14 +12,16 @@ WWW=		https://github.com/peak3d/inputstream.adaptive
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	googletest>0:devel/googletest
-LIB_DEPENDS=	libexpat.so:textproc/expat2
+BUILD_DEPENDS=	googletest>0:devel/googletest \
+		rapidjson>0:devel/rapidjson
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libpugixml.so:textproc/pugixml
 
 USES=		cmake compiler:c++14-lang kodi
 USE_GITHUB=	yes
 GH_ACCOUNT=	peak3d xbmc:bento4
 GH_PROJECT=	Bento4:bento4
-GH_TAGNAME=	1.6.0-639-5-Nexus:bento4
+GH_TAGNAME=	1.6.0-641-Omega:bento4
 
 CMAKE_ARGS+=	-DENABLE_INTERNAL_BENTO4:BOOL=ON -DBENTO4_URL=${DISTDIR}/${DISTFILE_bento4}
 

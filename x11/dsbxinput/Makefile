@@ -1,6 +1,5 @@
 PORTNAME=	dsbxinput
-DISTVERSION=	0.1.1
-PORTREVISION=	3
+DISTVERSION=	0.1.2
 CATEGORIES=	x11
 
 MAINTAINER=	mk@nic-nac-project.org
@@ -12,12 +11,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	xinput:x11/xinput
 
-USES=		pyqt:5 python qt:5
-USE_QT=		linguisttools:build
+USES=		pyqt:5 python qt:5 shebangfix
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	mrclksr
 GH_PROJECT=	DSBXinput
-USE_PYQT=	pyqt5
 
-BINARY_ALIAS=	lrelease=${LRELEASE}
+USE_PYQT=	pyqt5
+USE_QT=		linguisttools:build
+
+SHEBANG_FILES=	dsbxinput.in
+
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

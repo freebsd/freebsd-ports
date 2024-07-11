@@ -1,8 +1,10 @@
 PORTNAME=	certbot-dns-dnsmadeeasy
 PORTVERSION=	${ACME_VERSION}
 CATEGORIES=	security python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/certbot/certbot/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	certbot_dns_dnsmadeeasy-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	DNS Made Easy DNS Authenticator plugin for Certbot

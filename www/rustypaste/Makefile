@@ -1,6 +1,7 @@
 PORTNAME=	rustypaste
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.15.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	DtxdF@disroot.org
@@ -9,6 +10,8 @@ WWW=		https://blog.orhun.dev/blazingly-fast-file-sharing
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	compilation fails: error[E0080]: evaluation of constant value failed
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 

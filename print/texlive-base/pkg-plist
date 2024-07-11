@@ -113,7 +113,6 @@ bin/gregorio
 bin/gsftopk
 bin/hbf2gf
 bin/ht
-bin/htcontext
 bin/htlatex
 bin/htmex
 bin/httex
@@ -541,7 +540,6 @@ share/man/man5/updmap.cfg.5.gz
 %%TEXMFDISTDIR%%/scripts/svn-multi/svn-multi.pl
 %%TEXMFDISTDIR%%/scripts/tex4ebook/tex4ebook
 %%TEXMFDISTDIR%%/scripts/tex4ht/ht.sh
-%%TEXMFDISTDIR%%/scripts/tex4ht/htcontext.sh
 %%TEXMFDISTDIR%%/scripts/tex4ht/htlatex.sh
 %%TEXMFDISTDIR%%/scripts/tex4ht/htmex.sh
 %%TEXMFDISTDIR%%/scripts/tex4ht/httex.sh

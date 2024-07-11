@@ -7,7 +7,8 @@ PKGNAMESUFFIX=	50
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility classes and extension that are required by Rails MVC Framework
-WWW=		https://github.com/rails/rails/tree/main/activesupport
+WWW=		https://rubyonrails.org/ \
+		https://github.com/rails/rails/tree/main/activesupport
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

@@ -1,6 +1,6 @@
 PORTNAME=	dftbplus
-DISTVERSION=	23.1
-PORTREVISION=	4
+DISTVERSION=	24.1
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -104,5 +104,7 @@ TRANSPORT_LIB_DEPENDS=	libnegf.so:science/libnegf \
 # in theory, this should set FCFLAGS, but the port does not conform
 FFLAGS+=	-fallow-argument-mismatch
 .endif
+
+# 5 tests fail, see https://github.com/dftbplus/dftbplus/issues/1474
 
 .include <bsd.port.post.mk>

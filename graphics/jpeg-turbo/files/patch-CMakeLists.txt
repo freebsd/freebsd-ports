@@ -1,10 +1,10 @@
---- CMakeLists.txt.orig	2023-02-09 07:01:27 UTC
+--- CMakeLists.txt.orig	2024-05-18 16:15:18 UTC
 +++ CMakeLists.txt
-@@ -393,14 +393,14 @@ if(MSVC)
+@@ -418,14 +418,14 @@ endif()
    add_definitions(-D_CRT_NONSTDC_NO_WARNINGS)
  endif()
  
--if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_C_COMPILER_ID STREQUAL "Clang")
+-if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_C_COMPILER_ID MATCHES "Clang")
 -  # Use the maximum optimization level for release builds
 -  foreach(var CMAKE_C_FLAGS_RELEASE CMAKE_C_FLAGS_RELWITHDEBINFO)
 -    if(${var} MATCHES "-O2")
@@ -12,7 +12,7 @@
 -    endif()
 -  endforeach()
 -endif()
-+#if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_C_COMPILER_ID STREQUAL "Clang")
++#if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_C_COMPILER_ID MATCHES "Clang")
 +#  # Use the maximum optimization level for release builds
 +#  foreach(var CMAKE_C_FLAGS_RELEASE CMAKE_C_FLAGS_RELWITHDEBINFO)
 +#    if(${var} MATCHES "-O2")

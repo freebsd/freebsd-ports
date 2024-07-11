@@ -1,0 +1,3 @@
+This OCaml library provides bindings to the (n)curses library. All the
+the types and all the functions available in the Curses module are
+direct translations of the ncurses(3X) concepts.

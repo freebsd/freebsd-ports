@@ -1,3 +1,3 @@
-TIMESTAMP = 1708119309
-SHA256 (avr-libc-2.1.0.tar.bz2) = 0b84cee5c08b5d5cba67c36125e5aaa85251bc9accfba5773bfa87bc34b654e8
-SIZE (avr-libc-2.1.0.tar.bz2) = 3638672
+TIMESTAMP = 1718546782
+SHA256 (avr-libc-2.2.0.tar.bz2) = 0718efd4f54278877da65a0b203b402073b30e04dfea988e6f2a8835ad071d35
+SIZE (avr-libc-2.2.0.tar.bz2) = 8398941

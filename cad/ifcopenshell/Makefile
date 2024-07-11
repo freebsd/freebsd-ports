@@ -1,28 +1,32 @@
 PORTNAME=	ifcopenshell
+PORTVERSION=	0.7.0.231127
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
-PORTREVISION=	9
 CATEGORIES=	cad
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source IFC library and geometry engine
-WWW=		http://ifcopenshell.org
+WWW=		https://ifcopenshell.org/
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
+BUILD_DEPENDS=	${LOCALBASE}/include/CGAL/Cartesian.h:math/cgal \
+		${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json \
+		${LOCALBASE}/include/svgpp/svgpp.hpp:graphics/svgpp
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libgmp.so:math/gmp libmpfr.so:math/mpfr \
 		libTKernel.so:cad/opencascade740
-
-BROKEN=		error: no viable overloaded '='
 
 USES=		cmake compiler:c++11-lang eigen:3 gnome
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
-GH_PROJECT=	IfcOpenShell
-GH_TAGNAME=	7c61c7d200ff
+GH_ACCOUNT=	IfcOpenShell
+GH_PROJECT=	IfcOpenShell svgfill:sf
+GH_TAGNAME=	4d2aa7a:sf
+GH_SUBDIR=	src/svgfill:sf
+
+PORTSCOUT=	limit:^[0-9\.v]+$$
 
 OPTIONS_DEFINE=		PYTHON
 OPTIONS_DEFAULT=	PYTHON
@@ -34,12 +38,11 @@ PYTHON_BUILD_DEPENDS=	swig>=3.0.0:devel/swig
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/cmake
 
-CMAKE_OFF=	COLLADA_SUPPORT
-CMAKE_ON=	BUILD_SHARED_LIBS \
-		ENABLE_BUILD_OPTIMIZATIONS \
-		GLTF_SUPPORT
-CMAKE_ARGS=	-Djson_hpp=${LOCALBASE}/include/nlohmann \
-		-DOCC_INCLUDE_DIR=${LOCALBASE}/include/OpenCASCADE \
-		-DOCC_LIBRARY_DIR=${LOCALBASE}/lib
+CMAKE_OFF=	COLLADA_SUPPORT HDF5_SUPPORT
+CMAKE_ON=	BUILD_SHARED_LIBS GLTF_SUPPORT
+CMAKE_ARGS=	-DJSON_INCLUDE_DIR:PATH=${LOCALBASE}/include \
+		-DOCC_INCLUDE_DIR:PATH=${LOCALBASE}/include/OpenCASCADE \
+		-DGMP_LIBRARY_DIR:PATH=${LOCALBASE}/lib \
+		-DMPFR_LIBRARY_DIR:PATH=${LOCALBASE}/lib
 
 .include <bsd.port.mk>

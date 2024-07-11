@@ -1,12 +1,13 @@
 # drop privileges
 user "_gmid"
 
-# it's a good idea to enable chroot, but
-# beware that can make CGI scripting harder
+# it's a good idea to enable chroot
 chroot "/var/gemini"
 
 # An example of a server block:
 server "localhost" {
+	listen on * port 1965
+
 	# set the directory to serve; it's relative to the
 	# chroot (if enabled)
 	root "/localhost"

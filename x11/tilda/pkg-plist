@@ -5,6 +5,7 @@ share/applications/tilda.desktop
 %%PORTDOCS%%%%DOCSDIR%%/HACKING.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/TODO.md
+share/applications/tilda-dbus.desktop
 share/locale/bg/LC_MESSAGES/tilda.mo
 share/locale/ca/LC_MESSAGES/tilda.mo
 share/locale/cs/LC_MESSAGES/tilda.mo
@@ -13,6 +14,7 @@ share/locale/el/LC_MESSAGES/tilda.mo
 share/locale/en_GB/LC_MESSAGES/tilda.mo
 share/locale/es/LC_MESSAGES/tilda.mo
 share/locale/fr/LC_MESSAGES/tilda.mo
+share/locale/hr/LC_MESSAGES/tilda.mo
 share/locale/hu/LC_MESSAGES/tilda.mo
 share/locale/it/LC_MESSAGES/tilda.mo
 share/locale/lt/LC_MESSAGES/tilda.mo
@@ -25,7 +27,9 @@ share/locale/sk/LC_MESSAGES/tilda.mo
 share/locale/sl/LC_MESSAGES/tilda.mo
 share/locale/sv/LC_MESSAGES/tilda.mo
 share/locale/tr/LC_MESSAGES/tilda.mo
+share/locale/uk/LC_MESSAGES/tilda.mo
 share/locale/zh_CN/LC_MESSAGES/tilda.mo
 share/locale/zh_TW/LC_MESSAGES/tilda.mo
+share/man/man1/tilda.1.gz
 share/metainfo/tilda.appdata.xml
 share/pixmaps/tilda.png

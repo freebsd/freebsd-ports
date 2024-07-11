@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_LINUX=	libgpg-error
 USE_LINUX_RPM=	yes
 
-CONFLICTS=	linux-c6-${PORTNAME} linux-c7-${PORTNAME}
+CONFLICTS=	linux-c7-${PORTNAME}
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS

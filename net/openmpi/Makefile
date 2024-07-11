@@ -1,6 +1,6 @@
 PORTNAME=	openmpi
 PORTVERSION=	5.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net parallel
 MASTER_SITES=	https://download.open-mpi.org/release/open-mpi/v${PORTVERSION:R}/
 
@@ -58,7 +58,7 @@ MANDIRS=	${PREFIX}/${MPIDIR}/share/man
 SHEBANG_FILES=	ompi/mca/common/monitoring/profile2mat.pl \
 		ompi/mca/common/monitoring/aggregate_profile.pl
 
-OPTIONS_DEFINE=			AVX DEBUG DOCS IPV6 SLURM TORQUE
+OPTIONS_DEFINE=			AVX DEBUG DOCS IPV6 SLURM
 OPTIONS_DEFAULT=		SLURM
 OPTIONS_EXCLUDE_aarch64=	AVX
 OPTIONS_EXCLUDE_armv6=		AVX SLURM
@@ -74,7 +74,6 @@ OPTIONS_SUB=			yes
 
 AVX_DESC=	Enable AVX instructions
 SLURM_DESC=	Enable SLURM support
-TORQUE_DESC=	Enable Torque support
 
 AVX_CONFIGURE_OFF=	--enable-mca-no-build=op-avx
 
@@ -88,9 +87,6 @@ DOCSDIR=		${PREFIX}/${MPIDIR}/share/doc
 PORTDOCS=		*
 
 IPV6_CONFIGURE_ENABLE=	ipv6
-
-TORQUE_CONFIGURE_WITH=	tm
-TORQUE_LIB_DEPENDS=	libtorque.so:sysutils/torque
 
 SLURM_CONFIGURE_WITH=	slurm
 SLURM_LIB_DEPENDS=	libslurm.so:sysutils/slurm-wlm

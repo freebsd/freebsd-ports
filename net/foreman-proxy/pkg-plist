@@ -81,7 +81,6 @@ sbin/smart-proxy
 %%DATADIR%%/lib/proxy/plugin_validators.rb
 %%DATADIR%%/lib/proxy/plugins.rb
 %%DATADIR%%/lib/proxy/provider.rb
-%%DATADIR%%/lib/proxy/provider_factory.rb
 %%DATADIR%%/lib/proxy/request.rb
 %%DATADIR%%/lib/proxy/request_id_middleware.rb
 %%DATADIR%%/lib/proxy/settings.rb
@@ -148,7 +147,6 @@ sbin/smart-proxy
 %%DATADIR%%/modules/dns/dns_api.rb
 %%DATADIR%%/modules/dns/dns_plugin.rb
 %%DATADIR%%/modules/dns/http_config.ru
-%%DATADIR%%/modules/dns_common/dependency_injection/dependencies.rb
 %%DATADIR%%/modules/dns_common/dns_common.rb
 %%DATADIR%%/modules/dns_dnscmd/dns_dnscmd.rb
 %%DATADIR%%/modules/dns_dnscmd/dns_dnscmd_main.rb

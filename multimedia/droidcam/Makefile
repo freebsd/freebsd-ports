@@ -1,6 +1,7 @@
 PORTNAME=	droidcam
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	nxjoseph@protonmail.com

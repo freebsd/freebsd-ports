@@ -12,6 +12,7 @@
     SUBDIR += R-cran-ChangeAnomalyDetection
     SUBDIR += R-cran-DEoptimR
     SUBDIR += R-cran-DRR
+    SUBDIR += R-cran-Deriv
     SUBDIR += R-cran-DoE.base
     SUBDIR += R-cran-FNN
     SUBDIR += R-cran-Formula
@@ -54,6 +55,7 @@
     SUBDIR += R-cran-deldir
     SUBDIR += R-cran-dimRed
     SUBDIR += R-cran-dlmodeler
+    SUBDIR += R-cran-doBy
     SUBDIR += R-cran-dplyr
     SUBDIR += R-cran-eRm
     SUBDIR += R-cran-energy
@@ -189,6 +191,7 @@
     SUBDIR += bcal
     SUBDIR += bcps
     SUBDIR += bitwise
+    SUBDIR += bitwuzla
     SUBDIR += blacs
     SUBDIR += blahtexml
     SUBDIR += blas
@@ -486,6 +489,7 @@
     SUBDIR += m4rie
     SUBDIR += mate-calc
     SUBDIR += math77
+    SUBDIR += mathex
     SUBDIR += mathgl
     SUBDIR += mathicsscript
     SUBDIR += mathmod
@@ -667,6 +671,7 @@
     SUBDIR += onednn
     SUBDIR += onednn252
     SUBDIR += openblas
+    SUBDIR += openblas64
     SUBDIR += openfst
     SUBDIR += openfst-vosk
     SUBDIR += openlibm
@@ -912,6 +917,7 @@
     SUBDIR += py-bottleneck
     SUBDIR += py-brial
     SUBDIR += py-chaospy
+    SUBDIR += py-clarabel
     SUBDIR += py-claripy
     SUBDIR += py-clingcon
     SUBDIR += py-clingo
@@ -927,6 +933,7 @@
     SUBDIR += py-cypari2
     SUBDIR += py-deap
     SUBDIR += py-dgl
+    SUBDIR += py-diffcp
     SUBDIR += py-dionysus
     SUBDIR += py-disjoint-set
     SUBDIR += py-docplex
@@ -1005,7 +1012,6 @@
     SUBDIR += py-numpy-stl
     SUBDIR += py-openTSNE
     SUBDIR += py-opt-einsum
-    SUBDIR += py-optuna
     SUBDIR += py-or-tools
     SUBDIR += py-osqp
     SUBDIR += py-pandas
@@ -1142,6 +1148,7 @@
     SUBDIR += scalapackfx
     SUBDIR += scilab
     SUBDIR += scilab-toolbox-swt
+    SUBDIR += scipoptsuite
     SUBDIR += scorec-core
     SUBDIR += scs
     SUBDIR += sdpa

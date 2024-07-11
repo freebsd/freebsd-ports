@@ -10,6 +10,7 @@ COMMENT=	C++ library for working with chemical reactions and formulas
 WWW=		https://bitbucket.org/gems4/chemicalfun/src/master/
 
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json \
+		${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR}
 LIB_DEPENDS=	libfmt.so:devel/libfmt # due to SPDLOG_FMT_EXTERNAL

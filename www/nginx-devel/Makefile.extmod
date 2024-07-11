@@ -10,10 +10,10 @@ OPTIONS_GROUP_THIRDPARTYGRP=	AJP AWS_AUTH BROTLI CACHE_PURGE CT \
 	HTTP_JSON_STATUS HTTP_MOGILEFS HTTP_NOTICE HTTP_PUSH \
 	HTTP_PUSH_STREAM HTTP_REDIS HTTP_SLICE_AHEAD HTTP_SUBS_FILTER HTTP_TARANTOOL \
 	HTTP_UPLOAD HTTP_UPLOAD_PROGRESS HTTP_UPSTREAM_CHECK HTTP_UPSTREAM_FAIR \
-	HTTP_UPSTREAM_STICKY HTTP_VIDEO_THUMBEXTRACTOR HTTP_ZIP ICONV LET LINK LUA MEMC \
-	MODSECURITY3 NAXSI PASSENGER POSTGRES RDS_CSV RDS_JSON \
+	HTTP_UPSTREAM_STICKY HTTP_VIDEO_THUMBEXTRACTOR HTTP_ZIP ICONV LET LINK LUA \
+	LUASTREAM MEMC MODSECURITY3 NAXSI PASSENGER POSTGRES RDS_CSV RDS_JSON \
 	REDIS2 RTMP SET_MISC SFLOW SHIBBOLETH SLOWFS_CACHE SRCACHE STS \
-	VOD VTS XSS WEBSOCKIFY
+	VOD VTS XSS WEBSOCKIFY ZSTD
 
 AJP_GH_TUPLE=		msva:nginx_ajp_module:fcbb2cc:ajp
 AJP_VARS=		DSO_EXTMODS+=ajp
@@ -211,6 +211,15 @@ LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.26:lua
 LUA_VARS=		DSO_EXTMODS+=lua
 
+LUASTREAM_IMPLIES=	DEVEL_KIT
+LUASTREAM_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
+LUASTREAM_RUN_DEPENDS=	lua-resty-core>0:www/lua-resty-core
+LUASTREAM_CONFIGURE_ENV=LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
+			LUAJIT_LIB=${LOCALBASE}/lib
+LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:bea8a0c:luastream
+LUASTREAM_VARS=		DSO_EXTMODS+=luastream
+LUASTREAM_EXTRA_PATCHES=${PATCHDIR}/extra-patch-stream-lua-nginx-module_config
+
 LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.4:link
 LINK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-link-function-config \
 			${PATCHDIR}/extra-patch-ngx_link_func_module.c
@@ -231,9 +240,13 @@ NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 NAXSI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-naxsi-libinjection__sqli_c \
 			${PATCHDIR}/extra-patch-naxsi_config
 
-NJS_GH_TUPLE=		nginx:njs:0.8.4:njs
+NJS_GH_TUPLE=		nginx:njs:0.8.5:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 NJS_IMPLIES=		STREAM
+
+NJS_QJS_IMPLIES=	HTTP NJS
+NJS_QJS_LIB_DEPENDS=	libquickjs.so:lang/quickjs
+NJS_QJS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-njs-auto-quickjs
 
 NJS_XML_IMPLIES=	HTTP NJS
 NJS_XML_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
@@ -250,7 +263,7 @@ OTEL_LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 OTEL_BUILD_DEPENDS=	${LOCALBASE}/include/opentelemetry/proto/common/v1/common.proto:devel/opentelemetry-proto
 OTEL_CONFIGURE_ENV+=	NGX_OTEL_PROTO_DIR=${PREFIX}/include
 
-PASSENGER_NGINX_VER=	6.0.20
+PASSENGER_NGINX_VER=	6.0.22
 PASSENGER_CATEGORIES=	ruby
 PASSENGER_USES=		ruby
 PASSENGER_BUILD_DEPENDS=${LOCALBASE}/bin/rake:devel/rubygem-rake
@@ -260,7 +273,8 @@ PASSENGER_DISTFILES=	passenger-${PASSENGER_NGINX_VER}.tar.gz:passenger
 PASSENGER_VARS=		WRKSRC_passenger=${WRKDIR}/passenger-${PASSENGER_NGINX_VER} \
 			DSO_EXTDIRS+=passenger-${PASSENGER_NGINX_VER}/src/nginx_module
 PASSENGER_EXTRA_PATCHES=${PATCHDIR}/extra-patch-passenger-build-nginx.rb \
-			${PATCHDIR}/extra-patch-passenger-disable-telemetry
+			${PATCHDIR}/extra-patch-passenger-disable-telemetry \
+			${PATCHDIR}/extra-patch-passenger_src_nginx__module_Configuration.c
 
 POSTGRES_USES=		pgsql
 POSTGRES_GH_TUPLE=	konstruxi:ngx_postgres:8aa7359:postgres
@@ -318,3 +332,9 @@ XSS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-xss-nginx-module-config
 
 WEBSOCKIFY_GH_TUPLE=	tg123:websockify-nginx-module:c11bc9a:websockify
 WEBSOCKIFY_VARS=	DSO_EXTMODS+=websockify
+
+ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
+ZSTD_CONFIGURE_ENV=	ZSTD_INC=${LOCALBASE}/include \
+			ZSTD_LIB=${LOCALBASE}/lib
+ZSTD_GH_TUPLE=		tokers:zstd-nginx-module:f4ba115:zstd
+ZSTD_VARS=		DSO_EXTMODS+=zstd

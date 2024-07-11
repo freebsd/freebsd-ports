@@ -1,6 +1,5 @@
 PORTNAME=	miniupnpd
-DISTVERSION=	2.3.3
-PORTREVISION=	3
+DISTVERSION=	2.3.6
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -18,7 +17,7 @@ CPE_VENDOR=	miniupnp_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	miniupnp
 GH_PROJECT=	miniupnp
-GH_TAGNAME=	e439318
+GH_TAGNAME=	miniupnpd_2_3_6
 
 USE_RC_SUBR=	miniupnpd
 

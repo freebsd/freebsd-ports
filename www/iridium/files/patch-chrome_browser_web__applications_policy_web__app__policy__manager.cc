@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/policy/web_app_policy_manager.cc.orig	2023-11-22 14:00:11 UTC
+--- chrome/browser/web_applications/policy/web_app_policy_manager.cc.orig	2024-06-25 12:08:48 UTC
 +++ chrome/browser/web_applications/policy/web_app_policy_manager.cc
-@@ -128,7 +128,7 @@ namespace web_app {
+@@ -101,7 +101,7 @@ namespace web_app {
  
  BASE_FEATURE(kDesktopPWAsForceUnregisterOSIntegration,
               "DesktopPWAsForceUnregisterOSIntegration",

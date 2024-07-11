@@ -19,6 +19,7 @@ name=yadifad
 rcvar=yadifad_enable
 
 eval ": \${${name}_enable:=\"NO\"}"
+eval ": \${${name}_svcj_options:=\"net_basic\"}"
 eval ": \${${name}_config:=\"%%PREFIX%%/etc/${name}.conf\"}"
 eval ": \${${name}_uid:=\"%%USERS%%\"}"
 eval ": \${${name}_gid:=\"%%GROUPS%%\"}"

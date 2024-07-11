@@ -41,8 +41,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=7.2.0:devel/py-coverage@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=3.9<4:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-randomly>=3.12<4:devel/py-pytest-randomly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=3.1,1<4,1:devel/py-pytest-xdist@${PY_FLAVOR}
-# pytest-xdist[psutil]
-TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psutil>=3.0:sysutils/py-psutil@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest

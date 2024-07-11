@@ -21,18 +21,18 @@ include/GL/internal/dri_interface.h
 @comment include/GLES3/gl3platform.h
 @comment include/KHR/khrplatform.h
 @comment include/gbm.h
-%%CROCUS_GDRIVER%%lib/dri/crocus_dri.so
-%%I915_GDRIVER%%lib/dri/i915_dri.so
-%%IRIS_GDRIVER%%lib/dri/iris_dri.so
-%%PANFROST_GDRIVER%%lib/dri/panfrost_dri.so
-%%PANFROST_GDRIVER%%lib/dri/rockchip_dri.so
-%%SWRAST_GDRIVER%%lib/dri/kms_swrast_dri.so
-%%R300_GDRIVER%%lib/dri/r300_dri.so
-%%R600_GDRIVER%%lib/dri/r600_dri.so
-%%RADEONSI_GDRIVER%%lib/dri/radeonsi_dri.so
-%%SWRAST_GDRIVER%%lib/dri/swrast_dri.so
-%%SVGA_GDRIVER%%lib/dri/vmwgfx_dri.so
-%%ZINK_GDRIVER%%lib/dri/zink_dri.so
+%%crocus%%lib/dri/crocus_dri.so
+%%i915%%lib/dri/i915_dri.so
+%%iris%%lib/dri/iris_dri.so
+%%panfrost%%lib/dri/panfrost_dri.so
+%%panfrost%%lib/dri/rockchip_dri.so
+%%r300%%lib/dri/r300_dri.so
+%%r600%%lib/dri/r600_dri.so
+%%radeonsi%%lib/dri/radeonsi_dri.so
+%%svga%%lib/dri/vmwgfx_dri.so
+%%swrast%%lib/dri/kms_swrast_dri.so
+%%swrast%%lib/dri/swrast_dri.so
+%%zink%%lib/dri/zink_dri.so
 @comment lib/libEGL.so
 @comment lib/libEGL.so.1
 @comment lib/libEGL.so.1.0.0
@@ -48,17 +48,17 @@ include/GL/internal/dri_interface.h
 @comment lib/libGLESv2.so
 @comment lib/libGLESv2.so.2
 @comment lib/libGLESv2.so.2.0.0
-%%INTEL_VDRIVER%%lib/libvulkan_intel.so
-%%AMD_VDRIVER%%lib/libvulkan_radeon.so
-%%SWRAST_VDRIVER%%lib/libvulkan_lvp.so
+%%anv%%lib/libvulkan_intel.so
+%%radv%%lib/libvulkan_radeon.so
+%%swrast_vk%%lib/libvulkan_lvp.so
 libdata/pkgconfig/dri.pc
 @comment libdata/pkgconfig/egl.pc
 @comment libdata/pkgconfig/gbm.pc
 @comment libdata/pkgconfig/glesv1_cm.pc
 @comment libdata/pkgconfig/glesv2.pc
 share/drirc.d/00-mesa-defaults.conf
-%%AMD_VDRIVER%%share/drirc.d/00-radv-defaults.conf
+%%radv%%share/drirc.d/00-radv-defaults.conf
 share/drirc.d/01-freebsd.conf
-%%INTEL_VDRIVER%%share/vulkan/icd.d/intel_icd.%%ARCH%%.json
-%%AMD_VDRIVER%%share/vulkan/icd.d/radeon_icd.%%ARCH%%.json
-%%SWRAST_VDRIVER%%share/vulkan/icd.d/lvp_icd.%%ARCH%%.json
+%%anv%%share/vulkan/icd.d/intel_icd.%%ARCH%%.json
+%%radv%%share/vulkan/icd.d/radeon_icd.%%ARCH%%.json
+%%swrast_vk%%share/vulkan/icd.d/lvp_icd.%%ARCH%%.json

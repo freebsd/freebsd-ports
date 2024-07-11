@@ -1,6 +1,5 @@
 PORTNAME=	trainstation
-DISTVERSION=	1.0
-PORTREVISION=	1
+DISTVERSION=	1.1
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +17,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>0:science/py-scikit-learn@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest # 10 tests fail, see https://gitlab.com/materials-modeling/trainstation/-/issues/10
 
 NO_ARCH=	yes
 

@@ -1,5 +1,5 @@
 PORTNAME=	libnjs
-DISTVERSION=	0.8.4
+DISTVERSION=	0.8.5
 CATEGORIES=	devel www
 
 MAINTAINER=	osa@FreeBSD.org

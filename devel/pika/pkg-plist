@@ -91,9 +91,9 @@ include/pika/datastructures/traits/is_tuple_like.hpp
 include/pika/datastructures/variant.hpp
 include/pika/debugging/attach_debugger.hpp
 include/pika/debugging/backtrace.hpp
-include/pika/debugging/backtrace/backtrace.hpp
 include/pika/debugging/config/defines.hpp
 include/pika/debugging/demangle_helper.hpp
+include/pika/debugging/detail/backtrace.hpp
 include/pika/debugging/environ.hpp
 include/pika/debugging/print.hpp
 include/pika/detail/filesystem.hpp
@@ -175,7 +175,6 @@ include/pika/functional/one_shot.hpp
 include/pika/functional/tag_invoke.hpp
 include/pika/functional/traits/get_function_address.hpp
 include/pika/functional/traits/get_function_annotation.hpp
-include/pika/functional/traits/is_action.hpp
 include/pika/functional/traits/is_bind_expression.hpp
 include/pika/functional/unique_function.hpp
 include/pika/hashing/config/defines.hpp
@@ -209,16 +208,8 @@ include/pika/itt_notify/thread_name.hpp
 include/pika/latch.hpp
 include/pika/lock_registration/config/defines.hpp
 include/pika/lock_registration/detail/register_locks.hpp
+include/pika/logging.hpp
 include/pika/logging/config/defines.hpp
-include/pika/logging/detail/logger.hpp
-include/pika/logging/detail/macros.hpp
-include/pika/logging/format/destinations.hpp
-include/pika/logging/format/formatters.hpp
-include/pika/logging/format/named_write.hpp
-include/pika/logging/level.hpp
-include/pika/logging/logging.hpp
-include/pika/logging/manipulator.hpp
-include/pika/logging/message.hpp
 include/pika/memory/config/defines.hpp
 include/pika/memory/detail/sp_convertible.hpp
 include/pika/memory/intrusive_ptr.hpp
@@ -242,9 +233,7 @@ include/pika/modules/init_runtime.hpp
 include/pika/modules/iterator_support.hpp
 include/pika/modules/itt_notify.hpp
 include/pika/modules/lock_registration.hpp
-include/pika/modules/logging.hpp
 include/pika/modules/memory.hpp
-include/pika/modules/prefix.hpp
 include/pika/modules/preprocessor.hpp
 include/pika/modules/program_options.hpp
 include/pika/modules/properties.hpp
@@ -266,8 +255,6 @@ include/pika/modules/type_support.hpp
 include/pika/modules/util.hpp
 include/pika/mpi.hpp
 include/pika/mutex.hpp
-include/pika/prefix/config/defines.hpp
-include/pika/prefix/find_prefix.hpp
 include/pika/preprocessor/cat.hpp
 include/pika/preprocessor/config.hpp
 include/pika/preprocessor/config/defines.hpp
@@ -308,11 +295,9 @@ include/pika/runtime/config/defines.hpp
 include/pika/runtime/config_entry.hpp
 include/pika/runtime/custom_exception_info.hpp
 include/pika/runtime/debugging.hpp
-include/pika/runtime/detail/runtime_fwd.hpp
 include/pika/runtime/get_os_thread_count.hpp
 include/pika/runtime/get_thread_name.hpp
 include/pika/runtime/get_worker_thread_num.hpp
-include/pika/runtime/os_thread_type.hpp
 include/pika/runtime/report_error.hpp
 include/pika/runtime/runtime.hpp
 include/pika/runtime/runtime_fwd.hpp
@@ -321,7 +306,6 @@ include/pika/runtime/shutdown_function.hpp
 include/pika/runtime/startup_function.hpp
 include/pika/runtime/state.hpp
 include/pika/runtime/thread_hooks.hpp
-include/pika/runtime/thread_mapper.hpp
 include/pika/runtime/thread_pool_helpers.hpp
 include/pika/runtime/thread_stacktrace.hpp
 include/pika/runtime_configuration/config/defines.hpp
@@ -343,7 +327,6 @@ include/pika/schedulers/static_queue_scheduler.hpp
 include/pika/schedulers/thread_queue.hpp
 include/pika/schedulers/thread_queue_mc.hpp
 include/pika/semaphore.hpp
-include/pika/shared_mutex.hpp
 include/pika/stop_token.hpp
 include/pika/string_util/bad_lexical_cast.hpp
 include/pika/string_util/case_conv.hpp
@@ -371,7 +354,6 @@ include/pika/synchronization/mutex.hpp
 include/pika/synchronization/no_mutex.hpp
 include/pika/synchronization/once.hpp
 include/pika/synchronization/recursive_mutex.hpp
-include/pika/synchronization/shared_mutex.hpp
 include/pika/synchronization/sliding_semaphore.hpp
 include/pika/synchronization/stop_token.hpp
 include/pika/system_error.hpp
@@ -448,6 +430,7 @@ include/pika/type_support/empty_function.hpp
 include/pika/type_support/equality.hpp
 include/pika/type_support/lazy_conditional.hpp
 include/pika/type_support/pack.hpp
+include/pika/type_support/to_underlying.hpp
 include/pika/type_support/type_identity.hpp
 include/pika/type_support/unused.hpp
 include/pika/type_support/unwrap_reference.hpp
@@ -499,7 +482,6 @@ lib/cmake/pika/pika_generate_package.cmake
 lib/cmake/pika/pika_generate_package_utils.cmake
 lib/cmake/pika/pika_git_commit.cmake
 lib/cmake/pika/pika_internal_targets.cmake
-lib/cmake/pika/pika_macros.cmake
 lib/cmake/pika/pika_message.cmake
 lib/cmake/pika/pika_option.cmake
 lib/cmake/pika/pika_perform_cxx_feature_tests.cmake
@@ -517,6 +499,7 @@ lib/cmake/pika/pika_setup_fmt.cmake
 lib/cmake/pika/pika_setup_hip.cmake
 lib/cmake/pika/pika_setup_hwloc.cmake
 lib/cmake/pika/pika_setup_mpi.cmake
+lib/cmake/pika/pika_setup_spdlog.cmake
 lib/cmake/pika/pika_setup_stdexec.cmake
 lib/cmake/pika/pika_setup_target.cmake
 lib/cmake/pika/pika_setup_threads.cmake
@@ -548,7 +531,8 @@ lib/cmake/pika/tests/cxx23_static_call_operator.cu
 lib/cmake/pika/tests/cxx23_static_call_operator.hip
 lib/cmake/pika/tests/cxx_lambda_capture_decltype.cpp
 lib/cmake/pika/tests/mm_prefetch.cpp
+lib/cmake/pika/tests/stdexec_sender_receiver_concepts.cpp
 lib/cmake/pika/tests/unistd_h.cpp
 lib/libpika.so
 lib/libpika.so.0
-lib/libpika.so.0.24.0
+lib/libpika.so.0.26.0

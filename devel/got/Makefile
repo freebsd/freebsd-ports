@@ -1,5 +1,5 @@
 PORTNAME=	got
-DISTVERSION=	0.99
+DISTVERSION=	0.100
 CATEGORIES=	devel
 MASTER_SITES=	https://gameoftrees.org/releases/portable/
 DISTNAME=	got-portable-${DISTVERSION}

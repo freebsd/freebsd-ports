@@ -1,6 +1,6 @@
 PORTNAME=	octave
 PORTVERSION=	${OCTAVE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -54,15 +54,14 @@ USES=		charsetfix compiler:c++14-lang desktop-file-utils fortran gl \
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}/${PORTVERSION}
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-USE_QT=		core gui help network opengl printsupport sql widgets xml \
-		buildtools:build linguist:build qmake:build
+USE_QT=		base 5compat tools sqldriver-sqlite
 USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 USE_GL=		gl glu
 
 GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB=	GNU_HOST=${GNU_HOST} \
 		OCTAVE_VERSION=${OCTAVE_VERSION}
-LDFLAGS+=	-L${LOCALBASE}/lib/qt5
+LDFLAGS+=	-L${LOCALBASE}/lib/qt6
 CONFIGURE_ENV=	ac_cv_path_SED=${LOCALBASE}/bin/gsed \
 		ac_cv_type_max_align_t=yes \
 		GPERF="${LOCALBASE}/bin/gperf" \
@@ -90,24 +89,24 @@ INFO=		octave liboctave
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=	DOCS JAVA QT5
+OPTIONS_DEFINE=	DOCS JAVA QT6
 
 OPTIONS_RADIO=		BLAS
 OPTIONS_RADIO_BLAS=	ATLAS NETLIB OPENBLAS
-OPTIONS_DEFAULT=	JAVA OPENBLAS QT5
+OPTIONS_DEFAULT=	JAVA OPENBLAS QT6
 OPTIONS_SUB=		yes
 
 DOCS_CONFIGURE_ENABLE=	docs
 JAVA_CONFIGURE_ENABLE=	java
-QT5_CONFIGURE_WITH=	qscintilla qt=5
+QT6_CONFIGURE_WITH=	qscintilla qt=6
 
-QT5_LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5
+QT6_LIB_DEPENDS=	libqscintilla2_qt6.so:devel/qscintilla2-qt6
 
 DOCS_USES=	tex
 DOCS_USE=	TEX=dvipsk:build,formats:build
 JAVA_USE=	JAVA=yes
 JAVA_CFLAGS=	-I${JAVA_HOME}/include/${OPSYS:tl}
-QT5_USES=	qt:5
+QT6_USES=	qt:6
 OPENBLAS_USES=	blaslapack:openblas
 NETLIB_USES=	blaslapack:netlib
 ATLAS_USES=	blaslapack:atlas

@@ -1,43 +1,54 @@
---- makefile.orig	2016-04-02 12:43:42 UTC
+--- makefile.orig	2021-09-14 23:57:59 UTC
 +++ makefile
-@@ -136,15 +136,15 @@
+@@ -6,9 +6,9 @@ MKLROOT = /opt/intel/mkl
+ ###################################################################
+ 
+ MKLROOT = /opt/intel/mkl
+-CC = mpicc -O3 -xHOST -ip -no-prec-div -qopenmp -I/opt/intel/mkl/include/fftw
+-FC = mpif90 -O3 -xHOST -ip -no-prec-div -qopenmp
+-LIB= -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -lmkl_blacs_openmpi_lp64 -lmpi_usempif08 -lmpi_usempi_ignore_tkr -lmpi_mpifh -liomp5 -lpthread -lm -ldl
++CC = mpicc -fopenmp $(CFLAGS)
++FC = mpif90 -fopenmp $(FFLAGS)
++LIB= $(LDFLAGS) -lpthread -llapack -lblas -lscalapack -lgfortran -lfftw3 -lomp
+ 
+ 
  #
- 
- 
--CC = mpicc -O3 -xHOST -ip -no-prec-div -openmp -I/opt/intel/mkl/include/fftw
--FC = mpif90 -O3 -xHOST -ip -no-prec-div -openmp
--LIB= -L/opt/intel/mkl/lib -mkl=parallel -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -lpthread -lifcore -lmpi -lmpi_f90 -lmpi_f77
-+CC = mpicc $(CFLAGS) -fopenmp
-+FC = mpif90 $(FFLAGS) -fopenmp
-+LIB= $(LDFLAGS) -lpthread -llapack -lblas -lgfortran -lfftw3 -lomp
- 
- 
- 
+@@ -103,7 +103,7 @@ LIB= -L${MKLROOT}/lib/intel64 -lmkl_scalapack_lp64 -lm
+ #
  
  
 -CFLAGS  = -g 
 +#CFLAGS  = -g 
  
- OBJS    = openmx.o openmx_common.o Input_std.o Inputtools.o \
-           init.o LU_inverse.o ReLU_inverse.o \
-@@ -661,7 +661,7 @@ Show_DFT_DATA.o: Show_DFT_DATA.c openmx_
- 
- install: $(PROG)
- 	strip $(PROG)
--	cp $(PROG) $(DESTDIR)/$(PROG)
-+	install $(PROG) $(DESTDIR)$(PREFIX)/bin/$(PROG)
- 
+ OBJS    = openmx.o openmx_common.o Input_std.o Inputtools.o init.o LU_inverse.o ReLU_inverse.o \
+           truncation.o readfile.o FT_PAO.o FT_NLP.o FT_ProExpn_VNA.o FT_VNA.o FT_ProductPAO.o \
+@@ -216,7 +216,7 @@ all: $(PROG) $(UTIL)
  #
- #
-@@ -889,9 +889,9 @@ TRAN_CDen_Main.o: TRAN_CDen_Main.c openm
  
- elpa1.o: elpa1.f90 
- 	$(FC) -c elpa1.f90
--solve_evp_real.o: solve_evp_real.f90 
-+solve_evp_real.o: solve_evp_real.f90 elpa1.o
- 	$(FC) -c solve_evp_real.f90 
--solve_evp_complex.o: solve_evp_complex.f90 
-+solve_evp_complex.o: solve_evp_complex.f90 elpa1.o
- 	$(FC) -c solve_evp_complex.f90
+ all: $(PROG) $(UTIL)
+-	cp $(PROG) $(UTIL) $(DESTDIR)/
++	#install -s $(PROG) $(DESTDIR)$(PREFIX)/bin/$(PROG)
  
- 
+ openmx.o: openmx.c openmx_common.h tran_variables.h tran_prototypes.h 
+ 	$(CC) -c openmx.c
+@@ -989,9 +989,9 @@ elpa_utilities.o: $(LIBELPADIR)/elpa_utilities.F90
+ 	$(FC) -c $(LIBELPADIR)/mod_precision.F90
+ elpa_utilities.o: $(LIBELPADIR)/elpa_utilities.F90
+ 	$(FC) -c $(LIBELPADIR)/elpa_utilities.F90
+-elpa1_compute_real.o: $(LIBELPADIR)/elpa1_compute_real.F90
++elpa1_compute_real.o: $(LIBELPADIR)/elpa1_compute_real.F90 elpa_utilities.o
+ 	$(FC) -c $(LIBELPADIR)/elpa1_compute_real.F90
+-elpa1_compute_complex.o: $(LIBELPADIR)/elpa1_compute_complex.F90
++elpa1_compute_complex.o: $(LIBELPADIR)/elpa1_compute_complex.F90 elpa_utilities.o mod_compute_hh_trafo_complex.o
+ 	$(FC) -c $(LIBELPADIR)/elpa1_compute_complex.F90
+ aligned_mem.o: $(LIBELPADIR)/aligned_mem.F90
+ 	$(FC) -c $(LIBELPADIR)/aligned_mem.F90
+@@ -1015,7 +1015,7 @@ mod_compute_hh_trafo_complex.o: $(LIBELPADIR)/mod_comp
+ 	$(FC) -c $(LIBELPADIR)/mod_compute_hh_trafo_real.F90
+ mod_compute_hh_trafo_complex.o: $(LIBELPADIR)/mod_compute_hh_trafo_complex.F90
+ 	$(FC) -c $(LIBELPADIR)/mod_compute_hh_trafo_complex.F90
+-elpa2_compute_real.o: $(LIBELPADIR)/elpa2_compute_real.F90
++elpa2_compute_real.o: $(LIBELPADIR)/elpa2_compute_real.F90 elpa1.o elpa_utilities.o
+ 	$(FC) -c $(LIBELPADIR)/elpa2_compute_real.F90
+ elpa2_compute_complex.o: $(LIBELPADIR)/elpa2_compute_complex.F90
+ 	$(FC) -c $(LIBELPADIR)/elpa2_compute_complex.F90

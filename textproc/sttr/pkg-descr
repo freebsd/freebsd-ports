@@ -1,0 +1,21 @@
+The sttr command allows you to quickly run various text transformation
+operations:
+
+- ascii85, base32, base64, base64url, and base85 encode/decode
+- HTML encode/decode
+- URL encode/decode
+- rot13 encode
+- generate bcrypt, md5, sha1, sha256, or sha512 checksum
+- transform to camel-, kebab-, slug-, snake-, title-case
+- transform to lower or upper case
+- shuffle, sort, or unique lines
+- reverse text character by character or line by line
+- remove spaces or new-line characters
+- count characters, words, or lines
+- convert a #hex color code to RGB
+- hex encode/decode
+- format text as JSON
+- convert between JSON and MSGPACK or YAML text
+- convert markdown to HTML
+- extract emails, IP numbers, or URLs from text
+- pad numbers with zeroes

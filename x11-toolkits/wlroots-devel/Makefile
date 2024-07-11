@@ -1,14 +1,8 @@
 PORTNAME=	wlroots
-DISTVERSION=	0.17.0-312
-DISTVERSIONSUFFIX=	-gb1b34cd665
-PORTREVISION=	1
+DISTVERSION=	0.17.0-429
+DISTVERSIONSUFFIX=	-ga35b4f059d
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	-devel
-
-PATCH_SITES+=	https://github.com/hyprwm/wlroots-hyprland/raw/5c1d51c5a279/patches/:hyprland
-PATCHFILES+=	surface-nondivisible-by-scale.patch:-p1:hyprland
-PATCHFILES+=	nvidia-hardware-cursors.patch:-p1:hyprland
-PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library (development snapshot)
@@ -17,7 +11,7 @@ WWW=		https://gitlab.freedesktop.org/wlroots/wlroots
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	wayland-protocols>=1.33:graphics/wayland-protocols
+BUILD_DEPENDS=	wayland-protocols>=1.35:graphics/wayland-protocols
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
@@ -29,26 +23,35 @@ USE_XORG=	pixman
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 MESON_ARGS=	-Dexamples=false -Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
+PLIST_SUB=	SUFFIX=-0.18
 
-.ifdef PKGNAMESUFFIX
+# XXX Drop after graphics/wayland >= 1.24 update
+# https://gitlab.freedesktop.org/wayland/wayland/-/merge_requests/401
+MESON_ARGS+=	-Dc_std=c11
+
 PORTSCOUT=	ignore:1
-PREFIX=		${LOCALBASE}/${PKGBASE} # avoid conflict with the default
-MESON_ARGS+=	-Ddatadir="${LOCALBASE}/share"
-.endif
 
-OPTIONS_DEFINE=	DRM OPENGL VULKAN X11
-OPTIONS_DEFAULT=DRM OPENGL VULKAN X11
+OPTIONS_DEFINE=	DRM LCMS2 LIBLIFTOFF OPENGL VULKAN X11
+OPTIONS_DEFAULT=DRM LCMS2 LIBLIFTOFF OPENGL VULKAN X11
 OPTIONS_SUB=	yes
 
 DRM_DESC=		KMS console support
-DRM_BUILD_DEPENDS=	hwdata>0:misc/hwdata
+DRM_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+			hwdata>0:misc/hwdata
 DRM_LIB_DEPENDS=	libudev.so:devel/libudev-devd \
-			libliftoff.so:graphics/libliftoff \
 			libdisplay-info.so:sysutils/libdisplay-info \
 			libseat.so:sysutils/seatd \
 			libinput.so:x11/libinput
 DRM_MESON_ENABLED=	session
 DRM_VARS=		BACKENDS+="drm libinput"
+
+LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
+LCMS2_MESON_ENABLED=	color-management
+
+LIBLIFTOFF_DESC=	libliftoff DRM interface (see WLR_DRM_FORCE_LIBLIFTOFF)
+LIBLIFTOFF_LIB_DEPENDS=	libliftoff.so:graphics/libliftoff
+LIBLIFTOFF_MESON_ENABLED=	libliftoff
+LIBLIFTOFF_IMPLIES=	DRM
 
 OPENGL_RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
 OPENGL_USE=		GL=egl,glesv2
@@ -75,13 +78,5 @@ post-patch:
 # Extract (snapshot) version from the port instead of meson.build
 	@${REINPLACE_CMD} "/STR/s/meson.project_version()/'${DISTVERSIONFULL}'/" \
 		${WRKSRC}/include/wlr/meson.build
-# XXX Drop after FreeBSD 12.4 EOL around 2023-12-31
-# https://cgit.freebsd.org/src/commit/?id=d7535fb3e3cb
-	@if [ ${OPSYS} = FreeBSD -a ${OSVERSION} -lt 1300515 ]; then \
-		${REINPLACE_CMD} -e '/POSIX/s/199309/200112/' \
-		${WRKSRC}/render/gles2/pass.c \
-		${WRKSRC}/render/gles2/renderer.c \
-		${WRKSRC}/types/wlr_presentation_time.c; \
-	fi
 
 .include <bsd.port.mk>

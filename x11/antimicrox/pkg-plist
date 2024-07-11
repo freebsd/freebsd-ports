@@ -7,8 +7,10 @@ bin/antimicrox
 %%DATADIR%%/translations/antimicrox_de.qm
 %%DATADIR%%/translations/antimicrox_en.qm
 %%DATADIR%%/translations/antimicrox_es.qm
+%%DATADIR%%/translations/antimicrox_fa.qm
 %%DATADIR%%/translations/antimicrox_fi.qm
 %%DATADIR%%/translations/antimicrox_fr.qm
+%%DATADIR%%/translations/antimicrox_hr.qm
 %%DATADIR%%/translations/antimicrox_it.qm
 %%DATADIR%%/translations/antimicrox_ja.qm
 %%DATADIR%%/translations/antimicrox_ko.qm
@@ -20,7 +22,9 @@ bin/antimicrox
 %%DATADIR%%/translations/antimicrox_rue.qm
 %%DATADIR%%/translations/antimicrox_sr.qm
 %%DATADIR%%/translations/antimicrox_sv.qm
+%%DATADIR%%/translations/antimicrox_tr.qm
 %%DATADIR%%/translations/antimicrox_uk.qm
+%%DATADIR%%/translations/antimicrox_vi.qm
 %%DATADIR%%/translations/antimicrox_zh_CN.qm
 share/applications/io.github.antimicrox.antimicrox.desktop
 share/icons/breeze/48x48/apps/antimicrox_trayicon.png

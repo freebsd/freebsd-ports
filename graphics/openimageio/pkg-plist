@@ -15,16 +15,11 @@ include/OpenImageIO/color.h
 include/OpenImageIO/dassert.h
 include/OpenImageIO/deepdata.h
 include/OpenImageIO/detail/farmhash.h
-include/OpenImageIO/detail/fmt/core.h
-include/OpenImageIO/detail/fmt/format-inl.h
 include/OpenImageIO/detail/fmt/format.h
 include/OpenImageIO/detail/fmt/ostream.h
 include/OpenImageIO/detail/fmt/printf.h
 include/OpenImageIO/detail/fmt/std.h
 include/OpenImageIO/detail/fmt.h
-include/OpenImageIO/detail/pugixml/pugiconfig.hpp
-include/OpenImageIO/detail/pugixml/pugixml.cpp
-include/OpenImageIO/detail/pugixml/pugixml.hpp
 include/OpenImageIO/errorhandler.h
 include/OpenImageIO/export.h
 include/OpenImageIO/filesystem.h

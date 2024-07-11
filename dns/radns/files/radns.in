@@ -24,6 +24,7 @@ load_rc_config $name
 
 # Default values
 : ${radns_enable="NO"}
+: ${radns_svcj_options="net_basic"}
 : ${radns_pidfile="/var/run/${name}.pid"}
 : ${radns_resolv="${radns_dir}/radns-resolv.conf"}
 : ${radns_script=""}

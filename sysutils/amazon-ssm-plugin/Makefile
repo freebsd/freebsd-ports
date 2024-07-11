@@ -1,6 +1,6 @@
 PORTNAME=	amazon-ssm-plugin
-DISTVERSION=	1.2.536.0
-PORTREVISION=	4
+DISTVERSION=	1.2.633.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	nork@FreeBSD.org
@@ -23,16 +23,13 @@ GH_PROJECT=	session-manager-plugin
 GH_SUBDIR=	${GH_PROJECT}
 GH_TUPLE=	eiannone:keyboard:6d2a597fd0f1:eiannone_keyboard/vendor/github.com/eiannone/keyboard \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
-		golang:crypto:159ae71589f3:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sync:43a5402ce75a:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		gorilla:websocket:e8629af678b7:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		jmespath:go-jmespath:c2b33e8439af:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		stretchr:objx:cbeaeb16a013:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:6cb3b85ef5a0:stretchr_testify/vendor/github.com/stretchr/testify \
 		twinj:uuid:70cac2bcd273:twinj_uuid/vendor/github.com/twinj/uuid \
 		xtaci:smux:09e2c01560df:xtaci_smux/vendor/github.com/xtaci/smux
-#shrinked?#	aws:aws-sdk-go:v1.44.302:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go
+#shrinked?#	aws:aws-sdk-go:v1.49.8:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go
 #customized#	cihub:seelog:c510775bb50d:cihub_seelog/vendor/github.com/cihub/seelog
 
 PORTDOCS=	NOTICE README.md RELEASENOTES.md THIRD-PARTY VERSION
@@ -50,6 +47,7 @@ post-extract:
 	@${MKDIR} ${WRKDIR}/src
 	@${LN} -s ${WRKSRC} ${GO_WRKSRC}
 	${MKDIR} ${WRKSRC}/vendor/github.com/aws/session-manager-plugin
+	${LN} -s src/golang.org                      ${GO_WRKSRC}/vendor/
 	${LN} -s ../../../../src                     ${GO_WRKSRC}/vendor/github.com/aws/session-manager-plugin/
 	${LN} -s ../src/github.com/cihub             ${GO_WRKSRC}/vendor/github.com/
 	${LN} -s ../../src/github.com/aws/aws-sdk-go ${GO_WRKSRC}/vendor/github.com/aws/

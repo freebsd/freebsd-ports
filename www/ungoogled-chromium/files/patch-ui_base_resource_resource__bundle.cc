@@ -1,6 +1,6 @@
---- ui/base/resource/resource_bundle.cc.orig	2024-05-23 20:04:36 UTC
+--- ui/base/resource/resource_bundle.cc.orig	2024-06-22 08:49:42 UTC
 +++ ui/base/resource/resource_bundle.cc
-@@ -927,7 +927,7 @@ void ResourceBundle::ReloadFonts() {
+@@ -926,7 +926,7 @@ void ResourceBundle::ReloadFonts() {
  }
  
  ResourceScaleFactor ResourceBundle::GetMaxResourceScaleFactor() const {

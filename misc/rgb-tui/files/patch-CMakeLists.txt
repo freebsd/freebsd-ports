@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2024-06-02 14:31:17 UTC
++++ CMakeLists.txt
+@@ -9,6 +9,7 @@ set(BUILD_SHARED_LIBS FALSE)
+ set(BUILD_SHARED_LIBS FALSE)
+ 
+ # --- Fetch FTXUI --------------------------------------------------------------
++if (FALSE)
+ include(FetchContent)
+ 
+ set(FETCHCONTENT_UPDATES_DISCONNECTED TRUE)
+@@ -45,6 +46,11 @@ endif()
+   add_subdirectory(${clip_SOURCE_DIR} ${clip_BINARY_DIR} EXCLUDE_FROM_ALL)
+   target_include_directories(clip INTERFACE ${clip_SOURCE_DIR})
+ endif()
++
++endif()
++
++find_package(ftxui)
++find_package(fmt)
+ 
+ # ------------------------------------------------------------------------------
+ 

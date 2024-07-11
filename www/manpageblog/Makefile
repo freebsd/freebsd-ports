@@ -1,6 +1,5 @@
 PORTNAME=	manpageblog
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.1
+DISTVERSION=	1.4
 CATEGORIES=	www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,6 +10,8 @@ WWW=		https://github.com/gyptazy/manpageblog
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown-it-py>=3.0.0:textproc/py-markdown-it-py@${PY_FLAVOR}
+
 USES=		python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	gyptazy
@@ -20,7 +21,7 @@ SHEBANG_FILES=	${WRKSRC}/manpageblog
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=	EXAMPLES DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-trace
-PORTVERSION=	0.43.0
+PORTVERSION=	0.44.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-concurrent-ruby>=1.1<2:devel/rubygem-concurrent-ruby \
 		rubygem-google-cloud-core>=1.5<2:net/rubygem-google-cloud-core \
-		rubygem-google-cloud-trace-v1>=0.0<1:net/rubygem-google-cloud-trace-v1 \
-		rubygem-google-cloud-trace-v2>=0.0<1:net/rubygem-google-cloud-trace-v2 \
+		rubygem-google-cloud-trace-v1>=0.0<2.0:net/rubygem-google-cloud-trace-v1 \
+		rubygem-google-cloud-trace-v2>=0.0<2.0:net/rubygem-google-cloud-trace-v2 \
 		rubygem-stackdriver-core>=1.3<2:net/rubygem-stackdriver-core
 
 USES=		gem

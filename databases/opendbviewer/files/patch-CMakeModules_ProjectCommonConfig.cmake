@@ -1,0 +1,17 @@
+--- CMakeModules/ProjectCommonConfig.cmake.orig	2024-06-18 16:17:49 UTC
++++ CMakeModules/ProjectCommonConfig.cmake
+@@ -48,12 +48,12 @@ else()
+ 	set(INSTALL_PATH_ICONS ".")
+ 	set(INSTALL_PATH_ETC "../etc")
+ else()
+-	set(INSTALL_PATH_BIN "share/${APPLICATION_PACKAGE_NAME}/bin")
++	set(INSTALL_PATH_BIN "bin")
+ 	set(INSTALL_PATH_SHARE "share/${APPLICATION_PACKAGE_NAME}")
+ 	set(INSTALL_PATH_LIB "share/${APPLICATION_PACKAGE_NAME}/lib")
+ 	set(INSTALL_PATH_INCLUDE "share/${APPLICATION_PACKAGE_NAME}/include")
+ 	set(INSTALL_PATH_PLUGIN "share/${APPLICATION_PACKAGE_NAME}/plugins")
+-	set(INSTALL_PATH_DOC "share/${APPLICATION_PACKAGE_NAME}/doc")
++	set(INSTALL_PATH_DOC "share/doc/${APPLICATION_PACKAGE_NAME}")
+ 	set(INSTALL_PATH_LICENSE "share/${APPLICATION_PACKAGE_NAME}/license")
+ 	set(INSTALL_PATH_APPLICATIONS "share/applications")
+ 	set(INSTALL_PATH_ICONS "share/icons")

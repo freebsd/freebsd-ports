@@ -1,7 +1,7 @@
 PORTNAME=	paperless-ngx
 PORTVERSION=	2.7.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/:webui \
 		GH:gh
@@ -63,7 +63,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bleach>=6.1.0:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>=12.0:devel/py-websockets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}whitenoise>=6.2.0:www/py-whitenoise@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}whoosh>=2.7.4:textproc/py-whoosh@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=6.0.1:devel/py-yaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0.1:devel/py-pyyaml@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 RUN_DEPENDS+=	gpg2:security/gnupg \
 		liberation-fonts-ttf>=2.1.3:x11-fonts/liberation-fonts-ttf \
@@ -83,7 +83,7 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*paperless
 
 NO_ARCH=	yes
 
-SUB_FILES=	nginx.conf paperless-ngx.7 pkg-message README sshd_config
+SUB_FILES=	nginx.conf paperless paperless-ngx.7 pkg-message README sshd_config
 SUB_LIST=	CHOWN=${CHOWN} \
 		ECHO=${ECHO} \
 		EGREP=${EGREP} \
@@ -146,9 +146,7 @@ do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} gunicorn.conf.py \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/paperless
 	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.orig' -delete
-	@${RLN} ${STAGEDIR}${PYTHON_SITELIBDIR}/paperless/manage.py \
-		${STAGEDIR}${PREFIX}/bin/paperless
-	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/paperless
+	@cd ${WRKDIR} && ${INSTALL_SCRIPT} paperless ${STAGEDIR}${PREFIX}/bin
 	@${SED} -e 's|%%WWWDIR%%|${WWWDIR}|g;' \
 		${WRKSRC}/paperless.conf.example \
 		> ${STAGEDIR}${PREFIX}/etc/paperless.conf.sample

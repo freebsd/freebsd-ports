@@ -1,10 +1,3 @@
 bin/transmission-daemon
 @dir %%ETCDIR%%/home
 share/man/man1/transmission-daemon.1.gz
-%%WEB%%%%DATADIR%%/public_html/images/favicon.ico
-%%WEB%%%%DATADIR%%/public_html/images/favicon.png
-%%WEB%%%%DATADIR%%/public_html/images/webclip-icon.png
-%%WEB%%%%DATADIR%%/public_html/index.html
-%%WEB%%%%DATADIR%%/public_html/transmission-app.css
-%%WEB%%%%DATADIR%%/public_html/transmission-app.js
-%%WEB%%%%DATADIR%%/public_html/transmission-app.js.LEGAL.txt

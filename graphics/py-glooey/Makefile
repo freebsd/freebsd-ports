@@ -1,6 +1,6 @@
 PORTNAME=	glooey
 PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics x11-toolkits python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet1>0:graphics/py-pyglet1@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}vecrec>0:graphics/py-vecrec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}autoprop>0:devel/py-autoprop@${PY_FLAVOR}  \
 		${PYTHON_PKGNAMEPREFIX}debugtools>0:devel/py-debugtools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
 
 USES=		display:test python
 USE_PYTHON=	autoplist distutils pytest

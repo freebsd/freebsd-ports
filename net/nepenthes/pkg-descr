@@ -1,4 +1,0 @@
-Nepenthes can determine the malware activity on a network by deploying
-a nepenthes sensor (i.e. honey pot). The programm emulates different
-well known vulnerabilities waiting for malicious connections trying to
-exploit them.

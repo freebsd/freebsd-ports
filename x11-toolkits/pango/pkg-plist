@@ -409,6 +409,7 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/Pango/method.FontMap.list_families.html
 %%PORTDOCS%%share/doc/Pango/method.FontMap.load_font.html
 %%PORTDOCS%%share/doc/Pango/method.FontMap.load_fontset.html
+%%PORTDOCS%%share/doc/Pango/method.FontMap.reload_font.html
 %%PORTDOCS%%share/doc/Pango/method.FontMetrics.get_approximate_char_width.html
 %%PORTDOCS%%share/doc/Pango/method.FontMetrics.get_approximate_digit_width.html
 %%PORTDOCS%%share/doc/Pango/method.FontMetrics.get_ascent.html
@@ -606,12 +607,15 @@ libdata/pkgconfig/pangoot.pc
 %%PORTDOCS%%share/doc/Pango/pango_fonts.html
 %%PORTDOCS%%share/doc/Pango/pango_markup.html
 %%PORTDOCS%%share/doc/Pango/pango_rendering.html
-%%PORTDOCS%%share/doc/Pango/property.FontFamily.item-type.html
-%%PORTDOCS%%share/doc/Pango/property.FontFamily.n-items.html
-%%PORTDOCS%%share/doc/Pango/property.FontMap.item-type.html
-%%PORTDOCS%%share/doc/Pango/property.FontMap.n-items.html
 %%PORTDOCS%%share/doc/Pango/pipeline-dark.png
 %%PORTDOCS%%share/doc/Pango/pipeline-light.png
+%%PORTDOCS%%share/doc/Pango/property.FontFamily.is-monospace.html
+%%PORTDOCS%%share/doc/Pango/property.FontFamily.is-variable.html
+%%PORTDOCS%%share/doc/Pango/property.FontFamily.item-type.html
+%%PORTDOCS%%share/doc/Pango/property.FontFamily.n-items.html
+%%PORTDOCS%%share/doc/Pango/property.FontFamily.name.html
+%%PORTDOCS%%share/doc/Pango/property.FontMap.item-type.html
+%%PORTDOCS%%share/doc/Pango/property.FontMap.n-items.html
 %%PORTDOCS%%share/doc/Pango/rects1.png
 %%PORTDOCS%%share/doc/Pango/rects2.png
 %%PORTDOCS%%share/doc/Pango/rects3.png

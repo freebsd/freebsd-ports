@@ -1,8 +1,7 @@
 PORTNAME=	sane-backends
-DISTVERSION=	1.2.1
-PORTREVISION=	6
+DISTVERSION=	1.3.1
 CATEGORIES=	graphics
-MASTER_SITES=	https://gitlab.com/sane-project/backends/uploads/110fc43336d0fb5e514f1fdc7360dd87/
+MASTER_SITES=	https://gitlab.com/sane-project/backends/uploads/83bdbb6c9a115184c2d48f1fdc6847db/
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	API for accessing scanners, digital cameras, frame grabbers, etc
@@ -37,8 +36,8 @@ OPTIONS_DEFINE=		AVAHI DOCS GPHOTO IEEE1284 IPV6 NLS SNMP USB V4L
 OPTIONS_DEFAULT=	AVAHI GPHOTO USB
 OPTIONS_SUB=		yes
 
-IEEE1284_DESC=	Parallel port support via libieee1284 (for i386 only)
-USB_DESC=	USB support
+IEEE1284_DESC=		Parallel port support via libieee1284 (for i386 only)
+USB_DESC=		USB support
 
 AVAHI_LIB_DEPENDS=		libavahi-client.so:net/avahi-app \
 				libcurl.so:ftp/curl \
@@ -50,7 +49,7 @@ GPHOTO_CONFIGURE_WITH=		gphoto2
 IEEE1284_LIB_DEPENDS=		libieee1284.so:sysutils/libieee1284
 IEEE1284_CONFIGURE_ENV_OFF=	sane_cv_use_libieee1284=no
 IPV6_CONFIGURE_ENABLE=		ipv6
-NLS_USES=			gettext
+NLS_USES=			gettext-tools
 NLS_CONFIGURE_ENABLE=		nls
 SNMP_LIB_DEPENDS=		libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_WITH=		snmp

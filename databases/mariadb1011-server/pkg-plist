@@ -144,6 +144,7 @@ include/mysql/server/mysql/service_md5.h
 include/mysql/server/mysql/service_my_crypt.h
 include/mysql/server/mysql/service_my_print_error.h
 include/mysql/server/mysql/service_my_snprintf.h
+include/mysql/server/mysql/service_print_check_msg.h
 include/mysql/server/mysql/service_progress_report.h
 include/mysql/server/mysql/service_sha1.h
 include/mysql/server/mysql/service_sha2.h
@@ -326,6 +327,7 @@ libexec/mysqld
 @comment %%WSREP%%share/man/man1/wsrep_sst_mysqldump.1.gz
 @comment %%WSREP%%share/man/man1/wsrep_sst_rsync.1.gz
 @comment %%WSREP%%share/man/man1/wsrep_sst_rsync_wan.1.gz
+%%WSREP%%share/man/man1/wsrep_sst_backup.1.gz
 @comment share/man/man3/mariadb_cancel.3.gz
 @comment share/man/man3/mariadb_connection.3.gz
 @comment share/man/man3/mariadb_dyncol_check.3.gz

@@ -1,6 +1,6 @@
---- src/crypto/crypto_util.cc.orig	2023-03-05 06:42:54 UTC
+--- src/crypto/crypto_util.cc.orig	2024-02-13 21:43:33 UTC
 +++ src/crypto/crypto_util.cc
-@@ -194,10 +194,12 @@ void InitCryptoOnce() {
+@@ -205,10 +205,12 @@ void InitCryptoOnce() {
    // No-op with OPENSSL_NO_COMP builds of OpenSSL.
    sk_SSL_COMP_zero(SSL_COMP_get_compression_methods());
  

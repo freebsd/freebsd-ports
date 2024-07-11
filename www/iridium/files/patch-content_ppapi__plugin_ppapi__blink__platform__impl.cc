@@ -1,6 +1,6 @@
---- content/ppapi_plugin/ppapi_blink_platform_impl.cc.orig	2023-07-24 14:27:53 UTC
+--- content/ppapi_plugin/ppapi_blink_platform_impl.cc.orig	2024-06-25 12:08:48 UTC
 +++ content/ppapi_plugin/ppapi_blink_platform_impl.cc
-@@ -20,7 +20,7 @@
+@@ -21,7 +21,7 @@
  
  #if BUILDFLAG(IS_MAC)
  #include "content/child/child_process_sandbox_support_impl_mac.h"
@@ -9,7 +9,7 @@
  #include "content/child/child_process_sandbox_support_impl_linux.h"
  #include "mojo/public/cpp/bindings/pending_remote.h"
  #endif
-@@ -35,7 +35,7 @@ typedef struct CGFont* CGFontRef;
+@@ -36,7 +36,7 @@ typedef struct CGFont* CGFontRef;
  namespace content {
  
  PpapiBlinkPlatformImpl::PpapiBlinkPlatformImpl() {
@@ -18,7 +18,7 @@
    mojo::PendingRemote<font_service::mojom::FontService> font_service;
    ChildThread::Get()->BindHostReceiver(
        font_service.InitWithNewPipeAndPassReceiver());
-@@ -54,7 +54,7 @@ PpapiBlinkPlatformImpl::~PpapiBlinkPlatformImpl() {
+@@ -55,7 +55,7 @@ PpapiBlinkPlatformImpl::~PpapiBlinkPlatformImpl() {
  void PpapiBlinkPlatformImpl::Shutdown() {}
  
  blink::WebSandboxSupport* PpapiBlinkPlatformImpl::GetSandboxSupport() {

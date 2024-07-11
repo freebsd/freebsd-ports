@@ -75,7 +75,7 @@ ECLIPSE_RESULT=	eclipse.platform.releng.tychoeclipsebuilder/eclipse.platform.rep
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 150
+.if ${COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-deprecated-non-prototype
 .endif
 

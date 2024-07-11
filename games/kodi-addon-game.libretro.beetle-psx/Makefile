@@ -1,12 +1,11 @@
 PORTNAME=	game.libretro.beetle-psx
-PORTVERSION=	0.9.44.43
-DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	2
+PORTVERSION=	0.9.44.61
+DISTVERSIONSUFFIX=	-Nexus
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com
 COMMENT=	Kodi game addon for Sony - PlayStation (Beetle PSX)
-WWW=		https://github.com/libretro/beetle-psx-libretro
+WWW=		https://github.com/kodi-game/game.libretro.beetle-psx
 
 LICENSE=	GPLv2+
 

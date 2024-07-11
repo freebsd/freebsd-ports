@@ -1,24 +1,25 @@
---- components/feature_engagement/public/feature_list.cc.orig	2024-05-21 18:07:39 UTC
+--- components/feature_engagement/public/feature_list.cc.orig	2024-06-17 12:56:06 UTC
 +++ components/feature_engagement/public/feature_list.cc
-@@ -147,7 +147,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -148,7 +148,7 @@ const base::Feature* const kAllFeatures[] = {
      &kIPHiOSInlineEnhancedSafeBrowsingPromoFeature,
  #endif  // BUILDFLAG(IS_IOS)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
+     &kEsbDownloadRowPromoFeature,
      &kIPHBatterySaverModeFeature,
      &kIPHCompanionSidePanelFeature,
-     &kIPHCompanionSidePanelRegionSearchFeature,
-@@ -201,7 +201,7 @@ const base::Feature* const kAllFeatures[] = {
- #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) ||
+@@ -211,7 +211,8 @@ const base::Feature* const kAllFeatures[] = {
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || \
-     BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || \
++    BUILDFLAG(IS_BSD)
      &kIPHAutofillCreditCardBenefitFeature,
      &kIPHAutofillExternalAccountProfileSuggestionFeature,
-@@ -252,7 +252,7 @@ const base::Feature* const kAllFeatures[] = {
+     &kIPHAutofillManualFallbackFeature,
+@@ -260,7 +261,7 @@ const base::Feature* const kAllFeatures[] = {
      &kIPHScalableIphGamingFeature,
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  

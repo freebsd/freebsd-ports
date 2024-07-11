@@ -167,7 +167,7 @@ WAYLAND_LIB_DEPENDS=		libwayland-client.so:graphics/wayland \
 				libwayland-cursor.so:graphics/wayland
 WAYLAND_CONFIGURE_OFF=		--disable-wayland
 
-WMCTRL_RUN_DEPENDS=		wmctrl:x11/wmctrl
+WMCTRL_RUN_DEPENDS=		wmctrl:x11/wmctrl-fork
 
 X264_RUN_DEPENDS=		x264:multimedia/x264
 

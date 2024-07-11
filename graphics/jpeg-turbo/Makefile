@@ -1,5 +1,5 @@
 PORTNAME=	jpeg-turbo
-DISTVERSION=	3.0.2
+DISTVERSION=	3.0.3
 #PORTREVISION?=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/lib${PORTNAME}/lib${PORTNAME}/releases/download/${DISTVERSION}/
@@ -23,9 +23,9 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 BUILD_DEPENDS_i386=	nasm:devel/nasm
 
 USES=		cmake cpe pathfix
+CPE_PRODUCT=	libjpeg-turbo
 USE_LDCONFIG=	yes
 
-CPE_PRODUCT=	libjpeg-turbo
 TEST_TARGET=	test
 
 PORTDOCS=	*

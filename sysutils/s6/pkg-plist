@@ -62,7 +62,6 @@ bin/s6-svwait
 bin/s6-tai64n
 bin/s6-tai64nlocal
 bin/s6-usertree-maker
-bin/s6lockd
 bin/ucspilogd
 @sample %%ETCDIR%%/s6-svscan-log/run.sample
 @sample %%ETCDIR%%/s6-svscan/env/PATH.sample
@@ -79,14 +78,13 @@ include/s6/s6.h
 include/s6/servicedir.h
 include/s6/supervise.h
 lib/libs6.so
-lib/libs6.so.2.11
-lib/libs6.so.2.11.3.2
+lib/libs6.so.2.12
+lib/libs6.so.2.12.0.4
 lib/libs6auto.so
-lib/libs6auto.so.2.11
-lib/libs6auto.so.2.11.3.2
+lib/libs6auto.so.2.12
+lib/libs6auto.so.2.12.0.4
 lib/s6/libs6.a
 lib/s6/libs6auto.a
-libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/fifodir.html
@@ -165,5 +163,6 @@ libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/servicedir.html
 %%PORTDOCS%%%%DOCSDIR%%/socket-activation.html
 %%PORTDOCS%%%%DOCSDIR%%/ucspilogd.html
+%%PORTDOCS%%%%DOCSDIR%%/unit-conversion.html
 %%PORTDOCS%%%%DOCSDIR%%/upgrade.html
 %%PORTDOCS%%%%DOCSDIR%%/why.html

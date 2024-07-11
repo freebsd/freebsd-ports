@@ -7,7 +7,7 @@
 #
 # Add the following line to /etc/rc.conf to enable php-fpm:
 # php-fpm_enable (bool):        Set to "NO" by default.
-#                               Set it to "YES" to enable nginx
+#                               Set it to "YES" to enable php-fpm
 # php-fpm_profiles (str):       Set to "" by default.
 #                               Define your profiles here.
 # php_fpm_pid_prefix (str):     Set to "" by default.
@@ -32,6 +32,7 @@ load_rc_config "${name}"
 
 : ${php_fpm_enable="NO"}
 : ${php_fpm_umask=""}
+: ${php_fpm_svcj_options:="net_basic"}
 
 if [ -n "$2" ]; then
         profile="$2"

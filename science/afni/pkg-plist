@@ -554,6 +554,7 @@ bin/count_afni
 bin/dcm2niix_afni
 bin/demo.fixed.niml.do
 bin/demo.mobile.niml.do
+bin/desphinxify
 bin/dicom_hdr
 bin/dicom_hinfo
 bin/dicom_to_raw
@@ -621,6 +622,7 @@ bin/make_pq_script.py
 bin/make_random_timing.py
 bin/make_stim_times.py
 bin/map_TrackID
+bin/map_ap_to_deriv.py
 bin/meica.py
 bin/mycat
 bin/myget
@@ -838,6 +840,8 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/gui_xmat.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_RR_plot.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_afni1D.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_ap_derivs.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_ap_derivs_opts.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_ap_examples.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_html.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_html_css.py
@@ -1532,6 +1536,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/splash_bootcampA.jpg
 %%DATADIR%%/funstuff/splash_bootcampB.jpg
 %%DATADIR%%/funstuff/splash_bootcampC.jpg
+%%DATADIR%%/funstuff/splash_bootcamp_2024_UNAM-Juriquilla.jpg
 %%DATADIR%%/funstuff/splash_bootcamp_dec2013.jpg
 %%DATADIR%%/funstuff/splash_bootcamp_oct2018.jpg
 %%DATADIR%%/funstuff/splash_borabora.jpg

@@ -1,0 +1,17 @@
+--- CMakeLists.txt.orig	2024-06-07 20:27:03 UTC
++++ CMakeLists.txt
+@@ -12,10 +12,10 @@ find_or_fetch_package(ftxui v5.0.0
+   cdf28903a7781f97ba94d30b79c3a4b0c97ccce7
+ )
+ 
+-find_or_fetch_package(subprocess v0.4.0
+-  https://github.com/benman64/subprocess
+-  e1cae5e86e5d089e65e906f7c13917b7bbb75d04
+-)
++#find_or_fetch_package(subprocess v0.4.0
++#  https://github.com/benman64/subprocess
++#  e1cae5e86e5d089e65e906f7c13917b7bbb75d04
++#)
+ 
+ # ------------------------------------------------------------------------------
+ 

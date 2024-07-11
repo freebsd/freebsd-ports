@@ -103,9 +103,14 @@
 %%DATADIR%%/dk_sdfe_gvr2000.tif
 %%DATADIR%%/dk_sdfe_gvr2016.tif
 %%DATADIR%%/dk_sdfi_README.txt
+%%DATADIR%%/dk_sdfi_dklat_2022.tif
+%%DATADIR%%/dk_sdfi_dklat_2023.tif
+%%DATADIR%%/dk_sdfi_dkmsl_2022.tif
+%%DATADIR%%/dk_sdfi_dkmsl_2023.tif
 %%DATADIR%%/dk_sdfi_dvr90_2002.tif
 %%DATADIR%%/dk_sdfi_dvr90_2013.tif
 %%DATADIR%%/dk_sdfi_dvr90_2023.tif
+%%DATADIR%%/dk_sdfi_gllmsl_2022.tif
 %%DATADIR%%/dk_sdfi_gs_2022.tif
 %%DATADIR%%/dk_sdfi_gsb_2022.tif
 %%DATADIR%%/dk_sdfi_kk_2022.tif

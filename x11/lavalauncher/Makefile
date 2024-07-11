@@ -12,6 +12,8 @@ WWW=		https://git.sr.ht/~leon_plickat/lavalauncher
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	https://lists.sr.ht/~leon_plickat/lavalauncher/%3CCIPW63LE88JJ.2LYO5E6UAFLPB@m5%3E
+
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \

@@ -1,11 +1,7 @@
---- content/browser/utility_sandbox_delegate.cc.orig	2024-02-04 14:46:08 UTC
+--- content/browser/utility_sandbox_delegate.cc.orig	2024-06-25 12:08:48 UTC
 +++ content/browser/utility_sandbox_delegate.cc
-@@ -64,13 +64,13 @@ UtilitySandboxedProcessLauncherDelegate::
- #if BUILDFLAG(ENABLE_PPAPI)
-       sandbox_type_ == sandbox::mojom::Sandbox::kPpapi ||
- #endif
--#if BUILDFLAG(IS_FUCHSIA)
-+#if BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
+@@ -67,10 +67,10 @@ UtilitySandboxedProcessLauncherDelegate::
+ #if BUILDFLAG(IS_FUCHSIA)
        sandbox_type_ == sandbox::mojom::Sandbox::kVideoCapture ||
  #endif
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
@@ -17,10 +13,10 @@
        sandbox_type_ == sandbox::mojom::Sandbox::kHardwareVideoEncoding ||
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -125,10 +125,10 @@ ZygoteCommunication* UtilitySandboxedProcessLauncherDe
-   // unsandboxed zygote and then apply their actual sandboxes in the forked
+@@ -126,10 +126,10 @@ ZygoteCommunication* UtilitySandboxedProcessLauncherDe
    // process upon startup.
    if (sandbox_type_ == sandbox::mojom::Sandbox::kNetwork ||
+       sandbox_type_ == sandbox::mojom::Sandbox::kOnDeviceModelExecution ||
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
        sandbox_type_ == sandbox::mojom::Sandbox::kHardwareVideoDecoding ||

@@ -1,11 +1,8 @@
 PORTNAME=	mrboom
-DISTVERSION=	5.4
+DISTVERSION=	5.5
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/Javanaise/mrboom-libretro/releases/download/${PORTVERSION}/
 DISTNAME=	MrBoom-src-${PORTVERSION}
-
-PATCH_SITES=	https://github.com/Javanaise/mrboom-libretro/commit/
-PATCHFILES=	564c63232ace8624b5a520b77f0693b7b68fbfe5.patch:-p1
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	8 players Bomberman clone

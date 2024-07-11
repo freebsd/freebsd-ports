@@ -1,6 +1,6 @@
 PORTNAME=	mimalloc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.6
+DISTVERSION=	2.1.7
 CATEGORIES=	devel
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/microsoft/mimalloc
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++17-lang
+USES=		cmake:testing compiler:c++17-lang pathfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 USE_LDCONFIG=	yes

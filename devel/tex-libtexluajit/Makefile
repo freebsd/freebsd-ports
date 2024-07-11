@@ -1,6 +1,6 @@
 PORTNAME=	libtexluajit
-PORTVERSION=	2.1.0
-PORTREVISION=	2
+DISTVERSION=	2.1.0
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}
 PKGNAMEPREFIX=	tex-
@@ -29,11 +29,4 @@ EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=	build-aux libs/luajit
 WRKSRC=		${WRKDIR}/${DISTNAME}/libs/luajit
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH:Mpowerpc*} && ${COMPILER_VERSION} < 140
-BUILD_DEPENDS+= as:devel/binutils
-CFLAGS+=        -fno-integrated-as
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

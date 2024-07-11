@@ -10,6 +10,7 @@ share/metainfo/texstudio.metainfo.xml
 %%DATADIR%%/_images/Tool_Bar_Menu.png
 %%DATADIR%%/_images/Tool_Bar_Move.png
 %%DATADIR%%/_images/active_language.png
+%%DATADIR%%/_images/ai_wizard.png
 %%DATADIR%%/_images/blockCursor.png
 %%DATADIR%%/_images/blockCursor_selection.png
 %%DATADIR%%/_images/block_selection.png
@@ -34,6 +35,7 @@ share/metainfo/texstudio.metainfo.xml
 %%DATADIR%%/_images/completer_usertag_text.png
 %%DATADIR%%/_images/conf_LT.png
 %%DATADIR%%/_images/conf_LT_adv.png
+%%DATADIR%%/_images/conf_ai.png
 %%DATADIR%%/_images/conf_grammar_internal.png
 %%DATADIR%%/_images/conf_structurepanel.png
 %%DATADIR%%/_images/conf_tableautoformating.png
@@ -61,6 +63,9 @@ share/metainfo/texstudio.metainfo.xml
 %%DATADIR%%/_images/doc19.png
 %%DATADIR%%/_images/doc21.png
 %%DATADIR%%/_images/doc3.png
+%%DATADIR%%/_images/dock_move.png
+%%DATADIR%%/_images/dock_split.png
+%%DATADIR%%/_images/dock_start.png
 %%DATADIR%%/_images/down.png
 %%DATADIR%%/_images/errorlog.png
 %%DATADIR%%/_images/extendedSearch.png
@@ -113,6 +118,7 @@ share/metainfo/texstudio.metainfo.xml
 %%DATADIR%%/_images/txs_wizard.png
 %%DATADIR%%/_images/up.png
 %%DATADIR%%/_images/userfoldmarker.png
+%%DATADIR%%/_images/view_docks.png
 %%DATADIR%%/_images/viewbutton.png
 %%DATADIR%%/_images/wizard_array.png
 %%DATADIR%%/_images/wizard_figure.png

@@ -1,0 +1,35 @@
+--- src/meson.build.orig	2024-05-29 23:47:56 UTC
++++ src/meson.build
+@@ -15,13 +15,13 @@ gmp_dep = dependency('gmp',
+ # Subproject dependencies
+ 
+ # CaDiCaL does not provide pkg-config to find dependency
+-cadical_dep = cpp_compiler.find_library('cadical',
+-                                        has_headers: 'cadical.hpp',
+-                                        static: build_static,
+-                                        required: false)
+-if not cadical_dep.found()
+-  cadical_dep = dependency('cadical', required: true)
+-endif
++#cadical_dep = cpp_compiler.find_library('cadical',
++#                                        has_headers: 'cadical.hpp',
++#                                        static: build_static,
++#                                        required: false)
++#if not cadical_dep.found()
++#  cadical_dep = dependency('cadical', required: true)
++#endif
+ 
+ # Kissat does not provide pkg-config to find dependency
+ kissat_dep = cpp_compiler.find_library('kissat',
+@@ -34,9 +34,9 @@ endif
+ 
+ # Using system include type suppresses compile warnings originating from the
+ # symfpu headers
+-symfpu_dep = dependency('symfpu', include_type: 'system', required: true)
++#symfpu_dep = dependency('symfpu', include_type: 'system', required: true)
+ 
+-dependencies = [symfpu_dep, cadical_dep, kissat_dep, gmp_dep]
++dependencies = [kissat_dep, gmp_dep]
+ 
+ cpp_args = []
+ if kissat_dep.found()

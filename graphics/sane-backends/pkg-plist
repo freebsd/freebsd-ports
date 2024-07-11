@@ -46,6 +46,7 @@ bin/umax_pp
 @sample etc/sane.d/dist/kvs1025.conf etc/sane.d/kvs1025.conf
 @sample etc/sane.d/dist/leo.conf etc/sane.d/leo.conf
 @sample etc/sane.d/dist/lexmark.conf etc/sane.d/lexmark.conf
+@sample etc/sane.d/dist/lexmark_x2600.conf etc/sane.d/lexmark_x2600.conf
 @sample etc/sane.d/dist/ma1509.conf etc/sane.d/ma1509.conf
 @sample etc/sane.d/dist/magicolor.conf etc/sane.d/magicolor.conf
 @sample etc/sane.d/dist/matsushita.conf etc/sane.d/matsushita.conf
@@ -236,6 +237,9 @@ lib/sane/libsane-leo.so.%%SOVERSION%%
 lib/sane/libsane-lexmark.so
 lib/sane/libsane-lexmark.so.1
 lib/sane/libsane-lexmark.so.%%SOVERSION%%
+lib/sane/libsane-lexmark_x2600.so
+lib/sane/libsane-lexmark_x2600.so.1
+lib/sane/libsane-lexmark_x2600.so.%%SOVERSION%%
 lib/sane/libsane-ma1509.so
 lib/sane/libsane-ma1509.so.1
 lib/sane/libsane-ma1509.so.%%SOVERSION%%
@@ -412,6 +416,7 @@ share/man/man5/sane-kvs20xx.5.gz
 share/man/man5/sane-kvs40xx.5.gz
 share/man/man5/sane-leo.5.gz
 share/man/man5/sane-lexmark.5.gz
+share/man/man5/sane-lexmark_x2600.5.gz
 share/man/man5/sane-ma1509.5.gz
 share/man/man5/sane-magicolor.5.gz
 share/man/man5/sane-matsushita.5.gz
@@ -533,6 +538,7 @@ sbin/saned
 %%PORTDOCS%%%%DOCSDIR%%/sane-backends.html
 %%PORTDOCS%%%%DOCSDIR%%/sane-mfgs-external.html
 %%PORTDOCS%%%%DOCSDIR%%/sane-mfgs.html
+%%PORTDOCS%%%%DOCSDIR%%/saned/saned.install.md
 %%PORTDOCS%%%%DOCSDIR%%/sceptre/s1200.txt
 %%PORTDOCS%%%%DOCSDIR%%/teco/teco1.txt
 %%PORTDOCS%%%%DOCSDIR%%/teco/teco2.txt
@@ -584,6 +590,7 @@ sbin/saned
 %%NLS%%share/locale/hu/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/it/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/sane-backends.mo

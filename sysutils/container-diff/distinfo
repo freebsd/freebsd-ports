@@ -1,5 +1,0 @@
-TIMESTAMP = 1709390414
-SHA256 (go/sysutils_container-diff/container-diff-v0.19.0/v0.19.0.mod) = 1bc35c03f60e0fb977f4f642f51ceb035657f329debee26263d5fc11ae676945
-SIZE (go/sysutils_container-diff/container-diff-v0.19.0/v0.19.0.mod) = 2775
-SHA256 (go/sysutils_container-diff/container-diff-v0.19.0/v0.19.0.zip) = a8398fb898b1361a1d6ee43aa269249cda6291128bba482ffc52207df2ebe8f8
-SIZE (go/sysutils_container-diff/container-diff-v0.19.0/v0.19.0.zip) = 413617

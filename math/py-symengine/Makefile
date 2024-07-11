@@ -12,6 +12,8 @@ WWW=		https://symengine.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		incompatible with symengine-0.12.0, see https://github.com/symengine/symengine.py/issues/484
+
 LIB_DEPENDS=	libarb.so:math/arb \
 		libecm.so:math/gmp-ecm \
 		libflint.so:math/flint2 \

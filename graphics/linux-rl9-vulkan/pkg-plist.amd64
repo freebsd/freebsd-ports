@@ -1,6 +1,6 @@
-usr/lib/.build-id/e4/a5fe6e752cf16cdac8b5e570067899783a0162
+usr/lib/.build-id/c4/e1f787541e4b1015cc7c622055f85245355435
 usr/lib64/libvulkan.so.1
-usr/lib64/libvulkan.so.1.3.250
+usr/lib64/libvulkan.so.%%LIBVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 usr/share/licenses/vulkan-loader/LICENSE.txt

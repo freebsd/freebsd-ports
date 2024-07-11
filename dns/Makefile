@@ -13,8 +13,6 @@
     SUBDIR += c-ares
     SUBDIR += cli53
     SUBDIR += coredns
-    SUBDIR += crossip
-    SUBDIR += curvedns
     SUBDIR += ddclient
     SUBDIR += ddns
     SUBDIR += denominator
@@ -35,7 +33,6 @@
     SUBDIR += dnsdist
     SUBDIR += dnsenum
     SUBDIR += dnsflood
-    SUBDIR += dnsforwarder
     SUBDIR += dnshistory
     SUBDIR += dnsjava
     SUBDIR += dnsjit

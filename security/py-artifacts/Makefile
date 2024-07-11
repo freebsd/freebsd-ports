@@ -1,5 +1,6 @@
 PORTNAME=	artifacts
 PORTVERSION=	20230928
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI \
 		https://github.com/ForensicArtifacts/artifacts/releases/download/${PORTVERSION}/
@@ -12,7 +13,7 @@ WWW=		https://github.com/ForensicArtifacts/artifacts
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3.10:devel/py-yaml@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=3.10:devel/py-pyyaml@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python

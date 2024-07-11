@@ -1,6 +1,6 @@
 PORTNAME=	noip
 PORTVERSION=	2.1.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	dns
 MASTER_SITES=	http://www.no-ip.com/client/linux/ \
 		LOCAL/ehaupt

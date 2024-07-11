@@ -1,12 +1,11 @@
 PORTNAME=	ghostscript
-DISTVERSION=	10.03.0
-PORTREVISION=	3
+DISTVERSION=	10.03.1
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${DISTVERSION:S/.//g}/
 PKGNAMESUFFIX=	${GS_MAJOR_VERSION}
 
-PATCH_SITES=	https://github.com/ArtifexSoftware/ghostpdl/commit/
-PATCHFILES=	90cabe08422afdd16bac5dd9217602679d943045.patch:-p1
+PATCH_SITES=   https://github.com/ArtifexSoftware/ghostpdl/commit/
+PATCHFILES=    90cabe08422afdd16bac5dd9217602679d943045.patch:-p1
 
 MAINTAINER=	michael.osipov@siemens.com
 COMMENT=	PostScript and PDF interpreter
@@ -31,22 +30,22 @@ USES=		cpe gmake iconv jpeg localbase pkgconfig tar:xz
 USE_LDCONFIG=	yes
 CPE_VENDOR=	artifex
 
-EXTRACT_AFTER_ARGS=	--exclude cups/libs \
-			--exclude expat \
-			--exclude freetype \
-			--exclude ijs \
-			--exclude jbig2dec \
-			--exclude jpeg \
-			--exclude lcms2mt \
-			--exclude leptonica \
-			--exclude libpng \
-			--exclude openjpeg \
-			--exclude tesseract \
-			--exclude tiff \
-			--exclude zlib
+EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/cups/libs \
+			--exclude ${DISTNAME}/expat \
+			--exclude ${DISTNAME}/freetype \
+			--exclude ${DISTNAME}/ijs \
+			--exclude ${DISTNAME}/jbig2dec \
+			--exclude ${DISTNAME}/jpeg \
+			--exclude ${DISTNAME}/lcms2mt \
+			--exclude ${DISTNAME}/leptonica \
+			--exclude ${DISTNAME}/libpng \
+			--exclude ${DISTNAME}/openjpeg \
+			--exclude ${DISTNAME}/tesseract \
+			--exclude ${DISTNAME}/tiff \
+			--exclude ${DISTNAME}/zlib \
+			--no-same-owner --no-same-permissions
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 ALL_TARGET=	so
 INSTALL_TARGET=	soinstall
@@ -58,7 +57,7 @@ GS_MINOR_VERSION=	${DISTVERSION:R:E}
 PLIST_SUB=	GS_MAJOR_VERSION=${GS_MAJOR_VERSION} \
 			GS_MINOR_VERSION=${GS_MINOR_VERSION}
 
-CONFIGURE_ARGS+=	--disable-compile-inits \
+CONFIGURE_ARGS=		--disable-compile-inits \
 			--disable-dbus \
 			--disable-gtk \
 			--disable-dynamic \

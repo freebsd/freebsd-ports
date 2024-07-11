@@ -1,5 +1,5 @@
 PORTNAME=	nghttp3
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/ngtcp2/nghttp3/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	lib
@@ -12,12 +12,11 @@ WWW=		https://nghttp2.org/nghttp3/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++17-lang libtool pathfix pkgconfig tar:xz
+USES=		libtool pathfix pkgconfig tar:xz
 
 CONFIGURE_ARGS=	--enable-lib-only
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

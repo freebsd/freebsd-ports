@@ -1,6 +1,7 @@
 PORTNAME=	cargo-llvm-cov
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.9
+DISTVERSION=	0.6.10
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,9 +28,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		camino-1.1.7 \
 		cargo-config2-0.1.26 \
 		cfg-if-1.0.0 \
-		derive_more-0.99.17 \
 		duct-0.13.7 \
-		easy-ext-1.0.1 \
+		easy-ext-1.0.2 \
 		equivalent-1.0.1 \
 		errno-0.3.9 \
 		fastrand-2.1.0 \
@@ -50,7 +50,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		once_cell-1.19.0 \
 		opener-0.7.1 \
 		os_pipe-1.1.5 \
-		proc-macro2-1.0.82 \
+		proc-macro2-1.0.85 \
 		quick-xml-0.31.0 \
 		quote-1.0.36 \
 		redox_syscall-0.4.1 \
@@ -60,17 +60,16 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		rustc-demangle-0.1.24 \
 		rustix-0.38.34 \
 		rustversion-1.0.17 \
-		ruzstd-0.6.0 \
+		ruzstd-0.7.0 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
-		serde-1.0.202 \
-		serde_derive-1.0.202 \
+		serde-1.0.203 \
+		serde_derive-1.0.203 \
 		serde_json-1.0.117 \
 		serde_spanned-0.6.6 \
 		shared_child-1.0.0 \
 		shell-escape-0.1.5 \
-		syn-1.0.109 \
-		syn-2.0.64 \
+		syn-2.0.66 \
 		tar-0.4.40 \
 		tempfile-3.10.1 \
 		termcolor-1.4.1 \
@@ -92,7 +91,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_gnu-0.52.5 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.52.5 \
-		winnow-0.6.8 \
+		winnow-0.6.9 \
 		xattr-1.3.1
 
 PLIST_FILES=	bin/${PORTNAME}

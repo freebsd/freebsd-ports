@@ -1,7 +1,7 @@
 PORTNAME=	consul-template
-DISTVERSION=	0.37.6
+DISTVERSION=	0.38.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/hashicorp/consul-template
 
 LICENSE=	MPL20
 
-USES=		go:modules
+USES=		go:1.22,modules
 USE_RC_SUBR=	consul-template
 
 GO_MODULE=	github.com/hashicorp/consul-template

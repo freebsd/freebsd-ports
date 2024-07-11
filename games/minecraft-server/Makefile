@@ -1,10 +1,10 @@
 PORTNAME=	minecraft-server
-PORTVERSION=	1.20.4
+DISTVERSION=	1.21
 CATEGORIES=	games java
-MASTER_SITES=	https://piston-data.mojang.com/v1/objects/8dd1a28015f51b1803213892b50b7b4fc76e594d/
+MASTER_SITES=	https://piston-data.mojang.com/v1/objects/450698d1863ab5180c25d7c804ef0fe6369dd1ba/
 DISTNAME=	server
 EXTRACT_SUFX=	.jar
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 EXTRACT_ONLY=
 
 MAINTAINER=	freebsd@jonathanprice.org
@@ -17,17 +17,17 @@ LICENSE_TEXT=	The license can be viewed at: https://account.mojang.com/documents
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
 USE_JAVA=	yes
-JAVA_VERSION=	17
+JAVA_VERSION=	21
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	minecraft-server pkg-deinstall pkg-message
-SUB_LIST=	VERSION=${PORTVERSION}
+SUB_LIST=	JAVA_VERSION=${JAVA_VERSION} VERSION=${DISTVERSION}
 
 USERS=		mcserver
 GROUPS=		${USERS}
 
-PLIST_SUB=	VERSION=${PORTVERSION}
+PLIST_SUB=	VERSION=${DISTVERSION}
 
 CONFIG_FILES=	banned-ips.json banned-players.json eula.txt ops.json \
 		server.properties usercache.json whitelist.json
@@ -49,12 +49,13 @@ do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${MKDIR} ${STAGEDIR}/var/db/minecraft-server
 	${MKDIR} ${STAGEDIR}/var/log/minecraft-server
+	${MKDIR} ${STAGEDIR}/var/log/minecraft-server/debug
 .for file in ${CONFIG_FILES}
 	${LN} -s ${ETCDIR}/${file} ${STAGEDIR}${PREFIX}/${PORTNAME}/${file}
 .endfor
+	${LN} -sf /var/db/minecraft-server ${STAGEDIR}${PREFIX}/${PORTNAME}/world
 	${LN} -sf /var/log/minecraft-server ${STAGEDIR}${PREFIX}/${PORTNAME}/logs
 	${LN} -sf /var/log/minecraft-server/debug ${STAGEDIR}${PREFIX}/${PORTNAME}/debug
-	${LN} -sf /var/db/minecraft-server ${STAGEDIR}${PREFIX}/${PORTNAME}/world
 
 post-install-STANDALONE-on:
 	${INSTALL_SCRIPT} ${WRKDIR}/minecraft-server \

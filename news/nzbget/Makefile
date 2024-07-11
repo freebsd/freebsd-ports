@@ -1,5 +1,6 @@
 PORTNAME=	nzbget
 PORTVERSION=	24.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	news
 
@@ -11,6 +12,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libboost_json.so:devel/boost-libs \
 		libxml2.so:textproc/libxml2
+RUN_DEPENDS=	7-zip>0:archivers/7-zip \
+		unrar>0:archivers/unrar
 
 USES=		cmake ncurses python:build ssl
 USE_GITHUB=	yes

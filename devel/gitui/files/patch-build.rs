@@ -1,12 +1,19 @@
---- build.rs.orig	2024-04-15 23:07:43 UTC
+--- build.rs.orig	2024-06-02 12:49:32 UTC
 +++ build.rs
-@@ -1,20 +1,5 @@ fn get_git_hash() -> String {
+@@ -1,27 +1,7 @@ fn get_git_hash() -> String {
+ use chrono::TimeZone;
+ 
  fn get_git_hash() -> String {
 -	use std::process::Command;
 -
+-	// Allow builds from `git archive` generated tarballs if output of `git get-tar-commit-id` is
+-	// set in an env var.
+-	if let Ok(commit) = std::env::var("BUILD_GIT_COMMIT_ID") {
+-		return commit[..7].to_string();
+-	};
 -	let commit = Command::new("git")
 -		.arg("rev-parse")
--		.arg("--short")
+-		.arg("--short=7")
 -		.arg("--verify")
 -		.arg("HEAD")
 -		.output();

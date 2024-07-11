@@ -1,3 +1,0 @@
-Advanced search language for Django, with auto-completion.
-Supports logical operators, parenthesis, table joins, works
-with any Django models

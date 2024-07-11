@@ -1,8 +1,10 @@
 PORTNAME=	noto
-PORTVERSION=	2.004
+PORTVERSION=	3.001
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoSansHebrew-v${PORTVERSION}/ \
-		https://github.com/notofonts/notofonts.github.io/raw/NotoSansHebrew-v${PORTVERSION}/fonts/NotoSansHebrew/hinted/ttf/:fonts
+#MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoSansHebrew-v${PORTVERSION}/fonts/ \
+#		https://github.com/notofonts/notofonts.github.io/raw/NotoSansHebrew-v${PORTVERSION}/fonts/NotoSansHebrew/hinted/ttf/:fonts
+MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/40ae54ff25c9e0ad997f62fde48297dd9dfe51c8/fonts/ \
+		https://github.com/notofonts/notofonts.github.io/raw/40ae54ff25c9e0ad997f62fde48297dd9dfe51c8/fonts/NotoSansHebrew/hinted/ttf/:fonts
 PKGNAMESUFFIX=	-sans-hebrew
 DISTFILES=	LICENSE \
 		${FONTS:S|$|:fonts|}

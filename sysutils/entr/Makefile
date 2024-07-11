@@ -1,6 +1,5 @@
 PORTNAME=	entr
-PORTVERSION=	5.5
-PORTREVISION=	1
+PORTVERSION=	5.6
 CATEGORIES=	sysutils
 MASTER_SITES=	https://eradman.com/entrproject/code/
 

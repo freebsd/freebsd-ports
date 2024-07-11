@@ -8,6 +8,8 @@ include/QXmppQt%%QT_VER%%/QXmppAtmManager.h
 include/QXmppQt%%QT_VER%%/QXmppAtmTrustMemoryStorage.h
 include/QXmppQt%%QT_VER%%/QXmppAtmTrustStorage.h
 include/QXmppQt%%QT_VER%%/QXmppAttentionManager.h
+include/QXmppQt%%QT_VER%%/QXmppAuthenticationError.h
+include/QXmppQt%%QT_VER%%/QXmppBindError.h
 include/QXmppQt%%QT_VER%%/QXmppBindIq.h
 include/QXmppQt%%QT_VER%%/QXmppBitsOfBinaryContentId.h
 include/QXmppQt%%QT_VER%%/QXmppBitsOfBinaryData.h
@@ -17,7 +19,10 @@ include/QXmppQt%%QT_VER%%/QXmppBlockingManager.h
 include/QXmppQt%%QT_VER%%/QXmppBookmarkManager.h
 include/QXmppQt%%QT_VER%%/QXmppBookmarkSet.h
 include/QXmppQt%%QT_VER%%/QXmppByteStreamIq.h
+%%GSTREAMER%%include/QXmppQt%%QT_VER%%/QXmppCall.h
 include/QXmppQt%%QT_VER%%/QXmppCallInviteManager.h
+%%GSTREAMER%%include/QXmppQt%%QT_VER%%/QXmppCallManager.h
+%%GSTREAMER%%include/QXmppQt%%QT_VER%%/QXmppCallStream.h
 include/QXmppQt%%QT_VER%%/QXmppCarbonManager.h
 include/QXmppQt%%QT_VER%%/QXmppCarbonManagerV2.h
 include/QXmppQt%%QT_VER%%/QXmppClient.h
@@ -40,6 +45,7 @@ include/QXmppQt%%QT_VER%%/QXmppExtension.h
 include/QXmppQt%%QT_VER%%/QXmppExternalService.h
 include/QXmppQt%%QT_VER%%/QXmppExternalServiceDiscoveryIq.h
 include/QXmppQt%%QT_VER%%/QXmppExternalServiceDiscoveryManager.h
+include/QXmppQt%%QT_VER%%/QXmppFallback.h
 include/QXmppQt%%QT_VER%%/QXmppFileMetadata.h
 include/QXmppQt%%QT_VER%%/QXmppFileShare.h
 include/QXmppQt%%QT_VER%%/QXmppFileSharingManager.h
@@ -68,9 +74,12 @@ include/QXmppQt%%QT_VER%%/QXmppMessage.h
 include/QXmppQt%%QT_VER%%/QXmppMessageHandler.h
 include/QXmppQt%%QT_VER%%/QXmppMessageReaction.h
 include/QXmppQt%%QT_VER%%/QXmppMessageReceiptManager.h
+include/QXmppQt%%QT_VER%%/QXmppMixConfigItem.h
 include/QXmppQt%%QT_VER%%/QXmppMixInfoItem.h
 include/QXmppQt%%QT_VER%%/QXmppMixInvitation.h
 include/QXmppQt%%QT_VER%%/QXmppMixIq.h
+include/QXmppQt%%QT_VER%%/QXmppMixIq_p.h
+include/QXmppQt%%QT_VER%%/QXmppMixManager.h
 include/QXmppQt%%QT_VER%%/QXmppMixParticipantItem.h
 include/QXmppQt%%QT_VER%%/QXmppMucIq.h
 include/QXmppQt%%QT_VER%%/QXmppMucManager.h
@@ -106,6 +115,7 @@ include/QXmppQt%%QT_VER%%/QXmppRosterIq.h
 include/QXmppQt%%QT_VER%%/QXmppRosterManager.h
 include/QXmppQt%%QT_VER%%/QXmppRpcIq.h
 include/QXmppQt%%QT_VER%%/QXmppRpcManager.h
+include/QXmppQt%%QT_VER%%/QXmppSasl2UserAgent.h
 include/QXmppQt%%QT_VER%%/QXmppSendResult.h
 include/QXmppQt%%QT_VER%%/QXmppSendStanzaParams.h
 include/QXmppQt%%QT_VER%%/QXmppServer.h
@@ -116,6 +126,7 @@ include/QXmppQt%%QT_VER%%/QXmppSocks.h
 include/QXmppQt%%QT_VER%%/QXmppStanza.h
 include/QXmppQt%%QT_VER%%/QXmppStartTlsPacket.h
 include/QXmppQt%%QT_VER%%/QXmppStream.h
+include/QXmppQt%%QT_VER%%/QXmppStreamError.h
 include/QXmppQt%%QT_VER%%/QXmppStreamFeatures.h
 include/QXmppQt%%QT_VER%%/QXmppStun.h
 include/QXmppQt%%QT_VER%%/QXmppTask.h
@@ -151,10 +162,10 @@ lib/cmake/QXmppQt%%QT_VER%%/QXmpp.cmake
 lib/cmake/QXmppQt%%QT_VER%%/QXmppQt%%QT_VER%%Config.cmake
 lib/cmake/QXmppQt%%QT_VER%%/QXmppQt%%QT_VER%%ConfigVersion.cmake
 lib/libQXmppOmemoQt%%QT_VER%%.so
-lib/libQXmppOmemoQt%%QT_VER%%.so.4
+lib/libQXmppOmemoQt%%QT_VER%%.so.5
 lib/libQXmppOmemoQt%%QT_VER%%.so.%%VERSION%%
 lib/libQXmppQt%%QT_VER%%.so
-lib/libQXmppQt%%QT_VER%%.so.4
+lib/libQXmppQt%%QT_VER%%.so.5
 lib/libQXmppQt%%QT_VER%%.so.%%VERSION%%
 libdata/pkgconfig/QXmppQt%%QT_VER%%.pc
 %%QT5_ONLY%%libdata/pkgconfig/qxmpp.pc

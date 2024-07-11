@@ -109,6 +109,9 @@ share/locale/fr/LC_MESSAGES/plasma-systemmonitor.mo
 share/locale/gl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.applicationstable.mo
 share/locale/gl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.processtable.mo
 share/locale/gl/LC_MESSAGES/plasma-systemmonitor.mo
+share/locale/he/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.applicationstable.mo
+share/locale/he/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.processtable.mo
+share/locale/he/LC_MESSAGES/plasma-systemmonitor.mo
 share/locale/hu/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.applicationstable.mo
 share/locale/hu/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.processtable.mo
 share/locale/hu/LC_MESSAGES/plasma-systemmonitor.mo
@@ -133,6 +136,9 @@ share/locale/ko/LC_MESSAGES/plasma-systemmonitor.mo
 share/locale/lt/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.applicationstable.mo
 share/locale/lt/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.processtable.mo
 share/locale/lt/LC_MESSAGES/plasma-systemmonitor.mo
+share/locale/lv/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.applicationstable.mo
+share/locale/lv/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.processtable.mo
+share/locale/lv/LC_MESSAGES/plasma-systemmonitor.mo
 share/locale/nb/LC_MESSAGES/plasma-systemmonitor.mo
 share/locale/nl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.applicationstable.mo
 share/locale/nl/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.processtable.mo

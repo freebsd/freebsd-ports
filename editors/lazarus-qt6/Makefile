@@ -1,5 +1,3 @@
-PORTREVISION=	2
-
 PKGNAMESUFFIX?=  -qt6
 
 COMMENT=	Portable Delphi-like IDE for the FreePascal compiler (QT6)

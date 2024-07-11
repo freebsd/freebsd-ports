@@ -1,5 +1,5 @@
 PORTNAME=	fcitx5-table-extra
-DISTVERSION=	5.1.5
+DISTVERSION=	5.1.6
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 

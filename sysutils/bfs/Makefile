@@ -1,5 +1,5 @@
 PORTNAME=	bfs
-DISTVERSION=	3.1.3
+DISTVERSION=	3.3.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -12,20 +12,25 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	bash:shells/bash
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++17-lang gmake shebangfix
+USES=		compiler:c++17-lang pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	tavianator
 
-MAKEFILE=	GNUmakefile
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
+
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=		ONIGURUMA
-OPTIONS_DEFAULT=	ONIGURUMA
+OPTIONS_DEFINE=		ONIGURUMA RELEASE
+OPTIONS_DEFAULT=	ONIGURUMA RELEASE
 
 ONIGURUMA_DESC=		Oniguruma regular expression support
+RELEASE_DESC=		Enable optimizations, disable assertions
 
 ONIGURUMA_LIB_DEPENDS=		libonig.so:devel/oniguruma
-ONIGURUMA_MAKE_ARGS_OFF=	WITH_ONIGURUMA=
+ONIGURUMA_CONFIGURE_WITH=	oniguruma
+
+RELEASE_CONFIGURE_ENABLE=	release
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bfs

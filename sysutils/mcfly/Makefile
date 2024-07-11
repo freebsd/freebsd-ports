@@ -1,6 +1,7 @@
 PORTNAME=	mcfly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.6
+DISTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,7 +36,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		block-buffer-0.10.4 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
-		cc-1.0.97 \
+		cc-1.0.98 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		chrono-systemd-time-0.3.0 \
@@ -55,10 +56,10 @@ CARGO_CRATES=	adler32-1.2.0 \
 		core-foundation-sys-0.8.6 \
 		core-graphics-0.19.2 \
 		cpufeatures-0.2.12 \
-		crc32fast-1.4.0 \
+		crc32fast-1.4.2 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
-		crossbeam-utils-0.8.19 \
+		crossbeam-utils-0.8.20 \
 		crossterm-0.27.0 \
 		crossterm_winapi-0.9.1 \
 		crunchy-0.2.2 \
@@ -121,7 +122,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		once_cell-1.19.0 \
 		option-ext-0.2.0 \
 		ordered-multimap-0.6.0 \
-		parking_lot-0.12.2 \
+		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		path-absolutize-3.1.1 \
 		path-dedot-3.1.1 \
@@ -134,7 +135,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		png-0.15.3 \
 		ppv-lite86-0.2.17 \
 		proc-macro2-0.4.30 \
-		proc-macro2-1.0.82 \
+		proc-macro2-1.0.84 \
 		quote-0.6.13 \
 		quote-1.0.36 \
 		rand-0.7.3 \
@@ -157,8 +158,8 @@ CARGO_CRATES=	adler32-1.2.0 \
 		ryu-1.0.18 \
 		scoped_threadpool-0.1.9 \
 		scopeguard-1.2.0 \
-		serde-1.0.202 \
-		serde_derive-1.0.202 \
+		serde-1.0.203 \
+		serde_derive-1.0.203 \
 		serde_json-1.0.117 \
 		serde_spanned-0.6.6 \
 		sha2-0.10.8 \
@@ -169,7 +170,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		smallvec-1.13.2 \
 		strsim-0.11.1 \
 		syn-0.15.44 \
-		syn-2.0.64 \
+		syn-2.0.66 \
 		thiserror-1.0.61 \
 		thiserror-impl-1.0.61 \
 		tiff-0.3.1 \
@@ -215,7 +216,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.5 \
-		winnow-0.6.8 \
+		winnow-0.6.9 \
 		x11-2.21.0 \
 		yaml-rust-0.4.5 \
 		zerocopy-0.7.34 \

@@ -48,6 +48,7 @@ include/geos/coverage/Corner.h
 include/geos/coverage/CoverageBoundarySegmentFinder.h
 include/geos/coverage/CoverageEdge.h
 include/geos/coverage/CoverageGapFinder.h
+include/geos/coverage/CoveragePolygon.h
 include/geos/coverage/CoveragePolygonValidator.h
 include/geos/coverage/CoverageRing.h
 include/geos/coverage/CoverageRingEdges.h
@@ -416,6 +417,7 @@ include/geos/profiler.h
 include/geos/shape/fractal/HilbertCode.h
 include/geos/shape/fractal/HilbertEncoder.h
 include/geos/shape/fractal/MortonCode.h
+include/geos/simplify/ComponentJumpChecker.h
 include/geos/simplify/DouglasPeuckerLineSimplifier.h
 include/geos/simplify/DouglasPeuckerSimplifier.h
 include/geos/simplify/LineSegmentIndex.h
@@ -479,5 +481,5 @@ lib/libgeos.so
 lib/libgeos.so.%%PORTVERSION%%
 lib/libgeos_c.so
 lib/libgeos_c.so.1
-lib/libgeos_c.so.1.18.1
+lib/libgeos_c.so.1.18.2
 libdata/pkgconfig/geos.pc

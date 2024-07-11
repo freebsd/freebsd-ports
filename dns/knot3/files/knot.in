@@ -62,9 +62,10 @@ rcvar=${name}_enable
 load_rc_config ${name}
 
 eval ": \${${name}_enable:=\"NO\"}"
+eval ": \${${name}_config:=\"%%PREFIX%%/etc/knot/${name}.conf\"}"
 eval ": \${${name}_diruser:=\"%%USERS%%\"}"
 eval ": \${${name}_dirgroup:=\"%%GROUPS%%\"}"
-eval ": \${${name}_config:=\"%%PREFIX%%/etc/knot/${name}.conf\"}"
+eval ": \${${name}_svcj_options:=\"net_basic\"}"
 
 configfile="$(eval echo \${${name}_config})"
 diruser="$(eval echo \${${name}_diruser})"

@@ -1,10 +1,13 @@
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.50
-PORTREVISION?=	1
+PORTREVISION?=	3
 CATEGORIES=	emulators
-MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
-DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
-EXTRACT_ONLY=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/:src \
+		LOCAL/bofh/emulators/virtualbox-ose:docs
+DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX}:src \
+		VirtualBox-docs-${PORTVERSION}${EXTRACT_SUFX}:docs
+EXTRACT_ONLY=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} \
+		VirtualBox-docs-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	General-purpose full virtualizer for x86 hardware
@@ -31,7 +34,7 @@ CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-java --passive-mesa
+CONFIGURE_ARGS=	--disable-java --passive-mesa --disable-docs
 CONFIGURE_ARGS+=	--with-gcc="${CC}" --with-g++="${CXX}"
 
 CONFLICTS_INSTALL=	virtualbox-ose-additions-* \
@@ -84,12 +87,6 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 DBUS_CONFIGURE_OFF=	--disable-dbus
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DEBUG_CONFIGURE_ON=	--build-debug
-DOCS_USES=		tex
-DOCS_USE=		TEX=dvipsk:build,formats:build
-DOCS_BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.4/docbookx.dtd:textproc/docbook-xml
-DOCS_CONFIGURE_OFF=	--disable-docs
-DOCS_VARS=		dbkxmldir=${LOCALBASE}/share/xml/docbook/4.4 \
-			dbkxsldir=${LOCALBASE}/share/xsl/docbook
 NLS_IMPLIES=		QT5
 OPUS_CONFIGURE_OFF=	--disable-libopus
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
@@ -152,6 +149,7 @@ KMK_BUILDTYPE=	release
 
 .if ${PORT_OPTIONS:MGUESTADDITIONS}
 GUESTADDITIONS=	VBoxGuestAdditions_${PORTVERSION}.iso
+DISTFILES+=	${GUESTADDITIONS}:src
 LICENSE+=	Additions
 LICENSE_COMB=	multi
 LICENSE_NAME_Additions=	Guest Additions
@@ -169,7 +167,7 @@ PLIST_SUB+=	QT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MWEBSERVICE}
-USE_RC_SUBR+=	vboxwebsrv
+USE_RC_SUBR+=	vboxinit vboxwebsrv
 VBOX_LINKS+=	vboxwebsrv
 VBOX_UTILS+=	vboxwebsrv webtest
 .endif
@@ -375,7 +373,7 @@ do-install:
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${KMK_BUILDDIR}/bin/UserManual*.pdf \
+	${INSTALL_DATA} ${WRKDIR}/VirtualBox-docs-${PORTVERSION}/UserManual.pdf \
 	    ${STAGEDIR}${DOCSDIR}
 .endif
 

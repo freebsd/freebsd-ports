@@ -28,7 +28,7 @@ console_cmd="${name}_console"
 status_cmd="${name}_status"
 kill_cmd="${name}_kill"
 
-export JAVA_VERSION=17
+export JAVA_VERSION=${minecraft_java_version:-"%%JAVA_VERSION%%"}
 
 is_running()
 {

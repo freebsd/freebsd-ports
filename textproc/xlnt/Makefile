@@ -11,7 +11,8 @@ WWW=		https://github.com/tfussell/xlnt
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-FETCH_DEPENDS=	git:devel/git
+FETCH_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
+		git:devel/git
 
 USES=		cmake compiler:c++14-lang
 

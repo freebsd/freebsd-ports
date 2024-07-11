@@ -1,7 +1,6 @@
 PORTNAME=	boinc-client
-PORTVERSION=	7.20.2
-PORTREVISION=	4
-DISTVERSIONPREFIX=	client_release/7.20/
+DISTVERSIONPREFIX=	client_release/8.0/
+DISTVERSION=	8.0.2
 CATEGORIES=	net
 
 MAINTAINER=	ler@FreeBSD.org
@@ -10,22 +9,22 @@ WWW=		https://boinc.berkeley.edu/
 
 LICENSE=	LGPL3
 
-USES=		autoreconf compiler:c++11-lang dos2unix gettext gmake libtool \
-		pkgconfig ssl tar:xz
-INSTALL_TARGET=	install-strip
-GNU_CONFIGURE=	yes
+USES=		autoreconf compiler:c++11-lang desktop-file-utils dos2unix \
+		gmake libtool pkgconfig ssl tar
+DOS2UNIX_GLOB=	*.xpm
 USE_GITHUB=	yes
 GH_ACCOUNT=	BOINC
 GH_PROJECT=	boinc
 USE_LDCONFIG=	yes
-DOS2UNIX_GLOB=	*.xpm
 
-USERS=		boinc
-GROUPS=		boinc
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-server
+CONFIGURE_ENV=	OBJCXX="${CXX}"
 
-BOINC_CLIENT_USER?=	boinc
-BOINC_CLIENT_GROUP?=	boinc
-BOINC_CLIENT_HOME?=	/var/db/boinc
+INSTALL_TARGET=	install-strip
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 
 SUB_FILES=	pkg-deinstall pkg-install
 SUB_LIST=	BOINC_CLIENT_GROUP="${BOINC_CLIENT_GROUP}" \
@@ -34,54 +33,55 @@ SUB_LIST=	BOINC_CLIENT_GROUP="${BOINC_CLIENT_GROUP}" \
 		LOCALBASE="${LOCALBASE}" \
 		PREFIX="${PREFIX}"
 
-CONFIGURE_ARGS=	--disable-server
-CONFIGURE_ENV=	OBJCXX="${CXX}"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
+USERS=		boinc
+GROUPS=		boinc
 
 OPTIONS_DEFINE=		CLIENT LINUX MANAGER NLS SKINS USER X11
 OPTIONS_DEFAULT=	CLIENT MANAGER USER X11
 OPTIONS_GROUP=		SCRIPT
 OPTIONS_GROUP_SCRIPT=	NO_GUI_RPC NO_NET_INFO
-CLIENT_DESC=		BOINC Build client
-MANAGER_DESC=		BOINC Build GUI manager
-X11_DESC=		API Build graphics
-LINUX_DESC=		Accept applications Linux science
-USER_DESC=		and BOINC client Create/check directory user
-SKINS_DESC=		BOINC for Install manager more skins
-SCRIPT_DESC=		Command in line options script
-NO_GUI_RPC_DESC=	(breaks and boinc_curses) Disable GUI RPC socket
-NO_NET_INFO_DESC=	address and Do host name not send servers to
-
 OPTIONS_SUB=	yes
 
-MANAGER_LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
-				libnotify.so:devel/libnotify \
-				libsqlite3.so:databases/sqlite3 \
-				libxcb-util.so:x11/xcb-util
-MANAGER_CONFIGURE_ON=		--with-sqlite3-prefix=${LOCALBASE}
-MANAGER_CONFIGURE_OFF=		--with-wx-config=false \
-				--without-x
-MANAGER_CONFIGURE_ENABLE=	manager
-MANAGER_USES=			gnome iconv
-MANAGER_USE=			GNOME=cairo,gdkpixbuf2,glib20,pango \
-				WX=3.0 \
-				XORG=x11,xcb,xext,xscrnsaver
+CLIENT_DESC=		BOINC Build client
+LINUX_DESC=		Accept applications Linux science
+MANAGER_DESC=		BOINC Build GUI manager
+NLS_DESC=		Install language translations for use in the GUI
+NO_GUI_RPC_DESC=	(breaks and boinc_curses) Disable GUI RPC socket
+NO_NET_INFO_DESC=	address and Do host name not send servers to
+SCRIPT_DESC=		Command in line options script
+SKINS_DESC=		BOINC for Install manager more skins
+USER_DESC=		and BOINC client Create/check directory user
+X11_DESC=		API Build graphics
 
-CLIENT_CONFIGURE_ENABLE=	client
 CLIENT_LIB_DEPENDS=		libcurl.so:ftp/curl \
 				libfreetype.so:print/freetype2
 CLIENT_RUN_DEPENDS=		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 CLIENT_USE=			RC_SUBR=boinc-client
-
-LINUX_CONFIGURE_ON=	--with-boinc-alt-platform=i686-pc-linux-gnu
+CLIENT_CONFIGURE_ENABLE=	client
 LINUX_USES=		linux
-
+LINUX_CONFIGURE_ON=	--with-boinc-alt-platform=x86_64-pc-linux-gnu
+MANAGER_LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
+				libnotify.so:devel/libnotify \
+				libsqlite3.so:databases/sqlite3 \
+				libxcb-util.so:x11/xcb-util
+MANAGER_USES=			gnome iconv
+MANAGER_USE=			GNOME=cairo,gdkpixbuf2,glib20,pango \
+				WX=3.2+ \
+				XORG=x11,xcb,xext,xscrnsaver
+MANAGER_CONFIGURE_ON=		--with-sqlite3-prefix=${LOCALBASE}
+MANAGER_CONFIGURE_OFF=		--with-wx-config=false \
+				--without-x
+MANAGER_CONFIGURE_ENABLE=	manager
+NLS_USES=	gettext
 X11_USES=		gl jpeg xorg
 X11_USE=		GL=glut \
 			XORG=x11,xi,xmu,xscrnsaver
 X11_CONFIGURE_OFF=	--without-x \
 			ax_cv_check_glut_libglut=no
+
+BOINC_CLIENT_GROUP?=	boinc
+BOINC_CLIENT_HOME?=	/var/db/boinc
+BOINC_CLIENT_USER?=	boinc
 
 .include <bsd.port.options.mk>
 
@@ -105,8 +105,6 @@ SUB_LIST+=	OPTION_USER=""
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|@PREFIX@|${PREFIX}|' \
-		${WRKSRC}/client/hostinfo_unix.cpp
 	@${REINPLACE_CMD} -e 's|client/scripts||' \
 		${WRKSRC}/Makefile.am
 # avoid build conflict with archivers/libzip

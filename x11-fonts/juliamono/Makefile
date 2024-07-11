@@ -1,5 +1,6 @@
 PORTNAME=	juliamono
 DISTVERSION=	0.055
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/cormullion/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	JuliaMono-ttf

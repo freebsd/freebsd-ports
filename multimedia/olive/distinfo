@@ -1,7 +1,9 @@
-TIMESTAMP = 1679768370
-SHA256 (olive-editor-olive-0.1.2-20230320-8ca1672_GH0.tar.gz) = 72321e63b48da8a40defc935d938f432f5692e65220406788b48ee6a1b1aa5ed
-SIZE (olive-editor-olive-0.1.2-20230320-8ca1672_GH0.tar.gz) = 8156522
+TIMESTAMP = 1718251082
+SHA256 (olive-editor-olive-0.1.2-20240513-f7e1bff_GH0.tar.gz) = f3ad3f07cf2bd1a4d31671a0faa95a713fcf3e6ac461b44d1bee2269b74e2f0f
+SIZE (olive-editor-olive-0.1.2-20240513-f7e1bff_GH0.tar.gz) = 8155752
 SHA256 (olive-editor-core-2777928_GH0.tar.gz) = 2a7f57fcf782d62d9a40a3c51a1cb7d5f87aaf20952402d9d52bdbafddbaec6c
 SIZE (olive-editor-core-2777928_GH0.tar.gz) = 76380
 SHA256 (KDAB-KDDockWidgets-8d2d0a5_GH0.tar.gz) = 5d6d40c8a3f128ce61769c2bcb01b89dfd92460779e63cde40d8068647157705
 SIZE (KDAB-KDDockWidgets-8d2d0a5_GH0.tar.gz) = 3930847
+SHA256 (311eeb72944f93f873d1cd1784ee2bf423e1e7c2.patch) = 776c164ae6b4fb1a861b56b78b7277cde9cb8d52ef759dba8fe3981832783add
+SIZE (311eeb72944f93f873d1cd1784ee2bf423e1e7c2.patch) = 1547

@@ -82,11 +82,11 @@ include/re/rem_vidconv.h
 include/re/rem_video.h
 include/re/rem_vidmix.h
 lib/cmake/libre/libre-config.cmake
-lib/cmake/libre/libre-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/libre/libre.cmake
+lib/cmake/libre/libre-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/libre/libre-targets.cmake
 lib/cmake/re/re-config.cmake
 lib/libre.a
 lib/libre.so
-lib/libre.so.23
-lib/libre.so.23.11.0
+lib/libre.so.25
+lib/libre.so.25.13.0
 libdata/pkgconfig/libre.pc

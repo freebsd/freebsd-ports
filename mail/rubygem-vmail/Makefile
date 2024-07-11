@@ -1,6 +1,6 @@
 PORTNAME=	vmail
 PORTVERSION=	2.9.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
@@ -11,15 +11,16 @@ WWW=		https://danielchoi.com/software/vmail.html
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.txt
 
-RUN_DEPENDS=	rubygem-highline1>=1.6.1:devel/rubygem-highline1 \
-		rubygem-mail>=2.2.12:mail/rubygem-mail \
+RUN_DEPENDS=	rubygem-highline1>=1.6.1<2:devel/rubygem-highline1 \
+		rubygem-mail>=2.2.12,2<3,2:mail/rubygem-mail \
 		rubygem-sequel>=3.24.1:devel/rubygem-sequel \
-		rubygem-sqlite3>=1.3.3:databases/rubygem-sqlite3 \
-		rubygem-versionomy>=0.4.4:devel/rubygem-versionomy \
+		rubygem-sqlite31>=1.3.3<2:databases/rubygem-sqlite31 \
+		rubygem-versionomy>=0.4.4<1:devel/rubygem-versionomy \
 		vim:editors/vim
 
-NO_ARCH=	yes
 USES=		gem
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/vmail bin/vmail_client bin/vmailsend
 

@@ -1,6 +1,6 @@
---- src/libaudcore/i18n.h.orig	2022-07-10 01:11:00 UTC
+--- src/libaudcore/i18n.h.orig	2024-06-12 20:16:04 UTC
 +++ src/libaudcore/i18n.h
-@@ -34,8 +34,9 @@
+@@ -36,8 +36,9 @@
  
  #else
  

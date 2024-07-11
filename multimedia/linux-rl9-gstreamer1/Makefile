@@ -1,6 +1,7 @@
 PORTNAME=	gstreamer1
 PORTVERSION=	1.22.1
 DISTVERSIONSUFFIX=	-2.el9
+PORTREVISION=	1
 CATEGORIES=	multimedia linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -15,9 +16,9 @@ USE_LINUX=	libnghttp2 orc vulkan
 USE_LINUX_RPM=	yes
 
 LIB_DISTNAMES=	${PORTNAME}-${DISTVERSIONFULL} \
-		${PORTNAME}-plugins-base-${DISTVERSION}-1.el9 \
-		${PORTNAME}-plugins-bad-free-${DISTVERSION}-2.el9_3 \
-		${PORTNAME}-plugins-good-${DISTVERSION}-1.el9 \
+		${PORTNAME}-plugins-base-${DISTVERSION}-2.el9 \
+		${PORTNAME}-plugins-bad-free-${DISTVERSION}-4.el9 \
+		${PORTNAME}-plugins-good-${DISTVERSION}-2.el9 \
 		${PORTNAME}-plugins-ugly-free-${DISTVERSION}-1.el9
 
 SRC_DISTFILES=	gstreamer1-${DISTVERSIONFULL}${SRC_SUFX}:SOURCE

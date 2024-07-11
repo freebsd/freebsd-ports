@@ -1,6 +1,7 @@
 PORTNAME=	rustypaste-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	DtxdF@disroot.org
@@ -9,6 +10,8 @@ WWW=		https://github.com/orhun/rustypaste-cli
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	compilation fails: error[E0080]: evaluation of constant value failed
 
 USES=		cargo
 USE_GITHUB=	yes

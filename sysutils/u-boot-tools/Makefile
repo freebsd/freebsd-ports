@@ -22,6 +22,8 @@ MAKE_ARGS=	ARCH=sandbox \
 		HOSTCC="${CC}" \
 		KBUILD_VERBOSE=1 \
 		NOSTDINC_FLAGS="" \
+		HOSTCFLAGS="${CFLAGS} -I${OPENSSLINC}" \
+		HOSTLDFLAGS="${LDFLAGS} -L${OPENSSLLIB}"
 
 PLIST_FILES=	bin/mkimage bin/mkenvimage bin/dumpimage bin/fit_info
 

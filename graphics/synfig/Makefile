@@ -1,7 +1,6 @@
 PORTNAME=	synfig
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.4
-PORTREVISION=	11
+DISTVERSION=	1.4.5
 CATEGORIES=	graphics devel multimedia
 
 MAINTAINER=	portmaster@BSDforge.com
@@ -10,7 +9,7 @@ WWW=		https://www.synfig.org/
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	etl>=1.2.2:devel/etl \
+BUILD_DEPENDS=	etl>=1.4.5:devel/etl \
 		gsed:textproc/gsed
 LIB_DEPENDS=	libImath.so:math/Imath \
 		libOpenEXR.so:graphics/openexr \
@@ -33,16 +32,15 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo glibmm intltool libxml++26 pango
 USE_LDCONFIG=	yes
 
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
+CONFIGURE_ENV+=	ac_cv_path_SED=${LOCALBASE}/bin/gsed
+
+INSTALL_TARGET=	install-strip
+BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 PORTSCOUT=	limitw:1,even
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 WRKSRC_SUBDIR=	synfig-core
-
-BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
-
-CONFIGURE_ENV+=	ac_cv_path_SED=${LOCALBASE}/bin/gsed
-CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

@@ -1,8 +1,7 @@
 PORTNAME=	ini_file_manager
-PORTVERSION=	03
-PORTREVISION=	4
+PORTVERSION=	11
 CATEGORIES=	misc
-MASTER_SITES=	http://sourceforge.net/projects/${SFPATH}/
+MASTER_SITES=	SF/ini-files/ini-files
 DISTNAME=	ini-files-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,27 +10,20 @@ WWW=		https://sourceforge.net/projects/ini-files/
 
 LICENSE=	MIT
 
-BROKEN=		gnatmake: project files are no longer supported by gnatmake; use gprbuild instead
-
+BUILD_DEPENDS=	gprbuild>0:devel/gprbuild
 USES=		ada zip dos2unix
 
-NO_WRKSUBDIR=	yes
+_GPR_ARGS=      -j${MAKE_JOBS_NUMBER} -p
 
-SFPATH=		ini-files/files/ini-files/ini-files-${PORTVERSION}
-PORTDOCS=	ini_file_manager.txt
-PORTEXAMPLES=	example.gpr test_config.adb runme.sh
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
+WRKSRC=		${WRKDIR}/ini-files
 
 post-extract:
 	${CP} ${FILESDIR}/construct.gpr ${WRKSRC}
 	${MKDIR} ${WRKSRC}/src
 	${MV} ${WRKSRC}/config.ad[bs] ${WRKSRC}/src
-	${SED} -e "s,@PREFIX@,${LOCALBASE},g" ${FILESDIR}/runme.sh.in \
-		> ${WRKSRC}/runme.sh
 
 do-build:
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gnatmake -p -Pconstruct)
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gprbuild ${_GPR_ARGS} -P construct
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/gnat \
@@ -43,15 +35,5 @@ do-install:
 		${STAGEDIR}${PREFIX}/include/ini_file_manager
 	${INSTALL_DATA} ${WRKSRC}/lib/*  \
 		${STAGEDIR}${PREFIX}/lib/ini_file_manager
-
-do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ini_file_manager.txt ${STAGEDIR}${DOCSDIR}
-
-do-install-EXAMPLES-on:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/runme.sh ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/test_config.adb \
-		${FILESDIR}/example.gpr ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

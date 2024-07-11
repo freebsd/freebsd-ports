@@ -1,6 +1,5 @@
 PORTNAME=	elasticsearch-model
-PORTVERSION=	7.2.1
-PORTREVISION=	1
+PORTVERSION=	8.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +10,8 @@ WWW=		https://github.com/elastic/elasticsearch-rails/tree/master/elasticsearch-m
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-activesupport5>=3:devel/rubygem-activesupport5 \
-		rubygem-elasticsearch7>=7<8:textproc/rubygem-elasticsearch7 \
+RUN_DEPENDS=	rubygem-activesupport71>=3:devel/rubygem-activesupport71 \
+		rubygem-elasticsearch>=8<9:textproc/rubygem-elasticsearch \
 		rubygem-hashie>=0:devel/rubygem-hashie
 
 USES=		gem

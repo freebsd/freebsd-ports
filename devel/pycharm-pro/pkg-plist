@@ -35,7 +35,7 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/lib/async-profiler/amd64/symsrv.dll
 %%DATADIR%%/lib/async-profiler/libasyncProfiler.dylib
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-PY-241.15989.155
+%%DATADIR%%/lib/build-marker-PY-241.18034.82
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/ext/platform-main.jar
 %%DATADIR%%/lib/external-system-rt.jar
@@ -211,8 +211,8 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-1d06a55b98c1-91d5c284f522.ijx
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-1d06a55b98c1-91d5c284f522.txt
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-1d06a55b98c1-0b3e54e931b4.ijx
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-1d06a55b98c1-0b3e54e931b4.txt
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/diagnosticMessages.json
@@ -395,6 +395,8 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/javascript-plugin/reporting/cypress/cypressSuitNode.js
 %%DATADIR%%/plugins/javascript-plugin/reporting/cypress/cypressTestNode.d.ts
 %%DATADIR%%/plugins/javascript-plugin/reporting/cypress/cypressTestNode.js
+%%DATADIR%%/plugins/javascript-plugin/reporting/cypress/cypressUtils.d.ts
+%%DATADIR%%/plugins/javascript-plugin/reporting/cypress/cypressUtils.js
 %%DATADIR%%/plugins/javascript-plugin/reporting/playwright/playwrightReporter.d.ts
 %%DATADIR%%/plugins/javascript-plugin/reporting/playwright/playwrightReporter.js
 %%DATADIR%%/plugins/javascript-plugin/reporting/playwright/playwrightSuitNode.d.ts
@@ -474,8 +476,8 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/puppet/lib/stubs/stub_functions.rb
 %%DATADIR%%/plugins/pycharm-pro-customization/lib/pycharm-pro-customization.jar
 %%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/lib/pycharm-pro-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-babbdf50b680-7c6932dee5e4.ijx
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-babbdf50b680-7c6932dee5e4.txt
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-975db3bf15a3-2767605e8bc2.ijx
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-975db3bf15a3-2767605e8bc2.txt
 %%DATADIR%%/plugins/python-django/lib/python-django.jar
 %%DATADIR%%/plugins/python-jupyter/jupyter-web/113.js
 %%DATADIR%%/plugins/python-jupyter/jupyter-web/186.js
@@ -1391,7 +1393,6 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython.c
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython.pxd
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython.pyx
-%%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_312.c
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_27_32.pyd
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_27_64.pyd
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_310_32.cp310-win32.pyd

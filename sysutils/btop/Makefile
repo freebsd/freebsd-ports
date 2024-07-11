@@ -16,13 +16,4 @@ GH_ACCOUNT=	aristocratos
 
 MAKE_ARGS=	STRIP=true ADDFLAGS="${CXXFLAGS} ${LDFLAGS}" VERBOSE=true
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1302507
-USE_GCC=	yes
-.if ${ARCH} == i386 || ${ARCH} == powerpc
-LDFLAGS+=	-latomic
-.endif
-.endif
-
 .include <bsd.port.mk>

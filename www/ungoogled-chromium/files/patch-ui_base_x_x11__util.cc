@@ -1,6 +1,6 @@
---- ui/base/x/x11_util.cc.orig	2024-02-25 20:22:18 UTC
+--- ui/base/x/x11_util.cc.orig	2024-06-22 08:49:42 UTC
 +++ ui/base/x/x11_util.cc
-@@ -699,4 +699,20 @@ gfx::ImageSkia GetNativeWindowIcon(intptr_t target_win
+@@ -703,4 +703,20 @@ gfx::ImageSkia GetNativeWindowIcon(intptr_t target_win
    return gfx::ImageSkia::CreateFrom1xBitmap(result);
  }
  

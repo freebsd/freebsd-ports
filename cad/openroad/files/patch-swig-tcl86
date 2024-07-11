@@ -1,0 +1,18 @@
+Reference:	https://github.com/swig/swig/issues/2887
+		https://github.com/swig/swig/commit/b91ffa5631eb049293d3478744606148c9726521
+
+--- src/gui/src/tclCmdInputWidget.h.orig	2023-12-27 07:04:34 UTC
++++ src/gui/src/tclCmdInputWidget.h
+@@ -47,6 +47,12 @@
+ 
+ #include "cmdInputWidget.h"
+ #include "tclCmdHighlighter.h"
++
++#include <tcl.h>
++#ifndef TCL_SIZE_MAX
++typedef int Tcl_Size;
++#endif
++
+ #include "tclSwig.h"  // generated header
+ 
+ namespace gui {

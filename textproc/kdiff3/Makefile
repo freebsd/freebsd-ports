@@ -1,5 +1,5 @@
 PORTNAME=	kdiff3
-DISTVERSION=	1.11.0
+DISTVERSION=	1.11.2
 CATEGORIES=	textproc kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 
@@ -21,7 +21,8 @@ USE_QT=		concurrent core dbus gui network printsupport widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
 
-OPTIONS_DEFINE=	DOCS
 DOCSDIR_REL=	share/doc/HTML
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

@@ -1,20 +1,20 @@
 PORTNAME=	gitlab-${FLAVOR:Uce}
-PORTVERSION=	17.0.1
+PORTVERSION=	17.1.1
 DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
 .endif
-
 CATEGORIES=	www devel
 
 # include patch to fix database migration
 #https://gitlab.com/gitlab-org/gitlab/-/merge_requests/153560.patch
-PATCH_SITES=	https://gitlab.com/gitlab-org/gitlab/-/merge_requests/
-PATCHFILES+=	153560.patch:-p1 # https://gitlab.com/gitlab-org/gitlab/-/merge_requests/153560
+#PATCH_SITES=	https://gitlab.com/gitlab-org/gitlab/-/merge_requests/
+#PATCHFILES+=	153560.patch:-p1 # https://gitlab.com/gitlab-org/gitlab/-/merge_requests/153560
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Web GUI for managing git repositories
-WWW=		https://gitlab.com/
+WWW=		https://gitlab.com/ \
+		https://gitlab.com/gitlab-org/gitlab
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -28,10 +28,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # mail/rubygem-net-pop is required as ruby 3.1 removed it
 MY_DEPENDS=	git>=2.41.0:devel/git \
 	gitaly>=${PORTVERSION}:devel/gitaly \
-	gitlab-elasticsearch-indexer>=4.8.0:textproc/gitlab-elasticsearch-indexer \
+	gitlab-elasticsearch-indexer>=5.0.0:textproc/gitlab-elasticsearch-indexer \
 	gitlab-agent>=${PORTVERSION}:net/gitlab-agent \
 	gitlab-pages>=${PORTVERSION}:www/gitlab-pages \
-	gitlab-shell>=14.35.0:devel/gitlab-shell \
+	gitlab-shell>=14.36.0:devel/gitlab-shell \
 	gitlab-workhorse>=${PORTVERSION}:www/gitlab-workhorse \
 	redis>=6.2.11:databases/redis \
 	yarn${NODEJS_SUFFIX}>=1.10.0:www/yarn${NODEJS_SUFFIX} \
@@ -40,7 +40,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-net-smtp>=0:mail/rubygem-net-smtp \
 	rubygem-net-pop>=0:mail/rubygem-net-pop \
 	rubygem-psych3>=3.1<4:textproc/rubygem-psych3 \
-	rubygem-rails70>=7.0.8.1<7.1:www/rubygem-rails70 \
+	rubygem-rails70>=7.0.8.4<7.1:www/rubygem-rails70 \
 	rubygem-bootsnap>=1.18.3<1.19:devel/rubygem-bootsnap \
 	rubygem-openssl>=3.0<4:security/rubygem-openssl \
 	rubygem-ipaddr>=1.2.5<1.3:net/rubygem-ipaddr \
@@ -48,16 +48,17 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-sprockets3>=3.7<3.8:devel/rubygem-sprockets3 \
 	rubygem-view_component-rails70>=3.12.1<3.13:devel/rubygem-view_component-rails70 \
 	rubygem-pg>=1.5.6<1.6:databases/rubygem-pg \
-	rubygem-neighbor>=0.2.3<0.3:databases/rubygem-neighbor \
+	rubygem-neighbor>=0.3.2<0.4:databases/rubygem-neighbor \
 	rubygem-rugged>=1.6<2:devel/rubygem-rugged \
 	rubygem-faraday1>=1.10.0<3:www/rubygem-faraday1 \
 	rubygem-marginalia>=1.11.1<1.12:databases/rubygem-marginalia \
 	rubygem-declarative_policy>=1.1.0<1.2:security/rubygem-declarative_policy \
+	rubygem-coverband>=6.1.2<6.2:www/rubygem-coverband \
 	rubygem-devise-rails70>=4.9.3<4.10:devel/rubygem-devise-rails70 \
 	rubygem-bcrypt>=3.1.14<3.2:security/rubygem-bcrypt \
 	rubygem-doorkeeper-rails70>=5.6.6<6:security/rubygem-doorkeeper-rails70 \
 	rubygem-doorkeeper-openid_connect>=1.8.7<2:security/rubygem-doorkeeper-openid_connect \
-	rubygem-rexml>=3.2.6<3.3:textproc/rubygem-rexml \
+	rubygem-rexml32>=3.2.6<3.3:textproc/rubygem-rexml32 \
 	rubygem-ruby-saml115>=1.15.0<1.16:security/rubygem-ruby-saml115 \
 	rubygem-omniauth>=2.1.0<3:security/rubygem-omniauth \
 	rubygem-omniauth-auth0>=3.1.0<3.2.0:net/rubygem-omniauth-auth0 \
@@ -87,16 +88,16 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-gpgme>=2.0.23<2.1.0:security/rubygem-gpgme \
 	rubygem-gitlab_omniauth-ldap>=2.2.0<2.3.0:net/rubygem-gitlab_omniauth-ldap \
 	rubygem-net-ldap017>=0.17.1<0.18:net/rubygem-net-ldap017 \
-	rubygem-grape>=2.0.0<2.1:devel/rubygem-grape \
+	rubygem-grape20>=2.0.0<2.1:devel/rubygem-grape20 \
 	rubygem-grape-entity>=1.0.1<1.1,1:devel/rubygem-grape-entity \
-	rubygem-grape-swagger20>=2.0.2<2.1:devel/rubygem-grape-swagger20 \
+	rubygem-grape-swagger>=2.1.0<2.2:devel/rubygem-grape-swagger \
 	rubygem-grape-swagger-entity>=0.5.1<0.6:devel/rubygem-grape-swagger-entity \
 	rubygem-grape-path-helpers>=2.0.1<2.1:devel/rubygem-grape-path-helpers \
 	rubygem-rack-cors>=2.0.1<2.1:www/rubygem-rack-cors \
-	rubygem-graphql>=2.3.2<2.4:devel/rubygem-graphql \
+	rubygem-graphql>=2.3.4<2.4:devel/rubygem-graphql \
 	rubygem-graphql-docs>=4.0.0<4.1.0:devel/rubygem-graphql-docs \
 	rubygem-graphiql-rails>=1.8.0<1.9:devel/rubygem-graphiql-rails \
-	rubygem-apollo_upload_server>=2.1.5<2.2:net/rubygem-apollo_upload_server \
+	rubygem-apollo_upload_server>=2.1.6<2.2:net/rubygem-apollo_upload_server \
 	rubygem-graphlient>=0.6.0<0.7:devel/rubygem-graphlient \
 	rubygem-ffaker>=2.10<3:devel/rubygem-ffaker \
 	rubygem-hashie>=5.0.0<5.1:devel/rubygem-hashie \
@@ -127,11 +128,11 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-google-cloud-compute-v1>=2.6.0<2.7:net/rubygem-google-cloud-compute-v1 \
 	rubygem-seed-fu>=2.3.7<2.4.0:databases/rubygem-seed-fu \
 	rubygem-elasticsearch-model713>=7.2<8:textproc/rubygem-elasticsearch-model713 \
-	rubygem-elasticsearch-rails>=7.2<8:textproc/rubygem-elasticsearch-rails \
+	rubygem-elasticsearch-rails7>=7.2<8:textproc/rubygem-elasticsearch-rails7 \
 	rubygem-elasticsearch-api713>=7.13.3<7.13.4:textproc/rubygem-elasticsearch-api713 \
-	rubygem-aws-sdk-core>=3.194.2<4:devel/rubygem-aws-sdk-core \
+	rubygem-aws-sdk-core>=3.197.0<4:devel/rubygem-aws-sdk-core \
 	rubygem-aws-sdk-cloudformation>=1<2:devel/rubygem-aws-sdk-cloudformation \
-	rubygem-aws-sdk-s3>=1.149.1<2:devel/rubygem-aws-sdk-s3 \
+	rubygem-aws-sdk-s3>=1.151.0<2:devel/rubygem-aws-sdk-s3 \
 	rubygem-faraday_middleware-aws-sigv403>=0.3.0<0.4:devel/rubygem-faraday_middleware-aws-sigv403 \
 	rubygem-typhoeus>=1.4.0<1.5:www/rubygem-typhoeus \
 	rubygem-html-pipeline>=2.14.3<2.15:textproc/rubygem-html-pipeline \
@@ -147,10 +148,10 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-asciidoctor-include-ext>=0.4.0<0.5.0:textproc/rubygem-asciidoctor-include-ext \
 	rubygem-asciidoctor-plantuml00>=0.0.16<0.1:textproc/rubygem-asciidoctor-plantuml00 \
 	rubygem-asciidoctor-kroki>=0.8.0<0.9:textproc/rubygem-asciidoctor-kroki \
-	rubygem-rouge>=4.2.0<4.3:textproc/rubygem-rouge \
+	rubygem-rouge42>=4.2.0<4.3:textproc/rubygem-rouge42 \
 	rubygem-truncato>=0.7.12<0.8.0:textproc/rubygem-truncato \
 	rubygem-nokogiri>=1.16<2:textproc/rubygem-nokogiri \
-	rubygem-gitlab-glfm-markdown>=0.0.16<0.1:textproc/rubygem-gitlab-glfm-markdown \
+	rubygem-gitlab-glfm-markdown>=0.0.17<0.1:textproc/rubygem-gitlab-glfm-markdown \
 	rubygem-icalendar>=0:devel/rubygem-icalendar \
 	rubygem-diffy>=3.4<4:textproc/rubygem-diffy \
 	rubygem-rack22>=2.2.8.1,3<2.3,3:www/rubygem-rack22 \
@@ -166,7 +167,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-rainbow>=3.1.1<4.0:devel/rubygem-rainbow \
 	rubygem-ruby-progressbar>=1.11<2:devel/rubygem-ruby-progressbar \
 	rubygem-re2>=2.7.0<2.8:devel/rubygem-re2 \
-	rubygem-semver_dialects2>=2.0.2<3:devel/rubygem-semver_dialects2 \
+	rubygem-semver_dialects>=3.0<4:devel/rubygem-semver_dialects \
 	rubygem-version_sorter>=2.3<3:textproc/rubygem-version_sorter \
 	rubygem-js_regex>=3.8<4.0:textproc/rubygem-js_regex \
 	rubygem-device_detector>=0:devel/rubygem-device_detector \
@@ -200,7 +201,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-gon-rails70>=6.4.0<6.5:www/rubygem-gon-rails70 \
 	rubygem-request_store15>=1.5.1<1.6:devel/rubygem-request_store15 \
 	rubygem-base32>=0.3.0<0.4.0:converters/rubygem-base32 \
-	rubygem-gitlab-license>=2.4<3:devel/rubygem-gitlab-license \
+	rubygem-gitlab-license>=2.5<3:devel/rubygem-gitlab-license \
 	rubygem-rack-attack>=6.7.0<6.8:www/rubygem-rack-attack \
 	rubygem-sentry-ruby>=5.17.3<5.18:devel/rubygem-sentry-ruby \
 	rubygem-sentry-rails>=5.17.3<5.18:devel/rubygem-sentry-rails \
@@ -244,7 +245,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-gitlab-dangerfiles>=4.7.0<4.8:devel/rubygem-gitlab-dangerfiles \
 	rubygem-license_finder>=7.0.0<8:devel/rubygem-license_finder \
 	rubygem-rspec>=3.0<4:devel/rubygem-rspec \
-	rubygem-octokit>=8.1<9:net/rubygem-octokit \
+	rubygem-octokit8>=8.1<9:net/rubygem-octokit8 \
 	rubygem-gitlab-mail_room>=0.0.24<0.1.0:mail/rubygem-gitlab-mail_room \
 	rubygem-email_reply_trimmer>=0.1<1.0:mail/rubygem-email_reply_trimmer \
 	rubygem-html2text>=0:textproc/rubygem-html2text \
@@ -259,7 +260,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-net-ntp>0:net/rubygem-net-ntp \
 	rubygem-ssh_data>=1.3<2:security/rubygem-ssh_data \
 	rubygem-spamcheck>=1.3.0<1.4:net/rubygem-spamcheck \
-	rubygem-gitaly>=17.0.0.pre.rc2<17.1:net/rubygem-gitaly \
+	rubygem-gitaly>=17.0.1:net/rubygem-gitaly \
 	rubygem-kas-grpc>=0.5.0,1<0.6.0,1:net/rubygem-kas-grpc \
 	rubygem-grpc>=1.63.0<2:net/rubygem-grpc \
 	rubygem-google-protobuf>=3.25.3<4:devel/rubygem-google-protobuf \
@@ -289,7 +290,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-ipaddress>=0.8.3<0.9:net/rubygem-ipaddress \
 	rubygem-parslet1>=1.8<2:textproc/rubygem-parslet1 \
 	rubygem-ed25519>=1.3.0<1.4:security/rubygem-ed25519 \
-	rubygem-parser>=3.2.2.4:devel/rubygem-parser \
+	rubygem-parser>=3.3.0.5:devel/rubygem-parser \
 	rubygem-cvss-suite>=3.0.1<3.1:security/rubygem-cvss-suite \
 	rubygem-arr-pm>=0.0.12<0.1:devel/rubygem-arr-pm \
 	rubygem-devfile>=0.0.26.p.a1<0.0.27:net/rubygem-devfile \
@@ -297,7 +298,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-app_store_connect>=0:net/rubygem-app_store_connect \
 	rubygem-telesignenterprise>=2.2<3:devel/rubygem-telesignenterprise \
 	rubygem-net-protocol01>=0.1.3<0.2:net/rubygem-net-protocol01 \
-	rubygem-net-http011>=0.1.1<0.1.2:www/rubygem-net-http011 \
+	rubygem-net-http>=0.4.1<0.4.2:www/rubygem-net-http \
 	rubygem-duo_api>=1.3<2:security/rubygem-duo_api \
 	rubygem-gitlab-sdk>=0.3.0<0.4:devel/rubygem-gitlab-sdk \
 	rubygem-google-cloud-profiler-v2>=0.3<1:textproc/rubygem-google-cloud-profiler-v2 \
@@ -331,6 +332,7 @@ SHEBANG_FILES=	scripts/build_qa_image \
 		scripts/generate-e2e-pipeline \
 		scripts/frontend/execute-on-staged-files.sh \
 		scripts/frontend/start_storybook.sh \
+		scripts/frontend/vite \
 		scripts/partitioning/generate-fk \
 		scripts/validate-monorepo-gem \
 		.lefthook/pre-push/merge_conflicts \
@@ -369,8 +371,15 @@ post-patch:
 
 do-install:
 	${CP} ${WRKSRC}/config/database.yml.postgresql ${WRKSRC}/config/database.yml.sample
-	(cd ${WRKSRC} && ${RM} Gemfile.lock && bundle install --local)
+	# TODO: Vendored gems are installing binaries not into STAGEDIR, this needs to be fixed.
+	# As intermediate solution, the binaries are not disabled by patches
+	#(cd ${WRKSRC} && ${RM} Gemfile.lock && bundle config set path ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER} && ${WRK_ENV} ${GEM_ENV} bundle install --local)
+	(cd ${WRKSRC} && ${RM} Gemfile.lock && ${WRK_ENV} ${GEM_ENV} bundle install --local --binstubs=${WRKSRC}/.bin)
+	(cd ${WRKSRC} && bundle binstubs --path ${WRKSRC}/.bin --all)
 	${RM} -R ${WRKSRC}/workhorse
+	# remove vendored sidekiq gem as it breaks gitlab 17.1.0 for FreeBSD
+	# See also: https://gitlab.com/gitlab-org/gitlab/-/issues/468435
+	${RM} -R ${WRKSRC}/vendor/gems/sidekiq-7.1.6
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 	${FIND} ${WRKSRC} -name '*.bak' -delete
 	${FIND} ${WRKSRC} -name '*.gitkeep' -delete

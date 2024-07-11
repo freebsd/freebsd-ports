@@ -1,9 +1,6 @@
 PORTNAME=	wlroots
-DISTVERSION=	0.17.3
-PORTREVISION=	1
+DISTVERSION=	0.17.4
 CATEGORIES=	x11-toolkits
-
-PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library

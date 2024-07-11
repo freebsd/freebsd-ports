@@ -678,6 +678,7 @@ lib/omc/cpp/libOMCppExtensionUtilities.so
 lib/omc/cpp/libOMCppExtensionUtilities_static.a
 lib/omc/cpp/libOMCppFMU.so
 lib/omc/cpp/libOMCppFMU_static.a
+lib/omc/cpp/libOMCppIda.so
 lib/omc/cpp/libOMCppKinsol.so
 lib/omc/cpp/libOMCppLinearSolver.so
 lib/omc/cpp/libOMCppMath.so

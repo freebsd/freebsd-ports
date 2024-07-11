@@ -1,0 +1,61 @@
+# Default values for realmd
+[service]
+debug = no
+automatic-install = yes
+
+[paths]
+net = %%LOCALBASE%%/bin/net
+winbindd = %%LOCALBASE%%/sbin/winbindd
+smb.conf = %%LOCALBASE%%/etc/smb4.conf
+sssd.conf = %%LOCALBASE%%/etc/sssd/sssd.conf
+adcli = %%LOCALBASE%%/sbin/adcli
+ipa-client-install = %%LOCALBASE%%/sbin/ipa-client-install
+pam_winbind.conf = %%LOCALBASE%%/etc/security/pam_winbind.conf
+krb5.conf = /etc/krb5.conf
+
+[active-directory]
+default-client = sssd
+os-name =
+os-version =
+
+[providers]
+sssd = yes
+samba = yes
+example = no
+
+[samba-packages]
+%%SAMBA%% = %%LOCALBASE%%/bin/net
+
+[winbind-packages]
+
+[sssd-packages]
+sssd2 = %%LOCALBASE%%/sbin/sssd
+
+[adcli-packages]
+adcli = %%LOCALBASE%%/sbin/adcli
+
+[commands]
+
+winbind-enable-logins =
+winbind-disable-logins =
+sssd-enable-logins =
+sssd-disable-logins =
+
+winbind-enable-service = /usr/sbin/sysrc winbindd_enable="YES"
+winbind-disable-service = /usr/sbin/sysrc winbindd_enable="NO"
+winbind-restart-service = /usr/sbin/service samba_server restart
+winbind-stop-service = /usr/sbin/service samba_server stop
+
+sssd-enable-service = /usr/sbin/service sssd enable
+sssd-disable-service = /usr/sbin/service sssd disable
+sssd-restart-service = /usr/sbin/service sssd restart
+sssd-stop-service = /usr/sbin/service sssd onestop
+sssd-caches-flush = %%LOCALBASE%%/sbin/sss_cache --users --groups --netgroups --services
+
+[users]
+default-shell = /bin/sh
+default-home = /home/%U@%D
+
+[example.com]
+example-administrator = Administrator
+example-password = bureaucracy

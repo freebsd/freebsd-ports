@@ -19,7 +19,7 @@ RUN_DEPENDS=	check>=0.12.0:devel/check \
 		curl>=7.64:ftp/curl \
 		uriparser>=0.9.1:net/uriparser
 
-USES=		cmake:noninja gmake libtool pkgconfig python:build ssl
+USES=		cmake:noninja gmake pkgconfig python:build ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	openxpki
 USE_LDCONFIG=	yes

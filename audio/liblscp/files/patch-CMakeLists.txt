@@ -1,20 +1,42 @@
---- CMakeLists.txt.orig	2024-04-18 22:33:21 UTC
+--- CMakeLists.txt.orig	2024-06-17 16:59:21 UTC
 +++ CMakeLists.txt
-@@ -9,7 +9,7 @@ set (PROJECT_DOMAIN    "linuxsampler.org")
+@@ -9,32 +9,6 @@ set (PROJECT_DOMAIN    "linuxsampler.org")
  set (PROJECT_COPYRIGHT "Copyright (C) 2004-2024, rncbc aka Rui Nuno Capela. All rights reserved.")
  set (PROJECT_DOMAIN    "linuxsampler.org")
  
 -execute_process (
-+#[[ execute_process (
-   COMMAND git describe --tags --dirty --abbrev=6
-   WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-   OUTPUT_VARIABLE GIT_DESCRIBE_OUTPUT
-@@ -32,7 +32,7 @@ if (GIT_DESCRIBE_RESULT EQUAL 0)
-     set (GIT_VERSION "${GIT_VERSION} [${GIT_REVPARSE_OUTPUT}]")
-   endif ()
-   set (PROJECT_VERSION "${GIT_VERSION}")
+-  COMMAND git describe --tags --dirty --abbrev=6
+-  WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+-  OUTPUT_VARIABLE GIT_DESCRIBE_OUTPUT
+-  RESULT_VARIABLE GIT_DESCRIBE_RESULT
+-  OUTPUT_STRIP_TRAILING_WHITESPACE)
+-if (GIT_DESCRIBE_RESULT EQUAL 0)
+-  set (GIT_VERSION "${GIT_DESCRIBE_OUTPUT}")
+-  string (REGEX REPLACE "^[^0-9]+" "" GIT_VERSION "${GIT_VERSION}")
+-  string (REGEX REPLACE "^1_"      "" GIT_VERSION "${GIT_VERSION}")
+-  string (REGEX REPLACE "^[_vV]+"  "" GIT_VERSION "${GIT_VERSION}")
+-  string (REGEX REPLACE "-g"   "git." GIT_VERSION "${GIT_VERSION}")
+-  string (REGEX REPLACE "[_|-]"   "." GIT_VERSION "${GIT_VERSION}")
+-  execute_process (
+-    COMMAND git rev-parse --abbrev-ref HEAD
+-    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+-    OUTPUT_VARIABLE GIT_REVPARSE_OUTPUT
+-    RESULT_VARIABLE GIT_REVPARSE_RESULT
+-    OUTPUT_STRIP_TRAILING_WHITESPACE)
+-  if (GIT_REVPARSE_RESULT EQUAL 0 AND NOT GIT_REVPARSE_OUTPUT STREQUAL "main")
+-    set (GIT_VERSION "${GIT_VERSION} [${GIT_REVPARSE_OUTPUT}]")
+-  endif ()
+-  set (PROJECT_VERSION "${GIT_VERSION}")
 -endif ()
-+endif () ]]
- 
- 
+-
+-
  set (CONFIG_PREFIX "${CMAKE_INSTALL_PREFIX}")
+ 
+ include (GNUInstallDirs)
+@@ -118,6 +92,3 @@ add_subdirectory (src)
+ #
+ 
+ add_subdirectory (src)
+-add_subdirectory (doc)
+-add_subdirectory (examples)
+-

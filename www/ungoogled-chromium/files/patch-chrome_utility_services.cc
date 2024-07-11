@@ -1,6 +1,15 @@
---- chrome/utility/services.cc.orig	2024-05-23 20:04:36 UTC
+--- chrome/utility/services.cc.orig	2024-06-22 08:49:42 UTC
 +++ chrome/utility/services.cc
-@@ -57,7 +57,7 @@
+@@ -38,7 +38,7 @@
+ #include "services/screen_ai/screen_ai_service_impl.h"  // nogncheck
+ #endif
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "services/passage_embeddings/passage_embeddings_service.h"
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(LINUX)
+ 
+@@ -61,7 +61,7 @@
  #include "chrome/services/system_signals/mac/mac_system_signals_service.h"
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -9,7 +18,7 @@
  #include "chrome/services/system_signals/linux/linux_system_signals_service.h"
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -78,7 +78,7 @@
+@@ -82,7 +82,7 @@
  #include "chrome/services/file_util/file_util_service.h"  // nogncheck
  #endif
  
@@ -18,16 +27,16 @@
  #include "chrome/services/file_util/document_analysis_service.h"  // nogncheck
  #endif
  
-@@ -217,7 +217,7 @@ auto RunMacNotificationService(
+@@ -221,7 +221,7 @@ auto RunMacNotificationService(
  }
  #endif  // BUILDFLAG(IS_MAC)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- auto RunSystemSignalsService(
-     mojo::PendingReceiver<device_signals::mojom::SystemSignalsService>
+ auto RunPassageEmbeddingsService(
+     mojo::PendingReceiver<passage_embeddings::mojom::PassageEmbeddingsService>
          receiver) {
-@@ -277,7 +277,7 @@ auto RunCupsIppParser(
+@@ -288,7 +288,7 @@ auto RunCupsIppParser(
  }
  #endif
  
@@ -36,16 +45,16 @@
  auto RunDocumentAnalysis(
      mojo::PendingReceiver<chrome::mojom::DocumentAnalysisService> receiver) {
    return std::make_unique<DocumentAnalysisService>(std::move(receiver));
-@@ -483,7 +483,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -494,7 +494,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
    services.Add(RunWindowsIconReader);
  #endif  // BUILDFLAG(IS_WIN)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   services.Add(RunPassageEmbeddingsService);
    services.Add(RunSystemSignalsService);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
- 
-@@ -499,7 +499,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -511,7 +511,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
    services.Add(RunFileUtil);
  #endif
  

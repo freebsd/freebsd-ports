@@ -1,8 +1,7 @@
 PORTNAME=	iio-oscilloscope
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14
+DISTVERSION=	0.17
 DISTVERSIONSUFFIX=	-master
-PORTREVISION=	4
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,8 +10,6 @@ WWW=		https://wiki.analog.com/resources/tools-software/linux-software/iio_oscill
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		uses depracated GTK functions, see https://github.com/analogdevicesinc/iio-oscilloscope/issues/441
 
 LIB_DEPENDS=	libad9361.so:misc/libad9361-iio \
 		libcurl.so:ftp/curl \
@@ -25,12 +22,13 @@ LIB_DEPENDS=	libad9361.so:misc/libad9361-iio \
 		libmatio.so:math/matio
 
 USES=		cmake compiler:c11 gnome localbase:ldflags pkgconfig
-USE_GNOME=	atk cairo gdkpixbuf2 gtk20 libxml2 pango
+USE_GNOME=	atk cairo gdkpixbuf2 gtk30 libxml2 pango
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	analogdevicesinc
 
+CFLAGS+=	`pkg-config --cflags gtkdatabox` # workaround for https://github.com/analogdevicesinc/iio-oscilloscope/issues/499
 LDFLAGS+=	-lm -lexecinfo
 
 .include <bsd.port.mk>

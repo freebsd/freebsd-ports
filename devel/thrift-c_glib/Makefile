@@ -15,7 +15,7 @@ BUILDIR=	${WRKDIR}/${DISTNAME}/lib/c_glib
 
 DISTINFO_FILE=	${.CURDIR}/../thrift/distinfo
 
-USES=		bison cmake compiler:c++11-lang cpe gnome libtool pathfix \
+USES=		bison cmake compiler:c++11-lang cpe gnome pathfix \
 		pkgconfig ssl
 CPE_VENDOR=	apache
 CMAKE_ON=	BUILD_C_GLIB BUILD_SHARED_LIBS

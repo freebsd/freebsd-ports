@@ -20,6 +20,7 @@ libdata/pkgconfig/libcurl.pc
 share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/ALTSVC.md
 %%PORTDOCS%%%%DOCSDIR%%/BINDINGS.md
+%%PORTDOCS%%%%DOCSDIR%%/BUFQ.md
 %%PORTDOCS%%%%DOCSDIR%%/BUFREF.md
 %%PORTDOCS%%%%DOCSDIR%%/BUG-BOUNTY.md
 %%PORTDOCS%%%%DOCSDIR%%/BUGS.md
@@ -38,6 +39,7 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/DISTROS.md
 %%PORTDOCS%%%%DOCSDIR%%/DYNBUF.md
 %%PORTDOCS%%%%DOCSDIR%%/EARLY-RELEASE.md
+%%PORTDOCS%%%%DOCSDIR%%/ECH.md
 %%PORTDOCS%%%%DOCSDIR%%/EXPERIMENTAL.md
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/FEATURES.md
@@ -53,13 +55,16 @@ share/aclocal/libcurl.m4
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-CMAKE.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
 %%PORTDOCS%%%%DOCSDIR%%/INTERNALS.md
+%%PORTDOCS%%%%DOCSDIR%%/IPFS.md
 %%PORTDOCS%%%%DOCSDIR%%/KNOWN_BUGS
-%%PORTDOCS%%%%DOCSDIR%%/MAIL-ETIQUETTE
+%%PORTDOCS%%%%DOCSDIR%%/MAIL-ETIQUETTE.md
+%%PORTDOCS%%%%DOCSDIR%%/MANUAL.md
 %%PORTDOCS%%%%DOCSDIR%%/MQTT.md
 %%PORTDOCS%%%%DOCSDIR%%/NEW-PROTOCOL.md
 %%PORTDOCS%%%%DOCSDIR%%/PARALLEL-TRANSFERS.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE-PROCEDURE.md
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE-TOOLS.md
 %%PORTDOCS%%%%DOCSDIR%%/ROADMAP.md
 %%PORTDOCS%%%%DOCSDIR%%/RUSTLS.md
 %%PORTDOCS%%%%DOCSDIR%%/SECURITY-ADVISORY.md
@@ -212,7 +217,6 @@ share/aclocal/libcurl.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/websocket-cb.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/websocket.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlstream.c
-share/man/man1/curl-config.1.gz
 share/man/man1/curl.1.gz
 share/man/man3/CURLINFO_ACTIVESOCKET.3.gz
 share/man/man3/CURLINFO_APPCONNECT_TIME.3.gz
@@ -356,6 +360,7 @@ share/man/man3/CURLOPT_DOH_SSL_VERIFYHOST.3.gz
 share/man/man3/CURLOPT_DOH_SSL_VERIFYPEER.3.gz
 share/man/man3/CURLOPT_DOH_SSL_VERIFYSTATUS.3.gz
 share/man/man3/CURLOPT_DOH_URL.3.gz
+share/man/man3/CURLOPT_ECH.3.gz
 share/man/man3/CURLOPT_EGDSOCKET.3.gz
 share/man/man3/CURLOPT_ERRORBUFFER.3.gz
 share/man/man3/CURLOPT_EXPECT_100_TIMEOUT_MS.3.gz
@@ -674,6 +679,7 @@ share/man/man3/curl_multi_socket_all.3.gz
 share/man/man3/curl_multi_strerror.3.gz
 share/man/man3/curl_multi_timeout.3.gz
 share/man/man3/curl_multi_wait.3.gz
+share/man/man3/curl_multi_waitfds.3.gz
 share/man/man3/curl_multi_wakeup.3.gz
 share/man/man3/curl_pushheader_byname.3.gz
 share/man/man3/curl_pushheader_bynum.3.gz

@@ -1,6 +1,6 @@
-TIMESTAMP = 1709965386
-SHA256 (openfheorg-openfhe-development-v1.1.4_GH0.tar.gz) = dd4341168d0b0f6a2ebfe5cb55be21a99833344ab61ad1b783d6d8612852932a
-SIZE (openfheorg-openfhe-development-v1.1.4_GH0.tar.gz) = 1994796
+TIMESTAMP = 1719383811
+SHA256 (openfheorg-openfhe-development-v1.2.0_GH0.tar.gz) = 161afde01b8544b03899a341726935fe5c5f047b360b91d9f3f20a85a95e177c
+SIZE (openfheorg-openfhe-development-v1.2.0_GH0.tar.gz) = 2075725
 SHA256 (openfheorg-cereal-984e3f1_GH0.tar.gz) = d79d6b97a53c1adb67a001d3b85a3f7396131bfefb09a64b6ea78fa5a17c5fc5
 SIZE (openfheorg-cereal-984e3f1_GH0.tar.gz) = 386502
 SHA256 (google-googletest-8b4817e_GH0.tar.gz) = 2707e4eecfb7ab19678c435e469c500e253c85236fc6a78e9fb5cb166f4d88d2

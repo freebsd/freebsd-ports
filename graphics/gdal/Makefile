@@ -1,5 +1,5 @@
 PORTNAME=	gdal
-PORTVERSION=	3.9.0
+PORTVERSION=	3.9.1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/gdal/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -23,19 +23,6 @@ LIB_DEPENDS=	libgeotiff.so:graphics/libgeotiff \
 		libtiff.so:graphics/tiff
 
 USES=		cmake compiler:c++17-lang cpe iconv jpeg localbase pkgconfig ssl tar:xz
-
-# Clean up bundled libraries
-EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/alg/internal_libqhull \
-			--exclude ${DISTNAME}/frmts/gif/giflib \
-			--exclude ${DISTNAME}/frmts/gtiff/libgeotiff \
-			--exclude ${DISTNAME}/frmts/gtiff/libtiff \
-			--exclude ${DISTNAME}/frmts/jpeg/libjpeg \
-			--exclude ${DISTNAME}/frmts/jpeg/libjpeg12 \
-			--exclude ${DISTNAME}/frmts/png/libpng \
-			--exclude ${DISTNAME}/frmts/zlib \
-			--exclude ${DISTNAME}/ogr/ogrsf_frmts/geojson/libjson \
-			--exclude ${DISTNAME}/third_party/LercLib \
-			--no-same-owner --no-same-permissions
 
 CMAKE_OFF=	BUILD_CSHARP_BINDINGS \
 		BUILD_DOCS \
@@ -218,6 +205,33 @@ XERCES_CMAKE_BOOL=	GDAL_USE_XERCES
 XERCES_LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3
 ZSTD_CMAKE_BOOL=	GDAL_USE_ZSTD
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
+
+# Clean up bundled libraries
+.if !defined(MAINTAINER_MODE)
+EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/alg/internal_libqhull \
+			--exclude ${DISTNAME}/frmts/gif/giflib \
+			--exclude ${DISTNAME}/frmts/gtiff/libgeotiff \
+			--exclude ${DISTNAME}/frmts/gtiff/libtiff \
+			--exclude ${DISTNAME}/frmts/jpeg/libjpeg \
+			--exclude ${DISTNAME}/frmts/jpeg/libjpeg12 \
+			--exclude ${DISTNAME}/frmts/png/libpng \
+			--exclude ${DISTNAME}/frmts/zlib \
+			--exclude ${DISTNAME}/ogr/ogrsf_frmts/geojson/libjson \
+			--exclude ${DISTNAME}/third_party/LercLib \
+			--no-same-owner --no-same-permissions
+.else
+post-patch:
+	@${RM} -r ${WRKSRC}/alg/internal_libqhull/
+	@${RM} -r ${WRKSRC}/frmts/gif/giflib/
+	@${RM} -r ${WRKSRC}/frmts/gtiff/libgeotiff/
+	@${RM} -r ${WRKSRC}/frmts/gtiff/libtiff/
+	@${RM} -r ${WRKSRC}/frmts/jpeg/libjpeg/
+	@${RM} -r ${WRKSRC}/frmts/jpeg/libjpeg12/
+	@${RM} -r ${WRKSRC}/frmts/png/libpng/
+	@${RM} -r ${WRKSRC}/frmts/zlib/
+	@${RM} -r ${WRKSRC}/ogr/ogrsf_frmts/geojson/libjson/
+	@${RM} -r ${WRKSRC}/third_party/LercLib/
+.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d

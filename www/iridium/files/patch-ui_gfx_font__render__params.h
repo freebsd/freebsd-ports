@@ -1,15 +1,15 @@
---- ui/gfx/font_render_params.h.orig	2022-03-28 18:11:04 UTC
+--- ui/gfx/font_render_params.h.orig	2024-06-25 12:08:48 UTC
 +++ ui/gfx/font_render_params.h
-@@ -109,7 +109,7 @@ GFX_EXPORT FontRenderParams GetFontRenderParams(
+@@ -115,7 +115,7 @@ GFX_EXPORT FontRenderParams GetFontRenderParams(
      const FontRenderParamsQuery& query,
      std::string* family_out);
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
  // Clears GetFontRenderParams()'s cache. Intended to be called by tests that are
  // changing Fontconfig's configuration.
  GFX_EXPORT void ClearFontRenderParamsCacheForTest();
-@@ -119,7 +119,7 @@ GFX_EXPORT void ClearFontRenderParamsCacheForTest();
+@@ -125,7 +125,7 @@ GFX_EXPORT void ClearFontRenderParamsCacheForTest();
  GFX_EXPORT float GetFontRenderParamsDeviceScaleFactor();
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

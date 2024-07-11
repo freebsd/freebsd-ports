@@ -1,12 +1,13 @@
 PORTNAME=	Mail-SPF
-PORTVERSION=	3.20240206
+PORTVERSION=	3.20240617
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Object-oriented implementation of Sender Policy Framework
-WWW=		https://metacpan.org/release/Mail-SPF
+WWW=		https://metacpan.org/release/Mail-SPF \
+		http://www.open-spf.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

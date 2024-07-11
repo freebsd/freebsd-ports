@@ -1,6 +1,6 @@
 PORTNAME=	moc
-PORTVERSION=	2.5.2
-PORTREVISION=	11
+DISTVERSION=	2.5.2
+PORTREVISION=	12
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.daper.net/pub/soft/moc/stable/
 
@@ -13,21 +13,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=		bdb gmake libtool ncurses pkgconfig tar:bzip2
+USES=		gmake iconv libtool localbase:ldflags ncurses pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}
-LDFLAGS+=	-L${LOCALBASE}/lib -L${BDB_LIB_DIR}
-
-CONFIGURE_ARGS=	--without-ffmpeg
+CONFIGURE_ARGS=	--disable-cache --without-ffmpeg
 
 OPTIONS_DEFINE=	AAC CURL DEBUG FLAC JACK MODPLUG MP3 MUSEPACK RCC \
 		SAMPLERATE SIDPLAY2 SNDFILE SPEEX VORBIS WAVPACK
-OPTIONS_DEFAULT=	MP3 VORBIS FLAC CURL WAVPACK
+OPTIONS_DEFAULT=MP3 VORBIS FLAC CURL WAVPACK
 CURL_DESC=	curl support (Internet streams)
 RCC_DESC=	RCC support
 SIDPLAY2_DESC=	libsidplay2 support
@@ -81,7 +77,8 @@ SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
 SPEEX_PLIST_FILES=	lib/moc/decoder_plugins/libspeex_decoder.so
 SPEEX_CONFIGURE_OFF=	--without-speex
 
-VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
+VORBIS_LIB_DEPENDS=	libogg.so:audio/libogg \
+			libvorbis.so:audio/libvorbis
 VORBIS_PLIST_FILES=	lib/moc/decoder_plugins/libvorbis_decoder.so
 VORBIS_CONFIGURE_OFF=	--without-ogg
 

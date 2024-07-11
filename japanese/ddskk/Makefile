@@ -1,12 +1,12 @@
 PORTNAME=	ddskk
 DISTVERSION=	17.1.20230702
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	japanese elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mew14930xvi@inbox.lv
 COMMENT=	Simple Kana to Kanji conversion program on Emacsen
-WWW=		http://openlab.ring.gr.jp/skk/
+WWW=		http://openlab.ring.gr.jp/skk/ddskk.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -24,8 +24,9 @@ ALL_TARGET=	elc info
 NO_ARCH=	yes
 
 INFO=		skk
-PORTDOCS=	*
-PORTEXAMPLES=	*
+PORTDOCS=	AUTHORS.ja CODENAME.ja Contributors Development.ja.org \
+		FAQ.ja NEWS.ja README.ccc.org history.md
+PORTEXAMPLES=	dot.emacs dot.skk
 
 SKK_LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/skk
 
@@ -38,14 +39,12 @@ post-patch:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in AUTHORS.ja CODENAME.ja Contributors Development.ja.org FAQ.ja NEWS.ja history.md
-	${INSTALL_DATA} ${WRKSRC}/READMEs/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
+	cd ${WRKSRC}/READMEs/ && ${INSTALL_DATA} ${PORTDOCS} \
+		${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.for i in dot.emacs dot.skk
-	${INSTALL_DATA} ${WRKSRC}/etc/${i} ${STAGEDIR}${EXAMPLESDIR}
-.endfor
+	cd ${WRKSRC}/etc/ && ${INSTALL_DATA} ${PORTEXAMPLES} \
+		${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

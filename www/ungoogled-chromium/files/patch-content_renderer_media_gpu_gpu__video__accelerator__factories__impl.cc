@@ -1,6 +1,6 @@
---- content/renderer/media/gpu/gpu_video_accelerator_factories_impl.cc.orig	2024-05-23 20:04:36 UTC
+--- content/renderer/media/gpu/gpu_video_accelerator_factories_impl.cc.orig	2024-06-22 08:49:42 UTC
 +++ content/renderer/media/gpu/gpu_video_accelerator_factories_impl.cc
-@@ -57,7 +57,7 @@ bool UseSingleNV12() {
+@@ -47,7 +47,7 @@ bool UseSingleNV12() {
  #else
    static BASE_FEATURE(kUseSingleNV12ForSoftwareGMB,
                        "UseSingleNV12ForSoftwareGMB",

@@ -1,5 +1,5 @@
-SEAFILE_VER=	11.0.5
-SEAHUB_VER=	11.0.5
+SEAFILE_VER=	11.0.9
+SEAHUB_VER=	11.0.9
 
 
 # Various vars used in most/all the Makefiles

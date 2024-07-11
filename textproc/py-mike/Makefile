@@ -1,5 +1,6 @@
 PORTNAME=	mike
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		https://github.com/jimporter/mike/releases/download/v${PORTVERSION}/
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-met
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.7:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocs>=1.0:textproc/py-mkdocs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=3.0:devel/py-pyparsing@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=5.1:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.1:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml_env_tag>=0:devel/py-pyyaml_env_tag@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}verspec>=0:devel/py-verspec@${PY_FLAVOR}
 

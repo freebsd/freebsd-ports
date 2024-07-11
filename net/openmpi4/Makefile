@@ -1,5 +1,6 @@
 PORTNAME=	openmpi
 PORTVERSION=	4.1.6
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	https://download.open-mpi.org/release/open-mpi/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	4
@@ -57,7 +58,7 @@ TEST_TARGET=	check
 SHEBANG_FILES=	ompi/mca/common/monitoring/profile2mat.pl \
 		ompi/mca/common/monitoring/aggregate_profile.pl
 
-OPTIONS_DEFINE=			AVX DEBUG IPV6 SLURM TORQUE
+OPTIONS_DEFINE=			AVX DEBUG IPV6 SLURM
 OPTIONS_DEFAULT=		SLURM
 OPTIONS_EXCLUDE_aarch64=	AVX
 OPTIONS_EXCLUDE_armv6=		AVX SLURM
@@ -73,7 +74,6 @@ OPTIONS_SUB=			yes
 
 AVX_DESC=	Enable AVX instructions
 SLURM_DESC=	Enable SLURM support
-TORQUE_DESC=	Enable Torque support
 
 AVX_CONFIGURE_OFF=	--enable-mca-no-build=op-avx
 
@@ -81,17 +81,6 @@ DEBUG_CONFIGURE_ENABLE=	debug
 DEBUG_INSTALL_TARGET_OFF=	install-strip
 
 IPV6_CONFIGURE_ENABLE=	ipv6
-
-TORQUE_CONFIGURE_WITH=	tm
-TORQUE_LIB_DEPENDS=	libtorque.so:sysutils/torque
-TORQUE_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_plm_tm.so \
-			${MPIDIR}/lib/openmpi/mca_plm_tm.la \
-			${MPIDIR}/lib/openmpi/mca_ras_tm.la \
-			${MPIDIR}/lib/openmpi/mca_ras_tm.so \
-			${MPIDIR}/lib/openmpi/mca_ess_tm.so \
-			${MPIDIR}/lib/openmpi/mca_ess_tm.la \
-			${MPIDIR}/share/openmpi/help-plm-tm.txt \
-			${MPIDIR}/share/openmpi/help-ras-tm.txt
 
 SLURM_CONFIGURE_WITH=	slurm
 SLURM_LIB_DEPENDS=	libslurm.so:sysutils/slurm-wlm

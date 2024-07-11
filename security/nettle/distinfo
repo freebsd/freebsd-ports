@@ -1,3 +1,3 @@
-TIMESTAMP = 1685792186
-SHA256 (nettle-3.9.1.tar.gz) = ccfeff981b0ca71bbd6fbcb054f407c60ffb644389a5be80d6716d5b550c6ce3
-SIZE (nettle-3.9.1.tar.gz) = 2396741
+TIMESTAMP = 1718690460
+SHA256 (nettle-3.10.tar.gz) = b4c518adb174e484cb4acea54118f02380c7133771e7e9beb98a0787194ee47c
+SIZE (nettle-3.10.tar.gz) = 2640485

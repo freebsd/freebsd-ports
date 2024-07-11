@@ -19,6 +19,7 @@ load_rc_config $name
 : ${serviio_user="dlna"}
 : ${serviio_heap="512M"}
 : ${serviio_stack="20M"}
+: ${serviio_svcj_options="net_basic"}
 
 if [ -n "${serviio_lang}" ]; then
 	export LANG=${serviio_lang}

@@ -1,6 +1,6 @@
---- src/uGlobsPaths.pas.orig	2024-01-04 17:03:35 UTC
+--- src/uGlobsPaths.pas.orig	2024-02-29 18:56:08 UTC
 +++ src/uGlobsPaths.pas
-@@ -3,7 +3,7 @@ unit uGlobsPaths;
+@@ -3,7 +3,7 @@ var
  interface
  
  var
@@ -17,12 +17,3 @@
  
  //Global Configuration Filename
  const
-@@ -74,7 +75,7 @@ end;
- 
- procedure Initialize;
- begin
--  gpExePath := ExtractFilePath(TryReadAllLinks(ParamStr(0)));
-+  //gpExePath := ExtractFilePath(TryReadAllLinks(ParamStr(0)));
-   gpGlobalCfgDir := gpExePath + 'settings' + DirectorySeparator;
- end;
- 

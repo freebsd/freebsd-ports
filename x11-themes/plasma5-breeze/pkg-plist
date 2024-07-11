@@ -5,7 +5,7 @@ lib/kconf_update_bin/breezehighcontrasttobreezedark
 lib/kconf_update_bin/breezetobreezeclassic
 lib/kconf_update_bin/breezetobreezelight
 lib/libbreezecommon5.so.5
-lib/libbreezecommon5.so.5.27.10
+lib/libbreezecommon5.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/org.kde.kdecoration2/breezedecoration.so
 %%QT_PLUGINDIR%%/plasma/kcms/breeze/kcm_breezedecoration.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings_qwidgets/breezestyleconfig.so

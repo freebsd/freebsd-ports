@@ -1,8 +1,7 @@
 PORTNAME=	gdstk
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.51
+DISTVERSION=	0.9.52
 CATEGORIES=	cad
-#MASTER_SITES=	PYPI # build fails from PYPI: https://github.com/heitzmann/gdspy/issues/236
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,9 +22,6 @@ RUN_DEPENDS=	${PYNUMPY}
 
 USES=		compiler:c++11-lang python
 USE_PYTHON=	pep517 autoplist pytest # tests fail to run, see https://github.com/heitzmann/gdstk/issues/244
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	heitzmann
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 

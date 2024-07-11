@@ -15,10 +15,9 @@ WWW=		https://fceux.com
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libarchive.so:archivers/libarchive \
-		libminizip.so:archivers/minizip
+LIB_DEPENDS=	libminizip.so:archivers/minizip
 
-USES=		cmake desktop-file-utils gl lua:51 pkgconfig qt:5 sdl
+USES=		cmake desktop-file-utils gl libarchive lua:51 pkgconfig qt:5 sdl
 USE_GL=		gl glu
 USE_QT=		buildtools:build core gui opengl qmake:build widgets
 USE_SDL=	sdl2

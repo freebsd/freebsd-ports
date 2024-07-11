@@ -1,5 +1,5 @@
 PORTNAME=	rabbitmq
-DISTVERSION=	3.12.13
+DISTVERSION=	3.13.3
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/rabbitmq/rabbitmq-server/releases/download/v${PORTVERSION}/
 # https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.12.12/rabbitmq-server-generic-unix-3.12.12.tar.xz

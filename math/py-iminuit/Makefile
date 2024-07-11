@@ -1,5 +1,5 @@
 PORTNAME=	iminuit
-DISTVERSION=	2.25.2
+DISTVERSION=	2.26.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,7 +32,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boost-histogram>0:misc/py-boost-histogram@$
 		${PYTHON_PKGNAMEPREFIX}unicodeitplus>0:textproc/py-unicodeitplus@${PY_FLAVOR}
 
 USES=		compiler:c++14-lang python:3.9+
-USE_PYTHON=	pep517 cython_test autoplist pytest # 7 tests fail, see https://github.com/scikit-hep/iminuit/issues/975
+USE_PYTHON=	pep517 cython_test autoplist pytest # 7 tests fail, see https://github.com/scikit-hep/iminuit/issues/1002
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 

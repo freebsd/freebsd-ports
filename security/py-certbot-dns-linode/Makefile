@@ -1,8 +1,10 @@
 PORTNAME=	certbot-dns-linode
 PORTVERSION=	${ACME_VERSION}
 CATEGORIES=	security python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/certbot/certbot/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	certbot_dns_linode-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Linode DNS Authenticator plugin for Certbot

@@ -1,5 +1,5 @@
 PORTNAME=	concurrent-ruby-edge
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/ruby-concurrency/concurrent-ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-concurrent-ruby>=1.2.0<1.3:devel/rubygem-concurrent-ruby
+RUN_DEPENDS=	rubygem-concurrent-ruby>=1.3<2:devel/rubygem-concurrent-ruby
 
 USES=		gem
 

@@ -1,0 +1,10 @@
+--- modules/libpref/Preferences.cpp.orig	2023-05-11 21:42:41 UTC
++++ modules/libpref/Preferences.cpp
+@@ -6126,6 +6126,7 @@ static const PrefListEntry sDynamicPrefOverrideList[]{
+     PREF_LIST_ENTRY("logging.config.LOG_FILE"),
+     PREF_LIST_ENTRY("media.audio_loopback_dev"),
+     PREF_LIST_ENTRY("media.decoder-doctor."),
++    PREF_LIST_ENTRY("media.cubeb.backend"),
+     PREF_LIST_ENTRY("media.cubeb.output_device"),
+     PREF_LIST_ENTRY("media.getusermedia.fake-camera-name"),
+     PREF_LIST_ENTRY("media.hls.server.url"),

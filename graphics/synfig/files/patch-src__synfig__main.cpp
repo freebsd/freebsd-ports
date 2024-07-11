@@ -1,5 +1,5 @@
---- src/synfig/main.cpp.orig	2022-04-20 18:01:09.451858000 -0700
-+++ src/synfig/main.cpp	2022-04-20 19:15:23.316538000 -0700
+--- src/synfig/main.cpp.orig	2024-05-21 08:01:41 UTC
++++ src/synfig/main.cpp
 @@ -224,7 +224,7 @@
  
  	unsigned int i;

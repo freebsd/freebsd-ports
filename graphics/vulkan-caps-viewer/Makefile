@@ -1,5 +1,5 @@
 PORTNAME=	vulkan-caps-viewer
-DISTVERSION=	3.40
+DISTVERSION=	3.41
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 USE_QT=		qmake:build buildtools:build core gui network widgets
 GH_ACCOUNT=	SaschaWillems
 GH_PROJECT=	VulkanCapsViewer
-GH_TUPLE=	KhronosGroup:Vulkan-Headers:v1.3.280:vkheaders/Vulkan-Headers
+GH_TUPLE=	KhronosGroup:Vulkan-Headers:v1.3.289:vkheaders/Vulkan-Headers
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (GL, wayland)
 PLIST_FILES=	bin/vulkanCapsViewer \
 		share/applications/vulkanCapsViewer.desktop \

@@ -45,7 +45,7 @@ BIN_SUFFIX=		# none
 
 .if ${ARCH} != amd64 && ${ARCH} != i386
 post-patch:
-	@${REINPLACE_CMD} -e 's|VECTOR_FLAG=-march=native|dnl &|' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's|VECTOR_FLAG=-march=native|dnl &|' -e 's|-msse3 ||' ${WRKSRC}/configure.ac
 .endif
 
 post-install-DOCS-on:

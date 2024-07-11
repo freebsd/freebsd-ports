@@ -5,10 +5,8 @@ bin/pyenv
 %%ETCDIR%%.d/exec/pip-rehash/pip
 %%ETCDIR%%.d/install/latest.bash
 %%ETCDIR%%.d/rehash/conda.bash
-%%ETCDIR%%.d/rehash/conda.d/.gitignore
 %%ETCDIR%%.d/rehash/conda.d/default.list
 %%ETCDIR%%.d/rehash/source.bash
-%%ETCDIR%%.d/rehash/source.d/.gitignore
 %%ETCDIR%%.d/rehash/source.d/default.list
 libexec/pyenv
 libexec/pyenv---version
@@ -21,7 +19,6 @@ libexec/pyenv-hooks
 libexec/pyenv-init
 libexec/pyenv-latest
 libexec/pyenv-local
-libexec/pyenv-plugins/.gitignore
 libexec/pyenv-plugins/python-build/LICENSE
 libexec/pyenv-plugins/python-build/README.md
 libexec/pyenv-plugins/python-build/bin/pyenv-install
@@ -117,8 +114,14 @@ libexec/pyenv-plugins/python-build/share/python-build/3.12-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.12.0
 libexec/pyenv-plugins/python-build/share/python-build/3.12.1
 libexec/pyenv-plugins/python-build/share/python-build/3.12.2
+libexec/pyenv-plugins/python-build/share/python-build/3.12.3
+libexec/pyenv-plugins/python-build/share/python-build/3.12.4
 libexec/pyenv-plugins/python-build/share/python-build/3.13-dev
-libexec/pyenv-plugins/python-build/share/python-build/3.13.0a5
+libexec/pyenv-plugins/python-build/share/python-build/3.13.0b3
+libexec/pyenv-plugins/python-build/share/python-build/3.13.0b3t
+libexec/pyenv-plugins/python-build/share/python-build/3.13t-dev
+libexec/pyenv-plugins/python-build/share/python-build/3.14-dev
+libexec/pyenv-plugins/python-build/share/python-build/3.14t-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.2.0
 libexec/pyenv-plugins/python-build/share/python-build/3.2.1
 libexec/pyenv-plugins/python-build/share/python-build/3.2.2
@@ -303,6 +306,7 @@ libexec/pyenv-plugins/python-build/share/python-build/anaconda3-2023.07-1
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-2023.07-2
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-2023.09-0
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-2024.02-1
+libexec/pyenv-plugins/python-build/share/python-build/anaconda3-2024.06-1
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-4.0.0
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-4.1.0
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-4.1.1
@@ -326,6 +330,7 @@ libexec/pyenv-plugins/python-build/share/python-build/graalpy-24.0.0
 libexec/pyenv-plugins/python-build/share/python-build/graalpy-community-23.1.0
 libexec/pyenv-plugins/python-build/share/python-build/graalpy-community-23.1.2
 libexec/pyenv-plugins/python-build/share/python-build/graalpy-community-24.0.0
+libexec/pyenv-plugins/python-build/share/python-build/graalpy-dev
 libexec/pyenv-plugins/python-build/share/python-build/graalpython-20.1.0
 libexec/pyenv-plugins/python-build/share/python-build/graalpython-20.2.0
 libexec/pyenv-plugins/python-build/share/python-build/graalpython-20.3.0
@@ -459,6 +464,8 @@ libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.10-23.5.1-0
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.10-23.5.2-0
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.10-23.9.0-0
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.10-24.1.2-0
+libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.10-24.4.0-0
+libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.10-24.5.0-0
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.10.1
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.11-23.10.0-1
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.11-23.11.0-1
@@ -468,7 +475,11 @@ libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.11-23.5.1-0
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.11-23.5.2-0
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.11-23.9.0-0
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.11-24.1.2-0
+libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.11-24.4.0-0
+libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.11-24.5.0-0
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.12-24.1.2-0
+libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.12-24.4.0-0
+libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.12-24.5.0-0
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.16.0
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.18.3
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.19.0
@@ -513,6 +524,8 @@ libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.9-23.5.1-0
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.9-23.5.2-0
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.9-23.9.0-0
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.9-24.1.2-0
+libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.9-24.4.0-0
+libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.9-24.5.0-0
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.9-4.10.1
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.9-4.10.3
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-3.9-4.11.0
@@ -958,6 +971,8 @@ libexec/pyenv-plugins/python-build/share/python-build/pypy2.7-7.3.14
 libexec/pyenv-plugins/python-build/share/python-build/pypy2.7-7.3.14-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy2.7-7.3.15
 libexec/pyenv-plugins/python-build/share/python-build/pypy2.7-7.3.15-src
+libexec/pyenv-plugins/python-build/share/python-build/pypy2.7-7.3.16
+libexec/pyenv-plugins/python-build/share/python-build/pypy2.7-7.3.16-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy2.7-7.3.2
 libexec/pyenv-plugins/python-build/share/python-build/pypy2.7-7.3.2-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy2.7-7.3.3
@@ -984,6 +999,8 @@ libexec/pyenv-plugins/python-build/share/python-build/pypy3.10-7.3.14
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.10-7.3.14-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.10-7.3.15
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.10-7.3.15-src
+libexec/pyenv-plugins/python-build/share/python-build/pypy3.10-7.3.16
+libexec/pyenv-plugins/python-build/share/python-build/pypy3.10-7.3.16-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.3-5.2-alpha1
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.3-5.2-alpha1-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.3-5.5-alpha
@@ -1062,6 +1079,8 @@ libexec/pyenv-plugins/python-build/share/python-build/pypy3.9-7.3.14
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.9-7.3.14-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.9-7.3.15
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.9-7.3.15-src
+libexec/pyenv-plugins/python-build/share/python-build/pypy3.9-7.3.16
+libexec/pyenv-plugins/python-build/share/python-build/pypy3.9-7.3.16-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.9-7.3.8
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.9-7.3.8-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.9-7.3.9
@@ -1118,7 +1137,6 @@ libexec/pyenv-plugins/python-build/test/pyenv.bats
 libexec/pyenv-plugins/python-build/test/pyenv_ext.bats
 libexec/pyenv-plugins/python-build/test/stubs/stub
 libexec/pyenv-plugins/python-build/test/test_helper.bash
-libexec/pyenv-plugins/python-build/test/tmp/.gitignore
 libexec/pyenv-plugins/python-build/test/version.bats
 libexec/pyenv-prefix
 libexec/pyenv-realpath.dylib

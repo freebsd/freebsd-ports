@@ -1,5 +1,5 @@
 PORTNAME=	dunamai
-PORTVERSION=	1.21.1
+PORTVERSION=	1.21.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/mtkennerly/dunamai/releases/download/v${PORTVERSION}/

@@ -1,8 +1,8 @@
---- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig	2023-09-17 07:59:53 UTC
+--- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig	2024-06-22 08:49:42 UTC
 +++ chrome/browser/ui/views/frame/system_menu_model_builder.cc
 @@ -75,7 +75,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
      ui::SimpleMenuModel* model) {
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
@@ -11,7 +11,7 @@
    model->AddItemWithStringId(IDC_RESTORE_WINDOW, IDS_RESTORE_WINDOW_MENU);
 @@ -91,7 +91,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
    }
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#if BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && !BUILDFLAG(IS_CHROMEOS_LACROS)

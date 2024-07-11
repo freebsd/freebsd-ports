@@ -1,8 +1,8 @@
 etc/asound.conf
 usr/bin/aserver
-usr/lib/.build-id/77/e24ce06f487d8deed2e872c03a03d7fea7889c
-usr/lib/.build-id/8e/0ac7a093efd841ef753bac4c7dafe9e2731e33
-usr/lib/.build-id/dc/99c8a793f5392f8c080c68129a5afcfde61b5b
+usr/lib/.build-id/2d/c78242ae99078fca4a61ce287b086c82aef1c9
+usr/lib/.build-id/e2/aee50630d012a470b0170954763f52672b7068
+usr/lib/.build-id/ee/b34ccce1adb323c8a691aca020642dfff12de2
 usr/lib/modprobe.d/dist-alsa.conf
 usr/lib64/libasound.so.2
 usr/lib64/libasound.so.2.0.0

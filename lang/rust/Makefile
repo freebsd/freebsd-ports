@@ -1,6 +1,6 @@
 PORTNAME=	rust
-PORTVERSION?=	1.78.0
-PORTREVISION?=	0
+PORTVERSION?=	1.79.0
+PORTREVISION?=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		https://dev-static.rust-lang.org/dist/:src \
@@ -59,7 +59,7 @@ DOCS_VARS=		_RUST_BUILD_DOCS=true \
 			_RUST_TOOLS+=rustdoc
 DOCS_VARS_OFF=		_RUST_BUILD_DOCS=false
 GDB_RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
-PORT_LLVM_USES=		llvm:min=16,lib,noexport
+PORT_LLVM_USES=		llvm:min=17,lib,noexport
 PORT_LLVM_MAKE_ENV=	RUSTFLAGS="-Lnative=${LOCALBASE}/lib"
 SOURCES_VARS=		_COMPONENTS+=rust-src-${_PACKAGE_VERS} \
 			_RUST_TOOLS+=src
@@ -67,8 +67,8 @@ WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown 
 			_RUST_TARGETS+=wasm32-unknown-unknown
 
 # See WRKSRC/src/stage0.json for the date and version values
-BOOTSTRAPS_DATE?=		2024-03-21
-RUST_BOOTSTRAP_VERSION?=	1.77.0
+BOOTSTRAPS_DATE?=		2024-05-02
+RUST_BOOTSTRAP_VERSION?=	1.78.0
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
@@ -101,9 +101,10 @@ IGNORE=		is only for FreeBSD
 .if ${ARCH} == powerpc
 LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
 MAKE_ENV+=	RUSTFLAGS="-L/usr/local/lib/gcc${GCC_DEFAULT}"
+.endif
+
 # rls doesn't build on rust nightly
-# rls needs 64-bit atomics: it doesn't build on powerpc
-.elif !defined(NIGHTLY_DATE)
+.if !defined(NIGHTLY_DATE)
 _RUST_TOOLS+=	rls
 _COMPONENTS+=	rls-${_PACKAGE_VERS}-${_RUST_TARGET}
 .endif
@@ -120,6 +121,10 @@ _COMPONENTS+=	rustc-dev-${_PACKAGE_VERS}-${_RUST_TARGET}
 
 .if ${PORT_OPTIONS:MWASM} && ${PORT_OPTIONS:MDOCS}
 _COMPONENTS+=	rust-docs-${_PACKAGE_VERS}-wasm32-unknown-unknown rust-docs-json-${_PACKAGE_VERS}-wasm32-unknown-unknown
+.endif
+
+.if exists(${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX})
+EXTRA_PATCHES+=	${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX}
 .endif
 
 .ifdef QEMU_EMULATING
@@ -153,9 +158,6 @@ do-configure:
 	@cd ${WRKDIR}/${_component}-*-${OPSYS:tl} && \
 		${SH} install.sh --prefix=${WRKDIR}/bootstrap --verbose
 .endfor
-.if !defined(NIGHTLY_DATE)
-	@${ECHO_CMD} 'changelog-seen=2' > ${WRKSRC}/config.toml
-.endif
 	@${ECHO_CMD} '[build]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'build-dir="${WRKDIR}/_build"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'build-stage=2' >> ${WRKSRC}/config.toml

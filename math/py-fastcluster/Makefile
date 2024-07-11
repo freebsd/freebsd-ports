@@ -21,16 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.9,1:math/py-numpy@${PY_FLAVOR}
 USES=		compiler python
 USE_PYTHON=	autoplist concurrent pep517
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH:Mpowerpc*} && ${COMPILER_VERSION} == 140
-BUILD_DEPENDS+=	clang15:devel/llvm15
-CPP=            clang-cpp15
-CC=             clang15
-CXX=            clang++15
-.endif
-
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

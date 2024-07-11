@@ -4,6 +4,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 COMMENT=	Python module for libdnet
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
 LIB_DEPENDS=	libdnet.so:net/libdnet
 
 USES=		autoreconf libtool localbase:ldflags python

@@ -18,6 +18,8 @@
 name=clamav_milter
 rcvar=clamav_milter_enable
 
+: ${clamav_milter_svcj_options:="net_basic"}
+
 load_rc_config $name
 
 : ${clamav_milter_enable:=NO}

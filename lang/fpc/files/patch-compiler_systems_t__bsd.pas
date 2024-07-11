@@ -1,24 +1,20 @@
---- compiler/systems/t_bsd.pas	2020-10-03 17:54:31.715884000 -0500
-+++ compiler/systems/t_bsd.pas	2020-10-03 18:18:40.577288000 -0500
-@@ -155,6 +155,8 @@
-      LibrarySearchPath.AddLibraryPath(sysrootpath,'=/usr/lib',true)
-    else if target_info.system in systems_openbsd then
+--- compiler/systems/t_bsd.pas.orig	2024-06-14 09:29:25.000000000 -0500
++++ compiler/systems/t_bsd.pas	2024-06-15 23:36:51.623753000 -0500
+@@ -114,6 +114,8 @@
+   if not Dontlinkstdlibpath Then
+    if target_info.system in systems_openbsd then
       LibrarySearchPath.AddLibraryPath(sysrootpath,'=/usr/lib;=$OPENBSD_X11BASE/lib;=$OPENBSD_LOCALBASE/lib',true)
 +   else if target_info.system in systems_freebsd then
 +     LibrarySearchPath.AddLibraryPath(sysrootpath,'=/usr/lib;=$FREEBSD_LOCALBASE/lib',true)
     else
       LibrarySearchPath.AddLibraryPath(sysrootpath,'=/lib;=/usr/lib;=/usr/X11R6/lib',true);
  end;
-@@ -167,6 +169,12 @@
- var
-   LdProgram: string='ld';
- begin
-+  if target_info.system in systems_freebsd then
-+  begin
-+    LdProgram:=GetEnvPChar('FPC_LDPATH');
-+    if not FileExists(LdProgram,True) then
-+      LdProgram:='%%FPC_LDPATH%%';
-+  end;
-   if target_info.system in (systems_openbsd+[system_x86_64_dragonfly]) then
-     LdProgram:='ld.bfd';
-   LibrarySuffix:=' ';
+@@ -148,6 +150,8 @@
+       DynamicLinker:='/usr/libexec/ld.so'
+      else if target_info.system in systems_netbsd then
+       DynamicLinker:='/usr/libexec/ld.elf_so'
++     else if target_info.system in systems_freebsd then
++      DynamicLinker:='/usr/libexec/ld-elf.so.1'
+      else if target_info.system=system_x86_64_dragonfly then
+       DynamicLinker:='/libexec/ld-elf.so.2'
+      else

@@ -7,7 +7,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CUPS configuration Gtk+2.0 GUI
 WWW=		http://cyberelk.net/tim/software/system-config-printer/
 
-BUILD_DEPENDS=	xmlto:textproc/xmlto \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		xmlto:textproc/xmlto \
 		docbook-xml>0:textproc/docbook-xml
 LIB_DEPENDS=	libcups.so:print/cups
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \

@@ -1,0 +1,11 @@
+--- configure.orig      2024-05-25 22:34:42 UTC
++++ configure
+@@ -11736,7 +11736,7 @@ $as_echo "#define DVBCSA_USE_ALTIVEC 1" >>confdefs.h
+ 
+ $as_echo "#define DVBCSA_USE_ALTIVEC 1" >>confdefs.h
+ 
+-     GCC_CFLAGS="$GCC_CFLAGS -maltivec -mabi=altivec"
++     GCC_CFLAGS="$GCC_CFLAGS -maltivec"
+ 
+ elif test "$enable_uint32" = "yes" ; then
+      transpose_32=yes

@@ -1,0 +1,5 @@
+OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.
+OpenBLAS is an open source project supported by
+Lab of Parallel Software and Computational Science, ISCAS.
+
+This version uses 8 byte integers on 64-bits architectures.

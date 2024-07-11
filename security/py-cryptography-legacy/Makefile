@@ -1,6 +1,6 @@
 PORTNAME=	cryptography
 PORTVERSION=	3.4.8
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
@@ -40,14 +40,7 @@ TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
 CPE_VENDOR=	cryptography_project
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
-post-patch:
-	@${REINPLACE_CMD} -e 's|"-Wno-error=sign-conversion"||' ${WRKSRC}/src/_cffi_src/build_openssl.py
-.endif
-
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

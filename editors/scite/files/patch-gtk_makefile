@@ -1,6 +1,6 @@
---- gtk/makefile.orig	2020-09-11 10:44:44 UTC
+--- gtk/makefile.orig	2024-03-19 04:36:42 UTC
 +++ gtk/makefile
-@@ -18,9 +18,7 @@ ifdef CLANG
+@@ -19,9 +19,7 @@ SANITIZE = address
  # thread also need to create Position Independent Executable -> search online documentation
  SANITIZE = address
  #SANITIZE = undefined
@@ -11,23 +11,23 @@
  WARNINGS += -Wno-deprecated-register
  WARNINGS += -Wno-empty-body
  else
-@@ -59,7 +57,7 @@ COMPLIB=$(SCINTILLA_DIR)/bin/scintilla.a
+@@ -60,7 +58,7 @@ LEXILLA=$(srcdir)/../bin/liblexilla.$(SHAREDEXTENSION)
  COMPONENT=$(srcdir)/../bin/libscintilla.$(SHAREDEXTENSION)
  LEXILLA=$(srcdir)/../bin/liblexilla.$(SHAREDEXTENSION)
  
 -all: $(PROG) $(COMPONENT) $(LEXILLA)
 +all: $(PROG)
  
- vpath %.h $(srcdir) $(srcdir)/../src $(SCINTILLA_DIR)/include
- vpath %.cxx $(srcdir) $(srcdir)/../src
-@@ -151,7 +149,9 @@ SRC_OBJS = \
+ vpath %.h $(srcdir) $(srcdir)/../src $(LEXILLA_DIR)/include $(SCINTILLA_DIR)/include
+ vpath %.cxx $(srcdir) $(srcdir)/../src $(srcdir)/../../lexilla/access $(SCINTILLA_DIR)/call
+@@ -156,7 +154,9 @@ $(PROG): SciTEGTK.o Strips.o GUIGTK.o Widget.o Directo
  	Utf8_16.o
  
- $(PROG): SciTEGTK.o GUIGTK.o Widget.o DirectorExtension.o $(SRC_OBJS) $(LUA_OBJS)
+ $(PROG): SciTEGTK.o Strips.o GUIGTK.o Widget.o DirectorExtension.o $(SRC_OBJS) $(LUA_OBJS)
 -	$(CXX) $(BASE_FLAGS) $(LDFLAGS) -rdynamic -Wl,--as-needed -Wl,-rpath,'$${ORIGIN}' -Wl,--version-script $(srcdir)/lua.vers -Wl,-rpath,$(libdir) $^ -o $@ $(CONFIGLIB) $(LIBS) -L ../../scintilla/bin -lscintilla $(LDLIBS)
-+	$(CXX) $(BASE_FLAGS) $(LDFLAGS) -rdynamic \
-+	-Wl,--version-script $(srcdir)/lua.vers $^ -o $@ -lscintilla \
-+	-Wl,--as-needed $(CONFIGLIB)
++	$(CXX) $(BASE_FLAGS) $(LDFLAGS) -rdynamic -Wl,--undefined-version \
++	-Wl,--as-needed -Wl,--version-script $(srcdir)/lua.vers \
++	$^ -o $@ $(CONFIGLIB) $(LIBS) -lscintilla -llexilla $(LDLIBS)
  
- # Automatically generate header dependencies with "make deps"
+ # Automatically generate header dependencies with "make depend"
  include deps.mak

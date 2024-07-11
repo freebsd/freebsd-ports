@@ -4,7 +4,8 @@ PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	XKB event daemon
+COMMENT=	X Keyboard Extension event daemon
+WWW=		https://gitlab.freedesktop.org/xorg/app/xkbevd
 
 LICENSE=	MIT
 

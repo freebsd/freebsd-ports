@@ -14,5 +14,3 @@ framework features and other gems build on top of that, without having to worry
 about API differences between Delayed Job and Resque. Picking your queuing
 backend becomes more of an operational concern, then. And you'll be able to
 switch between them without having to rewrite your jobs.
-
-See also: https://rubyonrails.org/

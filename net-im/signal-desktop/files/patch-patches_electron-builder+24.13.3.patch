@@ -1,0 +1,16 @@
+--- patches/electron-builder+24.13.3.patch.orig	2022-02-24 13:03:47 UTC
++++ patches/electron-builder+24.13.3.patch
+@@ -0,0 +1,13 @@
++diff --git a/node_modules/electron-builder/out/cli/install-app-deps.js b/node_modules/electron-builder/out/cli/install-app-deps.js
++index 0c58564..2b6f9a5 100644
++--- a/node_modules/electron-builder/out/cli/install-app-deps.js
+++++ b/node_modules/electron-builder/out/cli/install-app-deps.js
++@@ -23,7 +23,7 @@ function configureInstallAppDepsCommand(yargs) {
++         "camel-case-expansion": false,
++     })
++         .option("platform", {
++-        choices: ["linux", "darwin", "win32"],
+++        choices: ["freebsd", "linux", "darwin", "win32"],
++         default: process.platform,
++         description: "The target platform",
++     })

@@ -1,6 +1,7 @@
 PORTNAME=	rizin
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	lang security shells
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -14,7 +15,7 @@ LICENSE_FILE_LGPL3 =	${WRKSRC}/COPYING.LESSER
 
 NOT_FOR_ARCHS=	armv6 armv7
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
 LIB_DEPENDS=	libcapstone.so:devel/capstone \
 		libmspack.so:archivers/libmspack \
 		libxxhash.so:devel/xxhash \

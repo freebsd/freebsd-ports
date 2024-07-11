@@ -1,5 +1,5 @@
 PORTNAME=	lfcxml
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
 

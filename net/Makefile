@@ -236,7 +236,6 @@
     SUBDIR += hanstunnel
     SUBDIR += haproxy
     SUBDIR += haproxy-devel
-    SUBDIR += haproxy20
     SUBDIR += haproxy22
     SUBDIR += haproxy24
     SUBDIR += haproxy25
@@ -256,7 +255,6 @@
     SUBDIR += http_ping
     SUBDIR += httping
     SUBDIR += httpry
-    SUBDIR += iaxmodem
     SUBDIR += icmpinfo
     SUBDIR += icpld
     SUBDIR += ifdepd
@@ -515,7 +513,6 @@
     SUBDIR += ndproxy
     SUBDIR += neatvnc
     SUBDIR += nemesis
-    SUBDIR += nepenthes
     SUBDIR += net6
     SUBDIR += netatalk3
     SUBDIR += netcat
@@ -946,7 +943,6 @@
     SUBDIR += pear-Horde_Scribe
     SUBDIR += pear-Horde_Socket_Client
     SUBDIR += pear-Horde_Url
-    SUBDIR += pear-Net_CDDB
     SUBDIR += pear-Net_CheckIP
     SUBDIR += pear-Net_DIME
     SUBDIR += pear-Net_DNSBL
@@ -1154,7 +1150,6 @@
     SUBDIR += py-smart-open
     SUBDIR += py-smbpasswd
     SUBDIR += py-smbprotocol
-    SUBDIR += py-soap2py
     SUBDIR += py-socketio-client
     SUBDIR += py-socksio
     SUBDIR += py-softlayer
@@ -1222,6 +1217,7 @@
     SUBDIR += reaver
     SUBDIR += recvnet
     SUBDIR += redir
+    SUBDIR += redpanda-connect
     SUBDIR += relayd
     SUBDIR += remarkable-devd
     SUBDIR += remmina
@@ -1371,6 +1367,7 @@
     SUBDIR += rubygem-oauth21
     SUBDIR += rubygem-octokit
     SUBDIR += rubygem-octokit4
+    SUBDIR += rubygem-octokit8
     SUBDIR += rubygem-octopress-deploy
     SUBDIR += rubygem-omniauth-auth0
     SUBDIR += rubygem-omniauth-authentiq
@@ -1623,6 +1620,8 @@
     SUBDIR += widentd
     SUBDIR += wifi-firmware-ath10k-kmod
     SUBDIR += wifi-firmware-ath11k-kmod
+    SUBDIR += wifi-firmware-ath12k-kmod
+    SUBDIR += wifi-firmware-iwlwifi-kmod
     SUBDIR += wifi-firmware-kmod
     SUBDIR += wifi-firmware-mt76-kmod
     SUBDIR += wifi-firmware-rtw88-kmod

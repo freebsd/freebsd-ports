@@ -316,7 +316,6 @@ libdata/pkgconfig/r_util.pc
 %%PORTDOCS%%%%DOCSDIR%%/macros.md
 %%PORTDOCS%%%%DOCSDIR%%/maemo.md
 %%PORTDOCS%%%%DOCSDIR%%/objc.pl
-%%PORTDOCS%%%%DOCSDIR%%/oo.md
 %%PORTDOCS%%%%DOCSDIR%%/openbsd.md
 %%PORTDOCS%%%%DOCSDIR%%/plugins.md
 %%PORTDOCS%%%%DOCSDIR%%/portscan.r2
@@ -662,6 +661,7 @@ share/man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/opcodes/sh.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/sm5xx.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/sparc.sdb
+%%DATADIR%%/%%PORTVERSION%%/opcodes/stm8.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/tms320.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/tricore.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/v810.sdb
@@ -673,6 +673,8 @@ share/man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/platform/bf-init.r2
 %%DATADIR%%/%%PORTVERSION%%/platform/nes-fini.r2
 %%DATADIR%%/%%PORTVERSION%%/platform/nes-init.r2
+%%DATADIR%%/%%PORTVERSION%%/platform/stm8-fini.r2
+%%DATADIR%%/%%PORTVERSION%%/platform/stm8-init.r2
 %%DATADIR%%/%%PORTVERSION%%/syscall/darwin-arm-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/syscall/darwin-arm-64.sdb
 %%DATADIR%%/%%PORTVERSION%%/syscall/darwin-x86-32.sdb

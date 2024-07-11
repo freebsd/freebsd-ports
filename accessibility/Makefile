@@ -7,6 +7,7 @@
     SUBDIR += darkman
     SUBDIR += eflite
     SUBDIR += feedbackd
+    SUBDIR += gammastep
     SUBDIR += gammy
     SUBDIR += kdeaccessibility
     SUBDIR += kmag

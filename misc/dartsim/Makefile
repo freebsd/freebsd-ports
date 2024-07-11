@@ -1,6 +1,6 @@
 PORTNAME=	dartsim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.13.2
+DISTVERSION=	6.14.4
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,6 +14,7 @@ BROKEN_i386=	clang failure: https://bugs.llvm.org/show_bug.cgi?id=41757
 
 BUILD_DEPENDS=	pagmo2>0:science/pagmo2 \
 		pybind11>0:devel/pybind11
+BUILD_DEPENDS+=	googletest>0:devel/googletest
 LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libBulletDynamics.so:devel/bullet \
 		libboost_system.so:devel/boost-libs \
@@ -26,7 +27,7 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		liblz4.so:archivers/liblz4 \
 		liboctomap.so:math/octomap \
 		libode.so:devel/ode \
-		libosg.so:graphics/osg34 \
+		libosg.so:graphics/osg \
 		libnlopt.so:math/nlopt \
 		libpagmo.so:science/pagmo2 \
 		libtinyxml2.so:textproc/tinyxml2 \
@@ -65,7 +66,7 @@ PORTDOCS=	*
 CFLAGS+=	-Wno-error=unused-but-set-variable
 .endif
 
-post-test: # run tests: 8 tests fail, see https://github.com/dartsim/dart/issues/1797
+post-test: # run tests: 8 tests fail, see https://github.com/dartsim/dart/issues/1797#issuecomment-2191988407
 	@cd ${BUILD_WRKSRC} && \
 		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 

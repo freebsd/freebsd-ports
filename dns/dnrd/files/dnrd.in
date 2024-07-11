@@ -18,6 +18,8 @@ rcvar=dnrd_enable
 command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}.pid
 
+: ${dnrd_svcj_options:="net_basic"}
+
 load_rc_config ${name}
 
 case $1 in

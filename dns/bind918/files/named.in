@@ -51,6 +51,7 @@ named_wait=${named_wait:-"NO"}
 named_wait_host=${named_wait_host:-"localhost"}
 named_auto_forward=${named_auto_forward:-"NO"}
 named_auto_forward_only=${named_auto_forward_only:-"NO"}
+named_svcj_options=${named_svcj_options:-"net_basic"}
 
 # Not configuration variables but having them here keeps rclint happy
 required_dirs="${named_chrootdir}"

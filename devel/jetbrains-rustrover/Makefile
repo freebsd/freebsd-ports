@@ -1,9 +1,9 @@
 PORTNAME=	rustrover
-PORTVERSION=	2024.1.eap.1
+PORTVERSION=	2024.1.2
 CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/rustrover/
 PKGNAMEPREFIX=	jetbrains-
-DISTNAME=	RustRover-241.15989.101
+DISTNAME=	RustRover-${PORTVERSION}
 DIST_SUBDIR=	jetbrains
 
 MAINTAINER=	dmitry.wagin@ya.ru
@@ -32,11 +32,14 @@ USE_JAVA=	yes
 JAVA_VERSION=	17+
 
 DATADIR=	${PREFIX}/share/jetbrains/${PORTNAME}
+
+EXTRACT_AFTER_ARGS+=	--exclude RustRover-*/jbr
+
 NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
-WRKSRC=		${WRKDIR}/RustRover-241.15989.101
+WRKSRC=		${WRKDIR}/RustRover-${PORTVERSION}
 
 _PTY4J_ARCH=	freebsd/${ARCH:S/amd64/x86-64/}
 _SQLITE_ARCH=	linux-${ARCH:S/amd64/x86_64/}
@@ -55,7 +58,6 @@ do-install:
 		${WRKSRC}/bin/remote-dev-server.sh \
 		${WRKSRC}/bin/repair \
 		${WRKSRC}/bin/restarter \
-		${WRKSRC}/jbr \
 		${WRKSRC}/lib/async-profiler \
 		${WRKSRC}/lib/jna \
 		${WRKSRC}/lib/native \

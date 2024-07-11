@@ -1,5 +1,5 @@
 PORTNAME=	mkdocstrings-python
-DISTVERSION=	1.10.0
+DISTVERSION=	1.10.3
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocstrings>0:textproc/py-mkdocstrings@${P
 USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 # These tests relies on files that aren't available in the sdist
-PYTEST_IGNORED_TESTS=	test_render_themes test_render_docstring
+PYTEST_IGNORED_TESTS=	test_render_themes test_render_docstring \
+			test_rendering_object_source_without_lineno
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 

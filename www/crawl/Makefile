@@ -1,6 +1,6 @@
 PORTNAME=	crawl
 PORTVERSION=	0.4
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	www
 MASTER_SITES=	http://www.monkey.org/~provos/
 
@@ -12,7 +12,7 @@ LICENSE=	BSD4CLAUSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 
-USES=		bdb pkgconfig
+USES=		bdb:18 pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libevent --program-transform-name=''

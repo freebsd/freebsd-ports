@@ -1,0 +1,7 @@
+TIMESTAMP = 1707424554
+SHA256 (tsoding-boomer-0.0.1-dfd4e1f_GH0.tar.gz) = 1c061cc3d55513ace5b0848f883039263ffb65ea502d2903dd032ce44ac976c3
+SIZE (tsoding-boomer-0.0.1-dfd4e1f_GH0.tar.gz) = 7074555
+SHA256 (nim-lang-x11-1.2_GH0.tar.gz) = 40a04906a522faa1746babcc72a536f26cdeac646475ac8a297945bd7813fdcf
+SIZE (nim-lang-x11-1.2_GH0.tar.gz) = 96522
+SHA256 (nim-lang-opengl-1.2.9_GH0.tar.gz) = bb7a8a91da12f33b3b12564956e031cbc89633d4576d456412a0f26728eb335e
+SIZE (nim-lang-opengl-1.2.9_GH0.tar.gz) = 102551

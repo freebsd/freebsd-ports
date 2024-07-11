@@ -1,46 +1,62 @@
 PORTNAME=	gmsh
-DISTVERSION=	4.11.1
-PORTREVISION=	5
+DISTVERSION=	4.13.1
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://gmsh.info/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 DIST_SUBDIR=	gmsh
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Automatic 3D finite element mesh generator
-WWW=		https://www.geuz.org/gmsh/
+WWW=		https://gmsh.info/
 
 LICENSE=	AGPLv3+ APACHE20 GPLv3+ GPLv2+ LGPL21
 LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	getdp:science/getdp \
+		gmm++>0:math/gmm++
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libgmp.so:math/gmp \
+		libmmg.so:science/mmg \
+		libmetis.so:math/metis \
 		libhdf5.so:science/hdf5 \
 		libpng.so:graphics/png \
 		libsz.so:science/libaec \
-		libfreetype.so:print/freetype2
+		libmathex.so:math/mathex \
+		libalglib.so:math/alglib \
+		libvoro++.so:science/voro++ \
+		libfreetype.so:print/freetype2 \
+		libtinyxml2.so:textproc/tinyxml2 \
+		${LIB_DEPENDS_${ARCH}}
 RUN_DEPENDS=	getdp:science/getdp
 
-USES=		blaslapack compiler:c++11-lang cmake fortran gl jpeg tar:tgz \
-		xorg
+USES=		bison compiler:c++14-lang cmake:testing eigen:3 fortran gl	\
+		jpeg localbase tar:tgz xorg
+
+# Only for 64 bits ARCHs
+LIB_DEPENDS_aarch64=	libmesquite.so:math/mesquite
+LIB_DEPENDS_amd64=	libmesquite.so:math/mesquite
+LIB_DEPENDS_powerpc64=	libmesquite.so:math/mesquite
+LIB_DEPENDS_powerpc64le=libmesquite.so:math/mesquite
 
 USE_GL=		gl glu
 USE_XORG=	ice sm x11 xcursor xext xinerama xfixes xft xrender
+USE_LDCONFIG=	yes
 
-CMAKE_ARGS=	-DCMAKE_SKIP_RPATH:BOOL=YES
+CMAKE_ON=	ENABLE_BUILD_DYNAMIC ENABLE_BUILD_SHARED ENABLE_SYSTEM_CONTRIB
 
 CXXFLAGS_powerpc64=	-mvsx
 LDFLAGS+=	-lexecinfo
 
-OPTIONS_DEFINE=	CGNS DOCS MED OCC SHARED STATIC
+OPTIONS_DEFINE=		CGNS DOCS MED OCC STATIC
 OPTIONS_DEFAULT=	CGNS MED OCC
 OPTIONS_SUB=	yes
 
 CGNS_DESC=	Enable CGNS mesh import
 MED_DESC=	Enable MED mesh and post file formats
 OCC_DESC=	Enable OpenCASCADE geometrical models
-SHARED_DESC=	Build shared library and install header files
 STATIC_DESC=	Build static library
 
 PLIST_SUB=	VER=${PORTVERSION} VE=${PORTVERSION:R}
@@ -52,7 +68,7 @@ PLIST_SUB=	VER=${PORTVERSION} VE=${PORTVERSION:R}
 
 CGNS_CMAKE_BOOL=	ENABLE_CGNS
 CGNS_LIB_DEPENDS=	libcgns.so:science/cgnslib
-DOCS_CMAKE_BOOL=	INSTALL_DOCS
+DOCS_USES=		makeinfo
 MED_CMAKE_BOOL=		ENABLE_MED
 MED_LIB_DEPENDS=	libmed.so:french/med
 OCC_CMAKE_BOOL=		ENABLE_OCC
@@ -60,11 +76,6 @@ OCC_CMAKE_ON=		-DOCC_INC=${LOCALBASE}/include/OpenCASCADE
 OCC_LIB_DEPENDS=	libopenblas.so:math/openblas libTKernel.so:cad/opencascade
 OCC_USES=		gnome
 OCC_USE=		gnome=cairo
-SHARED_CMAKE_BOOL=	ENABLE_BUILD_SHARED
-SHARED_USE=		LDCONFIG=yes
 STATIC_CMAKE_BOOL=	ENABLE_BUILD_LIB
-
-post-install-SHARED-on:
-	${RM} -r ${STAGEDIR}/wrkdirs
 
 .include <bsd.port.mk>

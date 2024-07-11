@@ -19,7 +19,7 @@ RUN_DEPENDS=	bind-tools>=0:dns/bind-tools \
 		p5-XML-Dumper>=0:textproc/p5-XML-Dumper \
 		tree:sysutils/tree \
 		usbutils>=0:sysutils/usbutils \
-		wmctrl:x11/wmctrl \
+		wmctrl:x11/wmctrl-fork \
 		xdpyinfo:x11/xdpyinfo \
 		xprop:x11/xprop \
 		xrandr:x11/xrandr

@@ -411,7 +411,6 @@
     SUBDIR += py-ast-comments
     SUBDIR += py-boost-histogram
     SUBDIR += py-censys
-    SUBDIR += py-cinder
     SUBDIR += py-codecarbon
     SUBDIR += py-colorbrewer
     SUBDIR += py-colored
@@ -463,6 +462,7 @@
     SUBDIR += py-openpaperwork-core
     SUBDIR += py-openpaperwork-gtk
     SUBDIR += py-openvdb
+    SUBDIR += py-optuna
     SUBDIR += py-orange3-associate
     SUBDIR += py-orange3-datafusion
     SUBDIR += py-orange3-educational
@@ -502,7 +502,6 @@
     SUBDIR += py-spdx-lookup
     SUBDIR += py-spdx-tools
     SUBDIR += py-spinners
-    SUBDIR += py-streamlit
     SUBDIR += py-synced-collections
     SUBDIR += py-tes
     SUBDIR += py-tflearn
@@ -544,6 +543,7 @@
     SUBDIR += ree
     SUBDIR += retry
     SUBDIR += rfc
+    SUBDIR += rgb-tui
     SUBDIR += ringtonetools
     SUBDIR += rname
     SUBDIR += rpl

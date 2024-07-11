@@ -6,7 +6,8 @@ PKGNAMESUFFIX=	4
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Rails internals bootup, plugins, generators, and rake tasks
-WWW=		https://github.com/rails/rails/tree/main/railties
+WWW=		https://rubyonrails.org/ \
+		https://github.com/rails/rails/tree/main/railties
 
 LICENSE=	MIT
 

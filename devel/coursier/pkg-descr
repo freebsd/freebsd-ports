@@ -1,2 +1,4 @@
-Coursier can fetch, launch, and create tiny bootstrap launchers
-from apps distributed via Maven / Ivy repositories.
+Coursier is a command-line tool that can be used for various things surrounding
+dependencies and artifacts such as creating tiny bootstrap launchers for
+applications distributed via Maven / Ivy repositories, resolving artifact
+trees, or completing available version of desired artifacts.

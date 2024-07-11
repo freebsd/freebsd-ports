@@ -1,6 +1,6 @@
 PORTNAME=	bogofilter
 DISTVERSION=	1.2.5
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES?=	mail
 MASTER_SITES=	SF/bogofilter/bogofilter-stable/
 PKGNAMESUFFIX?=	-bdb
@@ -11,12 +11,11 @@ WWW=		https://bogofilter.sourceforge.io/
 
 LICENSE=	GPLv2
 
-DEPRECATED=	The Berkeley DB database interface is obsolescent.
-EXPIRATION_DATE=2025-06-30
-
 .if !defined(MASTERDIR) || ${MASTERDIR} == ${.CURDIR}
 # building master port
 USES+=		bdb:5+
+DEPRECATED=	The Berkeley DB database interface is obsolescent.
+EXPIRATION_DATE=2025-06-30
 .endif
 
 OPTIONS_DEFINE=		GSL UNICODE DOCS

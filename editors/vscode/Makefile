@@ -1,5 +1,6 @@
 PORTNAME=	vscode
-DISTVERSION=	1.89.1
+DISTVERSION=	1.90.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
 DISTFILES=	yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache \
@@ -22,7 +23,6 @@ BUILD_DEPENDS=	zip:archivers/zip \
 		yarn-node${NODE_VER_MAJOR}>0:www/yarn-node${NODE_VER_MAJOR}
 LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
-		libsnappy.so:archivers/snappy \
 		libFLAC.so:audio/flac \
 		libopus.so:audio/opus \
 		libsndio.so:audio/sndio \
@@ -67,7 +67,7 @@ USES=		desktop-file-utils gl gmake gnome iconv:wchar_t jpeg \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	dc96b837cf6bb4af9cd736aa3af08cf8279f7685
+SOURCE_COMMIT_HASH=	5437499feb04f7a586f677b155b039bc2b3669eb
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -78,8 +78,8 @@ USE_GNOME=	atk cairo pango gdkpixbuf2 gtk30 libxml2 libxslt
 
 USE_LDCONFIG=	${DATADIR}
 
-# Keep NODE_VER in sync with www/node18 DISTVERSION
-NODE_VER=	18.20.2
+# Keep NODE_VER in sync with www/node20 DISTVERSION
+NODE_VER=	20.14.0
 NODE_VER_MAJOR=	${NODE_VER:C/\..*$//}
 
 SHEBANG_REGEX=	./(extensions|resources|scripts|src)/.*\.sh$$
@@ -102,7 +102,7 @@ OPTIONS_DEFINE=	REH
 OPTIONS_DEFAULT=# none
 REH_DESC=	Build remote extension host
 
-ELECTRON_DIR=	${.CURDIR}/../../devel/electron28
+ELECTRON_DIR=	${.CURDIR}/../../devel/electron29
 .include	"${ELECTRON_DIR}/Makefile.version"
 
 ELECTRON_DOWNLOAD_URL=	https://github.com/electron/electron/releases/download/v${ELECTRON_VER}

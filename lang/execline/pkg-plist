@@ -1,7 +1,9 @@
 bin/background
 bin/backtick
 bin/case
+@mode 755
 bin/cd
+@mode
 bin/define
 bin/dollarat
 bin/elgetopt
@@ -48,7 +50,9 @@ bin/runblock
 bin/shift
 bin/trap
 bin/tryexec
+@mode 755
 bin/umask
+@mode
 bin/unexport
 bin/wait
 bin/withstdinas
@@ -57,7 +61,7 @@ include/execline/execline.h
 lib/execline/libexecline.a
 lib/libexecline.so
 lib/libexecline.so.2.9
-lib/libexecline.so.2.9.3.0
+lib/libexecline.so.2.9.5.1
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/background.html

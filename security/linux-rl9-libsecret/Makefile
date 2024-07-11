@@ -3,7 +3,7 @@ PORTVERSION=	0.20.4
 DISTVERSIONSUFFIX=	-4.el9
 CATEGORIES=	security linux
 
-MAINTAINER=	aadonsk4@mts.ru
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Library for storing and retrieving passwords and other secrets
 WWW=		https://wiki.gnome.org/Projects/Libsecret/
 

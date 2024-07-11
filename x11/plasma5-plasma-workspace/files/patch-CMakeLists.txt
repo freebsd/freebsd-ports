@@ -1,0 +1,26 @@
+Don't auto-detect PipeWire
+
+--- CMakeLists.txt.orig	2024-05-31 12:34:07 UTC
++++ CMakeLists.txt
+@@ -47,7 +47,9 @@ find_package(KDED CONFIG REQUIRED)
+                     OPTIONAL_COMPONENTS DocTools)
+ 
+ find_package(KDED CONFIG REQUIRED)
+-find_package(KPipeWire CONFIG)
++if(NOT DISABLE_PIPEWIRE)
++    find_package(KPipeWire CONFIG)
++endif()
+ 
+ find_package(KF5NetworkManagerQt ${KF5_MIN_VERSION})
+ set_package_properties(KF5NetworkManagerQt PROPERTIES DESCRIPTION "Qt wrapper for NetworkManager API"
+@@ -152,7 +154,9 @@ endif()
+     set(HAVE_XFIXES 0)
+ endif()
+ 
+-pkg_check_modules(PipeWire IMPORTED_TARGET libpipewire-0.3)
++if(NOT DISABLE_PIPEWIRE)
++    pkg_check_modules(PipeWire IMPORTED_TARGET libpipewire-0.3)
++endif()
+ add_feature_info(PipeWire PipeWire_FOUND "Required for Wayland screencasting")
+ 
+ if(PipeWire_FOUND)

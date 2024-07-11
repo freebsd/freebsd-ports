@@ -1,6 +1,6 @@
---- chrome/common/chrome_paths.h.orig	2023-10-21 11:51:27 UTC
+--- chrome/common/chrome_paths.h.orig	2024-06-25 12:08:48 UTC
 +++ chrome/common/chrome_paths.h
-@@ -57,7 +57,7 @@ enum {
+@@ -59,7 +59,7 @@ enum {
  #if BUILDFLAG(IS_CHROMEOS_ASH) ||                              \
      ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
       BUILDFLAG(CHROMIUM_BRANDING)) ||                          \
@@ -9,7 +9,7 @@
    DIR_USER_EXTERNAL_EXTENSIONS,  // Directory for per-user external extensions
                                   // on Chrome Mac and Chromium Linux.
                                   // On Chrome OS, this path is used for OEM
-@@ -65,7 +65,7 @@ enum {
+@@ -67,7 +67,7 @@ enum {
                                   // create it.
  #endif
  
@@ -18,12 +18,12 @@
    DIR_STANDALONE_EXTERNAL_EXTENSIONS,  // Directory for 'per-extension'
                                         // definition manifest files that
                                         // describe extensions which are to be
-@@ -123,7 +123,7 @@ enum {
-                           // must be cleared on device reboot.
+@@ -126,7 +126,7 @@ enum {
  
  #endif
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(ENABLE_EXTENSIONS) && \
+-    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC))
++    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD))
    DIR_NATIVE_MESSAGING,       // System directory where native messaging host
                                // manifest files are stored.
    DIR_USER_NATIVE_MESSAGING,  // Directory with Native Messaging Hosts

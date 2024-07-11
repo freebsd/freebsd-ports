@@ -1,0 +1,8 @@
+--- meson.build.orig	2024-05-20 21:26:59 UTC
++++ meson.build
+@@ -89,4 +89,5 @@ pkgc.generate(
+   name : 'default-icon-theme',
+   description : 'The default fallback theme used by XDG icon-theme implementations.',
+   dataonly : true,
++  install_dir: 'libdata/pkgconfig'
+ )

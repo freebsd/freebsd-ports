@@ -1,0 +1,8 @@
+--- dune-project.orig	2024-05-05 18:43:45 UTC
++++ dune-project
+@@ -1,4 +1,4 @@
+-(lang dune 3.11)
++(lang dune 3.7)
+ (name abella)
+ (version v2.0.8)
+ (using menhir 2.0)

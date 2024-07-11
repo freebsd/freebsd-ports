@@ -1,5 +1,5 @@
 PORTNAME=	addressable
-PORTVERSION=	2.8.6
+PORTVERSION=	2.8.7
 CATEGORIES=	www devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/sporkmonger/addressable
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-public_suffix>=2.0.2<6.0:dns/rubygem-public_suffix
+RUN_DEPENDS=	rubygem-public_suffix>=2.0.2<7.0:dns/rubygem-public_suffix
 
 USES=		cpe gem
 

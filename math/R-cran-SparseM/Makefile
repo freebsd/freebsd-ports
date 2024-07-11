@@ -1,6 +1,5 @@
 PORTNAME=	SparseM
-PORTVERSION=	1.81
-PORTREVISION=	1
+PORTVERSION=	1.84
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,6 +9,6 @@ WWW=		https://cran.r-project.org/web/packages/SparseM/
 
 LICENSE=	GPLv2+
 
-USES=	cran:auto-plist,compiles
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	rubocop-capybara
-PORTVERSION=	2.20.0
+PORTVERSION=	2.21.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

@@ -31,7 +31,6 @@ lib/baresip/modules/menu.so
 lib/baresip/modules/mixausrc.so
 lib/baresip/modules/mixminus.so
 %%MQTT%%lib/baresip/modules/mqtt.so
-lib/baresip/modules/multicast.so
 lib/baresip/modules/mwi.so
 lib/baresip/modules/natpmp.so
 lib/baresip/modules/netroam.so

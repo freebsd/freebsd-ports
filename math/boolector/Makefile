@@ -1,5 +1,6 @@
 PORTNAME=	boolector
 DISTVERSION=	3.2.3
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,26 +10,30 @@ WWW=		https://boolector.github.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libcadical.a:math/cadical \
-		${LOCALBASE}/lib/liblgl.a:math/lingeling
+BUILD_DEPENDS=	${LOCALBASE}/lib/liblgl.a:math/lingeling
 LIB_DEPENDS=	libbtor2parser.so:math/btor2tools \
+		libcadical.so:math/cadical \
 		libcryptominisat5.so:math/cryptominisat \
 		libminisat.so:math/minisat \
 		libpicosat.so:math/picosat \
 		libgmp.so:math/gmp
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cmake:noninja,testing compiler:c++11-lang cpe python:test # ninja fails to build tests
+USES=		cmake:noninja,testing compiler:c++11-lang cpe python:build,test shebangfix
 
 CPE_VENDOR=	boolector_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Boolector
 
+SHEBANG_GLOB=	*.sh
+
 CMAKE_ON=	BUILD_SHARED_LIBS \
 		USE_GMP
 CMAKE_OFF=	TESTING
-CMAKE_TESTING_ON=	TESTING # tests fail to comile, see https://github.com/Boolector/boolector/issues/216
+CMAKE_TESTING_ON=	TESTING # 1 test hangs, see https://github.com/Boolector/boolector/issues/227
 CMAKE_ARGS=	-DCaDiCaL_INCLUDE_DIR=${LOCALBASE}/include
+
+BINARY_ALIAS=	python=${PYTHON_CMD} python3=${PYTHON_CMD} # only for tests
 
 .include <bsd.port.mk>

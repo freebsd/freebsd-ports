@@ -1,4 +1,4 @@
---- dart/common/SharedLibrary.cpp.orig	2018-11-20 05:47:58 UTC
+--- dart/common/SharedLibrary.cpp.orig	2024-06-25 05:13:56 UTC
 +++ dart/common/SharedLibrary.cpp
 @@ -35,7 +35,7 @@
  #include "dart/common/Console.hpp"
@@ -7,9 +7,9 @@
 -#if DART_OS_LINUX || DART_OS_MACOS
 +#if DART_OS_LINUX || DART_OS_FREEBSD || DART_OS_MACOS
  
- #include <dlfcn.h>
- #define DYNLIB_LOAD(a) dlopen(a, RTLD_LAZY | RTLD_GLOBAL)
-@@ -123,7 +123,7 @@ void* SharedLibrary::getSymbol(const std
+   #include <dlfcn.h>
+   #define DYNLIB_LOAD(a) dlopen(a, RTLD_LAZY | RTLD_GLOBAL)
+@@ -139,7 +139,7 @@ std::string SharedLibrary::getLastError() const
  //==============================================================================
  std::string SharedLibrary::getLastError() const
  {

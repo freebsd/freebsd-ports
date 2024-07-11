@@ -1,5 +1,5 @@
 PORTNAME=	milc
-DISTVERSION=	1.4.2
+DISTVERSION=	1.8.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,6 +10,8 @@ WWW=		https://milc.clueboard.co/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=0:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}argcomplete>=0:devel/py-argcomplete@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0:devel/py-colorama@${PY_FLAVOR} \
@@ -22,7 +24,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flake8>=0:devel/py-flake8@${PY_FLAVOR} \
 USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	clueboard
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 
 # There is no need to run yapf during tests
 # because it only checks code formatting.

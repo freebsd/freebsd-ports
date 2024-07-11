@@ -1,6 +1,5 @@
 PORTNAME=	libgcrypt
-DISTVERSION=	1.10.3
-PORTREVISION=	1
+DISTVERSION=	1.11.0
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -14,20 +13,21 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	libgpg-error>=1.32:security/libgpg-error
 RUN_DEPENDS=	libgpg-error>=1.32:security/libgpg-error
 
-USES=		cpe libtool tar:bzip2
+USES=		cpe libtool pathfix tar:bzip2
 
 CPE_VENDOR=	gnupg
-USE_CSTD=	gnu89
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--disable-drng-support
-CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+
 TEST_TARGET=	check
 
 DOCS=		AUTHORS ChangeLog ChangeLog-2011 INSTALL NEWS THANKS TODO \
 		doc/HACKING doc/README.apichanges
 PORTDOCS=	*
+
+CONFIGURE_ARGS=	--disable-drng-support
+CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 
 OPTIONS_DEFINE=		DOCS INFO STATIC
 OPTIONS_DEFAULT=	DOCS INFO STATIC

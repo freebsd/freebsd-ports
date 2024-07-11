@@ -1,4 +1,4 @@
---- chrome/browser/policy/chrome_browser_cloud_management_controller_desktop.cc.orig	2024-02-03 15:42:55 UTC
+--- chrome/browser/policy/chrome_browser_cloud_management_controller_desktop.cc.orig	2024-06-22 08:49:42 UTC
 +++ chrome/browser/policy/chrome_browser_cloud_management_controller_desktop.cc
 @@ -50,7 +50,7 @@
  #include "chrome/browser/policy/browser_dm_token_storage_mac.h"
@@ -18,7 +18,7 @@
  #include "chrome/browser/enterprise/connectors/device_trust/key_management/browser/device_trust_key_manager_impl.h"
  #include "chrome/browser/enterprise/connectors/device_trust/key_management/browser/key_rotation_launcher.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
-@@ -91,7 +91,7 @@ void ChromeBrowserCloudManagementControllerDesktop::
+@@ -87,7 +87,7 @@ void ChromeBrowserCloudManagementControllerDesktop::
  
  #if BUILDFLAG(IS_MAC)
    storage_delegate = std::make_unique<BrowserDMTokenStorageMac>();
@@ -27,7 +27,7 @@
    storage_delegate = std::make_unique<BrowserDMTokenStorageLinux>();
  #elif BUILDFLAG(IS_WIN)
    storage_delegate = std::make_unique<BrowserDMTokenStorageWin>();
-@@ -261,7 +261,7 @@ ChromeBrowserCloudManagementControllerDesktop::CreateC
+@@ -255,7 +255,7 @@ ChromeBrowserCloudManagementControllerDesktop::CreateC
  
  std::unique_ptr<enterprise_connectors::DeviceTrustKeyManager>
  ChromeBrowserCloudManagementControllerDesktop::CreateDeviceTrustKeyManager() {

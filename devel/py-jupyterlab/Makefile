@@ -1,6 +1,5 @@
 PORTNAME=	jupyterlab
-PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTVERSION=	4.2.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyterlab/jupyterlab/releases/download/v${PORTVERSION}/
@@ -27,6 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}async-lru>=1.0.0:devel/py-async-lru@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}jupyterlab-server>=2.27.1<3:devel/py-jupyterlab-server@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}notebook-shim>=0.2:devel/py-notebook-shim@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=40.1.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=6.2.0:www/py-tornado@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=0:devel/py-traitlets@${PY_FLAVOR}
 

@@ -1,8 +1,8 @@
---- ui/base/test/skia_gold_pixel_diff.cc.orig	2023-09-13 12:11:42 UTC
+--- ui/base/test/skia_gold_pixel_diff.cc.orig	2024-06-17 12:56:06 UTC
 +++ ui/base/test/skia_gold_pixel_diff.cc
 @@ -115,7 +115,7 @@ const char* GetPlatformName() {
    return "macOS";
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

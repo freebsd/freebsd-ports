@@ -11,6 +11,8 @@ WWW=		https://github.com/PixarAnimationStudios/OpenTimelineIO
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		fails to build with Python-3.11, see https://github.com/AcademySoftwareFoundation/OpenTimelineIO/issues/1759
+
 LIB_DEPENDS=	libImath-3_1.so:math/Imath
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR}
 

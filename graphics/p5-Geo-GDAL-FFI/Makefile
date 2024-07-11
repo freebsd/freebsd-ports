@@ -1,6 +1,5 @@
 PORTNAME=	Geo-GDAL-FFI
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	0.12
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,16 +18,15 @@ RUN_DEPENDS=	p5-FFI-Platypus>=0:devel/p5-FFI-Platypus \
 		p5-Sort-Versions>=0:devel/p5-Sort-Versions \
 		PDL>=0:math/PDL
 TEST_DEPENDS=	p5-JSON>=0:converters/p5-JSON \
-		p5-Test-Exception>=0:devel/p5-Test-Exception
+		p5-Path-Tiny>=0:devel/p5-Path-Tiny \
+		p5-Test-Exception>=0:devel/p5-Test-Exception \
+		p5-Test-TempDir-Tiny>=0:devel/p5-Test-TempDir-Tiny
 
-USES=		perl5
+USES=		dos2unix perl5
 USE_PERL5=	configure
 
 NO_ARCH=	yes
 
 PORTSCOUT=	skipv:0.0501,0.0502,0.0503,0.0601
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

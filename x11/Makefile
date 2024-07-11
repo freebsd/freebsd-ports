@@ -27,6 +27,7 @@
     SUBDIR += bgs
     SUBDIR += bitmap
     SUBDIR += bmpanel2
+    SUBDIR += boomer
     SUBDIR += brisk-menu
     SUBDIR += budgie
     SUBDIR += budgie-desktop
@@ -42,6 +43,7 @@
     SUBDIR += cinnamon-session
     SUBDIR += cl-clx
     SUBDIR += cl-clx-sbcl
+    SUBDIR += clip
     SUBDIR += clipcat
     SUBDIR += cliphist
     SUBDIR += clipman
@@ -205,6 +207,7 @@
     SUBDIR += libfm
     SUBDIR += libfm-extra
     SUBDIR += libfm-qt
+    SUBDIR += libfm-qt6
     SUBDIR += libgnomekbd
     SUBDIR += libinput
     SUBDIR += libmatekbd
@@ -477,7 +480,7 @@
     SUBDIR += wmblob
     SUBDIR += wmbutton
     SUBDIR += wmcliphist
-    SUBDIR += wmctrl
+    SUBDIR += wmctrl-fork
     SUBDIR += wmdrawer
     SUBDIR += wmenu
     SUBDIR += wmfocus

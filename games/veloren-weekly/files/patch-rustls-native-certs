@@ -1,16 +1,16 @@
 https://github.com/rustls/rustls-native-certs/issues/28
 https://github.com/rustls/rustls-native-certs/commit/8162b232045e
 
---- cargo-crates/rustls-native-certs-0.6.3/src/unix.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/rustls-native-certs-0.6.3/src/unix.rs
-@@ -1,13 +1,27 @@ use crate::Certificate;
- use crate::load_pem_certs;
- use crate::Certificate;
+--- cargo-crates/rustls-native-certs-0.7.0/src/unix.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/rustls-native-certs-0.7.0/src/unix.rs
+@@ -2,13 +2,27 @@ use pki_types::CertificateDer;
+ 
+ use pki_types::CertificateDer;
  
 +use std::fs;
  use std::io::Error;
  
- pub fn load_native_certs() -> Result<Vec<Certificate>, Error> {
+ pub fn load_native_certs() -> Result<Vec<CertificateDer<'static>>, Error> {
      let likely_locations = openssl_probe::probe();
  
 -    match likely_locations.cert_file {

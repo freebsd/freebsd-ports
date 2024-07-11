@@ -4,3 +4,5 @@ include/StormPort.h
 lib/libstorm.so
 lib/libstorm.so.9
 lib/libstorm.so.9.22.0
+share/StormLib/StormLibConfig-%%CMAKE_BUILD_TYPE%%.cmake
+share/StormLib/StormLibConfig.cmake

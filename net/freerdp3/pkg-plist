@@ -212,6 +212,7 @@ include/winpr%%MAJORVERSION%%/winpr/input.h
 include/winpr%%MAJORVERSION%%/winpr/interlocked.h
 include/winpr%%MAJORVERSION%%/winpr/intrin.h
 include/winpr%%MAJORVERSION%%/winpr/io.h
+include/winpr%%MAJORVERSION%%/winpr/json.h
 include/winpr%%MAJORVERSION%%/winpr/library.h
 include/winpr%%MAJORVERSION%%/winpr/memory.h
 include/winpr%%MAJORVERSION%%/winpr/ncrypt.h

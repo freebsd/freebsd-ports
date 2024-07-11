@@ -1,6 +1,6 @@
 PORTNAME=	tftp-hpa
 PORTVERSION=	5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	KERNEL_ORG/software/network/tftp/tftp-hpa
 

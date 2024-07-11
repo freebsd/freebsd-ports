@@ -1,3 +1,3 @@
-TIMESTAMP = 1683452279
-SHA256 (django-taggit-4.0.0.tar.gz) = 4d52de9d37245a9b9f98c0ec71fdccf1d2283e38e8866d40a7ae6a3b6787a161
-SIZE (django-taggit-4.0.0.tar.gz) = 58638
+TIMESTAMP = 1715503521
+SHA256 (django-taggit-5.0.1.tar.gz) = edcd7db1e0f35c304e082a2f631ddac2e16ef5296029524eb792af7430cab4cc
+SIZE (django-taggit-5.0.1.tar.gz) = 60372

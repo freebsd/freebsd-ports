@@ -4,7 +4,7 @@ CATEGORIES=	mail python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SPF engine for Postfix policy server and milter implemented in Python
 WWW=		https://launchpad.net/spf-engine
 

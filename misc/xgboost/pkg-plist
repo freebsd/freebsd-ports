@@ -1,7 +1,7 @@
-bin/xgboost
 include/xgboost/base.h
 include/xgboost/c_api.h
 include/xgboost/cache.h
+include/xgboost/collective/result.h
 include/xgboost/collective/socket.h
 include/xgboost/context.h
 include/xgboost/data.h

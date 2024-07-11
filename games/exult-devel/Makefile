@@ -1,5 +1,5 @@
 DISTVERSIONPREFIX=	snapshot-v
-DISTVERSION=	1.9.0.20240325
+DISTVERSION=	1.9.0.20240707
 PORTREVISION=	0 # Always set PORTREVISION explicitly as otherwise it is inherited from games/exult
 PKGNAMESUFFIX=	-devel
 
@@ -10,6 +10,7 @@ STUDIO_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 			libicuuc.so:devel/icu
 
 MASTERDIR=	${.CURDIR}/../exult
+PATCHDIR=	${.CURDIR}/files
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
 .include "${MASTERDIR}/Makefile"

@@ -1,5 +1,5 @@
 PORTNAME=	gtkwave
-DISTVERSION=	3.3.119
+DISTVERSION=	3.3.120
 CATEGORIES=	cad
 MASTER_SITES=	http://gtkwave.sourceforge.net/
 DISTNAME=	${PORTNAME}-gtk3-${DISTVERSION}
@@ -13,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
-USES=		compiler:c++11-lang desktop-file-utils gettext gmake gnome \
-		gperf pkgconfig shared-mime-info
+USES=		desktop-file-utils gettext-runtime gmake gnome gperf pkgconfig \
+		shared-mime-info
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 
 GNU_CONFIGURE=	yes

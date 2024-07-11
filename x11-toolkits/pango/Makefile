@@ -1,5 +1,6 @@
 PORTNAME=	pango
-PORTVERSION=	1.50.14
+PORTVERSION=	1.52.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -15,40 +16,37 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfribidi.so:converters/fribidi
-RUN_DEPENDS=	xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype \
-		${FONTENCOD}:x11-fonts/encodings
+TEST_DEPENDS=	cantarell-fonts>=0:x11-fonts/cantarell-fonts
 
-PORTSCOUT=	limitw:1,even
-
-USES=		compiler:c11 cpe gettext gnome localbase meson pkgconfig python:env tar:xz
-USE_LDCONFIG=	yes
-USE_GNOME=	cairo glib20 introspection:build
-
+USES=		cpe gnome meson pkgconfig tar:xz
 CPE_VENDOR=	gnome
+USE_GNOME=	cairo glib20 introspection:build
+USE_LDCONFIG=	yes
+
+PORTSCOUT=	limit:^1\.[^9]
 
 VERSION=	1.8.0
-LIBVERSION=	0.5000.14
-PLIST_SUB+=     VERSION=${VERSION} LIBVERSION=${LIBVERSION}
+LIBVERSION=	0.5200.2
+PLIST_SUB=	LIBVERSION=${LIBVERSION} \
+		VERSION=${VERSION}
 
-FONTSCALE=	${LOCALBASE}/share/fonts/TTF/luximb.ttf
-FONTENCOD=	${LOCALBASE}/share/fonts/encodings/encodings.dir
-
-OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	X11 DOCS MANPAGES THAI
 OPTIONS_DEFAULT=X11 MANPAGES THAI
+OPTIONS_SUB=	yes
+
+THAI_DESC=	Thai language support via libThai
 
 DOCS_BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen
 DOCS_MESON_TRUE=	gtk_doc
 
 MANPAGES_BUILD_DEPENDS=	help2man:misc/help2man
 
-THAI_DESC=		Thai language support via libThai
 THAI_LIB_DEPENDS=	libthai.so:devel/libthai
 THAI_MESON_ENABLED=	libthai
 
-X11_MESON_ENABLED=	xft
 X11_USES=	xorg
 X11_USE=	XORG=x11,xft,xrender
+X11_MESON_ENABLED=	xft
 
 TESTING_UNSAFE=	2 out of 24 tests fail
 

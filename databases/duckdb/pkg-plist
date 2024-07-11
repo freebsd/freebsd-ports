@@ -87,6 +87,7 @@ include/duckdb/common/constants.hpp
 include/duckdb/common/crypto/md5.hpp
 include/duckdb/common/deque.hpp
 include/duckdb/common/dl.hpp
+include/duckdb/common/enable_shared_from_this_ipp.hpp
 include/duckdb/common/enum_class_hash.hpp
 include/duckdb/common/enum_util.hpp
 include/duckdb/common/enums/access_mode.hpp
@@ -95,6 +96,7 @@ include/duckdb/common/enums/catalog_lookup_behavior.hpp
 include/duckdb/common/enums/catalog_type.hpp
 include/duckdb/common/enums/checkpoint_type.hpp
 include/duckdb/common/enums/compression_type.hpp
+include/duckdb/common/enums/copy_overwrite_mode.hpp
 include/duckdb/common/enums/cte_materialize.hpp
 include/duckdb/common/enums/date_part_specifier.hpp
 include/duckdb/common/enums/debug_initialize.hpp
@@ -221,6 +223,7 @@ include/duckdb/common/serializer/serializer.hpp
 include/duckdb/common/serializer/write_stream.hpp
 include/duckdb/common/set.hpp
 include/duckdb/common/shared_ptr.hpp
+include/duckdb/common/shared_ptr_ipp.hpp
 include/duckdb/common/sort/comparators.hpp
 include/duckdb/common/sort/duckdb_pdqsort.hpp
 include/duckdb/common/sort/partition_state.hpp
@@ -306,6 +309,7 @@ include/duckdb/common/vector_operations/unary_executor.hpp
 include/duckdb/common/vector_operations/vector_operations.hpp
 include/duckdb/common/vector_size.hpp
 include/duckdb/common/virtual_file_system.hpp
+include/duckdb/common/weak_ptr_ipp.hpp
 include/duckdb/common/winapi.hpp
 include/duckdb/common/windows.hpp
 include/duckdb/common/windows_undefs.hpp

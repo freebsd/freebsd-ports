@@ -1,0 +1,14 @@
+--- CMakeLists.txt.orig	2023-12-04 15:03:14 UTC
++++ CMakeLists.txt
+@@ -86,10 +86,9 @@ add_definitions(-D_GNU_SOURCE
+ 	${GIT_VERSION}
+ 	${GIT_COMMIT_TIMESTAMP}
+ 	-DGTK_DISABLE_DEPRECATED
+-	-D_POSIX_C_SOURCE=200809L
+ )
+ 
+-add_compile_options(-Wall -Wextra -Werror
++add_compile_options(-Wall -Wextra
+ 	-Wno-unused-parameter
+ 	-Wno-error=unused-but-set-variable
+ 	-Wno-error=unused-function

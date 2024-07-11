@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Find the Galera Cluster documentation at
-https://galeracluster.com/library/documentation/index.html
-EOM
-}
-]

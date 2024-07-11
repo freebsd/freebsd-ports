@@ -1,6 +1,6 @@
 PORTNAME=	resvg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.41.0
+DISTVERSION=	0.42.0
 PORTREVISION=	1
 CATEGORIES=	graphics
 
@@ -21,45 +21,46 @@ WRKSRC_SUBDIR=	crates/resvg
 CARGO_CRATES=	adler-1.0.2 \
 		arrayref-0.3.7 \
 		arrayvec-0.7.4 \
-		base64-0.22.0 \
+		base64-0.22.1 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
-		bytemuck-1.15.0 \
+		bytemuck-1.16.0 \
 		cfg-if-1.0.0 \
 		color_quant-1.1.0 \
-		crc32fast-1.4.0 \
+		crc32fast-1.4.2 \
 		data-url-0.3.1 \
 		fdeflate-0.3.4 \
-		flate2-1.0.28 \
+		flate2-1.0.30 \
 		float-cmp-0.9.0 \
 		fontconfig-parser-0.5.6 \
-		fontdb-0.16.2 \
+		fontdb-0.18.0 \
 		gif-0.13.1 \
 		imagesize-0.12.0 \
 		jpeg-decoder-0.3.1 \
 		kurbo-0.11.0 \
-		libc-0.2.153 \
+		libc-0.2.155 \
 		log-0.4.21 \
 		memmap2-0.9.4 \
-		miniz_oxide-0.7.2 \
+		miniz_oxide-0.7.3 \
 		once_cell-1.19.0 \
 		pico-args-0.5.0 \
 		png-0.17.13 \
 		rgb-0.8.37 \
 		roxmltree-0.19.0 \
-		rustybuzz-0.13.0 \
+		roxmltree-0.20.0 \
+		rustybuzz-0.14.0 \
 		simd-adler32-0.3.7 \
 		simplecss-0.2.1 \
 		siphasher-1.0.1 \
 		slotmap-1.0.7 \
 		smallvec-1.13.2 \
 		strict-num-0.1.1 \
-		svgtypes-0.15.0 \
+		svgtypes-0.15.1 \
 		tiny-skia-0.11.4 \
 		tiny-skia-path-0.11.4 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		ttf-parser-0.20.0 \
+		ttf-parser-0.21.1 \
 		unicode-bidi-0.3.15 \
 		unicode-bidi-mirroring-0.2.0 \
 		unicode-ccc-0.2.0 \

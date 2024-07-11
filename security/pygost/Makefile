@@ -1,5 +1,5 @@
 PORTNAME=	pygost
-PORTVERSION=	5.11
+PORTVERSION=	5.13
 CATEGORIES=	security python
 MASTER_SITES=	http://www.pygost.cypherpunks.ru/ \
 		http://www.grosbein.net/freebsd/distfiles/ \

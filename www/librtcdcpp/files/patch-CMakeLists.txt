@@ -1,8 +1,0 @@
---- CMakeLists.txt.orig	2020-04-09 23:40:12 UTC
-+++ CMakeLists.txt
-@@ -66,4 +66,4 @@ target_link_libraries(rtcdcpp
- add_library(LibRtcdcpp::LibRtcdcpp ALIAS rtcdcpp)
- 
- # Build examples
--add_subdirectory(examples/websocket_client)
-+#add_subdirectory(examples/websocket_client)

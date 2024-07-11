@@ -5,7 +5,7 @@
  // (as of this writing, we don't know what python3 versions actually work)
  // whereas we know that python2.7 is the only working python2 version.
 -var PYTHONS = ["python3.7", "python3", "python2.7", "python2", "python"];
-+var PYTHONS = ["python3.9", "python3.8", "python3.7", "python3", "python2.7", "python2", "python"];
++var PYTHONS = ["python3.11", "python3.9", "python3.8", "python3.7", "python3", "python2.7", "python2", "python"];
  
  var SCRIPT = [
      'import sys',

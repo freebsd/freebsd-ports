@@ -1,11 +1,11 @@
 PORTNAME=	ktextaddons
-DISTVERSION=	1.5.3
+DISTVERSION=	1.5.4
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Various text handling addons
-WWW=		https://invent.kde.org/libraries/ktextaddons
+WWW=		https://invent.kde.org/libraries/ktextaddons/
 
 LICENSE=	LGPL20+
 

@@ -43,7 +43,7 @@ lib/cmake/f3d_vtkext/f3d_vtkext-targets.cmake
 lib/cmake/f3d_vtkext/f3d_vtkext-vtk-module-properties.cmake
 lib/libf3d.so
 lib/libf3d.so.2
-lib/libf3d.so.2.4
+lib/libf3d.so.2.5
 lib/libvtkext.so
 %%ALEMBIC%%lib/libvtkextAlembic.a
 %%ASSIMP%%lib/libvtkextAssimp.a

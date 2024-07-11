@@ -1,7 +1,7 @@
 PORTNAME=	caronade
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.6.2
-PORTREVISION=	5
+DISTVERSION=	0.7.0
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	decke@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://codeberg.org/decke/caronade
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	sassc:textproc/sassc
+BUILD_DEPENDS=	minify:textproc/minify
 
 USES=		go:modules,no_targets
 USE_RC_SUBR=	caronade

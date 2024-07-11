@@ -1,16 +1,22 @@
 PORTNAME=	wlroots
 DISTVERSION=	0.15.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	015
 
 PATCH_SITES+=	https://source.puri.sm/Librem5/${PORTNAME}/-/commit/:purism
 PATCHFILES+=	21bc0ec09200.patch:-p1:purism # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3475
+PATCH_SITES+=	https://github.com/swaywm/${GL_PROJECT}/commit/:github
+PATCHFILES+=	dc5cefc1d2f8.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4488
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	dd03d839ab56.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3499
 PATCHFILES+=	17b2b0663372.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3478
 PATCHFILES+=	347b32642fb6.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3318
 PATCHFILES+=	7b8609eeb67b.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3857
+PATCHFILES+=	bb32349c9776.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3501
+PATCHFILES+=	faa631c348d9.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4005
+PATCHFILES+=	822eb07eaca3.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4005
+PATCHFILES+=	4b4f76cc1357.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4614
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library (deprecated 0.15.* series)
@@ -33,12 +39,9 @@ USE_XORG=	pixman
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 MESON_ARGS=	-Dexamples=false -Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
+PLIST_SUB=	SUFFIX=-${DISTVERSION:R}
 
-.ifdef PKGNAMESUFFIX
 PORTSCOUT=	limit:^0\.15\.
-PREFIX=		${LOCALBASE}/${PKGBASE} # avoid conflict with the default
-MESON_ARGS+=	-Ddatadir="${LOCALBASE}/share"
-.endif
 
 OPTIONS_DEFINE=	DRM NVIDIA OPENGL VULKAN X11
 OPTIONS_DEFAULT=DRM OPENGL VULKAN X11

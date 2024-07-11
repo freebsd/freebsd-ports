@@ -1,4 +1,4 @@
---- net/socket/udp_socket_unittest.cc.orig	2024-04-23 07:42:17 UTC
+--- net/socket/udp_socket_unittest.cc.orig	2024-06-22 08:49:42 UTC
 +++ net/socket/udp_socket_unittest.cc
 @@ -358,7 +358,7 @@ TEST_F(UDPSocketTest, PartialRecv) {
    EXPECT_EQ(second_packet, received);
@@ -15,7 +15,7 @@
      rv = client.SetDoNotFragment();
 -#if BUILDFLAG(IS_IOS) || BUILDFLAG(IS_FUCHSIA)
 +#if BUILDFLAG(IS_IOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
-     // TODO(crbug.com/945590): IP_MTU_DISCOVER is not implemented on Fuchsia.
+     // TODO(crbug.com/42050633): IP_MTU_DISCOVER is not implemented on Fuchsia.
      EXPECT_THAT(rv, IsError(ERR_NOT_IMPLEMENTED));
  #elif BUILDFLAG(IS_MAC)
 @@ -697,7 +697,7 @@ TEST_F(UDPSocketTest, ServerSetDoNotFragment) {
@@ -24,13 +24,13 @@
      rv = server.SetDoNotFragment();
 -#if BUILDFLAG(IS_IOS) || BUILDFLAG(IS_FUCHSIA)
 +#if BUILDFLAG(IS_IOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
-     // TODO(crbug.com/945590): IP_MTU_DISCOVER is not implemented on Fuchsia.
+     // TODO(crbug.com/42050633): IP_MTU_DISCOVER is not implemented on Fuchsia.
      EXPECT_THAT(rv, IsError(ERR_NOT_IMPLEMENTED));
  #elif BUILDFLAG(IS_MAC)
 @@ -762,7 +762,7 @@ TEST_F(UDPSocketTest, JoinMulticastGroup) {
  
- // TODO(https://crbug.com/947115): failing on device on iOS 12.2.
- // TODO(https://crbug.com/1227554): flaky on Mac 11.
+ // TODO(crbug.com/40620614): failing on device on iOS 12.2.
+ // TODO(crbug.com/40189274): flaky on Mac 11.
 -#if BUILDFLAG(IS_IOS) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_IOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
  #define MAYBE_SharedMulticastAddress DISABLED_SharedMulticastAddress

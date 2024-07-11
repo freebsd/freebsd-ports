@@ -44,3 +44,5 @@ bin/pipe-viewer
 %%GTK3%%share/pixmaps/gtk-pipe-viewer.png
 %%SITE_PERL%%/WWW/PipeViewer/DiskCache.pm
 %%SITE_PERL%%/WWW/PipeViewer/Worker.pm
+%%GTK3%%%%SITE_PERL%%/auto/share/dist/WWW-PipeViewer/icons/left_arrow.png
+%%GTK3%%%%SITE_PERL%%/auto/share/dist/WWW-PipeViewer/icons/right_arrow.png

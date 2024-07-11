@@ -1,14 +1,14 @@
 PORTNAME=	spirv-llvm-translator
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${DISTVERSION_${FLAVOR}}
-DISTVERSION_llvm18=	18.1.0
-DISTVERSION_llvm17=	17.0.0
-DISTVERSION_llvm16=	16.0.0
-DISTVERSION_llvm15=	15.0.0
-DISTVERSION_llvm14=	14.0.0
-DISTVERSION_llvm13=	13.0.0
-DISTVERSION_llvm12=	12.0.0
-DISTVERSION_llvm11=	11.0.0
+DISTVERSION_llvm18=	18.1.2
+DISTVERSION_llvm17=	17.0.2
+DISTVERSION_llvm16=	16.0.2
+DISTVERSION_llvm15=	15.0.2
+DISTVERSION_llvm14=	14.0.2
+DISTVERSION_llvm13=	13.0.1
+DISTVERSION_llvm12=	12.0.1
+DISTVERSION_llvm11=	11.0.1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -28,17 +28,12 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	${PREFIX}/${FLAVOR}/lib
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	SPIRV-LLVM-Translator
-GH_TUPLE=	${GH_TUPLE_${FLAVOR}}
-GH_TUPLE_llvm18=KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-350-gb73e168:headers/projects/SPIRV-Headers
-GH_TUPLE_llvm17=KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-282-g9b527c0:headers/projects/SPIRV-Headers
-GH_TUPLE_llvm16=KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-219-g36c7694:headers/projects/SPIRV-Headers
-GH_TUPLE_llvm15=KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-168-g5a12186:headers/projects/SPIRV-Headers
-GH_TUPLE_llvm14=KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-124-g20b02de:headers/projects/SPIRV-Headers
-GH_TUPLE_llvm13=KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-83-gddf3230:headers/projects/SPIRV-Headers
+GH_TUPLE=	${${FLAVOR:S/llvm//}<13:?:KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-332-g1c6bb27:headers/projects/SPIRV-Headers}
 DISTINFO_FILE=	${.CURDIR}/distinfo.${FLAVOR}
-CXXFLAGS+=	${${FLAVOR:S/llvm//} < 16 && ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160:?-Wno-enum-constexpr-conversion:}
+CXXFLAGS+=	${${FLAVOR:S/llvm//} < 16 && ${COMPILER_TYPE} == clang:?-Wno-enum-constexpr-conversion:}
 CMAKE_ON=	BUILD_SHARED_LIBS LLVM_BUILD_TOOLS LLVM_TOOL_SPIRV_HEADERS_BUILD
 CMAKE_ARGS=	-DLLVM_DIR:PATH="${LOCALBASE}/${FLAVOR}"
+CMAKE_ARGS+=	${${FLAVOR:S/llvm//}==11:?-DBASE_LLVM_VERSION=11.0:}
 CMAKE_INSTALL_PREFIX=		${PREFIX}/${FLAVOR}
 _PLIST_FILES=	bin/llvm-spirv \
 		include/LLVMSPIRVLib/LLVMSPIRVExtensions.inc \

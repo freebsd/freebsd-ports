@@ -3,7 +3,7 @@
   message: <<EOM
 **** This port installs snmpd, header files and libraries but does not
      start snmpd by default.
-     If you want to auto-start snmpd and snmptrapd:, add the following to
+     If you want to auto-start snmpd and snmptrapd, add the following to
      /etc/rc.conf:
 
 	snmpd_enable="YES"
@@ -28,6 +28,50 @@
      You may also define the following to avoid all interactive configuration:
 
 	BATCH="yes"
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+snmpd now drops privileges by default after initialization is completed.
+Ensure that any extension commands defined in your snmpd.conf can be executed
+by the snmpd user.
+
+It is possible to start and run snmpd entirely as a non-root user with the
+following steps:
+
+1. Add the following lines to /etc/rc.conf:
+
+	snmpd_user="snmpd"
+	snmpd_group="snmpd"
+	snmpd_pidfile="/var/net-snmp/snmpd.pid"
+
+2. Configure the mac_portacl(4) kernel module:
+
+   a. Load mac_portacl.ko at boot time by adding the following line to
+      /etc/rc.conf:
+
+	kld_list="mac_portacl"
+
+   b. Configure the following sysctls in sysctl.conf(5):
+
+      net.inet.ip.portrange.reservedhigh=0
+      security.mac.portacl.rules=gid:344:udp:161,gid:344:tcp:161,gid:344:tcp:199,gid:344:tcp:705
+
+   This allows snmpd to bind to these privileged ports without holding
+   special privileges.
+
+3. Make sure that the snmpd user has read/write or read-only access to the
+   following:
+
+	RW - /var/log/snmpd.log
+	RW - /var/net-snmp/*
+	RO - /usr/local/share/snmp/*
+
+   Note that snmpd creates the /var/net-snmp directory upon its initial
+   startup, and this cannot be done by the snmpd user.
+
+4. Ensure that any and all extension commands defined in snmpd.conf can be
+   executed by the snmpd user.
 EOM
 }
 ]
