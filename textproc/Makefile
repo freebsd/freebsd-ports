@@ -1480,6 +1480,7 @@
     SUBDIR += py-paragrep
     SUBDIR += py-parse
     SUBDIR += py-parse-type
+    SUBDIR += py-parsec
     SUBDIR += py-parsel
     SUBDIR += py-parsimonious
     SUBDIR += py-parso
