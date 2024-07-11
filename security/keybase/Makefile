@@ -15,7 +15,7 @@ WWW=		https://keybase.io/docs/command_line \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-USES=		cpe go:modules tar:xz
+USES=		cpe go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	keybase
