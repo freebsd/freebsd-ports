@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-${FLAVOR:Uce}
-PORTVERSION=	17.1.1
+PORTVERSION=	17.1.2
 DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
@@ -179,7 +179,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-discordrb-webhooks>=3.5<4.0:net-im/rubygem-discordrb-webhooks \
 	rubygem-jira-ruby>=2.3.0<2.4:devel/rubygem-jira-ruby \
 	rubygem-atlassian-jwt>=0.2.1<0.3.0:www/rubygem-atlassian-jwt \
-	rubygem-slack-messenger>=2.3.4<2.4.0:devel/rubygem-slack-messenger \
+	rubygem-slack-messenger>=2.3.5<2.4.0:devel/rubygem-slack-messenger \
 	rubygem-ruby-fogbugz>=0.3.0<0.4.0:devel/rubygem-ruby-fogbugz \
 	rubygem-kubeclient>=4.11.0<4.12.0:www/rubygem-kubeclient \
 	rubygem-ruby-openai37>=3.7<4:www/rubygem-ruby-openai37 \
