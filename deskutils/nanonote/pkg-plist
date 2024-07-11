@@ -3,7 +3,11 @@ share/applications/com.agateau.nanonote.desktop
 share/icons/hicolor/scalable/apps/nanonote.svg
 share/metainfo/com.agateau.nanonote.metainfo.xml
 %%DATADIR%%/translations/nanonote_cs.qm
+%%DATADIR%%/translations/nanonote_da.qm
 %%DATADIR%%/translations/nanonote_de.qm
 %%DATADIR%%/translations/nanonote_en.qm
 %%DATADIR%%/translations/nanonote_es.qm
 %%DATADIR%%/translations/nanonote_fr.qm
+%%DATADIR%%/translations/nanonote_nl.qm
+%%DATADIR%%/translations/nanonote_no.qm
+%%DATADIR%%/translations/nanonote_pl.qm
