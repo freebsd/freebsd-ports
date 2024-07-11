@@ -22,6 +22,7 @@ include/saga/saga_api/tool.h
 include/saga/saga_api/tool_library.h
 include/saga/saga_gdi/3d_view.h
 include/saga/saga_gdi/3d_view_tools.h
+include/saga/saga_gdi/map_dc.h
 include/saga/saga_gdi/saga_gdi.h
 include/saga/saga_gdi/sgdi_controls.h
 include/saga/saga_gdi/sgdi_core.h
@@ -81,7 +82,6 @@ lib/libsaga_gdi.so.%%PORTVERSION%%
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/io_virtual.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/io_webservices.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/pj_georeference.py
-%%PYTHON_SITELIBDIR%%/PySAGA/tools/pj_geotrans.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/pj_proj4.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/pointcloud_tools.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/shapes_grid.py
@@ -247,7 +247,6 @@ share/pixmaps/saga.png
 %%DATADIR%%/saga.lng.txt
 %%DATADIR%%/saga.png
 %%DATADIR%%/saga.rus.txt
-%%DATADIR%%/saga_prj.dic
 %%DATADIR%%/saga_prj.srs
 %%DATADIR%%/saga_tip.txt
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/CMakeLists.txt
@@ -284,6 +283,7 @@ share/pixmaps/saga.png
 %%DATADIR%%/toolchains/shapes_points.xml
 %%DATADIR%%/toolchains/shapes_points_to_contour.xml
 %%DATADIR%%/toolchains/shapes_polygons.xml
+%%DATADIR%%/toolchains/shapes_polygons_length_of_lines.xml
 %%DATADIR%%/toolchains/shapes_polygons_max_interior_circles.xml
 %%DATADIR%%/toolchains/shapes_polygons_remove_from_boundary.xml
 %%DATADIR%%/toolchains/shapes_tools.xml
