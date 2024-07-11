@@ -16,11 +16,11 @@ notify 100 {
 };
 
 notify 100 {
-        match "system"          "USB";
-        match "subsystem"       "DEVICE";
-        match "type"            "DETACH";
-        match "vendor"          "0x05ac";
-	match "product"         "(0x12[9a][0-9a-f]|0x8600)";
+	match "system"		"USB";
+	match "subsystem"	"DEVICE";
+	match "type"		"DETACH";
+	match "vendor"		"0x05ac";
+	match "product"		"(0x12[9a][0-9a-f]|0x8600)";
 	action "%%PREFIX%%/sbin/usbmuxd -x";
+	action "sleep 5";
 };
-
