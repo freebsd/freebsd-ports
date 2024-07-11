@@ -38,8 +38,8 @@ PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=rst2html5.py:textproc/py-docutils
-DOCS_MESON_TRUE=docs
+DOCS_BUILD_DEPENDS=	rst2html5:textproc/py-docutils
+DOCS_MESON_TRUE=	docs
 
 post-install:
 	@${RM} ${STAGEDIR}${DOCSDIR}/COPYING.txt
