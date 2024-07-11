@@ -1,5 +1,5 @@
 PORTNAME=	RcppArmadillo
-DISTVERSION=	0.12.8.4.0
+DISTVERSION=	14.0.0-1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -9,7 +9,7 @@ WWW=		https://cran.r-project.org/web/packages/RcppArmadillo/
 
 LICENSE=	GPLv2+
 
-CRAN_DEPENDS=	R-cran-Rcpp>=0.11.0:devel/R-cran-Rcpp
+CRAN_DEPENDS=	R-cran-Rcpp>=1.0.8:devel/R-cran-Rcpp
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-slam>0:math/R-cran-slam \
