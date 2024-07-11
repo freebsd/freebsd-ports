@@ -17,11 +17,11 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		blake3-1.5.1 \
 		byteorder-1.5.0 \
 		bytes-1.6.0 \
-		cc-1.0.104 \
+		cc-1.1.0 \
 		cfg-if-1.0.0 \
-		clap-4.5.8 \
-		clap_builder-4.5.8 \
-		clap_complete-4.5.7 \
+		clap-4.5.9 \
+		clap_builder-4.5.9 \
+		clap_complete-4.5.8 \
 		clap_derive-4.5.8 \
 		clap_lex-0.7.1 \
 		colorchoice-1.0.1 \
@@ -88,16 +88,16 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		rustix-0.38.34 \
 		ryu-1.0.18 \
 		scopeguard-1.2.0 \
-		serde-1.0.203 \
-		serde_derive-1.0.203 \
-		serde_json-1.0.119 \
+		serde-1.0.204 \
+		serde_derive-1.0.204 \
+		serde_json-1.0.120 \
 		shell-escape-0.1.5 \
 		signal-hook-registry-1.4.2 \
 		slab-0.4.9 \
 		sled-0.34.7 \
 		smallvec-1.13.2 \
 		strsim-0.11.1 \
-		syn-2.0.68 \
+		syn-2.0.70 \
 		terminal_size-0.3.0 \
 		thiserror-1.0.61 \
 		thiserror-impl-1.0.61 \
@@ -119,19 +119,19 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.5 \
+		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.5 \
+		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.5 \
+		windows_aarch64_msvc-0.52.6 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.5 \
-		windows_i686_gnullvm-0.52.5 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.5 \
+		windows_i686_msvc-0.52.6 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.5 \
+		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.5 \
+		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.5
+		windows_x86_64_msvc-0.52.6
