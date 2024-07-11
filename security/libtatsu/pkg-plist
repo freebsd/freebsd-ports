@@ -1,0 +1,7 @@
+include/libtatsu/tatsu.h
+include/libtatsu/tss.h
+lib/libtatsu.a
+lib/libtatsu.so
+lib/libtatsu.so.0
+lib/libtatsu.so.0.0.1
+libdata/pkgconfig/libtatsu-1.0.pc
