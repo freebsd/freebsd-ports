@@ -1,6 +1,5 @@
 PORTNAME=	RcppRoll
-DISTVERSION=	0.3.0
-PORTREVISION=	4
+DISTVERSION=	0.3.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,9 +9,7 @@ WWW=		https://cran.r-project.org/web/packages/RcppRoll/
 
 LICENSE=	GPLv2+
 
-CRAN_DEPENDS=	R-cran-Rcpp>0:devel/R-cran-Rcpp
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	R-cran-Rcpp>0:devel/R-cran-Rcpp
 
 USES=		cran:auto-plist,compiles
 
