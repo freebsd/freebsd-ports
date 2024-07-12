@@ -594,7 +594,7 @@ monkeysphere:*:641:641::0:0:Monkeysphere User:/var/monkeysphere:/usr/local/bin/b
 # free: 645
 # free: 646
 # free: 647
-# free: 648
+_xrdp:*:648:648::0:0:xrdp daemon:/nonexistent:/usr/sbin/nologin
 # free: 649
 # free: 650
 # free: 651
