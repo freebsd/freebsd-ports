@@ -1,7 +1,6 @@
 PORTNAME=	mcfly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
-PORTREVISION=	1
+DISTVERSION=	0.9.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,26 +23,26 @@ CARGO_CRATES=	adler32-1.2.0 \
 		anstream-0.6.14 \
 		anstyle-1.0.7 \
 		anstyle-parse-0.2.4 \
-		anstyle-query-1.0.3 \
+		anstyle-query-1.1.0 \
 		anstyle-wincon-3.0.3 \
-		async-trait-0.1.80 \
+		async-trait-0.1.81 \
 		autocfg-1.3.0 \
 		autopilot-0.4.0 \
 		base64-0.21.7 \
 		bitflags-1.3.2 \
-		bitflags-2.5.0 \
+		bitflags-2.6.0 \
 		block-0.1.6 \
 		block-buffer-0.10.4 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
-		cc-1.0.98 \
+		cc-1.1.0 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		chrono-systemd-time-0.3.0 \
-		clap-4.5.4 \
-		clap_builder-4.5.2 \
-		clap_derive-4.5.4 \
-		clap_lex-0.7.0 \
+		clap-4.5.9 \
+		clap_builder-4.5.9 \
+		clap_derive-4.5.8 \
+		clap_lex-0.7.1 \
 		cocoa-0.20.2 \
 		color_quant-1.1.0 \
 		colorchoice-1.0.1 \
@@ -73,7 +72,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		dirs-sys-0.4.1 \
 		dirs-sys-next-0.1.2 \
 		dlv-list-0.5.2 \
-		either-1.12.0 \
+		either-1.13.0 \
 		equivalent-1.0.1 \
 		fallible-iterator-0.3.0 \
 		fallible-streaming-iterator-0.1.9 \
@@ -100,16 +99,16 @@ CARGO_CRATES=	adler32-1.2.0 \
 		jpeg-decoder-0.1.22 \
 		js-sys-0.3.69 \
 		json5-0.4.1 \
-		lazy_static-1.4.0 \
+		lazy_static-1.5.0 \
 		libc-0.2.155 \
 		libredox-0.1.3 \
 		libsqlite3-sys-0.28.0 \
 		linked-hash-map-0.5.6 \
 		lock_api-0.4.12 \
-		log-0.4.21 \
+		log-0.4.22 \
 		lzw-0.10.0 \
 		malloc_buf-0.0.6 \
-		memchr-2.7.2 \
+		memchr-2.7.4 \
 		minimal-lexical-0.2.1 \
 		mio-0.8.11 \
 		nom-7.1.3 \
@@ -127,15 +126,15 @@ CARGO_CRATES=	adler32-1.2.0 \
 		path-absolutize-3.1.1 \
 		path-dedot-3.1.1 \
 		pathdiff-0.2.1 \
-		pest-2.7.10 \
-		pest_derive-2.7.10 \
-		pest_generator-2.7.10 \
-		pest_meta-2.7.10 \
+		pest-2.7.11 \
+		pest_derive-2.7.11 \
+		pest_generator-2.7.11 \
+		pest_meta-2.7.11 \
 		pkg-config-0.3.30 \
 		png-0.15.3 \
 		ppv-lite86-0.2.17 \
 		proc-macro2-0.4.30 \
-		proc-macro2-1.0.84 \
+		proc-macro2-1.0.86 \
 		quote-0.6.13 \
 		quote-1.0.36 \
 		rand-0.7.3 \
@@ -147,20 +146,20 @@ CARGO_CRATES=	adler32-1.2.0 \
 		rand_hc-0.2.0 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.5.1 \
+		redox_syscall-0.5.2 \
 		redox_users-0.4.5 \
-		regex-1.10.4 \
-		regex-automata-0.4.6 \
-		regex-syntax-0.8.3 \
+		regex-1.10.5 \
+		regex-automata-0.4.7 \
+		regex-syntax-0.8.4 \
 		ron-0.8.1 \
 		rusqlite-0.31.0 \
 		rust-ini-0.19.0 \
 		ryu-1.0.18 \
 		scoped_threadpool-0.1.9 \
 		scopeguard-1.2.0 \
-		serde-1.0.203 \
-		serde_derive-1.0.203 \
-		serde_json-1.0.117 \
+		serde-1.0.204 \
+		serde_derive-1.0.204 \
+		serde_json-1.0.120 \
 		serde_spanned-0.6.6 \
 		sha2-0.10.8 \
 		shellexpand-3.1.0 \
@@ -170,20 +169,20 @@ CARGO_CRATES=	adler32-1.2.0 \
 		smallvec-1.13.2 \
 		strsim-0.11.1 \
 		syn-0.15.44 \
-		syn-2.0.66 \
+		syn-2.0.70 \
 		thiserror-1.0.61 \
 		thiserror-impl-1.0.61 \
 		tiff-0.3.1 \
 		tiny-keccak-2.0.2 \
-		toml-0.8.13 \
+		toml-0.8.14 \
 		toml_datetime-0.6.6 \
-		toml_edit-0.22.13 \
+		toml_edit-0.22.15 \
 		typenum-1.17.0 \
 		ucd-trie-0.1.6 \
 		unicode-ident-1.0.12 \
 		unicode-segmentation-1.11.0 \
 		unicode-xid-0.1.0 \
-		utf8parse-0.2.1 \
+		utf8parse-0.2.2 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
@@ -200,27 +199,27 @@ CARGO_CRATES=	adler32-1.2.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.5 \
+		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.5 \
+		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.5 \
+		windows_aarch64_msvc-0.52.6 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.5 \
-		windows_i686_gnullvm-0.52.5 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.5 \
+		windows_i686_msvc-0.52.6 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.5 \
+		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.5 \
+		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.5 \
-		winnow-0.6.9 \
+		windows_x86_64_msvc-0.52.6 \
+		winnow-0.6.13 \
 		x11-2.21.0 \
 		yaml-rust-0.4.5 \
-		zerocopy-0.7.34 \
-		zerocopy-derive-0.7.34
+		zerocopy-0.7.35 \
+		zerocopy-derive-0.7.35
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/bash_completion.d/${PORTNAME}.bash \
 		share/fish/vendor_completions.d/${PORTNAME}.fish \
