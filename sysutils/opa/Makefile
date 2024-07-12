@@ -1,7 +1,6 @@
 PORTNAME=	opa
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.65.0
-PORTREVISION=	1
+DISTVERSION=	0.66.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,9 +28,10 @@ GH_TUPLE=	\
 		census-instrumentation:opencensus-go:v0.24.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
 		cespare:xxhash:v2.2.0:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
-		containerd:containerd:v1.7.17:containerd_containerd/vendor/github.com/containerd/containerd \
+		containerd:containerd:v1.7.18:containerd_containerd/vendor/github.com/containerd/containerd \
+		containerd:errdefs:v0.1.0:containerd_errdefs/vendor/github.com/containerd/errdefs \
 		containerd:log:v0.1.0:containerd_log/vendor/github.com/containerd/log \
-		cpuguy83:go-md2man:v2.0.3:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
+		cpuguy83:go-md2man:v2.0.4:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		davecgh:go-spew:d8f796af33cc:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgraph-io:badger:v3.2103.5:dgraph_io_badger_v3/vendor/github.com/dgraph-io/badger/v3 \
 		dgraph-io:ristretto:v0.1.1:dgraph_io_ristretto/vendor/github.com/dgraph-io/ristretto \
@@ -51,17 +51,17 @@ GH_TUPLE=	\
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:exp:921286631fa9:golang_exp/vendor/golang.org/x/exp \
-		golang:glog:v1.2.0:golang_glog \
+		golang:glog:v1.2.0:golang_glog_1 \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:mod:v0.14.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.25.0:golang_net/vendor/golang.org/x/net \
+		golang:mod:v0.17.0:golang_mod/vendor/golang.org/x/mod \
+		golang:net:v0.26.0:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.4:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sync:v0.6.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.20.0:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.15.0:golang_text/vendor/golang.org/x/text \
+		golang:sync:v0.7.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.21.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.16.0:golang_text/vendor/golang.org/x/text \
 		golang:time:v0.5.0:golang_time/vendor/golang.org/x/time \
-		golang:tools:v0.15.0:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:e35e4ccd0d2d:golang_tools/vendor/golang.org/x/tools \
 		google:flatbuffers:v1.12.1:google_flatbuffers/vendor/github.com/google/flatbuffers \
 		google:go-cmp:v0.6.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:94a12d6c2237:google_go_genproto/vendor/google.golang.org/genproto/googleapis/api \
@@ -106,7 +106,7 @@ GH_TUPLE=	\
 		sourcegraph:conc:v0.3.0:sourcegraph_conc/vendor/github.com/sourcegraph/conc \
 		spf13:afero:v1.11.0:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.6.0:spf13_cast/vendor/github.com/spf13/cast \
-		spf13:cobra:v1.8.0:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:cobra:v1.8.1:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.18.2:spf13_viper/vendor/github.com/spf13/viper \
 		subosito:gotenv:v1.6.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
@@ -119,7 +119,7 @@ GH_TUPLE=	\
 		yashtewari:glob-intersection:v0.2.0:yashtewari_glob_intersection/vendor/github.com/yashtewari/glob-intersection
 
 post-extract:
-	@${RLN} ${WRKSRC_golang_glog} ${WRKSRC}/build/replacements/github.com/golang/glog
+	@${RLN} ${WRKSRC_golang_glog_1} ${WRKSRC}/build/replacements/github.com/golang/glog
 
 PLIST_FILES=	bin/${PORTNAME}
 
