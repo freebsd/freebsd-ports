@@ -1,5 +1,5 @@
 PORTNAME=	gatk
-DISTVERSION=	4.5.0.0
+DISTVERSION=	4.6.0.0
 CATEGORIES=	biology java
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -32,8 +32,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 BINARY_ALIAS=	java=${JAVA}
 
-# TODO additionally fetch git-lfs files: https://github.com/broadinstitute/gatk/issues/6395
-
 # to rebuild the deps archive:
 #   1. set DEV_UPDATE_MODE=yes
 #   2. make makesum build
@@ -43,11 +41,15 @@ BINARY_ALIAS=	java=${JAVA}
 
 DEV_UPDATE_MODE=	no
 
-OPTIONS_DEFINE=			WITH_LARGE_FILES # probably should be default for tests, but the build doesn't seem to be affected contrary to what README says
+OPTIONS_DEFINE=			WITH_LARGE_FILES
+OPTIONS_DEFAULT=		WITH_LARGE_FILES # runtime requires large files, see the README
 
 WITH_LARGE_FILES_DESC=		Download large LFS files needed for build and tests
 WITH_LARGE_FILES_FETCH_DEPENDS=	git:devel/git \
 				git-lfs:devel/git-lfs
+
+# The large files under src/main/resources/large/ are required to build GATK, since they are packaged inside the GATK jar and used by tools at runtime. These are things like ML models and native C/C++ libraries used for acceleration of certain tools.
+# The large files under src/test/resources/large/, on the other hand, are only required by the test suite when running tests.
 
 .include <bsd.port.options.mk>
 
@@ -61,13 +63,13 @@ do-fetch:
 			${MKDIR} ${WRKDIR}; \
 			HOME=${WRKDIR}; \
 			git config --global filter.lfs.smudge "git-lfs smudge -- %f" && \
-			git clone -q https://github.com/broadinstitute/gatk.git ${PORTNAME}-${DISTVERSION} && \
+			GIT_CLONE_PROTECTION_ACTIVE=false git clone -q https://github.com/broadinstitute/gatk.git ${PORTNAME}-${DISTVERSION} && \
 			(cd ${PORTNAME}-${DISTVERSION} && git reset -q --hard ${DISTVERSION} && ${RM} -r .git) && \
 			${RM} -r ${WRKDIR} \
 		) && \
 		${FIND} ${PORTNAME}-${DISTVERSION} -and -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
 		${FIND} ${PORTNAME}-${DISTVERSION} -print0 | LC_ALL=C ${SORT} -z | \
-		${TAR} czf ${DISTNAME}${EXTRACT_SUFX} --format=ustar --gid 0 --uid 0 --options gzip:!timestamp --no-recursion --null -T - && \
+		${TAR} czf ${DISTNAME}${EXTRACT_SUFX} --gid 0 --uid 0 --options gzip:!timestamp --no-recursion --null -T - && \
 		${RM} -r ${PORTNAME}-${DISTVERSION}; \
 	fi
 .endif
@@ -86,12 +88,16 @@ post-extract: # need a separate extract step because the cache is in /tmp, and n
 .endif
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle \
 		--gradle-user-home ${DEPS_CACHE_DIR}/gradle-${PORTNAME} --project-cache-dir ${DEPS_CACHE_DIR}/gradle-${PORTNAME} \
 		${GRADLE_ARGS} --build-cache localJar
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/build/libs/gatk-package-1.0-SNAPSHOT-local.jar ${STAGEDIR}${JAVAJARDIR}/GenomeAnalysisTK-${PORTVERSION}.jar
+
+do-test: # tests require WITH_LARGE_FILES=ON, and they use a lot of disk space
+	@cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} gradle test
 
 .include <bsd.port.mk>
