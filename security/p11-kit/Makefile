@@ -1,6 +1,5 @@
 PORTNAME=	p11-kit
-DISTVERSION=	0.25.3
-PORTREVISION=	2
+DISTVERSION=	0.25.5
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/p11-glue/${PORTNAME}/releases/download/${DISTVERSION}/
 
