@@ -5,6 +5,7 @@ etc/rc.d/appjail-natnet
 libexec/appjail/getservbyname/getservbyname
 libexec/appjail/ipcheck/ipcheck
 libexec/appjail/network/network
+libexec/appjail/get_assigned_rulesets/get_assigned_rulesets
 %%DATADIR%%/cmd/cmd
 %%DATADIR%%/cmd/cpuset
 %%DATADIR%%/cmd/disable
@@ -171,6 +172,8 @@ libexec/appjail/find-smallest-missing-number/find-smallest-missing-number
 %%DATADIR%%/lib/table
 %%DATADIR%%/makejail/cmd/all/LABEL
 %%DATADIR%%/makejail/write/all/LABEL
+%%DATADIR%%/scripts/bind-ddns-hook.sh
+%%DATADIR%%/scripts/git.sh
 share/man/man1/appjail-apply.1.gz
 share/man/man1/appjail-checkOld.1.gz
 share/man/man1/appjail-cmd.1.gz
