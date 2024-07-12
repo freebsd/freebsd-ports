@@ -7350,6 +7350,7 @@
     SUBDIR += rubygem-opentelemetry-common
     SUBDIR += rubygem-opentelemetry-exporter-otlp
     SUBDIR += rubygem-opentelemetry-helpers-sql-obfuscation
+    SUBDIR += rubygem-opentelemetry-instrumentation-action_mailer
     SUBDIR += rubygem-opentelemetry-instrumentation-action_pack
     SUBDIR += rubygem-opentelemetry-instrumentation-action_view
     SUBDIR += rubygem-opentelemetry-instrumentation-active_job
