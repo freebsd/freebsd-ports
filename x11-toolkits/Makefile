@@ -249,6 +249,7 @@
     SUBDIR += wlroots-hyprland
     SUBDIR += wlroots015
     SUBDIR += wlroots016
+    SUBDIR += wlroots017
     SUBDIR += wmapp
     SUBDIR += wxgtk30
     SUBDIR += wxgtk32
