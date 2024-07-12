@@ -1,6 +1,6 @@
 PORTNAME=	gamescope
 DISTVERSION=	3.13.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -28,7 +28,7 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libvulkan.so:graphics/vulkan-loader \
 		libwayland-server.so:graphics/wayland \
 		libdisplay-info.so:sysutils/libdisplay-info \
-		libwlroots.so:x11-toolkits/wlroots \
+		libwlroots.so:x11-toolkits/wlroots017 \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	hwdata>0:misc/hwdata
 

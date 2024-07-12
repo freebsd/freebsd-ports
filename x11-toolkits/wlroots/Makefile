@@ -1,5 +1,5 @@
 PORTNAME=	wlroots
-DISTVERSION=	0.17.4
+DISTVERSION=	0.18.0
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/wlroots/wlroots
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	wayland-protocols>=1.32:graphics/wayland-protocols
+BUILD_DEPENDS=	wayland-protocols>=1.35:graphics/wayland-protocols
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
@@ -21,20 +21,33 @@ USE_XORG=	pixman
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 MESON_ARGS=	-Dexamples=false -Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
+PLIST_SUB=	SUFFIX=-${DISTVERSION:R}
 
-OPTIONS_DEFINE=	DRM OPENGL VULKAN X11
-OPTIONS_DEFAULT=DRM OPENGL VULKAN X11
+# XXX Drop after graphics/wayland >= 1.24 update
+# https://gitlab.freedesktop.org/wayland/wayland/-/merge_requests/401
+MESON_ARGS+=	-Dc_std=c11
+
+OPTIONS_DEFINE=	DRM LCMS2 LIBLIFTOFF OPENGL VULKAN X11
+OPTIONS_DEFAULT=DRM LCMS2 LIBLIFTOFF OPENGL VULKAN X11
 OPTIONS_SUB=	yes
 
 DRM_DESC=		KMS console support
-DRM_BUILD_DEPENDS=	hwdata>0:misc/hwdata
+DRM_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+			hwdata>0:misc/hwdata
 DRM_LIB_DEPENDS=	libudev.so:devel/libudev-devd \
-			libliftoff.so:graphics/libliftoff \
 			libdisplay-info.so:sysutils/libdisplay-info \
 			libseat.so:sysutils/seatd \
 			libinput.so:x11/libinput
 DRM_MESON_ENABLED=	session
 DRM_VARS=		BACKENDS+="drm libinput"
+
+LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
+LCMS2_MESON_ENABLED=	color-management
+
+LIBLIFTOFF_DESC=	libliftoff DRM interface (see WLR_DRM_FORCE_LIBLIFTOFF)
+LIBLIFTOFF_LIB_DEPENDS=	libliftoff.so:graphics/libliftoff
+LIBLIFTOFF_MESON_ENABLED=	libliftoff
+LIBLIFTOFF_IMPLIES=	DRM
 
 OPENGL_RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
 OPENGL_USE=		GL=egl,glesv2

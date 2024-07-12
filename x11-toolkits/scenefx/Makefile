@@ -1,5 +1,6 @@
 PORTNAME=	scenefx
 DISTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	wayland-protocols>=1.27:graphics/wayland-protocols
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \
-		libwlroots.so:x11-toolkits/wlroots
+		libwlroots.so:x11-toolkits/wlroots017
 
 USES=		compiler:c11 meson pkgconfig xorg
 USE_GITHUB=	yes
