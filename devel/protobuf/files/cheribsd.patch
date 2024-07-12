@@ -1,0 +1,518 @@
+diff --git src/google/protobuf/arena.h src/google/protobuf/arena.h
+index 3b5f16c38..a208badca 100644
+--- src/google/protobuf/arena.h
++++ src/google/protobuf/arena.h
+@@ -239,7 +239,11 @@ struct ArenaOptions {
+ // well as protobuf container types like RepeatedPtrField and Map. The protocol
+ // is internal to protobuf and is not guaranteed to be stable. Non-proto types
+ // should not rely on this protocol.
++#if defined(__CHERI_PURE_CAPABILITY__)
++class PROTOBUF_EXPORT PROTOBUF_ALIGNAS(alignof(max_align_t)) Arena final {
++#else
+ class PROTOBUF_EXPORT PROTOBUF_ALIGNAS(8) Arena final {
++#endif
+  public:
+   // Default constructor with sensible default options, tuned for average
+   // use-cases.
+@@ -316,16 +320,26 @@ class PROTOBUF_EXPORT PROTOBUF_ALIGNAS(8) Arena final {
+   }
+ 
+   // Allocates memory with the specific size and alignment.
++#if defined(__CHERI_PURE_CAPABILITY__)
++  void* AllocateAligned(size_t size, size_t align = alignof(max_align_t)) {
++    if (align <= alignof(max_align_t)) {
++      return AllocateAlignedNoHook(internal::AlignUpToMaxAlign(size));
++#else
+   void* AllocateAligned(size_t size, size_t align = 8) {
+     if (align <= 8) {
+       return AllocateAlignedNoHook(internal::AlignUpTo8(size));
++#endif
+     } else {
+       // We are wasting space by over allocating align - 8 bytes. Compared
+       // to a dedicated function that takes current alignment in consideration.
+       // Such a scheme would only waste (align - 8)/2 bytes on average, but
+       // requires a dedicated function in the outline arena allocation
+       // functions. Possibly re-evaluate tradeoffs later.
++#if defined(__CHERI_PURE_CAPABILITY__)
++      return internal::AlignTo(AllocateAlignedNoHook(size + align - alignof(max_align_t)), align);
++#else
+       return internal::AlignTo(AllocateAlignedNoHook(size + align - 8), align);
++#endif
+     }
+   }
+ 
+@@ -596,13 +610,22 @@ class PROTOBUF_EXPORT PROTOBUF_ALIGNAS(8) Arena final {
+     if (destructor == nullptr) {
+       return AllocateAlignedWithHook(size, align, type);
+     } else {
++#if defined(__CHERI_PURE_CAPABILITY__)
++      if (align <= alignof(max_align_t)) {
++        auto res = AllocateAlignedWithCleanup(internal::AlignUpToMaxAlign(size), type);
++#else
+       if (align <= 8) {
+         auto res = AllocateAlignedWithCleanup(internal::AlignUpTo8(size), type);
++#endif
+         res.second->elem = res.first;
+         res.second->cleanup = destructor;
+         return res.first;
+       } else {
++#if defined(__CHERI_PURE_CAPABILITY__)
++        auto res = AllocateAlignedWithCleanup(size + align - alignof(max_align_t), type);
++#else
+         auto res = AllocateAlignedWithCleanup(size + align - 8, type);
++#endif
+         auto ptr = internal::AlignTo(res.first, align);
+         res.second->elem = ptr;
+         res.second->cleanup = destructor;
+@@ -792,8 +815,13 @@ class PROTOBUF_EXPORT PROTOBUF_ALIGNAS(8) Arena final {
+ 
+   void* AllocateAlignedWithHookForArray(size_t n, size_t align,
+                                         const std::type_info* type) {
++#if defined(__CHERI_PURE_CAPABILITY__)
++    if (align <= alignof(max_align_t)) {
++      return AllocateAlignedWithHookForArray(internal::AlignUpToMaxAlign(n), type);
++#else
+     if (align <= 8) {
+       return AllocateAlignedWithHookForArray(internal::AlignUpTo8(n), type);
++#endif
+     } else {
+       // We are wasting space by over allocating align - 8 bytes. Compared
+       // to a dedicated function that takes current alignment in consideration.
+@@ -801,21 +829,34 @@ class PROTOBUF_EXPORT PROTOBUF_ALIGNAS(8) Arena final {
+       // requires a dedicated function in the outline arena allocation
+       // functions. Possibly re-evaluate tradeoffs later.
+       return internal::AlignTo(
++#if defined(__CHERI_PURE_CAPABILITY__)
++          AllocateAlignedWithHookForArray(n + align - alignof(max_align_t), type), align);
++#else
+           AllocateAlignedWithHookForArray(n + align - 8, type), align);
++#endif
+     }
+   }
+ 
+   void* AllocateAlignedWithHook(size_t n, size_t align,
+                                 const std::type_info* type) {
++#if defined(__CHERI_PURE_CAPABILITY__)
++    if (align <= alignof(max_align_t)) {
++      return AllocateAlignedWithHook(internal::AlignUpToMaxAlign(n), type);
++#else
+     if (align <= 8) {
+       return AllocateAlignedWithHook(internal::AlignUpTo8(n), type);
++#endif
+     } else {
+       // We are wasting space by over allocating align - 8 bytes. Compared
+       // to a dedicated function that takes current alignment in consideration.
+       // Such a scheme would only waste (align - 8)/2 bytes on average, but
+       // requires a dedicated function in the outline arena allocation
+       // functions. Possibly re-evaluate tradeoffs later.
++#if defined(__CHERI_PURE_CAPABILITY__)
++      return internal::AlignTo(AllocateAlignedWithHook(n + align - alignof(max_align_t), type),
++#else
+       return internal::AlignTo(AllocateAlignedWithHook(n + align - 8, type),
++#endif
+                                align);
+     }
+   }
+diff --git src/google/protobuf/arena_impl.h src/google/protobuf/arena_impl.h
+index 76727688b..cac03228e 100644
+--- src/google/protobuf/arena_impl.h
++++ src/google/protobuf/arena_impl.h
+@@ -62,6 +62,12 @@ enum { kCacheAlignment = 64 };
+ enum { kCacheAlignment = alignof(max_align_t) };  // do the best we can
+ #endif
+ 
++#if defined(__CHERI_PURE_CAPABILITY__)
++inline constexpr size_t AlignUpToMaxAlign(size_t n) {
++  return __builtin_align_up(n, alignof(max_align_t));
++}
++#endif
++
+ inline constexpr size_t AlignUpTo8(size_t n) {
+   // Align n to next multiple of 8 (from Hacker's Delight, Chapter 3.)
+   return (n + 7) & static_cast<size_t>(-8);
+@@ -128,7 +134,11 @@ class TaggedAllocationPolicyPtr {
+       : policy_(reinterpret_cast<uintptr_t>(policy)) {}
+ 
+   void set_policy(AllocationPolicy* policy) {
++#if defined(__CHERI_PURE_CAPABILITY__)
++    ptraddr_t bits = policy_ & kTagsMask;
++#else
+     auto bits = policy_ & kTagsMask;
++#endif
+     policy_ = reinterpret_cast<uintptr_t>(policy) | bits;
+   }
+ 
+@@ -170,19 +180,36 @@ class TaggedAllocationPolicyPtr {
+     kRecordAllocs = 2,
+   };
+ 
++#if defined(__CHERI_PURE_CAPABILITY__)
++  static constexpr ptraddr_t kTagsMask = 7;
++  static constexpr ptraddr_t kPtrMask = ~kTagsMask;
++#else
+   static constexpr uintptr_t kTagsMask = 7;
+   static constexpr uintptr_t kPtrMask = ~kTagsMask;
++#endif
+ 
+   template <uintptr_t kMask>
+   uintptr_t get_mask() const {
++#if defined(__CHERI_PURE_CAPABILITY__)
++    return policy_ & (ptraddr_t) kMask;
++#else
+     return policy_ & kMask;
++#endif
+   }
+   template <uintptr_t kMask>
+   void set_mask(bool v) {
+     if (v) {
++#if defined(__CHERI_PURE_CAPABILITY__)
++      policy_ |= (ptraddr_t) kMask;
++#else
+       policy_ |= kMask;
++#endif
+     } else {
++#if defined(__CHERI_PURE_CAPABILITY__)
++      policy_ &= ~(ptraddr_t) kMask;
++#else
+       policy_ &= ~kMask;
++#endif
+     }
+   }
+   uintptr_t policy_;
+diff --git src/google/protobuf/arena_unittest.cc src/google/protobuf/arena_unittest.cc
+index 7539b4b29..d4944b654 100644
+--- src/google/protobuf/arena_unittest.cc
++++ src/google/protobuf/arena_unittest.cc
+@@ -1354,6 +1354,9 @@ TEST(ArenaTest, RepeatedFieldWithNonPODType) {
+ 
+ // Align n to next multiple of 8
+ uint64_t Align8(uint64_t n) { return (n + 7) & -8; }
++#if defined(__CHERI_PURE_CAPABILITY__)
++uint64_t AlignMaxAlign(uint64_t n) { return __builtin_align_up(n, alignof(max_align_t)); }
++#endif
+ 
+ TEST(ArenaTest, SpaceAllocated_and_Used) {
+   Arena arena_1;
+@@ -1363,7 +1366,11 @@ TEST(ArenaTest, SpaceAllocated_and_Used) {
+   Arena::CreateArray<char>(&arena_1, 320);
+   // Arena will allocate slightly more than 320 for the block headers.
+   EXPECT_LE(320, arena_1.SpaceAllocated());
++#if defined(__CHERI_PURE_CAPABILITY__)
+   EXPECT_EQ(Align8(320), arena_1.SpaceUsed());
++#else
++  EXPECT_EQ(AlignMaxAlign(320), arena_1.SpaceUsed());
++#endif
+   EXPECT_LE(320, arena_1.Reset());
+ 
+   // Test with initial block.
+@@ -1379,7 +1386,11 @@ TEST(ArenaTest, SpaceAllocated_and_Used) {
+   EXPECT_EQ(1024, arena_2.Reset());
+   Arena::CreateArray<char>(&arena_2, 55);
+   EXPECT_EQ(1024, arena_2.SpaceAllocated());
++#if defined(__CHERI_PURE_CAPABILITY__)
++  EXPECT_EQ(AlignMaxAlign(55), arena_2.SpaceUsed());
++#else
+   EXPECT_EQ(Align8(55), arena_2.SpaceUsed());
++#endif
+   EXPECT_EQ(1024, arena_2.Reset());
+ }
+ 
+@@ -1418,11 +1429,19 @@ TEST(ArenaTest, BlockSizeSmallerThanAllocation) {
+ 
+     *Arena::Create<int64_t>(&arena) = 42;
+     EXPECT_GE(arena.SpaceAllocated(), 8);
++#if defined(__CHERI_PURE_CAPABILITY__)
++    EXPECT_EQ(16, arena.SpaceUsed());
++#else
+     EXPECT_EQ(8, arena.SpaceUsed());
++#endif
+ 
+     *Arena::Create<int64_t>(&arena) = 42;
+     EXPECT_GE(arena.SpaceAllocated(), 16);
++#if defined(__CHERI_PURE_CAPABILITY__)
++    EXPECT_EQ(32, arena.SpaceUsed());
++#else
+     EXPECT_EQ(16, arena.SpaceUsed());
++#endif
+   }
+ }
+ 
+diff --git src/google/protobuf/descriptor.cc src/google/protobuf/descriptor.cc
+index 5f3427dc7..519e8befe 100644
+--- src/google/protobuf/descriptor.cc
++++ src/google/protobuf/descriptor.cc
+@@ -369,9 +369,14 @@ class FlatAllocatorImpl {
+     // We can't call PlanArray after FinalizePlanning has been called.
+     GOOGLE_CHECK(!has_allocated());
+     if (std::is_trivially_destructible<U>::value) {
++#if defined(__CHERI_PURE_CAPABILITY__)
++      static_assert(alignof(U) <= alignof(max_align_t), "");
++      total_.template Get<char>() += RoundUpTo<alignof(max_align_t)>(array_size * sizeof(U));
++#else
+       // Trivial types are aligned to 8 bytes.
+       static_assert(alignof(U) <= 8, "");
+       total_.template Get<char>() += RoundUpTo<8>(array_size * sizeof(U));
++#endif
+     } else {
+       // Since we can't use `if constexpr`, just make the expression compile
+       // when this path is not taken.
+@@ -393,7 +398,11 @@ class FlatAllocatorImpl {
+     TypeToUse*& data = pointers_.template Get<TypeToUse>();
+     int& used = used_.template Get<TypeToUse>();
+     U* res = reinterpret_cast<U*>(data + used);
++#if defined(__CHERI_PURE_CAPABILITY__)
++    used += trivial ? RoundUpTo<alignof(max_align_t)>(array_size * sizeof(U)) : array_size;
++#else
+     used += trivial ? RoundUpTo<8>(array_size * sizeof(U)) : array_size;
++#endif
+     GOOGLE_CHECK_LE(used, total_.template Get<TypeToUse>());
+     return res;
+   }
+@@ -1808,17 +1817,29 @@ bool DescriptorPool::Tables::AddExtension(const FieldDescriptor* field) {
+ template <typename Type>
+ Type* DescriptorPool::Tables::Allocate() {
+   static_assert(std::is_trivially_destructible<Type>::value, "");
++#if defined(__CHERI_PURE_CAPABILITY__)
++  static_assert(alignof(Type) <= alignof(max_align_t), "");
++#else
+   static_assert(alignof(Type) <= 8, "");
++#endif
+   return ::new (AllocateBytes(sizeof(Type))) Type{};
+ }
+ 
+ void* DescriptorPool::Tables::AllocateBytes(int size) {
+   if (size == 0) return nullptr;
++#if defined(__CHERI_PURE_CAPABILITY__)
++  void* p = ::operator new(size + RoundUpTo<alignof(max_align_t)>(sizeof(int)));
++#else
+   void* p = ::operator new(size + RoundUpTo<8>(sizeof(int)));
++#endif
+   int* sizep = static_cast<int*>(p);
+   misc_allocs_.emplace_back(sizep);
+   *sizep = size;
++#if defined(__CHERI_PURE_CAPABILITY__)
++  return static_cast<char*>(p) + RoundUpTo<alignof(max_align_t)>(sizeof(int));
++#else
+   return static_cast<char*>(p) + RoundUpTo<8>(sizeof(int));
++#endif
+ }
+ 
+ template <typename... T>
+diff --git src/google/protobuf/dynamic_message.cc src/google/protobuf/dynamic_message.cc
+index 1c96ca208..8736650a1 100644
+--- src/google/protobuf/dynamic_message.cc
++++ src/google/protobuf/dynamic_message.cc
+@@ -201,8 +201,13 @@ int FieldSpaceUsed(const FieldDescriptor* field) {
+ 
+ inline int DivideRoundingUp(int i, int j) { return (i + (j - 1)) / j; }
+ 
++#if defined(__CHERI_PURE_CAPABILITY__)
++static const int kSafeAlignment = alignof(max_align_t);
++static const int kMaxOneofUnionSize = sizeof(intptr_t);
++#else
+ static const int kSafeAlignment = sizeof(uint64_t);
+ static const int kMaxOneofUnionSize = sizeof(uint64_t);
++#endif
+ 
+ inline int AlignTo(int offset, int alignment) {
+   return DivideRoundingUp(offset, alignment) * alignment;
+diff --git src/google/protobuf/explicitly_constructed.h src/google/protobuf/explicitly_constructed.h
+index 174c59ab4..eb9258706 100644
+--- src/google/protobuf/explicitly_constructed.h
++++ src/google/protobuf/explicitly_constructed.h
+@@ -86,7 +86,11 @@ class ExplicitlyConstructed {
+ // ArenaStringPtr compatible explicitly constructed string type.
+ // This empty string type is aligned with a minimum alignment of 8 bytes
+ // which is the minimum requirement of ArenaStringPtr
++#if defined(__CHERI_PURE_CAPABILITY__)
++using ExplicitlyConstructedArenaString = ExplicitlyConstructed<std::string, alignof(max_align_t)>;
++#else
+ using ExplicitlyConstructedArenaString = ExplicitlyConstructed<std::string, 8>;
++#endif
+ 
+ }  // namespace internal
+ }  // namespace protobuf
+diff --git src/google/protobuf/generated_message_tctable_decl.h src/google/protobuf/generated_message_tctable_decl.h
+index b1bb1def7..1ca56b9c8 100644
+--- src/google/protobuf/generated_message_tctable_decl.h
++++ src/google/protobuf/generated_message_tctable_decl.h
+@@ -121,7 +121,11 @@ struct Offset {
+ #endif
+ 
+ // Base class for message-level table with info for the tail-call parser.
++#if defined(__CHERI_PURE_CAPABILITY__)
++struct alignas(max_align_t) TcParseTableBase {
++#else
+ struct alignas(uint64_t) TcParseTableBase {
++#endif
+   // Common attributes for message layout:
+   uint16_t has_bits_offset;
+   uint16_t extension_offset;
+@@ -240,9 +244,17 @@ struct alignas(uint64_t) TcParseTableBase {
+ #pragma warning(pop)
+ #endif
+ 
++#if defined(__CHERI_PURE_CAPABILITY__)
++static_assert(sizeof(TcParseTableBase::FastFieldEntry) <= 32,
++#else
+ static_assert(sizeof(TcParseTableBase::FastFieldEntry) <= 16,
++#endif
+               "Fast field entry is too big.");
++#if defined(__CHERI_PURE_CAPABILITY__)
++static_assert(sizeof(TcParseTableBase::FieldEntry) <= 32,
++#else
+ static_assert(sizeof(TcParseTableBase::FieldEntry) <= 16,
++#endif
+               "Field entry is too big.");
+ 
+ template <size_t kFastTableSizeLog2, size_t kNumFieldEntries = 0,
+diff --git src/google/protobuf/generated_message_tctable_impl.h src/google/protobuf/generated_message_tctable_impl.h
+index 21fa5332d..bf792a091 100644
+--- src/google/protobuf/generated_message_tctable_impl.h
++++ src/google/protobuf/generated_message_tctable_impl.h
+@@ -252,7 +252,11 @@ template <size_t align>
+ [[noreturn]]
+ #endif
+ void AlignFail(uintptr_t address) {
++#if defined(__CHERI_PURE_CAPABILITY__) && __CheriBSD_version <= 20220828
++  GOOGLE_LOG(FATAL) << "Unaligned (" << align << ") access at " << (ptraddr_t) address;
++#else
+   GOOGLE_LOG(FATAL) << "Unaligned (" << align << ") access at " << address;
++#endif
+ }
+ 
+ extern template void AlignFail<4>(uintptr_t);
+diff --git src/google/protobuf/map.h src/google/protobuf/map.h
+index 008c19225..510ecd9ce 100644
+--- src/google/protobuf/map.h
++++ src/google/protobuf/map.h
+@@ -118,10 +118,14 @@ class MapAllocator {
+   MapAllocator(const MapAllocator<X>& allocator)  // NOLINT(runtime/explicit)
+       : arena_(allocator.arena()) {}
+ 
++#if defined(__CHERI_PURE_CAPABILITY__)
++  static_assert(alignof(value_type) <= sizeof(max_align_t), "");
++#else
+   // MapAllocator does not support alignments beyond 8. Technically we should
+   // support up to std::max_align_t, but this fails with ubsan and tcmalloc
+   // debug allocation logic which assume 8 as default alignment.
+   static_assert(alignof(value_type) <= 8, "");
++#endif
+ 
+   pointer allocate(size_type n, const void* /* hint */ = nullptr) {
+     // If arena is not given, malloc needs to be called which doesn't
+diff --git src/google/protobuf/metadata_lite.h src/google/protobuf/metadata_lite.h
+index 0c31517f0..33811432e 100644
+--- src/google/protobuf/metadata_lite.h
++++ src/google/protobuf/metadata_lite.h
+@@ -191,11 +191,19 @@ class PROTOBUF_EXPORT InternalMetadata {
+   intptr_t ptr_;
+ 
+   // Tagged pointer implementation.
++#if defined(__CHERI_PURE_CAPABILITY__)
++  static constexpr ptraddr_t kUnknownFieldsTagMask = 1;
++  static constexpr ptraddr_t kMessageOwnedArenaTagMask = 2;
++  static constexpr ptraddr_t kPtrTagMask =
++      kUnknownFieldsTagMask | kMessageOwnedArenaTagMask;
++  static constexpr ptraddr_t kPtrValueMask = ~kPtrTagMask;
++#else
+   static constexpr intptr_t kUnknownFieldsTagMask = 1;
+   static constexpr intptr_t kMessageOwnedArenaTagMask = 2;
+   static constexpr intptr_t kPtrTagMask =
+       kUnknownFieldsTagMask | kMessageOwnedArenaTagMask;
+   static constexpr intptr_t kPtrValueMask = ~kPtrTagMask;
++#endif
+ 
+   // Accessors for pointer tag and pointer value.
+   PROTOBUF_ALWAYS_INLINE bool HasUnknownFieldsTag() const {
+@@ -226,7 +234,11 @@ class PROTOBUF_EXPORT InternalMetadata {
+       // Subtle: we want to preserve the message-owned arena flag, while at the
+       // same time replacing the pointer to Container<T> with a pointer to the
+       // arena.
++#if defined(__CHERI_PURE_CAPABILITY__)
++      ptraddr_t message_owned_arena_tag = ptr_ & kMessageOwnedArenaTagMask;
++#else
+       intptr_t message_owned_arena_tag = ptr_ & kMessageOwnedArenaTagMask;
++#endif
+       ptr_ = reinterpret_cast<intptr_t>(a) | message_owned_arena_tag;
+       return a;
+     } else {
+diff --git src/google/protobuf/repeated_field.h src/google/protobuf/repeated_field.h
+index 3fb734e5c..aac145990 100644
+--- src/google/protobuf/repeated_field.h
++++ src/google/protobuf/repeated_field.h
+@@ -140,12 +140,19 @@ PROTO_MEMSWAP_DEF_SIZE(uint8_t, 2)
+ PROTO_MEMSWAP_DEF_SIZE(uint16_t, 4)
+ PROTO_MEMSWAP_DEF_SIZE(uint32_t, 8)
+ 
++#ifdef __CHERI_PURE_CAPABILITY__
++#if __SIZEOF_UINTCAP__ == 16
++PROTO_MEMSWAP_DEF_SIZE(uint64_t, 16)
++#endif
++PROTO_MEMSWAP_DEF_SIZE(__uintcap_t, (1u << 31))
++#else /* !__CHERI_PURE_CAPABILITY__ */
+ #ifdef __SIZEOF_INT128__
+ PROTO_MEMSWAP_DEF_SIZE(uint64_t, 16)
+ PROTO_MEMSWAP_DEF_SIZE(__uint128_t, (1u << 31))
+ #else
+ PROTO_MEMSWAP_DEF_SIZE(uint64_t, (1u << 31))
+ #endif
++#endif /* !__CHERI_PURE_CAPABILITY__ */
+ 
+ #undef PROTO_MEMSWAP_DEF_SIZE
+ 
+diff --git src/google/protobuf/repeated_field_unittest.cc src/google/protobuf/repeated_field_unittest.cc
+index d8a82bf09..49e166e91 100644
+--- src/google/protobuf/repeated_field_unittest.cc
++++ src/google/protobuf/repeated_field_unittest.cc
+@@ -227,7 +227,12 @@ void CheckNaturalGrowthOnArenasReuseBlocks(bool is_ptr) {
+   // expected.
+   EXPECT_THAT(
+       arena.SpaceUsed() - (is_ptr ? sizeof(T) * kNumElems * kNumFields : 0),
++#if defined(__CHERI_PURE_CAPABILITY__)
++      // Double the overhead to account for capability overheads
++      AllOf(Ge(used_bytes_if_reusing), Le(1.04 * used_bytes_if_reusing)));
++#else
+       AllOf(Ge(used_bytes_if_reusing), Le(1.02 * used_bytes_if_reusing)));
++#endif
+ }
+ 
+ TEST(RepeatedField, NaturalGrowthOnArenasReuseBlocks) {
+diff --git src/google/protobuf/stubs/strutil.h src/google/protobuf/stubs/strutil.h
+index 9658abf90..e59428887 100644
+--- src/google/protobuf/stubs/strutil.h
++++ src/google/protobuf/stubs/strutil.h
+@@ -604,7 +604,11 @@ struct Hex {
+     // their unsigned counterparts.
+ #ifdef LANG_CXX11
+     static_assert(
++#if defined(__CHERI_PURE_CAPABILITY__)
++        sizeof(v) == 1 || sizeof(v) == 2 || sizeof(v) == 4 || sizeof(v) == 8 || sizeof(v) == 16,
++#else
+         sizeof(v) == 1 || sizeof(v) == 2 || sizeof(v) == 4 || sizeof(v) == 8,
++#endif
+         "Unknown integer type");
+ #endif
+     value = sizeof(v) == 1 ? static_cast<uint8_t>(v)
+diff --git src/google/protobuf/stubs/strutil_unittest.cc src/google/protobuf/stubs/strutil_unittest.cc
+index 0bb9558e5..3455be202 100644
+--- src/google/protobuf/stubs/strutil_unittest.cc
++++ src/google/protobuf/stubs/strutil_unittest.cc
+@@ -817,9 +817,17 @@ TEST(StrCat, Ints) {
+   EXPECT_EQ(answer, "-78");
+   answer = StrCat(ptrdiff, size);
+   EXPECT_EQ(answer, "-910");
++#if defined(__CHERI_PURE_CAPABILITY__)
++  answer = StrCat(ptrdiff, (ssize_t) intptr);
++#else
+   answer = StrCat(ptrdiff, intptr);
++#endif
+   EXPECT_EQ(answer, "-9-12");
++#if defined(__CHERI_PURE_CAPABILITY__)
++  answer = StrCat((size_t) uintptr, 0);
++#else
+   answer = StrCat(uintptr, 0);
++#endif
+   EXPECT_EQ(answer, "130");
+ }
+ 
