@@ -1,6 +1,6 @@
 PORTNAME=	shadowsocks-rust
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.20.1
+DISTVERSION=	1.20.2
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -43,7 +43,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		arrayref-0.3.7 \
 		arrayvec-0.7.4 \
 		async-compression-0.4.11 \
-		async-trait-0.1.80 \
+		async-trait-0.1.81 \
 		atomic-waker-1.1.2 \
 		autocfg-1.3.0 \
 		backtrace-0.3.73 \
@@ -78,8 +78,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		chacha20poly1305-0.10.1 \
 		chrono-0.4.38 \
 		cipher-0.4.4 \
-		clap-4.5.7 \
-		clap_builder-4.5.7 \
+		clap-4.5.8 \
+		clap_builder-4.5.8 \
 		clap_lex-0.7.1 \
 		cmake-0.1.50 \
 		colorchoice-1.0.1 \
@@ -167,7 +167,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		httparse-1.9.4 \
 		httpdate-1.0.3 \
 		humantime-2.1.0 \
-		hyper-1.3.1 \
+		hyper-1.4.0 \
 		hyper-rustls-0.27.2 \
 		hyper-tls-0.6.0 \
 		hyper-util-0.1.5 \
@@ -184,7 +184,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		icu_provider-1.5.0 \
 		icu_provider_macros-1.5.0 \
 		idna-0.4.0 \
-		idna-1.0.0 \
+		idna-0.5.0 \
+		idna-1.0.2 \
 		indexmap-2.2.6 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
@@ -205,13 +206,13 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		lazy_static-1.4.0 \
 		libc-0.2.155 \
 		libloading-0.8.3 \
-		libmimalloc-sys-0.1.38 \
+		libmimalloc-sys-0.1.39 \
 		libredox-0.1.3 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
 		litemap-0.7.3 \
 		lock_api-0.4.12 \
-		log-0.4.21 \
+		log-0.4.22 \
 		log-mdc-0.1.0 \
 		log4rs-1.3.0 \
 		lru-cache-0.1.2 \
@@ -221,7 +222,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		matchers-0.1.0 \
 		md-5-0.10.6 \
 		memchr-2.7.4 \
-		mimalloc-0.1.42 \
+		mimalloc-0.1.43 \
 		mime-0.3.17 \
 		miniz_oxide-0.7.4 \
 		mio-0.8.11 \
@@ -269,7 +270,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.85 \
-		qrcode-0.14.0 \
+		qrcode-0.14.1 \
 		quick-error-1.2.3 \
 		quinn-0.10.2 \
 		quinn-0.11.2 \
@@ -306,7 +307,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		rustls-0.21.12 \
 		rustls-0.23.10 \
 		rustls-native-certs-0.6.3 \
-		rustls-native-certs-0.7.0 \
+		rustls-native-certs-0.7.1 \
 		rustls-pemfile-1.0.4 \
 		rustls-pemfile-2.1.2 \
 		rustls-pki-types-1.7.0 \
@@ -325,7 +326,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		serde-value-0.7.0 \
 		serde_bytes-0.11.14 \
 		serde_derive-1.0.203 \
-		serde_json-1.0.117 \
+		serde_json-1.0.120 \
 		serde_urlencoded-0.7.1 \
 		serde_yaml-0.9.34+deprecated \
 		sha1-0.10.6 \
@@ -353,7 +354,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		syn-2.0.66 \
 		sync_wrapper-1.0.1 \
 		synstructure-0.13.1 \
-		sysexits-0.8.0 \
+		sysexits-0.8.1 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
 		tap-1.0.1 \
@@ -399,7 +400,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		unsafe-libyaml-0.2.11 \
 		untrusted-0.7.1 \
 		untrusted-0.9.0 \
-		url-2.5.1 \
+		url-2.5.2 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
@@ -460,9 +461,9 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		zerofrom-0.1.4 \
 		zerofrom-derive-0.1.4 \
 		zeroize-1.8.1 \
-		zerovec-0.10.2 \
-		zerovec-derive-0.10.2 \
-		zstd-0.13.1 \
+		zerovec-0.10.4 \
+		zerovec-derive-0.10.3 \
+		zstd-0.13.2 \
 		zstd-safe-7.1.0 \
 		zstd-sys-2.0.11+zstd.1.5.6
 
