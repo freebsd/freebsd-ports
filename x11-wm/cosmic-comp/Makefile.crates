@@ -41,6 +41,7 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		backtrace-0.3.72 \
 		base64-0.13.1 \
 		base64-0.21.7 \
+		base64-0.22.1 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bit_field-0.10.2 \
@@ -206,9 +207,11 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		grid-0.11.0 \
 		guillotiere-0.6.2 \
 		half-2.4.1 \
+		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
 		hassle-rs-0.11.0 \
 		heck-0.4.1 \
+		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		hex-0.4.3 \
 		hexf-parse-0.2.1 \
@@ -225,6 +228,7 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		image-0.24.9 \
 		imagesize-0.10.1 \
 		imagesize-0.12.0 \
+		indexmap-1.9.3 \
 		indexmap-2.2.6 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
@@ -433,6 +437,8 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		serde_json-1.0.117 \
 		serde_repr-0.1.19 \
 		serde_spanned-0.6.6 \
+		serde_with-3.8.1 \
+		serde_with_macros-3.8.1 \
 		sha1-0.10.6 \
 		sha2-0.10.8 \
 		sharded-slab-0.1.7 \
@@ -536,7 +542,7 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		wasm-bindgen-macro-support-0.2.92 \
 		wasm-bindgen-shared-0.2.92 \
 		wasm-timer-0.2.5 \
-		wayland-backend-0.3.4 \
+		wayland-backend-0.3.5 \
 		wayland-client-0.31.3 \
 		wayland-csd-frame-0.3.0 \
 		wayland-cursor-0.31.3 \
@@ -549,7 +555,7 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		wayland-protocols-wlr-0.3.1 \
 		wayland-scanner-0.31.2 \
 		wayland-server-0.31.2 \
-		wayland-sys-0.31.2 \
+		wayland-sys-0.31.3 \
 		web-sys-0.3.69 \
 		web-time-0.2.4 \
 		web-time-1.1.0 \
@@ -623,13 +629,14 @@ CARGO_CRATES=	ab_glyph-0.2.26 \
 		cosmic-text@git+https://github.com/pop-os/cosmic-text.git\#a03ec6b75f0ea8fd6264d6cd05afcec3c2213f8f \
 		taffy@git+https://github.com/DioxusLabs/taffy?rev=7781c70\#7781c70241f7f572130c13106f2a869a9cf80885 \
 		d3d12,naga,wgpu,wgpu-core,wgpu-hal,wgpu-types@git+https://github.com/gfx-rs/wgpu?rev=20fda69\#20fda698341efbdc870b8027d6d49f5bf3f36109 \
+		cosmic-config,cosmic-config-derive,cosmic-theme,iced,iced_core,iced_futures,iced_graphics,iced_renderer,iced_runtime,iced_style,iced_tiny_skia,iced_wgpu,iced_widget,libcosmic@git+https://github.com/pop-os/libcosmic/\#928b714d14c4973a8c9467370864f8adc1c69d7c \
 		cosmic-protocols@git+https://github.com/pop-os/cosmic-protocols?branch=main\#f16efccaffdbe60b81d1a500be6e81851dc1dad4 \
 		glyphon@git+https://github.com/pop-os/glyphon.git?tag=v0.5.0\#1b0646ff8f74da92d3be704dfc2257d7f4d7eed8 \
-		cosmic-config,cosmic-config-derive,cosmic-theme,iced,iced_core,iced_futures,iced_graphics,iced_renderer,iced_runtime,iced_style,iced_tiny_skia,iced_wgpu,iced_widget,libcosmic@git+https://github.com/pop-os/libcosmic/\#61760f8e4e33744a451e8e8fe09d581793c9c677 \
 		smithay-clipboard@git+https://github.com/pop-os/smithay-clipboard?tag=pop-dnd-5\#d099e82a4c1e7d3e88dc34b7333de21928b1b22c \
 		clipboard_macos,clipboard_wayland,clipboard_x11,dnd,mime,window_clipboard@git+https://github.com/pop-os/window_clipboard.git?tag=pop-dnd-8\#7c59b07b9172d8e0401f7e06609e1050575309c9 \
 		atomicwrites@git+https://github.com/jackpot51/rust-atomicwrites\#043ab4859d53ffd3d55334685303d8df39c9f768 \
 		id_tree@git+https://github.com/Drakulix/id-tree.git?branch=feature/copy_clone\#632a57d6d49160e18d7300fa7edae52281ec5482 \
 		softbuffer@git+https://github.com/pop-os/softbuffer?tag=cosmic-4.0\#6e75b1ad7e98397d37cb187886d05969bc480995 \
 		smithay-egui@git+https://github.com/Smithay/smithay-egui.git?rev=cdc652e0\#cdc652e0d4823b16a5bd9badd288e38512789dc5 \
-		smithay@git+https://github.com/smithay/smithay?rev=a1650f8\#a1650f8568ad8bf0fd7844e98f4724d769cd3c75
+		smithay@git+https://github.com/smithay/smithay?rev=e2b233f\#e2b233ff588747310c8c4aa6bbb6d56c877351a8 \
+		cosmic-settings-config@git+https://github.com/pop-os/cosmic-settings-daemon\#ad0e0703549f7b135746d0429c6408cc8a7cc037
