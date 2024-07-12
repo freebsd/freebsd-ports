@@ -1,7 +1,6 @@
 PORTNAME=	ntpd-rs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.2
-PORTREVISION=	3
+DISTVERSION=	1.1.3
 CATEGORIES=	net
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -15,24 +14,23 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 USES=		cargo
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	pendulum-project
+
 USE_RC_SUBR=	ntp_daemon
 USERS=		_ntp
 GROUPS=		_ntp
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	pendulum-project
-CARGO_CRATES=
-
-BINFILES=	ntp-ctl ntp-daemon ntp-metrics-exporter
+BINFILES=	ntp-ctl ntp-daemon ntp-metrics-exporter nts-pool-ke
 
 post-patch:
-	@${REINPLACE_CMD} 's|%%ETCDIR%%|${ETCDIR}|' ${WRKSRC}/ntpd/src/daemon/config/mod.rs
+	@${REINPLACE_CMD} 's|%%ETCDIR%%|${ETCDIR}|' \
+	    ${PATCH_WRKSRC}/ntpd/src/daemon/config/mod.rs
 
 do-install:
 .for f in ${BINFILES}
 	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/${f} ${STAGEDIR}${LOCALBASE}/bin
 .endfor
-
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/ntp.server.toml ${STAGEDIR}${ETCDIR}/ntp.server.toml.sample
 	${INSTALL_DATA} ${WRKSRC}/docs/examples/conf/ntp.toml.default ${STAGEDIR}${ETCDIR}/ntp.toml.sample
