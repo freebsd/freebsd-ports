@@ -1,7 +1,7 @@
 PORTNAME=	dwl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm wayland
 MASTER_SITES=	https://codeberg.org/${PORTNAME}/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -18,7 +18,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.dwm
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
-		libwlroots-0.18.so:x11-toolkits/wlroots \
+		libwlroots-0.18.so:x11-toolkits/wlroots018 \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 

@@ -1,7 +1,7 @@
 PORTNAME=	como
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libwayland-server.so:graphics/wayland \
 		libWraplandServer.so:graphics/wrapland \
-		libwlroots-0.18.so:x11-toolkits/wlroots \
+		libwlroots-0.18.so:x11-toolkits/wlroots018 \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxcb-image.so:x11/xcb-util-image \

@@ -1,6 +1,7 @@
 PORTNAME=	cage
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.14:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
-		libwlroots-0.18.so:x11-toolkits/wlroots \
+		libwlroots-0.18.so:x11-toolkits/wlroots018 \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c11 meson pkgconfig

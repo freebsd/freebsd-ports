@@ -1,9 +1,10 @@
 PORTNAME=	wlroots
 DISTVERSION=	0.18.2
 CATEGORIES=	x11-toolkits
+PKGNAMESUFFIX=	018
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Modular Wayland compositor library
+COMMENT=	Modular Wayland compositor library (current 0.18.* series)
 WWW=		https://gitlab.freedesktop.org/wlroots/wlroots
 
 LICENSE=	MIT
@@ -22,6 +23,8 @@ USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 MESON_ARGS=	-Dexamples=false -Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
 PLIST_SUB=	SUFFIX=-${DISTVERSION:R}
+
+PORTSCOUT=	limit:^0\.18\.
 
 OPTIONS_DEFINE=	DRM LCMS2 LIBLIFTOFF OPENGL VULKAN X11
 OPTIONS_DEFAULT=DRM LCMS2 LIBLIFTOFF OPENGL VULKAN X11

@@ -1,6 +1,7 @@
 PORTNAME=	river
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.7
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		zig>=0.13.0:lang/zig
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libwayland-server.so:graphics/wayland \
-		libwlroots-0.18.so:x11-toolkits/wlroots \
+		libwlroots-0.18.so:x11-toolkits/wlroots018 \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 

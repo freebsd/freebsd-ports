@@ -4151,3 +4151,4 @@ lang/dotnet-runtime|lang/dotnet-host|2025-02-15|Rename to match Microsoft recomm
 net-im/qxmpp@qt5||2025-02-16|Qt5 flavor is no longer needed
 net-im/qxmpp@qt6|net-im/qxmpp|2025-02-16|Unflavorize; only Qt6 is supported
 databases/redis70||2025-02-16|Has expired: Has already reached its EoL
+x11-toolkits/wlroots|x11-toolkits/wlroots018|2025-02-19|Renamed to match versioned API
