@@ -152,7 +152,6 @@ CARGO_CRATES=	adler32-1.2.0 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.22 \
 		unicode-width-0.1.11 \
-		unindent-0.2.3 \
 		url-2.5.0 \
 		utf8parse-0.2.1 \
 		version_check-0.9.4 \
