@@ -399,6 +399,7 @@
     SUBDIR += unbound_exporter
     SUBDIR += unifi8
     SUBDIR += victoria-metrics
+    SUBDIR += victoria-logs
     SUBDIR += virt-viewer
     SUBDIR += vmutils
     SUBDIR += wdiag

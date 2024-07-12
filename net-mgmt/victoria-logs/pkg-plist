@@ -1,0 +1,20 @@
+bin/victoria-logs
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.md
+%%PORTDOCS%%%%DOCSDIR%%/LogsQL.md
+%%PORTDOCS%%%%DOCSDIR%%/QuickStart.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/Roadmap.md
+%%PORTDOCS%%%%DOCSDIR%%/data-ingestion/Filebeat.md
+%%PORTDOCS%%%%DOCSDIR%%/data-ingestion/Fluentbit.md
+%%PORTDOCS%%%%DOCSDIR%%/data-ingestion/Logstash.md
+%%PORTDOCS%%%%DOCSDIR%%/data-ingestion/Promtail.md
+%%PORTDOCS%%%%DOCSDIR%%/data-ingestion/README.md
+%%PORTDOCS%%%%DOCSDIR%%/data-ingestion/Vector.md
+%%PORTDOCS%%%%DOCSDIR%%/data-ingestion/syslog.md
+%%PORTDOCS%%%%DOCSDIR%%/keyConcepts.md
+%%PORTDOCS%%%%DOCSDIR%%/logsql-examples.md
+%%PORTDOCS%%%%DOCSDIR%%/provision_datasources.png
+%%PORTDOCS%%%%DOCSDIR%%/querying/README.md
+%%PORTDOCS%%%%DOCSDIR%%/victorialogs-datasource.md
+@dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%

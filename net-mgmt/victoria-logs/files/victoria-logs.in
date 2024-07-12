@@ -1,0 +1,66 @@
+#!/bin/sh
+
+# PROVIDE: victoria_logs
+# REQUIRE: NETWORK
+# BEFORE: DAEMON
+
+. /etc/rc.subr
+
+name="victoria_logs"
+desc="Fast and easy-to-use, open source logs solution"
+rcvar="victoria_logs_enable"
+pidfile="/var/run/${name}.pid"
+daemon_pidfile="/var/run/${name}-daemon.pid"
+logdir="/var/log/${name}"
+logfile="${logdir}/victoria_logs.log"
+command="%%PREFIX%%/bin/victoria-logs"
+victoria_logs_args=${victoria_logs_args-"--storageDataPath=%%VICTORIA_DATA%% --retentionPeriod=1 --httpListenAddr=:9428"}
+victoria_logs_user="%%VICTORIA_USER%%"
+load_rc_config ${name}
+
+start_cmd="start"
+stop_cmd="stop"
+status_cmd="status"
+extra_commands="reload"
+
+start()
+{
+	[ ! -d ${logdir} ] && mkdir -p ${logdir}
+	touch ${logfile}
+	chown ${victoria_logs_user} ${logdir} ${logfile}
+	/usr/sbin/daemon -u ${victoria_logs_user} -f -R5 -p ${pidfile} -P ${daemon_pidfile} -o ${logfile} ${command} ${victoria_logs_args}
+}
+
+stop()
+{
+	if [ -f "${daemon_pidfile}" ]; then
+		pids=$( pgrep -F ${daemon_pidfile} 2>&1 )
+		_err=$?
+		[ ${_err} -eq 0 ] && kill -9 ${pids} && /bin/rm -f ${daemon_pidfile}
+	fi
+	if [ -f "${pidfile}" ]; then
+		pids=$( pgrep -F ${pidfile} 2>&1 )
+		_err=$?
+		[ ${_err} -eq 0 ] && kill -9 ${pids} && /bin/rm -f ${pidfile}
+	fi
+}
+
+status()
+{
+	if [ -f "${pidfile}" ]; then
+		pids=$( pgrep -F ${pidfile} 2>&1 )
+		_err=$?
+		if [ ${_err} -eq 0 ]; then
+			echo "${name} is running as pid ${pids}"
+			exit 0
+		else
+			echo "wrong pid: ${pids}"
+			exit 1
+		fi
+	else
+		echo "no pidfile $pidfile"
+		exit 1
+	fi
+}
+
+run_rc_command "$1"

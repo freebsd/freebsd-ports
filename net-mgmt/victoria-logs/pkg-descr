@@ -1,0 +1,6 @@
+VictoriaLogs is open source user-friendly database for logs from VictoriaMetrics
+
+VictoriaLogs is a fast and easy-to-use, open source logs solution. It can accept
+logs from popular log collectors. It provides easy yet powerful query language
+with full-text search capabilities across all the log fields via LogsQL query
+language and supports fast full-text search over high-cardinality log fields.
