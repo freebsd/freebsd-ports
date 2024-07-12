@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-grape
-PORTVERSION=	0.1.8
+PORTVERSION=	0.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
