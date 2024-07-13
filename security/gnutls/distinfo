@@ -1,5 +1,5 @@
-TIMESTAMP = 1717849015
-SHA256 (gnutls-3.8.5.tar.xz) = 66269a2cfe0e1c2dabec87bdbbd8ab656f396edd9a40dd006978e003cfa52bfc
-SIZE (gnutls-3.8.5.tar.xz) = 6491504
+TIMESTAMP = 1720863124
+SHA256 (gnutls-3.8.6.tar.xz) = 2e1588aae53cb32d43937f1f4eca28febd9c0c7aa1734fc5dd61a7e81e0ebcdd
+SIZE (gnutls-3.8.6.tar.xz) = 6517476
 SHA256 (2d73d945c4b1dfcf8d2328c4d23187d62ffaab2d.patch) = 5e4bfa6946e5012cd518da453846ca9ed003dab18706814d502d84d6b4066627
 SIZE (2d73d945c4b1dfcf8d2328c4d23187d62ffaab2d.patch) = 7531

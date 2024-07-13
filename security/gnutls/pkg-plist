@@ -35,7 +35,7 @@ lib/libgnutls-openssl.so.27
 lib/libgnutls-openssl.so.27.0.2
 lib/libgnutls.so
 lib/libgnutls.so.30
-lib/libgnutls.so.30.39.0
+lib/libgnutls.so.30.40.0
 lib/libgnutlsxx.so
 lib/libgnutlsxx.so.30
 lib/libgnutlsxx.so.30.0.0
@@ -380,6 +380,7 @@ share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/gnutls_hash_get_len.3.gz
 %%MAN3%%share/man/man3/gnutls_hash_init.3.gz
 %%MAN3%%share/man/man3/gnutls_hash_output.3.gz
+%%MAN3%%share/man/man3/gnutls_hash_squeeze.3.gz
 %%MAN3%%share/man/man3/gnutls_heartbeat_allowed.3.gz
 %%MAN3%%share/man/man3/gnutls_heartbeat_enable.3.gz
 %%MAN3%%share/man/man3/gnutls_heartbeat_get_timeout.3.gz
@@ -576,6 +577,7 @@ share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/gnutls_pkcs12_export2.3.gz
 %%MAN3%%share/man/man3/gnutls_pkcs12_generate_mac.3.gz
 %%MAN3%%share/man/man3/gnutls_pkcs12_generate_mac2.3.gz
+%%MAN3%%share/man/man3/gnutls_pkcs12_generate_mac3.3.gz
 %%MAN3%%share/man/man3/gnutls_pkcs12_get_bag.3.gz
 %%MAN3%%share/man/man3/gnutls_pkcs12_import.3.gz
 %%MAN3%%share/man/man3/gnutls_pkcs12_init.3.gz
