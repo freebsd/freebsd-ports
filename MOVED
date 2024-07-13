@@ -3383,3 +3383,4 @@ devel/py-xcaplib|devel/py-python-xcaplib|2024-07-06|Move devel/py-xcaplib to dev
 devel/py-yaml|devel/py-pyyaml|2024-07-07|Move devel/py-yaml to devel/py-pyyaml
 devel/py-pyyaml5|devel/py-pyyaml|2024-07-07|Remove obsoleted port. Use devel/py-pyyaml instead
 x11-toolkits/wlroots-devel|x11-toolkits/wlroots|2024-07-12|Out of date: use x11-toolkits/wlroots for now
+x11-servers/xwayland-devel|x11-servers/xwayland|2024-07-12|Out of date: use x11-servers/xwayland for now
