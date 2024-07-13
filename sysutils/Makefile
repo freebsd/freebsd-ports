@@ -278,7 +278,6 @@
     SUBDIR += dar
     SUBDIR += darling-dmg
     SUBDIR += datadog-agent
-    SUBDIR += datadog-integrations
     SUBDIR += dateutils
     SUBDIR += dc3dd
     SUBDIR += dcfldd
