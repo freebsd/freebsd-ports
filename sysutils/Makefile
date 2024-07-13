@@ -277,7 +277,6 @@
     SUBDIR += damager
     SUBDIR += dar
     SUBDIR += darling-dmg
-    SUBDIR += datadog-agent
     SUBDIR += dateutils
     SUBDIR += dc3dd
     SUBDIR += dcfldd
