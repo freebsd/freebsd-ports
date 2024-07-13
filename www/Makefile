@@ -1565,6 +1565,7 @@
     SUBDIR += py-django-simple-captcha
     SUBDIR += py-django-simple-history
     SUBDIR += py-django-smart-selects
+    SUBDIR += py-django-soft-delete
     SUBDIR += py-django-solo
     SUBDIR += py-django-sortedm2m
     SUBDIR += py-django-star-ratings
