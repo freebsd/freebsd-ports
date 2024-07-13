@@ -405,6 +405,7 @@
     SUBDIR += xporthdmv
     SUBDIR += xvid
     SUBDIR += yamdi
+    SUBDIR += youtui
     SUBDIR += ytfzf
     SUBDIR += zart
     SUBDIR += zoneminder
