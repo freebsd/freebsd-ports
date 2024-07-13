@@ -1,3 +1,5 @@
-TIMESTAMP = 1689226827
-SHA256 (vprover-vampire-vHO4.8_GH0.tar.gz) = 7d6f906c08c265aeac5601c7eceefec3dc5d8e1e720f3fd2466eec0cc4f6cc9c
-SIZE (vprover-vampire-vHO4.8_GH0.tar.gz) = 1538556
+TIMESTAMP = 1720849438
+SHA256 (vprover-vampire-v4.9casc2024_GH0.tar.gz) = 7d0101dc296d0f6fb4f3326febf6a3f3bfd3400b36249a91794789c68a855f3d
+SIZE (vprover-vampire-v4.9casc2024_GH0.tar.gz) = 1502934
+SHA256 (Z3Prover-z3-79bbbf7_GH0.tar.gz) = 27bec158d3cb33be8204fe429d53a29102af1b61151e26631652ae2dac2b26e6
+SIZE (Z3Prover-z3-79bbbf7_GH0.tar.gz) = 5453931

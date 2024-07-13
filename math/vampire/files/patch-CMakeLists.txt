@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2024-06-14 13:05:27 UTC
++++ CMakeLists.txt
+@@ -807,15 +807,8 @@ find_package(
+ # normally this is just in /z3/build/, but this can be overridden
+ find_package(
+   Z3
++  REQUIRED
+   CONFIG
+-    NO_CMAKE_PATH
+-    NO_CMAKE_ENVIRONMENT_PATH
+-    NO_SYSTEM_ENVIRONMENT_PATH
+-    NO_CMAKE_PACKAGE_REGISTRY
+-    NO_CMAKE_SYSTEM_PATH
+-    NO_CMAKE_SYSTEM_PACKAGE_REGISTRY
+-    PATHS
+-      ${CMAKE_SOURCE_DIR}/z3/build/
+ )
+ if (NOT Z3_FOUND)
+   message(STATUS "No Z3 found -- Compiling without SMT support.")
