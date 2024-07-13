@@ -1,5 +1,5 @@
-TIMESTAMP = 1718897832
-SHA256 (freenginx-1.27.1.tar.gz) = 9570603b19f29566261bbbca67cc01343987de03a2ea7354fcbdef94f0eda439
-SIZE (freenginx-1.27.1.tar.gz) = 1223681
+TIMESTAMP = 1720632615
+SHA256 (freenginx-1.27.2.tar.gz) = e43500ff3e75a33a101a253cc252e7ebadc4a3d17e04951e77e719dda68b97d1
+SIZE (freenginx-1.27.2.tar.gz) = 1224762
 SHA256 (stnoonan-spnego-http-auth-nginx-module-3575542_GH0.tar.gz) = 6d710f97bef58b2d5dc54445c0e48103786425f6d4ab18cf30a2168904d0ba62
 SIZE (stnoonan-spnego-http-auth-nginx-module-3575542_GH0.tar.gz) = 24680
