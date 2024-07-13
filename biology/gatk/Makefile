@@ -63,7 +63,7 @@ do-fetch:
 			${MKDIR} ${WRKDIR}; \
 			HOME=${WRKDIR}; \
 			git config --global filter.lfs.smudge "git-lfs smudge -- %f" && \
-			GIT_CLONE_PROTECTION_ACTIVE=false git clone -q https://github.com/broadinstitute/gatk.git ${PORTNAME}-${DISTVERSION} && \
+			GIT_CLONE_PROTECTION_ACTIVE=false git clone -nq https://github.com/broadinstitute/gatk.git ${PORTNAME}-${DISTVERSION} && \
 			(cd ${PORTNAME}-${DISTVERSION} && git reset -q --hard ${DISTVERSION} && ${RM} -r .git) && \
 			${RM} -r ${WRKDIR} \
 		) && \
