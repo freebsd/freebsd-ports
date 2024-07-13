@@ -1,7 +1,7 @@
 PORTNAME=	inspircd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -62,7 +62,7 @@ MAXMIND_DESC=	Build m_geo_maxmind module
 MBEDTLS_DESC=	Build m_ssl_mbedtls module
 MYSQL_DESC=	Build m_mysql module
 OPENSSL_DESC=	Build m_ssl_openssl module
-PCRE2_DESC=	Build m_regex_pcre module
+PCRE2_DESC=	Build m_regex_pcre2 module
 PGSQL_DESC=	Build m_pgsql module
 POSIX_DESC=	Build m_regex_posix module
 RE2_DESC=	Build m_regex_re2 module
@@ -86,8 +86,8 @@ MYSQL_USES=		mysql
 MYSQL_VARS=		EXTRAS+=m_mysql.cpp
 OPENSSL_USES=		ssl
 OPENSSL_VARS=		EXTRAS+=m_ssl_openssl.cpp
-PCRE2_LIB_DEPENDS=	libpcre.so:devel/pcre
-PCRE2_VARS=		EXTRAS+=m_regex_pcre.cpp
+PCRE2_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+PCRE2_VARS=		EXTRAS+=m_regex_pcre2.cpp
 PGSQL_USES=		pgsql
 PGSQL_VARS=		EXTRAS+=m_pgsql.cpp
 POSIX_VARS=		EXTRAS+=m_regex_posix.cpp
