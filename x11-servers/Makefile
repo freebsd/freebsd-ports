@@ -6,6 +6,5 @@
     SUBDIR += xarcan
     SUBDIR += xorg-server
     SUBDIR += xwayland
-    SUBDIR += xwayland-devel
 
 .include <bsd.port.subdir.mk>

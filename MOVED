@@ -3378,3 +3378,4 @@ graphics/intel-backlight||2024-07-01|Has expired: Use backlight(8)
 www/yarn-node21||2024-07-02|Removed, part of www/node21
 www/npm-node21||2024-07-02|Removed, part of www/node21
 security/bcrypt||2024-07-02|Has expired: Hasn't seen updates in 15 years, insecure Blowfish ECB mode, unauthenticated encryption
+x11-servers/xwayland-devel|x11-servers/xwayland|2024-07-12|Out of date: use x11-servers/xwayland for now
