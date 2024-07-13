@@ -1,0 +1,11 @@
+--- cipher/Makefile.in.orig	2024-07-13 04:19:00 UTC
++++ cipher/Makefile.in
+@@ -643,7 +643,7 @@ EXTRA_libcipher_la_SOURCES = \
+ 	blake2s-amd64-avx.S blake2s-amd64-avx512.S
+ 
+ @ENABLE_O_FLAG_MUNGING_FALSE@o_flag_munging = cat
+-@ENABLE_O_FLAG_MUNGING_TRUE@o_flag_munging = sed -e 's/[[:blank:]]-O\([2-9sgz][2-9sgz]*\)/ -O1 /' -e 's/[[:blank:]]-Ofast/ -O1 /g'
++@ENABLE_O_FLAG_MUNGING_TRUE@o_flag_munging = sed -e 's/[[:blank:]]-O\([2-9sgz][2-9sgz]*\)/ -O1 /g' -e 's/[[:blank:]]-Ofast/ -O1 /g'
+ @ENABLE_INSTRUMENTATION_MUNGING_FALSE@instrumentation_munging = cat
+ 
+ # We need to disable instrumentation for these modules as they use cc as

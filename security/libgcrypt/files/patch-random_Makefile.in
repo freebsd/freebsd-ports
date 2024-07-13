@@ -1,0 +1,11 @@
+--- random/Makefile.in.orig	2024-07-13 04:20:47 UTC
++++ random/Makefile.in
+@@ -407,7 +407,7 @@ jitterentropy-base.c jitterentropy.h jitterentropy-bas
+ @ENABLE_O_FLAG_MUNGING_FALSE@o_flag_munging = cat
+ 
+ # The rndjent module needs to be compiled without optimization.  */
+-@ENABLE_O_FLAG_MUNGING_TRUE@o_flag_munging = sed -e 's/[[:blank:]]-O\([1-9sgz][1-9sgz]*\)/ -O0 /' -e 's/[[:blank:]]-Ofast/ -O0 /g'
++@ENABLE_O_FLAG_MUNGING_TRUE@o_flag_munging = sed -e 's/[[:blank:]]-O\([1-9sgz][1-9sgz]*\)/ -O0 /g' -e 's/[[:blank:]]-Ofast/ -O0 /g'
+ all: all-am
+ 
+ .SUFFIXES:
