@@ -16,8 +16,8 @@ WWW=		https://surge-synthesizer.github.io/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	riscv64 # see https://github.com/surge-synthesizer/surge/issues/6363
-NOT_FOR_ARCHS_REASON=	simde doesn't support riscv64
+NOT_FOR_ARCHS=	armv7 i386 powerpc riscv64 # see https://github.com/surge-synthesizer/surge/issues/6363
+NOT_FOR_ARCHS_REASON=	32 Bit Builds are only available on Windows; simde doesn't support riscv64
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/nanosvg.h:graphics/nanosvg \
