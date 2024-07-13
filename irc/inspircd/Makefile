@@ -1,6 +1,7 @@
 PORTNAME=	inspircd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	irc
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -49,7 +50,7 @@ PLIST_SUB=	INSPIRCD_DBDIR=${_INSPIRCD_DBDIR} \
 		INSPIRCD_USER=${USERS}
 
 OPTIONS_DEFINE=		ARGON GNUTLS JSON LDAP MAXMIND MBEDTLS MYSQL OPENSSL \
-			PCRE PGSQL POSIX RE2 SQLITE SSLREHASH SYSLOG
+			PCRE2 PGSQL POSIX RE2 SQLITE SSLREHASH SYSLOG
 OPTIONS_DEFAULT=	OPENSSL POSIX
 OPTIONS_SUB=		yes
 
@@ -61,7 +62,7 @@ MAXMIND_DESC=	Build m_geo_maxmind module
 MBEDTLS_DESC=	Build m_ssl_mbedtls module
 MYSQL_DESC=	Build m_mysql module
 OPENSSL_DESC=	Build m_ssl_openssl module
-PCRE_DESC=	Build m_regex_pcre module
+PCRE2_DESC=	Build m_regex_pcre module
 PGSQL_DESC=	Build m_pgsql module
 POSIX_DESC=	Build m_regex_posix module
 RE2_DESC=	Build m_regex_re2 module
@@ -85,8 +86,8 @@ MYSQL_USES=		mysql
 MYSQL_VARS=		EXTRAS+=m_mysql.cpp
 OPENSSL_USES=		ssl
 OPENSSL_VARS=		EXTRAS+=m_ssl_openssl.cpp
-PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
-PCRE_VARS=		EXTRAS+=m_regex_pcre.cpp
+PCRE2_LIB_DEPENDS=	libpcre.so:devel/pcre
+PCRE2_VARS=		EXTRAS+=m_regex_pcre.cpp
 PGSQL_USES=		pgsql
 PGSQL_VARS=		EXTRAS+=m_pgsql.cpp
 POSIX_VARS=		EXTRAS+=m_regex_posix.cpp
