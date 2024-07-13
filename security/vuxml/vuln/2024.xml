@@ -1,3 +1,41 @@
+  <vuln vid="55d4a92f-c75f-43e8-ab1f-4a0efc9795c4">
+    <topic>electron29 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron29</name>
+	<range><lt>29.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v29.4.4">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-6291.</li>
+	    <li>Security: backported fix for CVE-2024-6293.</li>
+	    <li>Security: backported fix for CVE-2024-6290.</li>
+	    <li>Security: backported fix for CVE-2024-6292.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-6291</cvename>
+      <url>https://github.com/advisories/GHSA-rpvg-h6p6-42qj</url>
+      <cvename>CVE-2024-6293</cvename>
+      <url>https://github.com/advisories/GHSA-9f8f-453p-rg87</url>
+      <cvename>CVE-2024-6290</cvename>
+      <url>https://github.com/advisories/GHSA-r5mh-qgc2-26p2</url>
+      <cvename>CVE-2024-6292</cvename>
+      <url>https://github.com/advisories/GHSA-m848-8f5r-6j4g</url>
+    </references>
+    <dates>
+      <discovery>2024-07-11</discovery>
+      <entry>2024-07-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="acb4eab6-3f6d-11ef-8657-001b217b3468">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
