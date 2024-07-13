@@ -6,7 +6,7 @@ CATEGORIES=	graphics
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	78b64375550e.patch:-p1 # https://github.com/AOMediaCodec/libavif/pull/2263
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for encoding and decoding .avif files
 WWW=		https://github.com/AOMediaCodec/libavif
 
