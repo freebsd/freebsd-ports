@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.7.1
+DISTVERSION=	2024.7.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -49,14 +49,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytes-1.6.0 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.0.105 \
+		cc-1.1.2 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		chrono-tz-0.9.0 \
 		chrono-tz-build-0.3.0 \
 		ci_info-0.14.14 \
-		clap-4.5.8 \
-		clap_builder-4.5.8 \
+		clap-4.5.9 \
+		clap_builder-4.5.9 \
 		clap_derive-4.5.8 \
 		clap_lex-0.7.1 \
 		clap_mangen-0.2.22 \
@@ -145,12 +145,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		home-0.5.9 \
 		homedir-0.2.1 \
 		http-1.1.0 \
-		http-body-1.0.0 \
+		http-body-1.0.1 \
 		http-body-util-0.1.2 \
 		httparse-1.9.4 \
 		humansize-2.1.3 \
 		humantime-2.1.0 \
-		hyper-1.4.0 \
+		hyper-1.4.1 \
 		hyper-rustls-0.27.2 \
 		hyper-tls-0.6.0 \
 		hyper-util-0.1.6 \
@@ -266,7 +266,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
 		rustix-0.38.34 \
-		rustls-0.23.10 \
+		rustls-0.23.11 \
 		rustls-native-certs-0.7.1 \
 		rustls-pemfile-2.1.2 \
 		rustls-pki-types-1.7.0 \
@@ -278,7 +278,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		security-framework-2.11.0 \
 		security-framework-sys-2.11.0 \
 		self-replace-1.3.7 \
-		self_update-0.40.0 \
+		self_update-0.41.0 \
 		semver-1.0.23 \
 		serde-1.0.204 \
 		serde_derive-1.0.204 \
@@ -308,7 +308,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strum_macros-0.26.4 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
-		syn-2.0.69 \
+		syn-2.0.71 \
 		sync_wrapper-1.0.1 \
 		sys-info-0.9.1 \
 		tabled-0.15.0 \
@@ -324,13 +324,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		test-case-macros-3.3.1 \
 		test-log-0.2.16 \
 		test-log-macros-0.2.16 \
-		thiserror-1.0.61 \
-		thiserror-impl-1.0.61 \
+		thiserror-1.0.62 \
+		thiserror-impl-1.0.62 \
 		thread_local-1.1.8 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
-		tinyvec-1.7.0 \
+		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.38.0 \
 		tokio-native-tls-0.3.1 \
@@ -338,7 +338,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-util-0.7.11 \
 		toml-0.8.14 \
 		toml_datetime-0.6.6 \
-		toml_edit-0.22.14 \
+		toml_edit-0.22.15 \
 		tower-0.4.13 \
 		tower-layer-0.3.2 \
 		tower-service-0.3.2 \
