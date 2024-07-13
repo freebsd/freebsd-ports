@@ -3907,6 +3907,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/mat/tests/ex262f.F90
 %%DATADIR%%/examples/src/mat/tests/ex263.c
 %%DATADIR%%/examples/src/mat/tests/ex264.c
+%%DATADIR%%/examples/src/mat/tests/ex265.c
 %%DATADIR%%/examples/src/mat/tests/ex27.c
 %%DATADIR%%/examples/src/mat/tests/ex28.c
 %%DATADIR%%/examples/src/mat/tests/ex29.c
@@ -4476,6 +4477,15 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/mat/tests/output/ex262f_1.out
 %%DATADIR%%/examples/src/mat/tests/output/ex263_1.out
 %%DATADIR%%/examples/src/mat/tests/output/ex263_2.out
+%%DATADIR%%/examples/src/mat/tests/output/ex265_2_dm_mat_type-aij.out
+%%DATADIR%%/examples/src/mat/tests/output/ex265_2_dm_mat_type-baij.out
+%%DATADIR%%/examples/src/mat/tests/output/ex265_2_dm_mat_type-sbaij.out
+%%DATADIR%%/examples/src/mat/tests/output/ex265_3_dm_mat_type-aij.out
+%%DATADIR%%/examples/src/mat/tests/output/ex265_3_dm_mat_type-baij.out
+%%DATADIR%%/examples/src/mat/tests/output/ex265_3_dm_mat_type-sbaij.out
+%%DATADIR%%/examples/src/mat/tests/output/ex265_dm_mat_type-aij.out
+%%DATADIR%%/examples/src/mat/tests/output/ex265_dm_mat_type-baij.out
+%%DATADIR%%/examples/src/mat/tests/output/ex265_dm_mat_type-sbaij.out
 %%DATADIR%%/examples/src/mat/tests/output/ex26_1.out
 %%DATADIR%%/examples/src/mat/tests/output/ex26_2.out
 %%DATADIR%%/examples/src/mat/tests/output/ex27_1.out
