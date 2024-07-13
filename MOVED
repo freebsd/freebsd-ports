@@ -3386,3 +3386,4 @@ x11-toolkits/wlroots-devel|x11-toolkits/wlroots|2024-07-12|Out of date: use x11-
 x11-servers/xwayland-devel|x11-servers/xwayland|2024-07-12|Out of date: use x11-servers/xwayland for now
 sysutils/datadog-integrations||2024-07-13|Has expired: Depends on expired sysutils/datadog-agent
 sysutils/datadog-agent||2024-07-13|Has expired: Unfetchable and marked BROKEN for several months
+converters/i18ntools||2024-07-13|Has expired: Depends on expired converters/tuc
