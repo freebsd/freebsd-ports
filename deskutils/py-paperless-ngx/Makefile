@@ -1,7 +1,6 @@
 PORTNAME=	paperless-ngx
-PORTVERSION=	2.7.2
+PORTVERSION=	2.11.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/:webui \
 		GH:gh
@@ -27,6 +26,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bleach>=6.1.0:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-extensions>=3.2.3:www/py-django-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-filter>=23.5:www/py-django-filter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-multiselectfield>=0.1.12:www/py-django-multiselectfield@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-soft-delete>=1.0.13:www/py-django-soft-delete@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}djangorestframework-guardian>=0.3.0:www/py-djangorestframework-guardian@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}drf-writable-nested>=0.7.0:www/py-drf-writable-nested@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.13.1:sysutils/py-filelock@${PY_FLAVOR} \
