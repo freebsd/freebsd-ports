@@ -4,7 +4,7 @@ DISTVERSION=	1.0.4
 PORTREVISION=	1
 CATEGORIES=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for encoding and decoding .avif files
 WWW=		https://github.com/AOMediaCodec/libavif
 
