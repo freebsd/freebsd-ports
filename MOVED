@@ -3382,3 +3382,4 @@ devel/py-stackexchange|devel/py-py-stackexchange|2024-07-06|Move devel/py-stacke
 devel/py-xcaplib|devel/py-python-xcaplib|2024-07-06|Move devel/py-xcaplib to devel/py-python-xcaplib
 devel/py-yaml|devel/py-pyyaml|2024-07-07|Move devel/py-yaml to devel/py-pyyaml
 devel/py-pyyaml5|devel/py-pyyaml|2024-07-07|Remove obsoleted port. Use devel/py-pyyaml instead
+x11-toolkits/wlroots-devel|x11-toolkits/wlroots|2024-07-12|Out of date: use x11-toolkits/wlroots for now
