@@ -3388,3 +3388,4 @@ sysutils/datadog-integrations||2024-07-13|Has expired: Depends on expired sysuti
 sysutils/datadog-agent||2024-07-13|Has expired: Unfetchable and marked BROKEN for several months
 converters/i18ntools||2024-07-13|Has expired: Depends on expired converters/tuc
 converters/tuc||2024-07-13|Has expired: Dead upstream and unfetchable
+sysutils/ipfs-go|sysutils/kubo-go|2024-07-13|Project was renamed upstream
