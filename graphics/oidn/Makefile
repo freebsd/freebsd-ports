@@ -64,7 +64,7 @@ pre-fetch:
 			${MKDIR} ${WRKDIR}; \
 			HOME=${WRKDIR}; \
 			git config --global filter.lfs.smudge "git-lfs smudge -- %f" && \
-			GIT_CLONE_PROTECTION_ACTIVE=false git clone -q ${WEIGHTS_GIT_URL} ${PORTNAME}-weights-${WEIGHTS_GIT_HASH} && \
+			GIT_CLONE_PROTECTION_ACTIVE=false git clone -nq ${WEIGHTS_GIT_URL} ${PORTNAME}-weights-${WEIGHTS_GIT_HASH} && \
 			(cd ${PORTNAME}-weights-${WEIGHTS_GIT_HASH} && git reset -q --hard ${WEIGHTS_GIT_HASH} && ${RM} -r .git) && \
 			${RM} -r ${WRKDIR} \
 		) && \
