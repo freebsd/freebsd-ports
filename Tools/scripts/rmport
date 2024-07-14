@@ -445,6 +445,13 @@ for catport in $* ; do
 
 	# everything seems ok, edit the files
 
+	if [ -z "${catport##www/node*}" ] ; then
+		node_version="${catport##www/node}"
+		if [ -n "${node_version}" ] ; then
+			echo "You are removing a node port, do not forget www/npm-node${node_version} and www/yarn-node${node_version}"
+		fi
+	fi
+
 	edit_MOVED ${catport}
 
 	edit_Makefile ${cat} ${port}
