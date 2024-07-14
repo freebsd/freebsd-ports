@@ -1,9 +1,9 @@
 PORTNAME=	vimb
 DISTVERSION=	3.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mew14930xvi@inbox.lv
 COMMENT=	Vim like browser
 WWW=		https://fanglingsu.github.io/vimb/
 
@@ -16,21 +16,24 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 USES=		compiler:c11 desktop-file-utils gmake gnome pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	fanglingsu
-GH_PROJECT=	vimb
-USE_GNOME=	cairo gdkpixbuf2 gtk30
+USE_GNOME=	cairo glib20 gtk30
 
-MAKE_ARGS=	MANPREFIX=${STAGEDIR}${PREFIX}/share/man \
-		V=1 \
+MAKE_ARGS=	V=1 \
 		version="${DISTVERSION}"
 LDFLAGS+=	-Wl,--as-needed
 
 PLIST_FILES=	bin/vimb \
 		lib/vimb/webext_main.so \
-		share/man/man1/vimb.1.gz \
 		share/applications/vimb.desktop \
+		share/man/man1/vimb.1.gz \
 		share/metainfo/vimb.metainfo.xml
 
+OPTIONS_DEFINE=	GSTREAMER
+GSTREAMER_USES=	gstreamer
+GSTREAMER_USE=	GSTREAMER=good,libav
+
 post-patch:
+	@${REINPLACE_CMD} -e 's|gtk-4.1|gtk-4.0|' ${WRKSRC}/config.mk
 # .git/index needs to exist to generate version.h...
 	${MKDIR} ${WRKSRC}/.git/index
 
