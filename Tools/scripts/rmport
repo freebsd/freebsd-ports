@@ -127,7 +127,7 @@ find_expired()
 
 # check if some ports depend on the given port
 # XXX Very Little Chance (tm) for breaking INDEX exists:
-# /usr/ports/INDEX may be outdated and not contain recently added dependencies
+# INDEX may be outdated and not contain recently added dependencies
 check_dep_core()
 {
 	catport=${1}
