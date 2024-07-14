@@ -8,6 +8,9 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	SVG rendering library
 WWW=		https://cairographics.org
 
+DEPRECATED=	Depends on deprecated library graphics/libsvg
+EXPIRATION_DATE=2024-07-31
+
 LIB_DEPENDS=	libsvg.so:graphics/libsvg \
 		libcairo.so:graphics/cairo
 
