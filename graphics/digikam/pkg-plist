@@ -4,6 +4,7 @@ bin/digitaglinktree
 bin/showfoto
 include/digikam/batchtool.h
 include/digikam/bcgcontainer.h
+include/digikam/bqminfoiface.h
 include/digikam/captionvalues.h
 include/digikam/coredbaccess.h
 include/digikam/coredbalbuminfo.h
@@ -17,11 +18,13 @@ include/digikam/dbengineconfig.h
 include/digikam/dbengineconfigsettings.h
 include/digikam/dbengineerrorhandler.h
 include/digikam/dbengineparameters.h
+include/digikam/dbinfoiface.h
 include/digikam/dcolor.h
 include/digikam/dcolorblend.h
 include/digikam/dcolorcomposer.h
 include/digikam/dcolorpixelaccess.h
 include/digikam/dcolorselector.h
+include/digikam/dexpanderbox.h
 include/digikam/dhistoryview.h
 include/digikam/digikam_config.h
 include/digikam/digikam_core_export.h
@@ -41,6 +44,7 @@ include/digikam/dimgthreadedanalyser.h
 include/digikam/dimgthreadedfilter.h
 include/digikam/dinfointerface.h
 include/digikam/ditemslist.h
+include/digikam/ditemtooltip.h
 include/digikam/dmessagebox.h
 include/digikam/dmetainfoiface.h
 include/digikam/dplugin.h
@@ -62,6 +66,7 @@ include/digikam/drawdecodersettings.h
 include/digikam/drawdecoding.h
 include/digikam/drawinfo.h
 include/digikam/dsavesettingswidget.h
+include/digikam/dtextedit.h
 include/digikam/dwizarddlg.h
 include/digikam/dwizardpage.h
 include/digikam/dynamicthread.h
@@ -77,6 +82,7 @@ include/digikam/graphicsdimgview.h
 include/digikam/historyimageid.h
 include/digikam/iccprofile.h
 include/digikam/icctransform.h
+include/digikam/imagecurves.h
 include/digikam/imagedialog.h
 include/digikam/imageiface.h
 include/digikam/imageregionwidget.h
@@ -84,12 +90,14 @@ include/digikam/imagezoomsettings.h
 include/digikam/iofilesettings.h
 include/digikam/iteminfo.h
 include/digikam/iteminfolist.h
+include/digikam/iteminfoset.h
 include/digikam/loadingdescription.h
 include/digikam/loadsavethread.h
 include/digikam/managedloadsavethread.h
 include/digikam/metadatainfo.h
 include/digikam/metaengine.h
 include/digikam/metaengine_data.h
+include/digikam/modelcompleter.h
 include/digikam/photoinfocontainer.h
 include/digikam/previewlayout.h
 include/digikam/previewloadthread.h
@@ -97,6 +105,8 @@ include/digikam/previewsettings.h
 include/digikam/previewtoolbar.h
 include/digikam/queuesettings.h
 include/digikam/rginfo.h
+include/digikam/searchtextbar.h
+include/digikam/statesavingobject.h
 include/digikam/thumbnailinfo.h
 include/digikam/thumbnailloadthread.h
 include/digikam/wbcontainer.h
