@@ -1,6 +1,5 @@
 PORTNAME=	automake
-PORTVERSION=	1.16.5
-PORTREVISION=	2
+DISTVERSION=	1.17
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -13,18 +12,18 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 LICENSE_FILE_GFDL=	${WRKSRC}/doc/fdl.texi
 
-BUILD_DEPENDS=	autoconf>=2.69:devel/autoconf
-RUN_DEPENDS=	autoconf>=2.69:devel/autoconf
+BUILD_DEPENDS=	autoconf>=2.72:devel/autoconf
+RUN_DEPENDS=	autoconf>=2.72:devel/autoconf
 
-BUILD_VERSION=	1.16
-PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 USES=		cpe perl5 tar:xz
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-INFO=		automake automake-history
 CPE_VENDOR=	gnu
 
+GNU_CONFIGURE=	yes
+
 NO_ARCH=	yes
+
+INFO=		automake automake-history
+PLIST_SUB=	BUILD_VERSION=${DISTVERSION:C/(\.[^.]*).*/\1/}
 
 OPTIONS_DEFINE=	DOCS
 

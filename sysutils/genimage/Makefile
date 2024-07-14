@@ -19,6 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pengutronix
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-silent-rules
 
 PLIST_FILES=	bin/genimage
 

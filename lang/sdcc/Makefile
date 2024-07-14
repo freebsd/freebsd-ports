@@ -1,7 +1,7 @@
 PORTNAME=	sdcc
 PORTVERSION=	4.0.0
 DISTVERSIONPREFIX=src-
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
@@ -76,39 +76,14 @@ post-patch:
 		${WRKSRC}/support/sdbinutils/libiberty/Makefile.in
 	@${REINPLACE_CMD} '/^SUBDIRS =/s/doc//' \
 		${WRKSRC}/support/sdbinutils/bfd/Makefile.in
-	@${REINPLACE_CMD} 's/[[:<:]]ARCH[[:>:]]/PICARCH/g' \
-		${WRKSRC}/device/lib/pic14/Makefile.common \
-		${WRKSRC}/device/lib/pic14/Makefile.in \
-		${WRKSRC}/device/lib/pic14/configure \
-		${WRKSRC}/device/lib/pic14/configure.ac \
-		${WRKSRC}/device/lib/pic14/libc/Makefile.in \
-		${WRKSRC}/device/lib/pic14/libm/Makefile.in \
-		${WRKSRC}/device/lib/pic14/libsdcc/enhanced/Makefile.in \
-		${WRKSRC}/device/lib/pic14/libsdcc/enhanced-no-xinst/Makefile.in \
-		${WRKSRC}/device/lib/pic14/libsdcc/regular/Makefile.in \
-		${WRKSRC}/device/lib/pic16/Makefile.in \
-		${WRKSRC}/device/lib/pic16/configure \
-		${WRKSRC}/device/lib/pic16/configure.ac \
-		${WRKSRC}/device/lib/pic16/debug/Makefile.in \
-		${WRKSRC}/device/lib/pic16/libc/Makefile.in \
-		${WRKSRC}/device/lib/pic16/libio/Makefile.in \
-		${WRKSRC}/device/lib/pic16/libm/Makefile.in \
-		${WRKSRC}/device/lib/pic16/libsdcc/Makefile.in \
-		${WRKSRC}/device/lib/pic16/startup/Makefile.in \
-		${WRKSRC}/device/non-free/lib/pic14/Makefile.common.in \
-		${WRKSRC}/device/non-free/lib/pic14/Makefile.rules \
-		${WRKSRC}/device/non-free/lib/pic16/Makefile.in \
-		${WRKSRC}/device/non-free/lib/pic16/configure \
-		${WRKSRC}/device/non-free/lib/pic16/configure.ac \
-		${WRKSRC}/device/non-free/lib/pic16/libdev/Makefile.in \
-		${WRKSRC}/device/non-free/lib/pic16/libdev/mkmk.sh
-	@${REINPLACE_CMD} 's/[[:<:]]arch[[:>:]]/picarch/g' \
-		${WRKSRC}/device/non-free/lib/pic16/libdev/mkmk.sh
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} 's, [a-z-]*doc,,' \
 		${WRKSRC}/Makefile.in \
 		${WRKSRC}/sim/ucsim/packages_in.mk
+
+pre-configure:
+	cd ${WRKSRC}/device/lib/pic14 && ${AUTORECONF} -f -i
 
 post-install:
 	${FIND} -d ${STAGEDIR}${DATADIR} -type d -empty -delete

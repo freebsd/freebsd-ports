@@ -1,0 +1,12 @@
+--- Makefile.am.orig	2024-07-04 14:07:20 UTC
++++ Makefile.am
+@@ -1,6 +1,6 @@
+-if BUILD_SILENTLY
+-AM_MAKEFLAGS = --no-print-directory
+-endif
++AM_MAKEFLAGS = $(AM_MAKEFLAGS_@AM_V@)
++AM_MAKEFLAGS_ = $(AM_MAKEFLAGS_@AM_DEFAULT_V@)
++AM_MAKEFLAGS_0 = --no-print-directory
+ 
+ EXTRA_DIST = \
+ 	README.rst \

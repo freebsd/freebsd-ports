@@ -15,7 +15,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libtls.so:security/libretls
 RUN_DEPENDS=	rsync>0:net/rsync
 
-USES=		autoreconf:build libtool pkgconfig ssl
+USES=		libtool pkgconfig ssl
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
