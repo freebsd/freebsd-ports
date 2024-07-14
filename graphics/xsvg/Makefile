@@ -8,6 +8,9 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	X11 SVG viewer
 WWW=		https://cairographics.org/
 
+DEPRECATED=	Depends on deprecated library graphics/libsvg-cairo
+EXPIRATION_DATE=2024-07-31
+
 LIB_DEPENDS=	libsvg-cairo.so:graphics/libsvg-cairo
 
 USES=		pkgconfig xorg
