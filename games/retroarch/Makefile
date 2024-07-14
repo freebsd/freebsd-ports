@@ -1,10 +1,10 @@
 PORTNAME=	RetroArch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.18.0
+DISTVERSION=	1.19.1
 PORTREVISION=	1
 CATEGORIES=	games emulators
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Cross-platform entertainment system based on libretro API
 WWW=		https://github.com/libretro/RetroArch
 

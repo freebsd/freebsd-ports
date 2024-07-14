@@ -1,10 +1,11 @@
 bin/retroarch
 bin/retroarch-cg2glsl
 etc/retroarch.cfg
-share/man/man6/retroarch-cg2glsl.6.gz
-share/man/man6/retroarch.6.gz
-share/applications/retroarch.desktop
+etc/retroarch.cfg.bak
+share/applications/org.libretro.RetroArch.desktop
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+share/man/man6/retroarch-cg2glsl.6.gz
+share/man/man6/retroarch.6.gz
 share/metainfo/com.libretro.RetroArch.appdata.xml
 share/pixmaps/retroarch.svg
