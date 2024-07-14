@@ -251,7 +251,7 @@ edit_MOVED()
 	catport=${1}
 
 	DEPRECATED="$(make -C ${PORTSDIR}/${catport} -V DEPRECATED)"
-	DEPRECATED=${DEPRECATED:+: ${DEPRECATED}}
+	DEPRECATED=${DEPRECATED:+: ${DEPRECATED%.}}
 	if [ -n "$(make -C ${PORTSDIR}/${catport} -V EXPIRATION_DATE)" ] ; then
 		REASON="Has expired${DEPRECATED}"
 	else
