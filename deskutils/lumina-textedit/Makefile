@@ -6,7 +6,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Plaintext editor from the Lumina Desktop
-WWW=		https://lumina-desktop.org/
+WWW=		https://github.com/lumina-desktop/lumina/tree/master/src-qt5/desktop-utils/lumina-textedit
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../../LICENSE
