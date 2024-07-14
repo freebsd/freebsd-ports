@@ -1,6 +1,5 @@
 PORTNAME=	argh
-PORTVERSION=	0.31.2
-PORTREVISION=	0
+PORTVERSION=	0.31.3
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +16,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>=4.1:devel/py-pytest-cov@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}tox>=4.11.3:devel/py-tox@${PY_FLAVOR}
 
 USES=		python
-# tests: 169 passed, 1 warning
+# tests: 170 passed, 1 warning
 USE_PYTHON=	autoplist pep517 pytest
 
 .include <bsd.port.mk>
