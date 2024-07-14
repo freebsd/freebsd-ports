@@ -1,7 +1,7 @@
 PORTNAME=	libepoxy
 DISTVERSION=	1.5.10
 CATEGORIES=	graphics
-MASTER_SITES=   GNOME/sources/${PORTNAME}/${PORTVERSION:C/\.([0-9]+)$$//}
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Library to handle OpenGL function pointer management
