@@ -2,7 +2,7 @@ PORTNAME=	emc2
 DISTVERSIONPREFIX=v
 DISTVERSION=	2.17
 CATEGORIES=	math science
-MASTER_SITES=	https://www.ljll.math.upmc.fr/~hecht/ftp/emc2/
+MASTER_SITES=	https://www.ljll.fr/hecht/ftp/${PORTNAME}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
