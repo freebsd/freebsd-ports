@@ -1,5 +1,5 @@
 PORTNAME=	gdstk
-DISTVERSION=	0.9.52
+DISTVERSION=	0.9.53
 CATEGORIES=	cad
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,8 +21,9 @@ LIB_DEPENDS=	libqhull_r.so:math/qhull
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		compiler:c++11-lang python
-USE_PYTHON=	pep517 autoplist pytest # tests fail to run, see https://github.com/heitzmann/gdstk/issues/244
+USE_PYTHON=	pep517 autoplist pytest # tests crash, see https://github.com/heitzmann/gdstk/issues/263
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/tests
 
 .include <bsd.port.mk>

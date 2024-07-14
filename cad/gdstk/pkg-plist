@@ -15,6 +15,7 @@ include/gdstk/oasis.hpp
 include/gdstk/pathcommon.hpp
 include/gdstk/polygon.hpp
 include/gdstk/property.hpp
+include/gdstk/raithdata.hpp
 include/gdstk/rawcell.hpp
 include/gdstk/reference.hpp
 include/gdstk/repetition.hpp
