@@ -23,8 +23,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	IntersectMBO
 
 GH_TUPLE=	IntersectMBO:libsodium:${LIBSODIUM_HASH}:sodium	\
-		IntersectMBO:cardano-node:34d89af65439db92293b88967c299c20692abc1c:cardano_node/dist-newstyle/src/cardano-n_-76eff2ee0c4853a8 \
-		input-output-hk:persistent-documentation:0e95dbb144b02a2e6bf3a8a7531f4ad2f7d64ce5:persistent_documentation/dist-newstyle/src/persisten_-5150a7c8af66dc1b
+		IntersectMBO:cardano-node:34d89af65439db92293b88967c299c20692abc1c:cardano_node/dist-newstyle/src/cardano-n_-5bf92c55f9471797 \
+		input-output-hk:persistent-documentation:0e95dbb144b02a2e6bf3a8a7531f4ad2f7d64ce5:persistent_documentation/dist-newstyle/src/persisten_-a1243ced6d6a0f35
 
 CARDANO_DB_SYNC_HASH=	ed3dc8bbb79f07c26ec43f10bad661b0bef3b915
 LIBSODIUM_HASH=		dbb48cce5429cb6585c9034f002568964f1ce567
