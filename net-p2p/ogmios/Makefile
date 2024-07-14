@@ -20,9 +20,9 @@ USES=		autoreconf:build cabal gmake libtool pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	cardanosolutions
 
-GH_TUPLE=	CardanoSolutions:cardano-ledger:558cad41ef01a35ac62c28cf06e954fdfd790e28:cardano_ledger/dist-newstyle/src/cardano-l_-6b996a115581d6b4 \
-		CardanoSolutions:hjsonpointer:879f0e74d55eef76ceaec8f60ed07657ab84bad7:hjsonpointer/dist-newstyle/src/hjsonpoin_-7ff00a090c3690f1 \
-		CardanoSolutions:hjsonschema:35e0b05c3867463363e67f00a5092cd39fa33313:hjsonschema/dist-newstyle/src/hjsonsche_-2e03e83371b3a154
+GH_TUPLE=	CardanoSolutions:cardano-ledger:558cad41ef01a35ac62c28cf06e954fdfd790e28:cardano_ledger/dist-newstyle/src/cardano-l_-7f5c364558002b78 \
+		CardanoSolutions:hjsonpointer:879f0e74d55eef76ceaec8f60ed07657ab84bad7:hjsonpointer/dist-newstyle/src/hjsonpoin_-3d779e366b924614 \
+		CardanoSolutions:hjsonschema:35e0b05c3867463363e67f00a5092cd39fa33313:hjsonschema/dist-newstyle/src/hjsonsche_-81a43d45afbdadcc
 
 GH_TUPLE+=	input-output-hk:libsodium:${LIBSODIUM_HASH}:sodium
 
