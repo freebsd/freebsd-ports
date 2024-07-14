@@ -54,6 +54,7 @@ WITH_LARGE_FILES_FETCH_DEPENDS=	git:devel/git \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWITH_LARGE_FILES}
+# fetch the main distfile including git-lsf files
 do-fetch:
 	@if [ "${FORCE_FETCH_ALL}" = "true" ] || ! [ -f "${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}" ]; then \
 		${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
@@ -72,6 +73,16 @@ do-fetch:
 		${TAR} czf ${DISTNAME}${EXTRACT_SUFX} --gid 0 --uid 0 --options gzip:!timestamp --no-recursion --null -T - && \
 		${RM} -r ${PORTNAME}-${DISTVERSION}; \
 	fi
+# fetch the deps distfile
+.  if (${DEV_UPDATE_MODE} == "no")
+	@if [ "${FORCE_FETCH_ALL}" = "true" ] || ! [ -f "${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}" ]; then \
+		${ECHO} "==> Fetching the deps distfile for ${PORTNAME}" && \
+		${SETENV} \
+			${_DO_FETCH_ENV} ${_MASTER_SITES_ENV} \
+			dp_SITE_FLAVOR=MASTER \
+			${SH} ${SCRIPTSDIR}/do-fetch.sh ${DISTFILES:M*\:deps}; \
+	fi
+.  endif
 .endif
 
 .if (${DEV_UPDATE_MODE} == "yes")
