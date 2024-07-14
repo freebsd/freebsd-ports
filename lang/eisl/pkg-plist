@@ -12,6 +12,7 @@ bin/eisl
 %%DATADIR%%/library/cxr.lsp
 %%DATADIR%%/library/datetime.lsp
 %%DATADIR%%/library/datetime.o
+%%DATADIR%%/library/distributed.lsp
 %%DATADIR%%/library/elixir.lsp
 %%DATADIR%%/library/escape.lsp
 %%DATADIR%%/library/escape.o
