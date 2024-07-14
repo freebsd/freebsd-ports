@@ -10,6 +10,8 @@ WWW=		https://mutants.rs/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails, see https://github.com/sourcefrog/cargo-mutants/issues/380
+
 USES=		cargo
 
 USE_GITHUB=	yes
