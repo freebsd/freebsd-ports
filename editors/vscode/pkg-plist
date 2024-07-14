@@ -585,8 +585,10 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2023.collection.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2023.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2023.full.d.ts
+%%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2023.intl.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es5.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es6.d.ts
+%%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.array.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.collection.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.decorators.d.ts
@@ -595,6 +597,8 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.intl.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.object.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.promise.d.ts
+%%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.regexp.d.ts
+%%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.string.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.scripthost.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.webworker.asynciterable.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.webworker.d.ts
