@@ -38,7 +38,8 @@
 -#include <iprt/mem.h>
 +#include <geom/geom.h>
 +#include <geom/geom_vfs.h>
- 
+-
++#include <vm/uma.h>
 +#include "vboxvfs.h"
 +
  #define VFSMP2SFGLOBINFO(mp) ((struct sf_glob_info *)mp->mnt_data)
