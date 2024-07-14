@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	tracd:www/trac
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
-REV=			17763
+REV=			17824
 WRKSRC=			${WRKDIR}/spam-filter
 USES=			python zip
 USE_PYTHON=		distutils autoplist
