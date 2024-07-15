@@ -20,7 +20,7 @@ USE_KDE=	ecm:build
 KDE_PLASMA_VERSION=	${DISTVERSION}
 KDE_PLASMA_BRANCH=	Attic
 
-USE_QT=	buildtools:build qmake:build
+USE_QT=	buildtools:build core:build qmake:build
 
 NO_ARCH=	yes
 

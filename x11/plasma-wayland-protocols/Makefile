@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 USES=		cmake kde:5 qt:5 tar:xz
 USE_KDE=	ecm:build
-USE_QT=		buildtools:build qmake:build
+USE_QT=		buildtools:build core:build qmake:build
 
 NO_ARCH=	yes
 
