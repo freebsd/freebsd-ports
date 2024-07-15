@@ -9,7 +9,7 @@ COMMENT=	Asynchronous low latency C++ logging library
 WWW=		https://github.com/odygrd/quill
 
 LICENSE=	MIT
-LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake:testing compiler:c++17-lang
 
