@@ -5734,6 +5734,7 @@
     SUBDIR += py-setproctitle
     SUBDIR += py-setuptools
     SUBDIR += py-setuptools-declarative-requirements
+    SUBDIR += py-setuptools-dso
     SUBDIR += py-setuptools-gettext
     SUBDIR += py-setuptools-git
     SUBDIR += py-setuptools-git-versioning
