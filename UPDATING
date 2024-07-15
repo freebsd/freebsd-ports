@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240715:
+  AFFECTS: net-mgmt/netbox
+  AUTHOR: kai@FreeBSD.org
+
+  The NetBox 4.0 release contains major changes, so at least the following
+  items must be checked before proceeding with the upgrade:
+
+  1. NetBox v4.0 requires Python 3.10 or later.
+
+  2. Please also check the pkg-message and the changelogs for further info.
+
 20240705:
   AFFECTS: sysutils/bacula*-{client,server}
   AUTHOR: netchildFreeBSD.org
