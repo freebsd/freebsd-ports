@@ -328,6 +328,7 @@
     SUBDIR += py-dwave-neal
     SUBDIR += py-dwave-networkx
     SUBDIR += py-dwave-ocean-sdk
+    SUBDIR += py-dwave-optimization
     SUBDIR += py-dwave-preprocessing
     SUBDIR += py-dwave-samplers
     SUBDIR += py-dwave-system

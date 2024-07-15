@@ -1,0 +1,6 @@
+dwave-optimization enables the formulation of nonlinear models for industrial
+optimization problems. The package includes:
+
+* a class for nonlinear models used by the Leap service's quantum-classical
+  hybrid nonlinear-program solver
+* model generators for common optimization problems
