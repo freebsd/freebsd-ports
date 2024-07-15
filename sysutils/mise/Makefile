@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.7.2
+DISTVERSION=	2024.7.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -46,10 +46,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bumpalo-3.16.0 \
 		bytecount-0.6.8 \
 		byteorder-1.5.0 \
-		bytes-1.6.0 \
+		bytes-1.6.1 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.1.2 \
+		cc-1.1.3 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		chrono-tz-0.9.0 \
