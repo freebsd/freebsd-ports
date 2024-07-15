@@ -6130,6 +6130,7 @@
     SUBDIR += quantum
     SUBDIR += quickcheck++
     SUBDIR += quickcpplib
+    SUBDIR += quill
     SUBDIR += quilt
     SUBDIR += qxlsx
     SUBDIR += rabs
