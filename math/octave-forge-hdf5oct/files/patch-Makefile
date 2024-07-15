@@ -1,0 +1,9 @@
+--- Makefile.orig	2024-07-14 02:44:32 UTC
++++ Makefile
+@@ -1,5 +1,5 @@
+ 
+-OCTAVE ?= octave
++OCTAVE ?= octave-cli -H
+ MKOCTFILE ?= mkoctfile
+ 
+ H5FLAGS=$(shell ${OCTAVE} --eval 's="";if __octave_config_info__().build_features.HDF5==1,s="-DHAVE_HDF5";end;printf(s)') \
