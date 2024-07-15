@@ -1,6 +1,5 @@
 PORTNAME=	uni2ascii
-DISTVERSION=	4.18
-PORTREVISION=	2
+DISTVERSION=	4.20
 CATEGORIES=	textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/ \
 		LOCAL/ehaupt
@@ -17,9 +16,6 @@ GNU_CONFIGURE=	yes
 MAKE_ARGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
-
-# Mismatch in upstream advertised checksums
-PORTSCOUT=	skipv:4.20
 
 PLIST_FILES=	bin/ascii2uni \
 		bin/uni2ascii \
