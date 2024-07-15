@@ -63,6 +63,11 @@ share/man/man1/mkvinfo.1.gz
 share/man/man1/mkvmerge.1.gz
 share/man/man1/mkvpropedit.1.gz
 %%MANTRANS%%%%GUI%%share/man/man1/mkvtoolnix-gui.1.gz
+%%MANTRANS%%share/man/nb/man1/mkvextract.1.gz
+%%MANTRANS%%share/man/nb/man1/mkvinfo.1.gz
+%%MANTRANS%%share/man/nb/man1/mkvmerge.1.gz
+%%MANTRANS%%share/man/nb/man1/mkvpropedit.1.gz
+%%MANTRANS%%%%GUI%%share/man/nb/man1/mkvtoolnix-gui.1.gz
 %%MANTRANS%%share/man/nl/man1/mkvextract.1.gz
 %%MANTRANS%%share/man/nl/man1/mkvinfo.1.gz
 %%MANTRANS%%share/man/nl/man1/mkvmerge.1.gz
