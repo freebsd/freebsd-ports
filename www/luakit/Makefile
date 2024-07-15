@@ -23,6 +23,8 @@ USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 
 CONFLICTS_INSTALL=	luakit-devel
 
+PORTSCOUT=	limit:^[2-9]\..*
+
 PORTDATA=	*
 PORTDOCS=	*
 
