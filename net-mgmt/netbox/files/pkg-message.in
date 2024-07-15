@@ -375,4 +375,43 @@ EOD
    accordingly.
 EOD
 }
+{ type: upgrade
+  maximum_version: 4.0.5
+  message: <<EOD
+The NetBox 4.0 release contains major changes, so at least items 1.) and 2.)
+must be checked before proceeding with the upgrade.
+
+1. NetBox v4.0 requires Python 3.10 or later.
+
+2. Following items should be checked as well:
+
+    * The format for GraphQL query filters has changed.  Please see the
+      GraphQL documentation for details and examples.
+
+    * The deprecated "device_role" & "device_role_id" filters for devices have
+      been removed.  (Use "role" and "role_id" instead.)
+
+    * The obsolete "device_role" field has been removed from the REST API
+      serializer for devices.  (Use "role" instead.)
+
+    * The legacy reports functionality has been dropped. Reports will be
+      automatically converted to custom scripts on upgrade.
+
+    * The "parent" and "parent_id" filters for locations now return only
+      immediate children of the specified location.  (Use "ancestor" and
+      "ancestor_id" to return all descendants.)
+
+    * The "object_type" field on the "CustomField" model has been renamed to
+      "related_object_type".
+
+    * The "utilities.utils module" has been removed and its resources
+      reorganized into separate modules organized by function.
+
+    * The obsolete "NullableCharField" class has been removed.  (Use Django's
+      stock "CharField" class with "null=True" instead.)
+
+    * The "annotated_date" template filter and "annotated_now" template tag
+      have been removed.
+EOD
+}
 ]
