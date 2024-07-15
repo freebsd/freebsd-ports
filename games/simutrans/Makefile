@@ -1,5 +1,6 @@
 PORTNAME=	simutrans
 DISTVERSION=	124-1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/simutrans/simutrans/${DISTVERSION}
 DISTNAME=	simutrans-src-${DISTVERSION}
