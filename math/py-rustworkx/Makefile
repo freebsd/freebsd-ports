@@ -122,12 +122,12 @@ MAKE_ENV=	${CARGO_ENV}
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${BUILD_WRKDIR}
 
-PLIST_FILES=	${PYTHON_SITELIBDIR}/rustworkx/rustworkx.abi3.so # workaround for https://github.com/Qiskit/rustworkx/issues/654
+PLIST_FILES=	${PYTHON_SITELIBDIR}/rustworkx/rustworkx${PYTHON_EXT_SUFFIX}.so # workaround for https://github.com/Qiskit/rustworkx/issues/654
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-xpost-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rustworkx/rustworkx.cpython-${PYTHON_SUFFIX}.so
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rustworkx/rustworkx${PYTHON_EXT_SUFFIX}.so
 
 #do-test: # this runs tests in the fixed venv
 #	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} tox -epy
