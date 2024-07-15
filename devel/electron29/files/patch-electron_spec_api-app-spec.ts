@@ -1,4 +1,4 @@
---- electron/spec/api-app-spec.ts.orig	2024-03-27 09:20:29 UTC
+--- electron/spec/api-app-spec.ts.orig	2024-07-10 22:38:05 UTC
 +++ electron/spec/api-app-spec.ts
 @@ -123,11 +123,11 @@ describe('app module', () => {
    });
@@ -45,8 +45,8 @@
      });
    });
  
--  ifdescribe(process.platform !== 'linux' && !process.mas)('app.get/setLoginItemSettings API', function () {
-+  ifdescribe(process.platform !== 'linux' && process.platform !== 'freebsd' && !process.mas)('app.get/setLoginItemSettings API', function () {
+-  ifdescribe(process.platform !== 'linux' && !process.mas && (process.platform !== 'darwin' || process.arch === 'arm64'))('app.get/setLoginItemSettings API', function () {
++  ifdescribe(process.platform !== 'linux' && process.platform !== 'freebsd' && !process.mas && (process.platform !== 'darwin' || process.arch === 'arm64'))('app.get/setLoginItemSettings API', function () {
      const isMac = process.platform === 'darwin';
      const isWin = process.platform === 'win32';
  
