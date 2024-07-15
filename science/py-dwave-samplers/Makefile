@@ -1,5 +1,5 @@
 PORTNAME=	dwave-samplers
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.0
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils unittest
+USE_PYTHON=	distutils unittest # 2 tests fail, see https://github.com/dwavesystems/dwave-samplers/issues/66
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dwavesystems
