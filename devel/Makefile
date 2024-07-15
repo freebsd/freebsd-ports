@@ -4696,6 +4696,8 @@
     SUBDIR += py-diskcache
     SUBDIR += py-distlib
     SUBDIR += py-distributed
+    SUBDIR += py-dj50-django-rq
+    SUBDIR += py-dj50-strawberry-graphql
     SUBDIR += py-django-rq
     SUBDIR += py-dm-tree
     SUBDIR += py-docformatter
