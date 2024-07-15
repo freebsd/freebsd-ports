@@ -1,0 +1,8 @@
+--- src/app/CMakeLists.txt.orig	2023-09-20 05:24:18 UTC
++++ src/app/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
++find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Concurrent Network WebChannel WebEngineWidgets Widgets REQUIRED)
+ if (Qt${QT_VERSION_MAJOR}Widgets_VERSION VERSION_LESS QT_MINIMUM_VERSION)
+     message(FATAL_ERROR "Qt version >= ${QT_MINIMUM_VERSION} is required.")
+ endif()
