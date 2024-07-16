@@ -1,4 +1,4 @@
---- electron/shell/common/node_bindings.cc.orig	2024-04-16 14:29:17 UTC
+--- electron/shell/common/node_bindings.cc.orig	2024-07-09 23:10:34 UTC
 +++ electron/shell/common/node_bindings.cc
 @@ -43,7 +43,7 @@
  #include "third_party/electron_node/src/debug_utils.h"
@@ -9,7 +9,7 @@
  #include "shell/common/crash_keys.h"
  #endif
  
-@@ -156,7 +156,7 @@ void V8FatalErrorCallback(const char* location, const 
+@@ -157,7 +157,7 @@ void V8FatalErrorCallback(const char* location, const 
  void V8FatalErrorCallback(const char* location, const char* message) {
    LOG(ERROR) << "Fatal error in V8: " << location << " " << message;
  
@@ -18,7 +18,7 @@
    electron::crash_keys::SetCrashKey("electron.v8-fatal.message", message);
    electron::crash_keys::SetCrashKey("electron.v8-fatal.location", location);
  #endif
-@@ -516,7 +516,7 @@ void NodeBindings::Initialize(v8::Local<v8::Context> c
+@@ -517,7 +517,7 @@ void NodeBindings::Initialize(v8::Local<v8::Context> c
    TRACE_EVENT0("electron", "NodeBindings::Initialize");
    // Open node's error reporting system for browser process.
  
