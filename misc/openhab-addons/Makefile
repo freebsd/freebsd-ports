@@ -1,5 +1,5 @@
 PORTNAME=	openhab-addons
-PORTVERSION=	4.1.3
+PORTVERSION=	4.2.0
 CATEGORIES=	misc java
 MASTER_SITES=	https://openhab.jfrog.io/artifactory/libs-release-local/org/openhab/distro/openhab-addons/${PORTVERSION}/
 DISTNAME=	openhab-addons-${PORTVERSION}
