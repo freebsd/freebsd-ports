@@ -1,5 +1,6 @@
 bin/murphi2c
 bin/murphi2murphi
+bin/murphi2smv
 bin/murphi2uclid
 bin/murphi2xml
 bin/rumur
@@ -35,6 +36,7 @@ include/rumur/validate.h
 lib/librumur.so
 share/man/man1/murphi2c.1.gz
 share/man/man1/murphi2murphi.1.gz
+share/man/man1/murphi2smv.1.gz
 share/man/man1/murphi2uclid.1.gz
 share/man/man1/murphi2xml.1.gz
 share/man/man1/rumur-run.1.gz
