@@ -1,11 +1,11 @@
 PORTNAME=	rasn1
-PORTVERSION=	0.13.0
+PORTVERSION=	0.13.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure ruby ASN.1 library
-WWW=		https://github.com/sdaubert/rasn1
+WWW=		https://github.com/lemontree55/rasn1
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
