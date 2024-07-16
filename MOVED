@@ -3395,3 +3395,4 @@ textproc/p5-XML-DifferenceMarkup||2024-07-16|Has expired: Depends on deprecated 
 textproc/diffmark||2024-07-16|Has expired: Fails to build with libxml2 2.13.0 (PR 279705)
 misc/lingoteach||2024-07-16|Has expired: Depends on deprecated port textproc/liblingoteach (PR 279705)
 textproc/liblingoteach||2024-07-16|Has expired: Abandonware, last activity 18+ years ago and fails to build with libxml2 2.13.0 (PR 279705)
+devel/dia2code+||2024-07-16|Has expired: Fails to build with libxml2 2.13.0 (PR 279759)
