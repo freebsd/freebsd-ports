@@ -54,7 +54,9 @@ include/fizz/compression/ZstdCertificateCompressor.h
 include/fizz/compression/ZstdCertificateDecompressor.h
 include/fizz/compression/test/Mocks.h
 include/fizz/crypto/Crypto.h
+include/fizz/crypto/Hasher.h
 include/fizz/crypto/Hkdf.h
+include/fizz/crypto/Hmac.h
 include/fizz/crypto/KeyDerivation.h
 include/fizz/crypto/RandomGenerator.h
 include/fizz/crypto/Utils.h
@@ -76,6 +78,7 @@ include/fizz/crypto/hpke/Hpke.h
 include/fizz/crypto/hpke/Types.h
 include/fizz/crypto/hpke/Utils.h
 include/fizz/crypto/hpke/test/Mocks.h
+include/fizz/crypto/test/HmacTest.h
 include/fizz/crypto/test/Mocks.h
 include/fizz/crypto/test/TestUtil.h
 include/fizz/experimental/crypto/exchange/OQSKeyExchange.h
