@@ -26,7 +26,7 @@ CMAKE_ARGS=	BISON_EXECUTABLE:STRING=${LOCALBASE}/bin/bison
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-do-test: # the test command hangs, see https://github.com/Smattr/rumur/issues/274
+do-test: # the test command outputs only in the end of the run
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} --build . --target check
 
