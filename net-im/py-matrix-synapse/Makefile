@@ -1,6 +1,5 @@
 PORTNAME=	matrix-synapse
-DISTVERSION=	1.105.1
-PORTREVISION=	4
+DISTVERSION=	1.111.0
 CATEGORIES=	net-im python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -39,12 +38,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=3.0.0:devel/py-jsonschema@${PY_F
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0.7.18:net/py-netaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bleach>=1.4.3:www/py-bleach@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.10.0.1:devel/py-typing-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ijson>=3.1.4:devel/py-ijson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matrix-common>=1.3.0<2.0.0:devel/py-matrix-common@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=20.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic>=1.7.4:devel/py-pydantic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysaml2>=4.5.0:security/py-pysaml2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0.9:www/py-python-multipart@${PY_FLAVOR} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=15.0:devel/py-virtualenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tox>=2.3.1:devel/py-tox@${PY_FLAVOR} \
