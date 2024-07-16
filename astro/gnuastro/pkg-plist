@@ -26,26 +26,26 @@ bin/astsegment
 bin/aststatistics
 bin/asttable
 bin/astwarp
-@sample etc/astarithmetic.conf.sample
-@sample etc/astbuildprog.conf.sample
-@sample etc/astconvertt.conf.sample
-@sample etc/astconvolve.conf.sample
-@sample etc/astcosmiccal.conf.sample
-@sample etc/astcrop.conf.sample
-@sample etc/astfits.conf.sample
-@sample etc/astmatch.conf.sample
-@sample etc/astmkcatalog.conf.sample
-@sample etc/astmkprof-3d.conf.sample
-@sample etc/astmkprof.conf.sample
-@sample etc/astnoisechisel-3d.conf.sample
-@sample etc/astnoisechisel.conf.sample
-@sample etc/astquery.conf.sample
-@sample etc/astsegment-3d.conf.sample
-@sample etc/astsegment.conf.sample
-@sample etc/aststatistics.conf.sample
-@sample etc/asttable.conf.sample
-@sample etc/astwarp.conf.sample
-@sample etc/gnuastro.conf.sample
+@sample etc/gnuastro/astarithmetic.conf.sample
+@sample etc/gnuastro/astbuildprog.conf.sample
+@sample etc/gnuastro/astconvertt.conf.sample
+@sample etc/gnuastro/astconvolve.conf.sample
+@sample etc/gnuastro/astcosmiccal.conf.sample
+@sample etc/gnuastro/astcrop.conf.sample
+@sample etc/gnuastro/astfits.conf.sample
+@sample etc/gnuastro/astmatch.conf.sample
+@sample etc/gnuastro/astmkcatalog.conf.sample
+@sample etc/gnuastro/astmkprof-3d.conf.sample
+@sample etc/gnuastro/astmkprof.conf.sample
+@sample etc/gnuastro/astnoisechisel-3d.conf.sample
+@sample etc/gnuastro/astnoisechisel.conf.sample
+@sample etc/gnuastro/astquery.conf.sample
+@sample etc/gnuastro/astsegment-3d.conf.sample
+@sample etc/gnuastro/astsegment.conf.sample
+@sample etc/gnuastro/aststatistics.conf.sample
+@sample etc/gnuastro/asttable.conf.sample
+@sample etc/gnuastro/astwarp.conf.sample
+@sample etc/gnuastro/gnuastro.conf.sample
 include/gnuastro/arithmetic.h
 include/gnuastro/array.h
 include/gnuastro/binary.h
@@ -87,12 +87,12 @@ include/gnuastro/warp.h
 include/gnuastro/wcs.h
 lib/libgnuastro.a
 lib/libgnuastro.so
-lib/libgnuastro.so.20
-lib/libgnuastro.so.20.0.0
+lib/libgnuastro.so.21
+lib/libgnuastro.so.21.0.0
 lib/libgnuastro_make.a
 lib/libgnuastro_make.so
-lib/libgnuastro_make.so.20
-lib/libgnuastro_make.so.20.0.0
+lib/libgnuastro_make.so.21
+lib/libgnuastro_make.so.21.0.0
 libdata/pkgconfig/gnuastro.pc
 %%DATADIR%%/astscript-fits-view.desktop
 %%DATADIR%%/completion.bash
