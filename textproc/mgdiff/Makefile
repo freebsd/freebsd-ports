@@ -1,9 +1,8 @@
 PORTNAME=	mgdiff
-PORTVERSION=	1.0
+DISTVERSION=	1.0
 PORTREVISION=	7
 CATEGORIES=	textproc
-MASTER_SITES=	XCONTRIB/applications
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Graphical front end to the UNIX diff command
