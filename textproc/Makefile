@@ -402,7 +402,6 @@
     SUBDIR += libkmfl
     SUBDIR += libkolabxml
     SUBDIR += libkomparediff2
-    SUBDIR += liblingoteach
     SUBDIR += liblrdf
     SUBDIR += libmrss
     SUBDIR += libmwaw03

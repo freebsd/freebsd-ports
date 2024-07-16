@@ -3394,3 +3394,4 @@ x11-wm/afterstep|x11-wm/afterstep1|2024-07-14|Port renamed
 textproc/p5-XML-DifferenceMarkup||2024-07-16|Has expired: Depends on deprecated port textproc/diffmark (PR 279705)
 textproc/diffmark||2024-07-16|Has expired: Fails to build with libxml2 2.13.0 (PR 279705)
 misc/lingoteach||2024-07-16|Has expired: Depends on deprecated port textproc/liblingoteach (PR 279705)
+textproc/liblingoteach||2024-07-16|Has expired: Abandonware, last activity 18+ years ago and fails to build with libxml2 2.13.0 (PR 279705)
