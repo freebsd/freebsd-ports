@@ -1,6 +1,5 @@
 PORTNAME=	imlib2
-DISTVERSION=	1.12.2
-PORTREVISION=	3
+DISTVERSION=	1.12.3
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	SF/enlightenment/imlib2-src/${DISTVERSION}
@@ -23,7 +22,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
 		--enable-visibility-hiding \
-		--with-bzip2 \
 		--with-zlib
 
 INSTALL_TARGET=	install-strip
