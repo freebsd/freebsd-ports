@@ -1,4 +1,4 @@
-TIMESTAMP = 1720846118
+TIMESTAMP = 1721103245
 SHA256 (rust/crates/anyhow-1.0.86.crate) = b3d1d046238990b9cf5bcde22a3fb3584ee5cf65fb2765f454ed428c7a0063da
 SIZE (rust/crates/anyhow-1.0.86.crate) = 46741
 SHA256 (rust/crates/autocfg-1.3.0.crate) = 0c4b4d0bd25bd0b74681c0ad21497610ce1b7c91b1022cd21c80c6fbdd9476b0
@@ -99,5 +99,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.52.6.crate) = 589f6da84c646204747d1270
 SIZE (rust/crates/windows_x86_64_msvc-0.52.6.crate) = 832564
 SHA256 (rust/crates/winnow-0.6.13.crate) = 59b5e5f6c299a3c7890b876a2a587f3115162487e704907d9b6cd29473052ba1
 SIZE (rust/crates/winnow-0.6.13.crate) = 162649
-SHA256 (taiki-e-cargo-hack-v0.6.29_GH0.tar.gz) = 11ed8e68bc7c3d8462e815dffd813010f8f0ae3c4ca981bb8a34f1f6f3302a54
-SIZE (taiki-e-cargo-hack-v0.6.29_GH0.tar.gz) = 77530
+SHA256 (taiki-e-cargo-hack-v0.6.30_GH0.tar.gz) = 162e85c68484f48dea5390b5b38f00d1a074c1220872a43e2f3a9544463d00b7
+SIZE (taiki-e-cargo-hack-v0.6.30_GH0.tar.gz) = 77597
