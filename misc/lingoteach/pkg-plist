@@ -1,9 +1,0 @@
-bin/lingoteach-gtk
-%%NLS%%share/locale/da/LC_MESSAGES/lingoteach.mo
-%%NLS%%share/locale/de/LC_MESSAGES/lingoteach.mo
-%%NLS%%share/locale/eo/LC_MESSAGES/lingoteach.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/lingoteach.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/lingoteach.mo
-%%NLS%%share/locale/id/LC_MESSAGES/lingoteach.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/lingoteach.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/lingoteach.mo
