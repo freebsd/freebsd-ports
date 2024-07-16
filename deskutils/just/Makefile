@@ -1,5 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	1.30.1
+DISTVERSION=	1.31.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,19 +30,19 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		autocfg-1.3.0 \
 		bitflags-1.3.2 \
 		bitflags-2.6.0 \
-		blake3-1.5.1 \
+		blake3-1.5.2 \
 		block-buffer-0.10.4 \
 		bstr-0.2.17 \
 		bumpalo-3.16.0 \
 		camino-1.1.7 \
-		cc-1.0.104 \
+		cc-1.1.4 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
 		chrono-0.4.38 \
 		clap-2.34.0 \
-		clap-4.5.8 \
-		clap_builder-4.5.8 \
-		clap_complete-4.5.7 \
+		clap-4.5.9 \
+		clap_builder-4.5.9 \
+		clap_complete-4.5.8 \
 		clap_derive-4.5.8 \
 		clap_lex-0.7.1 \
 		clap_mangen-0.2.22 \
@@ -107,7 +107,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_users-0.4.5 \
 		regex-1.10.5 \
@@ -125,8 +124,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		sha2-0.10.8 \
 		shellexpand-3.1.0 \
 		similar-2.5.0 \
-		snafu-0.8.3 \
-		snafu-derive-0.8.3 \
+		snafu-0.8.4 \
+		snafu-derive-0.8.4 \
 		strsim-0.8.0 \
 		strsim-0.11.1 \
 		structopt-0.3.26 \
@@ -134,14 +133,14 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		strum-0.26.3 \
 		strum_macros-0.26.4 \
 		syn-1.0.109 \
-		syn-2.0.69 \
+		syn-2.0.71 \
 		target-2.1.0 \
 		tempfile-3.10.1 \
 		temptree-0.2.0 \
 		terminal_size-0.3.0 \
 		textwrap-0.11.0 \
-		thiserror-1.0.61 \
-		thiserror-impl-1.0.61 \
+		thiserror-1.0.62 \
+		thiserror-impl-1.0.62 \
 		typed-arena-2.0.2 \
 		typenum-1.17.0 \
 		unicase-2.7.0 \
@@ -149,7 +148,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		unicode-segmentation-1.11.0 \
 		unicode-width-0.1.13 \
 		utf8parse-0.2.2 \
-		uuid-1.9.1 \
+		uuid-1.10.0 \
 		vec_map-0.8.2 \
 		version_check-0.9.4 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
