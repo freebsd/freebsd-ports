@@ -1,6 +1,0 @@
-diffmark is an XML diff and merge package.  It consists of a shared C++
-library, libdiffmark, plus two programs wrapping the library into a
-command-line interface: dm and dm-merge.  dm takes 2 XML files and
-prints their diff (also an XML document) on its standard output.
-dm-merge takes the first document passed to dm and its output and
-produces the second document.
