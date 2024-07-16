@@ -17,24 +17,18 @@
 .if !defined(_INCLUDE_USES_ELECTRONFIX_MK)
 _INCLUDE_USES_ELECTRONFIX_MK=	yes
 
-_ELECTRONFIX_MK_VALID_VERSIONS=	22 23 24 25 27 28 30
+.  if empty(electronfix_ARGS)
+.    error USES=electronfix requires a version argument
+.  endif
 
-# === parse version arguments ===
-_ELECTRONFIX_MK_VERSION=	# empty
-.  for _ver in ${_ELECTRONFIX_MK_VALID_VERSIONS}
-.    if ${electronfix_ARGS:M${_ver}}
-.      if !empty(_ELECTRONFIX_MK_VERSION)
-BROKEN=		USES=electronfix:${electronfix_ARGS} contains multiple version definitions
-.      else
-_ELECTRONFIX_MK_VERSION=	${_ver}
-.      endif
-.    endif
-.  endfor
+_ELECTRON_MAKEFILE_VERSION=	${.CURDIR}/../../devel/electron${electronfix_ARGS}/Makefile.version
 
-.  include "${.CURDIR}/../../devel/electron${_ELECTRONFIX_MK_VERSION}/Makefile.version"
+.  if !exists(${_ELECTRON_MAKEFILE_VERSION})
+.    error Unknown Electron version in USES=electronfix:${electronfix_ARGS}
+.  endif
 
-BUILD_DEPENDS+=	electron${_ELECTRONFIX_MK_VERSION}:devel/electron${_ELECTRONFIX_MK_VERSION}
-RUN_DEPENDS+=	electron${_ELECTRONFIX_MK_VERSION}:devel/electron${_ELECTRONFIX_MK_VERSION}
+BUILD_DEPENDS+=	electron${electronfix_ARGS}:devel/electron${electronfix_ARGS}
+RUN_DEPENDS+=	electron${electronfix_ARGS}:devel/electron${electronfix_ARGS}
 
 ELECTRONFIX_SYMLINK_FILES?= \
 			chromedriver \
@@ -58,11 +52,11 @@ electronfix-post-install:
 	${RM} ${STAGEDIR}${DATADIR}/libvulkan.so.1
 .  for f in ${ELECTRONFIX_SYMLINK_FILES}
 	${RM} ${STAGEDIR}${DATADIR}/${f}
-	${LN} -s ${LOCALBASE}/share/electron${_ELECTRONFIX_MK_VERSION}/${f} ${STAGEDIR}${DATADIR}/${f}
+	${LN} -s ${LOCALBASE}/share/electron${electronfix_ARGS}/${f} ${STAGEDIR}${DATADIR}/${f}
 .  endfor
 .  ifdef ELECTRONFIX_MAIN_EXECUTABLE
 # We have to copy the electron binary instead of symlinking
-	${CP} ${LOCALBASE}/share/electron${_ELECTRONFIX_MK_VERSION}/electron ${STAGEDIR}${DATADIR}/${ELECTRONFIX_MAIN_EXECUTABLE}
+	${CP} ${LOCALBASE}/share/electron${electronfix_ARGS}/electron ${STAGEDIR}${DATADIR}/${ELECTRONFIX_MAIN_EXECUTABLE}
 .  endif
 
 electronfix-stage-qa:
