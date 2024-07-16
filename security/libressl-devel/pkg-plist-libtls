@@ -1,4 +1,5 @@
 %%NC%%bin/nc
+etc/ssl/certs
 etc/ssl/openssl.cnf
 etc/ssl/x509v3.cnf
 include/tls.h
@@ -8,4 +9,3 @@ lib/libtls.so.%%LIBTLS_SHLIBMAJ%%
 lib/libtls.so.%%LIBTLS_SHLIBFULL%%
 libdata/pkgconfig/libtls.pc
 %%NC%%share/man/man1/nc.1.gz
-@dir etc/ssl/certs
