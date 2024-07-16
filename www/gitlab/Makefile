@@ -4,6 +4,7 @@ DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
 .endif
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 # include patch to fix database migration
@@ -104,7 +105,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-kaminari-rails70>=1.2.2<1.3:www/rubygem-kaminari-rails70 \
 	rubygem-hamlit>=2.15.0<2.16:www/rubygem-hamlit \
 	rubygem-carrierwave1>=1.3.4<2.0:www/rubygem-carrierwave1 \
-	rubygem-mini_magick>=4.12<5:graphics/rubygem-mini_magick \
+	rubygem-mini_magick4>=4.12<5:graphics/rubygem-mini_magick4 \
 	rubygem-fog-aws>=3.18<4:net/rubygem-fog-aws \
 	rubygem-fog-core210>=2.1.0<2.1.1:devel/rubygem-fog-core210 \
 	rubygem-fog-google>=1.24.1<1.25:net/rubygem-fog-google \
