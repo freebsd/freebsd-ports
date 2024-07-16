@@ -1,3 +1,52 @@
+  <vuln vid="3b018063-4358-11ef-b611-84a93843eb75">
+    <topic>MySQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql80-client</name>
+	<range><lt>8.0.38</lt></range>
+      </package>
+      <package>
+	<name>mysql80-server</name>
+	<range><lt>8.0.38</lt></range>
+      </package>
+      <package>
+	<name>mysql81-client</name>
+	<range><lt>8.1.1</lt></range>
+      </package>
+      <package>
+	<name>mysql80-server</name>
+	<range><lt>8.1.1</lt></range>
+      </package>
+      <package>
+	<name>mysql84-client</name>
+	<range><lt>8.4.1</lt></range>
+      </package>
+      <package>
+	<name>mysql84-server</name>
+	<range><lt>8.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cpujul2024.html#MySQL">
+	  <p>36 new security patches for Oracle MySQL. 11 of these vulnerabilities
+	    may be remotely exploitable without authentication, i.e., may be
+	    exploited over a network without requiring user credentials.
+	    The highest CVSS v3.1 Base Score of vulnerabilities affecting Oracle
+	    MySQL is 9.8.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://www.oracle.com/security-alerts/cpujul2024.html#MySQL</url>
+    </references>
+    <dates>
+      <discovery>2024-07-16</discovery>
+      <entry>2024-07-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6410f91d-1214-4f92-b7e0-852e39e265f9">
     <topic>electron30 -- multiple vulnerabilities</topic>
     <affects>
