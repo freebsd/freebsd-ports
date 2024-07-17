@@ -1,5 +1,5 @@
 PORTNAME=	lis
-DISTVERSION=	2.1.4
+DISTVERSION=	2.1.6
 CATEGORIES=	math
 MASTER_SITES=	https://www.ssisc.org/lis/dl/
 
