@@ -8,6 +8,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} bitcoin128.png:icon
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${_DISTFILES:N*.png}
 
+PATCH_SITES=	https://github.com/bitcoin-core/gui/commit/
+PATCHFILES+=	8acdf66540834b9f9cf28f16d389e8b6a48516d5.patch:-p1 # https://github.com/bitcoin/bitcoin/issues/30266
+
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT?=	Virtual Peer-to-Peer Currency Client (QT)
 WWW=		https://www.bitcoin.org/
