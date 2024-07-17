@@ -7,6 +7,7 @@ bin/sc_erosprober
 bin/sc_filterpolicy
 %%HOIHO%%bin/sc_hoiho
 bin/sc_ipiddump
+%%MINRTT%%bin/sc_minrtt
 bin/sc_pinger
 bin/sc_prefixprober
 bin/sc_prefixscan
@@ -31,8 +32,8 @@ lib/libscamperctrl.so.2
 lib/libscamperctrl.so.2.1.3
 lib/libscamperctrl.so
 lib/libscamperfile.a
-lib/libscamperfile.so.8
-lib/libscamperfile.so.8.0.1
+lib/libscamperfile.so.9
+lib/libscamperfile.so.9.0.0
 lib/libscamperfile.so
 share/man/man1/sc_ally.1.gz
 share/man/man1/sc_analysis_dump.1.gz
@@ -42,6 +43,7 @@ share/man/man1/sc_erosprober.1.gz
 share/man/man1/sc_filterpolicy.1.gz
 %%HOIHO%%share/man/man1/sc_hoiho.1.gz
 share/man/man1/sc_ipiddump.1.gz
+%%MINRTT%%share/man/man1/sc_minrtt.1.gz
 share/man/man1/sc_pinger.1.gz
 share/man/man1/sc_prefixprober.1.gz
 share/man/man1/sc_prefixscan.1.gz
