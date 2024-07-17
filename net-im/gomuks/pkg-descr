@@ -1,1 +1,13 @@
-A terminal based Matrix client written in Go.
+A terminal based Matrix client written in Go with the following
+features:
+
+- Session verification via security key or manual text comparison
+- Decryption of messages sent after initial login; older messages
+  require key import
+- Proxy support via `https_proxy` environment variable
+- Text copying using shift+drag, `/copy` command, or plaintext mode
+- Support for one account per instance; multiple instances possible with
+  different data directories
+- Customizable data storage paths through environment variables
+- Debug logging enabled with `DEBUG=1` and customizable log directory
+- System-specific default directories for config, cache, and data
