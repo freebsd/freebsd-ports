@@ -1,5 +1,5 @@
 PORTNAME=	ox
-DISTVERSION=	0.3.0
+DISTVERSION=	0.3.3
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-text-editor
 
@@ -32,7 +32,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		home-0.5.9 \
 		if_chain-1.0.2 \
 		jargon-args-0.2.7 \
-		kaolinite-0.8.0 \
+		kaolinite-0.8.1 \
 		libc-0.2.155 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.14 \
