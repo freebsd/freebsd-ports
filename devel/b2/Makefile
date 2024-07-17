@@ -4,7 +4,7 @@ DISTVERSION=	1.3.8
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	robak@FreeBSD.org
+MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Command Line Interface for Backblaze's B2 storage service
 WWW=		https://www.backblaze.com/b2/docs/quick_command_line.html
 
