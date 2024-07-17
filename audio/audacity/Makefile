@@ -1,6 +1,7 @@
 PORTNAME=	audacity
 DISTVERSIONPREFIX=	Audacity-
 DISTVERSION=	3.5.1
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	xxjack12xx@gmail.com
@@ -11,7 +12,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	conan:sysutils/conan \
-		rapidjson>0:devel/rapidjson
+		rapidjson>0:devel/rapidjson \
+		lv2>0:audio/lv2
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libharfbuzz.so:print/harfbuzz \
 		liblilv-0.so:audio/lilv \
