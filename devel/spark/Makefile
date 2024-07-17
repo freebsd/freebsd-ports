@@ -1,9 +1,8 @@
 PORTNAME=	spark
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.4
 CATEGORIES=	devel java
 MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/${PORTNAME}-${PORTVERSION}/ \
-		LOCAL/se/distfiles/:deps \
-		https://people.freebsd.org/~se/distfiles/:deps
+		LOCAL/vvd:deps
 PKGNAMEPREFIX=	apache-
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz \
 		${PORTNAME}-${PORTVERSION}-deps.tgz:deps
@@ -25,6 +24,7 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		cpe python shebangfix
 CPE_VENDOR=	apache
 USE_JAVA=	yes
+JAVA_VERSION=	8 11 17
 
 USE_RC_SUBR=	spark_master spark_worker
 SHEBANG_FILES=	bin/sparkR
@@ -49,7 +49,6 @@ MAKE_ENV+=	MAVEN_OPTS="-Xmx2g -XX:ReservedCodeCacheSize=2g" \
 		JAVA_HOME=${JAVA_HOME}
 .endif
 
-
 .if ${ARCH} == "amd64"
 JAVA_ARCH=	x86_64
 .elif ${ARCH} == "i386"
@@ -60,6 +59,7 @@ JAVA_ARCH=	${ARCH}
 
 # Update spark-*-dist.tgz if the hadoop version is changed!
 HADOOP_VERSION=	3.3.4
+# Comment out next line for download m2 and update ${PORTNAME}-${PORTVERSION}-deps.tgz
 OFFLINE=	-o
 
 do-build:
