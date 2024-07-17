@@ -1,4 +1,4 @@
-TIMESTAMP = 1712914340
+TIMESTAMP = 1721183862
 SHA256 (rust/crates/RustyXML-0.3.0.crate) = 8b5ace29ee3216de37c0546865ad08edef58b0f9e76838ed8959a84a990e58c5
 SIZE (rust/crates/RustyXML-0.3.0.crate) = 17517
 SHA256 (rust/crates/addr2line-0.21.0.crate) = 8a30b2e23b9e17a9f90641c7ab1549cd9b44f296d3ccbf309d2863cfe398a0cb
@@ -1607,5 +1607,5 @@ SHA256 (quickwit-oss-pulsar-rs-f9eff04caf184906c6466fdde8b5bb0fd3c92659_GH0.tar.
 SIZE (quickwit-oss-pulsar-rs-f9eff04caf184906c6466fdde8b5bb0fd3c92659_GH0.tar.gz) = 81167
 SHA256 (quickwit-oss-rust-sasl-daca9216beca2f2d8c9ce5d803906918a316021a_GH0.tar.gz) = bffa21b5bbd6742fca6741249fb5d55c4b5ac97b40f234f883878dcf48fb61ec
 SIZE (quickwit-oss-rust-sasl-daca9216beca2f2d8c9ce5d803906918a316021a_GH0.tar.gz) = 1414639
-SHA256 (quickwit-oss-quickwit-v0.8.1_GH0.tar.gz) = b23a597b8b18bb9826d4bbdef868ab7b2a9e47076efb356c5ef36b6e648ed2a9
-SIZE (quickwit-oss-quickwit-v0.8.1_GH0.tar.gz) = 5772643
+SHA256 (quickwit-oss-quickwit-v0.8.2_GH0.tar.gz) = aa9e932662e48447d814e36db657acd4c9a69beb97c16006e9cb5539585fd947
+SIZE (quickwit-oss-quickwit-v0.8.2_GH0.tar.gz) = 5772612
