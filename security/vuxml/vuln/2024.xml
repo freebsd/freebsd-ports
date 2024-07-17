@@ -1,3 +1,36 @@
+  <vuln vid="088b8b7d-446c-11ef-b611-84a93843eb75">
+    <topic>Apache httpd -- Source code disclosure with handlers configured via AddType</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><ge>2.4.60</ge><lt>2.4.62</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd project reports:</p>
+	<blockquote cite="https://httpd.apache.org/security/vulnerabilities_24.html">
+	  <p>source code disclosure with handlers configured via AddType
+	    (CVE-2024-40725) (Important): A partial fix for CVE-2024-39884
+	    in the core of Apache HTTP Server 2.4.61 ignores some use of the
+	    legacy content-type based configuration of handlers. "AddType"
+	    and similar configuration, under some circumstances where files
+	    are requested indirectly, result in source code disclosure of
+	    local content. For example, PHP scripts may be served instead
+	    of interpreted.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-40725</cvename>
+      <url>https://httpd.apache.org/security/vulnerabilities_24.html</url>
+    </references>
+    <dates>
+      <discovery>2024-07-17</discovery>
+      <entry>2024-07-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3b018063-4358-11ef-b611-84a93843eb75">
     <topic>MySQL -- Multiple vulnerabilities</topic>
     <affects>
