@@ -37,7 +37,7 @@ SHEBANG_FILES=	Bin/darwin/check-update.pl \
 		slimserver.pl \
 		${WRKSRC_vendor}/CPAN/hints/darwin.pl
 
-PORTSCOUT=	skipv:10.0.3,10.0.4
+PORTSCOUT=	skipv:10.0.3,10.0.4,release-10.0.0.0
 
 SUB_FILES=	Custom.pm \
 		custom-convert.conf \
