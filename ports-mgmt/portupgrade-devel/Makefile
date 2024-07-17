@@ -1,6 +1,6 @@
 PORTNAME=	portupgrade
 PORTVERSION=	20180309
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	GH \
@@ -48,6 +48,11 @@ regression-test: patch
 post-patch:	.SILENT
 	REVISION=`readlink "${_DISTDIR}/portupgrade/latest" | ${SED} -E -e 's,.*pkgtools-(.*).tar.gz,\1,g'` && ${SED} -E -e "s,%%DATE%%,${PORTVERSION},g;s,%%REVISION%%,$${REVISION},g" \
 	    ${WRKSRC}/lib/pkgtools/revision.rb.in > ${WRKSRC}/lib/pkgtools/revision.rb
+.if ${RUBY_VERSION_CODE:U} >= 320
+	cd ${WRKSRC} && ${FIND} bin etc lib -type f |\
+		${XARGS} ${REINPLACE_CMD} 's/File\.exists\?/File.exist?/'
+.endif
+
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/compat/pkg
