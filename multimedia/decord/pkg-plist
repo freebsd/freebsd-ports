@@ -1,0 +1,16 @@
+include/decord/audio_interface.h
+include/decord/av_interface.h
+include/decord/base.h
+include/decord/runtime/c_backend_api.h
+include/decord/runtime/c_runtime_api.h
+include/decord/runtime/device_api.h
+include/decord/runtime/module.h
+include/decord/runtime/ndarray.h
+include/decord/runtime/node_base.h
+include/decord/runtime/packed_func.h
+include/decord/runtime/registry.h
+include/decord/runtime/serializer.h
+include/decord/runtime/threading_backend.h
+include/decord/runtime/util.h
+include/decord/video_interface.h
+lib/libdecord.so
