@@ -1,7 +1,6 @@
 PORTNAME=	spla
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.5
-PORTREVISION=	3
+DISTVERSION=	1.6.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libopenblas.so:math/openblas
 TEST_DEPENDS=	scalapack>0:math/scalapack
 
-USES=		cmake:testing compiler:c++11-lang
+USES=		cmake:testing compiler:c++17-lang
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -38,5 +37,8 @@ MPICH_USES=		mpi:mpich
 OPENMPI_USES=		mpi:openmpi
 
 OPENMP_CMAKE_BOOL=	SPLA_OMP
+
+post-test: # run tests
+	cd ${WRKSRC} && ${BUILD_WRKSRC}/tests/run_tests
 
 .include <bsd.port.mk>
