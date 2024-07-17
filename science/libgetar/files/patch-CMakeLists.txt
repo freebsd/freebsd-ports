@@ -1,0 +1,9 @@
+--- CMakeLists.txt.orig	2024-07-17 00:16:02 UTC
++++ CMakeLists.txt
+@@ -54,4 +54,6 @@ install(FILES ${GETAR_HEADERS} DESTINATION include/get
+ 
+ install(FILES ${GETAR_HEADERS} DESTINATION include/getar)
+ 
++if (BUILD_TESTING)
+ add_subdirectory(test)
++endif()
