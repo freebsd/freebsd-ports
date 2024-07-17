@@ -1,0 +1,34 @@
+--- man/waybar-menu.5.scd.orig	2024-07-17 21:04:05 UTC
++++ man/waybar-menu.5.scd
+@@ -91,10 +91,10 @@ Module config :
+ 		"menu": "on-click",
+ 		"menu-file": "~/.config/waybar/power_menu.xml",
+ 		"menu-actions": {
+-			"shutdown": "shutdown",
+-			"reboot": "reboot",
+-			"suspend": "systemctl suspend",
+-			"hibernate": "systemctl hibernate",
++			"shutdown": "shutdown -p now",
++			"reboot": "shutdown -r now",
++			"suspend": "zzz",
++			"hibernate": "acpiconf -s 4"
+ 		},
+ },
+ ```
+--- resources/config.jsonc.orig	2024-07-17 21:04:05 UTC
++++ resources/config.jsonc
+@@ -206,10 +206,10 @@
+ 		"menu": "on-click",
+ 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+ 		"menu-actions": {
+-			"shutdown": "shutdown",
+-			"reboot": "reboot",
+-			"suspend": "systemctl suspend",
+-			"hibernate": "systemctl hibernate"
++			"shutdown": "shutdown -p now",
++			"reboot": "shutdown -r now",
++			"suspend": "zzz",
++			"hibernate": "acpiconf -s 4"
+ 		}
+     }
+ }
