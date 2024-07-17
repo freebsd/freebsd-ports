@@ -303,6 +303,7 @@
     SUBDIR += py-PySceneDetect
     SUBDIR += py-av
     SUBDIR += py-cec
+    SUBDIR += py-decord
     SUBDIR += py-enzyme
     SUBDIR += py-ffmpeg-python
     SUBDIR += py-gstreamer1
