@@ -88,6 +88,7 @@
     SUBDIR += dijo
     SUBDIR += dive
     SUBDIR += dlib-models
+    SUBDIR += dlpack
     SUBDIR += dnetc
     SUBDIR += dotenv-linter
     SUBDIR += dtach
