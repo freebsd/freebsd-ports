@@ -6,5 +6,3 @@ Features:
 - Supports COOKIE handling.
 - Supports Session management.
 - Supports FastCGI
-
-See also: https://github.com/wolkykim/qdecoder
