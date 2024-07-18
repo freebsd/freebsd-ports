@@ -1,5 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	1.31.0
+DISTVERSION=	1.32.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,12 +30,12 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		autocfg-1.3.0 \
 		bitflags-1.3.2 \
 		bitflags-2.6.0 \
-		blake3-1.5.2 \
+		blake3-1.5.3 \
 		block-buffer-0.10.4 \
 		bstr-0.2.17 \
 		bumpalo-3.16.0 \
 		camino-1.1.7 \
-		cc-1.1.4 \
+		cc-1.1.5 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
 		chrono-0.4.38 \
@@ -139,8 +139,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		temptree-0.2.0 \
 		terminal_size-0.3.0 \
 		textwrap-0.11.0 \
-		thiserror-1.0.62 \
-		thiserror-impl-1.0.62 \
+		thiserror-1.0.63 \
+		thiserror-impl-1.0.63 \
 		typed-arena-2.0.2 \
 		typenum-1.17.0 \
 		unicase-2.7.0 \
