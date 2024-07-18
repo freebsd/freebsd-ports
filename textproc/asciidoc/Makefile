@@ -1,6 +1,5 @@
 PORTNAME=	asciidoc
-PORTVERSION=	10.2.0
-PORTREVISION=	3
+PORTVERSION=	10.2.1
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI \
 		https://github.com/asciidoc-py/asciidoc-py/raw/${PORTVERSION}/doc/:manpage
@@ -14,6 +13,7 @@ COMMENT=	Text document format for writing short documents and man pages
 WWW=		https://github.com/asciidoc-py/asciidoc-py
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
