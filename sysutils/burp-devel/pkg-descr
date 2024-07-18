@@ -7,5 +7,3 @@ independent backup protocols to choose from:
   sparse indexing on the server side.
   Available from burp version 2.0.x, but is experimental and should not be used
   in production.
-
-See also: https://github.com/grke/burp
