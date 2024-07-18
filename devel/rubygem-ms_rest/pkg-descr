@@ -2,5 +2,3 @@ MsRest is a library which supports the clients (SDKs) generated with Autorest
 tool. It contains core logic and helper classes for error handling and
 authentication. Usually it is not supposed to be used as a standalone gem but
 only as a dependency for generated client gems.
-
-See also: https://github.com/Azure/azure-sdk-for-ruby
