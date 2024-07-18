@@ -1,4 +1,2 @@
 TTY::Table provides independent table formatting component for TTY toolkit. It
 supports a flexible and intuitive table formatting.
-
-See also: https://github.com/piotrmurach/tty-table
