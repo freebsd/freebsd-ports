@@ -1,5 +1,3 @@
 Pupynere is a Python module for reading and writing NetCDF files, using the same
 API as Scientific.IO.NetCDF and pynetcdf. It depends only on Numpy, so you don't
 need to have the NetCDF library installed.
-
-See also: https://pypi.org/project/pupynere/
