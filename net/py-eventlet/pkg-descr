@@ -6,5 +6,3 @@ ensure that the developer uses a blocking style of programming that is similar
 to threading, but provide the benefits of non-blocking I/O. The event dispatch
 is implicit, which means you can easily use Eventlet from the Python
 interpreter, or as a small part of a larger application.
-
-See also: https://github.com/eventlet/eventlet
