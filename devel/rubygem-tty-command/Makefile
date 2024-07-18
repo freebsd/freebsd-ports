@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Execute shell commands with pretty logging
-WWW=		https://ttytoolkit.org/
+WWW=		https://ttytoolkit.org/ \
+		https://github.com/piotrmurach/tty-command
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
