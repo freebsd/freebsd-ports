@@ -9,5 +9,3 @@ Features:
 - Provide custom magic files to customize file detection.
 - Support for both Python2 and Python3.
 - Support for both CPython and PyPy.
-
-See also: https://github.com/aliles/filemagic
