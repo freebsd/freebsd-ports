@@ -1,5 +1,3 @@
 TTY::Pager provides independent terminal output paging component for TTY
 toolkit. It supports terminal output paging in a cross-platform way supporting
 all major ruby interpreters.
-
-See also: https://github.com/piotrmurach/tty-pager
