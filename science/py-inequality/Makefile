@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Spatial inequality analysis for PySAL
-WWW=		https://inequality.readthedocs.io/en/latest/
+WWW=		https://inequality.readthedocs.io/en/latest/ \
+		https://github.com/pysal/inequality
 
 LICENSE=	BSD3CLAUSE
 
