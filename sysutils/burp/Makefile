@@ -5,7 +5,8 @@ MASTER_SITES=	https://github.com/grke/burp/releases/download/${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Network backup and restore program
-WWW=		https://burp.grke.org/
+WWW=		https://burp.grke.org/ \
+		https://github.com/grke/burp
 
 LICENSE=	AGPLv3 PD
 LICENSE_COMB=	multi
