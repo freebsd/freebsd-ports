@@ -12,5 +12,3 @@ Robot Framework has an easy syntax, utilizing human-readable keywords. Its
 capabilities can be extended by libraries implemented with Python, Java or many
 other programming languages. Robot Framework has a rich ecosystem around it,
 consisting of libraries and tools that are developed as separate projects.
-
-See also: https://github.com/robotframework/robotframework
