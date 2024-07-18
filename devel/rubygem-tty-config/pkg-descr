@@ -1,5 +1,3 @@
 TTY::Config provides app configuration component for TTY toolkit. It defines,
 reads and writes any Ruby app configurations with a penchant for terminal
 clients.
-
-See also: https://github.com/piotrmurach/tty-config
