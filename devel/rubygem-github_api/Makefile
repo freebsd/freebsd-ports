@@ -6,7 +6,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrapper that supports all of the GitHub API v3 methods
-WWW=		https://piotrmurach.github.io/github/
+WWW=		https://piotrmurach.github.io/github/ \
+		https://github.com/piotrmurach/github
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
