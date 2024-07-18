@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Capture stdout/stderr of the current process and subprocesses
-WWW=		https://capturer.readthedocs.io/en/latest/
+WWW=		https://capturer.readthedocs.io/en/latest/ \
+		https://github.com/xolox/python-capturer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
