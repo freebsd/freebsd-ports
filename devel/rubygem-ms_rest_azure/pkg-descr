@@ -4,5 +4,3 @@ authentication. Also it includes azure specific logic like long polling
 functionality and Azure application authentication. Usually it is not supposed
 to be used as a standalone gem but only as a dependency for generated client
 gems.
-
-See also: https://github.com/Azure/azure-sdk-for-ruby
