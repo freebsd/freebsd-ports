@@ -1,0 +1,17 @@
+SQL::SplitStatement is a simple module which tries to split any SQL code, even
+including non-standard extensions, into the atomic statements it is composed of.
+
+The logic used to split the SQL code is more sophisticated than a raw split on
+the ; (semicolon) character: first, various different statement terminator
+tokens are recognized (see below for the list), then this module is able to
+correctly handle the presence of said tokens inside identifiers, values,
+comments, BEGIN ... END blocks (even nested), dollar-quoted strings, MySQL
+custom DELIMITERs, procedural code etc., as (partially) exemplified in the
+"SYNOPSIS" above.
+
+Consider however that this is by no means a validating parser (technically
+speaking, it's just a context-sensitive tokenizer). It should rather be seen as
+an in-progress heuristic approach, which will gradually improve as test cases
+will be reported. This also means that, except for the "LIMITATIONS" detailed
+below, there is no known (to the author) SQL code the most current release of
+this module can't correctly split.

@@ -1,0 +1,6 @@
+bin/sql-split
+%%SITE_PERL%%/SQL/SplitStatement.pm
+%%SITE_PERL%%/SQL/SplitStatement/Tokenizer.pm
+%%PERL5_MAN1%%/sql-split.1.gz
+%%PERL5_MAN3%%/SQL::SplitStatement.3.gz
+%%PERL5_MAN3%%/SQL::SplitStatement::Tokenizer.3.gz
