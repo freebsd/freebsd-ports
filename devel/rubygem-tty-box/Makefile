@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Draw various frames and boxes in your terminal interface
-WWW=		https://ttytoolkit.org/
+WWW=		https://ttytoolkit.org/ \
+		https://github.com/piotrmurach/tty-box
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
