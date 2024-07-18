@@ -7,7 +7,8 @@ MASTER_SITES=	SF
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast image processing tools based on ImageMagick
-WWW=		http://www.graphicsmagick.org/
+WWW=		https://graphicsmagick.sourceforge.io/ \
+		http://www.graphicsmagick.org/
 
 LICENSE=	MIT
 
