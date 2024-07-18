@@ -1,5 +1,3 @@
 TTY::Font provides independent terminal font rendering component for TTY
 toolkit. It writes text in large stylized characters using a variety of terminal
 friendly fonts.
-
-See also: https://github.com/piotrmurach/tty-font
