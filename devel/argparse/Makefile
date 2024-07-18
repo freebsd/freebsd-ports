@@ -1,6 +1,6 @@
 PORTNAME=	argparse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0
+DISTVERSION=	3.1
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/p-ranav/argparse
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++17-lang
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	p-ranav
 
