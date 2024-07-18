@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OGC CSW server implementation
-WWW=		https://pycsw.org/
+WWW=		https://pycsw.org/ \
+		https://github.com/geopython/pycsw
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
