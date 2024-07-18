@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
 .endif
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 # include patch to fix database migration
@@ -375,12 +375,13 @@ do-install:
 	# TODO: Vendored gems are installing binaries not into STAGEDIR, this needs to be fixed.
 	# As intermediate solution, the binaries are not disabled by patches
 	#(cd ${WRKSRC} && ${RM} Gemfile.lock && bundle config set path ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER} && ${WRK_ENV} ${GEM_ENV} bundle install --local)
-	(cd ${WRKSRC} && ${RM} Gemfile.lock && ${WRK_ENV} ${GEM_ENV} bundle install --local --binstubs=${WRKSRC}/.bin)
-	(cd ${WRKSRC} && bundle binstubs --path ${WRKSRC}/.bin --all)
+	(cd ${WRKSRC} && bundle config set --local bin .bin)
+	(cd ${WRKSRC} && ${RM} Gemfile.lock && ${WRK_ENV} ${GEM_ENV} bundle install --local)
+	(cd ${WRKSRC} && bundle binstubs --all --path .bin)
 	${RM} -R ${WRKSRC}/workhorse
 	# remove vendored sidekiq gem as it breaks gitlab 17.1.0 for FreeBSD
 	# See also: https://gitlab.com/gitlab-org/gitlab/-/issues/468435
-	${RM} -R ${WRKSRC}/vendor/gems/sidekiq-7.1.6
+	#${RM} -R ${WRKSRC}/vendor/gems/sidekiq-7.1.6
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 	${FIND} ${WRKSRC} -name '*.bak' -delete
 	${FIND} ${WRKSRC} -name '*.gitkeep' -delete
