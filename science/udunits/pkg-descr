@@ -2,5 +2,3 @@ The Unidata units library, udunits, supports conversion of unit specifications
 between formatted and binary forms, arithmetic manipulation of unit
 specifications, and conversion of values between compatible scales of
 measurement.
-
-See also: https://github.com/Unidata/UDUNITS-2
