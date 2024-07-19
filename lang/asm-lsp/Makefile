@@ -1,6 +1,6 @@
 PORTNAME=	asm-lsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
+DISTVERSION=	0.7.3
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,6 +27,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		backtrace-0.3.69 \
 		base64-0.21.5 \
 		binary-merge-0.1.2 \
+		bincode-1.3.3 \
 		bitflags-1.3.2 \
 		bitflags-2.4.1 \
 		brownstone-3.0.0 \
@@ -37,6 +38,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cfg-if-1.0.0 \
 		chrono-0.4.31 \
 		colored-2.0.4 \
+		compile_commands-0.2.0 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.4 \
 		cpp_demangle-0.4.3 \
@@ -57,6 +59,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		fastrand-2.0.1 \
 		flate2-1.0.28 \
 		flexi_logger-0.25.6 \
+		fluent-uri-0.1.4 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
@@ -103,9 +106,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		linux-raw-sys-0.4.11 \
 		lock_api-0.4.11 \
 		log-0.4.20 \
-		lsp-server-0.7.4 \
-		lsp-textdocument-0.3.2 \
-		lsp-types-0.94.1 \
+		lsp-server-0.7.6 \
+		lsp-textdocument-0.4.0 \
+		lsp-types-0.97.0 \
 		maybe-owned-0.3.4 \
 		memchr-2.6.4 \
 		memmap2-0.9.3 \
@@ -141,9 +144,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		plain-0.2.3 \
 		ppv-lite86-0.2.17 \
 		precomputed-hash-0.1.1 \
-		proc-macro2-1.0.70 \
-		quick-xml-0.28.2 \
-		quote-1.0.33 \
+		proc-macro2-1.0.86 \
+		quick-xml-0.35.0 \
+		quote-1.0.36 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
@@ -165,9 +168,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		security-framework-2.9.2 \
 		security-framework-sys-2.9.1 \
 		semver-1.0.20 \
-		serde-1.0.193 \
-		serde_derive-1.0.193 \
-		serde_json-1.0.108 \
+		serde-1.0.204 \
+		serde_derive-1.0.204 \
+		serde_json-1.0.120 \
 		serde_repr-0.1.17 \
 		serde_spanned-0.6.4 \
 		serde_urlencoded-0.7.1 \
@@ -188,7 +191,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		symbolic-demangle-12.8.0 \
 		symbolic-ppdb-12.8.0 \
 		syn-1.0.109 \
-		syn-2.0.39 \
+		syn-2.0.70 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
 		tempfile-3.8.1 \
