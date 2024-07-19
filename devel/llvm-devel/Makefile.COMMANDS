@@ -65,6 +65,7 @@ LLVM_COMMANDS=	\
 		llvm-windres \
 		llvm-xray \
 		opt \
+		reduce-chunk-list \
 		sancov
 
 CLANG_COMMANDS=	\
