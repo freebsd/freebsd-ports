@@ -1,6 +1,6 @@
---- fuzz.c.orig	Mon May 12 01:49:39 2003
-+++ fuzz.c	Mon May 12 01:53:44 2003
-@@ -387,10 +387,16 @@
+--- fuzz.c.orig	2000-08-09 14:48:26 UTC
++++ fuzz.c
+@@ -387,10 +387,16 @@ int main(int argc, char **argv){
      int progpipe[2],status;
      char sendnewline=0;
      unsigned long curchar=0,linelen=0;
