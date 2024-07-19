@@ -1,7 +1,6 @@
 PORTNAME=	mesa
-DISTVERSION=	24.1-branchpoint-3782
-DISTVERSIONSUFFIX=	-gc8d64860ec7
-PORTREVISION=	2
+DISTVERSION=	24.2-branchpoint-2023
+DISTVERSIONSUFFIX=	-g2d10233f2f1
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -10,7 +9,6 @@ PATCHFILES+=	700efacda59c.patch:-p1:github
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	2930dcbb3329.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/22246
 PATCHFILES+=	11aaf934112c.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/22941
-PATCHFILES+=	93e96da9458c.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/30710
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Bleeding edge Mesa drivers (OpenCL, OpenGL, Vulkan)
@@ -23,7 +21,8 @@ ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Limited scope: no old drivers and no software rendering. \
 			See also https://mesamatrix.net/
 
-BUILD_DEPENDS=	libglvnd>=1.3.2:graphics/libglvnd \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>0:devel/py-pyyaml@${PY_FLAVOR} \
+		libglvnd>=1.3.2:graphics/libglvnd \
 		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libexpat.so:textproc/expat2
@@ -44,6 +43,7 @@ MESON_ARGS=	-Dgallium-omx=disabled \
 		-Dvalgrind=disabled \
 		-Dplatforms=${PLATFORMS:O:[-1..1]:ts,} \
 		-Dvideo-codecs=all \
+		-Dunversion-libgallium=true \
 		${NULL}
 LDFLAGS+=	-Wl,--undefined-version # https://gitlab.freedesktop.org/mesa/mesa/-/issues/8003
 PLIST_SUB=	ARCH=${ARCH:S/amd/x86_/}
