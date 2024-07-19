@@ -1,12 +1,13 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.15.0
-PORTREVISION=	1
+DISTVERSION=	7.16.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		https://build-artifacts.signal.org/desktop/:sqlcipher
 DISTFILES=	signal-desktop-${DISTVERSION}-npm-cache.tar.gz:npm \
 		${SQLCIPHER}.tar.gz:sqlcipher
+# for online build
+#DISTFILES=	${SQLCIPHER}.tar.gz:sqlcipher
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Cross-platform centralized encrypted messaging service
@@ -110,6 +111,11 @@ post-extract:
 	${PREFIX}/bin/jq 'del(.devDependencies."@signalapp/mock-server")' ${WRKSRC}/package.json > ${WRKSRC}/package.json.tmp
 	${MV} ${WRKSRC}/package.json.tmp ${WRKSRC}/package.json
 
+	# for online build
+#	cd ${WRKSRC} && \
+#		${SETENV} ${MAKE_ENV} npm install --ignore-optional --ignore-scripts || ${TRUE}
+
+	# for offline build
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} npm install --ignore-optional --ignore-scripts --offline || ${TRUE}
 
@@ -140,12 +146,16 @@ do-build:
 
 	@${RM} -r ${WRKSRC}/node_modules/fs-xattr
 
+	# online build
+#	cd ${WRKSRC} && \
+#		${SETENV} ${MAKE_ENV} npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers npm install --ignore-optional
+#	cd ${WRKSRC} && \
+#		${SETENV} ${MAKE_ENV} npm run generate
+
+	# offline build
 	${ECHO_CMD} offline=true >> ${WRKSRC}/.npmrc
-	${ECHO_CMD} ${PATH}
-	${ECHO_CMD} a >> ${WRKSRC}/todo
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers npm install --ignore-optional --offline
-	${ECHO_CMD} b >> ${WRKSRC}/todo
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} npm run generate --offline
 

@@ -1,5 +1,5 @@
---- package.json.orig	2024-07-08 15:06:16 UTC
-+++ package.json
+--- package.json.orig	2024-07-08 15:06:16.491473000 +0200
++++ package.json	2024-07-08 15:06:50.596796000 +0200
 @@ -19,7 +19,7 @@
      "postinstall": "npm run build:acknowledgments && patch-package && npm run electron:install-app-deps",
      "postuninstall": "npm run build:acknowledgments",
