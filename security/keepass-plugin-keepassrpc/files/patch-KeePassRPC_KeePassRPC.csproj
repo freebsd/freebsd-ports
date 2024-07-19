@@ -1,18 +1,53 @@
---- KeePassRPC/KeePassRPC.csproj.orig	2017-12-16 23:19:07 UTC
+--- KeePassRPC/KeePassRPC.csproj.orig	2024-06-12 18:29:35 UTC
 +++ KeePassRPC/KeePassRPC.csproj
-@@ -105,7 +105,7 @@
-     <Reference Include="KeePass, Version=2.1.8.29009, Culture=neutral, PublicKeyToken=7952fc8ece49a093, processorArchitecture=MSIL">
-       <SpecificVersion>False</SpecificVersion>
-       <ExecutableExtension>.exe</ExecutableExtension>
--      <HintPath>..\..\..\..\Program Files (x86)\KeePass Password Safe 2 DEV\KeePass.exe</HintPath>
-+      <HintPath>/usr/local/share/keepass/KeePass.exe</HintPath>
+@@ -113,7 +113,7 @@
+     <Reference Include="System.Xml" />
+     <Reference Include="KeePass">
+       <HintPath Condition="'$(OS)' == 'Windows_NT'">$(USERPROFILE)\KeePassDEV\KeePass.exe</HintPath>
+-      <HintPath Condition="'$(OS)' != 'Windows_NT'">$(home)/keepass-dev/KeePass.exe</HintPath>
++      <HintPath Condition="'$(OS)' != 'Windows_NT'">/usr/local/share/keepass/KeePass.exe</HintPath>
      </Reference>
-     <Reference Include="System" />
-     <Reference Include="System.Configuration" />
-@@ -385,4 +385,4 @@
-       :BuildEventOK
-       echo POSTBUILDSTEP for $(ProjectName) COMPLETED OK</PostBuildEvent>
+   </ItemGroup>
+   <ItemGroup>
+@@ -478,38 +478,12 @@
    </PropertyGroup>
--</Project>
-\ No newline at end of file
-+</Project>
+   <PropertyGroup Condition="'$(OS)' != 'Windows_NT'">
+     <PostBuildEvent>
+-      #!/bin/bash
+-      echo POSTBUILDSTEP for $(ProjectName)
+-
+-      export KPDir="${HOME}/keepass-dev/"
+-      export KPPDir=${KPDir}Plugins/
+-      export KPPTempDir="${KPPDir}$(ProjectName)"
+-            
+-      # delete the PLGX from any previous ReleasePLGX build
+-      rm -f "${KPPDir}$(ProjectName).plgx"
+-      if [ $? = 1 ]; then echo POSTBUILDSTEP for $(ProjectName) FAILED; exit 1; fi
+-      echo Release plgx deleted
+-
+-      # copy output DLLs to KeePass plugins directory
+-      cp "$(ProjectName).dll" "${KPPDir}$(ProjectName).dll"
+-      cp "$(ProjectName).pdb" "${KPPDir}$(ProjectName).pdb"
+-      
+-      if [ $? = 1 ]; then echo POSTBUILDSTEP for $(ProjectName) FAILED; exit 1; fi
+-            
+-      cp "Jayrock.dll" "${KPPDir}Jayrock.dll"
+-      cp "Jayrock.Json.dll" "${KPPDir}Jayrock.Json.dll"
+-      cp "Fleck2.dll" "${KPPDir}Fleck2.dll"
+-      cp "DomainPublicSuffix.dll" "${KPPDir}DomainPublicSuffix.dll"
+-      
+-      if [ $? = 1 ]; then echo POSTBUILDSTEP for $(ProjectName) FAILED; exit 1; fi
+-            
+-      echo Debug DLLs copied to plugins directory
+-
+-      echo POSTBUILDSTEP for $(ProjectName) COMPLETED OK</PostBuildEvent>
++      #!/bin/sh
++      echo POSTBUILDSTEP for $(ProjectName): COMPLETED OK</PostBuildEvent>
+   </PropertyGroup>
+   <PropertyGroup Condition="'$(OS)' != 'Windows_NT' AND '$(ConfigurationName)' == 'ReleasePLGX'">
+     <PostBuildEvent>
+-      #!/bin/bash
++      #!/usr/local/bin/bash
+       echo POSTBUILDSTEP for $(ProjectName)
+ 
+       export KPDir="${HOME}/keepass-dev/"
