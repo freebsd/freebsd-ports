@@ -4,6 +4,7 @@
     SUBDIR += Xaw3d
     SUBDIR += Xmt
     SUBDIR += amtk
+    SUBDIR += aquamarine
     SUBDIR += blt
     SUBDIR += bwidget
     SUBDIR += color-widgets-qt5
