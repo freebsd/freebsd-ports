@@ -1,0 +1,11 @@
+--- services/device/public/mojom/BUILD.gn.orig	2024-04-15 20:34:03 UTC
++++ services/device/public/mojom/BUILD.gn
+@@ -96,7 +96,7 @@ mojom("device_service") {
+   enable_js_fuzzing = false
+ 
+   enabled_features = []
+-  if ((is_linux || is_chromeos) && use_udev) {
++  if ((is_linux || is_chromeos) && !is_bsd && use_udev) {
+     enabled_features += [ "enable_input_device_manager" ]
+   }
+ 
