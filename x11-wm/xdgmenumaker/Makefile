@@ -1,6 +1,5 @@
 PORTNAME=	xdgmenumaker
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	2.2
 CATEGORIES=	x11-wm python
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -19,5 +18,7 @@ GH_ACCOUNT=	gapan
 SHEBANG_FILES=	src/xdgmenumaker
 
 ALL_TARGET=	man
+TEST_ENV=	PYTHON=${PYTHON_CMD}
+TEST_TARGET=	test
 
 .include <bsd.port.mk>
