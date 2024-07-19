@@ -3,7 +3,6 @@ DISTVERSION=	3.0.11
 CATEGORIES=	devel
 MASTER_SITES+=	https://raw.githubusercontent.com/catchorg/Catch2/v2.13.10/single_include/catch2/:catch2
 DISTFILES+=	catch.hpp:catch2
-#EXTRACT_ONLY=	${GH_ACCOUNT}-${PORTNAME}-${DISTVERSION}_GH0${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	freebsd@sysctl.cz
