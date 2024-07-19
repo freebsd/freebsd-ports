@@ -1,5 +1,5 @@
 PORTNAME=	blender
-DISTVERSION=	4.1
+DISTVERSION=	4.2
 CATEGORIES=	graphics
 MASTER_SITES=	https://docs.blender.org/manual/en/${PORTVERSION}/
 PKGNAMESUFFIX=	-doc
