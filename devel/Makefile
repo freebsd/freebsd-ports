@@ -1698,6 +1698,7 @@
     SUBDIR += ninja
     SUBDIR += nlohmann-json
     SUBDIR += node-thrift
+    SUBDIR += nodeeditor
     SUBDIR += notcurses
     SUBDIR += notify-sharp
     SUBDIR += nox
