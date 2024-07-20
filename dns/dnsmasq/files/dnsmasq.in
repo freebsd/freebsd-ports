@@ -59,13 +59,15 @@ load_rc_config "${name}"
 command_args="-x $pidfile -C $dnsmasq_conf"
 
 required_files="${dnsmasq_conf}"
-extra_commands="reload logstats"
+extra_commands="reload logstats checkconfig"
 
 reload_precmd="reload_pre"
 reload_postcmd="reload_post"
+restart_precmd="checkconfig"
 start_postcmd="timestampconf"
-stop_precmd="rmtimestamp"
+stop_precmd="stop_pre"
 logstats_cmd="logstats"
+checkconfig_cmd="checkconfig"
 
 reload_pre() {
         if [ "$dnsmasq_conf" -nt "${timestamp}" ] ; then
@@ -92,6 +94,16 @@ timestampconf() {
 
 rmtimestamp() {
         rm -f "${timestamp}"
+}
+
+stop_pre() {
+        checkconfig || return
+        rmtimestamp
+}
+
+checkconfig() {
+        echo "Performing sanity check on ${name} configuration."
+        ${command} ${command_args} --test
 }
 
 run_rc_command "$1"
