@@ -164,12 +164,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_msvc-0.52.6 \
 		yada-0.5.1
 
-#CARGO_CONFIGURE=	no
 CARGO_BUILD=		no
 CARGO_INSTALL=		no
-
-xpost-configure:
-	@(cd ${BUILD_WRKSRC}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_CONFIGURE_TARGET} ${PYDISTUTILS_CONFIGUREARGS})
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/sudachipy/sudachipy${PYTHON_EXT_SUFFIX}.so
