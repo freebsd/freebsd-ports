@@ -1,9 +1,0 @@
---- pyproject.toml.orig	2023-05-03 15:45:12 UTC
-+++ pyproject.toml
-@@ -1,5 +1,5 @@
- [tool.poetry]
--name = "pysmi-lextudio"
-+name = "pysmi"
- version = "1.1.13"
- description = "A pure-Python implementation of SNMP/SMI MIB parsing and conversion library."
- authors = ["Ilya Etingof <etingof@gmail.com>", "Lex Li <support@lextudio.com>"]
