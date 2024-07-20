@@ -225,6 +225,7 @@
     SUBDIR += prn
     SUBDIR += py-SudachiPy
     SUBDIR += py-jaconv
+    SUBDIR += py-unidic
     SUBDIR += qkc
     SUBDIR += qolibri
     SUBDIR += quit
