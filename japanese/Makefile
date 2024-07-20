@@ -262,6 +262,7 @@
     SUBDIR += sourcehanserif-otf
     SUBDIR += spoqahansans-ttf
     SUBDIR += srd-fpw-package
+    SUBDIR += sudachi
     SUBDIR += suicavalue
     SUBDIR += tdiary
     SUBDIR += tegaki-zinnia-japanese
