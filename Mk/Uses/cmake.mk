@@ -62,7 +62,7 @@ _INCLUDE_USES_CMAKE_MK=	yes
 
 _valid_ARGS=		indirect insource noninja run testing _internal
 
-_CMAKE_VERSION=		3.29.6
+_CMAKE_VERSION=		3.30.1
 CMAKE_BIN=		${LOCALBASE}/bin/cmake
 
 # Sanity check
