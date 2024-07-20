@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.7.3
+DISTVERSION=	2024.7.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -49,7 +49,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytes-1.6.1 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.1.3 \
+		cc-1.1.5 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		chrono-tz-0.9.0 \
@@ -275,8 +275,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		schannel-0.1.23 \
-		security-framework-2.11.0 \
-		security-framework-sys-2.11.0 \
+		security-framework-2.11.1 \
+		security-framework-sys-2.11.1 \
 		self-replace-1.3.7 \
 		self_update-0.41.0 \
 		semver-1.0.23 \
@@ -324,21 +324,21 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		test-case-macros-3.3.1 \
 		test-log-0.2.16 \
 		test-log-macros-0.2.16 \
-		thiserror-1.0.62 \
-		thiserror-impl-1.0.62 \
+		thiserror-1.0.63 \
+		thiserror-impl-1.0.63 \
 		thread_local-1.1.8 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.38.0 \
+		tokio-1.38.1 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.0 \
 		tokio-util-0.7.11 \
-		toml-0.8.14 \
+		toml-0.8.15 \
 		toml_datetime-0.6.6 \
-		toml_edit-0.22.15 \
+		toml_edit-0.22.16 \
 		tower-0.4.13 \
 		tower-layer-0.3.2 \
 		tower-service-0.3.2 \
