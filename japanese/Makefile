@@ -224,6 +224,7 @@
     SUBDIR += plan
     SUBDIR += prn
     SUBDIR += py-SudachiPy
+    SUBDIR += py-fugashi
     SUBDIR += py-jaconv
     SUBDIR += py-unidic
     SUBDIR += qkc
