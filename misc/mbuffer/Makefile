@@ -1,5 +1,5 @@
 PORTNAME=	mbuffer
-PORTVERSION=	20240107
+PORTVERSION=	20240707
 CATEGORIES=	misc
 MASTER_SITES=	http://www.maier-komor.de/software/mbuffer/
 
@@ -31,6 +31,8 @@ RHASH_DESC=	Use rhash for hash generation
 GCRYPT_RUN_DEPENDS=	libgcrypt>=1.8.4_1:security/libgcrypt
 MHASH_RUN_DEPENDS=	mhash>=0.9.9.9_5:security/mhash
 RHASH_RUN_DEPENDS=	rhash>=1.3.5:security/rhash
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-r${PORTVERSION}
 
 post-patch:
 	${REINPLACE_CMD} \
