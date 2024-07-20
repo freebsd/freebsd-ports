@@ -18,7 +18,6 @@ include/clad/Differentiator/EstimationModel.h
 include/clad/Differentiator/ExternalRMVSource.h
 include/clad/Differentiator/FunctionTraits.h
 include/clad/Differentiator/HessianModeVisitor.h
-include/clad/Differentiator/JacobianModeVisitor.h
 include/clad/Differentiator/Matrix.h
 include/clad/Differentiator/MultiplexExternalRMVSource.h
 include/clad/Differentiator/NumericalDiff.h
@@ -38,3 +37,4 @@ include/clad/Differentiator/VisitorBase.h
 include/clad/tools/ClangBackendPlugin.h
 include/clad/tools/ClangPlugin.h
 lib/clad.so
+lib/cmake/clad/AddClad.cmake

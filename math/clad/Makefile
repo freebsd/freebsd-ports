@@ -1,6 +1,6 @@
 PORTNAME=	clad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5
+DISTVERSION=	1.6
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,6 +35,6 @@ post-patch:
 		' \
 		${WRKSRC}/test/lit.cfg
 
-# tests fail to compile: https://github.com/vgvassilev/clad/issues/798
+# tests fail to compile: https://github.com/vgvassilev/clad/issues/993
 
 .include <bsd.port.mk>
