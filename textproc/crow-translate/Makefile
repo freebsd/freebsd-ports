@@ -9,7 +9,7 @@ WWW=		https://crow-translate.github.io/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/kf5-extra-cmake-modules
+BUILD_DEPENDS=	${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/kf6-extra-cmake-modules
 LIB_DEPENDS=	libleptonica.so:graphics/leptonica \
 		libtesseract.so:graphics/tesseract
 
@@ -24,7 +24,7 @@ GH_TUPLE=	HatScripts:circle-flags:1c186db:circleflags/data/icons/third-party/cir
 		itay-grudev:SingleApplication:aede311:singleapplication/src/third-party/singleapplication
 USE_KDE=	wayland
 USE_QT=		concurrent core dbus gui multimedia network svg widgets \
-		x11extras buildtools:build qmake:build
+		x11extras buildtools:build linguisttools:build qmake:build
 USE_XORG=	ice sm x11 xcb xext
 
 post-patch:
