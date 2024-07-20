@@ -1,6 +1,6 @@
 PORTNAME=	benchmark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.3
+DISTVERSION=	1.8.5
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -31,6 +31,6 @@ BINARY_ALIAS=	git=false
 
 PLIST_SUB=	VERSION=${DISTVERSION}
 
-# tests fail to compile, see https://github.com/google/benchmark/issues/1593
+# tests fail to compile, due to https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=280382
 
 .include <bsd.port.mk>
