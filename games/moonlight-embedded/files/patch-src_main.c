@@ -1,4 +1,4 @@
---- src/main.c.orig	2023-11-03 06:08:34 UTC
+--- src/main.c.orig	2024-02-20 04:01:31 UTC
 +++ src/main.c
 @@ -42,6 +42,7 @@
  #include <client.h>
@@ -54,16 +54,17 @@
  
      #ifdef HAVE_SDL
      if (system == SDL)
-@@ -362,6 +363,8 @@ int main(int argc, char* argv[]) {
+@@ -362,6 +363,9 @@ int main(int argc, char* argv[]) {
            mappings = map;
          }
  
 +        // test is use kbdmux driver
-+        is_use_kbdmux();
++        if (config.inputsCount <= 0)
++          is_use_kbdmux();
          for (int i=0;i<config.inputsCount;i++) {
            if (config.debug_level > 0)
              printf("Adding input device %s...\n", config.inputs[i]);
-@@ -398,7 +401,8 @@ int main(int argc, char* argv[]) {
+@@ -398,7 +402,8 @@ int main(int argc, char* argv[]) {
      if (config.pin > 0 && config.pin <= 9999) {
        sprintf(pin, "%04d", config.pin);
      } else {
@@ -73,7 +74,7 @@
      }
      printf("Please enter the following PIN on the target PC: %s\n", pin);
      fflush(stdout);
-@@ -406,6 +410,7 @@ int main(int argc, char* argv[]) {
+@@ -406,6 +411,7 @@ int main(int argc, char* argv[]) {
        fprintf(stderr, "Failed to pair to server: %s\n", gs_error);
      } else {
        printf("Succesfully paired\n");
