@@ -223,6 +223,7 @@
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += prn
+    SUBDIR += py-SudachiPy
     SUBDIR += py-jaconv
     SUBDIR += qkc
     SUBDIR += qolibri
