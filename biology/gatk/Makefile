@@ -70,7 +70,7 @@ do-fetch:
 		) && \
 		${FIND} ${PORTNAME}-${DISTVERSION} -and -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
 		${FIND} ${PORTNAME}-${DISTVERSION} -print0 | LC_ALL=C ${SORT} -z | \
-		${TAR} czf ${DISTNAME}${EXTRACT_SUFX} --gid 0 --uid 0 --options gzip:!timestamp --no-recursion --null -T - && \
+		${SETENV} -i ${TAR} czf ${DISTNAME}${EXTRACT_SUFX} --format=cpio --gid 0 --uid 0 --options gzip:!timestamp --no-recursion --null -T - && \
 		${RM} -r ${PORTNAME}-${DISTVERSION}; \
 	fi
 # fetch the deps distfile
