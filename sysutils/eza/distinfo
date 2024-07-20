@@ -1,6 +1,6 @@
-TIMESTAMP = 1719816926
-SHA256 (eza/man-0.18.21.tar.gz) = f756c1c20dbf730c9c99295742abd6adc194164723ff8531107feb3259fbe100
-SIZE (eza/man-0.18.21.tar.gz) = 8547
+TIMESTAMP = 1721367833
+SHA256 (eza/man-0.18.22.tar.gz) = edca19c793106b60eb296ddae84786770b67b7e40e95f09c1ea545f0f7ea5978
+SIZE (eza/man-0.18.22.tar.gz) = 8493
 SHA256 (eza/rust/crates/aho-corasick-1.0.5.crate) = 0c378d78423fdad8089616f827526ee33c19f2fddbd5de1629152c9593ba4783
 SIZE (eza/rust/crates/aho-corasick-1.0.5.crate) = 172064
 SHA256 (eza/rust/crates/android-tzdata-0.1.1.crate) = e999941b234f3131b00bc13c22d06e8c5ff726d1b6318ac7eb276997bbb4fef0
@@ -365,5 +365,5 @@ SHA256 (eza/rust/crates/winnow-0.5.40.crate) = f593a95398737aeed53e489c785df13f3
 SIZE (eza/rust/crates/winnow-0.5.40.crate) = 159316
 SHA256 (eza/rust/crates/zoneinfo_compiled-0.5.1.crate) = 64fbebe65e899530f43bd760b23fda8f141118f4db49952b02998cbd0907a5de
 SIZE (eza/rust/crates/zoneinfo_compiled-0.5.1.crate) = 8837
-SHA256 (eza/eza-community-eza-v0.18.21_GH0.tar.gz) = 53cee12706be2b5bedcf40b97e077a18b254f0f53f1aee52d1d74136466045bc
-SIZE (eza/eza-community-eza-v0.18.21_GH0.tar.gz) = 1385590
+SHA256 (eza/eza-community-eza-v0.18.22_GH0.tar.gz) = 552fe9997ed4fc6e11dafebffc2aa249ab3fb465a05c614181c7b62e8a0df698
+SIZE (eza/eza-community-eza-v0.18.22_GH0.tar.gz) = 1385466
