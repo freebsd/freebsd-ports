@@ -30,6 +30,11 @@ USE_XORG=	pixman
 GH_ACCOUNT=	hyprwm
 PLIST_SUB=	VERSION=${DISTVERSION:C/-.*//}
 
+# XXX Drop after FreeBSD 14.0 EOL around 2024-10-01
+.if exists(/usr/lib/libc++.so) && !exists(/usr/include/c++/v1/__format/write_escaped.h)
+CXXFLAGS+=	-fexperimental-library
+.endif
+
 # XXX Drop after FreeBSD 13.4 EOL around 2026-01-31
 # https://cgit.freebsd.org/src/commit/?id=af93fea71038
 .if !exists(/usr/include/sys/timerfd.h)
