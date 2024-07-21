@@ -4,7 +4,7 @@ PORTREVISION=	26
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawstudio.org/files/release/
 
-MAINTAINER=	samm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source program to read and manipulate RAW photo images
 WWW=		https://rawstudio.org/
 
