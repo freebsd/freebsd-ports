@@ -38,6 +38,13 @@
 %%EXAMPLES%%bin/llama-train-text-from-scratch
 include/ggml-alloc.h
 include/ggml-backend.h
+include/ggml-blas.h
+include/ggml-cuda.h
+include/ggml-kompute.h
+include/ggml-metal.h
+include/ggml-rpc.h
+include/ggml-sycl.h
+include/ggml-vulkan.h
 include/ggml.h
 include/llama.h
 lib/cmake/llama/llama-config.cmake
