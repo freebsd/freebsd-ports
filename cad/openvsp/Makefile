@@ -1,6 +1,6 @@
 PORTNAME=	openvsp
 DISTVERSIONPREFIX=	${GH_PROJECT}_
-DISTVERSION=	3.39.1
+DISTVERSION=	3.40.1
 CATEGORIES=	cad
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -15,7 +15,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BROKEN_aarch64=		fails to compile: invokes x86 asm
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libopenNURBS.a:graphics/opennurbs \
-		${LOCALBASE}/include/glm/glm.hpp:math/glm
+		${LOCALBASE}/include/glm/glm.hpp:math/glm \
+		pandoc:textproc/hs-pandoc
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
@@ -23,6 +24,7 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfltk.so:x11-toolkits/fltk \
 		libcpptest.so:devel/cpptest
+MAKE_JOBS_UNSAFE=yes
 
 USES=		cmake:noninja localbase \
 		gl gnome jpeg xorg
