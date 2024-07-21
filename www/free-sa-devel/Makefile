@@ -59,7 +59,7 @@ pre-everything::
 	@${ECHO_MSG} " For example, 'make WITH_OPTIMIZED_CFLAGS=yes'"
 	@${ECHO_MSG} "============================================================================="
 .endif
-.if empty(PORT_OPTIONS:MSA_DEBUG) &! (SA_DEBUG_LEVEL)
+.if empty(PORT_OPTIONS:MSA_DEBUG) && !defined(SA_DEBUG_LEVEL)
 	@${ECHO_MSG} "============================================================================="
 	@${ECHO_MSG} " You can enable Free-SA debugging (level 1) by defining WITH_SA_DEBUG"
 	@${ECHO_MSG} " For example, 'make WITH_SA_DEBUG=yes'"
