@@ -1,6 +1,5 @@
 PORTNAME=	frozendict
-PORTVERSION=	2.3.10
-PORTREVISION=	1
+PORTVERSION=	2.4.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/Marco-Sulla/python-frozendict/releases/download/v${PORTVERSSION}/
@@ -19,9 +18,15 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 31100
+NO_ARCH=	yes
+.else
 MAKE_ARGS=	custom_arg=c
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
