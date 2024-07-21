@@ -25,4 +25,11 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	COMPLETE IO
+COMPLETE_DESC=		Complete functionality
+COMPLETE_IMPLIES=	IO
+IO_DESC=		Aggregate metadata from data files
+
+IO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyarrow>=0:databases/py-pyarrow@${PY_FLAVOR}
+
 .include <bsd.port.mk>
