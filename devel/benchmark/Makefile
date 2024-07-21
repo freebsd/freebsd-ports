@@ -11,7 +11,7 @@ WWW=		https://github.com/google/benchmark
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++11-lang
+USES=		cmake:testing compiler:c++11-lang pathfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
