@@ -1,6 +1,6 @@
 PORTNAME=	xearth
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro geography
 MASTER_SITES=	LOCAL/madpilot/xearth
 
