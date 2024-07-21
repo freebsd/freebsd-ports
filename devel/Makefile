@@ -5277,6 +5277,7 @@
     SUBDIR += py-pdm
     SUBDIR += py-pdm-autoexport
     SUBDIR += py-pdm-backend
+    SUBDIR += py-pdm-build-locked
     SUBDIR += py-pdm-pep517
     SUBDIR += py-pdoc
     SUBDIR += py-pebble
