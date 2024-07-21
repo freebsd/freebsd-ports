@@ -1,5 +1,5 @@
 PORTNAME=	pdm
-PORTVERSION=	2.16.1
+PORTVERSION=	2.17.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,9 +12,10 @@ WWW=		https://pdm-project.org/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>=0:devel/py-pdm-backend@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>=0:devel/py-pdm-backend@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pdm-build-locked>=0:devel/py-pdm-build-locked@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>=0:devel/py-blinker@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dep-logic>=0.2.0<1.0:devel/py-dep-logic@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dep-logic>=0.4.3:devel/py-dep-logic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.13:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}findpython>=0.6.0<1.0.0:devel/py-findpython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hishel>=0.0.24<0.1.0:devel/py-hishel@${PY_FLAVOR} \
@@ -30,7 +31,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>=0:devel/py-blinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=12.3.0:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}shellingham>=1.3.2:devel/py-shellingham@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.11.1<1:textproc/py-tomlkit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}unearth>=0.15.0:devel/py-unearth@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}unearth>=0.16.0:devel/py-unearth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=20:devel/py-virtualenv@${PY_FLAVOR}
 
 USES=		python
