@@ -12,6 +12,7 @@ LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PY_TOMLI} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python
@@ -23,13 +24,6 @@ OPTIONS_DEFINE=	TOML
 OPTIONS_DEFAULT=TOML
 TOML_DESC=	TOML (Tom's Obvious Minimal Language) support
 
-.include <bsd.port.pre.mk>
+TOML_RUN_DEPENDS=	${PY_TOMLI}
 
-.if ${PYTHON_REL} < 31100
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=0:textproc/py-tomli@${PY_FLAVOR}
-.if ${PORT_OPTIONS:MTOML}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=0:textproc/py-tomli@${PY_FLAVOR}
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

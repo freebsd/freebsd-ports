@@ -17,9 +17,8 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=1.9.4<4.0:devel/py-argcomplete@$
 BUILD_DEPENDS=	${PY_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PY_DEPENDS}
-py39_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tomli>=1:textproc/py-tomli@${PY_FLAVOR}
-py310_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tomli>=1:textproc/py-tomli@${PY_FLAVOR}
+RUN_DEPENDS=	${PY_DEPENDS} \
+		${PY_TOMLI}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest # 37 tests fail, see https://github.com/wntrblm/nox/issues/820
