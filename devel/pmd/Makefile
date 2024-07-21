@@ -1,31 +1,36 @@
 PORTNAME=	pmd
-PORTVERSION=	6.53.0
+PORTVERSION=	7.3.0
 CATEGORIES=	devel java
-MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTNAME}_releases/${DISTVERSION}/
+DISTNAME=	${PORTNAME}-dist-${DISTVERSION}-bin
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tiago.gasiba@gmail.com
 COMMENT=	Static analysis tool for Java source code
-WWW=		http://pmd.sourceforge.net/
+WWW=		https://pmd.github.io/
 
 LICENSE=	APACHE20 BSD4CLAUSE
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe zip
-
 CPE_VENDOR=	pmd_project
 USE_JAVA=	yes
-NO_BUILD=	yes
+
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+NO_ARCH=	yes
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-bin-${DISTVERSION}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!/bin/sh|' -e 's|function||' \
-		-e 's|LIB_DIR=$$(pwd -P)|LIB_DIR=${DATADIR}|' ${WRKSRC}/bin/run.sh
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/bin/${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/run.sh ${STAGEDIR}${PREFIX}/bin/pmd
-	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/conf/simplelogger.properties \
+		${STAGEDIR}${PREFIX}/etc/${PORTNAME}/simplelogger.properties.sample
+	cd ${WRKSRC} && ${COPYTREE_SHARE} sbom ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/* ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
