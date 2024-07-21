@@ -15,7 +15,9 @@ WWW=		https://www.palomino3d.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE_GNU_GPL_2.txt
-BROKEN_FreeBSD_14=	fails to compile:  no matching function for call to 'make_pair'
+BROKEN=		fails to compile:  no matching function for call to 'make_pair'
+DEPRECATED=	Abandonware, unmaintained and fails to build
+EXPIRATION_DATE=2024-08-21
 
 LIB_DEPENDS=	libosg.so:graphics/osg34
 
