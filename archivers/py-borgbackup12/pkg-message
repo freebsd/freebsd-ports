@@ -1,0 +1,32 @@
+[
+{ type: install
+  message: <<EOM
+In order to mount locally a remote archive or an entire repository as a FUSE
+filesystem, it is required to load fusefs module, for instance, as root, run:
+
+	kldload fusefs
+
+To load the module at boot time, you can add it to the kld_list variable
+in /etc/rc.conf or related files, for instance, by running
+
+	sysrc kld_list+=fusefs
+
+as root.  Alternatively, to load the module earlier, you can manually add
+
+	fusefs_load="YES"
+
+to /boot/loader.conf.local or /boot/loader.conf with a text editor.
+
+
+Also, if you plan to mount borg repositories as non root user, you need to run
+
+# sysctl vfs.usermount=1
+
+and add the line
+
+vfs.usermount=1
+
+to /etc/sysctl.conf to ensure the setting is loaded at boot time.
+EOM
+}
+]

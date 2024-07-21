@@ -3401,3 +3401,4 @@ textproc/rubygem-nokogiri111|textproc/rubygem-nokogiri|2024-07-17|Obsolete, use 
 devel/rubygem-google-gax||2024-07-21|Remove obsoleted port. This gem is officially end-of-life
 audio/strawberry@qt5|audio/strawberry|2024-07-21|Unflavor. Qt5 is obsolete
 audio/strawberry@qt6|audio/strawberry|2024-07-21|Unflavor. Qt5 is obsolete
+archivers/py-borgbackup|archivers/py-borgbackup12|2024-07-21|Borgbackup released a new stable version 1.4.0
