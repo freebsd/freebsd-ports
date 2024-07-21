@@ -1,5 +1,5 @@
 PORTNAME=	selenium-webdriver
-PORTVERSION=	4.22.0
+PORTVERSION=	4.23.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
