@@ -1,0 +1,2 @@
+The dask-awkward project implements a native Dask collection for representing
+partitioned Awkward arrays.
