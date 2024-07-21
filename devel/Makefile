@@ -5932,6 +5932,7 @@
     SUBDIR += py-unpaddedbase64
     SUBDIR += py-untokenize
     SUBDIR += py-update_checker
+    SUBDIR += py-uproot
     SUBDIR += py-urlimport
     SUBDIR += py-urwid
     SUBDIR += py-urwid-readline
