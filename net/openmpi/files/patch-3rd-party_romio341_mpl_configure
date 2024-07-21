@@ -1,0 +1,12 @@
+--- 3rd-party/romio341/mpl/configure.orig	2024-07-21 08:39:24 UTC
++++ 3rd-party/romio341/mpl/configure
+@@ -17666,7 +17666,8 @@ fi
+ fi
+ 
+ 
+-if test "$have_gpu" = "no" ; then
++# Disable Level Zero - See https://github.com/open-mpi/ompi/issues/9715
++if test "$have_gpu" = "DISABLED" ; then
+     # Check Level Zero availability when no other GPU library is available
+ 
+ 
