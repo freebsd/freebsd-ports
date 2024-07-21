@@ -1,4 +1,4 @@
---- third_party/nasm/config/config-linux.h.orig	2023-02-01 18:45:20 UTC
+--- third_party/nasm/config/config-linux.h.orig	2024-06-13 07:44:30 UTC
 +++ third_party/nasm/config/config-linux.h
 @@ -160,7 +160,7 @@
  
@@ -18,7 +18,7 @@
  
  /* Define to 1 if you have the `faccessat' function. */
  #define HAVE_FACCESSAT 1
-@@ -327,16 +327,16 @@
+@@ -327,10 +327,10 @@
  #define HAVE_ISASCII 1
  
  /* Define to 1 if you have the `iscntrl' function. */
@@ -31,13 +31,6 @@
  
  /* Define to 1 if you have the <memory.h> header file. */
  #define HAVE_MEMORY_H 1
- 
- /* Define to 1 if you have the `mempcpy' function. */
--#define HAVE_MEMPCPY 1
-+/* #undef HAVE_MEMPCPY */
- 
- /* Define to 1 if you have a working `mmap' system call. */
- #define HAVE_MMAP 1
 @@ -357,7 +357,7 @@
  #define HAVE_STDARG_H 1
  
