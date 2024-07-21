@@ -841,6 +841,7 @@
     SUBDIR += py-varstack
     SUBDIR += py-whisper
     SUBDIR += py-xapian
+    SUBDIR += py-xrootd
     SUBDIR += py-zodbpickle
     SUBDIR += pythoncego
     SUBDIR += qdbm
