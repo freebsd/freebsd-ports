@@ -146,7 +146,9 @@ RUBY_DEFAULT?=		3.2
 RUST_DEFAULT?=		rust
 # Possible values: 4.16, 4.19
 SAMBA_DEFAULT?=		4.16
-# Possible values: base, openssl, openssl111, openssl31, openssl32, libressl, libressl-devel
+# When updating this, please also update the same list in ssl.mk and the checks
+# for USES=ssl in qa.sh!
+# Possible values: base, openssl, openssl111, openssl31, openssl32, openssl33, libressl, libressl-devel
 .  if !defined(SSL_DEFAULT)
 #	If no preference was set, check for an installed base version
 #	but give an installed port preference over it.
