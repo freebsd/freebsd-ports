@@ -1,16 +1,3 @@
 bin/simutrans
 share/icons/hicolor/scalable/apps/simutrans.svg
-@dir %%DATADIR%%/text/th
-@dir %%DATADIR%%/text/sq
-@dir %%DATADIR%%/text/no
-@dir %%DATADIR%%/text/lt
-@dir %%DATADIR%%/text/gr
-@dir %%DATADIR%%/text/fp
-@dir %%DATADIR%%/text/et
-@dir %%DATADIR%%/text/eo
-@dir %%DATADIR%%/text/ca
-@dir %%DATADIR%%/text/bg
-@dir %%DATADIR%%/text/be
-@dir %%DATADIR%%/screenshot
-@dir %%DATADIR%%/save
-@dir %%DATADIR%%/maps
+share/metainfo/com.simutrans.Simutrans.metainfo.xml
