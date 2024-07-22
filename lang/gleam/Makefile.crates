@@ -93,7 +93,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		heck-0.4.1 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
-		hexpm-2.4.0 \
+		hexpm-2.4.1 \
 		home-0.5.9 \
 		hostname-0.4.0 \
 		http-1.1.0 \
@@ -111,7 +111,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		im-15.1.0 \
 		indexmap-1.9.3 \
 		indexmap-2.2.6 \
-		insta-1.38.0 \
+		insta-1.39.0 \
 		ipnet-2.9.0 \
 		itertools-0.10.5 \
 		itoa-1.0.11 \
@@ -209,7 +209,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		smallvec-1.13.2 \
 		smawk-0.3.2 \
 		socket2-0.5.6 \
-		spdx-0.10.4 \
+		spdx-0.10.6 \
 		spin-0.9.8 \
 		static_vcruntime-2.0.0 \
 		strsim-0.11.1 \
@@ -259,7 +259,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		url-2.5.0 \
 		utf8parse-0.2.1 \
 		valuable-0.1.0 \
-		vec1-1.12.0 \
+		vec1-1.12.1 \
 		version_check-0.9.4 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
