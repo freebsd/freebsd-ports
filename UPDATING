@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240815:
+  AFFECTS: users of devel/subversion-lts and devel/subversion
+  AUTHOR: michaelo@FreeBSD.org
+
+  The port option STATIC has been broken since 2022-01 because textproc/utf8proc
+  does not provide an archive with CMake. Therefore, it has been removed.
+
 20240809:
   AFFECTS: sysutils/amavisd-new
   AUTHOR: netchildFreeBSD.org
