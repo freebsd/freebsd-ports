@@ -1,6 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.58.0
-PORTREVISION=	1
+DISTVERSION=	0.59.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -27,7 +26,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		bitflags-2.5.0 \
 		bstr-1.9.1 \
 		bumpalo-3.14.0 \
-		cc-1.0.90 \
+		cc-1.1.5 \
 		cfg-if-1.0.0 \
 		clap-3.2.25 \
 		clap_lex-0.2.4 \
@@ -67,7 +66,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		itertools-0.11.0 \
 		itoa-1.0.10 \
 		lazy_static-1.4.0 \
-		libc-0.2.153 \
+		libc-0.2.155 \
 		libm-0.2.8 \
 		libmimalloc-sys-0.1.24 \
 		line-numbers-0.3.0 \
@@ -98,12 +97,10 @@ CARGO_CRATES=	ahash-0.8.11 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
-		regex-1.9.6 \
-		regex-automata-0.3.9 \
+		regex-1.10.4 \
 		regex-automata-0.4.6 \
-		regex-syntax-0.7.5 \
 		regex-syntax-0.8.2 \
-		rustc-hash-1.1.0 \
+		rustc-hash-2.0.0 \
 		rustix-0.37.27 \
 		rustversion-1.0.14 \
 		ryu-1.0.17 \
