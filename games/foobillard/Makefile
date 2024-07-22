@@ -1,6 +1,6 @@
 PORTNAME=	foobillard
 PORTVERSION=	3.0a
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/FooBillard-Sources/
 
@@ -11,11 +11,15 @@ WWW=		https://foobillard.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:graphics/png \
-		libfreetype.so:print/freetype2
+BROKEN_aarch64=	improper alignment for relocation R_AARCH64_LDST64_ABS_LO12_NC: \
+		0x29B694 is not aligned to 8 bytes
 
-USES=		gmake localbase:ldflags pkgconfig xorg
-USE_XORG=	xaw ice
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libpng.so:graphics/png
+
+USES=		gl gmake localbase:ldflags pkgconfig xorg
+USE_GL=		gl glu
+USE_XORG=	ice sm xaw xi
 
 GNU_CONFIGURE=	yes
 
@@ -26,25 +30,27 @@ DESKTOP_ENTRIES=	"Foobillard" \
 			"Game;Simulation;" \
 			false
 
-OPTIONS_DEFINE=	SDL NVIDIA_BUMPREF
+OPTIONS_DEFINE=		NVIDIA_BUMPREF SDL
 
 NVIDIA_BUMPREF_DESC=	NVidia extensions
-SDL_DESC=	SDL instead of glut
+SDL_DESC=		SDL instead of glut
 
 NVIDIA_BUMPREF_CONFIGURE_OFF=	--disable-nvidia
-NVIDIA_BUMPREF_CFLAGS_OFF= -DGL_AMD_gpu_shader_int64=1 -DGLuint64EXT=uint64_t -DGLint64EXT=int64_t -UGL_VERTEX_PROGRAM_NV -DGL_NV_vertex_program=1
+NVIDIA_BUMPREF_CFLAGS_OFF=	-DGL_AMD_gpu_shader_int64=1 \
+				-DGL_NV_vertex_program=1 -DGLint64EXT=int64_t \
+				-DGLuint64EXT=uint64_t -UGL_VERTEX_PROGRAM_NV
 SDL_USES=		sdl
-SDL_USE=	SDL=sdl
+SDL_USE=		SDL=sdl
+SDL_USE_OFF=		GL=glut
 SDL_CONFIGURE_ON=	--enable-SDL
-SDL_USES_OFF=	gl
-SDL_USE_OFF=	GL=glut
 SDL_CONFIGURE_OFF=	--enable-glut
 
 FREETYPE_CONFIG?=	pkg-config freetype2
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || \
+	( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
@@ -53,6 +59,7 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/foobillard.6 ${STAGEDIR}${PREFIX}/share/man/man6/foobillard.6
+	${INSTALL_MAN} ${WRKSRC}/foobillard.6 \
+		${STAGEDIR}${PREFIX}/share/man/man6/foobillard.6
 
 .include <bsd.port.mk>
