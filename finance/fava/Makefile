@@ -1,5 +1,5 @@
 PORTNAME=	fava
-PORTVERSION=	1.27.3
+PORTVERSION=	1.28
 CATEGORIES=	finance
 MASTER_SITES=	PYPI
 
@@ -22,6 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.7:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=3.16.0:devel/py-simplejson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}watchfiles>=0.21.0:devel/py-watchfiles@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}werkzeug>2:www/py-werkzeug@${PY_FLAVOR} \
 		beancount>=2.1.3:finance/beancount
 
