@@ -1,6 +1,5 @@
 PORTNAME=	ldns
-DISTVERSION=	1.8.3
-PORTREVISION=	1
+DISTVERSION=	1.8.4
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/ldns/ \
 		LOCAL/ehaupt
@@ -18,7 +17,6 @@ USE_LDCONFIG=	yes
 
 CPE_VENDOR=	nlnetlabs
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=	--disable-dane-ta-usage \
 			--with-ssl=${OPENSSLBASE}
 MAKE_JOBS_UNSAFE=	yes
@@ -142,8 +140,8 @@ post-install:
 
 .if (defined(BUILD_PYLDNS))
 post-install:
-# file /usr/local/lib/python3.9/site-packages/_ldns.so.3.5.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}/site-packages/_ldns.so.3.5.0
+# file /usr/local/lib/python3.11/site-packages/_ldns.so.3.6.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}/site-packages/_ldns.so.3.6.0
 .endif # BUILD_PYLDNS
 
 .include <bsd.port.post.mk>
