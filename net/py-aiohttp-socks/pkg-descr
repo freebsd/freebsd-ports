@@ -1,1 +1,6 @@
-SOCKS proxy connector for aiohttp. SOCKS4(a) and SOCKS5 are supported.
+Python library that provides SOCKS proxy support for aiohttp, supporting
+SOCKS4(a), SOCKS5(h), and HTTP tunneling proxies. It allows for proxy
+chaining and integrates with aiohttp to facilitate secure and anonymous
+web requests. The library uses python-socks for core proxy functionality
+and aims to maintain compatibility with new aiohttp versions by
+providing a single point of integration.
