@@ -1,6 +1,6 @@
 PORTNAME=	river
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.4
+DISTVERSION=	0.3.5
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		zig>=0.13.0:lang/zig
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libwayland-server.so:graphics/wayland \
-		libwlroots.so:x11-toolkits/wlroots017 \
+		libwlroots-0.18.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 
@@ -26,7 +26,7 @@ GH_ACCOUNT=	riverwm
 GH_TUPLE=	ifreund:zig-pixman:v0.2.0:zig_pixman/../.cache/zig/p/12209db20ce873af176138b76632931def33a10539387cba745db72933c43d274d56 \
 		ifreund:zig-wayland:v0.2.0:zig_wayland/../.cache/zig/p/1220687c8c47a48ba285d26a05600f8700d37fc637e223ced3aa8324f3650bf52242 \
 		ifreund:zig-xkbcommon:v0.2.0:zig_xkbcommon/../.cache/zig/p/1220c90b2228d65fd8427a837d31b0add83e9fade1dcfa539bb56fd06f1f8461605f \
-		swaywm:zig-wlroots:v0.17.2:zig_wlroots/../.cache/zig/p/1220bb5e5c802c517425bc1d8d8d43d7b7fe5eb81ce4c46b15ce829d67ddadc55418
+		swaywm:zig-wlroots:v0.18.0:zig_wlroots/../.cache/zig/p/12204d789e17c158971f69c7b900e8d8f288e7b9e42b2242f3adfbca57e8266d848f
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		${WITH_DEBUG:D:U-Doptimize=ReleaseFast} \
