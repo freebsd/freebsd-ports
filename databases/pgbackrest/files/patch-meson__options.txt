@@ -1,8 +1,0 @@
---- meson_options.txt.orig	2024-03-24 20:53:22 UTC
-+++ meson_options.txt
-@@ -1,2 +1,5 @@ option('fatal-errors', type: 'boolean', value: false, 
- option('configdir', type: 'string', value: '/etc/pgbackrest', description: 'Configuration directory')
- option('fatal-errors', type: 'boolean', value: false, description: 'Stop compilation on first error')
-+option('liblz4', type: 'feature', value: 'auto', description: 'Enable LZ4 compression support')
-+option('libssh2', type: 'feature', value: 'auto', description: 'Enable SFTP storage support')
-+option('libzstd', type: 'feature', value: 'auto', description: 'Enable Zstandard compression support')
