@@ -78,7 +78,7 @@ INTERWORKING_DESC=	Improve ext. network interworking (IEEE 802.11u)
 HS20_DESC=		Hotspot 2.0
 NO_ROAMING_DESC=	Disable roaming
 P2P_DESC=		Peer-to-Peer support
-PASN_DESC=		PASN support
+PASN_DESC=		Pre-Association Security Negotiation
 TDLS_DESC=		Tunneled Direct Link Setup
 MATCH_DESC=		Interface match mode
 
