@@ -225,6 +225,8 @@ include/thrift/lib/cpp2/async/HeaderClientChannel.h
 include/thrift/lib/cpp2/async/HeaderServerChannel.h
 include/thrift/lib/cpp2/async/HibernatingRequestChannel.h
 include/thrift/lib/cpp2/async/Interaction.h
+include/thrift/lib/cpp2/async/ClientInterceptorBase.h
+include/thrift/lib/cpp2/async/ClientInterceptorStorage.h
 include/thrift/lib/cpp2/async/MessageChannel.h
 include/thrift/lib/cpp2/async/MultiplexAsyncProcessor.h
 include/thrift/lib/cpp2/async/PooledRequestChannel.h
@@ -296,7 +298,6 @@ include/thrift/lib/cpp2/frozen/VectorAssociative.h
 include/thrift/lib/cpp2/frozen/schema/MemorySchema.h
 include/thrift/lib/cpp2/gen/client_cpp.h
 include/thrift/lib/cpp2/gen/client_h.h
-include/thrift/lib/cpp2/gen/intern_list.h
 include/thrift/lib/cpp2/gen/module_constants_cpp.h
 include/thrift/lib/cpp2/gen/module_constants_h.h
 include/thrift/lib/cpp2/gen/module_data_cpp.h
@@ -410,6 +411,7 @@ include/thrift/lib/cpp2/reflection/pretty_print.h
 include/thrift/lib/cpp2/reflection/reflection.h
 include/thrift/lib/cpp2/reflection/testing.h
 include/thrift/lib/cpp2/reflection/variant.h
+include/thrift/lib/cpp2/runtime/BaseSchemaRegistry.h
 include/thrift/lib/cpp2/runtime/Init.h
 include/thrift/lib/cpp2/runtime/SchemaRegistry.h
 include/thrift/lib/cpp2/security/AsyncStopTLS.h
