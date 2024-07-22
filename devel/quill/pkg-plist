@@ -19,10 +19,10 @@ include/quill/backend/TimestampFormatter.h
 include/quill/backend/TransitEvent.h
 include/quill/backend/TransitEventBuffer.h
 include/quill/bundled/fmt/args.h
+include/quill/bundled/fmt/base.h
 include/quill/bundled/fmt/chrono.h
 include/quill/bundled/fmt/color.h
 include/quill/bundled/fmt/compile.h
-include/quill/bundled/fmt/core.h
 include/quill/bundled/fmt/format-inl.h
 include/quill/bundled/fmt/format.h
 include/quill/bundled/fmt/os.h
@@ -47,6 +47,7 @@ include/quill/core/MathUtils.h
 include/quill/core/QuillError.h
 include/quill/core/Rdtsc.h
 include/quill/core/SinkManager.h
+include/quill/core/Spinlock.h
 include/quill/core/ThreadContextManager.h
 include/quill/core/ThreadUtilities.h
 include/quill/core/TimeUtilities.h
