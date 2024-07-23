@@ -1,12 +1,13 @@
 # pkg-help formatted with fmt 59 63
 
 PORTNAME=	bind
-DISTVERSION=	9.18.28
+DISTVERSION=	9.20.0
 .if defined(BIND_TOOLS_SLAVE)
 # dns/bind-tools here
 PORTREVISION=	0
 .else
-# dns/bind918 here
+# XXX: correct version
+# dns/bind920 here
 PORTREVISION=	0
 .endif
 CATEGORIES=	dns net
@@ -14,7 +15,7 @@ MASTER_SITES=	ISC/bind9/${DISTVERSION}
 .if defined(BIND_TOOLS_SLAVE)
 PKGNAMESUFFIX=	-tools
 .else
-PKGNAMESUFFIX=	918
+PKGNAMESUFFIX=	920
 .endif
 
 MAINTAINER=	mat@FreeBSD.org
@@ -25,16 +26,17 @@ COMMENT=	Command line tools from BIND: delv, dig, host, nslookup...
 COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 .endif
 
-# Uncomment when bind920 comes of age. +3 years if ESV, +1year otherwise, see
+# Uncomment when bind922 comes of age. +3 years if ESV, +1year otherwise, see
 # https://kb.isc.org/docs/aa-00896
 # DEPRECATED=	End of life, please migrate to a newer version of BIND9
-# EXPIRATION_DATE=	2025-12-31
+# EXPIRATION_DATE=	XXX-12-31
 
 LICENSE=	MPL20
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libuv.so:devel/libuv \
 		libnghttp2.so:www/libnghttp2 \
+		liburcu.so:sysutils/liburcu \
 		libxml2.so:textproc/libxml2
 
 .if !defined(BIND_TOOLS_SLAVE)
@@ -51,16 +53,17 @@ CPE_UPDATE=	${DISTVERSION:C/.*-//:tl}
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS=	--disable-linux-caps \
-		--localstatedir=/var \
+CONFIGURE_ARGS=	--localstatedir=/var \
 		--sysconfdir=${ETCDIR} \
-		--with-dlopen=yes \
 		--with-libxml2 \
 		--with-openssl=${OPENSSLBASE} \
 		--enable-dnsrps \
 		--with-readline=libedit
 CONFIGURE_ENV=	READLINE_CFLAGS="-L${LOCALBASE}/lib"
 ETCDIR=		${PREFIX}/etc/namedb
+
+# FIXME: figure out why build fails if enabled
+CONFIGURE_ARGS+=	--disable-tracing
 
 .if defined(BIND_TOOLS_SLAVE)
 EXTRA_PATCHES=		${PATCHDIR}/extrapatch-bind-tools
@@ -72,7 +75,7 @@ EXTRA_PATCHES=		${PATCHDIR}/extrapatch-no-bind-tools
 
 PORTDOCS=	*
 
-CONFLICTS=	bind916 bind9-devel
+CONFLICTS=	bind918 bind9-devel
 .endif	# BIND_TOOLS_SLAVE
 
 MAKE_JOBS_UNSAFE=	yes
