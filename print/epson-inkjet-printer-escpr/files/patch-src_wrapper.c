@@ -1,13 +1,20 @@
---- src/wrapper.c.orig	2021-04-19 02:19:25 UTC
+--- src/wrapper.c.orig	2024-03-13 01:23:02 UTC
 +++ src/wrapper.c
-@@ -178,8 +178,8 @@ main (int argc, char *argv[])
+@@ -105,7 +105,7 @@ main (int argc, char *argv[])
+ 	FILE *pfp;
+ 	int i;			/* loop */
+ 	cups_raster_t *ras;	/* raster stream for printing */
+-	cups_page_header_t header; /* page device dictionary header */
++	cups_page_header2_t header; /* page device dictionary header */
+ 	filter_option_t fopt;
  
- 	int total_read = 0;
- 	int total_read_cache = 0;
--	char *page_raw;      //2ページ分のバッファ
--	char *page_raw_cache;//2ページ分のキャッシュ
-+	char *page_raw = NULL;      //2ページ分のバッファ
-+	char *page_raw_cache = NULL;//2ページ分のキャッシュ
+ /* attach point */
+@@ -188,7 +188,7 @@ main (int argc, char *argv[])
+ 	while (1)
+ 	{
+ 		int ret;
+-		ret = cupsRasterReadHeader (ras, &header);
++		ret = cupsRasterReadHeader2(ras, &header);
  
- 	static BOOL first_fwrite = TRUE;
- 	static BOOL cache_exist = FALSE;
+ 		if (ret == 0 || cancel_flg) //データをすべて読み終わった
+ 		{
