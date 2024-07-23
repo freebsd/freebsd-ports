@@ -38,16 +38,15 @@ pidfile=/var/run/alloy.pid
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/alloy"
 run="run /usr/local/etc/alloy.flow"
-command_args="-S -R 3 -T ${name} -P ${pidfile} /usr/bin/env ${procname} ${run} \
+command_args="-S -T ${name} -P ${pidfile} /usr/bin/env ${procname} ${run} \
     --storage.path=${alloy_storage_path} --server.http.listen-addr=${alloy_listen_address} ${alloy_args}"
 
 start_precmd=alloy_startprecmd
 
-alloy_startprecmd()
-{
-    if [ ! -e ${pidfile} ]; then
-        install -o ${alloy_user} -g ${alloy_group} /dev/null ${pidfile};
-    fi
+alloy_startprecmd() {
+  if [ ! -e ${pidfile} ]; then
+    install -o ${alloy_user} -g ${alloy_group} /dev/null ${pidfile}
+  fi
 }
 
 load_rc_config $name
