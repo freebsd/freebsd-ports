@@ -1,5 +1,5 @@
 PORTNAME=	asciidoctor-kroki
-PORTVERSION=	0.8.0
+PORTVERSION=	0.10.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
