@@ -1,7 +1,7 @@
 PORTNAME=	sqlx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.4
-PORTREVISION=	3
+DISTVERSION=	0.8.0
+PORTREVISION=	0
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-cli
 
@@ -34,7 +34,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.80 \
+		anyhow-1.0.81 \
 		argon2-0.4.1 \
 		arrayvec-0.7.4 \
 		assert_cmd-2.0.14 \
@@ -61,9 +61,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		backtrace-0.3.69 \
 		base64-0.13.1 \
 		base64-0.21.7 \
+		base64-0.22.0 \
 		base64ct-1.6.0 \
-		basic-toml-0.1.8 \
-		bigdecimal-0.3.1 \
+		basic-toml-0.1.9 \
+		bigdecimal-0.4.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
 		bitflags-2.4.2 \
@@ -71,8 +72,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		blake2-0.10.6 \
 		block-buffer-0.10.4 \
 		blocking-1.5.1 \
-		borsh-1.3.1 \
-		borsh-derive-1.3.1 \
+		borsh-1.5.1 \
+		borsh-derive-1.5.1 \
 		bstr-1.9.1 \
 		bumpalo-3.15.4 \
 		bytecheck-0.6.12 \
@@ -86,7 +87,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cast-0.3.0 \
 		cc-1.0.90 \
 		cfg-if-1.0.0 \
-		cfg_aliases-0.1.1 \
+		cfg_aliases-0.2.1 \
 		chrono-0.4.35 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
@@ -176,10 +177,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		gloo-timers-0.2.6 \
 		half-2.4.0 \
 		hashbrown-0.12.3 \
-		hashbrown-0.14.3 \
-		hashlink-0.8.4 \
+		hashbrown-0.14.5 \
+		hashlink-0.9.0 \
 		heck-0.3.3 \
 		heck-0.4.1 \
+		heck-0.5.0 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.3.9 \
 		hex-0.4.3 \
@@ -214,7 +216,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		libc-0.2.153 \
 		libm-0.2.8 \
 		libredox-0.0.1 \
-		libsqlite3-sys-0.27.0 \
+		libsqlite3-sys-0.28.0 \
 		linux-raw-sys-0.3.8 \
 		linux-raw-sys-0.4.13 \
 		lock_api-0.4.11 \
@@ -279,7 +281,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		proc-macro-crate-3.1.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.78 \
+		proc-macro2-1.0.79 \
 		promptly-0.3.1 \
 		ptr_meta-0.1.4 \
 		ptr_meta_derive-0.1.4 \
@@ -306,7 +308,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc-demangle-0.1.23 \
 		rustix-0.37.27 \
 		rustix-0.38.31 \
-		rustls-0.21.10 \
+		rustls-0.21.11 \
 		rustls-pemfile-1.0.4 \
 		rustls-webpki-0.101.7 \
 		rustyline-9.1.2 \
@@ -357,18 +359,18 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		termcolor-1.4.1 \
 		termtree-0.4.1 \
 		textwrap-0.11.0 \
-		thiserror-1.0.57 \
-		thiserror-impl-1.0.57 \
-		time-0.3.34 \
+		thiserror-1.0.58 \
+		thiserror-impl-1.0.58 \
+		time-0.3.36 \
 		time-core-0.1.2 \
-		time-macros-0.2.17 \
+		time-macros-0.2.18 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.36.0 \
 		tokio-macros-2.2.0 \
 		tokio-stream-0.1.14 \
-		toml_datetime-0.6.5 \
+		toml_datetime-0.6.6 \
 		toml_edit-0.21.1 \
 		tower-0.4.13 \
 		tower-http-0.3.5 \
@@ -389,7 +391,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unicode_categories-0.1.1 \
 		untrusted-0.9.0 \
 		url-2.5.0 \
-		urlencoding-2.1.3 \
 		utf8parse-0.2.1 \
 		uuid-1.7.0 \
 		validator-0.16.1 \
