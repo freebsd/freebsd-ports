@@ -1,5 +1,3 @@
-TIMESTAMP = 1714587969
-SHA256 (karlstav-cava-0.10.1_GH0.tar.gz) = a3a60814326fa34b54e93ce0b1e66460d55f1007e576c5152fd47024d9ceaff9
-SIZE (karlstav-cava-0.10.1_GH0.tar.gz) = 129520
-SHA256 (e23ebaf0a9d87cdfe0fe57c40722a66411a18a21.patch) = a182ab9bcaacf4c917c81a3b13ce97933b0f96a159ed7e6e7353d76796b9b8a5
-SIZE (e23ebaf0a9d87cdfe0fe57c40722a66411a18a21.patch) = 649
+TIMESTAMP = 1715842976
+SHA256 (karlstav-cava-0.10.2_GH0.tar.gz) = 853ee78729ed3501d0cdf9c1947967ad3bfe6526d66a029b4ddf9adaa6334d4f
+SIZE (karlstav-cava-0.10.2_GH0.tar.gz) = 130036
