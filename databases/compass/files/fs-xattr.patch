@@ -1,0 +1,157 @@
+diff -ur package.orig/binding.gyp package/binding.gyp
+--- package.orig/binding.gyp	2023-06-11 17:38:40.780062000 +0900
++++ package/binding.gyp	2023-06-19 18:31:50.306023000 +0900
+@@ -7,7 +7,8 @@
+         "src/error.c",
+         "src/sync.c",
+         "src/util.c",
+-        "src/xattr.c"
++        "src/xattr.c",
++        "src/xattr_api.c"
+       ]
+     }
+   ]
+diff -ur package.orig/src/async.c package/src/async.c
+--- package.orig/src/async.c	2023-06-11 17:38:40.779324000 +0900
++++ package/src/async.c	2023-06-19 17:47:16.981890000 +0900
+@@ -1,7 +1,7 @@
+ #include <assert.h>
+ #include <errno.h>
+ #include <stdlib.h>
+-#include <sys/xattr.h>
++#include "xattr.h"
+ 
+ #include "error.h"
+ #include "util.h"
+@@ -20,7 +20,7 @@
+ void xattr_get_execute(napi_env env, void* _data) {
+   XattrGetData* data = _data;
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__FreeBSD__)
+   data->value_length = getxattr(data->filename, data->attribute, NULL, 0, 0, 0);
+ #else
+   data->value_length = getxattr(data->filename, data->attribute, NULL, 0);
+@@ -33,7 +33,7 @@
+ 
+   data->value = malloc((size_t) data->value_length);
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__FreeBSD__)
+   data->value_length = getxattr(data->filename, data->attribute, data->value, (size_t) data->value_length, 0, 0);
+ #else
+   data->value_length = getxattr(data->filename, data->attribute, data->value, (size_t) data->value_length);
+@@ -108,7 +108,7 @@
+ void xattr_set_execute(napi_env env, void* _data) {
+   XattrSetData* data = _data;
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__FreeBSD__)
+   int res = setxattr(data->filename, data->attribute, data->value, data->value_length, 0, 0);
+ #else
+   int res = setxattr(data->filename, data->attribute, data->value, data->value_length, 0);
+@@ -185,7 +185,7 @@
+ void xattr_list_execute(napi_env env, void* _data) {
+   XattrListData* data = _data;
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__FreeBSD__)
+   data->result_length = listxattr(data->filename, NULL, 0, 0);
+ #else
+   data->result_length = listxattr(data->filename, NULL, 0);
+@@ -198,7 +198,7 @@
+ 
+   data->result = (char *) malloc((size_t) data->result_length);
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__FreeBSD__)
+   data->result_length = listxattr(data->filename, data->result, (size_t) data->result_length, 0);
+ #else
+   data->result_length = listxattr(data->filename, data->result, (size_t) data->result_length);
+@@ -266,7 +266,7 @@
+ void xattr_remove_execute(napi_env env, void* _data) {
+   XattrRemoveData* data = _data;
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__FreeBSD__)
+   int res = removexattr(data->filename, data->attribute, 0);
+ #else
+   int res = removexattr(data->filename, data->attribute);
+diff -ur package.orig/src/error.c package/src/error.c
+--- package.orig/src/error.c	2023-06-11 17:38:40.779790000 +0900
++++ package/src/error.c	2023-06-19 18:12:10.021510000 +0900
+@@ -3,7 +3,7 @@
+ 
+ #include "error.h"
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__FreeBSD__)
+ #define E_ENOATTR ENOATTR
+ #define S_ENOATTR "ENOATTR"
+ #else
+diff -ur package.orig/src/sync.c package/src/sync.c
+--- package.orig/src/sync.c	2023-06-11 17:38:40.779976000 +0900
++++ package/src/sync.c	2023-06-19 17:48:05.139598000 +0900
+@@ -1,7 +1,7 @@
+ #include <assert.h>
+ #include <errno.h>
+ #include <stdlib.h>
+-#include <sys/xattr.h>
++#include "xattr.h"
+ 
+ #include "error.h"
+ #include "util.h"
+@@ -25,7 +25,7 @@
+ 
+   ssize_t value_length;
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__FreeBSD__)
+   value_length = getxattr(filename, attribute, NULL, 0, 0, 0);
+ #else
+   value_length = getxattr(filename, attribute, NULL, 0);
+@@ -42,7 +42,7 @@
+   void* buffer_data;
+   assert(napi_create_buffer(env, (size_t) value_length, &buffer_data, &buffer) == napi_ok);
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__FreeBSD__)
+   value_length = getxattr(filename, attribute, buffer_data, (size_t) value_length, 0, 0);
+ #else
+   value_length = getxattr(filename, attribute, buffer_data, (size_t) value_length);
+@@ -78,7 +78,7 @@
+   size_t value_length;
+   assert(napi_get_buffer_info(env, args[2], &value, &value_length) == napi_ok);
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__FreeBSD__)
+   int res = setxattr(filename, attribute, value, value_length, 0, 0);
+ #else
+   int res = setxattr(filename, attribute, value, value_length, 0);
+@@ -107,7 +107,7 @@
+ 
+   ssize_t result_length;
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__FreeBSD__)
+   result_length = listxattr(filename, NULL, 0, 0);
+ #else
+   result_length = listxattr(filename, NULL, 0);
+@@ -121,7 +121,7 @@
+ 
+   char *result = (char *) malloc((size_t) result_length);
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__FreeBSD__)
+   result_length = listxattr(filename, result, (size_t) result_length, 0);
+ #else
+   result_length = listxattr(filename, result, (size_t) result_length);
+@@ -158,7 +158,7 @@
+   char *attribute = malloc(attribute_length + 1);
+   assert(napi_get_value_string_utf8(env, args[1], attribute, attribute_length + 1, NULL) == napi_ok);
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__FreeBSD__)
+   int res = removexattr(filename, attribute, 0);
+ #else
+   int res = removexattr(filename, attribute);

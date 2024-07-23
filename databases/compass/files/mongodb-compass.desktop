@@ -1,0 +1,12 @@
+[Desktop Entry]
+Terminal=false
+Icon=mongodb-compass
+Type=Application
+Categories=Database;
+Exec=compass
+Name=MongoDB compass
+GenericName=Database Development
+GenericName[en]=Database Development
+Comment=GUI for querying, aggregating, and analyzing MongoDB data
+Comment[en]=GUI for querying, aggregating, and analyzing MongoDB data
+Keywords=Data;

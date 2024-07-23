@@ -1,0 +1,15 @@
+chalk@3.0.0
+cli-cursor@3.1.0
+cli-spinners@2.9.2
+clone@1.0.4
+defaults@1.0.4
+fs-extra@8.1.0
+is-interactive@1.0.0
+log-symbols@3.0.0
+mimic-fn@2.1.0
+mute-stream@0.0.8
+node-gyp-cache@0.2.1
+onetime@5.1.2
+ora@4.1.1
+restore-cursor@3.1.0
+wcwidth@1.0.1

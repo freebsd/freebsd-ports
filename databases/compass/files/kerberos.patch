@@ -1,0 +1,54 @@
+diff -ur package.orig/binding.gyp package/binding.gyp
+--- package.orig/binding.gyp	1985-10-26 17:15:00.000000000 +0900
++++ package/binding.gyp	2024-05-29 05:04:21.119164000 +0900
+@@ -3,7 +3,8 @@
+     {
+       'target_name': 'kerberos',
+       'type': 'loadable_module',
+-      'include_dirs': [  "<!(node -p \"require('node-addon-api').include_dir\")" ],
++      'include_dirs': [  "<!(node -p \"require('node-addon-api').include_dir\")"
++      ],
+       'sources': [
+         'src/kerberos.cc'
+       ],
+@@ -34,14 +35,16 @@
+               'GCC_SYMBOLS_PRIVATE_EXTERN': 'YES', # -fvisibility=hidden
+             }
+         }],
+-        ['OS=="mac" or OS=="linux"', {
++        ['OS=="mac" or OS=="linux" or OS=="freebsd"', {
++          'cflags+': ['-DNODE_API_EXPERIMENTAL',
++            '-DNODE_API_EXPERIMENTAL_NOGC_ENV_OPT_OUT'],
+           'sources': [
+             'src/unix/base64.cc',
+             'src/unix/kerberos_gss.cc',
+             'src/unix/kerberos_unix.cc'
+           ]
+         }],
+-        ['(OS=="mac" or OS=="linux") and (kerberos_use_rtld!="true")', {
++        ['(OS=="mac" or OS=="linux" or OS=="freebsd") and (kerberos_use_rtld!="true")', {
+           'link_settings': {
+             'libraries': [
+               '-lkrb5',
+@@ -58,7 +61,7 @@
+             }]
+           ]
+         }],
+-        ['(OS=="mac" or OS=="linux") and (kerberos_use_rtld=="true")', {
++        ['(OS=="mac" or OS=="linux" or OS=="freebsd") and (kerberos_use_rtld=="true")', {
+           'defines': ['KERBEROS_USE_RTLD=1'],
+           'link_settings': {
+             'libraries': [
+Only in package: build
+diff -ur package.orig/src/kerberos_common.h package/src/kerberos_common.h
+--- package.orig/src/kerberos_common.h	1985-10-26 17:15:00.000000000 +0900
++++ package/src/kerberos_common.h	2024-05-28 15:57:59.552688000 +0900
+@@ -1,7 +1,7 @@
+ #ifndef KERBEROS_COMMON_H
+ #define KERBEROS_COMMON_H
+ 
+-#if defined(__linux__) || defined(__APPLE__)
++#if defined(__linux__) || defined(__APPLE__) || defined(__FreeBSD__)
+ #include "unix/kerberos_gss.h"
+ 
+ namespace node_kerberos {

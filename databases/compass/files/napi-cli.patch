@@ -1,0 +1,129 @@
+diff --git a/cli/src/build.ts b/cli/src/build.ts
+index 5a18a15a..3b13346e 100644
+--- a/cli/src/build.ts
++++ b/cli/src/build.ts
+@@ -30,7 +30,8 @@ const ZIG_PLATFORM_TARGET_MAP = {
+   // Doesn't support Windows MSVC for now
+   // 'x86_64-pc-windows-gnu': 'x86_64-windows-gnu',
+   // https://github.com/ziglang/zig/issues/1759
+-  // 'x86_64-unknown-freebsd': 'x86_64-freebsd',
++  'x86_64-unknown-freebsd': 'x86_64-freebsd',
++  'aarch64-unknown-freebsd': 'aarch64-freebsd',
+   'x86_64-apple-darwin': 'x86_64-macos-gnu',
+   'aarch64-apple-darwin': 'aarch64-macos-gnu',
+   'aarch64-unknown-linux-gnu': 'aarch64-linux-gnu',
+diff --git a/cli/src/js-binding-template.ts b/cli/src/js-binding-template.ts
+index 1b2659e6..6e9366bc 100644
+--- a/cli/src/js-binding-template.ts
++++ b/cli/src/js-binding-template.ts
+@@ -136,18 +136,33 @@ switch (platform) {
+     }
+     break
+   case 'freebsd':
+-    if (arch !== 'x64') {
+-      throw new Error(\`Unsupported architecture on FreeBSD: \${arch}\`)
+-    }
+-    localFileExisted = existsSync(join(__dirname, '${localName}.freebsd-x64.node'))
+-    try {
+-      if (localFileExisted) {
+-        nativeBinding = require('./${localName}.freebsd-x64.node')
+-      } else {
+-        nativeBinding = require('${pkgName}-freebsd-x64')
+-      }
+-    } catch (e) {
+-      loadError = e
++    switch (arch) {
++      case 'arm64':
++        localFileExisted = existsSync(join(__dirname, '${localName}.freebsd-arm64.node'))
++        try {
++          if (localFileExisted) {
++            nativeBinding = require('./${localName}.freebsd-arm64.node')
++          } else {
++            nativeBinding = require('${pkgName}-freebsd-arm64')
++          }
++        } catch (e) {
++          loadError = e
++        }
++        break
++      case 'x64':
++        localFileExisted = existsSync(join(__dirname, '${localName}.freebsd-x64.node'))
++        try {
++          if (localFileExisted) {
++            nativeBinding = require('./${localName}.freebsd-x64.node')
++          } else {
++            nativeBinding = require('${pkgName}-freebsd-x64')
++          }
++        } catch (e) {
++          loadError = e
++        }
++        break
++      default:
++        throw new Error(\`Unsupported architecture on FreeBSD: \${arch}\`)
+     }
+     break
+   case 'linux':
+diff --git a/cli/src/parse-triple.ts b/cli/src/parse-triple.ts
+index c09e40bd..5a457c1a 100644
+--- a/cli/src/parse-triple.ts
++++ b/cli/src/parse-triple.ts
+@@ -58,6 +58,13 @@ export const DefaultPlatforms: PlatformDetail[] = [
+     platformArchABI: 'linux-x64-gnu',
+     raw: 'x86_64-unknown-linux-gnu',
+   },
++  {
++    platform: 'freebsd',
++    arch: 'x64',
++    abi: null,
++    platformArchABI: 'freebsd-x64',
++    raw: 'x86_64-unknown-freebsd',
++  },
+ ]
+ 
+ /**
+@@ -106,7 +113,7 @@ export function getDefaultTargetTriple(rustcfg: string): PlatformDetail {
+     .trim()
+     .replace(/\(.*?\)/, '')
+     .trim()
+-  const allTriples = execSync(`rustup target list`, {
++  const allTriples = execSync(`rustc --print target-list`, {
+     env: process.env,
+   })
+     .toString('utf8')
+diff --git a/package.json b/package.json
+index f547e5de..59879353 100644
+--- a/package.json
++++ b/package.json
+@@ -18,7 +18,7 @@
+   "license": "MIT",
+   "scripts": {
+     "bench": "cross-env TS_NODE_PROJECT='./bench/tsconfig.json' node -r ts-node/register/transpile-only bench/bench.ts",
+-    "build": "tsc -p tsconfig.json -m esnext && yarn bundle && shx chmod 777 cli/scripts/index.js && node -r ts-node/register/transpile-only ./generate-triple-list.ts",
++    "build": "tsc -p tsconfig.json -m esnext && npm run bundle && shx chmod 777 cli/scripts/index.js && node -r ts-node/register/transpile-only ./generate-triple-list.ts",
+     "build:bench": "yarn workspace bench build",
+     "build:memory": "yarn workspace memory-testing build",
+     "build:test": "yarn workspace compat-mode-examples build && yarn workspace examples build",
+diff --git a/rollup.config.js b/rollup.config.js
+index d545118b..29acb36d 100644
+--- a/rollup.config.js
++++ b/rollup.config.js
+@@ -36,7 +36,7 @@ console.info('napi-derive version: ', NAPI_DERIVE_VERSION)
+ console.info('napi-build version: ', NAPI_BUILD_VERSION)
+ 
+ export default {
+-  input: './scripts/cli/src/index.js',
++  input: './scripts/src/index.js',
+   inlineDynamicImports: true,
+   output: {
+     banner: '#!/usr/bin/env node',
+diff --git a/tsconfig.json b/tsconfig.json
+index 16988746..1368c633 100644
+--- a/tsconfig.json
++++ b/tsconfig.json
+@@ -26,6 +26,6 @@
+     "outDir": "scripts",
+     "lib": ["dom", "DOM.Iterable", "ES2019", "ES2020", "esnext"]
+   },
+-  "include": ["."],
++  "include": [".", "cli"],
+   "exclude": ["node_modules", "bench", "cli/scripts", "scripts"]
+ }

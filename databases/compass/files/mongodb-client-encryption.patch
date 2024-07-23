@@ -1,0 +1,11 @@
+diff -ur package.orig/package.json package.new/package.json
+--- package.orig/package.json	1985-10-26 17:15:00.000000000 +0900
++++ package.new/package.json	2024-05-31 07:58:38.003548000 +0900
+@@ -22,7 +22,6 @@
+     "check:eslint": "eslint src test",
+     "check:clang-format": "clang-format --style=file:.clang-format --dry-run --Werror addon/*",
+     "test": "mocha test",
+-    "prepare": "node etc/prepare.js",
+     "rebuild": "prebuild --compile",
+     "release": "standard-version --tag-prefix node-v --path bindings/node",
+     "prebuild": "prebuild --runtime napi --strip --verbose --tag-prefix node-v --all"

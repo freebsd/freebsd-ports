@@ -1,0 +1,82 @@
+diff -ur package.orig/src/unix/kerberos_gss.cc package/src/unix/kerberos_gss.cc
+--- package.orig/src/unix/kerberos_gss.cc	1985-10-26 17:15:00.000000000 +0900
++++ package/src/unix/kerberos_gss.cc	2024-05-29 05:59:03.862817000 +0900
+@@ -120,9 +120,9 @@
+ 
+ namespace node_kerberos {
+ 
+-const char* krb5_get_err_text(const krb5_context&, krb5_error_code code) {
+-    return COMERR_CALL(error_message)(code);
+-}
++//const char* krb5_get_err_text(const krb5_context& ctx, krb5_error_code code) {
++//    return COMERR_CALL(krb5_get_error_message)(ctx, code);
++//}
+ 
+ static gss_result gss_success_result(int ret);
+ static gss_result gss_error_result(OM_uint32 err_maj, OM_uint32 err_min);
+@@ -138,7 +138,7 @@
+     int code;
+     krb5_context kcontext;
+     krb5_keytab kt = NULL;
+-    krb5_kt_cursor cursor = NULL;
++    krb5_kt_cursor cursor;
+     krb5_keytab_entry entry;
+     char* pname = NULL;
+ 
+@@ -174,12 +174,12 @@
+         if (strncmp(pname, match, match_len) == 0) {
+             details = pname;
+             KRB5_CALL(krb5_free_unparsed_name)(kcontext, pname);
+-            KRB5_CALL(krb5_free_keytab_entry_contents)(kcontext, &entry);
++            KRB5_CALL(krb5_kt_free_entry)(kcontext, &entry);
+             break;
+         }
+ 
+         KRB5_CALL(krb5_free_unparsed_name)(kcontext, pname);
+-        KRB5_CALL(krb5_free_keytab_entry_contents)(kcontext, &entry);
++        KRB5_CALL(krb5_kt_free_entry)(kcontext, &entry);
+     }
+ 
+     if (details.empty()) {
+@@ -189,8 +189,7 @@
+         result.data = std::move(details);
+     }
+ end:
+-    if (cursor)
+-        KRB5_CALL(krb5_kt_end_seq_get)(kcontext, kt, &cursor);
++    KRB5_CALL(krb5_kt_end_seq_get)(kcontext, kt, &cursor);
+     if (kt)
+         KRB5_CALL(krb5_kt_close)(kcontext, kt);
+     KRB5_CALL(krb5_free_context)(kcontext);
+@@ -223,7 +222,7 @@
+     name_token.value = (char*)service;
+ 
+     maj_stat =
+-        GSS_CALL(gss_import_name)(&min_stat, &name_token, GSS_VALUE(gss_nt_service_name), &state->server_name);
++        GSS_CALL(gss_import_name)(&min_stat, &name_token, GSS_VALUE(GSS_C_NT_HOSTBASED_SERVICE), &state->server_name);
+ 
+     if (GSS_ERROR(maj_stat)) {
+         ret = gss_error_result(maj_stat, min_stat);
+diff -ur package.orig/src/unix/kerberos_gss.h package/src/unix/kerberos_gss.h
+--- package.orig/src/unix/kerberos_gss.h	1985-10-26 17:15:00.000000000 +0900
++++ package/src/unix/kerberos_gss.h	2024-05-29 06:03:39.889151000 +0900
+@@ -18,8 +18,9 @@
+ #define KERBEROS_GSS_H
+ 
+ extern "C" {
++    #include <krb5.h>
+     #include <gssapi/gssapi.h>
+-    #include <gssapi/gssapi_generic.h>
++    // #include <gssapi/gssapi_generic.h>
+     #include <gssapi/gssapi_krb5.h>
+ }
+ 
+@@ -27,7 +28,7 @@
+ 
+ namespace node_kerberos {
+ 
+-const char* krb5_get_err_text(const krb5_context&, krb5_error_code code);
++// const char* krb5_get_err_text(const krb5_context&, krb5_error_code code);
+ 
+ #define AUTH_GSS_ERROR -1
+ #define AUTH_GSS_COMPLETE 1
