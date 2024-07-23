@@ -1,1 +1,2 @@
-OpenTelemetry Collector distribution with programmable pipelines
+Grafana Alloy is an open source OpenTelemetry collector with built-in Prometheus pipelines and support for metrics, logs, traces, and profiles.
+
