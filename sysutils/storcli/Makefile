@@ -1,8 +1,8 @@
 PORTNAME=	storcli
-DISTVERSION=	7.2309
+DISTVERSION=	7.3006
 CATEGORIES=	sysutils
-MASTER_SITES=	https://docs.broadcom.com/docs-and-downloads/raid-controllers/raid-controllers-common-files/
-DISTNAME=	Unified_storcli_all_os_7.2309.0000.0000
+MASTER_SITES=	https://docs.broadcom.com/docs-and-downloads/host-bus-adapters/host-bus-adapters-common-files/sas_sata_nvme_12g_p31/
+DISTNAME=	STORCLI_SAS3.5_P31
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	SAS MegaRAID FreeBSD StorCLI
@@ -12,24 +12,27 @@ LICENSE=	storcli
 LICENSE_NAME=	BROADCOM
 LICENSE_TEXT=	Source recipient must acknowledge license.\
 		Reproduction or redistribution prohibited.\
-		See https://www.broadcom.com/company/legal/licensing
+		See https://docs.broadcom.com/docs/${DISTNAME}${EXTRACT_SUFX}
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	binaries only available for amd64
 USES=		zip
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_FILES=	sbin/storcli
-BINSRC=		${WRKSRC}/Unified_storcli_all_os
+PORTDOCS=	MR_SAS_Unified_StorCLI--00${DISTVERSION}.0000.0000.pdf readme.txt
+OPTIONS_DEFINE=	DOCS
+BINSRC=		${WRKSRC}/${DISTNAME}/univ_viva_cli_rel/Unified_storcli_all_os
 
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-DOWNLOAD_URL=	https://docs.broadcom.com/docs-and-downloads/raid-controllers/raid-controllers-common-files/${DISTNAME}${EXTRACT_SUFX}
-IGNORE?=	You must manually fetch the distribution file\
-	(${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL},\
-	place it in ${DISTDIR} and then run make again
+DOWNLOAD_URL=	https://docs.broadcom.com/docs/${DISTNAME}${EXTRACT_SUFX}
+IGNORE=		you must manually fetch the distribution file \
+		(${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, \
+		place it in ${DISTDIR} and then run make again
 .endif
 
 post-extract:
@@ -43,6 +46,9 @@ post-extract:
 	@${ECHO} "]" >> ${WRKDIR}/pkg-message
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/storcli64 ${STAGEDIR}${PREFIX}/sbin/storcli
+	${INSTALL_PROGRAM} ${WRKSRC}/storcli64 ${STAGEDIR}${PREFIX}/sbin/storcli
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA}	${BINSRC}/../../MR_SAS_Unified_StorCLI--00${DISTVERSION}.0000.0000.pdf \
+		${BINSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
