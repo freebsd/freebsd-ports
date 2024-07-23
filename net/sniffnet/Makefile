@@ -1,7 +1,6 @@
 PORTNAME=	sniffnet
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
-PORTREVISION=	2
+DISTVERSION=	1.3.1
 CATEGORIES=	net wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -12,8 +11,6 @@ LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
-
-BROKEN_i386=	failed to compile: evaluation of constant value failed: assertion failed: cfg!(target_feature = "sse") && cfg!(target_feature = "sse2")
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfreetype.so:print/freetype2 \
@@ -27,6 +24,12 @@ GH_ACCOUNT=	GyulyVGC
 PORTDOCS=	README.md ROADMAP.md SECURITY.md
 
 OPTIONS_DEFINE=	DOCS
+
+# Enable i386 build for SSE2-capable CPUs
+.if ${MACHINE_ARCH} == i386
+CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
+RUSTFLAGS+=	-C target-feature=+sse2
+.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/resources/packaging/linux/${PORTNAME}.desktop \
