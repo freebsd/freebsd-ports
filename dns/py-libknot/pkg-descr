@@ -1,0 +1,2 @@
+Python interface to operate the Knot DNS daemon.
+Communicating with it using the knot.sock unixsocket.
