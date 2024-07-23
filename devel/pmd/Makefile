@@ -20,16 +20,16 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-bin-${DISTVERSION}
-PLIST_SUB+=	PORTVERSION=${DISTVERSION}
+PLIST_SUB+=	ETCDIR=${ETCDIR} PORTVERSION=${DISTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/bin/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/conf/simplelogger.properties \
-		${STAGEDIR}${PREFIX}/etc/${PORTNAME}/simplelogger.properties.sample
+		${STAGEDIR}${ETCDIR}/simplelogger.properties.sample
 	cd ${WRKSRC} && ${COPYTREE_SHARE} sbom ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/* ${STAGEDIR}${DATADIR}
 

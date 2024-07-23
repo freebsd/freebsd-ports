@@ -1,5 +1,5 @@
 bin/pmd
-@sample etc/pmd/simplelogger.properties.sample
+@sample %%ETCDIR%%/simplelogger.properties.sample
 %%DATADIR%%/Saxon-HE-12.4.jar
 %%DATADIR%%/antlr4-runtime-4.9.3.jar
 %%DATADIR%%/apex-ls_2.13-5.2.0.jar
