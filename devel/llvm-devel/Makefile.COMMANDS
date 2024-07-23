@@ -10,6 +10,7 @@ LLVM_COMMANDS=	\
 		llvm-bitcode-strip \
 		llvm-cat \
 		llvm-cfi-verify \
+		llvm-cgdata \
 		llvm-config \
 		llvm-cov \
 		llvm-cvtres \
@@ -101,6 +102,7 @@ EXTRAS_COMMANDS= \
 		clang-include-fixer \
 		clang-installapi \
 		clang-move \
+		clang-nvlink-wrapper \
 		clang-pseudo \
 		clang-query \
 		clang-rename \
