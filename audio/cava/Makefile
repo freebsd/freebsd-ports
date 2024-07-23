@@ -1,10 +1,6 @@
 PORTNAME=	cava
-DISTVERSION=	0.10.1
-PORTREVISION=	2
+DISTVERSION=	0.10.2
 CATEGORIES=	audio
-
-PATCH_SITES=    https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=     e23ebaf0a9d87cdfe0fe57c40722a66411a18a21.patch:-p1 # include stdlib.h in config.c; https://github.com/karlstav/cava/issues/560
 
 MAINTAINER=	vendion@gmail.com
 COMMENT=	Cross-platform Audio Visualizer
@@ -39,7 +35,7 @@ OPTIONS_GROUP_OUTPUT=	GLSL NCURSES SDL
 GLSL_DESC=		Build with GLSL support (implies ${GLSL_IMPLIES})
 GLSL_BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_check_gl.m4:devel/autoconf-archive
 GLSL_USES=		gl
-GLSL_USE=		gl=egl
+GLSL_USE=		GL=gl
 GLSL_CONFIGURE_ENABLE=	output-sdl-glsl
 GLSL_IMPLIES=		SDL
 
@@ -65,7 +61,7 @@ PULSEAUDIO_CONFIGURE_ENABLE=	input-pulse
 
 SDL_DESC=		Build with SDL support
 SDL_USES=		sdl
-SDL_USE=		sdl=sdl2
+SDL_USE=		SDL=sdl2
 SDL_CONFIGURE_ENABLE=	output-sdl
 
 SNDIO_DESC=		Build with sndio support
