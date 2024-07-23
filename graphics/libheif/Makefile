@@ -1,6 +1,5 @@
 PORTNAME=	libheif
-DISTVERSION=	1.17.6
-PORTREVISION=	2
+DISTVERSION=	1.18.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/strukturag/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -43,7 +42,8 @@ AOM_CMAKE_BOOL=		WITH_AOM_ENCODER WITH_AOM_DECODER
 DAV1D_LIB_DEPENDS=	libdav1d.so:multimedia/dav1d
 DAV1D_CMAKE_BOOL=	WITH_DAV1D
 
-EXAMPLES_LIB_DEPENDS=	libpng16.so:graphics/png
+EXAMPLES_LIB_DEPENDS=	libpng16.so:graphics/png \
+			libtiff.so:graphics/tiff
 EXAMPLES_CMAKE_BOOL=	WITH_EXAMPLES
 EXAMPLE_IMPLIES=	JPEG
 
