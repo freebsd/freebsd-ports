@@ -1,6 +1,6 @@
 PORTNAME=	gitu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.0
+DISTVERSION=	0.23.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -62,6 +62,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		crossterm-0.27.0 \
 		crossterm_winapi-0.9.1 \
 		crunchy-0.2.2 \
+		ctor-0.2.8 \
 		derive_more-0.99.18 \
 		diff-0.1.13 \
 		either-1.10.0 \
