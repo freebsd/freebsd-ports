@@ -1,5 +1,6 @@
 PORTNAME=	cms_scanner
 PORTVERSION=	0.13.9
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/wpscanteam/CMSScanner
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-ethon>=0.14<0.17:www/rubygem-ethon \
-		rubygem-get_process_mem>=0.2.5<0.3:devel/rubygem-get_process_mem \
+		rubygem-get_process_mem0>=0.2.5<0.3:devel/rubygem-get_process_mem0 \
 		rubygem-nokogiri>=1.11.4:textproc/rubygem-nokogiri \
 		rubygem-opt_parse_validator>=1.9.5<1.10:devel/rubygem-opt_parse_validator \
 		rubygem-public_suffix>=4.0.3:dns/rubygem-public_suffix \
