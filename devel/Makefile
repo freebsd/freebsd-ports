@@ -7068,6 +7068,7 @@
     SUBDIR += rubygem-generator_spec-rails5
     SUBDIR += rubygem-georuby
     SUBDIR += rubygem-get_process_mem
+    SUBDIR += rubygem-get_process_mem0
     SUBDIR += rubygem-getopt
     SUBDIR += rubygem-getoptlong
     SUBDIR += rubygem-gettext
