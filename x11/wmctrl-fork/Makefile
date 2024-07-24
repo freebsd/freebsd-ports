@@ -5,7 +5,7 @@ MASTER_SITES=	https://github.com/avysk/wmctrl-fork/releases/download/1.09.02/
 
 MAINTAINER=	alexey@pentode.fi
 COMMENT=	Command line tool to interact with an EWMH/NetWM compatible X managers
-WWW=		https://github.com/avysk/wmctrl-work
+WWW=		https://github.com/avysk/wmctrl-fork
 
 LICENSE=	GPLv2
 
