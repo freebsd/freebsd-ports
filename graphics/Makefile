@@ -1015,6 +1015,7 @@
     SUBDIR += qcustomplot
     SUBDIR += qgis
     SUBDIR += qgis-ltr
+    SUBDIR += qimgv
     SUBDIR += qiv
     SUBDIR += qr-code-generator
     SUBDIR += qt5-3d
