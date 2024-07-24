@@ -1,5 +1,6 @@
     COMMENT = Things that used to be on the desktop before computers were invented
 
+    SUBDIR += R-cran-exams
     SUBDIR += affiche
     SUBDIR += akonadi-calendar-tools
     SUBDIR += akonadi-import-wizard
