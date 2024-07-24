@@ -1,5 +1,5 @@
 lib/postgresql/plugin_debugger.so
-%%PORTDOCS%%%%DOCSDIR%%/README.pldebugger
+%%PORTDOCS%%%%DOCSDIR%%/README-pldebugger.md
 share/postgresql/extension/pldbgapi--1.0--1.1.sql
 share/postgresql/extension/pldbgapi--1.1.sql
 share/postgresql/extension/pldbgapi--unpackaged--1.1.sql
