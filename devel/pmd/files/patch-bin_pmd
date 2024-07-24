@@ -1,7 +1,7 @@
 --- bin/pmd.orig	2024-07-21 02:20:21 UTC
 +++ bin/pmd
 @@ -1,4 +1,4 @@
--#!/usr/local/bin/bash
+-#!/bin/bash
 +#!/bin/sh
  
  is_cygwin() {
@@ -40,7 +40,7 @@
 -    pushd "${script_dir}/../conf" >/dev/null
 -    readonly CONF_DIR=$(pwd -P)
 -    popd >/dev/null
-+    readonly CONF_DIR=%%PREFIX%%/etc/pmd
++    readonly CONF_DIR=%%ETCDIR%%
    fi
  }
  
