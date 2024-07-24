@@ -1,11 +1,8 @@
 PORTNAME=	fntsample
 PORTVERSION=	5.4
-PORTREVISION=	1
 DISTVERSIONPREFIX=	release/
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://unicode.org/Public/14.0.0/ucd/:unidata
-DISTFILES=	Blocks.txt:unidata
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Show Unicode coverage of a font
@@ -14,6 +11,7 @@ WWW=		https://github.com/eugmes/fntsample
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	UCD>=0:textproc/UCD
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	pdfoutline:textproc/pdfoutline
@@ -21,7 +19,7 @@ RUN_DEPENDS=	pdfoutline:textproc/pdfoutline
 USES=		cmake gettext gnome iconv pkgconfig
 USE_GNOME=	cairo glib20 pango
 
-CMAKE_ARGS=	-DUNICODE_BLOCKS=${WRKSRC}/Blocks.txt
+CMAKE_ARGS=	-DUNICODE_BLOCKS=${LOCALBASE}/share/unicode/ucd/Blocks.txt
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/fntsample \
@@ -30,8 +28,5 @@ PLIST_FILES=	bin/fntsample \
 
 GH_ACCOUNT=	eugmes
 USE_GITHUB=	yes
-
-post-extract:
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/Blocks.txt ${WRKSRC}/
 
 .include <bsd.port.mk>
