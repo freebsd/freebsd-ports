@@ -913,6 +913,7 @@
     SUBDIR += py-haishoku
     SUBDIR += py-hiplot
     SUBDIR += py-hsluv
+    SUBDIR += py-imagecodecs
     SUBDIR += py-imageio
     SUBDIR += py-imageio-ffmpeg
     SUBDIR += py-imagesize
