@@ -1,5 +1,5 @@
 PORTNAME=	tifffile
-PORTVERSION=	2024.7.21
+PORTVERSION=	2024.7.24
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI \
 		https://github.com/cgohlke/tifffile/releases/download/v${PORTVERSION}/
