@@ -12,9 +12,12 @@ WWW=		https://pypi.org/project/borgbackup/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_13= uses acl_extended_link_np, see https://github.com/borgbackup/borg/issues/8269
+
 # note that borgbackup pins the msgpack version range per patchlevel version!
 _BB_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=1.0.2<1.1.0:devel/py-msgpack@${PY_FLAVOR}
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=1.7:devel/py-setuptools-scm@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pkgconfig>=0:devel/py-pkgconfig@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=1.7:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${_BB_DEPENDS}
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd \
@@ -24,7 +27,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=19.0:devel/py-packaging@${PY_FLAV
 TEST_DEPENDS=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}tox>3.2:devel/py-tox@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pkgconfig>=0:devel/py-pkgconfig@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
 		fakeroot:security/fakeroot
 USES=		pkgconfig python:3.9+ ssl

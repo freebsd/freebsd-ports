@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240724:
+  AFFECTS: users of archivers/py-borgbackup
+  AUTHOR: mandree@FreeBSD.org
+
+  Borgbackup has been upgraded to version 1.4.0, which does not yet
+  support FreeBSD 13.x, see https://github.com/borgbackup/borg/issues/8269
+
+  For users who are on FreeBSD 13, or who wish to continue using
+  version 1.2, use either of these commands for upgrading:
+
+  With binary packages through pkg:
+    pkg set -o archivers/py-borgbackup:archivers/py-borgbackup12
+    pkg upgrade
+
+  With portmaster or portupgrade (replace the command accordingly):
+    portmaster -o archivers/py-borgbackup12 archivers/py-borgbackup
+
 20240723:
   AFFECTS: users of databases/postgresql* and other software using PostgreSQL to run
   AUTHOR: kbowling@FreeBSD.org
