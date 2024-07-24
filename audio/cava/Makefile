@@ -73,6 +73,8 @@ VT_BUILD_DEPENDS=	psf2bdf:x11-fonts/psftools
 VT_CONFIGURE_ENABLE=	cava-font
 VT_PLIST_FILES=		${DATADIR}/cava.fnt
 
+CPPFLAGS+=	-I${PREFIX}/include/iniparser
+
 pre-configure:
 	${ECHO_CMD} ${DISTVERSION} > ${WRKSRC}/version
 
