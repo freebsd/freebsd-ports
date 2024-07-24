@@ -217,6 +217,7 @@ share/aclocal/libcurl.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/websocket-cb.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/websocket.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlstream.c
+share/man/man1/curl-config.1.gz
 share/man/man1/curl.1.gz
 share/man/man3/CURLINFO_ACTIVESOCKET.3.gz
 share/man/man3/CURLINFO_APPCONNECT_TIME.3.gz
@@ -576,6 +577,7 @@ share/man/man3/CURLOPT_STREAM_WEIGHT.3.gz
 share/man/man3/CURLOPT_SUPPRESS_CONNECT_HEADERS.3.gz
 share/man/man3/CURLOPT_TCP_FASTOPEN.3.gz
 share/man/man3/CURLOPT_TCP_KEEPALIVE.3.gz
+share/man/man3/CURLOPT_TCP_KEEPCNT.3.gz
 share/man/man3/CURLOPT_TCP_KEEPIDLE.3.gz
 share/man/man3/CURLOPT_TCP_KEEPINTVL.3.gz
 share/man/man3/CURLOPT_TCP_NODELAY.3.gz
