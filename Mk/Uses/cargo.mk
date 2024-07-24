@@ -139,8 +139,9 @@ CARGO_ENV+= \
 CARGO_ENV+=	RUST_BACKTRACE=1
 .  endif
 
-.  if defined(WITH_LTO)
+.  if !defined(WITHOUT_LTO)
 _CARGO_MSG=	"===>   Additional optimization to port applied"
+WITH_LTO=	yes
 .  endif
 
 # Adjust -C target-cpu if -march/-mcpu is set by bsd.cpu.mk
