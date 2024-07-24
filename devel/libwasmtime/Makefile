@@ -1,5 +1,5 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	22.0.0
+PORTVERSION=	23.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -67,7 +67,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cargo-platform-0.1.2 \
 		cargo_metadata-0.18.1 \
 		cast-0.3.0 \
-		castaway-0.2.2 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
 		ciborium-0.2.0 \
@@ -80,7 +79,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cobs-0.2.3 \
 		codespan-reporting-0.11.1 \
 		colorchoice-1.0.0 \
-		compact_str-0.7.1 \
 		console-0.15.0 \
 		core-foundation-sys-0.8.6 \
 		cpp_demangle-0.4.3 \
@@ -191,7 +189,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		miniz_oxide-0.7.1 \
 		mio-0.8.11 \
 		nu-ansi-term-0.46.0 \
-		num-traits-0.2.15 \
+		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
 		number_prefix-0.3.0 \
 		object-0.32.0 \
@@ -204,8 +202,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		openvino-0.6.0 \
 		openvino-finder-0.6.0 \
 		openvino-sys-0.6.0 \
-		ort-2.0.0-rc.0 \
-		ort-sys-2.0.0-rc.0 \
+		ort-2.0.0-rc.2 \
+		ort-sys-2.0.0-rc.2 \
 		overload-0.1.1 \
 		paste-1.0.7 \
 		percent-encoding-2.2.0 \
@@ -215,7 +213,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		postcard-1.0.8 \
 		ppv-lite86-0.2.16 \
 		pretty_env_logger-0.5.0 \
-		prettyplease-0.2.19 \
+		prettyplease-0.2.20 \
 		proc-macro2-1.0.81 \
 		proptest-1.0.0 \
 		psm-0.1.18 \
@@ -280,7 +278,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tar-0.4.40 \
 		target-lexicon-0.12.13 \
 		tempfile-3.8.0 \
-		termcolor-1.1.3 \
+		termcolor-1.4.1 \
 		terminal_size-0.1.17 \
 		test-log-0.2.11 \
 		thiserror-1.0.43 \
@@ -327,19 +325,20 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-0.2.87 \
 		wasm-bindgen-macro-support-0.2.87 \
 		wasm-bindgen-shared-0.2.87 \
-		wasm-encoder-0.209.1 \
-		wasm-metadata-0.209.1 \
-		wasm-mutate-0.209.1 \
-		wasm-smith-0.209.1 \
+		wasm-encoder-0.212.0 \
+		wasm-metadata-0.212.0 \
+		wasm-mutate-0.212.0 \
+		wasm-smith-0.212.0 \
 		wasmi-0.31.1 \
 		wasmi_arena-0.4.1 \
 		wasmi_core-0.13.0 \
-		wasmparser-0.209.1 \
+		wasmparser-0.212.0 \
 		wasmparser-nostd-0.100.1 \
-		wasmprinter-0.209.1 \
+		wasmprinter-0.212.0 \
 		wast-35.0.2 \
-		wast-209.0.1 \
-		wat-1.209.1 \
+		wast-212.0.0 \
+		wat-1.212.0 \
+		web-sys-0.3.57 \
 		webpki-roots-0.26.1 \
 		which-5.0.0 \
 		winapi-0.3.9 \
@@ -368,13 +367,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_msvc-0.52.0 \
 		winnow-0.5.39 \
 		winx-0.36.3 \
-		wit-bindgen-0.26.0 \
-		wit-bindgen-core-0.26.0 \
-		wit-bindgen-rt-0.26.0 \
-		wit-bindgen-rust-0.26.0 \
-		wit-bindgen-rust-macro-0.26.0 \
-		wit-component-0.209.1 \
-		wit-parser-0.209.1 \
+		wit-bindgen-0.27.0 \
+		wit-bindgen-core-0.27.0 \
+		wit-bindgen-rt-0.27.0 \
+		wit-bindgen-rust-0.27.0 \
+		wit-bindgen-rust-macro-0.27.0 \
+		wit-component-0.212.0 \
+		wit-parser-0.212.0 \
 		witx-0.9.1 \
 		xattr-1.2.0 \
 		zerocopy-0.7.32 \
@@ -384,8 +383,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		zstd-safe-7.0.0 \
 		zstd-sys-2.0.9+zstd.1.5.5
 
-GH_TUPLE=	WebAssembly:testsuite:16a839d:testsuite/tests/spec_testsuite \
-		WebAssembly:wasi-testsuite:09517e5:wasi_testsuite/tests/wasi_testsuite/wasi-common \
+GH_TUPLE=	WebAssembly:testsuite:e053650:testsuite/tests/spec_testsuite \
+		WebAssembly:wasi-testsuite:2fec29e:wasi_testsuite/tests/wasi_testsuite/wasi-common \
 		WebAssembly:wasi-threads:e1893c0:wasi_threads/tests/wasi_testsuite/wasi-threads
 
 PLIST_FILES=	include/doc-wasm.h \
