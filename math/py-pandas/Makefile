@@ -13,7 +13,7 @@ WWW=		https://pandas.pydata.org/
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.23.2,1:math/py-numpy@${PY_FLAVOR} \
-		${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=61.0.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}versioneer>=0:devel/py-versioneer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.23.2,1:math/py-numpy@${PY_FLAVOR} \
