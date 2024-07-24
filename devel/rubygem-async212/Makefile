@@ -1,7 +1,9 @@
 PORTNAME=	async
 PORTVERSION=	2.12.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	212
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Modern asynchronous I/O framework for Ruby
@@ -17,5 +19,7 @@ RUN_DEPENDS=	rubygem-console>=1.25.2<2:devel/rubygem-console \
 USES=		gem
 
 NO_ARCH=	yes
+
+PORTSCOUT=	limit:^2\.12\.
 
 .include <bsd.port.mk>
