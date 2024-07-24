@@ -1,5 +1,5 @@
 PORTNAME=	chef-licensing
-PORTVERSION=	0.7.5
+PORTVERSION=	1.0.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
