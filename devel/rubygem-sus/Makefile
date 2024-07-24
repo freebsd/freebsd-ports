@@ -1,11 +1,11 @@
 PORTNAME=	sus
-PORTVERSION=	0.29.1
+PORTVERSION=	0.30.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast and scalable test runner
-WWW=		https://github.com/ioquatix/sus
+WWW=		https://github.com/socketry/sus
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.md
