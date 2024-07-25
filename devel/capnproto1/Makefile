@@ -1,7 +1,8 @@
 PORTNAME=	capnproto
 PORTVERSION=	1.0.1
-DISTVERSIONPREFIX=	v
+DISTVERSIONPREFIX=	c++-
 CATEGORIES=	devel
+MASTER_SITES=	https://capnproto.org/
 PKGNAMESUFFIX=	1
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,9 +11,9 @@ WWW=		https://capnproto.org/ \
 		https://github.com/capnproto/capnproto
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/../LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		autoreconf compiler:c++14-lang cpe gmake libtool pathfix ssl
+USES=		compiler:c++14-lang cpe gmake libtool pathfix ssl
 
 CONFIGURE_ARGS=	ac_cv_lib_ssl_OPENSSL_init_ssl=yes
 GNU_CONFIGURE=	yes
@@ -21,9 +22,6 @@ TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-WRKSRC_SUBDIR=	c++
-
-USE_GITHUB=	yes
 
 CONFLICTS_INSTALL=	capnproto
 
