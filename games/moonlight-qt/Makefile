@@ -5,6 +5,10 @@ MASTER_SITES=	https://github.com/moonlight-stream/moonlight-qt/releases/download
 PKGNAMESUFFIX=	-qt
 DISTNAME=	MoonlightSrc-${DISTVERSIONFULL}
 
+PATCH_SITES=	https://github.com/moonlight-stream/moonlight-qt/commit/
+# Build fails on i386: https://github.com/moonlight-stream/moonlight-qt/issues/1367
+PATCHFILES+=	9e92c07cb7bce3591f43df2984f4e8dc61511c95.patch:-p1
+
 MAINTAINER=	lisp_25689@163.com
 COMMENT=	Gamestream client
 WWW=		https://github.com/moonlight-stream/moonlight-qt
