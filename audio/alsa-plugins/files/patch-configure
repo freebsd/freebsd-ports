@@ -1,6 +1,6 @@
---- configure.orig	2022-03-17 16:36:30 UTC
+--- configure.orig	2024-06-10 09:22:07 UTC
 +++ configure
-@@ -743,6 +743,9 @@
+@@ -743,6 +743,9 @@ AM_V
  AM_DEFAULT_VERBOSITY
  AM_DEFAULT_V
  AM_V
@@ -10,7 +10,7 @@
  am__untar
  am__tar
  AMTAR
-@@ -785,7 +788,6 @@
+@@ -785,7 +788,6 @@ includedir
  docdir
  oldincludedir
  includedir
@@ -18,7 +18,7 @@
  localstatedir
  sharedstatedir
  sysconfdir
-@@ -909,7 +911,6 @@
+@@ -909,7 +911,6 @@ localstatedir='${prefix}/var'
  sysconfdir='${prefix}/etc'
  sharedstatedir='${prefix}/com'
  localstatedir='${prefix}/var'
@@ -26,7 +26,7 @@
  includedir='${prefix}/include'
  oldincludedir='/usr/include'
  docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
-@@ -1162,15 +1163,6 @@
+@@ -1162,15 +1163,6 @@ do
    | -silent | --silent | --silen | --sile | --sil)
      silent=yes ;;
  
@@ -42,7 +42,7 @@
    -sbindir | --sbindir | --sbindi | --sbind | --sbin | --sbi | --sb)
      ac_prev=sbindir ;;
    -sbindir=* | --sbindir=* | --sbindi=* | --sbind=* | --sbin=* \
-@@ -1308,7 +1300,7 @@
+@@ -1308,7 +1300,7 @@ for ac_var in	exec_prefix prefix bindir sbindir libexe
  for ac_var in	exec_prefix prefix bindir sbindir libexecdir datarootdir \
  		datadir sysconfdir sharedstatedir localstatedir includedir \
  		oldincludedir docdir infodir htmldir dvidir pdfdir psdir \
@@ -51,7 +51,7 @@
  do
    eval ac_val=\$$ac_var
    # Remove trailing slashes.
-@@ -1461,7 +1453,6 @@
+@@ -1461,7 +1453,6 @@ Fine tuning of the installation directories:
    --sysconfdir=DIR        read-only single-machine data [PREFIX/etc]
    --sharedstatedir=DIR    modifiable architecture-independent data [PREFIX/com]
    --localstatedir=DIR     modifiable single-machine data [PREFIX/var]
@@ -59,7 +59,7 @@
    --libdir=DIR            object code libraries [EPREFIX/lib]
    --includedir=DIR        C header files [PREFIX/include]
    --oldincludedir=DIR     C header files for non-gcc [/usr/include]
-@@ -2578,12 +2569,7 @@
+@@ -2578,12 +2569,7 @@ if test x"${MISSING+set}" != xset; then
  am_aux_dir=`cd "$ac_aux_dir" && pwd`
  
  if test x"${MISSING+set}" != xset; then
@@ -73,7 +73,7 @@
  fi
  # Use eval to expand $SHELL
  if eval "$MISSING --is-lightweight"; then
-@@ -2938,7 +2924,21 @@
+@@ -2938,7 +2924,21 @@ am__tar='$${TAR-tar} chof - "$$tardir"' am__untar='$${
  
  
  
@@ -95,7 +95,7 @@
  # POSIX will say in a future version that running "rm -f" with no argument
  # is OK; and we want to be able to make that assumption in our Makefile
  # recipes.  So use an aggressive probe to check that the usage we want is
-@@ -9015,7 +9015,7 @@
+@@ -9015,7 +9015,7 @@ $as_echo_n "checking whether the $compiler linker ($LD
    hardcode_minus_L=no
    hardcode_shlibpath_var=unsupported
    inherit_rpath=no
@@ -104,7 +104,7 @@
    module_cmds=
    module_expsym_cmds=
    old_archive_from_new_cmds=
-@@ -9314,7 +9314,7 @@
+@@ -9314,7 +9314,7 @@ _LT_EOF
  	wlarc=
        else
  	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -113,7 +113,7 @@
        fi
        ;;
  
-@@ -9333,7 +9333,7 @@
+@@ -9333,7 +9333,7 @@ _LT_EOF
  _LT_EOF
        elif $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
  	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -122,7 +122,7 @@
        else
  	ld_shlibs=no
        fi
-@@ -9362,7 +9362,7 @@
+@@ -9362,7 +9362,7 @@ _LT_EOF
  	  if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
  	    hardcode_libdir_flag_spec='$wl-rpath $wl$libdir'
  	    archive_cmds='$CC -shared $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -131,7 +131,7 @@
  	  else
  	    ld_shlibs=no
  	  fi
-@@ -9380,7 +9380,7 @@
+@@ -9380,7 +9380,7 @@ _LT_EOF
      *)
        if $LD --help 2>&1 | $GREP ': supported targets:.* elf' > /dev/null; then
  	archive_cmds='$CC -shared $pic_flag $libobjs $deplibs $compiler_flags $wl-soname $wl$soname -o $lib'
@@ -140,7 +140,7 @@
        else
  	ld_shlibs=no
        fi
-@@ -10028,7 +10028,7 @@
+@@ -10028,7 +10028,7 @@ $as_echo "$lt_cv_irix_exported_symbol" >&6; }
  	hardcode_direct_absolute=yes
  	if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`"; then
  	  archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
@@ -149,7 +149,7 @@
  	  hardcode_libdir_flag_spec='$wl-rpath,$libdir'
  	  export_dynamic_flag_spec='$wl-E'
  	else
-@@ -10877,7 +10877,7 @@
+@@ -10877,7 +10877,7 @@ freebsd* | dragonfly*)
    version_type=freebsd-$objformat
    case $version_type in
      freebsd-elf*)
@@ -158,7 +158,7 @@
        soname_spec='$libname$release$shared_ext$major'
        need_version=no
        need_lib_prefix=no
-@@ -11094,9 +11094,6 @@
+@@ -11094,9 +11094,6 @@ fi
    # before this can be enabled.
    hardcode_into_libs=yes
  
@@ -168,7 +168,7 @@
    # Ideally, we could use ldconfig to report *all* directores which are
    # searched for libraries, however this is still not possible.  Aside from not
    # being certain /sbin/ldconfig is available, command
-@@ -11105,7 +11102,7 @@
+@@ -11105,7 +11102,7 @@ fi
    # appending ld.so.conf contents (and includes) to the search path.
    if test -f /etc/ld.so.conf; then
      lt_ld_extra=`awk '/^include / { system(sprintf("cd /etc; cat %s 2>/dev/null", \$2)); skip = 1; } { if (!skip) print \$0; skip = 0; }' < /etc/ld.so.conf | $SED -e 's/#.*//;/^[	 ]*hwcap[	 ]/d;s/[:,	]/ /g;s/=[^=]*$//;s/=[^= ]* / /g;s/"//g;/^$/d' | tr '\n' ' '`
@@ -177,7 +177,7 @@
    fi
  
    # We used to test for /lib/ld.so.1 and disable shared libraries on
-@@ -12012,7 +12009,7 @@
+@@ -12012,7 +12009,7 @@ $as_echo_n "checking whether stripping libraries is po
  old_striplib=
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether stripping libraries is possible" >&5
  $as_echo_n "checking whether stripping libraries is possible... " >&6; }
@@ -186,7 +186,7 @@
    test -z "$old_striplib" && old_striplib="$STRIP --strip-debug"
    test -z "$striplib" && striplib="$STRIP --strip-unneeded"
    { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-@@ -13293,21 +13290,22 @@
+@@ -13359,21 +13356,22 @@ fi
  	HAVE_SPEEXDSP="yes"
  fi
  fi

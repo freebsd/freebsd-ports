@@ -1,18 +1,16 @@
---- oss/pcm_oss.c.orig	2020-02-19 09:35:42 UTC
+--- oss/pcm_oss.c.orig	2024-06-10 09:18:39 UTC
 +++ oss/pcm_oss.c
-@@ -19,21 +19,42 @@
-  */
+@@ -20,6 +20,7 @@
  
+ #include "config.h"
  #include <stdio.h>
 +#include <stdbool.h>
  #include <sys/ioctl.h>
  #include <alsa/asoundlib.h>
  #include <alsa/pcm_external.h>
-+#ifdef __linux__
- #include <linux/soundcard.h>
-+#else
-+#include <sys/soundcard.h>
-+#endif
+@@ -31,16 +32,32 @@
+ #include <soundcard.h>
+ #endif
  
 +#ifndef ARRAY_SIZE
 +#define	ARRAY_SIZE(x)	(sizeof(x) / sizeof(*(x)))
@@ -48,7 +46,7 @@
  } snd_pcm_oss_t;
  
  static snd_pcm_sframes_t oss_write(snd_pcm_ioplug_t *io,
-@@ -49,8 +70,21 @@ static snd_pcm_sframes_t oss_write(snd_pcm_ioplug_t *i
+@@ -56,8 +73,21 @@ static snd_pcm_sframes_t oss_write(snd_pcm_ioplug_t *i
  	buf = (char *)areas->addr + (areas->first + areas->step * offset) / 8;
  	size *= oss->frame_bytes;
  	result = write(oss->fd, buf, size);
@@ -72,7 +70,7 @@
  	return result / oss->frame_bytes;
  }
  
-@@ -67,37 +101,122 @@ static snd_pcm_sframes_t oss_read(snd_pcm_ioplug_t *io
+@@ -74,37 +104,122 @@ static snd_pcm_sframes_t oss_read(snd_pcm_ioplug_t *io
  	buf = (char *)areas->addr + (areas->first + areas->step * offset) / 8;
  	size *= oss->frame_bytes;
  	result = read(oss->fd, buf, size);
@@ -204,7 +202,7 @@
  	}
  	return 0;
  }
-@@ -107,6 +226,10 @@ static int oss_stop(snd_pcm_ioplug_t *io)
+@@ -114,6 +229,10 @@ static int oss_stop(snd_pcm_ioplug_t *io)
  	snd_pcm_oss_t *oss = io->private_data;
  	int tmp = 0;
  
@@ -215,7 +213,7 @@
  	ioctl(oss->fd, SNDCTL_DSP_SETTRIGGER, &tmp);
  	return 0;
  }
-@@ -115,101 +238,164 @@ static int oss_drain(snd_pcm_ioplug_t *io)
+@@ -122,101 +241,164 @@ static int oss_drain(snd_pcm_ioplug_t *io)
  {
  	snd_pcm_oss_t *oss = io->private_data;
  
@@ -445,7 +443,7 @@
  	if ((flags = fcntl(oss->fd, F_GETFL)) < 0) {
  		err = -errno;
  		perror("F_GETFL");
-@@ -229,16 +415,148 @@ static int oss_hw_params(snd_pcm_ioplug_t *io,
+@@ -236,16 +418,148 @@ static int oss_hw_params(snd_pcm_ioplug_t *io,
  	return 0;
  }
  
@@ -596,7 +594,7 @@
  	unsigned int format[5];
  	unsigned int nchannels;
  	unsigned int channel[6];
-@@ -317,6 +635,7 @@ static int oss_hw_constraint(snd_pcm_oss_t *oss)
+@@ -324,6 +638,7 @@ static int oss_hw_constraint(snd_pcm_oss_t *oss)
  		return err;
  
  	return 0;
@@ -604,7 +602,7 @@
  }
  
  
-@@ -324,6 +643,10 @@ static int oss_close(snd_pcm_ioplug_t *io)
+@@ -331,6 +646,10 @@ static int oss_close(snd_pcm_ioplug_t *io)
  {
  	snd_pcm_oss_t *oss = io->private_data;
  
@@ -615,7 +613,7 @@
  	close(oss->fd);
  	free(oss->device);
  	free(oss);
-@@ -339,6 +662,7 @@ static const snd_pcm_ioplug_callback_t oss_playback_ca
+@@ -346,6 +665,7 @@ static const snd_pcm_ioplug_callback_t oss_playback_ca
  	.hw_params = oss_hw_params,
  	.prepare = oss_prepare,
  	.drain = oss_drain,
@@ -623,7 +621,7 @@
  };
  
  static const snd_pcm_ioplug_callback_t oss_capture_callback = {
-@@ -350,6 +674,7 @@ static const snd_pcm_ioplug_callback_t oss_capture_cal
+@@ -357,6 +677,7 @@ static const snd_pcm_ioplug_callback_t oss_capture_cal
  	.hw_params = oss_hw_params,
  	.prepare = oss_prepare,
  	.drain = oss_drain,
@@ -631,7 +629,7 @@
  };
  
  
-@@ -360,6 +685,10 @@ SND_PCM_PLUGIN_DEFINE_FUNC(oss)
+@@ -367,6 +688,10 @@ SND_PCM_PLUGIN_DEFINE_FUNC(oss)
  	int err;
  	snd_pcm_oss_t *oss;
  	

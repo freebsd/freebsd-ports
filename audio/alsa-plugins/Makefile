@@ -1,10 +1,9 @@
 PORTNAME=	alsa-plugins
-PORTVERSION=	1.2.7.1
-PORTREVISION=	3
+PORTVERSION=	1.2.12
 CATEGORIES=	audio
 MASTER_SITES=	https://www.alsa-project.org/files/pub/plugins/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	ALSA compatibility library plugins
 WWW=		https://www.alsa-project.org/
 
