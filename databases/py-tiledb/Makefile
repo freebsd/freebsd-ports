@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python interface to the TileDB array storage manager
-WWW=		https://github.com/TileDB-Inc/TileDB-Py
+WWW=		https://tiledb-inc-tiledb.readthedocs-hosted.com/projects/tiledb-py/en/stable/ \
+		https://github.com/TileDB-Inc/TileDB-Py
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
