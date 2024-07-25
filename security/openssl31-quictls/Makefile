@@ -139,7 +139,7 @@ ZLIB_CONFIGURE_ON=	zlib-dynamic
 
 SHLIBS=			lib/engines-${OPENSSL_SHLIBVER}/loader_attic.so
 
-PORTSCOUT=		limit=^3\.1\.
+PORTSCOUT=		limit:^${DISTVERSION:R:S/./\./g}\.
 
 .include <bsd.port.options.mk>
 
