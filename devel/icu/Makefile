@@ -18,7 +18,6 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES+=		compiler:c++11-lib cpe gmake pathfix python:build tar:tgz
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS?=--disable-layoutex
 CONFIGURE_ARGS+=--with-data-packaging=archive \
 		--disable-renaming \
