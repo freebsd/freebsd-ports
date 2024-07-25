@@ -29,8 +29,8 @@ SHEBANG_FILES=	asciidoc/resources/filters/*.py \
 
 
 post-build:
-	@cd ${WRKSRC}/doc && ${PYTHON_CMD} -m asciidoc.a2x -f manpage a2x.1.txt
-	@cd ${WRKSRC}/doc && ${PYTHON_CMD} -m asciidoc.a2x -f manpage asciidoc.1.txt
+	@cd ${WRKSRC}/ && ${PYTHON_CMD} -m asciidoc.a2x -f manpage doc/a2x.1.txt
+	@cd ${WRKSRC}/ && ${PYTHON_CMD} -m asciidoc.a2x -f manpage doc/asciidoc.1.txt
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/a2x.1 ${WRKSRC}/doc/asciidoc.1 ${STAGEDIR}${PREFIX}/share/man/man1/
