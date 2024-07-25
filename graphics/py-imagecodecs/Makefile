@@ -33,6 +33,14 @@ USE_PYTHON=	autoplist concurrent pep517
 
 CPPFLAGS+=	-I${LOCALBASE}/include/jxrlib -I${LOCALBASE}/include/openjpeg-2.5
 
+OPTIONS_DEFINE=	ALL
+ALL_DESC=	All optional dependencies
+
+# Remove graphics/py-tifffile from RUN_DEPENDS to avoid cyclic dependency
+ALL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=0:math/py-matplotlib@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}numcodecs>=0:misc/py-numcodecs@${PY_FLAVOR}
+#			${PYTHON_PKGNAMEPREFIX}tifffile>=0:graphics/py-tifffile@${PY_FLAVOR}
+
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
