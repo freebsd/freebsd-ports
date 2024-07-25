@@ -326,8 +326,8 @@ share/applications/gemrb.desktop
 %%DATADIR%%/GUIScripts/pst/Start.py
 %%DATADIR%%/GUIScripts/test/Autodetect.py
 %%DATADIR%%/GUIScripts/test/Start.py
-%%DATADIR%%/Shaders/BlitRGBA.glsl
-%%DATADIR%%/Shaders/SDLTextureV.glsl
+%%OPENGL%%%%DATADIR%%/Shaders/BlitRGBA.glsl
+%%OPENGL%%%%DATADIR%%/Shaders/SDLTextureV.glsl
 %%DATADIR%%/demo/README.md
 %%DATADIR%%/demo/TODO
 %%DATADIR%%/demo/chitin.key
