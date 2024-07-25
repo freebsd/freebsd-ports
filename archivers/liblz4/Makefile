@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/../../lib/LICENSE
 LICENSE_FILE_GPLv2=	${WRKSRC}/../../programs/COPYING
 
-USES=		cpe meson pkgconfig python:build shebangfix
+USES=		cpe meson pkgconfig python:build
 
 MESON_ARGS=	--default-library=both \
 		-Dalign-test=true \
@@ -40,8 +40,6 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 CPE_VENDOR=	lz4_project
 
 PORTSCOUT=	limit:^[0-9]*\.
-
-SHEBANG_GLOB=	*.py
 
 OPTIONS_DEFINE=	TEST
 
