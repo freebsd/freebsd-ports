@@ -1,3 +1,39 @@
+  <vuln vid="24c88add-4a3e-11ef-86d7-001b217b3468">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.2.0</ge><lt>17.2.1</lt></range>
+	<range><ge>17.1.0</ge><lt>17.1.3</lt></range>
+	<range><ge>12.0.0</ge><lt>17.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/07/24/patch-release-gitlab-17-2-1-released/">
+	  <p>XSS via the Maven Dependency Proxy</p>
+	  <p>Project level analytics settings leaked in DOM</p>
+	  <p>Reports can access and download job artifacts despite use of settings to prevent it</p>
+	  <p>Direct Transfer - Authorised project/group exports are accessible to other users</p>
+	  <p>Bypassing tag check and branch check through imports</p>
+	  <p>Project Import/Export - Make project/group export files hidden to everyone except user who initiated it</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-5067</cvename>
+      <cvename>CVE-2024-7057</cvename>
+      <cvename>CVE-2024-0231</cvename>
+      <url>https://about.gitlab.com/releases/2024/07/24/patch-release-gitlab-17-2-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-07-24</discovery>
+      <entry>2024-07-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="574028b4-a181-455b-a78b-ec5c62781235">
     <topic>electron29 -- multiple vulnerabilities</topic>
     <affects>
