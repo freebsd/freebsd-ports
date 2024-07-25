@@ -1,0 +1,11 @@
+--- ld/configure.tgt.orig	2024-07-18 19:15:53.355228000 +0100
++++ ld/configure.tgt	2024-07-18 19:17:43.053568000 +0100
+@@ -1102,7 +1106,7 @@
+   ;;
+ 
+ *-*-freebsd*)
+-  NATIVE_LIB_DIRS='/lib /usr/lib /usr/local/lib'
++  NATIVE_LIB_DIRS='/lib /usr/lib /usr/local/lib /usr/lib32'
+   ;;
+ 
+ hppa*64*-*-hpux11*)
