@@ -1,6 +1,6 @@
 PORTNAME=	youtui
 DISTVERSIONPREFIX=	ytmapi-rs/v
-DISTVERSION=	0.0.7
+DISTVERSION=	0.0.8
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -224,10 +224,10 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		oboe-sys-0.6.1 \
 		ogg-0.8.0 \
 		once_cell-1.19.0 \
-		openssl-0.10.64 \
+		openssl-0.10.66 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.102 \
+		openssl-sys-0.9.103 \
 		option-ext-0.2.0 \
 		overload-0.1.1 \
 		parking_lot-0.11.2 \
