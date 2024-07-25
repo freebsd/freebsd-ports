@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 DISTVERSION=	18.1.8
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
