@@ -1,5 +1,5 @@
 PORTNAME=	elgg
-PORTVERSION=	6.0.0
+PORTVERSION=	6.0.1
 CATEGORIES=	www
 MASTER_SITES=	http://elgg.org/download/
 
