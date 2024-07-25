@@ -34,9 +34,6 @@ X11_CONFIGURE_WITH=	gtk
 X11_USE=		GNOME=gtk20
 X11_USES=		gnome
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|m4_esyscmd(\[build-aux/git-version-gen \.tarball-version\])|${PORTVERSION}|' ${WRKSRC}/configure.ac
-
 post-install:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "${PREFIX}/sbin/mtr is setuid \"root\" "
