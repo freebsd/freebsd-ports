@@ -1,3 +1,32 @@
+  <vuln vid="3e917407-4b3f-11ef-8e49-001999f8d30b">
+    <topic>Mailpit -- Content Security Policy XSS</topic>
+    <affects>
+      <package>
+	<name>mailpit</name>
+	<range><lt>1.19.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mailpit developer reports:</p>
+	<blockquote cite="https://github.com/axllent/mailpit/releases/tag/v1.19.3">
+	  <p>A vulnerability was discovered which allowed a bad
+	  actor with SMTP access to Mailpit to bypass the Content
+	  Security Policy headers using a series of crafted HTML
+	  messages which could result in a stored XSS attack via
+	  the web UI.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/axllent/mailpit/releases/tag/v1.19.3</url>
+    </references>
+    <dates>
+      <discovery>2024-07-26</discovery>
+      <entry>2024-07-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="24c88add-4a3e-11ef-86d7-001b217b3468">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
