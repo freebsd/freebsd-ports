@@ -1,13 +1,17 @@
---- pyproject.toml.orig	2023-08-15 13:45:59 UTC
+--- pyproject.toml.orig	2024-07-25 13:58:38 UTC
 +++ pyproject.toml
-@@ -2,9 +2,9 @@
+@@ -2,13 +2,13 @@ requires = [
  requires = [
      "setuptools>=42",
      "wheel",
 -    "Cython>=3.0a7",
 +    "Cython",
      "setuptools_scm[toml]>=6.2",
--    "oldest-supported-numpy"
+     # Note for packagers: this constraint is specific to wheels
+     # for PyPI; it is also supported to build against 1.xx still.
+     # If you do so, please ensure to include a `numpy<2.0`
+     # runtime requirement for those binary packages.
+-    "numpy>=2.0.0rc1"
 +    "numpy"
  ]
  build-backend = "setuptools.build_meta"
