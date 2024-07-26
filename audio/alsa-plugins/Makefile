@@ -3,7 +3,7 @@ PORTVERSION=	1.2.12
 CATEGORIES=	audio
 MASTER_SITES=	https://www.alsa-project.org/files/pub/plugins/
 
-MAINTAINER=	rodrigo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ALSA compatibility library plugins
 WWW=		https://www.alsa-project.org/
 
