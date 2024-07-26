@@ -14,12 +14,5 @@ Short examples:
   * Listen on all interfaces, except em0:
 	lldpd_flags="-I *,!em0"
 
-A whitelisted interface beats a blacklisted interface which beats a simple
+An allowlisted interface beats a blocklisted interface which beats a simple
 matched interface. See lldpd(8), which contains the complete documentation.
-
-## Compatibility
-
-This port should work equally well on both FreeBSD and DragonFly BSD, though
-the later might be a bit less regularly tested.
-
--- Mathieu Simon <freebsd@simweb.ch>, Tue, 06 Oct 2015 13:20:00 +02:00
