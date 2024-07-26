@@ -1,6 +1,6 @@
 PORTNAME=	opa
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.66.0
+DISTVERSION=	0.67.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,19 +18,19 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	open-policy-agent
 GH_TUPLE=	\
 		AdaLogics:go-fuzz-headers:ced1acdcaa24:adalogics_go_fuzz_headers/vendor/github.com/AdaLogics/go-fuzz-headers \
-		Microsoft:hcsshim:v0.11.5:microsoft_hcsshim/vendor/github.com/Microsoft/hcsshim \
 		OneOfOne:xxhash:v1.2.8:oneofone_xxhash/vendor/github.com/OneOfOne/xxhash \
 		agnivade:levenshtein:v1.1.1:agnivade_levenshtein/vendor/github.com/agnivade/levenshtein \
 		andreyvit:diff:c7f18ee00883:andreyvit_diff/vendor/github.com/andreyvit/diff \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		bytecodealliance:wasmtime-go:v3.0.2:bytecodealliance_wasmtime_go_v3/vendor/github.com/bytecodealliance/wasmtime-go/v3 \
-		cenkalti:backoff:v4.2.1:cenkalti_backoff_v4/vendor/github.com/cenkalti/backoff/v4 \
+		cenkalti:backoff:v4.3.0:cenkalti_backoff_v4/vendor/github.com/cenkalti/backoff/v4 \
 		census-instrumentation:opencensus-go:v0.24.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
-		cespare:xxhash:v2.2.0:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
-		containerd:containerd:v1.7.18:containerd_containerd/vendor/github.com/containerd/containerd \
+		cespare:xxhash:v2.3.0:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
+		containerd:containerd:v1.7.20:containerd_containerd/vendor/github.com/containerd/containerd \
 		containerd:errdefs:v0.1.0:containerd_errdefs/vendor/github.com/containerd/errdefs \
 		containerd:log:v0.1.0:containerd_log/vendor/github.com/containerd/log \
+		containerd:platforms:v0.2.1:containerd_platforms/vendor/github.com/containerd/platforms \
 		cpuguy83:go-md2man:v2.0.4:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		davecgh:go-spew:d8f796af33cc:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgraph-io:badger:v3.2103.5:dgraph_io_badger_v3/vendor/github.com/dgraph-io/badger/v3 \
@@ -54,22 +54,22 @@ GH_TUPLE=	\
 		golang:glog:v1.2.0:golang_glog_1 \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mod:v0.17.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.26.0:golang_net/vendor/golang.org/x/net \
+		golang:net:v0.27.0:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.4:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:v0.7.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.21.0:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.22.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.16.0:golang_text/vendor/golang.org/x/text \
 		golang:time:v0.5.0:golang_time/vendor/golang.org/x/time \
 		golang:tools:e35e4ccd0d2d:golang_tools/vendor/golang.org/x/tools \
 		google:flatbuffers:v1.12.1:google_flatbuffers/vendor/github.com/google/flatbuffers \
 		google:go-cmp:v0.6.0:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:go-genproto:94a12d6c2237:google_go_genproto/vendor/google.golang.org/genproto/googleapis/api \
-		google:go-genproto:94a12d6c2237:google_go_genproto_1/vendor/google.golang.org/genproto/googleapis/rpc \
+		google:go-genproto:f6361c86f094:google_go_genproto/vendor/google.golang.org/genproto/googleapis/api \
+		google:go-genproto:f6361c86f094:google_go_genproto_1/vendor/google.golang.org/genproto/googleapis/rpc \
 		google:uuid:v1.6.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:mux:v1.8.1:gorilla_mux/vendor/github.com/gorilla/mux \
-		grpc-ecosystem:grpc-gateway:v2.16.0:grpc_ecosystem_grpc_gateway_v2/vendor/github.com/grpc-ecosystem/grpc-gateway/v2 \
-		grpc:grpc-go:v1.64.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc-ecosystem:grpc-gateway:v2.20.0:grpc_ecosystem_grpc_gateway_v2/vendor/github.com/grpc-ecosystem/grpc-gateway/v2 \
+		grpc:grpc-go:v1.65.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		inconshreveable:mousetrap:v1.1.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		klauspost:compress:v1.17.0:klauspost_compress/vendor/github.com/klauspost/compress \
@@ -82,12 +82,8 @@ GH_TUPLE=	\
 		mitchellh:mapstructure:v1.5.0:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		moby:locker:v1.0.1:moby_locker/vendor/github.com/moby/locker \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
-		open-telemetry:opentelemetry-go-contrib:v1.27.0:open_telemetry_opentelemetry_go_contrib/vendor/go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp \
-		open-telemetry:opentelemetry-go:v1.21.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
-		open-telemetry:opentelemetry-proto-go:v1.0.0:open_telemetry_opentelemetry_proto_go/vendor/go.opentelemetry.io/proto/otlp \
 		opencontainers:go-digest:v1.0.0:opencontainers_go_digest/vendor/github.com/opencontainers/go-digest \
 		opencontainers:image-spec:v1.1.0:opencontainers_image_spec/vendor/github.com/opencontainers/image-spec \
-		oras-project:oras-go:v2.3.1:oras_project_oras_go/vendor/oras.land/oras-go/v2 \
 		pelletier:go-toml:v2.1.0:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
 		peterh:liner:v1.2.2:peterh_liner/vendor/github.com/peterh/liner \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
@@ -95,9 +91,9 @@ GH_TUPLE=	\
 		prometheus:client_model:v0.6.1:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.48.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.12.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
-		protocolbuffers:protobuf-go:v1.33.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		protocolbuffers:protobuf-go:v1.34.2:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rcrowley:go-metrics:10cdbea86bc0:rcrowley_go_metrics/vendor/github.com/rcrowley/go-metrics \
-		rogpeppe:go-internal:v1.10.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
+		rogpeppe:go-internal:v1.12.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		russross:blackfriday:v2.1.0:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		sagikazarmark:locafero:v0.4.0:sagikazarmark_locafero/vendor/github.com/sagikazarmark/locafero \
 		sagikazarmark:slog-shim:v0.1.0:sagikazarmark_slog_shim/vendor/github.com/sagikazarmark/slog-shim \
