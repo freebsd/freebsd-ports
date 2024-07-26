@@ -1069,6 +1069,7 @@
 %%WWWDIR%%/include/classes/html/widgets/fields/CWidgetFieldMultiSelectUserView.php
 %%WWWDIR%%/include/classes/html/widgets/fields/CWidgetFieldMultiSelectView.php
 %%WWWDIR%%/include/classes/html/widgets/fields/CWidgetFieldNumericBoxView.php
+%%WWWDIR%%/include/classes/html/widgets/fields/CWidgetFieldPatternSelectHostView.php
 %%WWWDIR%%/include/classes/html/widgets/fields/CWidgetFieldPatternSelectItemView.php
 %%WWWDIR%%/include/classes/html/widgets/fields/CWidgetFieldPatternSelectView.php
 %%WWWDIR%%/include/classes/html/widgets/fields/CWidgetFieldRadioButtonListView.php
@@ -1287,6 +1288,7 @@
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldNavTree.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldNumericBox.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldPatternSelect.php
+%%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldPatternSelectHost.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldPatternSelectItem.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldRadioButtonList.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldRangeControl.php
