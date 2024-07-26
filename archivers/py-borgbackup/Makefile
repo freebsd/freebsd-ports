@@ -1,6 +1,6 @@
 PORTNAME=	borgbackup
 DISTVERSION=	1.4.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,6 @@ WWW=		https://pypi.org/project/borgbackup/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_FreeBSD_13= uses acl_extended_link_np, see https://github.com/borgbackup/borg/issues/8269
 
 # note that borgbackup pins the msgpack version range per patchlevel version!
 _BB_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=1.0.2<1.1.0:devel/py-msgpack@${PY_FLAVOR}
@@ -38,6 +36,21 @@ OPTIONS_DEFAULT=	FUSE
 
 FUSE_DESC=	Support to mount locally borg backup files
 FUSE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}llfuse>0:devel/py-llfuse@${PY_FLAVOR}
+
+.include <bsd.port.pre.mk>
+
+.if (${OPSYS} == FreeBSD) && ${OSVERSION} < 1400033 # why 1400033?
+# 1. check for the OLDEST (last in list) history entry on the file, when it was added:
+#    git -C /usr/src hist lib/libc/posix1e/acl_extended_file_np.c
+# 2. check for the version you have obtained what __FreeBSD_version was
+#    and increment by one. This is inaccurate for the interim between file addition
+#    and __FreeBSD_version bump back then, but those versions were no releases and
+#    should no longer be in the field.
+EXTRA_PATCHES	+= ${FILESDIR}/extrapatch-setup.py
+post-patch:
+	${CP} ${FILESDIR}/acl_extended_file_np.c ${WRKSRC}/src/borg/platform/
+.endif
+
 
 _BORGHOME=${WRKDIR}/testhome
 _BORGENV=-i BORG_PASSPHRASE=secret123 PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} HOME=${_BORGHOME}
@@ -71,4 +84,4 @@ post-install:
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${_BORGENV} ${TEST_ENV} tox-${PYTHON_VER} -e ${PY_FLAVOR} -vv
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
