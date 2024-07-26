@@ -5,7 +5,7 @@ CATEGORIES=	net-im security
 MASTER_SITES=	https://github.com/gkdr/lurch/releases/download/v${DISTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	micadeyeye@gmail.com
+MAINTAINER=	michael.a.oshin@panafricanssi.org
 COMMENT=	OMEMO Encryption Library for libpurple (plugin)
 WWW=		https://research.ngportal.com/lurch
 
