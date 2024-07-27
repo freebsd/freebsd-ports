@@ -1,7 +1,7 @@
 PORTNAME=	hexcurse
-PORTVERSION=	1.60.0
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.60.0
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -16,16 +16,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	LonnyGomes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+
+CFLAGS+=	-Wno-error=deprecated-non-prototype
 
 PLIST_FILES=	bin/hexcurse share/man/man1/hexcurse.1.gz
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-CFLAGS+=	-Wno-error=deprecated-non-prototype
-.endif
-
-CFLAGS+=	-Wno-error=format-truncation
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
