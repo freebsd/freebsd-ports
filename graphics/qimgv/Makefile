@@ -1,5 +1,5 @@
 PORTNAME=	qimgv
-PORTVERSION=	1.03.g20240620
+PORTVERSION=	1.03.g20240727
 CATEGORIES=	graphics
 
 MAINTAINER=	kenrap@kennethraplee.com
@@ -10,12 +10,11 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
-USES=		cmake compiler:c++11-lang desktop-file-utils \
+USES=		cmake compiler:c++17-lang desktop-file-utils \
 		localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	easymodo
-GH_PROJECT=	qimgv
-GH_TAGNAME=	7672cb4b15f8f5eef2b5535e7bbb59248931db72
+GH_TAGNAME=	82e6b7537002b86b4ab20954aab5bf0db7c25752
 
 LDFLAGS+=	-linotify
 
@@ -25,7 +24,6 @@ OPTIONS_SINGLE=		QT
 OPTIONS_SINGLE_QT=	QT5 QT6
 OPTIONS_SUB=		yes
 
-EXIV2_DESC=		Support reading exif tags via exiv2
 KDE5_DESC=		${KDE_DESC} (require QT5)
 OPENCV_DESC=		Enables high quality scaling options
 VIDEO_DESC=		Enables video playback via mpv
