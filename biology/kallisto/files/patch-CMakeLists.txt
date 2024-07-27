@@ -1,20 +1,19 @@
---- CMakeLists.txt.orig	2023-06-27 10:45:00 UTC
+--- CMakeLists.txt.orig	2024-07-20 19:07:27 UTC
 +++ CMakeLists.txt
-@@ -33,10 +33,11 @@ if(${CMAKE_VERSION} VERSION_LESS 3.1)
+@@ -50,10 +50,11 @@ else()
      # remove this block once CMake >=3.1 has fixated in the ecosystem
      add_compile_options(-std=c++11)
  else()
 +    # Use c++11 to silence warnings
      include(CheckCXXCompilerFlag)
--    check_cxx_compiler_flag(-std=c++17 COMPILER_SUPPORTS_CXX17)
-+    check_cxx_compiler_flag(-std=c++11 COMPILER_SUPPORTS_CXX17)
+     check_cxx_compiler_flag(-std=c++17 COMPILER_SUPPORTS_CXX17)
      if(COMPILER_SUPPORTS_CXX17)
 -    set(CMAKE_CXX_STANDARD 17)
 +    set(CMAKE_CXX_STANDARD 11)
      else()
      set(CMAKE_CXX_STANDARD 11)
      endif()
-@@ -44,9 +45,7 @@ else()
+@@ -61,9 +62,7 @@ endif()
      set(CMAKE_CXX_EXTENSIONS OFF)
  endif()
  
@@ -25,7 +24,7 @@
  
  if(LINK MATCHES static)
      message("static build")
-@@ -56,42 +55,16 @@ ENDIF(LINK MATCHES static)
+@@ -73,24 +72,13 @@ include(ExternalProject)
  
  
  include(ExternalProject)
@@ -45,27 +44,18 @@
      PREFIX ${PROJECT_SOURCE_DIR}/ext/bifrost
      SOURCE_DIR ${PROJECT_SOURCE_DIR}/ext/bifrost
      BUILD_IN_SOURCE 1
-     CONFIGURE_COMMAND mkdir -p build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_CXX_FLAGS=${PROJECT_BIFROST_CMAKE_CXX_FLAGS}
+     CONFIGURE_COMMAND mkdir -p build && cd build && cmake .. -DMAX_KMER_SIZE=${MAX_KMER_SIZE} -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_CXX_FLAGS=${PROJECT_BIFROST_CMAKE_CXX_FLAGS} ${DO_ENABLE_AVX2} ${DO_ENABLE_COMPILATION_ARCH}
 -    BUILD_COMMAND cd build && make
 +    BUILD_COMMAND cd build && gmake
      INSTALL_COMMAND ""
  )
  
--if (ZLIBNG)
--    message("zlib-ng enabled.")
--    ExternalProject_Add(zlib-ng
--    PREFIX ${PROJECT_SOURCE_DIR}/ext/zlib-ng
--    SOURCE_DIR ${PROJECT_SOURCE_DIR}/ext/zlib-ng
--    BUILD_IN_SOURCE 1
--    CONFIGURE_COMMAND mkdir -p zlib-ng && cd zlib-ng && cmake .. -DZLIB_COMPAT=ON -DZLIB_ENABLE_TESTS=OFF -DCMAKE_INSTALL_PREFIX=${PREFIX}
+@@ -101,7 +89,7 @@ if (ZLIBNG)
+     SOURCE_DIR ${PROJECT_SOURCE_DIR}/ext/zlib-ng
+     BUILD_IN_SOURCE 1
+     CONFIGURE_COMMAND mkdir -p zlib-ng && cd zlib-ng && cmake .. -DZLIB_COMPAT=ON -DZLIB_ENABLE_TESTS=OFF -DCMAKE_INSTALL_PREFIX=${PREFIX}
 -    BUILD_COMMAND cd zlib-ng && make
--    INSTALL_COMMAND ""
--    )
--endif(ZLIBNG)
--
--if (USE_BAM)
--include_directories(${htslib_PREFIX}/src/htslib)
--endif(USE_BAM)
- include_directories(${EXT_PROJECTS_DIR}/bifrost/build/src)
- 
- ExternalProject_Get_Property(bifrost install_dir)
++    BUILD_COMMAND cd zlib-ng && gmake
+     INSTALL_COMMAND ""
+     )
+ endif(ZLIBNG)

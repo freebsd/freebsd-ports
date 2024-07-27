@@ -1,4 +1,4 @@
---- ext/bifrost/src/strict_fstream.hpp.orig	2023-07-06 14:11:32 UTC
+--- ext/bifrost/src/strict_fstream.hpp.orig	2024-07-23 11:27:57 UTC
 +++ ext/bifrost/src/strict_fstream.hpp
 @@ -64,7 +64,7 @@ static std::string strerror()
      } else {
