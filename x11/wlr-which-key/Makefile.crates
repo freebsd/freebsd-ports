@@ -1,15 +1,14 @@
-CARGO_CRATES=	anstyle-1.0.6 \
-		anyhow-1.0.80 \
-		autocfg-1.1.0 \
-		bitflags-2.4.2 \
-		cairo-rs-0.19.2 \
-		cairo-sys-rs-0.19.2 \
-		cfg-expr-0.15.7 \
-		cfg-if-1.0.0 \
-		clap-4.5.1 \
-		clap_builder-4.5.1 \
-		clap_derive-4.5.0 \
-		clap_lex-0.7.0 \
+CARGO_CRATES=	anstyle-1.0.8 \
+		anyhow-1.0.86 \
+		autocfg-1.3.0 \
+		bitflags-2.6.0 \
+		cairo-rs-0.20.0 \
+		cairo-sys-rs-0.20.0 \
+		cfg-expr-0.15.8 \
+		clap-4.5.11 \
+		clap_builder-4.5.11 \
+		clap_derive-4.5.11 \
+		clap_lex-0.7.2 \
 		equivalent-1.0.1 \
 		futures-channel-0.3.30 \
 		futures-core-0.3.30 \
@@ -18,68 +17,68 @@ CARGO_CRATES=	anstyle-1.0.6 \
 		futures-macro-0.3.30 \
 		futures-task-0.3.30 \
 		futures-util-0.3.30 \
-		gio-0.19.2 \
-		gio-sys-0.19.0 \
-		glib-0.19.2 \
-		glib-macros-0.19.2 \
-		glib-sys-0.19.0 \
-		gobject-sys-0.19.0 \
-		hashbrown-0.14.3 \
-		heck-0.4.1 \
-		indexmap-2.2.3 \
-		itoa-1.0.10 \
-		libc-0.2.153 \
-		memchr-2.7.1 \
+		gio-0.20.0 \
+		gio-sys-0.20.0 \
+		glib-0.20.0 \
+		glib-macros-0.20.0 \
+		glib-sys-0.20.0 \
+		gobject-sys-0.20.0 \
+		hashbrown-0.14.5 \
+		heck-0.5.0 \
+		indexmap-2.2.6 \
+		itoa-1.0.11 \
+		libc-0.2.155 \
+		memchr-2.7.4 \
 		memmap2-0.8.0 \
-		memoffset-0.9.0 \
-		nix-0.27.1 \
-		pango-0.19.2 \
-		pango-sys-0.19.0 \
-		pangocairo-0.19.2 \
-		pangocairo-sys-0.19.0 \
-		pin-project-lite-0.2.13 \
+		pango-0.20.0 \
+		pango-sys-0.20.0 \
+		pangocairo-0.20.0 \
+		pangocairo-sys-0.20.0 \
+		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.30 \
 		proc-macro-crate-3.1.0 \
-		proc-macro2-1.0.78 \
-		quick-xml-0.31.0 \
-		quote-1.0.35 \
-		ryu-1.0.17 \
-		serde-1.0.197 \
-		serde_derive-1.0.197 \
-		serde_spanned-0.6.5 \
-		serde_yaml-0.9.32 \
+		proc-macro2-1.0.86 \
+		quick-xml-0.36.1 \
+		quote-1.0.36 \
+		ryu-1.0.18 \
+		serde-1.0.204 \
+		serde_derive-1.0.204 \
+		serde_spanned-0.6.7 \
+		serde_yaml-0.9.34+deprecated \
 		shmemfdrs2-1.0.0 \
 		slab-0.4.9 \
-		smallvec-1.13.1 \
+		smallvec-1.13.2 \
 		smart-default-0.7.1 \
-		syn-2.0.50 \
-		system-deps-6.2.0 \
-		target-lexicon-0.12.14 \
-		thiserror-1.0.57 \
-		thiserror-impl-1.0.57 \
-		toml-0.8.10 \
-		toml_datetime-0.6.5 \
+		syn-2.0.72 \
+		system-deps-7.0.1 \
+		target-lexicon-0.12.15 \
+		thiserror-1.0.63 \
+		thiserror-impl-1.0.63 \
+		toml-0.8.16 \
+		toml_datetime-0.6.7 \
 		toml_edit-0.21.1 \
-		toml_edit-0.22.6 \
+		toml_edit-0.22.17 \
 		unicode-ident-1.0.12 \
-		unsafe-libyaml-0.2.10 \
-		version-compare-0.1.1 \
-		wayrs-client-1.0.2 \
-		wayrs-proto-parser-2.0.0 \
-		wayrs-protocols-0.13.1 \
-		wayrs-scanner-0.13.2 \
-		wayrs-utils-0.14.0 \
+		unsafe-libyaml-0.2.11 \
+		version-compare-0.2.0 \
+		wayrs-client-1.1.1 \
+		wayrs-core-1.0.2 \
+		wayrs-proto-parser-2.0.3 \
+		wayrs-protocols-0.14.1 \
+		wayrs-scanner-0.14.1 \
+		wayrs-utils-0.15.1 \
 		windows-sys-0.52.0 \
-		windows-targets-0.52.3 \
-		windows_aarch64_gnullvm-0.52.3 \
-		windows_aarch64_msvc-0.52.3 \
-		windows_i686_gnu-0.52.3 \
-		windows_i686_msvc-0.52.3 \
-		windows_x86_64_gnu-0.52.3 \
-		windows_x86_64_gnullvm-0.52.3 \
-		windows_x86_64_msvc-0.52.3 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.52.6 \
 		winnow-0.5.40 \
-		winnow-0.6.2 \
+		winnow-0.6.16 \
 		xkbcommon-0.7.0 \
-		xkeysym-0.2.0
+		xkeysym-0.2.1
