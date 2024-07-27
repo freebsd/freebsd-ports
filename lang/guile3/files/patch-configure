@@ -1,6 +1,6 @@
---- configure.orig	2023-05-25 12:23:46 UTC
+--- configure.orig	2024-06-23 21:38:45 UTC
 +++ configure
-@@ -60073,6 +60073,15 @@ then :
+@@ -60113,6 +60113,15 @@ fi
  
  fi
  

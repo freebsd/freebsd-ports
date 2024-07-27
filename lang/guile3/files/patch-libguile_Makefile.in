@@ -1,15 +1,15 @@
---- libguile/Makefile.in.orig	2023-05-16 18:13:33 UTC
+--- libguile/Makefile.in.orig	2024-07-27 15:28:39 UTC
 +++ libguile/Makefile.in
-@@ -2535,7 +2535,7 @@ EXTRA_libguile_@GUILE_EFFECTIVE_VERSION@_la_SOURCES = 
+@@ -2539,7 +2539,7 @@ INSTANTIATE = \
      mini-gmp.h
  
  INSTANTIATE = \
--  $(SED) -i -e 's,[@]pkgdatadir[@],$(pkgdatadir),g'				\
-+  $(SED) -i '' -e 's,[@]pkgdatadir[@],$(pkgdatadir),g'				\
-             -e 's,[@]pkglibdir[@],$(pkglibdir),g'				\
-             -e 's,[@]GUILE_EFFECTIVE_VERSION[@],$(GUILE_EFFECTIVE_VERSION),g'
+-  $(SED) -e 's,[@]pkgdatadir[@],$(pkgdatadir),g'				\
++  $(SED) -i '' -e 's,[@]pkgdatadir[@],$(pkgdatadir),g'			\
+          -e 's,[@]pkglibdir[@],$(pkglibdir),g'					\
+          -e 's,[@]GUILE_EFFECTIVE_VERSION[@],$(GUILE_EFFECTIVE_VERSION),g'
  
-@@ -4633,7 +4633,7 @@ uninstall-hook:
+@@ -4648,7 +4648,7 @@ uninstall-hook:
  @MINGW_LIBPATH_FALSE@	@echo '	{ "LIBS",	   "@GUILE_LIBS@" }, \' >> libpath.tmp
  @MINGW_LIBPATH_FALSE@	@echo '	{ "CFLAGS",	   "@GUILE_CFLAGS@" }, \' >> libpath.tmp
  @MINGW_LIBPATH_FALSE@	@BUILD_DATE="$${SOURCE_DATE_EPOCH:-`date '+%s'`}" ; \

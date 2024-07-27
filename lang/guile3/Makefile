@@ -1,6 +1,5 @@
 PORTNAME?=	guile
-PORTVERSION=	3.0.9
-PORTREVISION=	2
+DISTVERSION=	3.0.10
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU
 PKGNAMESUFFIX?=	3
@@ -78,7 +77,7 @@ THREADS_CONFIGURE_WITH=	threads
 # has a broken (spawn*) function, which breaks guile-config, which
 # breaks builds of some dependent ports.
 
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-upstream-fixes.patch
+# EXTRA_PATCHES=	${PATCHDIR}/extra-patch-upstream-fixes.patch
 
 # The prebuilt bytecode files are reported not to work on powerpc.
 
