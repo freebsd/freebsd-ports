@@ -1,0 +1,3 @@
+ttynt is a command-line tool for coloring and highlighting text in the terminal
+based on regex patterns. It might be useful for log file analysis, text parsing,
+and more.

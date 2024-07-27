@@ -2064,6 +2064,7 @@
     SUBDIR += ts-hunspell
     SUBDIR += tth
     SUBDIR += tttcmds
+    SUBDIR += ttynt
     SUBDIR += turboxsl
     SUBDIR += txt2html
     SUBDIR += txt2man
