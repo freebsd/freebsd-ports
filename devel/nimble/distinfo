@@ -1,3 +1,9 @@
-TIMESTAMP = 1677159219
-SHA256 (nim-lang-nimble-v0.14.2_GH0.tar.gz) = d94f11c592d49aed6c5a492289f187010eb8c103b2b653252763d2f65a82abac
-SIZE (nim-lang-nimble-v0.14.2_GH0.tar.gz) = 163065
+TIMESTAMP = 1722048869
+SHA256 (nim-lang-nimble-v0.16.0_GH0.tar.gz) = 296e323bb8fb770e09b31f6964f2882c164d042a9e9fce7dfe46c000701556dd
+SIZE (nim-lang-nimble-v0.16.0_GH0.tar.gz) = 631444
+SHA256 (nim-lang-sat-faf1617f44d7632ee9601ebc13887644925dcc01_GH0.tar.gz) = dfb90aa7fa629bb7bd395ae041410362439492600d06978d29ba726c16ef4077
+SIZE (nim-lang-sat-faf1617f44d7632ee9601ebc13887644925dcc01_GH0.tar.gz) = 9736
+SHA256 (nim-lang-checksums-b4c73320253f78e3a265aec6d9e8feb83f97c77b_GH0.tar.gz) = 6d1118eb45b2257f0fb4bc88a62672d13f01bccce536ae6ba5ba67a964649968
+SIZE (nim-lang-checksums-b4c73320253f78e3a265aec6d9e8feb83f97c77b_GH0.tar.gz) = 47342
+SHA256 (nim-lang-nim-v2.0.8_GH0.tar.gz) = 3a408e8342392342db745e26bb6acab2e6acb381db89b2624e8e58a85a1c6656
+SIZE (nim-lang-nim-v2.0.8_GH0.tar.gz) = 4105524
