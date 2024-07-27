@@ -1,5 +1,5 @@
 PORTNAME=	dar
-DISTVERSION=	2.7.14
+DISTVERSION=	2.7.15
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	SF
 
@@ -18,7 +18,6 @@ SHEBANG_FILES=	doc/samples/*.bash doc/samples/*.sh doc/samples/dar_backup \
 		doc/samples/date_past_N_days
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--disable-build-html \
 		--disable-dar-static \
@@ -29,6 +28,8 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--disable-upx
 
 INSTALL_TARGET=	install-strip
+
+PLIST_SUB=	SHLIB_VER=6000.7.3
 
 OPTIONS_DEFINE=		ARGON2 BZIP2 DELTA DOCS GCRYPT GPGME LZ4 LZMA LZO \
 			MULTITHR NLS ZLIB ZSTD
