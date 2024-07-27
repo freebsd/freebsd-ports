@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240727:
+  AFFECTS: lang/php81
+  AUTHOR: netchildFreeBSD.org
+
+  The start scripts of php-fpm have been renamed to php_fpm for improved
+  compatibility with other parts of the system. The automatic start at boot
+  (rc.conf variable settings) is not affected, but if you have some other
+  automatism you may want to change
+    ".../etc/rc.d/php-fpm" to ".../etc/rc.d/php_fpm"
+  or
+    "service php-fpm ..." to "service php_fpm ..."
+
+  If you have custom start scripts which depend upon php-fpm, you need to
+  change the REQUIRE lines in them from "php-fpm" to "php_fpm".
+
 20240726:
   AFFECTS: users of archivers/py-borgbackup
   AUTHOR: mandree@FreeBSD.org
