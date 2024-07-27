@@ -1,3 +1,3 @@
-TIMESTAMP = 1721481130
-SHA256 (packageurl_python-0.15.4.tar.gz) = 9ea4215e2bcd7d2369d0b7857abba7def81f3fa217d7903fc72661c946c75e0f
-SIZE (packageurl_python-0.15.4.tar.gz) = 40050
+TIMESTAMP = 1722083579
+SHA256 (packageurl_python-0.15.6.tar.gz) = cbc89afd15d5f4d05db4f1b61297e5b97a43f61f28799f6d282aff467ed2ee96
+SIZE (packageurl_python-0.15.6.tar.gz) = 40253
