@@ -1,4 +1,5 @@
 include/hyprutils/math/Box.hpp
+include/hyprutils/math/Edges.hpp
 include/hyprutils/math/Misc.hpp
 include/hyprutils/math/Region.hpp
 include/hyprutils/math/Vector2D.hpp
