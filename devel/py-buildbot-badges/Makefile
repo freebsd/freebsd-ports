@@ -1,12 +1,12 @@
-PORTNAME=	buildbot-console-view
+PORTNAME=	buildbot-badges
 DISTVERSION=	3.11.6
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	buildbot_console_view-${DISTVERSION}
+DISTNAME=	buildbot_badges-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
-COMMENT=	Buildbot Console View plugin
+COMMENT=	Buildbot Badges
 WWW=		https://buildbot.net
 
 LICENSE=	GPLv2
