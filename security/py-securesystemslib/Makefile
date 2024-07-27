@@ -1,6 +1,5 @@
 PORTNAME=	securesystemslib
-PORTVERSION=	0.31.0
-PORTREVISION=	1
+DISTVERSION=	1.0.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,17 +12,12 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pynacl>1.2.0:security/py-pynacl@${PY_FLAVOR}
-TEST_DEPENDS=	${LOCALBASE}/bin/gpg:security/gnupg
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>0:devel/py-asn1crypto@${PY_FLAVOR}
 
 USES=		python shebangfix
 USE_PYTHON=	autoplist cryptography pep517 pytest
 
-SHEBANG_FILES=	securesystemslib/settings.py \
-	securesystemslib/schema.py \
-	securesystemslib/_vendor/test-ed25519-upstream.sh \
-	securesystemslib/keys.py \
-	securesystemslib/rsa_keys.py \
+SHEBANG_FILES=	securesystemslib/_vendor/test-ed25519-upstream.sh \
 	securesystemslib/hash.py \
 	securesystemslib/formats.py
 
