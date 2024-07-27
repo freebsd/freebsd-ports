@@ -566,7 +566,7 @@
 %%G%%/webapps/%%G%%/WEB-INF/lib/FastInfoset-1.2.15.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/GeographicLib-Java-1.49.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/JavaAPIforKml-2.2.0.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/aircompressor-0.20.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/aircompressor-0.27.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/antlr4-runtime-4.7.1.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/apiguardian-api-1.1.1.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/batik-anim-%%BATIK%%.jar
