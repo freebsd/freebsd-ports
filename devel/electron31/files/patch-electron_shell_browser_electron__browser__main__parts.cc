@@ -1,4 +1,4 @@
---- electron/shell/browser/electron_browser_main_parts.cc.orig	2024-07-15 15:22:56 UTC
+--- electron/shell/browser/electron_browser_main_parts.cc.orig	2024-07-24 17:23:33 UTC
 +++ electron/shell/browser/electron_browser_main_parts.cc
 @@ -78,7 +78,7 @@
  #include "ui/wm/core/wm_state.h"
@@ -73,7 +73,7 @@
    // Set up crypt config. This needs to be done before anything starts the
    // network service, as the raw encryption key needs to be shared with the
    // network service for encrypted cookie storage.
-@@ -613,7 +615,7 @@ void ElectronBrowserMainParts::PostMainMessageLoopRun(
+@@ -614,7 +616,7 @@ void ElectronBrowserMainParts::PostMainMessageLoopRun(
    fake_browser_process_->PostMainMessageLoopRun();
    content::DevToolsAgentHost::StopRemoteDebuggingPipeHandler();
  

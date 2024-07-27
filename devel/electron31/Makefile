@@ -207,9 +207,9 @@ PIPEWIRE_VARS_OFF=	GN_ARGS+=rtc_use_pipewire=false \
 			GN_ARGS+=rtc_link_pipewire=false
 
 # See ${WRKSRC}/electron/DEPS for CHROMIUM_VER
-CHROMIUM_VER=			126.0.6478.127
+CHROMIUM_VER=			126.0.6478.183
 # See ${WRKSRC}/electron/DEPS for NODE_VER
-NODE_VER=			20.15.0
+NODE_VER=			20.15.1
 # See ${WRKSRC}/electron/DEPS for NAN_VER
 NAN_VER=			e14bdcd1f72d62bca1d541b66da43130384ec213
 # See ${WRKSRC}/electron/DEPS for SQUIRREL_MAC_VER
