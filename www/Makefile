@@ -1820,6 +1820,7 @@
     SUBDIR += py-soupsieve
     SUBDIR += py-splinter
     SUBDIR += py-spyne
+    SUBDIR += py-sse-starlette
     SUBDIR += py-sseclient
     SUBDIR += py-starlette
     SUBDIR += py-starlette-context
