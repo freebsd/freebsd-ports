@@ -1,0 +1,2 @@
+pydantic-settings implements settings management using Pydantic, this is the
+new official home of Pydantic's BaseSettings.

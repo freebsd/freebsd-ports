@@ -5426,6 +5426,7 @@
     SUBDIR += py-pydantic
     SUBDIR += py-pydantic-core
     SUBDIR += py-pydantic-extra-types
+    SUBDIR += py-pydantic-settings
     SUBDIR += py-pydantic-vault
     SUBDIR += py-pydantic-yaml
     SUBDIR += py-pydantic2
