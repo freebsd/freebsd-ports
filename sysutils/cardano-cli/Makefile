@@ -1,6 +1,6 @@
 PORTNAME=	cardano-cli
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	9.0.0.0
+DISTVERSION=	9.2.1.0
 CATEGORIES=	sysutils net-p2p
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
@@ -27,8 +27,8 @@ LIBSODIUM_HASH=	dbb48cce5429cb6585c9034f002568964f1ce567
 
 LIBS_PREFIX=	${WRKDIR}/libs_install
 
-USE_CABAL=	Cabal-3.12.0.0 \
-		Cabal-syntax-3.12.0.0_1 \
+USE_CABAL=	Cabal-3.10.3.0 \
+		Cabal-syntax-3.10.3.0 \
 		Diff-0.5_1 \
 		FailT-0.1.2.0 \
 		Glob-0.10.2_3 \
@@ -67,7 +67,7 @@ USE_CABAL=	Cabal-3.12.0.0 \
 		base16-bytestring-1.0.2.0_1 \
 		base58-bytestring-0.1.0 \
 		base64-bytestring-1.2.1.0_1 \
-		base64-bytestring-type-1.0.1_19 \
+		base64-bytestring-type-1.0.1_20 \
 		basement-0.0.16 \
 		bech32-1.1.7 \
 		bifunctors-5.6.2 \
@@ -82,10 +82,10 @@ USE_CABAL=	Cabal-3.12.0.0 \
 		byron-spec-ledger-1.0.1.0:chap \
 		byteorder-1.0.4 \
 		bytestring-strict-builder-0.4.5.7 \
-		cabal-doctest-1.0.10 \
+		cabal-doctest-1.0.9_3 \
 		call-stack-0.4.0 \
 		canonical-json-0.6.0.1_1 \
-		cardano-api-9.0.0.0:chap \
+		cardano-api-9.1.0.0:chap \
 		cardano-binary-1.7.1.0:chap \
 		cardano-crypto-1.1.2:chap \
 		cardano-crypto-class-2.1.5.0:chap \
@@ -170,7 +170,6 @@ USE_CABAL=	Cabal-3.12.0.0 \
 		dlist-1.0_2 \
 		dns-4.2.0 \
 		dom-lt-0.2.3_1 \
-		double-conversion-2.0.5.0 \
 		either-5.0.2_2 \
 		erf-2.0.0.0 \
 		errors-2.3.0_5 \
@@ -201,7 +200,7 @@ USE_CABAL=	Cabal-3.12.0.0 \
 		heapwords-0.1.0.2:chap \
 		hedgehog-1.4_8 \
 		hedgehog-extras-0.6.4.0 \
-		hedgehog-quickcheck-0.1.1_7 \
+		hedgehog-quickcheck-0.1.1_8 \
 		hourglass-0.2.12_1 \
 		hsc2hs-0.68.10_2 \
 		hspec-2.11.9 \
@@ -219,7 +218,7 @@ USE_CABAL=	Cabal-3.12.0.0 \
 		integer-conversion-0.1.1 \
 		integer-logarithms-1.0.3.1_6 \
 		invariant-0.6.3 \
-		io-classes-1.5.0.0 \
+		io-classes-1.5.0.0_1 \
 		io-classes-mtl-0.1.2.0_1 \
 		io-sim-1.5.0.0 \
 		iproute-1.7.12 \
@@ -240,6 +239,7 @@ USE_CABAL=	Cabal-3.12.0.0 \
 		megaparsec-9.6.1 \
 		memory-0.18.0 \
 		microlens-0.4.13.1_1 \
+		microlens-aeson-2.5.2 \
 		microlens-mtl-0.2.0.3_1 \
 		microlens-th-0.4.3.15 \
 		microstache-1.0.3 \
@@ -258,7 +258,7 @@ USE_CABAL=	Cabal-3.12.0.0 \
 		newtype-generics-0.6.2_4 \
 		non-integral-1.0.0.0_2:chap \
 		nonempty-vector-0.2.3_2 \
-		nothunks-0.1.5 \
+		nothunks-0.1.5_1 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.4 \
 		optparse-applicative-0.18.1.0 \
@@ -276,6 +276,7 @@ USE_CABAL=	Cabal-3.12.0.0 \
 		ouroboros-network-protocols-0.9.0.0:chap \
 		ouroboros-network-testing-0.6.2.0:chap \
 		parallel-3.2.2.0_8 \
+		parsec-3.1.17.0_1 \
 		parser-combinators-1.3.0_1 \
 		parsers-0.12.11_2 \
 		partial-order-0.2.0.0 \
@@ -343,7 +344,7 @@ USE_CABAL=	Cabal-3.12.0.0 \
 		syb-0.7.2.4 \
 		tagged-0.8.8_1 \
 		tar-0.5.1.1_10 \
-		tasty-1.5.1 \
+		tasty-1.5_2 \
 		tasty-expected-failure-0.12.3 \
 		tasty-golden-2.3.5 \
 		tasty-hedgehog-1.4.0.2_4 \
@@ -353,6 +354,7 @@ USE_CABAL=	Cabal-3.12.0.0 \
 		temporary-1.3 \
 		terminal-size-0.3.4 \
 		testing-type-modifiers-0.1.0.1 \
+		text-2.1.1_1 \
 		text-builder-0.6.7.2 \
 		text-builder-dev-0.3.4.3 \
 		text-iso8601-0.1.1 \
@@ -378,11 +380,11 @@ USE_CABAL=	Cabal-3.12.0.0 \
 		tree-diff-0.3.1 \
 		typed-process-0.2.11.1 \
 		typed-protocols-0.1.1.0_3:chap \
-		typed-protocols-cborg-0.1.0.4:chap \
+		typed-protocols-cborg-0.1.0.4_2:chap \
 		typed-protocols-examples-0.2.0.2:chap \
 		unbounded-delays-0.1.1.1 \
 		universe-base-1.1.4 \
-		unix-bytestring-0.4.0.1 \
+		unix-bytestring-0.4.0.1_1 \
 		unix-compat-0.7.1 \
 		unix-time-0.4.15 \
 		unliftio-0.2.25.0 \
@@ -402,7 +404,7 @@ USE_CABAL=	Cabal-3.12.0.0 \
 		vty-6.0_1 \
 		vty-crossplatform-0.2.0.0_1 \
 		vty-unix-0.1.0.0_1 \
-		with-utf8-1.1.0.0 \
+		with-utf8-1.1.0.0_1 \
 		witherable-0.5 \
 		wl-pprint-annotated-0.1.0.1_3 \
 		wl-pprint-text-1.2.0.2_2 \
