@@ -1,5 +1,6 @@
 PORTNAME=	nrpe
-PORTVERSION=	4.1.0
+DISTVERSION=	4.1.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	nrpe-
 CATEGORIES=	net-mgmt
 
@@ -20,8 +21,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--bindir=${PREFIX}/sbin \
 		--libexecdir=${PREFIX}/libexec/nagios \
 		--sysconfdir=${PREFIX}/etc \
+		--with-inetd-type=inetd \
 		--with-nrpe-user=${NAGIOSUSER} \
-		--with-nrpe-group=${NAGIOSGROUP}
+		--with-nrpe-group=${NAGIOSGROUP} \
+		--with-piddir=${NRPE_PIDDIR}
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	PIDDIR=${NRPE_PIDDIR}
@@ -62,7 +65,6 @@ post-patch:
 		${WRKSRC}/sample-config/nrpe.cfg.in
 
 do-install:
-	${INSTALL} -d ${STAGEDIR}${NRPE_PIDDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/nrpe ${STAGEDIR}${PREFIX}/sbin/nrpe
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
 	${INSTALL_PROGRAM} ${WRKSRC}/src/check_nrpe ${STAGEDIR}${PREFIX}/libexec/nagios/check_nrpe
