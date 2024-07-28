@@ -281,6 +281,7 @@
     SUBDIR += php83
     SUBDIR += php83-extensions
     SUBDIR += php84
+    SUBDIR += php84-extensions
     SUBDIR += picoc
     SUBDIR += picolisp
     SUBDIR += pkl
