@@ -2,10 +2,10 @@
 @owner games
 @(,,2555) %%ANGBANDBIN%%
 %%ANGBANDLIB%%/apex/readme.txt
-@unexec cmp -s %D/%%ANGBANDLIB%%/apex/scores.raw %D/%%ANGBANDLIB%%/apex/z_scores.raw && rm %D/%%ANGBANDLIB%%/apex/scores.raw || true
-@unexec cmp -s %D/%%ANGBANDLIB%%/apex/scores.raw /dev/null && rm %D/%%ANGBANDLIB%%/apex/scores.raw || true
+@postunexec cmp -s %D/%%ANGBANDLIB%%/apex/scores.raw %D/%%ANGBANDLIB%%/apex/z_scores.raw && rm %D/%%ANGBANDLIB%%/apex/scores.raw || true
+@postunexec cmp -s %D/%%ANGBANDLIB%%/apex/scores.raw /dev/null && rm %D/%%ANGBANDLIB%%/apex/scores.raw || true
 %%ANGBANDLIB%%/apex/z_scores.raw
-@exec test -f %D/%%ANGBANDLIB%%/apex/scores.raw || touch %D/%%ANGBANDLIB%%/apex/scores.raw
+@postexec test -f %D/%%ANGBANDLIB%%/apex/scores.raw || touch %D/%%ANGBANDLIB%%/apex/scores.raw
 %%ANGBANDLIB%%/edit/a_info.txt
 %%ANGBANDLIB%%/edit/e_info.txt
 %%ANGBANDLIB%%/edit/f_info.txt
