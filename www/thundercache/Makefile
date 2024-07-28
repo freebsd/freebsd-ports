@@ -51,6 +51,7 @@ WANT_PGSQL=	server
 
 .if ${PORT_OPTIONS:MPHP}
 USE_PHP+=	curl bcmath pdo mcrypt session
+IGNORE_WITH_PHP=	84
 .  if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pdo_pgsql pgsql
 .  endif

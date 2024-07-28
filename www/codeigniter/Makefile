@@ -11,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 USES=		cpe php:web
 USE_PHP=	mcrypt session
+IGNORE_WITH_PHP=	84
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bcit-ci

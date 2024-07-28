@@ -16,6 +16,7 @@ USE_PHP=	ctype curl dom fileinfo filter gd intl \
 		mbstring mcrypt mysqli \
 		pdo_mysql posix session simplexml \
 		soap tokenizer zip
+IGNORE_WITH_PHP=	84
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message

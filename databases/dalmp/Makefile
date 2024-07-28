@@ -18,6 +18,7 @@ USES=		php
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_PHP=	mysqli session memcache sqlite3 curl redis
+IGNORE_WITH_PHP=	84
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

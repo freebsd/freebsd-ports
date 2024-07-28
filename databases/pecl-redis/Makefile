@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		php:build,pecl
 USE_PHP=	session:build
+IGNORE_WITH_PHP=	84
 
 OPTIONS_DEFINE=	IGBINARY
 IGBINARY_DESC=	Build with Igbinary serializer

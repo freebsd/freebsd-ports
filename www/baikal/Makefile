@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		php:web,flavors zip
 USE_PHP=	ctype dom filter imap mbstring pdo_sqlite \
 		session xml xmlreader xmlwriter
+IGNORE_WITH_PHP=	84
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

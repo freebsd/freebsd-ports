@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES=		php
 USE_PHP=	curl ctype dom filter gd imap mysqli pdo posix \
 		session tokenizer xml mbstring zip zlib
+IGNORE_WITH_PHP=	84
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/SuiteCRM-${PORTVERSION}

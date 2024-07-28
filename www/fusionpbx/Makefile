@@ -17,6 +17,7 @@ RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_odbc.so:databases/php${PHP_VE
 USES=		cpe sqlite php fakeroot
 USE_PHP=	phar pdo pdo_odbc pdo_sqlite gd imap \
 		ldap sockets simplexml xml session odbc
+IGNORE_WITH_PHP=	84
 
 USE_GITHUB=	yes
 

@@ -19,6 +19,7 @@ RUN_DEPENDS=	icinga-php-library${PHP_PKGNAMESUFFIX}>=0.9:net-mgmt/icinga-php-lib
 USES=		php:web,flavors shebangfix
 # php json extension is required but it's statically linked in default php
 USE_PHP=	curl dom xml
+IGNORE_WITH_PHP=	84
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga

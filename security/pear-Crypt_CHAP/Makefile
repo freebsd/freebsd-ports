@@ -8,5 +8,6 @@ WWW=		https://pear.php.net/package/Crypt_CHAP
 
 USES=		pear php
 USE_PHP=	mcrypt
+IGNORE_WITH_PHP=	84
 
 .include <bsd.port.mk>

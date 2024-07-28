@@ -15,6 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:devel/pear@${PHP_FLAVOR}
 USES=		cpe gettext php:web tar:tgz
 USE_PHP=	ctype curl dom filter gd gettext gmp iconv mbstring mcrypt \
 		pcntl pdo pdo_mysql posix session simplexml sockets
+IGNORE_WITH_PHP=	84
 
 NO_ARCH=	yes
 NO_BUILD=	yes

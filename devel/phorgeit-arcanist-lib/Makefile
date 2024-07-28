@@ -17,6 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	phorgeit
 GH_TAGNAME=	174bf094
 USE_PHP=	curl dom simplexml zlib
+IGNORE_WITH_PHP=	84
 
 PHP_DESTDIR=	lib/php/arcanist
 SHEBANG_FILES=	bin/arc bin/phage scripts/*.php scripts/hgdaemon/*.php \

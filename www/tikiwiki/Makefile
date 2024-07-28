@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 USES=		php:web
 USE_PHP=	calendar dom fileinfo gd gettext intl mbstring mcrypt \
 		posix session xml zip zlib
+IGNORE_WITH_PHP=	84
 
 NO_BUILD=	yes
 NO_MTREE=	yes

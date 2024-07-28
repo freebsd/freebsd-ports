@@ -10,5 +10,6 @@ BUILD_DEPENDS=	${PEARDIR}/Crypt/CHAP.php:security/pear-Crypt_CHAP@${PHP_FLAVOR}
 RUN_DEPENDS=	${PEARDIR}/Crypt/CHAP.php:security/pear-Crypt_CHAP@${PHP_FLAVOR}
 
 USES=		pear php
+IGNORE_WITH_PHP=	84
 
 .include <bsd.port.mk>

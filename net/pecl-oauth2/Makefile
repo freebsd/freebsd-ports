@@ -13,6 +13,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre.so:devel/pcre
 
 USES=		localbase:ldflags php:pecl
+IGNORE_WITH_PHP=	84
 
 CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 

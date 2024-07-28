@@ -15,6 +15,7 @@ USES=		cpe php:flavors
 USE_PHP=	ctype curl gd json ldap mcrypt \
 		mbstring openssl pdo pdo_mysql \
 		session xml xmlreader xmlrpc xsl zip zlib
+IGNORE_WITH_PHP=	84
 
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
