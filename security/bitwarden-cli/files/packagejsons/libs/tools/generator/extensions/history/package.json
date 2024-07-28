@@ -1,7 +1,7 @@
 {
-  "name": "@bitwarden/generator-extensions",
+  "name": "@bitwarden/generator-history",
   "version": "0.0.0",
-  "description": "TODO",
+  "description": "Bitwarden credential generator history service",
   "keywords": [
     "bitwarden"
   ],
@@ -19,6 +19,6 @@
   },
   "dependencies": {
     "@bitwarden/common": "file:../../../common",
-    "@bitwarden/generator-core": "file:../core"
+    "@bitwarden/generator-core": "file:../../core"
   }
 }

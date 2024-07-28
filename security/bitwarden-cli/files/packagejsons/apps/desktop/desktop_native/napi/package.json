@@ -1,5 +1,5 @@
 {
-  "name": "@bitwarden/desktop-native",
+  "name": "@bitwarden/desktop-napi",
   "version": "0.1.0",
   "description": "",
   "scripts": {
@@ -14,7 +14,7 @@
     "@napi-rs/cli": "2.16.2"
   },
   "napi": {
-    "name": "desktop_native",
+    "name": "desktop_napi",
     "triples": {
       "defaults": true,
       "additional": [
