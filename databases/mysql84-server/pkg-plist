@@ -31,7 +31,11 @@ lib/mysql/libmysqlharness_tls.so
 lib/mysql/libmysqlharness_tls.so.1
 lib/mysql/libmysqlrouter.so
 lib/mysql/libmysqlrouter.so.1
+lib/mysql/libmysqlrouter_cluster.so
+lib/mysql/libmysqlrouter_cluster.so.1
+lib/mysql/libmysqlrouter_connection_pool.so
 lib/mysql/libmysqlrouter_connection_pool.so.1
+lib/mysql/libmysqlrouter_destination_status.so
 lib/mysql/libmysqlrouter_destination_status.so.1
 lib/mysql/libmysqlrouter_http.so
 lib/mysql/libmysqlrouter_http.so.1
@@ -39,12 +43,22 @@ lib/mysql/libmysqlrouter_http_auth_backend.so
 lib/mysql/libmysqlrouter_http_auth_backend.so.1
 lib/mysql/libmysqlrouter_http_auth_realm.so
 lib/mysql/libmysqlrouter_http_auth_realm.so.1
+lib/mysql/libmysqlrouter_http_server.so
+lib/mysql/libmysqlrouter_http_server.so.1
 lib/mysql/libmysqlrouter_io_component.so
 lib/mysql/libmysqlrouter_io_component.so.1
+lib/mysql/libmysqlrouter_metadata_cache.so
 lib/mysql/libmysqlrouter_metadata_cache.so.1
+lib/mysql/libmysqlrouter_mysql.so
+lib/mysql/libmysqlrouter_mysql.so.1
+lib/mysql/libmysqlrouter_mysqlxmessages.so
 lib/mysql/libmysqlrouter_mysqlxmessages.so.1
+lib/mysql/libmysqlrouter_routing.so
 lib/mysql/libmysqlrouter_routing.so.1
+lib/mysql/libmysqlrouter_routing_connections.so
 lib/mysql/libmysqlrouter_routing_connections.so.1
+lib/mysql/libmysqlrouter_utils.so
+lib/mysql/libmysqlrouter_utils.so.1
 lib/mysql/libprotobuf-lite.so.24.4.0
 lib/mysql/mysqlrouter/connection_pool.so
 lib/mysql/mysqlrouter/destination_status.so
@@ -249,7 +263,7 @@ libexec/mysqld
 %%DATADIR%%/ukrainian/errmsg.sys
 %%DATADIR%%/uninstall_rewriter.sql
 %%DATADIR%%router/docs/sample_mysqlrouter.conf
-@dir %%ETCDIR%%/keyring
+@dir(mysql,mysql,0750) %%ETCDIR%%/keyring
 @dir lib/mysql/plugin/debug
-@dir %%MY_SECDIR%%
-@dir %%MY_TMPDIR%%
+@dir(mysql,mysql,0750) %%MY_SECDIR%%
+@dir(mysql,mysql,0750) %%MY_TMPDIR%%
