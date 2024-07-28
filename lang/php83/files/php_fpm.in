@@ -1,14 +1,14 @@
 #!/bin/sh
 
-# PROVIDE: php-fpm
+# PROVIDE: php_fpm
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 
 #
 # Add the following line to /etc/rc.conf to enable php-fpm:
-# php-fpm_enable (bool):        Set to "NO" by default.
+# php_fpm_enable (bool):        Set to "NO" by default.
 #                               Set it to "YES" to enable php-fpm
-# php-fpm_profiles (str):       Set to "" by default.
+# php_fpm_profiles (str):       Set to "" by default.
 #                               Define your profiles here.
 # php_fpm_pid_prefix (str):     Set to "" by default.
 #                               When using profiles manually assign value to "php_fpm_"
