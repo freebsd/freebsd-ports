@@ -378,14 +378,14 @@ _USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
 		memcache memcached mysqli odbc opcache \
 		openssl pcntl pcre pdo pdo_dblib pdo_firebird pdo_mysql \
 		pdo_odbc pdo_pgsql pdo_sqlite phar pgsql posix \
-		radius random readline redis session shmop simplexml snmp \
+		pspell radius random readline redis session shmop simplexml snmp \
 		soap sockets sodium spl sqlite3 sysvmsg sysvsem sysvshm \
 		tidy tokenizer xml xmlreader xmlrpc xmlwriter xsl zephir_parser \
 		zip zlib
 # version specific components
-_USE_PHP_VER81=	${_USE_PHP_ALL} imap pspell
-_USE_PHP_VER82=	${_USE_PHP_ALL} imap pspell
-_USE_PHP_VER83=	${_USE_PHP_ALL} imap pspell
+_USE_PHP_VER81=	${_USE_PHP_ALL} imap
+_USE_PHP_VER82=	${_USE_PHP_ALL} imap
+_USE_PHP_VER83=	${_USE_PHP_ALL} imap
 _USE_PHP_VER84=	${_USE_PHP_ALL}
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
@@ -428,7 +428,11 @@ pdo_sqlite_DEPENDS=	databases/php${PHP_VER}-pdo_sqlite
 pgsql_DEPENDS=	databases/php${PHP_VER}-pgsql
 phar_DEPENDS=	archivers/php${PHP_VER}-phar
 posix_DEPENDS=	sysutils/php${PHP_VER}-posix
+.    if ${PHP_VER} <= 83
 pspell_DEPENDS=	textproc/php${PHP_VER}-pspell
+.    else
+pspell_DEPENDS=	textproc/pecl-pspell${PHP_FLAVOR}
+.    endif
 radius_DEPENDS=	net/pecl-radius@${PHP_FLAVOR}
 readline_DEPENDS=	devel/php${PHP_VER}-readline
 redis_DEPENDS=	databases/pecl-redis@${PHP_FLAVOR}

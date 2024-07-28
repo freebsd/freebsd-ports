@@ -1250,6 +1250,7 @@
     SUBDIR += pear-XML_HTMLSax
     SUBDIR += pear-XML_Wddx
     SUBDIR += pear-YAML
+    SUBDIR += pecl-pspell
     SUBDIR += pecl-xdiff2
     SUBDIR += pecl-yaml
     SUBDIR += pecl-zephir_parser
