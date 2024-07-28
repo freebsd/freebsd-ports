@@ -1,5 +1,5 @@
 PORTNAME=	ox
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.2
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-text-editor
 
@@ -19,8 +19,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		alinio-0.2.1 \
 		autocfg-1.3.0 \
 		bitflags-2.6.0 \
-		bstr-1.9.1 \
-		cc-1.1.5 \
+		bstr-1.10.0 \
+		cc-1.1.6 \
 		cfg-if-1.0.0 \
 		crossterm-0.27.0 \
 		crossterm_winapi-0.9.1 \
@@ -38,12 +38,12 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
-		lua-src-546.0.2 \
-		luajit-src-210.5.8+5790d25 \
+		lua-src-547.0.0 \
+		luajit-src-210.5.9+04dca79 \
 		memchr-2.7.4 \
 		mio-0.8.11 \
 		mlua-0.9.9 \
-		mlua-sys-0.6.1 \
+		mlua-sys-0.6.2 \
 		num-traits-0.2.19 \
 		once_cell-1.19.0 \
 		option-ext-0.2.0 \
@@ -66,14 +66,14 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		serde_derive-1.0.204 \
 		shellexpand-3.1.0 \
 		signal-hook-0.3.17 \
-		signal-hook-mio-0.2.3 \
+		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.2 \
 		smallvec-1.13.2 \
 		str_indices-0.4.3 \
-		syn-2.0.71 \
-		synoptic-2.0.1 \
-		thiserror-1.0.62 \
-		thiserror-impl-1.0.62 \
+		syn-2.0.72 \
+		synoptic-2.0.4 \
+		thiserror-1.0.63 \
+		thiserror-impl-1.0.63 \
 		unicode-ident-1.0.12 \
 		unicode-width-0.1.13 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
