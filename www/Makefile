@@ -1822,6 +1822,7 @@
     SUBDIR += py-spyne
     SUBDIR += py-sseclient
     SUBDIR += py-starlette
+    SUBDIR += py-starlette-context
     SUBDIR += py-strawberry-graphql-django
     SUBDIR += py-streamlit
     SUBDIR += py-swapper
