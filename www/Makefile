@@ -405,6 +405,7 @@
     SUBDIR += mod_php81
     SUBDIR += mod_php82
     SUBDIR += mod_php83
+    SUBDIR += mod_php84
     SUBDIR += mod_proctitle
     SUBDIR += mod_qos
     SUBDIR += mod_realdoc
@@ -1401,6 +1402,9 @@
     SUBDIR += php83-opcache
     SUBDIR += php83-session
     SUBDIR += php83-tidy
+    SUBDIR += php84-opcache
+    SUBDIR += php84-session
+    SUBDIR += php84-tidy
     SUBDIR += phpbb3
     SUBDIR += phpfpmtop
     SUBDIR += phpgroupware
