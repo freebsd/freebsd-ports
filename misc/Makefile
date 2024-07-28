@@ -445,6 +445,7 @@
     SUBDIR += py-lightgbm
     SUBDIR += py-lightning-utilities
     SUBDIR += py-litellm
+    SUBDIR += py-llama-cpp-python
     SUBDIR += py-llm
     SUBDIR += py-llm-claude-3
     SUBDIR += py-log_symbols
