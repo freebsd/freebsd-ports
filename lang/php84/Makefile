@@ -1,5 +1,5 @@
 PORTNAME=	php84
-DISTVERSION=	8.4.0alpha1
+DISTVERSION=	8.4.0alpha2
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	https://downloads.php.net/~saki/ \
@@ -167,6 +167,7 @@ test: build
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/php.ini-development ${WRKSRC}/php.ini-production \
 		${WRKDIR}/php.conf ${STAGEDIR}/${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/Zend/zend_property_hooks.h ${STAGEDIR}${PREFIX}/include/php/Zend
 
 post-install-CGI-on:
 	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/php-cgi

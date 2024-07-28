@@ -90,6 +90,7 @@ include/php/Zend/zend_objects_API.h
 include/php/Zend/zend_observer.h
 include/php/Zend/zend_operators.h
 include/php/Zend/zend_portability.h
+include/php/Zend/zend_property_hooks.h
 include/php/Zend/zend_ptr_stack.h
 include/php/Zend/zend_range_check.h
 include/php/Zend/zend_signal.h
