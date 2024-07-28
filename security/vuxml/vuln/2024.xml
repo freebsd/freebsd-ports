@@ -1,3 +1,30 @@
+  <vuln vid="8057d198-4d26-11ef-8e64-641c67a117d8">
+    <topic>znc -- remote code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>znc</name>
+	<range><lt>1.9.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mitre reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-39844">
+	  <p>In ZNC before 1.9.1, remote code execution can occur in modtcl via a KICK.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-39844</cvename>
+      <url>https://wiki.znc.in/ChangeLog/1.9.1</url>
+      <url>https://www.openwall.com/lists/oss-security/2024/07/03/9</url>
+    </references>
+    <dates>
+      <discovery>2024-07-03</discovery>
+      <entry>2024-07-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3e917407-4b3f-11ef-8e49-001999f8d30b">
     <topic>Mailpit -- Content Security Policy XSS</topic>
     <affects>
