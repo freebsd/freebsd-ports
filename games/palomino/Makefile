@@ -15,9 +15,6 @@ WWW=		https://www.palomino3d.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE_GNU_GPL_2.txt
-BROKEN=		fails to compile:  no matching function for call to 'make_pair'
-DEPRECATED=	Abandonware, unmaintained and fails to build
-EXPIRATION_DATE=2024-08-21
 
 LIB_DEPENDS=	libosg.so:graphics/osg34
 
@@ -64,7 +61,7 @@ post-patch:
 
 	@${REINPLACE_CMD} -e 's|string sDataDir|&="${DATADIR}/data/"|'\
 		${WRKSRC}/src/base/conf.cc
-	@${REINPLACE_CMD} -e '/LUABIND_SCRIPTS_DIR/ s|"scripts"|"${DATADIR}/scripts"|' \
+	@${REINPLACE_CMD} -e '/LUABIND_SCRIPTS_DIR/ s|scripts|${DATADIR}/&|' \
 		${WRKSRC}/src/lua_bind/defs.hh
 	@${REINPLACE_CMD} -e 's|doc/html/|${DOCSDIR}/|' ${WRKSRC}/src/gui/gui.cc
 
@@ -76,6 +73,19 @@ post-patch:
 		${WRKSRC}/src/hud/hud.cc \
 		${WRKSRC}/src/hud/hud.hh \
 		${WRKSRC}/src/hud/hud_text.cc
+
+	@${REINPLACE_CMD} -e '/std::make_pair/ s,<.*>,,' \
+		${WRKSRC}/src/collision/collision.cc \
+		${WRKSRC}/src/fx/image_cache.cc \
+		${WRKSRC}/src/graph/model_cache.cc \
+		${WRKSRC}/src/hud/font.cc \
+		${WRKSRC}/src/lua_bind/lua.cc \
+		${WRKSRC}/src/object/dyna.cc \
+		${WRKSRC}/src/sky/sky.cc \
+		${WRKSRC}/src/sky/sky_dome.cc \
+		${WRKSRC}/src/sky/sky_dome.hh \
+		${WRKSRC}/src/sky/sun.hh \
+		${WRKSRC}/src/sound/sound_base.cc
 
 post-patch-SDL-off:
 	@${REINPLACE_CMD} -e '/COMPILE_WITH_SDL/ d' ${WRKSRC}/CMakeLists.txt
