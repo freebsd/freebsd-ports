@@ -24,7 +24,7 @@ RUN_DEPENDS=	kquickimageeditor>=0.2.0:graphics/kquickimageeditor \
 USES=		cmake compiler:c++20-lang desktop-file-utils kde:5 \
 		pkgconfig qt:5 tar:xz xorg
 USE_QT=		concurrent core dbus declarative graphicaleffects gui imageformats \
-		multimedia network quickcontrols quickcontrols2 \
+		location multimedia network quickcontrols quickcontrols2 \
 		sql widgets xml \
 		buildtools:build linguist:build qmake:build
 USE_KDE=	auth codecs completion config configwidgets coreaddons dbusaddons \
