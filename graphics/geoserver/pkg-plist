@@ -715,10 +715,10 @@
 %%G%%/webapps/%%G%%/WEB-INF/lib/indriya-%%SI%%.3.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/istack-commons-runtime-3.0.7.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/j2objc-annotations-3.0.0.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/jackson-annotations-%%SI%%7.1.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/jackson-core-%%SI%%7.1.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/jackson-databind-%%SI%%7.1.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/jackson-dataformat-xml-%%SI%%7.1.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/jackson-annotations-%%SI%%7.2.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/jackson-core-%%SI%%7.2.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/jackson-databind-%%SI%%7.2.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/jackson-dataformat-xml-%%SI%%7.2.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/jai_codec-%%VER3%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/jai_core-%%VER3%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/jai_imageio-1.1.jar
