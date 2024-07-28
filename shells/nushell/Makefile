@@ -1,5 +1,5 @@
 PORTNAME=	nushell
-DISTVERSION=	0.95.0
+DISTVERSION=	0.96.0
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -133,15 +133,18 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		csv-1.3.0 \
 		csv-core-0.1.11 \
 		ctrlc-3.4.4 \
+		curl-0.4.46 \
+		curl-sys-0.4.73+curl-8.8.0 \
 		deranged-0.3.11 \
 		derive-new-0.6.0 \
 		derive_more-0.99.17 \
+		deunicode-1.6.0 \
 		dialoguer-0.11.0 \
 		diff-0.1.13 \
 		difflib-0.4.0 \
 		digest-0.10.7 \
-		dirs-next-2.0.0 \
-		dirs-sys-next-0.1.2 \
+		dirs-5.0.1 \
+		dirs-sys-0.4.1 \
 		dlib-0.5.2 \
 		dlv-list-0.5.2 \
 		doc-comment-0.3.3 \
@@ -158,7 +161,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.34 \
 		enum_dispatch-0.3.13 \
+		env_filter-0.1.0 \
 		env_logger-0.8.4 \
+		env_logger-0.11.3 \
 		equivalent-1.0.1 \
 		erased-serde-0.4.4 \
 		errno-0.3.8 \
@@ -218,11 +223,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hex-0.4.3 \
 		home-0.5.9 \
 		html5ever-0.26.0 \
+		html5ever-0.27.0 \
 		http-0.2.12 \
 		http-body-0.4.6 \
 		httparse-1.8.0 \
 		httpdate-1.0.3 \
 		human-date-parser-0.1.2 \
+		humantime-2.1.0 \
 		hyper-0.14.28 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
@@ -230,7 +237,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		idna-0.5.0 \
 		indexmap-2.2.6 \
 		indicatif-0.17.8 \
-		indoc-2.0.5 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		instant-0.1.12 \
@@ -261,11 +267,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lexical-util-0.8.5 \
 		lexical-write-float-0.8.5 \
 		lexical-write-integer-0.8.5 \
-		libc-0.2.154 \
+		libc-0.2.155 \
 		libflate-1.4.0 \
 		libflate_lz77-1.2.0 \
 		libgit2-sys-0.17.0+1.8.1 \
-		libloading-0.8.3 \
+		libloading-0.8.4 \
 		libm-0.2.8 \
 		libmimalloc-sys-0.1.38 \
 		libproc-0.14.8 \
@@ -287,6 +293,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		mach2-0.4.2 \
 		malloc_buf-0.0.6 \
 		markup5ever-0.11.0 \
+		markup5ever-0.12.1 \
+		markup5ever_rcdom-0.3.0 \
 		md-5-0.10.6 \
 		memchr-2.7.2 \
 		memmap2-0.7.1 \
@@ -309,7 +317,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		notify-debouncer-full-0.3.1 \
 		now-0.1.3 \
 		ntapi-0.4.1 \
-		nu-ansi-term-0.50.0 \
+		nu-ansi-term-0.50.1 \
 		num-0.4.2 \
 		num-bigint-0.4.4 \
 		num-complex-0.4.5 \
@@ -332,12 +340,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		object-0.32.2 \
 		omnipath-0.1.6 \
 		once_cell-1.19.0 \
-		open-5.1.2 \
+		open-5.3.0 \
 		openssl-0.10.64 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
 		openssl-src-300.2.3+3.2.1 \
 		openssl-sys-0.9.102 \
+		option-ext-0.2.0 \
 		ordered-multimap-0.7.3 \
 		os_display-0.1.3 \
 		os_pipe-1.2.0 \
@@ -371,24 +380,25 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		plain-0.2.3 \
 		planus-0.3.1 \
 		platform-info-2.0.3 \
-		polars-0.40.0 \
-		polars-arrow-0.40.0 \
+		polars-0.41.2 \
+		polars-arrow-0.41.2 \
 		polars-arrow-format-0.1.0 \
-		polars-compute-0.40.0 \
-		polars-core-0.40.0 \
-		polars-error-0.40.0 \
-		polars-expr-0.40.0 \
-		polars-io-0.40.0 \
-		polars-json-0.40.0 \
-		polars-lazy-0.40.0 \
-		polars-ops-0.40.0 \
-		polars-parquet-0.40.0 \
-		polars-pipe-0.40.0 \
-		polars-plan-0.40.0 \
-		polars-row-0.40.0 \
-		polars-sql-0.40.0 \
-		polars-time-0.40.0 \
-		polars-utils-0.40.0 \
+		polars-compute-0.41.2 \
+		polars-core-0.41.2 \
+		polars-error-0.41.2 \
+		polars-expr-0.41.2 \
+		polars-io-0.41.2 \
+		polars-json-0.41.2 \
+		polars-lazy-0.41.2 \
+		polars-mem-engine-0.41.2 \
+		polars-ops-0.41.2 \
+		polars-parquet-0.41.2 \
+		polars-pipe-0.41.2 \
+		polars-plan-0.41.2 \
+		polars-row-0.41.2 \
+		polars-sql-0.41.2 \
+		polars-time-0.41.2 \
+		polars-utils-0.41.2 \
 		pori-0.0.0 \
 		portable-atomic-1.6.0 \
 		powerfmt-0.2.0 \
@@ -422,7 +432,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		rand_distr-0.4.3 \
-		ratatui-0.26.2 \
+		ratatui-0.26.3 \
 		raw-cpuid-11.0.2 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
@@ -432,7 +442,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		redox_syscall-0.4.1 \
 		redox_syscall-0.5.1 \
 		redox_users-0.4.5 \
-		reedline-0.32.0 \
+		reedline-0.33.0 \
 		ref-cast-1.0.22 \
 		ref-cast-impl-1.0.22 \
 		regex-1.10.4 \
@@ -451,7 +461,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rstest-0.18.2 \
 		rstest_macros-0.18.2 \
 		rusqlite-0.31.0 \
-		rust-embed-8.4.0 \
+		rust-embed-8.5.0 \
 		rust-embed-impl-8.4.0 \
 		rust-embed-utils-8.4.0 \
 		rust-ini-0.21.0 \
@@ -488,7 +498,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serial_test_derive-3.1.1 \
 		servo_arc-0.3.0 \
 		sha2-0.10.8 \
-		shadow-rs-0.28.0 \
+		shadow-rs-0.29.0 \
 		shell-words-1.1.0 \
 		shlex-1.3.0 \
 		signal-hook-0.3.17 \
@@ -505,7 +515,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		smawk-0.3.2 \
 		snap-1.1.1 \
 		socket2-0.5.7 \
-		sqlparser-0.39.0 \
 		sqlparser-0.47.0 \
 		stability-0.2.0 \
 		stable_deref_trait-1.2.0 \
@@ -580,24 +589,25 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unicode-normalization-0.1.23 \
 		unicode-reverse-1.0.9 \
 		unicode-segmentation-1.11.0 \
+		unicode-truncate-1.0.0 \
 		unicode-width-0.1.12 \
 		unicode-xid-0.2.4 \
 		unsafe-libyaml-0.2.11 \
-		ureq-2.9.7 \
+		ureq-2.10.0 \
 		url-2.5.0 \
 		utf-8-0.7.6 \
 		utf8-width-0.1.7 \
 		utf8parse-0.2.1 \
-		uu_cp-0.0.26 \
-		uu_mkdir-0.0.26 \
-		uu_mktemp-0.0.26 \
-		uu_mv-0.0.26 \
-		uu_uname-0.0.26 \
-		uu_whoami-0.0.26 \
-		uucore-0.0.26 \
+		uu_cp-0.0.27 \
+		uu_mkdir-0.0.27 \
+		uu_mktemp-0.0.27 \
+		uu_mv-0.0.27 \
+		uu_uname-0.0.27 \
+		uu_whoami-0.0.27 \
+		uucore-0.0.27 \
 		uucore_procs-0.0.26 \
 		uuhelp_parser-0.0.26 \
-		uuid-1.8.0 \
+		uuid-1.10.0 \
 		v_htmlescape-0.15.8 \
 		value-trait-0.8.1 \
 		vcpkg-0.2.15 \
@@ -621,6 +631,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wayland-protocols-wlr-0.2.0 \
 		wayland-scanner-0.31.1 \
 		wayland-sys-0.31.1 \
+		webpage-2.0.1 \
 		which-6.0.1 \
 		widestring-1.1.0 \
 		wild-2.2.1 \
@@ -671,6 +682,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		x11rb-0.13.1 \
 		x11rb-protocol-0.13.1 \
 		xattr-1.3.1 \
+		xml5ever-0.18.1 \
 		xxhash-rust-0.8.10 \
 		yansi-0.5.1 \
 		zerocopy-0.7.32 \
