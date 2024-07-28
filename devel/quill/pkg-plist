@@ -4,6 +4,7 @@ include/quill/Frontend.h
 include/quill/LogMacros.h
 include/quill/Logger.h
 include/quill/StringRef.h
+include/quill/TriviallyCopyableCodec.h
 include/quill/UserClockSource.h
 include/quill/Utility.h
 include/quill/backend/BackendManager.h
@@ -63,6 +64,7 @@ include/quill/sinks/RotatingFileSink.h
 include/quill/sinks/Sink.h
 include/quill/sinks/StreamSink.h
 include/quill/std/Array.h
+include/quill/std/Chrono.h
 include/quill/std/Deque.h
 include/quill/std/FilesystemPath.h
 include/quill/std/ForwardList.h
