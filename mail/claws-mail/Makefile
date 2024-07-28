@@ -77,7 +77,7 @@ post-install:
 		${STAGEDIR}${DATADIR})
 
 post-install-DOCS-on:
-	(cd ${WRKSRC} && ${INSTALL_DATA} NEWS README TODO ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} NEWS README ${STAGEDIR}${DOCSDIR})
 	${INSTALL_DATA} ${WRKSRC}/tools/README ${STAGEDIR}${DOCSDIR}/README.tools
 
 .include <bsd.port.mk>

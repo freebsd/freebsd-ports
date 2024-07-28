@@ -272,7 +272,6 @@ share/applications/claws-mail.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.tools
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 share/icons/hicolor/128x128/apps/claws-mail.png
 share/icons/hicolor/48x48/apps/claws-mail.png
 share/icons/hicolor/64x64/apps/claws-mail.png
@@ -297,6 +296,7 @@ share/icons/hicolor/64x64/apps/claws-mail.png
 %%NLS%%share/locale/ro/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/claws-mail.mo
