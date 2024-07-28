@@ -31,8 +31,8 @@ lib/mysql/libmysqlclient.so.24
 lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.24
-lib/mysql/plugin/authentication_ldap_sasl_client.so
-lib/mysql/plugin/authentication_oci_client.so
-lib/mysql/plugin/authentication_webauthn_client.so
+%%SASLCLIENT%%lib/mysql/plugin/authentication_ldap_sasl_client.so
+%%SASLCLIENT%%lib/mysql/plugin/authentication_oci_client.so
+%%SASLCLIENT%%lib/mysql/plugin/authentication_webauthn_client.so
 libdata/pkgconfig/mysqlclient.pc
 share/aclocal/mysql.m4
