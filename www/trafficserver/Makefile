@@ -1,5 +1,5 @@
 PORTNAME=	trafficserver
-PORTVERSION=	9.2.4
+DISTVERSION=	9.2.5
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
 
@@ -21,18 +21,11 @@ USES=		compiler:c++17-lang cpe gmake libtool localbase luajit \
 		ncurses pathfix perl5 pkgconfig sqlite ssl tar:bzip2
 CPE_VENDOR=	apache
 CPE_PRODUCT=	traffic_server
-USE_PERL5=	build run
 USE_LDCONFIG=	yes
+USE_PERL5=	build run
 USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-INSTALL_TARGET=	install-strip
-
-USERS=		${WWWOWN}
-GROUPS=		${WWWGRP}
-PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}" PORTVERSION="${PORTVERSION}"
-
 CONFIGURE_ARGS=	--with-pcre=${LOCALBASE} \
 		--with-openssl=${OPENSSLBASE} \
 		--localstatedir=/var \
@@ -43,22 +36,26 @@ CONFIGURE_ARGS=	--with-pcre=${LOCALBASE} \
 		--enable-mime-sanity-check \
 		--enable-experimental-plugins \
 		--enable-event-tracker
+INSTALL_TARGET=	install-strip
+USERS=		${WWWOWN}
+GROUPS=		${WWWGRP}
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}" \
+		PORTVERSION="${DISTVERSION}" \
+		ARCH="${ARCH:C/powerpc64.*/powerpc/}"
 
-OPTIONS_DEFINE=	DOCS GEOIP WCCP MEMCACHED IMAGEMAGICK X11 MIMALLOC
+OPTIONS_DEFINE=	DOCS GEOIP IMAGEMAGICK MEMCACHED MIMALLOC WCCP X11
 OPTIONS_SUB=	yes
-PLIST_SUB+=	ARCH="${ARCH:C/powerpc64.*/powerpc/}"
 
-GEOIP_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
-WCCP_DESC=	Enable WCCPv2 protocol
-WCCP_CONFIGURE_ENABLE=	wccp
+IMAGEMAGICK_DESC=		Enable ats-magick & webp convert plugin
+MEMCACHED_DESC=			Enable memcache & memcached_remap plugin
+MIMALLOC_DESC=			Use mimalloc
+WCCP_DESC=			Enable WCCPv2 protocol
 
-MIMALLOC_DESC=	Use mimalloc
-MIMALLOC_LIB_DEPENDS=	libmimalloc.so:devel/mimalloc
+GEOIP_LIB_DEPENDS=		libmaxminddb.so:net/libmaxminddb
+MEMCACHED_LIB_DEPENDS=		libmemcached.so:databases/libmemcached
+MIMALLOC_LIB_DEPENDS=		libmimalloc.so:devel/mimalloc
 MIMALLOC_CONFIGURE_WITH=	mimalloc
-MEMCACHED_DESC=		Enable memcache & memcached_remap plugin
-MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
-
-IMAGEMAGICK_DESC=	Enable ats-magick & webp convert plugin
+WCCP_CONFIGURE_ENABLE=		wccp
 
 .include <bsd.port.options.mk>
 
