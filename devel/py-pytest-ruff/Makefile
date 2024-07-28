@@ -1,5 +1,5 @@
 PORTNAME=	pytest-ruff
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>=4.1.0:devel/py-pytest-cov@${PY_
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=3.10.0:devel/py-pytest-mock@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist concurrent pytest
+USE_PYTHON=	pep517 autoplist concurrent pytest # tests are broken due to https://github.com/businho/pytest-ruff/issues/30
 
 TEST_ENV=	PYTHONPATH=${WRKSRC}/src
 
