@@ -13,6 +13,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		localbase php:pecl
 
 CFLAGS+=	-DZEND_HOT=
-IGNORE_WITH_PHP=84
 
 .include <bsd.port.mk>
