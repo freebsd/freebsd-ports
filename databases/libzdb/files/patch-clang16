@@ -1,0 +1,16 @@
+Workaround for FreeBSD 14.0 (Clang 16) which is expected to be EOL on 2024-09-30
+
+Reference:	https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=255374
+		https://forums.freebsd.org/threads/freebsd-release-14-0-and-clang-2020-std-format.91114/
+
+--- test/Makefile.in.orig	2024-07-23 00:18:00 UTC
++++ test/Makefile.in
+@@ -353,7 +353,7 @@ LDADD = ../libzdb.la
+ AUTOMAKE_OPTIONS = foreign no-dependencies
+ DEFAULT_INCLUDES = 
+ LDADD = ../libzdb.la
+-zdbpp_CXXFLAGS = -I../zdb -std=c++20
++zdbpp_CXXFLAGS = -I../zdb -std=c++20 -fexperimental-library
+ unit_SOURCES = unit.c
+ pool_SOURCES = pool.c
+ select_SOURCES = select.c
