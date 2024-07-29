@@ -705,6 +705,7 @@
     SUBDIR += fpp
     SUBDIR += freebsd-gcc12
     SUBDIR += freebsd-gcc13
+    SUBDIR += freebsd-gcc14
     SUBDIR += freebsd-git-devtools
     SUBDIR += freebsd-sysroot
     SUBDIR += frink
