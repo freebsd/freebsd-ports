@@ -12,7 +12,6 @@ LICENSE=	BSD3CLAUSE
 USES=		pear
 USE_PHP=	mcrypt
 
-IGNORE_WITH_PHP=84
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
