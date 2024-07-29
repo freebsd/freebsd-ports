@@ -1,5 +1,6 @@
 PORTNAME=	hyperrogue
 PORTVERSION=	13.0s
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -35,12 +36,6 @@ DESKTOP_ENTRIES="HyperRogue" \
 		""
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc
-USE_GCC=	yes
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hyperrogue ${STAGEDIR}${PREFIX}/bin/
