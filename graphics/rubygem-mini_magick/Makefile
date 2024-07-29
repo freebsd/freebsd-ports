@@ -1,5 +1,5 @@
 PORTNAME=	mini_magick
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
