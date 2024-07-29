@@ -7410,6 +7410,7 @@
     SUBDIR += rubygem-opentelemetry-instrumentation-rails
     SUBDIR += rubygem-opentelemetry-instrumentation-rake
     SUBDIR += rubygem-opentelemetry-instrumentation-redis
+    SUBDIR += rubygem-opentelemetry-instrumentation-restclient
     SUBDIR += rubygem-opentelemetry-instrumentation-sidekiq
     SUBDIR += rubygem-opentelemetry-registry
     SUBDIR += rubygem-opentelemetry-sdk
