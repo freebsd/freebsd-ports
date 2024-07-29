@@ -11,7 +11,7 @@ WWW=		https://github.com/NLnetLabs/routinator
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64
 ONLY_FOR_ARCHS_REASON=	ring crate not ported to other architectures
 
 RUN_DEPENDS=	rsync:net/rsync
