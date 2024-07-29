@@ -16,7 +16,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bcit-ci
 GH_PROJECT=	CodeIgniter
 
-IGNORE_WITH_PHP=84
 NO_ARCH=	yes
 NO_BUILD=	yes
 
