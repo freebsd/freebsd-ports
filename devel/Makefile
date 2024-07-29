@@ -7387,6 +7387,7 @@
     SUBDIR += rubygem-opentelemetry-instrumentation-action_pack
     SUBDIR += rubygem-opentelemetry-instrumentation-action_view
     SUBDIR += rubygem-opentelemetry-instrumentation-active_job
+    SUBDIR += rubygem-opentelemetry-instrumentation-active_model_serializers
     SUBDIR += rubygem-opentelemetry-instrumentation-active_record
     SUBDIR += rubygem-opentelemetry-instrumentation-active_support
     SUBDIR += rubygem-opentelemetry-instrumentation-aws_sdk
