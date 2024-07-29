@@ -16,11 +16,11 @@ USES=		cmake:testing localbase:ldflags pathfix pkgconfig sqlite tar:zst
 CMAKE_OFF=	BUILD_INFO \
 		BUILD_TESTING \
 		ENABLE_GCOV \
-		NO_UNDEFINED \
 		USE_VALGRIND \
 		WITH_INTERNAL_SQLITE3 \
 		WITH_RUST
 CMAKE_ON=	BUILD_SHARED_LIBS \
+		NO_UNDEFINED \
 		WITH_SQLITE3
 CMAKE_TESTING_PARALLEL_LEVEL=	1	# https://github.com/chewing/libchewing/issues/293
 USE_LDCONFIG=	yes
