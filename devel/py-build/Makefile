@@ -24,6 +24,11 @@ NO_ARCH=	yes
 PEP517_BUILD_CMD=	${PYTHON_CMD} -m flit_core.wheel
 PEP517_BUILD_DEPEND=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.8:devel/py-flit-core@${PY_FLAVOR}
 
+#OPTIONS_DEFINE=	VIRTUALENV
+#VIRTUALENV_DESC=	Use virtualenv for isolation
+
+#VIRTUALENV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=20.0.35:devel/py-virtualenv@${PY_FLAVOR}
+
 .include <bsd.port.pre.mk>
 
 #.if ${PYTHON_REL} < 31200
