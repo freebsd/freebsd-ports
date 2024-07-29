@@ -124,6 +124,7 @@
     SUBDIR += ldb21
     SUBDIR += ldb22
     SUBDIR += ldb25
+    SUBDIR += ldb28
     SUBDIR += leo_center
     SUBDIR += leofs
     SUBDIR += leveldb
