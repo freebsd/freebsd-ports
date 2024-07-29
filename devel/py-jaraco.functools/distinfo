@@ -1,3 +1,3 @@
-TIMESTAMP = 1699774622
-SHA256 (jaraco.functools-4.0.0.tar.gz) = c279cb24c93d694ef7270f970d499cab4d3813f4e08273f95398651a634f0925
-SIZE (jaraco.functools-4.0.0.tar.gz) = 17779
+TIMESTAMP = 1722272050
+SHA256 (jaraco_functools-4.0.1.tar.gz) = d33fa765374c0611b52f8b3a795f8900869aa88c84769d4d1746cd68fb28c3e8
+SIZE (jaraco_functools-4.0.1.tar.gz) = 18169
