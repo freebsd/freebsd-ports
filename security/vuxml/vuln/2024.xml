@@ -210,6 +210,42 @@
     </dates>
   </vuln>
 
+  <vuln vid="6091d1d8-4347-11ef-a4d4-080027957747">
+    <topic>GLPI -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><lt>10.0.16,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GLPI team reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/releases/tag/10.0.16">
+	  <p>GLPI 10.0.16 Changelog</p>
+	  <ul>
+	    <li>[SECURITY - high] Account takeover via SQL Injection in AJAX scripts (CVE-2024-37148)</li>
+	    <li>[SECURITY - high] Remote code execution through the plugin loader (CVE-2024-37149)</li>
+	    <li>[SECURITY - moderate] Authenticated file upload to restricted tickets (CVE-2024-37147)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-37148</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-37148</url>
+      <cvename>CVE-2024-37149</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-37149</url>
+      <cvename>CVE-2024-37147</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-37147</url>
+      <url>https://github.com/glpi-project/glpi/releases/tag/10.0.16</url>
+    </references>
+    <dates>
+      <discovery>2024-06-03</discovery>
+      <entry>2024-07-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6410f91d-1214-4f92-b7e0-852e39e265f9">
     <topic>electron30 -- multiple vulnerabilities</topic>
     <affects>
