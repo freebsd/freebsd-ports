@@ -1,7 +1,7 @@
 PORTNAME=	rrdtool
 DISTVERSION=	1.9.0
 CATEGORIES=	databases graphics
-MASTER_SITES=	https://github.com/oetiker/rrdtool-1.x/releases/download/v${DISTVERSION}off/
+MASTER_SITES=	https://github.com/oetiker/rrdtool-1.x/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Round Robin Database Tools
