@@ -1,0 +1,81 @@
+Obtained from:	https://github.com/derickr/vld/commit/df1c52c4cb62e5ff31e1b72e3f11df9a45ee567a
+
+--- srm_oparray.c.orig	2022-09-16 08:00:47 UTC
++++ srm_oparray.c
+@@ -350,6 +350,16 @@ static const op_usage opcodes[] = {
+ 	/*  200 */	{ "FETCH_GLOBALS", ALL_USED },
+ 	/*  201 */	{ "VERIFY_NEVER_TYPE", ALL_USED },
+ 	/*  202 */	{ "ZEND_CALLABLE_CONVERT", ALL_USED },
++#    if PHP_VERSION_ID >= 80300
++	/*  203 */  { "ZEND_BIND_INIT_STATIC_OR_JMP", ALL_USED },
++#     if PHP_VERSION_ID >= 80400
++	/*  204 */  { "ZEND_FRAMELESS_ICALL_0", ALL_USED | EXT_VAL_FLF },
++	/*  205 */  { "ZEND_FRAMELESS_ICALL_1", ALL_USED | EXT_VAL_FLF },
++	/*  206 */  { "ZEND_FRAMELESS_ICALL_2", ALL_USED | EXT_VAL_FLF },
++	/*  207 */  { "ZEND_FRAMELESS_ICALL_3", ALL_USED | EXT_VAL_FLF },
++	/*  208 */  { "ZEND_JMP_FRAMELESS", ALL_USED | EXT_CACHED_PTR | OP2_OPNUM },
++#     endif
++#    endif
+ #   endif
+ #  endif
+ # else
+@@ -811,6 +821,12 @@ void vld_dump_op(int nr, zend_op * op_ptr, unsigned in
+ 		last_lineno = op.lineno;
+ 	}
+ 
++#if PHP_VERSION_ID >= 80400
++	if (flags & EXT_VAL_FLF) {
++		fetch_type = (char*) ZEND_FLF_FUNC(&op)->common.function_name->val;
++	}
++#endif
++
+ 	if (op.opcode >= NUM_KNOWN_OPCODES) {
+ 		if (VLD_G(format)) {
+ 			vld_printf(stderr, "%5d %s %c %c %c %c %s <%03d>%-23s %s %-14s ", nr, VLD_G(col_sep), notdead ? ' ' : '*', entry ? 'E' : ' ', start ? '>' : ' ', end ? '>' : ' ', VLD_G(col_sep), op.opcode, VLD_G(col_sep), fetch_type);
+@@ -831,6 +847,11 @@ void vld_dump_op(int nr, zend_op * op_ptr, unsigned in
+ 		}
+ 	}
+ 
++#if PHP_VERSION_ID >= 80400
++	if (flags & EXT_CACHED_PTR) {
++		vld_printf(stderr, "s%-3d ", op.extended_value);
++	} else
++#endif
+ 	if (flags & EXT_VAL) {
+ #if PHP_VERSION_ID >= 70300
+ 		if (op.opcode == ZEND_CATCH) {
+@@ -1081,6 +1102,14 @@ int vld_find_jumps(zend_op_array *opa, unsigned int po
+ 		jumps[0] = VLD_JMP_EXIT;
+ 		*jump_count = 1;
+ 		return 1;
++
++#if PHP_VERSION_ID >= 80400
++	} else if (opcode.opcode == ZEND_JMP_FRAMELESS) {
++		jumps[0] = VLD_ZNODE_JMP_LINE(opcode.op2, position, base_address);
++		jumps[1] = position + 1;
++		*jump_count = 2;
++		return 1;
++#endif
+ 
+ 	} else if (
+ 		opcode.opcode == ZEND_GENERATOR_RETURN ||
+--- srm_oparray.h.orig	2022-09-16 08:00:47 UTC
++++ srm_oparray.h
+@@ -57,6 +57,8 @@
+ #define EXT_VAL_JMP_ABS   1<<25
+ #define VLD_IS_JMP_ARRAY  1<<26
+ #define VLD_IS_INDEX      1<<27
++#define EXT_VAL_FLF       1<<28
++#define EXT_CACHED_PTR    1<<29
+ 
+ typedef struct _op_usage {
+ 	const char  *name;
+--- tests/jmp_frameless.inc.orig	2024-07-29 13:37:33 UTC
++++ tests/jmp_frameless.inc
+@@ -0,0 +1,6 @@
++<?php
++namespace Foo {
++
++echo substr("Derick Cool?", 7);
++
++}

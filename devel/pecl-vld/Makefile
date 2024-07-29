@@ -13,6 +13,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		php:pecl
 
 CONFIGURE_ARGS=	--enable-vld
-IGNORE_WITH_PHP=84
 
 .include <bsd.port.mk>
