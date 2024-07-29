@@ -1,6 +1,5 @@
 PORTNAME=	asciidoctor-pdf
-PORTVERSION=	2.3.17
-PORTREVISION=	1
+PORTVERSION=	2.3.18
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -20,7 +19,6 @@ RUN_DEPENDS=	rubygem-asciidoctor>=2.0<3:textproc/rubygem-asciidoctor \
 		rubygem-prawn-svg>=0.35.0<0.36:print/rubygem-prawn-svg \
 		rubygem-prawn-table>=0.2.0<0.3:print/rubygem-prawn-table \
 		rubygem-prawn-templates>=0.1.0<0.2:print/rubygem-prawn-templates \
-		rubygem-rexml>=3.2.6:textproc/rubygem-rexml \
 		rubygem-treetop>=1.6.0<1.7:devel/rubygem-treetop \
 		rubygem-ttfunk17>=1.7.0<1.8:print/rubygem-ttfunk17
 
