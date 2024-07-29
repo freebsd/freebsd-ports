@@ -11,9 +11,9 @@ WWW=		https://pecl.php.net/package/radius \
 LICENSE=	BSD3CLAUSE
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	84
 
 CONFIGURE_ARGS=	--enable-radius
+IGNORE_WITH_PHP=84
 
 OPTIONS_DEFINE=	EXAMPLES
 
