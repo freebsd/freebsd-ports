@@ -1266,6 +1266,7 @@
     SUBDIR += zathura-pdf-poppler
     SUBDIR += zathura-ps
     SUBDIR += zbar
+    SUBDIR += zeno
     SUBDIR += zgv
     SUBDIR += zimg
     SUBDIR += zint
