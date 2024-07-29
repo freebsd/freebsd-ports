@@ -7393,6 +7393,7 @@
     SUBDIR += rubygem-opentelemetry-instrumentation-aws_sdk
     SUBDIR += rubygem-opentelemetry-instrumentation-base
     SUBDIR += rubygem-opentelemetry-instrumentation-concurrent_ruby
+    SUBDIR += rubygem-opentelemetry-instrumentation-dalli
     SUBDIR += rubygem-opentelemetry-instrumentation-ethon
     SUBDIR += rubygem-opentelemetry-instrumentation-excon
     SUBDIR += rubygem-opentelemetry-instrumentation-faraday
