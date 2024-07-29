@@ -1,3 +1,3 @@
-TIMESTAMP = 1718370252
-SHA256 (pyupgrade-3.16.0.tar.gz) = 237893a05d5b117259b31b423f23cbae4bce0b7eae57ba9a52c06098c2ddd76f
-SIZE (pyupgrade-3.16.0.tar.gz) = 45030
+TIMESTAMP = 1722238954
+SHA256 (pyupgrade-3.17.0.tar.gz) = d5dd1dcaf9a016c31508bb9d3d09fd335d736578092f91df52bb26ac30c37919
+SIZE (pyupgrade-3.17.0.tar.gz) = 45381
