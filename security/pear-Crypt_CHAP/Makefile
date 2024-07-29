@@ -4,10 +4,15 @@ CATEGORIES=	security www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class for generating CHAP packets
-WWW=		https://pear.php.net/package/Crypt_CHAP
+WWW=		https://pear.php.net/package/Crypt_CHAP \
+		https://github.com/pear/Crypt_CHAP
 
-USES=		pear php
+LICENSE=	BSD3CLAUSE
+
+USES=		pear
 USE_PHP=	mcrypt
-IGNORE_WITH_PHP=	84
+
+IGNORE_WITH_PHP=84
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
