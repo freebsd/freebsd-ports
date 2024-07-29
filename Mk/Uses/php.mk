@@ -431,7 +431,7 @@ posix_DEPENDS=	sysutils/php${PHP_VER}-posix
 .    if ${PHP_VER} <= 83
 pspell_DEPENDS=	textproc/php${PHP_VER}-pspell
 .    else
-pspell_DEPENDS=	textproc/pecl-pspell${PHP_FLAVOR}
+pspell_DEPENDS=	textproc/pecl-pspell@${PHP_FLAVOR}
 .    endif
 radius_DEPENDS=	net/pecl-radius@${PHP_FLAVOR}
 readline_DEPENDS=	devel/php${PHP_VER}-readline
