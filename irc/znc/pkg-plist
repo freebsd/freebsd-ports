@@ -423,6 +423,7 @@ share/man/man1/znc.1.gz
 %%NLS%%share/locale/es_ES/LC_MESSAGES/znc-clearbufferonmsg.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/znc-clientnotify.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/znc-controlpanel.mo
+%%NLS%%share/locale/es_ES/LC_MESSAGES/znc-corecaps.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/znc-crypt.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/znc-ctcpflood.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/znc-cyrusauth.mo
@@ -712,6 +713,7 @@ share/man/man1/znc.1.gz
 %%NLS%%share/locale/pl_PL/LC_MESSAGES/znc-clearbufferonmsg.mo
 %%NLS%%share/locale/pl_PL/LC_MESSAGES/znc-clientnotify.mo
 %%NLS%%share/locale/pl_PL/LC_MESSAGES/znc-controlpanel.mo
+%%NLS%%share/locale/pl_PL/LC_MESSAGES/znc-corecaps.mo
 %%NLS%%share/locale/pl_PL/LC_MESSAGES/znc-crypt.mo
 %%NLS%%share/locale/pl_PL/LC_MESSAGES/znc-ctcpflood.mo
 %%NLS%%share/locale/pl_PL/LC_MESSAGES/znc-cyrusauth.mo
@@ -769,6 +771,7 @@ share/man/man1/znc.1.gz
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/znc-clearbufferonmsg.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/znc-clientnotify.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/znc-controlpanel.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/znc-corecaps.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/znc-crypt.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/znc-ctcpflood.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/znc-cyrusauth.mo
@@ -826,6 +829,7 @@ share/man/man1/znc.1.gz
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/znc-clearbufferonmsg.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/znc-clientnotify.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/znc-controlpanel.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/znc-corecaps.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/znc-crypt.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/znc-ctcpflood.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/znc-cyrusauth.mo
@@ -883,6 +887,7 @@ share/man/man1/znc.1.gz
 %%NLS%%share/locale/ro_RO/LC_MESSAGES/znc-clearbufferonmsg.mo
 %%NLS%%share/locale/ro_RO/LC_MESSAGES/znc-clientnotify.mo
 %%NLS%%share/locale/ro_RO/LC_MESSAGES/znc-controlpanel.mo
+%%NLS%%share/locale/ro_RO/LC_MESSAGES/znc-corecaps.mo
 %%NLS%%share/locale/ro_RO/LC_MESSAGES/znc-crypt.mo
 %%NLS%%share/locale/ro_RO/LC_MESSAGES/znc-ctcpflood.mo
 %%NLS%%share/locale/ro_RO/LC_MESSAGES/znc-cyrusauth.mo
@@ -940,6 +945,7 @@ share/man/man1/znc.1.gz
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/znc-clearbufferonmsg.mo
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/znc-clientnotify.mo
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/znc-controlpanel.mo
+%%NLS%%share/locale/ru_RU/LC_MESSAGES/znc-corecaps.mo
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/znc-crypt.mo
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/znc-ctcpflood.mo
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/znc-cyrusauth.mo
@@ -997,6 +1003,7 @@ share/man/man1/znc.1.gz
 %%NLS%%share/locale/tr_TR/LC_MESSAGES/znc-clearbufferonmsg.mo
 %%NLS%%share/locale/tr_TR/LC_MESSAGES/znc-clientnotify.mo
 %%NLS%%share/locale/tr_TR/LC_MESSAGES/znc-controlpanel.mo
+%%NLS%%share/locale/tr_TR/LC_MESSAGES/znc-corecaps.mo
 %%NLS%%share/locale/tr_TR/LC_MESSAGES/znc-crypt.mo
 %%NLS%%share/locale/tr_TR/LC_MESSAGES/znc-ctcpflood.mo
 %%NLS%%share/locale/tr_TR/LC_MESSAGES/znc-cyrusauth.mo
