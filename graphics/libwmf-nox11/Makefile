@@ -1,8 +1,9 @@
 PKGNAMESUFFIX=	-nox11
+
+OPTIONS_EXCLUDE=X11
+
+MASTERDIR=	${.CURDIR}/../libwmf
+
 PORTSCOUT=	ignore:1
 
-CONFLICTS=	libwmf
-MASTERDIR=	${.CURDIR}/../libwmf
-OPTIONS_EXCLUDE=	X11
-
-.include        "${MASTERDIR}/Makefile"
+.include "${MASTERDIR}/Makefile"
