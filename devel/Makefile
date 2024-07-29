@@ -5512,6 +5512,7 @@
     SUBDIR += py-pyte
     SUBDIR += py-pytest
     SUBDIR += py-pytest-aiohttp
+    SUBDIR += py-pytest-alembic
     SUBDIR += py-pytest-asyncio
     SUBDIR += py-pytest-azurepipelines
     SUBDIR += py-pytest-benchmark
