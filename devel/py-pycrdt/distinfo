@@ -1,6 +1,6 @@
-TIMESTAMP = 1721858375
-SHA256 (pycrdt-0.9.4.tar.gz) = 36663d7936068a6909a6a6bc3109af5853e1034d107058558709862605550b79
-SIZE (pycrdt-0.9.4.tar.gz) = 32742
+TIMESTAMP = 1722249050
+SHA256 (pycrdt-0.9.7.tar.gz) = 81c32b6084b9ca1ea8e1898233cdeac19f03b6eada8f6161aefbe2f47d210864
+SIZE (pycrdt-0.9.7.tar.gz) = 33020
 SHA256 (rust/crates/arc-swap-1.7.1.crate) = 69f7f8c3906b62b754cd5326047894316021dcfe5a194c8ea52bdd94934a3457
 SIZE (rust/crates/arc-swap-1.7.1.crate) = 68512
 SHA256 (rust/crates/atomic_refcell-0.1.13.crate) = 41e67cd8309bbd06cd603a9e693a784ac2e5d1e955f11286e355089fcab3047c
