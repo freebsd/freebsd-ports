@@ -216,8 +216,8 @@ PLIST_SUB+=			SAMBA4_BUNDLED_TALLOC=""
 SUB_LIST+=			SAMBA4_BUNDLED_TALLOC=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!talloc
-BUILD_DEPENDS+=			talloc>=2.3.3:devel/talloc
-RUN_DEPENDS+=			talloc>=2.3.3:devel/talloc
+BUILD_DEPENDS+=			talloc>=2.4.1:devel/talloc
+RUN_DEPENDS+=			talloc>=2.4.1:devel/talloc
 PLIST_SUB+=			SAMBA4_BUNDLED_TALLOC="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TALLOC="@comment "
 .endif
