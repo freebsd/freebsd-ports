@@ -229,8 +229,8 @@ PLIST_SUB+=			SAMBA4_BUNDLED_TEVENT=""
 SUB_LIST+=			SAMBA4_BUNDLED_TEVENT=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!tevent
-BUILD_DEPENDS+=			tevent>=0.11.0:devel/tevent
-RUN_DEPENDS+=			tevent>=0.11.0:devel/tevent
+BUILD_DEPENDS+=			tevent>=0.15.0:devel/tevent
+RUN_DEPENDS+=			tevent>=0.15.0:devel/tevent
 PLIST_SUB+=			SAMBA4_BUNDLED_TEVENT="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TEVENT="@comment "
 .endif
