@@ -374,7 +374,7 @@ add-plist-phpext:
 # non-version specific components
 _USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
 		enchant exif ffi fileinfo filter ftp gd gettext gmp \
-		hash iconv igbinary intl json ldap mbstring mcrypt \
+		hash iconv igbinary imap intl json ldap mbstring mcrypt \
 		memcache memcached mysqli odbc opcache \
 		openssl pcntl pcre pdo pdo_dblib pdo_firebird pdo_mysql \
 		pdo_odbc pdo_pgsql pdo_sqlite phar pgsql posix \
@@ -383,9 +383,9 @@ _USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
 		tidy tokenizer xml xmlreader xmlrpc xmlwriter xsl zephir_parser \
 		zip zlib
 # version specific components
-_USE_PHP_VER81=	${_USE_PHP_ALL} imap
-_USE_PHP_VER82=	${_USE_PHP_ALL} imap
-_USE_PHP_VER83=	${_USE_PHP_ALL} imap
+_USE_PHP_VER81=	${_USE_PHP_ALL}
+_USE_PHP_VER82=	${_USE_PHP_ALL}
+_USE_PHP_VER83=	${_USE_PHP_ALL}
 _USE_PHP_VER84=	${_USE_PHP_ALL}
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
@@ -407,7 +407,11 @@ gettext_DEPENDS=devel/php${PHP_VER}-gettext
 gmp_DEPENDS=	math/php${PHP_VER}-gmp
 iconv_DEPENDS=	converters/php${PHP_VER}-iconv
 igbinary_DEPENDS=	converters/pecl-igbinary@${PHP_FLAVOR}
+.    if ${PHP_VER} <= 83
 imap_DEPENDS=	mail/php${PHP_VER}-imap
+.    else
+imap_DEPENDS=	mail/pecl-imap@${PHP_FLAVOR}
+.    endif
 intl_DEPENDS=	devel/php${PHP_VER}-intl
 ldap_DEPENDS=	net/php${PHP_VER}-ldap
 mbstring_DEPENDS=	converters/php${PHP_VER}-mbstring
