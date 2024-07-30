@@ -54,8 +54,6 @@ bin/eisl
 %%DATADIR%%/library/stat.lsp
 %%DATADIR%%/library/string.lsp
 %%DATADIR%%/library/tcltk.lsp
-%%DATADIR%%/library/tcpip.lsp
-%%DATADIR%%/library/tcpip.o
 %%DATADIR%%/library/test.lsp
 %%DATADIR%%/library/unistd.lsp
 %%DATADIR%%/library/unistd.o
