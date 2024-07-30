@@ -1090,6 +1090,8 @@ include/wine/windows/windows.applicationmodel.core.h
 include/wine/windows/windows.applicationmodel.core.idl
 include/wine/windows/windows.applicationmodel.h
 include/wine/windows/windows.applicationmodel.idl
+include/wine/windows/windows.data.json.h
+include/wine/windows/windows.data.json.idl
 include/wine/windows/windows.devices.bluetooth.h
 include/wine/windows/windows.devices.bluetooth.idl
 include/wine/windows/windows.devices.enumeration.h
@@ -2493,6 +2495,7 @@ lib/wine/%%WINEARCH%%-windows/windows.security.credentials.ui.userconsentverifie
 lib/wine/%%WINEARCH%%-windows/windows.storage.applicationdata.dll
 lib/wine/%%WINEARCH%%-windows/windows.system.profile.systemmanufacturers.dll
 lib/wine/%%WINEARCH%%-windows/windows.ui.dll
+lib/wine/%%WINEARCH%%-windows/windows.web.dll
 lib/wine/%%WINEARCH%%-windows/windowscodecs.dll
 lib/wine/%%WINEARCH%%-windows/windowscodecsext.dll
 %%ALSA%%lib/wine/%%WINEARCH%%-windows/winealsa.drv
