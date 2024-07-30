@@ -13,7 +13,6 @@ RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}Crypt_CHAP>=1.0.0:security/pear-Crypt_CHAP@${P
 
 USES=		pear
 
-IGNORE_WITH_PHP=84
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
