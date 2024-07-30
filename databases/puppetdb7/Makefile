@@ -1,5 +1,5 @@
 PORTNAME=	puppetdb
-PORTVERSION=	7.19.0
+PORTVERSION=	7.19.1
 CATEGORIES=	databases java
 MASTER_SITES=	https://downloads.puppetlabs.com/puppetdb/
 PKGNAMESUFFIX=	7
@@ -43,6 +43,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/${file}
 .endfor
 	@${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|" ${WRKSRC}/ext/bin/puppetdb
+	@${REINPLACE_CMD} -e 's|/puppetlabs/puppetdb/|/puppetdb/|' \
+		-e 's|\(install -m 0644 ext/config/.*\)"|\1.sample"|' \
+		${WRKSRC}/Makefile
 
 do-install:
 	@cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} make install-puppetdb
