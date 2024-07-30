@@ -38,7 +38,7 @@ pidfile=/var/run/alloy.pid
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/alloy"
 run="run /usr/local/etc/alloy.flow"
-command_args="-S -T ${name} -P ${pidfile} /usr/bin/env ${procname} ${run} \
+command_args="-S -T ${name} -p ${pidfile} /usr/bin/env ${procname} ${run} \
     --storage.path=${alloy_storage_path} --server.http.listen-addr=${alloy_listen_address} ${alloy_args}"
 
 start_precmd=alloy_startprecmd
