@@ -30,6 +30,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/bin/d.rast
 %%GRASS_INST_DIR%%/bin/d.rast.arrow
 %%GRASS_INST_DIR%%/bin/d.rast.num
+%%GRASS_INST_DIR%%/bin/d.redraw
 %%GRASS_INST_DIR%%/bin/d.rgb
 %%GRASS_INST_DIR%%/bin/d.rhumbline
 %%GRASS_INST_DIR%%/bin/d.text
@@ -110,6 +111,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/bin/i.rectify
 %%GRASS_INST_DIR%%/bin/i.rgb.his
 %%GRASS_INST_DIR%%/bin/i.segment
+%%GRASS_INST_DIR%%/bin/i.signatures
 %%GRASS_INST_DIR%%/bin/i.smap
 %%GRASS_INST_DIR%%/bin/i.target
 %%GRASS_INST_DIR%%/bin/i.topo.corr
@@ -315,6 +317,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/bin/v.external.out
 %%GRASS_INST_DIR%%/bin/v.extract
 %%GRASS_INST_DIR%%/bin/v.extrude
+%%GRASS_INST_DIR%%/bin/v.fill.holes
 %%GRASS_INST_DIR%%/bin/v.generalize
 %%GRASS_INST_DIR%%/bin/v.hull
 %%GRASS_INST_DIR%%/bin/v.in.ascii
@@ -632,6 +635,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/g.search.modules.html
 %%GRASS_INST_DIR%%/docs/html/g.tempfile.html
 %%GRASS_INST_DIR%%/docs/html/g.version.html
+%%GRASS_INST_DIR%%/docs/html/g_gui_gmodeler_actinia_code.png
 %%GRASS_INST_DIR%%/docs/html/g_gui_gmodeler_avg_map.png
 %%GRASS_INST_DIR%%/docs/html/g_gui_gmodeler_avg_run.png
 %%GRASS_INST_DIR%%/docs/html/g_gui_gmodeler_comment.png
@@ -728,7 +732,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/guimodules_graphical.html
 %%GRASS_INST_DIR%%/docs/html/hamburger_menu.svg
 %%GRASS_INST_DIR%%/docs/html/hamburger_menu_close.svg
-%%GRASS_INST_DIR%%/docs/html/help_loc_struct.png
+%%GRASS_INST_DIR%%/docs/html/help_project_structure.png
 %%GRASS_INST_DIR%%/docs/html/helptext.html
 %%GRASS_INST_DIR%%/docs/html/htmldriver.html
 %%GRASS_INST_DIR%%/docs/html/i.albedo.html
@@ -774,6 +778,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/i.rectify.html
 %%GRASS_INST_DIR%%/docs/html/i.rgb.his.html
 %%GRASS_INST_DIR%%/docs/html/i.segment.html
+%%GRASS_INST_DIR%%/docs/html/i.signatures.html
 %%GRASS_INST_DIR%%/docs/html/i.smap.html
 %%GRASS_INST_DIR%%/docs/html/i.spectral.html
 %%GRASS_INST_DIR%%/docs/html/i.target.html
@@ -830,10 +835,13 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/icons/cell-cats.png
 %%GRASS_INST_DIR%%/docs/html/icons/centroid-create.png
 %%GRASS_INST_DIR%%/docs/html/icons/check.png
+%%GRASS_INST_DIR%%/docs/html/icons/circle.png
 %%GRASS_INST_DIR%%/docs/html/icons/create.png
+%%GRASS_INST_DIR%%/docs/html/icons/cross.png
 %%GRASS_INST_DIR%%/docs/html/icons/data-add.png
 %%GRASS_INST_DIR%%/docs/html/icons/edit.png
 %%GRASS_INST_DIR%%/docs/html/icons/erase.png
+%%GRASS_INST_DIR%%/docs/html/icons/exclamation-mark.png
 %%GRASS_INST_DIR%%/docs/html/icons/execute.png
 %%GRASS_INST_DIR%%/docs/html/icons/flythrough.png
 %%GRASS_INST_DIR%%/docs/html/icons/font.png
@@ -906,9 +914,11 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/icons/mapset.png
 %%GRASS_INST_DIR%%/docs/html/icons/measure-length.png
 %%GRASS_INST_DIR%%/docs/html/icons/modeler-main.png
+%%GRASS_INST_DIR%%/docs/html/icons/modeler-settings.png
 %%GRASS_INST_DIR%%/docs/html/icons/modeler-variables.png
 %%GRASS_INST_DIR%%/docs/html/icons/module-add.png
 %%GRASS_INST_DIR%%/docs/html/icons/monitor-create.png
+%%GRASS_INST_DIR%%/docs/html/icons/monitor-dock.png
 %%GRASS_INST_DIR%%/docs/html/icons/monitor-settings.png
 %%GRASS_INST_DIR%%/docs/html/icons/move.png
 %%GRASS_INST_DIR%%/docs/html/icons/north-arrow-add.png
@@ -933,6 +943,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/icons/ps-export.png
 %%GRASS_INST_DIR%%/docs/html/icons/python-export.png
 %%GRASS_INST_DIR%%/docs/html/icons/python.png
+%%GRASS_INST_DIR%%/docs/html/icons/question-mark.png
 %%GRASS_INST_DIR%%/docs/html/icons/quit.png
 %%GRASS_INST_DIR%%/docs/html/icons/raster-calculator.png
 %%GRASS_INST_DIR%%/docs/html/icons/raster-import.png
@@ -956,9 +967,11 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/icons/shortest-distance.png
 %%GRASS_INST_DIR%%/docs/html/icons/show.png
 %%GRASS_INST_DIR%%/docs/html/icons/stats.png
+%%GRASS_INST_DIR%%/docs/html/icons/success.png
 %%GRASS_INST_DIR%%/docs/html/icons/table-manager.png
 %%GRASS_INST_DIR%%/docs/html/icons/table.png
 %%GRASS_INST_DIR%%/docs/html/icons/text-add.png
+%%GRASS_INST_DIR%%/docs/html/icons/time-period.png
 %%GRASS_INST_DIR%%/docs/html/icons/tools.png
 %%GRASS_INST_DIR%%/docs/html/icons/undo.png
 %%GRASS_INST_DIR%%/docs/html/icons/unlocked.png
@@ -1561,6 +1574,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/v.external.out.html
 %%GRASS_INST_DIR%%/docs/html/v.extract.html
 %%GRASS_INST_DIR%%/docs/html/v.extrude.html
+%%GRASS_INST_DIR%%/docs/html/v.fill.holes.html
 %%GRASS_INST_DIR%%/docs/html/v.generalize.html
 %%GRASS_INST_DIR%%/docs/html/v.hull.html
 %%GRASS_INST_DIR%%/docs/html/v.import.html
@@ -1675,6 +1689,11 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/v_decimate_grid_cat.png
 %%GRASS_INST_DIR%%/docs/html/v_decimate_original.png
 %%GRASS_INST_DIR%%/docs/html/v_delaunay.png
+%%GRASS_INST_DIR%%/docs/html/v_dissolve_towns.png
+%%GRASS_INST_DIR%%/docs/html/v_dissolve_zipcodes.png
+%%GRASS_INST_DIR%%/docs/html/v_fill_holes.png
+%%GRASS_INST_DIR%%/docs/html/v_fill_holes_filled.png
+%%GRASS_INST_DIR%%/docs/html/v_fill_holes_filled_with_dissolve.png
 %%GRASS_INST_DIR%%/docs/html/v_generalize_simplify.png
 %%GRASS_INST_DIR%%/docs/html/v_generalize_smooth.png
 %%GRASS_INST_DIR%%/docs/html/v_hull.png
@@ -1970,6 +1989,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/man/man1/i.rectify.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/i.rgb.his.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/i.segment.1.gz
+%%GRASS_INST_DIR%%/docs/man/man1/i.signatures.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/i.smap.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/i.spectral.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/i.target.1.gz
@@ -2395,6 +2415,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/man/man1/v.external.out.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.extract.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.extrude.1.gz
+%%GRASS_INST_DIR%%/docs/man/man1/v.fill.holes.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.generalize.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.hull.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.import.1.gz
@@ -2654,17 +2675,25 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/etc/python/grass/benchmark/runners.py
 %%GRASS_INST_DIR%%/etc/python/grass/exceptions/__init__.py
 %%GRASS_INST_DIR%%/etc/python/grass/exceptions/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%GRASS_INST_DIR%%/etc/python/grass/experimental/__init__.py
+%%GRASS_INST_DIR%%/etc/python/grass/experimental/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%GRASS_INST_DIR%%/etc/python/grass/experimental/__pycache__/create%%PYTHON_EXT_SUFFIX%%.pyc
+%%GRASS_INST_DIR%%/etc/python/grass/experimental/__pycache__/mapset%%PYTHON_EXT_SUFFIX%%.pyc
+%%GRASS_INST_DIR%%/etc/python/grass/experimental/create.py
+%%GRASS_INST_DIR%%/etc/python/grass/experimental/mapset.py
 %%GRASS_INST_DIR%%/etc/python/grass/grassdb/__init__.py
 %%GRASS_INST_DIR%%/etc/python/grass/grassdb/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/etc/python/grass/grassdb/__pycache__/checks%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/etc/python/grass/grassdb/__pycache__/config%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/etc/python/grass/grassdb/__pycache__/create%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/etc/python/grass/grassdb/__pycache__/data%%PYTHON_EXT_SUFFIX%%.pyc
+%%GRASS_INST_DIR%%/etc/python/grass/grassdb/__pycache__/history%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/etc/python/grass/grassdb/__pycache__/manage%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/etc/python/grass/grassdb/checks.py
 %%GRASS_INST_DIR%%/etc/python/grass/grassdb/config.py
 %%GRASS_INST_DIR%%/etc/python/grass/grassdb/create.py
 %%GRASS_INST_DIR%%/etc/python/grass/grassdb/data.py
+%%GRASS_INST_DIR%%/etc/python/grass/grassdb/history.py
 %%GRASS_INST_DIR%%/etc/python/grass/grassdb/manage.py
 %%GRASS_INST_DIR%%/etc/python/grass/gunittest/__init__.py
 %%GRASS_INST_DIR%%/etc/python/grass/gunittest/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
@@ -2707,6 +2736,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/etc/python/grass/jupyter/__pycache__/map3d%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/etc/python/grass/jupyter/__pycache__/region%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/etc/python/grass/jupyter/__pycache__/reprojection_renderer%%PYTHON_EXT_SUFFIX%%.pyc
+%%GRASS_INST_DIR%%/etc/python/grass/jupyter/__pycache__/seriesmap%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/etc/python/grass/jupyter/__pycache__/setup%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/etc/python/grass/jupyter/__pycache__/timeseriesmap%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/etc/python/grass/jupyter/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.pyc
@@ -2715,6 +2745,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/etc/python/grass/jupyter/map3d.py
 %%GRASS_INST_DIR%%/etc/python/grass/jupyter/region.py
 %%GRASS_INST_DIR%%/etc/python/grass/jupyter/reprojection_renderer.py
+%%GRASS_INST_DIR%%/etc/python/grass/jupyter/seriesmap.py
 %%GRASS_INST_DIR%%/etc/python/grass/jupyter/setup.py
 %%GRASS_INST_DIR%%/etc/python/grass/jupyter/timeseriesmap.py
 %%GRASS_INST_DIR%%/etc/python/grass/jupyter/utils.py
@@ -2781,7 +2812,6 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/etc/python/grass/pygrass/__init__.py
 %%GRASS_INST_DIR%%/etc/python/grass/pygrass/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/etc/python/grass/pygrass/__pycache__/errors%%PYTHON_EXT_SUFFIX%%.pyc
-%%GRASS_INST_DIR%%/etc/python/grass/pygrass/__pycache__/orderdict%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/etc/python/grass/pygrass/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/etc/python/grass/pygrass/errors.py
 %%GRASS_INST_DIR%%/etc/python/grass/pygrass/gis/__init__.py
@@ -2818,7 +2848,6 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/etc/python/grass/pygrass/modules/interface/read.py
 %%GRASS_INST_DIR%%/etc/python/grass/pygrass/modules/interface/typedict.py
 %%GRASS_INST_DIR%%/etc/python/grass/pygrass/modules/shortcuts.py
-%%GRASS_INST_DIR%%/etc/python/grass/pygrass/orderdict.py
 %%GRASS_INST_DIR%%/etc/python/grass/pygrass/raster/__init__.py
 %%GRASS_INST_DIR%%/etc/python/grass/pygrass/raster/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/etc/python/grass/pygrass/raster/__pycache__/abstract%%PYTHON_EXT_SUFFIX%%.pyc
@@ -2999,10 +3028,14 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/etc/sql/stvds_metadata_table.sql
 %%GRASS_INST_DIR%%/etc/sql/stvds_views.sql
 %%GRASS_INST_DIR%%/etc/sql/update_stds_spatial_temporal_extent_template.sql
+%%GRASS_INST_DIR%%/etc/sql/update_stds_spatial_temporal_extent_template_old.sql
 %%GRASS_INST_DIR%%/etc/sql/update_str3ds_metadata_template.sql
+%%GRASS_INST_DIR%%/etc/sql/update_str3ds_metadata_template_old.sql
 %%GRASS_INST_DIR%%/etc/sql/update_strds_metadata_template.sql
+%%GRASS_INST_DIR%%/etc/sql/update_strds_metadata_template_old.sql
 %%GRASS_INST_DIR%%/etc/sql/update_strds_metadata_template_v3.sql
 %%GRASS_INST_DIR%%/etc/sql/update_stvds_metadata_template.sql
+%%GRASS_INST_DIR%%/etc/sql/update_stvds_metadata_template_old.sql
 %%GRASS_INST_DIR%%/etc/sql/upgrade_db_2_to_3.sql
 %%GRASS_INST_DIR%%/etc/sql/vector_metadata_table.sql
 %%GRASS_INST_DIR%%/etc/sql/vector_views.sql
@@ -3176,10 +3209,13 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/gui/icons/grass/cell-cats.png
 %%GRASS_INST_DIR%%/gui/icons/grass/centroid-create.png
 %%GRASS_INST_DIR%%/gui/icons/grass/check.png
+%%GRASS_INST_DIR%%/gui/icons/grass/circle.png
 %%GRASS_INST_DIR%%/gui/icons/grass/create.png
+%%GRASS_INST_DIR%%/gui/icons/grass/cross.png
 %%GRASS_INST_DIR%%/gui/icons/grass/data-add.png
 %%GRASS_INST_DIR%%/gui/icons/grass/edit.png
 %%GRASS_INST_DIR%%/gui/icons/grass/erase.png
+%%GRASS_INST_DIR%%/gui/icons/grass/exclamation-mark.png
 %%GRASS_INST_DIR%%/gui/icons/grass/execute.png
 %%GRASS_INST_DIR%%/gui/icons/grass/flythrough.png
 %%GRASS_INST_DIR%%/gui/icons/grass/font.png
@@ -3252,9 +3288,11 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/gui/icons/grass/mapset.png
 %%GRASS_INST_DIR%%/gui/icons/grass/measure-length.png
 %%GRASS_INST_DIR%%/gui/icons/grass/modeler-main.png
+%%GRASS_INST_DIR%%/gui/icons/grass/modeler-settings.png
 %%GRASS_INST_DIR%%/gui/icons/grass/modeler-variables.png
 %%GRASS_INST_DIR%%/gui/icons/grass/module-add.png
 %%GRASS_INST_DIR%%/gui/icons/grass/monitor-create.png
+%%GRASS_INST_DIR%%/gui/icons/grass/monitor-dock.png
 %%GRASS_INST_DIR%%/gui/icons/grass/monitor-settings.png
 %%GRASS_INST_DIR%%/gui/icons/grass/move.png
 %%GRASS_INST_DIR%%/gui/icons/grass/north-arrow-add.png
@@ -3279,6 +3317,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/gui/icons/grass/ps-export.png
 %%GRASS_INST_DIR%%/gui/icons/grass/python-export.png
 %%GRASS_INST_DIR%%/gui/icons/grass/python.png
+%%GRASS_INST_DIR%%/gui/icons/grass/question-mark.png
 %%GRASS_INST_DIR%%/gui/icons/grass/quit.png
 %%GRASS_INST_DIR%%/gui/icons/grass/raster-calculator.png
 %%GRASS_INST_DIR%%/gui/icons/grass/raster-import.png
@@ -3302,9 +3341,11 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/gui/icons/grass/shortest-distance.png
 %%GRASS_INST_DIR%%/gui/icons/grass/show.png
 %%GRASS_INST_DIR%%/gui/icons/grass/stats.png
+%%GRASS_INST_DIR%%/gui/icons/grass/success.png
 %%GRASS_INST_DIR%%/gui/icons/grass/table-manager.png
 %%GRASS_INST_DIR%%/gui/icons/grass/table.png
 %%GRASS_INST_DIR%%/gui/icons/grass/text-add.png
+%%GRASS_INST_DIR%%/gui/icons/grass/time-period.png
 %%GRASS_INST_DIR%%/gui/icons/grass/tools.png
 %%GRASS_INST_DIR%%/gui/icons/grass/undo.png
 %%GRASS_INST_DIR%%/gui/icons/grass/unlocked.png
@@ -3456,6 +3497,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/gui/wxpython/core/__pycache__/treemodel%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/core/__pycache__/units%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/core/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.pyc
+%%GRASS_INST_DIR%%/gui/wxpython/core/__pycache__/watchdog%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/core/__pycache__/workspace%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/core/__pycache__/ws%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/core/debug.py
@@ -3472,6 +3514,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/gui/wxpython/core/treemodel.py
 %%GRASS_INST_DIR%%/gui/wxpython/core/units.py
 %%GRASS_INST_DIR%%/gui/wxpython/core/utils.py
+%%GRASS_INST_DIR%%/gui/wxpython/core/watchdog.py
 %%GRASS_INST_DIR%%/gui/wxpython/core/workspace.py
 %%GRASS_INST_DIR%%/gui/wxpython/core/ws.py
 %%GRASS_INST_DIR%%/gui/wxpython/datacatalog/__init__.py
@@ -3518,20 +3561,24 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/gui/wxpython/gcp/toolbars.py
 %%GRASS_INST_DIR%%/gui/wxpython/gmodeler/__init__.py
 %%GRASS_INST_DIR%%/gui/wxpython/gmodeler/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%GRASS_INST_DIR%%/gui/wxpython/gmodeler/__pycache__/canvas%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/gmodeler/__pycache__/dialogs%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/gmodeler/__pycache__/frame%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/gmodeler/__pycache__/g.gui.gmodeler%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/gmodeler/__pycache__/giface%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/gmodeler/__pycache__/menudata%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/gmodeler/__pycache__/model%%PYTHON_EXT_SUFFIX%%.pyc
+%%GRASS_INST_DIR%%/gui/wxpython/gmodeler/__pycache__/panels%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/gmodeler/__pycache__/preferences%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/gmodeler/__pycache__/toolbars%%PYTHON_EXT_SUFFIX%%.pyc
+%%GRASS_INST_DIR%%/gui/wxpython/gmodeler/canvas.py
 %%GRASS_INST_DIR%%/gui/wxpython/gmodeler/dialogs.py
 %%GRASS_INST_DIR%%/gui/wxpython/gmodeler/frame.py
 %%GRASS_INST_DIR%%/gui/wxpython/gmodeler/g.gui.gmodeler.py
 %%GRASS_INST_DIR%%/gui/wxpython/gmodeler/giface.py
 %%GRASS_INST_DIR%%/gui/wxpython/gmodeler/menudata.py
 %%GRASS_INST_DIR%%/gui/wxpython/gmodeler/model.py
+%%GRASS_INST_DIR%%/gui/wxpython/gmodeler/panels.py
 %%GRASS_INST_DIR%%/gui/wxpython/gmodeler/preferences.py
 %%GRASS_INST_DIR%%/gui/wxpython/gmodeler/toolbars.py
 %%GRASS_INST_DIR%%/gui/wxpython/gui_core/__init__.py
@@ -3574,6 +3621,10 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/gui/wxpython/gui_core/vselect.py
 %%GRASS_INST_DIR%%/gui/wxpython/gui_core/widgets.py
 %%GRASS_INST_DIR%%/gui/wxpython/gui_core/wrap.py
+%%GRASS_INST_DIR%%/gui/wxpython/history/__pycache__/browser%%PYTHON_EXT_SUFFIX%%.pyc
+%%GRASS_INST_DIR%%/gui/wxpython/history/__pycache__/tree%%PYTHON_EXT_SUFFIX%%.pyc
+%%GRASS_INST_DIR%%/gui/wxpython/history/browser.py
+%%GRASS_INST_DIR%%/gui/wxpython/history/tree.py
 %%GRASS_INST_DIR%%/gui/wxpython/iclass/__init__.py
 %%GRASS_INST_DIR%%/gui/wxpython/iclass/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/iclass/__pycache__/dialogs%%PYTHON_EXT_SUFFIX%%.pyc
@@ -3657,7 +3708,11 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/gui/wxpython/location_wizard/dialogs.py
 %%GRASS_INST_DIR%%/gui/wxpython/location_wizard/wizard.py
 %%GRASS_INST_DIR%%/gui/wxpython/main_window/__pycache__/frame%%PYTHON_EXT_SUFFIX%%.pyc
+%%GRASS_INST_DIR%%/gui/wxpython/main_window/__pycache__/notebook%%PYTHON_EXT_SUFFIX%%.pyc
+%%GRASS_INST_DIR%%/gui/wxpython/main_window/__pycache__/page%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/main_window/frame.py
+%%GRASS_INST_DIR%%/gui/wxpython/main_window/notebook.py
+%%GRASS_INST_DIR%%/gui/wxpython/main_window/page.py
 %%GRASS_INST_DIR%%/gui/wxpython/mapdisp/__init__.py
 %%GRASS_INST_DIR%%/gui/wxpython/mapdisp/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/mapdisp/__pycache__/frame%%PYTHON_EXT_SUFFIX%%.pyc
@@ -4004,6 +4059,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/include/grass/nviz.h
 %%GRASS_INST_DIR%%/include/grass/ogsf.h
 %%GRASS_INST_DIR%%/include/grass/ortholib.h
+%%GRASS_INST_DIR%%/include/grass/parson.h
 %%GRASS_INST_DIR%%/include/grass/qtree.h
 %%GRASS_INST_DIR%%/include/grass/raster.h
 %%GRASS_INST_DIR%%/include/grass/raster3d.h
@@ -4101,6 +4157,8 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/lib/libgrass_nviz.so
 %%GRASS_INST_DIR%%/lib/libgrass_ogsf.%%VERS%%.so
 %%GRASS_INST_DIR%%/lib/libgrass_ogsf.so
+%%GRASS_INST_DIR%%/lib/libgrass_parson.%%VERS%%.so
+%%GRASS_INST_DIR%%/lib/libgrass_parson.so
 %%GRASS_INST_DIR%%/lib/libgrass_pngdriver.%%VERS%%.so
 %%GRASS_INST_DIR%%/lib/libgrass_pngdriver.so
 %%GRASS_INST_DIR%%/lib/libgrass_psdriver.%%VERS%%.so
@@ -4227,7 +4285,6 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/scripts/d.polar
 %%GRASS_INST_DIR%%/scripts/d.rast.edit
 %%GRASS_INST_DIR%%/scripts/d.rast.leg
-%%GRASS_INST_DIR%%/scripts/d.redraw
 %%GRASS_INST_DIR%%/scripts/d.shade
 %%GRASS_INST_DIR%%/scripts/d.to.rast
 %%GRASS_INST_DIR%%/scripts/d.what.rast
@@ -4432,5 +4489,4 @@ bin/grass%%MAJVER%%
 @dir %%GRASS_INST_DIR%%/demolocation/PERMANENT/fcell
 @dir %%GRASS_INST_DIR%%/demolocation/PERMANENT/hist
 @dir %%GRASS_INST_DIR%%/demolocation/PERMANENT/windows
-@dir %%GRASS_INST_DIR%%/gui/wxpython/scripts
 @dir %%GRASS_INST_DIR%%/share
