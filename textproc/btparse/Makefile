@@ -9,6 +9,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	C library for parsing and processing BibTeX data files
 WWW=		https://www.gerg.ca/software/btOOL/
 
+DEPRECATED=	btparse has not updated for 19 years while p5-Text-BibTeX is up-to-date. Use textproc/p5-Text-BibTeX instead
+EXPIRATION_DATE=2024-08-31
+
 USES=		libtool pathfix perl5
 USE_PERL5=	build
 
