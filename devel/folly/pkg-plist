@@ -1041,7 +1041,6 @@ include/folly/synchronization/SanitizeThread.h
 include/folly/synchronization/SaturatingSemaphore.h
 include/folly/synchronization/SmallLocks.h
 include/folly/synchronization/ThrottledLifoSem.h
-include/folly/synchronization/Utility.h
 include/folly/synchronization/WaitOptions.h
 include/folly/synchronization/detail/AtomicUtils.h
 include/folly/synchronization/detail/Hardware.h
