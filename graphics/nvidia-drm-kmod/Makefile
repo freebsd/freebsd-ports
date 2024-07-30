@@ -18,9 +18,9 @@ IGNORE=         not supported on anything but FreeBSD (missing linuxkpi function
 RUN_DEPENDS+=  ${KMODDIR}/nvidia-drm.ko:graphics/nvidia-drm-510-kmod
 .  elif ${OSVERSION} >= 1400097 && (${ARCH} == i386 || ${ARCH} == aarch64)
 RUN_DEPENDS+=  ${KMODDIR}/nvidia-drm.ko:graphics/nvidia-drm-510-kmod
-.  elif ${OSVERSION} >= 1400097 && ${OSVERSION} < 1500008
+.  elif ${OSVERSION} >= 1400097 && ${OSVERSION} < 1400508
 RUN_DEPENDS+=  ${KMODDIR}/nvidia-drm.ko:graphics/nvidia-drm-515-kmod
-.  elif ${OSVERSION} >= 1500008
+.  elif ${OSVERSION} >= 1400508
 RUN_DEPENDS+=  ${KMODDIR}/nvidia-drm.ko:graphics/nvidia-drm-61-kmod
 .  endif
 .endif
