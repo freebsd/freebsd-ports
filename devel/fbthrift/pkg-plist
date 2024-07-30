@@ -210,6 +210,7 @@ include/thrift/lib/cpp2/async/AsyncProcessorHelper.h
 include/thrift/lib/cpp2/async/ChannelCallbacks.h
 include/thrift/lib/cpp2/async/ClientBufferedStream.h
 include/thrift/lib/cpp2/async/ClientChannel.h
+include/thrift/lib/cpp2/async/ClientInterceptor.h
 include/thrift/lib/cpp2/async/ClientSinkBridge.h
 include/thrift/lib/cpp2/async/ClientStreamBridge.h
 include/thrift/lib/cpp2/async/Cpp2Channel.h
@@ -477,6 +478,7 @@ include/thrift/lib/cpp2/server/ThriftProcessor.h
 include/thrift/lib/cpp2/server/ThriftQuicServer.h
 include/thrift/lib/cpp2/server/ThriftServer.h
 include/thrift/lib/cpp2/server/ThriftServerConfig.h
+include/thrift/lib/cpp2/server/ThriftServerInternals.h
 include/thrift/lib/cpp2/server/TokenBucketConcurrencyController.h
 include/thrift/lib/cpp2/server/TransportRoutingHandler.h
 include/thrift/lib/cpp2/server/WeightedRequestPileQueue-inl.h
