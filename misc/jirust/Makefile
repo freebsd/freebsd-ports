@@ -10,6 +10,7 @@ WWW=		https://github.com/Code-Militia/jirust
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		compilation fails, see https://github.com/Code-Militia/jirust/issues/153
 BROKEN_i386=	compilation fails: undefined symbol: __atomic_is_lock_free
 
 BUILD_DEPENDS=	gmake:devel/gmake
