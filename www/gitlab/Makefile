@@ -4,6 +4,7 @@ DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
 .endif
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 # include patch to fix database migration
@@ -264,7 +265,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-gitaly>=17.0.1:net/rubygem-gitaly \
 	rubygem-kas-grpc>=0.5.0,1<0.6.0,1:net/rubygem-kas-grpc \
 	rubygem-grpc>=1.63.0<2:net/rubygem-grpc \
-	rubygem-google-protobuf>=3.25.3<4:devel/rubygem-google-protobuf \
+	rubygem-google-protobuf3>=3.25.3<4:devel/rubygem-google-protobuf3 \
 	rubygem-toml-rb>=2.2.0<3:www/rubygem-toml-rb \
 	rubygem-flipper026>=0.26.2<0.27:devel/rubygem-flipper026 \
 	rubygem-flipper-active_record-rails70>=0.26.2<0.27:databases/rubygem-flipper-active_record-rails70 \
