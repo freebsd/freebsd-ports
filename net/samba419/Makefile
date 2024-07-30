@@ -256,8 +256,8 @@ SUB_LIST+=			SAMBA4_BUNDLED_LDB=""
 SAMBA4_MODULEDIR=		${SAMBA4_LIBDIR}/modules
 .else
 SAMBA4_BUNDLED_LIBS+=		!ldb
-BUILD_DEPENDS+=			ldb25>=2.5.2:databases/ldb25
-RUN_DEPENDS+=			ldb25>=2.5.2:databases/ldb25
+BUILD_DEPENDS+=			ldb28>=2.8.1:databases/ldb28
+RUN_DEPENDS+=			ldb28>=2.8.1:databases/ldb28
 PLIST_SUB+=			SAMBA4_BUNDLED_LDB="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_LDB="@comment "
 SAMBA4_MODULEDIR=		${PREFIX}/lib/shared-modules
