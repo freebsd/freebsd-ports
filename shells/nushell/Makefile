@@ -1,5 +1,5 @@
 PORTNAME=	nushell
-DISTVERSION=	0.96.0
+DISTVERSION=	0.96.1
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -341,11 +341,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		omnipath-0.1.6 \
 		once_cell-1.19.0 \
 		open-5.3.0 \
-		openssl-0.10.64 \
+		openssl-0.10.66 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
 		openssl-src-300.2.3+3.2.1 \
-		openssl-sys-0.9.102 \
+		openssl-sys-0.9.103 \
 		option-ext-0.2.0 \
 		ordered-multimap-0.7.3 \
 		os_display-0.1.3 \
