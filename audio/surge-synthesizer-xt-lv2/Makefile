@@ -48,6 +48,7 @@ CMAKE_ON=	SURGE_BUILD_LV2 \
 		SURGE_SKIP_VST3
 CMAKE_OFF=	JUCE_PLUGINHOST_VST3 JUCE_PLUGINHOST_VST
 
+CFLAGS+=	-Wno-nan-infinity-disabled # workaround for https://github.com/surge-synthesizer/surge/issues/7730
 CXXFLAGS+=	-DPLUGIN_API="" -Dstricmp=strcasecmp -Dstrnicmp=strncasecmp -Dstrnicmp16=strncasecmp # for Juce
 
 .if !defined(WITH_DEBUG)
