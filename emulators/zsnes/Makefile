@@ -42,8 +42,10 @@ JMA_CONFIGURE_ENABLE=		jma
 OPENGL_CONFIGURE_ENABLE=	opengl
 X11_CONFIGURE_WITH=		x
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400000 &&  ${OSVERSION} < 1401000 )
-IGNORE= Does not build on FreeBSD 14.0 - zlib is too old
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400000 && ${OSVERSION} < 1401000
+IGNORE=		does not build on FreeBSD 14.0 - zlib is too old
 .endif
 
 post-patch:
