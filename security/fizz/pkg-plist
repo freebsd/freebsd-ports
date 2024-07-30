@@ -1,6 +1,5 @@
 include/fizz/backend/openssl/Hasher.h
 include/fizz/backend/openssl/OpenSSL.h
-include/fizz/backend/openssl/OpenSSLFactory.h
 include/fizz/backend/openssl/Properties.h
 include/fizz/backend/openssl/certificate/CertUtils-inl.h
 include/fizz/backend/openssl/certificate/CertUtils.h
@@ -124,6 +123,7 @@ include/fizz/protocol/FizzBase.h
 include/fizz/protocol/HandshakeContext-inl.h
 include/fizz/protocol/HandshakeContext.h
 include/fizz/protocol/KeyScheduler.h
+include/fizz/protocol/MultiBackendFactory.h
 include/fizz/protocol/Params.h
 include/fizz/protocol/Protocol.h
 include/fizz/protocol/StateMachine-inl.h
@@ -138,11 +138,11 @@ include/fizz/protocol/ech/ECHExtensions.h
 include/fizz/protocol/ech/Encryption.h
 include/fizz/protocol/ech/Types-inl.h
 include/fizz/protocol/ech/Types.h
+include/fizz/protocol/test/CertUtil.h
 include/fizz/protocol/test/Matchers.h
 include/fizz/protocol/test/Mocks.h
 include/fizz/protocol/test/ProtocolTest.h
-include/fizz/protocol/test/TestMessages.h
-include/fizz/protocol/test/Utilities.h
+include/fizz/protocol/test/TestUtil.h
 include/fizz/record/BufAndPaddingPolicy.h
 include/fizz/record/EncryptedRecordLayer.h
 include/fizz/record/Extensions-inl.h
