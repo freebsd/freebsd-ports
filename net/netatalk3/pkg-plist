@@ -4,7 +4,6 @@ bin/afppasswd
 %%DBUS%%bin/afpstats
 bin/apple_dump
 bin/asip-status
-bin/cnid2_create
 bin/dbd
 bin/macusers
 bin/netatalk-config
@@ -58,6 +57,7 @@ include/atalk/volume.h
 lib/libatalk.a
 lib/libatalk.so
 lib/libatalk.so.18
+lib/libatalk.so.18.0.0
 sbin/afpd
 sbin/cnid_dbd
 sbin/cnid_metad

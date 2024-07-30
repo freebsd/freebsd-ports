@@ -1,4 +1,4 @@
---- etc/uams/meson.build.orig	2024-06-17 15:24:00 UTC
+--- etc/uams/meson.build.orig	2024-07-18 15:25:55 UTC
 +++ etc/uams/meson.build
 @@ -7,7 +7,7 @@ uams_guest = shared_module(
      name_prefix: '',
@@ -36,25 +36,7 @@
  )
  
  ssl_links = []
-@@ -60,7 +60,7 @@ if have_ssl
-         name_prefix: '',
-         name_suffix: 'so',
-         install: true,
--        install_dir: libdir / 'netatalk',
-+        install_dir: libexecdir / 'netatalk-uams',
-         build_rpath: libdir,
-         install_rpath: libdir,
-     )
-@@ -73,7 +73,7 @@ if have_ssl
-         link_with: ssl_links,
-         name_prefix: '',
-         install: true,
--        install_dir: libdir / 'netatalk',
-+        install_dir: libexecdir / 'netatalk-uams',
-         build_rpath: libdir,
-         install_rpath: libdir,
-     )
-@@ -89,7 +89,7 @@ if have_ssl
+@@ -61,7 +61,7 @@ if have_ssl
              name_prefix: '',
              name_suffix: 'so',
              install: true,
@@ -63,7 +45,7 @@
              build_rpath: libdir,
              install_rpath: libdir,
          )
-@@ -102,20 +102,20 @@ if have_ssl
+@@ -73,7 +73,7 @@ if have_ssl
              link_with: ssl_links,
              name_prefix: '',
              install: true,
@@ -72,6 +54,59 @@
              build_rpath: libdir,
              install_rpath: libdir,
          )
+@@ -87,7 +87,7 @@ if have_ssl
+             name_prefix: '',
+             name_suffix: 'so',
+             install: true,
+-            install_dir: libdir / 'netatalk',
++            install_dir: libexecdir / 'netatalk-uams',
+         )
+         uams_dhx_passwd = static_library(
+             'uams_dhx_passwd',
+@@ -97,7 +97,7 @@ if have_ssl
+             link_with: ssl_links,
+             name_prefix: '',
+             install: true,
+-            install_dir: libdir / 'netatalk',
++            install_dir: libexecdir / 'netatalk-uams',
+         )
+     endif
+     if have_pam
+@@ -113,7 +113,7 @@ if have_ssl
+                 name_prefix: '',
+                 name_suffix: 'so',
+                 install: true,
+-                install_dir: libdir / 'netatalk',
++                install_dir: libexecdir / 'netatalk-uams',
+                 build_rpath: libdir,
+                 install_rpath: libdir,
+             )
+@@ -125,7 +125,7 @@ if have_ssl
+                 link_with: ssl_links,
+                 name_prefix: '',
+                 install: true,
+-                install_dir: libdir / 'netatalk',
++                install_dir: libexecdir / 'netatalk-uams',
+                 build_rpath: libdir,
+                 install_rpath: libdir,
+             )
+@@ -139,7 +139,7 @@ if have_ssl
+                 name_prefix: '',
+                 name_suffix: 'so',
+                 install: true,
+-                install_dir: libdir / 'netatalk',
++                install_dir: libexecdir / 'netatalk-uams',
+             )
+             uams_dhx_pam = static_library(
+                 'uams_dhx_pam',
+@@ -149,19 +149,19 @@ if have_ssl
+                 link_with: ssl_links,
+                 name_prefix: '',
+                 install: true,
+-                install_dir: libdir / 'netatalk',
++                install_dir: libexecdir / 'netatalk-uams',
+             )
+         endif
  
          install_symlink(
              'uams_dhx.so',
@@ -87,7 +122,7 @@
              pointing_to: 'uams_dhx_passwd.so',
          )
      endif
-@@ -132,7 +132,7 @@ if have_libgcrypt
+@@ -178,7 +178,7 @@ if have_libgcrypt
          name_prefix: '',
          name_suffix: 'so',
          install: true,
@@ -96,7 +131,7 @@
      )
  
      uams_dhx2_passwd = static_library(
-@@ -142,7 +142,7 @@ if have_libgcrypt
+@@ -188,7 +188,7 @@ if have_libgcrypt
          dependencies: [crypt, libgcrypt],
          name_prefix: '',
          install: true,
@@ -105,7 +140,7 @@
      )
      if have_pam
          uams_dhx2_pam_sources = ['uams_dhx2_pam.c']
-@@ -155,7 +155,7 @@ if have_libgcrypt
+@@ -201,7 +201,7 @@ if have_libgcrypt
              name_prefix: '',
              name_suffix: 'so',
              install: true,
@@ -114,7 +149,7 @@
          )
  
          uams_dhx2_pam = static_library(
-@@ -165,18 +165,18 @@ if have_libgcrypt
+@@ -211,18 +211,18 @@ if have_libgcrypt
              dependencies: [pam, libgcrypt],
              name_prefix: '',
              install: true,
@@ -136,7 +171,7 @@
              pointing_to: 'uams_dhx2_passwd.so',
          )
      endif
-@@ -193,7 +193,7 @@ if have_pam
+@@ -239,7 +239,7 @@ if have_pam
          name_prefix: '',
          name_suffix: 'so',
          install: true,
@@ -145,7 +180,7 @@
      )
  
      uams_pam = static_library(
-@@ -203,18 +203,18 @@ if have_pam
+@@ -249,18 +249,18 @@ if have_pam
          dependencies: pam,
          name_prefix: '',
          install: true,
@@ -167,25 +202,43 @@
          pointing_to: 'uams_passwd.so',
      )
  endif
-@@ -231,7 +231,7 @@ if have_ssl
-         name_prefix: '',
-         name_suffix: 'so',
-         install: true,
--        install_dir: libdir / 'netatalk',
-+        install_dir: libexecdir / 'netatalk-uams',
-         build_rpath: libdir,
-         install_rpath: libdir,
-     )
-@@ -244,7 +244,7 @@ if have_ssl
-         link_with: ssl_links,
-         name_prefix: '',
-         install: true,
--        install_dir: libdir / 'netatalk',
-+        install_dir: libexecdir / 'netatalk-uams',
-         build_rpath: libdir,
-         install_rpath: libdir,
-     )
-@@ -261,7 +261,7 @@ if enable_pgp_uam
+@@ -278,7 +278,7 @@ if have_ssl
+             name_prefix: '',
+             name_suffix: 'so',
+             install: true,
+-            install_dir: libdir / 'netatalk',
++            install_dir: libexecdir / 'netatalk-uams',
+             build_rpath: libdir,
+             install_rpath: libdir,
+         )
+@@ -290,7 +290,7 @@ if have_ssl
+             link_with: ssl_links,
+             name_prefix: '',
+             install: true,
+-            install_dir: libdir / 'netatalk',
++            install_dir: libexecdir / 'netatalk-uams',
+             build_rpath: libdir,
+             install_rpath: libdir,
+         )
+@@ -304,7 +304,7 @@ if have_ssl
+             name_prefix: '',
+             name_suffix: 'so',
+             install: true,
+-            install_dir: libdir / 'netatalk',
++            install_dir: libexecdir / 'netatalk-uams',
+         )
+         uams_randnum = static_library(
+             'uams_randnum',
+@@ -314,7 +314,7 @@ if have_ssl
+             link_with: ssl_links,
+             name_prefix: '',
+             install: true,
+-            install_dir: libdir / 'netatalk',
++            install_dir: libexecdir / 'netatalk-uams',
+         )
+     endif
+ endif
+@@ -330,7 +330,7 @@ if enable_pgp_uam
          name_prefix: '',
          name_suffix: 'so',
          install: true,
@@ -194,7 +247,7 @@
      )
  
      uams_pgp = static_library(
-@@ -271,7 +271,7 @@ if enable_pgp_uam
+@@ -340,7 +340,7 @@ if enable_pgp_uam
          dependencies: [crypt, ssl_deps],
          name_prefix: '',
          install: true,
@@ -203,7 +256,7 @@
      )
  endif
  
-@@ -287,7 +287,7 @@ if have_gssapi
+@@ -356,7 +356,7 @@ if have_krb5_uam
          name_prefix: '',
          name_suffix: 'so',
          install: true,
@@ -212,7 +265,7 @@
      )
  
      uams_gss = static_library(
-@@ -298,6 +298,6 @@ if have_gssapi
+@@ -367,6 +367,6 @@ if have_krb5_uam
          c_args: kerberos_c_args,
          name_prefix: '',
          install: true,
