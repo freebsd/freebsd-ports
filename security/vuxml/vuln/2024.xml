@@ -1,3 +1,62 @@
+  <vuln vid="fb0b5574-4e64-11ef-8a0f-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>127.0.6533.72</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>127.0.6533.72</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/07/stable-channel-update-for-desktop_23.html">
+	 <p>This update includes 22 security fixes:</p>
+	 <ul>
+	    <li>[349198731] High CVE-2024-6988: Use after free in Downloads. Reported by lime(@limeSec_) from TIANGONG Team of Legendsec at QI-ANXIN Group on 2024-06-25</li>
+	    <li>[349342289] High CVE-2024-6989: Use after free in Loader. Reported by Anonymous on 2024-06-25</li>
+	    <li>[346618785] High CVE-2024-6991: Use after free in Dawn. Reported by wgslfuzz on 2024-06-12</li>
+	    <li>[339686368] Medium CVE-2024-6994: Heap buffer overflow in Layout. Reported by Huang Xilin of Ant Group Light-Year Security Lab on 2024-05-10</li>
+	    <li>[343938078] Medium CVE-2024-6995: Inappropriate implementation in Fullscreen. Reported by Alesandro Ortiz on 2024-06-01</li>
+	    <li>[333708039] Medium CVE-2024-6996: Race in Frames. Reported by Louis Jannett (Ruhr University Bochum) on 2024-04-10</li>
+	    <li>[325293263] Medium CVE-2024-6997: Use after free in Tabs. Reported by Sven Dysthe (@svn-dys) on 2024-02-15</li>
+	    <li>[340098902] Medium CVE-2024-6998: Use after free in User Education. Reported by Sven Dysthe (@svn-dys) on 2024-05-13</li>
+	    <li>[340893685] Medium CVE-2024-6999: Inappropriate implementation in FedCM. Reported by Alesandro Ortiz on 2024-05-15</li>
+	    <li>[339877158] Medium CVE-2024-7000: Use after free in CSS. Reported by Anonymous on 2024-05-11</li>
+	    <li>[347509736] Medium CVE-2024-7001: Inappropriate implementation in HTML. Reported by Jake Archibald on 2024-06-17</li>
+	    <li>[338233148] Low CVE-2024-7003: Inappropriate implementation in FedCM. Reported by Alesandro Ortiz on 2024-05-01</li>
+	    <li>[40063014] Low CVE-2024-7004: Insufficient validation of untrusted input in Safe Browsing. Reported by Anonymous on 2023-02-10</li>
+	    <li>[40068800] Low CVE-2024-7005: Insufficient validation of untrusted input in Safe Browsing. Reported by Umar Farooq on 2023-08-04</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-6988</cvename>
+      <cvename>CVE-2024-6989</cvename>
+      <cvename>CVE-2024-6991</cvename>
+      <cvename>CVE-2024-6994</cvename>
+      <cvename>CVE-2024-6995</cvename>
+      <cvename>CVE-2024-6996</cvename>
+      <cvename>CVE-2024-6997</cvename>
+      <cvename>CVE-2024-6998</cvename>
+      <cvename>CVE-2024-6999</cvename>
+      <cvename>CVE-2024-7000</cvename>
+      <cvename>CVE-2024-7001</cvename>
+      <cvename>CVE-2024-7003</cvename>
+      <cvename>CVE-2024-7004</cvename>
+      <cvename>CVE-2024-7005</cvename>
+      <url>https://chromereleases.googleblog.com/2024/07/stable-channel-update-for-desktop_23.html</url>
+    </references>
+    <dates>
+      <discovery>2024-07-23</discovery>
+      <entry>2024-07-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8057d198-4d26-11ef-8e64-641c67a117d8">
     <topic>znc -- remote code execution vulnerability</topic>
     <affects>
