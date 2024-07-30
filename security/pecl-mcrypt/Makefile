@@ -12,11 +12,6 @@ LICENSE=	PHP301
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libmcrypt.so:security/libmcrypt
 
-USES=	php:pecl
-IGNORE_WITH_PHP=	84
-
-post-patch:
-	${REINPLACE_CMD} -e 's/RETURN_FALSE$$/RETURN_FALSE;/g' ${WRKSRC}/mcrypt.c
-	${REINPLACE_CMD} -e 's/RETURN_TRUE$$/RETURN_TRUE;/g' ${WRKSRC}/mcrypt.c
+USES=		php:pecl
 
 .include <bsd.port.mk>
