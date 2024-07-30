@@ -7170,7 +7170,6 @@
     SUBDIR += rubygem-google-iam-v1
     SUBDIR += rubygem-google-protobuf
     SUBDIR += rubygem-google-protobuf3
-    SUBDIR += rubygem-google-protobuf4
     SUBDIR += rubygem-googleapis-common-protos
     SUBDIR += rubygem-googleapis-common-protos-types
     SUBDIR += rubygem-graf
