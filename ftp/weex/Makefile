@@ -15,6 +15,7 @@ USES=		autoreconf cpe gettext-tools gmake ssl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cafile=${LOCALBASE}/share/certs/ca-root-nss.crt
+CFLAGS_powerpc=	-D_CALL_SYSV
 CPPFLAGS+=	-I${OPENSSLINC}
 LIBS+=		-L${OPENSSLLIB}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
