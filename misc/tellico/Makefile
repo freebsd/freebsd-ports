@@ -1,5 +1,6 @@
 PORTNAME=	tellico
 DISTVERSION=	3.5.5
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	http://tellico-project.org/files/
 
@@ -9,7 +10,7 @@ WWW=		https://tellico-project.org
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libbtparse.so:textproc/btparse \
+LIB_DEPENDS=	libbtparse.so:textproc/p5-Text-BibTeX \
 		libcdio.so:sysutils/libcdio \
 	 	libcsv.so:textproc/libcsv \
 		libexempi.so:textproc/exempi \
