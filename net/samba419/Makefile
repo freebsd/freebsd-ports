@@ -242,8 +242,8 @@ PLIST_SUB+=			SAMBA4_BUNDLED_TDB=""
 SUB_LIST+=			SAMBA4_BUNDLED_TDB=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!tdb
-BUILD_DEPENDS+=			tdb>=1.4.6:databases/tdb
-RUN_DEPENDS+=			tdb>=1.4.6:databases/tdb
+BUILD_DEPENDS+=			tdb>=1.4.9:databases/tdb
+RUN_DEPENDS+=			tdb>=1.4.9:databases/tdb
 PLIST_SUB+=			SAMBA4_BUNDLED_TDB="@comment "
 SUB_LIST+=			SAMBA4_BUNDLED_TDB="@comment "
 .endif
