@@ -37,6 +37,7 @@ bin/llama-embedding
 include/ggml-alloc.h
 include/ggml-backend.h
 include/ggml-blas.h
+include/ggml-cann.h
 include/ggml-cuda.h
 include/ggml-kompute.h
 include/ggml-metal.h
