@@ -1,6 +1,6 @@
---- man/CMakeLists.txt.orig	2021-12-17 16:07:27 UTC
+--- man/CMakeLists.txt.orig	2024-07-12 19:15:25 UTC
 +++ man/CMakeLists.txt
-@@ -23,26 +23,14 @@
+@@ -24,26 +24,14 @@ SET(MAN1
  # Copy man pages
  SET(MAN1
    comp_err.1
@@ -27,7 +27,7 @@
    mysqlimport.1
    mysqlman.1
    mysqlpump.1
-@@ -52,13 +40,23 @@ SET(MAN1
+@@ -53,13 +41,23 @@ SET(MAN1
    zlib_decompress.1
    )
  
@@ -57,7 +57,7 @@
  
  SET(MAN1_NDB
    ndb_blob_tool.1
-@@ -103,8 +101,14 @@ SET(MAN8_NDB
+@@ -106,8 +104,14 @@ SET(MAN8_NDB
    ndbmtd.8
  )
  

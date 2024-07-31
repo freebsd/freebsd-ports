@@ -1,6 +1,6 @@
---- storage/innobase/include/ut0crc32.h.orig	2023-11-27 21:02:58.728994000 +0100
-+++ storage/innobase/include/ut0crc32.h	2023-11-27 21:04:10.010362000 +0100
-@@ -132,7 +132,9 @@ CRC32_DEFAULT
+--- storage/innobase/include/ut0crc32.h.orig	2024-07-12 19:15:25 UTC
++++ storage/innobase/include/ut0crc32.h
+@@ -133,7 +133,9 @@ CRC32_DEFAULT
  #endif /* CRC32_ARM64 */
  
  #ifdef CRC32_ARM64_DEFAULT

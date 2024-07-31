@@ -1,6 +1,6 @@
---- libservices/CMakeLists.txt.orig	2021-12-17 16:07:27 UTC
+--- libservices/CMakeLists.txt.orig	2024-07-12 19:15:25 UTC
 +++ libservices/CMakeLists.txt
-@@ -47,7 +47,9 @@ SET(MYSQLSERVICES_SOURCES
+@@ -48,7 +48,9 @@ ADD_LIBRARY(mysqlservices STATIC ${MYSQLSERVICES_SOURC
    plugin_registry_service.c)
  
  ADD_LIBRARY(mysqlservices STATIC ${MYSQLSERVICES_SOURCES})

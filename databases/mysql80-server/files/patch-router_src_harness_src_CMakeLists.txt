@@ -1,6 +1,6 @@
---- router/src/harness/src/CMakeLists.txt.orig	2021-12-17 16:07:27 UTC
+--- router/src/harness/src/CMakeLists.txt.orig	2024-07-12 19:15:25 UTC
 +++ router/src/harness/src/CMakeLists.txt
-@@ -212,7 +212,6 @@ ELSE()
+@@ -222,7 +222,6 @@ ELSE()
    INSTALL(TARGETS harness-library
      LIBRARY
      DESTINATION ${ROUTER_INSTALL_LIBDIR} COMPONENT Router
@@ -8,7 +8,7 @@
      )
  ENDIF()
  
-@@ -243,7 +242,6 @@ INSTALL(TARGETS harness_stdx
+@@ -254,7 +253,6 @@ INSTALL(TARGETS harness_stdx
    RUNTIME DESTINATION ${ROUTER_INSTALL_BINDIR} COMPONENT Router
    ARCHIVE DESTINATION ${ROUTER_INSTALL_LIBDIR} COMPONENT Router
    LIBRARY DESTINATION ${ROUTER_INSTALL_LIBDIR} COMPONENT Router
@@ -16,7 +16,7 @@
    )
  
  ## harness_tls
-@@ -284,5 +282,4 @@ INSTALL(TARGETS harness_tls
+@@ -296,5 +294,4 @@ INSTALL(TARGETS harness_tls
    RUNTIME DESTINATION ${ROUTER_INSTALL_BINDIR} COMPONENT Router
    ARCHIVE DESTINATION ${ROUTER_INSTALL_LIBDIR} COMPONENT Router
    LIBRARY DESTINATION ${ROUTER_INSTALL_LIBDIR} COMPONENT Router

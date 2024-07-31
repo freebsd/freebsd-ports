@@ -1,6 +1,6 @@
---- libmysql/CMakeLists.txt.orig	2021-12-17 16:07:27 UTC
+--- libmysql/CMakeLists.txt.orig	2024-07-12 19:15:25 UTC
 +++ libmysql/CMakeLists.txt
-@@ -198,6 +198,11 @@ IF (WIN32 AND OPENSSL_APPLINK_C)
+@@ -205,6 +205,11 @@ ENDIF()
    )
  ENDIF()
  
@@ -12,7 +12,7 @@
  #
  # Include protocol tracing infrastructure and the test
  # trace plugin if enabled by build options.
-@@ -271,8 +276,15 @@ IF(WIN32)
+@@ -281,8 +286,15 @@ ENDIF()
    LIST(APPEND LIBS_TO_MERGE auth_win_client)
  ENDIF()
  
@@ -30,7 +30,7 @@
  
  # FIDO authentication client plugin
  ADD_SUBDIRECTORY(authentication_fido)
-@@ -288,6 +300,7 @@ MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERG
+@@ -298,6 +310,7 @@ MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERG
    COMPONENT Development
    LINK_LIBRARIES ${LIBS_TO_LINK}
    )
@@ -38,7 +38,7 @@
  
  # Visual Studio users need debug  static library for debug projects
  IF(MSVC)
-@@ -334,17 +347,27 @@ ENDIF()
+@@ -344,17 +357,27 @@ ENDIF()
  
  # Merge several convenience libraries into one big mysqlclient
  # and link them together into shared library.

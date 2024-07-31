@@ -1,6 +1,6 @@
---- include/my_stacktrace.h.orig	2021-12-17 16:07:27 UTC
+--- include/my_stacktrace.h.orig	2024-07-12 19:15:25 UTC
 +++ include/my_stacktrace.h
-@@ -43,7 +43,7 @@
+@@ -44,7 +44,7 @@
    HAVE_BACKTRACE - Linux, FreeBSD, OSX, Solaris
    _WIN32 - Windows
  */
