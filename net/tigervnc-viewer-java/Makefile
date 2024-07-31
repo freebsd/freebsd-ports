@@ -1,5 +1,4 @@
 PKGNAMESUFFIX=	-viewer-java
-PORTREVISION=	1
 CATEGORIES=	net java
 
 COMMENT=	TigerVNC Viewer
