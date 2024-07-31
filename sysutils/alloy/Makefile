@@ -23,32 +23,18 @@ GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_TARGET=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_BUILDFLAGS=	-ldflags='-X github.com/grafana/alloy/internal/build.Version=v${PORTVERSION}'
 
- # Copy the go.mod so we can get all the dist files during fetch.
-_USES_fetch+= 600:go-syntax-fetch
-go-syntax-fetch:
+post-fetch:
 	@${ECHO_MSG} "===> Fetching ${GO_MODNAME}/syntax dependency";
 	(cd ${DISTDIR}/${DIST_SUBDIR}; [ -e syntax/go.mod ] || mkdir syntax/; \
 		tar -xzf grafana-alloy-v${PORTVERSION}_GH0.tar.gz ${PORTNAME}-${PORTVERSION}/syntax/go.mod; \
 		cp ${PORTNAME}-${PORTVERSION}/syntax/go.mod syntax/go.mod)
-
-# Copy over the syntax/ directory from the source extract to ensure the go mod
-# replace for ./syntax is handled with the correct files on disk.
-_USES_extract+= 600:go-post-extract-syntax
-go-post-extract-syntax:
-	@cp -r ${WRKDIR}/${PORTNAME}-${PORTVERSION}/syntax ${GO_WRKSRC}/syntax;
-
- # Copy the go.mod so we can get all the dist files during fetch.
-_USES_fetch+= 601:go-datadog-fetch
-go-datadog-fetch:
 	@${ECHO_MSG} "===> Fetching ${GO_MODNAME}/internal/etc/datadogreceiver dependency";
 	(cd ${DISTDIR}/${DIST_SUBDIR}; [ -e internal/etc/datadogreceiver/go.mod ] || mkdir -p internal/etc/datadogreceiver/; \
 		tar -xzf grafana-alloy-v${PORTVERSION}_GH0.tar.gz ${PORTNAME}-${PORTVERSION}/internal/etc/datadogreceiver/go.mod; \
 		cp ${PORTNAME}-${PORTVERSION}/internal/etc/datadogreceiver/go.mod internal/etc/datadogreceiver/go.mod)
 
-# Copy over the internal/etc/datadogreceiver/ directory from the source extract to ensure the go mod
-# replace for ./internal/etc/datadogreceiver is handled with the correct files on disk.
-_USES_extract+= 601:go-post-extract-datadogreceiver
-go-post-extract-datadogreceiver:
+post-extract:
+	cp -r ${WRKDIR}/${PORTNAME}-${PORTVERSION}/syntax ${GO_WRKSRC}/syntax;
 	mkdir -p ${GO_WRKSRC}/internal/etc
 	cp -r ${WRKDIR}/${PORTNAME}-${PORTVERSION}/internal/etc/datadogreceiver ${GO_WRKSRC}/internal/etc/datadogreceiver;
 
