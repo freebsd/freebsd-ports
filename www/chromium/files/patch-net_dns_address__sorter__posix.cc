@@ -1,6 +1,6 @@
---- net/dns/address_sorter_posix.cc.orig	2024-04-19 13:02:56 UTC
+--- net/dns/address_sorter_posix.cc.orig	2024-07-30 11:12:21 UTC
 +++ net/dns/address_sorter_posix.cc
-@@ -27,6 +27,7 @@
+@@ -32,6 +32,7 @@
  #include "net/dns/netinet_in_var_ios.h"
  #else
  #include <netinet/in_var.h>

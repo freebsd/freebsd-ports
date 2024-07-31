@@ -1,7 +1,7 @@
---- chrome/browser/extensions/api/settings_private/prefs_util.cc.orig	2024-06-17 12:56:06 UTC
+--- chrome/browser/extensions/api/settings_private/prefs_util.cc.orig	2024-07-30 11:12:21 UTC
 +++ chrome/browser/extensions/api/settings_private/prefs_util.cc
-@@ -197,7 +197,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
-   (*s_allowlist)[::prefs::kSidePanelHorizontalAlignment] =
+@@ -202,7 +202,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
+   (*s_allowlist)[tab_groups::prefs::kAutoPinNewTabGroups] =
        settings_api::PrefType::kBoolean;
  
 -#if BUILDFLAG(IS_LINUX)
@@ -9,7 +9,7 @@
    (*s_allowlist)[::prefs::kUseCustomChromeFrame] =
        settings_api::PrefType::kBoolean;
  #endif
-@@ -208,7 +208,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
+@@ -213,7 +213,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
    // Appearance settings.
    (*s_allowlist)[::prefs::kCurrentThemeID] = settings_api::PrefType::kString;
    (*s_allowlist)[::prefs::kPolicyThemeColor] = settings_api::PrefType::kNumber;

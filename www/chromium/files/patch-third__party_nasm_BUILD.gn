@@ -1,4 +1,4 @@
---- third_party/nasm/BUILD.gn.orig	2024-06-24 21:00:43 UTC
+--- third_party/nasm/BUILD.gn.orig	2024-07-30 19:22:51 UTC
 +++ third_party/nasm/BUILD.gn
 @@ -63,6 +63,13 @@ config("nasm_config") {
  

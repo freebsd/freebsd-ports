@@ -1,5 +1,5 @@
---- third_party/vulkan-deps/vulkan-loader/src/BUILD.gn.orig	2024-02-23 21:04:38 UTC
-+++ third_party/vulkan-deps/vulkan-loader/src/BUILD.gn
+--- third_party/vulkan-loader/src/BUILD.gn.orig	2024-07-30 11:12:21 UTC
++++ third_party/vulkan-loader/src/BUILD.gn
 @@ -59,7 +59,7 @@ config("vulkan_internal_config") {
      defines += [
        "SYSCONFDIR=\"/etc\"",

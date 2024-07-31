@@ -1,6 +1,6 @@
---- third_party/blink/renderer/core/exported/web_view_impl.cc.orig	2024-06-17 12:56:06 UTC
+--- third_party/blink/renderer/core/exported/web_view_impl.cc.orig	2024-07-30 11:12:21 UTC
 +++ third_party/blink/renderer/core/exported/web_view_impl.cc
-@@ -425,7 +425,7 @@ SkFontHinting RendererPreferencesToSkiaHinting(
+@@ -427,7 +427,7 @@ SkFontHinting RendererPreferencesToSkiaHinting(
      const blink::RendererPreferences& prefs) {
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
@@ -9,7 +9,7 @@
    if (!prefs.should_antialias_text) {
      // When anti-aliasing is off, GTK maps all non-zero hinting settings to
      // 'Normal' hinting so we do the same. Otherwise, folks who have 'Slight'
-@@ -3388,7 +3388,7 @@ void WebViewImpl::UpdateFontRenderingFromRendererPrefs
+@@ -3380,7 +3380,7 @@ void WebViewImpl::UpdateFontRenderingFromRendererPrefs
        renderer_preferences_.use_subpixel_positioning);
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
