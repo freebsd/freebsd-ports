@@ -1,3 +1,40 @@
+  <vuln vid="15d398ea-4f73-11ef-8a0f-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>127.0.6533.88</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>127.0.6533.88</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/07/stable-channel-update-for-desktop_30.html">
+	 <p>This update includes 3 security fixes:</p>
+	 <ul>
+	    <li>[353034820] Critical CVE-2024-6990: Uninitialized Use in Dawn. Reported by gelatin dessert on 2024-07-15</li>
+	    <li>[352872238] High CVE-2024-7255: Out of bounds read in WebTransport. Reported by Marten Richter on 2024-07-13</li>
+	    <li>[354748060] High CVE-2024-7256: Insufficient data validation in Dawn. Reported by gelatin dessert on 2024-07-23</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-6990</cvename>
+      <cvename>CVE-2024-7255</cvename>
+      <cvename>CVE-2024-7256</cvename>
+      <url>https://chromereleases.googleblog.com/2024/07/stable-channel-update-for-desktop_30.html</url>
+    </references>
+    <dates>
+      <discovery>2024-07-30</discovery>
+      <entry>2024-07-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fb0b5574-4e64-11ef-8a0f-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
