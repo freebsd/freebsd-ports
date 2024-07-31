@@ -1,4 +1,4 @@
---- setup/iso_codes.py.orig	2024-07-12 04:19:04 UTC
+--- setup/iso_codes.py.orig	2024-07-31 01:47:58 UTC
 +++ setup/iso_codes.py
 @@ -2,6 +2,7 @@ import fnmatch
  # License: GPLv3 Copyright: 2023, Kovid Goyal <kovid at kovidgoyal.net>
@@ -8,7 +8,7 @@
  import optparse
  import os
  import shutil
-@@ -24,40 +25,59 @@ class ISOData(Command):
+@@ -24,40 +25,60 @@ class ISOData(Command):
      description = 'Get ISO codes name localization data'
      top_level_filename =  'iso-codes-main'
      _zip_data = None
@@ -60,10 +60,11 @@
  
      def extract_po_files(self, name: str, output_dir: str) -> None:
          name = name.split('.', 1)[0]
-         pat = f'{self.top_level_filename}/{name}/*.po'
+-        pat = f'{self.top_level_filename}/{name}/*.po'
 -        with zipfile.ZipFile(BytesIO(self.zip_data)) as zf:
 -            for name in fnmatch.filter(zf.namelist(), pat):
 +        if self.extracted:
++            pat = f'{self.top_level}/{name}/*.po'
 +            for name in glob.glob(pat):
                  dest = os.path.join(output_dir, name.split('/')[-1])
 -                zi = zf.getinfo(name)
@@ -73,6 +74,7 @@
 -                os.utime(dest, (date_time, date_time))
 +                shutil.copy2(name, dest)
 +        else:
++            pat = f'{self.top_level_filename}/{name}/*.po'
 +            with zipfile.ZipFile(BytesIO(self.zip_data)) as zf:
 +                for name in fnmatch.filter(zf.namelist(), pat):
 +                    dest = os.path.join(output_dir, name.split('/')[-1])
