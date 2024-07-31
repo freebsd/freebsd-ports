@@ -1,9 +1,5 @@
 bin/xcurses-config
-include/xcurses.h
 include/xcurses/curses.h
 include/xcurses/panel.h
-include/xcurses/term.h
-include/xpanel.h
 lib/libXCurses.a
 lib/libXCurses.so
-lib/libXCurses.so.2
