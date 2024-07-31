@@ -15,9 +15,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex llvm${_LLVM_VERSION}>=0:devel/llvm${_LLVM_VERSION}
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 
-USES=		bison cpe desktop-file-utils gmake localbase \
+# Only devel/llvm17 and later come with necessary include files - PR274542
+USES=		bison cpe desktop-file-utils gmake \
+		llvm:17,build,noexport localbase \
 		pkgconfig sdl shebangfix tar:xz
 USE_GCC=	yes
 USE_SDL=	sdl2
@@ -61,8 +63,8 @@ USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 SHEBANG_FILES=	tools/make_requests tools/winemaker/winemaker \
 		tools/winedump/function_grep.pl
 
-BINARY_ALIAS+=	clang=${LOCALBASE}/bin/clang${_LLVM_VERSION} \
-		lld-link=${LOCALBASE}/bin/lld-link${_LLVM_VERSION}
+BINARY_ALIAS+=	clang=${LOCALBASE}/bin/clang${LLVM_VERSION} \
+		lld-link=${LOCALBASE}/bin/lld-link${LLVM_VERSION}
 
 SUB_FILES=	pkg-message
 
@@ -122,11 +124,6 @@ PLIST_SUB+=		GSTREAMER=""
 .else
 CONFIGURE_ARGS+=	--without-gstreamer
 PLIST_SUB+=		GSTREAMER="@comment "
-.endif
-
-# Only devel/llvm17 and later come with necessary include files - PR274542
-.if ${LLVM_DEFAULT} < 17
-_LLVM_VERSION=	17
 .endif
 
 .if ${ARCH} == amd64
