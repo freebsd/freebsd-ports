@@ -1,4 +1,4 @@
-TIMESTAMP = 1722402803
+TIMESTAMP = 1722370053
 SHA256 (rust/crates/addr2line-0.22.0.crate) = 6e4503c46a5c0c7844e948c9a4d6acd9f50cccb4de1c48eb9e291ea17470c678
 SIZE (rust/crates/addr2line-0.22.0.crate) = 39156
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -263,7 +263,7 @@ SHA256 (rust/crates/zstd-safe-7.2.0.crate) = fa556e971e7b568dc775c136fc9de8c779b
 SIZE (rust/crates/zstd-safe-7.2.0.crate) = 21118
 SHA256 (rust/crates/zstd-sys-2.0.12+zstd.1.5.6.crate) = 0a4e40c320c3cb459d9a9ff6de98cff88f4751ee9275d140e2be94a2b74e4c13
 SIZE (rust/crates/zstd-sys-2.0.12+zstd.1.5.6.crate) = 749063
-SHA256 (glandium-git-cinnabar-0.7.0-beta.1_GH0.tar.gz) = 3a38e5b897b241dbdb6a664e92132b575b5f475a36f01011da59f16aac13161a
-SIZE (glandium-git-cinnabar-0.7.0-beta.1_GH0.tar.gz) = 225699
+SHA256 (glandium-git-cinnabar-0.7.0beta1_GH0.tar.gz) = a286f91c256942e9eb14f4b49f8678c8c9ffe128f27239c8cd086a52c969929e
+SIZE (glandium-git-cinnabar-0.7.0beta1_GH0.tar.gz) = 225689
 SHA256 (git-for-windows-git-v2.46.0.windows.1_GH0.tar.gz) = 2bebb79de10ee59e9245c26085a75afecd87c8b6dc4023b0178ea75aa277e63a
 SIZE (git-for-windows-git-v2.46.0.windows.1_GH0.tar.gz) = 11443664

@@ -1,5 +1,5 @@
 PORTNAME=	git-cinnabar
-DISTVERSION=	0.7.0-beta.1
+DISTVERSION=	0.7.0beta1
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
