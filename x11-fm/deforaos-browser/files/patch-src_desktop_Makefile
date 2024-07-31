@@ -1,0 +1,14 @@
+--- src/desktop/Makefile.orig	2024-07-31 14:50:14 UTC
++++ src/desktop/Makefile
+@@ -67,9 +67,9 @@ install: all
+ 
+ install: all
+ 	$(MKDIR) $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 0755 $(OBJDIR)desktop$(EXEEXT) $(DESTDIR)$(BINDIR)/desktop$(EXEEXT)
++	$(INSTALL) -m 0755 $(OBJDIR)desktop$(EXEEXT) $(DESTDIR)$(BINDIR)/deforaos-desktop$(EXEEXT)
+ 	$(MKDIR) $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 0755 $(OBJDIR)desktopctl$(EXEEXT) $(DESTDIR)$(BINDIR)/desktopctl$(EXEEXT)
++	$(INSTALL) -m 0755 $(OBJDIR)desktopctl$(EXEEXT) $(DESTDIR)$(BINDIR)/deforaos-desktopctl$(EXEEXT)
+ 
+ uninstall:
+ 	$(RM) -- $(DESTDIR)$(BINDIR)/desktop$(EXEEXT)

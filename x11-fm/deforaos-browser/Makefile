@@ -1,5 +1,6 @@
 PORTNAME=	deforaos-browser
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	https://ftp.defora.org/pub/DeforaOS/Apps/Desktop/src/Browser/
 DISTNAME=	Browser-${PORTVERSION}
@@ -28,9 +29,16 @@ USE_GNOME=	gtk30 cairo gdkpixbuf2
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
+MAKE_ARGS+=	CPPFLAGS+=-DPROGNAME_BROWSER=\\\"deforaos-browser\\\"
+MAKE_ARGS+=	CPPFLAGS+=-DPROGNAME_COPY=\\\"deforaos-copy\\\"
+MAKE_ARGS+=	CPPFLAGS+=-DPROGNAME_DESKTOP=\\\"deforaos-desktop\\\"
+MAKE_ARGS+=	CPPFLAGS+=-DPROGNAME_DESKTOPCTL=\\\"deforaos-desktopctl\\\"
+MAKE_ARGS+=	CPPFLAGS+=-DPROGNAME_MOVE=\\\"deforaos-move\\\"
+MAKE_ARGS+=	CPPFLAGS+=-DPROGNAME_OPEN=\\\"deforaos-open\\\"
+MAKE_ARGS+=	CPPFLAGS+=-DPROGNAME_PROPERTIES=\\\"deforaos-properties\\\"
+MAKE_ARGS+=	CPPFLAGS+=-DPROGNAME_VIEW=\\\"deforaos-view\\\"
 MAKE_ENV+=	MANDIR=${STAGEDIR}${PREFIX}/share/man
 
-CONFLICTS_INSTALL=	schilyutils silo # bin/browser bin/copy
 post-patch:
 	${REINPLACE_CMD} -e 's|/lib/|/libdata/|g' \
 		${WRKSRC}/data/pkgconfig.sh
