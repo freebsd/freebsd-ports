@@ -1,4 +1,4 @@
---- electron/spec/api-desktop-capturer-spec.ts.orig	2023-08-14 18:19:06 UTC
+--- electron/spec/api-desktop-capturer-spec.ts.orig	2024-07-27 19:47:12 UTC
 +++ electron/spec/api-desktop-capturer-spec.ts
 @@ -43,7 +43,7 @@ ifdescribe(!process.arch.includes('arm') && process.pl
    });
@@ -36,7 +36,7 @@
        it.skip('desktopCapturer.getSources returned an empty source list');
        return;
      }
-@@ -191,7 +191,7 @@ ifdescribe(!process.arch.includes('arm') && process.pl
+@@ -205,7 +205,7 @@ ifdescribe(!process.arch.includes('arm') && process.pl
        // TODO(julien.isorce): investigate why |sources| is empty on the linux
        // bots while it is not on my workstation, as expected, with and without
        // the --ci parameter.

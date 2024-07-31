@@ -1,6 +1,6 @@
---- electron/spec/api-protocol-spec.ts.orig	2024-04-29 23:06:40 UTC
+--- electron/spec/api-protocol-spec.ts.orig	2024-07-27 19:47:12 UTC
 +++ electron/spec/api-protocol-spec.ts
-@@ -1710,7 +1710,7 @@ describe('protocol module', () => {
+@@ -1734,7 +1734,7 @@ describe('protocol module', () => {
      });
  
      // TODO(nornagon): this test doesn't pass on Linux currently, investigate.
