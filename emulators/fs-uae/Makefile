@@ -56,5 +56,10 @@ post-patch:
 		${WRKSRC}/src/support/socket.cpp
 	@${REINPLACE_CMD} -e 's|return NULL|return 0|' \
 		${WRKSRC}/src/memory.cpp
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1500019 || ( ${OSVERSION} >= 1401500 && ${OSVERSION} < 1500000 ))
+	# These versions moved ftime() from libcompat to libutil
+	@${REINPLACE_CMD} -e 's|-lcompat|-lutil|' \
+		${WRKSRC}/configure
+.endif
 
 .include <bsd.port.post.mk>
