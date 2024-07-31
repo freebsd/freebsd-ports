@@ -85,6 +85,11 @@ include/ossim/base/BlockStreamBuffer.h
 include/ossim/base/FactoryListBase.h
 include/ossim/base/ItemCache.h
 include/ossim/base/JsonInterface.h
+include/ossim/base/KwlNode.h
+include/ossim/base/KwlNodeFormatter.h
+include/ossim/base/KwlNodeJsonFormatter.h
+include/ossim/base/KwlNodeKwlFormatter.h
+include/ossim/base/KwlNodeXmlFormatter.h
 include/ossim/base/RWLock.h
 include/ossim/base/State.h
 include/ossim/base/StateFactoryBase.h
@@ -706,6 +711,7 @@ include/ossim/projection/ossimAlphaSensorHSI.h
 include/ossim/projection/ossimApplanixEcefModel.h
 include/ossim/projection/ossimApplanixUtmModel.h
 include/ossim/projection/ossimAzimEquDistProjection.h
+include/ossim/projection/ossimBilinearMapProjection.h
 include/ossim/projection/ossimBilinearProjection.h
 include/ossim/projection/ossimBngProjection.h
 include/ossim/projection/ossimBonneProjection.h
@@ -873,6 +879,7 @@ include/ossim/support_data/ossimLasPointRecordInterface.h
 include/ossim/support_data/ossimNitfAcftbTag.h
 include/ossim/support_data/ossimNitfAimidbTag.h
 include/ossim/support_data/ossimNitfBlockaTag.h
+include/ossim/support_data/ossimNitfBndplbTag.h
 include/ossim/support_data/ossimNitfCamsdaTag.h
 include/ossim/support_data/ossimNitfCommon.h
 include/ossim/support_data/ossimNitfCompressionHeader.h
@@ -954,6 +961,7 @@ include/ossim/support_data/ossimNitfUse00aTag.h
 include/ossim/support_data/ossimNitfVqCompressionHeader.h
 include/ossim/support_data/ossimNmeaMessage.h
 include/ossim/support_data/ossimNmeaMessageSequencer.h
+include/ossim/support_data/ossimPleiadesMetaData.h
 include/ossim/support_data/ossimPpjFrameSensorFile.h
 include/ossim/support_data/ossimQuickbirdMetaData.h
 include/ossim/support_data/ossimQuickbirdRpcHeader.h
@@ -1074,8 +1082,8 @@ include/ossim/vpfutil/vpftidx.h
 include/ossim/vpfutil/vpfview.h
 include/ossim/vpfutil/xmemory.h
 lib/libossim.so
-lib/libossim.so.1
-lib/libossim.so.1.9.0
+lib/libossim.so.2
+lib/libossim.so.2.12.0
 %%DATADIR%%/fonts/arial.ttf
 %%DATADIR%%/fonts/times.ttf
 %%DATADIR%%/projection/ossim_epsg_projections-v7_4.csv
