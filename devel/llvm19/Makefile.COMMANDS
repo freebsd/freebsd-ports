@@ -10,6 +10,7 @@ LLVM_COMMANDS=	\
 		llvm-bitcode-strip \
 		llvm-cat \
 		llvm-cfi-verify \
+		llvm-cgdata \
 		llvm-config \
 		llvm-cov \
 		llvm-cvtres \
@@ -65,6 +66,7 @@ LLVM_COMMANDS=	\
 		llvm-windres \
 		llvm-xray \
 		opt \
+		reduce-chunk-list \
 		sancov
 
 CLANG_COMMANDS=	\
@@ -98,7 +100,9 @@ EXTRAS_COMMANDS= \
 		clang-doc \
 		clang-include-cleaner \
 		clang-include-fixer \
+		clang-installapi \
 		clang-move \
+		clang-nvlink-wrapper \
 		clang-pseudo \
 		clang-query \
 		clang-rename \
@@ -114,7 +118,6 @@ FLANG_COMMANDS=	\
 		fir-opt \
 		flang \
 		flang-new \
-		flang-to-external-fc \
 		tco
 
 LIT_COMMANDS=	\
@@ -148,10 +151,9 @@ MLIR_COMMANDS=	\
 		mlir-query \
 		mlir-reduce \
 		mlir-tblgen \
+		mlir-transform-opt \
 		mlir-translate \
 		tblgen-lsp-server \
 		tblgen-to-irdl
 
-OPENMP_COMMANDS=	\
-		llvm-omp-device-info \
-		llvm-omp-kernel-replay
+OPENMP_COMMANDS=

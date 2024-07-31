@@ -1560,6 +1560,7 @@
     SUBDIR += llvm16
     SUBDIR += llvm17
     SUBDIR += llvm18
+    SUBDIR += llvm19
     SUBDIR += lm4tools
     SUBDIR += lmdbg
     SUBDIR += lndir

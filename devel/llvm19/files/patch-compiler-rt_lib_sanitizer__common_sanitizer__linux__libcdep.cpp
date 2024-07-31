@@ -6,6 +6,6 @@
  #    define MAP_NORESERVE 0
 -extern const Elf_Auxinfo *__elf_aux_vector;
 +extern const Elf_Auxinfo *__elf_aux_vector __attribute__ ((weak));
+ extern "C" int __sys_sigaction(int signum, const struct sigaction *act,
+                                struct sigaction *oldact);
  #  endif
- 
- #  if SANITIZER_NETBSD
