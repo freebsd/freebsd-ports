@@ -1,4 +1,4 @@
-TIMESTAMP = 1721649828
+TIMESTAMP = 1722527110
 SHA256 (rust/crates/ahash-0.8.11.crate) = e89da841a80418a9b391ebaea17f5c112ffaaa96f621d2c285b5174da76b9011
 SIZE (rust/crates/ahash-0.8.11.crate) = 43607
 SHA256 (rust/crates/aho-corasick-1.1.3.crate) = 8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916
@@ -283,5 +283,5 @@ SHA256 (rust/crates/zerocopy-0.7.32.crate) = 74d4d3961e53fa4c9a25a8637fc2bfaf259
 SIZE (rust/crates/zerocopy-0.7.32.crate) = 151096
 SHA256 (rust/crates/zerocopy-derive-0.7.32.crate) = 9ce1b18ccd8e73a9321186f97e46f9f04b778851177567b1975109d26a08d2a6
 SIZE (rust/crates/zerocopy-derive-0.7.32.crate) = 37623
-SHA256 (Wilfred-difftastic-0.59.0_GH0.tar.gz) = 2298ec0c480a3ec98799ecfb065403e13fa225f8ed6fca858fdf8c4efdb0dc69
-SIZE (Wilfred-difftastic-0.59.0_GH0.tar.gz) = 43984897
+SHA256 (Wilfred-difftastic-0.60.0_GH0.tar.gz) = 4346b269240f3beff153758d0a2313accc79645ee21b36cfcc71ac0fca5d9b5d
+SIZE (Wilfred-difftastic-0.60.0_GH0.tar.gz) = 44037544
