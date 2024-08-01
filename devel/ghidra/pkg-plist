@@ -1,4 +1,5 @@
 bin/ghidra
+share/applications/ghidra.desktop
 %%DATADIR%%/Extensions/Eclipse/GhidraDev/GhidraDev-3.1.0.zip
 %%DATADIR%%/Extensions/Eclipse/GhidraDev/GhidraDev_README.html
 %%DATADIR%%/Extensions/Eclipse/GhidraSleighEditor/GhidraSleighEditor-1.0.2.zip
@@ -181,7 +182,6 @@ bin/ghidra
 %%DATADIR%%/GPL/licenses/Modified_Nuvola_Icons_-_LGPL_2.1.txt
 %%DATADIR%%/GPL/licenses/Public_Domain.txt
 %%DATADIR%%/GPL/nativeBuildProperties.gradle
-%%DATADIR%%/GPL/nativeBuildProperties.gradle.orig
 %%DATADIR%%/GPL/nativePlatforms.gradle
 %%DATADIR%%/GPL/settings.gradle
 %%DATADIR%%/GPL/utils.gradle
@@ -4569,6 +4569,7 @@ bin/ghidra
 %%DATADIR%%/docs/languages/index.html
 %%DATADIR%%/docs/languages/manual_index.txt
 %%DATADIR%%/docs/languages/versioning.html
+%%DATADIR%%/ghidra.svg
 %%DATADIR%%/ghidraRun
 %%DATADIR%%/ghidraRun.bat
 %%DATADIR%%/licenses/Apache_License_2.0.txt

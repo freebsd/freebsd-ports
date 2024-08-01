@@ -23,14 +23,28 @@ CPE_VENDOR=	nsa
 USE_JAVA=	yes
 JAVA_VERSION=	17+
 
-SHEBANG_FILES=	Ghidra/Debug/Debugger-agent-gdb/data/debugger-launchers/local-gdb.sh \
-		Ghidra/Debug/Debugger-agent-gdb/data/debugger-launchers/qemu-gdb.sh \
-		Ghidra/Debug/Debugger-agent-gdb/data/debugger-launchers/ssh-gdb.sh \
-		Ghidra/Debug/Debugger-agent-gdb/data/debugger-launchers/ssh-gdbserver.sh \
-		Ghidra/Debug/Debugger-agent-gdb/data/debugger-launchers/wine-gdb.sh \
-		Ghidra/Features/BSim/make-postgres.sh \
+SHEBANG_FILES=	Ghidra/Features/BSim/make-postgres.sh \
+		ghidraRun \
+		server/ghidraSvr \
 		server/jaas_external_program.example.sh \
-		support/GhidraGo/ghidraGo
+		server/svrAdmin \
+		server/svrInstall \
+		server/svrUninstall \
+		support/analyzeHeadless \
+		support/bsim \
+		support/bsim_ctl \
+		support/buildGhidraJar \
+		support/buildNatives \
+		support/convertStorage \
+		support/gdbGADPServerRun \
+		support/ghidraClean \
+		support/ghidraDebug \
+		support/GhidraGo/ghidraGo \
+		support/launch.sh \
+		support/pythonRun \
+		support/sleigh
+
+SUB_FILES=	ghidra.desktop
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${DISTVERSION}_PUBLIC
 
@@ -43,9 +57,10 @@ TMP_DIRS=	Ghidra/Ghidra/.gradle Ghidra/Features/Decompiler/build/objs \
 		Ghidra/Features/Decompiler/build/tmp \
 		Ghidra/Features/FileFormats/build/objs \
 		Ghidra/Features/FileFormats/build/tmp GPL/.gradle \
-		GPL/DemanglerGnu/build/objs GPL/DemanglerGnu/build/tmp
+		GPL/DemanglerGnu/build/objs GPL/DemanglerGnu/build/tmp \
+		GPL/nativeBuildProperties.gradle.orig
 
-STRIP_FILES=	Ghidra/Features/FileFormats/${BUILD_SUBDIR}/lzfse \
+PROGRAM_FILES=	Ghidra/Features/FileFormats/${BUILD_SUBDIR}/lzfse \
 		Ghidra/Features/Decompiler/${BUILD_SUBDIR}/decompile \
 		Ghidra/Features/Decompiler/${BUILD_SUBDIR}/sleigh \
 		GPL/DemanglerGnu/${BUILD_SUBDIR}/demangler_gnu_v2_24 \
@@ -55,15 +70,25 @@ do-build:
 	@cd ${WRKSRC}/Ghidra && ${GRADLE_RUN} buildNatives
 	@cd ${WRKSRC}/GPL/DemanglerGnu && ${GRADLE_RUN} build
 
+pre-install:
+	${REINPLACE_CMD} '1s|bash$$|bash\n\nexport JAVA_HOME="${JAVA_HOME}"|g' ${WRKSRC}/ghidraRun
+
 do-install:
 .for F in ${TMP_DIRS}
 	${RM} -r ${WRKSRC}/${F}
 .endfor
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
-	${RLN} ${STAGEDIR}${DATADIR}/ghidraRun ${STAGEDIR}/${PREFIX}/bin/ghidra
-.for F in ${STRIP_FILES}
-	${STRIP_CMD} ${STAGEDIR}${DATADIR}/${F}
+.for F in ${SHEBANG_FILES}
+	${RM} ${STAGEDIR}${DATADIR}/${F}
+	${INSTALL_SCRIPT} ${WRKSRC}/${F} ${STAGEDIR}${DATADIR}/${F}
 .endfor
+.for F in ${PROGRAM_FILES}
+	${RM} ${STAGEDIR}${DATADIR}/${F}
+	${INSTALL_PROGRAM} ${WRKSRC}/${F} ${STAGEDIR}${DATADIR}/${F}
+.endfor
+	${INSTALL_DATA} ${WRKDIR}/ghidra.desktop ${STAGEDIR}/${PREFIX}/share/applications
+	${INSTALL_DATA} ${FILESDIR}/ghidra.svg ${STAGEDIR}${DATADIR}/ghidra.svg
+	${RLN} ${STAGEDIR}${DATADIR}/ghidraRun ${STAGEDIR}/${PREFIX}/bin/ghidra
 	cd ${STAGEDIR}${DATADIR}/support && ${MV} launch.properties launch.properties.sample
 
 .include <bsd.port.mk>
