@@ -16,6 +16,7 @@
     SUBDIR += xf86-video-ati
     SUBDIR += xf86-video-dummy
     SUBDIR += xf86-video-intel
+    SUBDIR += xf86-video-mga
     SUBDIR += xf86-video-nv
     SUBDIR += xf86-video-qxl
     SUBDIR += xf86-video-scfb
