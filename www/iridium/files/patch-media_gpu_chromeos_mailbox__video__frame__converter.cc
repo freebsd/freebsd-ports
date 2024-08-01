@@ -1,6 +1,6 @@
---- media/gpu/chromeos/mailbox_video_frame_converter.cc.orig	2024-06-25 12:08:48 UTC
+--- media/gpu/chromeos/mailbox_video_frame_converter.cc.orig	2024-08-01 05:47:53 UTC
 +++ media/gpu/chromeos/mailbox_video_frame_converter.cc
-@@ -65,7 +65,7 @@ viz::SharedImageFormat GetSharedImageFormat(gfx::Buffe
+@@ -67,7 +67,7 @@ viz::SharedImageFormat GetSharedImageFormat(gfx::Buffe
                      << static_cast<int>(buffer_format);
        NOTREACHED_NORETURN();
    }

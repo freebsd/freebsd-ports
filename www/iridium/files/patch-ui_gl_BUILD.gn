@@ -1,4 +1,4 @@
---- ui/gl/BUILD.gn.orig	2024-06-25 12:08:48 UTC
+--- ui/gl/BUILD.gn.orig	2024-08-01 05:47:53 UTC
 +++ ui/gl/BUILD.gn
 @@ -153,8 +153,6 @@ component("gl") {
      defines += [ "GPU_ENABLE_SERVICE_LOGGING" ]
@@ -17,7 +17,7 @@
      "//ui/events/platform",
      "//ui/gfx",
      "//ui/gfx/geometry",
-@@ -378,7 +375,6 @@ component("gl") {
+@@ -374,7 +371,6 @@ component("gl") {
      data_deps += [
        "//third_party/angle:libEGL",
        "//third_party/angle:libGLESv2",
@@ -25,7 +25,7 @@
      ]
      if (enable_swiftshader) {
        data_deps += [
-@@ -578,7 +574,6 @@ test("gl_unittests") {
+@@ -573,7 +569,6 @@ test("gl_unittests") {
  
    data_deps = [
      "//testing/buildbot/filters:gl_unittests_filters",

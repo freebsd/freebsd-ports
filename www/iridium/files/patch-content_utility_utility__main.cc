@@ -1,8 +1,8 @@
---- content/utility/utility_main.cc.orig	2024-06-25 12:08:48 UTC
+--- content/utility/utility_main.cc.orig	2024-08-01 05:47:53 UTC
 +++ content/utility/utility_main.cc
-@@ -38,17 +38,21 @@
- #include "third_party/icu/source/common/unicode/unistr.h"
- #include "third_party/icu/source/i18n/unicode/timezone.h"
+@@ -36,17 +36,21 @@
+ #include "services/screen_ai/buildflags/buildflags.h"
+ #include "services/tracing/public/cpp/trace_startup.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
@@ -23,7 +23,7 @@
  #include "services/audio/audio_sandbox_hook_linux.h"
  #include "services/network/network_sandbox_hook_linux.h"
  // gn check is not smart enough to realize that this include only applies to
-@@ -60,10 +64,15 @@
+@@ -58,10 +62,15 @@
  #endif
  #endif
  
@@ -40,7 +40,7 @@
  #if BUILDFLAG(IS_CHROMEOS_ASH)
  #include "chromeos/ash/components/assistant/buildflags.h"
  #include "chromeos/ash/services/ime/ime_sandbox_hook.h"
-@@ -75,7 +84,7 @@
+@@ -73,7 +82,7 @@
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
  #if (BUILDFLAG(ENABLE_SCREEN_AI_SERVICE) && \
@@ -49,7 +49,7 @@
  #include "services/screen_ai/public/cpp/utilities.h"  // nogncheck
  #include "services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.h"  // nogncheck
  #endif
-@@ -102,7 +111,7 @@ namespace content {
+@@ -100,7 +109,7 @@ namespace content {
  
  namespace {
  
@@ -58,7 +58,7 @@
  std::vector<std::string> GetNetworkContextsParentDirectories() {
    base::MemoryMappedFile::Region region;
    base::ScopedFD read_pipe_fd = base::FileDescriptorStore::GetInstance().TakeFD(
-@@ -129,9 +138,10 @@ std::vector<std::string> GetNetworkContextsParentDirec
+@@ -127,9 +136,10 @@ std::vector<std::string> GetNetworkContextsParentDirec
    return dirs;
  }
  
@@ -70,7 +70,7 @@
        sandbox_type == sandbox::mojom::Sandbox::kHardwareVideoDecoding ||
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
        sandbox_type == sandbox::mojom::Sandbox::kHardwareVideoEncoding;
-@@ -146,6 +156,7 @@ bool ShouldUseAmdGpuPolicy(sandbox::mojom::Sandbox san
+@@ -144,6 +154,7 @@ bool ShouldUseAmdGpuPolicy(sandbox::mojom::Sandbox san
  
    return false;
  }
@@ -78,7 +78,7 @@
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_WIN)
-@@ -250,7 +261,8 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -241,7 +252,8 @@ int UtilityMain(MainFunctionParams parameters) {
      CHECK(on_device_model::OnDeviceModelService::PreSandboxInit());
    }
  
@@ -88,7 +88,7 @@
    // Thread type delegate of the process should be registered before first
    // thread type change in ChildProcess constructor. It also needs to be
    // registered before the process has multiple threads, which may race with
-@@ -262,7 +274,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -253,7 +265,7 @@ int UtilityMain(MainFunctionParams parameters) {
    }
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
@@ -97,7 +97,7 @@
    // Initializes the sandbox before any threads are created.
    // TODO(jorgelo): move this after GTK initialization when we enable a strict
    // Seccomp-BPF policy.
-@@ -300,7 +312,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -291,7 +303,7 @@ int UtilityMain(MainFunctionParams parameters) {
                               screen_ai::GetBinaryPathSwitch()));
        break;
  #endif
@@ -106,7 +106,7 @@
      case sandbox::mojom::Sandbox::kHardwareVideoDecoding:
        pre_sandbox_hook =
            base::BindOnce(&media::HardwareVideoDecodingPreSandboxHook);
-@@ -327,6 +339,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -318,6 +330,7 @@ int UtilityMain(MainFunctionParams parameters) {
      default:
        break;
    }
@@ -114,7 +114,7 @@
    if (!sandbox::policy::IsUnsandboxedSandboxType(sandbox_type) &&
        (parameters.zygote_child || !pre_sandbox_hook.is_null())) {
      sandbox_options.use_amd_specific_policies =
-@@ -334,6 +347,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -325,6 +338,11 @@ int UtilityMain(MainFunctionParams parameters) {
      sandbox::policy::Sandbox::Initialize(
          sandbox_type, std::move(pre_sandbox_hook), sandbox_options);
    }

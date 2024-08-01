@@ -1,4 +1,4 @@
---- build/linux/unbundle/icu.gn.orig	2023-04-13 18:16:16 UTC
+--- build/linux/unbundle/icu.gn.orig	2024-08-01 05:47:53 UTC
 +++ build/linux/unbundle/icu.gn
 @@ -17,6 +17,15 @@ config("icu_config") {
      "USING_SYSTEM_ICU=1",
@@ -16,3 +16,14 @@
      # U_EXPORT (defined in unicode/platform.h) is used to set public visibility
      # on classes through the U_COMMON_API and U_I18N_API macros (among others).
      # When linking against the system ICU library, we want its symbols to have
+@@ -59,6 +68,10 @@ source_set("icuuc") {
+     ":icu_config",
+     ":system_icuuc",
+   ]
++}
++
++group("icuuc_public") {
++  public_deps = [ ":icuuc" ]
+ }
+ 
+ shim_headers("icui18n_shim") {

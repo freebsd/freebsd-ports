@@ -1,6 +1,6 @@
---- chrome/browser/signin/signin_util.cc.orig	2024-06-25 12:08:48 UTC
+--- chrome/browser/signin/signin_util.cc.orig	2024-08-01 05:47:53 UTC
 +++ chrome/browser/signin/signin_util.cc
-@@ -80,7 +80,7 @@ CookiesMover::CookiesMover(base::WeakPtr<Profile> sour
+@@ -81,7 +81,7 @@ CookiesMover::CookiesMover(base::WeakPtr<Profile> sour
  CookiesMover::~CookiesMover() = default;
  
  void CookiesMover::StartMovingCookies() {

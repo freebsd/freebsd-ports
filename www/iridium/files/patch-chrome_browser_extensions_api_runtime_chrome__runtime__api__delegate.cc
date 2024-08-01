@@ -1,4 +1,4 @@
---- chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc.orig	2024-06-25 12:08:48 UTC
+--- chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc.orig	2024-08-01 05:47:53 UTC
 +++ chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc
 @@ -284,7 +284,9 @@ bool ChromeRuntimeAPIDelegate::GetPlatformInfo(Platfor
    } else if (strcmp(os, "linux") == 0) {
@@ -9,5 +9,5 @@
 +  } else if (strcmp(os, "freebsd") == 0) {
 +    info->os = extensions::api::runtime::PlatformOs::kLinux;
    } else {
-     NOTREACHED() << "Platform not supported: " << os;
+     NOTREACHED_IN_MIGRATION() << "Platform not supported: " << os;
      return false;
