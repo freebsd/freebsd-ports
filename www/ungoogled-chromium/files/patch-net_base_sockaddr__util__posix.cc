@@ -1,6 +1,6 @@
---- net/base/sockaddr_util_posix.cc.orig	2022-10-01 07:40:07 UTC
+--- net/base/sockaddr_util_posix.cc.orig	2024-07-31 14:19:23 UTC
 +++ net/base/sockaddr_util_posix.cc
-@@ -41,7 +41,8 @@ bool FillUnixAddress(const std::string& socket_path,
+@@ -46,7 +46,8 @@ bool FillUnixAddress(const std::string& socket_path,
      return true;
    }
  

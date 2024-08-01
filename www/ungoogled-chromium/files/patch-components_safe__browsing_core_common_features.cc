@@ -1,11 +1,20 @@
---- components/safe_browsing/core/common/features.cc.orig	2024-06-22 08:49:42 UTC
+--- components/safe_browsing/core/common/features.cc.orig	2024-07-31 14:19:23 UTC
 +++ components/safe_browsing/core/common/features.cc
-@@ -160,7 +160,7 @@ BASE_FEATURE(kFriendlierSafeBrowsingSettingsStandardPr
+@@ -168,7 +168,7 @@ BASE_FEATURE(kGooglePlayProtectPrompt,
  BASE_FEATURE(kHashPrefixRealTimeLookups,
               "SafeBrowsingHashPrefixRealTimeLookups",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_IOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_IOS) || BUILDFLAG(IS_BSD)
+              base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+              base::FEATURE_DISABLED_BY_DEFAULT
+@@ -253,7 +253,7 @@ constexpr base::FeatureParam<int> kReferrerChainEventM
+ BASE_FEATURE(kSafeBrowsingAsyncRealTimeCheck,
+              "SafeBrowsingAsyncRealTimeCheck",
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT

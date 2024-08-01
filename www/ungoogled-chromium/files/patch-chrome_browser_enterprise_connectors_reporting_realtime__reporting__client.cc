@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc.orig	2024-04-23 07:42:17 UTC
+--- chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc.orig	2024-07-31 14:19:23 UTC
 +++ chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc
 @@ -58,7 +58,7 @@
  #include "base/strings/utf_string_conversions.h"
@@ -7,9 +7,9 @@
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "chrome/browser/enterprise/signals/signals_aggregator_factory.h"
+ #include "chrome/browser/enterprise/signin/enterprise_signin_prefs.h"
  #include "components/device_signals/core/browser/signals_aggregator.h"
- #include "components/device_signals/core/common/signals_constants.h"
-@@ -132,7 +132,7 @@ void UploadSecurityEventReport(base::Value::Dict event
+@@ -133,7 +133,7 @@ void UploadSecurityEventReport(base::Value::Dict event
        std::move(upload_callback));
  }
  
@@ -18,7 +18,7 @@
  void PopulateSignals(base::Value::Dict event,
                       policy::CloudPolicyClient* client,
                       std::string name,
-@@ -420,7 +420,7 @@ void RealtimeReportingClient::ReportPastEvent(const st
+@@ -421,7 +421,7 @@ void RealtimeReportingClient::ReportPastEvent(const st
                             /*include_profile_user_name=*/false);
  }
  
@@ -27,7 +27,7 @@
  
  void AddCrowdstrikeSignalsToEvent(
      base::Value::Dict& event,
-@@ -479,7 +479,7 @@ void RealtimeReportingClient::ReportEventWithTimestamp
+@@ -480,7 +480,7 @@ void RealtimeReportingClient::ReportEventWithTimestamp
    if (include_profile_user_name) {
      event.Set(kKeyProfileUserName, GetProfileUserName());
    }

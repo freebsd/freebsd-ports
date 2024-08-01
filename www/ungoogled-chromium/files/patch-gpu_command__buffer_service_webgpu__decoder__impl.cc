@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/webgpu_decoder_impl.cc.orig	2024-06-22 08:49:42 UTC
+--- gpu/command_buffer/service/webgpu_decoder_impl.cc.orig	2024-07-31 14:19:23 UTC
 +++ gpu/command_buffer/service/webgpu_decoder_impl.cc
-@@ -1249,7 +1249,7 @@ void WebGPUDecoderImpl::RequestAdapterImpl(
+@@ -1294,7 +1294,7 @@ WGPUFuture WebGPUDecoderImpl::RequestAdapterImpl(
      force_fallback_adapter = true;
    }
  
@@ -9,7 +9,7 @@
    if (!shared_context_state_->GrContextIsVulkan() &&
        !shared_context_state_->IsGraphiteDawnVulkan() &&
        use_webgpu_adapter_ != WebGPUAdapterName::kOpenGLES) {
-@@ -1915,7 +1915,7 @@ WebGPUDecoderImpl::AssociateMailboxDawn(
+@@ -1967,7 +1967,7 @@ WebGPUDecoderImpl::AssociateMailboxDawn(
    }
  
  #if !BUILDFLAG(IS_WIN) && !BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_APPLE) && \

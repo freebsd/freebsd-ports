@@ -1,6 +1,6 @@
---- chrome/browser/ui/browser.h.orig	2024-06-22 08:49:42 UTC
+--- chrome/browser/ui/browser.h.orig	2024-07-31 14:19:23 UTC
 +++ chrome/browser/ui/browser.h
-@@ -330,7 +330,7 @@ class Browser : public TabStripModelObserver,
+@@ -340,7 +340,7 @@ class Browser : public TabStripModelObserver,
      std::optional<int64_t> display_id;
  #endif
  

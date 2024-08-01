@@ -1,4 +1,4 @@
---- components/eye_dropper/eye_dropper_view.cc.orig	2024-06-22 08:49:42 UTC
+--- components/eye_dropper/eye_dropper_view.cc.orig	2024-07-31 14:19:23 UTC
 +++ components/eye_dropper/eye_dropper_view.cc
 @@ -202,7 +202,7 @@ EyeDropperView::EyeDropperView(gfx::NativeView parent,
    // EyeDropper/WidgetDelegate.
@@ -8,4 +8,4 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // Use TYPE_MENU for Linux to ensure that the eye dropper view is displayed
    // above the color picker.
-   views::Widget::InitParams params(views::Widget::InitParams::TYPE_MENU);
+   views::Widget::InitParams params(

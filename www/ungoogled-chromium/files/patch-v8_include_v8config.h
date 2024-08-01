@@ -1,6 +1,6 @@
---- v8/include/v8config.h.orig	2024-02-25 20:22:18 UTC
+--- v8/include/v8config.h.orig	2024-07-31 14:19:23 UTC
 +++ v8/include/v8config.h
-@@ -185,6 +185,8 @@ path. Add it with -I<path> to the command line
+@@ -193,6 +193,8 @@ path. Add it with -I<path> to the command line
    && !defined(V8_TARGET_OS_FUCHSIA) \
    && !defined(V8_TARGET_OS_IOS) \
    && !defined(V8_TARGET_OS_LINUX) \
@@ -9,7 +9,7 @@
    && !defined(V8_TARGET_OS_MACOS) \
    && !defined(V8_TARGET_OS_WIN) \
    && !defined(V8_TARGET_OS_CHROMEOS)
-@@ -197,6 +199,8 @@ path. Add it with -I<path> to the command line
+@@ -205,6 +207,8 @@ path. Add it with -I<path> to the command line
    || defined(V8_TARGET_OS_FUCHSIA) \
    || defined(V8_TARGET_OS_IOS) \
    || defined(V8_TARGET_OS_LINUX) \
@@ -18,7 +18,7 @@
    || defined(V8_TARGET_OS_MACOS) \
    || defined(V8_TARGET_OS_WIN) \
    || defined(V8_TARGET_OS_CHROMEOS)
-@@ -218,6 +222,16 @@ path. Add it with -I<path> to the command line
+@@ -226,6 +230,16 @@ path. Add it with -I<path> to the command line
  
  #ifdef V8_OS_LINUX
  # define V8_TARGET_OS_LINUX

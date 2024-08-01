@@ -1,6 +1,6 @@
---- media/audio/sndio/audio_manager_sndio.cc.orig	2024-06-26 15:43:18 UTC
+--- media/audio/sndio/audio_manager_sndio.cc.orig	2024-07-31 14:19:23 UTC
 +++ media/audio/sndio/audio_manager_sndio.cc
-@@ -0,0 +1,241 @@
+@@ -0,0 +1,213 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -36,12 +36,6 @@
 +
 +// Default sample rate for input and output streams.
 +static const int kDefaultSampleRate = 48000;
-+
-+#if BUILDFLAG(IS_OPENBSD)
-+static const std::string kDefaultAudioBackend = "sndio";
-+#else
-+static const std::string kDefaultAudioBackend = "auto";
-+#endif
 +
 +void AddDefaultDevice(AudioDeviceNames* device_names) {
 +  DCHECK(device_names->empty());
@@ -171,67 +165,45 @@
 +    std::unique_ptr<AudioThread> audio_thread,
 +    AudioLogFactory* audio_log_factory) {
 +  DLOG(WARNING) << "CreateAudioManager";
-+  std::string audio_backend = kDefaultAudioBackend;
 +
-+  std::vector<std::string> kSupportedAudioBackends = {"auto"};
-+
-+#if defined(USE_SNDIO)
-+  kSupportedAudioBackends.push_back(std::string("sndio"));
-+#endif
-+#if defined(USE_PULSEAUDIO)
-+  kSupportedAudioBackends.push_back(std::string("pulse"));
-+#endif
-+#if defined(USE_ALSA)
-+  kSupportedAudioBackends.push_back(std::string("alsa"));
-+#endif
-+
-+  if (base::CommandLine::ForCurrentProcess()->HasSwitch(
-+          switches::kAudioBackend)) {
-+    audio_backend = base::CommandLine::ForCurrentProcess()->GetSwitchValueASCII(
-+        switches::kAudioBackend);
-+  }
++  auto _ab = kAudioBackendParam.Get();
 +
 +  // For testing allow audio output to be disabled.
 +  if (base::CommandLine::ForCurrentProcess()->HasSwitch(
-+          switches::kDisableAudioOutput)) {
++          switches::kDisableAudioOutput) ||
++	  !base::FeatureList::IsEnabled(media::kAudioBackend)) {
 +    return std::make_unique<FakeAudioManager>(std::move(audio_thread),
 +                                              audio_log_factory);
-+  }
-+
-+  if (std::find(std::begin(kSupportedAudioBackends), std::end(kSupportedAudioBackends),
-+      audio_backend) == std::end(kSupportedAudioBackends)) {
-+    LOG(ERROR) << "Unsupported audio backend specified. Falling back to " << kDefaultAudioBackend;
-+    audio_backend = kDefaultAudioBackend;
 +  }
 +
 +#if defined(USE_PULSEAUDIO)
 +  pa_threaded_mainloop* pa_mainloop = nullptr;
 +  pa_context* pa_context = nullptr;
-+  if ((audio_backend != "sndio" && audio_backend != "alsa") &&
-+      pulse::InitPulse(&pa_mainloop, &pa_context)) {
++  if (_ab != AudioBackend::kSndio && _ab != AudioBackend::kAlsa &&
++          pulse::InitPulse(&pa_mainloop, &pa_context)) {
 +    return std::make_unique<AudioManagerPulse>(
 +        std::move(audio_thread), audio_log_factory, pa_mainloop, pa_context);
-+  } else if (audio_backend == "auto") {
++  } else if (_ab == AudioBackend::kAuto) {
 +    LOG(WARNING) << "Falling back to SNDIO for audio output. PulseAudio is not "
 +                    "available or could not be initialized.";
 +  }
 +#endif
 +
 +#if defined(USE_SNDIO)
-+  if (audio_backend != "pulse" && audio_backend != "alsa") {
++  if (_ab != AudioBackend::kPulseAudio && _ab != AudioBackend::kAlsa) {
 +    return std::make_unique<AudioManagerSndio>(std::move(audio_thread),
 +                                              audio_log_factory);
-+  } else if (audio_backend == "auto") {
++  } else if (_ab == AudioBackend::kAuto) {
 +    LOG(WARNING) << "Falling back to ALSA audio output. SNDIO is not "
 +                    "available or could not be initialized.";
 +  }
 +#endif
 +
 +#if defined(USE_ALSA)
-+  if (audio_backend != "pulse" && audio_backend != "sndio") {
++  if (_ab != AudioBackend::kPulseAudio && _ab != AudioBackend::kSndio) {
 +    return std::make_unique<AudioManagerAlsa>(std::move(audio_thread),
 +                                              audio_log_factory);
-+  } else if (audio_backend == "auto") {
++  } else if (_ab == AudioBackend::kAuto) {
 +    LOG(WARNING) << "Falling back to fake audio output. ALSA is not "
 +                    "available or could not be initialized.";
 +  }

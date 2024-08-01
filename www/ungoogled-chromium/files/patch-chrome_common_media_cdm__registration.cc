@@ -1,21 +1,16 @@
---- chrome/common/media/cdm_registration.cc.orig	2024-05-23 20:04:36 UTC
+--- chrome/common/media/cdm_registration.cc.orig	2024-07-31 14:19:23 UTC
 +++ chrome/common/media/cdm_registration.cc
-@@ -30,11 +30,11 @@
- 
+@@ -33,7 +33,7 @@
  #if BUILDFLAG(ENABLE_WIDEVINE)
+ #include "components/cdm/common/cdm_manifest.h"
  #include "third_party/widevine/cdm/widevine_cdm_common.h"  // nogncheck
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- #include "base/native_library.h"
- #include "chrome/common/chrome_paths.h"
- #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN)
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- #include "base/no_destructor.h"
+ #include "base/native_library.h"
+ #include "chrome/common/chrome_paths.h"
  #include "chrome/common/media/component_widevine_cdm_hint_file_linux.h"
- #include "media/cdm/supported_audio_codecs.h"
-@@ -60,7 +60,7 @@ using Robustness = content::CdmInfo::Robustness;
- #if BUILDFLAG(ENABLE_WIDEVINE)
+@@ -86,7 +86,7 @@ void ReportLacrosUMA(LacrosBundledWidevine value) {
+ 
  #if (BUILDFLAG(BUNDLE_WIDEVINE_CDM) ||            \
       BUILDFLAG(ENABLE_WIDEVINE_CDM_COMPONENT)) && \
 -    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
@@ -23,7 +18,7 @@
  // Create a CdmInfo for a Widevine CDM, using |version|, |cdm_library_path|, and
  // |capability|.
  std::unique_ptr<content::CdmInfo> CreateWidevineCdmInfo(
-@@ -105,7 +105,7 @@ std::unique_ptr<content::CdmInfo> CreateCdmInfoFromWid
+@@ -131,7 +131,7 @@ std::unique_ptr<content::CdmInfo> CreateCdmInfoFromWid
          // BUILDFLAG(IS_CHROMEOS))
  
  #if BUILDFLAG(BUNDLE_WIDEVINE_CDM) && \
@@ -32,16 +27,16 @@
  // On Linux/ChromeOS we have to preload the CDM since it uses the zygote
  // sandbox. On Windows and Mac, CDM registration is handled by Component
  // Update (as the CDM can be loaded only when needed).
-@@ -129,7 +129,7 @@ content::CdmInfo* GetBundledWidevine() {
-         // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
+@@ -185,7 +185,7 @@ std::unique_ptr<content::CdmInfo> GetAshBundledWidevin
+ #endif  // BUILDFLAG(IS_CHROMEOS_LACROS)
  
- #if BUILDFLAG(ENABLE_WIDEVINE_CDM_COMPONENT) && \
--    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
-+    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD))
+ #if (BUILDFLAG(ENABLE_WIDEVINE_CDM_COMPONENT) &&             \
+-     (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH))) || \
++     (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD))) || \
+     BUILDFLAG(IS_CHROMEOS_LACROS)
  // This code checks to see if Component Updater picked a version of the Widevine
  // CDM to be used last time it ran. (Component Updater may choose the bundled
- // CDM if there is not a new version available for download.) If there is one
-@@ -171,7 +171,7 @@ void AddSoftwareSecureWidevine(std::vector<content::Cd
+@@ -232,7 +232,7 @@ void AddSoftwareSecureWidevine(std::vector<content::Cd
        /*supports_sub_key_systems=*/false, kWidevineCdmDisplayName,
        kWidevineCdmType, base::Version(), base::FilePath());
  
@@ -50,12 +45,12 @@
  #if defined(WIDEVINE_CDM_MIN_GLIBC_VERSION)
    base::Version glibc_version(gnu_get_libc_version());
    DCHECK(glibc_version.IsValid());
-@@ -429,7 +429,7 @@ void RegisterCdmInfo(std::vector<content::CdmInfo>* cd
-   DVLOG(3) << __func__ << " done with " << cdms->size() << " cdms";
+@@ -493,7 +493,7 @@ void RegisterCdmInfo(std::vector<content::CdmInfo>* cd
  }
  
--#if BUILDFLAG(ENABLE_WIDEVINE) && BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(ENABLE_WIDEVINE) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD))
- std::vector<content::CdmInfo> GetSoftwareSecureWidevineForTesting() {
+ #if BUILDFLAG(ENABLE_WIDEVINE) && \
+-    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH))
++    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD))
+ std::vector<content::CdmInfo> GetSoftwareSecureWidevine() {
    std::vector<content::CdmInfo> cdms;
    AddSoftwareSecureWidevine(&cdms);
