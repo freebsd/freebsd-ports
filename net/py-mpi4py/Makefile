@@ -4,7 +4,7 @@ CATEGORIES=	net parallel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Python bindings for MPI (OpenMPI)
 WWW=		https://github.com/mpi4py/mpi4py
 
