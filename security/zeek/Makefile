@@ -1,6 +1,5 @@
 PORTNAME=	zeek
-DISTVERSION=	6.0.4
-PORTREVISION=	1
+DISTVERSION=	7.0.0
 CATEGORIES=	security
 MASTER_SITES=	https://download.zeek.org/
 
@@ -14,7 +13,7 @@ BUILD_DEPENDS=	bison>=3.3:devel/bison \
 		flex>=2.6:textproc/flex \
 		swig>=4.0.2:devel/swig
 LIB_DEPENDS=	libcares.so:dns/c-ares
-RUN_DEPENDS=	c-ares>=1.18.1:dns/c-ares
+RUN_DEPENDS=	c-ares>=1.25.0:dns/c-ares
 
 USES=		bison cmake compiler:c++17-lang cpe gettext-runtime perl5 \
 		python shebangfix ssl
@@ -30,8 +29,44 @@ PORTSCOUT=	limit:^[0-9]*\.0\.
 
 CXXFLAGS_powerpc64=	-mpower8-vector
 
-SHEBANG_FILES=	auxil/zeekctl/auxil/trace-summary/trace-summary \
-		auxil/zeek-client/zeek-client
+SHEBANG_FILES=	\
+	auxil/broker/bindings/python/3rdparty/pybind11/docs/conf.py \
+	auxil/broker/bindings/python/3rdparty/pybind11/setup.py \
+	auxil/broker/bindings/python/3rdparty/pybind11/tools/make_changelog.py \
+	auxil/broker/bindings/python/3rdparty/pybind11/tools/setup_global.py.in \
+	auxil/broker/bindings/python/3rdparty/pybind11/tools/setup_main.py.in \
+	auxil/btest/btest \
+	auxil/btest/btest-setsid \
+	auxil/netcontrol-connectors/acld/acld.py \
+	auxil/netcontrol-connectors/command-line/command-line.py \
+	auxil/netcontrol-connectors/openflow/controller.py \
+	auxil/netcontrol-connectors/test/simple-client.py \
+	auxil/package-manager/zkg \
+	auxil/spicy/3rdparty/benchmark/tools/compare.py \
+	auxil/spicy/3rdparty/benchmark/tools/strip_asm.py \
+	auxil/spicy/3rdparty/doctest/scripts/bench/bench.py \
+	auxil/spicy/3rdparty/doctest/scripts/bench/run_all.py \
+	auxil/spicy/doc/scripts/spicy-doc-to-rst \
+	auxil/spicy/tests/Scripts/license-header.py \
+	auxil/spicy/tests/Scripts/stray_baselines.py \
+	auxil/vcpkg/ports/gobject-introspection/portfile.cmake \
+	auxil/zeek-aux/devel-tools/github-manage \
+	auxil/zeek-client/man/build.py \
+	auxil/zeek-client/zeek-client \
+	auxil/zeekctl/ZeekControl/test_cli.py \
+	auxil/zeekctl/auxil/pysubnettree/setup.py \
+	auxil/zeekctl/auxil/trace-summary/trace-summary \
+	auxil/zeekctl/bin/stats-to-csv \
+	auxil/zeekctl/bin/zeekctl.in \
+	auxil/zeekctl/bin/zeekctld.in \
+	auxil/zeekctl/testing/Cfg/bin/zeek__test \
+	auxil/zeekctl/testing/Scripts/diff-to-bytes-output \
+	auxil/zeekctl/util/extract-strictly-local-conns \
+	auxil/zeekctl/util/reformat-stats \
+	ci/collect-repo-info.py \
+	testing/coverage/coverage_cleanup.py \
+	testing/scripts/coverage-calc \
+	testing/scripts/httpd.py
 
 SUB_FILES=	pkg-message
 NO_MTREE=	yes
@@ -40,6 +75,7 @@ CMAKE_ON=	BROKER_DISABLE_DOC_EXAMPLES BROKER_DISABLE_TESTS \
 		BUILD_SHARED_LIBS BUILD_STATIC_BROKER INSTALL_AUX_TOOLS
 CMAKE_ARGS=	-DCARES_ROOT_DIR:PATH=${PREFIX} \
 		-DCMAKE_EXE_LINKER_FLAGS="${OPENSSL_LDFLAGS}" \
+		-DDISABLE_JAVASCRIPT:BOOL=ON \
 		-DINSTALL_BTEST:BOOL=OFF \
 		-DINSTALL_BTEST_PCAPS:BOOL=OFF \
 		-DINSTALL_ZKG:BOOL=OFF \
