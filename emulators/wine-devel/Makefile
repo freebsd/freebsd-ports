@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 
 # Only devel/llvm17 and later come with necessary include files - PR274542
 USES=		bison cpe desktop-file-utils gmake \
-		llvm:17,build,noexport localbase \
+		llvm:min=17,build,noexport localbase \
 		pkgconfig sdl shebangfix tar:xz
 USE_GCC=	yes
 USE_SDL=	sdl2
