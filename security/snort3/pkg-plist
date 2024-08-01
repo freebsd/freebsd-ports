@@ -227,6 +227,7 @@ include/snort/sfip/sf_cidr.h
 include/snort/sfip/sf_ip.h
 include/snort/sfip/sf_returns.h
 include/snort/stream/paf.h
+include/snort/stream/pafng.h
 include/snort/stream/stream.h
 include/snort/stream/stream_splitter.h
 include/snort/stream/udp/udp_session.h
