@@ -1,0 +1,108 @@
+commit 5e9091dab8858b25210a91d22fbbbfdee9c969ad
+Author: Roland McGrath <mcgrathr@google.com>
+Date:   2023-09-05T12:28:31-07:00
+
+    gold: Use char16_t, char32_t instead of uint16_t, uint32_t as character types
+    
+    The std::basic_string template type is only specified for
+    instantiations using character types.  Newer (LLVM) libc++
+    implementations no longer allow non-character integer types
+    to be used.
+    
+    gold/
+            * output.cc: Include <uchar.h>.
+            (Output_section::add_merge_input_section): Use char16_t and
+            char32_t for 2- and 4-byte entry size, respectively.
+            * stringpool.cc: Include <uchar.h>.
+            (Stringpool_template): Explicitly instantiate for char16_t,
+            char32_t instead of uint16_t, uint32_t.
+            * merge.cc (Output_merge_string): Likewise.
+
+diff --git gold/ChangeLog gold/ChangeLog
+index 93a1125cfed..54fb1c16e17 100644
+--- gold/ChangeLog
++++ gold/ChangeLog
+@@ -1,3 +1,17 @@
++2023-09-05  Roland McGrath  <mcgrathr@google.com>
++
++	The std::basic_string template type is only specified for
++	instantiations using character types.  Newer (LLVM) libc++
++	implementations no longer allow non-character integer types
++	to be used.
++	* output.cc: Include <uchar.h>.
++	(Output_section::add_merge_input_section): Use char16_t and
++	char32_t for 2- and 4-byte entry size, respectively.
++	* stringpool.cc: Include <uchar.h>.
++	(Stringpool_template): Explicitly instantiate for char16_t,
++	char32_t instead of uint16_t, uint32_t.
++	* merge.cc (Output_merge_string): Likewise.
++
+ 2023-07-03  Nick Clifton  <nickc@redhat.com>
+ 
+ 	* po/gold.pot: Regenerate.
+diff --git gold/merge.cc gold/merge.cc
+index c12efc9905e..ce31a792443 100644
+--- gold/merge.cc
++++ gold/merge.cc
+@@ -665,10 +665,10 @@ template
+ class Output_merge_string<char>;
+ 
+ template
+-class Output_merge_string<uint16_t>;
++class Output_merge_string<char16_t>;
+ 
+ template
+-class Output_merge_string<uint32_t>;
++class Output_merge_string<char32_t>;
+ 
+ #if defined(HAVE_TARGET_32_LITTLE) || defined(HAVE_TARGET_32_BIG)
+ template
+diff --git gold/output.cc gold/output.cc
+index a1978eb5f32..6053e4db33d 100644
+--- gold/output.cc
++++ gold/output.cc
+@@ -29,6 +29,7 @@
+ #include <unistd.h>
+ #include <sys/stat.h>
+ #include <algorithm>
++#include <uchar.h>
+ 
+ #ifdef HAVE_SYS_MMAN_H
+ #include <sys/mman.h>
+@@ -2706,10 +2707,10 @@ Output_section::add_merge_input_section(Relobj* object, unsigned int shndx,
+ 	      pomb = new Output_merge_string<char>(addralign);
+ 	      break;
+ 	    case 2:
+-	      pomb = new Output_merge_string<uint16_t>(addralign);
++	      pomb = new Output_merge_string<char16_t>(addralign);
+ 	      break;
+ 	    case 4:
+-	      pomb = new Output_merge_string<uint32_t>(addralign);
++	      pomb = new Output_merge_string<char32_t>(addralign);
+ 	      break;
+ 	    default:
+ 	      return false;
+diff --git gold/stringpool.cc gold/stringpool.cc
+index a2cd44d5244..b5ac1dd34ca 100644
+--- gold/stringpool.cc
++++ gold/stringpool.cc
+@@ -25,6 +25,7 @@
+ #include <cstring>
+ #include <algorithm>
+ #include <vector>
++#include <uchar.h>
+ 
+ #include "output.h"
+ #include "parameters.h"
+@@ -527,9 +528,9 @@ template
+ class Stringpool_template<char>;
+ 
+ template
+-class Stringpool_template<uint16_t>;
++class Stringpool_template<char16_t>;
+ 
+ template
+-class Stringpool_template<uint32_t>;
++class Stringpool_template<char32_t>;
+ 
+ } // End namespace gold.
