@@ -1,6 +1,6 @@
 PORTNAME=	youtui
 DISTVERSIONPREFIX=	ytmapi-rs/v
-DISTVERSION=	0.0.8
+DISTVERSION=	0.0.9
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
