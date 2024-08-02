@@ -4,6 +4,9 @@ PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/gnome-online-accounts/-/commit/
+PATCHFILES=	b9638e2418408be4906752297e700506766dcf20.patch:-p1
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Interface provider to access the user's online accounts
 WWW=		https://wiki.gnome.org/Projects/GnomeOnlineAccounts/
