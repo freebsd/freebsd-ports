@@ -18,7 +18,10 @@ share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/themes/aeroroot
 %%DATADIR%%/themes/apprentice
 %%DATADIR%%/themes/ayu-mirage
-%%DATADIR%%/themes/catppuccin
+%%DATADIR%%/themes/catppuccin-frappe
+%%DATADIR%%/themes/catppuccin-latte
+%%DATADIR%%/themes/catppuccin-macchiato
+%%DATADIR%%/themes/catppuccin-mocha
 %%DATADIR%%/themes/chiba-dark
 %%DATADIR%%/themes/derp
 %%DATADIR%%/themes/deus
@@ -41,7 +44,10 @@ share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/themes/noirblaze
 %%DATADIR%%/themes/nord
 %%DATADIR%%/themes/nordiq
+%%DATADIR%%/themes/nvim-dark
+%%DATADIR%%/themes/nvim-light
 %%DATADIR%%/themes/onedark
+%%DATADIR%%/themes/onehalf-dark
 %%DATADIR%%/themes/panda
 %%DATADIR%%/themes/paper-color-dark
 %%DATADIR%%/themes/paper-color-light
