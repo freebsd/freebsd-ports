@@ -1,7 +1,6 @@
 PORTNAME=	gptscript
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.2
-PORTREVISION=	0
+DISTVERSION=	0.9.3
 CATEGORIES=	lang
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -13,8 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules,1.22
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	gptscript-ai
 GO_MODULE=	github.com/gptscript-ai/gptscript
 OPTIONS_DEFINE=	EXAMPLES
 
