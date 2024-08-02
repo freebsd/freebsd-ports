@@ -449,6 +449,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lbry.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lci.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lcp.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/learningonscreen.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lecture2go.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lecturio.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/leeco.py
