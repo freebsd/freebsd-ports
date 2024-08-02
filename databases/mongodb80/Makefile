@@ -1,6 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	8.0.0-rc15
+DISTVERSION=	8.0.0-rc16
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -39,7 +39,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libyaml-cpp.so:devel/yaml-cpp \
 		libzstd.so:archivers/zstd
 
-USES=		compiler:c++20-lang cpe python:build scons shebangfix
+USES=		compiler:c++20-lang cpe python:build scons shebangfix ssl
 # gmake is used while running ${WRKSRC}/src/third_party/mozjs/gen-config.sh
 USES+=		gmake pkgconfig
 
@@ -61,6 +61,7 @@ MAKE_ARGS=	--allocator=system \
 		--disable-warnings-as-errors \
 		--libc++ \
 		--runtime-hardening=on \
+		--ssl \
 		--use-system-libunwind \
 		--use-system-pcre2 \
 		--use-system-snappy \
@@ -89,9 +90,9 @@ EXTRACT_AFTER_ARGS=	--exclude src/third_party/pcre2 \
 USERS=		mongodb
 GROUPS=		mongodb
 
-OPTIONS_DEFINE=		LTO NOAVX SASL SSL
+OPTIONS_DEFINE=		LTO NOAVX SASL
 OPTIONS_DEFINE_aarch64=	ARMV80A
-OPTIONS_DEFAULT=	NOAVX SASL SSL
+OPTIONS_DEFAULT=	NOAVX SASL
 
 # MongoDB on non-LSE ARM cpu like Raspberry Pi can work but is unsupported upstream.
 # Can give corruption on high concurrency.
@@ -107,9 +108,6 @@ NOAVX_MAKE_ARGS=	--experimental-optimization="-sandybridge"
 
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_MAKE_ARGS=		--use-sasl-client
-
-SSL_USES=	ssl
-SSL_MAKE_ARGS=	--ssl
 
 .include <bsd.port.pre.mk>
 
