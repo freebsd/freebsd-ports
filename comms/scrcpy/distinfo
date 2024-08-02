@@ -1,5 +1,5 @@
-TIMESTAMP = 1720664892
-SHA256 (scrcpy-server-v2.5) = 1488b1105d6aff534873a26bf610cd2aea06ee867dd7a4d9c6bb2c091396eb15
-SIZE (scrcpy-server-v2.5) = 69624
-SHA256 (Genymobile-scrcpy-v2.5_GH0.tar.gz) = 9a29ac5171dd81c250337d9b0500f1edbaf01044645b35f8993a191ffbb8597f
-SIZE (Genymobile-scrcpy-v2.5_GH0.tar.gz) = 415854
+TIMESTAMP = 1722599267
+SHA256 (scrcpy-server-v2.6) = 7b723ff79a27f14e6ebaaaae7ef9548c40651c94e64d178612b13adf7158eb2e
+SIZE (scrcpy-server-v2.6) = 71084
+SHA256 (Genymobile-scrcpy-v2.6_GH0.tar.gz) = d13ff4149d2ee0b40099348a57fa6d16e3fdebe7f6168f02f65ea9b3ceb337c1
+SIZE (Genymobile-scrcpy-v2.6_GH0.tar.gz) = 419604
