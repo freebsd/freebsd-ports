@@ -1,6 +1,6 @@
---- crates/cairo-lang-filesystem/src/detect.rs.orig	2023-07-04 19:04:42 UTC
+--- crates/cairo-lang-filesystem/src/detect.rs.orig	2024-08-02 16:35:10 UTC
 +++ crates/cairo-lang-filesystem/src/detect.rs
-@@ -7,6 +7,8 @@ pub fn detect_corelib() -> Option<PathBuf> {
+@@ -8,6 +8,8 @@ pub fn detect_corelib() -> Option<PathBuf> {
              for _ in 0..$up {
                  path.pop();
              }
