@@ -11,9 +11,9 @@ bin/llvm-bcanalyzer-devel
 bin/llvm-bitcode-strip-devel
 bin/llvm-cat-devel
 bin/llvm-cfi-verify-devel
-bin/llvm-cgdata-devel
 bin/llvm-config-devel
 bin/llvm-cov-devel
+bin/llvm-ctxprof-util-devel
 bin/llvm-cvtres-devel
 bin/llvm-cxxmap-devel
 %%CLANG%%bin/llvm-debuginfo-analyzer-devel
@@ -229,9 +229,9 @@ llvm-devel/bin/llvm-bitcode-strip
 llvm-devel/bin/llvm-c-test
 llvm-devel/bin/llvm-cat
 llvm-devel/bin/llvm-cfi-verify
-llvm-devel/bin/llvm-cgdata
 llvm-devel/bin/llvm-config
 llvm-devel/bin/llvm-cov
+llvm-devel/bin/llvm-ctxprof-util
 llvm-devel/bin/llvm-cvtres
 llvm-devel/bin/llvm-cxxdump
 llvm-devel/bin/llvm-cxxfilt
@@ -1168,7 +1168,7 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/CodeGen/ConstantInitBuilder.h
 %%CLANG%%llvm-devel/include/clang/CodeGen/ConstantInitFuture.h
 %%CLANG%%llvm-devel/include/clang/CodeGen/ModuleBuilder.h
-%%CLANG%%llvm-devel/include/clang/CodeGen/ObjectFilePCHContainerOperations.h
+%%CLANG%%llvm-devel/include/clang/CodeGen/ObjectFilePCHContainerWriter.h
 %%CLANG%%llvm-devel/include/clang/CodeGen/SwiftCallingConv.h
 %%CLANG%%llvm-devel/include/clang/Config/config.h
 %%CLANG%%llvm-devel/include/clang/CrossTU/CrossTUDiagnostic.h
@@ -1393,6 +1393,7 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/Serialization/ModuleFile.h
 %%CLANG%%llvm-devel/include/clang/Serialization/ModuleFileExtension.h
 %%CLANG%%llvm-devel/include/clang/Serialization/ModuleManager.h
+%%CLANG%%llvm-devel/include/clang/Serialization/ObjectFilePCHContainerReader.h
 %%CLANG%%llvm-devel/include/clang/Serialization/PCHContainerOperations.h
 %%CLANG%%llvm-devel/include/clang/Serialization/SerializationDiagnostic.h
 %%CLANG%%llvm-devel/include/clang/Serialization/SourceLocationEncoding.h
@@ -2177,6 +2178,7 @@ llvm-devel/bin/verify-uselistorder
 %%LLDB%%llvm-devel/include/lldb/Interpreter/CommandReturnObject.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/Interfaces/OperatingSystemInterface.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/Interfaces/ScriptedInterface.h
+%%LLDB%%llvm-devel/include/lldb/Interpreter/Interfaces/ScriptedInterfaceUsages.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/Interfaces/ScriptedPlatformInterface.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/Interfaces/ScriptedProcessInterface.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/Interfaces/ScriptedThreadInterface.h
@@ -2585,6 +2587,7 @@ llvm-devel/include/llvm/Analysis/CycleAnalysis.h
 llvm-devel/include/llvm/Analysis/DDG.h
 llvm-devel/include/llvm/Analysis/DDGPrinter.h
 llvm-devel/include/llvm/Analysis/DOTGraphTraitsPass.h
+llvm-devel/include/llvm/Analysis/DXILResource.h
 llvm-devel/include/llvm/Analysis/Delinearization.h
 llvm-devel/include/llvm/Analysis/DemandedBits.h
 llvm-devel/include/llvm/Analysis/DependenceAnalysis.h
@@ -2998,10 +3001,6 @@ llvm-devel/include/llvm/CodeGen/WasmEHPrepare.h
 llvm-devel/include/llvm/CodeGen/WinEHFuncInfo.h
 llvm-devel/include/llvm/CodeGen/WinEHPrepare.h
 llvm-devel/include/llvm/CodeGen/WindowScheduler.h
-llvm-devel/include/llvm/CodeGenData/CodeGenData.h
-llvm-devel/include/llvm/CodeGenData/CodeGenData.inc
-llvm-devel/include/llvm/CodeGenData/CodeGenDataReader.h
-llvm-devel/include/llvm/CodeGenData/CodeGenDataWriter.h
 llvm-devel/include/llvm/CodeGenData/OutlinedHashTree.h
 llvm-devel/include/llvm/CodeGenData/OutlinedHashTreeRecord.h
 llvm-devel/include/llvm/CodeGenTypes/LowLevelType.h
@@ -4123,6 +4122,7 @@ llvm-devel/include/llvm/TargetParser/Host.h
 llvm-devel/include/llvm/TargetParser/LoongArchTargetParser.def
 llvm-devel/include/llvm/TargetParser/LoongArchTargetParser.h
 llvm-devel/include/llvm/TargetParser/PPCTargetParser.def
+llvm-devel/include/llvm/TargetParser/PPCTargetParser.h
 llvm-devel/include/llvm/TargetParser/RISCVISAInfo.h
 llvm-devel/include/llvm/TargetParser/RISCVTargetParser.h
 llvm-devel/include/llvm/TargetParser/RISCVTargetParserDef.inc
@@ -4335,7 +4335,6 @@ llvm-devel/include/llvm/Transforms/Utils/CodeLayout.h
 llvm-devel/include/llvm/Transforms/Utils/CodeMoverUtils.h
 llvm-devel/include/llvm/Transforms/Utils/CountVisits.h
 llvm-devel/include/llvm/Transforms/Utils/CtorUtils.h
-llvm-devel/include/llvm/Transforms/Utils/DXILResource.h
 llvm-devel/include/llvm/Transforms/Utils/DXILUpgrade.h
 llvm-devel/include/llvm/Transforms/Utils/Debugify.h
 llvm-devel/include/llvm/Transforms/Utils/EntryExitInstrumenter.h
@@ -5279,6 +5278,9 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenACC/OpenACCOpsDialect.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenACC/OpenACCOpsEnums.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenACC/OpenACCOpsEnums.h.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/OpenACC/OpenACCOpsInterfaces.cpp.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/OpenACC/OpenACCOpsInterfaces.h.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/OpenACC/OpenACCOpsInterfaces.td
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenACC/OpenACCOpsTypes.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenACC/OpenACCOpsTypes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenACC/OpenACCOpsTypes.td
@@ -6484,7 +6486,6 @@ llvm-devel/lib/cmake/llvm/HandleLLVMOptions.cmake
 llvm-devel/lib/cmake/llvm/HandleLLVMStdlib.cmake
 llvm-devel/lib/cmake/llvm/LLVM-Build.cmake
 llvm-devel/lib/cmake/llvm/LLVM-Config.cmake
-llvm-devel/lib/cmake/llvm/LLVMCheckLinkerFlag.cmake
 llvm-devel/lib/cmake/llvm/LLVMConfig.cmake
 llvm-devel/lib/cmake/llvm/LLVMConfigExtensions.cmake
 llvm-devel/lib/cmake/llvm/LLVMConfigVersion.cmake
