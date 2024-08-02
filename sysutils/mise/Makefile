@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.7.5
+DISTVERSION=	2024.8.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -46,7 +46,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bumpalo-3.16.0 \
 		bytecount-0.6.8 \
 		byteorder-1.5.0 \
-		bytes-1.6.1 \
+		bytes-1.7.0 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
 		cc-1.1.7 \
@@ -55,9 +55,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		chrono-tz-0.9.0 \
 		chrono-tz-build-0.3.0 \
 		ci_info-0.14.14 \
-		clap-4.5.11 \
-		clap_builder-4.5.11 \
-		clap_derive-4.5.11 \
+		clap-4.5.13 \
+		clap_builder-4.5.13 \
+		clap_derive-4.5.13 \
 		clap_lex-0.7.2 \
 		clap_mangen-0.2.23 \
 		color-eyre-0.6.3 \
@@ -160,7 +160,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ignore-0.4.22 \
 		indenter-0.3.3 \
 		indexmap-1.9.3 \
-		indexmap-2.2.6 \
+		indexmap-2.3.0 \
 		indicatif-0.17.8 \
 		indoc-2.0.5 \
 		insta-1.39.0 \
@@ -233,7 +233,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pkg-config-0.3.30 \
 		portable-atomic-1.7.0 \
 		powerfmt-0.2.0 \
-		ppv-lite86-0.2.17 \
+		ppv-lite86-0.2.18 \
 		predicates-3.1.2 \
 		predicates-core-1.0.8 \
 		predicates-tree-1.0.11 \
@@ -336,9 +336,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.0 \
 		tokio-util-0.7.11 \
-		toml-0.8.16 \
-		toml_datetime-0.6.7 \
-		toml_edit-0.22.17 \
+		toml-0.8.19 \
+		toml_datetime-0.6.8 \
+		toml_edit-0.22.20 \
 		tower-0.4.13 \
 		tower-layer-0.3.2 \
 		tower-service-0.3.2 \
@@ -385,7 +385,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-shared-0.2.92 \
 		web-sys-0.3.69 \
 		webpki-roots-0.26.3 \
-		which-6.0.1 \
+		which-6.0.2 \
 		widestring-1.1.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -414,15 +414,17 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.16 \
+		winnow-0.6.18 \
 		winreg-0.52.0 \
 		winsafe-0.0.19 \
 		wmi-0.13.3 \
 		xattr-1.3.1 \
 		xx-1.1.5 \
 		yansi-0.5.1 \
+		zerocopy-0.6.6 \
+		zerocopy-derive-0.6.6 \
 		zeroize-1.8.1 \
-		zip-2.1.5 \
+		zip-2.1.6 \
 		zipsign-api-0.1.2 \
 		zopfli-0.8.1
 
