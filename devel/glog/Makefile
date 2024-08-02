@@ -29,4 +29,6 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 GH_ACCOUNT=	google
 USE_GITHUB=	yes
 
+CXXFLAGS_powerpc=	-D_CALL_SYSV
+
 .include <bsd.port.mk>
