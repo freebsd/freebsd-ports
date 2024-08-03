@@ -60,6 +60,7 @@
     SUBDIR += fastqc
     SUBDIR += fasttree
     SUBDIR += fastx-toolkit
+    SUBDIR += fermi-lite
     SUBDIR += figtree
     SUBDIR += flash
     SUBDIR += fluctuate
