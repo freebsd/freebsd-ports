@@ -1,5 +1,6 @@
 PORTNAME=	pipewire
 DISTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
