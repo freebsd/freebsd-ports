@@ -17,12 +17,13 @@ USES=		localbase pkgconfig ssl
 USE_RC_SUBR=	gmid
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 
 TEST_TARGET=	regress
 
 USERS=		_gmid
 GROUPS=		_gmid
+
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/man|/share/man|' ${WRKSRC}/configure
