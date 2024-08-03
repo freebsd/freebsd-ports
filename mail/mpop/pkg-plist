@@ -1,5 +1,6 @@
 bin/mpop
 %%MPOPD%%bin/mpopd
+share/examples/mpop/mpoprc.example
 %%NLS%%share/locale/de/LC_MESSAGES/mpop.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/mpop.mo
 %%NLS%%share/locale/es/LC_MESSAGES/mpop.mo
