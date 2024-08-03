@@ -1,11 +1,11 @@
---- pyproject.toml.orig	2024-06-25 13:46:12 UTC
+--- pyproject.toml.orig	2024-06-27 18:24:19 UTC
 +++ pyproject.toml
 @@ -7,7 +7,7 @@ requires = [
      "cython>=0.29.20,<3.0.0; python_version<='3.9'",
      # See https://numpy.org/doc/stable/user/depending_on_numpy.html for
      # the recommended way to build against numpy's C API:
--    "oldest-supported-numpy",
+-    "numpy>=2.0.0",
 +    "numpy",
-     "scipy>=1.8",
+     "scipy>=1.9",
  ]
  build-backend = "setuptools.build_meta"
