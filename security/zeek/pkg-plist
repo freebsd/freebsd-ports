@@ -2180,4 +2180,8 @@ share/man/man8/zeek.8.gz
 %%ZEEKCTL%%@dir logs
 %%SPICY%%@dir lib/zeek/spicy
 @dir lib/zeek/plugins
+@dir include/zeek/script_opt/ZAM/maint
+@dir include/zeek/script_opt/ZAM/OPs
+@dir include/zeek/analyzer/protocol/quic
+@dir include/zeek/analyzer/protocol/ldap
 %%ZEEKCTL%%@postexec su -fm %%ZEEKUSER%% -c '%D/bin/zeekctl install; rm -f %D/spool/debug.log'

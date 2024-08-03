@@ -1,5 +1,6 @@
 PORTNAME=	zeek
 DISTVERSION=	7.0.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://download.zeek.org/
 
@@ -15,8 +16,8 @@ BUILD_DEPENDS=	bison>=3.3:devel/bison \
 LIB_DEPENDS=	libcares.so:dns/c-ares
 RUN_DEPENDS=	c-ares>=1.25.0:dns/c-ares
 
-USES=		bison cmake compiler:c++17-lang cpe gettext-runtime perl5 \
-		python shebangfix ssl
+USES=           bison cmake compiler:c++17-lang cpe perl5 python \
+		shebangfix ssl
 
 USE_LDCONFIG=	yes
 
@@ -166,6 +167,8 @@ post-install-ZEEKCTL-on:
 	${RM} ${STAGEDIR}${PREFIX}/share/zeekctl/scripts/zeekctl-config.sh
 	${LN} -s ../../../spool/zeekctl-config.sh \
 	    ${STAGEDIR}${PREFIX}/share/zeekctl/scripts/zeekctl-config.sh
+	${RM} ${STAGEDIR}${PREFIX}/lib/broctl
+	${LN} -s zeek/python/zeekctl ${STAGEDIR}${PREFIX}/lib/broctl
 
 post-install:
 	${MV} ${STAGEDIR}${DATADIR}/site/local.zeek \
