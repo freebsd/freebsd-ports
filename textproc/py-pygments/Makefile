@@ -19,7 +19,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>=4.1.0:devel/py-pytest-cov@${PY_
 
 USES=		cpe python tex
 USE_PYTHON=	autoplist concurrent pep517 pytest
-USES+=		tex
 USE_TEX=	latex:test
 
 CONFLICTS_INSTALL=	py??-pygments-25
