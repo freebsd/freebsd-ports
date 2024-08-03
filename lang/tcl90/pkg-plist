@@ -106,6 +106,7 @@ lib/tcl%%TCL_VER%%/encoding/symbol.enc
 lib/tcl%%TCL_VER%%/encoding/tis-620.enc
 lib/tcl%%TCL_VER%%/foreachline.tcl
 lib/tcl%%TCL_VER%%/history.tcl
+lib/tcl%%TCL_VER%%/icu.tcl
 lib/tcl%%TCL_VER%%/init.tcl
 lib/tcl%%TCL_VER%%/install.tcl
 lib/tcl%%TCL_VER%%/msgs/af.msg
@@ -249,7 +250,7 @@ lib/tcl%%TCL_VER%%/tclooConfig.sh
 lib/tcl%%TCL_VER%%/tm.tcl
 lib/tcl%%TCL_VER%%/word.tcl
 lib/tcl%%TCL_VER%%/writefile.tcl
-lib/tcl9/%%TCL_VER%%/http-2.10b2.tm
+lib/tcl9/%%TCL_VER%%/http-2.10b3.tm
 lib/tcl9/%%TCL_VER%%/msgcat-1.7.1.tm
 lib/tcl9/%%TCL_VER%%/platform-1.0.19.tm
 lib/tcl9/%%TCL_VER%%/platform/shell-1.1.4.tm
@@ -981,6 +982,7 @@ libdata/pkgconfig/tcl%%PKGNAMESUFFIX%%.pc
 %%TCLMAN%%share/man/mann/flush.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/for.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/foreach.tcl%%PKGNAMESUFFIX%%.n.gz
+%%TCLMAN%%share/man/mann/foreachLine.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/format.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/fpclassify.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/gets.tcl%%PKGNAMESUFFIX%%.n.gz
@@ -1032,6 +1034,7 @@ libdata/pkgconfig/tcl%%PKGNAMESUFFIX%%.pc
 %%TCLMAN%%share/man/mann/oo_objdefine.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/oo_object.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/oo_singleton.tcl%%PKGNAMESUFFIX%%.n.gz
+%%TCLMAN%%share/man/mann/oo_Slot.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/open.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/package.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/packagens.tcl%%PKGNAMESUFFIX%%.n.gz
@@ -1048,6 +1051,7 @@ libdata/pkgconfig/tcl%%PKGNAMESUFFIX%%.pc
 %%TCLMAN%%share/man/mann/pwd.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/re_syntax.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/read.tcl%%PKGNAMESUFFIX%%.n.gz
+%%TCLMAN%%share/man/mann/readFile.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/refchan.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/regexp.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/registry.tcl%%PKGNAMESUFFIX%%.n.gz
@@ -1104,6 +1108,7 @@ libdata/pkgconfig/tcl%%PKGNAMESUFFIX%%.pc
 %%TCLMAN%%share/man/mann/variable.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/vwait.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/while.tcl%%PKGNAMESUFFIX%%.n.gz
+%%TCLMAN%%share/man/mann/writeFile.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/yield.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/yieldto.tcl%%PKGNAMESUFFIX%%.n.gz
 %%TCLMAN%%share/man/mann/zipfs.tcl%%PKGNAMESUFFIX%%.n.gz
