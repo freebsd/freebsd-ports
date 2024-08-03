@@ -1,5 +1,5 @@
 PORTNAME=	nsd
-DISTVERSION=	4.10.0
+DISTVERSION=	4.10.1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/nsd/
 
@@ -23,7 +23,6 @@ NSDLSDIR=	/var
 NSDRUNDIR=	/var/run/nsd
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir=${NSDLSDIR} \
 		--with-configdir=${ETCDIR} \
 		--with-libevent=${LOCALBASE} \
@@ -78,8 +77,6 @@ PACKED_CONFIGURE_ENABLE=	packed
 RADIXTREE_CONFIGURE_ENABLE=	radix-tree
 RRL_CONFIGURE_ENABLE=		ratelimit
 ZONE_STATS_CONFIGURE_ENABLE=	zone-stats
-
-NSDMAX_IPS?=	512
 
 post-build-MUNIN_PLUGIN-on:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
