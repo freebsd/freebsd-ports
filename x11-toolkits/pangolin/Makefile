@@ -1,7 +1,6 @@
 PORTNAME=	pangolin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.1
-PORTREVISION=	1
+DISTVERSION=	0.9.2
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,6 +10,7 @@ WWW=		https://github.com/stevenlovegrove/Pangolin
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libdc1394.so:multimedia/libdc1394 \
 		liblz4.so:archivers/liblz4 \
