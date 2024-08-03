@@ -64,7 +64,7 @@ do-install:
 	${REINPLACE_CMD} -e 's|Exec=86Box|Exec=/bin/sh -c "${PREFIX}/bin/86Box -C $${HOME}/86box.cfg"|' \
 		${WRKSRC}/src/unix/assets/net.86box.86Box.desktop
 	${INSTALL_DATA} ${WRKSRC}/src/unix/assets/net.86box.86Box.desktop \
-		${STAGEDIR}${PREFIX}/share/applications
+		${STAGEDIR}${DESKTOPDIR}
 .for F in ${ICON_RESOLUTIONS}
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${F}/apps
 	${INSTALL_DATA} ${WRKSRC}/src/unix/assets/${F}/net.86box.86Box.png \
