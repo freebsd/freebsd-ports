@@ -21,7 +21,6 @@ CPE_PRODUCT=	postfix_admin
 USE_GITHUB=	yes
 GH_TAGNAME=	d3bc1551
 USE_PHP=	mbstring session
-IGNORE_WITH_PHP=	84
 
 NO_ARCH=	yes
 NO_BUILD=	yes

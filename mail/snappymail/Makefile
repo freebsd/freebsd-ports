@@ -17,7 +17,6 @@ RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}APCu>0:devel/pecl-APCu@${PHP_FLAVOR} \
 USES=		php:web,flavors
 USE_PHP=	ctype curl dom fileinfo gd iconv intl mbstring phar simplexml \
 		sodium tidy xml zip zlib
-IGNORE_WITH_PHP=	84
 
 NO_ARCH=	yes
 NO_BUILD=	yes

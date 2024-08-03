@@ -16,7 +16,6 @@ RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.12.1:net-mgmt/icingaweb2@${PHP_FL
 
 USES=		php:web,flavors
 USE_PHP=	pcntl
-IGNORE_WITH_PHP=	84
 USE_RC_SUBR=	icinga-director
 
 DIRECTOR_USER?=		icingadirector

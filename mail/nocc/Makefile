@@ -14,7 +14,6 @@ USES=		cpe php:web
 OPTIONS_DEFINE=	DOCS
 
 USE_PHP=	ctype iconv imap mbstring session
-IGNORE_WITH_PHP=	84
 
 SUB_FILES=	pkg-message
 NO_ARCH=	yes

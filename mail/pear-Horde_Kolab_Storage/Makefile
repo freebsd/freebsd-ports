@@ -14,7 +14,6 @@ USE_HORDE_RUN=	Horde_Cache \
 		Horde_Translation \
 		Horde_Support \
 		Horde_Util
-IGNORE_WITH_PHP=	84
 
 # Optional but we want it
 USE_PHP+=	imap

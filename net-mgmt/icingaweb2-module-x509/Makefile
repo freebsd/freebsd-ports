@@ -21,7 +21,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Icinga
 
 USE_PHP=	gmp
-IGNORE_WITH_PHP=	84
 
 NO_BUILD=	yes
 NO_ARCH=	yes
