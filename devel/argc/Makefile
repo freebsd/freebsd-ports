@@ -1,6 +1,6 @@
 PORTNAME=	argc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.19.0
+DISTVERSION=	1.20.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,14 +18,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sigoden
 
 CARGO_CRATES=	aho-corasick-1.1.3 \
-		anstyle-1.0.7 \
+		anstyle-1.0.8 \
 		anyhow-1.0.86 \
-		assert_cmd-2.0.14 \
-		assert_fs-1.1.1 \
+		assert_cmd-2.0.15 \
+		assert_fs-1.1.2 \
 		autocfg-1.3.0 \
 		base64-0.22.1 \
-		bitflags-2.5.0 \
-		bstr-1.9.1 \
+		bitflags-2.6.0 \
+		bstr-1.10.0 \
 		cfg-if-1.0.0 \
 		console-0.15.8 \
 		convert_case-0.6.0 \
@@ -36,7 +36,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
 		doc-comment-0.3.3 \
-		either-1.12.0 \
+		either-1.13.0 \
 		encode_unicode-0.3.6 \
 		equivalent-1.0.1 \
 		errno-0.3.9 \
@@ -60,16 +60,16 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		hermit-abi-0.3.9 \
 		home-0.5.9 \
 		ignore-0.4.22 \
-		indexmap-2.2.6 \
+		indexmap-2.3.0 \
 		insta-1.39.0 \
 		itoa-1.0.11 \
-		lazy_static-1.4.0 \
+		lazy_static-1.5.0 \
 		libc-0.2.155 \
 		libredox-0.1.3 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
-		log-0.4.21 \
-		memchr-2.7.2 \
+		log-0.4.22 \
+		memchr-2.7.4 \
 		minimal-lexical-0.2.1 \
 		natord-1.0.9 \
 		nom-7.1.3 \
@@ -82,18 +82,18 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		path-dedot-3.1.1 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
-		predicates-3.1.0 \
-		predicates-core-1.0.6 \
-		predicates-tree-1.0.9 \
+		predicates-3.1.2 \
+		predicates-core-1.0.8 \
+		predicates-tree-1.0.11 \
 		proc-macro-crate-3.1.0 \
-		proc-macro2-1.0.84 \
+		proc-macro2-1.0.86 \
 		quote-1.0.36 \
 		redox_users-0.4.5 \
-		regex-1.10.4 \
-		regex-automata-0.4.6 \
-		regex-syntax-0.8.3 \
+		regex-1.10.5 \
+		regex-automata-0.4.7 \
+		regex-syntax-0.8.4 \
 		relative-path-1.9.3 \
-		roff-0.2.1 \
+		roff-0.2.2 \
 		rstest-0.21.0 \
 		rstest_macros-0.21.0 \
 		rustc_version-0.4.0 \
@@ -101,50 +101,50 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		semver-1.0.23 \
-		serde-1.0.203 \
-		serde_derive-1.0.203 \
-		serde_json-1.0.117 \
+		serde-1.0.204 \
+		serde_derive-1.0.204 \
+		serde_json-1.0.122 \
 		shell-words-1.1.0 \
-		similar-2.5.0 \
+		similar-2.6.0 \
 		slab-0.4.9 \
 		smawk-0.3.2 \
-		syn-2.0.66 \
+		syn-2.0.72 \
 		tempfile-3.10.1 \
 		termtree-0.4.1 \
 		textwrap-0.16.1 \
-		thiserror-1.0.61 \
-		thiserror-impl-1.0.61 \
+		thiserror-1.0.63 \
+		thiserror-impl-1.0.63 \
 		threadpool-1.8.1 \
-		toml_datetime-0.6.6 \
+		toml_datetime-0.6.8 \
 		toml_edit-0.21.1 \
 		unicode-ident-1.0.12 \
 		unicode-linebreak-0.1.5 \
 		unicode-segmentation-1.11.0 \
-		unicode-width-0.1.12 \
+		unicode-width-0.1.13 \
 		wait-timeout-0.2.0 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		which-6.0.1 \
+		which-6.0.2 \
 		winapi-util-0.1.8 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.5 \
+		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.5 \
+		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.5 \
+		windows_aarch64_msvc-0.52.6 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.5 \
-		windows_i686_gnullvm-0.52.5 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.5 \
+		windows_i686_msvc-0.52.6 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.5 \
+		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.5 \
+		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.5 \
+		windows_x86_64_msvc-0.52.6 \
 		winnow-0.5.40 \
 		winsafe-0.0.19
 
