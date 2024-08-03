@@ -10,7 +10,6 @@ LICENSE=	PHP30
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:pecl,zend tar:tgz
-IGNORE_WITH_PHP=	84
 
 CONFIGURE_ARGS=	--enable-xdebug
 
