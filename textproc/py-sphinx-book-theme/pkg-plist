@@ -4,6 +4,7 @@
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/base/_base.scss
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/base/_print.scss
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/base/_typography.scss
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/components/_back-to-top.scss
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/components/_icon-links.scss
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/components/_logo.scss
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/components/_search.scss
@@ -24,6 +25,7 @@
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/sections/_header-primary.scss
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/sections/_sidebar-primary.scss
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/sections/_sidebar-secondary.scss
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/README.md
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/By the.json
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/By.json
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Contents.json
@@ -35,18 +37,17 @@
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Fullscreen mode.json
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Last updated on.json
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Launch.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/next page.json
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Open an issue.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/open issue.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/previous page.json
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Print to PDF.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/repository.json
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Source repository.json
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Sphinx Book Theme.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/suggest edit.json
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Theme by the.json
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Toggle navigation.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/README.md
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/next page.json
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/open issue.json
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/previous page.json
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/repository.json
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/suggest edit.json
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/components/article-header-buttons.html
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/components/author.html
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/components/extra-footer.html
@@ -57,10 +58,103 @@
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/layout.html
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/macros/buttons.html
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/sections/footer-content.html
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/.gitignore
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/images/logo_binder.svg
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/images/logo_colab.png
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/images/logo_deepnote.svg
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/images/logo_jupyterhub.svg
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ar/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ar/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/bg/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/bg/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/bn/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/bn/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ca/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ca/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/cs/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/cs/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/da/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/da/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/de/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/de/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/el/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/el/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/eo/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/eo/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/es/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/es/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/et/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/et/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/fi/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/fi/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/fr/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/fr/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/hr/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/hr/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/id/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/id/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/it/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/it/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/iw/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/iw/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ja/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ja/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ko/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ko/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/lt/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/lt/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/lv/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/lv/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ml/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ml/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/mr/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/mr/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ms/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ms/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/nl/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/nl/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/no/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/no/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/pl/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/pl/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/pt/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/pt/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ro/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ro/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ru/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ru/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/sk/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/sk/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/sl/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/sl/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/sr/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/sr/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/sv/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/sv/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ta/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ta/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/te/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/te/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/tg/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/tg/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/th/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/th/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/tl/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/tl/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/tr/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/tr/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/uk/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/uk/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ur/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ur/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/vi/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/vi/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/zh_CN/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/zh_CN/LC_MESSAGES/booktheme.po
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/zh_TW/LC_MESSAGES/booktheme.mo
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/zh_TW/LC_MESSAGES/booktheme.po
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/sbt-webpack-macros.html
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/scripts/sphinx-book-theme.js
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/scripts/sphinx-book-theme.js.map
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/styles/sphinx-book-theme.css
+%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/styles/sphinx-book-theme.css.map
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/theme.conf
