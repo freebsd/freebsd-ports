@@ -3423,3 +3423,4 @@ graphics/svg2pdf||2024-08-04|Has expired: Depends on deprecated library graphics
 audio/libsidplay2||2024-08-04|Has expired: Abandonware and superseded by audio/libsidplayfp
 www/py-imdbpy|www/py-cinemagoer|2024-08-04|Has expired: IMDbPY is now cinemagoer. Use www/py-cinemagoer instead
 dns/dnrd||2024-08-04|Has expired: Abandonware, last release in 2007 and last activity in 2010. Consider using Unbound, dns/dnsmasq or dns/blocky
+science/mercantile|science/py-mercantile|2024-08-04|Move science/mercantile to science/py-mercantile

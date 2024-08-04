@@ -183,7 +183,6 @@
     SUBDIR += mdynamix
     SUBDIR += medit
     SUBDIR += meep
-    SUBDIR += mercantile
     SUBDIR += metaphysicl
     SUBDIR += minc2
     SUBDIR += mmdb2
@@ -364,6 +363,7 @@
     SUBDIR += py-libpysal
     SUBDIR += py-lifelines
     SUBDIR += py-mdp
+    SUBDIR += py-mercantile
     SUBDIR += py-meshio
     SUBDIR += py-mmcif
     SUBDIR += py-mmtf-python
