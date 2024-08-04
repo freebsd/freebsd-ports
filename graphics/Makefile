@@ -952,6 +952,7 @@
     SUBDIR += py-png
     SUBDIR += py-pointpats
     SUBDIR += py-projpicker
+    SUBDIR += py-proplot
     SUBDIR += py-pycha
     SUBDIR += py-pycollada
     SUBDIR += py-pydot
