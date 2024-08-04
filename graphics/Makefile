@@ -1269,6 +1269,5 @@
     SUBDIR += zgv
     SUBDIR += zimg
     SUBDIR += zint
-    SUBDIR += zphoto
 
 .include <bsd.port.subdir.mk>
