@@ -5852,6 +5852,7 @@
     SUBDIR += py-telepath
     SUBDIR += py-tempora
     SUBDIR += py-tenacity
+    SUBDIR += py-tenacity8
     SUBDIR += py-tendo
     SUBDIR += py-termcolor
     SUBDIR += py-termcolor-whl
