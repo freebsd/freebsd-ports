@@ -2389,7 +2389,6 @@
     SUBDIR += tomcat-native
     SUBDIR += tomcat-native2
     SUBDIR += tomcat101
-    SUBDIR += tomcat85
     SUBDIR += tomcat9
     SUBDIR += tomee
     SUBDIR += tor-browser
