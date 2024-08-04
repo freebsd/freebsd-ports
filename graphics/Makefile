@@ -885,6 +885,7 @@
     SUBDIR += py-colorthief
     SUBDIR += py-colorz
     SUBDIR += py-colour
+    SUBDIR += py-contextily
     SUBDIR += py-descartes
     SUBDIR += py-diplib
     SUBDIR += py-django-easy-thumbnails
