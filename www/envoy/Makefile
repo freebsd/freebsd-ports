@@ -12,6 +12,9 @@ WWW=		https://www.envoyproxy.io/
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Depends on upstream expireda devel/libopentracing
+EXPIRATION_DATE=2024-08-31
+
 BROKEN_SSL=	base openssl libressl libressl-devel
 BROKEN_SSL_REASON=	requires BoringSSL
 
