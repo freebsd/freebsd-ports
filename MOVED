@@ -3404,3 +3404,4 @@ audio/strawberry@qt6|audio/strawberry|2024-07-21|Unflavor. Qt5 is obsolete
 devel/rubygem-google-protobuf4|devel/rubygem-google-protobuf|2024-07-30|Remove obsoleted port. Use devel/rubygem-google-protobuf instead
 graphics/xsvg||2024-08-04|Has expired: Depends on deprecated library graphics/libsvg-cairo
 graphics/zphoto||2024-08-04|Has expired: Depends on expired graphics/ming
+math/ploticus-nox11||2024-08-04|Has expired: Depends on expired graphics/ming

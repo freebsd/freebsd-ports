@@ -871,7 +871,6 @@
     SUBDIR += plantri
     SUBDIR += plman
     SUBDIR += ploticus
-    SUBDIR += ploticus-nox11
     SUBDIR += plplot
     SUBDIR += poly2tri
     SUBDIR += polyclipper
