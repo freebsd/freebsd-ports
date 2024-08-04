@@ -1,13 +1,14 @@
 PORTNAME=	sphinxcontrib-towncrier
-PORTVERSION=	0.3.2a0
-PORTREVISION=	1
+PORTVERSION=	0.4.0a0
 CATEGORIES=	textproc python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/sphinx-contrib/sphinxcontrib-towncrier/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	RST directive for injecting a Towncrier-generated changelog draft
-WWW=		https://github.com/sphinx-contrib/sphinxcontrib-towncrier
+WWW=		https://sphinxcontrib-towncrier.readthedocs.io/en/latest/ \
+		https://github.com/sphinx-contrib/sphinxcontrib-towncrier
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
