@@ -536,7 +536,6 @@
     SUBDIR += openal-soft
     SUBDIR += opencore-amr
     SUBDIR += openspc
-    SUBDIR += optimfrog
     SUBDIR += opus
     SUBDIR += opus-tools
     SUBDIR += opusfile

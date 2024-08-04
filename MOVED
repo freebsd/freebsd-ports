@@ -3417,3 +3417,4 @@ audio/cam||2024-08-04|Has expired: Abandonware and obsolete, consider using audi
 audio/epos-devel||2024-08-04|Has expired: Abandonware, last release in 2006 and upstream is dead
 audio/sidplay2|audio/sidplayfp|2024-08-04|Has expired: Abandonware and superseded by audio/sidplayfp
 audio/sidplay|audio/sidplayfp|2024-08-04|Has expired: Abandonware and superseded by audio/sidplayfp
+audio/optimfrog||2024-08-04|Has expired: Obsolete format that never gained traction, consider using audio/flac
