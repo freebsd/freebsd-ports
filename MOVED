@@ -3407,3 +3407,4 @@ graphics/zphoto||2024-08-04|Has expired: Depends on expired graphics/ming
 math/ploticus-nox11||2024-08-04|Has expired: Depends on expired graphics/ming
 multimedia/hypnotix||2024-08-04|Has expired: Depends on expired www/py-imdbpy (use www/py-cinemagoer instead)
 net/bird||2024-08-04|Has expired: Upstream EOL was for the end of 2023
+sysutils/unieject||2024-08-04|Has expired: Abandonware, upstream repo deprecated May 17, 2020
