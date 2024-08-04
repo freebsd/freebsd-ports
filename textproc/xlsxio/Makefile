@@ -1,5 +1,6 @@
 PORTNAME=	xlsxio
 PORTVERSION=	0.2.35
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/brechtsanders/xlsxio/releases/download/${PORTVERSION}/
 
