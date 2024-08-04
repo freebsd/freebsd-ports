@@ -19,6 +19,8 @@ USES=		python shebangfix
 USE_PYTHON=	autoplist distutils
 SHEBANG_GLOB=	*.py
 
+NO_ARCH=	yes
+
 _PYPI_NAME=	CppHeaderParser
 
 .include <bsd.port.mk>
