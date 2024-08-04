@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 powerpc64le powerpc64 powerpc
 
-BUILD_DEPENDS=	nasm:devel/nasm # yasm fails to compiler asm modules
+BUILD_DEPENDS=	nasm:devel/nasm # yasm fails to compiler asm modules, see https://github.com/intel/isa-l/issues/294
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
