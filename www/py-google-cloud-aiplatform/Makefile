@@ -25,4 +25,6 @@ USES=		python
 USE_LDCONFIG=	yes
 USE_PYTHON=	distutils autoplist # TODO pytest - it has a large and complex set of dependencies
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
