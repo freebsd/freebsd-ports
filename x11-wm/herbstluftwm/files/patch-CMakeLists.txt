@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2022-07-30 05:55:21 UTC
+--- CMakeLists.txt.orig	2024-08-04 05:15:09 UTC
 +++ CMakeLists.txt
-@@ -20,13 +20,13 @@ include(ccache)
+@@ -20,7 +20,7 @@ include(ccache)
  
  ## set install variables
  # prefix for systemwide configuration, accompanies CMAKE_INSTALL_PREFIX
@@ -9,28 +9,20 @@
      "Top-level install path for configuration files. May be given relative to CMAKE_INSTALL_PREFIX.")
  
  set(CONFIGDIR "${CMAKE_INSTALL_SYSCONF_PREFIX}/xdg/herbstluftwm")
- set(BINDIR bin)
- set(DATADIR share)
--set(MANDIR ${DATADIR}/man)
-+set(MANDIR ${CMAKE_INSTALL_PREFIX}/share/man)
- set(DOCDIR ${DATADIR}/doc/herbstluftwm)
- set(LICENSEDIR ${DOCDIR}
-     CACHE PATH "Install path for license file")
-@@ -36,7 +36,7 @@ set(FISHCOMPLETIONDIR ${DATADIR}/fish/vendor_completio
+@@ -34,7 +34,7 @@ set(ZSHCOMPLETIONDIR ${DATADIR}/zsh/site-functions
+     CACHE PATH "Install path for xsession file")
+ set(ZSHCOMPLETIONDIR ${DATADIR}/zsh/site-functions
      CACHE PATH "Install path for zsh completions file")
- set(FISHCOMPLETIONDIR ${DATADIR}/fish/vendor_completions.d
+-set(FISHCOMPLETIONDIR ${DATADIR}/fish/vendor_completions.d
++set(FISHCOMPLETIONDIR ${DATADIR}/fish/completions
      CACHE PATH "Install path for fish completions file")
--set(BASHCOMPLETIONDIR ${DATADIR}/bash-completion/completions
-+set(BASHCOMPLETIONDIR ${CMAKE_INSTALL_PREFIX}/etc/bash_completion.d
+ set(BASHCOMPLETIONDIR ${DATADIR}/bash-completion/completions
      CACHE PATH "Install path for bash completions file")
- 
- ## do the actual work
 @@ -47,7 +47,6 @@ install(FILES NEWS DESTINATION ${DOCDIR})
  
  ## install everything that was not installed from subdirectories
  install(FILES NEWS DESTINATION ${DOCDIR})
 -install(FILES LICENSE DESTINATION ${LICENSEDIR})
--install(DIRECTORY scripts/ DESTINATION ${DOCDIR}/examples USE_SOURCE_PERMISSIONS)
-+install(DIRECTORY scripts/ DESTINATION /usr/local/share/examples/herbstluftwm USE_SOURCE_PERMISSIONS)
+ install(DIRECTORY scripts/ DESTINATION ${DOCDIR}/examples USE_SOURCE_PERMISSIONS)
  
  # vim: et:ts=4:sw=4

@@ -1,11 +1,11 @@
 bin/herbstclient
 bin/herbstluftwm
-etc/bash_completion.d/herbstclient
 etc/xdg/herbstluftwm/autostart
 etc/xdg/herbstluftwm/dmenu_run_hlwm
 etc/xdg/herbstluftwm/panel.sh
 etc/xdg/herbstluftwm/restartpanels.sh
-share/fish/vendor_completions.d/herbstclient.fish
+share/bash-completion/completions/herbstclient
+share/fish/completions/herbstclient.fish
 share/xsessions/herbstluftwm.desktop
 share/zsh/site-functions/_herbstclient
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
