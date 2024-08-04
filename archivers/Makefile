@@ -181,7 +181,6 @@
     SUBDIR += plzip
     SUBDIR += ppmd
     SUBDIR += ppunpack
-    SUBDIR += pxz
     SUBDIR += py-acefile
     SUBDIR += py-bitshuffle
     SUBDIR += py-blosc2
