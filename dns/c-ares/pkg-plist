@@ -5,7 +5,6 @@ include/ares_build.h
 include/ares_dns.h
 include/ares_dns_record.h
 include/ares_nameser.h
-include/ares_rules.h
 include/ares_version.h
 lib/cmake/c-ares/c-ares-config-version.cmake
 lib/cmake/c-ares/c-ares-config.cmake
@@ -15,7 +14,7 @@ lib/cmake/c-ares/c-ares-targets.cmake
 %%STATIC%%lib/libcares_static.a
 lib/libcares.so
 lib/libcares.so.2
-lib/libcares.so.2.15.0
+lib/libcares.so.2.18.0
 libdata/pkgconfig/libcares.pc
 share/man/man1/adig.1.gz
 share/man/man1/ahost.1.gz
@@ -39,6 +38,7 @@ share/man/man3/ares_dns_rcode_t.3.gz
 share/man/man3/ares_dns_rcode_tostr.3.gz
 share/man/man3/ares_dns_rec_type_fromstr.3.gz
 share/man/man3/ares_dns_rec_type_t.3.gz
+share/man/man3/ares_dns_rec_type_tostr.3.gz
 share/man/man3/ares_dns_record.3.gz
 share/man/man3/ares_dns_record_create.3.gz
 share/man/man3/ares_dns_record_destroy.3.gz
@@ -57,7 +57,12 @@ share/man/man3/ares_dns_record_rr_cnt.3.gz
 share/man/man3/ares_dns_record_rr_del.3.gz
 share/man/man3/ares_dns_record_rr_get.3.gz
 share/man/man3/ares_dns_record_rr_get_const.3.gz
+share/man/man3/ares_dns_record_set_id.3.gz
 share/man/man3/ares_dns_rr.3.gz
+share/man/man3/ares_dns_rr_add_abin.3.gz
+share/man/man3/ares_dns_rr_del_abin.3.gz
+share/man/man3/ares_dns_rr_get_abin.3.gz
+share/man/man3/ares_dns_rr_get_abin_cnt.3.gz
 share/man/man3/ares_dns_rr_get_addr.3.gz
 share/man/man3/ares_dns_rr_get_addr6.3.gz
 share/man/man3/ares_dns_rr_get_bin.3.gz
