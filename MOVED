@@ -3412,3 +3412,4 @@ www/tomcat85||2024-08-04|Has expired: Upstream EOL reaches on 2024-03-31, some t
 archivers/pxz||2024-08-04|Has expired: Superseded by xz (Utils), support for multithreading is available since 2014
 www/mediawiki140||2024-08-04|Has expired: Upstream EOL
 archivers/paq||2024-08-04|Has expired: Outdated, unmaintained and format that never gained any traction
+audio/optimfrog-sse2||2024-08-04|Has expired: Obsolete format that never gained traction, consider using audio/flac
