@@ -1,4 +1,5 @@
 PORTNAME=	icingadb
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0
 CATEGORIES=	net-mgmt
@@ -43,7 +44,7 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${MKDIR} ${STAGEDIR}${ETCDIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "schema" ${STAGEDIR}${EXAMPLESDIR})
 	${INSTALL_DATA} ${WRKSRC}/config.example.yml ${STAGEDIR}${ETCDIR}/config.yml.sample
 
 .include <bsd.port.mk>
