@@ -6023,6 +6023,7 @@
     SUBDIR += py-xarray
     SUBDIR += py-xarray-einstats
     SUBDIR += py-xarray-simlab
+    SUBDIR += py-xasm
     SUBDIR += py-xattr
     SUBDIR += py-xdg
     SUBDIR += py-xdis

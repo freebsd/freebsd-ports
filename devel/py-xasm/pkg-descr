@@ -1,0 +1,14 @@
+The Python xasm module has routines for assembly, and has a command to assemble
+bytecode for several different versions of Python.
+
+Here are some potential uses:
+- Make small changes to existing Python bytecode when you don't have source
+- Craft custom and efficient bytecode
+- Write an instruction-level optimizing compiler
+- Experiment with and learn about Python bytecode
+- Foil decompilers like uncompyle6 so that they can't disassemble bytecode (at
+  least for now)
+
+This support the same kinds of bytecode that xdis supports. This is pretty much
+all released bytecode, although we tend to lag behind the latest Python
+releases.
