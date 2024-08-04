@@ -248,7 +248,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/session_events.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/session_state_management.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/session_transaction.rst
-%%PORTDOCS%%%%DOCSDIR%%/build/orm/space_invaders.jpg
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/tutorial.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/versioning.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/requirements.txt
