@@ -1252,6 +1252,7 @@
     SUBDIR += pear-YAML
     SUBDIR += pecl-pspell
     SUBDIR += pecl-xdiff2
+    SUBDIR += pecl-xlswriter
     SUBDIR += pecl-yaml
     SUBDIR += pecl-zephir_parser
     SUBDIR += peco
