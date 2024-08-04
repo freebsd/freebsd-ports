@@ -5,7 +5,7 @@ CATEGORIES=	biology java
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Variant discovery in high-throughput sequencing data
+COMMENT=	Genome Analysis Toolkit
 WWW=		https://gatk.broadinstitute.org/hc/en-us
 
 LICENSE=	BSD3CLAUSE
