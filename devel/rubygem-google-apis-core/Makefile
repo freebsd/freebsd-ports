@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-core
-PORTVERSION=	0.15.0
+PORTVERSION=	0.15.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,11 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-addressable>=2.5.1<3:www/rubygem-addressable \
 		rubygem-googleauth>=1.9<2:security/rubygem-googleauth \
-		rubygem-httpclient>=2.8.1<3.0:www/rubygem-httpclient \
+		rubygem-httpclient>=2.8.3<3.0:www/rubygem-httpclient \
 		rubygem-mini_mime>=1.0<2:mail/rubygem-mini_mime \
+		rubygem-mutex_m>=0:devel/rubygem-mutex_m \
 		rubygem-representable>=3.0<4:textproc/rubygem-representable \
-		rubygem-retriable>=2.0<4.0:devel/rubygem-retriable \
-		rubygem-rexml>=0:textproc/rubygem-rexml
+		rubygem-retriable>=2.0<4.0:devel/rubygem-retriable
 
 USES=		gem
 
