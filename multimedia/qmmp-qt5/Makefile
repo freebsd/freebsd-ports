@@ -262,4 +262,10 @@ post-install-DOXYGEN-on:
 	@${FIND} -P ${STAGEDIR}${DOCSDIR}/html -type f 2>/dev/null | \
 		${SED} -ne 's|^${STAGEDIR}${PREFIX}/||p' >> ${TMPPLIST}
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCDDA}
+DEPRECATED=	CDDA depends on expired audio/libcddb
+.endif
+
 .include <bsd.port.mk>
