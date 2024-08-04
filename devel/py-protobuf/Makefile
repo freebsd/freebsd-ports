@@ -1,5 +1,5 @@
 PORTNAME=	protobuf
-PORTVERSION=	4.25.4
+PORTVERSION=	5.27.3
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
@@ -12,6 +12,7 @@ WWW=		https://protobuf.dev/ \
 		https://github.com/protocolbuffers/protobuf/tree/main/python
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
