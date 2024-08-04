@@ -1,5 +1,5 @@
 PORTNAME=	styleguide
-PORTVERSION=	20240702
+PORTVERSION=	20240716
 CATEGORIES=	devel
 PKGNAMEPREFIX=	google-
 
@@ -21,7 +21,7 @@ NO_BUILD=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	1ae7350
+GH_TAGNAME=	57ea449
 
 SHEBANG_FILES=	cpplint/cpplint.py cpplint/cpplint_unittest.py
 
@@ -36,6 +36,6 @@ do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR}/cpplint ${STAGEDIR}${DOCSDIR}/docguide
 	${INSTALL_DATA} ${WRKSRC}/*.css ${WRKSRC}/*.html ${WRKSRC}/*.md ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/cpplint/README ${STAGEDIR}${DOCSDIR}/cpplint
-	(cd ${WRKSRC}/docguide && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/docguide)
+	cd ${WRKSRC}/docguide && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/docguide
 
 .include <bsd.port.mk>
