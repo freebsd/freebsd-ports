@@ -21,8 +21,6 @@ USES=		cpe python tex
 USE_PYTHON=	autoplist concurrent pep517 pytest
 USE_TEX=	latex:test
 
-CONFLICTS_INSTALL=	py??-pygments-25
-
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
