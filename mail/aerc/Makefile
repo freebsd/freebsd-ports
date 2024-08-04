@@ -1,5 +1,5 @@
 PORTNAME=	aerc
-DISTVERSION=	0.18.1
+DISTVERSION=	0.18.2
 CATEGORIES=	mail
 
 MAINTAINER=	iamsleepy@ryuki.me
@@ -70,7 +70,7 @@ GH_TUPLE=	ProtonMail:go-crypto:v1.0.0:protonmail_go_crypto/vendor/github.com/Pro
 _SRHT_TUPLE=	rjarry:aerc:${DISTVERSIONFULL}:"" \
 		rjarry:go-opt:v1.4.0:vendor/git.sr.ht/~rjarry/go-opt \
 		rockorager:go-jmap:v0.5.0:vendor/git.sr.ht/~rockorager/go-jmap \
-		rockorager:vaxis:v0.9.2:vendor/git.sr.ht/~rockorager/vaxis
+		rockorager:vaxis:v0.10.3:vendor/git.sr.ht/~rockorager/vaxis
 
 SHEBANG_FILES=	contrib/carddav-query filters/show-ics-details.py
 
