@@ -1,10 +1,7 @@
 PORTNAME=	swayimg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5
+DISTVERSION=	3.0
 CATEGORIES=	x11 wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	35175c87817e.patch:-p1 # https://github.com/artemsen/swayimg/pull/161
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Image viewer for Sway/Wayland
