@@ -1,4 +1,0 @@
-@sample etc/bird%%VER%%.conf.example etc/bird%%VER%%.conf
-sbin/bird%%VER%%
-sbin/birdc%%VER%%
-sbin/birdcl%%VER%%

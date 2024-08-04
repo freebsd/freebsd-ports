@@ -55,7 +55,6 @@
     SUBDIR += benthos
     SUBDIR += bindtest
     SUBDIR += binkd
-    SUBDIR += bird
     SUBDIR += bird2
     SUBDIR += bittwist
     SUBDIR += bmon
