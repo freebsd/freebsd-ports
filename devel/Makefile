@@ -7857,6 +7857,7 @@
     SUBDIR += rubygem-xpath
     SUBDIR += rubygem-xxhash
     SUBDIR += rubygem-yajl-ruby
+    SUBDIR += rubygem-yard-sorbet
     SUBDIR += rubygem-yui-compressor
     SUBDIR += rubygem-zeitwerk
     SUBDIR += rubygem-zentest
