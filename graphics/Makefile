@@ -901,6 +901,7 @@
     SUBDIR += py-gdal
     SUBDIR += py-geomdl
     SUBDIR += py-geopandas
+    SUBDIR += py-geosnap
     SUBDIR += py-giddy
     SUBDIR += py-gizeh
     SUBDIR += py-glcontext
