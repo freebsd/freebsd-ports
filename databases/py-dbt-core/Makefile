@@ -39,4 +39,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}agate>=1.7,<2:textproc/py-agate@${PY_FLAVOR}
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
