@@ -1,0 +1,3 @@
+XLSX I/O aims to provide a C library for reading and writing .xlsx files. The
+.xlsx file format is the native format used by Microsoft(R) Excel(TM) since
+version 2007.

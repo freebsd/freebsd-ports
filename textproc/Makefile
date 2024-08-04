@@ -2135,6 +2135,7 @@
     SUBDIR += xlhtml
     SUBDIR += xlnt
     SUBDIR += xlreader
+    SUBDIR += xlsxio
     SUBDIR += xml-commons
     SUBDIR += xml-format
     SUBDIR += xml-lite.el
