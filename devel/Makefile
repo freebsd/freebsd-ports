@@ -6933,6 +6933,7 @@
     SUBDIR += rubygem-configstruct
     SUBDIR += rubygem-configuration
     SUBDIR += rubygem-console
+    SUBDIR += rubygem-constant_resolver
     SUBDIR += rubygem-contracts
     SUBDIR += rubygem-contracts016
     SUBDIR += rubygem-cookbook-omnifetch
