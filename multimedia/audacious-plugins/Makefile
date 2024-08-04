@@ -269,6 +269,10 @@ MESON_ARGS+=	-Dfilewriter-flac=false \
 		-Dfilewriter-ogg=false
 .endif
 
+.if ${PORT_OPTIONS:MCDDA}
+DEPRECATED=	CDDA depends on expired audio/libcddb
+.endif
+
 post-patch-NLS-off:
 	@${REINPLACE_CMD} -e "/^subdir('po')/d" ${WRKSRC}/meson.build
 
