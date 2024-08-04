@@ -241,6 +241,7 @@
     SUBDIR += noto-serif-hebrew
     SUBDIR += noto-serif-hk
     SUBDIR += noto-serif-jp
+    SUBDIR += noto-serif-kannada
     SUBDIR += noto-serif-khmer
     SUBDIR += noto-serif-kr
     SUBDIR += noto-serif-lao
