@@ -1,5 +1,5 @@
 PORTNAME=	furo
-PORTVERSION=	2024.5.6
+PORTVERSION=	2024.7.18
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		LOCAL/sunpoet:static
