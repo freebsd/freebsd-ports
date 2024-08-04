@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool for authoring Sphinx themes with a simple (opinionated) workflow
-WWW=		https://github.com/pradyunsg/sphinx-theme-builder
+WWW=		https://sphinx-theme-builder.readthedocs.io/en/latest/ \
+		https://github.com/pradyunsg/sphinx-theme-builder
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
