@@ -11,7 +11,7 @@ setup(
     package_dir = {'': 'src'},
     package_data = {'': ['*']},
     install_requires = [
-        'sphinx>=4.2',
+        'sphinx>=5',
         'beautifulsoup4',
         'docutils!=0.17.0',
         'packaging',
@@ -23,14 +23,14 @@ setup(
     extras_require = {
         'doc': [
             'numpydoc',
-            'numpydoc',
-            'myst-nb',
             'linkify-it-py',  # for link shortening
             'rich',
             'sphinxext-rediraffe',
             'sphinx-sitemap',
+            'sphinx-autoapi>=3.0.0',
             # For examples section
-            'ablog>=0.11.0rc2',
+            'myst-parser',
+            'ablog>=0.11.8',
             'jupyter_sphinx',
             'pandas',
             'plotly',
@@ -40,25 +40,38 @@ setup(
             'sphinx-copybutton',
             'sphinx-design',
             'sphinx-togglebutton',
-            'sphinxcontrib-youtube',
+            'jupyterlite-sphinx',
+            'sphinxcontrib-youtube>=1.4.1',
             'sphinx-favicon>=1.0.1',
             # Install nbsphinx in case we want to test it locally even though we can't load
             # it at the same time as MyST-NB.
+            'ipykernel',
             'nbsphinx',
             'ipyleaflet',
             'colorama',
+            'ipywidgets',
+            'graphviz',
         ],
         'test': [
             'pytest',
             'pytest-cov',
             'pytest-regressions',
-            'codecov',
+            'sphinx[test]',
         ],
         'dev': [
             'pyyaml',
             'pre-commit',
-            'nox',
             'pydata-sphinx-theme[doc,test]',
+            'tox',
+            'pandoc',
+            'sphinx-theme-builder[cli]',
+        ],
+        'a11y': [
+            'pytest-playwright',
+        ],
+        'i18n': [
+            'Babel',
+            'jinja2',
         ],
     },
     entry_points = {
@@ -67,11 +80,10 @@ setup(
     classifiers = [
         'Development Status :: 5 - Production/Stable',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
         'Framework :: Sphinx',
         'Framework :: Sphinx :: Theme',
         'License :: OSI Approved :: BSD License',
