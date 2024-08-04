@@ -3419,3 +3419,4 @@ audio/sidplay2|audio/sidplayfp|2024-08-04|Has expired: Abandonware and supersede
 audio/sidplay|audio/sidplayfp|2024-08-04|Has expired: Abandonware and superseded by audio/sidplayfp
 audio/optimfrog||2024-08-04|Has expired: Obsolete format that never gained traction, consider using audio/flac
 databases/mongodb44||2024-08-04|Has expired: EOL as of February 2024, https://www.mongodb.com/legal/support-policy/lifecycles
+graphics/svg2pdf||2024-08-04|Has expired: Depends on deprecated library graphics/libsvg-cairo, please consider using ImageMagick or librsvg
