@@ -739,7 +739,6 @@
     SUBDIR += shntool
     SUBDIR += shortwave
     SUBDIR += shuriken
-    SUBDIR += sidplay
     SUBDIR += sidplayer
     SUBDIR += sidplayfp
     SUBDIR += simplemod
