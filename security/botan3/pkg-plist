@@ -55,6 +55,7 @@ include/botan-%%BOTANMAJOR%%/botan/ecgdsa.h
 include/botan-%%BOTANMAJOR%%/botan/ecies.h
 include/botan-%%BOTANMAJOR%%/botan/eckcdsa.h
 include/botan-%%BOTANMAJOR%%/botan/ed25519.h
+include/botan-%%BOTANMAJOR%%/botan/ed448.h
 include/botan-%%BOTANMAJOR%%/botan/elgamal.h
 include/botan-%%BOTANMAJOR%%/botan/entropy_src.h
 include/botan-%%BOTANMAJOR%%/botan/exceptn.h
@@ -69,6 +70,7 @@ include/botan-%%BOTANMAJOR%%/botan/gost_3410.h
 include/botan-%%BOTANMAJOR%%/botan/hash.h
 include/botan-%%BOTANMAJOR%%/botan/hex.h
 include/botan-%%BOTANMAJOR%%/botan/hmac_drbg.h
+include/botan-%%BOTANMAJOR%%/botan/hss_lms.h
 include/botan-%%BOTANMAJOR%%/botan/kdf.h
 include/botan-%%BOTANMAJOR%%/botan/kyber.h
 include/botan-%%BOTANMAJOR%%/botan/lzma.h
@@ -162,6 +164,8 @@ include/botan-%%BOTANMAJOR%%/botan/tss.h
 include/botan-%%BOTANMAJOR%%/botan/types.h
 include/botan-%%BOTANMAJOR%%/botan/uuid.h
 include/botan-%%BOTANMAJOR%%/botan/version.h
+include/botan-%%BOTANMAJOR%%/botan/x25519.h
+include/botan-%%BOTANMAJOR%%/botan/x448.h
 include/botan-%%BOTANMAJOR%%/botan/x509_ca.h
 include/botan-%%BOTANMAJOR%%/botan/x509_crl.h
 include/botan-%%BOTANMAJOR%%/botan/x509_ext.h
@@ -175,8 +179,8 @@ include/botan-%%BOTANMAJOR%%/botan/xmss_parameters.h
 include/botan-%%BOTANMAJOR%%/botan/xof.h
 include/botan-%%BOTANMAJOR%%/botan/zfec.h
 include/botan-%%BOTANMAJOR%%/botan/zlib.h
-lib/cmake/Botan-%%SOABIVER%%.%%SHLIBVER%%.%%SHLIBVERPATCH%%/botan-config-version.cmake
-lib/cmake/Botan-%%SOABIVER%%.%%SHLIBVER%%.%%SHLIBVERPATCH%%/botan-config.cmake
+lib/cmake/Botan-%%BOTANMAJOR%%.%%SHLIBVER%%.%%SHLIBVERPATCH%%/botan-config-version.cmake
+lib/cmake/Botan-%%BOTANMAJOR%%.%%SHLIBVER%%.%%SHLIBVERPATCH%%/botan-config.cmake
 lib/libbotan-%%BOTANMAJOR%%.a
 lib/libbotan-%%BOTANMAJOR%%.so
 lib/libbotan-%%BOTANMAJOR%%.so.%%SOABIVER%%
