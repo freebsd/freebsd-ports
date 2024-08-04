@@ -3413,3 +3413,4 @@ archivers/pxz||2024-08-04|Has expired: Superseded by xz (Utils), support for mul
 www/mediawiki140||2024-08-04|Has expired: Upstream EOL
 archivers/paq||2024-08-04|Has expired: Outdated, unmaintained and format that never gained any traction
 audio/optimfrog-sse2||2024-08-04|Has expired: Obsolete format that never gained traction, consider using audio/flac
+audio/cam||2024-08-04|Has expired: Abandonware and obsolete, consider using audio/mixertui

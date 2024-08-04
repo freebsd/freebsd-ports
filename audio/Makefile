@@ -70,7 +70,6 @@
     SUBDIR += bslizr-lv2
     SUBDIR += cadence
     SUBDIR += calf-lv2
-    SUBDIR += cam
     SUBDIR += cantata
     SUBDIR += caps-lv2
     SUBDIR += caps-plugins
