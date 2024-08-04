@@ -154,6 +154,7 @@
     SUBDIR += peazip
     SUBDIR += pecl-lzf
     SUBDIR += pecl-rar
+    SUBDIR += pecl-zstd
     SUBDIR += php-brotli
     SUBDIR += php-horde_lz4
     SUBDIR += php-lz4
