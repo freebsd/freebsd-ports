@@ -122,7 +122,6 @@
     SUBDIR += haruna
     SUBDIR += harvid
     SUBDIR += helvum
-    SUBDIR += hypnotix
     SUBDIR += intel-media-sdk
     SUBDIR += iso2mkv
     SUBDIR += jellyfin

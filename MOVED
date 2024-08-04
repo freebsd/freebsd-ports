@@ -3405,3 +3405,4 @@ devel/rubygem-google-protobuf4|devel/rubygem-google-protobuf|2024-07-30|Remove o
 graphics/xsvg||2024-08-04|Has expired: Depends on deprecated library graphics/libsvg-cairo
 graphics/zphoto||2024-08-04|Has expired: Depends on expired graphics/ming
 math/ploticus-nox11||2024-08-04|Has expired: Depends on expired graphics/ming
+multimedia/hypnotix||2024-08-04|Has expired: Depends on expired www/py-imdbpy (use www/py-cinemagoer instead)
