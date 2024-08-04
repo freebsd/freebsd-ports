@@ -1,0 +1,2 @@
+Cython BLIS provides the Blis linear algebra routines as a self-contained Python
+C-extension.
