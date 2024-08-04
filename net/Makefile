@@ -1030,6 +1030,7 @@
     SUBDIR += py-DTLSSocket
     SUBDIR += py-GeoIP2
     SUBDIR += py-aiocoap
+    SUBDIR += py-aiohappyeyeballs
     SUBDIR += py-aiohttp-socks
     SUBDIR += py-amqp
     SUBDIR += py-amqplib
