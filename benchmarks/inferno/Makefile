@@ -1,6 +1,6 @@
 PORTNAME=	inferno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.20
+DISTVERSION=	0.11.21
 CATEGORIES=	benchmarks
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,18 +20,19 @@ CARGO_CRATES=	adler32-1.2.0 \
 		aho-corasick-1.1.3 \
 		allocator-api2-0.2.18 \
 		anes-0.1.6 \
-		anstream-0.6.14 \
-		anstyle-1.0.7 \
-		anstyle-parse-0.2.4 \
-		anstyle-query-1.1.0 \
-		anstyle-wincon-3.0.3 \
+		anstream-0.6.15 \
+		anstyle-1.0.8 \
+		anstyle-parse-0.2.5 \
+		anstyle-query-1.1.1 \
+		anstyle-wincon-3.0.4 \
 		arrayvec-0.7.4 \
-		assert_cmd-2.0.14 \
+		assert_cmd-2.0.15 \
 		autocfg-1.3.0 \
 		bitflags-2.6.0 \
-		bstr-1.9.1 \
+		bstr-1.10.0 \
 		bumpalo-3.16.0 \
-		bytemuck-1.16.1 \
+		bytemuck-1.16.3 \
+		byteorder-1.5.0 \
 		cast-0.3.0 \
 		cfg-if-1.0.0 \
 		ciborium-0.2.2 \
@@ -41,7 +42,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		clap_builder-4.4.18 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \
-		colorchoice-1.0.1 \
+		colorchoice-1.0.2 \
 		core2-0.4.0 \
 		crc32fast-1.4.2 \
 		criterion-0.5.1 \
@@ -57,17 +58,17 @@ CARGO_CRATES=	adler32-1.2.0 \
 		difflib-0.4.0 \
 		doc-comment-0.3.3 \
 		either-1.13.0 \
-		env_filter-0.1.0 \
-		env_logger-0.11.3 \
+		env_filter-0.1.2 \
+		env_logger-0.11.5 \
 		equivalent-1.0.1 \
 		getrandom-0.2.15 \
 		half-2.4.1 \
 		hashbrown-0.14.5 \
 		heck-0.4.1 \
 		hermit-abi-0.3.9 \
-		indexmap-2.2.6 \
+		indexmap-2.3.0 \
 		is-terminal-0.4.12 \
-		is_terminal_polyfill-1.70.0 \
+		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.5 \
 		itoa-1.0.11 \
 		js-sys-0.3.69 \
@@ -86,10 +87,10 @@ CARGO_CRATES=	adler32-1.2.0 \
 		plotters-0.3.6 \
 		plotters-backend-0.3.6 \
 		plotters-svg-0.3.6 \
-		ppv-lite86-0.2.17 \
-		predicates-3.1.0 \
-		predicates-core-1.0.6 \
-		predicates-tree-1.0.9 \
+		ppv-lite86-0.2.20 \
+		predicates-3.1.2 \
+		predicates-core-1.0.8 \
+		predicates-tree-1.0.11 \
 		pretty_assertions-1.4.0 \
 		proc-macro2-1.0.86 \
 		quick-xml-0.26.0 \
@@ -99,28 +100,28 @@ CARGO_CRATES=	adler32-1.2.0 \
 		rand_core-0.6.4 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.5.2 \
-		regex-1.10.5 \
+		redox_syscall-0.5.3 \
+		regex-1.10.6 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.8.4 \
-		rgb-0.8.44 \
+		rgb-0.8.45 \
 		rle-decode-fast-1.0.3 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		serde-1.0.204 \
 		serde_derive-1.0.204 \
-		serde_json-1.0.120 \
+		serde_json-1.0.122 \
 		smallvec-1.13.2 \
 		str_stack-0.1.0 \
 		strsim-0.10.0 \
-		syn-2.0.71 \
+		syn-2.0.72 \
 		termtree-0.4.1 \
 		testing_logger-0.1.1 \
 		tinytemplate-1.2.1 \
 		unicode-ident-1.0.12 \
 		utf8parse-0.2.2 \
-		version_check-0.9.4 \
+		version_check-0.9.5 \
 		wait-timeout-0.2.0 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
@@ -130,8 +131,9 @@ CARGO_CRATES=	adler32-1.2.0 \
 		wasm-bindgen-macro-support-0.2.92 \
 		wasm-bindgen-shared-0.2.92 \
 		web-sys-0.3.69 \
-		winapi-util-0.1.8 \
+		winapi-util-0.1.9 \
 		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.52.6 \
