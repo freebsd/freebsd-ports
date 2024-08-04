@@ -7,7 +7,7 @@
 -    "cython>=3",
 -    "cmake",
 -    "ninja",
--    "numpy>=2.0.0rc1",
+-    "numpy>=2.0.0",
 +    "cython",
 +    "numpy",
  ]
