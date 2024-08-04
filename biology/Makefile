@@ -72,6 +72,7 @@
     SUBDIR += generand
     SUBDIR += gff2ps
     SUBDIR += gffread
+    SUBDIR += gkl
     SUBDIR += gmap
     SUBDIR += gperiodic
     SUBDIR += graphlan

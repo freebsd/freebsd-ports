@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2024-08-04 17:44:32 UTC
++++ CMakeLists.txt
+@@ -24,6 +24,8 @@ set(NATIVE_DIR ${PROJECT_SOURCE_DIR}/src/main/native)
+ # add CMakeLists.txt in subdirectories
+ set(NATIVE_DIR ${PROJECT_SOURCE_DIR}/src/main/native)
+ 
++link_directories(${CMAKE_INSTALL_PREFIX}/lib)
++
+ add_subdirectory("${NATIVE_DIR}/compression")
+ add_subdirectory("${NATIVE_DIR}/pairhmm")
+ add_subdirectory("${NATIVE_DIR}/utils")
