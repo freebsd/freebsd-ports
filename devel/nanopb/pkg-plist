@@ -1,3 +1,5 @@
+bin/__pycache__/nanopb_generator%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+bin/__pycache__/nanopb_generator%%PYTHON_EXT_SUFFIX%%.pyc
 bin/nanopb_generator
 bin/nanopb_generator.py
 bin/protoc-gen-nanopb
@@ -13,9 +15,21 @@ lib/libprotobuf-nanopb.a
 lib/libprotobuf-nanopb.so
 lib/libprotobuf-nanopb.so.0
 %%PYTHON_SITELIBDIR%%/nanopb/__init__.py
+%%PYTHON_SITELIBDIR%%/nanopb/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/nanopb/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/nanopb/generator/__init__.py
+%%PYTHON_SITELIBDIR%%/nanopb/generator/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/nanopb/generator/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/nanopb/generator/__pycache__/nanopb_generator%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/nanopb/generator/__pycache__/nanopb_generator%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/nanopb/generator/nanopb_generator.py
 %%PYTHON_SITELIBDIR%%/nanopb/generator/proto/__init__.py
+%%PYTHON_SITELIBDIR%%/nanopb/generator/proto/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/nanopb/generator/proto/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/nanopb/generator/proto/__pycache__/_utils%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/nanopb/generator/proto/__pycache__/_utils%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/nanopb/generator/proto/__pycache__/nanopb_pb2%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/nanopb/generator/proto/__pycache__/nanopb_pb2%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/nanopb/generator/proto/_utils.py
 %%PYTHON_SITELIBDIR%%/nanopb/generator/proto/nanopb.proto
 %%PYTHON_SITELIBDIR%%/nanopb/generator/proto/nanopb_pb2.py
