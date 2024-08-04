@@ -7439,6 +7439,7 @@
     SUBDIR += rubygem-os
     SUBDIR += rubygem-ostruct
     SUBDIR += rubygem-p4ruby
+    SUBDIR += rubygem-packwerk
     SUBDIR += rubygem-pagy
     SUBDIR += rubygem-paint
     SUBDIR += rubygem-pairing_heap
