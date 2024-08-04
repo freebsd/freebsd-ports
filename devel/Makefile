@@ -562,6 +562,7 @@
     SUBDIR += dconf
     SUBDIR += dconf-editor
     SUBDIR += debugedit
+    SUBDIR += decompyle3
     SUBDIR += dee
     SUBDIR += deforaos-libsystem
     SUBDIR += deheader

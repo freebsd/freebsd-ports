@@ -1,0 +1,5 @@
+decompyle3 is a native Python cross-version decompiler and fragment decompiler.
+It is a reworking of uncompyle6.
+
+decompyle3 translates Python bytecode back into equivalent Python source code.
+It accepts bytecodes from Python version 3.7 on.
