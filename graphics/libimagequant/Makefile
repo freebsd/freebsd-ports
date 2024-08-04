@@ -1,6 +1,5 @@
 PORTNAME=	libimagequant
-PORTVERSION=	4.3.1
-PORTREVISION=	2
+PORTVERSION=	4.3.3
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
