@@ -1248,7 +1248,6 @@
     SUBDIR += xpeps
     SUBDIR += xpx
     SUBDIR += xsane
-    SUBDIR += xsvg
     SUBDIR += xtexcad
     SUBDIR += xv
     SUBDIR += xv-m17n
