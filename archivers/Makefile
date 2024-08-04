@@ -141,7 +141,6 @@
     SUBDIR += p5-PerlIO-gzip
     SUBDIR += p5-PerlIO-via-Bzip2
     SUBDIR += packddir
-    SUBDIR += paq
     SUBDIR += par
     SUBDIR += par2cmdline
     SUBDIR += par2cmdline-turbo
