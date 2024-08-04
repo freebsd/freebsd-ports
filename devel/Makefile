@@ -1176,6 +1176,7 @@
     SUBDIR += libPropList
     SUBDIR += libabigail
     SUBDIR += libac
+    SUBDIR += libada
     SUBDIR += libafterbase
     SUBDIR += libantlr3c
     SUBDIR += libantlr4

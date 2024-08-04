@@ -1,0 +1,23 @@
+PORTNAME=	libada
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.9.0
+CATEGORIES=	devel www
+
+MAINTAINER=	osa@FreeBSD.org
+COMMENT=	WHATWG-compliant and fast URL parser
+WWW=		https://ada-url.com/
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE-APACHE
+
+USES=		cmake localbase:ldflags
+USE_LDCONFIG=	yes
+
+CMAKE_OFF=	ADA_TESTING ADA_BENCHMARKS ADA_TOOLS
+CMAKE_ON=	BUILD_SHARED_LIBS
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	ada-url
+GH_PROJECT=	ada
+
+.include <bsd.port.mk>
