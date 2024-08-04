@@ -12,7 +12,7 @@ WWW=		https://github.com/Ultimaker/Cura/wiki
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Depends on expired devel/libsavitar
+DEPRECATED=	Depends on expired devel/libsavitar and devel/py-pynest2d
 EXPIRATION_DATE=2024-07-31
 
 BUILD_DEPENDS=	Uranium>0,1:cad/uranium
