@@ -1,5 +1,6 @@
 PORTNAME=	ddtrace
 PORTVERSION=	2.10.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/abseil/abseil-cpp/releases/download/20240116.2/:abseil
@@ -48,10 +49,12 @@ SHEBANG_FILES=	ddtrace/internal/datadog/profiling/cmake/tools/fetch_infer.sh \
 		ddtrace/internal/datadog/profiling/cmake/tools/fetch_libdatadog.sh \
 		ddtrace/internal/datadog/profiling/setup_custom.sh
 
-OPTIONS_DEFINE=	OPENTRACING
-OPTIONS_DEFAULT=OPENTRACING
+OPTIONS_DEFINE=	OPENAI OPENTRACING
+OPTIONS_DEFAULT=OPENAI OPENTRACING
+OPENAI_DESC=		Calculate number of tokens
 OPENTRACING_DESC=	OpenTracing support
 
+OPENAI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tiktoken>=0:textproc/py-tiktoken@${PY_FLAVOR}
 OPENTRACING_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}opentracing>=2.0.0:devel/py-opentracing@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
