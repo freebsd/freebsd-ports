@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.8.3
+DISTVERSION=	2024.8.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -46,7 +46,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bumpalo-3.16.0 \
 		bytecount-0.6.8 \
 		byteorder-1.5.0 \
-		bytes-1.7.0 \
+		bytes-1.7.1 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
 		cc-1.1.7 \
@@ -112,7 +112,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		fiat-crypto-0.2.9 \
 		filetime-0.2.23 \
 		fixedbitset-0.4.2 \
-		flate2-1.0.30 \
+		flate2-1.0.31 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
@@ -207,7 +207,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
 		openssl-sys-0.9.103 \
-		os_pipe-1.2.0 \
+		os_pipe-1.2.1 \
 		overload-0.1.1 \
 		owo-colors-3.5.0 \
 		papergrid-0.11.0 \
@@ -233,7 +233,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pkg-config-0.3.30 \
 		portable-atomic-1.7.0 \
 		powerfmt-0.2.0 \
-		ppv-lite86-0.2.18 \
+		ppv-lite86-0.2.20 \
 		predicates-3.1.2 \
 		predicates-core-1.0.8 \
 		predicates-tree-1.0.11 \
@@ -252,7 +252,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
-		regex-1.10.5 \
+		regex-1.10.6 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.6.29 \
@@ -268,7 +268,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustix-0.38.34 \
 		rustls-0.23.12 \
 		rustls-native-certs-0.7.1 \
-		rustls-pemfile-2.1.2 \
+		rustls-pemfile-2.1.3 \
 		rustls-pki-types-1.7.0 \
 		rustls-webpki-0.102.6 \
 		rustversion-1.0.17 \
@@ -282,12 +282,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		semver-1.0.23 \
 		serde-1.0.204 \
 		serde_derive-1.0.204 \
-		serde_json-1.0.121 \
+		serde_json-1.0.122 \
 		serde_spanned-0.6.7 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.8 \
 		sharded-slab-0.1.7 \
-		shared_child-1.0.0 \
+		shared_child-1.0.1 \
 		shell-escape-0.1.5 \
 		shell-words-1.1.0 \
 		signal-hook-0.3.17 \
@@ -297,6 +297,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		similar-2.6.0 \
 		simplelog-0.12.2 \
 		siphasher-0.3.11 \
+		siphasher-1.0.1 \
 		slab-0.4.9 \
 		slug-0.1.5 \
 		smallvec-1.13.2 \
@@ -314,7 +315,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tabled-0.15.0 \
 		tabled_derive-0.7.0 \
 		tar-0.4.41 \
-		tempfile-3.10.1 \
+		tempfile-3.11.0 \
 		tera-1.20.0 \
 		termcolor-1.4.1 \
 		terminal_size-0.3.0 \
@@ -389,7 +390,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		widestring-1.1.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.8 \
+		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.52.0 \
 		windows-core-0.52.0 \
@@ -397,6 +398,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows-interface-0.52.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.48.5 \
@@ -421,8 +423,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		xattr-1.3.1 \
 		xx-1.1.5 \
 		yansi-0.5.1 \
-		zerocopy-0.6.6 \
-		zerocopy-derive-0.6.6 \
+		zerocopy-0.7.35 \
+		zerocopy-derive-0.7.35 \
 		zeroize-1.8.1 \
 		zip-2.1.6 \
 		zipsign-api-0.1.2 \
