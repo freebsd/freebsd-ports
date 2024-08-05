@@ -37,6 +37,7 @@ MESON_ARGS+=	-Dvideo-codecs="vc1dec,h264dec,h264enc,h265dec,h265enc,av1dec,av1en
 		-Dgbm=disabled \
 		-Dgles1=disabled \
 		-Dgles2=disabled \
+		-Dglvnd=disabled \
 		-Dlmsensors=disabled \
 		-Dmicrosoft-clc=disabled \
 		-Dosmesa=false \

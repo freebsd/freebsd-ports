@@ -1,6 +1,5 @@
 PORTNAME=	libosmesa
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	Off-Screen Mesa implementation of the OpenGL API
@@ -31,6 +30,7 @@ MESON_ARGS+=	-Dgallium-drivers="swrast" \
 		-Dgallium-nine=false \
 		-Dgles1=disabled \
 		-Dgles2=disabled \
+		-Dglvnd=disabled \
 		-Dlmsensors=disabled \
 		-Dmicrosoft-clc=disabled \
 		-Dopengl=true \

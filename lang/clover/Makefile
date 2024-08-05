@@ -36,6 +36,7 @@ MESON_ARGS+=	-Dplatforms="" \
 		-Dgallium-xa=disabled \
 		-Dgles1=disabled \
 		-Dgles2=disabled \
+		-Dglvnd=disabled \
 		-Dmicrosoft-clc=disabled \
 		-Dopengl=false \
 		-Dglx=disabled \

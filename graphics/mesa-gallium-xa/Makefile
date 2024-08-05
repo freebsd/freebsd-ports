@@ -37,6 +37,7 @@ MESON_ARGS+=	-Dgallium-drivers="svga" \
 		-Dshared-glapi=disabled \
 		-Dosmesa=false \
 		-Dvalgrind=disabled \
+		-Dglvnd=disabled \
 		-Dxlib-lease=disabled
 
 LDFLAGS_i386=		-Wl,-znotext

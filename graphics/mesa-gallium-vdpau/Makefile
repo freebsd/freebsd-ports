@@ -36,6 +36,7 @@ MESON_ARGS+=	-Dgallium-drivers="r600,radeonsi" \
 		-Dgbm=disabled \
 		-Dgles1=disabled \
 		-Dgles2=disabled \
+		-Dglvnd=disabled \
 		-Dlmsensors=disabled \
 		-Dmicrosoft-clc=disabled \
 		-Dosmesa=false \
