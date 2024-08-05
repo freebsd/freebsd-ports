@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
 .endif
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel
 
 # include patch to fix database migration
