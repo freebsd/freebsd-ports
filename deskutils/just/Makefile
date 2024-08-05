@@ -1,5 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	1.33.0
+DISTVERSION=	1.34.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -41,10 +41,10 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		cfg_aliases-0.1.1 \
 		chrono-0.4.38 \
 		clap-2.34.0 \
-		clap-4.5.11 \
-		clap_builder-4.5.11 \
-		clap_complete-4.5.11 \
-		clap_derive-4.5.11 \
+		clap-4.5.13 \
+		clap_builder-4.5.13 \
+		clap_complete-4.5.12 \
+		clap_derive-4.5.13 \
 		clap_lex-0.7.2 \
 		clap_mangen-0.2.23 \
 		colorchoice-1.0.2 \
@@ -97,7 +97,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		once_cell-1.19.0 \
 		option-ext-0.2.0 \
 		percent-encoding-2.3.1 \
-		ppv-lite86-0.2.19 \
+		ppv-lite86-0.2.18 \
 		pretty_assertions-1.4.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
@@ -110,7 +110,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		rand_core-0.6.4 \
 		rayon-core-1.12.1 \
 		redox_users-0.4.5 \
-		regex-1.10.5 \
+		regex-1.10.6 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.8.4 \
 		roff-0.2.2 \
@@ -120,7 +120,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		semver-1.0.23 \
 		serde-1.0.204 \
 		serde_derive-1.0.204 \
-		serde_json-1.0.121 \
+		serde_json-1.0.122 \
 		sha2-0.10.8 \
 		shellexpand-3.1.0 \
 		similar-2.6.0 \
@@ -135,7 +135,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		syn-1.0.109 \
 		syn-2.0.72 \
 		target-2.1.0 \
-		tempfile-3.10.1 \
+		tempfile-3.11.0 \
 		temptree-0.2.0 \
 		terminal_size-0.3.0 \
 		textwrap-0.11.0 \
@@ -183,8 +183,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_msvc-0.52.6 \
 		winsafe-0.0.19 \
 		yansi-0.5.1 \
-		zerocopy-0.7.35 \
-		zerocopy-derive-0.7.35
+		zerocopy-0.6.6 \
+		zerocopy-derive-0.6.6
 
 PLIST_FILES=	bin/${PORTNAME}
 
