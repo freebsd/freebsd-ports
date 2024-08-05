@@ -1,15 +1,12 @@
 PORTNAME=	ungoogled-chromium
 PORTVERSION=	127.0.6533.88
+PORTREVISION=	1
 UGVERSION=	${DISTVERSION}-1
-PULSEMV=	16
-PULSEV=		${PULSEMV}.1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
-		https://nerd.hu/distfiles/:external \
-		https://freedesktop.org/software/pulseaudio/releases/:pulseaudio
+		https://nerd.hu/distfiles/:external
 DISTFILES=	chromium-${DISTVERSION}${EXTRACT_SUFX} \
-		ungoogled-chromium-${UGVERSION}.tar.gz:external \
-		pulseaudio-${PULSEV}.tar.gz:pulseaudio
+		ungoogled-chromium-${UGVERSION}.tar.gz:external
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Google web browser based on WebKit sans integration with Google
@@ -43,10 +40,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
 		libspeechd.so:accessibility/speech-dispatcher \
-		libasound.so:audio/alsa-lib \
 		libFLAC.so:audio/flac \
 		libopus.so:audio/opus \
-		libsndio.so:audio/sndio \
 		libspeex.so:audio/speex \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
@@ -126,7 +121,7 @@ GN_ARGS+=	enable_widevine=true \
 		use_system_libffi=true \
 		use_system_libjpeg=true \
 		use_udev=false \
-		extra_cxxflags="${CXXFLAGS} -I${WRKDIR}/pulseaudio-${PULSEV}/src -DPA_MAJOR=${PULSEMV}" \
+		extra_cxxflags="${CXXFLAGS}" \
 		extra_ldflags="${LDFLAGS}" \
 		ffmpeg_branding="${FFMPEG_BRAND}"
 
@@ -153,11 +148,6 @@ GN_ARGS+=	build_with_tflite_lib=false \
 		use_official_google_api_keys=false \
 		use_unofficial_version_number=false
 
-# Audio backends
-GN_ARGS+=	use_alsa=true \
-		use_pulseaudio=true \
-		use_sndio=true
-
 # TODO: investigate building with these options:
 # use_system_minigbm
 GN_BOOTSTRAP_FLAGS=	--no-clean --no-rebuild --skip-generate-buildfiles
@@ -166,8 +156,10 @@ SUB_FILES=	ungoogled-chromium.desktop ungoogled-chromium
 SUB_LIST+=	COMMENT="${COMMENT}"
 
 OPTIONS_DEFINE=		CODECS CUPS DEBUG DRIVER KERBEROS LTO PIPEWIRE TEST WIDEVINE
-OPTIONS_DEFAULT=	CODECS CUPS DRIVER KERBEROS PIPEWIRE
+OPTIONS_DEFAULT=	CODECS CUPS DRIVER KERBEROS PIPEWIRE SNDIO
 OPTIONS_EXCLUDE_aarch64=LTO
+OPTIONS_GROUP=		AUDIO
+OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO SNDIO
 OPTIONS_RADIO=		KERBEROS
 OPTIONS_RADIO_KERBEROS=	HEIMDAL HEIMDAL_BASE MIT
 OPTIONS_SUB=		yes
@@ -176,6 +168,12 @@ DRIVER_DESC=		Install chromedriver
 HEIMDAL_BASE_DESC=	Heimdal Kerberos (base)
 HEIMDAL_DESC=		Heimdal Kerberos (security/heimdal)
 MIT_DESC=		MIT Kerberos (security/krb5)
+
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins \
+			alsa-lib>=1.1.1_1:audio/alsa-lib
+ALSA_VARS=		GN_ARGS+=use_alsa=true
+ALSA_VARS_OFF=		GN_ARGS+=use_alsa=false
 
 CODECS_VARS=		GN_ARGS+=proprietary_codecs=true \
 			FFMPEG_BRAND="Chrome"
@@ -219,6 +217,14 @@ PIPEWIRE_VARS=		GN_ARGS+=rtc_use_pipewire=true \
 			GN_ARGS+=rtc_link_pipewire=true
 PIPEWIRE_VARS_OFF=	GN_ARGS+=rtc_use_pipewire=false \
 			GN_ARGS+=rtc_link_pipewire=false
+
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+PULSEAUDIO_VARS=	GN_ARGS+=use_pulseaudio=true
+PULSEAUDIO_VARS_OFF=	GN_ARGS+=use_pulseaudio=false
+
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+SNDIO_VARS=		GN_ARGS+=use_sndio=true
+SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
 WIDEVINE_DESC=		Depend on foreign-cdm to enable playback of DRM content
 WIDEVINE_RUN_DEPENDS=	foreign-cdm>0:www/foreign-cdm
@@ -316,7 +322,6 @@ pre-configure:
 .for _e in config.h config.asm config_components.h libavcodec libavformat libavutil
 	-${CP} -pR ${FFMPEG_BDIR}/${_e} ${FFMPEG_CDIR}
 .endfor
-	touch ${WRKDIR}/pulseaudio-${PULSEV}/src/pulse/version.h
 	@${REINPLACE_CMD} -e 's|$${LOCALBASE}|${LOCALBASE}|;s|$${MODCLANG_VERSION}|${LLVM_DEFAULT}|' \
 		${WRKSRC}/build/rust/rust_bindgen.gni
 
