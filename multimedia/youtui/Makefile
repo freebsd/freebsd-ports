@@ -1,6 +1,6 @@
 PORTNAME=	youtui
-DISTVERSIONPREFIX=	ytmapi-rs/v
-DISTVERSION=	0.0.9
+DISTVERSIONPREFIX=	youtui/v
+DISTVERSION=	0.0.10
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -201,6 +201,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.4 \
 		mio-0.8.11 \
+		mio-1.0.1 \
 		native-tls-0.2.12 \
 		ndk-0.8.0 \
 		ndk-context-0.1.1 \
@@ -213,7 +214,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		num-derive-0.4.2 \
 		num-integer-0.1.46 \
 		num-traits-0.2.19 \
-		num_cpus-1.16.0 \
 		num_enum-0.6.1 \
 		num_enum-0.7.2 \
 		num_enum_derive-0.6.1 \
@@ -282,7 +282,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		reqwest-retry-0.6.0 \
 		retry-policies-0.4.0 \
 		ring-0.17.8 \
-		rodio-0.19.0 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
@@ -292,7 +291,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		rustls-pki-types-1.7.0 \
 		rustls-webpki-0.102.5 \
 		rustversion-1.0.17 \
-		rusty_ytdl-0.7.3 \
 		ryu-1.0.18 \
 		ryu-js-0.2.2 \
 		same-file-1.0.6 \
@@ -360,8 +358,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		tinystr-0.7.2 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.38.1 \
-		tokio-macros-2.3.0 \
+		tokio-1.39.2 \
+		tokio-macros-2.4.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.0 \
 		tokio-stream-0.1.15 \
@@ -455,6 +453,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		yansi-0.5.1 \
 		yoke-0.7.4 \
 		yoke-derive-0.7.4 \
+		youtui-vendored-rodio-0.19.0-youtui-vendored.1 \
+		youtui-vendored-rusty_ytdl-0.7.3-youtui-vendored.1 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
 		zerofrom-0.1.4 \
