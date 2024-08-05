@@ -3408,7 +3408,7 @@ math/ploticus-nox11||2024-08-04|Has expired: Depends on expired graphics/ming
 multimedia/hypnotix||2024-08-04|Has expired: Depends on expired www/py-imdbpy (use www/py-cinemagoer instead)
 net/bird||2024-08-04|Has expired: Upstream EOL was for the end of 2023
 sysutils/unieject||2024-08-04|Has expired: Abandonware, upstream repo deprecated May 17, 2020
-www/tomcat85||2024-08-04|Has expired: Upstream EOL reaches on 2024-03-31, some time after 2024-06-30 distfiles will be archived. Migrate to www/tomcat9
+www/tomcat85|www/tomcat9|2024-08-04|Has expired: Upstream EOL reaches on 2024-03-31, some time after 2024-06-30 distfiles will be archived. Migrate to www/tomcat9
 archivers/pxz||2024-08-04|Has expired: Superseded by xz (Utils), support for multithreading is available since 2014
 www/mediawiki140||2024-08-04|Has expired: Upstream EOL
 archivers/paq||2024-08-04|Has expired: Outdated, unmaintained and format that never gained any traction
