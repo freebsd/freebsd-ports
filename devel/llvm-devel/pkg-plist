@@ -1066,6 +1066,7 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/Basic/FileManager.h
 %%CLANG%%llvm-devel/include/clang/Basic/FileSystemOptions.h
 %%CLANG%%llvm-devel/include/clang/Basic/FileSystemStatCache.h
+%%CLANG%%llvm-devel/include/clang/Basic/HLSLIntangibleTypes.def
 %%CLANG%%llvm-devel/include/clang/Basic/HLSLRuntime.h
 %%CLANG%%llvm-devel/include/clang/Basic/HeaderInclude.h
 %%CLANG%%llvm-devel/include/clang/Basic/IdentifierTable.h
@@ -1793,7 +1794,9 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Parser/tools.h
 %%FLANG%%llvm-devel/include/flang/Parser/unparse.h
 %%FLANG%%llvm-devel/include/flang/Parser/user-state.h
+%%FLANG%%llvm-devel/include/flang/Runtime/CUDA/allocator.h
 %%FLANG%%llvm-devel/include/flang/Runtime/allocatable.h
+%%FLANG%%llvm-devel/include/flang/Runtime/allocator-registry.h
 %%FLANG%%llvm-devel/include/flang/Runtime/array-constructor.h
 %%FLANG%%llvm-devel/include/flang/Runtime/assign.h
 %%FLANG%%llvm-devel/include/flang/Runtime/c-or-cpp.h
@@ -2300,6 +2303,7 @@ llvm-devel/bin/verify-uselistorder
 %%LLDB%%llvm-devel/include/lldb/Target/RegisterTypeBuilder.h
 %%LLDB%%llvm-devel/include/lldb/Target/RemoteAwarePlatform.h
 %%LLDB%%llvm-devel/include/lldb/Target/Runtime.h
+%%LLDB%%llvm-devel/include/lldb/Target/ScriptedThreadPlan.h
 %%LLDB%%llvm-devel/include/lldb/Target/SectionLoadHistory.h
 %%LLDB%%llvm-devel/include/lldb/Target/SectionLoadList.h
 %%LLDB%%llvm-devel/include/lldb/Target/StackFrame.h
@@ -2321,7 +2325,6 @@ llvm-devel/bin/verify-uselistorder
 %%LLDB%%llvm-devel/include/lldb/Target/ThreadPlanCallFunctionUsingABI.h
 %%LLDB%%llvm-devel/include/lldb/Target/ThreadPlanCallOnFunctionExit.h
 %%LLDB%%llvm-devel/include/lldb/Target/ThreadPlanCallUserExpression.h
-%%LLDB%%llvm-devel/include/lldb/Target/ThreadPlanPython.h
 %%LLDB%%llvm-devel/include/lldb/Target/ThreadPlanRunToAddress.h
 %%LLDB%%llvm-devel/include/lldb/Target/ThreadPlanShouldStopHere.h
 %%LLDB%%llvm-devel/include/lldb/Target/ThreadPlanStack.h
@@ -6252,6 +6255,10 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/arm_sve.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/arm_vector_types.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/armintr.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/avx10_2_512minmaxintrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/avx10_2_512niintrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/avx10_2minmaxintrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/avx10_2niintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/avx2intrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/avx512bf16intrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/avx512bitalgintrin.h
