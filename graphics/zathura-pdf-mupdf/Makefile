@@ -1,6 +1,5 @@
 PORTNAME=	zathura-pdf-mupdf
-DISTVERSION=	0.4.3
-PORTREVISION=	1
+DISTVERSION=	0.4.4
 CATEGORIES=	graphics
 MASTER_SITES=	https://pwmt.org/projects/zathura-pdf-mupdf/download/
 
@@ -11,7 +10,8 @@ WWW=		https://pwmt.org/projects/zathura-pdf-mupdf/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zathura:graphics/zathura
+BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
+		zathura:graphics/zathura
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgirara-gtk3.so:x11-toolkits/girara \
 		libmupdf.so:graphics/mupdf
