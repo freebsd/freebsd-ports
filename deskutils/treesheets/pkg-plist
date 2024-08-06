@@ -5,5 +5,6 @@ share/icons/hicolor/scalable/apps/com.strlen.TreeSheets.svg
 %%NLS%%share/locale/fr_FR/LC_MESSAGES/ts.mo
 %%NLS%%share/locale/it/LC_MESSAGES/ts.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/ts.mo
+%%NLS%%share/locale/ru_RU/LC_MESSAGES/ts.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ts.mo
 share/mime/packages/com.strlen.TreeSheets.xml
