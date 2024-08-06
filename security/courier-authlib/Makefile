@@ -1,5 +1,5 @@
 PORTNAME=	courier-authlib
-PORTVERSION=	0.72.1
+PORTVERSION=	0.72.3
 CATEGORIES?=	security mail
 .if defined(PKGNAMESUFFIX)
 MASTER_SITES=	SF/courier/authlib/${PORTVERSION}
@@ -27,6 +27,9 @@ OPTIONS_DEFINE+=	GDBM
 .include "${.CURDIR}/Makefile.opt"
 
 .else	# !defined(PKGNAMESUFFIX)
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 
 LIB_DEPENDS+=	libidn2.so:dns/libidn2 \
 		libltdl.so:devel/libltdl \
