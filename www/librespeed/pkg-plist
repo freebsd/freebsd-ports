@@ -9,8 +9,10 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-progressBar.html
 @owner %%LIBRESPEED_USERNAME%%
 @dir %%WWWDIR%%/backend
+%%WWWDIR%%/backend/country_asn.mmdb
 %%WWWDIR%%/backend/empty.php
 %%WWWDIR%%/backend/garbage.php
+%%WWWDIR%%/backend/geoip2.phar
 %%WWWDIR%%/backend/getIP.php
 %%WWWDIR%%/backend/getIP_util.php
 @sample %%WWWDIR%%/backend/getIP_ipInfo_apikey.php.sample
