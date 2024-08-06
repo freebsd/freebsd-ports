@@ -287,6 +287,7 @@
     SUBDIR += numchar
     SUBDIR += nut
     SUBDIR += ola
+    SUBDIR += ollama
     SUBDIR += ompl
     SUBDIR += ondir
     SUBDIR += onnx
