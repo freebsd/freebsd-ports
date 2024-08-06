@@ -1,6 +1,6 @@
 PORTNAME=	element
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.71
+DISTVERSION=	1.11.73
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/element-hq/element-web/releases/download/${DISTVERSIONFULL}/
 PKGNAMESUFFIX=	-web
@@ -18,7 +18,7 @@ CPE_VENDOR=	matrix
 NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
-PLIST_SUB=	COMMITID=acaf93297a5a35ea8349
+PLIST_SUB=	COMMITID=e7e77805390ccaee6198
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
