@@ -106,7 +106,8 @@
 %%DOCS%%%%T%%/webapps/docs/architecture/requestProcess/authentication-process.png
 %%DOCS%%%%T%%/webapps/docs/architecture/requestProcess/request-process.png
 %%DOCS%%%%T%%/webapps/docs/architecture/startup.html
-%%DOCS%%%%T%%/webapps/docs/architecture/startup/1_catalina_load.svg
+%%DOCS%%%%T%%/webapps/docs/architecture/startup/1_overview.png
+%%DOCS%%%%T%%/webapps/docs/architecture/startup/1_overview.vpd
 %%DOCS%%%%T%%/webapps/docs/architecture/startup/2_catalina_initliaze.svg
 %%DOCS%%%%T%%/webapps/docs/architecture/startup/3_catalina_start_1.svg
 %%DOCS%%%%T%%/webapps/docs/architecture/startup/4_catalina_start_2.svg
