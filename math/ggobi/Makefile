@@ -1,5 +1,6 @@
 PORTNAME=	ggobi
 DISTVERSION=	2.1.12
+PORTREVISION=	1
 CATEGORIES=	math graphics
 
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -12,7 +13,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libcgraph.so:graphics/graphviz
 
-USES=		autoreconf desktop-file-utils gmake gnome libtool pathfix pkgconfig tex
+USES=		autoreconf desktop-file-utils gettext-tools \
+		gmake gnome libtool pathfix pkgconfig tex
 USE_GITHUB=	yes
 GH_TAGNAME=	93a7148  # The 'official' tarball misses last commit with pstricks removal!
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 libxml2
