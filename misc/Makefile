@@ -417,6 +417,7 @@
     SUBDIR += py-colorbrewer
     SUBDIR += py-colored
     SUBDIR += py-crudini
+    SUBDIR += py-datasets
     SUBDIR += py-detecta
     SUBDIR += py-dictdiffer
     SUBDIR += py-eemeter
