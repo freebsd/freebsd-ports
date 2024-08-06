@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=XClicker
+GenericName=XClicker
+Comment=A blazing fast gui autoclicker
+Exec=xclicker
+Icon=/usr/local/share/pixmaps/xclicker.png
+Terminal=false
+Type=Application
+Categories=Utility;
