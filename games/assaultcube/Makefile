@@ -1,13 +1,14 @@
 PORTNAME=	assaultcube
-PORTVERSION=	1.3.0.2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.3.0.2
 CATEGORIES=	games
 
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Free, multiplayer, first-person shooter game based on the CUBE engine
 WWW=		https://assault.cubers.net/
 
-LICENSE=	ACUBE CUBE MIT OTHER
-LICENSE_COMB=	multi
+LICENSE=		ACUBE CUBE MIT OTHER
+LICENSE_COMB=		multi
 LICENSE_NAME_ACUBE=	AssaultCube ZLIB-like license with additions
 LICENSE_NAME_CUBE=	Cube game engine ZLIB-like license with additions
 LICENSE_NAME_OTHER=	various package licences
@@ -19,11 +20,8 @@ LICENSE_PERMS_CUBE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_OTHER=	dist-mirror pkg-mirror auto-accept
 
 USES=		compiler:c++11-lang gmake tar:bzip2
-
 USE_GITHUB=	yes
-GH_ACCOUNT=	assaultcube
 GH_PROJECT=	AC
-GH_TAGNAME=	v1.3.0.2
 
 LDFLAGS_i386=	-Wl,-znotext
 SUB_FILES=	${PLIST_FILES:Mbin/*:T}
@@ -33,11 +31,11 @@ PLIST_DIRS=	${DATADIR}/packages/maps/servermaps/incoming
 PORTDATA=	config packages
 
 OPTIONS_DEFAULT=	CLIENT DEDICATED
-OPTIONS_MULTI=	BUILD
+OPTIONS_MULTI=		BUILD
 OPTIONS_MULTI_BUILD=	CLIENT DEDICATED #MASTER is currently broken
 
-CLIENT_DESC=	Build client
-DEDICATED_DESC=	Build dedicated server
+CLIENT_DESC=		Build client
+DEDICATED_DESC=		Build dedicated server
 
 CLIENT_LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 			libcurl.so:ftp/curl
@@ -46,22 +44,18 @@ CLIENT_USES=		desktop-file-utils gettext-runtime gl openal:al sdl \
 CLIENT_USE=		GL=gl SDL=sdl2,image2 XORG=x11
 CLIENT_ALL_TARGET=	client
 CLIENT_DESKTOP_ENTRIES=	"AssaultCube" "${COMMENT}" \
-	"${PORTNAME}" "${PORTNAME}_client" \
-	"Game;" false
+			"${PORTNAME}" "${PORTNAME}_client" \
+			"Game;" false
 CLIENT_PLIST_FILES=	bin/${PORTNAME}_client libexec/${PORTNAME}_client \
 			share/pixmaps/${PORTNAME}.png
 DEDICATED_ALL_TARGET=	server
 DEDICATED_PLIST_FILES=	bin/${PORTNAME}_server libexec/${PORTNAME}_server
 
-#MASTER_DESC=	Build master server
+#MASTER_DESC=		Build master server
 #MASTER_ALL_TARGET=	master
 #MASTER_PLIST_FILES=	bin/${PORTNAME}_master libexec/${PORTNAME}_master
 
 .include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} == "clang"
-LDFLAGS_i386+=--no-check-dynamic-relocations
-.endif
 
 post-patch: .SILENT
 	${REINPLACE_CMD} -e '/^CXXFLAGS=/d ; /^CXX=/d ; /^CLIENT_PCH/d ; \
