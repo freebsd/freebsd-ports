@@ -1648,6 +1648,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/comp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/compat.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/compat.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cond-star.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cond-star.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/copyright.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/copyright.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/crm.el.gz
@@ -2680,6 +2682,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/thai.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/tibetan.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/tibetan.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/tifinagh.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/tifinagh.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/tsang-b5.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/tsang-b5.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/tsang-cns.el.gz
