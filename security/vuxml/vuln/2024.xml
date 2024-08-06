@@ -1,3 +1,45 @@
+  <vuln vid="05cd9f82-5426-11ef-8a0f-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>127.0.6533.99</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>127.0.6533.99</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/08/stable-channel-update-for-desktop.html">
+	 <p>This update includes 5 security fixes:</p>
+	 <ul>
+	    <li>[350528343] Critical CVE-2024-7532: Out of bounds memory access in ANGLE. Reported by wgslfuzz on 2024-07-02</li>
+	    <li>[353552540] High CVE-2024-7533: Use after free in Sharing. Reported by lime(@limeSec_) from TIANGONG Team of Legendsec at QI-ANXIN Group on 2024-07-17</li>
+	    <li>[355256380] High CVE-2024-7550: Type Confusion in V8. Reported by Zhenghang Xiao (@Kipreyyy) on 2024-07-25</li>
+	    <li>[352467338] High CVE-2024-7534: Heap buffer overflow in Layout. Reported by Tashita Software Security on 2024-07-11</li>
+	    <li>[352690885] High CVE-2024-7535: Inappropriate implementation in V8. Reported by Tashita Software Security on 2024-07-12</li>
+	    <li>[354847246] High CVE-2024-7536: Use after free in WebAudio. Reported by Cassidy Kim(@cassidy6564) on 2024-07-23</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-7532</cvename>
+      <cvename>CVE-2024-7550</cvename>
+      <cvename>CVE-2024-7534</cvename>
+      <cvename>CVE-2024-7535</cvename>
+      <cvename>CVE-2024-7536</cvename>
+      <url>https://chromereleases.googleblog.com/2024/08/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2024-08-06</discovery>
+      <entry>2024-08-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="15d398ea-4f73-11ef-8a0f-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
