@@ -1,10 +1,9 @@
---- CMakeLists.txt.orig	2022-06-03 00:15:34 UTC
+--- CMakeLists.txt.orig	2024-07-29 16:06:12 UTC
 +++ CMakeLists.txt
-@@ -7,14 +7,14 @@ if(EXISTS "${PROJECT_SOURCE_DIR}/tools")
- endif()
+@@ -8,13 +8,13 @@ add_definitions(-DGAME_VERSION="1.0.5")
  
  # define constants
- add_definitions(-DGAME_VERSION="1.0.3")
+ add_definitions(-DGAME_VERSION="1.0.5")
 -add_definitions(-D_IRR_STATIC_LIB_)
 -add_definitions(-DdIDEDOUBLE)
 -add_definitions(-DCCD_IDEDOUBLE)
@@ -22,7 +21,7 @@
  
  # add extra find modules
  set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
-@@ -53,6 +53,14 @@ include_directories(${X11_Xrandr_INCLUDE_PATH})
+@@ -53,6 +53,14 @@ include_directories(${X11_xf86vmode_INCLUDE_PATH})
  include_directories(${X11_X11_INCLUDE_PATH})
  include_directories(${X11_xf86vmode_INCLUDE_PATH})
  
@@ -37,7 +36,7 @@
  # pandora devices
  if(PANDORA)
  	add_definitions("-DPANDORA")
-@@ -127,15 +135,15 @@ if(WIN32)
+@@ -127,15 +135,15 @@ else()
  else()
  
  	# linux installation
