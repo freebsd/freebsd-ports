@@ -1,7 +1,7 @@
 PORTNAME=	tgpt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 
 MAINTAINER=	nxjoseph@protonmail.com
@@ -11,7 +11,7 @@ WWW=		https://github.com/aandrew-me/tgpt
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22
+USES=		go:1.22,modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aandrew-me
@@ -54,8 +54,7 @@ GH_TUPLE=	andybalholm:brotli:v1.0.5:andybalholm_brotli/vendor/github.com/andybal
 		stretchr:testify:v1.8.4:stretchr_testify/vendor/github.com/stretchr/testify \
 		tam7t:hpkp:2b70b4024ed5:tam7t_hpkp/vendor/github.com/tam7t/hpkp
 
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
-GO_BUILDFLAGS=	-ldflags="-s -w" -o ./build/tgpt
+GO_BUILDFLAGS=	-ldflags="-s -w"
 
 PLIST_FILES=	bin/tgpt
 
