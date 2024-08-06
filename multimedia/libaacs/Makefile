@@ -4,7 +4,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	https://get.videolan.org/${PORTNAME}/${DISTVERSION}/ \
 		https://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shoesoft@gmx.net
 COMMENT=	Advanced Access Content System implementation
 WWW=		https://www.videolan.org/developers/libaacs.html
 
@@ -22,5 +22,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-optimizations
 
 INSTALL_TARGET=	install-strip
+
+post-extract:
+	@${CP} ${FILESDIR}/mmc_device_freebsd.c ${WRKSRC}/src/file
 
 .include <bsd.port.mk>
