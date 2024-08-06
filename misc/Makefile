@@ -439,6 +439,7 @@
     SUBDIR += py-icoextract
     SUBDIR += py-instructor
     SUBDIR += py-ipyfastscape
+    SUBDIR += py-jiwer
     SUBDIR += py-kartograph
     SUBDIR += py-laspy
     SUBDIR += py-lazrs
