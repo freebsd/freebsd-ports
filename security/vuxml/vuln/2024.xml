@@ -1,3 +1,39 @@
+  <vuln vid="db8fa362-0ccb-4aa8-9220-72b7763e9a4a">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.471</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.462.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2024-08-07/">
+	  <h1>Description</h1>
+	  <h5>(Critical) SECURITY-3430 / CVE-2024-43044</h5>
+	  <p>Arbitrary file read vulnerability through agent connections can lead to RCE</p>
+	  <h1>Description</h1>
+	  <h5>(Medium) SECURITY-3349 / CVE-2024-43045</h5>
+	  <p>Missing permission check allows accessing other users' "My Views"</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-43044</cvename>
+      <cvename>CVE-2024-43045</cvename>
+      <url>https://www.jenkins.io/security/advisory/2024-08-07/</url>
+    </references>
+    <dates>
+      <discovery>2024-08-07</discovery>
+      <entry>2024-08-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="729008b9-54bf-11ef-a61b-2cf05da270f3">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
