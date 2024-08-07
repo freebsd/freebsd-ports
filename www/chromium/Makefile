@@ -1,8 +1,7 @@
 PORTNAME=	chromium
-PORTVERSION=	127.0.6533.88
+PORTVERSION=	127.0.6533.99
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
-PORTREVISION=	2
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:external \
