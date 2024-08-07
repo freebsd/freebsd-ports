@@ -34,6 +34,7 @@ bin/llama-embedding
 %%EXAMPLES%%bin/llama-simple
 %%EXAMPLES%%bin/llama-speculative
 %%EXAMPLES%%bin/llama-tokenize
+%%VULKAN%%bin/vulkan-shaders-gen
 include/ggml-alloc.h
 include/ggml-backend.h
 include/ggml-blas.h
