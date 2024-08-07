@@ -1,3 +1,43 @@
+  <vuln vid="94d441d2-5497-11ef-9d2f-080027836e8b">
+    <topic>Django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py39-django42</name>
+	<name>py310-django42</name>
+	<name>py311-django42</name>
+	<range><lt>4.2.15</lt></range>
+      </package>
+      <package>
+	<name>py310-django50</name>
+	<name>py311-django50</name>
+	<range><lt>5.0.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Django reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2024/aug/06/security-releases/">
+	  <p>CVE-2024-41989: Memory exhaustion in django.utils.numberformat.floatformat().</p>
+	  <p>CVE-2024-41990: Potential denial-of-service in django.utils.html.urlize().</p>
+	  <p>CVE-2024-41991: Potential denial-of-service vulnerability in
+	    django.utils.html.urlize() and AdminURLFieldWidget.</p>
+	  <p>CVE-2024-42005: Potential SQL injection in QuerySet.values() and values_list().</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-41989</cvename>
+      <cvename>CVE-2024-41990</cvename>
+      <cvename>CVE-2024-41991</cvename>
+      <cvename>CVE-2024-42005</cvename>
+      <url>https://www.djangoproject.com/weblog/2024/aug/06/security-releases/</url>
+    </references>
+    <dates>
+      <discovery>2024-08-01</discovery>
+      <entry>2024-08-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="05cd9f82-5426-11ef-8a0f-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
