@@ -1614,6 +1614,7 @@
     SUBDIR += vncreflector
     SUBDIR += vnstat
     SUBDIR += vortex
+    SUBDIR += vpp
     SUBDIR += vtun
     SUBDIR += wackamole
     SUBDIR += wakeonlan
