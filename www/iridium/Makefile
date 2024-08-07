@@ -1,8 +1,7 @@
 PORTNAME=	iridium
-PORTVERSION=	2024.07.127.1
+PORTVERSION=	2024.07.127.2
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
-PORTREVISION=	2
 CATEGORIES=	www wayland
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/ \
 		https://freedesktop.org/software/pulseaudio/releases/:pulseaudio
