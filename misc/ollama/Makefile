@@ -1,6 +1,7 @@
 PORTNAME=	ollama
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	bash:shells/bash \
 		cmake:devel/cmake-core \
 		vulkan-headers>0:graphics/vulkan-headers
-LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
+LIB_DEPENDS=	libllama.so:misc/llama-cpp \
+		libvulkan.so:graphics/vulkan-loader
 
 USES=		go:1.22,modules pkgconfig
 
