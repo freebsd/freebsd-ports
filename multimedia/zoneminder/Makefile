@@ -1,7 +1,8 @@
 PORTNAME=	zoneminder
 DISTVERSION=	1.36.33
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	bsd@abinet.ru
 COMMENT=	Complete security camera solution, fully web based with image analysis
@@ -35,7 +36,7 @@ RUN_DEPENDS=	${ZM_DEPENDS} \
 		p5-Data-Entropy>=0:security/p5-Data-Entropy \
 		zip:archivers/zip
 
-USES=		cmake:insource,noninja cpe jpeg mysql perl5 php shebangfix ssl
+USES=		cmake:insource,noninja cpe jpeg mysql perl5 php:flavors shebangfix ssl
 USE_GITHUB=	yes
 GH_TUPLE=	FriendsOfCake:crud:1429237:crud/web/api/app/Plugin/Crud \
 		ZoneMinder:CakePHP-Enum-Behavior:ea90c0c:crud_plugin/web/api/app/Plugin/CakePHP-Enum-Behavior \
