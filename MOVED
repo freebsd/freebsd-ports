@@ -3426,3 +3426,4 @@ dns/dnrd||2024-08-04|Has expired: Abandonware, last release in 2007 and last act
 science/mercantile|science/py-mercantile|2024-08-04|Move science/mercantile to science/py-mercantile
 devel/py-jsonschema417|devel/py-jsonschema|2024-08-04|Remove obsoleted port. Use devel/py-jsonschema instead
 net/ns3||2024-08-07|Has expired: Outdated and unmaintained for years
+games/manaplus||2024-08-07|Has expired: Fails to build with libxml2 2.13.2 (PR 279705)

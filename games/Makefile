@@ -609,7 +609,6 @@
     SUBDIR += magiccube4d
     SUBDIR += mahjong
     SUBDIR += maitretarot
-    SUBDIR += manaplus
     SUBDIR += mancala
     SUBDIR += mangband
     SUBDIR += marblemarcher
