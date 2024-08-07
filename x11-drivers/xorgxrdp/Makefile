@@ -2,11 +2,12 @@ PORTNAME=	xorgxrdp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.2
 # Be sure to bump PORTREVISION after xorg-server update to force rebuild
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 DIST_SUBDIR=	xrdp
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	95ddf9c.patch:-p1
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	X.Org driver enabling use through an RDP session with xrdp
@@ -37,6 +38,7 @@ OPTIONS_DEFAULT=	DRI3
 DRI3_DESC=	DRI3/Glamor OpenGL Support
 DRI3_CONFIGURE_ENABLE=	glamor
 DRI3_LIB_DEPENDS=	libepoxy.so:graphics/libepoxy
+DRI3_BUILD_DEPENDS=	${LOCALBASE}/include/libdrm/drm.h:graphics/libdrm
 DRI3_CFLAGS=		-I${LOCALBASE}/include/libdrm
 DRI3_SUB_FILES=		pkg-message
 
