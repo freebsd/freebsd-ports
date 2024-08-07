@@ -1,6 +1,6 @@
 PORTNAME=	opa
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.67.0
+DISTVERSION=	0.67.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -51,7 +51,7 @@ GH_TUPLE=	\
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:exp:921286631fa9:golang_exp/vendor/golang.org/x/exp \
-		golang:glog:v1.2.0:golang_glog_1 \
+		golang:glog:v1.2.1:golang_glog_1 \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mod:v0.17.0:golang_mod/vendor/golang.org/x/mod \
 		golang:net:v0.27.0:golang_net/vendor/golang.org/x/net \
@@ -82,8 +82,12 @@ GH_TUPLE=	\
 		mitchellh:mapstructure:v1.5.0:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		moby:locker:v1.0.1:moby_locker/vendor/github.com/moby/locker \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
+		open-telemetry:opentelemetry-go-contrib:instrumentation/runtime/v0.53.0:open_telemetry_opentelemetry_go_contrib/vendor/go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp \
+		open-telemetry:opentelemetry-go:v1.28.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
+		open-telemetry:opentelemetry-proto-go:v1.3.1:open_telemetry_opentelemetry_proto_go/vendor/go.opentelemetry.io/proto/otlp \
 		opencontainers:go-digest:v1.0.0:opencontainers_go_digest/vendor/github.com/opencontainers/go-digest \
 		opencontainers:image-spec:v1.1.0:opencontainers_image_spec/vendor/github.com/opencontainers/image-spec \
+		oras-project:oras-go:v2.3.1:oras_project_oras_go/vendor/oras.land/oras-go/v2 \
 		pelletier:go-toml:v2.1.0:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
 		peterh:liner:v1.2.2:peterh_liner/vendor/github.com/peterh/liner \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
