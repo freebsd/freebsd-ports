@@ -1,5 +1,5 @@
-TIMESTAMP = 1683991308
-SHA256 (meganz-MEGAcmd-1.6.3_Linux_GH0.tar.gz) = d0378d2a6787f72467eadf27c82145f232b456bc7cd8719abb0ce51e7f719796
-SIZE (meganz-MEGAcmd-1.6.3_Linux_GH0.tar.gz) = 2085751
-SHA256 (meganz-sdk-v4.17.1d_GH0.tar.gz) = a9d3fffd6ecdfac4005cc84b9972a36b28aeb049febd4c688c537f4f097aaeec
-SIZE (meganz-sdk-v4.17.1d_GH0.tar.gz) = 3695020
+TIMESTAMP = 1716448787
+SHA256 (meganz-MEGAcmd-1.7.0_Linux_GH0.tar.gz) = 32aa9863ab4c8c4c2497bf1734b59a23086985bc67a90e88d8599fe2a2bf1b89
+SIZE (meganz-MEGAcmd-1.7.0_Linux_GH0.tar.gz) = 2124305
+SHA256 (meganz-sdk-v4.31.0b_GH0.tar.gz) = b81812578f7c5c689f7f221b0a07f1b0a17712f4b662c7c497946555991c0d1a
+SIZE (meganz-sdk-v4.31.0b_GH0.tar.gz) = 3592431
