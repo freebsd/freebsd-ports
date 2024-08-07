@@ -5,6 +5,9 @@ PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GNU/aspell
 
+PATCH_SITES=	https://github.com/GNUAspell/${PORTNAME}/commit/
+PATCHFILES+=	ee6cbb12ff36a1e6618d7388a78dd4e0a2b44041.patch:-p1
+
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Spelling checker with better suggestion logic than ispell
 WWW=		http://aspell.net/
