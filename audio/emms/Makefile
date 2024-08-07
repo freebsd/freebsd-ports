@@ -1,12 +1,11 @@
 PORTNAME=	emms
-DISTVERSION=	18
-PORTREVISION=	4
+DISTVERSION=	20.1
 CATEGORIES=	audio elisp
 MASTER_SITES=	https://elpa.gnu.org/packages/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alster@vinterdalen.se
 COMMENT=	Emacs Multi-Media System
 WWW=		https://www.gnu.org/software/emms/index.html
 
