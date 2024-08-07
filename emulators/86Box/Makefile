@@ -1,6 +1,7 @@
 PORTNAME=	86Box
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.2
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	tiago.gasiba@gmail.com
@@ -36,7 +37,8 @@ USE_XORG=	x11 xcb xext xi
 
 .if ${FLAVOR} == qt5
 USES+=		qt:5
-USE_QT=		core gui network opengl widgets buildtools:build linguisttools:build
+USE_QT=		core gui network opengl widgets buildtools:build \
+		linguisttools:build
 .else
 BUILD_DEPENDS+=	vulkan-headers>0:graphics/vulkan-headers
 USES+=		gl qt:6
@@ -45,6 +47,10 @@ USE_QT=		base tools:build
 CMAKE_ON=	USE_QT6
 CXXFLAGS+=	-I${LOCALBASE}/include/qt6/QtGui/`pkg-config --modversion Qt6Gui`/QtGui
 .endif
+
+SUB_FILES=	86Box-install-roms.sh
+SUB_LIST=	DISTVERSION=${DISTVERSION} \
+		DISTVERSIONPREFIX=${DISTVERSIONPREFIX}
 
 OPTIONS_DEFINE=		NLS WAYLAND
 OPTIONS_DEFAULT=	WAYLAND
@@ -61,6 +67,7 @@ ICON_RESOLUTIONS=	128x128 192x192 256x256 48x48 512x512 64x64 72x72 96x96
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/.build/src/86Box ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/86Box-install-roms.sh ${STAGEDIR}${PREFIX}/bin
 	${REINPLACE_CMD} -e 's|Exec=86Box|Exec=/bin/sh -c "${PREFIX}/bin/86Box -C $${HOME}/86box.cfg"|' \
 		${WRKSRC}/src/unix/assets/net.86box.86Box.desktop
 	${INSTALL_DATA} ${WRKSRC}/src/unix/assets/net.86box.86Box.desktop \

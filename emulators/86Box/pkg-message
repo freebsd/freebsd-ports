@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+86Box requires you to manually install ROMS to be able to run.
+To do this, you can type in the following command:
+    86Box-install-roms.sh -i
+EOM
+}
+]

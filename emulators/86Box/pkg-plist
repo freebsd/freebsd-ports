@@ -1,4 +1,5 @@
 bin/86Box
+bin/86Box-install-roms.sh
 share/applications/net.86box.86Box.desktop
 share/icons/hicolor/128x128/apps/net.86box.86Box.png
 share/icons/hicolor/192x192/apps/net.86box.86Box.png
