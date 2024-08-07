@@ -1,7 +1,6 @@
 PORTNAME=	or-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.5
-PORTREVISION=	9
+DISTVERSION=	9.8
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -40,7 +39,7 @@ CXXFLAGS+=	-DABSL_LEGACY_THREAD_ANNOTATIONS
 CONFIGURE_ENV=	UNIX_CBC_DIR=${LOCALBASE} UNIX_CLP_DIR=${LOCALBASE}
 
 OPTIONS_DEFINE=		DOCS FLATZINC SCIP
-OPTIONS_DEFAULT=	FLATZINC #SCIP
+#OPTIONS_DEFAULT=	FLATZINC SCIP
 OPTIONS_SUB=		yes
 
 FLATZINC_DESC=		Build FlatZinc - MiniZinc interface
@@ -54,6 +53,9 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/-//}
 PORTDOCS=	*
 
 # 3 tests are known to fail, see https://github.com/google/or-tools/issues/3429
+
+post-patch:
+	@${REINPLACE_CMD} -e '17,19d' ${WRKSRC}/ortools/base/logging.h
 
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX} -type d -empty -delete
