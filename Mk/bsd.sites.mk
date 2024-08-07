@@ -614,7 +614,6 @@ MASTER_SITE_GNU+= \
 .if !defined(IGNORE_MASTER_SITE_GNUPG)
 MASTER_SITE_GNUPG+= \
 	https://mirrors.dotsrc.org/gcrypt/%SUBDIR%/ \
-	https://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
 	https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
 	http://www.ring.gr.jp/pub/net/gnupg/%SUBDIR%/ \
 	https://gnupg.org/ftp/gcrypt/%SUBDIR%/
@@ -1055,7 +1054,6 @@ MASTER_SITE_KERNEL_ORG+= \
 	https://mirrors.mit.edu/kernel/%SUBDIR%/ \
 	http://ftp.nara.wide.ad.jp/pub/kernel.org/%SUBDIR%/ \
 	http://ftp.yandex.ru/pub/%SUBDIR%/ \
-	http://ftp.heanet.ie/pub/kernel.org/pub/%SUBDIR%/ \
 	ftp://ftp.ntu.edu.tw/%SUBDIR%/ \
 	ftp://ftp.riken.jp/Linux/kernel.org/%SUBDIR%/
 .endif
