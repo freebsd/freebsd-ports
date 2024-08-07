@@ -20,57 +20,59 @@ rcvar=kresd_enable
 
 load_rc_config ${name}
 
-# set defaults
-kresd_enable=${kresd_enable:-"NO"}
+: ${kresd_enable:="NO"}
 : ${kresd_svcj_options:="net_basic"}
-kresd_config=${kresd_config:-"%%ETCDIR%%/${name}.conf"}
-kresd_user="%%USERS%%"
-kresd_group="%%GROUPS%%"
-kresd_rundir="/var/run/${name}"
+: ${kresd_config:="%%ETCDIR%%/${name}.conf"}
+: ${kresd_user:="%%USERS%%"}
+: ${kresd_group:="%%GROUPS%%"}
+: ${kresd_rundir:="%%RUNDIR%%"}
 
-pidfile="${kresd_rundir}/${name}.pid"
 procname="%%PREFIX%%/sbin/${name}"
 required_files="${kresd_config}"
 
 start_cmd="${name}_start"
+status_cmd="${name}_status"
 stop_cmd="${name}_stop"
 
 command="/usr/sbin/daemon"
-command_args="-c -f -S -r -P ${pidfile} -T ${name} -- ${procname} -c ${kresd_config} -n -q ${kresd_rundir}"
+command_args="-c -f -r -S -T ${name} -- ${procname} -c ${kresd_config} -n -q ${kresd_rundir}"
 
 kresd_start() {
 	if [ ! -d /var/run/${name} ]; then
 		install -d -o ${kresd_user} -g ${kresd_group} -m 700 ${kresd_rundir}
 	fi
-	if [ ! -f "${pidfile}" ]; then
+	/bin/pgrep -f ${procname} > /dev/null && status="$?" || status="$?"
+	if [ "${status}" -eq 0 ]; then
+		echo "${name} already seems to be running."
+	else
 		echo "starting ${name}..." && \
 		${command} ${command_args}
 		echo -e "\e[1A\e[K${name} started."
-	else
-		echo "${name} already seems to be running."
-	fi
-	}
-
-kresd_stop() {
-	if [ -f "${pidfile}" ]; then
-		echo "stopping ${name}..." && \
-		for pid in `ps waux | grep ${procname} | grep daemon | awk '{print $2}'`; do \
-			kill -TERM $pid
-		done
-		echo -e "\e[1A\e[K${name} stopped."
-	else
-		echo "${name} seems to be not running."
 	fi
 	}
 
 kresd_status() {
-    if [ -e "${pidfile}" ]; then
-        echo "${name} is running on pid $(cat $pidfile)."
-        return 1
-    else
-        echo "${name} is not running."
-        return 0
-    fi
-}
+	/bin/pgrep -f ${procname} > /dev/null && status="$?" || status="$?"
+	if [ "${status}" -eq 0 ]; then
+		echo "${name} is running:"
+		echo
+		/bin/ps -p $(/bin/pgrep -f ${procname})
+	else
+		echo "${name} is not running"
+	fi
+	return ${status}
+	}
+
+kresd_stop() {
+	/bin/pgrep -f ${procname} > /dev/null && status="$?" || status="$?"
+	if [ "${status}" -eq 0 ]; then
+		echo "stopping ${name}..." && \
+		/bin/pkill -TERM -f ${procname}
+		echo -e "\e[1A\e[K${name} stopped."
+	else
+		echo "${name} is not running"
+	fi
+	return ${status}
+	}
 
 run_rc_command "$1"
