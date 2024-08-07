@@ -95,7 +95,6 @@ lib/qmmp%%LIB_SUFFX%%/General/libtrackchange.so
 %%UDISKS%%lib/qmmp%%LIB_SUFFX%%/General/libudisks.so
 %%FAAD%%lib/qmmp%%LIB_SUFFX%%/Input/libaac.so
 %%ARCHIVE%%lib/qmmp%%LIB_SUFFX%%/Input/libarchive.so
-%%CDDA%%lib/qmmp%%LIB_SUFFX%%/Input/libcdaudio.so
 lib/qmmp%%LIB_SUFFX%%/Input/libcue.so
 %%FFMPEG%%lib/qmmp%%LIB_SUFFX%%/Input/libffmpeg.so
 %%FLAC%%lib/qmmp%%LIB_SUFFX%%/Input/libflac.so
