@@ -1,3 +1,54 @@
+  <vuln vid="729008b9-54bf-11ef-a61b-2cf05da270f3">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.2.0</ge><lt>17.2.2</lt></range>
+	<range><ge>17.1.0</ge><lt>17.1.4</lt></range>
+	<range><ge>12.0.0</ge><lt>17.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/08/07/patch-release-gitlab-17-2-2-released/">
+	  <p>Privilege Escalation via LFS Tokens Granting Unrestricted Repository Access</p>
+	  <p>Cross project access of Security policy bot</p>
+	  <p>Advanced search ReDOS in highlight for code results</p>
+	  <p>Denial of Service via banzai pipeline</p>
+	  <p>Denial of service using adoc files</p>
+	  <p>ReDoS in RefMatcher when matching branch names using wildcards</p>
+	  <p>Path encoding can cause the Web interface to not render diffs correctly</p>
+	  <p>XSS while viewing raw XHTML files through API</p>
+	  <p>Ambiguous tag name exploitation</p>
+	  <p>Logs disclosings potentially sensitive data in query params</p>
+	  <p>Password bypass on approvals using policy projects</p>
+	  <p>ReDoS when parsing git push</p>
+	  <p>Webhook deletion audit log can preserve auth credentials</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-3035</cvename>
+      <cvename>CVE-2024-6356</cvename>
+      <cvename>CVE-2024-5423</cvename>
+      <cvename>CVE-2024-4210</cvename>
+      <cvename>CVE-2024-2800</cvename>
+      <cvename>CVE-2024-6329</cvename>
+      <cvename>CVE-2024-4207</cvename>
+      <cvename>CVE-2024-3958</cvename>
+      <cvename>CVE-2024-4784</cvename>
+      <cvename>CVE-2024-3114</cvename>
+      <cvename>CVE-2024-7586</cvename>
+      <url>https://about.gitlab.com/releases/2024/08/07/patch-release-gitlab-17-2-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-08-07</discovery>
+      <entry>2024-08-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="94d441d2-5497-11ef-9d2f-080027836e8b">
     <topic>Django -- multiple vulnerabilities</topic>
     <affects>
