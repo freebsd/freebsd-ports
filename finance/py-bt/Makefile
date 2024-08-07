@@ -1,6 +1,6 @@
 PORTNAME=	bt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
+DISTVERSION=	1.1.0
 CATEGORIES=	finance python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,12 +13,12 @@ WWW=		http://pmorissette.github.io/bt/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ffn>=1.0.0:finance/py-ffn@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ffn>=1.1.0:finance/py-ffn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyprind>=2.11:misc/py-pyprind@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4:misc/py-tqdm@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils cython autoplist pytest # tests require nose which is currently broken
+USE_PYTHON=	distutils cython autoplist pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pmorissette
