@@ -1,5 +1,5 @@
 PORTNAME=	ox
-DISTVERSION=	0.4.2
+DISTVERSION=	0.4.3
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-text-editor
 
@@ -20,7 +20,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		autocfg-1.3.0 \
 		bitflags-2.6.0 \
 		bstr-1.10.0 \
-		cc-1.1.6 \
+		cc-1.1.7 \
 		cfg-if-1.0.0 \
 		crossterm-0.27.0 \
 		crossterm_winapi-0.9.1 \
@@ -55,7 +55,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		quote-1.0.36 \
 		redox_syscall-0.5.3 \
 		redox_users-0.4.5 \
-		regex-1.10.5 \
+		regex-1.10.6 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.8.4 \
 		ropey-1.6.1 \
@@ -77,7 +77,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		unicode-ident-1.0.12 \
 		unicode-width-0.1.13 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		which-6.0.1 \
+		which-6.0.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
