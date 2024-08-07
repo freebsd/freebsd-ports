@@ -1,0 +1,2 @@
+Interface around different compilers. It's usually not used directly
+but by a portability layer like: ExtUtils:Builder::Autodetect::C.
