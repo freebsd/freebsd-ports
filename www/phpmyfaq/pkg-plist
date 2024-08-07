@@ -223,6 +223,9 @@
 %%WWWDIR%%/faq.php
 %%WWWDIR%%/glossary.php
 %%WWWDIR%%/index.php
+%%WWWDIR%%/lang/cookie-consent/de.json
+%%WWWDIR%%/lang/cookie-consent/en.json
+%%WWWDIR%%/lang/cookie-consent/pl.json
 %%WWWDIR%%/lang/language_ar.php
 %%WWWDIR%%/lang/language_bn.php
 %%WWWDIR%%/lang/language_bs.php
@@ -1181,8 +1184,6 @@
 %%WWWDIR%%/src/libs/monolog/monolog/LICENSE
 %%WWWDIR%%/src/libs/monolog/monolog/README.md
 %%WWWDIR%%/src/libs/monolog/monolog/composer.json
-%%WWWDIR%%/src/libs/monolog/monolog/favicon.ico
-%%WWWDIR%%/src/libs/monolog/monolog/logo.jpg
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Attribute/AsMonologProcessor.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Attribute/WithMonologChannel.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/DateTimeImmutable.php
@@ -2336,7 +2337,9 @@
 %%WWWDIR%%/src/libs/symfony/service-contracts/LICENSE
 %%WWWDIR%%/src/libs/symfony/service-contracts/README.md
 %%WWWDIR%%/src/libs/symfony/service-contracts/ResetInterface.php
+%%WWWDIR%%/src/libs/symfony/service-contracts/ServiceCollectionInterface.php
 %%WWWDIR%%/src/libs/symfony/service-contracts/ServiceLocatorTrait.php
+%%WWWDIR%%/src/libs/symfony/service-contracts/ServiceMethodsSubscriberTrait.php
 %%WWWDIR%%/src/libs/symfony/service-contracts/ServiceProviderInterface.php
 %%WWWDIR%%/src/libs/symfony/service-contracts/ServiceSubscriberInterface.php
 %%WWWDIR%%/src/libs/symfony/service-contracts/ServiceSubscriberTrait.php
