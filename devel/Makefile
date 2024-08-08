@@ -5208,6 +5208,7 @@
     SUBDIR += py-offtrac
     SUBDIR += py-olefile
     SUBDIR += py-oletools
+    SUBDIR += py-ollama
     SUBDIR += py-omnijson
     SUBDIR += py-omniorb
     SUBDIR += py-onigurumacffi
