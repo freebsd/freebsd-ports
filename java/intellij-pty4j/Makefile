@@ -1,8 +1,8 @@
 PORTNAME=	intellij-pty4j
-PORTVERSION=	0.11.4
+PORTVERSION=	0.12.35
 CATEGORIES=	java devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jinking.this@gmail.com
 COMMENT=	Pty4J's native library
 WWW=		https://github.com/traff/pty4j
 
@@ -14,7 +14,7 @@ USES=	gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	JetBrains
 GH_PROJECT=	pty4j
-GH_TAGNAME=	61a48c06c79f13f5766a35bb6af4816f481f0940
+GH_TAGNAME=	823eadafa619d8726b89675455e07c292718694f
 
 .include "${.CURDIR}/../intellij/common.mk"
 
