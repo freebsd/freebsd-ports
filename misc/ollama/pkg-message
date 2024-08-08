@@ -1,0 +1,24 @@
+[
+{ type: install
+  message: <<EOM
+You installed ollama: the AI model runner.
+
+To run ollama, plese open 2 terminals.
+1. In the first terminal, please run:
+   $ ollama start
+2. In the second terminal, please run:
+   $ ollama run mistral
+
+This will download and run the AI model "mistral".
+You will be able to interact with it in plain English.
+
+Please see https://ollama.com/library for the list
+of all supported models.
+
+ollama uses many gigbytes of disk space in your home directory,
+because advanced AI models are often very large.
+Pease symlink ~/.ollama to a large disk if needed.
+
+EOM
+}
+]
