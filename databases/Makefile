@@ -713,6 +713,14 @@
     SUBDIR += postgresql16-plpython
     SUBDIR += postgresql16-pltcl
     SUBDIR += postgresql16-server
+    SUBDIR += postgresql17-client
+    SUBDIR += postgresql17-contrib
+    SUBDIR += postgresql17-docs
+    SUBDIR += postgresql17-pgtcl
+    SUBDIR += postgresql17-plperl
+    SUBDIR += postgresql17-plpython
+    SUBDIR += postgresql17-pltcl
+    SUBDIR += postgresql17-server
     SUBDIR += powa-archivist
     SUBDIR += powa-web
     SUBDIR += powerarchitect
