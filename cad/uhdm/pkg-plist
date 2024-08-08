@@ -305,6 +305,6 @@ lib/cmake/UHDM/UHDMConfigVersion.cmake
 lib/cmake/UHDM/UHDMTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/UHDM/UHDMTargets.cmake
 lib/libuhdm.so
-lib/libuhdm.so.1.83
+lib/libuhdm.so.1.84
 libdata/pkgconfig/UHDM.pc
 %%DATADIR%%/UHDM.capnp
