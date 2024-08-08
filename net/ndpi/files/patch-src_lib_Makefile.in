@@ -1,25 +1,32 @@
---- src/lib/Makefile.in.orig	2023-11-02 19:51:08 UTC
+--- src/lib/Makefile.in.orig	2024-08-07 09:36:14 UTC
 +++ src/lib/Makefile.in
-@@ -14,15 +14,12 @@ includedir = @includedir@/ndpi
+@@ -14,13 +14,7 @@ includedir = @includedir@/ndpi
  PREFIX     = @prefix@
  libdir     = @libdir@
  includedir = @includedir@/ndpi
 -ifneq ($(OS),Windows_NT)
+-OS := $(shell uname)
+-endif
+-ifneq ($(OS),Windows_NT)
 -CFLAGS     += -fPIC -DPIC
 -endif
 -CFLAGS     += -I. -I../include -Ithird_party/include -DNDPI_LIB_COMPILATION @NDPI_CFLAGS@ @GPROF_CFLAGS@ @CUSTOM_NDPI@ @ADDITIONAL_INCS@
-+CFLAGS     += -fPIC -DPIC -I../include -Ithird_party/include -DNDPI_LIB_COMPILATION @NDPI_CFLAGS@ @CFLAGS@ @GPROF_CFLAGS@ @CUSTOM_NDPI@ @ADDITIONAL_INCS@
++CFLAGS     += -fPIC -DPIC -I. -I../include -Ithird_party/include -DNDPI_LIB_COMPILATION @NDPI_CFLAGS@ @GPROF_CFLAGS@ @CUSTOM_NDPI@ @ADDITIONAL_INCS@
+ CFLAGS_ndpi_bitmap.c := -Wno-unused-function
+ CFLAGS_ndpi_bitmap64_fuse.c := -Wno-unused-function
+ CFLAGS_third_party/src/gcrypt_light.c := -Wno-unused-function -Wno-unused-parameter
+@@ -29,8 +23,8 @@ LIBS       = @ADDITIONAL_LIBS@ @LIBS@ @GPROF_LIBS@
  LDFLAGS    += @NDPI_LDFLAGS@
  LIBS       = @ADDITIONAL_LIBS@ @LIBS@ @GPROF_LIBS@
  
 -OBJECTS   = $(patsubst protocols/%.c, protocols/%.o, $(wildcard protocols/*.c)) $(patsubst third_party/src/%.c, third_party/src/%.o, $(wildcard third_party/src/*.c)) $(patsubst third_party/src/hll/%.c, third_party/src/hll/%.o, $(wildcard third_party/src/hll/*.c)) $(patsubst ./%.c, ./%.o, $(wildcard ./*.c))
--HEADERS   = $(wildcard ../include/*.h) $(wildcard ../include/*.h)
+-HEADERS   = $(wildcard ../include/*.h) $(wildcard *.h)
 +OBJECTS   != ls protocols/*.c | sed 's/\(.*\)\.c$$/\1.o/' && ls third_party/src/*.c | sed -e 's/\(.*\)\.c$$/\1.o/' -e '/gcrypt_light/d' && ls third_party/src/hll/*.c | sed -e 's/\(.*\)\.c$$/\1.o/' && ls ./*.c | sed 's/\(.*\)\.c$$/\1.o/'
 +HEADERS   != ls ../include/*.h
  NDPI_VERSION_MAJOR   = @NDPI_MAJOR@
  NDPI_LIB_STATIC      = libndpi.a
  NDPI_LIB_SHARED_BASE = libndpi.so
-@@ -30,27 +27,7 @@ USE_HOST_LIBGCRYPT   = @USE_HOST_LIBGCRYPT@
+@@ -38,24 +32,7 @@ USE_HOST_LIBGCRYPT   = @USE_HOST_LIBGCRYPT@
  NDPI_LIBS            = $(NDPI_LIB_STATIC) $(NDPI_LIB_SHARED)
  USE_HOST_LIBGCRYPT   = @USE_HOST_LIBGCRYPT@
  
@@ -28,9 +35,6 @@
 -OBJECTS   = $(filter-out third_party/src/gcrypt_light.o,$(TMP_OBJS))
 -endif
 -
--ifneq ($(OS),Windows_NT)
--OS := $(shell uname)
--endif
 -BUILD_MINGW    		 = @BUILD_MINGW@
 -
 -ifeq ($(OS),Darwin)
