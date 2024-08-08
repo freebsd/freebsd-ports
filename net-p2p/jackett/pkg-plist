@@ -115,6 +115,7 @@
 %%DATADIR%%/Definitions/borgzelle.yml
 %%DATADIR%%/Definitions/boxingtorrents.yml
 %%DATADIR%%/Definitions/btarg.yml
+%%DATADIR%%/Definitions/btdirectory.yml
 %%DATADIR%%/Definitions/btetree.yml
 %%DATADIR%%/Definitions/btmet.yml
 %%DATADIR%%/Definitions/btnext.yml
@@ -318,6 +319,7 @@
 %%DATADIR%%/Definitions/losslessclub.yml
 %%DATADIR%%/Definitions/lst.yml
 %%DATADIR%%/Definitions/mactorrentsdownload.yml
+%%DATADIR%%/Definitions/madsrevolution.yml
 %%DATADIR%%/Definitions/majomparade.yml
 %%DATADIR%%/Definitions/makingoff.yml
 %%DATADIR%%/Definitions/malayabits-api.yml
@@ -386,6 +388,7 @@
 %%DATADIR%%/Definitions/pornbay.yml
 %%DATADIR%%/Definitions/pornolab.yml
 %%DATADIR%%/Definitions/pornotorrent.yml
+%%DATADIR%%/Definitions/pornrips.yml
 %%DATADIR%%/Definitions/portugas-api.yml
 %%DATADIR%%/Definitions/postman.yml
 %%DATADIR%%/Definitions/potuk.yml
