@@ -1,5 +1,5 @@
 PORTNAME?=	postgresql
-DISTVERSION?=	16.3
+DISTVERSION?=	16.4
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
 PORTREVISION?=	0
@@ -72,13 +72,8 @@ SUB_FILES+=	502.pgsql
 
 OPTIONS_SUB=	yes
 
-.if defined(CLIENT_ONLY)
-OPTIONS_DEFINE+=LIBEDIT DOCS
-LIBEDIT_DESC=	Use non-GPL libedit instead of readline
-.else
 MAKE_ENV+=	PATH=${PREFIX}/bin:${PATH}
 CONFIGURE_ENV+=	PATH=${PREFIX}/bin:${PATH}
-.endif
 
 .if defined(SERVER_ONLY)
 OPTIONS_DEFINE=	DTRACE LDAP TZDATA XML DOCS
@@ -112,7 +107,7 @@ LLVM_DESC=		Build with support for JIT-compiling expressions
 LLVM_CONFIGURE_WITH=	llvm
 LLVM_CONFIGURE_ENV=	LLVM_CONFIG=${LLVM_CONFIG} \
 			CLANG=${LOCALBASE}/bin/clang${LLVM_VERSION}
-LLVM_USES=		llvm:max=15,min=11,lib
+LLVM_USES=		llvm:min=11,lib
 
 CONFIGURE_ARGS+=	--with-icu
 LIB_DEPENDS+=		libicudata.so:devel/icu
@@ -139,12 +134,6 @@ OPTIONS_DEFAULT+=	SSL
 
 GSSAPI_CONFIGURE_WITH=	gssapi
 .endif # !SLAVE_ONLY
-
-.if defined(CLIENT_ONLY)
-LIBEDIT_CONFIGURE_ON+=--with-libedit-preferred
-LIBEDIT_USES=		libedit
-LIBEDIT_USES_OFF=	readline
-.endif # CLIENT_ONLY
 
 SSL_USES=		ssl
 SSL_CONFIGURE_WITH=	openssl

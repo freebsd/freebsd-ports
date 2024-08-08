@@ -7,7 +7,7 @@ COMMENT=	The contrib utilities from the PostgreSQL distribution
 
 MASTERDIR=	${.CURDIR}/../postgresql13-server
 
-USES=		bison pgsql:${DISTVERSION:C/([0-9]\.?[0-9]).*/\1/g}
+USES=		bison pgsql:${PORTVERSION:R}
 
 BUILD_DIRS=	src/port src/include src/common contrib
 INSTALL_DIRS=	contrib
@@ -33,7 +33,7 @@ XML_LIB_DEPENDS=libxslt.so:textproc/libxslt \
 		libxml2.so:textproc/libxml2
 
 post-configure:
-	@cd ${WRKSRC}/src/backend && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} symlinks
+	@cd ${WRKSRC}/src/backend && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} symlinks
 
 post-install:
 	@- ${INSTALL_DATA} ${WRKSRC}/contrib/README ${STAGEDIR}${DOCSDIR}/extension/README
