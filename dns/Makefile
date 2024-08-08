@@ -84,7 +84,6 @@
     SUBDIR += knock
     SUBDIR += knot-resolver
     SUBDIR += knot3
-    SUBDIR += knot3-lib
     SUBDIR += ldapdns
     SUBDIR += ldns
     SUBDIR += letsdns
