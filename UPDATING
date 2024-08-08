@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240809:
+  AFFECTS: sysutils/amavisd-new
+  AUTHOR: netchildFreeBSD.org
+
+  The start scripts of amavisd have been renamed to amavisd_snmp and
+  amavis_p0fanalyzer for improved compatibility with other parts of the
+  system. The automatic start at boot (rc.conf variable settings) is
+  not affected, but if you have some other automatism you may want to
+  change
+    ".../etc/rc.d/amavisd-snmp" to ".../etc/rc.d/amavisd_snmp"
+    ".../etc/rc.d/amavis-p0fanalyzer" to ".../etc/rc.d/amavis-p0fanalyzer"
+  or
+    "service amavisd-snmp ..." to "service amavisd_snmp ..."
+    "service amavis-p0fanalyzer ..." to "service amavis_p0fanalyzer ..."
+
 20240727:
   AFFECTS: lang/php8[13]
   AUTHOR: netchildFreeBSD.org

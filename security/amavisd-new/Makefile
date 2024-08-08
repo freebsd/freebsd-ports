@@ -1,6 +1,6 @@
 PORTNAME=	amavisd-new
 DISTVERSION=	2.12.3
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -99,7 +99,7 @@ RUN_DEPENDS+=	p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6
 .endif
 
 .if ${PORT_OPTIONS:MSNMP} && ${PORT_OPTIONS:MBDB}
-USE_RC_SUBR+=	amavisd-snmp
+USE_RC_SUBR+=	amavisd_snmp
 RUN_DEPENDS+=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 .endif
 
@@ -134,7 +134,7 @@ RUN_DEPENDS+=	spamassassin>=0:mail/spamassassin
 
 .if ${PORT_OPTIONS:MP0F}
 RUN_DEPENDS+=	${LOCALBASE}/bin/p0f:net-mgmt/p0f
-USE_RC_SUBR+=	amavis-p0fanalyzer
+USE_RC_SUBR+=	amavis_p0fanalyzer
 .else
 AMAVIS_NOP0F=	"@comment "
 .endif
