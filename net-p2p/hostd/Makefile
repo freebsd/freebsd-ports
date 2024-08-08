@@ -1,6 +1,6 @@
 PORTNAME=       hostd
 DISTVERSIONPREFIX=	v
-DISTVERSION=    1.1.1
+DISTVERSION=    1.1.2
 CATEGORIES=     net-p2p
 
 MAINTAINER=     bruno@tinkerbox.org
