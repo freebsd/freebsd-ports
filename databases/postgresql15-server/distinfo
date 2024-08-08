@@ -1,3 +1,3 @@
-TIMESTAMP = 1715095962
-SHA256 (postgresql/postgresql-15.7.tar.bz2) = a46fe49485ab6385e39dabbbb654f5d3049206f76cd695e224268729520998f7
-SIZE (postgresql/postgresql-15.7.tar.bz2) = 23112318
+TIMESTAMP = 1722892659
+SHA256 (postgresql/postgresql-15.8.tar.bz2) = 4403515f9a69eeb3efebc98f30b8c696122bfdf895e92b3b23f5b8e769edcb6a
+SIZE (postgresql/postgresql-15.8.tar.bz2) = 23119460

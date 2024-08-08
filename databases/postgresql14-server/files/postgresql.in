@@ -37,6 +37,7 @@ eval _pgdir="~${postgresql_user}/data%%PG_VERSION%%"
 : ${postgresql_data:="${_pgdir}"}
 : ${postgresql_login_class:=""}
 : ${postgresql_initdb_flags:="--encoding=utf-8 --lc-collate=C"}
+: ${postgresql_svcj_options:="net_basic"}
 
 name=postgresql
 rcvar=postgresql_enable

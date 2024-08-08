@@ -5,7 +5,7 @@ PKGNAMESUFFIX?=	${WANT_PGSQL_VER:S,.,,}-docs
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	The PostgreSQL documentation set
 
-MASTERDIR=	${.CURDIR}/../../databases/postgresql${WANT_PGSQL_VER:S/.//}-server
+MASTERDIR=	${.CURDIR}/../../databases/postgresql${WANT_PGSQL_VER}-server
 WANT_PGSQL_VER?=16
 
 DISTV=		${DISTVERSION:R}
