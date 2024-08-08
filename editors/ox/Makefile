@@ -1,6 +1,5 @@
 PORTNAME=	ox
-DISTVERSION=	0.2.7
-PORTREVISION=	14
+DISTVERSION=	0.4.3
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-text-editor
 
@@ -16,68 +15,92 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	curlpipe
 
-CARGO_CRATES=	aho-corasick-0.7.15 \
-		ansi_term-0.11.0 \
-		arrayref-0.3.6 \
-		arrayvec-0.5.2 \
-		atty-0.2.14 \
-		autocfg-1.0.1 \
-		base64-0.12.3 \
-		bitflags-1.2.1 \
-		blake2b_simd-0.5.11 \
-		cfg-if-0.1.10 \
+CARGO_CRATES=	aho-corasick-1.1.3 \
+		alinio-0.2.1 \
+		autocfg-1.3.0 \
+		bitflags-2.6.0 \
+		bstr-1.10.0 \
+		cc-1.1.7 \
 		cfg-if-1.0.0 \
-		clap-2.33.3 \
-		cloudabi-0.1.0 \
-		constant_time_eq-0.1.5 \
-		crossbeam-utils-0.7.2 \
-		crossterm-0.18.2 \
-		crossterm_winapi-0.6.2 \
-		directories-3.0.1 \
-		dirs-2.0.2 \
-		dirs-sys-0.3.5 \
-		getrandom-0.1.15 \
-		hermit-abi-0.1.17 \
-		instant-0.1.8 \
-		lazy_static-1.4.0 \
-		libc-0.2.80 \
-		lock_api-0.4.1 \
-		log-0.4.11 \
-		memchr-2.3.4 \
-		mio-0.7.6 \
-		miow-0.3.6 \
-		ntapi-0.3.6 \
-		parking_lot-0.11.0 \
-		parking_lot_core-0.8.0 \
-		proc-macro2-1.0.24 \
-		quote-1.0.7 \
-		redox_syscall-0.1.57 \
-		redox_users-0.3.5 \
-		regex-1.4.2 \
-		regex-syntax-0.6.21 \
-		ron-0.6.2 \
-		rust-argon2-0.8.2 \
-		scopeguard-1.1.0 \
-		serde-1.0.117 \
-		serde_derive-1.0.117 \
-		shellexpand-2.0.0 \
-		signal-hook-0.1.16 \
-		signal-hook-registry-1.2.2 \
-		smallvec-1.4.2 \
-		socket2-0.3.16 \
-		strsim-0.8.0 \
-		syn-1.0.48 \
-		term-0.6.1 \
-		textwrap-0.11.0 \
-		thread_local-1.0.1 \
-		unicode-segmentation-1.7.0 \
-		unicode-width-0.1.8 \
-		unicode-xid-0.2.1 \
-		vec_map-0.8.2 \
-		wasi-0.9.0+wasi-snapshot-preview1 \
+		crossterm-0.27.0 \
+		crossterm_winapi-0.9.1 \
+		dirs-5.0.1 \
+		dirs-sys-0.4.1 \
+		either-1.13.0 \
+		errno-0.3.9 \
+		getrandom-0.2.15 \
+		home-0.5.9 \
+		if_chain-1.0.2 \
+		jargon-args-0.2.7 \
+		kaolinite-0.8.1 \
+		libc-0.2.155 \
+		libredox-0.1.3 \
+		linux-raw-sys-0.4.14 \
+		lock_api-0.4.12 \
+		log-0.4.22 \
+		lua-src-547.0.0 \
+		luajit-src-210.5.9+04dca79 \
+		memchr-2.7.4 \
+		mio-0.8.11 \
+		mlua-0.9.9 \
+		mlua-sys-0.6.2 \
+		num-traits-0.2.19 \
+		once_cell-1.19.0 \
+		option-ext-0.2.0 \
+		parking_lot-0.12.3 \
+		parking_lot_core-0.9.10 \
+		pkg-config-0.3.30 \
+		proc-macro2-1.0.86 \
+		quick-error-2.0.1 \
+		quote-1.0.36 \
+		redox_syscall-0.5.3 \
+		redox_users-0.4.5 \
+		regex-1.10.6 \
+		regex-automata-0.4.7 \
+		regex-syntax-0.8.4 \
+		ropey-1.6.1 \
+		rustc-hash-2.0.0 \
+		rustix-0.38.34 \
+		scopeguard-1.2.0 \
+		serde-1.0.204 \
+		serde_derive-1.0.204 \
+		shellexpand-3.1.0 \
+		signal-hook-0.3.17 \
+		signal-hook-mio-0.2.4 \
+		signal-hook-registry-1.4.2 \
+		smallvec-1.13.2 \
+		str_indices-0.4.3 \
+		syn-2.0.72 \
+		synoptic-2.0.4 \
+		thiserror-1.0.63 \
+		thiserror-impl-1.0.63 \
+		unicode-ident-1.0.12 \
+		unicode-width-0.1.13 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		which-6.0.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.6 \
+		winsafe-0.0.19
 
 PLIST_FILES=	bin/${PORTNAME}
 

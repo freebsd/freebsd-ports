@@ -1,7 +1,6 @@
 PORTNAME=	safetensors
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.3
-PORTREVISION=	2
+DISTVERSION=	0.4.4
 CATEGORIES=	misc python # machine-learning
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,46 +24,32 @@ GH_ACCOUNT=	huggingface
 
 WRKSRC_SUBDIR=	bindings/python
 
-CARGO_CRATES=	autocfg-1.2.0 \
-		bitflags-1.3.2 \
+CARGO_CRATES=	autocfg-1.3.0 \
 		cfg-if-1.0.0 \
-		heck-0.4.1 \
+		heck-0.5.0 \
 		indoc-2.0.5 \
 		itoa-1.0.11 \
-		libc-0.2.153 \
-		lock_api-0.4.11 \
+		libc-0.2.155 \
+		memchr-2.7.4 \
 		memmap2-0.9.4 \
 		memoffset-0.9.1 \
 		once_cell-1.19.0 \
-		parking_lot-0.12.1 \
-		parking_lot_core-0.9.9 \
-		portable-atomic-1.6.0 \
-		proc-macro2-1.0.80 \
-		pyo3-0.21.1 \
-		pyo3-build-config-0.21.1 \
-		pyo3-ffi-0.21.1 \
-		pyo3-macros-0.21.1 \
-		pyo3-macros-backend-0.21.1 \
+		portable-atomic-1.7.0 \
+		proc-macro2-1.0.86 \
+		pyo3-0.22.2 \
+		pyo3-build-config-0.22.2 \
+		pyo3-ffi-0.22.2 \
+		pyo3-macros-0.22.2 \
+		pyo3-macros-backend-0.22.2 \
 		quote-1.0.36 \
-		redox_syscall-0.4.1 \
-		ryu-1.0.17 \
-		scopeguard-1.2.0 \
-		serde-1.0.197 \
-		serde_derive-1.0.197 \
-		serde_json-1.0.115 \
-		smallvec-1.13.2 \
-		syn-2.0.59 \
-		target-lexicon-0.12.14 \
+		ryu-1.0.18 \
+		serde-1.0.204 \
+		serde_derive-1.0.204 \
+		serde_json-1.0.122 \
+		syn-2.0.72 \
+		target-lexicon-0.12.16 \
 		unicode-ident-1.0.12 \
-		unindent-0.2.3 \
-		windows-targets-0.48.5 \
-		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_msvc-0.48.5 \
-		windows_i686_gnu-0.48.5 \
-		windows_i686_msvc-0.48.5 \
-		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_msvc-0.48.5
+		unindent-0.2.3
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no

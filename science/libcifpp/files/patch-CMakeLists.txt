@@ -1,20 +1,38 @@
---- CMakeLists.txt.orig	2023-05-31 13:17:00 UTC
+--- CMakeLists.txt.orig	2024-04-03 12:01:51 UTC
 +++ CMakeLists.txt
-@@ -310,7 +310,7 @@ if(CIFPP_DOWNLOAD_CCD)
+@@ -331,7 +331,7 @@ set(project_headers
+ 	include/cif++/validate.hpp
+ )
+ 
+-add_library(cifpp STATIC)
++add_library(cifpp)
+ add_library(cifpp::cifpp ALIAS cifpp)
+ 
+ target_sources(cifpp
+@@ -395,7 +395,7 @@ if(CIFPP_DOWNLOAD_CCD)
+ 		# to download the gzipped version and decompress it ourselves.
  		find_program(GUNZIP gunzip)
  
- 		if(GUNZIP)
--			file(DOWNLOAD ftp://ftp.wwpdb.org/pub/pdb/data/monomers/components.cif.gz ${COMPONENTS_CIF}.gz
-+			file(DOWNLOAD file://${DISTDIR_FULL}/components.cif.gz ${COMPONENTS_CIF}.gz
- 				SHOW_PROGRESS)
- 			add_custom_command(OUTPUT ${COMPONENTS_CIF}
- 				COMMAND ${GUNZIP} ${COMPONENTS_CIF}.gz
-@@ -478,7 +478,7 @@ if(CIFPP_INSTALL_UPDATE_SCRIPT)
- 	install(DIRECTORY DESTINATION "${CIFPP_ETC_DIR}/libcifpp/cache-update.d")
+-		if(WIN32 OR GUNZIP STREQUAL "GUNZIP-NOTFOUND")
++		if(FALSE OR WIN32 OR GUNZIP STREQUAL "GUNZIP-NOTFOUND")
+ 			file(
+ 				DOWNLOAD https://files.wwpdb.org/pub/pdb/data/monomers/components.cif
+ 				${COMPONENTS_CIF}
+@@ -405,7 +405,7 @@ if(CIFPP_DOWNLOAD_CCD)
+ 			if(NOT EXISTS "${COMPONENTS_CIF}.gz")
+ 				file(
+ 					DOWNLOAD
+-					https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz
++					file://${DISTDIR_FULL}/components.cif.gz
+ 					${COMPONENTS_CIF}.gz
+ 					SHOW_PROGRESS
+ 					STATUS CCD_FETCH_STATUS)
+@@ -557,7 +557,7 @@ if(CIFPP_INSTALL_UPDATE_SCRIPT)
  
- 	# a config to, to make it complete
--	if(NOT EXISTS "${CIFPP_ETC_DIR}/libcifpp.conf")
-+	if(TRUE OR NOT EXISTS "${CIFPP_ETC_DIR}/libcifpp.conf")
- 		file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/libcifpp.conf [[# Uncomment the next line to enable automatic updates
- # update=true
- ]])
+ 	# a config file, to make it complete
+ 	# install(DIRECTORY DESTINATION "${CMAKE_INSTALL_LOCALSTATEDIR}/libcifpp")
+-	if(NOT EXISTS "${CMAKE_INSTALL_SYSCONFDIR}/libcifpp.conf")
++	if(TRUE OR NOT EXISTS "${CMAKE_INSTALL_SYSCONFDIR}/libcifpp.conf")
+ 		file(
+ 			WRITE ${CMAKE_CURRENT_BINARY_DIR}/libcifpp.conf
+ 			[[# Uncomment the next line to enable automatic updates

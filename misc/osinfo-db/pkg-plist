@@ -32,6 +32,7 @@ share/osinfo/device/pcisig.com/pci-1af4-1048.d/class.xml
 share/osinfo/device/pcisig.com/pci-1af4-1049.d/class.xml
 share/osinfo/device/pcisig.com/pci-1af4-1050.d/class.xml
 share/osinfo/device/pcisig.com/pci-1af4-1052.d/class.xml
+share/osinfo/device/pcisig.com/pci-1af4-1058.d/class.xml
 share/osinfo/device/pcisig.com/pci-1af4-105a.d/class.xml
 share/osinfo/device/pcisig.com/pci-1b36-0004.d/class.xml
 share/osinfo/device/pcisig.com/pci-1b36-0100.d/class.xml
@@ -80,6 +81,7 @@ share/osinfo/os/alpinelinux.org/alpinelinux-3.16.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.17.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.18.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.19.xml
+share/osinfo/os/alpinelinux.org/alpinelinux-3.20.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.5.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.6.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.7.xml
@@ -87,6 +89,8 @@ share/osinfo/os/alpinelinux.org/alpinelinux-3.8.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.9.xml
 share/osinfo/os/altlinux.org/alt-10.0.xml
 share/osinfo/os/altlinux.org/alt-10.1.xml
+share/osinfo/os/altlinux.org/alt-10.2.xml
+share/osinfo/os/altlinux.org/alt-10.3.xml
 share/osinfo/os/altlinux.org/alt-8.0.xml
 share/osinfo/os/altlinux.org/alt-8.1.xml
 share/osinfo/os/altlinux.org/alt-8.2.xml
@@ -94,6 +98,7 @@ share/osinfo/os/altlinux.org/alt-9.0.xml
 share/osinfo/os/altlinux.org/alt-9.1.xml
 share/osinfo/os/altlinux.org/alt-9.2.xml
 share/osinfo/os/altlinux.org/alt-p10.starterkits.xml
+share/osinfo/os/altlinux.org/alt-p11.starterkits.xml
 share/osinfo/os/altlinux.org/alt-p8.starterkits.xml
 share/osinfo/os/altlinux.org/alt-p9.starterkits.xml
 share/osinfo/os/altlinux.org/alt-sisyphus.xml
@@ -546,6 +551,7 @@ share/osinfo/os/nixos.org/nixos-22.05.xml
 share/osinfo/os/nixos.org/nixos-22.11.xml
 share/osinfo/os/nixos.org/nixos-23.05.xml
 share/osinfo/os/nixos.org/nixos-23.11.xml
+share/osinfo/os/nixos.org/nixos-24.05.xml
 share/osinfo/os/nixos.org/nixos-unknown.xml
 share/osinfo/os/nixos.org/nixos-unstable.xml
 share/osinfo/os/novell.com/netware-4.xml
@@ -1026,6 +1032,7 @@ share/osinfo/schema/osinfo.rng
 @dir share/osinfo/device/pcisig.com/pci-1af4-1049.d
 @dir share/osinfo/device/pcisig.com/pci-1af4-1050.d
 @dir share/osinfo/device/pcisig.com/pci-1af4-1052.d
+@dir share/osinfo/device/pcisig.com/pci-1af4-1058.d
 @dir share/osinfo/device/pcisig.com/pci-1b36-0100.d
 @dir share/osinfo/device/pcisig.com/pci-8086-100e.d
 @dir share/osinfo/device/pcisig.com/pci-8086-2415.d

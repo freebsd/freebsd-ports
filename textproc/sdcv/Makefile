@@ -1,7 +1,6 @@
 PORTNAME=	sdcv
-PORTVERSION=	0.5.2
-PORTREVISION=	4
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.5.5
 CATEGORIES=	textproc
 
 MAINTAINER=	citrin@citrin.ru
@@ -11,13 +10,17 @@ WWW=		https://dushistov.github.io/sdcv/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+TEST_DEPENDS=	jq>0:textproc/jq
+
 USES=		cmake compiler:c++11-lang gnome pkgconfig readline
-USE_GNOME=	glib20
-
-SUB_FILES=	pkg-message
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	Dushistov
+USE_GNOME=	glib20
+
+CMAKE_ON=	BUILD_TESTS
+TEST_TARGET=	test
+
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

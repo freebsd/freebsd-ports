@@ -1,6 +1,6 @@
 PORTNAME=	beadm
 PORTVERSION=	1.2.99.20180708
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 MASTER_SITES=	\
@@ -13,6 +13,9 @@ COMMENT=	Solaris-like utility to manage Boot Environments on ZFS
 WWW=		https://github.com/vermaden/beadm/
 
 LICENSE=	BSD2CLAUSE
+
+DEPRECATED=	Outdated development port. Use sysutils/beadm instead.
+EXPIRATION_DATE=2024-08-15
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vermaden

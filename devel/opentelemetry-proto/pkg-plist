@@ -1,8 +1,11 @@
 include/opentelemetry/proto/collector/logs/v1/logs_service.proto
 include/opentelemetry/proto/collector/metrics/v1/metrics_service.proto
+include/opentelemetry/proto/collector/profiles/v1experimental/profiles_service.proto
 include/opentelemetry/proto/collector/trace/v1/trace_service.proto
 include/opentelemetry/proto/common/v1/common.proto
 include/opentelemetry/proto/logs/v1/logs.proto
 include/opentelemetry/proto/metrics/v1/metrics.proto
+include/opentelemetry/proto/profiles/v1experimental/pprofextended.proto
+include/opentelemetry/proto/profiles/v1experimental/profiles.proto
 include/opentelemetry/proto/resource/v1/resource.proto
 include/opentelemetry/proto/trace/v1/trace.proto

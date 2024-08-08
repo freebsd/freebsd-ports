@@ -8,7 +8,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl driver for Tarantool
-WWW=		https://metacpan.org/release/DR-Tarantool
+WWW=		https://metacpan.org/release/DR-Tarantool \
+		https://github.com/dr-co/dr-tarantool
 
 LICENSE=	ART10
 

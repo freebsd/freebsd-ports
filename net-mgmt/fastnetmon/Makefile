@@ -1,7 +1,7 @@
 PORTNAME=	fastnetmon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt security
 
 PATCH_SITES=	https://github.com/pavel-odintsov/${PORTNAME}/commit/

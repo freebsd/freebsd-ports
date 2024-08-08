@@ -3,5 +3,3 @@ This module provides a synchronous and asynchronous driver for Tarantool.
 The driver does not have external dependencies, but includes the official
 light-weight Tarantool C client (a single C header which implements all protocol
 formatting) for packing requests and unpacking server responses.
-
-See also: https://github.com/dr-co/dr-tarantool

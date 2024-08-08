@@ -16,7 +16,7 @@ LICENSE_FILE_GPLv2=		${WRKSRC}/COPYING
 LICENSE_FILE_GPLv2+ =		${WRKSRC}/vendor/geshi/geshi/LICENSE
 LICENSE_FILE_MIT=		${WRKSRC}/vendor/composer/LICENSE
 
-DIST_VER=	${PORTNAME}-2024-02-06a
+DIST_VER=	${PORTNAME}-2024-02-06b
 USES=		cpe php:web,flavors shebangfix tar:tgz
 USE_PHP=	ctype filter gd iconv mbstring ldap pdo_mysql session simplexml xml zlib
 NO_ARCH=	YES

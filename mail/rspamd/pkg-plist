@@ -15,6 +15,7 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/lang_detection.inc
 %%ETCDIR%%/logging.inc
 %%ETCDIR%%/maps.d/dmarc_whitelist.inc
+%%ETCDIR%%/maps.d/exe_clickbait.inc
 %%ETCDIR%%/maps.d/maillist.inc
 %%ETCDIR%%/maps.d/mid.inc
 %%ETCDIR%%/maps.d/mime_types.inc
@@ -27,6 +28,7 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/modules.d/arc.conf
 %%ETCDIR%%/modules.d/asn.conf
 %%ETCDIR%%/modules.d/aws_s3.conf
+%%ETCDIR%%/modules.d/bayes_expiry.conf
 %%ETCDIR%%/modules.d/bimi.conf
 %%ETCDIR%%/modules.d/chartable.conf
 %%ETCDIR%%/modules.d/clickhouse.conf
@@ -41,6 +43,7 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/modules.d/force_actions.conf
 %%ETCDIR%%/modules.d/forged_recipients.conf
 %%ETCDIR%%/modules.d/fuzzy_check.conf
+%%ETCDIR%%/modules.d/gpt.conf
 %%ETCDIR%%/modules.d/greylist.conf
 %%ETCDIR%%/modules.d/hfilter.conf
 %%ETCDIR%%/modules.d/history_redis.conf
@@ -234,6 +237,7 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/redis_scripts/ratelimit_check.lua
 %%DATADIR%%/lualib/redis_scripts/ratelimit_cleanup_pending.lua
 %%DATADIR%%/lualib/redis_scripts/ratelimit_update.lua
+%%DATADIR%%/lualib/rspamadm/classifier_test.lua
 %%DATADIR%%/lualib/rspamadm/clickhouse.lua
 %%DATADIR%%/lualib/rspamadm/configgraph.lua
 %%DATADIR%%/lualib/rspamadm/confighelp.lua
@@ -275,6 +279,7 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/plugins/force_actions.lua
 %%DATADIR%%/plugins/forged_recipients.lua
 %%DATADIR%%/plugins/fuzzy_collect.lua
+%%DATADIR%%/plugins/gpt.lua
 %%DATADIR%%/plugins/greylist.lua
 %%DATADIR%%/plugins/hfilter.lua
 %%DATADIR%%/plugins/history_redis.lua
@@ -306,6 +311,7 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/plugins/trie.lua
 %%DATADIR%%/plugins/url_redirector.lua
 %%DATADIR%%/plugins/whitelist.lua
+%%DATADIR%%/rules/archives.lua
 %%DATADIR%%/rules/bitcoin.lua
 %%DATADIR%%/rules/bounce.lua
 %%DATADIR%%/rules/content.lua
@@ -348,6 +354,7 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/www/fonts/glyphicons-halflings-regular.woff2
 %%DATADIR%%/www/img/asc.png
 %%DATADIR%%/www/img/desc.png
+%%DATADIR%%/www/img/drop-area.svg
 %%DATADIR%%/www/img/rspamd_logo_navbar.png
 %%DATADIR%%/www/index.html
 %%DATADIR%%/www/js/app/common.js

@@ -1,4 +1,4 @@
-TIMESTAMP = 1718150284
+TIMESTAMP = 1721827328
 SHA256 (puppetlabs-augeas_core-1.5.0.tar.gz) = 470406981b7638869acb4ecc75e2fd079b5999b5aeeb8324b9b475fe07bca935
 SIZE (puppetlabs-augeas_core-1.5.0.tar.gz) = 26311
 SHA256 (puppetlabs-cron_core-1.3.0.tar.gz) = 2a7be4004acc3881357b2e11db1a8937f4d64d37d8ce38872cefe1c7c4a2a6ef
@@ -19,5 +19,5 @@ SHA256 (puppetlabs-zfs_core-1.5.0.tar.gz) = 54ddfee4aeea028ed4269cd9ffd89f8491cb
 SIZE (puppetlabs-zfs_core-1.5.0.tar.gz) = 20163
 SHA256 (puppetlabs-zone_core-1.2.0.tar.gz) = 7c722015b3d16b6a48bec1b6f79dd7369cfd0de70731f17b94c27553f7e08096
 SIZE (puppetlabs-zone_core-1.2.0.tar.gz) = 22000
-SHA256 (puppetlabs-puppet-8.7.0_GH0.tar.gz) = ace755cfea186cb20a4001508d11c21b57457c5ee01e85e85e27db5c539c2792
-SIZE (puppetlabs-puppet-8.7.0_GH0.tar.gz) = 3330348
+SHA256 (puppetlabs-puppet-8.8.1_GH0.tar.gz) = dede2af631d58208dd695fbb7c092b4552359c97bb03b530b4d3b5446d6b9bb8
+SIZE (puppetlabs-puppet-8.8.1_GH0.tar.gz) = 3333532

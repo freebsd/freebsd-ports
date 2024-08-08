@@ -1,7 +1,7 @@
 PORTNAME=	namecoin
-DISTVERSION=	24.0
 DISTVERSIONPREFIX=	nc
-PORTREVISION=	3
+DISTVERSION=	24.0
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	net-p2p dns
 
@@ -10,6 +10,9 @@ COMMENT?=	Decentralized, open DNS and general purpose key/value store
 WWW=		https://namecoin.org/
 
 LICENSE=	MIT
+
+DEPRECATED=	Depends on expired graphics/svg2png
+EXPIRATION_DATE=2024-08-31
 
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libevent.so:devel/libevent

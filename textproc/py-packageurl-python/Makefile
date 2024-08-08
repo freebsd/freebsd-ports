@@ -1,8 +1,9 @@
 PORTNAME=	packageurl-python
-DISTVERSION=	0.15.0
+DISTVERSION=	0.15.6
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	packageurl_python-${DISTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Parser and builder for package URLs (aka purl)

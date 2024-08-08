@@ -24,7 +24,7 @@ USE_LDCONFIG=	yes
 USE_KDE=	ecm:build
 USE_QT=		${_USE_QT_${FLAVOR}}
 
-_USE_QT_qt5=	core gui widgets buildtools:build qmake:build
+_USE_QT_qt5=	core gui linguisttools widgets buildtools:build qmake:build
 _USE_QT_qt6=	5compat base tools
 _CMAKE_ON_qt5=	PHONON_BUILD_QT5
 _CMAKE_ON_qt6=	PHONON_BUILD_QT6

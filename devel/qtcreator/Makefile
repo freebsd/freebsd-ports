@@ -1,5 +1,5 @@
 PORTNAME=	qtcreator
-DISTVERSION=	13.0.2
+DISTVERSION=	14.0.0
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -41,8 +41,10 @@ CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH:STRING="${LLVM_PREFIX};${PREFIX}"
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_elfutils \
 		CMAKE_DISABLE_FIND_PACKAGE_Googletest
 # - Disable precompiled headers for now, they are missing compile flags.
+# - Disable the AppStatisticsPlugin for now, not implemented for FreeBSD.
 # - Suppress installed yaml-cpp, use bundled.
 CMAKE_OFF=	BUILD_WITH_PCH \
+		BUILD_PLUGIN_APPSTATISTICSMONITOR \
 		yaml-cpp_FOUND
 
 LDFLAGS+=	-lexecinfo

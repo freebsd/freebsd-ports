@@ -20,6 +20,8 @@ WWW=		https://github.com/hyprwm/wlroots-hyprland
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Project discontinued, use x11-toolkits/aquamarine instead
+
 BUILD_DEPENDS=	wayland-protocols>=1.33:graphics/wayland-protocols
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \

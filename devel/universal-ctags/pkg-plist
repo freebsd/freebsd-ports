@@ -25,6 +25,7 @@ bin/ureadtags
 %%MANPAGES%%share/man/man7/uctags-lang-kconfig.7.gz
 %%MANPAGES%%share/man/man7/uctags-lang-ldscript.7.gz
 %%MANPAGES%%share/man/man7/uctags-lang-lex.7.gz
+%%MANPAGES%%share/man/man7/uctags-lang-make.7.gz
 %%MANPAGES%%share/man/man7/uctags-lang-markdown.7.gz
 %%MANPAGES%%share/man/man7/uctags-lang-powershell.7.gz
 %%MANPAGES%%share/man/man7/uctags-lang-python.7.gz

@@ -1,11 +1,11 @@
 PORTNAME=	spiritvnc
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Multi-view FLTK-based VNC client
-WWW=		https://www.pismotek.com/brainout/content/spiritvnc.php
+WWW=		https://www.willbrokenbourgh.com/brainout/content/spiritvnc.php
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

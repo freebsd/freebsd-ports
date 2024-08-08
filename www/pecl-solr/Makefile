@@ -13,6 +13,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libxml2.so:textproc/libxml2
 
 USES=		php:build,pecl pkgconfig
+IGNORE_WITH_PHP=	84
 
 CONFIGURE_ARGS=	LIBXML_CFLAGS=-I${LOCALBASE}/include/libxml2 \
 		LIBXML_LIBS=-L${LOCALBASE}/include/libxml2

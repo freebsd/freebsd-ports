@@ -1,6 +1,6 @@
---- libgamestream/CMakeLists.txt.orig	2023-11-03 06:08:34 UTC
+--- libgamestream/CMakeLists.txt.orig	2024-02-20 04:01:31 UTC
 +++ libgamestream/CMakeLists.txt
-@@ -3,7 +3,7 @@ set(SO_VERSION 4)
+@@ -3,7 +3,7 @@ find_package(CURL REQUIRED)
  find_package(LibUUID REQUIRED)
  find_package(Threads REQUIRED)
  find_package(CURL REQUIRED)
@@ -21,8 +21,8 @@
  target_link_libraries(gamestream moonlight-common)
  
  set_target_properties(gamestream PROPERTIES SOVERSION ${SO_VERSION} VERSION ${PROJECT_VERSION})
-@@ -28,5 +28,3 @@ target_include_directories(moonlight-common PRIVATE ..
- target_link_libraries(gamestream ${CURL_LIBRARIES} ${OPENSSL_LIBRARIES} ${EXPAT_LIBRARIES} ${AVAHI_LIBRARIES} ${LIBUUID_LIBRARIES})
+@@ -28,5 +28,3 @@ target_link_libraries(gamestream ${CMAKE_THREAD_LIBS_I
+ target_link_libraries(gamestream ${CURL_LIBRARIES} ${OPENSSL_LIBRARIES} ${EXPAT_LIBRARIES} ${AVAHI_LIBRARIES} ${LibUUID_LIBRARIES})
  
  target_link_libraries(gamestream ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
 -

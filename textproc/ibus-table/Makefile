@@ -1,5 +1,5 @@
 PORTNAME=	ibus-table
-DISTVERSION=	1.17.5
+DISTVERSION=	1.17.6
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org

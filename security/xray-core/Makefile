@@ -1,10 +1,9 @@
 PORTNAME=	xray-core
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.11
-PORTREVISION=	2
+DISTVERSION=	1.8.17
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/v2fly/geoip/releases/download/202404250042/:geoip \
-		https://github.com/v2fly/domain-list-community/releases/download/20240426060244/:geosite
+MASTER_SITES=	https://github.com/v2fly/geoip/releases/download/202407110044/:geoip \
+		https://github.com/v2fly/domain-list-community/releases/download/20240713050854/:geosite
 DISTFILES=	geoip.dat:geoip \
 		dlc.dat:geosite
 EXTRACT_ONLY=	v${DISTVERSION}.zip \
@@ -18,23 +17,21 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules,1.22
-
-USE_RC_SUBR=	xray
-SUB_FILES=	pkg-message
-
-USERS=		v2ray
-GROUPS=		v2ray
-
-SUB_LIST=	GROUP="${GROUPS}" \
-		USER="${USERS}"
-
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
-GO_MODULE=	github.com/${GH_ACCOUNT}/${PORTNAME}
-GO_TARGET=	./main:xray
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	xtls
 GH_PROJECT=	Xray-core
+USE_RC_SUBR=	xray
+
+GO_MODULE=	github.com/${GH_ACCOUNT}/${PORTNAME}
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
+GO_TARGET=	./main:xray
+
+SUB_FILES=	pkg-message
+SUB_LIST=	GROUP="${GROUPS}" \
+		USER="${USERS}"
+
+USERS=		v2ray
+GROUPS=		v2ray
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}

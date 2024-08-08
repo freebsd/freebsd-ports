@@ -2,17 +2,12 @@ bin/aclocal
 bin/aclocal-%%BUILD_VERSION%%
 bin/automake
 bin/automake-%%BUILD_VERSION%%
-share/man/man1/aclocal.1.gz
-share/man/man1/aclocal-%%BUILD_VERSION%%.1.gz
-share/man/man1/automake.1.gz
-share/man/man1/automake-%%BUILD_VERSION%%.1.gz
-share/aclocal/README
 share/aclocal-%%BUILD_VERSION%%/amversion.m4
 share/aclocal-%%BUILD_VERSION%%/ar-lib.m4
 share/aclocal-%%BUILD_VERSION%%/as.m4
 share/aclocal-%%BUILD_VERSION%%/auxdir.m4
-share/aclocal-%%BUILD_VERSION%%/cond.m4
 share/aclocal-%%BUILD_VERSION%%/cond-if.m4
+share/aclocal-%%BUILD_VERSION%%/cond.m4
 share/aclocal-%%BUILD_VERSION%%/depend.m4
 share/aclocal-%%BUILD_VERSION%%/depout.m4
 share/aclocal-%%BUILD_VERSION%%/dmalloc.m4
@@ -20,6 +15,7 @@ share/aclocal-%%BUILD_VERSION%%/extra-recurs.m4
 share/aclocal-%%BUILD_VERSION%%/gcj.m4
 share/aclocal-%%BUILD_VERSION%%/init.m4
 share/aclocal-%%BUILD_VERSION%%/install-sh.m4
+share/aclocal-%%BUILD_VERSION%%/internal/ac-config-macro-dirs.m4
 share/aclocal-%%BUILD_VERSION%%/lead-dot.m4
 share/aclocal-%%BUILD_VERSION%%/lex.m4
 share/aclocal-%%BUILD_VERSION%%/lispdir.m4
@@ -31,6 +27,7 @@ share/aclocal-%%BUILD_VERSION%%/obsolete.m4
 share/aclocal-%%BUILD_VERSION%%/options.m4
 share/aclocal-%%BUILD_VERSION%%/prog-cc-c-o.m4
 share/aclocal-%%BUILD_VERSION%%/python.m4
+share/aclocal-%%BUILD_VERSION%%/rmf.m4
 share/aclocal-%%BUILD_VERSION%%/runlog.m4
 share/aclocal-%%BUILD_VERSION%%/sanity.m4
 share/aclocal-%%BUILD_VERSION%%/silent.m4
@@ -39,7 +36,8 @@ share/aclocal-%%BUILD_VERSION%%/substnot.m4
 share/aclocal-%%BUILD_VERSION%%/tar.m4
 share/aclocal-%%BUILD_VERSION%%/upc.m4
 share/aclocal-%%BUILD_VERSION%%/vala.m4
-share/aclocal-%%BUILD_VERSION%%/internal/ac-config-macro-dirs.m4
+share/aclocal-%%BUILD_VERSION%%/xargsn.m4
+share/aclocal/README
 share/automake-%%BUILD_VERSION%%/Automake/ChannelDefs.pm
 share/automake-%%BUILD_VERSION%%/Automake/Channels.pm
 share/automake-%%BUILD_VERSION%%/Automake/Condition.pm
@@ -77,8 +75,8 @@ share/automake-%%BUILD_VERSION%%/am/distdir.am
 share/automake-%%BUILD_VERSION%%/am/footer.am
 share/automake-%%BUILD_VERSION%%/am/header-vars.am
 share/automake-%%BUILD_VERSION%%/am/header.am
-share/automake-%%BUILD_VERSION%%/am/install.am
 share/automake-%%BUILD_VERSION%%/am/inst-vars.am
+share/automake-%%BUILD_VERSION%%/am/install.am
 share/automake-%%BUILD_VERSION%%/am/java.am
 share/automake-%%BUILD_VERSION%%/am/lang-compile.am
 share/automake-%%BUILD_VERSION%%/am/lex.am
@@ -117,3 +115,7 @@ share/automake-%%BUILD_VERSION%%/test-driver
 share/automake-%%BUILD_VERSION%%/texinfo.tex
 share/automake-%%BUILD_VERSION%%/ylwrap
 %%PORTDOCS%%%%DOCSDIR%%/amhello-1.0.tar.gz
+share/man/man1/aclocal-%%BUILD_VERSION%%.1.gz
+share/man/man1/aclocal.1.gz
+share/man/man1/automake-%%BUILD_VERSION%%.1.gz
+share/man/man1/automake.1.gz

@@ -4,5 +4,3 @@ config for as few as 1 cloud and as many as you want to put in a config file. It
 will read environment variables and config files, and it also contains some
 vendor specific default values so that you don't have to know extra info to use
 OpenStack.
-
-See also: https://github.com/openstack/os-client-config

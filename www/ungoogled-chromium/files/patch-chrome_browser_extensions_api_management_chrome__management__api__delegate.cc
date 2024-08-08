@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/management/chrome_management_api_delegate.cc.orig	2024-05-23 20:04:36 UTC
+--- chrome/browser/extensions/api/management/chrome_management_api_delegate.cc.orig	2024-07-31 14:19:23 UTC
 +++ chrome/browser/extensions/api/management/chrome_management_api_delegate.cc
-@@ -405,7 +405,7 @@ bool ChromeManagementAPIDelegate::LaunchAppFunctionDel
+@@ -414,7 +414,7 @@ bool ChromeManagementAPIDelegate::LaunchAppFunctionDel
    apps::LaunchContainer launch_container =
        GetLaunchContainer(extensions::ExtensionPrefs::Get(context), extension);
    Profile* profile = Profile::FromBrowserContext(context);

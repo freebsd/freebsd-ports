@@ -146,7 +146,7 @@ ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 SHLIBS=			lib/engines-${OPENSSL_SHLIBVER}/loader_attic.so
 
-PORTSCOUT=		limit=^3\.2\.
+PORTSCOUT=		limit:^${DISTVERSION:R:S/./\./g}\.
 
 .include <bsd.port.options.mk>
 

@@ -1,4 +1,0 @@
-Libiqxmlrpc is C++ object-oriented library that represents an XML-RPC
-solution for both client and server. It supports HTTP and HTTPS,
-both single-threaded and multi-threaded computation models on the server side,
-method interceptors, and other features.

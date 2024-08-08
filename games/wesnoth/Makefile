@@ -1,5 +1,5 @@
 PORTNAME=	wesnoth
-PORTVERSION=	1.16.12
+PORTVERSION=	1.18.2
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
@@ -17,51 +17,85 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libvorbisfile.so:audio/libvorbis \
 		libboost_thread.so:devel/boost-libs \
+		libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libicudata.so:devel/icu \
 		libharfbuzz.so:print/harfbuzz
 
-USES=		cmake compiler:c++17-lang cpe desktop-file-utils gnome pkgconfig \
-		python:run readline shebangfix ssl sdl tar:bzip2 xorg
+USES=		cmake compiler:c++17-lang cpe desktop-file-utils \
+		gnome lua:54 pkgconfig python:run \
+		readline shebangfix ssl sdl tar:bzip2 xorg
 USE_SDL=	image2 mixer2 ttf2
 USE_GNOME=	cairo pango
 USE_XORG=	ice sm x11 xext
 
-LDFLAGS+=	-L${LOCALBASE}/lib -lboost_system
+LDFLAGS+=	-lboost_system -lpthread
 
 PORTSCOUT=	limitw:1,even
 
 SHEBANG_FILES=	data/tools/about_cfg_to_wiki \
+		data/tools/addon_manager/__init__.py \
 		data/tools/addon_manager/html.py \
+		data/tools/check_mixed_indent \
 		data/tools/expand-terrain-macros.py \
 		data/tools/extractbindings data/tools/imgcheck \
 		data/tools/GUI.pyw \
 		data/tools/hexometer.py \
 		data/tools/steam-changelog \
+		data/tools/TeamColorizer \
 		data/tools/trackviewer.pyw \
 		data/tools/terrain2wiki.py \
 		data/tools/tmx_trackplacer \
-		data/tools/unit_tree/TeamColorizer \
+		data/tools/unit_tree/__init__.py \
+		data/tools/unit_tree/animations.py \
 		data/tools/unit_tree/helpers.py \
+		data/tools/unit_tree/html_output.py \
 		data/tools/unit_tree/overview.py \
+		data/tools/unit_tree/team_colorizer.py \
 		data/tools/unit_tree/update-wmlunits \
+		data/tools/unit_tree/wiki_output.py \
 		data/tools/wesnoth/campaignserver_client.py \
+		data/tools/wesnoth/libgithub.py \
+		data/tools/wesnoth/trackplacer3/cfgfileformat.py \
 		data/tools/wesnoth/trackplacer3/datatypes.py \
+		data/tools/wesnoth/trackplacer3/tmxfileformat.py \
 		data/tools/wesnoth/version.py \
-		data/tools/wesnoth/wescamp.py data/tools/wesnoth/wmldata.py \
+		data/tools/wesnoth/wescamp.py \
+		data/tools/wesnoth/wmldata.py \
+		data/tools/wesnoth/wmliterator3.py \
 		data/tools/wesnoth/wmlparser.py \
 		data/tools/wesnoth/wmlparser3.py \
-		data/tools/wesnoth_addon_manager data/tools/wmlflip \
-		data/tools/wmlindent data/tools/wmllint \
+		data/tools/wesnoth/wmltools3.py \
+		data/tools/wesnoth_addon_manager \
+		data/tools/wmlflip \
+		data/tools/wmlindent \
+		data/tools/wmllint \
 		data/tools/wmllint-1.4 \
 		data/tools/wmlunits \
 		data/tools/wmlscope \
-		data/tools/wmlxgettext
+		data/tools/wmlxgettext \
+		po/FINDCPP \
+		po/FINDPY \
+		run_boost_tests \
+		run_wml_tests \
+		update_copyrights \
+		utils/ai_test/ai_test.py \
+		utils/compare_images.py \
+		utils/dockerbuilds/mingw/get_dlls.py \
+		utils/git_export_campaign \
+		utils/optiwebp.py \
+		utils/po_stat.py \
+		utils/pofix.py \
+		utils/unused_functions.py \
+		utils/update_appdata \
+		utils/update_copyright.py \
+		utils/woptipng.py
 
 CPE_VENDOR=	${PORTNAME}
 CPE_PRODUCT=	battle_for_wesnoth
-CMAKE_ARGS=	-DMANDIR="man" -DENABLE_STRICT_COMPILATION=off
+CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=${PREFIX}/share/man \
+		-DENABLE_STRICT_COMPILATION=off
 
 PORTDOCS=	*
 PORTDATA=	*
@@ -86,5 +120,12 @@ NOTIFY_CMAKE_OFF=-DENABLE_NOTIFICATIONS=off
 SERVER_DESC=	Server
 SERVER_CMAKE_OFF=-DENABLE_SERVER=off
 TEST_CMAKE_ON=	-DENABLE_TESTS=on
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,def = NULL,def = 0," \
+		${WRKSRC}/src/utils/config_filters.hpp
+
+#post-install:
+#	${FIND} ${STAGEDIR}${PREFIX}/man -type d -empty -delete
 
 .include <bsd.port.mk>

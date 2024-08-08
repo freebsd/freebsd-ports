@@ -1,6 +1,6 @@
 PORTNAME=	vampire
-DISTVERSIONPREFIX=	vHO
-DISTVERSION=	4.8
+DISTVERSIONPREFIX=	v
+DISTVERSION=	4.9casc2024
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,12 +14,17 @@ BROKEN_armv7=	error: static_assert failed due to requirement 'sizeof(void *) == 
 BROKEN_i386=	error: static_assert failed due to requirement 'sizeof(void *) == 8'
 BROKEN_powerpc=	error: static_assert failed due to requirement 'sizeof(void *) == 8'
 
-USES=		cmake compiler:c++14-lang
+LIB_DEPENDS=	libz3.so:math/z3
+
+USES=		cmake compiler:c++17-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vprover
 
 CMAKE_ARGS=	-DCMAKE_BUILD_HOL=On # code is broken w/out this
+CMAKE_ARGS+=	-DZ3_DIR=${WRKSRC}/z3
+
+LDFLAGS+=	-lexecinfo
 
 PLIST_FILES=	bin/${PORTNAME}
 

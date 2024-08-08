@@ -1,7 +1,6 @@
 PORTNAME=	bedrust
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.4
-PORTREVISION=	2
+DISTVERSION=	0.7.5
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -70,11 +69,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytes-utils-0.1.4 \
 		cc-1.0.95 \
 		cfg-expr-0.15.8 \
+		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		clap-4.5.4 \
 		clap_builder-4.5.2 \
 		clap_derive-4.5.4 \
 		clap_lex-0.7.0 \
+		cloudabi-0.0.3 \
 		color_quant-1.1.0 \
 		colorchoice-1.0.0 \
 		colored-2.1.0 \
@@ -96,10 +97,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		either-1.11.0 \
 		encode_unicode-0.3.6 \
 		equivalent-1.0.1 \
+		errno-0.3.9 \
 		exr-1.72.0 \
 		fastrand-2.0.2 \
 		fdeflate-0.3.4 \
 		figlet-rs-0.1.5 \
+		fixedbitset-0.2.0 \
 		flate2-1.0.28 \
 		flume-0.11.0 \
 		fnv-1.0.7 \
@@ -120,6 +123,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		gimli-0.28.1 \
 		h2-0.3.26 \
 		half-2.4.1 \
+		hashbrown-0.12.3 \
 		hashbrown-0.14.3 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
@@ -138,6 +142,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		image-0.25.1 \
 		image-webp-0.1.2 \
 		imgref-1.10.1 \
+		indexmap-1.9.3 \
 		indexmap-2.2.6 \
 		indicatif-0.17.8 \
 		instant-0.1.12 \
@@ -151,15 +156,19 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		libc-0.2.153 \
 		libfuzzer-sys-0.4.7 \
 		libredox-0.1.3 \
+		linux-raw-sys-0.4.14 \
+		lock_api-0.3.4 \
 		lock_api-0.4.11 \
 		log-0.4.21 \
 		loop9-0.1.5 \
 		maybe-rayon-0.1.1 \
+		memchr-1.0.2 \
 		memchr-2.7.2 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.2 \
 		mio-0.8.11 \
 		new_debug_unreachable-1.0.6 \
+		nom-3.2.1 \
 		nom-7.1.3 \
 		noop_proc_macro-0.3.0 \
 		num-bigint-0.4.4 \
@@ -175,10 +184,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		openssl-probe-0.1.5 \
 		option-ext-0.2.0 \
 		outref-0.5.1 \
+		parking_lot-0.10.2 \
 		parking_lot-0.12.1 \
+		parking_lot_core-0.7.3 \
 		parking_lot_core-0.9.9 \
 		paste-1.0.14 \
 		percent-encoding-2.3.1 \
+		petgraph-0.5.1 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.30 \
@@ -200,6 +212,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ravif-0.11.5 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
+		redox_syscall-0.1.57 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.5 \
 		regex-lite-0.1.5 \
@@ -208,11 +221,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ron-0.8.1 \
 		rustc-demangle-0.1.23 \
 		rustc_version-0.4.0 \
+		rustix-0.38.34 \
 		rustls-0.21.11 \
 		rustls-native-certs-0.6.3 \
 		rustls-pemfile-1.0.4 \
 		rustls-webpki-0.101.7 \
 		ryu-1.0.17 \
+		same-file-1.0.6 \
 		schannel-0.1.23 \
 		scopeguard-1.2.0 \
 		sct-0.7.1 \
@@ -237,6 +252,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		syn-2.0.60 \
 		system-deps-6.2.2 \
 		target-lexicon-0.12.14 \
+		tempfile-3.10.1 \
 		termcolor-1.4.1 \
 		thiserror-1.0.59 \
 		thiserror-impl-1.0.59 \
@@ -258,6 +274,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tracing-0.1.40 \
 		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
+		tree_magic-0.2.3 \
 		try-lock-0.2.5 \
 		typenum-1.17.0 \
 		unicode-bidi-0.3.15 \
@@ -273,6 +290,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		version-compare-0.2.0 \
 		version_check-0.9.4 \
 		vsimd-0.8.0 \
+		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.92 \

@@ -1,6 +1,7 @@
 PORTNAME=	theseus-ship
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.1.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm # wayland: https://github.com/winft/theseus-ship/issues/9
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,7 +15,7 @@ LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libwayland-server.so:graphics/wayland \
 		libWraplandServer.so:graphics/wrapland \
 		libcomo-script.so.0:x11-toolkits/como \
-		libwlroots.so:x11-toolkits/wlroots \
+		libwlroots.so:x11-toolkits/wlroots017 \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxcb-cursor.so:x11/xcb-util-cursor \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \

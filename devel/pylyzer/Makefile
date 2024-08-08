@@ -1,7 +1,6 @@
 PORTNAME=	pylyzer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.54
-PORTREVISION=	1
+DISTVERSION=	0.0.56
 CATEGORIES=	devel python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,87 +25,88 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mtshiba
 
 CARGO_CRATES=	Inflector-0.11.4 \
-		addr2line-0.21.0 \
+		addr2line-0.22.0 \
 		adler-1.0.2 \
 		ahash-0.8.11 \
-		anyhow-1.0.81 \
-		autocfg-1.1.0 \
-		backtrace-0.3.69 \
+		anyhow-1.0.86 \
+		autocfg-1.3.0 \
+		backtrace-0.3.73 \
 		backtrace-on-stack-overflow-0.3.0 \
 		bitflags-1.3.2 \
-		cc-1.0.90 \
+		bitflags-2.6.0 \
+		cc-1.0.104 \
 		cfg-if-1.0.0 \
 		convert_case-0.4.0 \
 		crunchy-0.2.2 \
-		derive_more-0.99.17 \
-		either-1.10.0 \
-		els-0.1.48-nightly.2 \
-		erg_common-0.6.36-nightly.2 \
-		erg_compiler-0.6.36-nightly.2 \
-		erg_parser-0.6.36-nightly.2 \
-		erg_proc_macros-0.6.36-nightly.2 \
+		derive_more-0.99.18 \
+		either-1.13.0 \
+		els-0.1.52-nightly.1 \
+		erg_common-0.6.40-nightly.1 \
+		erg_compiler-0.6.40-nightly.1 \
+		erg_parser-0.6.40-nightly.1 \
+		erg_proc_macros-0.6.40-nightly.1 \
 		form_urlencoded-1.2.1 \
 		getopts-0.2.21 \
-		getrandom-0.2.12 \
-		gimli-0.28.1 \
-		hashbrown-0.14.3 \
+		getrandom-0.2.15 \
+		gimli-0.29.0 \
+		hashbrown-0.14.5 \
 		idna-0.5.0 \
 		is-macro-0.3.5 \
 		itertools-0.11.0 \
-		itoa-1.0.10 \
+		itoa-1.0.11 \
 		lalrpop-util-0.20.2 \
-		libc-0.2.153 \
+		libc-0.2.155 \
 		libm-0.2.8 \
-		lock_api-0.4.11 \
-		log-0.4.21 \
+		lock_api-0.4.12 \
+		log-0.4.22 \
 		lsp-types-0.93.2 \
-		malachite-0.4.5 \
-		malachite-base-0.4.5 \
+		malachite-0.4.14 \
+		malachite-base-0.4.14 \
 		malachite-bigint-0.2.0 \
-		malachite-nz-0.4.5 \
-		malachite-q-0.4.5 \
-		memchr-2.7.1 \
+		malachite-nz-0.4.14 \
+		malachite-q-0.4.14 \
+		memchr-2.7.4 \
 		memoffset-0.6.5 \
-		miniz_oxide-0.7.2 \
+		miniz_oxide-0.7.4 \
 		molc-0.3.0 \
 		nix-0.23.2 \
 		num-integer-0.1.46 \
-		num-traits-0.2.18 \
-		object-0.32.2 \
+		num-traits-0.2.19 \
+		object-0.36.1 \
 		once_cell-1.19.0 \
-		parking_lot-0.12.1 \
-		parking_lot_core-0.9.9 \
-		paste-1.0.14 \
+		parking_lot-0.12.3 \
+		parking_lot_core-0.9.10 \
+		paste-1.0.15 \
 		percent-encoding-2.3.1 \
 		phf-0.11.2 \
 		phf_codegen-0.11.2 \
 		phf_generator-0.11.2 \
 		phf_shared-0.11.2 \
 		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.79 \
-		quote-1.0.35 \
+		proc-macro2-1.0.86 \
+		quote-1.0.36 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		redox_syscall-0.4.1 \
-		rustc-demangle-0.1.23 \
+		redox_syscall-0.5.2 \
+		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
-		ryu-1.0.17 \
+		ryu-1.0.18 \
 		scopeguard-1.2.0 \
-		semver-1.0.22 \
-		serde-1.0.197 \
-		serde_derive-1.0.197 \
-		serde_json-1.0.114 \
-		serde_repr-0.1.18 \
+		semver-1.0.23 \
+		serde-1.0.204 \
+		serde_derive-1.0.204 \
+		serde_json-1.0.120 \
+		serde_repr-0.1.19 \
 		siphasher-0.3.11 \
-		smallvec-1.13.1 \
+		smallvec-1.13.2 \
 		static_assertions-1.1.0 \
 		syn-1.0.109 \
-		syn-2.0.52 \
+		syn-2.0.69 \
 		thread_local-1.1.8 \
 		tiny-keccak-2.0.2 \
-		tinyvec-1.6.0 \
+		tinyvec-1.7.0 \
 		tinyvec_macros-0.1.1 \
 		unic-char-property-0.9.0 \
 		unic-char-range-0.9.0 \
@@ -117,24 +117,25 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.23 \
-		unicode-width-0.1.11 \
+		unicode-width-0.1.13 \
 		unicode-xid-0.2.4 \
 		unicode_names2-1.2.2 \
 		unicode_names2_generator-1.2.2 \
-		url-2.5.0 \
+		url-2.5.2 \
 		version_check-0.9.4 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		windows-targets-0.48.5 \
-		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_msvc-0.48.5 \
-		windows_i686_gnu-0.48.5 \
-		windows_i686_msvc-0.48.5 \
-		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_msvc-0.48.5 \
-		zerocopy-0.7.32 \
-		zerocopy-derive-0.7.32 \
-		rustpython-ast,rustpython-parser,rustpython-parser-core,rustpython-parser-vendored@git+https://github.com/RustPython/Parser\#9ce55aefdeb35e2f706ce0b02d5a2dfe6295fc57
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.52.6 \
+		zerocopy-0.7.35 \
+		zerocopy-derive-0.7.35 \
+		rustpython-ast,rustpython-parser,rustpython-parser-core,rustpython-parser-vendored@git+https://github.com/RustPython/Parser\#51b5f80ae3080dfec2db815a299a69873fb9ca65
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no

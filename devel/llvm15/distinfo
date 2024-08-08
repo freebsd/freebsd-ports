@@ -1,6 +1,8 @@
-TIMESTAMP = 1673554510
+TIMESTAMP = 1722603701
 SHA256 (llvm-project-15.0.7.src.tar.xz) = 8b5fcb24b4128cf04df1b0b9410ce8b1a729cb3c544e6da885d234280dedeac6
 SIZE (llvm-project-15.0.7.src.tar.xz) = 110936452
+SHA256 (llvmorg-18-init-1760-g68744ffbdd7d.patch) = ad9ad1613491f69b010dbbd6a9d90d5dd505e46d9537a6e533f36dacd552d0f7
+SIZE (llvmorg-18-init-1760-g68744ffbdd7d.patch) = 1491
 SHA256 (llvmorg-18-init-15199-gb9935bb02a50.patch) = b0805cba765084c7bef426fa1235dd887c61ae0c1fd5e3fad5c8742cdd6ee8b0
 SIZE (llvmorg-18-init-15199-gb9935bb02a50.patch) = 1893
 SHA256 (llvmorg-18-init-15680-g966d564e43e6.patch) = 3abf92d4a788ff2f74fa9fc627a113f04d9fb72cd7e47344a8c4dce06140a163

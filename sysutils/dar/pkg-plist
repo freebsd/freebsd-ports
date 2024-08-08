@@ -92,7 +92,7 @@ include/dar/wrapperlib.hpp
 lib/libdar64.a
 lib/libdar64.so
 lib/libdar64.so.6000
-lib/libdar64.so.6000.7.2
+lib/libdar64.so.%%SHLIB_VER%%
 libdata/pkgconfig/libdar64.pc
 share/man/man1/dar.1.gz
 share/man/man1/dar_cp.1.gz

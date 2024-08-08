@@ -1,7 +1,6 @@
 PORTNAME=	gitoxide
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.36.0
-PORTREVISION=	1
+DISTVERSION=	0.37.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -62,11 +61,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		block-buffer-0.10.4 \
 		blocking-1.5.1 \
 		bstr-1.9.0 \
-		btoi-0.4.3 \
 		bumpalo-3.16.0 \
 		bytes-1.5.0 \
 		bytesize-1.3.0 \
-		byteyarn-0.2.3 \
 		cap-0.1.2 \
 		cassowary-0.3.0 \
 		cast-0.3.0 \
@@ -94,7 +91,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
 		crossbeam-0.8.3 \
-		crossbeam-channel-0.5.10 \
+		crossbeam-channel-0.5.13 \
 		crossbeam-deque-0.8.4 \
 		crossbeam-epoch-0.9.17 \
 		crossbeam-queue-0.3.10 \
@@ -149,39 +146,33 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		generic-array-0.14.7 \
 		getrandom-0.2.11 \
 		gimli-0.28.1 \
-		gix-actor-0.27.0 \
-		gix-actor-0.28.1 \
-		gix-attributes-0.19.0 \
-		gix-bitmap-0.2.8 \
-		gix-chunk-0.4.5 \
-		gix-commitgraph-0.21.0 \
-		gix-date-0.8.1 \
-		gix-discover-0.26.0 \
-		gix-features-0.35.0 \
-		gix-features-0.36.1 \
-		gix-fs-0.7.0 \
-		gix-fs-0.8.1 \
-		gix-glob-0.13.0 \
-		gix-hash-0.13.3 \
-		gix-hashtable-0.4.1 \
-		gix-ignore-0.8.0 \
-		gix-index-0.25.0 \
-		gix-lock-10.0.0 \
-		gix-lock-11.0.1 \
-		gix-object-0.37.0 \
-		gix-object-0.38.0 \
-		gix-path-0.10.1 \
-		gix-quote-0.4.8 \
-		gix-ref-0.38.0 \
-		gix-revwalk-0.8.0 \
-		gix-sec-0.10.1 \
-		gix-tempfile-10.0.0 \
-		gix-tempfile-11.0.1 \
-		gix-trace-0.1.4 \
-		gix-traverse-0.33.0 \
-		gix-utils-0.1.6 \
-		gix-validate-0.8.1 \
-		gix-worktree-0.26.0 \
+		gix-actor-0.31.2 \
+		gix-attributes-0.22.2 \
+		gix-bitmap-0.2.11 \
+		gix-chunk-0.4.8 \
+		gix-commitgraph-0.24.2 \
+		gix-date-0.8.6 \
+		gix-discover-0.32.0 \
+		gix-features-0.38.2 \
+		gix-fs-0.11.2 \
+		gix-glob-0.16.3 \
+		gix-hash-0.14.2 \
+		gix-hashtable-0.5.2 \
+		gix-ignore-0.11.2 \
+		gix-index-0.33.0 \
+		gix-lock-14.0.0 \
+		gix-object-0.42.2 \
+		gix-path-0.10.7 \
+		gix-quote-0.4.12 \
+		gix-ref-0.44.1 \
+		gix-revwalk-0.13.1 \
+		gix-sec-0.10.6 \
+		gix-tempfile-14.0.0 \
+		gix-trace-0.1.9 \
+		gix-traverse-0.39.1 \
+		gix-utils-0.1.12 \
+		gix-validate-0.8.5 \
+		gix-worktree-0.34.0 \
 		glob-0.3.1 \
 		gloo-timers-0.2.6 \
 		h2-0.4.4 \
@@ -220,6 +211,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		itoa-1.0.10 \
 		js-sys-0.3.66 \
 		jwalk-0.8.1 \
+		known-folders-1.1.0 \
 		kstring-2.0.0 \
 		kv-log-macro-1.0.7 \
 		layout-rs-0.1.1 \
@@ -238,8 +230,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lzma-sys-0.1.20 \
 		maplit-1.0.2 \
 		maybe-async-0.2.7 \
-		memchr-2.7.1 \
-		memmap2-0.7.1 \
+		memchr-2.7.2 \
 		memmap2-0.9.3 \
 		memoffset-0.7.1 \
 		mime-0.3.17 \
@@ -259,10 +250,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		once_cell-1.19.0 \
 		oorandom-11.1.3 \
 		open-5.0.1 \
-		openssl-0.10.62 \
+		openssl-0.10.66 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.98 \
+		openssl-sys-0.9.103 \
 		overload-0.1.1 \
 		parking-2.2.0 \
 		parking_lot-0.12.1 \
@@ -281,11 +272,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		plotters-svg-0.3.5 \
 		polling-2.8.0 \
 		polling-3.3.1 \
+		portable-atomic-1.6.0 \
 		powerfmt-0.2.0 \
 		pretty_assertions-1.4.0 \
 		proc-macro-crate-1.3.1 \
 		proc-macro2-1.0.75 \
-		prodash-26.2.2 \
 		prodash-28.0.0 \
 		ptyprocess-0.4.1 \
 		quote-1.0.35 \
@@ -387,7 +378,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tui-react-0.22.0 \
 		typenum-1.17.0 \
 		uluru-3.0.0 \
-		unicode-bidi-0.3.14 \
+		unicode-bidi-0.3.15 \
 		unicode-bom-2.0.3 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.22 \
@@ -395,7 +386,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unicode-width-0.1.11 \
 		untrusted-0.7.1 \
 		untrusted-0.9.0 \
-		url-2.5.0 \
+		url-2.5.2 \
 		utf8parse-0.2.1 \
 		valuable-0.1.0 \
 		value-bag-1.9.0 \
@@ -419,45 +410,52 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		winapi-util-0.1.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.44.0 \
-		windows-0.48.0 \
 		windows-0.51.1 \
+		windows-0.58.0 \
 		windows-core-0.51.1 \
+		windows-core-0.58.0 \
+		windows-implement-0.58.0 \
+		windows-interface-0.58.0 \
+		windows-result-0.2.0 \
+		windows-strings-0.1.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.42.2 \
 		windows-targets-0.48.5 \
-		windows-targets-0.52.0 \
+		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.0 \
+		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.0 \
+		windows_aarch64_msvc-0.52.6 \
 		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.0 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
 		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.0 \
+		windows_i686_msvc-0.52.6 \
 		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.0 \
+		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.0 \
+		windows_x86_64_msvc-0.52.6 \
 		winnow-0.5.40 \
-		winnow-0.6.0 \
+		winnow-0.6.13 \
 		winreg-0.50.0 \
+		winreg-0.52.0 \
 		xattr-1.2.0 \
 		xz2-0.1.7 \
 		yansi-0.5.1 \
 		zerocopy-0.7.32 \
 		zerocopy-derive-0.7.32 \
 		zeroize-1.7.0 \
-		zip-1.3.1 \
+		zip-2.1.0 \
 		zopfli-0.8.1
 
 OPENSSLINC=	/usr/include

@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generic automation framework for acceptance testing and robotic process automation
-WWW=		https://robotframework.org/
+WWW=		https://robotframework.org/ \
+		https://github.com/robotframework/robotframework
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

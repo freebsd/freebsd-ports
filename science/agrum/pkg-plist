@@ -952,6 +952,16 @@ lib/libagrum.so.%%VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/clg/learning.py
 %%PYTHON%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/clg/notebook.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/config.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/ctbn/CIM.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/ctbn/CTBN.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/ctbn/CTBNGenerator.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/ctbn/CTBNInference.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/ctbn/CTBNLearner.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/ctbn/SamplesStats.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/ctbn/StatsIndepTest.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/ctbn/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/ctbn/constants.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/ctbn/notebook.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/defaults.ini
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/deprecated.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/__init__.py

@@ -1,5 +1,5 @@
 PORTNAME=	python-openstackclient
-PORTVERSION=	6.6.0
+PORTVERSION=	6.6.1
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cliff>=3.5.0:devel/py-cliff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-cinderclient>=3.3.0:net/py-python-cinderclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-keystoneclient>=3.22.0:net/py-python-keystoneclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-novaclient>=18.1.0:net/py-python-novaclient@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.14.2:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=2.0.1:devel/py-stevedore@${PY_FLAVOR}
 
 USES=		python shebangfix

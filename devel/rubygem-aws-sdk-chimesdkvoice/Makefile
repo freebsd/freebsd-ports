@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-chimesdkvoice
-PORTVERSION=	1.25.0
+PORTVERSION=	1.26.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

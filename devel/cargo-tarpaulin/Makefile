@@ -1,6 +1,5 @@
 PORTNAME=	cargo-tarpaulin
-DISTVERSION=	0.30.0
-PORTREVISION=	1
+DISTVERSION=	0.31.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -46,7 +45,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cargo_metadata-0.18.1 \
 		cc-1.0.97 \
 		cfg-if-1.0.0 \
-		cfg_aliases-0.1.1 \
+		cfg_aliases-0.2.1 \
 		chrono-0.4.38 \
 		clap-4.5.4 \
 		clap_builder-4.5.2 \
@@ -58,8 +57,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		coveralls-api-0.6.0 \
 		crc32fast-1.4.0 \
 		deflate-1.0.0 \
-		derive_more-0.99.17 \
 		encoding_rs-0.8.34 \
+		env_filter-0.1.0 \
+		env_logger-0.11.3 \
 		equivalent-1.0.1 \
 		errno-0.3.8 \
 		fallible-iterator-0.3.0 \
@@ -76,8 +76,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		futures-task-0.3.30 \
 		futures-util-0.3.30 \
 		gimli-0.28.1 \
-		gimli-0.29.0 \
-		git2-0.18.3 \
+		gimli-0.31.0 \
+		git2-0.19.0 \
 		glob-0.3.1 \
 		gzip-header-1.0.0 \
 		h2-0.3.26 \
@@ -104,15 +104,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		itoa-1.0.11 \
 		jobserver-0.1.31 \
 		js-sys-0.3.69 \
-		lazy_static-1.4.0 \
+		lazy_static-1.5.0 \
 		lcov-0.8.1 \
 		leb128-0.2.5 \
-		libc-0.2.154 \
-		libgit2-sys-0.16.2+1.7.2 \
+		libc-0.2.155 \
+		libgit2-sys-0.17.0+1.8.1 \
 		libssh2-sys-0.3.0 \
 		libz-sys-1.1.16 \
 		linux-raw-sys-0.4.13 \
-		llvm_profparser-0.5.0 \
+		llvm_profparser-0.6.0 \
 		log-0.4.21 \
 		matchers-0.1.0 \
 		md5-0.7.0 \
@@ -123,53 +123,54 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		miniz_oxide-0.7.2 \
 		mio-0.8.11 \
 		native-tls-0.2.11 \
-		nix-0.28.0 \
+		nix-0.29.0 \
 		nom-7.1.3 \
 		nu-ansi-term-0.46.0 \
 		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
 		object-0.26.2 \
 		object-0.32.2 \
-		object-0.35.0 \
+		object-0.36.1 \
 		once_cell-1.19.0 \
-		openssl-0.10.64 \
+		openssl-0.10.66 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
 		openssl-src-300.2.3+3.2.1 \
-		openssl-sys-0.9.102 \
+		openssl-sys-0.9.103 \
 		overload-0.1.1 \
 		percent-encoding-2.3.1 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.30 \
-		proc-macro2-1.0.82 \
+		proc-macro2-1.0.86 \
 		procfs-0.16.0 \
 		procfs-core-0.16.0 \
 		quick-error-1.2.3 \
-		quick-xml-0.31.0 \
+		quick-xml-0.36.0 \
 		quote-1.0.36 \
-		regex-1.10.4 \
+		regex-1.10.5 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.8.3 \
 		reqwest-0.11.27 \
 		rustc-demangle-0.1.24 \
+		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
 		rustix-0.38.34 \
 		rustls-pemfile-1.0.4 \
 		rusty-fork-0.3.0 \
-		ruzstd-0.6.0 \
+		ruzstd-0.7.0 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		schannel-0.1.23 \
 		security-framework-2.11.0 \
 		security-framework-sys-2.11.0 \
 		semver-1.0.23 \
-		serde-1.0.201 \
-		serde_derive-1.0.201 \
-		serde_json-1.0.117 \
-		serde_spanned-0.6.5 \
+		serde-1.0.204 \
+		serde_derive-1.0.204 \
+		serde_json-1.0.120 \
+		serde_spanned-0.6.6 \
 		serde_urlencoded-0.7.1 \
 		sharded-slab-0.1.7 \
 		slab-0.4.9 \
@@ -178,12 +179,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
-		syn-1.0.109 \
 		syn-2.0.61 \
 		sync_wrapper-0.1.2 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
 		tempfile-3.10.1 \
+		test-log-0.2.16 \
+		test-log-macros-0.2.16 \
 		thiserror-1.0.60 \
 		thiserror-impl-1.0.60 \
 		thread_local-1.1.8 \
@@ -192,17 +194,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-1.37.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-util-0.7.11 \
-		toml-0.8.12 \
-		toml_datetime-0.6.5 \
-		toml_edit-0.22.12 \
+		toml-0.8.15 \
+		toml_datetime-0.6.6 \
+		toml_edit-0.22.16 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
 		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.18 \
-		tracing-test-0.2.4 \
-		tracing-test-macro-0.2.4 \
 		try-lock-0.2.5 \
 		twox-hash-1.6.3 \
 		unicase-2.7.0 \

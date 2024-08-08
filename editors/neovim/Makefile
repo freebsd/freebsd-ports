@@ -1,7 +1,6 @@
 PORTNAME=	neovim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
-PORTREVISION=	2
+DISTVERSION=	0.10.1
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -26,13 +25,11 @@ USES=		cmake cpe gettext iconv lua:51,build luajit \
 
 USE_GITHUB=	yes
 GH_TUPLE=	tree-sitter:tree-sitter-c:v0.21.0:treesitter_c \
-		neovim:tree-sitter-vim:v0.4.0:treesitter_vim \
-		neovim:tree-sitter-vimdoc:v2.5.1:treesitter_vimdoc \
-		tree-sitter-grammars:tree-sitter-query:v0.3.0:treesitter_query \
-		tree-sitter:tree-sitter-python:v0.21.0:treesitter_python \
-		tree-sitter:tree-sitter-bash:v0.21.0:treesitter_bash \
+		tree-sitter-grammars:tree-sitter-lua:v0.1.0:treesitter_lua \
 		MDeiml:tree-sitter-markdown:v0.2.3:treesitter_markdown \
-		tree-sitter-grammars:tree-sitter-lua:v0.1.0:treesitter_lua
+		tree-sitter-grammars:tree-sitter-query:v0.3.0:treesitter_query \
+		neovim:tree-sitter-vim:v0.4.0:treesitter_vim \
+		neovim:tree-sitter-vimdoc:v2.5.1:treesitter_vimdoc
 
 CMAKE_ARGS=	-DLUA_PRG:FILEPATH="${LUA_CMD}" \
 		-DCMAKE_INSTALL_MANDIR:PATH="${PREFIX}/share/man" \
@@ -58,13 +55,11 @@ PYNVIM_USES=		python:run
 post-configure:
 	${MKDIR} ${BUILD_WRKSRC}/.deps/build/src
 	${MV} ${WRKSRC_treesitter_c} ${BUILD_WRKSRC}/.deps/build/src/treesitter_c
+	${MV} ${WRKSRC_treesitter_lua} ${BUILD_WRKSRC}/.deps/build/src/treesitter_lua
+	${MV} ${WRKSRC_treesitter_markdown} ${BUILD_WRKSRC}/.deps/build/src/treesitter_markdown
+	${MV} ${WRKSRC_treesitter_query} ${BUILD_WRKSRC}/.deps/build/src/treesitter_query
 	${MV} ${WRKSRC_treesitter_vim} ${BUILD_WRKSRC}/.deps/build/src/treesitter_vim
 	${MV} ${WRKSRC_treesitter_vimdoc} ${BUILD_WRKSRC}/.deps/build/src/treesitter_vimdoc
-	${MV} ${WRKSRC_treesitter_query} ${BUILD_WRKSRC}/.deps/build/src/treesitter_query
-	${MV} ${WRKSRC_treesitter_python} ${BUILD_WRKSRC}/.deps/build/src/treesitter_python
-	${MV} ${WRKSRC_treesitter_bash} ${BUILD_WRKSRC}/.deps/build/src/treesitter_bash
-	${MV} ${WRKSRC_treesitter_markdown} ${BUILD_WRKSRC}/.deps/build/src/treesitter_markdown
-	${MV} ${WRKSRC_treesitter_lua} ${BUILD_WRKSRC}/.deps/build/src/treesitter_lua
 	${MAKE_ENV} ${CMAKE_BIN} -S ${WRKSRC}/cmake.deps -B ${BUILD_WRKSRC}/.deps ${CMAKE_ARGS} \
 		-DUSE_BUNDLED:BOOL=OFF -DUSE_BUNDLED_TS_PARSERS:BOOL=ON \
 		-DUSE_EXISTING_SRC_DIR:BOOL=ON

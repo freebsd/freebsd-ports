@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI-capable synthesizer for X
 WWW=		https://www.pawfal.org/Software/SpiralSynth/
 
+DEPRECATED=	SpiralSynth isn't being supported any more, use audio/spiralsynthmodular
+EXPIRATION_DATE=	2024-12-24
+
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes

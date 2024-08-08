@@ -1,6 +1,6 @@
 PORTNAME=	nn-insight
 DISTVERSION=	1.0.7
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,5 +31,7 @@ PLIST_FILES=	bin/nn-insight \
 		libexec/nn-insight/tf-lite-plugin.so
 
 PORTSCOUT=	limit:^.*[1-9]\. # prevent hashes
+
+CMAKE_ARGS+=	-DENABLE_NATIVE_OPTIMIZATIONS:BOOL=OFF
 
 .include <bsd.port.mk>

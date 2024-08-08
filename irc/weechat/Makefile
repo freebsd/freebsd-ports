@@ -1,5 +1,5 @@
 PORTNAME=	weechat
-PORTVERSION=	4.3.4
+PORTVERSION=	4.3.5
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 

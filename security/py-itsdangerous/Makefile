@@ -1,5 +1,5 @@
 PORTNAME=	itsdangerous
-PORTVERSION=	2.1.2
+DISTVERSION=	2.2.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,8 +10,10 @@ WWW=		https://github.com/mitsuhiko/itsdangerous/
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>0:devel/py-flit-core@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 

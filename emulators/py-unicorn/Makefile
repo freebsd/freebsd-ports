@@ -18,6 +18,8 @@ GH_TAGNAME=	2.0.1.post1
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
 WRKSRC_SUBDIR=	bindings/python
 
 do-test:

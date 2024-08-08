@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-net_http
-PORTVERSION=	0.22.5
+PORTVERSION=	0.22.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-opentelemetry-api>=1.0<2:devel/rubygem-opentelemetry-api \
-		rubygem-opentelemetry-common>=0.21.0<0.22:devel/rubygem-opentelemetry-common \
 		rubygem-opentelemetry-instrumentation-base>=0.22.1<0.23:devel/rubygem-opentelemetry-instrumentation-base
 
 USES=		gem

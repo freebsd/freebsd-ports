@@ -1,1 +1,6 @@
-Python communication library for Ledger Hardware Wallet.
+Python library for secure communication with Ledger Hardware Wallets.
+This library provides comprehensive support for interacting with Ledger
+devices, enabling secure handling of Bitcoin transactions. Features
+include transaction creation, signing, verification, and wallet
+management. Designed for robustness, it ensures private keys remain
+protected within the hardware wallet.

@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-helpers-sql-obfuscation
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ WWW=		https://opentelemetry.io/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-opentelemetry-common>=0.20<1:devel/rubygem-opentelemetry-common
+RUN_DEPENDS=	rubygem-opentelemetry-common>=0.21<1:devel/rubygem-opentelemetry-common
 
 USES=		gem
 

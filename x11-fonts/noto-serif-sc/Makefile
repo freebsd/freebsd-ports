@@ -1,5 +1,5 @@
 PORTNAME=	noto
-PORTVERSION=	2.002
+PORTVERSION=	2.003
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/notofonts/noto-cjk/raw/Serif${PORTVERSION}/Serif/ \
 		https://github.com/notofonts/noto-cjk/raw/Serif${PORTVERSION}/Serif/OTF/SimplifiedChinese/:cjk \

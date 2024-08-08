@@ -1,5 +1,5 @@
 PORTNAME=	static_holmes
-DISTVERSION=	0.7.7
+DISTVERSION=	0.7.11
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

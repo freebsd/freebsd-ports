@@ -5,6 +5,8 @@ bin/galene
 %%DATADIR%%/change-password.html
 %%DATADIR%%/change-password.js
 %%DATADIR%%/common.css
+%%DATADIR%%/example/example.html
+%%DATADIR%%/example/example.js
 %%DATADIR%%/external/contextual/LICENSE
 %%DATADIR%%/external/contextual/contextual.css
 %%DATADIR%%/external/contextual/contextual.js

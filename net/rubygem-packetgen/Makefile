@@ -1,18 +1,19 @@
 PORTNAME=	packetgen
-PORTVERSION=	3.3.1
+PORTVERSION=	3.3.3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Network packet manipulation library
-WWW=		https://github.com/sdaubert/packetgen
+WWW=		https://github.com/lemontree55/packetgen
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-interfacez>=1.0<2:net/rubygem-interfacez \
+RUN_DEPENDS=	rubygem-digest-crc>=0<1:security/rubygem-digest-crc \
+		rubygem-interfacez>=1.0<2:net/rubygem-interfacez \
 		rubygem-pcaprub>=0.13.0<0.14:net/rubygem-pcaprub \
-		rubygem-rasn1>=0.12<1:security/rubygem-rasn1
+		rubygem-rasn1>=0.13.1<1:security/rubygem-rasn1
 
 USES=		gem
 

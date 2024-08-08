@@ -1,0 +1,13 @@
+Decord is a reverse procedure of Record. It provides convenient video slicing
+methods based on a thin wrapper on top of hardware accelerated video decoders,
+e.g.
+  FFMPEG/LibAV(Done)
+  Nvidia Codecs(Done)
+  Intel Codecs
+
+Decord was designed to handle awkward video shuffling experience in order to
+provide smooth experiences similar to random image loader for deep learning.
+
+Decord is also able to decode audio from both video and audio files. One can
+slice video and audio together to get a synchronized result; hence providing
+a one-stop solution for both video and audio decoding.

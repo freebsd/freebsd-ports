@@ -1,8 +1,8 @@
---- src/ap/hostapd.c.orig	2022-01-16 12:51:29.000000000 -0800
-+++ src/ap/hostapd.c	2024-02-26 20:24:39.350068000 -0800
-@@ -1698,6 +1698,20 @@
- {
+--- src/ap/hostapd.c.orig	2024-02-18 01:24:29.000000000 -0800
++++ src/ap/hostapd.c	2024-02-26 20:25:50.505205000 -0800
+@@ -2029,6 +2029,20 @@
  	iface->wait_channel_update = 0;
+ 	iface->is_no_ir = false;
  
 +#ifdef __FreeBSD
 +	/* XXX hostapd_get_hw_features() is an inline that always returns -1
@@ -21,7 +21,7 @@
  	if (hostapd_get_hw_features(iface)) {
  		/* Not all drivers support this yet, so continue without hw
  		 * feature data. */
-@@ -1744,6 +1758,7 @@
+@@ -2080,6 +2094,7 @@
  		if (iface->conf->ieee80211h)
  			wpa_printf(MSG_DEBUG, "DFS support is enabled");
  	}

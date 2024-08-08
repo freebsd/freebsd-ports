@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry
-PORTVERSION=	1.1.0
+PORTVERSION=	1.3.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-proto
@@ -19,7 +19,7 @@ NO_BUILD=	yes
 
 do-install:
 	${RM} ${WRKSRC}/opentelemetry/proto/collector/README.md
-	${RM} ${WRKSRC}/opentelemetry/proto/collector/*/v1/*.yaml
+	${RM} ${WRKSRC}/opentelemetry/proto/collector/*/v1*/*.yaml
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/opentelemetry/proto
 	(cd ${WRKSRC}/opentelemetry/proto && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/opentelemetry/proto)

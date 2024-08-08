@@ -1,5 +1,5 @@
-TIMESTAMP = 1613738791
+TIMESTAMP = 1721858379
+SHA256 (fontconfig-2.15.0.tar.xz) = 63a0658d0e06e0fa886106452b58ef04f21f58202ea02a94c39de0d3335d7c0e
+SIZE (fontconfig-2.15.0.tar.xz) = 1447820
 SHA256 (googlefonts-pyfontaine-1.4.0_GH0.tar.gz) = 92215da45fed003032e5849e3d0917aaae9024e255affe9d28c67aed0223f11e
 SIZE (googlefonts-pyfontaine-1.4.0_GH0.tar.gz) = 5209007
-SHA256 (freedesktop-fontconfig-2.13.93_GH0.tar.gz) = f8452c78d1a12f6966455b0d584f89553b13e970b40644c3650f690ec0b3b4fe
-SIZE (freedesktop-fontconfig-2.13.93_GH0.tar.gz) = 542823

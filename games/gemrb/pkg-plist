@@ -78,7 +78,7 @@ share/applications/gemrb.desktop
 %%PORTDOCS%%%%DOCSDIR%%/en/Tables/containr.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/Tables/damage.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/Tables/defsound.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/Tables/dmgtype.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/Tables/dmginfo.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/Tables/fistweap.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/Tables/fonts.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/Tables/formatio.txt
@@ -609,10 +609,16 @@ share/applications/gemrb.desktop
 %%DATADIR%%/override/bg1/efftext.2da
 %%DATADIR%%/override/bg1/minorglb.vvc
 %%DATADIR%%/override/bg2/clearair.2da
+%%DATADIR%%/override/bg2/comet.pro
 %%DATADIR%%/override/bg2/cut17d.bcs
 %%DATADIR%%/override/bg2/efftext.2da
 %%DATADIR%%/override/bg2/minorglb.vvc
 %%DATADIR%%/override/bg2/spells.2da
+%%DATADIR%%/override/bg2ee/clearair.2da
+%%DATADIR%%/override/bg2ee/cut17d.bcs
+%%DATADIR%%/override/bg2ee/efftext.2da
+%%DATADIR%%/override/bg2ee/minorglb.vvc
+%%DATADIR%%/override/bg2ee/spells.2da
 %%DATADIR%%/override/how/baldur.bcs
 %%DATADIR%%/override/how/drmtxt2.2da
 %%DATADIR%%/override/how/efftext.2da
@@ -629,6 +635,10 @@ share/applications/gemrb.desktop
 %%DATADIR%%/override/pst/rndtreas.2da
 %%DATADIR%%/override/pst/spwi506.spl
 %%DATADIR%%/override/pst/wmmos1.mos
+%%DATADIR%%/override/shared/makh.2da
+%%DATADIR%%/override/shared/mett.2da
+%%DATADIR%%/override/shared/mwlf2.2da
+%%DATADIR%%/override/shared/mwyv.2da
 %%DATADIR%%/override/shared/stats.ids
 %%DATADIR%%/unhardcoded/bg1/ability.2da
 %%DATADIR%%/unhardcoded/bg1/acidblgr.pro
@@ -696,6 +706,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/bg1/hlymite.pro
 %%DATADIR%%/unhardcoded/bg1/icestorm.pro
 %%DATADIR%%/unhardcoded/bg1/inarea.pro
+%%DATADIR%%/unhardcoded/bg1/inareans.pro
 %%DATADIR%%/unhardcoded/bg1/inareapa.pro
 %%DATADIR%%/unhardcoded/bg1/inareasm.pro
 %%DATADIR%%/unhardcoded/bg1/item_use.2da
@@ -787,6 +798,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/bg1/textscrn.2da
 %%DATADIR%%/unhardcoded/bg1/trapglyp.pro
 %%DATADIR%%/unhardcoded/bg1/trapskul.pro
+%%DATADIR%%/unhardcoded/bg1/vcdetail.2da
 %%DATADIR%%/unhardcoded/bg1/vcremap.2da
 %%DATADIR%%/unhardcoded/bg1/walksnd.2da
 %%DATADIR%%/unhardcoded/bg1/weapprof.2da
@@ -805,7 +817,6 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/bg2/clskills.2da
 %%DATADIR%%/unhardcoded/bg2/colors.2da
 %%DATADIR%%/unhardcoded/bg2/colrspry.pro
-%%DATADIR%%/unhardcoded/bg2/comet.pro
 %%DATADIR%%/unhardcoded/bg2/damage.2da
 %%DATADIR%%/unhardcoded/bg2/defsound.2da
 %%DATADIR%%/unhardcoded/bg2/denyspl.2da
@@ -886,6 +897,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/bg2/strings.2da
 %%DATADIR%%/unhardcoded/bg2/summlimt.2da
 %%DATADIR%%/unhardcoded/bg2/terrain.2da
+%%DATADIR%%/unhardcoded/bg2/vcdetail.2da
 %%DATADIR%%/unhardcoded/bg2/walksnd.2da
 %%DATADIR%%/unhardcoded/bg2/wildmag.2da
 %%DATADIR%%/unhardcoded/bg2/wingbuff.2da
@@ -946,6 +958,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/bg2ee/k_m_g.2da
 %%DATADIR%%/unhardcoded/bg2ee/k_m_h.2da
 %%DATADIR%%/unhardcoded/bg2ee/k_m_he.2da
+%%DATADIR%%/unhardcoded/bg2ee/keymap.ini
 %%DATADIR%%/unhardcoded/bg2ee/lightb.pro
 %%DATADIR%%/unhardcoded/bg2ee/lightbnb.pro
 %%DATADIR%%/unhardcoded/bg2ee/magesch.2da
@@ -989,6 +1002,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/bg2ee/strings.2da
 %%DATADIR%%/unhardcoded/bg2ee/summlimt.2da
 %%DATADIR%%/unhardcoded/bg2ee/terrain.2da
+%%DATADIR%%/unhardcoded/bg2ee/vcdetail.2da
 %%DATADIR%%/unhardcoded/bg2ee/walksnd.2da
 %%DATADIR%%/unhardcoded/bg2ee/wildmag.2da
 %%DATADIR%%/unhardcoded/bg2ee/wingbuff.2da
@@ -1214,6 +1228,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/how/mmagich.pro
 %%DATADIR%%/unhardcoded/how/mmissile.pro
 %%DATADIR%%/unhardcoded/how/moelda.pro
+%%DATADIR%%/unhardcoded/how/moverate.2da
 %%DATADIR%%/unhardcoded/how/mrage.pro
 %%DATADIR%%/unhardcoded/how/mrageh.pro
 %%DATADIR%%/unhardcoded/how/mspore.pro
@@ -1266,6 +1281,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/how/rdeadh.pro
 %%DATADIR%%/unhardcoded/how/recitah.pro
 %%DATADIR%%/unhardcoded/how/resurrh.pro
+%%DATADIR%%/unhardcoded/how/retrib2.pro
 %%DATADIR%%/unhardcoded/how/rng450.pro
 %%DATADIR%%/unhardcoded/how/rparalh.pro
 %%DATADIR%%/unhardcoded/how/rwotfag.pro
@@ -1371,6 +1387,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/how/ublight.pro
 %%DATADIR%%/unhardcoded/how/uward.pro
 %%DATADIR%%/unhardcoded/how/uwardh.pro
+%%DATADIR%%/unhardcoded/how/vcdetail.2da
 %%DATADIR%%/unhardcoded/how/vcremap.2da
 %%DATADIR%%/unhardcoded/how/vspherh.pro
 %%DATADIR%%/unhardcoded/how/walksnd.2da
@@ -1411,6 +1428,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/iwd/area2np.pro
 %%DATADIR%%/unhardcoded/iwd/area3p.pro
 %%DATADIR%%/unhardcoded/iwd/area4np.pro
+%%DATADIR%%/unhardcoded/iwd/areapro.2da
 %%DATADIR%%/unhardcoded/iwd/armorh.pro
 %%DATADIR%%/unhardcoded/iwd/arrow.pro
 %%DATADIR%%/unhardcoded/iwd/arrowex.pro
@@ -1598,6 +1616,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/iwd/mmagich.pro
 %%DATADIR%%/unhardcoded/iwd/mmissile.pro
 %%DATADIR%%/unhardcoded/iwd/moelda.pro
+%%DATADIR%%/unhardcoded/iwd/moverate.2da
 %%DATADIR%%/unhardcoded/iwd/mpal256.bmp
 %%DATADIR%%/unhardcoded/iwd/mrage.pro
 %%DATADIR%%/unhardcoded/iwd/mrageh.pro
@@ -1650,6 +1669,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/iwd/rdeadh.pro
 %%DATADIR%%/unhardcoded/iwd/recitah.pro
 %%DATADIR%%/unhardcoded/iwd/resurrh.pro
+%%DATADIR%%/unhardcoded/iwd/retrib2.pro
 %%DATADIR%%/unhardcoded/iwd/rng450.pro
 %%DATADIR%%/unhardcoded/iwd/rparalh.pro
 %%DATADIR%%/unhardcoded/iwd/rwotfag.pro
@@ -1750,9 +1770,11 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/iwd/trapglyp.pro
 %%DATADIR%%/unhardcoded/iwd/trapskul.pro
 %%DATADIR%%/unhardcoded/iwd/tspray.pro
+%%DATADIR%%/unhardcoded/iwd/turn.spl
 %%DATADIR%%/unhardcoded/iwd/ublight.pro
 %%DATADIR%%/unhardcoded/iwd/uward.pro
 %%DATADIR%%/unhardcoded/iwd/uwardh.pro
+%%DATADIR%%/unhardcoded/iwd/vcdetail.2da
 %%DATADIR%%/unhardcoded/iwd/vcremap.2da
 %%DATADIR%%/unhardcoded/iwd/vspherh.pro
 %%DATADIR%%/unhardcoded/iwd/walksnd.2da
@@ -1774,7 +1796,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/iwd2/39280.spl
 %%DATADIR%%/unhardcoded/iwd2/39309.spl
 %%DATADIR%%/unhardcoded/iwd2/39310.spl
-%%DATADIR%%/unhardcoded/iwd2/39311.spl
+%%DATADIR%%/unhardcoded/iwd2/39%%PYTHON_SUFFIX%%.spl
 %%DATADIR%%/unhardcoded/iwd2/39312.spl
 %%DATADIR%%/unhardcoded/iwd2/39313.spl
 %%DATADIR%%/unhardcoded/iwd2/39314.spl
@@ -1945,6 +1967,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/iwd2/dspellh.pro
 %%DATADIR%%/unhardcoded/iwd2/dsrace.2da
 %%DATADIR%%/unhardcoded/iwd2/dstable.2da
+%%DATADIR%%/unhardcoded/iwd2/dwmods.2da
 %%DATADIR%%/unhardcoded/iwd2/effects.ids
 %%DATADIR%%/unhardcoded/iwd2/electrh.pro
 %%DATADIR%%/unhardcoded/iwd2/electrh.vvc
@@ -2062,6 +2085,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/iwd2/mmissile.pro
 %%DATADIR%%/unhardcoded/iwd2/modal.2da
 %%DATADIR%%/unhardcoded/iwd2/moelda.pro
+%%DATADIR%%/unhardcoded/iwd2/moverate.2da
 %%DATADIR%%/unhardcoded/iwd2/mrage.pro
 %%DATADIR%%/unhardcoded/iwd2/mrageh.pro
 %%DATADIR%%/unhardcoded/iwd2/mspore.pro
@@ -2108,6 +2132,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/iwd2/rdeadh.pro
 %%DATADIR%%/unhardcoded/iwd2/recitah.pro
 %%DATADIR%%/unhardcoded/iwd2/resurrh.pro
+%%DATADIR%%/unhardcoded/iwd2/retrib2.pro
 %%DATADIR%%/unhardcoded/iwd2/reverbs.2da
 %%DATADIR%%/unhardcoded/iwd2/rng450.pro
 %%DATADIR%%/unhardcoded/iwd2/rparalh.pro
@@ -2217,6 +2242,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/iwd2/uncanny.spl
 %%DATADIR%%/unhardcoded/iwd2/uward.pro
 %%DATADIR%%/unhardcoded/iwd2/uwardh.pro
+%%DATADIR%%/unhardcoded/iwd2/vcdetail.2da
 %%DATADIR%%/unhardcoded/iwd2/vcremap.2da
 %%DATADIR%%/unhardcoded/iwd2/vspherh.pro
 %%DATADIR%%/unhardcoded/iwd2/walksnd.2da
@@ -2532,10 +2558,12 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/pst/weapprof.2da
 %%DATADIR%%/unhardcoded/pst/web.pro
 %%DATADIR%%/unhardcoded/pst/wmmos2b.mos
+%%DATADIR%%/unhardcoded/shared/anisndex.2da
 %%DATADIR%%/unhardcoded/shared/avprefc.2da
 %%DATADIR%%/unhardcoded/shared/avprefg.2da
 %%DATADIR%%/unhardcoded/shared/avprefix.2da
 %%DATADIR%%/unhardcoded/shared/axeflm.pro
+%%DATADIR%%/unhardcoded/shared/banttimg.2da
 %%DATADIR%%/unhardcoded/shared/bardsong.spl
 %%DATADIR%%/unhardcoded/shared/cgtable.2da
 %%DATADIR%%/unhardcoded/shared/chinese.ini
@@ -2549,7 +2577,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/shared/demoend.chu
 %%DATADIR%%/unhardcoded/shared/detect.spl
 %%DATADIR%%/unhardcoded/shared/difflvls.2da
-%%DATADIR%%/unhardcoded/shared/dmgtypes.2da
+%%DATADIR%%/unhardcoded/shared/dmginfo.2da
 %%DATADIR%%/unhardcoded/shared/dummy.spl
 %%DATADIR%%/unhardcoded/shared/fatigue.2da
 %%DATADIR%%/unhardcoded/shared/findtrap.spl
@@ -2562,16 +2590,19 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/shared/japanese.ini
 %%DATADIR%%/unhardcoded/shared/keymap.2da
 %%DATADIR%%/unhardcoded/shared/korean.ini
+%%DATADIR%%/unhardcoded/shared/mbas.2da
+%%DATADIR%%/unhardcoded/shared/mbas2.2da
 %%DATADIR%%/unhardcoded/shared/mfmiss5.spl
 %%DATADIR%%/unhardcoded/shared/mfmiss5b.spl
 %%DATADIR%%/unhardcoded/shared/miscrule.2da
 %%DATADIR%%/unhardcoded/shared/modal.2da
+%%DATADIR%%/unhardcoded/shared/mwyv2.2da
 %%DATADIR%%/unhardcoded/shared/numwslot.2da
 %%DATADIR%%/unhardcoded/shared/panic.spl
-%%DATADIR%%/unhardcoded/shared/polish.ini
 %%DATADIR%%/unhardcoded/shared/polystat.2da
 %%DATADIR%%/unhardcoded/shared/racefeat.2da
 %%DATADIR%%/unhardcoded/shared/redholy.pro
+%%DATADIR%%/unhardcoded/shared/restheal.2da
 %%DATADIR%%/unhardcoded/shared/reverb.2da
 %%DATADIR%%/unhardcoded/shared/sanctuc.vvc
 %%DATADIR%%/unhardcoded/shared/shadows.2da
@@ -2607,6 +2638,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/shared/shwater6.pro
 %%DATADIR%%/unhardcoded/shared/shwater7.pro
 %%DATADIR%%/unhardcoded/shared/skybolt.pro
+%%DATADIR%%/unhardcoded/shared/sndchann.2da
 %%DATADIR%%/unhardcoded/shared/sneak.spl
 %%DATADIR%%/unhardcoded/shared/souleatr.2da
 %%DATADIR%%/unhardcoded/shared/sparpunp.pro
@@ -2626,6 +2658,7 @@ share/applications/gemrb.desktop
 %%DATADIR%%/unhardcoded/shared/summlimt.2da
 %%DATADIR%%/unhardcoded/shared/traplimt.2da
 %%DATADIR%%/unhardcoded/shared/turn.spl
+%%DATADIR%%/unhardcoded/shared/vcdetail.2da
 %%DATADIR%%/unhardcoded/shared/zzweaps.2da
 share/icons/hicolor/scalable/apps/gemrb.svg
 share/man/man6/gemrb.6.gz

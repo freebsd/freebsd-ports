@@ -1,6 +1,6 @@
---- router/src/harness/src/tls_server_context.cc.orig	2023-11-18 19:39:18.923205000 +0100
-+++ router/src/harness/src/tls_server_context.cc	2023-11-18 19:42:53.690094000 +0100
-@@ -474,7 +474,8 @@ int TlsServerContext::security_level() const {
+--- router/src/harness/src/tls_server_context.cc.orig	2024-07-12 19:15:25 UTC
++++ router/src/harness/src/tls_server_context.cc
+@@ -475,7 +475,8 @@ int TlsServerContext::security_level() const {
  }
  
  int TlsServerContext::security_level() const {

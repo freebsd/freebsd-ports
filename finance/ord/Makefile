@@ -1,5 +1,5 @@
 PORTNAME=	ord
-DISTVERSION=	0.19.0
+DISTVERSION=	0.19.1
 CATEGORIES=	finance
 PKGNAMESUFFIX=	-crypto-wallet
 
@@ -71,9 +71,9 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		bstr-1.9.1 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
-		bytes-1.6.0 \
+		bytes-1.6.1 \
 		cast-0.3.0 \
-		cc-1.1.0 \
+		cc-1.1.5 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
@@ -209,7 +209,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		mime-0.3.17 \
 		mime_guess-2.0.5 \
 		minimal-lexical-0.2.1 \
-		miniscript-10.0.0 \
+		miniscript-10.1.0 \
 		miniz_oxide-0.7.4 \
 		mio-0.8.11 \
 		mp4-0.14.0 \
@@ -302,8 +302,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		sct-0.7.1 \
 		secp256k1-0.27.0 \
 		secp256k1-sys-0.8.1 \
-		security-framework-2.11.0 \
-		security-framework-sys-2.11.0 \
+		security-framework-2.11.1 \
+		security-framework-sys-2.11.1 \
 		semver-1.0.23 \
 		serde-1.0.204 \
 		serde-hex-0.1.0 \
@@ -311,8 +311,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		serde_json-1.0.120 \
 		serde_path_to_error-0.1.16 \
 		serde_urlencoded-0.7.1 \
-		serde_with-3.8.3 \
-		serde_with_macros-3.8.3 \
+		serde_with-3.9.0 \
+		serde_with_macros-3.9.0 \
 		serde_yaml-0.9.34+deprecated \
 		sha2-0.10.8 \
 		sha3-0.10.8 \
@@ -330,22 +330,22 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		strum_macros-0.24.3 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
-		syn-2.0.70 \
+		syn-2.0.71 \
 		sync_wrapper-0.1.2 \
 		synstructure-0.12.6 \
 		sysinfo-0.30.13 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
 		tempfile-3.10.1 \
-		thiserror-1.0.61 \
-		thiserror-impl-1.0.61 \
+		thiserror-1.0.63 \
+		thiserror-impl-1.0.63 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.38.0 \
+		tokio-1.38.1 \
 		tokio-macros-2.3.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \

@@ -1,4 +1,4 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2024-06-17 12:56:06 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2024-07-30 11:12:21 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
 @@ -97,7 +97,7 @@
  
@@ -154,7 +154,7 @@
    gssapi_library_loader_observer_.Install(network_service);
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -972,7 +972,7 @@ bool SystemNetworkContextManager::IsNetworkSandboxEnab
+@@ -970,7 +970,7 @@ bool SystemNetworkContextManager::IsNetworkSandboxEnab
        break;
    }
  
@@ -163,7 +163,7 @@
    if (!enabled) {
      g_network_service_will_allow_gssapi_library_load = true;
    }
-@@ -1059,7 +1059,7 @@ void SystemNetworkContextManager::UpdateExplicitlyAllo
+@@ -1057,7 +1057,7 @@ void SystemNetworkContextManager::UpdateExplicitlyAllo
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

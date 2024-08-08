@@ -1,11 +1,11 @@
---- public/components/all/package.go.orig
-+++ public/components/all/package.go
-@@ -45,8 +45,6 @@
- 	_ "github.com/redpanda-data/connect/v4/public/components/redis"
- 	_ "github.com/redpanda-data/connect/v4/public/components/sentry"
- 	_ "github.com/redpanda-data/connect/v4/public/components/sftp"
+--- public/components/all/package.go.orig	1979-11-30 00:00:00.000000000 +0100
++++ public/components/all/package.go	2024-07-20 15:56:19.212115000 +0200
+@@ -21,8 +21,4 @@
+ import (
+ 	// Import all community components.
+ 	_ "github.com/redpanda-data/connect/v4/public/components/community"
+-
+-	// Import all enterprise components.
 -	_ "github.com/redpanda-data/connect/v4/public/components/snowflake"
 -	_ "github.com/redpanda-data/connect/v4/public/components/splunk"
- 	_ "github.com/redpanda-data/connect/v4/public/components/sql"
- 	_ "github.com/redpanda-data/connect/v4/public/components/statsd"
- 	_ "github.com/redpanda-data/connect/v4/public/components/twitter"
+ )

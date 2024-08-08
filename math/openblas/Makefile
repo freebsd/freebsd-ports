@@ -81,7 +81,6 @@ TARGET_CPU_ARCH=	PPCG4
 .endif
 
 .if ${ARCH} == powerpc64le
-CFLAGS+=		-lm
 USE_GCC=		yes
 .endif
 

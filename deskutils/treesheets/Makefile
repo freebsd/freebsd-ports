@@ -1,5 +1,5 @@
 PORTNAME=	treesheets
-DISTVERSION=	1.0.20240604
+DISTVERSION=	1.0.20240802
 CATEGORIES=	deskutils
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -12,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/ZLIB_LICENSE.txt
 USES=		cmake desktop-file-utils shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	aardappel
-GH_TAGNAME=	9365612553
+#GH_TAGNAME=	>= 9850843724 fails to build: https://github.com/aardappel/treesheets/issues/686
+GH_TAGNAME=	10218605277
 USE_WX=		3.2
 
 PORTSCOUT=	ignore:1 # upstream uses CI run ids as releases

@@ -22,6 +22,8 @@ OPTIONS_DEFINE=	DOCS
 
 DOCS_VARS_OFF=	EXTRACT_AFTER_ARGS+="--exclude udt${PORTVERSION:R}/doc"
 
+CXXFLAGS+=	-Wno-error=vla-cxx-extension
+
 post-build:
 	# Building sample applications:
 .for a in ${UDT_APPS}

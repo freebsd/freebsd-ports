@@ -10,7 +10,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libFcitx5Core.so:textproc/fcitx5 \
-		libfmt.so:devel/libfmt
+		libfmt.so:devel/libfmt \
+		libicuuc.so:devel/icu
 
 USES=		cmake compiler:c++17-lang gettext-tools kde:5 pkgconfig
 

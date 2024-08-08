@@ -1,6 +1,6 @@
---- media/video/video_encode_accelerator_adapter_test.cc.orig	2023-08-18 10:26:52 UTC
+--- media/video/video_encode_accelerator_adapter_test.cc.orig	2024-07-31 14:19:23 UTC
 +++ media/video/video_encode_accelerator_adapter_test.cc
-@@ -459,7 +459,7 @@ TEST_P(VideoEncodeAcceleratorAdapterTest, TwoFramesRes
+@@ -461,7 +461,7 @@ TEST_P(VideoEncodeAcceleratorAdapterTest, TwoFramesRes
        CreateGreenFrame(large_size, pixel_format, base::Milliseconds(2));
  
    VideoPixelFormat expected_input_format = PIXEL_FORMAT_I420;

@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/connectors/device_trust/key_management/core/persistence/key_persistence_delegate_factory.cc.orig	2023-08-17 07:33:31 UTC
+--- chrome/browser/enterprise/connectors/device_trust/key_management/core/persistence/key_persistence_delegate_factory.cc.orig	2024-07-30 11:12:21 UTC
 +++ chrome/browser/enterprise/connectors/device_trust/key_management/core/persistence/key_persistence_delegate_factory.cc
 @@ -13,7 +13,7 @@
  #include "chrome/browser/enterprise/connectors/device_trust/key_management/core/persistence/win_key_persistence_delegate.h"
@@ -17,4 +17,4 @@
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    return std::make_unique<LinuxKeyPersistenceDelegate>();
  #else
-   NOTREACHED();
+   NOTREACHED_IN_MIGRATION();

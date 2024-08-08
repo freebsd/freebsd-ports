@@ -36,4 +36,16 @@ EOM
 	type: upgrade
 	maximum_version: "7.4.1"
 }
+{
+	message: <<EOM
+For information about updating your current Varnish deployment to the new
+version, see Upgrading to Varnish 7.5:
+  https://varnish-cache.org/docs/7.5/whats-new/upgrading-7.5.html
+
+For the complete release information, see the Varnish Cache 7.5.X release pages:
+  https://varnish-cache.org/releases/rel7.5.0.html
+EOM
+	type: upgrade
+	maximum_version: "7.5.0"
+}
 ]

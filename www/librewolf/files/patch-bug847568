@@ -64,7 +64,7 @@ index 000000000000..24e8d7a03274
 +# Match bundled graphite2 configuration
 +AllowCompilerWarnings()
 +
-+FINAL_LIBRARY = 'gkmedias'
++FINAL_LIBRARY = 'xul'
 diff --git gfx/harfbuzz/README-mozilla.fbsd gfx/harfbuzz/README-mozilla.fbsd
 new file mode 100644
 index 000000000000..2a10eb1e2b42

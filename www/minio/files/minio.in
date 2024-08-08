@@ -23,6 +23,12 @@
 #                               Set it to user to run minio under
 # minio_group (str):            Set to "minio" by default.
 #                               Set it to group to run minio under
+# minio_root_user (str):        Set to "minioadmin" by default.
+#                               Set root username
+# minio_root_password (str):    Set to "minioadmin" by default.
+#                               Set root's password
+# minio_root_access (str):      Set to "on" by default.
+#                               Set to "off" to disable root access
 # minio_logfile (str):          Set to "/var/log/minio.log" by default.
 #                               Set it to file where stdout/stderr are logged.
 # minio_syslog_enable (bool):   Set to YES by default
@@ -49,8 +55,15 @@ load_rc_config ${name}
 : ${minio_console_address=""}
 : ${minio_user:="%%USER%%"}
 : ${minio_group:="%%GROUP%%"}
+: ${minio_root_user:="minioadmin"}
+: ${minio_root_password:="minioadmin"}
+: ${minio_root_access:="on"}
 : ${minio_syslog_enable:="YES"}
 : ${minio_logfile:="/var/log/minio.log"}
+
+export MINIO_ROOT_USER="${minio_root_user}"
+export MINIO_ROOT_PASSWORD="${minio_root_password}"
+export MINIO_API_ROOT_ACCESS="${minio_root_access}"
 
 start_precmd="minio_start_precmd"
 

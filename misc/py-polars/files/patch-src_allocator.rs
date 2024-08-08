@@ -1,6 +1,6 @@
 - workaround for https://github.com/pola-rs/polars/issues/17034
 
---- src/allocator.rs.orig	2024-06-01 09:47:54 UTC
+--- src/allocator.rs.orig	2024-08-04 11:07:42 UTC
 +++ src/allocator.rs
 @@ -1,14 +1,3 @@
 -#[cfg(all(
@@ -17,7 +17,7 @@
  use mimalloc::MiMalloc;
  
  #[cfg(all(
-@@ -22,24 +11,7 @@ use crate::memory::TracemallocAllocator;
+@@ -22,32 +11,10 @@ use crate::memory::TracemallocAllocator;
  #[global_allocator]
  #[cfg(all(
      not(debug_assertions),
@@ -40,5 +40,13 @@
 -// linking breaks on Windows if we use tracemalloc C APIs. So we only use this
 -// on Unix for now.
 -#[global_allocator]
--#[cfg(all(debug_assertions, not(allocator = "default"), target_family = "unix",))]
+-#[cfg(all(
+-    debug_assertions,
+-    target_family = "unix",
+-    not(allocator = "default"),
+-    not(allocator = "mimalloc"),
+-))]
 -static ALLOC: TracemallocAllocator<Jemalloc> = TracemallocAllocator::new(Jemalloc);
+ 
+ use std::alloc::Layout;
+ use std::ffi::{c_char, c_void};

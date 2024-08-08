@@ -1,6 +1,6 @@
 PORTNAME=		cling
 DISTVERSION=		0.5-2018-08-13
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=		lang devel
 MASTER_SITES=		https://root.cern.ch/download/cling/
 DISTNAME=		${PORTNAME}_${DISTVERSION:C/^[0-9]\.[0-9]-//}_sources
@@ -23,39 +23,32 @@ BROKEN_riscv64=		fails to build: CMake Error at cmake/config-ix.cmake:407: Unkno
 LIB_DEPENDS=	libgtest.so:devel/googletest \
 		libz3.so:math/z3
 
+USES=		cmake compiler:c++11-lib compiler:c11 gnome libedit ncurses python:build shebangfix tar:bzip2
+USE_GNOME=	libxml2
+
+CMAKE_ARGS=	-DINSTALL_LAYOUT=FREEBSD
+CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
+CMAKE_OFF=	LLVM_BUILD_EXAMPLES LLVM_INCLUDE_TESTS LLVM_INCLUDE_GO_TESTS
+CMAKE_ON=	BUILD_SHARED_LIBS
+LDFLAGS+=	-Wl,--undefined-version
+USE_LDCONFIG=	${LLVM_PREFIX}/lib
 WRKSRC=		${WRKDIR}/src
+
+SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
+PLIST_SUB=	LLVM_SUFFIX=${LLVM_SUFFIX} LLVM_RELEASE=${LLVM_RELEASE}
 
 LLVM_RELEASE=	5.0.0
 LLVM_SUFFIX=	50_cern-root
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 
-USES=		cmake compiler:c++11-lib compiler:c11 gnome libedit ncurses \
-		python:build shebangfix tar:bzip2
-USE_GNOME=	libxml2
-USE_LDCONFIG=	${LLVM_PREFIX}/lib
-
-CONFLICTS_INSTALL=	llvm zapcc # # bin/bugpoint bin/c-index-test bin/clang bin/clang++ bin/clang-5.0 bin/clang-check bin/clang-cl bin/clang-cpp bin/clang-format bin/clang-import-test bin/clang-offload-bundler bin/clang-rename bin/git-clang-format
+CONFLICTS_INSTALL=	llvm zapcc # bin/bugpoint bin/c-index-test bin/clang bin/clang++ bin/clang-5.0 bin/clang-check bin/clang-cl bin/clang-cpp bin/clang-format bin/clang-import-test bin/clang-offload-bundler bin/clang-rename bin/git-clang-format
 
 SHEBANG_FILES=	tools/clang/tools/clang-format/clang-format-diff.py \
 		tools/clang/tools/clang-format/git-clang-format \
 		tools/clang/tools/scan-view/bin/scan-view
 
-CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_OFF=	LLVM_BUILD_EXAMPLES LLVM_INCLUDE_TESTS LLVM_INCLUDE_GO_TESTS
-
-SUB_LIST+=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
-PLIST_SUB+=		LLVM_SUFFIX=${LLVM_SUFFIX} LLVM_RELEASE=${LLVM_RELEASE}
-
-CMAKE_BUILD_TYPE=	Release
-CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
-
-CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LLVM_PREFIX%%|${LLVM_PREFIX}|g' \
-	    ${PATCH_WRKSRC}/tools/cling/tools/driver/cling.cpp
-	@${REINPLACE_CMD} -e 's|%%LLVM_PREFIX%%|${LLVM_PREFIX}|g' \
-	    ${PATCH_WRKSRC}/tools/cling/lib/Interpreter/CIFactory.cpp
+	@${REINPLACE_CMD} -e 's|%%LLVM_PREFIX%%|${LLVM_PREFIX}|g' ${WRKSRC}/tools/cling/lib/Interpreter/CIFactory.cpp ${WRKSRC}/tools/cling/tools/driver/cling.cpp
 
 post-install:
 	for e in $$(cd ${STAGEDIR}${PREFIX}/llvm50_cern-root/bin && ls *); do \

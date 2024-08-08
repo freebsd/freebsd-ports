@@ -9,5 +9,3 @@ dropped by an order of magnitude.
 
 It uses the file-system as its database, no additional database is required to
 use it.
-
-See also: https://github.com/linsomniac/tumgreyspf

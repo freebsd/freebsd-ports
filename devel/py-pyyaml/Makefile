@@ -15,8 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		python
 USE_PYTHON=	autoplist concurrent cython distutils
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pyyaml5
-
 OPTIONS_DEFINE=	LIBYAML EXAMPLES
 OPTIONS_DEFAULT=LIBYAML
 LIBYAML_DESC=	Use textproc/libyaml for faster parsing

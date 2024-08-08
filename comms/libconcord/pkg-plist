@@ -1,6 +1,6 @@
 include/libconcord.h
 lib/libconcord.a
 lib/libconcord.so
-lib/libconcord.so.4
-lib/libconcord.so.4.0.0
+lib/libconcord.so.6
+lib/libconcord.so.6.0.0
 share/mime/packages/libconcord.xml

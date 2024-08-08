@@ -1,0 +1,3 @@
+This is a rather simple Perl module for dealing with time intervals.
+Convert 189988007 seconds to compact form 6y7d10h26m47s.
+Convert compact 5h37m5s to seconds 20225.

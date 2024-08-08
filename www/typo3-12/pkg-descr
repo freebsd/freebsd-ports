@@ -1,5 +1,5 @@
-This is the stable version with long-term support (LTS). We provide free maintenance
-bug fixes until October 2024 and security updates until April 2026.
+This is the stable version with long-term support (LTS). We provide free
+maintenance bug fixes until October 2024 and security updates until April 2026.
 * Increased performance
 * Improved backend usability
 * Top-modern dependent libraries (CKEditor v5, Symfony v6, Doctrine v3)

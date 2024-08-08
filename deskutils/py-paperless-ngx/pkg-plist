@@ -204,6 +204,11 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1044_workflow_workflowaction_workflowtrigger_and_more.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1045_alter_customfieldinstance_value_monetary.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1046_workflowaction_remove_all_correspondents_and_more.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1047_savedview_display_mode_and_more.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1048_alter_savedviewfilterrule_rule_type.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1049_document_deleted_at_document_restored_at.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1050_customfield_extra_data_and_more.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/1051_alter_correspondent_owner_alter_document_owner_and_more.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__init__.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0001_initial%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/0001_initial%%PYTHON_EXT_SUFFIX%%.pyc
@@ -347,6 +352,16 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1045_alter_customfieldinstance_value_monetary%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1046_workflowaction_remove_all_correspondents_and_more%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1046_workflowaction_remove_all_correspondents_and_more%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1047_savedview_display_mode_and_more%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1047_savedview_display_mode_and_more%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1048_alter_savedviewfilterrule_rule_type%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1048_alter_savedviewfilterrule_rule_type%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1049_document_deleted_at_document_restored_at%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1049_document_deleted_at_document_restored_at%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1050_customfield_extra_data_and_more%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1050_customfield_extra_data_and_more%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1051_alter_correspondent_owner_alter_document_owner_and_more%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/1051_alter_correspondent_owner_alter_document_owner_and_more%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/migrations/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/models.py
@@ -371,7 +386,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/signals/__pycache__/handlers%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/signals/__pycache__/handlers%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/documents/signals/handlers.py
-%%PYTHON_SITELIBDIR%%/paperless/documents/static/accounts.css
+%%PYTHON_SITELIBDIR%%/paperless/documents/static/base.css
 %%PYTHON_SITELIBDIR%%/paperless/documents/static/bootstrap.min.css
 %%PYTHON_SITELIBDIR%%/paperless/documents/tasks.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/templates/account/email/base_message.txt
@@ -383,11 +398,13 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/templates/account/signup.html
 %%PYTHON_SITELIBDIR%%/paperless/documents/templates/index.html
 %%PYTHON_SITELIBDIR%%/paperless/documents/templates/paperless-ngx/base.html
+%%PYTHON_SITELIBDIR%%/paperless/documents/templates/paperless-ngx/snippets/svg_leaf.html
 %%PYTHON_SITELIBDIR%%/paperless/documents/templates/paperless-ngx/snippets/svg_logo.html
 %%PYTHON_SITELIBDIR%%/paperless/documents/templates/socialaccount/authentication_error.html
 %%PYTHON_SITELIBDIR%%/paperless/documents/templates/socialaccount/login.html
 %%PYTHON_SITELIBDIR%%/paperless/documents/templates/socialaccount/signup.html
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/tests/conftest.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/data/v1.17.4.model.pickle
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/examples/no-text.png
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/factories.py
@@ -449,6 +466,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_api_search.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_api_status.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_api_tasks.py
+%%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_api_trash.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_api_uisettings.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_api_workflows.py
 %%PYTHON_SITELIBDIR%%/paperless/documents/tests/test_barcodes.py
@@ -666,7 +684,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0008_auto_20210516_0940.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0009_alter_mailrule_action_alter_mailrule_folder.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0009_mailrule_assign_tags.py
-%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0010_auto_20220311_1602.py
+%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0010_auto_20220%%PYTHON_SUFFIX%%_1602.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0011_remove_mailrule_assign_tag.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0012_alter_mailrule_assign_tags.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0013_merge_20220412_1051.py
@@ -680,6 +698,8 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0021_alter_mailaccount_password.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0022_mailrule_assign_owner_from_rule_and_more.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0023_remove_mailrule_filter_attachment_filename_and_more.py
+%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0024_alter_mailrule_name_and_more.py
+%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0025_alter_mailaccount_owner_alter_mailrule_owner_and_more.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__init__.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0001_initial%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0001_initial%%PYTHON_EXT_SUFFIX%%.pyc
@@ -701,8 +721,8 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0009_alter_mailrule_action_alter_mailrule_folder%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0009_mailrule_assign_tags%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0009_mailrule_assign_tags%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0010_auto_20220311_1602%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0010_auto_20220311_1602%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0010_auto_20220%%PYTHON_SUFFIX%%_1602%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0010_auto_20220%%PYTHON_SUFFIX%%_1602%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0011_remove_mailrule_assign_tag%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0011_remove_mailrule_assign_tag%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0012_alter_mailrule_assign_tags%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -729,6 +749,10 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0022_mailrule_assign_owner_from_rule_and_more%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0023_remove_mailrule_filter_attachment_filename_and_more%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0023_remove_mailrule_filter_attachment_filename_and_more%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0024_alter_mailrule_name_and_more%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0024_alter_mailrule_name_and_more%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0025_alter_mailaccount_owner_alter_mailrule_owner_and_more%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0025_alter_mailaccount_owner_alter_mailrule_owner_and_more%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/models.py
@@ -743,6 +767,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/templates/package.json
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/templates/tailwind.config.js
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/tests/conftest.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/tests/samples/broken.eml
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/tests/samples/first.pdf
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/tests/samples/html.eml
@@ -817,6 +842,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/paperless_text/parsers.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_text/signals.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_text/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/paperless/paperless_text/tests/conftest.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_text/tests/samples/decode_error.txt
 %%PYTHON_SITELIBDIR%%/paperless/paperless_text/tests/samples/test.txt
 %%PYTHON_SITELIBDIR%%/paperless/paperless_text/tests/test_parser.py
@@ -833,13 +859,13 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/paperless_tika/parsers.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_tika/signals.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_tika/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/paperless/paperless_tika/tests/conftest.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_tika/tests/samples/multi-part-broken.odt
 %%PYTHON_SITELIBDIR%%/paperless/paperless_tika/tests/samples/sample.doc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_tika/tests/samples/sample.docx
 %%PYTHON_SITELIBDIR%%/paperless/paperless_tika/tests/samples/sample.odt
 %%PYTHON_SITELIBDIR%%/paperless/paperless_tika/tests/test_live_tika.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_tika/tests/test_tika_parser.py
-%%PYTHON_SITELIBDIR%%/paperless/paperless_tika/tests/utils.py
 %%PYTHON_SITELIBDIR%%/paperless/setup.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nginx.conf
@@ -863,9 +889,6 @@ share/man/man7/paperless-ngx.7.gz
 %%DATADIR%%/logo/web/svg/Color logo with background.svg
 %%DATADIR%%/logo/web/svg/White logo - no background.svg
 %%DATADIR%%/logo/web/svg/square.svg
-%%WWWDIR%%/static/accounts.css
-%%WWWDIR%%/static/accounts.css.br
-%%WWWDIR%%/static/accounts.css.gz
 %%WWWDIR%%/static/admin/css/autocomplete.css
 %%WWWDIR%%/static/admin/css/autocomplete.css.br
 %%WWWDIR%%/static/admin/css/autocomplete.css.gz
@@ -1241,6 +1264,9 @@ share/man/man7/paperless-ngx.7.gz
 %%WWWDIR%%/static/admin/js/vendor/xregexp/xregexp.min.js
 %%WWWDIR%%/static/admin/js/vendor/xregexp/xregexp.min.js.br
 %%WWWDIR%%/static/admin/js/vendor/xregexp/xregexp.min.js.gz
+%%WWWDIR%%/static/base.css
+%%WWWDIR%%/static/base.css.br
+%%WWWDIR%%/static/base.css.gz
 %%WWWDIR%%/static/bootstrap.min.css
 %%WWWDIR%%/static/bootstrap.min.css.br
 %%WWWDIR%%/static/bootstrap.min.css.gz
@@ -2853,9 +2879,11 @@ share/man/man7/paperless-ngx.7.gz
 %%WWWDIR%%/static/rest_framework/js/default.js
 %%WWWDIR%%/static/rest_framework/js/default.js.br
 %%WWWDIR%%/static/rest_framework/js/default.js.gz
-%%WWWDIR%%/static/rest_framework/js/jquery-3.5.1.min.js
-%%WWWDIR%%/static/rest_framework/js/jquery-3.5.1.min.js.br
-%%WWWDIR%%/static/rest_framework/js/jquery-3.5.1.min.js.gz
+%%WWWDIR%%/static/rest_framework/js/jquery-3.7.1.min.js
+%%WWWDIR%%/static/rest_framework/js/jquery-3.7.1.min.js.br
+%%WWWDIR%%/static/rest_framework/js/jquery-3.7.1.min.js.gz
+%%WWWDIR%%/static/rest_framework/js/load-ajax-form.js
+%%WWWDIR%%/static/rest_framework/js/load-ajax-form.js.br
 %%WWWDIR%%/static/rest_framework/js/prettify-min.js
 %%WWWDIR%%/static/rest_framework/js/prettify-min.js.br
 %%WWWDIR%%/static/rest_framework/js/prettify-min.js.gz

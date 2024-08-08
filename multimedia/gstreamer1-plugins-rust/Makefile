@@ -13,7 +13,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/LICENSE-LGPLv2
 
-BUILD_DEPENDS=	cargo-cbuild:devel/cargo-c
+BUILD_DEPENDS=	cargo-cbuild:devel/cargo-c \
+		${PY_TOMLI}
 
 USES=		cargo gnome gstreamer meson pkgconfig python:build shebangfix ssl
 USE_GITLAB=	yes
@@ -81,10 +82,4 @@ post-patch:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gstreamer-1.0/*.so
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31100
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>0:textproc/py-tomli@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

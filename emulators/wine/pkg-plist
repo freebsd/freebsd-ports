@@ -2632,7 +2632,7 @@ lib/wine/%%WINEARCH%%-windows/mfsrcsnk.dll
 lib/wine/%%WINEARCH%%-windows/mgmtapi.dll
 lib/wine/%%WINEARCH%%-windows/midimap.dll
 lib/wine/%%WINEARCH%%-windows/mlang.dll
-%%WINE32%%lib/wine/%%WINEARCH%%-windows/mmcndmgr.dll
+lib/wine/%%WINEARCH%%-windows/mmcndmgr.dll
 lib/wine/%%WINEARCH%%-windows/mmdevapi.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/mmdevldr.vxd
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/mmsystem.dll16

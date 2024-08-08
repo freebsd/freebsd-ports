@@ -29,7 +29,7 @@ CMAKE_TESTING_ON=	OPENMC_BUILD_TESTS # tests are broken, see https://github.com/
 BINARY_ALIAS=	git=false
 
 OPTIONS_DEFINE=		LIBMESH MPI OPENMP
-OPTIONS_DEFAULT=	MPI OPENMP
+OPTIONS_DEFAULT=	MPI
 
 LIBMESH_DESC=		Support for libMesh unstructured mesh tallies
 LIBMESH_CMAKE_BOOL=	OPENMC_USE_LIBMESH
@@ -40,6 +40,10 @@ MPI_BUILD_DEPENDS=	mpich>0:net/mpich
 MPI_RUN_DEPENDS=	mpich>0:net/mpich
 
 OPENMP_CMAKE_BOOL=	OPENMC_USE_OPENMP
+
+.if exists(/usr/include/omp.h)
+OPTIONS_DEFAULT+=	OPENMP
+.endif
 
 post-install:
 	${RM} -r ${STAGEDIR}${DOCSDIR}

@@ -24,16 +24,11 @@ USE_PYTHON=	autoplist concurrent pep517
 OPTIONS_DEFINE=	TOML YAML
 OPTIONS_DEFAULT=TOML YAML
 
-TOML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tomli-w>=0:textproc/py-tomli-w@${PY_FLAVOR}
+TOML_RUN_DEPENDS=	${PY_TOMLI} \
+			${PYTHON_PKGNAMEPREFIX}tomli-w>=0:textproc/py-tomli-w@${PY_FLAVOR}
 YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
-
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MTOML} && ${PYTHON_REL} < 31100
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=0:textproc/py-tomli@${PY_FLAVOR}
-.endif
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

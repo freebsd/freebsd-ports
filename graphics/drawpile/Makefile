@@ -10,7 +10,7 @@ WWW=		https://drawpile.net
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/kf5-extra-cmake-modules
+BUILD_DEPENDS=	${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/kf6-extra-cmake-modules
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
 USES=		cargo cmake compiler:c++17-lang desktop-file-utils kde:5 pkgconfig qt:5 shared-mime-info

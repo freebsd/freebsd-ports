@@ -1,5 +1,5 @@
 PORTNAME=	npm
-PORTVERSION=	10.8.1
+PORTVERSION=	10.8.2
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 PKGNAMESUFFIX=	${NODEJS_SUFFIX}
@@ -41,7 +41,7 @@ do-install:
 	${ECHO_CMD} 'python=${PYTHON_CMD}' > ${STAGEDIR}${PREFIX}/etc/npmrc
 	${PYTHON_CMD} -m compileall -d ${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp -f ${STAGEDIR}${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp
 	${PYTHON_CMD} -O -m compileall -d ${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp -f ${STAGEDIR}${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp
-# After Python 3.8 expires, use the following line instead of the above 2 lines.
+# Use the following line instead of the above 2 lines after Python 3.8 expires on Oct 31, 2024.
 	#${PYTHON_CMD} -m compileall -d ${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp -f ${STAGEDIR}${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp -o 0 -o 1
 
 .include <bsd.port.mk>

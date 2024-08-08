@@ -1,5 +1,5 @@
 PORTNAME=	pillow-heif
-PORTVERSION=	0.17.0
+PORTVERSION=	0.18.0
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +21,10 @@ USES=		localbase python
 USE_PYTHON=	autoplist concurrent pep517
 
 LDFLAGS+=	-lheif
+
+post-patch:
+# Clean up bundled libraries
+	@${RM} -r ${WRKSRC}/libheif/
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +

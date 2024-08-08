@@ -26,15 +26,9 @@ lib/cmake/SPLA/SPLASharedConfigVersion.cmake
 lib/cmake/SPLA/SPLASharedTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SPLA/SPLASharedTargets.cmake
 lib/cmake/SPLA/SPLATargets.cmake
-lib/cmake/SPLA/modules/FindARMPL.cmake
-lib/cmake/SPLA/modules/FindATLAS.cmake
-lib/cmake/SPLA/modules/FindBLIS.cmake
-lib/cmake/SPLA/modules/FindGenericBLAS.cmake
-lib/cmake/SPLA/modules/FindMKL.cmake
-lib/cmake/SPLA/modules/FindOPENBLAS.cmake
 lib/cmake/SPLA/modules/FindSCALAPACK.cmake
 lib/cmake/SPLA/modules/FindSCI.cmake
 lib/libspla.so
 lib/libspla.so.1
-lib/libspla.so.1.5.5
+lib/libspla.so.1.6.1
 libdata/pkgconfig/SPLA.pc

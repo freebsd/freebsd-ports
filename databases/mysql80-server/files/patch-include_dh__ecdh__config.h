@@ -1,6 +1,6 @@
---- include/dh_ecdh_config.h.orig	2023-12-03 10:42:56 UTC
+--- include/dh_ecdh_config.h.orig	2024-07-12 19:15:25 UTC
 +++ include/dh_ecdh_config.h
-@@ -38,7 +38,7 @@
+@@ -39,7 +39,7 @@ namespace {
  #endif /* OPENSSL_VERSION_NUMBER < 0x10002000L */
  
  namespace {
@@ -9,7 +9,7 @@
  /* Following primes are from https://www.rfc-editor.org/rfc/rfc7919#appendix-A
   */
  
-@@ -257,6 +257,7 @@ bool set_dh(SSL_CTX *ctx) {
+@@ -258,6 +258,7 @@ bool set_dh(SSL_CTX *ctx) {
  
    DH *dh = nullptr;
  #if OPENSSL_VERSION_NUMBER >= 0x10100000L
@@ -17,7 +17,7 @@
    switch (security_level) {
      case 1:
        [[fallthrough]];
-@@ -275,6 +276,43 @@ bool set_dh(SSL_CTX *ctx) {
+@@ -276,6 +277,43 @@ bool set_dh(SSL_CTX *ctx) {
      default:
        break;
    };

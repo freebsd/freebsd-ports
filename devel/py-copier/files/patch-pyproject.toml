@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-07-04 13:59:02 UTC
++++ pyproject.toml
+@@ -31,7 +31,7 @@ funcy = ">=1.17"
+ colorama = ">=0.4.6"
+ dunamai = ">=1.7.0"
+ funcy = ">=1.17"
+-jinja2 = ">=3.1.4"
++jinja2 = ">=3.1.3"
+ jinja2-ansible-filters = ">=1.3.1"
+ packaging = ">=23.0"
+ pathspec = ">=0.9.0"

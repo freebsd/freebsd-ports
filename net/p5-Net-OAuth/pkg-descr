@@ -15,5 +15,3 @@ Net::OAuth provides:
 Net::OAuth does not provide:
 - Consumer or Service Provider encapsulation
 - token/nonce/key storage/management
-
-See also: https://oauth.net/

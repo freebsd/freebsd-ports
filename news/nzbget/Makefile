@@ -1,12 +1,11 @@
 PORTNAME=	nzbget
-PORTVERSION=	24.0
-PORTREVISION=	1
+PORTVERSION=	24.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	news
 
 MAINTAINER=	alexis.praga@free.fr
 COMMENT=	Binary newsreader supporting NZB files
-WWW=		http://nzbget.net/
+WWW=		https://nzbget.net/
 
 LICENSE=	GPLv2
 

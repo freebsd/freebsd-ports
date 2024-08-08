@@ -1,5 +1,5 @@
 PORTNAME=	freerdp
-DISTVERSION=	3.6.2
+DISTVERSION=	3.6.3
 CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
@@ -175,7 +175,8 @@ WAYLAND_RUN_DEPENDS=	wayland-scanner:graphics/wayland
 WAYLAND_CMAKE_BOOL=	WITH_WAYLAND
 
 WEBENGINE_USES_=	qt:5
-WEBENGINE_USE_QT=	core declarative gui location network printsupport webchannel webengine widgets
+WEBENGINE_USE_QT=	core declarative gui location network printsupport \
+			webchannel webengine widgets buildtools:build qmake:build
 WEBENGINE_CMAKE_BOOL=	WITH_WEBVIEW_QT
 WEBENGINE_CMAKE_ON=	-DWITH_WEBVIEW:BOOL=ON
 

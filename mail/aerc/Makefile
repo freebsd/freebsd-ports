@@ -1,5 +1,5 @@
 PORTNAME=	aerc
-DISTVERSION=	0.18.0
+DISTVERSION=	0.18.2
 CATEGORIES=	mail
 
 MAINTAINER=	iamsleepy@ryuki.me
@@ -32,7 +32,7 @@ GH_TUPLE=	ProtonMail:go-crypto:v1.0.0:protonmail_go_crypto/vendor/github.com/Pro
 		emersion:go-msgauth:v0.6.8:emersion_go_msgauth/vendor/github.com/emersion/go-msgauth \
 		emersion:go-pgpmail:v0.2.1:emersion_go_pgpmail/vendor/github.com/emersion/go-pgpmail \
 		emersion:go-sasl:e73c9f7bad43:emersion_go_sasl/vendor/github.com/emersion/go-sasl \
-		emersion:go-smtp:v0.21.0:emersion_go_smtp/vendor/github.com/emersion/go-smtp \
+		emersion:go-smtp:v0.21.3:emersion_go_smtp/vendor/github.com/emersion/go-smtp \
 		emersion:go-textwrapper:65d896831594:emersion_go_textwrapper/vendor/github.com/emersion/go-textwrapper \
 		fsnotify:fsevents:v0.1.1:fsnotify_fsevents/vendor/github.com/fsnotify/fsevents \
 		fsnotify:fsnotify:v1.7.0:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
@@ -70,7 +70,7 @@ GH_TUPLE=	ProtonMail:go-crypto:v1.0.0:protonmail_go_crypto/vendor/github.com/Pro
 _SRHT_TUPLE=	rjarry:aerc:${DISTVERSIONFULL}:"" \
 		rjarry:go-opt:v1.4.0:vendor/git.sr.ht/~rjarry/go-opt \
 		rockorager:go-jmap:v0.5.0:vendor/git.sr.ht/~rockorager/go-jmap \
-		rockorager:vaxis:v0.9.2:vendor/git.sr.ht/~rockorager/vaxis
+		rockorager:vaxis:v0.10.3:vendor/git.sr.ht/~rockorager/vaxis
 
 SHEBANG_FILES=	contrib/carddav-query filters/show-ics-details.py
 

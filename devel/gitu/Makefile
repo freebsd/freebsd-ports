@@ -1,6 +1,6 @@
 PORTNAME=	gitu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.1
+DISTVERSION=	0.24.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -44,8 +44,8 @@ CARGO_CRATES=	ahash-0.8.11 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.8 \
-		clap_builder-4.5.8 \
+		clap-4.5.9 \
+		clap_builder-4.5.9 \
 		clap_derive-4.5.8 \
 		clap_lex-0.7.0 \
 		clipboard-win-5.3.1 \
@@ -62,6 +62,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		crossterm-0.27.0 \
 		crossterm_winapi-0.9.1 \
 		crunchy-0.2.2 \
+		ctor-0.2.8 \
 		derive_more-0.99.18 \
 		diff-0.1.13 \
 		either-1.10.0 \
@@ -163,8 +164,8 @@ CARGO_CRATES=	ahash-0.8.11 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		semver-1.0.22 \
-		serde-1.0.203 \
-		serde_derive-1.0.203 \
+		serde-1.0.204 \
+		serde_derive-1.0.204 \
 		serde_json-1.0.115 \
 		serde_spanned-0.6.6 \
 		signal-hook-0.3.17 \
@@ -187,10 +188,10 @@ CARGO_CRATES=	ahash-0.8.11 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		toml-0.8.14 \
+		toml-0.8.15 \
 		toml_datetime-0.6.6 \
 		toml_edit-0.21.1 \
-		toml_edit-0.22.14 \
+		toml_edit-0.22.16 \
 		tree-sitter-0.20.10 \
 		tree-sitter-bash-0.20.5 \
 		tree-sitter-c-0.20.8 \
@@ -212,7 +213,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		tree-sitter-scala-0.20.3 \
 		tree-sitter-toml-0.20.0 \
 		tree-sitter-typescript-0.20.5 \
-		tui-prompts-0.3.14 \
+		tui-prompts-0.3.16 \
 		uncased-0.9.10 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \

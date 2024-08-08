@@ -1,0 +1,9 @@
+Pytest plugin for testing Python code examples in docstrings and markdown files.
+
+pytest-examples can:
+* lint code examples using ruff and black
+* run code examples
+* run code examples and check print statements are inlined correctly in the code
+
+It can also update code examples in place to format them and insert or update
+print statements.

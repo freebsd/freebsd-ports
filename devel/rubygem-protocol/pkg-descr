@@ -3,5 +3,3 @@ the conformity of your classes or instances of your classes. They are a bit like
 Java Interfaces, but as mixin modules they can also contain already implemented
 methods. Additionally you can define preconditions/postconditions for methods
 specified in a protocol.
-
-See also: https://github.com/flori/protocol

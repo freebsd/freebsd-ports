@@ -585,6 +585,7 @@
     SUBDIR += octave-forge-geometry
     SUBDIR += octave-forge-gnuplot
     SUBDIR += octave-forge-gsl
+    SUBDIR += octave-forge-hdf5oct
     SUBDIR += octave-forge-ident
     SUBDIR += octave-forge-image
     SUBDIR += octave-forge-informationtheory
@@ -861,6 +862,8 @@
     SUBDIR += php82-gmp
     SUBDIR += php83-bcmath
     SUBDIR += php83-gmp
+    SUBDIR += php84-bcmath
+    SUBDIR += php84-gmp
     SUBDIR += physcalc
     SUBDIR += picosat
     SUBDIR += piranha
@@ -868,7 +871,6 @@
     SUBDIR += plantri
     SUBDIR += plman
     SUBDIR += ploticus
-    SUBDIR += ploticus-nox11
     SUBDIR += plplot
     SUBDIR += poly2tri
     SUBDIR += polyclipper
@@ -914,6 +916,7 @@
     SUBDIR += py-bitmath
     SUBDIR += py-bitvector
     SUBDIR += py-blis
+    SUBDIR += py-blis07
     SUBDIR += py-bottleneck
     SUBDIR += py-brial
     SUBDIR += py-chaospy

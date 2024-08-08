@@ -5,4 +5,3 @@ lib/sane/libsane-airscan.so
 lib/sane/libsane-airscan.so.1
 share/man/man1/airscan-discover.1.gz
 share/man/man5/sane-airscan.5.gz
-

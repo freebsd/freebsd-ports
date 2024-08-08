@@ -1,4 +1,4 @@
---- chrome/browser/ui/autofill/payments/desktop_payments_window_manager.h.orig	2024-06-22 08:49:42 UTC
+--- chrome/browser/ui/autofill/payments/desktop_payments_window_manager.h.orig	2024-07-31 14:19:23 UTC
 +++ chrome/browser/ui/autofill/payments/desktop_payments_window_manager.h
 @@ -14,7 +14,7 @@
  #include "components/autofill/core/browser/payments/payments_window_manager.h"
@@ -27,7 +27,7 @@
    // BrowserListObserver:
    void OnBrowserSetLastActive(Browser* browser) override;
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-@@ -132,7 +132,7 @@ class DesktopPaymentsWindowManager : public PaymentsWi
+@@ -136,7 +136,7 @@ class DesktopPaymentsWindowManager : public PaymentsWi
    std::unique_ptr<PaymentsWindowUserConsentDialogControllerImpl>
        payments_window_user_consent_dialog_controller_;
  

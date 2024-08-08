@@ -1,7 +1,6 @@
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	17.1.1
+PORTVERSION=	17.1.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -18,29 +17,12 @@ USES=		gmake go:modules,no_targets,1.22
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
+GO_MOD_DIST=	gitlab
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 MAKE_ENV+=	${GO_ENV}
 WRKSRC_SUBDIR=	workhorse
 # found in work/gitlab-foss*/workhorse/go.mod
-#GO_MODULE=	gitlab.com/gitlab-org/gitlab/workhorse
-
-# for go dependencies
-# Gitlab hosts there dependencies on their own platform and not on go-proxy
-# so we download the required go.mod file from gitlab
-# lines are taken from go.mk
-# ---------------------------
-FETCH_DEPENDS=	${GO_CMD}:${GO_PORT}
-MASTER_SITES+=	https://gitlab.com/gitlab-org/gitlab-foss/-/raw/v${DISTVERSION}/workhorse/
-DISTFILES+=	go.mod
-DIST_SUBDIR=	go/${PKGORIGIN:S,/,_,g}/${DISTNAME}
-EXTRACT_ONLY+=	${DISTFILES:N*.mod\:*:N*.mod:C/:.*//}
-_USES_fetch+=	800:go-post-fetch
-go-post-fetch:
-	@${ECHO_MSG} "===> Fetching ${GO_MODNAME} dependencies";
-	@(cd ${DISTDIR}/${DIST_SUBDIR}; \
-		[ -e go.mod ] || ${RLN} ${GO_MODFILE} go.mod; \
-		${SETENV} ${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x all)
-# ---------------------------
+GO_MODULE=	gitlab.com/gitlab-org/gitlab/workhorse
 
 PLIST_FILES=	bin/gitlab-resize-image \
 		bin/gitlab-workhorse \

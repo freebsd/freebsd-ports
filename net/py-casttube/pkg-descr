@@ -1,10 +1,9 @@
-casttube provides a way to interact with the YouTube Chromecast API.
+CastTube provides a way to interact with the Youtube Chromecast API.
 
 Features:
-
-* Play video
-* Play a playlist
-* Add video to the end of the play queue
-* Play next
-* Remove video
-* Clear the entire queue
+- Play video
+- Play a playlist
+- Add video to the end of the play queue
+- Play next
+- Remove video
+- Clear the entire queue

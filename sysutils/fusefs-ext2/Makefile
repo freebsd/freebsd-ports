@@ -1,7 +1,7 @@
 PORTNAME=	fusefs-ext2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -18,7 +18,7 @@ USES=		autoreconf fuse libtool localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	alperakcan
 GH_PROJECT=	fuse-ext2
-GH_TAGNAME=	ea7bacf
+GH_TAGNAME=	e8f1063
 
 GNU_CONFIGURE=	yes
 

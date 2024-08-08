@@ -1,6 +1,6 @@
-TIMESTAMP = 1718750309
-SHA256 (mapnik-mapnik-v4.0.0_GH0.tar.gz) = 2fc367ca6f932dda907df6db97b609006b26aa9f767930e737e3b07a66868a97
-SIZE (mapnik-mapnik-v4.0.0_GH0.tar.gz) = 13214682
+TIMESTAMP = 1723032508
+SHA256 (mapnik-mapnik-v4.0.1_GH0.tar.gz) = 502d3147e3d20760c5780772a501fd909a8f2bc760201105d3fcfa06beb54442
+SIZE (mapnik-mapnik-v4.0.1_GH0.tar.gz) = 13213908
 SHA256 (mapbox-geometry.hpp-c83a2ab_GH0.tar.gz) = 676c7490fa7cdba26f45fc6b3932dc04bec110f75d660493a7c31d5b0d86e923
 SIZE (mapbox-geometry.hpp-c83a2ab_GH0.tar.gz) = 17450
 SHA256 (mapbox-polylabel-51f09d0_GH0.tar.gz) = f060f7bce356379137cc9f9a7f3f94a00c3b456f8da4e230933bcfcd2f8210a3

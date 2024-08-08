@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of the OAuth protocol
-WWW=		https://metacpan.org/release/Net-OAuth
+WWW=		https://metacpan.org/release/Net-OAuth \
+		https://oauth.net/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

@@ -1,5 +1,5 @@
 PORTNAME=	arcan-trayicon
-DISTVERSION=	0.6.3
+DISTVERSION=	0.6.3.3
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org

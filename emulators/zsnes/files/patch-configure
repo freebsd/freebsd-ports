@@ -1,9 +1,11 @@
---- configure.orig	Thu Jan 25 23:44:43 2007
-+++ configure	Thu Jan 25 23:48:32 2007
-@@ -5130,89 +5130,6 @@
+--- configure.orig	2007-01-25 00:51:21 UTC
++++ configure
+@@ -5128,92 +5128,6 @@ else
  
-   { echo "$as_me:$LINENO: checking which cpu architecture to optimize for" >&5
- echo $ECHO_N "checking which cpu architecture to optimize for... $ECHO_C" >&6; }
+   CFLAGSBAK="$CFLAGS"
+ 
+-  { echo "$as_me:$LINENO: checking which cpu architecture to optimize for" >&5
+-echo $ECHO_N "checking which cpu architecture to optimize for... $ECHO_C" >&6; }
 -  if test x$force_arch != x; then
 -    CFLAGS="$CFLAGS -march=$force_arch"
 -    cat >conftest.$ac_ext <<_ACEOF
@@ -87,6 +89,16 @@
 -      CFLAGS="$CFLAGS -march=$ARCH_INFO"
 -    fi
 -  fi
- 
+-
    # Check whether --enable-release was given.
  if test "${enable_release+set}" = set; then
+   enableval=$enable_release; release=$enableval
+@@ -5237,7 +5151,7 @@ fi
+     NFLAGS="$NFLAGS -O1"
+   fi
+ fi
+-CXXFLAGS="$CFLAGS -fno-rtti"
++CXXFLAGS="$CXXFLAGS -fno-rtti"
+ 
+ if test x$enable_jma != xno; then
+   JMA_FILES="\$(JMA_D)/7zlzma.o \$(JMA_D)/crc32.o \$(JMA_D)/iiostrm.o\

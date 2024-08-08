@@ -1,6 +1,6 @@
 PORTNAME=	libdaq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.15
+DISTVERSION=	3.0.16
 CATEGORIES=	net
 
 PATCH_SITES=	https://github.com/glebius/${PORTNAME}/commit/

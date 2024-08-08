@@ -1,11 +1,11 @@
 PORTNAME=	cpuid2cpuflags
-PORTVERSION=	13
+PORTVERSION=	14
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Tool to generate CPU_FLAGS_* for your CPU
-WWW=		https://github.com/mgorny/cpuid2cpuflags
+WWW=		https://github.com/projg2/cpuid2cpuflags
 
 LICENSE=	BSD2CLAUSE
 
@@ -13,7 +13,7 @@ BROKEN_riscv64=		fails to build: src/platforms.h:15:4: error: "Unsupported platf
 
 USES=		autoreconf
 USE_GITHUB=	yes
-GH_ACCOUNT=	mgorny
+GH_ACCOUNT=	projg2
 GNU_CONFIGURE=	yes
 TEST_TARGET=	check
 

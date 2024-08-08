@@ -6,7 +6,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	File properties utility from the Lumina Desktop
-WWW=		https://lumina-desktop.org/
+WWW=		https://github.com/lumina-desktop/lumina/tree/master/src-qt5/desktop-utils/lumina-fileinfo
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../../LICENSE

@@ -4,15 +4,12 @@ DISTVERSION=	1.3.7
 PORTREVISION=	2
 CATEGORIES=	ftp
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	m.ne@gmx.net
 COMMENT=	Yet another FTP client, similar to ftp(1)
 WWW=		https://github.com/sebastinas/yafc
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-DEPRECATED=	Unmaintained, last release in 2016
-EXPIRATION_DATE=2024-05-17
 
 BUILD_DEPENDS=	glib>0:devel/glib20
 

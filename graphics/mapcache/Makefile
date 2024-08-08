@@ -1,12 +1,11 @@
 PORTNAME=		mapcache
-DISTVERSION=		1.14.0
-PORTREVISION=	5
+DISTVERSION=		1.14.1
 CATEGORIES=		graphics
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
 MAINTAINER=		wen@FreeBSD.org
 COMMENT=		Server that implements tile caching to speed up access to WMS layers
-WWW=		https://www.mapserver.org/mapcache/
+WWW=			https://www.mapserver.org/mapcache/
 
 LICENSE=		MIT
 LICENSE_FILE=		${WRKSRC}/LICENSE.md

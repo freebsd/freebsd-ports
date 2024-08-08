@@ -5,6 +5,7 @@ lib/lwjgl%%MAJORVERSION%%/liblwjgl_lmdb.so
 lib/lwjgl%%MAJORVERSION%%/liblwjgl_lz4.so
 lib/lwjgl%%MAJORVERSION%%/liblwjgl_meow.so
 lib/lwjgl%%MAJORVERSION%%/liblwjgl_meshoptimizer.so
+lib/lwjgl%%MAJORVERSION%%/liblwjgl_msdfgen.so
 lib/lwjgl%%MAJORVERSION%%/liblwjgl_nanovg.so
 lib/lwjgl%%MAJORVERSION%%/liblwjgl_nfd.so
 lib/lwjgl%%MAJORVERSION%%/liblwjgl_nfd_portal.so
@@ -67,6 +68,9 @@ lib/lwjgl%%MAJORVERSION%%/liblwjgl_zstd.so
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-meshoptimizer-natives-freebsd.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-meshoptimizer-sources.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-meshoptimizer.jar
+%%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-msdfgen-natives-freebsd.jar
+%%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-msdfgen-sources.jar
+%%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-msdfgen.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-nanovg-natives-freebsd.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-nanovg-sources.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-nanovg.jar

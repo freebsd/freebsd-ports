@@ -1,6 +1,6 @@
---- src/iop/lens.cc.orig	2023-12-14 19:44:41 UTC
+--- src/iop/lens.cc.orig	2024-07-17 15:29:39 UTC
 +++ src/iop/lens.cc
-@@ -64,7 +64,7 @@ extern "C" {
+@@ -66,7 +66,7 @@ extern "C" {
  
  #if LF_VERSION == ((0 << 24) | (3 << 16) | (95 << 8) | 0)
  #define LF_0395

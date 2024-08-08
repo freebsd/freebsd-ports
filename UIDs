@@ -325,7 +325,7 @@ _wsdd:*:370:370::0:0:Web Service Discovery Daemon:/nonexistent:/usr/sbin/nologin
 # free: 377
 # free: 378
 # free: 379
-# free: 380
+spoofdpi:*:380:380::0:0:SpoofDPI Daemon:/nonexistent:/usr/sbin/nologin
 # free: 381
 # free: 382
 # free: 383
@@ -426,7 +426,7 @@ fiche:*:477:477::0:0:fiche Daemon:/usr/local/www/fiche:/usr/sbin/nologin
 prometheus:*:478:478::0:0:Prometheus Daemon:/var/tmp/prometheus:/usr/sbin/nologin
 alertmanager:*:479:479::0:0:Alertmanager Daemon:/var/tmp/alertmanager:/usr/sbin/nologin
 datadog:*:480:480::0:0:DataDog Agent:/var/db/datadog:/usr/sbin/nologin
-# free: 481
+promxy:*:481:481::0:0:Promxy Daemon:/nonexistent:/usr/sbin/nologin
 # free: 482
 # free: 483
 # free: 484
@@ -594,7 +594,7 @@ monkeysphere:*:641:641::0:0:Monkeysphere User:/var/monkeysphere:/usr/local/bin/b
 # free: 645
 # free: 646
 # free: 647
-# free: 648
+_xrdp:*:648:648::0:0:xrdp daemon:/nonexistent:/usr/sbin/nologin
 # free: 649
 # free: 650
 # free: 651

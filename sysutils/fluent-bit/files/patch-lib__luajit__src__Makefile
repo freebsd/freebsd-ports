@@ -1,5 +1,5 @@
---- lib/luajit-3065c9/src/Makefile.orig	2022-10-27 09:22:06.694200000 +0200
-+++ lib/luajit-3065c9/src/Makefile	2022-10-27 09:22:37.928286000 +0200
+--- lib/luajit-04dca791/src/Makefile.orig	2022-10-27 09:22:06.694200000 +0200
++++ lib/luajit-04dca791/src/Makefile	2022-10-27 09:22:37.928286000 +0200
 @@ -24,10 +24,10 @@
  # removing the '#' in front of them. Make sure you force a full recompile
  # with "make clean", followed by "make" if you change any options.

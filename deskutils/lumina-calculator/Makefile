@@ -5,7 +5,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Scientific calculator from the Lumina Desktop
-WWW=		https://lumina-desktop.org/
+WWW=		https://github.com/lumina-desktop/lumina
 
 LICENSE=	BSD3CLAUSE
 

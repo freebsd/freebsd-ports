@@ -16,4 +16,8 @@ USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e '/OPT=/s,".*","",' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,unknown),portbld | *-&,' ${WRKSRC}/configure.sub
+
 .include <bsd.port.mk>

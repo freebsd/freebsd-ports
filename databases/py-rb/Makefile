@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Redis blaster
-WWW=		https://github.com/getsentry/rb
+WWW=		https://rb.readthedocs.io/en/latest/ \
+		https://github.com/getsentry/rb
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

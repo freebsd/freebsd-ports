@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Platform independent implementation of Unix which command
-WWW=		https://ttytoolkit.org/
+WWW=		https://ttytoolkit.org/ \
+		https://github.com/piotrmurach/tty-which
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

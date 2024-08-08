@@ -1,0 +1,5 @@
+[
+{ type: install
+  message: "NOTE: ** Currently debugging support is not working in FreeBSD **"
+}
+]

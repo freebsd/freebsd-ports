@@ -1,14 +1,14 @@
---- Cargo.lock.orig	2024-02-11 11:08:12.265554000 +0100
-+++ Cargo.lock	2024-02-11 11:09:02.842074000 +0100
-@@ -1724,6 +1724,7 @@ dependencies = [
-  "signature",
+--- Cargo.lock.orig	2024-07-11 20:46:42 UTC
++++ Cargo.lock
+@@ -1772,6 +1772,7 @@ dependencies = [
   "simd-json",
+  "sm3",
   "spki",
 + "sysinfo",
+  "thiserror",
   "tokio",
   "url",
-  "winapi",
-@@ -1833,6 +1834,7 @@ dependencies = [
+@@ -1882,6 +1883,7 @@ dependencies = [
   "serde",
   "signal-hook",
   "signal-hook-registry",
@@ -16,16 +16,7 @@
   "test_server",
   "tokio",
   "tokio-metrics",
-@@ -3847,7 +3849,7 @@ dependencies = [
- checksum = "0c2a198fb6b0eada2a8df47933734e6d35d350665a33a3593d7164fa52c75c19"
- dependencies = [
-  "cfg-if",
-- "windows-targets 0.52.4",
-+ "windows-targets 0.48.5",
- ]
- 
- [[package]]
-@@ -6583,6 +6585,21 @@ dependencies = [
+@@ -6694,6 +6696,21 @@ dependencies = [
   "serde_json",
   "thiserror",
   "walkdir",
@@ -33,9 +24,9 @@
 +
 +[[package]]
 +name = "sysinfo"
-+version = "0.30.12"
++version = "0.30.13"
 +source = "registry+https://github.com/rust-lang/crates.io-index"
-+checksum = "732ffa00f53e6b2af46208fba5718d9662a421049204e156328b66791ffa15ae"
++checksum = "0a5b4ddaee55fb2bea2bf0e5000747e5f5c0de765e5a5ff87f4cd106439f4bb3"
 +dependencies = [
 + "cfg-if",
 + "core-foundation-sys",

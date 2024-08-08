@@ -1,5 +1,5 @@
 PORTNAME=	librenms
-PORTVERSION=	24.6.0
+PORTVERSION=	24.7.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -128,7 +128,7 @@ _SCRIPT_FILES=		daily.sh lnms
 # _RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-_RELEASE_TIMESTAMP=	1718555017
+_RELEASE_TIMESTAMP=	1721198108
 _ROOT_DIRS=		LibreNMS app bootstrap config database doc html \
 			includes lang licenses mibs misc resources routes \
 			scripts tests
@@ -156,7 +156,8 @@ post-patch:
 		${WRKSRC}/config.php.default \
 		${WRKSRC}/includes/html/output/capture.inc.php \
 		${WRKSRC}/poller-wrapper.py \
-		${WRKSRC}/snmp-scan.py
+		${WRKSRC}/snmp-scan.py \
+		${WRKSRC}/daily.sh
 	${REINPLACE_CMD} 's|%%PORTVERSION%%|${PORTVERSION}|g'              ${WRKSRC}/LibreNMS/Util/Version.php
 	${REINPLACE_CMD} 's|%%RELEASE_TIMESTAMP%%|${_RELEASE_TIMESTAMP}|g' ${WRKSRC}/LibreNMS/Util/Version.php
 	${REINPLACE_CMD} 's|%%WWWDIR%%|${WWWDIR}|g'                        ${WRKSRC}/dist/librenms-scheduler.cron

@@ -1,12 +1,13 @@
 PORTNAME=	trio
-DISTVERSION=	0.26.0
+DISTVERSION=	0.26.2
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Library for async concurrency and I/O
-WWW=		https://pypi.org/project/trio/
+WWW=		https://pypi.org/project/trio/ \
+		https://github.com/python-trio/trio
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual

@@ -1,8 +1,10 @@
 PORTNAME=	fontaine
 PORTVERSION=	1.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print python
+MASTER_SITES=	https://www.freedesktop.org/software/fontconfig/release/:fontconfig
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTFILES=	fontconfig-${FONTCONFIG_VER}.tar.xz:fontconfig
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Font analysis tool for determining character/glyph support
@@ -25,12 +27,14 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+FONTCONFIG_VER=	2.15.0
+
+USE_GITHUB=	yes
 GH_ACCOUNT=	googlefonts
 GH_PROJECT=	pyfontaine
-GH_TUPLE=	freedesktop:fontconfig:2.13.93:freedesktop_fontconfig/fontaine/charsets/fontconfig
-USE_GITHUB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${WRKSRC}/setup.py
+	@${LN} -s ${WRKSRC}/../fontconfig-${FONTCONFIG_VER}/fc-lang ${WRKSRC}/fontaine/charsets/fontconfig/fc-lang
 
 .include <bsd.port.mk>

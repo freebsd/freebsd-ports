@@ -23,11 +23,10 @@ RUN_DEPENDS=	p5-Finance-Quote>=0:finance/p5-Finance-Quote \
 		p5-libwww>=0:www/p5-libwww \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https
 
-USES=		cmake:insource compiler:c++11-lib cpe desktop-file-utils \
+USES=		cmake:insource compiler:c++17-lang cpe desktop-file-utils \
 		gettext-tools gnome guile:2.2,3.0,conflicts localbase \
 		perl5 pkgconfig shebangfix tar:bzip2 xorg
 USE_XORG=	x11
-USE_CXXSTD=	c++11
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool libxml2 libxslt
 USE_LDCONFIG=	yes
 

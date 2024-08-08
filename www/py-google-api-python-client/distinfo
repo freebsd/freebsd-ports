@@ -1,3 +1,3 @@
-TIMESTAMP = 1720025526
-SHA256 (google-api-python-client-2.136.0.tar.gz) = 161c722c8864e7ed39393e2b7eea76ef4e1c933a6a59f9d7c70409b6635f225d
-SIZE (google-api-python-client-2.136.0.tar.gz) = 11443821
+TIMESTAMP = 1722976382
+SHA256 (google_api_python_client-2.140.0.tar.gz) = 0bb973adccbe66a3d0a70abe4e49b3f2f004d849416bfec38d22b75649d389d8
+SIZE (google_api_python_client-2.140.0.tar.gz) = 11618875

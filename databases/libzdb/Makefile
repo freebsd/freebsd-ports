@@ -1,5 +1,5 @@
 PORTNAME=	libzdb
-PORTVERSION=	3.2.3
+PORTVERSION=	3.4.0
 CATEGORIES=	databases
 MASTER_SITES=	https://www.tildeslash.com/libzdb/dist/
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_i386=	fails to build
 BROKEN_powerpc=	fails to build
 
-USES=		compiler:c11 gmake libtool localbase pathfix
+USES=		compiler:c++20-lang gmake libtool localbase pathfix
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

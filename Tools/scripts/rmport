@@ -4,7 +4,7 @@
 #
 # Copyright 2006-2007 Vasil Dimov
 # Copyright 2012-2018 Chris Rees
-# Copyright 2016-2023 René Ladan
+# Copyright 2016-2024 René Ladan
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -127,7 +127,7 @@ find_expired()
 
 # check if some ports depend on the given port
 # XXX Very Little Chance (tm) for breaking INDEX exists:
-# /usr/ports/INDEX may be outdated and not contain recently added dependencies
+# INDEX may be outdated and not contain recently added dependencies
 check_dep_core()
 {
 	catport=${1}
@@ -251,7 +251,7 @@ edit_MOVED()
 	catport=${1}
 
 	DEPRECATED="$(make -C ${PORTSDIR}/${catport} -V DEPRECATED)"
-	DEPRECATED=${DEPRECATED:+: ${DEPRECATED}}
+	DEPRECATED=${DEPRECATED:+: ${DEPRECATED%.}}
 	if [ -n "$(make -C ${PORTSDIR}/${catport} -V EXPIRATION_DATE)" ] ; then
 		REASON="Has expired${DEPRECATED}"
 	else
@@ -444,6 +444,13 @@ for catport in $* ; do
 	fi
 
 	# everything seems ok, edit the files
+
+	if [ -z "${catport##www/node*}" ] ; then
+		node_version="${catport##www/node}"
+		if [ -n "${node_version}" ] ; then
+			echo "You are removing a node port, do not forget www/npm-node${node_version} and www/yarn-node${node_version}"
+		fi
+	fi
 
 	edit_MOVED ${catport}
 

@@ -1,4 +1,4 @@
---- electron/spec/api-app-spec.ts.orig	2024-04-16 14:29:17 UTC
+--- electron/spec/api-app-spec.ts.orig	2024-07-18 11:13:59 UTC
 +++ electron/spec/api-app-spec.ts
 @@ -123,11 +123,11 @@ describe('app module', () => {
    });
@@ -45,8 +45,8 @@
      });
    });
  
--  ifdescribe(process.platform !== 'linux' && !process.mas)('app.get/setLoginItemSettings API', function () {
-+  ifdescribe(process.platform !== 'linux' && process.platform !== 'freebsd' && !process.mas)('app.get/setLoginItemSettings API', function () {
+-  ifdescribe(process.platform !== 'linux' && !process.mas && (process.platform !== 'darwin' || process.arch === 'arm64'))('app.get/setLoginItemSettings API', function () {
++  ifdescribe(process.platform !== 'linux' && process.platform !== 'freebsd' && !process.mas && (process.platform !== 'darwin' || process.arch === 'arm64'))('app.get/setLoginItemSettings API', function () {
      const isMac = process.platform === 'darwin';
      const isWin = process.platform === 'win32';
  
@@ -128,6 +128,6 @@
  
 -  ifdescribe(!(process.platform === 'linux' && (process.arch === 'arm64' || process.arch === 'arm')))('sandbox options', () => {
 +  ifdescribe(!((process.platform === 'linux' || process.platform === 'freebsd') && (process.arch === 'arm64' || process.arch === 'arm')))('sandbox options', () => {
-     // Our ARM tests are run on VSTS rather than CircleCI, and the Docker
-     // setup on VSTS disallows syscalls that Chrome requires for setting up
-     // sandboxing.
+     let appProcess: cp.ChildProcess = null as any;
+     let server: net.Server = null as any;
+     const socketPath = process.platform === 'win32' ? '\\\\.\\pipe\\electron-mixed-sandbox' : '/tmp/electron-mixed-sandbox';

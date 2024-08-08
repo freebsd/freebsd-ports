@@ -1,6 +1,5 @@
 PORTNAME=	configupdater
-PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTVERSION=	3.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,7 +7,8 @@ DISTNAME=	ConfigUpdater-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parser like ConfigParser but for updating configuration files
-WWW=		https://github.com/pyscaffold/configupdater
+WWW=		https://configupdater.readthedocs.io/en/latest/ \
+		https://github.com/pyscaffold/configupdater
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

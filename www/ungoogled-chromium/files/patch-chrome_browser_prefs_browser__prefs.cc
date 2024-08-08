@@ -1,4 +1,4 @@
---- chrome/browser/prefs/browser_prefs.cc.orig	2024-06-22 08:49:42 UTC
+--- chrome/browser/prefs/browser_prefs.cc.orig	2024-07-31 14:19:23 UTC
 +++ chrome/browser/prefs/browser_prefs.cc
 @@ -486,18 +486,18 @@
  #endif
@@ -31,7 +31,7 @@
  #include "ui/color/system_theme.h"
  #endif
  
-@@ -1857,7 +1857,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+@@ -1949,7 +1949,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
                                  true);
  #endif  // BUILDFLAG(ENABLE_PDF)
  
@@ -40,7 +40,7 @@
    registry->RegisterBooleanPref(prefs::kChromeForTestingAllowed, true);
  #endif
  
-@@ -2206,12 +2206,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -2302,12 +2302,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

@@ -1,0 +1,133 @@
+diff --git a/index.js b/index.js
+index 64354f1..2a7eba3 100644
+--- a/index.js
++++ b/index.js
+@@ -98,6 +98,36 @@ switch (platform) {
+         throw new Error(`Unsupported architecture on Linux: ${arch}`);
+     }
+     break;
++  case 'freebsd':
++    switch (arch) {
++      case 'aarch64':
++        break;
++        localFileExisted = existsSync(join(__dirname, 'zstd.freebsd-arm64.node'));
++        try {
++          if (localFileExisted) {
++            nativeBinding = require('./zstd.freebsd-arm64.node');
++          } else {
++            nativeBinding = require('@mongodb-js/zstd-freebsd-arm64');
++          }
++        } catch (e) {
++          loadError = e;
++        }
++      case 'x64':
++        localFileExisted = existsSync(join(__dirname, 'zstd.freebsd-x64.node'));
++        try {
++          if (localFileExisted) {
++            nativeBinding = require('./zstd.freebsd-x64.node');
++          } else {
++            nativeBinding = require('@mongodb-js/zstd-freebsd-x64');
++          }
++        } catch (e) {
++          loadError = e;
++        }
++        break;
++      default:
++        throw new Error(`Unsupported architecture on FreeBSD: ${arch}`);
++    }
++    break;
+   default:
+     throw new Error(`Unsupported OS: ${platform}, architecture: ${arch}`);
+ }
+diff --git a/npm/freebsd-arm64/README.md b/npm/freebsd-arm64/README.md
+new file mode 100644
+index 0000000..ccf9db8
+--- /dev/null
++++ b/npm/freebsd-arm64/README.md
+@@ -0,0 +1,3 @@
++# `@mongodb-js/zstd-freebsd-arm64`
++
++This is the **aarch64-unknown-freebsd** binary for `@mongodb-js/zstd`
+diff --git a/npm/freebsd-arm64/README.md.orig b/npm/freebsd-arm64/README.md.orig
+new file mode 100644
+index 0000000..e69de29
+diff --git a/npm/freebsd-arm64/package.json b/npm/freebsd-arm64/package.json
+new file mode 100644
+index 0000000..9ca4df6
+--- /dev/null
++++ b/npm/freebsd-arm64/package.json
+@@ -0,0 +1,18 @@
++{
++  "name": "@mongodb-js/zstd-freebsd-arm64",
++  "version": "0.0.0",
++  "os": [
++    "freebsd"
++  ],
++  "cpu": [
++    "x64"
++  ],
++  "main": "zstd.freebsd-arm64.node",
++  "files": [
++    "zstd.freebsd-arm64.node"
++  ],
++  "license": "MIT",
++  "engines": {
++    "node": ">= 10"
++  }
++}
+diff --git a/npm/freebsd-arm64/package.json.orig b/npm/freebsd-arm64/package.json.orig
+new file mode 100644
+index 0000000..e69de29
+diff --git a/npm/freebsd-x64/README.md b/npm/freebsd-x64/README.md
+new file mode 100644
+index 0000000..96bc2cf
+--- /dev/null
++++ b/npm/freebsd-x64/README.md
+@@ -0,0 +1,3 @@
++# `@mongodb-js/zstd-freebsd-x64`
++
++This is the **x86_64-unknown-freebsd** binary for `@mongodb-js/zstd`
+diff --git a/npm/freebsd-x64/README.md.orig b/npm/freebsd-x64/README.md.orig
+new file mode 100644
+index 0000000..e69de29
+diff --git a/npm/freebsd-x64/package.json b/npm/freebsd-x64/package.json
+new file mode 100644
+index 0000000..5556119
+--- /dev/null
++++ b/npm/freebsd-x64/package.json
+@@ -0,0 +1,18 @@
++{
++  "name": "@mongodb-js/zstd-freebsd-x64",
++  "version": "0.0.0",
++  "os": [
++    "freebsd"
++  ],
++  "cpu": [
++    "x64"
++  ],
++  "main": "zstd.freebsd-x64.node",
++  "files": [
++    "zstd.freebsd-x64.node"
++  ],
++  "license": "MIT",
++  "engines": {
++    "node": ">= 10"
++  }
++}
+diff --git a/npm/freebsd-x64/package.json.orig b/npm/freebsd-x64/package.json.orig
+new file mode 100644
+index 0000000..e69de29
+diff --git a/package.json b/package.json
+index 16ddcfa..789a2a7 100644
+--- a/package.json
++++ b/package.json
+@@ -13,7 +13,8 @@
+       "defaults": true,
+       "additional": [
+         "aarch64-apple-darwin",
+-        "aarch64-unknown-linux-gnu"
++        "aarch64-unknown-linux-gnu",
++        "aarch64-unknown-freebsd"
+       ]
+     }
+   },

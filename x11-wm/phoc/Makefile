@@ -1,6 +1,7 @@
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.40.0
+DISTVERSION=	0.40.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libudev.so:devel/libudev-devd \
 		libwayland-server.so:graphics/wayland \
-		libwlroots.so:x11-toolkits/wlroots \
+		libwlroots.so:x11-toolkits/wlroots017 \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	${LOCALBASE}/share/glib-2.0/schemas/org.gnome.mutter.gschema.xml:x11-wm/mutter

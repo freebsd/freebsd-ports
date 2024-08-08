@@ -1,6 +1,6 @@
---- plugin/x/client/authentication/sha256_scramble_generator.cc.orig	2019-09-20 08:30:51 UTC
+--- plugin/x/client/authentication/sha256_scramble_generator.cc.orig	2024-07-12 19:15:25 UTC
 +++ plugin/x/client/authentication/sha256_scramble_generator.cc
-@@ -97,7 +97,7 @@ bool SHA256_digest::retrieve_digest(unsigned char *dig
+@@ -98,7 +98,7 @@ bool SHA256_digest::retrieve_digest(unsigned char *dig
      return true;
    }
    m_ok = EVP_DigestFinal_ex(md_context, m_digest, nullptr);

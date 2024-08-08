@@ -19,14 +19,13 @@ GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
 
-CONFIGURE_ARGS=	--disable-cache --without-ffmpeg
+CONFIGURE_ARGS=	--disable-cache --without-ffmpeg --without-sidplay2
 
 OPTIONS_DEFINE=	AAC CURL DEBUG FLAC JACK MODPLUG MP3 MUSEPACK RCC \
-		SAMPLERATE SIDPLAY2 SNDFILE SPEEX VORBIS WAVPACK
+		SAMPLERATE SNDFILE SPEEX VORBIS WAVPACK
 OPTIONS_DEFAULT=MP3 VORBIS FLAC CURL WAVPACK
 CURL_DESC=	curl support (Internet streams)
 RCC_DESC=	RCC support
-SIDPLAY2_DESC=	libsidplay2 support
 
 AAC_LIB_DEPENDS=	libfaad.so:audio/faad
 AAC_PLIST_FILES=	lib/moc/decoder_plugins/libaac_decoder.so
@@ -64,10 +63,6 @@ RCC_CONFIGURE_OFF=	--without-rcc
 
 SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 SAMPLERATE_CONFIGURE_OFF=	--without-samplerate
-
-SIDPLAY2_LIB_DEPENDS=	libsidplay2.so:audio/libsidplay2
-SIDPLAY2_PLIST_FILES=	lib/moc/decoder_plugins/libsidplay2_decoder.so
-SIDPLAY2_CONFIGURE_OFF=	--without-sidplay2
 
 SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 SNDFILE_PLIST_FILES=	lib/moc/decoder_plugins/libsndfile_decoder.so

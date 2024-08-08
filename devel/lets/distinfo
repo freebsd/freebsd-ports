@@ -1,5 +1,5 @@
-TIMESTAMP = 1692167595
-SHA256 (go/devel_lets/lets-v0.0.53/v0.0.53.mod) = 753fb171cf10bc61a42f91a242f0ae4ac8136f1602cf43d941bfa78107aa9b2a
-SIZE (go/devel_lets/lets-v0.0.53/v0.0.53.mod) = 1107
-SHA256 (go/devel_lets/lets-v0.0.53/v0.0.53.zip) = 2114085873b3e8fa51000adae709f27fcfa664a379722f06220980d670b17608
-SIZE (go/devel_lets/lets-v0.0.53/v0.0.53.zip) = 424429
+TIMESTAMP = 1723003085
+SHA256 (go/devel_lets/lets-v0.0.54/v0.0.54.mod) = 1fe49789be09c333c44123d2c284fc059613a9c4fd6cbd7db54ba0221ecae1be
+SIZE (go/devel_lets/lets-v0.0.54/v0.0.54.mod) = 1107
+SHA256 (go/devel_lets/lets-v0.0.54/v0.0.54.zip) = 19a71b8361570f5dc2402ca82098b030f1ab5c3d57183dc0efe6ec6110d3a502
+SIZE (go/devel_lets/lets-v0.0.54/v0.0.54.zip) = 424769

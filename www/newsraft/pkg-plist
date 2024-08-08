@@ -1,0 +1,4 @@
+bin/newsraft
+share/man/man1/newsraft.1.gz
+%%DATADIR%%/examples/config
+%%DATADIR%%/examples/feeds

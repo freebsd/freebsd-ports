@@ -1,5 +1,5 @@
 PORTNAME=	waybar
-DISTVERSION=	0.10.3
+DISTVERSION=	0.10.4
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C/.+/-${FLAVOR}/}
 
@@ -88,6 +88,7 @@ MANPAGES_PLIST_FILES=	share/man/man5/${PORTNAME}-battery.5.gz \
 			share/man/man5/${PORTNAME}-image.5.gz \
 			share/man/man5/${PORTNAME}-inhibitor.5.gz \
 			share/man/man5/${PORTNAME}-memory.5.gz \
+			share/man/man5/${PORTNAME}-menu.5.gz \
 			share/man/man5/${PORTNAME}-river-layout.5.gz \
 			share/man/man5/${PORTNAME}-river-mode.5.gz \
 			share/man/man5/${PORTNAME}-river-tags.5.gz \
@@ -154,7 +155,7 @@ post-patch:
 		-e 's,login1\([".]\),ConsoleKit\1,g' \
 		${WRKSRC}/src/modules/gamemode.cpp \
 		${WRKSRC}/src/modules/inhibitor.cpp \
-		${WRKSRC}/src/modules/upower/upower.cpp \
+		${WRKSRC}/src/modules/upower.cpp \
 		${WRKSRC}/src/util/backlight_backend.cpp \
 		${WRKSRC}/src/util/prepare_for_sleep.cpp
 # Respect PREFIX for icons

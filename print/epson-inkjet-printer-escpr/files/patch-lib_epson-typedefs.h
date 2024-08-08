@@ -1,6 +1,14 @@
---- lib/epson-typedefs.h.orig	2019-04-08 01:01:26 UTC
+--- lib/epson-typedefs.h.orig	2023-02-15 02:57:29 UTC
 +++ lib/epson-typedefs.h
-@@ -41,7 +41,7 @@ extern "C" {
+@@ -26,6 +26,7 @@ extern "C" {
+ 
+ /*---------------------------------  System Includes   ---------------------------------*/
+ /*******************************************|********************************************/
++#include <stddef.h>
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
+@@ -41,7 +42,7 @@ extern "C" {
  typedef unsigned char  EPS_UINT8;       /* unsigned  8-bit  Min: 0          Max: 255        */
  typedef unsigned short EPS_UINT16;      /* unsigned 16-bit  Min: 0          Max: 65535      */
  typedef unsigned int   EPS_UINT32;      /* unsigned 32-bit  Min: 0          Max: 4294967295 */

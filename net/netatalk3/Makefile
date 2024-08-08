@@ -1,5 +1,5 @@
 PORTNAME=	netatalk
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.5
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/netatalk-${PORTVERSION:S/./-/g}/
@@ -28,6 +28,7 @@ MESON_ARGS=		-Dwith-libgcrypt-path=${LOCALBASE} \
 			-Dpkg_config_path=${LOCALBASE}/libdata/pkgconfig \
 			-Dwith-shadow=false \
 			-Dwith-pgp-uam=false \
+			-Ddefault_library=both \
 			--localstatedir=/var \
 			--infodir=${PREFIX}/share/info
 
@@ -68,7 +69,7 @@ DBUS_MESON_ON=		-Dwith-dbus-daemon-path=${LOCALBASE}/bin/dbus-daemon \
 			-Dwith-dbus-sysconf-path=${LOCALBASE}/etc/dbus-1/system.d
 DBUS_MESON_OFF=		-Dwith-afpstats=false
 MYSQL_USES=	mysql
-MYSQL_MESON_OFF=-Dwith-mysql-config=/nonexistent
+MYSQL_MESON_ON=-Dwith-cnid-mysql-backend=true
 ACL_LIB_DEPENDS=	libsunacl.so:sysutils/libsunacl
 ACL_MESON_OFF=-Dwith-acls=false
 LIBWRAP_MESON_OFF=-Dwith-tcp-wrappers=false

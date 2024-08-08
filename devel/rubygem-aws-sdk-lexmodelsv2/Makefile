@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-lexmodelsv2
-PORTVERSION=	1.56.0
+PORTVERSION=	1.57.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

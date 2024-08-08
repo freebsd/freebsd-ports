@@ -1,5 +1,5 @@
 PORTNAME=	autoprefixer-rails
-PORTVERSION=	10.4.16.0
+PORTVERSION=	10.4.19.0
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 

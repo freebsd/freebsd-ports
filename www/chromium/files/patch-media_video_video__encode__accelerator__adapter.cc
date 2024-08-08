@@ -1,6 +1,6 @@
---- media/video/video_encode_accelerator_adapter.cc.orig	2024-04-19 13:02:56 UTC
+--- media/video/video_encode_accelerator_adapter.cc.orig	2024-07-30 11:12:21 UTC
 +++ media/video/video_encode_accelerator_adapter.cc
-@@ -157,7 +157,7 @@ VideoEncodeAccelerator::Config SetUpVeaConfig(
+@@ -158,7 +158,7 @@ VideoEncodeAccelerator::Config SetUpVeaConfig(
    if (is_rgb)
      config.input_format = PIXEL_FORMAT_I420;
  
@@ -9,7 +9,7 @@
    if (format != PIXEL_FORMAT_I420 ||
        !VideoFrame::IsStorageTypeMappable(storage_type)) {
      // ChromeOS/Linux hardware video encoders supports I420 on-memory
-@@ -482,7 +482,7 @@ void VideoEncodeAcceleratorAdapter::InitializeInternal
+@@ -486,7 +486,7 @@ void VideoEncodeAcceleratorAdapter::InitializeInternal
        SetUpVeaConfig(profile_, options_, format, first_frame->storage_type(),
                       supported_rc_modes_, required_encoder_type_);
  

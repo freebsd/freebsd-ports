@@ -1,0 +1,57 @@
+--- /dev/null	2023-01-11 00:11:02.154961000 +0000
++++ src/freebsd.js	2023-01-11 00:10:31.037935000 +0000
+@@ -0,0 +1,25 @@
++'use strict'
++
++const App = require('./platform')
++const common = require('./common')
++
++class FreeBSDApp extends App {
++  get originalElectronName () {
++    return 'electron'
++  }
++
++  get newElectronName () {
++    return common.sanitizeAppName(this.executableName)
++  }
++
++  async create () {
++    await this.initialize()
++    await this.renameElectron()
++    await this.copyExtraResources()
++    return this.move()
++  }
++}
++
++module.exports = {
++  App: FreeBSDApp
++}
+diff -Nur src.orig/targets.js src/targets.js
+--- src.orig/targets.js	2023-01-10 16:23:47.997092000 +0000
++++ src/targets.js	2023-01-10 16:16:03.395991000 +0000
+@@ -5,12 +5,13 @@
+ const semver = require('semver')
+ 
+ const officialArchs = ['ia32', 'x64', 'armv7l', 'arm64', 'mips64el', 'universal']
+-const officialPlatforms = ['darwin', 'linux', 'mas', 'win32']
++const officialPlatforms = ['darwin', 'linux', 'mas', 'win32', 'freebsd']
+ const officialPlatformArchCombos = {
+   darwin: ['x64', 'arm64', 'universal'],
+   linux: ['ia32', 'x64', 'armv7l', 'arm64', 'mips64el'],
+   mas: ['x64', 'arm64', 'universal'],
+-  win32: ['ia32', 'x64', 'arm64']
++  win32: ['ia32', 'x64', 'arm64'],
++  freebsd: ['x64', 'arm64'],
+ }
+ 
+ const buildVersions = {
+@@ -36,7 +37,8 @@
+   darwin: './mac',
+   linux: './linux',
+   mas: './mac', // map to darwin
+-  win32: './win32'
++  win32: './win32',
++  freebsd: './freebsd',
+ }
+ 
+ const supported = {

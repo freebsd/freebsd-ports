@@ -7,11 +7,12 @@ MASTER_SITES=	SF
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast image processing tools based on ImageMagick
-WWW=		http://www.graphicsmagick.org/
+WWW=		https://graphicsmagick.sourceforge.io/ \
+		http://www.graphicsmagick.org/
 
 LICENSE=	MIT
 
-USES=		cpe libtool localbase pathfix pkgconfig tar:xz
+USES=		cpe libtool localbase:ldflags pathfix pkgconfig tar:xz
 
 CONFIGURE_ARGS=	--enable-shared --enable-static \
 		--with-windows-font-dir=${WINDOWS_FONT_DIR} \
@@ -21,6 +22,8 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
+
+PORTSCOUT=	limit:^[0-9]\.[0-9]\.[1-9][0-9\]*$$
 
 # Use fonts installed by x11-fonts/webfonts by default
 WINDOWS_FONT_DIR?=	${LOCALBASE}/share/fonts/webfonts
@@ -32,7 +35,7 @@ TEST_DESC=	Run bundled self-tests after build
 
 BZIP2_CONFIGURE_WITH=	bzlib
 FPX_CONFIGURE_WITH=	fpx
-FPX_LDFLAGS=		-L${LOCALBASE}/lib -lfpx
+FPX_LDFLAGS=		-lfpx
 FPX_LIB_DEPENDS=	libfpx.so:graphics/libfpx
 FREETYPE_CONFIGURE_WITH=ttf
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
@@ -66,8 +69,8 @@ WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WMF_CONFIGURE_WITH=	wmf
 X11_CONFIGURE_OFF=	ac_cv_lib_ICE_IceConnectionNumber=no
 X11_CONFIGURE_WITH=	x
-X11_USES=		xorg
 X11_USE=		XORG=ice,sm,x11,xext
+X11_USES=		xorg
 XML_CONFIGURE_WITH=	xml
 XML_USE=		GNOME=libxml2
 XML_USES=		gnome

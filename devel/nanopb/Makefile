@@ -1,5 +1,6 @@
 PORTNAME=	nanopb
 DISTVERSION=	0.4.8
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,6 +30,12 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD}
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} # only for tests
+
+post-install:
+	${PYTHON_CMD} -m compileall -d ${PREFIX}/bin -f ${STAGEDIR}${PREFIX}/bin
+	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} -f ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${PYTHON_CMD} -O -m compileall -d ${PREFIX}/bin -f ${STAGEDIR}${PREFIX}/bin
+	${PYTHON_CMD} -O -m compileall -d ${PYTHON_SITELIBDIR} -f ${STAGEDIR}${PYTHON_SITELIBDIR}
 
 do-test:
 	@cd ${WRKSRC}/tests && ${SETENV} ${TEST_ENV} scons LINKLIBS=-lm

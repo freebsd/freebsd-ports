@@ -18,6 +18,8 @@ BROKEN_riscv64=	fails to configure, see https://github.com/Z3Prover/z3/issues/61
 USES=		cmake:indirect compiler:c++11-lang python
 USE_PYTHON=	distutils autoplist
 
+NO_ARCH=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Z3Prover
 GH_PROJECT=	z3

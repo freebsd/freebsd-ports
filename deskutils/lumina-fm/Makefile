@@ -6,7 +6,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Insight file manager from the Lumina Desktop
-WWW=		https://lumina-desktop.org/
+WWW=		https://github.com/lumina-desktop/lumina/tree/master/src-qt5/desktop-utils/lumina-fm
 
 LICENSE=	BSD3CLAUSE
 

@@ -14,6 +14,8 @@ WWW=		https://fcitx-im.org/wiki/Fcitx
 
 LICENSE=	GPLv2
 
+BROKEN=		does not compile against currect chinese/librime
+
 BUILD_DEPENDS=	bash:shells/bash \
 		${_SCHEMA_DEPENDS}
 LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \

@@ -1,6 +1,5 @@
 PORTNAME=	megacmd
-DISTVERSION=	1.6.3
-PORTREVISION=	3
+DISTVERSION=	1.7.0
 DISTVERSIONSUFFIX=	_Linux
 CATEGORIES=	net
 
@@ -11,17 +10,22 @@ WWW=		https://mega.nz/cm
 LICENSE=	GPLv3 BSD2CLAUSE
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libcares.so:dns/c-ares libcryptopp.so:security/cryptopp \
-		libcurl.so:ftp/curl libsodium.so:security/libsodium \
-		libuv.so:devel/libuv libpcre.so:devel/pcre
+LIB_DEPENDS=	libcares.so:dns/c-ares \
+		libcryptopp.so:security/cryptopp \
+		libcurl.so:ftp/curl \
+		libicudata.so:devel/icu \
+		libpcre.so:devel/pcre \
+		libsodium.so:security/libsodium \
+		libuv.so:devel/libuv
 
-USES=		autoreconf libtool sqlite:3 readline shebangfix ssl pathfix
+USES=		autoreconf gmake libtool pathfix readline shebangfix sqlite:3 \
+		ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	meganz
 GH_PROJECT=	MEGAcmd sdk:sdk
 GH_SUBDIR=	sdk:sdk
-GH_TAGNAME=	v4.17.1d:sdk
+GH_TAGNAME=	v4.31.0b:sdk
 
 USE_LDCONFIG=	yes
 
@@ -41,6 +45,13 @@ CONFIGURE_ARGS=	--disable-examples \
 		--with-zlib --with-readline=${LOCALBASE}
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == DragonFly
+BUILD_DEPENDS+=	cxxfs_gcc8>0:misc/cxxfs_gcc8
+SUB_FILES=	pkg-message
+CXXFLAGS+=	-isystem ${LOCALBASE}/cxxfs_gcc8
+LDFLAGS+=	-L${LOCALBASE}/cxxfs_gcc8
+.endif
 
 .if ${ARCH} == i386 || ${ARCH} == amd64
 CXXFLAGS+=	-DCRYPTOPP_DISABLE_ASM

@@ -8,5 +8,3 @@ The two primary functions are cbor.loads() and cbor.dumps().
 This library includes a C implementation which runs 3-5 times faster than the
 Python standard library's C-accelerated implementanion of JSON. This is also
 includes a 100% Python implementation.
-
-See also: https://pypi.org/project/cbor/

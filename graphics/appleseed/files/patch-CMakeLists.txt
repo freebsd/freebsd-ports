@@ -1,6 +1,16 @@
 --- CMakeLists.txt.orig	2019-08-31 15:49:01 UTC
 +++ CMakeLists.txt
-@@ -681,8 +681,8 @@ if (WITH_PYTHON2_BINDINGS OR WITH_PYTHON3_BINDINGS)
+@@ -356,9 +356,7 @@ endif ()
+ if (USE_FIND_PACKAGE_FOR_EXR)
+     include_directories (
+         ${IMATH_INCLUDE_DIRS}
+-        ${IMATH_INCLUDE_DIRS}/OpenEXR/
+         ${OPENEXR_INCLUDE_DIRS}
+-        ${OPENEXR_INCLUDE_DIRS}/OpenEXR/
+     )
+ else ()
+     include_directories (
+@@ -681,8 +679,8 @@ if (WITH_PYTHON2_BINDINGS OR WITH_PYTHON3_BINDINGS)
  endif ()
  
  if (WITH_STUDIO)
@@ -11,7 +21,7 @@
      endif ()
      add_subdirectory (src/appleseed.studio)
  endif ()
-@@ -732,15 +732,27 @@ install (
+@@ -732,15 +730,27 @@ install (
          sandbox/share
          sandbox/stylesheets
      DESTINATION .
@@ -40,7 +50,7 @@
          ${OSL_COMPILER}
          ${OSL_QUERY_INFO}
          ${OSL_MAKETX}
-@@ -754,11 +766,6 @@ install (
+@@ -754,11 +764,6 @@ install (
          sandbox/schemas/settings.xsd
          sandbox/schemas/project.xsd
      DESTINATION schemas

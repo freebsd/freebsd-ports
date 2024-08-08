@@ -1,0 +1,19 @@
+--- osdef.h.in.orig	2023-08-15 17:29:26.000000000 -0700
++++ osdef.h.in	2024-07-17 20:59:56.936179000 -0700
+@@ -28,6 +28,8 @@
+  ****************************************************************
+  */
+ 
++#include <sys/param.h>
++#if defined(__FreeBSD_version) && __FreeBSD_version < 1500020
+ extern int   printf __P((char *, ...));
+ extern int   fprintf __P((FILE *, char *, ...));
+ extern int   sprintf __P((char *, char *, ...));
+@@ -71,6 +73,7 @@
+ #else
+ extern void  bcopy __P((char *, char *, int));
+ #endif
++#endif /* __FreeBSD_version */
+ 
+ #ifdef BSDWAIT
+ struct rusage;		/* for wait3 __P */

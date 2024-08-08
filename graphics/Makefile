@@ -811,6 +811,8 @@
     SUBDIR += php82-gd
     SUBDIR += php83-exif
     SUBDIR += php83-gd
+    SUBDIR += php84-exif
+    SUBDIR += php84-gd
     SUBDIR += phplot
     SUBDIR += picpuz
     SUBDIR += piddle
@@ -865,6 +867,7 @@
     SUBDIR += py-PyOpenGL
     SUBDIR += py-PyOpenGL-accelerate
     SUBDIR += py-actdiag
+    SUBDIR += py-albucore
     SUBDIR += py-albumentations
     SUBDIR += py-altair
     SUBDIR += py-asciitree
@@ -882,6 +885,7 @@
     SUBDIR += py-colorthief
     SUBDIR += py-colorz
     SUBDIR += py-colour
+    SUBDIR += py-contextily
     SUBDIR += py-descartes
     SUBDIR += py-diplib
     SUBDIR += py-django-easy-thumbnails
@@ -897,6 +901,7 @@
     SUBDIR += py-gdal
     SUBDIR += py-geomdl
     SUBDIR += py-geopandas
+    SUBDIR += py-geosnap
     SUBDIR += py-giddy
     SUBDIR += py-gizeh
     SUBDIR += py-glcontext
@@ -912,6 +917,7 @@
     SUBDIR += py-haishoku
     SUBDIR += py-hiplot
     SUBDIR += py-hsluv
+    SUBDIR += py-imagecodecs
     SUBDIR += py-imageio
     SUBDIR += py-imageio-ffmpeg
     SUBDIR += py-imagesize
@@ -946,6 +952,7 @@
     SUBDIR += py-png
     SUBDIR += py-pointpats
     SUBDIR += py-projpicker
+    SUBDIR += py-proplot
     SUBDIR += py-pycha
     SUBDIR += py-pycollada
     SUBDIR += py-pydot
@@ -1013,6 +1020,7 @@
     SUBDIR += qcustomplot
     SUBDIR += qgis
     SUBDIR += qgis-ltr
+    SUBDIR += qimgv
     SUBDIR += qiv
     SUBDIR += qr-code-generator
     SUBDIR += qt5-3d
@@ -1085,6 +1093,7 @@
     SUBDIR += rubygem-imagesize
     SUBDIR += rubygem-invisible_captcha
     SUBDIR += rubygem-mini_magick
+    SUBDIR += rubygem-mini_magick4
     SUBDIR += rubygem-opengl
     SUBDIR += rubygem-pdfkit
     SUBDIR += rubygem-png
@@ -1146,7 +1155,6 @@
     SUBDIR += ssocr
     SUBDIR += sswf
     SUBDIR += stamp
-    SUBDIR += svg2pdf
     SUBDIR += svg2png
     SUBDIR += svgalib
     SUBDIR += svgbob
@@ -1242,7 +1250,6 @@
     SUBDIR += xpeps
     SUBDIR += xpx
     SUBDIR += xsane
-    SUBDIR += xsvg
     SUBDIR += xtexcad
     SUBDIR += xv
     SUBDIR += xv-m17n
@@ -1260,9 +1267,9 @@
     SUBDIR += zathura-pdf-poppler
     SUBDIR += zathura-ps
     SUBDIR += zbar
+    SUBDIR += zeno
     SUBDIR += zgv
     SUBDIR += zimg
     SUBDIR += zint
-    SUBDIR += zphoto
 
 .include <bsd.port.subdir.mk>

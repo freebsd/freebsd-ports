@@ -30,7 +30,7 @@ SHEBANG_LANG=	python3
 
 CONFIGURE_ARGS=	--celt=no --samplerate=yes
 
-OPTIONS_DEFINE=		ALSA DBUS OPUS PROFILING
+OPTIONS_DEFINE=		ALSA DBUS OPUS PROFILING SOSSO
 OPTIONS_DEFAULT=	DBUS OPUS
 OPTIONS_SUB=		yes
 
@@ -49,6 +49,11 @@ OPUS_CONFIGURE_OFF=	--opus=no
 
 PROFILING_DESC=		Build with profiling information
 PROFILING_CONFIGURE_ON=	--profile
+
+# Let users test the new OSS driver backend coming in 1.9.23, see
+# https://github.com/jackaudio/jack2/pull/943
+SOSSO_DESC=		Build new OSS driver backend (sosso library)
+SOSSO_GH_TAGNAME=	0762eac06a8c327757acfa7c770e16d827610873
 
 TESTING_UNSAFE=	No function 'test' defined in ${WRKSRC}/wscript
 

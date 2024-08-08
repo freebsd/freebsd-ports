@@ -1,7 +1,7 @@
-TIMESTAMP = 1716410424
-SHA256 (go/irc_soju/soju-v0.8.0/v0.8.0.mod) = 7a59d4f81d35ba67366ca41e6222104f35264ccddcd3ec0ba650369d33825ee7
-SIZE (go/irc_soju/soju-v0.8.0/v0.8.0.mod) = 1720
-SHA256 (go/irc_soju/soju-v0.8.0/v0.8.0.zip) = 93e5173361dcd927726cb8336ad6ddcc632e73b1bc1d0ee0fe0f21658269aabc
-SIZE (go/irc_soju/soju-v0.8.0/v0.8.0.zip) = 186524
-SHA256 (go/irc_soju/soju-v0.8.0/golang-sys-v0.18.0_GH0.tar.gz) = cee1944ab655ddf7eab6301e15cb6d01fdd6cd0a0f0b5896050ee60b124e084c
-SIZE (go/irc_soju/soju-v0.8.0/golang-sys-v0.18.0_GH0.tar.gz) = 1448211
+TIMESTAMP = 1723101962
+SHA256 (go/irc_soju/soju-v0.8.1/v0.8.1.mod) = 986de9fb8a074cfce58fbb5606f58b578b35ab70073efb0cbbcb6581fde83865
+SIZE (go/irc_soju/soju-v0.8.1/v0.8.1.mod) = 1723
+SHA256 (go/irc_soju/soju-v0.8.1/v0.8.1.zip) = 5c19ae033a73e171157b69c58f23b5c76466608f2cfa1952c2266c586e95ff30
+SIZE (go/irc_soju/soju-v0.8.1/v0.8.1.zip) = 187131
+SHA256 (go/irc_soju/soju-v0.8.1/golang-sys-v0.20.0_GH0.tar.gz) = eb2569cab8d7a92ce3afa9119538b61fc03d575c01f1548ec1e152c330ac591d
+SIZE (go/irc_soju/soju-v0.8.1/golang-sys-v0.20.0_GH0.tar.gz) = 1494604

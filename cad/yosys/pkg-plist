@@ -109,6 +109,7 @@ bin/yosys-witness
 %%DATADIR%%/include/frontends/ast/ast_binding.h
 %%DATADIR%%/include/frontends/blif/blifparse.h
 %%DATADIR%%/include/kernel/binding.h
+%%DATADIR%%/include/kernel/bitpattern.h
 %%DATADIR%%/include/kernel/cellaigs.h
 %%DATADIR%%/include/kernel/celledges.h
 %%DATADIR%%/include/kernel/celltypes.h
@@ -197,6 +198,15 @@ bin/yosys-witness
 %%DATADIR%%/lattice/latches_map.v
 %%DATADIR%%/lattice/lutrams.txt
 %%DATADIR%%/lattice/lutrams_map.v
+%%DATADIR%%/microchip/LSRAM.txt
+%%DATADIR%%/microchip/LSRAM_map.v
+%%DATADIR%%/microchip/arith_map.v
+%%DATADIR%%/microchip/brams_defs.vh
+%%DATADIR%%/microchip/cells_map.v
+%%DATADIR%%/microchip/cells_sim.v
+%%DATADIR%%/microchip/polarfire_dsp_map.v
+%%DATADIR%%/microchip/uSRAM.txt
+%%DATADIR%%/microchip/uSRAM_map.v
 %%DATADIR%%/mul2dsp.v
 %%DATADIR%%/nexus/arith_map.v
 %%DATADIR%%/nexus/brams.txt

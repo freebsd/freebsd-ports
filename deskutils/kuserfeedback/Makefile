@@ -12,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 USES=		bison cmake compiler:c++11-lang kde:5 qt:5 tar:xz
 USE_KDE=	ecm:build
-USE_QT=		charts core declarative gui network printsupport svg widgets \
+USE_QT=		charts core declarative gui linguisttools network printsupport \
+		svg widgets \
 		buildtools:build help:build qdoc:build qmake:build
 
 OPTIONS_DEFINE=	SERVER

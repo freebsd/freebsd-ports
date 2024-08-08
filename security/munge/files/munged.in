@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: munged
-# REQUIRE: LOGIN
+# REQUIRE: DAEMON
 # KEYWORD: shutdown
 
 # Add the following line to /etc/rc.conf to enable munged:

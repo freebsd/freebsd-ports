@@ -1,6 +1,6 @@
 PORTNAME=	javahelp
 PORTVERSION=	2.0.05.20170719
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,7 +18,7 @@ GH_TAGNAME=	3ca862d
 USE_JAVA=	yes
 USE_ANT=	yes
 
-TOMCAT_VER?=	8.5
+TOMCAT_VER?=	9.0
 TOMCAT_PORT=	www/tomcat${TOMCAT_VER:S/.0//:S/.//}
 TOMCAT_DIR=	${LOCALBASE}/apache-tomcat-${TOMCAT_VER}
 TOMCAT_jsp=	${TOMCAT_DIR}/lib/jsp-api.jar

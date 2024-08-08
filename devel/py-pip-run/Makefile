@@ -23,7 +23,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}autocommand>=0:devel/py-autocommand@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}path>=15.1:devel/py-path@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>=19.3:devel/py-pip@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}platformdirs>=0:devel/py-platformdirs@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}platformdirs>=0:devel/py-platformdirs@${PY_FLAVOR} \
+		${PY_TOMLI}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
@@ -34,10 +35,6 @@ NO_ARCH=	yes
 
 .if ${PYTHON_REL} < 30900
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=0:devel/py-importlib-resources@${PY_FLAVOR}
-.endif
-
-.if ${PYTHON_REL} < 31100
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=0:textproc/py-tomli@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>

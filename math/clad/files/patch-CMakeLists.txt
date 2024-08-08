@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2024-05-21 05:35:52 UTC
+--- CMakeLists.txt.orig	2024-07-17 20:27:26 UTC
 +++ CMakeLists.txt
-@@ -317,8 +317,10 @@ if (NOT CLAD_BUILD_STATIC_ONLY)
+@@ -321,8 +321,10 @@ if (NOT CLAD_BUILD_STATIC_ONLY)
      include(GoogleBenchmark)
    endif(CLAD_ENABLE_BENCHMARKS)
  
@@ -9,16 +9,14 @@
    add_subdirectory(demos/ErrorEstimation/PrintModel)
 +  endif()
  
-   # Change the default compiler to the clang which we run clad upon. Our unittests
-   # need to use a supported by clad compiler. Note that's a huge hack and it is
-@@ -331,8 +333,10 @@ if (NOT CLAD_BUILD_STATIC_ONLY)
-   string(REPLACE "-fno-lifetime-dse" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
-   string(REPLACE "-Wno-class-memaccess" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+   if (NOT CLAD_DISABLE_TESTS OR CLAD_ENABLE_BENCHMARKS)
+     # Change the default compiler to the clang which we run clad upon. Our unittests
+@@ -337,7 +339,7 @@ if (NOT CLAD_BUILD_STATIC_ONLY)
+     string(REPLACE "-Wno-class-memaccess" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+   endif()
  
+-  if (NOT CLAD_DISABLE_TESTS)
 +  if (FREEBSD_BUILD_TESTS)
-   add_subdirectory(unittests)
-   add_subdirectory(test)
-+  endif()
- 
-   # Add benchmarking infrastructure.
-   if (CLAD_ENABLE_BENCHMARKS)
+     add_subdirectory(unittests)
+     add_subdirectory(test)
+   endif()

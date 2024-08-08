@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-lexruntimev2
-PORTVERSION=	1.37.0
+PORTVERSION=	1.38.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

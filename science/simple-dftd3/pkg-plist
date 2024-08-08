@@ -3,7 +3,6 @@ include/dftd3.h
 include/s-dftd3.h
 include/s-dftd3/dftd3.mod
 include/s-dftd3/dftd3_api.mod
-include/s-dftd3/dftd3_blas.mod
 include/s-dftd3/dftd3_cutoff.mod
 include/s-dftd3/dftd3_damping.mod
 include/s-dftd3/dftd3_damping_atm.mod
@@ -23,7 +22,6 @@ include/s-dftd3/dftd3_param.mod
 include/s-dftd3/dftd3_reference.mod
 include/s-dftd3/dftd3_utils.mod
 include/s-dftd3/dftd3_version.mod
-lib/cmake/s-dftd3/Findcustom-blas.cmake
 lib/cmake/s-dftd3/Findmctc-lib.cmake
 lib/cmake/s-dftd3/Findmstore.cmake
 lib/cmake/s-dftd3/Findtoml-f.cmake
@@ -34,5 +32,5 @@ lib/cmake/s-dftd3/s-dftd3-targets.cmake
 lib/cmake/s-dftd3/s-dftd3-utils.cmake
 lib/libs-dftd3.so
 lib/libs-dftd3.so.1
-lib/libs-dftd3.so.1.0.0
+lib/libs-dftd3.so.1.1.0
 libdata/pkgconfig/s-dftd3.pc

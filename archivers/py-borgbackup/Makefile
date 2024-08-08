@@ -1,5 +1,5 @@
 PORTNAME=	borgbackup
-DISTVERSION=	1.2.8
+DISTVERSION=	1.4.0
 PORTREVISION=	1
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
@@ -13,8 +13,9 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # note that borgbackup pins the msgpack version range per patchlevel version!
-_BB_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=1.0.2<1.0.8_99:devel/py-msgpack@${PY_FLAVOR}
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=1.7:devel/py-setuptools-scm@${PY_FLAVOR} \
+_BB_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=1.0.2<1.1.0:devel/py-msgpack@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pkgconfig>=0:devel/py-pkgconfig@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=1.7:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${_BB_DEPENDS}
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd \
@@ -24,10 +25,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=19.0:devel/py-packaging@${PY_FLAV
 TEST_DEPENDS=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}tox>3.2:devel/py-tox@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pkgconfig>=0:devel/py-pkgconfig@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
 		fakeroot:security/fakeroot
-USES=		pkgconfig python ssl
+USES=		pkgconfig python:3.9+ ssl
 USE_PYTHON=	autoplist distutils
 MAKE_ENV=	BORG_OPENSSL_PREFIX=${OPENSSLBASE}
 
@@ -36,6 +36,21 @@ OPTIONS_DEFAULT=	FUSE
 
 FUSE_DESC=	Support to mount locally borg backup files
 FUSE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}llfuse>0:devel/py-llfuse@${PY_FLAVOR}
+
+.include <bsd.port.pre.mk>
+
+.if (${OPSYS} == FreeBSD) && ${OSVERSION} < 1400033 # why 1400033?
+# 1. check for the OLDEST (last in list) history entry on the file, when it was added:
+#    git -C /usr/src hist lib/libc/posix1e/acl_extended_file_np.c
+# 2. check for the version you have obtained what __FreeBSD_version was
+#    and increment by one. This is inaccurate for the interim between file addition
+#    and __FreeBSD_version bump back then, but those versions were no releases and
+#    should no longer be in the field.
+EXTRA_PATCHES	+= ${FILESDIR}/extrapatch-setup.py
+post-patch:
+	${CP} ${FILESDIR}/acl_extended_file_np.c ${WRKSRC}/src/borg/platform/
+.endif
+
 
 _BORGHOME=${WRKDIR}/testhome
 _BORGENV=-i BORG_PASSPHRASE=secret123 PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} HOME=${_BORGHOME}
@@ -69,4 +84,4 @@ post-install:
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${_BORGENV} ${TEST_ENV} tox-${PYTHON_VER} -e ${PY_FLAVOR} -vv
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

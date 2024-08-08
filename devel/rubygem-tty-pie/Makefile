@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Draw pie charts in your terminal window
-WWW=		https://ttytoolkit.org/
+WWW=		https://ttytoolkit.org/ \
+		https://github.com/piotrmurach/tty-pie
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

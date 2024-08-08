@@ -6,7 +6,7 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Image viewer utility from the Lumina Desktop
-WWW=		https://lumina-desktop.org
+WWW=		https://github.com/lumina-desktop/lumina/tree/master/src-qt5/desktop-utils/lumina-photo
 
 LICENSE=	BSD3CLAUSE
 

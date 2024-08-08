@@ -69,6 +69,7 @@ share/mime/packages/openrct2.xml
 %%DATADIR%%/object/official/music/openrct2.music.galaxy.parkobj
 %%DATADIR%%/object/official/music/openrct2.music.mystic.parkobj
 %%DATADIR%%/object/official/music/openrct2.music.prehistoric.parkobj
+%%DATADIR%%/object/official/music/openrct2.music.progressive.parkobj
 %%DATADIR%%/object/official/music/openrct2.music.ragtime2.parkobj
 %%DATADIR%%/object/official/music/openrct2.music.rock4.parkobj
 %%DATADIR%%/object/official/ride/openrct2.ride.alpine_coaster.parkobj

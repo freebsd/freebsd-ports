@@ -21,6 +21,7 @@ USES=		localbase:ldflags php:build,ext
 USE_GITHUB=	yes
 GH_ACCOUNT=	jvoisin
 USE_PHP=	session:build
+IGNORE_WITH_PHP=	84
 
 CONFIGURE_ARGS=	--enable-snuffleupagus
 

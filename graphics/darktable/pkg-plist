@@ -46,6 +46,7 @@ lib/darktable/plugins/libcolorbalancergb.so
 lib/darktable/plugins/libcolorchecker.so
 lib/darktable/plugins/libcolorcontrast.so
 lib/darktable/plugins/libcolorcorrection.so
+lib/darktable/plugins/libcolorequal.so
 lib/darktable/plugins/libcolorin.so
 lib/darktable/plugins/libcolorize.so
 lib/darktable/plugins/libcolormapping.so
@@ -59,6 +60,7 @@ lib/darktable/plugins/libdemosaic.so
 lib/darktable/plugins/libdenoiseprofile.so
 lib/darktable/plugins/libdiffuse.so
 lib/darktable/plugins/libdither.so
+lib/darktable/plugins/libenlargecanvas.so
 lib/darktable/plugins/libequalizer.so
 lib/darktable/plugins/libexposure.so
 lib/darktable/plugins/libfilmic.so
@@ -85,6 +87,7 @@ lib/darktable/plugins/libmonochrome.so
 lib/darktable/plugins/libnegadoctor.so
 lib/darktable/plugins/libnlmeans.so
 lib/darktable/plugins/liboverexposed.so
+lib/darktable/plugins/liboverlay.so
 lib/darktable/plugins/libprimaries.so
 lib/darktable/plugins/libprofile_gamma.so
 lib/darktable/plugins/librawdenoise.so
@@ -156,7 +159,6 @@ lib/darktable/plugins/lighttable/libview_toolbox.so
 lib/darktable/plugins/lighttable/libviewswitcher.so
 lib/darktable/plugins/libsigmoid.so
 lib/darktable/views/libdarkroom.so
-lib/darktable/views/libknight.so
 lib/darktable/views/liblighttable.so
 lib/darktable/views/libmap.so
 %%PRINT%%lib/darktable/views/libprint.so

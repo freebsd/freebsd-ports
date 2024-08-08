@@ -1,0 +1,69 @@
+#!/bin/sh
+
+URL="https://github.com/86Box/roms/archive/refs/tags/%%DISTVERSIONPREFIX%%%%DISTVERSION%%.zip"
+DEFAULT_TARGET_DIR="$HOME/.local/share/86Box/"
+TARGET_DIR=${TARGET_DIR:-$DEFAULT_TARGET_DIR}
+
+install_roms() {
+  if [ -d "$TARGET_DIR" ] && [ "$(ls -A $TARGET_DIR)" ]; then
+    echo "ROMs already installed in $TARGET_DIR"
+    echo "To (re)install, please first remove ROMs with -r parameter"
+    exit 1
+  fi
+
+  TMP_DIR=$(mktemp -d)
+  TMP_FILE="$TMP_DIR/86Box-ROMs.zip"
+  echo "Fetching ROMs..."
+  fetch -qo "$TMP_FILE" "$URL"
+
+  if [ $? -ne 0 ]; then
+    echo "Failed to download the file from $URL"
+    exit 1
+  fi
+
+  echo "Extracting ROMs..."
+  mkdir -p "$TARGET_DIR"
+  unzip -q "$TMP_FILE" -d "$TARGET_DIR"
+
+  if [ $? -ne 0 ]; then
+    echo "Failed to decompress the file"
+    rm "$TMP_FILE"
+    exit 1
+  fi
+
+  mv "$TARGET_DIR/roms-"* "$TARGET_DIR/roms"
+  rm -rf "$TMP_DIR"
+  echo "ROMs installed successfully in $TARGET_DIR"
+}
+
+remove_roms() {
+  if [ -d "$TARGET_DIR/roms" ]; then
+    rm -rf "$TARGET_DIR/roms"
+    echo "ROMs removed successfully from $TARGET_DIR"
+  else
+    echo "No ROMs directory found in $TARGET_DIR"
+  fi
+}
+
+help() {
+  echo ""
+  echo "$0 [-h|-i|-r]"
+  echo "  -h : this help"
+  echo "  -i : install ROMs (this parameter can be omitted)"
+  echo "  -r : remove the ROMs"
+  echo ""
+}
+
+case "$1" in
+  -h)
+   help
+   ;;
+  -r)
+    remove_roms
+    ;;
+  -i|*)
+    install_roms
+    ;;
+esac
+
+exit 0

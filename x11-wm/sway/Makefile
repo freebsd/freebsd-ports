@@ -1,6 +1,6 @@
 PORTNAME=	sway
 DISTVERSION=	1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libudev.so:devel/libudev-devd \
 		libpcre2-8.so:devel/pcre2 \
 		libwayland-egl.so:graphics/wayland \
-		libwlroots.so:x11-toolkits/wlroots \
+		libwlroots.so:x11-toolkits/wlroots017 \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 

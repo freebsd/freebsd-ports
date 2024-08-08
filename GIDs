@@ -320,7 +320,7 @@ _wsdd:*:370:
 # free: 377
 # free: 378
 # free: 379
-# free: 380
+spoofdpi:*:380:
 # free: 381
 # free: 382
 # free: 383
@@ -421,7 +421,7 @@ fiche:*:477:
 prometheus:*:478:
 alertmanager:*:479:
 datadog:*:480:
-# free: 481
+promxy:*:481:
 # free: 482
 # free: 483
 # free: 484
@@ -589,7 +589,7 @@ monkeysphere:*:641:
 # free: 645
 # free: 646
 # free: 647
-# free: 648
+_xrdp:*:648:
 # free: 649
 # free: 650
 # free: 651

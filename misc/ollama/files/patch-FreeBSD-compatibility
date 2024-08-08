@@ -1,0 +1,256 @@
+-- patch based on https://github.com/ollama/ollama/issues/1102#issuecomment-2270042340
+
+new file mode 100644
+--- gpu/gpu_bsd.go.orig	2024-08-06 07:41:26 UTC
++++ gpu/gpu_bsd.go
+@@ -0,0 +1,101 @@
++//go:build dragonfly || freebsd || netbsd || openbsd
++
++package gpu
++
++import "github.com/ollama/ollama/format"
++
++/*
++#cgo CFLAGS: -I/usr/local/include
++#cgo LDFLAGS: -L/usr/local/lib -lvulkan
++
++#include <stdbool.h>
++#include <unistd.h>
++#include <vulkan/vulkan.h>
++
++bool hasVulkanSupport(uint64_t *memSize) {
++  VkInstance instance;
++
++	VkApplicationInfo appInfo = { VK_STRUCTURE_TYPE_APPLICATION_INFO };
++	appInfo.pApplicationName = "Ollama";
++	appInfo.apiVersion = VK_API_VERSION_1_0;
++
++	VkInstanceCreateInfo createInfo = { VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO };
++	createInfo.pApplicationInfo = &appInfo;
++
++	// Create a Vulkan instance
++	if (vkCreateInstance(&createInfo, NULL, &instance) != VK_SUCCESS)
++		return false;
++
++	// Fetch the first physical Vulkan device. Note that numDevices is overwritten with the number of devices found
++	uint32_t numDevices = 1;
++	VkPhysicalDevice device;
++	vkEnumeratePhysicalDevices(instance, &numDevices, &device);
++	if (numDevices == 0) {
++		vkDestroyInstance(instance, NULL);
++		return false;
++	}
++
++	// Fetch the memory information for this device.
++	VkPhysicalDeviceMemoryProperties memProperties;
++	vkGetPhysicalDeviceMemoryProperties(device, &memProperties);
++
++	// Add up all the heaps.
++	VkDeviceSize totalMemory = 0;
++	for (uint32_t i = 0; i < memProperties.memoryHeapCount; ++i) {
++		if (memProperties.memoryHeaps[i].flags & VK_MEMORY_HEAP_DEVICE_LOCAL_BIT) {
++			*memSize += memProperties.memoryHeaps[i].size;
++		}
++	}
++
++	vkDestroyInstance(instance, NULL);
++	return true;
++}
++*/
++import "C"
++
++func GetGPUInfo() GpuInfoList {
++	var gpuMem C.uint64_t
++	if C.hasVulkanSupport(&gpuMem) {
++		// Vulkan supported
++		return []GpuInfo{
++			{
++				Library: 				"vulkan",
++				ID:							"0",
++				MinimumMemory: 	512 * format.MebiByte,
++				memInfo: 	memInfo{
++					FreeMemory: uint64(gpuMem),
++					TotalMemory: uint64(gpuMem),
++				},
++			},
++		}
++	}
++
++	// CPU fallback
++	cpuMem, _ := GetCPUMem()
++	return []GpuInfo{
++		{
++			Library: "cpu",
++			memInfo: cpuMem,
++		},
++	}
++}
++
++func GetCPUInfo() GpuInfoList {
++	mem, _ := GetCPUMem()
++	return []GpuInfo{
++		{
++			Library: "cpu",
++			Variant: GetCPUCapability(),
++			memInfo: mem,
++		},
++	}
++}
++
++func GetCPUMem() (memInfo, error) {
++	size := C.sysconf(C._SC_PHYS_PAGES) * C.sysconf(C._SC_PAGE_SIZE)
++	return memInfo{TotalMemory: uint64(size)}, nil
++}
++
++func (l GpuInfoList) GetVisibleDevicesEnv() (string, string) {
++	return "", ""
++}
+--- gpu/gpu_test.go.orig	1979-11-30 08:00:00 UTC
++++ gpu/gpu_test.go
+@@ -11,7 +11,7 @@ func TestBasicGetGPUInfo(t *testing.T) {
+ func TestBasicGetGPUInfo(t *testing.T) {
+ 	info := GetGPUInfo()
+ 	assert.NotEmpty(t, len(info))
+-	assert.Contains(t, "cuda rocm cpu metal", info[0].Library)
++	assert.Contains(t, "cuda rocm cpu metal vulkan", info[0].Library)
+ 	if info[0].Library != "cpu" {
+ 		assert.Greater(t, info[0].TotalMemory, uint64(0))
+ 		assert.Greater(t, info[0].FreeMemory, uint64(0))
+@@ -24,6 +24,8 @@ func TestCPUMemInfo(t *testing.T) {
+ 	switch runtime.GOOS {
+ 	case "darwin":
+ 		t.Skip("CPU memory not populated on darwin")
++	case "dragonfly", "freebsd", "netbsd", "openbsd":
++	  t.Skip("CPU memory is not populated on *BSD")
+ 	case "linux", "windows":
+ 		assert.Greater(t, info.TotalMemory, uint64(0))
+ 		assert.Greater(t, info.FreeMemory, uint64(0))
+--- llm/generate/gen_bsd.sh.orig	2024-08-06 16:29:05 UTC
++++ llm/generate/gen_bsd.sh
+@@ -0,0 +1,54 @@
++#!/bin/sh
++# This script is intended to run inside the go generate
++# working directory must be ./llm/generate/
++
++set -ex
++set -o pipefail
++echo "Starting BSD generate script"
++. $(dirname $0)/gen_common.sh
++init_vars
++#git_module_setup
++apply_patches
++
++COMMON_BSD_DEFS="-DCMAKE_SYSTEM_NAME=$(uname -s)"
++CMAKE_TARGETS="--target llama --target ggml"
++
++COMMON_CPU_DEFS="${COMMON_BSD_DEFS} -DCMAKE_SYSTEM_PROCESSOR=${ARCH}"
++
++# Static build for linking into the Go binary
++init_vars
++CMAKE_DEFS="${COMMON_CPU_DEFS} -DBUILD_SHARED_LIBS=off -DLLAMA_ACCELERATE=off -DLLAMA_AVX=off -DLLAMA_AVX2=off -DLLAMA_AVX512=off -DLLAMA_FMA=off -DLLAMA_F16C=off ${CMAKE_DEFS}"
++BUILD_DIR="../build/bsd/${ARCH}_static"
++echo "Building static library"
++build
++
++init_vars
++CMAKE_DEFS="${COMMON_CPU_DEFS} -DLLAMA_AVX=off -DLLAMA_AVX2=off -DLLAMA_AVX512=off -DLLAMA_FMA=off -DLLAMA_F16C=off ${CMAKE_DEFS}"
++BUILD_DIR="../build/bsd/${ARCH}/cpu"
++echo "Building LCD CPU"
++build
++compress
++
++init_vars
++CMAKE_DEFS="${COMMON_CPU_DEFS} -DLLAMA_AVX=on -DLLAMA_AVX2=off -DLLAMA_AVX512=off -DLLAMA_FMA=off -DLLAMA_F16C=off ${CMAKE_DEFS}"
++BUILD_DIR="../build/bsd/${ARCH}/cpu_avx"
++echo "Building AVX CPU"
++build
++compress
++
++init_vars
++CMAKE_DEFS="${COMMON_CPU_DEFS} -DLLAMA_AVX=on -DLLAMA_AVX2=on -DLLAMA_AVX512=off -DLLAMA_FMA=on -DLLAMA_F16C=on ${CMAKE_DEFS}"
++BUILD_DIR="../build/bsd/${ARCH}/cpu_avx2"
++echo "Building AVX2 CPU"
++build
++compress
++
++init_vars
++CMAKE_DEFS="${COMMON_CPU_DEFS} -DLLAMA_VULKAN=on ${CMAKE_DEFS}"
++BUILD_DIR="../build/bsd/${ARCH}/vulkan"
++echo "Building Vulkan GPU"
++build
++compress
++
++cleanup
++echo "go generate completed.  LLM runners: $(cd ${BUILD_DIR}/..; echo *)"
+--- llm/generate/generate_bsd.go.orig	2024-08-06 07:41:26 UTC
++++ llm/generate/generate_bsd.go
+@@ -0,0 +1,5 @@
++//go:build dragonfly || freebsd || netbsd || openbsd
++
++package generate
++
++//go:generate bash ./gen_bsd.sh
+--- llm/llm.go.orig	1979-11-30 08:00:00 UTC
++++ llm/llm.go
+@@ -8,6 +8,10 @@ package llm
+ // #cgo windows,arm64 LDFLAGS: -static-libstdc++ -static-libgcc -static -L${SRCDIR}/build/windows/arm64_static -L${SRCDIR}/build/windows/arm64_static/src -L${SRCDIR}/build/windows/arm64_static/ggml/src
+ // #cgo linux,amd64 LDFLAGS: -L${SRCDIR}/build/linux/x86_64_static -L${SRCDIR}/build/linux/x86_64_static/src -L${SRCDIR}/build/linux/x86_64_static/ggml/src
+ // #cgo linux,arm64 LDFLAGS: -L${SRCDIR}/build/linux/arm64_static -L${SRCDIR}/build/linux/arm64_static/src -L${SRCDIR}/build/linux/arm64_static/ggml/src
++// #cgo dragonfly,amd64 LDFLAGS: ${SRCDIR}/build/bsd/x86_64_static/src/libllama.a -lstdc++ -lm
++// #cgo freebsd,amd64 LDFLAGS: -L${SRCDIR}/build/bsd/x86_64_static/src -lllama -L${SRCDIR}/build/bsd/x86_64_static/ggml/src -lggml -lstdc++ -lm -lomp
++// #cgo netbsd,amd64 LDFLAGS: ${SRCDIR}/build/bsd/x86_64_static/src/libllama.a -lstdc++ -lm
++// #cgo openbsd,amd64 LDFLAGS: ${SRCDIR}/build/bsd/x86_64_static/src/libllama.a -lstdc++ -lm
+ // #include <stdlib.h>
+ // #include "llama.h"
+ import "C"
+--- llm/llm_bsd.go.orig	2024-08-06 07:41:26 UTC
++++ llm/llm_bsd.go
+@@ -0,0 +1,13 @@
++//go:build dragonfly || freebsd || netbsd || openbsd
++
++package llm
++
++import (
++	"embed"
++	"syscall"
++)
++
++//go:embed build/bsd/*/*/bin/*
++var libEmbed embed.FS
++
++var LlamaServerSysProcAttr = &syscall.SysProcAttr{}
+--- scripts/build_bsd.sh.orig	2024-08-06 07:41:26 UTC
++++ scripts/build_bsd.sh
+@@ -0,0 +1,27 @@
++#!/bin/sh
++
++set -e
++
++case "$(uname -s)" in
++  DragonFly)
++    ;;
++  FreeBSD)
++    ;;
++  NetBSD)
++    ;;
++  OpenBSD)
++    ;;
++  *)
++    echo "$(uname -s) is not supported"
++    exit 1
++    ;;
++esac
++
++export VERSION=${VERSION:-$(git describe --tags --first-parent --abbrev=7 --long --dirty --always | sed -e "s/^v//g")}
++export GOFLAGS="'-ldflags=-w -s \"-X=github.com/ollama/ollama/version.Version=$VERSION\" \"-X=github.com/ollama/ollama/server.mode=release\"'"
++
++mkdir -p dist
++rm -rf llm/llama.cpp/build
++
++go generate ./...
++CGO_ENABLED=1 go build -trimpath -o dist/ollama-bsd
+--- scripts/build_freebsd.sh.orig	2024-08-06 07:41:26 UTC
++++ scripts/build_freebsd.sh
+@@ -0,0 +1 @@
++build_bsd.sh
+\ No newline at end of file

@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/wtf/stack_util.cc.orig	2024-05-21 18:07:39 UTC
+--- third_party/blink/renderer/platform/wtf/stack_util.cc.orig	2024-07-30 11:12:21 UTC
 +++ third_party/blink/renderer/platform/wtf/stack_util.cc
 @@ -19,6 +19,11 @@
  extern "C" void* __libc_stack_end;  // NOLINT
@@ -21,7 +21,7 @@
  #elif BUILDFLAG(IS_APPLE)
    // pthread_get_stacksize_np() returns too low a value for the main thread on
    // OSX 10.9,
-@@ -149,6 +156,13 @@ void* GetStackStart() {
+@@ -150,6 +157,13 @@ void* GetStackStart() {
    ::GetCurrentThreadStackLimits(&lowLimit, &highLimit);
    return reinterpret_cast<void*>(highLimit);
  #endif

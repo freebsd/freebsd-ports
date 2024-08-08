@@ -1,6 +1,6 @@
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.2.44
-PORTREVISION?=	20
+PORTREVISION?=	21
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.oracle.com/virtualbox/${PORTVERSION}/:src \
 		LOCAL/bofh/emulators/virtualbox-ose-legacy:docs

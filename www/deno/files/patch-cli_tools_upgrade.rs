@@ -1,5 +1,5 @@
---- cli/tools/upgrade.rs.orig	2023-06-21 09:01:25.854955000 +0200
-+++ cli/tools/upgrade.rs	2023-06-21 09:02:02.849893000 +0200
+--- cli/tools/upgrade.rs.orig	2023-06-21 09:01:25 UTC
++++ cli/tools/upgrade.rs
 @@ -376,6 +376,8 @@ pub async fn upgrade(
    flags: Flags,
    upgrade_flags: UpgradeFlags,

@@ -1,0 +1,5 @@
+Albucore is a high-performance image processing library designed to optimize
+operations on images using Python and OpenCV, building upon the foundations laid
+by the popular Albumentations library. It offers specialized optimizations for
+different image data types and aims to provide faster processing times through
+efficient algorithm implementations.

@@ -1,0 +1,12 @@
+yard-sorbet is a YARD plugin that parses Sorbet type annotations.
+
+Features:
+- Attaches existing documentation to methods and attributes that follow sig
+  declarations. (This information is otherwise discarded.)
+- Translates sig type signatures into corresponding YARD tags
+- Generates method definitions from T::Struct fields
+- Generates constant definitions from T::Enum enums
+- Modules marked abstract! or interface! are tagged @abstract
+- Modules using mixes_in_class_methods will attach class methods
+- Merges sigs in rbi files with source code documentation (rbi files must come
+  after source code in yard configuration)

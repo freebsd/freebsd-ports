@@ -1,6 +1,6 @@
 PORTNAME=	halide
 DISTVERSIONPREFIX=	v
-DISTVERSION=	17.0.1
+DISTVERSION=	18.0.0
 PORTEPOCH=	1
 CATEGORIES=	lang
 
@@ -50,5 +50,6 @@ post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/share
 
 # tests fail to compile, see https://github.com/halide/Halide/issues/8236
+# Vulkan support isn't enabled for some reason: Configure finds Vulkan but target.has_gpu_feature() returns false, see https://github.com/halide/Halide/issues/8375
 
 .include <bsd.port.mk>

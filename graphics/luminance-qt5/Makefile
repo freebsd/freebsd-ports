@@ -41,6 +41,10 @@ HELPBROWSER_DESC=	Build help browser (requires QtWebEngine)
 HELPBROWSER_USE=	QT=webchannel,webengine
 HELPBROWSER_CMAKE_BOOL=	WITH_HELPBROWSER
 
+.if !exists(/usr/include/omp.h)
+USES+=	compiler:gcc-c++11-lib
+.endif
+
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -1,6 +1,7 @@
 PORTNAME=	openseachest
-PORTVERSION=	23.12
 DISTVERSIONPREFIX=	v
+DISTVERSION=	23.12
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -28,7 +29,7 @@ BUILD_WRKSRC=	${WRKSRC}/Make/gcc
 INSTALL_WRKSRC=	${WRKSRC}/Make/gcc
 
 EXES=		openSeaChest_Basics openSeaChest_Configure openSeaChest_Erase \
-		openSeaChest_Firmware openSeaChest_GenericTests \
+		openSeaChest_Firmware openSeaChest_Format openSeaChest_GenericTests \
 		openSeaChest_Info openSeaChest_Logs openSeaChest_NVMe \
 		openSeaChest_PassthroughTest openSeaChest_PowerControl \
 		openSeaChest_Security openSeaChest_SMART openSeaChest_ZBD

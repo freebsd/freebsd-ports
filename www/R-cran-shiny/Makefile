@@ -1,5 +1,5 @@
 PORTNAME=	shiny
-PORTVERSION=	1.8.1.1
+PORTVERSION=	1.9.1
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,8 +10,8 @@ WWW=		https://shiny.posit.co/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	R-cran-bslib>=0.3.0:www/R-cran-bslib \
-		R-cran-cachem>0:databases/R-cran-cachem \
+RUN_DEPENDS=	R-cran-bslib>=0.6.0:www/R-cran-bslib \
+		R-cran-cachem>=1.1.0:databases/R-cran-cachem \
 		R-cran-commonmark>=1.7:textproc/R-cran-commonmark \
 		R-cran-crayon>0:devel/R-cran-crayon \
 		R-cran-fastmap>=1.1.1:databases/R-cran-fastmap \

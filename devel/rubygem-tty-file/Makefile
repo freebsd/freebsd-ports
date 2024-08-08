@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	File and directory manipulation utility methods
-WWW=		https://ttytoolkit.org/
+WWW=		https://ttytoolkit.org/ \
+		https://github.com/piotrmurach/tty-file
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

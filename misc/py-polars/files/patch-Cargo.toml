@@ -1,4 +1,4 @@
---- Cargo.toml.orig	2024-06-01 09:47:54 UTC
+--- Cargo.toml.orig	2024-08-04 11:07:42 UTC
 +++ Cargo.toml
 @@ -8,6 +8,7 @@ crate-type = ["cdylib"]
  crate-type = ["cdylib"]
@@ -7,8 +7,8 @@
 +mimalloc = { version = "0.1", default-features = false }
  polars-core = { workspace = true, features = ["python"] }
  polars-error = { workspace = true }
- polars-lazy = { workspace = true, features = ["python"] }
-@@ -96,15 +97,11 @@ features = [
+ polars-io = { workspace = true }
+@@ -107,15 +108,11 @@ features = [
    "cov",
  ]
  
@@ -25,7 +25,7 @@
  [features]
  # Features below are only there to enable building a slim binary during development.
  avro = ["polars/avro"]
-@@ -243,3 +240,7 @@ default = [
+@@ -259,3 +256,7 @@ default = [
    "all",
    "nightly",
  ]

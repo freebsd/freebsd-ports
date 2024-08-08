@@ -1,5 +1,5 @@
 PORTNAME=	firefox
-DISTVERSION=	128.0
+DISTVERSION=	129.0
 PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	www wayland
@@ -12,14 +12,14 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 WWW=		https://www.mozilla.com/firefox
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.101:security/nss \
+		nss>=3.102:security/nss \
 		icu>=73.1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=8.5.0:print/harfbuzz \
+		harfbuzz>=9.0.0:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
 		png>=1.6.43:graphics/png \
 		dav1d>=1.0.0:multimedia/dav1d \
-		libvpx>=1.14.0:multimedia/libvpx \
+		libvpx>=1.14.1:multimedia/libvpx \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf2.13:devel/autoconf2.13 \

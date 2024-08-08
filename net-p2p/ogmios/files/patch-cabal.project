@@ -1,4 +1,4 @@
---- cabal.project.orig	2024-06-06 08:16:27 UTC
+--- cabal.project.orig	2024-07-12 09:57:55 UTC
 +++ cabal.project
 @@ -1,32 +1,6 @@
 -repository cardano-haskell-packages
@@ -13,23 +13,23 @@
 -    d4a35cd3121aa00d18544bb0ac01c3e1691d618f462c46129271bccf39f7e8ee
 -
  index-state:
-   , hackage.haskell.org 2024-03-26T06:28:59Z
-   , cardano-haskell-packages 2024-05-14T16:00:00Z
+   , hackage.haskell.org 2024-06-23T23:01:13Z
+   , cardano-haskell-packages 2024-07-03T01:26:49Z
 -
 -constraints:
--  , any.cardano-node == 8.11.0
--  , any.cardano-ledger-core == 1.12.0.0
--  , any.cardano-ledger-conway == 1.14.0.0
--  , any.ouroboros-consensus == 0.18.0.0
--  , any.ouroboros-consensus-cardano == 0.16.0.0
--  , any.ouroboros-consensus-diffusion == 0.16.0.0
--  , any.ouroboros-network == 0.16.0.0
--  , any.plutus-core == 1.27.0.0
--  , any.plutus-ledger-api == 1.27.0.0
+-  , any.cardano-node == 9.0.0
+-  , any.cardano-ledger-core == 1.13.2.0
+-  , any.cardano-ledger-conway == 1.16.0.0
+-  , any.ouroboros-consensus == 0.20.0.0
+-  , any.ouroboros-consensus-cardano == 0.18.0.0
+-  , any.ouroboros-consensus-diffusion == 0.17.0.1
+-  , any.ouroboros-network == 0.16.1.1
+-  , any.plutus-core == 1.30.0.0
+-  , any.plutus-ledger-api == 1.30.0.0
+-  , any.io-classes == 1.5.0.0
+-  , any.io-classes-mtl == 0.1.2.0
 -  , any.formatting == 7.2.0
 -  , any.text source
--  , any.io-classes-mtl < 0.1.2.0
--  , any.wai-extra < 3.1.15
  
  allow-newer:
    *:formatting

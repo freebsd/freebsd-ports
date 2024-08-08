@@ -15,7 +15,7 @@ BROKEN_FreeBSD_13_armv7=	configure fails: Cannot run simple program using std::f
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 
-USES=		cmake compiler:c++11-lang llvm:15 python shebangfix
+USES=		cmake llvm:15 python shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -23,6 +23,12 @@ GH_ACCOUNT=	OpenSYCL
 GH_PROJECT=	OpenSYCL
 
 SHEBANG_FILES=	bin/syclcc-clang cmake/syclcc-launcher
+
+.if !exists(/usr/include/omp.h)
+USES+=	compiler:gcc-c++11-lib
+.else
+USES+=	compiler:c++11-lang
+.endif
 
 do-test: # many tests fail, see https://github.com/OpenSYCL/OpenSYCL/issues/996
 	@cd ${WRKSRC}/tests && \

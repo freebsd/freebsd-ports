@@ -295,6 +295,7 @@
     SUBDIR += php81-snmp
     SUBDIR += php82-snmp
     SUBDIR += php83-snmp
+    SUBDIR += php84-snmp
     SUBDIR += phpfpm_exporter
     SUBDIR += phpipam
     SUBDIR += ping_exporter
@@ -307,6 +308,7 @@
     SUBDIR += prometheus1
     SUBDIR += prometheus2
     SUBDIR += promscale
+    SUBDIR += promxy
     SUBDIR += pushgateway
     SUBDIR += py-adal
     SUBDIR += py-aggregate6
@@ -397,6 +399,7 @@
     SUBDIR += triton-guesttools
     SUBDIR += unbound_exporter
     SUBDIR += unifi8
+    SUBDIR += victoria-logs
     SUBDIR += victoria-metrics
     SUBDIR += virt-viewer
     SUBDIR += vmutils

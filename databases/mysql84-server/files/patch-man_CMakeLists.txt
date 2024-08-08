@@ -1,4 +1,4 @@
---- man/CMakeLists.txt.orig	2024-04-10 06:26:28 UTC
+--- man/CMakeLists.txt.orig	2024-06-03 11:39:00 UTC
 +++ man/CMakeLists.txt
 @@ -24,13 +24,6 @@ SET(MAN1
  # Copy man pages
@@ -52,7 +52,7 @@
  
  SET(MAN1_NDB
    ndb_blob_tool.1
-@@ -101,8 +103,14 @@ SET(MAN8_NDB
+@@ -102,8 +104,14 @@ SET(MAN8_NDB
    ndbmtd.8
  )
  

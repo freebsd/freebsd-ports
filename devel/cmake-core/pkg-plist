@@ -194,6 +194,8 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/envvar/CMAKE_PREFIX_PATH.rst
 %%DATADIR%%/Help/envvar/CMAKE_PROGRAM_PATH.rst
 %%DATADIR%%/Help/envvar/CMAKE_TEST_LAUNCHER.rst
+%%DATADIR%%/Help/envvar/CMAKE_TLS_VERIFY.rst
+%%DATADIR%%/Help/envvar/CMAKE_TLS_VERSION.rst
 %%DATADIR%%/Help/envvar/CMAKE_TOOLCHAIN_FILE.rst
 %%DATADIR%%/Help/envvar/CSFLAGS.rst
 %%DATADIR%%/Help/envvar/CTEST_INTERACTIVE_DEBUG_MODE.rst
@@ -222,7 +224,9 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/envvar/LDFLAGS.rst
 %%DATADIR%%/Help/envvar/MACOSX_DEPLOYMENT_TARGET.rst
 %%DATADIR%%/Help/envvar/OBJC.rst
+%%DATADIR%%/Help/envvar/OBJCFLAGS.rst
 %%DATADIR%%/Help/envvar/OBJCXX.rst
+%%DATADIR%%/Help/envvar/OBJCXXFLAGS.rst
 %%DATADIR%%/Help/envvar/PackageName_ROOT.rst
 %%DATADIR%%/Help/envvar/RC.rst
 %%DATADIR%%/Help/envvar/RCFLAGS.rst
@@ -733,6 +737,15 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/policy/CMP0159.rst
 %%DATADIR%%/Help/policy/CMP0160.rst
 %%DATADIR%%/Help/policy/CMP0161.rst
+%%DATADIR%%/Help/policy/CMP0162.rst
+%%DATADIR%%/Help/policy/CMP0163.rst
+%%DATADIR%%/Help/policy/CMP0164.rst
+%%DATADIR%%/Help/policy/CMP0165.rst
+%%DATADIR%%/Help/policy/CMP0166.rst
+%%DATADIR%%/Help/policy/CMP0167.rst
+%%DATADIR%%/Help/policy/CMP0168.rst
+%%DATADIR%%/Help/policy/CMP0169.rst
+%%DATADIR%%/Help/policy/CMP0170.rst
 %%DATADIR%%/Help/policy/DEPRECATED.txt
 %%DATADIR%%/Help/policy/DISALLOWED_COMMAND.txt
 %%DATADIR%%/Help/policy/STANDARD_ADVICE.txt
@@ -789,6 +802,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_gbl/CMAKE_CUDA_KNOWN_FEATURES.rst
 %%DATADIR%%/Help/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.rst
 %%DATADIR%%/Help/prop_gbl/CMAKE_C_KNOWN_FEATURES.rst
+%%DATADIR%%/Help/prop_gbl/CMAKE_HIP_KNOWN_FEATURES.rst
 %%DATADIR%%/Help/prop_gbl/CMAKE_LANG_STD_FLAGS.txt
 %%DATADIR%%/Help/prop_gbl/CMAKE_ROLE.rst
 %%DATADIR%%/Help/prop_gbl/DEBUG_CONFIGURATIONS.rst
@@ -804,11 +818,13 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_gbl/GENERATOR_IS_MULTI_CONFIG.rst
 %%DATADIR%%/Help/prop_gbl/GLOBAL_DEPENDS_DEBUG_MODE.rst
 %%DATADIR%%/Help/prop_gbl/GLOBAL_DEPENDS_NO_CYCLES.rst
+%%DATADIR%%/Help/prop_gbl/INSTALL_PARALLEL.rst
 %%DATADIR%%/Help/prop_gbl/IN_TRY_COMPILE.rst
 %%DATADIR%%/Help/prop_gbl/JOB_POOLS.rst
 %%DATADIR%%/Help/prop_gbl/PACKAGES_FOUND.rst
 %%DATADIR%%/Help/prop_gbl/PACKAGES_NOT_FOUND.rst
 %%DATADIR%%/Help/prop_gbl/PREDEFINED_TARGETS_FOLDER.rst
+%%DATADIR%%/Help/prop_gbl/PROPAGATE_TOP_LEVEL_INCLUDES_TO_TRY_COMPILE.rst
 %%DATADIR%%/Help/prop_gbl/REPORT_UNDEFINED_PROPERTIES.rst
 %%DATADIR%%/Help/prop_gbl/RULE_LAUNCH_COMPILE.rst
 %%DATADIR%%/Help/prop_gbl/RULE_LAUNCH_CUSTOM.rst
@@ -998,6 +1014,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_tgt/CXX_MODULE_SET.rst
 %%DATADIR%%/Help/prop_tgt/CXX_MODULE_SETS.rst
 %%DATADIR%%/Help/prop_tgt/CXX_MODULE_SET_NAME.rst
+%%DATADIR%%/Help/prop_tgt/CXX_MODULE_STD.rst
 %%DATADIR%%/Help/prop_tgt/CXX_SCAN_FOR_MODULES.rst
 %%DATADIR%%/Help/prop_tgt/CXX_STANDARD.rst
 %%DATADIR%%/Help/prop_tgt/CXX_STANDARD_REQUIRED.rst
@@ -1219,6 +1236,8 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_tgt/Swift_MODULE_DIRECTORY.rst
 %%DATADIR%%/Help/prop_tgt/Swift_MODULE_NAME.rst
 %%DATADIR%%/Help/prop_tgt/TEST_LAUNCHER.rst
+%%DATADIR%%/Help/prop_tgt/TRANSITIVE_COMPILE_PROPERTIES.rst
+%%DATADIR%%/Help/prop_tgt/TRANSITIVE_LINK_PROPERTIES.rst
 %%DATADIR%%/Help/prop_tgt/TYPE.rst
 %%DATADIR%%/Help/prop_tgt/UNITY_BUILD.rst
 %%DATADIR%%/Help/prop_tgt/UNITY_BUILD_BATCH_SIZE.rst
@@ -1244,6 +1263,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_tgt/VS_DOTNET_STARTUP_OBJECT.rst
 %%DATADIR%%/Help/prop_tgt/VS_DOTNET_TARGET_FRAMEWORK_VERSION.rst
 %%DATADIR%%/Help/prop_tgt/VS_DPI_AWARE.rst
+%%DATADIR%%/Help/prop_tgt/VS_FILTER_PROPS.rst
 %%DATADIR%%/Help/prop_tgt/VS_GLOBAL_KEYWORD.rst
 %%DATADIR%%/Help/prop_tgt/VS_GLOBAL_PROJECT_TYPES.rst
 %%DATADIR%%/Help/prop_tgt/VS_GLOBAL_ROOTNAMESPACE.rst
@@ -1266,6 +1286,8 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/prop_tgt/VS_SOLUTION_DEPLOY.rst
 %%DATADIR%%/Help/prop_tgt/VS_SOURCE_SETTINGS_tool.rst
 %%DATADIR%%/Help/prop_tgt/VS_USER_PROPS.rst
+%%DATADIR%%/Help/prop_tgt/VS_USE_DEBUG_LIBRARIES-PURPOSE.txt
+%%DATADIR%%/Help/prop_tgt/VS_USE_DEBUG_LIBRARIES.rst
 %%DATADIR%%/Help/prop_tgt/VS_WINDOWS_TARGET_PLATFORM_MIN_VERSION.rst
 %%DATADIR%%/Help/prop_tgt/VS_WINRT_COMPONENT.rst
 %%DATADIR%%/Help/prop_tgt/VS_WINRT_EXTENSIONS.rst
@@ -1339,6 +1361,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/release/3.28.rst
 %%DATADIR%%/Help/release/3.29.rst
 %%DATADIR%%/Help/release/3.3.rst
+%%DATADIR%%/Help/release/3.30.rst
 %%DATADIR%%/Help/release/3.4.rst
 %%DATADIR%%/Help/release/3.5.rst
 %%DATADIR%%/Help/release/3.6.rst
@@ -1468,8 +1491,10 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_CURRENT_LIST_FILE.rst
 %%DATADIR%%/Help/variable/CMAKE_CURRENT_LIST_LINE.rst
 %%DATADIR%%/Help/variable/CMAKE_CURRENT_SOURCE_DIR.rst
+%%DATADIR%%/Help/variable/CMAKE_CXX_COMPILER_IMPORT_STD.rst
 %%DATADIR%%/Help/variable/CMAKE_CXX_COMPILE_FEATURES.rst
 %%DATADIR%%/Help/variable/CMAKE_CXX_EXTENSIONS.rst
+%%DATADIR%%/Help/variable/CMAKE_CXX_MODULE_STD.rst
 %%DATADIR%%/Help/variable/CMAKE_CXX_SCAN_FOR_MODULES.rst
 %%DATADIR%%/Help/variable/CMAKE_CXX_STANDARD.rst
 %%DATADIR%%/Help/variable/CMAKE_CXX_STANDARD_REQUIRED.rst
@@ -1566,6 +1591,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_GLOBAL_AUTORCC_TARGET_NAME.rst
 %%DATADIR%%/Help/variable/CMAKE_GNUtoMS.rst
 %%DATADIR%%/Help/variable/CMAKE_HIP_ARCHITECTURES.rst
+%%DATADIR%%/Help/variable/CMAKE_HIP_COMPILE_FEATURES.rst
 %%DATADIR%%/Help/variable/CMAKE_HIP_EXTENSIONS.rst
 %%DATADIR%%/Help/variable/CMAKE_HIP_PLATFORM.rst
 %%DATADIR%%/Help/variable/CMAKE_HIP_STANDARD.rst
@@ -1675,6 +1701,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_LANG_LINK_EXECUTABLE.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_LINK_GROUP_USING_FEATURE.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_LINK_GROUP_USING_FEATURE_SUPPORTED.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_LINK_LIBRARY_FEATURE_ATTRIBUTES.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_LINK_LIBRARY_FILE_FLAG.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_LINK_LIBRARY_FLAG.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_LINK_LIBRARY_SUFFIX.rst
@@ -1690,6 +1717,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_LANG_STANDARD.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_STANDARD_DEFAULT.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_STANDARD_INCLUDE_DIRECTORIES.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_STANDARD_LATEST.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_STANDARD_LIBRARIES.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_STANDARD_REQUIRED.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_USING_LINKER_MODE.rst
@@ -1711,6 +1739,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_LINK_GROUP_USING_FEATURE_SUPPORTED.rst
 %%DATADIR%%/Help/variable/CMAKE_LINK_INTERFACE_LIBRARIES.rst
 %%DATADIR%%/Help/variable/CMAKE_LINK_LIBRARIES_ONLY_TARGETS.rst
+%%DATADIR%%/Help/variable/CMAKE_LINK_LIBRARY_FEATURE_ATTRIBUTES.rst
 %%DATADIR%%/Help/variable/CMAKE_LINK_LIBRARY_FILE_FLAG.rst
 %%DATADIR%%/Help/variable/CMAKE_LINK_LIBRARY_FLAG.rst
 %%DATADIR%%/Help/variable/CMAKE_LINK_LIBRARY_SUFFIX.rst
@@ -1844,6 +1873,8 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_TEST_LAUNCHER.rst
 %%DATADIR%%/Help/variable/CMAKE_TLS_CAINFO.rst
 %%DATADIR%%/Help/variable/CMAKE_TLS_VERIFY.rst
+%%DATADIR%%/Help/variable/CMAKE_TLS_VERSION-VALUES.txt
+%%DATADIR%%/Help/variable/CMAKE_TLS_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_TOOLCHAIN_FILE.rst
 %%DATADIR%%/Help/variable/CMAKE_TRY_COMPILE_CONFIGURATION.rst
 %%DATADIR%%/Help/variable/CMAKE_TRY_COMPILE_NO_PLATFORM_VARIABLES.rst
@@ -1892,6 +1923,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CMAKE_VS_TARGET_FRAMEWORK_IDENTIFIER.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_TARGET_FRAMEWORK_TARGETS_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_TARGET_FRAMEWORK_VERSION.rst
+%%DATADIR%%/Help/variable/CMAKE_VS_USE_DEBUG_LIBRARIES.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_VERSION_BUILD_NUMBER.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_VERSION_BUILD_NUMBER_COMPONENTS.txt
 %%DATADIR%%/Help/variable/CMAKE_VS_WINDOWS_TARGET_PLATFORM_MIN_VERSION.rst
@@ -2013,6 +2045,8 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Help/variable/CTEST_SVN_UPDATE_OPTIONS.rst
 %%DATADIR%%/Help/variable/CTEST_TEST_LOAD.rst
 %%DATADIR%%/Help/variable/CTEST_TEST_TIMEOUT.rst
+%%DATADIR%%/Help/variable/CTEST_TLS_VERIFY.rst
+%%DATADIR%%/Help/variable/CTEST_TLS_VERSION.rst
 %%DATADIR%%/Help/variable/CTEST_TRIGGER_SITE.rst
 %%DATADIR%%/Help/variable/CTEST_UPDATE_COMMAND.rst
 %%DATADIR%%/Help/variable/CTEST_UPDATE_OPTIONS.rst
@@ -2132,10 +2166,10 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/CMakeDetermineCSharpCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineCUDACompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineCXXCompiler.cmake
-%%DATADIR%%/Modules/CMakeDetermineCompileFeatures.cmake
 %%DATADIR%%/Modules/CMakeDetermineCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineCompilerABI.cmake
 %%DATADIR%%/Modules/CMakeDetermineCompilerId.cmake
+%%DATADIR%%/Modules/CMakeDetermineCompilerSupport.cmake
 %%DATADIR%%/Modules/CMakeDetermineFortranCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineHIPCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineISPCCompiler.cmake
@@ -2242,6 +2276,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/CTestScriptMode.cmake
 %%DATADIR%%/Modules/CTestTargets.cmake
 %%DATADIR%%/Modules/CTestUseLaunchers.cmake
+%%DATADIR%%/Modules/CXX-DetectStdlib.h
 %%DATADIR%%/Modules/CheckCCompilerFlag.cmake
 %%DATADIR%%/Modules/CheckCSourceCompiles.cmake
 %%DATADIR%%/Modules/CheckCSourceRuns.cmake
@@ -2274,7 +2309,6 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/CheckIncludeFiles.cmake
 %%DATADIR%%/Modules/CheckLanguage.cmake
 %%DATADIR%%/Modules/CheckLibraryExists.cmake
-%%DATADIR%%/Modules/CheckLibraryExists.lists.in
 %%DATADIR%%/Modules/CheckLinkerFlag.cmake
 %%DATADIR%%/Modules/CheckOBJCCompilerFlag.cmake
 %%DATADIR%%/Modules/CheckOBJCSourceCompiles.cmake
@@ -2330,6 +2364,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Compiler/Clang-C-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/Clang-C.cmake
 %%DATADIR%%/Modules/Compiler/Clang-CUDA.cmake
+%%DATADIR%%/Modules/Compiler/Clang-CXX-CXXImportStd.cmake
 %%DATADIR%%/Modules/Compiler/Clang-CXX-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/Clang-CXX-TestableFeatures.cmake
 %%DATADIR%%/Modules/Compiler/Clang-CXX.cmake
@@ -2433,6 +2468,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Compiler/MSVC-ASM.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-C-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-C.cmake
+%%DATADIR%%/Modules/Compiler/MSVC-CXX-CXXImportStd.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-CXX-FeatureTests.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-CXX.cmake
 %%DATADIR%%/Modules/Compiler/MSVC-DetermineCompiler.cmake
@@ -2555,6 +2591,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/ExternalProject/hgclone.cmake.in
 %%DATADIR%%/Modules/ExternalProject/mkdirs.cmake.in
 %%DATADIR%%/Modules/ExternalProject/shared_internal_commands.cmake
+%%DATADIR%%/Modules/ExternalProject/stepscript.cmake.in
 %%DATADIR%%/Modules/ExternalProject/verify.cmake.in
 %%DATADIR%%/Modules/FLTKCompatibility.cmake
 %%DATADIR%%/Modules/FeatureSummary.cmake
@@ -2801,6 +2838,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Internal/CPack/ISScript.template.in
 %%DATADIR%%/Modules/Internal/CPack/NSIS.InstallOptions.ini.in
 %%DATADIR%%/Modules/Internal/CPack/NSIS.template.in
+%%DATADIR%%/Modules/Internal/CPack/WIX-v3/WIX.template.in
 %%DATADIR%%/Modules/Internal/CPack/WIX.template.in
 %%DATADIR%%/Modules/Internal/CheckCompilerFlag.cmake
 %%DATADIR%%/Modules/Internal/CheckFlagCommonConfig.cmake
@@ -3103,6 +3141,7 @@ share/bash-completion/completions/ctest
 %%DATADIR%%/Modules/Platform/MirBSD.cmake
 %%DATADIR%%/Modules/Platform/NetBSD-Initialize.cmake
 %%DATADIR%%/Modules/Platform/NetBSD.cmake
+%%DATADIR%%/Modules/Platform/OHOS.cmake
 %%DATADIR%%/Modules/Platform/OS2-OpenWatcom-C.cmake
 %%DATADIR%%/Modules/Platform/OS2-OpenWatcom-CXX.cmake
 %%DATADIR%%/Modules/Platform/OS2-OpenWatcom.cmake

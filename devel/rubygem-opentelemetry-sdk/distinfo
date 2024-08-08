@@ -1,3 +1,3 @@
-TIMESTAMP = 1711860601
-SHA256 (rubygem/opentelemetry-sdk-1.4.1.gem) = 513fa36c9b32dcaaf69f698a8950de4fe58842eb7038a09bc8260fd35f4c4eaa
-SIZE (rubygem/opentelemetry-sdk-1.4.1.gem) = 33792
+TIMESTAMP = 1722249148
+SHA256 (rubygem/opentelemetry-sdk-1.5.0.gem) = da1027c0def5917c8467ac1f3692b60c054ee91aeb36ee120dfd30c58b3d3b36
+SIZE (rubygem/opentelemetry-sdk-1.5.0.gem) = 34304

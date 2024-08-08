@@ -5,7 +5,8 @@ CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C/C++ language library including CGI support
-WWW=		https://wolkykim.github.io/qdecoder/
+WWW=		https://wolkykim.github.io/qdecoder/ \
+		https://github.com/wolkykim/qdecoder
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,5 +1,5 @@
 PORTNAME=	mkdocstrings-python
-DISTVERSION=	1.10.3
+DISTVERSION=	1.10.7
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,17 +13,16 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>0:devel/py-pdm-backend@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}griffe>=0.44:textproc/py-griffe@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocstrings>0:textproc/py-mkdocstrings@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}griffe>=0.48:textproc/py-griffe@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocs-material>0:textproc/py-mkdocs-material@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mkdocstrings>0:textproc/py-mkdocstrings@${PY_FLAVOR}
 # textproc/py-mkdocstrings belongs to RUN_DEPENDS as well but would cause
 # a circular dependency (via py-mkdocstrings' PYTHON option).  It was therefore
 # moved to TEST_DEPENDS to at least allow the test suite to run.
 
 USES=		python
+GH_PROJECT=	python
 USE_PYTHON=	autoplist pep517 pytest
-# These tests relies on files that aren't available in the sdist
-PYTEST_IGNORED_TESTS=	test_render_themes test_render_docstring \
-			test_rendering_object_source_without_lineno
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 

@@ -1,8 +1,9 @@
 PORTNAME=	gapic-generator
-PORTVERSION=	1.18.2
+PORTVERSION=	1.18.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	gapic_generator-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python client library generator for APIs defined by protocolbuffers

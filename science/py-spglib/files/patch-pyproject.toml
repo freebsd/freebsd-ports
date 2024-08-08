@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-07-12 07:15:17 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@
+ [build-system]
+ # Numpy build and runtime dependencies are linked to ABI compatibility
+ # A new wheel rebuild is needed when changing these
+-requires = ["scikit-build-core", "numpy~=2.0"]
++requires = ["scikit-build-core", "numpy"]
+ build-backend = "scikit_build_core.build"
+ 
+ [project]

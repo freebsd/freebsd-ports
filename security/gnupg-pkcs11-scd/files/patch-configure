@@ -7,7 +7,7 @@ Patch to be able to use libassuan 3.x
  $as_echo_n "checking for libassuan... " >&6; }
  	test -x "${with_libassuan_prefix}/bin/libassuan-config" || as_fn_error $? "Cannot locate libassuan" "$LINENO" 5
 -	"${with_libassuan_prefix}/bin/libassuan-config" --version | grep "^2\." > /dev/null || as_fn_error $? "Need assuan-2" "$LINENO" 5
-+	"${with_libassuan_prefix}/bin/libassuan-config" --version | grep "^3\." > /dev/null || as_fn_error $? "Need assuan-2" "$LINENO" 5
++	"${with_libassuan_prefix}/bin/libassuan-config" --version | grep "^3\." > /dev/null || as_fn_error $? "Need assuan-3" "$LINENO" 5
  
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: found" >&5
  $as_echo "found" >&6; }

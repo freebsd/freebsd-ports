@@ -1,16 +1,24 @@
 PORTNAME=	casttube
-DISTVERSION=	0.2.1
+PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@freebsd.org
-COMMENT=	YouTube Chromecast api
-WWW=		https://pypi.org/project/casttube/
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	YouTube Chromecast API
+WWW=		https://github.com/ur1katz/casttube
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist concurrent pep517
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

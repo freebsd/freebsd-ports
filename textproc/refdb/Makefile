@@ -1,7 +1,7 @@
 PORTNAME=	refdb
 PORTVERSION=	0.9.9
 DISTVERSIONSUFFIX=	-1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-src-${PORTVERSION}-1
 
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
-		libbtparse.so:textproc/btparse \
+		libbtparse.so:textproc/p5-Text-BibTeX \
 		libdbi.so:databases/libdbi \
 		libltdl.so:devel/libltdl
 

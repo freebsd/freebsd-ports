@@ -1,6 +1,6 @@
---- utilities/CMakeLists.txt.orig	2023-06-14 08:24:40.103026000 +0200
-+++ utilities/CMakeLists.txt	2023-06-22 20:43:33.353592000 +0200
-@@ -24,13 +24,19 @@ MSVC_CPPCHECK_DISABLE()
+--- utilities/CMakeLists.txt.orig	2024-07-12 19:15:25 UTC
++++ utilities/CMakeLists.txt
+@@ -25,13 +25,19 @@ MSVC_CPPCHECK_DISABLE()
  DISABLE_MISSING_PROFILE_WARNING()
  MSVC_CPPCHECK_DISABLE()
  
@@ -22,7 +22,7 @@
  
  MYSQL_ADD_EXECUTABLE(comp_client_err
    comp_client_err.cc
-@@ -113,10 +119,30 @@ MYSQL_ADD_EXECUTABLE(static_thread_local_test
+@@ -114,10 +120,30 @@ MYSQL_ADD_EXECUTABLE(static_thread_local_test
    EXCLUDE_FROM_ALL
    )
  
@@ -53,7 +53,7 @@
    )
  MYSQL_ADD_EXECUTABLE(perror
    perror.cc
-@@ -131,12 +157,23 @@ ENDIF()
+@@ -132,12 +158,23 @@ ENDIF()
      LINK_LIBRARIES ext::lz4 mysys
      )
  ENDIF()

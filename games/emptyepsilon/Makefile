@@ -15,7 +15,7 @@ LICENSE_FILE_AngryFly-Royalty-Free-License=	${WRKSRC}/packs/License.txt
 LICENSE_PERMS_AngryFly-Royalty-Free-License=	auto-accept dist-mirror pkg-mirror
 
 BUILD_DEPENDS=	glm>0:math/glm
-LIB_DEPENDS=	libsfml-system.so:devel/sfml
+LIB_DEPENDS=	libsfml-system.so:devel/sfml251
 RUN_DEPENDS=	xclip:x11/xclip
 
 USES=		cmake compiler:c++11-lib gl localbase xorg

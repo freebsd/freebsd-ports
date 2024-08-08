@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-${FLAVOR:Uce}
-PORTVERSION=	17.1.1
+PORTVERSION=	17.1.4
 DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
@@ -104,7 +104,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-kaminari-rails70>=1.2.2<1.3:www/rubygem-kaminari-rails70 \
 	rubygem-hamlit>=2.15.0<2.16:www/rubygem-hamlit \
 	rubygem-carrierwave1>=1.3.4<2.0:www/rubygem-carrierwave1 \
-	rubygem-mini_magick>=4.12<5:graphics/rubygem-mini_magick \
+	rubygem-mini_magick4>=4.12<5:graphics/rubygem-mini_magick4 \
 	rubygem-fog-aws>=3.18<4:net/rubygem-fog-aws \
 	rubygem-fog-core210>=2.1.0<2.1.1:devel/rubygem-fog-core210 \
 	rubygem-fog-google>=1.24.1<1.25:net/rubygem-fog-google \
@@ -150,6 +150,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-asciidoctor-kroki>=0.8.0<0.9:textproc/rubygem-asciidoctor-kroki \
 	rubygem-rouge42>=4.2.0<4.3:textproc/rubygem-rouge42 \
 	rubygem-truncato>=0.7.12<0.8.0:textproc/rubygem-truncato \
+	rubygem-tty-prompt>=0.23<1:devel/rubygem-tty-prompt \
 	rubygem-nokogiri>=1.16<2:textproc/rubygem-nokogiri \
 	rubygem-gitlab-glfm-markdown>=0.0.17<0.1:textproc/rubygem-gitlab-glfm-markdown \
 	rubygem-icalendar>=0:devel/rubygem-icalendar \
@@ -179,7 +180,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-discordrb-webhooks>=3.5<4.0:net-im/rubygem-discordrb-webhooks \
 	rubygem-jira-ruby>=2.3.0<2.4:devel/rubygem-jira-ruby \
 	rubygem-atlassian-jwt>=0.2.1<0.3.0:www/rubygem-atlassian-jwt \
-	rubygem-slack-messenger>=2.3.4<2.4.0:devel/rubygem-slack-messenger \
+	rubygem-slack-messenger>=2.3.5<2.4.0:devel/rubygem-slack-messenger \
 	rubygem-ruby-fogbugz>=0.3.0<0.4.0:devel/rubygem-ruby-fogbugz \
 	rubygem-kubeclient>=4.11.0<4.12.0:www/rubygem-kubeclient \
 	rubygem-ruby-openai37>=3.7<4:www/rubygem-ruby-openai37 \
@@ -211,7 +212,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-gitlab-labkit>=0.36.0<0.37:devel/rubygem-gitlab-labkit \
 	rubygem-thrift>=0.16.0:devel/rubygem-thrift \
 	rubygem-rails-i18n-rails70>=7.0.9<8:devel/rubygem-rails-i18n-rails70 \
-	rubygem-gettext_i18n_rails>=1.12.0<1.13:devel/rubygem-gettext_i18n_rails \
+	rubygem-gettext_i18n_rails112>=1.12.0<1.13:devel/rubygem-gettext_i18n_rails112 \
 	rubygem-gettext>=3.4<4:devel/rubygem-gettext \
 	rubygem-batch-loader>=2.0.5<2.1:devel/rubygem-batch-loader \
 	rubygem-peek-rails70>=1.1<2.0:devel/rubygem-peek-rails70 \
@@ -263,7 +264,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-gitaly>=17.0.1:net/rubygem-gitaly \
 	rubygem-kas-grpc>=0.5.0,1<0.6.0,1:net/rubygem-kas-grpc \
 	rubygem-grpc>=1.63.0<2:net/rubygem-grpc \
-	rubygem-google-protobuf>=3.25.3<4:devel/rubygem-google-protobuf \
+	rubygem-google-protobuf3>=3.25.3<4:devel/rubygem-google-protobuf3 \
 	rubygem-toml-rb>=2.2.0<3:www/rubygem-toml-rb \
 	rubygem-flipper026>=0.26.2<0.27:devel/rubygem-flipper026 \
 	rubygem-flipper-active_record-rails70>=0.26.2<0.27:databases/rubygem-flipper-active_record-rails70 \
@@ -374,12 +375,13 @@ do-install:
 	# TODO: Vendored gems are installing binaries not into STAGEDIR, this needs to be fixed.
 	# As intermediate solution, the binaries are not disabled by patches
 	#(cd ${WRKSRC} && ${RM} Gemfile.lock && bundle config set path ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER} && ${WRK_ENV} ${GEM_ENV} bundle install --local)
-	(cd ${WRKSRC} && ${RM} Gemfile.lock && ${WRK_ENV} ${GEM_ENV} bundle install --local --binstubs=${WRKSRC}/.bin)
-	(cd ${WRKSRC} && bundle binstubs --path ${WRKSRC}/.bin --all)
+	(cd ${WRKSRC} && bundle config set --local bin .bin)
+	(cd ${WRKSRC} && ${RM} Gemfile.lock && ${WRK_ENV} ${GEM_ENV} bundle install --local)
+	(cd ${WRKSRC} && bundle binstubs --all --path .bin)
 	${RM} -R ${WRKSRC}/workhorse
 	# remove vendored sidekiq gem as it breaks gitlab 17.1.0 for FreeBSD
 	# See also: https://gitlab.com/gitlab-org/gitlab/-/issues/468435
-	${RM} -R ${WRKSRC}/vendor/gems/sidekiq-7.1.6
+	#${RM} -R ${WRKSRC}/vendor/gems/sidekiq-7.1.6
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 	${FIND} ${WRKSRC} -name '*.bak' -delete
 	${FIND} ${WRKSRC} -name '*.gitkeep' -delete
@@ -477,6 +479,7 @@ post-install:
 	@${ECHO_CMD} "@dir(,,700) ${WWWDIR_REL}/shared/artifacts/tmp/uploads" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(,,700) ${WWWDIR_REL}/shared/artifacts/tmp/work" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(,,700) ${WWWDIR_REL}/shared/ci_secure_files" >> ${TMPPLIST}
+	# TODO: Maybe we need to add here a new dir: ${WWWDIR_REL}/shared/external-diffs
 	@${ECHO_CMD} "@dir(,,770) ${WWWDIR_REL}/shared/packages" >> ${TMPPLIST}
 	@${ECHO_CMD} "@group gitlab-pages" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(,,770) ${WWWDIR_REL}/shared/pages" >> ${TMPPLIST}

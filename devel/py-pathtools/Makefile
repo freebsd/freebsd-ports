@@ -14,6 +14,8 @@ LICENSE=	MIT
 USES=		python
 USE_PYTHON=	distutils autoplist
 
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}

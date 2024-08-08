@@ -4609,6 +4609,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/python/qgis/processing/__init__.py
 %%DATADIR%%/python/qgis/processing/algfactory.py
 %%SERVER%%%%DATADIR%%/python/qgis/server/__init__.py
+%%DATADIR%%/python/qgis/sipify.yaml
 %%DATADIR%%/python/qgis/testing/__init__.py
 %%DATADIR%%/python/qgis/testing/mocked.py
 %%DATADIR%%/python/qgis/user.py

@@ -1,5 +1,5 @@
 PORTNAME=	glibmm
-PORTVERSION=	2.66.6
+DISTVERSION=	2.66.7
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -13,12 +13,12 @@ LICENSE=	LGPL21
 
 USES=		compiler:c++11-lang gettext gnome meson pathfix perl5 \
 		pkgconfig python:build shebangfix tar:xz
+SHEBANG_GLOB=	*.py
 USE_GNOME=	glib20 libsigc++20
 USE_LDCONFIG=	yes
 
-SHEBANG_GLOB=	*.py
-
-MESON_ARGS=	-Dbuild-documentation=false
+MESON_ARGS=	-Dbuild-documentation=false \
+		-Dbuild-examples=false
 
 # 2.68 and later are currently incompatible with consumers
 PORTSCOUT=	limit:^2\.66

@@ -59,6 +59,9 @@ LIBCLANG_RT_LIBS_i386= \
 	builtins.a \
 	cfi.a \
 	cfi_diag.a \
+	fuzzer.a \
+	fuzzer_interceptors.a \
+	fuzzer_no_main.a \
 	profile.a \
 	safestack.a \
 	stats.a \

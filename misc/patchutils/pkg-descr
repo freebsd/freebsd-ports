@@ -17,5 +17,3 @@ Patchutils is a small collection of programs that operate on patch files.
   contains a given regular expression.
 - Recountdiff fixes up counts and offsets in a unified diff.
 - Unwrapdiff fixes word-wrapped unified diffs.
-
-See also: https://github.com/twaugh/patchutils

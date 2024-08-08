@@ -55,6 +55,12 @@ DOCS_DISTFILES=			${DISTNAME:R}-refman-html.tar.gz:docs \
 				${DISTNAME:R}-refman.pdf:docs
 THREADS_CONFIGURE_ENABLE=	systhreads
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+LLD_UNSAFE=	yes
+.endif
+
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKDIR} && ${COPYTREE_SHARE} htmlman ${STAGEDIR}${DOCSDIR})

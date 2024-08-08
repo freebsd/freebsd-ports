@@ -1,3 +1,5 @@
-TIMESTAMP = 1683065204
-SHA256 (coccinelle-coccinelle-1.1.1_GH0.tar.gz) = 095919e129ac563586d880ebbc5aac829fec224177090aebe34dc34ed5f142bf
-SIZE (coccinelle-coccinelle-1.1.1_GH0.tar.gz) = 2743457
+TIMESTAMP = 1717434330
+SHA256 (coccinelle-coccinelle-1.2_GH0.tar.gz) = 095dbcddce82c8e3bc3e1ab8c83c0ed6feae8a26c921045a3e73d72f0ae13f33
+SIZE (coccinelle-coccinelle-1.2_GH0.tar.gz) = 2948051
+SHA256 (thierry-martinez-stdcompat-d53390d788027fe0a2282c4745eb3d1626341f99_GH0.tar.gz) = 1324c4c5a2fdcefe254459f81083dedd1e6dd61efe59498e9b4aa27d5e0a3d4d
+SIZE (thierry-martinez-stdcompat-d53390d788027fe0a2282c4745eb3d1626341f99_GH0.tar.gz) = 617733

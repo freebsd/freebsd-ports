@@ -1,5 +1,5 @@
 PORTNAME=	libei
-DISTVERSION=	1.2.1
+DISTVERSION=	1.3.0
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -28,6 +28,7 @@ GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	libinput
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 MESON_ARGS=	-Dsd-bus-provider=basu -Dtests=disabled
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	BASU
 OPTIONS_DEFAULT=BASU

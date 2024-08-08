@@ -1,0 +1,16 @@
+Workaround for FreeBSD 14.0 (Clang 16) which is expected to be EOL on 2024-09-30
+
+Reference:	https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=255374
+		https://forums.freebsd.org/threads/freebsd-release-14-0-and-clang-2020-std-format.91114/
+
+--- configure.orig	2024-08-01 01:02:16 UTC
++++ configure
+@@ -6239,7 +6239,7 @@ printf "%s\n" "$ac_cv_cxx_compile_cxx20" >&6; }
+ fi
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_cxx_compile_cxx20" >&5
+ printf "%s\n" "$ac_cv_cxx_compile_cxx20" >&6; }
+-CXXFLAGS="$CXXFLAGS -std=c++20"
++CXXFLAGS="$CXXFLAGS -std=c++20 -fexperimental-library"
+ ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
+ ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'

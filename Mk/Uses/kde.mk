@@ -435,7 +435,8 @@ kde-dnssd_LIB=			libKF${_KDE_VERSION}DNSSD.so
 kde-doctools_PORT=		devel/kf${_KDE_VERSION}-kdoctools
 kde-doctools_PATH=		${KDE_PREFIX}/bin/meinproc${_KDE_VERSION}
 
-kde-ecm_PORT=			devel/kf${_KDE_VERSION}-extra-cmake-modules
+# Use ECM from KDE Frameworks 6 for everything
+kde-ecm_PORT=			devel/kf6-extra-cmake-modules
 kde-ecm_PATH=			${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake
 
 kde-emoticons_PORT=		x11-themes/kf${_KDE_VERSION}-kemoticons

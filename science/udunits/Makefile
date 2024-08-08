@@ -6,7 +6,8 @@ MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/udunits/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for manipulating units of physical quantities
-WWW=		https://www.unidata.ucar.edu/software/udunits/
+WWW=		https://www.unidata.ucar.edu/software/udunits/ \
+		https://github.com/Unidata/UDUNITS-2
 
 LICENSE=	UCAR_UNIDATA
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

@@ -305,6 +305,7 @@ etc/a2ps.cfg
 %%NLS%%share/locale/gl/LC_MESSAGES/a2ps.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/a2ps.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/a2ps-gnulib.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/a2ps.mo
 %%NLS%%share/locale/id/LC_MESSAGES/a2ps.mo
 %%NLS%%share/locale/it/LC_MESSAGES/a2ps-gnulib.mo
 %%NLS%%share/locale/it/LC_MESSAGES/a2ps.mo

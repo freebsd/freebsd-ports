@@ -12,6 +12,9 @@ WWW=		http://www.ircd-ratbox.org/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Development stalled upstream, consider switching to irc/ircd-ratbox
+EXPIRATION_DATE=2024-08-31
+
 CONFLICTS=	ircd-hybrid ircd-ratbox
 
 USES=		libtool perl5 sqlite tar:bzip2

@@ -1,5 +1,3 @@
-TIMESTAMP = 1720346740
-SHA256 (artemsen-swayimg-v2.3_GH0.tar.gz) = c5bde4bee699d8379cd666a027db806fdc3dc08639fd53edbc2fcf8cffab038d
-SIZE (artemsen-swayimg-v2.3_GH0.tar.gz) = 323627
-SHA256 (4100b13c9ee7.patch) = b95253a5d379565474e689c98d8c5e2590688c527cb4f90007aa2d2325a93741
-SIZE (4100b13c9ee7.patch) = 1147
+TIMESTAMP = 1722763122
+SHA256 (artemsen-swayimg-v3.0_GH0.tar.gz) = aaea410876aa461d6601f86d5c7bc2cf212a0ecfc28b2a602e53d0f383d710ca
+SIZE (artemsen-swayimg-v3.0_GH0.tar.gz) = 550010

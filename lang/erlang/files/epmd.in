@@ -1,23 +1,27 @@
 #!/bin/sh
 
 # PROVIDE: epmd
-# REQUIRE: LOGIN
+# REQUIRE: DAEMON mountlate
 #
 # Add the following line to /etc/rc.conf to enable epmd:
 #
 # epmd_enable="YES"
 #
-
-epmd_enable=${epmd_enable:-"NO"}
+# Configure optional flags with:
+# epmd_flags="-address 127.0.0.1"
 
 . /etc/rc.subr
 
 name=epmd
 rcvar=epmd_enable
 
+load_rc_config ${name}
+
+: ${epmd_enable="NO"}
+: ${epmd_flags:-""}
+
 procname=%%PREFIX%%/bin/epmd
-start_cmd="%%PREFIX%%/bin/epmd -daemon"
+start_cmd="%%PREFIX%%/bin/epmd -daemon ${epmd_flags}"
 stop_cmd="%%PREFIX%%/bin/epmd -kill >/dev/null"
 
-load_rc_config ${name}
 run_rc_command "$1"

@@ -1,6 +1,6 @@
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
+DISTVERSION=	0.10.1
 PORTEPOCH=	1
 CATEGORIES=	net
 DIST_SUBDIR?=	${PORTNAME}
@@ -29,7 +29,7 @@ USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 GH_ACCOUNT=	neutrinolabs
-GH_TUPLE=	neutrinolabs:librfxcodec:e8208bf:librfxcodec/librfxcodec \
+GH_TUPLE=	neutrinolabs:librfxcodec:c6b41af:librfxcodec/librfxcodec \
 		neutrinolabs:libpainter:2255b38:libpainter/libpainter \
 		neutrinolabs:ulalaca-xrdp:f683d17:ulalaca/ulalaca
 

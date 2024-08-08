@@ -1,7 +1,11 @@
-TIMESTAMP = 1719734388
+TIMESTAMP = 1720895514
 SHA256 (go/sysutils_nomad/hashicorp-nomad-v1.8.1_GH0/go.mod) = 337e0baea6cdf6d1048dad7dd0b001d234bb5bfd6892252c15a2050bf953269e
 SIZE (go/sysutils_nomad/hashicorp-nomad-v1.8.1_GH0/go.mod) = 14729
 SHA256 (go/sysutils_nomad/hashicorp-nomad-v1.8.1_GH0/api/go.mod) = fbcc54abdb959be14d0e44d080a001ae030b97170f79ba4bd3bd78d277f053bf
 SIZE (go/sysutils_nomad/hashicorp-nomad-v1.8.1_GH0/api/go.mod) = 666
 SHA256 (go/sysutils_nomad/hashicorp-nomad-v1.8.1_GH0/hashicorp-nomad-v1.8.1_GH0.tar.gz) = 4e6c3b97030c0d836180fa636d7c401adac43c0ac0322fd18e4033c679b9b4bb
 SIZE (go/sysutils_nomad/hashicorp-nomad-v1.8.1_GH0/hashicorp-nomad-v1.8.1_GH0.tar.gz) = 26295940
+SHA256 (go/sysutils_nomad/hashicorp-nomad-v1.8.1_GH0/2c86fe02834dc17a518d6e485aed66e971f7ed68.patch) = bafd4b3789d1e750203762b6f71beddcf8cbd78a52ce42de403c6473fced7559
+SIZE (go/sysutils_nomad/hashicorp-nomad-v1.8.1_GH0/2c86fe02834dc17a518d6e485aed66e971f7ed68.patch) = 1101
+SHA256 (go/sysutils_nomad/hashicorp-nomad-v1.8.1_GH0/ed748105c9284e7c1d0feec20bb450d1d3c7007d.patch) = d438ef866eeeea66f36c44f0ea3999374b500a5f69ceef4e8c6559db2127a877
+SIZE (go/sysutils_nomad/hashicorp-nomad-v1.8.1_GH0/ed748105c9284e7c1d0feec20bb450d1d3c7007d.patch) = 809

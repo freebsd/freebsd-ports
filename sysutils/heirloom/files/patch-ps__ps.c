@@ -1,6 +1,6 @@
---- ps/ps.c.orig	2007-02-02 06:40:20.000000000 -0800
-+++ ps/ps.c	2009-03-06 14:51:53.455864840 -0800
-@@ -88,6 +88,9 @@
+--- ps/ps.c.orig	2024-08-02 07:55:02.072464000 -0700
++++ ps/ps.c	2024-08-02 08:09:25.924815000 -0700
+@@ -87,6 +87,9 @@
  #define	proc	process
  #undef	p_pgid
  #undef	p_pctcpu
@@ -10,7 +10,7 @@
  #if defined (__DragonFly__)
  #endif	/* __DragonFly__ */
  #elif defined (__hpux)
-@@ -492,6 +495,7 @@
+@@ -491,6 +494,7 @@
  
  static void		postproc(struct proc *);
  static enum okay	selectproc(struct proc *);
@@ -18,7 +18,7 @@
  
  /************************************************************************
   * 			Utility functions				*
-@@ -2140,7 +2144,6 @@
+@@ -2139,7 +2143,6 @@
  static enum okay
  getproc_kvm(struct proc *p)
  {
@@ -26,7 +26,18 @@
  	struct kinfo_proc	*kp;
  	int	c;
  
-@@ -4875,6 +4878,7 @@
+@@ -2205,8 +2208,10 @@
+ #else	/* __FreeBSD__ >= 5 */
+ 	if (kp->ki_sflag & PS_INMEM)
+ 		p->p_flag |= FL_LOAD;
++#if (__FreeBSD__) < 15
+ 	if (kp->ki_sflag & PS_SWAPPINGOUT)
+ 		p->p_flag |= FL_SWAP;
++#endif	/* __FreeBSD__ < 15 */
+ 	p->p_oldpri = ((double)kp->ki_pri.pri_user - PRI_MIN) /
+ 		(PRI_MAX - PRI_MIN) * 60 + 60;
+ 	p->p_pri = 40 - ((double)kp->ki_pri.pri_user - PRI_MIN) /
+@@ -4874,6 +4879,7 @@
  #ifdef	__GLIBC__
  	putenv("POSIXLY_CORRECT=1");
  #endif

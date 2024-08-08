@@ -1,7 +1,6 @@
 PORTNAME=	soju
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
-PORTREVISION=	2
+DISTVERSION=	0.8.1
 CATEGORIES=	irc
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules,no_targets sqlite:3
 USE_GITHUB=	nodefault
-GH_TUPLE=	golang:sys:v0.18.0:sys
+GH_TUPLE=	golang:sys:v0.20.0:sys
 
 OPTIONS_DEFAULT=	DOCS
 OPTIONS_DEFINE=		DOCS
@@ -23,7 +22,7 @@ GROUPS=			soju
 SUB_LIST=		USER=${USERS}
 USE_RC_SUBR=		${PORTNAME}
 CGO_LDFLAGS+=		-lsqlite3
-GO_MODULE=		git.sr.ht/~emersion/soju
+GO_MODULE=		codeberg.org/emersion/soju
 CONTRIBS=		./contrib/znc-import ./contrib/migrate-db \
 			./contrib/migrate-logs
 MAKE_ENV+=		${GO_ENV} GOFLAGS="${GOFLAGS} -tags=libsqlite3,pam" \

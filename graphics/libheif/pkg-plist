@@ -1,9 +1,10 @@
-%%PORTEXAMPLES%%bin/heif-convert
+%%PORTEXAMPLES%%bin/heif-dec
 %%PORTEXAMPLES%%bin/heif-enc
 %%PORTEXAMPLES%%bin/heif-info
 %%PORTEXAMPLES%%bin/heif-thumbnailer
 include/libheif/heif.h
 include/libheif/heif_cxx.h
+include/libheif/heif_items.h
 include/libheif/heif_plugin.h
 include/libheif/heif_properties.h
 include/libheif/heif_regions.h
@@ -21,7 +22,7 @@ lib/libheif.so.%%LIB_VER%%
 %%RAV1E%%lib/libheif/libheif-rav1e.so
 %%SVTAV1%%lib/libheif/libheif-svtenc.so
 libdata/pkgconfig/libheif.pc
-%%PORTEXAMPLES%%share/man/man1/heif-convert.1.gz
+%%PORTEXAMPLES%%share/man/man1/heif-dec.1.gz
 %%PORTEXAMPLES%%share/man/man1/heif-enc.1.gz
 %%PORTEXAMPLES%%share/man/man1/heif-info.1.gz
 %%PORTEXAMPLES%%share/man/man1/heif-thumbnailer.1.gz

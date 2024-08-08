@@ -1,6 +1,6 @@
---- components/signin/public/base/signin_switches.h.orig	2024-06-25 12:08:48 UTC
+--- components/signin/public/base/signin_switches.h.orig	2024-08-01 05:47:53 UTC
 +++ components/signin/public/base/signin_switches.h
-@@ -115,7 +115,7 @@ bool IsExplicitBrowserSigninUIOnDesktopEnabled();
+@@ -112,7 +112,7 @@ bool IsExplicitBrowserSigninUIOnDesktopEnabled();
  
  // Controls the view mode for (history) sync screen.
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \

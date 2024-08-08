@@ -1,18 +1,6 @@
---- oss/ctl_oss.c.orig	2022-01-29 13:06:39 UTC
+--- oss/ctl_oss.c.orig	2024-06-10 09:18:39 UTC
 +++ oss/ctl_oss.c
-@@ -26,7 +26,11 @@
- #include <sys/ioctl.h>
- #include <alsa/asoundlib.h>
- #include <alsa/control_external.h>
-+#ifdef __linux__
- #include <linux/soundcard.h>
-+#else
-+#include <sys/soundcard.h>
-+#endif
- 
- typedef struct snd_ctl_oss {
- 	snd_ctl_ext_t ext;
-@@ -52,7 +56,7 @@ static const char *const vol_devices[SOUND_MIXER_NRDEV
+@@ -59,7 +59,7 @@ static const char *const vol_devices[SOUND_MIXER_NRDEV
  	[SOUND_MIXER_CD] =	"CD Playback Volume",
  	[SOUND_MIXER_IMIX] =	"Monitor Mix Playback Volume",
  	[SOUND_MIXER_ALTPCM] =	"Headphone Playback Volume",
@@ -21,7 +9,7 @@
  	[SOUND_MIXER_IGAIN] =	"Capture Volume",
  	[SOUND_MIXER_OGAIN] =	"Playback Volume",
  	[SOUND_MIXER_LINE1] =	"Aux Playback Volume",
-@@ -362,7 +366,9 @@ SND_CTL_PLUGIN_DEFINE_FUNC(oss)
+@@ -369,7 +369,9 @@ SND_CTL_PLUGIN_DEFINE_FUNC(oss)
  {
  	snd_config_iterator_t it, next;
  	const char *device = "/dev/mixer";
@@ -31,7 +19,7 @@
  	int i, err, val;
  	snd_ctl_oss_t *oss;
  	
-@@ -399,19 +405,29 @@ SND_CTL_PLUGIN_DEFINE_FUNC(oss)
+@@ -406,19 +408,29 @@ SND_CTL_PLUGIN_DEFINE_FUNC(oss)
  		goto error;
  	}
  

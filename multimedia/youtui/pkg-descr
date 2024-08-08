@@ -1,0 +1,9 @@
+Youtui - a simple TUI YouTube Music player aiming to implement an Artist->Albums
+workflow for searching for music, and using discoverability principles for
+navigation.
+
+Features
+- Quickly and easily display entire artist's discography
+- Buffer upcoming songs
+- Search suggestions
+- Sorting and filtering

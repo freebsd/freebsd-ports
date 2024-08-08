@@ -1,5 +1,5 @@
 PORTNAME=	bullet_train-roles
-PORTVERSION=	1.7.16
+PORTVERSION=	1.7.20
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

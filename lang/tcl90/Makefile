@@ -55,7 +55,7 @@ CONFIGURE_ARGS=	--enable-shared \
 		--with-system-libtommath
 LDFLAGS+=	-Wl,-z,muldefs
 
-TCL_VERSION=	9.0b2
+TCL_VERSION=	9.0b3
 TCL_VER=	9.0
 TCL_RC=
 SHORT_TCL_VER=	${TCL_VER:S/.//}
@@ -103,6 +103,6 @@ post-patch:
 		${WRKSRC}/installManPage
 
 post-install:
-	${LN} -s libtcl${TCL_VER}.so ${STAGEDIR}${PREFIX}/lib/libtcl${SHORT_TCL_VER}.so
+	${LN} -fs libtcl${TCL_VER}.so ${STAGEDIR}${PREFIX}/lib/libtcl${SHORT_TCL_VER}.so
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
---- pyproject.toml.orig	2024-04-04 15:25:08 UTC
+--- pyproject.toml.orig	2024-08-01 21:44:33 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
--requires = ["setuptools_scm[toml]>=4", "cython", "cmake>=3.24.2,<3.28; python_version>='3.7'"]
-+requires = ["setuptools_scm[toml]>=4", "cython"]
+-requires = ["setuptools_scm[toml]>=4", "cython", "cmake>=3.24.2,<3.28; python_version>='3.7'", "setuptools-rust<2"]
++requires = ["setuptools_scm[toml]>=4", "cython", "setuptools-rust<2"]
  build-backend = "setuptools.build_meta"
  
  [project]

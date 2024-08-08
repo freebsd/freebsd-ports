@@ -1,5 +1,5 @@
 PORTNAME=	pdoc
-PORTVERSION=	14.5.1
+PORTVERSION=	14.6.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,7 +9,7 @@ COMMENT=	API Documentation for Python Projects
 WWW=		https://pdoc.dev/ \
 		https://github.com/mitmproxy/pdoc
 
-LICENSE=	UNLICENSE
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \

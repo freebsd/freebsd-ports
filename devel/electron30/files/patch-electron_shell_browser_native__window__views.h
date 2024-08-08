@@ -1,4 +1,4 @@
---- electron/shell/browser/native_window_views.h.orig	2024-04-16 14:29:17 UTC
+--- electron/shell/browser/native_window_views.h.orig	2024-07-09 23:10:34 UTC
 +++ electron/shell/browser/native_window_views.h
 @@ -25,7 +25,7 @@ namespace electron {
  
@@ -18,7 +18,7 @@
    void SetIcon(const gfx::ImageSkia& icon);
  #endif
  
-@@ -255,7 +255,7 @@ class NativeWindowViews : public NativeWindow,
+@@ -248,7 +248,7 @@ class NativeWindowViews : public NativeWindow,
    // events from resizing the window.
    extensions::SizeConstraints old_size_constraints_;
  

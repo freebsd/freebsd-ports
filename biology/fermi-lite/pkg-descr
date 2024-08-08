@@ -1,0 +1,8 @@
+Fermi-lite is a standalone C library as well as a command-line tool for
+assembling Illumina short reads in regions from 100bp to 10 million bp in size.
+It is largely a light-weight in-memory version of fermikit without generating
+any intermediate files. It inherits the performance, the relatively small memory
+footprint and the features of fermikit. In particular, fermi-lite is able to
+retain heterozygous events and thus can be used to assemble diploid regions for
+the purpose of variant calling. It is one of the limited choices for local
+re-assembly and arguably the easiest to interface.

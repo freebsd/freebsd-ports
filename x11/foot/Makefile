@@ -1,11 +1,7 @@
 PORTNAME=	foot
-DISTVERSION=	1.17.2
-PORTREVISION=	1
+DISTVERSION=	1.18.0
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
-
-PATCH_SITES=	https://codeberg.org/dnkl/${PORTNAME}/commit/
-PATCHFILES+=	d229fd7fcc5a.patch:-p1 # https://codeberg.org/dnkl/foot/pulls/1726
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Fast, lightweight and minimalistic Wayland terminal emulator

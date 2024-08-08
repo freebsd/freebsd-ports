@@ -236,8 +236,6 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/digitalconcerthall.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/digiteka.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/discogs.py
-%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/discovery.py
-%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/discoverygo.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/disney.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/dispeak.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/dlf.py
@@ -451,6 +449,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lbry.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lci.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lcp.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/learningonscreen.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lecture2go.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lecturio.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/leeco.py

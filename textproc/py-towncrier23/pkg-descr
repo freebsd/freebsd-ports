@@ -1,0 +1,12 @@
+towncrier is a utility to produce useful, summarized news files (also known as
+changelogs) for your project.
+
+Rather than reading the Git history, or having one single file which developers
+all write to and produce merge conflicts, towncrier reads "news fragments" which
+contain information useful to end users.
+
+Used by Twisted, pytest, pip, BuildBot, and attrs, among others.
+
+While the command line tool towncrier requires Python to run, as long as you
+don't use any Python-specific affordances (like auto-detection of the project
+version), it is usable with any project type on any platform.

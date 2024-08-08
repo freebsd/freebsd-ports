@@ -3,6 +3,9 @@ DISTVERSION=	2.1.0-beta
 PORTREVISION=	14
 CATEGORIES=	graphics
 
+PATCH_SITES=	http://vault.101011010.xyz/distfiles/ LOCAL/danfe
+PATCHFILES=	OSL-01.13.7.patch:-p1
+
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Modern, physically-based production renderer
 WWW=		https://appleseedhq.net/
@@ -28,9 +31,6 @@ ONLY_FOR_ARCHS_REASON=	not ported to it yet
 
 USES=		cmake compiler:c++11-lang shebangfix
 SHEBANG_FILES=	scripts/*.py
-
-CFLAGS+=	-I${LOCALBASE}/include/Imath
-CFLAGS+=	-I${LOCALBASE}/include/OpenEXR
 
 CMAKE_ARGS=	-DWITH_PYTHON2_BINDINGS:BOOL=OFF \
 		-DWITH_DOXYGEN:BOOL=OFF \
@@ -72,9 +72,9 @@ STUDIO_IMPLIES=	PYTHON
 post-patch:
 	@${RMDIR} ${WRKSRC}/sandbox/docs/api
 	@${RM} ${WRKSRC}/sandbox/share/cmake/Modules/FindOpenImageIO.cmake
-	${REINPLACE_CMD} 's,OpenEXR/Imath,Imath/Imath,' \
-                ${WRKSRC}/sandbox/share/cmake/Modules/FindImath.cmake \
-                ${WRKSRC}/src/appleseed/foundation/meta/tests/test_quaternion.cpp \
+	@${REINPLACE_CMD} -e 's,OpenEXR,Imath, ; /[ {]IMATH_HALF_LIBRARY/d' \
+		${WRKSRC}/cmake/modules/FindImath.cmake
+	@${REINPLACE_CMD} -e 's,OpenEXR/Imath,Imath/Imath,' \
                 ${WRKSRC}/src/appleseed/foundation/meta/tests/test_matrix.cpp \
                 ${WRKSRC}/src/appleseed/foundation/meta/tests/test_quaternion.cpp \
                 ${WRKSRC}/src/appleseed/foundation/meta/tests/test_vector.cpp \

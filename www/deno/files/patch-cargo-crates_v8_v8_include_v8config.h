@@ -1,5 +1,5 @@
---- cargo-crates/v8-0.93.1/v8/include/v8config.h.orig	2020-06-26 16:28:04 UTC
-+++ cargo-crates/v8-0.93.1/v8/include/v8config.h
+--- cargo-crates/v8-0.97.0/v8/include/v8config.h.orig	2020-06-26 16:28:04 UTC
++++ cargo-crates/v8-0.97.0/v8/include/v8config.h
 @@ -381,7 +381,18 @@ path. Add it with -I<path> to the command line
  
  # define V8_HAS_BUILTIN_ADD_OVERFLOW (__has_builtin(__builtin_add_overflow))

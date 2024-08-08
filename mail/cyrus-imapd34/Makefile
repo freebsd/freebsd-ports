@@ -1,5 +1,5 @@
 PORTNAME=	cyrus-imapd
-PORTVERSION=	3.4.8
+PORTVERSION=	3.4.9
 PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTNAME}-${PORTVERSION}/
@@ -105,7 +105,7 @@ PCRE2_CONFIGURE_ON=	--disable-pcre
 PCRE2_CONFIGURE_OFF=	--disable-pcre2
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
-REPLICATION_DESC=	Enable replication (experimental)
+REPLICATION_DESC=	Enable replication
 REPLICATION_CONFIGURE_ENABLE=replication
 SRS_DESC=		Enable Sender Rewriting Scheme support
 SRS_CONFIGURE_ENABLE=	srs

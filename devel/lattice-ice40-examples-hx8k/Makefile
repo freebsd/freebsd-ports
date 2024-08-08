@@ -3,12 +3,14 @@ PORTVERSION=	g20180310
 PORTREVISION=	2
 CATEGORIES=	devel
 
-MAINTAINER=	manu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lattice iCE40 FPGA examples for the Olimex HX8K board
 WWW=		https://github.com/OLIMEX/iCE40HX8K-EVB
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		Fails to compile
 
 BUILD_DEPENDS=	abc:cad/abc \
 		arachne-pnr:devel/arachne-pnr \

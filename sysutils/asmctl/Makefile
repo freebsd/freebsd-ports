@@ -1,6 +1,5 @@
 PORTNAME=	asmctl
-PORTVERSION=	1.9
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	naito.yuichiro@gmail.com
@@ -13,7 +12,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	yuichiro-naito
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 post-install:

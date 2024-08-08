@@ -1,7 +1,6 @@
 PORTNAME=	cargo-llvm-cov
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.10
-PORTREVISION=	1
+DISTVERSION=	0.6.11
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +21,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		anyhow-1.0.86 \
 		autocfg-1.3.0 \
 		bitflags-1.3.2 \
-		bitflags-2.5.0 \
+		bitflags-2.6.0 \
 		bstr-1.9.1 \
 		byteorder-1.5.0 \
 		camino-1.1.7 \
@@ -41,40 +40,40 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		indexmap-2.2.6 \
 		is_executable-1.0.1 \
 		itoa-1.0.11 \
-		lcov2cobertura-1.0.3 \
+		lcov2cobertura-1.0.5 \
 		lexopt-0.3.0 \
 		libc-0.2.155 \
 		linux-raw-sys-0.4.14 \
-		memchr-2.7.2 \
+		memchr-2.7.4 \
 		normpath-1.2.0 \
 		once_cell-1.19.0 \
 		opener-0.7.1 \
-		os_pipe-1.1.5 \
-		proc-macro2-1.0.85 \
+		os_pipe-1.2.0 \
+		proc-macro2-1.0.86 \
 		quick-xml-0.31.0 \
 		quote-1.0.36 \
 		redox_syscall-0.4.1 \
-		regex-1.10.4 \
-		regex-automata-0.4.6 \
-		regex-syntax-0.8.3 \
+		regex-1.10.5 \
+		regex-automata-0.4.7 \
+		regex-syntax-0.8.4 \
 		rustc-demangle-0.1.24 \
 		rustix-0.38.34 \
 		rustversion-1.0.17 \
 		ruzstd-0.7.0 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
-		serde-1.0.203 \
-		serde_derive-1.0.203 \
-		serde_json-1.0.117 \
+		serde-1.0.204 \
+		serde_derive-1.0.204 \
+		serde_json-1.0.120 \
 		serde_spanned-0.6.6 \
 		shared_child-1.0.0 \
 		shell-escape-0.1.5 \
-		syn-2.0.66 \
-		tar-0.4.40 \
+		syn-2.0.71 \
+		tar-0.4.41 \
 		tempfile-3.10.1 \
 		termcolor-1.4.1 \
 		toml_datetime-0.6.6 \
-		toml_edit-0.22.13 \
+		toml_edit-0.22.16 \
 		unicode-ident-1.0.12 \
 		walkdir-2.5.0 \
 		winapi-0.3.9 \
@@ -82,16 +81,16 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		winapi-util-0.1.8 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.52.0 \
-		windows-targets-0.52.5 \
-		windows_aarch64_gnullvm-0.52.5 \
-		windows_aarch64_msvc-0.52.5 \
-		windows_i686_gnu-0.52.5 \
-		windows_i686_gnullvm-0.52.5 \
-		windows_i686_msvc-0.52.5 \
-		windows_x86_64_gnu-0.52.5 \
-		windows_x86_64_gnullvm-0.52.5 \
-		windows_x86_64_msvc-0.52.5 \
-		winnow-0.6.9 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.52.6 \
+		winnow-0.6.14 \
 		xattr-1.3.1
 
 PLIST_FILES=	bin/${PORTNAME}

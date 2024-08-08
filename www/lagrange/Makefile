@@ -1,5 +1,5 @@
 PORTNAME=	lagrange
-DISTVERSION=	1.16.5
+DISTVERSION=	1.17.6
 CATEGORIES=	www
 MASTER_SITES=	https://git.skyjake.fi/gemini/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -19,12 +19,12 @@ LIB_DEPENDS=	libfribidi.so:converters/fribidi \
 		libwebp.so:graphics/webp
 
 USES=		cmake compiler:c11 desktop-file-utils pkgconfig sdl ssl xorg
-
 BROKEN_SSL=	libressl
 BROKEN_SSL_REASON_libressl=	needs features only available in OpenSSL
-
 USE_SDL=	sdl2
 USE_XORG=	ice sm x11 xext
+
+CMAKE_ARGS+=	-DTFDN_ENABLE_WARN_ERROR=OFF
 
 OPTIONS_DEFINE=	SSE41
 

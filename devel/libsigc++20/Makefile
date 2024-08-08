@@ -1,18 +1,18 @@
 PORTNAME=	libsigc++
-PORTVERSION=	2.12.0
+DISTVERSION=	2.12.1
 CATEGORIES=	devel
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME \
+		https://github.com/libsigcplusplus/libsigcplusplus/releases/download/${DISTVERSION}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Callback Framework for C++
-WWW=		http://libsigc.sourceforge.net/
+WWW=		https://github.com/libsigcplusplus/libsigcplusplus
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	limit:^2\.12\.
 
-INSTALL_TARGET=	install-strip
 USES=		compiler:c++11-lang meson tar:xz
 USE_LDCONFIG=	yes
 

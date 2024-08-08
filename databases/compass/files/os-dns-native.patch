@@ -1,0 +1,12 @@
+--- package/binding.gyp.orig	2023-01-11 23:00:32.861946000 +0900
++++ package/binding.gyp	2023-01-11 23:00:57.673787000 +0900
+@@ -20,9 +20,6 @@
+           "libraries": ["-ldnsapi"]
+         }
+       }, {
+-        "link_settings": {
+-          "libraries": ["-lresolv"]
+-        }
+       }]
+     ]
+   }]

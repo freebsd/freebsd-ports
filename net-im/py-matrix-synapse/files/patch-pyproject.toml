@@ -1,6 +1,6 @@
---- pyproject.toml.orig	2024-03-05 15:15:09 UTC
+--- pyproject.toml.orig	2024-07-16 11:51:30 UTC
 +++ pyproject.toml
-@@ -216,17 +216,6 @@ pydantic = ">=1.7.4, <3"
+@@ -215,16 +215,6 @@ pydantic = ">=1.7.4, <3"
  # See https://github.com/matrix-org/synapse/issues/15858
  pydantic = ">=1.7.4, <3"
  
@@ -14,7 +14,6 @@
 -# needed.
 -setuptools_rust = ">=1.3"
 -
--
- # Optional Dependencies
- # ---------------------
- matrix-synapse-ldap3 = { version = ">=0.1", optional = true }
+ # This is used for parsing multipart responses
+ python-multipart = ">=0.0.9"
+ 

@@ -1,0 +1,15 @@
+This package provides powerful tools to generate GraphQL types, queries,
+mutations and resolvers from Django models.
+
+Supported Features:
+
+* GraphQL type generation from models
+* Filtering, pagination and ordering
+* Basic create, retrieve, update and delete (CRUD) types and mutations
+* Basic Django auth support, current user query, login and logout mutations
+* Django sync and async views
+* Permission extension using django's permissioning system
+* Relay support with automatic resolvers generation
+* Query optimization to improve performance and avoid common pitfalls (e.g n+1)
+* Debug Toolbar integration with graphiql to display metrics like SQL queries
+* Unit test integration

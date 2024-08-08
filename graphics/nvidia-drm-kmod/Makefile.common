@@ -30,6 +30,10 @@ MAKE_ENV+=	DEBUG_FLAGS=${DEBUG_FLAGS} \
 WRKSRC=		${WRKDIR}/NVIDIA-FreeBSD-${ARCH_SUFX}-${NVIDIA_DISTVERSION}/
 WRKSRC_SUBDIR=	src/nvidia-drm/
 
+.if ${NVVERSION} < 555.04202
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-nvidia-drm-freebsd-lkpi.c
+.endif
+
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/X11/xorg.conf.d/
 	${INSTALL_DATA} ${WRKDIR}/20-nvidia-drm-outputclass.conf ${STAGEDIR}${PREFIX}/share/X11/xorg.conf.d/

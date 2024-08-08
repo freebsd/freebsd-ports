@@ -1,5 +1,6 @@
 PORTNAME=	tg_owt
 PORTVERSION=	0.0.20240615
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 PATCH_SITES=	https://github.com/desktop-app/tg_owt/commit/

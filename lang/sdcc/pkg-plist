@@ -243,6 +243,7 @@ bin/sdranlib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic14/libm.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic14/libme.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic14/libsdcc.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic14/libsdcce.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/crt0.o
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/crt0i.o
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic16/crt0iz.o

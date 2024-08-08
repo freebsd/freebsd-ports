@@ -1,6 +1,6 @@
+include/chewing/chewing-compat.h
 include/chewing/chewing.h
 include/chewing/chewingio.h
-include/chewing/chewing-compat.h
 include/chewing/global.h
 include/chewing/mod_aux.h
 lib/libchewing.so

@@ -1,0 +1,11 @@
+--- ast.c.orig	2023-11-12 11:25:48 UTC
++++ ast.c
+@@ -89,7 +89,7 @@
+ # define ZEND_BIND_REF 1
+ #endif
+ 
+-#if PHP_VERSION_ID < 70400
++#if PHP_VERSION_ID < 70400 || PHP_VERSION_ID >= 80400
+ # define ZEND_DIM_ALTERNATIVE_SYNTAX (1<<1)
+ # define ZEND_PARENTHESIZED_CONDITIONAL 1
+ #endif

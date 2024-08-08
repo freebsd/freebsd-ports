@@ -1,3 +1,3 @@
-TIMESTAMP = 1720221697
-SHA256 (openai-1.35.10.tar.gz) = 85966949f4f960f3e4b239a659f9fd64d3a97ecc43c44dc0a044b5c7f11cccc6
-SIZE (openai-1.35.10.tar.gz) = 255093
+TIMESTAMP = 1722665443
+SHA256 (openai-1.38.0.tar.gz) = 30fb324bf452ecb1194ca7dbc64566a4d7aa054c6a5da857937ede7d517a220b
+SIZE (openai-1.38.0.tar.gz) = 257665

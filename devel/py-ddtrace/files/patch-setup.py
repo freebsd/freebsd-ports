@@ -1,24 +1,22 @@
---- setup.py.orig	2024-04-04 15:25:08 UTC
+--- setup.py.orig	2024-08-01 21:44:34 UTC
 +++ setup.py
-@@ -8,9 +8,7 @@ import tarfile
+@@ -8,7 +8,6 @@ import tarfile
  import sysconfig
  import tarfile
  
 -import cmake
+ from setuptools_rust import Binding
+ from setuptools_rust import RustExtension
  
--
- from setuptools import Extension, find_packages, setup  # isort: skip
- from setuptools.command.build_ext import build_ext  # isort: skip
- from setuptools.command.build_py import build_py as BuildPyCommand  # isort: skip
-@@ -481,10 +479,9 @@ setup(
+@@ -495,10 +494,9 @@ setup(
      # funcsigs backport required for vendored debtcollector
      cmdclass={
          "build_ext": CMakeBuild,
 -        "build_py": LibraryDownloader,
          "clean": CleanLibraries,
      },
--    setup_requires=["setuptools_scm[toml]>=4", "cython", "cmake>=3.24.2,<3.28"],
-+    setup_requires=["setuptools_scm[toml]>=4", "cython"],
+-    setup_requires=["setuptools_scm[toml]>=4", "cython", "cmake>=3.24.2,<3.28", "setuptools-rust"],
++    setup_requires=["setuptools_scm[toml]>=4", "cython", "setuptools-rust"],
      ext_modules=ext_modules
      + cythonize(
          [

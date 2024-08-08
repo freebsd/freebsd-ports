@@ -1,0 +1,8 @@
+navi allows you to browse through cheatsheets (that you may write yourself or
+download from maintainers) and execute commands. Suggested values for arguments
+are dynamically displayed in a list.
+
+  - it will spare you from knowing CLIs by heart
+  - it will spare you from copy-pasting output from intermediate commands
+  - it will make you type less
+  - it will teach you new one-liners

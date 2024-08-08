@@ -252,7 +252,7 @@ NJS_XML_IMPLIES=	HTTP NJS
 NJS_XML_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 			libxslt.so:textproc/libxslt
 
-OTEL_GH_TUPLE=		osokin:nginx-otel:8f0857d:otel
+OTEL_GH_TUPLE=		osokin:nginx-otel:52efd18:otel
 OTEL_VARS=		DSO_EXTMODS+=otel OTEL_SUBDIR=/
 OTEL_LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 			libcares.so:dns/c-ares \

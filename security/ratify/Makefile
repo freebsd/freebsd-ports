@@ -1,6 +1,5 @@
 PORTNAME=	ratify
-DISTVERSION=	1.0.0
-PORTREVISION=	3
+DISTVERSION=	2.2.0
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,6 +32,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \
 		colorchoice-1.0.0 \
+		console-0.15.8 \
 		cpufeatures-0.2.11 \
 		crossbeam-channel-0.5.8 \
 		crossbeam-deque-0.8.3 \
@@ -44,6 +44,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		digest-0.10.7 \
 		doc-comment-0.3.3 \
 		either-1.9.0 \
+		encode_unicode-0.3.6 \
 		errno-0.3.8 \
 		fastrand-2.0.1 \
 		generic-array-0.14.7 \
@@ -54,6 +55,8 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		hex-0.4.3 \
 		human_bytes-0.4.3 \
 		ignore-0.4.21 \
+		indicatif-0.17.8 \
+		instant-0.1.13 \
 		itertools-0.11.0 \
 		itertools-0.12.1 \
 		itoa-1.0.10 \
@@ -67,10 +70,12 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		memoffset-0.9.0 \
 		nu-ansi-term-0.46.0 \
 		num_cpus-1.16.0 \
+		number_prefix-0.4.0 \
 		once_cell-1.18.0 \
 		overload-0.1.1 \
 		pathdiff-0.2.1 \
 		pin-project-lite-0.2.13 \
+		portable-atomic-1.6.0 \
 		predicates-3.0.4 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
@@ -100,7 +105,10 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		strum_macros-0.25.3 \
 		syn-2.0.52 \
 		tempfile-3.8.1 \
+		termcolor-1.4.1 \
 		termtree-0.4.1 \
+		thiserror-1.0.61 \
+		thiserror-impl-1.0.61 \
 		thread_local-1.1.7 \
 		tracing-0.1.40 \
 		tracing-core-0.1.32 \
@@ -108,6 +116,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		tracing-subscriber-0.3.18 \
 		typenum-1.17.0 \
 		unicode-ident-1.0.12 \
+		unicode-width-0.1.13 \
 		utf8parse-0.2.1 \
 		valuable-0.1.0 \
 		version_check-0.9.4 \

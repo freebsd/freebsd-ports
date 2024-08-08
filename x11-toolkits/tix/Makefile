@@ -1,6 +1,6 @@
 PORTNAME=	tix
-PORTVERSION=	8.4.3
-PORTREVISION=	2
+DISTVERSION=	8.4.3
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF
 DISTNAME=	Tix${DISTVERSION}-src${DISTVERSIONSUFFIX}
@@ -8,6 +8,11 @@ DISTNAME=	Tix${DISTVERSION}-src${DISTVERSIONSUFFIX}
 MAINTAINER=	doconnor@gsoft.com.au
 COMMENT=	Extension to the Tk toolkit
 WWW=		https://tix.sourceforge.net/
+
+LICENSE=	TclTk
+LICENSE_NAME=	Tcl/Tk License
+LICENSE_FILE=	${WRKSRC}/docs/license.tcltk
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		tk:tea
 USE_LDCONFIG=	yes

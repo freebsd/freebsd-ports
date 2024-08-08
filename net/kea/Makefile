@@ -1,5 +1,5 @@
 PORTNAME=	kea
-DISTVERSION=	2.6.0
+DISTVERSION=	2.6.1
 CATEGORIES=	net
 MASTER_SITES=	ISC/kea/${DISTVERSION}
 
@@ -21,17 +21,16 @@ CPE_VERSION=	${DISTVERSION:C/-.*//}
 CPE_UPDATE=	${DISTVERSION:C/.*-//:tl}
 .endif
 
-USE_LDCONFIG=			yes
-USE_RC_SUBR=			${PORTNAME}
-GNU_CONFIGURE=			yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS=			--with-boost-include=${LOCALBASE}/include \
-				--with-boost-lib-dir=${LOCALBASE}/lib \
-				--with-log4cplus=${LOCALBASE} \
-				--with-openssl=${OPENSSLBASE} \
-				--without-werror
-INSTALL_TARGET=			install-strip
-TEST_TARGET=			check
+USE_LDCONFIG=	yes
+USE_RC_SUBR=	${PORTNAME}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-boost-include=${LOCALBASE}/include \
+		--with-boost-lib-dir=${LOCALBASE}/lib \
+		--with-log4cplus=${LOCALBASE} \
+		--with-openssl=${OPENSSLBASE} \
+		--without-werror
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 PORTDOCS=	AUTHORS CONTRIBUTING.md COPYING ChangeLog README SECURITY.md \
 		code_of_conduct.md examples platforms.rst

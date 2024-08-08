@@ -1,0 +1,47 @@
+PORTNAME=	aquamarine
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.3.0
+CATEGORIES=	x11-toolkits
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	131ed05f99e6.patch:-p1 # https://github.com/hyprwm/aquamarine/pull/42
+
+MAINTAINER=	jbeich@FreeBSD.org
+COMMENT=	Very light linux rendering backend library
+WWW=		https://github.com/hyprwm/aquamarine
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+		hyprwayland-scanner>=0.4.0:devel/hyprwayland-scanner \
+		wayland-protocols>0:graphics/wayland-protocols \
+		hwdata>0:misc/hwdata
+LIB_DEPENDS=	libhyprutils.so:devel/hyprutils \
+		libudev.so:devel/libudev-devd \
+		libdrm.so:graphics/libdrm \
+		libwayland-client.so:graphics/wayland \
+		libdisplay-info.so:sysutils/libdisplay-info \
+		libseat.so:sysutils/seatd \
+		libinput.so:x11/libinput
+RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
+
+USES=		cmake:testing compiler:c++11-lib gl pathfix pkgconfig xorg
+USE_GITHUB=	yes
+USE_GL=		egl gbm glesv2
+USE_XORG=	pixman
+GH_ACCOUNT=	hyprwm
+PLIST_SUB=	VERSION=${DISTVERSION:C/-.*//}
+
+# XXX Drop after FreeBSD 14.0 EOL around 2024-10-01
+.if exists(/usr/lib/libc++.so) && !exists(/usr/include/c++/v1/__format/write_escaped.h)
+CXXFLAGS+=	-fexperimental-library
+.endif
+
+# XXX Drop after FreeBSD 13.4 EOL around 2026-01-31
+# https://cgit.freebsd.org/src/commit/?id=af93fea71038
+.if !exists(/usr/include/sys/timerfd.h)
+LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
+.endif
+
+.include <bsd.port.mk>

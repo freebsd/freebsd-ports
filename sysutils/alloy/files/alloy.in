@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# PROVIDE: alloy
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# alloy_enable (bool):          Set to NO by default.
+#               Set it to YES to enable alloy.
+# alloy_user (string):          Set user that alloy will run under
+#               Default is "nobody".
+# alloy_group (string):         Set group that alloy will run under
+#               Default is "nobody".
+# alloy_listen_address (string):Set ip:port that alloy will listen on
+#               Default is ":9200".
+# alloy_storage_path (string):  Set storage.path
+#               Default is "/var/alloy".
+# alloy_args (string):          Set extra arguments to pass to alloy
+#               Default is "".
+
+. /etc/rc.subr
+
+name=alloy
+rcvar=alloy_enable
+
+load_rc_config $name
+
+: ${alloy_enable:="NO"}
+: ${alloy_user:="nobody"}
+: ${alloy_group:="nobody"}
+: ${alloy_args:=""}
+: ${alloy_storage_path:="/var/alloy"}
+: ${alloy_listen_address:=":9200"}
+
+pidfile=/var/run/alloy.pid
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/alloy"
+run="run /usr/local/etc/alloy.flow"
+command_args="-S -T ${name} -p ${pidfile} /usr/bin/env ${procname} ${run} \
+    --storage.path=${alloy_storage_path} --server.http.listen-addr=${alloy_listen_address} ${alloy_args}"
+
+start_precmd=alloy_startprecmd
+
+alloy_startprecmd() {
+  if [ ! -e ${pidfile} ]; then
+    install -o ${alloy_user} -g ${alloy_group} /dev/null ${pidfile}
+  fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

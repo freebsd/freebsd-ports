@@ -1,6 +1,6 @@
 PORTNAME=	sad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.30
+DISTVERSION=	0.4.31
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,28 +14,28 @@ USES=		cargo python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	ms-jpq
 
-CARGO_CRATES=	addr2line-0.21.0 \
+CARGO_CRATES=	addr2line-0.22.0 \
 		adler-1.0.2 \
 		aho-corasick-1.1.3 \
 		ansi_term-0.12.1 \
 		anstream-0.6.14 \
 		anstyle-1.0.7 \
 		anstyle-parse-0.2.4 \
-		anstyle-query-1.0.3 \
+		anstyle-query-1.1.0 \
 		anstyle-wincon-3.0.3 \
 		autocfg-1.3.0 \
-		backtrace-0.3.71 \
-		bitflags-2.5.0 \
+		backtrace-0.3.73 \
+		bitflags-2.6.0 \
 		bytes-1.6.0 \
-		cc-1.0.98 \
+		cc-1.0.101 \
 		cfg-if-1.0.0 \
 		clap-4.5.7 \
 		clap_builder-4.5.7 \
 		clap_derive-4.5.5 \
-		clap_lex-0.7.0 \
+		clap_lex-0.7.1 \
 		colorchoice-1.0.1 \
 		difflib-0.4.0 \
-		either-1.12.0 \
+		either-1.13.0 \
 		errno-0.3.9 \
 		futures-0.3.30 \
 		futures-channel-0.3.30 \
@@ -47,25 +47,25 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		futures-task-0.3.30 \
 		futures-util-0.3.30 \
 		getrandom-0.2.15 \
-		gimli-0.28.1 \
+		gimli-0.29.0 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		home-0.5.9 \
 		is_terminal_polyfill-1.70.0 \
 		libc-0.2.155 \
 		linux-raw-sys-0.4.14 \
-		memchr-2.7.2 \
-		miniz_oxide-0.7.3 \
+		memchr-2.7.4 \
+		miniz_oxide-0.7.4 \
 		mio-0.8.11 \
 		num_cpus-1.16.0 \
-		object-0.32.2 \
+		object-0.36.0 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
-		proc-macro2-1.0.83 \
+		proc-macro2-1.0.86 \
 		quote-1.0.36 \
 		regex-1.10.5 \
-		regex-automata-0.4.6 \
-		regex-syntax-0.8.3 \
+		regex-automata-0.4.7 \
+		regex-syntax-0.8.4 \
 		rustc-demangle-0.1.24 \
 		rustix-0.38.34 \
 		shlex-1.3.0 \
@@ -73,11 +73,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		slab-0.4.9 \
 		socket2-0.5.7 \
 		strsim-0.11.1 \
-		syn-2.0.66 \
+		syn-2.0.68 \
 		terminal_size-0.3.0 \
 		tokio-1.38.0 \
 		unicode-ident-1.0.12 \
-		utf8parse-0.2.1 \
+		utf8parse-0.2.2 \
 		uuid-1.9.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		which-6.0.1 \

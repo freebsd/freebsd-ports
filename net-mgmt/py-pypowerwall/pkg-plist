@@ -1,3 +1,7 @@
+@comment %%DATADIR%%/beta.txt
+@comment %%DATADIR%%/requirements.txt
+@comment %%DATADIR%%/upload-beta.sh
+@comment %%DATADIR%%/Dockerfile.beta
 %%DATADIR%%/HELP.md
 %%DATADIR%%/README.md
 %%DATADIR%%/RELEASE.md

@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	5.1.6
 CATEGORIES=	textproc
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast and safe spellchecking C++ library
 WWW=		https://nuspell.github.io/
 

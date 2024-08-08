@@ -1,4 +1,4 @@
-libwmf is a library for Unix like machines that can convert wmf
-files into other formats, currently it supports a gd binding
-to convert to png, and an X one to draw direct to an X window
-or pixmap.
+ibwmf is a library for reading vector images in Microsøft's native Windøws
+Metafile Format (WMF) and for either (a) displaying them in, e.g., an X window;
+or (b) converting them to more standard/open file formats such as, e.g., the
+W3C's XML-based Scaleable Vector Graphic (SVG) format.

@@ -10,6 +10,9 @@ WWW=		https://www.dns-oarc.net/tools/dsc/
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Depends on expired math/ploticus
+EXPIRATION_DATE=2024-08-31
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	ploticus>=2.40:math/ploticus				\
 		p5-CGI-Untaint>=1.26:www/p5-CGI-Untaint			\

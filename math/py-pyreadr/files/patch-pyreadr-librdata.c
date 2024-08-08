@@ -1,4 +1,4 @@
---- pyreadr/librdata.c.orig	2023-08-09 09:41:49 UTC
+--- pyreadr/librdata.c.orig	2024-07-24 15:48:00 UTC
 +++ pyreadr/librdata.c
 @@ -5,8 +5,6 @@
      "distutils": {
@@ -13,17 +13,17 @@
          "name": "pyreadr.librdata",
          "sources": [
              "pyreadr/librdata.pyx",
--            "pyreadr/libs/librdata/src/rdata_write.c",
--            "pyreadr/libs/librdata/src/rdata_bits.c",
--            "pyreadr/libs/librdata/src/rdata_read.c",
--            "pyreadr/libs/librdata/src/rdata_parser.c",
+-            "pyreadr/libs/librdata/src/rdata_io_unistd.c",
 -            "pyreadr/libs/librdata/src/CKHashTable.c",
--            "pyreadr/libs/librdata/src/rdata_error.c",
--            "pyreadr/libs/librdata/src/rdata_io_unistd.c"
+-            "pyreadr/libs/librdata/src/rdata_bits.c",
+-            "pyreadr/libs/librdata/src/rdata_parser.c",
+-            "pyreadr/libs/librdata/src/rdata_read.c",
+-            "pyreadr/libs/librdata/src/rdata_write.c",
+-            "pyreadr/libs/librdata/src/rdata_error.c"
          ]
      },
      "module_name": "pyreadr.librdata"
-@@ -1117,8 +1108,8 @@ static CYTHON_INLINE float __PYX_NAN() {
+@@ -1260,8 +1251,8 @@ static CYTHON_INLINE float __PYX_NAN() {
  #include <time.h>
  #include <stdint.h>
  #include <sys/types.h>

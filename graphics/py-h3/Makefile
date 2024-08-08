@@ -13,15 +13,14 @@ WWW=		https://uber.github.io/h3-py/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake:devel/cmake-core \
-		h3>=3.7.2:graphics/h3 \
+BUILD_DEPENDS=	h3>=3.7.2:graphics/h3 \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>=0:devel/py-scikit-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libh3.so:graphics/h3
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		localbase:ldflags ninja:build python
+USES=		cmake:indirect localbase:ldflags ninja:build python
 USE_PYTHON=	autoplist concurrent cython pep517 pytest
 
 CFLAGS+=	-I${LOCALBASE}/include/h3

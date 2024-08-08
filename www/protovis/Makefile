@@ -5,7 +5,8 @@ CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JavaScript graphical toolkit for data visualization
-WWW=		https://mbostock.github.io/protovis/
+WWW=		https://mbostock.github.io/protovis/ \
+		https://github.com/mbostock/protovis
 
 LICENSE=	BSD3CLAUSE
 

@@ -1,5 +1,5 @@
 PORTNAME=	sql-workbench
-PORTVERSION=	138
+PORTVERSION=	141
 PORTEPOCH=	1
 CATEGORIES=	databases java
 MASTER_SITES=	http://www.sql-workbench.net/ \

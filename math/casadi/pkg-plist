@@ -97,6 +97,9 @@ include/casadi/core/runtime/casadi_norm_1.hpp
 include/casadi/core/runtime/casadi_norm_2.hpp
 include/casadi/core/runtime/casadi_norm_inf.hpp
 include/casadi/core/runtime/casadi_norm_inf_mul.hpp
+include/casadi/core/runtime/casadi_ocp_block.hpp
+include/casadi/core/runtime/casadi_oracle.hpp
+include/casadi/core/runtime/casadi_oracle_callback.hpp
 include/casadi/core/runtime/casadi_polyval.hpp
 include/casadi/core/runtime/casadi_project.hpp
 include/casadi/core/runtime/casadi_qp.hpp
@@ -106,6 +109,7 @@ include/casadi/core/runtime/casadi_rank1.hpp
 include/casadi/core/runtime/casadi_regularize.hpp
 include/casadi/core/runtime/casadi_runtime.hpp
 include/casadi/core/runtime/casadi_scal.hpp
+include/casadi/core/runtime/casadi_scaled_copy.hpp
 include/casadi/core/runtime/casadi_sparsify.hpp
 include/casadi/core/runtime/casadi_sparsity.hpp
 include/casadi/core/runtime/casadi_sqpmethod.hpp

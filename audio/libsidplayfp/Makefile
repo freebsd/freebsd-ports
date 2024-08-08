@@ -1,5 +1,5 @@
 PORTNAME=	libsidplayfp
-DISTVERSION=	2.7.1
+DISTVERSION=	2.8.0
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -22,6 +22,9 @@ CONFIGURE_ARGS=	--disable-static \
 		--with-gcrypt
 
 INSTALL_TARGET=	install-strip
+
+SIDPLAYFP_SHLIB_VERSION=        6.4.32
+STILVIEW_SHLIB_VERSION=         0.0.5
 
 PLIST_SUB+=	SIDPLAYFP_SHLIB_VER=${SIDPLAYFP_SHLIB_VERSION:C/\.[[:digit:].]+//} \
 		SIDPLAYFP_SHLIB_VERSION=${SIDPLAYFP_SHLIB_VERSION} \
@@ -46,11 +49,11 @@ CONFIGURE_ARGS+=	--with-simd=neon
 .endif
 
 .if ${ARCH} == "amd64"
-CONFIGURE_ARGS+=	--with-simd=sse2
+.if !defined(CPUTYPE)
+CFLAGS+=	-march=penryn
 .endif
-
-SIDPLAYFP_SHLIB_VERSION=	6.4.31
-STILVIEW_SHLIB_VERSION=		0.0.4
+CONFIGURE_ARGS+=	--with-simd=sse4
+.endif
 
 post-build-DOXYGEN-on:
 	${MAKE_CMD} doc -C ${WRKSRC}

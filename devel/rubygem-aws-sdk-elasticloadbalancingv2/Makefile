@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-elasticloadbalancingv2
-PORTVERSION=	1.108.0
+PORTVERSION=	1.109.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

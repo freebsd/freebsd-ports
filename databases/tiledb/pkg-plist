@@ -5,6 +5,8 @@ include/tiledb/api/c_api/buffer/buffer_api_external.h
 include/tiledb/api/c_api/buffer_list/buffer_list_api_external.h
 include/tiledb/api/c_api/config/config_api_external.h
 include/tiledb/api/c_api/context/context_api_external.h
+include/tiledb/api/c_api/current_domain/current_domain_api_enum.h
+include/tiledb/api/c_api/current_domain/current_domain_api_external_experimental.h
 include/tiledb/api/c_api/data_order/data_order_api_enum.h
 include/tiledb/api/c_api/data_order/data_order_api_external.h
 include/tiledb/api/c_api/datatype/datatype_api_enum.h
@@ -20,6 +22,7 @@ include/tiledb/api/c_api/filter/filter_api_enum.h
 include/tiledb/api/c_api/filter/filter_api_external.h
 include/tiledb/api/c_api/filter_list/filter_list_api_external.h
 include/tiledb/api/c_api/group/group_api_external.h
+include/tiledb/api/c_api/ndrectangle/ndrectangle_api_external_experimental.h
 include/tiledb/api/c_api/object/object_api_enum.h
 include/tiledb/api/c_api/object/object_api_external.h
 include/tiledb/api/c_api/query/query_api_enum.h
@@ -50,6 +53,7 @@ include/tiledb/config.h
 include/tiledb/consolidation_plan_experimental.h
 include/tiledb/context.h
 include/tiledb/core_interface.h
+include/tiledb/current_domain.h
 include/tiledb/deleter.h
 include/tiledb/dimension.h
 include/tiledb/dimension_label_experimental.h
@@ -62,6 +66,7 @@ include/tiledb/filter_list.h
 include/tiledb/fragment_info.h
 include/tiledb/group.h
 include/tiledb/log.h
+include/tiledb/ndrectangle.h
 include/tiledb/object.h
 include/tiledb/object_iter.h
 include/tiledb/query.h

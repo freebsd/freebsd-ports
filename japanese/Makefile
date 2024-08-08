@@ -223,7 +223,11 @@
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += prn
+    SUBDIR += py-SudachiPy
+    SUBDIR += py-fugashi
+    SUBDIR += py-ipadic
     SUBDIR += py-jaconv
+    SUBDIR += py-unidic
     SUBDIR += qkc
     SUBDIR += qolibri
     SUBDIR += quit
@@ -262,6 +266,7 @@
     SUBDIR += sourcehanserif-otf
     SUBDIR += spoqahansans-ttf
     SUBDIR += srd-fpw-package
+    SUBDIR += sudachi
     SUBDIR += suicavalue
     SUBDIR += tdiary
     SUBDIR += tegaki-zinnia-japanese

@@ -1,6 +1,6 @@
 PORTNAME=	aws-c-io
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.10
+DISTVERSION=	0.14.18
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -22,7 +22,5 @@ USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DCMAKE_INSTALL_LIBDIR=${LOCALBASE}/lib
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_TESTING
-
-#TESTS: some tests fail under poudriere interactive shell.
 
 .include <bsd.port.mk>

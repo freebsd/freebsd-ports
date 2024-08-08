@@ -1,6 +1,5 @@
 include/fizz/backend/openssl/Hasher.h
 include/fizz/backend/openssl/OpenSSL.h
-include/fizz/backend/openssl/OpenSSLFactory.h
 include/fizz/backend/openssl/Properties.h
 include/fizz/backend/openssl/certificate/CertUtils-inl.h
 include/fizz/backend/openssl/certificate/CertUtils.h
@@ -54,7 +53,9 @@ include/fizz/compression/ZstdCertificateCompressor.h
 include/fizz/compression/ZstdCertificateDecompressor.h
 include/fizz/compression/test/Mocks.h
 include/fizz/crypto/Crypto.h
+include/fizz/crypto/Hasher.h
 include/fizz/crypto/Hkdf.h
+include/fizz/crypto/Hmac.h
 include/fizz/crypto/KeyDerivation.h
 include/fizz/crypto/RandomGenerator.h
 include/fizz/crypto/Utils.h
@@ -76,6 +77,7 @@ include/fizz/crypto/hpke/Hpke.h
 include/fizz/crypto/hpke/Types.h
 include/fizz/crypto/hpke/Utils.h
 include/fizz/crypto/hpke/test/Mocks.h
+include/fizz/crypto/test/HmacTest.h
 include/fizz/crypto/test/Mocks.h
 include/fizz/crypto/test/TestUtil.h
 include/fizz/experimental/crypto/exchange/OQSKeyExchange.h
@@ -136,11 +138,11 @@ include/fizz/protocol/ech/ECHExtensions.h
 include/fizz/protocol/ech/Encryption.h
 include/fizz/protocol/ech/Types-inl.h
 include/fizz/protocol/ech/Types.h
+include/fizz/protocol/test/CertUtil.h
 include/fizz/protocol/test/Matchers.h
 include/fizz/protocol/test/Mocks.h
 include/fizz/protocol/test/ProtocolTest.h
-include/fizz/protocol/test/TestMessages.h
-include/fizz/protocol/test/Utilities.h
+include/fizz/protocol/test/TestUtil.h
 include/fizz/record/BufAndPaddingPolicy.h
 include/fizz/record/EncryptedRecordLayer.h
 include/fizz/record/Extensions-inl.h
