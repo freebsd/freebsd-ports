@@ -1,5 +1,6 @@
 PORTNAME?=	arcanist
 PORTVERSION?=	2024.19
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 PKGNAMEPREFIX=	phorgeit-
@@ -15,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		php:cli,flavors python:env shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	phorgeit
-GH_TAGNAME=	174bf094
 USE_PHP=	curl dom simplexml zlib
 IGNORE_WITH_PHP=	84
 
