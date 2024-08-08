@@ -173,7 +173,7 @@ you update your ports collection, before attempting any port upgrades.
   enabled.
 
 20240613:
-  AFFECTS: multimedia/audacios and multimedia/audacious-plugins
+  AFFECTS: multimedia/audacious and multimedia/audacious-plugins
   AUTHOR: madpilot@FreeBSD.org
 
   Upstream project made qt6 the new default, so the port flavors have
