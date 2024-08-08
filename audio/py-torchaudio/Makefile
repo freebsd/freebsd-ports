@@ -1,6 +1,7 @@
 PORTNAME=	torchaudio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	audio python # machine-learning
 MASTER_SITES=	https://downloads.sourceforge.net/project/sox/sox/14.4.2/:sox
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
