@@ -127,6 +127,7 @@
     SUBDIR += kismet
     SUBDIR += klg
     SUBDIR += lg
+    SUBDIR += libfds
     SUBDIR += librenms
     SUBDIR += libsmi
     SUBDIR += lldpd

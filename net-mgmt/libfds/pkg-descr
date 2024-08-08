@@ -1,0 +1,2 @@
+Flow Data Storage library for net-mgmt/ipfixcol2. The library provides
+components for parsing and processing IPFIX Messages.
