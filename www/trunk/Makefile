@@ -1,7 +1,6 @@
 PORTNAME=	trunk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.2
-PORTREVISION=	1
+DISTVERSION=	0.20.3
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -81,6 +80,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		const-str-proc-macro-0.3.2 \
 		constant_time_eq-0.1.5 \
 		convert_case-0.4.0 \
+		convert_case-0.6.0 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.6 \
 		cpufeatures-0.2.12 \
@@ -187,7 +187,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		libdeflate-sys-1.20.0 \
 		libdeflater-1.20.0 \
 		libredox-0.1.3 \
-		lightningcss-1.0.0-alpha.55 \
+		lightningcss-1.0.0-alpha.58 \
+		lightningcss-derive-1.0.0-alpha.43 \
 		linux-raw-sys-0.4.13 \
 		local-ip-address-0.6.1 \
 		lock_api-0.4.12 \
@@ -227,7 +228,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		outref-0.1.0 \
 		overload-0.1.1 \
 		oxipng-9.1.1 \
-		parcel_selectors-0.26.4 \
+		parcel_selectors-0.26.6 \
 		parcel_sourcemap-2.1.1 \
 		parking_lot-0.12.2 \
 		parking_lot_core-0.9.10 \
@@ -315,8 +316,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		security-framework-sys-2.10.0 \
 		selectors-0.22.0 \
 		semver-1.0.22 \
-		serde-1.0.200 \
-		serde_derive-1.0.200 \
+		serde-1.0.204 \
+		serde_derive-1.0.204 \
 		serde_json-1.0.116 \
 		serde_path_to_error-0.1.16 \
 		serde_spanned-0.6.5 \
@@ -387,6 +388,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.23 \
+		unicode-segmentation-1.11.0 \
 		unicode-width-0.1.12 \
 		untrusted-0.9.0 \
 		url-2.5.0 \
