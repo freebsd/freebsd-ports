@@ -1,6 +1,6 @@
 PORTNAME=	glfw
 DISTVERSION=	3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/glfw/glfw/releases/download/${DISTVERSION}/
 
@@ -25,7 +25,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=		DOCS EXAMPLES PREEDIT
-OPTIONS_DEFAULT=	PREEDIT X11
+OPTIONS_DEFAULT=	PREEDIT WAYLAND X11
 OPTIONS_MULTI=		PLATFORM
 OPTIONS_MULTI_PLATFORM=	WAYLAND X11
 PLATFORM_DESC=		Window creation platform
@@ -55,7 +55,7 @@ WAYLAND_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 			wayland-protocols>=0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
 WAYLAND_USES=		kde:5 pkgconfig
-WAYLAND_USE=		KDE=ecm
+WAYLAND_USE=		KDE=ecm:build
 WAYLAND_CMAKE_BOOL=	GLFW_BUILD_WAYLAND
 
 X11_USES=	xorg
