@@ -749,6 +749,7 @@
     SUBDIR += py-aiomysql
     SUBDIR += py-aiopg
     SUBDIR += py-aioredis
+    SUBDIR += py-aiosql
     SUBDIR += py-aiosqlite
     SUBDIR += py-alembic
     SUBDIR += py-apache-arrow
