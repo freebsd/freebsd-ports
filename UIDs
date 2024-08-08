@@ -486,7 +486,7 @@ valkey:*:537:537::0:0:Valkey Daemon:/nonexistent:/usr/sbin/nologin
 # free: 538
 # free: 539
 # free: 540
-# free: 541
+ipfixcol2:*:541:541::0:0:IPFIXcol2 User:/var/empty:/usr/sbin/nologin
 _flowd:*:542:542::0:0:flowd privilege separation user:/var/empty:/usr/sbin/nologin
 ejabberd:*:543:543::0:0:ejabberd pseudo user:/var/spool/ejabberd:/bin/sh
 # free: 544
