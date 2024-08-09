@@ -1,6 +1,6 @@
---- internal/sourceanalysis/go.go.orig	2024-06-21 19:21:07.662367000 +0200
-+++ internal/sourceanalysis/go.go	2024-06-21 19:21:27.715630000 +0200
-@@ -18,7 +18,7 @@
+--- internal/sourceanalysis/go.go.orig	1979-11-29 23:00:00 UTC
++++ internal/sourceanalysis/go.go
+@@ -18,7 +18,7 @@ func goAnalysis(r reporter.Reporter, pkgs []models.Pac
  )
  
  func goAnalysis(r reporter.Reporter, pkgs []models.PackageVulns, source models.SourceInfo) {
