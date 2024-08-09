@@ -23,7 +23,6 @@
 # This file can be linted with Tools/scripts/MOVEDlint.awk
 #
 # Port|Moved to|Date|Why
-x11/wmctrl|x11/wmctrl-fork|2024-05-18|Forked due to the upstream being no longer available; the port had no maintainer
 www/wt3|www/wt|2021-01-03|Has expired: Upstream end of life, switch to www/wt instead
 archivers/ecm|archivers/cmdpack|2021-01-04|ECM is now included in cmdpack
 math/qhull5|math/qhull|2021-01-04|Has expired: Legacy version of port no longer required by math/octave
@@ -3251,6 +3250,7 @@ x11-fonts/noto-serif-basic|x11-fonts/noto-serif|2024-05-13|Remove obsoleted port
 x11-fonts/noto-serif-extra|x11-fonts/noto-serif|2024-05-13|Remove obsoleted port. Use x11-fonts/noto-serif instead
 sysutils/vector||2024-05-15|Has expired: Unmaintained in tree and broken for months
 irc/sic||2024-05-15|Has expired: Last upstream release was in 2001 and no upstream WWW
+x11/wmctrl|x11/wmctrl-fork|2024-05-18|Forked due to the upstream being no longer available; the port had no maintainer
 devel/tarpaulin|devel/cargo-tarpaulin|2024-05-19|Rename port and package to reflect that this is a Cargo plugin
 sysutils/uutils-coreutils|sysutils/rust-coreutils|2024-05-21|Remove duplicate
 databases/foundationdb|databases/foundationdb71-server|2024-05-23|Reintegrated into databases/foundationdb71-server
@@ -3427,4 +3427,4 @@ science/mercantile|science/py-mercantile|2024-08-04|Move science/mercantile to s
 devel/py-jsonschema417|devel/py-jsonschema|2024-08-04|Remove obsoleted port. Use devel/py-jsonschema instead
 net/ns3||2024-08-07|Has expired: Outdated and unmaintained for years
 games/manaplus||2024-08-07|Has expired: Fails to build with libxml2 2.13.2 (PR 279705)
-dns/knot3-lib|knot3|2024-08-09|Superseded by knot3 which provides the libraries
+dns/knot3-lib|dns/knot3|2024-08-09|Superseded by knot3 which provides the libraries
