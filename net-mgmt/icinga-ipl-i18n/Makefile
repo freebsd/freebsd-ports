@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Icinga PHP library
 WWW=		https://github.com/Icinga/ipl-i18n
 

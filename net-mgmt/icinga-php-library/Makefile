@@ -4,7 +4,7 @@ DISTVERSION=	0.13.1
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Icinga PHP library
 WWW=		https://github.com/Icinga/icinga-php-library
 

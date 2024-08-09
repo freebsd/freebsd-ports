@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Host and service availability reports for Icinga
 WWW=		https://github.com/Icinga/icingaweb2-module-idoreports
 

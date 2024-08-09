@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Configuration frontend for Icinga 2, integrated automation
 WWW=		https://github.com/Icinga/icingaweb2-module-director
 
