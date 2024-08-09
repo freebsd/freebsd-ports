@@ -1,7 +1,6 @@
 PORTNAME=	thanos
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.35.1
-PORTREVISION=	3
+DISTVERSION=	0.36.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ler@FreeBSD.org
@@ -18,7 +17,7 @@ GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
 		-X github.com/prometheus/common/version.Version=${DISTVERSION} \
-		-X github.com/prometheus/common/version.Revision="086a698" \
+		-X github.com/prometheus/common/version.Revision="cfff551" \
 		-X github.com/prometheus/common/version.Branch="master" \
 		-X github.com/prometheus/common/version.BuildUser=${USER} \
 		-X github.com/prometheus/common/version.BuildDate=${BUILD_DATE}"
