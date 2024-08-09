@@ -8,5 +8,5 @@ include/secp256k1_schnorrsig.h
 lib/libsecp256k1.a
 lib/libsecp256k1.so
 lib/libsecp256k1.so.2
-lib/libsecp256k1.so.2.2.0
+lib/libsecp256k1.so.2.2.1
 libdata/pkgconfig/libsecp256k1.pc
