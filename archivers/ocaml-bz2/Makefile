@@ -1,39 +1,36 @@
 PORTNAME=	bz2
-PORTVERSION=	0.6.0
-PORTREVISION=	5
+DISTVERSION=	0.8.0
 CATEGORIES=	archivers
-MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/72/
 PKGNAMEPREFIX=	ocaml-
-DISTNAME=	caml${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@dev.thsi.be
 COMMENT=	OCaml library to manipulate bz2 files
-WWW=		http://camlbz2.forge.ocamlcore.org
+WWW=		https://gitlab.com/irill/camlbz2
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-OPTIONS_DEFINE=	DOCS
-
-DESTDIRNAME=	DONTUSEIT
-GNU_CONFIGURE=	yes
-MAKE_JOBS_UNSAFE=	yes
-USE_OCAML=		yes
-USE_OCAML_FINDLIB=	yes
+USES=		ocaml:dune
+USE_GITLAB=	yes
+GL_ACCOUNT=	irill
+GL_PROJECT=	camlbz2
+USE_OCAML=	yes
 USE_OCAML_LDCONFIG=	yes
-USE_OCAML_WASH=		yes
-USE_OCAMLFIND_PLIST=	yes
-USES=		gmake
 
-PORTDOCS=	*
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
+EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
+PORTDOCS=	LICENSE README
+PORTEXAMPLES=	bunzip2.ml
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/bz2/dllcamlbz2.so
+	@${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/bz2/bz2.cmxs \
+		${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/bz2/dllbz2_stubs.so
 
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

@@ -1,0 +1,15 @@
+%%OCAML_SITELIBDIR%%/bz2/META
+%%OCAML_SITELIBDIR%%/bz2/bz2.a
+%%OCAML_SITELIBDIR%%/bz2/bz2.cma
+%%OCAML_SITELIBDIR%%/bz2/bz2.cmi
+%%OCAML_SITELIBDIR%%/bz2/bz2.cmt
+%%OCAML_SITELIBDIR%%/bz2/bz2.cmti
+%%OCAML_SITELIBDIR%%/bz2/bz2.cmx
+%%OCAML_SITELIBDIR%%/bz2/bz2.cmxa
+%%OCAML_SITELIBDIR%%/bz2/bz2.cmxs
+%%OCAML_SITELIBDIR%%/bz2/bz2.ml
+%%OCAML_SITELIBDIR%%/bz2/bz2.mli
+%%OCAML_SITELIBDIR%%/bz2/dllbz2_stubs.so
+%%OCAML_SITELIBDIR%%/bz2/dune-package
+%%OCAML_SITELIBDIR%%/bz2/libbz2_stubs.a
+%%OCAML_SITELIBDIR%%/bz2/opam
