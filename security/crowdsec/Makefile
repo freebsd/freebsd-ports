@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.2
 # the remote tag was moved for 1.6.2, so we force another tag to avoid the version on proxy.golang.org
 DISTVERSIONSUFFIX=     -final
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 
 MAINTAINER=	marco@crowdsec.net

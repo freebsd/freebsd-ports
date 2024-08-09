@@ -1,7 +1,7 @@
 PORTNAME=	gitlab-elasticsearch-indexer
 PORTVERSION=	5.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	mfechner@FreeBSD.org

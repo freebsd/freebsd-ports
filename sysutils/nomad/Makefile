@@ -1,7 +1,7 @@
 PORTNAME=	nomad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://raw.githubusercontent.com/hashicorp/nomad/${DISTVERSIONFULL}/
 DISTFILES=	go.mod \
