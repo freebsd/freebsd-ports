@@ -1,2 +1,0 @@
-This port allows to install only libknot, which comes along with
-Knot DNS (authoritative), but also is a depency of knot-resolver
