@@ -429,6 +429,7 @@
     SUBDIR += foremost
     SUBDIR += fortunelock
     SUBDIR += fpart
+    SUBDIR += framework-system
     SUBDIR += frand
     SUBDIR += freebsd-bsdlabel
     SUBDIR += freebsd-fdisk
