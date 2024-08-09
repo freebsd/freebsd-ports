@@ -1,3 +1,32 @@
+  <vuln vid="8c342a6c-563f-11ef-a77e-901b0e9408dc">
+    <topic>soft-serve -- Remote code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>soft-serve</name>
+	<range><lt>0.7.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>soft-serve team reports:</p>
+	<blockquote cite="https://github.com/charmbracelet/soft-serve/security/advisories/GHSA-m445-w3xr-vp2f">
+	  <p>Arbitrary code execution by crafting git ssh requests</p>
+	  <p>It is possible for a user who can commit files to a
+	  repository hosted by Soft Serve to execute arbitrary code
+	  via environment manipulation and Git.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-41956</cvename>
+      <url>https://github.com/charmbracelet/soft-serve/security/advisories/GHSA-m445-w3xr-vp2f</url>
+    </references>
+    <dates>
+      <discovery>2024-08-01</discovery>
+      <entry>2024-08-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="48e6d514-5568-11ef-af48-6cc21735f730">
     <topic>PostgreSQL -- Prevent unauthorized code execution during pg_dump</topic>
     <affects>
