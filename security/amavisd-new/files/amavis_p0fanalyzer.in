@@ -16,7 +16,7 @@ load_rc_config $name
 : ${amavis_p0fanalyzer_pidfile1=/var/run/p0fanalyzer1.pid}
 : ${amavis_p0fanalyzer_pidfile2=/var/run/p0fanalyzer2.pid}
 : ${amavis_p0fanalyzer_flags=2345}
-: ${amavis_p0fanalyzer_scj_options:="net_basic"}
+: ${amavis_p0fanalyzer_svcj_options:="net_basic"}
 
 start_cmd=p0fanalyzer_start
 stop_cmd=p0fanalyzer_stop
