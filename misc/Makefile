@@ -463,6 +463,7 @@
     SUBDIR += py-natten
     SUBDIR += py-npTDMS
     SUBDIR += py-numcodecs
+    SUBDIR += py-ollama
     SUBDIR += py-onnx
     SUBDIR += py-onnx-tf
     SUBDIR += py-openai
