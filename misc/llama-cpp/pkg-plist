@@ -23,6 +23,7 @@ bin/llama-embedding
 %%EXAMPLES%%bin/llama-lookup-create
 %%EXAMPLES%%bin/llama-lookup-merge
 %%EXAMPLES%%bin/llama-lookup-stats
+%%EXAMPLES%%bin/llama-minicpmv-cli
 %%EXAMPLES%%bin/llama-parallel
 %%EXAMPLES%%bin/llama-passkey
 %%EXAMPLES%%bin/llama-perplexity

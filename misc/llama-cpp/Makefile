@@ -1,6 +1,6 @@
 PORTNAME=	llama-cpp
 DISTVERSIONPREFIX=	b
-DISTVERSION=	3542
+DISTVERSION=	3560
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,8 +11,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv7=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=278810
-
-LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
 USES=		cmake:testing compiler:c++11-lang python:run shebangfix
 USE_LDCONFIG=	yes
@@ -27,8 +25,6 @@ SHEBANG_GLOB=	*.py
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	LLAMA_BUILD_TESTS
 CMAKE_TESTING_ON=	LLAMA_BUILD_TESTS
-
-LDFLAGS+=	-pthread
 
 OPTIONS_DEFINE=		EXAMPLES VULKAN
 OPTIONS_DEFAULT=	VULKAN
