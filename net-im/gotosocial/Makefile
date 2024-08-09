@@ -1,7 +1,7 @@
 PORTNAME=	gotosocial
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.14.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-im
 MASTER_SITES?=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/v${DISTVERSION}/:web
 DISTFILES?=	${PORTNAME}_${DISTVERSION}_web-assets.tar.gz:web

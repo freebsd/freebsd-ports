@@ -1,5 +1,6 @@
 PORTNAME=	aerc
 DISTVERSION=	0.18.2
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	iamsleepy@ryuki.me
