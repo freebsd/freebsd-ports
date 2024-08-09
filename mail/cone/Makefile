@@ -1,6 +1,5 @@
 PORTNAME=	cone
-DISTVERSION=	1.13
-PORTREVISION=	2
+DISTVERSION=	1.14
 CATEGORIES=	mail
 # This is for beta versions, leave it in please:
 #MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/ \
@@ -21,9 +20,8 @@ LIB_DEPENDS=	libaspell.so:textproc/aspell \
 		libidn2.so:dns/libidn2
 RUN_DEPENDS=	gnupg>0:security/gnupg
 
-USES=		compiler:c++11-lang fam gettext gmake gnome iconv ldap:24 \
-		localbase:ldflags ncurses perl5 pkgconfig shebangfix ssl \
-		tar:bzip2
+USES=		gettext gmake gnome iconv ldap localbase:ldflags ncurses perl5 \
+		pkgconfig shebangfix ssl tar:bzip2
 USE_GNOME=	libxml2
 
 SHEBANG_FILES=	sysconftool
