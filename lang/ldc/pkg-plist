@@ -1,12 +1,13 @@
 bin/ldc-build-plugin
 bin/ldc-build-runtime
 bin/ldc-profdata
+bin/ldc-profgen
 bin/ldc-prune-cache
 bin/ldc2
 bin/ldmd2
 bin/timetrace2txt
 etc/ldc2.conf
-include/d/__builtins.di
+include/d/__importc_builtins.di
 include/d/core/atomic.d
 include/d/core/attribute.d
 include/d/core/bitop.d
@@ -36,7 +37,6 @@ include/d/core/internal/atomic.d
 include/d/core/internal/attributes.d
 include/d/core/internal/backtrace/dwarf.d
 include/d/core/internal/backtrace/elf.d
-include/d/core/internal/backtrace/handler.d
 include/d/core/internal/backtrace/libunwind.d
 include/d/core/internal/backtrace/macho.d
 include/d/core/internal/backtrace/unwind.d
@@ -61,6 +61,7 @@ include/d/core/internal/gc/proxy.d
 include/d/core/internal/hash.d
 include/d/core/internal/lifetime.d
 include/d/core/internal/moving.d
+include/d/core/internal/newaa.d
 include/d/core/internal/parseoptions.d
 include/d/core/internal/postblit.d
 include/d/core/internal/qsort.d
@@ -73,6 +74,7 @@ include/d/core/internal/util/array.d
 include/d/core/internal/util/math.d
 include/d/core/internal/vararg/aarch64.d
 include/d/core/internal/vararg/sysv_x64.d
+include/d/core/interpolation.d
 include/d/core/lifetime.d
 include/d/core/math.d
 include/d/core/memory.d
@@ -91,6 +93,7 @@ include/d/core/stdc/locale.d
 include/d/core/stdc/math.d
 include/d/core/stdc/signal.d
 include/d/core/stdc/stdarg.d
+include/d/core/stdc/stdatomic.d
 include/d/core/stdc/stddef.d
 include/d/core/stdc/stdint.d
 include/d/core/stdc/stdio.d
@@ -175,6 +178,10 @@ include/d/core/sys/freebsd/config.d
 include/d/core/sys/freebsd/dlfcn.d
 include/d/core/sys/freebsd/err.d
 include/d/core/sys/freebsd/execinfo.d
+include/d/core/sys/freebsd/ifaddrs.d
+include/d/core/sys/freebsd/mqueue.d
+include/d/core/sys/freebsd/net/if_.d
+include/d/core/sys/freebsd/net/if_dl.d
 include/d/core/sys/freebsd/netinet/in_.d
 include/d/core/sys/freebsd/pthread_np.d
 include/d/core/sys/freebsd/stdlib.d
@@ -190,7 +197,9 @@ include/d/core/sys/freebsd/sys/event.d
 include/d/core/sys/freebsd/sys/link_elf.d
 include/d/core/sys/freebsd/sys/mman.d
 include/d/core/sys/freebsd/sys/mount.d
+include/d/core/sys/freebsd/sys/socket.d
 include/d/core/sys/freebsd/sys/sysctl.d
+include/d/core/sys/freebsd/sys/types.d
 include/d/core/sys/freebsd/time.d
 include/d/core/sys/freebsd/unistd.d
 include/d/core/sys/linux/config.d
@@ -207,6 +216,8 @@ include/d/core/sys/linux/input.d
 include/d/core/sys/linux/input_event_codes.d
 include/d/core/sys/linux/io_uring.d
 include/d/core/sys/linux/link.d
+include/d/core/sys/linux/linux/if_arp.d
+include/d/core/sys/linux/linux/if_packet.d
 include/d/core/sys/linux/netinet/in_.d
 include/d/core/sys/linux/netinet/tcp.d
 include/d/core/sys/linux/perf_event.d
@@ -218,6 +229,7 @@ include/d/core/sys/linux/sys/eventfd.d
 include/d/core/sys/linux/sys/file.d
 include/d/core/sys/linux/sys/inotify.d
 include/d/core/sys/linux/sys/mman.d
+include/d/core/sys/linux/sys/mount.d
 include/d/core/sys/linux/sys/prctl.d
 include/d/core/sys/linux/sys/procfs.d
 include/d/core/sys/linux/sys/signalfd.d
@@ -710,22 +722,22 @@ include/d/std/zip.d
 include/d/std/zlib.d
 lib/ldc_rt.dso.o
 lib/libdruntime-ldc-debug-shared.so
-lib/libdruntime-ldc-debug-shared.so.105
-lib/libdruntime-ldc-debug-shared.so.105.2
+lib/libdruntime-ldc-debug-shared.so.109
+lib/libdruntime-ldc-debug-shared.so.109.1
 lib/libdruntime-ldc-debug.a
 lib/libdruntime-ldc-lto.a
 lib/libdruntime-ldc-shared.so
-lib/libdruntime-ldc-shared.so.105
-lib/libdruntime-ldc-shared.so.105.2
+lib/libdruntime-ldc-shared.so.109
+lib/libdruntime-ldc-shared.so.109.1
 lib/libdruntime-ldc.a
 lib/libphobos2-ldc-debug-shared.so
-lib/libphobos2-ldc-debug-shared.so.105
-lib/libphobos2-ldc-debug-shared.so.105.2
+lib/libphobos2-ldc-debug-shared.so.109
+lib/libphobos2-ldc-debug-shared.so.109.1
 lib/libphobos2-ldc-debug.a
 lib/libphobos2-ldc-lto.a
 lib/libphobos2-ldc-shared.so
-lib/libphobos2-ldc-shared.so.105
-lib/libphobos2-ldc-shared.so.105.2
+lib/libphobos2-ldc-shared.so.109
+lib/libphobos2-ldc-shared.so.109.1
 lib/libphobos2-ldc.a
 @dir include/d/etc/c/zlib/doc
 @dir include/d/etc/c/zlib/test
