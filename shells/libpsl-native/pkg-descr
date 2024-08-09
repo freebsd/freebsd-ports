@@ -1,0 +1,6 @@
+libpsl-native
+
+This library provides functionality missing from .NET Core via system calls,
+that are called from from the CorePsPlatform.cs file of PowerShell. The method
+to do this is a Platform Invoke, which is C#'s Foreign Function Interface to C
+code (and C++ by way of extern C).
