@@ -1,5 +1,5 @@
 PORTNAME=	ldc
-PORTVERSION=	1.35.0
+PORTVERSION=	1.39.0
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ldc-developers/${PORTNAME}/releases/download/v${DISTVERSION}/
@@ -32,9 +32,6 @@ CMAKE_ARGS+=	-DLDC_INSTALL_PREFIX="${PREFIX}" \
 		-DLLVM_CONFIG=${LOCALBASE}/bin/${LLVM_CONFIG} \
 		-DBUILD_SHARED_LIBS="BOTH" \
 		-DBUILD_LTO_LIBS=ON
-
-post-patch:
-	cd ${WRKDIR}/ldc2-${PORTVERSION}-freebsd-x86_64/import && ${PATCH} -p3 < ${PATCHDIR}/patch-runtime_druntime_src_core_sys_freebsd_config.d
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ldc-build-runtime
