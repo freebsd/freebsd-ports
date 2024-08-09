@@ -1,7 +1,7 @@
 PORTNAME=	ollama
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,6 +16,7 @@ ONLY_FOR_ARCHS_REASON=	bundled patched llama-cpp is placed into the arch-specifi
 
 BUILD_DEPENDS=	bash:shells/bash \
 		cmake:devel/cmake-core \
+		glslc:graphics/shaderc \
 		vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
@@ -27,12 +28,14 @@ GO_TARGET=	.
 USE_GITHUB=	nodefault
 GH_TUPLE=	ggerganov:llama.cpp:6eeaeba:llama_cpp/llm/llama.cpp
 
+MAKE_ENV=	PATH=${PATH}:${WRKSRC}/llm/build/bsd/x86_64_static/bin # workaround to find vulkan-shaders-gen
+
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch: # workaround for https://github.com/ollama/ollama/issues/6259 (use of extenral libllama.so)
 	@${REINPLACE_CMD} \
 		-e '\
-			s| llama | llama omp |; \
+			s| llama | llama ${LOCALBASE}/lib/libvulkan.so omp pthread |; \
 			s| llama | ${WRKSRC}/llm/build/bsd/x86_64_static/src/libllama.a |; \
 			s| ggml | ${WRKSRC}/llm/build/bsd/x86_64_static/ggml/src/libggml.a |; \
 		' \
