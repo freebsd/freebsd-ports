@@ -3,7 +3,7 @@ DISTVERSION=	4.6.0
 PORTREVISION=	3
 CATEGORIES=	net-mgmt python
 
-MAINTAINER=	flo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line interface for High-Availability cluster management
 WWW=		https://crmsh.github.io
 
