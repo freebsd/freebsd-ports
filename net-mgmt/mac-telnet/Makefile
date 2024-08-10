@@ -1,5 +1,5 @@
 PORTNAME=	mac-telnet
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt net
 
