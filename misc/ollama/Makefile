@@ -22,6 +22,8 @@ LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
 USES=		go:1.22,modules pkgconfig
 
+CONFLICTS_BUILD=	llama-cpp
+
 GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}
 GO_TARGET=	.
 
