@@ -987,6 +987,7 @@
     SUBDIR += hyprlang
     SUBDIR += hyprutils
     SUBDIR += hyprwayland-scanner
+    SUBDIR += iaito
     SUBDIR += ice
     SUBDIR += ice37
     SUBDIR += icestorm

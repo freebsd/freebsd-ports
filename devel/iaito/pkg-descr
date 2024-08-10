@@ -1,0 +1,10 @@
+iaito is the official graphical interface for radare2, a libre reverse
+engineering framework.
+ * Requires radare2 and Qt-5/6.
+ * Iaito was the original name of this GUI before being forked as Cutter.
+ * Use r2 plugins (f.ex: no need for r2ghidra-iaito plugin if r2ghidra is
+   installed).
+ * Focus on simplicity, parity with commands, keybindings and r2-style
+   workflows.
+ * Aims to cover other radare2 features, not just a disassembler:
+   forensics, networking, bindiffing, solvers, ...
