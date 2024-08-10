@@ -1,3 +1,33 @@
+  <vuln vid="5776cc4f-5717-11ef-b611-84a93843eb75">
+    <topic>Roundcube -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>roundcube</name>
+	<range><lt>1.6.8,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Roundcube project reports:</p>
+	<blockquote cite="https://roundcube.net/news/2024/08/04/security-updates-1.6.8-and-1.5.8">
+	  <p>XSS vulnerability in post-processing of sanitized HTML content [CVE-2024-42009]</p>
+	  <p>XSS vulnerability in serving of attachments other than HTML or SVG [CVE-2024-42008]</p>
+	  <p>information leak (access to remote content) via insufficient CSS filtering [CVE-2024-42010]</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-42009</cvename>
+      <cvename>CVE-2024-42008</cvename>
+      <cvename>CVE-2024-42010</cvename>
+      <url>https://roundcube.net/news/2024/08/04/security-updates-1.6.8-and-1.5.8</url>
+    </references>
+    <dates>
+      <discovery>2024-08-04</discovery>
+      <entry>2024-08-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aa1c7af9-570e-11ef-a43e-b42e991fc52e">
     <topic>mozilla firefox -- protocol information guessing</topic>
     <affects>
