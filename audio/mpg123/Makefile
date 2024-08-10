@@ -1,5 +1,5 @@
 PORTNAME=	mpg123
-DISTVERSION=	1.32.6
+DISTVERSION=	1.32.7
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		https://www.mpg123.de/download/
