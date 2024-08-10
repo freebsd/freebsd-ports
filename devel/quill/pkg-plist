@@ -1,5 +1,6 @@
 include/quill/Backend.h
 include/quill/BackendTscClock.h
+include/quill/CsvWriter.h
 include/quill/Frontend.h
 include/quill/LogMacros.h
 include/quill/Logger.h
@@ -12,6 +13,7 @@ include/quill/backend/BackendOptions.h
 include/quill/backend/BackendUtilities.h
 include/quill/backend/BackendWorker.h
 include/quill/backend/BacktraceStorage.h
+include/quill/backend/ManualBackendWorker.h
 include/quill/backend/PatternFormatter.h
 include/quill/backend/RdtscClock.h
 include/quill/backend/SignalHandler.h
