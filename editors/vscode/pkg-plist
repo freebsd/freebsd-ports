@@ -819,14 +819,9 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/xml/syntaxes/xsl.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/xml/xml.language-configuration.json
 %%DATADIR%%/resources/app/extensions/xml/xsl.language-configuration.json
-%%DATADIR%%/resources/app/extensions/yaml/build/update-grammar.js
 %%DATADIR%%/resources/app/extensions/yaml/language-configuration.json
 %%DATADIR%%/resources/app/extensions/yaml/package.json
 %%DATADIR%%/resources/app/extensions/yaml/package.nls.json
-%%DATADIR%%/resources/app/extensions/yaml/syntaxes/yaml-1.0.tmLanguage.json
-%%DATADIR%%/resources/app/extensions/yaml/syntaxes/yaml-1.1.tmLanguage.json
-%%DATADIR%%/resources/app/extensions/yaml/syntaxes/yaml-1.2.tmLanguage.json
-%%DATADIR%%/resources/app/extensions/yaml/syntaxes/yaml-1.3.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/yaml/syntaxes/yaml.tmLanguage.json
 %%DATADIR%%/resources/app/node_modules.asar
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@parcel/watcher/build/Release/watcher.node
