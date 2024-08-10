@@ -8,21 +8,22 @@ COMMENT=	Python bytecode disassembler and decompiler
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	bash:shells/bash
+TEST_DEPENDS=	bash:shells/bash
 
-USES=		cmake shebangfix
+USES=		cmake compiler:c++11-lang python:env,test shebangfix
+SHEBANG_FILES=	scripts/pymultic scripts/token_dump tests/*.sh
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zrax
 GH_TAGNAME=	48d1bfa
 
-SHEBANG_FILES=	tests/all_tests.sh \
-		tests/decompyle_test.sh
+TEST_TARGET=	check
 
 PLIST_FILES=	bin/pycdas \
 		bin/pycdc
 
-do-test:
-	cd ${BUILD_WRKSRC} && ninja check
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
+	    ${PATCH_WRKSRC}/tests/decompyle_test.sh
 
 .include <bsd.port.mk>
