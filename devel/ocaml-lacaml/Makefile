@@ -1,63 +1,37 @@
 PORTNAME=	lacaml
-PORTVERSION=	8.0.7
-PORTREVISION=	14
+DISTVERSION=	11.0.10
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/mmottl/lacaml/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@dev.thsi.be
 COMMENT=	OCaml interface to BLAS and LAPACK libraries
 WWW=		https://mmottl.github.io/lacaml/
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
-
+USES=		blaslapack fortran ocaml:dune
+USE_GITHUB=	yes
+GH_ACCOUNT=	mmottl
 USE_OCAML=	yes
-USE_OCAML_FINDLIB=yes
-USE_OCAMLFIND_PLIST=yes
-USE_OCAML_LDCONFIG=yes
-USE_OCAML_WASH=	yes
-OCAMLFIND_LDCONF=ignore
+USE_OCAML_LDCONFIG=	yes
 
-USES=		blaslapack fortran
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix ${PREFIX} --disable-docs --disable-examples \
-		--override conf_ccopt "${CFLAGS}" \
-		--override conf_cclib "${LDFLAGS}"
-MAKE_JOBS_UNSAFE=yes
-
-CFLAGS+=	-fPIC -DEXTERNAL_EXP10
-LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ENV+=	LACAML_LIBS="-L${LOCALBASE}/lib ${BLASLIB} ${LAPACKLIB}"
 
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 
-PORTDOCS=	*
+PORTDOCS=	CHANGES.md LICENSE.md README.md
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|%%BLASLIB%%|${BLASLIB}| ; \
-		 s|%%LAPACKLIB%%|${LAPACKLIB}| ; \
-		 s|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/myocamlbuild.ml
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/lacaml/*.cmxs
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/lacaml/*.so
 
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in AUTHORS.txt CHANGES.txt README.md TODO.md
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
-		${STAGEDIR}${DOCSDIR})
-.endfor
-
 post-install-EXAMPLES-on:
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
