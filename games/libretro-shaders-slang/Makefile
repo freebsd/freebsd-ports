@@ -16,15 +16,15 @@ GH_PROJECT=	slang-shaders
 GH_TAGNAME=	b327343
 
 DATADIR=	${PREFIX}/share/libretro/shaders/shaders_slang
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
-.for _FILE in .gitlab-ci.yml Makefile README.md configure
-	${RM} ${STAGEDIR}${DATADIR}/${_FILE}
-.endfor
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
+		"! -name .gitlab-ci.yml -a ! -name Makefile \
+		-a ! -regex ^./README.md -a ! -name configure"
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
