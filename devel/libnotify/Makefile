@@ -10,7 +10,7 @@ WWW=		https://gitlab.gnome.org/GNOME/libnotify
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake gnome libtool meson pkgconfig tar:xz
+USES=		gmake gnome meson pkgconfig tar:xz
 USE_GNOME=	gdkpixbuf2 glib20 introspection:build
 USE_LDCONFIG=	yes
 
