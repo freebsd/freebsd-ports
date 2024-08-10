@@ -16,7 +16,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 USERS=		polkitd
 GROUPS=		polkitd
 
-USES=		compiler:c++17-lang cpe gettext gnome libtool localbase meson \
+USES=		compiler:c++17-lang cpe gettext gnome localbase meson \
 		pathfix pkgconfig shebangfix tar:bz2
 USE_GNOME=	glib20 intltool introspection:build
 SHEBANG_FILES=	${WRKSRC}/src/polkitbackend/toarray.pl
