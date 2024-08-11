@@ -1,7 +1,6 @@
 PORTNAME=		ooni-probe-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=		3.21.1
-PORTREVISION=	3
+DISTVERSION=		3.22.0
 CATEGORIES=		net www benchmarks
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -10,8 +9,6 @@ WWW=		https://ooni.org/about/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		https://bugs.freebsd.org/272643
 
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
