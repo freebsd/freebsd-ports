@@ -1681,6 +1681,7 @@
     SUBDIR += myrepos
     SUBDIR += nana
     SUBDIR += nano-signal-slot
+    SUBDIR += nanobind
     SUBDIR += nanopb
     SUBDIR += nant
     SUBDIR += nasm
