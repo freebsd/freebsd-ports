@@ -28,11 +28,6 @@ LDFLAGS+=	-Wl,--as-needed # pango deps
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/pam.d/${PORTNAME}
 
-# XXX Drop after FreeBSD 14.0 EOL around 2024-10-01
-.if exists(/usr/lib/libc++.so) && !exists(/usr/include/c++/v1/__format/write_escaped.h)
-CXXFLAGS+=	-fexperimental-library
-.endif
-
 # XXX Drop after FreeBSD 13.3 EOL around 2025-07-01
 .if exists(/usr/lib/libc++.so) && !exists(/usr/include/c++/v1/__chrono/time_zone.h)
 LIB_DEPENDS+=	libdate-tz.so:devel/date

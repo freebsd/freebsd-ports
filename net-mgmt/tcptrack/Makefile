@@ -22,7 +22,7 @@ PLIST_FILES=	bin/tcptrack share/man/man1/tcptrack.1.gz
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=unused-but-set-variable
 .endif
 

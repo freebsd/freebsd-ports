@@ -89,7 +89,7 @@ CMAKE_ARGS+=	-DARM_NATIVE=native # based on https://github.com/surge-synthesizer
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 	#@${REINPLACE_CMD} -e 's|move (group)|std::move (group)|g' \
 	#	${WRKSRC}/libs/JUCE/modules/juce_audio_processors/utilities/juce_AudioProcessorValueTreeState.cpp
 .endif

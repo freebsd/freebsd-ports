@@ -209,13 +209,6 @@ PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="@comment " ONLY_INSTALLED_ON_AARCH64=""
 PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="" ONLY_INSTALLED_ON_AARCH64="@comment "
 .endif
 
-# std_config.pcm exclusive to FreeBSD 14.0
-.if ${OPSYS} == FreeBSD && ${OSREL} == 14.0
-PLIST_SUB+=	ONLY_INSTALLED_ON_FBSD140=""
-.else
-PLIST_SUB+=	ONLY_INSTALLED_ON_FBSD140="@comment "
-.endif
-
 # Files in lib/root/__pycache__ have links into WRKDIR and should not be staged. This happens even when PYROOT option is OFF.
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/root/__pycache__

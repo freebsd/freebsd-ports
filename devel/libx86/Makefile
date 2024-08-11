@@ -24,7 +24,7 @@ PLIST_FILES=	include/libx86.h lib/libx86.a lib/libx86.so lib/libx86.so.1
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 

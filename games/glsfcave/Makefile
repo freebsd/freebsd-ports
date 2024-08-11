@@ -22,7 +22,7 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 do-build:
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 	cd ${WRKSRC} && ${CC} -o glsfcave main.c -I${LOCALBASE}/include \
 		-Wno-error=incompatible-function-pointer-types \
 		-L${LOCALBASE}/lib -lglut -lGL -lGLU

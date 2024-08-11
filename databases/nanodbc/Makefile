@@ -24,7 +24,7 @@ CMAKE_TESTING_ARGS=	-DNANODBC_DISABLE_TESTS=OFF # many tests fail: Data source n
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=deprecated-declarations -Wno-error=unused-command-line-argument
 .endif
 

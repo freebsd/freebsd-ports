@@ -17,8 +17,8 @@ BUILD_DEPENDS+=	bjam:devel/boost-jam
 # following conditions are satisfied.
 # * OSVERSION is included in either of following ranges.
 #   1. 1500000 <= OSVERSION < 1500017
-#   2. 1400000 <= OSVERSION < 1400509
-#   3. 1300000 <= OSVERSION < 1303502
+#   2. 1400000 <= OSVERSION < 1400509 (no longer relevant)
+#   3. 1300000 <= OSVERSION < 1303502 (no longer relevant)
 # * Base system is built with WITH_LLVM_ASSERTIONS variable set.
 # So if your base system fulfills them you need to use LLVM ports to
 # build this port.

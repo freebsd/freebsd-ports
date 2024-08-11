@@ -36,7 +36,7 @@ WRKSRC_SUBDIR=	QT
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/usr/share/ldraw"|"${PREFIX}/share/ldraw"|' ${WRKSRC}/ModelViewerWidget.cpp
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} -e 's|register ||' ${WRKSRC}/../LDLoader/LDrawIni.c
 .endif
 

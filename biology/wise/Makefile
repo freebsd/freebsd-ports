@@ -47,11 +47,9 @@ DATAFILES=	BLOSUM30.bla BLOSUM45.bla BLOSUM62.bla BLOSUM80.bla aa.rnd \
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=int-conversion
-.if ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 )
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
-.endif
 .endif
 
 post-patch:

@@ -85,11 +85,6 @@ PLIST_SUB+=	HAS_PROCESSOR_RNG=""
 PLIST_SUB+=	HAS_PROCESSOR_RNG="@comment "
 .endif
 
-.if ${OPSYS} == FreeBSD && ( ( ${OSVERSION} >= 1400000 && ${OSVERSION} < 1400091 ) || ( ${OSVERSION} < 1302507 ) )
-# libc++ does not carry std::ranges::find, redirect to boost::range::find:
-EXTRA_PATCHES+= ${FILESDIR}/extrapatch-src_tests_unit__x509.cpp
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|^optimization_flags .*|optimization_flags "${CXXFLAGS}"|' \
 		${WRKSRC}/src/build-data/cc/clang.txt

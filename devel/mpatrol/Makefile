@@ -45,7 +45,7 @@ OPTIONS_DEFINE=	DOCS
 CFLAGS+=	-DENVIRON=\"ENVIRON_64\" -DMP_INIT_SUPPORT=0
 .endif
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=dynamic-exception-spec
 .endif
 

@@ -98,7 +98,7 @@ CONFIGURE_ARGS+=	--without-pango --without-terminal
 PLIST_SUB+=		TERMINAL="@comment "
 .endif
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=       -Wno-error=strict-prototypes \
 			   -Wno-error=unused-but-set-variable
 .endif

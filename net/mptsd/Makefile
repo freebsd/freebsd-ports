@@ -20,7 +20,7 @@ GH_TUPLE=       gfto:libfuncs:0dc8d87080badd7a276316ad7ae6e6f1aed2331b:libfuncs/
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 

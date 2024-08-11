@@ -60,7 +60,7 @@ BROKEN_i386=		fails to compile: ../methodjit/MethodJIT.cpp:318:5: error: expecte
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 ADDITIONAL_CPPFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 

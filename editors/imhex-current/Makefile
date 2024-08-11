@@ -106,8 +106,7 @@ NLS_USES=	gettext
 .include <bsd.port.pre.mk>
 
 # Before LLVM 17 import into the base system
-.if ((${OSREL:R} == 14 && ${OSVERSION} < 1400504) \
-    || (${OSREL:R} == 15 && ${OSVERSION} < 1500006))
+.if (${OSREL:R} == 15 && ${OSVERSION} < 1500006)
 IGNORE=	requires libc++ of LLVM 17 on the base system
 .endif
 
@@ -139,7 +138,6 @@ post-extract:
 	${CP} -R ${WRKDIR}/imhex-ffx-pats-${GL_TAG_IMHEX_FFX_PATS}/* ${WRKDIR}/.build/_deps/imhex_patterns_src/patterns/ffx
 # Before LLVM 18 import into the base system
 .if ((${OSREL:R} == 15 && ${OSVERSION} < 1500018) \
-    || (${OSREL:R} == 14 && ${OSVERSION} < 1400511) \
     || (${OSREL:R} == 13 && ${OSVERSION} < 1303503))
 	${CP} -R ${WRKSRC_jthread}/* ${WRKSRC}/lib/third_party/jthread
 .endif

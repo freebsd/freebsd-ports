@@ -24,11 +24,6 @@ USE_GNOME=	cairo librsvg2
 GH_ACCOUNT=	hyprwm
 PLIST_SUB=	VERSION=${DISTVERSION:C/-.*//}
 
-# XXX Drop after FreeBSD 14.0 EOL around 2024-10-01
-.if exists(/usr/lib/libc++.so) && !exists(/usr/include/c++/v1/__format/write_escaped.h)
-CXXFLAGS+=	-fexperimental-library
-.endif
-
 post-patch:
 # Respect PREFIX for icons
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \

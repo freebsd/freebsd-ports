@@ -61,7 +61,7 @@ LTO_BROKEN=		Fails to build with LTO because it is gcc-centered
 .include <bsd.port.options.mk>
 
 # workaround for ld: error: undefined symbol: roundevenf
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 USES+=	llvm:max=15
 .endif
 
