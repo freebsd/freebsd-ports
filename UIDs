@@ -326,7 +326,7 @@ _wsdd:*:370:370::0:0:Web Service Discovery Daemon:/nonexistent:/usr/sbin/nologin
 # free: 378
 # free: 379
 spoofdpi:*:380:380::0:0:SpoofDPI Daemon:/nonexistent:/usr/sbin/nologin
-# free: 381
+hydroxide:*:381:381::0:0:Hydroxide Daemon:/nonexistent:/usr/sbin/nologin
 # free: 382
 # free: 383
 # free: 384
