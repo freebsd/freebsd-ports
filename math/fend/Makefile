@@ -1,6 +1,6 @@
 PORTNAME=	fend
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,8 @@ GH_ACCOUNT=	printfn
 CARGO_CRATES=	base64-0.21.7 \
 		bitflags-2.6.0 \
 		bumpalo-3.16.0 \
-		cc-1.1.0 \
+		byteorder-1.5.0 \
+		cc-1.1.8 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
 		clipboard-win-5.4.0 \
@@ -36,24 +37,24 @@ CARGO_CRATES=	base64-0.21.7 \
 		getrandom-0.2.15 \
 		hashbrown-0.14.5 \
 		home-0.5.9 \
-		indexmap-2.2.6 \
+		indexmap-2.3.0 \
 		instant-0.1.13 \
 		js-sys-0.3.69 \
 		libc-0.2.155 \
 		linux-raw-sys-0.4.14 \
 		log-0.4.22 \
 		memchr-2.7.4 \
-		minreq-2.11.2 \
+		minreq-2.12.0 \
 		native-tls-0.2.12 \
 		nibble_vec-0.1.0 \
 		nix-0.28.0 \
 		once_cell-1.19.0 \
-		openssl-0.10.64 \
+		openssl-0.10.66 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.102 \
+		openssl-sys-0.9.103 \
 		pkg-config-0.3.30 \
-		ppv-lite86-0.2.17 \
+		ppv-lite86-0.2.20 \
 		proc-macro2-1.0.86 \
 		quote-1.0.36 \
 		radix_trie-0.2.1 \
@@ -69,18 +70,18 @@ CARGO_CRATES=	base64-0.21.7 \
 		rustyline-14.0.0 \
 		schannel-0.1.23 \
 		sct-0.7.1 \
-		security-framework-2.11.0 \
-		security-framework-sys-2.11.0 \
-		serde-1.0.204 \
-		serde_derive-1.0.204 \
-		serde_spanned-0.6.6 \
+		security-framework-2.11.1 \
+		security-framework-sys-2.11.1 \
+		serde-1.0.205 \
+		serde_derive-1.0.205 \
+		serde_spanned-0.6.7 \
 		smallvec-1.13.2 \
 		spin-0.9.8 \
-		syn-2.0.70 \
-		tempfile-3.10.1 \
-		toml-0.8.14 \
-		toml_datetime-0.6.6 \
-		toml_edit-0.22.15 \
+		syn-2.0.72 \
+		tempfile-3.12.0 \
+		toml-0.8.19 \
+		toml_datetime-0.6.8 \
+		toml_edit-0.22.20 \
 		unicode-ident-1.0.12 \
 		unicode-segmentation-1.11.0 \
 		unicode-width-0.1.13 \
@@ -96,6 +97,7 @@ CARGO_CRATES=	base64-0.21.7 \
 		web-sys-0.3.69 \
 		webpki-roots-0.25.4 \
 		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.52.6 \
@@ -105,7 +107,9 @@ CARGO_CRATES=	base64-0.21.7 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.13
+		winnow-0.6.18 \
+		zerocopy-0.7.35 \
+		zerocopy-derive-0.7.35
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
