@@ -1,0 +1,21 @@
+--- meson.build.orig	2024-03-15 21:01:28 UTC
++++ meson.build
+@@ -17,8 +17,7 @@ major_version = meson.project_version().split('.')[0]
+ comlin_src_root = meson.current_source_dir()
+ comlin_build_root = meson.current_build_dir()
+ major_version = meson.project_version().split('.')[0]
+-version_suffix = '-@0@'.format(major_version)
+-versioned_name = 'comlin' + version_suffix
++versioned_name = 'comlin'
+ 
+ #######################
+ # Compilers and Flags #
+@@ -124,7 +123,7 @@ meson.override_dependency(versioned_name, comlin_dep)
+ meson.override_dependency(versioned_name, comlin_dep)
+ 
+ # Install header to a versioned include directory
+-install_headers(c_headers, subdir: versioned_name / 'comlin')
++install_headers(c_headers)
+ 
+ #########
+ # Tests #

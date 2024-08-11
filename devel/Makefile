@@ -454,6 +454,7 @@
     SUBDIR += color
     SUBDIR += colorgcc
     SUBDIR += colormake
+    SUBDIR += comlin
     SUBDIR += commit-patch
     SUBDIR += commitizen
     SUBDIR += commoncpp
