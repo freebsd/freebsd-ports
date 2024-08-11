@@ -1,6 +1,5 @@
 PORTNAME=	watchdog
-DISTVERSION=	4.0.1
-PORTREVISION=	1
+DISTVERSION=	4.0.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,6 +27,13 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>0:net/py-eventlet@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
+# NotImplementedError: unsupported platform
+# site-packages/trio/_core/_run.py:2843: NotImplementedError
+PYTEST_IGNORED_TESTS=	test_eventlet_monkey_patching
+# FileNotFoundError: [Errno 2] No such file or directory: /tmp/tmp*
+# src/watchdog/utils/dirsnapshot.py:318: FileNotFoundError
+PYTEST_BROKEN_TESTS=	test_observers_polling
+# tests: 144 passed, 11 skipped, 3 deselected
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
