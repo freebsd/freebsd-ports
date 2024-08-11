@@ -8,6 +8,8 @@ WWW=		https://github.com/radareorg/iaito
 
 LICENSE=	GPLv3
 
+BROKEN_i386=	error: non-constant-expression cannot be narrowed from type 'const unsigned long long' to 'size_t' (aka 'unsigned int')
+
 LIB_DEPENDS=	libcapstone.so:devel/capstone \
 		libr_core.so:devel/radare2
 
