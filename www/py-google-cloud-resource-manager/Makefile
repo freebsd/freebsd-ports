@@ -1,8 +1,9 @@
 PORTNAME=	google-cloud-resource-manager
-DISTVERSION=	1.12.4
+DISTVERSION=	1.12.5
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Google Cloud Resource Manager API client library

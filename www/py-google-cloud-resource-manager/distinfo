@@ -1,3 +1,3 @@
-TIMESTAMP = 1720516049
-SHA256 (google-cloud-resource-manager-1.12.4.tar.gz) = 3eda914a925e92465ef80faaab7e0f7a9312d486dd4e123d2c76e04bac688ff0
-SIZE (google-cloud-resource-manager-1.12.4.tar.gz) = 393066
+TIMESTAMP = 1723345863
+SHA256 (google_cloud_resource_manager-1.12.5.tar.gz) = b7af4254401ed4efa3aba3a929cb3ddb803fa6baf91a78485e45583597de5891
+SIZE (google_cloud_resource_manager-1.12.5.tar.gz) = 394678
