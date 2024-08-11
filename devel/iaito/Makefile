@@ -11,12 +11,29 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libcapstone.so:devel/capstone \
 		libr_core.so:devel/radare2
 
-USES=		desktop-file-utils gl gmake pkgconfig qmake:no_configure qt:5
+FLAVORS=		qt5 qt6
+FLAVOR?=		${FLAVORS:[2]}
+qt5_PKGNAMESUFFIX=	-qt5
+qt6_PKGNAMESUFFIX=	-qt6
+
+USES=		compiler:c++17-lang desktop-file-utils gl gmake pkgconfig \
+		qmake:no_configure
 USE_GITHUB=	yes
 GH_ACCOUNT=	radareorg
-USE_GL=		gl
-USE_QT=		buildtools core gui linguisttools:build network svg widgets
 GNU_CONFIGURE=	yes
+
+.if ${FLAVOR} == qt5
+USES+=		qt:5
+USE_GL=		gl
+USE_QT=		core gui network svg widgets \
+		buildtools:build linguisttools:build qmake:build
+.else
+USES+=		qt:6
+USE_GL=		opengl
+USE_QT=		base svg
+CONFIGURE_ARGS=	--with-qmake6
+.endif
+
 MAKE_ENV=	DESTDIR=${STAGEDIR}${PREFIX} \
 		QMAKE_FLAGS="PREFIX=${STAGEDIR}${PREFIX}"
 

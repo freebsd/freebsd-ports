@@ -1,0 +1,11 @@
+--- configure.orig	2024-05-24 00:09:14 UTC
++++ configure
+@@ -470,7 +470,7 @@ QMAKE=""; fi
+ fi ; fi
+ if [ "$WANT_QMAKE6" = "1" ]; then
+ QMAKE=""; fi
+-if [ "$HAVE_QMAKE" = "1" ]; then
++if [ "$HAVE_QMAKE" = "1" -a "$WANT_QMAKE6" != "1" ]; then
+ QMAKE_BIN="${QMAKE}"
+ else
+ if [ "$HAVE_QMAKE6" = "1" ]; then
