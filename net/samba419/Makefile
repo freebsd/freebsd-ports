@@ -191,11 +191,11 @@ BUILD_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
 RUN_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
 
 ### Bundled libraries
-SAMBA4_BUNDLED_CMOCKA=		yes
-SAMBA4_BUNDLED_TALLOC=		yes
-SAMBA4_BUNDLED_TEVENT=		yes
-SAMBA4_BUNDLED_TDB=		yes
-SAMBA4_BUNDLED_LDB=		yes
+SAMBA4_BUNDLED_CMOCKA?=		yes
+SAMBA4_BUNDLED_TALLOC?=		yes
+SAMBA4_BUNDLED_TEVENT?=		yes
+SAMBA4_BUNDLED_TDB?=		yes
+SAMBA4_BUNDLED_LDB?=		yes
 # cmocka
 .if defined(SAMBA4_BUNDLED_CMOCKA) && ${SAMBA4_BUNDLED_CMOCKA} == yes
 SAMBA4_BUNDLED_LIBS+=		cmocka
