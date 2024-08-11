@@ -167,6 +167,7 @@
     SUBDIR += py-AnyQt
     SUBDIR += py-Pmw
     SUBDIR += py-awesometkinter
+    SUBDIR += py-customtkinter
     SUBDIR += py-easygui
     SUBDIR += py-fltk
     SUBDIR += py-guietta
