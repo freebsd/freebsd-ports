@@ -1,5 +1,5 @@
 PORTNAME=	moodle
-PORTVERSION=	4.3.5
+PORTVERSION=	4.3.6
 CATEGORIES=	www education
 MASTER_SITES=	SF/moodle/Moodle/stable403/
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}${PHP_PKGNAMESUFFIX}
@@ -10,7 +10,7 @@ WWW=		https://www.moodle.org/
 
 LICENSE=	GPLv3
 
-CONFLICTS=	moodle41-4.1.[0-9]* moodle42-4.2.[0-9]* moodle44-4.4
+CONFLICTS=	moodle41-4.1.[0-9]* moodle42-4.2.[0-9]* moodle44-4.4.[0-9]*
 
 USES=		cpe php:flavors tar:tgz
 USE_PHP=	ctype curl dom exif fileinfo filter gd \
