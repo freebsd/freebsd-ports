@@ -1,5 +1,6 @@
 PORTNAME=	linenoise
 DISTVERSION=	1.0-34
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g93b2db9
 CATEGORIES=	devel
 
@@ -20,7 +21,13 @@ PLIST_FILES=	include/linenoise.h \
 
 do-build:
 	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${CC} ${CFLAGS} -shared -fPIC linenoise.c -o liblinenoise.so
+		${SETENV} ${MAKE_ENV} ${CC} \
+			${CFLAGS} ${LDFLAGS} \
+			-shared \
+			-fPIC \
+			-Wl,-soname=liblinenoise.so \
+			linenoise.c \
+			-o liblinenoise.so
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/linenoise.h ${STAGEDIR}${PREFIX}/include
