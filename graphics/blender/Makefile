@@ -1,6 +1,5 @@
 PORTNAME=	blender
-DISTVERSION=	4.1.1
-PORTREVISION=	1
+DISTVERSION=	4.2.0
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -28,7 +27,7 @@ RUN_DEPENDS=	${PYNUMPY}
 # libboost_regex.so just acts as a placeholder; several boost
 # libraries are used, if either of the most common options in blender
 # are set. We will pull boost in just to be on the safe side.
-USES=		cmake compiler:c++17-lang cpe eigen:3 jpeg llvm:build,run pkgconfig \
+USES=		cmake:noninja compiler:c++17-lang cpe eigen:3 jpeg llvm:build,run pkgconfig \
 		python:3.11 shebangfix tar:xz xorg
 USE_XORG=	x11 xext xfixes xmu xrender
 
@@ -144,7 +143,6 @@ OPENIMAGEDN_LIB_DEPENDS=	libOpenImageDenoise.so:graphics/oidn
 OPENIMAGEDN_CMAKE_BOOL=		WITH_OPENIMAGEDENOISE
 OPENJPEG_LIB_DEPENDS=		libopenjp2.so:graphics/openjpeg
 OPENJPEG_CMAKE_BOOL=		WITH_IMAGE_OPENJPEG
-# openmp usually works on amd64
 OPENMP_CMAKE_BOOL=		WITH_OPENMP
 OPENPGL_LIB_DEPENDS=		libopenpgl.so:graphics/openpgl
 OPENPGL_CMAKE_BOOL=		WITH_CYCLES_PATH_GUIDING
@@ -165,6 +163,8 @@ QUADRIFLOW_CMAKE_BOOL=		WITH_QUADRIFLOW
 SDL_USES=			sdl
 SDL_USE=			SDL=sdl2
 SDL_CMAKE_BOOL=			WITH_SDL WITH_SDL_DYNLOAD
+SIMD_CMAKE_BOOL=		WITH_CPU_SIMD
+SIMD_EXTRA_PATCHES_OFF=		${PATCHDIR}/extra-patch-simd-off
 SNDFILE_LIB_DEPENDS=		libsndfile.so:audio/libsndfile
 SNDFILE_CMAKE_BOOL=		WITH_CODEC_SNDFILE
 TBB_LIB_DEPENDS=		libtbb.so:devel/onetbb
@@ -188,7 +188,6 @@ WAYLAND_BUILD_DEPENDS=		wayland-protocols>=1.15:graphics/wayland-protocols \
 				wayland>=1.12:graphics/wayland \
 				libdecor>0:x11-toolkits/libdecor
 WAYLAND_LIB_DEPENDS=		libxkbcommon.so:x11/libxkbcommon
-#WAYLAND_USES=			pkgconfig
 WAYLAND_CMAKE_BOOL=		WITH_GHOST_WAYLAND WITH_GHOST_WAYLAND_LIBDECOR \
 				WITH_GHOST_WAYLAND_DYNLOAD
 WEBP_LIB_DEPENDS=		libwebp.so:graphics/webp
@@ -197,12 +196,6 @@ XF86VMODE_USE=			XORG=xi,xxf86vm
 XF86VMODE_CMAKE_BOOL=		WITH_X11_XF86VMODE
 XINPUT_USE=			XORG=xi
 XINPUT_CMAKE_BOOL=		WITH_X11_XINPUT
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} != aarch64 && ${ARCH} != amd64
-CMAKE_ARGS+=	-DWITH_CPU_SIMD:BOOL=OFF
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LLVM_VER%%|${LLVM_VERSION}|g' \
