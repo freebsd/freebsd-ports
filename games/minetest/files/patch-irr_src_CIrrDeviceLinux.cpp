@@ -1,5 +1,7 @@
---- lib/irrlichtmt/source/Irrlicht/CIrrDeviceLinux.cpp.orig	2023-10-27 15:48:29 UTC
-+++ lib/irrlichtmt/source/Irrlicht/CIrrDeviceLinux.cpp
+https://github.com/minetest/minetest/pull/14962
+
+--- irr/src/CIrrDeviceLinux.cpp.orig	2024-08-11 15:54:55 UTC
++++ irr/src/CIrrDeviceLinux.cpp
 @@ -45,6 +45,10 @@
  #include <X11/Xcursor/Xcursor.h>
  #endif
