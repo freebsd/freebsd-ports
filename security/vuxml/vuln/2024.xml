@@ -1,3 +1,32 @@
+  <vuln vid="d2723b0f-58d9-11ef-b611-84a93843eb75">
+    <topic>Vaultwarden -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>vaultwarden</name>
+	<range><lt>1.32.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<blockquote cite="https://github.com/dani-garcia/vaultwarden/releases/tag/1.32.0">
+	  <p>This release has several CVE Reports fixed and we recommend
+	    everybody to update to the latest version as soon as possible.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-39924</cvename>
+      <cvename>CVE-2024-39925</cvename>
+      <cvename>CVE-2024-39926</cvename>
+      <url>https://github.com/dani-garcia/vaultwarden/releases/tag/1.32.0</url>
+    </references>
+    <dates>
+      <discovery>2024-08-11</discovery>
+      <entry>2024-08-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7d631146-5769-11ef-b618-1c697a616631">
     <topic>AMD CPUs -- Guest Memory Vulnerabilities</topic>
     <affects>
