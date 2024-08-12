@@ -3,6 +3,9 @@ PORTVERSION=	2.31.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
+PATCH_SITES=	https://github.com/intel/isa-l/commit/
+PATCHFILES=	1b1ee1e18f5bb4d91e3839405a8557a64a3b2581.patch:-p1
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intel(R) Intelligent Storage Acceleration Libray
 WWW=		https://github.com/intel/isa-l
