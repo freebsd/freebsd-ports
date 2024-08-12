@@ -4,7 +4,7 @@ CATEGORIES=	databases
 MASTER_SITES=	SAMBA
 PKGNAMESUFFIX?=	25
 
-MAINTAINER=	xavier.beaudouin@klarasystems.com
+MAINTAINER=	kiwi@oav.net
 COMMENT=	LDAP-like embedded database
 WWW=		https://ldb.samba.org/
 
