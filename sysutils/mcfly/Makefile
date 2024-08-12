@@ -1,6 +1,6 @@
 PORTNAME=	mcfly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.1
+DISTVERSION=	0.9.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,11 +20,11 @@ CARGO_CRATES=	adler32-1.2.0 \
 		aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.6.14 \
-		anstyle-1.0.7 \
-		anstyle-parse-0.2.4 \
-		anstyle-query-1.1.0 \
-		anstyle-wincon-3.0.3 \
+		anstream-0.6.15 \
+		anstyle-1.0.8 \
+		anstyle-parse-0.2.5 \
+		anstyle-query-1.1.1 \
+		anstyle-wincon-3.0.4 \
 		async-trait-0.1.81 \
 		autocfg-1.3.0 \
 		autopilot-0.4.0 \
@@ -35,24 +35,24 @@ CARGO_CRATES=	adler32-1.2.0 \
 		block-buffer-0.10.4 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
-		cc-1.1.0 \
+		cc-1.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		chrono-systemd-time-0.3.0 \
-		clap-4.5.9 \
-		clap_builder-4.5.9 \
-		clap_derive-4.5.8 \
-		clap_lex-0.7.1 \
+		clap-4.5.15 \
+		clap_builder-4.5.15 \
+		clap_derive-4.5.13 \
+		clap_lex-0.7.2 \
 		cocoa-0.20.2 \
 		color_quant-1.1.0 \
-		colorchoice-1.0.1 \
+		colorchoice-1.0.2 \
 		config-0.14.0 \
 		const-random-0.1.18 \
 		const-random-macro-0.1.16 \
 		convert_case-0.6.0 \
 		core-foundation-0.7.0 \
 		core-foundation-sys-0.7.0 \
-		core-foundation-sys-0.8.6 \
+		core-foundation-sys-0.8.7 \
 		core-graphics-0.19.2 \
 		cpufeatures-0.2.12 \
 		crc32fast-1.4.2 \
@@ -91,9 +91,9 @@ CARGO_CRATES=	adler32-1.2.0 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
 		image-0.22.5 \
-		indexmap-2.2.6 \
+		indexmap-2.3.0 \
 		inflate-0.4.5 \
-		is_terminal_polyfill-1.70.0 \
+		is_terminal_polyfill-1.70.1 \
 		itertools-0.12.1 \
 		itoa-1.0.11 \
 		jpeg-decoder-0.1.22 \
@@ -132,7 +132,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		pest_meta-2.7.11 \
 		pkg-config-0.3.30 \
 		png-0.15.3 \
-		ppv-lite86-0.2.17 \
+		ppv-lite86-0.2.20 \
 		proc-macro2-0.4.30 \
 		proc-macro2-1.0.86 \
 		quote-0.6.13 \
@@ -146,9 +146,9 @@ CARGO_CRATES=	adler32-1.2.0 \
 		rand_hc-0.2.0 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.5.2 \
+		redox_syscall-0.5.3 \
 		redox_users-0.4.5 \
-		regex-1.10.5 \
+		regex-1.10.6 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.8.4 \
 		ron-0.8.1 \
@@ -157,26 +157,26 @@ CARGO_CRATES=	adler32-1.2.0 \
 		ryu-1.0.18 \
 		scoped_threadpool-0.1.9 \
 		scopeguard-1.2.0 \
-		serde-1.0.204 \
-		serde_derive-1.0.204 \
-		serde_json-1.0.120 \
-		serde_spanned-0.6.6 \
+		serde-1.0.206 \
+		serde_derive-1.0.206 \
+		serde_json-1.0.124 \
+		serde_spanned-0.6.7 \
 		sha2-0.10.8 \
 		shellexpand-3.1.0 \
 		signal-hook-0.3.17 \
-		signal-hook-mio-0.2.3 \
+		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.2 \
 		smallvec-1.13.2 \
 		strsim-0.11.1 \
 		syn-0.15.44 \
-		syn-2.0.70 \
-		thiserror-1.0.61 \
-		thiserror-impl-1.0.61 \
+		syn-2.0.74 \
+		thiserror-1.0.63 \
+		thiserror-impl-1.0.63 \
 		tiff-0.3.1 \
 		tiny-keccak-2.0.2 \
-		toml-0.8.14 \
-		toml_datetime-0.6.6 \
-		toml_edit-0.22.15 \
+		toml-0.8.19 \
+		toml_datetime-0.6.8 \
+		toml_edit-0.22.20 \
 		typenum-1.17.0 \
 		ucd-trie-0.1.6 \
 		unicode-ident-1.0.12 \
@@ -184,7 +184,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		unicode-xid-0.1.0 \
 		utf8parse-0.2.2 \
 		vcpkg-0.2.15 \
-		version_check-0.9.4 \
+		version_check-0.9.5 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.92 \
@@ -215,7 +215,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.13 \
+		winnow-0.6.18 \
 		x11-2.21.0 \
 		yaml-rust-0.4.5 \
 		zerocopy-0.7.35 \
