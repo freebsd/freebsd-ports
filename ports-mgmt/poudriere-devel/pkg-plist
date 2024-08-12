@@ -40,6 +40,7 @@ share/man/man8/poudriere.8.gz
 %%DATADIR%%/MANIFESTS
 %%DATADIR%%/api.sh
 %%DATADIR%%/awk/dependency_loop.awk
+%%DATADIR%%/awk/file_cmp_reg.awk
 %%DATADIR%%/awk/humanize.awk
 %%DATADIR%%/awk/json.awk
 %%DATADIR%%/awk/json_jail.awk
