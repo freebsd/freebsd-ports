@@ -18,7 +18,7 @@ GH_ACCOUNT=	antirez
 
 PLIST_FILES=	include/linenoise.h \
 		lib/liblinenoise.so \
-		libdata/pkgconfig/linenoise.pc
+		libdata/pkgconfig/liblinenoise.pc
 
 do-build:
 	@cd ${WRKSRC} && \
@@ -35,8 +35,8 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/liblinenoise.so ${STAGEDIR}${PREFIX}/lib
 	${SED} \
 		-e 's|@prefix@|${PREFIX}|; s|@version@|${PORTVERSION}|' \
-		< ${FILESDIR}/linenoise.pc.in \
-		> ${STAGEDIR}${PREFIX}/libdata/pkgconfig/linenoise.pc
+		< ${FILESDIR}/liblinenoise.pc.in \
+		> ${STAGEDIR}${PREFIX}/libdata/pkgconfig/liblinenoise.pc
 
 do-test:
 	@cd ${WRKSRC} && \
