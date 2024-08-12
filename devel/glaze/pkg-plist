@@ -107,12 +107,14 @@ include/glaze/util/dump.hpp
 include/glaze/util/expected.hpp
 include/glaze/util/fast_float.hpp
 include/glaze/util/for_each.hpp
+include/glaze/util/glaze_fast_float.hpp
 include/glaze/util/hash_map.hpp
 include/glaze/util/help.hpp
 include/glaze/util/inline.hpp
 include/glaze/util/itoa.hpp
 include/glaze/util/murmur.hpp
 include/glaze/util/parse.hpp
+include/glaze/util/primes_64.hpp
 include/glaze/util/progress_bar.hpp
 include/glaze/util/stoui64.hpp
 include/glaze/util/string_literal.hpp
