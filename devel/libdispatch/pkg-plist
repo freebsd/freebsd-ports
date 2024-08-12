@@ -12,6 +12,7 @@ include/dispatch/queue.h
 include/dispatch/semaphore.h
 include/dispatch/source.h
 include/dispatch/time.h
+include/os/generic_base.h
 include/os/generic_unix_base.h
 include/os/generic_win_base.h
 include/os/object.h
