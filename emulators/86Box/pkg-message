@@ -1,9 +1,12 @@
 [
 { type: install
   message: <<EOM
-86Box requires you to manually install ROMS to be able to run.
-To do this, you can type in the following command:
-    86Box-install-roms.sh -i
+(1) 86Box requires you to manually install ROMS to be able to run.
+    To do this, you can type in the following command:
+        86Box-install-roms.sh -i
+
+(2) Running 86Box through the desktop shortcut uses the configuration
+    which is placed in the folder ~/.config/86Box.cfg
 EOM
 }
 ]
