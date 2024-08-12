@@ -1,0 +1,15 @@
+bin/koboldcpp
+%%DATADIR%%/kcpp_docs.embd
+%%DATADIR%%/kcpp_sdui.embd
+%%DATADIR%%/klite.embd
+%%DATADIR%%/koboldcpp.py
+%%DATADIR%%/koboldcpp_default.so
+%%DATADIR%%/koboldcpp_failsafe.so
+%%DATADIR%%/koboldcpp_noavx2.so
+%%DATADIR%%/koboldcpp_openblas.so
+%%DATADIR%%/koboldcpp_vulkan.so
+%%DATADIR%%/koboldcpp_vulkan_noavx2.so
+%%DATADIR%%/rwkv_vocab.embd
+%%DATADIR%%/rwkv_world_vocab.embd
+%%DATADIR%%/taesd.embd
+%%DATADIR%%/taesd_xl.embd

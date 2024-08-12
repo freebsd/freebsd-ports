@@ -216,6 +216,7 @@
     SUBDIR += kf6-purpose
     SUBDIR += kgeography
     SUBDIR += klettres
+    SUBDIR += koboldcpp
     SUBDIR += kookbook
     SUBDIR += ktouch
     SUBDIR += kwordquiz
