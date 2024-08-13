@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.8.5
+DISTVERSION=	2024.8.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,7 +32,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-wincon-3.0.4 \
 		arbitrary-1.3.2 \
 		arrayvec-0.5.2 \
-		assert_cmd-2.0.15 \
+		assert_cmd-2.0.16 \
 		async-compression-0.4.12 \
 		autocfg-1.3.0 \
 		backtrace-0.3.71 \
@@ -49,14 +49,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytes-1.7.1 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.1.7 \
+		cc-1.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		chrono-tz-0.9.0 \
 		chrono-tz-build-0.3.0 \
 		ci_info-0.14.14 \
-		clap-4.5.13 \
-		clap_builder-4.5.13 \
+		clap-4.5.15 \
+		clap_builder-4.5.15 \
 		clap_derive-4.5.13 \
 		clap_lex-0.7.2 \
 		clap_mangen-0.2.23 \
@@ -71,7 +71,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		const-oid-0.9.6 \
 		contracts-0.6.3 \
 		core-foundation-0.9.4 \
-		core-foundation-sys-0.8.6 \
+		core-foundation-sys-0.8.7 \
 		cpufeatures-0.2.12 \
 		crc32fast-1.4.2 \
 		crossbeam-deque-0.8.5 \
@@ -93,7 +93,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		doc-comment-0.3.3 \
 		dotenvy-0.15.7 \
 		duct-0.13.7 \
-		dunce-1.0.4 \
+		dunce-1.0.5 \
 		ed25519-2.2.3 \
 		ed25519-dalek-2.1.1 \
 		either-1.13.0 \
@@ -110,7 +110,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		fastrand-1.9.0 \
 		fastrand-2.1.0 \
 		fiat-crypto-0.2.9 \
-		filetime-0.2.23 \
+		filetime-0.2.24 \
 		fixedbitset-0.4.2 \
 		flate2-1.0.31 \
 		float-cmp-0.9.0 \
@@ -153,7 +153,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hyper-1.4.1 \
 		hyper-rustls-0.27.2 \
 		hyper-tls-0.6.0 \
-		hyper-util-0.1.6 \
+		hyper-util-0.1.7 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
@@ -176,6 +176,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		libc-0.2.155 \
 		libgit2-sys-0.17.0+1.8.1 \
 		libm-0.2.8 \
+		libredox-0.1.3 \
 		libssh2-sys-0.3.0 \
 		libz-sys-1.1.18 \
 		linked-hash-map-0.5.6 \
@@ -242,8 +243,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.86 \
 		quick-xml-0.23.1 \
-		quinn-0.11.2 \
-		quinn-proto-0.11.3 \
+		quinn-0.11.3 \
+		quinn-proto-0.11.6 \
 		quinn-udp-0.5.4 \
 		quote-1.0.36 \
 		rand-0.8.5 \
@@ -251,7 +252,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rand_core-0.6.4 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.4.1 \
+		redox_syscall-0.5.3 \
 		regex-1.10.6 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.7 \
@@ -263,13 +264,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rmp-serde-1.3.0 \
 		roff-0.2.2 \
 		rustc-demangle-0.1.24 \
-		rustc-hash-1.1.0 \
+		rustc-hash-2.0.0 \
 		rustc_version-0.4.0 \
 		rustix-0.38.34 \
 		rustls-0.23.12 \
 		rustls-native-certs-0.7.1 \
 		rustls-pemfile-2.1.3 \
-		rustls-pki-types-1.7.0 \
+		rustls-pki-types-1.8.0 \
 		rustls-webpki-0.102.6 \
 		rustversion-1.0.17 \
 		ryu-1.0.18 \
@@ -280,9 +281,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		self-replace-1.4.0 \
 		self_update-0.41.0 \
 		semver-1.0.23 \
-		serde-1.0.204 \
-		serde_derive-1.0.204 \
-		serde_json-1.0.122 \
+		serde-1.0.206 \
+		serde_derive-1.0.206 \
+		serde_json-1.0.124 \
 		serde_spanned-0.6.7 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.8 \
@@ -309,13 +310,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strum_macros-0.26.4 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
-		syn-2.0.72 \
+		syn-2.0.74 \
 		sync_wrapper-1.0.1 \
 		sys-info-0.9.1 \
 		tabled-0.15.0 \
 		tabled_derive-0.7.0 \
 		tar-0.4.41 \
-		tempfile-3.11.0 \
+		tempfile-3.12.0 \
 		tera-1.20.0 \
 		termcolor-1.4.1 \
 		terminal_size-0.3.0 \
@@ -344,7 +345,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tower-layer-0.3.2 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
-		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
 		tracing-error-0.2.0 \
 		tracing-log-0.2.0 \
@@ -371,7 +371,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		valuable-0.1.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
-		versions-6.3.0 \
+		versions-6.3.2 \
 		vte-0.10.1 \
 		vte_generate_state_changes-0.1.2 \
 		wait-timeout-0.2.0 \
