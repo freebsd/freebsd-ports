@@ -107,6 +107,7 @@
     SUBDIR += R-cran-praise
     SUBDIR += R-cran-prettycode
     SUBDIR += R-cran-prettyunits
+    SUBDIR += R-cran-profvis
     SUBDIR += R-cran-progress
     SUBDIR += R-cran-progressr
     SUBDIR += R-cran-promises
