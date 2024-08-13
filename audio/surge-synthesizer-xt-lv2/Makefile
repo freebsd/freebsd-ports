@@ -29,7 +29,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libxcb-util.so:x11/xcb-util
 LIB_DEPENDS+=	libasound.so:audio/alsa-lib # pending https://github.com/surge-synthesizer/surge/issues/5997 resolution
 
-USES=		cmake compiler:c++17-lang gnome llvm:18 localbase:ldflags pkgconfig python:build shebangfix xorg # older llvm compiler fails because of -Werror -Wno-nan-infinity-disabled
+USES=		cmake compiler:c++17-lang gnome localbase:ldflags pkgconfig python:build shebangfix xorg # older llvm compiler fails because of -Werror -Wno-nan-infinity-disabled
 USE_GNOME=	cairo
 USE_XORG=	x11 xcb xcursor xinerama xrandr
 
@@ -43,7 +43,7 @@ CMAKE_ON=	SURGE_BUILD_LV2 \
 		SURGE_SKIP_VST3
 CMAKE_OFF=	JUCE_PLUGINHOST_VST3 JUCE_PLUGINHOST_VST
 
-CFLAGS+=	-Wno-nan-infinity-disabled # workaround for https://github.com/surge-synthesizer/surge/issues/7730
+CFLAGS+=	-Wno-nan-infinity-disabled -Wno-unknown-warning-option # workaround for https://github.com/surge-synthesizer/surge/issues/7730
 CXXFLAGS+=	-DPLUGIN_API="" -Dstricmp=strcasecmp -Dstrnicmp=strncasecmp -Dstrnicmp16=strncasecmp # for Juce
 
 .if !defined(WITH_DEBUG)
