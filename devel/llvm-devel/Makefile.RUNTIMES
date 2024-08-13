@@ -118,18 +118,9 @@ LIBCLANG_RT_LIBS_powerpc64le= \
 	asan_cxx.a.syms \
 	asan_static.a \
 	builtins.a \
-	msan.a \
-	msan.a.syms \
-	msan_cxx.a \
-	msan_cxx.a.syms \
 	profile.a \
 	stats.a \
 	stats_client.a \
-	tsan.a \
-	tsan.a.syms \
-	tsan.so \
-	tsan_cxx.a \
-	tsan_cxx.a.syms \
 	ubsan_minimal.a \
 	ubsan_minimal.a.syms \
 	ubsan_minimal.so \
