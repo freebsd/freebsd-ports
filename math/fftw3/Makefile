@@ -28,7 +28,6 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--enable-shared --enable-threads --disable-fortran
-MPIDIR?=	${LOCALBASE}/mpi/openmpi
 
 SHLIB_VER_MAJ=	${DISTVERSION:R:R}
 SHLIB_VER_MIN=	6
@@ -71,10 +70,10 @@ OPENMP_CONFIGURE_ENABLE=	openmp
 OPENMP_EXTRA_PATCHES=		${FILESDIR}/extrapatch-tests_fftw-bench.c
 
 OPENMPI_DESC=			Build OpenMPI parallel libraries
-OPENMPI_LIB_DEPENDS=		libmpi.so:net/openmpi
+OPENMPI_USES=			mpi:openmpi
 OPENMPI_CONFIGURE_ENABLE=	mpi
-OPENMPI_CONFIGURE_ENV=		MPICC=${MPIDIR}/bin/mpicc \
-				MPIRUN=${MPIDIR}/bin/mpirun
+OPENMPI_CONFIGURE_ENV=		MPICC=${MPICC} \
+				MPIRUN=${MPIRUN}
 
 .include <bsd.port.options.mk>
 
