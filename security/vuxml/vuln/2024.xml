@@ -1,3 +1,114 @@
+  <vuln vid="5d7939f6-5989-11ef-9793-b42e991fc52e">
+    <topic>firefox -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mozilla</name>
+	<range><lt>129.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1905691">
+	<ul>
+	<li>
+	  CVE-2024-7531: Calling `PK11_Encrypt()` in NSS using
+	  CKM_CHACHA20 and the same buffer for input and output can
+	  result in plaintext on an Intel Sandy Bridge processor. In
+	  Firefox this only affects the QUIC header protection
+	  feature when the connection is using the ChaCha20-Poly1305
+	  cipher suite. The most likely outcome is connection
+	  failure, but if the connection persists despite the high
+	  packet loss it could be possible for a network observer to
+	  identify packets as coming from the same source despite a
+	  network path change. This vulnerability affects Firefox
+	  &lt; 129, Firefox ESR &lt; 115.14, and Firefox ESR &lt;
+	  128.1.
+	</li>
+	<li>
+	  CVE-2024-7529: The date picker could partially obscure
+	  security prompts. This could be used by a malicious site
+	  to trick a user into granting permissions. This
+	  vulnerability affects Firefox &lt; 129, Firefox ESR &lt;
+	  115.14, Firefox ESR &lt; 128.1, Thunderbird &lt; 128.1,
+	  and Thunderbird &lt; 115.14.
+	</li>
+	<li>
+	  CVE-2024-7525: It was possible for a web extension with
+	  minimal permissions to create a `StreamFilter` which could
+	  be used to read and modify the response body of requests
+	  on any site. This vulnerability affects Firefox &lt; 129,
+	  Firefox ESR &lt; 115.14, Firefox ESR &lt; 128.1,
+	  Thunderbird &lt; 128.1, and Thunderbird &lt; 115.14.
+	</li>
+	<li>
+	  CVE-2024-7522: Editor code failed to check an attribute
+	  value. This could have led to an out-of-bounds read. This
+	  vulnerability affects Firefox &lt; 129, Firefox ESR &lt;
+	  115.14, Firefox ESR &lt; 128.1, Thunderbird &lt; 128.1, and
+	  Thunderbird &lt; 115.14.
+	</li>
+	<li>
+	  CVE-2024-7520: A type confusion bug in WebAssembly could
+	  be leveraged by an attacker to potentially achieve code
+	  execution. This vulnerability affects Firefox &lt; 129,
+	  Firefox ESR &lt; 128.1, and Thunderbird &lt; 128.1.
+	</li>
+	<li>
+	  CVE-2024-7521: Incomplete WebAssembly exception handing
+	  could have led to a use-after-free. This vulnerability
+	  affects Firefox &lt; 129, Firefox ESR &lt; 115.14,
+	  Firefox ESR &lt; 128.1, Thunderbird &lt; 128.1, and
+	  Thunderbird &lt; 115.14.
+	</li>
+	<li>
+	  CVE-2024-7530: Incorrect garbage collection interaction
+	  could have led to a use-after-free. This vulnerability
+	  affects Firefox &lt; 129.
+	</li>
+	<li>
+	  CVE-2024-7528: Incorrect garbage collection interaction in
+	  IndexedDB could have led to a use-after-free. This
+	  vulnerability affects Firefox &lt; 129,
+	  Firefox ESR &lt; 128.1, and Thunderbird &lt; 128.1.
+	</li>
+	<li>
+	  CVE-2024-7527: Unexpected marking work at the start of
+	  sweeping could have led to a use-after-free. This
+	  vulnerability affects Firefox &lt; 129,
+	  Firefox ESR &lt; 115.14, Firefox ESR &lt; 128.1,
+	  Thunderbird &lt; 128.1, and Thunderbird &lt; 115.14.
+	</li>
+	</ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-7531</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-7531</url>
+      <cvename>CVE-2024-7529</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-7529</url>
+      <cvename>CVE-2024-7525</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-7525</url>
+      <cvename>CVE-2024-7522</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-7522</url>
+      <cvename>CVE-2024-7520</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-7520</url>
+      <cvename>CVE-2024-7521</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-7521</url>
+      <cvename>CVE-2024-7530</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-7530</url>
+      <cvename>CVE-2024-7528</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-7528</url>
+      <cvename>CVE-2024-7527</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-7527</url>
+    </references>
+    <dates>
+      <discovery>2024-08-06</discovery>
+      <entry>2024-08-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="587ed8ac-5957-11ef-854a-001e676bf734">
     <topic>OpenHAB CometVisu addon -- Multiple vulnerabilities</topic>
     <affects>
