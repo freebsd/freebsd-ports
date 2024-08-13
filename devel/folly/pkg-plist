@@ -113,6 +113,8 @@ include/folly/VirtualExecutor.h
 include/folly/algorithm/simd/FindFixed.h
 include/folly/algorithm/simd/Movemask.h
 include/folly/algorithm/simd/SimdForEach.h
+include/folly/algorithm/simd/detail/SimdAnyOf.h
+include/folly/algorithm/simd/detail/SimdCharPlatform.h
 include/folly/algorithm/simd/detail/UnrollUtils.h
 include/folly/base64.h
 include/folly/channels/Channel-fwd.h
@@ -334,8 +336,6 @@ include/folly/detail/PerfScoped.h
 include/folly/detail/PolyDetail.h
 include/folly/detail/RangeCommon.h
 include/folly/detail/RangeSse42.h
-include/folly/detail/SimdAnyOf.h
-include/folly/detail/SimdCharPlatform.h
 include/folly/detail/SimpleSimdStringUtils.h
 include/folly/detail/SimpleSimdStringUtilsImpl.h
 include/folly/detail/Singleton.h
