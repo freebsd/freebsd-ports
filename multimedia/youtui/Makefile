@@ -1,6 +1,6 @@
 PORTNAME=	youtui
 DISTVERSIONPREFIX=	youtui/v
-DISTVERSION=	0.0.11
+DISTVERSION=	0.0.12
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -47,18 +47,19 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		bitflags-2.6.0 \
 		block-buffer-0.10.4 \
 		block-padding-0.3.3 \
-		boa_ast-0.17.3 \
-		boa_engine-0.17.3 \
-		boa_gc-0.17.3 \
-		boa_icu_provider-0.17.3 \
-		boa_interner-0.17.3 \
-		boa_macros-0.17.3 \
-		boa_parser-0.17.3 \
-		boa_profiler-0.17.3 \
+		boa_ast-0.19.0 \
+		boa_engine-0.19.0 \
+		boa_gc-0.19.0 \
+		boa_interner-0.19.0 \
+		boa_macros-0.19.0 \
+		boa_parser-0.19.0 \
+		boa_profiler-0.19.0 \
+		boa_string-0.19.0 \
 		bumpalo-3.16.0 \
 		bytemuck-1.16.1 \
+		bytemuck_derive-1.7.0 \
 		byteorder-1.5.0 \
-		bytes-1.6.1 \
+		bytes-1.7.1 \
 		cassowary-0.3.0 \
 		castaway-0.2.3 \
 		cbc-0.1.2 \
@@ -74,13 +75,11 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		clap_derive-4.5.8 \
 		clap_lex-0.7.1 \
 		claxon-0.4.3 \
-		cobs-0.2.3 \
 		colorchoice-1.0.1 \
 		combine-4.6.7 \
 		compact_str-0.7.1 \
 		const_format-0.2.32 \
 		const_format_proc_macros-0.2.32 \
-		convert_case-0.4.0 \
 		cookie-0.18.1 \
 		cookie_store-0.21.0 \
 		core-foundation-0.9.4 \
@@ -90,7 +89,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		cpal-0.15.3 \
 		cpufeatures-0.2.12 \
 		crc32fast-1.4.2 \
-		critical-section-1.1.2 \
 		crossterm-0.27.0 \
 		crossterm_winapi-0.9.1 \
 		crypto-common-0.1.6 \
@@ -101,6 +99,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		deranged-0.3.11 \
 		derivative-2.2.0 \
 		derive_more-0.99.18 \
+		derive_more-1.0.0 \
+		derive_more-impl-1.0.0 \
 		diff-0.1.13 \
 		digest-0.10.7 \
 		directories-5.0.1 \
@@ -110,7 +110,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		dtoa-short-0.3.5 \
 		ego-tree-0.6.2 \
 		either-1.13.0 \
-		embedded-io-0.4.0 \
 		encoding_rs-0.8.34 \
 		equivalent-1.0.1 \
 		errno-0.3.9 \
@@ -141,7 +140,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		gimli-0.29.0 \
 		glob-0.3.1 \
 		h2-0.4.5 \
-		hashbrown-0.13.2 \
 		hashbrown-0.14.5 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
@@ -158,22 +156,24 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		hyper-util-0.1.6 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
-		icu_collections-1.2.0 \
-		icu_locid-1.2.0 \
-		icu_normalizer-1.2.0 \
-		icu_properties-1.2.0 \
-		icu_provider-1.2.0 \
-		icu_provider_adapters-1.2.0 \
-		icu_provider_blob-1.2.0 \
-		icu_provider_macros-1.2.0 \
+		icu_collections-1.5.0 \
+		icu_locid-1.5.0 \
+		icu_locid_transform-1.5.0 \
+		icu_locid_transform_data-1.5.0 \
+		icu_normalizer-1.5.0 \
+		icu_normalizer_data-1.5.0 \
+		icu_properties-1.5.1 \
+		icu_properties_data-1.5.0 \
+		icu_provider-1.5.0 \
+		icu_provider_macros-1.5.0 \
 		idna-0.3.0 \
 		idna-0.5.0 \
 		indexmap-2.2.6 \
 		inout-0.1.3 \
 		instant-0.1.13 \
+		intrusive-collections-0.9.6 \
 		ipnet-2.9.0 \
 		is_terminal_polyfill-1.70.0 \
-		itertools-0.11.0 \
 		itertools-0.12.1 \
 		itertools-0.13.0 \
 		itoa-1.0.11 \
@@ -197,6 +197,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		mach2-0.4.2 \
 		markup5ever-0.12.1 \
 		memchr-2.7.4 \
+		memoffset-0.9.1 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.4 \
@@ -214,9 +215,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		num-derive-0.4.2 \
 		num-integer-0.1.46 \
 		num-traits-0.2.19 \
-		num_enum-0.6.1 \
 		num_enum-0.7.2 \
-		num_enum_derive-0.6.1 \
 		num_enum_derive-0.7.2 \
 		num_threads-0.1.7 \
 		object-0.36.1 \
@@ -252,12 +251,10 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		pkg-config-0.3.30 \
 		pollster-0.3.0 \
 		portable-atomic-1.6.0 \
-		postcard-1.0.8 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
 		precomputed-hash-0.1.1 \
 		pretty_assertions-1.4.0 \
-		proc-macro-crate-1.3.1 \
 		proc-macro-crate-3.1.0 \
 		proc-macro2-1.0.86 \
 		psl-types-2.0.11 \
@@ -273,37 +270,37 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.5.3 \
 		redox_users-0.4.5 \
-		regex-1.10.5 \
+		regex-1.10.6 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.8.4 \
-		regress-0.6.0 \
+		regress-0.10.0 \
 		reqwest-0.12.5 \
-		reqwest-middleware-0.3.2 \
-		reqwest-retry-0.6.0 \
+		reqwest-middleware-0.3.3 \
+		reqwest-retry-0.6.1 \
 		retry-policies-0.4.0 \
 		ring-0.17.8 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
-		rustc_version-0.4.0 \
+		rustc-hash-2.0.0 \
 		rustix-0.38.34 \
 		rustls-0.23.11 \
 		rustls-pemfile-2.1.2 \
 		rustls-pki-types-1.7.0 \
 		rustls-webpki-0.102.5 \
 		rustversion-1.0.17 \
+		rusty_ytdl-0.7.4 \
 		ryu-1.0.18 \
-		ryu-js-0.2.2 \
+		ryu-js-1.0.1 \
 		same-file-1.0.6 \
 		schannel-0.1.23 \
 		scopeguard-1.2.0 \
-		scraper-0.19.1 \
+		scraper-0.20.0 \
 		security-framework-2.11.1 \
 		security-framework-sys-2.11.1 \
 		selectors-0.25.0 \
-		semver-1.0.23 \
-		serde-1.0.204 \
-		serde_derive-1.0.204 \
-		serde_json-1.0.120 \
+		serde-1.0.205 \
+		serde_derive-1.0.205 \
+		serde_json-1.0.122 \
 		serde_qs-0.13.0 \
 		serde_spanned-0.6.6 \
 		serde_urlencoded-0.7.1 \
@@ -355,7 +352,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
-		tinystr-0.7.2 \
+		tinystr-0.7.6 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.39.2 \
@@ -366,7 +363,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		tokio-util-0.7.11 \
 		toml-0.8.15 \
 		toml_datetime-0.6.6 \
-		toml_edit-0.19.15 \
 		toml_edit-0.21.1 \
 		toml_edit-0.22.16 \
 		tower-0.4.13 \
@@ -454,14 +450,13 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		yoke-0.7.4 \
 		yoke-derive-0.7.4 \
 		youtui-vendored-rodio-0.19.0-youtui-vendored.1 \
-		youtui-vendored-rusty_ytdl-0.7.3-youtui-vendored.1 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
 		zerofrom-0.1.4 \
 		zerofrom-derive-0.1.4 \
 		zeroize-1.8.1 \
-		zerovec-0.9.7 \
-		zerovec-derive-0.9.7
+		zerovec-0.10.4 \
+		zerovec-derive-0.10.3
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
