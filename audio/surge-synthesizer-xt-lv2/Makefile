@@ -1,13 +1,8 @@
 PORTNAME=	surge-synthesizer-xt
 DISTVERSIONPREFIX=	release_xt_
-DISTVERSION=	1.3.2
+DISTVERSION=	1.3.4
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	8a2fb0c5522d9872b79aa6053253cf252dcf81fa.patch:-p1 \
-		373971b24477abb1b7f5a18657b0fb48ef5177ca.patch:-p1 \
-		90e36f5be98ba12a513e53401c89732ae7fd11b3.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Surge Synthesizer (XT) LV2 and VST plug-in
@@ -34,7 +29,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libxcb-util.so:x11/xcb-util
 LIB_DEPENDS+=	libasound.so:audio/alsa-lib # pending https://github.com/surge-synthesizer/surge/issues/5997 resolution
 
-USES=		cmake compiler:c++17-lang gnome localbase:ldflags pkgconfig python:build shebangfix xorg
+USES=		cmake compiler:c++17-lang gnome llvm:18 localbase:ldflags pkgconfig python:build shebangfix xorg # older llvm compiler fails because of -Werror -Wno-nan-infinity-disabled
 USE_GNOME=	cairo
 USE_XORG=	x11 xcb xcursor xinerama xrandr
 
