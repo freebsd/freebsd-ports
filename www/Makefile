@@ -9,6 +9,7 @@
     SUBDIR += R-cran-htmlwidgets
     SUBDIR += R-cran-httpuv
     SUBDIR += R-cran-httr
+    SUBDIR += R-cran-httr2
     SUBDIR += R-cran-jquerylib
     SUBDIR += R-cran-rvest
     SUBDIR += R-cran-scrapeR
