@@ -106,11 +106,13 @@ lib/seed7/lib/draw.s7i
 lib/seed7/lib/duration.s7i
 lib/seed7/lib/echo.s7i
 lib/seed7/lib/editline.s7i
+lib/seed7/lib/elf.s7i
 lib/seed7/lib/elliptic.s7i
 lib/seed7/lib/enable_io.s7i
 lib/seed7/lib/encoding.s7i
 lib/seed7/lib/enumeration.s7i
 lib/seed7/lib/environment.s7i
+lib/seed7/lib/exif.s7i
 lib/seed7/lib/external_file.s7i
 lib/seed7/lib/field.s7i
 lib/seed7/lib/file.s7i
@@ -172,10 +174,13 @@ lib/seed7/lib/msgdigest.s7i
 lib/seed7/lib/multiscr.s7i
 lib/seed7/lib/null_file.s7i
 lib/seed7/lib/osfiles.s7i
+lib/seed7/lib/pbm.s7i
 lib/seed7/lib/pem.s7i
+lib/seed7/lib/pgm.s7i
 lib/seed7/lib/pic_util.s7i
 lib/seed7/lib/pic16.s7i
 lib/seed7/lib/pic32.s7i
+lib/seed7/lib/pixelimage.s7i
 lib/seed7/lib/pixmap_file.s7i
 lib/seed7/lib/pixmapfont.s7i
 lib/seed7/lib/pkcs1.s7i
@@ -190,6 +195,7 @@ lib/seed7/lib/ref_list.s7i
 lib/seed7/lib/reference.s7i
 lib/seed7/lib/reverse.s7i
 lib/seed7/lib/rpm.s7i
+lib/seed7/lib/rpmext.s7i
 lib/seed7/lib/scanfile.s7i
 lib/seed7/lib/scanjson.s7i
 lib/seed7/lib/scanstri.s7i
