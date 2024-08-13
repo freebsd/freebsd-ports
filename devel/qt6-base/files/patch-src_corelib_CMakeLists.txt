@@ -1,0 +1,13 @@
+--- src/corelib/CMakeLists.txt.orig	2024-05-06 23:06:44 UTC
++++ src/corelib/CMakeLists.txt
+@@ -381,6 +381,10 @@ endif()
+     target_link_libraries(Platform INTERFACE Threads::Threads)
+ endif()
+ 
++if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
++  target_link_libraries(Core PRIVATE kvm procstat)
++endif()
++
+ # Skip AUTOMOC processing of qobject.cpp and its headers.
+ # We do this on purpose, because qobject.cpp contains a bunch of Q_GADGET, Q_NAMESPACE, etc
+ # keywords and AUTOMOC gets confused about wanting to compile a qobject.moc file as well.
