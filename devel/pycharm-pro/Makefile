@@ -1,5 +1,5 @@
 PORTNAME=	pycharm-pro
-DISTVERSION=	2024.1.5
+DISTVERSION=	2024.2
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/
 DISTNAME=	pycharm-professional-${PORTVERSION}
@@ -19,14 +19,11 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		jetbrains-restarter>=233.11799.241:devel/jetbrains-restarter \
 		jetbrains-sqlite>=232.8660.185:devel/jetbrains-sqlite
 
-USES=		cpe desktop-file-utils python:run shebangfix
+USES=		cpe desktop-file-utils python:run
 
 CPE_VENDOR=	jetbrains
 USE_JAVA=	yes
 JAVA_VERSION=	17+
-SHEBANG_FILES=	plugins/python/helpers/pycodestyle-2.10.0.py \
-		plugins/python/helpers/pycodestyle.py \
-		plugins/python/helpers/typeshed/scripts/sync_tensorflow_protobuf_stubs.sh
 
 # Remove the bundled native Pty4J support libraries, they are replaced
 # by devel/jetbrains-pty4j
