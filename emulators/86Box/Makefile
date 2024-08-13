@@ -11,7 +11,7 @@ WWW=		https://86box.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 
 BUILD_DEPENDS=	evdev-proto>=5.8:devel/evdev-proto
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
@@ -48,6 +48,8 @@ CMAKE_ON=	USE_QT6
 CXXFLAGS+=	-I${LOCALBASE}/include/qt6/QtGui/`pkg-config --modversion Qt6Gui`/QtGui
 .endif
 
+CMAKE_OFF+=		${CMAKE_OFF_${ARCH}}
+CMAKE_OFF_powerpc64le=	DYNAREC
 CMAKE_ON+=		${CMAKE_ON_${ARCH}}
 CMAKE_ON_aarch64=	NEW_DYNAREC
 
