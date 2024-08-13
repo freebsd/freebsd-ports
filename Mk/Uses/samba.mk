@@ -7,6 +7,7 @@
 #
 # When subpackages are available this can be more granular
 #
+# MAINTAINER: samba@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_SAMBA_MK)
 _INCLUDE_USES_SAMBA_MK=   yes
