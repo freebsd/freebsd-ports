@@ -4,7 +4,7 @@ CATEGORIES=	databases
 MASTER_SITES=	SAMBA
 PKGNAMESUFFIX?=	${PORTVERSION:C/([[:digit:]]+)[.]([[:digit:]]+).*/\1\2/}
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	samba@FreeBSD.org
 COMMENT=	LDAP-like embedded database
 WWW=		https://ldb.samba.org/
 

@@ -5,7 +5,7 @@ CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
 
-MAINTAINER=			timur@FreeBSD.org
+MAINTAINER=			samba@FreeBSD.org
 COMMENT=			Free SMB/CIFS and AD/DC server and client for Unix
 WWW=				https://gitlab.com/samba-freebsd/
 

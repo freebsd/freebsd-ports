@@ -4,7 +4,7 @@ CATEGORIES=	databases
 MASTER_SITES=	SAMBA
 PKGNAMESUFFIX?=	25
 
-MAINTAINER=	kiwi@oav.net
+MAINTAINER=	samba@FreeBSD.org
 COMMENT=	LDAP-like embedded database
 WWW=		https://ldb.samba.org/
 
