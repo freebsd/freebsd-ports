@@ -1,3 +1,41 @@
+  <vuln vid="587ed8ac-5957-11ef-854a-001e676bf734">
+    <topic>OpenHAB CometVisu addon -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openhab-addons</name>
+	<range><lt>4.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenHAB reports:</p>
+	<blockquote cite="https://github.com/openhab/openhab-distro/releases/tag/4.2.1">
+	  <p>This patch release addresses the following security advisories:</p>
+<ul>
+<li>SSRF/XSS (CometVisu) - <a href="https://github.com/openhab/openhab-webui/security/advisories/GHSA-v7gr-mqpj-wwh3">GHSA-v7gr-mqpj-wwh3</a></li>
+<li>Sensitive information disclosure (CometVisu) - <a href="https://github.com/openhab/openhab-webui/security/advisories/GHSA-3g4c-hjhr-73rj">GHSA-3g4c-hjhr-73rj</a></li>
+<li>RCE through path traversal (CometVisu) - <a href="https://github.com/openhab/openhab-webui/sec
+urity/advisories/GHSA-f729-58x4-gqgf">GHSA-f729-58x4-gqgf</a></li>
+<li>Path traversal (CometVisu) - <a href="https://github.com/openhab/openhab-webui/security/advisories/GHSA-pcwp-26pw-j98w">GHSA-pcwp-26pw-j98w</a></li>
+</ul>
+<p>
+All of these are related to the CometVisu add-on for openHAB - if you are a user of CometVisu, we strongly recommend to upgrade your system to openHAB 4.2.1 in order to fix those vulnerabilities.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/openhab/openhab-distro/releases/tag/4.2.1</url>
+      <url>https://github.com/openhab/openhab-webui/security/advisories/GHSA-v7gr-mqpj-wwh3</url>
+      <url>https://github.com/openhab/openhab-webui/security/advisories/GHSA-3g4c-hjhr-73rj</url>
+      <url>https://github.com/openhab/openhab-webui/security/advisories/GHSA-f729-58x4-gqgf</url>
+      <url>https://github.com/openhab/openhab-webui/security/advisories/GHSA-pcwp-26pw-j98w</url>
+    </references>
+    <dates>
+      <discovery>2024-08-09</discovery>
+      <entry>2024-08-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d2723b0f-58d9-11ef-b611-84a93843eb75">
     <topic>Vaultwarden -- Multiple vulnerabilities</topic>
     <affects>
