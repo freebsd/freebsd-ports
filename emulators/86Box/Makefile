@@ -29,7 +29,7 @@ FLAVOR?=		${FLAVORS:[2]}
 qt5_PKGNAMESUFFIX=	-qt5
 qt6_PKGNAMESUFFIX=	-qt6
 
-USES=		cmake compiler gnome pkgconfig qmake sdl xorg
+USES=		cmake compiler:c++11-lang gnome pkgconfig qmake sdl xorg
 USE_GITHUB=	yes
 USE_GNOME=	glib20
 USE_SDL=	sdl2
@@ -48,14 +48,14 @@ CMAKE_ON=	USE_QT6
 CXXFLAGS+=	-I${LOCALBASE}/include/qt6/QtGui/`pkg-config --modversion Qt6Gui`/QtGui
 .endif
 
-CMAKE_OFF+=		${CMAKE_OFF_${ARCH}}
-CMAKE_OFF_powerpc64le=	DYNAREC
-CMAKE_ON+=		${CMAKE_ON_${ARCH}}
+CMAKE_ON+=		RELEASE	${CMAKE_ON_${ARCH}}
 CMAKE_ON_aarch64=	NEW_DYNAREC
+CMAKE_OFF=		DISCORD ${CMAKE_OFF_${ARCH}}
+CMAKE_OFF_powerpc64le=	DYNAREC
 
-SUB_FILES=	86Box-install-roms.sh
-SUB_LIST=	DISTVERSION=${DISTVERSION} \
-		DISTVERSIONPREFIX=${DISTVERSIONPREFIX}
+SUB_FILES=		86Box-install-roms.sh
+SUB_LIST=		DISTVERSION=${DISTVERSION} \
+			DISTVERSIONPREFIX=${DISTVERSIONPREFIX}
 
 OPTIONS_DEFINE=		NLS WAYLAND
 OPTIONS_DEFAULT=	WAYLAND
