@@ -1,6 +1,6 @@
---- ./configure.ac.ORIG	2023-02-11 20:12:38.532565000 +0100
-+++ ./configure.ac	2023-02-11 20:14:27.194137000 +0100
-@@ -170,7 +170,8 @@
+--- configure.ac.orig	2024-02-05 23:51:38 UTC
++++ configure.ac
+@@ -170,7 +170,8 @@ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
  #include <infiniband/verbs.h>
  #include <rdma/rdma_cma.h>
