@@ -1,6 +1,6 @@
---- ./lib/socket.c.ORIG	2023-02-11 20:12:27.340472000 +0100
-+++ ./lib/socket.c	2023-02-11 21:13:25.802721000 +0100
-@@ -140,7 +140,7 @@
+--- lib/socket.c.orig	2024-02-05 23:51:38 UTC
++++ lib/socket.c
+@@ -140,7 +140,7 @@ iscsi_add_to_outqueue(struct iscsi_context *iscsi, str
  	pdu->next = NULL;
  }
  
@@ -9,3 +9,12 @@
  	iface_rr--;
  }
  
+@@ -531,7 +531,7 @@ iscsi_iovector_readv_writev(struct iscsi_context *iscs
+ 
+ 	if (pos < iovector->offset) {
+ 		iscsi_set_error(iscsi, "%s: iovector reset. pos(%d) is smaller than"
+-				"current offset(%ld)", rw, pos, iovector->offset);
++				"current offset(%zd)", rw, pos, iovector->offset);
+ 		errno = EINVAL;
+ 		return -1;
+ 	}
