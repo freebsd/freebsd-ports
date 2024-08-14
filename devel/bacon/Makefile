@@ -1,6 +1,6 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.19.0
+DISTVERSION=	2.20.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,46 +32,44 @@ CARGO_CRATES=	adler-1.0.2 \
 		autocfg-1.3.0 \
 		bitflags-1.3.2 \
 		bitflags-2.6.0 \
-		bstr-1.9.1 \
+		bstr-1.10.0 \
 		btoi-0.4.3 \
 		bumpalo-3.16.0 \
-		bytes-1.6.1 \
+		bytes-1.7.1 \
 		bytesize-1.3.0 \
 		camino-1.1.7 \
 		cargo-platform-0.1.8 \
 		cargo_metadata-0.18.1 \
-		cc-1.1.6 \
+		cc-1.1.10 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.38 \
-		clap-4.5.11 \
-		clap-help-1.2.0 \
-		clap_builder-4.5.11 \
-		clap_derive-4.5.11 \
+		clap-4.5.15 \
+		clap-help-1.3.0 \
+		clap_builder-4.5.15 \
+		clap_derive-4.5.13 \
 		clap_lex-0.7.2 \
 		cli-log-2.0.0 \
 		clru-0.6.2 \
 		colorchoice-1.0.2 \
-		coolor-0.9.0 \
-		core-foundation-sys-0.8.6 \
+		coolor-1.0.0 \
+		core-foundation-sys-0.8.7 \
 		crc32fast-1.4.2 \
-		crokey-0.6.4 \
-		crokey-1.0.1 \
-		crokey-proc_macros-0.6.4 \
-		crokey-proc_macros-1.0.1 \
+		crokey-1.1.0 \
+		crokey-proc_macros-1.1.0 \
 		crossbeam-0.8.4 \
 		crossbeam-channel-0.5.13 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-queue-0.3.11 \
 		crossbeam-utils-0.8.20 \
-		crossterm-0.27.0 \
+		crossterm-0.28.1 \
 		crossterm_winapi-0.9.1 \
 		dashmap-5.5.3 \
 		deranged-0.3.11 \
 		directories-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
-		dunce-1.0.4 \
+		dunce-1.0.5 \
 		either-1.13.0 \
 		encoding_rs-0.8.34 \
 		equivalent-1.0.1 \
@@ -79,8 +77,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		faster-hex-0.9.0 \
 		fastrand-2.1.0 \
 		file-size-1.0.3 \
-		filetime-0.2.23 \
-		flate2-1.0.30 \
+		filetime-0.2.24 \
+		flate2-1.0.31 \
 		form_urlencoded-1.2.1 \
 		fsevent-sys-4.1.0 \
 		getrandom-0.2.15 \
@@ -94,7 +92,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		gix-commitgraph-0.24.3 \
 		gix-config-0.34.0 \
 		gix-config-value-0.14.7 \
-		gix-credentials-0.24.3 \
+		gix-credentials-0.24.4 \
 		gix-date-0.8.7 \
 		gix-diff-0.40.0 \
 		gix-discover-0.29.0 \
@@ -136,13 +134,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		gix-worktree-stream-0.9.0 \
 		hashbrown-0.14.5 \
 		heck-0.5.0 \
+		hermit-abi-0.3.9 \
 		home-0.5.9 \
 		human_format-1.1.0 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
-		imara-diff-0.1.6 \
-		indexmap-2.2.6 \
+		imara-diff-0.1.7 \
+		indexmap-2.3.0 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		io-close-0.3.7 \
@@ -165,6 +164,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		minimad-0.13.1 \
 		miniz_oxide-0.7.4 \
 		mio-0.8.11 \
+		mio-1.0.2 \
 		nix-0.29.0 \
 		notify-6.1.1 \
 		num-conv-0.1.0 \
@@ -181,10 +181,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		quote-1.0.36 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.4.1 \
 		redox_syscall-0.5.3 \
 		redox_users-0.4.5 \
-		regex-1.10.5 \
+		regex-1.10.6 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.8.4 \
 		rustix-0.38.34 \
@@ -192,24 +191,24 @@ CARGO_CRATES=	adler-1.0.2 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		semver-1.0.23 \
-		serde-1.0.204 \
-		serde_derive-1.0.204 \
-		serde_json-1.0.120 \
+		serde-1.0.206 \
+		serde_derive-1.0.206 \
+		serde_json-1.0.124 \
 		serde_spanned-0.6.7 \
 		sha1_smol-1.0.1 \
 		shell-words-1.1.0 \
 		signal-hook-0.3.17 \
-		signal-hook-mio-0.2.3 \
+		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.2 \
 		smallvec-1.13.2 \
 		static_assertions-1.1.0 \
 		strict-0.2.0 \
 		strsim-0.11.1 \
 		syn-1.0.109 \
-		syn-2.0.72 \
-		tempfile-3.10.1 \
-		termimad-0.29.4 \
-		terminal-light-1.4.0 \
+		syn-2.0.74 \
+		tempfile-3.12.0 \
+		termimad-0.30.0 \
+		terminal-light-1.5.0 \
 		thiserror-1.0.63 \
 		thiserror-impl-1.0.63 \
 		time-0.3.36 \
@@ -217,9 +216,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		time-macros-0.2.18 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		toml-0.8.16 \
-		toml_datetime-0.6.7 \
-		toml_edit-0.22.17 \
+		toml-0.8.19 \
+		toml_datetime-0.6.8 \
+		toml_edit-0.22.20 \
 		uluru-3.1.0 \
 		unicode-bidi-0.3.15 \
 		unicode-bom-2.0.3 \
@@ -228,7 +227,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicode-width-0.1.13 \
 		url-2.5.2 \
 		utf8parse-0.2.2 \
-		version_check-0.9.4 \
+		version_check-0.9.5 \
 		vte-0.8.0 \
 		vte_generate_state_changes-0.1.2 \
 		walkdir-2.5.0 \
@@ -240,11 +239,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		wasm-bindgen-shared-0.2.92 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.8 \
+		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-core-0.52.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.48.5 \
@@ -263,7 +263,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.5.40 \
-		winnow-0.6.16 \
+		winnow-0.6.18 \
 		xterm-query-0.4.1 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35
