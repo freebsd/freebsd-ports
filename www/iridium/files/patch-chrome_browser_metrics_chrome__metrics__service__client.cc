@@ -1,12 +1,17 @@
---- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2024-06-25 12:08:48 UTC
+--- chrome/browser/metrics/chrome_metrics_service_client.cc.orig	2024-08-01 05:47:53 UTC
 +++ chrome/browser/metrics/chrome_metrics_service_client.cc
-@@ -195,7 +195,7 @@
+@@ -195,11 +195,11 @@
  #include "chrome/notification_helper/notification_helper_constants.h"
  #endif
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "components/metrics/motherboard_metrics_provider.h"
+ #endif
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_ANDROID)
+ #include "chrome/browser/metrics/chrome_metrics_service_crash_reporter.h"
  #endif
  
 @@ -212,7 +212,7 @@
