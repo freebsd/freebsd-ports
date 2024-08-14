@@ -1,8 +1,8 @@
 PORTNAME=	librewolf
-DISTVERSION=	128.0.3
-DISTVERSIONSUFFIX=	-2.source
+DISTVERSION=	129.0
+DISTVERSIONSUFFIX=	-1.source
 CATEGORIES=	www wayland
-MASTER_SITES=	https://gitlab.com/api/v4/projects/32320088/packages/generic/${PORTNAME}-source/${DISTVERSION}-2/
+MASTER_SITES=	https://gitlab.com/api/v4/projects/32320088/packages/generic/${PORTNAME}-source/${DISTVERSION}-1/
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Custom version of Firefox, focused on privacy, security and freedom
@@ -36,7 +36,7 @@ CONFIGURE_ENV+=	BINDGEN_CFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ENV+=	MOZ_REQUIRE_SIGNING=""
 CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-2
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-1
 
 MOZILLA_CAP=	${MOZILLA:C/^(.).*/\1/:tu}${MOZILLA:C/^.//}
 
