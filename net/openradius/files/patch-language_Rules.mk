@@ -1,5 +1,5 @@
---- language/Rules.mk.orig	Sun Oct 29 15:55:04 2006
-+++ language/Rules.mk	Sun Oct 29 15:55:08 2006
+--- language/Rules.mk.orig 2024-05-23 14:07:34 UTC
++++ language/Rules.mk
 @@ -31,7 +31,7 @@
  		$(COMP)
  

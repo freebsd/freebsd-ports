@@ -1,5 +1,5 @@
---- etc/Rules.mk.orig	Fri Mar 17 13:39:14 2006
-+++ etc/Rules.mk	Sun Oct 29 15:46:17 2006
+--- etc/Rules.mk.orig 2024-05-23 14:07:34 UTC
++++ etc/Rules.mk
 @@ -13,7 +13,6 @@
  CMD_INSTETC	:= $(CMD_INSTETC) \
  		   $(INST) $(d)/dictionary -m 644 -d $(INST_PREFIX)$(DIR_ETC) \

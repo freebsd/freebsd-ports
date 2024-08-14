@@ -1,5 +1,5 @@
---- Rules.mk.orig	Thu Mar 23 17:19:04 2006
-+++ Rules.mk	Sun Oct 29 15:49:17 2006
+--- Rules.mk.orig 2024-05-23 14:07:34 UTC
++++ Rules.mk
 @@ -74,19 +74,6 @@
  		$(CMD_INSTSBIN)
  		$(INST) $(TGT_LIB) -m 755 -d $(INST_PREFIX)$(DIR_LIB)
