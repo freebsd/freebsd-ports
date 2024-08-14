@@ -1,6 +1,6 @@
---- components/viz/service/display_embedder/skia_output_device_buffer_queue.cc.orig	2024-06-17 12:56:06 UTC
+--- components/viz/service/display_embedder/skia_output_device_buffer_queue.cc.orig	2024-07-30 11:12:21 UTC
 +++ components/viz/service/display_embedder/skia_output_device_buffer_queue.cc
-@@ -197,7 +197,7 @@ SkiaOutputDeviceBufferQueue::SkiaOutputDeviceBufferQue
+@@ -174,7 +174,7 @@ SkiaOutputDeviceBufferQueue::SkiaOutputDeviceBufferQue
    capabilities_.only_invalidates_damage_rect = false;
    capabilities_.number_of_buffers = 3;
  

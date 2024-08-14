@@ -1,6 +1,6 @@
---- third_party/perfetto/src/tracing/track.cc.orig	2023-05-31 08:12:17 UTC
+--- third_party/perfetto/src/tracing/track.cc.orig	2024-07-30 11:12:21 UTC
 +++ third_party/perfetto/src/tracing/track.cc
-@@ -143,7 +143,7 @@ namespace internal {
+@@ -155,7 +155,7 @@ namespace internal {
  namespace {
  
  uint64_t GetProcessStartTime() {

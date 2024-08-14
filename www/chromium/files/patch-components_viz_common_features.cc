@@ -1,6 +1,6 @@
---- components/viz/common/features.cc.orig	2024-06-17 12:56:06 UTC
+--- components/viz/common/features.cc.orig	2024-07-30 11:12:21 UTC
 +++ components/viz/common/features.cc
-@@ -251,7 +251,7 @@ BASE_FEATURE(kBufferQueueImageSetPurgeable,
+@@ -263,7 +263,7 @@ BASE_FEATURE(kBufferQueueImageSetPurgeable,
               "BufferQueueImageSetPurgeable",
               base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -9,7 +9,7 @@
  // On platforms using SkiaOutputDeviceBufferQueue and not yet universally using
  // SkiaRenderer-allocated images, when this is true SkiaRenderer will allocate
  // and maintain a buffer queue of images for the root render pass, instead of
-@@ -535,7 +535,7 @@ bool ShouldOnBeginFrameThrottleVideo() {
+@@ -559,7 +559,7 @@ bool ShouldOnBeginFrameThrottleVideo() {
    return base::FeatureList::IsEnabled(features::kOnBeginFrameThrottleVideo);
  }
  

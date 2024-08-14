@@ -1,6 +1,6 @@
---- ui/aura/screen_ozone.cc.orig	2023-11-03 10:09:45 UTC
+--- ui/aura/screen_ozone.cc.orig	2024-07-30 11:12:21 UTC
 +++ ui/aura/screen_ozone.cc
-@@ -106,7 +106,7 @@ display::Display ScreenOzone::GetPrimaryDisplay() cons
+@@ -107,7 +107,7 @@ display::Display ScreenOzone::GetPrimaryDisplay() cons
    return platform_screen_->GetPrimaryDisplay();
  }
  

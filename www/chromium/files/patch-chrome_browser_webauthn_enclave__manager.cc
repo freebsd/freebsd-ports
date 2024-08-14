@@ -1,6 +1,6 @@
---- chrome/browser/webauthn/enclave_manager.cc.orig	2024-06-17 12:56:06 UTC
+--- chrome/browser/webauthn/enclave_manager.cc.orig	2024-07-30 11:12:21 UTC
 +++ chrome/browser/webauthn/enclave_manager.cc
-@@ -652,7 +652,7 @@ base::flat_set<std::string> GetGaiaIDs(
+@@ -646,7 +646,7 @@ base::flat_set<std::string> GetGaiaIDs(
  }
  
  std::string UserVerifyingLabelToString(crypto::UserVerifyingKeyLabel label) {
@@ -9,7 +9,7 @@
    return label;
  #else
    return std::string("placeholder");
-@@ -661,7 +661,7 @@ std::string UserVerifyingLabelToString(crypto::UserVer
+@@ -655,7 +655,7 @@ std::string UserVerifyingLabelToString(crypto::UserVer
  
  std::optional<crypto::UserVerifyingKeyLabel> UserVerifyingKeyLabelFromString(
      std::string saved_label) {

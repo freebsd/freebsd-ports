@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/settings/accessibility_main_handler.cc.orig	2024-02-23 21:04:38 UTC
+--- chrome/browser/ui/webui/settings/accessibility_main_handler.cc.orig	2024-07-30 11:12:21 UTC
 +++ chrome/browser/ui/webui/settings/accessibility_main_handler.cc
 @@ -19,7 +19,7 @@
  #include "content/public/browser/web_contents.h"
@@ -24,7 +24,7 @@
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
-   if (features::IsPdfOcrEnabled()) {
+   if (features::IsPdfOcrEnabled() || features::IsMainNodeAnnotationsEnabled()) {
      CHECK(!component_ready_observer_.IsObserving());
      component_ready_observer_.Observe(
 @@ -70,14 +70,14 @@ void AccessibilityMainHandler::OnJavascriptDisallowed(
@@ -33,7 +33,7 @@
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
-   if (features::IsPdfOcrEnabled()) {
+   if (features::IsPdfOcrEnabled() || features::IsMainNodeAnnotationsEnabled()) {
      component_ready_observer_.Reset();
    }
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
