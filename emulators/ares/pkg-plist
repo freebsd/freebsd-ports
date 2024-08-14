@@ -1,0 +1,13 @@
+bin/ares
+share/applications/ares.desktop
+%%DATADIR%%/Database/Arcade.bml
+%%DATADIR%%/Database/BS Memory.bml
+%%DATADIR%%/Database/Famicom.bml
+%%DATADIR%%/Database/MSX.bml
+%%DATADIR%%/Database/MSX2.bml
+%%DATADIR%%/Database/Neo Geo.bml
+%%DATADIR%%/Database/Sufami Turbo.bml
+%%DATADIR%%/Database/Super Famicom Boards.bml
+%%DATADIR%%/Database/Super Famicom.bml
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+share/icons/hicolor/256x256/apps/ares.png

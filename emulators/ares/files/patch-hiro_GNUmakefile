@@ -1,0 +1,11 @@
+--- hiro/GNUmakefile.orig	2024-08-14 11:19:20 UTC
++++ hiro/GNUmakefile
+@@ -62,7 +62,7 @@ ifneq ($(filter $(platform),linux bsd),)
+   else ifeq ($(hiro),gtk3-se)
+     flags       += -DHiro_SourceEdit
+     hiro.flags   = $(flags.cpp) -DHIRO_GTK=3 $(shell $(pkg_config) --cflags gtk+-3.0 gtksourceview-3.0) -Wno-deprecated-declarations
+-    hiro.options = -L/usr/local/lib -lX11 $(shell $(pkg_config) --libs gtk+-3.0 gtksourceview-3.0)
++    hiro.options = -lX11 $(shell $(pkg_config) --libs gtk+-3.0 gtksourceview-3.0)
+   else ifeq ($(hiro),qt4)
+     moc = /usr/local/lib/qt4/bin/moc
+     hiro.flags   = $(flags.cpp) -DHIRO_QT=4 $(shell $(pkg_config) --cflags QtCore QtGui)
