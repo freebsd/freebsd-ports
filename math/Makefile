@@ -1233,6 +1233,7 @@
     SUBDIR += trlib
     SUBDIR += ttmath
     SUBDIR += tvmet
+    SUBDIR += quich
     SUBDIR += ump
     SUBDIR += units
     SUBDIR += universal
