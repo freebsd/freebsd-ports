@@ -1,11 +1,13 @@
 PORTNAME=	vpp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	24.06
+PORTREVISION=	1
 CATEGORIES=	net
 
 PATCH_SITES=	https://github.com/adventureloop/${PORTNAME}/commit/
 PATCHFILES=	fba2754d78cde15f93d19f86499aa3803110bc73.patch:-p1 \
-		c15618aa59bf39197c66ec2e82c58c02d4c56c20.patch:-p1
+		c15618aa59bf39197c66ec2e82c58c02d4c56c20.patch:-p1 \
+		b8e219b761d0e2cc1caf5196f0ebfaf8ea776b26.patch:-p1
 
 MAINTAINER=	thj@freebsd.org
 COMMENT=	VPP: A fast, scalable layer 2-4 multi-platform network stack
