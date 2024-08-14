@@ -1172,6 +1172,16 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  		    ssh_remote_ipaddr(ssh), ssh_remote_port(ssh),
 --- work/openssh/sshd.c.orig	2024-06-30 21:36:28.000000000 -0700
 +++ work/openssh/sshd.c	2024-07-01 14:03:40.471948000 -0700
+@@ -75,6 +75,9 @@
+ #include "log.h"
+ #include "sshbuf.h"
+ #include "misc.h"
++#ifdef HPN_ENABLED
++#include "channels.h"
++#endif
+ #include "servconf.h"
+ #include "compat.h"
+ #include "digest.h"
 @@ -742,6 +742,10 @@ listen_on_addrs(struct listenaddr *la)
  	int ret, listen_sock;
  	struct addrinfo *ai;
