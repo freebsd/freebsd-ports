@@ -19,11 +19,13 @@ USE_RC_SUBR=	pcscd
 
 SHEBANG_FILES=	src/spy/pcsc-spy
 
+.include "Makefile.common"
+
 MESON_ARGS=	-Dlibsystemd=false \
 		-Dlibudev=false \
 		-Dlibusb=true \
 		-Dusb=true \
-		-Dusbdropdir=${PREFIX}/lib/pcsc/drivers/ \
+		-Dusbdropdir=${USBDROPDIR}/ \
 		-Dipcdir=/var/run
 
 SUB_FILES=	pkg-message
