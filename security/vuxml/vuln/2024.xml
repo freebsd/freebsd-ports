@@ -1,3 +1,66 @@
+  <vuln vid="9d8e9952-5a42-11ef-a219-1c697a616631">
+    <topic>Intel CPUs -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cpu-microcode-intel</name>
+	<range><lt>20240813</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Intel reports:</p>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01083.html">
+	 <p>
+	  A potential security vulnerability in SMI Transfer monitor (STM) may
+	  allow escalation of privilege.  Intel has released microcode updates
+	  to mitigate this potential vulnerability.
+	 </p>
+	</blockquote>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01118.html">
+	 <p>
+	  A potential security vulnerability in some 3rd Generation Intel Xeon
+	  Scalable Processors may allow denial of service.  Intel has released
+	  microcode updates to mitigate this potential vulnerability.
+	 </p>
+	</blockquote>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01100.html">
+	 <p>
+	  A potential security vulnerability in some 3rd, 4th, and 5th
+	  Generation Intel Xeon Processors may allow escalation of privilege.
+	  Intel has released firmware updates to mitigate this potential
+	  vulnerability.
+	 </p>
+	</blockquote>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01038.html">
+	 <p>
+	  A potential security vulnerability in the Intel Core Ultra Processor
+	  stream cache mechanism may allow escalation of privilege.  Intel has
+	  released microcode updates to mitigate this potential vulnerability.
+	 </p>
+	</blockquote>
+	<blockquote cite="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-01046.html">
+	 <p>
+	  A potential security vulnerability in some Intel Processor stream
+	  cache mechanisms may allow escalation of privilege.  Intel has
+	  released microcode updates to mitigate this potential vulnerability.
+	 </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-24853</cvename>
+      <cvename>CVE-2024-25939</cvename>
+      <cvename>CVE-2024-24980</cvename>
+      <cvename>CVE-2023-42667</cvename>
+      <cvename>CVE-2023-49141</cvename>
+      <url>https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files/releases/tag/microcode-20240813</url>
+    </references>
+    <dates>
+      <discovery>2024-08-13</discovery>
+      <entry>2024-08-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5d7939f6-5989-11ef-9793-b42e991fc52e">
     <topic>firefox -- multiple vulnerabilities</topic>
     <affects>
