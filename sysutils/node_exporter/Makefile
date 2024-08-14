@@ -1,7 +1,6 @@
 PORTNAME=	node_exporter
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.6.1
-PORTREVISION=	8
+DISTVERSION=	1.8.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	dor.bsd@xm0.uk
@@ -25,7 +24,7 @@ LD_FLAG_STRING=	-s \
 		${LD_FLAG_X_PREFIX}.Revision=${PORTREVISION} \
 		${LD_FLAG_X_PREFIX}.Branch=release-${PORTVERSION:R} \
 		${LD_FLAG_X_PREFIX}.BuildUser=${BUILD_USER}
-LD_FLAG_X_PREFIX=	-X ${GO_PKGNAME:H}/common/version
+LD_FLAG_X_PREFIX=	-X github.com/prometheus/common/version
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
