@@ -1111,6 +1111,7 @@
     SUBDIR += qposases
     SUBDIR += qrupdate
     SUBDIR += qtiplot-doc
+    SUBDIR += quich
     SUBDIR += qwtplot3d
     SUBDIR += qxfun
     SUBDIR += randlib
@@ -1233,7 +1234,6 @@
     SUBDIR += trlib
     SUBDIR += ttmath
     SUBDIR += tvmet
-    SUBDIR += quich
     SUBDIR += ump
     SUBDIR += units
     SUBDIR += universal
