@@ -1,6 +1,5 @@
 PORTNAME=	roxygen2
-DISTVERSION=	7.1.1
-PORTREVISION=	1
+DISTVERSION=	7.3.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -12,6 +11,7 @@ LICENSE=	MIT
 
 CRAN_DEPENDS=	R-cran-brew>0:textproc/R-cran-brew \
 		R-cran-commonmark>0:textproc/R-cran-commonmark \
+		R-cran-cpp11>0:devel/R-cran-cpp11 \
 		R-cran-desc>=1.2.0:devel/R-cran-desc \
 		R-cran-digest>0:security/R-cran-digest \
 		R-cran-knitr>0:print/R-cran-knitr \
