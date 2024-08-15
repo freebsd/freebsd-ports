@@ -16,7 +16,6 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 
 USES=		cpe gem gmake pkgconfig
 
-CONFIGURE_ARGS=	--with-cflags=-Wno-incompatible-function-pointer-types
 MAKE_JOBS_UNSAFE=	yes
 
 post-patch:

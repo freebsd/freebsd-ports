@@ -63,6 +63,8 @@ EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/third_party/abseil-cpp/ \
 			--exclude ${DISTNAME}/third_party/cares/ \
 			--exclude ${DISTNAME}/third_party/protobuf/ \
 			--exclude ${DISTNAME}/third_party/re2/ \
+			--exclude ${DISTNAME}/third_party/upb/ \
+			--exclude ${DISTNAME}/third_party/utf8_range/ \
 			--exclude ${DISTNAME}/third_party/xxhash/ \
 			--exclude ${DISTNAME}/third_party/zlib/ \
 			--no-same-owner --no-same-permissions
@@ -74,8 +76,8 @@ post-patch:
 	@${RM} -r ${WRKSRC}/third_party/cares/
 	@${RM} -r ${WRKSRC}/third_party/protobuf/
 	@${RM} -r ${WRKSRC}/third_party/re2/
-	#@${RM} -r ${WRKSRC}/third_party/upb/
-	#@${RM} -r ${WRKSRC}/third_party/utf8_range/
+	@${RM} -r ${WRKSRC}/third_party/upb/
+	@${RM} -r ${WRKSRC}/third_party/utf8_range/
 	@${RM} -r ${WRKSRC}/third_party/xxhash/
 	@${RM} -r ${WRKSRC}/third_party/zlib/
 .endif

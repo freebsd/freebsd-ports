@@ -14,12 +14,12 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		perl5
-USE_PERL5=	configure
-
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 TEST_DEPENDS=	p5-DBD-SQLite>=1.44:databases/p5-DBD-SQLite
+
+USES=		perl5
+USE_PERL5=	configure
 
 NO_ARCH=	yes
 
