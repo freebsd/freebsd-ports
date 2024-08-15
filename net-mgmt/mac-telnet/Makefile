@@ -1,5 +1,6 @@
 PORTNAME=	mac-telnet
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt net
 
@@ -20,10 +21,13 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ARGS+=--without-config
 CONFIGURE_ENV+=	CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 
 post-install:
-	@${CHMOD} 0600 ${STAGEDIR}${PREFIX}/etc/mactelnetd.users
-	@-${CHOWN} root ${STAGEDIR}${PREFIX}/etc/mactelnetd.users
+	${INSTALL_DATA} ${BUILD_WRKSRC}/config/mactelnetd.users \
+		${STAGEDIR}${PREFIX}/etc/mactelnetd.users.sample
+	@${CHMOD} 0600 ${STAGEDIR}${PREFIX}/etc/mactelnetd.users.sample
+	@-${CHOWN} root ${STAGEDIR}${PREFIX}/etc/mactelnetd.users.sample
 
 .include <bsd.port.mk>

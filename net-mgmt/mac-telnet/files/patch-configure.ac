@@ -1,6 +1,6 @@
---- configure.ac.orig	2024-06-19 14:50:22 UTC
+--- configure.ac.orig	2024-08-12 21:08:19 UTC
 +++ configure.ac
-@@ -79,6 +79,10 @@ case "$host_os" in
+@@ -93,6 +93,10 @@ case "$host_os" in
          AC_MSG_ERROR([pthreads library not found])
      fi
      ;;
