@@ -6094,6 +6094,7 @@
     SUBDIR += py3c
     SUBDIR += pybind11
     SUBDIR += pybind11-json
+    SUBDIR += pybind11_abseil
     SUBDIR += pybugz
     SUBDIR += pycanberra
     SUBDIR += pycdc

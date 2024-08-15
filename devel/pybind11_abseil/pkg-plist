@@ -1,0 +1,4 @@
+lib/ok_status_singleton.so
+%%PYTHON_SITELIBDIR%%/pybind11_abseil/ok_status_singleton.so
+%%PYTHON_SITELIBDIR%%/pybind11_abseil/status.so
+lib/status.so
