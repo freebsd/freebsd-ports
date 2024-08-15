@@ -7,10 +7,10 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		ansi-to-tui-3.1.0 \
-		anstream-0.6.14 \
-		anstyle-1.0.7 \
-		anstyle-parse-0.2.4 \
-		anstyle-query-1.1.0 \
+		anstream-0.6.15 \
+		anstyle-1.0.8 \
+		anstyle-parse-0.2.5 \
+		anstyle-query-1.1.1 \
 		anstyle-wincon-3.0.3 \
 		anyhow-1.0.86 \
 		arbitrary-1.3.2 \
@@ -40,20 +40,20 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		bytes-1.6.1 \
 		cassowary-0.3.0 \
 		castaway-0.2.3 \
-		cc-1.1.6 \
+		cc-1.1.7 \
 		cfg-expr-0.15.8 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
-		clap-4.5.11 \
-		clap_builder-4.5.11 \
-		clap_complete-4.5.11 \
+		clap-4.5.15 \
+		clap_builder-4.5.15 \
+		clap_complete-4.5.16 \
 		clap_complete_fig-4.5.2 \
 		clap_complete_nushell-4.5.3 \
-		clap_derive-4.5.11 \
-		clap_lex-0.7.1 \
+		clap_derive-4.5.13 \
+		clap_lex-0.7.2 \
 		clipboard-win-5.4.0 \
 		color_quant-1.1.0 \
-		colorchoice-1.0.1 \
+		colorchoice-1.0.2 \
 		compact_str-0.7.1 \
 		concurrent-queue-2.5.0 \
 		console-0.15.8 \
@@ -122,12 +122,12 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		image-webp-0.1.3 \
 		imagesize-0.13.0 \
 		imgref-1.10.1 \
-		indexmap-2.2.6 \
+		indexmap-2.4.0 \
 		inotify-0.10.2 \
 		inotify-sys-0.1.5 \
 		instant-0.1.13 \
 		interpolate_name-0.2.4 \
-		is_terminal_polyfill-1.70.0 \
+		is_terminal_polyfill-1.70.1 \
 		itertools-0.12.1 \
 		itertools-0.13.0 \
 		itoa-1.0.11 \
@@ -164,6 +164,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		new_debug_unreachable-1.0.6 \
 		nom-7.1.3 \
 		noop_proc_macro-0.3.0 \
+		notify-fork-6.1.1 \
+		notify-types-fork-1.0.0 \
 		nu-ansi-term-0.46.0 \
 		num-bigint-0.4.6 \
 		num-conv-0.1.0 \
@@ -215,7 +217,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		redox_syscall-0.4.1 \
 		redox_syscall-0.5.2 \
 		redox_users-0.4.5 \
-		regex-1.10.5 \
+		regex-1.10.6 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.8.4 \
 		rgb-0.8.45 \
@@ -226,15 +228,15 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		serde-1.0.204 \
+		serde-1.0.207 \
 		serde-value-0.7.0 \
-		serde_derive-1.0.204 \
-		serde_json-1.0.121 \
+		serde_derive-1.0.207 \
+		serde_json-1.0.125 \
 		serde_spanned-0.6.7 \
 		sharded-slab-0.1.7 \
 		shell-words-1.1.0 \
 		signal-hook-0.3.17 \
-		signal-hook-mio-0.2.3 \
+		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.2 \
 		signal-hook-tokio-0.3.1 \
 		simd-adler32-0.3.7 \
@@ -249,12 +251,12 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		strum-0.26.3 \
 		strum_macros-0.26.4 \
 		syn-1.0.109 \
-		syn-2.0.71 \
+		syn-2.0.72 \
 		syntect-5.2.0 \
 		system-deps-6.2.2 \
 		target-lexicon-0.12.15 \
-		thiserror-1.0.62 \
-		thiserror-impl-1.0.62 \
+		thiserror-1.0.63 \
+		thiserror-impl-1.0.63 \
 		thread_local-1.1.8 \
 		tiff-0.9.1 \
 		tikv-jemalloc-sys-0.6.0+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7 \
@@ -268,16 +270,16 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		tokio-macros-2.4.0 \
 		tokio-stream-0.1.15 \
 		tokio-util-0.7.11 \
-		toml-0.8.17 \
+		toml-0.8.19 \
 		toml_datetime-0.6.8 \
-		toml_edit-0.22.18 \
+		toml_edit-0.22.20 \
 		tracing-0.1.40 \
 		tracing-appender-0.2.3 \
 		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.18 \
-		trash-5.0.0 \
+		trash-5.1.0 \
 		typeid-1.0.0 \
 		typenum-1.17.0 \
 		unicode-bidi-0.3.15 \
@@ -289,7 +291,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		url-2.5.2 \
 		urlencoding-2.1.3 \
 		utf8parse-0.2.2 \
-		uzers-0.12.0 \
+		uzers-0.12.1 \
 		v_frame-0.3.8 \
 		validator-0.18.1 \
 		validator_derive-0.18.1 \
@@ -298,7 +300,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		vergen-gitcl-1.0.0 \
 		vergen-lib-0.1.3 \
 		version-compare-0.2.0 \
-		version_check-0.9.4 \
+		version_check-0.9.5 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.92 \
@@ -338,12 +340,11 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.16 \
+		winnow-0.6.18 \
 		winsafe-0.0.19 \
 		yazi-prebuild-0.1.2 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
 		zune-core-0.4.12 \
 		zune-inflate-0.2.54 \
-		zune-jpeg-0.4.13 \
-		notify,notify-types@git+https://github.com/notify-rs/notify.git?rev=96dec74316a93bed6eec9db177b233e6e017275e\#96dec74316a93bed6eec9db177b233e6e017275e
+		zune-jpeg-0.4.13
