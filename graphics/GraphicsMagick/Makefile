@@ -23,13 +23,24 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
+FLAVORS=	x11 nox11
+FLAVOR?=	${FLAVORS:[1]}
+nox11_PKGNAMESUFFIX=	-nox11
+.if ${FLAVOR} == x11
+CONFIGURE_ARGS+=--with-x
+USE_XORG=	ice sm x11 xext
+USES+=		xorg
+.else
+CONFIGURE_ARGS+=--without-x ac_cv_lib_ICE_IceConnectionNumber=no
+.endif
+
 PORTSCOUT=	limit:^[0-9]\.[0-9]\.[1-9][0-9\]*$$
 
 # Use fonts installed by x11-fonts/webfonts by default
 WINDOWS_FONT_DIR?=	${LOCALBASE}/share/fonts/webfonts
 
-OPTIONS_DEFINE=	BZIP2 DOCS FPX FREETYPE HEIF JASPER JBIG JPEG JXL LCMS2 LZMA OPENMP Q8BIT PNG TEST TIFF WEBP WMF X11 XML ZLIB ZSTD
-OPTIONS_DEFAULT=BZIP2 FREETYPE JASPER JBIG JPEG JXL LCMS2 LZMA OPENMP PNG TIFF WEBP WMF X11 XML ZLIB
+OPTIONS_DEFINE=	BZIP2 DOCS FPX FREETYPE HEIF JASPER JBIG JPEG JXL LCMS2 LZMA OPENMP Q8BIT PNG TEST TIFF WEBP WMF XML ZLIB ZSTD
+OPTIONS_DEFAULT=BZIP2 FREETYPE JASPER JBIG JPEG JXL LCMS2 LZMA OPENMP PNG TIFF WEBP WMF XML ZLIB
 Q8BIT_DESC=	Use 8-bit pixels (speed) instead of 16-bit (quality)
 TEST_DESC=	Run bundled self-tests after build
 
@@ -67,10 +78,7 @@ TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 WEBP_CONFIGURE_WITH=	webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WMF_CONFIGURE_WITH=	wmf
-X11_CONFIGURE_OFF=	ac_cv_lib_ICE_IceConnectionNumber=no
-X11_CONFIGURE_WITH=	x
-X11_USE=		XORG=ice,sm,x11,xext
-X11_USES=		xorg
+WMF_LIB_DEPENDS=	libwmf.so:graphics/libwmf@${FLAVOR}
 XML_CONFIGURE_WITH=	xml
 XML_USE=		GNOME=libxml2
 XML_USES=		gnome
@@ -83,14 +91,6 @@ ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 .if ${PORT_OPTIONS:MOPENMP}
 .if ${ARCH} != aarch64 && ${ARCH} != amd64 && ${ARCH} != i386 && ${ARCH} != powerpc64 && ${ARCH} != powerpc64le && ${ARCH} != riscv64
 USES+=		compiler:gcc-c++11-lib
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MWMF}
-.if ${PORT_OPTIONS:MX11}
-LIB_DEPENDS+=	libwmflite.so:graphics/libwmf
-.else
-LIB_DEPENDS+=	libwmflite.so:graphics/libwmf-nox11
 .endif
 .endif
 
