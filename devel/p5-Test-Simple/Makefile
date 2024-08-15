@@ -1,5 +1,5 @@
 PORTNAME=	Test-Simple
-PORTVERSION=	1.302199
+PORTVERSION=	1.302200
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,4 +17,11 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 504000
+BUILD_DEPENDS+=	p5-Term-Table>=0.013:devel/p5-Term-Table
+RUN_DEPENDS+=	p5-Term-Table>=0.013:devel/p5-Term-Table
+.endif
+
+.include <bsd.port.post.mk>
