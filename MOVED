@@ -3431,3 +3431,4 @@ dns/knot3-lib|dns/knot3|2024-08-09|Superseded by knot3 which provides the librar
 devel/py-ollama|misc/py-ollama|2024-08-10|Deduplicate
 x11-toolkits/wlroots-hyprland||2024-08-11|Discontinued: use x11-toolkits/aquamarine instead
 textproc/wbxml2|textproc/libwbxml|2024-08-15|Move textproc/wbxml2 to textproc/libwbxml
+graphics/libwmf-nox11|graphics/libwmf@nox11|2024-08-15|graphics/libwmf adds nox11 flavor. Use graphics/libwmf@nox11 instead

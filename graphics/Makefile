@@ -515,7 +515,6 @@
     SUBDIR += libvisual04
     SUBDIR += libvisual04-plugins
     SUBDIR += libwmf
-    SUBDIR += libwmf-nox11
     SUBDIR += libwpg03
     SUBDIR += libxisf
     SUBDIR += libyuv
