@@ -4,6 +4,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	2
+PORTREVISION=	1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Data validation using Python type hints
@@ -16,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-fancy-pypi-readme>=22.5.0:devel/py-hatch-fancy-pypi-readme@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}annotated-types>=0.4.0:devel/py-annotated-types@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pydantic-core>=2.20.1<2.20.1_99:devel/py-pydantic-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydantic-core>=2.21.0<2.21.0_99:devel/py-pydantic-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.12.2:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python
