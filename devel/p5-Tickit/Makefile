@@ -18,7 +18,7 @@ BUILD_DEPENDS=	libtickit>=0.4.4:devel/libtickit \
 		${RUN_DEPENDS}
 LIB_DEPENDS=	libtickit.so:devel/libtickit
 RUN_DEPENDS=	p5-Struct-Dumb>=0.04:devel/p5-Struct-Dumb
-TEST_DEPENDS=	p5-Test2-Suite>=0.000149:devel/p5-Test2-Suite
+TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	modbuild

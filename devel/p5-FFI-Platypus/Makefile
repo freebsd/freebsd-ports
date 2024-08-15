@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libffi.so:devel/libffi
 RUN_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-FFI-CheckLib>=0.05:devel/p5-FFI-CheckLib
-TEST_DEPENDS=	p5-Test2-Suite>=0.000121:devel/p5-Test2-Suite
+TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		gmake perl5 pkgconfig
 USE_PERL5=	configure

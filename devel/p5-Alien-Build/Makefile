@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Capture-Tiny>=0.17:devel/p5-Capture-Tiny \
 TEST_DEPENDS=	p5-PkgConfig>=0.14026:devel/p5-PkgConfig \
 		p5-PkgConfig-LibPkgConf>=0.04:devel/p5-PkgConfig-LibPkgConf \
 		p5-Readonly>=1.60:devel/p5-Readonly \
-		p5-Test2-Suite>=0.000121:devel/p5-Test2-Suite
+		p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	configure

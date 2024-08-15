@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-Future>=0:devel/p5-Future \
 		p5-Struct-Dumb>=0:devel/p5-Struct-Dumb
 TEST_DEPENDS=	p5-Test-ExpectAndCheck>=0.06:devel/p5-Test-ExpectAndCheck \
 		p5-Test-Future-IO-Impl>=0:devel/p5-Test-Future-IO-Impl \
-		p5-Test2-Suite>=0:devel/p5-Test2-Suite
+		p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	modbuild

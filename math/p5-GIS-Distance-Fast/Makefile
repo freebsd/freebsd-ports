@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-namespace-clean>=0.24:devel/p5-namespace-clean \
 		p5-strictures>=2.000000:devel/p5-strictures
 TEST_DEPENDS=	p5-GIS-Distance>=0.17:math/p5-GIS-Distance \
-		p5-Test2-Suite>=0.000094:devel/p5-Test2-Suite
+		p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	modbuildtiny

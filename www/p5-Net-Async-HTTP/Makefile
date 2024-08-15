@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Future>=0.28:devel/p5-Future \
 		p5-URI>=0:net/p5-URI
 TEST_DEPENDS=	p5-IO-Async-SSL>=0.12:security/p5-IO-Async-SSL \
 		p5-Test-Metrics-Any>=0:devel/p5-Test-Metrics-Any \
-		p5-Test2-Suite>=0.000147:devel/p5-Test2-Suite
+		p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	modbuild

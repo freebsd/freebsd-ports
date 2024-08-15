@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-Astro-SIMBAD-Client>=0:astro/p5-Astro-SIMBAD-Client \
 		p5-Template-Toolkit>=2.21:www/p5-Template-Toolkit \
 		p5-YAML>=0:textproc/p5-YAML
 TEST_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
-		p5-Test2-Suite>=0:devel/p5-Test2-Suite \
+		p5-Test-Simple>=1.302200:devel/p5-Test-Simple \
 		p5-Test2-Tools-Explain>=0:devel/p5-Test2-Tools-Explain \
 		p5-Test2-Tools-LoadModule>=0:devel/p5-Test2-Tools-LoadModule
 

@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Convert-ASN1>=0.20:converters/p5-Convert-ASN1 \
 		p5-Inline>=0.40:devel/p5-Inline \
 		p5-Net-SSLeay>=1.25:security/p5-Net-SSLeay
 TEST_DEPENDS=	p5-Test-Taint>=0:devel/p5-Test-Taint \
-		p5-Test2-Suite>=0:devel/p5-Test2-Suite
+		p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5 ssl
 USE_PERL5=	modbuild

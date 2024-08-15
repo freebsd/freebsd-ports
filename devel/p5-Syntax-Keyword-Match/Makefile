@@ -14,7 +14,7 @@ LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XS-Parse-Keyword>=0.36:devel/p5-XS-Parse-Keyword
-TEST_DEPENDS=	p5-Test2-Suite>=0.000147:devel/p5-Test2-Suite
+TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	modbuild

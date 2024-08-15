@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-IO-Async>=0.350:devel/p5-IO-Async \
 		p5-Net-FastCGI>=0.10:www/p5-Net-FastCGI
-TEST_DEPENDS=	p5-Test2-Suite>=0.000149:devel/p5-Test2-Suite
+TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	modbuild
