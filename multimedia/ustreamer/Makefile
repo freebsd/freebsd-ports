@@ -1,7 +1,11 @@
 PORTNAME=	ustreamer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.12
+PORTREVISION=	1
 CATEGORIES=	multimedia net
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	ca1e1862101cbcac871efe996456f14f130bf9ad.patch:-p1 # https://github.com/pikvm/ustreamer/pull/285
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight and fast MJPG-HTTP streamer
