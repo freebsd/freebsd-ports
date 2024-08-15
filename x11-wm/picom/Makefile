@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	11.2
 CATEGORIES=	x11-wm
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight X11 compositor
 WWW=		https://github.com/yshui/picom
 
