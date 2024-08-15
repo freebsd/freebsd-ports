@@ -424,6 +424,7 @@
     SUBDIR += libuninameslist
     SUBDIR += libvisio01
     SUBDIR += libwapcaplet
+    SUBDIR += libwbxml
     SUBDIR += libwpd010
     SUBDIR += libwps
     SUBDIR += libwps03
@@ -2111,7 +2112,6 @@
     SUBDIR += vgrep
     SUBDIR += wa-aspell
     SUBDIR += wa-hunspell
-    SUBDIR += wbxml2
     SUBDIR += wdiff
     SUBDIR += webcpp
     SUBDIR += website

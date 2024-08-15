@@ -1,11 +1,12 @@
-PORTNAME=	wbxml2
+PORTNAME=	libwbxml
 PORTVERSION=	0.11.8
 DISTVERSIONPREFIX=	libwbxml-
 CATEGORIES=	textproc devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library & tools for converting wbxml<->xml
-WWW=		http://libwbxml.opensync.org/
+WWW=		http://libwbxml.opensync.org/ \
+		https://github.com/libwbxml/libwbxml
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -14,9 +15,8 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		cmake iconv tar:bzip2
 USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
-GH_ACCOUNT=	libwbxml
-GH_PROJECT=	libwbxml
 
 DOCSDIR=	${PREFIX}/share/doc/libwbxml
 

@@ -3430,3 +3430,4 @@ games/manaplus||2024-08-07|Has expired: Fails to build with libxml2 2.13.2 (PR 2
 dns/knot3-lib|dns/knot3|2024-08-09|Superseded by knot3 which provides the libraries
 devel/py-ollama|misc/py-ollama|2024-08-10|Deduplicate
 x11-toolkits/wlroots-hyprland||2024-08-11|Discontinued: use x11-toolkits/aquamarine instead
+textproc/wbxml2|textproc/libwbxml|2024-08-15|Move textproc/wbxml2 to textproc/libwbxml
