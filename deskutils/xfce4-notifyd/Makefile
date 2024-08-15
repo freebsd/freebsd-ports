@@ -4,8 +4,7 @@
 # Support of GTK is checked at compile time and themes directories too.
 
 PORTNAME=	xfce4-notifyd
-PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTVERSION=	0.9.6
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
