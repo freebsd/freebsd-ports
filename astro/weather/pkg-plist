@@ -1,7 +1,7 @@
 bin/weather
+%%PYTHON_SITELIBDIR%%/__pycache__/weather%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/__pycache__/weather%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/weather.py
-%%PYTHON_SITELIBDIR%%/__pycache__/weather.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/__pycache__/weather.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 share/man/man1/weather.1.gz
 share/man/man5/weatherrc.5.gz
 %%DATADIR%%/airports
