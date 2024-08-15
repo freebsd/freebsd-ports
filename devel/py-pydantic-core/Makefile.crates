@@ -1,10 +1,11 @@
 CARGO_CRATES=	ahash-0.8.11 \
 		aho-corasick-1.1.3 \
 		autocfg-1.3.0 \
-		base64-0.21.7 \
+		base64-0.22.1 \
 		bitvec-1.0.1 \
 		cc-1.0.101 \
 		cfg-if-1.0.0 \
+		displaydoc-0.2.5 \
 		enum_dispatch-0.3.13 \
 		equivalent-1.0.1 \
 		form_urlencoded-1.2.1 \
@@ -12,7 +13,19 @@ CARGO_CRATES=	ahash-0.8.11 \
 		getrandom-0.2.15 \
 		hashbrown-0.14.5 \
 		heck-0.5.0 \
+		hex-0.4.3 \
+		icu_collections-1.5.0 \
+		icu_locid-1.5.0 \
+		icu_locid_transform-1.5.0 \
+		icu_locid_transform_data-1.5.0 \
+		icu_normalizer-1.5.0 \
+		icu_normalizer_data-1.5.0 \
+		icu_properties-1.5.1 \
+		icu_properties_data-1.5.0 \
+		icu_provider-1.5.0 \
+		icu_provider_macros-1.5.0 \
 		idna-0.5.0 \
+		idna-1.0.1 \
 		indexmap-2.2.6 \
 		indoc-2.0.5 \
 		itoa-1.0.11 \
@@ -21,6 +34,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		lexical-parse-integer-0.8.6 \
 		lexical-util-0.8.5 \
 		libc-0.2.155 \
+		litemap-0.7.3 \
 		memchr-2.7.4 \
 		memoffset-0.9.1 \
 		num-bigint-0.4.6 \
@@ -30,11 +44,11 @@ CARGO_CRATES=	ahash-0.8.11 \
 		percent-encoding-2.3.1 \
 		portable-atomic-1.6.0 \
 		proc-macro2-1.0.86 \
-		pyo3-0.22.0 \
-		pyo3-build-config-0.22.0 \
-		pyo3-ffi-0.22.0 \
-		pyo3-macros-0.22.0 \
-		pyo3-macros-backend-0.22.0 \
+		pyo3-0.22.2 \
+		pyo3-build-config-0.22.2 \
+		pyo3-ffi-0.22.2 \
+		pyo3-macros-0.22.2 \
+		pyo3-macros-backend-0.22.2 \
 		python3-dll-a-0.2.10 \
 		quote-1.0.36 \
 		radium-0.7.0 \
@@ -43,17 +57,20 @@ CARGO_CRATES=	ahash-0.8.11 \
 		regex-syntax-0.8.4 \
 		rustversion-1.0.17 \
 		ryu-1.0.18 \
-		serde-1.0.203 \
-		serde_derive-1.0.203 \
-		serde_json-1.0.118 \
+		serde-1.0.204 \
+		serde_derive-1.0.204 \
+		serde_json-1.0.121 \
 		smallvec-1.13.2 \
 		speedate-0.14.4 \
+		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		strum-0.26.3 \
 		strum_macros-0.26.4 \
 		syn-2.0.68 \
+		synstructure-0.13.1 \
 		tap-1.0.1 \
 		target-lexicon-0.12.14 \
+		tinystr-0.7.6 \
 		tinyvec-1.6.1 \
 		tinyvec_macros-0.1.1 \
 		unicode-bidi-0.3.15 \
@@ -61,9 +78,19 @@ CARGO_CRATES=	ahash-0.8.11 \
 		unicode-normalization-0.1.23 \
 		unindent-0.2.3 \
 		url-2.5.2 \
+		utf16_iter-1.0.5 \
+		utf8_iter-1.0.4 \
 		uuid-1.9.1 \
-		version_check-0.9.4 \
+		version_check-0.9.5 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
+		write16-1.0.0 \
+		writeable-0.5.5 \
 		wyz-0.5.1 \
+		yoke-0.7.4 \
+		yoke-derive-0.7.4 \
 		zerocopy-0.7.34 \
-		zerocopy-derive-0.7.34
+		zerocopy-derive-0.7.34 \
+		zerofrom-0.1.4 \
+		zerofrom-derive-0.1.4 \
+		zerovec-0.10.4 \
+		zerovec-derive-0.10.3
