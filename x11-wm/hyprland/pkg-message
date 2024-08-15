@@ -3,6 +3,8 @@
   message: <<EOM
 Notes:
 - Hyprland(1) can use mac_priority(4) to avoid stutter during high load
+- Plugins are not packaged. Instead use hyprpm after installing build-only
+  dependencies e.g., "make depends -C/usr/ports/x11-wm/hyprland"
 
 Additional packages recommended for new users:
 - hypridle
