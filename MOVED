@@ -3435,3 +3435,4 @@ graphics/libwmf-nox11|graphics/libwmf@nox11|2024-08-15|graphics/libwmf adds nox1
 net/mtr-nox11|net/mtr@nox11|2024-08-15|Remove obsoleted port. Use net/mtr@nox11 instead
 databases/py-redis4|databases/py-redis|2024-08-15|Remove obsoleted port. Use databases/py-redis instead
 www/py-httpx-cache|devel/py-hishel|2024-08-15|Remove obsoleted port. Use devel/py-hishel instead
+devel/p5-Test2-Suite|devel/p5-Test-Simple|2024-08-15|Remove obsoleted port. Use devel/p5-Test-Simple instead
