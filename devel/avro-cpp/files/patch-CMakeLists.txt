@@ -1,0 +1,31 @@
+Reference:	https://github.com/apache/avro/commit/9d57bab596b6b3b5c1ca25b06e2c7aede8f32263
+
+--- CMakeLists.txt.orig	2024-07-26 07:46:40 UTC
++++ CMakeLists.txt
+@@ -82,15 +82,7 @@ find_package (Boost 1.38 REQUIRED
+ find_package (Boost 1.38 REQUIRED
+     COMPONENTS filesystem iostreams program_options regex system)
+ 
+-include(FetchContent)
+-FetchContent_Declare(
+-        fmt
+-        GIT_REPOSITORY  https://github.com/fmtlib/fmt.git
+-        GIT_TAG         10.2.1
+-        GIT_PROGRESS    TRUE
+-        USES_TERMINAL_DOWNLOAD TRUE
+-)
+-FetchContent_MakeAvailable(fmt)
++find_package (fmt 10.2.1 REQUIRED)
+ 
+ find_package(Snappy)
+ if (SNAPPY_FOUND)
+@@ -217,7 +209,8 @@ unittest (CommonsSchemasTests)
+ unittest (AvrogencppTestReservedWords)
+ unittest (CommonsSchemasTests)
+ 
+-add_dependencies (AvrogencppTestReservedWords cpp_reserved_words_hh)
++add_dependencies (AvrogencppTestReservedWords cpp_reserved_words_hh
++    cpp_reserved_words_union_typedef_hh)
+ 
+ add_dependencies (AvrogencppTests bigrecord_hh bigrecord_r_hh bigrecord2_hh
+     tweet_hh
