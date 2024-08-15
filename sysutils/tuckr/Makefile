@@ -1,5 +1,5 @@
 PORTNAME=	tuckr
-DISTVERSION=	0.9.0
+DISTVERSION=	0.9.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,16 +27,17 @@ CARGO_CRATES=	aead-0.5.2 \
 		bitflags-2.6.0 \
 		block-buffer-0.10.4 \
 		bytecount-0.6.8 \
+		byteorder-1.5.0 \
 		cfg-if-1.0.0 \
 		chacha20-0.9.1 \
 		chacha20poly1305-0.10.1 \
 		cipher-0.4.4 \
-		clap-4.5.11 \
-		clap_builder-4.5.11 \
-		clap_derive-4.5.11 \
+		clap-4.5.15 \
+		clap_builder-4.5.15 \
+		clap_derive-4.5.13 \
 		clap_lex-0.7.2 \
 		colorchoice-1.0.2 \
-		cpufeatures-0.2.12 \
+		cpufeatures-0.2.13 \
 		crypto-common-0.1.6 \
 		digest-0.10.7 \
 		dirs-4.0.0 \
@@ -57,7 +58,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		owo-colors-3.5.0 \
 		papergrid-0.7.1 \
 		poly1305-0.8.0 \
-		ppv-lite86-0.2.17 \
+		ppv-lite86-0.2.20 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.86 \
@@ -73,7 +74,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
-		syn-2.0.72 \
+		syn-2.0.74 \
 		tabled-0.10.0 \
 		tabled_derive-0.5.0 \
 		thiserror-1.0.63 \
@@ -90,10 +91,11 @@ CARGO_CRATES=	aead-0.5.2 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.8 \
+		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.48.5 \
@@ -111,6 +113,8 @@ CARGO_CRATES=	aead-0.5.2 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
+		zerocopy-0.7.35 \
+		zerocopy-derive-0.7.35 \
 		zeroize-1.8.1
 
 PLIST_FILES=	bin/${PORTNAME}
