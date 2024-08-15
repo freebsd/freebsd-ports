@@ -1632,6 +1632,7 @@
 %%DATADIR%%/crt/crt-resswitch-glitch-koko.slangp
 %%DATADIR%%/crt/crt-royale-fake-bloom-intel.slangp
 %%DATADIR%%/crt/crt-royale-fake-bloom.slangp
+%%DATADIR%%/crt/crt-royale-fast.slangp
 %%DATADIR%%/crt/crt-royale-intel.slangp
 %%DATADIR%%/crt/crt-royale.slangp
 %%DATADIR%%/crt/crt-simple.slangp
@@ -1774,6 +1775,7 @@
 %%DATADIR%%/crt/shaders/crt-royale/THANKS.TXT
 %%DATADIR%%/crt/shaders/crt-royale/TileableLinearApertureGrille15Wide8And5d5Spacing.png
 %%DATADIR%%/crt/shaders/crt-royale/TileableLinearApertureGrille15Wide8And5d5SpacingResizeTo64.png
+%%DATADIR%%/crt/shaders/crt-royale/TileableLinearApertureGrille15Wide8And5d5SpacingResizeTo64BGR.png
 %%DATADIR%%/crt/shaders/crt-royale/TileableLinearShadowMask.png
 %%DATADIR%%/crt/shaders/crt-royale/TileableLinearShadowMaskEDP.png
 %%DATADIR%%/crt/shaders/crt-royale/TileableLinearShadowMaskEDPResizeTo64.png
@@ -1796,6 +1798,20 @@
 %%DATADIR%%/crt/shaders/crt-royale/crt-royale-settings-files/user-settings-royale-with-cheese-ati.h
 %%DATADIR%%/crt/shaders/crt-royale/crt-royale-settings-files/user-settings-royale-with-cheese-nvidia.h
 %%DATADIR%%/crt/shaders/crt-royale/crt-royale-settings-files/user-settings.h
+%%DATADIR%%/crt/shaders/crt-royale/src-fast/bind-shader-params.h
+%%DATADIR%%/crt/shaders/crt-royale/src-fast/bloom-functions.h
+%%DATADIR%%/crt/shaders/crt-royale/src-fast/blur-functions.h
+%%DATADIR%%/crt/shaders/crt-royale/src-fast/crt-royale-bloom-horizontal-reconstitute.slang
+%%DATADIR%%/crt/shaders/crt-royale/src-fast/crt-royale-bloom-vertical.slang
+%%DATADIR%%/crt/shaders/crt-royale/src-fast/crt-royale-brightpass.slang
+%%DATADIR%%/crt/shaders/crt-royale/src-fast/crt-royale-first-pass-linearize-crt-gamma-bob-fields.slang
+%%DATADIR%%/crt/shaders/crt-royale/src-fast/crt-royale-mask-resize-horizontal.slang
+%%DATADIR%%/crt/shaders/crt-royale/src-fast/crt-royale-mask-resize-vertical.slang
+%%DATADIR%%/crt/shaders/crt-royale/src-fast/crt-royale-scanlines-horizontal-apply-mask.slang
+%%DATADIR%%/crt/shaders/crt-royale/src-fast/crt-royale-scanlines-vertical-interlacing.slang
+%%DATADIR%%/crt/shaders/crt-royale/src-fast/phosphor-mask-resizing.h
+%%DATADIR%%/crt/shaders/crt-royale/src-fast/scanline-functions.h
+%%DATADIR%%/crt/shaders/crt-royale/src-fast/special-functions.h
 %%DATADIR%%/crt/shaders/crt-royale/src/bind-shader-params.h
 %%DATADIR%%/crt/shaders/crt-royale/src/bloom-functions.h
 %%DATADIR%%/crt/shaders/crt-royale/src/crt-royale-bloom-approx-fake-bloom-intel.slang
@@ -2984,6 +3000,7 @@
 %%DATADIR%%/presets/crt-ntsc-sharp/tate-svideo-ntsc_x6.slangp
 %%DATADIR%%/presets/crt-royale-downsample.slangp
 %%DATADIR%%/presets/crt-royale-kurozumi.slangp
+%%DATADIR%%/presets/crt-royale-ntsc-composite-fast.slangp
 %%DATADIR%%/presets/crt-royale-ntsc-composite.slangp
 %%DATADIR%%/presets/crt-royale-ntsc-svideo.slangp
 %%DATADIR%%/presets/crt-royale-pal-r57shell.slangp
