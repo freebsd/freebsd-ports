@@ -1,10 +1,11 @@
 PORTNAME=	ares
 DISTVERSION=	139.20240809
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	bsdcode@disroot.org
 COMMENT=	Multi-system emulator
-WWW=		https://github.com/ares-emulator/ares
+WWW=		https://ares-emu.net
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -173,6 +174,12 @@ XVIDEO_USE=		XORG=xv
 XVIDEO_MAKE_ARGS=	ruby+=video.xvideo
 
 _SHADERS=		share/libretro/shaders/shaders_slang
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOPENAL} && ${ARCH} == "i386"
+LLD_UNSAFE=	yes
+.endif
 
 post-patch-SHADER-on:
 	${REINPLACE_CMD} 's|@@SHADERS@@|${LOCALBASE}/${_SHADERS}/|g' \
