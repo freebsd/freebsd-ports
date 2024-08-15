@@ -4,6 +4,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	tiago.gasiba@gmail.com
 COMMENT=	Python bytecode disassembler and decompiler
+WWW=		https://github.com/zrax/pycdc
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
