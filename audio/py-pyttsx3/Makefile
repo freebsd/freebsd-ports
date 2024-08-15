@@ -1,8 +1,7 @@
 PORTNAME=	pyttsx3
-DISTVERSIONPREFIX=	v.
-DISTVERSION=	2.90-12
-DISTVERSIONSUFFIX=	-g5d3755b
+DISTVERSION=	2.91
 CATEGORIES=	audio python
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -13,10 +12,7 @@ LICENSE=	MPL20
 
 LIB_DEPENDS=	libespeak.so:audio/espeak-ng
 
-# Unfortunately found no way to use PyPI
 USES=		python
-USE_GITHUB=	yes
-GH_ACCOUNT=	nateshmbhat
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
