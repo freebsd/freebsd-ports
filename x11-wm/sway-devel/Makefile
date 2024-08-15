@@ -1,6 +1,6 @@
 PORTNAME=	sway
-DISTVERSION=	1.9-149 # git rev-list --count 1.9..
-DISTVERSIONSUFFIX=	-g5d237679
+DISTVERSION=	1.9-168 # git rev-list --count 1.9..origin/v1.10
+DISTVERSIONSUFFIX=	-g19ca790a9
 CATEGORIES=	x11-wm wayland
 PKGNAMESUFFIX=	-devel
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libpcre2-8.so:devel/pcre2 \
 		libdrm.so:graphics/libdrm \
 		libwayland-egl.so:graphics/wayland \
-		libwlroots-0.18.so:x11-toolkits/wlroots-devel \
+		libwlroots-0.18.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 

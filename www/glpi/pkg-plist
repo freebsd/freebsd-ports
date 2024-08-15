@@ -1189,7 +1189,14 @@
 %%WWWDIR%%/install/migrations/update_10.0.12_to_10.0.13/configs.php
 %%WWWDIR%%/install/migrations/update_10.0.12_to_10.0.13/location.php
 %%WWWDIR%%/install/migrations/update_10.0.14_to_10.0.15.php
+%%WWWDIR%%/install/migrations/update_10.0.14_to_10.0.15/items_disks.php
 %%WWWDIR%%/install/migrations/update_10.0.14_to_10.0.15/user.php
+%%WWWDIR%%/install/migrations/update_10.0.15_to_10.0.16.php
+%%WWWDIR%%/install/migrations/update_10.0.15_to_10.0.16/config.php
+%%WWWDIR%%/install/migrations/update_10.0.15_to_10.0.16/configs.php
+%%WWWDIR%%/install/migrations/update_10.0.15_to_10.0.16/entities.php
+%%WWWDIR%%/install/migrations/update_10.0.15_to_10.0.16/items_disks.php
+%%WWWDIR%%/install/migrations/update_10.0.15_to_10.0.16/queuednotifications.php
 %%WWWDIR%%/install/migrations/update_10.0.1_to_10.0.2.php
 %%WWWDIR%%/install/migrations/update_10.0.1_to_10.0.2/agent.php
 %%WWWDIR%%/install/migrations/update_10.0.1_to_10.0.2/configs.php
@@ -1206,7 +1213,6 @@
 %%WWWDIR%%/install/migrations/update_10.0.3_to_10.0.4/inventory.php
 %%WWWDIR%%/install/migrations/update_10.0.3_to_10.0.4/ticket.php
 %%WWWDIR%%/install/migrations/update_10.0.4_to_10.0.5.php
-%%WWWDIR%%/install/migrations/update_10.0.4_to_10.0.5/items_disks.php
 %%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6.php
 %%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6/appliance.php
 %%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6/blacklist.php
@@ -1365,6 +1371,7 @@
 %%WWWDIR%%/install/mysql/glpi-10.0.12-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.13-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.14-empty.sql
+%%WWWDIR%%/install/mysql/glpi-10.0.15-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.2-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.3-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.4-empty.sql
@@ -6140,6 +6147,7 @@
 %%WWWDIR%%/vendor/symfony/service-contracts/ServiceSubscriberInterface.php
 %%WWWDIR%%/vendor/symfony/service-contracts/ServiceSubscriberTrait.php
 %%WWWDIR%%/vendor/symfony/service-contracts/Test/ServiceLocatorTest.php
+%%WWWDIR%%/vendor/symfony/service-contracts/Test/ServiceLocatorTestCase.php
 %%WWWDIR%%/vendor/symfony/service-contracts/composer.json
 %%WWWDIR%%/vendor/symfony/string/AbstractString.php
 %%WWWDIR%%/vendor/symfony/string/AbstractUnicodeString.php
@@ -6667,7 +6675,7 @@
 %%WWWDIR%%/vendor/webmozart/assert/src/Assert.php
 %%WWWDIR%%/vendor/webmozart/assert/src/InvalidArgumentException.php
 %%WWWDIR%%/vendor/webmozart/assert/src/Mixin.php
-%%WWWDIR%%/version/10.0.15
+%%WWWDIR%%/version/10.0.16
 @dir %%WWWDIR%%/ajax
 @dir %%WWWDIR%%/bin
 @dir %%WWWDIR%%/config
@@ -6745,6 +6753,7 @@
 @dir %%WWWDIR%%/install/migrations/update_10.0.11_to_10.0.12
 @dir %%WWWDIR%%/install/migrations/update_10.0.12_to_10.0.13
 @dir %%WWWDIR%%/install/migrations/update_10.0.14_to_10.0.15
+@dir %%WWWDIR%%/install/migrations/update_10.0.15_to_10.0.16
 @dir %%WWWDIR%%/install/migrations/update_10.0.1_to_10.0.2
 @dir %%WWWDIR%%/install/migrations/update_10.0.2_to_10.0.3
 @dir %%WWWDIR%%/install/migrations/update_10.0.3_to_10.0.4

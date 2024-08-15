@@ -1,0 +1,12 @@
+--- configure.ac.orig	2024-07-04 14:07:20 UTC
++++ configure.ac
+@@ -123,9 +123,6 @@ AC_SUBST(AM_CFLAGS)
+ 
+ AC_SUBST(AM_CFLAGS)
+ 
+-# be very silent on request
+-AM_CONDITIONAL(BUILD_SILENTLY, test "x$AM_DEFAULT_VERBOSITY" = x0)
+-
+ AC_CONFIG_HEADERS(config.h)
+ AC_CONFIG_FILES([
+         Makefile

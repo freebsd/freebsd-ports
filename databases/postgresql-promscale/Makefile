@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 RUN_DEPENDS=	timescaledb>=2.9.1:databases/timescaledb
 BUILD_DEPENDS=	bash>0:shells/bash
 
-USES=		cargo gmake pgsql:12-15
+USES=		cargo gmake pgsql
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	timescale
@@ -43,4 +43,10 @@ do-build:
 do-install:
 	cd ${WRKSRC}/target/release/promscale-pg${PGSQL_VER} && ${PAX} -rw . ${STAGEDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PGSQL_VER} > 15
+IGNORE=		Only supported up to pgsql 15
+.endif
+
+.include <bsd.port.post.mk>

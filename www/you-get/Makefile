@@ -1,8 +1,9 @@
 PORTNAME=	you-get
-PORTVERSION=	0.4.1700
+PORTVERSION=	0.4.1718
 CATEGORIES=	www
 MASTER_SITES=	PYPI \
 		https://github.com/soimort/you-get/releases/download/v${PORTVERSION}/
+DISTNAME=	you_get-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dumb downloader that scrapes the web
@@ -14,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
+RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
+		${PYTHON_PKGNAMEPREFIX}dukpy>=0:devel/py-dukpy@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517 noflavors

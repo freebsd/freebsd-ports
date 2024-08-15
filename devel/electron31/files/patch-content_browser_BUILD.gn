@@ -1,0 +1,16 @@
+--- content/browser/BUILD.gn.orig	2024-06-30 11:48:28 UTC
++++ content/browser/BUILD.gn
+@@ -2409,6 +2409,13 @@ source_set("browser") {
+     deps += [ "//media/mojo/mojom/stable:stable_video_decoder" ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "sandbox_ipc_linux.cc",
++      "sandbox_ipc_linux.h",
++    ]
++  }
++
+   if (is_chromeos) {
+     sources += [
+       "handwriting/handwriting_recognition_service_impl_cros.cc",

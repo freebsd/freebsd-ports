@@ -1,0 +1,27 @@
+--- Makefile.in.orig	2024-03-02 20:52:00 UTC
++++ Makefile.in
+@@ -889,22 +889,10 @@ install-data-hook:
+ 
+ install-data-hook:
+ 	-@if [ ! -d "$(DESTDIR)$(RPKI_BASE_DIR)" ]; then \
+-		if [ "`id -u`" = "0" ]; then \
+-			$(INSTALL) -m 755 -o $(RPKI_USER) -d "$(DESTDIR)$(RPKI_BASE_DIR)"; \
+-		else \
+-			$(INSTALL) -m 755 -d "$(DESTDIR)$(RPKI_BASE_DIR)"; \
+-			echo "Warning: Unprivileged permissions, remember to run" \
+-				"'chown $(RPKI_USER) $(DESTDIR)$(RPKI_BASE_DIR)'"; \
+-		fi \
++		$(INSTALL) -m 755 -d "$(DESTDIR)$(RPKI_BASE_DIR)"; \
+ 	fi
+ 	-@if [ ! -d "$(DESTDIR)$(RPKI_OUT_DIR)" ]; then \
+-		if [ "`id -u`" = "0" ]; then \
+-			$(INSTALL) -m 755 -o $(RPKI_USER) -d "$(DESTDIR)$(RPKI_OUT_DIR)"; \
+-		else \
+-			$(INSTALL) -m 755 -d "$(DESTDIR)$(RPKI_OUT_DIR)"; \
+-			echo "Warning: Unprivileged permissions, remember to run" \
+-				"'chown $(RPKI_USER) $(DESTDIR)$(RPKI_OUT_DIR)'"; \
+-		fi \
++		$(INSTALL) -m 755 -d "$(DESTDIR)$(RPKI_OUT_DIR)"; \
+ 	fi
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

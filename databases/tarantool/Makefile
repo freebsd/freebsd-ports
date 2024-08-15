@@ -1,5 +1,5 @@
 PORTNAME=	tarantool
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1.1
 CATEGORIES=	databases
 MASTER_SITES=	https://download.tarantool.org/tarantool/src/
 
@@ -56,5 +56,6 @@ post-patch:
 
 post-install:
 	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/tarantool/
+	@${RMDIR} ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

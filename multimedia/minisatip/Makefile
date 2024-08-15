@@ -1,5 +1,5 @@
 PORTNAME=	minisatip
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.17
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	multimedia
@@ -13,7 +13,7 @@ LICENSE=	GPLv2+
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libdvbcsa.so:multimedia/libdvbcsa
 
-USES=		gmake
+USES=		gmake ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	catalinii
 

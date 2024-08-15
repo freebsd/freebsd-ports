@@ -33,9 +33,11 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 NO_ARCH=	yes
 PYTEST_BROKEN_TESTS=	test_obfuscate_process_password
 
-OPTIONS_DEFINE=	KEYRING
+OPTIONS_DEFINE=	KEYRING SSHTUNNEL
 KEYRING_DESC=	keyring support
+SSHTUNNEL_DESC=	SSH tunnel support
 
 KEYRING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keyring>=12.2.0,1:security/py-keyring@${PY_FLAVOR}
+SSHTUNNEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sshtunnel>=0:net/py-sshtunnel@${PY_FLAVOR}
 
 .include <bsd.port.mk>

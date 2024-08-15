@@ -1,6 +1,6 @@
 PORTNAME=	lasi
-PORTVERSION=	1.1.3
-PORTREVISION=	1
+DISTVERSION=	1.1.3
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Source
 DISTNAME=	libLASi-${PORTVERSION}
@@ -25,22 +25,17 @@ USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DCMAKE_INSTALL_DATADIR:PATH=${DATADIR}
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:devel/doxygen
-DOCS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-cmake+modules+lasi.cmake
+DOCS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-cmake_modules_lasi.cmake
 
-pre-install-EXAMPLES-off:
+post-patch:
 	@${REINPLACE_CMD} 's/^\(add_subdirectory(examples)\)/#\1/' \
 		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/lib/libLASi.so.2.0.0 \
 		${STAGEDIR}${PREFIX}/lib/libLASi.so.2
-
-post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${MV} ${STAGEDIR}${DATADIR}/examples/* ${STAGEDIR}${EXAMPLESDIR}/
-	@${RMDIR} ${STAGEDIR}${DATADIR}/examples
 
 .include <bsd.port.mk>

@@ -50,7 +50,7 @@ OPTIONS_SUB=		yes
 
 .if !defined(WITH_CLIENT_ONLY)
 LIB_DEPENDS+=	libbac-${PORTVERSION}.so:sysutils/bacula9-client
-USE_RC_SUBR?=	bacula-dir bacula-sd
+USE_RC_SUBR?=	bacula_dir bacula_sd
 .endif
 
 .if defined(WITH_CLIENT_ONLY)

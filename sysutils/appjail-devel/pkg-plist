@@ -12,6 +12,7 @@ libexec/appjail/appjail-config/appjail-config
 libexec/appjail/appjail-config/tok
 libexec/appjail/find-number-from-start/find-number-from-start
 libexec/appjail/find-smallest-missing-number/find-smallest-missing-number
+libexec/appjail/get_assigned_rulesets/get_assigned_rulesets
 libexec/appjail/getservbyname/getservbyname
 libexec/appjail/ipcheck/ipcheck
 libexec/appjail/network/network
@@ -154,11 +155,13 @@ libexec/appjail/network/network
 %%DATADIR%%/scripts/ajdns.sh
 %%DATADIR%%/scripts/ajuser.sh
 %%DATADIR%%/scripts/ascii2oct.sh
+%%DATADIR%%/scripts/bind-ddns-hook.sh
 %%DATADIR%%/scripts/create-bridge.sh
 %%DATADIR%%/scripts/dns.sh
 %%DATADIR%%/scripts/dnsmasq-hook.sh
 %%DATADIR%%/scripts/escape-env-val.sh
 %%DATADIR%%/scripts/get_depends.sh
+%%DATADIR%%/scripts/git.sh
 %%DATADIR%%/scripts/kill_child.sh
 %%DATADIR%%/scripts/kill_tree.sh
 %%DATADIR%%/scripts/load-devfs-rules.sh

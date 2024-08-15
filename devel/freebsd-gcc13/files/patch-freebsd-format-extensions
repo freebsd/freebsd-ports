@@ -67,7 +67,7 @@
 +  },
 +  { "printf0",  printf_length_specs,  print_char_table, " +#0-'I", NULL,
 +    printf_flag_specs, printf_flag_pairs,
-+    FMT_FLAG_ARG_CONVERT|FMT_FLAG_DOLLAR_MULTIPLE|FMT_FLAG_USE_DOLLAR|FMT_FLAG_EMPTY_PREC_OK|FMT_FLAG_NULL_FORMAT_OK,
++    FMT_FLAG_ARG_CONVERT|FMT_FLAG_DOLLAR_MULTIPLE|FMT_FLAG_USE_DOLLAR|FMT_FLAG_EMPTY_PREC_OK,
 +    'w', 0, 'p', 0, 'L', 0,
 +    &integer_type_node, &integer_type_node
 +  },
@@ -79,29 +79,3 @@
    }
  };
  
-@@ -1635,6 +1693,9 @@ check_format_arg (void *ctx, tree format_tree,
- 
-   if (integer_zerop (format_tree))
-     {
-+      if (!(format_types[info->format_type].flags & FMT_FLAG_NULL_FORMAT_OK))
-+	warning (OPT_Wformat_, "null format string");
-+
-       /* Skip to first argument to check, so we can see if this format
- 	 has any arguments (it shouldn't).  */
-       while (arg_num + 1 < info->first_arg_num)
---- gcc/c-family/c-format.h.orig	2022-05-06 00:30:56.000000000 -0700
-+++ gcc/c-family/c-format.h	2022-11-17 17:31:38.546594000 -0800
-@@ -77,11 +77,12 @@ enum
-   FMT_FLAG_DOLLAR_GAP_POINTER_OK = 128,
-   /* The format arg is an opaque object that will be parsed by an external
-      facility.  */
--  FMT_FLAG_PARSE_ARG_CONVERT_EXTERNAL = 256
-+  FMT_FLAG_PARSE_ARG_CONVERT_EXTERNAL = 256,
-   /* Not included here: details of whether width or precision may occur
-      (controlled by width_char and precision_char); details of whether
-      '*' can be used for these (width_type and precision_type); details
-      of whether length modifiers can occur (length_char_specs).  */
-+  FMT_FLAG_NULL_FORMAT_OK = 512
- };
- 
- /* Structure describing a length modifier supported in format checking, and

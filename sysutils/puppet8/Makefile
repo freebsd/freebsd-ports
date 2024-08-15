@@ -1,5 +1,5 @@
 PORTNAME=	puppet
-PORTVERSION=	8.7.0
+PORTVERSION=	8.8.1
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
@@ -14,14 +14,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-concurrent-ruby>1.0:devel/rubygem-concurrent-ruby \
 		rubygem-deep_merge>1.0:devel/rubygem-deep_merge \
-		rubygem-facter>=4.0:sysutils/rubygem-facter \
+		rubygem-facter>=4.3.0:sysutils/rubygem-facter \
 		rubygem-fast_gettext>=2.1:devel/rubygem-fast_gettext \
+		rubygem-getoptlong>=0.2.0:devel/rubygem-getoptlong \
 		rubygem-locale>=2.1:devel/rubygem-locale \
-		rubygem-multi_json>=1.10:devel/rubygem-multi_json \
+		rubygem-multi_json>=1.13:devel/rubygem-multi_json \
 		rubygem-puppet-resource_api>=1.5:devel/rubygem-puppet-resource_api \
 		rubygem-ruby-augeas>=0:textproc/rubygem-ruby-augeas \
-		rubygem-scanf>=1:devel/rubygem-scanf \
-		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet
+		rubygem-scanf>=1.0:devel/rubygem-scanf \
+		rubygem-semantic_puppet>=1.0:devel/rubygem-semantic_puppet
 
 USES=		cpe ruby
 USE_GITHUB=	yes
@@ -79,11 +80,12 @@ post-patch:
 		${WRKSRC}/install.rb \
 		${WRKSRC}/lib/puppet/util/run_mode.rb
 	@${REINPLACE_CMD} -e "s|/opt/puppetlabs/puppet/public|/var/puppet/state|" \
+		-e "s|/opt/puppetlabs/puppet/modules|${ETCDIR}/vendor_modules|" \
+		-e "s|/opt/puppetlabs/puppet/vendor_modules|${ETCDIR}/vendor_modules|" \
 		${WRKSRC}/install.rb \
 		${WRKSRC}/lib/puppet/util/run_mode.rb
 	@${REINPLACE_CMD} -e "s|/opt/puppetlabs/puppet/modules|${ETCDIR}/modules|" \
 		-e "s|/etc/puppetlabs/puppetserver/ca|/var/puppetserver/ca|" \
-		-e "s|/opt/puppetlabs/puppet/vendor_modules|${ETCDIR}/vendor_modules|" \
 		${WRKSRC}/lib/puppet/defaults.rb
 	@${REINPLACE_CMD} -e "s|/opt/puppetlabs/puppet/bin/gem|${LOCALBASE}/bin/gem|" \
 		${WRKSRC}/lib/puppet/provider/package/puppet_gem.rb

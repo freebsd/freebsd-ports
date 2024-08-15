@@ -30,6 +30,7 @@ share/man/man1/borg-rename.1.gz
 share/man/man1/borg-serve.1.gz
 share/man/man1/borg-umount.1.gz
 share/man/man1/borg-upgrade.1.gz
+share/man/man1/borg-version.1.gz
 share/man/man1/borg-with-lock.1.gz
 share/man/man1/borg.1.gz
 share/man/man1/borgfs.1.gz

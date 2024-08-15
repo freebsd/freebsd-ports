@@ -19,6 +19,7 @@ sbin/pcscd
 share/man/man1/pcsc-spy.1.gz
 share/man/man5/reader.conf.5.gz
 share/man/man8/pcscd.8.gz
+share/metainfo/fr.apdu.pcsclite.metainfo.xml
 %%POLKIT%%share/polkit-1/actions/org.debian.pcsc-lite.policy
 @dir lib/pcsc/services
 @dir lib/pcsc/drivers

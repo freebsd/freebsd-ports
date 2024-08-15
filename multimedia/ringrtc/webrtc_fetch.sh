@@ -1,10 +1,9 @@
 #!/bin/sh
 
-WEBRTC_REV=6261i
+WEBRTC_REV=6478b
 
 base_url="https://chromium.googlesource.com/chromium/src/base.git/+archive/"
 boringssl_url="https://boringssl.googlesource.com/boringssl.git/+archive/"
-build_url="https://chromium.googlesource.com/chromium/src/build.git/+archive/"
 buildtools_url="https://chromium.googlesource.com/chromium/src/buildtools.git/+archive/"
 catapult_url="https://chromium.googlesource.com/catapult.git/+archive/"
 icu_url="https://chromium.googlesource.com/chromium/deps/icu.git/+archive/"
@@ -13,8 +12,11 @@ libsrtp_url="https://chromium.googlesource.com/chromium/deps/libsrtp.git/+archiv
 libvpx_url="https://chromium.googlesource.com/webm/libvpx.git/+archive/"
 libyuv_url="https://chromium.googlesource.com/libyuv/libyuv.git/+archive/"
 nasm_url="https://chromium.googlesource.com/chromium/deps/nasm.git/+archive/"
+perfetto_url="https://android.googlesource.com/platform/external/perfetto.git/+archive/"
+protobuf_javascript_url="https://chromium.googlesource.com/external/github.com/protocolbuffers/protobuf-javascript.git/+archive/"
 testing_url="https://chromium.googlesource.com/chromium/src/testing.git/+archive/"
 third_party_url="https://chromium.googlesource.com/chromium/src/third_party.git/+archive/"
+tools_url="https://chromium.googlesource.com/chromium/src/tools.git/+archive/"
 
 fetch -q -o /tmp/DEPS https://raw.githubusercontent.com/signalapp/webrtc/${WEBRTC_REV}/DEPS
 
@@ -66,6 +68,14 @@ opus_hash=$(grep 'opus.git@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',#
 printf "OPUS_REV=\t${opus_hash}\n"
 printf "OPUS_REV=\t${opus_hash}\n" | portedit merge -i Makefile
 
+perfetto_hash=$(grep 'perfetto.git@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
+printf "PERFETTO_REV=\t${perfetto_hash}\n"
+printf "PERFETTO_REV=\t${perfetto_hash}\n" | portedit merge -i Makefile
+
+protobuf_javascript_hash=$(grep "protobuf-javascript' + '@'" /tmp/DEPS | awk -F '+' '{print $4}' | sed -e "s# ##g" -e "s#',##" -e "s#'##")
+printf "PROTOBUFJS_REV=\t${protobuf_javascript_hash}\n"
+printf "PROTOBUFJS_REV=\t${protobuf_javascript_hash}\n" | portedit merge -i Makefile
+
 testing_hash=$(grep 'testing@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
 printf "TESTING_REV=\t${testing_hash}\n"
 printf "TESTING_REV=\t${testing_hash}\n" | portedit merge -i Makefile
@@ -74,9 +84,13 @@ third_party_hash=$(grep 'third_party@' /tmp/DEPS | awk -F '@' '{print $2}' | sed
 printf "THIRD_PARTY_REV=\t${third_party_hash}\n"
 printf "THIRD_PARTY_REV=\t${third_party_hash}\n" | portedit merge -i Makefile
 
+tools_hash=$(grep 'src/tools@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
+printf "TOOLS_REV=\t${tools_hash}\n"
+printf "TOOLS_REV=\t${tools_hash}\n" | portedit merge -i Makefile
+
 mkdir -p dist_good
 
-for c in base boringssl build buildtools catapult icu libjpeg_turbo libsrtp libvpx libyuv nasm testing third_party
+for c in base boringssl build buildtools catapult icu libjpeg_turbo libsrtp libvpx libyuv nasm perfetto protobuf_javascript testing third_party tools
 do
 	hash=$(echo ${c}_hash)
 	eval "hash=\$$hash"

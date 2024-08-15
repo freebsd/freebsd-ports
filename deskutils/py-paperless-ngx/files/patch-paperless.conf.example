@@ -8,7 +8,7 @@
 -#PAPERLESS_DATA_DIR=../data
 +PAPERLESS_CONSUMPTION_DIR=/var/db/paperless/consume/input
 +PAPERLESS_DATA_DIR=/var/db/paperless/data
- #PAPERLESS_TRASH_DIR=
+ #PAPERLESS_EMPTY_TRASH_DIR=
 -#PAPERLESS_MEDIA_ROOT=../media
 -#PAPERLESS_STATICDIR=../static
 +PAPERLESS_MEDIA_ROOT=/var/db/paperless/media

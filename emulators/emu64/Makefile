@@ -26,4 +26,8 @@ GH_ACCOUNT=	ThKattanek
 
 OPTIONS_DEFINE=	DOCS
 
+.if !exists(/usr/include/omp.h)
+USE_GCC=	yes
+.endif
+
 .include <bsd.port.mk>

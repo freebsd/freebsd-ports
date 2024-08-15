@@ -1,3 +1,4 @@
+bin/ya
 bin/yazi
 share/applications/yazi.desktop
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keymap.toml

@@ -1,5 +1,5 @@
 PORTNAME=	limine
-DISTVERSION=	7.6.0
+DISTVERSION=	8.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${PORTNAME}-bootloader/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -16,13 +16,18 @@ BUILD_DEPENDS=	mtools:emulators/mtools \
 USES=		gmake
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--enable-all
+# Disable the loongarch64 port as the LLVM target for it is still not enabled
+# everywhere.
+CONFIGURE_ARGS=	--enable-all --disable-uefi-loongarch64
 MAKEFILE=	GNUmakefile
 
 INSTALL_TARGET=	install-strip
 
-PORTDOCS=	CONFIG.md COPYING PHILOSOPHY.md PROTOCOL.md USAGE.md
+PORTDOCS=	CONFIG.md PHILOSOPHY.md PROTOCOL.md USAGE.md
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e '/COPYING/d' ${WRKSRC}/GNUmakefile.in
 
 .include <bsd.port.mk>

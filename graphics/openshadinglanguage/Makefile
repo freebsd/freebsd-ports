@@ -27,7 +27,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpartio.so:graphics/partio \
 		libpugixml.so:textproc/pugixml
 
-USES=		bison cmake compiler:c++17-lang localbase ncurses
+USES=		bison cmake compiler:c++17-lang llvm:lib localbase ncurses
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AcademySoftwareFoundation

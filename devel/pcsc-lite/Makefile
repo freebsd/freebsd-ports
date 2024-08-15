@@ -1,5 +1,5 @@
 PORTNAME=	pcsc-lite
-PORTVERSION=	2.2.2
+PORTVERSION=	2.3.0
 PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://pcsclite.apdu.fr/files/
@@ -17,14 +17,17 @@ USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_RC_SUBR=	pcscd
 
+SHEBANG_FILES=	src/spy/pcsc-spy
+
+.include "Makefile.common"
+
 MESON_ARGS=	-Dlibsystemd=false \
 		-Dlibudev=false \
 		-Dlibusb=true \
 		-Dusb=true \
-		-Dusbdropdir=${PREFIX}/lib/pcsc/drivers/ \
+		-Dusbdropdir=${USBDROPDIR}/ \
 		-Dipcdir=/var/run
 
-SHEBANG_FILES=	src/spy/pcsc-spy
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS EXAMPLES POLKIT

@@ -1,5 +1,5 @@
 PORTNAME=	term-ansicolor
-PORTVERSION=	1.9.0
+PORTVERSION=	1.11.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -22,6 +22,7 @@ PLIST_FILES=	bin/term_cdiff \
 		bin/term_decolor \
 		bin/term_display \
 		bin/term_mandel \
+		bin/term_plasma \
 		bin/term_snow
 
 .include <bsd.port.mk>

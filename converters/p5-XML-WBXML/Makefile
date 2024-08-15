@@ -1,6 +1,6 @@
 PORTNAME=	XML-WBXML
 PORTVERSION=	0.09
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,7 +12,7 @@ WWW=		https://metacpan.org/release/XML-WBXML
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libwbxml2.so:textproc/wbxml2
+LIB_DEPENDS=	libwbxml2.so:textproc/libwbxml
 
 USES=		perl5
 USE_PERL5=	configure

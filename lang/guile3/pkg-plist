@@ -147,6 +147,7 @@ lib/guile/%%GUILE_VER%%/ccache/ice-9/common-list.go
 lib/guile/%%GUILE_VER%%/ccache/ice-9/control.go
 lib/guile/%%GUILE_VER%%/ccache/ice-9/copy-tree.go
 lib/guile/%%GUILE_VER%%/ccache/ice-9/curried-definitions.go
+lib/guile/%%GUILE_VER%%/ccache/ice-9/custom-ports.go
 lib/guile/%%GUILE_VER%%/ccache/ice-9/deprecated.go
 lib/guile/%%GUILE_VER%%/ccache/ice-9/documentation.go
 lib/guile/%%GUILE_VER%%/ccache/ice-9/eval-string.go
@@ -202,6 +203,7 @@ lib/guile/%%GUILE_VER%%/ccache/ice-9/scm-style-repl.go
 lib/guile/%%GUILE_VER%%/ccache/ice-9/serialize.go
 lib/guile/%%GUILE_VER%%/ccache/ice-9/session.go
 lib/guile/%%GUILE_VER%%/ccache/ice-9/slib.go
+lib/guile/%%GUILE_VER%%/ccache/ice-9/soft-ports.go
 lib/guile/%%GUILE_VER%%/ccache/ice-9/stack-catch.go
 lib/guile/%%GUILE_VER%%/ccache/ice-9/streams.go
 lib/guile/%%GUILE_VER%%/ccache/ice-9/string-fun.go
@@ -230,14 +232,16 @@ lib/guile/%%GUILE_VER%%/ccache/language/cps/dump.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/effects-analysis.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/elide-arity-checks.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/graphs.go
+lib/guile/%%GUILE_VER%%/ccache/language/cps/guile-vm.go
+lib/guile/%%GUILE_VER%%/ccache/language/cps/guile-vm/loop-instrumentation.go
+lib/guile/%%GUILE_VER%%/ccache/language/cps/guile-vm/lower-primcalls.go
+lib/guile/%%GUILE_VER%%/ccache/language/cps/guile-vm/reify-primitives.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/intmap.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/intset.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/licm.go
-lib/guile/%%GUILE_VER%%/ccache/language/cps/loop-instrumentation.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/optimize.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/peel-loops.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/prune-top-level-scopes.go
-lib/guile/%%GUILE_VER%%/ccache/language/cps/reify-primitives.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/renumber.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/return-types.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/rotate-loops.go
@@ -282,6 +286,7 @@ lib/guile/%%GUILE_VER%%/ccache/language/tree-il/compile-bytecode.go
 lib/guile/%%GUILE_VER%%/ccache/language/tree-il/compile-cps.go
 lib/guile/%%GUILE_VER%%/ccache/language/tree-il/cps-primitives.go
 lib/guile/%%GUILE_VER%%/ccache/language/tree-il/debug.go
+lib/guile/%%GUILE_VER%%/ccache/language/tree-il/demux-lambda.go
 lib/guile/%%GUILE_VER%%/ccache/language/tree-il/effects.go
 lib/guile/%%GUILE_VER%%/ccache/language/tree-il/eta-expand.go
 lib/guile/%%GUILE_VER%%/ccache/language/tree-il/fix-letrec.go
@@ -293,6 +298,8 @@ lib/guile/%%GUILE_VER%%/ccache/language/tree-il/primitives.go
 lib/guile/%%GUILE_VER%%/ccache/language/tree-il/resolve-free-vars.go
 lib/guile/%%GUILE_VER%%/ccache/language/tree-il/spec.go
 lib/guile/%%GUILE_VER%%/ccache/language/value/spec.go
+lib/guile/%%GUILE_VER%%/ccache/language/wisp.go
+lib/guile/%%GUILE_VER%%/ccache/language/wisp/spec.go
 lib/guile/%%GUILE_VER%%/ccache/oop/goops.go
 lib/guile/%%GUILE_VER%%/ccache/oop/goops/accessors.go
 lib/guile/%%GUILE_VER%%/ccache/oop/goops/active-slot.go
@@ -474,8 +481,8 @@ lib/guile/%%GUILE_VER%%/extensions/guile-readline.so.0.0.0
 lib/libguile-%%GUILE_VER%%.a
 lib/libguile-%%GUILE_VER%%.so
 lib/libguile-%%GUILE_VER%%.so.1
-lib/libguile-%%GUILE_VER%%.so.1.6.0
-lib/libguile-%%GUILE_VER%%.so.1.6.0-gdb.scm
+lib/libguile-%%GUILE_VER%%.so.1.7.0
+lib/libguile-%%GUILE_VER%%.so.1.7.0-gdb.scm
 libdata/pkgconfig/guile-%%GUILE_VER%%.pc
 share/man/man1/guile%%GUILE_SFX%%.1.gz
 @comment share/aclocal/guile.m4
@@ -492,6 +499,7 @@ share/man/man1/guile%%GUILE_SFX%%.1.gz
 %%DATADIR%%/%%GUILE_VER%%/ice-9/control.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/copy-tree.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/curried-definitions.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/custom-ports.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/deprecated.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/documentation.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/eval-string.scm
@@ -553,6 +561,7 @@ share/man/man1/guile%%GUILE_SFX%%.1.gz
 %%DATADIR%%/%%GUILE_VER%%/ice-9/serialize.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/session.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/slib.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/soft-ports.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/stack-catch.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/streams.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/string-fun.scm
@@ -581,14 +590,16 @@ share/man/man1/guile%%GUILE_SFX%%.1.gz
 %%DATADIR%%/%%GUILE_VER%%/language/cps/effects-analysis.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/elide-arity-checks.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/graphs.scm
+%%DATADIR%%/%%GUILE_VER%%/language/cps/guile-vm.scm
+%%DATADIR%%/%%GUILE_VER%%/language/cps/guile-vm/loop-instrumentation.scm
+%%DATADIR%%/%%GUILE_VER%%/language/cps/guile-vm/lower-primcalls.scm
+%%DATADIR%%/%%GUILE_VER%%/language/cps/guile-vm/reify-primitives.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/intmap.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/intset.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/licm.scm
-%%DATADIR%%/%%GUILE_VER%%/language/cps/loop-instrumentation.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/optimize.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/peel-loops.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/prune-top-level-scopes.scm
-%%DATADIR%%/%%GUILE_VER%%/language/cps/reify-primitives.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/renumber.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/return-types.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/rotate-loops.scm
@@ -633,6 +644,7 @@ share/man/man1/guile%%GUILE_SFX%%.1.gz
 %%DATADIR%%/%%GUILE_VER%%/language/tree-il/compile-cps.scm
 %%DATADIR%%/%%GUILE_VER%%/language/tree-il/cps-primitives.scm
 %%DATADIR%%/%%GUILE_VER%%/language/tree-il/debug.scm
+%%DATADIR%%/%%GUILE_VER%%/language/tree-il/demux-lambda.scm
 %%DATADIR%%/%%GUILE_VER%%/language/tree-il/effects.scm
 %%DATADIR%%/%%GUILE_VER%%/language/tree-il/eta-expand.scm
 %%DATADIR%%/%%GUILE_VER%%/language/tree-il/fix-letrec.scm
@@ -644,6 +656,8 @@ share/man/man1/guile%%GUILE_SFX%%.1.gz
 %%DATADIR%%/%%GUILE_VER%%/language/tree-il/resolve-free-vars.scm
 %%DATADIR%%/%%GUILE_VER%%/language/tree-il/spec.scm
 %%DATADIR%%/%%GUILE_VER%%/language/value/spec.scm
+%%DATADIR%%/%%GUILE_VER%%/language/wisp.scm
+%%DATADIR%%/%%GUILE_VER%%/language/wisp/spec.scm
 %%DATADIR%%/%%GUILE_VER%%/oop/goops.scm
 %%DATADIR%%/%%GUILE_VER%%/oop/goops/accessors.scm
 %%DATADIR%%/%%GUILE_VER%%/oop/goops/active-slot.scm

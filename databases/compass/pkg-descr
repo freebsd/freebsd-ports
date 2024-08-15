@@ -1,0 +1,4 @@
+MongoDB Compass is a powerful GUI for querying, aggregating,
+and analyzing your MongoDB data in a visual environment.
+
+note: Client Side Field Level Encryption is not supported.

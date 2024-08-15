@@ -1,6 +1,6 @@
 PORTNAME=	noto
 PORTVERSION=	2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-fonts
 PKGNAMESUFFIX=	-extra
 
@@ -23,6 +23,7 @@ RUN_DEPENDS=	noto-kufi-arabic>=0:x11-fonts/noto-kufi-arabic \
 		noto-sans-ethiopic>=0:x11-fonts/noto-sans-ethiopic \
 		noto-sans-georgian>=0:x11-fonts/noto-sans-georgian \
 		noto-sans-hebrew>=0:x11-fonts/noto-sans-hebrew \
+		noto-sans-kannada>=0:x11-fonts/noto-sans-kannada \
 		noto-sans-khmer>=0:x11-fonts/noto-sans-khmer \
 		noto-sans-lao>=0:x11-fonts/noto-sans-lao \
 		noto-sans-math>=0:x11-fonts/noto-sans-math \
@@ -40,6 +41,7 @@ RUN_DEPENDS=	noto-kufi-arabic>=0:x11-fonts/noto-kufi-arabic \
 		noto-serif-ethiopic>=0:x11-fonts/noto-serif-ethiopic \
 		noto-serif-georgian>=0:x11-fonts/noto-serif-georgian \
 		noto-serif-hebrew>=0:x11-fonts/noto-serif-hebrew \
+		noto-serif-kannada>=0:x11-fonts/noto-serif-kannada \
 		noto-serif-khmer>=0:x11-fonts/noto-serif-khmer \
 		noto-serif-lao>=0:x11-fonts/noto-serif-lao \
 		noto-serif-myanmar>=0:x11-fonts/noto-serif-myanmar \

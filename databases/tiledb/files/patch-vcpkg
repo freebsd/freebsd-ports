@@ -1,13 +1,13 @@
---- cmake/Options/BuildOptions.cmake.orig	2024-05-02 16:58:42 UTC
+--- cmake/Options/BuildOptions.cmake.orig	2024-07-24 15:05:06 UTC
 +++ cmake/Options/BuildOptions.cmake
-@@ -48,10 +48,6 @@ endif()
+@@ -49,10 +49,6 @@ endif()
    endif()
  endif()
  
 -if (NOT TILEDB_VCPKG)
--  message(FATAL_ERROR "Disabling TILEDB_VCPKG is not supported.")
+-  message(FATAL_ERROR "Disabling TILEDB_VCPKG is not supported. To disable automatically downloading vcpkg, enable the TILEDB_DISABLE_AUTO_VCPKG option, or set ENV{TILEDB_DISABLE_AUTO_VCPKG} to any value.")
 -endif()
 -
- # enable assertions by default for debug builds
- if (CMAKE_BUILD_TYPE STREQUAL "Debug")
-   set(TILEDB_ASSERTIONS TRUE)
+ if (TILEDB_HDFS)
+   message(DEPRECATION "The HDFS storage backend is deprecated and receiving build-only official validation. It will be removed in TileDB 2.28.")
+ endif()

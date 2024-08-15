@@ -1,7 +1,7 @@
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.43.2
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libuv.so:devel/libuv
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} \
 		bash:shells/bash \
 		curl:ftp/curl
 
@@ -54,6 +54,7 @@ PLIST_SUB=	NETDATA_CACHE=${NETDATA_CACHE} \
 OPTIONS_DEFINE=		CLOUD CUPS DBENGINE FREEIPMI GOPLUGIN LTO ML
 OPTIONS_DEFAULT=	CLOUD DBENGINE LTO ML
 OPTIONS_EXCLUDE_riscv64=	LTO
+OPTIONS_EXCLUDE_powerpc64le=	ML
 OPTIONS_SUB=		YES
 
 CLOUD_DESC=		Enable cloud functionality

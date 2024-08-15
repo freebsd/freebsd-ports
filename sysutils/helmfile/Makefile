@@ -1,7 +1,7 @@
 PORTNAME=	helmfile
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.158.0
-PORTREVISION=	7
+DISTVERSION=	0.167.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	timp87@gmail.com
@@ -12,7 +12,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	helm:sysutils/helm
 
-USES=		go:1.21,modules
+USES=		go:1.22,modules
 GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags="-X go.szostok.io/version.version=v${PORTVERSION}"
 

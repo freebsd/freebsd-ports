@@ -20,3 +20,4 @@ sbin/lldpd
 %%PORTDOCS%%%%DOCSDIR%%/README.bsd
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%ZSH%%share/zsh/site-functions/_lldpcli
+@dir(_llpd,_lldpd,750) /var/run/lldpd

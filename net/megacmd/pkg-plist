@@ -103,6 +103,7 @@ include/mega/posix/megafs.h
 include/mega/posix/meganet.h
 include/mega/posix/megasys.h
 include/mega/posix/megawaiter.h
+include/mega/process.h
 include/mega/proxy.h
 include/mega/pubkeyaction.h
 include/mega/raid.h
@@ -126,6 +127,6 @@ include/mega/waiter.h
 include/megaapi.h
 include/megaapi_impl.h
 lib/libmega.so
-lib/libmega.so.41701
-lib/libmega.so.41701.0.0
+lib/libmega.so.43000
+lib/libmega.so.43000.0.0
 libdata/pkgconfig/libmega.pc

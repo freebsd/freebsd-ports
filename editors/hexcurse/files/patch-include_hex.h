@@ -1,6 +1,6 @@
---- include/hex.h.orig	2015-11-17 20:33:09.000000000 -0800
-+++ include/hex.h	2021-03-15 11:33:30.825153000 -0700
-@@ -126,7 +126,7 @@
+--- include/hex.h.orig	2015-11-18 04:33:09 UTC
++++ include/hex.h
+@@ -126,7 +126,7 @@ extern bool color_enabled;
  #define max(a,b) ((a) >(b) ? (a) : (b))
  #endif
  

@@ -1,8 +1,8 @@
-TIMESTAMP = 1715756871
-SHA256 (remark42-npm-cache-1.13.0.tar.xz) = ae7308c58c097bdcdb812b3031380f41d63de51f8f7a6942b1e076106e817ad0
-SIZE (remark42-npm-cache-1.13.0.tar.xz) = 124074780
-SHA256 (umputun-remark42-v1.13.0_GH0.tar.gz) = 89e3cb35a39295dca55961cc84f12f348304107cfe1f4cbd75fa2e93aaed41cb
-SIZE (umputun-remark42-v1.13.0_GH0.tar.gz) = 6500141
+TIMESTAMP = 1721542669
+SHA256 (remark42-npm-cache-1.13.1.tar.xz) = 6654abd39a32fb7fa63584c1a15f9cf2825eb642f402f77f8bb05c3b05c1bb1f
+SIZE (remark42-npm-cache-1.13.1.tar.xz) = 126615832
+SHA256 (umputun-remark42-v1.13.1_GH0.tar.gz) = e30e42aff722318c77086d0027f9a34326eb8b2d8e4c51ab9e466717a68e5750
+SIZE (umputun-remark42-v1.13.1_GH0.tar.gz) = 6500641
 SHA256 (Depado-bfchroma-v2.0.0_GH0.tar.gz) = d999d4cf56554c15fe8d1651e4b5e87dbd5b399a0d4c7af7bc7b682e93da4f18
 SIZE (Depado-bfchroma-v2.0.0_GH0.tar.gz) = 7451
 SHA256 (PuerkitoBio-goquery-v1.9.1_GH0.tar.gz) = ad303bf30070c34fa0f05d2701b7bd024642e0183708a96ed0d2b837b21f4d1a

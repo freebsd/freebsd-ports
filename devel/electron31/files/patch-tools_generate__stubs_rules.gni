@@ -1,0 +1,10 @@
+--- tools/generate_stubs/rules.gni.orig	2022-08-31 12:19:35 UTC
++++ tools/generate_stubs/rules.gni
+@@ -110,7 +110,6 @@ template("generate_stubs") {
+       "${target_gen_dir}/${invoker.output_name}.cc",
+       "${target_gen_dir}/${invoker.output_name}.h",
+     ]
+-    libs = [ "dl" ]
+     include_dirs = [ target_gen_dir ]
+     if (defined(invoker.configs)) {
+       configs += invoker.configs

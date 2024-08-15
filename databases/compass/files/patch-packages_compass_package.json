@@ -1,0 +1,19 @@
+diff --git a/packages/compass/package.json b/packages/compass/package.json
+index db1ad914e..44f9442ad 100644
+--- a/packages/compass/package.json
++++ b/packages/compass/package.json
+@@ -124,11 +124,12 @@
+           "macos-export-certificate-and-key"
+         ]
+       },
+-      "macosEntitlements": "./scripts/macos-entitlements.xml"
++      "macosEntitlements": "./scripts/macos-entitlements.xml",
++      "electronZipDir": "../../.."
+     }
+   },
+   "scripts": {
+-    "install": "node scripts/download-fonts.js && node scripts/download-csfle.js",
++    "install": "",
+     "electron-rebuild": "electron-rebuild --only kerberos,keytar,interruptor,os-dns-native,win-export-certificate-and-key,macos-export-certificate-and-key --prebuild-tag-prefix not-real-prefix-to-force-rebuild",
+     "prestart": "npm run electron-rebuild",
+     "start": "npm run webpack serve -- --mode development",

@@ -17,7 +17,7 @@ RUN_DEPENDS=	dot:graphics/graphviz \
 		p5-IPC-Run>=0.60:devel/p5-IPC-Run \
 		p5-Parse-RecDescent>=1.965001:devel/p5-Parse-RecDescent \
 		p5-XML-Twig>=3.52:textproc/p5-XML-Twig
-TEST_DEPENDS=	p5-Test2-Suite>=0.000030:devel/p5-Test2-Suite
+TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		cpe perl5 tar:tgz
 USE_PERL5=	configure

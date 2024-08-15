@@ -1,7 +1,8 @@
-ffproxy is a filtering HTTP proxy server. It is able to filter
-by host, URL, and header. Custom header entries can be filtered
-and added. It can even drop its privileges and optionally
-chroot() to some directory. Logging to syslog() is supported,
-as is using another auxiliary proxy server. Contacting IPv6
-servers is supported and allows transparent IPv6 over IPv4
-browsing.
+ffproxy -- Fast Filtering Proxy, is a filtering HTTP/HTTPS proxy server.
+It's capable of filtering by host, URL, and header.  Custom header
+entries can be created for filtering. It can also drop privileges and
+optionally chroot(8) to a chosen directory. Logging to syslog(3) is
+supported, as is using another auxiliary proxy server. An HTTP accelerator
+feature (acting as a front-end to an HTTP server) is also included.
+Contacting IPv6 servers as well as binding to IPv6 is supported which
+allows transparent IPv6 over IPv4 browsing (and vice versa).

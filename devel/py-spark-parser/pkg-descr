@@ -1,0 +1,15 @@
+This package uses Jay Earley's algorithm for parsing context free grammars, and
+comes with some generic Abstract Syntax Tree routines. There is also a prototype
+scanner which does its job by combining Python regular expressions.
+
+(SPARK stands for Scanning, Parsing, and Rewriting Kit. It is a poor name since
+it conflicts with a more popular package of the same name. In the future we will
+rename this.)
+
+The original version of this was written by John Aycock for his Ph.D thesis and
+was described in his 1998 paper: "Compiling Little Languages in Python" at the
+7th International Python Conference. The current incarnation of this code is
+maintained (or not) by Rocky Bernstein.
+
+Note: Earley algorithm parsers are almost linear when given an LR grammar. These
+are grammars which are left-recursive.

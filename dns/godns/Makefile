@@ -1,7 +1,6 @@
 PORTNAME=	godns
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.6
-PORTREVISION=	3
+DISTVERSION=	3.1.8
 CATEGORIES=	dns
 
 MAINTAINER=	diizzy@FreeBSD.org
@@ -32,7 +31,7 @@ GH_TUPLE=	\
 		go-ini:ini:v1.67.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-resty:resty:v2.7.0:go_resty_resty_v2/vendor/github.com/go-resty/resty/v2 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		gofiber:fiber:v2.52.1:gofiber_fiber_v2/vendor/github.com/gofiber/fiber/v2 \
+		gofiber:fiber:v2.52.5:gofiber_fiber_v2/vendor/github.com/gofiber/fiber/v2 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:v0.21.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:mod:v0.10.0:golang_mod/vendor/golang.org/x/mod \

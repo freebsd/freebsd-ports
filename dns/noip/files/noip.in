@@ -22,6 +22,7 @@ command="%%PREFIX%%/bin/noip2"
 load_rc_config $name
 
 : ${noip_enable="NO"}
+: ${noip_svcj_options:="net_basic"}
 : ${noip_config="%%PREFIX%%/etc/no-ip2.conf"}
 : ${noip_flags="-c $noip_config"}
 : ${noip_user="noip"}

@@ -1,1 +1,3 @@
-Vulkan GLSL RetroArch shader system
+This is a collection of the slang (Vulkan GLSL) shaders from the libretro
+project. Every program or library implementing the RetroArch shader pipeline can
+use these shaders. RetroArch and librashader are two examples of those projects.

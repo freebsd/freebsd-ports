@@ -1,6 +1,6 @@
 PORTNAME=	netrek-client-cow
 PORTVERSION=	3.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.netrek.org/files/COW/ \
 		http://quozl.us.netrek.org/netrek/

@@ -1,6 +1,7 @@
 PORTNAME=	phorge
-PORTVERSION=	20240324
-PORTREVISION=	2
+PORTVERSION=	2024.19
+PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	phorgeit
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -18,9 +19,9 @@ RUN_DEPENDS=	git:devel/git \
 USES=		php:cli,flavors shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	phorgeit
-GH_TAGNAME=	d42b3eb0
 USE_PHP=	ctype curl fileinfo filter iconv mbstring mysqli pcntl posix \
 		zip
+IGNORE_WITH_PHP=	84
 USE_RC_SUBR=	phd
 
 SHEBANG_FILES=	resources/timezones/*.php scripts/*.php scripts/almanac/*.php \

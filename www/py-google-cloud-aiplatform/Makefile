@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-aiplatform
-DISTVERSION=	1.49.0
+DISTVERSION=	1.61.0
 CATEGORIES=	www # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,5 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=1.34.1:www/py-google-api-co
 USES=		python
 USE_LDCONFIG=	yes
 USE_PYTHON=	distutils autoplist # TODO pytest - it has a large and complex set of dependencies
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -100,6 +100,7 @@ lib/nvc/nvc.08/NVC.POLYFILL
 lib/nvc/nvc.08/NVC.PSL_SUPPORT
 lib/nvc/nvc.08/NVC.PSL_SUPPORT-body
 lib/nvc/nvc.08/NVC.SIM_PKG
+lib/nvc/nvc.08/NVC.SIM_PKG-body
 lib/nvc/nvc.08/NVC.TEXT_UTIL
 lib/nvc/nvc.08/NVC.TEXT_UTIL-body
 lib/nvc/nvc.08/NVC.VERILOG
@@ -112,6 +113,7 @@ lib/nvc/nvc.19/NVC.POLYFILL
 lib/nvc/nvc.19/NVC.PSL_SUPPORT
 lib/nvc/nvc.19/NVC.PSL_SUPPORT-body
 lib/nvc/nvc.19/NVC.SIM_PKG
+lib/nvc/nvc.19/NVC.SIM_PKG-body
 lib/nvc/nvc.19/NVC.TEXT_UTIL
 lib/nvc/nvc.19/NVC.TEXT_UTIL-body
 lib/nvc/nvc.19/NVC.VERILOG
@@ -123,6 +125,7 @@ lib/nvc/nvc/NVC.POLYFILL-body
 lib/nvc/nvc/NVC.PSL_SUPPORT
 lib/nvc/nvc/NVC.PSL_SUPPORT-body
 lib/nvc/nvc/NVC.SIM_PKG
+lib/nvc/nvc/NVC.SIM_PKG-body
 lib/nvc/nvc/NVC.TEXT_UTIL
 lib/nvc/nvc/NVC.TEXT_UTIL-body
 lib/nvc/nvc/NVC.VERILOG
@@ -135,6 +138,7 @@ lib/nvc/preload93.so
 lib/nvc/std.08/STD.ENV
 lib/nvc/std.08/STD.ENV-body
 lib/nvc/std.08/STD.STANDARD
+lib/nvc/std.08/STD.STANDARD-body
 lib/nvc/std.08/STD.TEXTIO
 lib/nvc/std.08/STD.TEXTIO-body
 lib/nvc/std.08/_NVC_LIB
@@ -144,11 +148,13 @@ lib/nvc/std.19/STD.ENV-body
 lib/nvc/std.19/STD.REFLECTION
 lib/nvc/std.19/STD.REFLECTION-body
 lib/nvc/std.19/STD.STANDARD
+lib/nvc/std.19/STD.STANDARD-body
 lib/nvc/std.19/STD.TEXTIO
 lib/nvc/std.19/STD.TEXTIO-body
 lib/nvc/std.19/_NVC_LIB
 lib/nvc/std.19/_index
 lib/nvc/std/STD.STANDARD
+lib/nvc/std/STD.STANDARD-body
 lib/nvc/std/STD.TEXTIO
 lib/nvc/std/STD.TEXTIO-body
 lib/nvc/std/_NVC_LIB
@@ -165,5 +171,5 @@ libexec/nvc/install-uvvm.sh
 libexec/nvc/install-vivado.sh
 libexec/nvc/install-vunit.sh
 libexec/nvc/install-xpm_vhdl.sh
-share/man/man1/nvc.1.gz
 share/bash-completion/completions/nvc.bash
+share/man/man1/nvc.1.gz

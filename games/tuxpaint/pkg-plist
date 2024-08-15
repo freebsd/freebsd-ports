@@ -16,6 +16,7 @@ lib/tuxpaint/plugins/clone.so
 lib/tuxpaint/plugins/colorsep.so
 lib/tuxpaint/plugins/confetti.so
 lib/tuxpaint/plugins/distortion.so
+lib/tuxpaint/plugins/dither.so
 lib/tuxpaint/plugins/emboss.so
 lib/tuxpaint/plugins/fade_darken.so
 lib/tuxpaint/plugins/fisheye.so
@@ -33,7 +34,7 @@ lib/tuxpaint/plugins/light.so
 lib/tuxpaint/plugins/lightning.so
 lib/tuxpaint/plugins/maze.so
 lib/tuxpaint/plugins/metalpaint.so
-lib/tuxpaint/plugins/mirror_flip.so
+lib/tuxpaint/plugins/mirror_f.so
 lib/tuxpaint/plugins/mosaic_shaped.so
 lib/tuxpaint/plugins/mosaic.so
 lib/tuxpaint/plugins/n_pt_persp.so
@@ -41,6 +42,7 @@ lib/tuxpaint/plugins/negative.so
 lib/tuxpaint/plugins/noise.so
 lib/tuxpaint/plugins/perspective.so
 lib/tuxpaint/plugins/pixels.so
+lib/tuxpaint/plugins/polyfill.so
 lib/tuxpaint/plugins/puzzle.so
 lib/tuxpaint/plugins/rails.so
 lib/tuxpaint/plugins/rainbow.so

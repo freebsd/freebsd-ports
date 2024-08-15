@@ -12,7 +12,6 @@ include/openjph/ojph_params.h
 include/openjph/ojph_version.h
 lib/libopenjph.so
 lib/libopenjph.so.0
-lib/libopenjph.so.0.13
-lib/libopenjph.so.0.13.2
-@comment lib/libopenjph.so.%%PORTVERSION%%
+lib/libopenjph.so.0.15
+lib/libopenjph.so.%%PORTVERSION%%
 libdata/pkgconfig/openjph.pc

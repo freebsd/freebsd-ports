@@ -1,0 +1,11 @@
+Eclipse Jetty provides a highly scalable and memory-efficient web server and
+servlet container, supporting many protocols such as HTTP/3,2,1 and WebSocket.
+Furthermore, the project offers integrations with many other technologies,
+such as:
+
+
+* Asynchronous HTTP Server
+* Standard based Servlet Container
+* Web Sockets server
+* Asynchronous HTTP Client
+* OSGi, JNDI, JMX, JASPI, AJP support

@@ -1,6 +1,5 @@
 PORTNAME=	wpa_supplicant_gui
-DISTVERSION=	2.10
-PORTREVISION=	2
+DISTVERSION=	2.11
 CATEGORIES=	net
 MASTER_SITES=	https://w1.fi/releases/ \
 		LOCAL/yuri/net/wpa_supplicant_gui/:icons

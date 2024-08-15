@@ -1,13 +1,13 @@
 PORTNAME=	questionary
-PORTVERSION=	1.10.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python library to build pretty command line user prompts
-WWW=		https://github.com/tmbo/questionary
+WWW=		https://questionary.readthedocs.io/en/stable/ \
+		https://github.com/tmbo/questionary
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,6 +1,6 @@
---- cmake/os/FreeBSD.cmake.orig	2021-12-17 16:07:27 UTC
+--- cmake/os/FreeBSD.cmake.orig	2024-07-12 19:15:25 UTC
 +++ cmake/os/FreeBSD.cmake
-@@ -48,8 +48,20 @@ IF(NOT FORCE_UNSUPPORTED_COMPILER)
+@@ -49,8 +49,20 @@ IF(NOT FORCE_UNSUPPORTED_COMPILER)
      IF(CMAKE_CXX_COMPILER_VERSION VERSION_LESS 7.1)
        MESSAGE(FATAL_ERROR "GCC 7.1 or newer is required")
      ENDIF()

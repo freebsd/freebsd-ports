@@ -1,169 +1,64 @@
 PORTNAME=	treefmt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
-PORTREVISION=	7
+DISTVERSION=	2.0.4
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	One CLI to format the code tree
-WWW=		https://numtide.github.io/treefmt/
+WWW=		https://treefmt.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo
+USES=		go:1.22,modules
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	numtide
-
-CARGO_CRATES=	aho-corasick-0.7.20 \
-		aho-corasick-1.0.2 \
-		anstream-0.3.2 \
-		anstyle-1.0.1 \
-		anstyle-parse-0.2.1 \
-		anstyle-query-1.0.0 \
-		anstyle-wincon-1.0.1 \
-		anyhow-1.0.71 \
-		atty-0.2.14 \
-		autocfg-1.1.0 \
-		bitflags-1.3.2 \
-		bitflags-2.3.3 \
-		block-buffer-0.9.0 \
-		bstr-1.6.0 \
-		bumpalo-3.13.0 \
-		cast-0.3.0 \
-		cc-1.0.79 \
-		cfg-if-1.0.0 \
-		clap-2.34.0 \
-		clap-4.3.11 \
-		clap-verbosity-flag-2.0.1 \
-		clap_builder-4.3.11 \
-		clap_derive-4.3.2 \
-		clap_lex-0.5.0 \
-		colorchoice-1.0.0 \
-		console-0.13.0 \
-		cpufeatures-0.2.9 \
-		criterion-0.3.6 \
-		criterion-plot-0.4.5 \
-		crossbeam-channel-0.5.8 \
-		crossbeam-deque-0.8.3 \
-		crossbeam-epoch-0.9.15 \
-		crossbeam-utils-0.8.16 \
-		csv-1.2.2 \
-		csv-core-0.1.10 \
-		difflib-0.4.0 \
-		digest-0.9.0 \
-		directories-3.0.2 \
-		dirs-sys-0.3.7 \
-		downcast-0.11.0 \
-		either-1.8.1 \
-		encode_unicode-0.3.6 \
-		env_logger-0.10.0 \
-		errno-0.3.1 \
-		errno-dragonfly-0.1.2 \
-		fastrand-1.9.0 \
-		filetime-0.2.21 \
-		float-cmp-0.9.0 \
-		fnv-1.0.7 \
-		fragile-2.0.0 \
-		generic-array-0.14.7 \
-		getrandom-0.2.10 \
-		globset-0.4.10 \
-		half-1.8.2 \
-		heck-0.4.1 \
-		hermit-abi-0.1.19 \
-		hermit-abi-0.3.2 \
-		humantime-2.1.0 \
-		ignore-0.4.20 \
-		instant-0.1.12 \
-		io-lifetimes-1.0.11 \
-		is-terminal-0.4.9 \
-		itertools-0.10.5 \
-		itoa-1.0.8 \
-		js-sys-0.3.64 \
-		lazy_static-1.4.0 \
-		libc-0.2.147 \
-		linux-raw-sys-0.3.8 \
-		linux-raw-sys-0.4.3 \
-		log-0.4.19 \
-		memchr-2.5.0 \
-		memoffset-0.9.0 \
-		mockall-0.11.4 \
-		mockall_derive-0.11.4 \
-		normalize-line-endings-0.3.0 \
-		num-traits-0.2.15 \
-		num_cpus-1.16.0 \
-		once_cell-1.18.0 \
-		oorandom-11.1.3 \
-		opaque-debug-0.3.0 \
-		path-clean-0.1.0 \
-		plotters-0.3.5 \
-		plotters-backend-0.3.5 \
-		plotters-svg-0.3.5 \
-		predicates-2.1.5 \
-		predicates-core-1.0.6 \
-		predicates-tree-1.0.9 \
-		proc-macro2-1.0.64 \
-		quote-1.0.29 \
-		rayon-1.7.0 \
-		rayon-core-1.11.0 \
-		redox_syscall-0.2.16 \
-		redox_syscall-0.3.5 \
-		redox_users-0.4.3 \
-		regex-1.9.1 \
-		regex-automata-0.3.2 \
-		regex-syntax-0.7.4 \
-		rustix-0.37.23 \
-		rustix-0.38.4 \
-		ryu-1.0.14 \
-		same-file-1.0.6 \
-		scopeguard-1.1.0 \
-		serde-1.0.171 \
-		serde_cbor-0.11.2 \
-		serde_derive-1.0.171 \
-		serde_json-1.0.102 \
-		sha-1-0.9.8 \
-		strsim-0.10.0 \
-		syn-1.0.109 \
-		syn-2.0.25 \
-		tempfile-3.6.0 \
-		termcolor-1.2.0 \
-		terminal_size-0.1.17 \
-		terminal_size-0.2.6 \
-		termtree-0.4.1 \
-		textwrap-0.11.0 \
-		thiserror-1.0.43 \
-		thiserror-impl-1.0.43 \
-		thread_local-1.1.7 \
-		tinytemplate-1.2.1 \
-		toml-0.5.11 \
-		typenum-1.16.0 \
-		unicase-2.6.0 \
-		unicode-ident-1.0.10 \
-		unicode-width-0.1.10 \
-		utf8parse-0.2.1 \
-		version_check-0.9.4 \
-		walkdir-2.3.3 \
-		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.87 \
-		wasm-bindgen-backend-0.2.87 \
-		wasm-bindgen-macro-0.2.87 \
-		wasm-bindgen-macro-support-0.2.87 \
-		wasm-bindgen-shared-0.2.87 \
-		web-sys-0.3.64 \
-		which-4.4.0 \
-		winapi-0.3.9 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.48.0 \
-		windows-targets-0.48.1 \
-		windows_aarch64_gnullvm-0.48.0 \
-		windows_aarch64_msvc-0.48.0 \
-		windows_i686_gnu-0.48.0 \
-		windows_i686_msvc-0.48.0 \
-		windows_x86_64_gnu-0.48.0 \
-		windows_x86_64_gnullvm-0.48.0 \
-		windows_x86_64_msvc-0.48.0
+GH_TUPLE=	\
+		BurntSushi:toml:v1.4.0:burntsushi_toml/vendor/github.com/BurntSushi/toml \
+		Microsoft:go-winio:v0.6.2:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
+		ProtonMail:go-crypto:v1.0.0:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
+		adrg:xdg:v0.5.0:adrg_xdg/vendor/github.com/adrg/xdg \
+		alecthomas:kong:v0.9.0:alecthomas_kong/vendor/github.com/alecthomas/kong \
+		aymanbagabas:go-osc52:v2.0.1:aymanbagabas_go_osc52_v2/vendor/github.com/aymanbagabas/go-osc52/v2 \
+		charmbracelet:lipgloss:v0.10.0:charmbracelet_lipgloss/vendor/github.com/charmbracelet/lipgloss \
+		charmbracelet:log:v0.4.0:charmbracelet_log/vendor/github.com/charmbracelet/log \
+		cloudflare:circl:v1.3.8:cloudflare_circl/vendor/github.com/cloudflare/circl \
+		cyphar:filepath-securejoin:v0.2.5:cyphar_filepath_securejoin/vendor/github.com/cyphar/filepath-securejoin \
+		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+		emirpasic:gods:v1.18.1:emirpasic_gods/vendor/github.com/emirpasic/gods \
+		etcd-io:bbolt:v1.3.10:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
+		go-git:gcfg:3a3c6141e376:go_git_gcfg/vendor/github.com/go-git/gcfg \
+		go-git:go-billy:fac749f7395a:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
+		go-git:go-git:c594bae8d75d:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
+		go-logfmt:logfmt:v0.6.0:go_logfmt_logfmt/vendor/github.com/go-logfmt/logfmt \
+		go-warnings:warnings:v0.1.2:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
+		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
+		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
+		golang:crypto:v0.26.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:exp:8a7402abbf56:golang_exp/vendor/golang.org/x/exp \
+		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
+		golang:net:v0.28.0:golang_net/vendor/golang.org/x/net \
+		golang:sync:v0.8.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.23.0:golang_sys/vendor/golang.org/x/sys \
+		imdario:mergo:v1.0.0:imdario_mergo/vendor/dario.cat/mergo \
+		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
+		kevinburke:ssh_config:v1.2.0:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
+		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
+		mattn:go-isatty:v0.0.20:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-runewidth:v0.0.15:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		muesli:reflow:v0.3.0:muesli_reflow/vendor/github.com/muesli/reflow \
+		muesli:termenv:v0.15.2:muesli_termenv/vendor/github.com/muesli/termenv \
+		otiai10:copy:v1.14.0:otiai10_copy/vendor/github.com/otiai10/copy \
+		pjbgf:sha1cd:v0.3.0:pjbgf_sha1cd/vendor/github.com/pjbgf/sha1cd \
+		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		rivo:uniseg:v0.4.7:rivo_uniseg/vendor/github.com/rivo/uniseg \
+		sergi:go-diff:5b0b94c5c0d3:sergi_go_diff/vendor/github.com/sergi/go-diff \
+		skeema:knownhosts:v1.3.0:skeema_knownhosts/vendor/github.com/skeema/knownhosts \
+		stretchr:testify:v1.9.0:stretchr_testify/vendor/github.com/stretchr/testify \
+		vmihailenco:msgpack:v5.4.1:vmihailenco_msgpack_v5/vendor/github.com/vmihailenco/msgpack/v5 \
+		vmihailenco:tagparser:v2.0.0:vmihailenco_tagparser_v2/vendor/github.com/vmihailenco/tagparser/v2 \
+		xanzy:ssh-agent:v0.3.3:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent
 
 PLIST_FILES=	bin/${PORTNAME}
 

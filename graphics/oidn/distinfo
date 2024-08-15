@@ -1,4 +1,4 @@
-TIMESTAMP = 1718696155
+TIMESTAMP = 1720888672
 SHA256 (oidn-weights-28883d1769d5930e13cf7f1676dd852bd81ed9e7.tar.gz) = 90726b544f6e8b86a8bc4756e7c0b3da7530d4bab9dd671f2689001b4f9801f7
 SIZE (oidn-weights-28883d1769d5930e13cf7f1676dd852bd81ed9e7.tar.gz) = 46880514
 SHA256 (OpenImageDenoise-oidn-v2.3.0_GH0.tar.gz) = e71555003f972863ace8a7391287c0d74f1adfc875138338f577daf43b269402
@@ -9,3 +9,5 @@ SHA256 (ROCmSoftwarePlatform-composable_kernel-e85178b_GH0.tar.gz) = b870ae0dcac
 SIZE (ROCmSoftwarePlatform-composable_kernel-e85178b_GH0.tar.gz) = 2153311
 SHA256 (NVIDIA-cutlass-66d9cdd_GH0.tar.gz) = 8ab91c8930ad48a4012410b234c743a4df0cf270e60c52b80466da740b6c31a6
 SIZE (NVIDIA-cutlass-66d9cdd_GH0.tar.gz) = 15495942
+SHA256 (e5e52d335c58365b6cbd91f9a8a6f9ee9a085bf5.patch) = b51dcb5d6d2408aeeeed7740eed73a32398d95308fb87d11e5d173dfb8d7d99a
+SIZE (e5e52d335c58365b6cbd91f9a8a6f9ee9a085bf5.patch) = 1080

@@ -1,6 +1,6 @@
---- BUILD.gn.orig	2024-06-22 08:49:42 UTC
+--- BUILD.gn.orig	2024-07-31 14:19:23 UTC
 +++ BUILD.gn
-@@ -65,7 +65,7 @@ declare_args() {
+@@ -66,7 +66,7 @@ declare_args() {
    root_extra_deps = []
  }
  
@@ -9,7 +9,7 @@
    # An official (maximally optimized!) component (optimized for build times)
    # build doesn't make sense and usually doesn't work.
    assert(!is_component_build)
-@@ -97,7 +97,6 @@ group("gn_all") {
+@@ -98,7 +98,6 @@ group("gn_all") {
        "//codelabs",
        "//components:components_unittests",
        "//components/gwp_asan:gwp_asan_unittests",
@@ -17,7 +17,7 @@
        "//net:net_unittests",
        "//sandbox:sandbox_unittests",
        "//services:services_unittests",
-@@ -428,7 +427,7 @@ group("gn_all") {
+@@ -433,7 +432,7 @@ group("gn_all") {
        }
      }
  
@@ -26,7 +26,7 @@
        deps += [
          "//third_party/breakpad:breakpad_unittests",
          "//third_party/breakpad:core-2-minidump",
-@@ -616,6 +615,15 @@ group("gn_all") {
+@@ -621,6 +620,15 @@ group("gn_all") {
        }
      }
  
@@ -42,7 +42,7 @@
      if (is_mac) {
        deps += [
          "//third_party/breakpad:dump_syms",
-@@ -662,7 +670,7 @@ group("gn_all") {
+@@ -667,7 +675,7 @@ group("gn_all") {
            host_os == "win") {
          deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
        }
@@ -51,7 +51,7 @@
        deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
      }
  
-@@ -1082,7 +1090,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1093,7 +1101,7 @@ if (use_blink && !is_cronet_build) {
      ]
    }
  
@@ -60,7 +60,7 @@
      script_test("chrome_wpt_tests") {
        script = "//third_party/blink/tools/run_wpt_tests.py"
        args = [
-@@ -1177,7 +1185,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1186,7 +1194,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
@@ -69,7 +69,7 @@
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1186,7 +1194,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1195,7 +1203,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -78,7 +78,7 @@
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1646,7 +1654,7 @@ group("chromium_builder_perf") {
+@@ -1659,7 +1667,7 @@ group("chromium_builder_perf") {
        data_deps += [ "//chrome/test:performance_browser_tests" ]
      }
  

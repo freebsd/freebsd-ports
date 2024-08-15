@@ -1,6 +1,5 @@
 PORTNAME=	grpc
-PORTVERSION=	1.62.2
-PORTREVISION=	2
+PORTVERSION=	1.65.4
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	2
 CATEGORIES=	devel
@@ -13,10 +12,12 @@ WWW=		https://grpc.io/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/xxhash.h:devel/xxhash
+BUILD_DEPENDS=	abseil>=20240116.0:devel/abseil \
+		xxhash>=0:devel/xxhash
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libbenchmark.so:devel/benchmark \
 		libcares.so:dns/c-ares \
+		libopentelemetry_common.so:devel/opentelemetry-cpp \
 		libprotobuf.so:devel/protobuf \
 		libre2.so:devel/re2
 
@@ -28,6 +29,7 @@ CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17 \
 		-DgRPC_ABSL_PROVIDER=package \
 		-DgRPC_BENCHMARK_PROVIDER=package \
 		-DgRPC_CARES_PROVIDER=package \
+		-DgRPC_OPENTELEMETRY_PROVIDER=package \
 		-DgRPC_PROTOBUF_PROVIDER=package \
 		-DgRPC_RE2_PROVIDER=package \
 		-DgRPC_SSL_PROVIDER=package \

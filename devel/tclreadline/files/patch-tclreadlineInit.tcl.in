@@ -1,0 +1,13 @@
+--- tclreadlineInit.tcl.in.orig	2024-07-08 12:20:49 UTC
++++ tclreadlineInit.tcl.in
+@@ -17,8 +17,8 @@ proc ::tclreadline::Init {} {
+     uplevel #0 {
+         if {![info exists tclreadline::library]} {
+             set msg ""
+-            foreach dirname {@TCLRL_LIBDIR@ [file dirname [info script]]} {
+-                if {[catch {load [file join $dirname libtclreadline[info sharedlibextension]]} msg] == 0} {
++            foreach dirname [list @TCLRL_LIBDIR@ [file dirname [info script]]] {
++                if {[catch {load [file join $dirname libtclreadline[info sharedlibextension]] tclreadline} msg] == 0} {
+                     set msg ""
+                     break
+                 }

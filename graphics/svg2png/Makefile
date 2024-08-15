@@ -8,6 +8,9 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Render an SVG image to a PNG image (using cairo)
 WWW=		https://cairographics.org
 
+DEPRECATED=	Depends on deprecated library graphics/libsvg-cairo, please consider using ImageMagick or librsvg
+EXPIRATION_DATE=2024-07-31
+
 LIB_DEPENDS=	libsvg-cairo.so:graphics/libsvg-cairo
 
 GNU_CONFIGURE=	yes

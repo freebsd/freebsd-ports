@@ -1,7 +1,6 @@
 PORTNAME=	synth
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.13
-PORTREVISION=	2
+DISTVERSION=	3.01
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -11,12 +10,15 @@ WWW=		https://github.com/jrmarino/synth
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-BUILD_DEPENDS=	${GPR}/ini_file_manager.gpr:misc/ini_file_manager \
+BUILD_DEPENDS=	gprbuild>0:devel/gprbuild \
+		${GPR}/ini_file_manager.gpr:misc/ini_file_manager \
 		${GPR}/adacurses.gpr:devel/adacurses
 
-USES=		ada:6 ncurses:base
+USES=		ada elfctl ncurses:base
 USE_GITHUB=	yes
 GH_ACCOUNT=	jrmarino
+
+ELF_FEATURES=	+wxneeded:build/${PORTNAME}
 
 GPR=		${LOCALBASE}/lib/gnat
 MAKE_ENV=	NCURSES_LINK=static
@@ -42,7 +44,7 @@ do-build:
 		gcc -c unix_core.c -o ../build/unix_core.o)
 	(cd ${WRKSRC}/synthexec && ${SETENV} ${MAKE_ENV} \
 		gcc synthexec.c -o ../build/synthexec)
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gnatmake -P default \
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gprbuild -P default \
 		-largs build/unix_core.o)
 
 do-install:

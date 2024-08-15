@@ -1,5 +1,6 @@
 PORTNAME=	libbgcode
 DISTVERSION=	0.2.0
+PORTREVISION=   1
 CATEGORIES=	cad
 
 MAINTAINER=	teodorsigaev@gmail.com
@@ -15,7 +16,7 @@ USES=	cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	prusa3d
-GH_TAGNAME=	6f43cb0
+GH_TAGNAME=	8ae75bd
 GH_TUPLE=	atomicobject:heatshrink:v0.4.1:heatshrink
 
 CMAKE_ON=	BUILD_SHARED_LIBS LibBGCode_BUILD_DEPS

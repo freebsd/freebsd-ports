@@ -2958,7 +2958,7 @@ lib/libpython%%PYTHON_VER%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_LIBDIR%%/lib-dynload/_struct%%PYTHON_EXT_SUFFIX%%%%ABI%%.so
 %%PYTHON_LIBDIR%%/lib-dynload/_testbuffer%%PYTHON_EXT_SUFFIX%%%%ABI%%.so
 %%PYTHON_LIBDIR%%/lib-dynload/_testcapi%%PYTHON_EXT_SUFFIX%%%%ABI%%.so
-%%PYTHON_LIBDIR%%/lib-dynload/_testclinic%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_LIBDIR%%/lib-dynload/_testclinic%%PYTHON_EXT_SUFFIX%%%%ABI%%.so
 %%PYTHON_LIBDIR%%/lib-dynload/_testimportmultiple%%PYTHON_EXT_SUFFIX%%%%ABI%%.so
 %%PYTHON_LIBDIR%%/lib-dynload/_testinternalcapi%%PYTHON_EXT_SUFFIX%%%%ABI%%.so
 %%PYTHON_LIBDIR%%/lib-dynload/_testmultiphase%%PYTHON_EXT_SUFFIX%%%%ABI%%.so

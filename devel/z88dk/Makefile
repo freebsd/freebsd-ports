@@ -8,6 +8,9 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Complete Z80/Z180 development kit
 WWW=		https://z88dk.org/site/
 
+PATCH_SITES=	https://github.com/z88dk/z88dk/commit/
+PATCHFILES=	56b25e7d8d3b16a5fbc8aa41c7d8ac86087d718b.patch:-p1
+
 LICENSE=	ClArtistic
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

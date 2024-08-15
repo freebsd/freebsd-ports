@@ -1,5 +1,5 @@
 PORTNAME=	scamper
-DISTVERSION=	20240229
+DISTVERSION=	20240716
 CATEGORIES=	net
 MASTER_SITES=	https://www.caida.org/catalog/software/scamper/code/
 DISTNAME=	${PORTNAME}-cvs-${DISTVERSION}
@@ -14,23 +14,28 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES+=		gmake libtool ssl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 SLAVE_PORT?=	no
 
 .if ${SLAVE_PORT} == no
 
-OPTIONS_DEFINE=	HOIHO UPTIME
+OPTIONS_DEFINE=	HOIHO MINRTT UPTIME
 OPTIONS_SUB=	yes
 
 HOIHO_DESC=	Install sc_hoiho
+MINRTT_DESC=	Install sc_minrtt
 UPTIME_DESC=	Install sc_uptime
 
 HOIHO_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 HOIHO_USES=		localbase:ldflags
 HOIHO_CONFIGURE_ENABLE=	sc_hoiho
 HOIHO_CONFIGURE_WITH=	pcre2
+
+MINRTT_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+MINRTT_USES=		localbase:ldflags sqlite:3
+MINRTT_CONFIGURE_ENABLE=	sc_minrtt
+MINRTT_CONFIGURE_WITH=	pcre2
 
 UPTIME_USES=		localbase:ldflags sqlite:3
 UPTIME_CONFIGURE_ENABLE=	sc_uptime

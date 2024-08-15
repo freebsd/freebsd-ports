@@ -1,5 +1,5 @@
 PORTNAME=	qemu
-DISTVERSION=	9.0.1
+DISTVERSION=	9.0.2
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -235,6 +235,11 @@ PLIST_SUB+=	BSDUSER=""
 .endif
 
 PLIST_SUB+=	LINUXBOOT_DMA=""
+.endif
+
+post-patch:
+.if ${FLAVOR:U} == tools
+	@${REINPLACE_CMD} -e '/keymaps/d' ${WRKSRC}/pc-bios/meson.build
 .endif
 
 post-patch-CDROM_DMA-off:

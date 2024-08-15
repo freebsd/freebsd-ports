@@ -1,10 +1,8 @@
 # Allow building against system-wide graphite2/harfbuzz.
 
-diff --git config/system-headers.mozbuild config/system-headers.mozbuild
-index 0c06f581b33b..10f125be25ab 100644
---- config/system-headers.mozbuild
+--- config/system-headers.mozbuild.orig	2024-07-25 20:34:40 UTC
 +++ config/system-headers.mozbuild
-@@ -1307,6 +1307,19 @@ if CONFIG["MOZ_ENABLE_LIBPROXY"]:
+@@ -1305,6 +1305,19 @@ if CONFIG["MOZ_ENABLE_LIBPROXY"]:
          "proxy.h",
      ]
  
@@ -24,11 +22,9 @@ index 0c06f581b33b..10f125be25ab 100644
  if CONFIG["MOZ_SYSTEM_ICU"]:
      system_headers += [
          "unicode/calendar.h",
-diff --git dom/base/moz.build dom/base/moz.build
-index 14c9f9dd96fb..bd1c8f241e9b 100644
---- dom/base/moz.build
+--- dom/base/moz.build.orig	2024-07-25 20:34:40 UTC
 +++ dom/base/moz.build
-@@ -606,6 +606,9 @@ FINAL_LIBRARY = "xul"
+@@ -616,6 +616,9 @@ if CONFIG["MOZ_WIDGET_TOOLKIT"] == "gtk":
  if CONFIG["MOZ_WIDGET_TOOLKIT"] == "gtk":
      CXXFLAGS += CONFIG["MOZ_GTK3_CFLAGS"]
  
@@ -38,10 +34,7 @@ index 14c9f9dd96fb..bd1c8f241e9b 100644
  GeneratedFile(
      "UseCounterList.h",
      script="gen-usecounters.py",
-diff --git gfx/graphite2/geckoextra/moz.build gfx/graphite2/geckoextra/moz.build
-new file mode 100644
-index 000000000000..24e8d7a03274
---- /dev/null
+--- gfx/graphite2/geckoextra/moz.build.orig	2024-08-13 19:48:57 UTC
 +++ gfx/graphite2/geckoextra/moz.build
 @@ -0,0 +1,21 @@
 +# -*- Mode: python; indent-tabs-mode: nil; tab-width: 40 -*-
@@ -64,22 +57,17 @@ index 000000000000..24e8d7a03274
 +# Match bundled graphite2 configuration
 +AllowCompilerWarnings()
 +
-+FINAL_LIBRARY = 'gkmedias'
-diff --git gfx/harfbuzz/README-mozilla.fbsd gfx/harfbuzz/README-mozilla.fbsd
-new file mode 100644
-index 000000000000..2a10eb1e2b42
---- /dev/null
++FINAL_LIBRARY = 'xul'
+--- gfx/harfbuzz/README-mozilla.fbsd.orig	2024-08-13 19:48:57 UTC
 +++ gfx/harfbuzz/README-mozilla.fbsd
 @@ -0,0 +1,4 @@
 +The in-tree copy may be omitted during build by --with-system-harfbuzz.
 +Make sure to keep pkg-config version check within toolkit/moz.configure in sync
 +with checkout version or increment latest tag by one if it's not based
 +on upstream release.
-diff --git gfx/moz.build gfx/moz.build
-index 56ea317bedfc..07dd7f66f1bc 100644
---- gfx/moz.build
+--- gfx/moz.build.orig	2024-07-25 20:34:43 UTC
 +++ gfx/moz.build
-@@ -10,6 +10,14 @@ with Files("**"):
+@@ -10,6 +10,14 @@ with Files("wr/**"):
  with Files("wr/**"):
      BUG_COMPONENT = ("Core", "Graphics: WebRender")
  
@@ -103,11 +91,9 @@ index 56ea317bedfc..07dd7f66f1bc 100644
      "ots/src",
      "thebes",
      "ipc",
-diff --git gfx/skia/generate_mozbuild.py gfx/skia/generate_mozbuild.py
-index c161d24df853..8c7dd395b371 100755
---- gfx/skia/generate_mozbuild.py
+--- gfx/skia/generate_mozbuild.py.orig	2024-07-25 20:34:42 UTC
 +++ gfx/skia/generate_mozbuild.py
-@@ -91,6 +91,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
+@@ -95,6 +95,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
          '-Wno-unused-private-field',
      ]
  
@@ -117,11 +103,9 @@ index c161d24df853..8c7dd395b371 100755
  if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk', 'android'):
      LOCAL_INCLUDES += [
          "/gfx/cairo/cairo/src",
-diff --git gfx/skia/moz.build gfx/skia/moz.build
-index 83aa2957a938..0859316a1f09 100644
---- gfx/skia/moz.build
+--- gfx/skia/moz.build.orig	2024-07-25 20:34:42 UTC
 +++ gfx/skia/moz.build
-@@ -601,6 +601,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
+@@ -623,6 +623,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
          '-Wno-unused-private-field',
      ]
  
@@ -131,11 +115,9 @@ index 83aa2957a938..0859316a1f09 100644
  if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk', 'android'):
      LOCAL_INCLUDES += [
          "/gfx/cairo/cairo/src",
-diff --git gfx/thebes/moz.build gfx/thebes/moz.build
-index fd1fcf236d81..958d3f699ffd 100644
---- gfx/thebes/moz.build
+--- gfx/thebes/moz.build.orig	2024-07-25 20:34:42 UTC
 +++ gfx/thebes/moz.build
-@@ -293,7 +293,13 @@ if CONFIG["MOZ_WAYLAND"]:
+@@ -295,7 +295,13 @@ LOCAL_INCLUDES += CONFIG["SKIA_INCLUDES"]
  
  LOCAL_INCLUDES += CONFIG["SKIA_INCLUDES"]
  
@@ -150,9 +132,7 @@ index fd1fcf236d81..958d3f699ffd 100644
  
  CXXFLAGS += ["-Werror=switch"]
  
-diff --git intl/unicharutil/util/moz.build intl/unicharutil/util/moz.build
-index 2bbd00415cae..f66bd37695d4 100644
---- intl/unicharutil/util/moz.build
+--- intl/unicharutil/util/moz.build.orig	2024-07-25 20:34:43 UTC
 +++ intl/unicharutil/util/moz.build
 @@ -24,6 +24,9 @@ UNIFIED_SOURCES += [
      "nsUnicodeProperties.cpp",
@@ -164,9 +144,7 @@ index 2bbd00415cae..f66bd37695d4 100644
  include("/ipc/chromium/chromium-config.mozbuild")
  
  GeneratedFile(
-diff --git netwerk/dns/moz.build netwerk/dns/moz.build
-index c926d14707d1..35a3f33e2885 100644
---- netwerk/dns/moz.build
+--- netwerk/dns/moz.build.orig	2024-07-25 20:34:48 UTC
 +++ netwerk/dns/moz.build
 @@ -112,6 +112,9 @@ GeneratedFile(
      "etld_data.inc", script="prepare_tlds.py", inputs=["effective_tld_names.dat"]
@@ -178,15 +156,12 @@ index c926d14707d1..35a3f33e2885 100644
  # need to include etld_data.inc
  LOCAL_INCLUDES += [
      "/netwerk/base",
-diff --git old-configure.in old-configure.in
-index 2ca88a20a4b3..88bc9b873eff 100644
---- old-configure.in
+--- old-configure.in.orig	2024-07-25 20:34:49 UTC
 +++ old-configure.in
-@@ -1067,6 +1067,27 @@ fi
- AC_DEFINE_UNQUOTED(MOZ_MACBUNDLE_ID,$MOZ_MACBUNDLE_ID)
+@@ -704,6 +704,27 @@ dnl ==================================================
  AC_SUBST(MOZ_MACBUNDLE_ID)
  
-+dnl ========================================================
+ dnl ========================================================
 +dnl Check for graphite2
 +dnl ========================================================
 +if test -n "$MOZ_SYSTEM_GRAPHITE2"; then
@@ -207,14 +182,13 @@ index 2ca88a20a4b3..88bc9b873eff 100644
 +    CFLAGS=$_SAVE_CFLAGS
 +fi
 +
- dnl ========================================================
++dnl ========================================================
  dnl = Child Process Name for IPC
  dnl ========================================================
-diff --git toolkit/library/moz.build toolkit/library/moz.build
-index 76746f308011..f6844f4c400b 100644
---- toolkit/library/moz.build
+ if test "$MOZ_WIDGET_TOOLKIT" != "android"; then
+--- toolkit/library/moz.build.orig	2024-07-25 20:34:58 UTC
 +++ toolkit/library/moz.build
-@@ -292,6 +292,12 @@ if CONFIG["MOZ_SYSTEM_PNG"]:
+@@ -297,6 +297,12 @@ if CONFIG["MOZ_SYSTEM_WEBP"]:
  if CONFIG["MOZ_SYSTEM_WEBP"]:
      OS_LIBS += CONFIG["MOZ_WEBP_LIBS"]
  
@@ -227,11 +201,9 @@ index 76746f308011..f6844f4c400b 100644
  if CONFIG["MOZ_SYSTEM_LIBEVENT"]:
      OS_LIBS += CONFIG["MOZ_LIBEVENT_LIBS"]
  
-diff --git toolkit/moz.configure toolkit/moz.configure
-index a060a59f728f..f0778d1ae2d6 100644
---- toolkit/moz.configure
+--- toolkit/moz.configure.orig	2024-08-02 23:23:42 UTC
 +++ toolkit/moz.configure
-@@ -1218,6 +1218,26 @@ def enable_cairo_ft(target, tree_freetype, freetype2_info):
+@@ -1279,6 +1279,26 @@ set_config("CAIRO_FT_CFLAGS", ft2_info.cflags, when=en
  set_config("MOZ_ENABLE_CAIRO_FT", True, when=enable_cairo_ft)
  set_config("CAIRO_FT_CFLAGS", ft2_info.cflags, when=enable_cairo_ft)
  

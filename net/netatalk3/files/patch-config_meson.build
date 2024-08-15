@@ -1,6 +1,6 @@
---- config/meson.build.orig	2024-06-29 05:58:36 UTC
+--- config/meson.build.orig	2024-07-18 15:25:55 UTC
 +++ config/meson.build
-@@ -7,23 +7,16 @@ custom_target(
+@@ -7,39 +7,17 @@ custom_target(
  custom_target(
      'dbus_session',
      input: 'dbus-session.conf.tmpl',
@@ -13,17 +13,34 @@
  )
  
 -if (
--    not fs.exists(pkgconfdir / 'afp.conf')
--    or (get_option('with-overwrite') and fs.exists(pkgconfdir / 'afp.conf'))
+-    fs.exists(pkgconfdir / 'afp.conf')
+-    and not get_option('with-overwrite')
 -)
--    install_data(afp_conf, install_dir: pkgconfdir)
+-    message('will not replace existing', pkgconfdir / 'afp.conf')
 -else
--    message('not overwriting', 'afp.conf')
+-    install_data(afp_conf, install_dir: pkgconfdir)
 -endif
 +install_data(afp_conf, rename: 'afp.conf.sample', install_dir: pkgconfdir)
- 
--install_data('extmap.conf', install_dir: pkgconfdir)
 +install_data('extmap.conf', rename: 'extmap.conf.sample', install_dir: pkgconfdir)
  
- install_data('netatalk-dbus.conf', install_dir: dbus_sysconf_path)
+-if (
+-    fs.exists(pkgconfdir / 'extmap.conf')
+-    and not get_option('with-overwrite')
+-)
+-    message('will not replace existing', pkgconfdir / 'extmap.conf')
+-else
+-    install_data('extmap.conf', install_dir: pkgconfdir)
+-endif
+-
+-if (
+-    fs.exists(dbus_sysconfpath / 'netatalk-dbus.conf')
+-    and not get_option('with-overwrite')
+-)
+-    message('will not replace existing', dbus_sysconfpath / 'netatalk-dbus.conf')
+-else
+-    install_data('netatalk-dbus.conf', install_dir: dbus_sysconfpath)
+-endif
++install_data('netatalk-dbus.conf', install_dir: dbus_sysconfpath)
+ 
+ install_data('README', install_dir: localstatedir / 'netatalk')
  

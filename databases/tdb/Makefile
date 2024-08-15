@@ -5,7 +5,7 @@ PORTEPOCH=			1
 CATEGORIES=			databases
 MASTER_SITES=			SAMBA
 
-MAINTAINER=			timur@FreeBSD.org
+MAINTAINER=			samba@FreeBSD.org
 COMMENT=			Trivial Database
 WWW=		https://tdb.samba.org/
 

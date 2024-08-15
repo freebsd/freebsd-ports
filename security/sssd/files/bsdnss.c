@@ -6,6 +6,24 @@
 #include <nss.h>
 #include <netdb.h>
 
+NSS_METHOD_PROTOTYPE(__nss_compat_getgrnam_r);
+NSS_METHOD_PROTOTYPE(__nss_compat_getgrgid_r);
+NSS_METHOD_PROTOTYPE(__nss_compat_getgrent_r);
+NSS_METHOD_PROTOTYPE(__nss_compat_setgrent);
+NSS_METHOD_PROTOTYPE(__nss_compat_endgrent);
+
+NSS_METHOD_PROTOTYPE(__nss_compat_getpwnam_r);
+NSS_METHOD_PROTOTYPE(__nss_compat_getpwuid_r);
+NSS_METHOD_PROTOTYPE(__nss_compat_getpwent_r);
+NSS_METHOD_PROTOTYPE(__nss_compat_setpwent);
+NSS_METHOD_PROTOTYPE(__nss_compat_endpwent);
+
+NSS_METHOD_PROTOTYPE(__nss_compat_gethostbyname);
+NSS_METHOD_PROTOTYPE(__nss_compat_gethostbyname2);
+NSS_METHOD_PROTOTYPE(__nss_compat_gethostbyaddr);
+
+NSS_METHOD_PROTOTYPE(__nss_compat_getgroupmembership);
+
 extern enum nss_status _nss_sss_getgrent_r(struct group *, char *, size_t,
                                            int *);
 extern enum nss_status _nss_sss_getgrnam_r(const char *, struct group *,
@@ -66,7 +84,6 @@ static ns_mtab methods[] = {
 { NSDB_GROUP, "getgrnam_r", __nss_compat_getgrnam_r, _nss_sss_getgrnam_r },
 { NSDB_GROUP, "getgrgid_r", __nss_compat_getgrgid_r, _nss_sss_getgrgid_r },
 { NSDB_GROUP, "getgrent_r", __nss_compat_getgrent_r, _nss_sss_getgrent_r },
-{ NSDB_GROUP, "getgroupmembership",   __nss_compat_getgroupmembership,   _nss_sss_getgroupmembership },
 { NSDB_GROUP, "setgrent",   __nss_compat_setgrent,   _nss_sss_setgrent },
 { NSDB_GROUP, "endgrent",   __nss_compat_endgrent,   _nss_sss_endgrent },
 
@@ -76,9 +93,9 @@ static ns_mtab methods[] = {
 { NSDB_PASSWD, "setpwent",   __nss_compat_setpwent,   _nss_sss_setpwent },
 { NSDB_PASSWD, "endpwent",   __nss_compat_endpwent,   _nss_sss_endpwent },
 
-// { NSDB_HOSTS, "gethostbyname", __nss_compat_gethostbyname, _nss_sss_gethostbyname_r },
-//{ NSDB_HOSTS, "gethostbyaddr", __nss_compat_gethostbyaddr, _nss_sss_gethostbyaddr_r },
-//{ NSDB_HOSTS, "gethostbyname2", __nss_compat_gethostbyname2, _nss_sss_gethostbyname2_r },
+{ NSDB_HOSTS, "gethostbyname", __nss_compat_gethostbyname, _nss_sss_gethostbyname_r },
+{ NSDB_HOSTS, "gethostbyaddr", __nss_compat_gethostbyaddr, _nss_sss_gethostbyaddr_r },
+{ NSDB_HOSTS, "gethostbyname2", __nss_compat_gethostbyname2, _nss_sss_gethostbyname2_r },
 
 { NSDB_GROUP_COMPAT, "getgrnam_r", __nss_compat_getgrnam_r, _nss_sss_getgrnam_r },
 { NSDB_GROUP_COMPAT, "getgrgid_r", __nss_compat_getgrgid_r, _nss_sss_getgrgid_r },
@@ -91,6 +108,8 @@ static ns_mtab methods[] = {
 { NSDB_PASSWD_COMPAT, "getpwent_r", __nss_compat_getpwent_r, _nss_sss_getpwent_r },
 { NSDB_PASSWD_COMPAT, "setpwent",   __nss_compat_setpwent,   _nss_sss_setpwent },
 { NSDB_PASSWD_COMPAT, "endpwent",   __nss_compat_endpwent,   _nss_sss_endpwent },
+
+{ NSDB_GROUP, "getgroupmembership",   __nss_compat_getgroupmembership,   _nss_sss_getgroupmembership },
 
 };
 

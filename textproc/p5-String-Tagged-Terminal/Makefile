@@ -1,5 +1,5 @@
 PORTNAME=	String-Tagged-Terminal
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Convert-Color>=0:graphics/p5-Convert-Color \
 		p5-Convert-Color-XTerm>=0:graphics/p5-Convert-Color-XTerm \
 		p5-String-Tagged>=0:textproc/p5-String-Tagged
-TEST_DEPENDS=	p5-Test2-Suite>=0:devel/p5-Test2-Suite
+TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	modbuild

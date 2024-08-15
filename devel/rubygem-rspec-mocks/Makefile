@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Rspec-mocks provides a test-double framework for rspec
-WWW=		https://github.com/rspec/rspec-mocks
+WWW=		https://rspec.info/ \
+		https://github.com/rspec/rspec-mocks
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

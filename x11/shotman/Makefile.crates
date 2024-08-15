@@ -78,9 +78,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		syn-2.0.52 \
 		thiserror-1.0.50 \
 		thiserror-impl-1.0.50 \
-		time-0.3.34 \
+		time-0.3.36 \
 		time-core-0.1.2 \
-		time-macros-0.2.17 \
+		time-macros-0.2.18 \
 		tracing-0.1.40 \
 		tracing-core-0.1.32 \
 		unicode-ident-1.0.12 \

@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2022-07-06 21:36:34 UTC
+--- CMakeLists.txt.orig	2024-07-12 19:15:25 UTC
 +++ CMakeLists.txt
-@@ -1819,7 +1819,7 @@ IF(LINUX AND KNOWN_CUSTOM_LIBRARIES)
+@@ -1848,7 +1848,7 @@ IF(WITH_AUTHENTICATION_LDAP)
  ENDIF()
  
  IF(WITH_AUTHENTICATION_LDAP)
@@ -9,7 +9,7 @@
      # LDAP / SASL / KERBEROS / SSL must all be "system" or "custom", not a mix.
      IF(WITH_LDAP STREQUAL "system" OR
          WITH_SASL STREQUAL "system" OR
-@@ -1868,6 +1868,7 @@ IF(WITH_AUTHENTICATION_KERBEROS)
+@@ -1897,6 +1897,7 @@ ENDIF()
    ENDIF()
  ENDIF()
  
@@ -17,7 +17,7 @@
  # Add system/bundled editline.
  MYSQL_CHECK_EDITLINE()
  SET(EDITLINE_WARN_GIVEN)
-@@ -1878,7 +1879,9 @@ IF(EDITLINE_WARN_GIVEN)
+@@ -1907,7 +1908,9 @@ ENDIF()
      "You can use -DWITH_EDITLINE=bundled instead."
      )
  ENDIF()
@@ -26,8 +26,8 @@
 +IF(NOT WITHOUT_SERVER)
  # Add libevent
  MYSQL_CHECK_LIBEVENT()
- SET(LIBEVENT_WARN_GIVEN)
-@@ -1889,6 +1892,7 @@ IF(LIBEVENT_WARN_GIVEN)
+ UNSET(LIBEVENT_WARN_GIVEN)
+@@ -1918,6 +1921,7 @@ ENDIF()
      "You can use -DWITH_LIBEVENT=bundled instead."
      )
  ENDIF()
@@ -35,7 +35,7 @@
  
  # Add lz4 library
  MYSQL_CHECK_LZ4()
-@@ -2142,7 +2146,9 @@ ADD_CUSTOM_TARGET(clang_tidy_prerequisites)
+@@ -2180,7 +2184,9 @@ ADD_DEPENDENCIES(clang_tidy_prerequisites GenError)
  ADD_DEPENDENCIES(clang_tidy_prerequisites protobuf_generated_all)
  ADD_DEPENDENCIES(clang_tidy_prerequisites GenError)
  
@@ -46,7 +46,7 @@
  ADD_SUBDIRECTORY(strings)
  ADD_SUBDIRECTORY(vio)
  ADD_SUBDIRECTORY(mysys)
-@@ -2187,12 +2193,15 @@ IF(WITH_UNIT_TESTS)
+@@ -2230,12 +2236,15 @@ ENDIF()
    ADD_SUBDIRECTORY(unittest/mytap/t)
  ENDIF()
  
@@ -64,7 +64,7 @@
    ADD_SUBDIRECTORY(testclients)
    ADD_SUBDIRECTORY(sql)
  ENDIF()
-@@ -2247,11 +2256,11 @@ ENDIF()
+@@ -2305,11 +2314,11 @@ ADD_SUBDIRECTORY(scripts)
  # scripts/mysql_config depends on client and server targets loaded above.
  # It is referenced by some of the directories below, so we insert it here.
  ADD_SUBDIRECTORY(scripts)
@@ -77,19 +77,12 @@
    IF(WITH_INTERNAL)
      ADD_SUBDIRECTORY(internal)
    ENDIF()
-@@ -2361,6 +2370,7 @@ IF(PACK_SEPARATE_COMPONENTS)
-   SET(CPACK_COMPONENTS_GROUPING IGNORE)
+@@ -2336,7 +2345,7 @@ ENDIF()
+   INCLUDE(fastcov)
  ENDIF()
  
+-IF(UNIX)
 +IF(FALSE)
- IF(UNIX)
-   INSTALL(FILES
-     Docs/mysql.info
-@@ -2395,6 +2405,7 @@ IF(NOT INSTALL_LAYOUT MATCHES "RPM")
-     PATTERN "sp-imp-spec.txt" EXCLUDE
-     PATTERN "README.build" EXCLUDE
-   )
-+ENDIF()
+   ADD_SUBDIRECTORY(man)
  ENDIF()
  
- # Now that we're done with all ADD_SUBDIRECTORY and thus all feature tests,

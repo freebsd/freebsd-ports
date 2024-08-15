@@ -136,7 +136,7 @@ ${INDEXDIR}/${INDEXFILE}: .PHONY
 			echo; \
 			echo "********************************************************************"; \
 			echo "Before reporting this error, verify that you are running a supported"; \
-			echo "version of FreeBSD (see https://www.FreeBSD.org/ports/) and that you"; \
+			echo "version of FreeBSD (see https://ports.FreeBSD.org) and that you"; \
 			echo "have a complete and up-to-date ports collection.  (INDEX builds are"; \
 			echo "not supported with partial or out-of-date ports collections."; \
 			echo "If that is the case, then"; \

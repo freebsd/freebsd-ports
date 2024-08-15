@@ -1,0 +1,7 @@
+An overview of the foundations of the ExtUtils::Builder Plan framework.
+Actions are the cornerstone of this framework. They provide an
+interface between build tools (e.g. ExtUtils::MakeMaker, Module::Build,
+...) and building extensions. This allows producing and consuming sides
+to be completely independent from each other. It is a flexible
+abstraction around pieces of work, this work can be a piece of perl
+code, an external command, a mix of those or possibly other things.

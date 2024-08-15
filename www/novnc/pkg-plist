@@ -65,6 +65,13 @@ libexec/novnc/app/styles/input.css
 libexec/novnc/app/ui.js
 libexec/novnc/app/webutil.js
 libexec/novnc/core/base64.js
+libexec/novnc/core/crypto/aes.js
+libexec/novnc/core/crypto/bigint.js
+libexec/novnc/core/crypto/crypto.js
+libexec/novnc/core/crypto/des.js
+libexec/novnc/core/crypto/dh.js
+libexec/novnc/core/crypto/md5.js
+libexec/novnc/core/crypto/rsa.js
 libexec/novnc/core/decoders/copyrect.js
 libexec/novnc/core/decoders/hextile.js
 libexec/novnc/core/decoders/jpeg.js
@@ -74,7 +81,6 @@ libexec/novnc/core/decoders/tight.js
 libexec/novnc/core/decoders/tightpng.js
 libexec/novnc/core/decoders/zrle.js
 libexec/novnc/core/deflator.js
-libexec/novnc/core/des.js
 libexec/novnc/core/display.js
 libexec/novnc/core/encodings.js
 libexec/novnc/core/inflator.js
@@ -96,7 +102,6 @@ libexec/novnc/core/util/events.js
 libexec/novnc/core/util/eventtarget.js
 libexec/novnc/core/util/int.js
 libexec/novnc/core/util/logging.js
-libexec/novnc/core/util/md5.js
 libexec/novnc/core/util/strings.js
 libexec/novnc/core/websock.js
 libexec/novnc/docs/API-internal.md
@@ -115,6 +120,7 @@ libexec/novnc/docs/rfb_notes
 libexec/novnc/docs/rfbproto-3.3.pdf
 libexec/novnc/docs/rfbproto-3.7.pdf
 libexec/novnc/docs/rfbproto-3.8.pdf
+libexec/novnc/eslint.config.mjs
 libexec/novnc/karma.conf.js
 libexec/novnc/package.json
 libexec/novnc/po/Makefile
@@ -157,7 +163,6 @@ libexec/novnc/tests/test.int.js
 libexec/novnc/tests/test.jpeg.js
 libexec/novnc/tests/test.keyboard.js
 libexec/novnc/tests/test.localization.js
-libexec/novnc/tests/test.ra2.js
 libexec/novnc/tests/test.raw.js
 libexec/novnc/tests/test.rfb.js
 libexec/novnc/tests/test.rre.js

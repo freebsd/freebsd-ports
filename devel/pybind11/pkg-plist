@@ -11,6 +11,7 @@ include/pybind11/detail/init.h
 include/pybind11/detail/internals.h
 include/pybind11/detail/type_caster_base.h
 include/pybind11/detail/typeid.h
+include/pybind11/detail/value_and_holder.h
 include/pybind11/eigen.h
 include/pybind11/eigen/common.h
 include/pybind11/eigen/matrix.h
@@ -35,6 +36,7 @@ share/cmake/pybind11/FindPythonLibsNew.cmake
 share/cmake/pybind11/pybind11Common.cmake
 share/cmake/pybind11/pybind11Config.cmake
 share/cmake/pybind11/pybind11ConfigVersion.cmake
+share/cmake/pybind11/pybind11GuessPythonExtSuffix.cmake
 share/cmake/pybind11/pybind11NewTools.cmake
 share/cmake/pybind11/pybind11Targets.cmake
 share/cmake/pybind11/pybind11Tools.cmake

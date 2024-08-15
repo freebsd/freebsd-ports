@@ -1,0 +1,4 @@
+bin/promxy
+@dir %%ETCDIR%%
+@sample %%ETCDIR%%/alert_example.rule.sample
+@sample %%ETCDIR%%/config.yaml.sample

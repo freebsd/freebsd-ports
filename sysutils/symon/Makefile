@@ -1,6 +1,6 @@
 PORTNAME=	symon
 PORTVERSION=	2.88
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://wpd.home.xs4all.nl/symon/philes/ \
 		LOCAL/uqs

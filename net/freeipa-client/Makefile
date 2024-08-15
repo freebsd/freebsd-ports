@@ -5,7 +5,7 @@ CATEGORIES=	net
 MASTER_SITES=	https://releases.pagure.org/freeipa/
 DISTNAME=	freeipa-${DISTVERSION}
 
-MAINTAINER=	xavier.beaudouin@klarasystems.com
+MAINTAINER=	kiwi@oav.net
 COMMENT=	FreeIPA Client tools
 WWW=		https://www.freeipa.org/
 

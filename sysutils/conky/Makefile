@@ -1,5 +1,5 @@
 PORTNAME=	conky
-PORTVERSION=	1.21.3
+PORTVERSION=	1.21.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -91,7 +91,7 @@ LUA_RSVG_CMAKE_BOOL=	BUILD_LUA_RSVG
 LUA_RSVG_PLIST_FILES=	lib/conky/librsvg.so
 
 MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} \
 			pandoc:textproc/hs-pandoc
 MANPAGES_USES=		python:build
 MANPAGES_CMAKE_BOOL=	BUILD_DOCS

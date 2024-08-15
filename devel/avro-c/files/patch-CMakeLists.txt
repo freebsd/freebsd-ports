@@ -1,24 +1,6 @@
---- CMakeLists.txt.orig	2022-02-23 16:45:22 UTC
+--- CMakeLists.txt.orig	2024-07-25 19:23:22 UTC
 +++ CMakeLists.txt
-@@ -151,7 +151,7 @@ endif (ZLIB_FOUND)
- 
- find_package(Snappy)
- if (SNAPPY_FOUND AND ZLIB_FOUND)  # Snappy borrows crc32 from zlib
--    set(SNAPPY_PKG libsnappy)
-+    set(SNAPPY_PKG snappy)
-     add_definitions(-DSNAPPY_CODEC)
-     include_directories(${SNAPPY_INCLUDE_DIRS})
-     message("Enabled snappy codec")
-@@ -176,7 +176,7 @@ else (LZMA_FOUND)
- endif (LZMA_FOUND)
- 
- set(CODEC_LIBRARIES ${ZLIB_LIBRARIES} ${LZMA_LIBRARIES} ${SNAPPY_LIBRARIES})
--set(CODEC_PKG "@ZLIB_PKG@ @LZMA_PKG@ @SNAPPY_PKG@")
-+set(CODEC_PKG ${ZLIB_PKG} ${LZMA_PKG} ${SNAPPY_PKG})
- 
- # Jansson JSON library
- pkg_check_modules(JANSSON jansson>=2.3)
-@@ -192,7 +192,6 @@ endif (JANSSON_FOUND)
+@@ -192,7 +192,6 @@ add_subdirectory(tests)
  add_subdirectory(src)
  add_subdirectory(examples)
  add_subdirectory(tests)

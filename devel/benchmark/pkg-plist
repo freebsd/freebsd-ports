@@ -11,3 +11,4 @@ lib/libbenchmark_main.so
 lib/libbenchmark_main.so.1
 lib/libbenchmark_main.so.%%VERSION%%
 libdata/pkgconfig/benchmark.pc
+libdata/pkgconfig/benchmark_main.pc

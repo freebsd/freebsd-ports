@@ -16,6 +16,8 @@ USES=		cpe python
 CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist distutils cython
 
+NO_ARCH=	yes
+
 post-extract:
 	@${MV} ${WRKSRC}/tests ${WRKSRC}/aiomcache/
 

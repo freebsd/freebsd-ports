@@ -1,6 +1,6 @@
 PORTNAME=	smokeping
 PORTVERSION=	2.8.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	https://oss.oetiker.ch/smokeping/pub/
 

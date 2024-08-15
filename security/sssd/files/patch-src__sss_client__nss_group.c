@@ -1,6 +1,4 @@
-diff --git src/sss_client/nss_group.c src/sss_client/nss_group.c
-index 5ab2bdf78..69ba75dcb 100644
---- src/sss_client/nss_group.c
+--- src/sss_client/nss_group.c.orig	2020-03-17 13:31:28 UTC
 +++ src/sss_client/nss_group.c
 @@ -390,6 +390,76 @@ out:
  }

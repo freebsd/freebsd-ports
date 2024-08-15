@@ -303,7 +303,7 @@ prowlarr:*:359:
 v2ray:*:360:
 httptunnel:*:361:
 readarr:*:362:
-# free: 363
+victoria-logs:*:363:
 # free: 364
 # free: 365
 # free: 366
@@ -320,8 +320,8 @@ _wsdd:*:370:
 # free: 377
 # free: 378
 # free: 379
-# free: 380
-# free: 381
+spoofdpi:*:380:
+hydroxide:*:381:
 # free: 382
 # free: 383
 # free: 384
@@ -421,7 +421,7 @@ fiche:*:477:
 prometheus:*:478:
 alertmanager:*:479:
 datadog:*:480:
-# free: 481
+promxy:*:481:
 # free: 482
 # free: 483
 # free: 484
@@ -481,7 +481,7 @@ valkey:*:537:
 # free: 538
 # free: 539
 # free: 540
-# free: 541
+ipfixcol2:*:541:
 _flowd:*:542:
 ejabberd:*:543:
 # free: 544
@@ -589,7 +589,7 @@ monkeysphere:*:641:
 # free: 645
 # free: 646
 # free: 647
-# free: 648
+_xrdp:*:648:
 # free: 649
 # free: 650
 # free: 651

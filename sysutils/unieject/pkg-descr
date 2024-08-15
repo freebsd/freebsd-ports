@@ -1,6 +1,0 @@
-Unieject is a drop-in replacement for usual eject command, which works
-on Linux and FreeBSD. It has more functionalities than FreeBSD's eject
-command, and it's partially compatible with Linux's one.
-
-It also features a library to access functions to lookup devices and
-mountpoints, unmount and eject devices.

@@ -1,6 +1,6 @@
 PORTNAME=	mffpy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
+DISTVERSION=	0.10.0
 CATEGORIES=	misc
 #MASTER_SITES=	PYPI # no test files
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,16 +11,14 @@ WWW=		https://github.com/BEL-Public/mffpy/
 
 LICENSE=	APACHE20
 
-PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}deprecated>=1.2.12:devel/py-deprecated@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}deprecated>=1.2.12:devel/py-deprecated@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=4.8.0:devel/py-lxml@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2019.2:devel/py-pytz@${PY_FLAVOR}
-BUILD_DEPENDS=	${PY_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR}
-RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python
-USE_PYTHON=	distutils concurrent autoplist pytest # 14 tests fail with AttributeError: module 'numpy' has no attribute 'float'.
+USE_PYTHON=	distutils concurrent autoplist pytest # 14 tests fail with AttributeError: module 'numpy' has no attribute 'float', see https://github.com/BEL-Public/mffpy/issues/126
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	BEL-Public

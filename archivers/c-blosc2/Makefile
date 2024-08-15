@@ -1,5 +1,5 @@
 PORTNAME=	c-blosc2
-PORTVERSION=	2.14.4
+PORTVERSION=	2.15.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd
 
-USES=		cmake:testing
+USES=		cmake:testing pathfix
 
 CMAKE_OFF=	BUILD_LITE \
 		DEACTIVATE_AVX2 \
@@ -62,13 +62,6 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 GH_ACCOUNT=	Blosc
 USE_GITHUB=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH:Mpowerpc64*}
-USES+=		compiler:gcc-c++11-lib
-USE_CSTD=	c11
-.endif
 
 post-patch:
 # Clean up bundled libraries

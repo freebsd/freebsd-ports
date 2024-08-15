@@ -1,0 +1,7 @@
+TIMESTAMP = 1721190094
+SHA256 (dmlc-decord-v0.6.0-7-gd2e5619_GH0.tar.gz) = a69c60a41075e5044f7d20484aaf04f1437948af3d1df136f6f8b8b7b8c02404
+SIZE (dmlc-decord-v0.6.0-7-gd2e5619_GH0.tar.gz) = 19223029
+SHA256 (dmlc-dlpack-5c792ce_GH0.tar.gz) = dbcbe1d5ddf8596e18d62906e5467ee2243bb3aff41623fac8dc1ef350cd7539
+SIZE (dmlc-dlpack-5c792ce_GH0.tar.gz) = 37929
+SHA256 (e543d1cbd4d21dbac85b1e78e43f59495c8ce78b.patch) = 924b59877d0f2890f216b8c5dce52e4fd165ae7fe6a3207231178a18e05fca48
+SIZE (e543d1cbd4d21dbac85b1e78e43f59495c8ce78b.patch) = 3846

@@ -1,2 +1,3 @@
-SHA256 (camlbz2-0.6.0.tar.gz) = 8154b4e4699c48e14b4dd56cf839a0c10345e9860eb967066be040d432ae7388
-SIZE (camlbz2-0.6.0.tar.gz) = 57771
+TIMESTAMP = 1717326878
+SHA256 (camlbz2-0.8.0.tar.bz2) = 76bfddcb8922ead8e7dfab9e1203ff4ae1f1bd7d7d8a1ec802230f49912338f2
+SIZE (camlbz2-0.8.0.tar.bz2) = 16560

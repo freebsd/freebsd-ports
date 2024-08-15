@@ -1,6 +1,4 @@
-diff --git src/providers/ad/ad_pac.h src/providers/ad/ad_pac.h
-index 34f1e92c7..00a53cccd 100644
---- src/providers/ad/ad_pac.h
+--- src/providers/ad/ad_pac.h.orig	2020-03-17 13:31:28 UTC
 +++ src/providers/ad/ad_pac.h
 @@ -32,6 +32,8 @@
  #ifdef ldb_val

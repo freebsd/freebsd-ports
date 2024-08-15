@@ -11,8 +11,9 @@ MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Graphical tool for database development
 WWW=		https://www.oracle.com/database/technologies/appdev/sqldeveloper-landing.html
 
-# https://www.oracle.com/downloads/licenses/sqldev-license.html
-LICENSE_NAME=	OTN
+LICENSE=	OTN
+LICENSE_NAME=	Oracle Technology Network License Agreement for Business Operations
+LICENSE_TEXT=	https://www.oracle.com/downloads/licenses/sqldev-license.html
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror
 
 RUN_DEPENDS=	openjfx14>=0:java/openjfx14 \

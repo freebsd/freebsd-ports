@@ -1,6 +1,5 @@
 PORTNAME=	wallutils
-DISTVERSION=	5.12.7
-PORTREVISION=	9
+DISTVERSION=	5.12.9
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -13,28 +12,25 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libX11.so:x11/libX11
 
-USES=		go:modules
+USES=		go:1.22,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	xyproto
 GH_TUPLE=	antchfx:xmlquery:v1.3.8:antchfx_xmlquery/vendor/github.com/antchfx/xmlquery \
 		antchfx:xpath:v1.2.0:antchfx_xpath/vendor/github.com/antchfx/xpath \
-		anthonynsimon:bild:v0.13.0:anthonynsimon_bild/vendor/github.com/anthonynsimon/bild \
-		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
-		fatih:color:v1.15.0:fatih_color/vendor/github.com/fatih/color \
-		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		anthonynsimon:bild:v0.14.0:anthonynsimon_bild/vendor/github.com/anthonynsimon/bild \
+		cpuguy83:go-md2man:v2.0.4:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
+		fatih:color:v1.17.0:fatih_color/vendor/github.com/fatih/color \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:image:v0.7.0:golang_image/vendor/golang.org/x/image \
-		golang:net:v0.7.0:golang_net/vendor/golang.org/x/net \
-		golang:sys:v0.8.0:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.9.0:golang_text/vendor/golang.org/x/text \
+		golang:image:v0.18.0:golang_image/vendor/golang.org/x/image \
+		golang:net:58aab5ef257a:golang_net/vendor/golang.org/x/net \
+		golang:sys:v0.18.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.16.0:golang_text/vendor/golang.org/x/text \
 		mattn:go-colorable:v0.1.13:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.18:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
-		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
+		mattn:go-isatty:v0.0.20:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		russross:blackfriday:v2.1.0:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		stretchr:powerwalk:bceb9d014549:stretchr_powerwalk/vendor/github.com/stretchr/powerwalk \
-		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify \
-		urfave:cli:v1.22.5:urfave_cli/vendor/github.com/urfave/cli \
-		xyproto:env:v2.0.0:xyproto_env_v2/vendor/github.com/xyproto/env \
+		urfave:cli:v1.22.15:urfave_cli/vendor/github.com/urfave/cli \
+		xyproto:env:v2.2.5:xyproto_env_v2/vendor/github.com/xyproto/env \
 		xyproto:heic:v1.0.0:xyproto_heic/vendor/github.com/xyproto/heic
 GL_TUPLE=	https://gitlab.howett.net:go:plist:1454fab16a0642638feb0ae98c41f79eccb2a20a:go_plist/vendor/howett.net/plist
 GO_TARGET=	./cmd/getdpi \

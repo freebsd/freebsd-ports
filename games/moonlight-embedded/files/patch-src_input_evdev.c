@@ -1,14 +1,7 @@
---- src/input/evdev.c.orig	2023-11-03 06:08:34 UTC
+--- src/input/evdev.c.orig	2024-02-20 04:01:31 UTC
 +++ src/input/evdev.c
-@@ -38,9 +38,15 @@
- #include <limits.h>
- #include <unistd.h>
- #include <pthread.h>
-+#ifdef __linux__
- #include <endian.h>
-+#else
-+#include <sys/endian.h>
-+#endif
+@@ -45,6 +45,8 @@
+ #endif
  #include <math.h>
  
 +static bool isUseKbdmux = false;
@@ -16,21 +9,7 @@
  #if __BYTE_ORDER == __LITTLE_ENDIAN
  #define int16_to_le(val) val
  #else
-@@ -66,8 +72,13 @@ struct input_device {
-   int hats_state[3][2];
-   int fd;
-   char modifiers;
-+  #ifdef __linux__
-   __s32 mouseDeltaX, mouseDeltaY, mouseVScroll, mouseHScroll;
-   __s32 touchDownX, touchDownY, touchX, touchY;
-+  #else
-+  int32_t mouseDeltaX, mouseDeltaY, mouseVScroll, mouseHScroll;
-+  int32_t touchDownX, touchDownY, touchX, touchY;
-+  #endif
-   struct timeval touchDownTime;
-   struct timeval btnDownTime;
-   short controllerId;
-@@ -749,7 +760,7 @@ static int evdev_handle(int fd) {
+@@ -758,7 +760,7 @@ static int evdev_handle(int fd) {
        struct input_event ev;
        while ((rc = libevdev_next_event(devices[i].dev, LIBEVDEV_READ_FLAG_NORMAL, &ev)) >= 0) {
          if (rc == LIBEVDEV_READ_STATUS_SYNC)
@@ -39,7 +18,7 @@
          else if (rc == LIBEVDEV_READ_STATUS_SUCCESS) {
            if (!handler(&ev, &devices[i]))
              return LOOP_RETURN;
-@@ -766,6 +777,39 @@ static int evdev_handle(int fd) {
+@@ -775,6 +777,39 @@ static int evdev_handle(int fd) {
    return LOOP_OK;
  }
  
@@ -79,7 +58,7 @@
  void evdev_create(const char* device, struct mapping* mappings, bool verbose, int rotate) {
    int fd = open(device, O_RDWR|O_NONBLOCK);
    if (fd <= 0) {
-@@ -840,6 +884,33 @@ void evdev_create(const char* device, struct mapping* 
+@@ -851,6 +886,33 @@ void evdev_create(const char* device, struct mapping* 
       libevdev_has_event_code(evdev, EV_ABS, ABS_WHEEL) ||
       libevdev_has_event_code(evdev, EV_ABS, ABS_GAS) ||
       libevdev_has_event_code(evdev, EV_ABS, ABS_BRAKE));

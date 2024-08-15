@@ -1,5 +1,5 @@
 PORTNAME=	DateTime-Locale
-PORTVERSION=	1.42
+PORTVERSION=	1.43
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,7 +24,7 @@ TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.011:devel/p5-CPAN-Meta-Check \
 		p5-Path-Tiny>=0:devel/p5-Path-Tiny \
 		p5-Test-File-ShareDir>=0:devel/p5-Test-File-ShareDir \
 		p5-Test2-Plugin-NoWarnings>=0:devel/p5-Test2-Plugin-NoWarnings \
-		p5-Test2-Suite>=0:devel/p5-Test2-Suite
+		p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	configure

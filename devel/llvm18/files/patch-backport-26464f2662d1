@@ -1,0 +1,70 @@
+From 26464f2662d13c7c6ef9f8180b1653c046cd60a7 Mon Sep 17 00:00:00 2001
+From: Justin Cady <desk@justincady.com>
+Date: Wed, 27 Mar 2024 09:03:46 -0400
+Subject: [PATCH] [FreeBSD] Mark __stack_chk_guard dso_local except for PPC64
+ (#86665)
+
+Adjust logic of 1cb9f37a17ab to match freebsd/freebsd-src@9a4d48a645a7a.
+
+D113443 is the original attempt to bring this FreeBSD patch to
+llvm-project,
+but it never landed. This change is required to build FreeBSD kernel
+modules
+with -fstack-protector using a standard LLVM toolchain. The FreeBSD
+kernel
+loader does not handle R_X86_64_REX_GOTPCRELX relocations.
+
+Fixes #50932.
+---
+ llvm/lib/CodeGen/TargetLoweringBase.cpp  | 3 ++-
+ llvm/test/CodeGen/X86/stack-protector.ll | 9 +++++++++
+ 2 files changed, 11 insertions(+), 1 deletion(-)
+
+diff --git llvm/lib/CodeGen/TargetLoweringBase.cpp llvm/lib/CodeGen/TargetLoweringBase.cpp
+index 9990556f89ed8..b16e78daf5861 100644
+--- llvm/lib/CodeGen/TargetLoweringBase.cpp
++++ llvm/lib/CodeGen/TargetLoweringBase.cpp
+@@ -2073,7 +2073,8 @@ void TargetLoweringBase::insertSSPDeclarations(Module &M) const {
+     // FreeBSD has "__stack_chk_guard" defined externally on libc.so
+     if (M.getDirectAccessExternalData() &&
+         !TM.getTargetTriple().isWindowsGNUEnvironment() &&
+-        !TM.getTargetTriple().isOSFreeBSD() &&
++        !(TM.getTargetTriple().isPPC64() &&
++          TM.getTargetTriple().isOSFreeBSD()) &&
+         (!TM.getTargetTriple().isOSDarwin() ||
+          TM.getRelocationModel() == Reloc::Static))
+       GV->setDSOLocal(true);
+diff --git llvm/test/CodeGen/X86/stack-protector.ll llvm/test/CodeGen/X86/stack-protector.ll
+index a277f9f862ab2..f4f3ae4f55f2e 100644
+--- llvm/test/CodeGen/X86/stack-protector.ll
++++ llvm/test/CodeGen/X86/stack-protector.ll
+@@ -1,6 +1,7 @@
+ ; RUN: llc -mtriple=i386-pc-linux-gnu < %s -o - | FileCheck --check-prefix=LINUX-I386 %s
+ ; RUN: llc -mtriple=x86_64-pc-linux-gnu < %s -o - | FileCheck --check-prefix=LINUX-X64 %s
+ ; RUN: llc -code-model=kernel -mtriple=x86_64-pc-linux-gnu < %s -o - | FileCheck --check-prefix=LINUX-KERNEL-X64 %s
++; RUN: llc -code-model=kernel -mtriple=x86_64-unknown-freebsd < %s -o - | FileCheck --check-prefix=FREEBSD-KERNEL-X64 %s
+ ; RUN: llc -mtriple=x86_64-apple-darwin < %s -o - | FileCheck --check-prefix=DARWIN-X64 %s
+ ; RUN: llc -mtriple=amd64-pc-openbsd < %s -o - | FileCheck --check-prefix=OPENBSD-AMD64 %s
+ ; RUN: llc -mtriple=i386-pc-windows-msvc < %s -o - | FileCheck -check-prefix=MSVC-I386 %s
+@@ -75,6 +76,10 @@ entry:
+ ; LINUX-X64: mov{{l|q}} %fs:
+ ; LINUX-X64: callq __stack_chk_fail
+ 
++; FREEBSD-KERNEL-X64-LABEL: test1b:
++; FREEBSD-KERNEL-X64-NOT: mov{{l|q}} __stack_chk_guard@GOTPCREL
++; FREEBSD-KERNEL-X64: callq __stack_chk_fail
++
+ ; LINUX-KERNEL-X64-LABEL: test1b:
+ ; LINUX-KERNEL-X64: mov{{l|q}} %gs:
+ ; LINUX-KERNEL-X64: callq __stack_chk_fail
+@@ -118,6 +123,10 @@ entry:
+ ; LINUX-X64: mov{{l|q}} %fs:
+ ; LINUX-X64: callq __stack_chk_fail
+ 
++; FREEBSD-KERNEL-X64-LABEL: test1c:
++; FREEBSD-KERNEL-X64: mov{{l|q}} __stack_chk_guard(%rip)
++; FREEBSD-KERNEL-X64: callq __stack_chk_fail
++
+ ; LINUX-KERNEL-X64-LABEL: test1c:
+ ; LINUX-KERNEL-X64: mov{{l|q}} %gs:
+ ; LINUX-KERNEL-X64: callq __stack_chk_fail

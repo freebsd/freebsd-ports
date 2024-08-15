@@ -28,10 +28,6 @@ OPTIONS_DEFINE=	TOML
 OPTIONS_DEFAULT=TOML
 TOML_DESC=	TOML (Tom's Obvious Minimal Language) support
 
-.include <bsd.port.pre.mk>
+TOMLI_RUN_DEPENDS=	${PY_TOMLI}
 
-.if ${PORT_OPTIONS:MTOML} && ${PYTHON_REL} < 31100
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=0:textproc/py-tomli@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

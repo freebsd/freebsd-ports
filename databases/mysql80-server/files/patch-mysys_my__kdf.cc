@@ -1,6 +1,6 @@
---- mysys/my_kdf.cc.orig	2022-12-11 13:12:02 UTC
+--- mysys/my_kdf.cc.orig	2024-07-12 19:15:25 UTC
 +++ mysys/my_kdf.cc
-@@ -56,7 +56,7 @@ int create_kdf_key(const unsigned char *key, const uns
+@@ -57,7 +57,7 @@ int create_kdf_key(const unsigned char *key, const uns
    std::unique_ptr<Key_derivation_function> kdf_function;
  
    if (kdf_name == "hkdf") {
@@ -9,7 +9,7 @@
      kdf_function = std::make_unique<Key_hkdf_function>(kdf_options);
  #else
      return 1;
-@@ -71,7 +71,7 @@ int create_kdf_key(const unsigned char *key, const uns
+@@ -72,7 +72,7 @@ int create_kdf_key(const unsigned char *key, const uns
    return kdf_function->derive_key(key, key_length, rkey, rkey_size);
  }
  

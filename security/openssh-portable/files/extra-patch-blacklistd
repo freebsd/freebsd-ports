@@ -332,15 +332,6 @@
  #include "srclimit.h"
  #include "dh.h"
  
-@@ -366,6 +367,8 @@ grace_alarm_handler(int sig)
- 		kill(0, SIGTERM);
- 	}
- 
-+	BLACKLIST_NOTIFY(BLACKLIST_AUTH_FAIL, the_active_state, "ssh");
-+
- 	/* Log error and exit. */
- 	if (use_privsep && pmonitor != NULL && pmonitor->m_pid <= 0)
- 		cleanup_exit(255); /* don't log in privsep child */
 @@ -2225,6 +2228,9 @@ main(int ac, char **av)
  	if ((loginmsg = sshbuf_new()) == NULL)
  		fatal_f("sshbuf_new failed");

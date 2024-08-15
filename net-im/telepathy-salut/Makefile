@@ -11,6 +11,9 @@ WWW=		https://telepathy.freedesktop.org/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Fails to build with libxml2 2.13.2 (PR 279963)
+EXPIRATION_DATE=2024-08-21
+
 LIB_DEPENDS=	libavahi-glib.so:net/avahi-app \
 		libtelepathy-glib.so:net-im/telepathy-glib \
 		libsoup-2.4.so:devel/libsoup

@@ -7,7 +7,7 @@ PATCH_SITES=	https://github.com/gkdr/axc/commit/
 PATCHFILES=	c287e25143fc54486c8a8a86f9abb64ce1753372.patch:-p1 \
 		ba53eb408f793652495d7d73775c33487e6cc8d0.patch:-p1
 
-MAINTAINER=	micadeyeye@gmail.com
+MAINTAINER=	michael.a.oshin@panafricanssi.org
 COMMENT=	Crypto interfaces for libsignal-protocol-c
 WWW=		https://github.com/gkdr/axc
 

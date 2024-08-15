@@ -6,29 +6,30 @@ Changed paths:
 
 Apply FreeBSD's configuration defaults.
 
---- servconf.c.orig	2018-06-27 17:18:19.513676000 -0700
-+++ servconf.c	2018-06-27 17:19:38.133882000 -0700
-@@ -41,6 +41,7 @@
- #include <util.h>
+--- servconf.c.orig	2024-07-01 13:30:30.284417000 -0700
++++ servconf.c	2024-07-01 13:31:20.040132000 -0700
+@@ -46,6 +46,7 @@
+ # include "openbsd-compat/glob.h"
  #endif
  
 +#include "version.h"
  #include "openbsd-compat/sys-queue.h"
  #include "xmalloc.h"
  #include "ssh.h"
-@@ -251,7 +252,11 @@ fill_default_server_options(ServerOptions *options)
+@@ -295,7 +296,11 @@ fill_default_server_options(ServerOptions *options)
  
  	/* Portable-specific options */
  	if (options->use_pam == -1)
+-		options->use_pam = 0;
 +#ifdef USE_PAM
 +		options->use_pam = 1;
 +#else
- 		options->use_pam = 0;
++ 		options->use_pam = 0;
 +#endif
+ 	if (options->pam_service_name == NULL)
+ 		options->pam_service_name = xstrdup(SSHD_PAM_SERVICE);
  
- 	/* Standard Options */
- 	if (options->num_host_key_files == 0) {
-@@ -291,7 +296,7 @@ fill_default_server_options(ServerOptions *options)
+@@ -339,7 +344,7 @@ fill_default_server_options(ServerOptions *options)
  	if (options->print_lastlog == -1)
  		options->print_lastlog = 1;
  	if (options->x11_forwarding == -1)
@@ -37,7 +38,7 @@ Apply FreeBSD's configuration defaults.
  	if (options->x11_display_offset == -1)
  		options->x11_display_offset = 10;
  	if (options->x11_use_localhost == -1)
-@@ -331,7 +336,11 @@ fill_default_server_options(ServerOptions *options)
+@@ -381,7 +386,11 @@ fill_default_server_options(ServerOptions *options)
  	if (options->gss_strict_acceptor == -1)
  		options->gss_strict_acceptor = 1;
  	if (options->password_authentication == -1)
@@ -47,5 +48,5 @@ Apply FreeBSD's configuration defaults.
  		options->password_authentication = 1;
 +#endif
  	if (options->kbd_interactive_authentication == -1)
- 		options->kbd_interactive_authentication = 0;
- 	if (options->challenge_response_authentication == -1)
+ 		options->kbd_interactive_authentication = 1;
+ 	if (options->permit_empty_passwd == -1)

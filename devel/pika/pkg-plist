@@ -91,9 +91,9 @@ include/pika/datastructures/traits/is_tuple_like.hpp
 include/pika/datastructures/variant.hpp
 include/pika/debugging/attach_debugger.hpp
 include/pika/debugging/backtrace.hpp
-include/pika/debugging/backtrace/backtrace.hpp
 include/pika/debugging/config/defines.hpp
 include/pika/debugging/demangle_helper.hpp
+include/pika/debugging/detail/backtrace.hpp
 include/pika/debugging/environ.hpp
 include/pika/debugging/print.hpp
 include/pika/detail/filesystem.hpp
@@ -175,7 +175,6 @@ include/pika/functional/one_shot.hpp
 include/pika/functional/tag_invoke.hpp
 include/pika/functional/traits/get_function_address.hpp
 include/pika/functional/traits/get_function_annotation.hpp
-include/pika/functional/traits/is_action.hpp
 include/pika/functional/traits/is_bind_expression.hpp
 include/pika/functional/unique_function.hpp
 include/pika/hashing/config/defines.hpp
@@ -235,7 +234,6 @@ include/pika/modules/iterator_support.hpp
 include/pika/modules/itt_notify.hpp
 include/pika/modules/lock_registration.hpp
 include/pika/modules/memory.hpp
-include/pika/modules/prefix.hpp
 include/pika/modules/preprocessor.hpp
 include/pika/modules/program_options.hpp
 include/pika/modules/properties.hpp
@@ -257,8 +255,6 @@ include/pika/modules/type_support.hpp
 include/pika/modules/util.hpp
 include/pika/mpi.hpp
 include/pika/mutex.hpp
-include/pika/prefix/config/defines.hpp
-include/pika/prefix/find_prefix.hpp
 include/pika/preprocessor/cat.hpp
 include/pika/preprocessor/config.hpp
 include/pika/preprocessor/config/defines.hpp
@@ -331,7 +327,6 @@ include/pika/schedulers/static_queue_scheduler.hpp
 include/pika/schedulers/thread_queue.hpp
 include/pika/schedulers/thread_queue_mc.hpp
 include/pika/semaphore.hpp
-include/pika/shared_mutex.hpp
 include/pika/stop_token.hpp
 include/pika/string_util/bad_lexical_cast.hpp
 include/pika/string_util/case_conv.hpp
@@ -359,7 +354,6 @@ include/pika/synchronization/mutex.hpp
 include/pika/synchronization/no_mutex.hpp
 include/pika/synchronization/once.hpp
 include/pika/synchronization/recursive_mutex.hpp
-include/pika/synchronization/shared_mutex.hpp
 include/pika/synchronization/sliding_semaphore.hpp
 include/pika/synchronization/stop_token.hpp
 include/pika/system_error.hpp
@@ -488,7 +482,6 @@ lib/cmake/pika/pika_generate_package.cmake
 lib/cmake/pika/pika_generate_package_utils.cmake
 lib/cmake/pika/pika_git_commit.cmake
 lib/cmake/pika/pika_internal_targets.cmake
-lib/cmake/pika/pika_macros.cmake
 lib/cmake/pika/pika_message.cmake
 lib/cmake/pika/pika_option.cmake
 lib/cmake/pika/pika_perform_cxx_feature_tests.cmake
@@ -542,4 +535,4 @@ lib/cmake/pika/tests/stdexec_sender_receiver_concepts.cpp
 lib/cmake/pika/tests/unistd_h.cpp
 lib/libpika.so
 lib/libpika.so.0
-lib/libpika.so.0.25.0
+lib/libpika.so.0.26.0

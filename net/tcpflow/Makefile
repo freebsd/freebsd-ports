@@ -25,6 +25,7 @@ CONFIGURE_ENV=	ac_cv_lib_md_MD5=no \
 		ac_cv_header_tre_tre_h=no ac_cv_lib_tre_tre_regcomp=no \
 		ac_cv_header_sqlite3_h=no ac_cv_lib_sqlite3_sqlite3_libversion=no \
 		ac_cv_header_python2_7_Python_h=no ac_cv_lib_python2_7_Py_Initialize=no
+CFLAGS_powerpc=	-O0
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 

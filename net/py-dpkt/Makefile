@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils pythonprefix
 
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	AUTHORS CHANGES PKG-INFO README.rst

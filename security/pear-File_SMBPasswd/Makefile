@@ -4,11 +4,15 @@ CATEGORIES=	security www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR class for managing SAMBA style password files
-WWW=		https://pear.php.net/package/File_SMBPasswd
+WWW=		https://pear.php.net/package/File_SMBPasswd \
+		https://github.com/pear/File_SMBPasswd
 
-BUILD_DEPENDS=	${PEARDIR}/Crypt/CHAP.php:security/pear-Crypt_CHAP@${PHP_FLAVOR}
-RUN_DEPENDS=	${PEARDIR}/Crypt/CHAP.php:security/pear-Crypt_CHAP@${PHP_FLAVOR}
+LICENSE=	BSD3CLAUSE
 
-USES=		pear php
+RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}Crypt_CHAP>=1.0.0:security/pear-Crypt_CHAP@${PHP_FLAVOR}
+
+USES=		pear
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

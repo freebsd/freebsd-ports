@@ -20,7 +20,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 IGNORE_DragonFly=	is unsupported on DragonFly
 ONLY_FOR_ARCHS=	amd64 i386
 USES=		php:flavors
-IGNORE_WITH_PHP=	83
+IGNORE_WITH_PHP=	83 84
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message

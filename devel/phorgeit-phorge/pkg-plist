@@ -8102,6 +8102,7 @@ lib/php/phorge/src/infrastructure/markup/markuprule/PhutilRemarkupDelRule.php
 lib/php/phorge/src/infrastructure/markup/markuprule/PhutilRemarkupDocumentLinkRule.php
 lib/php/phorge/src/infrastructure/markup/markuprule/PhutilRemarkupEscapeRemarkupRule.php
 lib/php/phorge/src/infrastructure/markup/markuprule/PhutilRemarkupEvalRule.php
+lib/php/phorge/src/infrastructure/markup/markuprule/PhutilRemarkupHexColorCodeRule.php
 lib/php/phorge/src/infrastructure/markup/markuprule/PhutilRemarkupHighlightRule.php
 lib/php/phorge/src/infrastructure/markup/markuprule/PhutilRemarkupHyperlinkEngineExtension.php
 lib/php/phorge/src/infrastructure/markup/markuprule/PhutilRemarkupHyperlinkRef.php
@@ -8116,6 +8117,7 @@ lib/php/phorge/src/infrastructure/markup/remarkup/__tests__/PhutilRemarkupEngine
 lib/php/phorge/src/infrastructure/markup/remarkup/__tests__/remarkup/across-newlines.txt
 lib/php/phorge/src/infrastructure/markup/remarkup/__tests__/remarkup/backticks-whitespace.txt
 lib/php/phorge/src/infrastructure/markup/remarkup/__tests__/remarkup/block-then-list.txt
+lib/php/phorge/src/infrastructure/markup/remarkup/__tests__/remarkup/code-block-guess-from-name.txt
 lib/php/phorge/src/infrastructure/markup/remarkup/__tests__/remarkup/code-block-whitespace.txt
 lib/php/phorge/src/infrastructure/markup/remarkup/__tests__/remarkup/del.txt
 lib/php/phorge/src/infrastructure/markup/remarkup/__tests__/remarkup/diff.txt
@@ -8123,6 +8125,7 @@ lib/php/phorge/src/infrastructure/markup/remarkup/__tests__/remarkup/disallowed-
 lib/php/phorge/src/infrastructure/markup/remarkup/__tests__/remarkup/entities.txt
 lib/php/phorge/src/infrastructure/markup/remarkup/__tests__/remarkup/header-skip.txt
 lib/php/phorge/src/infrastructure/markup/remarkup/__tests__/remarkup/headers.txt
+lib/php/phorge/src/infrastructure/markup/remarkup/__tests__/remarkup/hex-color-code.txt
 lib/php/phorge/src/infrastructure/markup/remarkup/__tests__/remarkup/highlight.txt
 lib/php/phorge/src/infrastructure/markup/remarkup/__tests__/remarkup/horizonal-rule.txt
 lib/php/phorge/src/infrastructure/markup/remarkup/__tests__/remarkup/important.txt

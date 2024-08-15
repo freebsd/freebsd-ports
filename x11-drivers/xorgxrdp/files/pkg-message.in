@@ -9,12 +9,12 @@ To configure hardware acceleration, follow the following steps.
     # pkg install drm-kmod
 
 2. Configure to load kernel module (either one of the following)
-    # sysrc kld_list+="/boot/modules/i915kms.ko"
-    # sysrc kld_list+="/boot/modules/amdgpu.ko"
-    # sysrc kld_list+="/boot/modules/radeonkms.ko"
+    # sysrc kld_list+="i915kms"
+    # sysrc kld_list+="amdgpu"
+    # sysrc kld_list+="radeonkms"
 
 3. Ensure users who login via xrdp are members of the "video" group
-    # pw groupmod video -m username|| pw groupmod wheel -m username
+    # pw groupmod video -m username || pw groupmod wheel -m username
 
 4. Edit /etc/X11/xrdp/xorg.conf to fit your environment
    "/dev/dri/renderD128" might be different depending on your environment.
@@ -22,21 +22,20 @@ To configure hardware acceleration, follow the following steps.
    Find the following line and change it to the actual path.
     Option "DRMDevice" "/dev/dri/renderD128"
 
-   Change "0" to "1" of the following line.
+   Change "0" to "1" of the following line (defaults to 1 now).
     Option "DRI3" "0"
 
 5. Restart your system and login via xrdp
 
-See also the Wiki page for detailed instructions:
-  https://wiki.freebsd.org/Graphics#Hardware_Support
+See also handbook for detailed instructions:
+  https://docs.freebsd.org/en/books/handbook/x11/
 
 
 If hardware acceleration is properly configured, you will see logs like both
-of the following in ~/.local/share/xorg/Xorg.10.log. 10 can be replaced with
-display number.
+of the following in ~/.local/share/xorg/xorgxrdp.10.log. 10 will be replaced
+with display number.
 
     "glamor X acceleration enabled on Mesa DRI Intel(R) Ivybridge Desktop"
-    "rdpScreenInit: rdpDri3Init ok"
 
 EOM
 }

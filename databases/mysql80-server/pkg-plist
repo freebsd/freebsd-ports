@@ -177,9 +177,9 @@ lib/mysql/plugin/keyring_udf.so
 lib/mysql/plugin/test_udf_services.so
 lib/mysql/plugin/validate_password.so
 lib/mysql/plugin/version_token.so
-lib/mysql/private/libprotobuf-lite.so.3.19.4
-lib/mysql/private/libprotobuf.so.3.19.4
-lib/mysql/libprotobuf-lite.so.3.19.4
+lib/mysql/private/libprotobuf-lite.so.24.4.0
+lib/mysql/private/libprotobuf.so.24.4.0
+lib/mysql/libprotobuf-lite.so.24.4.0
 libexec/mysqld
 @comment share/man/man1/ibd2sdi.1.gz
 @comment share/man/man1/innochecksum.1.gz

@@ -1,0 +1,75 @@
+commit 54ebf78999815570c3cd4d94bf00daa7dec6061d
+Author: Mike Hommey <mh+mozilla@glandium.org>
+Date:   Thu Jul 6 02:34:07 2023 +0000
+
+    Bug 1841919 - Fix "variable does not need to be mutable" warnings in webrender. r=gfx-reviewers,lsalzman
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D182851
+
+diff --git gfx/wr/webrender/src/compositor/sw_compositor.rs gfx/wr/webrender/src/compositor/sw_compositor.rs
+index e623870c86f3..854fef6fe2b9 100644
+--- gfx/wr/webrender/src/compositor/sw_compositor.rs
++++ gfx/wr/webrender/src/compositor/sw_compositor.rs
+@@ -1026,7 +1026,7 @@ impl SwCompositor {
+         if let Some(surface) = self.surfaces.get_mut(id) {
+             if let Some(external_image) = surface.external_image {
+                 assert!(!surface.tiles.is_empty());
+-                let mut tile = &mut surface.tiles[0];
++                let tile = &mut surface.tiles[0];
+                 if let Some(info) = self.composite_surfaces.get(&external_image) {
+                     tile.valid_rect = DeviceIntRect::from_size(info.size);
+                     return;
+diff --git gfx/wr/webrender/src/picture.rs gfx/wr/webrender/src/picture.rs
+index bd685d48a113..72c0e1efa038 100644
+--- gfx/wr/webrender/src/picture.rs
++++ gfx/wr/webrender/src/picture.rs
+@@ -2888,7 +2888,7 @@ impl TileCacheInstance {
+         let prim_clip_chain = &prim_instance.vis.clip_chain;
+ 
+         // Accumulate the exact (clipped) local rect in to the parent surface
+-        let mut surface = &mut surfaces[prim_surface_index.0];
++        let surface = &mut surfaces[prim_surface_index.0];
+         surface.clipped_local_rect = surface.clipped_local_rect.union(&prim_clip_chain.pic_coverage_rect);
+ 
+         // If the primitive is directly drawn onto this picture cache surface, then
+diff --git gfx/wr/webrender_api/src/display_item_cache.rs gfx/wr/webrender_api/src/display_item_cache.rs
+index 6cd1eb3e3a44..60d41c591d36 100644
+--- gfx/wr/webrender_api/src/display_item_cache.rs
++++ gfx/wr/webrender_api/src/display_item_cache.rs
+@@ -58,13 +58,13 @@ pub struct DisplayItemCache {
+ 
+ impl DisplayItemCache {
+     fn add_item(&mut self, key: ItemKey, item: CachedDisplayItem) {
+-        let mut entry = &mut self.entries[key as usize];
++        let entry = &mut self.entries[key as usize];
+         entry.items.push(item);
+         entry.occupied = true;
+     }
+ 
+     fn clear_entry(&mut self, key: ItemKey) {
+-        let mut entry = &mut self.entries[key as usize];
++        let entry = &mut self.entries[key as usize];
+         entry.items.clear();
+         entry.occupied = false;
+     }
+commit 8300555a01bdcc478ae103dcf2b469bf24e4dd41
+Author: Mike Hommey <mh+mozilla@glandium.org>
+Date:   Thu Jul 6 04:26:41 2023 +0000
+
+    Bug 1841919 - Fix "variable does not need to be mutable" warning in wrench. r=gfx-reviewers,jrmuizel
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D182858
+
+diff --git gfx/wr/wrench/src/reftest.rs gfx/wr/wrench/src/reftest.rs
+index 136a4477205d..0e900224b883 100644
+--- gfx/wr/wrench/src/reftest.rs
++++ gfx/wr/wrench/src/reftest.rs
+@@ -514,7 +514,7 @@ impl ReftestManifest {
+                         max_difference: options.allow_max_difference,
+                         num_differences: options.allow_num_differences }),
+                 1 => {
+-                    let mut fuzzy = &mut fuzziness[0];
++                    let fuzzy = &mut fuzziness[0];
+                     fuzzy.max_difference = cmp::max(fuzzy.max_difference, options.allow_max_difference);
+                     fuzzy.num_differences = cmp::max(fuzzy.num_differences, options.allow_num_differences);
+                 },

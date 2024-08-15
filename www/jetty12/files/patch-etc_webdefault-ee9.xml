@@ -1,0 +1,11 @@
+--- etc/webdefault-ee9.xml.orig	2024-07-04 15:13:21 UTC
++++ etc/webdefault-ee9.xml
+@@ -141,7 +141,7 @@
+     </init-param>
+     <init-param>
+       <param-name>dirAllowed</param-name>
+-      <param-value>true</param-value>
++      <param-value>false</param-value>
+     </init-param>
+     <init-param>
+       <param-name>welcomeServlets</param-name>

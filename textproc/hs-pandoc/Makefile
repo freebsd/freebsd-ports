@@ -1,5 +1,5 @@
 PORTNAME=	pandoc
-DISTVERSION=	3.2
+DISTVERSION=	3.3
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,13 +12,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING.md
 USES=		cabal
 
 USE_CABAL=	Glob-0.10.2_3 \
-		JuicyPixels-3.3.8_2 \
+		JuicyPixels-3.3.9 \
 		OneTuple-0.4.2 \
 		Only-0.1_2 \
-		QuickCheck-2.15 \
+		QuickCheck-2.15.0.1 \
 		SHA-1.6.4.4 \
 		StateVar-1.2.2 \
-		aeson-2.2.2.0_1 \
+		aeson-2.2.3.0_1 \
 		aeson-pretty-0.8.10 \
 		alex-3.5.1.0 \
 		ansi-terminal-1.1.1 \
@@ -39,20 +39,20 @@ USE_CABAL=	Glob-0.10.2_3 \
 		bifunctors-5.6.2 \
 		bitvec-1.1.5.0_1 \
 		blaze-builder-0.4.2.3 \
-		blaze-html-0.9.2.0 \
-		blaze-markup-0.8.3.0_1 \
+		blaze-html-0.9.2.0_1 \
+		blaze-markup-0.8.3.0_2 \
 		byteorder-1.0.4 \
-		cabal-doctest-1.0.9_3 \
+		cabal-doctest-1.0.10 \
 		case-insensitive-1.2.1.0 \
-		cassava-0.5.3.1 \
-		cborg-0.2.10.0 \
+		cassava-0.5.3.2 \
+		cborg-0.2.10.0_1 \
 		cereal-0.5.8.3 \
 		character-ps-0.1 \
-		citeproc-0.8.1 \
+		citeproc-0.8.1.1 \
 		cmdargs-0.10.22 \
 		colour-2.3.6 \
 		commonmark-0.2.6 \
-		commonmark-extensions-0.2.5.4 \
+		commonmark-extensions-0.2.5.5 \
 		commonmark-pandoc-0.2.2.1 \
 		comonad-5.0.8_2 \
 		conduit-1.3.5 \
@@ -60,8 +60,8 @@ USE_CABAL=	Glob-0.10.2_3 \
 		contravariant-1.5.5 \
 		cookie-0.5.0 \
 		crypton-1.0.0 \
-		crypton-connection-0.3.2 \
-		crypton-x509-1.7.6_2 \
+		crypton-connection-0.4.1 \
+		crypton-x509-1.7.7 \
 		crypton-x509-store-1.6.9 \
 		crypton-x509-system-1.6.7 \
 		crypton-x509-validation-1.6.12 \
@@ -70,34 +70,34 @@ USE_CABAL=	Glob-0.10.2_3 \
 		data-default-instances-containers-0.0.1 \
 		data-default-instances-dlist-0.0.1 \
 		data-default-instances-old-locale-0.0.1 \
-		data-fix-0.3.3 \
+		data-fix-0.3.4 \
 		digest-0.0.2.1 \
 		distributive-0.6.2.1_1 \
-		djot-0.1.2 \
-		dlist-1.0_1 \
+		djot-0.1.2.1 \
+		dlist-1.0_2 \
 		doclayout-0.4.0.1 \
 		doctemplates-0.11 \
-		emojis-0.1.3 \
+		emojis-0.1.4.1 \
 		file-embed-0.0.16.0 \
 		generically-0.1.1_3 \
 		gridtables-0.1.0.0_1 \
-		haddock-library-1.11.0_3 \
+		haddock-library-1.11.0_5 \
 		half-0.3.1_2 \
 		happy-1.20.1.1 \
-		hashable-1.4.4.0_1 \
+		hashable-1.4.7.0 \
 		haskell-lexer-1.1.1 \
-		hourglass-0.2.12 \
+		hourglass-0.2.12_1 \
 		hsc2hs-0.68.10_2 \
 		hslua-2.3.1 \
-		hslua-aeson-2.3.1 \
+		hslua-aeson-2.3.1.1 \
 		hslua-classes-2.3.1 \
-		hslua-cli-1.4.2 \
+		hslua-cli-1.4.3 \
 		hslua-core-2.3.2 \
 		hslua-list-1.1.1 \
 		hslua-marshalling-2.3.1 \
-		hslua-module-doclayout-1.1.1 \
+		hslua-module-doclayout-1.1.1.2 \
 		hslua-module-path-1.1.1 \
-		hslua-module-system-1.1.1 \
+		hslua-module-system-1.1.2 \
 		hslua-module-text-1.1.1 \
 		hslua-module-version-1.1.1 \
 		hslua-module-zip-1.1.3 \
@@ -112,7 +112,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		indexed-traversable-instances-0.1.2 \
 		integer-conversion-0.1.1 \
 		integer-logarithms-1.0.3.1_6 \
-		iproute-1.7.12 \
+		iproute-1.7.14 \
 		ipynb-0.2_1 \
 		isocline-1.0.9 \
 		jira-wiki-markup-1.5.1_1 \
@@ -123,15 +123,15 @@ USE_CABAL=	Glob-0.10.2_3 \
 		memory-0.18.0 \
 		mime-types-0.1.2.0 \
 		mono-traversable-1.0.17.0 \
-		network-3.2.0.0 \
+		network-3.2.1.0 \
 		network-uri-2.6.4.2_1 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.4 \
 		ordered-containers-0.2.4 \
-		os-string-2.0.2.2 \
-		pandoc-3.2 \
-		pandoc-lua-engine-0.2.1.5_1 \
-		pandoc-lua-marshal-0.2.7 \
+		os-string-2.0.6 \
+		pandoc-3.3 \
+		pandoc-lua-engine-0.3.1 \
+		pandoc-lua-marshal-0.2.7.1 \
 		pandoc-types-1.23.1_2 \
 		pem-0.2.4 \
 		pretty-show-1.10 \
@@ -142,12 +142,12 @@ USE_CABAL=	Glob-0.10.2_3 \
 		regex-tdfa-1.3.2.2_3 \
 		resourcet-1.3.0 \
 		safe-0.3.21_1 \
-		scientific-0.3.8.0 \
-		semialign-1.3.1 \
-		semigroupoids-6.0.1 \
-		serialise-0.2.6.1_2 \
-		skylighting-0.14.1.2 \
-		skylighting-core-0.14.1.2 \
+		scientific-0.3.8.0_1 \
+		semialign-1.3.1_1 \
+		semigroupoids-6.0.1_1 \
+		serialise-0.2.6.1_3 \
+		skylighting-0.14.2 \
+		skylighting-core-0.14.2 \
 		skylighting-format-ansi-0.1 \
 		skylighting-format-blaze-html-0.1.1.2 \
 		skylighting-format-context-0.1.0.2 \
@@ -156,7 +156,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		split-0.2.5 \
 		splitmix-0.1.0.5_1 \
 		streaming-commons-0.2.2.6_1 \
-		strict-0.5_1 \
+		strict-0.5.1_1 \
 		syb-0.7.2.4 \
 		tagged-0.8.8_1 \
 		tagsoup-0.14.8 \
@@ -164,41 +164,40 @@ USE_CABAL=	Glob-0.10.2_3 \
 		texmath-0.12.8.9 \
 		text-conversions-0.3.1.1 \
 		text-iso8601-0.1.1 \
-		text-short-0.1.6_1 \
+		text-short-0.1.6_2 \
 		th-abstraction-0.7.0.0 \
 		th-compat-0.1.5_2 \
 		th-lift-0.8.4_2 \
 		th-lift-instances-0.1.20 \
-		these-1.2.1 \
-		time-compat-1.9.7 \
-		tls-2.0.6 \
-		toml-parser-2.0.0.0_2 \
+		these-1.2.1_1 \
+		time-compat-1.9.7_2 \
+		tls-2.1.0 \
+		toml-parser-2.0.1.0 \
 		transformers-compat-0.7.2 \
 		typed-process-0.2.11.1 \
-		typst-0.5.0.3 \
+		typst-0.5.0.5 \
 		typst-symbols-0.1.6 \
-		unicode-collation-0.1.3.6 \
-		unicode-data-0.4.0.1_2 \
-		unicode-transforms-0.4.0.1_4 \
+		unicode-collation-0.1.3.6_1 \
+		unicode-data-0.6.0_1 \
+		unicode-transforms-0.4.0.1_6 \
 		uniplate-1.6.13_1 \
-		unix-time-0.4.12 \
-		unliftio-core-0.2.1.0_3 \
-		unordered-containers-0.2.20_2 \
+		unix-time-0.4.15 \
+		unliftio-core-0.2.1.0_4 \
+		unordered-containers-0.2.20_3 \
 		utf8-string-1.0.2 \
-		uuid-types-1.0.6 \
+		uuid-types-1.0.6_1 \
 		vector-0.13.1.0_1 \
-		vector-algorithms-0.9.0.2 \
+		vector-algorithms-0.9.0.2_1 \
 		vector-stream-0.1.0.1_1 \
-		witherable-0.5 \
+		witherable-0.5_1 \
 		xml-1.3.14_2 \
 		xml-conduit-1.9.1.3 \
 		xml-types-0.3.8 \
 		yaml-0.11.11.2_2 \
 		zip-archive-0.4.3.2_1 \
-		zlib-0.7.1.0
+		zlib-0.7.1.0_1
 
 CABAL_FLAGS=	lua
-CABAL_REVISION=	1
 CABAL_WRAPPER_SCRIPTS=	${CABAL_EXECUTABLES}
 
 OPTIONS_DEFINE=		EMBED_DATA

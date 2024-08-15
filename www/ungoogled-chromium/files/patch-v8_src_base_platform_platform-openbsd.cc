@@ -1,4 +1,4 @@
---- v8/src/base/platform/platform-openbsd.cc.orig	2023-05-05 12:12:41 UTC
+--- v8/src/base/platform/platform-openbsd.cc.orig	2024-07-31 14:19:23 UTC
 +++ v8/src/base/platform/platform-openbsd.cc
 @@ -6,6 +6,7 @@
  // POSIX-compatible parts, the implementation is in platform-posix.cc.
@@ -24,5 +24,5 @@
 +  return reinterpret_cast<uint8_t*>(base) + ss.ss_size;
 +}
  
- std::vector<OS::MemoryRange> OS::GetFreeMemoryRangesWithin(
+ std::optional<OS::MemoryRange> OS::GetFirstFreeMemoryRangeWithin(
      OS::Address boundary_start, OS::Address boundary_end, size_t minimum_size,

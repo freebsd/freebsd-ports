@@ -1,15 +1,15 @@
---- chrome/browser/extensions/api/api_browser_context_keyed_service_factories.cc.orig	2024-04-23 07:42:17 UTC
+--- chrome/browser/extensions/api/api_browser_context_keyed_service_factories.cc.orig	2024-07-31 14:19:23 UTC
 +++ chrome/browser/extensions/api/api_browser_context_keyed_service_factories.cc
-@@ -45,7 +45,7 @@
+@@ -44,7 +44,7 @@
+ #include "pdf/buildflags.h"
  #include "printing/buildflags/buildflags.h"
- #include "services/screen_ai/buildflags/buildflags.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
  #include "chrome/browser/extensions/api/system_indicator/system_indicator_manager_factory.h"
  #endif
  
-@@ -127,7 +127,7 @@ void EnsureApiBrowserContextKeyedServiceFactoriesBuilt
+@@ -119,7 +119,7 @@ void EnsureApiBrowserContextKeyedServiceFactoriesBuilt
    extensions::SettingsPrivateEventRouterFactory::GetInstance();
    extensions::SettingsOverridesAPI::GetFactoryInstance();
    extensions::SidePanelService::GetFactoryInstance();

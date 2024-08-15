@@ -1,8 +1,8 @@
 PORTNAME=	protobuf-c
 DISTVERSION=	1.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/protobuf-c/protobuf-c/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	Code generator and libraries to use Protocol Buffers from pure C

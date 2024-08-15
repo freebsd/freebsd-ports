@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-Data-Dumper>=0:devel/p5-Data-Dumper \
 TEST_DEPENDS=	p5-Data-Compare>=0:devel/p5-Data-Compare \
 		p5-Guard>=0:devel/p5-Guard \
 		p5-Math-BigInt>=2.000000:math/p5-Math-BigInt \
-		p5-Test2-Suite>=0:devel/p5-Test2-Suite \
+		p5-Test-Simple>=1.302200:devel/p5-Test-Simple \
 		p5-autovivification>=0:devel/p5-autovivification \
 		p5-bignum>=0:math/p5-bignum \
 		p5-indirect>=0:devel/p5-indirect \

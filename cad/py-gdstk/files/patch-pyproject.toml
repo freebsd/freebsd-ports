@@ -1,9 +1,20 @@
---- pyproject.toml.orig	2023-08-28 16:28:32 UTC
+--- pyproject.toml.orig	2024-07-04 23:14:49 UTC
 +++ pyproject.toml
-@@ -38,5 +38,5 @@ requires = [
-     "setuptools>=42",
-     "wheel",
+@@ -1,7 +1,7 @@ requires = [
+ [build-system]
+ requires = [
+     "scikit_build_core",
+-    "numpy >= 2.0"
++    "numpy"
+ ]
+ build-backend = "scikit_build_core.build"
+ 
+@@ -29,7 +29,7 @@ dependencies = [
+ license = {file = "LICENSE"}
+ dependencies = [
      "numpy; platform_system=='Darwin'",
 -    "oldest-supported-numpy; platform_system!='Darwin'",
 +    "numpy; platform_system!='Darwin'",
+     "typing_extensions; python_version < '3.11'"
  ]
+ requires-python = ">=3.9"

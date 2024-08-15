@@ -1,7 +1,6 @@
 PORTNAME=	squeekboard
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.39.0
-PORTREVISION=	2
+DISTVERSION=	1.41.0
 CATEGORIES=	x11 wayland
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
@@ -76,5 +75,8 @@ post-patch:
 # Make each cargo subcommand very verbose
 	@${REINPLACE_CMD} -e '/^cargo/s/"$$@"/--verbose --verbose &/' \
 		${WRKSRC}/cargo.sh
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=254091
+	@${REINPLACE_CMD} -e "/sed/s/'-i',/& '',/" \
+		${WRKSRC}/meson.build
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@ bin/ffproxy
 share/man/man5/ffproxy.conf.5.gz
 share/man/man7/ffproxy.quick.7.gz
 share/man/man8/ffproxy.8.gz
-%%DATADIR%%/db/access.dyndns
+%%DATADIR%%/db/access.dyn-dns
 %%DATADIR%%/db/access.host
 %%DATADIR%%/db/access.ip
 %%DATADIR%%/db/filter.header.add

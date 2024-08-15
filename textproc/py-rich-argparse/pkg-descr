@@ -1,0 +1,4 @@
+rich-argparse formats argparse and optparse help using rich.
+
+rich-argparse improves the look and readability of argparse's help while
+requiring minimal changes to the code.

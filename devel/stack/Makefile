@@ -1,6 +1,6 @@
 PORTNAME=	stack
-PORTVERSION=	2.15.7
 DISTVERSIONPREFIX=	v
+DISTVERSION=	3.1.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -22,13 +22,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	commercialhaskell
 USE_PERL5=	run
 
-USE_CABAL=	Cabal-3.10.3.0 \
-		Cabal-syntax-3.10.3.0 \
-		Glob-0.10.2_3 \
+USE_CABAL=	Glob-0.10.2_3 \
 		OneTuple-0.4.1.1_1 \
 		QuickCheck-2.14.3 \
 		StateVar-1.2.2 \
-		aeson-2.1.2.1_3 \
+		aeson-2.1.2.1_4 \
 		aeson-warning-parser-0.1.1 \
 		annotated-wl-pprint-0.7.0_1 \
 		ansi-terminal-1.0.2 \
@@ -52,8 +50,8 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		bifunctors-5.6.2 \
 		bitvec-1.1.5.0_1 \
 		blaze-builder-0.4.2.3 \
-		blaze-html-0.9.2.0 \
-		blaze-markup-0.8.3.0_1 \
+		blaze-html-0.9.2.0_1 \
+		blaze-markup-0.8.3.0_2 \
 		byteorder-1.0.4 \
 		casa-client-0.0.2 \
 		casa-types-0.0.2 \
@@ -69,10 +67,10 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		conduit-extra-1.3.6 \
 		contravariant-1.5.5 \
 		cookie-0.4.6 \
-		cryptohash-sha256-0.11.102.1_4 \
+		cryptohash-sha256-0.11.102.1_5 \
 		crypton-0.34 \
 		crypton-conduit-0.2.3 \
-		crypton-connection-0.3.2 \
+		crypton-connection-0.3.2_1 \
 		crypton-x509-1.7.6_2 \
 		crypton-x509-store-1.6.9 \
 		crypton-x509-system-1.6.7 \
@@ -81,7 +79,7 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		data-fix-0.3.2_5 \
 		digest-0.0.2.1 \
 		distributive-0.6.2.1_1 \
-		dlist-1.0_1 \
+		dlist-1.0_2 \
 		easy-file-0.2.5 \
 		echo-0.1.4 \
 		ed25519-0.0.5.0_8 \
@@ -97,8 +95,7 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		hashable-1.4.4.0_1 \
 		hi-file-parser-0.1.6.0 \
 		hourglass-0.2.12_1 \
-		hpack-0.36.0_1 \
-		hpc-0.7.0.2 \
+		hpack-0.37.0 \
 		hsc2hs-0.68.10_2 \
 		http-api-data-0.5.1 \
 		http-client-0.7.17 \
@@ -138,7 +135,7 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		optparse-applicative-0.18.1.0 \
 		optparse-simple-0.1.1.4 \
 		os-string-2.0.2.1 \
-		pantry-0.9.3.2 \
+		pantry-0.10.0_1 \
 		parser-combinators-1.3.0_1 \
 		path-0.9.5 \
 		path-io-1.8.1_1 \
@@ -150,7 +147,6 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
 		primitive-0.8.0.0_1 \
-		process-1.6.19.0 \
 		project-template-0.2.1.0 \
 		random-1.2.1.2 \
 		resource-pool-0.4.0.0 \
@@ -162,7 +158,7 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		safe-exceptions-0.1.7.4_1 \
 		scientific-0.3.7.0_7 \
 		semialign-1.3_1 \
-		semigroupoids-6.0.1 \
+		semigroupoids-6.0.1_1 \
 		silently-1.2.5.3 \
 		socks-0.6.1 \
 		split-0.2.5 \
@@ -172,10 +168,10 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		streaming-commons-0.2.2.6_1 \
 		strict-0.5_1 \
 		tagged-0.8.8_1 \
-		tar-0.5.1.1_10 \
+		tar-0.6.2.0 \
 		tar-conduit-0.4.1 \
 		temporary-1.3 \
-		text-metrics-0.3.2_3 \
+		text-metrics-0.3.2_4 \
 		text-short-0.1.5_3 \
 		th-abstraction-0.5.0.0 \
 		th-compat-0.1.5_2 \
@@ -190,8 +186,8 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		unix-compat-0.7.1 \
 		unix-time-0.4.12 \
 		unliftio-0.2.25.0 \
-		unliftio-core-0.2.1.0_3 \
-		unordered-containers-0.2.20_2 \
+		unliftio-core-0.2.1.0_4 \
+		unordered-containers-0.2.20_3 \
 		uuid-types-1.0.5.1 \
 		vault-0.3.1.5_7 \
 		vector-0.13.1.0_1 \
@@ -200,7 +196,7 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		witherable-0.4.2_5 \
 		yaml-0.11.11.2_2 \
 		zip-archive-0.4.3.2_1 \
-		zlib-0.6.3.0_4
+		zlib-0.6.3.0_5
 
 CABAL_FLAGS=	-support_aesni
 CABAL_PROJECT=	remove

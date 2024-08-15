@@ -1,13 +1,13 @@
 PORTNAME=	sqlglot
-PORTVERSION=	17.16.2
-PORTREVISION=	1
+PORTVERSION=	25.9.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easily customizable SQL parser and transpiler
-WWW=		https://github.com/tobymao/sqlglot
+WWW=		https://sqlglot.com/sqlglot.html \
+		https://github.com/tobymao/sqlglot
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

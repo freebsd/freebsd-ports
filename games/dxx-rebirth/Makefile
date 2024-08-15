@@ -1,5 +1,5 @@
 PORTNAME=	dxx-rebirth
-PORTVERSION=	20240317
+PORTVERSION=	20240706
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -18,9 +18,10 @@ LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libpng.so:graphics/png
 
 USES=		gl localbase:ldflags pkgconfig scons sdl tar:xz
+USE_GCC=	yes
 USE_GL=		gl glu
 USE_GITHUB=	yes
-GH_TAGNAME=	b5ca993
+GH_TAGNAME=	898f9ca
 USE_SDL=	image2 mixer2 sdl2
 
 MAKE_ARGS=	ignore_unknown_variables=1 sdl2=1
@@ -32,11 +33,6 @@ PLIST_FILES=	bin/d1x-rebirth \
 
 .if ${ARCH} != riscv64
 MAKE_ARGS+=	lto=1
-.endif
-
-.if ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc
-CXXFLAGS+=	-Wno-error=missing-field-initializers
-USE_GCC=	12
 .endif
 
 post-install:

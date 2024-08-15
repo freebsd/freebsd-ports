@@ -1,7 +1,7 @@
 PORTNAME=	hydroxide
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.29
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	mail
 
 MAINTAINER=	nxjoseph@protonmail.com
@@ -12,7 +12,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	emersion
 GH_TUPLE=	ProtonMail:go-crypto:v1.0.0:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
@@ -31,9 +30,13 @@ GH_TUPLE=	ProtonMail:go-crypto:v1.0.0:protonmail_go_crypto/vendor/github.com/Pro
 		golang:term:v0.19.0:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.14.0:golang_text/vendor/golang.org/x/text
 
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
-GO_TARGET=	./cmd/hydroxide
+USE_RC_SUBR=	${PORTNAME}
+GO_TARGET=	./cmd/${PORTNAME}
+GO_BUILDFLAGS=	-ldflags="-s -w"
+SUB_LIST=	USER=${USERS}
+USERS=		${PORTNAME}
+GROUPS=		${PORTNAME}
 
-PLIST_FILES=	bin/hydroxide
+PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>

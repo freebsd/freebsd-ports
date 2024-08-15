@@ -1,7 +1,7 @@
     COMMENT = X11 window managers
 
-    SUBDIR += afterstep
     SUBDIR += afterstep-stable
+    SUBDIR += afterstep1
     SUBDIR += amiwm
     SUBDIR += aphelia
     SUBDIR += awesome

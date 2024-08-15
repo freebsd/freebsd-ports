@@ -25,7 +25,7 @@
  
  hyper$(OBJ_EXTENSION): *.cpp language-data.cpp autohdr.h
 -	$(CXX) -O2 $(CXXFLAGS) $(hyper_CXXFLAGS) -c hyper.cpp -o $@
-+	$(CXX) $(CXXFLAGS) $(hyper_CXXFLAGS) -c hyper.cpp -o $@
++	$(CXX) $(CXXFLAGS) -O0 $(hyper_CXXFLAGS) -c hyper.cpp -o $@  # without O0 clang takes gigabytes of memory
  
  hyper.res: hyper.rc hr-icon.ico
  	windres hyper.rc -O coff -o hyper.res

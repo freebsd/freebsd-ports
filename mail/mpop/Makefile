@@ -1,5 +1,5 @@
 PORTNAME=	mpop
-DISTVERSION=	1.4.19
+DISTVERSION=	1.4.20
 CATEGORIES=	mail
 MASTER_SITES=	https://marlam.de/mpop/releases/
 
@@ -15,9 +15,8 @@ CPE_VENDOR=	martin_lambers
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tls=no
 INFO=		mpop
-PORTDOCS=	mpoprc.example
 
-OPTIONS_DEFINE=		DOCS GSASL IDN LIBSECRET MPOPD NLS
+OPTIONS_DEFINE=		GSASL IDN LIBSECRET MPOPD NLS
 OPTIONS_DEFAULT=	GNUTLS IDN MPOPD
 OPTIONS_RADIO=		TLS
 OPTIONS_RADIO_TLS=	GNUTLS LIBTLS OPENSSL
@@ -51,8 +50,8 @@ post-patch:
 		-e '/crt/s/ca(\\?)-certificates/ca\1-root\1-nss/' \
 		${WRKSRC}/doc/mpop*
 
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+post-install:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/mpoprc.example ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

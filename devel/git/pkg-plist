@@ -134,6 +134,7 @@ libexec/git-core/git-read-tree
 libexec/git-core/git-rebase
 libexec/git-core/git-receive-pack
 libexec/git-core/git-reflog
+libexec/git-core/git-refs
 libexec/git-core/git-remote
 libexec/git-core/git-remote-ext
 libexec/git-core/git-remote-fd
@@ -316,6 +317,7 @@ share/man/man1/git-read-tree.1.gz
 share/man/man1/git-rebase.1.gz
 share/man/man1/git-receive-pack.1.gz
 share/man/man1/git-reflog.1.gz
+share/man/man1/git-refs.1.gz
 share/man/man1/git-remote-ext.1.gz
 share/man/man1/git-remote-fd.1.gz
 share/man/man1/git-remote.1.gz
@@ -396,6 +398,7 @@ share/man/man7/giteveryday.7.gz
 share/man/man7/gitfaq.7.gz
 share/man/man7/gitglossary.7.gz
 share/man/man7/gitnamespaces.7.gz
+share/man/man7/gitpacking.7.gz
 share/man/man7/gitremote-helpers.7.gz
 share/man/man7/gitrevisions.7.gz
 share/man/man7/gitsubmodules.7.gz
@@ -847,6 +850,7 @@ share/man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.45.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.45.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.45.2.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.46.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
@@ -1355,6 +1359,7 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/coccinelle/object_id.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/preincr.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/qsort.cocci
+%%CONTRIB%%share/git-core/contrib/coccinelle/refs.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/spatchcache
 %%CONTRIB%%share/git-core/contrib/coccinelle/strbuf.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/swap.cocci

@@ -1,0 +1,11 @@
+comlin is a minimal, zero-config, BSD licensed, readline replacement used
+in Redis, MongoDB, Android and many other projects.
+
+Features:
+* Single and multi line editing mode with the usual key bindings implemented.
+* History handling.
+* Completion.
+* Hints (suggestions at the right of the prompt as you type).
+* Multiplexing mode, with prompt hiding/restoring for asynchronous output.
+* About ~850 lines (comments and spaces excluded) of BSD license source code.
+* Only uses a subset of VT100 escapes (ANSI.SYS compatible).

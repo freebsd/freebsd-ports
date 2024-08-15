@@ -1,4 +1,4 @@
---- src/iop/channelmixerrgb.c.orig	2023-07-06 21:20:42 UTC
+--- src/iop/channelmixerrgb.c.orig	2024-07-27 09:15:05 UTC
 +++ src/iop/channelmixerrgb.c
 @@ -16,23 +16,6 @@
    along with darktable.  If not, see <http://www.gnu.org/licenses/>.
@@ -21,6 +21,6 @@
 -                      "tree-vectorize", "no-math-errno")
 -#endif
 -
- #ifdef HAVE_CONFIG_H
- #include "config.h"
- #endif
+ // #define AI_ACTIVATED
+ /* AI feature not good enough so disabled for now
+    If enabled there must be $DESCRIPTION: entries in illuminants.h for bauhaus

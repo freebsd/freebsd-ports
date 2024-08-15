@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sinatra-based framework for building dashboards
-WWW=		https://smashing.github.io/
+WWW=		https://smashing.github.io/ \
+		https://github.com/Smashing/smashing
 
 LICENSE=	MIT
 

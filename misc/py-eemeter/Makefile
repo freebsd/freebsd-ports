@@ -1,5 +1,5 @@
 PORTNAME=	eemeter
-DISTVERSION=	4.0.4
+DISTVERSION=	4.0.5
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}statsmodels>0:math/py-statsmodels@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils concurrent autoplist pytest # several tests fail, see https://github.com/openeemeter/eemeter/issues/448
+USE_PYTHON=	distutils concurrent autoplist pytest # several tests fail, see https://github.com/openeemeter/eemeter/issues/508
 
 .include <bsd.port.mk>

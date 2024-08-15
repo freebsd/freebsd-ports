@@ -6,7 +6,8 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Network backup and restore program (development)
-WWW=		https://burp.grke.org/
+WWW=		https://burp.grke.org/ \
+		https://github.com/grke/burp
 
 LICENSE=	AGPLv3 PD
 LICENSE_COMB=	multi

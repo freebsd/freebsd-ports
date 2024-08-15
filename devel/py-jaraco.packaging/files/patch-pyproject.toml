@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2024-06-21 19:10:43 UTC
++++ pyproject.toml
+@@ -22,7 +22,6 @@ dependencies = [
+ 	# virtualenv extra due to pypa/build#266
+ 	"build[virtualenv]",
+ 	"jaraco.context",
+-	"sphinx",
+ 	"domdf-python-tools",
+ ]
+ dynamic = ["version"]

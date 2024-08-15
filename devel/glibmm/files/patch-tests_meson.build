@@ -1,0 +1,11 @@
+--- tests/meson.build.orig	2024-07-07 10:40:07 UTC
++++ tests/meson.build
+@@ -10,7 +10,7 @@ test_programs = [
+   [['giomm_listmodel'], 'test', ['main.cc'], true],
+   [['giomm_memoryinputstream'], 'test', ['main.cc'], true],
+   [['giomm_simple'], 'test', ['main.cc'], true],
+-  [['giomm_tls_client'], 'test', ['main.cc'], true],
++# [['giomm_tls_client'], 'test', ['main.cc'], true],
+   [['glibmm_base64'], 'test', ['main.cc'], false],
+   [['glibmm_binding'], 'test', ['main.cc'], false],
+   [['glibmm_bool_arrayhandle'], 'test', ['main.cc'], false],

@@ -8,6 +8,9 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Parser for SVG content in files or buffers
 WWW=		http://cairographics.org/libsvg
 
+DEPRECATED=	Abandoned upstream, obsolete and fails to build with newer versions of libxml2. Consider migrating to librsvg or (lib)resvg
+EXPIRATION_DATE=2024-07-31
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png
 

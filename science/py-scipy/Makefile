@@ -3,7 +3,7 @@ DISTVERSION=	1.11.1
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	science python
-MASTER_SITES=	https://docs.scipy.org/doc/${PORTNAME}-${DISTVERSION}/:doc \
+MASTER_SITES=	https://docs.scipy.org/doc/scipy-${DISTVERSION}/:doc \
 		PYPI:source \
 		SF:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -52,7 +52,7 @@ post-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${UNZIP_CMD} -d ${STAGEDIR}${DOCSDIR} ${DISTDIR}/scipy-html-${DISTVERSION}.zip
-	@${RM} ${STAGEDIR}${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}/.buildinfo
+	@${RM} ${STAGEDIR}${DOCSDIR}/.buildinfo
 
 do-test:
 	@cd ${WRKSRC} && ${TOUCH} .coveragerc && ${PYTHON_CMD} runtests.py

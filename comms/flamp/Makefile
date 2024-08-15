@@ -1,5 +1,5 @@
 PORTNAME=	flamp
-DISTVERSION=	2.2.12
+DISTVERSION=	2.2.13
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/fldigi/flamp/
 

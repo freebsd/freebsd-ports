@@ -1,5 +1,5 @@
 PORTNAME=	faraday
-PORTVERSION=	2.9.2
+PORTVERSION=	2.10.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/lostisland/faraday
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-faraday-net_http>=2.0<3.2:www/rubygem-faraday-net_http
+RUN_DEPENDS=	rubygem-faraday-net_http>=2.0<3.3:www/rubygem-faraday-net_http \
+		rubygem-logger>=0:devel/rubygem-logger
 
 USES=		cpe gem
 

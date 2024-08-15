@@ -1,4 +1,4 @@
 # Versions of Blender and its python dependency for use by depending ports, like add-ons
 
-BLENDER_BL_VERSION=	4.1.1
+BLENDER_BL_VERSION=	4.2.0
 BLENDER_PY_VERSION=	3.11

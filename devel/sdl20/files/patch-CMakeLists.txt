@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2024-05-01 16:16:27 UTC
+--- CMakeLists.txt.orig	2024-07-03 21:23:37 UTC
 +++ CMakeLists.txt
 @@ -404,12 +404,12 @@ set_option(SDL_ASSEMBLY            "Enable assembly ro
  option_string(SDL_ASSERTIONS "Enable internal sanity checks (auto/disabled/release/enabled/paranoid)" "auto")
@@ -15,6 +15,15 @@
  dep_option(SDL_ALTIVEC             "Use Altivec assembly routines" ON "SDL_ASSEMBLY" OFF)
  dep_option(SDL_ARMSIMD             "Use SIMD assembly blitters on ARM" OFF "SDL_ASSEMBLY;SDL_CPU_ARM32" OFF)
  dep_option(SDL_ARMNEON             "Use NEON assembly blitters on ARM" OFF "SDL_ASSEMBLY;SDL_CPU_ARM32" OFF)
+@@ -474,7 +474,7 @@ set_option(SDL_VIVANTE             "Use Vivante EGL vi
+ set_option(SDL_RENDER_D3D          "Enable the Direct3D render driver" ${WINDOWS})
+ set_option(SDL_RENDER_METAL        "Enable the Metal render driver" ${APPLE})
+ set_option(SDL_VIVANTE             "Use Vivante EGL video driver" ${UNIX_SYS})
+-dep_option(SDL_VULKAN              "Enable Vulkan support" ON "ANDROID OR APPLE OR LINUX OR WINDOWS" OFF)
++dep_option(SDL_VULKAN              "Enable Vulkan support" ON "ANDROID OR APPLE OR LINUX OR WINDOWS OR FREEBSD" OFF)
+ set_option(SDL_METAL               "Enable Metal support" ${APPLE})
+ set_option(SDL_KMSDRM              "Use KMS DRM video driver" ${UNIX_SYS})
+ dep_option(SDL_KMSDRM_SHARED       "Dynamically load KMS DRM support" ON "SDL_KMSDRM" OFF)
 @@ -758,7 +758,7 @@ if(SDL_ASSEMBLY)
      # TODO: Those all seem to be quite GCC specific - needs to be
      # reworked for better compiler support

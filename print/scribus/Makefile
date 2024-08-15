@@ -1,5 +1,6 @@
 PORTNAME=	scribus
 DISTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	print editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}/ \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -49,10 +50,10 @@ HUNSPELL_DESC=	Enable spellchecking via hunspell
 OSG_DESC=	Enable 3D rendering via osg
 PDF_DESC=	Enable PDF export via podofo
 
-BOOST_LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
+BOOST_BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 BOOST_CMAKE_BOOL=	WITH_BOOST
 
-GRAPHICSMAGIC_LIB_DEPENDS=	graphics/GraphicsMagick
+GRAPHICSMAGICK_LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick
 GRAPHICSMAGICK_CMAKE_BOOL=	WANT_GRAPHICSMAGICK
 
 HUNSPELL_LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
@@ -65,7 +66,7 @@ PDF_LIB_DEPENDS=	libpodofo.so:graphics/podofo
 PDF_CMAKE_BOOL=	WITH_PODOFO
 
 post-install:
-		${LN} -sf ../share/icons/1_5_1/scribus.png \
+		${LN} -sf ../scribus/icons/1_5_1/scribus.png \
 			${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-pubsub
-PORTVERSION=	2.18.1
+PORTVERSION=	2.19.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-concurrent-ruby>=1.1<2:devel/rubygem-concurrent-ruby \
 		rubygem-google-cloud-core>=1.5<2:net/rubygem-google-cloud-core \
-		rubygem-google-cloud-pubsub-v1>=0.20<1:net/rubygem-google-cloud-pubsub-v1 \
+		rubygem-google-cloud-pubsub-v1>=0.20<2.0:net/rubygem-google-cloud-pubsub-v1 \
 		rubygem-retriable>=3.1<4:devel/rubygem-retriable
 
 USES=		gem

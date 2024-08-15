@@ -1,0 +1,34 @@
+commit 627cc80defb3fa48e82ce656536d666176b9f8d1
+Author: Emilio Cobos Álvarez <emilio@crisal.io>
+Date:   Sat Jan 13 14:35:33 2024 +0000
+
+    Bug 1873379 - Ignore std::tuple harder. r=firefox-style-system-reviewers,zrhoffman
+    
+    In libc++ 18 it seems to be in a nested namespace. Make sure to account
+    for that.
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D198398
+
+diff --git layout/style/ServoBindings.toml layout/style/ServoBindings.toml
+index 2aea31f8f911..2deafbfb14b6 100644
+--- layout/style/ServoBindings.toml
++++ layout/style/ServoBindings.toml
+@@ -366,6 +366,9 @@ opaque-types = [
+     "std::namespace::atomic___base", "std::atomic__My_base",
+     "std::atomic",
+     "std::atomic___base",
++    "std::tuple.*", # Causes "Cannot find type _Pred in this scope" error on mac, like rust-skia#571
++    "std::.*::tuple.*",
++
+     # We want everything but FontVariation and Float to be opaque but we don't
+     # have negative regexes.
+     "mozilla::gfx::(.{0,4}|.{6,12}|.{14,}|([^F][^o][^n][^t][^V][^a][^r][^i][^a][^t][^i][^o][^n])|([^F][^l][^o][^a][^t]))",
+@@ -391,8 +394,6 @@ opaque-types = [
+                             # for clang.
+     "mozilla::SeenPtrs",
+     "mozilla::SupportsWeakPtr",
+-    "std::tuple",
+-    "std::tuple_.*", # Causes "Cannot find type _Pred in this scope" error on mac, like rust-skia#571
+     "SupportsWeakPtr",
+     "mozilla::detail::WeakReference",
+     "mozilla::WeakPtr",

@@ -50,6 +50,8 @@ include/arbor/morph/primitives.hpp
 include/arbor/morph/region.hpp
 include/arbor/morph/segment_tree.hpp
 include/arbor/morph/stitch.hpp
+include/arbor/network.hpp
+include/arbor/network_generation.hpp
 include/arbor/profile/clock.hpp
 include/arbor/profile/meter.hpp
 include/arbor/profile/meter_manager.hpp
@@ -79,6 +81,7 @@ include/arbor/spike.hpp
 include/arbor/spike_event.hpp
 include/arbor/spike_source_cell.hpp
 include/arbor/symmetric_recipe.hpp
+include/arbor/units.hpp
 include/arbor/util/any_cast.hpp
 include/arbor/util/any_ptr.hpp
 include/arbor/util/any_visitor.hpp
@@ -106,6 +109,8 @@ include/arborio/cv_policy_parse.hpp
 include/arborio/export.hpp
 include/arborio/json_serdes.hpp
 include/arborio/label_parse.hpp
+include/arborio/loaded_morphology.hpp
+include/arborio/networkio.hpp
 include/arborio/neurolucida.hpp
 include/arborio/neuroml.hpp
 include/arborio/swcio.hpp
@@ -116,4 +121,5 @@ lib/cmake/arbor/arbor-targets.cmake
 lib/libarbor.so
 lib/libarborenv.so
 lib/libarborio.so
+lib/libunits.a
 %%DATADIR%%/BuildModules.cmake

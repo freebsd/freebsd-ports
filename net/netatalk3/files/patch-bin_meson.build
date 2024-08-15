@@ -1,9 +1,0 @@
---- bin/meson.build.orig	2024-06-17 15:51:32 UTC
-+++ bin/meson.build
-@@ -2,5 +2,5 @@ endif
- if have_ssl
-     subdir('afppasswd')
- endif
--subdir('cnid')
-+#subdir('cnid')
- subdir('misc')

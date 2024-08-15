@@ -1,6 +1,6 @@
-TIMESTAMP = 1714199752
-SHA256 (KDE/digikam/digiKam-8.3.0-1.tar.xz) = 05b145ff7f2f2005fa21bc579c152ab23c8191b678ff2944c8f0406d6b9de6d8
-SIZE (KDE/digikam/digiKam-8.3.0-1.tar.xz) = 55664168
+TIMESTAMP = 1720921818
+SHA256 (KDE/digikam/digiKam-8.4.0.tar.xz) = 53c8aca5a2f660173e29a860d8b13844bd0ec748ef3f618c42f7689476494481
+SIZE (KDE/digikam/digiKam-8.4.0.tar.xz) = 58025616
 SHA256 (KDE/digikam/classification_classes_ILSVRC2012.txt) = 4eb3da435cf544e4a6f390f62c84cb9c9bb68cf8b14e97f8a063452382e5efd2
 SIZE (KDE/digikam/classification_classes_ILSVRC2012.txt) = 21675
 SHA256 (KDE/digikam/coco.names) = 634a1132eb33f8091d60f2c346ababe8b905ae08387037aed883953b7329af84

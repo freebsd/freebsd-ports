@@ -1,8 +1,10 @@
 PORTNAME=	snes9x
-DISTVERSION=	1.62.3
-PORTREVISION=	1
+DISTVERSION=	1.63
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-gtk
+
+PATCH_SITES=	https://github.com/snes9xgit/snes9x/commit/
+PATCHFILES=	bff02194a797b44f7d0082c4594a2c8c0381bb1b.patch:-p1
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Super Nintendo Entertainment System (SNES) Emulator
@@ -23,9 +25,9 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gettext \
 		gnome localbase:ldflags pkgconfig sdl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	snes9xgit
-GH_TUPLE=	KhronosGroup:SPIRV-Cross:4e2fdb2:spirv/../external/SPIRV-Cross \
-		KhronosGroup:Vulkan-Headers:a3dd265:vulkan/../external/vulkan-headers \
-		KhronosGroup:glslang:6d41bb9:glslang/../external/glslang
+GH_TUPLE=	KhronosGroup:SPIRV-Cross:bccaa94:spirv/../external/SPIRV-Cross \
+		KhronosGroup:Vulkan-Headers:577baa0:vulkan/../external/vulkan-headers \
+		KhronosGroup:glslang:9c7fd1a:glslang/../external/glslang
 
 USE_GNOME=	gdkpixbuf2 gtkmm30
 USE_SDL=	sdl2

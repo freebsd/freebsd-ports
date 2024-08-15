@@ -1,18 +1,17 @@
 PORTNAME=	clboss
 DISTVERSIONPREFIX=	v
 # To build from an arbitrary git commit comment DISTVERSION
-DISTVERSION=	0.13.1
+DISTVERSION=	0.13.2
 # and uncomment the following two lines (use for example -gf8d8348c where f8d8348c is a commit hash)
 #DISTVERSION=	0
 #DISTVERSIONSUFFIX=	-g0673c50e7
+CATEGORIES=	net-p2p finance
 .if defined(DISTVERSIONSUFFIX)
 PKGNAMESUFFIX=	-devel
 .endif
-PORTREVISION=	1
-CATEGORIES=	net-p2p finance
 
 MAINTAINER=	vd@FreeBSD.org
-COMMENT=	The Core Lightning Node Manager
+COMMENT=	Core Lightning Node Manager
 WWW=		https://github.com/ZmnSCPxj/clboss
 
 LICENSE=	MIT
@@ -29,7 +28,7 @@ USES=		autoreconf \
 		pkgconfig \
 		sqlite:3
 
-CXXFLAGS=	-Wno-deprecated-declarations
+CXXFLAGS+=	-Wno-deprecated-declarations
 
 GNU_CONFIGURE=	yes
 

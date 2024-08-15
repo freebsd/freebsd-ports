@@ -1,6 +1,6 @@
---- router/src/harness/src/tls_context.cc.orig	2021-12-17 16:07:27 UTC
+--- router/src/harness/src/tls_context.cc.orig	2024-07-12 19:15:25 UTC
 +++ router/src/harness/src/tls_context.cc
-@@ -241,7 +241,7 @@ static int o11x_version(TlsVersion version) {
+@@ -243,7 +243,7 @@ static int o11x_version(TlsVersion version) {
        return TLS1_1_VERSION;
      case TlsVersion::TLS_1_2:
        return TLS1_2_VERSION;
@@ -9,7 +9,7 @@
      case TlsVersion::TLS_1_3:
        return TLS1_3_VERSION;
  #endif
-@@ -272,9 +272,11 @@ stdx::expected<void, std::error_code> TlsContext::vers
+@@ -274,9 +274,11 @@ stdx::expected<void, std::error_code> TlsContext::vers
      default:
        // unknown, leave all disabled
        [[fallthrough]];
@@ -21,7 +21,7 @@
      case TlsVersion::TLS_1_2:
        opts |= SSL_OP_NO_TLSv1_1;
        [[fallthrough]];
-@@ -322,8 +324,10 @@ TlsVersion TlsContext::min_version() const {
+@@ -324,8 +326,10 @@ TlsVersion TlsContext::min_version() const {
        return TlsVersion::TLS_1_1;
      case TLS1_2_VERSION:
        return TlsVersion::TLS_1_2;
@@ -32,7 +32,7 @@
      case 0:
        return TlsVersion::AUTO;
      default:
-@@ -382,7 +386,8 @@ TlsContext::InfoCallback TlsContext::info_callback() c
+@@ -377,7 +381,8 @@ int TlsContext::security_level() const {
  }
  
  int TlsContext::security_level() const {

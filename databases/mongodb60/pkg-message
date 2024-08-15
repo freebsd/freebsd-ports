@@ -9,7 +9,7 @@ MongoDB 6.0 and up do not include the 'mongo' CLI shell anymore. You can
 use the MongoDB Shell (https://github.com/mongodb-js/mongosh).
 # pkg install npm
 $ npm install mongosh
-$ npx mongosh mongodb://127.0.0.1:27117/
+$ npx mongosh mongodb://127.0.0.1:27017/
 
 EOM
 }

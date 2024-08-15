@@ -14,8 +14,8 @@ error[E0425]: cannot find function `pw_deinit` in crate `pw_sys`
 165 |     pw_sys::pw_deinit()
     |             ^^^^^^^^^ not found in `pw_sys`
 
---- cargo-crates/pipewire-0.8.0/src/lib.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/pipewire-0.8.0/src/lib.rs
+--- ../pipewire-rs-016e554768ae251c8de3724ea4b06f4749a8dd00/pipewire/src/lib.rs.orig	2006-07-24 01:21:28 UTC
++++ ../pipewire-rs-016e554768ae251c8de3724ea4b06f4749a8dd00/pipewire/src/lib.rs
 @@ -152,7 +152,7 @@ pub fn init() {
  pub fn init() {
      use once_cell::sync::OnceCell;
@@ -34,8 +34,8 @@ error[E0425]: cannot find function `pw_deinit` in crate `pw_sys`
  }
  
  #[cfg(test)]
---- cargo-crates/pipewire-sys-0.8.0/build.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/pipewire-sys-0.8.0/build.rs
+--- ../pipewire-rs-016e554768ae251c8de3724ea4b06f4749a8dd00/pipewire-sys/build.rs.orig	2006-07-24 01:21:28 UTC
++++ ../pipewire-rs-016e554768ae251c8de3724ea4b06f4749a8dd00/pipewire-sys/build.rs
 @@ -19,6 +19,7 @@ fn main() {
          // included header files changed.
          .parse_callbacks(Box::new(bindgen::CargoCallbacks))
@@ -44,8 +44,8 @@ error[E0425]: cannot find function `pw_deinit` in crate `pw_sys`
          .allowlist_function("pw_.*")
          .allowlist_type("pw_.*")
          .allowlist_var("pw_.*")
---- cargo-crates/pipewire-sys-0.8.0/src/lib.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/pipewire-sys-0.8.0/src/lib.rs
+--- ../pipewire-rs-016e554768ae251c8de3724ea4b06f4749a8dd00/pipewire-sys/src/lib.rs.orig	2006-07-24 01:21:28 UTC
++++ ../pipewire-rs-016e554768ae251c8de3724ea4b06f4749a8dd00/pipewire-sys/src/lib.rs
 @@ -20,8 +20,8 @@ mod tests {
      #[test]
      fn init() {

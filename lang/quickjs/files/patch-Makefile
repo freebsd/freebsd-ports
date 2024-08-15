@@ -1,14 +1,14 @@
---- Makefile.orig	2023-10-23 23:26:12 UTC
+--- Makefile.orig	2024-05-30 14:41:37 UTC
 +++ Makefile
-@@ -76,6 +76,7 @@ ifdef CONFIG_CLANG
+@@ -94,6 +94,7 @@ ifdef CONFIG_CLANG
    HOST_CC=clang
    CC=$(CROSS_PREFIX)clang
-   CFLAGS=-g -Wall -MMD -MF $(OBJDIR)/$(@F).d
+   CFLAGS+=-g -Wall -MMD -MF $(OBJDIR)/$(@F).d
 +  CFLAGS += -fPIC
    CFLAGS += -Wextra
    CFLAGS += -Wno-sign-compare
    CFLAGS += -Wno-missing-field-initializers
-@@ -156,9 +157,9 @@ endif
+@@ -207,9 +208,9 @@ endif
  ifdef CONFIG_M32
  PROGS+=qjs32 qjs32_s
  endif
@@ -20,7 +20,7 @@
  endif
  
  # examples
-@@ -235,12 +236,12 @@ else
+@@ -298,12 +299,12 @@ endif
  LTOEXT=
  endif
  
@@ -36,22 +36,22 @@
 +	$(CC) -shared $(LDFLAGS) -o $@ $^
  endif # CONFIG_LTO
  
- repl.c: $(QJSC) repl.js
-@@ -311,10 +312,10 @@ install: all
- 	$(STRIP) qjs qjsc
- 	install -m755 qjs qjsc "$(DESTDIR)$(prefix)/bin"
- 	ln -sf qjs "$(DESTDIR)$(prefix)/bin/qjscalc"
--	mkdir -p "$(DESTDIR)$(prefix)/lib/quickjs"
--	install -m644 libquickjs.a "$(DESTDIR)$(prefix)/lib/quickjs"
-+	mkdir -p "$(DESTDIR)$(prefix)/lib"
-+	install -m644 libquickjs.so "$(DESTDIR)$(prefix)/lib"
+ libquickjs.fuzz.a: $(patsubst %.o, %.fuzz.o, $(QJS_LIB_OBJS))
+@@ -384,10 +385,10 @@ install: all
+ 	$(STRIP) qjs$(EXE) qjsc$(EXE)
+ 	install -m755 qjs$(EXE) qjsc$(EXE) "$(DESTDIR)$(PREFIX)/bin"
+ 	ln -sf qjs$(EXE) "$(DESTDIR)$(PREFIX)/bin/qjscalc$(EXE)"
+-	mkdir -p "$(DESTDIR)$(PREFIX)/lib/quickjs"
+-	install -m644 libquickjs.a "$(DESTDIR)$(PREFIX)/lib/quickjs"
++	mkdir -p "$(DESTDIR)$(PREFIX)/lib"
++	install -m644 libquickjs.so "$(DESTDIR)$(PREFIX)/lib"
  ifdef CONFIG_LTO
--	install -m644 libquickjs.lto.a "$(DESTDIR)$(prefix)/lib/quickjs"
-+	install -m644 libquickjs.lto.so "$(DESTDIR)$(prefix)/lib"
+-	install -m644 libquickjs.lto.a "$(DESTDIR)$(PREFIX)/lib/quickjs"
++	install -m644 libquickjs.lto.so "$(DESTDIR)$(PREFIX)/lib"
  endif
- 	mkdir -p "$(DESTDIR)$(prefix)/include/quickjs"
- 	install -m644 quickjs.h quickjs-libc.h "$(DESTDIR)$(prefix)/include/quickjs"
-@@ -347,7 +348,7 @@ HELLO_MODULE_SRCS=examples/hello_module.js
+ 	mkdir -p "$(DESTDIR)$(PREFIX)/include/quickjs"
+ 	install -m644 quickjs.h quickjs-libc.h "$(DESTDIR)$(PREFIX)/include/quickjs"
+@@ -417,7 +418,7 @@ HELLO_MODULE_OPTS=-fno-string-normalize -fno-map -fno-
  HELLO_MODULE_OPTS=-fno-string-normalize -fno-map -fno-promise -fno-typedarray \
             -fno-typedarray -fno-regexp -fno-json -fno-eval -fno-proxy \
             -fno-date -m
@@ -60,7 +60,7 @@
  	$(QJSC) $(HELLO_MODULE_OPTS) -o $@ $(HELLO_MODULE_SRCS)
  
  # use of an external C module (static compilation)
-@@ -355,7 +356,7 @@ examples/hello_module: $(QJSC) libquickjs$(LTOEXT).a $
+@@ -425,7 +426,7 @@ test_fib.c: $(QJSC) examples/test_fib.js
  test_fib.c: $(QJSC) examples/test_fib.js
  	$(QJSC) -e -M examples/fib.so,fib -m -o $@ examples/test_fib.js
  

@@ -16,7 +16,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/LICENSE
 LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/LICENSE.CC-BY-3.0
 
-BUILD_DEPENDS=	rst2man.py-${PYTHON_VER}:textproc/py-docutils@${PY_FLAVOR}
+BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 RUN_DEPENDS=	consolekit2>1.2.5:sysutils/consolekit2 \
 		dbus-launch:devel/dbus \
 		xauth:x11/xauth \
@@ -37,7 +37,7 @@ CMAKE_ARGS=	-DUID_MIN=1000 \
 		-DUID_MAX=65000 \
 		-DCMAKE_INSTALL_SYSCONFDIR:PATH=${LOCALBASE}/etc \
 		-DACCOUNTSSERVICE_DATA_DIR:PATH=/var/db/AccountsService \
-		-DRST2MAN_EXECUTABLE=${LOCALBASE}/bin/rst2man.py-${PYTHON_VER} \
+		-DRST2MAN_EXECUTABLE=${LOCALBASE}/bin/rst2man \
 		-DSDDM_INITIAL_VT=7
 
 USE_RC_SUBR=	sddm

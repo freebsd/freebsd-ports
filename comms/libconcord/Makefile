@@ -1,6 +1,5 @@
 PORTNAME=	libconcord
-PORTVERSION=	1.2
-PORTREVISION=	3
+PORTVERSION=	1.5
 CATEGORIES=	comms
 MASTER_SITES=	SF/concordance/concordance/${PORTVERSION}
 DISTNAME=	concordance-${PORTVERSION}
@@ -12,7 +11,8 @@ LICENSE=	GPLv2
 DEPRECATED=     Logitech Harmony were officially discontinued in 2021, last major product in 2019.
 EXPIRATION_DATE=2024-12-31
 
-LIB_DEPENDS=	libhidapi.so:comms/hidapi \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libhidapi.so:comms/hidapi \
 		libzip.so:archivers/libzip
 
 USE_LDCONFIG=	yes

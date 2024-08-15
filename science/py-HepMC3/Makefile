@@ -12,6 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
 BROKEN_i386=	compilation fails, static_assert(sizeof(IntType) <= sizeof(ssize_t), "Implicit narrowing is not permitted."), reported to the ML hepmc-dev@cern.ch on 2024-06-24
+BROKEN_powerpc=	compilation fails, static_assert(sizeof(IntType) <= sizeof(ssize_t), "Implicit narrowing is not permitted."), reported to the ML hepmc-dev@cern.ch on 2024-06-24
 
 LIB_DEPENDS=	libHepMC3.so:science/hepmc3
 

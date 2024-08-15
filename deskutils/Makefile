@@ -1,5 +1,6 @@
     COMMENT = Things that used to be on the desktop before computers were invented
 
+    SUBDIR += R-cran-exams
     SUBDIR += affiche
     SUBDIR += akonadi-calendar-tools
     SUBDIR += akonadi-import-wizard
@@ -236,6 +237,7 @@
     SUBDIR += py-taskw
     SUBDIR += py-term-background
     SUBDIR += py-todoman
+    SUBDIR += py-trash-cli
     SUBDIR += py-vdirsyncer
     SUBDIR += py-vobject
     SUBDIR += py-vorta

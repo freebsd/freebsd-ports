@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Storage File Client Library for Ruby
-WWW=		https://github.com/Azure/azure-storage-ruby/tree/master/file
+WWW=		https://github.com/Azure/azure-storage-ruby/tree/master/file \
+		https://github.com/Azure/azure-storage-ruby
 
 LICENSE=	MIT
 

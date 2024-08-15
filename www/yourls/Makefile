@@ -4,7 +4,8 @@ CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Your Own URL Shortener
-WWW=		https://yourls.org/
+WWW=		https://yourls.org/ \
+		https://github.com/YOURLS/YOURLS
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

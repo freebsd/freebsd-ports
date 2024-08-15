@@ -1,6 +1,6 @@
 PORTNAME=	pocketsphinx
 PORTVERSION=	0.1.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ WWW=	https://github.com/bambocher/pocketsphinx-python
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	swig>0:devel/swig
+BUILD_DEPENDS=	swig40>0:devel/swig40
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libpulse-simple.so:audio/pulseaudio \
 		libpulse.so:audio/pulseaudio
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 USES=	python
 USE_PYTHON=	distutils
 
+BINARY_ALIAS=	swig=swig40
 CFLAGS+=	-I${LOCALBASE}/include
 
 post-install:

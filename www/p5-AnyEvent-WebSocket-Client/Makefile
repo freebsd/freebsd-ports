@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-AnyEvent>=7.13:devel/p5-AnyEvent \
 		p5-Protocol-WebSocket>=0.20:www/p5-Protocol-WebSocket \
 		p5-URI>=1.53:net/p5-URI \
 		p5-URI-ws>=0:net/p5-URI-ws
-TEST_DEPENDS=	p5-Test2-Suite>=0.000121:devel/p5-Test2-Suite
+TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	configure

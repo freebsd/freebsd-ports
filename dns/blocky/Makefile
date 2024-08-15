@@ -1,10 +1,8 @@
 PORTNAME=	blocky
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.24
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns
-MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
-DISTFILES=	go.mod:gomod
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Fast and lightweight DNS proxy as ad-blocker
@@ -18,6 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	0xERR0R
 USE_RC_SUBR=	blocky
 
+GO_MOD_DIST=	github
 GO_MODULE=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_TARGET=	main.go:${PREFIX}/sbin/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "-w -s \

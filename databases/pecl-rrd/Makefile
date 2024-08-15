@@ -1,5 +1,6 @@
 PORTNAME=	rrd
 DISTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	databases pear
 
 MAINTAINER=	flo@FreeBSD.org

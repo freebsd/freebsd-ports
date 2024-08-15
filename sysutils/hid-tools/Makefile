@@ -1,5 +1,6 @@
 PORTNAME=	hid-tools
 DISTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 
 MAINTAINER=	wulf@FreeBSD.org
@@ -11,7 +12,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}click>=0:devel/py-click@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}parse>=0:textproc/py-parse@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pyudev>=0:devel/py-pyudev@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} \
 			${RUN_DEPENDS_${OPSYS}_${OSREL:R}}
 
 USES=		python shebangfix

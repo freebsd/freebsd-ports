@@ -1,4 +1,4 @@
---- build/npm/postinstall.js.orig	2024-06-03 21:50:45 UTC
+--- build/npm/postinstall.js.orig	2024-07-31 20:26:36 UTC
 +++ build/npm/postinstall.js
 @@ -42,8 +42,14 @@ function yarnInstall(dir, opts) {
  	const raw = process.env['npm_config_argv'] || '{}';
@@ -17,7 +17,7 @@
  	if (opts.ignoreEngines) {
  		args.push('--ignore-engines');
  		delete opts.ignoreEngines;
-@@ -132,5 +138,5 @@ for (let dir of dirs) {
+@@ -128,5 +134,5 @@ for (let dir of dirs) {
  	yarnInstall(dir, opts);
  }
  

@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	Gpgme ${QT_STR} bindings
 

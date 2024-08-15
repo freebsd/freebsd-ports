@@ -1,6 +1,6 @@
---- sql/mysqld.cc.orig	2022-07-06 21:36:34 UTC
+--- sql/mysqld.cc.orig	2024-07-12 19:15:25 UTC
 +++ sql/mysqld.cc
-@@ -5299,7 +5299,7 @@ static int init_thread_environment() {
+@@ -5381,7 +5381,7 @@ static PSI_memory_key key_memory_openssl = PSI_NOT_INS
  
  static PSI_memory_key key_memory_openssl = PSI_NOT_INSTRUMENTED;
  

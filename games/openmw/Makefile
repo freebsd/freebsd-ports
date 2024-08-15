@@ -41,16 +41,31 @@ CMAKE_ARGS=	-DDESIRED_QT_VERSION=5 \
 		-DMORROWIND_DATA_FILES="${DATADIR}/data" \
 		-DOPENMW_RESOURCE_FILES="${DATADIR}/resources"
 
+# passed from openal to prevent linker errors
+LDFLAGS+=	-Wl,--as-needed
+LDFLAGS_i386=	-Wl,-z,notext
+
 OPTIONS_DEFINE=	DOCS
 
 DOCS_CMAKE_BOOL=	BUILD_DOCS
+DOCS_BINARY_ALIAS=	sphinx-build=sphinx-build-${PYTHON_VER}
 DOCS_BUILD_DEPENDS=	doxygen>0:devel/doxygen \
-			sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 DOCS_USES=		python:build
 
 PORTDOCS=	*
 
+.include <bsd.port.pre.mk>
+
+# The following is actually meant for lld 15.0 and later, but the ports
+# framework does not support LINKER_TYPE and LINKER_VERSION yet.
+.if ${COMPILER_TYPE} == "clang"
+# Turn off checking of dynamic relocations, to avoid lld diagnostics about
+# possibly incorrect addend values.
+LDFLAGS_i386+=	-Wl,--no-check-dynamic-relocations
+.endif
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

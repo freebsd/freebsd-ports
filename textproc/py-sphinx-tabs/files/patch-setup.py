@@ -5,7 +5,7 @@
      license="MIT",
      python_requires="~=3.7",
 -    install_requires=["sphinx", "pygments", "docutils~=0.18.0"],
-+    install_requires=["sphinx", "pygments", "docutils>=0.18.0,<0.20.0"],
++    install_requires=["sphinx", "pygments", "docutils>=0.18.0,<0.22.0"],
      extras_require={
          "testing": [
              "coverage",

@@ -34,6 +34,7 @@ desc="OAuth 2.0 proxy server"
 load_rc_config "$name"
 
 eval "${rcvar}=\${${rcvar}:-'NO'}"
+eval "${name}_svcj_options=\${${name}_svcj_options:-'net_basic'}"
 eval "_oauth2_proxy_user=\${${name}_user:-'%%USER%%'}"
 eval "_oauth2_proxy_group=\${${name}_group:-'%%GROUP%%'}"
 eval "_oauth2_proxy_flags=\${${name}_flags:-''}"

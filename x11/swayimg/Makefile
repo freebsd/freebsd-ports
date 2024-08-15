@@ -1,7 +1,6 @@
 PORTNAME=	swayimg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2
-PORTREVISION=	1
+DISTVERSION=	3.1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,6 +17,7 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libxkbcommon.so:x11/libxkbcommon
+TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		meson pkgconfig
 USE_GITHUB=	yes
@@ -28,7 +28,9 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man5/${PORTNAME}rc.5.gz \
 		share/applications/${PORTNAME}.desktop \
 		share/icons/hicolor/64x64/apps/${PORTNAME}.png \
-		${DATADIR}/swayimgrc \
+		share/icons/hicolor/128x128/apps/${PORTNAME}.png \
+		share/icons/hicolor/256x256/apps/${PORTNAME}.png \
+		${DATADIR}/${PORTNAME}rc \
 		${NULL}
 
 # XXX Drop after FreeBSD 13.4 EOL around 2026-01-31
@@ -89,5 +91,12 @@ post-patch:
 		${WRKSRC}/extra/${PORTNAME}rc \
 		${WRKSRC}/extra/${PORTNAME}rc.5 \
 		${WRKSRC}/src/config.c
+
+pre-test:
+	@if [ ! -e ${WRKDIR}/.meson_build_tests ]; then \
+		${RM} ${CONFIGURE_COOKIE} ${BUILD_COOKIE}; \
+		${MAKE} -C${.CURDIR} build MESON_ARGS="${MESON_ARGS} --reconfigure -Dtests=enabled"; \
+		${TOUCH} ${WRKDIR}/.meson_build_tests; \
+	fi
 
 .include <bsd.port.mk>

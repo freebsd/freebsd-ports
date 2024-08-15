@@ -1,7 +1,7 @@
 bin/libassuan-config
 include/assuan.h
 lib/libassuan.so
-lib/libassuan.so.0
-lib/libassuan.so.0.8.7
+lib/libassuan.so.9
+lib/libassuan.so.9.0.1
 libdata/pkgconfig/libassuan.pc
 share/aclocal/libassuan.m4

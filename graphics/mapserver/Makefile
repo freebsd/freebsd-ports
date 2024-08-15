@@ -1,217 +1,134 @@
-PORTNAME=		mapserver
-PORTVERSION=		8.0.2
-CATEGORIES=		graphics www geography
-MASTER_SITES=		https://download.osgeo.org/mapserver/
+PORTNAME=	mapserver
+DISTVERSION=	8.2.1
+CATEGORIES=	graphics www geography
+MASTER_SITES=	https://download.osgeo.org/${PORTNAME}/
 
-MAINTAINER=		wen@FreeBSD.org
-COMMENT=		System for developing web-based GIS applications
+MAINTAINER=	wen@FreeBSD.org
+COMMENT=	System for developing web-based GIS applications
 WWW=		https://mapserver.org/
 
-LICENSE=		MIT
+LICENSE=	MIT
 
-LIB_DEPENDS=		libgd.so:graphics/gd \
-			libproj.so:graphics/proj \
-			libpng.so:graphics/png \
-			libgif.so:graphics/giflib \
-			libsvg.so:graphics/libsvg \
-			libfreetype.so:print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libfribidi.so:converters/fribidi \
+		libgdal.so:graphics/gdal \
+		libgeos.so:graphics/geos \
+		libgif.so:graphics/giflib \
+		libharfbuzz.so:print/harfbuzz \
+		libpng.so:graphics/png \
+		libproj.so:graphics/proj
 
-USES=			compiler:c++11-lang cpe cmake gnome jpeg \
-			localbase:ldflags
-CPE_VENDOR=		osgeo
-LDFLAGS+=		-pthread
-CMAKE_ARGS+=		-DCMAKE_PREFIX_PATH=${LOCALBASE} \
-			-DCMAKE_INSTALL_PREFIX=${PREFIX} \
-			-DWITH_GD=1
-MAKE_JOBS_UNSAFE=	yes
+USES=		cmake compiler:c++11-lang cpe gnome iconv jpeg \
+		localbase:ldflags
+CPE_VENDOR=	osgeo
+USE_GNOME=	libxml2
 
-PROG_FILES=		legend scalebar shptree shptreetst shptreevis \
-			sortshp msencrypt tile4ms mapserv
+CMAKE_OFF=	WITH_CSHARP \
+		WITH_JAVA \
+		WITH_MYSQL \
+		WITH_ORACLE_PLUGIN \
+		WITH_ORACLESPATIAL \
+		WITH_PIXMAN \
+		WITH_RUBY \
+		WITH_SVGCAIRO \
+		WITH_THREAD_SAFETY \
+		WITH_V8
 
-OPTIONS_DEFINE=		CAIRO CAIRO_SVG CLIENT_WMS CLIENT_WFS CURL DEBUG \
-			FASTCGI FRIBIDI GDAL GEOS HARFBUZZ KML \
-			PERL PHP POSTGIS PROTOBUFC PYTHON WCS WFS WMS
-OPTIONS_DEFAULT=	CAIRO FRIBIDI GDAL GEOS \
-			HARFBUZZ POSTGIS PROTOBUFC WCS WFS
-CAIRO_SVG_DESC=		Cairo SVG parser support
-GDAL_DESC=		GDAL library support
-FRIBIDI_DESC=		Fribidi library support
-KML_DESC=		KML support
-WMS_DESC=		WMS Server support
-WFS_DESC=		WFS Server support
-WCS_DESC=		WCS Server support
+CMAKE_ON=	CMAKE_SKIP_RPATH \
+		WITH_FRIBIDI \
+		WITH_GEOS \
+		WITH_GIF \
+		WITH_HARFBUZZ \
+		WITH_ICONV \
+		WITH_KML \
+		WITH_LIBXML2 \
+		WITH_OGCAPI \
+		WITH_POSTGIS \
+		WITH_SOS \
+		WITH_WMS
 
-.include <bsd.port.options.mk>
+CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_MySQL:BOOL=True \
+		-DCMAKE_DISABLE_FIND_PACKAGE_PIXMAN:BOOL=True \
+		-DCMAKE_DISABLE_FIND_PACKAGE_SVGCairo:BOOL=True \
+		-DCMAKE_DISABLE_FIND_PACKAGE_V8:BOOL=True
 
-.if ${PORT_OPTIONS:MPYTHON}
-USES+=			python
-BUILD_DEPENDS+=		swig:devel/swig
-CMAKE_ARGS+=		-DWITH_PYTHON=yes
-PLIST_SUB+=		PYTHON=""
-MAP_EGG=		MapScript-${PORTVERSION}-${PYTHON_VERSION:S/thon//}
-PLIST_SUB+=		MAP_EGG=${MAP_EGG}
-.else
-PLIST_SUB+=		PYTHON="@comment "
-.endif
+OPTIONS_DEFINE=		CAIRO CURL EXEMPI FASTCGI LIBRSVG2 PERL PHPNG \
+			POSTGIS PROTOBUFC PYTHON WCS WFS XMLMAPFILE
+OPTIONS_DEFAULT=	CAIRO CURL FASTCGI LIBRSVG2 POSTGIS PROTOBUFC WCS WFS
+OPTIONS_SUB=		yes
 
-.if ${PORT_OPTIONS:MCAIRO}
-LIB_DEPENDS+=		libcairo.so:graphics/cairo \
-			libexpat.so:textproc/expat2
-CMAKE_ARGS+=		-DWITH_CAIRO=1
-.else
-CMAKE_ARGS+=		-DWITH_CAIRO=0
-.endif
+EXEMPI_DESC=		XMP Metadata support
+PHPNG_DESC=		PHPNG (SWIG) mapscript support
+PROTOBUFC_DESC=		Protocol buffers support (req. for vector tiles)
+WFS_DESC=               WFS Server support
+WCS_DESC=               WCS Server support
+XMLMAPFILE_DESC=	XML mapfile support
 
-.if ${PORT_OPTIONS:MFRIBIDI}
-LIB_DEPENDS+=		libfribidi.so:converters/fribidi \
-			libharfbuzz.so:print/harfbuzz
-CMAKE_ARGS+=		-DWITH_FRIBIDI=1 -DWITH_HARFBUZZ=1
-.else
-CMAKE_ARGS+=		-DWITH_FRIBIDI=0 -DWITH_HARFBUZZ=0
-.endif
+CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
+CAIRO_CMAKE_BOOL=	WITH_CAIRO
+CAIRO_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_Cairo:BOOL=True
 
-.if ${PORT_OPTIONS:MHARFBUZZ}
-LIB_DEPENDS+=		libfribidi.so:converters/fribidi \
-			libharfbuzz.so:print/harfbuzz
-CMAKE_ARGS+=		-DWITH_FRIBIDI=1 -DWITH_HARFBUZZ=1
-.else
-CMAKE_ARGS+=		-DWITH_FRIBIDI=0 -DWITH_HARFBUZZ=0
-.endif
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
+CURL_CMAKE_BOOL=	WITH_CURL WITH_CLIENT_WFS WITH_CLIENT_WMS
+CURL_CMAKE_OFF=		-DCMAKE_DISABLE_FIND_PACKAGE_CURL:BOOL=True
 
-.if ${PORT_OPTIONS:MPROTOBUFC}
-LIB_DEPENDS+=		libprotobuf-c.so:devel/protobuf-c
-CMAKE_ARGS+=		-DWITH_PROTOBUFC=1
-.else
-CMAKE_ARGS+=		-DWITH_PROTOBUFC=0
-.endif
+EXEMPI_LIB_DEPENDS=	libexempi.so:textproc/exempi
+EXEMPI_CURL_BOOL=	WITH_EXEMPI
+EXEMPI_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_Exempi:BOOL=True
 
-.if ${PORT_OPTIONS:MCAIRO_SVG}
-LIB_DEPENDS+=		libcairo.so:graphics/cairo \
-			libsvg-cairo.so:graphics/libsvg-cairo \
-			libexpat.so:textproc/expat2
-CMAKE_ARGS+=		-DWITH_SVGCAIRO=1 -DWITH_CAIRO=1
-USES+=			pkgconfig
-.else
-CMAKE_ARGS+=		-DWITH_SVGCAIRO=0
-.endif
+FASTCGI_LIB_DEPENDS=	libfcgi.so:www/fcgi
+FASTCGI_CMAKE_BOOL=	WITH_FCGI
+FASTCGI_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_FCGI:BOOL=True
 
-.if ${PORT_OPTIONS:MKML}
-LIB_DEPENDS+=		libxml2.so:textproc/libxml2
-CMAKE_ARGS+=		-DWITH_KML=1
-.else
-CMAKE_ARGS+=		-DWITH_KML=0
-.endif
+LIBRSVG2_USE=		GNOME=librsvg2
+LIBRSVG2_CMAKE_BOOL=	WITH_RSVG
+LIBRSVG2_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_RSVG:BOOL=True
+LIBRSVG2_IMPLIES=	CAIRO
 
-.if ${PORT_OPTIONS:MWMS}
-CMAKE_ARGS+=		-DWITH_WMS=1
-.else
-CMAKE_ARGS+=		-DWITH_WMS=0
-.endif
+PERL_BUILD_DEPEDNS=	swig:devel/swig
+PERL_USES=		perl5
+PERL_CMAKE_BOOL=	WITH_PERL
 
-.if ${PORT_OPTIONS:MWFS}
-CMAKE_ARGS+=		-DWITH_WFS=1
-.else
-CMAKE_ARGS+=		-DWITH_WFS=0
-.endif
+PHPNG_BUILD_DEPENDS=	swig:devel/swig
+PHPNG_CMAKE_BOOL=	WITH_PHPNG
 
-.if ${PORT_OPTIONS:MWCS}
-CMAKE_ARGS+=		-DWITH_WCS=1
-.else
-CMAKE_ARGS+=		-DWITH_WCS=0
-.endif
+POSTGIS_USES=		pgsql
+POSTGIS_CMAKE_BOOL=	WITH_POSTGIS
+POSTGIS_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_PostgreSQL:BOOL=True
 
-.if ${PORT_OPTIONS:MGDAL}
-USES+=			iconv
-LIB_DEPENDS+=		libgdal.so:graphics/gdal
-CMAKE_ARGS+=		-DWITH_GDAL=1
-.else
-CMAKE_ARGS+=		-DWITH_GDAL=0
-.endif
+PROTOBUFC_LIB_DEPENDS=  libprotobuf-c.so:devel/protobuf-c
+PROTOBUFC_CMAKE_BOOL=   WITH_PROTOBUFC
+PROTOBUFC_CMAKE_OFF=    -DCMAKE_DISABLE_FIND_PACKAGE_ProtobufC:BOOL=True
 
-.if ${PORT_OPTIONS:MGEOS}
-LIB_DEPENDS+=		libgeos.so:graphics/geos
-CMAKE_ARGS+=		-DWITH_GEOS=1
-.else
-CMAKE_ARGS+=		-DWITH_GEOS=0
-.endif
+PYTHON_BUILD_DEPENDS=	swig:devel/swig
+PYTHON_USES=		python
+PYTHON_CMAKE_BOOL=	WITH_PYTHON
 
-.if ${PORT_OPTIONS:MPOSTGIS}
-USES+=			pgsql
-CMAKE_ARGS+=		-DWITH_POSTGIS=1
-.else
-CMAKE_ARGS+=		-DWITH_POSTGIS=0
-.endif
+WCS_CMAKE_BOOL=		WITH_WCS
 
-.if ${PORT_OPTIONS:MPHP}
-USES+=			php:build
-CMAKE_ARGS+=		-DWITH_PHP=1
-PLIST_SUB+=		PHP=""
-.else
-CMAKE_ARGS+=		-DWITH_PHP=0
-PLIST_SUB+=		PHP="@comment "
-.endif
+WFS_CMAKE_BOOL=		WITH_WFS
 
-.if ${PORT_OPTIONS:MPERL}
-USES+=		perl5
-BUILD_DEPENDS=	swig:devel/swig
-CMAKE_ARGS+=	-DWITH_PERL=1
-PLIST_SUB+=	PERL=""
-.else
-CMAKE_ARGS+=	-DWITH_PERL=0
-PLIST_SUB+=	PERL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=		libcurl.so:ftp/curl
-CMAKE_ARGS+=		-DWITH_CURL=1
-.else
-CMAKE_ARGS+=		-DWITH_CURL=0
-.endif
-
-.if ${PORT_OPTIONS:MFASTCGI}
-BUILD_DEPENDS+=		${LOCALBASE}/bin/cgi-fcgi:www/fcgi
-CMAKE_ARGS+=		-DWITH_FCGI=1
-.else
-CMAKE_ARGS+=		-DWITH_FCGI=0
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CMAKE_ARGS+=		-DCMAKE_BUILD_TYPE=Debug
-.else
-CMAKE_ARGS+=		-DCMAKE_BUILD_TYPE=Release
-.endif
-
-.if ${PORT_OPTIONS:MCLIENT_WMS}
-LIB_DEPENDS+=		libcurl.so:ftp/curl
-LIB_DEPENDS+=		libgdal.so:graphics/gdal
-CMAKE_ARGS+=		-DWITH_CURL=1 -DWITH_GDAL=1 -DWITH_CLIENT_WMS=1
-.endif
-
-.if ${PORT_OPTIONS:MCLIENT_WFS}
-LIB_DEPENDS+=		libcurl.so:ftp/curl
-LIB_DEPENDS+=		libgdal.so:graphics/gdal
-CMAKE_ARGS+=		-DWITH_CURL=1 -DWITH_GDAL=1 -DWITH_CLIENT_WFS=1
-.endif
+XMLMAPFILE_USE=		GNOME=libxslt
+XMLMAPFILE_CMAKE_BOOL=	WITH_XMLMAPFILE
+XMLMAPFILE_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_LibXslt:BOOL=True
 
 do-install:
-.for f in ${PROG_FILES}
-	${STRIP_CMD} ${BUILD_WRKSRC}/${f}
-	${INSTALL_SCRIPT} ${BUILD_WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
-.endfor
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/libmapserver.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib
-
-	@${LN} -sf libmapserver.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmapserver.so.2
-	@${LN} -sf libmapserver.so.2 ${STAGEDIR}${PREFIX}/lib/libmapserver.so
-
-do-install-PHP-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/mapscript/php/php_mapscript.so \
-		${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/php
-	@${ECHO_CMD} "extension=php_mapscript.so" > ${STAGEDIR}${PREFIX}/etc/php/ext-20-php_mapscript.ini
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/legend ${STAGEDIR}${PREFIX}/bin/mapserver_legend
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/mapserv ${STAGEDIR}${PREFIX}/bin/mapserver_mapserv
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/msencrypt ${STAGEDIR}${PREFIX}/bin/mapserver_msencrypt
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/scalebar ${STAGEDIR}${PREFIX}/bin/mapserver_scalebar
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/shptree ${STAGEDIR}${PREFIX}/bin/mapserver_shptree
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/shptreetst ${STAGEDIR}${PREFIX}/bin/mapserver_shptreetst
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/shptreevis ${STAGEDIR}${PREFIX}/bin/mapserver_shptreevis
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/sortshp ${STAGEDIR}${PREFIX}/bin/mapserver_sortshp
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/tile4ms ${STAGEDIR}${PREFIX}/bin/mapserver_tile4ms
+	${INSTALL_LIB} ${BUILD_WRKSRC}/libmapserver.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib
+	${RLN} libmapserver.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/libmapserver.so.2
+	${RLN} libmapserver.so.2 ${STAGEDIR}${PREFIX}/lib/libmapserver.so
 
 do-install-PYTHON-on:
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/
-	(cd ${BUILD_WRKSRC}/mapscript/python && ${CP} mapscript.py _mapscript.so ${STAGEDIR}${PYTHON_SITELIBDIR}/)
+	${INSTALL_SCRIPT} ${BUILD_WRKSRC}/src/mapscript/python/mapscript.py ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_LIB} ${BUILD_WRKSRC}/src/mapscript/python/_mapscript.so ${STAGEDIR}${PYTHON_SITELIBDIR}
 
 .include <bsd.port.mk>

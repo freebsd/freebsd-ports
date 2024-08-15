@@ -20,6 +20,8 @@ TEST_DEPENDS=	p5-Capture-Tiny>=0.05:devel/p5-Capture-Tiny \
 
 USES=		perl5
 USE_PERL5=	configure
+
 CONFIGURE_ARGS=	--skip
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -2,6 +2,7 @@ include/uWebSockets/App.h
 include/uWebSockets/AsyncSocket.h
 include/uWebSockets/AsyncSocketData.h
 include/uWebSockets/BloomFilter.h
+include/uWebSockets/CachingApp.h
 include/uWebSockets/ChunkedEncoding.h
 include/uWebSockets/ClientApp.h
 include/uWebSockets/Http3App.h

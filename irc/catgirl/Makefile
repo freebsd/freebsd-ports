@@ -1,6 +1,5 @@
 PORTNAME=	catgirl
-PORTVERSION=	2.1
-PORTREVISION=	5
+PORTVERSION=	2.2a
 CATEGORIES=	irc
 MASTER_SITES=	https://git.causal.agency/catgirl/snapshot/
 

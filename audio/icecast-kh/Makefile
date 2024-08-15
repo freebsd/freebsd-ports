@@ -12,6 +12,9 @@ WWW=		https://github.com/karlheyes/icecast-kh
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Fails to build with libxml2 2.13.2 (PR 280159)
+EXPIRATION_DATE=2024-08-21
+
 LIB_DEPENDS=	libogg.so:audio/libogg \
 		libtheora.so:multimedia/libtheora \
 		libvorbis.so:audio/libvorbis

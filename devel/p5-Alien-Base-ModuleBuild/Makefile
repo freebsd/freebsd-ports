@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-Alien-Build>=0:devel/p5-Alien-Build \
 		p5-Shell-Config-Generate>=0.33:devel/p5-Shell-Config-Generate \
 		p5-Shell-Guess>=0.09:devel/p5-Shell-Guess \
 		p5-Sort-Versions>=1.62:devel/p5-Sort-Versions
-TEST_DEPENDS=	p5-Test2-Suite>=0.000121:devel/p5-Test2-Suite \
+TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple \
 		p5-Inline-CPP>=0.75:devel/p5-Inline-CPP
 
 USES=		perl5

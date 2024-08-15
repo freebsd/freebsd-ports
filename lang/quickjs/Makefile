@@ -1,9 +1,8 @@
 PORTNAME=	quickjs
-DISTVERSION=	2021.03.27
-PORTREVISION=	2
+DISTVERSION=	2024.01.13-20240717
 CATEGORIES=	lang devel
-MASTER_SITES=	https://bellard.org/${PORTNAME}/
-DISTNAME=	${PORTNAME}-${DISTVERSION:S/./-/g}
+#MASTER_SITES=	https://bellard.org/${PORTNAME}/
+#DISTNAME=	${PORTNAME}-${DISTVERSION:S/./-/g}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Embeddable Javascript interpreter in C
@@ -14,9 +13,11 @@ LICENSE=	MIT
 USES=		compiler:c11 cpe gmake tar:xz
 USE_LDCONFIG=	yes
 
-CPE_VENDOR=	${PORTNAME}_project
+USE_GITHUB=	yes
+GH_ACCOUNT=	bellard
+GH_TAGNAME=	5417ab0
 
-EXTRA_PATCHES=	${FILESDIR}/extra-${CHOSEN_COMPILER_TYPE}-patch-Makefile
+CPE_VENDOR=	${PORTNAME}_project
 
 TEST_TARGET=	test
 

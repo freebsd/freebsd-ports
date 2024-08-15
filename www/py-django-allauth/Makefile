@@ -1,5 +1,6 @@
 PORTNAME=	django-allauth
 PORTVERSION=	0.63.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +24,7 @@ USE_PYTHON=	autoplist concurrent pep517
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	MFA OPENID SAML SOCIALACCOUNT STEAM
+OPTIONS_DEFAULT=OPENID SOCIALACCOUNT
 MFA_DESC=		Multi-Factor Authentication support
 OPENID_DESC=		OpenID authentication support
 SAML_DESC=		Security Assertion Markup Language support

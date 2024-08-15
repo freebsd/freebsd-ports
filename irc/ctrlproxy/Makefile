@@ -9,6 +9,9 @@ MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Flexible IRC proxy
 WWW=		https://www.samba.org/~jelmer/ctrlproxy/
 
+DEPRECATED=	Development stalled upstream, consider switching to irc/soju or irc/znc
+EXPIRATION_DATE=2024-08-31
+
 LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 USES=		compiler:c11 gmake gnome localbase:ldflags pathfix pkgconfig

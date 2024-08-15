@@ -5,10 +5,10 @@ share/bash-completion/completions/hyprctl
 share/bash-completion/completions/hyprpm
 share/fish/vendor_completions.d/hyprctl.fish
 share/fish/vendor_completions.d/hyprpm.fish
-%%DATADIR%%/hyprland.conf
-%%DATADIR%%/wall0.png
-%%DATADIR%%/wall1.png
-%%DATADIR%%/wall2.png
+share/hypr/hyprland.conf
+share/hypr/wall0.png
+share/hypr/wall1.png
+share/hypr/wall2.png
 share/man/man1/Hyprland.1.gz
 share/man/man1/hyprctl.1.gz
 share/pkgconfig/hyprland.pc

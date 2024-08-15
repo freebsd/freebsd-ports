@@ -1,6 +1,6 @@
 PORTNAME=	bacula
 DISTVERSION=	13.0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -48,7 +48,7 @@ OPTIONS_SUB=		yes
 
 .if !defined(WITH_CLIENT_ONLY)
 LIB_DEPENDS+=	libbac-${PORTVERSION}.so:sysutils/bacula13-client
-USE_RC_SUBR?=	bacula-dir bacula-sd
+USE_RC_SUBR?=	bacula_dir bacula_sd
 .endif
 
 .if defined(WITH_CLIENT_ONLY)

@@ -1,6 +1,5 @@
 PORTNAME=	juce
-DISTVERSION=	7.0.7
-PORTREVISION=	1
+DISTVERSION=	8.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,6 +16,7 @@ BROKEN_riscv64=	Hard-float 'd' ABI can't be used for a target that doesn't suppo
 BUILD_DEPENDS=	ladspa>0:audio/ladspa
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libcurl.so:ftp/curl \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libjavascriptcoregtk-4.0.so:www/webkit2-gtk3 \
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libsoup-2.4.so:devel/libsoup \
 		libsysinfo.so:devel/libsysinfo
 
-USES=		cmake compiler:c++11-lang dos2unix gl gnome localbase:ldflags pkgconfig xorg
+USES=		cmake compiler:c++17-lang dos2unix gl gnome localbase:ldflags pkgconfig xorg
 DOS2UNIX_FILES=	modules/juce_core/juce_core.h \
 		modules/juce_dsp/containers/juce_AudioBlock_test.cpp
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
@@ -36,6 +36,7 @@ GH_ACCOUNT=	juce-framework
 GH_PROJECT=	JUCE
 
 CMAKE_ON=	JUCE_BUILD_EXTRAS
+#CMAKE_ON+=	JUCE_BUILD_EXAMPLES
 
 CXXFLAGS+=	-I${LOCALBASE}/include/freetype2 -DJUCE_INCLUDE_PNGLIB_CODE=0
 LDFLAGS+=	-pthread -lfreetype -lpng16
@@ -66,7 +67,7 @@ DEMO_FILES=	\
 	PropertiesDemo SIMDRegisterDemo SimpleFFTDemo StateVariableFilterDemo SystemInfoDemo TimersAndEventsDemo UnitTestsDemo ValueTreesDemo WaveShaperTanhDemo WebBrowserDemo \
 	WidgetsDemo WindowsDemo XMLandJSONDemo
 DEMOS_PLIST_FILES=	${DEMO_FILES:S/^/bin\/${PORTNAME}-/}
-DEMOS_BROKEN=		pending merge of patches from https://github.com/juce-framework/JUCE/pull/881
+DEMOS_BROKEN=		build fails with JUCE_BUILD_EXAMPLES=ON, see https://github.com/juce-framework/JUCE/issues/1410
 
 post-patch:
 	# fix fonts.conf path
@@ -84,9 +85,8 @@ post-install:
 .for exe in AudioPerformanceTest AudioPluginHost BinaryBuilder NetworkGraphicsDemo Projucer UnitTestRunner
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/extras/${exe}/${exe}_artefacts/Release/${exe} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	# fix path and strip juceaide
-	cd ${STAGEDIR}${PREFIX} && ${MV} bin/JUCE-${PORTVERSION}/juceaide bin/
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/juceaide
+	# strip juceaide
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/JUCE-${PORTVERSION}/juceaide
 
 do-install-DEMOS-on:
 .for e in ${DEMO_FILES}

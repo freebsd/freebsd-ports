@@ -1,37 +1,26 @@
 PORTNAME=	libxml++
-PORTVERSION=	2.40.1
-PORTREVISION?=	2
+DISTVERSION=	2.42.3
 PORTEPOCH=	1
 CATEGORIES=	textproc
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME \
+		https://github.com/libxmlplusplus/libxmlplusplus/releases/download/${DISTVERSION}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	XML API for C++
-WWW=		https://libxmlplusplus.sourceforge.net/
+WWW=		https://libxmlplusplus.github.io/libxmlplusplus/
 
-USES+=		tar:xz compiler:c++11-lang
-USE_CXXSTD=	c++11
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"
-
-.if !defined(REFERENCE_PORT)
-
-USES+=		gmake libtool pathfix pkgconfig gnome
+USES=		compiler:c++11-lang meson gnome pkgconfig tar:xz
 USE_GNOME=	glibmm libxml2
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-static --disable-documentation
-INSTALL_TARGET=	install-strip
-BINARY_WRAPPERS=	gm4
 
-post-patch:
-	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples//' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '/^library_configdir =/s/libdir/includedir/' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '/^Cflags:/s/libdir/includedir/' \
-		${WRKSRC}/libxml++-2.6.pc.in
+PLIST_SUB=	VERSION="2.6" \
+		API_VERSION="2.6"
+
+MESON_ARGS=	-Ddefault_library=both \
+		-Dbuild-examples=false \
+		-Dbuild-manual=false
 
 .include <bsd.port.mk>
-
-.endif

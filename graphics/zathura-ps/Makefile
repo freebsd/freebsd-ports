@@ -1,6 +1,5 @@
 PORTNAME=	zathura-ps
-DISTVERSION=	0.2.7
-PORTREVISION=	6
+DISTVERSION=	0.2.8
 CATEGORIES=	graphics
 MASTER_SITES=	https://pwmt.org/projects/zathura-ps/download/
 
@@ -11,7 +10,8 @@ WWW=		https://pwmt.org/projects/zathura-ps/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zathura:graphics/zathura
+BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
+		zathura:graphics/zathura
 LIB_DEPENDS=	libgirara-gtk3.so:x11-toolkits/girara \
 		libspectre.so:print/libspectre
 RUN_DEPENDS=	zathura:graphics/zathura

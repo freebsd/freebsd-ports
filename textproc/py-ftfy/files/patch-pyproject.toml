@@ -1,9 +1,9 @@
---- pyproject.toml.orig	2024-03-15 22:38:03 UTC
+--- pyproject.toml.orig	2024-08-06 01:05:34 UTC
 +++ pyproject.toml
-@@ -9,7 +9,7 @@ python = ">=3.8,<4"
+@@ -13,7 +13,7 @@ python = ">=3.8.1,<4"
  
  [tool.poetry.dependencies]
- python = ">=3.8,<4"
+ python = ">=3.8.1,<4"
 -wcwidth = "^0.2.12"
 +wcwidth = "^0.2.8"
  

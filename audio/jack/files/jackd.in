@@ -9,8 +9,7 @@
 #
 
 : ${jackd_enable="NO"}
-: ${jackd_user="root"}
-: ${jackd_rtprio="NO"}
+: ${jackd_user=""}
 : ${jackd_args="--no-realtime -doss -r48000 -p1024 -w32"}
 
 . /etc/rc.subr
@@ -32,8 +31,7 @@ check_config() {
   fi
 
   # detect intent to use realtime priority
-  if [ "$jackd_rtprio" = "YES" ] || \
-     { echo "$jackd_args" | grep -q -- "oss" && \
+  if { echo "$jackd_args" | grep -q -- "oss" && \
        { echo "$jackd_args" | grep -qw -- "--realtime"  || \
          echo "$jackd_args" | grep -qw -- "-[A-Za-mo-z]*R[A-Za-z]*"; }; }; then
     # check that mac_priority(4) is enabled

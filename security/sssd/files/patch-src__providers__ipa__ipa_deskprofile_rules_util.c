@@ -1,6 +1,4 @@
-diff --git src/providers/ipa/ipa_deskprofile_rules_util.c src/providers/ipa/ipa_deskprofile_rules_util.c
-index 991c6053d..59483b452 100644
---- src/providers/ipa/ipa_deskprofile_rules_util.c
+--- src/providers/ipa/ipa_deskprofile_rules_util.c.orig	2020-03-17 13:31:28 UTC
 +++ src/providers/ipa/ipa_deskprofile_rules_util.c
 @@ -25,6 +25,8 @@
  #include "providers/ipa/ipa_rules_common.h"

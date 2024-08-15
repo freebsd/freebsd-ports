@@ -9,10 +9,9 @@ include/ndpi/ndpi_includes_OpenBSD.h
 include/ndpi/ndpi_main.h
 include/ndpi/ndpi_patricia_typedefs.h
 include/ndpi/ndpi_protocol_ids.h
-include/ndpi/ndpi_protocols.h
+include/ndpi/ndpi_replace_printf.h
 include/ndpi/ndpi_typedefs.h
 include/ndpi/ndpi_unix.h
-include/ndpi/ndpi_utils.h
 include/ndpi/ndpi_win32.h
 lib/libndpi.a
 lib/libndpi.so

@@ -1,14 +1,16 @@
 include/hyprutils/math/Box.hpp
+include/hyprutils/math/Edges.hpp
 include/hyprutils/math/Misc.hpp
 include/hyprutils/math/Region.hpp
 include/hyprutils/math/Vector2D.hpp
 include/hyprutils/memory/SharedPtr.hpp
 include/hyprutils/memory/WeakPtr.hpp
+include/hyprutils/path/Path.hpp
 include/hyprutils/signal/Listener.hpp
 include/hyprutils/signal/Signal.hpp
 include/hyprutils/string/String.hpp
 include/hyprutils/string/VarList.hpp
 lib/libhyprutils.so
-lib/libhyprutils.so.0
+lib/libhyprutils.so.1
 lib/libhyprutils.so.%%VERSION%%
 libdata/pkgconfig/hyprutils.pc

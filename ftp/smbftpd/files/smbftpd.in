@@ -23,6 +23,7 @@ pidfile=/var/run/smbftpd.pid
 procname=%%PREFIX%%/sbin/smbftpd
 
 smbftpd_enable=${smbftpd_enable:-"NO"}
+: ${smbftpd_svcj_options:="net_basic"}
 command_args="-D -s ${smbftpd_config}"
 
 run_rc_command "$1"

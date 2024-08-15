@@ -1,6 +1,6 @@
---- configure.orig	2023-02-27 20:43:45 UTC
+--- configure.orig	2024-08-01 23:22:54 UTC
 +++ configure
-@@ -3888,13 +3888,7 @@ target_os_default=$(tolower $(uname -s))
+@@ -3956,13 +3956,7 @@ host_os=$target_os_default
  host_os=$target_os_default
  
  # machine
@@ -15,7 +15,7 @@
  cpu="generic"
  intrinsics="none"
  
-@@ -6705,10 +6699,10 @@ enabled libglslang && { check_lib spirv_compiler glsla
+@@ -6715,10 +6709,10 @@ enabled libglslang && { check_lib spirv_compiler glsla
  enabled libfribidi        && require_pkg_config libfribidi fribidi fribidi.h fribidi_version_info
  enabled libharfbuzz       && require_pkg_config libharfbuzz harfbuzz hb.h hb_buffer_create
  enabled libglslang && { check_lib spirv_compiler glslang/Include/glslang_c_interface.h glslang_initialize_process \
@@ -28,12 +28,3 @@
                              -lSPVRemapper -lSPIRV -lSPIRV-Tools-opt -lSPIRV-Tools -lpthread -lstdc++ -lm; }
  enabled libgme            && { check_pkg_config libgme libgme gme/gme.h gme_new_emu ||
                                 require libgme gme/gme.h gme_new_emu -lgme -lstdc++; }
-@@ -7018,7 +7013,7 @@ fi
- 
- if enabled x86; then
-     case $target_os in
--        mingw32*|mingw64*|win32|win64|linux|cygwin*)
-+        freebsd|mingw32*|mingw64*|win32|win64|linux|cygwin*)
-             ;;
-         *)
-             disable ffnvcodec cuvid nvdec nvenc

@@ -1,6 +1,6 @@
---- app/streaming/video/ffmpeg-renderers/drm.cpp.orig	2023-10-18 05:45:10 UTC
+--- app/streaming/video/ffmpeg-renderers/drm.cpp.orig	2024-06-06 03:42:28 UTC
 +++ app/streaming/video/ffmpeg-renderers/drm.cpp
-@@ -10,7 +10,24 @@ extern "C" {
+@@ -11,7 +11,24 @@ extern "C" {
  }
  
  #include <libdrm/drm_fourcc.h>
@@ -22,6 +22,6 @@
 +#define DMA_BUF_BASE		'b'
 +#define DMA_BUF_IOCTL_SYNC	_IOW(DMA_BUF_BASE, 0, struct dma_buf_sync)
 +#endif
- #include <sys/ioctl.h>
  
  // Special Rockchip type
+ #ifndef DRM_FORMAT_NA12

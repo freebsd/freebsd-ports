@@ -1,11 +1,11 @@
---- src/CMakeLists.txt.orig	2023-12-14 19:44:41 UTC
+--- src/CMakeLists.txt.orig	2024-07-27 09:22:01 UTC
 +++ src/CMakeLists.txt
-@@ -475,7 +475,7 @@ if(USE_OPENJPEG)
+@@ -489,7 +489,7 @@ if(USE_OPENJPEG)
+   if(OpenJPEG_FOUND)
      add_definitions("-DHAVE_OPENJPEG")
      list(APPEND SOURCES "imageio/imageio_j2k.c")
- 
--    include_directories(SYSTEM ${OpenJPEG_INCLUDE_DIRS})
-+    include_directories(BEFORE SYSTEM ${OpenJPEG_INCLUDE_DIRS})
-     list(APPEND LIBS ${OpenJPEG_LIBRARIES})
+-    include_directories(SYSTEM ${OPENJPEG_INCLUDE_DIRS})
++    include_directories(BEFORE SYSTEM ${OPENJPEG_INCLUDE_DIRS})
+     list(APPEND LIBS ${OPENJPEG_LIBRARIES})
      set(DT_SUPPORTED_EXTENSIONS ${DT_SUPPORTED_EXTENSIONS} j2c j2k jp2 jpc CACHE INTERNAL "")
    endif(OpenJPEG_FOUND)

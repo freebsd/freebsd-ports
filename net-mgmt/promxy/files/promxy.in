@@ -1,0 +1,77 @@
+#!/bin/sh
+
+# PROVIDE: promxy
+# REQUIRE: NETWORKING SERVERS DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf or /etc/rc.conf.local
+# to enable this service:
+#
+# promxy_enable:			Enable Promxy
+#					Default: NO
+# promxy_user:				Username to run Promxy
+#					Default: %%USERS%%
+# promxy_config:			Configuration file to run Promxy
+#					Default: %%ETCDIR%%/config.yaml
+# promxy_pidfile:			Full path of the Promxy process PID file
+#					Default: /var/run/promxy.pid
+# promxy_remediate_enable:		Enable auto-restart if Promxy's been terminated
+#					Default: NO
+# promxy_remediate_delay:		Auto-restart delay if auto-restart enabled
+#					Default: 5
+# promxy_syslog_output_enable:		Enable syslog output.
+#					Default: YES
+# promxy_syslog_output_tag:		Syslog tag if syslog output enabled.
+#					Default: promxy
+# promxy_syslog_output_priority:	Syslog priority if syslog output enabled.
+#					Default: info
+# promxy_syslog_output_facility:	Syslog facility if syslog output enabled.
+#					Default: daemon
+
+. /etc/rc.subr
+
+name=promxy
+rcvar=promxy_enable
+
+load_rc_config "${name}"
+
+: ${promxy_enable:="NO"}
+: ${promxy_user:="%%USERS%%"}
+: ${promxy_config:="%%ETCDIR%%/config.yaml"}
+: ${promxy_pidfile:=/var/run/promxy.pid}
+: ${promxy_remediate_enable:="NO"}
+: ${promxy_remediate_delay="5"}
+: ${promxy_syslog_output_enable:="YES"}
+: ${promxy_syslog_output_tag:="${name}"}
+: ${promxy_syslog_output_priority:="info"}
+: ${promxy_syslog_output_facility:="daemon"}
+
+if checkyesno promxy_syslog_output_enable; then
+	if [ -n "${promxy_syslog_output_tag}" ]; then
+		promxy_syslog_output_flags="-T ${promxy_syslog_output_tag}"
+	fi
+	if [ -n "${promxy_syslog_output_priority}" ]; then
+		promxy_syslog_output_flags="${promxy_syslog_output_flags} -s ${promxy_syslog_output_priority}"
+	fi
+	if [ -n "${promxy_syslog_output_facility}" ]; then
+		promxy_syslog_output_flags="${promxy_syslog_output_flags} -l ${promxy_syslog_output_facility}"
+	fi
+fi
+
+if checkyesno promxy_remediate_enable; then
+	if [ -n "${promxy_remediate_delay}" ]; then
+		promxy_remediate_flags="-R ${promxy_remediate_delay}"
+	fi
+fi
+
+pidfile="${promxy_pidfile}"
+required_files="${promxy_config}"
+
+promxy_bin="%%PREFIX%%/bin/promxy"
+command="/usr/sbin/daemon"
+command_args="-u ${promxy_user} ${promxy_remediate_flags} -f ${promxy_syslog_output_flags} -P ${pidfile} ${promxy_bin} --config=${promxy_config}"
+
+# Run daemon(8) as root
+unset promxy_user
+
+run_rc_command "$1"

@@ -17,6 +17,7 @@
 %%SITE_PERL%%/Sisimai/Lhost/Biglobe.pm
 %%SITE_PERL%%/Sisimai/Lhost/Courier.pm
 %%SITE_PERL%%/Sisimai/Lhost/Domino.pm
+%%SITE_PERL%%/Sisimai/Lhost/DragonFly.pm
 %%SITE_PERL%%/Sisimai/Lhost/EZweb.pm
 %%SITE_PERL%%/Sisimai/Lhost/EinsUndEins.pm
 %%SITE_PERL%%/Sisimai/Lhost/Exchange2003.pm
@@ -111,6 +112,7 @@
 %%SITE_PERL%%/Sisimai/Reason/Vacation.pm
 %%SITE_PERL%%/Sisimai/Reason/VirusDetected.pm
 %%SITE_PERL%%/Sisimai/Rhost.pm
+%%SITE_PERL%%/Sisimai/Rhost/Apple.pm
 %%SITE_PERL%%/Sisimai/Rhost/Cox.pm
 %%SITE_PERL%%/Sisimai/Rhost/FrancePTT.pm
 %%SITE_PERL%%/Sisimai/Rhost/GoDaddy.pm
@@ -122,6 +124,7 @@
 %%SITE_PERL%%/Sisimai/Rhost/NTTDOCOMO.pm
 %%SITE_PERL%%/Sisimai/Rhost/Spectrum.pm
 %%SITE_PERL%%/Sisimai/Rhost/Tencent.pm
+%%SITE_PERL%%/Sisimai/Rhost/YahooInc.pm
 %%SITE_PERL%%/Sisimai/SMTP.pm
 %%SITE_PERL%%/Sisimai/SMTP/Command.pm
 %%SITE_PERL%%/Sisimai/SMTP/Error.pm
@@ -149,6 +152,7 @@
 %%PERL5_MAN3%%/Sisimai::Lhost::Biglobe.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::Courier.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::Domino.3.gz
+%%PERL5_MAN3%%/Sisimai::Lhost::DragonFly.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::EZweb.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::EinsUndEins.3.gz
 %%PERL5_MAN3%%/Sisimai::Lhost::Exchange2003.3.gz
@@ -243,6 +247,7 @@
 %%PERL5_MAN3%%/Sisimai::Reason::Vacation.3.gz
 %%PERL5_MAN3%%/Sisimai::Reason::VirusDetected.3.gz
 %%PERL5_MAN3%%/Sisimai::Rhost.3.gz
+%%PERL5_MAN3%%/Sisimai::Rhost::Apple.3.gz
 %%PERL5_MAN3%%/Sisimai::Rhost::Cox.3.gz
 %%PERL5_MAN3%%/Sisimai::Rhost::FrancePTT.3.gz
 %%PERL5_MAN3%%/Sisimai::Rhost::GoDaddy.3.gz
@@ -254,6 +259,7 @@
 %%PERL5_MAN3%%/Sisimai::Rhost::NTTDOCOMO.3.gz
 %%PERL5_MAN3%%/Sisimai::Rhost::Spectrum.3.gz
 %%PERL5_MAN3%%/Sisimai::Rhost::Tencent.3.gz
+%%PERL5_MAN3%%/Sisimai::Rhost::YahooInc.3.gz
 %%PERL5_MAN3%%/Sisimai::SMTP.3.gz
 %%PERL5_MAN3%%/Sisimai::SMTP::Command.3.gz
 %%PERL5_MAN3%%/Sisimai::SMTP::Error.3.gz

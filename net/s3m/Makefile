@@ -1,6 +1,5 @@
 PORTNAME=	s3m
-PORTVERSION=	0.9.4
-PORTREVISION=	1
+DISTVERSION=	0.10.0
 CATEGORIES=	net
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -12,263 +11,28 @@ WWW=		https://s3m.stream
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	needs SSE or SSE2 type extensions to compile
+
 LIB_DEPENDS=	libzstd.so:archivers/zstd
-USES=		cargo localbase ssl
-CARGO_CRATES=	addr2line-0.21.0 \
-		adler-1.0.2 \
-		aho-corasick-1.1.3 \
-		android-tzdata-0.1.1 \
-		android_system_properties-0.1.5 \
-		anes-0.1.6 \
-		anstream-0.6.14 \
-		anstyle-1.0.7 \
-		anstyle-parse-0.2.4 \
-		anstyle-query-1.0.3 \
-		anstyle-wincon-3.0.3 \
-		anyhow-1.0.83 \
-		arrayref-0.3.7 \
-		arrayvec-0.7.4 \
-		autocfg-1.3.0 \
-		backtrace-0.3.71 \
-		base64-0.22.1 \
-		base64ct-1.6.0 \
-		bincode-1.3.3 \
-		bitflags-1.3.2 \
-		bitflags-2.5.0 \
-		blake3-1.5.1 \
-		bumpalo-3.16.0 \
-		byteorder-1.5.0 \
-		bytes-1.6.0 \
-		bytesize-1.3.0 \
-		cast-0.3.0 \
-		cc-1.0.97 \
-		cfg-if-1.0.0 \
-		chrono-0.4.38 \
-		ciborium-0.2.2 \
-		ciborium-io-0.2.2 \
-		ciborium-ll-0.2.2 \
-		clap-4.5.4 \
-		clap_builder-4.5.2 \
-		clap_lex-0.7.0 \
-		colorchoice-1.0.1 \
-		colored-2.1.0 \
-		console-0.15.8 \
-		constant_time_eq-0.3.0 \
-		core-foundation-0.9.4 \
-		core-foundation-sys-0.8.6 \
-		crc32c-0.6.5 \
-		crc32fast-1.4.0 \
-		criterion-0.5.1 \
-		criterion-plot-0.5.0 \
-		crossbeam-0.8.4 \
-		crossbeam-channel-0.5.12 \
-		crossbeam-deque-0.8.5 \
-		crossbeam-epoch-0.9.18 \
-		crossbeam-queue-0.3.11 \
-		crossbeam-utils-0.8.19 \
-		crunchy-0.2.2 \
-		dirs-5.0.1 \
-		dirs-sys-0.4.1 \
-		either-1.11.0 \
-		encode_unicode-0.3.6 \
-		encoding_rs-0.8.34 \
-		env_filter-0.1.0 \
-		env_logger-0.11.3 \
-		equivalent-1.0.1 \
-		errno-0.3.9 \
-		fastrand-2.1.0 \
-		fnv-1.0.7 \
-		foreign-types-0.3.2 \
-		foreign-types-shared-0.1.1 \
-		form_urlencoded-1.2.1 \
-		fs2-0.4.3 \
-		futures-0.3.30 \
-		futures-channel-0.3.30 \
-		futures-core-0.3.30 \
-		futures-executor-0.3.30 \
-		futures-io-0.3.30 \
-		futures-macro-0.3.30 \
-		futures-sink-0.3.30 \
-		futures-task-0.3.30 \
-		futures-util-0.3.30 \
-		fxhash-0.2.1 \
-		getrandom-0.2.15 \
-		gimli-0.28.1 \
-		h2-0.4.4 \
-		half-2.4.1 \
-		hashbrown-0.14.5 \
-		hermit-abi-0.3.9 \
-		http-1.1.0 \
-		http-body-1.0.0 \
-		http-body-util-0.1.1 \
-		httparse-1.8.0 \
-		humantime-2.1.0 \
-		hyper-1.3.1 \
-		hyper-tls-0.6.0 \
-		hyper-util-0.1.3 \
-		iana-time-zone-0.1.60 \
-		iana-time-zone-haiku-0.1.2 \
-		idna-0.5.0 \
-		indexmap-2.2.6 \
-		indicatif-0.17.8 \
-		instant-0.1.12 \
-		ipnet-2.9.0 \
-		is-terminal-0.4.12 \
-		is_terminal_polyfill-1.70.0 \
-		itertools-0.10.5 \
-		itoa-1.0.11 \
-		jobserver-0.1.31 \
-		js-sys-0.3.69 \
-		lazy_static-1.4.0 \
-		libc-0.2.154 \
-		libredox-0.1.3 \
-		linux-raw-sys-0.4.13 \
-		lock_api-0.4.12 \
-		log-0.4.21 \
-		md5-0.7.0 \
-		memchr-2.7.2 \
-		mime-0.3.17 \
-		miniz_oxide-0.7.2 \
-		mio-0.8.11 \
-		native-tls-0.2.11 \
-		num-traits-0.2.19 \
-		num_cpus-1.16.0 \
-		number_prefix-0.4.0 \
-		object-0.32.2 \
-		once_cell-1.19.0 \
-		oorandom-11.1.3 \
-		openssl-0.10.64 \
-		openssl-macros-0.1.1 \
-		openssl-probe-0.1.5 \
-		openssl-src-300.2.3+3.2.1 \
-		openssl-sys-0.9.102 \
-		option-ext-0.2.0 \
-		parking_lot-0.11.2 \
-		parking_lot-0.12.2 \
-		parking_lot_core-0.8.6 \
-		parking_lot_core-0.9.10 \
-		percent-encoding-2.3.1 \
-		pin-project-1.1.5 \
-		pin-project-internal-1.1.5 \
-		pin-project-lite-0.2.14 \
-		pin-utils-0.1.0 \
-		pkg-config-0.3.30 \
-		plotters-0.3.5 \
-		plotters-backend-0.3.5 \
-		plotters-svg-0.3.5 \
-		portable-atomic-1.6.0 \
-		proc-macro2-1.0.82 \
-		quote-1.0.36 \
-		rayon-1.10.0 \
-		rayon-core-1.12.1 \
-		redox_syscall-0.2.16 \
-		redox_syscall-0.5.1 \
-		redox_users-0.4.5 \
-		regex-1.10.4 \
-		regex-automata-0.4.6 \
-		regex-syntax-0.8.3 \
-		reqwest-0.12.4 \
-		ring-0.17.8 \
-		rustc-demangle-0.1.24 \
-		rustc_version-0.4.0 \
-		rustix-0.38.34 \
-		rustls-pemfile-2.1.2 \
-		rustls-pki-types-1.7.0 \
-		ryu-1.0.18 \
-		same-file-1.0.6 \
-		schannel-0.1.23 \
-		scopeguard-1.2.0 \
-		secrecy-0.8.0 \
-		security-framework-2.11.0 \
-		security-framework-sys-2.11.0 \
-		semver-1.0.23 \
-		serde-1.0.201 \
-		serde-xml-rs-0.6.0 \
-		serde_derive-1.0.201 \
-		serde_json-1.0.117 \
-		serde_urlencoded-0.7.1 \
-		serde_yaml-0.9.34+deprecated \
-		signal-hook-registry-1.4.2 \
-		slab-0.4.9 \
-		sled-0.34.7 \
-		smallvec-1.13.2 \
-		socket2-0.5.7 \
-		spin-0.9.8 \
-		strsim-0.11.1 \
-		syn-2.0.63 \
-		sync_wrapper-0.1.2 \
-		system-configuration-0.5.1 \
-		system-configuration-sys-0.5.0 \
-		temp-env-0.3.6 \
-		tempfile-3.10.1 \
-		thiserror-1.0.60 \
-		thiserror-impl-1.0.60 \
-		tinytemplate-1.2.1 \
-		tinyvec-1.6.0 \
-		tinyvec_macros-0.1.1 \
-		tokio-1.37.0 \
-		tokio-macros-2.2.0 \
-		tokio-native-tls-0.3.1 \
-		tokio-stream-0.1.15 \
-		tokio-util-0.7.11 \
-		tower-0.4.13 \
-		tower-layer-0.3.2 \
-		tower-service-0.3.2 \
-		tracing-0.1.40 \
-		tracing-core-0.1.32 \
-		try-lock-0.2.5 \
-		unicode-bidi-0.3.15 \
-		unicode-ident-1.0.12 \
-		unicode-normalization-0.1.23 \
-		unicode-width-0.1.12 \
-		unsafe-libyaml-0.2.11 \
-		untrusted-0.9.0 \
-		url-2.5.0 \
-		utf8parse-0.2.1 \
-		vcpkg-0.2.15 \
-		walkdir-2.5.0 \
-		want-0.3.1 \
-		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.92 \
-		wasm-bindgen-backend-0.2.92 \
-		wasm-bindgen-futures-0.4.42 \
-		wasm-bindgen-macro-0.2.92 \
-		wasm-bindgen-macro-support-0.2.92 \
-		wasm-bindgen-shared-0.2.92 \
-		wasm-streams-0.4.0 \
-		web-sys-0.3.69 \
-		winapi-0.3.9 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.8 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-core-0.52.0 \
-		windows-sys-0.48.0 \
-		windows-sys-0.52.0 \
-		windows-targets-0.48.5 \
-		windows-targets-0.52.5 \
-		windows_aarch64_gnullvm-0.48.5 \
-		windows_aarch64_gnullvm-0.52.5 \
-		windows_aarch64_msvc-0.48.5 \
-		windows_aarch64_msvc-0.52.5 \
-		windows_i686_gnu-0.48.5 \
-		windows_i686_gnu-0.52.5 \
-		windows_i686_gnullvm-0.52.5 \
-		windows_i686_msvc-0.48.5 \
-		windows_i686_msvc-0.52.5 \
-		windows_x86_64_gnu-0.48.5 \
-		windows_x86_64_gnu-0.52.5 \
-		windows_x86_64_gnullvm-0.48.5 \
-		windows_x86_64_gnullvm-0.52.5 \
-		windows_x86_64_msvc-0.48.5 \
-		windows_x86_64_msvc-0.52.5 \
-		winreg-0.52.0 \
-		xml-rs-0.8.20 \
-		zeroize-1.7.0 \
-		zstd-0.13.1 \
-		zstd-safe-7.1.0 \
-		zstd-sys-2.0.10+zstd.1.5.6
+
+USES=		cargo ssl
+USE_GITHUB=	yes
+GH_ACCOUNT=	s3m
+
+PORTSCOUT=	limit:[0-9.]+
 
 PLIST_FILES=	bin/s3m
+
+do-build:
+	(cd ${WRKSRC} && \
+		cargo build --release)
+	(cd ${WRKSRC} && \
+		env HOME=${WRKDIR} cargo install --path . --force --locked)
+
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/bin/
+	${MV} ${WRKSRC}/target/release/s3m \
+		${STAGEDIR}${PREFIX}/bin/
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/s3m

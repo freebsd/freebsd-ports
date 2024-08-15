@@ -1,21 +1,66 @@
---- aider/scrape.py.orig	2024-06-17 03:58:03 UTC
+--- aider/scrape.py.orig	2024-07-27 19:09:04 UTC
 +++ aider/scrape.py
-@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
- import playwright
- import pypandoc
- from bs4 import BeautifulSoup
--from playwright.sync_api import sync_playwright
+@@ -15,56 +15,9 @@ def install_playwright(io):
  
- from aider import __version__, urls
- from aider.dump import dump  # noqa: F401
-@@ -44,14 +43,11 @@ class Scraper:
-         """
-         Scrape a url and turn it into readable markdown.
  
--        `url` - the URLto scrape.
-+        `url` - the URL to scrape.
+ def install_playwright(io):
+-    try:
+-        from playwright.sync_api import sync_playwright
++   return
+ 
+-        has_pip = True
+-    except ImportError:
+-        has_pip = False
+ 
+-    try:
+-        with sync_playwright() as p:
+-            p.chromium.launch()
+-            has_chromium = True
+-    except Exception:
+-        has_chromium = False
+-
+-    if has_pip and has_chromium:
+-        return True
+-
+-    pip_cmd = utils.get_pip_install(["aider-chat[playwright]"])
+-    chromium_cmd = "playwright install --with-deps chromium".split()
+-
+-    cmds = ""
+-    if not has_pip:
+-        cmds += " ".join(pip_cmd) + "\n"
+-    if not has_chromium:
+-        cmds += " ".join(chromium_cmd) + "\n"
+-
+-    text = f"""For the best web scraping, install Playwright:
+-
+-{cmds}
+-See {urls.enable_playwright} for more info.
+-"""
+-
+-    io.tool_error(text)
+-    if not io.confirm_ask("Install playwright?", default="y"):
+-        return
+-
+-    if not has_pip:
+-        success, output = utils.run_install(pip_cmd)
+-        if not success:
+-            io.tool_error(output)
+-            return
+-
+-    success, output = utils.run_install(chromium_cmd)
+-    if not success:
+-        io.tool_error(output)
+-        return
+-
+-    return True
+-
+-
+ class Scraper:
+     pandoc_available = None
+     playwright_available = None
+@@ -89,10 +42,7 @@ class Scraper:
+         `url` - the URLto scrape.
          """
-         self.try_playwright()
  
 -        if self.playwright_available:
 -            content = self.scrape_with_playwright(url)
@@ -25,55 +70,3 @@
  
          if not content:
              return
-@@ -64,51 +60,6 @@ class Scraper:
-         return content
- 
-     # Internals...
--    def scrape_with_playwright(self, url):
--        with sync_playwright() as p:
--            try:
--                browser = p.chromium.launch()
--            except Exception as e:
--                self.playwright_available = False
--                self.print_error(e)
--                return
--
--            page = browser.new_page()
--
--            user_agent = page.evaluate("navigator.userAgent")
--            user_agent = user_agent.replace("Headless", "")
--            user_agent = user_agent.replace("headless", "")
--            user_agent += " " + aider_user_agent
--
--            page = browser.new_page(user_agent=user_agent)
--            try:
--                page.goto(url, wait_until="networkidle", timeout=5000)
--            except playwright._impl._errors.TimeoutError:
--                pass
--            content = page.content()
--            browser.close()
--
--        return content
--
--    def try_playwright(self):
--        if self.playwright_available is not None:
--            return
--
--        with sync_playwright() as p:
--            try:
--                p.chromium.launch()
--                self.playwright_available = True
--            except Exception:
--                self.playwright_available = False
--
--    def get_playwright_instructions(self):
--        if self.playwright_available in (True, None):
--            return
--        if self.playwright_instructions_shown:
--            return
--
--        self.playwright_instructions_shown = True
--        return PLAYWRIGHT_INFO
- 
-     def scrape_with_httpx(self, url):
-         headers = {"User-Agent": f"Mozilla./5.0 ({aider_user_agent})"}

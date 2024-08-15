@@ -12,7 +12,6 @@
 %%SITE_PERL%%/Geo/GDAL/FFI/SpatialReference.pm
 %%SITE_PERL%%/Geo/GDAL/FFI/VSI.pm
 %%SITE_PERL%%/Geo/GDAL/FFI/VSI/File.pm
-%%SITE_PERL%%/Geo/GDAL/gdal.pm
 %%PERL5_MAN3%%/Geo::GDAL::FFI.3.gz
 %%PERL5_MAN3%%/Geo::GDAL::FFI::Band.3.gz
 %%PERL5_MAN3%%/Geo::GDAL::FFI::Dataset.3.gz

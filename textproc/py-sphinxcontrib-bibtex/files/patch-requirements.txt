@@ -1,9 +1,0 @@
---- requirements.txt.orig	2023-08-24 19:40:27 UTC
-+++ requirements.txt
-@@ -1,5 +1,5 @@
- Sphinx>=3.5
--docutils>=0.8,!=0.18.*,!=0.19.*
-+docutils>=0.8,!=0.18.*
- pybtex>=0.24
- pybtex-docutils>=1.0.0
- dataclasses; python_version < '3.7'

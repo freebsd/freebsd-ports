@@ -117,9 +117,17 @@
 %%PORTDOCS%%%%DOCSDIR%%/build/changelog/unreleased_13/6589.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/changelog/unreleased_13/7115.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/changelog/unreleased_13/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/build/changelog/unreleased_14/11417.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/changelog/unreleased_14/11471.rst
+%%PORTDOCS%%%%DOCSDIR%%/build/changelog/unreleased_14/11499.rst
+%%PORTDOCS%%%%DOCSDIR%%/build/changelog/unreleased_14/11514.rst
+%%PORTDOCS%%%%DOCSDIR%%/build/changelog/unreleased_14/11544.rst
+%%PORTDOCS%%%%DOCSDIR%%/build/changelog/unreleased_14/11562.rst
+%%PORTDOCS%%%%DOCSDIR%%/build/changelog/unreleased_14/11582.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/changelog/unreleased_14/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/build/changelog/unreleased_14/greenlet_compat.rst
+%%PORTDOCS%%%%DOCSDIR%%/build/changelog/unreleased_14/mypy1110.rst
+%%PORTDOCS%%%%DOCSDIR%%/build/changelog/unreleased_20/11557.txt
 %%PORTDOCS%%%%DOCSDIR%%/build/changelog/unreleased_20/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/build/changelog/whatsnew_20.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/conf.py

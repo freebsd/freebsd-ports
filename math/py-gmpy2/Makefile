@@ -1,6 +1,5 @@
 PORTNAME=	gmpy2
-DISTVERSION=	2.1.5
-PORTREVISION=	1
+DISTVERSION=	2.2.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,14 +16,12 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
 
 USES=		localbase python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/test
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/gmpy2/gmpy2*.so
-
-do-test: # pytest isn't currently supported, see https://github.com/aleaxit/gmpy/issues/403#issuecomment-1484584428
-	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} test/runtests.py
 
 .include <bsd.port.mk>

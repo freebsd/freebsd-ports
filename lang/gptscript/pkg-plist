@@ -10,6 +10,13 @@ bin/gptscript
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo.gpt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fac.gpt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/git-commit.gpt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gptreview-ghaction/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gptreview-ghaction/codereview.gpt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gptreview-ghaction/workflow.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gptreview-jenkins/Jenkinsfile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gptreview-jenkins/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gptreview-jenkins/codereview.gpt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gptreview.gpt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hacker-news-headlines.gpt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hamlet-summarizer/.gitignore
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hamlet-summarizer/Hamlet.pdf

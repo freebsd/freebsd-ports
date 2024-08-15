@@ -1,7 +1,7 @@
 PORTNAME=		go-yq
 DISTVERSIONPREFIX=	v
-DISTVERSION=		4.44.1
-PORTREVISION=	2
+DISTVERSION=		4.44.2
+PORTREVISION=	1
 CATEGORIES=		textproc
 
 MAINTAINER=	timp87@gmail.com
@@ -10,12 +10,12 @@ WWW=		https://github.com/mikefarah/yq
 
 LICENSE=	MIT
 
-USES=		go:modules
+USES=		go:1.21,modules
 GO_MODULE=	github.com/mikefarah/yq/v4
 GO_TARGET=	.:yq
 
 CONFLICTS_INSTALL=	yq
 
-PLIST_FILES=		bin/yq
+PLIST_FILES=	bin/yq
 
 .include <bsd.port.mk>

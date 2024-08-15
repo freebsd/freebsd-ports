@@ -9,5 +9,3 @@ Bison is upward compatible with Yacc: all properly-written Yacc grammars ought
 to work with Bison with no change. Anyone familiar with Yacc should be able to
 use Bison with little trouble. You need to be fluent in C or C++ programming in
 order to use Bison. Java is also supported as an experimental feature.
-
-See also: https://www.gnu.org/software/bison/

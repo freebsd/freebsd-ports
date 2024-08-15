@@ -1,7 +1,5 @@
 PORTNAME=	digikam
-DISTVERSION=	8.3.0
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-1
+DISTVERSION=	8.4.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION} \
 		https://files.kde.org/digikam/%SUBDIR%/:aesthetic,autotags,face,shape \
@@ -29,6 +27,7 @@ LIB_DEPENDS=	libKF5Sane.so:graphics/libksane \
 		libexpat.so:textproc/expat2 \
 		libgphoto2.so:graphics/libgphoto2 \
 		libjasper.so:graphics/jasper \
+		libjxl.so:graphics/libjxl \
 		liblcms2.so:graphics/lcms2 \
 		liblensfun.so:graphics/lensfun \
 		libopencv_core.so:graphics/opencv \

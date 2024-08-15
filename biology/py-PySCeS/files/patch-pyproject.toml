@@ -1,11 +1,11 @@
---- pyproject.toml.orig	2024-04-05 22:51:04 UTC
+--- pyproject.toml.orig	2024-08-02 13:17:23 UTC
 +++ pyproject.toml
 @@ -3,8 +3,7 @@ requires = [
  requires = [
    'meson-python',
    'meson>=1.2.3',
 -	'ninja',
--	'numpy>=1.26.0,<1.27',
+-	'numpy>=2.0.0',
 +	'numpy',
  ]
  

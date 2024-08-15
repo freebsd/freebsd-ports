@@ -13,6 +13,9 @@ WWW=		https://pypi.org/project/borgbackup/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	No longer supported upstream, use borgbackup 1.2 (oldstable) or 1.4 (stable) instead.
+EXPIRATION_DATE=2024-09-30
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=1.7:devel/py-setuptools-scm@${PY_FLAVOR}
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd \

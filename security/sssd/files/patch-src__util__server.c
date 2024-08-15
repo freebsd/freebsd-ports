@@ -1,6 +1,4 @@
-diff --git src/util/server.c src/util/server.c
-index f34bf49f6..7cb3864af 100644
---- src/util/server.c
+--- src/util/server.c.orig	2020-03-17 13:31:28 UTC
 +++ src/util/server.c
 @@ -311,10 +311,13 @@ static void setup_signals(void)
      BlockSignals(false, SIGTERM);

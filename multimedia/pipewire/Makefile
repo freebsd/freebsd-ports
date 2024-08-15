@@ -1,6 +1,6 @@
 PORTNAME=	pipewire
-DISTVERSION=	1.0.4
-PORTREVISION=	3
+DISTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -84,7 +84,10 @@ MESON_ARGS=	-D pw-cat=enabled \
 		-D pipewire-v4l2=disabled \
 		-D libmysofa=disabled \
 		-D libffado=disabled \
+		-D snap=disabled \
 		-D udevrulesdir="${LOCALBASE}/lib/udev/rules.d"
+
+PORTDOCS=	*
 
 # Fake pkg-config support before https://cgit.freebsd.org/src/commit/?id=396851c20aeb
 # but only if devel/ncurses isn't installed

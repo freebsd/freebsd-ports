@@ -25,6 +25,7 @@ CMAKE_OFF=	OpenNN_BUILD_EXAMPLES OpenNN_BUILD_TESTS
 CMAKE_TESTING_ON=	OpenNN_BUILD_TESTS # some tests fail, see https://github.com/Artelnics/opennn/issues/229
 CMAKE_TESTING_TARGET=	tests
 
+CXXFLAGS_powerpc=	-O1
 CXXFLAGS_powerpc64=	-mvsx
 LDFLAGS+=	-pthread
 LDFLAGS_powerpc=	-latomic

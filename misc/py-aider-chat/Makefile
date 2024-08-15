@@ -1,5 +1,5 @@
 PORTNAME=	aider_chat
-DISTVERSION=	0.38.0
+DISTVERSION=	0.45.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -44,10 +44,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>0:devel/py-arrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}streamlit>0:www/py-streamlit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.7.0:textproc/py-tiktoken@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tokenizers>0:textproc/py-tokenizers@${PY_FLAVOR}
-# missing
-# playwright
-# pypandoc
-# google-generativeai
+# missing dependencies
+# playwright its a chromium browser automation library
+# watchdog is pulled in by streamlit
+# google-generativeai is not a popular aider dependency
+
 USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 

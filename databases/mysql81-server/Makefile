@@ -12,6 +12,9 @@ WWW=		https://www.mysql.com/
 
 LICENSE=		GPLv2
 
+DEPRECATED=	MySQL 8.1 is not supported by the vendor and has unfixed vulnerabilies
+EXPIRATION_DATE=2024-09-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
 SLAVEDIRS=	databases/mysql81-client

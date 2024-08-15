@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CADF Library
-WWW=		https://docs.openstack.org/pycadf/latest/
+WWW=		https://docs.openstack.org/pycadf/latest/ \
+		https://github.com/openstack/pycadf
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

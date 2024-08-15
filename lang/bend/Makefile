@@ -1,5 +1,5 @@
 PORTNAME=	bend
-DISTVERSION=	0.2.34
+DISTVERSION=	0.2.36
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
@@ -24,14 +24,14 @@ CARGO_CRATES=	TSPL-0.0.12 \
 		anstream-0.6.14 \
 		anstyle-1.0.7 \
 		anstyle-parse-0.2.4 \
-		anstyle-query-1.0.3 \
+		anstyle-query-1.1.0 \
 		anstyle-wincon-3.0.3 \
-		cc-1.0.98 \
+		cc-1.0.99 \
 		cfg-if-1.0.0 \
-		clap-4.5.4 \
-		clap_builder-4.5.2 \
-		clap_derive-4.5.4 \
-		clap_lex-0.7.0 \
+		clap-4.5.7 \
+		clap_builder-4.5.7 \
+		clap_derive-4.5.5 \
+		clap_lex-0.7.1 \
 		colorchoice-1.0.1 \
 		console-0.15.8 \
 		either-1.12.0 \
@@ -41,7 +41,7 @@ CARGO_CRATES=	TSPL-0.0.12 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		highlight_error-0.1.1 \
-		hvm-2.0.17 \
+		hvm-2.0.19 \
 		indexmap-2.2.6 \
 		insta-1.39.0 \
 		interner-0.2.1 \
@@ -50,9 +50,9 @@ CARGO_CRATES=	TSPL-0.0.12 \
 		lazy_static-1.4.0 \
 		libc-0.2.155 \
 		linked-hash-map-0.5.6 \
-		loaned-0.1.1 \
+		loaned-0.1.2 \
 		num_cpus-1.16.0 \
-		proc-macro2-1.0.84 \
+		proc-macro2-1.0.85 \
 		psm-0.1.21 \
 		quote-1.0.36 \
 		same-file-1.0.6 \
@@ -62,7 +62,7 @@ CARGO_CRATES=	TSPL-0.0.12 \
 		strsim-0.11.1 \
 		syn-2.0.66 \
 		unicode-ident-1.0.12 \
-		utf8parse-0.2.1 \
+		utf8parse-0.2.2 \
 		walkdir-2.5.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \

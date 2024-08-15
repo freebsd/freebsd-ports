@@ -5,4 +5,4 @@ NGINX functionality includes HTTP server, HTTP and mail reverse proxy, caching,
 load balancing, compression, request throttling, connection multiplexing and
 reuse, SSL offload and HTTP media streaming.
 
-See also: https://nginx.org/
+See also: https://freenginx.org/

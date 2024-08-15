@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-08-05 19:05:05 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ requires = [
+ requires = [
+     # avoid moving to https://github.com/pypa/setuptools/issues/3593
+     # until we're ready
+-    "setuptools>=61.0,<69.3",
++    "setuptools>=61.0",
+     "cython>=0.29.24; platform_python_implementation == 'CPython'", # Skip cython when using pypy
+ ]
+ 

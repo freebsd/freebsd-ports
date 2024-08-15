@@ -1,2 +1,0 @@
-httpx-cache is an implementation of the caching algorithms in httplib2 and
-CacheControl for use with httpx transport object.

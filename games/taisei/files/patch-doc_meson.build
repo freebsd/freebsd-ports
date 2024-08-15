@@ -18,7 +18,7 @@
 -
      rst2html5 = find_program(
 -        rst2html_variants,
-+        'rst2html5.py',
++        'rst2html5',
          required : false
      )
  

@@ -1,15 +1,12 @@
-PORTNAME=	fastnetmon
+PORTNAME=		fastnetmon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.6
-PORTREVISION=	1
-CATEGORIES=	net-mgmt security
+DISTVERSION=		1.2.7
+PORTREVISION=	2
+CATEGORIES=		net-mgmt security
 
-PATCH_SITES=	https://github.com/pavel-odintsov/${PORTNAME}/commit/
-PATCHFILES=	fad8757b8986226024d549a6dfb40abbab01643e.patch:-p2
-
-MAINTAINER=	farrokhi@FreeBSD.org
-COMMENT=	Very fast DDoS analyzer with sflow/netflow/mirror support
-WWW=		https://fastnetmon.com
+MAINTAINER=		farrokhi@FreeBSD.org
+COMMENT=		Very fast DDoS analyzer with sflow/netflow/mirror support
+WWW=			https://fastnetmon.com
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../LICENSE
@@ -49,18 +46,15 @@ CMAKE_ON=	ENABLE_NETMAP_SUPPORT \
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; \
-		s|/var/run|&/fastnetmon|g; s|/var/log|&/fastnetmon|g; \
-		s|"/etc/|"${PREFIX}/etc/|g; s|/root/fastnetmon|${DATADIR}|g' \
-		${WRKSRC}/fastnetmon.conf ${WRKSRC}/fastnetmon.cpp
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/man/fastnetmon.8
+	@${REINPLACE_CMD} -e 's|/etc/networks|${PREFIX}/etc/networks|g' \
+		-e 's|/var/run|/var/run/${PORTNAME}|g' ${WRKSRC}/fastnetmon.conf
+	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/man/fastnetmon.8
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/fastnetmon.conf ${STAGEDIR}${PREFIX}/etc/fastnetmon.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/networks_list ${STAGEDIR}${PREFIX}/etc/networks_list.sample
 	${INSTALL_DATA} ${WRKSRC}/networks_whitelist ${STAGEDIR}${PREFIX}/etc/networks_whitelist.sample
-	${MKDIR} ${STAGEDIR}/var/run/fastnetmon ${STAGEDIR}/var/log/fastnetmon_attacks
+	${MKDIR} ${STAGEDIR}/var/run/fastnetmon ${STAGEDIR}/var/log/fastnetmon ${STAGEDIR}/var/log/fastnetmon_attacks
 	${INSTALL_SCRIPT} ${WRKSRC}/notify_about_attack.sh ${STAGEDIR}${PREFIX}/bin/notify_about_attack.sh.sample
 
 post-install-DOCS-on:

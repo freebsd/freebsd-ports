@@ -1,15 +1,14 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.13.0
-PORTREVISION=	1
+DISTVERSION=	7.16.0
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
-		LOCAL/mikael/signal-desktop/:sqlite \
-		LOCAL/mikael/signal-desktop/:yarn \
 		https://build-artifacts.signal.org/desktop/:sqlcipher
-DISTFILES=	signal-desktop-${DISTVERSION}-yarn-cache.tar.gz:yarn \
-		signal-desktop-6.37.0-npm-cache.tar.gz:npm \
+DISTFILES=	signal-desktop-${DISTVERSION}-npm-cache.tar.gz:npm \
 		${SQLCIPHER}.tar.gz:sqlcipher
+# for online build
+#DISTFILES=	${SQLCIPHER}.tar.gz:sqlcipher
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Cross-platform centralized encrypted messaging service
@@ -21,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	aarch64 amd64
 
 EXTRACT_DEPENDS=jq:textproc/jq \
-		yarn-node20>0:www/yarn-node20
+		npm:www/npm-node20
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcrypto.a:security/openssl \
 		${LOCALBASE}/lib/libringrtc.so:multimedia/ringrtc \
 		${LOCALBASE}/lib/libsignal_node.so:net-im/libsignal-node \
@@ -29,8 +28,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libcrypto.a:security/openssl \
 		app-builder>0:devel/app-builder \
 		electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
 		jq:textproc/jq \
-		npm:www/npm-node20 \
-		yarn:www/yarn-node20
+		npm:www/npm-node20
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
@@ -67,7 +65,10 @@ USE_GL=		gbm gl
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 libxml2 libxslt pango
 USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xi xrandr xrender xtst
 
-PACKAGE_ENV=	SIGNAL_ENV=production
+PACKAGE_ENV=	SIGNAL_ENV=production \
+		npm_config_runtime=electron \
+		npm_config_target=${ELECTRON_VER_MAJOR} \
+		npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers
 MAKE_ENV+=	ELECTRON_OVERRIDE_DIST_PATH=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR} \
 		HOME=${WRKDIR} \
 		USE_SYSTEM_APP_BUILDER=true \
@@ -81,27 +82,19 @@ MAKE_ENV+=	ELECTRON_SKIP_BINARY_DOWNLOAD=1
 # This is a workaround to avoid filesystem violations during poudriere build
 MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
-MAKE_ENV+=	ESBUILD_BINARY_PATH=${WRKDIR}/esbuild-freebsd-64/package/bin/esbuild
-
 _BUILD_DATE=	$$(date +'%s')
 
 ELECTRON_VER_MAJOR=	30
 
-# sh get_deps.sh
-NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.50.0-5cff29a49b658916aa277943d0fc01a2668ef0c6-integrity
-NPM_RINGRTC_DIR=	npm-@signalapp-ringrtc-2.42.0-de6e58bf780279dad63a3877b79643b7dace461f-integrity
-NPM_SQLITE3_DIR=	npm-@signalapp-better-sqlite3-8.7.1-0a09293aa833b836ec6b17f6ab0e790097f3fdeb-integrity
-NPM_ESBUILD_VERS=	0.18.20
-SQLCIPHER=		sqlcipher-4.5.5-fts5-fix--3.0.7--0.2.1-ef53ea45ed92b928ecfd33c552d8d405263e86e63dec38e1ec63e1b0193b630b
+SQLCIPHER=	sqlcipher-4.5.5-fts5-fix--3.0.7--0.2.1-ef53ea45ed92b928ecfd33c552d8d405263e86e63dec38e1ec63e1b0193b630b
 
-ESBUILD_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
 NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
 APP_OUT_DIR=	linux-${ARCH:S/aarch64/arm64-/:S/amd64//}unpacked
 
 PLIST_SUB=	NODE_ARCH=${NODE_ARCH} \
 		SHARP_ARCH=${ARCH:S/aarch64/arm64v8/:S/amd64/x64/}
 
-YARN_TIMESTAMP=	1661146515
+NPM_TIMESTAMP=	1661146515
 
 .include <bsd.port.pre.mk>
 
@@ -111,49 +104,23 @@ PLIST_SUB+=	NOT_AARCH64="@comment "
 PLIST_SUB+=	NOT_AARCH64=""
 .endif
 
-fetch-yarn:
-	if [ ! -f ${DISTDIR}/signal-desktop-${DISTVERSION}-yarn-cache.tar.gz ]; then \
-		${MKDIR} /tmp/signal-desktop; \
-		${FETCH_CMD} -o - https://raw.githubusercontent.com/signalapp/Signal-Desktop/v${DISTVERSION}/package.json | \
-			${PREFIX}/bin/jq '.devDependencies.esbuild = "0.18.20"' | \
-			${PREFIX}/bin/jq '.engines.node = ""' > /tmp/signal-desktop/package.json; \
-		${FETCH_CMD} -o /tmp/signal-desktop/yarn.lock https://raw.githubusercontent.com/signalapp/Signal-Desktop/v${DISTVERSION}/yarn.lock; \
-		${ECHO_CMD} 'yarn-offline-mirror "./yarn-offline-cache"' >> \
-			/tmp/signal-desktop/.yarnrc; \
-		${PREFIX}/bin/jq 'del(.devDependencies."@signalapp/mock-server")' /tmp/signal-desktop/package.json > /tmp/signal-desktop/package.json.tmp; \
-		${MV} /tmp/signal-desktop/package.json.tmp /tmp/signal-desktop/package.json; \
-		cd /tmp/signal-desktop && ${SETENV} HOME=/tmp/signal-desktop XDG_CACHE_HOME=/tmp/signal-desktop/.cache \
-			yarn  --ignore-scripts; \
-		${MTREE_CMD} -cbnSp yarn-offline-cache | ${MTREE_CMD} -C | ${SED} \
-			-e 's:time=[0-9.]*:time=${YARN_TIMESTAMP}.000000000:' \
-			-e 's:\([gu]id\)=[0-9]*:\1=0:g' \
-			-e 's:flags=.*:flags=none:' \
-			-e 's:^\.:./yarn-offline-cache:' > yarn-offline-cache.mtree; \
-		${TAR} cJf ${DISTDIR}/signal-desktop-${DISTVERSION}-yarn-cache.tar.gz  \
-			@yarn-offline-cache.mtree; \
-		${RM} -r ${WRKDIR}; \
-		${CP} /tmp/signal-desktop/yarn.lock ${FILESDIR}; \
-	fi
-
 post-extract:
-	# install yarn modules and fail silently
-	${ECHO_CMD} 'yarn-offline-mirror "../yarn-offline-cache"' > ${WRKSRC}/.yarnrc
-	${ECHO_CMD} 'nodedir "${LOCALBASE}"' >> ${WRKSRC}/.yarnrc
 	# Update node engine
 	${PREFIX}/bin/jq '.engines.node = ""' ${WRKSRC}/package.json > ${WRKSRC}/package.json.tmp.1
-	${PREFIX}/bin/jq '.devDependencies.esbuild = "0.18.20"' ${WRKSRC}/package.json.tmp.1 > ${WRKSRC}/package.json.tmp
-	${MV} ${WRKSRC}/package.json.tmp ${WRKSRC}/package.json
+	${MV} ${WRKSRC}/package.json.tmp.1 ${WRKSRC}/package.json
 	# remove mock-server as it doesn't build and is useless
 	${PREFIX}/bin/jq 'del(.devDependencies."@signalapp/mock-server")' ${WRKSRC}/package.json > ${WRKSRC}/package.json.tmp
 	${MV} ${WRKSRC}/package.json.tmp ${WRKSRC}/package.json
-	${CP} ${FILESDIR}/yarn.lock ${WRKSRC}
+
+	# for online build
+#	cd ${WRKSRC} && \
+#		${SETENV} ${MAKE_ENV} npm install --ignore-optional --ignore-scripts || ${TRUE}
+
+	# for offline build
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} yarn install --ignore-optional --offline || ${TRUE}
+		${SETENV} ${MAKE_ENV} npm install --ignore-optional --ignore-scripts --offline || ${TRUE}
 
 do-build:
-	${ECHO_CMD} 'yarn-offline-mirror "../yarn-offline-cache"' > ${WRKSRC}/.yarnrc
-	${ECHO_CMD} 'nodedir "${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers"' >> ${WRKSRC}/.yarnrc
-
 # electron-builder is stupid and tries to open ${LOCALBASE}/share/electron30/electron with WRITE priv
 # copy ${LOCALBASE}/share/electron30 in WRKDIR
 # it's needed for the do-install phase, it's here because of this issue
@@ -162,47 +129,44 @@ do-build:
 	@${CP} -pR ${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR} ${WRKDIR}/electron${ELECTRON_VER_MAJOR}
 	${CHMOD} -R a+w ${WRKDIR}/electron${ELECTRON_VER_MAJOR}
 
-	# Install libsignal_node.so and libringrtc.so binaries in the yarn cache
-	${MKDIR} ${WRKDIR}/.cache/yarn/v6/${NPM_SIGNAL_DIR}/node_modules/@signalapp/libsignal-client/prebuilds/freebsd-${NODE_ARCH} \
-		 ${WRKDIR}/.cache/yarn/v6/${NPM_RINGRTC_DIR}/node_modules/@signalapp/ringrtc/build/freebsd
+	# Install libsignal_node.so and libringrtc.so binaries in node_modules
+	${MKDIR} ${WRKSRC}/node_modules/@signalapp/libsignal-client/prebuilds/freebsd-${NODE_ARCH} \
+		 ${WRKSRC}/node_modules/@signalapp/ringrtc/build/freebsd
 	${CP} ${LOCALBASE}/lib/libsignal_node.so \
-		${WRKDIR}/.cache/yarn/v6/${NPM_SIGNAL_DIR}/node_modules/@signalapp/libsignal-client/prebuilds/freebsd-${NODE_ARCH}/node.napi.node
+		${WRKSRC}/node_modules/@signalapp/libsignal-client/prebuilds/freebsd-${NODE_ARCH}/@signalapp+libsignal-client.node
 	${CP} ${LOCALBASE}/lib/libringrtc.so \
-		${WRKDIR}/.cache/yarn/v6/${NPM_RINGRTC_DIR}/node_modules/@signalapp/ringrtc/build/freebsd/libringrtc-${NODE_ARCH}.node
+		${WRKSRC}/node_modules/@signalapp/ringrtc/build/freebsd/libringrtc-${NODE_ARCH}.node
 
-	${MKDIR} ${WRKDIR}/.cache/yarn/v6/${NPM_SQLITE3_DIR}/node_modules/@signalapp/better-sqlite3/deps
 	${CP} ${DISTDIR}/${SQLCIPHER}.tar.gz \
-		${WRKDIR}/.cache/yarn/v6/${NPM_SQLITE3_DIR}/node_modules/@signalapp/better-sqlite3/deps/sqlcipher.tar.gz
-
-	${CP} ${FILESDIR}/fetch-prebuild.js \
-		${WRKDIR}/.cache/yarn/v6/${NPM_RINGRTC_DIR}/node_modules/@signalapp/ringrtc/scripts/fetch-prebuild.js
-	${CP} ${FILESDIR}/download.js \
-		${WRKDIR}/.cache/yarn/v6/${NPM_SQLITE3_DIR}/node_modules/@signalapp/better-sqlite3/deps/download.js
+		${WRKSRC}/node_modules/@signalapp/better-sqlite3/deps/sqlcipher.tar.gz
 
 	# patch-package can't patch sqlite3 on aarch64, patch the yarn cache instead
-	cd ${WRKDIR}/.cache/yarn/v6 && ${PATCH} -s -N -i ${FILESDIR}/sqlite3.gyp.diff
-
-	${MKDIR} ${WRKDIR}/esbuild-freebsd-64
-	${TAR} -xf ${WRKDIR}/yarn-offline-cache/@esbuild-freebsd-${ESBUILD_ARCH}-${NPM_ESBUILD_VERS}.tgz -C ${WRKDIR}/esbuild-freebsd-64
+	cd ${WRKSRC} && ${PATCH} -s -N -i ${FILESDIR}/sqlite3.gyp.diff
 
 	${CP} ${FILESDIR}/dns-fallback.json ${WRKSRC}/build
 
-	# For offline build
-	${ECHO_CMD} offline=true > ${WRKDIR}/.npmrc
+	@${RM} -r ${WRKSRC}/node_modules/fs-xattr
+
+	# online build
+#	cd ${WRKSRC} && \
+#		${SETENV} ${MAKE_ENV} npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers npm install --ignore-optional
+#	cd ${WRKSRC} && \
+#		${SETENV} ${MAKE_ENV} npm run generate
+
+	# offline build
+	${ECHO_CMD} offline=true >> ${WRKSRC}/.npmrc
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} yarn install --frozen-lockfile --ignore-optional --offline
+		${SETENV} ${MAKE_ENV} npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers npm install --ignore-optional --offline
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} yarn --offline generate
-	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} yarn --offline build:esbuild:prod
+		${SETENV} ${MAKE_ENV} npm run generate --offline
 
 do-install:
 # taken from https://github.com/tagattie/FreeBSD-Electron/blob/master/Mk/Uses/electron.mk#L387
 # and editors/vscode
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${PACKAGE_ENV} yarn run electron-builder \
+		${SETENV} ${MAKE_ENV} ${PACKAGE_ENV} npm run build:electron -- \
 			--linux --dir --config.npmRebuild=false \
-			--config.electronVersion=${ELECTRON_VER_MAJOR} \
+			--config.electronVersion=${ELECTRON_VER} \
 			--config.electronDist=${WRKDIR}/electron${ELECTRON_VER_MAJOR}
 
 	${MKDIR} ${STAGEDIR}${DATADIR}
@@ -229,7 +193,7 @@ do-install:
 
 create-caches-tarball:
 	# do some cleanup first
-	${RM} -r  ${WRKDIR}/.npm/_logs ${WRKDIR}/.npm/_update-notifier-last-checked ${WRKDIR}/.cache/yarn/v6/.tmp
+	${RM} -r ${WRKDIR}/.npm/_logs ${WRKDIR}/.npm/_update-notifier-last-checked
 
 	cd ${WRKDIR} && \
 		${TAR} czf signal-desktop-${DISTVERSION}-npm-cache.tar.gz .npm

@@ -1,14 +1,14 @@
 PORTNAME=	numpy
 PORTVERSION=	1.26.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI \
 		https://numpy.org/doc/1.26/:doc
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}-html.zip:doc
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION:R}
+DISTFILES=	numpy-${PORTVERSION}${EXTRACT_SUFX} \
+		numpy-html.zip:doc
+DIST_SUBDIR=	numpy-${PORTVERSION:R}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -21,6 +21,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=6.2.5:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hypothesis>=6.24.1:devel/py-hypothesis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.2.0:devel/py-typing-extensions@${PY_FLAVOR}
+
 USES=		compiler:c11 cpe fortran python:3.9+
 USE_PYTHON=	allflavors autoplist concurrent cython distutils
 
@@ -31,6 +32,8 @@ PYDISTUTILS_CONFIGUREARGS=	--fcompiler=gnu95
 
 PORTDOCS=	*
 
+PORTSCOUT=	limit:^1\.
+
 OPTIONS_DEFINE=		DOCS SUITESPARSE
 OPTIONS_SINGLE=		BLASLIB
 OPTIONS_SINGLE_BLASLIB=	ATLAS NETLIB OPENBLAS
@@ -39,9 +42,9 @@ SUITESPARSE_DESC=	Use AMD and UMFPACK in SuiteSparse
 
 ATLAS_USES=		blaslapack:atlas
 ATLAS_VARS=		BLASLIBS="ptf77blas, ptcblas" BLASNAME=atlas LAPACKLIBS=alapack LIBRARIES=atlas_libs
+NETLIB_LIB_DEPENDS=	libcblas.so:math/cblas
 NETLIB_USES=		blaslapack:netlib
 NETLIB_VARS=		BLASLIBS="blas, cblas" BLASNAME=atlas LAPACKLIBS=lapack LIBRARIES=atlas_libs
-NETLIB_LIB_DEPENDS=	libcblas.so:math/cblas
 OPENBLAS_USES=		blaslapack:openblas
 OPENBLAS_VARS=		BLASLIBS="openblas, gfortran" BLASNAME=openblas LAPACKLIBS="openblas, gfortran" LIBRARIES=libraries
 SUITESPARSE_LIB_DEPENDS=libumfpack.so:math/suitesparse-umfpack

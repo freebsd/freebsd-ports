@@ -5,7 +5,7 @@ CATEGORIES=	irc
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Detachable irc proxy server with many features
-WWW=		http://dircproxy.securiweb.net/
+WWW=		https://github.com/w8tvi/dircproxy
 
 LICENSE=	GPLv2
 

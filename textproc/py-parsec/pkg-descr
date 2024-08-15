@@ -1,0 +1,6 @@
+A universal Python parser combinator library inspired by Parsec library of
+Haskell.
+A parser combinator is a function (higher-order function) that accepts several
+parsers as arguments and return a new parser as result. Parser combinators
+enable a recursive descent parsing strategy, this parsing technique facilitates
+modular piecewise construction and testing.

@@ -1,6 +1,7 @@
 PORTNAME=	elf_diff
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-git>0:devel/py-setuptools-git@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}progressbar2>0:misc/py-progressbar2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}anytree>0:devel/py-anytree@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dict2xml>0:textproc/py-dict2xml@${PY_FLAVOR}

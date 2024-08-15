@@ -1,6 +1,6 @@
---- zfuncs.cc.orig	2023-12-02 22:45:44 UTC
+--- zfuncs.cc.orig	2024-07-01 07:25:41 UTC
 +++ zfuncs.cc
-@@ -565,6 +565,7 @@ int zmalloc_test(int64 cc)
+@@ -559,6 +559,7 @@ int zmalloc_test(int64 cc)
  
  double realmemory()
  {
@@ -8,7 +8,7 @@
     FILE     *fid;
     ch       buff[100], *pp;
     double   rmem = 0;
-@@ -583,15 +584,45 @@ double realmemory()
+@@ -577,15 +578,45 @@ double realmemory()
     }
  
     fclose(fid);
@@ -54,7 +54,7 @@
     FILE     *fid;
     ch       buff[100], *pp;
     double   avmem = 0;
-@@ -616,6 +647,11 @@ double availmemory()
+@@ -610,6 +641,11 @@ double availmemory()
     }
  
     fclose(fid);
@@ -66,7 +66,7 @@
     return avmem;
  }
  
-@@ -755,7 +791,7 @@ void zappcrash(ch *format, ... )
+@@ -749,7 +785,7 @@ void zappcrash(ch *format, ... )
  
     uname(&unbuff);                                                               //  get cpu arch. 32/64 bit
     arch = unbuff.machine;
@@ -75,7 +75,7 @@
     if (fid1) {
        ii = fscanf(fid1,"%s %s %s",OS1,OS2,OS3);
        pclose(fid1);
-@@ -1060,7 +1096,7 @@ double get_seconds()
+@@ -1062,7 +1098,7 @@ double get_seconds()
     timespec    time1;
     double      secs;
  
@@ -84,7 +84,7 @@
     secs = time1.tv_sec;
     secs += time1.tv_nsec * 0.000000001;
     return secs;
-@@ -1109,7 +1145,7 @@ void logtime_init(ch *text)
+@@ -1111,7 +1147,7 @@ void logtime_init(ch *text)
     using namespace logtime_names;
  
     printf("logtime init: %s\n",text);
@@ -93,7 +93,7 @@
     return;
  }
  
-@@ -1117,7 +1153,7 @@ void logtime(ch *text)
+@@ -1119,7 +1155,7 @@ void logtime(ch *text)
  {
     using namespace logtime_names;
  
@@ -102,7 +102,7 @@
     elapsed = time2.tv_sec - time1.tv_sec;
     elapsed += 0.000000001 * (time2.tv_nsec - time1.tv_nsec);
     time1 = time2;
-@@ -1812,6 +1848,10 @@ int wait_Jthread(pthread_t tid)
+@@ -1808,6 +1844,10 @@ int wait_Jthread(pthread_t tid)
     return 0;
  }
  
@@ -113,7 +113,7 @@
  
  /********************************************************************************/
  
-@@ -1862,7 +1902,7 @@ void set_cpu_affinity(int cpu)
+@@ -1858,7 +1898,7 @@ void set_cpu_affinity(int cpu)
  {
     int         err;
     static int  ftf = 1, Nsmp;
@@ -122,7 +122,7 @@
  
     if (ftf) {                                                                    //  first call
        ftf = 0;
-@@ -1873,7 +1913,8 @@ void set_cpu_affinity(int cpu)
+@@ -1869,7 +1909,8 @@ void set_cpu_affinity(int cpu)
  
     CPU_ZERO(&cpuset);
     CPU_SET(cpu,&cpuset);
@@ -132,16 +132,16 @@
     if (err) Plog(2,"set_cpu_affinity() %s \n",strerror(errno));
     return;
  }
-@@ -2274,7 +2315,7 @@ uint diskspace(ch *file)
+@@ -2182,7 +2223,7 @@ uint diskspace(ch *file)
     FILE     *fid;
  
-    pp = zescape_quotes(file);                                                    //  23.4
+    pp = zescape_quotes(file);
 -   snprintf(command,200,"df --output=avail \"%s\" ",pp);
 +   snprintf(command,200,"df -k '%s' | awk '{print $4}'",pp);
     zfree(pp);
-    
+ 
     fid = popen(command,"r");
-@@ -4135,14 +4176,18 @@ ch * SearchWildCase(ch *wpath, int &uflag) 
+@@ -4050,14 +4091,18 @@ ch * SearchWildCase(ch *wpath, int &uflag)
     flist and flist[*] are subjects for zfree().
  
     zfind() works for files containing quotes (")
@@ -161,7 +161,7 @@
     int      ii, jj, err, cc;
     glob_t   globdata;
     ch       *pp;
-@@ -6109,9 +6154,16 @@ int zinitapp(ch *appvers, int argc, ch *argv[])       
+@@ -6028,9 +6073,16 @@ int zinitapp(ch *appvers, int argc, ch *argv[])       
     if (argc > 1 && strmatchV(argv[1],"-ver","-v",0)) exit(0);                    //  exit if nothing else wanted
  
     progexe = 0;

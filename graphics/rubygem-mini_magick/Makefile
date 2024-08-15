@@ -1,5 +1,5 @@
 PORTNAME=	mini_magick
-PORTVERSION=	4.13.1
+PORTVERSION=	5.0.1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,12 @@ WWW=		https://github.com/minimagick/minimagick
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-USES=		gem magick
+USES=		gem magick:${FLAVOR}
 
 NO_ARCH=	yes
+
+FLAVORS=	x11 nox11
+FLAVOR?=	${FLAVORS:[1]}
+nox11_PKGNAMESUFFIX=	-nox11
 
 .include <bsd.port.mk>

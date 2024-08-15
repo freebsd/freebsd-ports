@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-logging
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-concurrent-ruby>=1.1<2:devel/rubygem-concurrent-ruby \
 		rubygem-google-cloud-core>=1.5<2:net/rubygem-google-cloud-core \
-		rubygem-google-cloud-logging-v2>=0.0<1:net/rubygem-google-cloud-logging-v2 \
+		rubygem-google-cloud-logging-v2>=0.0<2.0:net/rubygem-google-cloud-logging-v2 \
 		rubygem-stackdriver-core>=1.3<2:net/rubygem-stackdriver-core
 
 USES=		gem

@@ -62,8 +62,8 @@ NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	17
 JDK_MINOR_VERSION=	0
-JDK_PATCH_VERSION=	11
-JDK_BUILD_NUMBER=	9
+JDK_PATCH_VERSION=	12
+JDK_BUILD_NUMBER=	7
 BSD_JDK_VERSION=	1
 
 JDK_BUG_URL=	https://bugs.freebsd.org/bugzilla/enter_bug.cgi?product=Ports%20%26%20Packages&component=Individual%20Port(s)&short_desc=java/${PORTNAME}${JDK_MAJOR_VERSION}%3A%20
@@ -139,11 +139,7 @@ CONFIGURE_ARGS+=	--with-extra-ldflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFA
 			--with-extra-cxxflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFAULT}"
 .else
 MAKE_ENV+=	USE_CLANG=true
-EXTRA_CFLAGS+=		-Wno-unused-but-set-parameter
-EXTRA_CFLAGS+=		-Wno-bitwise-instead-of-logical
-EXTRA_CFLAGS+=		-Wno-deprecated-non-prototype
-CONFIGURE_ARGS+=	--with-extra-cflags="${EXTRA_CFLAGS}"
-CONFIGURE_ARGS+=	--with-extra-cxxflags="${EXTRA_CFLAGS}"
+CONFIGURE_ARGS+=	--disable-warnings-as-errors
 .endif
 
 .if ${ARCH} == aarch64 || ${ARCH:Mpowerpc64*}

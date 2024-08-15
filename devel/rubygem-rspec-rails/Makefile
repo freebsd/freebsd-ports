@@ -1,11 +1,12 @@
 PORTNAME=	rspec-rails
-PORTVERSION=	6.1.2
+PORTVERSION=	6.1.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Testing framework for Rails
-WWW=		https://github.com/rspec/rspec-rails
+WWW=		https://rspec.info/ \
+		https://github.com/rspec/rspec-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

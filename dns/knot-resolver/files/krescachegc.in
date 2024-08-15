@@ -18,16 +18,58 @@ name=krescachegc
 rcvar=krescachegc_enable
 
 load_rc_config ${name}
+load_rc_config_var kresd rundir
+load_rc_config_var kresd user
 
-# set defaults
-krescachegc_enable=${krescachegc_enable:-"NO"}
+: ${krescachegc_enable:="NO"}
 : ${krescachegc_svcj_options:="net_basic"}
-krescachegc_millis=${krescachegc_millis:-"1000"}
+: ${krescachegc_millis:="1000"}
+: ${kresd_rundir:="/var/run/kresd"}
+: ${kresd_user:="%%USERS%%"}
 
-pidfile="%%RUNDIR%%/${name}.pid"
 procname="%%PREFIX%%/sbin/kres-cache-gc"
 
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+status_cmd="${name}_status"
+
 command=/usr/sbin/daemon
-command_args="-c -f -S -r -P ${pidfile} -T ${name} -u %%USERS%% -- ${procname} -d ${krescachegc_millis}"
+command_args="-c -f -r -S -u ${kresd_user} -T ${name} -- ${procname} -c ${kresd_rundir} -d ${krescachegc_millis}"
+
+krescachegc_start() {
+	/bin/pgrep -f ${procname} > /dev/null && status="$?" || status="$?"
+	if [ "${status}" -eq 0 ]; then
+		echo "${name} already seems to be running."
+	else
+		echo "starting ${name}..." && \
+		${command} ${command_args}
+		echo -e "\e[1A\e[K${name} started."
+	fi
+	}
+
+krescachegc_status() {
+	/bin/pgrep -f ${procname} > /dev/null && status="$?" || status="$?"
+	if [ "${status}" -eq 0 ]; then
+		echo "${name} is running:"
+		echo
+		/bin/ps -p $(/bin/pgrep -f ${procname})
+	else
+		echo "${name} is not running"
+	fi
+	return ${status}
+	}
+
+krescachegc_stop() {
+	/bin/pgrep -f ${procname} > /dev/null && status="$?" || status="$?"
+	if [ "${status}" -eq 0 ]; then
+		echo "stopping ${name}..." && \
+		/bin/pkill -TERM -f ${procname}
+		echo -e "\e[1A\e[K${name} stopped."
+
+	else
+		echo "${name} is not running"
+	fi
+	return ${status}
+	}
 
 run_rc_command "$1"

@@ -42,6 +42,7 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.27
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.28
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.29
+%%DATADIR%%/%%EMACS_VER%%/etc/NEWS.30
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.unknown
 %%DATADIR%%/%%EMACS_VER%%/etc/NEXTSTEP
 %%DATADIR%%/%%EMACS_VER%%/etc/NXML-NEWS
@@ -183,6 +184,7 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/charsets/stdenc.map
 %%DATADIR%%/%%EMACS_VER%%/etc/charsets/symbol.map
 %%DATADIR%%/%%EMACS_VER%%/etc/compilation.txt
+%%DATADIR%%/%%EMACS_VER%%/etc/copyright-assign.txt
 %%DATADIR%%/%%EMACS_VER%%/etc/e/README
 %%DATADIR%%/%%EMACS_VER%%/etc/e/eterm-color
 %%DATADIR%%/%%EMACS_VER%%/etc/e/eterm-color.ti
@@ -1570,6 +1572,18 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/echistory.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ecomplete.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/ecomplete.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/editorconfig-conf-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/editorconfig-conf-mode.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/editorconfig-core-handle.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/editorconfig-core-handle.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/editorconfig-core.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/editorconfig-core.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/editorconfig-fnmatch.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/editorconfig-fnmatch.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/editorconfig-tools.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/editorconfig-tools.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/editorconfig.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/editorconfig.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/edmacro.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/edmacro.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ehelp.el.gz
@@ -1634,6 +1648,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/comp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/compat.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/compat.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cond-star.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cond-star.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/copyright.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/copyright.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/crm.el.gz
@@ -2666,6 +2682,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/thai.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/tibetan.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/tibetan.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/tifinagh.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/tifinagh.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/tsang-b5.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/tsang-b5.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/tsang-cns.el.gz
@@ -4243,6 +4261,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/xt-mouse.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/xwidget.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/xwidget.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/which-key.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/which-key.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/yank-media.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/yank-media.elc
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/site-lisp/site-start.el
@@ -4388,6 +4408,7 @@ share/applications/emacsclient.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-28.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-29.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-30.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-31.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/msdos.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/msdos.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/nsgui.h

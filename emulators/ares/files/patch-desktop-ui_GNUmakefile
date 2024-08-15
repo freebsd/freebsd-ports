@@ -1,0 +1,21 @@
+--- desktop-ui/GNUmakefile.orig	2024-08-09 17:39:54 UTC
++++ desktop-ui/GNUmakefile
+@@ -8,6 +8,8 @@ flags += -I. -I.. -I../ares -I../thirdparty -I../third
+ lto := true
+ librashader	:= true
+ flags += -I. -I.. -I../ares -I../thirdparty -I../thirdparty/librashader/include -DMIA_LIBRARY
++flags += $(CFLAGS)
++options += $(LDFLAGS)
+ 
+ nall.path := ../nall
+ include $(nall.path)/GNUmakefile
+@@ -16,9 +18,6 @@ ifneq ($(filter $(arch),x86 amd64),)
+   ifeq ($(filter cl,$(compiler)),)
+     ifeq ($(local),true)
+       flags += -march=native
+-    else
+-      # For official builds, default to x86-64-v2 (Intel Nehalem, AMD Bulldozer) which supports up to SSE 4.2.
+-      flags += -march=x86-64-v2
+     endif
+   endif
+ endif

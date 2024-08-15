@@ -1,10 +1,9 @@
-Library for Python 3.6+ to communicate with the Google Chromecast.
-
-It currently supports:
-* Auto discovering connected Chromecasts on the network
-* Start the default media receiver and play any online media
-* Control playback of current playing media
-* Implement Google Chromecast api v2
-* Communicate with apps via channels
-* Easily extendable to add support for unsupported namespaces
-* Multi-room setups with Audio cast devices
+Library for Python to communicate with the Google Chromecast. It currently
+supports:
+- Auto discovering connected Chromecasts on the network
+- Start the default media receiver and play any online media
+- Control playback of current playing media
+- Implement Google Chromecast API v2
+- Communicate with apps via channels
+- Easily extendable to add support for unsupported namespaces
+- Multi-room setups with Audio cast devices

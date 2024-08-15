@@ -1,6 +1,6 @@
 PORTNAME=	openmodelica
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.23.0
+DISTVERSION=	1.23.1
 CATEGORIES=	science cad java
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
@@ -53,12 +53,12 @@ GH_PROJECT=	OpenModelica
 SHEBANG_GLOB=	*.sh *.in *.ac
 
 GH_TUPLE=	\
-		OpenModelica:OMOptim:e4fb998:OpenModelica_OMOptim/OMOptim \
+		OpenModelica:OMOptim:f1036f43db18c5015da259771004cfb80e08a110:OpenModelica_OMOptim/OMOptim \
 		OpenModelica:OMSimulator:6f4ecda63323675c4c0aed70f6e31319e7e80771:OpenModelica_OMSimulator/OMSimulator \
-		OpenModelica:OMSimulator-3rdParty:ca418d7:OpenModelica_OMSimulator_3rdParty/OMSimulator/3rdParty \
+		OpenModelica:OMSimulator-3rdParty:5c10de1648d1134a577d9284b58580a72383d89f:OpenModelica_OMSimulator_3rdParty/OMSimulator/3rdParty \
 		OpenModelica:OMCompiler-3rdParty:82e892e:OpenModelica_OMCompiler_3rdParty/OMCompiler/3rdParty \
 		OpenModelica:OMSens:0d804d5:OpenModelica_OMSens/OMSens \
-		OpenModelica:OMSens_Qt:68b1b8697ac9f8e37ebe4de13c0c1d4e6e2e56fb:OpenModelica_OMSens_Qt/OMSens_Qt \
+		OpenModelica:OMSens_Qt:92090770426271b4193e78b04f13e6a3abcd6f1a:OpenModelica_OMSens_Qt/OMSens_Qt \
 		OpenModelica:OpenModelica-common:08a01802db5ba5edb540383c46718b89ff229ef2:OpenModelica_OpenModelica_common/OMOptim/common \
 		OpenModelica:OpenModelica-common:08a01802db5ba5edb540383c46718b89ff229ef2:OpenModelica_OpenModelica_common/OMSens_Qt/common
 GH_TUPLE+=	OpenModelica:OMBootstrapping:c289e97c41d00939a4a69fe504961b47283a6d8e:bootstrapping/OMCompiler/Compiler/boot/bomc # downloaded by cmake

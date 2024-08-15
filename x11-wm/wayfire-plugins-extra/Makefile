@@ -1,6 +1,7 @@
 PORTNAME=	wayfire-plugins-extra
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libwf-config.so:devel/wf-config \
 		libwayland-server.so:graphics/wayland \
-		libwlroots.so:x11-toolkits/wlroots
+		libwlroots.so:x11-toolkits/wlroots017
 
 USES=		compiler:c++17-lang gnome meson pkgconfig
 USE_GITHUB=	yes

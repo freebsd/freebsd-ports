@@ -1,6 +1,6 @@
---- src/slic3r/GUI/UnsavedChangesDialog.hpp.orig	2023-12-12 14:21:21 UTC
+--- src/slic3r/GUI/UnsavedChangesDialog.hpp.orig	2024-06-27 09:25:47 UTC
 +++ src/slic3r/GUI/UnsavedChangesDialog.hpp
-@@ -52,7 +52,7 @@ class ModelNode
+@@ -49,7 +49,7 @@ class ModelNode
      wxString            m_mod_color;
      wxString            m_new_color;
  
@@ -9,7 +9,7 @@
      wxIcon              get_bitmap(const wxString& color);
  #else
      wxBitmap            get_bitmap(const wxString& color);
-@@ -61,7 +61,7 @@ class ModelNode
+@@ -58,7 +58,7 @@ class ModelNode
  public:
  
      bool        m_toggle {true};

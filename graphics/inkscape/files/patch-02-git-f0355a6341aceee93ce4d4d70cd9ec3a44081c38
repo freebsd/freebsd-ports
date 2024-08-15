@@ -1,0 +1,167 @@
+From f0355a6341aceee93ce4d4d70cd9ec3a44081c38 Mon Sep 17 00:00:00 2001
+From: Rafael Siejakowski <rs@rs-math.net>
+Date: Sun, 20 Aug 2023 18:15:19 +0200
+Subject: [PATCH] Fix build on FreeBSD: rename two helper functions
+
+The functions roundup() and rounddown() are renamed to round_up() and
+round_down(), respectively. This prevents a name clash with the macros
+roundup and rounddown defined in sys/param.h which for some reason gets
+pulled in on FreeBSD.
+
+Fixes https://gitlab.com/inkscape/inbox/-/issues/9062
+---
+ src/display/drawing-pattern.cpp        | 14 +++++++-------
+ src/helper/geom.h                      |  4 ++--
+ src/helper/mathfns.h                   |  6 +++---
+ src/ui/widget/canvas/pixelstreamer.cpp |  2 +-
+ src/util/pool.cpp                      |  6 +++---
+ 5 files changed, 16 insertions(+), 16 deletions(-)
+
+diff --git a/src/display/drawing-pattern.cpp b/src/display/drawing-pattern.cpp
+index 6b30c968ded..34df2f873b1 100644
+--- src/display/drawing-pattern.cpp
++++ src/display/drawing-pattern.cpp
+@@ -89,7 +89,7 @@ cairo_pattern_t *DrawingPattern::renderPattern(RenderContext &rc, Geom::IntRect
+             if (rect.dimensions()[i] >= _pattern_resolution[i]) {
+                 rect[i] = {0, _pattern_resolution[i]};
+             } else {
+-                rect[i] -= Util::rounddown(rect[i].min(), _pattern_resolution[i]);
++                rect[i] -= Util::round_down(rect[i].min(), _pattern_resolution[i]);
+             }
+         }
+         return rect;
+@@ -101,7 +101,7 @@ cairo_pattern_t *DrawingPattern::renderPattern(RenderContext &rc, Geom::IntRect
+             int const period = _pattern_resolution[i];
+             if (a[i].extent() >= period) return true;
+             if (b[i].extent() > a[i].extent()) return false;
+-            return Util::rounddown(b[i].min() - a[i].min(), period) >= b[i].max() - a[i].max();
++            return Util::round_down(b[i].min() - a[i].min(), period) >= b[i].max() - a[i].max();
+         };
+         return check(0) && check(1);
+     };
+@@ -112,7 +112,7 @@ cairo_pattern_t *DrawingPattern::renderPattern(RenderContext &rc, Geom::IntRect
+             int const period = _pattern_resolution[i];
+             if (a[i].extent() >= period) return true;
+             if (b[i].extent() >= period) return true;
+-            return Util::rounddown(b[i].max() - a[i].min(), period) >= b[i].min() - a[i].max();
++            return Util::round_down(b[i].max() - a[i].min(), period) >= b[i].min() - a[i].max();
+         };
+         return check(0) && check(1);
+     };
+@@ -121,8 +121,8 @@ cairo_pattern_t *DrawingPattern::renderPattern(RenderContext &rc, Geom::IntRect
+     auto overlapping_translates = [&, this] (Geom::IntRect const &a, Geom::IntRect const &b) {
+         Geom::IntPoint min, max;
+         for (int i = 0; i < 2; i++) {
+-            min[i] = Util::roundup  (b[i].min() - a[i].max() + 1, _pattern_resolution[i]);
+-            max[i] = Util::rounddown(b[i].max() - a[i].min() - 1, _pattern_resolution[i]);
++            min[i] = Util::round_up  (b[i].min() - a[i].max() + 1, _pattern_resolution[i]);
++            max[i] = Util::round_down(b[i].max() - a[i].min() - 1, _pattern_resolution[i]);
+         }
+         return std::make_pair(min, max);
+     };
+@@ -165,7 +165,7 @@ cairo_pattern_t *DrawingPattern::renderPattern(RenderContext &rc, Geom::IntRect
+ 
+             for (auto it = surfaces.begin(); it != surfaces.end(); ) {
+                 if (wrapped_touches(expanded, it->rect)) {
+-                    expanded.unionWith(it->rect + rounddown(expanded.max() - it->rect.min(), _pattern_resolution));
++                    expanded.unionWith(it->rect + round_down(expanded.max() - it->rect.min(), _pattern_resolution));
+                     merged.emplace_back(std::move(*it));
+                     *it = std::move(surfaces.back());
+                     surfaces.pop_back();
+@@ -259,7 +259,7 @@ cairo_pattern_t *DrawingPattern::renderPattern(RenderContext &rc, Geom::IntRect
+ 
+     // Create and return pattern.
+     auto cp = cairo_pattern_create_for_surface(surface->surface->cobj());
+-    auto const shift = surface->rect.min() + rounddown(area_orig.min() - surface->rect.min(), _pattern_resolution);
++    auto const shift = surface->rect.min() + round_down(area_orig.min() - surface->rect.min(), _pattern_resolution);
+     ink_cairo_pattern_set_matrix(cp, pattern_to_tile * Geom::Translate(-shift));
+     cairo_pattern_set_extend(cp, CAIRO_EXTEND_REPEAT);
+     if (rc.antialiasing_override && rc.antialiasing_override.value() == Antialiasing::None) {
+diff --git a/src/helper/geom.h b/src/helper/geom.h
+index 59542e7d44f..e8b1d1f46ee 100644
+--- src/helper/geom.h
++++ src/helper/geom.h
+@@ -54,10 +54,10 @@ inline Geom::Coord triangle_area(Geom::Point const &p1, Geom::Point const &p2, G
+     return p1[X] * p2[Y] + p1[Y] * p3[X] + p2[X] * p3[Y] - p2[Y] * p3[X] - p1[Y] * p2[X] - p1[X] * p3[Y];
+ }
+ 
+-inline auto rounddown(Geom::IntPoint const &a, Geom::IntPoint const &b)
++inline auto round_down(Geom::IntPoint const &a, Geom::IntPoint const &b)
+ {
+     using namespace Inkscape::Util;
+-    return Geom::IntPoint(rounddown(a.x(), b.x()), rounddown(a.y(), b.y()));
++    return Geom::IntPoint(round_down(a.x(), b.x()), round_down(a.y(), b.y()));
+ }
+ 
+ inline auto expandedBy(Geom::IntRect rect, int amount)
+diff --git a/src/helper/mathfns.h b/src/helper/mathfns.h
+index 6f466fb2c33..730b6ba2153 100644
+--- src/helper/mathfns.h
++++ src/helper/mathfns.h
+@@ -79,16 +79,16 @@ T constexpr safemod(T a, T b)
+ 
+ /// Returns \a a rounded down to the nearest multiple of \a b, assuming b >= 1.
+ template <typename T, typename std::enable_if<std::is_integral<T>::value, bool>::type = true>
+-T constexpr rounddown(T a, T b)
++T constexpr round_down(T a, T b)
+ {
+     return a - safemod(a, b);
+ }
+ 
+ /// Returns \a a rounded up to the nearest multiple of \a b, assuming b >= 1.
+ template <typename T, typename std::enable_if<std::is_integral<T>::value, bool>::type = true>
+-T constexpr roundup(T a, T b)
++T constexpr round_up(T a, T b)
+ {
+-    return rounddown(a - 1, b) + b;
++    return round_down(a - 1, b) + b;
+ }
+ 
+ /**
+diff --git a/src/ui/widget/canvas/pixelstreamer.cpp b/src/ui/widget/canvas/pixelstreamer.cpp
+index 74d557b37b1..ddafee96bac 100644
+--- src/ui/widget/canvas/pixelstreamer.cpp
++++ src/ui/widget/canvas/pixelstreamer.cpp
+@@ -99,7 +99,7 @@ public:
+         // Calculate image properties required by cairo.
+         int stride = cairo_format_stride_for_width(CAIRO_FORMAT_ARGB32, dimensions.x());
+         int size = stride * dimensions.y();
+-        int sizeup = Util::roundup(size, 64);
++        int sizeup = Util::round_up(size, 64);
+         assert(sizeup < bufsize);
+ 
+         // Attempt to advance buffers in states 3 or 4 towards 5, if allowed.
+diff --git a/src/util/pool.cpp b/src/util/pool.cpp
+index 455366b9f1b..89fe77ae023 100644
+--- src/util/pool.cpp
++++ src/util/pool.cpp
+@@ -8,7 +8,7 @@
+ namespace Inkscape::Util {
+ 
+ // Round up x to the next multiple of m.
+-static std::byte *roundup(std::byte *x, std::size_t m)
++static std::byte *round_up(std::byte *x, std::size_t m)
+ {
+     auto y = reinterpret_cast<uintptr_t>(x);
+     y = ((y - 1) / m + 1) * m;
+@@ -17,7 +17,7 @@ static std::byte *roundup(std::byte *x, std::size_t m)
+ 
+ std::byte *Pool::allocate(std::size_t size, std::size_t alignment)
+ {
+-    auto a = roundup(cur, alignment);
++    auto a = round_up(cur, alignment);
+     auto b = a + size;
+ 
+     if (b <= end) {
+@@ -33,7 +33,7 @@ std::byte *Pool::allocate(std::size_t size, std::size_t alignment)
+     resetblock();
+     nextsize = cursize * 3 / 2;
+ 
+-    a = roundup(cur, alignment);
++    a = round_up(cur, alignment);
+     b = a + size;
+ 
+     assert(b <= end);
+-- 
+GitLab
+

@@ -1,8 +1,6 @@
-diff --git src/providers/ldap/sdap_async_initgroups_ad.c src/providers/ldap/sdap_async_initgroups_ad.c
-index 3c58f5bc4..7e0a5169d 100644
---- src/providers/ldap/sdap_async_initgroups_ad.c
+--- src/providers/ldap/sdap_async_initgroups_ad.c.orig	2020-03-17 13:31:28 UTC
 +++ src/providers/ldap/sdap_async_initgroups_ad.c
-@@ -851,6 +851,7 @@ errno_t sdap_ad_save_group_membership_with_idmapping(const char *username,
+@@ -851,6 +851,7 @@ errno_t sdap_ad_save_group_membership_with_idmapping(c
      size_t i;
      time_t now;
      gid_t gid;
@@ -10,7 +8,7 @@ index 3c58f5bc4..7e0a5169d 100644
      char **groups = NULL;
      size_t num_groups;
      errno_t ret;
-@@ -881,7 +882,8 @@ errno_t sdap_ad_save_group_membership_with_idmapping(const char *username,
+@@ -881,7 +882,8 @@ errno_t sdap_ad_save_group_membership_with_idmapping(c
          sid = sids[i];
          DEBUG(SSSDBG_TRACE_LIBS, "Processing membership SID [%s]\n", sid);
  

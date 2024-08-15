@@ -1,6 +1,6 @@
---- cmake/ssl.cmake.orig	2022-07-06 21:36:34 UTC
+--- cmake/ssl.cmake.orig	2024-07-12 19:15:25 UTC
 +++ cmake/ssl.cmake
-@@ -142,7 +142,7 @@ MACRO(FIND_OPENSSL_VERSION)
+@@ -143,7 +143,7 @@ MACRO(FIND_OPENSSL_VERSION)
      # Encoded as MNNFFPPS: major minor fix patch status
      FILE(STRINGS "${OPENSSL_INCLUDE_DIR}/openssl/opensslv.h"
        OPENSSL_VERSION_NUMBER
@@ -9,7 +9,7 @@
        )
      STRING(REGEX REPLACE
        "^.*OPENSSL_VERSION_NUMBER[\t ]+0x([0-9]).*$" "\\1"
-@@ -380,8 +380,9 @@ MACRO (MYSQL_CHECK_SSL)
+@@ -381,8 +381,9 @@ MACRO (MYSQL_CHECK_SSL)
          "Not a supported openssl version in WITH_SSL=${WITH_SSL}.")
      ENDIF()
  

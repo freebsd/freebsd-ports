@@ -77,7 +77,10 @@ net_snmpd_precmd() {
 	done
 
 	# -c does not override the default config file.
-	check_conffile %%PREFIX%%/share/snmp/snmpd.conf
+	# if it exists, sanity check
+	if [ -f %%PREFIX%%/share/snmp/snmpd.conf ]; then
+		check_conffile %%PREFIX%%/share/snmp/snmpd.conf
+	fi
 	for conffile in ${snmpd_conffile}; do
 		check_conffile ${conffile}
 		if [ -f "${conffile}" -a -s "${conffile}" ]; then

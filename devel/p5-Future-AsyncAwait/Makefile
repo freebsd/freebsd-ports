@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Future>=0.50:devel/p5-Future \
 		p5-XS-Parse-Keyword>=0.13:devel/p5-XS-Parse-Keyword \
 		p5-XS-Parse-Sublike>=0.14:devel/p5-XS-Parse-Sublike
-TEST_DEPENDS=	p5-Test2-Suite>=0.000148:devel/p5-Test2-Suite
+TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	modbuild

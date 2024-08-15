@@ -1,13 +1,11 @@
---- pyproject.toml.orig	2024-03-13 13:39:08 UTC
+--- pyproject.toml.orig	2024-07-11 08:59:52 UTC
 +++ pyproject.toml
-@@ -18,8 +18,8 @@ requires = [
- [build-system]
- requires = [
-     "cython >= 0.29.31",
--    "oldest-supported-numpy>=0.14",
--    "setuptools_scm < 8.0.0",
-+    "numpy>=0.14",
-+    "setuptools_scm",
-     "setuptools >= 40.1.0",
-     "wheel"
+@@ -27,7 +27,7 @@ requires = [
+     # configuring setuptools_scm in pyproject.toml requires
+     # versions released after 2022
+     "setuptools_scm[toml]>=8",
+-    "setuptools>=64",
++    "setuptools>=61",
  ]
+ build-backend = "setuptools.build_meta"
+ 

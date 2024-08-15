@@ -1,7 +1,7 @@
 PORTNAME=	opensubdiv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3_6_0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -29,6 +29,7 @@ OPTIONS_DEFINE=		DOCS EXAMPLES OPENCL OPENMP PTEX TBB TEST TUTORIALS
 OPTIONS_DEFAULT=	PTEX TBB
 OPTIONS_DEFAULT_armv6=
 OPTIONS_DEFAULT_armv7=
+OPTIONS_DEFAULT_powerpc=
 OPTIONS_DEFAULT_OTHER_ARCHS=	OPENMP
 OPTIONS_SUB=		yes
 
@@ -36,7 +37,7 @@ PTEX_DESC=		ptex support
 TBB_DESC=		Intel threading building blocks
 TUTORIALS_DESC=		Install tutorial programs
 
-DOCS_BUILD_DEPENDS=	rst2html.py:textproc/py-docutils \
+DOCS_BUILD_DEPENDS=	rst2html:textproc/py-docutils \
 			doxygen>=1.8.4:devel/doxygen
 DOCS_USES=		python:build
 DOCS_CMAKE_BOOL_OFF=	NO_DOC

@@ -26,12 +26,7 @@ OPTIONS_DEFAULT=ALL
 ALL_DESC=	All functions
 
 ALL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=20.4:devel/py-packaging@${PY_FLAVOR} \
+			${PY_TOMLI} \
 			${PYTHON_PKGNAMEPREFIX}trove-classifiers>=2021.10.20:devel/py-trove-classifiers@${PY_FLAVOR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MALL} && ${PYTHON_REL} < 31100
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=1.2.1:textproc/py-tomli@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

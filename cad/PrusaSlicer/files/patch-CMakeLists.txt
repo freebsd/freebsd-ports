@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2024-02-29 13:03:32 UTC
+--- CMakeLists.txt.orig	2024-06-27 09:25:47 UTC
 +++ CMakeLists.txt
 @@ -14,6 +14,7 @@ include(CMakeDependentOption)
  include("version.inc")
@@ -8,7 +8,7 @@
  
  set(SLIC3R_RESOURCES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/resources")
  file(TO_NATIVE_PATH "${SLIC3R_RESOURCES_DIR}" SLIC3R_RESOURCES_DIR_WIN)
-@@ -218,7 +219,7 @@ endif ()
+@@ -234,7 +235,7 @@ endif ()
      endif ()
  endif ()
  
@@ -17,7 +17,7 @@
      find_package(PkgConfig REQUIRED)
  
      if (CMAKE_VERSION VERSION_LESS "3.1")
-@@ -248,6 +249,8 @@ if (NOT MSVC AND ("${CMAKE_CXX_COMPILER_ID}" STREQUAL 
+@@ -264,6 +265,8 @@ if (NOT MSVC AND ("${CMAKE_CXX_COMPILER_ID}" STREQUAL 
      # On GCC and Clang, no return from a non-void function is a warning only. Here, we make it an error.
      add_compile_options(-Werror=return-type)
  
@@ -26,16 +26,7 @@
      # removes LOTS of extraneous Eigen warnings (GCC only supports it since 6.1)
      # https://eigen.tuxfamily.org/bz/show_bug.cgi?id=1221
      if("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang" OR CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 6.0)
-@@ -457,7 +460,7 @@ find_package(EXPAT REQUIRED)
- # no matter what.
- find_package(EXPAT REQUIRED)
- 
--add_library(libexpat INTERFACE)
-+# add_library(libexpat INTERFACE)
- 
- if (TARGET EXPAT::EXPAT )
-     target_link_libraries(libexpat INTERFACE EXPAT::EXPAT)
-@@ -631,8 +634,8 @@ elseif (SLIC3R_FHS)
+@@ -648,8 +651,8 @@ elseif (SLIC3R_FHS)
      install(DIRECTORY ${SLIC3R_RESOURCES_DIR}/ DESTINATION ${SLIC3R_FHS_RESOURCES}
          PATTERN "*/udev" EXCLUDE
      )
@@ -46,7 +37,7 @@
      foreach(SIZE 32 128 192)
          install(FILES ${SLIC3R_RESOURCES_DIR}/icons/PrusaSlicer_${SIZE}px.png
              DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${SIZE}x${SIZE}/apps RENAME PrusaSlicer.png
-@@ -641,7 +644,8 @@ elseif (SLIC3R_FHS)
+@@ -658,7 +661,8 @@ elseif (SLIC3R_FHS)
              DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${SIZE}x${SIZE}/apps RENAME PrusaSlicer-gcodeviewer.png
          )
      endforeach()

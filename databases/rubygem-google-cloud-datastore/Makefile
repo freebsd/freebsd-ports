@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-datastore
-PORTVERSION=	2.9.0
+PORTVERSION=	2.10.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-google-cloud-core>=1.5<2:net/rubygem-google-cloud-core \
-		rubygem-google-cloud-datastore-v1>=0.0<1:databases/rubygem-google-cloud-datastore-v1
+		rubygem-google-cloud-datastore-v1>=0.0<2.0:databases/rubygem-google-cloud-datastore-v1
 
 USES=		gem
 

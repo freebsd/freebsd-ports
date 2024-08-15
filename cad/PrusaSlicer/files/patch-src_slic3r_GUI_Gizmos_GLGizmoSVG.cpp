@@ -1,4 +1,4 @@
---- src/slic3r/GUI/Gizmos/GLGizmoSVG.cpp.orig	2024-02-29 13:03:32 UTC
+--- src/slic3r/GUI/Gizmos/GLGizmoSVG.cpp.orig	2024-06-27 09:25:47 UTC
 +++ src/slic3r/GUI/Gizmos/GLGizmoSVG.cpp
 @@ -23,7 +23,7 @@
  #include "libslic3r/ClipperUtils.hpp" // union_ex
@@ -9,7 +9,7 @@
  
  #include <wx/display.h> // detection of change DPI
  #include <boost/log/trivial.hpp>
-@@ -560,7 +560,7 @@ void GLGizmoSVG::on_dragging(const UpdateData &data) {
+@@ -587,7 +587,7 @@ void GLGizmoSVG::on_dragging(const UpdateData &data) {
  void GLGizmoSVG::on_dragging(const UpdateData &data) { m_rotate_gizmo.dragging(data); }
  
  #include "slic3r/GUI/BitmapCache.hpp"

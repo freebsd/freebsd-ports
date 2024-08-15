@@ -1,61 +1,56 @@
 PORTNAME=	libwmf
+PORTVERSION=	0.2.13
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.13
 PORTREVISION=	2
 CATEGORIES=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tools and library for converting Microsoft WMF (windows metafile)
-WWW=		https://wvware.sourceforge.net/libwmf.html
+COMMENT=	Library for converting WMF files
+WWW=		https://wvware.sourceforge.net/libwmf.html \
+		https://github.com/caolanm/libwmf
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:graphics/png \
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \
 		libgd.so:graphics/gd \
-		libexpat.so:textproc/expat2
+		libpng.so:graphics/png
 
-USES=		autoreconf:build cpe gnome jpeg libtool localbase pkgconfig
-USE_GITHUB=	yes
-GH_ACCOUNT=	caolanm
+USES=		cpe gnome jpeg libtool localbase pkgconfig
 USE_GNOME=	gdkpixbuf2
+
+CONFIGURE_ARGS=	--with-fontdir=${LOCALBASE}/share/libwmf/fonts \
+		--with-freetype=${LOCALBASE} \
+		--with-gsfontdir=${LOCALBASE}/share/ghostscript/fonts
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+FLAVORS=	x11 nox11
+FLAVOR?=	${FLAVORS:[1]}
+FLAVORS_SUB=	yes
+nox11_PKGNAMESUFFIX=	-nox11
+.if ${FLAVOR} == x11
+USE_XORG=	x11
+USES+=		xorg
+.else
+CONFIGURE_ARGS+=--with-x=no
+.endif
+
+CONFLICTS_INSTALL=	libwmf libwmf-nox11
+
 CPE_VENDOR=	wvware
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gsfontdir=${LOCALBASE}/share/ghostscript/fonts
-INSTALL_TARGET=	install-strip
+USE_GITHUB=	yes
+GH_ACCOUNT=	caolanm
 
-CONFLICTS?=	libwmf-nox11
-
-PORTDOCS=	*
-
-OPTIONS_DEFINE=	X11 DOCS
-OPTIONS_DEFAULT=X11
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
-X11_USES=	xorg
-X11_USE=	XORG=x11
-X11_CONFIGURE_OFF=--with-x=no
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|@LIBWMF_GDK_PIXBUF_TRUE@|#|g ; \
-		 s|@LIBWMF_GDK_PIXBUF_FALSE@||g ; \
-		 s|: install-loaderLTLIBRARIES|:|g' ${WRKSRC}/src/Makefile.in
-
-pre-configure:
-	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} AUTOHEADER="${TRUE}" \
-	 ${LOCALBASE}/bin/autoreconf -vif -Ipatches)
-
-post-configure:
-	@${REINPLACE_CMD} -e 's|autoheader|autoheader -Ipatches|g' \
-		${WRKSRC}/Makefile
-
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${TAR} -C ${WRKSRC}/doc --exclude '*Makefile*' -cf - . | \
-		${TAR} -C ${STAGEDIR}${DOCSDIR} --unlink -xf -
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/ "! -name Makefile ! -name Makefile.am ! -name Makefile.in"
 
 .include <bsd.port.mk>

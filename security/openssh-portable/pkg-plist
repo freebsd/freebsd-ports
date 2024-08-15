@@ -14,6 +14,7 @@ libexec/sftp-server
 libexec/ssh-keysign
 libexec/ssh-pkcs11-helper
 libexec/ssh-sk-helper
+libexec/sshd-session
 share/man/man1/sftp.1.gz
 share/man/man1/ssh-add.1.gz
 share/man/man1/ssh-agent.1.gz

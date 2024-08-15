@@ -1,6 +1,5 @@
 PORTNAME=	jupyter-collaboration
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyterlab/jupyter-collaboration/releases/download/v${PORTVERSION}/
@@ -23,7 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.18.0:devel/py-jsonschema@${PY_
 		${PYTHON_PKGNAMEPREFIX}jupyter-server>=2.0.0<3.0.0:devel/py-jupyter-server@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-server-fileid>=0.7.0<1:devel/py-jupyter-server-fileid@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-ydoc>=2.0.0<3.0.0:devel/py-jupyter-ydoc@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pycrdt-websocket>=0.13.4<0.14.0:devel/py-pycrdt-websocket@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pycrdt>=0:devel/py-pycrdt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycrdt-websocket>=0.14.0<0.15.0:devel/py-pycrdt-websocket@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517

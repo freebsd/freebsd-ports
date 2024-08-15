@@ -1,7 +1,3 @@
-TIMESTAMP = 1688166082
-SHA256 (asciidoc-10.2.0.tar.gz) = 91ff1dd4c85af7b235d03e0860f0c4e79dd1ff580fb610668a39b5c77b4ccace
-SIZE (asciidoc-10.2.0.tar.gz) = 216824
-SHA256 (a2x.1.txt) = 51b05d6be98531ec6c7ff0459dc82fdd103bc43ae682b954c98943ead4d03de7
-SIZE (a2x.1.txt) = 13050
-SHA256 (asciidoc.1.txt) = 3e412b938b51d88948e7713b5026425b15babcb8e3899ec0e2c769e10baf8d31
-SIZE (asciidoc.1.txt) = 7485
+TIMESTAMP = 1721823004
+SHA256 (asciidoc-10.2.1.tar.gz) = d9f13c285981b3c7eb660d02ca0a2779981e88d48105de81bb40445e60dddb83
+SIZE (asciidoc-10.2.1.tar.gz) = 230179

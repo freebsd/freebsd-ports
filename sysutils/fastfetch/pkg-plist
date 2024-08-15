@@ -5,7 +5,6 @@ share/fish/vendor_completions.d/fastfetch.fish
 share/man/man1/fastfetch.1.gz
 %%DATADIR%%/presets/all.jsonc
 %%DATADIR%%/presets/archey.jsonc
-%%DATADIR%%/presets/btw.jsonc
 %%DATADIR%%/presets/ci.jsonc
 %%DATADIR%%/presets/examples/10.jsonc
 %%DATADIR%%/presets/examples/11.jsonc
@@ -20,6 +19,7 @@ share/man/man1/fastfetch.1.gz
 %%DATADIR%%/presets/examples/20.jsonc
 %%DATADIR%%/presets/examples/21.jsonc
 %%DATADIR%%/presets/examples/22.jsonc
+%%DATADIR%%/presets/examples/23.jsonc
 %%DATADIR%%/presets/examples/2.jsonc
 %%DATADIR%%/presets/examples/3.jsonc
 %%DATADIR%%/presets/examples/4.jsonc
@@ -28,8 +28,6 @@ share/man/man1/fastfetch.1.gz
 %%DATADIR%%/presets/examples/7.jsonc
 %%DATADIR%%/presets/examples/8.jsonc
 %%DATADIR%%/presets/examples/9.jsonc
-%%DATADIR%%/presets/hardware.jsonc
 %%DATADIR%%/presets/neofetch.jsonc
 %%DATADIR%%/presets/paleofetch.jsonc
 %%DATADIR%%/presets/screenfetch.jsonc
-%%DATADIR%%/presets/software.jsonc

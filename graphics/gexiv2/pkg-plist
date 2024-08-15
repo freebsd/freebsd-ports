@@ -10,7 +10,7 @@ include/gexiv2/gexiv2.h
 lib/girepository-1.0/GExiv2-0.10.typelib
 lib/libgexiv2.so
 lib/libgexiv2.so.2
-lib/libgexiv2.so.2.14.2
+lib/libgexiv2.so.2.14.3
 libdata/pkgconfig/gexiv2.pc
 share/gir-1.0/GExiv2-0.10.gir
 %%DOCS%%share/gtk-doc/html/gexiv2/GExiv2Metadata.html

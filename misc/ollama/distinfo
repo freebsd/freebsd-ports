@@ -1,0 +1,7 @@
+TIMESTAMP = 1722929347
+SHA256 (go/misc_ollama/ollama-v0.3.4/v0.3.4.mod) = ec7b6ce8fd820503671d269fd43ea5ae7275b1ff095c77d6422ac8540ccb410b
+SIZE (go/misc_ollama/ollama-v0.3.4/v0.3.4.mod) = 2992
+SHA256 (go/misc_ollama/ollama-v0.3.4/v0.3.4.zip) = d9bc3d3901272f8fbc9b57ce1af1caa2209127978bb5f72257b6a3fb84161969
+SIZE (go/misc_ollama/ollama-v0.3.4/v0.3.4.zip) = 1832031
+SHA256 (go/misc_ollama/ollama-v0.3.4/ggerganov-llama.cpp-6eeaeba_GH0.tar.gz) = f749f494dc5e672926179524cf28c834151edba5acae18e132c954df76ffdf33
+SIZE (go/misc_ollama/ollama-v0.3.4/ggerganov-llama.cpp-6eeaeba_GH0.tar.gz) = 19003544

@@ -12,7 +12,6 @@ libexec/rbenv-hooks
 libexec/rbenv-init
 libexec/rbenv-local
 libexec/rbenv-prefix
-libexec/rbenv-realpath.dylib
 libexec/rbenv-rehash
 libexec/rbenv-root
 libexec/rbenv-sh-rehash
@@ -27,5 +26,6 @@ libexec/rbenv-version-origin
 libexec/rbenv-versions
 libexec/rbenv-whence
 libexec/rbenv-which
+share/man/man1/rbenv.1.gz
+%%DATADIR%%/completions/_rbenv
 %%DATADIR%%/completions/rbenv.bash
-%%DATADIR%%/completions/rbenv.zsh

@@ -1,0 +1,7 @@
+Multimethod provides a decorator for adding multiple argument dispatching to
+functions. The decorator creates a multimethod object as needed, and registers
+the function with its annotations.
+
+There are several multiple dispatch libraries on PyPI. This one aims for
+simplicity and speed. With caching of argument types, it should be the fastest
+pure Python implementation possible.

@@ -1,0 +1,11 @@
+--- faraday.gemspec.orig	2024-08-04 19:54:57 UTC
++++ faraday.gemspec
+@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<faraday-net_http>.freeze, [">= 2.0".freeze, "< 3.2".freeze])
++  s.add_runtime_dependency(%q<faraday-net_http>.freeze, [">= 2.0".freeze, "< 3.3".freeze])
+   s.add_runtime_dependency(%q<logger>.freeze, [">= 0".freeze])
+ end
+ 

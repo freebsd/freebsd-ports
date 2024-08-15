@@ -17,7 +17,7 @@ USES=		cmake desktop-file-utils kde:5 pkgconfig qt:5 sdl \
 USE_GITHUB=	yes
 GH_ACCOUNT=	AntimicroX
 USE_KDE=	ecm
-USE_QT=		concurrent core gui widgets buildtools:build qmake:build
+USE_QT=		concurrent core gui linguist widgets buildtools:build qmake:build
 USE_SDL=	sdl2
 USE_XORG=	x11 xi xtst
 

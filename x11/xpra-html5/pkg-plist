@@ -116,6 +116,9 @@ share/xpra/www/js/Utilities.js.gz
 share/xpra/www/js/VideoDecoder.js
 share/xpra/www/js/VideoDecoder.js.br
 share/xpra/www/js/VideoDecoder.js.gz
+share/xpra/www/js/WebTransport.js
+share/xpra/www/js/WebTransport.js.br
+share/xpra/www/js/WebTransport.js.gz
 share/xpra/www/js/Window.js
 share/xpra/www/js/Window.js.br
 share/xpra/www/js/Window.js.gz

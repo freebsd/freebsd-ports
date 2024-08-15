@@ -1,6 +1,6 @@
---- whiptcl.c.orig	2016-03-23 15:46:24 UTC
+--- whiptcl.c.orig	2023-10-25 10:21:25 UTC
 +++ whiptcl.c
-@@ -137,45 +137,45 @@ static int wtCmd(ClientData clientData, 
+@@ -138,45 +138,45 @@ static int wtCmd(ClientData clientData, Tcl_Interp * i
      
      if (arg < -1) {
  	/* this could buffer oveflow, bug we're not setuid so I don't care */
@@ -56,46 +56,7 @@
  	return TCL_ERROR;
      }
  
-@@ -196,33 +196,30 @@ static int wtCmd(ClientData clientData, 
-       case MODE_YESNO:
- 	rc = messageBox(text, height, width, MSGBOX_YESNO, flags);
- 	if (rc == DLG_OKAY)
--	    interp->result = "yes";
-+	    Tcl_SetResult(interp, "yes", TCL_STATIC);
- 	else 
--	    interp->result = "no";
-+	    Tcl_SetResult(interp, "no", TCL_STATIC);
- 	if (rc == DLG_ERROR) rc = 0;
- 	break;
- 
-       case MODE_INPUTBOX:
- 	rc = inputBox(text, height, width, optCon, flags, &result);
- 	if (rc ==DLG_OKAY) {
--	    interp->result = result;
--	    interp->freeProc = TCL_DYNAMIC;
-+	    Tcl_SetResult(interp, strdup(result), TCL_DYNAMIC);
- 	}
- 	break;
- 
-       case MODE_MENU:
- 	rc = listBox(text, height, width, optCon, flags, default_item, &result);
- 	if (rc==DLG_OKAY) {
--	    interp->result = result;
--	    interp->freeProc = TCL_DYNAMIC;
-+	    Tcl_SetResult(interp, strdup(result), TCL_DYNAMIC);
- 	}
- 	break;
- 
-       case MODE_RADIOLIST:
- 	rc = checkList(text, height, width, optCon, 1, flags, &selections);
- 	if (rc==DLG_OKAY) {
--	    interp->result = selections[0];
--	    interp->freeProc = TCL_DYNAMIC;
-+	    Tcl_SetResult(interp, strdup(selections[0]), TCL_DYNAMIC);
- 
- 	    free(selections);
- 	}
-@@ -247,7 +244,7 @@ static int wtCmd(ClientData clientData, 
+@@ -267,7 +267,7 @@ static int wtCmd(ClientData clientData, Tcl_Interp * i
      newtPopWindow();
  
      if (rc == DLG_ERROR) {

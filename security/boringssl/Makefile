@@ -1,16 +1,16 @@
 PORTNAME=	boringssl
-PORTVERSION=	0.0.0.0.2024.06.24.01
+PORTVERSION=	0.0.0.0.2024.08.02.01
 PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES+=	https://proxy.golang.org/:gomods
-DISTFILES+=	golang.org/x/crypto/@v/v0.17.0.zip:gomods \
-		golang.org/x/crypto/@v/v0.17.0.mod:gomods \
-		golang.org/x/net/@v/v0.17.0.zip:gomods \
-		golang.org/x/net/@v/v0.17.0.mod:gomods \
-		golang.org/x/sys/@v/v0.15.0.zip:gomods \
-		golang.org/x/sys/@v/v0.15.0.mod:gomods \
-		golang.org/x/term/@v/v0.15.0.zip:gomods \
-		golang.org/x/term/@v/v0.15.0.mod:gomods
+DISTFILES+=	golang.org/x/crypto/@v/v0.25.0.zip:gomods \
+		golang.org/x/crypto/@v/v0.25.0.mod:gomods \
+		golang.org/x/net/@v/v0.27.0.zip:gomods \
+		golang.org/x/net/@v/v0.27.0.mod:gomods \
+		golang.org/x/sys/@v/v0.22.0.zip:gomods \
+		golang.org/x/sys/@v/v0.22.0.mod:gomods \
+		golang.org/x/term/@v/v0.22.0.zip:gomods \
+		golang.org/x/term/@v/v0.22.0.mod:gomods
 EXTRACT_ONLY=	${GH_ACCOUNT}-${PORTNAME}-${PORTVERSION}-${GH_TAGNAME}_GH0.tar.gz
 
 MAINTAINER=	osa@FreeBSD.org
@@ -29,7 +29,7 @@ CPE_VENDOR=	google
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	12f0f4b
+GH_TAGNAME=	e23fe9b
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=1
 
 CFLAGS_i386=	-msse2

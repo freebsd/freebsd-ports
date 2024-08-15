@@ -1,7 +1,6 @@
 PORTNAME=	llvmcpy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.5
-PORTREVISION=	1
+DISTVERSION=	0.1.6
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,9 +18,11 @@ RUN_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		${PYTHON_PKGNAMEPREFIX}pycparser>0:devel/py-pycparser@${PY_FLAVOR}
 
 USES=		python
+USE_PYTHON=	distutils autoplist
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	revng
-USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 post-patch:

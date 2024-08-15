@@ -2,7 +2,7 @@ PORTNAME=		pacemaker
 DISTVERSIONPREFIX=	Pacemaker-
 CATEGORIES=		net
 
-MAINTAINER=		flo@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Scalable High-Availability cluster resource manager
 
 LICENSE=		GPLv2

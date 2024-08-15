@@ -1,5 +1,5 @@
 PORTNAME=	pioneer
-DISTVERSION=	20240314
+DISTVERSION=	20240710
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -23,7 +23,6 @@ LICENSE_PERMS_DejaVu=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_IUP=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_FreeBSD_13=	fails to build
 # XXX: if you have similar error, try adding failing arch to USE_CHRONO condition in contrib/profiler/Profiler.h
 BROKEN_xxx=		fails to build: contrib/profiler/Profiler.h:158:51: inconsistent operand constraints in an 'asm'
 
@@ -40,7 +39,6 @@ GH_ACCOUNT=	pioneerspacesim
 ALL_TARGET=	all build-data
 CMAKE_ARGS=	-DPIONEER_DATA_DIR:PATH="${DATADIR}/data"
 CMAKE_ON=	USE_SYSTEM_LIBGLEW USE_SYSTEM_LIBLUA
-CMAKE_OFF=	FMT_INSTALL
 
 PORTDATA=	*
 PORTDOCS=	AUTHORS.txt Changelog.txt Quickstart.txt \
@@ -60,7 +58,7 @@ PROFILER_CMAKE_BOOL=	PROFILER_ENABLED
 .include <bsd.port.options.mk>
 
 .if ${ARCH} != amd64 && ${ARCH} != i386
-CMAKE_ARGS+=	-DUSE_SSE42:BOOL=OFF
+CMAKE_OFF+=	USE_SSE42
 .endif
 
 post-install-DOCS-on:

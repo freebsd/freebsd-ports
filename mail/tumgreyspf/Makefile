@@ -8,7 +8,8 @@ MASTER_SITES=	http://ftp.tummy.com/pub/tummy/tumgreyspf/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	External policy checker for the postfix mail server
-WWW=		https://www.tummy.com/software/tumgreyspf/
+WWW=		https://www.tummy.com/software/tumgreyspf/ \
+		https://github.com/linsomniac/tumgreyspf
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

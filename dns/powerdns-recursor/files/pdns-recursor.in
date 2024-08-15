@@ -23,7 +23,7 @@ load_rc_config ${name}
 
 pdns_recursor_enable=${pdns_recursor_enable:-"NO"}
 : ${pdns_recursor_svcj_options:="net_basic"}
-pdns_recursor_conf=${pdns_recursor_conf:-"%%PREFIX%%/etc/pdns/recursor.conf"}
+pdns_recursor_conf=${pdns_recursor_conf:-"%%PREFIX%%/etc/pdns/recursor.yml"}
 required_files=${pdns_recursor_conf}
 
 # run_rc_command would send ${name}_flags as parameters to $command (daemon)

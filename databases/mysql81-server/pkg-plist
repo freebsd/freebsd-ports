@@ -132,7 +132,7 @@ lib/mysql/plugin/connection_control.so
 lib/mysql/plugin/daemon_example.ini
 lib/mysql/plugin/ddl_rewriter.so
 lib/mysql/plugin/group_replication.so
-lib/mysql/plugin/ha_example.so
+%%NO_EXAMPLE%%lib/mysql/plugin/ha_example.so
 lib/mysql/plugin/ha_mock.so
 lib/mysql/plugin/keyring_file.so
 lib/mysql/plugin/keyring_udf.so

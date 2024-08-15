@@ -1,7 +1,7 @@
 PORTNAME=	dissent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.25
-PORTREVISION=	2
+DISTVERSION=	0.0.27
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -26,24 +26,24 @@ GH_TUPLE=	KarpelesLab:weak:v0.1.1:karpeleslab_weak/vendor/github.com/KarpelesLab
 		diamondburned:chatkit:5788b19145bc:diamondburned_chatkit/vendor/github.com/diamondburned/chatkit \
 		diamondburned:ctxt:2db38a5d3c12:diamondburned_ctxt/vendor/libdb.so/ctxt \
 		diamondburned:go-emoji:39776eee41ac:diamondburned_go_emoji/vendor/libdb.so/go-emoji \
-		diamondburned:gotk4-adwaita:5f283b5d35bc:diamondburned_gotk4_adwaita_pkg/vendor/github.com/diamondburned/gotk4-adwaita \
-		diamondburned:gotk4:e395a91f5db3:diamondburned_gotk4_pkg/vendor/github.com/diamondburned/gotk4 \
-		diamondburned:gotkit:6aaca1acc990:diamondburned_gotkit/vendor/github.com/diamondburned/gotkit \
-		diamondburned:ningen:96fcee660001:diamondburned_ningen_v3/vendor/github.com/diamondburned/ningen/v3 \
+		diamondburned:gotk4-adwaita:824c3ce8a5f4:diamondburned_gotk4_adwaita_pkg/vendor/github.com/diamondburned/gotk4-adwaita \
+		diamondburned:gotk4:v0.3.1:diamondburned_gotk4_pkg/vendor/github.com/diamondburned/gotk4 \
+		diamondburned:gotkit:b0d58ff2b308:diamondburned_gotkit/vendor/github.com/diamondburned/gotkit \
+		diamondburned:ningen:b1a39a908e52:diamondburned_ningen_v3/vendor/github.com/diamondburned/ningen/v3 \
 		dlclark:regexp2:v1.11.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dustin:go-humanize:v1.0.1:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		enescakir:emoji:v1.0.0:enescakir_emoji/vendor/github.com/enescakir/emoji \
 		go4org:go4:214862532bf5:go4org_go4/vendor/go4.org \
 		go4org:unsafe-assume-no-moving-gc:b99613f794b6:go4org_unsafe_assume_no_moving_gc/vendor/go4.org/unsafe/assume-no-moving-gc \
 		godbus:dbus:v5.1.0:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
+		gofrs:flock:v0.12.1:gofrs_flock/vendor/github.com/gofrs/flock \
 		golang:crypto:v0.22.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:image:v0.15.0:golang_image/vendor/golang.org/x/image \
 		golang:net:v0.24.0:golang_net/vendor/golang.org/x/net \
 		golang:sync:v0.7.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.19.0:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.15.0:golang_text/vendor/golang.org/x/text \
+		golang:sys:v0.22.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.16.0:golang_text/vendor/golang.org/x/text \
 		golang:time:v0.5.0:golang_time/vendor/golang.org/x/time \
-		gorilla:schema:v1.3.0:gorilla_schema/vendor/github.com/gorilla/schema \
+		gorilla:schema:v1.4.1:gorilla_schema/vendor/github.com/gorilla/schema \
 		gorilla:websocket:v1.5.1:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		ianlancetaylor:cgosymbolizer:581a3f7c677f:ianlancetaylor_cgosymbolizer/vendor/github.com/ianlancetaylor/cgosymbolizer \
 		leonelquinteros:gotext:v1.6.0:leonelquinteros_gotext/vendor/github.com/leonelquinteros/gotext \

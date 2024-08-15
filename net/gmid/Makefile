@@ -1,5 +1,5 @@
 PORTNAME=	gmid
-DISTVERSION=	2.0.5
+DISTVERSION=	2.1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/omar-polo/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		https://ftp.omarpolo.com/

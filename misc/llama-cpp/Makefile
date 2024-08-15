@@ -1,6 +1,6 @@
 PORTNAME=	llama-cpp
 DISTVERSIONPREFIX=	b
-DISTVERSION=	3291
+DISTVERSION=	3581
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,15 +26,20 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	LLAMA_BUILD_TESTS
 CMAKE_TESTING_ON=	LLAMA_BUILD_TESTS
 
-LDFLAGS+=	-pthread
-
-OPTIONS_DEFINE=		EXAMPLES
+OPTIONS_DEFINE=		EXAMPLES VULKAN
+OPTIONS_DEFAULT=	VULKAN
 OPTIONS_SUB=		yes
 
 EXAMPLES_CMAKE_BOOL=	LLAMA_BUILD_EXAMPLES
 
+VULKAN_DESC=		Vulkan GPU offload support
+VULKAN_CMAKE_BOOL=	GGML_VULKAN
+VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
+			vulkan-headers>0:graphics/vulkan-headers
+VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
+
 BINARY_ALIAS=	git=false
 
-# 1 test fails due to a missing model file (stories260K.gguf)
+# 2 tests fail: https://github.com/ggerganov/llama.cpp/issues/8906
 
 .include <bsd.port.mk>

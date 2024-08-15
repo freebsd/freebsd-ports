@@ -1,0 +1,3 @@
+Imagecodecs is a Python library that provides block-oriented, in-memory buffer
+transformation, compression, and decompression functions for use in Tifffile,
+Czifile, Zarr, kerchunk, and other scientific image input/output packages.

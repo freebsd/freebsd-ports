@@ -1,29 +1,11 @@
---- C/Makefile.orig	2019-10-30 18:14:13 UTC
+--- C/Makefile.orig	2024-06-24 00:49:39 UTC
 +++ C/Makefile
-@@ -29,7 +29,7 @@ TEST = test
+@@ -42,7 +42,7 @@ TEST = test
  ###
  # installation options
  #
 -prefix = /usr/local
 +prefix ?= /usr/local
- LOCALEDIR = $(prefix)/share/locale
- 
- ###
-@@ -178,7 +178,7 @@ bsd43-cc:
- 	$(MAKE) _MKCONFIG_SHELL=$(MKCONFIG_SHELL) \
- 		CC=cc LD=cc EXE_EXT="" OBJ_EXT=".o" \
- 		DI_CFLAGS="$(DI_CFLAGS) -O" \
--		LDFLAGS="-O" di-programs
-+		LDFLAGS="-O $(LDFLAGS)" di-programs
- 
- .PHONY: bsd43-gcc
- bsd43-gcc:
-@@ -192,7 +192,7 @@ bsd43-gcc:
- 	$(MAKE) _MKCONFIG_SHELL=$(MKCONFIG_SHELL) \
- 		CC=gcc LD=gcc EXE_EXT="" OBJ_EXT=".o" \
- 		DI_CFLAGS="$(DI_CFLAGS) -O2" \
--		LDFLAGS="-O2" di-programs
-+		LDFLAGS="-O2 $(LDFLAGS)" di-programs
- 
- .PHONY: ultrix-cc
- ultrix-cc:
+ PREFIX = $(prefix)
+ BINDIR = $(PREFIX)/bin
+ DATADIR = $(PREFIX)/share

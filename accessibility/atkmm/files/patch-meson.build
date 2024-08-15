@@ -1,0 +1,11 @@
+--- meson.build.orig	2024-08-06 19:05:00 UTC
++++ meson.build
+@@ -97,7 +97,7 @@ install_datadir = get_option('datadir')
+ install_includedir = get_option('includedir')
+ install_libdir = get_option('libdir')
+ install_datadir = get_option('datadir')
+-install_pkgconfigdir = install_libdir / 'pkgconfig'
++install_pkgconfigdir = install_prefix / 'libdata' / 'pkgconfig'
+ 
+ # Dependencies.
+ # atkmm_build_dep: Dependencies when building the atkmm library.

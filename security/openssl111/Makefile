@@ -120,7 +120,7 @@ SHARED_USE=		ldconfig=yes
 SSL3_CONFIGURE_ON+=	enable-ssl3-method
 ZLIB_CONFIGURE_ON=	zlib-dynamic
 
-PORTSCOUT=		limit=^1\.1\.1
+PORTSCOUT=		limit:^1\.1\.1
 
 .include <bsd.port.pre.mk>
 .if ${PREFIX} == /usr

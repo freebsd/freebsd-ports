@@ -1,7 +1,6 @@
 PORTNAME=	PrusaSlicer
 DISTVERSIONPREFIX=version_
-DISTVERSION=	2.7.4
-PORTREVISION=	3
+DISTVERSION=	2.8.0
 CATEGORIES=	cad
 DIST_SUBDIR=	PrusaSlicer
 
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	cereal>=1.3.0.10:devel/cereal \
 		cgal>=5.0.2:math/cgal \
 		opencascade>=7.7.0:cad/opencascade \
-		libbgcode>=0.2.0:cad/libbgcode
+		libbgcode>=0.2.0_1:cad/libbgcode
 
 LIB_DEPENDS+=	libbgcode_convert.so:cad/libbgcode \
 		libbgcode_binarize.so:cad/libbgcode \

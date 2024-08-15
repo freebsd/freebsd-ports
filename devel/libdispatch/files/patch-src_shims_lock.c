@@ -1,4 +1,4 @@
---- src/shims/lock.c.orig	2021-09-17 04:54:52 UTC
+--- src/shims/lock.c.orig	2023-06-15 00:55:45 UTC
 +++ src/shims/lock.c
 @@ -56,6 +56,18 @@ _dispatch_thread_switch(dispatch_lock value, dispatch_
  #endif
@@ -19,7 +19,7 @@
  #pragma mark - semaphores
  
  #if USE_MACH_SEM
-@@ -394,8 +406,10 @@ _dispatch_unfair_lock_wake(uint32_t *uaddr, uint32_t f
+@@ -395,8 +407,10 @@ _dispatch_unfair_lock_wake(uint32_t *uaddr, uint32_t f
  #include <sys/time.h>
  #ifdef __ANDROID__
  #include <sys/syscall.h>
@@ -31,7 +31,7 @@
  #endif /* __ANDROID__ */
  
  DISPATCH_ALWAYS_INLINE
-@@ -404,7 +418,12 @@ _dispatch_futex(uint32_t *uaddr, int op, uint32_t val,
+@@ -405,7 +419,12 @@ _dispatch_futex(uint32_t *uaddr, int op, uint32_t val,
  		const struct timespec *timeout, uint32_t *uaddr2, uint32_t val3,
  		int opflags)
  {
@@ -44,7 +44,7 @@
  }
  
  // returns 0, ETIMEDOUT, EFAULT, EINTR, EWOULDBLOCK
-@@ -414,11 +433,15 @@ _futex_blocking_op(uint32_t *uaddr, int futex_op, uint
+@@ -415,11 +434,15 @@ _futex_blocking_op(uint32_t *uaddr, int futex_op, uint
  		const struct timespec *timeout, int flags)
  {
  	for (;;) {
@@ -63,7 +63,7 @@
  		case EINTR:
  			/*
  			 * if we have a timeout, we need to return for the caller to
-@@ -454,6 +477,7 @@ _dispatch_futex_wake(uint32_t *uaddr, int wake, int op
+@@ -455,6 +478,7 @@ _dispatch_futex_wake(uint32_t *uaddr, int wake, int op
  	DISPATCH_INTERNAL_CRASH(errno, "_dlock_wake() failed");
  }
  
@@ -71,7 +71,7 @@
  static void
  _dispatch_futex_lock_pi(uint32_t *uaddr, struct timespec *timeout, int detect,
  	      int opflags)
-@@ -471,6 +495,7 @@ _dispatch_futex_unlock_pi(uint32_t *uaddr, int opflags
+@@ -472,6 +496,7 @@ _dispatch_futex_unlock_pi(uint32_t *uaddr, int opflags
  	if (rc == 0) return;
  	DISPATCH_CLIENT_CRASH(errno, "futex_unlock_pi() failed");
  }
@@ -79,10 +79,10 @@
  
  #endif
  #pragma mark - wait for address
-@@ -509,6 +534,19 @@ _dispatch_wait_on_address(uint32_t volatile *_address,
- 	return _dispatch_futex_wait(address, value, NULL, FUTEX_PRIVATE_FLAG);
- #elif defined(_WIN32)
- 	return WaitOnAddress(address, &value, sizeof(value), INFINITE) == TRUE;
+@@ -516,6 +541,19 @@ _dispatch_wait_on_address(uint32_t volatile *_address,
+ 			? INFINITE : ((nsecs + 1000000) / 1000000);
+ 	if (dwMilliseconds == 0) return ETIMEDOUT;
+ 	return WaitOnAddress(address, &value, sizeof(value), dwMilliseconds) == TRUE;
 +#elif defined(__FreeBSD__)
 +	uint64_t usecs = 0;
 +	int rc;
@@ -99,7 +99,7 @@
  #else
  #error _dispatch_wait_on_address unimplemented for this platform
  #endif
-@@ -599,7 +637,7 @@ _dispatch_unfair_lock_lock_slow(dispatch_unfair_lock_t
+@@ -606,7 +644,7 @@ _dispatch_unfair_lock_lock_slow(dispatch_unfair_lock_t
  		}
  	}
  }
@@ -108,7 +108,7 @@
  void
  _dispatch_unfair_lock_lock_slow(dispatch_unfair_lock_t dul,
  		dispatch_lock_options_t flags)
-@@ -636,7 +674,7 @@ _dispatch_unfair_lock_unlock_slow(dispatch_unfair_lock
+@@ -643,7 +681,7 @@ _dispatch_unfair_lock_unlock_slow(dispatch_unfair_lock
  	if (_dispatch_lock_has_waiters(cur)) {
  		_dispatch_unfair_lock_wake(&dul->dul_lock, 0);
  	}

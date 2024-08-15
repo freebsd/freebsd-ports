@@ -1,8 +1,6 @@
-diff --git src/util/find_uid.c src/util/find_uid.c
-index 215c0d338..42a1df729 100644
---- src/util/find_uid.c
+--- src/util/find_uid.c.orig	2020-03-17 13:31:28 UTC
 +++ src/util/find_uid.c
-@@ -72,7 +72,7 @@ static errno_t get_uid_from_pid(const pid_t pid, uid_t *uid)
+@@ -72,7 +72,7 @@ static errno_t get_uid_from_pid(const pid_t pid, uid_t
      uint32_t num=0;
      errno_t error;
  
@@ -11,7 +9,7 @@ index 215c0d338..42a1df729 100644
      if (ret < 0) {
          DEBUG(SSSDBG_CRIT_FAILURE, "snprintf failed\n");
          return EINVAL;
-@@ -218,12 +218,12 @@ static errno_t get_active_uid_linux(hash_table_t *table, uid_t search_uid)
+@@ -216,12 +216,12 @@ static errno_t get_active_uid_linux(hash_table_t *tabl
      struct dirent *dirent;
      int ret, err;
      pid_t pid = -1;
@@ -26,7 +24,7 @@ index 215c0d338..42a1df729 100644
      if (proc_dir == NULL) {
          ret = errno;
          DEBUG(SSSDBG_CRIT_FAILURE, "Cannot open proc dir.\n");
-@@ -298,9 +298,8 @@ done:
+@@ -301,9 +301,8 @@ errno_t get_uid_table(TALLOC_CTX *mem_ctx, hash_table_
  
  errno_t get_uid_table(TALLOC_CTX *mem_ctx, hash_table_t **table)
  {

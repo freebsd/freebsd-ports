@@ -1,0 +1,29 @@
+--- nall/GNUmakefile.orig	2024-08-14 12:07:36 UTC
++++ nall/GNUmakefile
+@@ -169,8 +169,6 @@ ifeq ($(build),debug)
+   lto = false
+   ifeq ($(cl),true)
+     flags += -Od
+-  else
+-    flags += -Og
+   endif
+   flags += -DBUILD_DEBUG
+ else ifeq ($(build),stable)
+@@ -178,7 +176,7 @@ else ifeq ($(build),release)
+ else ifeq ($(build),minified)
+   flags += -Os -DBUILD_MINIFIED
+ else ifeq ($(build),release)
+-  flags += -O2 -DBUILD_RELEASE
++  flags += -DBUILD_RELEASE
+ else ifeq ($(build),optimized)
+   ifeq ($(cl),true)
+     flags += -O2
+@@ -323,8 +321,6 @@ ifeq ($(platform),bsd)
+ 
+ # bsd settings
+ ifeq ($(platform),bsd)
+-  flags   += -I/usr/local/include
+-  options += -Wl,-rpath=/usr/local/lib
+   options += -lstdc++ -lm
+ endif
+ 

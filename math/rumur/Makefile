@@ -1,6 +1,6 @@
 PORTNAME=	rumur
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.05.07
+DISTVERSION=	2024.07.14
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,7 +26,7 @@ CMAKE_ARGS=	BISON_EXECUTABLE:STRING=${LOCALBASE}/bin/bison
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-do-test:
+do-test: # the test command outputs only in the end of the run
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} --build . --target check
 

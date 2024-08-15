@@ -1,6 +1,6 @@
 PORTNAME=	phonopy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.24.3
+DISTVERSION=	2.26.6
 CATEGORIES=	science python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,12 +15,11 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 
-CMAKE_ON=	PHONOPY BUILD_SHARED_LIBRARIES
+CMAKE_ON=	PHONOPY PHONOPY_LIBS BUILD_SHARED_LIBS
 
 PLIST_FILES=	include/phonopy.h \
-		lib/libphpy.a \
-		lib/libphpy.so \
-		lib/libphpy.so.1 \
-		lib/libphpy.so.${DISTVERSION}
+		lib/libphonopy_libs.so \
+		lib/libphonopy_libs.so.1 \
+		lib/libphonopy_libs.so.${DISTVERSION}
 
 .include <bsd.port.mk>

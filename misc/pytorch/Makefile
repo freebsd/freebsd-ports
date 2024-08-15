@@ -1,7 +1,7 @@
 PORTNAME=	pytorch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	${PORTNAME}
@@ -51,7 +51,7 @@ OPTIONS_SUB=		yes
 PYTHON_CMAKE_BOOL=	BUILD_PYTHON
 PYTHON_PY_DEPENDS=	${PYNUMPY} \
 			${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
 PYTHON_BUILD_DEPENDS=	${PYTHON_PY_DEPENDS} \
 			${PY_SETUPTOOLS} \
 			pybind11>0:devel/pybind11

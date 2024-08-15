@@ -1,7 +1,6 @@
 PORTNAME=	paperless-ngx
-PORTVERSION=	2.7.2
+PORTVERSION=	2.11.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/:webui \
 		GH:gh
@@ -27,6 +26,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bleach>=6.1.0:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-extensions>=3.2.3:www/py-django-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-filter>=23.5:www/py-django-filter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-multiselectfield>=0.1.12:www/py-django-multiselectfield@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-soft-delete>=1.0.13:www/py-django-soft-delete@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}djangorestframework-guardian>=0.3.0:www/py-djangorestframework-guardian@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}drf-writable-nested>=0.7.0:www/py-drf-writable-nested@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.13.1:sysutils/py-filelock@${PY_FLAVOR} \
@@ -63,7 +63,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bleach>=6.1.0:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>=12.0:devel/py-websockets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}whitenoise>=6.2.0:www/py-whitenoise@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}whoosh>=2.7.4:textproc/py-whoosh@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=6.0.1:devel/py-yaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0.1:devel/py-pyyaml@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 RUN_DEPENDS+=	gpg2:security/gnupg \
 		liberation-fonts-ttf>=2.1.3:x11-fonts/liberation-fonts-ttf \

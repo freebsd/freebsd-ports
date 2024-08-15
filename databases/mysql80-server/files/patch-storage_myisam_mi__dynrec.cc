@@ -1,6 +1,6 @@
---- storage/myisam/mi_dynrec.cc.orig	2019-09-20 08:30:51 UTC
+--- storage/myisam/mi_dynrec.cc.orig	2024-07-12 19:15:25 UTC
 +++ storage/myisam/mi_dynrec.cc
-@@ -85,17 +85,12 @@ bool mi_dynmap_file(MI_INFO *info, my_off_t size) {
+@@ -86,17 +86,12 @@ bool mi_dynmap_file(MI_INFO *info, my_off_t size) {
      return true;
    }
    /*

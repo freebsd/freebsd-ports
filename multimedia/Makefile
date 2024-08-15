@@ -34,6 +34,7 @@
     SUBDIR += cmrtlib
     SUBDIR += cx88
     SUBDIR += dav1d
+    SUBDIR += decord
     SUBDIR += deforaos-player
     SUBDIR += dirac
     SUBDIR += dragon
@@ -121,7 +122,6 @@
     SUBDIR += haruna
     SUBDIR += harvid
     SUBDIR += helvum
-    SUBDIR += hypnotix
     SUBDIR += intel-media-sdk
     SUBDIR += iso2mkv
     SUBDIR += jellyfin
@@ -302,6 +302,7 @@
     SUBDIR += py-PySceneDetect
     SUBDIR += py-av
     SUBDIR += py-cec
+    SUBDIR += py-decord
     SUBDIR += py-enzyme
     SUBDIR += py-ffmpeg-python
     SUBDIR += py-gstreamer1
@@ -316,6 +317,7 @@
     SUBDIR += py-pymediainfo
     SUBDIR += py-pysubs2
     SUBDIR += py-python-mpv
+    SUBDIR += py-pytube
     SUBDIR += py-soco
     SUBDIR += py-srt
     SUBDIR += py-subliminal
@@ -405,6 +407,7 @@
     SUBDIR += xporthdmv
     SUBDIR += xvid
     SUBDIR += yamdi
+    SUBDIR += youtui
     SUBDIR += ytfzf
     SUBDIR += zart
     SUBDIR += zoneminder

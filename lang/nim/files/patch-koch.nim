@@ -1,6 +1,19 @@
---- koch.nim.orig	2024-06-18 13:26:19 UTC
+--- koch.nim.orig	2024-07-05 12:55:45 UTC
 +++ koch.nim
-@@ -146,30 +146,30 @@ proc csource(args: string) =
+@@ -11,9 +11,9 @@ const
+ 
+ const
+   # examples of possible values for repos: Head, ea82b54
+-  NimbleStableCommit = "be2f1309b35a6189ff5eb34a007793e6d3f94157" # master
+-  AtlasStableCommit = "5faec3e9a33afe99a7d22377dd1b45a5391f5504"
+-  ChecksumsStableCommit = "025bcca3915a1b9f19878cea12ad68f9884648fc"
++  NimbleStableCommit = "f8bd7b5fa6ea7a583b411b5959b06e6b5eb23667" # master
++  AtlasStableCommit = "7b780811a168f3f32bff4822369dda46a7f87f9a"
++  ChecksumsStableCommit = "b4c73320253f78e3a265aec6d9e8feb83f97c77b"
+   SatStableCommit = "faf1617f44d7632ee9601ebc13887644925dcc01"
+ 
+   # examples of possible values for fusion: #head, #ea82b54, 1.2.3
+@@ -146,32 +146,32 @@ proc csource(args: string) =
             "--main:compiler/nim.nim compiler/installer.ini $1") %
         [args, VersionAsString, compileNimInst])
  
@@ -40,20 +53,24 @@
 -  let commit = if latest: "HEAD" else: AtlasStableCommit
 -  cloneDependency(distDir, "https://github.com/nim-lang/atlas.git",
 -                  commit = commit, allowBundled = true)
+-  cloneDependency(distDir / "atlas" / distDir, "https://github.com/nim-lang/sat.git",
+-                commit = SatStableCommit, allowBundled = true)
 -  # installer.ini expects it under $nim/bin
 -  nimCompile("dist/atlas/src/atlas.nim",
--             options = "-d:release --noNimblePath " & args)
+-             options = "-d:release --noNimblePath -d:nimAtlasBootstrap " & args)
 +#proc bundleAtlasExe(latest: bool, args: string) =
 +#  let commit = if latest: "HEAD" else: AtlasStableCommit
 +#  cloneDependency(distDir, "https://github.com/nim-lang/atlas.git",
 +#                  commit = commit, allowBundled = true)
++#  cloneDependency(distDir / "atlas" / distDir, "https://github.com/nim-lang/sat.git",
++#                commit = SatStableCommit, allowBundled = true)
 +#  # installer.ini expects it under $nim/bin
 +#  nimCompile("dist/atlas/src/atlas.nim",
-+#             options = "-d:release --noNimblePath " & args)
++#             options = "-d:release --noNimblePath -d:nimAtlasBootstrap " & args)
  
  proc bundleNimsuggest(args: string) =
    nimCompileFold("Compile nimsuggest", "nimsuggest/nimsuggest.nim",
-@@ -206,8 +206,8 @@ proc zip(latest: bool; args: string) =
+@@ -208,8 +208,8 @@ proc zip(latest: bool; args: string) =
  
  proc zip(latest: bool; args: string) =
    bundleChecksums(latest)
@@ -64,7 +81,7 @@
    bundleNimsuggest(args)
    bundleNimpretty(args)
    bundleWinTools(args)
-@@ -216,15 +216,15 @@ proc zip(latest: bool; args: string) =
+@@ -218,15 +218,15 @@ proc zip(latest: bool; args: string) =
    exec("$# --var:version=$# --var:mingw=none --main:compiler/nim.nim zip compiler/installer.ini" %
         ["tools/niminst/niminst".exe, VersionAsString])
  
@@ -87,7 +104,7 @@
    nimexec("cc -r $2 --var:version=$1 --var:mingw=none --main:compiler/nim.nim scripts compiler/installer.ini" %
         [VersionAsString, compileNimInst])
    exec("$# --var:version=$# --var:mingw=none --main:compiler/nim.nim xz compiler/installer.ini" %
-@@ -260,8 +260,8 @@ proc nsis(latest: bool; args: string) =
+@@ -262,8 +262,8 @@ proc nsis(latest: bool; args: string) =
  
  proc nsis(latest: bool; args: string) =
    bundleChecksums(latest)
@@ -98,7 +115,7 @@
    bundleNimsuggest(args)
    bundleWinTools(args)
    # make sure we have generated the niminst executables:
-@@ -524,43 +524,43 @@ proc icTest(args: string) =
+@@ -526,43 +526,43 @@ proc icTest(args: string) =
      exec(cmd)
      inc i
  
@@ -173,7 +190,7 @@
  
  proc runCI(cmd: string) =
    doAssert cmd.len == 0, cmd # avoid silently ignoring
-@@ -682,18 +682,18 @@ proc showHelp(success: bool) =
+@@ -684,18 +684,18 @@ proc showHelp(success: bool) =
    quit(HelpText % [VersionAsString & spaces(44-len(VersionAsString)),
                     CompileDate, CompileTime], if success: QuitSuccess else: QuitFailure)
  
@@ -199,7 +216,7 @@
      localDocsOut = ""
      skipIntegrityCheck = false
    while true:
-@@ -729,34 +729,34 @@ when isMainModule:
+@@ -731,34 +731,34 @@ when isMainModule:
        of "distrohelper": geninstall()
        of "install": install(op.cmdLineRest)
        of "testinstall": testUnixInstall(op.cmdLineRest)

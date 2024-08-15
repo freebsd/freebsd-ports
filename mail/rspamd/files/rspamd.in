@@ -21,6 +21,8 @@
 name=rspamd
 rcvar=rspamd_enable
 
+: ${rspamd_svcj_options:="net_basic"}
+
 load_rc_config $name
 
 : ${rspamd_enable:="NO"}

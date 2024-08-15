@@ -1,9 +1,9 @@
 PORTNAME=	limesurvey
-PORTVERSION=	6.5.2
+PORTVERSION=	6.6.1
 CATEGORIES=	www
 MASTER_SITES=	http://download.limesurvey.org/latest-master/ \
 		LOCAL/flo
-DISTNAME=	${PORTNAME}${PORTVERSION}+240402
+DISTNAME=	${PORTNAME}${PORTVERSION}+240806
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	PHP-based survey building and runing system

@@ -14,8 +14,8 @@ setup(
     package_dir = {'': 'src'},
     package_data = {'': ['*']},
     install_requires = [
-        'sphinx>=4,<7',
-        'pydata-sphinx-theme>=0.13.3',
+        'sphinx>=5',
+        'pydata-sphinx-theme>=0.15.2',
     ],
     extras_require = {
         'code_style': [
@@ -35,8 +35,7 @@ setup(
             'sphinx-design',
             'sphinx-examples',
             'sphinx-copybutton',
-            'sphinx-tabs<=3.4.0', # sphinx-tabs 3.4.1 needs docutils >.17, which would conflict with our pin above
-            'docutils==0.17.1', # docutils 0.18, 0.19 need a patch fix https://sourceforge.net/p/docutils/patches/195/, un-pin when 0.20 is released
+            'sphinx-tabs'
             'sphinx-togglebutton',
             'sphinx-thebe',
             'sphinxcontrib-bibtex',
@@ -46,6 +45,7 @@ setup(
         'test': [
             'beautifulsoup4',
             'coverage',
+            'defusedxml',
             'myst-nb',
             'pytest',
             'pytest-cov',
@@ -65,5 +65,5 @@ setup(
         'Operating System :: OS Independent',
     ],
     license = 'BSD License',
-    python_requires = '>= 3.7',
+    python_requires = '>= 3.9',
 )

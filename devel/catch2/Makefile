@@ -1,6 +1,6 @@
 PORTNAME=	catch2 # 2.x series is under devel/catch, the project is called catch2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.0
+DISTVERSION=	3.7.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org

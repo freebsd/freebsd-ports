@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# PROVIDE: ipfixcol2
+# REQUIRE: NETWORKING SERVERS LOGIN
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable 'ipfixcol2':
+#
+# ipfixcol2_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=ipfixcol2
+desc="ipfixcol2 startup script"
+rcvar=ipfixcol2_enable
+
+load_rc_config "$name"
+
+: ${ipfixcol2_enable:=NO}
+: ${ipfixcol2_conf:=%%PREFIX%%/etc/$name.conf}
+: ${ipfixcol2_flags:=""}
+: ${ipfixcol2_user:=ipfixcol2}
+
+command=%%PREFIX%%/bin/ipfixcol2
+command_args="-d -P /var/run/$name/$name.pid ${ipfixcol2_flags}"
+pidfile=/var/run/$name/$name.pid
+
+run_rc_command "$1"

@@ -16,6 +16,7 @@
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 dnsreflector_enable=${dnsreflector_enable:-"NO"}
+: ${dnsreflector_svcj_options:="net_basic"}
 command_args=${dnsreflector_flags:-"-d -a 127.0.0.1 -p 53000"}
 
 . /etc/rc.subr

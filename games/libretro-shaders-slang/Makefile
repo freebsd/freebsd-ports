@@ -1,16 +1,33 @@
 PORTNAME=	libretro-shaders-slang
-DISTVERSION=	g20231023
+DISTVERSION=	g20240804
 CATEGORIES=	games
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Collection of slang (Vulkan) shaders for libretro
+MAINTAINER=	bsdcode@disroot.org
+COMMENT=	Collection of slang shaders from libretro
 WWW=		https://github.com/libretro/slang-shaders
 
-LICENSE=	GPLv3
+# https://github.com/libretro/slang-shaders/issues/150
+LICENSE=	GPLv1+ GPLv2+ GPLv3+ MIT PD
+LICENSE_COMB=	multi
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	slang-shaders
-GH_TAGNAME=	3c281372a31e7cc72fdbea699dc09047439386ce
+GH_TAGNAME=	b327343
+
+DATADIR=	${PREFIX}/share/libretro/shaders/shaders_slang
+NO_ARCH=	yes
+
+OPTIONS_DEFINE=	DOCS
+
+do-install:
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
+		"! -name .gitlab-ci.yml -a ! -name Makefile \
+		-a ! -regex ^./README.md -a ! -name configure"
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

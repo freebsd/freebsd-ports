@@ -1,6 +1,4 @@
-diff --git src/tests/cmocka/test_pam_srv.c src/tests/cmocka/test_pam_srv.c
-index 446985d5d..f53f84be2 100644
---- src/tests/cmocka/test_pam_srv.c
+--- src/tests/cmocka/test_pam_srv.c.orig	2020-03-17 13:31:28 UTC
 +++ src/tests/cmocka/test_pam_srv.c
 @@ -1177,7 +1177,7 @@ void test_pam_open_session(void **state)
  

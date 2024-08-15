@@ -157,8 +157,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		syn-1.0.109 \
 		syn-2.0.55 \
 		tempfile-3.10.1 \
-		thiserror-1.0.58 \
-		thiserror-impl-1.0.58 \
+		thiserror-1.0.63 \
+		thiserror-impl-1.0.63 \
 		tiff-0.9.1 \
 		tiny-keccak-2.0.2 \
 		tree_magic_mini-3.1.4 \

@@ -1,6 +1,5 @@
 PORTNAME=	fotokilof
-PORTVERSION=	4.4.8
-PORTREVISION=	0
+PORTVERSION=	4.4.9
 CATEGORIES=	graphics
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=9.5.0:graphics/py-pillow@${PY_FLAVOR
 USES=		magick:run python
 
 # the project really doesn't have PEP-517 support, but distutils/setuptools
-# create a "wrong" entry_points script, so we use our pep517 feature
+# creates a "wrong" entry_points script, so we use our pep517 feature
 USE_PYTHON=	autoplist pep517
 
 # fix Python wheel name (lower case)

@@ -70,7 +70,6 @@
     SUBDIR += bslizr-lv2
     SUBDIR += cadence
     SUBDIR += calf-lv2
-    SUBDIR += cam
     SUBDIR += cantata
     SUBDIR += caps-lv2
     SUBDIR += caps-plugins
@@ -133,7 +132,6 @@
     SUBDIR += elisa
     SUBDIR += emms
     SUBDIR += enscribe
-    SUBDIR += epos-devel
     SUBDIR += eq10q-lv2
     SUBDIR += espeak-ng
     SUBDIR += espressivo-lv2
@@ -389,7 +387,6 @@
     SUBDIR += libshairport
     SUBDIR += libshout
     SUBDIR += libsidplay
-    SUBDIR += libsidplay2
     SUBDIR += libsidplayfp
     SUBDIR += libsmf
     SUBDIR += libsndfile
@@ -538,8 +535,6 @@
     SUBDIR += openal-soft
     SUBDIR += opencore-amr
     SUBDIR += openspc
-    SUBDIR += optimfrog
-    SUBDIR += optimfrog-sse2
     SUBDIR += opus
     SUBDIR += opus-tools
     SUBDIR += opusfile
@@ -742,8 +737,6 @@
     SUBDIR += shntool
     SUBDIR += shortwave
     SUBDIR += shuriken
-    SUBDIR += sidplay
-    SUBDIR += sidplay2
     SUBDIR += sidplayer
     SUBDIR += sidplayfp
     SUBDIR += simplemod

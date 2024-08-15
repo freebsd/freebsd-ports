@@ -1,6 +1,6 @@
---- src/slic3r/Utils/WifiScanner.cpp.orig	2024-02-29 13:03:32 UTC
+--- src/slic3r/Utils/WifiScanner.cpp.orig	2024-06-27 09:25:47 UTC
 +++ src/slic3r/Utils/WifiScanner.cpp
-@@ -17,7 +17,7 @@
+@@ -16,7 +16,7 @@
  #include "WifiScannerMac.h"
  #endif 
  
@@ -23,5 +23,4 @@
  }
  #endif // _WIN32
 -} // Slic3r
-\ No newline at end of file
 +//} // Slic3r

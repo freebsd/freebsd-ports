@@ -23,7 +23,6 @@
 # This file can be linted with Tools/scripts/MOVEDlint.awk
 #
 # Port|Moved to|Date|Why
-x11/wmctrl|x11/wmctrl-fork|2024-05-18|Forked due to the upstream being no longer available; the port had no maintainer
 www/wt3|www/wt|2021-01-03|Has expired: Upstream end of life, switch to www/wt instead
 archivers/ecm|archivers/cmdpack|2021-01-04|ECM is now included in cmdpack
 math/qhull5|math/qhull|2021-01-04|Has expired: Legacy version of port no longer required by math/octave
@@ -3251,6 +3250,7 @@ x11-fonts/noto-serif-basic|x11-fonts/noto-serif|2024-05-13|Remove obsoleted port
 x11-fonts/noto-serif-extra|x11-fonts/noto-serif|2024-05-13|Remove obsoleted port. Use x11-fonts/noto-serif instead
 sysutils/vector||2024-05-15|Has expired: Unmaintained in tree and broken for months
 irc/sic||2024-05-15|Has expired: Last upstream release was in 2001 and no upstream WWW
+x11/wmctrl|x11/wmctrl-fork|2024-05-18|Forked due to the upstream being no longer available; the port had no maintainer
 devel/tarpaulin|devel/cargo-tarpaulin|2024-05-19|Rename port and package to reflect that this is a Cargo plugin
 sysutils/uutils-coreutils|sysutils/rust-coreutils|2024-05-21|Remove duplicate
 databases/foundationdb|databases/foundationdb71-server|2024-05-23|Reintegrated into databases/foundationdb71-server
@@ -3372,9 +3372,67 @@ lang/gcc9||2024-06-30|Has expired: Unsupported by upstream. Use GCC 10 or newer 
 security/p5-Protocol-ACME||2024-06-30|Has expired: upstream maintainer indicated that it is no longer suitable for use
 graphics/wdune||2024-06-30|Has expired: upstream no longer maintained
 www/zend-framework||2024-06-30|Has expired: Deprecated by upstream, and moved to Laminas Project
-sysutils/torque||2024-06-30|Has expired: unfetchable, upstream no longer open source
+sysutils/torque||2024-06-30|Has been removed: may be resurrected with GH_TUPLE=adaptivecomputing:torque:4decc71
 lang/icc||2024-07-01|Has expired: This version is EOL since a long time, i386 only, and the current clang based Intel oneAPI DPC++/C++ seems to work
 graphics/intel-backlight||2024-07-01|Has expired: Use backlight(8)
 www/yarn-node21||2024-07-02|Removed, part of www/node21
 www/npm-node21||2024-07-02|Removed, part of www/node21
 security/bcrypt||2024-07-02|Has expired: Hasn't seen updates in 15 years, insecure Blowfish ECB mode, unauthenticated encryption
+devel/py-stackexchange|devel/py-py-stackexchange|2024-07-06|Move devel/py-stackexchange to devel/py-py-stackexchange
+devel/py-xcaplib|devel/py-python-xcaplib|2024-07-06|Move devel/py-xcaplib to devel/py-python-xcaplib
+devel/py-yaml|devel/py-pyyaml|2024-07-07|Move devel/py-yaml to devel/py-pyyaml
+devel/py-pyyaml5|devel/py-pyyaml|2024-07-07|Remove obsoleted port. Use devel/py-pyyaml instead
+x11-toolkits/wlroots-devel|x11-toolkits/wlroots|2024-07-12|Out of date: use x11-toolkits/wlroots for now
+x11-servers/xwayland-devel|x11-servers/xwayland|2024-07-12|Out of date: use x11-servers/xwayland for now
+sysutils/datadog-integrations||2024-07-13|Has expired: Depends on expired sysutils/datadog-agent
+sysutils/datadog-agent||2024-07-13|Has expired: Unfetchable and marked BROKEN for several months
+converters/i18ntools||2024-07-13|Has expired: Depends on expired converters/tuc
+converters/tuc||2024-07-13|Has expired: Dead upstream and unfetchable
+sysutils/ipfs-go|sysutils/kubo-go|2024-07-13|Project was renamed upstream
+chinese/tin||2024-07-14|Removed, unmaintained and broken for months
+x11-wm/afterstep|x11-wm/afterstep1|2024-07-14|Port renamed
+textproc/p5-XML-DifferenceMarkup||2024-07-16|Has expired: Depends on deprecated port textproc/diffmark (PR 279705)
+textproc/diffmark||2024-07-16|Has expired: Fails to build with libxml2 2.13.0 (PR 279705)
+misc/lingoteach||2024-07-16|Has expired: Depends on deprecated port textproc/liblingoteach (PR 279705)
+textproc/liblingoteach||2024-07-16|Has expired: Abandonware, last activity 18+ years ago and fails to build with libxml2 2.13.0 (PR 279705)
+devel/dia2code+||2024-07-16|Has expired: Fails to build with libxml2 2.13.0 (PR 279759)
+devel/libiqxmlrpc||2024-07-16|Has expired: Fails to build with libxml2 2.13.0 (PR 279705)
+textproc/rubygem-nokogiri111|textproc/rubygem-nokogiri|2024-07-17|Obsolete, use textproc/rubygem-nokogiri instead
+devel/rubygem-google-gax||2024-07-21|Remove obsoleted port. This gem is officially end-of-life
+audio/strawberry@qt5|audio/strawberry|2024-07-21|Unflavor. Qt5 is obsolete
+audio/strawberry@qt6|audio/strawberry|2024-07-21|Unflavor. Qt5 is obsolete
+devel/rubygem-google-protobuf4|devel/rubygem-google-protobuf|2024-07-30|Remove obsoleted port. Use devel/rubygem-google-protobuf instead
+graphics/xsvg||2024-08-04|Has expired: Depends on deprecated library graphics/libsvg-cairo
+graphics/zphoto||2024-08-04|Has expired: Depends on expired graphics/ming
+math/ploticus-nox11||2024-08-04|Has expired: Depends on expired graphics/ming
+multimedia/hypnotix||2024-08-04|Has expired: Depends on expired www/py-imdbpy (use www/py-cinemagoer instead)
+net/bird||2024-08-04|Has expired: Upstream EOL was for the end of 2023
+sysutils/unieject||2024-08-04|Has expired: Abandonware, upstream repo deprecated May 17, 2020
+www/tomcat85|www/tomcat9|2024-08-04|Has expired: Upstream EOL reaches on 2024-03-31, some time after 2024-06-30 distfiles will be archived. Migrate to www/tomcat9
+archivers/pxz||2024-08-04|Has expired: Superseded by xz (Utils), support for multithreading is available since 2014
+www/mediawiki140||2024-08-04|Has expired: Upstream EOL
+archivers/paq||2024-08-04|Has expired: Outdated, unmaintained and format that never gained any traction
+audio/optimfrog-sse2||2024-08-04|Has expired: Obsolete format that never gained traction, consider using audio/flac
+audio/cam||2024-08-04|Has expired: Abandonware and obsolete, consider using audio/mixertui
+audio/epos-devel||2024-08-04|Has expired: Abandonware, last release in 2006 and upstream is dead
+audio/sidplay2|audio/sidplayfp|2024-08-04|Has expired: Abandonware and superseded by audio/sidplayfp
+audio/sidplay|audio/sidplayfp|2024-08-04|Has expired: Abandonware and superseded by audio/sidplayfp
+audio/optimfrog||2024-08-04|Has expired: Obsolete format that never gained traction, consider using audio/flac
+databases/mongodb44||2024-08-04|Has expired: EOL as of February 2024, https://www.mongodb.com/legal/support-policy/lifecycles
+graphics/svg2pdf||2024-08-04|Has expired: Depends on deprecated library graphics/libsvg-cairo, please consider using ImageMagick or librsvg
+audio/libsidplay2||2024-08-04|Has expired: Abandonware and superseded by audio/libsidplayfp
+www/py-imdbpy|www/py-cinemagoer|2024-08-04|Has expired: IMDbPY is now cinemagoer. Use www/py-cinemagoer instead
+dns/dnrd||2024-08-04|Has expired: Abandonware, last release in 2007 and last activity in 2010. Consider using Unbound, dns/dnsmasq or dns/blocky
+science/mercantile|science/py-mercantile|2024-08-04|Move science/mercantile to science/py-mercantile
+devel/py-jsonschema417|devel/py-jsonschema|2024-08-04|Remove obsoleted port. Use devel/py-jsonschema instead
+net/ns3||2024-08-07|Has expired: Outdated and unmaintained for years
+games/manaplus||2024-08-07|Has expired: Fails to build with libxml2 2.13.2 (PR 279705)
+dns/knot3-lib|dns/knot3|2024-08-09|Superseded by knot3 which provides the libraries
+devel/py-ollama|misc/py-ollama|2024-08-10|Deduplicate
+x11-toolkits/wlroots-hyprland||2024-08-11|Discontinued: use x11-toolkits/aquamarine instead
+textproc/wbxml2|textproc/libwbxml|2024-08-15|Move textproc/wbxml2 to textproc/libwbxml
+graphics/libwmf-nox11|graphics/libwmf@nox11|2024-08-15|graphics/libwmf adds nox11 flavor. Use graphics/libwmf@nox11 instead
+net/mtr-nox11|net/mtr@nox11|2024-08-15|Remove obsoleted port. Use net/mtr@nox11 instead
+databases/py-redis4|databases/py-redis|2024-08-15|Remove obsoleted port. Use databases/py-redis instead
+www/py-httpx-cache|devel/py-hishel|2024-08-15|Remove obsoleted port. Use devel/py-hishel instead
+devel/p5-Test2-Suite|devel/p5-Test-Simple|2024-08-15|Remove obsoleted port. Use devel/p5-Test-Simple instead

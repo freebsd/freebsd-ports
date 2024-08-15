@@ -1,5 +1,6 @@
 PORTNAME=	networkx
 DISTVERSION=	3.3
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
@@ -56,7 +57,7 @@ PYDOT_DESC=	Graphviz Dot language
 PYDOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydot>=0:graphics/py-pydot@${PY_FLAVOR}
 
 YAML_DESC=	Reading and writing YAML files
-YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR}
+YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
 
 PORTEXAMPLES=	*
 

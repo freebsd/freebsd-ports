@@ -623,7 +623,11 @@ proxydeps_suggest_uses() {
 	elif [ ${pkg} = "devel/readline" ]; then
 		warn "you need USES+=readline"
 	# ssl
+	# When updating this, please also update the versions list in
+	# bsd.default-versions.mk and ssl.mk!
 	elif [ ${pkg} = "security/openssl" -o ${pkg} = "security/openssl111" \
+	  -o ${pkg} = "security/openssl31" -o ${pkg} = "security/openssl32" \
+	  -o ${pkg} = "security/openssl33" \
 	  -o ${pkg} = "security/libressl" -o ${pkg} = "security/libressl-devel" \
 	  ]; then
 		warn "you need USES=ssl"

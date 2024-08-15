@@ -197,6 +197,7 @@ include/snort/pub_sub/finalize_packet_event.h
 include/snort/pub_sub/http_event_ids.h
 include/snort/pub_sub/http_events.h
 include/snort/pub_sub/http_request_body_event.h
+include/snort/pub_sub/http_transaction_end_event.h
 include/snort/pub_sub/intrinsic_event_ids.h
 include/snort/pub_sub/netflow_event.h
 include/snort/pub_sub/opportunistic_tls_event.h
@@ -226,6 +227,7 @@ include/snort/sfip/sf_cidr.h
 include/snort/sfip/sf_ip.h
 include/snort/sfip/sf_returns.h
 include/snort/stream/paf.h
+include/snort/stream/pafng.h
 include/snort/stream/stream.h
 include/snort/stream/stream_splitter.h
 include/snort/stream/udp/udp_session.h

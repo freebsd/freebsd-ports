@@ -1,6 +1,4 @@
-diff --git src/util/sss_endian.h src/util/sss_endian.h
-index 834c35980..d0bc1d338 100644
---- src/util/sss_endian.h
+--- src/util/sss_endian.h.orig	2020-03-17 13:31:28 UTC
 +++ src/util/sss_endian.h
 @@ -29,6 +29,18 @@
  # include <sys/endian.h>

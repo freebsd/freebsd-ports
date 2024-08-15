@@ -1,6 +1,6 @@
---- Makefile.orig	2024-01-04 00:43:45 UTC
+--- Makefile.orig	2024-06-08 22:09:36 UTC
 +++ Makefile
-@@ -147,7 +147,6 @@ TESTIGDDESCPARSE += $(BUILD)/minissdpc.o
+@@ -147,7 +147,6 @@ endif
  LIBOBJS += $(BUILD)/minissdpc.o
  endif
  
@@ -8,7 +8,7 @@
  # install directories
  ifeq ($(strip $(PREFIX)),)
  INSTALLPREFIX ?= /usr
-@@ -155,7 +154,7 @@ else
+@@ -155,7 +154,7 @@ INSTALLDIRINC = $(INSTALLPREFIX)/include/miniupnpc
  INSTALLPREFIX ?= $(PREFIX)
  endif
  INSTALLDIRINC = $(INSTALLPREFIX)/include/miniupnpc
@@ -17,7 +17,7 @@
  INSTALLDIRBIN = $(INSTALLPREFIX)/bin
  INSTALLDIRMAN = $(INSTALLPREFIX)/share/man
  PKGCONFIGDIR = $(INSTALLDIRLIB)/pkgconfig
-@@ -242,7 +241,7 @@ distclean: clean
+@@ -245,7 +244,7 @@ updateversion:	include/miniupnpc.h
  
  updateversion:	include/miniupnpc.h
  	cp $< $<.bak

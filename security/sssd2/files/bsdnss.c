@@ -63,6 +63,23 @@ extern enum nss_status _nss_sss_getgroupmembership(const char *uname,
                                                    gid_t agroup, gid_t *groups,
                                                    int maxgrp, int *grpcnt);
 
+NSS_METHOD_PROTOTYPE(__nss_compat_getgroupmembership);
+NSS_METHOD_PROTOTYPE(__nss_compat_getgrnam_r);
+NSS_METHOD_PROTOTYPE(__nss_compat_getgrgid_r);
+NSS_METHOD_PROTOTYPE(__nss_compat_getgrent_r);
+NSS_METHOD_PROTOTYPE(__nss_compat_setgrent);
+NSS_METHOD_PROTOTYPE(__nss_compat_endgrent);
+
+NSS_METHOD_PROTOTYPE(__nss_compat_getpwnam_r);
+NSS_METHOD_PROTOTYPE(__nss_compat_getpwuid_r);
+NSS_METHOD_PROTOTYPE(__nss_compat_getpwent_r);
+NSS_METHOD_PROTOTYPE(__nss_compat_setpwent);
+NSS_METHOD_PROTOTYPE(__nss_compat_endpwent);
+
+NSS_METHOD_PROTOTYPE(__nss_compat_gethostbyname);
+NSS_METHOD_PROTOTYPE(__nss_compat_gethostbyname2);
+NSS_METHOD_PROTOTYPE(__nss_compat_gethostbyaddr);
+
 static ns_mtab methods[] = {
 { NSDB_GROUP, "getgrnam_r", __nss_compat_getgrnam_r, _nss_sss_getgrnam_r },
 { NSDB_GROUP, "getgrgid_r", __nss_compat_getgrgid_r, _nss_sss_getgrgid_r },

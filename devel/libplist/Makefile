@@ -1,6 +1,6 @@
 PORTNAME=	libplist
-PORTVERSION=	2.2.0
-PORTREVISION?=	3
+PORTVERSION=	2.6.0
+PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libimobiledevice/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -11,19 +11,21 @@ WWW=		https://www.libimobiledevice.org
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-USES+=		autoreconf compiler cpe gnome libtool pathfix pkgconfig tar:bzip2
+USES+=		autoreconf compiler cpe libtool pathfix pkgconfig tar:bzip2
 CPE_VENDOR=	libimobiledevice
+
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 SLAVE_PORT?=	no
 
 .if ${SLAVE_PORT} == no
 
-USE_GNOME=	libxml2
+USE_LDCONFIG=	yes
+
 CONFIGURE_ARGS=	--without-cython
-USE_LDCONFIG=	${LOCALBASE}/lib
+
+TEST_TARGET=	check
 
 PORTDOCS=	AUTHORS NEWS README.md
 
@@ -31,7 +33,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .endif # ${SLAVE_PORT} == no
 

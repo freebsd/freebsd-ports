@@ -1,6 +1,6 @@
 PORTNAME=	syncthingtray
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.4
+DISTVERSION=	1.6.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	dsh@bamus.cz
@@ -10,9 +10,7 @@ WWW=		https://github.com/Martchus/syncthingtray
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/syncthingtray/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/share/ECM/cmake/ECMConfig.cmake:devel/kf5-extra-cmake-modules \
-		doxygen:devel/doxygen \
-		p5-YAML-LibYAML>0:textproc/p5-YAML-LibYAML
+BUILD_DEPENDS=	p5-YAML-LibYAML>0:textproc/p5-YAML-LibYAML
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libboost_regex.so:devel/boost-libs
 
@@ -29,21 +27,25 @@ USES=		cmake:insource iconv perl5 xorg
 CMAKE_ARGS=	-DFORK_AWESOME_FONT_FILE=${WRKDIR}/forkawesome/fonts/forkawesome-webfont.ttf \
 		-DFORK_AWESOME_ICON_DEFINITIONS=${WRKDIR}/forkawesome/src/icons/icons.yml
 CMAKE_OFF=	SYSTEMD_SUPPORT USE_STANDARD_FILESYSTEM
+CMAKE_ON=	NO_DOXYGEN
 CMAKE_SOURCE_PATH=	${WRKDIR}/subdirs/syncthingtray
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	Martchus:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION}:syncthingtray/../syncthingtray \
-		Martchus:cpp-utilities:v5.24.9:cpputilities/../c++utilities \
-		Martchus:qtutilities:v6.14.1:qtutilities/../qtutilities \
-		Martchus:qtforkawesome:v0.2.0:qtforkawesome/../qtforkawesome \
+GH_ACCOUNT=	Martchus
+GH_TUPLE:=	${GH_ACCOUNT}:${PORTNAME}:${DISTVERSIONPREFIX}${DISTVERSION}:${PORTNAME}/../${PORTNAME} \
+		${GH_ACCOUNT}:cpp-utilities:e79fcf7:cpputilities/../c++utilities \
+		${GH_ACCOUNT}:qtutilities:v6.14.2:qtutilities/../qtutilities \
+		${GH_ACCOUNT}:qtforkawesome:v0.2.0:qtforkawesome/../qtforkawesome \
 		ForkAwesome:Fork-Awesome:4fef70f:ForkAwesome/../forkawesome \
-		Martchus:subdirs:3fe2b06:subdirs/../subdirs
+		${GH_ACCOUNT}:subdirs:a88814b:subdirs/../subdirs
 
-USE_QT=		declarative svg doc:build
+USE_KDE=	ecm:build
+USE_QT=		declarative svg
 USE_XORG=	x11
+
 .if ${FLAVOR} == qt5
 USES+=		kde:5 qt:5
-USE_KDE=	plasma-framework:build
+USE_KDE+=	plasma-framework:build
 USE_QT+=	concurrent core dbus gui location network qdbus \
 		quickcontrols2:build widgets x11extras:build buildtools:build \
 		linguist:build qmake:build testlib:build
@@ -52,7 +54,7 @@ WEBENGINE_USE=	QT=printsupport,webchannel,webengine
 CMAKE_ARGS+=	-DQT_PACKAGE_PREFIX:STRING=Qt6 -DKF_PACKAGE_PREFIX:STRING=KF6
 USES+=		gl kde:6 qt:6
 USE_GL=		opengl
-USE_KDE=	libplasma:build
+USE_KDE+=	libplasma:build
 USE_QT+=	base positioning
 WEBENGINE_USE=	QT=webchannel,webengine
 .endif

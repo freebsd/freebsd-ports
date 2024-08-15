@@ -1,6 +1,6 @@
---- sql/ssl_init_callback.cc.orig	2021-12-17 16:07:27 UTC
+--- sql/ssl_init_callback.cc.orig	2024-07-12 19:15:25 UTC
 +++ sql/ssl_init_callback.cc
-@@ -106,14 +106,14 @@ static Sys_var_charptr Sys_ssl_capath(
+@@ -154,14 +154,14 @@ static Sys_var_charptr Sys_tls_version(
  
  static Sys_var_charptr Sys_tls_version(
      "tls_version",
@@ -17,7 +17,7 @@
      "TLSv1.2,TLSv1.3",
  #else
      "TLSv1.2",
-@@ -175,14 +175,14 @@ static Sys_var_charptr Sys_admin_ssl_capath(
+@@ -242,14 +242,14 @@ static Sys_var_charptr Sys_admin_tls_version(
  
  static Sys_var_charptr Sys_admin_tls_version(
      "admin_tls_version",

@@ -7,5 +7,3 @@ Apache Avro is a data serialization system which provides:
   read or write data files nor to use or implement RPC protocols. Code
   generation as an optional optimization, only worth implementing for statically
   typed languages.
-
-See also: https://github.com/apache/avro

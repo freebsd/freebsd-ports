@@ -1,0 +1,2 @@
+#! /bin/sh
+exec %%LINUXBASE%%/bin/sh /opt/google/earth/pro/googleearth "$@"

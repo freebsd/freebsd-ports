@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# PROVIDE: hydroxide
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf or /etc/rc.conf.local to
+# enable hydroxide:
+# hydroxide_args (str):	Custom additional arguments to be passed
+#			hydroxide (default empty).
+# hydroxide_user (str):	User to run hydroxide as. Default
+#			to "%%USER%%" created by the port.
+# hydroxide_log (path):	Console log file (default /dev/null).
+
+. /etc/rc.subr
+
+case $0 in
+/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	name=$_file
+	;;
+*)
+	name=$0
+	;;
+esac
+
+name=${name##*/}
+rcvar="${name}_enable"
+
+load_rc_config "${name}"
+
+eval "${rcvar}=\${${rcvar}:-'NO'}"
+eval "_args=\${${name}_args:-''}"
+eval "_user=\${${name}_user:-'%%USER%%'}"
+eval "_log=\${${name}_log:-/dev/null}"
+
+pidfile="/var/run/${name}.pid"
+
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -u ${_user} -f -H -o ${_log} -m 3 %%PREFIX%%/bin/hydroxide ${_args} serve"
+
+run_rc_command "$1"

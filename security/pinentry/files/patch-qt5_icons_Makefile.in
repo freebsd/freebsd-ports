@@ -1,0 +1,19 @@
+Rename icon to prevent install conflicts with the Qt6 frontend.
+
+--- qt5/icons/Makefile.in.orig	2024-07-03 09:29:09 UTC
++++ qt5/icons/Makefile.in
+@@ -350,12 +350,12 @@ EXTRA_DIST = data-error.svg \
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ EXTRA_DIST = data-error.svg \
+-	     pinentry.png \
++	     pinentry-qt5.png \
+ 	     hint.svg \
+ 	     password-generate.svg \
+              visibility.svg
+ 
+-icons_DATA = pinentry.png
++icons_DATA = pinentry-qt5.png
+ iconsdir = $(datadir)/pixmaps
+ all: all-am
+ 

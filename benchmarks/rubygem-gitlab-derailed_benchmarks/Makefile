@@ -1,5 +1,6 @@
 PORTNAME=	gitlab-derailed_benchmarks
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	benchmarks rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/schneems/derailed_benchmarks
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-benchmark-ips>=2.0.0:benchmarks/rubygem-benchmark-ips \
-		rubygem-get_process_mem>=0:devel/rubygem-get_process_mem \
+		rubygem-get_process_mem0>=0:devel/rubygem-get_process_mem0 \
 		rubygem-heapy>=0:devel/rubygem-heapy \
 		rubygem-memory_profiler>=0:devel/rubygem-memory_profiler \
 		rubygem-rack>=1:www/rubygem-rack \

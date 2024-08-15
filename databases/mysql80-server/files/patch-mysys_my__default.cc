@@ -1,6 +1,6 @@
---- mysys/my_default.cc.orig	2021-12-17 16:07:27 UTC
+--- mysys/my_default.cc.orig	2024-07-12 19:15:25 UTC
 +++ mysys/my_default.cc
-@@ -204,7 +204,7 @@ bool no_defaults = false;
+@@ -205,7 +205,7 @@ bool no_defaults = false;
  
  /* Which directories are searched for options (and in which order) */
  
@@ -9,7 +9,7 @@
  #define DEFAULT_DIRS_SIZE (MAX_DEFAULT_DIRS + 1) /* Terminate with NULL */
  static const char **default_directories = nullptr;
  
-@@ -922,6 +922,14 @@ static int search_default_file_with_ext(Process_option
+@@ -923,6 +923,14 @@ static int search_default_file_with_ext(Process_option
        return 1; /* Ignore wrong files */
    }
  
@@ -24,7 +24,7 @@
    while (true) {
      auto fileline = mysql_file_getline(buff, sizeof(buff), fp, is_login_file);
      char *linebuff = fileline.get();
-@@ -1311,7 +1319,8 @@ void my_print_default_files(const char *conf_file) {
+@@ -1312,7 +1320,8 @@ void my_print_default_files(const char *conf_file) {
              end[(strlen(end) - 1)] = ' ';
            else
              strxmov(end, conf_file, *ext, " ", NullS);
@@ -34,7 +34,7 @@
          }
        }
      }
-@@ -1651,14 +1660,9 @@ static const char **init_default_directories(MEM_ROOT 
+@@ -1652,14 +1661,9 @@ static const char **init_default_directories(MEM_ROOT 
  
  #else
  
@@ -51,7 +51,7 @@
  #endif
  
    if ((env = getenv("MYSQL_HOME"))) errors += add_directory(alloc, env, dirs);
-@@ -1723,7 +1727,7 @@ int check_file_permissions(const char *file_name, bool
+@@ -1724,7 +1728,7 @@ int check_file_permissions(const char *file_name, bool
  #if !defined(_WIN32)
    MY_STAT stat_info;
  

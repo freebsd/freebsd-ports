@@ -1,3 +1,3 @@
-TIMESTAMP = 1713033318
-SHA256 (confget-release-5.1.2.tar.bz2) = ab4462e96c005c0db306342d2a6a7004dc3140f32e6da7be1ceb4759e2e86978
-SIZE (confget-release-5.1.2.tar.bz2) = 62338
+TIMESTAMP = 1720536476
+SHA256 (confget-5.1.2.tar.xz) = e4c94b01ff2f88c952377721ff3f63bb641124fb101ab00f730682a33556ae2f
+SIZE (confget-5.1.2.tar.xz) = 60764

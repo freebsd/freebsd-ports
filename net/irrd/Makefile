@@ -1,6 +1,7 @@
 PORTNAME=	irrd
 PORTVERSION=	4.2.9
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	4
@@ -38,7 +39,7 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}starlette>=0.14.2:www/py-starlette@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ujson>=4.1.0:devel/py-ujson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uvicorn>=0.15.0:www/py-uvicorn@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=5.4.1:devel/py-yaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.4.1:devel/py-pyyaml@${PY_FLAVOR}
 #python-graphql-client==0.4.2
 TEST_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}coverage>=6.0:devel/py-coverage@${PY_FLAVOR} \

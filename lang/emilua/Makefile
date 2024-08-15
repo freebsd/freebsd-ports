@@ -1,14 +1,16 @@
 PORTNAME=	emilua
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.2
+DISTVERSION=	0.9.0
 CATEGORIES=	lang devel
 
 MAINTAINER=	manipuladordedados@gmail.com
 COMMENT=	Lua execution engine
 WWW=		https://emilua.org/
 
-LICENSE=	BSL
-LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
+LICENSE=	BSL MIT
+LICENSE_COMB=	dual
+LICENSE_FILE_BSL=	${WRKSRC}/LICENSE-BSL-1.0.txt
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT.txt
 
 IGNORE_FreeBSD_12=	not supported by Emilua
 IGNORE_FreeBSD_13=	not supported by Emilua
@@ -26,11 +28,12 @@ BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 LIB_DEPENDS=	libserd-0.so:devel/serd \
 		libsord-0.so:devel/sord
 
-USES=		localbase luajit:luajit-openresty meson ncurses pathfix \
+USES=		localbase luajit:luajit-devel meson ncurses pathfix \
 		pkgconfig ssl
-USE_GCC=	12
+USE_GCC=	yes
 USE_GITHUB=	nodefault
-GH_TUPLE=	breese:trial.protocol:79149f6:trial_protocol/subprojects/trial-protocol
+GH_TUPLE=	breese:trial.protocol:79149f6:trial_protocol/subprojects/trial-protocol \
+		chriskohlhoff:asio:c586e95:asio/subprojects/asio
 USE_GITLAB=	yes
 
 CONFIGURE_ENV+=	BOOST_INCLUDEDIR="${LOCALBASE}/include" \
@@ -40,7 +43,8 @@ MESON_ARGS=	--buildtype=plain \
 		--wrap-mode=nodownload \
 		-Db_pch=false \
 		-Denable_manpages=true \
-		-Denable_tests=true
+		-Denable_tests=true \
+		-Duse_standalone_asio=true
 
 CXXFLAGS+=	"-DFMT_HEADER_ONLY"
 

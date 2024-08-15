@@ -19,6 +19,9 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 USES=		cpe charsetfix gettext-tools gmake gnome iconv localbase \
 		libtool perl5 pkgconfig python:build readline
 
+BROKEN_FreeBSD_15=	fills disk with endless log of errors
+BROKEN_FreeBSD_14=	fills disk with endless log of errors
+
 CPE_VENDOR=	gnu
 USE_GNOME=	libxml2
 USE_PERL5=	build

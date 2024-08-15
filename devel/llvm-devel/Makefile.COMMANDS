@@ -12,6 +12,7 @@ LLVM_COMMANDS=	\
 		llvm-cfi-verify \
 		llvm-config \
 		llvm-cov \
+		llvm-ctxprof-util \
 		llvm-cvtres \
 		llvm-cxxmap \
 		llvm-debuginfo-analyzer \
@@ -65,6 +66,7 @@ LLVM_COMMANDS=	\
 		llvm-windres \
 		llvm-xray \
 		opt \
+		reduce-chunk-list \
 		sancov
 
 CLANG_COMMANDS=	\
@@ -100,6 +102,7 @@ EXTRAS_COMMANDS= \
 		clang-include-fixer \
 		clang-installapi \
 		clang-move \
+		clang-nvlink-wrapper \
 		clang-pseudo \
 		clang-query \
 		clang-rename \

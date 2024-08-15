@@ -1,5 +1,6 @@
 PORTNAME=	schemachange
 DISTVERSION=	3.6.1
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +25,7 @@ USE_PYTHON=	autoplist concurrent pep517
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0,<4:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=1.3:math/py-pandas@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=6.0,<7:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0,<7:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}snowflake-connector-python>=2.8,<4:databases/py-snowflake-connector-python@${PY_FLAVOR}
 
 do-test:

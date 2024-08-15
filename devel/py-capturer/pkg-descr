@@ -1,5 +1,3 @@
 The capturer package makes it easy to capture the stdout and stderr streams of
 the current process and subprocesses. Output can be relayed to the terminal in
 real time but is also available to the Python program for additional processing.
-
-See also: https://github.com/xolox/python-capturer

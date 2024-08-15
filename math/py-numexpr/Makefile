@@ -1,6 +1,5 @@
 PORTNAME=	numexpr
-PORTVERSION=	2.9.0
-PORTREVISION=	1
+PORTVERSION=	2.10.1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI \
 		https://github.com/pydata/numexpr/releases/download/v${PORTVERSION}/
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.13.3,1:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.23.0,1:math/py-numpy@${PY_FLAVOR}
 
 USES=		dos2unix python:3.9+
 USE_PYTHON=	autoplist concurrent pep517

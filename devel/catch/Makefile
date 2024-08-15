@@ -11,13 +11,12 @@ LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cmake compiler:c++14-lang pathfix python:build
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	catchorg
 GH_PROJECT=	Catch2
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_DOCDIR=${DOCSDIR}
-PORTDOCS=	*
-
 NO_ARCH=	yes
 
 PORTSCOUT=	limit:^2\.

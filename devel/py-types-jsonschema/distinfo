@@ -1,3 +1,3 @@
-TIMESTAMP = 1718387723
-SHA256 (types-jsonschema-4.22.0.20240610.tar.gz) = f82ab9fe756e3a2642ea9712c46b403ce61eb380b939b696cff3252af42f65b0
-SIZE (types-jsonschema-4.22.0.20240610.tar.gz) = 10040
+TIMESTAMP = 1723663255
+SHA256 (types-jsonschema-4.23.0.20240813.tar.gz) = c93f48206f209a5bc4608d295ac39f172fb98b9e24159ce577dbd25ddb79a1c0
+SIZE (types-jsonschema-4.23.0.20240813.tar.gz) = 10091

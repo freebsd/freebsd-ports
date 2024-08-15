@@ -1,6 +1,6 @@
---- sql/auth/sha2_password_common.cc.orig	2019-09-20 08:30:51 UTC
+--- sql/auth/sha2_password_common.cc.orig	2024-07-12 19:15:25 UTC
 +++ sql/auth/sha2_password_common.cc
-@@ -101,7 +101,7 @@ bool SHA256_digest::retrieve_digest(unsigned char *dig
+@@ -102,7 +102,7 @@ bool SHA256_digest::retrieve_digest(unsigned char *dig
      return true;
    }
    m_ok = EVP_DigestFinal_ex(md_context, m_digest, nullptr);

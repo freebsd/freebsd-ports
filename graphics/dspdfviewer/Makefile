@@ -62,12 +62,12 @@ CFLAGS+=       -Wno-error=bitwise-instead-of-logical
 .endif
 
 # Fixes build failure for Clang 16.0.6
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400059 && ${CHOSEN_COMPILER_TYPE} == clang
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 )) && ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=       -Wno-error=unsafe-buffer-usage
 .endif
 
 # Fixes build failure for Clang 18.1.4
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500018 && ${CHOSEN_COMPILER_TYPE} == clang
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1401000 || ${OSVERSION} >= 1500018) && ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=       -Wno-error=switch-default
 .endif
 

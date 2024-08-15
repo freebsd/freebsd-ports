@@ -1,5 +1,23 @@
---- configure.orig	2023-11-05 23:51:29 UTC
+--- configure.orig	2024-05-03 00:36:33 UTC
 +++ configure
+@@ -30417,13 +30417,13 @@ if test "x$have_libheif" = xyes; then
+ can_import_avif=no
+ can_export_avif=no
+ if test "x$have_libheif" = xyes; then
+-  can_import_heic=`$PKG_CONFIG --variable=builtin_h265_decoder libheif`
+-  can_export_heic=`$PKG_CONFIG --variable=builtin_h265_encoder libheif`
++  can_import_heic=yes
++  can_export_heic=yes
+   if test "x$can_import_heic" = xyes; then
+     MIME_TYPES="$MIME_TYPES;image/heif;image/heic"
+   fi
+-  can_import_avif=`$PKG_CONFIG --variable=builtin_avif_decoder libheif`
+-  can_export_avif=`$PKG_CONFIG --variable=builtin_avif_encoder libheif`
++  can_import_avif=yes
++  can_export_avif=yes
+   if test "x$can_import_avif" = xyes; then
+     MIME_TYPES="$MIME_TYPES;image/avif"
+   fi
 @@ -34797,9 +34797,9 @@ esac
      ;;
  esac

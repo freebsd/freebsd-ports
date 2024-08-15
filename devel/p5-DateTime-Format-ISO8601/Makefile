@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-DateTime>=1.45:devel/p5-DateTime \
 		p5-Params-ValidationCompiler>=0.26:devel/p5-Params-ValidationCompiler \
 		p5-Specio>=0.18:devel/p5-Specio \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
-TEST_DEPENDS=	p5-Test2-Suite>=0:devel/p5-Test2-Suite
+TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	configure

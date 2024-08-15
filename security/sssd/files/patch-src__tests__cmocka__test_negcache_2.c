@@ -1,6 +1,7 @@
---- src/tests/cmocka/test_negcache_2.c	2020-03-17 09:31:28.000000000 -0400
-+++ src/tests/cmocka/test_negcache_2.c	2022-02-22 23:48:57.315866000 -0500
-@@ -116,12 +116,8 @@
+--- src/tests/cmocka/test_negcache_2.c.orig	2020-03-17 13:31:28 UTC
++++ src/tests/cmocka/test_negcache_2.c
+@@ -115,14 +115,10 @@ static void find_local_users(struct ncache_test_ctx *t
+ static void find_local_users(struct ncache_test_ctx *test_ctx)
  {
      int i;
 -    FILE *passwd_file;
@@ -14,13 +15,15 @@
 +        pwd = getpwent();
          assert_non_null(pwd);
          if (pwd->pw_uid == 0) {
-@@ -135,5 +131,4 @@
+             /* skip root */
+@@ -134,20 +130,15 @@ static void find_local_users(struct ncache_test_ctx *t
+         ++i;
      }
  
 -    fclose(passwd_file);
  }
  
-@@ -141,12 +136,8 @@
+ static void find_local_groups(struct ncache_test_ctx *test_ctx)
  {
      int i;
 -    FILE *group_file;
@@ -34,9 +37,12 @@
 +        grp = getgrent();
          assert_non_null(grp);
          if (grp->gr_gid == 0) {
-@@ -160,5 +151,4 @@
+             /* skip root */
+@@ -159,7 +150,6 @@ static void find_local_groups(struct ncache_test_ctx *
+         ++i;
      }
  
 -    fclose(group_file);
  }
  
+ static void find_non_local_users(struct ncache_test_ctx *test_ctx)

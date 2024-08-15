@@ -1,5 +1,5 @@
 PORTNAME=	async
-PORTVERSION=	2.12.0
+PORTVERSION=	2.15.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,10 +9,11 @@ WWW=		https://socketry.github.io/async/ \
 		https://github.com/socketry/async
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/license.md
 
-RUN_DEPENDS=	rubygem-console>=1.25.2<2:devel/rubygem-console \
+RUN_DEPENDS=	rubygem-console>=1.26<2:devel/rubygem-console \
 		rubygem-fiber-annotation>=0:devel/rubygem-fiber-annotation \
-		rubygem-io-event>=1.6<2:devel/rubygem-io-event
+		rubygem-io-event>=1.6.5<2:devel/rubygem-io-event
 
 USES=		gem
 

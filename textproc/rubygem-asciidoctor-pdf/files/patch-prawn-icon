@@ -5,7 +5,7 @@ Obtained from:	https://github.com/asciidoctor/asciidoctor-pdf/commit/631606e91f4
 @@ -27,7 +27,7 @@ Gem::Specification.new do |s|
    s.add_runtime_dependency(%q<prawn-table>.freeze, ["~> 0.2.0".freeze])
    s.add_runtime_dependency(%q<prawn-templates>.freeze, ["~> 0.1.0".freeze])
-   s.add_runtime_dependency(%q<prawn-svg>.freeze, ["~> 0.34.0".freeze])
+   s.add_runtime_dependency(%q<prawn-svg>.freeze, ["~> 0.35.0".freeze])
 -  s.add_runtime_dependency(%q<prawn-icon>.freeze, ["~> 3.0.0".freeze])
 +  s.add_runtime_dependency(%q<prawn-icon>.freeze, ["~> 3.1.0".freeze])
    s.add_runtime_dependency(%q<concurrent-ruby>.freeze, ["~> 1.1".freeze])

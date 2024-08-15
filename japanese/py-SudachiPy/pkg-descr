@@ -1,0 +1,4 @@
+SudachiPy is a Python bindings of sudachi.rs
+
+sudachi.rs is a Rust implementation of Sudachi, a Japanese morphological
+analyzer.

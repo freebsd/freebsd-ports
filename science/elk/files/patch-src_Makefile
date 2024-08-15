@@ -1,11 +1,11 @@
---- src/Makefile.orig	2024-06-26 12:48:58 UTC
+--- src/Makefile.orig	2024-08-14 11:39:29 UTC
 +++ src/Makefile
-@@ -98,7 +98,7 @@ SRC_main1 = \
-  rfmtsm.f90 rbshtip.f90 rfshtip.f90 zbshtip.f90 zfshtip.f90 cbsht.f90 \
-  cbshtip.f90 cfshtip.f90 gencvclmt.f90 zcfmtinp.f90 zcfinp.f90 \
-  ggamt_3.f90 ggair_3.f90 piezoelt.f90 magnetoelt.f90 rmtavrg.f90 \
-- zlrzncnv.f90 efieldmt.f90 writeefield.f90
-+ zlrzncnv.f90 efieldmt.f90 writeefield.f90 mkl_stub.f90
+@@ -95,7 +95,7 @@ SRC_main1 = \
+  moldyn.f90 gencrho.f90 cpotclmt.f90 rfmtsm.f90 rbshtip.f90 rfshtip.f90 \
+  zbshtip.f90 zfshtip.f90 cbsht.f90 cbshtip.f90 cfshtip.f90 gencvclmt.f90 \
+  zcfmtinp.f90 zcfinp.f90 ggamt_3.f90 ggair_3.f90 piezoelt.f90 magnetoelt.f90 \
+- rmtavrg.f90 zlrzncnv.f90 efieldmt.f90 energyafsp.f90 writebox.f90
++ rmtavrg.f90 zlrzncnv.f90 efieldmt.f90 energyafsp.f90 writebox.f90 mkl_stub.f90
  
  SRC_main = $(SRC_main0) $(SRC_main1)
  

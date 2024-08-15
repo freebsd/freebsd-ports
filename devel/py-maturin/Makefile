@@ -1,7 +1,6 @@
 PORTNAME=	maturin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.0
-PORTREVISION=	1
+DISTVERSION=	1.7.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,7 +15,9 @@ LICENSE_FILE_MIT=	${WRKSRC}/license-mit
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-rust>=1.4.0:devel/py-setuptools-rust@${PY_FLAVOR} \
+		${PY_TOMLI} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.36.2:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PY_TOMLI}
 
 USES=		cargo python
 USE_GITHUB=	yes
@@ -40,13 +41,6 @@ CARGO_BUILD_ARGS=	--no-default-features \
 			--features=upload,log,human-panic
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31100
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=1.1.0:textproc/py-tomli@${PY_FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=1.1.0:textproc/py-tomli@${PY_FLAVOR}
-.endif
-
 post-patch:
 	@${RM} ${WRKSRC}/pyproject.toml
 	${REINPLACE_CMD} 's|%%PYTHON_VER%%|${PYTHON_VER}|' ${WRKSRC}/maturin/__init__.py
@@ -54,4 +48,4 @@ post-patch:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/maturin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	dfwinreg
 PORTVERSION=	20221218
+PORTREVISION=	1
 CATEGORIES=	security devel python
 MASTER_SITES=	https://github.com/log2timeline/dfwinreg/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -16,7 +17,7 @@ RUN_DEPENDS=	libcreg>=e:devel/libcreg \
 		libregf>=a:devel/libregf \
 		${PYTHON_PKGNAMEPREFIX}dtfabric>=0:devel/py-dtfabric@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dfdatetime>=0:security/py-dfdatetime@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=3.10:devel/py-yaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=3.10:devel/py-pyyaml@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist concurrent

@@ -1,6 +1,6 @@
-TIMESTAMP = 1716584078
-SHA256 (librsvg-2.58.1.tar.xz) = 3728596290a8576d305d06ec8afdf473516feee9dff22e03235eac433d56824e
-SIZE (librsvg-2.58.1.tar.xz) = 6217300
+TIMESTAMP = 1720917136
+SHA256 (librsvg-2.58.2.tar.xz) = 18e9d70c08cf25f50d610d6d5af571561d67cf4179f962e04266475df6e2e224
+SIZE (librsvg-2.58.2.tar.xz) = 6218136
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
 SIZE (rust/crates/adler-1.0.2.crate) = 12778
 SHA256 (rust/crates/aho-corasick-1.1.2.crate) = b2969dcb958b36655471fc61f7e416fa76033bdd4bfed0678d8fee1e2d07a1f0

@@ -500,7 +500,6 @@ TIFF_DESC?=		TIFF image format support
 TINYXML_DESC?=		XML parser support via TinyXML
 TK_DESC?=		Tk GUI toolkit support
 TLS_DESC?=		Secure network connection support via TLS
-TOMCAT85_DESC?=		Use Tomcat 8.5.x
 TOMCAT9_DESC?=		Use Tomcat 9.0.x
 TOMCAT101_DESC?=	Use Tomcat 10.1.x
 TOML_DESC?=		TOML format or parser support

@@ -1,6 +1,6 @@
 PORTNAME=	qbox
 DISTVERSIONPREFIX=	rel
-DISTVERSION=	1_76_4
+DISTVERSION=	1_78_2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,7 +30,7 @@ WRKSRC_SUBDIR=	src
 MAKE_ARGS=	TARGET=freebsd
 
 ALL_TARGET=	qb
-TEST_TARGET=	tests # only builds tests, but doesn't run them: https://github.com/qboxcode/qbox-public/issues/6
+TEST_TARGET=	tests # only builds tests, but doesn't run them: https://github.com/qboxcode/qbox-public/issues/6, tests fail to link, see https://github.com/qboxcode/qbox-public/issues/11
 
 PLIST_FILES=	bin/qb
 

@@ -1,0 +1,2 @@
+IPFIXcol2 is a flexible, high-performance NetFlow v5/v9 and IPFIX flow data
+collector designed to be extensible by plugins.

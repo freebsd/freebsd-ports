@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/signals/device_info_fetcher_linux.cc.orig	2023-10-21 11:51:27 UTC
+--- chrome/browser/enterprise/signals/device_info_fetcher_linux.cc.orig	2024-08-01 05:47:53 UTC
 +++ chrome/browser/enterprise/signals/device_info_fetcher_linux.cc
 @@ -4,12 +4,23 @@
  
@@ -24,7 +24,7 @@
  #include <string>
  
  #include "base/environment.h"
-@@ -118,6 +129,7 @@ SettingValue GetScreenlockSecured() {
+@@ -117,6 +128,7 @@ SettingValue GetScreenlockSecured() {
  // Implements the logic from the native host installation script. First find the
  // root device identifier, then locate its parent and get its type.
  SettingValue GetDiskEncrypted() {
@@ -32,7 +32,7 @@
    struct stat info;
    // First figure out the device identifier. Fail fast if this fails.
    if (stat("/", &info) != 0)
-@@ -139,11 +151,35 @@ SettingValue GetDiskEncrypted() {
+@@ -138,11 +150,35 @@ SettingValue GetDiskEncrypted() {
      }
      return SettingValue::UNKNOWN;
    }
@@ -68,7 +68,7 @@
    base::DirReaderPosix reader("/sys/class/net");
    if (!reader.IsValid())
      return result;
-@@ -166,6 +202,7 @@ std::vector<std::string> GetMacAddresses() {
+@@ -165,6 +201,7 @@ std::vector<std::string> GetMacAddresses() {
                                &address);
      result.push_back(address);
    }

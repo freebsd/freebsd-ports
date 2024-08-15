@@ -1,6 +1,6 @@
---- cabal.project.orig	2024-02-21 10:48:37 UTC
+--- cabal.project.orig	2024-07-12 09:57:55 UTC
 +++ cabal.project
-@@ -1,27 +1,7 @@
+@@ -1,32 +1,6 @@
 -repository cardano-haskell-packages
 -  url: https://input-output-hk.github.io/cardano-haskell-packages
 -  secure: True
@@ -11,18 +11,23 @@
 -    bcec67e8e99cabfa7764d75ad9b158d72bfacf70ca1d0ec8bc6b4406d1bf8413
 -    c00aae8461a256275598500ea0e187588c35a5d5d7454fb57eac18d9edb86a56
 -    d4a35cd3121aa00d18544bb0ac01c3e1691d618f462c46129271bccf39f7e8ee
- 
+-
  index-state:
-   , hackage.haskell.org 2024-02-06T15:14:59Z
-   , cardano-haskell-packages 2024-02-07T07:51:35Z
+   , hackage.haskell.org 2024-06-23T23:01:13Z
+   , cardano-haskell-packages 2024-07-03T01:26:49Z
 -
 -constraints:
--  , any.base == 4.18.1.0
--  , any.cardano-node == 8.8.0
--  , any.cardano-ledger-conway == 1.12.0.0
--  , any.ouroboros-consensus == 0.15.0.0
--  , any.ouroboros-consensus-cardano == 0.13.0.0
--  , any.ouroboros-network == 0.11.0.0
+-  , any.cardano-node == 9.0.0
+-  , any.cardano-ledger-core == 1.13.2.0
+-  , any.cardano-ledger-conway == 1.16.0.0
+-  , any.ouroboros-consensus == 0.20.0.0
+-  , any.ouroboros-consensus-cardano == 0.18.0.0
+-  , any.ouroboros-consensus-diffusion == 0.17.0.1
+-  , any.ouroboros-network == 0.16.1.1
+-  , any.plutus-core == 1.30.0.0
+-  , any.plutus-ledger-api == 1.30.0.0
+-  , any.io-classes == 1.5.0.0
+-  , any.io-classes-mtl == 0.1.2.0
 -  , any.formatting == 7.2.0
 -  , any.text source
  

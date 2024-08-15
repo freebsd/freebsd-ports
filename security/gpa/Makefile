@@ -1,6 +1,6 @@
 PORTNAME=	gpa
 PORTVERSION=	0.10.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/gpa
 
@@ -21,7 +21,6 @@ USES=		desktop-file-utils gmake gnome localbase pkgconfig tar:bzip2
 USE_GNOME=	gdkpixbuf2 gtk20
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV+=	GPGKEYS_LDAP="${LOCALBASE}/libexec/gpg2keys_ldap"
 LDFLAGS+=	-Wl,--as-needed
 

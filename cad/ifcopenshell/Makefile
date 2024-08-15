@@ -3,6 +3,9 @@ PORTVERSION=	0.7.0.231127
 DISTVERSIONPREFIX=	v
 CATEGORIES=	cad
 
+PATCH_SITES=	https://github.com/IfcOpenShell/IfcOpenShell/commit/
+PATCHFILES=	589b98053e62ee14b6817e7d2b9f5b6b527310b7.patch:-p1
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source IFC library and geometry engine
 WWW=		https://ifcopenshell.org/

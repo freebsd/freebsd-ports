@@ -1,12 +1,12 @@
 --- UTC
---- configure.orig	2023-02-02 21:17:09.000000000 +0000
-+++ configure	2023-05-01 21:19:03.739461000 +0000
-@@ -10696,7 +10696,7 @@
-         fi
-         llvm_extra_cflags="-target $llvm_target -fuse-ld=lld"
-         case $llvm_target in
--          *windows) llvm_cflags="-Wl,-subsystem:console -Wl,-WX" ;;
-+          *windows) llvm_cflags="-Wl,-subsystem:console" ;;
-         esac
-         { as_ac_var=`printf "%s\n" "ac_cv_${wine_arch}_cflags_$llvm_extra_cflags $llvm_cflags" | $as_tr_sh`
- { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether $CC supports $llvm_extra_cflags $llvm_cflags" >&5
+--- configure.orig	2024-08-10 14:38:54.000000000 +0000
++++ configure	2024-08-10 23:43:05.264405000 +0000
+@@ -10662,7 +10662,7 @@
+     llvm_extra_ldflags=""
+     llvm_cflags=""
+     case $llvm_target in
+-      *windows) llvm_cflags="-Wl,-subsystem:console -Wl,-WX" ;;
++      *windows) llvm_cflags="-Wl,-subsystem:console" ;;
+     esac
+     { as_ac_var=`printf "%s\n" "ac_cv_${wine_arch}_cflags_$llvm_extra_cflags $llvm_cflags --no-default-config" | $as_tr_sh`
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether $CC supports $llvm_extra_cflags $llvm_cflags --no-default-config" >&5

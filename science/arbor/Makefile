@@ -1,6 +1,6 @@
 PORTNAME=	arbor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
+DISTVERSION=	0.10.1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,6 +27,7 @@ USES=		cmake compiler:c++17-lang localbase python shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arbor-sim
+GH_TUPLE=	LLNL:units:7917f5f:units/ext/units
 
 SHEBANG_FILES=	scripts/arbor-build-catalogue
 

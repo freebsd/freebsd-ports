@@ -44,6 +44,7 @@ include/quic/codec/QuicWriteCodec.h
 include/quic/codec/Types.h
 include/quic/common/BufAccessor.h
 include/quic/common/BufUtil.h
+include/quic/common/ChainedByteRange.h
 include/quic/common/CircularDeque-inl.h
 include/quic/common/CircularDeque.h
 include/quic/common/EnumArray.h

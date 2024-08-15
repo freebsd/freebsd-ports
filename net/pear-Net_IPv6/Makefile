@@ -12,6 +12,6 @@ LICENSE=	BSD2CLAUSE
 
 USES=		pear
 
-PORTSCOUT=	skipv:1.2.2b,1.2.2b2
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

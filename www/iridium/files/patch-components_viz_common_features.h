@@ -1,6 +1,6 @@
---- components/viz/common/features.h.orig	2024-06-25 12:08:48 UTC
+--- components/viz/common/features.h.orig	2024-08-01 05:47:53 UTC
 +++ components/viz/common/features.h
-@@ -74,7 +74,7 @@ VIZ_COMMON_EXPORT BASE_DECLARE_FEATURE(kDrawPredictedI
+@@ -75,7 +75,7 @@ VIZ_COMMON_EXPORT BASE_DECLARE_FEATURE(kDrawPredictedI
  VIZ_COMMON_EXPORT BASE_DECLARE_FEATURE(kAllowUndamagedNonrootRenderPassToSkip);
  VIZ_COMMON_EXPORT BASE_DECLARE_FEATURE(
      kAllowForceMergeRenderPassWithRequireOverlayQuads);
@@ -9,7 +9,7 @@
  VIZ_COMMON_EXPORT BASE_DECLARE_FEATURE(kRendererAllocatesImages);
  #endif
  VIZ_COMMON_EXPORT BASE_DECLARE_FEATURE(kBufferQueueImageSetPurgeable);
-@@ -134,7 +134,7 @@ VIZ_COMMON_EXPORT std::optional<double> IsDynamicSched
+@@ -136,7 +136,7 @@ VIZ_COMMON_EXPORT std::optional<double> IsDynamicSched
  VIZ_COMMON_EXPORT std::optional<double> IsDynamicSchedulerEnabledForClients();
  VIZ_COMMON_EXPORT int MaxOverlaysConsidered();
  VIZ_COMMON_EXPORT bool ShouldOnBeginFrameThrottleVideo();

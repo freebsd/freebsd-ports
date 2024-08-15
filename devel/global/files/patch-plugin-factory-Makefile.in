@@ -1,0 +1,26 @@
+--- plugin-factory/Makefile.in.orig	2024-07-02 00:03:56 UTC
++++ plugin-factory/Makefile.in
+@@ -411,19 +411,19 @@ exuberant_ctags_la_SOURCES = exuberant-ctags.c
+ 
+ # Exuberant Ctags parser
+ exuberant_ctags_la_SOURCES = exuberant-ctags.c
+-exuberant_ctags_la_LDFLAGS = -module -avoid-version -no-undefined -shared
++exuberant_ctags_la_LDFLAGS = -module -avoid-version -no-undefined
+ # Univercal Ctags parser
+ universal_ctags_la_SOURCES = exuberant-ctags.c
+ universal_ctags_la_CFLAGS = -DUSE_EXTRA_FIELDS
+-universal_ctags_la_LDFLAGS = -module -avoid-version -no-undefined -shared
++universal_ctags_la_LDFLAGS = -module -avoid-version -no-undefined
+ 
+ # Pygments parser
+ pygments_parser_la_SOURCES = pygments-parser.c
+-pygments_parser_la_LDFLAGS = -module -avoid-version -no-undefined -shared
++pygments_parser_la_LDFLAGS = -module -avoid-version -no-undefined
+ 
+ # skeleton
+ user_custom_la_SOURCES = user-custom.c
+-user_custom_la_LDFLAGS = -module -avoid-version -no-undefined -shared
++user_custom_la_LDFLAGS = -module -avoid-version -no-undefined
+ gtagsdir = ${datadir}/gtags
+ gtags_DATA = PLUGIN_HOWTO PLUGIN_HOWTO.pygments PLUGIN_HOWTO.universal-ctags \
+ 	     	uctags-scheme.c-diff

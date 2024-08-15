@@ -1,0 +1,44 @@
+@dir etc/ipfixcol2
+bin/fdsdump
+bin/ipfixcol2
+bin/ipfixsend2
+include/ipfixcol2.h
+include/ipfixcol2/api.h
+include/ipfixcol2/message.h
+include/ipfixcol2/message_garbage.h
+include/ipfixcol2/message_ipfix.h
+include/ipfixcol2/message_session.h
+include/ipfixcol2/plugins.h
+include/ipfixcol2/session.h
+include/ipfixcol2/utils.h
+include/ipfixcol2/verbose.h
+lib/ipfixcol2/libanonymization-intermediate.so
+lib/ipfixcol2/libdummy-input.so
+lib/ipfixcol2/libdummy-output.so
+lib/ipfixcol2/libfds-input.so
+lib/ipfixcol2/libfds-output.so
+lib/ipfixcol2/libforwarder-output.so
+lib/ipfixcol2/libipfix-input.so
+lib/ipfixcol2/libipfix-output.so
+lib/ipfixcol2/libjson-kafka-output.so
+lib/ipfixcol2/libjson-output.so
+lib/ipfixcol2/libtcp-input.so
+lib/ipfixcol2/libtimecheck-output.so
+lib/ipfixcol2/libudp-input.so
+lib/ipfixcol2/libviewer-output.so
+libdata/pkgconfig/ipfixcol2.pc
+share/man/man7/ipfixcol2-anonymization-inter.7.gz
+share/man/man7/ipfixcol2-dummy-output.7.gz
+share/man/man7/ipfixcol2-fds-input.7.gz
+share/man/man7/ipfixcol2-fds-output.7.gz
+share/man/man7/ipfixcol2-forwarder-output.7.gz
+share/man/man7/ipfixcol2-ipfix-input.7.gz
+share/man/man7/ipfixcol2-ipfix-output.7.gz
+share/man/man7/ipfixcol2-json-kafka-output.7.gz
+share/man/man7/ipfixcol2-json-output.7.gz
+share/man/man7/ipfixcol2-tcp-input.7.gz
+share/man/man7/ipfixcol2-timecheck-output.7.gz
+share/man/man7/ipfixcol2-udp-input.7.gz
+share/man/man7/ipfixcol2-viewer-output.7.gz
+@sample etc/ipfixcol2/startup.xml.sample
+@dir(ipfixcol2,ipfixcol2) /var/run/ipfixcol2

@@ -1,51 +1,38 @@
 PORTNAME=	strawberry
-DISTVERSION=	1.0.23
+DISTVERSION=	1.1.1
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/strawberrymusicplayer/${PORTNAME}/releases/download/${DISTVERSION}/ \
-		https://files.jkvinge.net/packages/strawberry/
-PKGNAMESUFFIX=	-${FLAVOR}
+MASTER_SITES=	https://github.com/strawberrymusicplayer/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Music player and collection organizer
 WWW=		https://www.strawberrymusicplayer.org/
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
+		libicui18n.so:devel/icu \
 		libprotobuf.so:devel/protobuf \
 		libtag.so:audio/taglib
 
-FLAVORS=		qt6 qt5
-FLAVOR?=		${FLAVORS:[1]}
-qt5_CONFLICTS_INSTALL=	strawberry strawberry-qt6
-qt6_CONFLICTS_INSTALL=	strawberry strawberry-qt5
-
 USES=		cmake compiler:c++17-lang desktop-file-utils gettext-runtime \
-		gl gnome pkgconfig qt:${FLAVOR:S/qt//} sqlite tar:xz xorg
+		gl gnome pkgconfig qt:6 sqlite tar:xz xorg
 
 USE_GNOME=	glib20
-_USE_GL_qt5=	#
-_USE_GL_qt6=	opengl
-USE_GL=		${_USE_GL_${FLAVOR}}
-_USE_QT_qt5=	concurrent core dbus gui network sql sql-sqlite3:run widgets \
-		x11extras buildtools:build linguisttools:build qmake:build
-_USE_QT_qt6=	base sqldriver-sqlite:run tools:build
-USE_QT=		${_USE_QT_${FLAVOR}}
+USE_GL=		opengl
+USE_QT=		base sqldriver-sqlite:run tools:build
 USE_XORG=	ice sm x11 xcb xext
 
-CMAKE_ON=	BUILD_WITH_${FLAVOR:tu}
+CMAKE_ON=	BUILD_WITH_QT6
 CMAKE_OFF=	ENABLE_UDISKS2
 
 OPTIONS_MULTI=		BACKEND SOUND
 OPTIONS_MULTI_BACKEND=	GSTREAMER VLC
 OPTIONS_MULTI_SOUND=	ALSA PULSEAUDIO
-OPTIONS_SINGLE=		UNICODE
-OPTIONS_SINGLE_UNICODE=	ICONV ICU
 OPTIONS_DEFINE=		CDIO EBUR128 IPOD MOODBAR MTP MUSICBRAINZ NLS TEST
-OPTIONS_DEFAULT=	ALSA EBUR128 GSTREAMER ICU MOODBAR MUSICBRAINZ
+OPTIONS_DEFAULT=	ALSA EBUR128 GSTREAMER MOODBAR MUSICBRAINZ
 OPTIONS_SUB=		yes
 
 BACKEND_DESC=		Playback engine
@@ -70,11 +57,6 @@ EBUR128_IMPLIES=	GSTREAMER
 GSTREAMER_USES=		gstreamer
 GSTREAMER_USE=		GSTREAMER=faac,faad,flac,lame,libav,mpg123,opus,taglib,vorbis
 GSTREAMER_CMAKE_BOOL=	ENABLE_GSTREAMER
-
-ICONV_USES=		iconv:translit
-
-ICU_LIB_DEPENDS=	libicui18n.so:devel/icu
-ICU_CMAKE_BOOL=		USE_ICU
 
 IPOD_LIB_DEPENDS=	libgpod.so:audio/libgpod \
 			libimobiledevice-1.0.so:comms/libimobiledevice \
@@ -103,9 +85,6 @@ VLC_LIB_DEPENDS=	libvlc.so:multimedia/vlc
 VLC_CMAKE_BOOL=		ENABLE_VLC
 
 TEST_BUILD_DEPENDS=	googletest>=0:devel/googletest
-.if ${FLAVOR:U} == qt5
-TEST_USE=		QT=testlib:build
-.endif
 TEST_TEST_TARGET=	strawberry_tests
 
 .include <bsd.port.mk>

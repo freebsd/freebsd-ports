@@ -1,0 +1,1327 @@
+diff -urN vendor.orig/github.com/elastic/go-sysinfo/internal/cgo/disabled.go vendor/github.com/elastic/go-sysinfo/internal/cgo/disabled.go
+--- vendor.orig/github.com/elastic/go-sysinfo/internal/cgo/disabled.go	1970-01-01 01:00:00.000000000 +0100
++++ vendor/github.com/elastic/go-sysinfo/internal/cgo/disabled.go	2024-07-13 20:28:36.060882000 +0200
+@@ -0,0 +1,23 @@
++// Licensed to Elasticsearch B.V. under one or more contributor
++// license agreements. See the NOTICE file distributed with
++// this work for additional information regarding copyright
++// ownership. Elasticsearch B.V. licenses this file to you under
++// the Apache License, Version 2.0 (the "License"); you may
++// not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//
++//     http://www.apache.org/licenses/LICENSE-2.0
++//
++// Unless required by applicable law or agreed to in writing,
++// software distributed under the License is distributed on an
++// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++// KIND, either express or implied.  See the License for the
++// specific language governing permissions and limitations
++// under the License.
++
++//go:build !cgo
++
++package cgo
++
++// Enabled is true if cgo was enabled at compile-time.
++const Enabled = false
+diff -urN vendor.orig/github.com/elastic/go-sysinfo/internal/cgo/enabled.go vendor/github.com/elastic/go-sysinfo/internal/cgo/enabled.go
+--- vendor.orig/github.com/elastic/go-sysinfo/internal/cgo/enabled.go	1970-01-01 01:00:00.000000000 +0100
++++ vendor/github.com/elastic/go-sysinfo/internal/cgo/enabled.go	2024-07-13 20:28:36.060953000 +0200
+@@ -0,0 +1,23 @@
++// Licensed to Elasticsearch B.V. under one or more contributor
++// license agreements. See the NOTICE file distributed with
++// this work for additional information regarding copyright
++// ownership. Elasticsearch B.V. licenses this file to you under
++// the Apache License, Version 2.0 (the "License"); you may
++// not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//
++//     http://www.apache.org/licenses/LICENSE-2.0
++//
++// Unless required by applicable law or agreed to in writing,
++// software distributed under the License is distributed on an
++// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++// KIND, either express or implied.  See the License for the
++// specific language governing permissions and limitations
++// under the License.
++
++//go:build cgo
++
++package cgo
++
++// Enabled is true if cgo was enabled at compile-time.
++const Enabled = true
+diff -urN vendor.orig/github.com/elastic/go-sysinfo/providers/freebsd/defs_freebsd.go vendor/github.com/elastic/go-sysinfo/providers/freebsd/defs_freebsd.go
+--- vendor.orig/github.com/elastic/go-sysinfo/providers/freebsd/defs_freebsd.go	1970-01-01 01:00:00.000000000 +0100
++++ vendor/github.com/elastic/go-sysinfo/providers/freebsd/defs_freebsd.go	2024-07-13 20:28:36.065106000 +0200
+@@ -0,0 +1,33 @@
++// Licensed to Elasticsearch B.V. under one or more contributor
++// license agreements. See the NOTICE file distributed with
++// this work for additional information regarding copyright
++// ownership. Elasticsearch B.V. licenses this file to you under
++// the Apache License, Version 2.0 (the "License"); you may
++// not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//
++//     http://www.apache.org/licenses/LICENSE-2.0
++//
++// Unless required by applicable law or agreed to in writing,
++// software distributed under the License is distributed on an
++// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++// KIND, either express or implied.  See the License for the
++// specific language governing permissions and limitations
++// under the License.
++
++//go:build ignore
++// +build ignore
++
++package freebsd
++
++/*
++#include <sys/types.h>
++#include <sys/vmmeter.h>
++#include <sys/time.h>
++#include <kvm.h>
++*/
++import "C"
++
++type kvmSwap C.struct_kvm_swap
++
++type clockInfo C.struct_clockinfo
+diff -urN vendor.orig/github.com/elastic/go-sysinfo/providers/freebsd/doc.go vendor/github.com/elastic/go-sysinfo/providers/freebsd/doc.go
+--- vendor.orig/github.com/elastic/go-sysinfo/providers/freebsd/doc.go	1970-01-01 01:00:00.000000000 +0100
++++ vendor/github.com/elastic/go-sysinfo/providers/freebsd/doc.go	2024-07-13 20:28:36.065203000 +0200
+@@ -0,0 +1,22 @@
++// Licensed to Elasticsearch B.V. under one or more contributor
++// license agreements. See the NOTICE file distributed with
++// this work for additional information regarding copyright
++// ownership. Elasticsearch B.V. licenses this file to you under
++// the Apache License, Version 2.0 (the "License"); you may
++// not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//
++//     http://www.apache.org/licenses/LICENSE-2.0
++//
++// Unless required by applicable law or agreed to in writing,
++// software distributed under the License is distributed on an
++// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++// KIND, either express or implied.  See the License for the
++// specific language governing permissions and limitations
++// under the License.
++
++// Package freebsd implements the HostProvider and ProcessProvider interfaces
++// for providing information about FreeBSD.
++package freebsd
++
++//go:generate sh -c "go tool cgo -godefs defs_freebsd.go > ztypes_freebsd.go"
+diff -urN vendor.orig/github.com/elastic/go-sysinfo/providers/freebsd/host_freebsd_cgo.go vendor/github.com/elastic/go-sysinfo/providers/freebsd/host_freebsd_cgo.go
+--- vendor.orig/github.com/elastic/go-sysinfo/providers/freebsd/host_freebsd_cgo.go	1970-01-01 01:00:00.000000000 +0100
++++ vendor/github.com/elastic/go-sysinfo/providers/freebsd/host_freebsd_cgo.go	2024-07-13 20:28:36.065317000 +0200
+@@ -0,0 +1,238 @@
++// Licensed to Elasticsearch B.V. under one or more contributor
++// license agreements. See the NOTICE file distributed with
++// this work for additional information regarding copyright
++// ownership. Elasticsearch B.V. licenses this file to you under
++// the Apache License, Version 2.0 (the "License"); you may
++// not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//
++//     http://www.apache.org/licenses/LICENSE-2.0
++//
++// Unless required by applicable law or agreed to in writing,
++// software distributed under the License is distributed on an
++// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++// KIND, either express or implied.  See the License for the
++// specific language governing permissions and limitations
++// under the License.
++
++//go:build freebsd && cgo
++
++package freebsd
++
++import (
++	"context"
++	"errors"
++	"os"
++	"path/filepath"
++	"time"
++
++	"github.com/prometheus/procfs"
++
++	"github.com/elastic/go-sysinfo/internal/registry"
++	"github.com/elastic/go-sysinfo/providers/shared"
++	"github.com/elastic/go-sysinfo/types"
++)
++
++func init() {
++	registry.Register(newFreeBSDSystem())
++}
++
++type freebsdSystem struct{}
++
++func newFreeBSDSystem() freebsdSystem {
++	return freebsdSystem{}
++}
++
++func (s freebsdSystem) Host() (types.Host, error) {
++	return newHost()
++}
++
++type host struct {
++	procFS procFS
++	info   types.HostInfo
++}
++
++func (h *host) Info() types.HostInfo {
++	return h.info
++}
++
++func (h *host) CPUTime() (types.CPUTimes, error) {
++	cpu := types.CPUTimes{}
++	r := &reader{}
++	r.cpuTime(&cpu)
++	return cpu, r.Err()
++}
++
++func (h *host) Memory() (*types.HostMemoryInfo, error) {
++	m := &types.HostMemoryInfo{}
++	r := &reader{}
++	r.memInfo(m)
++	return m, r.Err()
++}
++
++func (h *host) FQDNWithContext(ctx context.Context) (string, error) {
++	return shared.FQDNWithContext(ctx)
++}
++
++func (h *host) FQDN() (string, error) {
++	return h.FQDNWithContext(context.Background())
++}
++
++func newHost() (*host, error) {
++	h := &host{}
++	r := &reader{}
++	r.architecture(h)
++	r.bootTime(h)
++	r.hostname(h)
++	r.network(h)
++	r.kernelVersion(h)
++	r.os(h)
++	r.time(h)
++	r.uniqueID(h)
++	return h, r.Err()
++}
++
++type reader struct {
++	errs []error
++}
++
++func (r *reader) addErr(err error) bool {
++	if err != nil {
++		if !errors.Is(err, types.ErrNotImplemented) {
++			r.errs = append(r.errs, err)
++		}
++		return true
++	}
++	return false
++}
++
++func (r *reader) Err() error {
++	return errors.Join(r.errs...)
++}
++
++func (r *reader) cpuTime(cpu *types.CPUTimes) {
++	times, err := cpuStateTimes()
++	if r.addErr(err) {
++		return
++	}
++	*cpu = *times
++}
++
++func (r *reader) memInfo(m *types.HostMemoryInfo) {
++	// Memory counter calculations:
++	//   total = physical memory
++	//   used = active + wired
++	//   free = free
++	//   available = buffers + inactive + cache + free
++
++	pageSize, err := pageSizeBytes()
++	if r.addErr(err) {
++		return
++	}
++
++	m.Total = totalPhysicalMem(r)
++	activePages := activePageCount(r)
++
++	m.Metrics = make(map[string]uint64, 6)
++	m.Metrics["active_bytes"] = activePages * pageSize
++
++	wirePages := wirePageCount(r)
++	m.Metrics["wired_bytes"] = wirePages * pageSize
++
++	inactivePages := inactivePageCount(r)
++	m.Metrics["inactive_bytes"] = inactivePages * pageSize
++
++	cachePages := cachePageCount(r)
++	m.Metrics["cache_bytes"] = cachePages * pageSize
++
++	freePages := freePageCount(r)
++	m.Metrics["free_bytes"] = freePages * pageSize
++
++	buffers := buffersUsedBytes(r)
++	m.Metrics["buffer_bytes"] = buffers
++
++	m.Used = (activePages + wirePages) * pageSize
++	m.Free = freePages * pageSize
++	m.Available = (inactivePages+cachePages+freePages)*pageSize + buffers
++
++	// Virtual (swap) Memory
++	swap, err := kvmGetSwapInfo()
++	if r.addErr(err) {
++		return
++	}
++
++	m.VirtualTotal = uint64(swap.Total) * pageSize
++	m.VirtualUsed = uint64(swap.Used) * pageSize
++	m.VirtualFree = m.VirtualTotal - m.VirtualUsed
++}
++
++func (r *reader) architecture(h *host) {
++	v, err := architecture()
++	if r.addErr(err) {
++		return
++	}
++	h.info.Architecture = v
++}
++
++func (r *reader) bootTime(h *host) {
++	v, err := bootTime()
++	if r.addErr(err) {
++		return
++	}
++	h.info.BootTime = v
++}
++
++func (r *reader) hostname(h *host) {
++	v, err := os.Hostname()
++	if r.addErr(err) {
++		return
++	}
++	h.info.Hostname = v
++}
++
++func (r *reader) network(h *host) {
++	ips, macs, err := shared.Network()
++	if r.addErr(err) {
++		return
++	}
++	h.info.IPs = ips
++	h.info.MACs = macs
++}
++
++func (r *reader) kernelVersion(h *host) {
++	v, err := kernelVersion()
++	if r.addErr(err) {
++		return
++	}
++	h.info.KernelVersion = v
++}
++
++func (r *reader) os(h *host) {
++	v, err := operatingSystem()
++	if r.addErr(err) {
++		return
++	}
++	h.info.OS = v
++}
++
++func (r *reader) time(h *host) {
++	h.info.Timezone, h.info.TimezoneOffsetSec = time.Now().Zone()
++}
++
++func (r *reader) uniqueID(h *host) {
++	v, err := machineID()
++	if r.addErr(err) {
++		return
++	}
++	h.info.UniqueID = v
++}
++
++type procFS struct {
++	procfs.FS
++	mountPoint string
++}
++
++func (fs *procFS) path(p ...string) string {
++	elem := append([]string{fs.mountPoint}, p...)
++	return filepath.Join(elem...)
++}
+diff -urN vendor.orig/github.com/elastic/go-sysinfo/providers/freebsd/host_freebsd_cgo_test.go vendor/github.com/elastic/go-sysinfo/providers/freebsd/host_freebsd_cgo_test.go
+--- vendor.orig/github.com/elastic/go-sysinfo/providers/freebsd/host_freebsd_cgo_test.go	1970-01-01 01:00:00.000000000 +0100
++++ vendor/github.com/elastic/go-sysinfo/providers/freebsd/host_freebsd_cgo_test.go	2024-07-13 20:28:36.065385000 +0200
+@@ -0,0 +1,53 @@
++// Licensed to Elasticsearch B.V. under one or more contributor
++// license agreements. See the NOTICE file distributed with
++// this work for additional information regarding copyright
++// ownership. Elasticsearch B.V. licenses this file to you under
++// the Apache License, Version 2.0 (the "License"); you may
++// not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//
++//     http://www.apache.org/licenses/LICENSE-2.0
++//
++// Unless required by applicable law or agreed to in writing,
++// software distributed under the License is distributed on an
++// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++// KIND, either express or implied.  See the License for the
++// specific language governing permissions and limitations
++// under the License.
++
++//go:build freebsd && cgo
++
++package freebsd
++
++import (
++	"encoding/json"
++	"testing"
++
++	"github.com/elastic/go-sysinfo/internal/registry"
++)
++
++var _ registry.HostProvider = freebsdSystem{}
++
++func TestHost(t *testing.T) {
++	host, err := newFreeBSDSystem().Host()
++	if err != nil {
++		t.Fatal(err)
++	}
++
++	t.Run("Info", func(t *testing.T) {
++		info := host.Info()
++
++		data, _ := json.MarshalIndent(info, "", "  ")
++		t.Log(string(data))
++	})
++
++	t.Run("Memory", func(t *testing.T) {
++		mem, err := host.Memory()
++		if err != nil {
++			t.Fatal(err)
++		}
++
++		data, _ := json.MarshalIndent(mem, "", "  ")
++		t.Log(string(data))
++	})
++}
+diff -urN vendor.orig/github.com/elastic/go-sysinfo/providers/freebsd/kvm_freebsd_cgo.go vendor/github.com/elastic/go-sysinfo/providers/freebsd/kvm_freebsd_cgo.go
+--- vendor.orig/github.com/elastic/go-sysinfo/providers/freebsd/kvm_freebsd_cgo.go	1970-01-01 01:00:00.000000000 +0100
++++ vendor/github.com/elastic/go-sysinfo/providers/freebsd/kvm_freebsd_cgo.go	2024-07-13 20:28:36.065498000 +0200
+@@ -0,0 +1,58 @@
++// Licensed to Elasticsearch B.V. under one or more contributor
++// license agreements. See the NOTICE file distributed with
++// this work for additional information regarding copyright
++// ownership. Elasticsearch B.V. licenses this file to you under
++// the Apache License, Version 2.0 (the "License"); you may
++// not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//
++//     http://www.apache.org/licenses/LICENSE-2.0
++//
++// Unless required by applicable law or agreed to in writing,
++// software distributed under the License is distributed on an
++// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++// KIND, either express or implied.  See the License for the
++// specific language governing permissions and limitations
++// under the License.
++
++//go:build freebsd && cgo
++
++package freebsd
++
++/*
++#cgo LDFLAGS: -lkvm
++#include <sys/cdefs.h>
++#include <sys/types.h>
++#include <sys/sysctl.h>
++
++#include <paths.h>
++#include <kvm.h>
++#include <stdlib.h>
++*/
++import "C"
++
++import (
++	"fmt"
++	"unsafe"
++
++	"golang.org/x/sys/unix"
++)
++
++// kvmGetSwapInfo returns swap summary statistics for the system. It accesses
++// the kernel virtual memory (kvm) images by using libkvm.
++func kvmGetSwapInfo() (*kvmSwap, error) {
++	// Obtain a KVM file descriptor.
++	var errstr *C.char
++	kd := C.kvm_open(nil, nil, nil, unix.O_RDONLY, errstr)
++	if errstr != nil {
++		return nil, fmt.Errorf("failed calling kvm_open: %s", C.GoString(errstr))
++	}
++	defer C.kvm_close(kd)
++
++	var swap kvmSwap
++	if n, err := C.kvm_getswapinfo(kd, (*C.struct_kvm_swap)(unsafe.Pointer(&swap)), 1, 0); n != 0 {
++		return nil, fmt.Errorf("failed to get kvm_getswapinfo: %w", err)
++	}
++
++	return &swap, nil
++}
+diff -urN vendor.orig/github.com/elastic/go-sysinfo/providers/freebsd/process_freebsd_cgo.go vendor/github.com/elastic/go-sysinfo/providers/freebsd/process_freebsd_cgo.go
+--- vendor.orig/github.com/elastic/go-sysinfo/providers/freebsd/process_freebsd_cgo.go	1970-01-01 01:00:00.000000000 +0100
++++ vendor/github.com/elastic/go-sysinfo/providers/freebsd/process_freebsd_cgo.go	2024-07-13 20:28:36.065578000 +0200
+@@ -0,0 +1,386 @@
++// Licensed to Elasticsearch B.V. under one or more contributor
++// license agreements. See the NOTICE file distributed with
++// this work for additional information regarding copyright
++// ownership. Elasticsearch B.V. licenses this file to you under
++// the Apache License, Version 2.0 (the "License"); you may
++// not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//
++//     http://www.apache.org/licenses/LICENSE-2.0
++//
++// Unless required by applicable law or agreed to in writing,
++// software distributed under the License is distributed on an
++// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++// KIND, either express or implied.  See the License for the
++// specific language governing permissions and limitations
++// under the License.
++
++//go:build freebsd && cgo
++
++package freebsd
++
++import "C"
++
++/*
++#cgo LDFLAGS: -lprocstat
++#include <sys/types.h>
++#include <sys/sysctl.h>
++#include <sys/time.h>
++#include <sys/param.h>
++#include <sys/queue.h>
++#include <sys/socket.h>
++#include <sys/user.h>
++
++#include <libprocstat.h>
++#include <string.h>
++
++struct kinfo_proc getProcInfoAt(struct kinfo_proc *procs, unsigned int index) {
++  return procs[index];
++}
++
++unsigned int countArrayItems(char **items) {
++  unsigned int i = 0;
++  for (i = 0; items[i] != NULL; ++i);
++  return i;
++}
++
++char * itemAtIndex(char **items, unsigned int index) {
++  return items[index];
++}
++
++unsigned int countFileStats(struct filestat_list *head) {
++  unsigned int count = 0;
++  struct filestat *fst;
++  STAILQ_FOREACH(fst, head, next) {
++    ++count;
++  }
++
++  return count;
++}
++
++void copyFileStats(struct filestat_list *head, struct filestat *out, unsigned int size) {
++  unsigned int index = 0;
++  struct filestat *fst;
++  if (size == 0) {
++      return;
++  }
++  STAILQ_FOREACH(fst, head, next) {
++    memcpy(out, fst, sizeof(*fst));
++    ++out;
++    --size;
++  }
++}
++*/
++import "C"
++
++import (
++	"errors"
++	"fmt"
++	"os"
++	"strconv"
++	"strings"
++	"time"
++
++	"github.com/elastic/go-sysinfo/types"
++)
++
++func getProcInfo(op, arg int) ([]process, error) {
++	procstat, err := C.procstat_open_sysctl()
++	if procstat == nil {
++		return nil, fmt.Errorf("failed to open procstat sysctl: %w", err)
++	}
++	defer C.procstat_close(procstat)
++
++	var count C.uint = 0
++	kprocs, err := C.procstat_getprocs(procstat, C.int(op), C.int(arg), &count)
++	if kprocs == nil {
++		return nil, fmt.Errorf("getprocs failed: %w", err)
++	}
++	defer C.procstat_freeprocs(procstat, kprocs)
++
++	procs := make([]process, count)
++	var index C.uint
++	for index = 0; index < count; index++ {
++		proc := C.getProcInfoAt(kprocs, index)
++		procs[index].kinfo = proc
++		procs[index].pid = int(proc.ki_pid)
++	}
++
++	return procs, nil
++}
++
++func copyArray(from **C.char) []string {
++	if from == nil {
++		return nil
++	}
++
++	count := C.countArrayItems(from)
++	out := make([]string, count)
++
++	for index := C.uint(0); index < count; index++ {
++		out[index] = C.GoString(C.itemAtIndex(from, index))
++	}
++
++	return out
++}
++
++func makeMap(from []string) map[string]string {
++	out := make(map[string]string, len(from))
++
++	for _, env := range from {
++		parts := strings.Split(env, "=")
++		if len(parts) > 1 {
++			out[parts[0]] = parts[1]
++		}
++	}
++
++	return out
++}
++
++func getProcEnv(p *process) (map[string]string, error) {
++	procstat, err := C.procstat_open_sysctl()
++
++	if procstat == nil {
++		return nil, fmt.Errorf("failed to open procstat sysctl: %w", err)
++	}
++	defer C.procstat_close(procstat)
++
++	env, err := C.procstat_getenvv(procstat, &p.kinfo, 0)
++	defer C.procstat_freeenvv(procstat)
++
++	return makeMap(copyArray(env)), err
++}
++
++func getProcArgs(p *process) ([]string, error) {
++	procstat, err := C.procstat_open_sysctl()
++
++	if procstat == nil {
++		return nil, fmt.Errorf("failed to open procstat sysctl: %w", err)
++	}
++	defer C.procstat_close(procstat)
++
++	args, err := C.procstat_getargv(procstat, &p.kinfo, 0)
++	defer C.procstat_freeargv(procstat)
++
++	return copyArray(args), err
++}
++
++func getProcPathname(p *process) (string, error) {
++	procstat, err := C.procstat_open_sysctl()
++
++	if procstat == nil {
++		return "", fmt.Errorf("failed to open procstat sysctl: %w", err)
++	}
++	defer C.procstat_close(procstat)
++
++	const maxlen = uint(1024)
++	out := make([]C.char, maxlen)
++	if res, err := C.procstat_getpathname(procstat, &p.kinfo, &out[0], C.ulong(maxlen)); res != 0 {
++		return "", err
++	}
++	return C.GoString(&out[0]), nil
++}
++
++func getFileStats(fileStats *C.struct_filestat_list) []C.struct_filestat {
++	count := C.countFileStats(fileStats)
++
++	if count < 1 {
++		return nil
++	}
++
++	out := make([]C.struct_filestat, count)
++
++	C.copyFileStats(fileStats, &out[0], count)
++	return out
++}
++
++func getProcCWD(p *process) (string, error) {
++	procstat, err := C.procstat_open_sysctl()
++
++	if procstat == nil {
++		return "", fmt.Errorf("failed to open procstat sysctl: %w", err)
++	}
++	defer C.procstat_close(procstat)
++
++	fs, err := C.procstat_getfiles(procstat, &p.kinfo, 0)
++	if fs == nil {
++		return "", fmt.Errorf("failed to get files: %w", err)
++	}
++
++	defer C.procstat_freefiles(procstat, fs)
++
++	files := getFileStats(fs)
++	for _, f := range files {
++		if f.fs_uflags == C.PS_FST_UFLAG_CDIR {
++			return C.GoString(f.fs_path), nil
++		}
++	}
++
++	return "", nil
++}
++
++type process struct {
++	pid   int
++	kinfo C.struct_kinfo_proc
++}
++
++func timevalToDuration(tm C.struct_timeval) time.Duration {
++	return time.Duration(tm.tv_sec)*time.Second +
++		time.Duration(tm.tv_usec)*time.Microsecond
++}
++
++func (p *process) CPUTime() (types.CPUTimes, error) {
++	procs, err := getProcInfo(C.KERN_PROC_PID, p.PID())
++	if err != nil {
++		return types.CPUTimes{}, err
++	}
++	p.kinfo = procs[0].kinfo
++
++	return types.CPUTimes{
++		User:   timevalToDuration(p.kinfo.ki_rusage.ru_utime),
++		System: timevalToDuration(p.kinfo.ki_rusage.ru_stime),
++	}, nil
++}
++
++func (p *process) Info() (types.ProcessInfo, error) {
++	procs, err := getProcInfo(C.KERN_PROC_PID, p.PID())
++	if err != nil {
++		return types.ProcessInfo{}, err
++	}
++	p.kinfo = procs[0].kinfo
++
++	cwd, err := getProcCWD(p)
++	if err != nil {
++		return types.ProcessInfo{}, err
++	}
++
++	args, err := getProcArgs(p)
++	if err != nil {
++		return types.ProcessInfo{}, err
++	}
++
++	exe, _ := getProcPathname(p)
++
++	return types.ProcessInfo{
++		Name:      C.GoString(&p.kinfo.ki_comm[0]),
++		PID:       int(p.kinfo.ki_pid),
++		PPID:      int(p.kinfo.ki_ppid),
++		CWD:       cwd,
++		Exe:       exe,
++		Args:      args,
++		StartTime: time.Unix(int64(p.kinfo.ki_start.tv_sec), int64(p.kinfo.ki_start.tv_usec)*1000),
++	}, nil
++}
++
++func (p *process) Memory() (types.MemoryInfo, error) {
++	pageSize, err := pageSizeBytes()
++	if err != nil {
++		return types.MemoryInfo{}, err
++	}
++
++	procs, err := getProcInfo(C.KERN_PROC_PID, p.PID())
++	if err != nil {
++		return types.MemoryInfo{}, err
++	}
++	p.kinfo = procs[0].kinfo
++
++	return types.MemoryInfo{
++		Resident: uint64(p.kinfo.ki_rssize) * pageSize,
++		Virtual:  uint64(p.kinfo.ki_size),
++	}, nil
++}
++
++func (p *process) User() (types.UserInfo, error) {
++	procs, err := getProcInfo(C.KERN_PROC_PID, p.PID())
++	if err != nil {
++		return types.UserInfo{}, err
++	}
++
++	p.kinfo = procs[0].kinfo
++
++	return types.UserInfo{
++		UID:  strconv.FormatUint(uint64(p.kinfo.ki_ruid), 10),
++		EUID: strconv.FormatUint(uint64(p.kinfo.ki_uid), 10),
++		SUID: strconv.FormatUint(uint64(p.kinfo.ki_svuid), 10),
++		GID:  strconv.FormatUint(uint64(p.kinfo.ki_rgid), 10),
++		EGID: strconv.FormatUint(uint64(p.kinfo.ki_groups[0]), 10),
++		SGID: strconv.FormatUint(uint64(p.kinfo.ki_svgid), 10),
++	}, nil
++}
++
++func (p *process) PID() int {
++	return p.pid
++}
++
++func (p *process) OpenHandles() ([]string, error) {
++	procstat := C.procstat_open_sysctl()
++	if procstat == nil {
++		return nil, errors.New("failed to open procstat sysctl")
++	}
++	defer C.procstat_close(procstat)
++
++	fs := C.procstat_getfiles(procstat, &p.kinfo, 0)
++	defer C.procstat_freefiles(procstat, fs)
++
++	files := getFileStats(fs)
++	names := make([]string, 0, len(files))
++
++	for _, file := range files {
++		if file.fs_type == 1 {
++			if path := C.GoString(file.fs_path); path != "" {
++				names = append(names, path)
++			}
++		}
++	}
++
++	return names, nil
++}
++
++func (p *process) OpenHandleCount() (int, error) {
++	procstat := C.procstat_open_sysctl()
++	if procstat == nil {
++		return 0, errors.New("failed to open procstat sysctl")
++	}
++	defer C.procstat_close(procstat)
++
++	fs := C.procstat_getfiles(procstat, &p.kinfo, 0)
++	defer C.procstat_freefiles(procstat, fs)
++	return int(C.countFileStats(fs)), nil
++}
++
++func (p *process) Environment() (map[string]string, error) {
++	return getProcEnv(p)
++}
++
++func (s freebsdSystem) Processes() ([]types.Process, error) {
++	procs, err := getProcInfo(C.KERN_PROC_PROC, 0)
++	out := make([]types.Process, 0, len(procs))
++
++	for _, proc := range procs {
++		out = append(out, &process{
++			pid:   proc.pid,
++			kinfo: proc.kinfo,
++		})
++	}
++
++	return out, err
++}
++
++func (s freebsdSystem) Process(pid int) (types.Process, error) {
++	return &process{pid: pid}, nil
++}
++
++func (s freebsdSystem) Self() (types.Process, error) {
++	return s.Process(os.Getpid())
++}
++
++func (p *process) Parent() (types.Process, error) {
++	info, err := p.Info()
++	if err != nil {
++		return nil, err
++	}
++
++	proc := process{pid: info.PPID}
++
++	return &proc, nil
++}
+diff -urN vendor.orig/github.com/elastic/go-sysinfo/providers/freebsd/sysctl_freebsd.go vendor/github.com/elastic/go-sysinfo/providers/freebsd/sysctl_freebsd.go
+--- vendor.orig/github.com/elastic/go-sysinfo/providers/freebsd/sysctl_freebsd.go	1970-01-01 01:00:00.000000000 +0100
++++ vendor/github.com/elastic/go-sysinfo/providers/freebsd/sysctl_freebsd.go	2024-07-13 20:28:36.065700000 +0200
+@@ -0,0 +1,248 @@
++// Licensed to Elasticsearch B.V. under one or more contributor
++// license agreements. See the NOTICE file distributed with
++// this work for additional information regarding copyright
++// ownership. Elasticsearch B.V. licenses this file to you under
++// the Apache License, Version 2.0 (the "License"); you may
++// not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//
++//     http://www.apache.org/licenses/LICENSE-2.0
++//
++// Unless required by applicable law or agreed to in writing,
++// software distributed under the License is distributed on an
++// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++// KIND, either express or implied.  See the License for the
++// specific language governing permissions and limitations
++// under the License.
++
++//go:build freebsd
++
++package freebsd
++
++import (
++	"fmt"
++	"strconv"
++	"strings"
++	"sync"
++	"time"
++	"unsafe"
++
++	"github.com/elastic/go-sysinfo/types"
++
++	"golang.org/x/sys/unix"
++)
++
++var tickDuration = sync.OnceValues(func() (time.Duration, error) {
++	const mib = "kern.clockrate"
++
++	c, err := unix.SysctlClockinfo(mib)
++	if err != nil {
++		return 0, fmt.Errorf("failed to get %s: %w", mib, err)
++	}
++	return time.Duration(c.Tick) * time.Microsecond, nil
++})
++
++var pageSizeBytes = sync.OnceValues(func() (uint64, error) {
++	const mib = "vm.stats.vm.v_page_size"
++
++	v, err := unix.SysctlUint32(mib)
++	if err != nil {
++		return 0, fmt.Errorf("failed to get %s: %w", mib, err)
++	}
++
++	return uint64(v), nil
++})
++
++func activePageCount(r *reader) uint64 {
++	const mib = "vm.stats.vm.v_active_count"
++
++	v, err := unix.SysctlUint32(mib)
++	if r.addErr(err) {
++		return 0
++	}
++	return uint64(v)
++}
++
++func architecture() (string, error) {
++	const mib = "hw.machine"
++
++	arch, err := unix.Sysctl(mib)
++	if err != nil {
++		return "", fmt.Errorf("failed to get architecture: %w", err)
++	}
++
++	return arch, nil
++}
++
++func bootTime() (time.Time, error) {
++	const mib = "kern.boottime"
++
++	tv, err := unix.SysctlTimeval(mib)
++	if err != nil {
++		return time.Time{}, fmt.Errorf("failed to get host uptime: %w", err)
++	}
++
++	bootTime := time.Unix(tv.Sec, tv.Usec*int64(time.Microsecond))
++	return bootTime, nil
++}
++
++// buffersUsedBytes returns the number memory bytes used as disk cache.
++func buffersUsedBytes(r *reader) uint64 {
++	const mib = "vfs.bufspace"
++
++	v, err := unix.SysctlUint64(mib)
++	if r.addErr(err) {
++		return 0
++	}
++
++	return v
++}
++
++func cachePageCount(r *reader) uint64 {
++	const mib = "vm.stats.vm.v_cache_count"
++
++	v, err := unix.SysctlUint32(mib)
++	if r.addErr(err) {
++		return 0
++	}
++
++	return uint64(v)
++}
++
++const sizeOfUint64 = int(unsafe.Sizeof(uint64(0)))
++
++// cpuStateTimes uses sysctl kern.cp_time to get the amount of time spent in
++// different CPU states.
++func cpuStateTimes() (*types.CPUTimes, error) {
++	tickDuration, err := tickDuration()
++	if err != nil {
++		return nil, err
++	}
++
++	const mib = "kern.cp_time"
++	buf, err := unix.SysctlRaw(mib)
++	if err != nil {
++		return nil, fmt.Errorf("failed to get %s: %w", mib, err)
++	}
++
++	var clockTicks [unix.CPUSTATES]uint64
++	if len(buf) < len(clockTicks)*sizeOfUint64 {
++		return nil, fmt.Errorf("kern.cp_time data is too short (got %d bytes)", len(buf))
++	}
++	for i := range clockTicks {
++		val := *(*uint64)(unsafe.Pointer(&buf[sizeOfUint64*i]))
++		clockTicks[i] = val
++	}
++
++	return &types.CPUTimes{
++		User:   time.Duration(clockTicks[unix.CP_USER]) * tickDuration,
++		System: time.Duration(clockTicks[unix.CP_SYS]) * tickDuration,
++		Idle:   time.Duration(clockTicks[unix.CP_IDLE]) * tickDuration,
++		IRQ:    time.Duration(clockTicks[unix.CP_INTR]) * tickDuration,
++		Nice:   time.Duration(clockTicks[unix.CP_NICE]) * tickDuration,
++	}, nil
++}
++
++func freePageCount(r *reader) uint64 {
++	const mib = "vm.stats.vm.v_free_count"
++
++	v, err := unix.SysctlUint32(mib)
++	if r.addErr(err) {
++		return 0
++	}
++
++	return uint64(v)
++}
++
++func inactivePageCount(r *reader) uint64 {
++	const mib = "vm.stats.vm.v_inactive_count"
++
++	v, err := unix.SysctlUint32(mib)
++	if r.addErr(err) {
++		return 0
++	}
++
++	return uint64(v)
++}
++
++func kernelVersion() (string, error) {
++	const mib = "kern.osrelease"
++
++	version, err := unix.Sysctl(mib)
++	if err != nil {
++		return "", fmt.Errorf("failed to get kernel version: %w", err)
++	}
++
++	return version, nil
++}
++
++func machineID() (string, error) {
++	const mib = "kern.hostuuid"
++
++	uuid, err := unix.Sysctl(mib)
++	if err != nil {
++		return "", fmt.Errorf("failed to get machine id: %w", err)
++	}
++
++	return uuid, nil
++}
++
++func operatingSystem() (*types.OSInfo, error) {
++	info := &types.OSInfo{
++		Type:     "freebsd",
++		Family:   "freebsd",
++		Platform: "freebsd",
++	}
++
++	osType, err := unix.Sysctl("kern.ostype")
++	if err != nil {
++		return info, err
++	}
++	info.Name = osType
++
++	// Example: 13.0-RELEASE-p11
++	osRelease, err := unix.Sysctl("kern.osrelease")
++	if err != nil {
++		return info, err
++	}
++	info.Version = osRelease
++
++	releaseParts := strings.Split(osRelease, "-")
++
++	majorMinor := strings.Split(releaseParts[0], ".")
++	if len(majorMinor) > 0 {
++		info.Major, _ = strconv.Atoi(majorMinor[0])
++	}
++	if len(majorMinor) > 1 {
++		info.Minor, _ = strconv.Atoi(majorMinor[1])
++	}
++
++	if len(releaseParts) > 1 {
++		info.Build = releaseParts[1]
++	}
++	if len(releaseParts) > 2 {
++		info.Patch, _ = strconv.Atoi(strings.TrimPrefix(releaseParts[2], "p"))
++	}
++
++	return info, nil
++}
++
++func totalPhysicalMem(r *reader) uint64 {
++	const mib = "hw.physmem"
++
++	v, err := unix.SysctlUint64(mib)
++	if r.addErr(err) {
++		return 0
++	}
++	return v
++}
++
++func wirePageCount(r *reader) uint64 {
++	const mib = "vm.stats.vm.v_wire_count"
++
++	v, err := unix.SysctlUint32(mib)
++	if r.addErr(err) {
++		return 0
++	}
++	return uint64(v)
++}
+diff -urN vendor.orig/github.com/elastic/go-sysinfo/providers/freebsd/sysctl_freebsd_test.go vendor/github.com/elastic/go-sysinfo/providers/freebsd/sysctl_freebsd_test.go
+--- vendor.orig/github.com/elastic/go-sysinfo/providers/freebsd/sysctl_freebsd_test.go	1970-01-01 01:00:00.000000000 +0100
++++ vendor/github.com/elastic/go-sysinfo/providers/freebsd/sysctl_freebsd_test.go	2024-07-13 20:28:36.065808000 +0200
+@@ -0,0 +1,137 @@
++// Licensed to Elasticsearch B.V. under one or more contributor
++// license agreements. See the NOTICE file distributed with
++// this work for additional information regarding copyright
++// ownership. Elasticsearch B.V. licenses this file to you under
++// the Apache License, Version 2.0 (the "License"); you may
++// not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//
++//     http://www.apache.org/licenses/LICENSE-2.0
++//
++// Unless required by applicable law or agreed to in writing,
++// software distributed under the License is distributed on an
++// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++// KIND, either express or implied.  See the License for the
++// specific language governing permissions and limitations
++// under the License.
++
++//go:build freebsd
++
++package freebsd
++
++import (
++	"encoding/json"
++	"github.com/stretchr/testify/assert"
++	"github.com/stretchr/testify/require"
++	"os/exec"
++	"strings"
++	"testing"
++	"time"
++)
++
++func TestArchitecture(t *testing.T) {
++	arch, err := architecture()
++	if err != nil {
++		t.Fatal(err)
++	}
++
++	assert.NotEmpty(t, arch)
++	assert.Regexp(t, `(amd64|i386|powerpc|arm(64)?|riscv|mips|sparc64|pc98)`, arch)
++}
++
++func TestBootTime(t *testing.T) {
++	bootTime, err := bootTime()
++	if err != nil {
++		t.Fatal(err)
++	}
++
++	bootDiff := time.Since(bootTime)
++	// t.Logf("bootTime in seconds: %#v", int64(bootDiff.Seconds()))
++
++	cmd := exec.Command("/usr/bin/uptime", "--libxo=json")
++	upcmd, err := cmd.Output()
++
++	if err != nil {
++		t.Fatal(err)
++	}
++
++	t.Logf(string(upcmd))
++
++	type UptimeOutput struct {
++		UptimeInformation struct {
++			Uptime int64 `json:"uptime"`
++		} `json:"uptime-information"`
++	}
++
++	var upInfo UptimeOutput
++	err = json.Unmarshal(upcmd, &upInfo)
++
++	if err != nil {
++		t.Fatal(err)
++	}
++
++	upsec := upInfo.UptimeInformation.Uptime
++	uptime := time.Duration(upsec * int64(time.Second))
++	// t.Logf("uptime in seconds: %#v", int64(uptime.Seconds()))
++
++	assert.InDelta(t, uptime, bootDiff, float64(5*time.Second))
++}
++
++func TestCPUStateTimes(t *testing.T) {
++	times, err := cpuStateTimes()
++	if err != nil {
++		t.Fatal(err)
++	}
++
++	require.NotNil(t, times)
++	assert.NotZero(t, *times)
++}
++
++func TestKernelVersion(t *testing.T) {
++	kernel, err := kernelVersion()
++	if err != nil {
++		t.Fatal(err)
++	}
++
++	// Retrieve currently running kernel version
++	cmd := exec.Command("/bin/freebsd-version", "-r")
++	fbsdout, err := cmd.Output()
++
++	if err != nil {
++		t.Fatal(err)
++	}
++
++	fbsdver := strings.TrimSuffix(string(fbsdout), "\n")
++
++	assert.NotEmpty(t, kernel)
++	assert.EqualValues(t, kernel, fbsdver)
++}
++
++func TestMachineID(t *testing.T) {
++	machineID, err := machineID()
++	if err != nil {
++		t.Fatal(err)
++	}
++
++	assert.NotEmpty(t, machineID)
++	assert.Regexp(t, "^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$", machineID)
++}
++
++func TestOperatingSystem(t *testing.T) {
++	t.Run("freebsd", func(t *testing.T) {
++		os, err := operatingSystem()
++		if err != nil {
++			t.Fatal(err)
++		}
++		assert.Equal(t, "freebsd", os.Type)
++		assert.Equal(t, "freebsd", os.Family)
++		assert.Equal(t, "freebsd", os.Platform)
++		assert.Equal(t, "FreeBSD", os.Name)
++		assert.Regexp(t, `\d{1,2}\.\d{1,2}-(RELEASE|STABLE|CURRENT|RC[0-9]|ALPHA(\d{0,2})|BETA(\d{0,2}))(-p\d)?`, os.Version)
++		assert.Regexp(t, `\d{1,2}`, os.Major)
++		assert.Regexp(t, `\d{1,2}`, os.Minor)
++		assert.Regexp(t, `\d{1,2}`, os.Patch)
++		assert.Regexp(t, `(RELEASE|STABLE|CURRENT|RC[0-9]|ALPHA([0-9]{0,2})|BETA([0-9]{0,2}))`, os.Build)
++		t.Logf("%#v", os)
++	})
++}
+diff -urN vendor.orig/github.com/elastic/go-sysinfo/providers/freebsd/ztypes_freebsd.go vendor/github.com/elastic/go-sysinfo/providers/freebsd/ztypes_freebsd.go
+--- vendor.orig/github.com/elastic/go-sysinfo/providers/freebsd/ztypes_freebsd.go	1970-01-01 01:00:00.000000000 +0100
++++ vendor/github.com/elastic/go-sysinfo/providers/freebsd/ztypes_freebsd.go	2024-07-13 20:28:36.065887000 +0200
+@@ -0,0 +1,39 @@
++// Licensed to Elasticsearch B.V. under one or more contributor
++// license agreements. See the NOTICE file distributed with
++// this work for additional information regarding copyright
++// ownership. Elasticsearch B.V. licenses this file to you under
++// the Apache License, Version 2.0 (the "License"); you may
++// not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//
++//     http://www.apache.org/licenses/LICENSE-2.0
++//
++// Unless required by applicable law or agreed to in writing,
++// software distributed under the License is distributed on an
++// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++// KIND, either express or implied.  See the License for the
++// specific language governing permissions and limitations
++// under the License.
++
++// Code generated by cmd/cgo -godefs; and then patched up to fix
++// an alignment issue
++// cgo -godefs defs_freebsd.go
++
++package freebsd
++
++type kvmSwap struct {
++	Devname   [32]int8
++	Used      uint32
++	Total     uint32
++	Flags     int32
++	Reserved1 uint32
++	Reserved2 uint32
++}
++
++type clockInfo struct {
++	Hz     int32
++	Tick   int32
++	Spare  int32
++	Stathz int32
++	Profhz int32
++}
+diff -urN vendor.orig/github.com/elastic/go-sysinfo/providers/shared/fqdn.go vendor/github.com/elastic/go-sysinfo/providers/shared/fqdn.go
+--- vendor.orig/github.com/elastic/go-sysinfo/providers/shared/fqdn.go	2024-07-13 21:34:29.109657000 +0200
++++ vendor/github.com/elastic/go-sysinfo/providers/shared/fqdn.go	2024-07-13 20:28:36.077420000 +0200
+@@ -15,7 +15,7 @@
+ // specific language governing permissions and limitations
+ // under the License.
+ 
+-//go:build linux || darwin || aix
++//go:build linux || darwin || aix || freebsd
+ 
+ package shared
+ 
+diff -urN vendor.orig/github.com/elastic/go-sysinfo/system.go vendor/github.com/elastic/go-sysinfo/system.go
+--- vendor.orig/github.com/elastic/go-sysinfo/system.go	2024-07-13 21:34:29.110051000 +0200
++++ vendor/github.com/elastic/go-sysinfo/system.go	2024-07-13 20:28:36.079545000 +0200
+@@ -26,6 +26,7 @@
+ 	// Register host and process providers.
+ 	_ "github.com/elastic/go-sysinfo/providers/aix"
+ 	_ "github.com/elastic/go-sysinfo/providers/darwin"
++	_ "github.com/elastic/go-sysinfo/providers/freebsd"
+ 	_ "github.com/elastic/go-sysinfo/providers/linux"
+ 	_ "github.com/elastic/go-sysinfo/providers/windows"
+ )

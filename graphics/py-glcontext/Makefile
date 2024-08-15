@@ -1,5 +1,5 @@
 PORTNAME=	glcontext
-DISTVERSION=	2.5.0
+DISTVERSION=	3.0.0
 CATEGORIES=	graphics
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		localbase python xorg
-USE_PYTHON=	pep517 autoplist pytest
+USE_PYTHON=	pep517 autoplist pytest # tests fail, see https://github.com/moderngl/glcontext/issues/36
 USE_XORG=	x11
 
 USE_GITHUB=	yes

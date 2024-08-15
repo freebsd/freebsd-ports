@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-11-02 00:42:24 UTC
+--- CMakeLists.txt.orig	2024-07-04 15:30:32 UTC
 +++ CMakeLists.txt
-@@ -1082,11 +1082,6 @@ set_and_warn_dependency(WITH_PYTHON WITH_CYCLES       
+@@ -1197,11 +1197,6 @@ set_and_warn_dependency(WITH_PYTHON WITH_MOD_FLUID    
  set_and_warn_dependency(WITH_PYTHON WITH_DRACO         OFF)
  set_and_warn_dependency(WITH_PYTHON WITH_MOD_FLUID     OFF)
  

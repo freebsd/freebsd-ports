@@ -1,4 +1,4 @@
---- content/browser/utility_sandbox_delegate.cc.orig	2024-01-30 07:53:34 UTC
+--- content/browser/utility_sandbox_delegate.cc.orig	2024-07-30 11:12:21 UTC
 +++ content/browser/utility_sandbox_delegate.cc
 @@ -67,10 +67,10 @@ UtilitySandboxedProcessLauncherDelegate::
  #if BUILDFLAG(IS_FUCHSIA)
@@ -13,7 +13,7 @@
        sandbox_type_ == sandbox::mojom::Sandbox::kHardwareVideoEncoding ||
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -126,10 +126,10 @@ ZygoteCommunication* UtilitySandboxedProcessLauncherDe
+@@ -127,10 +127,10 @@ ZygoteCommunication* UtilitySandboxedProcessLauncherDe
    // process upon startup.
    if (sandbox_type_ == sandbox::mojom::Sandbox::kNetwork ||
        sandbox_type_ == sandbox::mojom::Sandbox::kOnDeviceModelExecution ||

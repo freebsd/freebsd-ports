@@ -1,6 +1,5 @@
 PORTNAME=	emacs
-DISTVERSION=	30.0.50.20240615
-PORTREVISION=	2
+DISTVERSION=	31.0.50.20240806
 PORTEPOCH=	3
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -9,9 +8,6 @@ MAINTAINER=	emacs@FreeBSD.org
 COMMENT=	GNU editing macros ${COMMENT_${FLAVOR}}
 WWW=		https://www.gnu.org/software/emacs/
 COMMENT_nox=	(No X flavor)
-
-PATCH_SITES+=  https://github.com/emacs-mirror/emacs/commit/
-PATCHFILES+=   c645e1d8205f0f0663ec4a2d27575b238c646c7c.patch:-p1
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -28,7 +24,7 @@ USES=		autoreconf:build cpe gmake localbase:ldflags makeinfo ncurses \
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	25452986cb
+GH_TAGNAME=	aa5c725fe7
 
 GNU_CONFIGURE=		yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share

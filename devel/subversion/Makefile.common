@@ -22,8 +22,7 @@ LIB_DEPENDS+=		libapr-1.so:devel/apr1 \
 			libutf8proc.so:textproc/utf8proc \
 			liblz4.so:archivers/liblz4
 
-CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE} \
-			--with-expat=${LOCALBASE}/include:${LOCALBASE}/lib:expat
+CONFIGURE_ARGS+=	--with-expat=${LOCALBASE}/include:${LOCALBASE}/lib:expat
 
 # ===============================================================
 OPTIONS_SUB=			yes
@@ -48,8 +47,6 @@ GPG_AGENT_CONFIGURE_ON=		--with-gpg-agent
 GPG_AGENT_BUILD_DEPENDS=	gpg-agent:security/gnupg
 GPG_AGENT_RUN_DEPENDS=		gpg-agent:security/gnupg
 
-STATIC_CONFIGURE_ON=		--enable-all-static PKG_CONFIG="${LOCALBASE}/bin/pkg-config --static"
-
 # ===============================================================
 .include <bsd.port.options.mk>
 
@@ -70,16 +67,6 @@ OPTIONS_FILE_UNSET?=""
 OPTIONS_FILE_SET?=""
 
 .include <bsd.port.pre.mk>
-
-pre-everything::
-.if defined(SVN_BUILD_ADDONS)
-.if ${PORT_OPTIONS:MSTATIC} || ${OPTIONS_FILE_SET:MSTATIC}
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO_MSG} "!!! addons (bindings, mod_dav_svn, etc). and static build are not compatible !!!"
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${FALSE}
-.endif
-.endif
 
 pre-patch:
 .if defined(SVN_BUILD_ADDONS)

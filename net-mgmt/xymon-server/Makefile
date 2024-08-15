@@ -1,6 +1,6 @@
 PORTNAME=	xymon
 PORTVERSION=	4.3.30
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/xymon/Xymon/${PORTVERSION}
 PKGNAMESUFFIX=	-server${PKGNAMESUFFIX2}
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libcares.so:dns/c-ares
 RUN_DEPENDS=	rrdtool:databases/rrdtool \
 		fping:net/fping \
-		mtr:net/mtr-nox11
+		mtr:net/mtr@nox11
 
 USERS=		xymon
 GROUPS=		xymon

@@ -1,9 +1,11 @@
 PORTNAME=	stockfish
 DISTVERSIONPREFIX=	sf_
-DISTVERSION=	16
+DISTVERSION=	16.1
 CATEGORIES=	games
-MASTER_SITES=	https://tests.stockfishchess.org/api/nn/:nnue
-DISTFILES=	nn-${_NNUE_VER}.nnue:nnue
+MASTER_SITES=	https://tests.stockfishchess.org/api/nn/:nnue1 \
+		https://tests.stockfishchess.org/api/nn/:nnue2
+DISTFILES=	nn-${_NNUE1_VER}.nnue:nnue1 \
+		nn-${_NNUE2_VER}.nnue:nnue2
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	execve@gmail.com
@@ -25,7 +27,8 @@ MAKE_ARGS=	ARCH=${MYARCH} \
 		PREFIX=${PREFIX}
 ALL_TARGET=	build
 
-_NNUE_VER=	5af11540bbfe
+_NNUE1_VER=	b1a57edbea57
+_NNUE2_VER=	baff1ede1f90
 
 BINARY_ALIAS=	wget=true
 
@@ -73,7 +76,8 @@ MYARCH=		general-32
 .endif
 
 post-patch:
-	@${CP} ${_DISTDIR}/nn-${_NNUE_VER}.nnue ${WRKSRC}/.
+	@${CP} ${_DISTDIR}/nn-${_NNUE1_VER}.nnue ${WRKSRC}/.
+	@${CP} ${_DISTDIR}/nn-${_NNUE2_VER}.nnue ${WRKSRC}/.
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stockfish ${STAGEDIR}${PREFIX}/bin

@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.1
 CATEGORIES=	security
 
-MAINTAINER=	micadeyeye@gmail.com
+MAINTAINER=	michael.a.oshin@panafricanssi.org
 COMMENT=	Implements OMEMO in C
 WWW=		https://github.com/gkdr/libomemo
 

@@ -33,4 +33,6 @@ GH_PROJECT=	pywrap
 GH_TAGNAME=	e8c7bc9
 USE_PYTHON=	autoplist concurrent distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

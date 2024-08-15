@@ -1,5 +1,5 @@
 PORTNAME=	blender
-DISTVERSION=	4.1
+DISTVERSION=	4.2
 CATEGORIES=	graphics
 MASTER_SITES=	https://docs.blender.org/manual/en/${PORTVERSION}/
 PKGNAMESUFFIX=	-doc
@@ -17,11 +17,15 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 NO_WRKSUBDIR=	yes
-PLIST_SUB+=	VER=v410
+VER_SHORT=	${DISTVERSION:S/.//g}
+VER=		v${VER_SHORT}0
+PLIST_SUB+=	VER=${VER} VER_SHORT=${VER_SHORT}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTNAME}*.html" ${STAGEDIR}${DOCSDIR}/
-	@cd ${WRKSRC} && ${CP} "${PORTNAME}"*.epub/*.epub      ${STAGEDIR}${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} blender_manual_${VER}_en.html \
+		${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/blender_manual_${VER}_en.epub/Blender${VER_SHORT}Manual.epub \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

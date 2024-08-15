@@ -5,7 +5,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://www.corpit.ru/mjt/rbldnsd/ \
 		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Small and fast DNS daemon especially for DNSBL zones
 WWW=		https://www.corpit.ru/mjt/rbldnsd.html
 

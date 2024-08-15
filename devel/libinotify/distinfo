@@ -1,3 +1,3 @@
-TIMESTAMP = 1645716705
-SHA256 (libinotify-20211018.tar.gz) = 32df21f1db7116d32d47d5b8a06dbd467d4d70c745d1e3dee7821d4e5dcbbb67
-SIZE (libinotify-20211018.tar.gz) = 449580
+TIMESTAMP = 1721819788
+SHA256 (libinotify-20240724.tar.gz) = 5cc3fb7af407b17b7daa871cc98bb882716c4b5c296fadfb66bfe86c37cc599c
+SIZE (libinotify-20240724.tar.gz) = 462788

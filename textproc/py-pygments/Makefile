@@ -1,5 +1,5 @@
 PORTNAME=	pygments
-DISTVERSION=	2.17.2
+DISTVERSION=	2.18.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,15 +12,14 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.18.0:devel/py-hatchling@${PY_FLAVOR}
-# test: 4216 passed, 11 skipped
+# tests: 4400 passed, 3 skipped
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>=4.1.0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-randomly>=3.12.0:devel/py-pytest-randomly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wcag-contrast-ratio>=0.9:www/py-wcag-contrast-ratio@${PY_FLAVOR}
 
-USES=		cpe python
+USES=		cpe python tex
 USE_PYTHON=	autoplist concurrent pep517 pytest
-
-CONFLICTS_INSTALL=	py??-pygments-25
+USE_TEX=	latex:test
 
 NO_ARCH=	yes
 

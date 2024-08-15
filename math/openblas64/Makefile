@@ -63,7 +63,6 @@ USE_GCC=		yes
 .endif
 
 .if ${ARCH} == powerpc64le
-CFLAGS+=		-lm
 USE_GCC=		yes
 .endif
 

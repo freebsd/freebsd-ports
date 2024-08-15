@@ -1,6 +1,7 @@
 PORTNAME=	groupoffice
 DISTVERSIONPREFIX=	com-
 DISTVERSION=	6.6.58
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/group-office/${DISTVERSION:R}
 DISTNAME=	${PORTNAME}-${DISTVERSION}
@@ -45,7 +46,7 @@ WBXML_DESC=	Synchronization Support
 CALENDAR_USE=		PHP=calendar
 GD_USE=			PHP=gd
 IMAP_USE=		PHP=iconv imap
-WBXML_LIB_DEPENDS=	libwbxml2.so:textproc/wbxml2
+WBXML_LIB_DEPENDS=	libwbxml2.so:textproc/libwbxml
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \

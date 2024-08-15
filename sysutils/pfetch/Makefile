@@ -1,19 +1,16 @@
 PORTNAME=	pfetch
-DISTVERSION=	0.6.0
+DISTVERSION=	1.3.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Pretty system information tool written in POSIX sh
-WWW=		https://github.com/dylanaraps/pfetch
+WWW=		https://github.com/Un1q32/pfetch
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.md
-
-DEPRECATED=	No longer developed, upstream repo archived Apr 26 2024
-EXPIRATION_DATE=2024-07-31
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	dylanaraps
+GH_ACCOUNT=	Un1q32
 
 NO_ARCH=	yes
 NO_BUILD=	yes

@@ -23,7 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	zealdocs
 USE_GL=		opengl
 USE_KDE=	ecm
-USE_QT=		base declarative positioning webchannel webengine
+USE_QT=		base declarative positioning webchannel webengine tools:build
 USE_XORG=	ice sm x11 xcb xext
 
 .include <bsd.port.mk>

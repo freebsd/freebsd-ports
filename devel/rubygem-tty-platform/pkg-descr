@@ -1,5 +1,3 @@
 TTY::Platform provides independent operating system detection component for TTY
 toolkit. It supports terminal platform query methods for detecting different
 operating systems.
-
-See also: https://github.com/piotrmurach/tty-platform

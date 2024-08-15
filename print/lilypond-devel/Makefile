@@ -1,5 +1,5 @@
 PORTNAME=	lilypond
-DISTVERSION=	2.25.17
+DISTVERSION=	2.25.18
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/source/v${DISTVERSION:R}/
 PKGNAMESUFFIX=	-devel
@@ -34,13 +34,12 @@ USE_CXXSTD=	c++17
 USE_GNOME=	cairo pango
 USE_PERL5=	build
 
-GNU_CONFIGURE=			yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ENV+=			ac_cv_prog_MAKEINFO="${LOCALBASE}/bin/makeinfo" \
-				FLEX=${FLEX} \
-				GUILE_FLAVOR=${GUILE_CMD} \
-				HOME=${WRKDIR} \
-				YACC=${YACC}
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	ac_cv_prog_MAKEINFO="${LOCALBASE}/bin/makeinfo" \
+		FLEX=${FLEX} \
+		GUILE_FLAVOR=${GUILE_CMD} \
+		HOME=${WRKDIR} \
+		YACC=${YACC}
 
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	all
@@ -75,7 +74,7 @@ GUILE3_USES=	guile:3.0
 NLS_USES=	gettext-runtime
 
 post-patch:
-	@${SED} -e 's|%%FONTDIR%%|${WRKDIR}/fontconfig/cache/|'  \
+	@${SED} -e 's|%%FONTDIR%%|${WRKDIR}/fontconfig/cache/|' \
 		${FILESDIR}/fonts.conf > ${WRKDIR}/.fonts.conf
 
 post-patch-NLS-off:

@@ -1,3 +1,3 @@
-TIMESTAMP = 1716892274
-SHA256 (oslo.log-6.0.0.tar.gz) = 89f0d6fa2cba8281f89b508a7fe49bfb97daaf55c5278187d45a3069971e687f
-SIZE (oslo.log-6.0.0.tar.gz) = 95271
+TIMESTAMP = 1721499060
+SHA256 (oslo.log-6.1.1.tar.gz) = e35a12cfe4cad13ffb0aeda99fcca20a705d0f694a84c2ef7b07b45960f88fb4
+SIZE (oslo.log-6.1.1.tar.gz) = 95558

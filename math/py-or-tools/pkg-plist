@@ -49,6 +49,8 @@
 %%PYTHON_SITELIBDIR%%/ortools/packing/vector_bin_packing_pb2.py
 %%PYTHON_SITELIBDIR%%/ortools/packing/vector_bin_packing_pb2.pyi
 %%PYTHON_SITELIBDIR%%/ortools/pdlp/__init__.py
+%%PYTHON_SITELIBDIR%%/ortools/pdlp/python/__init__.py
+%%PYTHON_SITELIBDIR%%/ortools/pdlp/python/pywrap_pdlp%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/ortools/pdlp/solve_log_pb2.py
 %%PYTHON_SITELIBDIR%%/ortools/pdlp/solve_log_pb2.pyi
 %%PYTHON_SITELIBDIR%%/ortools/pdlp/solvers_pb2.py
@@ -56,6 +58,8 @@
 %%PYTHON_SITELIBDIR%%/ortools/sat/__init__.py
 %%PYTHON_SITELIBDIR%%/ortools/sat/boolean_problem_pb2.py
 %%PYTHON_SITELIBDIR%%/ortools/sat/boolean_problem_pb2.pyi
+%%PYTHON_SITELIBDIR%%/ortools/sat/colab/__init__.py
+%%PYTHON_SITELIBDIR%%/ortools/sat/colab/visualization.py
 %%PYTHON_SITELIBDIR%%/ortools/sat/cp_model_pb2.py
 %%PYTHON_SITELIBDIR%%/ortools/sat/cp_model_pb2.pyi
 %%PYTHON_SITELIBDIR%%/ortools/sat/cp_model_service_pb2.py
@@ -64,7 +68,6 @@
 %%PYTHON_SITELIBDIR%%/ortools/sat/python/cp_model.py
 %%PYTHON_SITELIBDIR%%/ortools/sat/python/cp_model_helper.py
 %%PYTHON_SITELIBDIR%%/ortools/sat/python/swig_helper%%PYTHON_EXT_SUFFIX%%.so
-%%PYTHON_SITELIBDIR%%/ortools/sat/python/visualization.py
 %%PYTHON_SITELIBDIR%%/ortools/sat/sat_parameters_pb2.py
 %%PYTHON_SITELIBDIR%%/ortools/sat/sat_parameters_pb2.pyi
 %%PYTHON_SITELIBDIR%%/ortools/scheduling/__init__.py

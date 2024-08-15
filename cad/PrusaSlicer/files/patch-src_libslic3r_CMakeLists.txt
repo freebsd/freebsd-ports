@@ -1,6 +1,6 @@
---- src/libslic3r/CMakeLists.txt.orig	2024-04-05 09:25:31 UTC
+--- src/libslic3r/CMakeLists.txt.orig	2024-06-27 09:25:47 UTC
 +++ src/libslic3r/CMakeLists.txt
-@@ -576,7 +576,6 @@ target_link_libraries(libslic3r
+@@ -611,7 +611,6 @@ target_link_libraries(libslic3r
  target_link_libraries(libslic3r
      libnest2d
      admesh

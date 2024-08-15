@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Object-Pad>=0.80.8:devel/p5-Object-Pad \
 		p5-Syntax-Keyword-Dynamically>=0:devel/p5-Syntax-Keyword-Dynamically \
 		p5-Tickit>=0.66:devel/p5-Tickit \
 		p5-meta>=0.003:devel/p5-meta
-TEST_DEPENDS=	p5-Test2-Suite>=0:devel/p5-Test2-Suite
+TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	modbuild

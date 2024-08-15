@@ -1,0 +1,6 @@
+lib/libgkl_compression.so
+lib/libgkl_pairhmm.so
+lib/libgkl_pairhmm_omp.so
+lib/libgkl_pdhmm.so
+lib/libgkl_smithwaterman.so
+lib/libgkl_utils.so

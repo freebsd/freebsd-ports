@@ -1,6 +1,6 @@
 PORTNAME=	tg_owt
-PORTVERSION=	0.0.20231221
-PORTREVISION=	6
+PORTVERSION=	0.0.20240615
+PORTREVISION=	2
 CATEGORIES=	net-im
 
 PATCH_SITES=	https://github.com/desktop-app/tg_owt/commit/
@@ -32,7 +32,7 @@ USE_XORG=	x11 xcomposite xdamage xrender xrandr xtst
 USE_GL=		gbm gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	desktop-app
-GH_TAGNAME=	afd9d5d
+GH_TAGNAME=	c9cc439
 
 CMAME_ON=	TG_OWT_PACKAGED_BUILD
 

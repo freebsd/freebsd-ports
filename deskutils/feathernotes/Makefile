@@ -1,5 +1,5 @@
 PORTNAME=	feathernotes
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	deskutils
 MASTER_SITES=	https://github.com/tsujan/FeatherNotes/releases/download/V${PORTVERSION}/
 DISTNAME=	FeatherNotes-${PORTVERSION}

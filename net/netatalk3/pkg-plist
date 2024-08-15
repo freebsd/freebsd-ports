@@ -37,7 +37,6 @@ include/atalk/acl.h
 include/atalk/adouble.h
 include/atalk/afp.h
 include/atalk/bstrlib.h
-include/atalk/cast.h
 include/atalk/cnid.h
 include/atalk/dictionary.h
 include/atalk/ea.h
@@ -58,6 +57,7 @@ include/atalk/volume.h
 lib/libatalk.a
 lib/libatalk.so
 lib/libatalk.so.18
+lib/libatalk.so.18.0.0
 sbin/afpd
 sbin/cnid_dbd
 sbin/cnid_metad

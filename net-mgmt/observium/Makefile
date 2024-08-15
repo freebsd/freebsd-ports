@@ -21,7 +21,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		cpe php:cli,flavors python shebangfix
-IGNORE_WITH_PHP=	82 83
+IGNORE_WITH_PHP=	82 83 84
 SHEBANG_FILES=	\
 		poller-wrapper.py \
 		poller.php \
@@ -34,7 +34,7 @@ NO_BUILD=	yes
 
 RUN_DEPENDS+=	rrdtool:databases/rrdtool \
 		dot:graphics/graphviz \
-		mtr:net/mtr-nox11 \
+		mtr:net/mtr@nox11 \
 		${LOCALBASE}/share/pear/Net/IPv4.php:net/pear-Net_IPv4@${PHP_FLAVOR} \
 		${LOCALBASE}/share/pear/Net/IPv6.php:net/pear-Net_IPv6@${PHP_FLAVOR} \
 		snmpget:net-mgmt/net-snmp \

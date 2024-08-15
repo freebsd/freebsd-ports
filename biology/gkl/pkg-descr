@@ -1,0 +1,19 @@
+GKL is a set of optimized versions of compute kernels used in genomics
+applications like GATK and HTSJDK.
+
+Kernels included:
+* PairHMM
+     AVX and AVX-512 optimized versions of PairHMM used in GATK
+     HaplotypeCaller and MuTect2.
+     OpenMP support for multicore processors.
+* Smith-Waterman
+     AVX2 and AVX-512 optimized versions of Smith-Waterman used in GATK
+     HaplotypeCaller and MuTect2.
+* DEFLATE Compression/Decompression:
+     Performance optimized Level 1 and 2 compression and decompression
+     from Intel's ISA-L library.
+     Performance optimized Level 3 through 9 compression from Intel's
+     Open Source Technology Center zlib library.
+* Partially Determined HMM (PDHMM)
+     AVX2 and AVX-512 optimized versions of PDHMM used in GATK.
+     Serial Implementation for CPU's with no AVX.

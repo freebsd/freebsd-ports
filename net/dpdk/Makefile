@@ -1,5 +1,6 @@
 PORTNAME=	dpdk
 DISTVERSION=	22.11.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://fast.dpdk.org/rel/
 PKGNAMESUFFIX=	22.11
@@ -43,6 +44,7 @@ DPDK_CPUTYPE=default
 .endif
 
 MESON_ARGS=	-Ddefault_library=shared \
+		-Denable_driver_sdk=true \
 		-Denable_kmods=true \
 		-Dc_link_args=-Wl,--undefined-version \
 		-Dmachine=${DPDK_CPUTYPE}

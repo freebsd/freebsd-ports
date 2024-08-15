@@ -1,1 +1,5 @@
-Adds support for the socks protocol and proxy facility in LWP.
+Adds support for the SOCKS protocol and proxy facility in the LWP
+(Library for WWW in Perl) suite. This module allows LWP to route its
+requests through SOCKS proxies, supporting both SOCKS4 and SOCKS5
+protocols. It is designed to facilitate secure and anonymous web
+interactions by redirecting network traffic through proxy servers.

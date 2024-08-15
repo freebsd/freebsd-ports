@@ -1,5 +1,5 @@
 PORTNAME=	timescaledb
-PORTVERSION=	2.15.2
+PORTVERSION=	2.16.1
 CATEGORIES=	databases
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_TSL=	${WRKSRC}/tsl/LICENSE-TIMESCALE
 LICENSE_PERMS_TSL=	dist-mirror pkg-mirror auto-accept
 
-USES=		compiler:c11 cmake gettext-runtime cpe pgsql:13-16
+USES=		compiler:c11 cmake gettext-runtime cpe pgsql:14-16
 
 USE_GITHUB=	YES
 GH_ACCOUNT=	timescale

@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Rspec-expectations adds should and should_not to every object
-WWW=		https://github.com/rspec/rspec-expectations
+WWW=		https://rspec.info/ \
+		https://github.com/rspec/rspec-expectations
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

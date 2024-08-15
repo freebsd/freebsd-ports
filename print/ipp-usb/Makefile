@@ -1,6 +1,6 @@
 PORTNAME=	ipp-usb
 DISTVERSION=	0.9.23
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	print
 
 MAINTAINER=	chuanwei.foo@hotmail.com

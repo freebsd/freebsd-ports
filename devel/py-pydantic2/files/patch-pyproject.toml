@@ -1,13 +1,11 @@
-Obtained from:	https://github.com/pydantic/pydantic/commit/b95472dc92018023c4f70de319dc70e691125895
-
 --- pyproject.toml.orig	2020-02-02 00:00:00 UTC
 +++ pyproject.toml
-@@ -48,7 +48,7 @@ dependencies = [
- dependencies = [
-     'typing-extensions>=4.6.1',
+@@ -50,7 +50,7 @@ dependencies = [
+     'typing-extensions>=4.6.1; python_version < "3.13"',
+     'typing-extensions>=4.12.2; python_version >= "3.13"',
      'annotated-types>=0.4.0',
--    "pydantic-core==2.18.4",
-+    "pydantic-core==2.19.0",
+-    "pydantic-core==2.20.1",
++    "pydantic-core==2.21.0",
  ]
  dynamic = ['version', 'readme']
  

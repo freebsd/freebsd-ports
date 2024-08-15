@@ -1,6 +1,6 @@
---- cmake/external/qt/CMakeLists.txt.orig	2024-03-08 11:07:18 UTC
-+++ cmake/external/qt/CMakeLists.txt
-@@ -16,6 +16,8 @@ if (DESKTOP_APP_USE_PACKAGED)
+--- cmake/external/qt/CMakeLists.txt.orig	2024-07-06 19:02:01.004763000 +0000
++++ cmake/external/qt/CMakeLists.txt	2024-07-06 19:02:09.327771000 +0000
+@@ -16,6 +16,8 @@
          Qt::CorePrivate
          Qt::Gui
          Qt::GuiPrivate
@@ -9,7 +9,7 @@
          $<TARGET_NAME_IF_EXISTS:Qt::OpenGL>
          Qt::Widgets
          Qt::WidgetsPrivate
-@@ -36,6 +38,7 @@ INTERFACE
+@@ -36,6 +38,7 @@
      ${qt_loc}/include
      ${qt_loc}/include/QtCore
      ${qt_loc}/include/QtGui
@@ -17,19 +17,19 @@
      $<$<TARGET_EXISTS:Qt::OpenGL>:${qt_loc}/include/QtOpenGL>
      ${qt_loc}/include/QtWidgets
      $<$<TARGET_EXISTS:Qt::OpenGLWidgets>:${qt_loc}/include/QtOpenGLWidgets>
-@@ -46,9 +49,11 @@ INTERFACE
+@@ -46,9 +49,11 @@
      $<$<TARGET_EXISTS:Qt::WaylandCompositor>:${qt_loc}/include/QtWaylandCompositor>
-     ${qt_loc}/include/QtCore/${qt_version}
-     ${qt_loc}/include/QtGui/${qt_version}
+     ${qt_loc}/include/QtCore/${QT_VERSION}
+     ${qt_loc}/include/QtGui/${QT_VERSION}
 +    ${qt_loc}/include/QtServiceSupport/${qt_version}
-     ${qt_loc}/include/QtWidgets/${qt_version}
-     ${qt_loc}/include/QtCore/${qt_version}/QtCore
-     ${qt_loc}/include/QtGui/${qt_version}/QtGui
+     ${qt_loc}/include/QtWidgets/${QT_VERSION}
+     ${qt_loc}/include/QtCore/${QT_VERSION}/QtCore
+     ${qt_loc}/include/QtGui/${QT_VERSION}/QtGui
 +    ${qt_loc}/include/QtServiceSupport/${qt_version}/QtServiceSupport
-     ${qt_loc}/include/QtWidgets/${qt_version}/QtWidgets
+     ${qt_loc}/include/QtWidgets/${QT_VERSION}/QtWidgets
  )
  
-@@ -97,6 +102,12 @@ set(common_qt_libs
+@@ -97,6 +102,12 @@
      lib/${qt_lib_prefix}Qt${QT_VERSION_MAJOR}Gui
      lib/${qt_lib_prefix}Qt${QT_VERSION_MAJOR}Core
  )

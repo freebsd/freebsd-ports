@@ -1,6 +1,5 @@
 PORTNAME=	siconos
-DISTVERSION=	4.4.0
-PORTREVISION=	13
+DISTVERSION=	4.5.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,8 +13,10 @@ BROKEN_i386=		non-constant-expression cannot be narrowed from type 'unsigned int
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 		help2man:misc/help2man
-LIB_DEPENDS=	libcxsparse.so:math/suitesparse-cxsparse \
+LIB_DEPENDS=	libBulletCollision.so:devel/bullet \
+		libcxsparse.so:math/suitesparse-cxsparse \
 		libgmp.so:math/gmp \
 		libldl.so:math/suitesparse-ldl \
 		libopenblas.so:math/openblas
@@ -26,6 +27,8 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DFREEBSD_PYTHON_VER=${PYTHON_VER}
+CMAKE_ON=	CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT SICONOS_SYSTEM_WIDE_INSTALL
+CMAKE_OFF=	WITH_GIT WITH_TESTING
 CMAKE_TESTING_ON=	WITH_TESTING # tests are broken, see https://github.com/siconos/siconos/issues/415
 
 CFLAGS+=	-DCLOCKTIME -DCLOCKS_PER_SEC=128 # workaround for 'Undefined symbol "ftime"', see https://github.com/siconos/siconos/issues/411
@@ -44,6 +47,6 @@ PYTHON_PY_DEPENDS=	${PYNUMPY} \
 PYTHON_BUILD_DEPENDS=	${PYTHON_PY_DEPENDS} \
 			swig:devel/swig
 PYTHON_RUN_DEPENDS=	${PYTHON_PY_DEPENDS}
-PYTHON_BROKEN=		Fails to import, see https://github.com/siconos/siconos/issues/420
+PYTHON_BROKEN=		compilation fails, see https://github.com/siconos/siconos/issues/501
 
 .include <bsd.port.mk>

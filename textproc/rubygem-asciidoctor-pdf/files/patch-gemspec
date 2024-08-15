@@ -1,11 +1,11 @@
---- asciidoctor-pdf.gemspec.orig	2024-06-01 14:01:34 UTC
+--- asciidoctor-pdf.gemspec.orig	2024-07-28 14:40:29 UTC
 +++ asciidoctor-pdf.gemspec
-@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
-   s.add_runtime_dependency(%q<prawn-svg>.freeze, ["~> 0.34.0".freeze])
+@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
+   s.add_runtime_dependency(%q<matrix>.freeze, ["~> 0.4".freeze])
+   s.add_runtime_dependency(%q<prawn-table>.freeze, ["~> 0.2.0".freeze])
+   s.add_runtime_dependency(%q<prawn-templates>.freeze, ["~> 0.1.0".freeze])
+-  s.add_runtime_dependency(%q<prawn-svg>.freeze, ["~> 0.34.0".freeze])
++  s.add_runtime_dependency(%q<prawn-svg>.freeze, ["~> 0.35.0".freeze])
    s.add_runtime_dependency(%q<prawn-icon>.freeze, ["~> 3.0.0".freeze])
    s.add_runtime_dependency(%q<concurrent-ruby>.freeze, ["~> 1.1".freeze])
--  s.add_runtime_dependency(%q<rexml>.freeze, ["= 3.2.6".freeze])
-+  s.add_runtime_dependency(%q<rexml>.freeze, [">= 3.2.6".freeze])
    s.add_runtime_dependency(%q<treetop>.freeze, ["~> 1.6.0".freeze])
-   s.add_development_dependency(%q<rake>.freeze, ["~> 13.0.0".freeze])
-   s.add_development_dependency(%q<rspec>.freeze, ["~> 3.12.0".freeze])

@@ -10,6 +10,9 @@ WWW=		https://www.dns-oarc.net/tools/dsc/
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Depends on expired dns/p5-DSC
+EXPIRATION_DATE=2024-08-31
+
 BUILD_DEPENDS=	p5-Proc-PID-File>=1.28:devel/p5-Proc-PID-File		\
 		p5-XML-Simple>=2.24:textproc/p5-XML-Simple		\
 		p5-App-DSC-DataTool>=0.03:dns/p5-App-DSC-DataTool	\

@@ -11,7 +11,7 @@ WWW=		https://metacpan.org/release/Cache-Memcached-Fast
 LICENSE=	ART10 GPLv2+
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test2-Suite>=0.000072:devel/p5-Test2-Suite
+TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	configure

@@ -1,7 +1,7 @@
-TIMESTAMP = 1704499920
-SHA256 (exim/exim-html-4.97.1.tar.bz2) = 9e2cc6b39f4480ee7f575946466d025331fc21368c873a8685b66fdb1919693c
-SIZE (exim/exim-html-4.97.1.tar.bz2) = 647718
-SHA256 (exim/exim-pdf-4.97.1.tar.bz2) = 9761ab9f6099bb865b9838ecf3d62008683cadd2ba2ae6fbb9640139044640ba
-SIZE (exim/exim-pdf-4.97.1.tar.bz2) = 2176843
-SHA256 (exim/exim-postscript-4.97.1.tar.bz2) = a01809e46d2c6283482788822445187299325d6e909611f6496d2e5ad1f1d14b
-SIZE (exim/exim-postscript-4.97.1.tar.bz2) = 1144052
+TIMESTAMP = 1721038337
+SHA256 (exim/exim-html-4.98.tar.bz2) = 89a4f17a18461f7156d0f7779a292612a547cedb13e5eb10fc70b0973d0a1001
+SIZE (exim/exim-html-4.98.tar.bz2) = 650008
+SHA256 (exim/exim-pdf-4.98.tar.bz2) = 90def6b48a47d3dab0513dcb61b5a7c896eeca8f233b1d412d441b1067ca7e0d
+SIZE (exim/exim-pdf-4.98.tar.bz2) = 2186363
+SHA256 (exim/exim-postscript-4.98.tar.bz2) = 8d405ef9024d72255534c7ab7af3da98d5e1a83acbf528d97cbddfb014e24a5c
+SIZE (exim/exim-postscript-4.98.tar.bz2) = 1150095

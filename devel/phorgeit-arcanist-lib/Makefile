@@ -1,5 +1,7 @@
 PORTNAME?=	arcanist
-PORTVERSION?=	20240304
+PORTVERSION?=	2024.19
+PORTREVISION?=	1
+PORTEPOCH?=	1
 CATEGORIES?=	devel
 PKGNAMEPREFIX=	phorgeit-
 PKGNAMESUFFIX=	${SLAVE_PKGNAMESUFFIX}${PHP_PKGNAMESUFFIX}
@@ -14,8 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		php:cli,flavors python:env shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	phorgeit
-GH_TAGNAME=	174bf094
 USE_PHP=	curl dom simplexml zlib
+IGNORE_WITH_PHP=	84
 
 PHP_DESTDIR=	lib/php/arcanist
 SHEBANG_FILES=	bin/arc bin/phage scripts/*.php scripts/hgdaemon/*.php \

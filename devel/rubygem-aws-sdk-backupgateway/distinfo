@@ -1,3 +1,3 @@
-TIMESTAMP = 1717662578
-SHA256 (rubygem/aws-sdk-backupgateway-1.21.0.gem) = 600fcebe14cad3893686d02327cbdd83ad010a95c8050db900be1def8cedba95
-SIZE (rubygem/aws-sdk-backupgateway-1.21.0.gem) = 36352
+TIMESTAMP = 1720355192
+SHA256 (rubygem/aws-sdk-backupgateway-1.24.0.gem) = e9dd140da1c71751478d1e4140b3dd900cf19e1e5fb666395389753378881ec3
+SIZE (rubygem/aws-sdk-backupgateway-1.24.0.gem) = 36864

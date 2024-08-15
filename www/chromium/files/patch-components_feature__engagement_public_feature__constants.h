@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.h.orig	2024-06-17 12:56:06 UTC
+--- components/feature_engagement/public/feature_constants.h.orig	2024-07-30 11:12:21 UTC
 +++ components/feature_engagement/public/feature_constants.h
 @@ -20,7 +20,7 @@ BASE_DECLARE_FEATURE(kIPHDemoMode);
  BASE_DECLARE_FEATURE(kIPHDummyFeature);
@@ -9,7 +9,7 @@
  BASE_DECLARE_FEATURE(kEsbDownloadRowPromoFeature);
  BASE_DECLARE_FEATURE(kIPHBatterySaverModeFeature);
  BASE_DECLARE_FEATURE(kIPHCompanionSidePanelFeature);
-@@ -252,7 +252,8 @@ BASE_DECLARE_FEATURE(kDefaultBrowserTriggerCriteriaExp
+@@ -259,7 +259,8 @@ BASE_DECLARE_FEATURE(kDefaultBrowserTriggerCriteriaExp
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -19,7 +19,7 @@
  BASE_DECLARE_FEATURE(kIPHAutofillCreditCardBenefitFeature);
  BASE_DECLARE_FEATURE(kIPHAutofillExternalAccountProfileSuggestionFeature);
  BASE_DECLARE_FEATURE(kIPHAutofillManualFallbackFeature);
-@@ -301,7 +302,7 @@ BASE_DECLARE_FEATURE(kIPHScalableIphHelpAppBasedTenFea
+@@ -308,7 +309,7 @@ BASE_DECLARE_FEATURE(kIPHScalableIphHelpAppBasedTenFea
  BASE_DECLARE_FEATURE(kIPHScalableIphGamingFeature);
  #endif
  

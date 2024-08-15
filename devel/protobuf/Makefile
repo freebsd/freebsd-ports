@@ -1,5 +1,5 @@
 PORTNAME=	protobuf
-PORTVERSION=	24.4
+PORTVERSION=	27.3
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/protocolbuffers/protobuf/releases/download/v${PORTVERSION}/
@@ -12,6 +12,7 @@ WWW=		https://protobuf.dev/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	abseil>=20230802.2:devel/abseil
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libjsoncpp.so:devel/jsoncpp
 TEST_DEPENDS=	googletest>=0:devel/googletest

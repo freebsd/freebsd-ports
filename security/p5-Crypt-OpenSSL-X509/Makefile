@@ -1,5 +1,5 @@
 PORTNAME=	Crypt-OpenSSL-X509
-PORTVERSION=	1.915
+PORTVERSION=	2.0.1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,6 +10,7 @@ WWW=		https://metacpan.org/release/Crypt-OpenSSL-X509
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Crypt-OpenSSL-Guess>=0:security/p5-Crypt-OpenSSL-Guess \
 		${RUN_DEPENDS}

@@ -1,0 +1,10 @@
+--- src/lib/certmap/sss_certmap.exports.orig	2024-01-12 12:05:40 UTC
++++ src/lib/certmap/sss_certmap.exports
+@@ -2,7 +2,6 @@ SSS_CERTMAP_0.0 {
+     global:
+         sss_certmap_init;
+         sss_certmap_free_ctx;
+-        sss_certmap_err_msg;
+         sss_certmap_add_rule;
+         sss_certmap_match_cert;
+         sss_certmap_get_search_filter;

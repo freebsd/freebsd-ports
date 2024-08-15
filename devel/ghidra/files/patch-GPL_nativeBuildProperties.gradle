@@ -1,13 +1,22 @@
---- GPL/nativeBuildProperties.gradle.orig	2019-10-23 20:54:54 UTC
+--- GPL/nativeBuildProperties.gradle.orig	2024-07-09 10:18:28 UTC
 +++ GPL/nativeBuildProperties.gradle
-@@ -39,6 +39,10 @@ model {
- 			architecture 'x86_64'
- 			operatingSystem 'osx'
+@@ -53,12 +53,16 @@ model {
+ 			}
  		}
-+		freebsd64 {
-+			architecture 'x86_64'
-+			operatingSystem 'freebsd'
-+		}
- 	}	
- }
- 
+ 		if (isCurrentFreeBSD()) {
+-			gcc(Gcc) {
++			clang(Clang) {
+ 				if (isCurrentArm_64()) {
+-					target("freebsd_arm_64")
++					target("freebsd_arm_64") {
++						cCompiler.executable = 'clang'
++					}
+ 				} 
+ 				else {
+-					target("freebsd_x86_64")
++					target("freebsd_x86_64") {
++						cCompiler.executable = 'clang'
++					}
+ 				}
+ 			}
+ 		}

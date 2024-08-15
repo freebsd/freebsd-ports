@@ -6,6 +6,9 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://freebsd.org/:weights # bogus URL to make the framework happy, the fetch uses Git URL below
 DISTFILES=	${PORTNAME}-weights-${WEIGHTS_GIT_HASH}${EXTRACT_SUFX}:weights
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	e5e52d335c58365b6cbd91f9a8a6f9ee9a085bf5.patch:-p1 # fix compile error when using old libc++
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Intel(R) Open Image Denoise library
 WWW=		https://www.openimagedenoise.org/
@@ -61,7 +64,7 @@ pre-fetch:
 			${MKDIR} ${WRKDIR}; \
 			HOME=${WRKDIR}; \
 			git config --global filter.lfs.smudge "git-lfs smudge -- %f" && \
-			git clone -q ${WEIGHTS_GIT_URL} ${PORTNAME}-weights-${WEIGHTS_GIT_HASH} && \
+			GIT_CLONE_PROTECTION_ACTIVE=false git clone -nq ${WEIGHTS_GIT_URL} ${PORTNAME}-weights-${WEIGHTS_GIT_HASH} && \
 			(cd ${PORTNAME}-weights-${WEIGHTS_GIT_HASH} && git reset -q --hard ${WEIGHTS_GIT_HASH} && ${RM} -r .git) && \
 			${RM} -r ${WRKDIR} \
 		) && \

@@ -59,7 +59,7 @@ share/mime/packages/openrct2.xml
 %%DATADIR%%/object/official/footpath_item/rct2dlc.footpath_item.litterpa.parkobj
 %%DATADIR%%/object/official/footpath_railings/openrct2.footpath_railings.invisible.json
 %%DATADIR%%/object/official/footpath_surface/openrct2.footpath_surface.invisible.json
-%%DATADIR%%/object/official/footpath_surface/openrct2.footpath_surface.queue_invisible.json
+%%DATADIR%%/object/official/footpath_surface/openrct2.footpath_surface.queue_invisible.parkobj
 %%DATADIR%%/object/official/music/openrct2.audio.title.parkobj
 %%DATADIR%%/object/official/music/openrct2.music.acid.parkobj
 %%DATADIR%%/object/official/music/openrct2.music.blizzard.parkobj
@@ -69,6 +69,7 @@ share/mime/packages/openrct2.xml
 %%DATADIR%%/object/official/music/openrct2.music.galaxy.parkobj
 %%DATADIR%%/object/official/music/openrct2.music.mystic.parkobj
 %%DATADIR%%/object/official/music/openrct2.music.prehistoric.parkobj
+%%DATADIR%%/object/official/music/openrct2.music.progressive.parkobj
 %%DATADIR%%/object/official/music/openrct2.music.ragtime2.parkobj
 %%DATADIR%%/object/official/music/openrct2.music.rock4.parkobj
 %%DATADIR%%/object/official/ride/openrct2.ride.alpine_coaster.parkobj
@@ -178,6 +179,7 @@ share/mime/packages/openrct2.xml
 %%DATADIR%%/object/rct1/ride/rct1aa.ride.ghost_train_cars.parkobj
 %%DATADIR%%/object/rct1/ride/rct1aa.ride.heartline_twister_cars.parkobj
 %%DATADIR%%/object/rct1/ride/rct1aa.ride.hyper_twister_trains.parkobj
+%%DATADIR%%/object/rct1/ride/rct1aa.ride.lay_down_trains.parkobj
 %%DATADIR%%/object/rct1/ride/rct1aa.ride.mini_helicopters.parkobj
 %%DATADIR%%/object/rct1/ride/rct1aa.ride.reverser_cars.parkobj
 %%DATADIR%%/object/rct1/ride/rct1aa.ride.side_friction_cars.parkobj

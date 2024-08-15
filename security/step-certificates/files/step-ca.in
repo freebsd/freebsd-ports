@@ -90,7 +90,7 @@ step_ca_configure() {
 	if [ ! -e ${step_ca_steppath} ]; then
 		echo "No configured Step CA found."
 		echo "Creating new one...."
-		install -m 600 -o ${step_ca_user} -g ${step_ca_group} /dev/null ${step_ca_steppath}
+		install -d -m 600 -o ${step_ca_user} -g ${step_ca_group} ${step_ca_steppath}
 		export STEPPATH=${step_ca_steppath}
 		%%PREFIX%%/bin/step ca init --ssh
 		chown -R ${step_ca_user}:${step_ca_group} ${step_ca_stepdir}

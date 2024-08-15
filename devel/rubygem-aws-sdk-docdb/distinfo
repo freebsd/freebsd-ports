@@ -1,3 +1,3 @@
-TIMESTAMP = 1717662744
-SHA256 (rubygem/aws-sdk-docdb-1.65.0.gem) = b34f03f96bf4b93c5067a21759580103fa9cc0d08e88804a3c36131328d1a6cf
-SIZE (rubygem/aws-sdk-docdb-1.65.0.gem) = 102912
+TIMESTAMP = 1720355350
+SHA256 (rubygem/aws-sdk-docdb-1.70.0.gem) = 42ed4e4caf7fa27cf00c260aeff7c314a4bfc5dc9f0a6d094f064fdbce378e35
+SIZE (rubygem/aws-sdk-docdb-1.70.0.gem) = 103424

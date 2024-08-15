@@ -5,6 +5,5 @@ with Seiko Epson Color Ink Jet Printers.
 This product supports only EPSON ESC/P-R printers. This package can be
 used for all EPSON ESC/P-R printers.
 
-For detail list of supported printer, please refer to WWW site
-provided by the following command:
-pkg rquery %w epson-inkjet-printer-escpr
+For detail list of supported printer, please refer to below site:
+https://download.ebz.epson.net/dsc/search/01/search/?OSC=LX

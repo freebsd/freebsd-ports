@@ -1,6 +1,4 @@
-diff --git src/providers/ldap/sdap_async_users.c src/providers/ldap/sdap_async_users.c
-index 92eeda1d3..8847be79b 100644
---- src/providers/ldap/sdap_async_users.c
+--- src/providers/ldap/sdap_async_users.c.orig	2020-03-17 13:31:28 UTC
 +++ src/providers/ldap/sdap_async_users.c
 @@ -61,7 +61,8 @@ sdap_get_idmap_primary_gid(struct sdap_options *opts,
  {

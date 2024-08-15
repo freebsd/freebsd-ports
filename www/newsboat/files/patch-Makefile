@@ -1,0 +1,13 @@
+--- Makefile.orig	2024-08-05 06:10:40 UTC
++++ Makefile
+@@ -352,8 +352,8 @@ install-docs: doc
+ 	$(INSTALL) -m 644 doc/xhtml/* $(DESTDIR)$(docdir)
+ 	$(INSTALL) -m 644 CHANGELOG.md $(DESTDIR)$(docdir)
+ 	find contrib/ -type d -print0 | xargs -0 -I@ mkdir -p $(DESTDIR)$(docdir)/@
+-	find contrib/ -type f -perm /0111 -print0 | xargs -0 -I@ install -m 755 @ $(DESTDIR)$(docdir)/@
+-	find contrib/ -type f ! -perm /0111 -print0 | xargs -0 -I@ install -m 644 @ $(DESTDIR)$(docdir)/@
++	find contrib/ -type f -perm +0111 -print0 | xargs -0 -I@ install -m 755 @ $(DESTDIR)$(docdir)/@
++	find contrib/ -type f ! -perm +0111 -print0 | xargs -0 -I@ install -m 644 @ $(DESTDIR)$(docdir)/@
+ 	$(MKDIR) $(DESTDIR)$(mandir)/man1
+ 	$(INSTALL) -m 644 doc/$(NEWSBOAT).1 $(DESTDIR)$(mandir)/man1
+ 	$(INSTALL) -m 644 doc/$(PODBOAT).1 $(DESTDIR)$(mandir)/man1

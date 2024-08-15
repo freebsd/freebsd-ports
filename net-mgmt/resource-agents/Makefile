@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=v
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	flo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCF Compliant Resource Agents
 WWW=		http://www.linux-ha.org/wiki/Resource_agents
 

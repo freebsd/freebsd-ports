@@ -1,6 +1,5 @@
 PORTNAME=	orjson
-PORTVERSION=	3.9.10
-PORTREVISION=	6
+PORTVERSION=	3.10.6
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -27,44 +26,44 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ijl
 USE_PYTHON=	autoplist concurrent cython pep517 pytest
 
-CARGO_CRATES=	ahash-0.8.6 \
-		arrayvec-0.7.4 \
+CARGO_CRATES=	arrayvec-0.7.4 \
 		associative-cache-2.0.0 \
-		autocfg-1.1.0 \
+		autocfg-1.3.0 \
 		beef-0.5.2 \
-		bytecount-0.6.7 \
+		bytecount-0.6.8 \
 		castaway-0.2.2 \
-		cc-1.0.83 \
+		cc-1.0.104 \
 		cfg-if-1.0.0 \
-		chrono-0.4.31 \
+		chrono-0.4.34 \
 		compact_str-0.7.1 \
-		encoding_rs-0.8.33 \
-		itoa-1.0.9 \
+		crunchy-0.2.2 \
+		encoding_rs-0.8.34 \
+		gimli-0.30.0 \
+		half-2.4.1 \
+		itoa-1.0.11 \
 		itoap-1.0.1 \
-		libc-0.2.149 \
-		libm-0.2.8 \
-		no-panic-0.1.26 \
-		num-traits-0.2.17 \
-		once_cell-1.18.0 \
-		packed_simd-0.3.9 \
-		proc-macro2-1.0.69 \
-		pyo3-build-config-0.20.0 \
-		pyo3-ffi-0.20.0 \
-		quote-1.0.33 \
-		rustversion-1.0.14 \
-		ryu-1.0.15 \
-		serde-1.0.190 \
-		serde_derive-1.0.190 \
-		serde_json-1.0.107 \
+		libc-0.2.155 \
+		no-panic-0.1.30 \
+		num-traits-0.2.19 \
+		once_cell-1.19.0 \
+		proc-macro2-1.0.86 \
+		pyo3-build-config-0.22.0 \
+		pyo3-ffi-0.22.0 \
+		quote-1.0.36 \
+		rustversion-1.0.17 \
+		ryu-1.0.18 \
+		serde-1.0.203 \
+		serde_derive-1.0.203 \
+		serde_json-1.0.120 \
 		simdutf8-0.1.4 \
-		smallvec-1.11.1 \
+		smallvec-1.13.2 \
 		static_assertions-1.1.0 \
-		syn-2.0.38 \
-		target-lexicon-0.12.12 \
+		syn-2.0.68 \
+		target-lexicon-0.12.14 \
 		unicode-ident-1.0.12 \
+		unwinding-0.2.2 \
 		version_check-0.9.4 \
-		zerocopy-0.7.15 \
-		zerocopy-derive-0.7.15
+		xxhash-rust-0.8.10
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
