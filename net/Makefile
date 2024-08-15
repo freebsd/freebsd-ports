@@ -492,7 +492,6 @@
     SUBDIR += msend
     SUBDIR += msoak
     SUBDIR += mtr
-    SUBDIR += mtr-nox11
     SUBDIR += multicat
     SUBDIR += mvfst
     SUBDIR += nanomsg
