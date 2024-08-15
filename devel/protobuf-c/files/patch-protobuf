@@ -1,6 +1,6 @@
 --- configure.orig	2022-07-11 01:35:23 UTC
 +++ configure
-@@ -683,7 +683,7 @@ BUILD_COMPILER_TRUE
+@@ -683,7 +683,7 @@ protobuf_CFLAGS
  PROTOC
  protobuf_LIBS
  protobuf_CFLAGS
@@ -9,7 +9,7 @@
  pkgconfigdir
  PKG_CONFIG_LIBDIR
  PKG_CONFIG_PATH
-@@ -17724,7 +17724,7 @@ ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAG
+@@ -17724,7 +17724,7 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
  
@@ -31,7 +31,7 @@
  if eval test \${$cachevar+y}
  then :
    printf %s "(cached) " >&6
-@@ -18067,19 +18067,19 @@ ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_e
+@@ -18067,19 +18067,19 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
@@ -127,7 +127,7 @@
  $protobuf_PKG_ERRORS
  
  Consider adjusting the PKG_CONFIG_PATH environment variable if you
-@@ -18228,109 +18169,6 @@ See the pkg-config man page for more details.
+@@ -18228,109 +18169,6 @@ See \`config.log' for more details" "$LINENO" 5; }
  
  To get pkg-config, see <http://pkg-config.freedesktop.org/>.
  See \`config.log' for more details" "$LINENO" 5; }
@@ -283,7 +283,7 @@
  }  // namespace c
 --- protoc-c/c_field.cc.orig	2021-05-19 01:51:00 UTC
 +++ protoc-c/c_field.cc
-@@ -231,7 +231,7 @@ FieldGeneratorMap::~FieldGeneratorMap() {}
+@@ -231,7 +231,7 @@ const FieldGenerator& FieldGeneratorMap::get(
  
  const FieldGenerator& FieldGeneratorMap::get(
      const FieldDescriptor* field) const {
@@ -315,18 +315,20 @@
  }  // namespace c
 --- protoc-c/c_file.cc.orig	2021-05-19 01:51:00 UTC
 +++ protoc-c/c_file.cc
-@@ -119,7 +119,11 @@ void FileGenerator::GenerateHeader(io::Printer* printe
+@@ -117,12 +117,7 @@ void FileGenerator::GenerateHeader(io::Printer* printe
+ void FileGenerator::GenerateHeader(io::Printer* printer) {
+   std::string filename_identifier = FilenameIdentifier(file_->name());
  
-   int min_header_version = 1000000;
- #if defined(HAVE_PROTO3)
-+# if GOOGLE_PROTOBUF_VERSION >= 4023000
-+  if (FileDescriptorLegacy(file_).syntax() == FileDescriptorLegacy::SYNTAX_PROTO3) {
-+# else
-   if (file_->syntax() == FileDescriptor::SYNTAX_PROTO3) {
-+#endif
-     min_header_version = 1003000;
-   }
- #endif
+-  int min_header_version = 1000000;
+-#if defined(HAVE_PROTO3)
+-  if (file_->syntax() == FileDescriptor::SYNTAX_PROTO3) {
+-    min_header_version = 1003000;
+-  }
+-#endif
++  int min_header_version = 1003000;
+ 
+   // Generate top of header.
+   printer->Print(
 --- protoc-c/c_file.h.orig	2021-05-19 01:51:00 UTC
 +++ protoc-c/c_file.h
 @@ -103,8 +103,6 @@ class FileGenerator {
@@ -340,19 +342,23 @@
  }  // namespace c
 --- protoc-c/c_generator.h.orig	2021-05-19 01:51:00 UTC
 +++ protoc-c/c_generator.h
-@@ -93,9 +93,6 @@ class PROTOC_C_EXPORT CGenerator : public CodeGenerato
-                 const std::string& parameter,
+@@ -94,8 +94,11 @@ class PROTOC_C_EXPORT CGenerator : public CodeGenerato
                  OutputDirectory* output_directory,
                  std::string* error) const;
--
+ 
 - private:
 -  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(CGenerator);
++#if GOOGLE_PROTOBUF_VERSION >= 5026000
++  uint64_t GetSupportedFeatures() const { return CodeGenerator::FEATURE_SUPPORTS_EDITIONS; }
++  Edition GetMinimumEdition() const { return Edition::EDITION_PROTO2; }
++  Edition GetMaximumEdition() const { return Edition::EDITION_2023; }
++#endif
  };
  
  }  // namespace c
 --- protoc-c/c_helpers.cc.orig	2021-05-19 01:51:00 UTC
 +++ protoc-c/c_helpers.cc
-@@ -286,7 +286,7 @@ const char* const kKeywordList[] = {
+@@ -286,7 +286,7 @@ std::set<std::string> MakeKeywordsMap() {
  
  std::set<std::string> MakeKeywordsMap() {
    std::set<std::string> result;
@@ -372,29 +378,31 @@
  
 --- protoc-c/c_helpers.h.orig	2021-05-19 01:51:00 UTC
 +++ protoc-c/c_helpers.h
-@@ -70,6 +70,10 @@
- #include <protobuf-c/protobuf-c.pb.h>
- #include <google/protobuf/io/printer.h>
- 
-+#if GOOGLE_PROTOBUF_VERSION >= 4023000
-+# include <google/protobuf/descriptor_legacy.h>
-+#endif
-+
- namespace google {
- namespace protobuf {
- namespace compiler {
-@@ -172,7 +176,11 @@ int compare_name_indices_by_name(const void*, const vo
+@@ -171,11 +171,20 @@ inline int FieldSyntax(const FieldDescriptor* field) {
+ // Return the syntax version of the file containing the field.
  // This wrapper is needed to be able to compile against protobuf2.
  inline int FieldSyntax(const FieldDescriptor* field) {
- #ifdef HAVE_PROTO3
-+# if GOOGLE_PROTOBUF_VERSION >= 4023000
-+  return FileDescriptorLegacy(field->file()).syntax() == FileDescriptorLegacy::SYNTAX_PROTO3 ? 3 : 2;
-+# else
-   return field->file()->syntax() == FileDescriptor::SYNTAX_PROTO3 ? 3 : 2;
-+# endif
- #else
+-#ifdef HAVE_PROTO3
+-  return field->file()->syntax() == FileDescriptor::SYNTAX_PROTO3 ? 3 : 2;
+-#else
++  auto proto = FileDescriptorProto();
++  field->file()->CopyTo(&proto);
++
++  if (proto.has_syntax()) {
++    auto syntax = proto.syntax();
++    assert(syntax == "proto2" || syntax == "proto3");
++    if (syntax == "proto2") {
++      return 2;
++    } else if (syntax == "proto3") {
++      return 3;
++    }
++  }
++
    return 2;
- #endif
+-#endif
+ }
+ 
+ }  // namespace c
 --- protoc-c/c_message.cc.orig	2021-05-19 01:51:00 UTC
 +++ protoc-c/c_message.cc
 @@ -499,7 +499,7 @@ GenerateMessageDescriptor(io::Printer* printer, bool g
