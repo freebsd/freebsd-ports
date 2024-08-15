@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libcares.so:dns/c-ares
 RUN_DEPENDS=	rrdtool:databases/rrdtool \
 		fping:net/fping \
-		mtr:net/mtr-nox11
+		mtr:net/mtr@nox11
 
 USERS=		xymon
 GROUPS=		xymon

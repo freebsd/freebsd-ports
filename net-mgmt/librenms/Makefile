@@ -112,7 +112,7 @@ NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios
 NMAP_RUN_DEPENDS=	nmap:security/nmap
 WMIC_RUN_DEPENDS=	wmic:net-mgmt/wmi-client
 X11_RUN_DEPENDS=	mtr:net/mtr
-X11_RUN_DEPENDS_OFF=	mtr:net/mtr-nox11
+X11_RUN_DEPENDS_OFF=	mtr:net/mtr@nox11
 X11_USES=		magick:6
 X11_USES_OFF=		magick:6,nox11
 
