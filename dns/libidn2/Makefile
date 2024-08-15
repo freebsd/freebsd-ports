@@ -17,8 +17,8 @@ LIB_DEPENDS=	libunistring.so:devel/libunistring
 USES=		charsetfix iconv libtool localbase makeinfo pathfix
 
 CONFIGURE_ARGS=	--disable-nls \
-		--with-libunistring-prefix=${LOCALBASE} \
 		--enable-ld-version-script \
+		--with-libunistring-prefix=${LOCALBASE} \
 		ac_cv_prog_RONN=${TRUE}
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
