@@ -24,6 +24,7 @@ include/catch2/catch_all.hpp
 include/catch2/catch_approx.hpp
 include/catch2/catch_assertion_info.hpp
 include/catch2/catch_assertion_result.hpp
+include/catch2/catch_case_sensitive.hpp
 include/catch2/catch_config.hpp
 include/catch2/catch_get_random_seed.hpp
 include/catch2/catch_message.hpp
@@ -62,7 +63,6 @@ include/catch2/interfaces/catch_interfaces_test_invoker.hpp
 include/catch2/interfaces/catch_interfaces_testcase.hpp
 include/catch2/internal/catch_assertion_handler.hpp
 include/catch2/internal/catch_case_insensitive_comparisons.hpp
-include/catch2/internal/catch_case_sensitive.hpp
 include/catch2/internal/catch_clara.hpp
 include/catch2/internal/catch_commandline.hpp
 include/catch2/internal/catch_compare_traits.hpp
@@ -185,9 +185,9 @@ lib/cmake/Catch2/CatchShardTests.cmake
 lib/cmake/Catch2/CatchShardTestsImpl.cmake
 lib/cmake/Catch2/ParseAndAddCatchTests.cmake
 lib/libCatch2.so
-lib/libCatch2.so.3.6.0
+lib/libCatch2.so.3.7.0
 lib/libCatch2Main.so
-lib/libCatch2Main.so.3.6.0
+lib/libCatch2Main.so.3.7.0
 libdata/pkgconfig/catch2-with-main.pc
 libdata/pkgconfig/catch2.pc
 share/Catch2/gdbinit
