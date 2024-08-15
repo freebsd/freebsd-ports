@@ -1,5 +1,5 @@
 PORTNAME=	argcomplete
-PORTVERSION=	3.4.0
+PORTVERSION=	3.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,8 +27,7 @@ USE_PYTHON=	autoplist concurrent pep517 unittest
 
 NO_ARCH=	yes
 
-SHEBANG_FILES=	scripts/* \
-		test/prog
+SHEBANG_FILES=	test/prog
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' ${WRKSRC}/test/test.py
