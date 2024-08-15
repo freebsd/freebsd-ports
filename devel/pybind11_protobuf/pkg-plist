@@ -1,0 +1,5 @@
+lib/libpybind11_native_proto_caster.a
+lib/libpybind11_native_proto_caster.so
+lib/libpybind11_wrapped_proto_caster.a
+lib/libpybind11_wrapped_proto_caster.so
+%%PYTHON_SITELIBDIR%%/pybind11_proto_utils%%PYTHON_EXT_SUFFIX%%.so
