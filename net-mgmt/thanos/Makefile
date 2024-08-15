@@ -1,9 +1,9 @@
 PORTNAME=	thanos
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.36.0
+DISTVERSION=	0.36.1
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	ler@FreeBSD.org
+MAINTAINER=	alster@vinterdalen.se
 COMMENT=	Highly available Prometheus setup with long term storage capabilities
 WWW=		https://thanos.io/
 
