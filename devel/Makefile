@@ -8085,6 +8085,7 @@
     SUBDIR += tomlplusplus
     SUBDIR += tortoisehg
     SUBDIR += tpasm
+    SUBDIR += tracy
     SUBDIR += tradcpp
     SUBDIR += transient
     SUBDIR += transient-devel
