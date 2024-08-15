@@ -1,11 +1,11 @@
 PORTNAME=	aiohappyeyeballs
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.4
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Happy Eyeballs
+COMMENT=	Happy Eyeballs for asyncio
 WWW=		https://aiohappyeyeballs.readthedocs.io/en/latest/ \
 		https://github.com/aio-libs/aiohappyeyeballs
 
