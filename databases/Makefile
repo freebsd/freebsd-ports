@@ -833,7 +833,6 @@
     SUBDIR += py-redis
     SUBDIR += py-redis2
     SUBDIR += py-redis3
-    SUBDIR += py-redis4
     SUBDIR += py-rrdtool
     SUBDIR += py-schemachange
     SUBDIR += py-sispy

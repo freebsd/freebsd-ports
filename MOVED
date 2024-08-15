@@ -3433,3 +3433,4 @@ x11-toolkits/wlroots-hyprland||2024-08-11|Discontinued: use x11-toolkits/aquamar
 textproc/wbxml2|textproc/libwbxml|2024-08-15|Move textproc/wbxml2 to textproc/libwbxml
 graphics/libwmf-nox11|graphics/libwmf@nox11|2024-08-15|graphics/libwmf adds nox11 flavor. Use graphics/libwmf@nox11 instead
 net/mtr-nox11|net/mtr@nox11|2024-08-15|Remove obsoleted port. Use net/mtr@nox11 instead
+databases/py-redis4|databases/py-redis|2024-08-15|Remove obsoleted port. Use databases/py-redis instead
