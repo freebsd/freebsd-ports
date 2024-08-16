@@ -11,6 +11,9 @@ WWW=		https://github.com/magit/libegit2
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	No consumer in ports tree
+EXPIRATION_DATE=	2024-09-30
+
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 
 USES=		cmake:noninja emacs pkgconfig
