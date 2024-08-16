@@ -5,6 +5,29 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240816:
+  AFFECTS: users of databases/redis
+  AUTHOR: yasu@FreeBSD.org
+
+  The databases/redis port has been updated to 7.4. Users wanting to
+  stay on 7.2 can replace databases/redis with databases/redis72 with
+  one of the following commands.
+
+  If you use pkg with binary packages:
+    # pkg set -o databases/redis:databases/redis72
+    # pkg upgrade
+  If you use portmaster:
+    # portmaster -o databases/redis72 databases/redis
+  If you use portupgrade:
+    # portupgrade -o databases/redis72 databases/redis
+
+  Keep in mind license term has changed with Redis 7.4. Now it is
+  distributed under dual license of Redis Source Available License v2
+  (RSALv2) and Server Side Public License v1 (SSPLv1). If you don't
+  want to accept either of them, then Valkey (database/vulkey) may be
+  alternative for you. It is fork of Redis 7.2 and distributed under
+  3-clause BSD license that is same as Redis 7.2 and before.
+
 20240815:
   AFFECTS: users of devel/subversion-lts and devel/subversion
   AUTHOR: michaelo@FreeBSD.org
