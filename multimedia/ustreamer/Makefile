@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libevent.so:devel/libevent
 
-USES=		compiler:c11 gmake jpeg localbase:ldflags pkgconfig
+USES=		compiler:c17 gmake jpeg localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	pikvm
 
