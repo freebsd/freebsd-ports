@@ -1,5 +1,3 @@
-TIMESTAMP = 1723752353
-SHA256 (pikvm-ustreamer-v6.12_GH0.tar.gz) = 6ebfebdad21cf381f2026f0b0b0c9dc024b1dd6d156b71b7a6977fdbe2db8a0b
-SIZE (pikvm-ustreamer-v6.12_GH0.tar.gz) = 144910
-SHA256 (ca1e1862101cbcac871efe996456f14f130bf9ad.patch) = 72703658868081e589b1add8c373b685c5b472d9db0a45c4b832e2e2424c6ea5
-SIZE (ca1e1862101cbcac871efe996456f14f130bf9ad.patch) = 988
+TIMESTAMP = 1723782855
+SHA256 (pikvm-ustreamer-v6.13_GH0.tar.gz) = 1b32fac96ae6eb7cb638bd258fe09764438c379b2151fec6ae4edc8f19f2ddc3
+SIZE (pikvm-ustreamer-v6.13_GH0.tar.gz) = 144995

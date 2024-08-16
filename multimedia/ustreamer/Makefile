@@ -1,11 +1,7 @@
 PORTNAME=	ustreamer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.12
-PORTREVISION=	1
+DISTVERSION=	6.13
 CATEGORIES=	multimedia net
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	ca1e1862101cbcac871efe996456f14f130bf9ad.patch:-p1 # https://github.com/pikvm/ustreamer/pull/285
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight and fast MJPG-HTTP streamer
@@ -15,14 +11,13 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
-LIB_DEPENDS=	libevent.so:devel/libevent \
-		libuuid.so:misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libevent.so:devel/libevent
 
-USES=		compiler:c11 gmake jpeg localbase:ldflags
+USES=		compiler:c11 gmake jpeg localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	pikvm
 
-MAKE_ARGS=	WITH_PTHREAD_NP=0 MANPREFIX=${PREFIX}/share/man
+MAKE_ARGS=	MANPREFIX=${PREFIX}/share/man
 
 INSTALL_TARGET=	install-strip
 
