@@ -1,0 +1,11 @@
+deno-dom is an implementation of the browser DOM-primarily for SSR-in Deno.
+Implemented with Rust, WASM, and obviously, Deno/TypeScript.
+
+Deno DOM has two backends, WASM and native using Deno native plugins. Both
+APIs are **identical**, the difference being only in performance. The WASM
+backend works with all Deno restrictions, but the native backend requires the
+`--unstable-ffi --allow-ffi --allow-env --allow-read --allow-net=deno.land`
+flags. A shorter version could be `--unstable-ffi -A`, but that allows all
+permissions so you'd have to assess your risk and requirements. You can switch
+between them by importing either `jsr:@b-fuze/deno-dom` for WASM or
+`jsr:@b-fuze/deno-dom/native` for the native binary.
