@@ -1,5 +1,6 @@
 PORTNAME=	sssd
 PORTVERSION=	2.9.5
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	2
 
@@ -34,7 +35,7 @@ LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libjansson.so:devel/jansson \
 		libjose.so:net/jose \
 		libkrb5.so:security/krb5 \
-		libldb.so:databases/ldb22 \
+		libldb.so:databases/ldb25 \
 		libndr-krb5pac.so:net/samba416 \
 		libndr-nbt.so:net/samba416 \
 		libndr-standard.so:net/samba416 \
