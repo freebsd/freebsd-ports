@@ -1,5 +1,3 @@
-TIMESTAMP = 1674094021
-SHA256 (magit-emacsql-3.1.1_GH0.tar.gz) = 82620a6e3a4e9d56047e9b099e1c3070a5a6aa6828ccde4fb7c3f262a11803f1
-SIZE (magit-emacsql-3.1.1_GH0.tar.gz) = 2392710
-SHA256 (3cec7dcb201568a09ee9cebf0ea1e43cba9d334a.patch) = 488199703bcb8238742eb60583b815051c8d72d19513bf01093713d24bed34a5
-SIZE (3cec7dcb201568a09ee9cebf0ea1e43cba9d334a.patch) = 2164
+TIMESTAMP = 1723783904
+SHA256 (magit-emacsql-v4.0.0_GH0.tar.gz) = 6d229617feea8dff15dcd0d33c4794b6c3c3d5afaf3c5647e685559b0913cd0d
+SIZE (magit-emacsql-v4.0.0_GH0.tar.gz) = 2398791

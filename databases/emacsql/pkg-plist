@@ -8,6 +8,12 @@ bin/emacsql-sqlite
 %%EMACS_VERSION_SITE_LISPDIR%%/emacsql/emacsql-pg.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacsql/emacsql-psql.el
 %%EMACS_VERSION_SITE_LISPDIR%%/emacsql/emacsql-psql.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/emacsql/emacsql-sqlite-builtin.el
+%%EMACS_VERSION_SITE_LISPDIR%%/emacsql/emacsql-sqlite-builtin.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/emacsql/emacsql-sqlite-common.el
+%%EMACS_VERSION_SITE_LISPDIR%%/emacsql/emacsql-sqlite-common.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/emacsql/emacsql-sqlite-module.el
+%%EMACS_VERSION_SITE_LISPDIR%%/emacsql/emacsql-sqlite-module.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacsql/emacsql-sqlite.el
 %%EMACS_VERSION_SITE_LISPDIR%%/emacsql/emacsql-sqlite.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/emacsql/emacsql.el
