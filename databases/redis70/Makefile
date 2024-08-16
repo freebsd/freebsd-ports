@@ -18,7 +18,7 @@ CPE_VENDOR=	redislabs
 MAKE_ENV=	OPTIMIZATION= \
 		V=yo
 
-CONFLICTS_INSTALL=	redis redis-devel redis6 redis62 # etc/rc.d/redis
+CONFLICTS_INSTALL=	redis redis-devel redis62 redis72 # etc/rc.d/redis
 
 PORTSCOUT=	limit:^7\.0
 

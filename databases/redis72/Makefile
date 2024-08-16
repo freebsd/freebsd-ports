@@ -2,6 +2,7 @@ PORTNAME=	redis
 DISTVERSION=	7.2.5
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
+PKGNAMESUFFIX=	72
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Persistent key-value database with built-in net interface
@@ -19,7 +20,7 @@ MAKE_ENV=	OPTIMIZATION= \
 
 LDFLAGS+=	-lpthread -lm -lexecinfo
 
-CONFLICTS_INSTALL=	redis-devel redis6 redis62 redis70 # etc/rc.d/redis
+CONFLICTS_INSTALL=	redis redis-devel redis62 redis70 # etc/rc.d/redis
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME} \
