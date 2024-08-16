@@ -1,6 +1,6 @@
---- components/device_signals/core/browser/user_permission_service_impl.h.orig	2023-07-21 09:49:17 UTC
+--- components/device_signals/core/browser/user_permission_service_impl.h.orig	2024-07-31 14:19:23 UTC
 +++ components/device_signals/core/browser/user_permission_service_impl.h
-@@ -39,7 +39,7 @@ class UserPermissionServiceImpl : public UserPermissio
+@@ -38,7 +38,7 @@ class UserPermissionServiceImpl : public UserPermissio
  
    // UserPermissionService:
    bool ShouldCollectConsent() const override;

@@ -1,11 +1,11 @@
---- base/allocator/partition_allocator/src/partition_alloc/thread_isolation/pkey.cc.orig	2024-02-25 20:22:18 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/thread_isolation/pkey.cc.orig	2024-07-31 14:19:23 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/thread_isolation/pkey.cc
 @@ -16,7 +16,7 @@
  #include "partition_alloc/partition_alloc_check.h"
  #include "partition_alloc/thread_isolation/thread_isolation.h"
  
--#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
-+#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_BSD)
+-#if !PA_BUILDFLAG(IS_LINUX) && !PA_BUILDFLAG(IS_CHROMEOS)
++#if !PA_BUILDFLAG(IS_LINUX) && !PA_BUILDFLAG(IS_CHROMEOS) && !PA_BUILDFLAG(IS_BSD)
  #error "This pkey code is currently only supported on Linux and ChromeOS"
  #endif
  

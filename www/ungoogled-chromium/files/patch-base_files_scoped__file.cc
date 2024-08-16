@@ -1,6 +1,6 @@
---- base/files/scoped_file.cc.orig	2022-10-01 07:40:07 UTC
+--- base/files/scoped_file.cc.orig	2024-07-31 14:19:23 UTC
 +++ base/files/scoped_file.cc
-@@ -31,7 +31,7 @@ void ScopedFDCloseTraits::Free(int fd) {
+@@ -32,7 +32,7 @@ void ScopedFDCloseTraits::Free(int fd) {
    int ret = IGNORE_EINTR(close(fd));
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_APPLE) || \

@@ -1,6 +1,6 @@
---- chrome/browser/browser_features.cc.orig	2024-06-22 08:49:42 UTC
+--- chrome/browser/browser_features.cc.orig	2024-07-31 14:19:23 UTC
 +++ chrome/browser/browser_features.cc
-@@ -82,7 +82,7 @@ const base::FeatureParam<bool> kSpareRendererWarmupDel
+@@ -61,7 +61,7 @@ BASE_FEATURE(kClosedTabCache,
  BASE_FEATURE(kDestroyProfileOnBrowserClose,
               "DestroyProfileOnBrowserClose",
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -9,7 +9,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -354,7 +354,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlockedWarning,
+@@ -330,7 +330,7 @@ BASE_FEATURE(kSandboxExternalProtocolBlockedWarning,
  BASE_FEATURE(kSupportSearchSuggestionForPrerender2,
               "SupportSearchSuggestionForPrerender2",
  #if BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS) || \

@@ -1,6 +1,6 @@
---- content/app/content_main_runner_impl.cc.orig	2024-06-22 08:49:42 UTC
+--- content/app/content_main_runner_impl.cc.orig	2024-07-31 14:19:23 UTC
 +++ content/app/content_main_runner_impl.cc
-@@ -144,18 +144,20 @@
+@@ -149,18 +149,20 @@
  #include "content/browser/posix_file_descriptor_info_impl.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -23,7 +23,7 @@
  #include "third_party/boringssl/src/include/openssl/crypto.h"
  #include "third_party/webrtc_overrides/init_webrtc.h"  // nogncheck
  
-@@ -189,6 +191,10 @@
+@@ -194,6 +196,10 @@
  #include "media/base/media_switches.h"
  #endif
  
@@ -34,7 +34,7 @@
  #if BUILDFLAG(IS_ANDROID)
  #include "base/system/sys_info.h"
  #include "content/browser/android/battery_metrics.h"
-@@ -384,7 +390,7 @@ void InitializeZygoteSandboxForBrowserProcess(
+@@ -389,7 +395,7 @@ void InitializeZygoteSandboxForBrowserProcess(
  }
  #endif  // BUILDFLAG(USE_ZYGOTE)
  
@@ -43,7 +43,7 @@
  
  #if BUILDFLAG(ENABLE_PPAPI)
  // Loads the (native) libraries but does not initialize them (i.e., does not
-@@ -422,7 +428,10 @@ void PreloadLibraryCdms() {
+@@ -427,7 +433,10 @@ void PreloadLibraryCdms() {
  
  void PreSandboxInit() {
    // Ensure the /dev/urandom is opened.
@@ -54,7 +54,7 @@
  
    // May use sysinfo(), sched_getaffinity(), and open various /sys/ and /proc/
    // files.
-@@ -434,9 +443,16 @@ void PreSandboxInit() {
+@@ -439,9 +448,16 @@ void PreSandboxInit() {
    // https://boringssl.9oo91esource.qjz9zk/boringssl/+/HEAD/SANDBOXING.md
    CRYPTO_pre_sandbox_init();
  
@@ -71,7 +71,7 @@
  
  #if BUILDFLAG(ENABLE_PPAPI)
    // Ensure access to the Pepper plugins before the sandbox is turned on.
-@@ -847,11 +863,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -889,11 +905,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
                   base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -85,7 +85,7 @@
  
  #endif  // !BUILDFLAG(IS_WIN)
  
-@@ -1038,8 +1053,20 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -1041,8 +1056,20 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
        process_type == switches::kZygoteProcess) {
      PreSandboxInit();
    }
