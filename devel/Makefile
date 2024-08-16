@@ -5075,6 +5075,7 @@
     SUBDIR += py-lazy_loader
     SUBDIR += py-libcst
     SUBDIR += py-libcst03
+    SUBDIR += py-libevdev
     SUBDIR += py-libioc
     SUBDIR += py-libpeas
     SUBDIR += py-libplist
