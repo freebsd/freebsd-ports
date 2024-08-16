@@ -24,7 +24,7 @@ you update your ports collection, before attempting any port upgrades.
   Keep in mind license term has changed with Redis 7.4. Now it is
   distributed under dual license of Redis Source Available License v2
   (RSALv2) and Server Side Public License v1 (SSPLv1). If you don't
-  want to accept either of them, then Valkey (database/valkey) may be
+  want to accept either of them, then Valkey (databases/valkey) may be
   alternative for you. It is fork of Redis 7.2 and distributed under
   3-clause BSD license that is same as Redis 7.2 and before.
 
