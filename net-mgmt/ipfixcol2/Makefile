@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=		aarch64 amd64 armv7
 ONLY_FOR_ARCHS_REASON=	Require SSE2 and static_assert(sizeof(uint64_t) == sizeof(time_t), "Assumed that time_t is uint64_t, but it's not")
 
-BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
+BUILD_DEPENDS=	rst2man:textproc/py-docutils
 LIB_DEPENDS=	librdkafka.so:net/librdkafka \
 		libepoll-shim.so:devel/libepoll-shim \
 		libfds.so:net-mgmt/libfds
