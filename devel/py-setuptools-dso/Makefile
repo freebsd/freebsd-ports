@@ -1,5 +1,5 @@
 PORTNAME=	setuptools-dso
-DISTVERSION=	2.10
+DISTVERSION=	2.11
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 RUN_DEPENDS=	${PY_SETUPTOOLS}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # 6 errors in tests, see https://github.com/mdavidsaver/setuptools_dso/issues/32
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
