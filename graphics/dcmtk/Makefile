@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	${PORTNAME:tu}-
 DISTVERSION=	3.6.8
 CATEGORIES=	graphics devel
 
+PATCH_SITES=	https://github.com/DCMTK/${PORTNAME}/commit/
+PATCHFILES+=	c29bebcd19bb963d72dcd00ca8745f60f6b9a39e.patch:-p1 # fix compilation with clang 19, gcc 15
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DICOM ToolKit, libraries and applications for DICOM/MEDICOM standard
 WWW=		https://dcmtk.org
