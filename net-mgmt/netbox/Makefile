@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.8
+DISTVERSION=	4.0.9
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -23,15 +23,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # - www/py-dj50-django-tables2
 # - www/py-dj50-djangorestframework
 #
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django50>=5.0.7<5.1:www/py-django50@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django50>=5.0.8<5.1:www/py-django50@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj50-django-cors-headers>=4.4.0<5:www/py-dj50-django-cors-headers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj50-django-debug-toolbar>=4.3.0<4.3.0_99:www/py-dj50-django-debug-toolbar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj50-django-debug-toolbar>=4.4.6<4.5:www/py-dj50-django-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj50-django-filter>=24.2<25:www/py-dj50-django-filter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj50-django-htmx>=1.18.0<2:www/py-dj50-django-htmx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj50-django-htmx>=1.19.0<2:www/py-dj50-django-htmx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj50-django-mptt>=0.16.0<0.17:www/py-dj50-django-mptt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj50-django-prometheus>=2.3.1<2.4:www/py-dj50-django-prometheus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj50-django-redis>=5.4.0<6:www/py-dj50-django-redis@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj50-django-rich>=1.9.0<2:www/py-dj50-django-rich@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj50-django-rich>=1.10.0<2:www/py-dj50-django-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj50-django-rq>=2.10.2<2.11:devel/py-dj50-django-rq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj50-django-tables2>=2.7.0<2.8:www/py-dj50-django-tables2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj50-django-taggit>=5.0.1<6:www/py-dj50-django-taggit@${PY_FLAVOR} \
@@ -61,7 +61,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django50>=5.0.7<5.1:www/py-django50@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}tablib>=3.6.1<4:textproc/py-tablib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzdata>=2024.1:devel/py-tzdata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0.1<7:devel/py-pyyaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gunicorn>=22.0.0<23:www/py-gunicorn@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}gunicorn>=22.0.0<24:www/py-gunicorn@${PY_FLAVOR}
 
 USES=		cpe pgsql:12+ python:3.10+
 CPE_VENDOR=	netbox
