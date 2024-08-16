@@ -1,6 +1,5 @@
 PORTNAME=	clamav
-DISTVERSION=	1.3.1
-PORTREVISION=	3
+DISTVERSION=	1.4.0
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.clamav.net/downloads/production/
@@ -55,7 +54,7 @@ PLIST_SUB+=	CLAMAVGROUP=${_CLAMAVGROUP} \
 		LOGDIR=${_LOGDIR} \
 		RUNDIR=${_RUNDIR}
 
-OPTIONS_DEFINE=	ARC ARJ DOCS EXPERIMENTAL LHA MILTER STDERR TESTS UNRAR UNZOO
+OPTIONS_DEFINE=	ARC ARJ DOCS EXPERIMENTAL MILTER STDERR TESTS UNRAR UNZOO
 
 OPTIONS_DEFAULT=	ARC ARJ MILTER UNRAR UNZOO
 OPTIONS_SUB=		yes
@@ -63,7 +62,6 @@ OPTIONS_SUB=		yes
 ARC_DESC=		Enable arch archives support
 ARJ_DESC=		Enable arj archives support
 EXPERIMENTAL_DESC=	Build experimental code
-LHA_DESC=		Enable lha archives support
 MILTER_DESC=		Compile the milter interface
 STDERR_DESC=		Print logs to stderr instead of stdout
 TESTS_DESC=		Build with test enabled (`make test` requires it)
@@ -72,7 +70,6 @@ UNZOO_DESC=		Enable zoo archives support
 ARC_RUN_DEPENDS=		arc:archivers/arc
 ARJ_RUN_DEPENDS=		arj:archivers/arj
 EXPERIMENTAL_CMAKE_BOOL=	ENABLE_EXPERIMENTAL
-LHA_RUN_DEPENDS=		lha:archivers/lha
 .if !exists(/usr/lib/libmilter.so)
 MILTER_LIB_DEPENDS=		libmilter.so:mail/libmilter
 .endif
