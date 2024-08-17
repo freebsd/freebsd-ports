@@ -1,4 +1,4 @@
-TIMESTAMP = 1723324065
+TIMESTAMP = 1723932327
 SHA256 (cabal/Cabal-3.10.3.0/Cabal-3.10.3.0.tar.gz) = cb7f7c66626d7555f799e786513ddd65a874fd23f1cf312990c7a48abfc0b2c6
 SIZE (cabal/Cabal-3.10.3.0/Cabal-3.10.3.0.tar.gz) = 397960
 SHA256 (cabal/Cabal-syntax-3.10.3.0/Cabal-syntax-3.10.3.0.tar.gz) = 75d6a0aa9c00990a0d6e7720ac50c6954f6c942fa1be42c8add7f1c025f7e212
@@ -763,8 +763,8 @@ SHA256 (cabal/ouroboros-consensus-0.20.0.0/revision/2.cabal) = bd1f2f478384b4b79
 SIZE (cabal/ouroboros-consensus-0.20.0.0/revision/2.cabal) = 22877
 SHA256 (cabal/ouroboros-consensus-cardano-0.18.0.0.tar.gz) = 8c2e46c7a8663d1d3af2d505bbfd36bb8011f8fd9bfe6e409d18e7a40d1069f5
 SIZE (cabal/ouroboros-consensus-cardano-0.18.0.0.tar.gz) = 312918
-SHA256 (cabal/ouroboros-consensus-cardano-0.18.0.0/revision/2.cabal) = 4f8fa1212fd8783922beda7c429c359698f31c643a1a21fbd0fa5b9f543f47f4
-SIZE (cabal/ouroboros-consensus-cardano-0.18.0.0/revision/2.cabal) = 18714
+SHA256 (cabal/ouroboros-consensus-cardano-0.18.0.0/revision/3.cabal) = f3a27350a3d179f6d7b14e88e74c0d5d7632dbdf9f663a0d33c47def5089b68b
+SIZE (cabal/ouroboros-consensus-cardano-0.18.0.0/revision/3.cabal) = 18714
 SHA256 (cabal/ouroboros-consensus-diffusion-0.17.0.1.tar.gz) = 8e94df955473ce3897dd7e9f60f3f5821de81dead86af76453ecb1ad7f32734f
 SIZE (cabal/ouroboros-consensus-diffusion-0.17.0.1.tar.gz) = 218890
 SHA256 (cabal/ouroboros-consensus-diffusion-0.17.0.1/revision/3.cabal) = 81170c40011c4ceb13efe0eb6c4f764559f9746aba709449565402b05284810b

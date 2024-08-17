@@ -320,7 +320,7 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		ordered-containers-0.2.4 \
 		os-string-2.0.3 \
 		ouroboros-consensus-0.20.0.0_2:chap \
-		ouroboros-consensus-cardano-0.18.0.0_2:chap \
+		ouroboros-consensus-cardano-0.18.0.0_3:chap \
 		ouroboros-consensus-diffusion-0.17.0.1_3:chap \
 		ouroboros-consensus-protocol-0.9.0.1_2:chap \
 		ouroboros-network-0.16.1.1_1:chap \
