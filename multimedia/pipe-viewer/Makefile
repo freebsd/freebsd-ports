@@ -1,5 +1,5 @@
 PORTNAME=	pipe-viewer
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	multimedia perl5
 
 MAINTAINER?=	DtxdF@disroot.org
@@ -20,9 +20,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	trizen
 USE_PERL5=	modbuild
 
-NO_ARCH=	yes
-
 CONFLICTS_INSTALL?=	multimedia/gtk-pipe-viewer
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=			FORK_MANAGER GTK3 JSON_XS LOCAL_CACHE READLINE \
 				SHARE_DIR
