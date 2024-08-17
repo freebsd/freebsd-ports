@@ -23,6 +23,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hyprwm
 PLIST_FILES=	bin/${PORTNAME}
 
+# XXX Drop after FreeBSD 14.0 EOL around 2024-10-01
+.if exists(/usr/lib/libc++.so) && !exists(/usr/include/c++/v1/__format/write_escaped.h)
+CXXFLAGS+=	-fexperimental-library
+.endif
+
 post-patch:
 # Extract (snapshot) version from the port instead of Git
 	@${REINPLACE_CMD} -i .nogit -e '/Get git info/,/^include/{//p;d;}' \
