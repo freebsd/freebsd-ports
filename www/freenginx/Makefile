@@ -1,6 +1,6 @@
 PORTNAME=	nginx
 PORTVERSION=	1.26.0
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	www
 MASTER_SITES=	https://freenginx.org/download/ \
 		LOCAL/joneum
@@ -175,7 +175,7 @@ HTTPV3_BORING_RUN_DEPENDS=	${LOCALBASE}/bin/bssl:security/boringssl
 HTTPV3_BORING_IMPLIES=		HTTPV3
 HTTPV3_BORING_PREVENTS=		HTTPV3_LSSL HTTPV3_QTLS
 HTTPV3_LSSL_BUILD_DEPENDS=	${LOCALBASE}/include/tls.h:security/libressl-devel
-HTTPV3_LSSL_BUILD_DEPENDS=	${LOCALBASE}/include/tls.h:security/libressl-devel
+HTTPV3_LSSL_RUN_DEPENDS=	${LOCALBASE}/include/tls.h:security/libressl-devel
 HTTPV3_LSSL_IMPLIES=		HTTPV3
 HTTPV3_LSSL_PREVENTS=		HTTPV3_BORING HTTPV3_QTLS
 HTTPV3_QTLS_BUILD_DEPENDS=	${LOCALBASE}/include/openssl/quic.h:security/openssl-quictls
