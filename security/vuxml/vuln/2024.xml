@@ -1,3 +1,30 @@
+  <vuln vid="6a6ad6cb-5c6c-11ef-b456-001e676bf734">
+    <topic>Dovecot -- DoS</topic>
+    <affects>
+      <package>
+	<name>dovecot</name>
+	<range><lt>2.3.21.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dovecot reports:</p>
+	<blockquote cite="https://dovecot.org/mailman3/hyperkitty/list/dovecot-news@dovecot.org/thread/2CSVL56LFPAXVLWMGXEIWZL736PSYHP5/">
+	  <p>A DoS is possible with a large number of address headers or abnormally large email headers.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-23184</cvename>
+      <cvename>CVE-2024-23185</cvename>
+      <url>https://dovecot.org/mailman3/hyperkitty/list/dovecot-news@dovecot.org/thread/2CSVL56LFPAXVLWMGXEIWZL736PSYHP5/</url>
+    </references>
+    <dates>
+      <discovery>2024-08-14</discovery>
+      <entry>2024-08-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9d8e9952-5a42-11ef-a219-1c697a616631">
     <topic>Intel CPUs -- multiple vulnerabilities</topic>
     <affects>
