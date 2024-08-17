@@ -131,7 +131,7 @@ lib/cmake/NCrystal/NCrystalTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/NCrystal/NCrystalTargets.cmake
 lib/libNCrystal.so
 lib/libNCrystal.so.3
-lib/libNCrystal.so.3.9.0
+lib/libNCrystal.so.3.9.1
 share/NCrystal/data/AcrylicGlass_C5O2H8.ncmat
 share/NCrystal/data/AgBr_sg225_SilverBromide.ncmat
 share/NCrystal/data/Ag_sg225.ncmat
@@ -268,6 +268,7 @@ share/NCrystal/python/NCrystal/__init__.py
 share/NCrystal/python/NCrystal/_chooks.py
 share/NCrystal/python/NCrystal/_common.py
 share/NCrystal/python/NCrystal/_coreimpl.py
+share/NCrystal/python/NCrystal/_hklobjects.py
 share/NCrystal/python/NCrystal/_miscimpl.py
 share/NCrystal/python/NCrystal/_mmc.py
 share/NCrystal/python/NCrystal/_msg.py
