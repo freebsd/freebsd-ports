@@ -1,8 +1,8 @@
 PORTNAME=	debian-keyring
-PORTVERSION=	2024.05.30
+DISTVERSION=	2024.07.30
 CATEGORIES=	security
-MASTER_SITES=	https://salsa.debian.org/${PORTNAME}/keyring/-/archive/${PORTVERSION}/
-DISTNAME=	keyring_${PORTVERSION}
+MASTER_SITES=	https://salsa.debian.org/${PORTNAME}/keyring/-/archive/${DISTVERSION}/
+DISTNAME=	keyring_${DISTVERSION}
 
 MAINTAINER=	jinking.this@gmail.com
 COMMENT=	GPG keys for Debian package signature verification
@@ -13,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 
-COMMIT_HASH=	c59202b306a71932ffd59e8005fa0576195bb9b7
-WRKSRC=		${WRKDIR}/keyring-${PORTVERSION}-${COMMIT_HASH}
+COMMIT_HASH=	af5c621023eab16ae59102f1d3af7acd17c7bc08
+WRKSRC=		${WRKDIR}/keyring-${DISTVERSION}-${COMMIT_HASH}
 
 do-build:
 	cd ${WRKSRC} && ${MAKE} all
