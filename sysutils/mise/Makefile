@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.8.6
+DISTVERSION=	2024.8.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -49,13 +49,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytes-1.7.1 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.1.10 \
+		cc-1.1.13 \
 		cfg-if-1.0.0 \
+		cfg_aliases-0.2.1 \
 		chrono-0.4.38 \
 		chrono-tz-0.9.0 \
 		chrono-tz-build-0.3.0 \
 		ci_info-0.14.14 \
-		clap-4.5.15 \
+		clap-4.5.16 \
 		clap_builder-4.5.15 \
 		clap_derive-4.5.13 \
 		clap_lex-0.7.2 \
@@ -72,7 +73,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		contracts-0.6.3 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.7 \
-		cpufeatures-0.2.12 \
+		cpufeatures-0.2.13 \
 		crc32fast-1.4.2 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
@@ -160,7 +161,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ignore-0.4.22 \
 		indenter-0.3.3 \
 		indexmap-1.9.3 \
-		indexmap-2.3.0 \
+		indexmap-2.4.0 \
 		indicatif-0.17.8 \
 		indoc-2.0.5 \
 		insta-1.39.0 \
@@ -170,15 +171,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		itertools-0.13.0 \
 		itoa-1.0.11 \
 		jobserver-0.1.32 \
-		js-sys-0.3.69 \
+		js-sys-0.3.70 \
 		kdl-4.6.0 \
 		lazy_static-1.5.0 \
-		libc-0.2.155 \
+		libc-0.2.156 \
 		libgit2-sys-0.17.0+1.8.1 \
 		libm-0.2.8 \
 		libredox-0.1.3 \
 		libssh2-sys-0.3.0 \
-		libz-sys-1.1.18 \
+		libz-sys-1.1.19 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
 		lockfree-object-pool-0.1.6 \
@@ -191,9 +192,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.4 \
-		mio-1.0.1 \
+		mio-1.0.2 \
 		native-tls-0.2.12 \
 		nix-0.26.4 \
+		nix-0.29.0 \
 		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
 		nu-ansi-term-0.46.0 \
@@ -281,9 +283,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		self-replace-1.4.0 \
 		self_update-0.41.0 \
 		semver-1.0.23 \
-		serde-1.0.206 \
-		serde_derive-1.0.206 \
-		serde_json-1.0.124 \
+		serde-1.0.208 \
+		serde_derive-1.0.208 \
+		serde_json-1.0.125 \
 		serde_spanned-0.6.7 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.8 \
@@ -291,6 +293,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		shared_child-1.0.1 \
 		shell-escape-0.1.5 \
 		shell-words-1.1.0 \
+		shlex-1.3.0 \
 		signal-hook-0.3.17 \
 		signal-hook-registry-1.4.2 \
 		signature-2.2.0 \
@@ -300,7 +303,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		siphasher-0.3.11 \
 		siphasher-1.0.1 \
 		slab-0.4.9 \
-		slug-0.1.5 \
+		slug-0.1.6 \
 		smallvec-1.13.2 \
 		socket2-0.5.7 \
 		spin-0.9.8 \
@@ -342,8 +345,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		toml_datetime-0.6.8 \
 		toml_edit-0.22.20 \
 		tower-0.4.13 \
-		tower-layer-0.3.2 \
-		tower-service-0.3.2 \
+		tower-layer-0.3.3 \
+		tower-service-0.3.3 \
 		tracing-0.1.40 \
 		tracing-core-0.1.32 \
 		tracing-error-0.2.0 \
@@ -378,13 +381,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.92 \
-		wasm-bindgen-backend-0.2.92 \
-		wasm-bindgen-futures-0.4.42 \
-		wasm-bindgen-macro-0.2.92 \
-		wasm-bindgen-macro-support-0.2.92 \
-		wasm-bindgen-shared-0.2.92 \
-		web-sys-0.3.69 \
+		wasm-bindgen-0.2.93 \
+		wasm-bindgen-backend-0.2.93 \
+		wasm-bindgen-futures-0.4.43 \
+		wasm-bindgen-macro-0.2.93 \
+		wasm-bindgen-macro-support-0.2.93 \
+		wasm-bindgen-shared-0.2.93 \
+		web-sys-0.3.70 \
 		webpki-roots-0.26.3 \
 		which-6.0.2 \
 		widestring-1.1.0 \
