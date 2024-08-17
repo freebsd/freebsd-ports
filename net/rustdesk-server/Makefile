@@ -10,8 +10,6 @@ WWW=		https://rustdesk.com/server/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=	fails to build
-
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	rustdesk
