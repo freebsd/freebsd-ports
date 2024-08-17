@@ -1,18 +1,18 @@
---- lib/Support/OSCompatPosix.cpp.orig	2022-08-16 18:18:07 UTC
+--- lib/Support/OSCompatPosix.cpp.orig	2024-08-15 07:17:16 UTC
 +++ lib/Support/OSCompatPosix.cpp
-@@ -25,6 +25,11 @@
+@@ -24,6 +24,11 @@
+ #define RUSAGE_THREAD 1
  #endif
  #endif // __linux__
- 
++ 
 +#if defined(__FreeBSD__)
-+#include <pthread.h>
 +#include <pthread_np.h>
++#define pthread_getattr_np pthread_attr_get_np
 +#endif
-+
- #include <sys/types.h>
- #include <unistd.h>
  
-@@ -221,7 +226,7 @@ void vm_free_aligned(void *p, size_t sz) {
+ #include <pthread.h>
+ #include <sys/types.h>
+@@ -221,7 +226,7 @@ static constexpr int kVMReserveFlags =
  
  static constexpr int kVMReserveProt = PROT_NONE;
  static constexpr int kVMReserveFlags =
@@ -30,20 +30,20 @@
  
  /// On linux, telling the OS that we \p MADV_DONTNEED some pages will cause it
  /// to immediately deduct their size from the process's resident set.
-@@ -599,6 +604,12 @@ uint64_t thread_id() {
+@@ -603,6 +608,12 @@ uint64_t global_thread_id() {
    return syscall(__NR_gettid);
  }
  
 +#elif defined(__FreeBSD__)
 +
-+uint64_t thread_id() {
++uint64_t global_thread_id() {
 +  return reinterpret_cast<uint64_t>(pthread_self());
 +}
 +
  #else
  #error "Thread ID not supported on this platform"
  #endif
-@@ -640,7 +651,7 @@ std::chrono::microseconds thread_cpu_time() {
+@@ -685,7 +696,7 @@ std::chrono::microseconds thread_cpu_time() {
    return microseconds(total);
  }
  
@@ -52,7 +52,7 @@
  
  std::chrono::microseconds thread_cpu_time() {
    using namespace std::chrono;
-@@ -677,7 +688,7 @@ bool thread_page_fault_count(int64_t *outMinorFaults, 
+@@ -722,7 +733,7 @@ bool thread_page_fault_count(int64_t *outMinorFaults, 
    return kr == KERN_SUCCESS;
  }
  
