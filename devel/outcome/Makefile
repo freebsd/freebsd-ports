@@ -1,6 +1,6 @@
 PORTNAME=	outcome
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.9
+DISTVERSION=	2.2.10
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ USES=		cmake:testing compiler:c++14-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ned14
-GH_TUPLE=	ned14:status-code:6bd2d56:status_code/include/outcome/experimental/status-code
+GH_TUPLE=	ned14:status-code:85a75b7:status_code/include/outcome/experimental/status-code
 
 CMAKE_OFF=	BUILD_TESTING
 CMAKE_TESTING_ON=	BUILD_TESTING OUTCOME_ENABLE_DEPENDENCY_SMOKE_TEST
