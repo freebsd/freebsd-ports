@@ -130,7 +130,6 @@
     SUBDIR += battray
     SUBDIR += bchunk
     SUBDIR += beadm
-    SUBDIR += beadm-devel
     SUBDIR += beats7
     SUBDIR += beats8
     SUBDIR += bfs
