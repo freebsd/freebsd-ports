@@ -952,6 +952,6 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/terminfo/kitty.termcap
 %%DATADIR%%/terminfo/kitty.terminfo
 %%DATADIR%%/terminfo/x/xterm-kitty
-share/man/man1/kitty.1.gz
-share/man/man5/kitty.conf.5.gz
+%%PORTDOCS%%share/man/man1/kitty.1.gz
+%%PORTDOCS%%share/man/man5/kitty.conf.5.gz
 share/misc/kitty.terminfo
