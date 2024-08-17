@@ -1,6 +1,6 @@
---- configure.ac.in.orig	2024-01-02 16:25:47 UTC
+--- configure.ac.in.orig	2024-08-13 16:12:12 UTC
 +++ configure.ac.in
-@@ -142,40 +142,8 @@ LIBPCAP=-lpcap
+@@ -153,40 +153,8 @@ LIBPCAP=-lpcap
  MAKE=make
  BIN_PATH=/usr/bin
  LIBPCAP=-lpcap
@@ -42,7 +42,7 @@
  dnl> Remove spaces
  OS="${OS#"${OS%%[![:space:]]*}"}"
  
-@@ -220,15 +188,6 @@ fi
+@@ -233,24 +201,6 @@ fi
    LIBS="${LIBS} -lnetfilter_queue -lnfnetlink -lnetfilter_conntrack"
  fi
  
@@ -55,10 +55,19 @@
 -  LIBS="${LIBS} -L/usr/local/lib"
 -fi
 -
- if test -d /opt/local/include; then :
-   CFLAGS="${CFLAGS} -I/opt/local/include"
-   CXXFLAGS="${CXXFLAGS} -I/opt/local/include"
-@@ -282,15 +241,12 @@ AC_ARG_WITH(ndpi-includes,
+-if test -d /opt/local/include; then :
+-  CFLAGS="${CFLAGS} -I/opt/local/include"
+-  CXXFLAGS="${CXXFLAGS} -I/opt/local/include"
+-fi
+-
+-if test -d /opt/local/lib; then :
+-  LIBS="${LIBS} -L/opt/local/lib"
+-fi
+-
+ if [ test -f /usr/bin/lsb_release ]; then
+   CODENAME=`/usr/bin/lsb_release -c|cut -f 2`
+   if test $CODENAME = "wheezy" ; then
+@@ -313,15 +263,12 @@ AC_ARG_WITH(ndpi-includes,
        NDPI_CUST_INC="-I$withval -I$withval/../lib/third_party/include"
     ])
  
@@ -80,7 +89,7 @@
        if test -d "./nDPI" ; then :
           NDPI_HOME=./nDPI
        elif test -d "../nDPI" ; then :
-@@ -315,8 +271,8 @@ AC_MSG_CHECKING(for nDPI source)
+@@ -346,8 +293,8 @@ AC_MSG_CHECKING(for nDPI source)
        else
           AC_MSG_RESULT(not found)
        fi
@@ -90,15 +99,17 @@
  if test ! -z "$NDPI_CUST_INC" ; then :
    NDPI_INC=$NDPI_CUST_INC
  fi
-@@ -339,45 +295,10 @@ AC_ARG_WITH(json-c-static,
+@@ -370,44 +317,10 @@ AC_ARG_WITH(json-c-static,
      [PKG_CHECK_MODULES(JSON, json-c, [], [AC_MSG_ERROR(Please install libjson-c-dev package prerequisite)])]
  )
  
 -if test -x /bin/freebsd-version; then
 - FREEBSD_VERSION=`freebsd-version | cut -f 1 -d '.'`
 -fi
++AC_DEFINE_UNQUOTED(NO_SSL_DL, 1, [has openssl])
++SSL_INC="-I%%SSL_INC%%"
++SSL_LIB="-L%%SSL_LIB%% -lssl -lcrypto"
  
--if test "${FREEBSD_VERSION}" != "14"; then
 -pkg-config --exists libssl
 -if test "$?" -ne 1; then
 -  AC_DEFINE_UNQUOTED(NO_SSL_DL, 1, [has openssl])
@@ -109,7 +120,7 @@
 -  if test -d "/usr/local/Cellar/openssl@1.1"; then
 -    AC_DEFINE_UNQUOTED(NO_SSL_DL, 1, [has openssl])
 -    SSL_INC="-I/usr/local/Cellar/openssl@1.1/include"
--    SSL_LIB="-L/usr/local/Cellar/openssl@1.1 -lssl -lcrypto"
+-    SSL_LIB="-L/usr/local/Cellar/openssl@1.1/lib -lssl -lcrypto"
 -  elif test -d "/usr/local/opt/openssl/lib"; then
 -    AC_DEFINE_UNQUOTED(NO_SSL_DL, 1, [has openssl])
 -    SSL_INC="-I/usr/local/opt/openssl/include"
@@ -132,33 +143,38 @@
 -    exit -1
 -  fi
 -fi
--fi
-+AC_DEFINE_UNQUOTED(NO_SSL_DL, 1, [has openssl])
-+SSL_INC="-I%%SSL_INC%%"
-+SSL_LIB="-L%%SSL_LIB%% -lssl -lcrypto"
- 
+-
  AC_MSG_CHECKING([PF_RING nBPF])
  NBPF_HOME=${PWD}/../PF_RING/userland/nbpf
-@@ -510,12 +431,8 @@ AS_VAR_IF(with_hiredis, yes, [
+ LIBNBPF=${NBPF_HOME}/libnbpf.a
+@@ -540,17 +453,12 @@ AS_VAR_IF(with_hiredis, yes, [
+ AS_VAR_IF(with_hiredis, yes, [
      pkg-config --exists hiredis
      if test "$?" -ne 1; then
-     HIREDIS_INC="`pkg-config --cflags hiredis` -I/usr/include/hiredis"
--    if test $SYSTEM = "FreeBSD"; then
+-    HIREDIS_INC="`pkg-config --cflags hiredis` -I/usr/include/hiredis"
+-    if test $SYSTEM = "FreeBSD" && $FREEBSD_VERSION != "15"; then
+-	dnl> Note: on freebsd 15 .a is not installed
 -        HIREDIS_LIB="/usr/local/lib/libhiredis.a"
-+    HIREDIS_LIB="`pkg-config --libs hiredis`"
++      HIREDIS_INC="`pkg-config --cflags hiredis`"
++      HIREDIS_LIB="`pkg-config --libs hiredis`"
      else
 -        HIREDIS_LIB="`pkg-config --libs hiredis`"
--    fi
--    else
-     echo "Please install hiredis package prerequisite"
-     exit -1
++      echo "Please install hiredis package prerequisite"
++      exit -1
      fi
-@@ -533,14 +450,14 @@ if test "${with_nedge+set}" != set; then
+-    else
+-    echo "Please install hiredis package prerequisite"
+-    exit -1
+-    fi
+ ])
+ 
+ if test "${with_nedge+set}" != set; then
+@@ -565,14 +473,14 @@ if test "${with_nedge+set}" != set; then
    fi
  
    if test $SYSTEM = "FreeBSD"; then
 -     LIBPCAP="${PF_RING_HOME}/userland/libpcap/libpcap.a"
-+      # Use pcap from base
++     # Use pcap from base
    else
      if test -d ${PF_RING_HOME}; then
        AC_MSG_CHECKING(for PF_RING source installed in $PF_RING_HOME)
@@ -170,7 +186,7 @@
    AC_DEFINE_UNQUOTED(HAVE_PF_RING, 1, [Native PF_RING support])
    if test -f "${PF_RING_HOME}/userland/lib/libpfring.a"; then
       echo "${PF_RING_HOME}/userland/libpcap/libpcap.a"
-@@ -560,18 +477,18 @@ if test "${with_nedge+set}" != set; then
+@@ -592,18 +500,18 @@ if test "${with_nedge+set}" != set; then
           CXXFLAGS="${CXXFLAGS} -I/opt/pfring/include"
           echo "Using PF_RING installed in /opt/pfring"
        else
@@ -180,8 +196,8 @@
 -          echo "Using PF_RING installed in /usr/local/lib"
 +       if test -f "%%LOCALBASE%%/lib/libpfring.a"; then
 +        if test -f "%%LOCALBASE%%/lib/libpcap.a"; then
-+        LIBS="${LIBS} %%LOCALBASE%%/lib/libpfring.a"
-+        echo "Using PF_RING installed in %%LOCALBASE%%/lib"
++    	  LIBS="${LIBS} %%LOCALBASE%%/lib/libpfring.a"
++          echo "Using PF_RING installed in %%LOCALBASE%%/lib"
  	  AC_CHECK_LIB([pcap], [pcap_open_live], pcap=true)
  	  if test x$pcap = x
  	  then
@@ -195,25 +211,21 @@
  	  echo "Please make sure you have installed your PF_RING libraries and try again"
  	  exit 1
          fi
-@@ -756,14 +673,12 @@ else
-     echo "Building without support for MySQL libraries."
+@@ -784,11 +692,9 @@ else
    fi
  else
--  if test "${FREEBSD_VERSION}" != "14"; then
     dnl> FreeBSD
-    if test -f "/usr/local/lib/mysql/libmysqlclient.a"; then
+-   if test -f "/usr/local/lib/mysql/libmysqlclient.a"; then
 -     MYSQL_LIB=/usr/local/lib/mysql/libmysqlclient.a
 -     MYSQL_INC="-I /usr/local/include/mysql/"
--     AC_DEFINE_UNQUOTED(HAVE_MYSQL, 1, [use mysql])
-+    MYSQL_LIB="-L%%LOCALBASE%%/lib/mysql -lmysqlclient"
-+    MYSQL_INC="-I%%LOCALBASE%%/include/mysql"
-+    AC_DEFINE_UNQUOTED(HAVE_MYSQL, 1, [use mysql])
-    fi
--  fi
++     MYSQL_LIB="-L%%LOCALBASE%%/lib/mysql -lmysqlclient"
++     MYSQL_INC="-I%%LOCALBASE%%/include/mysql"
+      AC_DEFINE_UNQUOTED(HAVE_MYSQL, 1, [use mysql])
+-   fi
  fi
  
  AC_CHECK_LIB([expat], [XML_ParserCreate], expat=true)
-@@ -818,7 +733,7 @@ fi
+@@ -843,7 +749,7 @@ fi
    INSTALL_DIR=${ac_default_prefix}
  fi
  
