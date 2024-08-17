@@ -1,7 +1,7 @@
 PORTNAME=	gnutls
-DISTVERSION=	3.8.6
+DISTVERSION=	3.8.7.1
 CATEGORIES=	security net
-MASTER_SITES=	GNUPG/${PORTNAME}/v${DISTVERSION:R}
+MASTER_SITES=	GNUPG/${PORTNAME}/v${DISTVERSION:C/(\.[^.]*).*/\1/}
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
@@ -39,6 +39,8 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
 LDFLAGS+=	-Wl,--undefined-version
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/(\.[^.]*\.[^.]*).*/\1/}
 
 INFO=		gnutls
 

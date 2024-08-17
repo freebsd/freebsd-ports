@@ -1,18 +1,128 @@
---- configure.orig	2016-03-03 07:52:15 UTC
+--- configure.orig	2024-08-15 09:56:06 UTC
 +++ configure
-@@ -47228,6 +47228,7 @@ fi
- $as_echo "$enable_dane" >&6; }
+@@ -87194,6 +87194,7 @@ if test "$enable_dane" != "no"; then
+ printf "%s\n" "$enable_dane" >&6; }
  
  if test "$enable_dane" != "no"; then
 +    oldlibs="$LIBS"
      LIBS="$oldlibs -lunbound"
-     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for unbound library" >&5
- $as_echo_n "checking for unbound library... " >&6; }
-@@ -47444,6 +47445,7 @@ else
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for unbound library" >&5
+ printf %s "checking for unbound library... " >&6; }
+@@ -87930,6 +87931,7 @@ if test "$with_tpm" != "no"; then
  fi
  
  if test "$with_tpm" != "no"; then
 +    oldlibs="$LIBS"
      LIBS="$oldlibs -ltspi"
-     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for tss library" >&5
- $as_echo_n "checking for tss library... " >&6; }
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for tss library" >&5
+ printf %s "checking for tss library... " >&6; }
+@@ -88234,11 +88236,6 @@ fi
+ printf "%s\n" "yes" >&6; }
+ 
+ fi
+-	if test "x$GNUTLS_REQUIRES_PRIVATE" = x; then
+-	    GNUTLS_REQUIRES_PRIVATE="Requires.private: zlib"
+-	else
+-	    GNUTLS_REQUIRES_PRIVATE="$GNUTLS_REQUIRES_PRIVATE, zlib"
+-	fi
+ 	ac_zlib=yes
+     else
+ 
+@@ -88902,6 +88899,13 @@ printf "%s\n" "#define Z_LIBRARY_SONAME \"$z_so\"" >>c
+     LIBS="$save_LIBS"
+     CFLAGS="$save_CFLAGS"
+ 
++elif test "$ZLIB_HAS_PKGCONFIG" = y && test "$ac_zlib" = yes
++then
++    if test "x$GNUTLS_REQUIRES_PRIVATE" = x; then
++	GNUTLS_REQUIRES_PRIVATE="Requires.private: zlib"
++    else
++	GNUTLS_REQUIRES_PRIVATE="$GNUTLS_REQUIRES_PRIVATE, zlib"
++    fi
+ fi
+ 
+ 
+@@ -89064,11 +89068,6 @@ printf "%s\n" "#define HAVE_LIBBROTLI 1" >>confdefs.h
+ 
+ printf "%s\n" "#define HAVE_LIBBROTLI 1" >>confdefs.h
+ 
+-	if test "x$GNUTLS_REQUIRES_PRIVATE" = "x"; then
+-	    GNUTLS_REQUIRES_PRIVATE="Requires.private: libbrotlienc, libbrotlidec"
+-	else
+-	    GNUTLS_REQUIRES_PRIVATE="${GNUTLS_REQUIRES_PRIVATE}, libbrotlienc, libbrotlidec"
+-	fi
+ 	need_ltlibdl=yes
+     else
+ 	{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: *** LIBBROTLI was not found. You will not be able to use BROTLI compression." >&5
+@@ -89078,7 +89077,7 @@ fi
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ printf "%s\n" "no" >&6; }
+ fi
+- if test "$with_libbrotlienc" != "no" && test "$with_libbrotlidec" != "no"; then
++ if test "$with_libbrotlienc" = yes && test "$with_libbrotlidec" = yes; then
+   HAVE_LIBBROTLI_TRUE=
+   HAVE_LIBBROTLI_FALSE='#'
+ else
+@@ -89184,6 +89183,13 @@ printf "%s\n" "#define BROTLIDEC_LIBRARY_SONAME \"$bro
+     LIBS="$save_LIBS"
+     CFLAGS="$save_CFLAGS"
+ 
++elif test "$with_libbrotlienc" = yes && test "$with_libbrotlidec" = yes
++then
++    if test "x$GNUTLS_REQUIRES_PRIVATE" = "x"; then
++	GNUTLS_REQUIRES_PRIVATE="Requires.private: libbrotlienc, libbrotlidec"
++    else
++	GNUTLS_REQUIRES_PRIVATE="${GNUTLS_REQUIRES_PRIVATE}, libbrotlienc, libbrotlidec"
++    fi
+ fi
+ 
+ 
+@@ -89275,11 +89281,6 @@ printf "%s\n" "#define HAVE_LIBZSTD 1" >>confdefs.h
+ 
+ printf "%s\n" "#define HAVE_LIBZSTD 1" >>confdefs.h
+ 
+-	if test "x$GNUTLS_REQUIRES_PRIVATE" = "x"; then
+-	    GNUTLS_REQUIRES_PRIVATE="Requires.private: libzstd"
+-	else
+-	    GNUTLS_REQUIRES_PRIVATE="${GNUTLS_REQUIRES_PRIVATE}, libzstd"
+-	fi
+ 	need_ltlibdl=yes
+     else
+ 	{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: *** LIBZSTD was not found. You will not be able to use ZSTD compression." >&5
+@@ -89289,7 +89290,7 @@ fi
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ printf "%s\n" "no" >&6; }
+ fi
+- if test "$with_libzstd" != "no"; then
++ if test "$with_libzstd" = yes; then
+   HAVE_LIBZSTD_TRUE=
+   HAVE_LIBZSTD_FALSE='#'
+ else
+@@ -89348,6 +89349,13 @@ printf "%s\n" "#define ZSTD_LIBRARY_SONAME \"$zstd_so\
+     LIBS="$save_LIBS"
+     CFLAGS="$save_CFLAGS"
+ 
++elif test "$with_libzstd" = yes
++then
++    if test "x$GNUTLS_REQUIRES_PRIVATE" = "x"; then
++	GNUTLS_REQUIRES_PRIVATE="Requires.private: libzstd"
++    else
++	GNUTLS_REQUIRES_PRIVATE="${GNUTLS_REQUIRES_PRIVATE}, libzstd"
++    fi
+ fi
+ 
+ 
+@@ -89530,6 +89538,13 @@ printf "%s\n" "#define OQS_LIBRARY_SONAME \"$oqs_so\""
+     LIBS="$save_LIBS"
+     CFLAGS="$save_CFLAGS"
+ 
++elif test "$have_liboqs" = yes
++then
++    if test "x$GNUTLS_REQUIRES_PRIVATE" = x; then
++	GNUTLS_REQUIRES_PRIVATE="Requires.private: liboqs"
++    else
++	GNUTLS_REQUIRES_PRIVATE="$GNUTLS_REQUIRES_PRIVATE, liboqs"
++    fi
+ fi
+ 
+  if test "$need_ltlibdl" = yes; then
