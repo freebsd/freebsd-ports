@@ -17,7 +17,7 @@ user				= %%MARIADB_USER%%
 # socket			= %%MARIADB_RUNDIR%%/mysql.sock # inherited from %%ETCDIR%%/my.cnf
 bind-address			= 127.0.0.1
 basedir				= %%PREFIX%%
-datadir				= %%MARIADB_DBDIR%%
+# datadir			= %%MARIADB_DBDIR%% # set with --db_dir from rc-script
 net_retry_count			= 16384
 log_error			= %%MARIADB_LOGDIR%%/mysqld.err
 # [mysqld] configuration for ZFS
@@ -36,25 +36,15 @@ log_error			= %%MARIADB_LOGDIR%%/mysqld.err
 # innodb_doublewrite		= 0
 # innodb_flush_method		= O_DSYNC
 
-# Options read by `mariadb_safe`
-# Renamed from [mysqld_safe] starting with MariaDB 10.4.6.
+# Options read by `mariadb-safe` (and `mysql_safe`)
 [mariadb-safe]
 
 # Options read my `mariabackup`
 [mariabackup]
 
-# Options read by `mysql_upgrade`
-# Renamed from [mysql_upgrade] starting with MariaDB 10.4.6.
+# Options read by mariadb-upgrade (and `mysql_upgrade`)
 [mariadb-upgrade]
 
 # Specific options read by the mariabackup SST method
 [sst]
-
-# Options read by `mysqlbinlog`
-# Renamed from [mysqlbinlog] starting with MariaDB 10.4.6.
-[mariadb-binlog]
-
-# Options read by `mysqladmin`
-# Renamed from [mysqladmin] starting with MariaDB 10.4.6.
-[mariadb-admin]
 

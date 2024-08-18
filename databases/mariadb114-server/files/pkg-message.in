@@ -13,9 +13,11 @@ This port does NOT include the mytop perl script, this is included in
 the MariaDB tarball but the most recent version can be found in the
 databases/mytop port
 
-%%WSREP%%Using wsrep clustering requires adding a configuration file.
-%%WSREP%%Copy %%PREFIX%%/etc/mysql/conf.d/wsrep.conf.sample to
-%%WSREP%%%%PREFIX%%/etc/mysql/conf.d/wsrep.conf and change what you need there.
+%%WSREP%%The Using wsrep clustering requires additional configuration.
+%%WSREP%%Edit %%PREFIX%%/etc/mysql/conf.d/wsrep.conf and change what you need there.
+
+The hashicorp_key_management, s3 and spider plugins must be enabled
+before they can be used, check the specific .cnf files in %%PREFIX%%/etc/mysql/conf.d/
 EOM
 }
 { type: upgrade
