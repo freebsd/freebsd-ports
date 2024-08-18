@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.8.7
+DISTVERSION=	2024.8.8
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -213,7 +213,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		os_pipe-1.2.1 \
 		overload-0.1.1 \
 		owo-colors-3.5.0 \
-		papergrid-0.11.0 \
+		papergrid-0.12.0 \
 		parse-zoneinfo-0.3.1 \
 		paste-1.0.15 \
 		path-absolutize-3.1.1 \
@@ -316,8 +316,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		syn-2.0.74 \
 		sync_wrapper-1.0.1 \
 		sys-info-0.9.1 \
-		tabled-0.15.0 \
-		tabled_derive-0.7.0 \
+		tabled-0.16.0 \
+		tabled_derive-0.8.0 \
 		tar-0.4.41 \
 		tempfile-3.12.0 \
 		tera-1.20.0 \
@@ -337,7 +337,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		time-macros-0.2.18 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.39.2 \
+		tokio-1.39.3 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.0 \
 		tokio-util-0.7.11 \
@@ -365,7 +365,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.23 \
 		unicode-segmentation-1.11.0 \
-		unicode-width-0.1.13 \
+		unicode-width-0.1.11 \
 		untrusted-0.9.0 \
 		url-2.5.2 \
 		urlencoding-2.1.3 \
