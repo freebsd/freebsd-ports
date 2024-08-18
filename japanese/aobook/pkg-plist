@@ -1,0 +1,7 @@
+bin/aobook
+%%DATADIR%%/kenten.otf
+share/applications/aobook.desktop
+%%DOCSDIR%%/manual.html
+%%DOCSDIR%%/ReadMe
+share/icons/hicolor/48x48/apps/aobook.png
+share/icons/hicolor/scalable/apps/aobook.svg
