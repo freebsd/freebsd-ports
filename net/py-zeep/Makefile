@@ -1,5 +1,6 @@
 PORTNAME=	zeep
-PORTVERSION=	4.2.1
+DISTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,23 +14,26 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.4.0,1:textproc/py-sphinx@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.0:devel/py-appdirs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}attrs>=16.0.0:devel/py-attrs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cached-property>=1.3.0:devel/py-cached-property@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}defusedxml>=0.4.1:devel/py-defusedxml@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=16.0.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isodate>=0.5.4:devel/py-isodate@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml>=3.1.0:devel/py-lxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>=4.6.0:devel/py-lxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}platformdirs>=1.4.0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.7.0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests-toolbelt>=0.7.1:www/py-requests-toolbelt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tornado4>=4.0.2<5:www/py-tornado4@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}xmlsec>=0.6.1:security/py-xmlsec@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}aiohttp>=2.3.5:www/py-aiohttp@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}requests-file>=1.5.1:www/py-requests-file@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests-toolbelt>=0.7.1:www/py-requests-toolbelt@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	ASYNC XMLSEC
+
+ASYNC_DESC=	Asynchronous IO using the httpx library
+XMLSEC_DESC=	Support for XML-Security
+
+ASYNC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0.15.0:www/py-httpx@${PY_FLAVOR}
+XMLSEC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xmlsec>=0.6.1:security/py-xmlsec@${PY_FLAVOR}
 
 .include <bsd.port.mk>
