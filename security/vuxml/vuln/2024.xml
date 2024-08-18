@@ -1,3 +1,35 @@
+  <vuln vid="e61af8f4-455d-4f99-8d81-fbb004929dab">
+    <topic>electron31 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron31</name>
+	<range><lt>31.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v31.4.0">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-6989.</li>
+	    <li>Security: backported fix for CVE-2024-6991.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-6989</cvename>
+      <url>https://github.com/advisories/GHSA-32j6-235r-7fmm</url>
+      <cvename>CVE-2024-6991</cvename>
+      <url>https://github.com/advisories/GHSA-3v8g-fm64-g4mc</url>
+    </references>
+    <dates>
+      <discovery>2024-08-15</discovery>
+      <entry>2024-08-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ac025402-4cbc-4177-bd99-c20c03a07f23">
     <topic>electron{29,30} -- multiple vulnerabilities</topic>
     <affects>
