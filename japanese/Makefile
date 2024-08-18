@@ -257,6 +257,7 @@
     SUBDIR += sj3-lib
     SUBDIR += sj3-server
     SUBDIR += skk
+    SUBDIR += skk-jawiki
     SUBDIR += skk-jisyo
     SUBDIR += skk-jisyo-cdb
     SUBDIR += skk-tools
