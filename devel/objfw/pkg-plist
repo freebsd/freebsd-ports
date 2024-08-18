@@ -243,10 +243,10 @@ include/ObjFWTest/OTTestCase.h
 include/ObjFWTest/ObjFWTest.h
 lib/libobjfw.so
 lib/libobjfw.so.1
-lib/libobjfw.so.1.1.0
+lib/libobjfw.so.1.1.3
 lib/libobjfwrt.so
 lib/libobjfwrt.so.1
-lib/libobjfwrt.so.1.1.0
+lib/libobjfwrt.so.1.1.3
 lib/libobjfwtest.a
 %%TLS%%lib/libobjfwtls.so
 %%TLS%%lib/libobjfwtls.so.1
@@ -336,6 +336,7 @@ lib/objfw-config/ObjFWTest.oc
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFEnumerationMutationException_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFEnumerator_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFEpollKernelEventObserver_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/objfw/OFException_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFException_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFFileIRIHandler_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFFileManager_8h.html
@@ -451,8 +452,11 @@ lib/objfw-config/ObjFWTest.oc
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFPBKDF2_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFPTRDNSResourceRecord_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFPair_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/objfw/OFPlainCondition_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFPlainCondition_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/objfw/OFPlainMutex_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFPlainMutex_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/objfw/OFPlainThread_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFPlainThread_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFPlugin_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFPollKernelEventObserver_8h_source.html
@@ -534,6 +538,7 @@ lib/objfw-config/ObjFWTest.oc
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFTCPSocket_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFTCPSocket_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFTLSHandshakeFailedException_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/objfw/OFTLSKey_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFTLSKey_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFTLSStream_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/OFTLSStream_8h_source.html
@@ -704,6 +709,7 @@ lib/objfw-config/ObjFWTest.oc
 %%PORTDOCS%%%%DOCSDIR%%/objfw/globals_c.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/globals_d.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/globals_defs.html
+%%PORTDOCS%%%%DOCSDIR%%/objfw/globals_e.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/globals_enum.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/globals_eval.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/globals_f.html
@@ -719,6 +725,7 @@ lib/objfw-config/ObjFWTest.oc
 %%PORTDOCS%%%%DOCSDIR%%/objfw/globals_s.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/globals_t.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/globals_type.html
+%%PORTDOCS%%%%DOCSDIR%%/objfw/globals_u.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/globals_vars.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/globals_y.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/globals_z.html
@@ -1349,6 +1356,7 @@ lib/objfw-config/ObjFWTest.oc
 %%PORTDOCS%%%%DOCSDIR%%/objfw/interfaceOTTestCase.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/interfaceOTTestCase.png
 %%PORTDOCS%%%%DOCSDIR%%/objfw/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/objfw/macros_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/macros_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/objfw/menu.js
 %%PORTDOCS%%%%DOCSDIR%%/objfw/menudata.js
@@ -1510,6 +1518,7 @@ lib/objfw-config/ObjFWTest.oc
 %%PORTDOCS%%%%DOCSDIR%%/objfw/search/enums_0.js
 %%PORTDOCS%%%%DOCSDIR%%/objfw/search/enumvalues_0.js
 %%PORTDOCS%%%%DOCSDIR%%/objfw/search/files_0.js
+%%PORTDOCS%%%%DOCSDIR%%/objfw/search/files_1.js
 %%PORTDOCS%%%%DOCSDIR%%/objfw/search/functions_0.js
 %%PORTDOCS%%%%DOCSDIR%%/objfw/search/functions_1.js
 %%PORTDOCS%%%%DOCSDIR%%/objfw/search/functions_10.js
