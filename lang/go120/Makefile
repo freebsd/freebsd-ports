@@ -1,6 +1,6 @@
 DISTVERSION=	1.20.14
 # Always set PORTREVISION explicitly as otherwise they are inherited from lang/go-devel
-PORTREVISION=	0
+PORTREVISION=	1
 MASTER_SITES=	https://golang.org/dl/ \
 		https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRAP_TAG}/:bootstrap \
 		LOCAL/dmgk:bootstrap
