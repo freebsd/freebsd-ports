@@ -1,3 +1,3 @@
-TIMESTAMP = 1702733651
-SHA256 (django-filter-23.5.tar.gz) = 67583aa43b91fe8c49f74a832d95f4d8442be628fd4c6d65e9f811f5153a4e5c
-SIZE (django-filter-23.5.tar.gz) = 141058
+TIMESTAMP = 1723881225
+SHA256 (django_filter-24.3.tar.gz) = d8ccaf6732afd21ca0542f6733b11591030fa98669f8d15599b358e24a2cd9c3
+SIZE (django_filter-24.3.tar.gz) = 144444
