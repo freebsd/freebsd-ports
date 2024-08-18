@@ -1,6 +1,7 @@
 PORTNAME=	compass
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.43.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://cloud.mongodb.com/static/font/:fonts \
 		https://registry.npmjs.org/fs-xattr/-/:fs_xattr \
