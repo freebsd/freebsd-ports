@@ -64,6 +64,8 @@ libexec/libinput/libinput-test
 %%DATADIR%%/50-system-hp.quirks
 %%DATADIR%%/50-system-huawei.quirks
 %%DATADIR%%/50-system-lenovo.quirks
+%%DATADIR%%/50-system-lg.quirks
+%%DATADIR%%/50-system-minisforum.quirks
 %%DATADIR%%/50-system-pine64.quirks
 %%DATADIR%%/50-system-sony.quirks
 %%DATADIR%%/50-system-starlabs.quirks
