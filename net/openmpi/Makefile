@@ -1,5 +1,6 @@
 PORTNAME=	openmpi
-PORTVERSION=	5.0.5
+DISTVERSION=	5.0.5
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	https://download.open-mpi.org/release/open-mpi/v${PORTVERSION:R}/
 
@@ -88,13 +89,9 @@ SLURM_CONFIGURE_WITH=	slurm
 FCFLAGS+=	-fallow-argument-mismatch
 .endif
 
-.if ${ARCH} != aarch64 && ${ARCH} != amd64 && ${ARCH} != i386 && !${ARCH:Mpowerpc*}
-PLIST_SUB+=	NO_MCA_PATCHER_OVERWRITE="@comment "
-.else
-PLIST_SUB+=	NO_MCA_PATCHER_OVERWRITE=""
-.endif
-
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 170 && !${ARCH:Mpowerpc*}
+# Both clang and gcc support half precision on these platforms
+# Note: RISC-V can support half precision with Zhf extension
+.if ${ARCH:Maarch64} || ${ARCH:Mamd64}
 PLIST_SUB+=	SHORTFLOAT=""
 .else
 PLIST_SUB+=	SHORTFLOAT="@comment "
