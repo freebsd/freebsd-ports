@@ -174,6 +174,7 @@
     SUBDIR += mecab-ipadic-eucjp
     SUBDIR += mecab-ipadic-sjis
     SUBDIR += mecab-ipadic-utf8
+    SUBDIR += mecab-jawiki
     SUBDIR += mh
     SUBDIR += migemo
     SUBDIR += migemo.el
