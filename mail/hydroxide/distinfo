@@ -1,6 +1,6 @@
-TIMESTAMP = 1719692102
-SHA256 (emersion-hydroxide-v0.2.29_GH0.tar.gz) = 96f1f1cc058544365a31d9b9c64fe44073092b36f95784c044b88641849448bc
-SIZE (emersion-hydroxide-v0.2.29_GH0.tar.gz) = 45566
+TIMESTAMP = 1723902839
+SHA256 (nxjosephofficial-hydroxide-v0.2.29_GH0.tar.gz) = 504732b22d97d95db73e799878fa5dc974a151b491cd4c11867970d6aadbf45e
+SIZE (nxjosephofficial-hydroxide-v0.2.29_GH0.tar.gz) = 45559
 SHA256 (ProtonMail-go-crypto-v1.0.0_GH0.tar.gz) = 596e264d2df6beb3ec40e47286f86960845ab227cb635150ef3bd35a90a79e43
 SIZE (ProtonMail-go-crypto-v1.0.0_GH0.tar.gz) = 333515
 SHA256 (boltdb-bolt-v1.3.1_GH0.tar.gz) = b5ae498b780f535a5d308c188dee1329b3536275d29ad6758876084c0b8586a8

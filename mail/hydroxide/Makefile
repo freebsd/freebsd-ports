@@ -1,7 +1,7 @@
 PORTNAME=	hydroxide
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.29
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 
 MAINTAINER=	nxjoseph@protonmail.com
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 USE_GITHUB=	yes
-GH_ACCOUNT=	emersion
+GH_ACCOUNT=	nxjosephofficial
 GH_TUPLE=	ProtonMail:go-crypto:v1.0.0:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
 		boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
 		cloudflare:circl:v1.3.7:cloudflare_circl/vendor/github.com/cloudflare/circl \

@@ -27,17 +27,26 @@ esac
 
 name=${name##*/}
 rcvar="${name}_enable"
+extra_commands="init"
+
+init_cmd="${name}_init"
+su_cmd="/usr/bin/su"
 
 load_rc_config "${name}"
 
 eval "${rcvar}=\${${rcvar}:-'NO'}"
-eval "_args=\${${name}_args:-''}"
-eval "_user=\${${name}_user:-'%%USER%%'}"
-eval "_log=\${${name}_log:-/dev/null}"
+eval "__args=\${${name}_args:-''}"
+eval "__user=\${${name}_user:-'%%USER%%'}"
+eval "__log=\${${name}_log:-/dev/null}"
 
 pidfile="/var/run/${name}.pid"
 
 command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -u ${_user} -f -H -o ${_log} -m 3 %%PREFIX%%/bin/hydroxide ${_args} serve"
+command_args="-P ${pidfile} -u ${__user} -f -H -o ${__log} -m 3 %%PREFIX%%/bin/hydroxide ${__args} serve"
+
+hydroxide_init() {
+	read -p "Enter mail account id: " id
+	${su_cmd} -m ${__user} -c "%%PREFIX%%/bin/hydroxide auth $id"
+}
 
 run_rc_command "$1"
