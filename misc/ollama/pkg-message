@@ -15,6 +15,13 @@ You will be able to interact with it in plain English.
 Please see https://ollama.com/library for the list
 of all supported models.
 
+The command "ollama list" lists all models downloaded
+into your system.
+
+When the model fails to load into your GPU, please use
+the provided ollama-limit-layers script to create
+model flavors with different num_gpu parameters.
+
 ollama uses many gigbytes of disk space in your home directory,
 because advanced AI models are often very large.
 Pease symlink ~/.ollama to a large disk if needed.

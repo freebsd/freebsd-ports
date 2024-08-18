@@ -1,9 +1,10 @@
---- llm/llama.cpp/ggml/src/vulkan-shaders/CMakeLists.txt.orig	2024-08-08 21:55:59 UTC
+--- llm/llama.cpp/ggml/src/vulkan-shaders/CMakeLists.txt.orig	2024-08-06 15:33:39 UTC
 +++ llm/llama.cpp/ggml/src/vulkan-shaders/CMakeLists.txt
-@@ -1,5 +1,6 @@ add_executable(${TARGET} vulkan-shaders-gen.cpp)
+@@ -2,6 +2,7 @@ add_executable(${TARGET} vulkan-shaders-gen.cpp)
  
  set(TARGET vulkan-shaders-gen)
  add_executable(${TARGET} vulkan-shaders-gen.cpp)
 +target_link_libraries(${TARGET} PRIVATE pthread)
  install(TARGETS ${TARGET} RUNTIME)
  target_compile_features(${TARGET} PRIVATE cxx_std_11)
+ target_link_libraries(vulkan-shaders-gen PUBLIC Threads::Threads)

@@ -1,14 +1,19 @@
 -- patch based on https://github.com/ollama/ollama/issues/1102#issuecomment-2270042340
 
 new file mode 100644
---- gpu/gpu_bsd.go.orig	2024-08-06 07:41:26 UTC
+--- gpu/gpu_bsd.go.orig	2024-08-18 20:03:12 UTC
 +++ gpu/gpu_bsd.go
-@@ -0,0 +1,101 @@
+@@ -0,0 +1,122 @@
 +//go:build dragonfly || freebsd || netbsd || openbsd
 +
 +package gpu
 +
 +import "github.com/ollama/ollama/format"
++//import sysctl "github.com/lorenzosaino/go-sysctl" // sysctl: this is Linux-only, see https://github.com/lorenzosaino/go-sysctl/issues/7
++import sysctl "github.com/blabber/go-freebsd-sysctl/sysctl" // sysctl: this is FreeBSD-only basic library
++import (
++	"log/slog"
++)
 +
 +/*
 +#cgo CFLAGS: -I/usr/local/include
@@ -98,8 +103,24 @@ new file mode 100644
 +}
 +
 +func GetCPUMem() (memInfo, error) {
-+	size := C.sysconf(C._SC_PHYS_PAGES) * C.sysconf(C._SC_PAGE_SIZE)
-+	return memInfo{TotalMemory: uint64(size)}, nil
++	// all involved sysctl variables
++	sysctl_vm_page_size, _ := sysctl.GetInt64("vm.stats.vm.v_page_size") // memory page size
++	sysctl_hw_physmem, _ := sysctl.GetInt64("hw.physmem") // physical memory in bytes
++	sysctl_vm_free_count, _ := sysctl.GetInt64("vm.stats.vm.v_free_count") // free page count
++	sysctl_vm_swap_total, _ := sysctl.GetInt64("vm.swap_total") // total swap size in bytes
++
++	// individual values
++	total_memory := uint64(sysctl_hw_physmem)
++	free_memory := uint64(sysctl_vm_free_count) * uint64(sysctl_vm_page_size)
++	free_swap := uint64(sysctl_vm_swap_total) // wrong to use the total swap size here, should be vm.swap_free, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=280909
++
++	slog.Debug("gpu_bsd.go::GetCPUMem::GetCPUMem", "total_memory", total_memory, "free_memory", free_memory, "free_swap", free_swap)
++
++	return memInfo{
++		TotalMemory: uint64(total_memory),
++		FreeMemory: uint64(free_memory),
++		FreeSwap: uint64(free_swap),
++	}, nil
 +}
 +
 +func (l GpuInfoList) GetVisibleDevicesEnv() (string, string) {

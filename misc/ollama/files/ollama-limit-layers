@@ -1,0 +1,13 @@
+#!/bin/sh
+
+MODEL=$1
+NUM_GPU=$2
+
+if [ -z "$MODEL" ] || [ -z "$NUM_GPU" ]; then
+	echo "Usage: $0 <model> <num_gpu>"
+fi
+
+ollama show --modelfile $MODEL > Modelfile &&
+echo "PARAMETER num_gpu $NUM_GPU" >> Modelfile &&
+ollama create "$MODEL-num_gpu$NUM_GPU" -f Modelfile &&
+echo "model variant $MODEL-num_gpu$NUM_GPU was created"
