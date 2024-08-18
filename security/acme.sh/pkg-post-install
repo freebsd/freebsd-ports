@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # create the log file, if it does not exist
-if [ ! -f /var/log/acme.sh.log ]
+if [ ! -f "${PKG_ROOTDIR}/var/log/acme.sh.log" ]
 then
-	/usr/bin/install -C -m 640 -o acme -g acme /dev/null /var/log/acme.sh.log
+	chroot "${PKG_ROOTDIR}" \
+		/usr/bin/install -C -m 640 -o acme -g acme /dev/null /var/log/acme.sh.log
 fi
