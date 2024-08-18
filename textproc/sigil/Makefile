@@ -1,5 +1,5 @@
 PORTNAME=	sigil
-PORTVERSION=	2.2.1
+DISTVERSION=	2.3.0
 CATEGORIES=	textproc
 
 MAINTAINER=	jonc@chen.org.nz
@@ -25,14 +25,13 @@ GH_PROJECT=	Sigil
 
 USE_LDCONFIG=	${PREFIX}/lib/sigil
 
-USE_QT=		base 5compat declarative \
-		svg tools:build positioning webchannel webengine \
-		imageformats:run
+USE_QT=		base declarative positioning svg webchannel webengine \
+		tools:build imageformats:run
 
 SHEBANG_FILES=	src/Resource_Files/plugin_launchers/python/*.py \
 		src/Resource_Files/python3lib/*.py
 
-CMAKE_ARGS=	-DUSE_SYSTEM_LIBS:BOOL=1 -DUSE_QT6=1
+CMAKE_ARGS=	-DUSE_SYSTEM_LIBS:BOOL=1
 
 # Upstream uses pkg-config output to pass libhunspell-1.7.so and
 # libpcre16.so to the linker. pkg-config output does not include full
