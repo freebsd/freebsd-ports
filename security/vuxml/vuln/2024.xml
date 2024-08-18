@@ -1,3 +1,63 @@
+  <vuln vid="ac025402-4cbc-4177-bd99-c20c03a07f23">
+    <topic>electron{29,30} -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron29</name>
+	<range><lt>29.4.6</lt></range>
+      </package>
+      <package>
+	<name>electron30</name>
+	<range><lt>30.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v29.4.6">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2024-6776.</li>
+	    <li>Security: backported fix for CVE-2024-6778.</li>
+	    <li>Security: backported fix for CVE-2024-6777.</li>
+	    <li>Security: backported fix for CVE-2024-6773.</li>
+	    <li>Security: backported fix for CVE-2024-6774.</li>
+	    <li>Security: backported fix for CVE-2024-6772.</li>
+	    <li>Security: backported fix for CVE-2024-6775.</li>
+	    <li>Security: backported fix for CVE-2024-6779.</li>
+	    <li>Security: backported fix for CVE-2024-6989.</li>
+	    <li>Security: backported fix for CVE-2024-6991.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-6776</cvename>
+      <url>https://github.com/advisories/GHSA-7hjm-9cg2-rcg6</url>
+      <cvename>CVE-2024-6778</cvename>
+      <url>https://github.com/advisories/GHSA-9m98-937v-r97x</url>
+      <cvename>CVE-2024-6777</cvename>
+      <url>https://github.com/advisories/GHSA-w2v8-c457-cjvf</url>
+      <cvename>CVE-2024-6773</cvename>
+      <url>https://github.com/advisories/GHSA-7gj8-545r-5295</url>
+      <cvename>CVE-2024-6774</cvename>
+      <url>https://github.com/advisories/GHSA-cgm7-mqr6-f7vg</url>
+      <cvename>CVE-2024-6772</cvename>
+      <url>https://github.com/advisories/GHSA-cc8c-62x7-qwjr</url>
+      <cvename>CVE-2024-6775</cvename>
+      <url>https://github.com/advisories/GHSA-mxwm-jm3p-mh5m</url>
+      <cvename>CVE-2024-6779</cvename>
+      <url>https://github.com/advisories/GHSA-v4v9-v4wf-9c86</url>
+      <cvename>CVE-2024-6989</cvename>
+      <url>https://github.com/advisories/GHSA-32j6-235r-7fmm</url>
+      <cvename>CVE-2024-6991</cvename>
+      <url>https://github.com/advisories/GHSA-3v8g-fm64-g4mc</url>
+    </references>
+    <dates>
+      <discovery>2024-08-16</discovery>
+      <entry>2024-08-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6a6ad6cb-5c6c-11ef-b456-001e676bf734">
     <topic>Dovecot -- DoS</topic>
     <affects>
