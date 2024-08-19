@@ -64,6 +64,7 @@ post-patch:
 
 post-install:
 				${RM} ${STAGEDIR}${PREFIX}/lib/tevent/libcmocka-tevent.so
+				${RM} ${STAGEDIR}${PREFIX}/lib/tevent/libpytalloc-util.cpython-${PYTHON_SUFFIX}-tevent.so
 				${RMDIR} ${STAGEDIR}${PREFIX}/lib/tevent
 				${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtevent.so
 
