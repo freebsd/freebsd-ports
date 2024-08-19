@@ -7,6 +7,8 @@ share/bash-completion/completions/hyprpm
 share/fish/vendor_completions.d/hyprctl.fish
 share/fish/vendor_completions.d/hyprpm.fish
 share/hypr/hyprland.conf
+share/hypr/lockdead.png
+share/hypr/lockdead2.png
 share/hypr/wall0.png
 share/hypr/wall1.png
 share/hypr/wall2.png
