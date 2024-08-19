@@ -1,10 +1,10 @@
 PORTNAME=	rabbitmq
-DISTVERSION=	3.13.3
+DISTVERSION=	3.13.6
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/rabbitmq/rabbitmq-server/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/rabbitmq/rabbitmq-server/releases/download/v${DISTVERSION}/
 # https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.12.12/rabbitmq-server-generic-unix-3.12.12.tar.xz
 # https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.12.13/rabbitmq-server_3.12.13.orig.tar.xz
-DISTNAME=	${PORTNAME}-server-generic-unix-${PORTVERSION}
+DISTNAME=	${PORTNAME}-server-generic-unix-${DISTVERSION}
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang implementation of AMQP
@@ -29,7 +29,7 @@ SUB_LIST+=	_ERLANG_LIB=${_ERLANG_LIB}
 USERS=		rabbitmq
 GROUPS=		rabbitmq
 
-PLIST_SUB=	VERSION=${PORTVERSION}
+PLIST_SUB=	VERSION=${DISTVERSION}
 
 _ERLANG_VER=	26
 _ERLANG_LIB=	erlang${_ERLANG_VER}
@@ -54,10 +54,10 @@ post-patch:
 	# 	${WRKSRC}/deps/rabbit/docs/*
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/rabbitmq_server-${PORTVERSION}
-	(cd ${WRKSRC} && ${COPYTREE_BIN}   escript ${STAGEDIR}${PREFIX}/lib/rabbitmq_server-${PORTVERSION}/)
-	(cd ${WRKSRC} && ${COPYTREE_BIN}      sbin ${STAGEDIR}${PREFIX}/lib/rabbitmq_server-${PORTVERSION}/)
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} plugins ${STAGEDIR}${PREFIX}/lib/rabbitmq_server-${PORTVERSION}/)
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/rabbitmq_server-${DISTVERSION}
+	(cd ${WRKSRC} && ${COPYTREE_BIN}   escript ${STAGEDIR}${PREFIX}/lib/rabbitmq_server-${DISTVERSION}/)
+	(cd ${WRKSRC} && ${COPYTREE_BIN}      sbin ${STAGEDIR}${PREFIX}/lib/rabbitmq_server-${DISTVERSION}/)
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} plugins ${STAGEDIR}${PREFIX}/lib/rabbitmq_server-${DISTVERSION}/)
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/rabbitmq
@@ -67,8 +67,8 @@ post-install:
 	# ${STAGEDIR}${PREFIX}/etc/rabbitmq/advanced.config.sample
 	# ${INSTALL_DATA} ${WRKSRC}/deps/rabbit/docs/rabbitmq.conf.example \
 	# ${STAGEDIR}${PREFIX}/etc/rabbitmq/rabbitmq.conf.sample
-.for _file in rabbitmq-defaults rabbitmq-diagnostics rabbitmq-env rabbitmq-plugins rabbitmq-queues rabbitmq-server rabbitmq-streams rabbitmq-tanzu rabbitmq-upgrade rabbitmqctl vmware-rabbitmq
-	${LN} -s ../lib/rabbitmq_server-${PORTVERSION}/sbin/${_file} ${STAGEDIR}${PREFIX}/sbin
+.for _file in rabbitmq-defaults rabbitmq-diagnostics rabbitmq-env rabbitmq-plugins rabbitmq-queues rabbitmq-server rabbitmq-streams rabbitmq-upgrade rabbitmqctl vmware-rabbitmq
+	${LN} -s ../lib/rabbitmq_server-${DISTVERSION}/sbin/${_file} ${STAGEDIR}${PREFIX}/sbin
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/share/man/man5/*.5.gz  ${STAGEDIR}${PREFIX}/share/man/man5
 	${INSTALL_MAN} ${WRKSRC}/share/man/man8/*.8.gz  ${STAGEDIR}${PREFIX}/share/man/man8
