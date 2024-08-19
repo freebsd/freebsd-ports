@@ -1,6 +1,7 @@
 PORTNAME=	ollama
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.6
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,7 +34,7 @@ GH_TUPLE=	ggerganov:llama.cpp:1e6f6554aa11fa10160a5fda689e736c3c34169f:llama_cpp
 MAKE_ENV=	PATH=${PATH}:${WRKSRC}/llm/build/bsd/x86_64_static/bin # workaround to find vulkan-shaders-gen
 
 PLIST_FILES=	bin/${PORTNAME} \
-		bin/ollama-limit-layers
+		bin/ollama-limit-gpu-layers
 
 post-patch: # workaround for https://github.com/ollama/ollama/issues/6259 (use of extenral libllama.so)
 	@${REINPLACE_CMD} \
@@ -53,6 +54,6 @@ pre-build:
 			./...
 
 post-install: # pending https://github.com/ollama/ollama/issues/6407
-	${INSTALL_SCRIPT} ${FILESDIR}/ollama-limit-layers ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/ollama-limit-gpu-layers ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

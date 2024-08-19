@@ -12,6 +12,10 @@ To run ollama, plese open 2 terminals.
 This will download and run the AI model "mistral".
 You will be able to interact with it in plain English.
 
+If the above fails, you can try to run 'ollama start'
+with theenvironment variable OLLAMA_NUM_PARALLEL=1.
+This is known to help with smaller models.
+
 Please see https://ollama.com/library for the list
 of all supported models.
 
@@ -19,7 +23,7 @@ The command "ollama list" lists all models downloaded
 into your system.
 
 When the model fails to load into your GPU, please use
-the provided ollama-limit-layers script to create
+the provided ollama-limit-gpu-layers script to create
 model flavors with different num_gpu parameters.
 
 ollama uses many gigbytes of disk space in your home directory,
