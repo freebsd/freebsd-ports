@@ -32,6 +32,7 @@
 #         * LLVM_LIBLLVM  libLLVM.so of the chosen port
 #         * LLVM_PREFIX   installation prefix of the chosen port
 #
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_LLVM_MK)
 _INCLUDE_USES_LLVM_MK=	YES
