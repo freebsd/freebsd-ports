@@ -3,7 +3,6 @@ bin/yices_sat
 bin/yices_sat_new
 bin/yices_smt
 bin/yices_smt2
-bin/yices_smt2_mt
 bin/yices_smtcomp
 include/yices.h
 include/yices_exit_codes.h
