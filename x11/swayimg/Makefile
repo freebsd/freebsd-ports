@@ -1,6 +1,6 @@
 PORTNAME=	swayimg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1
+DISTVERSION=	3.2
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -51,7 +51,6 @@ BASH_MESON_ENABLED=	bash
 BASH_PLIST_FILES=	share/bash-completion/completions/${PORTNAME}
 
 GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
-GIF_USES=		localbase:ldflags
 GIF_MESON_ENABLED=	gif
 
 HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
