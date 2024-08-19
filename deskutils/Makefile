@@ -61,6 +61,7 @@
     SUBDIR += freebsd-update-notify
     SUBDIR += freemind
     SUBDIR += freeplane
+    SUBDIR += fyi
     SUBDIR += ganttproject
     SUBDIR += gcal
     SUBDIR += gcalcli
