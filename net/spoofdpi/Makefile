@@ -1,7 +1,6 @@
 PORTNAME=	spoofdpi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.6
-PORTREVISION=	1
+DISTVERSION=	0.10.8
 CATEGORIES=	net
 
 MAINTAINER=	nxjoseph@protonmail.com
@@ -26,8 +25,6 @@ GH_TUPLE=	atomicgo:cursor:v0.2.0:atomicgo_cursor/vendor/atomicgo.dev/cursor \
 		golang:text:v0.16.0:golang_text/vendor/golang.org/x/text \
 		golang:tools:v0.22.0:golang_tools/vendor/golang.org/x/tools \
 		gookit:color:v1.5.4:gookit_color/vendor/github.com/gookit/color \
-		likexian:doh:v0.7.1:likexian_doh/vendor/github.com/likexian/doh \
-		likexian:gokit:v0.25.15:likexian_gokit/vendor/github.com/likexian/gokit \
 		lithammer:fuzzysearch:v1.1.8:lithammer_fuzzysearch/vendor/github.com/lithammer/fuzzysearch \
 		mattn:go-runewidth:v0.0.15:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		miekg:dns:v1.1.61:miekg_dns/vendor/github.com/miekg/dns \
