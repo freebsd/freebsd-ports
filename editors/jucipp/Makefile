@@ -1,7 +1,6 @@
 PORTNAME=	jucipp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.2
-PORTREVISION=	3
+DISTVERSION=	1.8.0
 CATEGORIES=	editors
 
 MAINTAINER=	info@babaei.net
@@ -11,20 +10,19 @@ WWW=		https://gitlab.com/cppit/jucipp
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 LIB_DEPENDS=	libaspell.so:textproc/aspell \
 		libboost_filesystem.so:devel/boost-libs \
+		libclang.so:devel/llvm${LLVM_DEFAULT} \
 		libgit2.so:devel/libgit2 \
 		libharfbuzz.so:print/harfbuzz
-RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
-		uctags:devel/universal-ctags
+RUN_DEPENDS=	uctags:devel/universal-ctags
 
-USES=		cmake compiler:c++14-lang desktop-file-utils gnome pkgconfig
+USES=		cmake compiler:c++14-lang desktop-file-utils gnome \
+		llvm:build,noexport,run pkgconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	cppit
-GL_TAGNAME=	692f3de1f0aad00051096579975e515bccc3802a
-GL_TUPLE=	cppit:libclangmm:9704b9b6de0982a588fa41741157d5640afedf30:libclangmm/lib/libclangmm \
-		eidheim:tiny-process-library:839ff806dc447ff49af80f9a9eaa7949f770f8e5:tinyprocesslibrary/lib/tiny-process-library
+GL_TUPLE=	cppit:libclangmm:5611eb3d9e69486f85a431fbaae03c065f62c2d8:libclangmm/lib/libclangmm \
+		eidheim:tiny-process-library:aaf6afa48ad8f0ea5f15dc5cb5f53888bf1ff7ac:tinyprocesslibrary/lib/tiny-process-library
 USE_GNOME=	gdkpixbuf2 gtkmm30 gtksourceviewmm3
 
 CMAKE_ARGS=	-DCMAKE_INCLUDE_PATH=${LOCALBASE}/llvm${LLVM_DEFAULT}/include \
