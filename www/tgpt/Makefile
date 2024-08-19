@@ -1,6 +1,7 @@
 PORTNAME=	tgpt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	nxjoseph@protonmail.com
@@ -44,8 +45,8 @@ GH_TUPLE=	andybalholm:brotli:v1.1.0:andybalholm_brotli/vendor/github.com/andybal
 		mattn:go-colorable:v0.1.13:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.20:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-localereader:v0.0.1:mattn_go_localereader/vendor/github.com/mattn/go-localereader \
-		mattn:go-runewidth:v0.0.15:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		mattn:go-tty:v0.0.3:mattn_go_tty/vendor/github.com/mattn/go-tty \
+		mattn:go-runewidth:v0.0.16:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		mattn:go-tty:v0.0.7:mattn_go_tty/vendor/github.com/mattn/go-tty \
 		muesli:ansi:276c6243b2f6:muesli_ansi/vendor/github.com/muesli/ansi \
 		muesli:cancelreader:v0.2.2:muesli_cancelreader/vendor/github.com/muesli/cancelreader \
 		muesli:termenv:v0.15.2:muesli_termenv/vendor/github.com/muesli/termenv \
