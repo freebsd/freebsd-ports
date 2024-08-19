@@ -1,3 +1,32 @@
+  <vuln vid="d0ac9a17-5e68-11ef-b8cc-b42e991fc52e">
+    <topic>mozilla products -- spoofing attack</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>129</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1875354">
+	  <p>Select options could obscure the fullscreen notification dialog.
+	This could be used by a malicious site to perform a spoofing attack.
+	This vulnerability affects Firefox &lt; 129, Firefox ESR &lt; 128.1,
+	and Thunderbird &lt; 128.1.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-7518</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-7518</url>
+    </references>
+    <dates>
+      <discovery>2024-08-06</discovery>
+      <entry>2024-08-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e61af8f4-455d-4f99-8d81-fbb004929dab">
     <topic>electron31 -- multiple vulnerabilities</topic>
     <affects>
