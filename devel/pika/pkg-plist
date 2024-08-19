@@ -338,9 +338,6 @@ include/pika/string_util/to_string.hpp
 include/pika/string_util/trim.hpp
 include/pika/synchronization/async_rw_mutex.hpp
 include/pika/synchronization/barrier.hpp
-include/pika/synchronization/channel_mpmc.hpp
-include/pika/synchronization/channel_mpsc.hpp
-include/pika/synchronization/channel_spsc.hpp
 include/pika/synchronization/condition_variable.hpp
 include/pika/synchronization/config/defines.hpp
 include/pika/synchronization/counting_semaphore.hpp
@@ -535,4 +532,4 @@ lib/cmake/pika/tests/stdexec_sender_receiver_concepts.cpp
 lib/cmake/pika/tests/unistd_h.cpp
 lib/libpika.so
 lib/libpika.so.0
-lib/libpika.so.0.26.0
+lib/libpika.so.0.27.0
