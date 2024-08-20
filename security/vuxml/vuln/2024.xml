@@ -1,3 +1,45 @@
+  <vuln vid="04c9c3f8-5ed3-11ef-8262-b0416f0c4c67">
+    <topic>Jinja2 -- Vulnerable to HTML attribute injection when passing user input as keys to xmlattr filter</topic>
+    <affects>
+      <package>
+	<name>py38-Jinja2</name>
+	<name>py39-Jinja2</name>
+	<name>py310-Jinja2</name>
+	<name>py311-Jinja2</name>
+	<range><lt>3.1.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/pallets/jinja/commit/0668239dc6b44ef38e7a6c9f91f312fd4ca581cb">
+	  <p>Jinja is an extensible templating engine.  The `xmlattr` filter in
+	affected versions of Jinja accepts keys containing non-attribute
+	characters.  XML/HTML attributes cannot contain spaces, `/`, `&gt;`,
+	or `=`, as each would then be interpreted as starting a separate
+	attribute.  If an application accepts keys (as opposed to only
+	values) as user input, and renders these in pages that other users
+	see as well, an attacker could use this to inject other attributes
+	and perform XSS.  The fix for CVE-2024-22195 only addressed spaces
+	but not other characters.  Accepting keys as user input is now
+	explicitly considered an unintended use case of the `xmlattr` filter,
+	and code that does so without otherwise validating the input should
+	be flagged as insecure, regardless of Jinja version.  Accepting
+	_values_ as user input continues to be safe.  This vulnerability
+	is fixed in 3.1.4.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-34064</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-34064</url>
+    </references>
+    <dates>
+      <discovery>2024-05-06</discovery>
+      <entry>2024-08-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d0ac9a17-5e68-11ef-b8cc-b42e991fc52e">
     <topic>mozilla products -- spoofing attack</topic>
     <affects>
