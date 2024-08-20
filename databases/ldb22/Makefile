@@ -12,6 +12,9 @@ WWW=		https://ldb.samba.org/
 
 LICENSE=		GPLv3+
 
+DEPRECATED=     Required only by security/sssd, which expires on 2024-12-31
+EXPIRATION_DATE=2024-12-31
+
 IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
 LDB_DEPENDS=		talloc>=2.2.0:devel/talloc \
