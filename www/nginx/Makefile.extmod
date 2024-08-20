@@ -203,6 +203,7 @@ ICONV_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-calio-iconv-nginx-module-config
 LET_GH_TUPLE=		baysao:nginx-let-module:c1f23aa:let
 LET_VARS=		DSO_EXTMODS+=let
 
+# YOU MUST UPDATE www/lua-resty-core IF YOU UPDATE THIS MODULE
 LUA_IMPLIES=		DEVEL_KIT
 LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 LUA_RUN_DEPENDS=	lua-resty-core>0:www/lua-resty-core

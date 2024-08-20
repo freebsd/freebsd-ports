@@ -4,6 +4,8 @@ DISTVERSION=	0.1.29
 CATEGORIES=	www
 
 MAINTAINER=	zi@FreeBSD.org
+# ALT_MAINTAINERS	flo@freebsd.org, osa@freebsd.org, joneum@freebsd.org
+# This port must be kept in sync with www/nginx/* lua module
 COMMENT=	New FFI-based Lua API for OpenResty NGINX Lua modules
 WWW=		https://github.com/openresty/lua-resty-core
 
