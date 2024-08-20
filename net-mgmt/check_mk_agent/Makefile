@@ -1,10 +1,10 @@
 PORTNAME=	check_mk_agent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0p22
+DISTVERSION=	2.3.0p12
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://raw.githubusercontent.com/tribe29/checkmk/${DISTVERSIONFULL}/agents/:agent \
-		https://raw.githubusercontent.com/tribe29/checkmk/${DISTVERSIONFULL}/doc/agents/:doc \
-		https://raw.githubusercontent.com/tribe29/checkmk/${DISTVERSIONFULL}/:license
+MASTER_SITES=	https://raw.githubusercontent.com/Checkmk/checkmk/${DISTVERSIONFULL}/agents/:agent \
+		https://raw.githubusercontent.com/Checkmk/checkmk/${DISTVERSIONFULL}/doc/agents/:doc \
+		https://raw.githubusercontent.com/Checkmk/checkmk/${DISTVERSIONFULL}/:license
 DISTFILES=	${_CHECKMK_AGENT}:agent \
 		README.FreeBSD:doc \
 		COPYING:license
@@ -17,9 +17,12 @@ WWW=		https://checkmk.com/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	bash>0:shells/bash
+RUN_DEPENDS=	bash:shells/bash \
+		ipmitool:sysutils/ipmitool \
+		statgrab:devel/libstatgrab \
+		wget:ftp/wget
 
-USES=		perl5 shebangfix
+USES=		perl5 python:3.4+ shebangfix
 USE_PERL5=	run
 
 SHEBANG_FILES=	${_CHECKMK_AGENT}
@@ -44,14 +47,14 @@ PORTDOCS=	README.FreeBSD
 OPTIONS_DEFINE=	DOCS
 
 _CHECKMK_AGENT=		${PORTNAME}.freebsd
-_CHECKMK_CONFDIR=	${LOCALBASE}/etc/check_mk
-_CHECKMK_LIBDIR=	${LOCALBASE}/lib/check_mk_agent
+_CHECKMK_LIBDIR=	${PREFIX}/lib/check_mk_agent
+_CHECKMK_CONFDIR=	${PREFIX}/etc/check_mk
 
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|%%CHECKMK_LIBDIR%%|${_CHECKMK_LIBDIR}|' \
 		-e 's|%%CHECKMK_CONFDIR%%|${_CHECKMK_CONFDIR}|' \
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		-e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/${_CHECKMK_AGENT}
 
 do-install:

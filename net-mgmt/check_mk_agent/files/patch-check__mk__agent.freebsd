@@ -1,24 +1,26 @@
---- check_mk_agent.freebsd.orig	2023-02-22 23:45:20 UTC
+--- check_mk_agent.freebsd.orig	2024-08-15 18:32:18 UTC
 +++ check_mk_agent.freebsd
-@@ -105,8 +105,8 @@ set_up_get_epoch() {
+@@ -117,9 +117,9 @@ set_variable_defaults() {
  #
  
  set_variable_defaults() {
 -    : "${MK_LIBDIR:=/usr/local/lib/check_mk_agent}"
 -    : "${MK_CONFDIR:=/etc/check_mk}"
+-    : "${MK_VARDIR:=/var/lib/check_mk_agent}"
 +    : "${MK_LIBDIR:=%%CHECKMK_LIBDIR%%}"
 +    : "${MK_CONFDIR:=%%CHECKMK_CONFDIR%%}"
-     : "${MK_VARDIR:=/var/lib/check_mk_agent}"
++    : "${MK_VARDIR:=/var/db/check_mk_agent}"
      : "${MK_LOGDIR:=/var/log/check_mk_agent}"
  
-@@ -126,8 +126,8 @@ preamble_1() {
+     # some 'booleans'
+@@ -138,8 +138,8 @@ preamble_1() {
      # Make sure locally installed binaries are found
      # Only add binaries if they are not already in the path! If you append to path in a loop the process will
      # eventually each the 128k size limit for the environment and become a zombie process. See execve manpage.
 -    [ "${PATH#*"/usr/local/bin"}" != "${PATH}" ] || PATH="${PATH}:/usr/local/bin"
 -    [ "${PATH#*"/usr/local/sbin"}" != "${PATH}" ] || PATH="${PATH}:/usr/local/sbin"
-+    [ "${PATH#*"%%LOCALBASE%%/bin"}" != "${PATH}" ] || PATH="${PATH}:%%LOCALBASE%%/bin"
-+    [ "${PATH#*"%%LOCALBASE%%/sbin"}" != "${PATH}" ] || PATH="${PATH}:%%LOCALBASE%%/sbin"
++    [ "${PATH#*"%%PREFIX%%/bin"}" != "${PATH}" ] || PATH="${PATH}:%%PREFIX%%/bin"
++    [ "${PATH#*"%%PREFIX%%/sbin"}" != "${PATH}" ] || PATH="${PATH}:%%PREFIX%%/sbin"
      [ -d "/var/qmail/bin" ] && { [ "${PATH#*"/var/qmail/bin"}" != "${PATH}" ] || PATH="${PATH}:/var/qmail/bin"; }
  
      # All executables in PLUGINSDIR will simply be executed and their
