@@ -554,20 +554,44 @@ All of these are related to the CometVisu add-on for openHAB - if you are a user
     <topic>PostgreSQL -- Prevent unauthorized code execution during pg_dump</topic>
     <affects>
       <package>
-	<name>postgresql-client</name>
-	<range><lt>16.4</lt></range>
-	<range><lt>15.8</lt></range>
-	<range><lt>14.13</lt></range>
-	<range><lt>13.16</lt></range>
+	<name>postgresql12-client</name>
 	<range><lt>12.20</lt></range>
       </package>
       <package>
-	<name>postgresql-server</name>
-	<range><lt>16.4</lt></range>
-	<range><lt>15.8</lt></range>
-	<range><lt>14.13</lt></range>
+	<name>postgresql13-client</name>
 	<range><lt>13.16</lt></range>
+      </package>
+      <package>
+	<name>postgresql14-client</name>
+	<range><lt>14.13</lt></range>
+      </package>
+      <package>
+	<name>postgresql15-client</name>
+	<range><lt>15.8</lt></range>
+      </package>
+      <package>
+	<name>postgresql16-client</name>
+	<range><lt>16.4</lt></range>
+      </package>
+      <package>
+	<name>postgresql12-server</name>
 	<range><lt>12.20</lt></range>
+      </package>
+      <package>
+	<name>postgresql13-server</name>
+	<range><lt>13.16</lt></range>
+      </package>
+      <package>
+	<name>postgresql14-server</name>
+	<range><lt>14.13</lt></range>
+      </package>
+      <package>
+	<name>postgresql15-server</name>
+	<range><lt>15.8</lt></range>
+      </package>
+      <package>
+	<name>postgresql16-server</name>
+	<range><lt>16.4</lt></range>
       </package>
     </affects>
     <description>
