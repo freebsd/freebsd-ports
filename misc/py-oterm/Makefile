@@ -1,5 +1,5 @@
 PORTNAME=	oterm
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.1
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiosql>=10.1:databases/py-aiosql@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}aiosqlite>=0.19.0:databases/py-aiosqlite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}linkify-it-py>=2.0.3:textproc/py-linkify-it-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mdit-py-plugins>=0.4.1:textproc/py-mdit-py-plugins@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ollama>=0.2.0:misc/py-ollama@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ollama>=0.3.1:misc/py-ollama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=24.1:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=10.3.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyperclip>=1.7.0:devel/py-pyperclip@${PY_FLAVOR} \
