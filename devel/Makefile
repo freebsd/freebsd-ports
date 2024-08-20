@@ -4239,6 +4239,7 @@
     SUBDIR += picprog
     SUBDIR += pijul
     SUBDIR += pika
+    SUBDIR += pipelight
     SUBDIR += pipestatus
     SUBDIR += pire
     SUBDIR += pit
