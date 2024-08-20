@@ -6,7 +6,7 @@ CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Monitor distributed infrastructure and send alerts (Slack, SMS, etc.)
-WWW=		https://crates.io/crates/vigil-server
+WWW=		https://github.com/valeriansaliou/vigil
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
