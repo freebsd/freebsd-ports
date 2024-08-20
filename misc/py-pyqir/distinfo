@@ -1,4 +1,4 @@
-TIMESTAMP = 1716434376
+TIMESTAMP = 1724129762
 SHA256 (rust/crates/aho-corasick-1.1.2.crate) = b2969dcb958b36655471fc61f7e416fa76033bdd4bfed0678d8fee1e2d07a1f0
 SIZE (rust/crates/aho-corasick-1.1.2.crate) = 183136
 SHA256 (rust/crates/autocfg-1.1.0.crate) = d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa
@@ -123,5 +123,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.48.5.crate) = ed94fce61571a4006852b738
 SIZE (rust/crates/windows_x86_64_msvc-0.48.5.crate) = 798412
 SHA256 (rust/crates/wyz-0.5.1.crate) = 05f360fc0b24296329c78fda852a1e9ae82de9cf7b27dae4b7f62f118f77b9ed
 SIZE (rust/crates/wyz-0.5.1.crate) = 18790
-SHA256 (qir-alliance-pyqir-v0.10.1_GH0.tar.gz) = e5ed50d868b1f31da9b42f6b5e9ed683dc5e890b1ab75b125535ae7268dd9775
-SIZE (qir-alliance-pyqir-v0.10.1_GH0.tar.gz) = 181338
+SHA256 (qir-alliance-pyqir-v0.10.4_GH0.tar.gz) = d543f7ec1f1129267ec42b8d909dcaf3aa7aad7f5766b5a4596b245db405bc43
+SIZE (qir-alliance-pyqir-v0.10.4_GH0.tar.gz) = 184056
