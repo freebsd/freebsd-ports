@@ -1,6 +1,6 @@
---- electron/shell/browser/ui/inspectable_web_contents_view.cc.orig	2024-06-24 09:53:23 UTC
-+++ electron/shell/browser/ui/inspectable_web_contents_view.cc
-@@ -175,7 +175,7 @@ void InspectableWebContentsView::SetIsDocked(bool dock
+--- electron/shell/browser/ui/views/inspectable_web_contents_view_views.cc.orig	2024-08-19 07:29:02 UTC
++++ electron/shell/browser/ui/views/inspectable_web_contents_view_views.cc
+@@ -183,7 +183,7 @@ void InspectableWebContentsViewViews::SetIsDocked(bool
      params.delegate = devtools_window_delegate_;
      params.bounds = inspectable_web_contents()->dev_tools_bounds();
  
