@@ -1,1 +1,7 @@
-Pkg plugin for querying which package provides a particular file
+Pkg-provides is an open source project providing a database with the list of every single files installed by FreeBSD packages and a pluging for pkg - the FreeBSD package manager - to fetch and search this database.
+
+Pkg-provides is used to query which package in your pkg catalog provides a particular file given a pattern
+
+The database is update daily based on the FreeBSD official repos.
+
+Pkg-provides database and plugin is not part of the FreeBSD project nor maintained by pkg developers.
