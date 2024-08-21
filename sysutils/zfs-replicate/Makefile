@@ -3,7 +3,7 @@ PORTVERSION=	0.7
 PORTREVISION=	2
 CATEGORIES=	sysutils
 
-MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
+MAINTAINER=	tschetter.victor@gmail.com
 COMMENT=	ZFS Snapshot Replication Script
 WWW=		https://github.com/leprechau/zfs-replicate
 
