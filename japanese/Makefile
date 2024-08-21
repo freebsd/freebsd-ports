@@ -119,6 +119,7 @@
     SUBDIR += font-std
     SUBDIR += font-takao
     SUBDIR += font-udev-gothic
+    SUBDIR += font-udev-gothic-hs
     SUBDIR += font-udev-gothic-nf
     SUBDIR += font-ume
     SUBDIR += font-vlgothic
