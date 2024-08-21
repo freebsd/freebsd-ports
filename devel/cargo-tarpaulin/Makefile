@@ -1,5 +1,5 @@
 PORTNAME=	cargo-tarpaulin
-DISTVERSION=	0.31.1
+DISTVERSION=	0.31.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -130,7 +130,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		num_cpus-1.16.0 \
 		object-0.26.2 \
 		object-0.32.2 \
-		object-0.36.2 \
+		object-0.36.3 \
 		once_cell-1.19.0 \
 		openssl-0.10.66 \
 		openssl-macros-0.1.1 \
@@ -167,9 +167,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		security-framework-2.11.0 \
 		security-framework-sys-2.11.0 \
 		semver-1.0.23 \
-		serde-1.0.204 \
-		serde_derive-1.0.204 \
-		serde_json-1.0.122 \
+		serde-1.0.207 \
+		serde_derive-1.0.207 \
+		serde_json-1.0.124 \
 		serde_spanned-0.6.7 \
 		serde_urlencoded-0.7.1 \
 		sharded-slab-0.1.7 \
