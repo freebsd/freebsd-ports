@@ -652,6 +652,7 @@
     SUBDIR += vera
     SUBDIR += vfc
     SUBDIR += vifm
+    SUBDIR += vifm-colors
     SUBDIR += visp
     SUBDIR += viz
     SUBDIR += vote
