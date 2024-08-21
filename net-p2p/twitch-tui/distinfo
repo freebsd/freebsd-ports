@@ -1,4 +1,4 @@
-TIMESTAMP = 1723963665
+TIMESTAMP = 1724213955
 SHA256 (rust/crates/addr2line-0.21.0.crate) = 8a30b2e23b9e17a9f90641c7ab1549cd9b44f296d3ccbf309d2863cfe398a0cb
 SIZE (rust/crates/addr2line-0.21.0.crate) = 40807
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -645,5 +645,5 @@ SHA256 (rust/crates/zeroize-1.8.1.crate) = ced3678a2879b30306d323f4542626697a464
 SIZE (rust/crates/zeroize-1.8.1.crate) = 20029
 SHA256 (rust/crates/zune-inflate-0.2.54.crate) = 73ab332fe2f6680068f3582b16a24f90ad7096d5d39b974d1c0aff0125116f02
 SIZE (rust/crates/zune-inflate-0.2.54.crate) = 37973
-SHA256 (Xithrius-twitch-tui-v2.6.15_GH0.tar.gz) = 9b69e97406588406550ebe97a558d62897817f2588b12e79ec0c2e7ab110600d
-SIZE (Xithrius-twitch-tui-v2.6.15_GH0.tar.gz) = 226465
+SHA256 (Xithrius-twitch-tui-v2.6.16_GH0.tar.gz) = 0d09a9cbcf59843e18c9cbc91ed50da111fc546edb112abea83b885d3d6dfd74
+SIZE (Xithrius-twitch-tui-v2.6.16_GH0.tar.gz) = 226583
