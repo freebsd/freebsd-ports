@@ -35,20 +35,20 @@ LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libjansson.so:devel/jansson \
 		libjose.so:net/jose \
 		libkrb5.so:security/krb5 \
-		libldb.so:databases/ldb25 \
-		libndr-krb5pac.so:net/samba416 \
-		libndr-nbt.so:net/samba416 \
-		libndr-standard.so:net/samba416 \
-		libndr.so:net/samba416 \
+		libldb.so:${SAMBA_LDB_PORT} \
+		libndr-krb5pac.so:${SAMBA_PORT} \
+		libndr-nbt.so:${SAMBA_PORT} \
+		libndr-standard.so:${SAMBA_PORT} \
+		libndr.so:${SAMBA_PORT} \
 		libnfs.so:net/libnfs \
 		libnss3.so:security/nss \
 		libp11-kit.so:security/p11-kit \
 		libpcre2-posix.so:devel/pcre2 \
 		libplds4.so:devel/nspr \
 		libpopt.so:devel/popt \
-		libsamba-util.so:net/samba416 \
+		libsamba-util.so:${SAMBA_PORT} \
 		libsasl2.so:security/cyrus-sasl2 \
-		libsmbclient.so:net/samba416 \
+		libsmbclient.so:${SAMBA_PORT} \
 		libtalloc.so:devel/talloc \
 		libtdb.so:databases/tdb \
 		libtevent.so:devel/tevent \
@@ -59,7 +59,8 @@ RUN_DEPENDS=	adcli:net-mgmt/adcli \
 		cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
 
 USES=	autoreconf cpe gettext gmake gssapi:bootstrap,flags,mit iconv ldap \
-	libtool localbase:ldflags pathfix pkgconfig python:3.9+ shebangfix ssl
+	libtool localbase:ldflags pathfix pkgconfig python:3.9+ samba:env \
+	shebangfix ssl
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
