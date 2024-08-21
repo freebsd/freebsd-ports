@@ -1,6 +1,7 @@
 PORTNAME=	boinc-client
 DISTVERSIONPREFIX=	client_release/8.0/
 DISTVERSION=	8.0.2
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	ler@FreeBSD.org
