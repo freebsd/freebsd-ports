@@ -1,6 +1,6 @@
 PORTNAME=	cargo-leptos
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.18
+DISTVERSION=	0.2.19
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -36,7 +36,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		anstyle-query-1.1.1 \
 		anstyle-wincon-3.0.4 \
 		anyhow-1.0.86 \
-		arrayvec-0.7.4 \
+		arbitrary-1.3.2 \
+		arrayvec-0.7.6 \
 		ast_node-0.9.9 \
 		async-trait-0.1.81 \
 		auto_impl-1.2.0 \
@@ -61,14 +62,14 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bytecheck_derive-0.6.12 \
 		byteorder-1.5.0 \
 		bytes-1.7.1 \
-		camino-1.1.7 \
+		camino-1.1.9 \
 		cargo-platform-0.1.8 \
 		cargo_metadata-0.18.1 \
-		cc-1.1.10 \
+		cc-1.1.13 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
-		clap-4.5.15 \
+		clap-4.5.16 \
 		clap_builder-4.5.15 \
 		clap_derive-4.5.13 \
 		clap_lex-0.7.2 \
@@ -97,6 +98,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		data-encoding-2.6.0 \
 		data-url-0.1.1 \
 		debugid-0.8.0 \
+		derive_arbitrary-1.3.2 \
 		derive_builder-0.12.0 \
 		derive_builder_core-0.12.0 \
 		derive_builder_macro-0.12.0 \
@@ -104,6 +106,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		digest-0.10.7 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
+		displaydoc-0.2.5 \
 		dotenvy-0.15.7 \
 		dtoa-1.0.9 \
 		dtoa-short-0.3.5 \
@@ -161,7 +164,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		idna-0.5.0 \
 		if_chain-1.0.2 \
 		indexmap-1.9.3 \
-		indexmap-2.3.0 \
+		indexmap-2.4.0 \
 		inotify-0.7.1 \
 		inotify-sys-0.1.5 \
 		insta-1.39.0 \
@@ -178,8 +181,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lazy_static-1.5.0 \
 		lazycell-1.3.0 \
 		leb128-0.2.5 \
-		leptos_hot_reload-0.6.13 \
-		libc-0.2.155 \
+		leptos_hot_reload-0.6.14 \
+		libc-0.2.158 \
 		libflate-2.1.0 \
 		libflate_lz77-2.1.0 \
 		libredox-0.1.3 \
@@ -188,6 +191,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \
+		lockfree-object-pool-0.1.6 \
 		log-0.4.22 \
 		lru-0.10.1 \
 		matches-0.1.10 \
@@ -262,12 +266,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.5.3 \
-		redox_users-0.4.5 \
+		redox_users-0.4.6 \
 		regex-1.10.6 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.8.4 \
 		rend-0.4.2 \
-		reqwest-0.12.5 \
+		reqwest-0.12.6 \
 		ring-0.17.8 \
 		rkyv-0.7.44 \
 		rkyv_derive-0.7.44 \
@@ -293,15 +297,16 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		semver-0.9.0 \
 		semver-1.0.23 \
 		semver-parser-0.7.0 \
-		serde-1.0.207 \
-		serde_derive-1.0.207 \
-		serde_json-1.0.124 \
+		serde-1.0.208 \
+		serde_derive-1.0.208 \
+		serde_json-1.0.125 \
 		serde_path_to_error-0.1.16 \
 		serde_urlencoded-0.7.1 \
 		sha1-0.10.6 \
 		shlex-1.3.0 \
 		signal-hook-registry-1.4.2 \
 		simd-abstraction-0.7.1 \
+		simd-adler32-0.3.7 \
 		simdutf8-0.1.4 \
 		similar-2.6.0 \
 		siphasher-0.3.11 \
@@ -321,22 +326,22 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		strsim-0.10.0 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
-		swc-0.283.0 \
+		swc-0.284.1 \
 		swc_allocator-0.1.8 \
 		swc_atoms-0.6.7 \
 		swc_cached-0.3.20 \
-		swc_common-0.37.2 \
-		swc_compiler_base-0.16.0 \
+		swc_common-0.37.4 \
+		swc_compiler_base-0.18.1 \
 		swc_config-0.1.15 \
 		swc_config_macro-0.1.4 \
-		swc_ecma_ast-0.118.1 \
+		swc_ecma_ast-0.118.2 \
 		swc_ecma_codegen-0.155.0 \
 		swc_ecma_codegen_macros-0.7.7 \
 		swc_ecma_compat_bugfixes-0.11.0 \
 		swc_ecma_compat_common-0.11.0 \
-		swc_ecma_compat_es2015-0.11.0 \
+		swc_ecma_compat_es2015-0.11.1 \
 		swc_ecma_compat_es2016-0.11.0 \
-		swc_ecma_compat_es2017-0.11.0 \
+		swc_ecma_compat_es2017-0.11.1 \
 		swc_ecma_compat_es2018-0.11.0 \
 		swc_ecma_compat_es2019-0.11.0 \
 		swc_ecma_compat_es2020-0.11.0 \
@@ -346,22 +351,22 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		swc_ecma_ext_transforms-0.120.0 \
 		swc_ecma_lints-0.99.0 \
 		swc_ecma_loader-0.49.1 \
-		swc_ecma_minifier-0.201.0 \
+		swc_ecma_minifier-0.203.1 \
 		swc_ecma_parser-0.149.0 \
-		swc_ecma_preset_env-0.214.0 \
-		swc_ecma_transforms-0.236.0 \
+		swc_ecma_preset_env-0.216.0 \
+		swc_ecma_transforms-0.238.0 \
 		swc_ecma_transforms_base-0.144.0 \
 		swc_ecma_transforms_classes-0.133.0 \
 		swc_ecma_transforms_compat-0.170.0 \
 		swc_ecma_transforms_macros-0.5.5 \
-		swc_ecma_transforms_module-0.187.0 \
-		swc_ecma_transforms_optimization-0.205.0 \
-		swc_ecma_transforms_proposal-0.178.0 \
+		swc_ecma_transforms_module-0.189.0 \
+		swc_ecma_transforms_optimization-0.207.1 \
+		swc_ecma_transforms_proposal-0.178.1 \
 		swc_ecma_transforms_react-0.190.0 \
-		swc_ecma_transforms_typescript-0.195.1 \
-		swc_ecma_usage_analyzer-0.30.0 \
+		swc_ecma_transforms_typescript-0.197.1 \
+		swc_ecma_usage_analyzer-0.30.1 \
 		swc_ecma_utils-0.134.1 \
-		swc_ecma_visit-0.104.5 \
+		swc_ecma_visit-0.104.6 \
 		swc_eq_ignore_macros-0.1.4 \
 		swc_error_reporters-0.21.0 \
 		swc_fast_graph-0.25.0 \
@@ -373,7 +378,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		swc_typescript-0.5.0 \
 		swc_visit-0.6.2 \
 		syn-1.0.109 \
-		syn-2.0.74 \
+		syn-2.0.75 \
 		syn_derive-0.1.8 \
 		sync_wrapper-0.1.2 \
 		sync_wrapper-1.0.1 \
@@ -386,13 +391,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		thiserror-impl-1.0.63 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.39.2 \
+		tokio-1.39.3 \
 		tokio-macros-2.4.0 \
 		tokio-rustls-0.26.0 \
 		tokio-tungstenite-0.21.0 \
 		tower-0.4.13 \
-		tower-layer-0.3.2 \
-		tower-service-0.3.2 \
+		tower-layer-0.3.3 \
+		tower-service-0.3.3 \
 		tracing-0.1.40 \
 		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
@@ -437,7 +442,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		wasmparser-0.212.0 \
 		web-sys-0.3.70 \
 		webpki-roots-0.26.3 \
-		which-6.0.2 \
+		which-6.0.3 \
 		winapi-0.2.8 \
 		winapi-0.3.9 \
 		winapi-build-0.1.1 \
@@ -445,6 +450,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		winapi-util-0.1.9 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-core-0.52.0 \
+		windows-registry-0.2.0 \
+		windows-result-0.2.0 \
+		windows-strings-0.1.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
@@ -465,7 +473,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winreg-0.52.0 \
 		winsafe-0.0.19 \
 		ws2_32-sys-0.2.1 \
 		wyz-0.5.1 \
@@ -474,7 +481,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
 		zeroize-1.8.1 \
-		zip-0.6.6
+		zip-2.1.6 \
+		zopfli-0.8.1
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
