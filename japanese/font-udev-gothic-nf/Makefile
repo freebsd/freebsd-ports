@@ -1,5 +1,5 @@
 PORTNAME=	udev-gothic-nf
-PORTVERSION=	1.3.1
+PORTVERSION=	2.0.0
 PORTREVISION=	0
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	https://github.com/yuru7/udev-gothic/releases/download/v${PORTVERSION}/
@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	ja-font-
 DISTNAME=	UDEVGothic_NF_v${DISTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
-COMMENT=	UDEV Gothic (Nerd Fonts)
+COMMENT=	UDEV Gothic (Nerd Fonts composite version)
 WWW=		https://github.com/yuru7/udev-gothic
 
 LICENSE=	OFL11
@@ -42,10 +42,12 @@ FONT_FAMILY+=	UDEVGothic35NF
 FONT_FAMILY+=	UDEVGothic35NFLG
 .endif
 
+FONT_STYLE=	Bold BoldItalic Italic Regular
+
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
 .for FAMILY in ${FONT_FAMILY}
-.  for STYLE in Bold BoldItalic Italic Regular
+.  for STYLE in ${FONT_STYLE}
 	${INSTALL_DATA} ${WRKSRC}/${FAMILY}-${STYLE}.ttf \
 		${STAGEDIR}${FONTSDIR}
 	@${ECHO_CMD} ${FONTSDIR}/${FAMILY}-${STYLE}.ttf >> ${TMPPLIST}
