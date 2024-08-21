@@ -1,10 +1,9 @@
 PORTNAME=	monero-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.3.1
-PORTREVISION=	5
+DISTVERSION=	0.18.3.2
 CATEGORIES=	net-p2p finance
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alexander@perechnev.com
 COMMENT=	Private, secure, untraceable, decentralised digital currency (CLI)
 WWW=		https://getmonero.org/
 
@@ -13,6 +12,8 @@ LICENSE=	BSD3CLAUSE
 BROKEN_SSL=	libressl
 BROKEN_aarch64=	fails to compile: uses unavailable HWCAP_AES and getauxval
 
+BUILD_DEPENDS=	${LOCALBASE}/include/rapidjson/document.h:devel/rapidjson \
+		${LOCALBASE}/include/zmq.hpp:net/cppzmq
 LIB_DEPENDS=	\
 		libboost_chrono.so:devel/boost-libs \
 		libboost_date_time.so:devel/boost-libs \
@@ -28,8 +29,6 @@ LIB_DEPENDS=	\
 		libsodium.so:security/libsodium \
 		libunbound.so:dns/unbound \
 		libzmq.so:net/libzmq4
-BUILD_DEPENDS=	${LOCALBASE}/include/rapidjson/document.h:devel/rapidjson \
-		${LOCALBASE}/include/zmq.hpp:net/cppzmq
 
 USES=		cmake compiler:c++11-lib pkgconfig readline ssl
 USE_GITHUB=	yes
