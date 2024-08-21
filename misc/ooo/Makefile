@@ -1,0 +1,163 @@
+PORTNAME=	ooo
+DISTVERSION=	0.1.2
+CATEGORIES=	misc # machine learning
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	CLI for piping outputs to ollama or just prompting
+WWW=		https://github.com/npahlfer/ooo
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	npahlfer
+
+CARGO_CRATES=	addr2line-0.21.0 \
+		adler-1.0.2 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		backtrace-0.3.69 \
+		base64-0.21.5 \
+		bitflags-1.3.2 \
+		bitflags-2.4.1 \
+		bumpalo-3.14.0 \
+		bytes-1.5.0 \
+		cc-1.0.83 \
+		cfg-if-1.0.0 \
+		core-foundation-0.9.3 \
+		core-foundation-sys-0.8.4 \
+		encoding_rs-0.8.33 \
+		equivalent-1.0.1 \
+		errno-0.3.8 \
+		fastrand-2.0.1 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.2.1 \
+		futures-channel-0.3.29 \
+		futures-core-0.3.29 \
+		futures-sink-0.3.29 \
+		futures-task-0.3.29 \
+		futures-util-0.3.29 \
+		gimli-0.28.1 \
+		h2-0.3.22 \
+		hashbrown-0.14.3 \
+		hermit-abi-0.1.19 \
+		hermit-abi-0.3.3 \
+		http-0.2.11 \
+		http-body-0.4.5 \
+		httparse-1.8.0 \
+		httpdate-1.0.3 \
+		hyper-0.14.27 \
+		hyper-tls-0.5.0 \
+		idna-0.5.0 \
+		indexmap-2.1.0 \
+		ipnet-2.9.0 \
+		itoa-1.0.9 \
+		js-sys-0.3.66 \
+		lazy_static-1.4.0 \
+		libc-0.2.150 \
+		linux-raw-sys-0.4.11 \
+		lock_api-0.4.11 \
+		log-0.4.20 \
+		memchr-2.6.4 \
+		mime-0.3.17 \
+		miniz_oxide-0.7.1 \
+		mio-0.8.9 \
+		native-tls-0.2.11 \
+		num_cpus-1.16.0 \
+		object-0.32.1 \
+		ollama-rs-0.1.2 \
+		once_cell-1.18.0 \
+		openssl-0.10.60 \
+		openssl-macros-0.1.1 \
+		openssl-probe-0.1.5 \
+		openssl-sys-0.9.96 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.9 \
+		percent-encoding-2.3.1 \
+		pin-project-lite-0.2.13 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.27 \
+		proc-macro2-1.0.70 \
+		quote-1.0.33 \
+		redox_syscall-0.4.1 \
+		reqwest-0.11.22 \
+		rustc-demangle-0.1.23 \
+		rustix-0.38.25 \
+		ryu-1.0.15 \
+		schannel-0.1.22 \
+		scopeguard-1.2.0 \
+		security-framework-2.9.2 \
+		security-framework-sys-2.9.1 \
+		serde-1.0.193 \
+		serde_derive-1.0.193 \
+		serde_json-1.0.108 \
+		serde_urlencoded-0.7.1 \
+		signal-hook-registry-1.4.1 \
+		slab-0.4.9 \
+		smallvec-1.11.2 \
+		socket2-0.4.10 \
+		socket2-0.5.5 \
+		syn-2.0.39 \
+		system-configuration-0.5.1 \
+		system-configuration-sys-0.5.0 \
+		tempfile-3.8.1 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.1 \
+		tokio-1.34.0 \
+		tokio-macros-2.2.0 \
+		tokio-native-tls-0.3.1 \
+		tokio-util-0.7.10 \
+		tower-service-0.3.2 \
+		tracing-0.1.40 \
+		tracing-core-0.1.32 \
+		try-lock-0.2.4 \
+		unicode-bidi-0.3.13 \
+		unicode-ident-1.0.12 \
+		unicode-normalization-0.1.22 \
+		url-2.5.0 \
+		vcpkg-0.2.15 \
+		want-0.3.1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.89 \
+		wasm-bindgen-backend-0.2.89 \
+		wasm-bindgen-futures-0.4.39 \
+		wasm-bindgen-macro-0.2.89 \
+		wasm-bindgen-macro-support-0.2.89 \
+		wasm-bindgen-shared-0.2.89 \
+		web-sys-0.3.65 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
+		windows-targets-0.48.5 \
+		windows-targets-0.52.0 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.0 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.0 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.0 \
+		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.0 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.0 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.0 \
+		winreg-0.50.0
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

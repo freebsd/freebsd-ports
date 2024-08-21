@@ -293,6 +293,7 @@
     SUBDIR += ompl
     SUBDIR += ondir
     SUBDIR += onnx
+    SUBDIR += ooo
     SUBDIR += opencyc
     SUBDIR += openhab
     SUBDIR += openhab-addons
