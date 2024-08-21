@@ -1549,6 +1549,7 @@
     SUBDIR += py-pytidylib
     SUBDIR += py-pytkdocs
     SUBDIR += py-pytoml
+    SUBDIR += py-pytomlpp
     SUBDIR += py-pyx12
     SUBDIR += py-pyxlsb2
     SUBDIR += py-qrcode

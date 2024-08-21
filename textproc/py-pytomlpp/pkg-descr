@@ -1,0 +1,16 @@
+pytomlpp is a python wrapper for toml++.
+
+Some points you may want to know before use:
+
+* Using toml++ means that this module is fully compatible with TOML
+  v1.0.0.
+* We convert toml structure to native python data structures
+  (dict/list etc.) when parsing, this is more inline with what json
+  module does.
+* The binding is using pybind11.
+* The project is tested using toml-test and pytest.
+* We support all major platforms
+  (Linux, Mac OSX and Windows), for both CPython and Pypy and all
+  recent Python versions. You just need to pip install and we have a
+  pre-compiled binaries ready. No need to play with clang, cmake or
+  any C++ toolchains.
