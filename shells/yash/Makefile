@@ -1,5 +1,5 @@
 PORTNAME=	yash
-DISTVERSION=	2.56.1
+DISTVERSION=	2.57
 CATEGORIES=	shells
 MASTER_SITES=	https://github.com/magicant/${PORTNAME}/releases/download/${DISTVERSION}/
 
