@@ -21,9 +21,11 @@ PHP_VER=	81
 CONFLICTS_INSTALL?=	php[0-9][0-9]${PKGNAMESUFFIX}
 
 .if !defined(PKGNAMESUFFIX)
-PATCH_SITES=	https://github.com/php/php-src/commit/
-PATCHFILES=	0a39890c967aa57225bb6bdf4821aff7a3a3c082.patch:-p1 \
-			061058a9b1bbd90d27d97d79aebcf2b5029767b0.patch:-p1
+# For now disable the exra patches for libxml2 until libxml2 is updated
+# Uncomment the following lines when libxml2 is updated
+#PATCH_SITES=	https://github.com/php/php-src/commit/
+#PATCHFILES=	0a39890c967aa57225bb6bdf4821aff7a3a3c082.patch:-p1 \
+#			061058a9b1bbd90d27d97d79aebcf2b5029767b0.patch:-p1
 
 LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libpcre2-8.so:devel/pcre2
