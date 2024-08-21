@@ -616,16 +616,16 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		zvariant_derive-4.2.0 \
 		zvariant_utils-2.1.0 \
 		taffy@git+https://github.com/DioxusLabs/taffy?rev=7781c70\#7781c70241f7f572130c13106f2a869a9cf80885 \
+		smithay@git+https://github.com/smithay/smithay?rev=e27fd27\#e27fd27caba5238fac8a592f6dff32b430efb272 \
 		d3d12,naga,wgpu,wgpu-core,wgpu-hal,wgpu-types@git+https://github.com/gfx-rs/wgpu?rev=20fda69\#20fda698341efbdc870b8027d6d49f5bf3f36109 \
 		cosmic-text@git+https://github.com/pop-os/cosmic-text.git\#e16b39f29c84773a05457fe39577a602de27855c \
 		glyphon@git+https://github.com/pop-os/glyphon.git?tag=v0.5.0\#1b0646ff8f74da92d3be704dfc2257d7f4d7eed8 \
 		cosmic-protocols@git+https://github.com/pop-os/cosmic-protocols?branch=main\#de2fead49d6af3a221db153642e4d7c2235aafc4 \
-		smithay@git+https://github.com/smithay/smithay?rev=e7f0857\#e7f08570bceab6107863267ae168d0afb018e8f5 \
 		cosmic-config,cosmic-config-derive,cosmic-theme,iced,iced_core,iced_futures,iced_graphics,iced_renderer,iced_runtime,iced_style,iced_tiny_skia,iced_wgpu,iced_widget,libcosmic@git+https://github.com/pop-os/libcosmic/\#b40839638ab0e1d96de3f817eded647e6952db40 \
+		smithay-egui@git+https://github.com/Smithay/smithay-egui.git?rev=0d0b4ca0\#0d0b4ca01a851b97cd27bdc94cce1c1f52723ad5 \
 		clipboard_macos,clipboard_wayland,clipboard_x11,dnd,mime,window_clipboard@git+https://github.com/pop-os/window_clipboard.git?tag=pop-dnd-8\#7c59b07b9172d8e0401f7e06609e1050575309c9 \
 		atomicwrites@git+https://github.com/jackpot51/rust-atomicwrites\#043ab4859d53ffd3d55334685303d8df39c9f768 \
 		id_tree@git+https://github.com/Drakulix/id-tree.git?branch=feature/copy_clone\#632a57d6d49160e18d7300fa7edae52281ec5482 \
 		softbuffer@git+https://github.com/pop-os/softbuffer?tag=cosmic-4.0\#6e75b1ad7e98397d37cb187886d05969bc480995 \
-		smithay-egui@git+https://github.com/Smithay/smithay-egui.git?rev=cdc652e0\#cdc652e0d4823b16a5bd9badd288e38512789dc5 \
 		cosmic-settings-config@git+https://github.com/pop-os/cosmic-settings-daemon\#362c77f9faaeb7f1b9e4aa79a7d5588001f04874 \
 		smithay-clipboard@git+https://github.com/pop-os/smithay-clipboard?tag=pop-dnd-5\#5a3007def49eb678d1144850c9ee04b80707c56a
