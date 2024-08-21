@@ -1,0 +1,8 @@
+Gollama is a tool for managing Ollama models.
+
+It provides a TUI (Text User Interface) for listing, inspecting, deleting,
+copying, and pushing Ollama models as well as optionally linking them to
+LM Studio.
+
+The application allows users to interactively select models, sort, filter, edit,
+run, unload and perform actions on them using hotkeys.

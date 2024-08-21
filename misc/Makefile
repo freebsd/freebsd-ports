@@ -170,6 +170,7 @@
     SUBDIR += gnu-watch
     SUBDIR += gnuls
     SUBDIR += gobuster
+    SUBDIR += gollama
     SUBDIR += gone
     SUBDIR += gplink
     SUBDIR += gpsim
