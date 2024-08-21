@@ -1790,6 +1790,7 @@
     SUBDIR += ode
     SUBDIR += ois
     SUBDIR += okteta
+    SUBDIR += ollama-hpp
     SUBDIR += omake
     SUBDIR += omniORB
     SUBDIR += omnilinter
