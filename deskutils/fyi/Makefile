@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
-USES=	meson
+USES=	meson pkgconfig
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
