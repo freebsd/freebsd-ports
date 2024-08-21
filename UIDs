@@ -291,7 +291,7 @@ openfire:*:342:342::0:0:Openfire IM Daemon:/nonexistent:/usr/sbin/nologin
 gunicorn:*:343:343::0:0:Gunicorn Daemon:/nonexistent:/usr/sbin/nologin
 snmpd:*:344:344::0:0:Net-SNMP Daemon:/nonexistent:/usr/sbin/nologin
 _metronome:*:345:345::0:0:Metronome Daemon:/nonexistent:/usr/sbin/nologin
-# free: 346
+ngircd:*:346:346::0:0:ngIRCd Daemon:/var/empty:/usr/sbin/nologin
 eturnal:*:347:347::0:0:eturnal User:/var/spool/eturnal:/bin/sh
 # free: 348
 # free: 349
