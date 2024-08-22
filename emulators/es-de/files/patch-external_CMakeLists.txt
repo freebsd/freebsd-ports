@@ -1,0 +1,23 @@
+--- external/CMakeLists.txt.orig	2024-06-14 15:36:56 UTC
++++ external/CMakeLists.txt
+@@ -61,13 +61,9 @@ endif()
+     set(CMAKE_CXX_FLAGS -pthread)
+ endif()
+ 
+-add_subdirectory(rlottie EXCLUDE_FROM_ALL)
+-
+ # rlottie generates a lot of annoying compiler warnings that we don't need to show.
+ if(CMAKE_CXX_COMPILER_ID MATCHES MSVC)
+     target_compile_options(rlottie PRIVATE "/wd4244" "/wd4251" "/wd4263" "/wd4334" "/wd4267" "/wd4530" "/wd4996")
+-else()
+-    target_compile_options(rlottie PRIVATE "-w")
+ endif()
+ 
+ if(ANDROID)
+@@ -79,6 +75,3 @@ endif()
+                               ${PROJECT_SOURCE_DIR}/android_${ANDROID_ABI})
+     endif()
+ endif()
+-
+-# Build LunaSVG before rlottie.
+-add_dependencies(rlottie lunasvg)

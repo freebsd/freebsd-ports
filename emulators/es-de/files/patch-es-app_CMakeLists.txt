@@ -1,0 +1,13 @@
+https://gitlab.com/es-de/emulationstation-de/-/issues/1817
+
+--- es-app/CMakeLists.txt.orig	2024-08-17 09:21:08 UTC
++++ es-app/CMakeLists.txt
+@@ -258,7 +258,7 @@ elseif(NOT ANDROID)
+ elseif(NOT ANDROID)
+     install(TARGETS es-de RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+     install(TARGETS es-pdf-convert RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+-    if(CMAKE_SYSTEM_NAME MATCHES Linux)
++    if(CMAKE_SYSTEM_NAME MATCHES Linux OR CMAKE_SYSTEM_NAME MATCHES FreeBSD)
+         install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/assets/es-de.6.gz
+             DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man6)
+     else()
