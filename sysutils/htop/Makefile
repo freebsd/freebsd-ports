@@ -1,7 +1,8 @@
 PORTNAME=	htop
 DISTVERSION=	3.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
+MASTER_SITES=	https://github.com/${PORTNAME}-dev/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Better top(1) - interactive process viewer
@@ -10,14 +11,9 @@ WWW=		https://htop.dev/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf compiler:c11 cpe libtool localbase \
-		ncurses pkgconfig python:build shebangfix
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	htop-dev
+USES=		desktop-file-utils ncurses tar:xz
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-unicode
 
 PLIST_FILES=	bin/htop \
