@@ -16,6 +16,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	uses x86-64 assembly
+DEPRECATED=	Project discontinued
 
 BUILD_DEPENDS=	nasm:devel/nasm
 
