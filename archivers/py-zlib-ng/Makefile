@@ -1,5 +1,5 @@
 PORTNAME=	zlib-ng
-DISTVERSION=	0.4.3
+DISTVERSION=	0.5.0
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,12 +13,13 @@ LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=51:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
-		cmake:devel/cmake-core
+		${PYTHON_PKGNAMEPREFIX}versioningit>=2.0.0:devel/py-versioningit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		python
+USES=		cmake:indirect python
 USE_PYTHON=	autoplist pep517
 
-INSTALL_TARGET=install-strip
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME:S/-/_/}/${PORTNAME:S/-/_/}.cpython-${PYTHON_VER:S/.//}.so
 
 .include <bsd.port.mk>
