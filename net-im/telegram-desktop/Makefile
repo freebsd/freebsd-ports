@@ -1,6 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	5.2.3
-PORTREVISION=	2
+DISTVERSION=	5.4.1
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -26,6 +25,7 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		yasm:devel/yasm \
 		${LOCALBASE}/lib/libtg_owt.a:net-im/tg_owt
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
+		libada.so:devel/libada \
 		libavformat.so:multimedia/ffmpeg \
 		libcrc32c.so:devel/crc32c \
 		libdbus-1.so:devel/dbus \
@@ -36,7 +36,7 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libopenh264.so:multimedia/openh264 \
 		libopus.so:audio/opus \
 		libpipewire-0.3.so:multimedia/pipewire \
-		libprotobuf.so:devel/protobuf \
+		libprotobuf-lite.so:devel/protobuf \
 		libqrcodegencpp.so:graphics/qr-code-generator \
 		librnnoise.so:audio/rnnoise \
 		libsrtp2.so:net/libsrtp2 \
