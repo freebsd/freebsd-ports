@@ -1,5 +1,6 @@
 PORTNAME=	zfs-replicate
 PORTVERSION=	1.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	tschetter.victor@gmail.com
@@ -22,7 +23,6 @@ PORTDATA=	config.sample.sh
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tschettervictor
-GH_TAGNAME=	e21589e
 
 PLIST_FILES=	sbin/zfs-replicate
 
