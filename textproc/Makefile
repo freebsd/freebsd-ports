@@ -1411,6 +1411,7 @@
     SUBDIR += py-jarowinkler
     SUBDIR += py-jc
     SUBDIR += py-jinja2-cli
+    SUBDIR += py-jiter
     SUBDIR += py-jq
     SUBDIR += py-json2html
     SUBDIR += py-jsonslicer
