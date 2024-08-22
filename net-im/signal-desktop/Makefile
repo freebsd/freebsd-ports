@@ -1,7 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.16.0
-PORTREVISION=	3
+DISTVERSION=	7.20.1
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		https://build-artifacts.signal.org/desktop/:sqlcipher
@@ -112,7 +111,7 @@ post-extract:
 	${PREFIX}/bin/jq 'del(.devDependencies."@signalapp/mock-server")' ${WRKSRC}/package.json > ${WRKSRC}/package.json.tmp
 	${MV} ${WRKSRC}/package.json.tmp ${WRKSRC}/package.json
 
-	# for online build
+#	# for online build
 #	cd ${WRKSRC} && \
 #		${SETENV} ${MAKE_ENV} npm install --ignore-optional --ignore-scripts || ${TRUE}
 
@@ -147,7 +146,7 @@ do-build:
 
 	@${RM} -r ${WRKSRC}/node_modules/fs-xattr
 
-	# online build
+#	# online build
 #	cd ${WRKSRC} && \
 #		${SETENV} ${MAKE_ENV} npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers npm install --ignore-optional
 #	cd ${WRKSRC} && \

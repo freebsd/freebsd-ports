@@ -1,11 +1,10 @@
---- package.json.orig	2024-07-08 15:06:16.491473000 +0200
-+++ package.json	2024-07-08 15:06:50.596796000 +0200
-@@ -19,7 +19,7 @@
-     "postinstall": "npm run build:acknowledgments && patch-package && npm run electron:install-app-deps",
-     "postuninstall": "npm run build:acknowledgments",
-     "start": "electron .",
--    "generate": "npm-run-all build-protobuf build:esbuild build:dns-fallback build:icu-types build:compact-locales sass get-expire-time copy-components",
-+    "generate": "npm-run-all build-protobuf build:esbuild build:icu-types build:compact-locales sass get-expire-time copy-components",
-     "build-release": "npm run build",
-     "sign-release": "node ts/updater/generateSignature.js",
-     "notarize": "echo 'No longer necessary'",
+--- package.json.orig	2024-07-08 15:06:16 UTC
++++ package.json
+@@ -76,7 +76,6 @@
+     "build": "run-s --print-label generate build:esbuild:prod build:release",
+     "build-linux": "run-s generate build:esbuild:prod && npm run build:release -- --publish=never",
+     "build:acknowledgments": "node scripts/generate-acknowledgments.js",
+-    "build:dns-fallback": "node ts/scripts/generate-dns-fallback.js",
+     "build:icu-types": "node ts/scripts/generate-icu-types.js",
+     "build:compact-locales": "node ts/scripts/generate-compact-locales.js",
+     "build:dev": "run-s --print-label generate build:esbuild:prod",
