@@ -1,3 +1,33 @@
+  <vuln vid="addc71b8-6024-11ef-86a1-8c164567ca3c">
+    <topic>nginx -- Vulnerability in the ngx_http_mp4_module</topic>
+    <affects>
+      <package>
+	<name>nginx-devel</name>
+	<range><ge>1.5.13</ge><lt>1.27.1</lt></range>
+      </package>
+      <package>
+	<name>nginx</name>
+	<range><ge>1.6.0</ge><lt>1.26.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The nginx development team reports:</p>
+	<blockquote cite="http://nginx.org/en/security_advisories.html">
+	  <p>This update fixes the buffer overread vulnerability in the
+	ngx_http_mp4_module.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-7347</cvename>
+    </references>
+    <dates>
+      <discovery>2024-08-14</discovery>
+      <entry>2024-08-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="04c9c3f8-5ed3-11ef-8262-b0416f0c4c67">
     <topic>Jinja2 -- Vulnerable to HTML attribute injection when passing user input as keys to xmlattr filter</topic>
     <affects>
