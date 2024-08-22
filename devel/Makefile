@@ -5549,6 +5549,7 @@
     SUBDIR += py-pytest-cov
     SUBDIR += py-pytest-cpp
     SUBDIR += py-pytest-datadir
+    SUBDIR += py-pytest-dependency
     SUBDIR += py-pytest-django
     SUBDIR += py-pytest-doctestplus
     SUBDIR += py-pytest-drop-dup-tests
