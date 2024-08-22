@@ -1,6 +1,7 @@
 PORTNAME=	check_mk_agent
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.0p12
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://raw.githubusercontent.com/Checkmk/checkmk/${DISTVERSIONFULL}/agents/:agent \
 		https://raw.githubusercontent.com/Checkmk/checkmk/${DISTVERSIONFULL}/doc/agents/:doc \
@@ -54,7 +55,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|%%CHECKMK_LIBDIR%%|${_CHECKMK_LIBDIR}|' \
 		-e 's|%%CHECKMK_CONFDIR%%|${_CHECKMK_CONFDIR}|' \
-		-e 's|%%PREFIX%%|${PREFIX}|g' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/${_CHECKMK_AGENT}
 
 do-install:
