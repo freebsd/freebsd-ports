@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libssh2.so:security/libssh2
 
-USES=		cargo pkgconfig ssl
+USES=		cargo localbase pkgconfig ssl
 USE_GITHUB=	yes
 CARGO_INSTALL_PATH=	${PORTNAME}
 PLIST_FILES=	bin/pipelight
