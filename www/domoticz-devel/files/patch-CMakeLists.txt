@@ -1,0 +1,58 @@
+--- CMakeLists.txt.orig	2023-08-08 16:14:54.744411000 +0200
++++ CMakeLists.txt	2023-08-08 16:16:31.615968000 +0200
+@@ -488,19 +488,11 @@
+   ENDIF(HAVE_LINUX_SPI_H)
+ ENDIF(INCLUDE_SPI)
+ 
+-FIND_PROGRAM(GIT_EXECUTABLE git
++FIND_PROGRAM(GIT_EXECUTABLE NOgitNO
+   DOC "git command line client")
+ 
+ include_directories(${CMAKE_SOURCE_DIR}/main)
+ 
+-# a custom target that is always built
+-ADD_CUSTOM_TARGET(revisiontag ALL)
+-
+-# creates appversion.h using cmake script
+-ADD_CUSTOM_COMMAND(TARGET revisiontag COMMAND ${CMAKE_COMMAND}
+-   -DSOURCE_DIR=${CMAKE_CURRENT_SOURCE_DIR}
+-   -P ${CMAKE_CURRENT_SOURCE_DIR}/getgit.cmake)
+-
+ MESSAGE(STATUS "###########################")
+ MESSAGE(STATUS "Compiling Revision #${ProjectRevision}")
+ MESSAGE(STATUS "###########################")
+@@ -510,10 +502,6 @@
+ set (domoticz_VERSION_MINOR 1)
+ set (domoticz_VERSION_PATCH ${ProjectRevision})
+ 
+-# explicitly say that the executable depends on the revisiontag
+-add_dependencies(domoticz revisiontag)
+-add_dependencies(domoticztester revisiontag)
+-
+ TEST_BIG_ENDIAN(BIGENDIAN)
+ IF(${BIGENDIAN})
+      ADD_DEFINITIONS(-DIS_BIG_ENDIAN)
+@@ -796,7 +784,7 @@
+ SET(CPACK_SOURCE_PACKAGE_FILE_NAME "${domoticz}-dev")
+ SET(CPACK_PACKAGING_INSTALL_PREFIX "/")
+ SET(CPACK_PACKAGE_DEFAULT_LOCATION "/opt/${CPACK_PACKAGE_NAME}")
+-SET(CPACK_PACKAGE_EXECUTABLES "domoticz;Home Automation System (Domotica).")
++SET(CPACK_PACKAGE_EXECUTABLES "domoticz;Home Automation System (Domoticz).")
+ 
+ #set(CPACK_DEB_COMPONENT_INSTALL TRUE)
+ SET(CPACK_DEBIAN_ARCHITECTURE ${CMAKE_SYSTEM_PROCESSOR})
+@@ -807,6 +795,9 @@
+   set(CMAKE_INSTALL_PREFIX "/opt/${CPACK_PACKAGE_NAME}" CACHE PATH "Install path prefix, prepended onto install directories." FORCE)
+ ENDIF(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+ 
++# FreeBSD
++set(CMAKE_INSTALL_PREFIX "XXXPREFIXXXX")
++
+ install(TARGETS domoticz DESTINATION ${CMAKE_INSTALL_PREFIX})
+ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/www DESTINATION ${CMAKE_INSTALL_PREFIX})
+ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/License.txt DESTINATION ${CMAKE_INSTALL_PREFIX})
+@@ -815,4 +806,3 @@
+ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/scripts DESTINATION ${CMAKE_INSTALL_PREFIX} USE_SOURCE_PERMISSIONS)
+ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/plugins DESTINATION ${CMAKE_INSTALL_PREFIX})
+ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/dzVents DESTINATION ${CMAKE_INSTALL_PREFIX})
+-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/updatedomo DESTINATION ${CMAKE_INSTALL_PREFIX} PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ GROUP_EXECUTE GROUP_READ)
