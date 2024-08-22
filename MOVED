@@ -3438,3 +3438,4 @@ www/py-httpx-cache|devel/py-hishel|2024-08-15|Remove obsoleted port. Use devel/p
 devel/p5-Test2-Suite|devel/p5-Test-Simple|2024-08-15|Remove obsoleted port. Use devel/p5-Test-Simple instead
 sysutils/beadm-devel|sysutils/beadm|2024-08-17|Has expired: Outdated development port. Use sysutils/beadm instead
 net-im/telepathy-salut||2024-08-22|Has expired: Fails to build with libxml2 2.13.2 (PR 279963)
+audio/icecast-kh||2024-08-22|Has expired: Fails to build with libxml2 2.13.2 (PR 280159)

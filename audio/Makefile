@@ -280,7 +280,6 @@
     SUBDIR += hts_engine-API
     SUBDIR += hydrogen
     SUBDIR += icecast
-    SUBDIR += icecast-kh
     SUBDIR += icegenerator
     SUBDIR += ices
     SUBDIR += id3el
