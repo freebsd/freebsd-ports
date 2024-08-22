@@ -11,13 +11,13 @@ LICENSE_FILE=	${WRKSRC}/docs/license.rst
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	needs a GPU supported by the AMDGPU KMS driver
 
-BUILD_DEPENDS=	libclc>=0.3.0:devel/libclc \
+BUILD_DEPENDS=	libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T} \
 		spirv-tools>=0:graphics/spirv-tools \
 		opencl>=0:devel/opencl
 LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd \
 		libLLVMSPIRVLib.so.${LLVM_VERSION}:devel/spirv-llvm-translator@${LLVM_PORT:T} \
 		libzstd.so:archivers/zstd
-RUN_DEPENDS=	libclc>=0.3.0:devel/libclc \
+RUN_DEPENDS=	libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T} \
 		opencl>=0:devel/opencl
 
 USES=		llvm:lib,max=16,noexport
