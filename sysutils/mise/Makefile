@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.8.11
+DISTVERSION=	2024.8.12
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,6 +21,7 @@ GH_ACCOUNT=	jdx
 
 CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
+		adler2-2.0.0 \
 		aes-0.8.4 \
 		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
@@ -132,7 +133,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		fiat-crypto-0.2.9 \
 		filetime-0.2.24 \
 		fixedbitset-0.4.2 \
-		flate2-1.0.31 \
+		flate2-1.0.32 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
@@ -156,7 +157,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		glob-0.3.1 \
 		globset-0.4.14 \
 		globwalk-0.9.1 \
-		h2-0.4.5 \
+		h2-0.4.6 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
 		heck-0.3.3 \
@@ -198,7 +199,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		js-sys-0.3.70 \
 		kdl-4.6.0 \
 		lazy_static-1.5.0 \
-		libc-0.2.157 \
+		libc-0.2.158 \
 		libgit2-sys-0.17.0+1.8.1 \
 		libm-0.2.8 \
 		libredox-0.1.3 \
@@ -223,6 +224,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.4 \
+		miniz_oxide-0.8.0 \
 		mio-1.0.2 \
 		mlua-0.9.9 \
 		mlua-sys-0.6.2 \
@@ -305,7 +307,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.8.4 \
-		reqwest-0.12.5 \
+		reqwest-0.12.7 \
 		ring-0.17.8 \
 		rmp-0.8.14 \
 		rmp-serde-1.3.0 \
@@ -315,7 +317,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc_version-0.4.0 \
 		rustix-0.38.34 \
 		rustls-0.23.12 \
-		rustls-native-certs-0.7.1 \
+		rustls-native-certs-0.7.2 \
 		rustls-pemfile-2.1.3 \
 		rustls-pki-types-1.8.0 \
 		rustls-webpki-0.102.6 \
@@ -371,8 +373,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		syn-2.0.75 \
 		sync_wrapper-1.0.1 \
 		sys-info-0.9.1 \
-		system-configuration-0.5.1 \
-		system-configuration-sys-0.5.0 \
+		system-configuration-0.6.0 \
+		system-configuration-sys-0.6.0 \
 		tabled-0.16.0 \
 		tabled_derive-0.8.0 \
 		tar-0.4.41 \
@@ -462,7 +464,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows-core-0.57.0 \
 		windows-implement-0.57.0 \
 		windows-interface-0.57.0 \
+		windows-registry-0.2.0 \
 		windows-result-0.1.2 \
+		windows-result-0.2.0 \
+		windows-strings-0.1.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
@@ -484,7 +489,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.6.18 \
-		winreg-0.52.0 \
 		winsafe-0.0.19 \
 		xattr-1.3.1 \
 		xx-1.1.8 \
@@ -494,7 +498,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		zerocopy-derive-0.7.35 \
 		zeroize-1.8.1 \
 		zeroize_derive-1.4.2 \
-		zip-2.1.6 \
+		zip-2.2.0 \
 		zipsign-api-0.1.2 \
 		zopfli-0.8.1 \
 		zstd-0.13.2 \
