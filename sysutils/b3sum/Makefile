@@ -1,6 +1,5 @@
 PORTNAME=	b3sum
-DISTVERSION=	1.5.1
-PORTREVISION=	2
+DISTVERSION=	1.5.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	sec.research.2005@gmail.com
@@ -8,7 +7,7 @@ COMMENT=	Command line implementation of the BLAKE3 hash function
 WWW=		https://github.com/blake3-team/blake3
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/../LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE_A2
 
 USES=		cargo
 USE_GITHUB=	yes
