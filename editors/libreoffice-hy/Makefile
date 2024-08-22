@@ -1,5 +1,4 @@
-LO_I18N=	dsb
-LO_HAS_HELPPACK=	yes
+LO_I18N=	hy
 
 .include "${.CURDIR}/../../editors/libreoffice/Makefile.i18n"
 

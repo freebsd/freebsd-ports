@@ -129,6 +129,7 @@
     SUBDIR += libreoffice-hi
     SUBDIR += libreoffice-hr
     SUBDIR += libreoffice-hsb
+    SUBDIR += libreoffice-hy
     SUBDIR += libreoffice-i18n
     SUBDIR += libreoffice-id
     SUBDIR += libreoffice-is
