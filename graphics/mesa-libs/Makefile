@@ -66,6 +66,10 @@ MESA_PLATFORMS+=	wayland
 
 MESON_ARGS+=	-Dplatforms="${MESA_PLATFORMS:ts,:tl}"
 
+.if ${ARCH} != amd64
+MESON_ARGS+=	-Dintel-rt=disabled # https://gitlab.freedesktop.org/mesa/mesa/-/issues/10629
+.endif
+
 .if ${ARCH} == "i386"
 # PR230239 Fix the build for i386 when WITH_LLD_IS_LD is set
 LDFLAGS+=-Wl,-z,notext
