@@ -1,7 +1,6 @@
 PORTNAME=	trilinos
 DISTVERSIONPREFIX=	trilinos-release-
-DISTVERSION=	15-1-1
-PORTREVISION=	1
+DISTVERSION=	16-0-0
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +24,7 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libumfpack.so:math/suitesparse-umfpack
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cmake compiler:c++14-lang fortran perl5 python shebangfix
+USES=		cmake compiler:c++17-lang fortran perl5 python shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -54,6 +53,12 @@ CMAKE_ARGS+=	-DTrilinos_ENABLE_ALL_OPTIONAL_PACKAGES:BOOL=ON
 CMAKE_ARGS+=	-DTrilinos_ENABLE_SEACAS:BOOL=OFF # because of pumagon, etc failure (need to retest)
 CMAKE_ARGS+=	-DTrilinos_ENABLE_PyTrilinos:BOOL=OFF # workaround for https://github.com/trilinos/Trilinos/issues/12184
 
+# for Xyce, see https://github.com/Xyce/Xyce/issues/103#issuecomment-2257272140
+CMAKE_ON+=	Trilinos_ENABLE_Ifpack \
+		Trilinos_ENABLE_AztecOO \
+		Trilinos_ENABLE_Amesos \
+		Trilinos_ENABLE_EpetraExt
+
 # parallelism-related
 CMAKE_ARGS+=	-DTrilinos_ENABLE_OpenMP:BOOL=OFF
 #CMAKE_ARGS+=	-DKokkos_ENABLE_Pthread:BOOL=ON
@@ -69,6 +74,7 @@ CMAKE_ON+=	EpetraExt_BUILD_EXPERIMENTAL
 CMAKE_ON+=	EpetraExt_BUILD_GRAPH_REORDERINGS
 #CMAKE_ON+=	Teuchos_ENABLE_COMPLEX # this feature is broken in Trilinos
 CMAKE_ON+=	Trilinos_ENABLE_COMPLEX_DOUBLE
+
 # Enabling the UMFPACK feature required by the above features.
 CMAKE_ON+=	TPL_ENABLE_UMFPACK
 CMAKE_ON+=	TPL_ENABLE_AMD
