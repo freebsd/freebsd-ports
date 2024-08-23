@@ -1,5 +1,5 @@
 PORTNAME=	nushell
-DISTVERSION=	0.96.1
+DISTVERSION=	0.97.1
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -48,6 +48,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		async-trait-0.1.80 \
 		atoi-2.0.0 \
 		atoi_simd-0.15.6 \
+		atomic-waker-1.1.2 \
 		autocfg-1.2.0 \
 		avro-schema-0.3.0 \
 		backtrace-0.3.71 \
@@ -210,7 +211,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		glob-0.3.1 \
 		glob-match-0.2.1 \
 		goblin-0.7.1 \
-		h2-0.3.26 \
+		h2-0.4.5 \
 		halfbrown-0.2.5 \
 		hash32-0.3.1 \
 		hashbrown-0.12.3 \
@@ -222,20 +223,21 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hermit-abi-0.3.9 \
 		hex-0.4.3 \
 		home-0.5.9 \
-		html5ever-0.26.0 \
 		html5ever-0.27.0 \
-		http-0.2.12 \
-		http-body-0.4.6 \
+		http-1.1.0 \
+		http-body-1.0.1 \
+		http-body-util-0.1.2 \
 		httparse-1.8.0 \
 		httpdate-1.0.3 \
 		human-date-parser-0.1.2 \
 		humantime-2.1.0 \
-		hyper-0.14.28 \
+		hyper-1.4.1 \
+		hyper-util-0.1.7 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
 		ical-0.11.0 \
 		idna-0.5.0 \
-		indexmap-2.2.6 \
+		indexmap-2.4.0 \
 		indicatif-0.17.8 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
@@ -292,7 +294,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		mac-0.1.1 \
 		mach2-0.4.2 \
 		malloc_buf-0.0.6 \
-		markup5ever-0.11.0 \
 		markup5ever-0.12.1 \
 		markup5ever_rcdom-0.3.0 \
 		md-5-0.10.6 \
@@ -306,7 +307,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.2 \
 		mio-0.8.11 \
-		mockito-1.4.0 \
+		mockito-1.5.0 \
+		multipart-rs-0.1.11 \
 		multiversion-0.7.4 \
 		multiversion-macros-0.7.4 \
 		native-tls-0.2.11 \
@@ -380,6 +382,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		plain-0.2.3 \
 		planus-0.3.1 \
 		platform-info-2.0.3 \
+		plist-1.7.0 \
 		polars-0.41.2 \
 		polars-arrow-0.41.2 \
 		polars-arrow-format-0.1.0 \
@@ -423,6 +426,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		quick-error-1.2.3 \
 		quick-error-2.0.1 \
 		quick-xml-0.31.0 \
+		quick-xml-0.32.0 \
 		quickcheck-1.0.3 \
 		quickcheck_macros-1.0.0 \
 		quote-1.0.36 \
@@ -442,7 +446,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		redox_syscall-0.4.1 \
 		redox_syscall-0.5.1 \
 		redox_users-0.4.5 \
-		reedline-0.33.0 \
+		reedline-0.34.0 \
 		ref-cast-1.0.22 \
 		ref-cast-impl-1.0.22 \
 		regex-1.10.4 \
@@ -477,7 +481,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		schannel-0.1.23 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
-		scraper-0.19.0 \
+		scraper-0.20.0 \
 		scroll-0.11.0 \
 		scroll_derive-0.11.1 \
 		sdd-0.2.0 \
@@ -498,7 +502,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serial_test_derive-3.1.1 \
 		servo_arc-0.3.0 \
 		sha2-0.10.8 \
-		shadow-rs-0.29.0 \
+		shadow-rs-0.31.1 \
 		shell-words-1.1.0 \
 		shlex-1.3.0 \
 		signal-hook-0.3.17 \
@@ -506,7 +510,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		signal-hook-registry-1.4.2 \
 		simd-json-0.13.10 \
 		simdutf8-0.1.4 \
-		similar-2.5.0 \
+		similar-2.6.0 \
 		simplelog-0.12.2 \
 		siphasher-0.3.11 \
 		slab-0.4.9 \
@@ -540,7 +544,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		syn-2.0.60 \
 		syn_derive-0.1.8 \
 		sys-locale-0.3.1 \
-		sysinfo-0.30.11 \
+		sysinfo-0.30.13 \
 		tabled-0.14.0 \
 		tango-bench-0.5.0 \
 		tap-1.0.1 \
@@ -569,13 +573,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		toml_edit-0.19.15 \
 		toml_edit-0.21.1 \
 		toml_edit-0.22.12 \
-		tower-service-0.3.2 \
 		tracing-0.1.40 \
 		tracing-core-0.1.32 \
 		trash-3.3.1 \
 		tree_magic_mini-3.1.4 \
 		trim-in-place-0.1.7 \
-		try-lock-0.2.5 \
 		typed-arena-1.7.0 \
 		typenum-1.17.0 \
 		typetag-0.2.16 \
@@ -617,7 +619,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		vte_generate_state_changes-0.1.1 \
 		wait-timeout-0.2.0 \
 		walkdir-2.5.0 \
-		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.92 \
 		wasm-bindgen-backend-0.2.92 \
