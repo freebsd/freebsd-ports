@@ -17,7 +17,7 @@
 +
 +  if (elf_aux_info(AT_HWCAP, &capabilities, sizeof(unsigned long)))
 +    return false;
-+  return capabilities & HWCAP_CRC32;
++  return capabilities & HWCAP_PMULL;
 +}
 +#else
  bool can_use_crc32() { return getauxval(AT_HWCAP) & HWCAP_CRC32; }
