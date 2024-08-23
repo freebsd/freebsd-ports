@@ -1,3 +1,30 @@
+  <vuln vid="6e8b9c75-6179-11ef-8a7d-b42e991fc52e">
+    <topic>mcpp -- Heap-based buffer overflow</topic>
+    <affects>
+      <package>
+	<name>mcpp</name>
+	<range><lt>2.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="http://lists.opensuse.org/opensuse-security-announce/2020-03/msg00032.html">
+	  <p>MCPP 2.7.2 has a heap-based buffer overflow in the do_msg() function
+	in support.c.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2019-14274</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2019-14274</url>
+    </references>
+    <dates>
+      <discovery>2019-07-26</discovery>
+      <entry>2024-08-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f2b1da2e-6178-11ef-8a7d-b42e991fc52e">
     <topic>md4c -- DoS attack</topic>
     <affects>
