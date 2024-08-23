@@ -1,6 +1,6 @@
 PORTNAME=	monero-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.3.2
+DISTVERSION=	0.18.3.4
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	alexander@perechnev.com
