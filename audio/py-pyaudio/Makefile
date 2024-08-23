@@ -1,5 +1,5 @@
 PORTNAME=	pyaudio
-PORTVERSION=	0.2.13
+DISTVERSION=	0.2.14
 CATEGORIES=	audio python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,6 +34,9 @@ post-patch:
 post-build-DOCS-on:
 	(cd ${BUILD_WRKSRC} && \
 		${DO_MAKE_BUILD} docs)
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/_portaudio.cpython-${PYTHON_VER:S/.//}.so
 
 post-install-DOCS-on:
 	(cd ${WRKSRC}/docs && \
