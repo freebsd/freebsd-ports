@@ -36,6 +36,7 @@ bin/openmsx
 %%DATADIR%%/extensions/FAC_MIDI_Interface.xml
 %%DATADIR%%/extensions/Gouda_SCSI.xml
 %%DATADIR%%/extensions/Gradiente_CT-80E.xml
+%%DATADIR%%/extensions/Hitachi_MPC-310H.xml
 %%DATADIR%%/extensions/JVC_MSX_MIDI.xml
 %%DATADIR%%/extensions/Konami_EC-701.xml
 %%DATADIR%%/extensions/Konami_EC-702.xml
@@ -82,6 +83,7 @@ bin/openmsx
 %%DATADIR%%/extensions/Sony_HBI-J1.xml
 %%DATADIR%%/extensions/Sony_HBK-30.xml
 %%DATADIR%%/extensions/Spectravideo_SVI-707.xml
+%%DATADIR%%/extensions/SunriseIDE_Nextor.xml
 %%DATADIR%%/extensions/Talent_DPF-550.xml
 %%DATADIR%%/extensions/Talent_TDC-600.xml
 %%DATADIR%%/extensions/Tecall_MSX_RAMFILE_TM220.xml
@@ -91,6 +93,7 @@ bin/openmsx
 %%DATADIR%%/extensions/Yamaha_FD-05.xml
 %%DATADIR%%/extensions/Yamaha_SFG-01.xml
 %%DATADIR%%/extensions/Yamaha_SFG-05.xml
+%%DATADIR%%/extensions/Yamaha_SKW-01.xml
 %%DATADIR%%/extensions/advram.xml
 %%DATADIR%%/extensions/audio.xml
 %%DATADIR%%/extensions/audio2.xml
@@ -213,6 +216,7 @@ bin/openmsx
 %%DATADIR%%/machines/National_FS-5000F2.xml
 %%DATADIR%%/machines/National_FS-5500F1.xml
 %%DATADIR%%/machines/National_FS-5500F2.xml
+%%DATADIR%%/machines/Nikko_PC-70100.xml
 %%DATADIR%%/machines/Olympia_PHC-2.xml
 %%DATADIR%%/machines/Panasonic_CF-2700_DE.xml
 %%DATADIR%%/machines/Panasonic_CF-2700_GB.xml
@@ -249,6 +253,7 @@ bin/openmsx
 %%DATADIR%%/machines/README
 %%DATADIR%%/machines/Sanyo_MPC-10.xml
 %%DATADIR%%/machines/Sanyo_MPC-100.xml
+%%DATADIR%%/machines/Sanyo_MPC-10mkII.xml
 %%DATADIR%%/machines/Sanyo_MPC-2.xml
 %%DATADIR%%/machines/Sanyo_MPC-25FD.xml
 %%DATADIR%%/machines/Sanyo_MPC-25FS.xml
@@ -274,11 +279,14 @@ bin/openmsx
 %%DATADIR%%/machines/Sony_HB-101.xml
 %%DATADIR%%/machines/Sony_HB-101P.xml
 %%DATADIR%%/machines/Sony_HB-10P.xml
+%%DATADIR%%/machines/Sony_HB-11.xml
 %%DATADIR%%/machines/Sony_HB-201.xml
 %%DATADIR%%/machines/Sony_HB-201P.xml
 %%DATADIR%%/machines/Sony_HB-20P.xml
 %%DATADIR%%/machines/Sony_HB-501P.xml
 %%DATADIR%%/machines/Sony_HB-55P.xml
+%%DATADIR%%/machines/Sony_HB-701.xml
+%%DATADIR%%/machines/Sony_HB-701FD.xml
 %%DATADIR%%/machines/Sony_HB-75.xml
 %%DATADIR%%/machines/Sony_HB-75D.xml
 %%DATADIR%%/machines/Sony_HB-75P.xml
@@ -310,6 +318,7 @@ bin/openmsx
 %%DATADIR%%/machines/Spectravideo_SVI-728_ES.xml
 %%DATADIR%%/machines/Spectravideo_SVI-728_SE.xml
 %%DATADIR%%/machines/Spectravideo_SVI-738.xml
+%%DATADIR%%/machines/Spectravideo_SVI-738_PL.xml
 %%DATADIR%%/machines/Spectravideo_SVI-738_SE.xml
 %%DATADIR%%/machines/Talent_DPC-200.xml
 %%DATADIR%%/machines/Talent_TPC-310.xml
@@ -328,6 +337,7 @@ bin/openmsx
 %%DATADIR%%/machines/Toshiba_HX-51I.xml
 %%DATADIR%%/machines/Victor_HC-7.xml
 %%DATADIR%%/machines/Victor_HC-80.xml
+%%DATADIR%%/machines/Victor_HC-90A.xml
 %%DATADIR%%/machines/Victor_HC-95A.xml
 %%DATADIR%%/machines/WIP_Mitsubishi_ML-TS2.xml
 %%DATADIR%%/machines/Yamaha_AX150.xml
@@ -687,6 +697,7 @@ bin/openmsx
 %%DATADIR%%/unicodemaps/character_set_mappings/MSXVIDBR.TXT
 %%DATADIR%%/unicodemaps/character_set_mappings/MSXVIDJP.TXT
 %%DATADIR%%/unicodemaps/character_set_mappings/MSXVIDKR.TXT
+%%DATADIR%%/unicodemaps/character_set_mappings/MSXVIDPL.TXT
 %%DATADIR%%/unicodemaps/character_set_mappings/MSXVIDRU.TXT
 %%DATADIR%%/unicodemaps/character_set_mappings/ReadMe.txt
 %%DATADIR%%/unicodemaps/character_set_mappings/SVI328.TXT
@@ -707,6 +718,7 @@ bin/openmsx
 %%DATADIR%%/unicodemaps/unicodemap.jp_ansi
 %%DATADIR%%/unicodemaps/unicodemap.jp_jis
 %%DATADIR%%/unicodemaps/unicodemap.kr
+%%DATADIR%%/unicodemaps/unicodemap.pl
 %%DATADIR%%/unicodemaps/unicodemap.proto_fr
 %%DATADIR%%/unicodemaps/unicodemap.proto_int
 %%DATADIR%%/unicodemaps/unicodemap.ru
