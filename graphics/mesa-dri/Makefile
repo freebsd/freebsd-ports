@@ -114,6 +114,10 @@ MESON_ARGS+=	-Dandroid-libbacktrace=disabled \
 		-Dosmesa=false \
 		-Dvalgrind=disabled
 
+.if ${ARCH} != amd64
+MESON_ARGS+=	-Dintel-rt=disabled # https://gitlab.freedesktop.org/mesa/mesa/-/issues/10629
+.endif
+
 .for _gd in ${OPTIONS_GROUP_GALLIUM}
 . if defined(GALLIUM_DRIVERS) && ${GALLIUM_DRIVERS:M${_gd}}
 PLIST_SUB+=	${_gd}=""
