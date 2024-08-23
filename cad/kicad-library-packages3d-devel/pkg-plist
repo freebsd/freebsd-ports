@@ -7920,6 +7920,8 @@
 %%DATADIR%%/3dmodels/Connector_USB.3dshapes/USB_A_TE_292303-7_Horizontal.wrl
 %%DATADIR%%/3dmodels/Connector_USB.3dshapes/USB_C_Plug_ShenzhenJingTuoJin_918-118A2021Y40002_Vertical.step
 %%DATADIR%%/3dmodels/Connector_USB.3dshapes/USB_C_Plug_ShenzhenJingTuoJin_918-118A2021Y40002_Vertical.wrl
+%%DATADIR%%/3dmodels/Connector_USB.3dshapes/USB_C_Receptacle_Amphenol_12401610E4-2A.step
+%%DATADIR%%/3dmodels/Connector_USB.3dshapes/USB_C_Receptacle_Amphenol_12401610E4-2A.wrl
 %%DATADIR%%/3dmodels/Connector_USB.3dshapes/USB_C_Receptacle_GCT_USB4085.step
 %%DATADIR%%/3dmodels/Connector_USB.3dshapes/USB_C_Receptacle_GCT_USB4085.wrl
 %%DATADIR%%/3dmodels/Connector_USB.3dshapes/USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal.step
@@ -10668,6 +10670,8 @@
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-24-1EP_3x4mm_P0.4mm_EP1.65x2.65mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-24-1EP_4x4mm_P0.5mm_EP2.6x2.6mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-24-1EP_4x4mm_P0.5mm_EP2.6x2.6mm.wrl
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm.step
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-24-1EP_4x5mm_P0.5mm_EP2.65x3.65mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-24-1EP_4x5mm_P0.5mm_EP2.65x3.65mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-24-1EP_5x5mm_P0.65mm_EP3.2x3.2mm.step
@@ -11548,6 +11552,8 @@
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/PowerIntegrations_SO-8C.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/PowerIntegrations_eSOP-12B.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/PowerIntegrations_eSOP-12B.wrl
+%%DATADIR%%/3dmodels/Package_SO.3dshapes/PowerSSO-16-1EP_3.9x4.9mm_P0.5mm_EP2.5x3.61mm.step
+%%DATADIR%%/3dmodels/Package_SO.3dshapes/PowerSSO-16-1EP_3.9x4.9mm_P0.5mm_EP2.5x3.61mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/QSOP-16_3.9x4.9mm_P0.635mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/QSOP-16_3.9x4.9mm_P0.635mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/QSOP-20_3.9x8.7mm_P0.635mm.step
@@ -11632,6 +11638,8 @@
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SOP-4_3.8x4.1mm_P2.54mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SOP-4_4.4x2.6mm_P1.27mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SOP-4_4.4x2.6mm_P1.27mm.wrl
+%%DATADIR%%/3dmodels/Package_SO.3dshapes/SOP-8_5.28x5.23mm_P1.27mm.step
+%%DATADIR%%/3dmodels/Package_SO.3dshapes/SOP-8_5.28x5.23mm_P1.27mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SOP-8_6.605x9.655mm_P2.54mm.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SOP-8_6.605x9.655mm_P2.54mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SSO-4_6.7x5.1mm_P2.54mm_Clearance8mm.step
@@ -11696,8 +11704,6 @@
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/SSOP-8_5.25x5.24mm_P1.27mm.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/ST_MultiPowerSO-30.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/ST_MultiPowerSO-30.wrl
-%%DATADIR%%/3dmodels/Package_SO.3dshapes/ST_PowerSSO-16_SlugDown.step
-%%DATADIR%%/3dmodels/Package_SO.3dshapes/ST_PowerSSO-16_SlugDown.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/ST_PowerSSO-24_SlugDown.step
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/ST_PowerSSO-24_SlugDown.wrl
 %%DATADIR%%/3dmodels/Package_SO.3dshapes/ST_PowerSSO-24_SlugUp.step
@@ -12434,6 +12440,8 @@
 %%DATADIR%%/3dmodels/Relay_THT.3dshapes/Relay_DPDT_Finder_40.52.wrl
 %%DATADIR%%/3dmodels/Relay_THT.3dshapes/Relay_DPDT_Fujitsu_FTR-F1C.step
 %%DATADIR%%/3dmodels/Relay_THT.3dshapes/Relay_DPDT_Fujitsu_FTR-F1C.wrl
+%%DATADIR%%/3dmodels/Relay_THT.3dshapes/Relay_DPDT_Hongfa_HF115F-2Z-x4.step
+%%DATADIR%%/3dmodels/Relay_THT.3dshapes/Relay_DPDT_Hongfa_HF115F-2Z-x4.wrl
 %%DATADIR%%/3dmodels/Relay_THT.3dshapes/Relay_DPDT_Kemet_UA2-NE_NU_NJ.step
 %%DATADIR%%/3dmodels/Relay_THT.3dshapes/Relay_DPDT_Kemet_UA2-NE_NU_NJ.wrl
 %%DATADIR%%/3dmodels/Relay_THT.3dshapes/Relay_DPDT_Omron_G2RL.step
@@ -12832,6 +12840,8 @@
 %%DATADIR%%/3dmodels/Sensor_Audio.3dshapes/ST_HLGA-6_3.76x4.72mm_P1.65mm.wrl
 %%DATADIR%%/3dmodels/Sensor_Current.3dshapes/LEM_HO8-NP.step
 %%DATADIR%%/3dmodels/Sensor_Current.3dshapes/LEM_HO8-NP.wrl
+%%DATADIR%%/3dmodels/Sensor_Current.3dshapes/LEM_LA25-NP.step
+%%DATADIR%%/3dmodels/Sensor_Current.3dshapes/LEM_LA25-NP.wrl
 %%DATADIR%%/3dmodels/Sensor_Current.3dshapes/LEM_LA25-P.step
 %%DATADIR%%/3dmodels/Sensor_Current.3dshapes/LEM_LA25-P.wrl
 %%DATADIR%%/3dmodels/Sensor_Current.3dshapes/LEM_LTSR-NP.step
@@ -12843,6 +12853,7 @@
 %%DATADIR%%/3dmodels/Sensor_Voltage.3dshapes/LEM_LV25-P.step
 %%DATADIR%%/3dmodels/Sensor_Voltage.3dshapes/LEM_LV25-P.wrl
 %%DATADIR%%/3dmodels/Symbol.3dshapes/EasterEgg_EWG1308-2013_ClassA.step
+%%DATADIR%%/3dmodels/Symbol.3dshapes/Smolhaj_Scale_0.1.step
 %%DATADIR%%/3dmodels/TerminalBlock_Altech.3dshapes/Altech_AK300_1x02_P5.00mm_45-Degree.step
 %%DATADIR%%/3dmodels/TerminalBlock_Altech.3dshapes/Altech_AK300_1x02_P5.00mm_45-Degree.wrl
 %%DATADIR%%/3dmodels/TerminalBlock_Altech.3dshapes/Altech_AK300_1x03_P5.00mm_45-Degree.step
