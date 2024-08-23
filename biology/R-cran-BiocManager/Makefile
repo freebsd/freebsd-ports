@@ -11,4 +11,6 @@ LICENSE=	ART20
 
 USES=		cran:auto-plist,compiles
 
+PORTSCOUT=	skipv:1.30.24
+
 .include <bsd.port.mk>
