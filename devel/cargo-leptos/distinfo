@@ -1,4 +1,4 @@
-TIMESTAMP = 1724213810
+TIMESTAMP = 1724386777
 SHA256 (rust/crates/Inflector-0.11.4.crate) = fe438c63458706e03479442743baae6c88256498e6431708f6dfc520a26515d3
 SIZE (rust/crates/Inflector-0.11.4.crate) = 17438
 SHA256 (rust/crates/addr2line-0.22.0.crate) = 6e4503c46a5c0c7844e948c9a4d6acd9f50cccb4de1c48eb9e291ea17470c678
@@ -931,5 +931,5 @@ SHA256 (rust/crates/zip-2.1.6.crate) = 40dd8c92efc296286ce1fbd16657c5dbefff44f1b
 SIZE (rust/crates/zip-2.1.6.crate) = 107876
 SHA256 (rust/crates/zopfli-0.8.1.crate) = e5019f391bac5cf252e93bbcc53d039ffd62c7bfb7c150414d61369afe57e946
 SIZE (rust/crates/zopfli-0.8.1.crate) = 50972
-SHA256 (leptos-rs-cargo-leptos-v0.2.19_GH0.tar.gz) = 3a4a38ce056cfdc95dcf9814033aa924a820e7f3934f9345a2f90878d4099616
-SIZE (leptos-rs-cargo-leptos-v0.2.19_GH0.tar.gz) = 172783
+SHA256 (leptos-rs-cargo-leptos-v0.2.20_GH0.tar.gz) = 56815a04ec77c868d7520e906cc55b1156c2943549eb831baecc1d941477823a
+SIZE (leptos-rs-cargo-leptos-v0.2.20_GH0.tar.gz) = 172942
