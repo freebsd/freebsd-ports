@@ -1,9 +1,11 @@
 PORTNAME=	alpha-vantage
-DISTVERSION=	2.3.1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.0.0-4
+DISTVERSIONSUFFIX=	-gd18224b
 CATEGORIES=	finance python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}
+#DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Module to get stock data from the Alpha Vantage Api
@@ -26,6 +28,6 @@ GH_PROJECT=	alpha_vantage
 
 NO_ARCH=	yes
 
-TEST_WRLSRC=	${WRKSRC}/test_alpha_vantage
+TEST_WRKSRC=	${WRKSRC}/test_alpha_vantage
 
 .include <bsd.port.mk>
