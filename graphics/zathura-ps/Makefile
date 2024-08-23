@@ -1,5 +1,6 @@
 PORTNAME=	zathura-ps
 DISTVERSION=	0.2.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://pwmt.org/projects/zathura-ps/download/
 
@@ -21,14 +22,7 @@ USES=		compiler:c11 desktop-file-utils gnome meson ninja pkgconfig \
 USE_GNOME=	cairo
 
 PLIST_FILES=	lib/zathura/libps.so \
-		share/appdata/org.pwmt.zathura-ps.metainfo.xml \
-		share/applications/org.pwmt.zathura-ps.desktop
-
-pre-configure:
-	${REINPLACE_CMD} "s:join_paths(datadir, 'metainfo'):join_paths(datadir, 'appdata'):" \
-		${WRKSRC}/meson.build
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/zathura/libps.so
+		share/applications/org.pwmt.zathura-ps.desktop \
+		share/metainfo/org.pwmt.zathura-ps.metainfo.xml
 
 .include <bsd.port.mk>

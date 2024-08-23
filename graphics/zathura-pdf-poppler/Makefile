@@ -1,5 +1,6 @@
 PORTNAME=	zathura-pdf-poppler
 DISTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://pwmt.org/projects/zathura-pdf-poppler/download/
 
@@ -23,10 +24,7 @@ USE_GNOME=	cairo glib20
 CONFLICTS_INSTALL=	zathura-pdf-mupdf
 
 PLIST_FILES=	lib/zathura/libpdf-poppler.so \
-		share/appdata/org.pwmt.zathura-pdf-poppler.metainfo.xml \
-		share/applications/org.pwmt.zathura-pdf-poppler.desktop
-
-pre-configure:
-	@${REINPLACE_CMD} "s:join_paths(datadir, 'metainfo'):join_paths(datadir, 'appdata'):" ${WRKSRC}/meson.build
+		share/applications/org.pwmt.zathura-pdf-poppler.desktop \
+		share/metainfo/org.pwmt.zathura-pdf-poppler.metainfo.xml
 
 .include <bsd.port.mk>
