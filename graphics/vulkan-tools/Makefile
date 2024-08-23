@@ -1,6 +1,6 @@
 PORTNAME=	vulkan-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.293
+DISTVERSION=	1.3.294
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ USES=		alias cmake compiler:c++11-lib pkgconfig python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-Tools
-GH_TUPLE=	zeux:volk:1.3.270-69-g8783587:volk/volk
+GH_TUPLE=	zeux:volk:1.3.270-71-gd2d0cdd:volk/volk
 CMAKE_OFF=	BUILD_CUBE BUILD_ICD
 CMAKE_ARGS=	-DGLSLANG_INSTALL_DIR:PATH="${LOCALBASE}"
 
