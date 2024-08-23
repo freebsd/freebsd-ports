@@ -1,3 +1,41 @@
+  <vuln vid="7e6e932f-617b-11ef-8a7d-b42e991fc52e">
+    <topic>firefox -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>127</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1414937">
+	  <ul>
+	    <li>CVE-2024-5697: A website was able to detect when a
+	      user took a screenshot of a page using the built-in
+	      Screenshot functionality in Firefox.</li>
+	    <li>CVE-2024-5698: By manipulating the fullscreen
+	      feature while opening a data-list, an attacker could
+	      have overlaid a text box over the address bar. This
+	      could have led to user confusion and possible spoofing
+	      attacks.
+	    </li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-5697</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-5697</url>
+      <cvename>CVE-2024-5698</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-5698</url>
+    </references>
+    <dates>
+      <discovery>2024-06-11</discovery>
+      <entry>2024-08-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6e8b9c75-6179-11ef-8a7d-b42e991fc52e">
     <topic>mcpp -- Heap-based buffer overflow</topic>
     <affects>
