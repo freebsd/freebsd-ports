@@ -1,4 +1,4 @@
 sbin/bsdlabel
-sbin/disklabel
+%%DISKLABEL%%sbin/disklabel
 share/man/man8/bsdlabel.8.gz
-share/man/man8/disklabel.8.gz
+%%DISKLABEL%%share/man/man8/disklabel.8.gz
