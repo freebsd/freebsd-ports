@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	1.10.1.1
+PORTVERSION=	1.11.0.2
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -21,7 +21,9 @@ MAKEFILE=	makefile
 ALL_TARGET=	all-${WITH_DEBUG:?debug:release}
 
 # Generated with `make makenuget'
-NUGET_DEPENDS=	CS-Script.lib=3.30.3 \
+NUGET_DEPENDS=	Antlr4.Runtime=4.6.6 \
+		Bve5_Parsing.OpenBVE=1.1.16 \
+		CS-Script.lib=3.30.3 \
 		DotNetZip=1.16.0 \
 		LibUsbDotNet=2.2.29 \
 		Mono.Cecil=0.11.3 \
@@ -65,7 +67,8 @@ PLIST_SUB+=	RELEASE="" DEBUG="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/TargetFrameworkVersion/s,4\.7\.2,4.6.1,' \
+	@${REINPLACE_CMD} -e '/TargetFrameworkVersion/s,4[^<]*,4.6.1,' \
+		${WRKSRC}/source/Plugins/Route.Bve5/Route.Bve5.csproj \
 		${WRKSRC}/source/TrainEditor2/TrainEditor2.csproj
 
 do-install:

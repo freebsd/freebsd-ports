@@ -1,6 +1,10 @@
-TIMESTAMP = 1716057213
-SHA256 (leezer3-OpenBVE-1.10.1.1_GH0.tar.gz) = b99fd3429e595615ef68503d6136943ba00cc954bb4280ef310a43ed977bc0f0
-SIZE (leezer3-OpenBVE-1.10.1.1_GH0.tar.gz) = 9832170
+TIMESTAMP = 1724087101
+SHA256 (leezer3-OpenBVE-1.11.0.2_GH0.tar.gz) = 85c8ab2bf148ccfc40933c44f6d7cb199c2a2e6985798bbd0f37321c99e173d4
+SIZE (leezer3-OpenBVE-1.11.0.2_GH0.tar.gz) = 9932893
+SHA256 (antlr4.runtime.4.6.6.nupkg) = 9f434b9aa4992271835c73c936cfcfbd966726ad18d5a4cc6149a78afb67dc46
+SIZE (antlr4.runtime.4.6.6.nupkg) = 1550087
+SHA256 (bve5_parsing.openbve.1.1.16.nupkg) = e9189d263d925ff009111780151730ad8d784d8d59124c6966865d7b18e61adf
+SIZE (bve5_parsing.openbve.1.1.16.nupkg) = 272071
 SHA256 (cs-script.lib.3.30.3.nupkg) = 783ebcee59e0fb9d0c6fde41097f695feebb829ac467c60501c237e262eca964
 SIZE (cs-script.lib.3.30.3.nupkg) = 182751
 SHA256 (dotnetzip.1.16.0.nupkg) = 465cc790eec3c42bd192bfa0a4cf006ecdf85dba2f9814e65df3bb2ed9c4ef91
