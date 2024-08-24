@@ -24,8 +24,8 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libwlroots.so:x11-toolkits/wlroots017 \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
-TEST_DEPENDS=	doctest>0:devel/doctest
 RUN_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
+TEST_DEPENDS=	doctest>0:devel/doctest
 
 USES=		cmake:indirect compiler:c++17-lang gl gnome jpeg meson pkgconfig xorg
 USE_GITHUB=	yes
