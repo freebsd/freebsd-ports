@@ -39,6 +39,7 @@ BUILD_DEPENDS=	libgit2>=0:devel/libgit2
 LIB_DEPENDS=	libzstd.so:archivers/zstd \
 		libonig.so:devel/oniguruma
 
+BROKEN_i386=	fails to build
 USES=		cargo pkgconfig
 USE_GITHUB=	yes
 
