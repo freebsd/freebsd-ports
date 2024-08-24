@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+
+*** Please Create Backups or Use Git ***
+
+Before using this extension or any other password store extension, It is highly
+recommend that you check in your password store in a local git repository and
+sync it with a remote git repository (doesn't have to be an online remote repo)
+or make regular backups of your password store using tools like borgbackup. You
+don't want to lose your password store data because of an unintentional bug in
+this, or any other, pass extension.
+
+Use `pass git initʼ to initialize a local git repository in your password store
+and add a remote git repository using `pass git remote add backup <location>ʼ.
+For more details, please read the "EXTENDED GIT EXAMPLE" section of the man
+page of pass.
+EOM
+}
+]
