@@ -1,5 +1,5 @@
 PORTNAME=	libretro-shaders-slang
-DISTVERSION=	g20240809
+DISTVERSION=	g20240823
 CATEGORIES=	games
 
 MAINTAINER=	bsdcode@disroot.org
@@ -13,7 +13,7 @@ LICENSE_COMB=	multi
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	slang-shaders
-GH_TAGNAME=	b3d795a
+GH_TAGNAME=	0cededf
 
 DATADIR=	${PREFIX}/share/libretro/shaders/shaders_slang
 EXTRACT_AFTER_ARGS=	--exclude ".gitlab-ci.yml" --exclude "configure" \
