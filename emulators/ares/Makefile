@@ -1,6 +1,5 @@
 PORTNAME=	ares
-DISTVERSION=	139.20240809
-PORTREVISION=	1
+DISTVERSION=	139.20240823
 CATEGORIES=	emulators
 
 MAINTAINER=	bsdcode@disroot.org
@@ -14,7 +13,7 @@ USES=		compiler:c++17-lang gmake gnome localbase:ldflags pkgconfig \
 		xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	ares-emulator
-GH_TAGNAME=	a76847d
+GH_TAGNAME=	3cd82c8
 USE_GNOME=	gtksourceview3
 USE_XORG=	x11 xext xrandr
 
@@ -31,8 +30,9 @@ MAKE_ARGS=	compiler=${CC} \
 		threaded=true
 
 SUB_FILES=	pkg-message
+SUB_LIST=	LIBRASHADER=${_LIBRASHADER}
 
-OPTIONS_DEFINE=		DEBUG DOCS NVIDIA OPENMP SHADER
+OPTIONS_DEFINE=		DEBUG DOCS HOTKEYS NVIDIA OPENMP SHADER
 OPTIONS_DEFAULT=	A26 ALSA AO CV FC GB GBA GLX MD MS MSX MYVISION N64 NG \
 			NGP OPENAL OPENMP OSS PCE PERFORMANCE PS1 SDLAUDIO \
 			SDLINPUT SFC SG SHADER SPEC UDEV UHID WS XLIB XVIDEO
@@ -51,6 +51,7 @@ CV_DESC=		ColecoVision
 FC_DESC=		NES / Famicom
 GBA_DESC=		Game Boy Advance
 GB_DESC=		Game Boy
+HOTKEYS_DESC=		Inofficial hotkeys locking patch
 MD_DESC=		Mega Drive / Genesis
 MSX_DESC=		MSX
 MS_DESC=		Master System / Mark III
@@ -99,6 +100,8 @@ GB_MAKE_ARGS=		cores+=gb
 GLX_USES=		gl
 GLX_USE=		GL=gl
 GLX_MAKE_ARGS=		ruby+=video.glx
+
+HOTKEYS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-hotkeys
 
 MD_MAKE_ARGS=		cores+=md
 
@@ -173,6 +176,7 @@ XLIB_MAKE_ARGS=		ruby+=input.xlib
 XVIDEO_USE=		XORG=xv
 XVIDEO_MAKE_ARGS=	ruby+=video.xvideo
 
+_LIBRASHADER=		0.3.3
 _SHADERS=		share/libretro/shaders/shaders_slang
 
 .include <bsd.port.options.mk>
