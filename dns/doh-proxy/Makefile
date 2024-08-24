@@ -12,6 +12,7 @@ WWW=		https://github.com/DNSCrypt/doh-server
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	fails to build
 USES=		cargo
 
 PLIST_FILES=	bin/doh-proxy
