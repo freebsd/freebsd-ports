@@ -24,6 +24,7 @@ load_rc_config $name
 : ${acme_dns_pidfile="/var/run/acme-dns/acme-dns.pid"}
 : ${acme_dns_log="/var/log/acme-dns.log"}
 : ${acme_dns_args=""}
+: ${acme_dns_svcj_options:="net_basic"}
 
 pidfile=${acme_dns_pidfile}
 command="/usr/sbin/daemon"

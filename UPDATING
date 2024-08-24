@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240824:
+  AFFECTS: dns/acme-dns
+  AUTHOR: netchildFreeBSD.org
+
+  The start script of acme-dns has been renamed to acme_dns for improved
+  compatibility with other parts of the system. The automatic start at
+  boot (rc.conf variable settings) is not affected, but if you have some
+  other automatism you may want to change
+  ".../etc/rc.d/acme-dns" to ".../etc/rc.d/acme_dns"
+
 20240816:
   AFFECTS: users of databases/redis
   AUTHOR: yasu@FreeBSD.org

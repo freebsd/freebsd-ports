@@ -69,7 +69,7 @@ GH_TUPLE=		\
 			yudai:golcs:ecda9a501e82:yudai_golcs/vendor/github.com/yudai/golcs \
 			yudai:pp:v2.0.1:yudai_pp/vendor/github.com/yudai/pp
 
-USE_RC_SUBR=		acme-dns
+USE_RC_SUBR=		acme_dns
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|etc\/acme-dns|usr\/local\/etc\/acme-dns|' ${WRKSRC}/main.go
