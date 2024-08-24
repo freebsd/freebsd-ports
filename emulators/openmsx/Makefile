@@ -1,6 +1,7 @@
 PORTNAME=	openmsx
 DISTVERSION=	19.1
 CATEGORIES=	emulators
+MASTER_SITES=	https://github.com/openMSX/openMSX/releases/download/RELEASE_19_1/
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Open source MSX emulator
@@ -19,11 +20,6 @@ LIB_DEPENDS=	libao.so:audio/libao \
 
 USES=		gl gmake pkgconfig python sdl tcl
 USE_GCC=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	openMSX
-GH_PROJECT=	openMSX
-GH_TAGNAME=	RELEASE_19_1
 
 USE_GL=		gl glew
 USE_SDL=	sdl2 ttf2
