@@ -33,11 +33,13 @@ include/wayfire/plugins/common/key-repeat.hpp
 include/wayfire/plugins/common/move-drag-interface.hpp
 include/wayfire/plugins/common/preview-indication.hpp
 include/wayfire/plugins/common/shared-core-data.hpp
+include/wayfire/plugins/common/simple-text-node.hpp
 include/wayfire/plugins/common/simple-texture.hpp
 include/wayfire/plugins/common/util.hpp
 include/wayfire/plugins/common/workspace-wall.hpp
 include/wayfire/plugins/crossfade.hpp
 include/wayfire/plugins/grid.hpp
+include/wayfire/plugins/input-method-v1/input-method-v1.hpp
 include/wayfire/plugins/ipc/ipc-activator.hpp
 include/wayfire/plugins/ipc/ipc-helpers.hpp
 include/wayfire/plugins/ipc/ipc-method-repository.hpp
@@ -60,6 +62,8 @@ include/wayfire/txn/transaction-manager.hpp
 include/wayfire/txn/transaction-object.hpp
 include/wayfire/txn/transaction.hpp
 include/wayfire/unstable/translation-node.hpp
+include/wayfire/unstable/wlr-subsurface-controller.hpp
+include/wayfire/unstable/wlr-surface-controller.hpp
 include/wayfire/unstable/wlr-surface-node.hpp
 include/wayfire/unstable/wlr-text-input-v3-popup.hpp
 include/wayfire/unstable/wlr-view-events.hpp
@@ -104,6 +108,7 @@ lib/wayfire/libpreserve-output.so
 lib/wayfire/libresize.so
 lib/wayfire/libscale-title-filter.so
 lib/wayfire/libscale.so
+lib/wayfire/libsession-lock.so
 lib/wayfire/libshortcuts-inhibit.so
 lib/wayfire/libsimple-tile.so
 lib/wayfire/libstipc.so
@@ -117,6 +122,7 @@ lib/wayfire/libwobbly.so
 lib/wayfire/libwrot.so
 lib/wayfire/libwsets.so
 lib/wayfire/libxdg-activation.so
+lib/wayfire/libxkb-bindings.so
 lib/wayfire/libzoom.so
 libdata/pkgconfig/wayfire.pc
 share/man/man1/wayfire.1.gz
@@ -151,6 +157,7 @@ share/man/man1/wayfire.1.gz
 %%DATADIR%%/metadata/resize.xml
 %%DATADIR%%/metadata/scale-title-filter.xml
 %%DATADIR%%/metadata/scale.xml
+%%DATADIR%%/metadata/session-lock.xml
 %%DATADIR%%/metadata/shortcuts-inhibit.xml
 %%DATADIR%%/metadata/simple-tile.xml
 %%DATADIR%%/metadata/switcher.xml

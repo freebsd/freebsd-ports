@@ -1,7 +1,6 @@
 PORTNAME=	wayfire
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.1
-PORTREVISION=	2
+DISTVERSION=	0.9.0
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,11 +10,9 @@ WWW=		https://wayfire.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to build with wf-config 0.9.0
-
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		nlohmann-json>0:devel/nlohmann-json \
-		wf-config>=0.8.0<0.9.0:devel/wf-config \
+		wf-config>=0.9.0<0.10.0:devel/wf-config \
 		${LOCALBASE}/include/xf86drmMode.h:graphics/libdrm \
 		wayland-protocols>=1.12:graphics/wayland-protocols \
 		glm>=0.9.8:math/glm
@@ -42,6 +39,11 @@ MESON_ARGS=	-Dtests=disabled \
 		-Dwf-touch:tests=disabled \
 		-Dwf-utils:default_library=static \
 		${NULL}
+
+.if !exists(/usr/include/omp.h)
+# LLVM openmp in base doesn't support powerpc, armv6, armv7 yet
+MESON_ARGS+=	-Denable_openmp=false
+.endif
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11

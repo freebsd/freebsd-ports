@@ -11,6 +11,8 @@ WWW=		https://wayfire.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build with wayfire 0.9.0
+
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-scanner:graphics/wayland \
 		wayland-protocols>0:graphics/wayland-protocols \
