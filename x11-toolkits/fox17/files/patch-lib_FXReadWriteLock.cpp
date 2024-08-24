@@ -9,7 +9,7 @@ regression on FreeBSD.
    FXASSERT_STATIC(sizeof(data)>=sizeof(pthread_rwlock_t));
    pthread_rwlockattr_t rwlockatt;
    pthread_rwlockattr_init(&rwlockatt);
-+#if defined(__linux__)
++#if defined(__GLIBC__)
    pthread_rwlockattr_setkind_np(&rwlockatt,PTHREAD_RWLOCK_PREFER_WRITER_NP);
 +#endif
    pthread_rwlock_init((pthread_rwlock_t*)data,&rwlockatt);

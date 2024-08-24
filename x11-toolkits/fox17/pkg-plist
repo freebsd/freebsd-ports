@@ -228,6 +228,7 @@ include/fox-%%MAJORVER%%/FXPacker.h
 include/fox-%%MAJORVER%%/FXParallel.h
 include/fox-%%MAJORVER%%/FXParseBuffer.h
 include/fox-%%MAJORVER%%/FXPath.h
+include/fox-%%MAJORVER%%/FXPerformance.h
 include/fox-%%MAJORVER%%/FXPicker.h
 include/fox-%%MAJORVER%%/FXPipe.h
 include/fox-%%MAJORVER%%/FXPoint.h
@@ -238,6 +239,8 @@ include/fox-%%MAJORVER%%/FXProgressBar.h
 include/fox-%%MAJORVER%%/FXProgressDialog.h
 include/fox-%%MAJORVER%%/FXPtrList.h
 include/fox-%%MAJORVER%%/FXPtrQueue.h
+include/fox-%%MAJORVER%%/FXQOIFIcon.h
+include/fox-%%MAJORVER%%/FXQOIFImage.h
 include/fox-%%MAJORVER%%/FXQuatd.h
 include/fox-%%MAJORVER%%/FXQuatf.h
 include/fox-%%MAJORVER%%/FXRASIcon.h
@@ -363,6 +366,7 @@ include/fox-%%MAJORVER%%/fx3d.h
 include/fox-%%MAJORVER%%/fxascii.h
 include/fox-%%MAJORVER%%/fxchar.h
 include/fox-%%MAJORVER%%/fxcpuid.h
+include/fox-%%MAJORVER%%/fxcrc.h
 include/fox-%%MAJORVER%%/fxdefs.h
 include/fox-%%MAJORVER%%/fxendian.h
 include/fox-%%MAJORVER%%/fxkeys.h
@@ -373,11 +377,11 @@ include/fox-%%MAJORVER%%/xincs.h
 lib/libCHART-%%MAJORVER%%.a
 lib/libCHART-%%MAJORVER%%.so
 lib/libCHART-%%MAJORVER%%.so.0
-lib/libCHART-%%MAJORVER%%.so.0.0.84
+lib/libCHART-%%MAJORVER%%.so.0.0.85
 lib/libFOX-%%MAJORVER%%.a
 lib/libFOX-%%MAJORVER%%.so
 lib/libFOX-%%MAJORVER%%.so.0
-lib/libFOX-%%MAJORVER%%.so.0.0.84
+lib/libFOX-%%MAJORVER%%.so.0.0.85
 libdata/pkgconfig/fox17.pc
 share/man/man1/ControlPanel-17.1.gz
 %%PORTEXAMPLES%%share/man/man1/PathFinder-17.1.gz
