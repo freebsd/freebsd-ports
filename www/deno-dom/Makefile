@@ -10,6 +10,8 @@ WWW=		https://jsr.io/@b-fuze/deno-dom
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails, mismatched types, see https://github.com/b-fuze/deno-dom/issues/178
+
 USES=		cargo
 
 USE_GITHUB=	yes
