@@ -106,7 +106,10 @@ include/pqxx/version
 include/pqxx/version.hxx
 include/pqxx/zview
 include/pqxx/zview.hxx
-lib/libpqxx-%%PORTVERSION%%.so
-lib/libpqxx.a
+lib/cmake/libpqxx/libpqxx-config-version.cmake
+lib/cmake/libpqxx/libpqxx-config.cmake
+lib/cmake/libpqxx/libpqxx-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/libpqxx/libpqxx-targets.cmake
+lib/libpqxx-%%DISTVERSION%%.so
 lib/libpqxx.so
 libdata/pkgconfig/libpqxx.pc
