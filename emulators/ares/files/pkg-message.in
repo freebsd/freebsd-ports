@@ -28,12 +28,12 @@ the FreeBSD ports tree yet, but it is being worked on, see
 https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=280470. In the meantime users
 have to compile the library themselves if they want to actually use shaders:
 
-    $ su pkg install rust-nightly
+    $ su root -c 'pkg install rust-nightly'
     $ fetch https://github.com/SnowflakePowered/librashader/archive/refs/tags/librashader-v%%LIBRASHADER%%.tar.gz
     $ tar -xf librashader-v%%LIBRASHADER%%.tar.gz
     $ cd librashader-librashader-v%%LIBRASHADER%%
     $ cargo run -p librashader-build-script -- --profile release
-    $ su cp target/release/librashader.so %%LOCALBASE%%/lib
+    $ su root -c 'cp target/release/librashader.so %%LOCALBASE%%/lib'
 
 The port uses the shaders from games/libretro-shaders-slang by default. Users
 can curate and utilize their own provided collection of shaders by putting them
