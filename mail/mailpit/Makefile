@@ -13,6 +13,8 @@ WWW=		https://github.com/axllent/mailpit
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	fails to build due to dependency issue
+
 BUILD_DEPENDS=	npm>0:www/npm
 
 USES=		go:modules tar:zstd
