@@ -1,1 +1,6 @@
-GTK4 Discord client in Go, attempt #4.
+Dissent (previously gtkcord4) is a third-party Discord client designed for a
+smooth, native experience on Linux desktops.
+
+Built with the GTK4 and libadwaita for a modern look and feel, it delivers your
+favorite Discord app in a lightweight and visually appealing package.
+

@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GTK4 Discord client in Go, attempt \#4
+COMMENT=	Tiny native Discord app
 WWW=		https://github.com/diamondburned/dissent
 
 LICENSE=	GPLv3
