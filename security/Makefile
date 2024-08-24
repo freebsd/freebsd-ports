@@ -378,6 +378,7 @@
     SUBDIR += masscan
     SUBDIR += mate-pam-helper
     SUBDIR += mbedtls
+    SUBDIR += mbedtls3
     SUBDIR += mcrypt
     SUBDIR += md5deep
     SUBDIR += medusa
