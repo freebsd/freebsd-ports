@@ -4,7 +4,7 @@ DISTVERSION=	0.0.27
 PORTREVISION=	1
 CATEGORIES=	net-im
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK4 Discord client in Go, attempt \#4
 WWW=		https://github.com/diamondburned/dissent
 
