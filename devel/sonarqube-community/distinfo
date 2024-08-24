@@ -1,6 +1,6 @@
-TIMESTAMP = 1724259659
-SHA256 (sonarqube-10.5.1.90531.zip) = 343470437adc70b8b808ac1c6f77491e321ca40ecef0d07bf739f5cce3bd34a5
-SIZE (sonarqube-10.5.1.90531.zip) = 458422647
+TIMESTAMP = 1724502433
+SHA256 (sonarqube-10.6.0.92116.zip) = 73c541a77f79cbaec49022f5eba60388b3f91f41deb1fbf0abf9bbedcb6dbbc2
+SIZE (sonarqube-10.6.0.92116.zip) = 731034761
 SHA256 (sonar-csharp-plugin-9.32.0.97167.jar) = 155c42919db208e205577e3d72530860b7bd41ddafa6728ee38acc59c3d0f603
 SIZE (sonar-csharp-plugin-9.32.0.97167.jar) = 5597394
 SHA256 (sonar-java-plugin-8.2.0.36672.jar) = 5b055c982250ed816a66a0ed52439823c7178c780fd5bc910853cf70d620d875

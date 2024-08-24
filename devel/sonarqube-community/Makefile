@@ -1,5 +1,5 @@
 PORTNAME=	sonarqube
-DISTVERSION=	10.5.1.90531
+DISTVERSION=	10.6.0.92116
 PORTREVISION=	9
 CATEGORIES=	devel security www java
 MASTER_SITES=	https://binaries.sonarsource.com/Distribution/sonarqube/:m_core \
