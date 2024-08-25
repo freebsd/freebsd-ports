@@ -1,6 +1,6 @@
---- fiemap.c.orig	2015-04-15 08:56:38 UTC
+--- fiemap.c.orig	2024-08-22 17:41:01 UTC
 +++ fiemap.c
-@@ -286,7 +286,6 @@ char* strippart(const char* partname)
+@@ -288,7 +288,6 @@ char* strippart(const char* partname)
  	return _fulldevnm;
  }
  

@@ -1,6 +1,6 @@
---- libddr_hash.c.orig	2021-04-14 08:23:02 UTC
+--- libddr_hash.c.orig	2024-08-22 17:41:01 UTC
 +++ libddr_hash.c
-@@ -35,7 +35,7 @@
+@@ -34,7 +34,7 @@
  #include <fcntl.h>
  
  #include <netinet/in.h>	/* For ntohl/htonl */
