@@ -12,7 +12,7 @@ WWW=		https://mathema.tician.de/software/tagpy
 LICENSE=	MIT
 
 BROKEN=		does not build with audio/taglib 2.x
-EXPIRATION_DATE=2024-08-31
+EXPIRATION_DATE=2024-09-30
 
 LIB_DEPENDS=	${PY_BOOST} \
 		libtag.so:audio/taglib
