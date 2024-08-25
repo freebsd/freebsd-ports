@@ -639,6 +639,7 @@
     SUBDIR += unclutter
     SUBDIR += unclutter-xfixes
     SUBDIR += unicode-emoji
+    SUBDIR += units
     SUBDIR += upclient
     SUBDIR += urh
     SUBDIR += usbids
