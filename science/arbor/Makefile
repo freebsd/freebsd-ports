@@ -1,6 +1,7 @@
 PORTNAME=	arbor
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +20,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}svgwrite>0:graphics/py-svgwrite@${PY_FLAVOR}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/cmake/GTest/GTestConfig.cmake:devel/googletest # https://github.com/arbor-sim/arbor/issues/2205
 LIB_DEPENDS=	libhwloc.so:devel/hwloc2 \
-		libpugixml.so:textproc/pugixml
+		libpugixml.so:textproc/pugixml \
+		libunits.so:misc/units
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}svgwrite>0:graphics/py-svgwrite@${PY_FLAVOR}
 TEST_DEPENDS=	googletest>=0:devel/googletest
 
@@ -27,12 +29,14 @@ USES=		cmake compiler:c++17-lang localbase python shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arbor-sim
-GH_TUPLE=	LLNL:units:7917f5f:units/ext/units
 
 SHEBANG_FILES=	scripts/arbor-build-catalogue
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_OFF=	ARB_USE_BUNDLED_UNITS
 CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD}
+
+LDFLAGS+=	-L${LOCALBASE}/lib -lunits
 
 OPTIONS_DEFINE=		NATIVE
 

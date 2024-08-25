@@ -121,5 +121,4 @@ lib/cmake/arbor/arbor-targets.cmake
 lib/libarbor.so
 lib/libarborenv.so
 lib/libarborio.so
-lib/libunits.a
 %%DATADIR%%/BuildModules.cmake
