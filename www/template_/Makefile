@@ -10,6 +10,10 @@ WWW=		https://www.xtac.net/
 
 LICENSE=	LGPL20+
 
+BROKEN=		Not compatible with PHP 8
+DEPRECATED=	Abandonware, outdated and last version released upstream was released in 2015
+EXPIRATION_DATE=2024-09-30 
+
 FETCH_ARGS+=	-o ${DISTNAME}.tar.gz
 
 USES=		php:web
