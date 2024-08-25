@@ -99,7 +99,6 @@ lib/qmmp%%LIB_SUFFX%%/Input/libcue.so
 %%FFMPEG%%lib/qmmp%%LIB_SUFFX%%/Input/libffmpeg.so
 %%FLAC%%lib/qmmp%%LIB_SUFFX%%/Input/libflac.so
 %%GME%%lib/qmmp%%LIB_SUFFX%%/Input/libgme.so
-%%MUSEPACK%%lib/qmmp%%LIB_SUFFX%%/Input/libmpc.so
 %%MPG123%%lib/qmmp%%LIB_SUFFX%%/Input/libmpeg.so
 %%OPUS%%lib/qmmp%%LIB_SUFFX%%/Input/libopus.so
 %%SID%%lib/qmmp%%LIB_SUFFX%%/Input/libsid.so
