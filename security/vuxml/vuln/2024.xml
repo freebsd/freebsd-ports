@@ -1,3 +1,38 @@
+  <vuln vid="49ef501c-62b6-11ef-bba5-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.3.0</ge><lt>17.3.1</lt></range>
+	<range><ge>17.2.0</ge><lt>17.2.4</lt></range>
+	<range><ge>8.2.0</ge><lt>17.1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/08/21/patch-release-gitlab-17-3-1-released/">
+	  <p>The GitLab Web Interface Does Not Guarantee Information Integrity When Downloading Source Code from Releases</p>
+	  <p>Denial of Service by importing maliciously crafted GitHub repository</p>
+	  <p>Prompt injection in "Resolve Vulnerabilty" results in arbitrary command execution in victim's pipeline</p>
+	  <p>An unauthorized user can perform certain actions through GraphQL after a group owner enables IP restrictions</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-6502</cvename>
+      <cvename>CVE-2024-8041</cvename>
+      <cvename>CVE-2024-7110</cvename>
+      <cvename>CVE-2024-3127</cvename>
+      <url>https://about.gitlab.com/releases/2024/08/21/patch-release-gitlab-17-3-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-08-21</discovery>
+      <entry>2024-08-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7e6e932f-617b-11ef-8a7d-b42e991fc52e">
     <topic>firefox -- Multiple vulnerabilities</topic>
     <affects>
