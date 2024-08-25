@@ -1,6 +1,6 @@
 PORTNAME=	dakota
 DISTVERSION=	6.17.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	science
 MASTER_SITES=	https://dakota.sandia.gov/sites/default/files/distributions/public/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-release-public-src-cli

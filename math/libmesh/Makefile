@@ -1,6 +1,6 @@
 PORTNAME=	libmesh
 DISTVERSION=	1.7.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/libMesh/${PORTNAME}/releases/download/v${DISTVERSION}/
 

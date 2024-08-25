@@ -2,7 +2,7 @@ PORTNAME=	libnest2d-ultimaker
 # XXX there is no 4.13.1
 # https://github.com/Ultimaker/libnest2d/tags
 DISTVERSION=	4.12.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	db@FreeBSD.org
