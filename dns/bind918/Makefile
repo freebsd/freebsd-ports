@@ -2,28 +2,14 @@
 
 PORTNAME=	bind
 DISTVERSION=	9.18.29
-.if defined(BIND_TOOLS_SLAVE)
-# dns/bind-tools here
 PORTREVISION=	0
-.else
-# dns/bind918 here
-PORTREVISION=	0
-.endif
 CATEGORIES=	dns net
 MASTER_SITES=	ISC/bind9/${DISTVERSION}
-.if defined(BIND_TOOLS_SLAVE)
-PKGNAMESUFFIX=	-tools
-.else
 PKGNAMESUFFIX=	918
-.endif
 
 MAINTAINER=	mat@FreeBSD.org
 WWW=		https://www.isc.org/bind/
-.if defined(BIND_TOOLS_SLAVE)
-COMMENT=	Command line tools from BIND: delv, dig, host, nslookup...
-.else
 COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
-.endif
 
 # Uncomment when bind920 comes of age. +3 years if ESV, +1year otherwise, see
 # https://kb.isc.org/docs/aa-00896
@@ -37,9 +23,7 @@ LIB_DEPENDS=	libuv.so:devel/libuv \
 		libnghttp2.so:www/libnghttp2 \
 		libxml2.so:textproc/libxml2
 
-.if !defined(BIND_TOOLS_SLAVE)
 RUN_DEPENDS=	bind-tools>0:dns/bind-tools
-.endif
 
 USES=		autoreconf compiler:c11 cpe libedit libtool pkgconfig ssl tar:xz
 
@@ -62,18 +46,12 @@ CONFIGURE_ARGS=	--disable-linux-caps \
 CONFIGURE_ENV=	READLINE_CFLAGS="-L${LOCALBASE}/lib"
 ETCDIR=		${PREFIX}/etc/namedb
 
-.if defined(BIND_TOOLS_SLAVE)
-EXTRA_PATCHES=		${PATCHDIR}/extrapatch-bind-tools
-CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/bind-tools
-.else
 USE_RC_SUBR=		named
 SUB_FILES=		named.conf pkg-message
-EXTRA_PATCHES=		${PATCHDIR}/extrapatch-no-bind-tools
 
 PORTDOCS=	*
 
 CONFLICTS=	bind920 bind9-devel
-.endif	# BIND_TOOLS_SLAVE
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -85,12 +63,6 @@ OPTIONS_DEFINE=		DNSTAP DOCS FIXED_RRSET GEOIP IDN JSON LARGE_FILE LMDB \
 
 OPTIONS_SINGLE=		GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
-
-.if defined(BIND_TOOLS_SLAVE)
-OPTIONS_EXCLUDE=	DOCS GEOIP LMDB \
-			OVERRIDECACHE QUERYTRACE START_LATE \
-			TCP_FASTOPEN
-.endif	# BIND_TOOLS_SLAVE
 
 OPTIONS_SUB=	yes
 
@@ -193,7 +165,6 @@ post-patch:
 		${WRKSRC}/bin/${FILE}
 .endfor
 
-.if !defined(BIND_TOOLS_SLAVE)
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mtree
 	${MKDIR} ${STAGEDIR}${ETCDIR}
@@ -213,14 +184,5 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/CHANGES* \
 		${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc/arm/_build/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/arm
-.else
-
-do-install:
-	for dir in bin lib doc/man; do \
-		(cd ${INSTALL_WRKSRC}/$$dir && ${SETENV} ${MAKE_ENV} ${FAKEROOT} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}) ; \
-	done
-	@${RM} -r ${STAGEDIR}${PREFIX}/include
-
-.endif	# BIND_TOOLS_SLAVE
 
 .include <bsd.port.post.mk>
