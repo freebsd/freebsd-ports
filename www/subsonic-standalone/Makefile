@@ -17,7 +17,7 @@ LICENSE=	NONE
 
 OPTIONS_GROUP=	TRANSCODING
 TRANSCODING_DESC=	Transcoding support
-OPTIONS_GROUP_TRANSCODING=	FFMPEG FLAC LAME VORBIS FAAC FAAD XMP MPC APE
+OPTIONS_GROUP_TRANSCODING=	FFMPEG FLAC LAME VORBIS FAAC FAAD XMP APE
 FFMPEG_DESC=	Depend on FFmpeg for audio and video transcoding
 FLAC_DESC=	Depend on FLAC for transcoding
 LAME_DESC=	Depend on LAME for MP3 transcoding
@@ -25,8 +25,7 @@ VORBIS_DESC=	Depend on oggenc/oggdec for Vorbis transcoding
 FAAC_DESC=	Depend on FAAD for AAC/M4A transcoding
 FAAD_DESC=	Depend on FAAC for AAC/M4A transcoding
 XMP_DESC=	Depend on XMP for module file transcoding
-MPC_DESC=	Depend on mpcdec for MPC transcoding
-APE_DESC=	Depend on mac for Monkey's Audio transcoding #'
+APE_DESC=	Depend on mac for Monkey's Audio transcoding
 
 OPTIONS_DEFAULT=	FFMPEG
 OPTIONS_SUB=	yes
@@ -38,7 +37,6 @@ VORBIS_RUN_DEPENDS=	oggenc:audio/vorbis-tools
 FAAC_RUN_DEPENDS=	faac:audio/faac
 FAAD_RUN_DEPENDS=	faad:audio/faad
 XMP_RUN_DEPENDS=	xmp:audio/xmp
-MPC_RUN_DEPENDS=	mpcdec:audio/musepack
 APE_RUN_DEPENDS=	mac:audio/mac
 
 .include <bsd.port.options.mk>
