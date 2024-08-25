@@ -1,3 +1,3 @@
-TIMESTAMP = 1673799644
-SHA256 (binutils-2.40.tar.lz) = 48e65ecee1bbcf334d7efb4ea8487fe048dea522e5da3bdf7fa42b1ec779ea33
-SIZE (binutils-2.40.tar.lz) = 24784952
+TIMESTAMP = 1724602857
+SHA256 (binutils-2.43.tar.lz) = f2cf0ea54ae2a223df27b20915b1624008e06e2f10dc57893f292bbb033e7001
+SIZE (binutils-2.43.tar.lz) = 27688115

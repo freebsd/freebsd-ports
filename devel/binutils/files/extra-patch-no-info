@@ -2,16 +2,15 @@ From: firk <firk@cantconnect.ru>
 
 --- bfd/Makefile.in.orig	2023-01-14 03:00:00.000000000 +0300
 +++ bfd/Makefile.in	2023-11-27 02:50:29.374411000 +0300
-@@ -2053,7 +2053,7 @@
+@@ -2046,6 +2046,6 @@
  check-am: all-am
  check: $(BUILT_SOURCES)
  	$(MAKE) $(AM_MAKEFLAGS) check-recursive
--all-am: Makefile $(INFO_DEPS) $(LIBRARIES) $(LTLIBRARIES) $(HEADERS) \
-+all-am: Makefile $(LIBRARIES) $(LTLIBRARIES) $(HEADERS) \
- 		config.h
+-all-am: Makefile $(INFO_DEPS) $(LTLIBRARIES) $(HEADERS) config.h
++all-am: Makefile $(LTLIBRARIES) $(HEADERS) config.h
  installdirs: installdirs-recursive
  installdirs-am:
-@@ -2122,8 +2122,7 @@
+@@ -2113,8 +2113,7 @@
  
  info-am: $(INFO_DEPS)
  
@@ -112,13 +111,13 @@ From: firk <firk@cantconnect.ru>
  
 --- libctf/Makefile.in.orig	2023-01-14 03:00:00.000000000 +0300
 +++ libctf/Makefile.in	2023-11-28 00:05:24.527961000 +0300
-@@ -1449,7 +1449,7 @@
+@@ -1572,7 +1572,7 @@
  check-am: all-am
  	$(MAKE) $(AM_MAKEFLAGS) check-DEJAGNU
- check: check-am
+ check: check-recursive
 -all-am: Makefile $(INFO_DEPS) $(LTLIBRARIES) $(HEADERS) config.h
 +all-am: Makefile $(LTLIBRARIES) $(HEADERS) config.h
- installdirs:
+ installdirs: installdirs-recursive
  	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(infodir)" "$(DESTDIR)$(includedir)"; do \
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 @@ -1513,7 +1513,7 @@

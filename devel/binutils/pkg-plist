@@ -28,7 +28,7 @@ include/sframe-api.h
 include/sframe.h
 include/symcat.h
 %%SHARED%%lib/bfd-plugins/libdep.so
-%%SHARED%%lib/libbfd-2.40.so
+%%SHARED%%lib/libbfd-2.43.so
 lib/libbfd.a
 %%SHARED%%lib/libbfd.so
 lib/libctf-nobfd.a
@@ -39,13 +39,14 @@ lib/libctf.a
 %%SHARED%%lib/libctf.so
 %%SHARED%%lib/libctf.so.0
 %%SHARED%%lib/libctf.so.0.0.0
-%%SHARED%%lib/libopcodes-2.40.so
+%%SHARED%%lib/libopcodes-2.43.so
 lib/libopcodes.a
 %%SHARED%%lib/libopcodes.so
 lib/libsframe.a
 %%SHARED%%lib/libsframe.so
-%%SHARED%%lib/libsframe.so.0
-%%SHARED%%lib/libsframe.so.0.0.0
+%%SHARED%%lib/libsframe.so.1
+%%SHARED%%lib/libsframe.so.1.0.0
+%%INFO%%share/info/ldint.info
 share/man/man1/addr2line.1.gz
 share/man/man1/ar.1.gz
 share/man/man1/as.1.gz
@@ -116,7 +117,9 @@ share/man/man1/strip.1.gz
 %%NLS%%share/locale/ja/LC_MESSAGES/gas.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/ld.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/bfd.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/gprof.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/ld.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/opcodes.mo
@@ -127,6 +130,8 @@ share/man/man1/strip.1.gz
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/opcodes.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/bfd.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/binutils.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/gas.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/ld.mo
 %%NLS%%%%GOLD%%share/locale/ro/LC_MESSAGES/gold.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/opcodes.mo

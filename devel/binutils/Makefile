@@ -1,6 +1,5 @@
 PORTNAME=	binutils
-DISTVERSION=	2.40
-PORTREVISION=	8
+DISTVERSION=	2.43
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	GNU \
@@ -175,6 +174,7 @@ post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX:S/-$//}
 .endif
 	${RM} ${STAGEDIR}${PREFIX}/${BUTARGET}/lib/ldscripts/i386bsd.*
+	${RM} ${STAGEDIR}${PREFIX}/${BUTARGET}/lib/ldscripts/stamp
 	@if [ -d ${STAGEDIR}${PREFIX}/${INFO_PATH:H} ] ; then ${RM} -rf ${STAGEDIR}${PREFIX}/${INFO_PATH:H}; fi
 	${LN} -fs ../../bin/${BUTARGET}-size ${STAGEDIR}${PREFIX}/${BUTARGET}/bin/size
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/bfd-plugins
