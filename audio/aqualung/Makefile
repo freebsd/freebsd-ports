@@ -1,6 +1,6 @@
 PORTNAME=	aqualung
 DISTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	portmaster@BSDforge.com
@@ -20,7 +20,6 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libsndfile.so:audio/libsndfile \
 		libvorbis.so:audio/libvorbis \
 		libmac.so:audio/mac \
-		libmpcdec.so:audio/musepack \
 		libspeex.so:audio/speex \
 		libwavpack.so:audio/wavpack \
 		libavcodec.so:multimedia/ffmpeg \
@@ -40,7 +39,8 @@ GH_ACCOUNT=	jeremyevans
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--with-cddb=no \
-		--with-ifp=no
+		--with-ifp=no \
+		--with-mpc=no
 
 DESKTOP_ENTRIES="Aqualung" "" "${DATADIR}/general.png" "aqualung" \
 		"Audio;AudioVideo;GTK;" ""
