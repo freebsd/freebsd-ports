@@ -1,5 +1,5 @@
---- cargo-crates/mysqlclient-sys-0.4.0/build.rs.orig	2024-07-05 21:55:33 UTC
-+++ cargo-crates/mysqlclient-sys-0.4.0/build.rs
+--- cargo-crates/mysqlclient-sys-0.4.1/build.rs.orig	2024-07-05 21:55:33 UTC
++++ cargo-crates/mysqlclient-sys-0.4.1/build.rs
 @@ -198,6 +198,7 @@ fn parse_version(version_str: &str) {
          }
          (Some(Mysql5), "x86_64" | "aarch64", "64", false) => "bindings_5_7_42_x86_64_linux.rs",
