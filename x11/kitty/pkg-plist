@@ -2,8 +2,6 @@ bin/kitten
 bin/kitty
 share/applications/kitty-open.desktop
 share/applications/kitty.desktop
-%%PORTDOCS%%%%DOCSDIR%%/.buildinfo
-%%PORTDOCS%%%%DOCSDIR%%/.nojekyll
 %%PORTDOCS%%%%DOCSDIR%%/_downloads/433dadebd0bf504f8b008985378086ce/kitty.conf
 %%PORTDOCS%%%%DOCSDIR%%/_downloads/a489ebbb52d84eeb19a12b2fda7debda/diff.conf
 %%PORTDOCS%%%%DOCSDIR%%/_downloads/f0a0de9ec8d9ff4456206db8e0814937/rowcolumn-diacritics.txt
@@ -952,6 +950,6 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/terminfo/kitty.termcap
 %%DATADIR%%/terminfo/kitty.terminfo
 %%DATADIR%%/terminfo/x/xterm-kitty
-%%PORTDOCS%%share/man/man1/kitty.1.gz
-%%PORTDOCS%%share/man/man5/kitty.conf.5.gz
+share/man/man1/kitty.1.gz
+share/man/man5/kitty.conf.5.gz
 share/misc/kitty.terminfo
