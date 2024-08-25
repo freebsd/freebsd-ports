@@ -1,5 +1,5 @@
 PORTNAME=	Pyomo
-DISTVERSION=	6.7.3
+DISTVERSION=	6.8.0
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -29,9 +29,8 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 USE_GITHUB=	yes
 GH_PROJECT=	pyomo
 
-BINARY_ALIAS=	python=${PYTHON_CMD} # for tests
+NO_ARCH=	yes
 
-post-install:
-	@${STRIP_CMD} $$(${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name "*.so")
+BINARY_ALIAS=	python=${PYTHON_CMD} # for tests
 
 .include <bsd.port.mk>
