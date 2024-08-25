@@ -1,3 +1,3 @@
-TIMESTAMP = 1713585565
-SHA256 (boost_histogram-1.4.1.tar.gz) = 97146f735f467d506976a047f3f237ce59840a952fd231f5f431f897fb006cdd
-SIZE (boost_histogram-1.4.1.tar.gz) = 1337723
+TIMESTAMP = 1724571214
+SHA256 (boost_histogram-1.5.0.tar.gz) = 0623f010e6c52e5d018767723959686090db07fc30f0d1d8475b5d663c5ddb2c
+SIZE (boost_histogram-1.5.0.tar.gz) = 1181192
