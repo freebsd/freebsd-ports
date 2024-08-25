@@ -1,4 +1,4 @@
 bin/occ
 @sample(,%%NEXTCLOUD_GROUPNAME%%,644) %%WWWDIR%%/.htaccess.dist %%WWWDIR%%/.htaccess
 @(%%NEXTCLOUD_USERNAME%%,%%NEXTCLOUD_GROUPNAME%%,664) %%WWWDIR%%/.user.ini
-@sample %%WWWDIR%%/config/config.sample.php %%WWWDIR%%/config/config.php
+@sample(%%NEXTCLOUD_USERNAME%%,%%NEXTCLOUD_GROUPNAME%%,640) %%WWWDIR%%/config/config.sample.php %%WWWDIR%%/config/config.php
