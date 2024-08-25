@@ -137,7 +137,6 @@ BAD_GST_ALL_PLUGINS+= \
 		mpegtsmux \
 		mplex \
 		msdk \
-		musepack \
 		mxf \
 		neon \
 		netsim \
