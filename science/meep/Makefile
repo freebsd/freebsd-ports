@@ -1,7 +1,6 @@
 PORTNAME=	meep
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.28.0
-PORTREVISION=	1
+DISTVERSION=	1.29.0
 CATEGORIES=	science cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,8 +15,10 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libctlgeom.so:science/libctl \
 		libfftw3.so:math/fftw3 \
 		libGDSII.so:cad/libgdsii \
+		libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \
 		liblapack.so:math/lapack \
+		libmpb.so:science/mpb \
 		libopenblas.so:math/openblas
 
 USES=		autoreconf compiler:c++11-lang fortran gmake libtool localbase
@@ -51,5 +52,8 @@ PYTHON_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}autograd>0:math/py-autograd@${PY_FLA
 				${PYNUMPY} \
 				${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
+PYTHON_TEST_DEPENDS=		${PYTHON_PKGNAMEPREFIX}jax>0:math/py-jax@${PY_FLAVOR}
+
+# 2 python tests fail because the py-jaxlib test dependency is missing
 
 .include <bsd.port.mk>
