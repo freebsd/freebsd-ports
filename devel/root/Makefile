@@ -1,6 +1,5 @@
 PORTNAME=	root
-DISTVERSION=	6.32.02
-PORTREVISION=	1
+DISTVERSION=	6.32.04
 CATEGORIES=	devel science math parallel python
 MASTER_SITES=	https://root.cern/download/
 DISTFILES=	${PORTNAME}_v${DISTVERSION}.source${EXTRACT_SUFX}
@@ -112,7 +111,7 @@ GDML_DESC=		Enable support for GDML (Geometry Description Markup Language)
 
 HTTP_CMAKE_BOOL=	http
 HTTP_DESC=		Enable support for HTTP server
-HTTP_IMPLIES=	WEBGUI
+HTTP_IMPLIES=	ROOT7 WEBGUI
 
 IMT_CMAKE_BOOL=	imt
 IMT_DESC=		Enable support for implicit multi-threading via Intel® Thread Building Blocks (TBB)
@@ -177,7 +176,7 @@ VDT_LIB_DEPENDS=	libvdt.so:math/vdt
 
 WEBGUI_CMAKE_BOOL=	webgui
 WEBGUI_DESC=		Build Web-based UI components of ROOT
-WEBGUI_IMPLIES=	HTTP
+WEBGUI_IMPLIES=	HTTP ROOT7
 
 X11_CMAKE_BOOL=	x11
 X11_DESC=		Enable support for X11/Xft
