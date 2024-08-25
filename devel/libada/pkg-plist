@@ -34,4 +34,4 @@ lib/cmake/ada/ada_targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ada/ada_targets.cmake
 lib/libada.so
 lib/libada.so.2
-lib/libada.so.2.9.0
+lib/libada.so.%%SOVERSION%%
