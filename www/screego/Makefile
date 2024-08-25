@@ -1478,6 +1478,9 @@ WWW=		https://github.com/screego/server
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Outdated, unmaintained in tree and marked broken over a year ago
+EXPIRATION_DATE=2024-09-30
+
 BUILD_DEPENDS=	yarn:www/yarn
 
 USES=		go:modules
