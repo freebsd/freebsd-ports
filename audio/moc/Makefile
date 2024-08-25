@@ -19,9 +19,10 @@ GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
 
-CONFIGURE_ARGS=	--disable-cache --without-ffmpeg --without-sidplay2
+CONFIGURE_ARGS=	--disable-cache --without-ffmpeg --without-musepack \
+		--without-sidplay2
 
-OPTIONS_DEFINE=	AAC CURL DEBUG FLAC JACK MODPLUG MP3 MUSEPACK RCC \
+OPTIONS_DEFINE=	AAC CURL DEBUG FLAC JACK MODPLUG MP3 RCC \
 		SAMPLERATE SNDFILE SPEEX VORBIS WAVPACK
 OPTIONS_DEFAULT=MP3 VORBIS FLAC CURL WAVPACK
 CURL_DESC=	curl support (Internet streams)
@@ -51,11 +52,6 @@ MP3_LIB_DEPENDS=	libmad.so:audio/libmad \
 			libid3tag.so:audio/libid3tag
 MP3_PLIST_FILES=	lib/moc/decoder_plugins/libmp3_decoder.so
 MP3_CONFIGURE_OFF=	--without-mp3
-
-MUSEPACK_LIB_DEPENDS=	libmpcdec.so:audio/musepack \
-			libtag_c.so:audio/taglib
-MUSEPACK_PLIST_FILES=	lib/moc/decoder_plugins/libmusepack_decoder.so
-MUSEPACK_CONFIGURE_OFF=	--without-musepack
 
 RCC_LIB_DEPENDS=	librcc.so:devel/librcc \
 			librcd.so:devel/librcd
