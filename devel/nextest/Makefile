@@ -1,6 +1,6 @@
 PORTNAME=	nextest
 DISTVERSIONPREFIX=	cargo-nextest-
-DISTVERSION=	0.9.74
+DISTVERSION=	0.9.75
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -90,7 +90,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		dialoguer-0.11.0 \
 		diff-0.1.13 \
 		digest-0.10.7 \
-		display-error-chain-0.2.0 \
+		display-error-chain-0.2.1 \
 		duct-0.13.7 \
 		dunce-1.0.5 \
 		ed25519-2.2.3 \
@@ -172,7 +172,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		jobserver-0.1.32 \
 		js-sys-0.3.69 \
 		lazy_static-1.4.0 \
-		libc-0.2.157 \
+		libc-0.2.158 \
 		libm-0.2.8 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
