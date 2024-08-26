@@ -29,9 +29,7 @@ USES=		bison:alias compiler:env cpe gmake localbase libtool perl5 pkgconfig tar:
 CPE_VENDOR=	gnu
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-#TEST_DEPENDS+=	runtest:misc/dejagnu
 CONFIGURE_ARGS+=	--disable-werror \
 			--enable-deterministic-archives \
 			--with-sysroot=/ \
