@@ -1,7 +1,7 @@
 {
   "name": "@bitwarden/desktop",
   "description": "A secure and free password manager for all of your devices.",
-  "version": "2024.7.1",
+  "version": "2024.8.0",
   "keywords": [
     "bitwarden",
     "password",
@@ -52,7 +52,7 @@
     "publish:mac:mas": "npm run dist:mac:mas && npm run upload:mas",
     "publish:win": "npm run build && npm run clean:dist && electron-builder --win --x64 --arm64 --ia32 -p always -c.win.certificateSubjectName=\"8bit Solutions LLC\"",
     "publish:win:dev": "npm run build && npm run clean:dist && electron-builder --win --x64 --arm64 --ia32 -p always",
-    "upload:mas": "xcrun altool --upload-app --type osx --file \"$(find ./dist/mas-universal/Bitwarden*.pkg)\" --username $APPLE_ID_USERNAME --password $APPLE_ID_PASSWORD",
+    "upload:mas": "xcrun altool --upload-app --type osx --file \"$(find ./dist/mas-universal/Bitwarden*.pkg)\" --apiKey $APP_STORE_CONNECT_AUTH_KEY --apiIssuer $APP_STORE_CONNECT_TEAM_ISSUER",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:watch:all": "jest --watchAll"
