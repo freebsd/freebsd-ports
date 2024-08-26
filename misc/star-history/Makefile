@@ -1,5 +1,6 @@
 PORTNAME=	star-history
 DISTVERSION=	1.0.22
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	wezterm
 DISTVERSION=	20240203-110809-5046fc22
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	vladislav.movchan@gmail.com

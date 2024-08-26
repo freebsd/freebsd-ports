@@ -1,5 +1,6 @@
 PORTNAME=	b3sum
 DISTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	sec.research.2005@gmail.com
