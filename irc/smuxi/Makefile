@@ -1,6 +1,6 @@
 PORTNAME=	smuxi
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	http://www.smuxi.org/jaws/data/files/
 
@@ -17,7 +17,9 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/log4net.pc:devel/log4net \
 		bash:shells/bash \
 		intltool-update:textproc/intltool
 LIB_DEPENDS=	libstfl.so:devel/stfl
-RUN_DEPENDS=	mono-addins>0:devel/mono-addins
+RUN_DEPENDS=	mono-addins>0:devel/mono-addins \
+		log4net>0:devel/log4net \
+		nini>0:devel/nini
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
