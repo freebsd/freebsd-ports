@@ -1,4 +1,4 @@
-PORTREVISION=	4
+PORTREVISION=	5
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 WWW=		https://www.cyrusimap.org/sasl/
