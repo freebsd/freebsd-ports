@@ -2,5 +2,5 @@ include/tree_sitter/api.h
 lib/libtree-sitter.a
 lib/libtree-sitter.so
 lib/libtree-sitter.so.0
-lib/libtree-sitter.so.0.22
+lib/libtree-sitter.so.0.23
 libdata/pkgconfig/tree-sitter.pc
