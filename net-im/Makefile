@@ -51,6 +51,7 @@
     SUBDIR += libsignal-node
     SUBDIR += libsignon-glib
     SUBDIR += libstrophe
+    SUBDIR += linux-discord
     SUBDIR += loudmouth
     SUBDIR += lurch
     SUBDIR += mastodon
