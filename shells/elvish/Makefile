@@ -16,8 +16,7 @@ CPE_VENDOR=	elv
 USE_GITHUB=	yes
 GH_ACCOUNT=	elves
 GH_PROJECT=	elvish
-GH_TUPLE=	\
-		creack:pty:v1.1.21:creack_pty/vendor/github.com/creack/pty \
+GH_TUPLE=	creack:pty:v1.1.21:creack_pty/vendor/github.com/creack/pty \
 		etcd-io:bbolt:v1.3.8:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
 		golang:sync:v0.6.0:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:v0.16.0:golang_sys/vendor/golang.org/x/sys \
@@ -28,7 +27,7 @@ GH_TUPLE=	\
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_TARGET=	./cmd/elvish
-GO_BUILDFLAGS=	-ldflags="-s -w -X src.elv.sh/pkg/buildinfo.Version=${DISTVERSIONPREFIX}${DISTVERSION} -X src.elv.sh/pkg/buildinfo.Reproducible=true" \
+GO_BUILDFLAGS=	-ldflags="-s -w -X src.elv.sh/pkg/buildinfo.BuildVariant=freebsd" \
 		-buildmode=pie
 GO_TESTFLAGS=	-race
 CGO_ENABLED=	0
