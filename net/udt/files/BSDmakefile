@@ -15,6 +15,6 @@ CXXFLAGS+=	-D${MACHINE_ARCH:tu:S/I386/IA32/:S/SPARC64/SPARC/} -DBSD
 CXXFLAGS+=	-Wno-system-headers -Wall -W	\
 	-Wpointer-arith -Wreturn-type	\
 	-Wwrite-strings -Wswitch -Wno-cast-align	\
-	-Wunused-parameter -Werror
+	-Wunused-parameter
 
 .include <bsd.lib.mk>
