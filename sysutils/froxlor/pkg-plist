@@ -28,8 +28,7 @@
 %%WWWDIR%%/actions/admin/settings/155.ftpserver.php
 %%WWWDIR%%/actions/admin/settings/160.nameserver.php
 %%WWWDIR%%/actions/admin/settings/170.logger.php
-%%WWWDIR%%/actions/admin/settings/180.dkim.php
-%%WWWDIR%%/actions/admin/settings/185.spf.php
+%%WWWDIR%%/actions/admin/settings/180.antispam.php
 %%WWWDIR%%/actions/admin/settings/210.security.php
 %%WWWDIR%%/actions/admin/settings/220.quota.php
 %%WWWDIR%%/actions/admin/settings/index.html
@@ -79,11 +78,13 @@
 %%WWWDIR%%/install/updates/%%PORTNAME%%/update_0.10.inc.php
 %%WWWDIR%%/install/updates/%%PORTNAME%%/update_2.0.inc.php
 %%WWWDIR%%/install/updates/%%PORTNAME%%/update_2.1.inc.php
+%%WWWDIR%%/install/updates/%%PORTNAME%%/update_2.2.inc.php
 %%WWWDIR%%/install/updates/index.html
 %%WWWDIR%%/install/updates/preconfig/index.html
 %%WWWDIR%%/install/updates/preconfig/preconfig_0.10.inc.php
 %%WWWDIR%%/install/updates/preconfig/preconfig_2.0.inc.php
 %%WWWDIR%%/install/updates/preconfig/preconfig_2.1.inc.php
+%%WWWDIR%%/install/updates/preconfig/preconfig_2.2.inc.php
 %%WWWDIR%%/install/updatesql.php
 %%WWWDIR%%/lib/Froxlor/Ajax/Ajax.php
 %%WWWDIR%%/lib/Froxlor/Ajax/GlobalSearch.php
@@ -165,6 +166,7 @@
 %%WWWDIR%%/lib/Froxlor/Cron/Http/Php/index.html
 %%WWWDIR%%/lib/Froxlor/Cron/Http/WebserverBase.php
 %%WWWDIR%%/lib/Froxlor/Cron/Http/index.html
+%%WWWDIR%%/lib/Froxlor/Cron/Mail/Rspamd.php
 %%WWWDIR%%/lib/Froxlor/Cron/System/ExportCron.php
 %%WWWDIR%%/lib/Froxlor/Cron/System/Extrausers.php
 %%WWWDIR%%/lib/Froxlor/Cron/System/MailboxsizeCron.php
@@ -192,6 +194,7 @@
 %%WWWDIR%%/lib/Froxlor/Domain/Domain.php
 %%WWWDIR%%/lib/Froxlor/Domain/IpAddr.php
 %%WWWDIR%%/lib/Froxlor/Domain/index.html
+%%WWWDIR%%/lib/Froxlor/ErrorBag.php
 %%WWWDIR%%/lib/Froxlor/FileDir.php
 %%WWWDIR%%/lib/Froxlor/Froxlor.php
 %%WWWDIR%%/lib/Froxlor/FroxlorLogger.php
@@ -269,9 +272,9 @@
 %%WWWDIR%%/lib/configfiles/bookworm.xml
 %%WWWDIR%%/lib/configfiles/bullseye.xml
 %%WWWDIR%%/lib/configfiles/focal.xml
-%%WWWDIR%%/lib/configfiles/gentoo.xml
 %%WWWDIR%%/lib/configfiles/index.html
 %%WWWDIR%%/lib/configfiles/jammy.xml
+%%WWWDIR%%/lib/configfiles/noble.xml
 %%WWWDIR%%/lib/formfields/admin/admin/formfield.admin_add.php
 %%WWWDIR%%/lib/formfields/admin/admin/formfield.admin_edit.php
 %%WWWDIR%%/lib/formfields/admin/admin/index.html
@@ -333,6 +336,7 @@
 %%WWWDIR%%/lib/formfields/customer/index.html
 %%WWWDIR%%/lib/formfields/customer/mysql/formfield.mysql_add.php
 %%WWWDIR%%/lib/formfields/customer/mysql/formfield.mysql_edit.php
+%%WWWDIR%%/lib/formfields/customer/mysql/formfield.mysql_global_user.php
 %%WWWDIR%%/lib/formfields/customer/mysql/index.html
 %%WWWDIR%%/lib/formfields/formfield.api_key.php
 %%WWWDIR%%/lib/formfields/formfield.dns_add.php
@@ -427,8 +431,8 @@
 %%WWWDIR%%/templates/Froxlor/assets/scss/components/index.html
 %%WWWDIR%%/templates/Froxlor/assets/scss/index.html
 %%WWWDIR%%/templates/Froxlor/base.html.twig
-%%WWWDIR%%/templates/Froxlor/build/assets/app-61450a15.css
-%%WWWDIR%%/templates/Froxlor/build/assets/app-67d6acee.js
+%%WWWDIR%%/templates/Froxlor/build/assets/app-53f08c7d.js
+%%WWWDIR%%/templates/Froxlor/build/assets/app-8baf2336.css
 %%WWWDIR%%/templates/Froxlor/build/assets/fa-brands-400-003f1154.ttf
 %%WWWDIR%%/templates/Froxlor/build/assets/fa-brands-400-faae6fc0.woff2
 %%WWWDIR%%/templates/Froxlor/build/assets/fa-regular-400-7d81a1a7.ttf
@@ -549,12 +553,14 @@
 %%WWWDIR%%/vendor/amnuts/opcache-gui/README.md
 %%WWWDIR%%/vendor/amnuts/opcache-gui/build/_frontend/interface.jsx
 %%WWWDIR%%/vendor/amnuts/opcache-gui/build/_frontend/interface.scss
+%%WWWDIR%%/vendor/amnuts/opcache-gui/build/_languages/es.json
 %%WWWDIR%%/vendor/amnuts/opcache-gui/build/_languages/example.json
 %%WWWDIR%%/vendor/amnuts/opcache-gui/build/_languages/fr.json
 %%WWWDIR%%/vendor/amnuts/opcache-gui/build/build.php
 %%WWWDIR%%/vendor/amnuts/opcache-gui/build/template.phps
 %%WWWDIR%%/vendor/amnuts/opcache-gui/composer.json
 %%WWWDIR%%/vendor/amnuts/opcache-gui/index.php
+%%WWWDIR%%/vendor/amnuts/opcache-gui/package-lock.json
 %%WWWDIR%%/vendor/amnuts/opcache-gui/package.json
 %%WWWDIR%%/vendor/amnuts/opcache-gui/src/Opcache/Service.php
 %%WWWDIR%%/vendor/autoload.php
@@ -1558,6 +1564,7 @@
 %%WWWDIR%%/vendor/symfony/service-contracts/ServiceSubscriberInterface.php
 %%WWWDIR%%/vendor/symfony/service-contracts/ServiceSubscriberTrait.php
 %%WWWDIR%%/vendor/symfony/service-contracts/Test/ServiceLocatorTest.php
+%%WWWDIR%%/vendor/symfony/service-contracts/Test/ServiceLocatorTestCase.php
 %%WWWDIR%%/vendor/symfony/service-contracts/composer.json
 %%WWWDIR%%/vendor/symfony/string/AbstractString.php
 %%WWWDIR%%/vendor/symfony/string/AbstractUnicodeString.php
@@ -1584,6 +1591,7 @@
 %%WWWDIR%%/vendor/twig/twig/LICENSE
 %%WWWDIR%%/vendor/twig/twig/README.rst
 %%WWWDIR%%/vendor/twig/twig/composer.json
+%%WWWDIR%%/vendor/twig/twig/src/Attribute/YieldReady.php
 %%WWWDIR%%/vendor/twig/twig/src/Cache/CacheInterface.php
 %%WWWDIR%%/vendor/twig/twig/src/Cache/FilesystemCache.php
 %%WWWDIR%%/vendor/twig/twig/src/Cache/NullCache.php
@@ -1606,6 +1614,7 @@
 %%WWWDIR%%/vendor/twig/twig/src/Extension/SandboxExtension.php
 %%WWWDIR%%/vendor/twig/twig/src/Extension/StagingExtension.php
 %%WWWDIR%%/vendor/twig/twig/src/Extension/StringLoaderExtension.php
+%%WWWDIR%%/vendor/twig/twig/src/Extension/YieldNotReadyExtension.php
 %%WWWDIR%%/vendor/twig/twig/src/ExtensionSet.php
 %%WWWDIR%%/vendor/twig/twig/src/FileExtensionEscapingStrategy.php
 %%WWWDIR%%/vendor/twig/twig/src/Lexer.php
@@ -1618,6 +1627,7 @@
 %%WWWDIR%%/vendor/twig/twig/src/Node/BlockNode.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/BlockReferenceNode.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/BodyNode.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/CaptureNode.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/CheckSecurityCallNode.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/CheckSecurityNode.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/CheckToStringNode.php
@@ -1708,6 +1718,7 @@
 %%WWWDIR%%/vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php
 %%WWWDIR%%/vendor/twig/twig/src/NodeVisitor/SafeAnalysisNodeVisitor.php
 %%WWWDIR%%/vendor/twig/twig/src/NodeVisitor/SandboxNodeVisitor.php
+%%WWWDIR%%/vendor/twig/twig/src/NodeVisitor/YieldNotReadyNodeVisitor.php
 %%WWWDIR%%/vendor/twig/twig/src/Parser.php
 %%WWWDIR%%/vendor/twig/twig/src/Profiler/Dumper/BaseDumper.php
 %%WWWDIR%%/vendor/twig/twig/src/Profiler/Dumper/BlackfireDumper.php
@@ -1717,6 +1728,11 @@
 %%WWWDIR%%/vendor/twig/twig/src/Profiler/Node/LeaveProfileNode.php
 %%WWWDIR%%/vendor/twig/twig/src/Profiler/NodeVisitor/ProfilerNodeVisitor.php
 %%WWWDIR%%/vendor/twig/twig/src/Profiler/Profile.php
+%%WWWDIR%%/vendor/twig/twig/src/Resources/core.php
+%%WWWDIR%%/vendor/twig/twig/src/Resources/debug.php
+%%WWWDIR%%/vendor/twig/twig/src/Resources/escaper.php
+%%WWWDIR%%/vendor/twig/twig/src/Resources/string_loader.php
+%%WWWDIR%%/vendor/twig/twig/src/Runtime/EscaperRuntime.php
 %%WWWDIR%%/vendor/twig/twig/src/RuntimeLoader/ContainerRuntimeLoader.php
 %%WWWDIR%%/vendor/twig/twig/src/RuntimeLoader/FactoryRuntimeLoader.php
 %%WWWDIR%%/vendor/twig/twig/src/RuntimeLoader/RuntimeLoaderInterface.php
@@ -1728,6 +1744,7 @@
 %%WWWDIR%%/vendor/twig/twig/src/Sandbox/SecurityNotAllowedTagError.php
 %%WWWDIR%%/vendor/twig/twig/src/Sandbox/SecurityPolicy.php
 %%WWWDIR%%/vendor/twig/twig/src/Sandbox/SecurityPolicyInterface.php
+%%WWWDIR%%/vendor/twig/twig/src/Sandbox/SourcePolicyInterface.php
 %%WWWDIR%%/vendor/twig/twig/src/Source.php
 %%WWWDIR%%/vendor/twig/twig/src/Template.php
 %%WWWDIR%%/vendor/twig/twig/src/TemplateWrapper.php
@@ -1965,7 +1982,7 @@
 %%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x1d7.php
 %%WWWDIR%%/vendor/voku/portable-ascii/src/voku/helper/data/x1f1.php
 %%WWWDIR%%/vendor/voku/portable-utf8/CHANGELOG.md
-%%WWWDIR%%/vendor/voku/portable-utf8/LICENSE-APACHE
+%%WWWDIR%%/vendor/voku/portable-utf8/LICENSE%%AP_MOD_EN%%PACHE
 %%WWWDIR%%/vendor/voku/portable-utf8/LICENSE-GPL
 %%WWWDIR%%/vendor/voku/portable-utf8/README.md
 %%WWWDIR%%/vendor/voku/portable-utf8/SECURITY.md
