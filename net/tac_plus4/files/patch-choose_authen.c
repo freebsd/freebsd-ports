@@ -1,6 +1,6 @@
 --- choose_authen.c.orig	2012-04-16 21:42:55 UTC
 +++ choose_authen.c
-@@ -130,12 +130,29 @@ choose_login(struct authen_data *data, s
+@@ -130,10 +130,27 @@ choose_login(struct authen_data *data, struct authen_t
  #else /* SKEY */
  	    report(LOG_ERR,
  		   "%s %s: user %s s/key support has not been compiled in",
@@ -10,8 +10,8 @@
 +		   name ? name : "<unknown>");
  	    return(CHOOSE_FAILED);
  #endif	/* SKEY */
- 	}
- 
++	}
++
 +	if (cfg_passwd && STREQ(cfg_passwd, "opie")) {
 +	    if (debug & DEBUG_PASSWD_FLAG)
 +		report(LOG_DEBUG, "%s %s: user %s requires opie",
@@ -27,8 +27,6 @@
 +			name ? name : "<unknown>");
 +		return(CHOOSE_FAILED);
 +#endif /* OPIE */
-+	}
-+
+ 	}
+ 
  	/* Does this user require aceclnt */
- 	cfg_passwd = cfg_get_login_secret(name, TAC_PLUS_RECURSE);
- 	if (cfg_passwd && STREQ(cfg_passwd, "aceclnt")) {

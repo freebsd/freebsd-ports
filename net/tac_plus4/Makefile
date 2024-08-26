@@ -1,6 +1,6 @@
 PORTNAME=	tac_plus
 PORTVERSION=	F4.0.4.28
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/${PORTNAME}/
 DISTNAME=	tacacs-${PORTVERSION}
@@ -14,9 +14,10 @@ GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 USES=		bison cpe perl5 libtool
 USE_PERL5=	build
 USE_RC_SUBR=	tac_plus
+SUB_LIST=	TACACS_USER=${USERS}
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--with-groupid=$$(/usr/bin/id -g tacacs 2>/dev/null || echo '559') \
-		--with-userid=$$(/usr/bin/id -u tacacs 2>/dev/null || echo '559')
+CONFIGURE_ARGS=	--with-groupid=$$(/usr/bin/id -g ${GROUPS} 2>/dev/null || echo '559') \
+		--with-userid=$$(/usr/bin/id -u ${USERS} 2>/dev/null || echo '559')
 
 CPE_VENDOR=	cisco
 
