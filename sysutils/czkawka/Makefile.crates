@@ -537,9 +537,9 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		thiserror-impl-1.0.57 \
 		thread_local-1.1.7 \
 		tiff-0.9.1 \
-		time-0.3.34 \
+		time-0.3.36 \
 		time-core-0.1.2 \
-		time-macros-0.2.17 \
+		time-macros-0.2.18 \
 		tiny-skia-0.11.4 \
 		tiny-skia-path-0.11.4 \
 		tiny-xlib-0.2.2 \
