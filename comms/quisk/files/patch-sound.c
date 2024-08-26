@@ -1,15 +1,6 @@
---- sound.c.orig	2022-11-01 15:27:27 UTC
+--- sound.c.orig	2024-05-20 18:01:18 UTC
 +++ sound.c
-@@ -15,7 +15,7 @@
- #else
- #include <sys/socket.h>
- #include <arpa/inet.h>
--#include <netinet/ip.h>
-+#include <netinet/in.h>
- #endif
- 
- #include "quisk.h"
-@@ -596,7 +596,7 @@ void play_sound_interface(struct sound_dev* dev, int n
+@@ -604,7 +604,7 @@ void play_sound_interface(struct sound_dev* dev, int n
  			else
  				dev->cr_correction = (0.5 - dev->cr_average_fill) * dev->play_buf_size;
  			if (dev->cr_correction != 0)
