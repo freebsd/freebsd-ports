@@ -1,36 +1,9 @@
 [
 { type: install
   message: <<EOM
-Please read ${PREFIX}/share/doc/kc/Changelog.md to see why you might not be able to open your database anymore.
+Please read ${PREFIX}/share/doc/kc/Changelog.md to see why you might not be able to open your v2.4 database anymore.
 
-Example:
-
-Running v2.5, creating a new then importing a v2.4 database that was using the default settings (sha512 KDF, aes256 cipher, cbc mode):
-
-$ kc
-Creating 'default.kcd'
-Using 'default.kcd' database.
-New password (empty to cancel):
-New password again (empty to cancel):
-Initializing...
-Database file: default.kcd (default.kcd)
-XML structure size: 148 bytes
-Security key(s): no
-Password: yes
-SSH agent: no
-Password function: sha512 (100000 iterations)
-Encryption: aes256, cbc
-Read-only: no
-Modified: yes
-<default% > import -o -R 5000 -k passwords.kcd
-Reading database...
-Opening 'passwords.kcd'
-Password:
-Decrypting...
-Checking database...
-Counting keys and keychains...
-Import finished.
-<passwords% >
+For YubiKey support, the user needs to have r/w access to the USB device under /dev/usb.
 EOM
 }
 ]
