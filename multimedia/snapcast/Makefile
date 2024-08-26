@@ -1,6 +1,6 @@
 PORTNAME=	snapcast
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.28.0
+DISTVERSION=	0.29.0
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,6 +15,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libavahi-common.so:net/avahi-app \
 		libexpat.so:textproc/expat2 \
 		libFLAC.so:audio/flac \
+		libjack.so:audio/jack \
 		libogg.so:audio/libogg \
 		libopus.so:audio/opus \
 		libvorbis.so:audio/libvorbis \
