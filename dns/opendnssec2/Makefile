@@ -1,8 +1,7 @@
 PORTNAME=	opendnssec
-DISTVERSION=	2.1.13
-PORTREVISION=	2
+DISTVERSION=	2.1.14
 CATEGORIES=	dns
-MASTER_SITES=	http://dist.opendnssec.org/source/
+MASTER_SITES=	https://dist.opendnssec.org/source/
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	jaap@NLnetLabs.nl
@@ -20,7 +19,6 @@ USES=		autoreconf cpe libtool ssl
 USE_RC_SUBR=	opendnssec
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--localstatedir="${PREFIX}/var" \
 		--with-ssl=${OPENSSLBASE}
 
@@ -51,7 +49,7 @@ SQLITE_DESC=	Use SQLite backend
 
 MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ON=	--with-enforcer-database=mysql
-MYSQL_VARS=	IGNORE_WITH_MYSQL="80 81"
+MYSQL_VARS=		IGNORE_WITH_MYSQL="80 81"
 SOFTHSM_RUN_DEPENDS=	softhsm2>=2.5.0:security/softhsm2
 SOFTHSM_CONFIGURE_ON=	--with-pkcs11-softhsm=${LOCALBASE}/lib/softhsm/libsofthsm2.so
 SQLITE_BUILD_DEPENDS=	sqlite3>=3.3.9:databases/sqlite3
