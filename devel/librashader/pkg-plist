@@ -1,0 +1,9 @@
+include/librashader/librashader.h
+include/librashader/librashader_ld.h
+lib/librashader.a
+lib/librashader.so
+lib/librashader.so.1
+libdata/pkgconfig/librashader.pc
+%%PORTDOCS%%%%DOCSDIR%%/BROKEN_SHADERS.md
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.md
