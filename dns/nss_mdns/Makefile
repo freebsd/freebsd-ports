@@ -1,5 +1,6 @@
 PORTNAME=	nss_mdns
 PORTVERSION=	0.14.1.20200624
+PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -21,6 +22,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--sysconfdir=/etc
+CONFIGURE_ENV= 	MDNS_ALLOW_FILE="${PREFIX}/etc/mdns.allow"
 
 INSTALL_TARGET=	install-strip
 
