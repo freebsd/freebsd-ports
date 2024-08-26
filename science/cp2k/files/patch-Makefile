@@ -1,6 +1,6 @@
---- Makefile.orig	2022-07-08 20:23:24 UTC
+--- Makefile.orig	2024-08-06 12:33:49 UTC
 +++ Makefile
-@@ -11,7 +11,7 @@ CP2KHOME     := $(abspath $(shell pwd))
+@@ -11,7 +11,7 @@ endif
  export CP2KHOME
  endif
  
@@ -9,7 +9,7 @@
  export VERSION=ssmp
  
  MAKEFILE     := $(CP2KHOME)/Makefile
-@@ -26,7 +26,7 @@ PRETTYOBJDIR := $(CP2KHOME)/obj/prettified
+@@ -26,7 +26,7 @@ SRCDIR       := $(CP2KHOME)/src
  DOXIFYOBJDIR := $(CP2KHOME)/obj/doxified
  TOOLSRC      := $(CP2KHOME)/tools
  SRCDIR       := $(CP2KHOME)/src
@@ -18,7 +18,7 @@
  REVISION     := $(shell $(CP2KHOME)/tools/build_utils/get_revision_number $(SRCDIR))
  
  EXTSDIR      := exts
-@@ -48,15 +48,15 @@ EXE_NAMES := $(basename $(notdir $(ALL_EXE_FILES)))
+@@ -48,15 +48,15 @@ MODDEPS = "lower"
  # this only happens on stage 3 and 4
  ifneq ($(ONEVERSION),)
  MODDEPS = "lower"
@@ -38,7 +38,7 @@
  ifneq ($(LD_SHARED),)
  	ARCHIVE_EXT := .so
  else
-@@ -144,7 +144,7 @@ all: makedep | dirs exts
+@@ -147,7 +147,7 @@ test: dirs makedep all
  
  # compilation for testing happens here
  test: dirs makedep all
@@ -47,21 +47,7 @@
  	@+$(MAKE) --no-print-directory -C $(TSTDIR) -f $(MAKEFILE) test INCLUDE_DEPS=true
  
  testbg: dirs makedep all
-@@ -250,11 +250,11 @@ $(EXEDIR)/cp2k_shell.$(ONEVERSION): $(EXEDIR)/cp2k.$(O
- 	cd $(EXEDIR); ln -sf cp2k.$(ONEVERSION) cp2k_shell.$(ONEVERSION)
- 
- test:
--	@$(TOOLSRC)/regtesting/do_regtest.py $(ARCH) $(ONEVERSION) $(TESTOPTS)
-+	@$(TOOLSRC)/regtesting/do_regtest.py $(XARCH) $(ONEVERSION) $(TESTOPTS)
- 
- testbg:
- 	@echo "testing: $(ONEVERSION) : full log in $(TSTDIR)/regtest.log "
--	@$(TOOLSRC)/regtesting/do_regtest.py $(ARCH) $(ONEVERSION) $(TESTOPTS) > $(TSTDIR)/regtest.log 2>&1
-+	@$(TOOLSRC)/regtesting/do_regtest.py $(XARCH) $(ONEVERSION) $(TESTOPTS) > $(TSTDIR)/regtest.log 2>&1
- 	@grep -e "Summary:" -e "Status:" $(TSTDIR)/regtest.log
- 
- endif
-@@ -307,9 +307,9 @@ define get_extensions
+@@ -310,9 +310,9 @@ clean:
  	$(shell test -d $(1) && find $(1) -type f -name "*.*" ! -name "*.gcda" | sed 's|.*\.||' | sort -u)
  endef
  clean:
@@ -74,28 +60,7 @@
  OTHER_HELP += "clean : Remove intermediate object and mod files, but not the libraries and executables, for given ARCH and VERSION"
  
  # The Intel compiler creates a corresponding .dbg file for each executable when static linking of the Intel MPI library is requested (flag -static_mpi)
-@@ -323,16 +323,16 @@ OTHER_HELP += "execlean : Remove the executables, for 
- # Use this if you want to fully rebuild an executable (for a given compiler and or VERSION)
- #
- realclean: extclean clean execlean
--	rm -rf $(foreach v, $(VERSION), $(MAINOBJDIR)/$(ARCH)/$(v))
--	rm -rf $(foreach v, $(VERSION), $(MAINLIBDIR)/$(ARCH)/$(v))
-+	rm -rf $(foreach v, $(VERSION), $(MAINOBJDIR)/$(XARCH)/$(v))
-+	rm -rf $(foreach v, $(VERSION), $(MAINLIBDIR)/$(XARCH)/$(v))
- OTHER_HELP += "realclean : Remove all files for given ARCH and VERSION"
- 
- testclean:
--	rm -rf $(foreach v, $(VERSION), $(MAINTSTDIR)/$(ARCH)/$(v)/TEST-*)
-+	rm -rf $(foreach v, $(VERSION), $(MAINTSTDIR)/$(XARCH)/$(v)/TEST-*)
- OTHER_HELP += "testclean : Remove all TEST-* files for given ARCH and VERSION"
- 
- testrealclean: testclean
--	rm -rf $(foreach v, $(VERSION), $(MAINTSTDIR)/$(ARCH)/$(v)/LAST-*)
-+	rm -rf $(foreach v, $(VERSION), $(MAINTSTDIR)/$(XARCH)/$(v)/LAST-*)
- OTHER_HELP += "testrealclean : Remove all LAST-* and TEST-* files for given ARCH and VERSION"
- 
- #
-@@ -499,7 +499,7 @@ FORCE: ;
+@@ -499,7 +499,7 @@ cp2k_info.o: $(GIT_REF)
  cp2k_info.o: $(GIT_REF)
  
  # Add some practical metadata about the build.

@@ -1,6 +1,6 @@
---- exts/build_dbcsr/Makefile.orig	2021-12-31 09:29:59 UTC
+--- exts/build_dbcsr/Makefile.orig	2024-08-06 12:33:49 UTC
 +++ exts/build_dbcsr/Makefile
-@@ -47,7 +47,7 @@ MAKEFILE     := $(DBCSRCP2K)/Makefile
+@@ -47,7 +47,7 @@ TOOLSDIR     := $(DBCSRHOME)/tools
  LIBDIR       := $(DBCSRHOME)/lib
  OBJDIR       := $(DBCSRHOME)/obj
  TOOLSDIR     := $(DBCSRHOME)/tools
