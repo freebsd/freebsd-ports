@@ -1,7 +1,7 @@
 bin/clazy
 bin/clazy-standalone
 lib/ClazyPlugin.so
-%%PORTDOCS%%%%DOCSDIR%%/COPYING-LGPL2.txt
+%%PORTDOCS%%%%DOCSDIR%%/LGPL-2.0-or-later.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/checks.json
 %%PORTDOCS%%%%DOCSDIR%%/level0/README-connect-by-name.md
@@ -14,6 +14,7 @@ lib/ClazyPlugin.so
 %%PORTDOCS%%%%DOCSDIR%%/level0/README-lambda-unique-connection.md
 %%PORTDOCS%%%%DOCSDIR%%/level0/README-lowercase-qml-type-name.md
 %%PORTDOCS%%%%DOCSDIR%%/level0/README-mutable-container-key.md
+%%PORTDOCS%%%%DOCSDIR%%/level0/README-no-module-include.md
 %%PORTDOCS%%%%DOCSDIR%%/level0/README-overloaded-signal.md
 %%PORTDOCS%%%%DOCSDIR%%/level0/README-qcolor-from-literal.md
 %%PORTDOCS%%%%DOCSDIR%%/level0/README-qdatetime-utc.md
@@ -82,7 +83,7 @@ lib/ClazyPlugin.so
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-qrequiredresult-candidates.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-qstring-varargs.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-qt-keywords.md
-%%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-qt4-qstring-from-array.md
+%%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-qt-keyword-emit.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-qt6-deprecated-api-fixes.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-qt6-fwd-fixes.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-qt6-header-fixes.md
@@ -91,11 +92,13 @@ lib/ClazyPlugin.so
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-qvariant-template-instantiation.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-raw-environment-function.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-reserve-candidates.md
+%%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-sanitize-inline-keyword.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-signal-with-return-value.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-thread-with-slots.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-tr-non-literal.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-unexpected-flag-enumerator-value.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-unneeded-cast.md
+%%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-unused-result-check.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-use-arrow-operator-instead-of-data.md
 %%PORTDOCS%%%%DOCSDIR%%/manuallevel/README-use-chrono-in-qtimer.md
 %%PORTDOCS%%share/man/man1/clazy.1.gz
