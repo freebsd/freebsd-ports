@@ -1,5 +1,5 @@
 PORTNAME=	proxysql
-PORTVERSION=	2.6.3
+PORTVERSION=	2.6.4
 CATEGORIES=	databases
 
 MAINTAINER=	zi@FreeBSD.org
