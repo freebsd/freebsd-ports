@@ -3,7 +3,7 @@ DISTVERSION=	3.2.0
 PORTREVISION=	16
 CATEGORIES=	audio
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Listen to internet radio
 WWW=		https://gitlab.gnome.org/World/Shortwave
 
