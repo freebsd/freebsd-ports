@@ -1,6 +1,7 @@
 PORTNAME=	wayfire
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -33,8 +34,8 @@ USE_GL=		egl glesv2
 USE_GNOME=	cairo pango
 USE_XORG=	pixman
 GH_ACCOUNT=	WayfireWM
-GH_TUPLE=	WayfireWM:wf-touch:8974eb0:wftouch/subprojects/wf-touch \
-		WayfireWM:wf-utils:15f8e16:wfutils/subprojects/wf-utils
+GH_TUPLE=	WayfireWM:wf-touch:b8b844f:wftouch/subprojects/wf-touch \
+		WayfireWM:wf-utils:08553c4:wfutils/subprojects/wf-utils
 MESON_ARGS=	-Dtests=disabled \
 		-Dwf-touch:tests=disabled \
 		-Dwf-utils:default_library=static \
