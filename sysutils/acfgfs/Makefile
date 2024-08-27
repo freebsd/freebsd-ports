@@ -2,7 +2,7 @@ PORTNAME=	acfgfs
 DISTVERSION=	0.6.3.3
 CATEGORIES=	sysutils
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE file system driver for Arcan window managers
 WWW=		https://arcan-fe.com/
 
