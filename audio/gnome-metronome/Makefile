@@ -4,7 +4,7 @@ PORTREVISION=	10
 CATEGORIES=	audio
 PKGNAMEPREFIX=	gnome-
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keep the tempo
 WWW=		https://gitlab.gnome.org/World/metronome
 
