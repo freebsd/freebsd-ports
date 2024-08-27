@@ -89,7 +89,6 @@
     SUBDIR += pidgin-bot-sentry
     SUBDIR += pidgin-fetion
     SUBDIR += pidgin-hotkeys
-    SUBDIR += pidgin-icyque
     SUBDIR += pidgin-latex
     SUBDIR += pidgin-libnotify
     SUBDIR += pidgin-manualsize
