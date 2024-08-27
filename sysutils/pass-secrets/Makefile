@@ -2,7 +2,7 @@ PORTNAME=	pass-secrets
 PORTVERSION=	s20240404
 CATEGORIES=	sysutils
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Freedesktop secrets provider that uses pass as a backend
 WWW=		https://github.com/nullobsi/pass-secrets
 
