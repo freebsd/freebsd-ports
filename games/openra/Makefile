@@ -9,7 +9,7 @@ DISTFILES=	IP2LOCATION-LITE-DB1.IPV6.BIN.ZIP:ip2location
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	ee0d37f2b1c4.patch:-p1 # https://github.com/OpenRA/OpenRA/pull/20041
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplayer re-envisioning of early RTS games by Westwood Studios
 WWW=		https://www.openra.net/
 
