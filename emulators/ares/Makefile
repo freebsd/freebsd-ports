@@ -1,5 +1,5 @@
 PORTNAME=	ares
-DISTVERSION=	139.20240823
+DISTVERSION=	139.20240825
 CATEGORIES=	emulators
 
 MAINTAINER=	bsdcode@disroot.org
@@ -13,7 +13,7 @@ USES=		compiler:c++17-lang gmake gnome localbase:ldflags pkgconfig \
 		xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	ares-emulator
-GH_TAGNAME=	3cd82c8
+GH_TAGNAME=	efb7f61
 USE_GNOME=	gtksourceview3
 USE_XORG=	x11 xext xrandr
 
@@ -28,9 +28,6 @@ MAKE_ARGS=	compiler=${CC} \
 		sdl2=false \
 		symbols=false \
 		threaded=true
-
-SUB_FILES=	pkg-message
-SUB_LIST=	LIBRASHADER=${_LIBRASHADER}
 
 OPTIONS_DEFINE=		DEBUG DOCS HOTKEYS NVIDIA OPENMP SHADER
 OPTIONS_DEFAULT=	A26 ALSA AO CV FC GB GBA GLX MD MS MSX MYVISION N64 NG \
@@ -157,9 +154,12 @@ SFC_MAKE_ARGS=		cores+=sfc
 
 SG_MAKE_ARGS=		cores+=sg
 
-SHADER_RUN_DEPENDS=	${LOCALBASE}/${_SHADERS}/bilinear.slangp:games/libretro-shaders-slang
+SHADER_BUILD_DEPENDS=	${LOCALBASE}/include/librashader/librashader.h:devel/librashader
+SHADER_RUN_DEPENDS=	${LOCALBASE}/${_SHADERS}/bilinear.slangp:games/libretro-shaders-slang \
+			${LOCALBASE}/lib/librashader.so:devel/librashader
 SHADER_MAKE_ARGS=	librashader=true
 SHADER_MAKE_ARGS_OFF=	librashader=false
+SHADER_CFLAGS=		-DLIBRA_RUNTIME_OPENGL
 SHADER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-desktop-ui_desktop-ui.cpp
 
 SPEC_MAKE_ARGS=		cores+=spec
@@ -176,7 +176,6 @@ XLIB_MAKE_ARGS=		ruby+=input.xlib
 XVIDEO_USE=		XORG=xv
 XVIDEO_MAKE_ARGS=	ruby+=video.xvideo
 
-_LIBRASHADER=		0.3.3
 _SHADERS=		share/libretro/shaders/shaders_slang
 
 .include <bsd.port.options.mk>
@@ -185,7 +184,15 @@ _SHADERS=		share/libretro/shaders/shaders_slang
 LLD_UNSAFE=	yes
 .endif
 
+post-patch:
+	${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/hiro/GNUmakefile
+
 post-patch-SHADER-on:
+	${REINPLACE_CMD} 's|-I../thirdparty/librashader/include||g' \
+		${WRKSRC}/desktop-ui/GNUmakefile
+	${REINPLACE_CMD} 's|"librashader_ld.h"|<librashader/librashader_ld.h>|g' \
+		${WRKSRC}/ruby/video/opengl/opengl.hpp
 	${REINPLACE_CMD} 's|@@SHADERS@@|${LOCALBASE}/${_SHADERS}/|g' \
 		${WRKSRC}/desktop-ui/desktop-ui.cpp
 
