@@ -12,10 +12,6 @@ To run ollama, plese open 2 terminals.
 This will download and run the AI model "mistral".
 You will be able to interact with it in plain English.
 
-If the above fails, you can try to run 'ollama start'
-with theenvironment variable OLLAMA_NUM_PARALLEL=1.
-This is known to help with smaller models.
-
 Please see https://ollama.com/library for the list
 of all supported models.
 
