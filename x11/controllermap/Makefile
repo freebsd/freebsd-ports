@@ -4,7 +4,7 @@ CATEGORIES=	x11
 MASTER_SITES=	https://www.libsdl.org/release/
 DISTNAME=	SDL2-${DISTVERSION}
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game controller mapping generator
 
 LICENSE=	PD
