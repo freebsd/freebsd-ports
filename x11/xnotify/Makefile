@@ -4,7 +4,7 @@ DISTVERSION=	0.9.3
 PORTREVISION=	2
 CATEGORIES=	x11
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read notifications from stdin and display them on the screen
 WWW=		https://github.com/phillbush/xnotify
 
