@@ -1,7 +1,6 @@
 PORTNAME=	nextest
 DISTVERSIONPREFIX=	cargo-nextest-
-DISTVERSION=	0.9.75
-PORTREVISION=	1
+DISTVERSION=	0.9.76
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -257,10 +256,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		self-replace-1.3.7 \
 		self_update-0.39.0 \
 		semver-1.0.23 \
-		serde-1.0.208 \
-		serde_derive-1.0.208 \
+		serde-1.0.209 \
+		serde_derive-1.0.209 \
 		serde_ignored-0.1.10 \
-		serde_json-1.0.125 \
+		serde_json-1.0.127 \
 		serde_path_to_error-0.1.16 \
 		serde_spanned-0.6.7 \
 		serde_urlencoded-0.7.1 \
