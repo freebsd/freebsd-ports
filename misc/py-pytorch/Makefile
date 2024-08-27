@@ -1,7 +1,6 @@
 PORTNAME=	pytorch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.1
-PORTREVISION=	5
+DISTVERSION=	2.4.0
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -52,6 +51,7 @@ MAKE_ENV+=	BUILD_TEST=0 # ninja breaks for some reason
 MAKE_ENV+=	USE_MKLDNN=0 # disable MKLDNN that doesn't exist, see https://github.com/pytorch/pytorch/issues/100957
 MAKE_ENV+=	USE_CUDNN=0
 MAKE_ENV+=	USE_LAPACK=1 # needed on FreeBSD to run w/out GPU
+MAKE_ENV+=	USE_QNNPACK=0
 LDFLAGS+=	-lexecinfo
 
 BINARY_ALIAS=	make=${GMAKE}
