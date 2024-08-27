@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	de2b38f5f34f.patch:-p1 # libjxl 0.9
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JPEG XL loader for imlib2
 WWW=		https://github.com/alistair7/imlib2-jxl
 
