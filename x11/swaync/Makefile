@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 PORTVERSION=	0.12.2
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Wayland notification daemon with GTK panel
 WWW=		https://github.com/ErikReider/SwayNotificationCenter
 
