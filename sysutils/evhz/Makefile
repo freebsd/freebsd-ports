@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.sr.ht/~iank/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for measuring evdev event rate (mouse polling rate)
 WWW=		https://git.sr.ht/~iank/evhz
 
