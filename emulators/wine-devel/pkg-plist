@@ -928,6 +928,7 @@ include/wine/windows/shdeprecated.idl
 include/wine/windows/shdispid.h
 include/wine/windows/shellapi.h
 include/wine/windows/shellscalingapi.h
+include/wine/windows/sherrors.h
 include/wine/windows/shimgdata.h
 include/wine/windows/shimgdata.idl
 include/wine/windows/shldisp.h
@@ -1478,6 +1479,7 @@ lib/wine/%%WINEARCH%%-unix/libncrypt.a
 lib/wine/%%WINEARCH%%-unix/libnddeapi.a
 lib/wine/%%WINEARCH%%-unix/libnetapi32.a
 lib/wine/%%WINEARCH%%-unix/libnetio.a
+lib/wine/%%WINEARCH%%-unix/libnetutils.a
 lib/wine/%%WINEARCH%%-unix/libnewdev.a
 lib/wine/%%WINEARCH%%-unix/libninput.a
 lib/wine/%%WINEARCH%%-unix/libnormaliz.a
@@ -2013,6 +2015,7 @@ lib/wine/%%WINEARCH%%-windows/libncrypt.a
 lib/wine/%%WINEARCH%%-windows/libnddeapi.a
 lib/wine/%%WINEARCH%%-windows/libnetapi32.a
 lib/wine/%%WINEARCH%%-windows/libnetio.a
+lib/wine/%%WINEARCH%%-windows/libnetutils.a
 lib/wine/%%WINEARCH%%-windows/libnewdev.a
 lib/wine/%%WINEARCH%%-windows/libninput.a
 lib/wine/%%WINEARCH%%-windows/libnormaliz.a
