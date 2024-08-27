@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc.orig	2024-06-25 12:08:48 UTC
+--- chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc.orig	2024-08-27 06:28:16 UTC
 +++ chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc
 @@ -23,7 +23,7 @@
  #include "components/policy/core/common/management/management_service.h"
@@ -18,7 +18,7 @@
  policy::CloudPolicyStore* GetUserCloudPolicyStore(Profile* profile) {
    policy::CloudPolicyManager* user_policy_manager =
        profile->GetCloudPolicyManager();
-@@ -101,7 +101,7 @@ DeviceTrustServiceFactory::DeviceTrustServiceFactory()
+@@ -106,7 +106,7 @@ DeviceTrustServiceFactory::DeviceTrustServiceFactory()
    DependsOn(DeviceTrustConnectorServiceFactory::GetInstance());
    DependsOn(policy::ManagementServiceFactory::GetInstance());
  

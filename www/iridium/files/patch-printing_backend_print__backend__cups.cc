@@ -1,6 +1,6 @@
---- printing/backend/print_backend_cups.cc.orig	2024-08-01 05:47:53 UTC
+--- printing/backend/print_backend_cups.cc.orig	2024-08-27 06:28:16 UTC
 +++ printing/backend/print_backend_cups.cc
-@@ -27,7 +27,7 @@
+@@ -32,7 +32,7 @@
  #include "printing/mojom/print.mojom.h"
  #include "url/gurl.h"
  
@@ -9,7 +9,7 @@
  #include "base/feature_list.h"
  #include "printing/backend/cups_connection.h"
  #include "printing/backend/print_backend_cups_ipp.h"
-@@ -278,7 +278,7 @@ bool PrintBackendCUPS::IsValidPrinter(const std::strin
+@@ -283,7 +283,7 @@ bool PrintBackendCUPS::IsValidPrinter(const std::strin
  #if !BUILDFLAG(IS_CHROMEOS)
  scoped_refptr<PrintBackend> PrintBackend::CreateInstanceImpl(
      const std::string& locale) {

@@ -1,9 +1,9 @@
---- components/startup_metric_utils/common/startup_metric_utils.cc.orig	2024-06-25 12:08:48 UTC
+--- components/startup_metric_utils/common/startup_metric_utils.cc.orig	2024-08-27 06:28:16 UTC
 +++ components/startup_metric_utils/common/startup_metric_utils.cc
-@@ -85,7 +85,7 @@ base::TimeTicks CommonStartupMetricRecorder::StartupTi
+@@ -94,7 +94,7 @@ base::TimeTicks CommonStartupMetricRecorder::StartupTi
    // Enabling this logic on OS X causes a significant performance regression.
-   // TODO(crbug.com/40464036): Remove IS_APPLE ifdef once priority changes are
-   // ignored on Mac main thread.
+   // TODO(crbug.com/40464036): Remove IS_APPLE ifdef once utility processes
+   // set their desired main thread priority.
 -#if !BUILDFLAG(IS_APPLE)
 +#if !BUILDFLAG(IS_APPLE) && !BUILDFLAG(IS_BSD)
    static bool statics_initialized = false;

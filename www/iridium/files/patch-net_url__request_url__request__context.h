@@ -1,6 +1,6 @@
---- net/url_request/url_request_context.h.orig	2024-06-25 12:08:48 UTC
+--- net/url_request/url_request_context.h.orig	2024-08-27 06:28:16 UTC
 +++ net/url_request/url_request_context.h
-@@ -89,7 +89,7 @@ class NET_EXPORT URLRequestContext final {
+@@ -91,7 +91,7 @@ class NET_EXPORT URLRequestContext final {
  // TODO(crbug.com/40118868): Revisit once build flag switch of lacros-chrome is
  // complete.
  #if !BUILDFLAG(IS_WIN) && \

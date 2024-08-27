@@ -1,6 +1,6 @@
---- ui/native_theme/native_theme.h.orig	2024-06-25 12:08:48 UTC
+--- ui/native_theme/native_theme.h.orig	2024-08-27 06:28:16 UTC
 +++ ui/native_theme/native_theme.h
-@@ -62,7 +62,7 @@ class NATIVE_THEME_EXPORT NativeTheme {
+@@ -63,7 +63,7 @@ class NATIVE_THEME_EXPORT NativeTheme {
      kCheckbox,
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
