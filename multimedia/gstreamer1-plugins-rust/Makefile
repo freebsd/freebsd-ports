@@ -4,7 +4,7 @@ DISTVERSIONSUFFIX=	+fixup
 PORTREVISION=	9
 CATEGORIES=	multimedia
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Various GStreamer plugins written in Rust
 WWW=		https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs
 
