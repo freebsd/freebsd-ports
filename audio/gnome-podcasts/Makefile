@@ -4,7 +4,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 PKGNAMEPREFIX=	gnome-
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Podcast app for GNOME
 WWW=		https://gitlab.gnome.org/World/podcasts
 
