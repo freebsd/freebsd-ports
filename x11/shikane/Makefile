@@ -4,7 +4,7 @@ DISTVERSION=	1.0.1
 PORTREVISION=	9
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic output configuration tool for Wayland compositors
 WWW=		https://gitlab.com/w0lff/shikane
 
