@@ -4,7 +4,7 @@ DISTVERSION=	0.3.1
 PORTREVISION=	25
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sleek notification daemon
 
 LICENSE=	MPL20
