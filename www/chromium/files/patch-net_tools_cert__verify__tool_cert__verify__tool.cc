@@ -1,6 +1,6 @@
---- net/tools/cert_verify_tool/cert_verify_tool.cc.orig	2024-07-30 11:12:21 UTC
+--- net/tools/cert_verify_tool/cert_verify_tool.cc.orig	2024-08-26 12:06:38 UTC
 +++ net/tools/cert_verify_tool/cert_verify_tool.cc
-@@ -34,7 +34,7 @@
+@@ -35,7 +35,7 @@
  #include "third_party/boringssl/src/pki/trust_store.h"
  #include "third_party/boringssl/src/pki/trust_store_collection.h"
  
@@ -9,7 +9,7 @@
  #include "net/proxy_resolution/proxy_config.h"
  #include "net/proxy_resolution/proxy_config_service_fixed.h"
  #endif
-@@ -66,7 +66,7 @@ void SetUpOnNetworkThread(
+@@ -67,7 +67,7 @@ void SetUpOnNetworkThread(
      base::WaitableEvent* initialization_complete_event) {
    net::URLRequestContextBuilder url_request_context_builder;
    url_request_context_builder.set_user_agent(GetUserAgent());
@@ -18,7 +18,7 @@
    // On Linux, use a fixed ProxyConfigService, since the default one
    // depends on glib.
    //
-@@ -576,7 +576,7 @@ int main(int argc, char** argv) {
+@@ -579,7 +579,7 @@ int main(int argc, char** argv) {
    std::string impls_str = command_line.GetSwitchValueASCII("impls");
    if (impls_str.empty()) {
      // Default value.

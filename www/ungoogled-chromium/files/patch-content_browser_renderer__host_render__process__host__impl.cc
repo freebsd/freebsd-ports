@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_process_host_impl.cc.orig	2024-07-31 14:19:23 UTC
+--- content/browser/renderer_host/render_process_host_impl.cc.orig	2024-08-26 14:40:28 UTC
 +++ content/browser/renderer_host/render_process_host_impl.cc
-@@ -225,7 +225,7 @@
+@@ -219,7 +219,7 @@
  #include "third_party/blink/public/mojom/android_font_lookup/android_font_lookup.mojom.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include <sys/resource.h>
  
  #include "components/services/font/public/mojom/font_service.mojom.h"  // nogncheck
-@@ -966,7 +966,7 @@ static constexpr size_t kUnknownPlatformProcessLimit =
+@@ -949,7 +949,7 @@ static constexpr size_t kUnknownPlatformProcessLimit =
  // to indicate failure and std::numeric_limits<size_t>::max() to indicate
  // unlimited.
  size_t GetPlatformProcessLimit() {
@@ -18,34 +18,16 @@
    struct rlimit limit;
    if (getrlimit(RLIMIT_NPROC, &limit) != 0)
      return kUnknownPlatformProcessLimit;
-@@ -1152,7 +1152,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
-   IOThreadHostImpl& operator=(const IOThreadHostImpl& other) = delete;
+@@ -1122,7 +1122,7 @@ RenderProcessHostImpl::IOThreadHostImpl::~IOThreadHost
  
-   void SetPid(base::ProcessId child_pid) {
+ void RenderProcessHostImpl::IOThreadHostImpl::SetPid(
+     base::ProcessId child_pid) {
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-     child_thread_type_switcher_.SetPid(child_pid);
+   child_thread_type_switcher_.SetPid(child_pid);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-   }
-@@ -1173,7 +1173,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
-         return;
-     }
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-     if (auto font_receiver = receiver.As<font_service::mojom::FontService>()) {
-       ConnectToFontService(std::move(font_receiver));
-       return;
-@@ -1267,7 +1267,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
-   std::unique_ptr<service_manager::BinderRegistry> binders_;
-   mojo::Receiver<mojom::ChildProcessHost> receiver_{this};
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   mojo::Remote<media::mojom::VideoEncodeAcceleratorProviderFactory>
-       video_encode_accelerator_factory_remote_;
-   ChildThreadTypeSwitcher child_thread_type_switcher_;
-@@ -3430,7 +3430,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
+ }
+@@ -3132,7 +3132,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
              base::TimeTicks::UnixEpoch().since_origin().InMicroseconds()));
    }
  
@@ -54,7 +36,7 @@
    // Append `kDisableVideoCaptureUseGpuMemoryBuffer` flag if there is no support
    // for NV12 GPU memory buffer.
    if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled() &&
-@@ -3488,6 +3488,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3189,6 +3189,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
      switches::kDisableSpeechAPI,
      switches::kDisableThreadedCompositing,
      switches::kDisableTouchDragDrop,

@@ -1,6 +1,6 @@
---- chrome/browser/profiles/profile_impl.cc.orig	2024-07-31 14:19:23 UTC
+--- chrome/browser/profiles/profile_impl.cc.orig	2024-08-26 14:40:28 UTC
 +++ chrome/browser/profiles/profile_impl.cc
-@@ -263,6 +263,10 @@
+@@ -264,6 +264,10 @@
  #include "chrome/browser/spellchecker/spellcheck_service.h"
  #endif
  

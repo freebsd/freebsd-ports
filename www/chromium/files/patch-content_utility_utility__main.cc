@@ -1,4 +1,4 @@
---- content/utility/utility_main.cc.orig	2024-07-30 11:12:21 UTC
+--- content/utility/utility_main.cc.orig	2024-08-26 12:06:38 UTC
 +++ content/utility/utility_main.cc
 @@ -36,17 +36,21 @@
  #include "services/screen_ai/buildflags/buildflags.h"
@@ -49,7 +49,7 @@
  #include "services/screen_ai/public/cpp/utilities.h"  // nogncheck
  #include "services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.h"  // nogncheck
  #endif
-@@ -100,7 +109,7 @@ namespace content {
+@@ -101,7 +110,7 @@ namespace content {
  
  namespace {
  
@@ -58,7 +58,7 @@
  std::vector<std::string> GetNetworkContextsParentDirectories() {
    base::MemoryMappedFile::Region region;
    base::ScopedFD read_pipe_fd = base::FileDescriptorStore::GetInstance().TakeFD(
-@@ -127,9 +136,10 @@ std::vector<std::string> GetNetworkContextsParentDirec
+@@ -128,9 +137,10 @@ std::vector<std::string> GetNetworkContextsParentDirec
    return dirs;
  }
  
@@ -70,7 +70,7 @@
        sandbox_type == sandbox::mojom::Sandbox::kHardwareVideoDecoding ||
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
        sandbox_type == sandbox::mojom::Sandbox::kHardwareVideoEncoding;
-@@ -144,6 +154,7 @@ bool ShouldUseAmdGpuPolicy(sandbox::mojom::Sandbox san
+@@ -145,6 +155,7 @@ bool ShouldUseAmdGpuPolicy(sandbox::mojom::Sandbox san
  
    return false;
  }
@@ -78,7 +78,7 @@
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_WIN)
-@@ -241,7 +252,8 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -242,7 +253,8 @@ int UtilityMain(MainFunctionParams parameters) {
      CHECK(on_device_model::OnDeviceModelService::PreSandboxInit());
    }
  
@@ -88,7 +88,7 @@
    // Thread type delegate of the process should be registered before first
    // thread type change in ChildProcess constructor. It also needs to be
    // registered before the process has multiple threads, which may race with
-@@ -253,7 +265,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -254,7 +266,7 @@ int UtilityMain(MainFunctionParams parameters) {
    }
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
@@ -97,7 +97,7 @@
    // Initializes the sandbox before any threads are created.
    // TODO(jorgelo): move this after GTK initialization when we enable a strict
    // Seccomp-BPF policy.
-@@ -291,7 +303,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -292,7 +304,7 @@ int UtilityMain(MainFunctionParams parameters) {
                               screen_ai::GetBinaryPathSwitch()));
        break;
  #endif
@@ -106,7 +106,7 @@
      case sandbox::mojom::Sandbox::kHardwareVideoDecoding:
        pre_sandbox_hook =
            base::BindOnce(&media::HardwareVideoDecodingPreSandboxHook);
-@@ -318,6 +330,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -319,6 +331,7 @@ int UtilityMain(MainFunctionParams parameters) {
      default:
        break;
    }
@@ -114,7 +114,7 @@
    if (!sandbox::policy::IsUnsandboxedSandboxType(sandbox_type) &&
        (parameters.zygote_child || !pre_sandbox_hook.is_null())) {
      sandbox_options.use_amd_specific_policies =
-@@ -325,6 +338,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -326,6 +339,11 @@ int UtilityMain(MainFunctionParams parameters) {
      sandbox::policy::Sandbox::Initialize(
          sandbox_type, std::move(pre_sandbox_hook), sandbox_options);
    }

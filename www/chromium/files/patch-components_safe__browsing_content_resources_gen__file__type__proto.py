@@ -1,15 +1,15 @@
---- components/safe_browsing/content/resources/gen_file_type_proto.py.orig	2023-01-11 09:17:16 UTC
+--- components/safe_browsing/content/resources/gen_file_type_proto.py.orig	2024-08-26 12:06:38 UTC
 +++ components/safe_browsing/content/resources/gen_file_type_proto.py
-@@ -38,6 +38,8 @@ def PlatformTypes():
-         "fuchsia":
-         download_file_types_pb2.DownloadFileType.PLATFORM_TYPE_FUCHSIA,
+@@ -37,6 +37,8 @@ def PlatformTypes():
+         "chromeos":
+         download_file_types_pb2.DownloadFileType.PLATFORM_TYPE_CHROME_OS,
          "linux": download_file_types_pb2.DownloadFileType.PLATFORM_TYPE_LINUX,
 +        "openbsd": download_file_types_pb2.DownloadFileType.PLATFORM_TYPE_LINUX,
 +        "freebsd": download_file_types_pb2.DownloadFileType.PLATFORM_TYPE_LINUX,
          "mac": download_file_types_pb2.DownloadFileType.PLATFORM_TYPE_MAC,
          "win": download_file_types_pb2.DownloadFileType.PLATFORM_TYPE_WINDOWS,
-     }
-@@ -181,7 +183,7 @@ class DownloadFileTypeProtoGenerator(BinaryProtoGenera
+         # LINT.ThenChange(BUILD.gn:PlatformTypes)
+@@ -179,7 +181,7 @@ class DownloadFileTypeProtoGenerator(BinaryProtoGenera
              '-t',
              '--type',
              help='The platform type. One of android, chromeos, ' +

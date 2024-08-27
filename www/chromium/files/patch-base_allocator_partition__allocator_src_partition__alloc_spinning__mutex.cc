@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/spinning_mutex.cc.orig	2024-02-23 21:04:38 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/spinning_mutex.cc.orig	2024-08-26 12:06:38 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/spinning_mutex.cc
 @@ -17,7 +17,16 @@
  #endif
@@ -17,7 +17,7 @@
  #include <sys/syscall.h>
  #include <unistd.h>
  
-@@ -109,8 +118,16 @@ void SpinningMutex::FutexWait() {
+@@ -106,8 +115,16 @@ void SpinningMutex::FutexWait() {
    // |kLockedContended| anymore. Note that even without spurious wakeups, the
    // value of |state_| is not guaranteed when this returns, as another thread
    // may get the lock before we get to run.
@@ -34,7 +34,7 @@
  
    if (err) {
      // These are programming error, check them.
-@@ -122,8 +139,16 @@ void SpinningMutex::FutexWait() {
+@@ -119,8 +136,16 @@ void SpinningMutex::FutexWait() {
  
  void SpinningMutex::FutexWake() {
    int saved_errno = errno;

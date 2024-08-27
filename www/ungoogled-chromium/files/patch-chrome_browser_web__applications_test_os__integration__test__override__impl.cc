@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/test/os_integration_test_override_impl.cc.orig	2024-05-23 20:04:36 UTC
+--- chrome/browser/web_applications/test/os_integration_test_override_impl.cc.orig	2024-08-26 14:40:28 UTC
 +++ chrome/browser/web_applications/test/os_integration_test_override_impl.cc
 @@ -46,7 +46,7 @@
  #include "third_party/skia/include/core/SkBitmap.h"
@@ -27,7 +27,7 @@
    base::FilePath desktop_shortcut_path =
        GetShortcutPath(profile, desktop(), app_id, app_name);
    LOG(INFO) << desktop_shortcut_path;
-@@ -306,7 +306,7 @@ bool OsIntegrationTestOverrideImpl::DeleteApplicationM
+@@ -314,7 +314,7 @@ bool OsIntegrationTestOverrideImpl::DeleteApplicationM
  }
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -36,7 +36,7 @@
  bool OsIntegrationTestOverrideImpl::DeleteDesktopDirOnLinux() {
    if (desktop_.IsValid()) {
      return desktop_.Delete();
-@@ -320,7 +320,7 @@ bool OsIntegrationTestOverrideImpl::IsRunOnOsLoginEnab
+@@ -328,7 +328,7 @@ bool OsIntegrationTestOverrideImpl::IsRunOnOsLoginEnab
      Profile* profile,
      const webapps::AppId& app_id,
      const std::string& app_name) {
@@ -45,7 +45,7 @@
    std::string shortcut_filename =
        "chrome-" + app_id + "-" + profile->GetBaseName().value() + ".desktop";
    return base::PathExists(startup().Append(shortcut_filename));
-@@ -376,7 +376,7 @@ bool OsIntegrationTestOverrideImpl::IsFileExtensionHan
+@@ -384,7 +384,7 @@ bool OsIntegrationTestOverrideImpl::IsFileExtensionHan
    is_file_handled =
        shell_integration::CanApplicationHandleURL(app_path, test_file_url);
    base::DeleteFile(test_file_path);
@@ -54,7 +54,7 @@
    base::FilePath user_applications_dir = applications();
    bool database_update_called = false;
    for (const LinuxFileRegistration& command : linux_file_registration_) {
-@@ -419,7 +419,7 @@ OsIntegrationTestOverrideImpl::GetShortcutIconTopLeftC
+@@ -427,7 +427,7 @@ OsIntegrationTestOverrideImpl::GetShortcutIconTopLeftC
      return std::nullopt;
    }
    return GetIconTopLeftColorFromShortcutFile(shortcut_path);
@@ -63,7 +63,7 @@
    WebAppProvider* provider = WebAppProvider::GetForLocalAppsUnchecked(profile);
    if (!provider) {
      return std::nullopt;
-@@ -469,7 +469,7 @@ base::FilePath OsIntegrationTestOverrideImpl::GetShort
+@@ -477,7 +477,7 @@ base::FilePath OsIntegrationTestOverrideImpl::GetShort
        app_installed_profiles.end()) {
      return shortcut_path;
    }
@@ -72,7 +72,7 @@
    std::string shortcut_filename =
        "chrome-" + app_id + "-" + profile->GetBaseName().value() + ".desktop";
    base::FilePath shortcut_path = shortcut_dir.Append(shortcut_filename);
-@@ -495,7 +495,7 @@ bool OsIntegrationTestOverrideImpl::IsShortcutCreated(
+@@ -502,7 +502,7 @@ bool OsIntegrationTestOverrideImpl::IsShortcutCreated(
    base::FilePath app_shortcut_path =
        GetShortcutPath(profile, chrome_apps_folder(), app_id, app_name);
    return base::PathExists(app_shortcut_path);
@@ -81,7 +81,7 @@
    base::FilePath desktop_shortcut_path =
        GetShortcutPath(profile, desktop(), app_id, app_name);
    return base::PathExists(desktop_shortcut_path);
-@@ -683,7 +683,7 @@ void OsIntegrationTestOverrideImpl::EnableOrDisablePat
+@@ -690,7 +690,7 @@ void OsIntegrationTestOverrideImpl::EnableOrDisablePat
  }
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -90,7 +90,7 @@
  base::FilePath OsIntegrationTestOverrideImpl::desktop() {
    return desktop_.GetPath();
  }
-@@ -734,7 +734,7 @@ OsIntegrationTestOverrideImpl::OsIntegrationTestOverri
+@@ -741,7 +741,7 @@ OsIntegrationTestOverrideImpl::OsIntegrationTestOverri
    success = chrome_apps_folder_.CreateUniqueTempDirUnderPath(
        outer_temp_dir_.GetPath());
    CHECK(success);
@@ -99,7 +99,7 @@
    success = desktop_.CreateUniqueTempDirUnderPath(outer_temp_dir_.GetPath());
    CHECK(success);
    success = startup_.CreateUniqueTempDirUnderPath(outer_temp_dir_.GetPath());
-@@ -747,7 +747,7 @@ OsIntegrationTestOverrideImpl::OsIntegrationTestOverri
+@@ -754,7 +754,7 @@ OsIntegrationTestOverrideImpl::OsIntegrationTestOverri
    CHECK(success);
  #endif
  
@@ -108,10 +108,10 @@
    auto callback = base::BindRepeating([](base::FilePath filename_in,
                                           std::string xdg_command,
                                           std::string file_contents) {
-@@ -819,7 +819,7 @@ OsIntegrationTestOverrideImpl::~OsIntegrationTestOverr
+@@ -826,7 +826,7 @@ OsIntegrationTestOverrideImpl::~OsIntegrationTestOverr
    EXPECT_TRUE(!startup_.IsValid() || startup_.Delete());
  #elif BUILDFLAG(IS_MAC)
-   EXPECT_TRUE(!chrome_apps_folder_.IsValid() || chrome_apps_folder_.Delete());
+   EXPECT_TRUE(!chrome_apps_folder_.IsValid() || DeleteChromeAppsDir());
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    EXPECT_TRUE(!desktop_.IsValid() || desktop_.Delete());

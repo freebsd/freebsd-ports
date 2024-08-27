@@ -1,8 +1,8 @@
---- skia/ext/skcolorspace_trfn.cc.orig	2023-08-17 07:33:31 UTC
+--- skia/ext/skcolorspace_trfn.cc.orig	2024-08-26 12:06:38 UTC
 +++ skia/ext/skcolorspace_trfn.cc
-@@ -2,6 +2,8 @@
- // Use of this source code is governed by a BSD-style license that can be
- // found in the LICENSE file.
+@@ -7,6 +7,8 @@
+ #pragma allow_unsafe_buffers
+ #endif
  
 +#include <cmath>
 +

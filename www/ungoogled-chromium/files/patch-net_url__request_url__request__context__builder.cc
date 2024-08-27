@@ -1,6 +1,6 @@
---- net/url_request/url_request_context_builder.cc.orig	2024-05-23 20:04:36 UTC
+--- net/url_request/url_request_context_builder.cc.orig	2024-08-26 14:40:28 UTC
 +++ net/url_request/url_request_context_builder.cc
-@@ -440,7 +440,7 @@ std::unique_ptr<URLRequestContext> URLRequestContextBu
+@@ -442,7 +442,7 @@ std::unique_ptr<URLRequestContext> URLRequestContextBu
    }
  
    if (!proxy_resolution_service_) {

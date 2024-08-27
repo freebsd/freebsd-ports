@@ -1,6 +1,6 @@
---- base/compiler_specific.h.orig	2024-02-23 21:04:38 UTC
+--- base/compiler_specific.h.orig	2024-08-26 12:06:38 UTC
 +++ base/compiler_specific.h
-@@ -316,7 +316,7 @@
+@@ -326,7 +326,7 @@
  //
  // In some cases it's desirable to remove this, e.g. on hot functions, or if
  // we have purposely changed the reference canary.
