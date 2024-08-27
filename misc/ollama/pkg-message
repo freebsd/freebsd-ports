@@ -5,7 +5,7 @@ You installed ollama: the AI model runner.
 
 To run ollama, plese open 2 terminals.
 1. In the first terminal, please run:
-   $ ollama start
+   $ OLLAMA_NUM_PARALLEL=1 OLLAMA_DEBUG=1 LLAMA_DEBUG=1 ollama start
 2. In the second terminal, please run:
    $ ollama run mistral
 
