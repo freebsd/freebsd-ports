@@ -4,7 +4,7 @@ DISTVERSION=	0.6.1
 PORTREVISION=	4
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wayland clipboard manager
 WWW=		https://github.com/sentriz/cliphist
 
