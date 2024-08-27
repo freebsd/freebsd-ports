@@ -3,7 +3,7 @@ DISTVERSION=	1.1.0
 PORTREVISION=	7
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop bar for Wayfire and other wlroots compositors
 WWW=		https://firstbober.github.io/wapanel/
 
