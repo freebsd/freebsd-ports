@@ -81,6 +81,7 @@ include/fizz/crypto/hpke/Utils.h
 include/fizz/crypto/hpke/test/Mocks.h
 include/fizz/crypto/test/HmacTest.h
 include/fizz/crypto/test/Mocks.h
+include/fizz/crypto/test/TestKeys.h
 include/fizz/crypto/test/TestUtil.h
 include/fizz/experimental/ktls/AsyncFizzBaseKTLS.h
 include/fizz/experimental/ktls/AsyncKTLSSocket.h
