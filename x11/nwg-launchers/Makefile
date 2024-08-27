@@ -4,7 +4,7 @@ DISTVERSION=	0.7.1.1
 PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK-based launchers: application grid, button bar, dmenu for sway and other window managers
 WWW=		https://github.com/nwg-piotr/nwg-launchers
 
