@@ -1,6 +1,6 @@
 PORTNAME=	arbor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
+DISTVERSION=	0.10.1
 CATEGORIES=	science
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	pybind11>0:devel/pybind11 \
 LIB_DEPENDS=	libarbor.so:science/arbor
 
 USES=		cmake compiler:c++17-lang localbase:ldflags python
-USE_PYTHON=	flavors
+USE_PYTHON=	flavors pytest # tests fail to run, see https://github.com/arbor-sim/arbor/issues/2395
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arbor-sim
@@ -28,10 +28,19 @@ CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD} \
 
 CXXFLAGS+=	-fPIC
 
+TEST_WRKSRC=	${WRKSRC}/test/unit_distributed
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+BINARY_ALIAS=	make=${GMAKE}
+
 post-patch:
 	@${ECHO} ${DISTVERSION} > ${WRKSRC}/VERSION
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/arbor/_arbor${PYTHON_EXT_SUFFIX}.so
+
+do-test: # some tests fail with 'make'-related errors
+	@cd ${BUILD_WRKSRC} && \
+		${SETENV} ${TEST_ENV} ${PYTHON_CMD} -munittest discover -v -s ${WRKSRC}
 
 .include <bsd.port.mk>
