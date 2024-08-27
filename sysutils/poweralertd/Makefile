@@ -3,7 +3,7 @@ DISTVERSION=	0.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.sr.ht/~kennylevinsen/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UPower-powered power alerter
 WWW=		https://sr.ht/~kennylevinsen/poweralertd/
 
