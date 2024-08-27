@@ -4,7 +4,7 @@ DISTVERSION=	1.1.0
 PORTREVISION=	2
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keymap manager for wlroots-based compositors
 WWW=		https://github.com/MaxVerevkin/wlr-which-key
 
