@@ -2,7 +2,7 @@ PORTNAME=	aloadimage
 DISTVERSION=	0.6.3.3
 CATEGORIES=	graphics
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trivial image viewer for Arcan servers
 WWW=		https://arcan-fe.com/
 
