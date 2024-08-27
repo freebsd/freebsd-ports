@@ -1,4 +1,4 @@
---- services/device/usb/BUILD.gn.orig	2024-06-25 12:08:48 UTC
+--- services/device/usb/BUILD.gn.orig	2024-08-27 06:28:16 UTC
 +++ services/device/usb/BUILD.gn
 @@ -91,7 +91,7 @@ static_library("usb") {
      deps += [ "//third_party/re2" ]
@@ -23,7 +23,7 @@
    if (is_linux || is_chromeos) {
      sources += [
        "usb_device_linux.cc",
-@@ -131,7 +138,7 @@ static_library("usb") {
+@@ -135,7 +142,7 @@ static_library("usb") {
      deps += [ "//device/udev_linux" ]
    }
  

@@ -1,6 +1,6 @@
---- chrome/browser/ui/ui_features.h.orig	2024-08-01 05:47:53 UTC
+--- chrome/browser/ui/ui_features.h.orig	2024-08-27 06:28:16 UTC
 +++ chrome/browser/ui/ui_features.h
-@@ -85,7 +85,7 @@ BASE_DECLARE_FEATURE(kAccessCodeCastUI);
+@@ -80,7 +80,7 @@ BASE_DECLARE_FEATURE(kAccessCodeCastUI);
  
  BASE_DECLARE_FEATURE(kEvDetailsInPageInfo);
  
@@ -9,7 +9,7 @@
  BASE_DECLARE_FEATURE(kFewerUpdateConfirmations);
  #endif
  
-@@ -256,7 +256,7 @@ bool IsToolbarPinningEnabled();
+@@ -239,7 +239,7 @@ bool IsToolbarPinningEnabled();
  
  BASE_DECLARE_FEATURE(kTopChromeWebUIUsesSpareRenderer);
  
@@ -18,3 +18,12 @@
  BASE_DECLARE_FEATURE(kUpdateTextOptions);
  extern const base::FeatureParam<int> kUpdateTextOptionNumber;
  #endif
+@@ -266,7 +266,7 @@ BASE_DECLARE_FEATURE(kViewsJSAppModalDialog);
+ 
+ BASE_DECLARE_FEATURE(kStopLoadingAnimationForHiddenWindow);
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ BASE_DECLARE_FEATURE(kUsePortalAccentColor);
+ #endif
+ 

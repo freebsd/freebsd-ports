@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/profiles/profile_menu_view.cc.orig	2024-08-01 05:47:53 UTC
+--- chrome/browser/ui/views/profiles/profile_menu_view.cc.orig	2024-08-27 06:28:16 UTC
 +++ chrome/browser/ui/views/profiles/profile_menu_view.cc
 @@ -83,7 +83,7 @@
  #include "ui/strings/grit/ui_strings.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/signin/enterprise_signin_prefs.h"
  #endif
  
-@@ -577,7 +577,7 @@ void ProfileMenuView::BuildIdentity() {
+@@ -568,7 +568,7 @@ void ProfileMenuView::BuildIdentity() {
          badge_image_model, menu_title_, menu_subtitle_, management_label);
    } else {
      std::string profile_user_display_name, profile_user_email;

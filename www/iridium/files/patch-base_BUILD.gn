@@ -1,6 +1,6 @@
---- base/BUILD.gn.orig	2024-08-01 05:47:53 UTC
+--- base/BUILD.gn.orig	2024-08-27 06:28:16 UTC
 +++ base/BUILD.gn
-@@ -182,7 +182,7 @@ buildflag_header("ios_cronet_buildflags") {
+@@ -176,7 +176,7 @@ buildflag_header("ios_cronet_buildflags") {
    flags = [ "CRONET_BUILD=$is_cronet_build" ]
  }
  
@@ -43,7 +43,7 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -2110,6 +2122,22 @@ component("base") {
+@@ -2121,6 +2133,22 @@ component("base") {
      ]
    }
  
@@ -66,7 +66,7 @@
    # iOS
    if (is_ios) {
      sources += [
-@@ -2255,6 +2283,33 @@ component("base") {
+@@ -2266,6 +2294,33 @@ component("base") {
      }
    }
  
@@ -100,7 +100,7 @@
    if (use_blink) {
      sources += [
        "files/file_path_watcher.cc",
-@@ -2265,7 +2320,7 @@ component("base") {
+@@ -2276,7 +2331,7 @@ component("base") {
    }
  
    if (dep_libevent) {
@@ -109,7 +109,7 @@
    }
  
    if (use_libevent) {
-@@ -3062,7 +3117,7 @@ if (is_apple) {
+@@ -3077,7 +3132,7 @@ if (is_apple) {
    }
  }
  
@@ -118,7 +118,7 @@
    # This test must compile with -fstack-protector-all
    source_set("stack_canary_linux_unittests") {
      testonly = true
-@@ -3711,7 +3766,7 @@ test("base_unittests") {
+@@ -3730,7 +3785,7 @@ test("base_unittests") {
      ]
    }
  
@@ -127,7 +127,7 @@
      sources += [
        "debug/proc_maps_linux_unittest.cc",
        "files/scoped_file_linux_unittest.cc",
-@@ -3738,7 +3793,7 @@ test("base_unittests") {
+@@ -3757,7 +3812,7 @@ test("base_unittests") {
        "posix/file_descriptor_shuffle_unittest.cc",
        "posix/unix_domain_socket_unittest.cc",
      ]
@@ -136,7 +136,7 @@
        sources += [
          "profiler/stack_base_address_posix_unittest.cc",
          "profiler/stack_copier_signal_unittest.cc",
-@@ -3749,7 +3804,7 @@ test("base_unittests") {
+@@ -3768,7 +3823,7 @@ test("base_unittests") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -145,8 +145,8 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -4017,7 +4072,7 @@ test("base_unittests") {
-     }
+@@ -3953,7 +4008,7 @@ test("base_unittests") {
+     deps += [ ":base_profiler_test_support_library" ]
    }
  
 -  if (is_fuchsia || is_linux || is_chromeos) {

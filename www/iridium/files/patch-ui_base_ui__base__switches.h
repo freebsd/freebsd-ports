@@ -1,4 +1,4 @@
---- ui/base/ui_base_switches.h.orig	2023-10-21 11:51:27 UTC
+--- ui/base/ui_base_switches.h.orig	2024-08-27 06:28:16 UTC
 +++ ui/base/ui_base_switches.h
 @@ -27,11 +27,11 @@ COMPONENT_EXPORT(UI_BASE) extern const char kShowMacOv
  COMPONENT_EXPORT(UI_BASE) extern const char kEnableResourcesFileSharing[];
@@ -12,5 +12,5 @@
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  COMPONENT_EXPORT(UI_BASE) extern const char kUiToolkitFlag[];
+ COMPONENT_EXPORT(UI_BASE) extern const char kDisableGtkIme[];
  #endif
- 

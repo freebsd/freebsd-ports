@@ -1,4 +1,4 @@
---- base/features.cc.orig	2024-08-01 05:47:53 UTC
+--- base/features.cc.orig	2024-08-27 06:28:16 UTC
 +++ base/features.cc
 @@ -9,8 +9,10 @@
  #include "base/threading/platform_thread.h"
@@ -12,7 +12,7 @@
  #include "base/message_loop/message_pump_libevent.h"
  #endif
  
-@@ -97,9 +99,11 @@ void Init(EmitThreadControllerProfilerMetadata
+@@ -116,9 +118,11 @@ void Init(EmitThreadControllerProfilerMetadata
    sequence_manager::internal::ThreadController::InitializeFeatures(
        emit_thread_controller_profiler_metadata);
  

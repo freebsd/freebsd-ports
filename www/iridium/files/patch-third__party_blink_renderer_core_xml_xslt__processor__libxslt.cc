@@ -1,6 +1,6 @@
---- third_party/blink/renderer/core/xml/xslt_processor_libxslt.cc.orig	2024-06-25 12:08:48 UTC
+--- third_party/blink/renderer/core/xml/xslt_processor_libxslt.cc.orig	2024-08-27 06:28:16 UTC
 +++ third_party/blink/renderer/core/xml/xslt_processor_libxslt.cc
-@@ -66,7 +66,11 @@ void XSLTProcessor::GenericErrorFunc(void*, const char
+@@ -71,7 +71,11 @@ void XSLTProcessor::GenericErrorFunc(void*, const char
    // It would be nice to do something with this error message.
  }
  
