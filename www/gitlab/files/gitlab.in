@@ -195,6 +195,7 @@ gitlab_init(){
     # Regenerate the Gemfile.lock for all related products
     # echo "Regenerate Gitlab Gemfile.lock"
     rm -f "${app_root}"/Gemfile.lock
+    #su -l root -c "cd ${app_root} && %%LOCALBASE%%/bin/bundle config set --local without development test"
     if ! su -l root -c "cd ${app_root} && %%LOCALBASE%%/bin/bundle install --local --quiet"; then
       echo "Could not create Gemfile.lock for gitlab, please report this using FreeBSD Bugtracker, https://bugs.freebsd.org/"
       exit 1

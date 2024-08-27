@@ -1,6 +1,6 @@
 PORTNAME=	gitaly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	17.1.6
+DISTVERSION=	${GITLAB_VERSION}
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -10,27 +10,29 @@ WWW=		https://gitlab.com/gitlab-org/gitaly
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# define dependencies that are required for build and run under MY_DEPENDS
-MY_DEPENDS=	git>=2.45.2:devel/git
 BUILD_DEPENDS=	bash>0:shells/bash \
 		${LOCALBASE}/bin/cmake:devel/cmake-core \
 		pcre2>0:devel/pcre2 \
-		http-parser>0:www/http-parser \
-		${MY_DEPENDS}
-RUN_DEPENDS=	${MY_DEPENDS}
+		http-parser>0:www/http-parser
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libiconv.so:converters/libiconv \
+		libpcre2-8.so:devel/pcre2
 
-USES=		cpe gmake go:modules,no_targets,1.22 iconv pkgconfig ssl
+USES=		cpe gmake go:modules,no_targets,1.22 iconv pkgconfig
 
 CPE_VENDOR=	gitlab
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GO_MOD_DIST=	gitlab
-GO_MODULE=	gitlab.com/gitlab-org/gitaly/v16
+GO_MODULE=	gitlab.com/gitlab-org/gitaly/v17
+GL_TUPLE=	gitlab-org:git:v${GITLAB_GIT_VERSION}:_build/_build/deps/git-v${GITLAB_GIT_VERSION_SHORT}
 
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 # make sure to pass go build options into make process
 MAKE_ENV+=	${GO_ENV}
+# parallel build failed in my tests, so disable it here
+MAKE_JOBS_UNSAFE=yes
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config.toml.example
@@ -50,4 +52,5 @@ post-install:
 		/gitlab-shell-hook$$/ s#^#@(,,755) #; \
 		s#${DATADIR_REL}/bin#@(,,555) ${DATADIR_REL}/bin#; ' >> ${TMPPLIST}
 
+.include "${.CURDIR}/../../www/gitlab/Makefile.common"
 .include <bsd.port.mk>

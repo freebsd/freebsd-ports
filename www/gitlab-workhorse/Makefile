@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	17.1.6
+PORTVERSION=	${GITLAB_VERSION}
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -29,4 +29,5 @@ PLIST_FILES=	bin/gitlab-resize-image \
 		bin/gitlab-zip-cat \
 		bin/gitlab-zip-metadata
 
+.include "${.CURDIR}/../gitlab/Makefile.common"
 .include <bsd.port.mk>
