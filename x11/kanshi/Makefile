@@ -4,7 +4,7 @@ PORTVERSION=	1.7.0
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~emersion/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic display configuration for Wayland
 WWW=		https://sr.ht/~emersion/kanshi/
 
