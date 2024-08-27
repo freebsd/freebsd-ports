@@ -3,7 +3,7 @@ DISTVERSION=	0.5.1
 PORTREVISION=	9
 CATEGORIES=	multimedia
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK patchbay for PipeWire
 WWW=		https://gitlab.freedesktop.org/ryuukyu/helvum
 
