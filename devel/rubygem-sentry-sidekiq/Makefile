@@ -1,5 +1,5 @@
 PORTNAME=	sentry-sidekiq
-PORTVERSION=	5.17.3
+PORTVERSION=	5.18.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/getsentry/sentry-ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-sentry-ruby>=5.17.3<5.18:devel/rubygem-sentry-ruby \
+RUN_DEPENDS=	rubygem-sentry-ruby>=5.18.2<5.19:devel/rubygem-sentry-ruby \
 		rubygem-sidekiq71>=3.0:devel/rubygem-sidekiq71
 
 USES=		gem
