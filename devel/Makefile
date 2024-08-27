@@ -5044,6 +5044,7 @@
     SUBDIR += py-jsonschema3
     SUBDIR += py-jsonsir
     SUBDIR += py-junitparser
+    SUBDIR += py-jupyter
     SUBDIR += py-jupyter-client
     SUBDIR += py-jupyter-collaboration
     SUBDIR += py-jupyter-core
