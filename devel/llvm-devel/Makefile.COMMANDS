@@ -10,6 +10,7 @@ LLVM_COMMANDS=	\
 		llvm-bitcode-strip \
 		llvm-cat \
 		llvm-cfi-verify \
+		llvm-cgdata \
 		llvm-config \
 		llvm-cov \
 		llvm-ctxprof-util \
