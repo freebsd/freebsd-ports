@@ -4,7 +4,7 @@ DISTVERSION=	0.7.7
 PORTREVISION=	3
 CATEGORIES=	audio
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Identify songs in seconds
 WWW=		https://github.com/SeaDve/Mousai
 
