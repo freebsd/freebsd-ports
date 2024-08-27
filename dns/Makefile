@@ -219,6 +219,7 @@
     SUBDIR += rubygem-resolv
     SUBDIR += rubygem-resolv-replace
     SUBDIR += rubygem-simpleidn
+    SUBDIR += rubygem-simpleidn02
     SUBDIR += rubygem-validates_hostname
     SUBDIR += rubygem-zonefile
     SUBDIR += samba-nsupdate

@@ -7257,6 +7257,7 @@
     SUBDIR += rubygem-locale
     SUBDIR += rubygem-lockfile
     SUBDIR += rubygem-logger
+    SUBDIR += rubygem-logger15
     SUBDIR += rubygem-logging
     SUBDIR += rubygem-logster
     SUBDIR += rubygem-loquacious

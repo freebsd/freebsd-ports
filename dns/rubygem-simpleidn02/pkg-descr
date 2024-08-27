@@ -1,0 +1,2 @@
+SimpleIDN allows easy conversion from punycode ACE (IDNA) strings to unicode
+UTF-8 strings and visa versa.
