@@ -1,5 +1,5 @@
 PORTNAME=	keycloak
-DISTVERSION=	25.0.2
+DISTVERSION=	25.0.4
 CATEGORIES=	net java
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -16,10 +16,6 @@ USES=		cpe shebangfix
 
 CPE_VENDOR=	redhat
 
-SHEBANG_FILES=	bin/kc.sh \
-		bin/kcadm.sh \
-		bin/kcreg.sh
-
 USE_JAVA=	yes
 JAVA_VERSION=	21+
 JAVA_OS=	native
@@ -28,10 +24,9 @@ JAVA_RUN=	yes
 
 USE_RC_SUBR=	keycloak
 
-KEYCLOAK_USER=	${PORTNAME}
-KEYCLOAK_GROUP=	${PORTNAME}
-USERS=		${KEYCLOAK_USER}
-GROUPS=		${USERS}
+SHEBANG_FILES=	bin/kc.sh \
+		bin/kcadm.sh \
+		bin/kcreg.sh
 
 VAR_DIR?=	/var
 LOG_DIR?=	${VAR_DIR}/log/${PORTNAME}
@@ -49,6 +44,12 @@ SUB_LIST+=	GROUP=${KEYCLOAK_GROUP} \
 		RUN_DIR=${RUN_DIR} \
 		USER=${KEYCLOAK_USER} \
 		GROUP=${KEYCLOAK_GROUP}
+
+KEYCLOAK_USER=	${PORTNAME}
+KEYCLOAK_GROUP=	${PORTNAME}
+USERS=		${KEYCLOAK_USER}
+GROUPS=		${USERS}
+
 PLIST_SUB=	VERSION=${DISTVERSION} \
 		USER=${KEYCLOAK_USER} \
 		GROUP=${KEYCLOAK_GROUP}
