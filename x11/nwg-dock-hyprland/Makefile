@@ -4,7 +4,7 @@ DISTVERSION=	0.4.3
 PORTREVISION=	4
 CATEGORIES=	x11
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK3-based dock for Hyprland
 WWW=		https://github.com/nwg-piotr/nwg-dock-hyprland
 
