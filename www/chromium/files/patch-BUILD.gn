@@ -1,4 +1,4 @@
---- BUILD.gn.orig	2024-07-30 11:12:21 UTC
+--- BUILD.gn.orig	2024-08-26 12:06:38 UTC
 +++ BUILD.gn
 @@ -66,7 +66,7 @@ declare_args() {
    root_extra_deps = []
@@ -17,7 +17,7 @@
        "//net:net_unittests",
        "//sandbox:sandbox_unittests",
        "//services:services_unittests",
-@@ -433,7 +432,7 @@ group("gn_all") {
+@@ -431,7 +430,7 @@ group("gn_all") {
        }
      }
  
@@ -26,32 +26,32 @@
        deps += [
          "//third_party/breakpad:breakpad_unittests",
          "//third_party/breakpad:core-2-minidump",
-@@ -629,6 +628,15 @@ group("gn_all") {
+@@ -626,6 +625,15 @@ group("gn_all") {
        }
      }
  
 +    if (is_bsd) {
 +      deps -= [
-+        "//third_party/breakpad:dump_syms($host_toolchain)",
-+        "//third_party/breakpad:microdump_stackwalk($host_toolchain)",
-+        "//third_party/breakpad:minidump_dump($host_toolchain)",
-+        "//third_party/breakpad:minidump_stackwalk($host_toolchain)",
++        "//third_party/breakpad:dump_syms($host_system_allocator_toolchain)",
++        "//third_party/breakpad:microdump_stackwalk($host_system_allocator_toolchain)",
++        "//third_party/breakpad:minidump_dump($host_system_allocator_toolchain)",
++        "//third_party/breakpad:minidump_stackwalk($host_system_allocator_toolchain)",
 +      ]
 +    }
 +
      if (is_mac) {
        deps += [
-         "//third_party/breakpad:dump_syms",
-@@ -675,7 +683,7 @@ group("gn_all") {
-           host_os == "win") {
-         deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
+         "//third_party/breakpad:dump_syms($host_system_allocator_toolchain)",
+@@ -674,7 +682,7 @@ group("gn_all") {
        }
--    } else if (!is_android && !is_ios && !is_fuchsia) {
-+    } else if (!is_android && !is_ios && !is_fuchsia && !is_bsd) {
-       deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
      }
  
-@@ -1101,7 +1109,7 @@ if (use_blink && !is_cronet_build) {
+-    if (!is_fuchsia) {
++    if (!is_fuchsia && !is_bsd) {
+       # The official builders use this binary from the default toolchain's
+       # output directory after building in order to upload the symbols of that
+       # binary. They build the binary like `ninja symupload` which requires the
+@@ -1124,7 +1132,7 @@ if (use_blink && !is_cronet_build) {
      ]
    }
  
@@ -60,30 +60,30 @@
      script_test("chrome_wpt_tests") {
        script = "//third_party/blink/tools/run_wpt_tests.py"
        args = [
-@@ -1194,7 +1202,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1221,7 +1229,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
 -    if (!is_win && !is_android) {
 +    if (!is_win && !is_android && !is_bsd) {
-       data_deps +=
-           [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
-     }
-@@ -1203,7 +1211,7 @@ if (use_blink && !is_cronet_build) {
-       data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
+       # Using the default toolchain for this tool, as it's run during tests not
+       # during the build. This places a symlink in the root_build_dir for scrips
+       # to use.
+@@ -1235,7 +1243,7 @@ if (use_blink && !is_cronet_build) {
+       data_deps += [ "//third_party/breakpad:dump_syms" ]
      }
  
 -    if (is_linux || is_chromeos) {
 +    if ((is_linux && !is_bsd) || is_chromeos) {
-       data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
-     }
- 
-@@ -1667,7 +1675,7 @@ group("chromium_builder_perf") {
+       # Using the default toolchain for this tool, as it's run during tests not
+       # during the build. This places a symlink in the root_build_dir for scrips
+       # to use.
+@@ -1702,7 +1710,7 @@ group("chromium_builder_perf") {
        data_deps += [ "//chrome/test:performance_browser_tests" ]
      }
  
 -    if (!is_win) {
 +    if (!is_win && !is_bsd) {
-       data_deps +=
-           [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
+       data_deps += [ "//third_party/breakpad:minidump_stackwalk($host_system_allocator_toolchain)" ]
      }
+   }

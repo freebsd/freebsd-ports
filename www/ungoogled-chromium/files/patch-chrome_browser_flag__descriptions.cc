@@ -1,6 +1,24 @@
---- chrome/browser/flag_descriptions.cc.orig	2024-08-16 07:52:02 UTC
+--- chrome/browser/flag_descriptions.cc.orig	2024-08-26 14:40:28 UTC
 +++ chrome/browser/flag_descriptions.cc
-@@ -2973,7 +2973,7 @@ const char kCbdTimeframeRequiredDescription[] =
+@@ -419,7 +419,7 @@ const char kIsolatedSandboxedIframesDescription[] =
+     "grouping when enabled is per-site.";
+ 
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ const char kAutofillEnableAmountExtractionDesktopName[] =
+     "Enable checkout amount extraction on Chrome desktop";
+ const char kAutofillEnableAmountExtractionDesktopDescription[] =
+@@ -856,7 +856,7 @@ const char kDevicePostureDescription[] =
+     "Enables Device Posture API (foldable devices)";
+ 
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
+-    BUILDFLAG(IS_CHROMEOS)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ const char kDocumentPictureInPictureAnimateResizeName[] =
+     "Document Picture-in-Picture Animate Resize";
+ const char kDocumentPictureInPictureAnimateResizeDescription[] =
+@@ -3054,7 +3054,7 @@ const char kCbdTimeframeRequiredDescription[] =
      "value to the list.";
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +27,7 @@
  const char kPolicyIndicationForManagedDefaultSearchName[] =
      "Enable policy indication for managed Default Search provider";
  const char kPolicyIndicationForManagedDefaultSearchDescription[] =
-@@ -3291,7 +3291,7 @@ const char kShowAutofillTypePredictionsDescription[] =
+@@ -3389,7 +3389,7 @@ const char kShowAutofillTypePredictionsDescription[] =
      "text.";
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -18,7 +36,7 @@
  const char kShowFeaturedEnterpriseSiteSearchName[] =
      "Show featured Enterprise site search engines in Omnibox";
  const char kShowFeaturedEnterpriseSiteSearchDescription[] =
-@@ -3328,7 +3328,7 @@ const char kSiteInstanceGroupsForDataUrlsDescription[]
+@@ -3426,7 +3426,7 @@ const char kSiteInstanceGroupsForDataUrlsDescription[]
      "but in the same SiteInstanceGroup, and thus the same process.";
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -27,7 +45,7 @@
  const char kSiteSearchSettingsPolicyName[] = "Enable SiteSearchSettings policy";
  const char kSiteSearchSettingsPolicyDescription[] =
      "Allow site search engines to be defined by the SiteSearchSettings policy.";
-@@ -7729,7 +7729,7 @@ const char kLacrosMergeIcuDataFileDescription[] =
+@@ -7873,7 +7873,7 @@ const char kLacrosMergeIcuDataFileDescription[] =
      "Enables sharing common areas of icudtl.dat between Ash and Lacros.";
  #endif  // #if BUILDFLAG(IS_CHROMEOS_LACROS)
  
@@ -36,7 +54,7 @@
  const char kGetAllScreensMediaName[] = "GetAllScreensMedia API";
  const char kGetAllScreensMediaDescription[] =
      "When enabled, the getAllScreensMedia API for capturing multiple screens "
-@@ -7980,7 +7980,7 @@ const char kV4L2FlatStatefulVideoDecoderDescription[] 
+@@ -8130,7 +8130,7 @@ const char kV4L2FlatStatefulVideoDecoderDescription[] 
  
  // Linux -----------------------------------------------------------------------
  
@@ -45,10 +63,11 @@
  const char kOzonePlatformHintChoiceDefault[] = "Default";
  const char kOzonePlatformHintChoiceAuto[] = "Auto";
  const char kOzonePlatformHintChoiceX11[] = "X11";
-@@ -8002,6 +8002,17 @@ const char kPulseaudioLoopbackForScreenShareName[] =
- const char kPulseaudioLoopbackForScreenShareDescription[] =
-     "Enable system audio sharing when screen sharing on Linux with pulseaudio.";
- 
+@@ -8160,6 +8160,18 @@ const char kSimplifiedTabDragUIDescription[] =
+ const char kWaylandPerWindowScalingName[] = "Wayland per-window scaling";
+ const char kWaylandPerWindowScalingDescription[] =
+     "Enable Wayland's per-window scaling experimental support.";
++
 +#if BUILDFLAG(IS_BSD)
 +const char kAudioBackendName[] =
 +    "Audio Backend";
@@ -63,7 +82,7 @@
  #endif  // BUILDFLAG(IS_LINUX)
  
  // All views-based platforms --------------------------------------------------
-@@ -8028,14 +8039,14 @@ const char kZeroCopyVideoCaptureDescription[] =
+@@ -8186,14 +8198,14 @@ const char kZeroCopyVideoCaptureDescription[] =
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -80,7 +99,7 @@
  const char kEnableNetworkServiceSandboxName[] =
      "Enable the network service sandbox.";
  const char kEnableNetworkServiceSandboxDescription[] =
-@@ -8067,7 +8078,7 @@ const char kWebBluetoothConfirmPairingSupportDescripti
+@@ -8225,7 +8237,7 @@ const char kWebBluetoothConfirmPairingSupportDescripti
      "Bluetooth";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
  
@@ -89,7 +108,7 @@
  const char kSkipUndecryptablePasswordsName[] =
      "Skip undecryptable passwords to use the available decryptable "
      "passwords.";
-@@ -8217,7 +8228,7 @@ const char kElementCaptureDescription[] =
+@@ -8379,7 +8391,7 @@ const char kElementCaptureDescription[] =
  
  #if BUILDFLAG(IS_WIN) ||                                      \
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -98,8 +117,8 @@
  const char kUIDebugToolsName[] = "Debugging tools for UI";
  const char kUIDebugToolsDescription[] =
      "Enables additional keyboard shortcuts to help debugging.";
-@@ -8284,7 +8295,7 @@ const char kComposePoliteNudgeDescription[] =
-     "available to interact with.";
+@@ -8453,7 +8465,7 @@ const char kAutofillCaretExtractionDescription[] =
+     "Enables passing caret position via Autofill";
  #endif  // BUILDFLAG(ENABLE_COMPOSE)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)

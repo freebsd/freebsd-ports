@@ -1,4 +1,4 @@
---- third_party/speech-dispatcher/libspeechd_version.h.orig	2024-07-31 14:19:23 UTC
+--- third_party/speech-dispatcher/libspeechd_version.h.orig	2024-08-26 14:40:28 UTC
 +++ third_party/speech-dispatcher/libspeechd_version.h
 @@ -0,0 +1,29 @@
 +/*
@@ -19,7 +19,7 @@
 + * You should have received a copy of the GNU Lesser General Public License
 + * along with this program.  If not, see <https://www.gnu.org/licenses/>.
 + *
-+ * $Id: patch-third_party_speech-dispatcher_libspeechd_version_h,v 1.8 2024/07/29 16:20:10 robert Exp $
++ * $Id: patch-third_party_speech-dispatcher_libspeechd_version_h,v 1.9 2024/08/25 14:47:17 robert Exp $
 + */
 +
 +#ifndef _LIBSPEECHD_VERSION_H

@@ -1,6 +1,6 @@
---- chrome/browser/ui/tabs/features.cc.orig	2024-07-30 11:12:21 UTC
+--- chrome/browser/ui/tabs/features.cc.orig	2024-08-26 12:06:38 UTC
 +++ chrome/browser/ui/tabs/features.cc
-@@ -16,7 +16,7 @@ BASE_FEATURE(kTabSearchPositionSetting,
+@@ -48,7 +48,7 @@ BASE_FEATURE(kTabStripCollectionStorage,
  bool CanShowTabSearchPositionSetting() {
  // Mac and other platforms will always have the tab search position in the
  // correct location, cros/linux/win git the user the option to change.

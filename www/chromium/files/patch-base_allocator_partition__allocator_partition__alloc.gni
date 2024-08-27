@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/partition_alloc.gni.orig	2024-07-30 11:12:21 UTC
+--- base/allocator/partition_allocator/partition_alloc.gni.orig	2024-08-26 12:06:38 UTC
 +++ base/allocator/partition_allocator/partition_alloc.gni
 @@ -31,7 +31,7 @@ if (is_nacl) {
  use_large_empty_slot_span_ring = is_mac
@@ -9,7 +9,7 @@
  
  declare_args() {
    # Causes all the allocations to be routed via allocator_shim.cc. Usually,
-@@ -360,7 +360,7 @@ assert(!use_asan_backup_ref_ptr || use_raw_ptr_hookabl
+@@ -361,7 +361,7 @@ assert(!use_asan_backup_ref_ptr || use_raw_ptr_hookabl
  # dependencies that use partition_allocator are compiled in AOSP against a
  # version of glibc that does not include pkeys syscall numbers.
  is_pkeys_available =

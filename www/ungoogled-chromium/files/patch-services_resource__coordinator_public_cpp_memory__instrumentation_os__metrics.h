@@ -1,6 +1,6 @@
---- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h.orig	2022-10-01 07:40:07 UTC
+--- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h.orig	2024-08-26 14:40:28 UTC
 +++ services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h
-@@ -45,7 +45,7 @@ class COMPONENT_EXPORT(
+@@ -53,7 +53,7 @@ class COMPONENT_EXPORT(
                                      mojom::RawOSMemDump*);
    static std::vector<mojom::VmRegionPtr> GetProcessMemoryMaps(base::ProcessId);
  
@@ -9,7 +9,7 @@
    static void SetProcSmapsForTesting(FILE*);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) ||
          // BUILDFLAG(IS_ANDROID)
-@@ -62,7 +62,7 @@ class COMPONENT_EXPORT(
+@@ -70,7 +70,7 @@ class COMPONENT_EXPORT(
    static std::vector<mojom::VmRegionPtr> GetProcessModules(base::ProcessId);
  #endif
  

@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/password_manager/promo_cards_handler.cc.orig	2024-02-23 21:04:38 UTC
+--- chrome/browser/ui/webui/password_manager/promo_cards_handler.cc.orig	2024-08-26 12:06:38 UTC
 +++ chrome/browser/ui/webui/password_manager/promo_cards_handler.cc
 @@ -28,7 +28,7 @@
  #include "chrome/browser/ui/webui/password_manager/promo_cards/web_password_manager_promo.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/webui/password_manager/promo_cards/relaunch_chrome_promo.h"
  #endif
  
-@@ -71,7 +71,7 @@ std::vector<std::unique_ptr<PasswordPromoCardBase>> Ge
+@@ -75,7 +75,7 @@ std::vector<std::unique_ptr<PasswordPromoCardBase>> Ge
            .get()));
  #endif
  

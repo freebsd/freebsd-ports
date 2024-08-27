@@ -1,6 +1,6 @@
---- build/rust/std/BUILD.gn.orig	2024-03-22 14:16:19 UTC
+--- build/rust/std/BUILD.gn.orig	2024-08-26 14:40:28 UTC
 +++ build/rust/std/BUILD.gn
-@@ -90,7 +90,6 @@ if (toolchain_has_rust) {
+@@ -100,7 +100,6 @@ if (toolchain_has_rust) {
    # don't need to pass to the C++ linker because they're used for specialized
    # purposes.
    skip_stdlib_files = [

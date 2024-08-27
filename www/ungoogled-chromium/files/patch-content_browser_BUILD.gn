@@ -1,6 +1,6 @@
---- content/browser/BUILD.gn.orig	2024-07-31 14:19:23 UTC
+--- content/browser/BUILD.gn.orig	2024-08-26 14:40:28 UTC
 +++ content/browser/BUILD.gn
-@@ -2377,6 +2377,14 @@ source_set("browser") {
+@@ -2398,6 +2398,14 @@ source_set("browser") {
      ]
    }
  
@@ -15,7 +15,7 @@
    if (is_linux || is_chromeos) {
      sources += [
        "child_process_launcher_helper_linux.cc",
-@@ -2413,6 +2421,15 @@ source_set("browser") {
+@@ -2438,6 +2446,15 @@ source_set("browser") {
    if (allow_oop_video_decoder) {
      sources += [ "media/stable_video_decoder_factory.cc" ]
      deps += [ "//media/mojo/mojom/stable:stable_video_decoder" ]

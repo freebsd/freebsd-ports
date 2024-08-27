@@ -1,6 +1,6 @@
---- chrome/browser/media_galleries/media_file_system_registry.cc.orig	2024-02-03 15:42:55 UTC
+--- chrome/browser/media_galleries/media_file_system_registry.cc.orig	2024-08-26 14:40:28 UTC
 +++ chrome/browser/media_galleries/media_file_system_registry.cc
-@@ -584,7 +584,12 @@ class MediaFileSystemRegistry::MediaFileSystemContextI
+@@ -585,7 +585,12 @@ class MediaFileSystemRegistry::MediaFileSystemContextI
  // Constructor in 'private' section because depends on private class definition.
  MediaFileSystemRegistry::MediaFileSystemRegistry()
      : file_system_context_(new MediaFileSystemContextImpl) {

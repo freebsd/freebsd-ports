@@ -1,4 +1,4 @@
---- ui/ozone/platform/wayland/host/wayland_window.h.orig	2024-07-31 14:19:23 UTC
+--- ui/ozone/platform/wayland/host/wayland_window.h.orig	2024-08-26 14:40:28 UTC
 +++ ui/ozone/platform/wayland/host/wayland_window.h
 @@ -41,7 +41,7 @@
  #include "ui/platform_window/platform_window_init_properties.h"
@@ -9,7 +9,7 @@
  #include "ui/ozone/platform/wayland/host/wayland_async_cursor.h"
  #endif
  
-@@ -269,7 +269,7 @@ class WaylandWindow : public PlatformWindow,
+@@ -283,7 +283,7 @@ class WaylandWindow : public PlatformWindow,
      bool is_snapped_secondary = false;
      bool is_floated = false;
      bool is_pip = false;
@@ -18,7 +18,7 @@
      WindowTiledEdges tiled_edges;
  #endif
  
-@@ -551,7 +551,7 @@ class WaylandWindow : public PlatformWindow,
+@@ -561,7 +561,7 @@ class WaylandWindow : public PlatformWindow,
  
    void UpdateCursorShape(scoped_refptr<BitmapCursor> cursor);
  
@@ -27,7 +27,7 @@
    void OnCursorLoaded(scoped_refptr<WaylandAsyncCursor> cursor,
                        scoped_refptr<BitmapCursor> bitmap_cursor);
  #endif
-@@ -620,7 +620,7 @@ class WaylandWindow : public PlatformWindow,
+@@ -630,7 +630,7 @@ class WaylandWindow : public PlatformWindow,
  
    wl::Object<zaura_surface> aura_surface_;
  

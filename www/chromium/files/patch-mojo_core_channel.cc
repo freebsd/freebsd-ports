@@ -1,6 +1,6 @@
---- mojo/core/channel.cc.orig	2024-06-17 12:56:06 UTC
+--- mojo/core/channel.cc.orig	2024-08-26 12:06:38 UTC
 +++ mojo/core/channel.cc
-@@ -71,7 +71,11 @@ const size_t kMaxUnusedReadBufferCapacity = 4096;
+@@ -79,7 +79,11 @@ const size_t kMaxUnusedReadBufferCapacity = 4096;
  // Fuchsia: The zx_channel_write() API supports up to 64 handles.
  const size_t kMaxAttachedHandles = 64;
  
