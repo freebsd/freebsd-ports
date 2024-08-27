@@ -1,6 +1,5 @@
 PORTNAME=	openid_connect
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	2.3.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -13,14 +12,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activemodel70>=0:databases/rubygem-activemodel70 \
 		rubygem-attr_required>=1.0.0:devel/rubygem-attr_required \
-		rubygem-json-jwt115>=1.5.0:www/rubygem-json-jwt115 \
-		rubygem-net-smtp>=0:mail/rubygem-net-smtp \
-		rubygem-rack-oauth21>=1.6.1:security/rubygem-rack-oauth21 \
-		rubygem-swd>=1.0.0:www/rubygem-swd \
+		rubygem-email_validator>=0:mail/rubygem-email_validator \
+		rubygem-faraday>=2.0<3:www/rubygem-faraday \
+		rubygem-faraday-follow_redirects>=0:www/rubygem-faraday-follow_redirects \
+		rubygem-json-jwt>=1.16:www/rubygem-json-jwt \
+		rubygem-mail>=0:mail/rubygem-mail \
+		rubygem-rack-oauth2>=2.2<3:security/rubygem-rack-oauth2 \
+		rubygem-swd>=2.0<3:www/rubygem-swd \
 		rubygem-tzinfo>=0:devel/rubygem-tzinfo \
-		rubygem-validate_email>=0:devel/rubygem-validate_email \
 		rubygem-validate_url>=0:devel/rubygem-validate_url \
-		rubygem-webfinger>=1.0.1:devel/rubygem-webfinger
+		rubygem-webfinger>=2.0<3:devel/rubygem-webfinger
 
 USES=		gem
 
