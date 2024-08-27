@@ -3,7 +3,7 @@ DISTVERSION=	0.95.0
 PORTREVISION=	9
 CATEGORIES=	deskutils
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Track your fitness goals
 WWW=		https://gitlab.gnome.org/World/Health
 
