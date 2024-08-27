@@ -4,7 +4,7 @@ DISTVERSION=	0.1.6
 PORTREVISION=	11
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK3-based button bar for sway and other wlroots-based compositors
 WWW=		https://github.com/nwg-piotr/nwg-bar
 
