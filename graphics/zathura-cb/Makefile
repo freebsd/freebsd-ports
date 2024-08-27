@@ -1,6 +1,6 @@
 PORTNAME=	zathura-cb
 DISTVERSION=	0.1.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/
 

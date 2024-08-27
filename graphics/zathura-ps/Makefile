@@ -1,6 +1,6 @@
 PORTNAME=	zathura-ps
 DISTVERSION=	0.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://pwmt.org/projects/zathura-ps/download/
 
