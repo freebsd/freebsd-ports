@@ -1,5 +1,6 @@
 PORTNAME=	discord
 DISTVERSION=	0.0.65
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://dl.discordapp.net/apps/linux/${DISTVERSION}/
 PKGNAMEPREFIX=	linux-
@@ -22,7 +23,7 @@ RUN_DEPENDS=	linux-rl9-libatomic>=11.4.1:devel/linux-rl9-libatomic \
 USES=		linux:rl9
 USE_LINUX=	alsa-plugins-oss alsa-plugins-pulseaudio alsalib at-spi2-atk \
 		atk ca-certificates cups-libs dbuslibs devtools gtk3 libdrm \
-		libsigsegv nspr nss opus
+		libsigsegv libva nspr nss opus
 
 DATADIR=	${PREFIX}/share/${PKGBASE}
 

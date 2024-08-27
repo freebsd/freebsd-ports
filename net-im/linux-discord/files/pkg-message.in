@@ -8,10 +8,7 @@ If the user's directory is located in /usr/home/ and doesn't exist the link
   ln -s /usr/home /home
 
 Discord uses pulseaudio(1), so you have to start the relative server.
-
-If you have updated the port/package, you have to run the following command:
-
-  %%DATADIR%%/postinst.sh
 EOM
 }
 ]
+

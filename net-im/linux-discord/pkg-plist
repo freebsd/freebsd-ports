@@ -76,6 +76,10 @@ share/icons/hicolor/256x256/apps/discord.png
 %%DATADIR%%/chrome_crashpad_handler
 %%DATADIR%%/postinst.sh
 @mode
+@comment Excerpt from postinst.sh script:
+@comment "This is probably just paranoia, but some people claim that clearing out
+@comment and/or the sock file fixes bugs for them, so here we go"
+@postexec %D/%F
 @mode 4555
 %%DATADIR%%/chrome-sandbox
 @mode
