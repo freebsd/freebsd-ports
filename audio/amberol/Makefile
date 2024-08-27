@@ -3,7 +3,7 @@ DISTVERSION=	0.10.3
 PORTREVISION=	11
 CATEGORIES=	audio
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plays music, and nothing else
 WWW=		https://gitlab.gnome.org/World/amberol
 
