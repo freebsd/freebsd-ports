@@ -4,7 +4,7 @@ DISTVERSION=	0.1.1
 CATEGORIES=	devel
 MASTER_SITES=	https://git.sr.ht/~emersion/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for a simple configuration file format
 WWW=		https://sr.ht/~emersion/libscfg/
 
