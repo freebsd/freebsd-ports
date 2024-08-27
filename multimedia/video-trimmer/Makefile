@@ -4,7 +4,7 @@ DISTVERSION=	0.8.2
 PORTREVISION=	8
 CATEGORIES=	multimedia
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trim videos quickly
 WWW=		https://gitlab.gnome.org/YaLTeR/video-trimmer
 
