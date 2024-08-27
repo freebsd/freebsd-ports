@@ -11,7 +11,7 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 WWW=		https://www.mozilla.com/firefox
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.102:security/nss \
+		nss>=3.103:security/nss \
 		icu>=73.1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=9.0.0:print/harfbuzz \
