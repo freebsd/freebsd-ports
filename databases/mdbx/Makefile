@@ -18,12 +18,12 @@ USE_LDCONFIG=	yes
 
 NO_WRKSUBDIR=	yes
 
-PLIST_SUB=	VERSION=${PORTVERSION}
+PLIST_SUB=	VERSION=${DISTVERSION}
 
 post-install:
-	${CP}  ${BUILD_WRKSRC}/libmdbx-static.a ${STAGEDIR}${PREFIX}/lib/libmdbx.a
-	${MV}  ${STAGEDIR}${PREFIX}/lib/libmdbx.so ${STAGEDIR}${PREFIX}/lib/libmdbx.so.${PORTVERSION}
-	${RLN} libmdbx.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmdbx.so
-	${RLN} libmdbx.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmdbx.so.0
+	${INSTALL_DATA} ${BUILD_WRKSRC}/libmdbx-static.a ${STAGEDIR}${PREFIX}/lib/libmdbx.a
+	${MV}  ${STAGEDIR}${PREFIX}/lib/libmdbx.so ${STAGEDIR}${PREFIX}/lib/libmdbx.so.${DISTVERSION}
+	${RLN} libmdbx.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/libmdbx.so
+	${RLN} libmdbx.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/libmdbx.so.0
 
 .include <bsd.port.mk>
