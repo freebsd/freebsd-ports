@@ -605,6 +605,7 @@
     SUBDIR += rubygem-email_reply_parser
     SUBDIR += rubygem-email_reply_parser-discourse
     SUBDIR += rubygem-email_reply_trimmer
+    SUBDIR += rubygem-email_validator
     SUBDIR += rubygem-exception_notification
     SUBDIR += rubygem-extended_email_reply_parser
     SUBDIR += rubygem-gitlab-mail_room

@@ -1334,6 +1334,8 @@
     SUBDIR += rubygem-google-cloud-spanner-v1
     SUBDIR += rubygem-google-cloud-storage
     SUBDIR += rubygem-google-cloud-storage145
+    SUBDIR += rubygem-google-cloud-storage_transfer
+    SUBDIR += rubygem-google-cloud-storage_transfer-v1
     SUBDIR += rubygem-google-cloud-trace
     SUBDIR += rubygem-google-cloud-trace-v1
     SUBDIR += rubygem-google-cloud-trace-v2
