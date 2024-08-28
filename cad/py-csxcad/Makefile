@@ -5,7 +5,7 @@ CATEGORIES=	cad
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	C++ library to describe geometrical objects
+COMMENT=	Python binding for csxcad, C++ library to describe geometrical objects
 WWW=		https://github.com/thliebig/CSXCAD
 
 LICENSE=	GPLv3
@@ -25,7 +25,7 @@ CFLAGS+=	-I${WRKSRC}
 WRKSRC_SUBDIR=	python
 
 post-patch:
-	@${CP} ${WRKSRC}/../src/*.h ${WRKSRC}/CSXCAD 
+	@${CP} ${WRKSRC}/../src/*.h ${WRKSRC}/CSXCAD
 
 post-install:
 .for name in CSPrimitives CSProperties CSRectGrid CSTransform CSXCAD ParameterObjects Utilities
