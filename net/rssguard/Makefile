@@ -1,5 +1,5 @@
 PORTNAME=	rssguard
-PORTVERSION=	4.6.6
+PORTVERSION=	4.7.3		# don't forget to update APP_REVISION below
 CATEGORIES=	net www
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -15,6 +15,7 @@ USE_QT=		buildtools:build linguisttools:build qmake:build \
 USE_GITHUB=	yes
 GH_ACCOUNT=	martinrotter
 
+CMAKE_ARGS=	-DAPP_REVISION:STRING=a4e2048
 CMAKE_ON=	NO_UPDATE_CHECK ENABLE_COMPRESSED_SITEMAP
 CMAKE_OFF=	BUILD_WITH_QT6 REVISION_FROM_GIT
 
@@ -40,8 +41,5 @@ WEBENGINE_USE=	QT=location,printsupport,webchannel,webengine
 WEBENGINE_CMAKE_OFF=	-DNO_LITE:BOOL=OFF
 WEBENGINE_PLIST_SUB=		PROGNAME=${PORTNAME}
 WEBENGINE_PLIST_SUB_OFF=	PROGNAME=${PORTNAME}lite
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librssguard.so
 
 .include <bsd.port.mk>
