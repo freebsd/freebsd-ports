@@ -1,5 +1,6 @@
 PKGNAMESUFFIX=	-viewer
 CATEGORIES=	net
+PORTREVISION=	1
 
 COMMENT=	TigerVNC Viewer
 WWW=		https://tigervnc.org/
@@ -33,4 +34,5 @@ post-patch:
 		${WRKSRC}/CMakeLists.txt
 
 MASTERDIR=	${.CURDIR}/../tigervnc-server
+
 .include "${MASTERDIR}/Makefile.common.mk"
