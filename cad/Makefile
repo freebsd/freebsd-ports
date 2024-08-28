@@ -107,6 +107,7 @@
     SUBDIR += pdnmesh
     SUBDIR += py-amaranth
     SUBDIR += py-cocotb
+    SUBDIR += py-csxcad
     SUBDIR += py-edalize
     SUBDIR += py-ezdxf
     SUBDIR += py-gdspy
