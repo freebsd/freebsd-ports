@@ -1,6 +1,5 @@
-PORTNAME=	PyWavelets
-PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTNAME=	pywavelets
+PORTVERSION=	1.5.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,12 +12,13 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}meson-python>=0.14:devel/meson-python@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		python
+USES=		python shebangfix
 USE_PYTHON=	autoplist cython pep517
+
+SHEBANG_FILES=	pywt/data/create_dat.py
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pywt/_extensions/*.so
