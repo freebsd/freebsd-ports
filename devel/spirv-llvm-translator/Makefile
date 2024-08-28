@@ -22,6 +22,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR}
 
 FLAVORS=	${18 17 16 15 14 13 12 11:L:S/^/llvm/}
+CONFLICTS_BUILD=${FLAVOR}-lite
 
 USES=		cmake compiler:c++11-lib
 USE_GITHUB=	yes
