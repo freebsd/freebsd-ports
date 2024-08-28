@@ -1,6 +1,6 @@
 PORTNAME=	trurl
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	0.14
+DISTVERSION=	0.15
 CATEGORIES=	misc www
 
 MAINTAINER=	otis@FreeBSD.org
@@ -17,10 +17,11 @@ USES=		gmake localbase:ldflags python:test
 USE_GITHUB=	yes
 GH_ACCOUNT=	curl
 
-MAKE_ARGS=	TRURL_IGNORE_CURL_CONFIG=1 \
-		PYTHON3=${PYTHON_CMD}
+MAKE_ARGS=	PYTHON3=${PYTHON_CMD} \
+		TRURL_IGNORE_CURL_CONFIG=1
 
 ALL_TARGET=	${PORTNAME}
+INSTALL_TARGET=	install-bin
 TEST_TARGET=	test
 
 LDFLAGS+=	-lcurl
@@ -29,6 +30,7 @@ PLIST_FILES=	bin/trurl \
 		share/man/man1/trurl.1.gz
 
 post-install:
+		${INSTALL_MAN} ${FILESDIR}/trurl.1 ${STAGEDIR}${PREFIX}/share/man/man1
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/trurl
 
 .include <bsd.port.mk>
