@@ -1,5 +1,5 @@
 PORTNAME=	pywavelets
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +12,12 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}meson-python>=0.14:devel/meson-python@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}meson-python>=0.15:devel/meson-python@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cython3>0:lang/cython3@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python shebangfix
-USE_PYTHON=	autoplist cython pep517
+USE_PYTHON=	autoplist pep517
 
 SHEBANG_FILES=	pywt/data/create_dat.py
 

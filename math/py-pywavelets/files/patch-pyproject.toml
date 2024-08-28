@@ -1,24 +1,10 @@
---- pyproject.toml.orig	2023-11-17 22:07:21 UTC
+--- pyproject.toml.orig	2024-04-01 17:38:02 UTC
 +++ pyproject.toml
-@@ -9,21 +9,7 @@ requires = [
- requires = [
-     "meson-python>=0.14.0",
-     "Cython>=0.29.35",
--
--    # When numpy 2.0.0rc1 comes out, we should update this to build against 2.0,
--    # and then runtime depend on the range 1.22.X to <2.3. No need to switch to
--    # 1.25.2 in the meantime (1.25.x is the first version which exports older C
--    # API versions by default).
--
--    # default numpy requirements
--    "numpy==1.22.4; python_version<='3.10' and platform_python_implementation != 'PyPy'",
--    "numpy==1.23.3; python_version=='3.11' and platform_python_implementation != 'PyPy'",
--    "numpy==1.26.0; python_version=='3.12' and platform_python_implementation != 'PyPy'",
--    # For Python versions which aren't yet officially supported, we specify an
--    # unpinned NumPy which allows source distributions to be used and allows
--    # wheels to be used as soon as they become available.
--    "numpy; python_version>='3.13'",
--    "numpy; python_version>='3.9' and platform_python_implementation=='PyPy'",
+@@ -19,7 +19,7 @@ requires = [
+     # Note that building against numpy 1.x works fine too - users and
+     # redistributors can do this by installing the numpy version they like and
+     # disabling build isolation.
+-    "numpy>=2.0.0rc1,<2.3",
 +    "numpy",
  ]
  
