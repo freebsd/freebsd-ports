@@ -1,0 +1,100 @@
+--- librawstudio/rs-curve.c
++++ librawstudio/rs-curve.c
+@@ -21,6 +21,7 @@
+ #include <rawstudio.h>
+ #include <math.h>
+ #include <libxml/encoding.h>
++#include <libxml/parser.h>
+ #include <libxml/xmlwriter.h>
+ #include <string.h> /* memset() */
+ 
+--- librawstudio/rs-lens-db.c
++++ librawstudio/rs-lens-db.c
+@@ -19,6 +19,7 @@
+ 
+ #include <rawstudio.h>
+ #include <libxml/encoding.h>
++#include <libxml/parser.h>
+ #include <libxml/xmlwriter.h>
+ #include "config.h"
+ #include "rs-lens-db.h"
+--- librawstudio/rs-lens-fix.c
++++ librawstudio/rs-lens-fix.c
+@@ -19,6 +19,7 @@
+ 
+ #include <rawstudio.h>
+ #include <libxml/encoding.h>
++#include <libxml/tree.h>
+ #include "config.h"
+ 
+ static GHashTable *lens_fix_hash_table;
+--- librawstudio/rs-library.c
++++ librawstudio/rs-library.c
+@@ -60,6 +60,7 @@
+ #include "gettext.h"
+ #include "rs-debug.h"
+ #include <libxml/encoding.h>
++#include <libxml/parser.h>
+ #include <libxml/xmlwriter.h>
+ #include <sqlite3.h>
+ 
+--- librawstudio/rs-metadata.c
++++ librawstudio/rs-metadata.c
+@@ -21,6 +21,7 @@
+ #include <glib/gstdio.h> /* g_unlink() */
+ #include <config.h>
+ #include <libxml/encoding.h>
++#include <libxml/parser.h>
+ #include <libxml/xmlwriter.h>
+ #include "gettext.h"
+ 
+--- librawstudio/rs-profile-camera.c
++++ librawstudio/rs-profile-camera.c
+@@ -20,6 +20,7 @@
+ #include <glib-2.0/glib.h>
+ #include "config.h"
+ #include <libxml/encoding.h>
++#include <libxml/parser.h>
+ #include <libxml/xmlwriter.h>
+ #include "rs-utils.h"
+ 
+--- src/rs-batch.c
++++ src/rs-batch.c
+@@ -23,6 +23,7 @@
+ #include <gtk/gtk.h>
+ #include <config.h>
+ #include <libxml/encoding.h>
++#include <libxml/parser.h>
+ #include <libxml/xmlwriter.h>
+ #include "application.h"
+ #include "rs-batch.h"
+--- src/rs-cache.c
++++ src/rs-cache.c
+@@ -20,6 +20,7 @@
+ #include <rawstudio.h>
+ #include <glib.h>
+ #include <libxml/encoding.h>
++#include <libxml/parser.h>
+ #include <libxml/xmlwriter.h>
+ #include "application.h"
+ #include "rs-cache.h"
+--- src/rs-camera-db.c
++++ src/rs-camera-db.c
+@@ -20,6 +20,7 @@
+ #include "config.h"
+ #include "gettext.h"
+ #include <libxml/encoding.h>
++#include <libxml/parser.h>
+ #include <libxml/xmlwriter.h>
+ #include "rs-camera-db.h"
+ #include "rs-photo.h"
+--- src/rs-store.c
++++ src/rs-store.c
+@@ -22,6 +22,7 @@
+ #include <glib/gprintf.h>
+ #include <config.h>
+ #include <libxml/encoding.h>
++#include <libxml/parser.h>
+ #include <libxml/xmlwriter.h>
+ #include <glib.h>
+ #include <math.h>
