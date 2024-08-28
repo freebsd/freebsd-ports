@@ -62,7 +62,6 @@ share/bash-completion/completions/xca
 %%PORTDOCS%%%%DOCSDIR%%/html/smartcard.html
 %%PORTDOCS%%%%DOCSDIR%%/html/step-by-step.html
 %%PORTDOCS%%%%DOCSDIR%%/html/template.html
-%%PORTDOCS%%%%DOCSDIR%%/html/xca.qch
 %%PORTDOCS%%%%DOCSDIR%%/html/xca.qhc
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/introduction.html
@@ -92,6 +91,12 @@ share/icons/hicolor/48x48/mimetypes/x-xca-template.png
 share/icons/hicolor/64x64/apps/de.hohnstaedt.xca.png
 share/icons/hicolor/64x64/mimetypes/x-xca-database.png
 share/icons/hicolor/64x64/mimetypes/x-xca-template.png
+share/icons/hicolor/128x128/apps/de.hohnstaedt.xca.png
+share/icons/hicolor/128x128/mimetypes/x-xca-database.png
+share/icons/hicolor/128x128/mimetypes/x-xca-template.png
+share/icons/hicolor/256x256/apps/de.hohnstaedt.xca.png
+share/icons/hicolor/256x256/mimetypes/x-xca-database.png
+share/icons/hicolor/256x256/mimetypes/x-xca-template.png
 share/metainfo/de.hohnstaedt.xca.metainfo.xml
 share/pixmaps/xca-32x32.xpm
 %%DATADIR%%/CA.xca
