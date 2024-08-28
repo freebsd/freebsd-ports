@@ -1,6 +1,5 @@
 PORTNAME=	discord
-DISTVERSION=	0.0.65
-PORTREVISION=	1
+DISTVERSION=	0.0.66
 CATEGORIES=	net-im
 MASTER_SITES=	https://dl.discordapp.net/apps/linux/${DISTVERSION}/
 PKGNAMEPREFIX=	linux-
@@ -45,7 +44,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/Discord && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
-		"-not -regex \./discord.*")
+		"-not ( -regex \./discord.* -o -name *.orig )")
 	${INSTALL_SCRIPT} ${WRKDIR}/${PKGBASE} ${STAGEDIR}${LOCALBASE}/bin/${PKGBASE}
 	${INSTALL_DATA} ${WRKSRC}/Discord/discord.desktop ${STAGEDIR}${DESKTOPDIR}/${PKGBASE}.desktop
 	@${MKDIR} ${ICONS_DIR}
