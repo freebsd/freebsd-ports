@@ -1,0 +1,7 @@
+bin/xmoji
+share/applications/xmoji.desktop
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+share/icons/hicolor/16x16/apps/xmoji.png
+share/icons/hicolor/256x256/apps/xmoji.png
+share/icons/hicolor/32x32/apps/xmoji.png
+share/icons/hicolor/48x48/apps/xmoji.png
