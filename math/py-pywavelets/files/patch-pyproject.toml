@@ -1,10 +1,11 @@
---- pyproject.toml.orig	2024-04-01 17:38:02 UTC
+--- pyproject.toml.orig	2024-08-12 15:57:53 UTC
 +++ pyproject.toml
-@@ -19,7 +19,7 @@ requires = [
+@@ -16,8 +16,7 @@ requires = [
      # Note that building against numpy 1.x works fine too - users and
      # redistributors can do this by installing the numpy version they like and
      # disabling build isolation.
--    "numpy>=2.0.0rc1,<2.3",
+-    "numpy>=2.0.0; python_version<'3.13'",
+-    "numpy>=2.1.0.rc1; python_version>='3.13'",
 +    "numpy",
  ]
  
