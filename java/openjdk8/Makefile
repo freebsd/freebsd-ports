@@ -202,7 +202,7 @@ LIB_DEPENDS+=	libffi.so:devel/libffi
 .endif
 
 .if ${COMPILER_TYPE} == clang
-MAKE_ENV+=	COMPILER_WARNINGS_FATAL=false USE_CLANG=true
+MAKE_ENV+=	USE_CLANG=true
 CONFIGURE_ENV+=	LIBCXX="-lc++"
 .if ${ARCH} == aarch64
 # PR258954: see <https://bugs.openjdk.org/browse/JDK-8247766>. Even though the

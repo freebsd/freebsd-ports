@@ -144,6 +144,7 @@ JDK_BUILD_JVM=	server
 
 MAKE_ENV+=		--with-toolchain-type=${COMPILER_TYPE}
 CONFIGURE_ARGS+=	--with-toolchain-type=${COMPILER_TYPE}
+CONFIGURE_ARGS+=	--disable-warnings-as-errors
 
 .if ${COMPILER_TYPE} == gcc
 USE_GCC=	yes
@@ -154,9 +155,6 @@ CONFIGURE_ARGS+=	--with-extra-ldflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFA
 MAKE_ENV+=	USE_CLANG=true
 .endif
 
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH:Marmv*} || ${ARCH:Mpowerpc64*}
-CONFIGURE_ARGS+=	--disable-warnings-as-errors
-.endif
 .if ${ARCH} == aarch64 || ${ARCH:Marmv*}
 CONFIGURE_ARGS+=	--disable-dtrace
 .endif
