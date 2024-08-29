@@ -1,6 +1,6 @@
-TIMESTAMP = 1685969811
-SHA256 (schachmat-wego-2.2_GH0.tar.gz) = e7a6d40cb44f4408aedceebbed5854b3b992936cc762df6b76f5a9dca7909321
-SIZE (schachmat-wego-2.2_GH0.tar.gz) = 20450
+TIMESTAMP = 1724659369
+SHA256 (schachmat-wego-2.3_GH0.tar.gz) = 6a7501ab537709d1d9fc04f14e5a2c5a8f99309591a8dae75260caf4a74ce567
+SIZE (schachmat-wego-2.3_GH0.tar.gz) = 20902
 SHA256 (golang-sys-v0.8.0_GH0.tar.gz) = b2d02a26e2f974193692e0357c73f46b7b82c5d51099af1b01e4c456d261a428
 SIZE (golang-sys-v0.8.0_GH0.tar.gz) = 1436337
 SHA256 (mattn-go-colorable-v0.1.13_GH0.tar.gz) = c3b62c76d365906bba9aa9d9ec048fd33a2a5742299d6482a08e7466d4c52d77
