@@ -1,3 +1,36 @@
+  <vuln vid="46419e8c-65d9-11ef-ac06-b0416f0c4c67">
+    <topic>Configobj -- Regular Expression Denial of Service attack</topic>
+    <affects>
+      <package>
+	<name>py38-configobj</name>
+	<name>py39-configobj</name>
+	<name>py310-configobj</name>
+	<name>py311-configobj</name>
+	<range><le>5.0.8</le></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>report@snyk.io reports:</p>
+	<blockquote cite="https://github.com/DiffSK/configobj/issues/232">
+	  <p>All versions of the package configobj are vulnerable to Regular
+	Expression Denial of Service (ReDoS) via the validate function,
+	using (.+?)\((.*)\).**Note:** This is only exploitable in the case
+	of a developer putting the offending value in a server side
+	configuration file.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-26112</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-26112</url>
+    </references>
+    <dates>
+      <discovery>2023-04-03</discovery>
+      <entry>2024-08-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="49ef501c-62b6-11ef-bba5-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
