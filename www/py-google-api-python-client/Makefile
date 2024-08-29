@@ -1,5 +1,5 @@
 PORTNAME=	google-api-python-client
-DISTVERSION=	2.142.0
+DISTVERSION=	2.143.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=1.31.5:www/py-google-api-co
 		${PYTHON_PKGNAMEPREFIX}httplib2>=0.19.0:www/py-httplib2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oauth2client>=4.1.3:security/py-oauth2client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uritemplate>=3.0.1:net/py-uritemplate@${PY_FLAVOR}
-# tests: 318 passed, 3 deselected
+# tests: 317 passed, 4 deselected
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=1.31.5:www/py-google-api-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-auth-httplib2>=0.2.0:security/py-google-auth-httplib2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-auth>=1.32:security/py-google-auth@${PY_FLAVOR} \
@@ -32,7 +32,8 @@ USE_PYTHON=	autoplist distutils unittest
 # Require Application Default Credentials
 # see https://cloud.google.com/docs/authentication/external/set-up-adc
 PYTEST_IGNORED_TESTS=	test_universe_env_var_configured_with_mtls \
-			test_client_options_universe_configured_with_mtls
+			test_client_options_universe_configured_with_mtls \
+			test_tests_should_be_run_with_strict_positional_enforcement
 # Requires oauth2client < 4.0.0 to pass
 # tests/test_discovery_cache.py:34: FileCache unavailable.
 # ModuleNotFoundError: No module named oauth2client.contrib.locked_file
