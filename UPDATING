@@ -7,7 +7,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20240824:
   AFFECTS: dns/acme-dns
-  AUTHOR: netchildFreeBSD.org
+  AUTHOR: netchild@FreeBSD.org
 
   The start script of acme-dns has been renamed to acme_dns for improved
   compatibility with other parts of the system. The automatic start at
