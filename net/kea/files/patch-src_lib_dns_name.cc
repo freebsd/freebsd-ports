@@ -23,7 +23,7 @@
          // the origin's data
          ndata_.erase(ndata_.end() - 1);
 -        ndata_.append(origin->ndata_);
-+        ndata_.insert(ndata.end(), origin->ndata_.begin(), origin->ndata_.end());
++        ndata_.insert(ndata_.end(), origin->ndata_.begin(), origin->ndata_.end());
  
          // Do a similar thing with offsets. However, we need to move them
          // so they point after the prefix we parsed before.
@@ -45,12 +45,13 @@
          retname.offsets_.push_back(retname.ndata_.size());
          ++rit0;
          ++rit1;
-@@ -662,7 +662,7 @@ Name::split(const unsigned int first, const unsigned i
+@@ -662,7 +662,8 @@ Name::split(const unsigned int first, const unsigned i
      // original name, and append the trailing dot explicitly.
      //
      retname.ndata_.reserve(retname.offsets_.back() + 1);
 -    retname.ndata_.assign(ndata_, offsets_[first], retname.offsets_.back());
-+    retname.ndata_.assign(ndata_.data() + offsets_[first], ndata_.data() + retname.offsets_.back());
++    auto it = ndata_.data() + offsets_[first];
++    retname.ndata_.assign(it, it + retname.offsets_.back());
      retname.ndata_.push_back(0);
  
      retname.length_ = retname.ndata_.size();
