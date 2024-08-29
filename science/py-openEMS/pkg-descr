@@ -1,0 +1,6 @@
+openEMS is a free and open electromagnetic field solver using the FDTD method.
+Matlab or Octave are used as an easy and flexible scripting interface.
+
+It features:
+* fully 3D Cartesian and cylindrical coordinates graded mesh
+* multi-threading, SIMD (SSE) and MPI support for high speed FDTD
