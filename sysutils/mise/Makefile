@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.8.14
+DISTVERSION=	2024.8.15
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -314,10 +314,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		roff-0.2.2 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-2.0.0 \
-		rustc_version-0.4.0 \
+		rustc_version-0.4.1 \
 		rustix-0.38.35 \
 		rustls-0.23.12 \
-		rustls-native-certs-0.7.2 \
+		rustls-native-certs-0.7.3 \
 		rustls-pemfile-2.1.3 \
 		rustls-pki-types-1.8.0 \
 		rustls-webpki-0.102.7 \
@@ -431,14 +431,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		untrusted-0.9.0 \
 		url-2.5.2 \
 		urlencoding-2.1.3 \
-		usage-lib-0.3.0 \
+		usage-lib-0.3.1 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.2 \
 		valuable-0.1.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
 		versions-6.3.2 \
-		vfox-0.1.2 \
+		vfox-0.1.3 \
 		vte-0.10.1 \
 		vte_generate_state_changes-0.1.2 \
 		wait-timeout-0.2.0 \
