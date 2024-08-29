@@ -1,6 +1,6 @@
 PORTNAME=	nextest
 DISTVERSIONPREFIX=	cargo-nextest-
-DISTVERSION=	0.9.76
+DISTVERSION=	0.9.77
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -98,7 +98,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		either-1.13.0 \
 		enable-ansi-support-0.2.1 \
 		encode_unicode-0.3.6 \
-		encoding_rs-0.8.34 \
 		env_filter-0.1.0 \
 		env_logger-0.11.5 \
 		equivalent-1.0.1 \
@@ -130,7 +129,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		globset-0.4.14 \
 		guppy-0.17.7 \
 		guppy-workspace-hack-0.1.0 \
-		h2-0.3.26 \
 		h2-0.4.5 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
@@ -138,20 +136,17 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		home-0.5.9 \
-		http-0.2.12 \
 		http-1.1.0 \
-		http-body-0.4.6 \
 		http-body-1.0.1 \
 		http-body-util-0.1.2 \
 		httparse-1.8.0 \
 		httpdate-1.0.3 \
 		humantime-2.1.0 \
 		humantime-serde-1.1.1 \
-		hyper-0.14.29 \
 		hyper-1.4.1 \
-		hyper-rustls-0.24.2 \
+		hyper-rustls-0.27.2 \
 		hyper-timeout-0.5.1 \
-		hyper-tls-0.5.0 \
+		hyper-tls-0.6.0 \
 		hyper-util-0.1.6 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
@@ -225,6 +220,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		quick-junit-0.4.0 \
 		quick-xml-0.23.1 \
 		quick-xml-0.31.0 \
+		quinn-0.11.3 \
+		quinn-proto-0.11.6 \
+		quinn-udp-0.5.4 \
 		quote-1.0.36 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -237,24 +235,25 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.8.4 \
-		reqwest-0.11.27 \
+		reqwest-0.12.7 \
 		ring-0.17.8 \
 		ron-0.8.1 \
 		rustc-demangle-0.1.24 \
+		rustc-hash-2.0.0 \
 		rustc_version-0.4.0 \
 		rustix-0.38.34 \
-		rustls-0.21.12 \
-		rustls-pemfile-1.0.4 \
-		rustls-webpki-0.101.7 \
+		rustls-0.23.12 \
+		rustls-pemfile-2.1.3 \
+		rustls-pki-types-1.8.0 \
+		rustls-webpki-0.102.6 \
 		rustversion-1.0.17 \
 		rusty-fork-0.3.0 \
 		ryu-1.0.18 \
 		schannel-0.1.23 \
-		sct-0.7.1 \
 		security-framework-2.11.0 \
 		security-framework-sys-2.11.0 \
 		self-replace-1.3.7 \
-		self_update-0.39.0 \
+		self_update-0.41.0 \
 		semver-1.0.23 \
 		serde-1.0.209 \
 		serde_derive-1.0.209 \
@@ -291,8 +290,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		syn-2.0.74 \
 		sync_wrapper-0.1.2 \
 		sync_wrapper-1.0.1 \
-		system-configuration-0.5.1 \
-		system-configuration-sys-0.5.0 \
 		tar-0.4.41 \
 		target-lexicon-0.12.16 \
 		target-spec-3.2.1 \
@@ -312,7 +309,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-1.39.3 \
 		tokio-macros-2.4.0 \
 		tokio-native-tls-0.3.1 \
-		tokio-rustls-0.24.1 \
+		tokio-rustls-0.26.0 \
 		tokio-stream-0.1.15 \
 		tokio-util-0.7.11 \
 		toml-0.8.19 \
@@ -355,16 +352,20 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-support-0.2.92 \
 		wasm-bindgen-shared-0.2.92 \
 		web-sys-0.3.69 \
-		webpki-roots-0.25.4 \
+		webpki-roots-0.26.3 \
 		win32job-2.0.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.52.0 \
 		windows-core-0.52.0 \
+		windows-registry-0.2.0 \
+		windows-result-0.2.0 \
+		windows-strings-0.1.0 \
 		windows-sys-0.42.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.42.2 \
@@ -390,7 +391,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.6.18 \
-		winreg-0.50.0 \
 		xattr-1.3.1 \
 		xxhash-rust-0.8.12 \
 		yansi-0.5.1 \
