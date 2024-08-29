@@ -1,6 +1,6 @@
 PORTNAME=	rio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.9
+DISTVERSION=	0.1.10
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	-terminal-emulator
 
@@ -287,7 +287,7 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		regex-syntax-0.8.4 \
 		remove_dir_all-0.5.3 \
 		renderdoc-sys-1.1.0 \
-		rio-winit-fork-0.30.4 \
+		rio-winit-fork-0.30.9 \
 		roxmltree-0.20.0 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
