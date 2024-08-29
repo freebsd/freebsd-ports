@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240829:
+  AFFECTS: devel/binutils
+  AUTHOR: cy@FreeBSD.org
+
+  Historically devel/binutils would implicitly use devel/elfutils when
+  it discovers it previously installed. This resulted in it depending on,
+  though not explicitly if previously found, elfutils when built manually.
+  This behvior has now changed. binutils will now disable any
+  auto-dependency on elfutils. Users who build binutils manually and wish
+  to have it depend on elfutls must now explicitly set the option when
+  building binutils.
+
+  There is no change to packages built by poudriere.
+
 20240824:
   AFFECTS: dns/acme-dns
   AUTHOR: netchild@FreeBSD.org
