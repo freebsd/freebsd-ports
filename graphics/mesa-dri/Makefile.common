@@ -9,7 +9,7 @@
 #    - graphics/mesa-libs
 #    - lang/clover
 
-MESAVERSION=	24.1.5
+MESAVERSION=	24.1.7
 
 MASTER_SITES=	https://mesa.freedesktop.org/archive/
 
