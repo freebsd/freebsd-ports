@@ -1,7 +1,7 @@
 PORTNAME=	zfs-replicate
 PORTVERSION=	1.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	tschetter.victor@gmail.com
