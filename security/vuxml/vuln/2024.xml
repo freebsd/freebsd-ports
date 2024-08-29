@@ -1,3 +1,42 @@
+  <vuln vid="6f2545bb-65e8-11ef-8a0f-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>128.0.6613.113</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>128.0.6613.113</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/08/stable-channel-update-for-desktop_28.html">
+	 <p>This update includes 4 security fixes:</p>
+	 <ul>
+	    <li>[351865302] High CVE-2024-7969: Type Confusion in V8. Reported by CFF of Topsec Alpha Team on 2024-07-09</li>
+	    <li>[360265320] High CVE-2024-8193: Heap buffer overflow in Skia. Reported by Renan Rios (@hyhy_100) on 2024-08-16</li>
+	    <li>[360533914] High CVE-2024-8194: Type Confusion in V8. Reported by Seunghyun Lee (@0x10n) on 2024-08-18</li>
+	    <li>[360758697] High CVE-2024-8198: Heap buffer overflow in Skia. Reported by Renan Rios (@hyhy_100) on 2024-08-19</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-7969</cvename>
+      <cvename>CVE-2024-8193</cvename>
+      <cvename>CVE-2024-8194</cvename>
+      <cvename>CVE-2024-8198</cvename>
+      <url>https://chromereleases.googleblog.com/2024/08/stable-channel-update-for-desktop_28.html</url>
+    </references>
+    <dates>
+      <discovery>2024-08-28</discovery>
+      <entry>2024-08-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="46419e8c-65d9-11ef-ac06-b0416f0c4c67">
     <topic>Configobj -- Regular Expression Denial of Service attack</topic>
     <affects>
