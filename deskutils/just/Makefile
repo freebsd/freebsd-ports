@@ -1,6 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	1.34.0
-PORTREVISION=	1
+DISTVERSION=	1.35.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,37 +25,37 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		anstyle-query-1.1.1 \
 		anstyle-wincon-3.0.4 \
 		arrayref-0.3.8 \
-		arrayvec-0.7.4 \
+		arrayvec-0.7.6 \
 		atty-0.2.14 \
 		autocfg-1.3.0 \
 		bitflags-1.3.2 \
 		bitflags-2.6.0 \
-		blake3-1.5.3 \
+		blake3-1.5.4 \
 		block-buffer-0.10.4 \
 		bstr-1.10.0 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
-		camino-1.1.7 \
-		cc-1.1.7 \
+		camino-1.1.9 \
+		cc-1.1.15 \
 		cfg-if-1.0.0 \
-		cfg_aliases-0.1.1 \
+		cfg_aliases-0.2.1 \
 		chrono-0.4.38 \
 		clap-2.34.0 \
-		clap-4.5.13 \
-		clap_builder-4.5.13 \
-		clap_complete-4.5.12 \
+		clap-4.5.16 \
+		clap_builder-4.5.15 \
+		clap_complete-4.5.24 \
 		clap_derive-4.5.13 \
 		clap_lex-0.7.2 \
 		clap_mangen-0.2.23 \
 		colorchoice-1.0.2 \
-		constant_time_eq-0.3.0 \
-		core-foundation-sys-0.8.6 \
-		cpufeatures-0.2.12 \
+		constant_time_eq-0.3.1 \
+		core-foundation-sys-0.8.7 \
+		cpufeatures-0.2.13 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.20 \
 		crypto-common-0.1.6 \
-		ctrlc-3.4.4 \
+		ctrlc-3.4.5 \
 		derivative-2.2.0 \
 		diff-0.1.13 \
 		digest-0.10.7 \
@@ -65,11 +64,9 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		dotenvy-0.15.7 \
 		edit-distance-2.1.2 \
 		either-1.13.0 \
-		env_filter-0.1.2 \
-		env_logger-0.11.5 \
 		errno-0.3.9 \
 		executable-path-1.0.0 \
-		fastrand-2.1.0 \
+		fastrand-2.1.1 \
 		generic-array-0.14.7 \
 		getopts-0.2.21 \
 		getrandom-0.2.15 \
@@ -78,52 +75,52 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.3.9 \
 		home-0.5.9 \
-		humantime-2.1.0 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
 		is_terminal_polyfill-1.70.1 \
 		itoa-1.0.11 \
-		js-sys-0.3.69 \
+		js-sys-0.3.70 \
 		lazy_static-1.5.0 \
 		lexiclean-0.0.1 \
-		libc-0.2.155 \
+		libc-0.2.158 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.14 \
 		log-0.4.22 \
 		memchr-2.7.4 \
 		memmap2-0.9.4 \
-		nix-0.28.0 \
+		nix-0.29.0 \
 		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
 		once_cell-1.19.0 \
 		option-ext-0.2.0 \
 		percent-encoding-2.3.1 \
-		ppv-lite86-0.2.18 \
+		ppv-lite86-0.2.20 \
 		pretty_assertions-1.4.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.86 \
 		pulldown-cmark-0.9.6 \
 		pulldown-cmark-to-cmark-10.0.4 \
-		quote-1.0.36 \
+		quote-1.0.37 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		rayon-core-1.12.1 \
-		redox_users-0.4.5 \
+		redox_users-0.4.6 \
 		regex-1.10.6 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.8.4 \
 		roff-0.2.2 \
-		rustix-0.38.34 \
+		rustix-0.38.35 \
 		rustversion-1.0.17 \
 		ryu-1.0.18 \
 		semver-1.0.23 \
-		serde-1.0.204 \
-		serde_derive-1.0.204 \
-		serde_json-1.0.122 \
+		serde-1.0.209 \
+		serde_derive-1.0.209 \
+		serde_json-1.0.127 \
 		sha2-0.10.8 \
 		shellexpand-3.1.0 \
+		shlex-1.3.0 \
 		similar-2.6.0 \
 		snafu-0.8.4 \
 		snafu-derive-0.8.4 \
@@ -134,9 +131,9 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		strum-0.26.3 \
 		strum_macros-0.26.4 \
 		syn-1.0.109 \
-		syn-2.0.72 \
+		syn-2.0.76 \
 		target-2.1.0 \
-		tempfile-3.11.0 \
+		tempfile-3.12.0 \
 		temptree-0.2.0 \
 		terminal_size-0.3.0 \
 		textwrap-0.11.0 \
@@ -153,18 +150,19 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		vec_map-0.8.2 \
 		version_check-0.9.5 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.92 \
-		wasm-bindgen-backend-0.2.92 \
-		wasm-bindgen-macro-0.2.92 \
-		wasm-bindgen-macro-support-0.2.92 \
-		wasm-bindgen-shared-0.2.92 \
-		which-6.0.2 \
+		wasm-bindgen-0.2.93 \
+		wasm-bindgen-backend-0.2.93 \
+		wasm-bindgen-macro-0.2.93 \
+		wasm-bindgen-macro-support-0.2.93 \
+		wasm-bindgen-shared-0.2.93 \
+		which-6.0.3 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-core-0.52.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.48.5 \
@@ -184,8 +182,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_msvc-0.52.6 \
 		winsafe-0.0.19 \
 		yansi-0.5.1 \
-		zerocopy-0.6.6 \
-		zerocopy-derive-0.6.6
+		zerocopy-0.7.35 \
+		zerocopy-derive-0.7.35
 
 PLIST_FILES=	bin/${PORTNAME}
 
