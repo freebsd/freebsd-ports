@@ -19,14 +19,12 @@ USES=		pkgconfig
 SUB_FILES=	pkg-message
 PLIST_FILES=	${PULSE_MODDIR}/module-sndio.so
 
+PULSE_MODDIR=	`${LOCALBASE}/bin/pkg-config --variable=modlibexecdir libpulse`
+PULSE_VERSION=	`${LOCALBASE}/bin/pkg-config --modversion libpulse`
+
 post-patch:
 	${REINPLACE_CMD} \
-		-e '/^PA_MODULE_VERSION/s/0.0/${PULSE_VERSION}/1' \
+		-e "/^PA_MODULE_VERSION/s/0.0/${PULSE_VERSION}/1" \
 		${WRKSRC}/module-sndio.c
 
-.include <bsd.port.pre.mk>
-
-PULSE_MODDIR!=	${LOCALBASE}/bin/pkg-config --variable=modlibexecdir libpulse
-PULSE_VERSION!=	${LOCALBASE}/bin/pkg-config --modversion libpulse
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
