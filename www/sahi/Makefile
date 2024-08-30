@@ -12,6 +12,9 @@ WWW=		http://www.sahi.co.in/w/sahi
 LICENSE=	APACHE20 MPL11
 LICENSE_COMB=	multi
 
+DEPRECATED=	Abandonware and outdated, newer versions requires users to purchase a license and current versions refers to Java 1.5
+EXPIRATION_DATE=2024-09-30
+
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
