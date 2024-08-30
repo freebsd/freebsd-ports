@@ -18,54 +18,44 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 USES=		cmake compiler:c++11-lang cpe lua:53 minizip pkgconfig sqlite \
 		ssl
 
-CONFLICTS_INSTALL?=	domoticz-[234]*
+USE_GITHUB=	yes
+GH_TAGNAME=	a580a6b1f
 
-# Do not extract python Includes
-EXTRACT_AFTER_ARGS=	--exclude hardware/plugins/Include
+CONFLICTS_INSTALL=	domoticz-[234]*
 
-OPTIONS_DEFINE=		PRECOMP PYTHON TELLDUS
-OPTIONS_DEFAULT=	PRECOMP PYTHON
-OPTIONS_SUB=		YES
-PRECOMP_DESC=		Enable usage of precompiled header to speed build time
-PYTHON_DESC=		Enable support for Python Plugins
-TELLDUS_DESC=		Enable support for Telldus
-
-.include <bsd.port.options.mk>
+EXTRACT_AFTER_ARGS=	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/hardware/plugins/Include \
+			--no-same-owner --no-same-permissions
 
 # This hack is to get rid of dependency of git while building
 # the package.
 DOMOTICZ_REL=	16186
 DOMOTICZ_TS=	1724156096
-USE_GITHUB=	yes
-GH_TAGNAME=	a580a6b1f
 
 USE_RC_SUBR=	domoticz
-
 USERS=		domoticz
 GROUPS=		domoticz
 
-CMAKE_INSTALL_PREFIX=	${PREFIX}/domoticz
-CMAKE_OFF+=		GIT_SUBMODULE USE_STATIC_BOOST USE_OPENSSL_STATIC \
-			USE_STATIC_BOOST USE_BUILTIN_JSONCPP USE_BUILTIN_MINIZIP \
-			USE_BUILTIN_MQTT USE_STATIC_OPENZWAVE USE_BUILTIN_SQLITE \
-			USE_LUA_STATIC
+CMAKE_INSTALL_PREFIX=   ${PREFIX}/domoticz
 
-.if ${PORT_OPTIONS:MPYTHON}
-CMAKE_ON+=	USE_PYTHON
-USES+=		python:3.9+
-.else
-CMAKE_OFF+=	USE_PYTHON
-.endif
+CMAKE_OFF=	GIT_SUBMODULE \
+		USE_BUILTIN_JSONCPP \
+		USE_BUILTIN_MINIZIP \
+		USE_BUILTIN_MQTT \
+		USE_LUA_STATIC \
+		USE_STATIC_BOOST \
+		USE_STATIC_OPENZWAVE
 
-.if ${PORT_OPTIONS:MTELLDUS}
-LIB_DEPENDS+=	libtelldus-core.so:comms/telldus-core
-.endif
+OPTIONS_DEFINE=		PRECOMP PYTHON
+OPTIONS_DEFAULT=	PRECOMP PYTHON
+OPTIONS_SUB=		yes
 
-.if ${PORT_OPTIONS:MPRECOMP}
-CMAKE_ON+=	USE_PRECOMPILED_HEADER
-.else
-CMAKE_OFF+=	USE_PRECOMPILED_HEADER
-.endif
+PRECOMP_DESC=		Enable usage of precompiled header to speed build time
+PYTHON_DESC=		Enable support for Python Plugins
+
+PYTHON_USES=		python:3.9+
+PYTHON_CMAKE_BOOL=	USE_PYTHON
+
+PRECOMP_CMAKE_BOOL=	USE_PRECOMPILED_HEADER
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,\/opt,${PREFIX},g" ${WRKSRC}/CMakeLists.txt
