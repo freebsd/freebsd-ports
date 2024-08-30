@@ -14,7 +14,7 @@ lib/cmake/c-ares/c-ares-targets.cmake
 %%STATIC%%lib/libcares_static.a
 lib/libcares.so
 lib/libcares.so.2
-lib/libcares.so.2.18.0
+lib/libcares.so.2.18.1
 libdata/pkgconfig/libcares.pc
 share/man/man1/adig.1.gz
 share/man/man1/ahost.1.gz
