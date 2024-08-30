@@ -4,8 +4,7 @@ CATEGORIES=	polish
 MASTER_SITES=	ftp://master-ftp.pld-linux.org/${F_SUBDIR}/ \
 		ftp://ftp.atm.pld-linux.org/${F_SUBDIR}/ \
 		ftp://ftp.icm.edu.pl/pub/linux/distributions/pld-linux/${F_SUBDIR}/ \
-		ftp://distrib-coffee.ipsl.jussieu.fr/pub/linux/pld/${F_SUBDIR}/ \
-		ftp://ftp.heanet.ie/pub/pld-linux/${F_SUBDIR}/
+		ftp://distrib-coffee.ipsl.jussieu.fr/pub/linux/pld/${F_SUBDIR}/
 F_SUBDIR=	pool/f/fortunes-pl
 DISTFILES=	fortunes-pl-${PORTVERSION}-3.src.rpm
 
