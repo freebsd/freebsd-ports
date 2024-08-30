@@ -33,7 +33,6 @@ include/xlsxwriter/vml.h
 include/xlsxwriter/workbook.h
 include/xlsxwriter/worksheet.h
 include/xlsxwriter/xmlwriter.h
-lib/libxlsxwriter.a
 lib/libxlsxwriter.so
 lib/libxlsxwriter.so.7
 libdata/pkgconfig/xlsxwriter.pc
