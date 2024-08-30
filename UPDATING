@@ -75,7 +75,7 @@ you update your ports collection, before attempting any port upgrades.
     "service amavis-p0fanalyzer ..." to "service amavis_p0fanalyzer ..."
 
 20240727:
-  AFFECTS: lang/php8[13]
+  AFFECTS: lang/php8[123]
   AUTHOR: netchildFreeBSD.org
 
   The start scripts of php-fpm have been renamed to php_fpm for improved

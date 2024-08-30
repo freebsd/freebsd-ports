@@ -1,5 +1,5 @@
 PORTNAME=	php82
-DISTVERSION=	8.2.22
+DISTVERSION=	8.2.23
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
@@ -76,7 +76,7 @@ FPM_CONFIGURE_ON=	--enable-fpm \
 			--with-fpm-group=${WWWGRP} \
 			--with-fpm-user=${WWWOWN}
 FPM_VARS=		PHP_SAPI+=fpm \
-			USE_RC_SUBR+=php-fpm
+			USE_RC_SUBR+=php_fpm
 IPV6_CONFIGURE_OFF=	--disable-ipv6
 LINKTHR_LIBS=		-lpthread
 MYSQLND_CONFIGURE_ON=	--enable-mysqlnd
