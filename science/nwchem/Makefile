@@ -1,13 +1,13 @@
 PORTNAME=	nwchem
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.2.2
-PORTREVISION=	1
+DISTVERSION=	7.2.3
 DISTVERSIONSUFFIX=	-release
 CATEGORIES=	science
-MASTER_SITES=	https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/:dftd3 \
-		https://web.archive.org/web/20210527062154if_/https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/:dft3 \
+MASTER_SITES=	https://github.com/nwchemgit/nwchem/releases/download/${DISTVERSIONFULL}/ \
+		https://www.chemie.uni-bonn.de/grimme/de/software/dft-d3/:dft3 \
 		https://gitlab.com/libxc/libxc/-/archive/${LIBXC_VERSION}/:libxc
-DISTFILES=	dftd3.tgz:dft3 \
+DISTFILES=	${PORTNAME}-${DISTVERSION}-${DISTVERSIONSUFFIX}.revision-d690e065-src.2024-08-27${EXTRACT_SUFX} \
+		dftd3.tgz:dft3 \
 		libxc-${LIBXC_VERSION}.tar.gz:libxc
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
@@ -35,7 +35,6 @@ USE_PERL5=	build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nwchemgit
-GH_TAGNAME=	a83175e # hotfix/release-7-2-0 branch fixing extremely long compilation time with gmake-4.4.1
 
 MAKEFILE=	GNUmakefile
 ARCH_64BIT=	${ARCH:C/.*64.*/64/:S/${ARCH}//}
@@ -101,9 +100,9 @@ pre-build:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} nwchem_config
 
-pre-build-BLAS_SIZE_4-on:
-	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} 64_to_32
+#pre-build-BLAS_SIZE_4-on: # this is already done in the tarball, but not in the repository
+#	@cd ${WRKSRC} && \
+#		${SETENV} ${MAKE_ENV} ${MAKE_CMD} 64_to_32
 
 do-install:
 	${INSTALL_DATA} ${WRKDIR}/nwchemrc ${STAGEDIR}${PREFIX}/etc/nwchemrc
