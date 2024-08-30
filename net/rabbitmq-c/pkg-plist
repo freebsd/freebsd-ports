@@ -18,6 +18,6 @@ lib/cmake/rabbitmq-c/rabbitmq-c-config.cmake
 lib/cmake/rabbitmq-c/rabbitmq-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/rabbitmq-c/rabbitmq-targets.cmake
 lib/librabbitmq.so
-lib/librabbitmq.so.0.13.0
+lib/librabbitmq.so.0.14.0
 lib/librabbitmq.so.4
 libdata/pkgconfig/librabbitmq.pc
