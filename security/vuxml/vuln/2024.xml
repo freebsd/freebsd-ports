@@ -1,3 +1,32 @@
+  <vuln vid="7e9cc7fd-6b3e-46c5-ad6d-409d90d41bbf">
+    <topic>RabbitMQ-C -- auth credentials visible in commandline tool options</topic>
+    <affects>
+      <package>
+	<name>rabbitmq-c</name>
+	<range><lt>0.14.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>hadmut reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2023-35789">
+		<p>This C library includes 2 command-line tools that can take
+		credentials as command-line options. The credentials are exposed
+		as plain-text in the process list. This could allow an attacker
+		with access to the process list to see the credentials.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-35789</cvename>
+	  <url>https://nvd.nist.gov/vuln/detail/CVE-2023-35789</url>
+    </references>
+    <dates>
+      <discovery>2019-09-19</discovery>
+      <entry>2024-08-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5e4d7172-66b8-11ef-b104-b42e991fc52e">
     <topic>firefox -- multiple vulnerabilities</topic>
     <affects>
