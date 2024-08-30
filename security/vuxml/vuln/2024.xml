@@ -1,3 +1,35 @@
+  <vuln vid="eb437e17-66a1-11ef-ac08-75165d18d8d2">
+    <topic>forgejo -- The scope of application tokens was not verified when writing containers or Conan packages.</topic>
+    <affects>
+      <package>
+	<name>forgejo</name>
+	<range><lt>8.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The forgejo team reports:</p>
+	<blockquote cite="https://codeberg.org/forgejo/forgejo/milestone/7728">
+        <p>The scope of application tokens was not verified when writing
+        containers or Conan packages.  This is of no consequence when the
+        user associated with the application token does not have write
+        access to packages.  If the user has write access to packages, such
+        a token can be used to write containers and Conan packages.  An
+        application token that was used to write containers or Conan
+        packages without the package:write scope will now fail with an
+        unauthorized error.  It must be re-created to include the
+        package:write scope.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://codeberg.org/forgejo/forgejo/pulls/5149</url>
+    </references>
+    <dates>
+      <discovery>2024-08-26</discovery>
+      <entry>2024-08-30</entry>
+    </dates>
+  </vuln>
   <vuln vid="7e9cc7fd-6b3e-46c5-ad6d-409d90d41bbf">
     <topic>RabbitMQ-C -- auth credentials visible in commandline tool options</topic>
     <affects>
