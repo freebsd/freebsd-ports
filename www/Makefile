@@ -336,6 +336,7 @@
     SUBDIR += lua-resty-http
     SUBDIR += lua-resty-lrucache
     SUBDIR += lua-resty-session
+    SUBDIR += lua-resty-session3
     SUBDIR += luakit
     SUBDIR += luakit-devel
     SUBDIR += lux
