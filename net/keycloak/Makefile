@@ -1,5 +1,6 @@
 PORTNAME=	keycloak
 DISTVERSION=	25.0.4
+PORTREVISION=	1
 CATEGORIES=	net java
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -9,8 +10,6 @@ WWW=		https://www.keycloak.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-RUN_DEPENDS=	bash>0:shells/bash
 
 USES=		cpe shebangfix
 
