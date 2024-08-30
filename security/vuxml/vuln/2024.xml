@@ -1,3 +1,51 @@
+  <vuln vid="5e4d7172-66b8-11ef-b104-b42e991fc52e">
+    <topic>firefox -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>129.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1909241">
+	  <ul>
+	    <li>Firefox adds web-compatibility shims in place of some
+	      tracking scripts blocked by Enhanced Tracking Protection.
+	      On a site protected by Content Security Policy in
+	      &quot;strict-dynamic&quot; mode, an attacker able to
+	      inject an HTML element could have used a DOM
+	      Clobbering attack on some of the shims and achieved XSS,
+	      bypassing the CSP strict-dynamic protection.</li>
+	    <li>Form validation popups could capture escape key presses.
+	      Therefore, spamming form validation messages could be used
+	      to prevent users from exiting full-screen mode.</li>
+	    <li>When almost out-of-memory an elliptic curve key which
+	      was never allocated could have been freed again. </li>
+	    <li>It was possible to move the cursor using pointerlock
+	      from an iframe.  This allowed moving the cursor outside
+	      of the viewport and the Firefox window.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-7524</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-7524</url>
+      <cvename>CVE-2024-6610</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-6610</url>
+      <cvename>CVE-2024-6609</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-6609</url>
+      <cvename>CVE-2024-6608</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-6608</url>
+    </references>
+    <dates>
+      <discovery>2024-08-06</discovery>
+      <entry>2024-08-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6f2545bb-65e8-11ef-8a0f-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
