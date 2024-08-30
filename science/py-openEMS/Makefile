@@ -22,7 +22,6 @@ USE_PYTHON=	distutils cython autoplist
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	thliebig
-GH_PROJECT=	openEMS
 
 CFLAGS+=	-I${WRKSRC} \
 		-I`${MAKE} -C ${PORTSDIR}/cad/py-csxcad -VWRKSRC`
