@@ -1,12 +1,8 @@
 PORTNAME=	krita
-DISTVERSION=	5.2.2
-PORTREVISION=	8
+DISTVERSION=	5.2.3
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
-
-PATCH_SITES=	https://invent.kde.org/graphics/${PORTNAME}/-/commit/
-PATCHFILES+=	d9e258bf9d6a.patch:-p1 # https://invent.kde.org/graphics/krita/-/merge_requests/2040
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Sketching and painting program
@@ -55,7 +51,7 @@ USE_GNOME=	glib20
 USE_KDE=	completion config coreaddons crash guiaddons i18n \
 		itemmodels itemviews libkdcraw service widgetsaddons \
 		windowsystem ecm:build
-USE_QT=		concurrent core dbus declarative gui network \
+USE_QT=		concurrent core dbus gui network \
 		printsupport sql svg widgets x11extras xml \
 		buildtools:build qmake:build testlib:build \
 		sql-sqlite3:run
