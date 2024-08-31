@@ -1,10 +1,11 @@
 PORTNAME=	rdkit
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	2023_09_6
+DISTVERSION=	2024_03_6
 CATEGORIES=	science
 MASTER_SITES=	https://fonts.google.com/download?family=Comic%20Neue&dummy=/:font
-DISTFILES=	Comic_Neue.zip:font
+DISTFILES=	ComicNeue-Regular.ttf:font
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+EXTRACT_ONLY=	${DISTFILES:C/:.*//:N*.ttf}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of cheminformatics and machine-learning software
@@ -25,7 +26,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
 		libmaeparser.so:science/maeparser
 
-USES=		bison:build cmake compiler:c++11-lang eigen:3 python
+USES=		bison:build cmake:testing compiler:c++11-lang eigen:3 python
 USE_GITHUB=	yes
 GH_TUPLE=	rareylab:RingDecomposerLib:v1.1.3_rdkit:RingDecomposerLib/External/RingFamilies/RingDecomposerLib
 USE_LDCONFIG=	yes
@@ -41,6 +42,12 @@ CXXFLAGS+=	-D_GNU_SOURCE
 
 DATADIR=	${PREFIX}/share/RDKit
 DOCSDIR=	${PREFIX}/share/doc/RDKit
+
+#		RDBASE=${STAGEDIR}${PREFIX}
+TEST_ENV=	${MAKE_ENV} \
+		RDBASE=${WRKSRC} \
+		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
+		LD_LIBRARY_PATH=${STAGEDIR}${PREFIX}/lib
 
 PLIST_SUB=	SHLIB_VER=${PORTVERSION}
 
@@ -76,9 +83,11 @@ PLIST_SUB+=	LITTLE_ENDIAN="@comment "
 post-extract:
 	@${MKDIR} ${WRKSRC}/External/rapidjson-1.1.0
 	@cd ${WRKSRC}/External/rapidjson-1.1.0 && ${LN} -s ${LOCALBASE}/include/rapidjson include
-	@cd ${WRKSRC}/Data/Fonts && unzip ${DISTDIR}/${DIST_SUBDIR}/Comic_Neue.zip
+	@cd ${WRKSRC}/Data/Fonts && ${CP} ${DISTDIR}/${DIST_SUBDIR}/ComicNeue-Regular.ttf .
 
 post-install-PGSQL-on:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/rdkit.so
+
+# many tests fail, see https://github.com/rdkit/rdkit/issues/7779
 
 .include <bsd.port.mk>
