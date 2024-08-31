@@ -1,5 +1,6 @@
 PORTNAME=	pandoc
 DISTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -197,7 +198,6 @@ USE_CABAL=	Glob-0.10.2_3 \
 		zip-archive-0.4.3.2_1 \
 		zlib-0.7.1.0_1
 
-CABAL_FLAGS=	lua
 CABAL_WRAPPER_SCRIPTS=	${CABAL_EXECUTABLES}
 
 OPTIONS_DEFINE=		EMBED_DATA
@@ -221,6 +221,11 @@ HACKAGE_DISTNAME=	pandoc-cli-${PORTVERSION}
 # compiler goes out of memory
 BUILD_ARGS+=	--disable-optimization
 .endif
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/man/pandoc.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/pandoc-lua.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/pandoc-server.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 post-install-EMBED_DATA-off:
 	cd ${CABAL_DEPSDIR}/${PORTNAME}-${PORTVERSION} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR}
