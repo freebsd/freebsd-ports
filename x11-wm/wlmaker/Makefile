@@ -1,6 +1,7 @@
 PORTNAME=	wlmaker
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -23,6 +24,7 @@ USE_GNOME=	cairo
 USE_XORG=	xcb
 GH_ACCOUNT=	phkaeser
 GH_TUPLE=	phkaeser:libbase:df7ce2a:libbase/submodules/libbase
+CMAKE_OFF=	${WITH_DEBUG:D:Uconfig_DEBUG}
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/wlmclock \
 		share/icons/${PORTNAME}/chrome-48x48.png \
@@ -33,6 +35,10 @@ PLIST_FILES=	bin/${PORTNAME} \
 		${NULL}
 
 post-patch:
+# Respect -O level from global CFLAGS or CMAKE_BUILD_TYPE
+	@${REINPLACE_CMD} '/-O[0-9]/d' \
+		${WRKSRC}/submodules/libbase/CMakeLists.txt \
+		${WRKSRC}/CMakeLists.txt
 # Respect PREFIX for icons
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
 		${WRKSRC}/src/clip.c \
