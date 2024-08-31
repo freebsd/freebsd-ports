@@ -1,6 +1,5 @@
 PORTNAME=	polkit
-DISTVERSION=	124
-PORTREVISION=	3
+DISTVERSION=	125
 CATEGORIES=	sysutils gnome
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -69,6 +68,10 @@ post-patch:
 		${WRKSRC}/docs/man/polkit.xml
 
 post-install:
+	${RM} -r ${STAGEDIR}/usr/lib/systemd
+	${RM} -r ${STAGEDIR}/usr/lib/sysusers.d
+	${RM} -r ${STAGEDIR}/usr/lib/tmpfiles.d
+
 	@${MKDIR} ${STAGEDIR}/var/lib/polkit-1 \
 		  ${STAGEDIR}${PREFIX}/share/polkit-1/rules.d
 .for i in 10-vendor.d 20-org.d 30-site.d 50-local.d 90-mandatory.d
