@@ -21,4 +21,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipykernel>0:devel/py-ipykernel@${PY_FLAVOR} 
 USES=		python
 USE_PYTHON=	distutils autoplist # metaport, but it has a tarball that contains nothing essential
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
