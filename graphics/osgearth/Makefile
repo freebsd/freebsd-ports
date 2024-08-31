@@ -1,7 +1,6 @@
 PORTNAME=	osgearth
-PORTVERSION=	3.5
+PORTVERSION=	3.6.1
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	3
 CATEGORIES=	graphics geography
 
 MAINTAINER=	zirias@FreeBSD.org
@@ -23,7 +22,7 @@ USE_CXXSTD=	c++17
 USE_GITHUB=	yes
 GH_ACCOUNT=	gwaldron ocornut:imgui Esri:lerc Tencent:rapidjson
 GH_PROJECT=	imgui:imgui lerc:lerc rapidjson:rapidjson
-GH_TAGNAME=	9e8e5ac:imgui 19542a0:lerc f54b0e4:rapidjson
+GH_TAGNAME=	cab7edd:imgui 19542a0:lerc f54b0e4:rapidjson
 USE_GL=		gl
 USE_LDCONFIG=	yes
 
