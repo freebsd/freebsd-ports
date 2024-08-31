@@ -11,6 +11,9 @@ WWW=		https://audiere.sourceforge.net/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
+DEPRECATED=	last release in 2006, no consumers in the Ports tree
+EXPIRATION_DATE=2024-10-31
+
 USES=		autoreconf gmake libtool
 GNU_CONFIGURE=	yes
 USE_CXXSTD=	c++98
