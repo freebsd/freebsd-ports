@@ -1,5 +1,5 @@
 PORTNAME=	cardano-db-sync
-PORTVERSION=	13.4.0.1
+PORTVERSION=	13.5.0.0
 CATEGORIES=	net-p2p databases
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
@@ -64,7 +64,7 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
 		assoc-1.1.1 \
-		async-2.2.5_1 \
+		async-2.2.5_2 \
 		async-timer-0.1.4.1 \
 		atomic-primops-0.8.8 \
 		attoparsec-0.14.4_5 \
@@ -83,7 +83,7 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		bech32-1.1.7 \
 		bifunctors-5.6.2 \
 		bimap-0.5.0 \
-		bin-0.1.4 \
+		bin-0.1.4_1 \
 		binary-orphans-1.0.5 \
 		bitvec-1.1.5.0_1 \
 		blaze-builder-0.4.2.3 \
@@ -205,10 +205,10 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		file-embed-0.0.16.0 \
 		filelock-0.1.1.7 \
 		filepath-1.4.300.2 \
-		fin-0.3.1 \
+		fin-0.3.1_1 \
 		fingertree-0.1.5.0 \
 		flat-0.6 \
-		foldl-1.4.16 \
+		foldl-1.4.16_1 \
 		formatting-7.2.0 \
 		foundation-0.0.30 \
 		free-5.2_5 \
@@ -343,7 +343,7 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		plutus-tx-1.30.0.0:chap \
 		polyparse-1.13_9 \
 		postgresql-libpq-0.10.1.0_1 \
-		postgresql-simple-0.7.0.0_2 \
+		postgresql-simple-0.7.0.0_3 \
 		pretty-show-1.10 \
 		pretty-simple-4.1.2.0 \
 		prettyprinter-1.7.1 \
@@ -354,14 +354,14 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		process-1.6.20.0_1 \
 		profunctors-5.6.2_3 \
 		prometheus-2.2.4_1 \
-		psqueues-0.2.8.0 \
+		psqueues-0.2.8.0_1 \
 		quickcheck-instances-0.3.31_2 \
 		quickcheck-io-0.2.0 \
 		quickcheck-monoids-0.1.0.0_1:chap \
 		quickcheck-state-machine-0.9.0 \
 		quickcheck-transformer-0.3.1.2 \
 		quiet-0.2 \
-		ral-0.2.2 \
+		ral-0.2.2_1 \
 		random-1.2.1.2 \
 		random-shuffle-0.0.4 \
 		readable-0.3.1_2 \
@@ -382,8 +382,8 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		semigroupoids-6.0.1_1 \
 		semigroups-0.20 \
 		serialise-0.2.6.1_3 \
-		servant-0.20.1_4 \
-		servant-server-0.20_5 \
+		servant-0.20.1_5 \
+		servant-server-0.20_6 \
 		servant-swagger-1.2_4 \
 		set-algebra-1.1.0.3:chap \
 		show-combinators-0.2.0.0_2 \
@@ -426,12 +426,12 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		tasty-1.5.1 \
 		tasty-expected-failure-0.12.3 \
 		tasty-golden-2.3.5 \
-		tasty-hedgehog-1.4.0.2_4 \
+		tasty-hedgehog-1.4.0.2_5 \
 		tasty-hunit-0.10.2 \
 		tasty-quickcheck-0.11 \
 		tdigest-0.3_1 \
 		temporary-1.3 \
-		terminal-size-0.3.4 \
+		terminal-size-0.3.4_1 \
 		testing-type-modifiers-0.1.0.1 \
 		text-builder-0.6.7.2 \
 		text-builder-dev-0.3.4.3 \
@@ -478,7 +478,7 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		uuid-types-1.0.6_1 \
 		validation-selective-0.2.0.0.0.0.0.0.1:chap \
 		validity-0.12.0.2 \
-		vault-0.3.1.5_7 \
+		vault-0.3.1.5_8 \
 		vector-0.13.1.0_1 \
 		vector-algorithms-0.9.0.2_1 \
 		vector-binary-instances-0.2.5.2_5 \
@@ -494,11 +494,11 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		wai-extra-3.1.15 \
 		wai-logger-2.4.0 \
 		warp-3.4.1_1 \
-		wide-word-0.1.6.0_2 \
+		wide-word-0.1.6.0_3 \
 		with-utf8-1.1.0.0_1 \
 		witherable-0.5_1 \
 		wl-pprint-annotated-0.1.0.1_3 \
-		wl-pprint-text-1.2.0.2_2 \
+		wl-pprint-text-1.2.0.2_3 \
 		word-wrap-0.5 \
 		word8-0.1.3 \
 		yaml-0.11.11.2_2 \

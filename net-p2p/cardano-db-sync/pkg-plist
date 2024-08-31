@@ -57,6 +57,7 @@ bin/cardano-db-sync-pgsql-setup
 %%DATADIR%%/schema/migration-2-0040-20240626.sql
 %%DATADIR%%/schema/migration-2-0041-20240711.sql
 %%DATADIR%%/schema/migration-2-0042-20240808.sql
+%%DATADIR%%/schema/migration-2-0043-20240828.sql
 %%DATADIR%%/schema/migration-3-0001-20190816.sql
 %%DATADIR%%/schema/migration-3-0002-20200521.sql
 %%DATADIR%%/schema/migration-3-0003-20240121.sql
