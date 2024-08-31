@@ -8,9 +8,10 @@
 # to enable this service:
 #
 # mta_sts_enable (bool):	Set to NO by default.
-# 		     		Set it to YES to enable mta_sts.
-# mta_sts_config (path):	Set to %%PREFIX%%/etc/mta-sts-daemon.yml
-#				by default.
+# 		     		Set it to YES to enable mta_sts_daemon.
+# mta_sts_config (path):	Set path to mta-sts-daemon.yml.
+# mta_sts_logfile (path):	Set log file name or 'syslog'.
+# mta_sts_logverbosity (str):	Set log verbosity(debug/info/warning/error/critical)
 
 . /etc/rc.subr
 
@@ -20,18 +21,41 @@ rcvar=mta_sts_enable
 load_rc_config $name
 
 : ${mta_sts_enable:="NO"}
-: ${mta_sts_config="%%PREFIX%%/etc/mta-sts-daemon.yml"}
-: ${mta_sts_user="nobody"}
+: ${mta_sts_config:="%%PREFIX%%/etc/mta-sts-daemon.yml"}
+: ${mta_sts_user:="mailnull"}
+: ${mta_sts_group:="mailnull"}
+: ${mta_sts_logfile:="syslog"}
+: ${mta_sts_logverbosity:="info"}
 
-pidfile=/var/run/${name}.pid
-command=%%PREFIX%%/bin/mta-sts-daemon
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/bin/mta-sts-daemon"
 command_interpreter="%%PYTHON_CMD%%"
 
+start_precmd="${name}_prestart"
 start_cmd="${name}_start"
+
+mta_sts_prestart()
+{
+	if [ "$mta_sts_logfile" = "syslog" ]; then
+		# NOTHING TO DO #
+	elif touch "$mta_sts_logfile"; then
+		chown "$mta_sts_user":"$mta_sts_group" "$mta_sts_logfile"
+	else
+		err 3 "$mta_sts_logfile: cannot create"
+	fi
+}
 
 mta_sts_start()
 {
-	/usr/sbin/daemon -u "${mta_sts_user}" -p "${pidfile}" "${command}" -c "${mta_sts_config}"
+	local logopts=""
+	local cmdopts="-v $mta_sts_logverbosity"
+
+	if [ "$mta_sts_logfile" = "syslog" ]; then
+		logopts="-S -T mta_sts -l mail -s $mta_sts_logverbosity"
+	else
+		cmdopts="$cmdopts -l $mta_sts_logfile"
+	fi
+	/usr/sbin/daemon -u "$mta_sts_user" -p "$pidfile" ${logopts} "$command" -c "$mta_sts_config" ${cmdopts}
 }
 
 run_rc_command "$1"
