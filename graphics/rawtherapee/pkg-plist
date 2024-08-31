@@ -1,27 +1,28 @@
-@comment env LC_ALL=C sort -f
 bin/rawtherapee
 bin/rawtherapee-cli
-share/man/man1/rawtherapee.1.gz
 share/applications/rawtherapee.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/AboutThisBuild.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES.txt
 share/icons/hicolor/128x128/apps/rawtherapee.png
 share/icons/hicolor/16x16/apps/rawtherapee.png
 share/icons/hicolor/24x24/apps/rawtherapee.png
 share/icons/hicolor/256x256/apps/rawtherapee.png
 share/icons/hicolor/32x32/apps/rawtherapee.png
-share/icons/hicolor/64x64/apps/rawtherapee.png
 share/icons/hicolor/48x48/apps/rawtherapee.png
+share/icons/hicolor/64x64/apps/rawtherapee.png
 share/icons/hicolor/scalable/apps/rawtherapee.svg
+share/man/man1/rawtherapee.1.gz
 share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
-%%PORTDOCS%%%%DOCSDIR%%/AboutThisBuild.txt
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES.txt
 %%DATADIR%%/camconst.json
-%%DATADIR%%/dcpprofiles/camera_model_aliases.json
+%%DATADIR%%/dcpprofiles/CANON EOS 250D.dcp
+%%DATADIR%%/dcpprofiles/CANON EOS 800D.dcp
+%%DATADIR%%/dcpprofiles/CANON EOS M50.dcp
+%%DATADIR%%/dcpprofiles/CANON POWERSHOT G5 X MARK II.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 100D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 1300D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 20D.dcp
-%%DATADIR%%/dcpprofiles/CANON EOS 250D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 400D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 40D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 450D.dcp
@@ -38,10 +39,8 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/Canon EOS 6D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 7D Mark II.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 7D.dcp
-%%DATADIR%%/dcpprofiles/CANON EOS 800D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 90D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS D60.dcp
-%%DATADIR%%/dcpprofiles/CANON EOS M50.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS M6 Mark II.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS R.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS R5.dcp
@@ -53,18 +52,14 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/Canon PowerShot G1 X Mark II.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot G10.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot G12.dcp
-%%DATADIR%%/dcpprofiles/CANON POWERSHOT G5 X MARK II.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot G7 X.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot S110.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot S120.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM DBP for GX680.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM FinePix F600EXR.dcp
-%%DATADIR%%/dcpprofiles/Fujifilm FinePix S9500.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM GFX 50R.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-A5.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-A7.dcp
-%%DATADIR%%/dcpprofiles/Fujifilm X-E1.dcp
-%%DATADIR%%/dcpprofiles/Fujifilm X-E2.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-E3.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-H1.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-Pro2.dcp
@@ -80,26 +75,23 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/FUJIFILM X-T4.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X100S.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X100T.dcp
-%%DATADIR%%/dcpprofiles/Leaf Aptus 75.dcp
+%%DATADIR%%/dcpprofiles/Fujifilm FinePix S9500.dcp
+%%DATADIR%%/dcpprofiles/Fujifilm X-E1.dcp
+%%DATADIR%%/dcpprofiles/Fujifilm X-E2.dcp
 %%DATADIR%%/dcpprofiles/LG Mobile LG-H815.dcp
+%%DATADIR%%/dcpprofiles/Leaf Aptus 75.dcp
 %%DATADIR%%/dcpprofiles/MINOLTA DYNAX 7D.dcp
 %%DATADIR%%/dcpprofiles/NIKON COOLPIX P7800.dcp
-%%DATADIR%%/dcpprofiles/Nikon D200.dcp
 %%DATADIR%%/dcpprofiles/NIKON D300.dcp
-%%DATADIR%%/dcpprofiles/Nikon D3000.dcp
-%%DATADIR%%/dcpprofiles/Nikon D3100.dcp
 %%DATADIR%%/dcpprofiles/NIKON D3300.dcp
-%%DATADIR%%/dcpprofiles/Nikon D3S.dcp
 %%DATADIR%%/dcpprofiles/NIKON D50.dcp
 %%DATADIR%%/dcpprofiles/NIKON D500.dcp
 %%DATADIR%%/dcpprofiles/NIKON D5000.dcp
-%%DATADIR%%/dcpprofiles/Nikon D5100.dcp
 %%DATADIR%%/dcpprofiles/NIKON D5300.dcp
 %%DATADIR%%/dcpprofiles/NIKON D5600.dcp
 %%DATADIR%%/dcpprofiles/NIKON D600.dcp
 %%DATADIR%%/dcpprofiles/NIKON D610.dcp
 %%DATADIR%%/dcpprofiles/NIKON D700.dcp
-%%DATADIR%%/dcpprofiles/Nikon D7000.dcp
 %%DATADIR%%/dcpprofiles/NIKON D70s.dcp
 %%DATADIR%%/dcpprofiles/NIKON D7100.dcp
 %%DATADIR%%/dcpprofiles/NIKON D7200.dcp
@@ -115,16 +107,30 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/NIKON Z 6.dcp
 %%DATADIR%%/dcpprofiles/NIKON Z 6_2.dcp
 %%DATADIR%%/dcpprofiles/NIKON Z 7.dcp
-%%DATADIR%%/dcpprofiles/Olympus E-1.dcp
+%%DATADIR%%/dcpprofiles/NIKON Z 8.dcp
+%%DATADIR%%/dcpprofiles/NIKON Z 9.dcp
+%%DATADIR%%/dcpprofiles/NIKON Z F.dcp
+%%DATADIR%%/dcpprofiles/Nikon D200.dcp
+%%DATADIR%%/dcpprofiles/Nikon D3000.dcp
+%%DATADIR%%/dcpprofiles/Nikon D3100.dcp
+%%DATADIR%%/dcpprofiles/Nikon D3S.dcp
+%%DATADIR%%/dcpprofiles/Nikon D5100.dcp
+%%DATADIR%%/dcpprofiles/Nikon D7000.dcp
 %%DATADIR%%/dcpprofiles/OLYMPUS E-510.dcp
-%%DATADIR%%/dcpprofiles/Olympus E-520.dcp
 %%DATADIR%%/dcpprofiles/OLYMPUS E-M1.dcp
 %%DATADIR%%/dcpprofiles/OLYMPUS E-M10.dcp
 %%DATADIR%%/dcpprofiles/OLYMPUS E-M1MarkII.dcp
-%%DATADIR%%/dcpprofiles/Olympus E-M5.dcp
 %%DATADIR%%/dcpprofiles/OLYMPUS E-M5MarkII.dcp
+%%DATADIR%%/dcpprofiles/Olympus E-1.dcp
+%%DATADIR%%/dcpprofiles/Olympus E-520.dcp
+%%DATADIR%%/dcpprofiles/Olympus E-M5.dcp
 %%DATADIR%%/dcpprofiles/Olympus E-P2.dcp
 %%DATADIR%%/dcpprofiles/Olympus XZ-1.dcp
+%%DATADIR%%/dcpprofiles/PANASONIC DMC-LX100.dcp
+%%DATADIR%%/dcpprofiles/PENTAX K-5 II.dcp
+%%DATADIR%%/dcpprofiles/PENTAX K-5.dcp
+%%DATADIR%%/dcpprofiles/PENTAX K-50.dcp
+%%DATADIR%%/dcpprofiles/PENTAX K10D.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DC-G9.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DC-GX9.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DC-S1.dcp
@@ -141,21 +147,13 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/Panasonic DMC-GH2.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-GX7.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-GX85.dcp
-%%DATADIR%%/dcpprofiles/PANASONIC DMC-LX100.dcp
-%%DATADIR%%/dcpprofiles/PENTAX K-5 II.dcp
-%%DATADIR%%/dcpprofiles/PENTAX K-5.dcp
-%%DATADIR%%/dcpprofiles/PENTAX K-50.dcp
 %%DATADIR%%/dcpprofiles/Pentax K-r.dcp
-%%DATADIR%%/dcpprofiles/PENTAX K10D.dcp
 %%DATADIR%%/dcpprofiles/Pentax K200D.dcp
 %%DATADIR%%/dcpprofiles/RICOH GR III.dcp
 %%DATADIR%%/dcpprofiles/RICOH PENTAX K-1.dcp
 %%DATADIR%%/dcpprofiles/RICOH PENTAX K-3.dcp
-%%DATADIR%%/dcpprofiles/samsung SM-G930V.dcp
 %%DATADIR%%/dcpprofiles/SONY DSC-RX100M6.dcp
 %%DATADIR%%/dcpprofiles/SONY DSLR-A580.dcp
-%%DATADIR%%/dcpprofiles/Sony DSLR-A700.dcp
-%%DATADIR%%/dcpprofiles/Sony DSLR-A900.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-6000.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-6300.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-6400.dcp
@@ -170,10 +168,14 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/SONY ILCE-7RM4.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-7SM3.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-9.dcp
+%%DATADIR%%/dcpprofiles/SONY SLT-A99V.dcp
+%%DATADIR%%/dcpprofiles/Sony DSLR-A700.dcp
+%%DATADIR%%/dcpprofiles/Sony DSLR-A900.dcp
 %%DATADIR%%/dcpprofiles/Sony NEX-5N.dcp
 %%DATADIR%%/dcpprofiles/Sony SLT-A55V.dcp
-%%DATADIR%%/dcpprofiles/SONY SLT-A99V.dcp
 %%DATADIR%%/dcpprofiles/YI TECHNOLOGY M1.dcp
+%%DATADIR%%/dcpprofiles/camera_model_aliases.json
+%%DATADIR%%/dcpprofiles/samsung SM-G930V.dcp
 %%DATADIR%%/iccprofiles/input/Canon EOS 20D.icc
 %%DATADIR%%/iccprofiles/input/Canon EOS 40D.icc
 %%DATADIR%%/iccprofiles/input/Canon EOS 450D.icc
@@ -197,6 +199,9 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/iccprofiles/input/Panasonic DMC-GH1.icc
 %%DATADIR%%/iccprofiles/input/Panasonic DMC-GH2.icc
 %%DATADIR%%/iccprofiles/input/Pentax K200D.icc
+%%DATADIR%%/iccprofiles/input/Sony DSLR-A700.icc
+%%DATADIR%%/iccprofiles/input/Sony DSLR-A900.icc
+%%DATADIR%%/iccprofiles/input/Sony SLT-A55V.icc
 %%DATADIR%%/iccprofiles/input/sd14-bl15-crop-matrix-gamma-wp10.icm
 %%DATADIR%%/iccprofiles/input/sd14-bl15-crop-matrix-gamma-wp11.icm
 %%DATADIR%%/iccprofiles/input/sd14-bl15-crop-matrix-gamma-wp12.icm
@@ -206,9 +211,6 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/iccprofiles/input/sd1_merrill_sunny8161-crop-wp11.icm
 %%DATADIR%%/iccprofiles/input/sd1_merrill_tungsten8130-CROP-WP10.icm
 %%DATADIR%%/iccprofiles/input/sd1_merrill_tungsten8130-CROP-WP11.icm
-%%DATADIR%%/iccprofiles/input/Sony DSLR-A700.icc
-%%DATADIR%%/iccprofiles/input/Sony DSLR-A900.icc
-%%DATADIR%%/iccprofiles/input/Sony SLT-A55V.icc
 %%DATADIR%%/iccprofiles/output/DCI-P3 D65.icc
 %%DATADIR%%/iccprofiles/output/DCI-P3 Theater.icc
 %%DATADIR%%/iccprofiles/output/RTv2_ACES-AP0.icc
@@ -219,8 +221,8 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/iccprofiles/output/RTv2_Large.icc
 %%DATADIR%%/iccprofiles/output/RTv2_Medium.icc
 %%DATADIR%%/iccprofiles/output/RTv2_Rec2020.icc
-%%DATADIR%%/iccprofiles/output/RTv2_sRGB.icc
 %%DATADIR%%/iccprofiles/output/RTv2_Wide.icc
+%%DATADIR%%/iccprofiles/output/RTv2_sRGB.icc
 %%DATADIR%%/iccprofiles/output/RTv4_ACES-AP0.icc
 %%DATADIR%%/iccprofiles/output/RTv4_ACES-AP1.icc
 %%DATADIR%%/iccprofiles/output/RTv4_Best.icc
@@ -229,342 +231,337 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/iccprofiles/output/RTv4_Large.icc
 %%DATADIR%%/iccprofiles/output/RTv4_Medium.icc
 %%DATADIR%%/iccprofiles/output/RTv4_Rec2020.icc
-%%DATADIR%%/iccprofiles/output/RTv4_sRGB.icc
 %%DATADIR%%/iccprofiles/output/RTv4_Wide.icc
-%%DATADIR%%/images/add-small.svg
-%%DATADIR%%/images/add.svg
-%%DATADIR%%/images/aperture.svg
-%%DATADIR%%/images/arrow-down-small.svg
-%%DATADIR%%/images/arrow-left-small.svg
-%%DATADIR%%/images/arrow-right-small.svg
-%%DATADIR%%/images/arrow-up-small.svg
-%%DATADIR%%/images/arrow-updown.svg
-%%DATADIR%%/images/arrow2-left.svg
-%%DATADIR%%/images/arrow2-right.svg
-%%DATADIR%%/images/atom.svg
-%%DATADIR%%/images/bayer.svg
-%%DATADIR%%/images/beforeafter.svg
-%%DATADIR%%/images/bidirectional-arrow-horizontal-hicontrast.svg
-%%DATADIR%%/images/bidirectional-arrow-horizontal-prelight.svg
-%%DATADIR%%/images/bidirectional-arrow-vertical-hicontrast.svg
-%%DATADIR%%/images/bidirectional-arrow-vertical-prelight.svg
-%%DATADIR%%/images/box.svg
-%%DATADIR%%/images/cancel-small.svg
-%%DATADIR%%/images/cancel.svg
-%%DATADIR%%/images/circle-black-small.svg
-%%DATADIR%%/images/circle-blue-green-small.svg
-%%DATADIR%%/images/circle-blue-red-small.svg
-%%DATADIR%%/images/circle-blue-small.svg
-%%DATADIR%%/images/circle-blue-yellow-small.svg
-%%DATADIR%%/images/circle-cyan-red-small.svg
-%%DATADIR%%/images/circle-cyan-small.svg
-%%DATADIR%%/images/circle-darkgray-small.svg
-%%DATADIR%%/images/circle-empty-blue-small.svg
-%%DATADIR%%/images/circle-empty-darkgray-small.svg
-%%DATADIR%%/images/circle-empty-gray-small.svg
-%%DATADIR%%/images/circle-empty-green-small.svg
-%%DATADIR%%/images/circle-empty-purple-small.svg
-%%DATADIR%%/images/circle-empty-red-small.svg
-%%DATADIR%%/images/circle-empty-yellow-small.svg
-%%DATADIR%%/images/circle-gray-blue-small.svg
-%%DATADIR%%/images/circle-gray-green-small.svg
-%%DATADIR%%/images/circle-gray-red-small.svg
-%%DATADIR%%/images/circle-gray-small.svg
-%%DATADIR%%/images/circle-green-blue-small.svg
-%%DATADIR%%/images/circle-green-red-small.svg
-%%DATADIR%%/images/circle-green-small.svg
-%%DATADIR%%/images/circle-magenta-small.svg
-%%DATADIR%%/images/circle-orange-small.svg
-%%DATADIR%%/images/circle-purple-small.svg
-%%DATADIR%%/images/circle-red-blue-small.svg
-%%DATADIR%%/images/circle-red-cyan-small.svg
-%%DATADIR%%/images/circle-red-green-small.svg
-%%DATADIR%%/images/circle-red-small.svg
-%%DATADIR%%/images/circle-white-small.svg
-%%DATADIR%%/images/circle-yellow-blue-small.svg
-%%DATADIR%%/images/circle-yellow-small.svg
-%%DATADIR%%/images/color-circles.svg
-%%DATADIR%%/images/color-picker-add-hicontrast.svg
-%%DATADIR%%/images/color-picker-add.svg
-%%DATADIR%%/images/color-picker-bars.svg
-%%DATADIR%%/images/color-picker-hicontrast.svg
-%%DATADIR%%/images/color-picker-hide.svg
-%%DATADIR%%/images/color-picker-small.svg
-%%DATADIR%%/images/color-picker.svg
-%%DATADIR%%/images/contrastmask-off.svg
-%%DATADIR%%/images/contrastmask-on.svg
-%%DATADIR%%/images/copy.svg
-%%DATADIR%%/images/crop-auto-small.svg
-%%DATADIR%%/images/crop-auto.svg
-%%DATADIR%%/images/crop-point-hicontrast.svg
-%%DATADIR%%/images/crop-small.svg
-%%DATADIR%%/images/crop.svg
-%%DATADIR%%/images/crossed-arrows-in.svg
-%%DATADIR%%/images/crossed-arrows-out.svg
-%%DATADIR%%/images/crosshair-adjust.svg
-%%DATADIR%%/images/crosshair-hicontrast.svg
-%%DATADIR%%/images/crosshair-node-curve.svg
-%%DATADIR%%/images/crosshair-small.svg
-%%DATADIR%%/images/curve-catmullrom-small.svg
-%%DATADIR%%/images/curve-catmullrom.svg
-%%DATADIR%%/images/curve-controlpoints-small.svg
-%%DATADIR%%/images/curve-controlpoints.svg
-%%DATADIR%%/images/curve-flat-small.svg
-%%DATADIR%%/images/curve-flat.svg
-%%DATADIR%%/images/curve-linear-small.svg
-%%DATADIR%%/images/curve-linear.svg
-%%DATADIR%%/images/curve-nurbs-small.svg
-%%DATADIR%%/images/curve-nurbs.svg
-%%DATADIR%%/images/curve-parametric-small.svg
-%%DATADIR%%/images/curve-parametric.svg
-%%DATADIR%%/images/curve-spline-small.svg
-%%DATADIR%%/images/curve-spline.svg
-%%DATADIR%%/images/detail.svg
-%%DATADIR%%/images/device-floppy.svg
-%%DATADIR%%/images/device-hdd.svg
-%%DATADIR%%/images/device-network.svg
-%%DATADIR%%/images/device-optical.svg
-%%DATADIR%%/images/device-usb.svg
-%%DATADIR%%/images/distortion-auto-small.svg
-%%DATADIR%%/images/distortion-auto.svg
-%%DATADIR%%/images/distortion-barrel-small.svg
-%%DATADIR%%/images/distortion-barrel.svg
-%%DATADIR%%/images/distortion-pincushion-small.svg
-%%DATADIR%%/images/distortion-pincushion.svg
-%%DATADIR%%/images/draw.svg
-%%DATADIR%%/images/edit-point.svg
-%%DATADIR%%/images/edit-small.svg
-%%DATADIR%%/images/edit.svg
-%%DATADIR%%/images/empty.png
-%%DATADIR%%/images/equilizer-narrow.svg
-%%DATADIR%%/images/equilizer-wide.svg
-%%DATADIR%%/images/expander-closed-small.svg
-%%DATADIR%%/images/expander-open-small.svg
-%%DATADIR%%/images/exposure.svg
-%%DATADIR%%/images/filetype-hdr.svg
-%%DATADIR%%/images/filetype-ps.svg
-%%DATADIR%%/images/filter-clear.svg
-%%DATADIR%%/images/filter-original.svg
-%%DATADIR%%/images/filter-original2.svg
-%%DATADIR%%/images/filter.svg
-%%DATADIR%%/images/flip-horizontal.svg
-%%DATADIR%%/images/flip-vertical.svg
-%%DATADIR%%/images/focusscreen-off.svg
-%%DATADIR%%/images/focusscreen-on.svg
-%%DATADIR%%/images/folder-closed-home-small.svg
-%%DATADIR%%/images/folder-closed-home.svg
-%%DATADIR%%/images/folder-closed-recent-small.svg
-%%DATADIR%%/images/folder-closed-recent.svg
-%%DATADIR%%/images/folder-closed-small.svg
-%%DATADIR%%/images/folder-closed.svg
-%%DATADIR%%/images/folder-open-recent-small.svg
-%%DATADIR%%/images/folder-open-recent.svg
-%%DATADIR%%/images/folder-open-small.svg
-%%DATADIR%%/images/folder-open.svg
-%%DATADIR%%/images/fullscreen-enter.svg
-%%DATADIR%%/images/fullscreen-leave.svg
-%%DATADIR%%/images/gamut-hist.svg
-%%DATADIR%%/images/gamut-plus.svg
-%%DATADIR%%/images/gamut-softproof.svg
-%%DATADIR%%/images/gamut-warning.svg
-%%DATADIR%%/images/gamut_srgb_prophoto_xy.svg
-%%DATADIR%%/images/gears-pause.svg
-%%DATADIR%%/images/gears-play.svg
-%%DATADIR%%/images/gears-small.svg
-%%DATADIR%%/images/gears.svg
-%%DATADIR%%/images/goto-end-small.svg
-%%DATADIR%%/images/goto-start-small.svg
-%%DATADIR%%/images/hand-closed-hicontrast.svg
-%%DATADIR%%/images/hand-open-hicontrast.svg
-%%DATADIR%%/images/hand-open.svg
-%%DATADIR%%/images/histogram-bar-off-small.svg
-%%DATADIR%%/images/histogram-bar-on-small.svg
-%%DATADIR%%/images/histogram-blue-off-small.svg
-%%DATADIR%%/images/histogram-blue-on-small.svg
-%%DATADIR%%/images/histogram-ellipsis-small.svg
-%%DATADIR%%/images/histogram-gold-off-small.svg
-%%DATADIR%%/images/histogram-gold-on-small.svg
-%%DATADIR%%/images/histogram-green-off-small.svg
-%%DATADIR%%/images/histogram-green-on-small.svg
-%%DATADIR%%/images/histogram-mode-linear-small.svg
-%%DATADIR%%/images/histogram-mode-logx-small.svg
-%%DATADIR%%/images/histogram-mode-logxy-small.svg
-%%DATADIR%%/images/histogram-red-off-small.svg
-%%DATADIR%%/images/histogram-red-on-small.svg
-%%DATADIR%%/images/histogram-silver-off-small.svg
-%%DATADIR%%/images/histogram-silver-on-small.svg
-%%DATADIR%%/images/histogram-type-histogram-raw-small.svg
-%%DATADIR%%/images/histogram-type-histogram-small.svg
-%%DATADIR%%/images/histogram-type-parade-small.svg
-%%DATADIR%%/images/histogram-type-vectorscope-hc-small.svg
-%%DATADIR%%/images/histogram-type-vectorscope-hs-small.svg
-%%DATADIR%%/images/histogram-type-waveform-small.svg
-%%DATADIR%%/images/info.svg
-%%DATADIR%%/images/intent-absolute.svg
-%%DATADIR%%/images/intent-perceptual.svg
-%%DATADIR%%/images/intent-relative.svg
-%%DATADIR%%/images/intent-saturation.svg
-%%DATADIR%%/images/magnifier-1to1-small.svg
-%%DATADIR%%/images/magnifier-1to1.svg
-%%DATADIR%%/images/magnifier-crop.svg
-%%DATADIR%%/images/magnifier-fit.svg
-%%DATADIR%%/images/magnifier-minus-small.svg
-%%DATADIR%%/images/magnifier-minus.svg
-%%DATADIR%%/images/magnifier-plus-small.svg
-%%DATADIR%%/images/magnifier-plus.svg
-%%DATADIR%%/images/magnifier.svg
-%%DATADIR%%/images/metadata.svg
-%%DATADIR%%/images/node-move-nw-se-hicontrast.svg
-%%DATADIR%%/images/node-move-sw-ne-hicontrast.svg
-%%DATADIR%%/images/node-move-x-hicontrast.svg
-%%DATADIR%%/images/node-move-xy-hicontrast.svg
-%%DATADIR%%/images/node-move-y-hicontrast.svg
-%%DATADIR%%/images/one-to-one-small.svg
+%%DATADIR%%/iccprofiles/output/RTv4_sRGB.icc
+%%DATADIR%%/icons/rawtherapee/24x24/apps/empty.png
+%%DATADIR%%/icons/rawtherapee/index.theme
+%%DATADIR%%/icons/rawtherapee/scalable/apps/add-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/add.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/aperture.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/arrow-down-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/arrow-left-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/arrow-right-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/arrow-up-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/arrow-updown.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/arrow2-left.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/arrow2-right.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/atom.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/bayer.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/beforeafter.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/bidirectional-arrow-horizontal-hicontrast.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/bidirectional-arrow-horizontal-prelight.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/bidirectional-arrow-vertical-hicontrast.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/bidirectional-arrow-vertical-prelight.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/box.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/cancel-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/cancel.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-black-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-blue-green-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-blue-red-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-blue-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-blue-yellow-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-cyan-red-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-cyan-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-darkgray-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-empty-blue-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-empty-darkgray-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-empty-gray-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-empty-green-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-empty-purple-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-empty-red-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-empty-yellow-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-gray-blue-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-gray-green-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-gray-red-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-gray-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-green-blue-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-green-red-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-green-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-magenta-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-multicolor-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-orange-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-purple-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-red-blue-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-red-cyan-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-red-green-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-red-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-white-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-yellow-blue-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/circle-yellow-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/color-circles.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/color-picker-add-hicontrast.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/color-picker-add.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/color-picker-bars.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/color-picker-hicontrast.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/color-picker-hide.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/color-picker-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/color-picker.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/contrastmask-off.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/contrastmask-on.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/copy.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/crop-auto-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/crop-auto.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/crop-point-hicontrast.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/crop-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/crop.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/crossed-arrows-in.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/crossed-arrows-out.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/crosshair-adjust.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/crosshair-hicontrast.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/crosshair-node-curve.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/crosshair-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/curve-catmullrom-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/curve-catmullrom.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/curve-controlpoints-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/curve-controlpoints.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/curve-flat-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/curve-flat.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/curve-linear-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/curve-linear.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/curve-nurbs-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/curve-nurbs.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/curve-parametric-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/curve-parametric.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/curve-spline-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/curve-spline.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/detail.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/device-floppy.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/device-hdd.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/device-network.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/device-optical.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/device-usb.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/distortion-auto-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/distortion-auto.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/distortion-barrel-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/distortion-barrel.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/distortion-pincushion-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/distortion-pincushion.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/draw.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/edit-point.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/edit-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/edit.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/equilizer-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/equilizer-wide.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/expander-closed-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/expander-open-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/exposure.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/filetype-hdr.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/filetype-ps.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/filter-clear.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/filter-original.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/filter-original2.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/filter.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/flip-horizontal.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/flip-vertical.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/focusscreen-off.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/focusscreen-on.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/folder-closed-home-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/folder-closed-home.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/folder-closed-recent-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/folder-closed-recent.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/folder-closed-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/folder-closed.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/folder-open-recent-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/folder-open-recent.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/folder-open-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/folder-open.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/folder-subfolder.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/fullscreen-enter.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/fullscreen-leave.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/gamut-hist.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/gamut-plus.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/gamut-softproof.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/gamut-warning.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/gamut_srgb_prophoto_xy.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/gears-pause.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/gears-play.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/gears-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/gears.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/goto-end-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/goto-start-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/hand-closed-hicontrast.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/hand-open-hicontrast.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/hand-open.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-bar-off-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-bar-on-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-blue-off-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-blue-on-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-ellipsis-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-gold-off-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-gold-on-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-green-off-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-green-on-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-mode-linear-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-mode-logx-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-mode-logxy-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-red-off-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-red-on-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-silver-off-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-silver-on-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-type-histogram-raw-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-type-histogram-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-type-parade-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-type-vectorscope-hc-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-type-vectorscope-hs-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/histogram-type-waveform-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/info.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/intent-absolute.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/intent-perceptual.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/intent-relative.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/intent-saturation.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/magnifier-1to1-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/magnifier-1to1.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/magnifier-crop.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/magnifier-fit.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/magnifier-minus-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/magnifier-minus.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/magnifier-plus-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/magnifier-plus.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/magnifier.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/metadata.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/node-move-nw-se-hicontrast.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/node-move-sw-ne-hicontrast.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/node-move-x-hicontrast.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/node-move-xy-hicontrast.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/node-move-y-hicontrast.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/one-to-one-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/padlock-locked-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/padlock-unlocked-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/palette-brush.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/panel-to-bottom.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/panel-to-left.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/panel-to-right.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/panel-to-top.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/paste.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/perspective-horizontal-left-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/perspective-horizontal-left.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/perspective-horizontal-right-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/perspective-horizontal-right.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/perspective-horizontal-vertical.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/perspective-vertical-bottom-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/perspective-vertical-bottom.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/perspective-vertical-top-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/perspective-vertical-top.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/power-inconsistent-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/power-off-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/power-on-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/preferences.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/profile-filled.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/profile-partial.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/questionmark.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/redo-all.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/redo-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/redo.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/refresh-red-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/refresh-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/refresh.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/remove-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/remove.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/rotate-aroundnode-hicontrast.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/rotate-aroundnode.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/rotate-left-90.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/rotate-left-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/rotate-left.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/rotate-right-90.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/rotate-right-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/rotate-right.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/rotate-straighten-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/rotate-straighten.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/rt-spot.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/save-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/save.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/saved-no-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/saved-yes-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/spot-active.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/spot-normal.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/spot-prelight.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/square-toggle-black-off-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/square-toggle-black-on-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/square-toggle-blue-off-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/square-toggle-blue-on-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/square-toggle-gray-off-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/square-toggle-gray-on-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/square-toggle-green-off-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/square-toggle-green-on-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/square-toggle-luminosity-off-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/square-toggle-luminosity-on-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/square-toggle-red-off-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/square-toggle-red-on-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/square-toggle-theme-off-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/square-toggle-theme-on-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/square-toggle-white-off-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/square-toggle-white-on-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/star-gold-hollow-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/star-gold-hollow-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/star-gold-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/star-gold-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/star-hollow-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/star-hollow-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/star-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/star-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/star.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/template-16.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/template-24.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/template-narrow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/tick-green-hollow-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/tick-green-hollow.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/tick-green-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/tick-green.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/tick-hollow-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/tick-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/tick.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/transform.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/trash-delete.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/trash-empty-show.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/trash-empty.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/trash-full-show.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/trash-full.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/trash-hide-deleted.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/trash-remove-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/trash-remove.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/trash-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/undo-all.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/undo-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/undo.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/warning-highlights.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/warning-shadows.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/warning.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wavelets.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-auto-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-auto.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-camera-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-camera.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-cloudy-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-cloudy.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-custom-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-custom.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-flash-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-flash.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-fluorescent-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-fluorescent.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-lamp-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-lamp.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-led-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-led.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-shade-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-shade.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-sun-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-sun.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-tungsten-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-tungsten.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-water-small.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/wb-water.svg
+%%DATADIR%%/icons/rawtherapee/scalable/apps/window-add.svg
 %%DATADIR%%/images/ornament1.svg
-%%DATADIR%%/images/padlock-locked-small.svg
-%%DATADIR%%/images/padlock-unlocked-small.svg
-%%DATADIR%%/images/palette-brush.svg
-%%DATADIR%%/images/panel-to-bottom.svg
-%%DATADIR%%/images/panel-to-left.svg
-%%DATADIR%%/images/panel-to-right.svg
-%%DATADIR%%/images/panel-to-top.svg
-%%DATADIR%%/images/paste.svg
-%%DATADIR%%/images/perspective-horizontal-left-small.svg
-%%DATADIR%%/images/perspective-horizontal-left.svg
-%%DATADIR%%/images/perspective-horizontal-right-small.svg
-%%DATADIR%%/images/perspective-horizontal-right.svg
-%%DATADIR%%/images/perspective-horizontal-vertical.svg
-%%DATADIR%%/images/perspective-vertical-bottom-small.svg
-%%DATADIR%%/images/perspective-vertical-bottom.svg
-%%DATADIR%%/images/perspective-vertical-top-small.svg
-%%DATADIR%%/images/perspective-vertical-top.svg
-%%DATADIR%%/images/power-inconsistent-small.svg
-%%DATADIR%%/images/power-off-small.svg
-%%DATADIR%%/images/power-on-small.svg
-%%DATADIR%%/images/preferences.svg
-%%DATADIR%%/images/profile-filled.svg
-%%DATADIR%%/images/profile-partial.svg
-%%DATADIR%%/images/questionmark.svg
-%%DATADIR%%/images/rawtherapee-logo-128.png
-%%DATADIR%%/images/rawtherapee-logo-16.png
-%%DATADIR%%/images/rawtherapee-logo-24.png
-%%DATADIR%%/images/rawtherapee-logo-256.png
-%%DATADIR%%/images/rawtherapee-logo-32.png
-%%DATADIR%%/images/rawtherapee-logo-48.png
-%%DATADIR%%/images/rawtherapee-logo-64.png
 %%DATADIR%%/images/rawtherapee.ico
-%%DATADIR%%/images/redo-all.svg
-%%DATADIR%%/images/redo-small.svg
-%%DATADIR%%/images/redo.svg
-%%DATADIR%%/images/refresh-red-small.svg
-%%DATADIR%%/images/refresh-small.svg
-%%DATADIR%%/images/refresh.svg
-%%DATADIR%%/images/remove-small.svg
-%%DATADIR%%/images/remove.svg
-%%DATADIR%%/images/rotate-aroundnode-hicontrast.svg
-%%DATADIR%%/images/rotate-aroundnode.svg
-%%DATADIR%%/images/rotate-left-90.svg
-%%DATADIR%%/images/rotate-left-small.svg
-%%DATADIR%%/images/rotate-left.svg
-%%DATADIR%%/images/rotate-right-90.svg
-%%DATADIR%%/images/rotate-right-small.svg
-%%DATADIR%%/images/rotate-right.svg
-%%DATADIR%%/images/rotate-straighten-small.svg
-%%DATADIR%%/images/rotate-straighten.svg
 %%DATADIR%%/images/rt-logo-text-black.svg
 %%DATADIR%%/images/rt-logo-text-white.svg
-%%DATADIR%%/images/rt-logo.svg
-%%DATADIR%%/images/save-small.svg
-%%DATADIR%%/images/save.svg
-%%DATADIR%%/images/saved-no-small.svg
-%%DATADIR%%/images/saved-yes-small.svg
 %%DATADIR%%/images/splash.svg
 %%DATADIR%%/images/splash_template.svg
-%%DATADIR%%/images/spot-active.svg
-%%DATADIR%%/images/spot-normal.svg
-%%DATADIR%%/images/spot-prelight.svg
-%%DATADIR%%/images/square-toggle-black-off-narrow.svg
-%%DATADIR%%/images/square-toggle-black-on-narrow.svg
-%%DATADIR%%/images/square-toggle-blue-off-narrow.svg
-%%DATADIR%%/images/square-toggle-blue-on-narrow.svg
-%%DATADIR%%/images/square-toggle-gray-off-narrow.svg
-%%DATADIR%%/images/square-toggle-gray-on-narrow.svg
-%%DATADIR%%/images/square-toggle-green-off-narrow.svg
-%%DATADIR%%/images/square-toggle-green-on-narrow.svg
-%%DATADIR%%/images/square-toggle-luminosity-off-narrow.svg
-%%DATADIR%%/images/square-toggle-luminosity-on-narrow.svg
-%%DATADIR%%/images/square-toggle-red-off-narrow.svg
-%%DATADIR%%/images/square-toggle-red-on-narrow.svg
-%%DATADIR%%/images/square-toggle-theme-off-narrow.svg
-%%DATADIR%%/images/square-toggle-theme-on-narrow.svg
-%%DATADIR%%/images/square-toggle-white-off-narrow.svg
-%%DATADIR%%/images/square-toggle-white-on-narrow.svg
-%%DATADIR%%/images/star-gold-hollow-narrow.svg
-%%DATADIR%%/images/star-gold-hollow-small.svg
-%%DATADIR%%/images/star-gold-narrow.svg
-%%DATADIR%%/images/star-gold-small.svg
-%%DATADIR%%/images/star-hollow-narrow.svg
-%%DATADIR%%/images/star-hollow-small.svg
-%%DATADIR%%/images/star-narrow.svg
-%%DATADIR%%/images/star-small.svg
-%%DATADIR%%/images/star.svg
-%%DATADIR%%/images/template-16.svg
-%%DATADIR%%/images/template-24.svg
-%%DATADIR%%/images/template-narrow.svg
-%%DATADIR%%/images/tick-green-hollow-small.svg
-%%DATADIR%%/images/tick-green-hollow.svg
-%%DATADIR%%/images/tick-green-small.svg
-%%DATADIR%%/images/tick-green.svg
-%%DATADIR%%/images/tick-hollow-small.svg
-%%DATADIR%%/images/tick-small.svg
-%%DATADIR%%/images/tick.svg
-%%DATADIR%%/images/transform.svg
-%%DATADIR%%/images/trash-delete.svg
-%%DATADIR%%/images/trash-empty-show.svg
-%%DATADIR%%/images/trash-empty.svg
-%%DATADIR%%/images/trash-full-show.svg
-%%DATADIR%%/images/trash-full.svg
-%%DATADIR%%/images/trash-hide-deleted.svg
-%%DATADIR%%/images/trash-remove-small.svg
-%%DATADIR%%/images/trash-remove.svg
-%%DATADIR%%/images/trash-small.svg
-%%DATADIR%%/images/undo-all.svg
-%%DATADIR%%/images/undo-small.svg
-%%DATADIR%%/images/undo.svg
-%%DATADIR%%/images/warning-highlights.svg
-%%DATADIR%%/images/warning-shadows.svg
-%%DATADIR%%/images/warning.svg
-%%DATADIR%%/images/wavelets.svg
-%%DATADIR%%/images/wb-auto-small.svg
-%%DATADIR%%/images/wb-auto.svg
-%%DATADIR%%/images/wb-camera-small.svg
-%%DATADIR%%/images/wb-camera.svg
-%%DATADIR%%/images/wb-cloudy-small.svg
-%%DATADIR%%/images/wb-cloudy.svg
-%%DATADIR%%/images/wb-custom-small.svg
-%%DATADIR%%/images/wb-custom.svg
-%%DATADIR%%/images/wb-flash-small.svg
-%%DATADIR%%/images/wb-flash.svg
-%%DATADIR%%/images/wb-fluorescent-small.svg
-%%DATADIR%%/images/wb-fluorescent.svg
-%%DATADIR%%/images/wb-lamp-small.svg
-%%DATADIR%%/images/wb-lamp.svg
-%%DATADIR%%/images/wb-led-small.svg
-%%DATADIR%%/images/wb-led.svg
-%%DATADIR%%/images/wb-shade-small.svg
-%%DATADIR%%/images/wb-shade.svg
-%%DATADIR%%/images/wb-sun-small.svg
-%%DATADIR%%/images/wb-sun.svg
-%%DATADIR%%/images/wb-tungsten-small.svg
-%%DATADIR%%/images/wb-tungsten.svg
-%%DATADIR%%/images/wb-water-small.svg
-%%DATADIR%%/images/wb-water.svg
-%%DATADIR%%/images/window-add.svg
 %%DATADIR%%/languages/Catala
 %%DATADIR%%/languages/Chinese (Simplified)
 %%DATADIR%%/languages/Czech
 %%DATADIR%%/languages/Dansk
-%%DATADIR%%/languages/default
 %%DATADIR%%/languages/Deutsch
 %%DATADIR%%/languages/English (UK)
 %%DATADIR%%/languages/English (US)
@@ -584,6 +581,7 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/languages/Serbian (Cyrilic Characters)
 %%DATADIR%%/languages/Slovenian
 %%DATADIR%%/languages/Swedish
+%%DATADIR%%/languages/default
 %%DATADIR%%/options
 %%DATADIR%%/profiles/Auto-Matched Curve - ISO High.pp3
 %%DATADIR%%/profiles/Auto-Matched Curve - ISO Low.pp3
@@ -606,41 +604,15 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/sounds/BatchComplete.wav
 %%DATADIR%%/sounds/Empty.wav
 %%DATADIR%%/sounds/ProcessComplete.wav
-%%DATADIR%%/themes/images/svg/twb/checkbox-checked-disabled.svg
-%%DATADIR%%/themes/images/svg/twb/checkbox-checked.svg
-%%DATADIR%%/themes/images/svg/twb/checkbox-inconsistent-disabled.svg
-%%DATADIR%%/themes/images/svg/twb/checkbox-inconsistent.svg
-%%DATADIR%%/themes/images/svg/twb/checkbox-unchecked-disabled.svg
-%%DATADIR%%/themes/images/svg/twb/checkbox-unchecked.svg
-%%DATADIR%%/themes/images/svg/twb/radio-checked-disabled.svg
-%%DATADIR%%/themes/images/svg/twb/radio-checked.svg
-%%DATADIR%%/themes/images/svg/twb/radio-inconsistent-disabled.svg
-%%DATADIR%%/themes/images/svg/twb/radio-inconsistent.svg
-%%DATADIR%%/themes/images/svg/twb/radio-unchecked-disabled.svg
-%%DATADIR%%/themes/images/svg/twb/radio-unchecked.svg
-%%DATADIR%%/themes/images/twb/checkbox-checked-disabled.png
-%%DATADIR%%/themes/images/twb/checkbox-checked.png
-%%DATADIR%%/themes/images/twb/checkbox-inconsistent-disabled.png
-%%DATADIR%%/themes/images/twb/checkbox-inconsistent.png
-%%DATADIR%%/themes/images/twb/checkbox-unchecked-disabled.png
-%%DATADIR%%/themes/images/twb/checkbox-unchecked.png
-%%DATADIR%%/themes/images/twb/radio-checked-disabled.png
-%%DATADIR%%/themes/images/twb/radio-checked.png
-%%DATADIR%%/themes/images/twb/radio-inconsistent-disabled.png
-%%DATADIR%%/themes/images/twb/radio-inconsistent.png
-%%DATADIR%%/themes/images/twb/radio-unchecked-disabled.png
-%%DATADIR%%/themes/images/twb/radio-unchecked.png
-%%DATADIR%%/themes/RawTherapee - Legacy-GTK3-20_.css
-%%DATADIR%%/themes/RawTherapee-GTK3-20_.css
-%%DATADIR%%/themes/RawTherapee-GTK3-_19.css
-%%DATADIR%%/themes/size - Legacy.css
-%%DATADIR%%/themes/size.css
+%%DATADIR%%/themes/RawTherapee - Legacy.css
+%%DATADIR%%/themes/RawTherapee.css
+%%DATADIR%%/themes/TooWaBlue - Bright.css
+%%DATADIR%%/themes/TooWaBlue - Dark.css
+%%DATADIR%%/themes/TooWaBlue.css
+%%DATADIR%%/themes/TooWaGrey - Average Surround.css
+%%DATADIR%%/themes/TooWaGrey - Bright.css
+%%DATADIR%%/themes/TooWaGrey - Dark.css
+%%DATADIR%%/themes/TooWaGrey.css
+%%DATADIR%%/themes/common/size - Legacy.css
+%%DATADIR%%/themes/common/size.css
 %%DATADIR%%/themes/system.iconset
-%%DATADIR%%/themes/TooWaBlue - Bright-GTK3-20_.css
-%%DATADIR%%/themes/TooWaBlue - Dark-GTK3-20_.css
-%%DATADIR%%/themes/TooWaBlue-GTK3-20_.css
-%%DATADIR%%/themes/TooWaBlue-GTK3-_19.css
-%%DATADIR%%/themes/TooWaGrey - Average Surround-GTK3-20_.css
-%%DATADIR%%/themes/TooWaGrey - Bright-GTK3-20_.css
-%%DATADIR%%/themes/TooWaGrey - Dark-GTK3-20_.css
-%%DATADIR%%/themes/TooWaGrey-GTK3-20_.css
