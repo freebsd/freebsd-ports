@@ -24,5 +24,5 @@ lib/cmake/multicharge/multicharge-targets.cmake
 lib/cmake/multicharge/multicharge-utils.cmake
 lib/libmulticharge.so
 lib/libmulticharge.so.0
-lib/libmulticharge.so.0.2.0
+lib/libmulticharge.so.0.3.0
 libdata/pkgconfig/multicharge.pc
