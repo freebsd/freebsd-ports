@@ -1,7 +1,10 @@
 PORTNAME=	llama-cpp
 DISTVERSIONPREFIX=	b
-DISTVERSION=	3631
+DISTVERSION=	3647
 CATEGORIES=	misc # machine-learning
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	121f915a09c1117d34aff6e8faf6d252aaf11027.patch:-p1 # Add missing pthread includes: https://github.com/ggerganov/llama.cpp/pull/9258
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Facebook's LLaMA model in C/C++ # '
