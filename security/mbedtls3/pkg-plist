@@ -135,6 +135,7 @@ include/mbedtls/x509_csr.h
 include/psa/build_info.h
 include/psa/crypto.h
 include/psa/crypto_adjust_auto_enabled.h
+include/psa/crypto_adjust_config_dependencies.h
 include/psa/crypto_adjust_config_key_pair_types.h
 include/psa/crypto_adjust_config_synonyms.h
 include/psa/crypto_builtin_composites.h

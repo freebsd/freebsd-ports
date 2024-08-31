@@ -1,7 +1,7 @@
 PORTNAME=	mbedtls
-DISTVERSION=	3.6.0
+DISTVERSION=	3.6.1
 CATEGORIES=	security devel
-MASTER_SITES=	https://github.com/Mbed-TLS/mbedtls/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/Mbed-TLS/${PORTNAME}/releases/download/${DISTNAME}/
 PKGNAMESUFFIX=	3
 
 MAINTAINER=	tijl@FreeBSD.org
