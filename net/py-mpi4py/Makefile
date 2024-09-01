@@ -1,38 +1,40 @@
 PORTNAME=	mpi4py
-DISTVERSION=	3.1.6
+DISTVERSION=	4.0.0
 CATEGORIES=	net parallel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laurent.chardon@gmail.com
 COMMENT?=	Python bindings for MPI (OpenMPI)
 WWW=		https://github.com/mpi4py/mpi4py
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-USES=		python
-USE_PYTHON=	distutils cython autoplist concurrent
-LDFLAGS+=	${MPI_LIBS}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython3>3.0.0:lang/cython3@${PY_FLAVOR}
 
-SLAVEDIRS=	net/py-mpi4py-mpich
+USES=		pkgconfig python
+USE_PYTHON=	autoplist concurrent distutils
 
-OPTIONS_DEFINE=		DOCS MANPAGES
-
-MP?=		OPENMPI
-
+MP?=			OPENMPI
 .if ${MP} == "OPENMPI"
-USES+=		mpi:openmpi
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}mpi4py-mpich-3*
+USES+=			mpi:openmpi
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}mpi4py-mpich-4*
 .elif ${MP} == "MPICH"
-USES+=		fortran mpi:mpich
-LDFLAGS+=	${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}mpi4py-3*
+USES+=			fortran mpi:mpich
+LDFLAGS+=		${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}mpi4py-4*
 .else
-BROKEN=		invalid parameter MP
+BROKEN=			invalid parameter MP
 .endif
 
-PORTDOCS=		*
+LDFLAGS+=	${MPI_LIBS}
+
+#SLAVEDIRS=	net/py-mpi4py-mpich
+
+OPTIONS_DEFINE=	DOCS
+
+PORTDOCS=	*
 
 pre-configure:
 	${CP} ${FILESDIR}/mpi.cfg ${WRKSRC}/
@@ -40,19 +42,14 @@ pre-configure:
 		${WRKSRC}/mpi.cfg
 
 do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.rst ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-	@${RM} ${STAGEDIR}${DOCSDIR}/${PORTNAME}.1
-
-do-install-MANPAGES-on:
-	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	@${ECHO} share/man/man1/mpi4py.1.gz >> ${TMPPLIST}
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 post-install:
-	@cd ${STAGEDIR}${PYTHON_SITELIBDIR}/mpi4py && ${STRIP_CMD} dl*.so MPI*.so lib-pmpi/libvt-hyb*.so lib-pmpi/libvt*.so lib-pmpi/libvt-mpi*.so lib-pmpi/libmpe*.so
+	(cd ${STAGEDIR}${PYTHON_SITELIBDIR}/mpi4py && ${STRIP_CMD} *.so)
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+	(cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test)
 
 .include <bsd.port.mk>
