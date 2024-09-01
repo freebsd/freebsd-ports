@@ -3447,3 +3447,4 @@ textproc/btparse|textproc/p5-Text-BibTeX|2024-09-01|Has expired: btparse has not
 devel/py-jaraco.timing||2024-09-01|Has expired: Deprecated by upstream
 irc/ircd-ratbox-devel|irc/ircd-ratbox|2024-09-01|Has expired: Development stalled upstream, consider switching to irc/ircd-ratbox
 irc/ctrlproxy||2024-09-01|Has expired: Development stalled upstream, consider switching to irc/soju or irc/znc
+devel/electron28||2024-09-01|Has expired: EOLed upstream, switch to newer version
