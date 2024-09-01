@@ -3451,3 +3451,4 @@ devel/electron28||2024-09-01|Has expired: EOLed upstream, switch to newer versio
 graphics/R-cran-rgdal||2024-09-01|Has expired: Fails to build and upstream recommends using math/R-cran-sf or math/R-cran-terra instead
 math/ploticus||2024-09-01|Has expired: Depends on expired graphics/ming
 graphics/ming||2024-09-01|Has expired: SWF format is essentially dead after Flash Player's EoL
+dns/adsuck||2024-09-01|Has expired: Obsolete, no longer relevant

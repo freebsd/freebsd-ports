@@ -2,7 +2,6 @@
 
     SUBDIR += acme-dns
     SUBDIR += adns
-    SUBDIR += adsuck
     SUBDIR += amass
     SUBDIR += axfr2acl
     SUBDIR += bind-tools
