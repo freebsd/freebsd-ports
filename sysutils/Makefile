@@ -103,10 +103,6 @@
     SUBDIR += bacula15-client-static
     SUBDIR += bacula15-docs
     SUBDIR += bacula15-server
-    SUBDIR += bacula9-client
-    SUBDIR += bacula9-client-static
-    SUBDIR += bacula9-docs
-    SUBDIR += bacula9-server
     SUBDIR += baloo-widgets
     SUBDIR += bamf
     SUBDIR += bareos-client
