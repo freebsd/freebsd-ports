@@ -3449,3 +3449,4 @@ irc/ircd-ratbox-devel|irc/ircd-ratbox|2024-09-01|Has expired: Development stalle
 irc/ctrlproxy||2024-09-01|Has expired: Development stalled upstream, consider switching to irc/soju or irc/znc
 devel/electron28||2024-09-01|Has expired: EOLed upstream, switch to newer version
 graphics/R-cran-rgdal||2024-09-01|Has expired: Fails to build and upstream recommends using math/R-cran-sf or math/R-cran-terra instead
+math/ploticus||2024-09-01|Has expired: Depends on expired graphics/ming

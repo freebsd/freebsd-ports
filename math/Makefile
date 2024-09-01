@@ -870,7 +870,6 @@
     SUBDIR += planarity
     SUBDIR += plantri
     SUBDIR += plman
-    SUBDIR += ploticus
     SUBDIR += plplot
     SUBDIR += poly2tri
     SUBDIR += polyclipper
