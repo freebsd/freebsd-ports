@@ -1,3 +1,5 @@
 TIMESTAMP = 1718261672
 SHA256 (audacious-plugins-4.4.tar.bz2) = 3caf3a5fe5b6f2808f461f85132fbff4ae22a53ef9f3d26d9e6030f6c6d5baa2
 SIZE (audacious-plugins-4.4.tar.bz2) = 1810406
+SHA256 (0ffe6d8b4356c10e3d9d159d07dbe467b33629b9.patch) = 2d98aa9a6a410d0ebae64e6a0e7f864f73e696616dbe095ec78b3423f9d32a1d
+SIZE (0ffe6d8b4356c10e3d9d159d07dbe467b33629b9.patch) = 5322
