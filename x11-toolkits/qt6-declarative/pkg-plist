@@ -2065,6 +2065,14 @@ lib/cmake/Qt6QuickTestUtilsPrivate/Qt6QuickTestUtilsPrivateDependencies.cmake
 lib/cmake/Qt6QuickTestUtilsPrivate/Qt6QuickTestUtilsPrivateTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6QuickTestUtilsPrivate/Qt6QuickTestUtilsPrivateTargets.cmake
 lib/cmake/Qt6QuickTestUtilsPrivate/Qt6QuickTestUtilsPrivateVersionlessTargets.cmake
+lib/cmake/Qt6QuickTools/Qt6QuickToolsAdditionalTargetInfo.cmake
+lib/cmake/Qt6QuickTools/Qt6QuickToolsConfig.cmake
+lib/cmake/Qt6QuickTools/Qt6QuickToolsConfigVersion.cmake
+lib/cmake/Qt6QuickTools/Qt6QuickToolsConfigVersionImpl.cmake
+lib/cmake/Qt6QuickTools/Qt6QuickToolsDependencies.cmake
+lib/cmake/Qt6QuickTools/Qt6QuickToolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Qt6QuickTools/Qt6QuickToolsTargets.cmake
+lib/cmake/Qt6QuickTools/Qt6QuickToolsVersionlessTargets.cmake
 lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsAdditionalTargetInfo.cmake
 lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsConfig.cmake
 lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsConfigVersion.cmake
@@ -2086,6 +2094,7 @@ lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsVersionlessTargets.cmake
 %%QT_BINDIR%%/qmltc
 %%QT_BINDIR%%/qmltestrunner
 %%QT_BINDIR%%/qmltime
+%%QT_BINDIR%%/svgtoqml
 %%QT_LIBDIR%%/libQt6LabsAnimation.prl
 %%QT_LIBDIR%%/libQt6LabsAnimation.so
 %%QT_LIBDIR%%/libQt6LabsAnimation.so.6
