@@ -584,7 +584,6 @@
     SUBDIR += metapixel
     SUBDIR += milton
     SUBDIR += minder
-    SUBDIR += ming
     SUBDIR += mirtk
     SUBDIR += movit
     SUBDIR += mozjpeg
