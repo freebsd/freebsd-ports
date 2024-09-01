@@ -17,6 +17,7 @@ LICENSE_FILE_MAXIMAEXTRACLAUSE=	${FILESDIR}/license-extra-clause.txt
 LICENSE_PERMS_MAXIMAEXTRACLAUSE=	dist-mirror dist-sell pkg-mirror \
 					pkg-sell auto-accept
 
+BUILD_DEPENDS=	coreutils>0:sysutils/coreutils
 RUN_DEPENDS=	gnuplot:math/gnuplot \
 		rlwrap:devel/rlwrap
 
@@ -25,6 +26,8 @@ USES=		autoreconf gmake makeinfo shared-mime-info
 GNU_CONFIGURE=	yes
 
 TEST_TARGET=	check
+
+BINARY_ALIAS=	expr=gexpr
 
 INFO=		imaxima maxima xmaxima abs_integrate drawutils kovacicODE logic \
 		nelder_mead symplectic_ode
@@ -134,7 +137,6 @@ post-install-EXAMPLES-on:
 	cd ${WRKSRC}/demo && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} '-name *\.dem'
 
 post-install-MANPAGES-on:
-	${MKDIR} ${STAGEDIR}${PREFIX}/man/man1 && \
 	${INSTALL_MAN} ${WRKSRC}/doc/man/maxima.1.gz ${STAGEDIR}${PREFIX}/share/man/man1/maxima.1.gz
 
 .include <bsd.port.mk>
