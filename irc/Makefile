@@ -12,7 +12,6 @@
     SUBDIR += bnc
     SUBDIR += catgirl
     SUBDIR += cgiirc
-    SUBDIR += ctrlproxy
     SUBDIR += dancer
     SUBDIR += dircproxy
     SUBDIR += dxirc

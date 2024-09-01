@@ -3446,3 +3446,4 @@ dns/p5-DSC||2024-09-01|Has expired: Depends on expired math/ploticus
 textproc/btparse|textproc/p5-Text-BibTeX|2024-09-01|Has expired: btparse has not updated for 19 years while p5-Text-BibTeX is up-to-date. Use textproc/p5-Text-BibTeX instead
 devel/py-jaraco.timing||2024-09-01|Has expired: Deprecated by upstream
 irc/ircd-ratbox-devel|irc/ircd-ratbox|2024-09-01|Has expired: Development stalled upstream, consider switching to irc/ircd-ratbox
+irc/ctrlproxy||2024-09-01|Has expired: Development stalled upstream, consider switching to irc/soju or irc/znc
