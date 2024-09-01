@@ -1,14 +1,11 @@
 PORTNAME=	zfs-replicate
-PORTVERSION=	1.0
+PORTVERSION=	2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	tschetter.victor@gmail.com
 COMMENT=	ZFS Snapshot Replication Script
 WWW=		https://github.com/aaronhurt/zfs-replicate
-
-RUN_DEPENDS=	bash:shells/bash
 
 USES=	shebangfix
 
