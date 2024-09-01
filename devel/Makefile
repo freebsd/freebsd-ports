@@ -1372,7 +1372,6 @@
     SUBDIR += libolecf
     SUBDIR += libopenbsd
     SUBDIR += libopencm3
-    SUBDIR += libopentracing
     SUBDIR += liborcus
     SUBDIR += libosinfo
     SUBDIR += libowfat
