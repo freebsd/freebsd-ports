@@ -3452,3 +3452,4 @@ graphics/R-cran-rgdal||2024-09-01|Has expired: Fails to build and upstream recom
 math/ploticus||2024-09-01|Has expired: Depends on expired graphics/ming
 graphics/ming||2024-09-01|Has expired: SWF format is essentially dead after Flash Player's EoL
 dns/adsuck||2024-09-01|Has expired: Obsolete, no longer relevant
+sysutils/apache-mesos||2024-09-01|Has expired: Marked BROKEN for over a year
