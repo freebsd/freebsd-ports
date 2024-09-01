@@ -1,6 +1,6 @@
 PORTNAME=	postgrest
 DISTVERSIONPREFIX=	v
-DISTVERSION=	12.0.3
+DISTVERSION=	12.2.3
 CATEGORIES=	www databases haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,8 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-BUILD_DEPENDS=	pg_config:databases/postgresql${PGSQL_DEFAULT}-client \
-		ghc-9.2.8:lang/ghc92
+BUILD_DEPENDS=	pg_config:databases/postgresql${PGSQL_DEFAULT}-client
 
 USES=		cabal pgsql
 
@@ -22,6 +21,7 @@ GH_ACCOUNT=	PostgREST
 
 USE_RC_SUBR=	postgrest
 
+CABAL_PROJECT=		remove
 SKIP_CABAL_PLIST=	yes
 
 SUB_FILES=	default.conf
