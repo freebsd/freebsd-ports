@@ -1,5 +1,5 @@
---- test/packages/EABase/include/Common/EABase/config/eaplatform.h.orig	2022-02-09 23:55:09 UTC
-+++ test/packages/EABase/include/Common/EABase/config/eaplatform.h
+--- EABase/include/Common/EABase/config/eaplatform.h.orig	2024-09-01 08:32:08 UTC
++++ EABase/include/Common/EABase/config/eaplatform.h
 @@ -454,6 +454,11 @@
  		#define EA_PROCESSOR_POWERPC_32 1
  		#define EA_SYSTEM_BIG_ENDIAN 1
