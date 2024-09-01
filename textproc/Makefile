@@ -89,7 +89,6 @@
     SUBDIR += br-aspell
     SUBDIR += bsd-spell
     SUBDIR += bsddiff
-    SUBDIR += btparse
     SUBDIR += c2html
     SUBDIR += c2man
     SUBDIR += ca-aspell

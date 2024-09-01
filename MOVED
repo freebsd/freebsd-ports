@@ -3443,3 +3443,4 @@ net-im/pidgin-icyque||2024-08-27|Has expired: ICQ servers shut down
 math/py-PyWavelets|math/py-pywavelets|2024-08-29|Renamed to match wheel package name
 dns/dsp||2024-09-01|Has expired: Depends on expired dns/p5-DSC
 dns/p5-DSC||2024-09-01|Has expired: Depends on expired math/ploticus
+textproc/btparse|textproc/p5-Text-BibTeX|2024-09-01|Has expired: btparse has not updated for 19 years while p5-Text-BibTeX is up-to-date. Use textproc/p5-Text-BibTeX instead
