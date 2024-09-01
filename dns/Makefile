@@ -59,7 +59,6 @@
     SUBDIR += dq
     SUBDIR += drool
     SUBDIR += dsc
-    SUBDIR += dsp
     SUBDIR += dynip
     SUBDIR += encrypted-dns-server
     SUBDIR += fastresolve
