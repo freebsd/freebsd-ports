@@ -3454,3 +3454,4 @@ graphics/ming||2024-09-01|Has expired: SWF format is essentially dead after Flas
 dns/adsuck||2024-09-01|Has expired: Obsolete, no longer relevant
 sysutils/apache-mesos||2024-09-01|Has expired: Marked BROKEN for over a year
 devel/libopentracing||2024-09-01|Has expired: https://github.com/opentracing/specification/issues/163
+x11-fm/arqiver|archivers/arqiver|2024-09-01|Moved to a better fit category
