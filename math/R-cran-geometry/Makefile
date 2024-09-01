@@ -1,9 +1,9 @@
 PORTNAME=	geometry
-DISTVERSION=	0.4.7
+DISTVERSION=	0.5.0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Mesh Generation and Surface Tesselation
 WWW=		https://cran.r-project.org/web/packages/geometry/
 
@@ -16,6 +16,7 @@ CRAN_DEPENDS=	R-cran-linprog>0:math/R-cran-linprog \
 		R-cran-RcppProgress>0:devel/R-cran-RcppProgress
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
+TEST_DEPENDS=	R-cran-testthat>0:devel/R-cran-testthat
 
 USES=		cran:auto-plist,compiles
 
