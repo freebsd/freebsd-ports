@@ -1,8 +1,9 @@
 PORTNAME=	python-lsp-server
-PORTVERSION=	1.11.0
+PORTVERSION=	1.12.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTFILES=	${PORTNAME:S/-/_/g}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Python implementation of the Language Server Protocol
@@ -29,6 +30,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}autopep8>0:textproc/py-autopep8@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}pyls-black>0:devel/py-pyls-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-lsp-jsonrpc>0:textproc/py-python-lsp-jsonrpc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rope>0:devel/py-rope@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ruff>0:devel/py-ruff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ujson>0:devel/py-ujson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}whatthepatch>0:textproc/py-whatthepatch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yapf>0:textproc/py-yapf@${PY_FLAVOR}
@@ -42,15 +44,26 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-isort>0:devel/py-pytest-isort@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qt5-pyqt>0:devel/py-qt5-pyqt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rope>0:devel/py-rope@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}whatthepatch>0:textproc/py-whatthepatch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yapf>0:textproc/py-yapf@${PY_FLAVOR} \
 		${PYNUMPY}
 
+### Test core dumps at
+# python_lsp_server-1.12.0/test/plugins/test_autoimport.py:l277ff
+# if math/openblas is built with option INTERFACE64=ON (nondefault)!
+#
 # make test: 4 failed, 186 passed, 8 skipped, 10 warnings
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
+TEST_USES=	qt:5
+TEST_USE_PYQT=	pyqt5:test
+TEST_USE_QT=	testlib
+
 NO_ARCH=	yes
+
+WRKSRC=		${WRKDIR}/${DISTFILES:R:R}
 
 .include <bsd.port.mk>
