@@ -5003,7 +5003,6 @@
     SUBDIR += py-jaraco.packaging
     SUBDIR += py-jaraco.stream
     SUBDIR += py-jaraco.text
-    SUBDIR += py-jaraco.timing
     SUBDIR += py-jaraco.util
     SUBDIR += py-javaproperties
     SUBDIR += py-jdcal
