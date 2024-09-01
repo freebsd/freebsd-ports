@@ -1,0 +1,13 @@
+--- src/plugins/gme/CMakeLists.txt.orig	2024-08-27 22:28:57 UTC
++++ src/plugins/gme/CMakeLists.txt
+@@ -22,6 +22,10 @@ target_include_directories(
+     gmeinput
+     PRIVATE ${LIBGME_INCLUDE_DIRS}
+ )
++target_link_directories(
++    gmeinput
++    PRIVATE ${LIBGME_LIBRARY_DIRS}
++)
+ 
+ fooyin_append_mimes(
+     audio/x-ay

@@ -190,6 +190,7 @@
     SUBDIR += fogpad-lv2
     SUBDIR += fomp-lv2
     SUBDIR += foo-yc20
+    SUBDIR += fooyin
     SUBDIR += fossmixer
     SUBDIR += freac
     SUBDIR += freealut
