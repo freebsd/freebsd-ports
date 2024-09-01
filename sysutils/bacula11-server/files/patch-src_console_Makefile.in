@@ -1,0 +1,11 @@
+--- src/console/Makefile.in.orig	2021-02-05 21:23:44 UTC
++++ src/console/Makefile.in
+@@ -128,7 +128,7 @@ uninstall:
+ depend:
+ 	@$(MV) Makefile Makefile.bak
+ 	@$(SED) "/^# DO NOT DELETE:/,$$ d" Makefile.bak > Makefile
+-	@$(ECHO) "# DO NOT DELETE: nice dependency list follows" >> Makefile
++	@echo "# DO NOT DELETE: nice dependency list follows" >> Makefile
+ 	@$(CXX) -S -M $(CPPFLAGS) $(CONS_INC) -I$(srcdir) -I$(basedir) *.c >> Makefile
+ 	@if test -f Makefile ; then \
+ 	    $(RMF) Makefile.bak; \

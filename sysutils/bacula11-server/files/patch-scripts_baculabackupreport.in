@@ -1,0 +1,8 @@
+--- scripts/baculabackupreport.in.orig	2021-03-29 18:24:27 UTC
++++ scripts/baculabackupreport.in
+@@ -1,4 +1,4 @@
+-#!/bin/dash
++#!/bin/sh
+ #
+ # baculabackupreport.sh
+ #

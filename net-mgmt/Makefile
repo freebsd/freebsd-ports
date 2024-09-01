@@ -149,6 +149,7 @@
     SUBDIR += nagcon
     SUBDIR += nagios
     SUBDIR += nagios-certexp-plugin
+    SUBDIR += nagios-check_bacula11
     SUBDIR += nagios-check_bacula13
     SUBDIR += nagios-check_bacula15
     SUBDIR += nagios-check_bacula9
