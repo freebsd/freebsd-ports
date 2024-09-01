@@ -10,6 +10,7 @@
 
 PORTNAME=	dovecot
 DISTVERSION=	2.3.21.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://dovecot.org/releases/2.3/
 
