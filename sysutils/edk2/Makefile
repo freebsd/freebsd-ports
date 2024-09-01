@@ -7,7 +7,7 @@ PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 
 MAINTAINER=	uboot@FreeBSD.org
 COMMENT=	EDK2 Firmware for ${FLAVOR}
-WWW=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/ReadMe.rst
+WWW=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/
 
 LICENSE=	BSD3CLAUSE
 
