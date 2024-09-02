@@ -1,0 +1,43 @@
+--- src/Makefile.orig	2024-09-02 14:42:34 UTC
++++ src/Makefile
+@@ -109,28 +109,28 @@ install: all
+ 		$(MAKE) OBJDIR="$(OBJDIR)$$i/" install; \
+ 		else $(MAKE) install; fi) || exit; done
+ 	$(MKDIR) $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 0755 $(OBJDIR)copy$(EXEEXT) $(DESTDIR)$(BINDIR)/copy$(EXEEXT)
++	$(INSTALL) -m 0755 $(OBJDIR)copy$(EXEEXT) $(DESTDIR)$(BINDIR)/deforaos-copy$(EXEEXT)
+ 	$(MKDIR) $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 0755 $(OBJDIR)delete$(EXEEXT) $(DESTDIR)$(BINDIR)/delete$(EXEEXT)
++	$(INSTALL) -m 0755 $(OBJDIR)delete$(EXEEXT) $(DESTDIR)$(BINDIR)/deforaos-delete$(EXEEXT)
+ 	$(MKDIR) $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 0755 $(OBJDIR)move$(EXEEXT) $(DESTDIR)$(BINDIR)/move$(EXEEXT)
++	$(INSTALL) -m 0755 $(OBJDIR)move$(EXEEXT) $(DESTDIR)$(BINDIR)/deforaos-move$(EXEEXT)
+ 	$(MKDIR) $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 0755 $(OBJDIR)open$(EXEEXT) $(DESTDIR)$(BINDIR)/open$(EXEEXT)
++	$(INSTALL) -m 0755 $(OBJDIR)open$(EXEEXT) $(DESTDIR)$(BINDIR)/deforaos-open$(EXEEXT)
+ 	$(MKDIR) $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 0755 $(OBJDIR)properties$(EXEEXT) $(DESTDIR)$(BINDIR)/properties$(EXEEXT)
++	$(INSTALL) -m 0755 $(OBJDIR)properties$(EXEEXT) $(DESTDIR)$(BINDIR)/deforaos-properties$(EXEEXT)
+ 	$(MKDIR) $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 0755 $(OBJDIR)view$(EXEEXT) $(DESTDIR)$(BINDIR)/view$(EXEEXT)
++	$(INSTALL) -m 0755 $(OBJDIR)view$(EXEEXT) $(DESTDIR)$(BINDIR)/deforaos-view$(EXEEXT)
+ 
+ uninstall:
+ 	@for i in $(SUBDIRS); do (cd "$$i" && \
+ 		if [ -n "$(OBJDIR)" ]; then \
+ 		$(MAKE) OBJDIR="$(OBJDIR)$$i/" uninstall; \
+ 		else $(MAKE) uninstall; fi) || exit; done
+-	$(RM) -- $(DESTDIR)$(BINDIR)/copy$(EXEEXT)
+-	$(RM) -- $(DESTDIR)$(BINDIR)/delete$(EXEEXT)
+-	$(RM) -- $(DESTDIR)$(BINDIR)/move$(EXEEXT)
+-	$(RM) -- $(DESTDIR)$(BINDIR)/open$(EXEEXT)
+-	$(RM) -- $(DESTDIR)$(BINDIR)/properties$(EXEEXT)
+-	$(RM) -- $(DESTDIR)$(BINDIR)/view$(EXEEXT)
++	$(RM) -- $(DESTDIR)$(BINDIR)/deforaos-copy$(EXEEXT)
++	$(RM) -- $(DESTDIR)$(BINDIR)/deforaos-delete$(EXEEXT)
++	$(RM) -- $(DESTDIR)$(BINDIR)/deforaos-move$(EXEEXT)
++	$(RM) -- $(DESTDIR)$(BINDIR)/deforaos-open$(EXEEXT)
++	$(RM) -- $(DESTDIR)$(BINDIR)/deforaos-properties$(EXEEXT)
++	$(RM) -- $(DESTDIR)$(BINDIR)/deforaos-view$(EXEEXT)
+ 
+ .PHONY: all subdirs clean distclean install uninstall

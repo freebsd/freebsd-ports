@@ -1,0 +1,13 @@
+--- data/org.defora.browser.desktop.orig	2024-09-02 14:56:54 UTC
++++ data/org.defora.browser.desktop
+@@ -1,8 +1,8 @@ Comment=File manager and image browser
+ [Desktop Entry]
+ Name=File manager
+ Comment=File manager and image browser
+-TryExec=browser
+-Exec=browser
++TryExec=deforaos-browser
++Exec=deforaos-browser
+ Icon=system-file-manager
+ Type=Application
+ Categories=System;Core;FileManager;GTK;
