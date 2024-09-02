@@ -1,5 +1,5 @@
 PORTNAME=	choria-mcorpc-support
-DISTVERSION=	2.26.2
+DISTVERSION=	2.26.4
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
