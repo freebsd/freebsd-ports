@@ -21,8 +21,8 @@ share/applications/freeplane.desktop
 %%DATADIR%%/core/org.freeplane.core/lib/jgoodies-common-1.8.1.jar
 %%DATADIR%%/core/org.freeplane.core/lib/jgoodies-forms-1.9.0.jar
 %%DATADIR%%/core/org.freeplane.core/lib/jortho-%%PORTVERSION%%.jar
-%%DATADIR%%/core/org.freeplane.core/lib/kitfox-svg-salamander-1.1.1-p1.jar
 %%DATADIR%%/core/org.freeplane.core/lib/simplyhtml-0.19.9.jar
+%%DATADIR%%/core/org.freeplane.core/lib/svgSalamander-1.1.4.jar
 %%DATADIR%%/core/org.freeplane.core/lib/twemoji-12.1.4.jar
 %%DATADIR%%/doc/Freeplane_LaTeX.mm
 %%DATADIR%%/doc/Images/Preferences_Joining nodes.png
