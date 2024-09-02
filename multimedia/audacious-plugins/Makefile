@@ -1,6 +1,6 @@
 PORTNAME=	audacious-plugins
 DISTVERSION=	4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -153,7 +153,7 @@ AOSD_MESON_TRUE=	aosd
 BS2B_LIB_DEPENDS=	libbs2b.so:audio/libbs2b
 BS2B_MESON_TRUE=	bs2b
 
-CDDA_LIB_DEPENDS=	libcddb.so:audio/libcddb \
+CDDA_LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
 			libcdio_cdda.so:sysutils/libcdio-paranoia
 CDDA_MESON_TRUE=	cdaudio
 
