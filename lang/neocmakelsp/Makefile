@@ -1,6 +1,6 @@
 PORTNAME=	neocmakelsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.1
+DISTVERSION=	0.8.2
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,11 +32,11 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		bitflags-2.6.0 \
 		bstr-1.10.0 \
 		bytes-1.7.1 \
-		cc-1.1.11 \
+		cc-1.1.15 \
 		cfg-if-1.0.0 \
-		clap-4.5.15 \
+		clap-4.5.16 \
 		clap_builder-4.5.15 \
-		clap_complete-4.5.16 \
+		clap_complete-4.5.24 \
 		clap_derive-4.5.13 \
 		clap_lex-0.7.2 \
 		cli-table-0.4.9 \
@@ -76,7 +76,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		is_terminal_polyfill-1.70.1 \
 		itoa-1.0.11 \
 		lazy_static-1.5.0 \
-		libc-0.2.155 \
+		libc-0.2.158 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
 		lsp-types-0.94.1 \
@@ -96,7 +96,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		proc-macro2-1.0.86 \
-		quote-1.0.36 \
+		quote-1.0.37 \
 		redox_syscall-0.5.3 \
 		regex-1.10.6 \
 		regex-automata-0.4.7 \
@@ -106,9 +106,9 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		serde-1.0.207 \
-		serde_derive-1.0.207 \
-		serde_json-1.0.124 \
+		serde-1.0.209 \
+		serde_derive-1.0.209 \
+		serde_json-1.0.127 \
 		serde_repr-0.1.19 \
 		serde_spanned-0.6.7 \
 		sharded-slab-0.1.7 \
@@ -119,14 +119,14 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		socket2-0.5.7 \
 		strsim-0.11.1 \
 		syn-1.0.109 \
-		syn-2.0.74 \
+		syn-2.0.76 \
 		sync_wrapper-0.1.2 \
 		termcolor-1.4.1 \
 		thread_local-1.1.8 \
 		tiny-keccak-2.0.2 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.39.2 \
+		tokio-1.39.3 \
 		tokio-macros-2.4.0 \
 		tokio-util-0.7.11 \
 		toml-0.8.19 \
@@ -143,8 +143,9 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		tracing-core-0.1.32 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.18 \
-		tree-sitter-0.22.6 \
+		tree-sitter-0.23.0 \
 		tree-sitter-cmake-0.5.0 \
+		tree-sitter-language-0.1.0 \
 		treesitter_kind_collector-0.2.0 \
 		trim-in-place-0.1.7 \
 		unicode-bidi-0.3.15 \
