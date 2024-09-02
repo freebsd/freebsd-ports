@@ -60,7 +60,6 @@ DEFAULT_MYSQL_VER?=	${MYSQL_DEFAULT:S/.//}
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
 MYSQL80_LIBVER=		21
-MYSQL81_LIBVER=		22
 MYSQL84_LIBVER=		24
 MYSQL90_LIBVER=		24
 
