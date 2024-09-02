@@ -1,0 +1,6 @@
+--- board/emulation/bhyve-riscv/Makefile.orig
++++ board/emulation/bhyve-riscv/Makefile
+@@ -0,0 +1,3 @@
++# SPDX-License-Identifier: GPL-2.0+
++
++obj-y	+= bhyve-riscv.o
