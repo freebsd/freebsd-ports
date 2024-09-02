@@ -159,6 +159,7 @@
     SUBDIR += libmsym
     SUBDIR += libnegf
     SUBDIR += liboglappth
+    SUBDIR += libpsml
     SUBDIR += libquantum
     SUBDIR += libssm
     SUBDIR += libsvm

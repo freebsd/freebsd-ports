@@ -1,0 +1,4 @@
+libPSML is a library for handling PSML pseudopotential files.
+
+The psml format and library are used for norm-conserving pseudopotential data
+curation and interoperability.
