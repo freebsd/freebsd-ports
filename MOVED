@@ -3455,3 +3455,5 @@ dns/adsuck||2024-09-01|Has expired: Obsolete, no longer relevant
 sysutils/apache-mesos||2024-09-01|Has expired: Marked BROKEN for over a year
 devel/libopentracing||2024-09-01|Has expired: https://github.com/opentracing/specification/issues/163
 x11-fm/arqiver|archivers/arqiver|2024-09-01|Moved to a better fit category
+databases/mysql81-server||2024-09-02|Has expired: MySQL 8.1 is not supported by the vendor and has unfixed vulnerabilies
+databases/mysql81-client||2024-09-02|Has expired: MySQL 8.1 is not supported by the vendor and has unfixed vulnerabilies

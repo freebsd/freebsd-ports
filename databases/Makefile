@@ -206,8 +206,6 @@
     SUBDIR += mysql2pgsql
     SUBDIR += mysql80-client
     SUBDIR += mysql80-server
-    SUBDIR += mysql81-client
-    SUBDIR += mysql81-server
     SUBDIR += mysql84-client
     SUBDIR += mysql84-server
     SUBDIR += mysql90-client
