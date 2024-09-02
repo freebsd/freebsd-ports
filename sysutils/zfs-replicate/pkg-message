@@ -3,7 +3,11 @@
   message: <<EOM
 To run zfs-replicate, copy /usr/local/share/zfs-replicate/config.sample.sh to
 /usr/local/share/zfs-replicate/config.sh, customize to your environment, and 
-run using "zfs-replicate /usr/local/share/zfs-replicate/config.sh"
+run using "zfs-replicate -c /usr/local/share/zfs-replicate/config.sh"
+
+The only option that does not have a default, and needs to be set is the REPLICATE_SETS
+
+To check last log, run "zfs-replicate -c /usr/local/share/zfs-replicate/config.sh -s"
 
 See https://github.com/aaronhurt/zfs-replicate for documentation.
 EOM
