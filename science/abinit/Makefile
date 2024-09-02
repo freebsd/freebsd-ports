@@ -1,6 +1,6 @@
 PORTNAME=	abinit
 DISTVERSION=	10.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -45,7 +45,7 @@ CONFIGURE_ENV=	H5CC="${LOCALBASE}/bin/h5cc" \
 		LINALG_FCFLAGS="-I${LOCALBASE}/include/elpa-2019.05.002/modules"	\
 		LINALG_LIBS="${BLASLIB}  ${LAPACKLIB} -lelpa"	\
 		NETCDF_FORTRAN_FCFLAGS=-I${LOCALBASE}/include	\
-		XMLF90_FCFLAGS=-I${LOCALBASE}/include	\
+		XMLF90_FCFLAGS=-I${LOCALBASE}/include/xmlf90	\
 		WANNIER90_LIBS="${BLASLIB}  ${LAPACKLIB} -lwannier"
 CONFIGURE_ARGS=	--with-fft --with-libxc --with-libxml2 --with-netcdf	\
 		--with-netcdf-fortran --with-wannier90 --with-xmlf90
