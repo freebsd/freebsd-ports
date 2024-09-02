@@ -1,5 +1,5 @@
---- oterm/utils.py.orig	2024-05-15 16:35:57 UTC
-+++ oterm/utils.py
+--- src/oterm/utils.py.orig	2020-02-02 00:00:00 UTC
++++ src/oterm/utils.py
 @@ -1,4 +1,4 @@
 -import sys
 +import platform
@@ -13,10 +13,10 @@
 -        "win32": home / "AppData/Roaming/oterm",
 -        "linux": home / ".local/share/oterm",
 -        "darwin": home / "Library/Application Support/oterm",
-+        "Darwin": home / "Library/Application Support/oterm",
-+        "FreeBSD": home / ".local/share/oterm",
-+        "Linux": home / ".local/share/oterm",
 +        "Windows": home / "AppData/Roaming/oterm",
++        "Linux": home / ".local/share/oterm",
++        "FreeBSD": home / ".local/share/oterm",
++        "Darwin": home / "Library/Application Support/oterm",
      }
  
 -    data_path = system_paths[sys.platform]
