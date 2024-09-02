@@ -622,10 +622,10 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		cosmic-protocols@git+https://github.com/pop-os/cosmic-protocols?branch=main\#de2fead49d6af3a221db153642e4d7c2235aafc4 \
 		cosmic-config,cosmic-config-derive,cosmic-theme,iced,iced_core,iced_futures,iced_graphics,iced_renderer,iced_runtime,iced_style,iced_tiny_skia,iced_wgpu,iced_widget,libcosmic@git+https://github.com/pop-os/libcosmic/\#b40839638ab0e1d96de3f817eded647e6952db40 \
 		smithay-egui@git+https://github.com/Smithay/smithay-egui.git?rev=0d0b4ca0\#0d0b4ca01a851b97cd27bdc94cce1c1f52723ad5 \
-		smithay@git+https://github.com/smithay/smithay?rev=5dc0153\#5dc015361c641cd76d4abbd60dd8896dd8cb8adc \
 		clipboard_macos,clipboard_wayland,clipboard_x11,dnd,mime,window_clipboard@git+https://github.com/pop-os/window_clipboard.git?tag=pop-dnd-8\#7c59b07b9172d8e0401f7e06609e1050575309c9 \
 		atomicwrites@git+https://github.com/jackpot51/rust-atomicwrites\#043ab4859d53ffd3d55334685303d8df39c9f768 \
 		id_tree@git+https://github.com/Drakulix/id-tree.git?branch=feature/copy_clone\#632a57d6d49160e18d7300fa7edae52281ec5482 \
 		softbuffer@git+https://github.com/pop-os/softbuffer?tag=cosmic-4.0\#6e75b1ad7e98397d37cb187886d05969bc480995 \
 		cosmic-settings-config@git+https://github.com/pop-os/cosmic-settings-daemon\#362c77f9faaeb7f1b9e4aa79a7d5588001f04874 \
-		smithay-clipboard@git+https://github.com/pop-os/smithay-clipboard?tag=pop-dnd-5\#5a3007def49eb678d1144850c9ee04b80707c56a
+		smithay-clipboard@git+https://github.com/pop-os/smithay-clipboard?tag=pop-dnd-5\#5a3007def49eb678d1144850c9ee04b80707c56a \
+		smithay@git+https://github.com/smithay/smithay?rev=65c4abf\#65c4abf4cbdf122abff96ad17a440c76a8cf7cea
