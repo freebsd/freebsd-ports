@@ -64,9 +64,6 @@ X11_MESON_ENABLED=	xwayland
 post-patch:
 # Extract (snapshot) version from the port instead of meson.build
 	@${REINPLACE_CMD} -i .nogit \
-		-e "/version.*jq/s/run_command.*/'${DISTVERSIONFULL}',/" \
-		${WRKSRC}/meson.build
-	@${REINPLACE_CMD} -i .nogit \
 		-e '/^HASH/s/=.*/=${GH_HASH}/' \
 		-e '/^BRANCH/s/=.*/=main/' \
 		-e '/^MESSAGE/s/=.*/="?"/' \
