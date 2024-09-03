@@ -1,3 +1,58 @@
+  <vuln vid="21f505f4-6a1c-11ef-b611-84a93843eb75">
+    <topic>OpenSSL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>3.0.15,1</lt></range>
+      </package>
+      <package>
+	<name>openssl31</name>
+	<range><lt>3.1.7</lt></range>
+      </package>
+      <package>
+	<name>openssl32</name>
+	<range><lt>3.2.3</lt></range>
+      </package>
+      <package>
+	<name>openssl33</name>
+	<range><lt>3.3.2</lt></range>
+      </package>
+      <package>
+	<name>openssl-quictls</name>
+	<range><lt>3.0.15</lt></range>
+      </package>
+      <package>
+	<name>openssl31-quictls</name>
+	<range><lt>3.1.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20240528.txt">
+	  <p>Possible denial of service in X.509 name checks [Moderate severity]
+	    Applications performing certificate name checks (e.g., TLS clients
+	    checking server certificates) may attempt to read an invalid
+	    memory address resulting in abnormal termination of the application
+	    process.</p>
+	  <p>SSL_select_next_proto buffer overread [Low severity]
+	    Calling the OpenSSL API function SSL_select_next_proto with an empty
+	    supported client protocols buffer may cause a crash or memory
+	    contents to be sent to the peer.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-5535</cvename>
+      <cvename>CVE-2024-6119</cvename>
+      <url>https://openssl-library.org/news/vulnerabilities/</url>
+    </references>
+    <dates>
+      <discovery>2024-09-03</discovery>
+      <entry>2024-09-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="26125e09-69ca-11ef-8a0f-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
