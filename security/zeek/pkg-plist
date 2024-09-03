@@ -1235,6 +1235,7 @@ include/zeek/telemetry/Opaques.h
 include/zeek/telemetry/ProcessStats.h
 include/zeek/telemetry/Timer.h
 include/zeek/telemetry/Utils.h
+include/zeek/telemetry/consts.bif.h
 include/zeek/telemetry/telemetry.bif.h
 include/zeek/threading/BasicThread.h
 include/zeek/threading/Formatter.h
@@ -1375,6 +1376,7 @@ share/man/man8/zeek.8.gz
 %%SPICY%%share/spicy/finger/finger.spicy
 %%SPICY%%share/spicy/ldap/asn1.spicy
 %%SPICY%%share/spicy/ldap/ldap.spicy
+%%SPICY%%share/spicy/ldap/ldap_zeek.spicy
 %%SPICY%%share/spicy/quic/QUIC.spicy
 %%SPICY%%share/spicy/spicy-driver-host.cc
 %%SPICY%%share/spicy/spicy.spicy
@@ -1389,6 +1391,7 @@ share/man/man8/zeek.8.gz
 %%DATADIR%%/base/bif/comm.bif.zeek
 %%DATADIR%%/base/bif/communityid.bif.zeek
 %%DATADIR%%/base/bif/const.bif.zeek
+%%DATADIR%%/base/bif/consts.bif.zeek
 %%DATADIR%%/base/bif/data.bif.zeek
 %%DATADIR%%/base/bif/event.bif.zeek
 %%DATADIR%%/base/bif/file_analysis.bif.zeek
