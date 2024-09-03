@@ -12,8 +12,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSL=	${WRKSRC}/LICENSE-BSL-1.0.txt
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT.txt
 
-IGNORE_FreeBSD_13=	not supported by Emilua
-
 BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 		boost-libs>0:devel/boost-libs \
 		cereal>0:devel/cereal \
