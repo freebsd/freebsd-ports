@@ -4,6 +4,7 @@ bin/antimicrox
 %%DATADIR%%/gamecontrollerdb.txt
 %%DATADIR%%/translations/antimicrox.qm
 %%DATADIR%%/translations/antimicrox_br.qm
+%%DATADIR%%/translations/antimicrox_ca.qm
 %%DATADIR%%/translations/antimicrox_de.qm
 %%DATADIR%%/translations/antimicrox_en.qm
 %%DATADIR%%/translations/antimicrox_es.qm
