@@ -1,3 +1,38 @@
+  <vuln vid="26125e09-69ca-11ef-8a0f-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>128.0.6613.119</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>128.0.6613.119</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/09/stable-channel-update-for-desktop.html">
+	 <p>This update includes 4 security fixes:</p>
+	 <ul>
+	    <li>[357391257] High CVE-2024-8362: Use after free in WebAudio. Reported by Cassidy Kim(@cassidy6564) on 2024-08-05</li>
+	    <li>[358485426] High CVE-2024-7970: Out of bounds write in V8. Reported by Cassidy Kim(@cassidy6564) on 2024-08-09</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-8362</cvename>
+      <cvename>CVE-2024-7970</cvename>
+      <url>https://chromereleases.googleblog.com/2024/09/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2024-09-02</discovery>
+      <entry>2024-09-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eb437e17-66a1-11ef-ac08-75165d18d8d2">
     <topic>forgejo -- The scope of application tokens was not verified when writing containers or Conan packages.</topic>
     <affects>
@@ -10,15 +45,15 @@
 	<body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The forgejo team reports:</p>
 	<blockquote cite="https://codeberg.org/forgejo/forgejo/milestone/7728">
-        <p>The scope of application tokens was not verified when writing
-        containers or Conan packages.  This is of no consequence when the
-        user associated with the application token does not have write
-        access to packages.  If the user has write access to packages, such
-        a token can be used to write containers and Conan packages.  An
-        application token that was used to write containers or Conan
-        packages without the package:write scope will now fail with an
-        unauthorized error.  It must be re-created to include the
-        package:write scope.</p>
+	<p>The scope of application tokens was not verified when writing
+	containers or Conan packages.  This is of no consequence when the
+	user associated with the application token does not have write
+	access to packages.  If the user has write access to packages, such
+	a token can be used to write containers and Conan packages.  An
+	application token that was used to write containers or Conan
+	packages without the package:write scope will now fail with an
+	unauthorized error.  It must be re-created to include the
+	package:write scope.</p>
 	</blockquote>
 	</body>
     </description>
@@ -30,6 +65,7 @@
       <entry>2024-08-30</entry>
     </dates>
   </vuln>
+
   <vuln vid="7e9cc7fd-6b3e-46c5-ad6d-409d90d41bbf">
     <topic>RabbitMQ-C -- auth credentials visible in commandline tool options</topic>
     <affects>
