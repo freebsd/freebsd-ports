@@ -8,7 +8,7 @@ WWW=		https://www.freebsd.org/docproj
 
 RUN_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 		gnuplot-lite>0:math/gnuplot-lite \
-		gohugo>=0.123.8,1:www/gohugo \
+		gohugo>=0.133.1,1:www/gohugo \
 		rougify:textproc/rubygem-rouge \
 		rubygem-asciidoctor-diagram>0:textproc/rubygem-asciidoctor-diagram
 
