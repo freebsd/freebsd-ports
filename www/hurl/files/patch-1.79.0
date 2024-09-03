@@ -1,4 +1,4 @@
---- packages/hurl/src/http/options.rs.orig	2024-06-14 14:49:42 UTC
+--- packages/hurl/src/http/options.rs.orig	2024-08-30 11:10:26 UTC
 +++ packages/hurl/src/http/options.rs
 @@ -15,6 +15,8 @@
   * limitations under the License.
@@ -6,10 +6,10 @@
   */
 +#![allow(dead_code)]
 +
+ use hurl_core::typing::Count;
  use std::time::Duration;
  
- use hurl_core::ast::Retry;
---- packages/hurl/src/parallel/message.rs.orig	2024-06-14 14:50:36 UTC
+--- packages/hurl/src/parallel/message.rs.orig	2024-08-30 11:10:26 UTC
 +++ packages/hurl/src/parallel/message.rs
 @@ -15,6 +15,7 @@
   * limitations under the License.
@@ -19,7 +19,7 @@
  use std::io;
  
  use crate::parallel::job::{Job, JobResult};
---- packages/hurl/src/report/junit/xml/writer.rs.orig	2024-06-14 14:51:13 UTC
+--- packages/hurl/src/report/junit/xml/writer.rs.orig	2024-08-30 11:10:26 UTC
 +++ packages/hurl/src/report/junit/xml/writer.rs
 @@ -15,6 +15,8 @@
   * limitations under the License.
@@ -28,5 +28,5 @@
 +#![allow(dead_code)]
 +
  use std::borrow::Cow;
- use std::string::FromUtf8Error;
- 
+ use std::fmt;
+ use std::fmt::{Debug, Formatter};
