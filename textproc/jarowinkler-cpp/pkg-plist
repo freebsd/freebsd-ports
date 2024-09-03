@@ -1,7 +1,0 @@
-include/jaro_winkler/details/common.hpp
-include/jaro_winkler/details/intrinsics.hpp
-include/jaro_winkler/details/jaro_impl.hpp
-include/jaro_winkler/jaro_winkler.hpp
-lib/cmake/jaro_winkler/jaro_winklerConfig.cmake
-lib/cmake/jaro_winkler/jaro_winklerConfigVersion.cmake
-lib/cmake/jaro_winkler/jaro_winklerTargets.cmake
