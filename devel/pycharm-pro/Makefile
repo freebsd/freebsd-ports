@@ -1,5 +1,5 @@
 PORTNAME=	pycharm-pro
-DISTVERSION=	2024.2
+DISTVERSION=	2024.2.1
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/
 DISTNAME=	pycharm-professional-${PORTVERSION}
@@ -31,6 +31,7 @@ JAVA_VERSION=	17+
 EXTRACT_AFTER_ARGS=	--exclude pycharm-${PORTVERSION}/bin/*fsnotifier* \
 			--exclude pycharm-${PORTVERSION}/bin/*.so \
 			--exclude pycharm-${PORTVERSION}/bin/repair \
+			--exclude pycharm-${PORTVERSION}/bin/pycharm \
 			--exclude pycharm-${PORTVERSION}/lib/*.so \
 			--exclude pycharm-${PORTVERSION}/plugins/*.so \
 			--exclude pycharm-${PORTVERSION}/plugins/cwm-plugin/quiche-native \
