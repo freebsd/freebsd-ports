@@ -1,6 +1,16 @@
 PORTNAME=	ares
-DISTVERSION=	139.20240825
+DISTVERSIONPREFIX=	v
+DISTVERSION=	140
 CATEGORIES=	emulators
+
+# committed upstream, remove with next version update
+# * contains 'unbreak FreeBSD build'
+#   https://github.com/Themaister/Granite/pull/135
+# * contains 'NVIDIA fix'
+#   https://github.com/ares-emulator/ares/issues/1547
+#   https://github.com/Themaister/Granite/issues/133
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	7135646c447ab7eb3eff18132dbddf7dc03135fa.patch:-p1
 
 MAINTAINER=	bsdcode@disroot.org
 COMMENT=	Multi-system emulator
@@ -13,7 +23,6 @@ USES=		compiler:c++17-lang gmake gnome localbase:ldflags pkgconfig \
 		xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	ares-emulator
-GH_TAGNAME=	efb7f61
 USE_GNOME=	gtksourceview3
 USE_XORG=	x11 xext xrandr
 
@@ -29,7 +38,7 @@ MAKE_ARGS=	compiler=${CC} \
 		symbols=false \
 		threaded=true
 
-OPTIONS_DEFINE=		DEBUG DOCS HOTKEYS NVIDIA OPENMP SHADER
+OPTIONS_DEFINE=		DEBUG DOCS HOTKEYS OPENMP SHADER
 OPTIONS_DEFAULT=	A26 ALSA AO CV FC GB GBA GLX MD MS MSX MYVISION N64 NG \
 			NGP OPENAL OPENMP OSS PCE PERFORMANCE PS1 SDLAUDIO \
 			SDLINPUT SFC SG SHADER SPEC UDEV UHID WS XLIB XVIDEO
@@ -56,7 +65,6 @@ MYVISION_DESC=		My Vision
 N64_DESC=		Nintendo 64
 NGP_DESC=		Neo Geo Pocket
 NG_DESC=		Neo Geo (AES/MVS)
-NVIDIA_DESC=		Apply shader cache workaround (implies ${NVIDIA_IMPLIES})
 PCE_DESC=		PC-Engine / TurboGrafx
 PERFORMANCE_DESC=	Faster but less accurate
 PROFILE_DESC=
@@ -112,14 +120,10 @@ N64_RUN_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
 N64_MAKE_ARGS=		cores+=n64 \
 			vulkan=true
 N64_MAKE_ARGS_OFF=	vulkan=false
-N64_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ares_n64_vulkan_parallel-rdp_util_timer.cpp
 
 NGP_MAKE_ARGS=		cores+=ngp
 
 NG_MAKE_ARGS=		cores+=ng
-
-NVIDIA_IMPLIES=		N64
-NVIDIA_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ares_n64_vulkan_parallel-rdp_vulkan_device.cpp
 
 OPENAL_USES=		openal
 OPENAL_MAKE_ARGS=	ruby+=audio.openal

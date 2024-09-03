@@ -9,15 +9,6 @@ Users are encouraged to compile the port on their systems with
 
 This can improve the performance of demanding cores like the N64.
 
-NVIDIA GPU users with versions >= 535 of the x11/nvidia-driver could encounter
-crashes or freezes while using the N64 core, see
-https://github.com/ares-emulator/ares/issues/1547 and
-https://github.com/Themaister/Granite/issues/133. As a workaround either try to
-compile the port with the NVIDIA option set (recommended), or disable the NVIDIA
-shader disk cache at startup with
-
-    $ __GL_SHADER_DISK_CACHE=0 ares
-
 The port provides the HOTKEYS option. This applies an inofficial patch which
 locks all hotkey execution in the unpaused state of the emulator. This can be a
 convenience for gamepad-only users who want to assign hotkey actions to gamepad
