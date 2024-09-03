@@ -34,12 +34,10 @@
 %%APP_NAME%%/%%ETCDIR%%-ee10-quickstart.xml
 %%APP_NAME%%/%%ETCDIR%%-ee10-webapp.xml
 %%APP_NAME%%/%%ETCDIR%%-ee8-deploy.xml
-%%APP_NAME%%/%%ETCDIR%%-ee8-openid.xml
 %%APP_NAME%%/%%ETCDIR%%-ee8-proxy.xml
 %%APP_NAME%%/%%ETCDIR%%-ee8-quickstart.xml
 %%APP_NAME%%/%%ETCDIR%%-ee8-webapp.xml
 %%APP_NAME%%/%%ETCDIR%%-ee9-deploy.xml
-%%APP_NAME%%/%%ETCDIR%%-ee9-openid.xml
 %%APP_NAME%%/%%ETCDIR%%-ee9-proxy.xml
 %%APP_NAME%%/%%ETCDIR%%-ee9-quickstart.xml
 %%APP_NAME%%/%%ETCDIR%%-ee9-webapp.xml
@@ -114,9 +112,9 @@
 %%APP_NAME%%/lib/ee10-annotations/jakarta.annotation-api-2.1.1.jar
 %%APP_NAME%%/lib/ee10-apache-jsp/jakarta.el.jakarta.el-api-5.0.1.jar
 %%APP_NAME%%/lib/ee10-apache-jsp/jakarta.servlet.jsp.jakarta.servlet.jsp-api-3.1.1.jar
-%%APP_NAME%%/lib/ee10-apache-jsp/org.eclipse.jdt.ecj-3.37.0.jar
-%%APP_NAME%%/lib/ee10-apache-jsp/org.mortbay.jasper.apache-el-10.1.16.jar
-%%APP_NAME%%/lib/ee10-apache-jsp/org.mortbay.jasper.apache-jsp-10.1.16.jar
+%%APP_NAME%%/lib/ee10-apache-jsp/org.eclipse.jdt.ecj-3.38.0.jar
+%%APP_NAME%%/lib/ee10-apache-jsp/org.mortbay.jasper.apache-el-10.1.25.jar
+%%APP_NAME%%/lib/ee10-apache-jsp/org.mortbay.jasper.apache-jsp-10.1.25.jar
 %%APP_NAME%%/lib/ee10-glassfish-jstl/jakarta.servlet.jsp.jstl.jakarta.servlet.jsp.jstl-api-3.0.0.jar
 %%APP_NAME%%/lib/ee10-glassfish-jstl/org.glassfish.web.jakarta.servlet.jsp.jstl-3.0.1.jar
 %%APP_NAME%%/lib/ee10-jaspi/jakarta.authentication-api-3.0.0.jar
@@ -133,9 +131,9 @@
 %%APP_NAME%%/lib/ee8-annotations/asm-commons-9.7.jar
 %%APP_NAME%%/lib/ee8-annotations/asm-tree-9.7.jar
 %%APP_NAME%%/lib/ee8-annotations/jakarta.annotation-api-1.3.5.jar
-%%APP_NAME%%/lib/ee8-apache-jsp/org.eclipse.jdt.ecj-3.37.0.jar
-%%APP_NAME%%/lib/ee8-apache-jsp/org.mortbay.jasper.apache-el-9.0.83.1.jar
-%%APP_NAME%%/lib/ee8-apache-jsp/org.mortbay.jasper.apache-jsp-9.0.83.1.jar
+%%APP_NAME%%/lib/ee8-apache-jsp/org.eclipse.jdt.ecj-3.38.0.jar
+%%APP_NAME%%/lib/ee8-apache-jsp/org.mortbay.jasper.apache-el-9.0.90.jar
+%%APP_NAME%%/lib/ee8-apache-jsp/org.mortbay.jasper.apache-jsp-9.0.90.jar
 %%APP_NAME%%/lib/ee8-glassfish-jstl/jakarta.servlet.jsp.jstl.jakarta.servlet.jsp.jstl-api-1.2.7.jar
 %%APP_NAME%%/lib/ee8-glassfish-jstl/org.glassfish.web.javax.servlet.jsp.jstl-1.2.5.jar
 %%APP_NAME%%/lib/ee8-websocket/%%APP_NAME%%-ee8-websocket-javax-client-%%PORTVERSION%%.jar
@@ -153,7 +151,7 @@
 %%APP_NAME%%/lib/ee9-annotations/asm-commons-9.7.jar
 %%APP_NAME%%/lib/ee9-annotations/asm-tree-9.7.jar
 %%APP_NAME%%/lib/ee9-annotations/jakarta.annotation-api-2.0.0.jar
-%%APP_NAME%%/lib/ee9-apache-jsp/org.eclipse.jdt.ecj-3.37.0.jar
+%%APP_NAME%%/lib/ee9-apache-jsp/org.eclipse.jdt.ecj-3.38.0.jar
 %%APP_NAME%%/lib/ee9-apache-jsp/org.mortbay.jasper.apache-el-10.0.27.jar
 %%APP_NAME%%/lib/ee9-apache-jsp/org.mortbay.jasper.apache-jsp-10.0.27.jar
 %%APP_NAME%%/lib/ee9-glassfish-jstl/jakarta.servlet.jsp.jstl.jakarta.servlet.jsp.jstl-api-2.0.0.jar
@@ -274,7 +272,7 @@
 %%APP_NAME%%/lib/%%APP_NAME%%-websocket-%%APP_NAME%%-common-%%PORTVERSION%%.jar
 %%APP_NAME%%/lib/%%APP_NAME%%-xml-%%PORTVERSION%%.jar
 %%APP_NAME%%/lib/logging/%%APP_NAME%%-slf4j-impl-%%PORTVERSION%%.jar
-%%APP_NAME%%/lib/logging/slf4j-api-2.0.12.jar
+%%APP_NAME%%/lib/logging/slf4j-api-2.0.13.jar
 %%APP_NAME%%/modules/acceptratelimit.mod
 %%APP_NAME%%/modules/alpn-java.mod
 %%APP_NAME%%/modules/alpn.mod
@@ -377,7 +375,6 @@
 %%APP_NAME%%/modules/ee10-jndi.mod
 %%APP_NAME%%/modules/ee10-jsp.mod
 %%APP_NAME%%/modules/ee10-jstl.mod
-%%APP_NAME%%/modules/ee10-openid.mod
 %%APP_NAME%%/modules/ee10-plus.mod
 %%APP_NAME%%/modules/ee10-proxy.mod
 %%APP_NAME%%/modules/ee10-quickstart.mod
@@ -508,8 +505,6 @@
 %%APP_NAME%%/modules/logging/slf4j.mod
 %%APP_NAME%%/modules/lowresources.mod
 %%APP_NAME%%/modules/openid.mod
-%%APP_NAME%%/modules/openid/%%APP_NAME%%-ee8-openid-baseloginservice.xml
-%%APP_NAME%%/modules/openid/%%APP_NAME%%-ee9-openid-baseloginservice.xml
 %%APP_NAME%%/modules/openid/%%APP_NAME%%-openid-baseloginservice.xml
 %%APP_NAME%%/modules/pid.mod
 %%APP_NAME%%/modules/plus.mod
