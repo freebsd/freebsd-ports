@@ -1,19 +1,18 @@
 PORTNAME=	rapidfuzz
-DISTVERSION=	3.9.6
+DISTVERSION=	3.9.7
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Rapid fuzzy string matching in Python
-WWW=		https://github.com/maxbachmann/RapidFuzz
+WWW=		https://github.com/rapidfuzz/RapidFuzz
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		ninja:devel/ninja \
-		jarowinkler-cpp>0:textproc/jarowinkler-cpp \
 		rapidfuzz-cpp>0:devel/rapidfuzz-cpp \
 		taskflow>0:devel/taskflow \
 		${PYNUMPY} \
