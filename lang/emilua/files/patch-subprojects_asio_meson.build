@@ -5,17 +5,9 @@ Date: Fri, 21 Jun 2024 15:43:25 -0300
 Subject: [PATCH] Add meson.build
 
 The idea is to use the project as a subproject in meson projects.
----
- meson.build | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
- create mode 100644 meson.build
-
-diff --git a/meson.build b/meson.build
-new file mode 100644
-index 00000000..4d851495
---- /dev/null
+--- subprojects/asio/meson.build.orig	2024-09-02 23:16:53 UTC
 +++ subprojects/asio/meson.build
-@@ -0,0 +1,12 @@
+@@ -0,0 +1,9 @@
 +project('asio',
 +    'cpp',
 +    version : '1.30.2',
@@ -25,8 +17,3 @@ index 00000000..4d851495
 +asio_dep = declare_dependency(
 +    include_directories : include_directories('asio/include'),
 +)
-+
-+install_headers('asio/include/asio.hpp')
-+install_subdir('asio/include/asio', install_dir: get_option('includedir'))
--- 
-GitLab

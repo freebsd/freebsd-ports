@@ -1,6 +1,6 @@
 PORTNAME=	emilua
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
+DISTVERSION=	0.10.1
 CATEGORIES=	lang devel
 
 MAINTAINER=	manipuladordedados@gmail.com
@@ -12,7 +12,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSL=	${WRKSRC}/LICENSE-BSL-1.0.txt
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT.txt
 
-IGNORE_FreeBSD_12=	not supported by Emilua
 IGNORE_FreeBSD_13=	not supported by Emilua
 
 BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
@@ -22,15 +21,14 @@ BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 		gawk:lang/gawk \
 		gperf:devel/gperf \
 		ksh93:shells/ksh \
-		libfmt>0:devel/libfmt \
 		re2c:devel/re2c
 
 LIB_DEPENDS=	libserd-0.so:devel/serd \
-		libsord-0.so:devel/sord
+		libsord-0.so:devel/sord \
+		libfmt.so:devel/libfmt
 
 USES=		localbase luajit:luajit-devel meson ncurses pathfix \
 		pkgconfig ssl
-USE_GCC=	yes
 USE_GITHUB=	nodefault
 GH_TUPLE=	breese:trial.protocol:79149f6:trial_protocol/subprojects/trial-protocol \
 		chriskohlhoff:asio:c586e95:asio/subprojects/asio
@@ -45,8 +43,6 @@ MESON_ARGS=	--buildtype=plain \
 		-Denable_manpages=true \
 		-Denable_tests=true \
 		-Duse_standalone_asio=true
-
-CXXFLAGS+=	"-DFMT_HEADER_ONLY"
 
 post-extract:
 	${CP} ${WRKSRC}/subprojects/packagefiles/trial.protocol/meson.build \
