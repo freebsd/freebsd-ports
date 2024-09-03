@@ -1,11 +1,10 @@
 PORTNAME=	qrcp
-DISTVERSION=	0.11.2
-PORTREVISION=	7
+DISTVERSION=	0.11.3
 CATEGORIES=	net
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Transfer files over wifi by scanning a QR code
-WWW=		https://claudiodangelis.com/qrcp
+WWW=		https://qrcp.sh/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -49,13 +48,16 @@ GH_TUPLE=	\
 		uber-go:atomic:v1.9.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.9.0:uber_go_multierr/vendor/go.uber.org/multierr
 
+RELEASE_DATE=	2024-09-01
+GO_BUILDFLAGS=	-ldflags "-s -w -X github.com/claudiodangelis/qrcp/version.version=${DISTVERSION} -X github.com/claudiodangelis/qrcp/version.date=${RELEASE_DATE}"
+
 PLIST_FILES=	bin/qrcp
 PORTDOCS=	README.md SECURITY.md
 
 OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
