@@ -1,5 +1,5 @@
 PORTNAME=	prefixed
-DISTVERSION=	0.8.0
+DISTVERSION=	0.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
-USE_PYTHON=	distutils autoplist pytest # 1 test fails, see https://github.com/Rockhopper-Technologies/prefixed/issues/5
+USE_PYTHON=	distutils autoplist pytest
 
 NO_ARCH=	yes
 
