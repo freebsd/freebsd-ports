@@ -14,8 +14,7 @@ WWW=		https://logseq.com
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Depends on expired devel/electron27
-EXPIRATION_DATE=2024-07-11
+BROKEN=		Depends on expired and removed devel/electron27
 
 ONLY_FOR_ARCHS=	amd64
 
