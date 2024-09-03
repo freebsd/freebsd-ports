@@ -1,6 +1,6 @@
 PORTNAME=	wezterm
 DISTVERSION=	20240203-110809-5046fc22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	vladislav.movchan@gmail.com
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libzstd.so:archivers/zstd \
 		libxcb-util.so:x11/xcb-util \
 		libxcb-image.so:x11/xcb-util-image
 
-USES=		cargo ssl xorg
+USES=		cargo desktop-file-utils ssl xorg
 USE_GITHUB=	yes
 USE_GITLAB=	nodefault
 USE_XORG=	x11 xcb

@@ -1,4 +1,4 @@
-TIMESTAMP = 1715853494
+TIMESTAMP = 1725297326
 SHA256 (rust/crates/addr2line-0.21.0.crate) = 8a30b2e23b9e17a9f90641c7ab1549cd9b44f296d3ccbf309d2863cfe398a0cb
 SIZE (rust/crates/addr2line-0.21.0.crate) = 40807
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -401,8 +401,8 @@ SHA256 (rust/crates/git2-0.16.1.crate) = ccf7f68c2995f392c49fffb4f95ae2c87329783
 SIZE (rust/crates/git2-0.16.1.crate) = 199956
 SHA256 (rust/crates/gl_generator-0.14.0.crate) = 1a95dfc23a2b4a9a2f5ab41d194f8bfda3cabec42af4e39f08c339eb2a0c124d
 SIZE (rust/crates/gl_generator-0.14.0.crate) = 22330
-SHA256 (rust/crates/glium-0.31.0.crate) = 0ab4f09b43d8ee427a700cb9ed3b20e0e858d62a509edded1a98ca5707d68e19
-SIZE (rust/crates/glium-0.31.0.crate) = 915561
+SHA256 (rust/crates/glium-0.32.1.crate) = d2766728ecb86014b91d3d687614b32d65aacbbdc887f424a7b03cba3ab593bf
+SIZE (rust/crates/glium-0.32.1.crate) = 925217
 SHA256 (rust/crates/glob-0.3.1.crate) = d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b
 SIZE (rust/crates/glob-0.3.1.crate) = 18880
 SHA256 (rust/crates/globset-0.4.14.crate) = 57da3b9b5b85bd66f31093f8c408b90a74431672542466497dcbdfdc02034be1
