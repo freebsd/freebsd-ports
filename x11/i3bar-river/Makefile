@@ -4,7 +4,7 @@ DISTVERSION=	1.1.0
 PORTREVISION=	7
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of i3bar for wlroots-based compositors
 WWW=		https://github.com/MaxVerevkin/i3bar-river
 
