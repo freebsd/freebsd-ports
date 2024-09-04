@@ -271,6 +271,7 @@
     SUBDIR += gu-aspell
     SUBDIR += gv-aspell
     SUBDIR += halibut
+    SUBDIR += harper
     SUBDIR += heirloom-doctools
     SUBDIR += hevea
     SUBDIR += hexcode
