@@ -10,6 +10,7 @@ include/libnest2d/optimizers/nlopt/genetic.hpp
 include/libnest2d/optimizers/nlopt/nlopt_boilerplate.hpp
 include/libnest2d/optimizers/nlopt/simplex.hpp
 include/libnest2d/optimizers/nlopt/subplex.hpp
+include/libnest2d/optimizers/optimlib/particleswarm.hpp
 include/libnest2d/parallel.hpp
 include/libnest2d/placers/bottomleftplacer.hpp
 include/libnest2d/placers/nfpplacer.hpp
@@ -24,10 +25,3 @@ include/libnest2d/utils/metaloop.hpp
 include/libnest2d/utils/rational.hpp
 include/libnest2d/utils/rotcalipers.hpp
 include/libnest2d/utils/rotfinder.hpp
-lib/cmake/Libnest2D/FindClipper.cmake
-lib/cmake/Libnest2D/FindNLopt.cmake
-lib/cmake/Libnest2D/FindTBB.cmake
-lib/cmake/Libnest2D/Libnest2DConfig.cmake
-lib/cmake/Libnest2D/Libnest2DConfigVersion.cmake
-lib/cmake/Libnest2D/Libnest2DTargets.cmake
-lib/cmake/Libnest2D/RPPackageVersions.cmake
