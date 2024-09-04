@@ -1,0 +1,8 @@
+@sample %%ETCDIR%%/conf/app.ini.sample
+%%ETCDIR%%/conf/app.ini.defaults
+sbin/forgejo
+@dir share/forgejo
+@dir(git,git,755) /var/db/forgejo
+@dir(git,git,755) /var/db/forgejo/data
+@dir(git,git,755) /var/db/forgejo/forgejo-repositories
+@dir(git,git,755) /var/log/forgejo
