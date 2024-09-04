@@ -3,7 +3,7 @@ DISTVERSION=	1.3.4
 CATEGORIES=	astro geography wayland
 MASTER_SITES=	https://git.sr.ht/~mil/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, simple, and hackable OSM map viewer
 WWW=		https://sr.ht/~mil/Mepo/
 
