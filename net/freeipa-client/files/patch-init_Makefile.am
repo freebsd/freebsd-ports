@@ -1,5 +1,5 @@
---- init/Makefile.am.orig	2021-11-25 17:34:42 UTC
-+++ init/Makefile.am
+--- init/Makefile.am.orig	2023-10-24 17:29:14.662539000 +0200
++++ init/Makefile.am	2023-10-24 17:29:28.779983000 +0200
 @@ -2,7 +2,7 @@
  #
  AUTOMAKE_OPTIONS = 1.7

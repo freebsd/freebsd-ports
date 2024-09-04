@@ -1,6 +1,6 @@
---- client/Makefile.am.orig	2023-08-21 14:29:00 UTC
+--- client/Makefile.am.orig	2024-08-21 15:06:37 UTC
 +++ client/Makefile.am
-@@ -94,8 +94,6 @@ ipa_join_LDADD = 		\
+@@ -94,8 +94,6 @@ SUBDIRS =			\
  SUBDIRS =			\
  	share		        \
  	man			\
