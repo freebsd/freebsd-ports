@@ -1,6 +1,6 @@
---- xa_input.c.orig	Sun Mar 21 23:36:25 1999
-+++ xa_input.c	Thu Jun  7 15:02:43 2007
-@@ -1025,28 +1025,28 @@
+--- xa_input.c.orig	1999-03-21 22:36:25 UTC
++++ xa_input.c
+@@ -1025,28 +1025,28 @@ char *machine, *user_cmd, *passwd_cmd, *file_cmd;
    memset(&data,0,sizeof(data));
    memset(&from,0,sizeof(from));
    if (gethostname(hostname, sizeof(hostname)) < 0)
@@ -36,7 +36,7 @@
  
       /* POD add support for PORT command? */
    addr = (xaUBYTE *) (&data.sin_addr);
-@@ -1059,15 +1059,15 @@
+@@ -1059,15 +1059,15 @@ char *machine, *user_cmd, *passwd_cmd, *file_cmd;
  
    if (xa_ftp_send_cmd(xin, port_cmd, &retcode) == xaFALSE) 
  	{ fprintf(stderr,"FTP: send cmd err\n"); 
