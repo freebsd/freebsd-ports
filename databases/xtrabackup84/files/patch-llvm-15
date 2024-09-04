@@ -1,0 +1,28 @@
+--- storage/innobase/include/ddl0impl.h.orig	2023-10-19 12:05:28 UTC
++++ storage/innobase/include/ddl0impl.h
+@@ -118,14 +118,6 @@ struct Fetch_sequence : public Context::FTS::Sequence 
+ 
+ /** Physical row context. */
+ struct Row {
+-  /** Constructor. */
+-  Row() = default;
+-
+-  Row(const Row &) = default;
+-
+-  /** Destructor. */
+-  ~Row() = default;
+-
+   Row &operator=(const Row &) = default;
+ 
+   /** Build a row from a raw record.
+--- unittest/gunit/mysys_my_rdtsc-t.cc.orig	2023-10-19 12:05:28 UTC
++++ unittest/gunit/mysys_my_rdtsc-t.cc
+@@ -145,7 +145,7 @@ TEST_F(RDTimeStampCounter, TestNanosecond) {
+   ulonglong t1 = my_timer_nanoseconds();
+   ulonglong t2;
+   int i;
+-  int backward = 0;
++  int backward [[maybe_unused]] = 0;
+   int nonzero = 0;
+ 
+   for (i = 0; i < LOOP_COUNT; i++) {

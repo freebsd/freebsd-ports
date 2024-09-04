@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2023-10-19 12:05:28 UTC
++++ CMakeLists.txt
+@@ -2094,8 +2094,6 @@ IF(WITH_PROTOBUF STREQUAL "bundled" OR WITH_FIDO STREQ
+   ENDIF()
+ ENDIF()
+ 
+-ADD_SUBDIRECTORY(extra/libkmip)
+-
+ #
+ # Setup maintainer mode options by the end. Platform checks are
+ # not run with the warning options as to not perturb fragile checks
+@@ -2345,10 +2343,6 @@ ENDIF()
+ 
+ IF(ENABLE_GCOV)
+   INCLUDE(fastcov)
+-ENDIF()
+-
+-IF(UNIX)
+-  ADD_SUBDIRECTORY(man)
+ ENDIF()
+ 
+ IF(LINUX AND NOT WITHOUT_SERVER)

@@ -1,0 +1,20 @@
+--- storage/innobase/xtrabackup/src/file_utils.cc.orig	2023-11-24 17:33:10.000000000 +0700
++++ storage/innobase/xtrabackup/src/file_utils.cc	2024-02-17 00:40:45.193255000 +0700
+@@ -20,7 +20,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Bos
+ 
+ #include "file_utils.h"
+ #include <mysql/service_mysql_alloc.h>
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined (__FreeBSD__)
+ #include <sys/event.h>
+ #else
+ #include <sys/epoll.h>
+@@ -391,7 +391,7 @@ File open_fifo_for_read_with_timeout(const char *path,
+   }
+ 
+   /* File was open, lets check its open on the other side */
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__FreeBSD__)
+   struct timespec tm = {timeout, 0};
+   int kqueue_fd = kqueue();
+   if (kqueue_fd < 0) {

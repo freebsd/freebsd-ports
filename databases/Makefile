@@ -1108,6 +1108,7 @@
     SUBDIR += xrootd
     SUBDIR += xtrabackup80
     SUBDIR += xtrabackup81
+    SUBDIR += xtrabackup84
     SUBDIR += zodb
 
 .include <bsd.port.subdir.mk>
