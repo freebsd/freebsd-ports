@@ -2,7 +2,7 @@ PORTNAME=	zls
 DISTVERSION=	0.14.0
 CATEGORIES=	devel
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zig LSP implementation + Zig Language Server
 WWW=		https://github.com/zigtools/zls
 
