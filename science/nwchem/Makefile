@@ -1,12 +1,13 @@
 PORTNAME=	nwchem
-DISTVERSIONPREFIX=	v
+#DISTVERSIONPREFIX=	v
 DISTVERSION=	7.2.3
-DISTVERSIONSUFFIX=	-release
+DISTVERSIONSUFFIX=	-release.revision-d690e065-src.2024-08-27
+PORTREVISION=	1
 CATEGORIES=	science
-MASTER_SITES=	https://github.com/nwchemgit/nwchem/releases/download/${DISTVERSIONFULL}/ \
+MASTER_SITES=	https://github.com/nwchemgit/nwchem/releases/download/v${DISTVERSION}-release/ \
 		https://www.chemie.uni-bonn.de/grimme/de/software/dft-d3/:dft3 \
 		https://gitlab.com/libxc/libxc/-/archive/${LIBXC_VERSION}/:libxc
-DISTFILES=	${PORTNAME}-${DISTVERSION}-${DISTVERSIONSUFFIX}.revision-d690e065-src.2024-08-27${EXTRACT_SUFX} \
+DISTFILES=	${PORTNAME}-${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX} \
 		dftd3.tgz:dft3 \
 		libxc-${LIBXC_VERSION}.tar.gz:libxc
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
@@ -33,8 +34,10 @@ TEST_DEPENDS=	bash:shells/bash
 USES=		cmake:indirect fortran gettext-runtime gmake perl5 pkgconfig
 USE_PERL5=	build
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	nwchemgit
+#USE_GITHUB=	yes
+#GH_ACCOUNT=	nwchemgit
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAKEFILE=	GNUmakefile
 ARCH_64BIT=	${ARCH:C/.*64.*/64/:S/${ARCH}//}
