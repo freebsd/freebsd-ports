@@ -14,6 +14,9 @@ WWW=		https://github.com/fooyin/fooyin
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+NOT_FOR_ARCHS=  armv7 i386 powerpc
+NOT_FOR_ARCHS_REASON=	Fails to build on 32-bit platforms with various errors
+
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libgme.so:audio/libgme \
 		libicui18n.so:devel/icu \
