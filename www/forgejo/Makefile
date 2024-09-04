@@ -17,6 +17,8 @@ RUN_DEPENDS=	git:devel/git
 USES=		cpe gmake go:1.22,no_targets
 USE_RC_SUBR=	forgejo
 
+CONFLICTS_INSTALL=	forgejo[0-79]*
+
 EXTRACT_AFTER_ARGS=	--strip-components 1
 SUB_FILES=	app.ini.sample pkg-message
 SUB_LIST=	GITUSER=${USERS}

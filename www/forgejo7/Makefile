@@ -1,11 +1,12 @@
 PORTNAME=	forgejo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.0.4
+DISTVERSION=	7.0.8
 CATEGORIES=	www
 MASTER_SITES=	https://codeberg.org/forgejo/forgejo/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
+PKGNAMESUFFIX=	7
 DISTNAME=	forgejo-src-${DISTVERSION}
 
-MAINTAINER=	stb@lassitu.de
+MAINTAINER=	marko.cupac@mimar.rs
 COMMENT=	Compact self-hosted Git service
 WWW=		https://forgejo.org/
 
@@ -16,6 +17,8 @@ RUN_DEPENDS=	git:devel/git
 
 USES=		cpe gmake go:1.22,no_targets
 USE_RC_SUBR=	forgejo
+
+CONFLICTS_INSTALL=	forgejo forgejo[0-689]*
 
 EXTRACT_AFTER_ARGS=	--strip-components 1
 SUB_FILES=	app.ini.sample pkg-message
