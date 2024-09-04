@@ -1,7 +1,7 @@
 [Desktop Entry]
 Categories=Network;WebBrowser;
 Comment=Vieb Inspired Electron Browser (Linux version)
-Exec=linux-vieb
+Exec=linux-vieb %U
 Icon=vieb
 MimeType=text/html;text/xml;application/xhtml+xml;application/xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
 Name=Vieb (Linux version)
