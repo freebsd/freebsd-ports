@@ -3,7 +3,7 @@ DISTVERSION=	0.26
 CATEGORIES=	devel math
 MASTER_SITES=	SOURCEFORGE/libisl
 
-MAINTAINER=	eduardo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integer Set Library
 WWW=		https://libisl.sourceforge.io/
 
