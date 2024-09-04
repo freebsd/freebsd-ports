@@ -1,0 +1,10 @@
+@PACKAGE_INIT@
+
+# We want to have access to protobuf_generate_cpp and other FindProtobuf features.
+# However, if ProtobufConfig is used instead, there is a CMake option that controls
+# this, which defaults to OFF. We need to force this option to ON instead.
+set(protobuf_MODULE_COMPATIBLE ON CACHE "" INTERNAL FORCE)
+find_package(Protobuf 3.0.0 REQUIRED)
+
+get_filename_component(SELF_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+include(${SELF_DIR}/Arcus-targets.cmake)
