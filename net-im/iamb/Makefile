@@ -11,6 +11,7 @@ WWW=		https://iamb.chat/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	fails to build
 USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	ulyssa
