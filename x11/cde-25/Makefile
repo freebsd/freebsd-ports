@@ -1,6 +1,6 @@
 PORTNAME=	cde
 DISTVERSION=	2.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	SF/cdesktopenv/src/
 .if !defined(MASTERDIR)
@@ -39,9 +39,10 @@ RUN_DEPENDS=	ksh93:shells/ksh			\
 		xrdb:x11/xrdb \
 		xset:x11/xset \
 		sessreg:x11/sessreg
+LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
 USES=		autoreconf:build iconv:wchar_t gmake jpeg libtool motif perl5 \
-		shebangfix tcl:86 xorg llvm:16
+		shebangfix tcl:86 xorg
 SHEBANG_LANG=	pl
 SHEBANG_FILES=	programs/dtinfo/tools/bin/ccdate \
 		programs/dtdocbook/tcl/docbook.tcl
