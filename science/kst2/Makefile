@@ -1,6 +1,5 @@
 PORTNAME=	kst
 DISTVERSION=	${KST_VERSION}.${KST_DATE}
-PORTREVISION=	5
 CATEGORIES=	science
 
 MAINTAINER=	makc@FreeBSD.org
@@ -23,16 +22,15 @@ USE_QT=		concurrent core gui network printsupport svg widgets xml \
 USE_LDCONFIG=	yes
 
 KST_VERSION=	2.0.8
-KST_DATE=	20220216
-KST_COMMIT=	40cdf2d3
-KDE_INVENT=	40cdf2d397e4277ee7226188ef89ae3e0f12d884 graphics kst-plot
+KST_DATE=	20240825
+KST_COMMIT=	917ad3c3
+KDE_INVENT=	917ad3c348d2e99666f11a27400b08a88dc7e590 graphics kst-plot
 
 CMAKE_ARGS=	-Dkst_install_prefix=${PREFIX} \
 		-Dkst_pch=off \
 		-Dkst_version_string=${KST_VERSION} \
 		-Dkst_revision="${KST_COMMIT} ${KST_DATE}" \
-		-DCMAKE_DISABLE_FIND_PACKAGE_Getdata=ON \
-		-Dkst_qt5=on
+		-DCMAKE_DISABLE_FIND_PACKAGE_Getdata=ON
 
 PLIST_SUB=	SHLIB_VER=${KST_VERSION}
 

@@ -1,6 +1,14 @@
---- CMakeLists.txt.orig	2021-01-24 05:51:19 UTC
+--- CMakeLists.txt.orig	2024-08-25 02:15:46 UTC
 +++ CMakeLists.txt
-@@ -72,12 +72,6 @@ endif()
+@@ -12,6 +12,7 @@ if(${CMAKE_MAJOR_VERSION} EQUAL 3)
+ 
+ if(${CMAKE_MAJOR_VERSION} EQUAL 3)
+     cmake_policy(SET CMP0043 OLD)
++    cmake_policy(SET CMP0046 OLD)
+ endif()
+ 
+ # figure out if we use MinGW with Ninja: call with -DCC=gcc
+@@ -72,12 +73,6 @@ project(Kst)
  project(Kst)
  
  
@@ -13,7 +21,7 @@
  
  
  if(kst_sanitize)
-@@ -240,11 +234,6 @@ message(STATUS)
+@@ -240,11 +235,6 @@ message(STATUS)
  # React on options
  
  
