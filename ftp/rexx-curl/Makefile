@@ -1,9 +1,9 @@
 PORTNAME=	curl
-PORTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	ftp
-MASTER_SITES=	SF/rexx${PORTNAME}/rexx${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/rexx${PORTNAME}/rexx${PORTNAME}/${DISTVERSION}
 PKGNAMEPREFIX=	rexx-
-DISTNAME=	RexxCURL-${PORTVERSION}
+DISTNAME=	rexxcurl-${DISTVERSION}
 
 MAINTAINER=	bob@eager.cx
 COMMENT=	External function package providing an interface to the cURL package
@@ -19,17 +19,17 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libregina.so:lang/rexx-regina
 RUN_DEPENDS=	rexx:lang/rexx-regina
 
-USES=		gmake
+USES=		gmake pkgconfig
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rexx=regina LDFLAGS=-L/usr/lib
-USE_LDCONFIG=	yes
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
 
 DATADIR=	${PREFIX}/share/rexx${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/rexx${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/rexx${PORTNAME}
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 DOCFILES=	getright.rexx getmail-pop3.rexx httppost.rexx scp.rexx \
 		sendmail-smtp.rexx testcurl.rexx upload.rexx README.txt
