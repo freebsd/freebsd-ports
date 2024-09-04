@@ -5,6 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Grammar checker for developers
+WWW=		https://writewithharper.com/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
