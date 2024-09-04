@@ -1303,7 +1303,9 @@
 %%DATADIR%%/tenancy/tests/test_views.py
 %%DATADIR%%/tenancy/urls.py
 %%DATADIR%%/tenancy/views.py
+%%DATADIR%%/translations/cs/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/cs/LC_MESSAGES/django.po
+%%DATADIR%%/translations/da/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/da/LC_MESSAGES/django.po
 %%DATADIR%%/translations/de/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/de/LC_MESSAGES/django.po
@@ -1313,10 +1315,13 @@
 %%DATADIR%%/translations/es/LC_MESSAGES/django.po
 %%DATADIR%%/translations/fr/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/fr/LC_MESSAGES/django.po
+%%DATADIR%%/translations/it/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/it/LC_MESSAGES/django.po
 %%DATADIR%%/translations/ja/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/ja/LC_MESSAGES/django.po
+%%DATADIR%%/translations/nl/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/nl/LC_MESSAGES/django.po
+%%DATADIR%%/translations/pl/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/pl/LC_MESSAGES/django.po
 %%DATADIR%%/translations/pt/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/pt/LC_MESSAGES/django.po
