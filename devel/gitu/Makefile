@@ -1,7 +1,6 @@
 PORTNAME=	gitu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.24.0
-PORTREVISION=	1
+DISTVERSION=	0.25.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +22,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
 		anstream-0.6.13 \
-		anstyle-1.0.6 \
+		anstyle-1.0.8 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
@@ -33,7 +32,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		bitflags-1.3.2 \
 		bitflags-2.5.0 \
 		block2-0.5.1 \
-		bstr-0.2.17 \
+		bstr-1.10.0 \
 		bumpalo-3.15.4 \
 		bytemuck-1.15.0 \
 		cassowary-0.3.0 \
@@ -45,9 +44,9 @@ CARGO_CRATES=	ahash-0.8.11 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.5.9 \
-		clap_builder-4.5.9 \
-		clap_derive-4.5.8 \
+		clap-4.5.16 \
+		clap_builder-4.5.15 \
+		clap_derive-4.5.13 \
 		clap_lex-0.7.0 \
 		clipboard-win-5.3.1 \
 		colorchoice-1.0.0 \
@@ -151,8 +150,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.1.57 \
 		redox_syscall-0.4.1 \
-		regex-1.10.5 \
-		regex-automata-0.1.10 \
+		regex-1.10.6 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.8.3 \
 		relative-path-1.9.3 \
@@ -165,14 +163,14 @@ CARGO_CRATES=	ahash-0.8.11 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		semver-1.0.22 \
-		serde-1.0.204 \
-		serde_derive-1.0.204 \
+		serde-1.0.209 \
+		serde_derive-1.0.209 \
 		serde_json-1.0.115 \
 		serde_spanned-0.6.6 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.1 \
-		similar-2.5.0 \
+		similar-2.6.0 \
 		simple-logging-2.0.2 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
@@ -214,7 +212,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		tree-sitter-scala-0.20.3 \
 		tree-sitter-toml-0.20.0 \
 		tree-sitter-typescript-0.20.5 \
-		tui-prompts-0.3.16 \
+		tui-prompts-0.3.20 \
 		uncased-0.9.10 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
