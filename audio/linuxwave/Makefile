@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
 CATEGORIES=	audio
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate music from the entropy of Linux
 WWW=		https://orhun.dev/linuxwave/
 
