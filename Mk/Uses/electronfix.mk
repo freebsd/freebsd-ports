@@ -24,7 +24,7 @@ _INCLUDE_USES_ELECTRONFIX_MK=	yes
 _ELECTRON_MAKEFILE_VERSION=	${.CURDIR}/../../devel/electron${electronfix_ARGS}/Makefile.version
 
 .  if !exists(${_ELECTRON_MAKEFILE_VERSION})
-.    error Unknown Electron version in USES=electronfix:${electronfix_ARGS}
+.    warning Unknown Electron version in USES=electronfix:${electronfix_ARGS}
 .  endif
 
 BUILD_DEPENDS+=	electron${electronfix_ARGS}:devel/electron${electronfix_ARGS}
