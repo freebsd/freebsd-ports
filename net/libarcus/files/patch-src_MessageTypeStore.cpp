@@ -1,6 +1,6 @@
---- src/MessageTypeStore.cpp.orig	2024-08-19 14:31:10.714537000 +0200
-+++ src/MessageTypeStore.cpp	2024-08-19 15:30:50.769879000 +0200
-@@ -39,7 +39,7 @@
+--- src/MessageTypeStore.cpp.orig	2023-05-19 06:44:12 UTC
++++ src/MessageTypeStore.cpp
+@@ -39,7 +39,7 @@ class ErrorCollector : public google::protobuf::compil
      {
      }
  
@@ -9,7 +9,7 @@
      {
          _stream << "[" << filename << " (" << line << "," << column << ")] " << message << std::endl;
          _error_count++;
-@@ -53,6 +53,10 @@
+@@ -53,6 +53,10 @@ class ErrorCollector : public google::protobuf::compil
      int getErrorCount()
      {
          return _error_count;
