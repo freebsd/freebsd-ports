@@ -1000,6 +1000,7 @@
     SUBDIR += py-moarchiving
     SUBDIR += py-mpmath
     SUBDIR += py-munkres
+    SUBDIR += py-narwhals
     SUBDIR += py-ndindex
     SUBDIR += py-networkx
     SUBDIR += py-nevergrad
