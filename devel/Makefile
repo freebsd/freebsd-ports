@@ -2793,6 +2793,7 @@
     SUBDIR += p5-IPC-SharedCache
     SUBDIR += p5-IPC-ShellCmd
     SUBDIR += p5-IPC-Signal
+    SUBDIR += p5-IPC-System-Options
     SUBDIR += p5-IPC-System-Simple
     SUBDIR += p5-IRI
     SUBDIR += p5-Import-Base
