@@ -352,7 +352,6 @@ MPEG2_DESC?=		MPEG-2 video support via libmpeg2
 MPG123_DESC?=		MP3 decoding support via mpg123
 MPI_DESC?=		MPI (Message Passing Interface) support
 MPICH_DESC?=		Parallel processing support via MPICH 3
-MPICH2_DESC?=		Parallel processing support via MPICH 2
 MPLAYER_DESC?=		MPlayer media player support
 MPLS_DESC?=		MPLS support
 MPP_DESC?=		Musepack audio format support
