@@ -80,8 +80,13 @@ shibboleth_idp_initupgrade() {
     /bin/rm -f %%WWWDIR%%/idp.ini.bak
 
     PATH="${PATH}:%%LOCALBASE%%/bin"
-    %%DATADIR%%/bin/install.sh -Didp.keysize=${shibboleth_idp_keysize} -Didp.target.dir=%%WWWDIR%% -Didp.src.dir=%%DATADIR%% -Didp.conf.credentials.group=%%SHIBUSER%% -Didp.conf.credentials.filemode=640 -Didp.keystore.password=${KEYSTORE} -Didp.sealer.password=${COOKIE} -Didp.host.name=${shibboleth_idp_hostname} -Didp.scope=${shibboleth_idp_scope} -Didp.entityID=${shibboleth_idp_entityid} -Didp.noprompt
-    /usr/bin/sed -i'.bak' -e "s|:8443||g" %%WWWDIR%%/metadata/idp-metadata.xml
+    printf "idp.target.dir=%%WWWDIR%%\nidp.keysize=${shibboleth_idp_keysize}\nidp.src.dir=%%DATADIR%%\nidp.conf.credentials.group=%%SHIBUSER%%\nidp.conf.credentials.filemode=640\nidp.scope=${shibboleth_idp_scope}\nidp.host.name=${shibboleth_idp_hostname}\nidp.entityID=${shibboleth_idp_entityid}\n\n# EOF\n" > %%WWWDIR%%/install.properties
+    if [ ! -f %%WWWDIR%%/credentials/secrets.properties ]; then
+        install -o root -g ${shibboleth_idp_group} -m 440 /dev/null %%WWWDIR%%/credentials/secrets.properties
+        printf "idp.keystore.password=${KEYSTORE}\nidp.sealer.password=${COOKIE}\n">%%WWWDIR%%/credentials/secrets.properties
+    fi
+    %%DATADIR%%/bin/install.sh --propertyFile %%WWWDIR%%/install.properties --propertyFiles %%WWWDIR%%/credentials/secrets.properties
+    /usr/bin/sed -i'.bak' -e "s|idp.scope = example.org|idp.scope=${shibboleth_idp_scope}|g" %%WWWDIR%%/conf/idp.properties
 }
 
 run_rc_command "$1"

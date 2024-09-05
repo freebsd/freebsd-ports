@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://www.eclipse.org/jetty/configure_9_3.dtd">
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "https://www.eclipse.org/jetty/configure_10_0.dtd">
 <!-- =============================================================== -->
 <!-- Configure the Shibboleth IdP webapp                             -->
 <!-- =============================================================== -->
-<Configure class="org.eclipse.jetty.webapp.WebAppContext">
-  <Set name="war"><SystemProperty name="idp.war.path" default="war/idp.war" /></Set>
+<Configure class="org.eclipse.jetty.ee9.webapp.WebAppContext">
+  <Set name="war"><SystemProperty name="idp.home" default="/usr/local/www/shibboleth" />/war/idp.war</Set>
   <Set name="contextPath"><SystemProperty name="idp.context.path" default="/idp" /></Set>
   <Set name="extractWAR">false</Set>
   <Set name="copyWebDir">false</Set>
