@@ -1,5 +1,6 @@
 PORTNAME=	quarto # html output is broken due to a missing dependency
 DISTVERSION=	1.6.9
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/quarto-dev/quarto-cli/releases/download/v${DISTVERSION}/
 DISTFILES=	quarto-${DISTVERSION}-linux-amd64.tar.gz # same for all architectures
@@ -30,11 +31,10 @@ XARCH!=		uname -m
 PLIST_SUB+=	XARCH=${XARCH}
 
 NO_BUILD=	yes
-NO_ARCH=	yes
 
-pre-install:
+post-patch:
 	# replace tokens in the quarto executable and in run-tests.sh
-	${REINPLACE_CMD} \
+	${REINPLACE_CMD} -i '' \
 		-e 's|%%SCRIPT_PATH%%|${DATADIR}/bin|; s|%%ARCH_DIR%%|${XARCH}|' \
 		${WRKSRC}/bin/quarto
 	${REINPLACE_CMD} \
@@ -46,6 +46,8 @@ do-install:
 	@cd ${WRKSRC} && \
 		${COPYTREE_SHARE} bin ${STAGEDIR}${DATADIR} && \
 		${COPYTREE_SHARE} share ${STAGEDIR}${DATADIR}
+	# remove unnecessary files
+	${RM} ${STAGEDIR}${DATADIR}/bin/quarto.orig
 	# adjust architecture
 	${MV} ${STAGEDIR}${DATADIR}/bin/tools/x86_64 ${STAGEDIR}${DATADIR}/bin/tools/${XARCH}
 	cd ${STAGEDIR}${DATADIR}/bin/tools && ${LN} -s amd64 x86_64

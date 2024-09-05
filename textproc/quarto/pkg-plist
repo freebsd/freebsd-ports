@@ -1,8 +1,6 @@
 bin/quarto
 %%DATADIR%%/bin/quarto
-%%DATADIR%%/bin/quarto.bak
 %%DATADIR%%/bin/quarto.js
-%%DATADIR%%/bin/quarto.orig
 %%DATADIR%%/bin/tools/%%XARCH%%/deno
 %%DATADIR%%/bin/tools/%%XARCH%%/esbuild
 %%DATADIR%%/bin/tools/%%XARCH%%/pandoc
