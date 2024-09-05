@@ -26,7 +26,7 @@ CPE_VENDOR=	gnu
 CPE_VERSION=	${PORTVERSION:R}
 
 # https://ftp.gnu.org/gnu/readline/readline-8.2-patches/
-PATCHES=	1 2 3 4 5 6 7 8 9 10
+PATCHES=	1 2 3 4 5 6 7 8 9 10 11 12 13
 .if defined(PATCHES)
 CPE_UPDATE=	${PATCHLEVEL}
 PATCHLEVEL=	${PATCHES:On:[-1]}
