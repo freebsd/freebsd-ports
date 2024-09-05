@@ -1,6 +1,7 @@
 PORTNAME=	meep
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.29.0
+PORTREVISION=	1
 CATEGORIES=	science cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,6 +21,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack \
 		libmpb.so:science/mpb \
 		libopenblas.so:math/openblas
+RUN_DEPENDS=	${LOCALBASE}/lib/libharminv.a:science/harminv
 
 USES=		autoreconf compiler:c++11-lang fortran gmake libtool localbase
 USE_LDCONFIG=	yes
