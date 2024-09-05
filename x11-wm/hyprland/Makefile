@@ -6,6 +6,7 @@ CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	4fdc0d55e4b4.patch:-p1 # https://github.com/hyprwm/Hyprland/issues/6842
+PATCHFILES+=	118d4e1001d5.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/7281
 PATCHFILES+=	ff3f41c9a5d1.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/7626
 PATCHFILES+=	89fa6a6a66e6.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/7626
 
