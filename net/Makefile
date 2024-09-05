@@ -1108,6 +1108,7 @@
     SUBDIR += py-pynsq
     SUBDIR += py-pypacker
     SUBDIR += py-pypcap
+    SUBDIR += py-pyprowl
     SUBDIR += py-pyroute2
     SUBDIR += py-pyroute2.minimal
     SUBDIR += py-pyroute2.protocols
