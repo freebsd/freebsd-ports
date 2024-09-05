@@ -3319,6 +3319,7 @@
     SUBDIR += p5-Pragmatic
     SUBDIR += p5-Proc-BackOff
     SUBDIR += p5-Proc-Background
+    SUBDIR += p5-Proc-ChildError
     SUBDIR += p5-Proc-Daemon
     SUBDIR += p5-Proc-FastSpawn
     SUBDIR += p5-Proc-Find-Parents
