@@ -11,6 +11,7 @@ WWW=		https://github.com/pythops/tenere
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		compilation fails with rust-1.80.1: error[E0282]: type annotations needed for `Box<_>`, see https://github.com/pythops/tenere/issues/29
 BROKEN_i386=	compilation fails: cargo:warning=c/freebsd.c:31:10: error: conflicting types for 'get_cpu_speed'
 
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
