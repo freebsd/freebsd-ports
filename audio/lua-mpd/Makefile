@@ -19,6 +19,8 @@ GH_PROJECT=	lua-mpd
 
 USES=		lua:51,module
 USE_GITHUB=	yes
+
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-install:
