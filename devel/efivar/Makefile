@@ -14,6 +14,8 @@ NOT_FOR_ARCHS_REASON=	specification only supports little-endian processors
 
 LIB_DEPENDS=	libpopt.so:devel/popt
 
+CFLAGS+=	-fpermissive
+
 USES=		gmake localbase pkgconfig
 USE_GCC=	yes
 USE_GITHUB=	yes
