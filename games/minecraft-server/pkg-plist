@@ -23,7 +23,7 @@ minecraft-server/world
 @rmtry minecraft-server/libraries/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar
 @rmtry minecraft-server/libraries/com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre.jar
 @rmtry minecraft-server/libraries/com/mojang/authlib/6.0.54/authlib-6.0.54.jar
-@rmtry minecraft-server/libraries/com/mojang/brigadier/1.2.9/brigadier-1.2.9.jar
+@rmtry minecraft-server/libraries/com/mojang/brigadier/1.3.10/brigadier-1.3.10.jar
 @rmtry minecraft-server/libraries/com/mojang/datafixerupper/8.0.16/datafixerupper-8.0.16.jar
 @rmtry minecraft-server/libraries/com/mojang/logging/1.2.7/logging-1.2.7.jar
 @rmtry minecraft-server/libraries/commons-io/commons-io/2.15.1/commons-io-2.15.1.jar
