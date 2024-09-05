@@ -2207,6 +2207,7 @@
     SUBDIR += p5-Data-Capture
     SUBDIR += p5-Data-ClearSilver-HDF
     SUBDIR += p5-Data-Clone
+    SUBDIR += p5-Data-Cmp
     SUBDIR += p5-Data-Compare
     SUBDIR += p5-Data-Diver
     SUBDIR += p5-Data-Dmp
