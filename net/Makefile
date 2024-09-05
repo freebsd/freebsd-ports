@@ -894,6 +894,7 @@
     SUBDIR += p5-URI-Fast
     SUBDIR += p5-URI-FromHash
     SUBDIR += p5-URI-Match
+    SUBDIR += p5-URI-NamespaceMap
     SUBDIR += p5-URI-Nested
     SUBDIR += p5-URI-OpenURL
     SUBDIR += p5-URI-Query
