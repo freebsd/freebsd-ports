@@ -9,6 +9,7 @@ COMMENT=	Abseil Common Libraries (C++)
 WWW=		https://abseil.io/
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake compiler:c++17-lang pathfix
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON \
