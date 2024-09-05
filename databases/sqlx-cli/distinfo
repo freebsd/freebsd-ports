@@ -1,4 +1,4 @@
-TIMESTAMP = 1724738288
+TIMESTAMP = 1725512210
 SHA256 (rust/crates/addr2line-0.21.0.crate) = 8a30b2e23b9e17a9f90641c7ab1549cd9b44f296d3ccbf309d2863cfe398a0cb
 SIZE (rust/crates/addr2line-0.21.0.crate) = 40807
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -879,5 +879,5 @@ SHA256 (rust/crates/zeroize-1.7.0.crate) = 525b4ec142c6b68a2d10f01f7bbf6755599ca
 SIZE (rust/crates/zeroize-1.7.0.crate) = 19039
 SHA256 (rust/crates/zeroize_derive-1.4.2.crate) = ce36e65b0d2999d2aafac989fb249189a141aee1f53c612c1f37d72631959f69
 SIZE (rust/crates/zeroize_derive-1.4.2.crate) = 11141
-SHA256 (launchbadge-sqlx-v0.8.1_GH0.tar.gz) = 5a52c3c825bf2362bb021426a562b0563662eab399ca6dee8818d65d881bc8d8
-SIZE (launchbadge-sqlx-v0.8.1_GH0.tar.gz) = 971476
+SHA256 (launchbadge-sqlx-v0.8.2_GH0.tar.gz) = 89fc875ac233e25cb8da18d581f28a097e419949d0af876aab143ba620852ea9
+SIZE (launchbadge-sqlx-v0.8.2_GH0.tar.gz) = 971786
