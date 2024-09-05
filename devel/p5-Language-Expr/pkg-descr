@@ -1,0 +1,7 @@
+Language::Expr defines a simple, Perl-like expression minilanguage. It supports
+mathematical and string operators, arrays, hashes, variables, and functions. See
+Language::Expr::Manual::Syntax for description of the language syntax.
+
+This distribution consists of the language parser (Language::Expr::Parser), some
+interpreters (Language::Expr::Interpreter::*), and some compilers
+(Language::Expr::Compiler::*).
