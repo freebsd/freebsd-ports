@@ -1,0 +1,8 @@
+Module::Path::More provides a function, module_path(), which will find where a
+module (or module prefix, or .pod file) is installed locally. (There is also
+another function pod_path() which is just a convenience wrapper.)
+
+It works by looking in all the directories in @INC for an appropriately named
+file. If module is Foo::Bar, will search for Foo/Bar.pm, Foo/Bar.pmc (if
+find_pmc argument is true), Foo/Bar directory (if find_prefix argument is true),
+or Foo/Bar.pod (if find_pod argument is true).
