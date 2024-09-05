@@ -1,5 +1,5 @@
 PORTNAME=	picard
-PORTVERSION=	2.12.2
+PORTVERSION=	2.12.3
 CATEGORIES=	audio python
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
