@@ -3935,6 +3935,7 @@
     SUBDIR += p5-latest
     SUBDIR += p5-lexical-underscore
     SUBDIR += p5-lib-abs
+    SUBDIR += p5-lib-filter
     SUBDIR += p5-libalarm
     SUBDIR += p5-libxml-enno
     SUBDIR += p5-local-lib

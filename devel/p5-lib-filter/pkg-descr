@@ -1,0 +1,3 @@
+lib::filter lets you allow/disallow loading modules using some rules. It works
+by installing a coderef in @INC (and additionally by pruning some entries in
+@INC). The main use-case for this pragma is for testing.
