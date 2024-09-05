@@ -64,6 +64,8 @@ include/dnsjit/input/mmpcap.h
 include/dnsjit/input/mmpcap.hh
 include/dnsjit/input/pcap.h
 include/dnsjit/input/pcap.hh
+include/dnsjit/input/zmmpcap.h
+include/dnsjit/input/zmmpcap.hh
 include/dnsjit/input/zpcap.h
 include/dnsjit/input/zpcap.hh
 include/dnsjit/lib/base64url.h
@@ -127,6 +129,7 @@ share/man/man3/dnsjit.input.fpcap.3.gz
 share/man/man3/dnsjit.input.mmpcap.3.gz
 share/man/man3/dnsjit.input.pcap.3.gz
 share/man/man3/dnsjit.input.zero.3.gz
+share/man/man3/dnsjit.input.zmmpcap.3.gz
 share/man/man3/dnsjit.input.zpcap.3.gz
 share/man/man3/dnsjit.lib.3.gz
 share/man/man3/dnsjit.lib.base64url.3.gz
