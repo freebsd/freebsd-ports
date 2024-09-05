@@ -1,0 +1,14 @@
+Data::Sah::Coerce contains a standard set of coercion rules for Data::Sah. It is
+separated from the Data-Sah distribution and can be used independently.
+
+A coercion rule is put in
+Data::Sah::Coerce::$COMPILER::To_$TARGET_TYPE::From_$SOURCE_TYPE::DESCRIPTION
+module, for example: Data::Sah::Coerce::perl::To_date::From_float::epoch for
+converting date from integer (Unix epoch) or
+Data::Sah::Coerce::perl::To_date::From_str::iso8601 for converting date from
+ISO8601 strings like "2016-05-15".
+
+Basically, a coercion rule will provide an expression (expr_match) that
+evaluates to true when data can be coerced, and an expression (expr_coerce) to
+actually coerce/convert data to the target type. This rule can be combined with
+other rules to form the final coercion code.
