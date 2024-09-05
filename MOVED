@@ -3461,3 +3461,4 @@ textproc/jarowinkler-cpp|devel/rapidfuzz-cpp|2024-09-03|Merged into devel/rapidf
 devel/electron27||2024-09-03|Has expired: EOLed upstream, switch to newer version
 net/luasocket|net/lua-luasocket|2024-09-05|Move net/luasocket to net/lua-luasocket
 textproc/luaexpat|textproc/lua-luaexpat|2024-09-05|Move textproc/luaexpat to textproc/lua-luaexpat
+devel/py-sip4||2024-09-05|Has expired: Fails to build with modern python
