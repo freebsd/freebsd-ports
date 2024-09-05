@@ -23,4 +23,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown-it-py>=3.0.0:textproc/py-markdown-i
 USES=		python
 USE_PYTHON=	autoplist pep517
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
