@@ -24,5 +24,5 @@ include/shapefil.h
 lib/libshp.a
 lib/libshp.so
 lib/libshp.so.4
-lib/libshp.so.4.0.0
+lib/libshp.so.4.1.0
 libdata/pkgconfig/shapelib.pc
