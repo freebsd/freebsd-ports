@@ -13,8 +13,9 @@ BUILD_DEPENDS=	abseil>=20230125:devel/abseil \
 		pybind11>=2.11.1:devel/pybind11
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libprotobuf.so:devel/protobuf
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}absl-py>=0:devel/py-absl-py@${PY_FLAVOR}
 
-USES=		cmake compiler:c++17-lang python
+USES=		cmake:testing compiler:c++17-lang localbase python
 
 CFLAGS+=	-I${WRKSRC}
 CMAKE_ARGS=	-DCMAKE_INSTALL_PYDIR=${PYTHON_SITELIBDIR}
@@ -22,6 +23,7 @@ CMAKE_OFF=	BUILD_TESTING
 CMAKE_ON=	USE_SYSTEM_ABSEIL \
 		USE_SYSTEM_PROTOBUF \
 		USE_SYSTEM_PYBIND
+CMAKE_TESTING_ON=	BUILD_TESTING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pybind
