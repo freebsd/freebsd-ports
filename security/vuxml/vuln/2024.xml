@@ -1,3 +1,207 @@
+  <vuln vid="7e079ce2-6b51-11ef-9a62-002590c1f29c">
+    <topic>FreeBSD -- umtx Kernel panic or Use-After-Free</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>14.1</ge><lt>14.1_4</lt></range>
+	<range><ge>14.0</ge><lt>14.0_10</lt></range>
+	<range><ge>13.3</ge><lt>13.3_6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Concurrent removals of such a mapping by using the UMTX_SHM_DESTROY
+	sub-request of UMTX_OP_SHM can lead to decreasing the reference
+	count of the object representing the mapping too many times, causing
+	it to be freed too early.</p>
+	<h1>Impact:</h1>
+	<p>A malicious code exercizing the UMTX_SHM_DESTROY sub-request
+	in parallel can panic the kernel or enable further Use-After-Free
+	attacks, potentially including code execution or Capsicum sandbox
+	escape.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-43102</cvename>
+      <freebsdsa>SA-24:14.umtx</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2024-09-04</discovery>
+      <entry>2024-09-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4edaa9f4-6b51-11ef-9a62-002590c1f29c">
+    <topic>FreeBSD -- bhyve(8) privileged guest escape via USB controller</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>14.1</ge><lt>14.1_4</lt></range>
+	<range><ge>14.0</ge><lt>14.0_10</lt></range>
+	<range><ge>13.3</ge><lt>13.3_6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>bhyve can be configured to emulate devices on a virtual USB
+	controller (XHCI), such as USB tablet devices.  An insufficient
+	boundary validation in the USB code could lead to an out-of-bounds
+	write on the heap, with data controlled by the caller.</p>
+	<h1>Impact:</h1>
+	<p>A malicious, privileged software running in a guest VM can
+	exploit the vulnerability to achieve code execution on the host in
+	the bhyve userspace process, which typically runs as root.  Note
+	that bhyve runs in a Capsicum sandbox, so malicious code is constrained
+	by the capabilities available to the bhyve process.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-32668</cvename>
+      <freebsdsa>SA-24:12.bhyve</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2024-09-04</discovery>
+      <entry>2024-09-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9bd5e47b-6b50-11ef-9a62-002590c1f29c">
+    <topic>FreeBSD -- Multiple issues in ctl(4) CAM Target Layer</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>14.1</ge><lt>14.1_4</lt></range>
+	<range><ge>14.0</ge><lt>14.0_10</lt></range>
+	<range><ge>13.3</ge><lt>13.3_6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Several vulnerabilities were found in the ctl subsystem.</p>
+	<p>The function ctl_write_buffer incorrectly set a flag which resulted
+	in a kernel Use-After-Free when a command finished processing
+	(CVE-2024-45063).  The ctl_write_buffer and ctl_read_buffer functions
+	allocated memory to be returned to userspace, without initializing
+	it (CVE-2024-8178).  The ctl_report_supported_opcodes function did
+	not sufficiently validate a field provided by userspace, allowing
+	an arbitrary write to a limited amount of kernel help memory
+	(CVE-2024-42416).  The ctl_request_sense function could expose up
+	to three bytes of the kernel heap to userspace (CVE-2024-43110).</p>
+	<p>Guest virtual machines in the bhyve hypervisor can send SCSI commands
+	to the corresponding kernel driver via the virtio_scsi interface.
+	This provides guests with direct access to the vulnerabilities
+	covered by this advisory.</p>
+	<p>The CAM Target Layer iSCSI target daemon ctld(8) accepts incoming
+	iSCSI connections, performs authentication and passes connections
+	to the kernel ctl(4) target layer.</p>
+	<h1>Impact:</h1>
+	<p>Malicious software running in a guest VM that exposes virtio_scsi
+	can exploit the vulnerabilities to achieve code execution on the
+	host in the bhyve userspace process, which typically runs as root.
+	Note that bhyve runs in a Capsicum sandbox, so malicious code is
+	constrained by the capabilities available to the bhyve process.</p>
+	<p>A malicious iSCSI initiator could achieve remote code execution on
+	the iSCSI target host.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-8178</cvename>
+      <cvename>CVE-2024-42416</cvename>
+      <cvename>CVE-2024-43110,</cvename>
+      <freebsdsa>SA-24:11.ctl</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2024-09-04</discovery>
+      <entry>2024-09-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="56d76414-6b50-11ef-9a62-002590c1f29c">
+    <topic>FreeBSD -- bhyve(8) privileged guest escape via TPM device passthrough</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>14.1</ge><lt>14.1_4</lt></range>
+	<range><ge>14.0</ge><lt>14.0_10</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>bhyve can be configured to provide access to the host's TPM
+	device, where it passes the communication through an emulated device
+	provided to the guest.  This may be performed on the command-line
+	by starting bhyve with the `-l tpm,passthru,/dev/tpmX` parameters.</p>
+	<p>The MMIO handler for the emulated device did not validate the offset
+	and size of the memory access correctly, allowing guests to read
+	and write memory contents outside of the memory area effectively
+	allocated.</p>
+	<h1>Impact:</h1>
+	<p>Malicious software running in a guest VM can exploit the buffer
+	overflow to achieve code execution on the host in the bhyve userspace
+	process, which typically runs as root.  Note that bhyve runs in a
+	Capsicum sandbox, so malicious code is constrained by the capabilities
+	available to the bhyve process.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-41928</cvename>
+      <freebsdsa>SA-24:10.bhyve</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2024-09-04</discovery>
+      <entry>2024-09-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8d1f9adf-6b4f-11ef-9a62-002590c1f29c">
+    <topic>FreeBSD -- Multiple vulnerabilities in libnv</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>14.1</ge><lt>14.1_4</lt></range>
+	<range><ge>14.0</ge><lt>14.0_10</lt></range>
+	<range><ge>13.3</ge><lt>13.3_6</lt></range>
+      </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>14.1</ge><lt>14.1_4</lt></range>
+	<range><ge>14.0</ge><lt>14.0_10</lt></range>
+	<range><ge>13.3</ge><lt>13.3_6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>CVE-2024-45287 is a vulnerability that affects both the kernel
+	and userland.  A malicious value of size in a structure of packed
+	libnv can cause an integer overflow, leading to the allocation of
+	a smaller buffer than required for the parsed data.</p>
+	<p>CVE-2024-45288 is a vulnerability that affects both the kernel and
+	userland.  A missing null-termination character in the last element
+	of an nvlist array string can lead to writing outside the allocated
+	buffer.</p>
+	<h1>Impact:</h1>
+	<p>It is possible for an attacker to overwrite portions of memory
+	(in userland or the kernel) as the allocated buffer might be smaller
+	than the data received from a malicious process.  This vulnerability
+	could result in privilege escalation or cause a system panic.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-45287</cvename>
+      <cvename>CVE-2024-45288</cvename>
+      <freebsdsa>SA-24:09.libnv</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2024-09-04</discovery>
+      <entry>2024-09-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="21f505f4-6a1c-11ef-b611-84a93843eb75">
     <topic>OpenSSL -- Multiple vulnerabilities</topic>
     <affects>
