@@ -2298,6 +2298,7 @@
     SUBDIR += p5-Data-SExpression
     SUBDIR += p5-Data-Sah
     SUBDIR += p5-Data-Sah-Coerce
+    SUBDIR += p5-Data-Sah-DefaultValue
     SUBDIR += p5-Data-Sah-Normalize
     SUBDIR += p5-Data-Section
     SUBDIR += p5-Data-Section-Simple
