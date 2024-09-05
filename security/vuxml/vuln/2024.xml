@@ -1,3 +1,41 @@
+  <vuln vid="66907dab-6bb2-11ef-b813-4ccc6adda413">
+    <topic>qt5-webengine -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>qt5-webengine</name>
+	<range><lt>5.15.17.p3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=87-based">
+	  <p>Backports for 6 security bugs in Chromium:</p>
+	  <ul>
+	    <li>CVE-2024-5496: Use after free in Media Session</li>
+	    <li>CVE-2024-5846: Use after free in PDFium</li>
+	    <li>CVE-2024-6291: Use after free in Swiftshader</li>
+	    <li>CVE-2024-6989: Use after free in Loader</li>
+	    <li>CVE-2024-6996: Race in Frames</li>
+	    <li>CVE-2024-7536: Use after free in WebAudio</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-5496</cvename>
+      <cvename>CVE-2024-5846</cvename>
+      <cvename>CVE-2024-6291</cvename>
+      <cvename>CVE-2024-6989</cvename>
+      <cvename>CVE-2024-6996</cvename>
+      <cvename>CVE-2024-7536</cvename>
+      <url>https://code.qt.io/cgit/qt/qtwebengine-chromium.git/log/?h=87-based</url>
+    </references>
+    <dates>
+      <discovery>2024-08-05</discovery>
+      <entry>2024-09-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a3a1caf5-6ba1-11ef-b9e8-b42e991fc52e">
     <topic>firefox -- multiple vulnerabilities</topic>
     <affects>
