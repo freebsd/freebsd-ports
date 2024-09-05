@@ -2301,6 +2301,7 @@
     SUBDIR += p5-Data-Sah-DefaultValue
     SUBDIR += p5-Data-Sah-Filter
     SUBDIR += p5-Data-Sah-Normalize
+    SUBDIR += p5-Data-Sah-Resolve
     SUBDIR += p5-Data-Section
     SUBDIR += p5-Data-Section-Simple
     SUBDIR += p5-Data-Serializable

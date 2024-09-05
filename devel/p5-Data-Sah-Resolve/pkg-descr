@@ -1,0 +1,20 @@
+Data::Sah::Resolve provides resolve_schema. Sah schemas can be defined in terms
+of other schemas as base. The resolving process follows the (outermost) base
+schema until it finds a builtin type as the (innermost) base. It then returns a
+hash result (a DefHash with v=2) containing the type as well other information
+like the collected clause sets and others.
+
+This routine performs the following steps:
+1. Normalize the schema
+   Unless schema_is_normalized option is true, in which case schema is assumed
+   to be normalized already.
+2. Check if the schema's type is a builtin type
+   Currently this is done by checking if the module of the name
+   Data::Sah::Type::<type> is loadable. If it is a builtin type then we are
+   done.
+3. Check if the schema's type is the name of another schema
+   This is done by checking if Sah::Schema::<name> module exists and is
+   loadable. If this is the case then we retrieve the base schema from the
+   $schema variable in the Sah::Schema::<name> package and repeat the process
+   while accumulating and/or merging the clause sets.
+4. If schema's type is neither, we die.
