@@ -3459,3 +3459,4 @@ databases/mysql81-server||2024-09-02|Has expired: MySQL 8.1 is not supported by 
 databases/mysql81-client||2024-09-02|Has expired: MySQL 8.1 is not supported by the vendor and has unfixed vulnerabilies
 textproc/jarowinkler-cpp|devel/rapidfuzz-cpp|2024-09-03|Merged into devel/rapidfuzz-cpp
 devel/electron27||2024-09-03|Has expired: EOLed upstream, switch to newer version
+net/luasocket|net/lua-luasocket|2024-09-05|Move net/luasocket to net/lua-luasocket

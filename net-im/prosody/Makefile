@@ -1,6 +1,6 @@
 PORTNAME=	prosody
 DISTVERSION=	0.12.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	https://prosody.im/downloads/source/
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LUA_REFMODLIBDIR}/bit.so:devel/lua-bitop@${LUA_FLAVOR} \
 		${LUA_REFMODLIBDIR}/luaevent/core.so:devel/lua-libevent@${LUA_FLAVOR} \
 		${LUA_REFMODLIBDIR}/lunbound.so:dns/luaunbound@${LUA_FLAVOR} \
 		${LUA_REFMODLIBDIR}/lxp.so:textproc/luaexpat@${LUA_FLAVOR} \
-		${LUA_REFMODLIBDIR}/socket/core.so:net/luasocket@${LUA_FLAVOR} \
+		${LUA_REFMODLIBDIR}/socket/core.so:net/lua-luasocket@${LUA_FLAVOR} \
 		${LUA_REFMODLIBDIR}/ssl.so:security/luasec@${LUA_FLAVOR}
 
 USES=		cpe gmake lua:54 shebangfix ssl

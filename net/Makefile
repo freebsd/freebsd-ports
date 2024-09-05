@@ -447,8 +447,8 @@
     SUBDIR += linux-rl9-openldap
     SUBDIR += liveMedia
     SUBDIR += lla
+    SUBDIR += lua-luasocket
     SUBDIR += lualdap
-    SUBDIR += luasocket
     SUBDIR += mDNSResponder
     SUBDIR += macchanger
     SUBDIR += mad_fcl
