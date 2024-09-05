@@ -1,0 +1,2 @@
+Nodejs::Util provides utilities related to Node.js, including nodejs_available,
+nodejs_module_path and nodejs_path.
