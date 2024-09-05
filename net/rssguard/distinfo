@@ -1,3 +1,5 @@
 TIMESTAMP = 1721968666
 SHA256 (martinrotter-rssguard-4.7.3_GH0.tar.gz) = 3321c9ee595fd0362eaff618362621434f76538915f4cc03ac1d449464cecfee
 SIZE (martinrotter-rssguard-4.7.3_GH0.tar.gz) = 23567754
+SHA256 (b0e2b4bb5d8fffe7ef15.patch) = e7daa4788e82769406f511a1e20206eb8e8717756982293e7ff36ab31de6f019
+SIZE (b0e2b4bb5d8fffe7ef15.patch) = 2418

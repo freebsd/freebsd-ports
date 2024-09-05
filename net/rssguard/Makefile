@@ -1,9 +1,13 @@
 PORTNAME=	rssguard
 PORTVERSION=	4.7.3		# don't forget to update APP_REVISION below
+PORTREVISION=	1
 CATEGORIES=	net www
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	b0e2b4bb5d8fffe7ef15.patch:-p1
+
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Simple (yet powerful) Qt5 feed reader
+COMMENT=	Simple (yet powerful) Qt-based feed reader
 WWW=		https://github.com/martinrotter/rssguard
 
 LICENSE=	GPLv3+
