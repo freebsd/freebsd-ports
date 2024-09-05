@@ -1,3 +1,83 @@
+  <vuln vid="a3a1caf5-6ba1-11ef-b9e8-b42e991fc52e">
+    <topic>firefox -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>130.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1908496">
+	<p>This entry contains 8 vulnerabilities:</p>
+	<ul>
+	<li>CVE-2024-8381: A potentially exploitable type
+	confusion could be triggered when looking up a property
+	name on an object being used as the `with` environment.</li>
+	<li>CVE-2024-8382: Internal browser event interfaces were
+	exposed to web content when privileged EventHandler listener
+	callbacks ran for those events. Web content that tried to
+	use those interfaces would not be able to use them with
+	elevated privileges, but their presence would indicate
+	certain browser features had been used, such as when a user
+	opened the Dev Tools console.</li>
+	<li>CVE-2024-8383: Firefox normally asks for confirmation
+	before asking the operating system to find an application to
+	handle a scheme that the browser does not support. It did not
+	ask before doing so for the Usenet-related schemes news: and
+	snews:.  Since most operating systems don&apos;t have a
+	trusted newsreader installed by default, an unscrupulous
+	program that the user downloaded could register itself as a
+	handler. The website that served the application download
+	could then launch that application at will.</li>
+	<li>CVE-2024-8384: The JavaScript garbage collector could
+	mis-color cross-compartment objects if OOM conditions were
+	detected at the right point between two passes. This could have
+	led to memory corruption.</li>
+	<li>CVE-2024-8385: A difference in the handling of
+	StructFields and ArrayTypes in WASM could be used to trigger
+	an exploitable type confusion vulnerability.</li>
+	<li>CVE-2024-8386: If a site had been granted the permission
+	to open popup windows, it could cause Select elements to
+	appear on top of another site to perform a spoofing attack.</li>
+	<li>CVE-2024-8387: Memory safety bugs present in Firefox 129,
+	Firefox ESR 128.1, and Thunderbird 128.1. Some of these bugs
+	showed evidence of memory corruption and we presume that with
+	enough effort some of these could have been exploited to run
+	arbitrary code.</li>
+	<li>CVE-2024-8389: Memory safety bugs present in Firefox 129.
+	Some of these bugs showed evidence of memory corruption and we
+	presume that with enough effort some of these could have been
+	exploited to run arbitrary code.</li>
+  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-8381</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-8381</url>
+      <cvename>CVE-2024-8382</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-8382</url>
+      <cvename>CVE-2024-8383</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-8383</url>
+      <cvename>CVE-2024-8384</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-8384</url>
+      <cvename>CVE-2024-8385</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-8385</url>
+      <cvename>CVE-2024-8386</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-8386</url>
+      <cvename>CVE-2024-8387</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-8387</url>
+      <cvename>CVE-2024-8389</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-8389</url>
+    </references>
+    <dates>
+      <discovery>2024-09-03</discovery>
+      <entry>2024-09-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7e079ce2-6b51-11ef-9a62-002590c1f29c">
     <topic>FreeBSD -- umtx Kernel panic or Use-After-Free</topic>
     <affects>
