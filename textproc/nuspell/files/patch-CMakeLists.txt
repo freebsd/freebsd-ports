@@ -1,0 +1,7 @@
+--- CMakeLists.txt.orig	2024-07-04 11:45:35 UTC
++++ CMakeLists.txt
+@@ -77,4 +77,3 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/NuspellConfi
+ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/NuspellConfig.cmake
+ 	${CMAKE_CURRENT_BINARY_DIR}/NuspellConfigVersion.cmake
+ 	DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/nuspell)
+-install(FILES README.md DESTINATION ${CMAKE_INSTALL_DOCDIR})
