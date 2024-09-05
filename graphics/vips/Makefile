@@ -1,6 +1,5 @@
 PORTNAME=	vips
-PORTVERSION=	8.15.2
-PORTREVISION=	2
+PORTVERSION=	8.15.3
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/libvips/releases/download/v${PORTVERSION}/
 
@@ -58,6 +57,7 @@ FONTCONFIG_IMPLIES=	PANGO
 LIBARCHIVE_DESC=Save image pyramid via libarchive
 HIGHWAY_DESC=	SIMD support via Highway (preferred)
 IMAGEQUANT_DESC=Image Quantization support
+GRAPHICSMAGICK_DESC=	Image processing via GraphicsMagick
 MATIO_DESC=	Matlab MAT format support
 ORC_DESC=	Accelerate loops with ORC
 
