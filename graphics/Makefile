@@ -988,6 +988,7 @@
     SUBDIR += py-rasterio
     SUBDIR += py-rasterstats
     SUBDIR += py-rawkit
+    SUBDIR += py-rawpy
     SUBDIR += py-rich-pixels
     SUBDIR += py-s2
     SUBDIR += py-scikit-image
