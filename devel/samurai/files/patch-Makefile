@@ -9,7 +9,7 @@
  BINDIR=$(PREFIX)/bin
  MANDIR=$(PREFIX)/share/man
 -ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra -Wshadow -Wmissing-prototypes -Wpedantic -Wno-unused-parameter
-+ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra -Wshadow -Wmissing-prototypes -Wno-unused-parameter
++ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra -Wshadow -Wmissing-prototypes -Wno-unused-parameter -DHAVE_GETLOADAVG
  OBJ=\
  	build.o\
  	deps.o\
