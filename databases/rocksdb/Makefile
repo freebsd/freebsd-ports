@@ -60,6 +60,9 @@ ZSTD_MAKE_ENV_OFF=	ROCKSDB_DISABLE_ZSTD=yes
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
 CXXFLAGS+=	-Wno-inconsistent-missing-override -Wno-unused-parameter -Wno-unused-variable -Wno-unused-private-field
+.if ${COMPILER_VERSION} >= 170
+CXXFLAGS+=	-Wno-sync-alignment
+.endif
 .endif
 
 post-patch:
