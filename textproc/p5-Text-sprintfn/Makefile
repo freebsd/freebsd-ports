@@ -14,6 +14,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 PLIST_FILES=	${SITE_MAN3_REL}/Text::sprintfn.3.gz \
 		${SITE_PERL_REL}/Text/sprintfn.pm
 
