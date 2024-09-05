@@ -275,6 +275,7 @@ etc/xv_mgcsfx
 %%PORTDOCS%%%%DOCSDIR%%/manuals/xvdocs.pdf
 %%PORTDOCS%%%%DOCSDIR%%/manuals/xvdocs.ps
 %%PORTDOCS%%%%DOCSDIR%%/manuals/xvtitle.ps
+share/applications/xv.desktop
 share/man/fi/man1/xv.1.gz
 share/man/man1/bggen.1.gz
 share/man/man1/vdcomp.1.gz
@@ -282,3 +283,4 @@ share/man/man1/xcmap.1.gz
 share/man/man1/xv.1.gz
 share/man/man1/xvpictoppm.1.gz
 share/man/pl/man1/xvpictoppm.1.gz
+share/pixmaps/xv.xpm
