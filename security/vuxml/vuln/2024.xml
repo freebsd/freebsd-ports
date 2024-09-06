@@ -9,7 +9,7 @@
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
 	<p>alster@vinterdalen.se reports PR/281070:</p>
-	<blockquote cite="INSERT URL HERE">
+	<blockquote cite="https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=281070">
 	  <p>A new version of devel/binutils has been released fixing
 	     CVE-2023-1972, CVE-2023-25585, CVE-2023-25586, and
 	     CVE-2023-25588.
@@ -18,7 +18,6 @@
 	</body>
     </description>
     <references>
-      <url>https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=281070</url>
       <cvename>CVE-2023-1972</cvename>
       <cvename>CVE-2023-25585</cvename>
       <cvename>CVE-2023-25586</cvename>
