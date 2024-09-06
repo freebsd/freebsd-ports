@@ -93,7 +93,6 @@ MASTER_SITES_QSCI2=	RIVERBANK/QScintilla/${PORTVERSION} \
 # Where noted, the ports are epoched and the py-${comp}-PATH variables,
 # below, should have a suitable epoch appended to the version.
 SIP_VERSION=		6.8.3	# ,1
-SIP4_VERSION=		4.19.25
 QSCI2_VERSION=		2.14.1
 PYQT5_VERSION=		5.15.10
 PYQT6_VERSION=		6.7.0
@@ -111,7 +110,6 @@ PYQT6SIP_VERSION=	13.6.0
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=270358
 PYQTBUILDER_VERSION=	1.15.4
 
-SIP4_DISTNAME=		sip-${SIP4_VERSION}
 PYQT5_DISTNAME=		PyQt5-${PYQT5_VERSION}
 PYQT6_DISTNAME=		PyQt6-${PYQT6_VERSION}
 PYQT5SIP_DISTNAME=	PyQt5_sip-${PYQT5SIP_VERSION}
@@ -180,7 +178,7 @@ py-datavis3d_PORT=		x11-toolkits/${PYQT_RELNAME}-datavis3d
 py-networkauth_PORT=		net/${PYQT_RELNAME}-networkauth
 py-webengine_PORT=		www/${PYQT_RELNAME}-webengine
 
-# The versionned executable of sip
+# The versioned executable of sip
 SIP=		${LOCALBASE}/bin/sip-build-${PYTHON_VER}
 
 # Relative directories
