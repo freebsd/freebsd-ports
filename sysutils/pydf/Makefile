@@ -12,6 +12,9 @@ WWW=		http://kassiopeia.juls.savba.sk/~garabik/software/pydf/
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Inactive upstream. Does not properly work on FreeBSD
+EXPIRATION_DATE=	2024-11-01
+
 SUB_FILES=	pkg-message
 
 USES=		python shebangfix
