@@ -1,5 +1,5 @@
 PORTNAME=	wine-mono
-DISTVERSION=	9.2.0
+DISTVERSION=	9.3.0
 DISTVERSIONSUFFIX=-x86
 CATEGORIES=	emulators
 MASTER_SITES=	http://dl.winehq.org/wine/wine-mono/${DISTVERSION}/
