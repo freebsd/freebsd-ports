@@ -11,7 +11,8 @@ WWW=		https://arbor-sim.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-BUILD_DEPENDS=	pybind11>0:devel/pybind11 \
+BUILD_DEPENDS=	gmake:devel/gmake \
+		pybind11>0:devel/pybind11 \
 		nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libarbor.so:science/arbor
 
