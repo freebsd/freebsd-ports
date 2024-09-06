@@ -1,6 +1,6 @@
 PORTNAME=	kitty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.36.1
+DISTVERSION=	0.36.2
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -16,9 +16,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>0:textproc/py-furo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx-inline-tabs>0:textproc/py-sphinx-inline-tabs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinxext-opengraph>0:textproc/py-sphinxext-opengraph@${PY_FLAVOR} \
 		nerd-fonts>=3.1.1:x11-fonts/nerd-fonts \
-		urw-base35-fonts>=20200910:x11-fonts/urw-base35-fonts \
 		simde>=0.7.6:devel/simde \
 		sphinx-build:textproc/py-sphinx@${PY_FLAVOR} \
+		urw-base35-fonts>=20200910:x11-fonts/urw-base35-fonts \
 		wayland-protocols>=0:graphics/wayland-protocols
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libdbus-1.so:devel/dbus \
@@ -33,8 +33,6 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libwayland-cursor.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxxhash.so:devel/xxhash
-
-DOCS_BUILD_DEPENDS=	roboto-fonts-ttf>=2.134:x11-fonts/roboto-fonts-ttf
 
 USES=		compiler:c11 cpe desktop-file-utils gettext-runtime gl gmake \
 		go:1.22,modules magick pkgconfig python shebangfix ssl tar:xz \
@@ -67,8 +65,9 @@ _STRIP_TARGETS=	kitty/fast_data_types.so kitty/glfw-x11.so \
 
 _EMPTY_DIRS=	kittens/choose kittens/diff kittens/unicode_input kittens kitty
 
-OPTIONS_DEFINE=	DOCS
-DOCS_MAKE_ENV=	BUILD_DOCS=yes
+OPTIONS_DEFINE=		DOCS
+DOCS_BUILD_DEPENDS=	roboto-fonts-ttf>=2.134:x11-fonts/roboto-fonts-ttf
+DOCS_MAKE_ENV=		BUILD_DOCS=yes
 
 .include <bsd.port.options.mk>
 
@@ -95,6 +94,8 @@ post-patch:
 		${WRKSRC}/setup.py
 	${REINPLACE_CMD} -e "s:%%DATADIR%%:${DATADIR}:1" \
 		${WRKSRC}/shell-integration/fish/vendor_conf.d/kitty-shell-integration.fish
+	${REINPLACE_CMD} -e "s:^\(go \)1.23:\1${GO_VERSION}:1" \
+		${WRKSRC}/go.mod
 
 # For librsync, we need to set header and library path
 do-build:
