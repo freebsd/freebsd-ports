@@ -3,7 +3,7 @@
     <affects>
       <package>
 	<name>binutils</name>
-	<range><lt>2.43</lt></range>
+	<range><lt>2.43,1</lt></range>
       </package>
     </affects>
     <description>
