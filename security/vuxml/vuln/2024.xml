@@ -1,3 +1,29 @@
+  <vuln vid="f5d0cfe7-6ba6-11ef-858b-23eeba13701a">
+    <topic>gitea -- multiple issues</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.22.2</lt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+       <h1>Problem Description:</h1>
+       <ul>
+       <li>Replace v-html with v-text in search inputbox</li>
+       <li>Fix nuget/conan/container packages upload bugs</li>
+       </ul>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.22.2</url>
+    </references>
+    <dates>
+      <discovery>2024-09-03</discovery>
+      <entry>2024-09-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="66907dab-6bb2-11ef-b813-4ccc6adda413">
     <topic>qt5-webengine -- Multiple vulnerabilities</topic>
     <affects>
