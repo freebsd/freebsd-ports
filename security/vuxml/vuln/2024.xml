@@ -228,7 +228,7 @@
     <references>
       <cvename>CVE-2024-8178</cvename>
       <cvename>CVE-2024-42416</cvename>
-      <cvename>CVE-2024-43110,</cvename>
+      <cvename>CVE-2024-43110</cvename>
       <freebsdsa>SA-24:11.ctl</freebsdsa>
     </references>
     <dates>
