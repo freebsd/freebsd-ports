@@ -1,3 +1,36 @@
+  <vuln vid="a5e13973-6c75-11ef-858b-23eeba13701a">
+    <topic>forgejo -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>forgejo</name>
+	<range><lt>8.0.3</lt></range>
+      </package>
+      <package>
+	<name>forgejo7</name>
+	<range><lt>7.0.9</lt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+       <h1>Problem Description:</h1>
+       <ul>
+       <li>Replace v-html with v-text in search inputbox</li>
+       <li>Upgrade webpack to v5.94.0 as a precaution to mitigate
+       CVE-2024-43788, although we were not yet able to confirm that this
+       can be exploited in Forgejo.</li>
+       </ul>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-43788</cvename>
+      <url>https://codeberg.org/forgejo/forgejo/milestone/8231</url>
+    </references>
+    <dates>
+      <discovery>2024-09-03</discovery>
+      <entry>2024-09-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="943f8915-6c5d-11ef-810a-f8b46a88f42c">
     <topic> -- </topic>
     <affects>
