@@ -1,3 +1,35 @@
+  <vuln vid="943f8915-6c5d-11ef-810a-f8b46a88f42c">
+    <topic> -- </topic>
+    <affects>
+      <package>
+	<name>binutils</name>
+	<range><lt>2.43</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>alster@vinterdalen.se reports PR/281070:</p>
+	<blockquote cite="INSERT URL HERE">
+	  <p>A new version of devel/binutils has been released fixing
+	     CVE-2023-1972, CVE-2023-25585, CVE-2023-25586, and
+	     CVE-2023-25588.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=281070</url>
+      <cvename>CVE-2023-1972</cvename>
+      <cvename>CVE-2023-25585</cvename>
+      <cvename>CVE-2023-25586</cvename>
+      <cvename>CVE-2023-25588</cvename>
+    </references>
+    <dates>
+      <discovery>2024-08-25</discovery>
+      <entry>2024-09-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f5d0cfe7-6ba6-11ef-858b-23eeba13701a">
     <topic>gitea -- multiple issues</topic>
     <affects>
