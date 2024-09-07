@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-graphql
-PORTVERSION=	0.28.2
+PORTVERSION=	0.28.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
