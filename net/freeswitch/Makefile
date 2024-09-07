@@ -1,6 +1,5 @@
 PORTNAME=	freeswitch
-PORTVERSION=	1.10.11
-PORTREVISION=	1
+DISTVERSION=	1.10.12
 CATEGORIES=	net
 MASTER_SITES=	https://files.freeswitch.org/releases/freeswitch/ \
 		https://files.freeswitch.org/releases/sounds/:sounds
