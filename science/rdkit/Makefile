@@ -2,7 +2,7 @@ PORTNAME=	rdkit
 DISTVERSIONPREFIX=	Release_
 DISTVERSION=	2024_03_6
 CATEGORIES=	science
-MASTER_SITES=	https://fonts.google.com/download?family=Comic%20Neue&dummy=/:font
+MASTER_SITES=	LOCAL/yuri/:font # unstable, changing font file: https://fonts.google.com/download?family=Comic%20Neue&dummy=/:font
 DISTFILES=	ComicNeue-Regular.ttf:font
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	${DISTFILES:C/:.*//:N*.ttf}
