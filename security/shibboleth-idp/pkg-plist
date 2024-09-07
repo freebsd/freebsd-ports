@@ -167,9 +167,7 @@ sbin/shibboleth-idp.sh
 @dir %%ETCDIR%%
 @sample %%EXAMPLESDIR%%/etc/jetty-requestlog.xml %%WWWDIR%%/etc/jetty-requestlog.xml
 @sample %%EXAMPLESDIR%%/index.html %%WWWDIR%%/webapps/ROOT/index.html
-@sample %%EXAMPLESDIR%%/modules/idp-logging.mod %%WWWDIR%%/modules/idp-logging.mod
 @sample %%EXAMPLESDIR%%/modules/idp.mod %%WWWDIR%%/modules/idp.mod
-@sample %%EXAMPLESDIR%%/resources/logback-access.xml %%WWWDIR%%/resources/logback-access.xml
 @sample %%EXAMPLESDIR%%/resources/logback.xml %%WWWDIR%%/resources/logback.xml
 @sample %%EXAMPLESDIR%%/start.d/http.ini %%WWWDIR%%/start.d/http.ini
 @mode 640
