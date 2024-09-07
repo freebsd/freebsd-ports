@@ -7008,6 +7008,7 @@
     SUBDIR += rubygem-ddmemoize
     SUBDIR += rubygem-ddmetrics
     SUBDIR += rubygem-ddplugin
+    SUBDIR += rubygem-dead_end
     SUBDIR += rubygem-deb_version
     SUBDIR += rubygem-debase-ruby_core_source
     SUBDIR += rubygem-debug
