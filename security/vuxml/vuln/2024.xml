@@ -61,7 +61,7 @@
   </vuln>
 
   <vuln vid="943f8915-6c5d-11ef-810a-f8b46a88f42c">
-    <topic> -- </topic>
+    <topic>binutils -- Multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>binutils</name>
