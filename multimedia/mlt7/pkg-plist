@@ -233,6 +233,8 @@ share/man/man1/melt-7.1.gz
 %%PLUS%%%%DATADIR%%/plus/filter_shape.yml
 %%PLUS%%%%DATADIR%%/plus/filter_spot_remover.yml
 %%PLUS%%%%DATADIR%%/plus/filter_strobe.yml
+%%PLUS%%%%DATADIR%%/plus/filter_subtitle.yml
+%%PLUS%%%%DATADIR%%/plus/filter_subtitle_feed.yml
 %%PLUS%%%%DATADIR%%/plus/filter_text.yml
 %%PLUS%%%%DATADIR%%/plus/filter_threshold.yml
 %%PLUS%%%%DATADIR%%/plus/filter_timer.yml
@@ -255,6 +257,7 @@ share/man/man1/melt-7.1.gz
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/MPEG-2
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/MPEG-4
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/MPEG-4-ASP
+%%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/SVT-AV1
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/Slide-Deck-H264
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/Slide-Deck-HEVC
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/Sony-PSP
@@ -331,6 +334,7 @@ share/man/man1/melt-7.1.gz
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/ProRes 422
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/ProRes 444
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/ProRes HQ
+%%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/SVT-AV1
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/x264-high10
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/x265-main10
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/vp9
