@@ -1,6 +1,6 @@
 PORTNAME=	exiv2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.28.2
+DISTVERSION=	0.28.3
 PORTEPOCH=	1
 CATEGORIES=	graphics
 
@@ -13,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libexpat.so:textproc/expat2 \
-		libinih.so:devel/inih \
-		libpng.so:graphics/png
+		libinih.so:devel/inih
 
 USES=		cmake compiler:c++17-lang cpe dos2unix gettext-tools iconv \
 		localbase:ldflags pathfix shebangfix
@@ -47,7 +46,7 @@ NLS_CMAKE_BOOL=	EXIV2_ENABLE_NLS
 
 SAMPLE_CMAKE_BOOL=	EXIV2_BUILD_SAMPLES
 
-TEST_LIB_DEPENDS=	libgtest.so:devel/googletest
+TEST_BUILD_DEPENDS=	googletest>0:devel/googletest
 TEST_TEST_DEPENDS=	bash:shells/bash
 TEST_USES=		python:build,test
 TEST_CMAKE_BOOL=	EXIV2_BUILD_UNIT_TESTS
