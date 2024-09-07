@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=--verbose \
 		--without-gssapi \
 		--without-inotify \
 		--without-krb5 \
-		--with-mingw CROSSCC="clang" CROSSCFLAGS="-isystem ${FILESDIR}/clang" \
+		--with-mingw CROSSCC="clang" \
 		--without-netapi \
 		--without-opencl \
 		--without-osmesa \
