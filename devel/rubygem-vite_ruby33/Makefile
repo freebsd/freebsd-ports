@@ -19,6 +19,8 @@ USES=		gem
 
 NO_ARCH=	yes
 
+PORTSCOUT=	limit:^3\.3\.
+
 PLIST_FILES=	bin/vite
 
 .include <bsd.port.mk>
