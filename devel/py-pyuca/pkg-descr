@@ -1,0 +1,3 @@
+pyuca is a Python implementation of the Unicode Collation Algorithm (UCA).
+
+UCA is used to sort non-English strings properly.
