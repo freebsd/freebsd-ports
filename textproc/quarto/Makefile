@@ -1,6 +1,6 @@
 PORTNAME=	quarto
 DISTVERSION=	1.6.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/quarto-dev/quarto-cli/releases/download/v${DISTVERSION}/
 DISTFILES=	quarto-${DISTVERSION}-linux-amd64.tar.gz # same for all architectures
