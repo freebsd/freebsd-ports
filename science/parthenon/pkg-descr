@@ -1,0 +1,7 @@
+Gemmi is a library, accompanied by a set of programs, developed primarily for
+use in macromolecular crystallography (MX). For working with:
+* macromolecular models (content of PDB, PDBx/mmCIF and mmJSON files),
+* refinement restraints (CIF files),
+* reflection data (MTZ and mmCIF formats),
+* data on a 3D grid (electron density maps, masks, MRC/CCP4 format)
+* crystallographic symmetry.

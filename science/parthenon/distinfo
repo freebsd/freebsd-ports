@@ -1,0 +1,7 @@
+TIMESTAMP = 1725728786
+SHA256 (parthenon-hpc-lab-parthenon-v24.08_GH0.tar.gz) = f90091c34aab814bb9f253439ad2bab5e2d00d7d60a37efd193b7950049317a4
+SIZE (parthenon-hpc-lab-parthenon-v24.08_GH0.tar.gz) = 2102958
+SHA256 (catchorg-Catch2-216713a_GH0.tar.gz) = 66e1045a3b551a579b3f041150ce5b0064e100cadcf5d2a35b7df22128434745
+SIZE (catchorg-Catch2-216713a_GH0.tar.gz) = 661701
+SHA256 (kokkos-kokkos-62d2b6c_GH0.tar.gz) = 63758bf4bfcb0696155bcc1e7eacfbf80a9fc0586727d09d7e826eed8eafd993
+SIZE (kokkos-kokkos-62d2b6c_GH0.tar.gz) = 2320481
