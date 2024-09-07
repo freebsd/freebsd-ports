@@ -1,3 +1,32 @@
+  <vuln vid="3e44c35f-6cf4-11ef-b813-4ccc6adda413">
+    <topic>exiv2 -- Out-of-bounds read in AsfVideo::streamProperties</topic>
+    <affects>
+      <package>
+	<name>exiv2</name>
+	<range><ge>0.28.0,1</ge><lt>0.28.3,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kevin Backhouse reports:</p>
+	<blockquote cite="https://github.com/Exiv2/exiv2/security/advisories/GHSA-38rv-8x93-pvrh">
+	  <p>An out-of-bounds read was found in Exiv2 version v0.28.2. The vulnerability
+	   is in the parser for the ASF video format, which was a new feature in v0.28.0,
+	   so Exiv2 versions before v0.28 are not affected. The out-of-bounds read is
+	   triggered when Exiv2 is used to read the metadata of a crafted video file.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-39695</cvename>
+      <url>https://github.com/Exiv2/exiv2/security/advisories/GHSA-38rv-8x93-pvrh</url>
+    </references>
+    <dates>
+      <discovery>2024-04-21</discovery>
+      <entry>2024-09-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a5e13973-6c75-11ef-858b-23eeba13701a">
     <topic>forgejo -- multiple vulnerabilities</topic>
     <affects>
