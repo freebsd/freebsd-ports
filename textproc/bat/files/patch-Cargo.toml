@@ -1,11 +1,11 @@
---- Cargo.toml.orig	2023-03-26 13:01:46.899016000 +0200
-+++ Cargo.toml	2023-03-26 13:02:31.310101000 +0200
-@@ -60,7 +60,7 @@
+--- Cargo.toml.orig	2024-04-12 00:28:10.859741000 -0300
++++ Cargo.toml	2024-04-12 00:28:17.686120000 -0300
+@@ -58,7 +58,7 @@
  semver = "1.0"
  path_abs = { version = "0.5", default-features = false }
- clircle = "0.3"
+ clircle = "0.4"
 -bugreport = { version = "0.5.0", optional = true }
 +bugreport = { version = "0.5.0", optional = true, default-features = false, features = ["git_hash", "format_markdown"]}
- dirs = { version = "5.0.0", optional = true }
- grep-cli = { version = "0.1.7", optional = true }
- regex = { version = "1.7.0", optional = true }
+ etcetera = { version = "0.8.0", optional = true }
+ grep-cli = { version = "0.1.9", optional = true }
+ regex = { version = "1.8.3", optional = true }
