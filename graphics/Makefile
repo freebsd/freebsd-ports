@@ -1008,6 +1008,7 @@
     SUBDIR += py-urbansim
     SUBDIR += py-utm
     SUBDIR += py-vecrec
+    SUBDIR += py-vispy
     SUBDIR += py-visvis
     SUBDIR += py-wand
     SUBDIR += py-webcolors
