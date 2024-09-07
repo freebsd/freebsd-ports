@@ -1,3 +1,31 @@
+  <vuln vid="7ade3c38-6d1f-11ef-ae11-b42e991fc52e">
+    <topic>firefox -- Potential memory corruption and exploitable crash</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>128</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1901411">
+	  <p>An error in the ECMA-262 specification relating to Async Generators
+	could have resulted in a type confusion, potentially leading to
+	memory corruption and an exploitable crash.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-7652</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-7652</url>
+    </references>
+    <dates>
+      <discovery>2024-09-06</discovery>
+      <entry>2024-09-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3e44c35f-6cf4-11ef-b813-4ccc6adda413">
     <topic>exiv2 -- Out-of-bounds read in AsfVideo::streamProperties</topic>
     <affects>
