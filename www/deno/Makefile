@@ -1,7 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.45.2
-PORTREVISION=	1
+DISTVERSION=	1.46.2
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -19,19 +18,31 @@ BUILD_DEPENDS=	gn:devel/gn \
 LIB_DEPENDS=	libzstd.so:archivers/zstd \
 		libonig.so:devel/oniguruma
 
-USES=		cargo compiler:c++20-lang cpe gmake gnome ninja:build pkgconfig:build python:3.9+,build
+USES=		cargo cpe gmake gnome llvm:min=16,build ninja:build pkgconfig:build python:3.9+,build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	denoland
 
 USE_GNOME=	glib20
 
-V8_VERS=	0.97.0
+V8_VERS=	0.105.0
 
 CARGO_ENV+=	CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
 		NINJA=${NINJA_CMD} \
-		V8_FROM_SOURCE=1
+		V8_FROM_SOURCE=1 \
+		RUSTC_BOOTSTRAP=yes \
+		GN_ARGS="clang_use_chrome_plugins=false \
+                fatal_linker_warnings=false \
+		icu_use_data_file=false \
+                is_clang=true \
+                treat_warnings_as_errors=false \
+                use_custom_libcxx=false \
+                use_custom_libunwind=true \
+                use_lld=true \
+                use_sysroot=false \
+                use_system_libjpeg=true \
+                use_udev=false"
 
 PLIST_FILES=	bin/${PORTNAME}
 
@@ -39,28 +50,16 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 CARGO_INSTALL=	no
 
-.include <bsd.port.pre.mk>
-.if ${COMPILER_VERSION} != 160
-LLVM_DEFAULT=		16
-BUILD_DEPENDS+=		clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-BINARY_ALIAS+=		cpp=${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT} \
-			cc=${LOCALBASE}/bin/clang${LLVM_DEFAULT} \
-			c++=${LOCALBASE}/bin/clang++${LLVM_DEFAULT} \
-			ar=${LOCALBASE}/bin/llvm-ar${LLVM_DEFAULT} \
-			nm=${LOCALBASE}/bin/llvm-nm${LLVM_DEFAULT} \
-			ld=${LOCALBASE}/bin/ld.lld${LLVM_DEFAULT}
-.else
-BINARY_ALIAS+=		ar=/usr/bin/llvm-ar \
-			nm=/usr/bin/llvm-nm
-.endif
-
 post-patch:
 	${REINPLACE_CMD} "s|%%LOCALBASE%%|${LOCALBASE}|" \
 		${WRKSRC}/cargo-crates/v8-${V8_VERS}/buildtools/third_party/libc++/BUILD.gn
 	${MKDIR} ${WRKSRC}/cargo-crates/v8-${V8_VERS}/v8/tools/builtins-pgo/arm64.profile
 	${MKDIR} ${WRKSRC}/cargo-crates/v8-${V8_VERS}/v8/tools/builtins-pgo/x64.profile
 
+	${MKDIR} ${WRKSRC}/cargo-crates/v8-${V8_VERS}/third_party/icu/common
+	${CP} ${WRKSRC}/cargo-crates/deno_core_icudata-0.0.73/src/icudtl.dat ${WRKSRC}/cargo-crates/v8-${V8_VERS}/third_party/icu/common/
+
 do-install:
 	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/deno ${STAGEDIR}${LOCALBASE}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

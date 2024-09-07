@@ -1,0 +1,11 @@
+--- cargo-crates/v8-0.105.0/build/toolchain/toolchain.gni.orig	2024-03-22 08:19:40 UTC
++++ cargo-crates/v8-0.105.0/build/toolchain/toolchain.gni
+@@ -68,7 +68,7 @@ if (host_os == "mac") {
+   host_shlib_extension = ".dylib"
+ } else if (host_os == "win") {
+   host_shlib_extension = ".dll"
+-} else if (host_os == "linux" || host_os == "aix" || host_os == "zos") {
++} else if (is_posix) {
+   host_shlib_extension = ".so"
+ } else {
+   assert(false, "Host platform not supported")

@@ -1,0 +1,13 @@
+--- cargo-crates/v8-0.105.0/build/linux/chrome.map.orig	2021-02-25 20:45:34 UTC
++++ cargo-crates/v8-0.105.0/build/linux/chrome.map
+@@ -20,6 +20,10 @@ global:
+   # Program entry point.
+   _start;
+ 
++  # FreeBSD specific variables.
++  __progname;
++  environ;
++
+   # Memory allocation symbols.  We want chrome and any libraries to
+   # share the same heap, so it is correct to export these symbols.
+   aligned_alloc;
