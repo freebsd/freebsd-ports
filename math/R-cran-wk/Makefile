@@ -1,5 +1,5 @@
 PORTNAME=	wk
-DISTVERSION=	0.9.2
+DISTVERSION=	0.9.3
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -13,6 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 TEST_DEPENDS=	R-cran-testthat>0:devel/R-cran-testthat \
 		R-cran-vctrs>0:devel/R-cran-vctrs
 
-USES=		compiler:c++11-lang cran:auto-plist,compiles
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
