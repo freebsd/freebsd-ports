@@ -1,6 +1,6 @@
 PORTNAME=	quarto
 DISTVERSION=	1.6.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/quarto-dev/quarto-cli/releases/download/v${DISTVERSION}/
 DISTFILES=	quarto-${DISTVERSION}-linux-amd64.tar.gz # same for all architectures
@@ -32,6 +32,13 @@ XARCH!=		uname -m
 PLIST_SUB+=	XARCH=${XARCH}
 
 NO_BUILD=	yes
+
+OPTIONS_DEFINE=	R
+
+R_DESC=		Install R dependency
+R_RUN_DEPENDS=	R:math/R \
+		R-cran-knitr>0:print/R-cran-knitr
+		#R-cran-rmarkdown>0:textproc/R-cran-rmarkdown # conflicts with hs-pandoc32
 
 post-patch:
 	# replace tokens in the quarto executable and in run-tests.sh
