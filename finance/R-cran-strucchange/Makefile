@@ -1,6 +1,5 @@
 PORTNAME=	strucchange
-DISTVERSION=	1.5-3
-PORTREVISION=	1
+DISTVERSION=	1.5-4
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,11 +9,9 @@ WWW=		https://cran.r-project.org/web/packages/strucchange/
 
 LICENSE=	GPLv2+
 
-CRAN_DEPENDS=	R-cran-zoo>0:math/R-cran-zoo \
-		R-cran-sandwich>0:math/R-cran-sandwich
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	R-cran-sandwich>0:math/R-cran-sandwich \
+		R-cran-zoo>0:math/R-cran-zoo
 
-USES=	cran:auto-plist,compiles
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
