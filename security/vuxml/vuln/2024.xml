@@ -160,7 +160,7 @@
     <affects>
       <package>
 	<name>firefox</name>
-	<range><lt>130.0_1</lt></range>
+	<range><lt>130.0_1,2</lt></range>
       </package>
     </affects>
     <description>
@@ -604,7 +604,7 @@
     <affects>
       <package>
 	<name>firefox</name>
-	<range><lt>129.0,1</lt></range>
+	<range><lt>129.0,2</lt></range>
       </package>
     </affects>
     <description>
@@ -759,7 +759,7 @@
     <affects>
       <package>
 	<name>firefox</name>
-	<range><lt>127,1</lt></range>
+	<range><lt>127,2</lt></range>
       </package>
     </affects>
     <description>
@@ -995,7 +995,7 @@
     <affects>
       <package>
 	<name>firefox</name>
-	<range><lt>129,1</lt></range>
+	<range><lt>129,2</lt></range>
       </package>
     </affects>
     <description>
@@ -1206,7 +1206,7 @@
     <affects>
       <package>
 	<name>mozilla</name>
-	<range><lt>129.0,1</lt></range>
+	<range><lt>129.0,2</lt></range>
       </package>
     </affects>
     <description>
@@ -1447,7 +1447,7 @@ All of these are related to the CometVisu add-on for openHAB - if you are a user
     <affects>
       <package>
 	<name>firefox</name>
-	<range><lt>127.0,1</lt></range>
+	<range><lt>127.0,2</lt></range>
       </package>
     </affects>
     <description>
