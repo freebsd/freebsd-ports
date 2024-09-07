@@ -3,7 +3,7 @@
     <affects>
       <package>
 	<name>firefox</name>
-	<range><lt>128</lt></range>
+	<range><lt>128.0,2</lt></range>
       </package>
     </affects>
     <description>
