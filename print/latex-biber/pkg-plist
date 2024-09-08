@@ -15,9 +15,9 @@ bin/biber
 %%PERL5_MAN3%%/Biber::Input::file::biblatexml.3.gz
 %%PERL5_MAN3%%/Biber::Input::file::bibtex.3.gz
 %%PERL5_MAN3%%/Biber::Internals.3.gz
+%%PERL5_MAN3%%/Biber::LaTeX::Recode.3.gz
 %%PERL5_MAN3%%/Biber::LangTag.3.gz
 %%PERL5_MAN3%%/Biber::LangTags.3.gz
-%%PERL5_MAN3%%/Biber::LaTeX::Recode.3.gz
 %%PERL5_MAN3%%/Biber::Output::base.3.gz
 %%PERL5_MAN3%%/Biber::Output::bbl.3.gz
 %%PERL5_MAN3%%/Biber::Output::bblxml.3.gz
@@ -43,10 +43,10 @@ bin/biber
 %%SITE_PERL%%/Biber/Input/file/biblatexml.pm
 %%SITE_PERL%%/Biber/Input/file/bibtex.pm
 %%SITE_PERL%%/Biber/Internals.pm
-%%SITE_PERL%%/Biber/LangTag.pm
-%%SITE_PERL%%/Biber/LangTags.pm
 %%SITE_PERL%%/Biber/LaTeX/Recode.pm
 %%SITE_PERL%%/Biber/LaTeX/recode_data.xml
+%%SITE_PERL%%/Biber/LangTag.pm
+%%SITE_PERL%%/Biber/LangTags.pm
 %%SITE_PERL%%/Biber/Output/base.pm
 %%SITE_PERL%%/Biber/Output/bbl.pm
 %%SITE_PERL%%/Biber/Output/bblxml.pm
