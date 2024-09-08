@@ -9,6 +9,24 @@
      "Jinja2 >= 3.0.0",  # issue #4717
      "munkres",
      "opentypespec",
+@@ -66,7 +66,7 @@ shaperglot = [
+ ]
+ 
+ shaperglot = [
+-    "shaperglot >= 0.3.0, < 0.6.0",
++    "shaperglot >= 0.3.0, < 0.7.0",
+     # versions prior to v0.3.0 had too stric dependency rules
+     # for other deps such as protobuf, making it harder satisfy all dependencies.
+ ]
+@@ -79,7 +79,7 @@ googlefontsalwayslatest = [
+     "gflanguages >= 0.6.2, == 0.6.*",
+     "gfsubsets >= 2024.5.9",
+     "glyphsets >= 1.0.0, == 1.*",
+-    "shaperglot >= 0.5.0, == 0.5.*",
++    "shaperglot >= 0.3.0, < 0.7.0",
+ ]
+ 
+ 
 @@ -112,7 +112,7 @@ googlefonts = [
      "fonttools[lxml,unicode]",
      # (see https://github.com/googlefonts/gflanguages/pull/7)
