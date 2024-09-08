@@ -1,5 +1,5 @@
---- ../CGAL-5.6.1/include/CGAL/boost/graph/iterator.h	2024-02-24 21:04:12 UTC
-+++ ../CGAL-5.6.1/include/CGAL/boost/graph/iterator.h
+--- ../CGAL-5.6/include/CGAL/boost/graph/iterator.h	2024-02-24 21:04:12 UTC
++++ ../CGAL-5.6/include/CGAL/boost/graph/iterator.h
 @@ -214,11 +214,6 @@ class Halfedge_around_source_iterator { (public)
  
  #ifndef DOXYGEN_RUNNING
