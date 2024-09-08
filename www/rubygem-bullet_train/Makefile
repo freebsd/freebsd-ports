@@ -1,5 +1,5 @@
 PORTNAME=	bullet_train
-PORTVERSION=	1.7.20
+PORTVERSION=	1.7.21
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -33,7 +33,7 @@ RUN_DEPENDS=	rubygem-awesome_print>=0:devel/rubygem-awesome_print \
 		rubygem-microscope>=0:databases/rubygem-microscope \
 		rubygem-nice_partials>=0.9<1:devel/rubygem-nice_partials \
 		rubygem-omniauth>=0:security/rubygem-omniauth \
-		rubygem-pagy>=0:devel/rubygem-pagy \
+		rubygem-pagy6>=0<7:devel/rubygem-pagy6 \
 		rubygem-possessive>=0:www/rubygem-possessive \
 		rubygem-premailer-rails-rails71>=0:mail/rubygem-premailer-rails-rails71 \
 		rubygem-rails71>=6.0.0:www/rubygem-rails71 \
