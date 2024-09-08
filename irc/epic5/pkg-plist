@@ -20,7 +20,6 @@ share/man/man1/epic5.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/TS4
 %%PORTDOCS%%%%DOCSDIR%%/UPDATES
 %%PORTDOCS%%%%DOCSDIR%%/WISHLIST
-%%PORTDOCS%%%%DOCSDIR%%/antiflooding
 %%PORTDOCS%%%%DOCSDIR%%/colors
 %%PORTDOCS%%%%DOCSDIR%%/dccresum.txt
 %%PORTDOCS%%%%DOCSDIR%%/entry_points
@@ -50,6 +49,7 @@ share/man/man1/epic5.1.gz
 %%DATADIR%%/script/autoquery
 %%DATADIR%%/script/ban
 %%DATADIR%%/script/builtins
+%%DATADIR%%/script/capctl
 %%DATADIR%%/script/chanmonitor
 %%DATADIR%%/script/colors
 %%DATADIR%%/script/commandqueues
@@ -61,12 +61,15 @@ share/man/man1/epic5.1.gz
 %%DATADIR%%/script/dbmdump
 %%DATADIR%%/script/dcc_ports
 %%DATADIR%%/script/debug.irc
+%%DATADIR%%/script/debugwin
 %%DATADIR%%/script/dump
 %%DATADIR%%/script/edit_topic
 %%DATADIR%%/script/epic-crypt-gpg
 %%DATADIR%%/script/epic-crypt-gpg-aa
 %%DATADIR%%/script/epic.py
+%%DATADIR%%/script/epiclogo
 %%DATADIR%%/script/epicrc.example
+%%DATADIR%%/script/epicsol.txt
 %%DATADIR%%/script/files
 %%DATADIR%%/script/find_ssl_root_certs
 %%DATADIR%%/script/floodprot
@@ -111,6 +114,7 @@ share/man/man1/epic5.1.gz
 %%DATADIR%%/script/renumber
 %%DATADIR%%/script/revdcc
 %%DATADIR%%/script/sasl_auth
+%%DATADIR%%/script/sasl_external
 %%DATADIR%%/script/sasl_nistp256
 %%DATADIR%%/script/save
 %%DATADIR%%/script/scan
