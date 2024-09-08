@@ -12,6 +12,3 @@ launch the Wine Windows API emulator or to ease cross-compilation and
 cross-debugging.
 
 As QEMU requires no host kernel patches to run, it is very safe and easy to use.
-
-See also the preconfigured system images on http://oszoo.org/
-Many live cd isos also work.
