@@ -1,5 +1,5 @@
 PORTNAME=	openapi-core
-PORTVERSION=	0.19.3
+PORTVERSION=	0.19.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -46,6 +46,6 @@ FASTAPI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastapi>=0.111<0.113:www/py-fastapi@
 FLASK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask>=0:www/py-flask@${PY_FLAVOR}
 REQUESTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 STARLETTE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aioitertools>=0.11.0<0.12:devel/py-aioitertools@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}starlette>=0.26.1<0.38.0:www/py-starlette@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}starlette>=0.26.1<0.39.0:www/py-starlette@${PY_FLAVOR}
 
 .include <bsd.port.mk>
