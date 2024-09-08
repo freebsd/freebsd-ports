@@ -102,10 +102,6 @@ newentry:
 	@${ECHO_CMD} 'Also, <gt> tags are usually wrong in ranges. Use <ge> where adequate.'
 	@${ECHO_CMD}
 	@${SH} ${FILESDIR}/newentry.sh "${VUXML_CURRENT_FILE}" "CVE_ID=${CVE_ID}" "SA_ID=${SA_ID}"
-	@${ECHO_CMD}
-	@${ECHO_CMD} 'Be sure to get versioning right for PORTEPOCH and remember possible linux-* ports!'
-	@${ECHO_CMD} 'Also, <gt> tags are usually wrong in ranges. Use <ge> where adequate.'
-	@${ECHO_CMD}
 
 .if defined(VID) && !empty(VID)
 html: work/${VID}.html
