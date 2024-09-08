@@ -1,5 +1,5 @@
 PORTNAME=	libdatadog
-PORTVERSION=	10.0.0.1.0
+PORTVERSION=	11.0.0.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,6 +15,7 @@ USES=		gem
 
 NO_ARCH=	yes
 
+# Clean up bundled libraries
 post-patch:
 	@${RM} -r ${WRKSR}/vendor/
 
