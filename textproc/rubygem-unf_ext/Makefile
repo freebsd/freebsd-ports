@@ -1,5 +1,5 @@
 PORTNAME=	unf_ext
-PORTVERSION=	0.0.8.2
+PORTVERSION=	0.0.9.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
