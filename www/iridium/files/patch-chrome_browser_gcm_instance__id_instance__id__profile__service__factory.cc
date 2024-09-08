@@ -1,4 +1,4 @@
---- chrome/browser/gcm/instance_id/instance_id_profile_service_factory.cc.orig	2023-10-21 11:51:27 UTC
+--- chrome/browser/gcm/instance_id/instance_id_profile_service_factory.cc.orig	2024-08-27 06:28:16 UTC
 +++ chrome/browser/gcm/instance_id/instance_id_profile_service_factory.cc
 @@ -16,7 +16,7 @@ namespace instance_id {
  // static
@@ -9,7 +9,7 @@
    // On desktop, the guest profile is actually the primary OTR profile of
    // the "regular" guest profile.  The regular guest profile is never used
    // directly by users.  Also, user are not able to create child OTR profiles
-@@ -61,7 +61,7 @@ InstanceIDProfileServiceFactory::~InstanceIDProfileSer
+@@ -64,7 +64,7 @@ InstanceIDProfileServiceFactory::~InstanceIDProfileSer
  KeyedService* InstanceIDProfileServiceFactory::BuildServiceInstanceFor(
      content::BrowserContext* context) const {
    Profile* profile = Profile::FromBrowserContext(context);

@@ -3,7 +3,6 @@ PORTVERSION=	2.3.67
 PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.dk.debian.org/getdeb/%SUBDIR%/ \
-		http://ftp.heanet.ie/mirrors/www.getdeb.net/getdeb/%SUBDIR%/ \
 		http://mirrors.dotsrc.org/getdeb/%SUBDIR%/ \
 		http://servingzone.com/mirrors/getdeb/%SUBDIR%/
 MASTER_SITE_SUBDIR=	ubuntu/pool/games/v/vulture

@@ -1,4 +1,4 @@
---- nall/GNUmakefile.orig	2024-08-14 12:07:36 UTC
+--- nall/GNUmakefile.orig	2024-08-16 16:33:46 UTC
 +++ nall/GNUmakefile
 @@ -169,8 +169,6 @@ ifeq ($(build),debug)
    lto = false

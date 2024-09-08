@@ -226,6 +226,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/I18N/LangTags.pm
 %%PRIV_LIB%%/I18N/LangTags/Detect.pm
 %%PRIV_LIB%%/I18N/LangTags/List.pm
+%%PRIV_LIB%%/IO/Compress.pm
 %%PRIV_LIB%%/IO/Compress/Adapter/Bzip2.pm
 %%PRIV_LIB%%/IO/Compress/Adapter/Deflate.pm
 %%PRIV_LIB%%/IO/Compress/Adapter/Identity.pm
@@ -1119,6 +1120,8 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5400delta.1.gz
 %%MAN1%%/perl5410delta.1.gz
 %%MAN1%%/perl5411delta.1.gz
+%%MAN1%%/perl5412delta.1.gz
+%%MAN1%%/perl5413delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -1494,6 +1497,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/I18N::LangTags::List.3.gz
 %%MAN3%%/I18N::Langinfo.3.gz
 %%MAN3%%/IO.3.gz
+%%MAN3%%/IO::Compress.3.gz
 %%MAN3%%/IO::Compress::Base.3.gz
 %%MAN3%%/IO::Compress::Bzip2.3.gz
 %%MAN3%%/IO::Compress::Deflate.3.gz
@@ -1979,6 +1983,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/re.3.gz
 %%MAN3%%/sigtrap.3.gz
 %%MAN3%%/sort.3.gz
+%%MAN3%%/source::encoding.3.gz
 %%MAN3%%/stable.3.gz
 %%MAN3%%/strict.3.gz
 %%MAN3%%/subs.3.gz
@@ -2059,6 +2064,8 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5400delta.pod
 %%PRIV_LIB%%/pod/perl5410delta.pod
 %%PRIV_LIB%%/pod/perl5411delta.pod
+%%PRIV_LIB%%/pod/perl5412delta.pod
+%%PRIV_LIB%%/pod/perl5413delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
@@ -2215,6 +2222,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perlxstypemap.pod
 %%PRIV_LIB%%/sigtrap.pm
 %%PRIV_LIB%%/sort.pm
+%%PRIV_LIB%%/source/encoding.pm
 %%PRIV_LIB%%/stable.pm
 %%PRIV_LIB%%/strict.pm
 %%PRIV_LIB%%/subs.pm
@@ -2783,8 +2791,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 @dir %%SITE_ARCH%%/auto
 @dir %%SITE_PERL%%/man/man1
 @dir %%SITE_PERL%%/man/man3
-@postexec makewhatis %D/%%SITEMANPREFIX%%/man
-@postexec makewhatis %D/%%PERLMANPREFIX%%/man
 @rmtry %%PERLMANPREFIX%%/man/whatis
 @rmtry %%PERLMANPREFIX%%/man/mandoc.db
 @rmtry %%SITEMANPREFIX%%/man/whatis

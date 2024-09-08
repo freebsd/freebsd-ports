@@ -1,5 +1,5 @@
 PORTNAME=	chromium
-PORTVERSION=	127.0.6533.119
+PORTVERSION=	128.0.6613.119
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 CATEGORIES=	www wayland
@@ -219,8 +219,7 @@ WIDEVINE_DESC=		Depend on foreign-cdm to enable playback of DRM content
 WIDEVINE_RUN_DEPENDS=	foreign-cdm>0:www/foreign-cdm
 
 .include "Makefile.tests"
-TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX} \
-			test_fonts-336e775eec536b2d785cc80eff6ac39051931286.tar.gz:external
+TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
 TEST_ALL_TARGET=	${TEST_TARGETS}
 
 .include <bsd.port.options.mk>
@@ -277,10 +276,6 @@ pre-everything::
 	@${ECHO_MSG} "To build Chromium, you should have around 2GB of memory"
 	@${ECHO_MSG} "and around ${WANTSPACE} of free disk space."
 	@${ECHO_MSG}
-
-post-extract-TEST-on:
-	@${MKDIR} ${WRKSRC}/third_party/test_fonts/test_fonts
-	@${MV} ${WRKDIR}/test_fonts ${WRKSRC}/third_party/test_fonts/
 
 pre-configure:
 	# We used to remove bundled libraries to be sure that chromium uses

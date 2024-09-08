@@ -1,11 +1,15 @@
 PORTNAME=	audacious-plugins
 DISTVERSION=	4.4
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Plugins needed for audacious
 WWW=		https://audacious-media-player.org/
+
+PATCH_SITES=	https://github.com/audacious-media-player/audacious-plugins/commit/
+PATCHFILES=	0ffe6d8b4356c10e3d9d159d07dbe467b33629b9.patch:-p1
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -50,7 +54,8 @@ USE_XORG=	x11
 
 CONFIGURE_ENV=	LIBRARY_PATH="${LOCALBASE}/lib"
 MESON_ARGS=	-Dcoreaudio=false \
-		-Dmms=false
+		-Dmms=false \
+		-Dcdaudio-cddb=false
 MAKE_ENV=	LIBRARY_PATH="${LOCALBASE}/lib"
 
 .if ${FLAVOR} == qt5
@@ -148,8 +153,7 @@ AOSD_MESON_TRUE=	aosd
 BS2B_LIB_DEPENDS=	libbs2b.so:audio/libbs2b
 BS2B_MESON_TRUE=	bs2b
 
-CDDA_LIB_DEPENDS=	libcddb.so:audio/libcddb \
-			libcdio.so:sysutils/libcdio \
+CDDA_LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
 			libcdio_cdda.so:sysutils/libcdio-paranoia
 CDDA_MESON_TRUE=	cdaudio
 
@@ -267,10 +271,6 @@ MESON_ARGS+=	-Dfilewriter-ogg=false
 MESON_ARGS+=	-Dfilewriter-flac=false \
 		-Dfilewriter-mp3=false \
 		-Dfilewriter-ogg=false
-.endif
-
-.if ${PORT_OPTIONS:MCDDA}
-DEPRECATED=	CDDA depends on expired audio/libcddb
 .endif
 
 post-patch-NLS-off:

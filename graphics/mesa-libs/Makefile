@@ -1,6 +1,5 @@
 PORTNAME=	mesa-libs
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL libraries that support GLX and EGL clients
@@ -47,7 +46,7 @@ MESON_ARGS+=	-Dandroid-libbacktrace=disabled \
 		-Degl=enabled \
 		-Dgbm=enabled \
 		-Dvulkan-drivers="" \
-		-Dglvnd=true
+		-Dglvnd=enabled
 # Building EGL and GBM requires a driver so add r300
 MESON_ARGS+=	-Dgallium-drivers="r300"
 
@@ -66,6 +65,10 @@ MESA_PLATFORMS+=	wayland
 .endif
 
 MESON_ARGS+=	-Dplatforms="${MESA_PLATFORMS:ts,:tl}"
+
+.if ${ARCH} != amd64
+MESON_ARGS+=	-Dintel-rt=disabled # https://gitlab.freedesktop.org/mesa/mesa/-/issues/10629
+.endif
 
 .if ${ARCH} == "i386"
 # PR230239 Fix the build for i386 when WITH_LLD_IS_LD is set

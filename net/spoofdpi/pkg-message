@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+You can use spoofdpi rc.d service and specify arguments
+for spoofdpi program in rc.conf file like this below:
+	spoofdpi_args="-port 8181 -dns-addr 1.1.1.1 -enable-doh"
+To enable/start spoofdpi service:
+	# service spoofdpi enable
+	# service spoofdpi start
+Now, you can configure your web browser to use this proxy.
+EOM
+}
+]

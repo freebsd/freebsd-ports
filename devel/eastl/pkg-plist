@@ -3,6 +3,7 @@ include/EABase/config/eacompilertraits.h
 include/EABase/config/eaplatform.h
 include/EABase/config/eaplatform.h.orig
 include/EABase/eabase.h
+include/EABase/eadeprecated.h
 include/EABase/eahave.h
 include/EABase/earesult.h
 include/EABase/eastdarg.h
@@ -191,6 +192,7 @@ include/EASTL/internal/atomic/compiler/msvc/compiler_msvc_signal_fence.h
 include/EASTL/internal/atomic/compiler/msvc/compiler_msvc_sub_fetch.h
 include/EASTL/internal/atomic/compiler/msvc/compiler_msvc_xor_fetch.h
 include/EASTL/internal/char_traits.h
+include/EASTL/internal/concepts.h
 include/EASTL/internal/config.h
 include/EASTL/internal/copy_help.h
 include/EASTL/internal/enable_shared.h

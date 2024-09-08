@@ -1,5 +1,5 @@
 PORTNAME=	mutmut
-DISTVERSION=	2.5.0
+DISTVERSION=	2.5.1
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}whatthepatch>=0.0.6:textproc/py-whatthepatch@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils concurrent autoplist pytest # 10 tests fail because they require the fixture 'testdata' which is only for Python-3.10+
+USE_PYTHON=	distutils concurrent autoplist pytest # 2 tests fail because they require the fixture 'testdata' which is only for Python-3.10+
 
 NO_ARCH=	yes
 

@@ -12,7 +12,6 @@
     SUBDIR += bnc
     SUBDIR += catgirl
     SUBDIR += cgiirc
-    SUBDIR += ctrlproxy
     SUBDIR += dancer
     SUBDIR += dircproxy
     SUBDIR += dxirc
@@ -32,7 +31,6 @@
     SUBDIR += ircII
     SUBDIR += ircd-hybrid
     SUBDIR += ircd-ratbox
-    SUBDIR += ircd-ratbox-devel
     SUBDIR += ircproxy
     SUBDIR += iroffer-dinoex
     SUBDIR += irssi

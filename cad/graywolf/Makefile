@@ -36,7 +36,8 @@ SHEBANG_GLOB=	*.sh
 
 USE_GCC=	yes # lots of obviously incorrect C where clang fails, which gcc nevertheless magically finds a way to compile
 
-CFLAGS+=	-fcommon
+CFLAGS+=	-fcommon \
+		-fpermissive
 
 TEST_TARGET=	test
 

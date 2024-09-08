@@ -1,0 +1,14 @@
+--- pybind11_protobuf/tests/CMakeLists.txt.orig	2024-08-09 17:15:35 UTC
++++ pybind11_protobuf/tests/CMakeLists.txt
+@@ -2,10 +2,9 @@
+ # Evaluate if Protobuf uses the system package, otherwise explicitly include the
+ # required macro
+ #
+-FetchContent_GetProperties(Protobuf SOURCE_DIR Protobuf_SOURCE_DIR)
+ if(Protobuf_SOURCE_DIR)
+   # Use macros from content made available by FetchContent
+-  include(${Protobuf_SOURCE_DIR}/cmake/protobuf-generate.cmake)
++  include(${Protobuf_SOURCE_DIR}/lib/cmake/protobuf/protobuf-generate.cmake)
+ endif()
+ 
+ # cmake-format: off

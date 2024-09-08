@@ -11,16 +11,16 @@ LICENSE_FILE=	${WRKSRC}/docs/license.rst
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	needs a GPU supported by the AMDGPU KMS driver
 
-BUILD_DEPENDS=	libclc>=0.3.0:devel/libclc \
+BUILD_DEPENDS=	libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T} \
 		spirv-tools>=0:graphics/spirv-tools \
 		opencl>=0:devel/opencl
 LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd \
 		libLLVMSPIRVLib.so.${LLVM_VERSION}:devel/spirv-llvm-translator@${LLVM_PORT:T} \
 		libzstd.so:archivers/zstd
-RUN_DEPENDS=	libclc>=0.3.0:devel/libclc \
+RUN_DEPENDS=	libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T} \
 		opencl>=0:devel/opencl
 
-USES=		llvm:lib,max=16,noexport
+USES=		llvm:lib,noexport
 
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
@@ -36,6 +36,7 @@ MESON_ARGS+=	-Dplatforms="" \
 		-Dgallium-xa=disabled \
 		-Dgles1=disabled \
 		-Dgles2=disabled \
+		-Dglvnd=disabled \
 		-Dmicrosoft-clc=disabled \
 		-Dopengl=false \
 		-Dglx=disabled \
@@ -51,6 +52,10 @@ MESON_ARGS+=	-Dplatforms="" \
 LDFLAGS_i386=		-Wl,-znotext
 
 CONFIGURE_ENV+=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig"
+
+.if ${ARCH} != amd64
+MESON_ARGS+=	-Dintel-rt=disabled # https://gitlab.freedesktop.org/mesa/mesa/-/issues/10629
+.endif
 
 pre-patch:
 	@if [ -e ${LOCALBASE}/bin/llvm-config${LLVM_VERSION} ] && \

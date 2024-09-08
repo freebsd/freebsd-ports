@@ -1,5 +1,5 @@
 PORTNAME=	gnulibiberty
-PORTVERSION=	2.37
+PORTVERSION=	2.43
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
 DISTNAME=	binutils-${PORTVERSION}
@@ -9,7 +9,7 @@ COMMENT=	Miscellaneous GNU functions
 
 WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}/libiberty
 
-USES=		gmake tar:xz
+USES=		gmake tar:lz
 
 CONFIGURE_ARGS=	--enable-install-libiberty --disable-multilib
 GNU_CONFIGURE=	yes

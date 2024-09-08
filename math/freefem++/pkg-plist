@@ -235,6 +235,7 @@ lib/ff++/%%VER%%/lib/pcm2rnm.so
 lib/ff++/%%VER%%/lib/plotPDF.so
 lib/ff++/%%VER%%/lib/ppm2rnm.so
 lib/ff++/%%VER%%/lib/qf11to25.so
+lib/ff++/%%VER%%/lib/scotch.so
 lib/ff++/%%VER%%/lib/shell.so
 lib/ff++/%%VER%%/lib/splitedges.so
 lib/ff++/%%VER%%/lib/splitmesh12.so

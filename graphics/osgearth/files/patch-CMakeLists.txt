@@ -1,8 +1,13 @@
---- CMakeLists.txt.orig	2023-10-23 13:54:59 UTC
+--- CMakeLists.txt.orig	2024-08-30 10:19:42 UTC
 +++ CMakeLists.txt
-@@ -302,4 +302,4 @@ install(
-         ${CMAKE_CURRENT_BINARY_DIR}/osgEarthConfig.cmake
-         ${CMAKE_CURRENT_BINARY_DIR}/osgEarthConfigVersion.cmake
-     DESTINATION
--        ${CMAKE_INSTALL_PREFIX}/cmake )
-+        ${CMAKE_INSTALL_PREFIX}/share/cmake/Modules/osgEarth )
+@@ -26,8 +26,8 @@ set(OSGEARTH_SOVERSION 158)
+ # Increment this each time the ABI changes
+ set(OSGEARTH_SOVERSION 158)
+ 
+-# Require C++14
+-set(CMAKE_CXX_STANDARD 14)
++# Require C++17
++set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+ # Detect out-of-source build. We'll need this for protobuf generated files.

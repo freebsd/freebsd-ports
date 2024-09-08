@@ -1,4 +1,4 @@
---- config.toml.example.orig	2024-01-17 10:05:29 UTC
+--- config.toml.example.orig	2024-08-20 19:30:28 UTC
 +++ config.toml.example
 @@ -2,10 +2,10 @@
  # For Gitaly documentation, see https://docs.gitlab.com/ee/administration/gitaly/.
@@ -26,7 +26,7 @@
  # # Maximum number of cached 'cat-file' processes, which constitute a pair of 'git cat-file --batch' and
  # # 'git cat-file --batch-check' processes. Defaults to '100'.
  # catfile_cache_size = 100
-@@ -58,7 +58,7 @@ bin_dir = "/home/git/gitaly/_build/bin"
+@@ -58,7 +58,7 @@ name = "default"
  # # The name of the storage
  name = "default"
  # # The path to the storage.
@@ -35,20 +35,7 @@
  
  # # You can optionally configure more storages for this Gitaly instance to serve up
  #
-@@ -68,9 +68,9 @@ path = "/home/git/repositories"
- #
- 
- # # Optional. Configure Gitaly to output JSON-formatted log messages to stdout.
--# [logging]
--# # Directory where Gitaly stores extra log files.
--dir = "/home/git/gitlab/log"
-+[logging]
-+# Directory where Gitaly stores extra log files.
-+dir = "%%PREFIX%%/www/gitlab/log"
- # # Log format. Either 'text' or 'json'.
- # format = "json"
- # # Optional. Set log level to only log entries with that severity or above.
-@@ -91,18 +91,18 @@ sentry_environment = ""
+@@ -89,18 +89,18 @@ sentry_environment = ""
  # # Custom Git hooks that are used to perform tasks based on changes performed in any repository.
  [hooks]
  # # Directory where custom Git hooks are installed. If left unset, no custom hooks are used.

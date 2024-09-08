@@ -1,6 +1,6 @@
 PORTNAME=	iqtree
 DISTVERSIONPREFIX=	v
-DISTVERSION =	2.3.5
+DISTVERSION =	2.3.6
 CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -17,6 +17,7 @@ BROKEN_i386=	ld: error: unable to find library -latomic (see bug 230888)
 BROKEN_powerpc64=	fails to build: GCC version must be at least 4.8!
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
+
 USES=		cmake eigen:3
 USE_GITHUB=	yes
 GH_PROJECT=	iqtree2

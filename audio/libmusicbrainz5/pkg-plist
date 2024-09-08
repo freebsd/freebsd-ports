@@ -69,6 +69,10 @@ include/musicbrainz5/defines.h
 include/musicbrainz5/mb5_c.h
 include/musicbrainz5/xmlParser.h
 lib/libmusicbrainz5.so
-lib/libmusicbrainz5.so.1
-lib/libmusicbrainz5.so.1.0.0
+lib/libmusicbrainz5.so.2
+lib/libmusicbrainz5.so.2.0.0
+lib/libmusicbrainz5cc.so
+lib/libmusicbrainz5cc.so.2
+lib/libmusicbrainz5cc.so.2.0.0
 libdata/pkgconfig/libmusicbrainz5.pc
+libdata/pkgconfig/libmusicbrainz5cc.pc

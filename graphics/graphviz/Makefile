@@ -1,6 +1,6 @@
 PORTNAME=	graphviz
-PORTVERSION=	9.0.0
-PORTREVISION=	4
+PORTVERSION=	12.0.0
+PORTREVISION=	0
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/${PORTVERSION}/
 
@@ -93,7 +93,6 @@ SMYRNA_USE=	GNOME=libglade2,pangox-compat,gdkpixbuf2 GL=glut,glu,gl
 PERL_USES=	perl5
 PHP_USES=	php:build gnome
 PHP_USE=	GNOME=libxml2
-PHP_BROKEN=	needs swig 4.2.0
 PYTHON_USES=	python:build
 RUBY_USES=	ruby
 LUA_USES=	lua

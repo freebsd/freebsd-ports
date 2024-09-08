@@ -19,6 +19,8 @@ ALL_TARGET=	${PORTNAME}
 MAKEFILE=	makefile
 MAKE_JOBS_UNSAFE=	yes
 
+CFLAGS+=	-fpermissive
+
 PORTEXAMPLES=	*
 PORTDOCS=	NEW README smvmanual.ps
 

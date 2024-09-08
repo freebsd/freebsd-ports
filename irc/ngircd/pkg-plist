@@ -1,0 +1,27 @@
+@sample %%ETCDIR%%/ngircd.conf.sample
+sbin/ngircd
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.md
+%%PORTDOCS%%%%DOCSDIR%%/Bopm.txt
+%%PORTDOCS%%%%DOCSDIR%%/Capabilities.txt
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/Commands.txt
+%%PORTDOCS%%%%DOCSDIR%%/Container.md
+%%PORTDOCS%%%%DOCSDIR%%/Contributing.txt
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.md
+%%PORTDOCS%%%%DOCSDIR%%/HowToRelease.txt
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
+%%PORTDOCS%%%%DOCSDIR%%/Modes.txt
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/PAM.txt
+%%PORTDOCS%%%%DOCSDIR%%/Platforms.txt
+%%PORTDOCS%%%%DOCSDIR%%/Protocol.txt
+%%PORTDOCS%%%%DOCSDIR%%/README-AUX.txt
+%%PORTDOCS%%%%DOCSDIR%%/README-BeOS.txt
+%%PORTDOCS%%%%DOCSDIR%%/README-Interix.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/RFC.txt
+%%PORTDOCS%%%%DOCSDIR%%/SSL.md
+%%PORTDOCS%%%%DOCSDIR%%/Services.txt
+%%PORTDOCS%%%%DOCSDIR%%/sample-ngircd.conf
+share/man/man5/ngircd.conf.5.gz
+share/man/man8/ngircd.8.gz

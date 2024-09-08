@@ -1,5 +1,5 @@
 PORTNAME=	c-ares
-DISTVERSION=	1.33.0
+DISTVERSION=	1.33.1
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 

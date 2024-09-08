@@ -1,5 +1,5 @@
 PORTNAME=	swoole
-PORTVERSION=	5.1.3
+PORTVERSION=	5.1.4
 CATEGORIES=	devel net
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -13,6 +13,7 @@ NOT_FOR_ARCHS=	i386 powerpc
 NOT_FOR_ARCHS_REASON=	upstream drop 32 bits support
 
 USES=		compiler:c11 localbase:ldflags php:build,pecl pkgconfig ssl
+IGNORE_WITH_PHP=	84
 
 CONFIGURE_ARGS+=	--enable-mysqlnd
 

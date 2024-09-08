@@ -13,6 +13,10 @@ include/xlsxwriter/hash_table.h
 include/xlsxwriter/metadata.h
 include/xlsxwriter/packager.h
 include/xlsxwriter/relationships.h
+include/xlsxwriter/rich_value.h
+include/xlsxwriter/rich_value_rel.h
+include/xlsxwriter/rich_value_structure.h
+include/xlsxwriter/rich_value_types.h
 include/xlsxwriter/shared_strings.h
 include/xlsxwriter/styles.h
 include/xlsxwriter/table.h
@@ -29,7 +33,6 @@ include/xlsxwriter/vml.h
 include/xlsxwriter/workbook.h
 include/xlsxwriter/worksheet.h
 include/xlsxwriter/xmlwriter.h
-lib/libxlsxwriter.a
 lib/libxlsxwriter.so
-lib/libxlsxwriter.so.6
+lib/libxlsxwriter.so.7
 libdata/pkgconfig/xlsxwriter.pc

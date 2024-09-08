@@ -1,3 +1,5 @@
-TIMESTAMP = 1645698839
-SHA256 (Ultimaker/Ultimaker-libArcus-4.13.1_GH0.tar.gz) = 51e865cb648750ad9ea315fa7632ee7016890273f911270f60d28c8a4bc50240
-SIZE (Ultimaker/Ultimaker-libArcus-4.13.1_GH0.tar.gz) = 32077
+TIMESTAMP = 1715499868
+SHA256 (Ultimaker/Ultimaker-libArcus-5.3.0_GH0.tar.gz) = 3cf7411b573eda2de2aec9761bd6b539a5d5d67739761357f5f773d1490db0fb
+SIZE (Ultimaker/Ultimaker-libArcus-5.3.0_GH0.tar.gz) = 26019
+SHA256 (Ultimaker/Ultimaker-pyArcus-5.3.0_GH0.tar.gz) = 2eda2a93592480a295fa338118aaf28cdcf24b7c6980740a1df94810652fc368
+SIZE (Ultimaker/Ultimaker-pyArcus-5.3.0_GH0.tar.gz) = 16436

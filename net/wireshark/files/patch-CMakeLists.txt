@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2024-08-30 16:19:43 UTC
++++ CMakeLists.txt
+@@ -3377,6 +3377,7 @@ if(BUILD_dumpcap AND PCAP_FOUND)
+ 		writecap
+ 		wsutil_static
+ 		pcap::pcap
++		${M_LIBRARIES}
+ 		${CAP_LIBRARIES}
+ 		${ZLIB_LIBRARIES}
+ 		${ZLIBNG_LIBRARIES}

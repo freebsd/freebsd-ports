@@ -8,35 +8,6 @@ until LLVM can be updated to use libc++ by default.
 
 https://reviews.llvm.org/D77776
 
---- vendor/cc-1.0.73/src/lib.rs.orig	2021-03-04 20:58:54 UTC
-+++ vendor/cc-1.0.73/src/lib.rs
-@@ -2659,24 +2659,7 @@ impl Tool {
-     }
- 
-     fn with_features(path: PathBuf, clang_driver: Option<&str>, cuda: bool) -> Self {
--        // Try to detect family of the tool from its name, falling back to Gnu.
--        let family = if let Some(fname) = path.file_name().and_then(|p| p.to_str()) {
--            if fname.contains("clang-cl") {
--                ToolFamily::Msvc { clang_cl: true }
--            } else if fname.ends_with("cl") || fname == "cl.exe" {
--                ToolFamily::Msvc { clang_cl: false }
--            } else if fname.contains("clang") {
--                match clang_driver {
--                    Some("cl") => ToolFamily::Msvc { clang_cl: true },
--                    _ => ToolFamily::Clang,
--                }
--            } else {
--                ToolFamily::Gnu
--            }
--        } else {
--            ToolFamily::Gnu
--        };
--
-+        let family = ToolFamily::Gnu;
-         Tool {
-             path: path,
-             cc_wrapper_path: None,
-
 --- vendor/cc-1.0.79/src/lib.rs.orig	2021-03-04 20:58:54 UTC
 +++ vendor/cc-1.0.79/src/lib.rs
 @@ -2659,24 +2659,7 @@ impl Tool {
@@ -92,8 +63,8 @@ https://reviews.llvm.org/D77776
  
          Tool {
              path,
---- vendor/cc-1.0.92/src/tool.rs.orig	2024-05-09 18:20:47 UTC
-+++ vendor/cc-1.0.92/src/tool.rs
+--- vendor/cc-1.0.97/src/tool.rs.orig	2024-05-09 18:20:47 UTC
++++ vendor/cc-1.0.97/src/tool.rs
 @@ -151,9 +151,7 @@ impl Tool {
  
              match (clang, accepts_cl_style_flags, gcc) {

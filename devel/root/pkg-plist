@@ -1163,6 +1163,7 @@ include/root/Riostream.h
 %%ROOFIT%%include/root/RooAbsCategoryLValue.h
 %%ROOFIT%%include/root/RooAbsCollection.h
 %%ROOFIT%%include/root/RooAbsData.h
+%%ROOFIT%%include/root/RooAbsDataFiller.h
 %%ROOFIT%%%%DATAFRAME%%include/root/RooAbsDataHelper.h
 %%ROOFIT%%include/root/RooAbsDataStore.h
 %%ROOFIT%%include/root/RooAbsFunc.h

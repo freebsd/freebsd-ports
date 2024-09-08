@@ -1,7 +1,7 @@
---- electron/shell/browser/api/electron_api_desktop_capturer.cc.orig	2024-02-21 16:26:48 UTC
+--- electron/shell/browser/api/electron_api_desktop_capturer.cc.orig	2024-08-09 17:08:27 UTC
 +++ electron/shell/browser/api/electron_api_desktop_capturer.cc
-@@ -41,7 +41,7 @@
- #include "ui/gfx/x/randr.h"
+@@ -45,7 +45,7 @@
+ #include "ui/base/cocoa/permissions_utils.h"
  #endif
  
 -#if BUILDFLAG(IS_LINUX)

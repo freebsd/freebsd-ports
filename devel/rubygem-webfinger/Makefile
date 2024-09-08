@@ -1,6 +1,5 @@
 PORTNAME=	webfinger
-PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTVERSION=	2.1.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +10,9 @@ WWW=		https://github.com/nov/webfinger
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-activesupport61>=3.0:devel/rubygem-activesupport61 \
-		rubygem-httpclient>=2.4:www/rubygem-httpclient
+RUN_DEPENDS=	rubygem-activesupport70>=3.0:devel/rubygem-activesupport70 \
+		rubygem-faraday>=2.0<3:www/rubygem-faraday \
+		rubygem-faraday-follow_redirects>=0:www/rubygem-faraday-follow_redirects
 
 USES=		gem
 

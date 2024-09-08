@@ -5,8 +5,6 @@
 # Valid ARGS:	build, env, lib, run
 #		default is build,run (implicit)
 #
-# When subpackages are available this can be more granular
-#
 # MAINTAINER: samba@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_SAMBA_MK)
@@ -20,22 +18,35 @@ samba_ARGS=	build run
 IGNORE=		USES=samba has invalid arguments: ${samba_ARGS:Nbuild:Nenv:Nlib:Nrun}
 .  endif
 
-SAMBAPORT=	net/samba${SAMBA_DEFAULT:S/.//}
-SAMBAINCLUDES=	${LOCALBASE}/include/samba4
-.  if ${SAMBA_DEFAULT} == 4.16 || ${SAMBA_DEFAULT} == 4.19
-SAMBALIBS=	${LOCALBASE}/lib/samba4
-.  else
+.  if ${SAMBA_DEFAULT} != 4.16 && ${SAMBA_DEFAULT} != 4.19
 IGNORE=		Invalid version of samba: ${SAMBA_DEFAULT}
 .  endif
 
+SAMBA_SUFFIX=	${SAMBA_DEFAULT:S/.//}
+
+SAMBA_PORT_416=		net/samba416
+SAMBA_LDB_PORT_416=	databases/ldb25
+SAMBA_PORT_419=		net/samba419
+SAMBA_LDB_PORT_419=	databases/ldb28
+
+SAMBA_PORT=		${SAMBA_PORT_${SAMBA_SUFFIX}}
+SAMBA_INCLUDEDIR=	${LOCALBASE}/include/samba4
+SAMBA_LIBDIR=		${LOCALBASE}/lib/samba4
+SAMBA_LDB_PORT=		${SAMBA_LDB_PORT_${SAMBA_SUFFIX}}
+
 .  if ${samba_ARGS:Mbuild}
-BUILD_DEPENDS+=	smbd:${SAMBAPORT}
+BUILD_DEPENDS+=	smbd:${SAMBA_PORT}
 .  endif
 .  if ${samba_ARGS:Mlib}
-LIB_DEPENDS+=	libsmbclient.so:${SAMBAPORT}
+LIB_DEPENDS+=	libsmbclient.so:${SAMBA_PORT}
 .  endif
 .  if ${samba_ARGS:Mrun}
-RUN_DEPENDS+=	smbd:${SAMBAPORT}
+RUN_DEPENDS+=	smbd:${SAMBA_PORT}
 .  endif
 
+# Legacy variables. Removing those requires a tree-wide update
+# and a note in the CHANGES file
+SAMBAPORT=		${SAMBA_PORT}
+SAMBAINCLUDES=		${SAMBA_INCLUDEDIR}
+SAMBALIBS=		${SAMBA_LIBDIR}
 .endif

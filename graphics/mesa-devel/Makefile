@@ -1,6 +1,6 @@
 PORTNAME=	mesa
-DISTVERSION=	24.1-branchpoint-3782
-DISTVERSIONSUFFIX=	-gc8d64860ec7
+DISTVERSION=	24.2-branchpoint-2023
+DISTVERSIONSUFFIX=	-g2d10233f2f1
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -21,7 +21,8 @@ ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Limited scope: no old drivers and no software rendering. \
 			See also https://mesamatrix.net/
 
-BUILD_DEPENDS=	libglvnd>=1.3.2:graphics/libglvnd \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>0:devel/py-pyyaml@${PY_FLAVOR} \
+		libglvnd>=1.3.2:graphics/libglvnd \
 		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libexpat.so:textproc/expat2
@@ -42,6 +43,7 @@ MESON_ARGS=	-Dgallium-omx=disabled \
 		-Dvalgrind=disabled \
 		-Dplatforms=${PLATFORMS:O:[-1..1]:ts,} \
 		-Dvideo-codecs=all \
+		-Dunversion-libgallium=true \
 		${NULL}
 LDFLAGS+=	-Wl,--undefined-version # https://gitlab.freedesktop.org/mesa/mesa/-/issues/8003
 PLIST_SUB=	ARCH=${ARCH:S/amd/x86_/}
@@ -105,11 +107,11 @@ LTO_MESON_TRUE=		b_lto
 
 OPENCL_DESC=		Heterogeneous computing via OpenCL (implies LLVM)
 OPENCL_BUILD_DEPENDS=	bindgen:devel/rust-bindgen-cli \
-			libclc>0:devel/libclc \
+			libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T} \
 			spirv-tools>0:graphics/spirv-tools \
 			rustc:lang/${RUST_DEFAULT}
 OPENCL_LIB_DEPENDS=	libLLVMSPIRVLib.so.${OPENCL_SOVERSION}:devel/spirv-llvm-translator@${LLVM_PORT:T}
-OPENCL_RUN_DEPENDS=	libclc>0:devel/libclc
+OPENCL_RUN_DEPENDS=	libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T}
 OPENCL_SOVERSION=	${LLVM_VERSION}${${LLVM_VERSION}>=18:?.1:}
 OPENCL_CONFIGURE_ENV=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig"
 OPENCL_MESON_FALSE=	b_lundef # environ

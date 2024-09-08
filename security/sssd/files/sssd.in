@@ -33,7 +33,7 @@ sssd_prestart()
 {
 
 	for i in db/sss/db db/sss/gpo_cache db/sss/keytabs db/sss/mc db/sss/pubconf/krb5.include.d/ db/sss/secrets log/sssd run/sss/pipes/private;  do
-		if [ ! -d var/${i} ]; then mkdir -p /var/${i}; fi
+		if [ ! -d /var/${i} ]; then mkdir -p /var/${i}; fi
 	done
 }
 

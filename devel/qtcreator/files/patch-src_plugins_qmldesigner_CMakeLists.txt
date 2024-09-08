@@ -1,0 +1,18 @@
+Squash "unknown warning option" warnings. -Wmaybe-unititialized is specific
+to GCC.
+
+warning: unknown warning option '-Werror=maybe-uninitialized'; did you mean '-Werror=uninitialized'? [-Wunknown-warning-option]
+
+Regressed by: https://code.qt.io/cgit/qt-creator/qt-creator.git/commit/?id=8129f886bcc50e91f55de15f751df183f0db822c
+
+--- src/plugins/qmldesigner/CMakeLists.txt.orig	2024-08-06 01:26:37 UTC
++++ src/plugins/qmldesigner/CMakeLists.txt
+@@ -50,7 +50,7 @@ if (TARGET QmlDesignerUtils)
+ )
+ 
+ if (TARGET QmlDesignerUtils)
+-    target_compile_options(QmlDesignerUtils PUBLIC $<$<COMPILE_LANG_AND_ID:CXX,Clang,GNU>:-Wno-error=maybe-uninitialized>)
++    target_compile_options(QmlDesignerUtils PUBLIC $<$<COMPILE_LANG_AND_ID:CXX,GNU>:-Wno-error=maybe-uninitialized>)
+     target_compile_options(QmlDesignerUtils PUBLIC $<$<COMPILE_LANG_AND_ID:CXX,Clang>:-Wno-unneeded-internal-declaration>)
+ endif()
+ 

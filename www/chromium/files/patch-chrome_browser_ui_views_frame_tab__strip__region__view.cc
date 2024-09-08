@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/tab_strip_region_view.cc.orig	2024-07-30 11:12:21 UTC
+--- chrome/browser/ui/views/frame/tab_strip_region_view.cc.orig	2024-08-26 12:06:38 UTC
 +++ chrome/browser/ui/views/frame/tab_strip_region_view.cc
-@@ -200,7 +200,7 @@ TabStripRegionView::TabStripRegionView(std::unique_ptr
+@@ -201,7 +201,7 @@ TabStripRegionView::TabStripRegionView(std::unique_ptr
  
      // TODO(crbug.com/40118868): Revisit the macro expression once build flag
      // switch of lacros-chrome is complete.

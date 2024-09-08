@@ -1,9 +1,9 @@
 PORTNAME=	czkawka
 DISTVERSION=	7.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi functional app to find duplicates, empty folders, similar images etc.
 WWW=		https://github.com/qarmin/czkawka
 

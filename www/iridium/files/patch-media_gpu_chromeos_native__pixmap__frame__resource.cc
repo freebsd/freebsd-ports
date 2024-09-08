@@ -1,6 +1,6 @@
---- media/gpu/chromeos/native_pixmap_frame_resource.cc.orig	2024-06-25 12:08:48 UTC
+--- media/gpu/chromeos/native_pixmap_frame_resource.cc.orig	2024-08-27 06:28:16 UTC
 +++ media/gpu/chromeos/native_pixmap_frame_resource.cc
-@@ -154,7 +154,7 @@ scoped_refptr<NativePixmapFrameResource> NativePixmapF
+@@ -176,7 +176,7 @@ scoped_refptr<NativePixmapFrameResource> NativePixmapF
    const bool is_intel_media_compression_enabled =
  #if BUILDFLAG(IS_CHROMEOS)
        base::FeatureList::IsEnabled(features::kEnableIntelMediaCompression);

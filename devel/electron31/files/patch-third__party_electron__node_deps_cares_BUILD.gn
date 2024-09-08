@@ -1,6 +1,6 @@
---- third_party/electron_node/deps/cares/BUILD.gn.orig	2024-06-13 08:39:37 UTC
+--- third_party/electron_node/deps/cares/BUILD.gn.orig	2024-08-19 07:26:00 UTC
 +++ third_party/electron_node/deps/cares/BUILD.gn
-@@ -151,9 +151,14 @@ static_library("cares") {
+@@ -154,9 +154,14 @@ static_library("cares") {
      defines += [ "HAVE_CONFIG_H" ]
    }
  

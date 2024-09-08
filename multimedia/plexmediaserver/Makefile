@@ -1,6 +1,6 @@
 PORTNAME=	plexmediaserver
-DISTVERSION?=	1.40.4.8679
-DISTVERSIONSUFFIX?=424562606
+DISTVERSION?=	1.40.5.8921
+DISTVERSIONSUFFIX?=	836b34c27
 CATEGORIES=	multimedia
 MASTER_SITES?=	https://downloads.plex.tv/plex-media-server-new/${DISTVERSION}-${DISTVERSIONSUFFIX}/freebsd/
 DISTNAME?=	PlexMediaServer-${DISTVERSION}-${DISTVERSIONSUFFIX}-FreeBSD-${ARCH}
@@ -9,25 +9,32 @@ MAINTAINER=	b.shertenlieb@yahoo.com
 COMMENT=	Plex Media Server component
 WWW=		https://plex.tv
 
+LICENSE=	UNKNOWN
+LICENSE_NAME=	unknown
+LICENSE_TEXT=	This program is NOT in public domain.\
+		Terms Of Service available at www.Plex.tv
+LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
+
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	binary-only program, source code not available
 
 USES=		cpe tar:bzip2
-NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/PlexMediaServer-${DISTVERSION}-${DISTVERSIONSUFFIX}
 
 CPE_VENDOR=	plex
 CPE_PRODUCT=	media_server
 CPE_VERSION=	${DISTVERSION:R}
 
 USE_RC_SUBR?=	${PORTNAME}
-
+BUNDLE_LIBS=	yes
+NO_BUILD=	yes
 SUB_FILES=	pkg-message
-SUB_LIST?=	PORTNAME=${PORTNAME} DATADIR=${DATADIR} USERS=${USERS} GROUPS=${GROUPS}
+SUB_LIST?=	PORTNAME=${PORTNAME}
+SUB_LIST+=	DATADIR=${DATADIR} USERS=${USERS} GROUPS=${GROUPS}
+
+WRKSRC=		${WRKDIR}/PlexMediaServer-${DISTVERSION}-${DISTVERSIONSUFFIX}
 
 USERS=		plex
 GROUPS=		${USERS}
-BUNDLE_LIBS=	yes
 
 OPTIONS_DEFINE=	RELAY
 OPTIONS_DEFAULT=	RELAY

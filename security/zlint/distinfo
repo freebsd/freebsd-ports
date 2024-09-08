@@ -1,5 +1,5 @@
-TIMESTAMP = 1713157604
-SHA256 (go/security_zlint/zlint-v3.6.2/v3.6.2.mod) = 9c877436fa585014fc096a27973c961d475453beb9ca9fd7bf57402c86ccdc52
-SIZE (go/security_zlint/zlint-v3.6.2/v3.6.2.mod) = 413
-SHA256 (go/security_zlint/zlint-v3.6.2/v3.6.2.zip) = 07fad18fae127d57c7b1189e14cce3108dc5ac280fad2cdf1301e0991f85bd76
-SIZE (go/security_zlint/zlint-v3.6.2/v3.6.2.zip) = 3239667
+TIMESTAMP = 1724047757
+SHA256 (go/security_zlint/zlint-v3.6.3/v3.6.3.mod) = b68b0ee55355ea1490c461300e3c2fbfd8d9bbb5b51d89e316d6bd56cc64d0b4
+SIZE (go/security_zlint/zlint-v3.6.3/v3.6.3.mod) = 413
+SHA256 (go/security_zlint/zlint-v3.6.3/v3.6.3.zip) = 42b84f1379972fe6c5ee56e6a0b67947888b3705b56e33e4fda3f14234c22fcd
+SIZE (go/security_zlint/zlint-v3.6.3/v3.6.3.zip) = 3583595

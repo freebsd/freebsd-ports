@@ -1,6 +1,6 @@
---- channels/rdpdr/client/CMakeLists.txt.orig	2024-01-05 17:52:01 UTC
+--- channels/rdpdr/client/CMakeLists.txt.orig	2024-09-03 15:27:18 UTC
 +++ channels/rdpdr/client/CMakeLists.txt
-@@ -24,6 +24,7 @@ set(${MODULE_PREFIX}_SRCS
+@@ -30,6 +30,7 @@ set(${MODULE_PREFIX}_SRCS
  	irp.h
  	devman.c
  	devman.h

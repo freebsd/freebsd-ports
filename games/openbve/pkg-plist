@@ -1,9 +1,12 @@
 bin/openbve
 bin/openbve-objectviewer
 bin/openbve-routeviewer
+%%DATADIR%%/Antlr4.Runtime.dll
+%%DATADIR%%/Antlr4.Runtime.xml
 %%DATADIR%%/AssimpParser.dll
 %%DATADIR%%/AssimpParser.dll.config
 %%DATADIR%%/AssimpParser.pdb
+%%DATADIR%%/Bve5_Parsing.dll
 %%DATADIR%%/CSScriptLibrary.dll
 %%DATADIR%%/CSScriptLibrary.xml
 %%DATADIR%%/CarXmlConvertor.exe
@@ -652,6 +655,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Menu/arrow_up.png
 %%DATADIR%%/Data/Menu/banner.png
 %%DATADIR%%/Data/Menu/gamepad.png
+%%DATADIR%%/Data/Menu/icon_bve5.png
 %%DATADIR%%/Data/Menu/icon_critical.png
 %%DATADIR%%/Data/Menu/icon_disk.png
 %%DATADIR%%/Data/Menu/icon_error.png
@@ -715,6 +719,9 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Plugins/OpenBveAts.dll
 %%DATADIR%%/Data/Plugins/OpenBveAts.dll.config
 %%DEBUG%%%%DATADIR%%/Data/Plugins/OpenBveAts.pdb
+%%DATADIR%%/Data/Plugins/Route.Bve5.dll
+%%DATADIR%%/Data/Plugins/Route.Bve5.dll.config
+%%DATADIR%%/Data/Plugins/Route.Bve5.pdb
 %%DATADIR%%/Data/Plugins/Route.CsvRw.dll
 %%DATADIR%%/Data/Plugins/Route.CsvRw.dll.config
 %%DATADIR%%/Data/Plugins/Route.CsvRw.pdb

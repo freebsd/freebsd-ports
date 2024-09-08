@@ -1,14 +1,14 @@
---- third_party/wayland/BUILD.gn.orig	2023-03-13 07:33:08 UTC
+--- third_party/wayland/BUILD.gn.orig	2024-08-27 06:28:16 UTC
 +++ third_party/wayland/BUILD.gn
-@@ -22,6 +22,11 @@ config("wayland_config") {
-     "src/src",
-   ]
+@@ -24,6 +24,11 @@ if (!use_system_libwayland) {
+       "src/src",
+     ]
  
-+  if (is_bsd) {
-+    include_dirs += [ "/usr/local/include/libepoll-shim" ]
-+    libs = [ "epoll-shim" ]
-+  }
++    if (is_bsd) {
++      include_dirs += [ "/usr/local/include/libepoll-shim" ]
++      libs = [ "epoll-shim" ]
++    }   
 +
-   # Client/Server headers are automatically generated. Though, we still need
-   # to pass the path where these headers are located.
-   include_dirs += [ "$root_gen_dir/third_party/wayland/src/protocol" ]
+     # Client/Server headers are automatically generated. Though, we still need
+     # to pass the path where these headers are located.
+     include_dirs += [ "$root_gen_dir/third_party/wayland/src/protocol" ]

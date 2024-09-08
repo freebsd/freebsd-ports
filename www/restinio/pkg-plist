@@ -1,5 +1,4 @@
-%%SAMPLES%%bin/dh2048.pem
-%%SAMPLES%%bin/key.pem
+%%SAMPLES%%bin/sample.async_chained_handlers
 %%SAMPLES%%bin/sample.async_handling_with_sobjectizer
 %%SAMPLES%%bin/sample.chained_handlers
 %%SAMPLES%%bin/sample.compression
@@ -31,14 +30,13 @@
 %%SAMPLES%%bin/sample.websocket
 %%SAMPLES%%bin/sample.websocket_detailed
 %%SAMPLES%%bin/sample.websocket_wss
-%%SAMPLES%%bin/server.pem
-%%SAMPLES%%bin/test_decompression.sh
-%%SAMPLES%%bin/wss_dh2048.pem
-%%SAMPLES%%bin/wss_key.pem
-%%SAMPLES%%bin/wss_server.pem
+include/nonstd/expected.hpp
 include/restinio/all.hpp
 include/restinio/asio_include.hpp
 include/restinio/asio_timer_manager.hpp
+include/restinio/async_chain/common.hpp
+include/restinio/async_chain/fixed_size.hpp
+include/restinio/async_chain/growable_size.hpp
 include/restinio/buffers.hpp
 include/restinio/cast_to.hpp
 include/restinio/chunked_input_info.hpp
@@ -46,7 +44,9 @@ include/restinio/common_types.hpp
 include/restinio/compiler_features.hpp
 include/restinio/connection_count_limiter.hpp
 include/restinio/connection_state_listener.hpp
+include/restinio/core.hpp
 include/restinio/default_strands.hpp
+include/restinio/detect_os.hpp
 include/restinio/exception.hpp
 include/restinio/expected.hpp
 include/restinio/helpers/easy_parser.hpp
@@ -105,7 +105,6 @@ include/restinio/message_builders.hpp
 include/restinio/null_logger.hpp
 include/restinio/null_mutex.hpp
 include/restinio/null_timer_manager.hpp
-include/restinio/optional.hpp
 include/restinio/os.hpp
 include/restinio/ostream_logger.hpp
 include/restinio/path2regex/path2regex.hpp
@@ -129,10 +128,6 @@ include/restinio/string_view.hpp
 include/restinio/sync_chain/fixed_size.hpp
 include/restinio/sync_chain/growable_size.hpp
 include/restinio/tcp_connection_ctx_base.hpp
-include/restinio/third_party/expected-lite/expected.hpp
-include/restinio/third_party/optional-lite/optional.hpp
-include/restinio/third_party/string-view-lite/string_view.hpp
-include/restinio/third_party/variant-lite/variant.hpp
 include/restinio/timer_common.hpp
 include/restinio/tls.hpp
 include/restinio/tls_fwd.hpp
@@ -154,7 +149,6 @@ include/restinio/utils/tagged_scalar.hpp
 include/restinio/utils/tuple_algorithms.hpp
 include/restinio/utils/utf8_checker.hpp
 include/restinio/value_or.hpp
-include/restinio/variant.hpp
 include/restinio/version.hpp
 include/restinio/websocket/impl/utf8.hpp
 include/restinio/websocket/impl/ws_connection.hpp
@@ -163,6 +157,9 @@ include/restinio/websocket/impl/ws_parser.hpp
 include/restinio/websocket/impl/ws_protocol_validator.hpp
 include/restinio/websocket/message.hpp
 include/restinio/websocket/websocket.hpp
+lib/cmake/expected-lite/expected-lite-config-version.cmake
+lib/cmake/expected-lite/expected-lite-config.cmake
+lib/cmake/expected-lite/expected-lite-targets.cmake
 lib/cmake/restinio/restinio-config-version.cmake
 lib/cmake/restinio/restinio-config.cmake
 lib/cmake/restinio/restinio-targets.cmake

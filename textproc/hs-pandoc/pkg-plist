@@ -1,3 +1,6 @@
+share/man/man1/pandoc-lua.1.gz
+share/man/man1/pandoc-server.1.gz
+share/man/man1/pandoc.1.gz
 %%NO_EMBED_DATA%%%%DATADIR%%/data/abbreviations
 %%NO_EMBED_DATA%%%%DATADIR%%/data/bash_completion.tpl
 %%NO_EMBED_DATA%%%%DATADIR%%/data/creole.lua

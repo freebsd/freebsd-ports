@@ -1,6 +1,5 @@
 PORTNAME=	jwasm
-PORTVERSION=	2.17
-PORTREVISION=	1
+PORTVERSION=	2.18
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -13,12 +12,12 @@ LICENSE_NAME=	Sybase Open Watcom Public License version 1.0
 LICENSE_FILE=	${WRKSRC}/Html/License.html
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		alias dos2unix gmake
+USES=		dos2unix gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Baron-von-Riedesel
 GH_PROJECT=	JWasm
-GH_TAGNAME=	v2.17
+GH_TAGNAME=	v2.18
 
 OPTIONS_DEFINE=	DOCS
 

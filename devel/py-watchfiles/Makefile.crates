@@ -7,35 +7,29 @@ CARGO_CRATES=	autocfg-1.3.0 \
 		crossbeam-utils-0.8.19 \
 		filetime-0.2.23 \
 		fsevent-sys-4.1.0 \
-		heck-0.4.1 \
+		heck-0.5.0 \
 		indoc-2.0.5 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
 		libc-0.2.154 \
-		lock_api-0.4.12 \
 		log-0.4.21 \
 		memoffset-0.9.1 \
 		mio-0.8.11 \
 		notify-6.1.1 \
 		once_cell-1.19.0 \
-		parking_lot-0.12.2 \
-		parking_lot_core-0.9.10 \
 		portable-atomic-1.6.0 \
 		proc-macro2-1.0.81 \
-		pyo3-0.21.2 \
-		pyo3-build-config-0.21.2 \
-		pyo3-ffi-0.21.2 \
-		pyo3-macros-0.21.2 \
-		pyo3-macros-backend-0.21.2 \
-		python3-dll-a-0.2.9 \
+		pyo3-0.22.2 \
+		pyo3-build-config-0.22.2 \
+		pyo3-ffi-0.22.2 \
+		pyo3-macros-0.22.2 \
+		pyo3-macros-backend-0.22.2 \
+		python3-dll-a-0.2.10 \
 		quote-1.0.36 \
 		redox_syscall-0.4.1 \
-		redox_syscall-0.5.1 \
 		same-file-1.0.6 \
-		scopeguard-1.2.0 \
-		smallvec-1.13.2 \
 		syn-2.0.60 \
 		target-lexicon-0.12.14 \
 		unicode-ident-1.0.12 \

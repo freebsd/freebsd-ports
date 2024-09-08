@@ -1,5 +1,5 @@
 PORTNAME=	xdoctest
-DISTVERSION=	1.1.5
+DISTVERSION=	1.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI # has no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,10 +22,10 @@ NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-do-test: # 5 tests fail, see https://github.com/Erotemic/xdoctest/issues/131; more failures w/out the below arguments to pytest
+do-test: # 2 tests fail, see https://github.com/Erotemic/xdoctest/issues/131; more failures w/out the below arguments to pytest
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -k '' -p pytester -rs -v -o addopts=
 
-alt-test: # tests using the xdoctest executable
+alt-test: # tests using the xdoctest executable - all tests pass this way
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/xdoctest -m xdoctest
 
 .include <bsd.port.mk>

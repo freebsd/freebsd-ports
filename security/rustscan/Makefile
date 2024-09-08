@@ -1,5 +1,6 @@
 PORTNAME=	rustscan
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	mikael@FreeBSD.org

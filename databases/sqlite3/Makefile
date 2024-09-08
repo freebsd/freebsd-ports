@@ -1,5 +1,5 @@
 PORTNAME=	sqlite3
-DISTVERSION=	3.46.0
+DISTVERSION=	3.46.1
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/${_YEAR}/ https://www2.sqlite.org/${_YEAR}/ https://www3.sqlite.org/${_YEAR}/

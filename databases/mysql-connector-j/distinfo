@@ -1,3 +1,3 @@
-TIMESTAMP = 1718590335
-SHA256 (mysql-connector-j-8.4.0.tar.gz) = cda84b5e98664fda150eddefd9d339823fcfe516530ce7ebfdf33b3a1a2a6feb
-SIZE (mysql-connector-j-8.4.0.tar.gz) = 4308718
+TIMESTAMP = 1723996697
+SHA256 (mysql-connector-j-9.0.0.tar.gz) = 02cd65cfa7ba61db415479bc3ff14cd86f63698971756abc7d9c9beb6331d99f
+SIZE (mysql-connector-j-9.0.0.tar.gz) = 4469329

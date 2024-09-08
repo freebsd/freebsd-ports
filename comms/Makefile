@@ -84,6 +84,7 @@
     SUBDIR += libticables2
     SUBDIR += libticalcs2
     SUBDIR += libusbmuxd
+    SUBDIR += libusbsio
     SUBDIR += limesuite
     SUBDIR += linrad
     SUBDIR += liquid-dsp
@@ -135,9 +136,16 @@
     SUBDIR += py-hidapi
     SUBDIR += py-libimobiledevice
     SUBDIR += py-libscrc
+    SUBDIR += py-libusbsio
+    SUBDIR += py-nkdfu
+    SUBDIR += py-pylink-square
     SUBDIR += py-pymodbus
+    SUBDIR += py-pynitrokey
+    SUBDIR += py-pyocd
+    SUBDIR += py-pyocd-pemicro
     SUBDIR += py-pyserial
     SUBDIR += py-pyserial-asyncio
+    SUBDIR += py-spsdk
     SUBDIR += py-streamdeck
     SUBDIR += py-xmodem
     SUBDIR += pyla

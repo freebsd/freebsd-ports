@@ -1,10 +1,20 @@
 PORTNAME=	ares
-DISTVERSION=	139.20240809
+DISTVERSIONPREFIX=	v
+DISTVERSION=	140
 CATEGORIES=	emulators
+
+# committed upstream, remove with next version update
+# * contains 'unbreak FreeBSD build'
+#   https://github.com/Themaister/Granite/pull/135
+# * contains 'NVIDIA fix'
+#   https://github.com/ares-emulator/ares/issues/1547
+#   https://github.com/Themaister/Granite/issues/133
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	7135646c447ab7eb3eff18132dbddf7dc03135fa.patch:-p1
 
 MAINTAINER=	bsdcode@disroot.org
 COMMENT=	Multi-system emulator
-WWW=		https://github.com/ares-emulator/ares
+WWW=		https://ares-emu.net
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -13,7 +23,6 @@ USES=		compiler:c++17-lang gmake gnome localbase:ldflags pkgconfig \
 		xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	ares-emulator
-GH_TAGNAME=	a76847d
 USE_GNOME=	gtksourceview3
 USE_XORG=	x11 xext xrandr
 
@@ -29,9 +38,7 @@ MAKE_ARGS=	compiler=${CC} \
 		symbols=false \
 		threaded=true
 
-SUB_FILES=	pkg-message
-
-OPTIONS_DEFINE=		DEBUG DOCS NVIDIA OPENMP SHADER
+OPTIONS_DEFINE=		DEBUG DOCS HOTKEYS OPENMP SHADER
 OPTIONS_DEFAULT=	A26 ALSA AO CV FC GB GBA GLX MD MS MSX MYVISION N64 NG \
 			NGP OPENAL OPENMP OSS PCE PERFORMANCE PS1 SDLAUDIO \
 			SDLINPUT SFC SG SHADER SPEC UDEV UHID WS XLIB XVIDEO
@@ -50,6 +57,7 @@ CV_DESC=		ColecoVision
 FC_DESC=		NES / Famicom
 GBA_DESC=		Game Boy Advance
 GB_DESC=		Game Boy
+HOTKEYS_DESC=		Inofficial hotkeys locking patch
 MD_DESC=		Mega Drive / Genesis
 MSX_DESC=		MSX
 MS_DESC=		Master System / Mark III
@@ -57,7 +65,6 @@ MYVISION_DESC=		My Vision
 N64_DESC=		Nintendo 64
 NGP_DESC=		Neo Geo Pocket
 NG_DESC=		Neo Geo (AES/MVS)
-NVIDIA_DESC=		Apply shader cache workaround (implies ${NVIDIA_IMPLIES})
 PCE_DESC=		PC-Engine / TurboGrafx
 PERFORMANCE_DESC=	Faster but less accurate
 PROFILE_DESC=
@@ -99,6 +106,8 @@ GLX_USES=		gl
 GLX_USE=		GL=gl
 GLX_MAKE_ARGS=		ruby+=video.glx
 
+HOTKEYS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-hotkeys
+
 MD_MAKE_ARGS=		cores+=md
 
 MSX_MAKE_ARGS=		cores+=msx
@@ -111,14 +120,10 @@ N64_RUN_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
 N64_MAKE_ARGS=		cores+=n64 \
 			vulkan=true
 N64_MAKE_ARGS_OFF=	vulkan=false
-N64_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ares_n64_vulkan_parallel-rdp_util_timer.cpp
 
 NGP_MAKE_ARGS=		cores+=ngp
 
 NG_MAKE_ARGS=		cores+=ng
-
-NVIDIA_IMPLIES=		N64
-NVIDIA_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ares_n64_vulkan_parallel-rdp_vulkan_device.cpp
 
 OPENAL_USES=		openal
 OPENAL_MAKE_ARGS=	ruby+=audio.openal
@@ -153,9 +158,12 @@ SFC_MAKE_ARGS=		cores+=sfc
 
 SG_MAKE_ARGS=		cores+=sg
 
-SHADER_RUN_DEPENDS=	${LOCALBASE}/${_SHADERS}/bilinear.slangp:games/libretro-shaders-slang
+SHADER_BUILD_DEPENDS=	${LOCALBASE}/include/librashader/librashader.h:devel/librashader
+SHADER_RUN_DEPENDS=	${LOCALBASE}/${_SHADERS}/bilinear.slangp:games/libretro-shaders-slang \
+			${LOCALBASE}/lib/librashader.so:devel/librashader
 SHADER_MAKE_ARGS=	librashader=true
 SHADER_MAKE_ARGS_OFF=	librashader=false
+SHADER_CFLAGS=		-DLIBRA_RUNTIME_OPENGL
 SHADER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-desktop-ui_desktop-ui.cpp
 
 SPEC_MAKE_ARGS=		cores+=spec
@@ -174,7 +182,21 @@ XVIDEO_MAKE_ARGS=	ruby+=video.xvideo
 
 _SHADERS=		share/libretro/shaders/shaders_slang
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOPENAL} && ${ARCH} == "i386"
+LLD_UNSAFE=	yes
+.endif
+
+post-patch:
+	${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/hiro/GNUmakefile
+
 post-patch-SHADER-on:
+	${REINPLACE_CMD} 's|-I../thirdparty/librashader/include||g' \
+		${WRKSRC}/desktop-ui/GNUmakefile
+	${REINPLACE_CMD} 's|"librashader_ld.h"|<librashader/librashader_ld.h>|g' \
+		${WRKSRC}/ruby/video/opengl/opengl.hpp
 	${REINPLACE_CMD} 's|@@SHADERS@@|${LOCALBASE}/${_SHADERS}/|g' \
 		${WRKSRC}/desktop-ui/desktop-ui.cpp
 

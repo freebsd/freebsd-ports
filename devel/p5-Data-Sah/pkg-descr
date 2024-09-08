@@ -1,0 +1,5 @@
+Data-Sah implements compilers for producing Perl and JavaScript validators, as
+well as translatable human description text from Sah schemas. Compiler approach
+is used instead of interpreter for faster speed.
+
+The generated validator code can run without the Data::Sah::* modules.

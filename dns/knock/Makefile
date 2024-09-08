@@ -1,5 +1,5 @@
 PORTNAME=	knock
-DISTVERSION=	7.0.0
+DISTVERSION=	7.0.1
 CATEGORIES=	dns
 PKGNAMESUFFIX=	py
 
@@ -10,7 +10,6 @@ WWW=		https://github.com/guelfoweb/knock
 LICENSE=	GPLv2
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}colorama>0:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \

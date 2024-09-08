@@ -1,6 +1,7 @@
 PORTNAME=	tokio-console
 DISTVERSIONPREFIX=	tokio-console-v
 DISTVERSION=	0.1.12
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -69,6 +69,8 @@ CONFIGURE_ARGS+=	--enable-grub-mount
 CONFIGURE_ARGS+=	--disable-grub-mount
 .endif
 
+CFLAGS+=	-fpermissive
+
 post-patch:
 	@${TOUCH} -t 200001010000 ${WRKSRC}/Makefile.util.def
 

@@ -62,7 +62,9 @@ _INCLUDE_USES_CMAKE_MK=	yes
 
 _valid_ARGS=		indirect insource noninja run testing _internal
 
-_CMAKE_VERSION=		3.30.2
+# Reminder: devel/cmake-core, devel/cmake-doc, devel/cmake-gui, and devel/cmake-man
+# are all affected by changing _CMAKE_VERSION. Please check each of these ports.
+_CMAKE_VERSION=		3.30.3
 CMAKE_BIN=		${LOCALBASE}/bin/cmake
 
 # Sanity check

@@ -35,7 +35,7 @@ include/c++utilities/tests/testutils.h
 include/c++utilities/version.h
 lib/libc++utilities.so
 lib/libc++utilities.so.5
-lib/libc++utilities.so.5.25.0
+lib/libc++utilities.so.5.26.1
 libdata/pkgconfig/c++utilities.pc
 share/c++utilities/cmake/c++utilitiesConfig.cmake
 share/c++utilities/cmake/c++utilitiesConfigVersion.cmake

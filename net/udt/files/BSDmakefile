@@ -17,4 +17,8 @@ CXXFLAGS+=	-Wno-system-headers -Wall -W	\
 	-Wwrite-strings -Wswitch -Wno-cast-align	\
 	-Wunused-parameter -Werror
 
+.if ${OSVERSION} >= 1401000
+CXXFLAGS+=	-Wno-vla-cxx-extension
+.endif
+
 .include <bsd.lib.mk>

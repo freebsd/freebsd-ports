@@ -2,6 +2,7 @@ lib/mlt-7/libmltqt%%QT_VERSION_SUFFIX%%.so
 %%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_audiolevelgraph.yml
 %%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_audiospectrum.yml
 %%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_audiowaveform.yml
+%%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_dropshadow.yml
 %%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_gpsgraphic.yml
 %%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_gpstext.yml
 %%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_lightshow.yml

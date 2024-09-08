@@ -5,3 +5,6 @@ bin/mongos
 %%DOCSDIR%%/MPL-2
 %%DOCSDIR%%/README
 %%DOCSDIR%%/THIRD-PARTY-NOTICES
+share/man/man1/mongod.1.gz
+share/man/man1/mongos.1.gz
+share/man/man5/mongodb-parameters.5.gz

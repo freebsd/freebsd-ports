@@ -1,6 +1,6 @@
 PORTNAME=	gdstk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.53
+DISTVERSION=	0.9.55
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libqhull_r.so:math/qhull
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler:c++17-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	heitzmann

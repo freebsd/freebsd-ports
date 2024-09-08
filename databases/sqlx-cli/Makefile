@@ -1,7 +1,6 @@
 PORTNAME=	sqlx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
-PORTREVISION=	0
+DISTVERSION=	0.8.2
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-cli
 
@@ -28,7 +27,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
-		ansi_term-0.12.1 \
 		anstream-0.6.13 \
 		anstyle-1.0.6 \
 		anstyle-parse-0.2.3 \
@@ -52,19 +50,20 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		async-trait-0.1.77 \
 		atoi-2.0.0 \
 		atomic-waker-1.1.2 \
-		atty-0.2.14 \
 		autocfg-1.1.0 \
+		aws-lc-rs-1.8.0 \
+		aws-lc-sys-0.19.0 \
 		axum-0.5.17 \
 		axum-core-0.2.9 \
 		axum-macros-0.2.3 \
 		backoff-0.4.0 \
 		backtrace-0.3.69 \
 		base64-0.13.1 \
-		base64-0.21.7 \
 		base64-0.22.0 \
 		base64ct-1.6.0 \
 		basic-toml-0.1.9 \
 		bigdecimal-0.4.3 \
+		bindgen-0.69.4 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
 		bitflags-2.4.2 \
@@ -82,24 +81,28 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bytes-1.5.0 \
 		camino-1.1.6 \
 		cargo-platform-0.1.7 \
-		cargo_metadata-0.14.2 \
+		cargo_metadata-0.18.1 \
 		cassowary-0.3.0 \
 		cast-0.3.0 \
-		cc-1.0.90 \
+		castaway-0.2.3 \
+		cc-1.1.6 \
+		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.35 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-2.34.0 \
+		clang-sys-1.8.1 \
 		clap-4.5.2 \
 		clap_builder-4.5.2 \
 		clap_complete-4.5.1 \
 		clap_derive-4.5.0 \
 		clap_lex-0.7.0 \
 		clipboard-win-4.5.0 \
+		cmake-0.1.50 \
 		colorchoice-1.0.0 \
+		compact_str-0.7.1 \
 		concurrent-queue-2.4.0 \
 		console-0.15.8 \
 		const-oid-0.9.6 \
@@ -114,7 +117,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-queue-0.3.11 \
 		crossbeam-utils-0.8.19 \
-		crossterm-0.25.0 \
+		crossterm-0.27.0 \
 		crossterm_winapi-0.9.1 \
 		crunchy-0.2.2 \
 		crypto-common-0.1.6 \
@@ -130,6 +133,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		doc-comment-0.3.3 \
 		dotenvy-0.15.7 \
 		downcast-0.11.0 \
+		dunce-1.0.4 \
 		either-1.10.0 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.33 \
@@ -157,6 +161,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.1 \
 		fragile-2.0.0 \
+		fs_extra-1.3.0 \
 		funty-2.0.0 \
 		futures-0.3.30 \
 		futures-channel-0.3.30 \
@@ -179,10 +184,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
 		hashlink-0.9.0 \
-		heck-0.3.3 \
 		heck-0.4.1 \
 		heck-0.5.0 \
-		hermit-abi-0.1.19 \
 		hermit-abi-0.3.9 \
 		hex-0.4.3 \
 		hkdf-0.12.4 \
@@ -209,18 +212,23 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		is-terminal-0.4.12 \
 		itertools-0.10.5 \
 		itertools-0.12.1 \
+		itertools-0.13.0 \
 		itoa-1.0.10 \
+		jobserver-0.1.31 \
 		js-sys-0.3.69 \
 		kv-log-macro-1.0.7 \
 		lazy_static-1.4.0 \
+		lazycell-1.3.0 \
 		libc-0.2.153 \
+		libloading-0.8.4 \
 		libm-0.2.8 \
 		libredox-0.0.1 \
-		libsqlite3-sys-0.28.0 \
+		libsqlite3-sys-0.30.1 \
 		linux-raw-sys-0.3.8 \
 		linux-raw-sys-0.4.13 \
 		lock_api-0.4.11 \
 		log-0.4.21 \
+		lru-0.12.3 \
 		mac_address-1.1.5 \
 		matchit-0.5.0 \
 		md-5-0.10.6 \
@@ -230,6 +238,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.2 \
 		mio-0.8.11 \
+		mirai-annotations-1.12.0 \
 		mockall-0.11.4 \
 		mockall_derive-0.11.4 \
 		native-tls-0.2.11 \
@@ -278,6 +287,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		predicates-3.1.0 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
+		prettyplease-0.2.17 \
 		proc-macro-crate-3.1.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
@@ -292,6 +302,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		rand_xoshiro-0.6.0 \
+		ratatui-0.27.0 \
 		rayon-1.9.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.4.1 \
@@ -306,17 +317,19 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rsa-0.9.6 \
 		rust_decimal-1.34.3 \
 		rustc-demangle-0.1.23 \
+		rustc-hash-1.1.0 \
 		rustix-0.37.27 \
 		rustix-0.38.31 \
-		rustls-0.21.11 \
-		rustls-pemfile-1.0.4 \
-		rustls-webpki-0.101.7 \
+		rustls-0.23.11 \
+		rustls-pemfile-2.1.2 \
+		rustls-pki-types-1.7.0 \
+		rustls-webpki-0.102.5 \
+		rustversion-1.0.17 \
 		rustyline-9.1.2 \
 		ryu-1.0.17 \
 		same-file-1.0.6 \
 		schannel-0.1.23 \
 		scopeguard-1.2.0 \
-		sct-0.7.1 \
 		seahash-4.1.0 \
 		security-framework-2.9.2 \
 		security-framework-sys-2.9.1 \
@@ -329,6 +342,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde_with_macros-2.3.3 \
 		sha1-0.10.6 \
 		sha2-0.10.8 \
+		shlex-1.3.0 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.1 \
@@ -342,13 +356,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		spin-0.9.8 \
 		spki-0.7.3 \
 		sqlformat-0.2.3 \
+		stability-0.2.1 \
+		static_assertions-1.1.0 \
 		str-buf-1.0.6 \
 		stringprep-0.1.4 \
-		strsim-0.8.0 \
 		strsim-0.10.0 \
 		strsim-0.11.0 \
-		structopt-0.3.26 \
-		structopt-derive-0.4.18 \
+		strum-0.26.3 \
+		strum_macros-0.26.4 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
 		syn-2.0.52 \
@@ -358,7 +373,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tempfile-3.10.1 \
 		termcolor-1.4.1 \
 		termtree-0.4.1 \
-		textwrap-0.11.0 \
 		thiserror-1.0.58 \
 		thiserror-impl-1.0.58 \
 		time-0.3.36 \
@@ -381,13 +395,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tracing-core-0.1.32 \
 		try-lock-0.2.5 \
 		trybuild-1.0.89 \
-		tui-0.19.0 \
 		typenum-1.17.0 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.23 \
 		unicode-segmentation-1.11.0 \
-		unicode-width-0.1.11 \
+		unicode-truncate-1.1.0 \
+		unicode-width-0.1.13 \
 		unicode_categories-0.1.1 \
 		untrusted-0.9.0 \
 		url-2.5.0 \
@@ -398,7 +412,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		validator_types-0.16.0 \
 		value-bag-1.8.0 \
 		vcpkg-0.2.15 \
-		vec_map-0.8.2 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
 		waker-fn-1.1.1 \
@@ -413,7 +426,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-support-0.2.92 \
 		wasm-bindgen-shared-0.2.92 \
 		web-sys-0.3.69 \
-		webpki-roots-0.25.4 \
+		webpki-roots-0.26.3 \
+		which-4.4.2 \
 		whoami-1.5.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -442,7 +456,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wyz-0.5.1 \
 		zerocopy-0.7.32 \
 		zerocopy-derive-0.7.32 \
-		zeroize-1.7.0
+		zeroize-1.7.0 \
+		zeroize_derive-1.4.2
 CARGO_BUILD_ARGS=	--package=sqlx-cli
 CARGO_INSTALL_PATH=	sqlx-cli
 

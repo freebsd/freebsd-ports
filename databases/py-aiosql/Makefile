@@ -1,5 +1,5 @@
 PORTNAME=	aiosql
-DISTVERSION=	10.4
+DISTVERSION=	11.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,5 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=6.4:devel/py-setuptools-sc
 
 USES=		python
 USE_PYTHON=	autoplist pep517
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

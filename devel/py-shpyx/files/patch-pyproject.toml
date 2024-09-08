@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-08-12 10:34:34 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@
+ [build-system]
+-requires = ["poetry==1.8.3"]
+-build-backend = "poetry.masonry.api"
++requires = ["poetry-core>=1.9.0"]
++build-backend = "poetry.core.masonry.api"
+ 
+ [tool.poetry]
+ name = "shpyx"

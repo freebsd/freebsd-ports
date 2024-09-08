@@ -1,6 +1,6 @@
 PORTNAME=	cde
 PORTVERSION=	${COMMIT_DATE}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	-devel
@@ -13,8 +13,8 @@ WWW=		https://sourceforge.net/p/cdesktopenv/wiki/Home/
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber
 GH_PROJECT=	cdesktopenv-code
-GH_TAGNAME=	3fa42c44a
-COMMIT_DATE=	2024.06.02
+GH_TAGNAME=	121510cb7
+COMMIT_DATE=	2024.07.21
 
 LICENSE=	LGPL21
 
@@ -46,9 +46,10 @@ RUN_DEPENDS=	ksh93:shells/ksh			\
 		xrdb:x11/xrdb \
 		xset:x11/xset \
 		sessreg:x11/sessreg
+LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
 USES=		autoreconf:build iconv:wchar_t gmake jpeg libtool motif perl5 \
-		shebangfix tcl:86 xorg llvm:16
+		shebangfix tcl:86 xorg
 SHEBANG_LANG=	pl
 SHEBANG_FILES=	programs/dtinfo/tools/bin/ccdate \
 		programs/dtdocbook/tcl/docbook.tcl

@@ -1,7 +1,6 @@
 PORTNAME=	purple-gowhatsapp
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.15.0
-PORTREVISION=	2
+DISTVERSION=	1.16.0
 CATEGORIES=	net-im
 
 MAINTAINER=	ports@virtual-estates.net
@@ -10,6 +9,9 @@ WWW=		https://github.com/hoehermann/purple-gowhatsapp
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+ONLY_FOR_ARCHS=		amd64
+ONLY_FOR_ARCHS_REASON=	lang/go* ports can only created shared libraries for ${ONLY_FOR_ARCHS}
 
 LIB_DEPENDS=	libpurple.so:net-im/libpurple	\
 		libopusfile.so:audio/opusfile
@@ -44,19 +46,19 @@ GH_TUPLE=	\
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		skip2:go-qrcode:da1b6568686e:skip2_go_qrcode/vendor/github.com/skip2/go-qrcode \
 		stretchr:testify:v1.9.0:stretchr_testify/vendor/github.com/stretchr/testify \
-		tulir:libsignal-protocol-go:v0.1.0:tulir_libsignal_protocol_go/vendor/go.mau.fi/libsignal \
+		tulir:libsignal-protocol-go:v0.1.1:tulir_libsignal_protocol_go/vendor/go.mau.fi/libsignal \
 		mattn:go-colorable:v0.1.13:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.20:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mautrix:go-util:v0.4.2:mautrix_go_util/vendor/go.mau.fi/util \
-		tulir:whatsmeow:7f13c31:tulir_whatsmeow/vendor/go.mau.fi/whatsmeow \
-		golang:crypto:v0.23.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:v0.25.0:golang_net/vendor/golang.org/x/net \
-		golang:sys:v0.20.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.20.0:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.15.0:golang_text/vendor/golang.org/x/text \
-		golang:xerrors:104605ab7028:golang_xerrors/vendor/golang.org/x/xerrors \
+		mautrix:go-util:v0.6.0:mautrix_go_util/vendor/go.mau.fi/util \
+		tulir:whatsmeow:9bd3fa0:tulir_whatsmeow/vendor/go.mau.fi/whatsmeow \
+		golang:crypto:v0.26.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:v0.28.0:golang_net/vendor/golang.org/x/net \
+		golang:sys:v0.24.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.23.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.17.0:golang_text/vendor/golang.org/x/text \
+		golang:xerrors:93cc26a95ae9:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:uuid:v1.6.0:google_uuid/vendor/github.com/google/uuid \
-		protocolbuffers:protobuf-go:v1.34.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		protocolbuffers:protobuf-go:v1.34.2:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		rs:zerolog:v1.33.0:rs_zerolog/vendor/github.com/rs/zerolog \
 		rsc:qr:v0.2.0:rsc_qr/vendor/rsc.io/qr

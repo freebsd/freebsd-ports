@@ -1,5 +1,5 @@
 PORTNAME=	cpp11
-DISTVERSION=	0.4.7
+DISTVERSION=	0.5.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -14,6 +14,6 @@ TEST_DEPENDS=	R-cran-decor>0:devel/R-cran-decor \
 		R-cran-progress>0:devel/R-cran-progress \
 		R-cran-testthat>0:devel/R-cran-testthat
 
-USES=		compiler:c++11-lang cran:auto-plist
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>

@@ -1,3 +1,3 @@
-TIMESTAMP = 1707948034
-SHA256 (sqlcipher3-0.5.2.tar.gz) = 032619b45d54520e418c3462f8caee8e3ef08991a43713839f0e6b243beafaee
-SIZE (sqlcipher3-0.5.2.tar.gz) = 40357
+TIMESTAMP = 1724314202
+SHA256 (coleifer-sqlcipher3-0.5.3_GH0.tar.gz) = 5f242d158d5fcd4656e04d1ea08f765c06d0c5be35bbf7a6d3e9fe966cd64542
+SIZE (coleifer-sqlcipher3-0.5.3_GH0.tar.gz) = 64810

@@ -23,7 +23,8 @@ CONFIGURE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
 		--no-libs-here
 USE_LDCONFIG=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include \
+		-fpermissive
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 # The port does not build with C++11 or later (bug 219275).

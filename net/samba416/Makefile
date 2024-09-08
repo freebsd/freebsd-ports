@@ -106,6 +106,9 @@ CONFIGURE_LOG=			bin/config.log
 FLAVORS=			default externalldb
 FLAVOR?=			${FLAVORS:[1]}
 externalldb_PKGNAMESUFFIX=		-externalldb
+.if ${FLAVOR:U} == externalldb
+BROKEN=				fails to build; databases/ldb25 is not built with Python support by default
+.endif
 
 # Make sure that the right version of Python is used by the tools
 # https://bugzilla.samba.org/show_bug.cgi?id=7305

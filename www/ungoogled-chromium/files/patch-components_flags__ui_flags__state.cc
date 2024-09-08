@@ -1,6 +1,6 @@
---- components/flags_ui/flags_state.cc.orig	2024-07-31 14:19:23 UTC
+--- components/flags_ui/flags_state.cc.orig	2024-08-26 14:40:28 UTC
 +++ components/flags_ui/flags_state.cc
-@@ -758,7 +758,7 @@ unsigned short FlagsState::GetCurrentPlatform() {
+@@ -759,7 +759,7 @@ unsigned short FlagsState::GetCurrentPlatform() {
    return kOsCrOS;
  #elif BUILDFLAG(IS_CHROMEOS_LACROS)
    return kOsLacros;

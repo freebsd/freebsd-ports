@@ -1,5 +1,5 @@
 PORTNAME=	shapelib
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	devel geography
 MASTER_SITES=	https://download.osgeo.org/shapelib/ \
 		https://github.com/OSGeo/shapelib/releases/download/v${PORTVERSION}/

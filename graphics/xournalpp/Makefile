@@ -1,6 +1,6 @@
 PORTNAME=	xournalpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.3
+DISTVERSION=	1.2.3-20240830
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libgtksourceview-4.so:x11-toolkits/gtksourceview4 \
 
 USES=		cmake compiler:c++11-lang gettext-tools gnome lua pkgconfig tex xorg desktop-file-utils shared-mime-info
 USE_GITHUB=	yes
+GH_TAGNAME=	d435ef5
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 librsvg2 libxml2 pango
 USE_XORG=	x11 xext xi
 USE_TEX=	latex:build

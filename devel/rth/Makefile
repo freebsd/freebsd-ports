@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based requirement, test, and bugtracking system
 WWW=		https://sourceforge.net/projects/rth/
 
+DEPRECATED=	Abandonware, Unmaintained upstream as of 2013
+EXPIRATION_DATE=2024-09-30
+
 USES=		php:web zip
 NO_BUILD=	yes
 USE_PHP=	mysqli gd

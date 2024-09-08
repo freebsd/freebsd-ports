@@ -1,0 +1,70 @@
+--- dma-buf-compat.h.orig	2024-08-27 18:15:44 UTC
++++ dma-buf-compat.h
+@@ -0,0 +1,22 @@
++#ifdef __linux__
++#include <linux/dma-buf.h>
++#else
++typedef uint64_t __u64;
++
++// From https://github.com/evadot/drm-subtree or https://reviews.freebsd.org/D23085
++struct dma_buf_sync
++{
++  __u64 flags;
++};
++
++#define DMA_BUF_SYNC_READ  (1 << 0)
++#define DMA_BUF_SYNC_WRITE (2 << 0)
++#define DMA_BUF_SYNC_RW    (DMA_BUF_SYNC_READ | DMA_BUF_SYNC_WRITE)
++#define DMA_BUF_SYNC_START (0 << 2)
++#define DMA_BUF_SYNC_END   (1 << 2)
++#define DMA_BUF_SYNC_VALID_FLAGS_MASK \
++    (DMA_BUF_SYNC_RW | DMA_BUF_SYNC_END)
++
++#define DMA_BUF_BASE       'b'
++#define DMA_BUF_IOCTL_SYNC _IOW(DMA_BUF_BASE, 0, struct dma_buf_sync)
++#endif
+--- gdk/gdkdmabuf.c.orig	2024-08-27 18:17:03 UTC
++++ gdk/gdkdmabuf.c
+@@ -28,8 +28,8 @@
+ #ifdef HAVE_DMABUF
+ #include <sys/mman.h>
+ #include <sys/ioctl.h>
+-#include <linux/dma-buf.h>
+ #include <epoxy/egl.h>
++#include "../dma-buf-compat.h"
+ 
+ typedef struct _GdkDrmFormatInfo GdkDrmFormatInfo;
+ 
+--- gsk/gpu/gskgpudownloadop.c.orig	2024-08-27 18:18:39 UTC
++++ gsk/gpu/gskgpudownloadop.c
+@@ -16,7 +16,7 @@
+ #include "gdk/gdkglcontextprivate.h"
+ 
+ #ifdef HAVE_DMABUF
+-#include <linux/dma-buf.h>
++#include "../../dma-buf-compat.h"
+ #endif
+ 
+ typedef struct _GskGpuDownloadOp GskGpuDownloadOp;
+--- gsk/gpu/gskvulkanimage.c.orig	2024-08-27 18:18:26 UTC
++++ gsk/gpu/gskvulkanimage.c
+@@ -15,7 +15,7 @@
+ #include <fcntl.h>
+ #include <string.h>
+ #ifdef HAVE_DMABUF
+-#include <linux/dma-buf.h>
++#include <../../dma-buf-compat.h>
+ #endif
+ 
+ struct _GskVulkanImage
+--- meson.build.orig	2024-08-27 18:19:59 UTC
++++ meson.build
+@@ -636,7 +636,7 @@ cdata.set('HAVE_DRM_FOURCC_H', libdrm_dep.found())
+ libdrm_dep = libdrm_dep.partial_dependency(includes: true, compile_args: true)
+ cdata.set('HAVE_DRM_FOURCC_H', libdrm_dep.found())
+ 
+-cdata.set('HAVE_DMABUF', cc.has_header('linux/dma-buf.h'))
++cdata.set('HAVE_DMABUF', true)
+ 
+ cloudproviders_dep = dependency('cloudproviders',
+   required: get_option('cloudproviders'),

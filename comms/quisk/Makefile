@@ -1,6 +1,5 @@
 PORTNAME=	quisk
-DISTVERSION=	4.2.19
-PORTREVISION=	2
+DISTVERSION=	4.2.36
 CATEGORIES=	comms hamradio
 MASTER_SITES=	PYPI
 
@@ -11,9 +10,9 @@ WWW=		https://james.ahlstrom.name/quisk/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libfftw3.so:math/fftw3 \
 		libportaudio.so:audio/portaudio \
-		libasound.so:audio/alsa-lib \
 		libpulse.so:audio/pulseaudio
 
 USES=		python

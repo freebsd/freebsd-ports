@@ -1,3 +1,6 @@
+include/fizz/backend/libaegis/LibAEGIS.h
+include/fizz/backend/liboqs/LibOQS.h
+include/fizz/backend/liboqs/OQSKeyExchange.h
 include/fizz/backend/openssl/Hasher.h
 include/fizz/backend/openssl/OpenSSL.h
 include/fizz/backend/openssl/Properties.h
@@ -59,7 +62,6 @@ include/fizz/crypto/Hmac.h
 include/fizz/crypto/KeyDerivation.h
 include/fizz/crypto/RandomGenerator.h
 include/fizz/crypto/Utils.h
-include/fizz/crypto/aead/AEGISCipher.h
 include/fizz/crypto/aead/Aead.h
 include/fizz/crypto/aead/CryptoUtil.h
 include/fizz/crypto/aead/IOBufUtil.h
@@ -79,8 +81,8 @@ include/fizz/crypto/hpke/Utils.h
 include/fizz/crypto/hpke/test/Mocks.h
 include/fizz/crypto/test/HmacTest.h
 include/fizz/crypto/test/Mocks.h
+include/fizz/crypto/test/TestKeys.h
 include/fizz/crypto/test/TestUtil.h
-include/fizz/experimental/crypto/exchange/OQSKeyExchange.h
 include/fizz/experimental/ktls/AsyncFizzBaseKTLS.h
 include/fizz/experimental/ktls/AsyncKTLSSocket.h
 include/fizz/experimental/ktls/FizzKTLSCallback.h

@@ -1,6 +1,6 @@
---- secmem.c.orig	2021-05-04 08:16:41 UTC
+--- secmem.c.orig	2024-08-22 17:41:01 UTC
 +++ secmem.c
-@@ -10,6 +10,7 @@
+@@ -11,6 +11,7 @@
  #include <unistd.h>
  #include <errno.h>
  #include <sys/mman.h>

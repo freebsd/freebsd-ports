@@ -1,10 +1,11 @@
 PORTNAME=	mesa-dri
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
 WWW=		https://www.mesa3d.org/
+
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR}
 
 LIB_DEPENDS+=	libglapi.so:graphics/mesa-libs
 
@@ -30,6 +31,13 @@ GALLIUM_DESC=		Unified OpenGL drivers
 crocus_DESC=		Intel GPU Gen4 (Broadwater) to Gen7 (Haswell)
 i915_DESC=		Intel GPU Gen3 (Grantsdale to Pineview)
 iris_DESC=		Intel GPU Gen8 (Broadwell) and newer
+iris_BUILD_DEPENDS=	libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T} \
+			spirv-tools>0:graphics/spirv-tools \
+			spirv-llvm-translator-${LLVM_PORT:T}>0:devel/spirv-llvm-translator@${LLVM_PORT:T}
+iris_RUN_DEPENDS=	spirv-tools>0:graphics/spirv-tools \
+			spirv-llvm-translator-${LLVM_PORT:T}>0:devel/spirv-llvm-translator@${LLVM_PORT:T}
+iris_CONFIGURE_ENV=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig"
+iris_IMPLIES=		SPIRV
 panfrost_DESC=		ARM Midgard and Bifrost
 r300_DESC=		AMD/ATI R300, R400 and R500
 r600_DESC=		AMD/ATI R600, R700, Evergreen, Northern Islands
@@ -50,7 +58,13 @@ ${_gd}_VARS+=		GALLIUM_DRIVERS+=${_gd}
 OPTIONS_GROUP_VULKAN=	anv radv swrast_vk
 VULKAN_DESC=		Vulkan drivers
 anv_DESC=		Intel GPU Gen9 and newer Vulkan support
-anv_BUILD_DEPENDS=	glslangValidator:graphics/glslang
+anv_BUILD_DEPENDS=	glslangValidator:graphics/glslang \
+			libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T} \
+			spirv-tools>0:graphics/spirv-tools \
+			spirv-llvm-translator-${LLVM_PORT:T}>0:devel/spirv-llvm-translator@${LLVM_PORT:T}
+anv_RUN_DEPENDS=	spirv-tools>0:graphics/spirv-tools \
+			spirv-llvm-translator-${LLVM_PORT:T}>0:devel/spirv-llvm-translator@${LLVM_PORT:T}
+anv_CONFIGURE_ENV=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig"
 radv_DESC=		AMD/ATI Southern Islands and newer Vulkan support
 radv_BUILD_DEPENDS=	glslangValidator:graphics/glslang
 swrast_vk_DESC=		Software Rasterizer Vulkan support
@@ -91,12 +105,17 @@ MESON_ARGS+=	-Dandroid-libbacktrace=disabled \
 		-Dgallium-va=disabled \
 		-Dgles1=enabled \
 		-Dgles2=enabled \
+		-Dglvnd=disabled \
 		-Dglx=disabled \
 		-Degl=enabled \
 		-Dlmsensors=disabled \
 		-Dmicrosoft-clc=disabled \
 		-Dosmesa=false \
 		-Dvalgrind=disabled
+
+.if ${ARCH} != amd64
+MESON_ARGS+=	-Dintel-rt=disabled # https://gitlab.freedesktop.org/mesa/mesa/-/issues/10629
+.endif
 
 .for _gd in ${OPTIONS_GROUP_GALLIUM}
 . if defined(GALLIUM_DRIVERS) && ${GALLIUM_DRIVERS:M${_gd}}

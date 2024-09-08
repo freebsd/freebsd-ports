@@ -5,7 +5,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/8.0/
 PKGNAMESUFFIX=	8
 
-MAINTAINER=	gerald@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft Windows compatibility environment
 WWW=		https://www.winehq.org
 
@@ -14,6 +14,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
+DEPRECATED=	The transition to Wine 9.0 should be mostly done now
+EXPIRATION_DATE=2024-10-30
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex llvm${_LLVM_VERSION}>=0:devel/llvm${_LLVM_VERSION}
 

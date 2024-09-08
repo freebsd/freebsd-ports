@@ -11,7 +11,6 @@ bin/llvm-bcanalyzer%%LLVM_SUFFIX%%
 bin/llvm-bitcode-strip%%LLVM_SUFFIX%%
 bin/llvm-cat%%LLVM_SUFFIX%%
 bin/llvm-cfi-verify%%LLVM_SUFFIX%%
-bin/llvm-cgdata%%LLVM_SUFFIX%%
 bin/llvm-config%%LLVM_SUFFIX%%
 bin/llvm-cov%%LLVM_SUFFIX%%
 bin/llvm-cvtres%%LLVM_SUFFIX%%
@@ -111,7 +110,6 @@ bin/sancov%%LLVM_SUFFIX%%
 %%FLANG%%bin/bbc%%LLVM_SUFFIX%%
 %%FLANG%%bin/f18-parse-demo%%LLVM_SUFFIX%%
 %%FLANG%%bin/fir-opt%%LLVM_SUFFIX%%
-%%FLANG%%bin/flang%%LLVM_SUFFIX%%
 %%FLANG%%bin/flang-new%%LLVM_SUFFIX%%
 %%FLANG%%bin/tco%%LLVM_SUFFIX%%
 %%LLD%%bin/ld.lld%%LLVM_SUFFIX%%
@@ -232,7 +230,6 @@ llvm%%LLVM_SUFFIX%%/bin/llvm-bitcode-strip
 llvm%%LLVM_SUFFIX%%/bin/llvm-c-test
 llvm%%LLVM_SUFFIX%%/bin/llvm-cat
 llvm%%LLVM_SUFFIX%%/bin/llvm-cfi-verify
-llvm%%LLVM_SUFFIX%%/bin/llvm-cgdata
 llvm%%LLVM_SUFFIX%%/bin/llvm-config
 llvm%%LLVM_SUFFIX%%/bin/llvm-cov
 llvm%%LLVM_SUFFIX%%/bin/llvm-cvtres
@@ -2999,10 +2996,6 @@ llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/WasmEHPrepare.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/WinEHFuncInfo.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/WinEHPrepare.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGen/WindowScheduler.h
-llvm%%LLVM_SUFFIX%%/include/llvm/CodeGenData/CodeGenData.h
-llvm%%LLVM_SUFFIX%%/include/llvm/CodeGenData/CodeGenData.inc
-llvm%%LLVM_SUFFIX%%/include/llvm/CodeGenData/CodeGenDataReader.h
-llvm%%LLVM_SUFFIX%%/include/llvm/CodeGenData/CodeGenDataWriter.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGenData/OutlinedHashTree.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGenData/OutlinedHashTreeRecord.h
 llvm%%LLVM_SUFFIX%%/include/llvm/CodeGenTypes/LowLevelType.h

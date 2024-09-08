@@ -159,6 +159,7 @@
     SUBDIR += libmsym
     SUBDIR += libnegf
     SUBDIR += liboglappth
+    SUBDIR += libpsml
     SUBDIR += libquantum
     SUBDIR += libssm
     SUBDIR += libsvm
@@ -266,6 +267,7 @@
     SUBDIR += pagmo2
     SUBDIR += paje
     SUBDIR += paraview
+    SUBDIR += parthenon
     SUBDIR += pastix
     SUBDIR += pcmsolver
     SUBDIR += phonopy
@@ -382,6 +384,7 @@
     SUBDIR += py-nilearn
     SUBDIR += py-obspy
     SUBDIR += py-oddt
+    SUBDIR += py-openEMS
     SUBDIR += py-openbabel
     SUBDIR += py-openpiv
     SUBDIR += py-optking
@@ -418,6 +421,7 @@
     SUBDIR += py-rmf
     SUBDIR += py-rmsd
     SUBDIR += py-ruffus
+    SUBDIR += py-sarpy
     SUBDIR += py-scikit-fuzzy
     SUBDIR += py-scikit-learn
     SUBDIR += py-scikit-optimize

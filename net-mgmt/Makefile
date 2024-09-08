@@ -186,6 +186,7 @@
     SUBDIR += ndpmon
     SUBDIR += net-snmp
     SUBDIR += netbox
+    SUBDIR += netbox-agent
     SUBDIR += netdata
     SUBDIR += netdata-go
     SUBDIR += netdisco

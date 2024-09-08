@@ -10,9 +10,25 @@
       <Pattern>%date{ISO8601} - %level [%logger:%line] - %msg%n</Pattern>
     </encoder>
   </appender>
+
+  <appender name="jetty-access" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>/var/log/shibboleth/access.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>/var/log/shibboleth/access-%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+    </rollingPolicy>
+    <encoder>
+      <pattern>%msg%n</pattern>
+    </encoder>
+  </appender>
+
   <root level="INFO">
     <appender-ref ref="jetty" />
   </root>
+
+  <logger name="org.eclipse.jetty.server.RequestLog" level="INFO" additivity="false">
+    <appender-ref ref="jetty-access" />
+  </logger>
+
   <logger name="org.springframework" level="OFF" />
   <logger name="ch.qos.logback" level="WARN" />
 </configuration>

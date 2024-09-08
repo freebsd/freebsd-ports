@@ -11,4 +11,4 @@ lib/cmake/Arcus/ArcusConfigVersion.cmake
 lib/libArcus.so
 lib/libArcus.so.1.1.0
 lib/libArcus.so.3
-%%PYTHON_SITELIBDIR%%/Arcus.so
+%%PYTHON_SITELIBDIR%%/pyArcus.so

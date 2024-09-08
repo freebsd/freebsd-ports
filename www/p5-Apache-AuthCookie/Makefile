@@ -1,5 +1,5 @@
 PORTNAME=	Apache-AuthCookie
-PORTVERSION=	3.31
+PORTVERSION=	3.32
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -31,8 +31,8 @@ CURUSER?=	`whoami`
 CURGRP?=	`groups | ${AWK} '{print $$1}'`
 TESTPORT?=	8228
 CONFIGURE_ENV+=	APACHE="${HTTPD}" \
-		TESTUSER="${CURUSER}" \
 		TESTGRP="${CURGRP}" \
-		TESTPORT="${TESTPORT}"
+		TESTPORT="${TESTPORT}" \
+		TESTUSER="${CURUSER}"
 
 .include <bsd.port.post.mk>

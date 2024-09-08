@@ -804,6 +804,7 @@ lib/libcompiler.so.1.0.0
 lib/libcompiler_ast.so
 lib/libcompiler_ast.so.1.0.0
 lib/libcompiler_base.a
+lib/libcompiler_lib.a
 lib/libconcurrency.so
 lib/libconcurrency.so.1.0.0
 lib/libmustache.so
@@ -832,3 +833,5 @@ lib/libthrifttyperep.so
 lib/libthrifttyperep.so.1.0.0
 lib/libtransport.so
 lib/libtransport.so.1.0.0
+lib/libwhisker.so
+lib/libwhisker.so.1.0.0

@@ -5,10 +5,15 @@ MASTER_SITES=	http://pear.symfony-project.com/get/
 PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	The Symfony YAML Component
-WWW=		http://components.symfony-project.org/yaml/
+COMMENT=	Symfony Yaml Component
+WWW=		https://symfony.com/components/Yaml
 
-USES=	pear
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		pear
+
+NO_ARCH=	yes
 PEAR_CHANNEL=	symfony
 
 .include <bsd.port.mk>

@@ -1,15 +1,15 @@
 PORTNAME=	tree
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+DISTVERSION=	2.1.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://mama.indstate.edu/users/ice/tree/src/ \
+MASTER_SITES=	https://oldmanprogrammer.net/tar/tree/ \
 		https://fossies.org/linux/misc/
 
 MAINTAINER=	gb@unistra.fr
 COMMENT=	Display a tree-view of directories with optional color or HTML output
-WWW=		https://mama.indstate.edu/users/ice/tree/
+WWW=		https://oldmanprogrammer.net/source.php?dir=projects/tree
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake tar:tgz
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"

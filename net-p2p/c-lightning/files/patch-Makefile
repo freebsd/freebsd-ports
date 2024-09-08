@@ -1,18 +1,18 @@
---- Makefile.orig	2023-08-23 06:24:14 UTC
-+++ Makefile
-@@ -268,9 +268,9 @@ ifeq ($(STATIC),1)
+--- Makefile.orig	2024-08-29 06:49:21.000000000 +0200
++++ Makefile	2024-09-03 12:56:39.050177000 +0200
+@@ -271,9 +271,9 @@
  # For MacOS, Jacob Rapoport <jacob@rumblemonkey.com> changed this to:
  #  -L/usr/local/lib -lsqlite3 -lz -Wl,-lm -lpthread -ldl $(COVFLAGS)
  # But that doesn't static link.
--LDLIBS = -L$(CPATH) -Wl,-dn $(SQLITE3_LDLIBS) -lz -Wl,-dy -lm -lpthread -ldl $(COVFLAGS)
-+LDLIBS = -L$(LIBRARY_PATH) -Wl,-dn $(SQLITE3_LDLIBS) -lz -Wl,-dy -lm -lpthread -ldl $(COVFLAGS)
+-LDLIBS = -L$(CPATH) -Wl,-dn $(SQLITE3_LDLIBS) -Wl,-dy -lm -lpthread -ldl $(COVFLAGS)
++LDLIBS = -L$(LIBRARY_PATH) -Wl,-dn $(SQLITE3_LDLIBS) -Wl,-dy -lm -lpthread -ldl $(COVFLAGS)
  else
--LDLIBS = -L$(CPATH) -lm $(SQLITE3_LDLIBS) -lz $(COVFLAGS)
-+LDLIBS = -L$(LIBRARY_PATH) -lm $(SQLITE3_LDLIBS) -lz $(COVFLAGS)
+-LDLIBS = -L$(CPATH) -lm $(SQLITE3_LDLIBS) $(COVFLAGS)
++LDLIBS = -L$(LIBRARY_PATH) -lm $(SQLITE3_LDLIBS) $(COVFLAGS)
  endif
  
  # If we have the postgres client library we need to link against it as well
-@@ -760,7 +760,7 @@ docdir = $(datadir)/doc/$(PKGNAME)
+@@ -767,7 +767,7 @@
  plugindir = $(pkglibexecdir)/plugins
  datadir = $(PREFIX)/share
  docdir = $(datadir)/doc/$(PKGNAME)

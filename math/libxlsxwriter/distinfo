@@ -1,3 +1,5 @@
-TIMESTAMP = 1712655158
-SHA256 (jmcnamara-libxlsxwriter-RELEASE_1.1.7_GH0.tar.gz) = 1f378e25d8bb5be258d3e04d3d24b8c23ff21bf206e6e206661844a96ca25eda
-SIZE (jmcnamara-libxlsxwriter-RELEASE_1.1.7_GH0.tar.gz) = 21584619
+TIMESTAMP = 1725056181
+SHA256 (jmcnamara-libxlsxwriter-v1.1.8_GH0.tar.gz) = 122c98353e5b69284a1cd782be7ae67bdefde2146f8197ef89a1aaf886058e86
+SIZE (jmcnamara-libxlsxwriter-v1.1.8_GH0.tar.gz) = 21840785
+SHA256 (5af9c1fd3e330a6a4aeaba58599e2c5294c521ab.patch) = b5b9d12c52bb6640c5399967360f9d1cd7a31a7c15bd2a6d3226d8c50b445074
+SIZE (5af9c1fd3e330a6a4aeaba58599e2c5294c521ab.patch) = 3271

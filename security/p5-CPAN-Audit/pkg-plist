@@ -12,6 +12,7 @@ bin/cpan-audit
 %%SITE_PERL%%/CPAN/Audit/Version.pm
 %%PERL5_MAN1%%/cpan-audit.1.gz
 %%PERL5_MAN3%%/CPAN::Audit.3.gz
+%%PERL5_MAN3%%/CPAN::Audit::DB.3.gz
 %%PERL5_MAN3%%/CPAN::Audit::Filter.3.gz
 %%PERL5_MAN3%%/CPAN::Audit::FreshnessCheck.3.gz
 %%PERL5_MAN3%%/CPAN::Audit::Query.3.gz

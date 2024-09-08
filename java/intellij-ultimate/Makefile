@@ -1,9 +1,8 @@
 PORTNAME=	intellij-ultimate
-DISTVERSION=	2022.2.5
-PORTREVISION=	2
+DISTVERSION=	2024.2.1
 CATEGORIES=	java devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/idea/
-DISTNAME=	ideaIU-${DISTVERSION}-no-jbr
+DISTNAME=	ideaIU-${DISTVERSION}
 DIST_SUBDIR=	jetbrains
 
 MAINTAINER=	andoriyu@gmail.com
@@ -15,65 +14,87 @@ LICENSE_NAME=	Subscription license agreement for business and organizations
 LICENSE_TEXT=	See: https://www.jetbrains.com/store/license.html
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
-		intellij-pty4j>=0.11.4:java/intellij-pty4j \
+		jetbrains-pty4j>=0.12.26:devel/jetbrains-pty4j \
+		jetbrains-sqlite>=241.15989.150:devel/jetbrains-sqlite \
 		lsof:sysutils/lsof
 
-USES=		python:run shebangfix ssl
-
 USE_JAVA=	yes
-JAVA_VERSION=	11+
-
-SHEBANG_FILES=	bin/restart.py
+JAVA_VERSION=	17+
 
 CONFLICTS=	idea intellij
 
-NO_ARCH=	yes
-NO_ARCH_IGNORE=	libjansi.so
 NO_BUILD=	yes
 SUB_FILES=	idea idea.desktop pkg-message
 
 BUILD_TYPE=	IU
-BUILD_VERSION=	222.4554.10
+BUILD_VERSION=	242.21829.142
 BUILD_MARKER=	${BUILD_TYPE}-${BUILD_VERSION}
 PLIST_SUB=	BUILD_MARKER=${BUILD_MARKER}
 WRKSRC=		${WRKDIR}/idea-${BUILD_MARKER}
 
 post-patch:
-	@${REINPLACE_CMD} 's/x86_64/amd64/g' ${WRKSRC}/bin/idea.sh
 # Linux/Windows/OS X only so remove them
 	@${RM} -r \
 		${WRKSRC}/bin/fsnotifier \
-		${WRKSRC}/bin/fsnotifier64 \
+		${WRKSRC}/bin/idea \
 		${WRKSRC}/bin/libdbm.so \
-		${WRKSRC}/lib/pty4j-native/ \
-		${WRKSRC}/plugins/android/resources/native/ \
-		${WRKSRC}/plugins/cwm-plugin/quiche-native/ \
-		${WRKSRC}/plugins/maven/lib/maven3/lib/jansi-native/linux32/ \
-		${WRKSRC}/plugins/maven/lib/maven3/lib/jansi-native/linux64/ \
-		${WRKSRC}/plugins/maven/lib/maven3/lib/jansi-native/osx/ \
-		${WRKSRC}/plugins/maven/lib/maven3/lib/jansi-native/windows32/ \
-		${WRKSRC}/plugins/maven/lib/maven3/lib/jansi-native/windows64/ \
-		${WRKSRC}/plugins/performanceTesting/bin/ \
+		${WRKSRC}/bin/remote-dev-server \
+		${WRKSRC}/bin/remote-dev-server.sh \
+		${WRKSRC}/bin/repair \
+		${WRKSRC}/bin/restarter \
+		${WRKSRC}/help/plugin-resources \
+		${WRKSRC}/jbr/ \
+		${WRKSRC}/lib/async-profiler/ \
+		${WRKSRC}/lib/jna/ \
+		${WRKSRC}/lib/native/ \
+		${WRKSRC}/lib/pty4j/ \
+		${WRKSRC}/plugins/clouds-docker-gateway \
+		${WRKSRC}/plugins/clouds-docker-impl \
+		${WRKSRC}/plugins/cwm-plugin \
+		${WRKSRC}/plugins/gateway-plugin \
+		${WRKSRC}/plugins/gateway-terminal \
+		${WRKSRC}/plugins/llmInstaller/video/Idea/.DS_Store \
+		${WRKSRC}/plugins/maven/lib/maven3/lib/jansi-native/ \
+		${WRKSRC}/plugins/maven/lib/maven4-server-lib \
+		${WRKSRC}/plugins/remote-dev-server/ \
 		${WRKSRC}/plugins/webp/lib/libwebp/
+	@${SED} -i '' 's/%%ARCH%%/${ARCH}/' ${WRKSRC}/product-info.json
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+JNI_ARCH=	x86-64
+.else
+JNI_ARCH=	${ARCH}
+.endif
+PLIST_SUB+=	JNI_ARCH=${JNI_ARCH}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
-		"! -name *\.bak ! -name *\.so ! -name *\.dll ! -name *\.dylib ! -name *\.pdb ! -name *\.sh")
+		"! -name *\.orig ! -name *\.bak ! -name *\.so ! -name *\.dll ! -name *\.dylib ! -name *\.pdb ! -name *\.sh")
 	@(cd ${WRKSRC} && ${COPYTREE_BIN} . ${STAGEDIR}${DATADIR} "-name *\.sh")
-	${INSTALL_LIB} ${WRKSRC}/plugins/maven/lib/maven3/lib/jansi-native/freebsd32/libjansi.so \
-		${STAGEDIR}${DATADIR}/plugins/maven/lib/maven3/lib/jansi-native/freebsd32/
-	${INSTALL_LIB} ${WRKSRC}/plugins/maven/lib/maven3/lib/jansi-native/freebsd64/libjansi.so \
-		${STAGEDIR}${DATADIR}/plugins/maven/lib/maven3/lib/jansi-native/freebsd64/
 	${INSTALL_SCRIPT} ${WRKDIR}/idea ${STAGEDIR}${PREFIX}/bin/idea
 	${INSTALL_MAN} ${FILESDIR}/idea.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKDIR}/idea.desktop ${STAGEDIR}${PREFIX}/share/applications/
 # Use fsnotifier replacement provided by java/intellij-fsnotifier
-	${ECHO} "idea.filewatcher.executable.path=${PREFIX}/intellij/bin/fsnotifier" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
+	${ECHO} "idea.filewatcher.executable.path=${PREFIX}/bin/fsnotifier" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
+# Install FreeBSD native lib provided by devel/jna
+	@${MKDIR} ${WRKDIR}/jna
+	@(cd ${WRKDIR}/jna && ${JAR} xf ${JAVAJARDIR}/jna.jar com/sun/jna/freebsd-${JNI_ARCH}/libjnidispatch.so)
+	${MKDIR} ${STAGEDIR}${DATADIR}/lib/jna
+	${INSTALL_LIB} ${WRKDIR}/jna/com/sun/jna/freebsd-${JNI_ARCH}/libjnidispatch.so ${STAGEDIR}${DATADIR}/lib/jna/
 # Use pty4j replacement provided by java/intellij-pty4j
-	${LN} -sf ../../../intellij/lib/libpty ${STAGEDIR}${DATADIR}/lib/pty4j-native
-# Fix "Typeahead timeout is exceeded" error
-	${ECHO} "action.aware.typeAhead=false" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
+	${MKDIR} ${STAGEDIR}${DATADIR}/lib/pty4j/freebsd/${JNI_ARCH}
+	${LN} -sf ../../../../../jetbrains/pty4j/${ARCH}/libpty.so ${STAGEDIR}${DATADIR}/lib/pty4j/freebsd/${JNI_ARCH}/
+# Use sqlite replacement provided by devel/jetbrains-sqlite
+	${MKDIR} ${STAGEDIR}${DATADIR}/lib/native/linux-${JNI_ARCH}
+	${LN} -sf ../../../../jetbrains/sqlite/${ARCH}/libsqliteij.so ${STAGEDIR}${DATADIR}/lib/native/linux-${JNI_ARCH}/libsqliteij.so
+# Fix "Cannot create SvgCacheManager" error
+	${ECHO} "idea.ui.icons.svg.disk.cache=false" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
+# Disable IDE auto updates
+	${ECHO} "ide.no.platform.update=FreeBSD Ports" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,5 +1,4 @@
 PORTNAME=	vmutils
-PORTREVISION=	5
 
 COMMENT=	Ancillary utilities and agent for VictoriaMetrics
 

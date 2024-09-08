@@ -1,0 +1,4 @@
+This module is a plugin for the popular Python testing framework pytest.
+It manages dependencies of tests: you may mark some tests as dependent from
+other tests. These tests will then be skipped if any of the dependencies
+did fail or has been skipped.

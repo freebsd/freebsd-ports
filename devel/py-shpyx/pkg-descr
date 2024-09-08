@@ -1,0 +1,4 @@
+shpyx is a simple, lightweight and typed library for running shell commands in
+Python.
+
+Use shpyx.run to run a shell command in a subprocess.

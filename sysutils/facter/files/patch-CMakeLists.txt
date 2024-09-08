@@ -1,6 +1,15 @@
---- CMakeLists.txt.orig	2024-02-25 16:48:32 UTC
+--- CMakeLists.txt.orig	2022-07-18 15:00:22 UTC
 +++ CMakeLists.txt
-@@ -233,7 +233,7 @@ add_test(NAME "facter\\ smoke" COMMAND facter)
+@@ -121,7 +121,7 @@ if (NOT WITHOUT_JRUBY AND NOT WIN32)
+ 
+         if (Java_JAVAC_EXECUTABLE)
+             set(JRUBY_SUPPORT TRUE)
+-            set(CMAKE_JAVA_COMPILE_FLAGS -source 1.6 -target 1.6)
++            set(CMAKE_JAVA_COMPILE_FLAGS -source 8 -target 8)
+             add_definitions(-DUSE_JRUBY_SUPPORT)
+         endif()
+     endif()
+@@ -233,7 +233,7 @@ endif()
  add_test(NAME "facter\\ smoke" COMMAND facter)
  
  # Install the man page

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# PROVIDE: multiskkserv
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# See `%%PREFIX%%/sbin/multiskkserv -h` for flags
+# NOTE: multiskkserv won't auto-detach itself, use &.
+
+. /etc/rc.subr
+
+name=multiskkserv
+rcvar=multiskkserv_enable
+command=%%PREFIX%%/sbin/multiskkserv
+
+: ${multiskkserv_enable:="NO"}
+: ${multiskkserv_flags:="-s 127.0.0.1 %%SKKDICS%% &"}
+
+load_rc_config ${name}
+run_rc_command $1

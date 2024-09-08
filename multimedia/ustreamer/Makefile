@@ -1,6 +1,6 @@
 PORTNAME=	ustreamer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.12
+DISTVERSION=	6.15
 CATEGORIES=	multimedia net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,14 +11,13 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
-LIB_DEPENDS=	libevent.so:devel/libevent \
-		libuuid.so:misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libevent.so:devel/libevent
 
-USES=		compiler:c11 gmake jpeg localbase:ldflags
+USES=		compiler:c17 gmake jpeg localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	pikvm
 
-MAKE_ARGS=	WITH_PTHREAD_NP=0 MANPREFIX=${PREFIX}/share/man
+MAKE_ARGS=	MANPREFIX=${PREFIX}/share/man
 
 INSTALL_TARGET=	install-strip
 

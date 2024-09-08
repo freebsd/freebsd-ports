@@ -1,0 +1,11 @@
+--- winpr/libwinpr/comm/CMakeLists.txt.orig	2024-09-03 16:32:12 UTC
++++ winpr/libwinpr/comm/CMakeLists.txt
+@@ -18,7 +18,7 @@ set(MODULE_PREFIX "WINPR_COMM")
+ set(MODULE_NAME "winpr-comm")
+ set(MODULE_PREFIX "WINPR_COMM")
+ 
+-if(UNIX AND NOT ANDROID AND NOT APPLE)
++if(UNIX AND NOT ANDROID AND NOT APPLE AND NOT FREEBSD)
+ 	set(${MODULE_PREFIX}_SRCS
+ 		comm.c
+ 		comm.h

@@ -1,6 +1,5 @@
 PORTNAME=	pound
-PORTVERSION=	4.11
-PORTREVISION=	1
+PORTVERSION=	4.13
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/graygnuorg/pound/releases/download/v${PORTVERSION}/
 
@@ -16,7 +15,6 @@ TEST_DEPENDS=	p5-IO-FDPass>=0:devel/p5-IO-FDPass \
 USES=		cpe gmake ssl
 CPE_VENDOR=	apsis
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-tcmalloc --disable-hoard
 USE_RC_SUBR=	${PORTNAME}
 TEST_TARGET=	check
@@ -24,15 +22,16 @@ TEST_TARGET=	check
 SUB_FILES=	${PORTNAME}.cfg
 SUB_LIST=	NAME=${PORTNAME}
 
+INFO=		${PORTNAME}
 PORTDOCS=	AUTHORS ChangeLog ChangeLog.apsis NEWS README THANKS
 
 OPTIONS_DEFINE=	DOCS DSAPARAM PCRE
 OPTIONS_DEFAULT=PCRE
+
 DSAPARAM_DESC=	Generate DH parameters without using "safe" primes
 
-PCRE_LIB_DEPENDS=	libpcre2-posix.so:devel/pcre2
-PCRE_USES=	localbase
-PCRE_CONFIGURE_ENABLE=	pcreposix
+PCRE_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+PCRE_CONFIGURE_OFF=	--disable-pcre
 
 post-patch-DSAPARAM-on:
 	@${REINPLACE_CMD} -e '/openssl dhparam/s,-5,-dsaparam,' \

@@ -1,6 +1,7 @@
 PORTNAME=	typstyle
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.31
+DISTVERSION=	0.11.32
+PORTREVISION=	1
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -231,10 +232,10 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		numerals-0.1.4 \
 		object-0.35.0 \
 		once_cell-1.19.0 \
-		openssl-0.10.64 \
+		openssl-0.10.66 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.102 \
+		openssl-sys-0.9.103 \
 		option-ext-0.2.0 \
 		palette-0.7.6 \
 		palette_derive-0.7.6 \
@@ -471,8 +472,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		zerofrom-0.1.4 \
 		zerofrom-derive-0.1.4 \
 		zerotrie-0.1.3 \
-		zerovec-0.10.2 \
-		zerovec-derive-0.10.2
+		zerovec-0.10.4 \
+		zerovec-derive-0.10.3
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib

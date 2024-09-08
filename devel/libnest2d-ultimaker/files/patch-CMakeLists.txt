@@ -1,0 +1,23 @@
+--- CMakeLists.txt.orig	2023-09-11 12:51:21 UTC
++++ CMakeLists.txt
+@@ -1,8 +1,10 @@ cmake_minimum_required(VERSION 3.20)
+ cmake_policy(SET CMP0091 NEW)
+ project(libnest2d)
+ cmake_minimum_required(VERSION 3.20)
+-find_package(standardprojectsettings REQUIRED)
++#find_package(standardprojectsettings REQUIRED)
+ 
++list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
++
+ option(BUILD_SHARED_LIBS "Build shared libs instead of static (applies for dependencies as well)" OFF)
+ option(HEADER_ONLY "If enabled static library will not be built." ON)
+ option(ENABLE_TESTING "Build with Google unittest" OFF)
+@@ -11,7 +13,7 @@ add_library(project_options INTERFACE)
+ set(THREADING std CACHE STRING "Multithreading, available options: 'std' (default), 'tbb', 'omp', 'none'")
+ 
+ add_library(project_options INTERFACE)
+-set_project_warnings(project_options)
++#set_project_warnings(project_options)
+ 
+ set(nest2d_HDRS
+         include/libnest2d/libnest2d.hpp

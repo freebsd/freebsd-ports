@@ -1,10 +1,9 @@
 PORTNAME=	krakend-ce
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.3
-PORTREVISION=	3
+DISTVERSION=	2.7.0
 CATEGORIES=	net
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	alster@vinterdalen.se
 COMMENT=	High-performance, stateless, declarative, API Gateway
 WWW=		https://github.com/krakend/krakend-ce/
 

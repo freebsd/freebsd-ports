@@ -1,5 +1,5 @@
 PORTNAME=	adminerevo
-PORTVERSION=	4.8.2
+DISTVERSION=	4.8.4
 CATEGORIES=	databases www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
 DISTNAME=	adminer-${DISTVERSION}

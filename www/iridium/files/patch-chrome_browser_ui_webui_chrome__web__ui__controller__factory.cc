@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2024-08-01 05:47:53 UTC
+--- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2024-08-27 06:28:16 UTC
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
-@@ -191,7 +191,7 @@
+@@ -189,7 +189,7 @@
  #include "chrome/browser/ui/webui/chromeos/chrome_url_disabled/chrome_url_disabled_ui.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/webui/webui_js_error/webui_js_error_ui.h"
  #endif
  
-@@ -216,21 +216,21 @@
+@@ -214,21 +214,21 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -35,7 +35,7 @@
  #include "chrome/browser/ui/webui/whats_new/whats_new_ui.h"
  #include "chrome/browser/ui/webui/whats_new/whats_new_util.h"
  #endif
-@@ -384,7 +384,7 @@ bool IsAboutUI(const GURL& url) {
+@@ -378,7 +378,7 @@ bool IsAboutUI(const GURL& url) {
  #if !BUILDFLAG(IS_ANDROID)
            || url.host_piece() == chrome::kChromeUITermsHost
  #endif
@@ -44,7 +44,7 @@
            || url.host_piece() == chrome::kChromeUILinuxProxyConfigHost
  #endif
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -591,7 +591,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -572,7 +572,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUIMobileSetupHost)
      return &NewWebUI<ash::cellular_setup::MobileSetupUI>;
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
@@ -53,7 +53,7 @@
    if (url.host_piece() == chrome::kChromeUIWebUIJsErrorHost)
      return &NewWebUI<WebUIJsErrorUI>;
  #endif
-@@ -647,7 +647,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -628,7 +628,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUINaClHost)
      return &NewWebUI<NaClUI>;
  #endif
@@ -62,7 +62,7 @@
       defined(TOOLKIT_VIEWS)) ||                         \
      defined(USE_AURA)
    if (url.host_piece() == chrome::kChromeUITabModalConfirmDialogHost)
-@@ -678,7 +678,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -659,7 +659,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUIWebuiGalleryHost) {
      return &NewWebUI<WebuiGalleryUI>;
    }
@@ -71,7 +71,7 @@
    if (url.host_piece() == chrome::kChromeUIWhatsNewHost &&
        whats_new::IsEnabled()) {
      return &NewWebUI<WhatsNewUI>;
-@@ -697,26 +697,26 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -678,26 +678,26 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    }
  #endif
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -103,7 +103,7 @@
    if (url.host_piece() == chrome::kChromeUIWebAppSettingsHost)
      return &NewWebUI<WebAppSettingsUI>;
  #endif
-@@ -955,7 +955,7 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::
+@@ -936,7 +936,7 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::
    if (page_url.host_piece() == chrome::kChromeUINewTabPageHost)
      return NewTabPageUI::GetFaviconResourceBytes(scale_factor);
  

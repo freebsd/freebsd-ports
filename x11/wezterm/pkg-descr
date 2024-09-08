@@ -12,12 +12,9 @@ multiplexer written by @wez and implemented in Rust.
   Shift-Insert (bracketed paste is supported!)
 - SGR style mouse reporting (works in vim and tmux)
 - Render underline, double-underline, italic, bold, strikethrough
-  (most other terminal emulators do not support as many render
-  attributes)
 - Configuration via a file with hot reloading
 - Multiple Windows (Hotkey: Super-N)
-- Splits/Panes
-- Tabs (Hotkey: Super-T, next/prev: Super-Shift-[ and Super-Shift-], go-to: Super-[1-9])
+- Splits/Panes and Tabs
 - SSH client with native tabs
 - Connect to serial ports for embedded/Arduino work
 - Connect to a local multiplexer server over unix domain sockets

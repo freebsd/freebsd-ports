@@ -1,6 +1,6 @@
 PORTNAME=	c-lightning
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
-PORTVERSION=	24.05
+PORTVERSION=	24.08
 DISTVERSIONPREFIX=	v
 # and uncomment the following two lines (use for example -git-HEAD or -git-f8d8348c)
 #PORTVERSION=	0
@@ -100,7 +100,7 @@ ASAN_CONFIGURE_ENABLE=		address-sanitizer
 ASAN_DESC=			Compile with address-sanitizer
 VALGRIND_CONFIGURE_ENABLE=	valgrind
 VALGRIND_DESC=			Run tests with Valgrind
-WSSPROXYDEPS_DESC=	Install and depend on packages required by the wss-proxy plugin
+WSSPROXYDEPS_DESC=		Install and depend on packages required by the wss-proxy plugin
 # run files/check_python_plugins_deps.sh to verify the list below
 WSSPROXYDEPS_RUN_DEPENDS=\
 	${PYTHON_PKGNAMEPREFIX}asn1crypto>0:devel/py-asn1crypto@${PY_FLAVOR} \
@@ -140,8 +140,8 @@ GIT_COMMIT=	${PKGNAMESUFFIX:C/-git-//}
 GIT_COMMIT=	${DISTVERSIONPREFIX}${PORTVERSION}
 .endif
 GH_TUPLE=	ElementsProject:lightning:${GIT_COMMIT} \
-		ElementsProject:libwally-core:ec348c884e93a:ext1/external/libwally-core \
-		ElementsProject:secp256k1-zkp:1e04d324476f9:ext2/external/libwally-core/src/secp256k1 \
+		ElementsProject:libwally-core:11e1bf6d60a13:ext1/external/libwally-core \
+		BlockstreamResearch:secp256k1-zkp:1e04d3244:ext2/external/libwally-core/src/secp256k1 \
 		ianlancetaylor:libbacktrace:2446c66076480ce:ext3/external/libbacktrace \
 		zserge:jsmn:18e9fe42cbfe21d65076f5c77ae2be3:ext4/external/jsmn \
 		valyala:gheap:67fc83bc953324f4759e52951921d:ext5/external/gheap
@@ -183,13 +183,14 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/bcli
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/bookkeeper
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/chanbackup
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/cln-askrene
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/cln-renepay
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/commando
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/fetchinvoice
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/funder
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/keysend
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/offers
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/pay
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/recklessrpc
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/recover
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/spenderp
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/sql

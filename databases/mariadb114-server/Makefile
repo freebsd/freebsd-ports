@@ -1,5 +1,5 @@
 PORTNAME?=	mariadb
-PORTVERSION=	11.4.2
+PORTVERSION=	11.4.3
 CATEGORIES=	databases
 MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
 		https://mirror.one.com/${SITESDIR}/ \
@@ -69,6 +69,7 @@ OPTIONS_GROUP_COMPRESSION=	LZO SNAPPY
 OPTIONS_GROUP_ENGINES=	COLUMNSTORE INNOBASE MROONGA OQGRAPH ROCKSDB S3 SPHINX SPIDER
 OPTIONS_GROUP_GROONGA=	ZMQ MSGPACK
 OPTIONS_EXCLUDE_i386=	ROCKSDB
+OPTIONS_SUB=		yes
 
 AWS_KEY_MGMT_DESC=	AWS Encryption Key Management Plugin
 COLUMNSTORE_DESC=	Columnar storage egine
@@ -182,7 +183,7 @@ CONNECT_EXTRA_USE=		gnome=libxml2
 CONNECT_EXTRA_USES=		gnome
 CONNECT_EXTRA_CMAKE_BOOL=	CONNECT_WITH_LIBXML2 CONNECT_WITH_ODBC
 GSSAPI_NONE_VARS=	disabled_plugins+=AUTH_GSSAPI
-HASHICORP_VAULT_CMAKE_OFF=	-DPLUGIN_HASHICORP_KEY_MANAGEMENT=OFF
+HASHICORP_VAULT_CMAKE_OFF=	-DPLUGIN_HASHICORP_KEY_MANAGEMENT=NO
 HASHICORP_VAULT_LIB_DEPENDS=	libcurl.so:ftp/curl
 LZO_CMAKE_ON=		-DWITH_INNODB_LZO=ON
 LZO_CMAKE_OFF=		-DWITH_INNODB_LZO=OFF
@@ -269,14 +270,24 @@ post-install:
 		${STAGEDIR}${ETCDIR}/init.d \
 		${STAGEDIR}${ETCDIR}/logrotate.d \
 		${STAGEDIR}${DOCSDIR}/COPYING
+	${MV} ${STAGEDIR}${ETCDIR}/conf.d/mysql-clients.cnf \
+		${STAGEDIR}${ETCDIR}/conf.d/mysql-clients.cnf.sample
 	${MKDIR} ${STAGEDIR}${MARIADB_LOGDIR}
 	${SED} '/%%/d;/^@comment /d;s/^/@comment /' ${PORTSDIR}/${CATEGORIES:[1]}/${PORTNAME}${PKGNAMESUFFIX:S/-server/-client/}/pkg-plist \
 		>> ${TMPPLIST}
+
+post-install-HASHICORP_VAULT-on:
+	${MV} ${STAGEDIR}${ETCDIR}/conf.d/hashicorp_key_management.cnf \
+		${STAGEDIR}${ETCDIR}/conf.d/hashicorp_key_management.cnf.sample
 
 post-install-MROONGA-on:
 	${MV} ${STAGEDIR}${PREFIX}/share/groonga/README.md ${STAGEDIR}${DOCSDIR}/README-groonga.md
 	${RM} -r ${STAGEDIR}${PREFIX}/share/groonga
 	${RM} ${STAGEDIR}${DATADIR}/mroonga/COPYING
+
+post-install-S3-on:
+	${MV} ${STAGEDIR}${ETCDIR}/conf.d/s3.cnf \
+		${STAGEDIR}${ETCDIR}/conf.d/s3.cnf.sample
 
 post-install-SPIDER-on:
 	${MV} ${STAGEDIR}${ETCDIR}/conf.d/spider.cnf \

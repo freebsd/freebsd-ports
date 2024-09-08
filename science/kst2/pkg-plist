@@ -41,7 +41,10 @@ lib/kst2/plugins/libkst2_filters_cumulativeaverage.so
 lib/kst2/plugins/libkst2_filters_cumulativesum.so
 lib/kst2/plugins/libkst2_filters_despike.so
 lib/kst2/plugins/libkst2_filters_differentiation.so
+lib/kst2/plugins/libkst2_filters_exponential.so
 lib/kst2/plugins/libkst2_filters_flag.so
+lib/kst2/plugins/libkst2_filters_movingaverage.so
+lib/kst2/plugins/libkst2_filters_movingmedian.so
 lib/kst2/plugins/libkst2_filters_unwind.so
 lib/kst2/plugins/libkst2_filters_window.so
 lib/kst2/plugins/libkst2_fits_exponential_unweighted.so

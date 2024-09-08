@@ -1,0 +1,48 @@
+--- product-info.json.orig	1970-01-20 22:54:44 UTC
++++ product-info.json
+@@ -9,9 +9,9 @@
+   "launch": [
+     {
+       "os": "Linux",
+-      "arch": "amd64",
++      "arch": "%%ARCH%%",
+       "launcherPath": "bin/idea",
+-      "javaExecutablePath": "jbr/bin/java",
++      "javaExecutablePath": "java",
+       "vmOptionsFilePath": "bin/idea64.vmoptions",
+       "startupWmClass": "jetbrains-idea",
+       "bootClassPathJarNames": [
+@@ -47,7 +47,7 @@
+         "-Djava.system.class.loader=com.intellij.util.lang.PathClassLoader",
+         "-Didea.vendor.name=JetBrains",
+         "-Didea.paths.selector=IntelliJIdea2024.2",
+-        "-Djna.boot.library.path=$IDE_HOME/lib/jna/amd64",
++        "-Djna.boot.library.path=$IDE_HOME/lib/jna",
+         "-Dpty4j.preferred.native.folder=$IDE_HOME/lib/pty4j",
+         "-Djna.nosys=true",
+         "-Djna.noclasspath=true",
+@@ -114,7 +114,7 @@
+             "-Djava.system.class.loader=com.intellij.util.lang.PathClassLoader",
+             "-Didea.vendor.name=JetBrains",
+             "-Didea.paths.selector=IntelliJIdea2024.2",
+-            "-Djna.boot.library.path=$IDE_HOME/lib/jna/amd64",
++            "-Djna.boot.library.path=$IDE_HOME/lib/jna",
+             "-Dpty4j.preferred.native.folder=$IDE_HOME/lib/pty4j",
+             "-Djna.nosys=true",
+             "-Djna.noclasspath=true",
+@@ -184,7 +184,7 @@
+             "-Djava.system.class.loader=com.intellij.util.lang.PathClassLoader",
+             "-Didea.vendor.name=JetBrains",
+             "-Didea.paths.selector=IntelliJIdea2024.2",
+-            "-Djna.boot.library.path=$IDE_HOME/lib/jna/amd64",
++            "-Djna.boot.library.path=$IDE_HOME/lib/jna",
+             "-Dpty4j.preferred.native.folder=$IDE_HOME/lib/pty4j",
+             "-Djna.nosys=true",
+             "-Djna.noclasspath=true",
+@@ -4204,4 +4204,4 @@
+       ]
+     }
+   ]
+-}
+\ No newline at end of file
++}

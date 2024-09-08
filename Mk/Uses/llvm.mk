@@ -32,14 +32,25 @@
 #         * LLVM_LIBLLVM  libLLVM.so of the chosen port
 #         * LLVM_PREFIX   installation prefix of the chosen port
 #
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_LLVM_MK)
 _INCLUDE_USES_LLVM_MK=	YES
 
-_LLVM_MK_VALID_VERSIONS=	11 12 13 14 15 16 17 18
+_LLVM_MK_VALID_VERSIONS=	11 12 13 14 15 16 17 18 19
 _LLVM_MK_VALID_CONSTRAINTS=	min max
 _LLVM_MK_VALID_MODES=		build run lib
 _LLVM_MK_VALID_EXPORTS=		export noexport
+
+# === verify that there are no invalid arguments ===
+.  for _arg in ${llvm_ARGS}
+.    if !${_LLVM_MK_VALID_VERSIONS:M${_arg}} && \
+        !${_LLVM_MK_VALID_MODES:M${_arg}} && \
+        ${_arg:C/^(${_LLVM_MK_VALID_CONSTRAINTS:tW:S/ /|/g})=(${_LLVM_MK_VALID_VERSIONS:tW:S/ /|/g})$//} != "" && \
+        !${_LLVM_MK_VALID_EXPORTS:M${_arg}}
+BROKEN=		USES=llvm:${llvm_ARGS:tW:S/ /,/g} contains an invalid argument: "${_arg}"
+.    endif
+.  endfor
 
 # === parse mode arguments ===
 _LLVM_MK_MODES=	# empty
@@ -57,7 +68,7 @@ _LLVM_MK_VERSION=	# empty
 .  for _ver in ${_LLVM_MK_VALID_VERSIONS}
 .    if ${llvm_ARGS:M${_ver}}
 .      if !empty(_LLVM_MK_VERSION)
-BROKEN=		USES=llvm:${llvm_ARGS} contains multiple version definitions
+BROKEN=		USES=llvm:${llvm_ARGS:tW:S/ /,/g} contains multiple version definitions
 .      else
 _LLVM_MK_VERSION=	${_ver}
 .      endif
@@ -76,7 +87,7 @@ _LLVM_MK_EXPORT=	# empty
 .  for _export in ${_LLVM_MK_VALID_EXPORTS}
 .    if ${llvm_ARGS:M${_export}}
 .      if !empty(_LLVM_MK_EXPORT)
-BROKEN=		USES=llvm:${llvm_ARGS} contains multiple export definitions
+BROKEN=		USES=llvm:${llvm_ARGS:tW:S/ /,/g} contains multiple export definitions
 .      else
 _LLVM_MK_EXPORT=	${_export}
 .      endif

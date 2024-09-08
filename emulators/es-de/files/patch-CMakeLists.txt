@@ -1,0 +1,83 @@
+--- CMakeLists.txt.orig	2024-08-22 16:55:26 UTC
++++ CMakeLists.txt
+@@ -139,6 +139,8 @@ elseif(NOT EMSCRIPTEN AND NOT ANDROID)
+     find_package(Libgit2 REQUIRED)
+     find_package(Pugixml REQUIRED)
+     find_package(SDL2 REQUIRED)
++    pkg_check_modules(rapidjson REQUIRED RapidJSON)
++    pkg_check_modules(rlottie REQUIRED rlottie)
+ endif()
+ 
+ # Add libCEC support.
+@@ -180,8 +182,7 @@ if(CMAKE_BUILD_TYPE MATCHES Debug)
+     if(CMAKE_CXX_COMPILER_ID MATCHES MSVC)
+         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++17 /Od /DEBUG:FULL")
+     else()
+-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O0 -g3 -Wall -Wpedantic -Wsign-compare -Wnarrowing -Wmissing-field-initializers -Wunused-macros")
+-        set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -O0")
++        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall -Wpedantic -Wsign-compare -Wnarrowing -Wmissing-field-initializers -Wunused-macros")
+     endif()
+     # If using Clang, then add additional debug data needed by GDB.
+     # Comment this out if you're using LLDB for debugging as this flag makes the binary
+@@ -204,11 +205,11 @@ else()
+     if(CMAKE_CXX_COMPILER_ID MATCHES MSVC)
+         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNDEBUG /std:c++17 /O2 /DEBUG:NONE")
+     else()
+-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O2 -DNDEBUG -Wall -Wpedantic -Wsign-compare -Wnarrowing -Wmissing-field-initializers -Wunused-macros")
++        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -DNDEBUG -Wall -Wpedantic -Wsign-compare -Wnarrowing -Wmissing-field-initializers -Wunused-macros")
+         if(APPLE)
+             set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -O2")
+         else()
+-            set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -O2 -s")
++            set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s")
+         endif()
+     endif()
+ endif()
+@@ -449,11 +450,7 @@ set(COMMON_INCLUDE_DIRS ${CURL_INCLUDE_DIR}
+ # Include files.
+ 
+ set(COMMON_INCLUDE_DIRS ${CURL_INCLUDE_DIR}
+-                        ${CMAKE_CURRENT_SOURCE_DIR}/external/CImg
+-                        ${CMAKE_CURRENT_SOURCE_DIR}/external/glm
+                         ${CMAKE_CURRENT_SOURCE_DIR}/external/lunasvg/include
+-                        ${CMAKE_CURRENT_SOURCE_DIR}/external/rapidjson/include
+-                        ${CMAKE_CURRENT_SOURCE_DIR}/external/rlottie/inc
+                         ${CMAKE_CURRENT_SOURCE_DIR}/external/utfcpp/source
+                         ${CMAKE_CURRENT_SOURCE_DIR}/es-core/src
+                         ${CMAKE_CURRENT_SOURCE_DIR}/es-pdf-converter/src)
+@@ -499,7 +496,9 @@ else()
+                             ${FREETYPE_INCLUDE_DIRS}
+                             ${GIT2_INCLUDE_PATH}
+                             ${PUGIXML_INCLUDE_DIRS}
+-                            ${SDL2_INCLUDE_DIR})
++                            ${SDL2_INCLUDE_DIR}
++                            ${rapidjson_INCLUDE_DIRS}
++                            ${rlottie_INCLUDE_DIRS})
+ endif()
+ 
+ # Add libCEC include directory.
+@@ -614,7 +613,8 @@ else()
+                          ${FREETYPE_LIBRARIES}
+                          ${GIT2_LIBRARY}
+                          ${PUGIXML_LIBRARIES}
+-                         ${SDL2_LIBRARY})
++                         ${SDL2_LIBRARY}
++                         ${rlottie_LINK_LIBRARIES})
+ endif()
+ 
+ if(NOT WIN32)
+@@ -624,7 +624,6 @@ if(NOT WIN32)
+         set(COMMON_LIBRARIES ${COMMON_LIBRARIES} ${PROJECT_SOURCE_DIR}/android_${ANDROID_ABI}/librlottie.a)
+     else()
+         set(COMMON_LIBRARIES ${COMMON_LIBRARIES} ${PROJECT_SOURCE_DIR}/liblunasvg.a)
+-        set(COMMON_LIBRARIES ${COMMON_LIBRARIES} ${PROJECT_SOURCE_DIR}/librlottie.a)
+     endif()
+ endif()
+ 
+@@ -682,6 +681,3 @@ add_dependencies(lunasvg es-pdf-convert)
+ # Make sure that es-pdf-convert is built first, and then that rlottie is built before es-core.
+ # Also set lottie2gif to not be built.
+ add_dependencies(lunasvg es-pdf-convert)
+-
+-add_dependencies(es-core rlottie)
+-set_target_properties(lottie2gif PROPERTIES EXCLUDE_FROM_ALL 1 EXCLUDE_FROM_DEFAULT_BUILD 1)

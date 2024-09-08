@@ -2,7 +2,6 @@ PORTNAME=	scare
 PORTVERSION=	1.3.10
 CATEGORIES=	games
 MASTER_SITES=	http://ifarchive.flavorplex.com/%SUBDIR%/ \
-		http://ifarchive.heanet.ie/%SUBDIR%/ \
 		http://ifarchive.jmac.org/%SUBDIR%/ \
 		http://ifarchive.plover.net/%SUBDIR%/ \
 		http://ifarchive.wurb.com/%SUBDIR%/ \

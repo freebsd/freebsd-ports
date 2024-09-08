@@ -1,5 +1,5 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	23.0.1
+PORTVERSION=	24.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -27,7 +27,7 @@ GH_PROJECT=	wasmtime
 CARGO_BUILD_ARGS=	-p wasmtime-c-api
 CMAKE_SOURCE_PATH=	${WRKSRC}/crates/c-api
 
-CARGO_CRATES=	addr2line-0.21.0 \
+CARGO_CRATES=	addr2line-0.22.0 \
 		adler-1.0.2 \
 		ahash-0.8.11 \
 		aho-corasick-1.0.2 \
@@ -43,7 +43,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		arbitrary-1.3.1 \
 		async-trait-0.1.71 \
 		autocfg-1.1.0 \
-		backtrace-0.3.69 \
+		backtrace-0.3.73 \
 		base64-0.21.0 \
 		bit-set-0.5.2 \
 		bit-vec-0.6.3 \
@@ -67,7 +67,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cargo-platform-0.1.2 \
 		cargo_metadata-0.18.1 \
 		cast-0.3.0 \
-		cc-1.0.83 \
+		cc-1.1.6 \
 		cfg-if-1.0.0 \
 		ciborium-0.2.0 \
 		ciborium-io-0.2.0 \
@@ -131,7 +131,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		fxprof-processed-profile-0.6.0 \
 		generic-array-0.14.5 \
 		getrandom-0.2.9 \
-		gimli-0.28.0 \
+		gimli-0.29.0 \
 		h2-0.4.4 \
 		half-1.8.2 \
 		hashbrown-0.12.3 \
@@ -166,7 +166,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		itoa-1.0.1 \
 		ittapi-0.4.0 \
 		ittapi-sys-0.4.0 \
-		jobserver-0.1.24 \
+		jobserver-0.1.32 \
 		js-sys-0.3.57 \
 		lazy_static-1.4.0 \
 		leb128-0.2.5 \
@@ -192,22 +192,21 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		num-traits-0.2.19 \
 		num_cpus-1.16.0 \
 		number_prefix-0.3.0 \
-		object-0.32.0 \
 		object-0.36.0 \
 		ocaml-boxroot-sys-0.2.0 \
 		ocaml-interop-0.8.8 \
 		ocaml-sys-0.22.3 \
 		once_cell-1.19.0 \
 		oorandom-11.1.3 \
-		openvino-0.6.0 \
-		openvino-finder-0.6.0 \
-		openvino-sys-0.6.0 \
+		openvino-0.7.2 \
+		openvino-finder-0.7.2 \
+		openvino-sys-0.7.2 \
 		ort-2.0.0-rc.2 \
 		ort-sys-2.0.0-rc.2 \
 		overload-0.1.1 \
 		paste-1.0.7 \
 		percent-encoding-2.2.0 \
-		pin-project-lite-0.2.9 \
+		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.29 \
 		postcard-1.0.8 \
@@ -237,7 +236,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-syntax-0.7.4 \
 		region-2.2.0 \
 		ring-0.17.3 \
-		rustc-demangle-0.1.21 \
+		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
 		rustix-0.38.31 \
 		rustls-0.22.4 \
@@ -262,7 +261,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		slab-0.4.7 \
 		slice-group-by-0.3.1 \
 		smallvec-1.11.0 \
-		socket2-0.4.9 \
+		socket2-0.5.7 \
 		souper-ir-2.1.0 \
 		spdx-0.10.1 \
 		spin-0.9.4 \
@@ -276,7 +275,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		syn-2.0.60 \
 		system-interface-0.27.1 \
 		tar-0.4.40 \
-		target-lexicon-0.12.13 \
+		target-lexicon-0.12.16 \
 		tempfile-3.8.0 \
 		termcolor-1.4.1 \
 		terminal_size-0.1.17 \
@@ -288,7 +287,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.29.1 \
+		tokio-1.30.0 \
 		tokio-macros-2.1.0 \
 		tokio-rustls-0.25.0 \
 		tokio-util-0.7.4 \
@@ -325,19 +324,19 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-0.2.87 \
 		wasm-bindgen-macro-support-0.2.87 \
 		wasm-bindgen-shared-0.2.87 \
-		wasm-encoder-0.212.0 \
-		wasm-metadata-0.212.0 \
-		wasm-mutate-0.212.0 \
-		wasm-smith-0.212.0 \
+		wasm-encoder-0.215.0 \
+		wasm-metadata-0.215.0 \
+		wasm-mutate-0.215.0 \
+		wasm-smith-0.215.0 \
 		wasmi-0.31.1 \
 		wasmi_arena-0.4.1 \
 		wasmi_core-0.13.0 \
-		wasmparser-0.212.0 \
+		wasmparser-0.215.0 \
 		wasmparser-nostd-0.100.1 \
-		wasmprinter-0.212.0 \
+		wasmprinter-0.215.0 \
 		wast-35.0.2 \
-		wast-212.0.0 \
-		wat-1.212.0 \
+		wast-215.0.0 \
+		wat-1.215.0 \
 		web-sys-0.3.57 \
 		webpki-roots-0.26.1 \
 		which-5.0.0 \
@@ -367,13 +366,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_msvc-0.52.0 \
 		winnow-0.5.39 \
 		winx-0.36.3 \
-		wit-bindgen-0.27.0 \
-		wit-bindgen-core-0.27.0 \
-		wit-bindgen-rt-0.27.0 \
-		wit-bindgen-rust-0.27.0 \
-		wit-bindgen-rust-macro-0.27.0 \
-		wit-component-0.212.0 \
-		wit-parser-0.212.0 \
+		wit-bindgen-0.29.0 \
+		wit-bindgen-core-0.29.0 \
+		wit-bindgen-rt-0.29.0 \
+		wit-bindgen-rust-0.29.0 \
+		wit-bindgen-rust-macro-0.29.0 \
+		wit-component-0.215.0 \
+		wit-parser-0.215.0 \
 		witx-0.9.1 \
 		xattr-1.2.0 \
 		zerocopy-0.7.32 \

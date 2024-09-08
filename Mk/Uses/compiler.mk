@@ -2,7 +2,7 @@
 #
 # Feature:	compiler
 # Usage:	USES=compiler or USES=compiler:ARGS
-# Valid ARGS:	env (default, implicit) c++0x c++11-lib c++11-lang c11 nestedfct features
+# Valid ARGS:	env (default, implicit) c++0x c++11-lib c++11-lang c11 c17 nestedfct features
 #
 # c++0x:	The port needs a compiler understanding C++0X
 # c++11-lang:	The port needs a compiler understanding C++11
@@ -13,6 +13,7 @@
 # gcc-c++11-lib:The port needs g++ compiler with a C++11 library
 # c++11-lib:	The port needs a compiler understanding C++11 and with a C++11 ready standard library
 # c11:		The port needs a compiler understanding C11
+# c17:		The port needs a compiler understanding C17
 # nestedfct:	The port needs a compiler understanding nested functions
 # features:	The port will determine the features supported by the default compiler
 #
@@ -36,7 +37,7 @@ compiler_ARGS=	env
 .  endif
 
 VALID_ARGS=	c++11-lib c++11-lang c++14-lang c++17-lang c++20-lang \
-		c++2b-lang c11 features env nestedfct c++0x gcc-c++11-lib
+		c++2b-lang c11 c17 features env nestedfct c++0x gcc-c++11-lib
 
 _CC_hash:=	${CC:hash}
 _CXX_hash:=	${CXX:hash}
@@ -59,6 +60,8 @@ _COMPILER_ARGS+=	features c++20-lang
 _COMPILER_ARGS+=	features c++2b-lang
 .  elif ${compiler_ARGS} == c11
 _COMPILER_ARGS+=	features c11
+.  elif ${compiler_ARGS} == c17
+_COMPILER_ARGS+=	features c17
 .  elif ${compiler_ARGS} == features
 _COMPILER_ARGS+=	features
 .  elif ${compiler_ARGS} == env
@@ -70,7 +73,7 @@ IGNORE=	Invalid argument "${compiler_ARGS}", valid arguments are: ${VALID_ARGS}
 _COMPILER_ARGS=	#
 .  endif
 
-.  if ${_COMPILER_ARGS:Mc++*} || ${_COMPILER_ARGS:Mc11}
+.  if ${_COMPILER_ARGS:Mc++*} || ${_COMPILER_ARGS:Mc11} || ${_COMPILER_ARGS:Mc17}
 _COMPILER_ARGS+=	features
 .  endif
 
@@ -135,7 +138,7 @@ COMPILER_FEATURES=	libc++
 COMPILER_FEATURES=	libstdc++
 .    endif
 
-CSTD=	c89 c99 c11 gnu89 gnu99 gnu11
+CSTD=	c89 c99 c11 c17 gnu89 gnu99 gnu11
 CXXSTD=	c++98 c++0x c++11 c++14 c++17 c++20 c++2b \
 	gnu++98 gnu++11 gnu++14 gnu++17 gnu++20 gnu++2b
 
@@ -173,7 +176,7 @@ CHOSEN_COMPILER_TYPE=	gcc
 (${_COMPILER_ARGS:Mc++14-lang} && !${COMPILER_FEATURES:Mc++14}) || \
 (${_COMPILER_ARGS:Mc++11-lang} && !${COMPILER_FEATURES:Mc++11}) || \
 (${_COMPILER_ARGS:Mc++0x} && !${COMPILER_FEATURES:Mc++0x}) || \
-(${_COMPILER_ARGS:Mc11} && !${COMPILER_FEATURES:Mc11})
+(${_COMPILER_ARGS:Mc11} && !${COMPILER_FEATURES:Mc11} && !${COMPILER_FEATURES:Mc17})
 .    if ${_COMPILER_ARGS:Mc++2b-lang}
 _LLVM_MINVER=	14
 .    elif ${_COMPILER_ARGS:Mc++20-lang}

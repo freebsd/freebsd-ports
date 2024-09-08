@@ -1,5 +1,5 @@
 PORTNAME=	rspec-rails
-PORTVERSION=	6.1.3
+PORTVERSION=	6.1.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

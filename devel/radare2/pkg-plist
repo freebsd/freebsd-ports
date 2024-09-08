@@ -75,6 +75,7 @@ include/libr/r_util/r_alloc.h
 include/libr/r_util/r_asn1.h
 include/libr/r_util/r_assert.h
 include/libr/r_util/r_axml.h
+include/libr/r_util/r_base32.h
 include/libr/r_util/r_base36.h
 include/libr/r_util/r_base64.h
 include/libr/r_util/r_base91.h
@@ -607,6 +608,7 @@ share/man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/magic/filesystems
 %%DATADIR%%/%%PORTVERSION%%/magic/firmware
 %%DATADIR%%/%%PORTVERSION%%/magic/flash
+%%DATADIR%%/%%PORTVERSION%%/magic/flutter
 %%DATADIR%%/%%PORTVERSION%%/magic/freebsd
 %%DATADIR%%/%%PORTVERSION%%/magic/gimp
 %%DATADIR%%/%%PORTVERSION%%/magic/gpg

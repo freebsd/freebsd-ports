@@ -1,6 +1,6 @@
 PORTNAME=	offlineimap3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.0.0-37
+DISTVERSION=	8.0.0-70
 DISTVERSIONSUFFIX=	-g${GH_TAGNAME}
 CATEGORIES=	mail python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 # https://github.com/OfflineIMAP/offlineimap3/issues/110
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distro>=0:sysutils/py-distro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}imaplib2>=3.5:mail/py-imaplib2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}keyring>0:security/py-keyring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rfc6555>=0:mail/py-rfc6555@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=2020.6.20:security/py-certifi@${PY_FLAVOR} \
@@ -33,7 +32,7 @@ USES=		python
 # https://github.com/OfflineIMAP/offlineimap3/issues/111
 USE_GITHUB=	yes
 GH_ACCOUNT=	OfflineIMAP
-GH_TAGNAME=	d29a4dc459401f8a78e347cb0f8ae7670add0975
+GH_TAGNAME=	93f358dee9d7cf800d11679ee4e9c61abfc0c5f6
 
 USE_PYTHON=	autoplist concurrent distutils pytest
 
@@ -44,8 +43,10 @@ NO_ARCH=	yes
 PORTDOCS=	*
 PORTEXAMPLES=	offlineimap.conf
 
-OPTIONS_DEFINE=		DOCS EXAMPLES GSSAPI MANPAGES
-OPTIONS_DEFAULT=	MANPAGES
+OPTIONS_DEFINE=		DOCS EXAMPLES GSSAPI KEYRING MANPAGES
+OPTIONS_DEFAULT=	KEYRING MANPAGES
+
+KEYRING_DESC=		GNOME keyring support
 
 COMMON_BUILD_DEPENDS=	a2x:textproc/asciidoc \
 			gmake:devel/gmake
@@ -54,6 +55,8 @@ DOCS_BUILD_DEPENDS=	${COMMON_BUILD_DEPENDS} \
 			${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR}
 
 GSSAPI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gssapi>=1.6.9:security/py-gssapi@${PY_FLAVOR}
+
+KEYRING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keyring>0:security/py-keyring@${PY_FLAVOR}
 
 MANPAGES_BUILD_DEPENDS=	${COMMON_BUILD_DEPENDS}
 MANPAGES_PLIST_FILES+=	share/man/man1/offlineimap.1.gz \

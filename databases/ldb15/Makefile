@@ -12,6 +12,10 @@ WWW=		https://ldb.samba.org/
 
 LICENSE=		GPLv3+
 
+BROKEN=         Fails to build
+DEPRECATED=     Outdated and not necessary for any supported version of Samba
+EXPIRATION_DATE=2024-09-16
+
 IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
 BUILD_DEPENDS=		${LDB_DEPENDS}

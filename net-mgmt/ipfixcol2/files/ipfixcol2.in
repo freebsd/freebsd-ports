@@ -21,7 +21,7 @@ load_rc_config "$name"
 : ${ipfixcol2_enable:=NO}
 : ${ipfixcol2_conf:=%%PREFIX%%/etc/$name.conf}
 : ${ipfixcol2_flags:=""}
-: ${ipfixcol2_user:=ipfixcol2}
+: ${ipfixcol2_user:=%%USER%%}
 
 command=%%PREFIX%%/bin/ipfixcol2
 command_args="-d -P /var/run/$name/$name.pid ${ipfixcol2_flags}"

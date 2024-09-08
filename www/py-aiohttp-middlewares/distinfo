@@ -1,3 +1,3 @@
-TIMESTAMP = 1708449492
-SHA256 (aiohttp_middlewares-2.3.0.tar.gz) = b2564c1dfa8dbcf7d2e101a6a03dcaad45464744531c269e8e582cb2dc551d08
-SIZE (aiohttp_middlewares-2.3.0.tar.gz) = 14211
+TIMESTAMP = 1724084654
+SHA256 (aiohttp_middlewares-2.4.0.tar.gz) = ee240fc21b7eb9154b4447e4bc9bab7b212584d93a35aa8f56333c79ca3cd0e8
+SIZE (aiohttp_middlewares-2.4.0.tar.gz) = 14353

@@ -1,6 +1,6 @@
---- daemons/Makefile.am.orig	2023-08-21 14:29:00 UTC
-+++ daemons/Makefile.am
-@@ -9,11 +9,8 @@ noinst_HEADERS = ipa-version.h.in
+--- daemons/Makefile.am.orig	2023-08-21 16:29:00.040643147 +0200
++++ daemons/Makefile.am	2023-10-24 17:56:44.164932000 +0200
+@@ -9,11 +9,8 @@
  
  SUBDIRS =			\
  	.			\

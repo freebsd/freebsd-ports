@@ -1,0 +1,500 @@
+\" The TH line should be updated on each trurl update
+.TH TRURL "1" "August 2024" "trurl 0.15" "User Commands"
+.SH NAME
+trurl \- transpose URLs
+.SH SYNOPSIS
+\f[B]trurl [options / URLs]\f[R]
+.SH DESCRIPTION
+\f[B]trurl\f[R] parses, manipulates and outputs URLs and parts of URLs.
+.PP
+It uses the RFC 3986 definition of URLs and it uses libcurl\[cq]s URL
+parser to do so, which includes a few \[lq]extensions\[rq].
+The URL support is limited to \[lq]hierarchical\[rq] URLs, the ones that
+use \f[CR]://\f[R] separators after the scheme.
+.PP
+Typically you pass in one or more URLs and decide what of that you want
+output.
+Possibly modifying the URL as well.
+.PP
+trurl knows URLs and every URL consists of up to ten separate and
+independent \f[I]components\f[R].
+These components can be extracted, removed and updated with trurl and
+they are referred to by their respective names: scheme, user, password,
+options, host, port, path, query, fragment and zoneid.
+.SH OPTIONS
+Options start with one or two dashes.
+Many of the options require an additional value next to them.
+.PP
+Any other argument is interpreted as a URL argument, and is treated as
+if it was following a \f[CR]\-\-url\f[R] option.
+.PP
+The first argument that is exactly two dashes (\f[CR]\-\-\f[R]), marks
+the end of options; any argument after the end of options is interpreted
+as a URL argument even if it starts with a dash.
+.PP
+Long options can be provided either as \f[CR]\-\-flag argument\f[R] or
+as \f[CR]\-\-flag=argument\f[R].
+.SS \-a, \[en]append [component]=[data]
+Append data to a component.
+This can only append data to the path and the query components.
+.PP
+For path, this URL encodes and appends the new segment to the path,
+separated with a slash.
+.PP
+For query, this URL encodes and appends the new segment to the query,
+separated with an ampersand (&).
+If the appended segment contains an equal sign (\f[CR]=\f[R]) that one
+is kept verbatim and both sides of the first occurrence are URL encoded
+separately.
+.SS \[en]accept\-space
+When set, trurl tries to accept spaces as part of the URL and instead
+URL encode such occurrences accordingly.
+.PP
+According to RFC 3986, a space cannot legally be part of a URL.
+This option provides a best\-effort to convert the provided string into
+a valid URL.
+.SS \[en]as\-idn
+Converts a punycode ASCII hostname to its original International Domain
+Name in Unicode.
+If the hostname is not using punycode then the original hostname is
+used.
+.SS \[en]curl
+Only accept URL schemes supported by libcurl.
+.SS \[en]default\-port
+When set, trurl uses the scheme\[cq]s default port number for URLs with
+a known scheme, and without an explicit port number.
+.PP
+Note that trurl only knows default port numbers for URL schemes that are
+supported by libcurl.
+.PP
+Since, by default, trurl removes default port numbers from URLs with a
+known scheme, this option is pretty much ignored unless one of
+\f[I]\[en]get\f[R], \f[I]\[en]json\f[R], and \f[I]\[en]keep\-port\f[R]
+is not also specified.
+.SS \-f, \[en]url\-file [filename]
+Read URLs to work on from the given file.
+Use the filename \f[CR]\-\f[R] (a single minus) to tell trurl to read
+the URLs from stdin.
+.PP
+Each line needs to be a single valid URL.
+trurl removes one carriage return character at the end of the line if
+present, trims off all the trailing space and tab characters, and skips
+all empty (after trimming) lines.
+.PP
+The maximum line length supported in a file like this is 4094 bytes.
+Lines that exceed that length are skipped, and a warning is printed to
+stderr when they are encountered.
+.SS \-g, \[en]get [format]
+Output text and URL data according to the provided format string.
+Components from the URL can be output when specified as
+\f[B]{component}\f[R] or \f[B][component]\f[R], with the name of the
+part show within curly braces or brackets.
+You can not mix braces and brackets for this purpose in the same command
+line.
+.PP
+The following component names are available (case sensitive): url,
+scheme, user, password, options, host, port, path, query, fragment and
+zoneid.
+.PP
+\f[B]{component}\f[R] expands to nothing if the given component does not
+have a value.
+.PP
+Components are shown URL decoded by default.
+.PP
+URL decoding a component may cause problems to display it.
+Such problems make a warning get displayed unless \f[B]\[en]quiet\f[R]
+is used.
+.PP
+trurl supports a range of different qualifiers, or prefixes, to the
+component that changes how it handles it:
+.PP
+If \f[B]url:\f[R] is specified, like \f[CR]{url:path}\f[R], the
+component gets output URL encoded.
+As a shortcut, \f[CR]url:\f[R] also works written as a single colon:
+\f[CR]{:path}\f[R].
+.PP
+If \f[B]strict:\f[R] is specified, like \f[CR]{strict:path}\f[R], URL
+decode problems are turned into errors.
+In this stricter mode, a URL decode problem makes trurl stop what it is
+doing and return with exit code 10.
+.PP
+If \f[B]must:\f[R] is specified, like \f[CR]{must:query}\f[R], it makes
+trurl return an error if the requested component does not exist in the
+URL.
+By default a missing component will just be shown blank.
+.PP
+If \f[B]default:\f[R] is specified, like \f[CR]{default:url}\f[R] or
+\f[CR]{default:port}\f[R], and the port is not explicitly specified in
+the URL, the scheme\[cq]s default port is output if it is known.
+.PP
+If \f[B]puny:\f[R] is specified, like \f[CR]{puny:url}\f[R] or
+\f[CR]{puny:host}\f[R], the punycoded version of the hostname is used in
+the output.
+This option is mutually exclusive with \f[B]idn:\f[R].
+.PP
+If \f[B]idn:\f[R] is specified like \f[CR]{idn:url}\f[R] or
+\f[CR]{idn:host}\f[R], the International Domain Name version of the
+hostname is used in the output if it is provided as a correctly encoded
+punycode version.
+This option is mutually exclusive with \f[B]puny:\f[R].
+.PP
+If \f[I]\[en]default\-port\f[R] is specified, all formats are expanded
+as if they used \f[I]default:\f[R]; and if \f[I]\[en]punycode\f[R] is
+used, all formats are expanded as if they used \f[I]puny:\f[R].
+Also note that \f[CR]{url}\f[R] is affected by the
+\f[I]\[en]keep\-port\f[R] option.
+.PP
+Hosts provided as IPv6 numerical addresses are provided within square
+brackets.
+Like \f[CR][fe80::20c:29ff:fe9c:409b]\f[R].
+.PP
+Hosts provided as IPv4 numerical addresses are \f[I]normalized\f[R] and
+provided as four dot\-separated decimal numbers when output.
+.PP
+You can access specific keys in the query string using the format
+\f[B]{query:key}\f[R].
+Then the value of the first matching key is output using a case
+sensitive match.
+When extracting a URL decoded query key that contains \f[CR]%00\f[R],
+such octet is replaced with a single period \f[CR].\f[R] in the output.
+.PP
+You can access specific keys in the query string and out all values
+using the format \f[B]{query\-all:key}\f[R].
+This looks for \f[I]key\f[R] case sensitively and outputs all values for
+that key space\-separated.
+.PP
+The \f[I]format\f[R] string supports the following backslash sequences:
+.PP
+\[rs] \- backslash
+.PP
+\[rs]t \- tab
+.PP
+\[rs]n \- newline
+.PP
+\[rs]r \- carriage return
+.PP
+\[rs]{ \- an open curly brace that does not start a variable
+.PP
+\[rs][ \- an open bracket that does not start a variable
+.PP
+All other text in the format string is shown as\-is.
+.SS \-h, \[en]help
+Show the help output.
+.SS \[en]iterate [component]=[item1 item2 \&...]
+Set the component to multiple values and output the result once for each
+iteration.
+Several combined iterations are allowed to generate combinations, but
+only one \f[I]\[en]iterate\f[R] option per component.
+The listed items to iterate over should be separated by single spaces.
+.SS \[en]json
+Outputs all set components of the URLs as JSON objects.
+All components of the URL that have data get populated in the parts
+object using their component names.
+See below for details on the format.
+.SS \[en]keep\-port
+By default, trurl removes default port numbers from URLs with a known
+scheme even if they are explicitly specified in the input URL.
+This options, makes trurl not remove them.
+.SS \[en]no\-guess\-scheme
+Disables libcurl\[cq]s scheme guessing feature.
+URLs that do not contain a scheme are treated as invalid URLs.
+.SS \[en]punycode
+Uses the punycode version of the hostname, which is how International
+Domain Names are converted into plain ASCII.
+If the hostname is not using IDN, the regular ASCII name is used.
+.SS \[en]query\-separator [what]
+Specify the single letter used for separating query pairs.
+The default is \f[CR]&\f[R] but at least in the past sometimes
+semicolons \f[CR];\f[R] or even colons \f[CR]:\f[R] have been used for
+this purpose.
+If your URL uses something other than the default letter, setting the
+right one makes sure trurl can do its query operations properly.
+.SS \[en]quiet
+Suppress (some) notes and warnings.
+.SS \[en]redirect URL
+Redirect the URL to this new location.
+The redirection is performed on the base URL, so, if no base URL is
+specified, no redirection is performed.
+.SS \[en]replace [data]
+Replaces a URL query.
+.PP
+data can either take the form of a single value, or as a key/value pair
+in the shape \f[I]foo=bar\f[R].
+If replace is called on an item that is not in the list of queries trurl
+ignores that item.
+.PP
+trurl URL encodes both sides of the \f[CR]=\f[R] character in the given
+input data argument.
+.SS \[en]replace\[en]append [data]
+Works the same as \f[I]\[en]replace\f[R], but trurl appends a missing
+query string if it is not in the query list already.
+.SS \-s, \[en]set [component][:]=[data]
+Set this URL component.
+Setting blank string (\f[CR]\[dq]\[dq]\f[R]) clears the component from
+the URL.
+.PP
+The following components can be set: url, scheme, user, password,
+options, host, port, path, query, fragment and zoneid.
+.PP
+If a simple \f[CR]=\f[R]\-assignment is used, the data is URL encoded
+when applied.
+If \f[CR]:=\f[R] is used, the data is assumed to already be URL encoded
+and stored as\-is.
+.PP
+If \f[CR]?=\f[R] is used, the set is only performed if the component is
+not already set.
+It avoids overwriting any already set data.
+.PP
+You can also combine \f[CR]:\f[R] and \f[CR]?\f[R] into \f[CR]?:=\f[R]
+if desired.
+.PP
+If no URL or \f[I]\[en]url\-file\f[R] argument is provided, trurl tries
+to create a URL using the components provided by the \f[I]\[en]set\f[R]
+options.
+If not enough components are specified, this fails.
+.SS \[en]sort\-query
+The \[lq]variable=content\[rq] tuplets in the query component are sorted
+in a case insensitive alphabetical order.
+This helps making URLs identical that otherwise only had their query
+pairs in different orders.
+.SS \[en]trim [component]=[what]
+Trims data off a component.
+Currently this can only trim a query component.
+.PP
+\f[I]what\f[R] is specified as a full word or as a word prefix (using a
+single trailing asterisk (\f[CR]*\f[R])) which makes trurl remove the
+tuples from the query string that match the instruction.
+.PP
+To match a literal trailing asterisk instead of using a wildcard, escape
+it with a backslash in front of it.
+Like \f[CR]\[rs]*\f[R].
+.SS \[en]url URL
+Set the input URL to work with.
+The URL may be provided without a scheme, which then typically is not
+actually a legal URL but trurl tries to figure out what is meant and
+guess what scheme to use (unless \f[I]\[en]no\-guess\-scheme\f[R] is
+used).
+.PP
+Providing multiple URLs makes trurl act on all URLs in a serial fashion.
+.PP
+If the URL cannot be parsed for whatever reason, trurl simply moves on
+to the next provided URL \- unless \f[I]\[en]verify\f[R] is used.
+.SS \[en]urlencode
+Outputs URL encoded version of components by default when using
+\f[I]\[en]get\f[R] or \f[I]\[en]json\f[R].
+.SS \-v, \[en]version
+Show version information and exit.
+.SS \[en]verify
+When a URL is provided, return error immediately if it does not parse as
+a valid URL.
+In normal cases, trurl can forgive a bad URL input.
+.SH JSON output format
+The \f[I]\[en]json\f[R] option outputs a JSON array with one or more
+objects.
+One for each URL.
+Each URL JSON object contains a number of properties, a series of
+key/value pairs.
+The exact set present depends on the given URL.
+.SS url
+This key exists in every object.
+It is the complete URL.
+Affected by \f[I]\[en]default\-port\f[R], \f[I]\[en]keep\-port\f[R], and
+\f[I]\[en]punycode\f[R].
+.SS parts
+This key exists in every object, and contains an object with a key for
+each of the settable URL components.
+If a component is missing, it means it is not present in the URL.
+The parts are URL decoded unless \f[I]\[en]urlencode\f[R] is used.
+.SS parts.scheme
+The URL scheme.
+.SS parts.user
+The username.
+.SS parts.password
+The password.
+.SS parts.options
+The options.
+Note that only a few URL schemes support the \[lq]options\[rq]
+component.
+.SS parts.host
+The normalized hostname.
+It might be a UTF\-8 name if an IDN name was used.
+It can also be a normalized IPv4 or IPv6 address.
+An IPv6 address always starts with a bracket (\f[B][\f[R]) \- and no
+other hostnames can contain such a symbol.
+If \f[I]\[en]punycode\f[R] is used, the punycode version of the host is
+outputted instead.
+.SS parts.port
+The provided port number as a string.
+If the port number was not provided in the URL, but the scheme is a
+known one, and \f[I]\[en]default\-port\f[R] is in use, the default port
+for that scheme is provided here.
+.SS parts.path
+The path.
+Including the leading slash.
+.SS parts.query
+The full query, excluding the question mark separator.
+.SS parts.fragment
+The fragment, excluding the pound sign separator.
+.SS parts.zoneid
+The zone id, which can only be present in an IPv6 address.
+When this key is present, then \f[B]host\f[R] is an IPv6 numerical
+address.
+.SS params
+This key contains an array of query key/value objects.
+Each such pair is listed with \[lq]key\[rq] and \[lq]value\[rq] and
+their respective contents in the output.
+.PP
+The key/values are extracted from the query where they are separated by
+ampersands (\f[B]&\f[R]) \- or the user sets with
+\f[B]\[en]query\-separator\f[R].
+.PP
+The query pairs are listed in the order of appearance in a
+left\-to\-right order, but can be made alpha\-sorted with
+\f[B]\[en]sort\-query\f[R].
+.PP
+It is only present if the URL has a query.
+.SH EXAMPLES
+.SS Replace the hostname of a URL
+.IP
+.EX
+$ trurl \-\-url https://curl.se \-\-set host=example.com
+https://example.com/
+.EE
+.SS Create a URL by setting components
+.IP
+.EX
+ $ trurl \-\-set host=example.com \-\-set scheme=ftp
+ ftp://example.com/
+.EE
+.SS Redirect a URL
+.IP
+.EX
+$ trurl \-\-url https://curl.se/we/are.html \-\-redirect here.html
+https://curl.se/we/here.html
+.EE
+.SS Change port number
+This also shows how trurl removes dot\-dot sequences \[ti]\[ti]\[ti] $
+trurl \[en]url https://curl.se/we/../are.html \[en]set port=8080
+https://curl.se:8080/are.html \[ti]\[ti]\[ti]
+.SS Extract the path from a URL
+.IP
+.EX
+$ trurl \-\-url https://curl.se/we/are.html \-\-get \[aq]{path}\[aq]
+/we/are.html
+.EE
+.SS Extract the port from a URL
+This gets the default port based on the scheme if the port is not set in
+the URL.
+\[ti]\[ti]\[ti] $ trurl \[en]url https://curl.se/we/are.html \[en]get
+`{default:port}' 443 \[ti]\[ti]\[ti]
+.SS Append a path segment to a URL
+.IP
+.EX
+$ trurl \-\-url https://curl.se/hello \-\-append path=you
+https://curl.se/hello/you
+.EE
+.SS Append a query segment to a URL
+.IP
+.EX
+$ trurl \-\-url \[dq]https://curl.se?name=hello\[dq] \-\-append query=search=string
+ https://curl.se/?name=hello&search=string
+.EE
+.SS Read URLs from stdin
+.IP
+.EX
+$ cat urllist.txt | trurl \-\-url\-file \-
+\[rs]&...
+.EE
+.SS Output JSON
+.IP
+.EX
+$ trurl \[dq]https://fake.host/search?q=answers&user=me#frag\[dq] \-\-json
+[
+  {
+    \[dq]url\[dq]: \[dq]https://fake.host/search?q=answers&user=me#frag\[dq],
+    \[dq]parts\[dq]: [
+        \[dq]scheme\[dq]: \[dq]https\[dq],
+        \[dq]host\[dq]: \[dq]fake.host\[dq],
+        \[dq]path\[dq]: \[dq]/search\[dq],
+        \[dq]query\[dq]: \[dq]q=answers&user=me\[dq]
+        \[dq]fragment\[dq]: \[dq]frag\[dq],
+    ],
+    \[dq]params\[dq]: [
+      {
+        \[dq]key\[dq]: \[dq]q\[dq],
+        \[dq]value\[dq]: \[dq]answers\[dq]
+      },
+      {
+        \[dq]key\[dq]: \[dq]user\[dq],
+        \[dq]value\[dq]: \[dq]me\[dq]
+      }
+    ]
+  }
+]
+.EE
+.SS Remove tracking tuples from query
+.IP
+.EX
+$ trurl \[dq]https://curl.se?search=hey&utm_source=tracker\[dq] \-\-trim query=\[dq]utm_*\[dq]
+https://curl.se/?search=hey
+.EE
+.SS Show a specific query key value
+.IP
+.EX
+$ trurl \[dq]https://example.com?a=home&here=now&thisthen\[dq] \-g \[aq]{query:a}\[aq]
+home
+.EE
+.SS Sort the key/value pairs in the query component
+.IP
+.EX
+$ trurl \[dq]https://example.com?b=a&c=b&a=c\[dq] \-\-sort\-query
+https://example.com?a=c&b=a&c=b
+.EE
+.SS Work with a query that uses a semicolon separator
+.IP
+.EX
+$ trurl \[dq]https://curl.se?search=fool;page=5\[dq] \-\-trim query=\[dq]search\[dq] \-\-query\-separator \[dq];\[dq]
+https://curl.se?page=5
+.EE
+.SS Accept spaces in the URL path
+.IP
+.EX
+$ trurl \[dq]https://curl.se/this has space/index.html\[dq] \-\-accept\-space
+https://curl.se/this%20has%20space/index.html
+.EE
+.SS Create multiple variations of a URL with different schemes
+.IP
+.EX
+$ trurl \[dq]https://curl.se/path/index.html\[dq] \-\-iterate \[dq]scheme=http ftp sftp\[dq]
+http://curl.se/path/index.html
+ftp://curl.se/path/index.html
+sftp://curl.se/path/index.html
+.EE
+.SH EXIT CODES
+trurl returns a non\-zero exit code to indicate problems.
+.SS 1
+A problem with \[en]url\-file
+.SS 2
+A problem with \[en]append
+.SS 3
+A command line option misses an argument
+.SS 4
+A command line option mistake or an illegal option combination.
+.SS 5
+A problem with \[en]set
+.SS 6
+Out of memory
+.SS 7
+Could not output a valid URL
+.SS 8
+A problem with \[en]trim
+.SS 9
+If \[en]verify is set and the input URL cannot parse.
+.SS 10
+A problem with \[en]get
+.SS 11
+A problem with \[en]iterate
+.SS 12
+A problem with \[en]replace or \[en]replace\-append
+.SH WWW
+https://curl.se/trurl

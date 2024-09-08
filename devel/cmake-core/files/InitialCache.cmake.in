@@ -1,0 +1,17 @@
+# TODO: Add TEST option to enable regression tests. The tests require
+# additional packages to be installed and a small amount of patching
+# to account for our local changes.
+set(BUILD_TESTING OFF CACHE BOOL "Build the testing tree.")
+
+# Toggled by the CPACK option. Set to ON by default.
+set(CPACK_ENABLE_FREEBSD_PKG %%CPACK_OPTION_VALUE%% CACHE BOOL
+    "Enable pkg(8) generator in CPack")
+
+if(CPACK_ENABLE_FREEBSD_PKG)
+#   Use base libarchive instead of the ports or bundled version, because
+#   libpkg links against base.
+    set(LibArchive_INCLUDE_DIR "/usr/include" CACHE PATH
+        "Directory where LibArchive headers are located.")
+    set(LibArchive_LIBRARY "/usr/lib/libarchive.so" CACHE PATH
+        "LibArchive library to link against.")
+endif(CPACK_ENABLE_FREEBSD_PKG)

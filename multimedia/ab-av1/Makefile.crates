@@ -1,10 +1,10 @@
 CARGO_CRATES=	addr2line-0.22.0 \
 		adler-1.0.2 \
-		anstream-0.6.14 \
-		anstyle-1.0.7 \
-		anstyle-parse-0.2.4 \
-		anstyle-query-1.1.0 \
-		anstyle-wincon-3.0.3 \
+		anstream-0.6.15 \
+		anstyle-1.0.8 \
+		anstyle-parse-0.2.5 \
+		anstyle-query-1.1.1 \
+		anstyle-wincon-3.0.4 \
 		anyhow-1.0.86 \
 		arrayref-0.3.8 \
 		arrayvec-0.7.4 \
@@ -19,12 +19,12 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		bytes-1.6.1 \
 		cc-1.1.6 \
 		cfg-if-1.0.0 \
-		clap-4.5.10 \
-		clap_builder-4.5.10 \
-		clap_complete-4.5.9 \
-		clap_derive-4.5.8 \
-		clap_lex-0.7.1 \
-		colorchoice-1.0.1 \
+		clap-4.5.11 \
+		clap_builder-4.5.11 \
+		clap_complete-4.5.11 \
+		clap_derive-4.5.11 \
+		clap_lex-0.7.2 \
+		colorchoice-1.0.2 \
 		console-0.15.8 \
 		constant_time_eq-0.3.0 \
 		crc32fast-1.4.2 \
@@ -34,8 +34,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
 		encode_unicode-0.3.6 \
-		env_filter-0.1.1 \
-		env_logger-0.11.4 \
+		env_filter-0.1.2 \
+		env_logger-0.11.5 \
 		errno-0.3.9 \
 		fastrand-2.1.0 \
 		ffprobe-0.4.0 \
@@ -58,7 +58,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		indicatif-0.17.8 \
 		infer-0.16.0 \
 		instant-0.1.13 \
-		is_terminal_polyfill-1.70.0 \
+		is_terminal_polyfill-1.70.1 \
 		itoa-1.0.11 \
 		lazy_static-1.5.0 \
 		libc-0.2.155 \
@@ -71,7 +71,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		mio-1.0.1 \
 		num-conv-0.1.0 \
 		number_prefix-0.4.0 \
-		object-0.36.1 \
+		object-0.36.2 \
 		option-ext-0.2.0 \
 		parking_lot-0.11.2 \
 		parking_lot_core-0.8.6 \

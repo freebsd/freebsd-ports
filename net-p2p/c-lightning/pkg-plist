@@ -16,6 +16,7 @@ libexec/c-lightning/plugins/autoclean
 libexec/c-lightning/plugins/bcli
 libexec/c-lightning/plugins/bookkeeper
 libexec/c-lightning/plugins/chanbackup
+libexec/c-lightning/plugins/cln-askrene
 libexec/c-lightning/plugins/cln-renepay
 libexec/c-lightning/plugins/clnrest/.github/screenshots/Postman-bkpr-plugin.png
 libexec/c-lightning/plugins/clnrest/.github/screenshots/Postman-with-body.png
@@ -30,18 +31,17 @@ libexec/c-lightning/plugins/clnrest/clnrest
 libexec/c-lightning/plugins/clnrest/clnrest.py
 libexec/c-lightning/plugins/clnrest/poetry.lock
 libexec/c-lightning/plugins/clnrest/pyproject.toml
-libexec/c-lightning/plugins/clnrest/requirements.txt
 libexec/c-lightning/plugins/clnrest/utilities/__init__.py
 libexec/c-lightning/plugins/clnrest/utilities/generate_certs.py
 libexec/c-lightning/plugins/clnrest/utilities/rpc_plugin.py
 libexec/c-lightning/plugins/clnrest/utilities/rpc_routes.py
 libexec/c-lightning/plugins/clnrest/utilities/shared.py
 libexec/c-lightning/plugins/commando
-libexec/c-lightning/plugins/fetchinvoice
 libexec/c-lightning/plugins/funder
 libexec/c-lightning/plugins/keysend
 libexec/c-lightning/plugins/offers
 libexec/c-lightning/plugins/pay
+libexec/c-lightning/plugins/recklessrpc
 libexec/c-lightning/plugins/recover
 libexec/c-lightning/plugins/spenderp
 libexec/c-lightning/plugins/sql
@@ -50,7 +50,6 @@ libexec/c-lightning/plugins/txprepare
 libexec/c-lightning/plugins/wss-proxy/Makefile
 libexec/c-lightning/plugins/wss-proxy/poetry.lock
 libexec/c-lightning/plugins/wss-proxy/pyproject.toml
-libexec/c-lightning/plugins/wss-proxy/requirements.txt
 libexec/c-lightning/plugins/wss-proxy/wss-proxy
 libexec/c-lightning/plugins/wss-proxy/wss-proxy.py
 libexec/c-lightning/plugins/wss-proxy/wss_proxy/__init__.py
@@ -60,6 +59,12 @@ share/man/man1/lightning-cli.1.gz
 share/man/man5/lightningd-config.5.gz
 share/man/man7/lightning-addgossip.7.gz
 share/man/man7/lightning-addpsbtoutput.7.gz
+share/man/man7/lightning-askrene-create-channel.7.gz
+share/man/man7/lightning-askrene-disable-node.7.gz
+share/man/man7/lightning-askrene-inform-channel.7.gz
+share/man/man7/lightning-askrene-listlayers.7.gz
+share/man/man7/lightning-askrene-reserve.7.gz
+share/man/man7/lightning-askrene-unreserve.7.gz
 share/man/man7/lightning-autoclean-once.7.gz
 share/man/man7/lightning-autoclean-status.7.gz
 share/man/man7/lightning-batching.7.gz
@@ -107,6 +112,7 @@ share/man/man7/lightning-fundpsbt.7.gz
 share/man/man7/lightning-getinfo.7.gz
 share/man/man7/lightning-getlog.7.gz
 share/man/man7/lightning-getroute.7.gz
+share/man/man7/lightning-getroutes.7.gz
 share/man/man7/lightning-help.7.gz
 share/man/man7/lightning-invoice.7.gz
 share/man/man7/lightning-invoicerequest.7.gz
@@ -145,6 +151,7 @@ share/man/man7/lightning-ping.7.gz
 share/man/man7/lightning-plugin.7.gz
 share/man/man7/lightning-preapproveinvoice.7.gz
 share/man/man7/lightning-preapprovekeysend.7.gz
+share/man/man7/lightning-reckless.7.gz
 share/man/man7/lightning-recover.7.gz
 share/man/man7/lightning-recoverchannel.7.gz
 share/man/man7/lightning-renepay.7.gz
@@ -153,7 +160,6 @@ share/man/man7/lightning-reserveinputs.7.gz
 share/man/man7/lightning-sendcustommsg.7.gz
 share/man/man7/lightning-sendinvoice.7.gz
 share/man/man7/lightning-sendonion.7.gz
-share/man/man7/lightning-sendonionmessage.7.gz
 share/man/man7/lightning-sendpay.7.gz
 share/man/man7/lightning-sendpsbt.7.gz
 share/man/man7/lightning-setchannel.7.gz

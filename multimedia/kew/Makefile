@@ -1,10 +1,10 @@
 PORTNAME=	kew
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.0
+DISTVERSION=	2.7.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Command-line music player
+COMMENT=	Command-line music player with the terminal user interface (TUI)
 WWW=		https://github.com/ravachol/kew
 
 LICENSE=	GPLv2
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libchafa.so:graphics/chafa \
 		libfftw3f.so:math/fftw3-float \
 		libfreeimage.so:graphics/freeimage \
+		libnotify.so:devel/libnotify \
 		libopus.so:audio/opus \
 		libopusfile.so:audio/opusfile \
 		libvorbis.so:audio/libvorbis

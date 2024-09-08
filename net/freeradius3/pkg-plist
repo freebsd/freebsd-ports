@@ -512,6 +512,7 @@ sbin/radmin
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/ROOT/nav.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/ROOT/pages/directories.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/ROOT/pages/index.adoc
+%%PORTDOCS%%%%DOCSDIR%%/antora/modules/ROOT/pages/radiusd_x.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/concepts/nav.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/concepts/pages/aaa.adoc
 %%PORTDOCS%%%%DOCSDIR%%/antora/modules/concepts/pages/index.adoc

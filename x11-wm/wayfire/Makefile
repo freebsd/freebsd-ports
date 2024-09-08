@@ -1,7 +1,7 @@
 PORTNAME=	wayfire
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.1
-PORTREVISION=	2
+DISTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		nlohmann-json>0:devel/nlohmann-json \
-		wf-config>=0.8.0<0.9.0:devel/wf-config \
+		wf-config>=0.9.0<0.10.0:devel/wf-config \
 		${LOCALBASE}/include/xf86drmMode.h:graphics/libdrm \
 		wayland-protocols>=1.12:graphics/wayland-protocols \
 		glm>=0.9.8:math/glm
@@ -25,6 +25,7 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libwlroots.so:x11-toolkits/wlroots017 \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
+RUN_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 TEST_DEPENDS=	doctest>0:devel/doctest
 
 USES=		cmake:indirect compiler:c++17-lang gl gnome jpeg meson pkgconfig xorg
@@ -33,12 +34,17 @@ USE_GL=		egl glesv2
 USE_GNOME=	cairo pango
 USE_XORG=	pixman
 GH_ACCOUNT=	WayfireWM
-GH_TUPLE=	WayfireWM:wf-touch:8974eb0:wftouch/subprojects/wf-touch \
-		WayfireWM:wf-utils:15f8e16:wfutils/subprojects/wf-utils
+GH_TUPLE=	WayfireWM:wf-touch:b8b844f:wftouch/subprojects/wf-touch \
+		WayfireWM:wf-utils:08553c4:wfutils/subprojects/wf-utils
 MESON_ARGS=	-Dtests=disabled \
 		-Dwf-touch:tests=disabled \
 		-Dwf-utils:default_library=static \
 		${NULL}
+
+.if !exists(/usr/include/omp.h)
+# LLVM openmp in base doesn't support powerpc, armv6, armv7 yet
+MESON_ARGS+=	-Denable_openmp=false
+.endif
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11

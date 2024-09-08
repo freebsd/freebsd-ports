@@ -43,8 +43,8 @@ bin/mysqltest
 bin/mytop
 bin/replace
 bin/resolve_stack_dump
-%%ETCDIR%%/conf.d/client.cnf.sample
-%%ETCDIR%%/my.cnf.sample
+@sample %%ETCDIR%%/conf.d/client.cnf.sample
+@sample %%ETCDIR%%/my.cnf.sample
 include/mysql/errmsg.h
 include/mysql/ma_list.h
 include/mysql/ma_pvio.h

@@ -561,6 +561,7 @@
 %%DATADIR%%/extras/migrations/0113_customfield_rename_object_type.py
 %%DATADIR%%/extras/migrations/0114_customfield_add_comments.py
 %%DATADIR%%/extras/migrations/0115_convert_dashboard_widgets.py
+%%DATADIR%%/extras/migrations/0116_custom_link_button_color.py
 %%DATADIR%%/extras/migrations/__init__.py
 %%DATADIR%%/extras/models/__init__.py
 %%DATADIR%%/extras/models/change_logging.py
@@ -918,7 +919,6 @@
 %%DATADIR%%/project-static/src/forms/elements.ts
 %%DATADIR%%/project-static/src/forms/index.ts
 %%DATADIR%%/project-static/src/forms/savedFiltersSelect.ts
-%%DATADIR%%/project-static/src/forms/scopeSelector.ts
 %%DATADIR%%/project-static/src/forms/speedSelector.ts
 %%DATADIR%%/project-static/src/global.d.ts
 %%DATADIR%%/project-static/src/htmx.ts
@@ -1303,7 +1303,9 @@
 %%DATADIR%%/tenancy/tests/test_views.py
 %%DATADIR%%/tenancy/urls.py
 %%DATADIR%%/tenancy/views.py
+%%DATADIR%%/translations/cs/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/cs/LC_MESSAGES/django.po
+%%DATADIR%%/translations/da/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/da/LC_MESSAGES/django.po
 %%DATADIR%%/translations/de/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/de/LC_MESSAGES/django.po
@@ -1313,10 +1315,13 @@
 %%DATADIR%%/translations/es/LC_MESSAGES/django.po
 %%DATADIR%%/translations/fr/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/fr/LC_MESSAGES/django.po
+%%DATADIR%%/translations/it/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/it/LC_MESSAGES/django.po
 %%DATADIR%%/translations/ja/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/ja/LC_MESSAGES/django.po
+%%DATADIR%%/translations/nl/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/nl/LC_MESSAGES/django.po
+%%DATADIR%%/translations/pl/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/pl/LC_MESSAGES/django.po
 %%DATADIR%%/translations/pt/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/pt/LC_MESSAGES/django.po

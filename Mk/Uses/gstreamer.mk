@@ -40,7 +40,7 @@ _GST1_CATEGORIES=	audio comms devel ftp graphics multimedia net security \
 			sysutils www x11 x11-toolkits
 _GST1_PLUGINS_audio= 	a52dec amrnb amrwbdec bs2b cdparanoia chromaprint faac \
 			faad flac flite gme gsm jack ladspa lame lv2 modplug \
-			mpg123 musepack ogg openmpt opus pulse shout2 sidplay \
+			mpg123 ogg openmpt opus pulse shout2 sidplay \
 			sndfile sndio soundtouch speex taglib twolame vorbis \
 			wavpack webrtcdsp
 _GST1_PLUGINS_comms=	spandsp
@@ -152,9 +152,6 @@ gst-modplug_IMPL=	bad
 
 gst-mpg123_PORT=	audio/gstreamer${_GST_VER}-plugins-mpg123
 gst-mpg123_IMPL=	ugly
-
-gst-musepack_PORT=	audio/gstreamer${_GST_VER}-plugins-musepack
-gst-musepack_IMPL=	bad
 
 gst-neon_PORT=		www/gstreamer${_GST_VER}-plugins-neon
 gst-neon_IMPL=		bad

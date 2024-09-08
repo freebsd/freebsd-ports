@@ -1,5 +1,5 @@
 PORTNAME=	fluentd
-PORTVERSION=	1.17.0
+PORTVERSION=	1.17.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -16,6 +16,7 @@ RUN_DEPENDS=	\
 	rubygem-csv>=3.2:devel/rubygem-csv \
 	rubygem-drb>=2.2<2.3:devel/rubygem-drb \
 	rubygem-http_parser.rb>=0.5.1<0.9.0:net/rubygem-http_parser.rb \
+	rubygem-logger>=0.6:devel/rubygem-logger \
 	rubygem-msgpack>=1.3.1<2.0.0:devel/rubygem-msgpack \
 	rubygem-serverengine>=2.2.5<3.0.0:net/rubygem-serverengine \
 	rubygem-sigdump>=0.2.5<0.3:devel/rubygem-sigdump \

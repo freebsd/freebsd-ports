@@ -1,6 +1,7 @@
 PORTNAME=	quickwit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -13,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE_AGPLv3.0.txt
 BUILD_DEPENDS=	${LOCALBASE}/bin/protoc:devel/protobuf
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
+BROKEN_i386=	fails to build
 USES=			cargo pkgconfig
 USE_GITHUB=		yes
 GH_ACCOUNT=		quickwit-oss

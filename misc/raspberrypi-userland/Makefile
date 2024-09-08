@@ -8,6 +8,9 @@ COMMENT=	Various libraries for the Raspberry Pi
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Deprecated by the upstream
+EXPIRATION_DATE=2024-09-30
+
 ONLY_FOR_ARCHS=	armv6 armv7
 
 USES=		cmake:noninja pkgconfig shebangfix

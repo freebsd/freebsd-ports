@@ -17,9 +17,11 @@ GH_ACCOUNT=	CyberShadow
 
 ALL_TARGET=	clientbuffer.so
 
+PORTSCOUT=	skipv:znc-1.6.0
+
 PLIST_FILES=	lib/znc/clientbuffer.so
 
-PORTDOCS=		README.md
+PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 

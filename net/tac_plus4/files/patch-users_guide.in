@@ -1,17 +1,18 @@
 --- users_guide.in.orig	2011-05-27 22:11:57 UTC
 +++ users_guide.in
-@@ -164,7 +164,10 @@ for S/KEY in the Makefile.  I got my S/K
+@@ -164,8 +164,11 @@ suggest you try a web search for s/key source code.
  crimelab.com but now it appears the only source is ftp.bellcore.com. I
  suggest you try a web search for s/key source code.
  
 -Note: S/KEY is a trademark of Bell Communications Research (Bellcore).
 +To use OPIE, you must have built tac_plus with the -DWITH_OPIE flag.
-+
+ 
 +Note: S/KEY and OPIE are a trademark of Bell Communications Research 
 +(Bellcore).
- 
++
  Should you need them, there are routines for accessing password files
  (getpwnam,setpwent,endpwent,setpwfile) in pw.c.
+ 
 @@ -414,7 +417,16 @@ be authenticated via s/key, as follows:
        login = skey
      }

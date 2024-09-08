@@ -1,0 +1,7 @@
+pyOCD is an open source Python based tool and package for programming
+and debugging Arm Cortex-M microcontrollers with a wide range of debug
+probes. It is fully cross-platform, with support for Linux, macOS,
+Windows, and FreeBSD.
+
+A command line tool is provided that covers most use cases, or you can make
+use of the Python API to facilitate custom target control.

@@ -1,5 +1,5 @@
 PORTNAME=	ogmios
-PORTVERSION=	6.5.0
+PORTVERSION=	6.6.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://input-output-hk.github.io/cardano-haskell-packages/package/:chap
@@ -33,8 +33,8 @@ USE_RC_SUBR=		ogmios
 LIBS_PREFIX=		${WRKDIR}/libs_install
 BINARY_ALIAS=		git=true
 
-USE_CABAL=	Cabal-3.12.1.0 \
-		Cabal-syntax-3.12.1.0 \
+USE_CABAL=	Cabal-3.12.0.0 \
+		Cabal-syntax-3.12.0.0_1 \
 		FailT-0.1.2.0 \
 		Glob-0.10.2_3 \
 		HUnit-1.6.2.0 \
@@ -49,7 +49,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		Unique-0.4.7.9_1 \
 		Win32-network-0.2.0.0:chap \
 		adjunctions-4.4.2_2 \
-		aeson-2.2.3.0 \
+		aeson-2.2.3.0_1 \
 		aeson-pretty-0.8.10 \
 		alex-3.5.1.0 \
 		algebraic-graphs-0.7_3 \
@@ -61,7 +61,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
 		assoc-1.1.1 \
-		async-2.2.5_1 \
+		async-2.2.5_2 \
 		async-timer-0.1.4.1 \
 		atomic-primops-0.8.8 \
 		attoparsec-0.14.4_5 \
@@ -214,7 +214,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		haskell-lexer-1.1.1 \
 		heapwords-0.1.0.2:chap \
 		hedgehog-1.4_8 \
-		hedgehog-quickcheck-0.1.1_7 \
+		hedgehog-quickcheck-0.1.1_8 \
 		hostname-1.0 \
 		hourglass-0.2.12_1 \
 		hsc2hs-0.68.10_2 \
@@ -222,7 +222,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		hspec-core-2.11.9 \
 		hspec-discover-2.11.9 \
 		hspec-expectations-0.8.4_2 \
-		http-api-data-0.6.1 \
+		http-api-data-0.6.1_1 \
 		http-client-0.7.17 \
 		http-client-tls-0.3.6.3 \
 		http-date-0.0.11 \
@@ -236,7 +236,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		integer-conversion-0.1.1 \
 		integer-logarithms-1.0.3.1_6 \
 		invariant-0.6.3 \
-		io-classes-1.5.0.0 \
+		io-classes-1.5.0.0_1 \
 		io-classes-mtl-0.1.2.0_1 \
 		io-sim-1.5.0.0 \
 		io-streams-1.5.2.2_5 \
@@ -283,7 +283,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		newtype-generics-0.6.2_4 \
 		non-integral-1.0.0.0_2:chap \
 		nonempty-vector-0.2.3_2 \
-		nothunks-0.1.5 \
+		nothunks-0.1.5_1 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.4 \
 		optparse-applicative-0.18.1.0 \
@@ -323,7 +323,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		prometheus-2.2.4_1 \
 		protolude-0.3.4 \
 		psqueues-0.2.8.0 \
-		quickcheck-instances-0.3.31_1 \
+		quickcheck-instances-0.3.31_2 \
 		quickcheck-io-0.2.0 \
 		quickcheck-monoids-0.1.0.0:chap \
 		quickcheck-state-machine-0.9.0 \
@@ -345,7 +345,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		safe-wild-cards-1.0.0.2_1 \
 		scientific-0.3.8.0_1 \
 		selective-0.5 \
-		semialign-1.3.1 \
+		semialign-1.3.1_1 \
 		semigroupoids-6.0.1_1 \
 		semigroups-0.20 \
 		serialise-0.2.6.1_3 \
@@ -383,11 +383,11 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		tasty-1.5_2 \
 		tasty-expected-failure-0.12.3 \
 		tasty-golden-2.3.5 \
-		tasty-hedgehog-1.4.0.2_4 \
+		tasty-hedgehog-1.4.0.2_5 \
 		tasty-hunit-0.10.2 \
 		tasty-quickcheck-0.11 \
 		temporary-1.3 \
-		terminal-size-0.3.4 \
+		terminal-size-0.3.4_1 \
 		testing-type-modifiers-0.1.0.1 \
 		text-2.1.1_1 \
 		text-builder-0.6.7.2 \
@@ -406,7 +406,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		th-orphans-0.13.14_3 \
 		th-reify-many-0.1.10 \
 		th-utilities-0.2.5.0 \
-		these-1.2.1 \
+		these-1.2.1_1 \
 		time-compat-1.9.7_2 \
 		time-manager-0.1.0 \
 		time-units-1.0.0 \
@@ -415,7 +415,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
 		transformers-except-0.1.4_1 \
-		tree-diff-0.3.1 \
+		tree-diff-0.3.1_1 \
 		typed-process-0.2.11.1 \
 		typed-protocols-0.1.1.0_3:chap \
 		typed-protocols-cborg-0.1.0.4:chap \
@@ -427,7 +427,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		unix-time-0.4.15 \
 		unliftio-0.2.25.0 \
 		unliftio-core-0.2.1.0_4 \
-		unordered-containers-0.2.20_2 \
+		unordered-containers-0.2.20_3 \
 		utf8-string-1.0.2 \
 		uuid-types-1.0.6_1 \
 		validation-selective-0.2.0.0.0.0.0.0.1:chap \
@@ -448,12 +448,12 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		wai-extra-3.1.15 \
 		wai-logger-2.4.0 \
 		wai-websockets-3.0.1.2 \
-		warp-3.4.1 \
+		warp-3.4.1_1 \
 		websockets-0.13.0.0_2 \
 		with-utf8-1.1.0.0_1 \
-		witherable-0.5 \
+		witherable-0.5_1 \
 		wl-pprint-annotated-0.1.0.1_3 \
-		wl-pprint-text-1.2.0.2_2 \
+		wl-pprint-text-1.2.0.2_3 \
 		word-wrap-0.5 \
 		word8-0.1.3 \
 		yaml-0.11.11.2_2 \

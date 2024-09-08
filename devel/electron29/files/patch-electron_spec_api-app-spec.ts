@@ -1,4 +1,4 @@
---- electron/spec/api-app-spec.ts.orig	2024-07-10 22:38:05 UTC
+--- electron/spec/api-app-spec.ts.orig	2024-08-09 17:08:27 UTC
 +++ electron/spec/api-app-spec.ts
 @@ -123,11 +123,11 @@ describe('app module', () => {
    });
@@ -128,6 +128,6 @@
  
 -  ifdescribe(!(process.platform === 'linux' && (process.arch === 'arm64' || process.arch === 'arm')))('sandbox options', () => {
 +  ifdescribe(!((process.platform === 'linux' || process.platform === 'freebsd') && (process.arch === 'arm64' || process.arch === 'arm')))('sandbox options', () => {
-     // Our ARM tests are run on VSTS rather than CircleCI, and the Docker
-     // setup on VSTS disallows syscalls that Chrome requires for setting up
-     // sandboxing.
+     let appProcess: cp.ChildProcess = null as any;
+     let server: net.Server = null as any;
+     const socketPath = process.platform === 'win32' ? '\\\\.\\pipe\\electron-mixed-sandbox' : '/tmp/electron-mixed-sandbox';

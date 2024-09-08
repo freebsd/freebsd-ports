@@ -2,7 +2,6 @@
 
     SUBDIR += acme-dns
     SUBDIR += adns
-    SUBDIR += adsuck
     SUBDIR += amass
     SUBDIR += axfr2acl
     SUBDIR += bind-tools
@@ -59,7 +58,6 @@
     SUBDIR += dq
     SUBDIR += drool
     SUBDIR += dsc
-    SUBDIR += dsp
     SUBDIR += dynip
     SUBDIR += encrypted-dns-server
     SUBDIR += fastresolve
@@ -125,7 +123,6 @@
     SUBDIR += p5-DNS-Zone
     SUBDIR += p5-DNS-ZoneParse
     SUBDIR += p5-DNS-nsdiff
-    SUBDIR += p5-DSC
     SUBDIR += p5-Data-Validate-Domain
     SUBDIR += p5-IO-Async-Resolver-DNS
     SUBDIR += p5-Mozilla-PublicSuffix
@@ -219,6 +216,7 @@
     SUBDIR += rubygem-resolv
     SUBDIR += rubygem-resolv-replace
     SUBDIR += rubygem-simpleidn
+    SUBDIR += rubygem-simpleidn02
     SUBDIR += rubygem-validates_hostname
     SUBDIR += rubygem-zonefile
     SUBDIR += samba-nsupdate

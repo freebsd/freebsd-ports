@@ -1,0 +1,9 @@
+IPC::System::Options provides replacement (wrapper) for Perl's system(),
+readpipe() (qx//, a.k.a. the backtick operator), as well as IPC::Run's start()
+and run(). The wrappers give you options like forcing/avoiding use of shell
+(like what IPC::System::Simple offers you), logging the arguments and/or output
+(using Log::ger), temporarily setting environment variables, temporarily setting
+working directory, dying on non-zero exit code, capturing (or tee-ing) output
+(stdout/stderr) (using Capture::Tiny), and a few others. They are meant as a
+convenience so you can just call system() (or the other wrapper target) instead
+of doing some additional setup and cleanup yourself.

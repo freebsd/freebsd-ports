@@ -3,8 +3,9 @@
 # pinned to exact versions of everything used to build them.
 
 PORTNAME=	sbcl
-DISTVERSION=	2.4.7
+DISTVERSION=	2.4.8
 DISTVERSIONSUFFIX=	-source
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
@@ -13,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Common Lisp development system derived from the CMU CL system
-WWW=		http://sbcl.sourceforge.net/
+WWW=		https://sbcl.sourceforge.io/
 
 LICENSE=	BSD2CLAUSE PD
 LICENSE_COMB=	dual

@@ -1,4 +1,5 @@
 Obtained from:	https://github.com/derickr/vld/commit/df1c52c4cb62e5ff31e1b72e3f11df9a45ee567a
+		https://github.com/derickr/vld/commit/dc56f73a25b0230745afb5523871f2e8dd33fccd
 
 --- srm_oparray.c.orig	2022-09-16 08:00:47 UTC
 +++ srm_oparray.c
@@ -44,21 +45,91 @@ Obtained from:	https://github.com/derickr/vld/commit/df1c52c4cb62e5ff31e1b72e3f1
  	if (flags & EXT_VAL) {
  #if PHP_VERSION_ID >= 70300
  		if (op.opcode == ZEND_CATCH) {
-@@ -1081,6 +1102,14 @@ int vld_find_jumps(zend_op_array *opa, unsigned int po
- 		jumps[0] = VLD_JMP_EXIT;
+@@ -1082,9 +1103,19 @@ int vld_find_jumps(zend_op_array *opa, unsigned int po
  		*jump_count = 1;
  		return 1;
-+
+ 
 +#if PHP_VERSION_ID >= 80400
 +	} else if (opcode.opcode == ZEND_JMP_FRAMELESS) {
-+		jumps[0] = VLD_ZNODE_JMP_LINE(opcode.op2, position, base_address);
-+		jumps[1] = position + 1;
++		jumps[0] = position + 1;
++		jumps[1] = VLD_ZNODE_JMP_LINE(opcode.op2, position, base_address);
 +		*jump_count = 2;
 +		return 1;
 +#endif
- 
++
  	} else if (
  		opcode.opcode == ZEND_GENERATOR_RETURN ||
++#if PHP_VERSION_ID < 80400
+ 		opcode.opcode == ZEND_EXIT ||
++#endif
+ 		opcode.opcode == ZEND_THROW ||
+ #if PHP_VERSION_ID >= 80000
+ 		opcode.opcode == ZEND_MATCH_ERROR ||
+@@ -1094,6 +1125,48 @@ int vld_find_jumps(zend_op_array *opa, unsigned int po
+ 		jumps[0] = VLD_JMP_EXIT;
+ 		*jump_count = 1;
+ 		return 1;
++	} else if (
++		opcode.opcode == ZEND_INIT_FCALL
++	) {
++		zval *func_name = RT_CONSTANT(&opa->opcodes[position], opcode.op2);
++		if (zend_string_equals_literal(Z_PTR_P(func_name), "exit")) {
++			int level = 0;
++			uint32_t start = position + 1;
++
++			for (;;) {
++				switch (opa->opcodes[start].opcode) {
++					case ZEND_INIT_FCALL:
++					case ZEND_INIT_FCALL_BY_NAME:
++					case ZEND_INIT_NS_FCALL_BY_NAME:
++					case ZEND_INIT_DYNAMIC_CALL:
++					case ZEND_INIT_USER_CALL:
++					case ZEND_INIT_METHOD_CALL:
++					case ZEND_INIT_STATIC_METHOD_CALL:
++#if PHP_VERSION_ID >= 80400
++					case ZEND_INIT_PARENT_PROPERTY_HOOK_CALL:
++#endif
++					case ZEND_NEW:
++						level++;
++						break;
++					case ZEND_DO_FCALL:
++					case ZEND_DO_FCALL_BY_NAME:
++					case ZEND_DO_ICALL:
++					case ZEND_DO_UCALL:
++						if (level == 0) {
++							goto done;
++						}
++						level--;
++						break;
++				}
++				start++;
++			}
++ done:
++			ZEND_ASSERT(opa->opcodes[start].opcode == ZEND_DO_ICALL);
++			jumps[0] = VLD_JMP_EXIT;
++			*jump_count = 1;
++			return 1;
++		}
++
+ #if PHP_VERSION_ID >= 70200
+ 	} else if (
+ # if PHP_VERSION_ID >= 80000
+@@ -1233,6 +1306,7 @@ void vld_analyse_branch(zend_op_array *opa, unsigned i
+ 			break;
+ 		}
+ 
++#if PHP_VERSION_ID < 80400
+ 		/* See if we have an exit instruction */
+ 		if (opa->opcodes[position].opcode == ZEND_EXIT) {
+ 			VLD_PRINT(1, "Exit found\n");
+@@ -1240,6 +1314,7 @@ void vld_analyse_branch(zend_op_array *opa, unsigned i
+ 			branch_info->branches[position].start_lineno = opa->opcodes[position].lineno;
+ 			break;
+ 		}
++#endif
+ 		/* See if we have a return instruction */
+ 		if (
+ 			opa->opcodes[position].opcode == ZEND_RETURN
 --- srm_oparray.h.orig	2022-09-16 08:00:47 UTC
 +++ srm_oparray.h
 @@ -57,6 +57,8 @@

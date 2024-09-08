@@ -1,4 +1,4 @@
---- chrome/browser/supervised_user/supervised_user_metrics_service_factory.cc.orig	2024-08-01 05:47:53 UTC
+--- chrome/browser/supervised_user/supervised_user_metrics_service_factory.cc.orig	2024-08-27 06:28:16 UTC
 +++ chrome/browser/supervised_user/supervised_user_metrics_service_factory.cc
 @@ -14,7 +14,7 @@
  #include "components/supervised_user/core/browser/supervised_user_service.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/supervised_user/linux_mac_windows/supervised_user_extensions_metrics_delegate_impl.h"
  #endif
  
-@@ -55,7 +55,7 @@ KeyedService* SupervisedUserMetricsServiceFactory::Bui
+@@ -61,7 +61,7 @@ KeyedService* SupervisedUserMetricsServiceFactory::Bui
    std::unique_ptr<supervised_user::SupervisedUserMetricsService ::
                        SupervisedUserMetricsServiceExtensionDelegate>
        extensions_metrics_delegate = nullptr;

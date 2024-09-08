@@ -1,8 +1,8 @@
 Workaround for gtest-related breakage: https://github.com/facebook/hermes/issues/388
 
---- external/llvh/CMakeLists.txt.orig	2020-12-17 03:26:48 UTC
+--- external/llvh/CMakeLists.txt.orig	2024-08-15 07:17:16 UTC
 +++ external/llvh/CMakeLists.txt
-@@ -27,4 +27,4 @@ add_subdirectory(lib)
+@@ -31,4 +31,4 @@ add_subdirectory(utils/count)
  add_subdirectory(utils/FileCheck)
  add_subdirectory(utils/not)
  add_subdirectory(utils/count)

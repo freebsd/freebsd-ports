@@ -1,0 +1,18 @@
+Vieb is the Vim Inspired Electron Browser.
+
+Features:
+
+    - Free, open source, fast and secure
+    - Local first adblocking, auto-complete, AMP protection, custom redirects
+      and more, all without web requests
+    - Privacy with strict permission system, navigator overrides, custom
+      useragent, custom WebRTC policy and more
+    - Accessible with custom themes, full interface & fontsize scaling, page
+      zooming, spellcheck and mouse support
+    - Security settings with permissions, cache usage, cookie management,
+      (auto-)download settings and more
+    - Window splitting with buffer, split, Vexplore and Ctrl-w bindings, for
+      multi-window browsing
+    - Map commands for completely custom keyboard sequences, keystrokes,
+      commands and actions
+    - And much, much more...

@@ -1,6 +1,5 @@
 PORTNAME=	minetest
-PORTVERSION=	5.8.0
-PORTREVISION=	1
+PORTVERSION=	5.9.0
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -16,9 +15,6 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 
 USES=		cmake compiler:c++17-lang cpe iconv:wchar_t sqlite
 USE_GITHUB=	yes
-# check https://github.com/minetest/minetest/releases for applicable irrlichmt version
-GH_TUPLE=	minetest:irrlicht:1.9.0mt13:irrlicht/lib/irrlichtmt
-
 CMAKE_ARGS=	-DCUSTOM_EXAMPLE_CONF_DIR="${PREFIX}/etc" \
 CMAKE_ON=	ENABLE_SYSTEM_JSONCPP
 CMAKE_OFF=	BUILD_DOCUMENTATION

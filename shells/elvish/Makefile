@@ -1,7 +1,6 @@
 PORTNAME=	elvish
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.1
-PORTREVISION=	6
+DISTVERSION=	0.21.0
 CATEGORIES=	shells
 
 MAINTAINER=	vendion@gmail.com
@@ -15,12 +14,10 @@ USES=		cpe go:modules
 CPE_VENDOR=	elv
 USE_GITHUB=	yes
 GH_ACCOUNT=	elves
-GH_PROJECT=	elvish
-GH_TUPLE=	\
-		creack:pty:v1.1.21:creack_pty/vendor/github.com/creack/pty \
-		etcd-io:bbolt:v1.3.8:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
-		golang:sync:v0.6.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.16.0:golang_sys/vendor/golang.org/x/sys \
+GH_TUPLE=	creack:pty:v1.1.21:creack_pty/vendor/github.com/creack/pty \
+		etcd-io:bbolt:v1.3.10:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
+		golang:sync:v0.8.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.24.0:golang_sys/vendor/golang.org/x/sys \
 		google:go-cmp:v0.6.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		mattn:go-isatty:v0.0.20:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		nimblebun:go-lsp:v1.1.0:nimblebun_go_lsp/vendor/pkg.nimblebun.works/go-lsp \
@@ -28,11 +25,11 @@ GH_TUPLE=	\
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_TARGET=	./cmd/elvish
-GO_BUILDFLAGS=	-ldflags="-s -w -X src.elv.sh/pkg/buildinfo.Version=${DISTVERSIONPREFIX}${DISTVERSION} -X src.elv.sh/pkg/buildinfo.Reproducible=true" \
+GO_BUILDFLAGS=	-ldflags="-s -w -X src.elv.sh/pkg/buildinfo.BuildVariant=freebsd" \
 		-buildmode=pie
 GO_TESTFLAGS=	-race
 CGO_ENABLED=	0
 
-PLIST_FILES=	bin/elvish
+PLIST_FILES=	"@shell bin/elvish"
 
 .include <bsd.port.mk>

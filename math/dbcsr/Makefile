@@ -32,12 +32,13 @@ CMAKE_ARGS=	-DBLA_VENDOR:STRING="OpenBLAS" -DPython_EXECUTABLE=${PYTHON_CMD}
 
 BINARY_ALIAS=	git=false # with git sonames get messed up
 
-OPTIONS_DEFINE=		MPI OPENMP C_API # libxsmm is supposed to be supported, but cmake build lacks the corresponding option: https://github.com/cp2k/dbcsr/issues/73
-OPTIONS_DEFAULT=	MPI OPENMP C_API
+OPTIONS_DEFINE=		MPIX OPENMP C_API # libxsmm is supposed to be supported, but cmake build lacks the corresponding option: https://github.com/cp2k/dbcsr/issues/73
+OPTIONS_DEFAULT=	MPIX OPENMP C_API
 OPTIONS_SUB=		yes
 
-MPI_CMAKE_BOOL=		USE_MPI
-MPI_LIB_DEPENDS=	libmpi_cxx.so:net/openmpi4
+MPIX_DESC=		Use OpenMPI
+MPIX_CMAKE_BOOL=	USE_MPI
+MPIX_USES=		mpi:mpich
 
 OPENMP_CMAKE_BOOL=	USE_OPENMP
 

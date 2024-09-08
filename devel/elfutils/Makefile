@@ -1,6 +1,6 @@
 PORTNAME=	elfutils
 DISTVERSION=	0.187
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://sourceware.org/elfutils/ftp/${PORTVERSION}/
 

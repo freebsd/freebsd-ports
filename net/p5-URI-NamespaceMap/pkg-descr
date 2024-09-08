@@ -1,0 +1,3 @@
+URI::Namespace provides an object with a URI/IRI attribute, typically used
+prefix-namespace pairs, typically used in XML, RDF serializations, etc. The
+local part can be used as a method, these are autoloaded.

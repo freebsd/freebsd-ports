@@ -1,5 +1,5 @@
 PORTNAME=	kokkos
-DISTVERSION=	4.3.01
+DISTVERSION=	4.4.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc # Kokkos assumes a 64-bit build; i.
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cmake:testing compiler:c++11-lang shebangfix
+USES=		cmake:testing compiler:c++17-lang shebangfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	bin/nvcc_wrapper bin/kokkos_launch_compiler

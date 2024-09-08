@@ -1,5 +1,5 @@
 PORTNAME=	BiocManager
-DISTVERSION=	1.30.23
+DISTVERSION=	1.30.24
 CATEGORIES=	biology
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,5 +10,7 @@ WWW=		https://cran.r-project.org/web/packages/BiocManager/
 LICENSE=	ART20
 
 USES=		cran:auto-plist,compiles
+
+PORTSCOUT=	skipv:1.30.24
 
 .include <bsd.port.mk>

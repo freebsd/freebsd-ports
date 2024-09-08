@@ -1,6 +1,0 @@
-Icecast-kh is a fork of icecast, a streaming mp3/ogg-vorbis audio server.
-
-Icecast provides nearly all the functionality of the Shoutcast server.
-It will accept encoding streams from encoders like winamp, shout and ices.
-It can also add itself to a directory server such as our own
-icecast.linuxpower.org or Nullsoft's yp.shoutcast.com.

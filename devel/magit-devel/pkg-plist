@@ -39,8 +39,6 @@
 %%ELISPDIR%%/magit-git.elc
 %%ELISPDIR%%/magit-gitignore.el
 %%ELISPDIR%%/magit-gitignore.elc
-%%LIBEGIT2%%%%ELISPDIR%%/magit-libgit.el
-%%LIBEGIT2%%%%ELISPDIR%%/magit-libgit.elc
 %%ELISPDIR%%/magit-log.el
 %%ELISPDIR%%/magit-log.elc
 %%ELISPDIR%%/magit-margin.el

@@ -1,5 +1,5 @@
 PORTNAME=	dooble
-DISTVERSION=	2024.01.25
+DISTVERSION=	2024.08.20
 CATEGORIES=	www
 
 MAINTAINER=	eric@camachat.org
@@ -13,7 +13,7 @@ USES=		compiler:c++17-lang desktop-file-utils gl gmake qmake qt:6 ssl \
 		tar xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	textbrowser
-USE_GL=		gl
+USE_GL=		opengl
 USE_QT=		base charts declarative positioning webchannel webengine \
 		sqldriver-sqlite:run
 USE_XORG=	xcb

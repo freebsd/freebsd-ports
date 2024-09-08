@@ -1,9 +1,9 @@
---- gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.cc.orig	2024-02-23 21:04:38 UTC
+--- gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.cc.orig	2024-08-26 12:06:38 UTC
 +++ gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.cc
-@@ -21,7 +21,7 @@ namespace {
+@@ -20,7 +20,7 @@ namespace {
  // TODO(penghuang): verify the scanout is the right usage for video playback.
  // crbug.com/1280798
- constexpr uint32_t kSupportedUsage =
+ constexpr SharedImageUsageSet kSupportedUsage =
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
      SHARED_IMAGE_USAGE_SCANOUT |

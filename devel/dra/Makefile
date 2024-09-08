@@ -1,5 +1,6 @@
 PORTNAME=	dra
-DISTVERSION=	0.5.4
+DISTVERSION=	0.6.1
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +22,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		anstyle-parse-0.2.0 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-3.0.1 \
-		assert_cmd-2.0.14 \
+		assert_cmd-2.0.15 \
 		autocfg-1.1.0 \
 		base64-0.22.1 \
 		bitflags-1.3.2 \
@@ -33,10 +34,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		cc-1.0.72 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
-		clap-4.5.8 \
-		clap_builder-4.5.8 \
-		clap_complete-4.5.3 \
-		clap_derive-4.5.8 \
+		clap-4.5.13 \
+		clap_builder-4.5.13 \
+		clap_complete-4.5.8 \
+		clap_derive-4.5.13 \
 		clap_lex-0.7.0 \
 		colorchoice-1.0.0 \
 		console-0.15.0 \
@@ -72,11 +73,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		normalize-line-endings-0.3.0 \
 		num-traits-0.2.15 \
 		number_prefix-0.4.0 \
-		once_cell-1.13.0 \
+		once_cell-1.19.0 \
 		percent-encoding-2.1.0 \
 		pkg-config-0.3.25 \
 		portable-atomic-1.3.3 \
-		predicates-3.1.0 \
+		predicates-3.1.2 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.5 \
 		proc-macro-error-1.0.4 \
@@ -89,13 +90,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		regex-syntax-0.6.26 \
 		ring-0.17.3 \
 		rustix-0.36.16 \
-		rustls-0.22.4 \
-		rustls-pki-types-1.3.1 \
-		rustls-webpki-0.102.2 \
+		rustls-0.23.12 \
+		rustls-pki-types-1.7.0 \
+		rustls-webpki-0.102.6 \
 		ryu-1.0.6 \
 		same-file-1.0.6 \
-		serde-1.0.203 \
-		serde_derive-1.0.203 \
+		serde-1.0.204 \
+		serde_derive-1.0.204 \
 		serde_json-1.0.99 \
 		shell-words-1.1.0 \
 		spin-0.9.8 \
@@ -119,11 +120,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicode-normalization-0.1.19 \
 		unicode-width-0.1.9 \
 		untrusted-0.9.0 \
-		ureq-2.9.7 \
+		ureq-2.10.0 \
 		url-2.2.2 \
 		urlencoding-2.1.3 \
 		utf8parse-0.2.1 \
-		uuid-1.9.1 \
+		uuid-1.10.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.3 \
 		wait-timeout-0.2.0 \

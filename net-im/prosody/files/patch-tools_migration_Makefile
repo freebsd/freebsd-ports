@@ -1,14 +1,5 @@
 --- tools/migration/Makefile.orig	2022-03-08 12:34:39 UTC
 +++ tools/migration/Makefile
-@@ -5,7 +5,7 @@ BIN = $(DESTDIR)$(PREFIX)/bin
- CONFIG = $(DESTDIR)$(SYSCONFDIR)
- SOURCE = $(DESTDIR)$(LIBDIR)/prosody
- DATA = $(DESTDIR)$(DATADIR)
--MAN = $(DESTDIR)$(PREFIX)/share/man
-+MAN = $(DESTDIR)$(PREFIX)/man
- 
- INSTALLEDSOURCE = $(LIBDIR)/prosody
- INSTALLEDCONFIG = $(SYSCONFDIR)
 @@ -18,14 +18,14 @@ install: prosody-migrator.install migrator.cfg.lua.ins
  	install -d $(BIN) $(CONFIG) $(SOURCE)
  	install -d $(MAN)/man1

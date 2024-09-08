@@ -24,6 +24,7 @@ MESON_ARGS=	--auto-features=disabled \
 		-Dbzip2=enabled \
 		-Dhttpd=true \
 		-Dicu=enabled \
+		-Dmpcdec=disabled \
 		-Doss=enabled \
 		-Dpipe=true \
 		-Dsyslog=enabled \
@@ -47,7 +48,7 @@ OPTIONS_RADIO_RESAMPLER=	SAMPLERATE SOXR
 OPTIONS_MULTI=	DOCUMENTATION FILE_FORMAT
 OPTIONS_MULTI_FILE_FORMAT=	\
 			ADPLUG AUDIOFILE FAAD FFMPEG FLAC FLUIDSYNTH \
-			GME MAD MIKMOD MODPLUG MPG123 MUSEPACK \
+			GME MAD MIKMOD MODPLUG MPG123 \
 			OPUS SIDPLAY SNDFILE TWOLAME \
 			VORBIS WAVPACK WILDMIDI
 
@@ -109,8 +110,6 @@ MODPLUG_MESON_ENABLED=	modplug
 MODPLUG_LIB_DEPENDS=	libmodplug.so:audio/libmodplug
 MPG123_MESON_ENABLED=	mpg123
 MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
-MUSEPACK_MESON_ENABLED=	mpcdec
-MUSEPACK_LIB_DEPENDS=	libmpcdec.so:audio/musepack
 NFS_MESON_ENABLED=	nfs
 NFS_LIB_DEPENDS=	libnfs.so:net/libnfs
 OPENMPT_MESON_ENABLED=	openmpt

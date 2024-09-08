@@ -1,4 +1,4 @@
-TIMESTAMP = 1722665115
+TIMESTAMP = 1724045337
 SHA256 (rust/crates/addr2line-0.22.0.crate) = 6e4503c46a5c0c7844e948c9a4d6acd9f50cccb4de1c48eb9e291ea17470c678
 SIZE (rust/crates/addr2line-0.22.0.crate) = 39156
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -671,5 +671,5 @@ SHA256 (rust/crates/zstd-safe-5.0.2+zstd.1.5.2.crate) = 1d2a5585e04f9eea4b2a3d1e
 SIZE (rust/crates/zstd-safe-5.0.2+zstd.1.5.2.crate) = 17273
 SHA256 (rust/crates/zstd-sys-2.0.12+zstd.1.5.6.crate) = 0a4e40c320c3cb459d9a9ff6de98cff88f4751ee9275d140e2be94a2b74e4c13
 SIZE (rust/crates/zstd-sys-2.0.12+zstd.1.5.6.crate) = 749063
-SHA256 (EmbarkStudios-cargo-deny-0.16.0_GH0.tar.gz) = 34f9c1d463b1e2c32cfe9f928e4510210341db27fae55387d7faaa31be2e583f
-SIZE (EmbarkStudios-cargo-deny-0.16.0_GH0.tar.gz) = 1842308
+SHA256 (EmbarkStudios-cargo-deny-0.16.1_GH0.tar.gz) = 8e09aef97b0c299eefd23f019ad615559887f4ae3d54bd6affdd33a503a04fcf
+SIZE (EmbarkStudios-cargo-deny-0.16.1_GH0.tar.gz) = 1842407

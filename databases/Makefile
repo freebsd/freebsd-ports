@@ -206,10 +206,10 @@
     SUBDIR += mysql2pgsql
     SUBDIR += mysql80-client
     SUBDIR += mysql80-server
-    SUBDIR += mysql81-client
-    SUBDIR += mysql81-server
     SUBDIR += mysql84-client
     SUBDIR += mysql84-server
+    SUBDIR += mysql90-client
+    SUBDIR += mysql90-server
     SUBDIR += mysqlbackup
     SUBDIR += mysqldump-secure
     SUBDIR += mysqlreport
@@ -896,6 +896,7 @@
     SUBDIR += redis-devel
     SUBDIR += redis62
     SUBDIR += redis70
+    SUBDIR += redis72
     SUBDIR += redis_exporter
     SUBDIR += redisdesktopmanager
     SUBDIR += redisjson
@@ -1119,6 +1120,7 @@
     SUBDIR += xrootd
     SUBDIR += xtrabackup80
     SUBDIR += xtrabackup81
+    SUBDIR += xtrabackup84
     SUBDIR += zodb
 
 .include <bsd.port.subdir.mk>

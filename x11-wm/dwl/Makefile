@@ -1,6 +1,7 @@
 PORTNAME=	dwl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 MASTER_SITES=	https://codeberg.org/${PORTNAME}/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -35,7 +36,7 @@ OPTIONS_DEFAULT=ADDONS X11
 
 ADDONS_DESC=		Install extra applications: ${ADDONS_RUN_DEPENDS:C/\:.*//}
 ADDONS_RUN_DEPENDS?=	foot:x11/foot \
-			bemenu-run:x11/bemenu
+			wmenu-run:x11/wmenu
 
 X11_LIB_DEPENDS=	libxcb-icccm.so:x11/xcb-util-wm
 X11_USES=		xorg

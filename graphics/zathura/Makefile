@@ -1,5 +1,5 @@
 PORTNAME=	zathura
-DISTVERSION=	0.5.6
+DISTVERSION=	0.5.8
 CATEGORIES=	graphics print
 MASTER_SITES=	https://pwmt.org/projects/zathura/download/
 
@@ -18,6 +18,7 @@ USES=		compiler:c11 desktop-file-utils gettext-tools:build gnome meson \
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 MESON_ARGS=	-Dmanpages=disabled \
 		-Dseccomp=disabled \
+		-Dlandlock=disabled \
 		-Dtests=disabled
 
 OPTIONS_DEFINE=		MANPAGES SYNCTEX

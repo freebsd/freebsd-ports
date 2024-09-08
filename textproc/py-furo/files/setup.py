@@ -27,7 +27,7 @@ package_dir = \
 {'': 'src'}
 
 install_requires = \
-['beautifulsoup4', 'sphinx >= 5.0,<8.0', 'sphinx-basic-ng >= 1.0.0.beta2', 'pygments >= 2.7']
+['beautifulsoup4', 'sphinx >= 5.0,<9.0', 'sphinx-basic-ng >= 1.0.0.beta2', 'pygments >= 2.7']
 
 entry_points = \
 {'sphinx.html_themes': ['furo = furo']}

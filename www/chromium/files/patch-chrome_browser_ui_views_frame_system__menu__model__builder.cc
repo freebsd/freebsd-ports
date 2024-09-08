@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig	2024-06-17 12:56:06 UTC
+--- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig	2024-08-26 12:06:38 UTC
 +++ chrome/browser/ui/views/frame/system_menu_model_builder.cc
 @@ -75,7 +75,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForBrowser
      ui::SimpleMenuModel* model) {
@@ -18,7 +18,7 @@
    model->AddSeparator(ui::NORMAL_SEPARATOR);
    bool supports_server_side_decorations = true;
  #if BUILDFLAG(IS_OZONE) && !BUILDFLAG(IS_CHROMEOS)
-@@ -147,7 +147,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForAppOrPo
+@@ -155,7 +155,7 @@ void SystemMenuModelBuilder::BuildSystemMenuForAppOrPo
      model->AddSeparator(ui::NORMAL_SEPARATOR);
      model->AddItemWithStringId(IDC_TASK_MANAGER, IDS_TASK_MANAGER);
    }

@@ -1,5 +1,5 @@
-TIMESTAMP = 1722711251
-SHA256 (furo-2024.7.18.tar.gz) = 37b08c5fccc95d46d8712c8be97acd46043963895edde05b0f4f135d58325c83
-SIZE (furo-2024.7.18.tar.gz) = 1661386
-SHA256 (furo-2024.7.18-static.tar.gz) = 117c9f779897a4e462e00d0a7e66f7390af43f4e13b763cf4882bca6f757b295
-SIZE (furo-2024.7.18-static.tar.gz) = 183808
+TIMESTAMP = 1724084642
+SHA256 (furo-2024.8.6.tar.gz) = b63e4cee8abfc3136d3bc03a3d45a76a850bada4d6374d24c1716b0e01394a01
+SIZE (furo-2024.8.6.tar.gz) = 1661506
+SHA256 (furo-2024.8.6-static.tar.gz) = 6ed2b7edf2ec6d4711016e5b70ddff17651c2b0b09038e52f82f19db838d427f
+SIZE (furo-2024.8.6-static.tar.gz) = 183808

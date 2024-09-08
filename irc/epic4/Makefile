@@ -1,5 +1,5 @@
 PORTNAME=	epic4
-DISTVERSION=	2.10.11
+DISTVERSION=	3.0
 CATEGORIES=	irc
 MASTER_SITES=	https://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -16,8 +16,8 @@ USES=		ncurses tar:xz
 CONFLICTS=	epic5-0.[0-2]*
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+
+PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 CFLAGS:=	${CFLAGS:C/-O2/-O/g}
 CFLAGS+=	-Wno-pointer-sign
 
@@ -37,12 +37,8 @@ PERL_USES=		perl5
 
 .include <bsd.port.options.mk>
 
-post-extract:
-	@${FIND} ${WRKDIR} -type d -name CVS -delete
-
 post-patch:
 	@${RM} ${WRKDIR}/help/Makefile
-	@${REINPLACE_CMD} -e 's|-lcurses|-lncurses|' ${WRKSRC}/configure
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/epic-EPIC4-${DISTVERSION}

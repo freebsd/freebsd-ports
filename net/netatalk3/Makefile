@@ -1,5 +1,5 @@
 PORTNAME=	netatalk
-PORTVERSION=	3.2.6
+PORTVERSION=	3.2.7
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/netatalk-${PORTVERSION:S/./-/g}/
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libevent.so:devel/libevent
 
-USES=		bdb:18 cpe gettext iconv meson perl5 pkgconfig shebangfix ssl tar:xz
+USES=		bdb:18 cpe gettext iconv:wchar_t meson perl5 pkgconfig shebangfix ssl tar:xz
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	netatalk
 #INSTALL_TARGET=install-strip

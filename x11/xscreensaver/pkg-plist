@@ -118,6 +118,7 @@ bin/xscreensaver-hacks/helix
 bin/xscreensaver-hacks/hexadrop
 bin/xscreensaver-hacks/hexstrut
 bin/xscreensaver-hacks/hextrail
+bin/xscreensaver-hacks/highvoltage
 bin/xscreensaver-hacks/hilbert
 bin/xscreensaver-hacks/hopalong
 bin/xscreensaver-hacks/hydrostat
@@ -134,6 +135,7 @@ bin/xscreensaver-hacks/juggler3d
 bin/xscreensaver-hacks/julia
 bin/xscreensaver-hacks/kaleidescope
 bin/xscreensaver-hacks/kaleidocycle
+bin/xscreensaver-hacks/kallisti
 bin/xscreensaver-hacks/klein
 bin/xscreensaver-hacks/kumppa
 bin/xscreensaver-hacks/lament
@@ -206,14 +208,6 @@ bin/xscreensaver-hacks/skulloop
 bin/xscreensaver-hacks/skytentacles
 bin/xscreensaver-hacks/slidescreen
 bin/xscreensaver-hacks/slip
-bin/xscreensaver-hacks/squirtorus
-bin/xscreensaver-hacks/xscreensaver-auth
-bin/xscreensaver-hacks/xscreensaver-getimage
-bin/xscreensaver-hacks/xscreensaver-getimage-file
-bin/xscreensaver-hacks/xscreensaver-getimage-video
-bin/xscreensaver-hacks/xscreensaver-gfx
-bin/xscreensaver-hacks/xscreensaver-gl-visual
-bin/xscreensaver-hacks/xscreensaver-text
 bin/xscreensaver-hacks/sonar
 bin/xscreensaver-hacks/speedmine
 bin/xscreensaver-hacks/sphereeversion
@@ -223,6 +217,7 @@ bin/xscreensaver-hacks/splodesic
 bin/xscreensaver-hacks/spotlight
 bin/xscreensaver-hacks/sproingies
 bin/xscreensaver-hacks/squiral
+bin/xscreensaver-hacks/squirtorus
 bin/xscreensaver-hacks/stairs
 bin/xscreensaver-hacks/starfish
 bin/xscreensaver-hacks/starwars
@@ -259,6 +254,13 @@ bin/xscreensaver-hacks/xjack
 bin/xscreensaver-hacks/xlyap
 bin/xscreensaver-hacks/xmatrix
 bin/xscreensaver-hacks/xrayswarm
+bin/xscreensaver-hacks/xscreensaver-auth
+bin/xscreensaver-hacks/xscreensaver-getimage
+bin/xscreensaver-hacks/xscreensaver-getimage-file
+bin/xscreensaver-hacks/xscreensaver-getimage-video
+bin/xscreensaver-hacks/xscreensaver-gfx
+bin/xscreensaver-hacks/xscreensaver-gl-visual
+bin/xscreensaver-hacks/xscreensaver-text
 bin/xscreensaver-hacks/xspirograph
 bin/xscreensaver-hacks/zoom
 bin/xscreensaver-settings
@@ -299,6 +301,7 @@ share/fonts/xscreensaver/luximr.ttf
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xscreensaver.mo
 share/man/man1/xscreensaver-command.1.gz
 share/man/man1/xscreensaver-demo.1.gz
+share/man/man1/xscreensaver-settings.1.gz
 share/man/man1/xscreensaver.1.gz
 share/man/man6/abstractile.6.gz
 share/man/man6/anemone.6.gz
@@ -308,15 +311,6 @@ share/man/man6/antmaze.6.gz
 share/man/man6/antspotlight.6.gz
 share/man/man6/apollonian.6.gz
 share/man/man6/apple2.6.gz
-share/man/man1/xscreensaver-settings.1.gz
-share/man/man6/xscreensaver-auth.6.gz
-share/man/man6/xscreensaver-getimage-file.6.gz
-share/man/man6/xscreensaver-getimage-video.6.gz
-share/man/man6/xscreensaver-getimage.6.gz
-share/man/man6/xscreensaver-gfx.6.gz
-share/man/man6/xscreensaver-gl-visual.6.gz
-share/man/man6/xscreensaver-systemd.6.gz
-share/man/man6/xscreensaver-text.6.gz
 share/man/man6/atlantis.6.gz
 share/man/man6/attraction.6.gz
 share/man/man6/atunnel.6.gz
@@ -426,6 +420,7 @@ share/man/man6/helix.6.gz
 share/man/man6/hexadrop.6.gz
 share/man/man6/hexstrut.6.gz
 share/man/man6/hextrail.6.gz
+share/man/man6/highvoltage.6.gz
 share/man/man6/hilbert.6.gz
 share/man/man6/hopalong.6.gz
 share/man/man6/hydrostat.6.gz
@@ -442,6 +437,7 @@ share/man/man6/juggler3d.6.gz
 share/man/man6/julia.6.gz
 share/man/man6/kaleidescope.6.gz
 share/man/man6/kaleidocycle.6.gz
+share/man/man6/kallisti.6.gz
 share/man/man6/klein.6.gz
 share/man/man6/kumppa.6.gz
 share/man/man6/lament.6.gz
@@ -449,6 +445,7 @@ share/man/man6/lavalite.6.gz
 share/man/man6/lcdscrub.6.gz
 share/man/man6/lockward.6.gz
 share/man/man6/loop.6.gz
+share/man/man6/m6502.6.gz
 share/man/man6/mapscroller.6.gz
 share/man/man6/marbling.6.gz
 share/man/man6/maze.6.gz
@@ -485,6 +482,7 @@ share/man/man6/polyhedra.6.gz
 share/man/man6/polyominoes.6.gz
 share/man/man6/polytopes.6.gz
 share/man/man6/pong.6.gz
+share/man/man6/popsquares.6.gz
 share/man/man6/projectiveplane.6.gz
 share/man/man6/providence.6.gz
 share/man/man6/pulsar.6.gz
@@ -556,6 +554,14 @@ share/man/man6/xjack.6.gz
 share/man/man6/xlyap.6.gz
 share/man/man6/xmatrix.6.gz
 share/man/man6/xrayswarm.6.gz
+share/man/man6/xscreensaver-auth.6.gz
+share/man/man6/xscreensaver-getimage-file.6.gz
+share/man/man6/xscreensaver-getimage-video.6.gz
+share/man/man6/xscreensaver-getimage.6.gz
+share/man/man6/xscreensaver-gfx.6.gz
+share/man/man6/xscreensaver-gl-visual.6.gz
+share/man/man6/xscreensaver-systemd.6.gz
+share/man/man6/xscreensaver-text.6.gz
 share/man/man6/xspirograph.6.gz
 share/man/man6/zoom.6.gz
 share/pixmaps/xscreensaver.png
@@ -677,6 +683,7 @@ share/pixmaps/xscreensaver.png
 %%DATADIR%%/config/hexadrop.xml
 %%DATADIR%%/config/hexstrut.xml
 %%DATADIR%%/config/hextrail.xml
+%%DATADIR%%/config/highvoltage.xml
 %%DATADIR%%/config/hilbert.xml
 %%DATADIR%%/config/hopalong.xml
 %%DATADIR%%/config/hydrostat.xml
@@ -693,6 +700,7 @@ share/pixmaps/xscreensaver.png
 %%DATADIR%%/config/julia.xml
 %%DATADIR%%/config/kaleidescope.xml
 %%DATADIR%%/config/kaleidocycle.xml
+%%DATADIR%%/config/kallisti.xml
 %%DATADIR%%/config/klein.xml
 %%DATADIR%%/config/kumppa.xml
 %%DATADIR%%/config/lament.xml

@@ -49,17 +49,17 @@ bin/test-connect-t
 %%WSREP%%bin/wsrep_sst_rsync_wan
 %%WSREP%%bin/wsrep_sst_backup
 %%ETCDIR%%/conf.d/enable_encryption.preset
-%%HASHICORP_VAULT%%%%ETCDIR%%/conf.d/hashicorp_key_management.cnf
-%%ETCDIR%%/conf.d/mysql-clients.cnf
+%%HASHICORP_VAULT%%@sample %%ETCDIR%%/conf.d/hashicorp_key_management.cnf.sample
+@sample %%ETCDIR%%/conf.d/mysql-clients.cnf.sample
 %%ETCDIR%%/conf.d/provider_bzip2.cnf
 %%ETCDIR%%/conf.d/provider_lz4.cnf
 %%ETCDIR%%/conf.d/provider_lzma.cnf
 %%LZO%%%%ETCDIR%%/conf.d/provider_lzo.cnf
 %%SNAPPY%%%%ETCDIR%%/conf.d/provider_snappy.cnf
-%%S3%%%%ETCDIR%%/conf.d/s3.cnf
+%%S3%%@sample %%ETCDIR%%/conf.d/s3.cnf.sample
 @sample %%ETCDIR%%/conf.d/server.cnf.sample
 %%SPIDER%%@sample %%ETCDIR%%/conf.d/spider.cnf.sample
-%%WSREP%%%%ETCDIR%%/conf.d/wsrep.cnf.sample
+%%WSREP%%@sample %%ETCDIR%%/conf.d/wsrep.cnf.sample
 @comment %%ETCDIR%%/my.cnf
 @comment %%ETCDIR%%/conf.d/client.cnf
 @sample %%ETCDIR%%/user_map.conf.sample

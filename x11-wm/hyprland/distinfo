@@ -7,3 +7,7 @@ SHA256 (canihavesomecoffee-udis86-1.7.2-186-g5336633_GH0.tar.gz) = 69aff959179ff
 SIZE (canihavesomecoffee-udis86-1.7.2-186-g5336633_GH0.tar.gz) = 116938
 SHA256 (4fdc0d55e4b4.patch) = 1f3e4cf9c33a37683127feca287318a5532eff95fdaa1a5b87aad8aaca1aa220
 SIZE (4fdc0d55e4b4.patch) = 970
+SHA256 (ff3f41c9a5d1.patch) = 942e5271c07c853ced50584179ffc89ee7a1e0269fed0c661e371be34b5dac58
+SIZE (ff3f41c9a5d1.patch) = 727
+SHA256 (89fa6a6a66e6.patch) = 2e3bc9a15a4de383976c41d3a0c80e3c44dc181adedf1ec843a867eb26c0a027
+SIZE (89fa6a6a66e6.patch) = 1103

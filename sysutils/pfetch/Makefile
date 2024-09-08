@@ -1,5 +1,5 @@
 PORTNAME=	pfetch
-DISTVERSION=	1.3.0
+DISTVERSION=	1.4.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org

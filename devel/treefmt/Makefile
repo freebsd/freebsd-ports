@@ -1,6 +1,6 @@
 PORTNAME=	treefmt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.4
+DISTVERSION=	2.0.5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,10 +27,10 @@ GH_TUPLE=	\
 		cyphar:filepath-securejoin:v0.2.5:cyphar_filepath_securejoin/vendor/github.com/cyphar/filepath-securejoin \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		emirpasic:gods:v1.18.1:emirpasic_gods/vendor/github.com/emirpasic/gods \
-		etcd-io:bbolt:v1.3.10:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
+		etcd-io:bbolt:v1.3.11:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
 		go-git:gcfg:3a3c6141e376:go_git_gcfg/vendor/github.com/go-git/gcfg \
-		go-git:go-billy:fac749f7395a:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
-		go-git:go-git:c594bae8d75d:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
+		go-git:go-billy:9b484184bdcc:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
+		go-git:go-git:6d583524d3e1:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
 		go-logfmt:logfmt:v0.6.0:go_logfmt_logfmt/vendor/github.com/go-logfmt/logfmt \
 		go-warnings:warnings:v0.1.2:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
@@ -40,7 +40,7 @@ GH_TUPLE=	\
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:net:v0.28.0:golang_net/vendor/golang.org/x/net \
 		golang:sync:v0.8.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.23.0:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.24.0:golang_sys/vendor/golang.org/x/sys \
 		imdario:mergo:v1.0.0:imdario_mergo/vendor/dario.cat/mergo \
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
 		kevinburke:ssh_config:v1.2.0:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \

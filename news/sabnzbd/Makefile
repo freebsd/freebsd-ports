@@ -1,7 +1,7 @@
 PORTNAME=	sabnzbd
-DISTVERSION=	4.3.2
+DISTVERSION=	4.3.3
 CATEGORIES=	news
-MASTER_SITES=	https://github.com/sabnzbd/sabnzbd/releases/download/${DISTVERSION}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 DISTNAME=	SABnzbd-${DISTVERSION}-src
 
 MAINTAINER=	nick@kirby.cx
@@ -30,19 +30,20 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apprise>0:net-im/py-apprise@${PY_FLAVOR} \
 		par2cmdline-turbo>0:archivers/par2cmdline-turbo \
 		unrar:archivers/unrar
 
-USES=		gettext-tools python shebangfix
-USE_RC_SUBR=	sabnzbd
+USES=		python shebangfix
+USE_RC_SUBR=	${PORTNAME}
 
-SHEBANG_FILES=	SABnzbd.py tools/msgfmt.py
+SHEBANG_FILES=	SABnzbd.py
 
 NO_ARCH=	yes
+NO_BUILD=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
 WRKSRC=		${WRKDIR}/SABnzbd-${DISTVERSION}
 
-USERS=		_sabnzbd
-GROUPS=		_sabnzbd
+USERS=		_${PORTNAME}
+GROUPS=		_${PORTNAME}
 
 PORTDOCS=	COPYRIGHT.txt INSTALL.txt ISSUES.txt README.mkd
 
@@ -56,35 +57,32 @@ PYGOBJECT_DESC=		PyGObject support for system tray icon (requires cairo)
 
 7ZIP_RUN_DEPENDS=	7zz:archivers/7-zip
 DBUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR}
-NLS_USES=		gettext
-NLS_CONFIGURE_OFF=	--disable-nls
+NLS_USES=		gettext-tools
 NOTIFY2_IMPLIES=	DBUS
 NOTIFY2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify2>=0:devel/py-notify2@${PY_FLAVOR}
 PYGOBJECT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=3.10.2:devel/py-gobject3@${PY_FLAVOR}
 SSL_USE=		PYTHON=cryptography
 
 post-patch:
-	@${REINPLACE_CMD} -e "s:%%DATADIR%%:'${DATADIR}':g" \
-		 ${WRKSRC}/SABnzbd.py
-
-# Generate locale files
-do-build:
-	cd ${WRKSRC} && ${PYTHON_CMD} tools/make_mo.py
+	@${REINPLACE_CMD} -e "s:%%DATADIR%%:'${DATADIR}':g" ${WRKSRC}/SABnzbd.py
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/SABnzbd.py ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sabnzbd
-	cd ${WRKSRC}/sabnzbd && ${COPYTREE_SHARE} . ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sabnzbd
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-.for i in email icons interfaces locale po tools
-	@${MKDIR} ${STAGEDIR}${DATADIR}/${i}
-	cd ${WRKSRC}/${i} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${i}
-.endfor
+	(cd ${WRKSRC} && \
+		${COPYTREE_SHARE} ${PORTNAME} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} && \
+		${COPYTREE_SHARE} "icons interfaces" ${STAGEDIR}${DATADIR})
 
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+post-install-NLS-on:
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "email locale" ${STAGEDIR}${DATADIR})
+
+post-install-NLS-off:
+	${MKDIR} ${STAGEDIR}${DATADIR}/email
+	${INSTALL_DATA} ${WRKSRC}/email/*-en.tmpl ${STAGEDIR}${DATADIR}/email
 
 .include <bsd.port.mk>

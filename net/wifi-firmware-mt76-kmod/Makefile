@@ -4,7 +4,7 @@ FWDRV=		mt76
 FWSUBDIR=	mediatek
 FWDRV_VERSION=	20240513
 
-LICENSE=	LICENCE.mediatek
+LICENSE_FILE=	LICENCE.mediatek
 LICENSE_NAME=	Mediatek firmware license (${FWDRV})
 
 WHENCE_REGEX=	(mt7915e|mt7921|mt7922|mt7925|mt7996e) -.*ireless

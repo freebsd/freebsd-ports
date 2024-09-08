@@ -3,7 +3,7 @@
 %%SITE_ARCH%%/XS/Parse/Sublike/Builder.pm
 %%SITE_ARCH%%/auto/Sublike/Extended/Extended.so
 %%SITE_ARCH%%/auto/XS/Parse/Sublike/Sublike.so
-%%SITE_ARCH%%/auto/share/dist/XS-Parse-Sublike/include/XSParseSublike.h
+%%SITE_ARCH%%/auto/share/module/XS-Parse-Sublike/include/XSParseSublike.h
 %%PERL5_MAN3%%/Sublike::Extended.3.gz
 %%PERL5_MAN3%%/XS::Parse::Sublike.3.gz
 %%PERL5_MAN3%%/XS::Parse::Sublike::Builder.3.gz

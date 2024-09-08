@@ -1,0 +1,4 @@
+Type-Length-Value (TLV) are used to encode arbitrary data. In this case the type
+and length are represented by 1 byte each. Hence the name TLV8.
+
+This Python library implements encoding and decoding of TLV8 data.

@@ -1,7 +1,6 @@
 PORTNAME=	yggdrasil
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.7
-PORTREVISION=	1
+DISTVERSION=	0.5.8
 CATEGORIES=	net
 
 MAINTAINER=	freebsd@neilalexander.dev
@@ -12,18 +11,18 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules go:1.21
+USE_RC_SUBR=	yggdrasil
+
 GO_MODULE=	github.com/yggdrasil-network/yggdrasil-go
 GO_TARGET=	./cmd/yggdrasil \
 		./cmd/yggdrasilctl
 
 GO_BUILDFLAGS=	-ldflags="-s -w \
 		-X github.com/yggdrasil-network/yggdrasil-go/src/version.buildName=${PORTNAME} \
-		-X github.com/yggdrasil-network/yggdrasil-go/src/version.buildVersion=${PORTVERSION} \
+		-X github.com/yggdrasil-network/yggdrasil-go/src/version.buildVersion=${DISTVERSION} \
 		"
 
 PLIST_FILES=	bin/yggdrasil \
 		bin/yggdrasilctl
-
-USE_RC_SUBR=	yggdrasil
 
 .include <bsd.port.mk>

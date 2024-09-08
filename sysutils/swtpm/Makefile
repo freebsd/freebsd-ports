@@ -1,6 +1,6 @@
 PORTNAME=	swtpm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.2
+DISTVERSION=	0.9.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	meka@tilda.center
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	base64>=0:converters/base64 \
 		gawk>=0:lang/gawk \
 		socat>=0:net/socat
 LIB_DEPENDS=	libfuse.so:sysutils/fusefs-libs \
+		libgmp.so:math/gmp \
 		libgnutls.so:security/gnutls \
 		libjson-glib-1.0.so:devel/json-glib \
 		libtasn1.so:security/libtasn1 \
@@ -25,11 +26,11 @@ USES=		autoreconf gettext-runtime gmake gnome libtool pathfix \
 		pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	stefanberger
-USE_GNOME+=	glib20
-USE_RC_SUBR=	swtpm
+USE_GNOME=	glib20
+USE_LDCONFIG=	yes
+USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 

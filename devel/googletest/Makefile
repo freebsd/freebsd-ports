@@ -1,5 +1,5 @@
 PORTNAME=	googletest
-PORTVERSION=	1.15.0
+PORTVERSION=	1.15.2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/google/googletest/releases/download/v${PORTVERSION}/
 

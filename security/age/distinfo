@@ -1,5 +1,5 @@
-TIMESTAMP = 1672227853
-SHA256 (go/security_age/age-v1.1.1/v1.1.1.mod) = cdc667618b7af949f6f83677b495d0a07dd6fcb8cb99670181c61b87e9deba29
-SIZE (go/security_age/age-v1.1.1/v1.1.1.mod) = 155
-SHA256 (go/security_age/age-v1.1.1/v1.1.1.zip) = 216052124181410872d13e0d0f86c04f945f4adf36fba451edf31e8d09c1b869
-SIZE (go/security_age/age-v1.1.1/v1.1.1.zip) = 228647
+TIMESTAMP = 1721954135
+SHA256 (go/security_age/age-v1.2.0/v1.2.0.mod) = d3f9b587fd5ae66da6516e03dfdba04babb481ba9ee4938614abf93fcd16b56c
+SIZE (go/security_age/age-v1.2.0/v1.2.0.mod) = 328
+SHA256 (go/security_age/age-v1.2.0/v1.2.0.zip) = e8026e1febc969d83d8bbd8c9d9c629743be366b97f33c9883d60810766ef6bb
+SIZE (go/security_age/age-v1.2.0/v1.2.0.zip) = 233036

@@ -1,0 +1,5 @@
+A self-hosted Git service.
+
+Forgejo is a community managed soft-fork of Gitea, which is a fork of Gogs,
+lightweight code hosting solution written in Go and published under the MIT
+license.

@@ -1,0 +1,11 @@
+#!%%LINUXBASE%%/bin/bash
+
+export ELECTRON_IS_DEV=0
+export LIBGL_DRI3_DISABLE=1
+export NODE_ENV=production
+
+if [ "$DBUS_SESSION_BUS_ADDRESS" = "" ]; then
+    export DBUS_SESSION_BUS_ADDRESS="autolaunch:"
+fi
+
+exec -a "$0" "%%DATADIR%%/freetube" --no-sandbox "$@"

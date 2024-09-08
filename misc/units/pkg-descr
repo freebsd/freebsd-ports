@@ -1,0 +1,9 @@
+The Units library provides a means of working with units of measurement at
+runtime, including conversion to and from strings. It provides a small number
+of types for working with units and measurements and operations necessary for
+user input and output with units.
+
+This software was developed for use in LLNL/GridDyn, and HELICS and is currently
+a work in progress (though getting close). Namespaces, function names, and code
+organization is subject to change though is fairly stable at this point, input
+is welcome.

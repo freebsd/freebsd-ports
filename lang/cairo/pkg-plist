@@ -18,6 +18,7 @@ lib/cairo-lang/corelib/src/fmt.cairo
 lib/cairo-lang/corelib/src/gas.cairo
 lib/cairo-lang/corelib/src/hash.cairo
 lib/cairo-lang/corelib/src/integer.cairo
+lib/cairo-lang/corelib/src/internal/bounded_int.cairo
 lib/cairo-lang/corelib/src/internal.cairo
 lib/cairo-lang/corelib/src/iter.cairo
 lib/cairo-lang/corelib/src/iter/traits.cairo
@@ -27,6 +28,7 @@ lib/cairo-lang/corelib/src/lib.cairo
 lib/cairo-lang/corelib/src/math.cairo
 lib/cairo-lang/corelib/src/metaprogramming.cairo
 lib/cairo-lang/corelib/src/nullable.cairo
+lib/cairo-lang/corelib/src/num/traits/ops/widesquare.cairo
 lib/cairo-lang/corelib/src/num.cairo
 lib/cairo-lang/corelib/src/num/traits.cairo
 lib/cairo-lang/corelib/src/num/traits/bit_size.cairo
@@ -40,6 +42,8 @@ lib/cairo-lang/corelib/src/num/traits/ops/sqrt.cairo
 lib/cairo-lang/corelib/src/num/traits/ops/widemul.cairo
 lib/cairo-lang/corelib/src/num/traits/ops/wrapping.cairo
 lib/cairo-lang/corelib/src/num/traits/zero.cairo
+lib/cairo-lang/corelib/src/ops/function.cairo
+lib/cairo-lang/corelib/src/ops/range.cairo
 lib/cairo-lang/corelib/src/ops.cairo
 lib/cairo-lang/corelib/src/ops/arith.cairo
 lib/cairo-lang/corelib/src/ops/deref.cairo

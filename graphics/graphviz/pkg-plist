@@ -45,8 +45,6 @@ include/graphviz/dthdr.h
 include/graphviz/geom.h
 include/graphviz/globals.h
 include/graphviz/graphviz_version.h
-include/graphviz/gv.cpp
-include/graphviz/gv.i
 include/graphviz/gvc.h
 include/graphviz/gvcext.h
 include/graphviz/gvcint.h
@@ -102,10 +100,6 @@ lib/graphviz/libgvplugin_gd.so.6.0.0
 %%GHOSTSCRIPT%%lib/graphviz/libgvplugin_gs.so
 %%GHOSTSCRIPT%%lib/graphviz/libgvplugin_gs.so.6
 %%GHOSTSCRIPT%%lib/graphviz/libgvplugin_gs.so.6.0.0
-%%GTK2%%lib/graphviz/libgvplugin_gtk.la
-%%GTK2%%lib/graphviz/libgvplugin_gtk.so
-%%GTK2%%lib/graphviz/libgvplugin_gtk.so.6
-%%GTK2%%lib/graphviz/libgvplugin_gtk.so.6.0.0
 lib/graphviz/libgvplugin_kitty.la
 lib/graphviz/libgvplugin_kitty.so
 lib/graphviz/libgvplugin_kitty.so.6
@@ -141,7 +135,6 @@ lib/graphviz/libgvplugin_webp.so.6.0.0
 %%PERL%%lib/graphviz/perl/gv.so
 %%PERL%%lib/graphviz/perl/libgv_perl.la
 %%PERL%%lib/graphviz/perl/libgv_perl.so
-%%PHP%%lib/graphviz/php/gv.php
 %%PHP%%lib/graphviz/php/gv.so
 %%PHP%%lib/graphviz/php/libgv_php.la
 %%PHP%%lib/graphviz/php/libgv_php.so
@@ -179,10 +172,6 @@ lib/libgvpr.la
 lib/libgvpr.so
 lib/libgvpr.so.2
 lib/libgvpr.so.2.0.0
-lib/liblab_gamut.la
-lib/liblab_gamut.so
-lib/liblab_gamut.so.1
-lib/liblab_gamut.so.1.0.0
 lib/libpathplan.la
 lib/libpathplan.so
 lib/libpathplan.so.4
@@ -215,7 +204,6 @@ libdata/pkgconfig/libcdt.pc
 libdata/pkgconfig/libcgraph.pc
 libdata/pkgconfig/libgvc.pc
 libdata/pkgconfig/libgvpr.pc
-libdata/pkgconfig/liblab_gamut.pc
 libdata/pkgconfig/libpathplan.pc
 libdata/pkgconfig/libxdot.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -519,4 +507,3 @@ share/man/man3/pathplan.3.gz
 %%TCL%%share/man/man3/tcldot.3tcl.gz
 share/man/man3/xdot.3.gz
 share/man/man7/graphviz.7.gz
-%%PHP%%share/php/gv.php

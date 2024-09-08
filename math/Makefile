@@ -872,7 +872,6 @@
     SUBDIR += planarity
     SUBDIR += plantri
     SUBDIR += plman
-    SUBDIR += ploticus
     SUBDIR += plplot
     SUBDIR += poly2tri
     SUBDIR += polyclipper
@@ -895,7 +894,6 @@
     SUBDIR += py-Py-BOBYQA
     SUBDIR += py-PyMetis
     SUBDIR += py-PySCIPOpt
-    SUBDIR += py-PyWavelets
     SUBDIR += py-Pyomo
     SUBDIR += py-SQNomad
     SUBDIR += py-affine
@@ -1004,6 +1002,7 @@
     SUBDIR += py-moarchiving
     SUBDIR += py-mpmath
     SUBDIR += py-munkres
+    SUBDIR += py-narwhals
     SUBDIR += py-ndindex
     SUBDIR += py-networkx
     SUBDIR += py-nevergrad
@@ -1060,6 +1059,7 @@
     SUBDIR += py-python-picard
     SUBDIR += py-pytorchvideo
     SUBDIR += py-pyvtk
+    SUBDIR += py-pywavelets
     SUBDIR += py-qats
     SUBDIR += py-qdldl
     SUBDIR += py-quadprog

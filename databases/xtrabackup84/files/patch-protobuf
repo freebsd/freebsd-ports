@@ -1,0 +1,10 @@
+--- sql/protobuf/CMakeLists.txt.orig	2023-11-24 17:33:10.000000000 +0700
++++ sql/protobuf/CMakeLists.txt	2024-02-17 02:13:42.264307000 +0700
+@@ -21,6 +21,7 @@
+ # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301  USA
+ 
+ INCLUDE(${CMAKE_SOURCE_DIR}/cmake/protobuf.cmake)
++INCLUDE_DIRECTORIES(%%PREFIX%%/include)
+ 
+ SET(PROTOBUF_LITE_LIB_NAME rpl_protobuf_lite)
+ 

@@ -199,7 +199,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		gimli-0.28.1 \
 		git2-0.16.1 \
 		gl_generator-0.14.0 \
-		glium-0.31.0 \
+		glium-0.32.1 \
 		glob-0.3.1 \
 		globset-0.4.14 \
 		globwalk-0.9.1 \

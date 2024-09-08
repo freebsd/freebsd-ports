@@ -1,0 +1,11 @@
+--- docs/Makefile.orig	2024-08-08 18:52:29 UTC
++++ docs/Makefile
+@@ -60,7 +60,7 @@ html-dir: $(TEXIFILES)
+ 
+ %.pdf: %.texi
+ 	@printf "Generating $@\n"
+-	@texi2pdf --clean $< > /dev/null
++	@texi2pdf $< > /dev/null
+ 
+ %.epub: %.texi
+ 	@printf "Generating $@\n"

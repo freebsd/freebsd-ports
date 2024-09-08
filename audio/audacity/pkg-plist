@@ -97,6 +97,7 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/0/04/selectionpointer.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/0/04/spectral_delete_deletion_with_toolbar.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/0/04/windows_control_panel_h_s_sound75percent.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/0/05/legacy_limiter_3_6_2.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/0/05/project_recovered_dialog.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/0/05/repeat_3_5_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/0/05/spectrogramview_09.png
@@ -232,6 +233,7 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/2/24/removing_labels_together_with_their_associated_audio_after.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/2/24/spectraleditparametric2000hz_20.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/2/24/vocal_reduction_and_isolation_3_5_0.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/2/25/compressor_before.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/2/25/envelope6.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/2/25/export_other_uncompressed_files_header_3_4_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/2/25/select_audio_clips_menu_3_2_3.png
@@ -297,6 +299,7 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/3/34/spectrogramview_02b.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/3/34/spectrum_with_whistle_w10.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/3/35/audio_before_zero.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/3/35/legacy_compressor_3_6_2.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/3/35/spectrogramview_01.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/3/35/view_show_clipping.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/3/36/compressor_parameters_smoothing_waveform_%%CMAKE_BUILD_TYPE%%_25_lookahead_1.png
@@ -325,7 +328,6 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/3/3c/audio_track_dropdown_menu_3_6_0_mult_view_selection.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/3/3c/punch_in_tracks002.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/3/3c/silence_finder.png
-%%MANUAL%%%%DATADIR%%/help/manual/m/images/3/3d/effect_menu_3_6_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/3/3d/erremptyproject.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/3/3d/invert.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/3/3d/risset_drum_3_5_0.png
@@ -425,6 +427,7 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/5/53/label_context_menu.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/5/53/note_track_with_velocity_slider.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/5/53/time_track_example.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/5/54/compressor_after.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/5/54/malformed_mp3_error_message.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/5/54/scrubbing_using_the_menu_command_and_no_scrub_ruler.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/5/54/suregtrack.png
@@ -529,7 +532,6 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/6/6f/sltg_edits_7.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/6/6f/spectral_02a.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/6/6f/spectraleditshelves200hz10000hz_20.png
-%%MANUAL%%%%DATADIR%%/help/manual/m/images/6/6f/time_track_range_dialog_lower_limit_w10.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/6/6f/tools_menu_3_5_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/7/70/get_info.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/7/70/rollup.png
@@ -695,13 +697,13 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a0/compressor_parameters_smoothing_spectrum_attack_1ms.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a0/labeltrack8.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a0/spectrogramview_12.png
-%%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a0/time_track_range_dialog_upper_limit_w10.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a1/clicky_example_spectrogram_view.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a1/crossfade_clips_w10.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a1/export_other_uncompressed_files_3_4_0.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a1/move_cursor_to_track_start_post.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a1/preferences_warnings.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a1/splitting_and_joining_stereo_tracks_01.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a1/time_track_speed_limit_range_dialog.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a1/unsuitable_fat_drive_for_save.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a2/regionmovebefore_w10.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/a/a2/shurex2u.png
@@ -993,6 +995,7 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/ef/appended_recording_in_beats_and_bars_mode.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/ef/clicky_example_waveform_view_click_labelled_and_zoomed_red_arrows.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/ef/connect_dots_stem_plot_examples.png
+%%MANUAL%%%%DATADIR%%/help/manual/m/images/e/ef/effect_menu_3_6_2.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/ef/error_for_locked_configuration_files.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/ef/spectrogramview_05a.png
 %%MANUAL%%%%DATADIR%%/help/manual/m/images/e/ef/spectrogramview_07.png
@@ -1247,6 +1250,8 @@ share/applications/audacity.desktop
 %%MANUAL%%%%DATADIR%%/help/manual/man/label_tracks.html
 %%MANUAL%%%%DATADIR%%/help/manual/man/labels_editor.html
 %%MANUAL%%%%DATADIR%%/help/manual/man/languages.html
+%%MANUAL%%%%DATADIR%%/help/manual/man/legacy_compressor.html
+%%MANUAL%%%%DATADIR%%/help/manual/man/legacy_limiter.html
 %%MANUAL%%%%DATADIR%%/help/manual/man/libraries_preferences.html
 %%MANUAL%%%%DATADIR%%/help/manual/man/license.html
 %%MANUAL%%%%DATADIR%%/help/manual/man/limiter.html
@@ -1523,7 +1528,7 @@ share/applications/audacity.desktop
 %%DATADIR%%/plug-ins/equalabel.ny
 %%DATADIR%%/plug-ins/highpass.ny
 %%DATADIR%%/plug-ins/label-sounds.ny
-%%DATADIR%%/plug-ins/limiter.ny
+%%DATADIR%%/plug-ins/legacy-limiter.ny
 %%DATADIR%%/plug-ins/lowpass.ny
 %%DATADIR%%/plug-ins/noisegate.ny
 %%DATADIR%%/plug-ins/notch.ny

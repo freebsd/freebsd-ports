@@ -16,16 +16,19 @@ USE_RC_SUBR=	libresonic
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable, upstream is gone
+DEPRECATED=	Abandonware, repo deleted
+EXPIRATION_DATE=2024-09-14
+
 OPTIONS_GROUP=	TRANSCODING
 TRANSCODING_DESC=	Transcoding support
-OPTIONS_GROUP_TRANSCODING=	FFMPEG FLAC LAME VORBIS FAAC FAAD XMP MPC APE
+OPTIONS_GROUP_TRANSCODING=	FFMPEG FLAC LAME VORBIS FAAC FAAD XMP APE
 APE_DESC=	Depend on mac for Monkey's Audio transcoding #'
 FAAC_DESC=	Depend on FAAD for AAC/M4A transcoding
 FAAD_DESC=	Depend on FAAC for AAC/M4A transcoding
 FFMPEG_DESC=	Depend on FFmpeg for audio and video transcoding
 FLAC_DESC=	Depend on FLAC for transcoding
 LAME_DESC=	Depend on LAME for MP3 transcoding
-MPC_DESC=	Depend on mpcdec for MPC transcoding
 VORBIS_DESC=	Depend on oggenc/oggdec for Vorbis transcoding
 XMP_DESC=	Depend on XMP for module file transcoding
 
@@ -38,7 +41,6 @@ FAAD_RUN_DEPENDS=	faad:audio/faad
 FFMPEG_RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 FLAC_RUN_DEPENDS=	flac:audio/flac
 LAME_RUN_DEPENDS=	lame:audio/lame
-MPC_RUN_DEPENDS=	mpcdec:audio/musepack
 VORBIS_RUN_DEPENDS=	oggenc:audio/vorbis-tools
 XMP_RUN_DEPENDS=	xmp:audio/xmp
 

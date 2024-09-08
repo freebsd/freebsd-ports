@@ -291,12 +291,12 @@ bin/kcreg
 %%JAVASHAREDIR%%/keycloak/lib/lib/main/org.hibernate.orm.hibernate-core-6.4.8.Final.jar
 %%JAVASHAREDIR%%/keycloak/lib/lib/main/org.hibernate.orm.hibernate-graalvm-6.4.8.Final.jar
 %%JAVASHAREDIR%%/keycloak/lib/lib/main/org.hibernate.quarkus-local-cache-0.3.0.jar
-%%JAVASHAREDIR%%/keycloak/lib/lib/main/org.infinispan.infinispan-cachestore-remote-15.0.5.Final.jar
-%%JAVASHAREDIR%%/keycloak/lib/lib/main/org.infinispan.infinispan-client-hotrod-15.0.5.Final.jar
-%%JAVASHAREDIR%%/keycloak/lib/lib/main/org.infinispan.infinispan-commons-15.0.5.Final.jar
-%%JAVASHAREDIR%%/keycloak/lib/lib/main/org.infinispan.infinispan-core-15.0.5.Final.jar
-%%JAVASHAREDIR%%/keycloak/lib/lib/main/org.infinispan.infinispan-jboss-marshalling-15.0.5.Final.jar
-%%JAVASHAREDIR%%/keycloak/lib/lib/main/org.infinispan.infinispan-multimap-15.0.5.Final.jar
+%%JAVASHAREDIR%%/keycloak/lib/lib/main/org.infinispan.infinispan-cachestore-remote-15.0.7.Final.jar
+%%JAVASHAREDIR%%/keycloak/lib/lib/main/org.infinispan.infinispan-client-hotrod-15.0.7.Final.jar
+%%JAVASHAREDIR%%/keycloak/lib/lib/main/org.infinispan.infinispan-commons-15.0.7.Final.jar
+%%JAVASHAREDIR%%/keycloak/lib/lib/main/org.infinispan.infinispan-core-15.0.7.Final.jar
+%%JAVASHAREDIR%%/keycloak/lib/lib/main/org.infinispan.infinispan-jboss-marshalling-15.0.7.Final.jar
+%%JAVASHAREDIR%%/keycloak/lib/lib/main/org.infinispan.infinispan-multimap-15.0.7.Final.jar
 %%JAVASHAREDIR%%/keycloak/lib/lib/main/org.infinispan.protostream.protostream-5.0.4.Final.jar
 %%JAVASHAREDIR%%/keycloak/lib/lib/main/org.infinispan.protostream.protostream-processor-5.0.4.Final.jar
 %%JAVASHAREDIR%%/keycloak/lib/lib/main/org.infinispan.protostream.protostream-types-5.0.4.Final.jar
@@ -310,7 +310,7 @@ bin/kcreg
 %%JAVASHAREDIR%%/keycloak/lib/lib/main/org.jboss.narayana.jts.narayana-jts-integration-7.0.0.Final.jar
 %%JAVASHAREDIR%%/keycloak/lib/lib/main/org.jboss.slf4j.slf4j-jboss-logmanager-2.0.0.Final.jar
 %%JAVASHAREDIR%%/keycloak/lib/lib/main/org.jboss.threads.jboss-threads-3.5.1.Final.jar
-%%JAVASHAREDIR%%/keycloak/lib/lib/main/org.jgroups.jgroups-5.3.6.Final.jar
+%%JAVASHAREDIR%%/keycloak/lib/lib/main/org.jgroups.jgroups-5.3.10.Final.jar
 %%JAVASHAREDIR%%/keycloak/lib/lib/main/org.jvnet.staxex.stax-ex-2.0.1.jar
 %%JAVASHAREDIR%%/keycloak/lib/lib/main/org.keycloak.keycloak-account-ui-%%VERSION%%.jar
 %%JAVASHAREDIR%%/keycloak/lib/lib/main/org.keycloak.keycloak-admin-ui-%%VERSION%%.jar

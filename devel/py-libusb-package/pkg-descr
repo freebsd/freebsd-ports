@@ -1,0 +1,5 @@
+This Python package functions as an installation vehicle for libusb shared
+libraries, to simplify installation of tools that require libusb. The main use
+case is so that users don't have to install libusb manually for projects that
+use pyusb. However, any Python project that uses a libusb wrapper can also
+benefit.

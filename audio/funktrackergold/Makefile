@@ -6,10 +6,12 @@ MASTER_SITES=	SUNSITE/apps/sound/players
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses MOD/FNK music tracker
-WWW=		https://boutell.com/lsm/lsmbyid.cgi/000831
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Software looks abandoned: last release is in 1999 and WWW link had nothing to do with the software. Does not build with GCC 14.2
+EXPIRATION_DATE=2024-10-30
 
 BROKEN_armv6=		fails to compile: function definition is not allowed here
 BROKEN_armv7=		fails to compile: function definition is not allowed here

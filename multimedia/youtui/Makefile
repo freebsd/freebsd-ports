@@ -1,6 +1,6 @@
 PORTNAME=	youtui
 DISTVERSIONPREFIX=	youtui/v
-DISTVERSION=	0.0.12
+DISTVERSION=	0.0.14
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,7 +28,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.6.14 \
-		anstyle-1.0.7 \
+		anstyle-1.0.8 \
 		anstyle-parse-0.2.4 \
 		anstyle-query-1.1.0 \
 		anstyle-wincon-3.0.3 \
@@ -70,14 +70,14 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		chrono-0.4.38 \
 		cipher-0.4.4 \
 		clang-sys-1.8.1 \
-		clap-4.5.9 \
-		clap_builder-4.5.9 \
-		clap_derive-4.5.8 \
+		clap-4.5.16 \
+		clap_builder-4.5.15 \
+		clap_derive-4.5.13 \
 		clap_lex-0.7.1 \
 		claxon-0.4.3 \
 		colorchoice-1.0.1 \
 		combine-4.6.7 \
-		compact_str-0.7.1 \
+		compact_str-0.8.0 \
 		const_format-0.2.32 \
 		const_format_proc_macros-0.2.32 \
 		cookie-0.18.1 \
@@ -89,7 +89,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		cpal-0.15.3 \
 		cpufeatures-0.2.12 \
 		crc32fast-1.4.2 \
-		crossterm-0.27.0 \
+		crossterm-0.28.1 \
 		crossterm_winapi-0.9.1 \
 		crypto-common-0.1.6 \
 		cssparser-0.31.2 \
@@ -170,6 +170,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		idna-0.5.0 \
 		indexmap-2.2.6 \
 		inout-0.1.3 \
+		instability-0.3.2 \
 		instant-0.1.13 \
 		intrusive-collections-0.9.6 \
 		ipnet-2.9.0 \
@@ -201,7 +202,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.4 \
-		mio-0.8.11 \
 		mio-1.0.1 \
 		native-tls-0.2.12 \
 		ndk-0.8.0 \
@@ -260,13 +260,13 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		psl-types-2.0.11 \
 		publicsuffix-2.2.3 \
 		quinn-0.11.2 \
-		quinn-proto-0.11.3 \
+		quinn-proto-0.11.8 \
 		quinn-udp-0.5.2 \
 		quote-1.0.36 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		ratatui-0.27.0 \
+		ratatui-0.28.0 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.5.3 \
 		redox_users-0.4.5 \
@@ -274,7 +274,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.8.4 \
 		regress-0.10.0 \
-		reqwest-0.12.5 \
+		reqwest-0.12.7 \
 		reqwest-middleware-0.3.3 \
 		reqwest-retry-0.6.1 \
 		retry-policies-0.4.0 \
@@ -298,18 +298,18 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		security-framework-2.11.1 \
 		security-framework-sys-2.11.1 \
 		selectors-0.25.0 \
-		serde-1.0.205 \
-		serde_derive-1.0.205 \
-		serde_json-1.0.122 \
+		serde-1.0.209 \
+		serde_derive-1.0.209 \
+		serde_json-1.0.127 \
 		serde_qs-0.13.0 \
-		serde_spanned-0.6.6 \
+		serde_spanned-0.6.7 \
 		serde_urlencoded-0.7.1 \
 		servo_arc-0.3.0 \
 		sha1-0.10.6 \
 		sharded-slab-0.1.7 \
 		shlex-1.3.0 \
 		signal-hook-0.3.17 \
-		signal-hook-mio-0.2.3 \
+		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.2 \
 		siphasher-0.3.11 \
 		slab-0.4.9 \
@@ -317,7 +317,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		socket2-0.5.7 \
 		spin-0.9.8 \
 		sptr-0.3.2 \
-		stability-0.2.1 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		string_cache-0.8.7 \
@@ -355,16 +354,16 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		tinystr-0.7.6 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.39.2 \
+		tokio-1.39.3 \
 		tokio-macros-2.4.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.0 \
 		tokio-stream-0.1.15 \
 		tokio-util-0.7.11 \
-		toml-0.8.15 \
-		toml_datetime-0.6.6 \
+		toml-0.8.19 \
+		toml_datetime-0.6.8 \
 		toml_edit-0.21.1 \
-		toml_edit-0.22.16 \
+		toml_edit-0.22.20 \
 		tower-0.4.13 \
 		tower-layer-0.3.2 \
 		tower-service-0.3.2 \
@@ -374,7 +373,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.18 \
 		try-lock-0.2.5 \
-		tui-logger-0.11.2 \
+		tui-logger-0.12.0 \
 		typenum-1.17.0 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.12 \
@@ -412,7 +411,10 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		windows-0.54.0 \
 		windows-core-0.52.0 \
 		windows-core-0.54.0 \
+		windows-registry-0.2.0 \
 		windows-result-0.1.2 \
+		windows-result-0.2.0 \
+		windows-strings-0.1.0 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
@@ -442,8 +444,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.5.40 \
-		winnow-0.6.13 \
-		winreg-0.52.0 \
+		winnow-0.6.18 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		yansi-0.5.1 \

@@ -1,5 +1,5 @@
 PORTNAME=	fiber-storage
-PORTVERSION=	0.1.2
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

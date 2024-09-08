@@ -1,0 +1,6 @@
+libexec/password-store/extensions/close.bash
+libexec/password-store/extensions/coffin.bash
+libexec/password-store/extensions/open.bash
+libexec/password-store/extensions/timer.bash
+share/bash-completion/completions/pass-coffin.bash-completion
+%%PORTDOCS%%%%DOCSDIR%%/README.html

@@ -4,12 +4,12 @@ include/json_module.mod
 include/json_parameters.mod
 include/json_string_utilities.mod
 include/json_value_module.mod
-lib/cmake/jsonfortran-gnu-9.0.1/jsonfortran-gnu-config-version.cmake
-lib/cmake/jsonfortran-gnu-9.0.1/jsonfortran-gnu-config.cmake
-lib/cmake/jsonfortran-gnu-9.0.1/jsonfortran-gnu-targets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/jsonfortran-gnu-9.0.1/jsonfortran-gnu-targets.cmake
+lib/cmake/jsonfortran-gnu-9.0.2/jsonfortran-gnu-config-version.cmake
+lib/cmake/jsonfortran-gnu-9.0.2/jsonfortran-gnu-config.cmake
+lib/cmake/jsonfortran-gnu-9.0.2/jsonfortran-gnu-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/jsonfortran-gnu-9.0.2/jsonfortran-gnu-targets.cmake
 lib/libjsonfortran.a
 lib/libjsonfortran.so
 lib/libjsonfortran.so.9.0
-lib/libjsonfortran.so.9.0.1
+lib/libjsonfortran.so.9.0.2
 libdata/pkgconfig/json-fortran.pc

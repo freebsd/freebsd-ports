@@ -37,10 +37,15 @@ MESON_ARGS+=	-Dgallium-drivers="svga" \
 		-Dshared-glapi=disabled \
 		-Dosmesa=false \
 		-Dvalgrind=disabled \
+		-Dglvnd=disabled \
 		-Dxlib-lease=disabled
 
 LDFLAGS_i386=		-Wl,-znotext
 
 MESON_ARGS+=	-Dgallium-xa=enabled
+
+.if ${ARCH} != amd64
+MESON_ARGS+=	-Dintel-rt=disabled # https://gitlab.freedesktop.org/mesa/mesa/-/issues/10629
+.endif
 
 .include <bsd.port.post.mk>

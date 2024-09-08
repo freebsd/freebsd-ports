@@ -1,6 +1,6 @@
 PORTNAME=	scikit-image
 PORTVERSION=	0.19.3
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.4.1:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=2.2:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.1:math/py-matplotlib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}PyWavelets>=1.1.1:math/py-PyWavelets@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pywavelets>=1.5.0:math/py-pywavelets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cloudpickle>=0.2.1:devel/py-cloudpickle@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang python shebangfix

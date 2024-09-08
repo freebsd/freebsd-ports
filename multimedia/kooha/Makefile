@@ -1,10 +1,10 @@
 PORTNAME=	kooha
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Elegantly record your screen
 WWW=		https://github.com/SeaDve/Kooha
 

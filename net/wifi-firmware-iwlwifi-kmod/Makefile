@@ -4,7 +4,7 @@ FWDRV=		iwlwifi
 FWSUBDIR=
 FWDRV_VERSION=	20240513
 
-LICENSE=	LICENCE.iwlwifi_firmware
+LICENSE_FILE=	LICENCE.iwlwifi_firmware
 LICENSE_NAME=	Intel firmware license (${FWDRV})
 
 WHENCE_REGEX=	iwlwifi -.*

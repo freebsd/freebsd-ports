@@ -3436,3 +3436,30 @@ net/mtr-nox11|net/mtr@nox11|2024-08-15|Remove obsoleted port. Use net/mtr@nox11 
 databases/py-redis4|databases/py-redis|2024-08-15|Remove obsoleted port. Use databases/py-redis instead
 www/py-httpx-cache|devel/py-hishel|2024-08-15|Remove obsoleted port. Use devel/py-hishel instead
 devel/p5-Test2-Suite|devel/p5-Test-Simple|2024-08-15|Remove obsoleted port. Use devel/p5-Test-Simple instead
+sysutils/beadm-devel|sysutils/beadm|2024-08-17|Has expired: Outdated development port. Use sysutils/beadm instead
+net-im/telepathy-salut||2024-08-22|Has expired: Fails to build with libxml2 2.13.2 (PR 279963)
+audio/icecast-kh||2024-08-22|Has expired: Fails to build with libxml2 2.13.2 (PR 280159)
+net-im/pidgin-icyque||2024-08-27|Has expired: ICQ servers shut down
+math/py-PyWavelets|math/py-pywavelets|2024-08-29|Renamed to match wheel package name
+dns/dsp||2024-09-01|Has expired: Depends on expired dns/p5-DSC
+dns/p5-DSC||2024-09-01|Has expired: Depends on expired math/ploticus
+textproc/btparse|textproc/p5-Text-BibTeX|2024-09-01|Has expired: btparse has not updated for 19 years while p5-Text-BibTeX is up-to-date. Use textproc/p5-Text-BibTeX instead
+devel/py-jaraco.timing||2024-09-01|Has expired: Deprecated by upstream
+irc/ircd-ratbox-devel|irc/ircd-ratbox|2024-09-01|Has expired: Development stalled upstream, consider switching to irc/ircd-ratbox
+irc/ctrlproxy||2024-09-01|Has expired: Development stalled upstream, consider switching to irc/soju or irc/znc
+devel/electron28||2024-09-01|Has expired: EOLed upstream, switch to newer version
+graphics/R-cran-rgdal||2024-09-01|Has expired: Fails to build and upstream recommends using math/R-cran-sf or math/R-cran-terra instead
+math/ploticus||2024-09-01|Has expired: Depends on expired graphics/ming
+graphics/ming||2024-09-01|Has expired: SWF format is essentially dead after Flash Player's EoL
+dns/adsuck||2024-09-01|Has expired: Obsolete, no longer relevant
+sysutils/apache-mesos||2024-09-01|Has expired: Marked BROKEN for over a year
+devel/libopentracing||2024-09-01|Has expired: https://github.com/opentracing/specification/issues/163
+x11-fm/arqiver|archivers/arqiver|2024-09-01|Moved to a better fit category
+databases/mysql81-server||2024-09-02|Has expired: MySQL 8.1 is not supported by the vendor and has unfixed vulnerabilies
+databases/mysql81-client||2024-09-02|Has expired: MySQL 8.1 is not supported by the vendor and has unfixed vulnerabilies
+textproc/jarowinkler-cpp|devel/rapidfuzz-cpp|2024-09-03|Merged into devel/rapidfuzz-cpp
+devel/electron27||2024-09-03|Has expired: EOLed upstream, switch to newer version
+net/luasocket|net/lua-luasocket|2024-09-05|Move net/luasocket to net/lua-luasocket
+textproc/luaexpat|textproc/lua-luaexpat|2024-09-05|Move textproc/luaexpat to textproc/lua-luaexpat
+devel/py-sip4||2024-09-05|Has expired: Fails to build with modern python
+audio/resid|emulators/vice|2024-09-05|Has expired: Upstream recommends using emulators/vice instead

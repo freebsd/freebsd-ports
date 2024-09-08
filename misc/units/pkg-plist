@@ -1,0 +1,13 @@
+include/units/commodity_definitions.hpp
+include/units/unit_definitions.hpp
+include/units/units.hpp
+include/units/units_conversion_maps.hpp
+include/units/units_decl.hpp
+include/units/units_export.h
+include/units/units_math.hpp
+include/units/units_util.hpp
+lib/cmake/units/unitsConfig.cmake
+lib/cmake/units/unitsConfigVersion.cmake
+lib/cmake/units/unitsTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/units/unitsTargets.cmake
+lib/libunits.so

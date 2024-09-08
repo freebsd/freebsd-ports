@@ -1,5 +1,5 @@
 PORTNAME=	unifi8
-PORTVERSION=	8.3.32
+PORTVERSION=	8.4.59
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
 		https://repo1.maven.org/maven2/%SUBDIR%/:jax

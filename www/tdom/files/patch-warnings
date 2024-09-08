@@ -1,0 +1,27 @@
+Remove the set-but-unused variable (nHash). Pointed out by
+clang...
+
+	-mi
+
+--- generic/domxslt.c	2024-07-25 20:20:32.000000000 -0400
++++ generic/domxslt.c	2024-08-15 12:08:27.351920000 -0400
+@@ -1152,5 +1152,5 @@
+     char wrongFormat[] = "Unable to interpret format pattern.";
+     domLength l, zl, gLen;
+-    int i, j, k, g, nHash, nZero, fHash, fZero, isNeg;
++    int i, j, k, g, nZero, fHash, fZero, isNeg;
+     int prefixMinux, percentMul = 0, perMilleMul = 0;
+     Tcl_DString  dStr, s;
+@@ -1219,5 +1219,5 @@
+     }
+     prefix1[i] = '\0';
+-    nHash = nZero = fHash = fZero = 0;
++    nZero = fHash = fZero = 0;
+     gLen = -2222;
+     while (*p) {
+@@ -1227,5 +1227,4 @@
+                 goto xsltFormatNumberError;
+             }
+-            nHash++; 
+         }
+         else if (*p==df->zeroDigit) { nZero++; }

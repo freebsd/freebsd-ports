@@ -1,7 +1,7 @@
 PORTNAME=	cpu_rec_rs
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	1.0.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/trou/${PORTNAME}/commit/

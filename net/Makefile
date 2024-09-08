@@ -447,8 +447,8 @@
     SUBDIR += linux-rl9-openldap
     SUBDIR += liveMedia
     SUBDIR += lla
+    SUBDIR += lua-luasocket
     SUBDIR += lualdap
-    SUBDIR += luasocket
     SUBDIR += mDNSResponder
     SUBDIR += macchanger
     SUBDIR += mad_fcl
@@ -894,6 +894,7 @@
     SUBDIR += p5-URI-Fast
     SUBDIR += p5-URI-FromHash
     SUBDIR += p5-URI-Match
+    SUBDIR += p5-URI-NamespaceMap
     SUBDIR += p5-URI-Nested
     SUBDIR += p5-URI-OpenURL
     SUBDIR += p5-URI-Query
@@ -1110,6 +1111,7 @@
     SUBDIR += py-pynsq
     SUBDIR += py-pypacker
     SUBDIR += py-pypcap
+    SUBDIR += py-pyprowl
     SUBDIR += py-pyroute2
     SUBDIR += py-pyroute2.minimal
     SUBDIR += py-pyroute2.protocols
@@ -1337,6 +1339,8 @@
     SUBDIR += rubygem-google-cloud-spanner-v1
     SUBDIR += rubygem-google-cloud-storage
     SUBDIR += rubygem-google-cloud-storage145
+    SUBDIR += rubygem-google-cloud-storage_transfer
+    SUBDIR += rubygem-google-cloud-storage_transfer-v1
     SUBDIR += rubygem-google-cloud-trace
     SUBDIR += rubygem-google-cloud-trace-v1
     SUBDIR += rubygem-google-cloud-trace-v2

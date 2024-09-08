@@ -1,0 +1,35 @@
+--- desktop-ui/input/hotkeys.cpp.orig	2024-08-16 07:21:59 UTC
++++ desktop-ui/input/hotkeys.cpp
+@@ -106,7 +106,9 @@ auto InputManager::createHotkeys() -> void {
+     program.showMessage({"Selected state slot ", program.state.slot});
+   }));
+ 
+-  hotkeys.append(InputHotkey("Pause Emulation").onPress([&] {
++  InputHotkey pause("Pause Emulation");
++  pause.isPause = true;
++  hotkeys.append(pause.onPress([&] {
+     if(!emulator) return;
+     program.pause(!program.paused);
+   }));
+@@ -149,6 +151,9 @@ auto InputManager::pollHotkeys() -> void {
+   }
+ 
+   for(auto& hotkey : hotkeys) {
++    if(emulator && !hotkey.isPause && !program.paused) {
++      continue;
++    }
+     auto state = hotkey.value();
+     if(hotkey.state == 0 && state == 1 && hotkey.press) hotkey.press();
+     if(hotkey.state == 1 && state == 0 && hotkey.release) hotkey.release();
+
+--- desktop-ui/input/input.hpp.orig	2024-08-16 07:21:40 UTC
++++ desktop-ui/input/input.hpp
+@@ -73,6 +73,8 @@ struct InputHotkey : InputDigital {
+ 
+   const string name;
+ 
++  bool isPause = false;
++
+ private:
+   function<void ()> press;
+   function<void ()> release;

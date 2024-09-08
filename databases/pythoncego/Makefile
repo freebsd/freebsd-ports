@@ -9,6 +9,7 @@ COMMENT=	Cego database support for Python
 WWW=		https://www.lemke-it.com/
 
 LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcego.so:databases/cego
 

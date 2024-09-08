@@ -29,12 +29,10 @@
      print(env_vars.GenerateHelpText(env))
      Exit(0)
  
--unknown_vars = env_vars.UnknownVariables()
--if unknown_vars:
+ unknown_vars = env_vars.UnknownVariables()
+ if unknown_vars:
 -    env.FatalError("Unknown variables specified: {0}", ", ".join(list(unknown_vars.keys())))
-+#unknown_vars = env_vars.UnknownVariables()
-+#if unknown_vars:
-+#    env.FatalError("Unknown variables specified: {0}", ", ".join(list(unknown_vars.keys())))
++    print("Unknown variables specified: {0}", ", ".join(list(unknown_vars.keys())))
  
  install_actions.setup(env, get_option('install-action'))
  

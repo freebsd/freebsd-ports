@@ -50,6 +50,7 @@ CONFIGURE_ARGS=		-Darchlib=${PREFIX}/${_ARCH_LIB} \
 			-Dsiteman3dir=${SITE_MAN3} \
 			-Dusenm=n \
 			-Duseshrplib \
+			-Dusethreads=y \
 			-sde \
 			-Ui_iconv \
 			-Ui_malloc \
@@ -136,8 +137,8 @@ MANDIRS=		${PERLMANPREFIX}/man
 LIBPERL_VER=	${PORTVERSION:C/[^0-9.]//}
 
 OPTIONS_DEFINE=		DEBUG DOT_INC DTRACE GDBM MULTIPLICITY PERL_64BITINT \
-			PERL_MALLOC SITECUSTOMIZE THREADS
-OPTIONS_DEFAULT=	DTRACE MULTIPLICITY PERL_64BITINT THREADS
+			PERL_MALLOC SITECUSTOMIZE
+OPTIONS_DEFAULT=	DTRACE MULTIPLICITY PERL_64BITINT
 
 .if !exists(/usr/sbin/dtrace)
 OPTIONS_EXCLUDE=	DTRACE
@@ -155,7 +156,6 @@ MULTIPLICITY_DESC=	Use multiplicity
 PERL_64BITINT_DESC=	Use 64 bit integers (on i386)
 PERL_MALLOC_DESC=	Use Perl malloc
 SITECUSTOMIZE_DESC=	Run-time customization of @INC
-THREADS_DESC=		Build threaded perl
 
 DEBUG_CONFIGURE_ON=		-DDEBUGGING \
 				-Doptimize="-g"
@@ -172,8 +172,6 @@ PERL_64BITINT_CONFIGURE_ON=	-Duse64bitint
 PERL_MALLOC_CONFIGURE_ON=	-Dusemymalloc=y
 PERL_MALLOC_CONFIGURE_OFF=	-Dusemymalloc=n
 SITECUSTOMIZE_CONFIGURE_ON=	-Dusesitecustomize
-THREADS_CONFIGURE_ON=		-Dusethreads=y
-THREADS_CONFIGURE_OFF=		-Dusethreads=n
 
 # Why this is required is explained in:
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=227356#c5

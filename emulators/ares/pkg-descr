@@ -16,5 +16,5 @@ ares has all the features one would expect from a great emulator system: native
 multi-platform UI, dynamic rate control, save states, run-ahead, rewind and
 fast-forward, pixel shaders, color correction, input multi-mapping, debugger
 
-ares uses librashader for it's pixel shader engine. This means it is highly
+ares uses librashader for its pixel shader engine. This means it is highly
 compatible with existing slang shaders, e.g. the slang-shaders from libretro.

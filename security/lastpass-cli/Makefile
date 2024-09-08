@@ -1,5 +1,5 @@
 PORTNAME=	lastpass-cli
-PORTVERSION=	1.3.7
+PORTVERSION=	1.6.0
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/lastpass/lastpass-cli/releases/download/v${PORTVERSION}/
 

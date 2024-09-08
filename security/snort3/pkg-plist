@@ -211,6 +211,11 @@ include/snort/pub_sub/ssl_events.h
 include/snort/pub_sub/stream_event_ids.h
 include/snort/search_engines/search_common.h
 include/snort/search_engines/search_tool.h
+include/snort/service_inspectors/ftp_telnet/ftp_data.h
+include/snort/service_inspectors/ftp_telnet/ftp_module.h
+include/snort/service_inspectors/ftp_telnet/ftpdata_splitter.h
+include/snort/service_inspectors/ftp_telnet/ftpp_ui_config.h
+include/snort/service_inspectors/ftp_telnet/kmap.h
 include/snort/service_inspectors/http2_inspect/http2_huffman_state_machine.h
 include/snort/service_inspectors/http2_inspect/http2_varlen_int_decode.h
 include/snort/service_inspectors/http2_inspect/http2_varlen_int_decode_impl.h
@@ -226,6 +231,7 @@ include/snort/service_inspectors/ssl/ssl_flow_data.h
 include/snort/sfip/sf_cidr.h
 include/snort/sfip/sf_ip.h
 include/snort/sfip/sf_returns.h
+include/snort/stream/flush_bucket.h
 include/snort/stream/paf.h
 include/snort/stream/pafng.h
 include/snort/stream/stream.h

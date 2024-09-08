@@ -1,6 +1,6 @@
 PORTNAME=	fluent-bit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.6
+DISTVERSION=	3.1.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -20,12 +20,18 @@ GH_ACCOUNT=	fluent
 USE_RC_SUBR=	${PORTNAME}
 
 CMAKE_ARGS=	-DFLB_DEBUG=Off \
-		-DFLB_LUAJIT=Off \
 		-DFLB_TRACE=Off
 LDFLAGS+=	-lexecinfo
 
-OPTIONS_DEFINE=		PGSQL SSL
+OPTIONS_DEFINE=		LUA_FILTER PGSQL SSL
 OPTIONS_DEFAULT=	SSL
+LUA_FILTER_DESC=	Support for modifying incoming records using Lua scripts
+
+LUA_FILTER_USES=	luajit:luajit-devel pkgconfig
+LUA_FILTER_CMAKE_ON=	-DFLB_FILTER_LUA=On \
+			-DFLB_LUAJIT=On \
+			-DFLB_PREFER_SYSTEM_LIB_LUAJIT=On
+LUA_FILTER_CMAKE_OFF=	-DFLB_LUAJIT=Off
 
 PGSQL_USES=		pgsql
 PGSQL_CMAKE_ON=		-DFLB_OUT_PGSQL=On
@@ -45,5 +51,8 @@ CFLAGS+=	-Wno-error=int-conversion
 post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/${PORTNAME}.conf ${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
 	${MV} ${STAGEDIR}${ETCDIR}/parsers.conf ${STAGEDIR}${ETCDIR}/parsers.conf.sample
+
+do-test-LUA_FILTER-on:
+	${STAGEDIR}${PREFIX}/bin/fluent-bit --help 2>/dev/null | grep -w -q lua
 
 .include <bsd.port.mk>

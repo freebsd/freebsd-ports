@@ -2,7 +2,7 @@ PORTNAME=	xarcan
 DISTVERSION=	0.6.3
 CATEGORIES=	x11-servers
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 server as Arcan client
 WWW=		https://arcan-fe.com/
 

@@ -1,5 +1,5 @@
 bin/epic
-bin/epic-EPIC4-%%PORTVERSION%%
+bin/epic-EPIC4-%%DISTVERSION%%
 libexec/wserv4
 share/man/man1/epic.1.gz
 share/epic/help/1_General/1_General

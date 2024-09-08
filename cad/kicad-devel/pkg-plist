@@ -366,11 +366,13 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-worksheet.svg
 %%DATADIR%%/demos/stickhub/footprints.pretty/Creative_Commons_NC_Mask.kicad_mod
 %%DATADIR%%/demos/stickhub/footprints.pretty/Creative_Commons_SA_Mask.kicad_mod
 %%DATADIR%%/demos/stickhub/footprints.pretty/Crystal_4-SMD_2.5x2mm.kicad_mod
+%%DATADIR%%/demos/stickhub/footprints.pretty/D_0402.kicad_mod
 %%DATADIR%%/demos/stickhub/footprints.pretty/Duo_LED_1.6x0.8_Kingbright_APHB1608LZGKSURKC.kicad_mod
 %%DATADIR%%/demos/stickhub/footprints.pretty/JP-2_1.5x1.5.kicad_mod
 %%DATADIR%%/demos/stickhub/footprints.pretty/JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal.kicad_mod
 %%DATADIR%%/demos/stickhub/footprints.pretty/LQFP-48_7x7mm_P0.5mm.kicad_mod
 %%DATADIR%%/demos/stickhub/footprints.pretty/Plain_Hole_3mm.kicad_mod
+%%DATADIR%%/demos/stickhub/footprints.pretty/R_1005_C.kicad_mod
 %%DATADIR%%/demos/stickhub/footprints.pretty/TDFN-8_1.5x2mm_Fused-Lead_JEDEC_MO-252_W2015D.kicad_mod
 %%DATADIR%%/demos/stickhub/footprints.pretty/USB_A_PCB_traces_small.kicad_mod
 %%DATADIR%%/demos/stickhub/fp-lib-table

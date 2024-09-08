@@ -1,9 +1,9 @@
 PORTNAME=	solanum
 DISTVERSION=	5.0.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pomodoro timer for the GNOME desktop
 WWW=		https://gitlab.gnome.org/World/Solanum
 

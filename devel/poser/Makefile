@@ -1,5 +1,5 @@
 PORTNAME=		poser
-DISTVERSION=		1.1
+DISTVERSION=		1.2.1
 CATEGORIES=		devel
 MASTER_SITES=		https://github.com/Zirias/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/download/v${DISTVERSION}
@@ -11,11 +11,17 @@ WWW=		https://zirias.github.io/poser/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		compiler:c11 gmake tar:xz
+USES=		compiler:c11 gmake pkgconfig tar:xz
 
 USE_LDCONFIG=	yes
-MAKE_ARGS=	pkgconfigdir=${PREFIX}/libdata/pkgconfig V=1
-ALL_TARGET=	strip
+MAKEFILE=	GNUmakefile
+MAKE_ARGS=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
+
+SOVLIST=	${DISTVERSION:S/./ /g}
+SOVMAJ=		${SOVLIST:[1]}
+SOVMIN=		${SOVLIST:[2]:C/^$/0/}
+SOVREV=		${SOVLIST:[3]:C/^$/0/}
+PLIST_SUB=	SOVMAJ=${SOVMAJ} SOVMIN=${SOVMIN} SOVREV=${SOVREV}
 PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS DOXYGEN TLS

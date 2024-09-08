@@ -1,7 +1,7 @@
 PORTNAME=	spr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,6 +11,7 @@ WWW=		https://github.com/getcord/spr
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		compilation fails with rust-1.80.1, see https://github.com/spacedentist/spr/issues/205
 BROKEN_powerpc64le=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs: # see https://github.com/getcord/spr/issues/185
 
 LIB_DEPENDS=	libgit2.so:devel/libgit2

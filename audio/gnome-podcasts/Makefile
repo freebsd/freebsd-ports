@@ -1,10 +1,10 @@
 PORTNAME=	podcasts
 DISTVERSION=	0.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 PKGNAMEPREFIX=	gnome-
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Podcast app for GNOME
 WWW=		https://gitlab.gnome.org/World/podcasts
 

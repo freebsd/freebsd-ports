@@ -3,7 +3,7 @@ DISTVERSION=	0.5.2
 PORTREVISION=	3
 CATEGORIES=	multimedia wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and modern GNOME media player
 WWW=		https://rafostar.github.io/clapper
 

@@ -38,6 +38,6 @@ eval "_log=\${${name}_log:-/dev/null}"
 pidfile="/var/run/${name}.pid"
 
 command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -u ${_user} -f -H -o ${_log} -m 3 %%PREFIX%%/bin/spoofdpi -no-banner ${_args}"
+command_args="-P ${pidfile} -u ${_user} -f -H -o ${_log} -m 3 %%PREFIX%%/bin/spoofdpi ${_args}"
 
 run_rc_command "$1"

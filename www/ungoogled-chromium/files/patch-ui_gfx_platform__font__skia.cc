@@ -1,6 +1,6 @@
---- ui/gfx/platform_font_skia.cc.orig	2024-03-22 14:16:19 UTC
+--- ui/gfx/platform_font_skia.cc.orig	2024-08-26 14:40:28 UTC
 +++ ui/gfx/platform_font_skia.cc
-@@ -30,7 +30,7 @@
+@@ -29,7 +29,7 @@
  #include "ui/gfx/system_fonts_win.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -168,7 +168,7 @@ void PlatformFontSkia::EnsuresDefaultFontIsInitialized
+@@ -167,7 +167,7 @@ void PlatformFontSkia::EnsuresDefaultFontIsInitialized
    weight = system_font.GetWeight();
  #endif  // BUILDFLAG(IS_WIN)
  

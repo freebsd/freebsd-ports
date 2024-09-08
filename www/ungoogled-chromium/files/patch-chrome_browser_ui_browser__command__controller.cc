@@ -1,4 +1,4 @@
---- chrome/browser/ui/browser_command_controller.cc.orig	2024-07-31 14:19:23 UTC
+--- chrome/browser/ui/browser_command_controller.cc.orig	2024-08-26 14:40:28 UTC
 +++ chrome/browser/ui/browser_command_controller.cc
 @@ -128,7 +128,7 @@
  #include "components/user_manager/user_manager.h"
@@ -54,7 +54,7 @@
        if (base::FeatureList::IsEnabled(features::kShortcutsNotApps)) {
          chrome::CreateDesktopShortcutForActiveWebContents(browser_);
        } else {
-@@ -1281,12 +1281,12 @@ void BrowserCommandController::InitCommandState() {
+@@ -1271,12 +1271,12 @@ void BrowserCommandController::InitCommandState() {
  #endif
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -69,7 +69,7 @@
    bool use_system_title_bar = true;
  #if BUILDFLAG(IS_OZONE)
    use_system_title_bar = ui::OzonePlatform::GetInstance()
-@@ -1602,7 +1602,7 @@ void BrowserCommandController::UpdateCommandsForTabSta
+@@ -1592,7 +1592,7 @@ void BrowserCommandController::UpdateCommandsForTabSta
    bool can_create_web_app = web_app::CanCreateWebApp(browser_);
    command_updater_.UpdateCommandEnabled(IDC_INSTALL_PWA, can_create_web_app);
  

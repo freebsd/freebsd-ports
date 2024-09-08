@@ -1,6 +1,6 @@
---- Imakefile.orig	Sun Apr 21 01:25:06 2002
-+++ Imakefile	Thu Jan  2 07:53:41 2003
-@@ -96,7 +96,7 @@
+--- Imakefile.orig	2002-04-20 23:25:06 UTC
++++ Imakefile
+@@ -96,7 +96,7 @@ XCOMM ## Linux
  XCOMM   to link against symbols inside xanim.
  XCOMM 
  XCOMM ## Linux
@@ -9,7 +9,7 @@
  XCOMM
  XCOMM ## SunOS/Solaris use:
  XCOMM LD_FLAGS =
-@@ -112,7 +112,7 @@
+@@ -112,7 +112,7 @@ XCOMM 
  XCOMM NOTE: not all machines need the XA_DLL_LIB define.
  XCOMM #########################################################################
  XCOMM 
@@ -18,7 +18,7 @@
  XCOMM ### Use this only if the above doesn't work
  XCOMM XA_DLL_DEF = -DXA_DLL
  XCOMM
-@@ -120,14 +120,14 @@
+@@ -120,14 +120,14 @@ XCOMM HP/UX should use the following:
  XCOMM XA_DLL_LIB = -ldl
  XCOMM
  XCOMM HP/UX should use the following:
@@ -36,7 +36,7 @@
  
  
  XCOMM #########################################################################
-@@ -319,8 +319,8 @@
+@@ -319,8 +319,8 @@ XCOMM  -- Also FreeBSD, and BSDI with SBlast-BSD-1.5 (
  XCOMM  XA_AUDIO_LIBS = -lc
  XCOMM  
  XCOMM  -- Also FreeBSD, and BSDI with SBlast-BSD-1.5 (development stages)------
@@ -47,7 +47,7 @@
  XCOMM 
  XCOMM  -- TOWNS Linux 16 bit PCM ----------------------------------------------
  XCOMM  XA_AUDIO_DEFS = -DXA_TOWNS_AUDIO
-@@ -351,9 +351,9 @@
+@@ -351,9 +351,9 @@ XCOMM  -- HP/UX 10.x AServer
  XCOMM  XA_AUDIO_LIBS = -lAlib
  XCOMM  --
  XCOMM  -- HP/UX 10.x AServer
@@ -60,7 +60,7 @@
  XCOMM 
  XCOMM  ------ AF (AudioFile) Support ------------------------------------------
  XCOMM  -- You need to indicate where the AF libraries libAFUtil.a and libAF.a
-@@ -447,7 +447,7 @@
+@@ -447,7 +447,7 @@ XCOMM    -- NOTE_8: HP-UX machines need to comment thi
  XCOMM    -- following symbols(XmbufDisplayBuffers, XmbufQueryExtension,
  XCOMM    --  XmbufCreateBuffers).
  XCOMM    -- NOTE_8: HP-UX machines need to comment this out.
@@ -69,7 +69,7 @@
  XCOMM 
  XCOMM ###########
  XCOMM 
-@@ -470,7 +470,7 @@
+@@ -470,7 +470,7 @@ PROGRAMS = $(XANIM)
  
  PROGRAMS = $(XANIM)
  

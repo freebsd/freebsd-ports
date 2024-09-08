@@ -9,7 +9,7 @@
 #    - graphics/mesa-libs
 #    - lang/clover
 
-MESAVERSION=	24.0.9
+MESAVERSION=	24.1.7
 
 MASTER_SITES=	https://mesa.freedesktop.org/archive/
 
@@ -17,7 +17,6 @@ DISTFILES=	mesa-${MESAVERSION}${EXTRACT_SUFX}
 
 PATCH_SITES=	https://gitlab.freedesktop.org/mesa/mesa/-/commit/
 PATCHFILES+=	4a253aae7ca437201d2a31d2a11a1a5434fe41f1.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/26284
-PATCHFILES+=	7c565db35d39bdbf4e4f867ea19f78b97c8c126f.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/27184
 
 MAINTAINER=	x11@FreeBSD.org
 

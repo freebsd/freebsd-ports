@@ -4,7 +4,7 @@ FWDRV=		rtw89
 FWSUBDIR=	rtw89
 FWDRV_VERSION=	20240513
 
-LICENSE=	LICENCE.rtlwifi_firmware.txt
+LICENSE_FILE=	LICENCE.rtlwifi_firmware.txt
 LICENSE_NAME=	Realtek firmware license (${FWDRV})
 
 WHENCE_REGEX=	rtw89 -.*

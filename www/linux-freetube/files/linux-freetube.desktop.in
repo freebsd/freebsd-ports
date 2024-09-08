@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Freetube (Linux)
+Comment=The Private YouTube Client
+Icon=freetube
+Exec=%%PREFIX%%/bin/linux-freetube
+Categories=Network;WebBrowser;
+StartupNotify=true
+

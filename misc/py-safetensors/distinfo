@@ -1,4 +1,4 @@
-TIMESTAMP = 1722999273
+TIMESTAMP = 1725597982
 SHA256 (rust/crates/autocfg-1.3.0.crate) = 0c4b4d0bd25bd0b74681c0ad21497610ce1b7c91b1022cd21c80c6fbdd9476b0
 SIZE (rust/crates/autocfg-1.3.0.crate) = 16524
 SHA256 (rust/crates/cfg-if-1.0.0.crate) = baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd
@@ -51,5 +51,5 @@ SHA256 (rust/crates/unicode-ident-1.0.12.crate) = 3354b9ac3fae1ff6755cb6db53683a
 SIZE (rust/crates/unicode-ident-1.0.12.crate) = 42168
 SHA256 (rust/crates/unindent-0.2.3.crate) = c7de7d73e1754487cb58364ee906a499937a0dfabd86bcb980fa99ec8c8fa2ce
 SIZE (rust/crates/unindent-0.2.3.crate) = 7306
-SHA256 (huggingface-safetensors-v0.4.4_GH0.tar.gz) = 56d755561054ab24d3bc36e3715b9308901891170e69fc894db70284ba11b730
-SIZE (huggingface-safetensors-v0.4.4_GH0.tar.gz) = 80934
+SHA256 (huggingface-safetensors-v0.4.5_GH0.tar.gz) = 31066e251e7aaf75decdc7bae7a819d7648de648972fc7b3aee1e181ab1ca9e8
+SIZE (huggingface-safetensors-v0.4.5_GH0.tar.gz) = 81030

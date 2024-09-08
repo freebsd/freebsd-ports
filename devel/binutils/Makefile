@@ -1,6 +1,5 @@
 PORTNAME=	binutils
-DISTVERSION=	2.40
-PORTREVISION=	6
+DISTVERSION=	2.43
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	GNU \
@@ -26,12 +25,10 @@ FLAVORS=	native aarch64 aarch64_none_elf amd64 arm_gnueabi arm_none_eabi \
 FLAVOR?=	native
 
 USES=		bison:alias compiler:env cpe gmake localbase libtool perl5 pkgconfig tar:lz
-USE_PERL5=	build
 CPE_VENDOR=	gnu
+USE_PERL5=	build
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-#TEST_DEPENDS+=	runtest:misc/dejagnu
 CONFIGURE_ARGS+=	--disable-werror \
 			--enable-deterministic-archives \
 			--with-sysroot=/ \
@@ -51,17 +48,22 @@ LDFLAGS+=	-Wl,--undefined-version
 
 CONFLICTS=	libbfd
 
-OPTIONS_DEFINE=	INFO NLS RELRO
+OPTIONS_DEFINE=	ELFU INFO NLS RELRO
 OPTIONS_DEFAULT=	INFO
+OPTIONS_EXCLUDE=	NLS
 OPTIONS_SUB=	yes
 
-RELRO_DESC=	Enable relocation memory corruption mitigation (-z relro) by default
-RELRO_CONFIGURE_ON=	--enable-relro
-RELRO_CONFIGURE_OFF=	--enable-relro=no
-NLS_USES=	gettext
-NLS_CONFIGURE_ENABLE=	nls
 INFO_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-no-info
 INFO_USES=	makeinfo
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
+RELRO_CONFIGURE_ON=	--enable-relro
+RELRO_CONFIGURE_OFF=	--enable-relro=no
+RELRO_DESC=	Enable relocation memory corruption mitigation (-z relro) by default
+NLS_CONFIGURE_ENABLE=	nls
+ELFU_DESC=		Depend on devel/elfutils
+ELFU_CONFIGURE_WITH=	debuginfod
+ELFU_LIB_DEPENDS=	libdebuginfod.so:devel/elfutils
 
 aarch64_COMMENT=	GNU binutils for ${FLAVOR} development
 
@@ -75,7 +77,6 @@ BUTARGET?=	${PKGNAMEPREFIX}${OPSYS:tl}${OSREL}
 BUTARGET?=	${PKGNAMEPREFIX}unknown-${OPSYS:tl}${OSREL}
 .endif
 PLIST_SUB=	BUTARGET=${BUTARGET}
-OPTIONS_EXCLUDE=	NLS
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/share/info
 
 .if ${FLAVOR} == aarch64
@@ -101,7 +102,6 @@ PLIST_SUB+=		SHARED=''
 CONFIGURE_ARGS+=	--disable-shared
 PLIST_SUB+=		SHARED='@comment'
 .endif
-
 
 .if ${FLAVOR} == native
 BUREMOVE=	coffdump \
@@ -174,7 +174,8 @@ post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/${PKGNAMEPREFIX:S/-$//}
 .endif
 	${RM} ${STAGEDIR}${PREFIX}/${BUTARGET}/lib/ldscripts/i386bsd.*
-	@if [ -d ${STAGEDIR}${PREFIX}/${INFO_PATH:H} ] ; then rm -rf ${STAGEDIR}${PREFIX}/${INFO_PATH:H}; fi
+	${RM} ${STAGEDIR}${PREFIX}/${BUTARGET}/lib/ldscripts/stamp
+	@if [ -d ${STAGEDIR}${PREFIX}/${INFO_PATH:H} ] ; then ${RM} -rf ${STAGEDIR}${PREFIX}/${INFO_PATH:H}; fi
 	${LN} -fs ../../bin/${BUTARGET}-size ${STAGEDIR}${PREFIX}/${BUTARGET}/bin/size
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/bfd-plugins
 .endif

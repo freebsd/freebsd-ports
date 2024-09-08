@@ -10,7 +10,6 @@ LLVM_COMMANDS=	\
 		llvm-bitcode-strip \
 		llvm-cat \
 		llvm-cfi-verify \
-		llvm-cgdata \
 		llvm-config \
 		llvm-cov \
 		llvm-cvtres \
@@ -116,7 +115,6 @@ FLANG_COMMANDS=	\
 		bbc \
 		f18-parse-demo \
 		fir-opt \
-		flang \
 		flang-new \
 		tco
 

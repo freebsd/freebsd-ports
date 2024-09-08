@@ -4,6 +4,9 @@ PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	https://poppler.freedesktop.org/
 
+PATCH_SITES=	https://gitlab.freedesktop.org/poppler/${PORTNAME}/-/commit/
+PATCHFILES+=	b4ac7d9a.patch:-p1 # deprecated char_traits template has been removed in libc++ 19
+
 MAINTAINER?=	desktop@FreeBSD.org
 COMMENT?=	PDF rendering library
 WWW=		https://poppler.freedesktop.org/

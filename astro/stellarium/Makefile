@@ -1,5 +1,6 @@
 PORTNAME=	stellarium
 PORTVERSION=	24.2
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	https://github.com/Stellarium/stellarium/releases/download/v${PORTVERSION}/ \
 		https://mirrors.tuna.tsinghua.edu.cn/github-release/Stellarium/stellarium/v${PORTVERSION}/

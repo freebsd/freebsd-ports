@@ -1,5 +1,5 @@
 PORTNAME=	tartube
-DISTVERSION=	2.5.0
+DISTVERSION=	2.5.40
 CATEGORIES=	multimedia python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,7 +31,10 @@ MAKE_ENV=	TARTUBE_PKG_STRICT=1
 NO_ARCH=	yes
 
 post-patch:
-	${SED} -i.bak -e "s|\( = '\)/usr/share/tartube|\1${DATADIR}|1" ${WRKSRC}/setup.py
+	${SED} -i.bak -e "s|\( = '\)/usr/share/tartube|\1${DATADIR}|1" \
+		-e "s|\(version = \).*|\1'${PORTVERSION}',|1" \
+		-e "s|\(sound_path\) + '/'|\1|1" \
+		${WRKSRC}/setup.py
 	${SED} -i.bak -e "s|'/', 'usr', 'share', __main__.__packagename__|'${DATADIR}'|g" \
 		-e "s|\(self.ytdl_path =\) None|\1 '${LOCALBASE}/bin/yt-dlp'|1" \
 		${WRKSRC}/tartube/mainapp.py \

@@ -1,5 +1,6 @@
 PORTNAME=	cargo-tarpaulin
-DISTVERSION=	0.31.0
+DISTVERSION=	0.31.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -112,7 +113,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		libssh2-sys-0.3.0 \
 		libz-sys-1.1.16 \
 		linux-raw-sys-0.4.13 \
-		llvm_profparser-0.6.0 \
+		llvm_profparser-0.7.0 \
 		log-0.4.21 \
 		matchers-0.1.0 \
 		md5-0.7.0 \
@@ -130,7 +131,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		num_cpus-1.16.0 \
 		object-0.26.2 \
 		object-0.32.2 \
-		object-0.36.1 \
+		object-0.36.3 \
 		once_cell-1.19.0 \
 		openssl-0.10.66 \
 		openssl-macros-0.1.1 \
@@ -146,9 +147,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		procfs-0.16.0 \
 		procfs-core-0.16.0 \
 		quick-error-1.2.3 \
-		quick-xml-0.36.0 \
+		quick-xml-0.36.1 \
 		quote-1.0.36 \
-		regex-1.10.5 \
+		regex-1.10.6 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.6.29 \
@@ -167,10 +168,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		security-framework-2.11.0 \
 		security-framework-sys-2.11.0 \
 		semver-1.0.23 \
-		serde-1.0.204 \
-		serde_derive-1.0.204 \
-		serde_json-1.0.120 \
-		serde_spanned-0.6.6 \
+		serde-1.0.207 \
+		serde_derive-1.0.207 \
+		serde_json-1.0.124 \
+		serde_spanned-0.6.7 \
 		serde_urlencoded-0.7.1 \
 		sharded-slab-0.1.7 \
 		slab-0.4.9 \
@@ -194,9 +195,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-1.37.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-util-0.7.11 \
-		toml-0.8.15 \
-		toml_datetime-0.6.6 \
-		toml_edit-0.22.16 \
+		toml-0.8.19 \
+		toml_datetime-0.6.8 \
+		toml_edit-0.22.20 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
 		tracing-attributes-0.1.27 \
@@ -249,7 +250,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.5 \
-		winnow-0.6.8 \
+		winnow-0.6.18 \
 		winreg-0.50.0
 
 OPENSSLINC=	/usr/include

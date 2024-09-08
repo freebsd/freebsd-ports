@@ -1,6 +1,6 @@
 PORTNAME=	diesel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.2
+DISTVERSION=	2.2.4
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-cli
 
@@ -23,11 +23,11 @@ CARGO_INSTALL_PATH=	diesel_cli
 CARGO_CRATES=	aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.6.14 \
-		anstyle-1.0.7 \
-		anstyle-parse-0.2.4 \
-		anstyle-query-1.1.0 \
-		anstyle-wincon-3.0.3 \
+		anstream-0.6.15 \
+		anstyle-1.0.8 \
+		anstyle-parse-0.2.5 \
+		anstyle-query-1.1.1 \
+		anstyle-wincon-3.0.4 \
 		argon2-0.5.3 \
 		assert_matches-1.5.0 \
 		autocfg-1.3.0 \
@@ -38,19 +38,19 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		block-buffer-0.10.4 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
-		cc-1.1.6 \
+		cc-1.1.15 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
-		clap-4.5.9 \
-		clap_builder-4.5.9 \
-		clap_complete-4.5.8 \
-		clap_derive-4.5.8 \
-		clap_lex-0.7.1 \
-		cmake-0.1.50 \
-		colorchoice-1.0.1 \
+		clap-4.5.16 \
+		clap_builder-4.5.15 \
+		clap_complete-4.5.24 \
+		clap_derive-4.5.13 \
+		clap_lex-0.7.2 \
+		cmake-0.1.51 \
+		colorchoice-1.0.2 \
 		console-0.15.8 \
-		core-foundation-sys-0.8.6 \
-		cpufeatures-0.2.12 \
+		core-foundation-sys-0.8.7 \
+		cpufeatures-0.2.13 \
 		crypto-common-0.1.6 \
 		darling-0.20.10 \
 		darling_core-0.20.10 \
@@ -64,7 +64,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		env_logger-0.8.4 \
 		equivalent-1.0.1 \
 		errno-0.3.9 \
-		fastrand-2.1.0 \
+		fastrand-2.1.1 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.1 \
 		generic-array-0.14.7 \
@@ -75,17 +75,17 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		iana-time-zone-haiku-0.1.2 \
 		ident_case-1.0.1 \
 		idna-0.5.0 \
-		indexmap-2.2.6 \
+		indexmap-2.5.0 \
 		insta-1.39.0 \
 		ipnet-2.9.0 \
 		ipnetwork-0.20.0 \
-		is_terminal_polyfill-1.70.0 \
+		is_terminal_polyfill-1.70.1 \
 		itoa-1.0.11 \
-		js-sys-0.3.69 \
+		js-sys-0.3.70 \
 		lazy_static-1.5.0 \
-		libc-0.2.155 \
+		libc-0.2.158 \
 		libm-0.2.8 \
-		libsqlite3-sys-0.29.0 \
+		libsqlite3-sys-0.30.1 \
 		link-cplusplus-1.0.9 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
@@ -93,16 +93,16 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		log-0.4.22 \
 		matchers-0.1.0 \
 		memchr-2.7.4 \
-		mysqlclient-src-0.1.1 \
-		mysqlclient-sys-0.4.0 \
+		mysqlclient-src-0.1.2 \
+		mysqlclient-sys-0.4.1 \
 		nu-ansi-term-0.46.0 \
-		nu-ansi-term-0.50.0 \
+		nu-ansi-term-0.50.1 \
 		num-bigint-0.4.6 \
 		num-conv-0.1.0 \
 		num-integer-0.1.46 \
 		num-traits-0.2.19 \
 		once_cell-1.19.0 \
-		openssl-src-300.3.1+3.3.1 \
+		openssl-src-300.3.2+3.3.2 \
 		openssl-sys-0.9.103 \
 		overload-0.1.1 \
 		parking_lot-0.12.3 \
@@ -112,38 +112,39 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		pin-project-lite-0.2.14 \
 		pkg-config-0.3.30 \
 		powerfmt-0.2.0 \
-		ppv-lite86-0.2.17 \
+		ppv-lite86-0.2.20 \
 		pq-src-0.3.0 \
 		pq-sys-0.6.1 \
 		proc-macro2-1.0.86 \
 		quickcheck-1.0.3 \
-		quote-1.0.36 \
+		quote-1.0.37 \
 		r2d2-0.8.10 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		redox_syscall-0.5.3 \
-		regex-1.10.5 \
+		regex-1.10.6 \
 		regex-automata-0.1.10 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.8.4 \
-		rustix-0.38.34 \
+		rustix-0.38.35 \
 		ryu-1.0.18 \
 		scheduled-thread-pool-0.2.7 \
 		scopeguard-1.2.0 \
-		serde-1.0.204 \
-		serde_derive-1.0.204 \
-		serde_json-1.0.120 \
+		serde-1.0.209 \
+		serde_derive-1.0.209 \
+		serde_json-1.0.127 \
 		serde_regex-1.1.0 \
-		serde_spanned-0.6.6 \
+		serde_spanned-0.6.7 \
 		sharded-slab-0.1.7 \
-		similar-2.5.0 \
+		shlex-1.3.0 \
+		similar-2.6.0 \
 		smallvec-1.13.2 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
-		syn-2.0.71 \
-		tempfile-3.10.1 \
+		syn-2.0.77 \
+		tempfile-3.12.0 \
 		thiserror-1.0.63 \
 		thiserror-impl-1.0.63 \
 		thread_local-1.1.8 \
@@ -152,9 +153,9 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		time-macros-0.2.18 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		toml-0.8.15 \
-		toml_datetime-0.6.6 \
-		toml_edit-0.22.16 \
+		toml-0.8.19 \
+		toml_datetime-0.6.8 \
+		toml_edit-0.22.20 \
 		tracing-0.1.40 \
 		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
@@ -169,43 +170,37 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		uuid-1.10.0 \
 		valuable-0.1.0 \
 		vcpkg-0.2.15 \
-		version_check-0.9.4 \
+		version_check-0.9.5 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.92 \
-		wasm-bindgen-backend-0.2.92 \
-		wasm-bindgen-macro-0.2.92 \
-		wasm-bindgen-macro-support-0.2.92 \
-		wasm-bindgen-shared-0.2.92 \
+		wasm-bindgen-0.2.93 \
+		wasm-bindgen-backend-0.2.93 \
+		wasm-bindgen-macro-0.2.93 \
+		wasm-bindgen-macro-support-0.2.93 \
+		wasm-bindgen-shared-0.2.93 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-core-0.52.0 \
-		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
-		windows-targets-0.48.5 \
+		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
-		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
-		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.14
+		winnow-0.6.18 \
+		zerocopy-0.7.35 \
+		zerocopy-derive-0.7.35
 
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
 	${CP} ${FILESDIR}/bindings_8_0_35_powerpc64_freebsd.rs \
-		${WRKSRC}/cargo-crates/mysqlclient-sys-0.4.0/bindings/
+		${WRKSRC}/cargo-crates/mysqlclient-sys-0.4.1/bindings/
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

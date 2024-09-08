@@ -414,7 +414,7 @@
 %%QT_EXAMPLEDIR%%/bluetooth/shared/Info.qmake.macos.plist
 %%QT_EXAMPLEDIR%%/charts/areachart/areachart.pro
 %%QT_EXAMPLEDIR%%/charts/areachart/main.cpp
-%%QT_EXAMPLEDIR%%/charts/audio/apple/Info.plist.in
+%%QT_EXAMPLEDIR%%/charts/audio/apple/Info.qmake.plist
 %%QT_EXAMPLEDIR%%/charts/audio/audio.pro
 %%QT_EXAMPLEDIR%%/charts/audio/main.cpp
 %%QT_EXAMPLEDIR%%/charts/audio/widget.cpp

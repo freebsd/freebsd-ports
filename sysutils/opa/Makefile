@@ -1,7 +1,6 @@
 PORTNAME=	opa
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.67.1
-PORTREVISION=	1
+DISTVERSION=	0.68.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,12 +27,11 @@ GH_TUPLE=	\
 		census-instrumentation:opencensus-go:v0.24.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
 		cespare:xxhash:v2.3.0:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
-		containerd:containerd:v1.7.20:containerd_containerd/vendor/github.com/containerd/containerd \
+		containerd:containerd:v1.7.21:containerd_containerd/vendor/github.com/containerd/containerd \
 		containerd:errdefs:v0.1.0:containerd_errdefs/vendor/github.com/containerd/errdefs \
 		containerd:log:v0.1.0:containerd_log/vendor/github.com/containerd/log \
 		containerd:platforms:v0.2.1:containerd_platforms/vendor/github.com/containerd/platforms \
 		cpuguy83:go-md2man:v2.0.4:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
-		davecgh:go-spew:d8f796af33cc:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgraph-io:badger:v3.2103.5:dgraph_io_badger_v3/vendor/github.com/dgraph-io/badger/v3 \
 		dgraph-io:ristretto:v0.1.1:dgraph_io_ristretto/vendor/github.com/dgraph-io/ristretto \
 		dgryski:go-farm:a6ae2369ad13:dgryski_go_farm/vendor/github.com/dgryski/go-farm \
@@ -55,13 +53,13 @@ GH_TUPLE=	\
 		golang:glog:v1.2.1:golang_glog_1 \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mod:v0.17.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.27.0:golang_net/vendor/golang.org/x/net \
+		golang:net:v0.28.0:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.4:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sync:v0.7.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.22.0:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.16.0:golang_text/vendor/golang.org/x/text \
-		golang:time:v0.5.0:golang_time/vendor/golang.org/x/time \
+		golang:sync:v0.8.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.23.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.17.0:golang_text/vendor/golang.org/x/text \
+		golang:time:v0.6.0:golang_time/vendor/golang.org/x/time \
 		golang:tools:e35e4ccd0d2d:golang_tools/vendor/golang.org/x/tools \
 		google:flatbuffers:v1.12.1:google_flatbuffers/vendor/github.com/google/flatbuffers \
 		google:go-cmp:v0.6.0:google_go_cmp/vendor/github.com/google/go-cmp \
@@ -70,18 +68,20 @@ GH_TUPLE=	\
 		google:uuid:v1.6.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:mux:v1.8.1:gorilla_mux/vendor/github.com/gorilla/mux \
 		grpc-ecosystem:grpc-gateway:v2.20.0:grpc_ecosystem_grpc_gateway_v2/vendor/github.com/grpc-ecosystem/grpc-gateway/v2 \
-		grpc:grpc-go:v1.65.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.66.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		inconshreveable:mousetrap:v1.1.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
-		klauspost:compress:v1.17.0:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.17.9:klauspost_compress/vendor/github.com/klauspost/compress \
 		kr:pretty:v0.3.1:kr_pretty/vendor/github.com/kr/pretty \
 		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
 		kubernetes-sigs:yaml:v1.4.0:kubernetes_sigs_yaml/vendor/sigs.k8s.io/yaml \
+		kylelemons:godebug:v1.1.0:kylelemons_godebug/vendor/github.com/kylelemons/godebug \
 		magiconair:properties:v1.8.7:magiconair_properties/vendor/github.com/magiconair/properties \
 		mattn:go-runewidth:v0.0.9:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		miekg:dns:v1.1.57:miekg_dns/vendor/github.com/miekg/dns \
 		mitchellh:mapstructure:v1.5.0:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		moby:locker:v1.0.1:moby_locker/vendor/github.com/moby/locker \
+		munnerz:goautoneg:a7dc8b61c822:munnerz_goautoneg/vendor/github.com/munnerz/goautoneg \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		open-telemetry:opentelemetry-go-contrib:instrumentation/runtime/v0.53.0:open_telemetry_opentelemetry_go_contrib/vendor/go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp \
 		open-telemetry:opentelemetry-go:v1.28.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
@@ -92,10 +92,10 @@ GH_TUPLE=	\
 		pelletier:go-toml:v2.1.0:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
 		peterh:liner:v1.2.2:peterh_liner/vendor/github.com/peterh/liner \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
-		prometheus:client_golang:v1.19.1:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_golang:v1.20.2:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:v0.6.1:prometheus_client_model/vendor/github.com/prometheus/client_model \
-		prometheus:common:v0.48.0:prometheus_common/vendor/github.com/prometheus/common \
-		prometheus:procfs:v0.12.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		prometheus:common:v0.55.0:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:procfs:v0.15.1:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		protocolbuffers:protobuf-go:v1.34.2:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rcrowley:go-metrics:10cdbea86bc0:rcrowley_go_metrics/vendor/github.com/rcrowley/go-metrics \
 		rogpeppe:go-internal:v1.12.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \

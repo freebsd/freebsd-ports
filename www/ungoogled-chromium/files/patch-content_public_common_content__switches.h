@@ -1,6 +1,6 @@
---- content/public/common/content_switches.h.orig	2024-07-31 14:19:23 UTC
+--- content/public/common/content_switches.h.orig	2024-08-26 14:40:28 UTC
 +++ content/public/common/content_switches.h
-@@ -111,6 +111,7 @@ CONTENT_EXPORT extern const char kEnableGpuMemoryBuffe
+@@ -110,6 +110,7 @@ CONTENT_EXPORT extern const char kEnableGpuMemoryBuffe
  CONTENT_EXPORT extern const char kEnableIsolatedWebAppsInRenderer[];
  CONTENT_EXPORT extern const char kEnableLCDText[];
  CONTENT_EXPORT extern const char kEnableLogging[];
@@ -8,7 +8,7 @@
  CONTENT_EXPORT extern const char kEnableNetworkInformationDownlinkMax[];
  CONTENT_EXPORT extern const char kEnableCanvas2DLayers[];
  CONTENT_EXPORT extern const char kEnablePluginPlaceholderTesting[];
-@@ -270,7 +271,7 @@ CONTENT_EXPORT extern const char kPreventResizingConte
+@@ -268,7 +269,7 @@ CONTENT_EXPORT extern const char kPreventResizingConte
  
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

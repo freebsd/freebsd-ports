@@ -1,13 +1,14 @@
 PORTNAME=	barvinok
-DISTVERSION=	0.41.7
+DISTVERSION=	0.41.8
 CATEGORIES=	math
 MASTER_SITES=	https://barvinok.sourceforge.io/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for counting the number of integer points in polytopes
-WWW=		http://freshmeat.sourceforge.net/projects/barvinok
+WWW=		https://barvinok.sourceforge.io/
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 FETCH_DEPENDS=	git:devel/git
 LIB_DEPENDS=	libglpk.so:math/glpk \

@@ -74,7 +74,7 @@ BINARY_ALIAS+=	python3=${PYTHON_CMD}
 BUNDLE_LIBS=	yes
 
 BUILD_DEPENDS+=	rust-cbindgen>=0.26.0:devel/rust-cbindgen \
-				${RUST_DEFAULT}>=1.79.0:lang/${RUST_DEFAULT} \
+				${RUST_DEFAULT}>=1.80.0:lang/${RUST_DEFAULT} \
 				node:www/node
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 RUN_DEPENDS+=	${LOCALBASE}/lib/libpci.so:devel/libpci

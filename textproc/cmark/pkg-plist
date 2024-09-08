@@ -6,7 +6,6 @@ lib/cmake/cmark/cmark-config-version.cmake
 lib/cmake/cmark/cmark-config.cmake
 lib/cmake/cmark/cmark-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/cmark/cmark-targets.cmake
-lib/libcmark.a
 lib/libcmark.so
 lib/libcmark.so.%%VERSION%%
 libdata/pkgconfig/libcmark.pc

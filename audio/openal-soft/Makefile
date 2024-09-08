@@ -4,6 +4,9 @@ PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	https://openal-soft.org/openal-releases/
 
+PATCH_SITES=	https://github.com/kcat/${PORTNAME}/commit/
+PATCHFILES+=	440b59704c82684786bf7e251b4882f2a12c4c06.patch:-p1
+
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Software implementation of the OpenAL specification
 WWW=		https://openal-soft.org/

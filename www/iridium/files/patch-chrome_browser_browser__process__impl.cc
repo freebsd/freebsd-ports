@@ -1,6 +1,6 @@
---- chrome/browser/browser_process_impl.cc.orig	2024-08-01 05:47:53 UTC
+--- chrome/browser/browser_process_impl.cc.orig	2024-08-27 06:28:16 UTC
 +++ chrome/browser/browser_process_impl.cc
-@@ -228,7 +228,7 @@
+@@ -227,7 +227,7 @@
  #include "chrome/browser/ui/profiles/profile_picker.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/error_reporting/chrome_js_error_report_processor.h"  // nogncheck
  #endif
  
-@@ -1282,7 +1282,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+@@ -1277,7 +1277,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
  
    ApplyMetricsReportingPolicy();
  

@@ -32,6 +32,7 @@ share/icons/hicolor/scalable/apps/minetest.svg
 %%CLIENT%%%%NLS%%share/locale/jv/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/kk/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/ko/LC_MESSAGES/minetest.mo
+%%CLIENT%%%%NLS%%share/locale/kv/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/ky/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/lt/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/lv/LC_MESSAGES/minetest.mo
@@ -55,6 +56,7 @@ share/icons/hicolor/scalable/apps/minetest.svg
 %%CLIENT%%%%NLS%%share/locale/sr_Latn/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/sv/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/sw/LC_MESSAGES/minetest.mo
+%%CLIENT%%%%NLS%%share/locale/tok/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/tr/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/tt/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/uk/LC_MESSAGES/minetest.mo
@@ -64,4 +66,4 @@ share/icons/hicolor/scalable/apps/minetest.svg
 %%CLIENT%%%%NLS%%share/locale/zh_TW/LC_MESSAGES/minetest.mo
 share/man/man6/minetest.6.gz
 share/man/man6/minetestserver.6.gz
-share/metainfo/net.minetest.minetest.appdata.xml
+share/metainfo/net.minetest.minetest.metainfo.xml

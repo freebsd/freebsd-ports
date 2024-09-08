@@ -1,0 +1,39 @@
+--- src/Makefile.orig	2019-11-29 16:35:59 UTC
++++ src/Makefile
+@@ -29,7 +29,7 @@ endif
+ WARN=-Wall -W -Wno-missing-field-initializers
+ OPT=$(OPTIMIZATION)
+ 
+-PREFIX?=/usr/local
++PREFIX:=$(PREFIX)
+ INSTALL_BIN=$(PREFIX)/bin
+ INSTALL=install
+ 
+@@ -75,7 +75,6 @@ endif
+ FINAL_CFLAGS=$(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS) $(REDIS_CFLAGS)
+ FINAL_LDFLAGS=$(LDFLAGS) $(REDIS_LDFLAGS) $(DEBUG)
+ FINAL_LIBS=-lm
+-DEBUG=-g -ggdb
+ 
+ # Linux ARM needs -latomic at linking time
+ ifneq (,$(filter aarch64 armv,$(uname_M)))
+@@ -105,6 +104,11 @@ ifeq ($(uname_S),Darwin)
+ 	OPENSSL_CFLAGS=-I/usr/local/opt/openssl/include
+ 	OPENSSL_LDFLAGS=-L/usr/local/opt/openssl/lib
+ else
++ifeq ($(uname_S),FreeBSD)
++        # FreeBSD
++        FINAL_CFLAGS?= $(CFLAGS) $(REDIS_CFLAGS) -I${PREFIX}/include
++        FINAL_LDFLAGS= $(LDFLAGS) -pthread
++else
+ ifeq ($(uname_S),AIX)
+         # AIX
+         FINAL_LDFLAGS+= -Wl,-bexpall
+@@ -131,6 +135,7 @@ else
+ 	# All the other OSes (notably Linux)
+ 	FINAL_LDFLAGS+= -rdynamic
+ 	FINAL_LIBS+=-ldl -pthread -lrt
++endif
+ endif
+ endif
+ endif

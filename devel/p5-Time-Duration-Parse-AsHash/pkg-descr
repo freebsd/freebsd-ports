@@ -1,0 +1,22 @@
+Time::Duration::Parse::AsHash is like Time::Duration::Parse except:
+- By default it returns a hashref of parsed duration elements instead of number
+  of seconds
+  There are some circumstances when you want this, e.g. when feeding into
+  DateTime::Duration and you want to count for leap seconds.
+  To return number of seconds like Time::Duration::Parse, pass a true value as
+  the second argument.
+- By default seconds are not rounded
+  For example: "0.1s" or 100ms will return result { seconds => 0.1 }, and "2.3s"
+  will return { seconds => 2.3 }.
+  Also, <01:02:03> being recognized as 1h2min3s, 01:02:03.4567 will also be
+  recognized as 1h2min3.4567s.
+- It recognizes more duration units
+  milliseconds (ms), which will be returned in the seconds key, for example
+  "400ms" returns { seconds => 0.4 }.
+  microseconds. This will also be returned in seconds key.
+  nanoseconds (ns). This will also be returned in seconds key.
+  decades. This will be returned in years key, for example "1.5 decades" will
+  return { years => 15 }.
+- It has a lower startup overhead
+  By avoiding modules like Carp and Exporter::Lite, even strict and warnings
+  (starts up in ~3m vs ~9ms on my computer).

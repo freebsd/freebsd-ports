@@ -1236,8 +1236,11 @@ lib/calibre/calibre/prints.py
 lib/calibre/calibre/ptempfile.py
 lib/calibre/calibre/rpdb.py
 lib/calibre/calibre/scraper/__init__.py
+lib/calibre/calibre/scraper/qt.py
+lib/calibre/calibre/scraper/qt_backend.py
 lib/calibre/calibre/scraper/simple.py
-lib/calibre/calibre/scraper/simple_backend.py
+lib/calibre/calibre/scraper/test_fetch_backend.py
+lib/calibre/calibre/scraper/webengine_backend.py
 lib/calibre/calibre/spell/__init__.py
 lib/calibre/calibre/spell/break_iterator.py
 lib/calibre/calibre/spell/dictionary.py

@@ -1,6 +1,5 @@
 PORTNAME=	freeipa-client
-DISTVERSION=	4.11.0
-PORTREVISION=	1
+DISTVERSION=	4.12.2
 CATEGORIES=	net
 MASTER_SITES=	https://releases.pagure.org/freeipa/
 DISTNAME=	freeipa-${DISTVERSION}
@@ -45,6 +44,8 @@ EXTRACT_AFTER_ARGS=	--exclude client/systemd --exclude daemons/dnssec \
 			--exclude daemons/ipa-otpd --exclude \
 			daemons/ipa-slapi-plugins --exclude init/systemd \
 			--exclude init/tmpfilesd
+
+PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 # Make sample configuration file
 post-install:

@@ -25,7 +25,7 @@
      freeUPNPDevlist(deviceList);
      if (result > 0) {
        if (result == 1) {
-@@ -3057,7 +3061,11 @@ namespace nodetool
+@@ -3057,10 +3061,18 @@ namespace nodetool
      UPNPUrls urls;
      IGDdatas igdData;
      char lanAddress[64];
@@ -36,4 +36,29 @@
 +#endif 
      freeUPNPDevlist(deviceList);
      if (result > 0) {
++#if MINIUPNPC_API_VERSION >= 18
++      if ((result == 1) || (result == 2)) {
++#else
        if (result == 1) {
++#endif 
+         std::ostringstream portString;
+         portString << port;
+ 
+@@ -3071,10 +3083,17 @@ namespace nodetool
+         } else {
+           MLOG_GREEN(el::Level::Info, "Deleted IGD port mapping.");
+         }
++#if MINIUPNPC_API_VERSION >= 18
++      } else if (result == 3) {
++        MWARNING("IGD was found but reported as not connected.");
++      } else if (result == 4) {
++        MWARNING("UPnP device was found but not recognized as IGD.");
++#else
+       } else if (result == 2) {
+         MWARNING("IGD was found but reported as not connected.");
+       } else if (result == 3) {
+         MWARNING("UPnP device was found but not recognized as IGD.");
++#endif 
+       } else {
+         MWARNING("UPNP_GetValidIGD returned an unknown result code.");
+       }

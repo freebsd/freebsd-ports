@@ -1,8 +1,0 @@
---- src/osgEarthDrivers/lerc/CMakeLists.txt.orig	2023-05-16 14:53:59 UTC
-+++ src/osgEarthDrivers/lerc/CMakeLists.txt
-@@ -1,4 +1,4 @@
--INCLUDE_DIRECTORIES( ../../third_party/lerc/include )
-+INCLUDE_DIRECTORIES( BEFORE ../../third_party/lerc/include )
- 
- SET(TARGET_SRC
-     ReaderWriterLERC.cpp

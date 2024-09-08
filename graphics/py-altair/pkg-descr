@@ -1,5 +1,5 @@
-Altair is a declarative statistical visualization library for Python. With
-Altair, you can spend more time understanding your data and its meaning.
-Altair's API is simple, friendly and consistent and built on top of the powerful
-Vega-Lite JSON specification. This elegant simplicity produces beautiful and
-effective visualizations with a minimal amount of code.
+Vega-Altair is a declarative statistical visualization library for Python. With
+Vega-Altair, you can spend more time understanding your data and its meaning.
+Vega-Altair's API is simple, friendly and consistent and built on top of the
+powerful Vega-Lite JSON specification. This elegant simplicity produces
+beautiful and effective visualizations with a minimal amount of code.

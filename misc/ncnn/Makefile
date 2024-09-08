@@ -1,6 +1,5 @@
 PORTNAME=	ncnn
-DISTVERSION=	20240410
-PORTREVISION=	2
+DISTVERSION=	20240820
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libabsl_flags_program_name.so:devel/abseil \
 		libprotobuf.so:devel/protobuf
 
-USES=		cmake:testing # 1 test fails, see https://github.com/Tencent/ncnn/issues/4742#issuecomment-1879563662
+USES=		cmake:testing # 2 tests fail (test_squeezenet, test_c_api), but the debug build fails due to missing absl* symbol, also see https://github.com/Tencent/ncnn/issues/4742#issuecomment-1879563662
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

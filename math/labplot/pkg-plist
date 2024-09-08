@@ -1,4 +1,35 @@
 bin/labplot2
+include/labplot/backend/core/AbstractAspect.h
+include/labplot/backend/core/AbstractColumn.h
+include/labplot/backend/core/AbstractPart.h
+include/labplot/backend/core/column/Column.h
+include/labplot/backend/core/column/ColumnPrivate.h
+include/labplot/backend/gsl/parser.h
+include/labplot/backend/lib/Interval.h
+include/labplot/backend/lib/IntervalAttribute.h
+include/labplot/backend/lib/Range.h
+include/labplot/backend/lib/commandtemplates.h
+include/labplot/backend/lib/macros.h
+include/labplot/backend/lib/macrosCurve.h
+include/labplot/backend/nsl/nsl_fit.h
+include/labplot/backend/nsl/nsl_math.h
+include/labplot/backend/worksheet/Worksheet.h
+include/labplot/backend/worksheet/WorksheetElement.h
+include/labplot/backend/worksheet/WorksheetElementContainer.h
+include/labplot/backend/worksheet/plots/AbstractPlot.h
+include/labplot/backend/worksheet/plots/PlotArea.h
+include/labplot/backend/worksheet/plots/cartesian/Axis.h
+include/labplot/backend/worksheet/plots/cartesian/BoxPlot.h
+include/labplot/backend/worksheet/plots/cartesian/CartesianPlot.h
+include/labplot/backend/worksheet/plots/cartesian/CartesianPlotLegend.h
+include/labplot/backend/worksheet/plots/cartesian/Histogram.h
+include/labplot/backend/worksheet/plots/cartesian/XYAnalysisCurve.h
+include/labplot/backend/worksheet/plots/cartesian/XYCurve.h
+include/labplot/backend/worksheet/plots/cartesian/XYEquationCurve.h
+include/labplot/backend/worksheet/plots/cartesian/XYFitCurve.h
+include/labplot/labplot.h
+include/labplot/labplot_export.h
+lib/liblabplot.so
 share/applications/org.kde.labplot2.desktop
 share/doc/HTML/ca/labplot2/index.cache.bz2
 share/doc/HTML/ca/labplot2/index.docbook
@@ -55,6 +86,8 @@ share/doc/HTML/nl/labplot2/index.cache.bz2
 share/doc/HTML/nl/labplot2/index.docbook
 share/doc/HTML/pt_BR/labplot2/index.cache.bz2
 share/doc/HTML/pt_BR/labplot2/index.docbook
+share/doc/HTML/ru/labplot2/index.cache.bz2
+share/doc/HTML/ru/labplot2/index.docbook
 share/doc/HTML/sv/labplot2/index.cache.bz2
 share/doc/HTML/sv/labplot2/index.docbook
 share/doc/HTML/uk/labplot2/export_spreadsheet_dialog.png
@@ -160,11 +193,11 @@ share/icons/hicolor/scalable/apps/labplot-zoom-select-y.svg
 share/icons/hicolor/scalable/apps/labplot-zoom-select.svg
 share/icons/hicolor/scalable/apps/labplot-zoom.svg
 share/icons/hicolor/scalable/apps/labplot2.svgz
-share/kxmlgui5/labplot2/labplot2ui.rc
 %%DATADIR%%/application-x-labplot2.ico
 %%DATADIR%%/color-schemes/Breeze.colors
 %%DATADIR%%/color-schemes/BreezeDark.colors
 %%DATADIR%%/color-schemes/BreezeHighContrast.colors
+%%DATADIR%%/color-schemes/Dracula.colors
 %%DATADIR%%/color-schemes/Honeycomb.colors
 %%DATADIR%%/color-schemes/Norway.colors
 %%DATADIR%%/color-schemes/ObsidianCoast.colors
@@ -185,6 +218,7 @@ share/kxmlgui5/labplot2/labplot2ui.rc
 %%DATADIR%%/colormaps/ColorCET (Rainbow).json
 %%DATADIR%%/colormaps/ColormapCollections.json
 %%DATADIR%%/colormaps/Diverging Color Maps for Scientific Visualization.json
+%%DATADIR%%/colormaps/Dracula (Categorical).json
 %%DATADIR%%/colormaps/Scientific Colour Maps (Cyclic).json
 %%DATADIR%%/colormaps/Scientific Colour Maps (Diverging).json
 %%DATADIR%%/colormaps/Scientific Colour Maps (Multi-sequential).json
@@ -202,6 +236,7 @@ share/kxmlgui5/labplot2/labplot2ui.rc
 %%DATADIR%%/datasets/README.md
 %%DATADIR%%/datasets/Rdatasets.json
 %%DATADIR%%/datasets/StatLib.json
+%%DATADIR%%/datasets/seaborn.json
 %%DATADIR%%/examples/Analysis/Fit/ENSO.lml
 %%DATADIR%%/examples/Analysis/Fourier Filter/SOS Morse Signal.lml
 %%DATADIR%%/examples/Analysis/Hilbert Transformation/Time response of a super regenerative receiver.lml
@@ -318,6 +353,7 @@ share/kxmlgui5/labplot2/labplot2ui.rc
 %%DATADIR%%/themes/Dark
 %%DATADIR%%/themes/DarkPastels
 %%DATADIR%%/themes/Default
+%%DATADIR%%/themes/Dracula
 %%DATADIR%%/themes/GgplotDark
 %%DATADIR%%/themes/GgplotGrey
 %%DATADIR%%/themes/GreenOnBlack
@@ -327,6 +363,7 @@ share/kxmlgui5/labplot2/labplot2ui.rc
 %%DATADIR%%/themes/RedOnBlack
 %%DATADIR%%/themes/Solarized
 %%DATADIR%%/themes/SolarizedLight
+%%DATADIR%%/themes/Sparkline
 %%DATADIR%%/themes/Tufte
 %%DATADIR%%/themes/screenshots/BlackOnLightYellow.png
 %%DATADIR%%/themes/screenshots/BlackOnWhite.png
@@ -336,6 +373,7 @@ share/kxmlgui5/labplot2/labplot2ui.rc
 %%DATADIR%%/themes/screenshots/Dark.png
 %%DATADIR%%/themes/screenshots/DarkPastels.png
 %%DATADIR%%/themes/screenshots/Default.png
+%%DATADIR%%/themes/screenshots/Dracula.png
 %%DATADIR%%/themes/screenshots/GgplotDark.png
 %%DATADIR%%/themes/screenshots/GgplotGrey.png
 %%DATADIR%%/themes/screenshots/GreenOnBlack.png
@@ -345,8 +383,10 @@ share/kxmlgui5/labplot2/labplot2ui.rc
 %%DATADIR%%/themes/screenshots/RedOnBlack.png
 %%DATADIR%%/themes/screenshots/Solarized.png
 %%DATADIR%%/themes/screenshots/SolarizedLight.png
+%%DATADIR%%/themes/screenshots/Sparkline.png
 %%DATADIR%%/themes/screenshots/Tufte.png
 %%DATADIR%%/themes/screenshots/Unavailable.png
+share/locale/ar/LC_MESSAGES/labplot2.mo
 share/locale/bs/LC_MESSAGES/labplot2.mo
 share/locale/ca/LC_MESSAGES/labplot2.mo
 share/locale/ca@valencia/LC_MESSAGES/labplot2.mo
@@ -355,6 +395,7 @@ share/locale/da/LC_MESSAGES/labplot2.mo
 share/locale/de/LC_MESSAGES/labplot2.mo
 share/locale/el/LC_MESSAGES/labplot2.mo
 share/locale/en_GB/LC_MESSAGES/labplot2.mo
+share/locale/eo/LC_MESSAGES/labplot2.mo
 share/locale/es/LC_MESSAGES/labplot2.mo
 share/locale/eu/LC_MESSAGES/labplot2.mo
 share/locale/fi/LC_MESSAGES/labplot2.mo
@@ -379,13 +420,14 @@ share/locale/tr/LC_MESSAGES/labplot2.mo
 share/locale/uk/LC_MESSAGES/labplot2.mo
 share/locale/zh_CN/LC_MESSAGES/labplot2.mo
 share/locale/zh_TW/LC_MESSAGES/labplot2.mo
-share/metainfo/org.kde.labplot2.appdata.xml
 share/man/ca/man1/labplot2.1.gz
 share/man/es/man1/labplot2.1.gz
 share/man/it/man1/labplot2.1.gz
 share/man/man1/labplot2.1.gz
 share/man/nl/man1/labplot2.1.gz
 share/man/pt_BR/man1/labplot2.1.gz
+share/man/ru/man1/labplot2.1.gz
 share/man/sv/man1/labplot2.1.gz
 share/man/uk/man1/labplot2.1.gz
+share/metainfo/org.kde.labplot2.appdata.xml
 share/mime/packages/labplot2.xml

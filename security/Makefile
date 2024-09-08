@@ -378,6 +378,7 @@
     SUBDIR += masscan
     SUBDIR += mate-pam-helper
     SUBDIR += mbedtls
+    SUBDIR += mbedtls3
     SUBDIR += mcrypt
     SUBDIR += md5deep
     SUBDIR += medusa
@@ -983,6 +984,7 @@
     SUBDIR += py-msoffcrypto-tool
     SUBDIR += py-muacrypt
     SUBDIR += py-netbox-secrets
+    SUBDIR += py-nethsm
     SUBDIR += py-netmiko
     SUBDIR += py-noiseprotocol
     SUBDIR += py-notus-scanner
@@ -1089,6 +1091,7 @@
     SUBDIR += py-zope.password
     SUBDIR += py-zxcvbn
     SUBDIR += pygost
+    SUBDIR += qt-sudo
     SUBDIR += qtkeychain
     SUBDIR += quantis-kmod
     SUBDIR += racoon2

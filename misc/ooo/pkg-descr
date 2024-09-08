@@ -1,0 +1,4 @@
+ooo allows to prompt Ollama from the command line either through the stdin or
+just as a normal prompt.
+You need to have Ollama running either on the same host, or remotely, in order
+to use ooo.

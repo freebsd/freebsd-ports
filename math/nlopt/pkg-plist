@@ -1,4 +1,3 @@
-include/nlopt.f
 include/nlopt.h
 include/nlopt.hpp
 lib/cmake/nlopt/NLoptConfig.cmake
@@ -7,7 +6,7 @@ lib/cmake/nlopt/NLoptLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/nlopt/NLoptLibraryDepends.cmake
 lib/libnlopt.so
 lib/libnlopt.so.0
-lib/libnlopt.so.0.11.1
+lib/libnlopt.so.0.12.0
 libdata/pkgconfig/nlopt.pc
 share/man/man3/nlopt.3.gz
 share/man/man3/nlopt_minimize.3.gz

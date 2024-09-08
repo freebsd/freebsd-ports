@@ -1,3 +1,3 @@
-TIMESTAMP = 1719652924
-SHA256 (wine-mono-9.2.0-x86.msi) = fd5829244d92985b8a404745adddb58c3a9b0bbb6d54ca4c6eaf86ea466735f9
-SIZE (wine-mono-9.2.0-x86.msi) = 84566016
+TIMESTAMP = 1725658715
+SHA256 (wine-mono-9.3.0-x86.msi) = 6ca2c0aed096ff9ec20faf5eb76c6b7d7de82d9a8875ac7dd9f0793bf9c3fd30
+SIZE (wine-mono-9.3.0-x86.msi) = 84572160

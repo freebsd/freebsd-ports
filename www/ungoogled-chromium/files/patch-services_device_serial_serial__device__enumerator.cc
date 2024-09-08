@@ -1,6 +1,6 @@
---- services/device/serial/serial_device_enumerator.cc.orig	2023-03-10 11:01:21 UTC
+--- services/device/serial/serial_device_enumerator.cc.orig	2024-08-26 14:40:28 UTC
 +++ services/device/serial/serial_device_enumerator.cc
-@@ -12,7 +12,7 @@
+@@ -13,7 +13,7 @@
  #include "build/build_config.h"
  #include "components/device_event_log/device_event_log.h"
  
@@ -9,7 +9,7 @@
  #include "services/device/serial/serial_device_enumerator_linux.h"
  #elif BUILDFLAG(IS_MAC)
  #include "services/device/serial/serial_device_enumerator_mac.h"
-@@ -25,7 +25,7 @@ namespace device {
+@@ -26,7 +26,7 @@ namespace device {
  // static
  std::unique_ptr<SerialDeviceEnumerator> SerialDeviceEnumerator::Create(
      scoped_refptr<base::SingleThreadTaskRunner> ui_task_runner) {

@@ -36,7 +36,7 @@ lib/gauche-%%ABI_VERSION%%/%%VERSION%%/%%TARGET%%/gauche-package
 lib/gauche-%%ABI_VERSION%%/%%VERSION%%/%%TARGET%%/gosh
 lib/gauche-%%ABI_VERSION%%/%%VERSION%%/%%TARGET%%/libgauche-%%ABI_VERSION%%.so
 lib/gauche-%%ABI_VERSION%%/%%VERSION%%/%%TARGET%%/libgauche-%%ABI_VERSION%%.so.0
-lib/gauche-%%ABI_VERSION%%/%%VERSION%%/%%TARGET%%/libgauche-%%ABI_VERSION%%.so.0.14
+lib/gauche-%%ABI_VERSION%%/%%VERSION%%/%%TARGET%%/libgauche-%%ABI_VERSION%%.so.0.15
 lib/gauche-%%ABI_VERSION%%/%%VERSION%%/%%TARGET%%/libgauche-static-%%ABI_VERSION%%.a
 lib/gauche-%%ABI_VERSION%%/%%VERSION%%/%%TARGET%%/math--mt-random.so
 lib/gauche-%%ABI_VERSION%%/%%VERSION%%/%%TARGET%%/os--windows.so
@@ -122,7 +122,7 @@ lib/gauche-%%ABI_VERSION%%/%%VERSION%%/include/gc_version.h
 lib/gauche-%%ABI_VERSION%%/site/%%TARGET%%/.keepme
 lib/libgauche-%%ABI_VERSION%%.so
 lib/libgauche-%%ABI_VERSION%%.so.0
-lib/libgauche-%%ABI_VERSION%%.so.0.14
+lib/libgauche-%%ABI_VERSION%%.so.0.15
 lib/libgauche-static-%%ABI_VERSION%%.a
 share/aclocal/gauche.m4
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/aclocal.m4
@@ -178,7 +178,6 @@ share/aclocal/gauche.m4
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/base.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/bitvector.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/cgen.scm
-%%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/cgen/bbb.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/cgen/cbe.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/cgen/cise.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/cgen/literal.scm
@@ -261,7 +260,6 @@ share/aclocal/gauche.m4
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/termios.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/test.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/test/diff.scm
-%%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/test/generative.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/test/include.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/test/script.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/time.scm
@@ -287,6 +285,7 @@ share/aclocal/gauche.m4
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/vecutil.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/version-alist.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/version.scm
+%%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/vm/bbb.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/vm/debug-info.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/vm/debugger.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/vm/insn-core.scm
@@ -295,6 +294,7 @@ share/aclocal/gauche.m4
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/vm/register-machine.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/gauche/vport.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/genstub
+%%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/lang/asm/regset.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/lang/asm/x86_64.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/lang/c/lexer.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/lang/c/parameter.scm
@@ -477,6 +477,7 @@ share/aclocal/gauche.m4
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi-207.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi-209.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi-210.scm
+%%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi-215.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi-216.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi-217.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi-219.scm
@@ -491,8 +492,10 @@ share/aclocal/gauche.m4
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi-232.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi-235.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi-236.scm
+%%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi-238.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi-239.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi-244.scm
+%%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi-247.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi-25.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi-26.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi-27.scm
@@ -618,6 +621,7 @@ share/aclocal/gauche.m4
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi/209.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi/210.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi/214.scm
+%%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi/215.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi/216.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi/217.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi/219.scm
@@ -647,8 +651,11 @@ share/aclocal/gauche.m4
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi/229.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi/232.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi/235.scm
+%%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi/238.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi/239.scm
+%%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi/247.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi/25.scm
+%%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi/252.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi/27.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi/29.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/lib/srfi/29/bundle.scm
@@ -744,7 +751,7 @@ share/aclocal/gauche.m4
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/package-templates/configure.ac
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/package-templates/extension.c
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/package-templates/extension.h
-%%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/package-templates/extensionlib.stub
+%%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/package-templates/extensionlib.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/package-templates/module-pure-scheme.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/package-templates/module.scm
 %%DATADIR%%-%%ABI_VERSION%%/%%VERSION%%/package-templates/package.scm

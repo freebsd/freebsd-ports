@@ -48,7 +48,7 @@ CONFIGURE_ARGS=	--enable-avcodec --enable-avformat --enable-dvbpsi \
 		--disable-decklink --disable-dsm --disable-dv1394 \
 		--disable-fdkaac --disable-gst-decode --disable-gles2 \
 		--disable-kai --disable-kate --disable-kva --disable-libcddb \
-		--disable-mpg123 --disable-vnc --disable-opencv \
+		--disable-mpc --disable-mpg123 --disable-vnc --disable-opencv \
 		--disable-projectm --disable-schroedinger --disable-secret \
 		--disable-sid --disable-soxr --disable-telx --disable-tiger \
 		--disable-tremor --disable-udev --disable-update-check \
@@ -71,7 +71,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	A52 AALIB AOM ARIBSUB ASS AVAHI CACA CHROMECAST DAV1D DBUS DCA \
 		DEBUG DOCS DVDNAV DVDREAD DEBUG FAAD FLAC FLUID FREERDP FRIBIDI \
 		GME GNUTLS GOOM HARFBUZZ JACK JPEG LIBBLURAY LIBPLACEBO LIBRSVG2 \
-		LIBSSH2 LIRC LIVEMEDIA LUA MAD MFX MODPLUG MPEG2 MTP MUSEPACK \
+		LIBSSH2 LIRC LIVEMEDIA LUA MAD MFX MODPLUG MPEG2 MTP \
 		NCURSES NFS NLS NOTIFY OGGSPOTS OGG OPTIMIZED_CFLAGS OPUS PNG \
 		PULSEAUDIO QT5 REALRTSP RUNROOT SAMPLERATE SDL SHOUTCAST \
 		SKINS SMB SNDIO SPEEX SRT STREAM TAGLIB THEORA TWOLAME UPNP V4L \
@@ -247,10 +247,6 @@ MPEG2_CONFIGURE_ENABLE=	libmpeg2
 
 MTP_LIB_DEPENDS=	libmtp.so:multimedia/libmtp
 MTP_CONFIGURE_ENABLE=	mtp
-
-MUSEPACK_LIB_DEPENDS=	libmpcdec.so:audio/musepack
-MUSEPACK_CONFIGURE_ENABLE=	mpc
-MUSEPACK_CONFIGURE_ENV=		LIBS_mpc="-L${LOCALBASE}/lib -lmpcdec"
 
 NCURSES_USES=			ncurses
 NCURSES_CONFIGURE_ENABLE=	ncurses

@@ -1,6 +1,6 @@
 PORTNAME=	ncrystal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.8.0
+DISTVERSION=	3.9.6
 CATEGORIES=	science # physics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}scikit-build>0:devel/py-scikit-build@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-build>=0.13:devel/py-scikit-build@${PY_FLAVOR} \
 		cmake:devel/cmake-core
 RUN_DEPENDS=	${PYNUMPY}
 

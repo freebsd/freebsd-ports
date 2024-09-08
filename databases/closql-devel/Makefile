@@ -1,8 +1,7 @@
 PORTNAME=	closql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1-49
-PORTREVISION=	2
-DISTVERSIONSUFFIX=	-gc591e6b
+DISTVERSION=	2.0.0
+DISTVERSIONSUFFIX=
 CATEGORIES=	databases elisp
 PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
 
@@ -13,10 +12,10 @@ WWW=		https://github.com/magit/closql
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=29.1.4.5:misc/compat.el@${EMACS_FLAVOR} \
-		emacsql-devel${EMACS_PKGNAMESUFFIX}>=3.1.1:databases/emacsql-devel@${EMACS_FLAVOR}
-RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=29.1.4.5:misc/compat.el@${EMACS_FLAVOR} \
-		emacsql-devel${EMACS_PKGNAMESUFFIX}>=3.1.1:databases/emacsql-devel@${EMACS_FLAVOR}
+BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.0.0:misc/compat.el@${EMACS_FLAVOR} \
+		emacsql-devel${EMACS_PKGNAMESUFFIX}>=4.0.0:databases/emacsql-devel@${EMACS_FLAVOR}
+RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=30.0.0.0:misc/compat.el@${EMACS_FLAVOR} \
+		emacsql-devel${EMACS_PKGNAMESUFFIX}>=4.0.0:databases/emacsql-devel@${EMACS_FLAVOR}
 
 USES=		emacs gmake
 USE_GITHUB=	yes
@@ -27,6 +26,10 @@ MAKE_ENV+=	LOAD_PATH="${LOAD_PATH}"
 CONFLICTS_INSTALL=	closql closql-emacs_* # share/doc/closql/README.md
 
 NO_ARCH=	yes
+
+PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/closql-autoloads.el \
+		${EMACS_VERSION_SITE_LISPDIR}/closql.el \
+		${EMACS_VERSION_SITE_LISPDIR}/closql.elc
 
 PORTDOCS=	README.org
 

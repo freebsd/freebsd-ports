@@ -1,9 +1,9 @@
 PORTNAME=	shibboleth
-PORTVERSION=	4.3.3
+PORTVERSION=	5.1.3
 PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://shibboleth.net/downloads/identity-provider/${PORTVERSION}/ \
-		http://shibboleth.net/downloads/identity-provider/latest4/${PORTVERSION}/ \
+		http://shibboleth.net/downloads/identity-provider/latest5/${PORTVERSION}/ \
 		http://shibboleth.net/downloads/identity-provider/archive/${PORTVERSION}/ \
 		https://repo1.maven.org/maven2/ch/qos/logback/logback-core/${LOGBACKVER}/:logback_core \
 		https://repo1.maven.org/maven2/ch/qos/logback/logback-classic/${LOGBACKVER}/:logback_classic
@@ -19,9 +19,9 @@ WWW=		http://shibboleth.internet2.edu/
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	jetty10>=0:www/jetty10
+BUILD_DEPENDS=	jetty12>=0:www/jetty12
 RUN_DEPENDS=	bash:shells/bash \
-		jetty10>=0:www/jetty10
+		jetty12>=0:www/jetty12
 
 USE_RC_SUBR=	shibboleth-idp
 CPE_VENDOR=	shibboleth
@@ -30,7 +30,7 @@ WRKSRC=		${WRKDIR}/shibboleth-identity-provider-${PORTVERSION}
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-LOGBACKVER=	1.4.0
+LOGBACKVER=	1.5.6
 SHIBUSER=	shibd
 SHIBGROUP=	shibd
 LOGDIR=		/var/log/${PORTNAME}
@@ -50,6 +50,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${ETCDIR}
 	@${MKDIR} ${STAGEDIR}${LOGDIR} ${STAGEDIR}${RUNDIR}
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/lib/logging
+	@${MKDIR} ${STAGEDIR}${WWWDIR}/jsp
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for dir in conf credentials etc modules resources start.d webapps/ROOT
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/${dir}

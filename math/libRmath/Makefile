@@ -1,14 +1,15 @@
 PORTNAME=	libRmath
-DISTVERSION=	4.3.1
+DISTVERSION=	4.4.1
 CATEGORIES=	math lang
-MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
+MASTER_SITES=	CRAN/src/base/R-${DISTVERSION:C|\..*||}
 DISTNAME=	R-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alster@vinterdalen.se
 COMMENT=	Standalone math library from R
 WWW=		https://www.R-project.org/
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 

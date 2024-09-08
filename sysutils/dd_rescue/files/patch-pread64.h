@@ -1,11 +1,11 @@
---- pread64.h.orig	2015-04-15 08:56:38 UTC
+--- pread64.h.orig	2024-08-25 11:50:36 UTC
 +++ pread64.h
-@@ -94,7 +94,7 @@ static inline ssize_t pread64(int fd, vo
- {
- 	return pread(fd, buf, sz, off);
- }
--static inline ssize_t pwrite(int fd, const void *buf, size_t sz, loff_t off)
-+static inline ssize_t pwrite64(int fd, const void *buf, size_t sz, loff_t off)
- {
- 	return pwrite(fd, buf, sz, off);
- }
+@@ -18,7 +18,7 @@
+ # include <sys/reg.h>
+ #endif
+ 
+-#if !defined(HAVE_PREAD64) && __WORDSIZE == 64 && !defined(TEST_SYSCALL) && defined(HAVE_PREAD)
++#if defined(__FreeBSD__) || !defined(HAVE_PREAD64) && __WORDSIZE == 64 && !defined(TEST_SYSCALL) && defined(HAVE_PREAD)
+ #define pread64 pread
+ #define pwrite64 pwrite
+ #define HAVE_PREAD64

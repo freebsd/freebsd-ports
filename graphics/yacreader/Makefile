@@ -3,7 +3,7 @@ DISTVERSION=	9.14.2
 PORTREVISION=	2
 CATEGORIES=	graphics
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another comic reader
 WWW=		https://www.yacreader.com/
 

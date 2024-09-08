@@ -1,5 +1,5 @@
 PORTNAME=	highlight
-PORTVERSION=	4.12
+PORTVERSION=	4.13
 PORTEPOCH=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://andre-simon.de/zip/

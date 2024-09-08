@@ -629,8 +629,6 @@
     SUBDIR += efl
     SUBDIR += egypt
     SUBDIR += eiffelstudio
-    SUBDIR += electron27
-    SUBDIR += electron28
     SUBDIR += electron29
     SUBDIR += electron30
     SUBDIR += electron31
@@ -1086,6 +1084,7 @@
     SUBDIR += kdev-python
     SUBDIR += kdevelop
     SUBDIR += kdevelop-pg-qt
+    SUBDIR += kdsingleapplication
     SUBDIR += kerl
     SUBDIR += kf5-extra-cmake-modules
     SUBDIR += kf5-kapidox
@@ -1373,7 +1372,6 @@
     SUBDIR += libolecf
     SUBDIR += libopenbsd
     SUBDIR += libopencm3
-    SUBDIR += libopentracing
     SUBDIR += liborcus
     SUBDIR += libosinfo
     SUBDIR += libowfat
@@ -1400,6 +1398,7 @@
     SUBDIR += libqt6xdg
     SUBDIR += libqtxdg
     SUBDIR += libr3
+    SUBDIR += librashader
     SUBDIR += librcc
     SUBDIR += librcd
     SUBDIR += libreadline-java
@@ -1532,6 +1531,7 @@
     SUBDIR += linux-rl9-elfutils-libelf
     SUBDIR += linux-rl9-elfutils-libs
     SUBDIR += linux-rl9-icu
+    SUBDIR += linux-rl9-libatomic
     SUBDIR += linux-rl9-libevent
     SUBDIR += linux-rl9-libgfortran
     SUBDIR += linux-rl9-libpciaccess
@@ -1790,6 +1790,7 @@
     SUBDIR += ode
     SUBDIR += ois
     SUBDIR += okteta
+    SUBDIR += ollama-hpp
     SUBDIR += omake
     SUBDIR += omniORB
     SUBDIR += omnilinter
@@ -2206,6 +2207,7 @@
     SUBDIR += p5-Data-Capture
     SUBDIR += p5-Data-ClearSilver-HDF
     SUBDIR += p5-Data-Clone
+    SUBDIR += p5-Data-Cmp
     SUBDIR += p5-Data-Compare
     SUBDIR += p5-Data-Diver
     SUBDIR += p5-Data-Dmp
@@ -2239,6 +2241,7 @@
     SUBDIR += p5-Data-MessagePack
     SUBDIR += p5-Data-MessagePack-Stream
     SUBDIR += p5-Data-Miscellany
+    SUBDIR += p5-Data-ModeMerge
     SUBDIR += p5-Data-Model
     SUBDIR += p5-Data-Munge
     SUBDIR += p5-Data-Object
@@ -2293,7 +2296,12 @@
     SUBDIR += p5-Data-RoundRobin
     SUBDIR += p5-Data-Rx
     SUBDIR += p5-Data-SExpression
+    SUBDIR += p5-Data-Sah
+    SUBDIR += p5-Data-Sah-Coerce
+    SUBDIR += p5-Data-Sah-DefaultValue
+    SUBDIR += p5-Data-Sah-Filter
     SUBDIR += p5-Data-Sah-Normalize
+    SUBDIR += p5-Data-Sah-Resolve
     SUBDIR += p5-Data-Section
     SUBDIR += p5-Data-Section-Simple
     SUBDIR += p5-Data-Serializable
@@ -2785,6 +2793,7 @@
     SUBDIR += p5-IPC-SharedCache
     SUBDIR += p5-IPC-ShellCmd
     SUBDIR += p5-IPC-Signal
+    SUBDIR += p5-IPC-System-Options
     SUBDIR += p5-IPC-System-Simple
     SUBDIR += p5-IRI
     SUBDIR += p5-Import-Base
@@ -2827,6 +2836,7 @@
     SUBDIR += p5-Keyword-Pluggable
     SUBDIR += p5-Keyword-Simple
     SUBDIR += p5-LV
+    SUBDIR += p5-Language-Expr
     SUBDIR += p5-Lexical-Alias
     SUBDIR += p5-Lexical-Import
     SUBDIR += p5-Lexical-Persistence
@@ -2991,6 +3001,7 @@
     SUBDIR += p5-Module-Math-Depends
     SUBDIR += p5-Module-Metadata
     SUBDIR += p5-Module-Path
+    SUBDIR += p5-Module-Path-More
     SUBDIR += p5-Module-Pluggable
     SUBDIR += p5-Module-Pluggable-Fast
     SUBDIR += p5-Module-Pluggable-Ordered
@@ -3308,6 +3319,7 @@
     SUBDIR += p5-Pragmatic
     SUBDIR += p5-Proc-BackOff
     SUBDIR += p5-Proc-Background
+    SUBDIR += p5-Proc-ChildError
     SUBDIR += p5-Proc-Daemon
     SUBDIR += p5-Proc-FastSpawn
     SUBDIR += p5-Proc-Find-Parents
@@ -3405,6 +3417,7 @@
     SUBDIR += p5-Scalar-String
     SUBDIR += p5-Scalar-Util-LooksLikeNumber
     SUBDIR += p5-Scalar-Util-Numeric
+    SUBDIR += p5-Scalar-Util-Numeric-PP
     SUBDIR += p5-Scope-Container
     SUBDIR += p5-Scope-Guard
     SUBDIR += p5-Scope-Upper
@@ -3799,6 +3812,7 @@
     SUBDIR += p5-Time-Crontab
     SUBDIR += p5-Time-Duration
     SUBDIR += p5-Time-Duration-Parse
+    SUBDIR += p5-Time-Duration-Parse-AsHash
     SUBDIR += p5-Time-Elapsed
     SUBDIR += p5-Time-Format
     SUBDIR += p5-Time-HiRes
@@ -3921,6 +3935,7 @@
     SUBDIR += p5-latest
     SUBDIR += p5-lexical-underscore
     SUBDIR += p5-lib-abs
+    SUBDIR += p5-lib-filter
     SUBDIR += p5-libalarm
     SUBDIR += p5-libxml-enno
     SUBDIR += p5-local-lib
@@ -3945,6 +3960,7 @@
     SUBDIR += p5-self-init
     SUBDIR += p5-strictures
     SUBDIR += p5-subatom
+    SUBDIR += p5-subroutines
     SUBDIR += p5-subversion
     SUBDIR += p5-superclass
     SUBDIR += p5-syntax
@@ -4249,6 +4265,7 @@
     SUBDIR += picprog
     SUBDIR += pijul
     SUBDIR += pika
+    SUBDIR += pipelight
     SUBDIR += pipestatus
     SUBDIR += pire
     SUBDIR += pit
@@ -4363,6 +4380,8 @@
     SUBDIR += py-argcomplete
     SUBDIR += py-argh
     SUBDIR += py-argparse
+    SUBDIR += py-argparse-manpage
+    SUBDIR += py-argparse_addons
     SUBDIR += py-args
     SUBDIR += py-ariadne
     SUBDIR += py-arpeggio
@@ -4592,6 +4611,8 @@
     SUBDIR += py-cli-helpers
     SUBDIR += py-cliapp
     SUBDIR += py-click
+    SUBDIR += py-click-aliases
+    SUBDIR += py-click-command-tree
     SUBDIR += py-click-completion
     SUBDIR += py-click-creds
     SUBDIR += py-click-default-group
@@ -4627,6 +4648,7 @@
     SUBDIR += py-columnize
     SUBDIR += py-comm
     SUBDIR += py-commandlines
+    SUBDIR += py-commentjson
     SUBDIR += py-conditional
     SUBDIR += py-confection
     SUBDIR += py-configargparse
@@ -5005,7 +5027,6 @@
     SUBDIR += py-jaraco.packaging
     SUBDIR += py-jaraco.stream
     SUBDIR += py-jaraco.text
-    SUBDIR += py-jaraco.timing
     SUBDIR += py-jaraco.util
     SUBDIR += py-javaproperties
     SUBDIR += py-jdcal
@@ -5027,6 +5048,7 @@
     SUBDIR += py-jsmin
     SUBDIR += py-json5
     SUBDIR += py-json_tricks
+    SUBDIR += py-jsonargparse
     SUBDIR += py-jsondiff
     SUBDIR += py-jsonform
     SUBDIR += py-jsonlines
@@ -5045,6 +5067,7 @@
     SUBDIR += py-jsonschema3
     SUBDIR += py-jsonsir
     SUBDIR += py-junitparser
+    SUBDIR += py-jupyter
     SUBDIR += py-jupyter-client
     SUBDIR += py-jupyter-collaboration
     SUBDIR += py-jupyter-core
@@ -5090,6 +5113,7 @@
     SUBDIR += py-libplist
     SUBDIR += py-libtaxii
     SUBDIR += py-libtmux
+    SUBDIR += py-libusb-package
     SUBDIR += py-libusb1
     SUBDIR += py-libversion
     SUBDIR += py-libvirt
@@ -5504,6 +5528,7 @@
     SUBDIR += py-pyopencl
     SUBDIR += py-pyparsing
     SUBDIR += py-pyparsing2
+    SUBDIR += py-pypemicro
     SUBDIR += py-pyperclip
     SUBDIR += py-pyperf
     SUBDIR += py-pyperscan
@@ -5550,6 +5575,7 @@
     SUBDIR += py-pytest-cov
     SUBDIR += py-pytest-cpp
     SUBDIR += py-pytest-datadir
+    SUBDIR += py-pytest-dependency
     SUBDIR += py-pytest-django
     SUBDIR += py-pytest-doctestplus
     SUBDIR += py-pytest-drop-dup-tests
@@ -5658,6 +5684,7 @@
     SUBDIR += py-pytz
     SUBDIR += py-pytz-deprecation-shim
     SUBDIR += py-pytzdata
+    SUBDIR += py-pyuca
     SUBDIR += py-pyudev
     SUBDIR += py-pyupgrade
     SUBDIR += py-pyusb
@@ -5796,6 +5823,7 @@
     SUBDIR += py-sh
     SUBDIR += py-shapely
     SUBDIR += py-shellingham
+    SUBDIR += py-shpyx
     SUBDIR += py-shtab
     SUBDIR += py-signalr-client-aio
     SUBDIR += py-simple-parsing
@@ -5808,7 +5836,6 @@
     SUBDIR += py-simpy
     SUBDIR += py-single-version
     SUBDIR += py-sip
-    SUBDIR += py-sip4
     SUBDIR += py-six
     SUBDIR += py-smmap
     SUBDIR += py-snakeviz
@@ -6969,11 +6996,13 @@
     SUBDIR += rubygem-cucumber
     SUBDIR += rubygem-cucumber-ci-environment
     SUBDIR += rubygem-cucumber-core
+    SUBDIR += rubygem-cucumber-core13
     SUBDIR += rubygem-cucumber-cucumber-expressions
     SUBDIR += rubygem-cucumber-messages
     SUBDIR += rubygem-cucumber-messages22
     SUBDIR += rubygem-cucumber-messages23
     SUBDIR += rubygem-cucumber-messages24
+    SUBDIR += rubygem-cucumber-messages25
     SUBDIR += rubygem-cucumber-rails
     SUBDIR += rubygem-cucumber-tag-expressions
     SUBDIR += rubygem-cucumber-wire
@@ -7320,6 +7349,7 @@
     SUBDIR += rubygem-locale
     SUBDIR += rubygem-lockfile
     SUBDIR += rubygem-logger
+    SUBDIR += rubygem-logger15
     SUBDIR += rubygem-logging
     SUBDIR += rubygem-logster
     SUBDIR += rubygem-loquacious

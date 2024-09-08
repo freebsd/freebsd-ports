@@ -1,6 +1,6 @@
---- media/gpu/chromeos/video_decoder_pipeline.cc.orig	2024-07-31 14:19:23 UTC
+--- media/gpu/chromeos/video_decoder_pipeline.cc.orig	2024-08-26 14:40:28 UTC
 +++ media/gpu/chromeos/video_decoder_pipeline.cc
-@@ -1098,7 +1098,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
+@@ -1096,7 +1096,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
    }
  #endif
  
@@ -9,7 +9,7 @@
    // Linux should always use a custom allocator (to allocate buffers using
    // libva) and a PlatformVideoFramePool.
    CHECK(allocator.has_value());
-@@ -1107,7 +1107,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
+@@ -1105,7 +1105,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
    // VideoFrame::StorageType of VideoFrame::STORAGE_DMABUFS.
    main_frame_pool_->AsPlatformVideoFramePool()->SetCustomFrameAllocator(
        *allocator, VideoFrame::STORAGE_DMABUFS);
@@ -18,7 +18,7 @@
    // Linux w/ V4L2 should not use a custom allocator
    // Only tested with video_decode_accelerator_tests
    // TODO(wenst@) Test with full Chromium Browser
-@@ -1295,7 +1295,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
+@@ -1287,7 +1287,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
               << " VideoFrames";
      auxiliary_frame_pool_->set_parent_task_runner(decoder_task_runner_);
  

@@ -1,6 +1,6 @@
 PORTNAME=	rustdesk-server
 DISTVERSION=	1.1.11-1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -9,8 +9,6 @@ WWW=		https://rustdesk.com/server/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_aarch64=	fails to build
 
 USES=		cargo
 USE_GITHUB=	yes
