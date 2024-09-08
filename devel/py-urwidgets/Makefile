@@ -1,7 +1,8 @@
 PORTNAME=	urwidgets
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/AnonymouX47/urwidgets/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
