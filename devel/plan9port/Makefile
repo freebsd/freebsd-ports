@@ -11,8 +11,9 @@ WWW=		https://9fans.github.io/plan9port/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_armv6=	fails to compile: thread.c:130:5: no member named 'arm_r0' in 'mcontext_t'
-BROKEN_armv7=	fails to compile: thread.c:130:5: no member named 'arm_r0' in 'mcontext_t'
+BROKEN=		Fails to build, sort.c:111:5: error: conflicting types for 'kcmp'
+DEPRECATED=	Fails to build, unmaintained in tree and outdated
+EXPIRATION_DATE=2024-11-30
 
 BUILD_DEPENDS=	as:devel/binutils
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
