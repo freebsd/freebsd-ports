@@ -1,5 +1,5 @@
 PORTNAME=	protocol-rack
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ WWW=		https://socketry.github.io/protocol-rack/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.md
 
-RUN_DEPENDS=	rubygem-protocol-http>=0.23<1:www/rubygem-protocol-http \
+RUN_DEPENDS=	rubygem-protocol-http>=0.27<1:www/rubygem-protocol-http \
 		rubygem-rack>=1.0,3:www/rubygem-rack
 
 USES=		gem
