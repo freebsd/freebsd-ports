@@ -9,6 +9,10 @@ MAINTAINER=	amir.husaini@gmail.com
 COMMENT=	Free software for solving timetabling problems
 WWW=		https://www.tablix.org/
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandonware, upstream is gone and source code is no longer available
+EXPIRATION_DATE=2024-09-30
+
 BUILD_DEPENDS=	pvm:net/pvm
 RUN_DEPENDS=	pvm:net/pvm
 
