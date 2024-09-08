@@ -13,6 +13,9 @@ WWW=		https://adonthell.nongnu.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on deprecated port games/adonthell
+EXPIRATION_DATE=2024-09-30
+
 BUILD_DEPENDS=	adonthell:games/adonthell
 RUN_DEPENDS=	adonthell:games/adonthell
 
