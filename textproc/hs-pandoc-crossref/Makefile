@@ -1,5 +1,6 @@
 PORTNAME=	pandoc-crossref
 PORTVERSION=	0.3.17.1
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,7 +12,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cabal
 
-USE_CABAL=	Glob-0.10.2_3 \
+PLIST_FILES=	bin/pandoc-crossref \
+		share/man/man1/pandoc-crossref.1.gz
+
+USE_CABAL=	pandoc-cli-${PANDOC_VER}
+USE_CABAL+=	Glob-0.10.2_3 \
 		JuicyPixels-3.3.9 \
 		OneTuple-0.4.2 \
 		Only-0.1_2 \
@@ -116,7 +121,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		optparse-applicative-0.18.1.0 \
 		ordered-containers-0.2.4 \
 		os-string-2.0.6 \
-		pandoc-3.3 \
+		pandoc-${PANDOC_VER} \
 		pandoc-types-1.23.1_2 \
 		pem-0.2.4 \
 		pretty-show-1.10 \
@@ -184,6 +189,18 @@ USE_CABAL=	Glob-0.10.2_3 \
 		zip-archive-0.4.3.2_1 \
 		zlib-0.7.1.0_1
 
-CABAL_REVISION=	2
+CABAL_EXECUTABLES=	pandoc-crossref pandoc
+CABAL_REVISION=		2
+SKIP_CABAL_PLIST=	yes
+
+PANDOC_VER=		3.3
+
+post-build:
+	${SETENV} pandoc_datadir=${WRKSRC}/_cabal_deps/pandoc-${PANDOC_VER} \
+		$$(${FIND} ${WRKSRC}/dist-newstyle -name pandoc -type f -perm +111) -s -t man ${WRKSRC}/docs/index.md -o ${WRKSRC}/docs/pandoc-crossref.1
+
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/bin/pandoc
+	${INSTALL_MAN} ${WRKSRC}/docs/pandoc-crossref.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
