@@ -1,13 +1,13 @@
 PORTNAME=	suds
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight SOAP client (community fork)
-WWW=		https://github.com/suds-community/suds
+WWW=		https://suds.readthedocs.io/en/latest/ \
+		https://github.com/suds-community/suds
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
