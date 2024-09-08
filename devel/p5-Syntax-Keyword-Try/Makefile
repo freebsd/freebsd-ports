@@ -1,5 +1,5 @@
 PORTNAME=	Syntax-Keyword-Try
-PORTVERSION=	0.29
+PORTVERSION=	0.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,7 +10,7 @@ WWW=		https://metacpan.org/release/Syntax-Keyword-Try
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XS-Parse-Keyword>=0.06:devel/p5-XS-Parse-Keyword
