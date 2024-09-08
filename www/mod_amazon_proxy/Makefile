@@ -8,6 +8,9 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Amazon Auth Proxy for Product Advertising API
 WWW=		https://github.com/machu/mod_amazon_proxy
 
+DEPRECATED=	Abandonware, last updated in 2010
+EXPIRATION_DATE=2024-09-30
+
 LIB_DEPENDS=	libapreq2.so:www/libapreq2
 
 USES=		apache
