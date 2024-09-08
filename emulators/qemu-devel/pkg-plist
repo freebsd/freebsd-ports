@@ -22,7 +22,6 @@ bin/qemu-system-i386
 %%NO_X86_TARGETS%%bin/qemu-system-mips64
 %%NO_X86_TARGETS%%bin/qemu-system-mips64el
 %%NO_X86_TARGETS%%bin/qemu-system-mipsel
-%%NO_X86_TARGETS%%bin/qemu-system-nios2
 %%NO_X86_TARGETS%%bin/qemu-system-or1k
 %%NO_X86_TARGETS%%bin/qemu-system-ppc
 %%NO_X86_TARGETS%%bin/qemu-system-ppc64
