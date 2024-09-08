@@ -7371,6 +7371,7 @@
     SUBDIR += rubygem-metaid
     SUBDIR += rubygem-metasm
     SUBDIR += rubygem-method_source
+    SUBDIR += rubygem-metrics
     SUBDIR += rubygem-micromachine
     SUBDIR += rubygem-middleware
     SUBDIR += rubygem-mini_histogram
