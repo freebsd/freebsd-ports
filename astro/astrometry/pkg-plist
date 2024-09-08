@@ -1,6 +1,9 @@
 bin/an-fitstopnm
 bin/an-pnmtofits
 bin/astrometry-engine
+bin/astrometry-fitscopy
+bin/astrometry-fitsverify
+bin/astrometry-imcopy
 bin/augment-xylist
 bin/build-astrometry-index
 bin/degtohms
@@ -9,9 +12,7 @@ bin/fit-wcs
 bin/fits-column-merge
 bin/fits-flip-endian
 bin/fits-guess-scale
-bin/fitscopy
 bin/fitsgetext
-bin/fitsverify
 bin/get-healpix
 bin/get-wcs
 bin/hmstodeg
@@ -19,7 +20,6 @@ bin/hpsplit
 bin/image2pnm
 bin/image2xy
 bin/imarith
-bin/imcopy
 bin/imstat
 bin/listhead
 bin/liststruc
