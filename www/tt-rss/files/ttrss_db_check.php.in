@@ -1,8 +1,0 @@
-<?php
-chdir("%%WWWDIR%%");
-
-require_once "%%WWWDIR%%/classes/Config.php";
-require_once "%%WWWDIR%%/include/autoload.php";
-
-print(strtolower(Config::get(Config::DB_TYPE)));
-?>

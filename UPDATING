@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240907:
+  AFFECTS: www/tt-rss
+  AUTHOR: dereks@lifeofadishwasher.com
+
+  The ttrssd_local_db rc var has been removed in favor of using daemon's
+  restart option -r to retry the ttrssd php scripts if database is not up
+  before ttrssd starts.
+
 20240829:
   AFFECTS: devel/binutils
   AUTHOR: cy@FreeBSD.org

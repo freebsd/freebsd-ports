@@ -1,16 +1,12 @@
 #! /bin/sh
 
 # PROVIDE: ttrssd
-# REQUIRE: LOGIN mysql postgresql
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 
 # Add the following lines to /etc/rc.conf to enable `ttrssd':
 #
 # ttrssd_enable="YES"
-#
-# ttrssd_local_db (bool):   Set to "YES" by default.
-#                           Set it to "NO" if the database is on another
-#                           server.
 
 . /etc/rc.subr
 
@@ -22,85 +18,52 @@ rcvar=ttrssd_enable
 # read settings, set default values
 load_rc_config "${name}"
 : ${ttrssd_enable="NO"}
-: ${ttrssd_local_db:="YES"}
 
-initdb_php="%%WWWDIR%%/update.php"
-dbcheck_php="%%WWWDIR%%/ttrss_db_check.php"
+long_name="Tiny Tiny RSS updating feeds daemon."
 required_files="%%WWWDIR%%/config.php"
 pidfile="/var/run/${name}.pid"
-ppidfile="/var/run/${name}_parent.pid"
+cpidfile="/var/run/${name}_child.pid"
 phpcli="%%LOCALBASE%%/bin/php"
-command_interpreter=$phpcli
-long_name="Tiny Tiny RSS updating feeds daemon."
+
+initdb_php="%%WWWDIR%%/update.php"
 phpupd="%%WWWDIR%%/update_daemon2.php"
 ttrssd_log="/var/log/${name}.log"
-ttrssd_user="%%WWWOWN%%"
 
-start_precmd=${name}_prestart
-start_cmd=${name}_start
-stop_cmd=${name}_stop
+command="/usr/sbin/daemon"
+command_args="-rR 10 -H -u %%WWWOWN%% \
+		-P $pidfile -p $cpidfile \
+		-o $ttrssd_log sh -c \
+		'$initdb_php --update-schema=force-yes; \
+			$phpupd;'"
 
-MYSQL_CHECK_CMD="%%LOCALBASE%%/bin/mysqladmin -u mysqld ping"
-MYSQL_CHECK_MSG="${name}: mysqladmin command failed; mysql not ready?"
-PGSQL_CHECK_CMD="%%LOCALBASE%%/bin/pg_isready"
-PGSQL_CHECK_MSG="${name}: postgresql status failed; postgresql not ready?"
+stop_cmd="${name}_stop"
 
-ttrssd_start() {
-	if ! [ -x $phpcli ]; then
-		echo "$phpcli not found"
-		exit 1
-	fi
-
-	if [ -f $pidfile ]; then
-		echo "$name already running?"
-		exit 2
-	fi
-
-	echo "Starting $long_name"
-	daemon -H -P "$ppidfile" -p "$pidfile" \
-		  -u "$ttrssd_user" -o "$ttrssd_log" \
-		sh -c "${initdb_php} --update-schema=force-yes; $phpupd"
-}
-
+# daemon doesn't process signals if it lacks a child process.
+# See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=277959
 ttrssd_stop() {
-	if ! [ -f $pidfile ]; then
-		echo "$name not running?"
-		exit 1
-	fi
+	local pid_daemon
+	local pid_child
+	local signal="TERM"
 
-	echo "Stopping $long_name"
-	pkill -CHLD -F "$pidfile"
-	pkill -F "$pidfile"
-	pwait "$(cat $ppidfile)"
-}
+	pid_daemon=$(check_pidfile ${pidfile} ${command})
+	pid_child=$(check_pidfile ${cpidfile} ${phpcli})
 
-ttrssd_prestart() {
-	if checkyesno ttrssd_local_db; then
-		# Wait for the local database to be started
+	if [ -n "$pid_daemon" ]; then
+		echo "Stopping ${name}."
 
-		database="$("$phpcli" -f "$dbcheck_php")"
+		if [ -z "${pid_child}" ]; then
+		    signal="INT"
+		fi
 
-		case  "$database" in
-		    "mysql")
-			CHECK_CMD="$MYSQL_CHECK_CMD"
-			CHECK_MSG="$MYSQL_CHECK_MSG"
-			;;
-		    "pgsql")
-			CHECK_CMD="$PGSQL_CHECK_CMD"
-			CHECK_MSG="$PGSQL_CHECK_MSG"
-			;;
-		    *)
-			err 1 "Unknown database configured: $database"
-			;;
-		esac
+		kill -"$signal" "${pid_daemon}"
 
-		for n in $(seq 1 10); do
-			if $CHECK_CMD > /dev/null 2>&1; then
-			    return
-			fi
-			sleep 1
-		done
-		err 1 $CHECK_MSG
+		wait_for_pids "${pid_daemon}" "${pid_child}"
+	else
+	    if [ -n "$pid_child" ]; then
+		echo "${name} not running? (check ${cpidfile})."
+	    else
+		echo "${name} not running? (check ${pidfile})."
+	    fi
 	fi
 }
 
