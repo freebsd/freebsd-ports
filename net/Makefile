@@ -60,6 +60,7 @@
     SUBDIR += bmon
     SUBDIR += boinc-client
     SUBDIR += boinc_curses
+    SUBDIR += boinctui
     SUBDIR += bosh-bootloader
     SUBDIR += bosh-cli
     SUBDIR += bounce
