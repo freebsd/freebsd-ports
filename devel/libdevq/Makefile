@@ -10,6 +10,9 @@ WWW=		https://github.com/freebsd/libdevq
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Upstream repo archived Dec 14, 2023
+EXPIRATION_DATE=2024-10-31
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		autoreconf libtool pathfix tar:xz
