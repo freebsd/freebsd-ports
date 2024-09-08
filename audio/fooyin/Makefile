@@ -1,6 +1,7 @@
 PORTNAME=	fooyin
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	audio multimedia
 
 PATCH_SITES=	https://github.com/fooyin/fooyin/commit/
