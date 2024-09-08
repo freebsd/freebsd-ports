@@ -5253,6 +5253,7 @@
     SUBDIR += py-opentelemetry-api
     SUBDIR += py-opentelemetry-exporter-otlp
     SUBDIR += py-opentelemetry-exporter-otlp-proto-common
+    SUBDIR += py-opentelemetry-exporter-otlp-proto-grpc
     SUBDIR += py-opentelemetry-sdk
     SUBDIR += py-opentelemetry-semantic-conventions
     SUBDIR += py-opentracing
