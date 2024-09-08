@@ -1,6 +1,7 @@
 PORTNAME=	swtpm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	meka@tilda.center
@@ -30,7 +31,11 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 
-GNU_CONFIGURE=	yes
+USERS=			_tss
+GROUPS=			${USERS}
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS+=	--with-tss-user=${USERS} \
+			--with-tss-group=${GROUPS}
 
 INSTALL_TARGET=	install-strip
 
