@@ -1,6 +1,5 @@
-include/gme/blargg_source.h
 include/gme/gme.h
 lib/libgme.so
 lib/libgme.so.0
-lib/libgme.so.0.6.3
+lib/libgme.so.0.6.4
 libdata/pkgconfig/libgme.pc
