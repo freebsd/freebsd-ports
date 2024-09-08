@@ -1,11 +1,12 @@
 PORTNAME=	pstreams
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	devel
 MASTER_SITES=	SF/pstreams/pstreams/Release%20${PORTVERSION:R}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C++ utility for simple IOStream-based IPC
-WWW=		https://pstreams.sourceforge.net/
+WWW=		https://pstreams.sourceforge.net/ \
+		https://github.com/jwakely/pstreams
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
