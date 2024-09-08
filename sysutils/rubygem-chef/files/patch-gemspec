@@ -1,0 +1,11 @@
+--- chef.gemspec.orig	2024-09-07 15:17:22 UTC
++++ chef.gemspec
+@@ -49,7 +49,7 @@ Gem::Specification.new do |s|
+   s.add_runtime_dependency(%q<addressable>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<syslog-logger>.freeze, ["~> 1.6".freeze])
+   s.add_runtime_dependency(%q<uuidtools>.freeze, [">= 2.1.5".freeze, "< 3.0".freeze])
+-  s.add_runtime_dependency(%q<unf_ext>.freeze, ["~> 0.0.8.2".freeze])
++  s.add_runtime_dependency(%q<unf_ext>.freeze, [">= 0.0.8.2".freeze])
+   s.add_runtime_dependency(%q<corefoundation>.freeze, ["~> 0.3.4".freeze])
+   s.add_runtime_dependency(%q<proxifier2>.freeze, ["~> 1.1".freeze])
+   s.add_runtime_dependency(%q<aws-sdk-s3>.freeze, ["~> 1.91".freeze])
