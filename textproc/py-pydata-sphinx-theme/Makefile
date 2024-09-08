@@ -1,5 +1,6 @@
 PORTNAME=	pydata-sphinx-theme
 PORTVERSION=	0.15.4
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		LOCAL/sunpoet:static
@@ -15,6 +16,7 @@ WWW=		https://pydata-sphinx-theme.readthedocs.io/en/stable/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.9.0:devel/py-flit-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}accessible-pygments>=0:textproc/py-accessible-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Babel>=0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=0:www/py-beautifulsoup@${PY_FLAVOR} \
@@ -25,13 +27,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}accessible-pygments>=0:textproc/py-accessibl
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python:3.9+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/pydata_sphinx_theme-${PORTVERSION}
 
 post-patch:
-	@${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${FILESDIR}/setup.py > ${WRKSRC}/setup.py
+	@${FIND} ${WRKSRC} -name .gitignore -delete
 
 post-install:
 	cd ${WRKDIR}/static/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PYTHON_SITELIBDIR}/pydata_sphinx_theme/
