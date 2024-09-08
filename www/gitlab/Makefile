@@ -4,6 +4,7 @@ DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
 .endif
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 # include patch to fix database migration
@@ -176,8 +177,8 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-js_regex>=3.8<4.0:textproc/rubygem-js_regex \
 	rubygem-device_detector>=0:devel/rubygem-device_detector \
 	rubygem-redis-namespace>=1.11.0<1.12:databases/rubygem-redis-namespace \
-	rubygem-redis>=5.2.0<5.3:databases/rubygem-redis \
-	rubygem-redis-clustering>=5.2.0<5.3:databases/rubygem-redis-clustering \
+	rubygem-redis52>=5.2.0<5.3:databases/rubygem-redis52 \
+	rubygem-redis-clustering52>=5.2.0<5.3:databases/rubygem-redis-clustering52 \
 	rubygem-connection_pool>=2.4.1<3.0:net/rubygem-connection_pool \
 	rubygem-redis-actionpack-rails70>=5.4.0<5.5:databases/rubygem-redis-actionpack-rails70 \
 	rubygem-discordrb-webhooks>=3.5<4.0:net-im/rubygem-discordrb-webhooks \
@@ -310,7 +311,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-gitlab-sdk>=0.3.0<0.4:devel/rubygem-gitlab-sdk \
 	rubygem-google-cloud-profiler-v2>=0.3<1:textproc/rubygem-google-cloud-profiler-v2 \
 	rubygem-parallel>=1.22<2:sysutils/rubygem-parallel \
-	rubygem-google-cloud-storage_transfer>=1.2.0<1.3:net/rubygem-google-cloud-storage_transfer
+	rubygem-google-cloud-storage_transfer12>=1.2.0<1.3:net/rubygem-google-cloud-storage_transfer12
 
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 	${MY_DEPENDS}
