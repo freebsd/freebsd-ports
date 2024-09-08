@@ -1,5 +1,5 @@
 PORTNAME=	Future-AsyncAwait
-PORTVERSION=	0.66
+PORTVERSION=	0.68
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -11,12 +11,12 @@ WWW=		https://metacpan.org/dist/Future-AsyncAwait
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Future>=0.50:devel/p5-Future \
 		p5-XS-Parse-Keyword>=0.13:devel/p5-XS-Parse-Keyword \
-		p5-XS-Parse-Sublike>=0.14:devel/p5-XS-Parse-Sublike
+		p5-XS-Parse-Sublike>=0.23:devel/p5-XS-Parse-Sublike
 TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
 USES=		perl5
