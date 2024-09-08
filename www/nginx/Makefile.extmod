@@ -259,7 +259,7 @@ OTEL_LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 OTEL_BUILD_DEPENDS=	${LOCALBASE}/include/opentelemetry/proto/common/v1/common.proto:devel/opentelemetry-proto
 OTEL_CONFIGURE_ENV+=	NGX_OTEL_PROTO_DIR=${PREFIX}/include
 
-PASSENGER_NGINX_VER=	6.0.20
+PASSENGER_NGINX_VER=	6.0.23
 PASSENGER_CATEGORIES=	ruby
 PASSENGER_USES=		ruby
 PASSENGER_BUILD_DEPENDS=${LOCALBASE}/bin/rake:devel/rubygem-rake
