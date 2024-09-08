@@ -1,6 +1,5 @@
 PORTNAME=	python-heatclient
-PORTVERSION=	3.5.0
-PORTREVISION=	2
+PORTVERSION=	4.0.0
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cliff>=2.8.0:devel/py-cliff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=3.13:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.14.2:www/py-requests@${PY_FLAVOR}
 
-USES=		python shebangfix
+USES=		python:3.9+ shebangfix
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
