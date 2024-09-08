@@ -26,9 +26,10 @@ SHEBANG_FILES=	examples/basic.rb examples/cats.rb examples/cursor.rb \
 		examples/replication/base/mc.rb examples/replication/base/op.rb \
 		examples/replication/mgr/b.rb examples/txn.rb examples/zeroc.rb
 
-CONFIGURE_ARGS=	--with-db-include=${BDB_INCLUDE_DIR} \
-		--with-db-lib=${BDB_LIB_DIR}
 ALL_TARGET=	all rdoc
+CONFIGURE_ARGS=	--with-cflags=-Wno-incompatible-function-pointer-types \
+		--with-db-include=${BDB_INCLUDE_DIR} \
+		--with-db-lib=${BDB_LIB_DIR}
 INSTALL_TARGET=	site-install
 WITH_BDB6_PERMITTED=	yes
 
@@ -41,12 +42,6 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
-CONFIGURE_ARGS+=	--with-cflags="-Wno-error=incompatible-function-pointer-types"
-.endif
 
 post-patch:
 	@${RM} ${WRKSRC}/docs/*.orig
