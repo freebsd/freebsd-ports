@@ -14,13 +14,19 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-ExtUtils-MakeMaker-CPANfile>=0:devel/p5-ExtUtils-MakeMaker-CPANfile \
 		p5-File-Slurper>=0:devel/p5-File-Slurper \
 		p5-File-Which>=0:sysutils/p5-File-Which
+LIB_DEPENDS=	libquickjs.so:lang/quickjs
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-FailWarnings>=0:devel/p5-Test-FailWarnings \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Types-Serialiser>=0:devel/p5-Types-Serialiser
 
-USES=		gmake perl5
+USES=		perl5
 USE_PERL5=	configure
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile.PL
+# Clean up bundled libraries
+	@${RM} -r ${WRKSRC}/quickjs/
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/JavaScript/QuickJS/QuickJS.so
