@@ -1,7 +1,11 @@
 include/nghttp3/nghttp3.h
 include/nghttp3/version.h
+lib/cmake/nghttp3/nghttp3Config.cmake
+lib/cmake/nghttp3/nghttp3ConfigVersion.cmake
+lib/cmake/nghttp3/nghttp3Targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/nghttp3/nghttp3Targets.cmake
 lib/libnghttp3.a
 lib/libnghttp3.so
 lib/libnghttp3.so.9
-lib/libnghttp3.so.9.2.2
+lib/libnghttp3.so.9.2.3
 libdata/pkgconfig/libnghttp3.pc
