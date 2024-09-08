@@ -5481,6 +5481,7 @@
     SUBDIR += py-pydocstyle
     SUBDIR += py-pydrive
     SUBDIR += py-pyee
+    SUBDIR += py-pyee11
     SUBDIR += py-pyelftools
     SUBDIR += py-pyface
     SUBDIR += py-pyfakefs
