@@ -1,6 +1,6 @@
 PORTNAME=	wine
 DISTVERSION=	9.0
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/9.0/
@@ -17,8 +17,9 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 
+# Only devel/llvm17 and later come with necessary include files - PR274542
 USES=		bison cpe desktop-file-utils gmake \
-		llvm:15,build,noexport localbase \
+		llvm:min=17,build,noexport localbase \
 		pkgconfig sdl shebangfix tar:xz
 USE_GCC=	yes
 USE_SDL=	sdl2
