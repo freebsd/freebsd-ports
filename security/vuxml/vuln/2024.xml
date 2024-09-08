@@ -1,3 +1,66 @@
+  <vuln vid="80fbe184-2358-11ef-996e-40b034455553">
+    <topic>minio -- unintentional information disclosure</topic>
+    <affects>
+      <package>
+	<name>minio</name>
+	<range><lt>2024.05.27.19.17.46</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Minio security advisory GHSA-95fr-cm4m-q5p9 reports:</p>
+	<blockquote cite="https://github.com/minio/minio/security/advisories/GHSA-95fr-cm4m-q5p9">
+	  <p>when used with anonymous requests by sending a random
+	    object name requests you can figure out if the object
+	  exists or not on the server on a specific bucket and also
+	  gain access to some amount of information.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-36107</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-36107</url>
+    </references>
+    <dates>
+      <discovery>2024-05-28</discovery>
+      <entry>2024-06-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="144836e3-2358-11ef-996e-40b034455553">
+    <topic>minio -- privilege escalation via permissions inheritance</topic>
+    <affects>
+      <package>
+	<name>minio</name>
+	<range><lt>2024.01.31.20.20.33</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Minio security advisory GHSA-xx8w-mq23-29g4 ports:</p>
+	<blockquote cite="https://github.com/minio/minio/security/advisories/GHSA-xx8w-mq23-29g4">
+	<p>
+	  When someone creates an access key, it inherits the
+	  permissions of the parent key. Not only for s3:* actions,
+	  but also admin:* actions. Which means unless somewhere
+	  above in the access-key hierarchy, the admin rights are
+	  denied, access keys will be able to simply override their
+	  own s3 permissions to something more permissive.
+	</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-24747</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-24747</url>
+    </references>
+    <dates>
+      <discovery>2024-01-31</discovery>
+      <entry>2024-06-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7ade3c38-6d1f-11ef-ae11-b42e991fc52e">
     <topic>firefox -- Potential memory corruption and exploitable crash</topic>
     <affects>
