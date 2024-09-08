@@ -1,0 +1,14 @@
+--- Makefile.in.orig	2022-01-22 09:12:33 UTC
++++ Makefile.in
+@@ -404,9 +404,9 @@ top_srcdir = @top_srcdir@
+ # LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-SUBDIRS = lib tests doc examples
++SUBDIRS = lib
+ ACLOCAL_AMFLAGS = -I m4
+-dist_doc_DATA = README.rst
++dist_doc_DATA =
+ EXTRA_DIST = \
+ 	cmakeconfig.h.in \
+ 	CMakeLists.txt \
