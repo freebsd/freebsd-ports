@@ -2,7 +2,7 @@ PORTNAME=	boinctui
 DISTVERSION=	2.7.1
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	alster@vinterdalen.se
 COMMENT=	Fullscreen text-mode manager for BOINC client
@@ -18,7 +18,7 @@ USES=		autoreconf gmake localbase ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boinc-dir=/var/db/boinc
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 OPTIONS_DEFAULT=	GNUTLS
 OPTIONS_SINGLE=		SSL
