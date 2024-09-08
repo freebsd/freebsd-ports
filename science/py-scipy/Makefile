@@ -3,7 +3,7 @@ DISTVERSION=	1.11.1
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	science python
-MASTER_SITES=	https://docs.scipy.org/doc/${PORTNAME}-${DISTVERSION}/:doc \
+MASTER_SITES=	https://docs.scipy.org/doc/scipy-${DISTVERSION}/:doc \
 		PYPI:source \
 		SF:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source \
 		scipy-html-${DISTVERSION}.zip:doc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES+=	ab7d08c6148286059f6498ab5c3070268d13cbd9.patch:-p1 # https://github.com/scipy/scipy/pull/21069
+PATCH_SITES=	https://github.com/scipy/scipy/commit/
+PATCHFILES=	ab7d08c6148286059f6498ab5c3070268d13cbd9.patch:-p1 # https://github.com/scipy/scipy/pull/21069
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Scientific tools for Python
@@ -55,7 +55,7 @@ post-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${UNZIP_CMD} -d ${STAGEDIR}${DOCSDIR} ${DISTDIR}/scipy-html-${DISTVERSION}.zip
-	@${RM} ${STAGEDIR}${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}/.buildinfo
+	@${RM} ${STAGEDIR}${DOCSDIR}/.buildinfo
 
 do-test:
 	@cd ${WRKSRC} && ${TOUCH} .coveragerc && ${PYTHON_CMD} runtests.py
