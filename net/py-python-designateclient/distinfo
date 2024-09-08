@@ -1,3 +1,3 @@
-TIMESTAMP = 1709390690
-SHA256 (python-designateclient-6.0.1.tar.gz) = 771ba22f4f0cae3540a7e58ef8787b3f663362b7ffda02fab1dc99ff1a5fa5b1
-SIZE (python-designateclient-6.0.1.tar.gz) = 71889
+TIMESTAMP = 1725559865
+SHA256 (python-designateclient-6.1.0.tar.gz) = 1adc2a074b30d842cf9787f53310c37949195bf4e34da3984e5635b7b8a4689c
+SIZE (python-designateclient-6.1.0.tar.gz) = 71797
