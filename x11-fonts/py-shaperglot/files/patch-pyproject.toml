@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-09-04 10:09:01 UTC
++++ pyproject.toml
+@@ -43,7 +43,7 @@ repository = "https://github.com/simoncozens/shaperglo
+ repository = "https://github.com/simoncozens/shaperglot"
+ 
+ [build-system]
+-requires = ["setuptools>=74.1.0", "setuptools_scm[toml]>=8.1.0"]
++requires = ["setuptools>=61", "setuptools_scm[toml]>=8.0.4"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools.packages.find]
