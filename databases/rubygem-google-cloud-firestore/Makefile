@@ -5,7 +5,6 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official library for Google Cloud Firestore API
-WWW=		https://rubygems.org/gems/google-cloud-firestore
 WWW=		https://cloud.google.com/ruby/docs/reference/google-cloud-firestore/latest/ \
 		https://googleapis.github.io/google-cloud-ruby/docs/ \
 		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-firestore \
