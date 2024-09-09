@@ -4,6 +4,7 @@
 %%ETCDIR%%/alsoftrc.sample
 %%ETCDIR%%/hrtf/Default HRTF.mhr
 %%ETCDIR%%/presets/3D7.1.ambdec
+%%ETCDIR%%/presets/hex-quad.ambdec
 %%ETCDIR%%/presets/hexagon.ambdec
 %%ETCDIR%%/presets/itu5.1-nocenter.ambdec
 %%ETCDIR%%/presets/itu5.1.ambdec
@@ -16,8 +17,9 @@ include/AL/alext.h
 include/AL/efx-creative.h
 include/AL/efx-presets.h
 include/AL/efx.h
-lib/cmake/OpenAL/OpenALConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/OpenAL/OpenALConfig.cmake
+lib/cmake/OpenAL/OpenALTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/OpenAL/OpenALTargets.cmake
 lib/libopenal.so
 lib/libopenal.so.1
 lib/libopenal.so.%%SOVERSION%%
