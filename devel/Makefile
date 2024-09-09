@@ -348,6 +348,7 @@
     SUBDIR += c4core
     SUBDIR += calibrator
     SUBDIR += caliper
+    SUBDIR += camp
     SUBDIR += capnproto
     SUBDIR += capnproto1
     SUBDIR += capslock
