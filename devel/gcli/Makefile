@@ -1,5 +1,5 @@
 PORTNAME=	gcli
-DISTVERSION=	2.3.0
+DISTVERSION=	2.5.0
 CATEGORIES=	devel net
 MASTER_SITES=	https://herrhotzenplotz.de/gcli/releases/gcli-${DISTVERSION}/
 
@@ -13,16 +13,30 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libcurl.so:ftp/curl
 TEST_DEPENDS=	kyua:devel/kyua
 
-USES=		libtool pathfix pkgconfig tar:xz
+USES=		libtool pathfix pkgconfig ssl tar:xz
 
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+HAS_CONFIGURE=	yes
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS=	--debug
+.else
+CONFIGURE_ARGS=	--release
+.endif
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=	TEST
+OPTIONS_DEFINE=	LOWDOWN TEST
+OPTIONS_DEFAULT=	LIBEDIT LOWDOWN
+OPTIONS_RADIO=	LINEEDIT
+OPTIONS_RADIO_LINEEDIT=	LIBEDIT READLINE
+LIBEDIT_USES=		libedit
+LIBEDIT_CONFIGURE_ENABLE=	libedit
+LOWDOWN_LIB_DEPENDS=	liblowdown.so:textproc/lowdown
+LOWDOWN_CONFIGURE_ENABLE=	liblowdown
+LOWDOWN_DESC=		pretty-print Markdown using textproc/lowdown
+READLINE_USES=		readline
+READLINE_CONFIGURE_ENABLE=	libreadline
 TEST_LIB_DEPENDS=	libatf-c.so:devel/atf
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgcli.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gcli
 
 .include <bsd.port.mk>
