@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+bhyvemgr was installed
+
+1) bhyvemgr config file is located at ~/.config/bhyvemgr
+
+2) It can be compiled with supports for gtk2, qt5 or qt6 graphic interfaces
+
+3) Some configurations are necessary for a better use of bhyvemgr. Take a look
+   at the following url:
+
+   https://github.com/alonsobsd/bhyvemgr/blob/main/README.md
+
+4) Enjoy it ;)
+EOM
+}
+]
