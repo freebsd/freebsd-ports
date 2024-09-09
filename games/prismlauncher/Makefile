@@ -32,4 +32,9 @@ USE_QT=		5compat base
 CMAKE_ARGS=	-DJAVA_HOME=${JAVA_HOME} -DJava_JAVAC_EXECUTABLE=${JAVAC} \
 		-DLauncher_BUILD_PLATFORM=FreeBSD
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/launcher/minecraft/LaunchProfile.cpp \
+		${WRKSRC}/launcher/minecraft/MinecraftInstance.cpp
+
 .include <bsd.port.mk>

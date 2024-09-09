@@ -9,9 +9,9 @@
 +    Version instance_ver{ getPackProfile()->getComponentVersion("net.minecraft") };
 +    QDir natives_dir;
 +    if (instance_ver < Version("1.13.0"))
-+        natives_dir = QDir("/usr/local/lib/lwjgl/");
++        natives_dir = QDir("%%LOCALBASE%%/lib/lwjgl/");
 +    else
-+        natives_dir = QDir("/usr/local/lib/lwjgl3/");
++        natives_dir = QDir("%%LOCALBASE%%/lib/lwjgl3/");
 +#else
      QDir natives_dir(FS::PathCombine(instanceRoot(), "natives/"));
 +#endif

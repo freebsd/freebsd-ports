@@ -9,7 +9,7 @@
 +        // HACKHACK: use system lwjgl3 until mojang will fix it
 +        QString artifact = lib->artifactId();
 +        if (artifact.startsWith("lwjgl") && lib->version().startsWith("3.")) {
-+            jars += "/usr/local/share/java/classes/lwjgl3/" + artifact + ".jar";
++            jars += "%%LOCALBASE%%/share/java/classes/lwjgl3/" + artifact + ".jar";
 +            continue;
 +        }
 +#endif
