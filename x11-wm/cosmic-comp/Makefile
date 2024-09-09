@@ -1,5 +1,5 @@
 PORTNAME=	cosmic-comp
-PORTVERSION=	s20240902
+PORTVERSION=	s20240909
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,11 +22,12 @@ USE_GITHUB=	yes
 USE_GL=		gbm
 USE_XORG=	pixman
 GH_ACCOUNT=	pop-os
-GH_TAGNAME=	epoch-1.0.0-alpha.1-37-g07f8985
+GH_TAGNAME=	epoch-1.0.0-alpha.1-56-g0d048b1
 GH_TUPLE=	pop-os:iced:0.4.2-2011-ge31e29e9:iced/../${WRKSRC_crate_iced:T}/iced
 CARGO_FEATURES=	--no-default-features # disable systemd
 PLIST_FILES=	bin/${PORTNAME} \
 		share/cosmic/com.system76.CosmicSettings.Shortcuts/v1/defaults/keybindings.ron \
+		share/cosmic/com.system76.CosmicSettings.WindowRules/v1/tiling_exception_defaults/tiling-exceptions.ron \
 		share/wayland-sessions/${PORTNAME:S/-comp//}.desktop \
 
 .if ${MACHINE_ARCH} == i386 || ${MACHINE_ARCH:Marmv?}
@@ -49,10 +50,10 @@ post-patch:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 # Install extras similar to ${WRKSRC}/Makefile
-.for f in data/*.desktop data/*.ron
-	${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_FILES:M*.${f:E}:H}
+.for f in ${PLIST_FILES:Nbin/*:T:S,^,data/,}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_FILES:M*${f:T}:H}
 	${INSTALL_DATA} ${WRKSRC}/${f} \
-		${STAGEDIR}${PREFIX}/${PLIST_FILES:M*.${f:E}}
+		${STAGEDIR}${PREFIX}/${PLIST_FILES:M*${f:T}}
 .endfor
 
 .include <bsd.port.mk>
