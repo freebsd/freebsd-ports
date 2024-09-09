@@ -1,6 +1,6 @@
 PORTNAME=	mesa
-DISTVERSION=	24.2-branchpoint-2023
-DISTVERSIONSUFFIX=	-g2d10233f2f1
+DISTVERSION=	24.2-branchpoint-2295
+DISTVERSIONSUFFIX=	-gfa51595c7f1
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -34,8 +34,7 @@ USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 BINARY_ALIAS=	python=${PYTHON_CMD}
 SHEBANG_FILES=	src/vulkan/overlay-layer/${PORTNAME}-overlay-control.py
-MESON_ARGS=	-Dgallium-omx=disabled \
-		-Dgallium-xa=disabled \
+MESON_ARGS=	-Dgallium-xa=disabled \
 		-Dandroid-libbacktrace=disabled \
 		-Dlibunwind=disabled \
 		-Dlmsensors=disabled \
