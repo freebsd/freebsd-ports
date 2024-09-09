@@ -1,6 +1,7 @@
 PORTNAME=	parthenon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	24.08
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,18 +12,16 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	bash:shells/bash
+LIB_DEPENDS=	libkokkoscore.so:devel/kokkos
 
-USES=		cmake:testing compiler:c++17-lang mpi:mpich python:test shebangfix
+USES=		cmake:testing compiler:c++17-lang mpi:mpich python:test
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	parthenon-hpc-lab
-GH_TUPLE=	catchorg:Catch2:216713a:catch2/external/Catch2 \
-		kokkos:kokkos:62d2b6c:kokkos/external/Kokkos
-
-SHEBANG_FILES=	external/Kokkos/bin/kokkos_launch_compiler \
-		external/Kokkos/bin/nvcc_wrapper
+GH_TUPLE=	catchorg:Catch2:216713a:catch2/external/Catch2
 
 CMAKE_ON=	BUILD_SHARED_LIBS \
+		PARTHENON_IMPORT_KOKKOS \
 		PARTHENON_DISABLE_EXAMPLES
 CMAKE_OFF=	PARTHENON_ENABLE_TESTING
 CMAKE_TESTING_ON=	PARTHENON_ENABLE_TESTING \
