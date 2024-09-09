@@ -598,7 +598,6 @@ libdata/pkgconfig/freeswitch.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/http_cache.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/ivr.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/java.conf.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/kazoo.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/lcr.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/local_stream.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/logfile.conf.xml
