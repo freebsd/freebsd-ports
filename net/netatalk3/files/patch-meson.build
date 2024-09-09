@@ -21,7 +21,7 @@
      '/usr',
  ]
  bdb_subdirs = [
-+    'db18',
++    '%%DB_NAME%%',
      'db4.6',
      'db4.7',
      'db4.8',
