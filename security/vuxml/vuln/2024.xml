@@ -1,3 +1,31 @@
+  <vuln vid="8fbe81f7-6eb5-11ef-b7bd-00505632d232">
+    <topic>netatalk3 -- multiple WolfSSL vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>netatalk3</name>
+	<range><lt>3.2.8,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Netatalk release reports:</p>
+	<blockquote cite="https://github.com/Netatalk/netatalk/releases/tag/netatalk-3-2-8">
+	  <p>WolfSSL 5.7.0 (included in netatalk) includes multiple security vulnerabilities.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-1544</cvename>
+      <cvename>CVE-2024-5288</cvename>
+      <cvename>CVE-2024-5991</cvename>
+      <cvename>CVE-2024-5814</cvename>
+    </references>
+    <dates>
+      <discovery>2024-09-08</discovery>
+      <entry>2024-09-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="80fbe184-2358-11ef-996e-40b034455553">
     <topic>minio -- unintentional information disclosure</topic>
     <affects>
