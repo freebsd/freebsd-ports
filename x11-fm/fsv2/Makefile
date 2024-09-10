@@ -11,6 +11,8 @@ WWW=		http://fedorchenko.net/fsv2.php
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		does not configure: No fonts installed on the system
+
 LIB_DEPENDS=	libgtkgl-2.0.so:x11-toolkits/gtkglarea2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
