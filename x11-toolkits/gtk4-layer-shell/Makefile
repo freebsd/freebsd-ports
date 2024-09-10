@@ -20,6 +20,7 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	wmww
 MESON_ARGS=	-Dsmoke-tests=false # Need luajit flavor of devel/lua-lgi
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
