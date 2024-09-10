@@ -1,4 +1,4 @@
---- src/vs/base/common/platform.ts.orig	2024-07-31 20:26:36 UTC
+--- src/vs/base/common/platform.ts.orig	2024-09-04 12:53:09 UTC
 +++ src/vs/base/common/platform.ts
 @@ -74,7 +74,7 @@ if (typeof nodeProcess === 'object') {
  if (typeof nodeProcess === 'object') {
@@ -17,4 +17,4 @@
 +	_isLinux = (_userAgent.indexOf('Linux') >= 0 || _userAgent.indexOf('FreeBSD') >= 0);
  	_isMobile = _userAgent?.indexOf('Mobi') >= 0;
  	_isWeb = true;
- 	// VSCODE_GLOBALS: NLS
+ 	_language = nls.getNLSLanguage() || LANGUAGE_DEFAULT;
