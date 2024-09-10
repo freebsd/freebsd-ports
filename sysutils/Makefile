@@ -480,6 +480,7 @@
     SUBDIR += fusefs-sqlfs
     SUBDIR += fusefs-squashfuse
     SUBDIR += fusefs-sshfs
+    SUBDIR += fusefs-ufs
     SUBDIR += fusefs-unionfs
     SUBDIR += fusefs-unreliablefs
     SUBDIR += fusefs-webdavfs
