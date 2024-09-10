@@ -1,11 +1,15 @@
 bin/%%GAME%%
+%%DATADIR%%/dat/database/colourname.txt
+%%DATADIR%%/dat/database/decorlines.txt
 %%DATADIR%%/dat/database/el/monflee.txt
 %%DATADIR%%/dat/database/el/rand_all.txt
 %%DATADIR%%/dat/database/FAQ.txt
+%%DATADIR%%/dat/database/gizmo.txt
 %%DATADIR%%/dat/database/godname.txt
 %%DATADIR%%/dat/database/godspeak.txt
 %%DATADIR%%/dat/database/help.txt
 %%DATADIR%%/dat/database/insult.txt
+%%DATADIR%%/dat/database/miscast.txt
 %%DATADIR%%/dat/database/miscname.txt
 %%DATADIR%%/dat/database/monflee.txt
 %%DATADIR%%/dat/database/monname.txt
@@ -30,6 +34,7 @@ bin/%%GAME%%
 %%DATADIR%%/dat/database/zh/monspell.txt
 %%DATADIR%%/dat/database/zh/montitle.txt
 %%DATADIR%%/dat/database/zh/shout.txt
+%%DATADIR%%/dat/database/zh/wpnnoise.txt
 %%DATADIR%%/dat/defaults/autopickup_exceptions.txt
 %%DATADIR%%/dat/defaults/glyph_colours.txt
 %%DATADIR%%/dat/defaults/menu_colours.txt
@@ -117,6 +122,7 @@ bin/%%GAME%%
 %%DATADIR%%/dat/des/portals/arena.des
 %%DATADIR%%/dat/des/portals/bailey.des
 %%DATADIR%%/dat/des/portals/bazaar.des
+%%DATADIR%%/dat/des/portals/crucible.des
 %%DATADIR%%/dat/des/portals/desolation.des
 %%DATADIR%%/dat/des/portals/gauntlet.des
 %%DATADIR%%/dat/des/portals/icecave.des
