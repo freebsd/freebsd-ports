@@ -1,12 +1,12 @@
 PORTNAME=	PETSc
-DISTVERSION=	3.21.4
+DISTVERSION=	3.21.5
 CATEGORIES=	science devel
-MASTER_SITES=	http://web.cels.anl.gov/projects/petsc/download/release-snapshots/ # was: https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
+MASTER_SITES=	https://web.cels.anl.gov/projects/petsc/download/release-snapshots/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Suite of data structures and routines from Argonne National Laboratory
-WWW=		https://www.mcs.anl.gov/petsc
+WWW=		https://petsc.org/release/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,7 +15,14 @@ LIB_DEPENDS=	libblis.so:math/blis \
 		libmpich.so:net/mpich
 
 USES=		blaslapack cmake:indirect fortran gmake python shebangfix xorg
+USE_LDCONFIG=	yes
+USE_XORG=	x11
+
+SHEBANG_FILES=	configure lib/petsc/bin/*.py lib/petsc/bin/saws/SAWs.py lib/petsc/bin/saws/*.bash config/*.py	\
+		lib/petsc/bin/petscnagfor share/petsc/chkerrconvert.py
+
 GNU_CONFIGURE=	yes
+CONFIGURE_LOG=	configure.log
 CONFIGURE_ARGS=	--with-shared-libraries=1 \
 		--with-mpi-dir=${LOCALBASE} \
 		--with-python=1 --with-python-pkg-config=${LOCALBASE}/libdata/pkgconfig \
@@ -25,27 +32,25 @@ CONFIGURE_ARGS=	--with-shared-libraries=1 \
 		MAKEFLAGS="${MAKEFLAGS}" LDFLAGS="${LDFLAGS}" LIBS=""
 CONFIGURE_ARGS_amd64=	CFLAGS="${CFLAGS} -msse2" CXXFLAGS="${CXXFLAGS} -msse2"
 CONFIGURE_ARGS_i386=	CFLAGS="${CFLAGS} -msse2" CXXFLAGS="${CXXFLAGS} -msse2"
-CONFIGURE_ARGS=	--with-64-bit-indices # as opposed to 32-bit indices that are default
-CONFIGURE_LOG=	configure.log
-USE_XORG=	x11
+CONFIGURE_ARGS+=	--with-64-bit-indices # as opposed to 32-bit indices that are default
+
 MAKEFILE=	makefile
-SHEBANG_FILES=	configure lib/petsc/bin/*.py lib/petsc/bin/saws/SAWs.py lib/petsc/bin/saws/*.bash config/*.py	\
-		lib/petsc/bin/petscnagfor share/petsc/chkerrconvert.py
-USE_LDCONFIG=	yes
 TEST_TARGET=	test # 152 of 11396 tests (1.3%) fail due to missing files like /usr/local/share/petsc/datafiles/meshes/square_periodic.msh (tests expect the packe to be installed)
-BINARY_ALIAS=	python=${PYTHON_CMD}
 
 LDFLAGS+=	${LOCALBASE}/lib/libmpi.so
 
 DATADIR=	${PREFIX}/share/${PORTNAME:tl}
+BINARY_ALIAS=	python=${PYTHON_CMD}
+
 PLIST_SUB=	SHLIB=${DISTVERSION} SHL=${DISTVERSION:C/\.[0-9]$//}
 
 OPTIONS_DEFINE=		METIS
 OPTIONS_DEFAULT=	METIS
 
 METIS_DESC=		Enable metis support for graph partitioning algorithms
-METIS_CONFIGURE_ON=	--with-metis=1 # --with-parmetis=1 to use include/parmetis.h
+
 METIS_LIB_DEPENDS=	libmetis.so:math/metis
+METIS_CONFIGURE_ON=	--with-metis=1 # --with-parmetis=1 to use include/parmetis.h
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpetsc.so.${DISTVERSION}
