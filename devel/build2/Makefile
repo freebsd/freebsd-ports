@@ -1,5 +1,5 @@
 PORTNAME=	build2
-DISTVERSION=	0.16.0
+DISTVERSION=	0.17.0
 CATEGORIES=	devel
 MASTER_SITES=	https://download.build2.org/${DISTVERSION}/
 DISTNAME=	build2-toolchain-${DISTVERSION}
@@ -58,6 +58,5 @@ do-install:
 		-V -j ${MAKE_JOBS_NUMBER} -J ${MAKE_JOBS_NUMBER}
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./build2/build2/b-boot install: '!config.install.scope=project' libbuild2-*/ \
 		-V -j ${MAKE_JOBS_NUMBER} -J ${MAKE_JOBS_NUMBER}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpkg-config-0.1.so
 
 .include <bsd.port.mk>
