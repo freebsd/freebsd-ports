@@ -1,6 +1,6 @@
---- emacsql-sqlite.el.orig	2022-02-18 15:43:25 UTC
+--- emacsql-sqlite.el.orig	2024-09-06 13:42:34 UTC
 +++ emacsql-sqlite.el
-@@ -33,16 +33,7 @@
+@@ -35,16 +35,7 @@
      "sqlite/emacsql-sqlite")
    "Relative path to emacsql executable.")
  
@@ -17,16 +17,8 @@
 +(defvar emacsql-sqlite-executable "%%PREFIX%%/bin/emacsql-sqlite"
    "Path to the EmacSQL backend (this is not the sqlite3 shell).")
  
- (defvar emacsql-sqlite-reserved
-@@ -100,6 +91,7 @@ used.")
-     (emacsql-wait connection)
-     (emacsql connection [:pragma (= busy-timeout $s1)]
-              (/ (* emacsql-global-timeout 1000) 2))
-+    (emacsql connection [:pragma (= foreign_keys 1)])
-     (emacsql-register connection)))
- 
- (cl-defun emacsql-sqlite (file &key debug)
-@@ -163,12 +155,12 @@ If called with non-nil ASYNC the return value is meani
+ (defvar emacsql-sqlite-c-compilers '("cc" "gcc" "clang")
+@@ -131,12 +122,12 @@ If called with non-nil ERROR, signal an error on failu
                        if path return it))
           (src (expand-file-name "sqlite" emacsql-sqlite-data-root))
           (files (mapcar (lambda (f) (expand-file-name f src))
