@@ -9,6 +9,11 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Minimal X11 window manager with BeOS-like tabbed titles
 WWW=		http://phrat.de/
 
+LICENSE=	AEWM
+LICENSE_NAME=	AEWM License
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 USES=		xorg
 USE_XORG=	x11 xext xinerama
 MAKE_ARGS=	CC="${CC}" XROOT="${LOCALBASE}"
@@ -22,6 +27,10 @@ OPTIONS_DEFINE=	DOCS MOTIF
 MOTIF_DESC=	Use Motif hints to find if window should be borderless
 
 MOTIF_BUILD_DEPENDS=	${LOCALBASE}/include/Xm/MwmUtil.h:x11-toolkits/open-motif
+
+post-extract:
+	@${SED} -n '/^Copyright (c)/,$$p' \
+		${WRKSRC}/README.evilwm > ${LICENSE_FILE}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's, -Wall  -Os,-fcommon,' ${WRKSRC}/Makefile
