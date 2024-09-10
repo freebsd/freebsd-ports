@@ -3,7 +3,7 @@ PORTVERSION=	1.1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/avf/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	mp39590@gmail.com
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Virtual File System library
 WWW=		https://avf.sourceforge.net/
 
