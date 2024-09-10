@@ -551,7 +551,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		tokio-uds-0.2.7 \
 		tokio-util-0.7.11 \
 		toml-0.5.11 \
-		toml-0.7.8 \
 		toml-0.8.15 \
 		toml_datetime-0.6.6 \
 		toml_edit-0.19.15 \
@@ -630,7 +629,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		wasm-encoder-0.32.0 \
 		wasm-smith-0.4.5 \
 		wasm-streams-0.4.0 \
-		wasmer-config-0.2.0 \
+		wasmer-config-0.8.0 \
 		wasmer-inline-c-0.1.2 \
 		wasmer-inline-c-macro-0.1.6 \
 		wasmparser-0.95.0 \
@@ -645,7 +644,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		wcgi-host-0.1.2 \
 		wcgi-host-0.2.0 \
 		web-sys-0.3.69 \
-		webc-6.0.0-rc1 \
+		webc-6.0.0 \
 		webpki-roots-0.26.3 \
 		weezl-0.1.8 \
 		whoami-1.5.1 \
