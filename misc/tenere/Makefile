@@ -1,6 +1,7 @@
 PORTNAME=	tenere
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.2
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org

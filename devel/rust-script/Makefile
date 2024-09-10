@@ -1,6 +1,6 @@
 PORTNAME=	rust-script
 DISTVERSION=	0.34.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 
 MAINTAINER=	pat@patmaddox.com
