@@ -145,7 +145,7 @@ RUBY_DEFAULT?=		3.2
 # Possible values: rust, rust-nightly
 RUST_DEFAULT?=		rust
 # Possible values: 4.16, 4.19
-SAMBA_DEFAULT?=		4.16
+SAMBA_DEFAULT?=		4.19
 # When updating this, please also update the same list in ssl.mk and the checks
 # for USES=ssl in qa.sh!
 # Possible values: base, openssl, openssl111, openssl31, openssl32, openssl33, libressl, libressl-devel
