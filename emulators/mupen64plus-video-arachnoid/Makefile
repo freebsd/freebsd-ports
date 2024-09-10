@@ -5,7 +5,7 @@ COMMENT=	The arachnoid video plugin for Mupen64plus
 
 LIB_DEPENDS=	libmupen64plus.so.2:emulators/mupen64plus-core
 
-GH_TAGNAME=	8187d1135ced0102f99d8305b52e0e75b01ef917
+GH_TAGNAME=	5e9ea510648b6e0f233796ae4ecaf99dd88175c0
 
 USES+=		gl
 USE_GL=		gl glu
@@ -19,6 +19,6 @@ CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/${PORTNAME}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 DISTINFO_FILE=		${.CURDIR}/distinfo
-RELEASE_DATE=	20230611
+RELEASE_DATE=	20240714
 
 .include "${MASTERDIR}/Makefile"

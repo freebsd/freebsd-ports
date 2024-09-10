@@ -8,7 +8,7 @@ LIB_DEPENDS=	libmupen64plus.so.2:emulators/mupen64plus-core
 USE_GL=		#
 USE_SDL=	#
 
-GH_TAGNAME=	0a4e30f56033396e3ba47ec0fdd7acea3522362a
+GH_TAGNAME=	f6ff3719cb68d3e1c1497fc87a661921671db719
 
 MASTERDIR=	${.CURDIR}/../mupen64plus-core
 
@@ -21,6 +21,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 DISTINFO_FILE=		${.CURDIR}/distinfo
 
-RELEASE_DATE=	20230611
+RELEASE_DATE=	20240714
 
 .include "${MASTERDIR}/Makefile"
