@@ -17,6 +17,10 @@ LICENSE_NAME=	cos
 LICENSE_TEXT=	Special conditions apply for commercial use, see licence
 LICENSE_PERMS=	auto-accept
 
+DEPRECATED=	Upstream seems gone since 2024-08-22
+EXPIRATION_DATE=	2025-02-28
+BROKEN=		unfetchable, upstream seems gone
+
 NO_WRKSUBDIR=	yes
 USES=		zip
 USE_JAVA=	yes
