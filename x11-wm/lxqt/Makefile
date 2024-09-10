@@ -1,5 +1,6 @@
 PORTNAME=	lxqt
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	lxqt@FreeBSD.org
@@ -29,7 +30,8 @@ RUN_DEPENDS=	startlxqt:x11-wm/lxqt-session \
 	qlipper:deskutils/qlipper \
 	openbox:x11-wm/openbox
 
-USES=	metaport
+USES=	qt:6 metaport
+USE_QT=	translations
 
 OPTIONS_DEFINE=		EDITOR SSH SUDO
 OPTIONS_DEFAULT=	EDITOR SSH SUDO
