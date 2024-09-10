@@ -45,7 +45,6 @@ pre-build:
 		${WRKSRC}/man/${PORTNAME}.1
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
 

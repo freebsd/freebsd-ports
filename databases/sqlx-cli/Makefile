@@ -467,9 +467,4 @@ OPENSSLLIB=	/usr/lib
 PLIST_FILES=	bin/cargo-sqlx \
 		bin/${PORTNAME}
 
-post-install:
-	@${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/bin/cargo-sqlx \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

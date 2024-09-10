@@ -23,7 +23,4 @@ do-install:
 		--prefix "${PREFIX}" \
 		${CARGO_INSTALL_ARGS}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
-
 .include "${MASTERDIR}/Makefile"

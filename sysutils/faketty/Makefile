@@ -53,7 +53,4 @@ CARGO_CRATES=	anstream-0.6.15 \
 
 PLIST_FILES=	bin/${PORTNAME}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

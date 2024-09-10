@@ -147,7 +147,4 @@ CARGO_CRATES=	adler-0.2.3 \
 
 PLIST_FILES=	bin/languageclient
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/languageclient
-
 .include <bsd.port.mk>

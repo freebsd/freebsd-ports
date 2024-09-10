@@ -186,9 +186,6 @@ COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
 				share/fish/vendor_completions.d/${PORTNAME}.fish \
 				share/zsh/site-functions/_${PORTNAME}
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/handlr
-
 post-install-COMPLETIONS-on:
 	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/share/bash-completion/completions/${PORTNAME}

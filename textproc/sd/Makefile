@@ -25,7 +25,6 @@ PORTDOCS=	README.md
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sd
 	${INSTALL_MAN} ${WRKSRC}/gen/sd.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d

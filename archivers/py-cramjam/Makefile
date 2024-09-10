@@ -23,7 +23,4 @@ CARGO_CARGOLOCK=${WRKSRC}/cramjam-python/Cargo.lock
 CARGO_CARGOTOML=${WRKSRC}/cramjam-python/Cargo.toml
 CARGO_INSTALL=	no
 
-post-install:
-	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
-
 .include <bsd.port.mk>

@@ -731,7 +731,4 @@ OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/surreal
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/surreal
-
 .include <bsd.port.mk>

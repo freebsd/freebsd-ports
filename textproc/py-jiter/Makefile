@@ -23,7 +23,4 @@ CARGO_INSTALL=	no
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-post-install:
-	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -type f -name '*.so' -exec ${STRIP_CMD} {} ';'
-
 .include <bsd.port.mk>

@@ -18,7 +18,4 @@ GH_ACCOUNT=	asciinema
 
 PLIST_FILES=	bin/agg
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/agg
-
 .include <bsd.port.mk>

@@ -150,9 +150,4 @@ PLIST_FILES=	bin/find \
 		bin/testing-commandline \
 		bin/xargs
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/find
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/testing-commandline
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xargs
-
 .include <bsd.port.mk>

@@ -47,7 +47,4 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin/${BINPREFIX}coreutils
 	${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/symlink-install-helper.sh
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${BINPREFIX}coreutils
-
 .include <bsd.port.mk>

@@ -40,9 +40,6 @@ do-install:
 	${MV} ${WRKSRC}/target/release/gleam \
 		${STAGEDIR}${PREFIX}/bin/
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gleam
-
 post-install-DOCS-on:
 	(cd ${WRKSRC} && \
 		${COPYTREE_SHARE} README.md ${STAGEDIR}${DOCSDIR})

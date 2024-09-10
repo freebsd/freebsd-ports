@@ -421,7 +421,4 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/${f}
 .endfor
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sccache
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sccache-dist
 .include <bsd.port.mk>

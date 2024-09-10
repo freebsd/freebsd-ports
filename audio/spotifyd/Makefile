@@ -49,7 +49,6 @@ post-patch:
 	@${REINPLACE_CMD} 's,/etc/,${PREFIX}/etc/,g' ${WRKSRC}/src/config.rs
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/spotifyd
 	${INSTALL_DATA} ${FILESDIR}/spotifyd.conf ${STAGEDIR}${PREFIX}/etc/spotifyd.conf.sample
 
 post-install-DOCS-on:

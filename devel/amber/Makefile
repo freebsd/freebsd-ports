@@ -126,9 +126,4 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 PLIST_FILES=	bin/ambr \
 		bin/ambs
 
-post-install:
-	@${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/bin/ambr \
-		${STAGEDIR}${PREFIX}/bin/ambs
-
 .include <bsd.port.mk>

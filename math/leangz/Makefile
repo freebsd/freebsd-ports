@@ -59,7 +59,4 @@ BIN_FILES=	bin/${PORTNAME} \
 		bin/leantar
 PLIST_FILES=	${BIN_FILES}
 
-post-install:
-	@cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} ${BIN_FILES}
-
 .include <bsd.port.mk>

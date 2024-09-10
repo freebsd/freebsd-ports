@@ -60,7 +60,4 @@ CARGO_CRATES=	atty-0.2.14 \
 
 PLIST_FILES=	bin/jt
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/jt
-
 .include <bsd.port.mk>

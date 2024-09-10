@@ -347,7 +347,4 @@ OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/twt
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/twt
-
 .include <bsd.port.mk>

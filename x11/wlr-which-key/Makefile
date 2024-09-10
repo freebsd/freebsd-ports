@@ -19,7 +19,4 @@ USE_GNOME=	cairo pango
 GH_ACCOUNT=	MaxVerevkin
 PLIST_FILES=	bin/${PORTNAME}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

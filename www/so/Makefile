@@ -22,7 +22,6 @@ PORTDOCS=	*.md
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/so
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} themes ${STAGEDIR}${DATADIR})
 

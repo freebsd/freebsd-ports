@@ -195,9 +195,6 @@ COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
 				share/fish/vendor_completions.d/${PORTNAME}.fish \
 				share/zsh/site-functions/_${PORTNAME}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 post-install-COMPLETIONS-on:
 .for _shell in bash fish zsh
 	${STAGEDIR}${PREFIX}/bin/${PORTNAME} --completions ${_shell} \

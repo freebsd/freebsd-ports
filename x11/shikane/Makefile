@@ -36,7 +36,4 @@ do-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/build/man/*.5.gz \
 		${STAGEDIR}${PREFIX}/share/man/man5
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}*
-
 .include <bsd.port.mk>

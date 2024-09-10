@@ -30,7 +30,4 @@ CARGO_INSTALL=	no
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}libcst03
 
-post-install:
-	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
-
 .include <bsd.port.mk>

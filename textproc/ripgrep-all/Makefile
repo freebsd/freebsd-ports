@@ -179,8 +179,4 @@ CARGO_CRATES=	addr2line-0.12.0 \
 PLIST_FILES=	bin/rga \
 		bin/rga-preproc
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rga
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rga-preproc
-
 .include <bsd.port.mk>

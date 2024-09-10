@@ -204,7 +204,4 @@ post-patch:
 		${WRKSRC}/cargo-crates/device_query-1.1.2/src/device_state/linux \
 		${WRKSRC}/cargo-crates/device_query-1.1.2/src/device_state/freebsd
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

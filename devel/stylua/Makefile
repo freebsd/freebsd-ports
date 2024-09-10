@@ -35,9 +35,6 @@ LUA${_ver:C/\.//}_DESC=	Build with Lua ${_ver} support
 LUA${_ver:C/\.//}_VARS=	CARGO_FEATURES+=lua${_ver:C/\.//}
 .endfor
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/${PORTNAME}
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} \

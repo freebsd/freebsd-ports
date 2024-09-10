@@ -61,10 +61,6 @@ LTO_UNSAFE=	yes
 CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
 .endif
 
-.if !defined(WITH_DEBUG)
-CARGO_INSTALL_ARGS+=	--config profile.release.strip=true
-.endif
-
 #post-patch:
 #	${REINPLACE_CMD} 's/^rust-version = "1.60"/rust-version = "1.59"/' \
 #		${WRKSRC}/Cargo.toml

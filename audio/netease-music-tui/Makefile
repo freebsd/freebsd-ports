@@ -312,7 +312,4 @@ OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/ncmt
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ncmt
-
 .include <bsd.port.mk>

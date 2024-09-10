@@ -34,9 +34,6 @@ post-build-MANPAGES-on:
 		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/trip \
 		-o ${WRKSRC}/trip.1
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/trip
-
 post-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/trip.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1

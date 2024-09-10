@@ -302,7 +302,4 @@ CARGO_TARGET_DIR=	${WRKSRC}/target
 
 MAKE_ENV=	${CARGO_ENV}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

@@ -70,7 +70,6 @@ do-install:
 .endfor
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} assets ${STAGEDIR}${DATADIR})
 	${RLN} ${STAGEDIR}${DATADIR}/assets/voxygen/*.desktop \
 		${STAGEDIR}${PREFIX}/share/applications

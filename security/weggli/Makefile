@@ -136,7 +136,4 @@ PLIST_FILES=	bin/${PORTNAME}
 USES+=		llvm:16
 .endif
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

@@ -19,7 +19,4 @@ GH_ACCOUNT=	sharkdp
 
 PLIST_FILES=	bin/hexyl
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/hexyl
-
 .include <bsd.port.mk>

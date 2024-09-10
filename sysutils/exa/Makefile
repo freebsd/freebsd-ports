@@ -74,6 +74,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/completions/completions.fish ${STAGEDIR}${PREFIX}/share/fish/completions/exa.fish
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/completions/completions.zsh ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_exa
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/exa
 
 .include <bsd.port.mk>

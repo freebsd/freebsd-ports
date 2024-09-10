@@ -23,8 +23,6 @@ PLIST_FILES=	bin/code-minimap \
 		share/zsh/site-functions/code-minimap
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/code-minimap
-
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d/ \
 		 ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/ \
 		 ${STAGEDIR}${PREFIX}/share/zsh/site-functions/

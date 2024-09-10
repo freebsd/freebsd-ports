@@ -18,7 +18,6 @@ GH_ACCOUNT=	bootandy
 OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dust
 	${INSTALL_MAN}  ${WRKSRC}/man-page/dust.1       ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/completions/dust.bash ${STAGEDIR}${PREFIX}/share/bash-completion/completions/dust
 	${INSTALL_DATA} ${WRKSRC}/completions/dust.fish ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d

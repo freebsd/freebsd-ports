@@ -20,9 +20,6 @@ PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dua
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} \

@@ -40,7 +40,4 @@ post-patch:
 		-e "/cp/s,'src',& / '${CARGO_BUILD_TARGET}'," \
 		${WRKSRC}/src/meson.build
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

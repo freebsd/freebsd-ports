@@ -59,7 +59,6 @@ post-build-MANPAGES-on:
 	scdoc < ${WRKSRC}/extra/man/alacritty-bindings.5.scd > ${WRKSRC}/alacritty-bindings.5
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/alacritty
 	${INSTALL_DATA} ${WRKSRC}/extra/linux/Alacritty.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/extra/logo/alacritty-term.svg \

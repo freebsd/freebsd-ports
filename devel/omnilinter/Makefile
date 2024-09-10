@@ -149,7 +149,6 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/omnilinter
 	@cd ${WRKSRC}/share && ${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${MAKE_CMD} install
 
 post-install-DOCS-on:

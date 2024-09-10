@@ -34,7 +34,4 @@ LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 post-patch:
 	@${REINPLACE_CMD} -Ee 's/new\("make"\)/new("gmake")/' ${WRKSRC}/cargo-crates/luajit-src-*/src/lib.rs
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mprocs
-
 .include <bsd.port.post.mk>

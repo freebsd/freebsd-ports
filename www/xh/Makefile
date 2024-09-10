@@ -30,9 +30,6 @@ COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
 				share/zsh/site-functions/_${PORTNAME}
 MANPAGES_PLIST_FILES=		share/man/man1/${PORTNAME}.1.gz
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 post-install-COMPLETIONS-on:
 	@${MV} ${WRKSRC}/completions/_${PORTNAME} ${WRKSRC}/completions/${PORTNAME}.zsh
 .for _shell in bash fish zsh

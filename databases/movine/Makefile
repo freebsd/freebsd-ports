@@ -184,7 +184,4 @@ PLIST_FILES=	bin/${PORTNAME}
 BROKEN=	Fails to detect OpenSSL 3 and later
 .endif
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

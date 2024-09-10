@@ -404,10 +404,4 @@ PLIST_FILES=	bin/${PORTNAME} \
 		bin/git-cliff-completions \
 		bin/git-cliff-mangen
 
-post-install:
-	@${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin/git-cliff-completions \
-		${STAGEDIR}${PREFIX}/bin/git-cliff-mangen
-
 .include <bsd.port.mk>

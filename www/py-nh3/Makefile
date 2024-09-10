@@ -24,7 +24,4 @@ CARGO_INSTALL=	no
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-post-install:
-		${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
-
 .include <bsd.port.mk>

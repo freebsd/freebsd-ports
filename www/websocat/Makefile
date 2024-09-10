@@ -331,7 +331,4 @@ CARGO_CRATES=	addr2line-0.17.0 \
 
 PLIST_FILES=	bin/websocat
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/websocat
-
 .include <bsd.port.mk>

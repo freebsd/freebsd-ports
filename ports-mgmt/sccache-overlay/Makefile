@@ -408,7 +408,6 @@ post-install:
 		${STAGEDIR}${DATADIR}/overlay/lib
 	@${MV} ${STAGEDIR}${PREFIX}/bin/sccache \
 		${STAGEDIR}${DATADIR}/overlay/bin
-	@${STRIP_CMD} ${STAGEDIR}${DATADIR}/overlay/bin/sccache
 	${INSTALL_DATA} ${FILESDIR}/Mk/bsd.overlay.mk \
 		${STAGEDIR}${DATADIR}/overlay/Mk
 # rustc seems to have no support for fully static binaries on

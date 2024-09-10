@@ -26,9 +26,6 @@ post-build-MANPAGES-on:
 		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/${PORTNAME} \
 		-o ${WRKSRC}/${PORTNAME}.1
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bkt
-
 post-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1

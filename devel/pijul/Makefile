@@ -450,7 +450,4 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/pijul ${STAGEDIR}${PREFIX}/bin/pijul
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pijul
-
 .include <bsd.port.mk>

@@ -279,7 +279,4 @@ CARGO_CRATES=	addr2line-0.21.0 \
 
 PLIST_FILES=	bin/bandwhich
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bandwhich
-
 .include <bsd.port.mk>

@@ -17,7 +17,4 @@ GH_PROJECT=	rust-script
 
 PLIST_FILES=	bin/rust-script
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rust-script
-
 .include <bsd.port.mk>

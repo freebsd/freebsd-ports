@@ -30,9 +30,6 @@ OPTIONS_DEFAULT=	DOCS
 
 PORTDOCS=	*
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} *.md docs/man.md ${STAGEDIR}${DOCSDIR}

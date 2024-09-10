@@ -226,7 +226,4 @@ CARGO_CRATES=	addr2line-0.20.0 \
 
 PLIST_FILES=	bin/grcov
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

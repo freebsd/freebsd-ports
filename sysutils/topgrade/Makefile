@@ -24,7 +24,6 @@ PORTEXAMPLES=	config.example.toml
 OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
-		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME} --gen-manpage > ${WRKSRC}/${PORTNAME}.1
 		${INSTALL_MAN} ${WRKSRC}/topgrade.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 

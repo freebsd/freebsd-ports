@@ -167,7 +167,4 @@ OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/grm
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/grm
-
 .include <bsd.port.mk>

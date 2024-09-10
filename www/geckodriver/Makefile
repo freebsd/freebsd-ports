@@ -365,7 +365,4 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		yaml-rust-0.4.2 \
 		zip-0.4.2
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/geckodriver
-
 .include <bsd.port.mk>

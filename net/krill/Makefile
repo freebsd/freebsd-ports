@@ -25,10 +25,6 @@ USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/krill
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/krillc
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/krillta
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/krillup
 	@${MKDIR} ${STAGEDIR}/${PREFIX}/etc/krill
 	${INSTALL_DATA} ${WRKSRC}/defaults/krill.conf \
 		${STAGEDIR}${PREFIX}/etc/krill/krill.conf.sample

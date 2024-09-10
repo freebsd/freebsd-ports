@@ -33,7 +33,6 @@ COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
 				share/zsh/site-functions/_${PORTNAME}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/tldr
 .for _shell in bash fish zsh
 	${INSTALL_DATA} ${WRKSRC}/completion/${_shell}_${PORTNAME} \
 		${STAGEDIR}${PREFIX}/${COMPLETIONS_PLIST_FILES:M*${_shell}*}

@@ -524,7 +524,4 @@ WRKSRC_SUBDIR=	py-polars
 
 PORTSCOUT=	limit:^py-
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/polars/polars.abi3.so
-
 .include <bsd.port.mk>

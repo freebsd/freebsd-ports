@@ -62,7 +62,4 @@ TEST_WRKSRC=	${BUILD_WRKDIR}
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/safetensors/_safetensors_rust${PYTHON_EXT_SUFFIX}.so
-
 .include <bsd.port.mk>

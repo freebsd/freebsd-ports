@@ -52,7 +52,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB} -lcrypto ${NCURSESLIBS}|;s|-Werror||' \
 		${WRKSRC}/Makefile
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*boat
-
 .include <bsd.port.mk>

@@ -105,7 +105,4 @@ CARGO_CRATES=	anyhow-1.0.57 \
 
 PLIST_FILES=	bin/process_viewer
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/process_viewer
-
 .include <bsd.port.mk>

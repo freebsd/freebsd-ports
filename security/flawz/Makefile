@@ -290,9 +290,4 @@ PROGS=		bin/${PORTNAME} \
 
 PLIST_FILES=	${PROGS}
 
-post-install:
-.for prog in ${PROGS}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${prog}
-.endfor
-
 .include <bsd.port.mk>

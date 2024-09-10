@@ -27,7 +27,6 @@ post-patch:
 		${WRKSRC_crate_clang-sys}/src/support.rs
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .for _shell in bash fish zsh
 	@${ECHO_MSG} "Generating ${STAGEDIR}${PREFIX}/${PLIST_FILES:M*${_shell}*}"
 	${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/${PORTNAME} \

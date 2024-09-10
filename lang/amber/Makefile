@@ -125,7 +125,4 @@ PLIST_FILES=	bin/${PORTNAME}
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/bin/bash"|"${LOCALBASE}/bin/bash"|' ${WRKSRC}/src/compiler.rs
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

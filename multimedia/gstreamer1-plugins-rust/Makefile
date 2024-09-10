@@ -79,7 +79,4 @@ post-patch:
 	@${REINPLACE_CMD} -Ee "/cargo.*'c?(build|test)'/s/]/, '--verbose', '--verbose'&/" \
 		${WRKSRC}/cargo_wrapper.py
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gstreamer-1.0/*.so
-
 .include <bsd.port.mk>

@@ -21,7 +21,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/examples/${PORTNAME}/${PORTNAME}.toml
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.toml ${STAGEDIR}${EXAMPLESDIR}

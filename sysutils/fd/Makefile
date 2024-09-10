@@ -31,7 +31,6 @@ post-build:
 	${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/fd --gen-completions fish > ${WRKSRC}/autocomplete/fd.fish
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/fd
 	${INSTALL_MAN} ${WRKSRC}/doc/fd.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d

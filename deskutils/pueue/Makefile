@@ -284,9 +284,4 @@ CARGO_CRATES=	addr2line-0.22.0 \
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}d
 
-post-install:
-	@${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME}d
-
 .include <bsd.port.mk>

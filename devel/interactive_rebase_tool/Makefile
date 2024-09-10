@@ -20,7 +20,6 @@ PLIST_FILES=	bin/interactive-rebase-tool \
 		share/man/man1/interactive-rebase-tool.1.gz
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/interactive-rebase-tool
 	${INSTALL_MAN} ${WRKSRC}/src/interactive-rebase-tool.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

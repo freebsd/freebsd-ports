@@ -31,7 +31,6 @@ post-patch:
 	${REINPLACE_CMD} -e s,%%WRKDIR%%,${WRKDIR}, ${WRKSRC}/Cargo.toml
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gurk
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DATADIR}
 

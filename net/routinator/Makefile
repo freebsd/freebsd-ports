@@ -46,7 +46,6 @@ RUSTFLAGS+=	-C target-feature=+sse2
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/routinator
 	${INSTALL_MAN} ${WRKSRC}/doc/routinator.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1/
 	@${MKDIR} ${STAGEDIR}/${PREFIX}/etc/routinator

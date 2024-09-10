@@ -26,7 +26,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/zsh/site-functions/_${PORTNAME}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/completions/bash/${PORTNAME} ${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}.bash
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions

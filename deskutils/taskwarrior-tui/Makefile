@@ -205,7 +205,4 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		task-hookrs@git+https://github.com/kdheepak/task-hookrs\#9fe7bd42f96a14571009b5de3ef395cd26988bbe
 PLIST_FILES=	bin/taskwarrior-tui
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/taskwarrior-tui
-
 .include <bsd.port.mk>

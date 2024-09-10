@@ -74,7 +74,4 @@ CARGO_CRATES=	android-tzdata-0.1.1 \
 
 PLIST_FILES=	bin/${PORTNAME}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

@@ -17,7 +17,4 @@ GH_ACCOUNT=	lovasoa
 
 PLIST_FILES=	bin/dezoomify-rs
 
-post-install:
-		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

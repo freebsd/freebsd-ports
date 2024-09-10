@@ -249,9 +249,4 @@ PLIST_FILES=	bin/cargo-add \
 		bin/cargo-set-version \
 		bin/cargo-upgrade
 
-post-install:
-.for exe in ${PLIST_FILES}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${exe}
-.endfor
-
 .include <bsd.port.mk>

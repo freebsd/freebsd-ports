@@ -48,7 +48,6 @@ post-patch:
 		${WRKSRC}/src/debug.rs
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 # Install extras similar to ${WRKSRC}/Makefile
 .for f in ${PLIST_FILES:Nbin/*:T:S,^,data/,}
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_FILES:M*${f:T}:H}

@@ -34,9 +34,4 @@ CARGO_TEST=	no
 CARGO_TARGET_DIR=	${WRKSRC}/${MESON_BUILD_DIR}/target
 MAKE_ENV+=	${CARGO_ENV}
 
-post-install:
-.	ifndef WITH_DEBUG
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/fractal
-.	endif
-
 .include <bsd.port.mk>

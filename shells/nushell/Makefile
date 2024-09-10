@@ -719,7 +719,4 @@ LDFLAGS=	-L/usr/local/lib/gcc${GCC_DEFAULT} -latomic
 LTO_UNSAFE=	yes
 .endif
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nu
-
 .include <bsd.port.post.mk>

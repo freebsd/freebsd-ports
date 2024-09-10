@@ -29,9 +29,6 @@ BASH_PLIST_FILES=	etc/bash_completion.d/_${PORTNAME}.bash
 FISH_PLIST_FILES=	share/fish/vendor_functions.d/${PORTNAME}.fish
 ZSH_PLIST_FILES=	share/zsh/site-functions/_${PORTNAME}
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/delta
-
 post-install-BASH-on:
 	${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/etc/completion/completion.bash \

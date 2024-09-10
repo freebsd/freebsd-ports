@@ -28,6 +28,5 @@ do-install:
 		--prefix "${PREFIX}" \
 		--pkgconfigdir "${PREFIX}/libdata/pkgconfig" \
 		${CARGO_INSTALL_ARGS}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/cskk/*.so
 
 .include <bsd.port.mk>

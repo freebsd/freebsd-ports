@@ -22,7 +22,6 @@ PORTDOCS=	CHANGELOG.md README.md
 PLIST_FILES=	bin/${BINARY_NAME}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${MV} ${STAGEDIR}${PREFIX}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${BINARY_NAME}
 
 post-install-DOCS-on:

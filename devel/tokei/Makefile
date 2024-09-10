@@ -173,7 +173,4 @@ CARGO_FEATURES=	all
 
 PLIST_FILES=	bin/tokei
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/tokei
-
 .include <bsd.port.mk>

@@ -76,7 +76,4 @@ TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-post-install:
-	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
-
 .include <bsd.port.mk>

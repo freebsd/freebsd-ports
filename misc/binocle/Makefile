@@ -259,7 +259,4 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 
 PLIST_FILES=	bin/${PORTNAME}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

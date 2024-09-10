@@ -467,9 +467,4 @@ PLIST_FILES=	bin/ein \
 
 PORTSCOUT=	ignore:1 # repository tags don't make sense and only cause confusion
 
-post-install:
-	@${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/bin/ein \
-		${STAGEDIR}${PREFIX}/bin/gix
-
 .include <bsd.port.mk>

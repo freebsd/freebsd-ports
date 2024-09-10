@@ -224,7 +224,4 @@ PLIST_FILES=	bin/${PORTNAME}
 CFLAGS+=	-mcpu=power7
 .endif
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

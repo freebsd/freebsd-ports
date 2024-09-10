@@ -25,9 +25,4 @@ post-patch:
 		-e $$'/GIT_VERSION/,/UNKNOWN/c\\\n\t"${DISTVERSIONFULL}",\n' \
 		${WRKSRC}/src/bin/common.rs ${WRKSRC}/src/lib.rs
 
-.if !target(post-install)
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-.endif
-
 .include <bsd.port.mk>

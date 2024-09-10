@@ -164,7 +164,4 @@ CARGO_CRATES=	ahash-0.7.6 \
 
 PLIST_FILES=	bin/t
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/t
-
 .include <bsd.port.mk>

@@ -287,7 +287,4 @@ CARGO_CRATES=	addr2line-0.21.0 \
 
 PLIST_FILES=	bin/oha
 
-post-install:
-		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/oha
-
 .include <bsd.port.mk>

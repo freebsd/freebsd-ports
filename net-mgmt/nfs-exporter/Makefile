@@ -31,7 +31,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man8/${PORTNAME}.8.gz
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>

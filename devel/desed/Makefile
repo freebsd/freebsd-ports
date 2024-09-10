@@ -70,7 +70,5 @@ CARGO_CRATES=	anyhow-1.0.65 \
 		windows_i686_msvc-0.36.1 \
 		windows_x86_64_gnu-0.36.1 \
 		windows_x86_64_msvc-0.36.1
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/desed
 
 .include <bsd.port.mk>

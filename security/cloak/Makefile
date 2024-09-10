@@ -103,7 +103,4 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 
 PLIST_FILES=	bin/cloak
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cloak
-
 .include <bsd.port.mk>

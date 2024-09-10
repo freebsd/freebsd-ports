@@ -478,7 +478,4 @@ do-install:
 		${WRKDIR}/target/*/release/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

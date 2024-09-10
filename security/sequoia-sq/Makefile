@@ -30,9 +30,6 @@ OPTIONS_SUB=	yes
 
 ELVISH_DESC=	Install Elvish module
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 post-install-BASH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
 	${INSTALL_DATA} ${CARGO_TARGET_DIR}/shell-completions/${PORTNAME}.bash \

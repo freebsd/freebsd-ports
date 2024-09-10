@@ -45,7 +45,4 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 
 PLIST_FILES=	bin/sctd
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sctd
-
 .include <bsd.port.mk>

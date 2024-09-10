@@ -22,7 +22,4 @@ CARGO_BUILD=	no
 CARGO_INSTALL=	no
 WRKSRC=		${WRKDIR}/pyproject_fmt_rust-${PORTVERSION}
 
-post-install:
-	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
-
 .include <bsd.port.mk>

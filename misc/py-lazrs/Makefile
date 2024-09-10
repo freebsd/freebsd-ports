@@ -70,7 +70,4 @@ CARGO_INSTALL=	no
 CARGO_TEST=	no
 CARGO_TARGET_DIR=	${WRKSRC}/target
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lazrs/lazrs${PYTHON_EXT_SUFFIX}.so
-
 .include <bsd.port.mk>

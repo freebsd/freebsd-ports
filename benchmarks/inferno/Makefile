@@ -160,7 +160,4 @@ EXECUTABLES=	inferno-collapse-dtrace \
 
 PLIST_FILES=	${EXECUTABLES:S/inferno-/bin\/&/}
 
-post-install:
-	cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} ${EXECUTABLES}
-
 .include <bsd.port.mk>

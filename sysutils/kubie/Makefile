@@ -23,7 +23,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/fish/completions/${PORTNAME}.fish \
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/completion/${PORTNAME}.bash ${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}.bash
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions

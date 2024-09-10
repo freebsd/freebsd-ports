@@ -226,7 +226,4 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 
 PLIST_FILES=	bin/cog
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cog
-
 .include <bsd.port.mk>

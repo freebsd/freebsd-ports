@@ -184,7 +184,6 @@ post-extract:
 		${WRKSRC}/undelegated.txt.sample
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${FILESDIR}/encrypted-dns.toml.sample \
 		${STAGEDIR}${ETCDIR}

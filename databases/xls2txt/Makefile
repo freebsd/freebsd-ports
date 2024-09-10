@@ -63,7 +63,4 @@ PLIST_FILES=	${EXECUTABLES:S/^/bin\//}
 
 CONFLICTS_INSTALL=	catdoc libxls p5-Spreadsheet-Read
 
-post-install:
-	cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} ${EXECUTABLES}
-
 .include <bsd.port.mk>

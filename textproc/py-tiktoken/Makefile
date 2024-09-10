@@ -30,7 +30,4 @@ BLOBFILE_DESC=	Blob file support
 
 BLOBFILE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blobfile>=2:net/py-blobfile@${PY_FLAVOR}
 
-post-install:
-	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
-
 .include <bsd.port.mk>

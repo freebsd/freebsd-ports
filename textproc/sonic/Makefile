@@ -31,7 +31,6 @@ OPTIONS_DEFINE=	DOCS
 CARGO_ENV+=	DISTDIR=${DISTDIR}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sonic
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/config.cfg ${STAGEDIR}${ETCDIR}/config.cfg.sample
 

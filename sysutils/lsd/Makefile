@@ -201,7 +201,4 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		yaml-rust-0.4.5
 PLIST_FILES=	bin/lsd
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lsd
-
 .include <bsd.port.mk>

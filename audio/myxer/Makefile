@@ -93,7 +93,4 @@ CARGO_CRATES=	anyhow-1.0.44 \
 
 PLIST_FILES=	bin/${PORTNAME}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

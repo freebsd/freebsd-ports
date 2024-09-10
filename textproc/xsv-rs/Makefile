@@ -66,9 +66,6 @@ PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xsv
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}

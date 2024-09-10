@@ -21,8 +21,5 @@ WRKSRC_SUBDIR=	${PORTNAME}-cli
 
 PLIST_FILES=	bin/${PORTNAME}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <Makefile.crates>
 .include <bsd.port.mk>

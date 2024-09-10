@@ -204,7 +204,4 @@ OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/imdl
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/imdl
-
 .include <bsd.port.mk>

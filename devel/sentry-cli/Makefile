@@ -27,9 +27,6 @@ OPTIONS_DEFAULT=	REPORTING
 REPORTING_DESC=	Enable crash reporting
 REPORTING_VARS=	CARGO_FEATURES+=with_crash_reporting
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}

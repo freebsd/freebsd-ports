@@ -106,9 +106,4 @@ BINARIES=	bin/udp2tcp \
 
 PLIST_FILES=	${BINARIES}
 
-post-install:
-.for bin in ${BINARIES}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${bin}
-.endfor
-
 .include <bsd.port.mk>

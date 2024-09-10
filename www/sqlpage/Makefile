@@ -42,6 +42,5 @@ post-install:
 		 ${INSTALL_DATA} ${WRKSRC}/index.sql ${STAGEDIR}${DATADIR}
 		${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d ;\
 		 ${INSTALL_DATA} ${FILESDIR}/sqlpage.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/sqlpage.conf.sample
-		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

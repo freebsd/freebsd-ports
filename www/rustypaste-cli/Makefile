@@ -31,6 +31,5 @@ NATIVE_CERTS_VARS=	CARGO_FEATURES+=use-native-certs
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/config.toml ${STAGEDIR}${EXAMPLESDIR}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rpaste
 
 .include <bsd.port.mk>

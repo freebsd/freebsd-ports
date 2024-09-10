@@ -77,9 +77,4 @@ CARGO_CRATES=   aho-corasick-1.1.2 \
 
 PLIST_FILES=	bin/gbump
 
-.include <bsd.port.options.mk>
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gbump
-
 .include <bsd.port.mk>

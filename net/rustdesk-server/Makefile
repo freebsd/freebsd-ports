@@ -19,9 +19,6 @@ USERS=		rustdesk
 GROUPS=		rustdesk
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/hbbs
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/hbbr
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rustdesk-utils
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/syslog.d
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

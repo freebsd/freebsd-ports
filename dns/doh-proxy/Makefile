@@ -28,7 +28,4 @@ LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
 LDFLAGS+=	-L/usr/local/lib/gcc${GCC_DEFAULT} -latomic
 .endif
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/doh-proxy
-
 .include <bsd.port.mk>

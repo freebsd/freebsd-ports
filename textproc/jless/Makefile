@@ -87,7 +87,4 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 
 PLIST_FILES=	bin/jless
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/jless
-
 .include <bsd.port.mk>

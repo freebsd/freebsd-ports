@@ -140,7 +140,4 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 
 PLIST_FILES=	bin/jwt
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/jwt
-
 .include <bsd.port.mk>

@@ -25,7 +25,4 @@ post-patch:
 		${WRKSRC_crate_clang-sys}/build/common.rs \
 		${WRKSRC_crate_clang-sys}/src/support.rs
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

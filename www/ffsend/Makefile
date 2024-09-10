@@ -365,7 +365,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		bin/ffput
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .for f in ffdel ffget ffput
 	cd ${STAGEDIR}${PREFIX}/bin && ${RLN} ${PORTNAME} ${f}
 .endfor

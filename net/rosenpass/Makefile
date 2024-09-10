@@ -31,7 +31,6 @@ pre-configure:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rp ${STAGEDIR}${PREFIX}/bin/
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rosenpass
 .for man in rp.1 rosenpass.1
 	${INSTALL_MAN} ${WRKSRC}/doc/${man} ${STAGEDIR}${PREFIX}/share/man/man${man:E}/${man}
 .endfor

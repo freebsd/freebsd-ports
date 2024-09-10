@@ -518,7 +518,4 @@ post-patch:
 	-e '/get_proc_total/s|unsigned long|uint64_t|' \
 	${WRKSRC}/cargo-crates/sys-info-0.9.1/c/*.[ch]
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

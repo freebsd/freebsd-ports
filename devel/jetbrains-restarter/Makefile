@@ -31,7 +31,4 @@ do-install:
 		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/restarter \
 		${STAGEDIR}${DATADIR}
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${DATADIR}/restarter
-
 .include <bsd.port.mk>

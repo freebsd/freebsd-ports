@@ -111,7 +111,4 @@ CARGO_CRATES=	ahash-0.7.6 \
 		windows_x86_64_msvc-0.48.0
 PLIST_FILES=	bin/${PORTNAME}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

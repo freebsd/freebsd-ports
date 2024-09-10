@@ -125,8 +125,4 @@ CARGO_CRATES=	android-tzdata-0.1.1 \
 
 PLIST_FILES=	bin/potcpu bin/potnet
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/potnet
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/potcpu
-
 .include <bsd.port.mk>

@@ -23,7 +23,4 @@ CARGO_BUILD=	no
 CARGO_INSTALL=	no
 WRKSRC=		${WRKDIR}/rpds_py-${PORTVERSION}
 
-post-install:
-	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
-
 .include <bsd.port.mk>

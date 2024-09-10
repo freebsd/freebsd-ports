@@ -312,9 +312,4 @@ OPENSSLLIB=	/usr/lib
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/badtouch
 
-post-install:
-	@${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin/badtouch
-
 .include <bsd.port.mk>

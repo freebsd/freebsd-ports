@@ -275,7 +275,4 @@ PLIST_FILES=	bin/${PORTNAME}
 
 PORTSCOUT=	limit:^tokio-console-v[0-9].*
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

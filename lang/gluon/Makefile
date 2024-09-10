@@ -397,7 +397,4 @@ PLIST_FILES=	bin/${PORTNAME}
 LTO_UNSAFE=	yes
 .endif
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

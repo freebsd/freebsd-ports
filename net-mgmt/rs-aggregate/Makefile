@@ -205,7 +205,5 @@ CARGO_CRATES=	adler-1.0.2 \
 		yeslogic-fontconfig-sys-3.2.0
 
 PLIST_FILES=	bin/rs-aggregate
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rs-aggregate
 
 .include <bsd.port.mk>

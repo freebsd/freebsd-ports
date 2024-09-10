@@ -35,7 +35,4 @@ do-install:
 	${MV} ${WRKSRC}/target/release/s3m \
 		${STAGEDIR}${PREFIX}/bin/
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/s3m
-
 .include <bsd.port.mk>

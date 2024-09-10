@@ -20,7 +20,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Lyude
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nvim-gtk
 	( cd ${WRKSRC} && ${COPYTREE_SHARE} runtime ${STAGEDIR}${PREFIX}/share/nvim-gtk )
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
 	${SED} -e "s|Exec=nvim-gtk|Exec=${PREFIX}/bin/nvim-gtk|" ${WRKSRC}/desktop/org.daa.NeovimGtk.desktop >${STAGEDIR}${PREFIX}/share/applications/org.daa.NeovimGtk.desktop

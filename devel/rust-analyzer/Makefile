@@ -28,9 +28,6 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rust-analyzer
-
 post-install-DOCS-on:
 	@cd ${WRKSRC}/docs && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}

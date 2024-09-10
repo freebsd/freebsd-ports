@@ -416,7 +416,4 @@ CARGO_CRATES=	addr2line-0.21.0 \
 
 PLIST_FILES=	bin/datafusion-cli
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/datafusion-cli
-
 .include <bsd.port.mk>

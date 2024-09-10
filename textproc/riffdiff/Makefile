@@ -101,7 +101,4 @@ CARGO_CRATES=	addr2line-0.14.0 \
 
 PLIST_FILES=	bin/riff
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/riff
-
 .include <bsd.port.mk>

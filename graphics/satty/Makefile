@@ -24,7 +24,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .for f in *.desktop assets/*.svg
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_FILES:M*.${f:E}:H}
 	${INSTALL_DATA} ${WRKSRC}/${f} \

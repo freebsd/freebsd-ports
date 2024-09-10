@@ -54,7 +54,4 @@ OPENTRACING_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}opentracing>=2.0.0:devel/py-opent
 post-patch:
 	${MV} ${WRKDIR}/abseil-cpp-${ABSEIL_VERSION}/ ${WRKSRC}/ddtrace/appsec/_iast/_taint_tracking/_deps/
 
-post-install:
-	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
-
 .include <bsd.port.mk>

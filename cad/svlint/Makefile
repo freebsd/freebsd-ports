@@ -122,9 +122,4 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/mdgen
 
-post-install:
-	@${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin/mdgen
-
 .include <bsd.port.mk>

@@ -736,10 +736,5 @@ post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}/tls
 	${MKDIR} ${STAGEDIR}${QDRANT_DBDIR}
 	${INSTALL_DATA} ${WRKSRC}/config/config.yaml ${STAGEDIR}${ETCDIR}/config.yaml.sample
-# strip binaries
-	${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin/schema_generator \
-		${STAGEDIR}${PREFIX}/bin/wal_inspector
 
 .include <bsd.port.mk>

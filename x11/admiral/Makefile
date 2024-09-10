@@ -48,9 +48,6 @@ PORTEXAMPLES=	*
 
 PLIST_FILES=	bin/admiral
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/admiral
-
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} admiral.d ${STAGEDIR}${EXAMPLESDIR}/admiral.d)

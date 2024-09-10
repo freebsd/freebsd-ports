@@ -78,9 +78,6 @@ PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rabbiteer
-
 post-install-DOCS-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} README.md ${STAGEDIR}${DOCSDIR})
 

@@ -135,7 +135,6 @@ BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 library
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/castor
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/castor
 	${INSTALL_DATA} ${WRKSRC}/data/Castor.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/data/castor_settings.toml.example ${STAGEDIR}${PREFIX}/share/examples/castor

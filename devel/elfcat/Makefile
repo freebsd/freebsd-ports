@@ -16,7 +16,4 @@ GH_ACCOUNT=	ruslashev
 
 PLIST_FILES=	bin/elfcat
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/elfcat
-
 .include <bsd.port.mk>

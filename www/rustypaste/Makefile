@@ -59,6 +59,5 @@ post-install:
 	${MKDIR} ${STAGEDIR}/${UPLOAD_PATH}
 	${ECHO_CMD} 'CONFIG="${ETCDIR}/${PORTNAME}.toml"' > ${STAGEDIR}${ETCDIR}/${PORTNAME}.env.sample
 	${CP} ${WRKSRC}/config.toml ${STAGEDIR}${ETCDIR}/${PORTNAME}.toml.sample
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

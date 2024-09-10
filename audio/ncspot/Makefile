@@ -45,9 +45,6 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_USES=	localbase:ldflags
 PULSEAUDIO_VARS=	CARGO_FEATURES+=pulseaudio_backend
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ncspot
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}

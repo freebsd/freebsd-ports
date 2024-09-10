@@ -127,9 +127,6 @@ PLIST_FILES=	${PYTHON_SITELIBDIR}/rustworkx/rustworkx${PYTHON_EXT_SUFFIX}.so # w
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rustworkx/rustworkx${PYTHON_EXT_SUFFIX}.so
-
 #do-test: # this runs tests in the fixed venv
 #	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} tox -epy
 

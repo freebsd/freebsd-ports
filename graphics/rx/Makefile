@@ -108,7 +108,4 @@ PLIST_FILES=	bin/rx
 
 LDFLAGS+=	-L${PREFIX}/lib
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

@@ -111,9 +111,6 @@ COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
 BROKEN=	Fails to detect OpenSSL 3.0.0 and later
 .endif
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 post-install-COMPLETIONS-on:
 .for _shell in bash fish zsh
 	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.${_shell} \

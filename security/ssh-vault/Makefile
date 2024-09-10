@@ -259,9 +259,4 @@ CARGO_CRATES=   addr2line-0.21.0 \
 
 PLIST_FILES=	bin/ssh-vault
 
-.include <bsd.port.options.mk>
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ssh-vault
-
 .include <bsd.port.mk>

@@ -19,7 +19,4 @@ GH_PROJECT=	mdBook
 
 PLIST_FILES=	bin/mdbook
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mdbook
-
 .include <bsd.port.mk>

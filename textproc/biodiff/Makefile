@@ -225,9 +225,4 @@ CARGO_CRATES=	ahash-0.8.11 \
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/git-biodiff
 
-post-install:
-	@${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin/git-biodiff
-
 .include <bsd.port.mk>

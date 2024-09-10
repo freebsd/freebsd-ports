@@ -121,7 +121,4 @@ CARGO_CRATES=	Inflector-0.11.4 \
 
 PLIST_FILES=	bin/zoxide
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/zoxide
-
 .include <bsd.port.mk>

@@ -40,7 +40,4 @@ SDL_USES=		sdl
 SDL_USE=		SDL=sdl2
 SDL_VARS=		CARGO_FEATURES+=sdl-backend
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/librespot
-
 .include <bsd.port.mk>

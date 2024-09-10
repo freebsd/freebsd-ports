@@ -258,7 +258,4 @@ OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/cargo-tarpaulin
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cargo-tarpaulin
-
 .include <bsd.port.mk>

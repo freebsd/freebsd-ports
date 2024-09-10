@@ -209,9 +209,4 @@ post-patch:
 		${WRKSRC}/rust/stracciatella/src/config/ja2_json.rs \
 		${WRKSRC}/rust/stracciatella/src/config/engine_options.rs
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ja2 \
-		${STAGEDIR}${PREFIX}/bin/ja2-launcher \
-		${STAGEDIR}${PREFIX}/bin/ja2-resource-pack
-
 .include <bsd.port.mk>

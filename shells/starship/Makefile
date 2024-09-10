@@ -415,7 +415,4 @@ OPTIONS_DEFINE=		FONTS
 FONTS_DESC=		Install fonts
 FONTS_RUN_DEPENDS=	nerd-fonts>0:x11-fonts/nerd-fonts
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>
