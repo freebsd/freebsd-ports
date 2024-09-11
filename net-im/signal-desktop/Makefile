@@ -89,7 +89,7 @@ _BUILD_DATE=	$$(date +'%s')
 ELECTRON_VER_MAJOR=	30
 ESBUILD_VERSION=	0.21.2
 
-SQLCIPHER=	sqlcipher-4.5.5-fts5-fix--3.0.7--0.2.1-ef53ea45ed92b928ecfd33c552d8d405263e86e63dec38e1ec63e1b0193b630b
+SQLCIPHER=	sqlcipher-4.6.1--3.0.7--0.2.1-7c30de8bcb5d21127803f5ab19a097e1b508d05744aca3ac6166352506b5f451
 
 NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
 APP_OUT_DIR=	linux-${ARCH:S/aarch64/arm64-/:S/amd64//}unpacked
