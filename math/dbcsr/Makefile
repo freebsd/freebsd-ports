@@ -19,7 +19,7 @@ BUILD_DEPENDS=	fypp:devel/py-fypp@${PY_FLAVOR}
 
 USES=		blaslapack:openblas cmake:noninja,testing compiler:c++14-lang fortran \
 		python:build
-USE_GCC=	yes # OpenMP is used from both Forran and C code, therefore C code should be compiled with GCC, otherwise it fails at run-time (same in cp2k)
+USE_GCC=	yes # OpenMP is used from both Fortan and C code, therefore C code should be compiled with GCC, otherwise it fails at run-time (same in cp2k)
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -38,7 +38,7 @@ OPTIONS_DEFINE=		C_API MPIX OPENMP # libxsmm is supposed to be supported, but cm
 OPTIONS_DEFAULT=	C_API MPIX OPENMP
 OPTIONS_SUB=		yes
 
-MPIX_DESC=		Use OpenMPI
+MPIX_DESC=		Enable MPI
 MPIX_CMAKE_BOOL=	USE_MPI USE_MPI_F08
 MPIX_USES=		mpi:mpich
 

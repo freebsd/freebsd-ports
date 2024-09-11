@@ -22,7 +22,7 @@ RUN_DEPENDS=	cp2k-data>0:science/cp2k-data
 TEST_DEPENDS=	bash:shells/bash
 
 USES=		cmake fortran localbase:ldflags python:build,test shebangfix tar:bz2
-USE_GCC=	yes # OpenMP is used from both Forran and C code, therefore C code should be compiled with GCC, otherwise it fails at run-time (same in dbcsr)
+USE_GCC=	yes # OpenMP is used from both Fortan and C code, therefore C code should be compiled with GCC, otherwise it fails at run-time (same in dbcsr)
 
 USE_GITHUB=	yes
 
@@ -45,7 +45,7 @@ LIBINT_CMAKE_BOOL=	CP2K_USE_LIBINT2
 LIBINT_LIB_DEPENDS=	libint2.so:science/libint2
 LIBINT_BROKEN=		missing fortran support
 
-MPIX_DESC=		Use OpenMPI
+MPIX_DESC=		Enable MPI
 MPIX_CMAKE_BOOL=	CP2K_USE_MPI
 MPIX_USES=		mpi:mpich
 MPIX_LIB_DEPENDS=	libscalapack.so:math/scalapack
