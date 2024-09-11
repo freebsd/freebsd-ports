@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-09-09 09:50:15 UTC
++++ pyproject.toml
+@@ -62,7 +62,7 @@ include = ["aider*", "aider.website"]
+ ]
+ 
+ [build-system]
+-requires = ["setuptools>=68", "setuptools_scm[toml]>=8"]
++requires = ["setuptools>=61", "setuptools_scm[toml]>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools_scm]
