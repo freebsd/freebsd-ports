@@ -1,5 +1,5 @@
 PORTNAME=	xpra
-PORTVERSION=	6.0.1
+PORTVERSION=	6.1.2
 CATEGORIES=	x11
 MASTER_SITES=	https://xpra.org/src/
 
@@ -72,7 +72,7 @@ GSTREAMER_USES=			gstreamer
 GSTREAMER_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gstreamer1>1:multimedia/py-gstreamer1@${PY_FLAVOR}
 GSTREAMER_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}gstreamer1>1:multimedia/py-gstreamer1@${PY_FLAVOR}
 GSTREAMER_USE=			GSTREAMER=flac,lame,mpg123,ogg,opus,pulse,vorbis,wavpack
-GSTREAMER_VARS=			XPRA_OPTIONS+=sound
+GSTREAMER_VARS=			XPRA_OPTIONS+=gstreamer
 LIBYUV_LIB_DEPENDS=		libyuv.so:graphics/libyuv
 LIBYUV_VARS=			XPRA_OPTIONS+=csc_libyuv
 WEBCAM_RUN_DEPENDS=		opencv>2:graphics/opencv
