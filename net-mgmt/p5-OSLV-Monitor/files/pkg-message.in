@@ -1,0 +1,35 @@
+[
+{ type: install
+  message: <<EOM
+Assuming you are running net-mgmt/net-snmp as non-root (i.e. snmpd):
+
+1 - Create %%LOCALBASE%%/etc/cron.d/oslv with this (adjust the meil address)
+
+# use /bin/sh to run commands, overriding the default set by cron
+SHELL=/bin/sh
+# mail any output to here, no matter whose crontab this is
+MAILTO=me@example.org
+
+#minute	hour	mday	month	wday	who	    command
+4/5     *       *       *       *       snmpd       sudo %%LOCALBASE%%/bin/oslv_monitor -q
+
+2 - Create this directory:
+
+mkdir /var/cache/oslv_monitor
+chown snmpd:snmpd /var/cache/oslv_monitor
+
+3 - Create these sudo permissions:
+
+% cat %%LOCALBASE%%/etc/sudoers.d/snmpd 
+snmpd   ALL=(ALL) NOPASSWD:%%LOCALBASE%%/bin/oslv_monitor -q
+
+4 - add this line to %%LOCALBASE%%/etc/snmpd.conf:
+
+extend oslv_monitor     /bin/cat /var/cache/oslv_monitor/snmp
+
+5 - restart snmpd
+
+
+EOM
+}
+]

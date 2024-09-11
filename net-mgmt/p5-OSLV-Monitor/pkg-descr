@@ -1,0 +1,13 @@
+OS level virtualization monitoring extend
+
+Designed for snmpd with LibreNMS
+
+Works with FreeBSD jails to provide jail-level metrics.
+
+Create a cronjob:
+
+*/5 * * * * /usr/local/bin/oslv_monitor -q
+
+The snmpd.conf extends:
+
+extend oslv_monitor     /bin/cat /var/cache/oslv_monitor/snmp
