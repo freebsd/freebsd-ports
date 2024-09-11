@@ -40,6 +40,7 @@
 %%SITE_PERL%%/URI/news.pm
 %%SITE_PERL%%/URI/nntp.pm
 %%SITE_PERL%%/URI/nntps.pm
+%%SITE_PERL%%/URI/otpauth.pm
 %%SITE_PERL%%/URI/pop.pm
 %%SITE_PERL%%/URI/rlogin.pm
 %%SITE_PERL%%/URI/rsync.pm
@@ -69,3 +70,4 @@
 %%PERL5_MAN3%%/URI::icap.3.gz
 %%PERL5_MAN3%%/URI::icaps.3.gz
 %%PERL5_MAN3%%/URI::ldap.3.gz
+%%PERL5_MAN3%%/URI::otpauth.3.gz
