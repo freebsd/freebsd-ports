@@ -3470,3 +3470,4 @@ textproc/rubygem-rouge42|textproc/rubygem-rouge|2024-09-11|Has expired: Use text
 mail/rubygem-premailer-rails110-rails70|mail/rubygem-premailer-rails-rails70|2024-09-11|Has expired: Use mail/rubygem-premailer-rails-rails70 instead
 devel/rubygem-json26|devel/rubygem-json|2024-09-11|Has expired: Use devel/rubygem-json instead
 www/rubygem-json-jwt115|www/rubygem-json-jwt|2024-09-11|Has expired: Use www/rubygem-json-jwt instead
+security/rubygem-rack-oauth21|security/rubygem-rack-oauth2|2024-09-11|Has expired: Use security/rubygem-rack-oauth2 instead
