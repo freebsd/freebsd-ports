@@ -1,4 +1,4 @@
---- electron/shell/app/node_main.cc.orig	2024-04-16 14:29:17 UTC
+--- electron/shell/app/node_main.cc.orig	2024-09-05 10:01:25 UTC
 +++ electron/shell/app/node_main.cc
 @@ -48,7 +48,7 @@
  #include "shell/common/mac/codesign_util.h"
@@ -9,7 +9,7 @@
  #include "components/crash/core/app/crashpad.h"  // nogncheck
  #include "shell/app/electron_crash_reporter_client.h"
  #include "shell/common/crash_keys.h"
-@@ -99,7 +99,7 @@ bool UnsetHijackableEnvs(base::Environment* env) {
+@@ -99,14 +99,14 @@ bool UnsetHijackableEnvs(base::Environment* env) {
  }
  #endif
  
@@ -18,7 +18,6 @@
  void SetCrashKeyStub(const std::string& key, const std::string& value) {}
  void ClearCrashKeyStub(const std::string& key) {}
  #endif
-@@ -110,7 +110,7 @@ v8::Local<v8::Value> GetParameters(v8::Isolate* isolat
  
  v8::Local<v8::Value> GetParameters(v8::Isolate* isolate) {
    std::map<std::string, std::string> keys;
