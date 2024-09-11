@@ -3471,3 +3471,4 @@ mail/rubygem-premailer-rails110-rails70|mail/rubygem-premailer-rails-rails70|202
 devel/rubygem-json26|devel/rubygem-json|2024-09-11|Has expired: Use devel/rubygem-json instead
 www/rubygem-json-jwt115|www/rubygem-json-jwt|2024-09-11|Has expired: Use www/rubygem-json-jwt instead
 security/rubygem-rack-oauth21|security/rubygem-rack-oauth2|2024-09-11|Has expired: Use security/rubygem-rack-oauth2 instead
+textproc/rubygem-static_holmes|textproc/rubygem-charlock_holmes|2024-09-11|Has expired: Use textproc/rubygem-charlock_holmes instead
