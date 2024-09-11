@@ -309,7 +309,7 @@ v2ray:*:360:360::0:0:V2Ray Daemon:/nonexistent:/usr/sbin/nologin
 httptunnel:*:361:361::0:0:httptunnel Daemon:/nonexistent:/usr/sbin/nologin
 readarr:*:362:362::0:0:Readarr Daemon:/nonexistent:/usr/sbin/nologin
 victoria-logs:*:363:363::0:0:VictoriaLogs Daemon:/nonexistent:/usr/sbin/nologin
-# free: 364
+elog:*:364:364::0:0:Elog server:/nonexistent:/usr/sbin/nologin
 # free: 365
 # free: 366
 # free: 367
