@@ -9,6 +9,8 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Simple window manager for X
 WWW=		https://www.all-day-breakfast.com/wm2/
 
+LICENSE=	MIT
+
 BUILD_DEPENDS=	makedepend:devel/makedepend
 
 USES=		xorg
