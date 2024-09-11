@@ -107,8 +107,9 @@
 %%DOCS%%%%T%%/webapps/docs/architecture/requestProcess/request-process.png
 %%DOCS%%%%T%%/webapps/docs/architecture/startup.html
 %%DOCS%%%%T%%/webapps/docs/architecture/startup/1_overview.png
-%%DOCS%%%%T%%/webapps/docs/architecture/startup/1_overview.vpd
-%%DOCS%%%%T%%/webapps/docs/architecture/startup/2_catalina_initliaze.svg
+%%DOCS%%%%T%%/webapps/docs/architecture/startup/1_overview.uml
+%%DOCS%%%%T%%/webapps/docs/architecture/startup/2_catalina_init.png
+%%DOCS%%%%T%%/webapps/docs/architecture/startup/2_catalina_init.uml
 %%DOCS%%%%T%%/webapps/docs/architecture/startup/3_catalina_start_1.svg
 %%DOCS%%%%T%%/webapps/docs/architecture/startup/4_catalina_start_2.svg
 %%DOCS%%%%T%%/webapps/docs/architecture/startup/5_catalina_start_3.svg
