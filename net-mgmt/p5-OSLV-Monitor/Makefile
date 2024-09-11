@@ -1,6 +1,6 @@
 PORTNAME=	OSLV-Monitor
 PORTVERSION=	0.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
@@ -15,6 +15,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	p5-Clone>0:devel/p5-Clone \
 		p5-ExtUtils-MakeMaker>0:devel/p5-ExtUtils-MakeMaker \
 		p5-File-Slurp>0:devel/p5-File-Slurp \
+		p5-IO-Interface>0:net/p5-IO-Interface \
 		p5-JSON>0:converters/p5-JSON \
 		p5-MIME-Base64>0:converters/p5-MIME-Base64
 
