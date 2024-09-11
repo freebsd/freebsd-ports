@@ -3467,3 +3467,4 @@ devel/rubygem-grape-swagger20|devel/rubygem-grape-swagger|2024-09-11|Has expired
 devel/rubygem-semver_dialects2|devel/rubygem-semver_dialects|2024-09-11|Has expired: Use devel/rubygem-semver_dialects instead
 www/rubygem-net-http011|www/rubygem-net-http|2024-09-11|Has expired: Use www/rubygem-net-http instead
 textproc/rubygem-rouge42|textproc/rubygem-rouge|2024-09-11|Has expired: Use textproc/rubygem-rouge instead
+mail/rubygem-premailer-rails110-rails70|mail/rubygem-premailer-rails-rails70|2024-09-11|Has expired: Use mail/rubygem-premailer-rails-rails70 instead
