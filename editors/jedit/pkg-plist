@@ -1,5 +1,6 @@
 bin/jedit
 share/man/man1/jedit.1.gz
+share/java/jedit/jars/MacOS.jar
 share/java/jedit/jars/QuickNotepad.jar
 share/java/jedit/jedit.jar
 share/java/jedit/keymaps/Alan_keys.props
@@ -167,6 +168,7 @@ share/java/jedit/modes/cvs-commit.xml
 share/java/jedit/modes/d.xml
 share/java/jedit/modes/dart.xml
 share/java/jedit/modes/django.xml
+share/java/jedit/modes/dockerfile.xml
 share/java/jedit/modes/dot.xml
 share/java/jedit/modes/doxygen.xml
 share/java/jedit/modes/drawj2d.xml
@@ -282,6 +284,7 @@ share/java/jedit/modes/pure.xml
 share/java/jedit/modes/pvwave.xml
 share/java/jedit/modes/pyrex.xml
 share/java/jedit/modes/python.xml
+share/java/jedit/modes/qdoc.xml
 share/java/jedit/modes/quake.xml
 share/java/jedit/modes/rcp.xml
 share/java/jedit/modes/rd.xml

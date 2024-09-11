@@ -1,6 +1,5 @@
 PORTNAME=	jedit
-PORTVERSION=	5.6.0
-PORTREVISION=	1
+PORTVERSION=	5.7.0
 PORTEPOCH=	1
 CATEGORIES=	editors java
 MASTER_SITES=	SF
@@ -13,13 +12,13 @@ WWW=		https://jedit.sourceforge.net/
 
 LICENSE=	GPLv2
 
+USES=		cpe xorg
+
 OPTIONS_DEFINE=	MACROS DOCS
 MACROS_DESC=	Install default set of macros (highly recommended)
 
 OPTIONS_DEFAULT=	MACROS
 OPTIONS_SUB=	yes
-
-USES=		cpe xorg
 
 USE_JAVA=	yes
 JAVA_VERSION=	11+
