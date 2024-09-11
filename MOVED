@@ -3472,3 +3472,4 @@ devel/rubygem-json26|devel/rubygem-json|2024-09-11|Has expired: Use devel/rubyge
 www/rubygem-json-jwt115|www/rubygem-json-jwt|2024-09-11|Has expired: Use www/rubygem-json-jwt instead
 security/rubygem-rack-oauth21|security/rubygem-rack-oauth2|2024-09-11|Has expired: Use security/rubygem-rack-oauth2 instead
 textproc/rubygem-static_holmes|textproc/rubygem-charlock_holmes|2024-09-11|Has expired: Use textproc/rubygem-charlock_holmes instead
+textproc/rubygem-elasticsearch713|textproc/rubygem-elasticsearch|2024-09-11|Has expired: Use textproc/rubygem-elasticsearch instead
