@@ -2,13 +2,13 @@ include/cminpack-1/cminpack.h
 include/cminpack-1/minpack.h
 lib/libcminpack.so
 lib/libcminpack.so.1
-lib/libcminpack.so.1.3.9
+lib/libcminpack.so.1.3.11
 %%NOT_POWERPC%%lib/libcminpackld.so
 %%NOT_POWERPC%%lib/libcminpackld.so.1
-%%NOT_POWERPC%%lib/libcminpackld.so.1.3.9
+%%NOT_POWERPC%%lib/libcminpackld.so.1.3.11
 lib/libcminpacks.so
 lib/libcminpacks.so.1
-lib/libcminpacks.so.1.3.9
+lib/libcminpacks.so.1.3.11
 libdata/pkgconfig/cminpack.pc
 %%NOT_POWERPC%%libdata/pkgconfig/cminpackld.pc
 libdata/pkgconfig/cminpacks.pc
