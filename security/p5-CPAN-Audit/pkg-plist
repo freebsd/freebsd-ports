@@ -16,3 +16,4 @@ bin/cpan-audit
 %%PERL5_MAN3%%/CPAN::Audit::Filter.3.gz
 %%PERL5_MAN3%%/CPAN::Audit::FreshnessCheck.3.gz
 %%PERL5_MAN3%%/CPAN::Audit::Query.3.gz
+%%PERL5_MAN3%%/CPAN::Audit::Version.3.gz
