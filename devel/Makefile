@@ -5004,6 +5004,7 @@
     SUBDIR += py-itanium_demangler
     SUBDIR += py-itemadapter
     SUBDIR += py-itemloaders
+    SUBDIR += py-iterable-io
     SUBDIR += py-iteration-utilities
     SUBDIR += py-itertree
     SUBDIR += py-itypes
