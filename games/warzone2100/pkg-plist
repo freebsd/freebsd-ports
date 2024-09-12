@@ -36,6 +36,7 @@ share/icons/net.wz2100.warzone2100.png
 %%NLS%%share/locale/nb/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/warzone2100_guide.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/warzone2100_guide.mo
