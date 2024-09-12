@@ -15,7 +15,7 @@ EXTRACT_ONLY=	shibboleth-identity-provider-${PORTVERSION}.tar.gz
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Shibboleth Identity Provider (Internet2)
-WWW=		http://shibboleth.internet2.edu/
+WWW=		https://www.shibboleth.net/products/
 
 LICENSE=	APACHE20
 
