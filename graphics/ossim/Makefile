@@ -1,6 +1,7 @@
 PORTNAME=	ossim
 DISTVERSIONPREFIX=v
 DISTVERSION=	2.12.0
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 
 MAINTAINER=	lbartoletti@FreeBSD.org
