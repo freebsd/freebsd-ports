@@ -9,7 +9,6 @@
 %%crocus%%lib/dri%%SUFFIX%%/crocus_dri.so
 %%iris%%lib/dri%%SUFFIX%%/iris_dri.so
 %%X11%%lib/dri%%SUFFIX%%/libdril_dri.so
-%%VAAPI%%lib/dri%%SUFFIX%%/libgallium_drv_video.so
 %%panfrost%%lib/dri%%SUFFIX%%/panfrost_dri.so
 %%r600%%lib/dri%%SUFFIX%%/r600_dri.so
 %%radeonsi%%lib/dri%%SUFFIX%%/radeonsi_dri.so
@@ -44,7 +43,6 @@ lib/libglapi%%SUFFIX%%.so.0.0.0
 %%anv%%lib/libvulkan_intel%%SUFFIX%%.so
 %%hasvk%%lib/libvulkan_intel_hasvk%%SUFFIX%%.so
 %%radv%%lib/libvulkan_radeon%%SUFFIX%%.so
-%%VDPAU%%lib/vdpau%%SUFFIX%%/libvdpau_gallium.so.1.0.0
 %%VDPAU%%%%r600%%lib/vdpau%%SUFFIX%%/libvdpau_r600.so
 %%VDPAU%%%%r600%%lib/vdpau%%SUFFIX%%/libvdpau_r600.so.1
 %%VDPAU%%%%r600%%lib/vdpau%%SUFFIX%%/libvdpau_r600.so.1.0
