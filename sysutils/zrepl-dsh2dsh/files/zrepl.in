@@ -1,0 +1,80 @@
+#!/bin/sh
+
+# PROVIDE: zrepl
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# zrepl_enable (bool):	Set to YES to enable the zrepl service.
+#			Default: NO
+# zrepl_config (str):	File containing zrepl configuration details.
+#			Default: %%PREFIX%%/etc/zrepl/zrepl.yml
+# zrepl_user (str):	The user account used to run the zrepl daemon.
+#			Do not specifically set this to an empty string as this
+#			will cause the daemon to run as root.
+#			Default: root
+# zrepl_group (str):	The group account used to run the zrepl daemon.
+#			Do not specifically set this to an empty string as this
+#			will cause the daemon to run with group wheel.
+#			Default: wheel
+# zrepl_flags (str):	Extra flags passed to zrepl
+#			Default: ""
+# zrepl_facility (str):	Syslog facility to use
+#			Default: local0
+# zrepl_priority (str):	Syslog priority to use
+#			Default: alert
+
+. /etc/rc.subr
+name=zrepl
+rcvar=${name}_enable
+load_rc_config $name
+
+: ${zrepl_enable:="NO"}
+: ${zrepl_config:="%%PREFIX%%/etc/zrepl/zrepl.yml"}
+: ${zrepl_user:="root"}
+: ${zrepl_group:="wheel"}
+: ${zrepl_flags:=""}
+: ${zrepl_facility:="local0"}
+: ${zrepl_priority:="alert"}
+: ${zrepl_options:="${zrepl_flags} --config ${zrepl_config}"}
+
+pidfile="/var/run/zrepl.pid"
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/zrepl"
+command_args="-p ${pidfile} -S -l ${zrepl_facility} -s ${zrepl_priority} -T ${name} \
+		${procname} ${zrepl_options} daemon"
+
+start_precmd="zrepl_precmd"
+stop_postcmd="zrepl_postcmd"
+restart_precmd="zrepl_checkconfig"
+configtest_cmd="zrepl_checkconfig"
+extra_commands="configtest"
+
+zrepl_precmd()
+{
+	if [ ! -d "/var/run/zrepl/stdinserver" ]; then
+		install -d -g ${zrepl_group} -o ${zrepl_user} -m 0700 -- "/var/run/zrepl";
+		install -d -g ${zrepl_group} -o ${zrepl_user} -m 0700 -- "/var/run/zrepl/stdinserver";
+	fi
+
+	if [ ! -e "${pidfile}" ]; then
+		install -g ${zrepl_group} -o ${zrepl_user} -- /dev/null "${pidfile}";
+	fi
+
+	zrepl_checkconfig
+}
+
+zrepl_postcmd()
+{
+	rm -f -- "${pidfile}"
+}
+
+zrepl_checkconfig()
+{
+	echo "Performing sanity check on zrepl configuration:"
+	eval ${procname} ${zrepl_options} configcheck
+}
+
+run_rc_command "$1"
