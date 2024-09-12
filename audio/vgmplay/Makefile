@@ -1,13 +1,14 @@
 PORTNAME=	vgmplay
 PORTVERSION=	0.51.1
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Command-line player for VGM (video game music) files
 WWW=		https://vgmrips.net/
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/vgm-player.pc:audio/libvgm
-LIB_DEPENDS=	libinih.so:devel/inih
+LIB_DEPENDS=	libvgm-emu.so:audio/libvgm \
+		libinih.so:devel/inih
 
 USES=		cmake iconv pkgconfig
 
