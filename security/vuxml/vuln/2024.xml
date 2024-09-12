@@ -1,3 +1,63 @@
+  <vuln vid="bcc8b21e-7122-11ef-bece-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.3.0</ge><lt>17.3.2</lt></range>
+	<range><ge>17.2.0</ge><lt>17.2.5</lt></range>
+	<range><ge>8.14.0</ge><lt>17.1.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/09/11/patch-release-gitlab-17-3-2-released/">
+	  <p>Execute environment stop actions as the owner of the stop action job</p>
+	  <p>Prevent code injection in Product Analytics funnels YAML</p>
+	  <p>SSRF via Dependency Proxy</p>
+	  <p>Denial of Service via sending a large glm_source parameter</p>
+	  <p>CI_JOB_TOKEN can be used to obtain GitLab session token</p>
+	  <p>Variables from settings are not overwritten by PEP if a template is included</p>
+	  <p>Guests can disclose the full source code of projects using custom group-level templates</p>
+	  <p>IdentitiesController allows linking of arbitrary unclaimed provider identities</p>
+	  <p>Open redirect in repo/tree/:id endpoint can lead to account takeover through broken OAuth flow</p>
+	  <p>Open redirect in release permanent links can lead to account takeover through broken OAuth flow</p>
+	  <p>Guest user with Admin group member permission can edit custom role to gain other permissions</p>
+	  <p>Exposure of protected and masked CI/CD variables by abusing on-demand DAST</p>
+	  <p>Credentials disclosed when repository mirroring fails</p>
+	  <p>Commit information visible through release atom endpoint for guest users</p>
+	  <p>Dependency Proxy Credentials are Logged in Plaintext in graphql Logs</p>
+	  <p>User Application can spoof the redirect url</p>
+	  <p>Group Developers can view group runners information</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-6678</cvename>
+      <cvename>CVE-2024-8640</cvename>
+      <cvename>CVE-2024-8635</cvename>
+      <cvename>CVE-2024-8124</cvename>
+      <cvename>CVE-2024-8641</cvename>
+      <cvename>CVE-2024-8311</cvename>
+      <cvename>CVE-2024-4660</cvename>
+      <cvename>CVE-2024-4283</cvename>
+      <cvename>CVE-2024-4612</cvename>
+      <cvename>CVE-2024-8631</cvename>
+      <cvename>CVE-2024-2743</cvename>
+      <cvename>CVE-2024-5435</cvename>
+      <cvename>CVE-2024-6389</cvename>
+      <cvename>CVE-2024-4472</cvename>
+      <cvename>CVE-2024-6446</cvename>
+      <cvename>CVE-2024-6685</cvename>
+      <url>https://about.gitlab.com/releases/2024/09/11/patch-release-gitlab-17-3-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-09-11</discovery>
+      <entry>2024-09-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d5026193-6fa2-11ef-99bc-1c697a616631">
     <topic>Intel CPUs -- multiple vulnerabilities</topic>
     <affects>
