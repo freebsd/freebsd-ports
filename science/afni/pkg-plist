@@ -598,7 +598,6 @@ bin/get_afni_model_PRF
 bin/get_afni_model_PRF_6
 bin/get_afni_model_PRF_6_BAD
 bin/gifti_tool
-bin/gtkyd_check
 bin/help_format
 bin/im2niml
 bin/images_equal
@@ -862,6 +861,7 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_format_cmd_str.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_gershgorin.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_gssrt.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_gtkyd.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_info_dict.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_mat2d_base.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_mat2d_plot.py
