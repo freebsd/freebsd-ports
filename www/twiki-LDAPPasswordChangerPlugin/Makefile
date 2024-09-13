@@ -3,7 +3,7 @@ PORTVERSION=	0.0.${SVNREV}
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Change TWiki password at a pre-configured LDAP server
 WWW=		https://twiki.org/cgi-bin/view/Plugins/LDAPPasswordChangerPlugin
 
