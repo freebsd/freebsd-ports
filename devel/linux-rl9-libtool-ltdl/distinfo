@@ -1,0 +1,7 @@
+TIMESTAMP = 1715700576
+SHA256 (rocky/l/libtool-ltdl-2.4.6-45.el9.aarch64.rpm) = f8e9312323e57320b38db0f50ba49fd78fdd7f55f38c625753c034d3af7f2570
+SIZE (rocky/l/libtool-ltdl-2.4.6-45.el9.aarch64.rpm) = 36386
+SHA256 (rocky/l/libtool-ltdl-2.4.6-45.el9.x86_64.rpm) = 39031cdd1458c857211736b88cef8c9eb60ef7802cc2e9155f0dd8cadc2eeb8a
+SIZE (rocky/l/libtool-ltdl-2.4.6-45.el9.x86_64.rpm) = 36880
+SHA256 (rocky/l/libtool-2.4.6-45.el9.src.rpm) = 122e8832c15a7c199ebfbabaadddcdef7be65bf23433ae7a7dea11061c679418
+SIZE (rocky/l/libtool-2.4.6-45.el9.src.rpm) = 1000481

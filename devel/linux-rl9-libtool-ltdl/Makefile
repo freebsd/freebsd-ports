@@ -1,0 +1,24 @@
+PORTNAME=	libtool-ltdl
+PORTVERSION=	2.4.6
+DISTVERSIONSUFFIX=	-45.el9
+CATEGORIES=	devel linux
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	Runtime libraries for GNU libtool (Rocky Linux ${LINUX_DIST_VER})
+WWW=		https://www.gnu.org/software/libtool/
+
+LICENSE=	LGPL21+
+
+USES=		linux:rl9
+USE_LDCONFIG=	yes
+USE_LINUX_RPM=	yes
+
+SRC_DISTFILES=	${DISTNAME:S/-ltdl//}${SRC_SUFX}:SOURCE
+
+CONFLICTS=      linux-c7-${PORTNAME}
+DESCR=		${.CURDIR}/../libltdl/pkg-descr
+DOCSDIR=        ${PREFIX}/usr/share/doc/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
+
+OPTIONS_DEFINE= DOCS
+
+.include <bsd.port.mk>
