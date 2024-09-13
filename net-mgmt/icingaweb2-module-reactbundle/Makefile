@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Icinga Web 2 ReactPHP-based 3rd party libraries
 WWW=		https://github.com/Icinga/icingaweb2-module-reactbundle
 
