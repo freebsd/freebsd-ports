@@ -1,5 +1,5 @@
 PORTNAME=	kibana
-DISTVERSION=	8.14.3
+DISTVERSION=	8.15.1
 DISTVERSIONSUFFIX=	-linux-x86_64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
