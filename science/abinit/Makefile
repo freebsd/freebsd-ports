@@ -1,6 +1,5 @@
 PORTNAME=	abinit
-DISTVERSION=	10.0.7
-PORTREVISION=	2
+DISTVERSION=	10.0.9
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -110,7 +109,7 @@ FCFLAGS+=	-fallow-argument-mismatch # see https://github.com/abinit/abinit/issue
 pre-configure: # version lines below are workaround for https://github.com/abinit/abinit/issues/75
 	@cd ${WRKSRC} && \
 		${ECHO} ${PORTVERSION} > .version && \
-		${REINPLACE_CMD} -e 's|UNKNOWN|${PORTVERSION}|' ${WRKSRC}/config/scripts/git-version-gen && \
+		${ECHO} ${PORTVERSION} > .tarball-version && \
 		./autogen.sh
 
 post-install-DOCS-on:
