@@ -23,6 +23,9 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
+do-test:
+	cd ${WRKSRC} && ${MAKE} check
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaudiofile.so.1
 
