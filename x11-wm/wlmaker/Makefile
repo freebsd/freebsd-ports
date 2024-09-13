@@ -1,6 +1,7 @@
 PORTNAME=	wlmaker
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -13,7 +14,7 @@ BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.31:graphics/wayland-protocols
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libwayland-server.so:graphics/wayland \
-		libwlroots.so:x11-toolkits/wlroots017 \
+		libwlroots-0.18.so:x11-toolkits/wlroots \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	foot:x11/foot
 
@@ -37,8 +38,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		${NULL}
 
 post-patch:
-# Temporarily force wlroots 0.17
-	@${REINPLACE_CMD} '/PKG.*wlroots-0.18/d' ${WRKSRC}/CMakeLists.txt
 # Respect -O level from global CFLAGS or CMAKE_BUILD_TYPE
 	@${REINPLACE_CMD} '/-O[0-9]/d' \
 		${WRKSRC}/submodules/libbase/CMakeLists.txt \
