@@ -14,7 +14,12 @@ bin/victoria-logs
 %%PORTDOCS%%%%DOCSDIR%%/data-ingestion/syslog.md
 %%PORTDOCS%%%%DOCSDIR%%/keyConcepts.md
 %%PORTDOCS%%%%DOCSDIR%%/logsql-examples.md
-%%PORTDOCS%%%%DOCSDIR%%/provision_datasources.png
 %%PORTDOCS%%%%DOCSDIR%%/querying/README.md
 %%PORTDOCS%%%%DOCSDIR%%/victorialogs-datasource.md
+%%PORTDOCS%%%%DOCSDIR%%/_index.md
+%%PORTDOCS%%%%DOCSDIR%%/data-ingestion/Telegraf.md
+%%PORTDOCS%%%%DOCSDIR%%/data-ingestion/_index.md
+%%PORTDOCS%%%%DOCSDIR%%/data-ingestion/opentelemetry.md
+%%PORTDOCS%%%%DOCSDIR%%/provision_datasources.webp
+%%PORTDOCS%%%%DOCSDIR%%/querying/_index.md
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%

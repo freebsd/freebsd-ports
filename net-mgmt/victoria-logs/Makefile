@@ -1,8 +1,7 @@
 PORTNAME=	victoria-logs
-PORTVERSION=	0.28.0
+PORTVERSION=	0.29.0
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=-victorialogs
-PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	samm@FreeBSD.org
@@ -12,19 +11,15 @@ WWW=		https://victoriametrics.com/products/victorialogs/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake go:modules,1.22,no_targets
+USES=		gmake go:modules,1.23,no_targets
+
+GO_MODULE=	github.com/VictoriaMetrics/VictoriaMetrics
 USE_RC_SUBR?=	${PORTNAME}
 
 MAKE_ENV=	PKG_TAG=v${PORTVERSION} GOOS=${OPSYS:tl} \
 		BUILDINFO_TAG=tags-v${PORTVERSION}-victorialogs \
 		DATEINFO_TAG=${_GET_DATE:sh} GOFLAGS=-buildvcs=false
 ALL_TARGET=	${PORTNAME}-pure
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	VictoriaMetrics
-GH_PROJECT=	VictoriaMetrics
-
-.include "${.CURDIR}/../victoria-logs/Makefile.deps"
 
 USERS=		victoria-logs
 GROUPS=		victoria-logs
