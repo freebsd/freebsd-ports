@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	22
 CATEGORIES=		sysutils
 
-MAINTAINER=		joneum@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Open-source application container engine
 WWW=		https://www.docker.com/
 
