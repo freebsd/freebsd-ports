@@ -1,5 +1,6 @@
 PORTNAME=	rawtherapee
 PORTVERSION=	5.11
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/Beep6581/RawTherapee/releases/download/${PORTVERSION}/ \
 		https://rawtherapee.com/shared/source/ \

@@ -2,23 +2,24 @@ Allow building jpegli against system libjpeg-turbo.
 
 This is an old version of https://github.com/libjxl/libjxl/pull/3085
 
---- CMakeLists.txt.orig	2024-01-10 09:51:57 UTC
+--- CMakeLists.txt.orig	2024-09-13 05:31:05 UTC
 +++ CMakeLists.txt
-@@ -81,13 +81,6 @@ endif()
+@@ -83,14 +83,6 @@ else()
+   set(BUNDLE_LIBPNG_DEFAULT YES)
+ else()
    set(BUNDLE_LIBPNG_DEFAULT NO)
- endif()
- 
+-endif()
+-
 -
 -if(EXISTS "${PROJECT_SOURCE_DIR}/third_party/libjpeg-turbo/jconfig.h.in")
 -  set(ENABLE_JPEGLI_DEFAULT YES)
 -else()
 -  set(ENABLE_JPEGLI_DEFAULT NO)
--endif()
--
- # Standard cmake naming for building shared libraries.
- get_property(SHARED_LIBS_SUPPORTED GLOBAL PROPERTY TARGET_SUPPORTS_SHARED_LIBS)
- option(BUILD_SHARED_LIBS "Build shared libraries instead of static ones" ${SHARED_LIBS_SUPPORTED})
-@@ -98,7 +91,7 @@ set(JPEGXL_ENABLE_TOOLS true CACHE BOOL
+-  message(STATUS "libjpeg-turbo submodule is absent; not enabling jpegli")
+ endif()
+ 
+ include(TestBigEndian)
+@@ -112,7 +104,7 @@ set(JPEGXL_ENABLE_TOOLS true CACHE BOOL
      "Build JPEGXL developer tools.")
  set(JPEGXL_ENABLE_TOOLS true CACHE BOOL
      "Build JPEGXL user tools: cjxl and djxl.")

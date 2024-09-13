@@ -1,5 +1,6 @@
 PORTNAME=	aom
 DISTVERSION=	3.10.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://storage.googleapis.com/${PORTNAME}-releases/
 DISTNAME=	lib${PORTNAME}-${DISTVERSION}
