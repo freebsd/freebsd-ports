@@ -1,6 +1,5 @@
 PORTNAME=	waybar
-DISTVERSION=	0.10.4
-PORTREVISION=	1
+DISTVERSION=	0.11.0
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C/.+/-${FLAVOR}/}
 
@@ -90,6 +89,9 @@ MANPAGES_PLIST_FILES=	share/man/man5/${PORTNAME}-battery.5.gz \
 			share/man/man5/${PORTNAME}-inhibitor.5.gz \
 			share/man/man5/${PORTNAME}-memory.5.gz \
 			share/man/man5/${PORTNAME}-menu.5.gz \
+			share/man/man5/${PORTNAME}-niri-language.5.gz \
+			share/man/man5/${PORTNAME}-niri-window.5.gz \
+			share/man/man5/${PORTNAME}-niri-workspaces.5.gz \
 			share/man/man5/${PORTNAME}-river-layout.5.gz \
 			share/man/man5/${PORTNAME}-river-mode.5.gz \
 			share/man/man5/${PORTNAME}-river-tags.5.gz \
