@@ -1,0 +1,2 @@
+# To force a version qualifier update add the bug here
+I20180131-2000 comparator error

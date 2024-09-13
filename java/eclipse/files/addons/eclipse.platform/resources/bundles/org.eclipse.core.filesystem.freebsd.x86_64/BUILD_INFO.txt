@@ -1,0 +1,19 @@
+Native Build Info:
+------------------
+
+platform:         x86_64-redhat-linux
+built by:         pawel.pogorzelski@pl.ibm.com
+build date:       21-Jan-2010
+OS Name:          Red Hat Enterprise Linux Client release 4
+OS Version:       Linux 2.6.9-67.EL x86_64 (glibc-2.3.4-2.39)
+Compiler version: gcc version 3.4.6-9
+
+build script:
+-------------
+#!/bin/sh
+rpm -q glibc
+#ensure system gcc
+export PATH=/usr/bin:$PATH
+cd org.eclipse.core.filesystem/natives/unix/linux
+make JAVA_HOME=$HOME/jdk1.5.0_11_x86-64
+cp liblocalfile_1_0_0.so ../../../../org.eclipse.core.filesystem.linux.x86_64/os/linux/x86_64/

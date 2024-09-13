@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %fragmentName
+Bundle-SymbolicName: org.eclipse.core.filesystem.freebsd.x86_64; singleton:=true
+Bundle-Version: 1.2.400.qualifier
+Bundle-Vendor: %providerName
+Fragment-Host: org.eclipse.core.filesystem;bundle-version="[1.7.200,2.0.0)"
+Bundle-Localization: fragment
+Eclipse-PlatformFilter: (& (osgi.os=freebsd) (osgi.arch=x86_64))

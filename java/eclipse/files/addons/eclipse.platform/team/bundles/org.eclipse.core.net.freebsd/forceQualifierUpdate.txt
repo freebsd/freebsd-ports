@@ -1,0 +1,3 @@
+# To force a version qualifier update add the bug here
+https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/issues/1184
+https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/issues/1659
