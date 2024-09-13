@@ -30,7 +30,7 @@ NO_ARCH=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} > 30900
-BROKEN=		python-3.9 is not supported
+BROKEN=		python-3.9 or later is not supported
 .endif
 
 do-test:
