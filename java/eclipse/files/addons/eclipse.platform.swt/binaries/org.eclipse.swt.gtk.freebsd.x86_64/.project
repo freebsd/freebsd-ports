@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>org.eclipse.swt.gtk.freebsd.x86_64</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.pde.ManifestBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.pde.SchemaBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.pde.api.tools.apiAnalysisBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.eclipse.pde.PluginNature</nature>
+		<nature>org.eclipse.pde.api.tools.apiAnalysisNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>.classpath</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/.classpath_gtk</locationURI>
+		</link>
+		<link>
+			<name>.settings/.api_filters</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/.settings/.api_filters</locationURI>
+		</link>
+		<link>
+			<name>.settings</name>
+			<type>2</type>
+			<locationURI>PARENT-1-PROJECT_LOC/.settings</locationURI>
+		</link>
+		<link>
+			<name>Eclipse SWT</name>
+			<type>2</type>
+			<locationURI>SWT_HOST_PLUGIN/Eclipse%20SWT</locationURI>
+		</link>
+		<link>
+			<name>Eclipse SWT Accessibility</name>
+			<type>2</type>
+			<locationURI>SWT_HOST_PLUGIN/Eclipse%20SWT%20Accessibility</locationURI>
+		</link>
+		<link>
+			<name>Eclipse SWT AWT</name>
+			<type>2</type>
+			<locationURI>SWT_HOST_PLUGIN/Eclipse%20SWT%20AWT</locationURI>
+		</link>
+		<link>
+			<name>Eclipse SWT Browser</name>
+			<type>2</type>
+			<locationURI>SWT_HOST_PLUGIN/Eclipse%20SWT%20Browser</locationURI>
+		</link>
+		<link>
+			<name>Eclipse SWT Custom Widgets</name>
+			<type>2</type>
+			<locationURI>SWT_HOST_PLUGIN/Eclipse%20SWT%20Custom%20Widgets</locationURI>
+		</link>
+		<link>
+			<name>Eclipse SWT Drag and Drop</name>
+			<type>2</type>
+			<locationURI>SWT_HOST_PLUGIN/Eclipse%20SWT%20Drag%20and%20Drop</locationURI>
+		</link>
+		<link>
+			<name>Eclipse SWT OLE Win32</name>
+			<type>2</type>
+			<locationURI>SWT_HOST_PLUGIN/Eclipse%20SWT%20OLE%20Win32</locationURI>
+		</link>
+		<link>
+			<name>Eclipse SWT OpenGL</name>
+			<type>2</type>
+			<locationURI>SWT_HOST_PLUGIN/Eclipse%20SWT%20OpenGL</locationURI>
+		</link>
+		<link>
+			<name>Eclipse SWT PI</name>
+			<type>2</type>
+			<locationURI>SWT_HOST_PLUGIN/Eclipse%20SWT%20PI</locationURI>
+		</link>
+		<link>
+			<name>Eclipse SWT Printing</name>
+			<type>2</type>
+			<locationURI>SWT_HOST_PLUGIN/Eclipse%20SWT%20Printing</locationURI>
+		</link>
+		<link>
+			<name>Eclipse SWT Program</name>
+			<type>2</type>
+			<locationURI>SWT_HOST_PLUGIN/Eclipse%20SWT%20Program</locationURI>
+		</link>
+		<link>
+			<name>Eclipse SWT WebKit</name>
+			<type>2</type>
+			<locationURI>SWT_HOST_PLUGIN/Eclipse%20SWT%20WebKit</locationURI>
+		</link>
+	</linkedResources>
+	<variableList>
+		<variable>
+			<name>SWT_HOST_PLUGIN</name>
+			<value>$%7BPARENT-2-PROJECT_LOC%7D/bundles/org.eclipse.swt</value>
+		</variable>
+	</variableList>
+</projectDescription>
