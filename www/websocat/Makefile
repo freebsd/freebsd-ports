@@ -1,7 +1,7 @@
 PORTNAME=	websocat
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.13.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -330,8 +330,5 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		zeroize-1.7.0
 
 PLIST_FILES=	bin/websocat
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/websocat
 
 .include <bsd.port.mk>

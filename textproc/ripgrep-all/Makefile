@@ -1,7 +1,7 @@
 PORTNAME=	ripgrep-all
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.6
-PORTREVISION=	29
+PORTREVISION=	30
 CATEGORIES=	textproc
 
 MAINTAINER=	alexis.praga@free.fr
@@ -178,9 +178,5 @@ CARGO_CRATES=	addr2line-0.12.0 \
 
 PLIST_FILES=	bin/rga \
 		bin/rga-preproc
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rga
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rga-preproc
 
 .include <bsd.port.mk>

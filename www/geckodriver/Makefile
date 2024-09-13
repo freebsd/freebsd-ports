@@ -1,6 +1,6 @@
 PORTNAME=	geckodriver
 DISTVERSION=	0.26.0
-PORTREVISION=	45
+PORTREVISION=	46
 CATEGORIES=	www
 MASTER_SITES=	https://hg.mozilla.org/mozilla-central/archive/${DISTNAME}.zip/testing/geckodriver/?dummy=/
 DISTNAME=	e9783a644016aa9b317887076618425586730d73
@@ -364,8 +364,5 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		xml-rs-0.8.0 \
 		yaml-rust-0.4.2 \
 		zip-0.4.2
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/geckodriver
 
 .include <bsd.port.mk>

@@ -1,5 +1,3 @@
-TIMESTAMP = 1715436343
-SHA256 (gromacs-2024.2.tar.gz) = 802a7e335f2e895770f57b159e4ec368ebb0ff2ce6daccf706c6e8025c36852b
-SIZE (gromacs-2024.2.tar.gz) = 42367929
-SHA256 (google-googletest-v1.13.0_GH0.tar.gz) = ad7fdba11ea011c1d925b3289cf4af2c66a352e18d4c7264392fead75e919363
-SIZE (google-googletest-v1.13.0_GH0.tar.gz) = 862871
+TIMESTAMP = 1725918871
+SHA256 (gromacs-2024.3.tar.gz) = bbda056ee59390be7d58d84c13a9ec0d4e3635617adf2eb747034922cba1f029
+SIZE (gromacs-2024.3.tar.gz) = 42373103

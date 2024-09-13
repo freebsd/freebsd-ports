@@ -1,6 +1,6 @@
 PORTNAME=	jirust
 DISTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -624,8 +624,5 @@ OPENSSLLIB=	/usr/lib
 MAKE_ENV=	LIBCLANG_PATH=${LLVM_PREFIX}/lib/libclang.so
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

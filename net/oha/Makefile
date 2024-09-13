@@ -1,7 +1,7 @@
 PORTNAME=	oha
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 
 MAINTAINER=	otis@FreeBSD.org
@@ -286,8 +286,5 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		zeroize-1.7.0
 
 PLIST_FILES=	bin/oha
-
-post-install:
-		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/oha
 
 .include <bsd.port.mk>

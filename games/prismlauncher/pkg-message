@@ -1,0 +1,20 @@
+[
+{
+message: <<EOM
+
+NVIDIA users have probably to add the following to the
+environment variables section:
+
+LD_LIBMAP       libGLX.so       libGL-NVIDIA.so
+                libGLX.so.0     libGL-NVIDIA.so.1
+
+For older cards that dont support OpenGL 4
+you have to add the following to the environment variables section:
+
+MESA_GL_VERSION_OVERRIDE 3.2
+MESA_GLSL_VERSION_OVERRIDE 330
+
+Have Fun!
+EOM
+}
+]

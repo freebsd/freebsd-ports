@@ -1,7 +1,7 @@
 PORTNAME=	lychee
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	www net
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -450,7 +450,5 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		yansi-0.5.1 \
 		zeroize-1.5.7 \
 		criterion,criterion-plot@git+https://github.com/bheisler/criterion.rs\#2f5360737807cbe90d149db6199783236f0ef634
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lychee
 
 .include <bsd.port.mk>

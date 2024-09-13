@@ -1,6 +1,6 @@
 PORTNAME=	twiggy
 DISTVERSION=	0.6.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	devel www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -109,8 +109,5 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		winconsole-0.10.0
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

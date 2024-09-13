@@ -1,6 +1,7 @@
 PORTNAME=	xcp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.21.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -123,8 +124,5 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		xattr-1.3.1
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

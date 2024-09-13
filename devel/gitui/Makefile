@@ -1,7 +1,7 @@
 PORTNAME=	gitui
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.26.3	# After update, `make patch` and `make cargo-crates > Makefile.crates` to avoid fetching vendored openssl-src
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,8 +39,5 @@ post-patch:
 	-e '/get_cpu/s|unsigned long|uint64_t|' \
 	-e '/get_proc_total/s|unsigned long|uint64_t|' \
 	${WRKSRC}/cargo-crates/sys-info-0.9.1/c/*.[ch]
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

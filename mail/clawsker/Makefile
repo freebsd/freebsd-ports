@@ -1,10 +1,9 @@
 PORTNAME=	clawsker
-PORTVERSION=	1.3.8
-PORTREVISION=	1
+DISTVERSION=	1.4.0
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.claws-mail.org/tools/
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Applet to edit Claws Mail's hidden preferences
 WWW=		https://www.claws-mail.org/clawsker.php
 

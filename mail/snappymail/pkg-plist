@@ -563,6 +563,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/vi/relativetimeformat.js
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/vi/static.json
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/vi/user.json
+%%WWWDIR%%/snappymail/v/%%VER%%/app/localization/zh-TW/admin.json
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/zh-TW/relativetimeformat.js
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/zh-TW/static.json
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/zh-TW/user.json
@@ -605,6 +606,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/PopupsContacts.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/PopupsFilter.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/PopupsFolder.html
+%%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/PopupsFolderACL.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/PopupsFolderClear.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/PopupsFolderCreate.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/User/PopupsFolderSystem.html

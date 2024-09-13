@@ -1,7 +1,7 @@
 PORTNAME=	amber
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-code-search-replace-tool
 
@@ -125,10 +125,5 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 
 PLIST_FILES=	bin/ambr \
 		bin/ambs
-
-post-install:
-	@${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/bin/ambr \
-		${STAGEDIR}${PREFIX}/bin/ambs
 
 .include <bsd.port.mk>

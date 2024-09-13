@@ -1,6 +1,6 @@
 PORTNAME=	syngesture
 DISTVERSION=	1.0.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,8 +33,5 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		unicode-ident-1.0.3
 
 PLIST_FILES=	bin/${PORTNAME}s
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}s
 
 .include <bsd.port.mk>

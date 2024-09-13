@@ -1,6 +1,6 @@
 PORTNAME=	rust-coreutils
 DISTVERSION=	0.0.27
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -46,8 +46,5 @@ do-install:
 	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/coreutils \
 		${STAGEDIR}${PREFIX}/bin/${BINPREFIX}coreutils
 	${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/symlink-install-helper.sh
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${BINPREFIX}coreutils
 
 .include <bsd.port.mk>

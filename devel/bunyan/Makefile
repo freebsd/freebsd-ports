@@ -1,7 +1,7 @@
 PORTNAME=	bunyan
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.9
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -107,8 +107,5 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		windows_x86_64_msvc-0.42.0
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

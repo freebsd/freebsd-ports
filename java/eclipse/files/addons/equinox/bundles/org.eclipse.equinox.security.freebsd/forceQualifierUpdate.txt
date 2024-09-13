@@ -1,0 +1,4 @@
+# To force a version qualifier update add the bug here
+
+Bug 527899 [9] Implement JEP 280: Indify String Concatenation #1139
+https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/issues/1659

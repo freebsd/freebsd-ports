@@ -1,7 +1,7 @@
 PORTNAME=	jot
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -59,8 +59,5 @@ CARGO_CRATES=	atty-0.2.14 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 PLIST_FILES=	bin/jt
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/jt
 
 .include <bsd.port.mk>

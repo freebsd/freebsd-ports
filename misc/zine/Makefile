@@ -1,7 +1,7 @@
 PORTNAME=	zine
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.16.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -328,8 +328,5 @@ OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

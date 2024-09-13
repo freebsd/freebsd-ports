@@ -1,6 +1,6 @@
 PORTNAME=	rustworkx
 DISTVERSION=	0.15.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -126,9 +126,6 @@ TEST_WRKSRC=	${BUILD_WRKDIR}
 PLIST_FILES=	${PYTHON_SITELIBDIR}/rustworkx/rustworkx${PYTHON_EXT_SUFFIX}.so # workaround for https://github.com/Qiskit/rustworkx/issues/654
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rustworkx/rustworkx${PYTHON_EXT_SUFFIX}.so
 
 #do-test: # this runs tests in the fixed venv
 #	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} tox -epy

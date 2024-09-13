@@ -1,7 +1,7 @@
 PORTNAME=	rwpspread
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -195,8 +195,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/zsh/site-functions/_rwpspread
 
 post-install:
-	# strip binary
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	# install completions
 	@${MKDIR} \
 		${STAGEDIR}${PREFIX}/share/bash-completion/completions \

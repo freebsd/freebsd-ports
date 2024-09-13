@@ -1,7 +1,7 @@
 PORTNAME=	handlr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.1
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	sysutils
 
 MAINTAINER=	sec.research.2005@gmail.com
@@ -185,9 +185,6 @@ COMPLETIONS_DESC=	Install bash, zsh, and fish shell completions
 COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
 				share/fish/vendor_completions.d/${PORTNAME}.fish \
 				share/zsh/site-functions/_${PORTNAME}
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/handlr
 
 post-install-COMPLETIONS-on:
 	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME} \

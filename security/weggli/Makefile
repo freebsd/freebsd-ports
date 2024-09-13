@@ -1,7 +1,7 @@
 PORTNAME=	weggli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -135,8 +135,5 @@ PLIST_FILES=	bin/${PORTNAME}
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} <= 1400091 || ${OSVERSION} >= 1500006 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
 USES+=		llvm:16
 .endif
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

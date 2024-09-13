@@ -5,7 +5,7 @@ COMMENT=	Glide64 video plugin for Mupen64Plus
 
 LIB_DEPENDS=	libmupen64plus.so.2:emulators/mupen64plus-core
 
-GH_TAGNAME=	bdf9f5ca8e381e6c1c824aa70b26ad34f4eeb132
+GH_TAGNAME=	713c833826c47e4decd78f6f28a4a1bd8f1527ea
 
 USES+=		gl localbase:ldflags sdl
 USE_CXXSTD=	c++14
@@ -20,6 +20,6 @@ DISTINFO_FILE=		${.CURDIR}/distinfo
 
 OPTIONS_DEFINE=	#
 
-RELEASE_DATE=	20230611
+RELEASE_DATE=	20240714
 
 .include "${MASTERDIR}/Makefile"

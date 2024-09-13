@@ -2373,7 +2373,6 @@
 %%WWWDIR%%/themes/night_base.less
 %%WWWDIR%%/themes/night_blue.css
 %%WWWDIR%%/themes/night_blue.less
-%%WWWDIR%%/ttrss_db_check.php
 %%WWWDIR%%/utils/phpstan-watcher.sh
 %%WWWDIR%%/utils/phpunit-integration.sh
 %%WWWDIR%%/utils/phpunit.sh

@@ -1,7 +1,7 @@
 PORTNAME=	tokei
 DISTVERSIONPREFIX=	v
 DISTVERSION=	12.1.2
-PORTREVISION=	33
+PORTREVISION=	34
 CATEGORIES=	devel
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -172,8 +172,5 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 CARGO_FEATURES=	all
 
 PLIST_FILES=	bin/tokei
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/tokei
 
 .include <bsd.port.mk>

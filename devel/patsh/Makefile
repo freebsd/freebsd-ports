@@ -1,7 +1,7 @@
 PORTNAME=	patsh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -93,8 +93,5 @@ CARGO_CRATES=	aho-corasick-1.0.4 \
 		windows_x86_64_msvc-0.48.4
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

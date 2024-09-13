@@ -1,7 +1,7 @@
 PORTNAME=	dose-response
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
-PORTREVISION=	45
+PORTREVISION=	46
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -211,7 +211,6 @@ DESKTOP_ENTRIES=	"Dose Response" \
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .for size in 16 32 48 64 256
 	@${MKDIR} ${STAGEDIR}${LOCALBASE}/share/icons/hicolor/${size}x${size}/apps
 	${INSTALL_DATA} ${WRKSRC}/assets/icon_${size}x${size}.png \

@@ -1,7 +1,7 @@
 PORTNAME=	cargo-bloat
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -37,8 +37,5 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

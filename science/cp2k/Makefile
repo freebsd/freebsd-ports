@@ -1,7 +1,6 @@
 PORTNAME=	cp2k
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.2
-PORTREVISION=	1
+DISTVERSION=	2024.3
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,12 +22,13 @@ RUN_DEPENDS=	cp2k-data>0:science/cp2k-data
 TEST_DEPENDS=	bash:shells/bash
 
 USES=		cmake fortran localbase:ldflags python:build,test shebangfix tar:bz2
+USE_GCC=	yes # OpenMP is used from both Fortan and C code, therefore C code should be compiled with GCC, otherwise it fails at run-time (same in dbcsr)
 
 USE_GITHUB=	yes
 
 SHEBANG_GLOB=	*.py
 
-GCC_VERSION=	${GCC_DEFAULT} # ${_USE_GCC}
+GCC_VERSION=	${GCC_DEFAULT}
 
 MAKE_ARGS=	XARCH=FreeBSD-gfortran VERSION=${VERSION} FC=gfortran${GCC_VERSION} CC=${CC} LD=gfortran${GCC_VERSION} \
 		DATA_DIR=${DATADIR}
@@ -38,14 +38,15 @@ FFLAGS+=	-D__NO_STATM_ACCESS
 BINARY_ALIAS=	python=${PYTHON_CMD} python3=${PYTHON_CMD}
 
 OPTIONS_DEFINE=		LIBINT MPIX
-OPTIONS_DEFAULT=		#LIBINT MPI
+OPTIONS_DEFAULT=	MPIX # LIBINT
 
 LIBINT_DESC=		Use libint to evaluate integrals
 LIBINT_CMAKE_BOOL=	CP2K_USE_LIBINT2
 LIBINT_LIB_DEPENDS=	libint2.so:science/libint2
 LIBINT_BROKEN=		missing fortran support
 
-MPIX_CMAKE_BOOL=		CP2K_USE_MPI
+MPIX_DESC=		Enable MPI
+MPIX_CMAKE_BOOL=	CP2K_USE_MPI
 MPIX_USES=		mpi:mpich
 MPIX_LIB_DEPENDS=	libscalapack.so:math/scalapack
 MPIX_VARS=		EXE_VERSION=psmp

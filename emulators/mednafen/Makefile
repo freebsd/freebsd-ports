@@ -1,6 +1,5 @@
 PORTNAME=	mednafen
-PORTVERSION=	1.26.1
-PORTREVISION=	3
+DISTVERSION=	1.32.1
 PORTEPOCH=	1
 CATEGORIES=	emulators games
 MASTER_SITES=	https://mednafen.github.io/releases/files/
@@ -12,75 +11,107 @@ WWW=		https://mednafen.github.io
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
-		libsndfile.so:audio/libsndfile \
-		libvorbis.so:audio/libvorbis
+LIB_DEPENDS=	libFLAC.so:audio/flac \
+		liblzo2.so:archivers/lzo2 \
+		libmpcdec.so:audio/musepack \
+		libtrio.so:devel/trio \
+		libvorbisfile.so:audio/libvorbis \
+		libzstd.so:archivers/zstd
 
-GNU_CONFIGURE=	yes
-USE_SDL=	sdl2 net2
-USE_GL=		gl glu
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-WRKSRC=	${WRKDIR}/${PORTNAME}
+USES=		autoreconf compiler:c++11-lang gl iconv localbase pkgconfig sdl \
+		tar:xz
+USE_GL=		egl
+USE_SDL=	sdl2
+
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS+=	--with-external-libzstd \
+			--with-external-lzo \
+			--with-external-mpcdec \
+			--with-external-tremor \
+			--with-external-trio
+
 SUB_FILES=	pkg-message
 
-CONFIGURE_ARGS+=--disable-alsa --disable-alsatest \
-		--with-sdl-prefix=${LOCALBASE}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		compiler:c++11-lib cpe gl iconv pkgconfig:build sdl tar:xz
-CPE_VENDOR=	david_shadoff
+OPTIONS_DEFINE=		DOCS NLS
+OPTIONS_DEFAULT=	ALSA APPLE2 GP GPA JACK LYNX MD NES NGP PCE PCFX PSX \
+			SMS SNES SS VB WSWAN
+OPTIONS_GROUP=		AUDIO
+OPTIONS_GROUP_AUDIO=	ALSA JACK
+OPTIONS_MULTI=		EMU
+OPTIONS_MULTI_EMU=	APPLE2 GP GPA LYNX MD NES NGP PCE PCFX PSX SMS SNES SS \
+			VB WSWAN
+OPTIONS_SUB=		yes
 
-OPTIONS_DEFINE=	NLS DOCS JACK
-OPTIONS_MULTI=	EMU
-OPTIONS_MULTI_EMU=	GB GBA LINX MD NES NGP PCE PCFX PSX SMS SWAN VB
-OPTIONS_DEFAULT=	GB GBA LINX MD NES NGP PCE PCFX PSX SMS SWAN VB
+APPLE2_DESC=	Apple II
+GPA_DESC=	GameBoy Advance
+GP_DESC=	GameBoy
+LYNX_DESC=	Atari Lynx
+MD_DESC=	Sega Genesis/Megadrive
+NES_DESC=	Nintendo Entertainment System
+NGP_DESC=	Neo Geo Pocket
+PCE_DESC=	PC Engine/TurboGrafx 16
+PCFX_DESC=	PC-FX
+PSX_DESC=	Sony PlayStation
+SMS_DESC=	Sega Game Gear + Sega Master System
+SNES_DESC=	Super Nintendo Entertainment System/Super Famicom
+SS_DESC=	Sega Saturn
+VB_DESC=	Virtual Boy
+WSWAN_DESC=	WonderSwan
 
-GB_DESC=	build with GameBoy emulation
-GBA_DESC=	build with GameBoy Advance emulation
-LINX_DESC=	build with Atari Lynx emulation
-MD_DESC=	build with Sega Genesis/MegaDrive emulation
-NES_DESC=	build with Nintendo Entertainment System emulation
-NGP_DESC=	build with Neo Geo Pocket emulation
-PCE_DESC=	build with PC Engine (TurboGrafx 16) emulation
-PCFX_DESC=	build with PC-FX emulation
-PSX_DESC=	build with Playstation emulation
-SMS_DESC=	build with SMS+GG emulation
-SWAN_DESC=	build with WonderSWan emulation
-VB_DESC=	build with Virtual Boy emulation
-JACK_DESC=	support the JACK audio API
+ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
+ALSA_CONFIGURE_ENABLE=		alsa
+ALSA_EXTRA_PATCHES=		${PATCHDIR}/extra-patch-src_drivers_main.cpp
 
-OPTIONS_SUB=	yes
+APPLE2_CONFIGURE_ENABLE=	apple2
 
-NLS_USES=	gettext
-NLS_CONFIGURE_ENABLE=nls
+GPA_CONFIGURE_ENABLE=		gba
 
-JACK_LIB_DEPENDS=libjack.so:audio/jack
-JACK_CONFIGURE_ENABLE=jack
+GP_CONFIGURE_ENABLE=		gb
 
-GB_CONFIGURE_ENABLE=gb
-GBA_CONFIGURE_ENABLE=gba
-LINX_CONFIGURE_ENABLE=lynx
-MD_CONFIGURE_ENABLE=md
-NES_CONFIGURE_ENABLE=nes
-NGP_CONFIGURE_ENABLE=ngp
-PCE_CONFIGURE_ENABLE=pce
-PCFX_CONFIGURE_ENABLE=pcfx
-PSX_CONFIGURE_ENABLE=psx
-SMS_CONFIGURE_ENABLE=sms
-SWAN_CONFIGURE_ENABLE=wswan
-VB_CONFIGURE_ENABLE=vb
+JACK_LIB_DEPENDS=		libjack.so:audio/jack
+JACK_CONFIGURE_ENABLE=		jack
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|versionsort|alphasort|g' \
-		${WRKSRC}/src/drivers/Joystick_Linux.cpp
+LYNX_CONFIGURE_ENABLE=		lynx
+
+MD_CONFIGURE_ENABLE=		md
+
+NES_CONFIGURE_ENABLE=		nes
+
+NGP_CONFIGURE_ENABLE=		ngp
+
+NLS_USES=			gettext
+NLS_CONFIGURE_ENABLE=		nls
+
+PCE_CONFIGURE_ENABLE=		pce pce-fast
+
+PCFX_CONFIGURE_ENABLE=		pcfx
+
+PSX_CONFIGURE_ENABLE=		psx
+
+SMS_CONFIGURE_ENABLE=		sms
+
+SNES_CONFIGURE_ENABLE=		snes snes-faust
+
+SS_CONFIGURE_ENABLE=		ss
+
+VB_CONFIGURE_ENABLE=		vb
+
+WSWAN_CONFIGURE_ENABLE=		wswan
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-		-e 's|/usr/X11R6|${LOCALBASE}|g' \
-		${WRKSRC}/configure
+	${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/m4/lib-link.m4 \
+		${WRKSRC}/m4/lib-prefix.m4
 
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Documentation/mednafen.html ${STAGEDIR}${DOCSDIR}
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog \
+		${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README \
+		${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && \
+		${COPYTREE_SHARE} Documentation ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

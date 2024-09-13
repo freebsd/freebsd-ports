@@ -1,7 +1,7 @@
 PORTNAME=	sq
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.36.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 PKGNAMEPREFIX=	sequoia-
 
@@ -29,9 +29,6 @@ OPTIONS_DEFAULT=	BASH ELVISH FISH MANPAGES ZSH
 OPTIONS_SUB=	yes
 
 ELVISH_DESC=	Install Elvish module
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 post-install-BASH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions

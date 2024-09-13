@@ -1,5 +1,5 @@
 PORTNAME=	x16-emulator
-DISTVERSION=	r47
+DISTVERSION=	r48
 CATEGORIES=	emulators
 
 MAINTAINER=	makc@FreeBSD.org

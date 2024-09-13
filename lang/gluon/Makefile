@@ -1,7 +1,7 @@
 PORTNAME=	gluon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.18.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
@@ -396,8 +396,5 @@ PLIST_FILES=	bin/${PORTNAME}
 .if ${ARCH} == i386
 LTO_UNSAFE=	yes
 .endif
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

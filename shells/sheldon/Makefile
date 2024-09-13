@@ -1,5 +1,6 @@
 PORTNAME=	sheldon
 DISTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	shells
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -28,7 +29,6 @@ PORTDOCS=	README.md RELEASES.md
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}

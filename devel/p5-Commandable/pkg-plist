@@ -13,5 +13,6 @@
 %%PERL5_MAN3%%/Commandable::Finder::MethodAttributes.3.gz
 %%PERL5_MAN3%%/Commandable::Finder::Packages.3.gz
 %%PERL5_MAN3%%/Commandable::Finder::SubAttributes.3.gz
+%%PERL5_MAN3%%/Commandable::Finder::SubAttributes::Attrs.3.gz
 %%PERL5_MAN3%%/Commandable::Invocation.3.gz
 %%PERL5_MAN3%%/Commandable::Output.3.gz

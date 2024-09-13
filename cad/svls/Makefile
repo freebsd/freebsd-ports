@@ -1,7 +1,7 @@
 PORTNAME=	svls
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -185,8 +185,5 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		winnow-0.6.9
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

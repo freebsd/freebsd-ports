@@ -1,6 +1,6 @@
 PORTNAME=	shell-hist
 DISTVERSION=	g20190515
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -75,8 +75,5 @@ CARGO_CRATES=	aho-corasick-0.7.3 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

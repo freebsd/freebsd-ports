@@ -1,5 +1,6 @@
 PORTNAME=	rust-findutils
-DISTVERSION=	0.6.0
+DISTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -20,11 +21,11 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.6.12 \
-		anstyle-1.0.0 \
+		anstyle-1.0.8 \
 		anstyle-parse-0.2.1 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-3.0.1 \
-		assert_cmd-2.0.14 \
+		assert_cmd-2.0.16 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		bitflags-2.4.1 \
@@ -35,8 +36,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		cfg_aliases-0.1.1 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.38 \
-		clap-4.5.7 \
-		clap_builder-4.5.7 \
+		clap-4.5.17 \
+		clap_builder-4.5.17 \
 		clap_lex-0.7.0 \
 		colorchoice-1.0.0 \
 		core-foundation-sys-0.8.3 \
@@ -47,7 +48,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		errno-0.3.8 \
 		faccess-0.2.4 \
 		fastrand-2.0.1 \
-		filetime-0.2.23 \
+		filetime-0.2.25 \
 		float-cmp-0.9.0 \
 		futures-0.3.21 \
 		futures-channel-0.3.21 \
@@ -61,6 +62,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		iana-time-zone-0.1.47 \
 		js-sys-0.3.59 \
 		libc-0.2.155 \
+		libredox-0.1.3 \
 		linux-raw-sys-0.4.12 \
 		lock_api-0.4.7 \
 		log-0.4.14 \
@@ -79,14 +81,15 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.24 \
-		predicates-3.1.0 \
+		predicates-3.1.2 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.1 \
 		pretty_assertions-1.4.0 \
 		proc-macro2-1.0.60 \
 		quote-1.0.28 \
 		redox_syscall-0.4.1 \
-		regex-1.10.5 \
+		redox_syscall-0.5.3 \
+		regex-1.10.6 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.8.4 \
 		rustix-0.38.31 \
@@ -101,7 +104,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		smallvec-1.8.0 \
 		strsim-0.11.0 \
 		syn-2.0.18 \
-		tempfile-3.10.1 \
+		tempfile-3.12.0 \
 		terminal_size-0.3.0 \
 		treeline-0.1.0 \
 		unicode-ident-1.0.9 \
@@ -124,31 +127,28 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
 		windows-targets-0.48.0 \
-		windows-targets-0.52.0 \
+		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.48.0 \
-		windows_aarch64_gnullvm-0.52.0 \
+		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.48.0 \
-		windows_aarch64_msvc-0.52.0 \
+		windows_aarch64_msvc-0.52.6 \
 		windows_i686_gnu-0.48.0 \
-		windows_i686_gnu-0.52.0 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
 		windows_i686_msvc-0.48.0 \
-		windows_i686_msvc-0.52.0 \
+		windows_i686_msvc-0.52.6 \
 		windows_x86_64_gnu-0.48.0 \
-		windows_x86_64_gnu-0.52.0 \
+		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.48.0 \
-		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.48.0 \
-		windows_x86_64_msvc-0.52.0 \
+		windows_x86_64_msvc-0.52.6 \
 		yansi-0.5.1
 
 PLIST_FILES=	bin/find \
 		bin/testing-commandline \
 		bin/xargs
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/find
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/testing-commandline
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xargs
 
 .include <bsd.port.mk>

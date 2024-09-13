@@ -1,3 +1,3 @@
-TIMESTAMP = 1711466208
-SHA256 (smbprotocol-1.13.0.tar.gz) = cf33f5ae1017e9ad78ca323f2f8e323e8de519b8511dd365231cd896e8c3abba
-SIZE (smbprotocol-1.13.0.tar.gz) = 182645
+TIMESTAMP = 1725559875
+SHA256 (smbprotocol-1.14.0.tar.gz) = 4918ba10a0b0b344308e7a043c1c6741bf7282c3937059a5852de702d3b684da
+SIZE (smbprotocol-1.14.0.tar.gz) = 182800

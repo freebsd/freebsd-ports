@@ -1,6 +1,6 @@
 PORTNAME=	rpds-py
 PORTVERSION=	0.13.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/crate-py/rpds/releases/download/v${PORTVERSION}/
@@ -22,8 +22,5 @@ USE_PYTHON=	autoplist concurrent pep517
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 WRKSRC=		${WRKDIR}/rpds_py-${PORTVERSION}
-
-post-install:
-	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>

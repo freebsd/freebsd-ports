@@ -1,7 +1,7 @@
 PORTNAME=	mdbook
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.40
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -18,8 +18,5 @@ GH_ACCOUNT=	rust-lang
 GH_PROJECT=	mdBook
 
 PLIST_FILES=	bin/mdbook
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mdbook
 
 .include <bsd.port.mk>

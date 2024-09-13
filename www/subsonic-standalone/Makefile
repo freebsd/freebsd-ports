@@ -15,6 +15,9 @@ WWW=		http://www.subsonic.org
 # http://forum.subsonic.org/forum/viewtopic.php?f=4&t=16604#p71128
 LICENSE=	NONE
 
+DEPRECATED=	Abandonware, no longer maintained upstream as of 2019
+EXPIRATION_DATE=2024-09-30
+
 OPTIONS_GROUP=	TRANSCODING
 TRANSCODING_DESC=	Transcoding support
 OPTIONS_GROUP_TRANSCODING=	FFMPEG FLAC LAME VORBIS FAAC FAAD XMP APE

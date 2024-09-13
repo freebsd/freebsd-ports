@@ -1,7 +1,7 @@
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.39.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -45,7 +45,6 @@ pre-build:
 		${WRKSRC}/man/${PORTNAME}.1
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
 

@@ -1,6 +1,6 @@
 PORTNAME=	ratify
 DISTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -147,8 +147,5 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		yansi-0.5.1
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

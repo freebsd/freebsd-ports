@@ -1,6 +1,6 @@
 PORTNAME=	yj
 DISTVERSION=	1.2.0
-PORTREVISION=	24
+PORTREVISION=	25
 CATEGORIES=	converters textproc
 PKGNAMESUFFIX=	-${GH_ACCOUNT}
 
@@ -70,8 +70,5 @@ CARGO_CRATES=	addr2line-0.17.0 \
 CONFLICTS_INSTALL=	yj
 
 PLIST_FILES=	bin/yj
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

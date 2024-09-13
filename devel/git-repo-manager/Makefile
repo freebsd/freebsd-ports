@@ -1,7 +1,7 @@
 PORTNAME=	git-repo-manager
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -166,8 +166,5 @@ OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/grm
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/grm
 
 .include <bsd.port.mk>

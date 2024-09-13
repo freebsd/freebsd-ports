@@ -1,7 +1,7 @@
 PORTNAME=	xplr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.21.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -29,8 +29,6 @@ _ASSETS=	${WRKSRC}/assets
 _ICONS=		${STAGEDIR}${PREFIX}/share/icons/hicolor
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 	${INSTALL_DATA} ${_ASSETS}/desktop/${PORTNAME}.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}.desktop
 

@@ -1,7 +1,7 @@
 PORTNAME=	twitch-tui
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -346,8 +346,5 @@ OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/twt
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/twt
 
 .include <bsd.port.mk>

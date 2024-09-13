@@ -1,6 +1,6 @@
 PORTNAME=	dra
-DISTVERSION=	0.6.1
-PORTREVISION=	0
+DISTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,14 +15,14 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	devmatteini
 
-CARGO_CRATES=	adler-1.0.2 \
+CARGO_CRATES=	adler2-2.0.0 \
 		aho-corasick-0.7.19 \
 		anstream-0.6.11 \
-		anstyle-1.0.0 \
+		anstyle-1.0.8 \
 		anstyle-parse-0.2.0 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-3.0.1 \
-		assert_cmd-2.0.15 \
+		assert_cmd-2.0.16 \
 		autocfg-1.1.0 \
 		base64-0.22.1 \
 		bitflags-1.3.2 \
@@ -31,19 +31,19 @@ CARGO_CRATES=	adler-1.0.2 \
 		byteorder-1.4.3 \
 		bzip2-0.4.4 \
 		bzip2-sys-0.1.11+1.0.8 \
-		cc-1.0.72 \
+		cc-1.1.15 \
 		cfg-if-1.0.0 \
-		cfg_aliases-0.1.1 \
-		clap-4.5.13 \
-		clap_builder-4.5.13 \
-		clap_complete-4.5.8 \
+		cfg_aliases-0.2.1 \
+		clap-4.5.16 \
+		clap_builder-4.5.15 \
+		clap_complete-4.5.24 \
 		clap_derive-4.5.13 \
 		clap_lex-0.7.0 \
 		colorchoice-1.0.0 \
 		console-0.15.0 \
 		crc32fast-1.3.2 \
 		crossbeam-utils-0.8.12 \
-		ctrlc-3.4.4 \
+		ctrlc-3.4.5 \
 		dialoguer-0.11.0 \
 		difflib-0.4.0 \
 		doc-comment-0.3.3 \
@@ -51,7 +51,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		errno-0.3.5 \
 		fastrand-1.9.0 \
 		filetime-0.2.17 \
-		flate2-1.0.30 \
+		flate2-1.0.33 \
 		float-cmp-0.9.0 \
 		form_urlencoded-1.0.1 \
 		getrandom-0.2.10 \
@@ -61,15 +61,15 @@ CARGO_CRATES=	adler-1.0.2 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.2 \
 		itoa-1.0.6 \
-		libc-0.2.153 \
-		libz-sys-1.1.8 \
+		libc-0.2.158 \
+		libz-sys-1.1.20 \
 		linux-raw-sys-0.1.3 \
 		log-0.4.14 \
 		lzma-sys-0.1.19 \
 		matches-0.1.9 \
 		memchr-2.5.0 \
-		miniz_oxide-0.7.1 \
-		nix-0.28.0 \
+		miniz_oxide-0.8.0 \
+		nix-0.29.0 \
 		normalize-line-endings-0.3.0 \
 		num-traits-0.2.15 \
 		number_prefix-0.4.0 \
@@ -95,10 +95,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		rustls-webpki-0.102.6 \
 		ryu-1.0.6 \
 		same-file-1.0.6 \
-		serde-1.0.204 \
-		serde_derive-1.0.204 \
+		serde-1.0.209 \
+		serde_derive-1.0.209 \
 		serde_json-1.0.99 \
 		shell-words-1.1.0 \
+		shlex-1.3.0 \
 		spin-0.9.8 \
 		strsim-0.11.0 \
 		subtle-2.5.0 \
@@ -120,7 +121,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicode-normalization-0.1.19 \
 		unicode-width-0.1.9 \
 		untrusted-0.9.0 \
-		ureq-2.10.0 \
+		ureq-2.10.1 \
 		url-2.2.2 \
 		urlencoding-2.1.3 \
 		utf8parse-0.2.1 \
@@ -139,44 +140,42 @@ CARGO_CRATES=	adler-1.0.2 \
 		windows-sys-0.42.0 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
-		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
 		windows-targets-0.42.1 \
 		windows-targets-0.48.0 \
-		windows-targets-0.52.0 \
+		windows-targets-0.52.6 \
 		windows_aarch64_gnullvm-0.42.1 \
 		windows_aarch64_gnullvm-0.48.0 \
-		windows_aarch64_gnullvm-0.52.0 \
+		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_msvc-0.36.1 \
 		windows_aarch64_msvc-0.42.1 \
 		windows_aarch64_msvc-0.48.0 \
-		windows_aarch64_msvc-0.52.0 \
+		windows_aarch64_msvc-0.52.6 \
 		windows_i686_gnu-0.36.1 \
 		windows_i686_gnu-0.42.1 \
 		windows_i686_gnu-0.48.0 \
-		windows_i686_gnu-0.52.0 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
 		windows_i686_msvc-0.36.1 \
 		windows_i686_msvc-0.42.1 \
 		windows_i686_msvc-0.48.0 \
-		windows_i686_msvc-0.52.0 \
+		windows_i686_msvc-0.52.6 \
 		windows_x86_64_gnu-0.36.1 \
 		windows_x86_64_gnu-0.42.1 \
 		windows_x86_64_gnu-0.48.0 \
-		windows_x86_64_gnu-0.52.0 \
+		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.42.1 \
 		windows_x86_64_gnullvm-0.48.0 \
-		windows_x86_64_gnullvm-0.52.0 \
+		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.36.1 \
 		windows_x86_64_msvc-0.42.1 \
 		windows_x86_64_msvc-0.48.0 \
-		windows_x86_64_msvc-0.52.0 \
+		windows_x86_64_msvc-0.52.6 \
 		xattr-1.0.1 \
 		xz2-0.1.7 \
 		zeroize-1.7.0 \
 		zip-0.6.6
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

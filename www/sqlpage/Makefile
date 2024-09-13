@@ -1,6 +1,7 @@
 PORTNAME=	sqlpage
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.28.0
+PORTREVISION=	1
 CATEGORIES=	www databases
 MASTER_SITES=	https://cdn.jsdelivr.net/npm/:npm
 DISTFILES=	${NPM_DISTFILES}
@@ -42,6 +43,5 @@ post-install:
 		 ${INSTALL_DATA} ${WRKSRC}/index.sql ${STAGEDIR}${DATADIR}
 		${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d ;\
 		 ${INSTALL_DATA} ${FILESDIR}/sqlpage.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/sqlpage.conf.sample
-		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

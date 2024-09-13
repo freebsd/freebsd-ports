@@ -1,7 +1,7 @@
 PORTNAME=	genact
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -20,7 +20,6 @@ PLIST_FILES=	bin/genact \
 		share/man/man1/genact.1.gz
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/genact
 	${STAGEDIR}${PREFIX}/bin/${PORTNAME} --print-manpage > ${WRKSRC}/${PORTNAME}.1
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 

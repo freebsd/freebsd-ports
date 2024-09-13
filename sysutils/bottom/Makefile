@@ -1,6 +1,6 @@
 PORTNAME=	bottom
 DISTVERSION=	0.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -29,7 +29,6 @@ CARGO_ENV+=	BTM_GENERATE=true
 GEN_DIR=	${WRKDIR}/bottom-*/target/tmp/bottom
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/btm
 	${INSTALL_MAN} ${GEN_DIR}/manpage/btm.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${GEN_DIR}/completion/btm.bash ${STAGEDIR}${PREFIX}/share/bash-completion/completions/btm
 	${INSTALL_DATA} ${GEN_DIR}/completion/btm.fish ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d

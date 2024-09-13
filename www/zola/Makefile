@@ -1,6 +1,7 @@
 PORTNAME=	zola
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.19.2
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -31,7 +32,6 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/zola
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
 		${STAGEDIR}${PREFIX}/share/fish/completions \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions

@@ -477,7 +477,4 @@ BINARY_ALIAS=	python3=${PYTHON_CMD} \
 
 PLIST_FILES=	bin/${PORTNAME}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	sctd
 DISTVERSION=	0.2.0
-PORTREVISION=	34
+PORTREVISION=	35
 CATEGORIES=	accessibility
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -44,8 +44,5 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		spa@git+https://github.com/amir/spa-rs?branch=pub-SolarPos\#fa80d0ce99d675674cf1a7cc9cf2ee2e33f501ea
 
 PLIST_FILES=	bin/sctd
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sctd
 
 .include <bsd.port.mk>

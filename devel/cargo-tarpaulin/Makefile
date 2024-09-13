@@ -1,6 +1,6 @@
 PORTNAME=	cargo-tarpaulin
 DISTVERSION=	0.31.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -257,8 +257,5 @@ OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/cargo-tarpaulin
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cargo-tarpaulin
 
 .include <bsd.port.mk>

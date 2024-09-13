@@ -1,6 +1,6 @@
 %%C_API%%include/dbcsr.h
 include/dbcsr_api.mod
-include/dbcsr_tensor.h
+%%C_API%%include/dbcsr_tensor.h
 include/dbcsr_tensor_api.mod
 lib/cmake/dbcsr/DBCSRConfig.cmake
 lib/cmake/dbcsr/DBCSRConfigVersion.cmake
@@ -9,6 +9,6 @@ lib/cmake/dbcsr/DBCSRTargets.cmake
 lib/libdbcsr.so
 lib/libdbcsr.so.2.7
 lib/libdbcsr.so.2.7.0
-lib/libdbcsr_c.so
-lib/libdbcsr_c.so.2.7
-lib/libdbcsr_c.so.2.7.0
+%%C_API%%lib/libdbcsr_c.so
+%%C_API%%lib/libdbcsr_c.so.2.7
+%%C_API%%lib/libdbcsr_c.so.2.7.0

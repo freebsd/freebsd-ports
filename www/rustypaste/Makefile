@@ -1,7 +1,7 @@
 PORTNAME=	rustypaste
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.15.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	DtxdF@disroot.org
@@ -59,6 +59,5 @@ post-install:
 	${MKDIR} ${STAGEDIR}/${UPLOAD_PATH}
 	${ECHO_CMD} 'CONFIG="${ETCDIR}/${PORTNAME}.toml"' > ${STAGEDIR}${ETCDIR}/${PORTNAME}.env.sample
 	${CP} ${WRKSRC}/config.toml ${STAGEDIR}${ETCDIR}/${PORTNAME}.toml.sample
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

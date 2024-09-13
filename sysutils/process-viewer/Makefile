@@ -1,6 +1,6 @@
 PORTNAME=	process-viewer
 DISTVERSION=	g20220909
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -104,8 +104,5 @@ CARGO_CRATES=	anyhow-1.0.57 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 PLIST_FILES=	bin/process_viewer
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/process_viewer
 
 .include <bsd.port.mk>

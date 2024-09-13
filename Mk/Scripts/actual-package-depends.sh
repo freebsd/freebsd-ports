@@ -1,5 +1,5 @@
 #!/bin/sh
-# MAINTAINER: portmgr@FeeeBSD.org
+# MAINTAINER: portmgr@FreeBSD.org
 
 [ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_ACTUAL_PACKAGE_DEPENDS}" ] && set -x
 

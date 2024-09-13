@@ -1,7 +1,7 @@
 PORTNAME=	bandwhich
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.22.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -278,8 +278,5 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		packet-builder@git+https://github.com/cyqsimon/packet_builder.git?branch=patch-update\#bf5a89ba75795f5067bb03fa8de00b833ffe4eae
 
 PLIST_FILES=	bin/bandwhich
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bandwhich
 
 .include <bsd.port.mk>

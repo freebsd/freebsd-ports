@@ -5,6 +5,31 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240912:
+  AFFECTS: security/clamav, security/clamav-lts
+  AUTHOR: netchildFreeBSD.org
+
+  The start scripts of clamav have been renamed to clamav_clamd,
+  clamav_freshclam and clamav_milter for improved compatibility with
+  other parts of the system. The automatic start at boot (rc.conf
+  variable settings) is not affected, but if you have some other
+  automatism you may want to change
+    ".../etc/rc.d/clamav-clamd" to ".../etc/rc.d/clamav_clamd"
+    ".../etc/rc.d/clamav-freshclam" to ".../etc/rc.d/clamav_freshclam"
+    ".../etc/rc.d/clamav-milter" to ".../etc/rc.d/clamav_milter"
+  or
+    "service clamav-clamd ..." to "service clamav_clamd ..."
+    "service clamav-freshclam" to "service clamav_freshclam ..."
+    "service clamav-milter ..." to "service clamav_milter ..."
+
+20240907:
+  AFFECTS: www/tt-rss
+  AUTHOR: dereks@lifeofadishwasher.com
+
+  The ttrssd_local_db rc var has been removed in favor of using daemon's
+  restart option -r to retry the ttrssd php scripts if database is not up
+  before ttrssd starts.
+
 20240829:
   AFFECTS: devel/binutils
   AUTHOR: cy@FreeBSD.org

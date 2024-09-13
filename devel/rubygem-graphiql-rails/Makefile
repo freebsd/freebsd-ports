@@ -1,7 +1,7 @@
 PORTNAME=	graphiql-rails
 # do not upgrade to 1.9.0, it will break gitlab-ce asset compilation
 # https://gitlab.com/gitlab-org/gitlab/-/issues/410500
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

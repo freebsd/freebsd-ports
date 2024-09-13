@@ -22,7 +22,6 @@ bin/qemu-system-i386
 %%NO_X86_TARGETS%%bin/qemu-system-mips64
 %%NO_X86_TARGETS%%bin/qemu-system-mips64el
 %%NO_X86_TARGETS%%bin/qemu-system-mipsel
-%%NO_X86_TARGETS%%bin/qemu-system-nios2
 %%NO_X86_TARGETS%%bin/qemu-system-or1k
 %%NO_X86_TARGETS%%bin/qemu-system-ppc
 %%NO_X86_TARGETS%%bin/qemu-system-ppc64
@@ -86,6 +85,7 @@ share/man/man7/qemu-storage-daemon-qmp-ref.7.gz
 %%DATADIR%%/firmware/60-edk2-i386.json
 %%DATADIR%%/firmware/60-edk2-x86_64.json
 %%DATADIR%%/hppa-firmware.img
+%%DATADIR%%/hppa-firmware64.img
 %%DATADIR%%/keymaps/ar
 %%DATADIR%%/keymaps/bepo
 %%DATADIR%%/keymaps/cz

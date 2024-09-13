@@ -1,7 +1,7 @@
 PORTNAME=	satty
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.14.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics wayland
 MASTER_SITES=	CRATESIO
 
@@ -24,7 +24,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 .for f in *.desktop assets/*.svg
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_FILES:M*.${f:E}:H}
 	${INSTALL_DATA} ${WRKSRC}/${f} \

@@ -1,6 +1,6 @@
 PORTNAME=	amp
 DISTVERSION=	0.7.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	editors
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -17,8 +17,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jmacdonald
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

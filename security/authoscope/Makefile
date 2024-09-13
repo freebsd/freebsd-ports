@@ -1,7 +1,7 @@
 PORTNAME=	authoscope
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -311,10 +311,5 @@ OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/badtouch
-
-post-install:
-	@${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin/badtouch
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	interactive_rebase_tool
 DISTVERSION=	2.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -20,7 +20,6 @@ PLIST_FILES=	bin/interactive-rebase-tool \
 		share/man/man1/interactive-rebase-tool.1.gz
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/interactive-rebase-tool
 	${INSTALL_MAN} ${WRKSRC}/src/interactive-rebase-tool.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

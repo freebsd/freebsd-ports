@@ -1,7 +1,7 @@
 PORTNAME=	microbin
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -346,8 +346,5 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		zstd-sys-2.0.1+zstd.1.5.2
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

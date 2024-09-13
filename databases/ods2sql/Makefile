@@ -1,6 +1,6 @@
 PORTNAME=	ods2sql
 DISTVERSION=	0.4.0
-PORTREVISION=	35
+PORTREVISION=	36
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -79,8 +79,5 @@ CARGO_CRATES=	adler32-1.2.0 \
 		zip-0.5.8
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

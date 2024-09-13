@@ -1,5 +1,6 @@
 PORTNAME=	ord
 DISTVERSION=	0.20.0
+PORTREVISION=	1
 CATEGORIES=	finance
 PKGNAMESUFFIX=	-crypto-wallet
 
@@ -432,8 +433,5 @@ OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

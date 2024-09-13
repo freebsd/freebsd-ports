@@ -1,7 +1,7 @@
 PORTNAME=	diswall
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -244,8 +244,5 @@ CARGO_CRATES=	adler-1.0.2 \
 		zeroize-1.7.0
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

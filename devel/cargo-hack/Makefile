@@ -1,7 +1,7 @@
 PORTNAME=	cargo-hack
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.31
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -72,8 +72,5 @@ CARGO_CRATES=	anyhow-1.0.86 \
 		winnow-0.6.18
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

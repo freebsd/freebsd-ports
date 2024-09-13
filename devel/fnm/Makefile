@@ -1,7 +1,7 @@
 PORTNAME=	fnm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.37.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -303,8 +303,5 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		zstd-sys-2.0.10+zstd.1.5.6
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

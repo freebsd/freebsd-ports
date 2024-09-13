@@ -1,6 +1,7 @@
 PORTNAME=	sqlx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-cli
 
@@ -466,10 +467,5 @@ OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/cargo-sqlx \
 		bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/bin/cargo-sqlx \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

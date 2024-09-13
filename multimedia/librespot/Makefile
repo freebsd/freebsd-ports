@@ -1,7 +1,7 @@
 PORTNAME=	librespot
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.2
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	multimedia
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -39,8 +39,5 @@ PULSEAUDIO_VARS=	CARGO_FEATURES+=pulseaudio-backend
 SDL_USES=		sdl
 SDL_USE=		SDL=sdl2
 SDL_VARS=		CARGO_FEATURES+=sdl-backend
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/librespot
 
 .include <bsd.port.mk>

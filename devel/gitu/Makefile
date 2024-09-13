@@ -1,6 +1,7 @@
 PORTNAME=	gitu
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.25.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -264,8 +265,5 @@ CARGO_CRATES=	ahash-0.8.11 \
 		zerocopy-derive-0.7.32
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

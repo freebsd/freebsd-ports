@@ -1,6 +1,6 @@
 PORTNAME=	szyszka
 DISTVERSION=	3.0.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -204,8 +204,5 @@ CARGO_CRATES=	aho-corasick-1.0.1 \
 		winnow-0.4.6
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

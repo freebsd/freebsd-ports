@@ -1,7 +1,7 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.4
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -121,8 +121,5 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 PLIST_FILES=	bin/sk
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sk
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	cargo-about
 DISTVERSION=	0.6.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -263,8 +263,5 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		zstd-sys-2.0.13+zstd.1.5.6
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 PORTNAME=	sandboxfs
 DISTVERSIONPREFIX=	sandboxfs-
 DISTVERSION=	0.2.0
-PORTREVISION=	41
+PORTREVISION=	42
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -86,7 +86,6 @@ PLIST_FILES=	bin/sandboxfs \
 		share/man/man1/sandboxfs.1.gz
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sandboxfs
 	${INSTALL_MAN} ${WRKSRC}/man/sandboxfs.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

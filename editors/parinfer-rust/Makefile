@@ -1,7 +1,7 @@
 PORTNAME=	parinfer-rust
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.3.20220110
-PORTREVISION=	24
+PORTREVISION=	25
 CATEGORIES=	editors
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -20,7 +20,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	eraserhd
 GH_TAGNAME=	211f72e3
 USE_LDCONFIG=	yes
-STRIP=
 
 CARGO_CRATES=	aho-corasick-0.7.15 \
 		ansi_term-0.11.0 \
@@ -109,7 +108,6 @@ PLIST_FILES=	bin/parinfer-rust \
 		share/vim/vimfiles/plugin/parinfer.vim
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/parinfer-rust
 	${INSTALL_LIB} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/libparinfer_rust.so \
 		${STAGEDIR}${PREFIX}/lib
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/kak/rc/extra \

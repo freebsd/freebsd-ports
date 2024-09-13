@@ -2,7 +2,7 @@ PORTNAME=	lapce
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0-94 # Cargo.lock patched: `make patch cargo-crates`
 DISTVERSIONSUFFIX=	-gdc9a24d8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -40,8 +40,6 @@ CARGO_ENV=	RUSTC_BOOTSTRAP=1 OPENSSL_NO_VENDOR=1
 # https://github.com/lapce/lapce/issues/2748
 LTO_UNSAFE=	yes
 post-install:
-#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lapce
-#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lapce-proxy
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/extra/images/logo.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/dev.lapce.lapce.png

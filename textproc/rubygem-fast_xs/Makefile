@@ -13,10 +13,6 @@ LICENSE=	MIT
 
 USES=		gem
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
-CONFIGURE_ARGS+=	--with-cflags="-Wno-error=incompatible-function-pointer-types"
-.endif
+CONFIGURE_ARGS=	--with-cflags=-Wno-incompatible-function-pointer-types
 
 .include <bsd.port.mk>

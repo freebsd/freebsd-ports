@@ -10,6 +10,10 @@ WWW=		https://github.com/crossroads-io/libxs
 
 LICENSE=	GPLv3
 
+BROKEN=		Unfetchable
+DEPRECATED=	Upstream is gone and repo is deleted
+EXPIRATION_DATE=2024-09-30
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		autoreconf pathfix pkgconfig libtool

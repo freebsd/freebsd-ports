@@ -1,7 +1,7 @@
 PORTNAME=	mmtc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -122,8 +122,5 @@ CARGO_CRATES=	anyhow-1.0.69 \
 		windows_x86_64_msvc-0.42.1
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

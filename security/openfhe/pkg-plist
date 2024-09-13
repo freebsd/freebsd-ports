@@ -342,6 +342,7 @@ include/openfhe/pke/schemerns/rns-ser.h
 include/openfhe/pke/unittest/utils/BaseTestCase.h
 include/openfhe/pke/unittest/utils/UnitTestCCParams.h
 include/openfhe/pke/unittest/utils/UnitTestCryptoContext.h
+include/openfhe/pke/unittest/utils/UnitTestException.h
 include/openfhe/pke/unittest/utils/UnitTestMetadataTest.h
 include/openfhe/pke/unittest/utils/UnitTestMetadataTestSer.h
 include/openfhe/pke/unittest/utils/UnitTestReadCSVData.h
@@ -353,10 +354,10 @@ lib/OpenFHE/OpenFHETargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/OpenFHE/OpenFHETargets.cmake
 lib/libOPENFHEbinfhe.so
 lib/libOPENFHEbinfhe.so.1
-lib/libOPENFHEbinfhe.so.1.2.0
+lib/libOPENFHEbinfhe.so.1.2.1
 lib/libOPENFHEcore.so
 lib/libOPENFHEcore.so.1
-lib/libOPENFHEcore.so.1.2.0
+lib/libOPENFHEcore.so.1.2.1
 lib/libOPENFHEpke.so
 lib/libOPENFHEpke.so.1
-lib/libOPENFHEpke.so.1.2.0
+lib/libOPENFHEpke.so.1.2.1

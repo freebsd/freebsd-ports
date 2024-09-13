@@ -1,6 +1,6 @@
 PORTNAME=	typstfmt
 DISTVERSION=	0.2.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -108,8 +108,5 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		typst-syntax@git+https://github.com/typst/typst.git?tag=v0.10.0\#70ca0d257bb4ba927f63260e20443f244e0bb58c
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

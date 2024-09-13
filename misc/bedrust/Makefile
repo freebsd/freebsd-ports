@@ -1,7 +1,7 @@
 PORTNAME=	bedrust
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -331,8 +331,5 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		zune-jpeg-0.4.11
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

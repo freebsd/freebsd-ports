@@ -1,6 +1,6 @@
 PORTNAME=	leftwm
 DISTVERSION=	0.5.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-wm
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -26,11 +26,6 @@ OPTIONS_SUB=	yes
 THEMES_DESC=	LeftWM Basic Themes
 
 post-install:
-.for l in leftwm-state leftwm-worker leftwm-check \
-	leftwm-command leftwm
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${l}
-.endfor
-
 	${MKDIR} ${STAGEDIR}${LOCALBASE}/share/xsessions
 	(cd ${WRKSRC} && ${INSTALL_DATA} leftwm.desktop \
 		${STAGEDIR}${LOCALBASE}/share/xsessions/)

@@ -1,6 +1,6 @@
 PORTNAME=	gbump
 PORTVERSION=	1.1.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -76,10 +76,5 @@ CARGO_CRATES=   aho-corasick-1.1.2 \
                 windows_x86_64_msvc-0.52.0
 
 PLIST_FILES=	bin/gbump
-
-.include <bsd.port.options.mk>
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gbump
 
 .include <bsd.port.mk>

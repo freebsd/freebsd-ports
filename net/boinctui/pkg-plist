@@ -1,0 +1,3 @@
+bin/boinctui
+%%DOCSDIR%%/changelog
+share/man/man1/boinctui.1.gz

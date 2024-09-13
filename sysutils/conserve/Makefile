@@ -1,7 +1,7 @@
 PORTNAME=	conserve
 DISTVERSIONPREFIX=	v
 DISTVERSION=	23.11.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -315,8 +315,5 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		zeroize-1.6.0
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

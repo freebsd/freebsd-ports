@@ -2,7 +2,7 @@ PORTNAME=	quake
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.1-57
 DISTVERSIONSUFFIX=	-gbb8ae55
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-framework
 
@@ -447,8 +447,5 @@ OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

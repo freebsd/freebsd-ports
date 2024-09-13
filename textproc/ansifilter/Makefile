@@ -1,6 +1,5 @@
 PORTNAME=	ansifilter
-PORTVERSION=	2.20
-PORTREVISION=	1
+DISTVERSION=	2.21
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
 

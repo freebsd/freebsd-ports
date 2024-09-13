@@ -1,7 +1,7 @@
 PORTNAME=	gurk-rs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-im
 
 MAINTAINER=	bsd@orsolic.org
@@ -31,7 +31,6 @@ post-patch:
 	${REINPLACE_CMD} -e s,%%WRKDIR%%,${WRKDIR}, ${WRKSRC}/Cargo.toml
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gurk
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DATADIR}
 

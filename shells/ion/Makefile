@@ -1,7 +1,7 @@
 PORTNAME=	ion
 DISTVERSION=	1.0.5-1509
 DISTVERSIONSUFFIX=	g85452cfa
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	shells
 PKGNAMESUFFIX=	-shell
 
@@ -30,9 +30,6 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-configure:
 	${ECHO_CMD} ${GL_TAGNAME} > ${WRKSRC}/git_revision.txt
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ion
 
 post-install-DOCS-on:
 	@cd ${WRKSRC}/manual/src && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}

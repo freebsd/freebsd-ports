@@ -33,12 +33,13 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	FFMPEG FITS PILLOW_HEIF PYAV TIFFFILE
+OPTIONS_DEFINE=	FFMPEG FITS PILLOW_HEIF PYAV RAWPY TIFFFILE
 OPTIONS_DEFAULT=FFMPEG
 FFMPEG_DESC=		Read/Write video using FFmpeg
 FITS_DESC=		Read FITS files
 PILLOW_HEIF_DESC=	Read HEIF files
 PYAV_DESC=		Read/Write video and image files
+RAWPY_DESC=		Read/Write images via rawpy
 TIFFFILE_DESC=		Read/Write TIFF files
 
 FFMPEG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imageio-ffmpeg>=0:graphics/py-imageio-ffmpeg@${PY_FLAVOR} \
@@ -46,6 +47,8 @@ FFMPEG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imageio-ffmpeg>=0:graphics/py-imageio
 FITS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astropy>=0,2:astro/py-astropy@${PY_FLAVOR}
 PILLOW_HEIF_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}pillow-heif>=0:graphics/py-pillow-heif@${PY_FLAVOR}
 PYAV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}av>=0:multimedia/py-av@${PY_FLAVOR}
+RAWPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}rawpy>=0:graphics/py-rawpy@${PY_FLAVOR}
 TIFFFILE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tifffile>=0:graphics/py-tifffile@${PY_FLAVOR}
 
 .include <bsd.port.mk>

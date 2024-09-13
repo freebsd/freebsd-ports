@@ -1,6 +1,6 @@
 PORTNAME=	gifski
 DISTVERSION=	1.10.3
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -110,8 +110,5 @@ CARGO_CRATES=	adler-1.0.2 \
 		ffmpeg-sys-next@git+https://github.com/kornelski/rust-ffmpeg-sys-1?rev=78458039d5fac99354f9cb078869f3be3f3af5fb\#78458039d5fac99354f9cb078869f3be3f3af5fb
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

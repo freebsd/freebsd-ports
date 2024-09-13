@@ -1,6 +1,7 @@
 PORTNAME=	SRB2
 PORTVERSION=	2.2.13
 DISTVERSIONPREFIX=	SRB2_release_
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/STJr/SRB2/releases/download/SRB2_release_${PORTVERSION}/:assets
 DISTFILES+=	SRB2-v${PORTVERSION:C/\.//g}-Full.zip:assets

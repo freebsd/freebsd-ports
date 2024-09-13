@@ -1,12 +1,13 @@
 PORTNAME=	typer
-PORTVERSION=	0.12.3
+PORTVERSION=	0.12.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for building CLI applications
-WWW=		https://github.com/tiangolo/typer
+WWW=		https://typer.tiangolo.com/ \
+		https://github.com/fastapi/typer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,5 +1,6 @@
 PORTNAME=	trippy
 DISTVERSION=	0.11.0
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -33,9 +34,6 @@ post-build-MANPAGES-on:
 	help2man -s 1 -Nn "${COMMENT}" \
 		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/trip \
 		-o ${WRKSRC}/trip.1
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/trip
 
 post-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/trip.1 \

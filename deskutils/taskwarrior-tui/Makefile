@@ -1,7 +1,7 @@
 PORTNAME=	taskwarrior-tui
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.24.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	deskutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -204,8 +204,5 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		yaml-rust-0.4.5 \
 		task-hookrs@git+https://github.com/kdheepak/task-hookrs\#9fe7bd42f96a14571009b5de3ef395cd26988bbe
 PLIST_FILES=	bin/taskwarrior-tui
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/taskwarrior-tui
 
 .include <bsd.port.mk>

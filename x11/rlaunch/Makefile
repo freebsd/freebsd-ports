@@ -1,6 +1,6 @@
 PORTNAME=	rlaunch
 DISTVERSION=	1.3.14
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -51,8 +51,5 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		x11-dl-2.18.5
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

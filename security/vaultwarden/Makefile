@@ -1,6 +1,6 @@
 PORTNAME=	vaultwarden
 DISTVERSION=	1.32.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	mr@FreeBSD.org
@@ -59,10 +59,6 @@ SUB_LIST=	WWWGRP=${WWWGRP} \
 .if ${ARCH:Marmv?} || ${ARCH} == i386
 LTO_UNSAFE=	yes
 CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
-.endif
-
-.if !defined(WITH_DEBUG)
-CARGO_INSTALL_ARGS+=	--config profile.release.strip=true
 .endif
 
 #post-patch:

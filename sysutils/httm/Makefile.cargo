@@ -15,8 +15,8 @@ CARGO_CRATES=	ahash-0.3.8 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		clap-2.34.0 \
-		clap-4.5.9 \
-		clap_builder-4.5.9 \
+		clap-4.5.12 \
+		clap_builder-4.5.12 \
 		clap_lex-0.7.0 \
 		colorchoice-1.0.0 \
 		console-0.15.5 \
@@ -58,7 +58,7 @@ CARGO_CRATES=	ahash-0.3.8 \
 		instant-0.1.12 \
 		itertools-0.13.0 \
 		itoa-1.0.6 \
-		lazy_static-1.4.0 \
+		lazy_static-1.5.0 \
 		libc-0.2.155 \
 		linux-raw-sys-0.4.13 \
 		lms-0.4.0 \
@@ -117,7 +117,7 @@ CARGO_CRATES=	ahash-0.3.8 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
 		tuikit-0.5.0 \
-		two_percent-0.11.15 \
+		two_percent-0.11.17 \
 		typenum-1.17.0 \
 		unicode-ident-1.0.8 \
 		unicode-width-0.1.13 \
@@ -128,7 +128,7 @@ CARGO_CRATES=	ahash-0.3.8 \
 		vte-0.13.0 \
 		vte_generate_state_changes-0.1.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		which-6.0.1 \
+		which-6.0.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.6 \

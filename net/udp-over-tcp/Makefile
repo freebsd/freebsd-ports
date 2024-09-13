@@ -1,7 +1,7 @@
 PORTNAME=	udp-over-tcp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -105,10 +105,5 @@ BINARIES=	bin/udp2tcp \
 		bin/tcp2udp
 
 PLIST_FILES=	${BINARIES}
-
-post-install:
-.for bin in ${BINARIES}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${bin}
-.endfor
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	castor
 DISTVERSION=	0.8.16
-PORTREVISION=	37
+PORTREVISION=	38
 CATEGORIES=	www
 MASTER_SITES=	https://git.sr.ht/~julienxx/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -135,7 +135,6 @@ BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 library
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/castor
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/castor
 	${INSTALL_DATA} ${WRKSRC}/data/Castor.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/data/castor_settings.toml.example ${STAGEDIR}${PREFIX}/share/examples/castor

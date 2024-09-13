@@ -1,5 +1,5 @@
 PORTNAME=	gromit-mpx
-DISTVERSION=	1.6.0
+DISTVERSION=	1.7.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -9,7 +9,8 @@ WWW=		https://github.com/bk138/gromit-mpx
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libappindicator3.so:devel/libappindicator
+LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
+		libappindicator3.so:devel/libappindicator
 
 USES=		cmake gettext gnome pkgconfig xorg
 USE_CSTD=	gnu99

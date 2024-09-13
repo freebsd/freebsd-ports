@@ -1,7 +1,7 @@
 PORTNAME=	alass
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -106,8 +106,5 @@ CARGO_CRATES=	aho-corasick-0.6.10 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 PLIST_FILES=	bin/${PORTNAME}-cli
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-cli
 
 .include <bsd.port.mk>

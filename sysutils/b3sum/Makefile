@@ -1,6 +1,6 @@
 PORTNAME=	b3sum
 DISTVERSION=	1.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	sec.research.2005@gmail.com
@@ -28,9 +28,6 @@ PLIST_FILES=	bin/${PORTNAME}
 .if ${ARCH} == aarch64
 CARGO_FEATURES=	neon
 .endif
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

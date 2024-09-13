@@ -1,7 +1,7 @@
 PORTNAME=	niri
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -47,7 +47,6 @@ post-patch:
 	@${REINPLACE_CMD} '/line-tables-only/d' ${WRKSRC}/Cargo.toml
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 # Install extras similar to package.metadata.generate-rpm
 .for f in resources/*.desktop resources/*-portals.conf
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_FILES:M*.${f:E}:H}

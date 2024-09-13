@@ -1,6 +1,6 @@
 PORTNAME=	cargo-cache
 DISTVERSION=	0.8.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -126,8 +126,5 @@ CARGO_CRATES=	adler-1.0.2 \
 		xattr-0.2.3
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

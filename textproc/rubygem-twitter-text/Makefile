@@ -1,5 +1,6 @@
 PORTNAME=	twitter-text
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-idn-ruby>=0:dns/rubygem-idn-ruby \
-		rubygem-unf>=0.1.0<0.2:textproc/rubygem-unf
+		rubygem-unf>=0.1.0:textproc/rubygem-unf
 
 USES=		gem
 

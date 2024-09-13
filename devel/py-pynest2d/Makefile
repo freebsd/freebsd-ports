@@ -10,8 +10,8 @@ WWW=		https://github.com/Ultimaker/libnest2d
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${LOCALBASE}/include/libnest2d/libnest2d.hpp:devel/libnest2d-ultimaker
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=0:devel/py-sip@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=0:devel/py-sip@${PY_FLAVOR} \
+		${LOCALBASE}/include/libnest2d/libnest2d.hpp:devel/libnest2d-ultimaker
 LIB_DEPENDS=	libpolyclipping.so:graphics/polyclipping \
 		libboost_system.so:devel/boost-libs \
 		libnlopt.so:math/nlopt

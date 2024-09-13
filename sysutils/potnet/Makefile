@@ -1,6 +1,6 @@
 PORTNAME=	potnet
 DISTVERSION=	0.5.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -124,9 +124,5 @@ CARGO_CRATES=	android-tzdata-0.1.1 \
 		windows_x86_64_msvc-0.52.0
 
 PLIST_FILES=	bin/potcpu bin/potnet
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/potnet
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/potcpu
 
 .include <bsd.port.mk>

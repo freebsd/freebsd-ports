@@ -1,6 +1,6 @@
 PORTNAME=	parol-ls
 DISTVERSION=	g20221230
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -157,8 +157,5 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		yansi-0.5.1
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

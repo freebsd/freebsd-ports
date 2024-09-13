@@ -1,6 +1,7 @@
 PORTNAME=	cargo-llvm-cov
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.12
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -95,8 +96,5 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		xattr-1.3.1
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

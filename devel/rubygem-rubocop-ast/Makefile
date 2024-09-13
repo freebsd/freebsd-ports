@@ -1,11 +1,12 @@
 PORTNAME=	rubocop-ast
-PORTVERSION=	1.32.0
+PORTVERSION=	1.32.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	RuboCop Node and NodePattern classes
-WWW=		https://github.com/rubocop/rubocop-ast
+WWW=		https://docs.rubocop.org/rubocop-ast/ \
+		https://github.com/rubocop/rubocop-ast
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

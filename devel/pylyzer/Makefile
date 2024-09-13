@@ -1,7 +1,7 @@
 PORTNAME=	pylyzer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.61
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -152,8 +152,5 @@ CARGO_TEST=	no
 CARGO_TARGET_DIR=	${WRKSRC}/target
 
 MAKE_ENV=	${CARGO_ENV}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pylyzer
 
 .include <bsd.port.mk>

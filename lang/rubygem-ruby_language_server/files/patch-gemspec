@@ -1,0 +1,11 @@
+--- ruby_language_server.gemspec.orig	2024-09-07 12:09:29 UTC
++++ ruby_language_server.gemspec
+@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
+   s.add_runtime_dependency(%q<amatch>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<fuzzy_match>.freeze, [">= 0".freeze])
+   s.add_runtime_dependency(%q<activerecord>.freeze, ["~> 7.0".freeze])
+-  s.add_runtime_dependency(%q<sqlite3>.freeze, ["< 1.5.0".freeze])
++  s.add_runtime_dependency(%q<sqlite3>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<byebug>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<guard>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<guard-minitest>.freeze, [">= 0".freeze])

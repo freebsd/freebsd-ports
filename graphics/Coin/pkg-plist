@@ -873,7 +873,7 @@ include/SoWinEnterScope.h
 include/SoWinLeaveScope.h
 lib/libCoin.so
 lib/libCoin.so.80
-lib/libCoin.so.80.0.2
+lib/libCoin.so.80.0.3
 libdata/pkgconfig/Coin.pc
 %%DATADIR%%/conf/coin-default.cfg
 %%DATADIR%%/draggerDefaults/centerballDragger.iv

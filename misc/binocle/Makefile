@@ -1,7 +1,7 @@
 PORTNAME=	binocle
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	misc wayland
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -258,8 +258,5 @@ CARGO_CRATES=	ab_glyph-0.2.23 \
 		zerocopy-derive-0.7.28
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

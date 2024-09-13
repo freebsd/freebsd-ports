@@ -1,7 +1,7 @@
 PORTNAME=	menyoki
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -203,8 +203,5 @@ post-patch:
 	@${CP} -r \
 		${WRKSRC}/cargo-crates/device_query-1.1.2/src/device_state/linux \
 		${WRKSRC}/cargo-crates/device_query-1.1.2/src/device_state/freebsd
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

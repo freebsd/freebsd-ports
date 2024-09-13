@@ -1,6 +1,5 @@
 PORTNAME=	opentelemetry-api
-PORTVERSION=	1.26.0
-PORTREVISION=	1
+PORTVERSION=	1.27.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,7 +7,9 @@ DISTNAME=	opentelemetry_api-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenTelemetry Python API
-WWW=		https://github.com/open-telemetry/opentelemetry-python/tree/main/opentelemetry-api
+WWW=		https://github.com/open-telemetry/opentelemetry-python/tree/main/opentelemetry-api \
+		https://github.com/open-telemetry/opentelemetry-python \
+		https://opentelemetry.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,7 +1,7 @@
 PORTNAME=	shellharden
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,8 +16,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	anordal
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

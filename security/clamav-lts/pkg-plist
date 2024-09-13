@@ -102,14 +102,13 @@ share/man/man8/clamd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/highlight.js
 %%PORTDOCS%%%%DOCSDIR%%/html/images/change-fork-name.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/cisco.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/clamav-git-workflow.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/clone-your-fork.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/create-a-fork.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/demon.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/flamegraph.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/images/fork-is-behind.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/logo.png
-%%PORTDOCS%%%%DOCSDIR%%/html/images/new-git-workflow.png
-%%PORTDOCS%%%%DOCSDIR%%/html/images/old-git-workflow.png
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/Development.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/Development/Contribute.html
@@ -155,6 +154,7 @@ share/man/man8/clamd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/Usage/Scanning.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/Usage/Services.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/Usage/SignatureManagement.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/cisco-talos.gpg
 %%PORTDOCS%%%%DOCSDIR%%/html/mark.min.js
 %%PORTDOCS%%%%DOCSDIR%%/html/mode-rust.js
 %%PORTDOCS%%%%DOCSDIR%%/html/print.html

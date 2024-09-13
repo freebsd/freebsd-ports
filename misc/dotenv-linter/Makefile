@@ -1,7 +1,7 @@
 PORTNAME=	dotenv-linter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -140,8 +140,5 @@ CARGO_CRATES=	adler-1.0.2 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

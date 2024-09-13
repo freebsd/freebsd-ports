@@ -1,7 +1,7 @@
 PORTNAME=	cargo-edit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -248,10 +248,5 @@ PLIST_FILES=	bin/cargo-add \
 		bin/cargo-rm \
 		bin/cargo-set-version \
 		bin/cargo-upgrade
-
-post-install:
-.for exe in ${PLIST_FILES}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${exe}
-.endfor
 
 .include <bsd.port.mk>

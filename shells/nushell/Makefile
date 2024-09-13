@@ -1,6 +1,6 @@
 PORTNAME=	nushell
 DISTVERSION=	0.97.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -718,8 +718,5 @@ LDFLAGS=	-L/usr/local/lib/gcc${GCC_DEFAULT} -latomic
 .if ${ARCH:Marmv?}
 LTO_UNSAFE=	yes
 .endif
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nu
 
 .include <bsd.port.post.mk>

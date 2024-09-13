@@ -1,7 +1,7 @@
 PORTNAME=	stork
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -250,8 +250,5 @@ OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

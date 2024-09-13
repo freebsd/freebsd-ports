@@ -1,0 +1,9 @@
+Sendmail::PMilter provides access to the message processing hooks in a
+running Mail Transfer Agent (Sendmail or Postfix), so that filters
+('milters') which process mail can be written entirely in Perl.  Mail
+processing according to SMTP takes place at a number of well-defined
+stages ('connect', 'helo', etc.) during the exchange of the message
+between client and server.  At each stage, the sets of data available
+(the connecting IP, sender address etc.) and the permissible actions
+(rewrite a message header, ACCEPT a message, REJECT it etc.) are also
+well-defined and are to some extent configurable.

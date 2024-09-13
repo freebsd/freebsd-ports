@@ -1,0 +1,11 @@
+--- simpleidn.gemspec.orig	2024-09-08 15:04:12 UTC
++++ simpleidn.gemspec
+@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<unf>.freeze, ["~> 0.1.4".freeze])
++  s.add_runtime_dependency(%q<unf>.freeze, [">= 0.1.4".freeze])
+   s.add_development_dependency(%q<bundler>.freeze, ["~> 1.11".freeze])
+   s.add_development_dependency(%q<rake>.freeze, ["~> 10.0".freeze])
+   s.add_development_dependency(%q<rspec>.freeze, ["~> 3.0".freeze])

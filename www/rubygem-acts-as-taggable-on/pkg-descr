@@ -1,3 +1,13 @@
-With ActsAsTaggableOn, you can tag a single model on several contexts,
-such as skills, interests, and awards.  It also provides other
-advanced functionality.
+This plugin was originally based on Acts as Taggable on Steroids by Jonathan
+Viney. It has evolved substantially since that point, but all credit goes to him
+for the initial tagging functionality that so many people have used.
+
+For instance, in a social network, a user might have tags that are called
+skills, interests, sports, and more. There is no real way to differentiate
+between tags and so an implementation of this type is not possible with acts as
+taggable on steroids.
+
+Enter Acts as Taggable On. Rather than tying functionality to a specific keyword
+(namely tags), acts as taggable on allows you to specify an arbitrary number of
+tag "contexts" that can be used locally or in combination in the same way
+steroids was used.

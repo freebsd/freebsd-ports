@@ -1,7 +1,7 @@
 PORTNAME=	cargo-audit
 DISTVERSIONPREFIX=	${PORTNAME}/v
 DISTVERSION=	0.20.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -29,8 +29,5 @@ PLIST_FILES=	bin/cargo-audit
 
 CARGO_CARGOLOCK=	${WRKSRC}/../Cargo.lock
 WRKSRC_SUBDIR=	cargo-audit
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cargo-audit
 
 .include <bsd.port.mk>

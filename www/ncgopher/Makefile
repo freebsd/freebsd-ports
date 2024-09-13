@@ -1,7 +1,7 @@
 PORTNAME=	ncgopher
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 
 MAINTAINER=	beastieboy@beastieboy.net
@@ -168,6 +168,5 @@ CARGO_CRATES=	addr2line-0.17.0 \
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/ncgopher.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ncgopher
 
 .include <bsd.port.mk>

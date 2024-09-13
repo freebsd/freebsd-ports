@@ -1,7 +1,7 @@
 PORTNAME=	hexyl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.14.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -18,8 +18,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sharkdp
 
 PLIST_FILES=	bin/hexyl
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/hexyl
 
 .include <bsd.port.mk>

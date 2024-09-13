@@ -1,6 +1,6 @@
 PORTNAME=	restarter
 DISTVERSION=	241.15989.150
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 PKGNAMEPREFIX=	jetbrains-
 DIST_SUBDIR=	jetbrains
@@ -30,8 +30,5 @@ do-install:
 	${INSTALL_PROGRAM} \
 		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/restarter \
 		${STAGEDIR}${DATADIR}
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${DATADIR}/restarter
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 PORTNAME=	choose
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.4
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	textproc
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -21,9 +21,6 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	contributing.md readme.md
 
 OPTIONS_DEFINE=	DOCS
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

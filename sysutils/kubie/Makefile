@@ -1,7 +1,7 @@
 PORTNAME=	kubie
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.23.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -23,7 +23,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/fish/completions/${PORTNAME}.fish \
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/completion/${PORTNAME}.bash ${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}.bash
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions

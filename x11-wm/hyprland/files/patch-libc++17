@@ -1,0 +1,19 @@
+Drop after FreeBSD 13.3 EOL around 2025-07-01
+
+../src/debug/Log.cpp:13:26: error: no member named 'native_handle' in 'std::ofstream'
+   13 |     auto handle = logOfs.native_handle();
+      |                   ~~~~~~ ^
+
+--- src/debug/Log.cpp.orig	2024-08-18 21:21:59 UTC
++++ src/debug/Log.cpp
+@@ -10,8 +10,10 @@ void Debug::init(const std::string& IS) {
+ void Debug::init(const std::string& IS) {
+     logFile = IS + (ISDEBUG ? "/hyprlandd.log" : "/hyprland.log");
+     logOfs.open(logFile, std::ios::out | std::ios::app);
++#if !defined(_LIBCPP_VERSION) || _LIBCPP_VERSION >= 180100
+     auto handle = logOfs.native_handle();
+     fcntl(handle, F_SETFD, FD_CLOEXEC);
++#endif
+ }
+ 
+ void Debug::close() {

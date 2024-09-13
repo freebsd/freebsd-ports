@@ -1,7 +1,7 @@
 PORTNAME=	silicon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	misc
 PKGNAMESUFFIX=	-code-visualizer
 
@@ -199,8 +199,5 @@ PLIST_FILES=	bin/${PORTNAME}
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 PORTSCOUT=	limit:^.*[0-9]\.[0-9].*$$ # prevent tags like preview-3
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 PORTNAME=	fclones
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.34.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -205,8 +205,5 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		xxhash-rust-0.8.7
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 PORTNAME=	wiki-tui
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	www
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -16,8 +16,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Builditluc
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

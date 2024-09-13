@@ -1,7 +1,7 @@
 PORTNAME=	dura
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -116,8 +116,5 @@ OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -76,3 +76,16 @@ https://reviews.llvm.org/D77776
                  (false, false, true) => Ok(ToolFamily::Gnu),
                  (false, false, false) => {
                      cargo_output.print_warning(&"Compiler family detection failed since it does not define `__clang__`, `__GNUC__` or `_MSC_VER`, fallback to treating it as GNU");
+--- vendor/cc-1.0.99/src/tool.rs.orig	2024-05-09 18:20:47 UTC
++++ vendor/cc-1.0.99/src/tool.rs
+@@ -151,9 +151,7 @@ impl Tool {
+ 
+             match (clang, accepts_cl_style_flags, gcc) {
+                 (clang_cl, true, _) => Ok(ToolFamily::Msvc { clang_cl }),
+-                (true, false, _) => Ok(ToolFamily::Clang {
+-                    zig_cc: is_zig_cc(path, cargo_output),
+-                }),
++                (true, false, _) => Ok(ToolFamily::Gnu),
+                 (false, false, true) => Ok(ToolFamily::Gnu),
+                 (false, false, false) => {
+                     cargo_output.print_warning(&"Compiler family detection failed since it does not define `__clang__`, `__GNUC__` or `_MSC_VER`, fallback to treating it as GNU");

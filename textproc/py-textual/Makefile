@@ -1,5 +1,5 @@
 PORTNAME=	textual
-PORTVERSION=	0.76.0
+PORTVERSION=	0.79.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.2.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown-it-py>=2.1.0:textproc/py-markdown-it-py@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}platformdirs>=4.2.2<5:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=13.3.3:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.4.0<5:devel/py-typing-extensions@${PY_FLAVOR}
 

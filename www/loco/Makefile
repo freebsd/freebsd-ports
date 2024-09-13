@@ -1,6 +1,6 @@
 PORTNAME=	loco
 DISTVERSION=	g20240225
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www devel
 PKGNAMESUFFIX=	-web-framework
 
@@ -20,9 +20,6 @@ GH_TAGNAME=	9f4f444
 WRKSRC_SUBDIR=	${PORTNAME}-cli
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <Makefile.crates>
 .include <bsd.port.mk>

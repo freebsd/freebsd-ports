@@ -1,6 +1,6 @@
 PORTNAME=	helix
 DISTVERSION=	24.07
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~ecs/tree-sitter-hare/archive/:treesitterhare \
 		https://git.sr.ht/~jummit/tree-sitter-wren/archive/:treesitterwren \
@@ -230,9 +230,6 @@ TREE_SITTER_GEMINI_REV=	3cc5e4bdf572d5df4277fc2e54d6299bd59a54b3
 TREE_SITTER_JSHIGH_REV=	4a95461c4761c624f2263725aca79eeaefd36cad
 TREE_SITTER_TSHIGH_REV=	6aac031ad88dd6317f02ac0bb27d099a553a7d8c
 CARGO_CARGOTOML=	${WRKSRC}/helix-term/Cargo.toml
-.if !defined(WITH_DEBUG)
-CARGO_INSTALL_ARGS+=	--config profile.release.strip=true
-.endif
 CARGO_INSTALL_PATH=	./helix-term
 
 CONFLICTS_INSTALL=	shx

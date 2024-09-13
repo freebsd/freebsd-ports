@@ -3065,6 +3065,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/network/output/ex4_3.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/bench_kspsolve_ksp.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/bench_kspsolve_matmult.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/empty.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex100_1.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex100_1.testout
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex100f_1.out

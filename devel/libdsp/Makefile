@@ -11,6 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ class library of common digital signal processing functions
 WWW=		https://libdsp.sourceforge.net/overview.html
 
+DEPRECATED=	Abandonware, last release upstream in 2005 and unmaintained since 2015
+EXPIRATION_DATE=2024-09-30
+
 WRKSRC=		${WRKDIR}/libdsp-src-${PORTVERSION}/${PORTNAME:S/dsp/DSP/}-${PORTVERSION}
 
 MAKE_ENV=	MKDIR="${MKDIR}" INLINE_VER="${INLINE_VER}"

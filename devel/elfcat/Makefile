@@ -1,6 +1,6 @@
 PORTNAME=	elfcat
 DISTVERSION=	0.1.8
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	devel
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -15,8 +15,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ruslashev
 
 PLIST_FILES=	bin/elfcat
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/elfcat
 
 .include <bsd.port.mk>

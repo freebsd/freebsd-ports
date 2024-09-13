@@ -14,6 +14,10 @@ WWW=		https://guitarix.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to find faust version, see https://github.com/brummer10/guitarix/issues/135
+DEPRECATED=	Broken for almost a year
+EXPIRATION_DATE=2024-09-30
+
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		faust:audio/faust \
 		${LOCALBASE}/include/fftw3.h:math/fftw3 \
@@ -65,8 +69,6 @@ OPTIONS_SUB=	yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 NLS_USE=	GNOME=intltool
-
-BROKEN=		fails to find faust version, see https://github.com/brummer10/guitarix/issues/135
 
 post-install:
 	# strip, see https://sourceforge.net/p/guitarix/bugs/60/

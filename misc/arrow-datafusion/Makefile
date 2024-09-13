@@ -1,6 +1,6 @@
 PORTNAME=	arrow-datafusion
 DISTVERSION=	38.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -415,8 +415,5 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		zstd-sys-2.0.10+zstd.1.5.6
 
 PLIST_FILES=	bin/datafusion-cli
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/datafusion-cli
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	pycharm-ce
-DISTVERSION=	2024.1.6
+DISTVERSION=	2024.2.1
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
@@ -30,6 +30,7 @@ SHEBANG_FILES=	plugins/python-ce/helpers/pycodestyle-2.10.0.py \
 # - bundled linux-only JRE
 EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/bin/*fsnotifier* \
 			--exclude ${DISTNAME}/bin/*.so \
+			--exclude ${DISTNAME}/bin/pycharm \
 			--exclude ${DISTNAME}/bin/repair \
 			--exclude ${DISTNAME}/bin/restarter \
 			--exclude ${DISTNAME}/lib/*.so \

@@ -1,7 +1,7 @@
 PORTNAME=	rustypaste-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	DtxdF@disroot.org
@@ -31,6 +31,5 @@ NATIVE_CERTS_VARS=	CARGO_FEATURES+=use-native-certs
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/config.toml ${STAGEDIR}${EXAMPLESDIR}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rpaste
 
 .include <bsd.port.mk>

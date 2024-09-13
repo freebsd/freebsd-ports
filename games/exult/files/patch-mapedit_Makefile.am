@@ -1,6 +1,6 @@
---- mapedit/Makefile.am.orig	2022-04-12 16:34:45 UTC
+--- mapedit/Makefile.am.orig	2024-05-30 10:27:11 UTC
 +++ mapedit/Makefile.am
-@@ -101,8 +101,8 @@ install-exec-local:
+@@ -103,8 +103,8 @@ install-exec-local:
  
  if GIMP_PLUGIN
  install-exec-local:

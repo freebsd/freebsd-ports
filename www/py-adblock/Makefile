@@ -1,6 +1,6 @@
 PORTNAME=	adblock
 DISTVERSION=	0.6.0
-PORTREVISION=	14
+PORTREVISION=	16
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -133,7 +133,6 @@ post-install:
 	(cd ${STAGEDIR}${PREFIX} && \
 		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${PREFIX} \
 		-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/adblock/adblock*.so
 # Regenerate .PLIST.pymodtemp to get all installed files from
 # ${STAGEDIR} because the file that is generated in the first place
 # contains only the EGG files as a whole.

@@ -1329,12 +1329,21 @@ lib/node_modules/npm/node_modules/node-gyp/README.md
 lib/node_modules/npm/node_modules/node-gyp/SECURITY.md
 lib/node_modules/npm/node_modules/node-gyp/addon.gypi
 @(,,755) lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js
+lib/node_modules/npm/node_modules/node-gyp/gyp/.release-please-manifest.json
 lib/node_modules/npm/node_modules/node-gyp/gyp/LICENSE
 lib/node_modules/npm/node_modules/node-gyp/gyp/__pycache__/gyp_main%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 lib/node_modules/npm/node_modules/node-gyp/gyp/__pycache__/gyp_main%%PYTHON_EXT_SUFFIX%%.pyc
 lib/node_modules/npm/node_modules/node-gyp/gyp/__pycache__/test_gyp%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 lib/node_modules/npm/node_modules/node-gyp/gyp/__pycache__/test_gyp%%PYTHON_EXT_SUFFIX%%.pyc
+lib/node_modules/npm/node_modules/node-gyp/gyp/data/ninja/build.ninja
 lib/node_modules/npm/node_modules/node-gyp/gyp/data/win/large-pdb-shim.cc
+lib/node_modules/npm/node_modules/node-gyp/gyp/docs/GypVsCMake.md
+lib/node_modules/npm/node_modules/node-gyp/gyp/docs/Hacking.md
+lib/node_modules/npm/node_modules/node-gyp/gyp/docs/InputFormatReference.md
+lib/node_modules/npm/node_modules/node-gyp/gyp/docs/LanguageSpecification.md
+lib/node_modules/npm/node_modules/node-gyp/gyp/docs/README.md
+lib/node_modules/npm/node_modules/node-gyp/gyp/docs/Testing.md
+lib/node_modules/npm/node_modules/node-gyp/gyp/docs/UserDocumentation.md
 lib/node_modules/npm/node_modules/node-gyp/gyp/gyp
 lib/node_modules/npm/node_modules/node-gyp/gyp/gyp.bat
 lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py
@@ -1391,6 +1400,8 @@ lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/__pycache__/win_tool%%P
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/__pycache__/win_tool%%PYTHON_EXT_SUFFIX%%.pyc
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/__pycache__/xcode_emulation%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/__pycache__/xcode_emulation%%PYTHON_EXT_SUFFIX%%.pyc
+lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/__pycache__/xcode_emulation_test%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/__pycache__/xcode_emulation_test%%PYTHON_EXT_SUFFIX%%.pyc
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/__pycache__/xcode_ninja%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/__pycache__/xcode_ninja%%PYTHON_EXT_SUFFIX%%.pyc
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/__pycache__/xcodeproj_file%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -1458,6 +1469,7 @@ lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/ninja_syntax.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/simple_copy.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/win_tool.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation.py
+lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/xcode_emulation_test.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/xcode_ninja.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/xcodeproj_file.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp/xml_fix.py
@@ -1508,6 +1520,7 @@ lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/packaging/tags.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/packaging/utils.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/packaging/version.py
 lib/node_modules/npm/node_modules/node-gyp/gyp/pyproject.toml
+lib/node_modules/npm/node_modules/node-gyp/gyp/release-please-config.json
 lib/node_modules/npm/node_modules/node-gyp/gyp/test_gyp.py
 lib/node_modules/npm/node_modules/node-gyp/lib/Find-VisualStudio.cs
 lib/node_modules/npm/node_modules/node-gyp/lib/build.js
@@ -1526,10 +1539,6 @@ lib/node_modules/npm/node_modules/node-gyp/lib/process-release.js
 lib/node_modules/npm/node_modules/node-gyp/lib/rebuild.js
 lib/node_modules/npm/node_modules/node-gyp/lib/remove.js
 lib/node_modules/npm/node_modules/node-gyp/lib/util.js
-lib/node_modules/npm/node_modules/node-gyp/macOS_Catalina_acid_test.sh
-lib/node_modules/npm/node_modules/node-gyp/node_modules/proc-log/LICENSE
-lib/node_modules/npm/node_modules/node-gyp/node_modules/proc-log/lib/index.js
-lib/node_modules/npm/node_modules/node-gyp/node_modules/proc-log/package.json
 lib/node_modules/npm/node_modules/node-gyp/package.json
 lib/node_modules/npm/node_modules/node-gyp/release-please-config.json
 lib/node_modules/npm/node_modules/node-gyp/src/win_delay_load_hook.cc

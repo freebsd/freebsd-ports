@@ -4,6 +4,9 @@ DISTVERSION=	2.8.0
 PORTREVISION=	15
 CATEGORIES=	math
 
+PATCH_SITES=	https://gitlab.dune-project.org/core/${PORTNAME}/-/commit/
+PATCHFILES+=	d36ce92a18904a3fe69028811c619b4b5a09ef4e.patch:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DUNE framework: Build system, infrastructure and foundation classes
 WWW=		https://www.dune-project.org/

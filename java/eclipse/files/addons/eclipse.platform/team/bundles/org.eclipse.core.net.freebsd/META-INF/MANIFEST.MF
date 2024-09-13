@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %fragmentName
+Bundle-Vendor: %providerName
+Bundle-Localization: fragment
+Bundle-SymbolicName: org.eclipse.core.net.freebsd;singleton:=true
+Bundle-Version: 1.1.200.qualifier
+Fragment-Host: org.eclipse.core.net;bundle-version="1.1.0"
+Eclipse-PlatformFilter: (osgi.os=freebsd)
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Automatic-Module-Name: org.eclipse.core.net.freebsd
+Require-Bundle: com.sun.jna

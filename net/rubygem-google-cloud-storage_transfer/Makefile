@@ -1,17 +1,20 @@
 PORTNAME=	google-cloud-storage_transfer
-PORTVERSION=	1.2.0
+PORTVERSION=	1.4.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Official library for Google Cloud Storage Transfer
-WWW=		https://github.com/googleapis/google-cloud-ruby
+WWW=		https://cloud.google.com/ruby/docs/reference/google-cloud-storage_transfer/latest \
+		https://googleapis.github.io/google-cloud-ruby/docs/ \
+		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-storage_transfer \
+		https://github.com/googleapis/google-cloud-ruby
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-google-cloud-core>=1.6<2:net/rubygem-google-cloud-core \
-		rubygem-google-cloud-storage_transfer-v1>=0.5<2:net/rubygem-google-cloud-storage_transfer-v1
+		rubygem-google-cloud-storage_transfer-v1>=0.9<2:net/rubygem-google-cloud-storage_transfer-v1
 
 USES=		gem
 

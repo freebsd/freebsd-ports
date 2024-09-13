@@ -1,7 +1,7 @@
 PORTNAME=	bingrep
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -30,8 +30,5 @@ do-install-DOCS-on:
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/etc && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

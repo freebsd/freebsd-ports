@@ -1,7 +1,7 @@
 PORTNAME=	csview
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	ruben@verweg.com
@@ -82,8 +82,5 @@ CARGO_CRATES=	anstream-0.6.13 \
 		windows_x86_64_msvc-0.52.5
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

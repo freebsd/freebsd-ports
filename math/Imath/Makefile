@@ -1,10 +1,14 @@
 # Based on the graphics/ilmbase port that was done by: nork@FreeBSD.org
 
 PORTNAME=	Imath
-PORTVERSION=	3.1.11
-DISTVERSIONPREFIX=	v
-PORTREVISION=	0
+PORTVERSION=	3.1.12
 CATEGORIES=	math devel graphics
+MASTER_SITES=	https://github.com/AcademySoftwareFoundation/${PORTNAME}/releases/download/v${PORTVERSION}/ \
+		LOCAL/mandree/
+# to verify: 'make makesum' and download .sigstore.json to working directory, then:
+# sigstore verify github --cert-identity \
+# https://github.com/AcademySoftwareFoundation/Imath/.github/workflows/release-sign.yml@refs/tags/v3.1.12 \
+# /usr/ports/distfiles/Imath-3.1.12.tar.gz --bundle Imath-3.1.12.tar.gz.sigstore.json
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	C++/Python lib of 2D/3D vector, matrix, math ops for computer graphics
@@ -14,8 +18,6 @@ LICENSE=	BSD3CLAUSE
 
 USES=		cmake compiler:c++14-lang pathfix pkgconfig
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	AcademySoftwareFoundation
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DCMAKE_DEBUG_POSTFIX= \
@@ -44,7 +46,7 @@ PYTHON_CMAKE_BOOL=	PYTHON
 
 _MAJORVER=	3_1
 _VER=		29
-_MINVER=	10
+_MINVER=	11
 _PLVER=		0
 
 post-patch:

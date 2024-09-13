@@ -1,4 +1,3 @@
-PORTREVISION=	1
 PKGNAMESUFFIX=	-ui-console
 
 COMMENT=	UI for Mupen64plus
@@ -13,6 +12,6 @@ MASTERDIR=	${.CURDIR}/../mupen64plus-core
 
 OPTIONS_DEFINE=	#
 
-RELEASE_DATE=	20230611
+RELEASE_DATE=	20240714
 
 .include "${MASTERDIR}/Makefile"

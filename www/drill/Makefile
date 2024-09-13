@@ -1,6 +1,6 @@
 PORTNAME=	drill
 DISTVERSION=	0.8.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -200,8 +200,5 @@ OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

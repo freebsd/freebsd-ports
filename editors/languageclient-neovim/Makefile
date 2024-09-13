@@ -1,7 +1,7 @@
 PORTNAME=	languageclient-neovim
 DISTVERSION=	0.1.161-3
 DISTVERSIONSUFFIX=	-gcf6dd11
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	editors
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -146,8 +146,5 @@ CARGO_CRATES=	adler-0.2.3 \
 		yaml-rust-0.4.4
 
 PLIST_FILES=	bin/languageclient
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/languageclient
 
 .include <bsd.port.mk>

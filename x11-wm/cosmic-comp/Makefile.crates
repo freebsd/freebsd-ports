@@ -626,6 +626,6 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		atomicwrites@git+https://github.com/jackpot51/rust-atomicwrites\#043ab4859d53ffd3d55334685303d8df39c9f768 \
 		id_tree@git+https://github.com/Drakulix/id-tree.git?branch=feature/copy_clone\#632a57d6d49160e18d7300fa7edae52281ec5482 \
 		softbuffer@git+https://github.com/pop-os/softbuffer?tag=cosmic-4.0\#6e75b1ad7e98397d37cb187886d05969bc480995 \
-		cosmic-settings-config@git+https://github.com/pop-os/cosmic-settings-daemon\#362c77f9faaeb7f1b9e4aa79a7d5588001f04874 \
 		smithay-clipboard@git+https://github.com/pop-os/smithay-clipboard?tag=pop-dnd-5\#5a3007def49eb678d1144850c9ee04b80707c56a \
-		smithay@git+https://github.com/smithay/smithay?rev=65c4abf\#65c4abf4cbdf122abff96ad17a440c76a8cf7cea
+		smithay@git+https://github.com/smithay/smithay?rev=65c4abf\#65c4abf4cbdf122abff96ad17a440c76a8cf7cea \
+		cosmic-settings-config@git+https://github.com/pop-os/cosmic-settings-daemon\#1ed68808e85ce681da882446ec572d44c68a6866

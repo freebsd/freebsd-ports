@@ -1,6 +1,7 @@
 PORTNAME=	bat
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.24.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -203,7 +204,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		yaml-rust-0.4.5
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bat
 	${FIND} ${WRKDIR}/target -name "bat.1" -exec ${CP} {} ${WRKSRC}/doc/bat.1 \;
 	${FIND} ${WRKDIR}/target -name "bat.zsh" -exec ${CP} {} ${WRKSRC}/doc/bat.zsh \;
 	${INSTALL_MAN} ${WRKSRC}/doc/bat.1 ${STAGEDIR}${PREFIX}/share/man/man1

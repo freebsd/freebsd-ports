@@ -1,7 +1,7 @@
 PORTNAME=	miniserve
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.27.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -26,9 +26,6 @@ PLIST_FILES=	bin/miniserve
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/miniserve
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

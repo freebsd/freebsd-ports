@@ -6,7 +6,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bstr-1.10.0 \
 		byteorder-1.5.0 \
 		castaway-0.2.3 \
-		cc-1.1.7 \
+		cc-1.1.14 \
 		cfg-if-1.0.0 \
 		chardetng-0.1.17 \
 		compact_str-0.8.0 \
@@ -24,7 +24,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		is-macro-0.3.6 \
 		itertools-0.13.0 \
 		itoa-1.0.11 \
-		libc-0.2.155 \
+		libc-0.2.158 \
 		log-0.4.22 \
 		memchr-2.7.4 \
 		memoffset-0.9.1 \
@@ -44,7 +44,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pyo3-macros-0.22.2 \
 		pyo3-macros-backend-0.22.2 \
 		python3-dll-a-0.2.10 \
-		quote-1.0.36 \
+		quote-1.0.37 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
@@ -57,12 +57,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rustversion-1.0.17 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
-		serde-1.0.205 \
-		serde_derive-1.0.205 \
-		serde_json-1.0.122 \
+		serde-1.0.209 \
+		serde_derive-1.0.209 \
+		serde_json-1.0.127 \
+		shlex-1.3.0 \
 		siphasher-0.3.11 \
 		static_assertions-1.1.0 \
-		syn-2.0.72 \
+		syn-2.0.76 \
 		target-lexicon-0.12.16 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
@@ -87,4 +88,4 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		windows_x86_64_msvc-0.52.6 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
-		ruff_python_ast,ruff_python_parser,ruff_python_trivia,ruff_source_file,ruff_text_size@git+https://github.com/astral-sh/ruff?tag=0.5.7\#221ea662e0e19384f774c99e93a9fd08b6f14029
+		ruff_python_ast,ruff_python_parser,ruff_python_trivia,ruff_source_file,ruff_text_size@git+https://github.com/astral-sh/ruff?tag=0.6.2\#02c4373a4927657a8825d18ae8f0877806cd1f15

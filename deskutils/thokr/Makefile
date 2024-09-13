@@ -1,7 +1,7 @@
 PORTNAME=	thokr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -144,8 +144,5 @@ CARGO_CRATES=	atty-0.2.14 \
 		windows_x86_64_msvc-0.34.0
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

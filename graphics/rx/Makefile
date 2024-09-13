@@ -1,7 +1,7 @@
 PORTNAME=	rx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.2
-PORTREVISION=	29
+PORTREVISION=	30
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-editor
 
@@ -107,8 +107,5 @@ CARGO_CRATES=	adler32-1.0.4 \
 PLIST_FILES=	bin/rx
 
 LDFLAGS+=	-L${PREFIX}/lib
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

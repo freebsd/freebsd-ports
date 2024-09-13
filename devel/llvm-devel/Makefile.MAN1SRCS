@@ -9,6 +9,7 @@ LLVM_MAN1SRCS= \
 	llvm-ar.1 \
 	llvm-as.1 \
 	llvm-bcanalyzer.1 \
+	llvm-cgdata.1 \
 	llvm-config.1 \
 	llvm-cov.1 \
 	llvm-cxxfilt.1 \

@@ -1,67 +1,3 @@
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/scripts/index.js
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/abstracts/_mixins.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/abstracts/_variables.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/base/_base.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/base/_print.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/base/_typography.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/components/_back-to-top.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/components/_icon-links.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/components/_logo.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/components/_search.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/content/_code.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/content/_images.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/content/_margin.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/content/_notebooks.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/content/_quotes.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/extensions/_comments.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/extensions/_thebe.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/index.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/sections/_announcement.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/sections/_article-container.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/sections/_article.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/sections/_footer-article.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/sections/_footer-content.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/sections/_header-article.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/sections/_header-primary.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/sections/_sidebar-primary.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/styles/sections/_sidebar-secondary.scss
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/README.md
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/By the.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/By.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Contents.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Copyright.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Download notebook file.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Download source file.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Download this page.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Edit this page.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Fullscreen mode.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Last updated on.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Launch.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Open an issue.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Print to PDF.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Source repository.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Sphinx Book Theme.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Theme by the.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/Toggle navigation.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/next page.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/open issue.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/previous page.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/repository.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/assets/translations/jsons/suggest edit.json
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/components/article-header-buttons.html
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/components/author.html
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/components/extra-footer.html
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/components/page-toc.html
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/components/sbt-sidebar-nav.html
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/components/toggle-primary-sidebar.html
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/components/toggle-secondary-sidebar.html
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/layout.html
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/macros/buttons.html
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/sections/footer-content.html
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/images/logo_binder.svg
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/images/logo_colab.png
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/images/logo_deepnote.svg
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/images/logo_jupyterhub.svg
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ar/LC_MESSAGES/booktheme.mo
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/ar/LC_MESSAGES/booktheme.po
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/bg/LC_MESSAGES/booktheme.mo
@@ -152,9 +88,7 @@
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/zh_CN/LC_MESSAGES/booktheme.po
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/zh_TW/LC_MESSAGES/booktheme.mo
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/locales/zh_TW/LC_MESSAGES/booktheme.po
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/sbt-webpack-macros.html
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/scripts/sphinx-book-theme.js
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/scripts/sphinx-book-theme.js.map
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/styles/sphinx-book-theme.css
 %%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/static/styles/sphinx-book-theme.css.map
-%%PYTHON_SITELIBDIR%%/sphinx_book_theme/theme/sphinx_book_theme/theme.conf

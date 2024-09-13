@@ -1,7 +1,7 @@
 PORTNAME=	rav1e
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.1
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -24,10 +24,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/\<.*GIT_VERSION\.unwrap.*/"${DISTVERSIONFULL}"/' \
 		-e $$'/GIT_VERSION/,/UNKNOWN/c\\\n\t"${DISTVERSIONFULL}",\n' \
 		${WRKSRC}/src/bin/common.rs ${WRKSRC}/src/lib.rs
-
-.if !target(post-install)
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-.endif
 
 .include <bsd.port.mk>

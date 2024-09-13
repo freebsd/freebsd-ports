@@ -1,6 +1,7 @@
 PORTNAME=	comrak
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.28.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -154,8 +155,5 @@ CARGO_CRATES=	adler-1.0.2 \
 		yaml-rust-0.4.5
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

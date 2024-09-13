@@ -1,5 +1,5 @@
 PORTNAME=	rexml
-PORTVERSION=	3.3.5
+PORTVERSION=	3.3.7
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -9,8 +9,6 @@ WWW=		https://github.com/ruby/rexml
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-RUN_DEPENDS=	rubygem-strscan>=0:devel/rubygem-strscan
 
 USES=		cpe gem
 

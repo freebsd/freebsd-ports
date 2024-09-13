@@ -1,7 +1,7 @@
 PORTNAME=	trunk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.20.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -471,8 +471,5 @@ PLIST_FILES=	bin/${PORTNAME}
 .if ${ARCH} == powerpc
 LTO_UNSAFE=	yes
 .endif
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

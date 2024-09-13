@@ -1,7 +1,7 @@
 PORTNAME=	ja2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.21.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 
 MAINTAINER=	timp87@gmail.com
@@ -208,10 +208,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/some/place/where/the/data/is|${DATADIR}|' \
 		${WRKSRC}/rust/stracciatella/src/config/ja2_json.rs \
 		${WRKSRC}/rust/stracciatella/src/config/engine_options.rs
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ja2 \
-		${STAGEDIR}${PREFIX}/bin/ja2-launcher \
-		${STAGEDIR}${PREFIX}/bin/ja2-resource-pack
 
 .include <bsd.port.mk>

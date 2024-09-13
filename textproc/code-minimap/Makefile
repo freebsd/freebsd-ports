@@ -1,7 +1,7 @@
 PORTNAME=	code-minimap
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 
 MAINTAINER=	dereks@lifeofadishwasher.com
@@ -23,8 +23,6 @@ PLIST_FILES=	bin/code-minimap \
 		share/zsh/site-functions/code-minimap
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/code-minimap
-
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d/ \
 		 ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/ \
 		 ${STAGEDIR}${PREFIX}/share/zsh/site-functions/

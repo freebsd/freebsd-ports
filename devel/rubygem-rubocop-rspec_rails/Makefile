@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Code style checking for RSpec Rails files
-WWW=		https://github.com/rubocop/rubocop-rspec_rails
+WWW=		https://docs.rubocop.org/rubocop-rspec_rails/ \
+		https://github.com/rubocop/rubocop-rspec_rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.md

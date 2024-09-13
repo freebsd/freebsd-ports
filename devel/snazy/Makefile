@@ -1,6 +1,6 @@
 PORTNAME=	snazy
 DISTVERSION=	0.52.17
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -90,8 +90,5 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		yansi-0.5.1
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

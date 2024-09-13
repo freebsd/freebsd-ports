@@ -1,7 +1,7 @@
 PORTNAME=	spotify-player
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.17.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 
 MAINTAINER=	jfree@FreeBSD.org
@@ -58,9 +58,6 @@ PORTAUDIO_VARS=		CARGO_FEATURES+=portaudio-backend
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_VARS=	CARGO_FEATURES+=pulseaudio-backend
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/spotify_player
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

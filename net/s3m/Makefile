@@ -1,6 +1,6 @@
 PORTNAME=	s3m
 DISTVERSION=	0.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -34,8 +34,5 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin/
 	${MV} ${WRKSRC}/target/release/s3m \
 		${STAGEDIR}${PREFIX}/bin/
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/s3m
 
 .include <bsd.port.mk>

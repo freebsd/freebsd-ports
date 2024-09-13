@@ -1,7 +1,7 @@
 PORTNAME=	argc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.20.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -151,8 +151,5 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		winsafe-0.0.19
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

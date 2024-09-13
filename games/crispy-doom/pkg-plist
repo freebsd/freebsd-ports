@@ -11,10 +11,6 @@ share/man/man5/crispy-doom.cfg.5.gz
 share/man/man5/crispy-heretic.cfg.5.gz
 share/man/man5/crispy-hexen.cfg.5.gz
 share/man/man5/crispy-strife.cfg.5.gz
-share/man/man5/default.cfg.5.gz
-share/man/man5/heretic.cfg.5.gz
-share/man/man5/hexen.cfg.5.gz
-share/man/man5/strife.cfg.5.gz
 share/man/man6/crispy-doom-setup.6.gz
 share/man/man6/crispy-doom.6.gz
 share/man/man6/crispy-heretic-setup.6.gz
@@ -36,7 +32,6 @@ share/bash-completion/completions/crispy-hexen
 share/bash-completion/completions/crispy-strife
 %%PORTDOCS%%%%DOCSDIR%%/CMDLINE.doom
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.md
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.doom
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.md
 %%PORTDOCS%%%%DOCSDIR%%/NOT-BUGS.md

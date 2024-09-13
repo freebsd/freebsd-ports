@@ -1,7 +1,7 @@
 PORTNAME=	air
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc
 PKGNAMESUFFIX=	-ai-chat-client
 
@@ -223,8 +223,5 @@ PLIST_FILES=	bin/${PORTNAME}
 .if ${ARCH} == powerpc64 && !defined(CPUTYPE)
 CFLAGS+=	-mcpu=power7
 .endif
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

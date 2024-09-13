@@ -1,7 +1,7 @@
 PORTNAME=	rsclock
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.11
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -73,8 +73,5 @@ CARGO_CRATES=	android-tzdata-0.1.1 \
 		windows_x86_64_msvc-0.48.0
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

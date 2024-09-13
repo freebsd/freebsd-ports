@@ -1,7 +1,7 @@
 PORTNAME=	vigil
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.26.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -278,8 +278,5 @@ OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

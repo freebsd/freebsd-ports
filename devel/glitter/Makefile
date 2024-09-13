@@ -1,7 +1,7 @@
 PORTNAME=	glitter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-git-tool
 
@@ -91,8 +91,5 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		winsafe-0.0.19
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

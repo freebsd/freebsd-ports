@@ -1,7 +1,7 @@
 PORTNAME=	wstunnel
 DISTVERSIONPREFIX=	v
 DISTVERSION=	9.2.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -258,8 +258,5 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		fast-socks5@git+https://github.com/erebe/fast-socks5.git?branch=master\#1912e35f8f5621827927096171d96c54816bf1ba
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

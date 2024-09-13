@@ -1,7 +1,7 @@
 PORTNAME=	cskk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese
 
 MAINTAINER=	syobon@syobon.net
@@ -28,6 +28,5 @@ do-install:
 		--prefix "${PREFIX}" \
 		--pkgconfigdir "${PREFIX}/libdata/pkgconfig" \
 		${CARGO_INSTALL_ARGS}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/cskk/*.so
 
 .include <bsd.port.mk>

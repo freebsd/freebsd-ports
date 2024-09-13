@@ -10,6 +10,7 @@ lib/fooyin/plugins/fyplugin_mpris.so
 lib/fooyin/plugins/fyplugin_rawaudio.so
 lib/fooyin/plugins/fyplugin_sdl.so
 lib/fooyin/plugins/fyplugin_tageditor.so
+lib/fooyin/plugins/fyplugin_vgminput.so
 lib/fooyin/plugins/fyplugin_wavebar.so
 share/applications/org.fooyin.fooyin.desktop
 %%DATADIR%%/translations/fooyin_af.qm

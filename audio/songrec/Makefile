@@ -1,6 +1,6 @@
 PORTNAME=	songrec
 DISTVERSION=	0.4.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -301,8 +301,5 @@ OPENSSLLIB=	/usr/lib
 PLIST_FILES=	bin/${PORTNAME}
 
 # known problem: The 'Audio input' combobox doesn't have any selections, see https://github.com/marin-m/SongRec/issues/115
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

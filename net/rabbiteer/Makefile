@@ -1,6 +1,6 @@
 PORTNAME=	rabbiteer
 DISTVERSION=	1.4.1
-PORTREVISION=	59
+PORTREVISION=	60
 CATEGORIES=	net
 
 MAINTAINER=	dch@FreeBSD.org
@@ -77,9 +77,6 @@ PLIST_FILES=	bin/rabbiteer
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rabbiteer
 
 post-install-DOCS-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} README.md ${STAGEDIR}${DOCSDIR})

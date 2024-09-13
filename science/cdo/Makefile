@@ -1,8 +1,8 @@
 PORTNAME=	cdo
-PORTVERSION=	2.4.2
-PORTREVISION=	1
+PORTVERSION=	2.4.3
+DISTVERSIONSUFFIX=	p1
 CATEGORIES=	science
-MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/29481/ \
+MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/29638/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -41,6 +41,7 @@ MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	check
 USE_CXXSTD=	c++20
 USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/cdo-${PORTVERSION}
 
 CGRIBEX_CONFIGURE_WITH=	cgribex
 CGRIBEX_LIB_DEPENDS=	libcgribex.so:science/cgribex

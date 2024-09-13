@@ -1,7 +1,7 @@
 PORTNAME=	lsd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	andoriyu@gmail.com
@@ -200,8 +200,5 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		xdg-2.5.2 \
 		yaml-rust-0.4.5
 PLIST_FILES=	bin/lsd
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lsd
 
 .include <bsd.port.mk>

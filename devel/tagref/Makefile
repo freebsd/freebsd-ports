@@ -1,7 +1,7 @@
 PORTNAME=	tagref
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.10.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -66,8 +66,5 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		windows_x86_64_msvc-0.52.0
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

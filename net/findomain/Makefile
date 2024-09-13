@@ -1,6 +1,6 @@
 PORTNAME=	findomain
 DISTVERSION=	9.0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net security
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -376,7 +376,6 @@ PGSQL_VARS=	WANT_PGSQL=server
 SCREENSHOT_RUN_DEPENDS=	chrome:www/chromium
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
 

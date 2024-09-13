@@ -1,7 +1,7 @@
 PORTNAME=	elan
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -257,7 +257,6 @@ OPENSSLLIB=	/usr/lib
 PLIST_FILES=	bin/${PORTNAME}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-init
 	@${MV} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-init ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

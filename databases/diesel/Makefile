@@ -1,6 +1,7 @@
 PORTNAME=	diesel
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-cli
 
@@ -201,8 +202,5 @@ PLIST_FILES=	bin/${PORTNAME}
 post-patch:
 	${CP} ${FILESDIR}/bindings_8_0_35_powerpc64_freebsd.rs \
 		${WRKSRC}/cargo-crates/mysqlclient-sys-0.4.1/bindings/
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

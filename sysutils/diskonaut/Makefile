@@ -1,6 +1,6 @@
 PORTNAME=	diskonaut
 PORTVERSION=	0.11.0
-PORTREVISION=	36
+PORTREVISION=	37
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -106,8 +106,5 @@ CARGO_CRATES=	addr2line-0.12.1 \
 		yaml-rust-0.4.4
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

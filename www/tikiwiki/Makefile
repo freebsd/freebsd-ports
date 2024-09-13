@@ -4,7 +4,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/Tiki_24.x_Wolf_359/${DISTVERSION}/
 DISTNAME=	tiki-${DISTVERSION}
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful PHP based Wiki/CMS/Groupware
 WWW=		https://tiki.org/
 

@@ -415,6 +415,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/merge-conflict/package.nls.json
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/README.md
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/extension.js
+%%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/extension.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/media/auth.css
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/media/favicon.ico
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/media/icon.png
@@ -819,9 +820,14 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/xml/syntaxes/xsl.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/xml/xml.language-configuration.json
 %%DATADIR%%/resources/app/extensions/xml/xsl.language-configuration.json
+%%DATADIR%%/resources/app/extensions/yaml/build/update-grammar.js
 %%DATADIR%%/resources/app/extensions/yaml/language-configuration.json
 %%DATADIR%%/resources/app/extensions/yaml/package.json
 %%DATADIR%%/resources/app/extensions/yaml/package.nls.json
+%%DATADIR%%/resources/app/extensions/yaml/syntaxes/yaml-1.0.tmLanguage.json
+%%DATADIR%%/resources/app/extensions/yaml/syntaxes/yaml-1.1.tmLanguage.json
+%%DATADIR%%/resources/app/extensions/yaml/syntaxes/yaml-1.2.tmLanguage.json
+%%DATADIR%%/resources/app/extensions/yaml/syntaxes/yaml-1.3.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/yaml/syntaxes/yaml.tmLanguage.json
 %%DATADIR%%/resources/app/node_modules.asar
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@parcel/watcher/build/Release/watcher.node
@@ -830,6 +836,8 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@vscode/ripgrep/bin/rg
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@vscode/spdlog/build/Release/spdlog.node
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@vscode/sqlite3/build/Release/vscode-sqlite3.node
+%%DATADIR%%/resources/app/node_modules.asar.unpacked/@vscode/tree-sitter-wasm/wasm/tree-sitter-typescript.wasm
+%%DATADIR%%/resources/app/node_modules.asar.unpacked/@vscode/tree-sitter-wasm/wasm/tree-sitter.wasm
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/kerberos/build/Release/kerberos.node
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/kerberos/build/Release/obj.target/kerberos.node
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/native-is-elevated/build/Release/iselevated.node
@@ -857,15 +865,18 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/base/parts/sandbox/electron-sandbox/preload.js
 %%DATADIR%%/resources/app/out/vs/base/worker/workerMain.js
 %%DATADIR%%/resources/app/out/vs/code/electron-main/main.js
+%%DATADIR%%/resources/app/out/vs/code/electron-sandbox/processExplorer/processExplorer.esm.html
 %%DATADIR%%/resources/app/out/vs/code/electron-sandbox/processExplorer/processExplorer.html
 %%DATADIR%%/resources/app/out/vs/code/electron-sandbox/processExplorer/processExplorer.js
 %%DATADIR%%/resources/app/out/vs/code/electron-sandbox/processExplorer/processExplorerMain.css
 %%DATADIR%%/resources/app/out/vs/code/electron-sandbox/processExplorer/processExplorerMain.js
+%%DATADIR%%/resources/app/out/vs/code/electron-sandbox/workbench/workbench.esm.html
 %%DATADIR%%/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html
 %%DATADIR%%/resources/app/out/vs/code/electron-sandbox/workbench/workbench.js
 %%DATADIR%%/resources/app/out/vs/code/node/cli.js
 %%DATADIR%%/resources/app/out/vs/code/node/cliProcessMain.js
 %%DATADIR%%/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js
+%%DATADIR%%/resources/app/out/vs/editor/common/languages/highlights/typescript.scm
 %%DATADIR%%/resources/app/out/vs/loader.js
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/break.mp3
 %%DATADIR%%/resources/app/out/vs/platform/accessibilitySignal/browser/media/chatRequestSent.mp3
@@ -910,6 +921,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/extensions/browser/media/theme-icon.png
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/externalTerminal/node/TerminalHelper.scpt
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/externalTerminal/node/iTermHelper.scpt
+%%DATADIR%%/resources/app/out/vs/workbench/contrib/issue/electron-sandbox/issueReporter.esm.html
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/issue/electron-sandbox/issueReporter.html
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/issue/electron-sandbox/issueReporter.js
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/issue/electron-sandbox/issueReporterMain.css
@@ -954,6 +966,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/terminal.svg
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/workspaceTrust.svg
 %%DATADIR%%/resources/app/out/vs/workbench/services/extensionManagement/common/media/defaultIcon.png
+%%DATADIR%%/resources/app/out/vs/workbench/services/extensions/worker/webWorkerExtensionHostIframe.esm.html
 %%DATADIR%%/resources/app/out/vs/workbench/services/extensions/worker/webWorkerExtensionHostIframe.html
 %%DATADIR%%/resources/app/out/vs/workbench/services/languageDetection/browser/languageDetectionSimpleWorker.js
 %%DATADIR%%/resources/app/out/vs/workbench/services/search/worker/localFileSearch.js

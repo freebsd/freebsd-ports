@@ -1,7 +1,7 @@
 PORTNAME=	pueue
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -283,10 +283,5 @@ CARGO_CRATES=	addr2line-0.22.0 \
 
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}d
-
-post-install:
-	@${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME}d
 
 .include <bsd.port.mk>

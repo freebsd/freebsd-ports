@@ -790,6 +790,7 @@
     SUBDIR += prboom
     SUBDIR += prboom-plus
     SUBDIR += primateplunge
+    SUBDIR += prismlauncher
     SUBDIR += puckman
     SUBDIR += punchy
     SUBDIR += pvpgn

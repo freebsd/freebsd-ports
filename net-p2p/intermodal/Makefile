@@ -1,7 +1,7 @@
 PORTNAME=	intermodal
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -203,8 +203,5 @@ OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/imdl
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/imdl
 
 .include <bsd.port.mk>

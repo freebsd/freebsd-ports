@@ -1,7 +1,7 @@
 PORTNAME=	shikane
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -35,8 +35,5 @@ do-install-MANPAGES-on:
 		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_MAN} ${WRKSRC}/build/man/*.5.gz \
 		${STAGEDIR}${PREFIX}/share/man/man5
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}*
 
 .include <bsd.port.mk>

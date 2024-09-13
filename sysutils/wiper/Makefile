@@ -1,7 +1,7 @@
 PORTNAME=	wiper
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-disk-cleanup-tool
 
@@ -157,8 +157,5 @@ CARGO_CRATES=	ahash-0.8.7 \
 		zerocopy-derive-0.7.32
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

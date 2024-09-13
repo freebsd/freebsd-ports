@@ -1,6 +1,6 @@
 PORTNAME=	ouch
 DISTVERSION=	0.5.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	archivers
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -209,8 +209,5 @@ CARGO_CRATES=	adler-1.0.2 \
 		zstd-sys-2.0.9+zstd.1.5.5
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

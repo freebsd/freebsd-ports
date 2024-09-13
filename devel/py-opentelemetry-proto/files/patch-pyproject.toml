@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -26,7 +26,7 @@ dependencies = [
+   "Programming Language :: Python :: 3.12",
+ ]
+ dependencies = [
+-  "protobuf>=3.19, < 5.0",
++  "protobuf>=3.19",
+ ]
+ 
+ [project.urls]

@@ -4,9 +4,10 @@ users confirming in PR 279927 and PR 280000 this fixes
   002c:err:seh:NtRaiseException Unhandled exception code c0000005 flags 0 addr 0x6ffffff8b2b7
   0024:err:seh:NtRaiseException Unhandled exception code c0000005 flags 0 addr 0x6ffffff8b2b7 
 
-for them. Of course this should better be addressed via upstream (which
-we'll try to do).
+for them.
 
+Upstream Wine has a more complete patch in the meantime; drop this one
+when moving to the major release post 9.0.
 
 --- UTC
 --- include/wine/asm.h.orig	2024-02-24 10:23:40.551780000 +0300

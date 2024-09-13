@@ -1,7 +1,7 @@
 PORTNAME=	monolith
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -16,8 +16,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Y2Z
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

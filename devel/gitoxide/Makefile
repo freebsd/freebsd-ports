@@ -1,7 +1,7 @@
 PORTNAME=	gitoxide
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.37.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -466,10 +466,5 @@ PLIST_FILES=	bin/ein \
 		bin/gix
 
 PORTSCOUT=	ignore:1 # repository tags don't make sense and only cause confusion
-
-post-install:
-	@${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/bin/ein \
-		${STAGEDIR}${PREFIX}/bin/gix
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	xfuse
 DISTVERSION=	0.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	CRATESIO
 MASTER_SITE_SUBDIR=	xfs-fuse/${DISTVERSION}
@@ -21,7 +21,6 @@ PLIST_FILES=	bin/xfs-fuse \
 		share/man/man1/xfs-fuse.1.gz
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xfs-fuse
 	${INSTALL_MAN} ${WRKSRC}/doc/xfs-fuse.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

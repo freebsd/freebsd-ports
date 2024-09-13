@@ -1,7 +1,7 @@
 PORTNAME=	kalc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 PKGNAMESUFFIX=	-calculator
 
@@ -81,8 +81,5 @@ CARGO_CRATES=	autocfg-1.3.0 \
 		windows_x86_64_msvc-0.52.6
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

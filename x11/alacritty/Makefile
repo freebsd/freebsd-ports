@@ -1,7 +1,7 @@
 PORTNAME=	alacritty
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	vishwin@FreeBSD.org
@@ -59,7 +59,6 @@ post-build-MANPAGES-on:
 	scdoc < ${WRKSRC}/extra/man/alacritty-bindings.5.scd > ${WRKSRC}/alacritty-bindings.5
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/alacritty
 	${INSTALL_DATA} ${WRKSRC}/extra/linux/Alacritty.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/extra/logo/alacritty-term.svg \

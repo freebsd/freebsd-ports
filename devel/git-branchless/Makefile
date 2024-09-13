@@ -1,7 +1,7 @@
 PORTNAME=	git-branchless
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -434,8 +434,5 @@ post-patch:
 		-e '/get_cpu/s|unsigned long|uint64_t|' \
 		-e '/get_proc_total/s|unsigned long|uint64_t|' \
 			${WRKSRC}/cargo-crates/sys-info-*/c/*.[ch]
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

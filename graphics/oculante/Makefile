@@ -1,6 +1,6 @@
 PORTNAME=	oculante
 DISTVERSION=	0.8.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -816,8 +816,5 @@ BINARY_ALIAS=	python3=${PYTHON_CMD} \
 		git=/usr/bin/false
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

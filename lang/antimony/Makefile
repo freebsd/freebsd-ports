@@ -1,7 +1,7 @@
 PORTNAME=	antimony
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
@@ -68,8 +68,5 @@ CARGO_CRATES=	aho-corasick-1.0.1 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 PLIST_FILES=	bin/sb
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sb
 
 .include <bsd.port.mk>

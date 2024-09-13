@@ -7,6 +7,8 @@ MAINTAINER=	kwhite@site.uottawa.ca
 COMMENT=	Simple window manager based on wm2
 WWW=		https://www.all-day-breakfast.com/wmx/
 
+LICENSE=	MIT
+
 USES=		pkgconfig xorg
 GNU_CONFIGURE=	yes
 USE_XORG=	ice sm x11 xcomposite xext xft xpm

@@ -1,7 +1,7 @@
 PORTNAME=	git-cliff
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -403,11 +403,5 @@ CARGO_CRATES=	addr2line-0.22.0 \
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/git-cliff-completions \
 		bin/git-cliff-mangen
-
-post-install:
-	@${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin/git-cliff-completions \
-		${STAGEDIR}${PREFIX}/bin/git-cliff-mangen
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	hvm
 DISTVERSION=	g20240518
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -47,8 +47,5 @@ CARGO_CRATES=	TSPL-0.0.12 \
 		windows_x86_64_msvc-0.52.5
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

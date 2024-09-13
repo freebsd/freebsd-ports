@@ -1,7 +1,7 @@
 PORTNAME=	sccache
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.4
-PORTREVISION=	10
+PORTREVISION=	11
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -421,7 +421,4 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/${f}
 .endfor
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sccache
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sccache-dist
 .include <bsd.port.mk>

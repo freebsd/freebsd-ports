@@ -3867,15 +3867,18 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BUNDLED_GEMS/cdesc-BUNDLED_GEMS.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/activated%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/base_dir-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/base_dir_priority-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/cdesc-BasicSpecification.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/contains_requirable_file%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/datadir-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/default_gem%3f-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/default_gem_priority-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/default_specifications_dir-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/extension_dir-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/extensions_dir-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/full_gem_path-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/full_name-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/full_name_with_location-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/full_require_paths-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/gem_dir-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/gems_dir-i.ri
@@ -4206,6 +4209,7 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/Gem/ConfigFile/concurrent_downloads-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/ConfigFile/config_file_name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/ConfigFile/credentials_path-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/ConfigFile/deep_transform_config_keys%21-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/ConfigFile/disable_default_gem_server-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/ConfigFile/dump_with_rubygems_yaml-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/ConfigFile/each-i.ri
@@ -5522,6 +5526,7 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/unresolved_specs-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/validate-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/validate_dependencies-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/validate_for_resolution-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/validate_metadata-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/validate_permissions-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/version%3d-i.ri
@@ -5534,6 +5539,7 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_array_attributes-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_attribute_present-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_authors_field-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_for_resolution-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_lazy_metadata-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_licenses-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_licenses_length-i.ri
@@ -5547,6 +5553,7 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_require_paths-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_required%21-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_required_attributes-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_required_metadata%21-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_required_ruby_version-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_rubygems_version-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SpecificationPolicy/validate_self_inclusion_in_files_list-i.ri
@@ -5648,6 +5655,7 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Uninstaller/remove_executables-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Uninstaller/safe_delete-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Uninstaller/spec-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Uninstaller/specification_record-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Uninstaller/uninstall-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Uninstaller/uninstall_gem-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Uninstaller/warn_cannot_uninstall_default_gems-i.ri
@@ -5746,7 +5754,6 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/Gem/WebauthnVerificationError/cdesc-WebauthnVerificationError.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/WebauthnVerificationError/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/YAMLSerializer/cdesc-YAMLSerializer.ri
-%%RDOC%%%%RUBY_RIDIR%%/Gem/YAMLSerializer/convert_to_backward_compatible_key%21-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/YAMLSerializer/dump-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/YAMLSerializer/dump_hash-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/YAMLSerializer/load-i.ri
@@ -5815,6 +5822,7 @@ libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
 %%RDOC%%%%RUBY_RIDIR%%/Gem/marshal_version-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/needs-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/open_file-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/open_file_with_flock-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/operating_system_defaults-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/path-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/path_separator-c.ri

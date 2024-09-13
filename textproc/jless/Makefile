@@ -1,7 +1,7 @@
 PORTNAME=	jless
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.2
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	textproc
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -86,8 +86,5 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 PLIST_FILES=	bin/jless
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/jless
 
 .include <bsd.port.mk>

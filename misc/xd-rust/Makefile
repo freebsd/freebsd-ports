@@ -1,6 +1,6 @@
 PORTNAME=	xd
 DISTVERSION=	0.0.4
-PORTREVISION=	34
+PORTREVISION=	35
 CATEGORIES=	misc
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/:main
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
@@ -102,8 +102,5 @@ BB_COMMIT=	4bdbb191ed6d
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

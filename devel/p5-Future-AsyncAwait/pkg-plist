@@ -1,9 +1,9 @@
 %%SITE_ARCH%%/Future/AsyncAwait.pm
 %%SITE_ARCH%%/Future/AsyncAwait/Awaitable.pm
 %%SITE_ARCH%%/Future/AsyncAwait/ExtensionBuilder.pm
-%%SITE_ARCH%%/Future/AsyncAwait/ExtensionBuilder_data.pm
 %%SITE_ARCH%%/Test/Future/AsyncAwait/Awaitable.pm
 %%SITE_ARCH%%/auto/Future/AsyncAwait/AsyncAwait.so
+%%SITE_ARCH%%/auto/share/module/Future-AsyncAwait/include/AsyncAwait.h
 %%PERL5_MAN3%%/Future::AsyncAwait.3.gz
 %%PERL5_MAN3%%/Future::AsyncAwait::Awaitable.3.gz
 %%PERL5_MAN3%%/Future::AsyncAwait::ExtensionBuilder.3.gz

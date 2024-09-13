@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-Vendor: %providerName
+Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.powerpc64;singleton:=true
+Bundle-Version: 1.2.1000.qualifier
+Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.5.0,1.7.0)"
+Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=freebsd) (osgi.arch=powerpc64))
+Bundle-Localization: launcher.gtk.freebsd.powerpc64
+Eclipse-BundleShape: dir

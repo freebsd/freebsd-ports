@@ -1,7 +1,7 @@
 PORTNAME=	spotify-tui
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.25.0
-PORTREVISION=	29
+PORTREVISION=	30
 CATEGORIES=	audio
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -294,9 +294,6 @@ SPOTIFYD_RUN_DEPENDS=	spotifyd:audio/spotifyd
 BROKEN_SSL=	base openssl openssl31
 BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 and later
 .endif
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/spt
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

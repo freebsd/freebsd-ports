@@ -1,7 +1,7 @@
 PORTNAME=	dijo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.7
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -136,8 +136,5 @@ CARGO_CRATES=	ahash-0.6.3 \
 		xi-unicode-0.3.0
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

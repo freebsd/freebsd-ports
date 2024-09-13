@@ -1,6 +1,6 @@
 PORTNAME=	amber
 DISTVERSION=	0.3.4-alpha
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
@@ -124,8 +124,5 @@ PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/bin/bash"|"${LOCALBASE}/bin/bash"|' ${WRKSRC}/src/compiler.rs
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

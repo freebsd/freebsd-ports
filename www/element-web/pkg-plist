@@ -11,6 +11,9 @@
 %%WWWDIR%%/bundles/%%COMMITID%%/1255.js.map
 %%WWWDIR%%/bundles/%%COMMITID%%/1305.js
 %%WWWDIR%%/bundles/%%COMMITID%%/1305.js.map
+%%WWWDIR%%/bundles/%%COMMITID%%/1546.js
+%%WWWDIR%%/bundles/%%COMMITID%%/1546.js.LICENSE.txt
+%%WWWDIR%%/bundles/%%COMMITID%%/1546.js.map
 %%WWWDIR%%/bundles/%%COMMITID%%/1607.js
 %%WWWDIR%%/bundles/%%COMMITID%%/1607.js.map
 %%WWWDIR%%/bundles/%%COMMITID%%/1696.js
@@ -45,9 +48,6 @@
 %%WWWDIR%%/bundles/%%COMMITID%%/5484.js.map
 %%WWWDIR%%/bundles/%%COMMITID%%/5813.js
 %%WWWDIR%%/bundles/%%COMMITID%%/5813.js.map
-%%WWWDIR%%/bundles/%%COMMITID%%/5877.js
-%%WWWDIR%%/bundles/%%COMMITID%%/5877.js.LICENSE.txt
-%%WWWDIR%%/bundles/%%COMMITID%%/5877.js.map
 %%WWWDIR%%/bundles/%%COMMITID%%/6202.js
 %%WWWDIR%%/bundles/%%COMMITID%%/6202.js.map
 %%WWWDIR%%/bundles/%%COMMITID%%/6288.js
@@ -232,7 +232,7 @@
 %%WWWDIR%%/i18n/cs.420fc4f.json
 %%WWWDIR%%/i18n/de_DE.273611b.json
 %%WWWDIR%%/i18n/el.7987fb6.json
-%%WWWDIR%%/i18n/en_EN.10a0509.json
+%%WWWDIR%%/i18n/en_EN.9bbcae6.json
 %%WWWDIR%%/i18n/eo.d5d08a1.json
 %%WWWDIR%%/i18n/es.d91bb98.json
 %%WWWDIR%%/i18n/et.e37f4b6.json
@@ -246,7 +246,7 @@
 %%WWWDIR%%/i18n/is.71ea8a9.json
 %%WWWDIR%%/i18n/it.5247775.json
 %%WWWDIR%%/i18n/ja.fecab28.json
-%%WWWDIR%%/i18n/languages.8fa2bec.json
+%%WWWDIR%%/i18n/languages.3112a6e.json
 %%WWWDIR%%/i18n/languages.json
 %%WWWDIR%%/i18n/lo.cdb5d94.json
 %%WWWDIR%%/i18n/lt.b9b46a1.json
@@ -276,6 +276,8 @@
 %%WWWDIR%%/icons/lock-solid.6a2e583.svg
 %%WWWDIR%%/icons/notifications-solid.2e4b017.svg
 %%WWWDIR%%/icons/overflow-horizontal.103407e.svg
+%%WWWDIR%%/icons/pin-solid.a95bf91.svg
+%%WWWDIR%%/icons/pin.ef9edc4.svg
 %%WWWDIR%%/icons/plus.a217d01.svg
 %%WWWDIR%%/icons/pop-out.aba89df.svg
 %%WWWDIR%%/icons/qr-code.f185038.svg

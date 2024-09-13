@@ -1,7 +1,7 @@
 PORTNAME=	pastel
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	graphics
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -122,9 +122,6 @@ DOCS=		doc/colorcheck.md doc/colorcheck.png \
 PORTDOCS=	${DOCS:T}
 
 OPTIONS_DEFINE=	DOCS
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

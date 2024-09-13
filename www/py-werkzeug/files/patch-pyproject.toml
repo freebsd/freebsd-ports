@@ -1,9 +1,9 @@
---- pyproject.toml.orig	2024-05-05 23:02:12 UTC
+--- pyproject.toml.orig	2024-08-21 19:35:55 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [project]
 -name = "Werkzeug"
 +name = "werkzeug"
- version = "3.0.3"
+ version = "3.0.4"
  description = "The comprehensive WSGI web application library."
  readme = "README.md"

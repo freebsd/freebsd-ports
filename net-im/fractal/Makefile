@@ -1,6 +1,6 @@
 PORTNAME=	fractal
 DISTVERSION=	4.4.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	net-im
 MASTER_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/archive/${DISTVERSION}/
 # XXX USES=cargo omits the default source archive by default
@@ -33,10 +33,5 @@ CARGO_INSTALL=	no
 CARGO_TEST=	no
 CARGO_TARGET_DIR=	${WRKSRC}/${MESON_BUILD_DIR}/target
 MAKE_ENV+=	${CARGO_ENV}
-
-post-install:
-.	ifndef WITH_DEBUG
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/fractal
-.	endif
 
 .include <bsd.port.mk>

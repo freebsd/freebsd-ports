@@ -1,6 +1,6 @@
 PORTNAME=	jwt-cli
 PORTVERSION=	6.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -139,8 +139,5 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		windows_x86_64_msvc-0.52.0
 
 PLIST_FILES=	bin/jwt
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/jwt
 
 .include <bsd.port.mk>

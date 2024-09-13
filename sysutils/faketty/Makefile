@@ -1,6 +1,6 @@
 PORTNAME=	faketty
 DISTVERSION=	1.0.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -52,8 +52,5 @@ CARGO_CRATES=	anstream-0.6.15 \
 		windows_x86_64_msvc-0.52.6
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

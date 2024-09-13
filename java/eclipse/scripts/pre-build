@@ -1,14 +1,11 @@
 #!/bin/sh
-#
-# Build quirks
-#
-cd ${WRKSRC}
 
 ARCHS="aarch64 amd64 powerpc64 powerpc64le"
 
+cd ${WRKSRC}
+
 # Create dummy repo for jgit
-if [ ! -d .git ]
-then
+if [ ! -d .git ]; then
 	mkdir ${WRKDIR}/githome
 	(
 		export HOME=${WRKDIR}/githome
@@ -18,20 +15,4 @@ then
 		git add .
 		git commit -q --message="java/eclipse" --author="Eclipse <eclipse@freebsd.org>"
 	)
-fi
-
-# Create dummy targets
-GTK_EXE="rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk"
-for A in ${ARCHS}
-do
-	mkdir -p ${GTK_EXE}/freebsd/${A}
-	touch ${GTK_EXE}/freebsd/${A}/eclipse
-done
-
-arch=`uname -p`
-
-if [ "$arch" == "powerpc64" ]
-then
-	sed -i '' -e 's/ppc64le/ppc64/g' eclipse.platform.swt/bundles/org.eclipse.swt/'Eclipse SWT'/gtk/org/eclipse/swt/graphics/Device.java
-	sed -i '' -e 's/ppc64le/ppc64/g' eclipse.platform.swt/bundles/org.eclipse.swt/'Eclipse SWT'/gtk/org/eclipse/swt/widgets/Control.java
 fi

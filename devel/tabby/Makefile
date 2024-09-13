@@ -1,7 +1,7 @@
 PORTNAME=	tabby
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel # machine-learning
 PKGNAMESUFFIX=	-ai-coding-assistant
 

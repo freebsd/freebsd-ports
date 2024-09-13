@@ -1,4 +1,4 @@
-TIMESTAMP = 1722944315
+TIMESTAMP = 1725712695
 SHA256 (cabal/pandoc-crossref-0.3.17.1/pandoc-crossref-0.3.17.1.tar.gz) = cb156ceb73269b949add64a877abbb602a4b448890d743a907f66d9b4989a755
 SIZE (cabal/pandoc-crossref-0.3.17.1/pandoc-crossref-0.3.17.1.tar.gz) = 73699
 SHA256 (cabal/pandoc-crossref-0.3.17.1/revision/2.cabal) = e814171ee529406137b18062a19719d24532769c5029aa04e6e2a09b29b6a303
@@ -271,6 +271,8 @@ SHA256 (cabal/os-string-2.0.6/os-string-2.0.6.tar.gz) = 22fcc7d5fc66676b5dfc57b7
 SIZE (cabal/os-string-2.0.6/os-string-2.0.6.tar.gz) = 44363
 SHA256 (cabal/pandoc-3.3/pandoc-3.3.tar.gz) = 62bae181ee0bef36dfad3da746220789368e8bf1d9a2555ee44dc672b8d7c6ed
 SIZE (cabal/pandoc-3.3/pandoc-3.3.tar.gz) = 7462867
+SHA256 (cabal/pandoc-cli-3.3/pandoc-cli-3.3.tar.gz) = 2a665b885ffb9259a29423d9021c7ce59878eca000515c0b58ea19795cd554d9
+SIZE (cabal/pandoc-cli-3.3/pandoc-cli-3.3.tar.gz) = 94839
 SHA256 (cabal/pandoc-types-1.23.1/pandoc-types-1.23.1.tar.gz) = ad0fa083d28d452b7d37a1c67a2c140137a5f29a2f52fd88e807fac20245a1c1
 SIZE (cabal/pandoc-types-1.23.1/pandoc-types-1.23.1.tar.gz) = 36480
 SHA256 (cabal/pandoc-types-1.23.1/revision/2.cabal) = 2cb4836905406ccbc4c18699b8b551ed33aa15b23309f46ca108fcc209ae1ef2

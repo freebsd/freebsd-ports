@@ -1,6 +1,6 @@
 PORTNAME=	ssh-vault
 PORTVERSION=	1.0.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -258,10 +258,5 @@ CARGO_CRATES=   addr2line-0.21.0 \
                 zeroize_derive-1.4.2
 
 PLIST_FILES=	bin/ssh-vault
-
-.include <bsd.port.options.mk>
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ssh-vault
 
 .include <bsd.port.mk>

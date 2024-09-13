@@ -1,7 +1,7 @@
 PORTNAME=	rustls-ffi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	brnrd@FreeBSD.org
@@ -30,6 +30,5 @@ do-install:
 	    --destdir "${STAGEDIR}" \
 	    --prefix "${PREFIX}" \
 	    ${CARGO_INSTALL_ARGS}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include <bsd.port.mk>

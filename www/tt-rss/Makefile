@@ -1,6 +1,6 @@
 PORTNAME=	tt-rss
 PORTVERSION=	g20240421
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -37,7 +37,7 @@ NO_BUILD=	yes
 # pgsql: php-pgsql php-pdo_pgsql
 #
 # from Mk/Uses/php.mk create sub vars for mysqli/pdo_mysql pgsql/pdo_pgsql values
-SUB_FILES=	config.php httpd-tt-rss.conf pkg-message ttrss_db_check.php
+SUB_FILES=	config.php httpd-tt-rss.conf pkg-message
 SUB_LIST=	MYSQL_DEPS="${mysqli_DEPENDS:T} ${pdo_mysql_DEPENDS:T}" \
 		PGSQL_DEPS="${pgsql_DEPENDS:T} ${pdo_pgsql_DEPENDS:T}" \
 		WWWOWN=${WWWOWN}
@@ -68,8 +68,6 @@ do-install:
 	${RM} ${STAGEDIR}${WWWDIR}/config.php-dist
 	${INSTALL_DATA} ${WRKDIR}/config.php \
 		${STAGEDIR}${WWWDIR}/config.php.sample
-	${INSTALL_DATA} ${WRKDIR}/ttrss_db_check.php \
-		${STAGEDIR}${WWWDIR}/ttrss_db_check.php
 	${INSTALL_DATA} ${FILESDIR}/newsyslog.sample \
 		${STAGEDIR}${EXAMPLESDIR}
 

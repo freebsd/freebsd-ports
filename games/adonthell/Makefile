@@ -12,6 +12,10 @@ WWW=		https://adonthell.nongnu.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Fails to build, ./python_class.h:38:10: fatal error: 'eval.h' file not found
+DEPRECATED=	Unmaintained in tree and broken for months
+EXPIRATION_DATE=2024-09-30
+
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis

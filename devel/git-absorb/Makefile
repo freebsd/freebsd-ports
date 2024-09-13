@@ -1,6 +1,6 @@
 PORTNAME=	git-absorb
 DISTVERSION=	0.6.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -18,7 +18,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/git-absorb
 	${INSTALL_MAN} ${WRKSRC}/Documentation/${PORTNAME}.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
 

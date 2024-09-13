@@ -1,7 +1,6 @@
 PORTNAME=	surrealdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.4
-PORTREVISION=	1
+DISTVERSION=	1.5.5
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -571,7 +570,7 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		strsim-0.10.0 \
 		strsim-0.11.1 \
 		subtle-2.5.0 \
-		surrealdb-core-1.5.1 \
+		surrealdb-core-1.5.3 \
 		surrealdb-derive-0.12.0 \
 		surrealdb-jsonwebtoken-8.3.0-surreal.1 \
 		surrealdb-tikv-client-0.2.0-surreal.2 \
@@ -600,9 +599,9 @@ CARGO_CRATES=	actix-codec-0.5.2 \
 		thiserror-1.0.58 \
 		thiserror-impl-1.0.58 \
 		thread_local-1.1.8 \
-		time-0.3.34 \
+		time-0.3.36 \
 		time-core-0.1.2 \
-		time-macros-0.2.17 \
+		time-macros-0.2.18 \
 		tiny-keccak-2.0.2 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
@@ -730,8 +729,5 @@ OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/surreal
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/surreal
 
 .include <bsd.port.mk>

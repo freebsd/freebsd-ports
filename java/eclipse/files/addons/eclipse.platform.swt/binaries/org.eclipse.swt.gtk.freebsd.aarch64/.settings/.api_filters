@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component id="org.eclipse.swt.gtk.linux.aarch64" version="2">
+    <resource path="Eclipse SWT Accessibility/common/org/eclipse/swt/accessibility/AccessibleActionListener.java" type="org.eclipse.swt.accessibility.AccessibleActionListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="AccessibleActionListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Accessibility/common/org/eclipse/swt/accessibility/AccessibleAttributeListener.java" type="org.eclipse.swt.accessibility.AccessibleAttributeListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="AccessibleAttributeListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Accessibility/common/org/eclipse/swt/accessibility/AccessibleControlListener.java" type="org.eclipse.swt.accessibility.AccessibleControlListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="AccessibleControlListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Accessibility/common/org/eclipse/swt/accessibility/AccessibleEditableTextListener.java" type="org.eclipse.swt.accessibility.AccessibleEditableTextListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="AccessibleEditableTextListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Accessibility/common/org/eclipse/swt/accessibility/AccessibleHyperlinkListener.java" type="org.eclipse.swt.accessibility.AccessibleHyperlinkListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="AccessibleHyperlinkListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Accessibility/common/org/eclipse/swt/accessibility/AccessibleListener.java" type="org.eclipse.swt.accessibility.AccessibleListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="AccessibleListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Accessibility/common/org/eclipse/swt/accessibility/AccessibleTableCellListener.java" type="org.eclipse.swt.accessibility.AccessibleTableCellListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="AccessibleTableCellListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Accessibility/common/org/eclipse/swt/accessibility/AccessibleTableListener.java" type="org.eclipse.swt.accessibility.AccessibleTableListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="AccessibleTableListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Accessibility/common/org/eclipse/swt/accessibility/AccessibleTextListener.java" type="org.eclipse.swt.accessibility.AccessibleTextListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="AccessibleTextListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Accessibility/common/org/eclipse/swt/accessibility/AccessibleValueListener.java" type="org.eclipse.swt.accessibility.AccessibleValueListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="AccessibleValueListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Browser/common/org/eclipse/swt/browser/AuthenticationListener.java" type="org.eclipse.swt.browser.AuthenticationListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="AuthenticationListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Browser/common/org/eclipse/swt/browser/CloseWindowListener.java" type="org.eclipse.swt.browser.CloseWindowListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="CloseWindowListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Browser/common/org/eclipse/swt/browser/LocationListener.java" type="org.eclipse.swt.browser.LocationListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="LocationListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Browser/common/org/eclipse/swt/browser/OpenWindowListener.java" type="org.eclipse.swt.browser.OpenWindowListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="OpenWindowListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Browser/common/org/eclipse/swt/browser/ProgressListener.java" type="org.eclipse.swt.browser.ProgressListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="ProgressListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Browser/common/org/eclipse/swt/browser/StatusTextListener.java" type="org.eclipse.swt.browser.StatusTextListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="StatusTextListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Browser/common/org/eclipse/swt/browser/TitleListener.java" type="org.eclipse.swt.browser.TitleListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="TitleListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Browser/common/org/eclipse/swt/browser/VisibilityWindowListener.java" type="org.eclipse.swt.browser.VisibilityWindowListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="VisibilityWindowListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Custom Widgets/common/org/eclipse/swt/custom/BidiSegmentListener.java" type="org.eclipse.swt.custom.BidiSegmentListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="BidiSegmentListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Custom Widgets/common/org/eclipse/swt/custom/CTabFolder2Listener.java" type="org.eclipse.swt.custom.CTabFolder2Listener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="CTabFolder2Listener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Custom Widgets/common/org/eclipse/swt/custom/CTabFolderListener.java" type="org.eclipse.swt.custom.CTabFolderListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="CTabFolderListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Custom Widgets/common/org/eclipse/swt/custom/CaretListener.java" type="org.eclipse.swt.custom.CaretListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="CaretListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Custom Widgets/common/org/eclipse/swt/custom/ExtendedModifyListener.java" type="org.eclipse.swt.custom.ExtendedModifyListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="ExtendedModifyListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Custom Widgets/common/org/eclipse/swt/custom/LineBackgroundListener.java" type="org.eclipse.swt.custom.LineBackgroundListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="LineBackgroundListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Custom Widgets/common/org/eclipse/swt/custom/LineStyleListener.java" type="org.eclipse.swt.custom.LineStyleListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="LineStyleListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Custom Widgets/common/org/eclipse/swt/custom/MovementListener.java" type="org.eclipse.swt.custom.MovementListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="MovementListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Custom Widgets/common/org/eclipse/swt/custom/PaintObjectListener.java" type="org.eclipse.swt.custom.PaintObjectListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="PaintObjectListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Custom Widgets/common/org/eclipse/swt/custom/TextChangeListener.java" type="org.eclipse.swt.custom.TextChangeListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="TextChangeListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Custom Widgets/common/org/eclipse/swt/custom/VerifyKeyListener.java" type="org.eclipse.swt.custom.VerifyKeyListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="VerifyKeyListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Drag and Drop/common/org/eclipse/swt/dnd/DragSourceListener.java" type="org.eclipse.swt.dnd.DragSourceListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="DragSourceListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT Drag and Drop/common/org/eclipse/swt/dnd/DropTargetListener.java" type="org.eclipse.swt.dnd.DropTargetListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="DropTargetListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/ArmListener.java" type="org.eclipse.swt.events.ArmListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="ArmListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/ControlListener.java" type="org.eclipse.swt.events.ControlListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="ControlListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/DisposeListener.java" type="org.eclipse.swt.events.DisposeListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="DisposeListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/DragDetectListener.java" type="org.eclipse.swt.events.DragDetectListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="DragDetectListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/ExpandListener.java" type="org.eclipse.swt.events.ExpandListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="ExpandListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/FocusListener.java" type="org.eclipse.swt.events.FocusListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="FocusListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/GestureListener.java" type="org.eclipse.swt.events.GestureListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="GestureListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/HelpListener.java" type="org.eclipse.swt.events.HelpListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="HelpListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/KeyListener.java" type="org.eclipse.swt.events.KeyListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="KeyListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/MenuDetectListener.java" type="org.eclipse.swt.events.MenuDetectListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="MenuDetectListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/MenuListener.java" type="org.eclipse.swt.events.MenuListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="MenuListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/ModifyListener.java" type="org.eclipse.swt.events.ModifyListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="ModifyListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/MouseListener.java" type="org.eclipse.swt.events.MouseListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="MouseListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/MouseMoveListener.java" type="org.eclipse.swt.events.MouseMoveListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="MouseMoveListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/MouseTrackListener.java" type="org.eclipse.swt.events.MouseTrackListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="MouseTrackListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/MouseWheelListener.java" type="org.eclipse.swt.events.MouseWheelListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="MouseWheelListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/PaintListener.java" type="org.eclipse.swt.events.PaintListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="PaintListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/SegmentListener.java" type="org.eclipse.swt.events.SegmentListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="SegmentListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/SelectionListener.java" type="org.eclipse.swt.events.SelectionListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="SelectionListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/ShellListener.java" type="org.eclipse.swt.events.ShellListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="ShellListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/TouchListener.java" type="org.eclipse.swt.events.TouchListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="TouchListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/TraverseListener.java" type="org.eclipse.swt.events.TraverseListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="TraverseListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/TreeListener.java" type="org.eclipse.swt.events.TreeListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="TreeListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/events/VerifyListener.java" type="org.eclipse.swt.events.VerifyListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="VerifyListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/graphics/ImageLoaderListener.java" type="org.eclipse.swt.graphics.ImageLoaderListener">
+        <filter id="576720909">
+            <message_arguments>
+                <message_argument value="SWTEventListener"/>
+                <message_argument value="ImageLoaderListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/common/org/eclipse/swt/widgets/TypedListener.java" type="org.eclipse.swt.widgets.TypedListener">
+        <filter comment="Class declared as internal in its JavaDoc since ever." id="336744520">
+            <message_arguments>
+                <message_argument value="@noextend"/>
+                <message_argument value="org.eclipse.swt.widgets.TypedListener"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="Eclipse SWT/gtk/org/eclipse/swt/widgets/Composite.java" type="org.eclipse.swt.widgets.Composite">
+        <filter id="576778288">
+            <message_arguments>
+                <message_argument value="Scrollable"/>
+                <message_argument value="Composite"/>
+            </message_arguments>
+        </filter>
+    </resource>
+</component>

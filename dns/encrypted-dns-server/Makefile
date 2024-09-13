@@ -1,6 +1,6 @@
 PORTNAME=	encrypted-dns-server
 DISTVERSION=	0.9.6
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	dns
 
 MAINTAINER=	felix@userspace.com.au
@@ -184,7 +184,6 @@ post-extract:
 		${WRKSRC}/undelegated.txt.sample
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${FILESDIR}/encrypted-dns.toml.sample \
 		${STAGEDIR}${ETCDIR}

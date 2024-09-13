@@ -1,6 +1,6 @@
 PORTNAME=	clamav
-DISTVERSION=	1.0.6
-PORTREVISION=	4
+DISTVERSION=	1.0.7
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.clamav.net/downloads/production/
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 USES=		cmake cpe gnome iconv ncurses pkgconfig ssl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-USE_RC_SUBR=	clamav-clamd clamav-freshclam
+USE_RC_SUBR=	clamav_clamd clamav_freshclam
 
 CMAKE_ARGS=	-DDATABASE_DIRECTORY:STRING=${_DBDIR} \
 		-DOPENSSL_CRYPTO_LIBRARY=${OPENSSLLIB}/libcrypto.so \
@@ -77,7 +77,7 @@ LHA_RUN_DEPENDS=		lha:archivers/lha
 .if !exists(/usr/lib/libmilter.so)
 MILTER_LIB_DEPENDS=		libmilter.so:mail/libmilter
 .endif
-MILTER_USE=			RC_SUBR=clamav-milter
+MILTER_USE=			RC_SUBR=clamav_milter
 .if !exists(/usr/lib/libmilter.so)
 MILTER_USE+=			localbase
 .endif

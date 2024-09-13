@@ -1,7 +1,7 @@
 PORTNAME=	cargo-mutants
 DISTVERSIONPREFIX=	v
 DISTVERSION=	24.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -220,8 +220,5 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		yansi-0.5.1
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 PORTNAME=	yume
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0
-PORTREVISION=	34
+PORTREVISION=	35
 CATEGORIES=	net-im
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -148,8 +148,5 @@ CARGO_CRATES=	aead-0.2.0 \
 		zeroize-1.1.0
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

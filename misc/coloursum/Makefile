@@ -1,7 +1,7 @@
 PORTNAME=	coloursum
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -96,8 +96,5 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		windows_x86_64_msvc-0.48.0
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

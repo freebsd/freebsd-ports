@@ -1272,7 +1272,7 @@ lib/cmake/cp2k/modules/FindSCI.cmake
 lib/cmake/cp2k/modules/FindSuperLU.cmake
 lib/cmake/cp2k/modules/cp2k_utils.cmake
 lib/libcp2k.so
-lib/libcp2k.so.2024.2
+lib/libcp2k.so.2024.3
 libdata/pkgconfig/libcp2k.pc
 %%DATADIR%%/data/ALL_BASIS_SETS
 %%DATADIR%%/data/ALL_POTENTIALS

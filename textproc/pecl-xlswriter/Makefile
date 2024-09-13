@@ -1,5 +1,5 @@
 PORTNAME=	xlswriter
-PORTVERSION=	1.5.5
+PORTVERSION=	1.5.7
 CATEGORIES=	textproc
 
 MAINTAINER=	sunpoet@FreeBSD.org

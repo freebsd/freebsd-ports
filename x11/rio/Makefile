@@ -1,6 +1,6 @@
 PORTNAME=	rio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.11
+DISTVERSION=	0.1.13
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	-terminal-emulator
 
@@ -164,6 +164,7 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		idna-0.5.0 \
 		image-0.24.9 \
 		image-0.25.2 \
+		image-webp-0.1.3 \
 		indexmap-2.4.0 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
@@ -192,6 +193,7 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		lock_api-0.4.12 \
 		log-0.3.9 \
 		log-0.4.22 \
+		lru-0.12.4 \
 		malloc_buf-0.0.6 \
 		matchers-0.1.0 \
 		memchr-2.7.4 \
@@ -247,6 +249,7 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		proc-macro2-1.0.86 \
 		profiling-1.0.15 \
 		qoi-0.4.1 \
+		quick-error-2.0.1 \
 		quick-xml-0.34.0 \
 		quote-1.0.37 \
 		rand-0.4.6 \
@@ -303,7 +306,6 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		strict-num-0.1.1 \
 		strsim-0.11.1 \
 		svg_fmt-0.4.3 \
-		swash-0.1.18 \
 		syn-1.0.109 \
 		syn-2.0.76 \
 		tempdir-0.3.7 \
@@ -322,6 +324,7 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		toml_datetime-0.6.8 \
 		toml_edit-0.22.20 \
 		tracing-0.1.40 \
+		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.18 \
@@ -417,13 +420,14 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		zeno-0.2.3 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
-		zune-inflate-0.2.54
+		zune-core-0.4.12 \
+		zune-inflate-0.2.54 \
+		zune-jpeg-0.4.13
 
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
 	# workaround for error: found a virtual manifest at `/usr/ports/x11/rio/work/rio-4636f43/Cargo.toml` instead of a package manifest
 	${INSTALL_PROGRAM} ${WRKDIR}/target/*-freebsd/release/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

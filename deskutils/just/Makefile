@@ -1,5 +1,6 @@
 PORTNAME=	just
 DISTVERSION=	1.35.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -194,9 +195,6 @@ COMPLETIONS_DESC=		Build and install bash, fish and zsh shell completions
 COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
 				share/fish/vendor_completions.d/${PORTNAME}.fish \
 				share/zsh/site-functions/_${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 post-install-COMPLETIONS-on:
 .for _shell in bash fish zsh

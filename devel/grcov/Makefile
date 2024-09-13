@@ -1,7 +1,7 @@
 PORTNAME=	grcov
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.19
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -225,8 +225,5 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		zip-0.6.6
 
 PLIST_FILES=	bin/grcov
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

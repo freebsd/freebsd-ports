@@ -8,7 +8,8 @@ PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Socket support for the Lua language
-WWW=		https://github.com/lunarmodules/luasocket
+WWW=		https://lunarmodules.github.io/luasocket/ \
+		https://github.com/lunarmodules/luasocket
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -12,8 +12,10 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
+TEST_DEPENDS=	check>=0:devel/check
 
-USES=		cmake iconv pkgconfig
+USES=		cmake:testing iconv perl5 pkgconfig
+USE_PERL5=	test
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib \
 		-DLIBDATA_INSTALL_DIR=${PREFIX}/libdata
@@ -38,6 +40,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS \
 		WBXML_SUPPORT_WML \
 		WBXML_SUPPORT_WTA \
 		WBXML_SUPPORT_WV
+CMAKE_TESTING_ON=	ENABLE_UNIT_TEST
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

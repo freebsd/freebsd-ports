@@ -1,6 +1,7 @@
 PORTNAME=	fooyin
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.2
+PORTREVISION=	2
 CATEGORIES=	audio multimedia
 
 PATCH_SITES=	https://github.com/fooyin/fooyin/commit/
@@ -21,7 +22,8 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libgme.so:audio/libgme \
 		libicui18n.so:devel/icu \
 		libkdsingleapplication-qt6.so:devel/kdsingleapplication \
-		libtag.so:audio/taglib
+		libtag.so:audio/taglib \
+		libvgm-player.so:audio/libvgm
 
 USES=		cmake compiler:c++20-lang desktop-file-utils gl libarchive \
 		pkgconfig qt:6 sdl
@@ -33,10 +35,8 @@ USE_GITHUB=	yes
 
 CMAKE_OFF=	BUILD_ALSA \
 		BUILD_CCACHE \
-		BUILD_LIBVGM \
 		CMAKE_CXX_EXTENSIONS
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_ALSA \
-		CMAKE_DISABLE_FIND_PACKAGE_LibVgm \
 		CMAKE_DISABLE_FIND_PACKAGE_OpenMpt \
 		CMAKE_DISABLE_FIND_PACKAGE_PipeWire \
 		CMAKE_DISABLE_FIND_PACKAGE_SndFile

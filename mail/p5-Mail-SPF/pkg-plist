@@ -29,6 +29,7 @@ bin/spfquery.pl
 %%PERL5_MAN1%%/spfquery.pl.1.gz
 %%PERL5_MAN3%%/Mail::SPF.3.gz
 %%PERL5_MAN3%%/Mail::SPF::Base.3.gz
+%%PERL5_MAN3%%/Mail::SPF::Exception.3.gz
 %%PERL5_MAN3%%/Mail::SPF::MacroString.3.gz
 %%PERL5_MAN3%%/Mail::SPF::Mech.3.gz
 %%PERL5_MAN3%%/Mail::SPF::Mech::A.3.gz

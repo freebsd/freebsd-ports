@@ -1,7 +1,7 @@
 PORTNAME=	atuin
 DISTVERSIONPREFIX=	v
 DISTVERSION=	18.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -477,8 +477,5 @@ do-install:
 	${INSTALL_PROGRAM} \
 		${WRKDIR}/target/*/release/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

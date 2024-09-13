@@ -1,6 +1,6 @@
 PORTNAME=	termplay
 DISTVERSION=	2.0.6
-PORTREVISION=	37
+PORTREVISION=	38
 CATEGORIES=	multimedia
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -112,8 +112,5 @@ CARGO_CRATES=	\
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

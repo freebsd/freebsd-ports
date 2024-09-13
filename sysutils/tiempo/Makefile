@@ -1,6 +1,6 @@
 PORTNAME=	tiempo
 DISTVERSION=	1.9.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -163,8 +163,5 @@ CARGO_CRATES=	ahash-0.7.6 \
 		yansi-0.5.1
 
 PLIST_FILES=	bin/t
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/t
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	flowgger
 DISTVERSION=	0.3.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	sysutils
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -200,7 +200,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		xml-rs-0.8.4
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/flowgger
 	${INSTALL_DATA} ${WRKSRC}/flowgger.toml \
 		${STAGEDIR}${PREFIX}/etc/flowgger.toml.sample
 

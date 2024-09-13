@@ -1,7 +1,7 @@
 PORTNAME=	fblog
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.10.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -135,8 +135,5 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		yansi-1.0.1
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

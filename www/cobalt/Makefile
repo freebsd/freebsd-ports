@@ -1,7 +1,7 @@
 PORTNAME=	cobalt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.19.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 PKGNAMESUFFIX=	-site-generator
 
@@ -262,8 +262,5 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		yaml-rust-0.4.5
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

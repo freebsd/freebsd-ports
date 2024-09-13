@@ -1,7 +1,7 @@
 PORTNAME=	jail_exporter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.15.1
-PORTREVISION=	28
+PORTREVISION=	29
 CATEGORIES=	sysutils
 
 MAINTAINER=	dor.bsd@xm0.uk
@@ -23,7 +23,6 @@ post-install:
 		${STAGEDIR}${PREFIX}/share/man/man8
 	${MV} ${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

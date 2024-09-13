@@ -1,7 +1,7 @@
 PORTNAME=	flawz
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -289,10 +289,5 @@ PROGS=		bin/${PORTNAME} \
 		bin/${PORTNAME}-mangen
 
 PLIST_FILES=	${PROGS}
-
-post-install:
-.for prog in ${PROGS}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${prog}
-.endfor
 
 .include <bsd.port.mk>

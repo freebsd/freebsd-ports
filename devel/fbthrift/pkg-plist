@@ -327,7 +327,6 @@ include/thrift/lib/cpp2/op/StdSerializer.h
 include/thrift/lib/cpp2/op/Testing.h
 include/thrift/lib/cpp2/op/Xxh64Hasher.h
 include/thrift/lib/cpp2/op/detail/AnyOp.h
-include/thrift/lib/cpp2/op/detail/AnyPatch.h
 include/thrift/lib/cpp2/op/detail/BaseOp.h
 include/thrift/lib/cpp2/op/detail/BasePatch.h
 include/thrift/lib/cpp2/op/detail/Clear.h
@@ -345,6 +344,8 @@ include/thrift/lib/cpp2/op/detail/StructOp.h
 include/thrift/lib/cpp2/op/detail/StructPatch.h
 include/thrift/lib/cpp2/op/detail/ValueOp.h
 include/thrift/lib/cpp2/op/detail/ValuePatch.h
+include/thrift/lib/cpp2/patch/DynamicPatch.h
+include/thrift/lib/cpp2/patch/detail/PatchBadge.h
 include/thrift/lib/cpp2/protocol/BinaryProtocol-inl.h
 include/thrift/lib/cpp2/protocol/BinaryProtocol.h
 include/thrift/lib/cpp2/protocol/CompactProtocol-inl.h
@@ -399,15 +400,12 @@ include/thrift/lib/cpp2/reflection/internal/legacy_reflection-inl-pre.h
 include/thrift/lib/cpp2/reflection/internal/legacy_reflection_type_id.h
 include/thrift/lib/cpp2/reflection/internal/merge-inl-post.h
 include/thrift/lib/cpp2/reflection/internal/merge-inl-pre.h
-include/thrift/lib/cpp2/reflection/internal/pretty_print-inl-post.h
-include/thrift/lib/cpp2/reflection/internal/pretty_print-inl-pre.h
 include/thrift/lib/cpp2/reflection/internal/reflection-inl-post.h
 include/thrift/lib/cpp2/reflection/internal/reflection-inl-pre.h
 include/thrift/lib/cpp2/reflection/internal/test_helpers.h
 include/thrift/lib/cpp2/reflection/legacy_reflection.h
 include/thrift/lib/cpp2/reflection/merge.h
 include/thrift/lib/cpp2/reflection/populator.h
-include/thrift/lib/cpp2/reflection/pretty_print.h
 include/thrift/lib/cpp2/reflection/reflection.h
 include/thrift/lib/cpp2/reflection/testing.h
 include/thrift/lib/cpp2/reflection/variant.h
@@ -483,6 +481,13 @@ include/thrift/lib/cpp2/server/TransportRoutingHandler.h
 include/thrift/lib/cpp2/server/WeightedRequestPileQueue-inl.h
 include/thrift/lib/cpp2/server/WeightedRequestPileQueue.h
 include/thrift/lib/cpp2/server/metrics/StreamMetricCallback.h
+include/thrift/lib/cpp2/server/overload/ChainedOverloadChecker.h
+include/thrift/lib/cpp2/server/overload/CurrentlyOverloadedChecker.h
+include/thrift/lib/cpp2/server/overload/IOverloadChecker.h
+include/thrift/lib/cpp2/server/overload/NoOpOverloadChecker.h
+include/thrift/lib/cpp2/server/overload/OverloadCheckerFactory.h
+include/thrift/lib/cpp2/server/overload/QpsOverloadChecker.h
+include/thrift/lib/cpp2/server/overload/QueueConcurrencyOverloadChecker.h
 include/thrift/lib/cpp2/server/peeking/PeekingManager.h
 include/thrift/lib/cpp2/server/peeking/TLSHelper.h
 include/thrift/lib/cpp2/server/test/util/MockServerConfigs.h
@@ -526,6 +531,7 @@ include/thrift/lib/cpp2/transport/http2/common/testutil/ChannelTestFixture.h
 include/thrift/lib/cpp2/transport/http2/common/testutil/FakeProcessors.h
 include/thrift/lib/cpp2/transport/http2/common/testutil/FakeResponseHandler.h
 include/thrift/lib/cpp2/transport/http2/server/ThriftRequestHandler.h
+include/thrift/lib/cpp2/transport/rocket/ChecksumGenerator.h
 include/thrift/lib/cpp2/transport/rocket/Compression.h
 include/thrift/lib/cpp2/transport/rocket/FdSocket.h
 include/thrift/lib/cpp2/transport/rocket/PayloadUtils.h
@@ -641,6 +647,8 @@ include/thrift/lib/py3/types.h
 include/thrift/lib/thrift/RpcMetadata_extra.h
 include/thrift/lib/thrift/SerializableDynamic.h
 include/thrift/lib/thrift/TypeToMaskAdapter.h
+include/thrift/lib/thrift/detail/AnyPatch.h
+include/thrift/lib/thrift/detail/DynamicPatch.h
 include/thrift/lib/thrift/detail/id.h
 include/thrift/lib/thrift/detail/protocol.h
 include/thrift/lib/thrift/gen-cpp2/RocketUpgrade.h
@@ -833,5 +841,4 @@ lib/libthrifttyperep.so
 lib/libthrifttyperep.so.1.0.0
 lib/libtransport.so
 lib/libtransport.so.1.0.0
-lib/libwhisker.so
-lib/libwhisker.so.1.0.0
+lib/libwhisker.a

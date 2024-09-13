@@ -1,7 +1,7 @@
 PORTNAME=	joshuto
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -264,8 +264,5 @@ CARGO_CRATES=	adler-1.0.2 \
 		zune-inflate-0.2.54
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

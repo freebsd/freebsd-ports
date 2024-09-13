@@ -1,7 +1,7 @@
 PORTNAME=	wmfocus
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -22,8 +22,5 @@ USE_XORG=	xcb
 CARGO_FEATURES=	i3
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

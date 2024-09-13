@@ -1,5 +1,5 @@
 PORTNAME=	libdatadog
-PORTVERSION=	10.0.0
+PORTVERSION=	11.0.0
 DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	devel
@@ -11,9 +11,10 @@ WWW=		https://github.com/DataDog/libdatadog
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo
+USES=		cargo llvm
 
 CARGO_FEATURES=	cbindgen,datadog-profiling-ffi/ddtelemetry-ffi
+MAKE_ENV=	LIBCLANG_PATH=${LLVM_PREFIX}/lib
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DataDog

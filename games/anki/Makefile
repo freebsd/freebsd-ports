@@ -1,6 +1,6 @@
 PORTNAME=	anki
 DISTVERSION=	24.06.3
-PORTREVISION=	1
+PORTREVISION=	2
 # Don't forget to update ${_MY_BUILDHASH} if DISTVERSION changes
 CATEGORIES=	games education python
 MASTER_SITES=	LOCAL/kai/:yarncache
@@ -156,7 +156,6 @@ do-install:
 		&& ${INSTALL_MAN} anki.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	cd ${WRKSRC}/qt/tools \
 		&& ${INSTALL_SCRIPT} runanki.system.in ${STAGEDIR}${PREFIX}/bin/anki
-	${STRIP_CMD} ${STAGEDIR}${DATADIR}/anki/_rsbridge.so
 
 # Autogenerate some parts of the plist file as several *.css and *.mjs files
 # have a computed filename.  As it is user-specific it is impossible to know

@@ -1,7 +1,7 @@
 PORTNAME=	agg
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	asciinema-
 
@@ -17,8 +17,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	asciinema
 
 PLIST_FILES=	bin/agg
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/agg
 
 .include <bsd.port.mk>

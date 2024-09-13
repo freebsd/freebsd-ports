@@ -1,7 +1,7 @@
 PORTNAME=	pomsky
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	lang textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -192,8 +192,5 @@ CARGO_CRATES=	ahash-0.7.6 \
 		criterion,criterion-plot@git+https://github.com/bheisler/criterion.rs?branch=version-0.4\#935c6327e152e44f2b9178797682b9b99b5123a5
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

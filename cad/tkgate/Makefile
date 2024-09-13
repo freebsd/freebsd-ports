@@ -11,6 +11,10 @@ WWW=		https://tkgate.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable
+DEPRECATED=	Upstream is gone
+EXPIRATION_DATE=2024-10-31
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 

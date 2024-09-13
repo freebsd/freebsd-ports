@@ -1,7 +1,6 @@
 PORTNAME=	transcrypt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.3
-PORTREVISION=	1
+DISTVERSION=	2.3.0
 CATEGORIES=	security
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -23,8 +22,8 @@ GH_ACCOUNT=	elasticdog
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/transcrypt \
-		share/man/man1/transcrypt.1.gz \
 		share/bash-completion/completions/transcrypt \
+		share/man/man1/transcrypt.1.gz \
 		share/zsh/site-functions/_transcrypt
 
 post-patch:
@@ -37,7 +36,7 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/contrib/zsh/_${PORTNAME} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
-# 53 tests, 0 failures
+# 72 tests, 0 failures
 do-test:
 	${LOCALBASE}/bin/bats ${WRKSRC}/tests
 

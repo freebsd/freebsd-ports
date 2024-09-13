@@ -1,7 +1,7 @@
 PORTNAME=	gstreamer1-plugins-rust
 DISTVERSION=	0.11.1
 DISTVERSIONSUFFIX=	+fixup
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
@@ -78,8 +78,5 @@ post-patch:
 # Make each cargo subcommand very verbose
 	@${REINPLACE_CMD} -Ee "/cargo.*'c?(build|test)'/s/]/, '--verbose', '--verbose'&/" \
 		${WRKSRC}/cargo_wrapper.py
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gstreamer-1.0/*.so
 
 .include <bsd.port.mk>

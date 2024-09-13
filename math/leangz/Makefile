@@ -1,7 +1,7 @@
 PORTNAME=	leangz
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -58,8 +58,5 @@ CARGO_CRATES=	adler-1.0.2 \
 BIN_FILES=	bin/${PORTNAME} \
 		bin/leantar
 PLIST_FILES=	${BIN_FILES}
-
-post-install:
-	@cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} ${BIN_FILES}
 
 .include <bsd.port.mk>
