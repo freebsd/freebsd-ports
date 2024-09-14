@@ -5,7 +5,7 @@ MASTER_SITES=	https://downloads.gradle.org/distributions/
 PKGNAMESUFFIX=	761
 EXTRACT_SUFX=	-bin.zip
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Project automation tool
 WWW=		https://www.gradle.org/
 
