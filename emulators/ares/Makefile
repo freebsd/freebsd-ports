@@ -1,6 +1,7 @@
 PORTNAME=	ares
 DISTVERSIONPREFIX=	v
 DISTVERSION=	140
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 # committed upstream, remove with next version update
