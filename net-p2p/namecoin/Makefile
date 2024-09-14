@@ -102,7 +102,7 @@ PLIST_FILES?=	bin/namecoin-qt share/applications/namecoin-qt.desktop \
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/namecoin-qt.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
-	${CP} ${DISTDIR}/namecoin128.c99d628dd26b.png \
+	${INSTALL_DATA} ${DISTDIR}/namecoin128.c99d628dd26b.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/namecoin128.png
 
 .endif
