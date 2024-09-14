@@ -3,7 +3,7 @@ DISTVERSION=	0.6.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Package Dependency Resolution and Downloads
 WWW=		https://r-lib.github.io/pkgdepends/
 
