@@ -1,5 +1,5 @@
---- compiler/systems/t_bsd.pas	2023-10-27 23:25:22.849393000 -0500
-+++ compiler/systems/t_bsd.pas	2023-10-27 23:26:39.226882000 -0500
+--- compiler/systems/t_bsd.pas	2024-09-13 14:09:36.000000000 +0000
++++ compiler/systems/t_bsd.pas	2024-09-13 15:59:59.015594000 +0000
 @@ -115,6 +115,8 @@
    if not Dontlinkstdlibpath Then
     if target_info.system in systems_openbsd then
