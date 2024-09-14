@@ -1,9 +1,9 @@
---- electron/shell/browser/api/electron_api_desktop_capturer.cc.orig	2024-08-12 10:09:34 UTC
+--- electron/shell/browser/api/electron_api_desktop_capturer.cc.orig	2024-09-11 03:18:31 UTC
 +++ electron/shell/browser/api/electron_api_desktop_capturer.cc
-@@ -45,7 +45,7 @@
- #include "ui/base/cocoa/permissions_utils.h"
+@@ -46,7 +46,7 @@ namespace {
  #endif
  
+ namespace {
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  // Private function in ui/base/x/x11_display_util.cc
