@@ -3,7 +3,7 @@ DISTVERSION=	2.2.0.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cache 'CRAN'-Like Metadata and R Packages
 WWW=		https://github.com/r-lib/pkgcache#readme
 
