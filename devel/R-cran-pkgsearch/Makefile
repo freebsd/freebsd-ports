@@ -3,7 +3,7 @@ DISTVERSION=	3.1.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Search and Query CRAN R Packages
 WWW=		https://github.com/r-hub/pkgsearch
 
