@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for Simulation, Plots, Quantile Functions and Programming
 WWW=		https://github.com/GeoBosh/gbutils
 
