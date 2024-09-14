@@ -1,5 +1,6 @@
 PORTNAME=	root
 DISTVERSION=	6.32.04
+PORTREVISION=	1
 CATEGORIES=	devel science math parallel python
 MASTER_SITES=	https://root.cern/download/
 DISTFILES=	${PORTNAME}_v${DISTVERSION}.source${EXTRACT_SUFX}
@@ -59,8 +60,6 @@ CMAKE_OFF=	arrow builtin_afterimage builtin_cfitsio builtin_cppzmq builtin_davix
 		minuit2_omp mpi odbc proof pythia8 qt5web qt6web r roofit_multiprocess \
 		shadowpw test_distrdf_dask test_distrdf_pyspark tmva-gpu tmva-rmva tmva-sofie \
 		unfold unuran uring vc veccore vecgeom win_broken_tests winrtdebug
-CONFIGURE_WRKSRC?=	${WRKDIR}/.build
-MAKE_ENV+=		ROOTSYS=${CONFIGURE_WRKSRC}
 
 # Port build options; DOCS also on by default
 # See https://root.cern/install/build_from_source/#all-build-options
@@ -210,30 +209,12 @@ PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="@comment " ONLY_INSTALLED_ON_AARCH64=""
 PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="" ONLY_INSTALLED_ON_AARCH64="@comment "
 .endif
 
-# atexit-like commands need 'throw()' specifier on 15aarch64
-.if ${OPSYS} == FreeBSD && ${ARCH} == "aarch64" && ${OSVERSION} > 1499999
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-interpreter_cling_lib_Interpreter_Interpreter.cpp.15aarch64
-.endif
-
 # std_config.pcm exclusive to FreeBSD 14.0
 .if ${OPSYS} == FreeBSD && ${OSREL} == 14.0
 PLIST_SUB+=	ONLY_INSTALLED_ON_FBSD140=""
 .else
 PLIST_SUB+=	ONLY_INSTALLED_ON_FBSD140="@comment "
 .endif
-
-# Port patch removes implicit use of system's module.modulemap and applies
-# explicit use of the same module.modulemap, with modifications, provided
-# by the port
-eq_OSREL=	${OSREL}
-.if ${OPSYS} == FreeBSD && ${OSREL} == 14.1
-# module.modulemap identical on 14.1 and 15.0
-eq_OSREL=	15.0
-.endif
-post-patch:
-	${CP} \
-  ${PATCHDIR}/interpreter-cling-include-cling-std__fbsd${eq_OSREL}.modulemap \
-  ${WRKSRC}/interpreter/cling/include/cling/std_fbsd.modulemap
 
 # Files in lib/root/__pycache__ have links into WRKDIR and should not be staged. This happens even when PYROOT option is OFF.
 post-install:
