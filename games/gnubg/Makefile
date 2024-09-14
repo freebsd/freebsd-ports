@@ -1,6 +1,5 @@
 PORTNAME=	gnubg
-PORTVERSION=	1.07.001
-PORTREVISION=	2
+PORTVERSION=	1.08.003
 CATEGORIES=	games
 MASTER_SITES=	GNU
 DISTFILES=	gnubg-release-${PORTVERSION}-sources.tar.gz
@@ -20,10 +19,10 @@ LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra-gtk2 \
 		libgmp.so:math/gmp \
 		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
 		libharfbuzz.so:print/harfbuzz \
-		libpng.so:graphics/png
+		libpng16.so:graphics/png
 
 USES=		bison gl gmake gnome libtool pathfix shebangfix python \
-		pkgconfig compiler:c++11-lang readline xorg
+		pkgconfig compiler:c++11-lang xorg ncurses readline
 USE_GNOME=	glib20 gtk20 cairo pangox-compat gdkpixbuf2
 USE_XORG+=	xmu xt sm ice x11
 USE_GL+=	glu gl
