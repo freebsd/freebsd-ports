@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check if a Remote Computer is Up
 WWW=		https://github.com/r-lib/pingr#readme
 
