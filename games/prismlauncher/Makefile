@@ -32,6 +32,13 @@ USE_QT=		5compat base
 CMAKE_ARGS=	-DJAVA_HOME=${JAVA_HOME} -DJava_JAVAC_EXECUTABLE=${JAVAC} \
 		-DLauncher_BUILD_PLATFORM=FreeBSD
 
+.include <bsd.port.pre.mk>
+
+.if ${JAVA_PORT_VERSION} >= 20
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-libraries_javacheck_CMakeLists.txt \
+		${PATCHDIR}/extra-patch-libraries_launcher_CMakeLists.txt
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/launcher/minecraft/LaunchProfile.cpp \
