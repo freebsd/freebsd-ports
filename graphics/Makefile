@@ -1155,7 +1155,6 @@
     SUBDIR += ssocr
     SUBDIR += sswf
     SUBDIR += stamp
-    SUBDIR += svg2png
     SUBDIR += svgalib
     SUBDIR += svgbob
     SUBDIR += svgpp
