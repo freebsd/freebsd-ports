@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manipulate DESCRIPTION Files
 WWW=		https://github.com/r-lib/desc#readme
 
