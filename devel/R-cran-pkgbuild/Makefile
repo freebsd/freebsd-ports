@@ -3,7 +3,7 @@ DISTVERSION=	1.4.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find Tools Needed to Build R Packages
 WWW=		https://github.com/r-lib/pkgbuild
 
