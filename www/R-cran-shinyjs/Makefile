@@ -3,7 +3,7 @@ DISTVERSION=	2.1.0
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easily Improve the User Experience of Your Shiny Apps in Seconds
 WWW=		https://deanattali.com/shinyjs/
 
