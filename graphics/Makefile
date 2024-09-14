@@ -507,7 +507,6 @@
     SUBDIR += libsixel
     SUBDIR += libspiro
     SUBDIR += libspng
-    SUBDIR += libsvg
     SUBDIR += libsvgtiny
     SUBDIR += libvisual
     SUBDIR += libvisual04
