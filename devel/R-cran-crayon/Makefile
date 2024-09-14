@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Colored Terminal Output
 WWW=		https://github.com/r-lib/crayon#readme
 
