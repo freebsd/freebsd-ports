@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	E-Statistics: Multivariate Inference via the Energy of Data
 WWW=		https://github.com/mariarizzo/energy
 
