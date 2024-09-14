@@ -3,7 +3,7 @@ DISTVERSION=	1.3.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Username, Full Name, Email Address, 'GitHub' Username of the Current User
 WWW=		https://github.com/r-lib/whoami#readme
 
