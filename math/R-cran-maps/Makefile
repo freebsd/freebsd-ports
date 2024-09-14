@@ -3,7 +3,7 @@ DISTVERSION=	3.4.1.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Draw Geographical Maps
 WWW=		https://CRAN.R-project.org/package=maps
 
