@@ -104,8 +104,12 @@ LAZARUS_PKGNAMESUFFIX=	-${FLAVOR}
 
 .  if !defined(WANT_LAZARUS_DEVEL)
 LAZARUS_DEVELSUFFIX=	#
+ONLY_FOR_ARCHS=		i386 amd64
+ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than i386 and amd64
 .  else
 LAZARUS_DEVELSUFFIX=	-devel
+ONLY_FOR_ARCHS=		i386 amd64 aarch64
+ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than i386 and amd64
 .  endif
 
 .  if ${lazarus_ARGS:Mgtk2} || ${FLAVOR} == gtk2
