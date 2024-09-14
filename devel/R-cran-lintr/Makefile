@@ -3,7 +3,7 @@ DISTVERSION=	3.1.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 'Linter' for R Code
 WWW=		https://github.com/r-lib/lintr
 
