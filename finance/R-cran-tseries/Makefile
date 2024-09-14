@@ -3,7 +3,7 @@ DISTVERSION=	0.10-54
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Time Series Analysis and Computational Finance
 WWW=		https://CRAN.R-project.org/package=tseries
 
