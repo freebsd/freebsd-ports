@@ -3,6 +3,9 @@ PORTVERSION=	2.8.1
 CATEGORIES=	games emulators
 MASTER_SITES=	https://downloads.scummvm.org/frs/${PORTNAME}/${PORTVERSION}/
 
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES=	65977961b20ba97b1213b5267da0cb1efb49063b.patch:-p1
+
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Interpreter for several adventure games
 WWW=		https://www.scummvm.org/
