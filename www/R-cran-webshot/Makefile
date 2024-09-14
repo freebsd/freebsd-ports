@@ -3,7 +3,7 @@ DISTVERSION=	0.5.5
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Take Screenshots of Web Pages
 WWW=		https://wch.github.io/webshot/
 
