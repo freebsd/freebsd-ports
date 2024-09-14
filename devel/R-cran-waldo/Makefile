@@ -3,7 +3,7 @@ DISTVERSION=	0.5.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find Differences Between R Objects
 WWW=		https://waldo.r-lib.org
 
