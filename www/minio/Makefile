@@ -1,6 +1,5 @@
 PORTNAME=	minio
-PORTVERSION=	${GH_TAGNAME:S/RELEASE.//:S/Z//:S/T/-/:S/-/./g}
-PORTREVISION=	1
+DISTVERSION=	${GH_TAGNAME:S/RELEASE.//:S/Z//:S/T/-/:S/-/./g}
 CATEGORIES=	www
 DIST_SUBDIR=	minio
 
@@ -10,13 +9,13 @@ WWW=		https://minio.io/
 
 LICENSE=	AGPLv3
 
-USES=		compiler cpe go:modules
-GH_TAGNAME=	RELEASE.2024-01-01T16-36-33Z
+USES=		compiler cpe go:1.21,modules
+GH_TAGNAME=	RELEASE.2024-01-05T22-17-24Z
 USE_RC_SUBR=	${PORTNAME}
 
-COMMIT_ID=	8f13c8c3bfee304e11a56076039f13e343937124
+COMMIT_ID=	04135fa6cdd68e281094f54eb6edb901059789d0
 
-GO_MODULE=	github.com/minio/minio@v0.0.0-20231220010002-7a311a3b666a
+GO_MODULE=	github.com/minio/minio@v0.0.0-${DISTVERSION:S/.//g}-${COMMIT_ID:C/^(.{12}).*/\1/}
 GO_BUILDFLAGS=	-ldflags=' \
 		-X github.com/minio/minio/cmd.Version=${GH_TAGNAME:C/RELEASE\.//:C|(..)-(..)-(..)Z|\1:\2:\3Z|} \
 		-X github.com/minio/minio/cmd.ReleaseTag=${GH_TAGNAME} \
