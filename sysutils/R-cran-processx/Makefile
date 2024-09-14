@@ -3,7 +3,7 @@ DISTVERSION=	3.8.2
 CATEGORIES=	sysutils
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Execute and Control System Processes
 WWW=		https://processx.r-lib.org
 
