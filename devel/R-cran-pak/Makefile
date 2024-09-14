@@ -3,7 +3,7 @@ DISTVERSION=	0.5.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another Approach to Package Installation
 WWW=		https://pak.r-lib.org/
 
