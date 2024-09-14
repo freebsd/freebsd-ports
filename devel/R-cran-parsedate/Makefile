@@ -3,7 +3,7 @@ DISTVERSION=	1.3.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Recognize and Parse Dates in Various Formats, Including All ISO 8601 Formats
 WWW=		https://github.com/gaborcsardi/parsedate
 
