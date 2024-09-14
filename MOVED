@@ -3474,3 +3474,4 @@ security/rubygem-rack-oauth21|security/rubygem-rack-oauth2|2024-09-11|Has expire
 textproc/rubygem-static_holmes|textproc/rubygem-charlock_holmes|2024-09-11|Has expired: Use textproc/rubygem-charlock_holmes instead
 textproc/rubygem-elasticsearch713|textproc/rubygem-elasticsearch|2024-09-11|Has expired: Use textproc/rubygem-elasticsearch instead
 graphics/svg2png||2024-09-14|Has expired: Depends on deprecated library graphics/libsvg-cairo, please consider using ImageMagick or librsvg
+graphics/libsvg-cairo||2024-09-14|Has expired: Depends on deprecated library graphics/libsvg
