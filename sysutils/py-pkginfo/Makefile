@@ -4,7 +4,7 @@ CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Query metadatdata from sdists / bdists / installed packages
 WWW=		https://pypi.org/project/pkginfo/
 
