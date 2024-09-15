@@ -4,7 +4,7 @@ DISTVERSION=	0.4.1
 PORTREVISION=	22
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Access any command-line tool via a WebSocket
 WWW=		http://websocketd.com/
 
