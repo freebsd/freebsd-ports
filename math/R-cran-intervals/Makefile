@@ -3,7 +3,7 @@ DISTVERSION=	0.15.4
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Tools for Working with Points and Intervals
 WWW=		https://github.com/edzer/intervals
 
