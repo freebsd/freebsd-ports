@@ -1,5 +1,5 @@
 PORTNAME=	async-websocket
-PORTVERSION=	0.29.1
+PORTVERSION=	0.30.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,10 +11,10 @@ WWW=		https://socketry.github.io/async-websocket/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.md
 
-RUN_DEPENDS=	rubygem-async-http>=0.54<1:www/rubygem-async-http \
-		rubygem-protocol-http>=0.28.1:www/rubygem-protocol-http \
-		rubygem-protocol-rack>=0.5<1:www/rubygem-protocol-rack \
-		rubygem-protocol-websocket>=0.15<1:www/rubygem-protocol-websocket
+RUN_DEPENDS=	rubygem-async-http>=0.76<1:www/rubygem-async-http \
+		rubygem-protocol-http>=0.34<1:www/rubygem-protocol-http \
+		rubygem-protocol-rack>=0.7<1:www/rubygem-protocol-rack \
+		rubygem-protocol-websocket>=0.17<1:www/rubygem-protocol-websocket
 
 USES=		gem
 
