@@ -22,7 +22,6 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		xmlcatmgr:textproc/xmlcatmgr \
 		xsltproc:textproc/libxslt
 
-LIB_DIRS+=	${LOCALBASE}/lib ${LOCALBASE}/lib/sasl2
 LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libcurl.so:ftp/curl \
 		libdbus-1.so:devel/dbus \
@@ -60,9 +59,6 @@ GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
 CPE_VENDOR=	fedoraproject
-
-DEBUG_FLAGS=	-g
-STRIP=
 
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--datadir=${DATADIR} \
