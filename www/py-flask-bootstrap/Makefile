@@ -5,7 +5,7 @@ CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Flask extension that adds Bootstrap to your projects
 WWW=		https://pythonhosted.org/Flask-Bootstrap/
 
