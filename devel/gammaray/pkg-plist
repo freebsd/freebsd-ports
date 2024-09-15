@@ -89,7 +89,6 @@ lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_modelinspector_ui.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_modelinspector.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_network_ui.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_network.so
-lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_objectvisualizer_plugin.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_positioning_ui.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_positioning.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_probe.so

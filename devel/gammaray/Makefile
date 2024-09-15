@@ -1,30 +1,63 @@
 PORTNAME=	gammaray
-DISTVERSION=	2.11.3
-PORTREVISION=	3
+DISTVERSION=	3.0.0
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/KDAB/GammaRay/releases/download/v${DISTVERSION}/
 
+# implicit-approval+: arrowd
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Debugging tool for Qt-application
 WWW=		https://www.kdab.com/development-resources/qt-tools/gammaray/
 
-LICENSE=	GPLv2 BSD2CLAUSE
+LICENSE=	BSD2CLAUSE BSD3CLAUSE GPLv2 GPLv2+ GPLv3 GPLv3+ LGPL20+ LGPL21 LGPL21+ LGPL3 MIT
 LICENSE_COMB=	multi
-LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE.GPL.txt
-LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/LICENSE.BSD2.txt
+LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSES/BSD-2-Clause.txt
+LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSES/BSD-3-Clause.txt
+LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSES/GPL-2.0-only.txt
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/LICENSES/GPL-2.0-or-later.txt
+LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSES/GPL-3.0-only.txt
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
+LICENSE_FILE_LGPL20+ =	${WRKSRC}/LICENSES/LGPL-2.0-or-later.txt
+LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSES/LGPL-2.1-only.txt
+LICENSE_FILE_LGPL21+ =	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt
+LICENSE_FILE_LGPL3=	${WRKSRC}/LICENSES/LGPL-3.0-only.txt
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSES/MIT.txt
 
 LIB_DEPENDS=	libdwarf.so:devel/libdwarf \
 		libelf.so:devel/libelf
 
-USES=		cmake kde:5 pkgconfig qt:5
+#FLAVORS=	qt5 qt6
+#FLAVOR?=	qt6
 
-USE_QT=		3d concurrent core declarative designer gui help linguisttools \
-		location network printsupport script scripttools svg uiplugin \
-		webchannel widgets xml buildtools:build qdoc:build qmake:build
+#qt5_PKGNAMESUFFIX=		-qt5
+#qt5_CONFLICTS_INSTALL=	${PORTNAME}
+#qt6_CONFLICTS_INSTALL=	${PORTNAME}-qt5
+
+USES=		cmake pkgconfig
+
 USE_KDE=	coreaddons syntaxhighlighting
+USE_QT=		3d declarative location svg webchannel
 
-CMAKE_OFF=	STACK_DETAILS_AUTO_DETECT
+#.if ${FLAVOR} == qt5
+USES+=		kde:5 qt:5
+USE_QT+=	buildtools:build concurrent core designer gui help \
+		linguisttools network printsupport qdoc:build \
+		qmake:build script scripttools uiplugin widgets xml
+QT_VERSION=${QT5_VERSION:C/\./_/:C/\..*//}
+#.else
+#USES+=		kde:6 qt:6
+#USE_QT+=	shadertools
+#QT_VERSION=${QT6_VERSION:C/\./_/:C/\..*//}
+#USE_QT+=	charts connectivity datavis3d doc examples imageformats \
+#	multimedia networkauth quick3d quicktimeline remoteobjects scxml \
+#	sensors serialbus serialport speech virtualkeyboard wayland \
+#	webengine websockets webview
+#USE_QT+=	5compat base coap graphs httpserver languageserver lottie pdf positioning \
+#	quick3dphysics quickeffectmaker shadertools tools translations \
+#	sqldriver-sqlite sqldriver-mysql sqldriver-psql sqldriver-odbc
+#.endif
+
 CMAKE_ON=	STACK_DETAILS_DWARF
+CMAKE_OFF=	STACK_DETAILS_AUTO_DETECT
 
 .include <bsd.port.options.mk>
 
@@ -38,6 +71,6 @@ PLIST_SUB=	WEBENGINE="@comment "
 PLIST_SUB+=	ARCH=${ARCH:S/amd64/x86_64/:S/i386/i686/:C/armv./arm/} \
 		PORTMAJMIN=${PORTVERSION:C/(.*)\..*/\1/} \
 		PORTVERSION=${PORTVERSION} \
-		QTVER=${QT5_VERSION:C/\./_/:C/\..*//}
+		QTVER=${QT_VERSION}
 
 .include <bsd.port.mk>
