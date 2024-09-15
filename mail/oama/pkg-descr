@@ -1,0 +1,16 @@
+Many IMAP/SMTP clients, like msmtp, fdm, isync, neomutt or mutt can use OAuth2
+access tokens but lack the ability to renew and/or authorize OAuth2
+credentials. The purpose of oama is to provide these missing capabilities by
+acting as a kind of smart password manager. In particular, access token renewal
+happens automatically in the background transparent to the user.
+
+The OAuth2 credentials are kept in a keyring provided by any password manager
+with a FreeDesktop.org Secret Service compatible API. Some examples of such
+password managers are:
+
+    Gnome keyring
+    KDE Wallet Manager
+    KeePaasXC
+
+Alternatively GNU PG encrypted files can also be used as a backend for storing
+credentials.

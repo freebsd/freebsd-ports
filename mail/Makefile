@@ -270,6 +270,7 @@
     SUBDIR += notmuch-emacs
     SUBDIR += notmuch-mutt
     SUBDIR += nullmailer
+    SUBDIR += oama
     SUBDIR += openarc
     SUBDIR += opendkim
     SUBDIR += opendkim-devel
