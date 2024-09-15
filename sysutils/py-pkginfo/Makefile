@@ -1,5 +1,5 @@
 PORTNAME=	pkginfo
-DISTVERSION=	1.9.6
+PORTVERSION=	1.10.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,20 +11,12 @@ WWW=		https://pypi.org/project/pkginfo/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=40.8.0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
-PORTDOCS=	*
-
-OPTIONS_DEFINE=	DOCS
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
-DOCS_VARS=		PYDISTUTILS_BUILD_TARGET+="build_sphinx -a -E"
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}/build/sphinx/html && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
-		"! -name .buildinfo -and ! -name objects.inv")
 
 .include <bsd.port.mk>
