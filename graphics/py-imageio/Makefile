@@ -1,5 +1,5 @@
 PORTNAME=	imageio
-PORTVERSION=	2.35.0
+PORTVERSION=	2.35.1
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI \
 		https://github.com/imageio/imageio/releases/download/v${PORTVERSION}/
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libfreeimage.so:graphics/freeimage
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1<2.0.0,1:math/py-numpy@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=8.3.2:graphics/py-pillow@${PY_FLAVOR}
 TEST_DEPENDS=	opencv>=0:graphics/opencv \
 		${PYTHON_PKGNAMEPREFIX}astropy>=0:astro/py-astropy@${PY_FLAVOR} \
