@@ -1,7 +1,11 @@
 PORTNAME=	wifi-firmware-${FWDRV}-kmod
 PORTVERSION=	${FWDRV_VERSION}
 CATEGORIES=	net
-MASTER_SITES=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/
+MASTER_SITES=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
+		https://ams.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
+		https://dfw.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
+		https://nyc.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
+		https://sin.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/
 
 MAINTAINER=	bz@FreeBSD.org
 COMMENT=	Firmware modules for the ${FWDRV} (${FLAVOR}) WiFi NIC driver
