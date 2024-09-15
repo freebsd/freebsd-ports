@@ -14,7 +14,7 @@
       <body xmlns="http://www.w3.org/1999/xhtml">
        <p>Chrome Releases reports:</p>
        <blockquote cite="https://chromereleases.googleblog.com/2024/09/stable-channel-update-for-desktop_10.html">
-	 <p>This update includes 5 security fixes:</p>
+	 <p>This update includes 4 security fixes:</p>
 	 <ul>
 	    <li>[361461526] High CVE-2024-8636: Heap buffer overflow in Skia. Reported by Renan Rios (@hyhy_100) on 2024-08-22</li>
 	    <li>[361784548] High CVE-2024-8637: Use after free in Media Router. Reported by lime(@limeSec_) from TIANGONG Team of Legendsec at QI-ANXIN Group on 2024-08-23</li>
