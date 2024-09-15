@@ -79,7 +79,9 @@ include/pdal/filters/GeomDistanceFilter.hpp
 include/pdal/filters/GeoreferenceFilter.hpp
 include/pdal/filters/GpsTimeConvert.hpp
 include/pdal/filters/GreedyProjection.hpp
+include/pdal/filters/GridDecimationFilter.hpp
 include/pdal/filters/GroupByFilter.hpp
+include/pdal/filters/H3Filter.hpp
 include/pdal/filters/HagDelaunayFilter.hpp
 include/pdal/filters/HagDemFilter.hpp
 include/pdal/filters/HagNnFilter.hpp
@@ -120,6 +122,7 @@ include/pdal/filters/SeparateScanLineFilter.hpp
 include/pdal/filters/ShellFilter.hpp
 include/pdal/filters/SkewnessBalancingFilter.hpp
 include/pdal/filters/SortFilter.hpp
+include/pdal/filters/SparseSurfaceFilter.hpp
 include/pdal/filters/SplitterFilter.hpp
 include/pdal/filters/StatsFilter.hpp
 include/pdal/filters/StraightenFilter.hpp
@@ -249,10 +252,12 @@ include/pdal/io/private/ept/VectorPointTable.hpp
 include/pdal/io/private/esri/EsriUtil.hpp
 include/pdal/io/private/esri/Obb.hpp
 include/pdal/io/private/esri/PageManager.hpp
+include/pdal/io/private/las/ChunkInfo.hpp
 include/pdal/io/private/las/Geotiff.hpp
 include/pdal/io/private/las/Header.hpp
 include/pdal/io/private/las/Srs.hpp
 include/pdal/io/private/las/Summary.hpp
+include/pdal/io/private/las/Tile.hpp
 include/pdal/io/private/las/Utils.hpp
 include/pdal/io/private/las/Vlr.hpp
 include/pdal/io/private/stac/Catalog.hpp
