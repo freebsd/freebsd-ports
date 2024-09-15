@@ -1,6 +1,5 @@
 PORTNAME=	protobuf
-PORTVERSION=	27.3
-PORTREVISION=	1
+PORTVERSION=	28.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/protocolbuffers/protobuf/releases/download/v${PORTVERSION}/
