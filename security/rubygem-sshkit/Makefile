@@ -1,5 +1,5 @@
 PORTNAME=	sshkit
-PORTVERSION=	1.23.0
+PORTVERSION=	1.23.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
 		rubygem-net-scp>=1.1.2:security/rubygem-net-scp \
 		rubygem-net-sftp>=2.1.2:security/rubygem-net-sftp \
-		rubygem-net-ssh>=2.8.0,2:security/rubygem-net-ssh
+		rubygem-net-ssh>=2.8.0,2:security/rubygem-net-ssh \
+		rubygem-ostruct>=0:devel/rubygem-ostruct
 
 USES=		gem shebangfix
 
