@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Hosted coverage reports for Github, Bitbucket and Gitlab
 WWW=		https://github.com/codecov/codecov-python
 
