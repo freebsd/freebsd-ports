@@ -847,6 +847,7 @@
     SUBDIR += py-sqlalchemy20
     SUBDIR += py-sqlcipher3
     SUBDIR += py-sqlglot
+    SUBDIR += py-sqlglotrs
     SUBDIR += py-sqlite-anyio
     SUBDIR += py-sqlite-fts4
     SUBDIR += py-sqlite-migrate
