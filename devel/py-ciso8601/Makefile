@@ -4,7 +4,7 @@ DISTVERSION=	2.3.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast ISO8601 date time parser for Python written in C
 WWW=		https://github.com/closeio/ciso8601
 
