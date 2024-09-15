@@ -1,7 +1,8 @@
 PORTNAME=	poetry-dynamic-versioning
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/mtkennerly/poetry-dynamic-versioning/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	poetry_dynamic_versioning-${PORTVERSION}
 
