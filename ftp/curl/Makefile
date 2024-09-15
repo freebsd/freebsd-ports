@@ -1,12 +1,8 @@
 PORTNAME=	curl
-PORTVERSION=	8.9.1
-PORTREVISION=	1
+PORTVERSION=	8.10.0
 CATEGORIES=	ftp net www
 MASTER_SITES=	https://curl.se/download/ \
 		https://github.com/curl/curl/releases/download/curl-${PORTVERSION:S|.|_|g}/
-
-PATCH_SITES=	https://github.com/curl/curl/commit/
-PATCHFILES=	3eec5afbd0b6377eca893c392569b2faf094d970.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command line tool and library for transferring data with URLs
@@ -165,8 +161,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/libcurl/libcurl.m4 ${STAGEDIR}${PREFIX}/share/aclocal/
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/ ${STAGEDIR}${DOCSDIR}/libcurl/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/ ${STAGEDIR}${DOCSDIR}/internals/ ${STAGEDIR}${DOCSDIR}/libcurl/
 	cd ${WRKSRC}/docs/ && ${INSTALL_DATA} FAQ INSTALL KNOWN_BUGS THANKS TODO options-in-versions *.md ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/docs/internals/*.md ${STAGEDIR}${DOCSDIR}/internals/
 	cd ${WRKSRC}/docs/libcurl/ && ${INSTALL_DATA} ABI.md libcurl.m4 *.pl symbols-in-versions ${STAGEDIR}${DOCSDIR}/libcurl/
 
 post-install-EXAMPLES-on:
