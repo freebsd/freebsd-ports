@@ -36,11 +36,8 @@ LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libndr-nbt.so:${SAMBA_PORT} \
 		libndr-standard.so:${SAMBA_PORT} \
 		libndr.so:${SAMBA_PORT} \
-		libnfs.so:net/libnfs \
-		libnss3.so:security/nss \
 		libp11-kit.so:security/p11-kit \
-		libpcre2-posix.so:devel/pcre2 \
-		libplds4.so:devel/nspr \
+		libpcre2-8.so:devel/pcre2 \
 		libpopt.so:devel/popt \
 		libsamba-util.so:${SAMBA_PORT} \
 		libsasl2.so:security/cyrus-sasl2 \
