@@ -295,6 +295,7 @@
     SUBDIR += libgpg-error
     SUBDIR += libgsasl
     SUBDIR += libhijack
+    SUBDIR += libhydrogen
     SUBDIR += libident
     SUBDIR += libkleo
     SUBDIR += libkpass
