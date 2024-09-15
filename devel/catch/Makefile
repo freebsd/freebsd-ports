@@ -24,6 +24,10 @@ PORTSCOUT=	limit:^2\.
 
 OPTIONS_DEFINE=	DOCS
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/\(-Wno-error=pragmas\)/\1 -Wno-error=c++20-extensions/' \
+		${WRKSRC}/projects/CMakeLists.txt
+
 do-test:
 	${BUILD_WRKSRC}/projects/SelfTest
 
