@@ -1,5 +1,5 @@
 PORTNAME=	netatalk
-PORTVERSION=	3.2.8
+PORTVERSION=	3.2.9
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/netatalk-${PORTVERSION:S/./-/g}/
