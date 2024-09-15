@@ -142,14 +142,11 @@ SHEBANG_FILES=	sbus_generate.sh.in \
 		src/tools/analyzer/sss_analyze \
 		src/tools/sss_obfuscate \
 		src/config/SSSDConfigTest.py \
-		src/tests/python-test.py \
-		src/tests/pysss-test.py \
+		src/tests/*.py \
 		src/tests/cwrap/cwrap_test_setup.sh \
 		src/tests/whitespace_test \
-		src/tests/pyhbac-test.py \
 		src/tests/multihost/data/memcachesize.py \
 		src/tests/double_semicolon_test \
-		src/tests/pysss_murmur-test.py \
 		scripts/release.sh \
 		contrib/git/pre-push \
 		contrib/ci/rpm-spec-builddeps \
