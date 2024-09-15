@@ -16,7 +16,6 @@ CONFLICTS_INSTALL?=	sssd*
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		bash:shells/bash \
 		docbook-xsl>=1:textproc/docbook-xsl \
-		krb5>=1.20:security/krb5 \
 		p11-kit:security/p11-kit \
 		nsupdate:dns/bind-tools \
 		xmlcatalog:textproc/libxml2 \
@@ -25,16 +24,13 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 
 LIB_DIRS+=	${LOCALBASE}/lib ${LOCALBASE}/lib/sasl2
 LIB_DEPENDS=	libcares.so:dns/c-ares \
-		libcom_err.so:security/krb5 \
 		libcurl.so:ftp/curl \
 		libdbus-1.so:devel/dbus \
 		libdhash.so:devel/ding-libs \
 		libfido2.so:security/libfido2 \
-		libgssapi_krb5.so:security/krb5 \
 		libinotify.so:devel/libinotify \
 		libjansson.so:devel/jansson \
 		libjose.so:net/jose \
-		libkrb5.so:security/krb5 \
 		libldb.so:${SAMBA_LDB_PORT} \
 		libndr-krb5pac.so:${SAMBA_PORT} \
 		libndr-nbt.so:${SAMBA_PORT} \
@@ -58,7 +54,7 @@ LIB_DEPENDS=	libcares.so:dns/c-ares \
 RUN_DEPENDS=	adcli:net-mgmt/adcli \
 		cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
 
-USES=	autoreconf cpe gettext gmake gssapi:bootstrap,flags,mit iconv ldap \
+USES=	autoreconf cpe gettext gmake gssapi:flags,mit iconv ldap \
 	libtool localbase:ldflags pathfix pkgconfig python:3.9+ samba:env \
 	shebangfix ssl
 
@@ -121,6 +117,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-nscd-conf=/etc/nscd.conf \
 		--with-python_prefix=${PREFIX} \
 		--with-unicode-lib=libunistring
+CONFIGURE_ENV=	KRB5_CONFIG="${KRB5CONFIG}"
 
 CPPFLAGS+=	-DRENEWAL_PROG_PATH='\"${LOCALBASE}/sbin/adcli\"'
 CFLAGS+=	-fstack-protector-all
@@ -130,14 +127,6 @@ LIBS+=	-L${LOCALBASE}/lib \
 	-L${LOCALBASE}/lib/samba4/private \
 	-L${LOCALBASE}/lib/sasl2  \
 	-linotify -lintl
-
-KRB5_HOME=	${LOCALBASE}
-KRB5_CONFIG=	${LOCALBASE}/bin/krb5-config
-KRB5_CFLAGS=	-I${LOCALBASE}/include
-KRB5_LIBS=	-L${LOCALBAse}/lib -lkrb5 -lk5crypto -lcom_err
-
-GSSAPI_KRB5_CFLAGS=	-I${LOCALBASE}/include
-GSSAPI_KRB5_LIBS=	-L${LOCALBASE}/lib -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err
 
 LDFLAGS+=	-lgssapi
 LDFLAGS_SL+=	-lgssapi
