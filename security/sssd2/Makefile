@@ -61,10 +61,7 @@ INSTALL_TARGET=	install-strip
 CPE_VENDOR=	fedoraproject
 
 CONFIGURE_ARGS=	--disable-dependency-tracking \
-		--datadir=${DATADIR} \
-		--docdir=${DOCSDIR} \
 		--localstatedir=/var \
-		--disable-silent-rules \
 		--disable-nls \
 		--disable-cifs-idmap-plugin \
 		--disable-valgrind \
@@ -95,12 +92,8 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--without-autofs \
 		--with-files-provider \
 		--with-passkey \
-		--with-libsifp \
-		--without-libsifp \
-		--with-syslog=syslog \
 		--with-samba \
 		--without-nfsv4-idmapd-plugin \
-		--with-nfs-lib-path=${LOCALBASE}/lib \
 		--with-secrets-db-path=/var/lib/sss/secrets \
 		--with-kcm \
 		--with-oidc-child \
@@ -108,29 +101,15 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-smb-idmap-interface-version=6 \
 		--without-libnl \
 		--with-nscd-conf=/etc/nscd.conf \
-		--with-python_prefix=${PREFIX} \
-		--with-unicode-lib=libunistring
+		--with-python_prefix=${PREFIX}
 CONFIGURE_ENV=	KRB5_CONFIG="${KRB5CONFIG}"
 
 CPPFLAGS+=	-DRENEWAL_PROG_PATH='\"${LOCALBASE}/sbin/adcli\"'
 CFLAGS+=	-fstack-protector-all
-CFLAGS+=	-I${LOCALBASE}/include/samba4
-
-LIBS+=	-L${LOCALBASE}/lib \
-	-L${LOCALBASE}/lib/samba4/private \
-	-L${LOCALBASE}/lib/sasl2  \
-	-linotify -lintl
-
-LDFLAGS+=	-lgssapi
-LDFLAGS_SL+=	-lgssapi
-
-INCLUDES+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	INCLUDES="${INCLUDES}" \
-		LDFLAGS_SL="${LDFLAGS_SL}"
-MAKE_ENV=	MAKELEVEL=0
+LIBS+=		-linotify -lintl
 
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
-MAKE_ENV+=	LINGUAS="bg de eu es fr hu id it ja nb nl pl pt ru sv tg tr uk zh_CN zh_TW"
+MAKE_ENV=	MAKELEVEL=0 LINGUAS="bg de eu es fr hu id it ja nb nl pl pt ru sv tg tr uk zh_CN zh_TW"
 SUB_FILES=	pkg-message
 
 BINARY_ALIAS=	python3=python${PYTHON_VER}
@@ -173,12 +152,6 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/examples/sssd-example.conf \
 		${STAGEDIR}${ETCDIR}/sssd.conf.sample
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/dbus-1/system.d
-	${INSTALL_DATA} ${WRKSRC}/src/responder/ifp/org.freedesktop.sssd.infopipe.conf \
-		${STAGEDIR}${PREFIX}/share/dbus-1/system.d/org.freedesktop.sssd.infopipe.conf
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/dbus-1/system-services
-	${INSTALL_DATA} ${WRKSRC}/src/responder/ifp/org.freedesktop.sssd.infopipe.service \
-		${STAGEDIR}${PREFIX}/share/dbus-1/system-services/org.freedesktop.sssd.infopipe.service
 	${LN} -sf libnss_sss.so.2 ${STAGEDIR}${PREFIX}/lib/nss_sss.so.1
 
 .include <bsd.port.mk>
