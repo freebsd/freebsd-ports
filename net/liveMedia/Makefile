@@ -1,10 +1,9 @@
 PORTNAME=	liveMedia
-DISTVERSION=	2022.06.16
+DISTVERSION=	2024.08.01
 PORTEPOCH=	2
 CATEGORIES=	net devel
-MASTER_SITES=	http://www.live555.com/liveMedia/public/ \
-		https://download.videolan.org/contrib/live555/
-DISTNAME=	live.${PORTVERSION}
+MASTER_SITES=	https://download.videolan.org/contrib/live555/
+DISTNAME=	live.${DISTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	LIVE.COM Streaming Media
