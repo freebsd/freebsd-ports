@@ -24210,6 +24210,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/mars/grib.elda.est.def
 %%DATADIR%%/definitions/mars/grib.elda.fc.def
 %%DATADIR%%/definitions/mars/grib.elda.me.def
+%%DATADIR%%/definitions/mars/grib.elda.mpp.def
 %%DATADIR%%/definitions/mars/grib.elda.ses.def
 %%DATADIR%%/definitions/mars/grib.enda.4i.def
 %%DATADIR%%/definitions/mars/grib.enda.4v.def
@@ -24221,6 +24222,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/mars/grib.enda.eme.def
 %%DATADIR%%/definitions/mars/grib.enda.es.def
 %%DATADIR%%/definitions/mars/grib.enda.fc.def
+%%DATADIR%%/definitions/mars/grib.enda.mpp.def
 %%DATADIR%%/definitions/mars/grib.enda.ssd.def
 %%DATADIR%%/definitions/mars/grib.enda.sv.def
 %%DATADIR%%/definitions/mars/grib.enda.svar.def
