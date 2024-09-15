@@ -3476,3 +3476,4 @@ textproc/rubygem-elasticsearch713|textproc/rubygem-elasticsearch|2024-09-11|Has 
 graphics/svg2png||2024-09-14|Has expired: Depends on deprecated library graphics/libsvg-cairo, please consider using ImageMagick or librsvg
 graphics/libsvg-cairo||2024-09-14|Has expired: Depends on deprecated library graphics/libsvg
 graphics/libsvg||2024-09-14|Has expired: Abandoned upstream, obsolete and fails to build with newer versions of libxml2. Consider migrating to librsvg or (lib)resvg
+www/libresonic-standalone||2024-09-15|Has expired: Abandonware, repo deleted
