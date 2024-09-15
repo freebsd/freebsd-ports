@@ -79,7 +79,6 @@ lib/calibre/calibre/db/notes/__init__.py
 lib/calibre/calibre/db/notes/connect.py
 lib/calibre/calibre/db/notes/exim.py
 lib/calibre/calibre/db/notes/schema_upgrade.py
-lib/calibre/calibre/db/tests/notes.py
 lib/calibre/calibre/db/restore.py
 lib/calibre/calibre/db/schema_upgrades.py
 lib/calibre/calibre/db/search.py
@@ -93,6 +92,7 @@ lib/calibre/calibre/db/tests/fts_api.py
 lib/calibre/calibre/db/tests/legacy.py
 lib/calibre/calibre/db/tests/locking.py
 lib/calibre/calibre/db/tests/main.py
+lib/calibre/calibre/db/tests/notes.py
 lib/calibre/calibre/db/tests/profiling.py
 lib/calibre/calibre/db/tests/reading.py
 lib/calibre/calibre/db/tests/utils.py
@@ -1073,18 +1073,14 @@ lib/calibre/calibre/gui2/toc/main.py
 lib/calibre/calibre/gui2/tools.py
 lib/calibre/calibre/gui2/trash.py
 lib/calibre/calibre/gui2/tts/__init__.py
-lib/calibre/calibre/gui2/tts/common.py
+lib/calibre/calibre/gui2/tts/config.py
 lib/calibre/calibre/gui2/tts/develop.py
-lib/calibre/calibre/gui2/tts/errors.py
-lib/calibre/calibre/gui2/tts/implementation.py
-lib/calibre/calibre/gui2/tts/linux.py
-lib/calibre/calibre/gui2/tts/linux_config.py
-lib/calibre/calibre/gui2/tts/macos.py
-lib/calibre/calibre/gui2/tts/macos_config.py
-lib/calibre/calibre/gui2/tts/windows.py
-lib/calibre/calibre/gui2/tts/windows_config.py
-lib/calibre/calibre/gui2/tts/windows_sapi.py
-lib/calibre/calibre/gui2/tts/windows_sapi_config.py
+lib/calibre/calibre/gui2/tts/download.py
+lib/calibre/calibre/gui2/tts/manager.py
+lib/calibre/calibre/gui2/tts/piper.py
+lib/calibre/calibre/gui2/tts/qt.py
+lib/calibre/calibre/gui2/tts/speechd.py
+lib/calibre/calibre/gui2/tts/types.py
 lib/calibre/calibre/gui2/tweak_book/__init__.py
 lib/calibre/calibre/gui2/tweak_book/boss.py
 lib/calibre/calibre/gui2/tweak_book/char_select.py
@@ -1209,6 +1205,7 @@ lib/calibre/calibre/plugins/bzzdec.so
 lib/calibre/calibre/plugins/cPalmdoc.so
 lib/calibre/calibre/plugins/certgen.so
 lib/calibre/calibre/plugins/fast_css_transform.so
+lib/calibre/calibre/plugins/fast_html_entities.so
 lib/calibre/calibre/plugins/freetype.so
 lib/calibre/calibre/plugins/html_as_json.so
 lib/calibre/calibre/plugins/html_syntax_highlighter.so
@@ -1414,8 +1411,6 @@ lib/calibre/calibre/utils/unrar.py
 lib/calibre/calibre/utils/unsmarten.py
 lib/calibre/calibre/utils/webengine.py
 lib/calibre/calibre/utils/windows/__init__.py
-lib/calibre/calibre/utils/windows/winsapi.py
-lib/calibre/calibre/utils/windows/winspeech.py
 lib/calibre/calibre/utils/windows/wintest.py
 lib/calibre/calibre/utils/winreg/__init__.py
 lib/calibre/calibre/utils/winreg/dde.py
@@ -1881,6 +1876,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/pdf-mathjax-loader.js
 %%DATADIR%%/pdf-preprint.js
 %%DATADIR%%/pin-template.svg
+%%DATADIR%%/piper-voices.json
 %%DATADIR%%/quick_start/deu.epub
 %%DATADIR%%/quick_start/eng.epub
 %%DATADIR%%/quick_start/fra.epub
