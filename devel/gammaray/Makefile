@@ -1,5 +1,5 @@
 PORTNAME=	gammaray
-DISTVERSION=	3.0.0
+DISTVERSION=	3.1.0
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/KDAB/GammaRay/releases/download/v${DISTVERSION}/
 
@@ -25,36 +25,29 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSES/MIT.txt
 LIB_DEPENDS=	libdwarf.so:devel/libdwarf \
 		libelf.so:devel/libelf
 
-#FLAVORS=	qt5 qt6
-#FLAVOR?=	qt6
+FLAVORS=	qt5 qt6
+FLAVOR?=	qt6
 
-#qt5_PKGNAMESUFFIX=		-qt5
-#qt5_CONFLICTS_INSTALL=	${PORTNAME}
-#qt6_CONFLICTS_INSTALL=	${PORTNAME}-qt5
+qt5_PKGNAMESUFFIX=		-qt5
+qt5_CONFLICTS_INSTALL=	${PORTNAME}
+qt6_CONFLICTS_INSTALL=	${PORTNAME}-qt5
 
 USES=		cmake pkgconfig
 
 USE_KDE=	coreaddons syntaxhighlighting
 USE_QT=		3d declarative location svg webchannel
 
-#.if ${FLAVOR} == qt5
+.if ${FLAVOR} == qt5
 USES+=		kde:5 qt:5
 USE_QT+=	buildtools:build concurrent core designer gui help \
 		linguisttools network printsupport qdoc:build \
 		qmake:build script scripttools uiplugin widgets xml
 QT_VERSION=${QT5_VERSION:C/\./_/:C/\..*//}
-#.else
-#USES+=		kde:6 qt:6
-#USE_QT+=	shadertools
-#QT_VERSION=${QT6_VERSION:C/\./_/:C/\..*//}
-#USE_QT+=	charts connectivity datavis3d doc examples imageformats \
-#	multimedia networkauth quick3d quicktimeline remoteobjects scxml \
-#	sensors serialbus serialport speech virtualkeyboard wayland \
-#	webengine websockets webview
-#USE_QT+=	5compat base coap graphs httpserver languageserver lottie pdf positioning \
-#	quick3dphysics quickeffectmaker shadertools tools translations \
-#	sqldriver-sqlite sqldriver-mysql sqldriver-psql sqldriver-odbc
-#.endif
+.else
+USES+=		kde:6 qt:6
+USE_QT+=	shadertools
+QT_VERSION=${QT6_VERSION:C/\./_/:C/\..*//}
+.endif
 
 CMAKE_ON=	STACK_DETAILS_DWARF
 CMAKE_OFF=	STACK_DETAILS_AUTO_DETECT
@@ -66,6 +59,12 @@ PLIST_SUB=	WEBENGINE=""
 USE_QT+=	webengine
 .else
 PLIST_SUB=	WEBENGINE="@comment "
+.endif
+
+.if ${FLAVOR} == qt5
+PLIST_SUB+=	QT5=""
+.else
+PLIST_SUB+=	QT5="@comment "
 .endif
 
 PLIST_SUB+=	ARCH=${ARCH:S/amd64/x86_64/:S/i386/i686/:C/armv./arm/} \
