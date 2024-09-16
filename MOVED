@@ -2206,8 +2206,8 @@ audio/glurp||2023-06-30|Has expired: Unmaintained for years and depends on depre
 finance/R-cran-ccgarch||2023-06-30|Has expired: Fails to build with R 4.3.0+ and abandoned upstream
 www/redmine42||2023-06-30|Has expired: Broken with all supported Ruby versions
 www/tomcat10|www/tomcat101|2023-06-30|Has expired: EOLd, potential security issues (https://tomcat.apache.org/tomcat-10.0-eol.html), use www/tomcat101 instead
-databases/mongodb40-tools||2023-06-30|Has expired: Upstream EOL reached on 2022-04-30
-databases/mongodb40||2023-06-30|Has expired: Upstream EOL reached on 2022-04-30
+databases/mongodb40-tools|databases/mongodb-tools|2023-06-30|Has expired: Upstream EOL reached on 2022-04-30
+databases/mongodb40|databases/mongodb50|2023-06-30|Has expired: Upstream EOL reached on 2022-04-30
 dns/djbdns-tools||2023-06-30|Has expired: No longer compliant with current DNS standards and source code hasn't been centrally managed for over 20 years
 dns/djbdns||2023-06-30|Has expired: No longer compliant with current DNS standards and source code hasn't been centrally managed for over 20 years
 dns/libdjbdns||2023-06-30|Has expired: No longer compliant with current DNS standards and source code hasn't been centrally managed for over 20 years
@@ -2406,7 +2406,7 @@ audio/ccaudio2||2023-09-30|Has expired: Abandonware, no development since 2011
 audio/libtremor||2023-09-30|Has expired: Obsolete, we only support hardware with a fpu and other decoding libraries offer better performance
 audio/rioutil||2023-09-30|Has expired: Obsolete, supported hardware ia about 20 years old
 audio/waveplay||2023-09-30|Has expired: Abandoned upstream
-databases/mongodb42-tools||2023-09-30|Has expired: Upstream EOL reached on 2023-04-30
+databases/mongodb42-tools|databases/mongodb-tools|2023-09-30|Has expired: Upstream EOL reached on 2023-04-30
 databases/mongodb42|databases/mongodb44|2023-09-30|Has expired: Upstream EOL reached on 2023-04-30
 databases/redis6|databases/redis62|2023-09-30|Has expired: Has reached its EoL. Please migrate to newer version
 devel/capstone3|devel/capstone4|2023-09-30|Has expired: Use more recent upstream version from devel/capstone
@@ -3418,7 +3418,7 @@ audio/epos-devel||2024-08-04|Has expired: Abandonware, last release in 2006 and 
 audio/sidplay2|audio/sidplayfp|2024-08-04|Has expired: Abandonware and superseded by audio/sidplayfp
 audio/sidplay|audio/sidplayfp|2024-08-04|Has expired: Abandonware and superseded by audio/sidplayfp
 audio/optimfrog||2024-08-04|Has expired: Obsolete format that never gained traction, consider using audio/flac
-databases/mongodb44||2024-08-04|Has expired: EOL as of February 2024, https://www.mongodb.com/legal/support-policy/lifecycles
+databases/mongodb44|database/mongodb50|2024-08-04|Has expired: EOL as of February 2024, https://www.mongodb.com/legal/support-policy/lifecycles
 graphics/svg2pdf||2024-08-04|Has expired: Depends on deprecated library graphics/libsvg-cairo, please consider using ImageMagick or librsvg
 audio/libsidplay2||2024-08-04|Has expired: Abandonware and superseded by audio/libsidplayfp
 www/py-imdbpy|www/py-cinemagoer|2024-08-04|Has expired: IMDbPY is now cinemagoer. Use www/py-cinemagoer instead
