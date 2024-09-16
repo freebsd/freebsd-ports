@@ -1,11 +1,11 @@
 PORTNAME=	pkgdepends
-DISTVERSION=	0.6.0
+DISTVERSION=	0.8.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Package Dependency Resolution and Downloads
-WWW=		https://r-lib.github.io/pkgdepends/
+WWW=		https://cran.r-project.org/web/packages/pkgdepends/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,7 +15,7 @@ RUN_DEPENDS=	R-cran-zip>=2.3.0:archivers/R-cran-zip \
 		R-cran-R6>0:devel/R-cran-R6 \
 		R-cran-callr>=3.3.1:devel/R-cran-callr \
 		R-cran-cli>=3.6.0:devel/R-cran-cli \
-		R-cran-desc>=1.2.0:devel/R-cran-desc \
+		R-cran-desc>=1.4.3:devel/R-cran-desc \
 		R-cran-filelock>=1.0.2:devel/R-cran-filelock \
 		R-cran-glue>0:devel/R-cran-glue \
 		R-cran-pkgbuild>=1.0.2:devel/R-cran-pkgbuild \
@@ -26,19 +26,6 @@ RUN_DEPENDS=	R-cran-zip>=2.3.0:archivers/R-cran-zip \
 		R-cran-lpSolve>0:math/R-cran-lpSolve \
 		R-cran-processx>=3.4.2:sysutils/R-cran-processx \
 		R-cran-ps>0:sysutils/R-cran-ps
-TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
-		R-cran-fansi>0:devel/R-cran-fansi \
-		R-cran-mockery>0:devel/R-cran-mockery \
-		R-cran-pak>0:devel/R-cran-pak \
-		R-cran-rstudioapi>0:devel/R-cran-rstudioapi \
-		R-cran-testthat>0:devel/R-cran-testthat \
-		R-cran-tibble>0:devel/R-cran-tibble \
-		R-cran-withr>=2.1.1:devel/R-cran-withr \
-		R-cran-pingr>=2.0.0:net/R-cran-pingr \
-		R-cran-fs>0:sysutils/R-cran-fs \
-		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
-		R-cran-spelling>0:textproc/R-cran-spelling \
-		R-cran-htmlwidgets>0:www/R-cran-htmlwidgets
 
 USES=		cran:auto-plist
 
