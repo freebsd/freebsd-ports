@@ -1,6 +1,6 @@
 PORTNAME=	arviz
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.0
+DISTVERSION=	0.19.0
 CATEGORIES=	math python
 #MASTER_SITES=	PYPI # missing test files
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,11 +29,14 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numba>0:devel/py-numba@${PY_FLAVOR} \
 #		${PYTHON_PKGNAMEPREFIX}pytorch>0:misc/py-pytorch@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist pytest # tests have 13 warnings, 1 error, see https://github.com/arviz-devs/arviz/issues/2084
+USE_PYTHON=	distutils autoplist pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arviz-devs
 
 NO_ARCH=	yes
+
+# 1 error in tests preventing all tests from running: _tkinter.TclError: no display name and no $DISPLAY environment variable
+# see https://github.com/arviz-devs/arviz/issues/2381
 
 .include <bsd.port.mk>
