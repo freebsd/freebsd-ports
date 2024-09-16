@@ -1,6 +1,5 @@
 PORTNAME=	mepo
-DISTVERSION=	1.2.1
-PORTREVISION=	1
+DISTVERSION=	1.3.3
 CATEGORIES=	astro geography wayland
 MASTER_SITES=	https://git.sr.ht/~mil/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -12,7 +11,7 @@ LICENSE=	GPLv3+ OFL11
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zig>=0.12.0:lang/zig
+BUILD_DEPENDS=	zig>=0.13.0:lang/zig
 LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	jq:textproc/jq
 
@@ -37,10 +36,6 @@ post-patch:
 
 do-build:
 	@(cd ${WRKSRC} && ${MAKE_ENV} zig build ${CONFIGURE_ARGS})
-
-post-install:
-	@${STAGEDIR}${PREFIX}/bin/${PORTNAME} -docman \
-		>${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 
 do-test:
 	@(cd ${WRKSRC} && ${TEST_ENV} zig build test ${CONFIGURE_ARGS})
