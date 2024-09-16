@@ -10,10 +10,10 @@ LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		cargo tar:tgz
+USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	ltratt
-GH_TAGNAME=	${PORTNAME}-${DISTVERSION}
+GH_TAGNAME=	${DISTNAME}
 
 PLIST_FILES=	bin/pizauth \
 		share/man/man1/pizauth.1.gz \
