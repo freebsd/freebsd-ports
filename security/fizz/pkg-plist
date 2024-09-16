@@ -13,16 +13,7 @@ include/fizz/backend/openssl/certificate/OpenSSLSelfCertImpl.h
 include/fizz/backend/openssl/crypto/ECCurve.h
 include/fizz/backend/openssl/crypto/OpenSSL.h
 include/fizz/backend/openssl/crypto/OpenSSLKeyUtils.h
-include/fizz/backend/openssl/crypto/Sha-inl.h
 include/fizz/backend/openssl/crypto/Sha.h
-include/fizz/backend/openssl/crypto/Sha256.h
-include/fizz/backend/openssl/crypto/Sha384.h
-include/fizz/backend/openssl/crypto/Sha512.h
-include/fizz/backend/openssl/crypto/aead/AESGCM128.h
-include/fizz/backend/openssl/crypto/aead/AESGCM256.h
-include/fizz/backend/openssl/crypto/aead/AESOCB128.h
-include/fizz/backend/openssl/crypto/aead/ChaCha20Poly1305.h
-include/fizz/backend/openssl/crypto/aead/Ciphers.h
 include/fizz/backend/openssl/crypto/aead/OpenSSLEVPCipher-inl.h
 include/fizz/backend/openssl/crypto/aead/OpenSSLEVPCipher.h
 include/fizz/backend/openssl/crypto/exchange/OpenSSLKeyExchange.h
@@ -122,7 +113,6 @@ include/fizz/protocol/Exporter.h
 include/fizz/protocol/Factory.h
 include/fizz/protocol/FizzBase-inl.h
 include/fizz/protocol/FizzBase.h
-include/fizz/protocol/HandshakeContext-inl.h
 include/fizz/protocol/HandshakeContext.h
 include/fizz/protocol/KeyScheduler.h
 include/fizz/protocol/MultiBackendFactory.h
