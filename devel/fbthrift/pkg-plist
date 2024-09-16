@@ -327,6 +327,7 @@ include/thrift/lib/cpp2/op/StdSerializer.h
 include/thrift/lib/cpp2/op/Testing.h
 include/thrift/lib/cpp2/op/Xxh64Hasher.h
 include/thrift/lib/cpp2/op/detail/AnyOp.h
+include/thrift/lib/cpp2/op/detail/AssignPatch.h
 include/thrift/lib/cpp2/op/detail/BaseOp.h
 include/thrift/lib/cpp2/op/detail/BasePatch.h
 include/thrift/lib/cpp2/op/detail/Clear.h
@@ -399,7 +400,6 @@ include/thrift/lib/cpp2/reflection/internal/legacy_reflection-inl-post.h
 include/thrift/lib/cpp2/reflection/internal/legacy_reflection-inl-pre.h
 include/thrift/lib/cpp2/reflection/internal/legacy_reflection_type_id.h
 include/thrift/lib/cpp2/reflection/internal/merge-inl-post.h
-include/thrift/lib/cpp2/reflection/internal/merge-inl-pre.h
 include/thrift/lib/cpp2/reflection/internal/reflection-inl-post.h
 include/thrift/lib/cpp2/reflection/internal/reflection-inl-pre.h
 include/thrift/lib/cpp2/reflection/internal/test_helpers.h
