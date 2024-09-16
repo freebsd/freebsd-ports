@@ -1,3 +1,40 @@
+  <vuln vid="bd940aba-7467-11ef-a5c4-08002784c58d">
+    <topic>SnappyMail -- multiple mXSS in HTML sanitizer</topic>
+    <affects>
+      <package>
+	<name>snappymail-php81</name>
+	<name>snappymail-php82</name>
+	<name>snappymail-php83</name>
+	<name>snappymail-php84</name>
+	<range><lt>2.38.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oskar reports:</p>
+	<blockquote cite="https://github.com/the-djmaze/snappymail/security/advisories/GHSA-2rq7-79vp-ffxm">
+	  <p>
+	    SnappyMail uses the `cleanHtml()` function to cleanup HTML
+	    and CSS in emails. Research discovered that the function
+	    has a few bugs which cause an mXSS exploit. Because the
+	    function allowed too many (invalid) HTML elements, it was
+	    possible (with incorrect markup) to trick the browser to
+	    "fix" the broken markup into valid markup. As a result a
+	    motivated attacker may be able to inject javascript.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-45800</cvename>
+      <url>https://github.com/the-djmaze/snappymail/security/advisories/GHSA-2rq7-79vp-ffxm</url>
+    </references>
+    <dates>
+      <discovery>2024-09-16</discovery>
+      <entry>2024-09-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e464f777-719e-11ef-8a0f-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
