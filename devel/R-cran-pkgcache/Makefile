@@ -1,11 +1,11 @@
 PORTNAME=	pkgcache
-DISTVERSION=	2.2.0.1
+DISTVERSION=	2.2.3
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Cache 'CRAN'-Like Metadata and R Packages
-WWW=		https://github.com/r-lib/pkgcache#readme
+WWW=		https://cran.r-project.org/web/packages/pkgcache/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -19,18 +19,6 @@ RUN_DEPENDS=	R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-rappdirs>0:devel/R-cran-rappdirs \
 		R-cran-curl>=3.2:ftp/R-cran-curl \
 		R-cran-processx>=3.3.0.9001:sysutils/R-cran-processx
-TEST_DEPENDS=	R-cran-zip>0:archivers/R-cran-zip \
-		R-cran-covr>0:devel/R-cran-covr \
-		R-cran-desc>0:devel/R-cran-desc \
-		R-cran-mockery>0:devel/R-cran-mockery \
-		R-cran-pillar>0:devel/R-cran-pillar \
-		R-cran-rprojroot>0:devel/R-cran-rprojroot \
-		R-cran-sessioninfo>0:devel/R-cran-sessioninfo \
-		R-cran-testthat>=3.0.0:devel/R-cran-testthat \
-		R-cran-withr>0:devel/R-cran-withr \
-		R-cran-pingr>0:net/R-cran-pingr \
-		R-cran-fs>0:sysutils/R-cran-fs \
-		R-cran-spelling>0:textproc/R-cran-spelling
 
 USES=		cran:auto-plist,compiles
 
