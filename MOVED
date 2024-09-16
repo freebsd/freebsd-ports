@@ -2207,7 +2207,7 @@ finance/R-cran-ccgarch||2023-06-30|Has expired: Fails to build with R 4.3.0+ and
 www/redmine42||2023-06-30|Has expired: Broken with all supported Ruby versions
 www/tomcat10|www/tomcat101|2023-06-30|Has expired: EOLd, potential security issues (https://tomcat.apache.org/tomcat-10.0-eol.html), use www/tomcat101 instead
 databases/mongodb40-tools|databases/mongodb-tools|2023-06-30|Has expired: Upstream EOL reached on 2022-04-30
-databases/mongodb40|databases/mongodb50|2023-06-30|Has expired: Upstream EOL reached on 2022-04-30
+databases/mongodb40|databases/mongodb42|2023-06-30|Has expired: Upstream EOL reached on 2022-04-30
 dns/djbdns-tools||2023-06-30|Has expired: No longer compliant with current DNS standards and source code hasn't been centrally managed for over 20 years
 dns/djbdns||2023-06-30|Has expired: No longer compliant with current DNS standards and source code hasn't been centrally managed for over 20 years
 dns/libdjbdns||2023-06-30|Has expired: No longer compliant with current DNS standards and source code hasn't been centrally managed for over 20 years
