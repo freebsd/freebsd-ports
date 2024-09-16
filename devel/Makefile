@@ -837,6 +837,7 @@
     SUBDIR += git-tui
     SUBDIR += git-workspace
     SUBDIR += gitaly
+    SUBDIR += gitea-act_runner
     SUBDIR += gitflow
     SUBDIR += gitg
     SUBDIR += github-backup-utils
