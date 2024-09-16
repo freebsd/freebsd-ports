@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.9.3
+DISTVERSION=	2024.9.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -56,7 +56,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bzip2-sys-0.1.11+1.0.8 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.1.18 \
+		cc-1.1.19 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.38 \
@@ -241,7 +241,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		num_threads-0.1.7 \
 		number_prefix-0.4.0 \
 		object-0.32.2 \
-		once_cell-1.19.0 \
+		once_cell-1.20.0 \
 		openssl-0.10.66 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
@@ -286,7 +286,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		predicates-3.1.2 \
 		predicates-core-1.0.8 \
 		predicates-tree-1.0.11 \
-		pretty_assertions-1.4.0 \
+		pretty_assertions-1.4.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.86 \
@@ -426,7 +426,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.13 \
 		unicode-normalization-0.1.23 \
-		unicode-segmentation-1.11.0 \
+		unicode-segmentation-1.12.0 \
 		unicode-width-0.1.11 \
 		untrusted-0.9.0 \
 		url-2.5.2 \
@@ -493,7 +493,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		xattr-1.3.1 \
 		xx-1.1.8 \
 		xz2-0.1.7 \
-		yansi-0.5.1 \
+		yansi-1.0.1 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
 		zeroize-1.8.1 \
