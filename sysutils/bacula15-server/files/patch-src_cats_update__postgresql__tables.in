@@ -1,0 +1,50 @@
+--- src/cats/update_postgresql_tables.in.orig	2024-09-16 19:41:23 UTC
++++ src/cats/update_postgresql_tables.in
+@@ -186,7 +186,7 @@ if [ "$DBVERSION" -eq 15 -o "$DBVERSION" -eq 16 ]; the
+     echo " doesn't have write permission on the current directory,"
+     echo " or if the system doesn't have enough space to store a"
+     echo " compressed export of the File table"
+-    psql --set ON_ERROR_STOP=1 -d ${db_name} $* -c "set work_mem='$WORKMEM';"'set enable_mergejoin to off ; set enable_hashjoin to off; copy (SELECT FileId, FileIndex, JobId, PathId, Filename.Name, DeltaSeq, MarkId, LStat, Md5 FROM File JOIN Filename USING (FilenameId)) TO STDOUT' | $COMP -1 -c > file1017.data
++    psql -q --set ON_ERROR_STOP=1 -d ${db_name} $* -c "set work_mem='$WORKMEM';"'set enable_mergejoin to off ; set enable_hashjoin to off; copy (SELECT FileId, FileIndex, JobId, PathId, Filename.Name, DeltaSeq, MarkId, LStat, Md5 FROM File JOIN Filename USING (FilenameId)) TO STDOUT' | $COMP -1 -c > file1017.data
+     
+     if [ $? -ne 0 ]; then
+ 	echo "Error while dumping file table to $PWD/file1017.data"
+@@ -219,12 +219,12 @@ EOF
+ 	exit 1
+     fi
+ 
+-    echo "Loading the File table from $PWD/file.$$.data..."
++    echo "Loading the File table from $PWD/file1017.data..."
+     # we do everything in the same commit to avoid creating WALs on this operation
+     cat file1017.data | $COMP -d | psql --set ON_ERROR_STOP=1 -d ${db_name} $* -c "BEGIN; TRUNCATE File; COPY File FROM STDIN; set maintenance_work_mem='2000MB'; CREATE INDEX file_jpfid_idx on File (JobId, PathId, Filename text_pattern_ops); ALTER TABLE ONLY File ADD CONSTRAINT file_pkey PRIMARY KEY (FileId); COMMIT;"
+     
+     if [ $? -ne 0 ]; then
+-	echo "Inserting File data from file.$$.data failed."
++	echo "Inserting File data from file1017.data failed."
+ 	exit 1
+     fi
+ 
+@@ -285,7 +285,7 @@ if [ "$STOP1015" = "" -a "$DBVERSION" -eq 1015 ]; then
+     echo " doesn't have write permission on the current directory,"
+     echo " or if the system doesn't have enough space to store a"
+     echo " compressed export of the File table"
+-    psql --set ON_ERROR_STOP=1 -d ${db_name} $* -c "set work_mem='$WORKMEM';"'set enable_mergejoin to off ; set enable_hashjoin to off; copy (SELECT FileId, FileIndex, JobId, PathId, Filename.Name, DeltaSeq, MarkId, LStat, Md5 FROM File JOIN Filename USING (FilenameId)) TO STDOUT' | $COMP -1 -c > file1016.data
++    psql -q --set ON_ERROR_STOP=1 -d ${db_name} $* -c "set work_mem='$WORKMEM';"'set enable_mergejoin to off ; set enable_hashjoin to off; copy (SELECT FileId, FileIndex, JobId, PathId, Filename.Name, DeltaSeq, MarkId, LStat, Md5 FROM File JOIN Filename USING (FilenameId)) TO STDOUT' | $COMP -1 -c > file1016.data
+     
+     if [ $? -ne 0 ]; then
+ 	echo "Error while dumping file table to $PWD/file1016.data"
+@@ -318,12 +318,12 @@ EOF
+ 	exit 1
+     fi
+ 
+-    echo "Loading the File table from $PWD/file.$$.data..."
++    echo "Loading the File table from $PWD/file1016.data..."
+     # we do everything in the same commit to avoid creating WALs on this operation
+     cat file1016.data | $COMP -d | psql --set ON_ERROR_STOP=1 -d ${db_name} $* -c "BEGIN; TRUNCATE File; COPY File FROM STDIN; set maintenance_work_mem='2000MB'; CREATE INDEX file_jpfid_idx on File (JobId, PathId, Filename text_pattern_ops); ALTER TABLE ONLY File ADD CONSTRAINT file_pkey PRIMARY KEY (FileId); COMMIT;"
+     
+     if [ $? -ne 0 ]; then
+-	echo "Inserting File data from file.$$.data failed."
++	echo "Inserting File data from file1016.data failed."
+ 	exit 1
+     fi
+ 
