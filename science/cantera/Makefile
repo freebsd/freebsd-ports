@@ -1,7 +1,6 @@
 PORTNAME=	cantera
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.0
-PORTREVISION=	3
+DISTVERSION=	3.0.1
 CATEGORIES=	science # chemistry physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libopenblas.so:math/openblas \
 		libyaml-cpp.so:devel/yaml-cpp
 
-USES=		compiler:c++17-lang eigen:3 localbase scons
+USES=		compiler:c++17-lang eigen:3 gettext-runtime localbase scons
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -44,7 +43,7 @@ ALL_TARGET=	build
 TEST_TARGET=	test # some tests fail, see https://github.com/Cantera/cantera/issues/1095
 
 OPTIONS_DEFINE=		OCTAVE PYTHON
-OPTIONS_DEFAULT=	# PYTHON is broken; OCTAVE is off by default because Octave interface is not a frequently requested feature
+OPTIONS_DEFAULT=	PYTHON # OCTAVE is off by default because Octave interface is not a frequently requested feature
 OPTIONS_SUB=		yes
 
 OCTAVE_DESC=		Octave support
@@ -60,14 +59,15 @@ PYTHON_USES_OFF=	python:env
 PYTHON_USE=		PYTHON=cython
 PYTHON_MAKE_ARGS=	python_cmd=${PYTHON_CMD} python_package=full
 PYTHON_MAKE_ARGS_OFF=	python_package="none"
-PYTHON_BUILD_DEPENDS=	${PYNUMPY}
+PYTHON_BUILD_DEPENDS=	${PYNUMPY} \
+			${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR}
 PYTHON_RUN_DEPENDS=	${PYNUMPY} \
 			${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}ruamel.yaml>0:devel/py-ruamel.yaml@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
-PYTHON_BROKEN=		https://github.com/Cantera/cantera/issues/1601
 
 do-install:
 	cd ${WRKSRC} && \
@@ -76,8 +76,18 @@ do-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcantera_shared.so.${PORTVERSION}
 
 do-install-PYTHON-on:
+	# delete .pyc files to fix the stage reference problem, see https://github.com/Cantera/cantera/issues/1601
+	@for f in `${FIND} ${STAGEDIR} -name "*.pyc"`; do \
+		${RM} $${f}; \
+	done
 	# strip
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cantera/_cantera.cpython-${PYTHON_SUFFIX}.so
+	@${STRIP_CMD} \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/cantera/_cantera.cpython-${PYTHON_SUFFIX}.so \
+		${STAGEDIR}${PREFIX}/lib/libcantera_python3_11.so
+	# remove empty dirs
+	@${RMDIR} \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/cantera/__pycache__ \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/cantera/with_units/__pycache__
 
 post-patch-OCTAVE-on: # adjust Octave version in SConscript (python styled os.environ['OCTAVE_VERSION'] somehow doesn't work for this)
 	@${REINPLACE_CMD} -e "s|, 'bin', 'glnx.*')|, 'lib', 'octave', '${OCTAVE_VERSION}')|" ${WRKSRC}/src/matlab/SConscript
