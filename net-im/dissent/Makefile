@@ -27,8 +27,8 @@ GH_TUPLE=	KarpelesLab:weak:v0.1.1:karpeleslab_weak/vendor/github.com/KarpelesLab
 		diamondburned:ctxt:2db38a5d3c12:diamondburned_ctxt/vendor/libdb.so/ctxt \
 		diamondburned:go-emoji:39776eee41ac:diamondburned_go_emoji/vendor/libdb.so/go-emoji \
 		diamondburned:gotk4-adwaita:824c3ce8a5f4:diamondburned_gotk4_adwaita_pkg/vendor/github.com/diamondburned/gotk4-adwaita \
-		diamondburned:gotk4-sourceview:98263515a466:diamondburned_gotk4_sourceview/vendor/libdb.so/gotk4-sourceview/pkg \
-		diamondburned:gotk4-spelling:ee26db878626:diamondburned_gotk4_spelling/vendor/libdb.so/gotk4-spelling/pkg \
+		diamondburned:gotk4-sourceview:98263515a466:diamondburned_gotk4_sourceview/vendor/libdb.so/gotk4-sourceview \
+		diamondburned:gotk4-spelling:ee26db878626:diamondburned_gotk4_spelling/vendor/libdb.so/gotk4-spelling \
 		diamondburned:gotk4:v0.3.1:diamondburned_gotk4_pkg/vendor/github.com/diamondburned/gotk4 \
 		diamondburned:gotkit:aa2fb5bc486d:diamondburned_gotkit/vendor/github.com/diamondburned/gotkit \
 		diamondburned:ningen:f1a24c0da3d8:diamondburned_ningen_v3/vendor/github.com/diamondburned/ningen/v3 \

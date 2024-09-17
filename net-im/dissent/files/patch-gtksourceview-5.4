@@ -1,17 +1,17 @@
 Drop after x11-toolkits/gtksourceview5 >= 5.6 update
 
-vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcebuffer.go:500:10: could not determine kind of name for C.gtk_source_buffer_get_loading
-vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcecompletioncontext.go:301:10: could not determine kind of name for C.gtk_source_completion_context_get_proposals_for_provider
-vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcecompletioncontext.go:376:10: could not determine kind of name for C.gtk_source_completion_context_list_providers
-vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcecompletionproposal.go:88:10: could not determine kind of name for C.gtk_source_completion_proposal_get_typed_text
-vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcegutterlines.go:341:10: could not determine kind of name for C.gtk_source_gutter_lines_has_any_class
-vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcesearchsettings.go:192:10: could not determine kind of name for C.gtk_source_search_settings_get_visible_only
-vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcesearchsettings.go:340:2: could not determine kind of name for C.gtk_source_search_settings_set_visible_only
-vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcesnippet.go:138:10: could not determine kind of name for C.gtk_source_snippet_new_parsed
-vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcesnippetmanager.go:178:10: could not determine kind of name for C.gtk_source_snippet_manager_list_all
+vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcebuffer.go:500:10: could not determine kind of name for C.gtk_source_buffer_get_loading
+vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcecompletioncontext.go:301:10: could not determine kind of name for C.gtk_source_completion_context_get_proposals_for_provider
+vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcecompletioncontext.go:376:10: could not determine kind of name for C.gtk_source_completion_context_list_providers
+vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcecompletionproposal.go:88:10: could not determine kind of name for C.gtk_source_completion_proposal_get_typed_text
+vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcegutterlines.go:341:10: could not determine kind of name for C.gtk_source_gutter_lines_has_any_class
+vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesearchsettings.go:192:10: could not determine kind of name for C.gtk_source_search_settings_get_visible_only
+vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesearchsettings.go:340:2: could not determine kind of name for C.gtk_source_search_settings_set_visible_only
+vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesnippet.go:138:10: could not determine kind of name for C.gtk_source_snippet_new_parsed
+vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesnippetmanager.go:178:10: could not determine kind of name for C.gtk_source_snippet_manager_list_all
 
---- vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcebuffer.go.orig	2024-08-18 07:05:27 UTC
-+++ vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcebuffer.go
+--- vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcebuffer.go.orig	2024-08-18 07:05:27 UTC
++++ vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcebuffer.go
 @@ -491,24 +491,6 @@ func (buffer *Buffer) Language() *Language {
  	return _language
  }
@@ -37,8 +37,8 @@ vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcesnippetmanager.go
  // SourceMarksAtIter returns the list of marks of the given category at iter.
  //
  // If category is NULL it returns all marks at iter.
---- vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcecompletioncontext.go.orig	2024-08-18 07:05:27 UTC
-+++ vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcecompletioncontext.go
+--- vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcecompletioncontext.go.orig	2024-08-18 07:05:27 UTC
++++ vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcecompletioncontext.go
 @@ -278,44 +278,6 @@ func (self *CompletionContext) Language() *Language {
  	return _language
  }
@@ -117,8 +117,8 @@ vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcesnippetmanager.go
  }
  
  // SetProposalsForProvider: this function allows providers to update their
---- vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcecompletionproposal.go.orig	2024-08-18 07:05:27 UTC
-+++ vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcecompletionproposal.go
+--- vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcecompletionproposal.go.orig	2024-08-18 07:05:27 UTC
++++ vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcecompletionproposal.go
 @@ -3,7 +3,6 @@ import (
  package gtksource
  
@@ -202,8 +202,8 @@ vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcesnippetmanager.go
  }
  
  // CompletionProposalInterface: instance of this type is always passed by
---- vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcegutterlines.go.orig	2024-08-18 07:05:27 UTC
-+++ vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcegutterlines.go
+--- vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcegutterlines.go.orig	2024-08-18 07:05:27 UTC
++++ vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcegutterlines.go
 @@ -319,38 +319,6 @@ func (lines *GutterLines) View() *gtk.TextView {
  	return _textView
  }
@@ -243,8 +243,8 @@ vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcesnippetmanager.go
  // HasClass checks to see if gutterlines.AddClass was called with the name for
  // line.
  //
---- vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcesearchsettings.go.orig	2024-08-18 07:05:27 UTC
-+++ vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcesearchsettings.go
+--- vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesearchsettings.go.orig	2024-08-18 07:05:27 UTC
++++ vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesearchsettings.go
 @@ -182,27 +182,6 @@ func (settings *SearchSettings) SearchText() string {
  
  // The function returns the following values:
@@ -303,8 +303,8 @@ vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcesnippetmanager.go
  }
  
  // SetWrapAround enables or disables the wrap around search.
---- vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcesnippet.go.orig	2024-08-18 07:05:27 UTC
-+++ vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcesnippet.go
+--- vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesnippet.go.orig	2024-08-18 07:05:27 UTC
++++ vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesnippet.go
 @@ -6,7 +6,6 @@ import (
  	"runtime"
  	"unsafe"
@@ -353,8 +353,8 @@ vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcesnippetmanager.go
  }
  
  // AddChunk appends chunk to the snippet.
---- vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcesnippetmanager.go.orig	2024-08-18 07:05:27 UTC
-+++ vendor/libdb.so/gotk4-sourceview/pkg/pkg/gtksource/v5/gtksourcesnippetmanager.go
+--- vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesnippetmanager.go.orig	2024-08-18 07:05:27 UTC
++++ vendor/libdb.so/gotk4-sourceview/pkg/gtksource/v5/gtksourcesnippetmanager.go
 @@ -161,35 +161,6 @@ func (self *SnippetManager) Snippet(group, languageId,
  	return _snippet
  }
