@@ -8,8 +8,8 @@ include/tk%%TK_VER%%/generic/tkBusy.h
 include/tk%%TK_VER%%/generic/tkButton.h
 include/tk%%TK_VER%%/generic/tkCanvas.h
 include/tk%%TK_VER%%/generic/tkColor.h
-include/tk%%TK_VER%%/generic/tkDecls.h
 include/tk%%TK_VER%%/generic/tkDList.h
+include/tk%%TK_VER%%/generic/tkDecls.h
 include/tk%%TK_VER%%/generic/tkEntry.h
 include/tk%%TK_VER%%/generic/tkFileFilter.h
 include/tk%%TK_VER%%/generic/tkFont.h
@@ -39,7 +39,6 @@ lib/libtk%%SHORT_TK_VER%%.a
 lib/libtk%%SHORT_TK_VER%%.so
 lib/libtk%%SHORT_TK_VER%%.so.1
 lib/libtkstub%%SHORT_TK_VER%%.a
-lib/tk%%TK_VER%%/pkgIndex.tcl
 lib/tk%%TK_VER%%/bgerror.tcl
 lib/tk%%TK_VER%%/button.tcl
 lib/tk%%TK_VER%%/choosedir.tcl
@@ -126,6 +125,7 @@ lib/tk%%TK_VER%%/console.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/ttkpane.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/ttkprogress.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/ttkscale.tcl
+%%DEMOS%%lib/tk%%TK_VER%%/demos/ttkspin.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/twind.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/unicodeout.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/vscale.tcl
@@ -176,6 +176,7 @@ lib/tk%%TK_VER%%/obsolete.tcl
 lib/tk%%TK_VER%%/optMenu.tcl
 lib/tk%%TK_VER%%/palette.tcl
 lib/tk%%TK_VER%%/panedwindow.tcl
+lib/tk%%TK_VER%%/pkgIndex.tcl
 lib/tk%%TK_VER%%/safetk.tcl
 lib/tk%%TK_VER%%/scale.tcl
 lib/tk%%TK_VER%%/scrlbar.tcl
@@ -213,6 +214,7 @@ lib/tk%%TK_VER%%/ttk/winTheme.tcl
 lib/tk%%TK_VER%%/ttk/xpTheme.tcl
 lib/tk%%TK_VER%%/unsupported.tcl
 lib/tk%%TK_VER%%/xmfbox.tcl
+libdata/pkgconfig/tk86.pc
 %%TKMAN%%share/man/man1/wish.tk86.1.gz
 %%TKMAN%%share/man/man3/FindPhoto.tk86.3.gz
 %%TKMAN%%share/man/man3/FontId.tk86.3.gz
@@ -244,8 +246,8 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%share/man/man3/Tk_CanvasTextInfo.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_CanvasTkwin.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_CanvasWindowCoords.tk86.3.gz
-%%TKMAN%%share/man/man3/Tk_Changes.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_ChangeWindowAttributes.tk86.3.gz
+%%TKMAN%%share/man/man3/Tk_Changes.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_CharBbox.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_Class.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_ClearSelection.tk86.3.gz
@@ -366,12 +368,12 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%share/man/man3/Tk_GetSelection.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_GetUid.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_GetUserInactiveTime.tk86.3.gz
-%%TKMAN%%share/man/man3/Tk_GetVisual.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_GetVRootGeometry.tk86.3.gz
+%%TKMAN%%share/man/man3/Tk_GetVisual.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_Grab.tk86.3.gz
+%%TKMAN%%share/man/man3/Tk_HWNDToWindow.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_HandleEvent.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_Height.tk86.3.gz
-%%TKMAN%%share/man/man3/Tk_HWNDToWindow.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_IdToWindow.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_ImageChanged.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_Init.tk86.3.gz
@@ -379,11 +381,11 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%share/man/man3/Tk_InitImageArgs.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_InitOptions.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_InitStubs.tk86.3.gz
+%%TKMAN%%share/man/man3/Tk_InternAtom.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_InternalBorderBottom.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_InternalBorderLeft.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_InternalBorderRight.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_InternalBorderTop.tk86.3.gz
-%%TKMAN%%share/man/man3/Tk_InternAtom.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_Interp.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_IntersectTextLayout.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_IsContainer.tk86.3.gz
@@ -392,8 +394,8 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%share/man/man3/Tk_IsTopLevel.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_Main.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_MainLoop.tk86.3.gz
-%%TKMAN%%share/man/man3/Tk_MaintainGeometry.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_MainWindow.tk86.3.gz
+%%TKMAN%%share/man/man3/Tk_MaintainGeometry.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_MakeWindowExist.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_ManageGeometry.tk86.3.gz
 %%TKMAN%%share/man/man3/Tk_MapWindow.tk86.3.gz
@@ -529,8 +531,8 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%share/man/mann/message.tk86.n.gz
 %%TKMAN%%share/man/mann/option.tk86.n.gz
 %%TKMAN%%share/man/mann/options.tk86.n.gz
-%%TKMAN%%share/man/mann/pack_old.tk86.n.gz
 %%TKMAN%%share/man/mann/pack.tk86.n.gz
+%%TKMAN%%share/man/mann/pack_old.tk86.n.gz
 %%TKMAN%%share/man/mann/panedwindow.tk86.n.gz
 %%TKMAN%%share/man/mann/photo.tk86.n.gz
 %%TKMAN%%share/man/mann/place.tk86.n.gz
@@ -543,6 +545,7 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%share/man/mann/send.tk86.n.gz
 %%TKMAN%%share/man/mann/spinbox.tk86.n.gz
 %%TKMAN%%share/man/mann/text.tk86.n.gz
+%%TKMAN%%share/man/mann/tk.tk86.n.gz
 %%TKMAN%%share/man/mann/tk_bindForTraversal.tk86.n.gz
 %%TKMAN%%share/man/mann/tk_bisque.tk86.n.gz
 %%TKMAN%%share/man/mann/tk_chooseColor.tk86.n.gz
@@ -567,7 +570,6 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%share/man/mann/tk_textCut.tk86.n.gz
 %%TKMAN%%share/man/mann/tk_textPaste.tk86.n.gz
 %%TKMAN%%share/man/mann/tk_version.tk86.n.gz
-%%TKMAN%%share/man/mann/tk.tk86.n.gz
 %%TKMAN%%share/man/mann/tkerror.tk86.n.gz
 %%TKMAN%%share/man/mann/tkwait.tk86.n.gz
 %%TKMAN%%share/man/mann/toplevel.tk86.n.gz
@@ -596,4 +598,3 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%share/man/mann/ttk_widget.tk86.n.gz
 %%TKMAN%%share/man/mann/winfo.tk86.n.gz
 %%TKMAN%%share/man/mann/wm.tk86.n.gz
-libdata/pkgconfig/tk86.pc
