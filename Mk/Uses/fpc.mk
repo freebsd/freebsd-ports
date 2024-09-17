@@ -50,14 +50,14 @@ PPNAME=			ppca64
 PPNAME=			ppc_not_yet_ported
 .  endif
 
-.  if !defined(WANT_FPC_DEVEL)
-FPC_DEVELSUFFIX=	#
-ONLY_FOR_ARCHS=		i386 amd64
-ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than i386 and amd64
-.  else
+.  if (defined(WANT_FPC_DEVEL) && !empty(WANT_FPC_DEVEL)) || ${ARCH:Maarch64}
 FPC_DEVELSUFFIX=	-devel
 ONLY_FOR_ARCHS=		i386 amd64 aarch64
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than i386, amd64 and aarch64
+.  else
+FPC_DEVELSUFFIX=	#
+ONLY_FOR_ARCHS=		i386 amd64
+ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than i386 and amd64
 .  endif
 
 BUILD_DEPENDS+=		${LOCALBASE}/bin/as:devel/binutils \
