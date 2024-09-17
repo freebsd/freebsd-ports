@@ -5,7 +5,7 @@
  require 'sprockets/utils'
  
 -unless Gem::Version.new(Sprockets::VERSION) == Gem::Version.new('3.7.2')
-+unless Gem::Version.new(Sprockets::VERSION) == Gem::Version.new('3.7.3')
++unless Gem::Version.new(Sprockets::VERSION) == Gem::Version.new('3.7.4')
    raise 'New version of Sprockets detected. This patch can likely be removed.'
  end
  
