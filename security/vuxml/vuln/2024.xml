@@ -1,3 +1,40 @@
+  <vuln vid="58750d49-7302-11ef-8c95-195d300202b3">
+    <topic>OpenSSH -- Pre-authentication async signal safety issue</topic>
+    <affects>
+      <package>
+	<name>openssh-portable</name>
+	<range><lt>9.8.p1_1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The FreeBSD Project reports:</p>
+	<blockquote cite="https://www.freebsd.org/security/advisories/FreeBSD-SA-24:08.openssh.asc">
+	  <p>
+	    A signal handler in sshd(8) may call a logging function that is not async-
+	    signal-safe. The signal handler is invoked when a client does not
+	    authenticate within the LoginGraceTime seconds (120 by default).
+	    This signal handler executes in the context of the sshd(8)'s privileged
+	    code, which is not sandboxed and runs with full root privileges.
+
+	    This issue is another instance of the problem in CVE-2024-6387 addressed by
+	    FreeBSD-SA-24:04.openssh.  The faulty code in this case is from the
+	    integration of blacklistd in OpenSSH in FreeBSD.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-7589</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-7589</url>
+      <url>https://www.freebsd.org/security/advisories/FreeBSD-SA-24:08.openssh.asc</url>
+    </references>
+    <dates>
+      <discovery>2024-08-06</discovery>
+      <entry>2024-09-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bd940aba-7467-11ef-a5c4-08002784c58d">
     <topic>SnappyMail -- multiple mXSS in HTML sanitizer</topic>
     <affects>
