@@ -1,4 +1,4 @@
---- Gemfile.orig	2024-08-20 19:36:17 UTC
+--- Gemfile.orig	2024-09-16 16:10:31 UTC
 +++ Gemfile
 @@ -156,7 +156,6 @@ gem 'graphql', '~> 2.3.5', feature_category: :api
  
@@ -189,6 +189,15 @@
  gem 'octokit', '~> 9.0', feature_category: :importers
  # Needed by octokit: https://github.com/octokit/octokit.rb/pull/1688
  gem 'faraday-multipart', '~> 1.0', feature_category: :importers
+@@ -623,7 +507,7 @@ gem 'spamcheck', '~> 1.3.0' # rubocop:todo Gemfile/Mis
+ gem 'spamcheck', '~> 1.3.0' # rubocop:todo Gemfile/MissingFeatureCategory
+ 
+ # Gitaly GRPC protocol definitions
+-gem 'gitaly', '~> 17.2.0', feature_category: :gitaly
++gem 'gitaly', '~> 17.3.3', feature_category: :gitaly
+ 
+ # KAS GRPC protocol definitions
+ gem 'kas-grpc', '~> 0.6.0', feature_category: :deployment_management
 @@ -632,7 +516,7 @@ gem 'kas-grpc', '~> 0.6.0', feature_category: :deploym
  # https://gitlab.com/gitlab-org/gitlab/-/issues/473169#note_2028352939
  # Or we can upgrade to a more recent version as long as we can confirm

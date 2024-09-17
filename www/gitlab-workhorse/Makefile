@@ -1,5 +1,6 @@
 PORTNAME=	gitlab-workhorse
 PORTVERSION=	${GITLAB_VERSION}
+PORTREVISION=	${GITLAB_PORTREVISION} # modify it in www/gitlab/Makefile.common
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 

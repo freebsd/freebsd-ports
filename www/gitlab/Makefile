@@ -1,5 +1,6 @@
 PORTNAME=	gitlab-${FLAVOR:Uce}
 PORTVERSION=	${GITLAB_VERSION}
+PORTREVISION=	${GITLAB_PORTREVISION} # modify it in www/gitlab/Makefile.common
 DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
@@ -63,7 +64,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-doorkeeper-openid_connect>=1.8.7<2:security/rubygem-doorkeeper-openid_connect \
 	rubygem-doorkeeper-device_authorization_grant>=1.0.0<1.1:security/rubygem-doorkeeper-device_authorization_grant \
 	rubygem-rexml>=3.3.2<3.4:textproc/rubygem-rexml \
-	rubygem-ruby-saml115>=1.15.0<1.16:security/rubygem-ruby-saml115 \
+	rubygem-ruby-saml>=1.17.0<1.18:security/rubygem-ruby-saml \
 	rubygem-omniauth>=2.1.0<3:security/rubygem-omniauth \
 	rubygem-omniauth-auth0>=3.1.0<3.2.0:net/rubygem-omniauth-auth0 \
 	rubygem-omniauth-azure-activedirectory-v2>=2.0<3:net/rubygem-omniauth-azure-activedirectory-v2 \
@@ -71,7 +72,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-omniauth-github>=2.0.1<2.1:net/rubygem-omniauth-github \
 	rubygem-omniauth-google-oauth2>=1.1<2:net/rubygem-omniauth-google-oauth2 \
 	rubygem-omniauth-oauth2-generic>=0.2.2<0.3.0:security/rubygem-omniauth-oauth2-generic \
-	rubygem-omniauth-saml>=2.1.0<3:security/rubygem-omniauth-saml \
+	rubygem-omniauth-saml>=2.2.1<3:security/rubygem-omniauth-saml \
 	rubygem-omniauth-shibboleth-redux>=2.0<3:security/rubygem-omniauth-shibboleth-redux \
 	rubygem-omniauth_openid_connect>=0.8.0<0.9:net/rubygem-omniauth_openid_connect \
 	rubygem-openid_connect>=2.3.0<2.4:net/rubygem-openid_connect \
