@@ -22,7 +22,7 @@ USE_PYTHON=	pep517 autoplist pytest
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/test
 
-post-extract: # force cythonization because pre-cythonized _jpeg.c fails to complile
+post-extract: # force cythonization because pre-cythonized _jpeg.c fails to compile
 	@${RM} ${WRKSRC}/simplejpeg/_jpeg.c
 
 post-install:
