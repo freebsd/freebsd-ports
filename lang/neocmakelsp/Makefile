@@ -1,6 +1,6 @@
 PORTNAME=	neocmakelsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.4
+DISTVERSION=	0.8.5
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,28 +15,28 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	Decodetalkers
 
-CARGO_CRATES=	addr2line-0.22.0 \
-		adler-1.0.2 \
+CARGO_CRATES=	addr2line-0.24.1 \
+		adler2-2.0.0 \
 		aho-corasick-1.1.3 \
 		anstream-0.6.15 \
 		anstyle-1.0.8 \
 		anstyle-parse-0.2.5 \
 		anstyle-query-1.1.1 \
 		anstyle-wincon-3.0.4 \
-		anyhow-1.0.86 \
-		async-trait-0.1.81 \
+		anyhow-1.0.89 \
+		async-trait-0.1.82 \
 		auto_impl-1.2.0 \
 		autocfg-1.3.0 \
-		backtrace-0.3.73 \
+		backtrace-0.3.74 \
 		bitflags-1.3.2 \
 		bitflags-2.6.0 \
 		bstr-1.10.0 \
 		bytes-1.7.1 \
-		cc-1.1.15 \
+		cc-1.1.18 \
 		cfg-if-1.0.0 \
-		clap-4.5.16 \
-		clap_builder-4.5.15 \
-		clap_complete-4.5.24 \
+		clap-4.5.17 \
+		clap_builder-4.5.17 \
+		clap_complete-4.5.26 \
 		clap_derive-4.5.13 \
 		clap_lex-0.7.2 \
 		cli-table-0.4.9 \
@@ -53,6 +53,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		dashmap-5.5.3 \
 		dlv-list-0.5.2 \
 		equivalent-1.0.1 \
+		errno-0.3.9 \
+		fastrand-2.1.1 \
 		form_urlencoded-1.2.1 \
 		futures-0.3.30 \
 		futures-channel-0.3.30 \
@@ -63,33 +65,36 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		futures-task-0.3.30 \
 		futures-util-0.3.30 \
 		getrandom-0.2.15 \
-		gimli-0.29.0 \
+		gimli-0.31.0 \
 		glob-0.3.1 \
-		globset-0.4.14 \
+		globset-0.4.15 \
 		hashbrown-0.14.5 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		httparse-1.9.4 \
 		idna-0.5.0 \
-		ignore-0.4.22 \
-		indexmap-2.4.0 \
+		ignore-0.4.23 \
+		indexmap-2.5.0 \
 		is_terminal_polyfill-1.70.1 \
 		itoa-1.0.11 \
 		lazy_static-1.5.0 \
 		libc-0.2.158 \
+		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
 		lsp-types-0.94.1 \
 		memchr-2.7.4 \
-		miniz_oxide-0.7.4 \
+		miniz_oxide-0.8.0 \
 		mio-1.0.2 \
 		nu-ansi-term-0.46.0 \
-		object-0.36.3 \
-		once_cell-1.19.0 \
+		object-0.36.4 \
+		once_cell-1.20.0 \
 		ordered-multimap-0.7.3 \
 		overload-0.1.1 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
+		path-absolutize-3.1.1 \
+		path-dedot-3.1.1 \
 		percent-encoding-2.3.1 \
 		pin-project-1.1.5 \
 		pin-project-internal-1.1.5 \
@@ -97,18 +102,19 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		pin-utils-0.1.0 \
 		proc-macro2-1.0.86 \
 		quote-1.0.37 \
-		redox_syscall-0.5.3 \
+		redox_syscall-0.5.4 \
 		regex-1.10.6 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.8.4 \
 		rust-ini-0.21.1 \
 		rustc-demangle-0.1.24 \
+		rustix-0.38.37 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		serde-1.0.209 \
-		serde_derive-1.0.209 \
-		serde_json-1.0.127 \
+		serde-1.0.210 \
+		serde_derive-1.0.210 \
+		serde_json-1.0.128 \
 		serde_repr-0.1.19 \
 		serde_spanned-0.6.7 \
 		sharded-slab-0.1.7 \
@@ -119,21 +125,22 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		socket2-0.5.7 \
 		strsim-0.11.1 \
 		syn-1.0.109 \
-		syn-2.0.76 \
+		syn-2.0.77 \
 		sync_wrapper-0.1.2 \
+		tempfile-3.12.0 \
 		termcolor-1.4.1 \
 		thread_local-1.1.8 \
 		tiny-keccak-2.0.2 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.39.3 \
+		tokio-1.40.0 \
 		tokio-macros-2.4.0 \
-		tokio-util-0.7.11 \
+		tokio-util-0.7.12 \
 		toml-0.8.19 \
 		toml_datetime-0.6.8 \
 		toml_edit-0.22.20 \
 		tower-0.4.13 \
-		tower-0.5.0 \
+		tower-0.5.1 \
 		tower-layer-0.3.3 \
 		tower-lsp-0.20.0 \
 		tower-lsp-macros-0.9.0 \
@@ -149,7 +156,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		treesitter_kind_collector-0.2.0 \
 		trim-in-place-0.1.7 \
 		unicode-bidi-0.3.15 \
-		unicode-ident-1.0.12 \
+		unicode-ident-1.0.13 \
 		unicode-normalization-0.1.23 \
 		unicode-width-0.1.13 \
 		url-2.5.2 \
