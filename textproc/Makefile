@@ -1445,6 +1445,7 @@
     SUBDIR += py-mdformat
     SUBDIR += py-mdit-py-plugins
     SUBDIR += py-mdurl
+    SUBDIR += py-mdx_wikilink_plus
     SUBDIR += py-merge3
     SUBDIR += py-mike
     SUBDIR += py-misaka

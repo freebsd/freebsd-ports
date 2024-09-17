@@ -1,0 +1,7 @@
+Converts wikilinks ([[wikilink]]) to relative links, including support for
+GitHub image variant. Absolute links are kept as is (with an automatic label
+made from the file path part in the URL if label is not given explicitly).
+
+You must not use this extension with markdown.extensions.wikilinks. This
+extension is designed to provide the functionalities of
+markdown.extensions.wikilinks with some extra features. Choose either one.
