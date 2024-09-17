@@ -1,0 +1,6 @@
+flask-theme provides infrastructure for theming support in Flask
+applications. It takes care of:
+
+- loading themes
+- rendering templates from themes
+- serving static files like CSS and images from themes
