@@ -44,8 +44,9 @@ USE_QT+=	buildtools:build concurrent core designer gui help \
 		qmake:build script scripttools uiplugin widgets xml
 QT_VERSION=${QT5_VERSION:C/\./_/:C/\..*//}
 .else
-USES+=		kde:6 qt:6
-USE_QT+=	shadertools
+USES+=		gl kde:6 qt:6
+USE_GL=		gl
+USE_QT+=	base positioning shadertools
 QT_VERSION=${QT6_VERSION:C/\./_/:C/\..*//}
 .endif
 
@@ -62,9 +63,11 @@ PLIST_SUB=	WEBENGINE="@comment "
 .endif
 
 .if ${FLAVOR} == qt5
-PLIST_SUB+=	QT5=""
+PLIST_SUB+=	QT5="" \
+		QT6="@comment "
 .else
-PLIST_SUB+=	QT5="@comment "
+PLIST_SUB+=	QT5="@comment " \
+		QT6=""
 .endif
 
 PLIST_SUB+=	ARCH=${ARCH:S/amd64/x86_64/:S/i386/i686/:C/armv./arm/} \

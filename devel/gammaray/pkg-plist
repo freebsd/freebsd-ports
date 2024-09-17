@@ -7,6 +7,7 @@ include/gammaray/common/endpoint.h
 include/gammaray/common/enumdefinition.h
 include/gammaray/common/enumrepository.h
 include/gammaray/common/enumvalue.h
+include/gammaray/common/favoriteobjectinterface.h
 include/gammaray/common/gammaray_common_export.h
 include/gammaray/common/metatypedeclarations.h
 include/gammaray/common/modelroles.h
@@ -33,6 +34,7 @@ include/gammaray/core/probe.h
 include/gammaray/core/probecontroller.h
 include/gammaray/core/propertycontroller.h
 include/gammaray/core/propertycontrollerextension.h
+include/gammaray/core/server.h
 include/gammaray/core/signalspycallbackset.h
 include/gammaray/core/singlecolumnobjectproxymodel.h
 include/gammaray/core/toolfactory.h
@@ -89,6 +91,7 @@ lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_modelinspector_ui.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_modelinspector.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_network_ui.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_network.so
+lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_openglsupport.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_positioning_ui.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_positioning.so
 lib/gammaray/%%PORTMAJMIN%%/qt%%QTVER%%-%%ARCH%%/gammaray_probe.so
@@ -149,6 +152,8 @@ mkspecs/modules/qt_GammaRayLauncherUi.pri
 mkspecs/modules/qt_GammaRayUi.pri
 share/metainfo/com.kdab.GammaRay.metainfo.xml
 share/applications/GammaRay.desktop
+%%QT6%%share/doc/GammaRay/gammaray-manual.qch
+%%QT6%%share/doc/GammaRay/gammaray.qhc
 share/icons/hicolor/16x16/apps/GammaRay.png
 share/icons/hicolor/16x16@2/apps/GammaRay.png
 share/icons/hicolor/16x16@3/apps/GammaRay.png
@@ -175,3 +180,4 @@ share/icons/hicolor/512x512@2/apps/GammaRay.png
 share/man/man1/gammaray.1.gz
 %%DATADIR%%/translations/gammaray_de.qm
 %%DATADIR%%/translations/gammaray_en.qm
+share/zsh/site-functions/_gammaray
