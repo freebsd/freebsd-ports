@@ -13,6 +13,8 @@ WWW=		http://www.antigrain.com/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/copying
 
+BROKEN=		Fails to build with freetype2 2.13.3, PR 281321, error: assigning to 'char *' from 'unsigned char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not
+
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 USES=		autoreconf cpe gmake libtool pathfix pkgconfig sdl xorg
