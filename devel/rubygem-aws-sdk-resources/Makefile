@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.205.0
+PORTVERSION=	3.206.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -387,7 +387,6 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-wafv2>=1<2:devel/rubygem-aws-sdk-wafv2 \
 		rubygem-aws-sdk-wellarchitected>=1<2:devel/rubygem-aws-sdk-wellarchitected \
 		rubygem-aws-sdk-workdocs>=1<2:devel/rubygem-aws-sdk-workdocs \
-		rubygem-aws-sdk-worklink>=1<2:devel/rubygem-aws-sdk-worklink \
 		rubygem-aws-sdk-workmail>=1<2:devel/rubygem-aws-sdk-workmail \
 		rubygem-aws-sdk-workmailmessageflow>=1<2:devel/rubygem-aws-sdk-workmailmessageflow \
 		rubygem-aws-sdk-workspaces>=1<2:devel/rubygem-aws-sdk-workspaces \
