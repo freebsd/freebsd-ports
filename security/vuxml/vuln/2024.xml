@@ -1,3 +1,32 @@
+  <vuln vid="3e738678-7582-11ef-bece-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.3.0</ge><lt>17.3.3</lt></range>
+	<range><ge>17.2.0</ge><lt>17.2.7</lt></range>
+	<range><ge>0</ge><lt>17.1.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/09/17/patch-release-gitlab-17-3-3-released/">
+	  <p>SAML authentication bypass</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-45409</cvename>
+      <url>https://about.gitlab.com/releases/2024/09/17/patch-release-gitlab-17-3-3-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-09-17</discovery>
+      <entry>2024-09-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="58750d49-7302-11ef-8c95-195d300202b3">
     <topic>OpenSSH -- Pre-authentication async signal safety issue</topic>
     <affects>
