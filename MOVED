@@ -3477,3 +3477,4 @@ graphics/svg2png||2024-09-14|Has expired: Depends on deprecated library graphics
 graphics/libsvg-cairo||2024-09-14|Has expired: Depends on deprecated library graphics/libsvg
 graphics/libsvg||2024-09-14|Has expired: Abandoned upstream, obsolete and fails to build with newer versions of libxml2. Consider migrating to librsvg or (lib)resvg
 www/libresonic-standalone||2024-09-15|Has expired: Abandonware, repo deleted
+security/rubygem-ruby-saml115|security/rubygem-ruby-saml|2024-09-18|Has expired: Use security/rubygem-ruby-saml instead
