@@ -1933,6 +1933,7 @@
     SUBDIR += rubygem-actioncable61
     SUBDIR += rubygem-actioncable70
     SUBDIR += rubygem-actioncable71
+    SUBDIR += rubygem-actioncable72
     SUBDIR += rubygem-actionpack4
     SUBDIR += rubygem-actionpack5
     SUBDIR += rubygem-actionpack50
