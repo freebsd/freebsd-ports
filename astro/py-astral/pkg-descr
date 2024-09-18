@@ -1,5 +1,5 @@
-Astral is a python package for calculating the times of various
-aspects of the sun and phases of the moon. It can calculate times for
-various positions of the sun: dawn, sunrise, solar noon, sunset,
-dusk, solar elevation, solar azimuth and rahukaalam, as well as the
-phase of the moon for a specified date.
+Astral is a Python module which calculates:
+- Times for various positions of the sun: dawn, sunrise, solar noon, sunset,
+  dusk, solar elevation, solar azimuth and rahukaalam.
+- Moon rise, set, azimuth and zenith.
+- The phase of the moon.
