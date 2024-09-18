@@ -1042,6 +1042,7 @@
     SUBDIR += rubygem-scenic61
     SUBDIR += rubygem-sdbm
     SUBDIR += rubygem-seed-fu
+    SUBDIR += rubygem-solid_cable
     SUBDIR += rubygem-sqlite3
     SUBDIR += rubygem-sqlite3-ruby
     SUBDIR += rubygem-sqlite31
