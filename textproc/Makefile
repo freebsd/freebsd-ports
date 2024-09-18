@@ -1368,6 +1368,7 @@
     SUBDIR += py-elasticsearch5
     SUBDIR += py-elasticsearch6
     SUBDIR += py-elementpath
+    SUBDIR += py-emeraldtree
     SUBDIR += py-empy
     SUBDIR += py-enchant
     SUBDIR += py-enrich
