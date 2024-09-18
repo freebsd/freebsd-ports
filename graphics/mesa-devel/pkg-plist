@@ -19,6 +19,7 @@
 %%OPENCL%%%%iris%%lib/gallium-pipe%%SUFFIX%%/pipe_iris.so
 %%OPENCL%%%%r600%%lib/gallium-pipe%%SUFFIX%%/pipe_r600.so
 %%OPENCL%%%%radeonsi%%lib/gallium-pipe%%SUFFIX%%/pipe_radeonsi.so
+lib/gbm/dri%%SUFFIX%%_gbm.so
 %%NO_COINST%%lib/libEGL_mesa%%SUFFIX%%.so
 lib/libEGL_mesa%%SUFFIX%%.so.0
 lib/libEGL_mesa%%SUFFIX%%.so.0.0.0
