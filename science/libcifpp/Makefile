@@ -1,6 +1,7 @@
 PORTNAME=	libcifpp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	7.0.5
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://files.wwpdb.org/pub/pdb/data/monomers/:components
 DISTFILES=	components.cif.gz:components
@@ -34,5 +35,7 @@ post-install:
 	@cd ${STAGEDIR}${PREFIX} && \
 		${RM} -r var etc/libcifpp etc/periodic
 	@${RM} -r ${STAGEDIR}/var/cache/libcifpp
+	# workaround for https://github.com/PDB-REDO/libcifpp/issues/65
+	@${REINPLACE_CMD} -i '' -e 's|;std::atomic||' ${STAGEDIR}${PREFIX}/lib/cmake/cifpp/cifpp-targets.cmake
 
 .include <bsd.port.mk>
