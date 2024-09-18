@@ -1,12 +1,12 @@
 PORTNAME=	pkginfo
-PORTVERSION=	1.10.0
+PORTVERSION=	1.11.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Query metadatdata from sdists / bdists / installed packages
-WWW=		https://pypi.org/project/pkginfo/
+WWW=		https://code.launchpad.net/~tseaver/pkginfo/trunk
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
