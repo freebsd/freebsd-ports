@@ -7896,6 +7896,7 @@
     SUBDIR += rubygem-web-console-rails60
     SUBDIR += rubygem-web-console-rails61
     SUBDIR += rubygem-web-console-rails71
+    SUBDIR += rubygem-web-console-rails72
     SUBDIR += rubygem-web-console2
     SUBDIR += rubygem-web-console3-rails5
     SUBDIR += rubygem-web-console3-rails50
