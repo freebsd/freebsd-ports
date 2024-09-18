@@ -1044,6 +1044,7 @@
     SUBDIR += rubygem-seed-fu
     SUBDIR += rubygem-solid_cable
     SUBDIR += rubygem-solid_cache
+    SUBDIR += rubygem-solid_queue
     SUBDIR += rubygem-sqlite3
     SUBDIR += rubygem-sqlite3-ruby
     SUBDIR += rubygem-sqlite31
