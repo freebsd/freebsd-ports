@@ -1,6 +1,5 @@
 PORTNAME=	obs-studio
-DISTVERSION=	30.1.2
-PORTREVISION=	1
+DISTVERSION=	30.2.3
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,11 +15,14 @@ BUILD_DEPENDS=	asio>0:net/asio \
 		${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json \
 		v4l_compat>=0:multimedia/v4l_compat \
 		swig:devel/swig \
+		uthash>0:devel/uthash \
 		websocketpp>0:devel/websocketpp
-LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libavcodec.so:multimedia/ffmpeg \
 		libcurl.so:ftp/curl \
 		libdatachannel.so:www/libdatachannel \
 		libdbus-1.so:devel/dbus \
+		libdrm.so:graphics/libdrm \
 		libfdk-aac.so:audio/fdk-aac \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -55,18 +57,11 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	obsproject
-GH_TUPLE=	obsproject:obs-amd-encoder:d5a136c6834c39293ad749cf8f07bdaa772fe44b:obsproject_obs_amd_encoder/plugins/enc-amf \
-		obsproject:obs-browser:996b5a7:obsproject_obs_browser/plugins/obs-browser \
-		obsproject:obs-websocket:d2d4bfb:obsproject_obs_websocket/plugins/obs-websocket \
-			chriskohlhoff:asio:b73dc1d:chriskohlhoff_asio/plugins/obs-websocket/deps/asio \
-			nayuki:QR-Code-generator:8518684:nayuki_QR_Code_generator/plugins/obs-websocket/deps/qr \
-			nlohmann:json:a34e011:nlohmann_json/plugins/obs-websocket/deps/json \
-			zaphoyd:websocketpp:56123c8:zaphoyd_websocketpp/plugins/obs-websocket/deps/websocketpp \
-		obsproject:libdshowcapture:a93f1a34c14e91b5c540f264fb965f32caf77336:obsproject_libdshowcapture/plugins/win-dshow/libdshowcapture \
-			elgatosf:capture-device-support:bedcf28ed7a74eb7bf96a383fd18d2f5a1849b10:elgatosf_capture_device_support/plugins/win-dshow/libdshowcapture/external/capture-device-support \
+GH_TUPLE=	obsproject:libdshowcapture:ef8c1d2e19c93e664100dd41e1a0df4f8ad45430:obsproject_libdshowcapture/plugins/win-dshow/libdshowcapture \
+		obsproject:obs-browser:e4e523df775bd6fa216d40a7488b76f3b21c1733:obsproject_obs_browser/plugins/obs-browser \
 		Mixer:ftl-sdk:d0c8469f66806b5ea738d607f7d2b000af8b1129:Mixer_ftl_sdk/plugins/obs-outputs/ftl-sdk \
-			curl:curl:44b9b4d4f56d6f6de92c89636994c03984e9cd01:curl_curl/plugins/obs-outputs/ftl-sdk/libcurl \
-			akheron:jansson:bc5741fb1ac730ead24e9bd08977fc6c248e04b0:akheron_jansson/plugins/obs-outputs/ftl-sdk/libjansson
+		obsproject:obs-websocket:a73c92788d70f08f91b8c0477b74f99c999beb09:obsproject_obs_websocket/plugins/obs-websocket \
+		elgatosf:capture-device-support:81c94fb13dfddb412fcb17f1ba031917ec24be64:elgatosf_capture_device_support/deps/libdshowcapture/src/external/capture-device-support
 
 CMAKE_ON=	UNIX_STRUCTURE
 CMAKE_ARGS=	-DOBS_VERSION_OVERRIDE:STRING="${PORTVERSION}" \
