@@ -2,7 +2,11 @@ bin/encode-int
 bin/fuzz-decode
 bin/interop-decode
 bin/interop-encode
-include/huff-tables.h
 include/lsqpack.h
 include/lsxpack_header.h
+lib/cmake/ls-qpack/ls-qpack-config-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/ls-qpack/ls-qpack-config.cmake
 lib/libls-qpack.so
+lib/libls-qpack.so.2
+lib/libls-qpack.so.2.5.3
+libdata/pkgconfig/lsqpack.pc
