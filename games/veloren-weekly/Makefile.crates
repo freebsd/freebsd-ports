@@ -305,6 +305,7 @@ CARGO_CRATES=	ab_glyph-0.2.27 \
 		indicatif-0.17.8 \
 		init_with-1.1.0 \
 		inline_tweak-1.1.1 \
+		inline_tweak_derive-3.0.0 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		instant-0.1.13 \
