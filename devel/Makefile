@@ -4359,6 +4359,7 @@
     SUBDIR += py-anyio3
     SUBDIR += py-anyjson
     SUBDIR += py-anytree
+    SUBDIR += py-anywidget
     SUBDIR += py-apache_conf_parser
     SUBDIR += py-apipkg
     SUBDIR += py-apispec
