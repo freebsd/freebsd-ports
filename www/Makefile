@@ -2304,6 +2304,7 @@
     SUBDIR += rubygem-tumblr_client
     SUBDIR += rubygem-turbo-rails
     SUBDIR += rubygem-turbo-rails-rails70
+    SUBDIR += rubygem-turbo-rails-rails71
     SUBDIR += rubygem-turbolinks
     SUBDIR += rubygem-turbolinks-source
     SUBDIR += rubygem-typhoeus
