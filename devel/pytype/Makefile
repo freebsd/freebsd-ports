@@ -1,5 +1,5 @@
 PORTNAME=	pytype
-PORTVERSION=	2024.4.11
+PORTVERSION=	2024.9.13
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -24,7 +24,7 @@ RUN_DEPENDS=	ninja>=1.10.2:devel/ninja \
 		${PYTHON_PKGNAMEPREFIX}libcst>=1.0.1:devel/py-libcst@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgspec>=0.18.6:devel/py-msgspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=0,1:math/py-networkx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pycnite>=2023.10.11:devel/py-pycnite@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycnite>=2024.7.31:devel/py-pycnite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydot>=1.4.2:graphics/py-pydot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tabulate>=0.8.9:devel/py-tabulate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toml>=0.10.2:textproc/py-toml@${PY_FLAVOR} \
