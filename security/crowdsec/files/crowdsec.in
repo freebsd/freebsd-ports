@@ -42,6 +42,10 @@ stop_precmd="${name}_stop_precmd"
 stop_postcmd="${name}_stop_postcmd"
 extra_commands="configtest reload"
 
+# If the crowdsec process was not started or is in a fail loop due to misconfiguration,
+# the TERM signal is not enough to terminate /usr/sbin/daemon.
+sig_stop="INT"
+
 crowdsec_stop_precmd() {
     # take note of the pid, because sbin/daemon will remove the file
     # without waiting for crowdsec to exit
@@ -84,9 +88,13 @@ crowdsec_precmd() {
         fi
     fi
 
-    # install the collection for the first time, or if it has been removed
-    cs_cli collections inspect crowdsecurity/freebsd --no-metrics 2>/dev/null | grep ^installed | grep -q true || \
-        cs_cli collections install crowdsecurity/freebsd || :
+    # If the hub is empty, install the freebsd collection and the private ip whitelist.
+    # We don't ship the whitelist in the collection because
+    # there are legitimate use cases for banning private ip ranges.
+    if [ "$(cscli hub list -o raw | wc -l)" -le 1 ]; then
+        cs_cli parsers install crowdsecurity/whitelists --error || :
+        cs_cli collections install crowdsecurity/freebsd --error || :
+    fi
 }
 
 crowdsec_configtest() {
