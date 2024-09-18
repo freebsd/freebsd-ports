@@ -73,6 +73,7 @@ share/fish/vendor_completions.d/highlight.fish
 %%DATADIR%%/langDefs/cs_block_regex.lang
 %%DATADIR%%/langDefs/csharp.lang
 %%DATADIR%%/langDefs/css.lang
+%%DATADIR%%/langDefs/cue.lang
 %%DATADIR%%/langDefs/d.lang
 %%DATADIR%%/langDefs/dart.lang
 %%DATADIR%%/langDefs/delphi.lang
