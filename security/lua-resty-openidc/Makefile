@@ -1,9 +1,10 @@
 PORTNAME=	lua-resty-openidc
+PORTREVISION=	1
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.7.6
 CATEGORIES=	security
 
-MAINTAINER=	netchild@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenID Connect and/or OAuth 2.0 functionality for OpenResty / ngx_lua
 WWW=		https://github.com/zmartzone/lua-resty-openidc
 
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	luajit-openresty>=2.1:lang/luajit-openresty \
 		lua51-cjson>0:devel/lua-cjson@lua51 \
 		${LUA_MODSHAREDIR}/resty/http.lua:www/lua-resty-http \
-		${LUA_MODSHAREDIR}/resty/session.lua:www/lua-resty-session \
+		${LUA_MODSHAREDIR}/resty/session.lua:www/lua-resty-session3 \
 		${LUA_MODSHAREDIR}/resty/jwt.lua:security/lua-resty-jwt \
 
 USE_GITHUB=	yes
