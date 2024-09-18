@@ -1119,6 +1119,7 @@
     SUBDIR += rubygem-bcrypt
     SUBDIR += rubygem-bcrypt-ruby
     SUBDIR += rubygem-bcrypt_pbkdf
+    SUBDIR += rubygem-brakeman
     SUBDIR += rubygem-cancancan
     SUBDIR += rubygem-cose
     SUBDIR += rubygem-cvss-suite
