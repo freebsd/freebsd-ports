@@ -5436,6 +5436,7 @@
     SUBDIR += py-protobuf-compiler
     SUBDIR += py-protobuf4
     SUBDIR += py-proxmoxer
+    SUBDIR += py-psygnal
     SUBDIR += py-ptable
     SUBDIR += py-ptpython
     SUBDIR += py-ptvsd
