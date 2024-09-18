@@ -1,5 +1,5 @@
 PORTNAME=	rails
-PORTVERSION=	7.1.3.4
+PORTVERSION=	7.1.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	71
@@ -10,6 +10,7 @@ WWW=		https://rubyonrails.org/ \
 		https://github.com/rails/rails
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-actioncable71>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-actioncable71 \
 		rubygem-actionmailbox71>=${PORTVERSION}<${PORTVERSION}_99:mail/rubygem-actionmailbox71 \
@@ -27,19 +28,19 @@ RUN_DEPENDS=	rubygem-actioncable71>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem
 		rubygem-bootsnap>=1.4.4:devel/rubygem-bootsnap \
 		rubygem-capybara>=3.39:devel/rubygem-capybara \
 		rubygem-connection_pool>=0:net/rubygem-connection_pool \
-		rubygem-cssbundling-rails>=0:www/rubygem-cssbundling-rails \
+		rubygem-cssbundling-rails-rails71>=0:www/rubygem-cssbundling-rails-rails71 \
 		rubygem-dalli>=3.0.1:databases/rubygem-dalli \
 		rubygem-image_processing>=1.2<2:graphics/rubygem-image_processing \
-		rubygem-importmap-rails>=0:www/rubygem-importmap-rails \
+		rubygem-importmap-rails-rails71>=0:www/rubygem-importmap-rails-rails71 \
 		rubygem-jbuilder-rails71>=0:devel/rubygem-jbuilder-rails71 \
-		rubygem-jsbundling-rails>=0:www/rubygem-jsbundling-rails \
+		rubygem-jsbundling-rails-rails71>=0:www/rubygem-jsbundling-rails-rails71 \
 		rubygem-json>=2.0.0:devel/rubygem-json \
 		rubygem-libxml-ruby>=0:textproc/rubygem-libxml-ruby \
 		rubygem-listen>=3.3<4:devel/rubygem-listen \
 		rubygem-minitest>=5.15.0:devel/rubygem-minitest \
 		rubygem-msgpack>=1.7.0:devel/rubygem-msgpack \
 		rubygem-nokogiri>=1.8.1:textproc/rubygem-nokogiri \
-		rubygem-propshaft>=0.1.7:www/rubygem-propshaft \
+		rubygem-propshaft-rails71>=0.1.7:www/rubygem-propshaft-rails71 \
 		rubygem-puma>=5.0.3:www/rubygem-puma \
 		rubygem-rack>=3.0,3<4,3:www/rubygem-rack \
 		rubygem-rack-cache>=1.2<2:www/rubygem-rack-cache \
@@ -50,10 +51,10 @@ RUN_DEPENDS=	rubygem-actioncable71>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem
 		rubygem-selenium-webdriver>=4.11.0:www/rubygem-selenium-webdriver \
 		rubygem-sprockets-rails-rails71>=2.0.0:devel/rubygem-sprockets-rails-rails71 \
 		rubygem-sqlite3>=1.6.6:databases/rubygem-sqlite3 \
-		rubygem-stimulus-rails>=0:www/rubygem-stimulus-rails \
+		rubygem-stimulus-rails-rails71>=0:www/rubygem-stimulus-rails-rails71 \
 		rubygem-sucker_punch>=0:devel/rubygem-sucker_punch \
-		rubygem-tailwindcss-rails>=0:www/rubygem-tailwindcss-rails \
-		rubygem-turbo-rails>=0:www/rubygem-turbo-rails \
+		rubygem-tailwindcss-rails-rails71>=0:www/rubygem-tailwindcss-rails-rails71 \
+		rubygem-turbo-rails-rails71>=0:www/rubygem-turbo-rails-rails71 \
 		rubygem-web-console-rails71>=0:devel/rubygem-web-console-rails71 \
 		rubygem-webmock>=0:www/rubygem-webmock \
 		rubygem-webrick>=0:www/rubygem-webrick
