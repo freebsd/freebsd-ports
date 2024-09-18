@@ -119,7 +119,6 @@
     SUBDIR += keydb
     SUBDIR += kyotocabinet
     SUBDIR += kyototycoon
-    SUBDIR += ldb15
     SUBDIR += ldb20
     SUBDIR += ldb21
     SUBDIR += ldb22
