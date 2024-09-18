@@ -15,6 +15,8 @@ WWW=		https://github.com/transmission-remote-gui/transgui
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+ONLY_FOR_ARCHS=	i386 amd64
+
 USES=		desktop-file-utils fpc gnome iconv lazarus:flavors xorg
 USE_GNOME=	cairo
 USE_XORG=	x11
