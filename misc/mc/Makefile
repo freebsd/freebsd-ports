@@ -1,5 +1,5 @@
 PORTNAME=	mc
-PORTVERSION=	4.8.31
+PORTVERSION=	4.8.32
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
 		https://ftp.osuosl.org/pub/midnightcommander/
@@ -24,10 +24,9 @@ SHEBANG_FILES=	${WRKSRC}/src/vfs/extfs/helpers/s3+.in \
 python_OLD_CMD=	@PYTHON@
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	ZIP=${LOCALBASE}/bin/zip UNZIP=${UNZIP_NATIVE_CMD}
 
-PORTDOCS=	AUTHORS FAQ HACKING MAINTAINERS NEWS README TODO
+PORTDOCS=	AUTHORS FAQ HACKING NEWS README TODO
 
 OPTIONS_DEFINE=	ASPELL DOCS EDITOR EXTATTR ICONV NLS PCRE2 SFTP SUBSHELL X11
 OPTIONS_DEFAULT=	EDITOR ICONV SFTP SLANG SUBSHELL X11
@@ -76,11 +75,6 @@ SUBSHELL_SUB_FILES=	pkg-message
 
 X11_BUILD_DEPENDS=	${LOCALBASE}/include/X11/Xlib.h:x11/libX11
 X11_CONFIGURE_WITH=	x
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|clang\*)|*)|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|x$$UNRAR_VERSION.*x|$$UNRAR_VERSION -ge |' \
-		${WRKSRC}/src/vfs/extfs/helpers/urar.in
 
 post-patch-EXTATTR-off:
 	@${REINPLACE_CMD} -e '/found_e2p=/s|yes|disabled|; /e2p library/ \
