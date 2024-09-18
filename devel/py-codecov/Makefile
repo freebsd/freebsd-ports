@@ -11,6 +11,9 @@ WWW=		https://github.com/codecov/codecov-python
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Deprecated by upstream. On February 1, 2022 this uploader will be completely deprecated and will no longer be able to upload coverage to Codecov
+EXPIRATION_DATE=2024-09-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.7.9:www/py-requests@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ddt>0:devel/py-ddt@${PY_FLAVOR} \
