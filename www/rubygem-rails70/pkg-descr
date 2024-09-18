@@ -7,12 +7,17 @@ application into three layers: Model, View, and Controller, each with a specific
 responsibility.
 
 Active Record, Active Model, Action Pack, and Action View can each be used
-independently outside Rails. In addition to that, Rails also comes with Action
-Mailer, a library to generate and send emails; Action Mailbox, a library to
-receive emails within a Rails application; Active Job, a framework for declaring
-jobs and making them run on a variety of queuing backends; Action Cable, a
-framework to integrate WebSockets with a Rails application; Active Storage, a
-library to attach cloud and local files to Rails applications; Action Text, a
-library to handle rich text content; and Active Support, a collection of utility
-classes and standard library extensions that are useful for Rails, and may also
-be used independently outside Rails.
+independently outside Rails.
+
+In addition to that, Rails also comes with:
+- Action Mailer, a library to generate and send emails
+- Action Mailbox, a library to receive emails within a Rails application
+- Active Job, a framework for declaring jobs and making them run on a variety of
+  queuing backends
+- Action Cable, a framework to integrate WebSockets with a Rails application
+- Active Storage, a library to attach cloud and local files to Rails
+  applications
+- Action Text, a library to handle rich text content
+- Active Support, a collection of utility classes and standard library
+  extensions that are useful for Rails, and may also be used independently
+  outside Rails

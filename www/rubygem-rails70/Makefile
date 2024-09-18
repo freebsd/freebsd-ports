@@ -10,6 +10,7 @@ WWW=		https://rubyonrails.org/ \
 		https://github.com/rails/rails
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-actioncable70>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-actioncable70 \
 		rubygem-actionmailbox70>=${PORTVERSION}<${PORTVERSION}_99:mail/rubygem-actionmailbox70 \
