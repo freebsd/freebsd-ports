@@ -2173,6 +2173,7 @@
     SUBDIR += rubygem-possessive
     SUBDIR += rubygem-propshaft
     SUBDIR += rubygem-propshaft-rails70
+    SUBDIR += rubygem-propshaft-rails71
     SUBDIR += rubygem-protocol-hpack
     SUBDIR += rubygem-protocol-http
     SUBDIR += rubygem-protocol-http1
