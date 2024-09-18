@@ -1,5 +1,5 @@
 PORTNAME=	ruby_language_server
-PORTVERSION=	0.3.17
+PORTVERSION=	0.3.18
 CATEGORIES=	lang rubygems
 MASTER_SITES=	RG
 
