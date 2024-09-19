@@ -1,7 +1,6 @@
 PORTNAME=	bout++
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.4.2
-PORTREVISION=	6
+DISTVERSION=	5.1.1
 CATEGORIES=	science math # physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,33 +12,42 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	gmake:devel/gmake
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+		libfmt.so:devel/libfmt \
 		libopenblas.so:math/openblas \
 		libuuid.so:misc/e2fsprogs-libuuid
-RUN_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.2.1:math/py-matplotlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}natsort>=8.1.0:devel/py-natsort@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}netCDF4>=0:science/py-netCDF4@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.22.0:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.4.1:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sympy>=1.5.1:math/py-sympy@${PY_FLAVOR}
 
-USES=		cmake:testing python gettext-runtime shebangfix
+USES=		cmake:testing gettext python gettext-runtime shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	boutproject
 GH_PROJECT=	BOUT-dev
-GH_TUPLE=	boutproject:boutdata:3a66e6c:boutdata/externalpackages/boutdata \
-		boutproject:boututils:a79a00a:boututils/externalpackages/boututils \
-		google:googletest:96f4ce0:googletest/externalpackages/googletest \
-		meitar:git-archive-all.sh:fc86194:git_archive_all_sh/externalpackages/git-archive-all.sh \
-		mpark:variant:0b488da:variant/externalpackages/mpark.variant
+GH_TUPLE=	google:googletest:0953a17a4281fc26831da647ad3fcd5e21e6473b:google_googletest/externalpackages/googletest \
+		meitar:git-archive-all.sh:fc86194f00b678438f9210859597f6eead28e765:meitar_git_archive_all_sh/externalpackages/git-archive-all.sh \
+		mpark:variant:23cb94f027d4ef33bf48133acc2695c7e5c6f1e7:mpark_variant/externalpackages/mpark.variant \
+		boutproject:boutdata:e458cf0cf2af6ff68db91da39ef3e15a7e9e6b3d:boutproject_boutdata/externalpackages/boutdata \
+		abseil:googletest:695cf7c96249de50360a7d2951dc88eb3aea0695:abseil_googletest/externalpackages/mpark.variant/3rdparty/googletest
 
-SHEBANG_GLOB=	*.sh
-SHEBANG_FILES=	bin/bout-boutdata-restart-create \
+SHEBANG_GLOB=	*.sh *.py
+SHEBANG_FILES=	bin/bout-add-mod-path \
+		bin/bout-boutdata-restart-create \
 		bin/bout-pylib-cmd-to-bin \
 		bin/bout-sonnet \
 		bin/bout-stop-script \
 		bin/bout_3to4.py \
 		bin/bout_4to5
 
-CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		BOUT_USE_SYSTEM_FMT
 CMAKE_OFF=	BOUT_TESTS
-CMAKE_TESTING_ON=	BOUT_TESTS # tests fail to build, see https://github.com/boutproject/BOUT-dev/issues/2618
+CMAKE_TESTING_ON=	BOUT_TESTS # 6 tests fail, see https://github.com/boutproject/BOUT-dev/issues/2980
 
 CXXFLAGS+=	-I${WRKSRC}/include
 LDFLAGS+=	-lexecinfo
@@ -82,11 +90,19 @@ SUNDIALS_CMAKE_BOOL=	BOUT_USE_SUNDIALS
 SUNDIALS_CMAKE_ON=	-DBOUT_DOWNLOAD_SUNDIALS=OFF
 SUNDIALS_BROKEN=	fails to build with sundials, see https://github.com/boutproject/BOUT-dev/issues/2617
 
-BINARY_ALIAS=		make=${GMAKE}
+BINARY_ALIAS=		make=${GMAKE} \
+			python3=${PYTHON_CMD}
 
 .if defined(WITH_EXAMPLES) # Build executables demonstrating BOUT++ capabilities. They aren't installed and don't need to be built for packaging.
 CMAKE_ON+=	BOUT_BUILD_EXAMPLES
 .endif
+
+post-patch:
+	# fix the version number in the code that it can't obtain from git
+	@${REINPLACE_CMD} \
+		-e 's|__version__ = version(__name__)|__version__ = "${PORTVERSION}"|' \
+		${WRKSRC}/tools/pylib/boutdata/__init__.py \
+		${WRKSRC}/externalpackages/boutdata/src/boututils/__init__.py
 
 post-install:
 	# workaround for /usr/local/lib/cmake/bout++/bout++Config.cmake:if
@@ -110,5 +126,10 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/cmake/PVODE/PVODEConfig.cmake
 	# remove broken link, see https://github.com/boutproject/BOUT-dev/issues/2623
 	@${RM} ${STAGEDIR}${PREFIX}/bin/bout-squashoutput
+
+pre-test: #  build tests
+	@cd ${BUILD_WRKSRC} && \
+		${SETENVI} ${WRK_ENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} ${CMAKE_TESTING_ARGS} ${CMAKE_SOURCE_PATH} && \
+		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${TEST_ENV} ${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS} build-check
 
 .include <bsd.port.mk>
