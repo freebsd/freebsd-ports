@@ -13,8 +13,10 @@ LICENSE_COMB=	multi
 LICENSE_FILE_APACHE20=	${WRKSRC}/libsais-LICENSE
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/LICENSE
 
-USES=		cmake pathfix tar:xz
+USES=		cmake cpe pathfix tar:xz
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	bzip3_project
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|\(VERSION \)1\.3\.0|\1${DISTVERSION}|" \
