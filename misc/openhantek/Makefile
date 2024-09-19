@@ -4,7 +4,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Digital Software Oscilloscope (DSO) software for Hantek oscilloscopes
-WWW=		http://openhantek.org/
+WWW=		https://github.com/OpenHantek/OpenHantek6022
 
 LICENSE=	GPLv3
 
