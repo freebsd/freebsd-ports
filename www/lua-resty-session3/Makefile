@@ -2,6 +2,7 @@ PORTNAME=	lua-resty-session
 DISTVERSIONPREFIX=v
 DISTVERSION=	3.10
 CATEGORIES=	www
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	baptiste@bapt.name
 COMMENT=	Lua session library for OpenResty / ngx_lua Version 3.x
