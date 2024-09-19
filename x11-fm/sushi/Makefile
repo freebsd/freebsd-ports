@@ -7,7 +7,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Tool similar to Gloobus Preview that provides quick file previews
-WWW=		http://www.ubuntugeek.com/gnome-sushi-quick-previewer-for-nautilus.html
+WWW=		https://gitlab.gnome.org/GNOME/sushi
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
