@@ -1,6 +1,5 @@
 PORTNAME=	polyphone
-DISTVERSION=	2.3.0
-PORTREVISION=	6
+DISTVERSION=	2.4.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,17 +13,15 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libjack.so:audio/jack \
 		libogg.so:audio/libogg \
 		libportaudio.so:audio/portaudio \
-		libQCustomPlot-qt5.so:graphics/qcustomplot@qt5 \
 		librtmidi.so:audio/rtmidi \
 		libstk.so:audio/stk \
 		libvorbisfile.so:audio/libvorbis
 
 USES=		compiler:c++11-lang desktop-file-utils dos2unix gl gnome pkgconfig qmake:outsource qt:5 shared-mime-info ssl xorg
 DOS2UNIX_FILES=	polyphone.pro \
-		editor/graphics/graphiquefourier.cpp \
 		editor/tree/treeitemdelegate.cpp
 USE_GL=		gl
-USE_QT=		core concurrent gui network printsupport svg widgets buildtools:build linguisttools:build qmake:build
+USE_QT=		core concurrent gui network printsupport svg testlib widgets buildtools:build linguisttools:build qmake:build
 USE_GNOME=	glib20
 USE_CXXSTD=	c++11
 
