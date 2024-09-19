@@ -294,7 +294,7 @@ GH_SUBDIR+=	${GH_TUPLE:C@^([^:]*):([^:]*):([^:]*)((:[^:/]*)?)((/.*)?)@\6\4@:M/*:
 MASTER_SITE_GITHUB+=		https://codeload.github.com/%SUBDIR%
 MASTER_SITE_GITHUB_CLOUD+=	https://cloud.github.com/downloads/%SUBDIR%
 
-.    if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC} && !${USE_GITHUB:Mnodefault}
+.    if ( !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC} ) && !${USE_GITHUB:Mnodefault}
 MASTER_SITES+=	GH
 .    endif
 GH_ACCOUNT_DEFAULT=	${PORTNAME}
