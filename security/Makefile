@@ -427,6 +427,7 @@
     SUBDIR += olm
     SUBDIR += onionscan
     SUBDIR += op
+    SUBDIR += openbao
     SUBDIR += openbsm
     SUBDIR += openca-ocspd
     SUBDIR += openconnect

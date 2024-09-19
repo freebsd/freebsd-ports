@@ -422,7 +422,7 @@ prometheus:*:478:
 alertmanager:*:479:
 datadog:*:480:
 promxy:*:481:
-# free: 482
+openbao:*:482:
 # free: 483
 # free: 484
 # free: 485
