@@ -21,7 +21,7 @@ keygen_cmd="shibboleth_sp_keygen"
 
 shibboleth_sp_usr=%%SHIBD_USER%%
 shibboleth_sp_group=%%SHIBD_GROUP%%
-www_group=%%WWWGRP%%
+: ${shibboleth_www_group:=%%WWWGRP%%}
 
 load_rc_config $name
 
@@ -43,7 +43,7 @@ shibboleth_sp_configtest() {
 	chmod 755 /var/cache
 	install -d -o ${shibboleth_sp_usr} -g ${shibboleth_sp_group} /var/log/shibboleth
 	install -d -o ${shibboleth_sp_usr} -g ${shibboleth_sp_group} /var/cache/shibboleth
-	install -d -o ${shibboleth_sp_usr} -g ${www_group} -m 750 /var/run/shibboleth
+	install -d -o ${shibboleth_sp_usr} -g ${shibboleth_www_group} -m 750 /var/run/shibboleth
 	${command} ${shibboleth_sp_flags} -u ${shibboleth_sp_usr} -g ${shibboleth_sp_group} -t
 }
 
