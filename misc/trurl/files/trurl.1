@@ -1,5 +1,5 @@
 \" The TH line should be updated on each trurl update
-.TH TRURL "1" "August 2024" "trurl 0.15" "User Commands"
+.TH TRURL "1" "September 2024" "trurl 0.16" "User Commands"
 .SH NAME
 trurl \- transpose URLs
 .SH SYNOPSIS
@@ -21,6 +21,17 @@ independent \f[I]components\f[R].
 These components can be extracted, removed and updated with trurl and
 they are referred to by their respective names: scheme, user, password,
 options, host, port, path, query, fragment and zoneid.
+.SH NORMALIZATION
+When provided a URL to work with, trurl \[lq]normalizes\[rq] it.
+It means that individual URL components are URL decoded then URL encoded
+back again and set in the URL.
+.PP
+Example:
+.IP
+.EX
+$ trurl \[aq]http://ex%61mple:80/%62ath/a/../b?%2e%FF#tes%74\[aq]
+http://example/bath/b?.%ff#test
+.EE
 .SH OPTIONS
 Options start with one or two dashes.
 Many of the options require an additional value next to them.
@@ -186,22 +197,67 @@ iteration.
 Several combined iterations are allowed to generate combinations, but
 only one \f[I]\[en]iterate\f[R] option per component.
 The listed items to iterate over should be separated by single spaces.
+.PP
+Example:
+.IP
+.EX
+$ trurl example.com \-\-iterate=scheme=\[dq]ftp https\[dq] \-\-iterate=port=\[dq]22 80\[dq]
+ftp://example.com:22/
+ftp://example.com:80/
+https://example.com:22/
+https://example.com:80/
+.EE
 .SS \[en]json
 Outputs all set components of the URLs as JSON objects.
 All components of the URL that have data get populated in the parts
 object using their component names.
 See below for details on the format.
+.PP
+The URL components are provided URL decoded.
+Change that with \f[B]\[en]urlencode\f[R].
 .SS \[en]keep\-port
 By default, trurl removes default port numbers from URLs with a known
 scheme even if they are explicitly specified in the input URL.
 This options, makes trurl not remove them.
+.PP
+Example:
+.IP
+.EX
+$ trurl https://example.com:443/ \-\-keep\-port
+https://example.com:443/
+.EE
 .SS \[en]no\-guess\-scheme
 Disables libcurl\[cq]s scheme guessing feature.
 URLs that do not contain a scheme are treated as invalid URLs.
+.PP
+Example:
+.IP
+.EX
+$ trurl example.com \-\-no\-guess\-scheme
+trurl note: Bad scheme [example.com]
+.EE
 .SS \[en]punycode
 Uses the punycode version of the hostname, which is how International
 Domain Names are converted into plain ASCII.
 If the hostname is not using IDN, the regular ASCII name is used.
+.PP
+Example:
+.IP
+.EX
+$ trurl http://åäö/ \-\-punycode
+http://xn\-\-4cab6c/
+.EE
+.SS \[en]qtrim [what]
+Trims data off a query.
+.PP
+\f[I]what\f[R] is specified as a full name of a name/value pair, or as a
+word prefix (using a single trailing asterisk (\f[CR]*\f[R])) which
+makes trurl remove the tuples from the query string that match the
+instruction.
+.PP
+To match a literal trailing asterisk instead of using a wildcard, escape
+it with a backslash in front of it.
+Like \f[CR]\[rs]\[rs]*\f[R].
 .SS \[en]query\-separator [what]
 Specify the single letter used for separating query pairs.
 The default is \f[CR]&\f[R] but at least in the past sometimes
@@ -209,12 +265,26 @@ semicolons \f[CR];\f[R] or even colons \f[CR]:\f[R] have been used for
 this purpose.
 If your URL uses something other than the default letter, setting the
 right one makes sure trurl can do its query operations properly.
+.PP
+Example:
+.IP
+.EX
+$ trurl \[dq]https://curl.se?b=name:a=age\[dq] \-\-sort\-query \-\-query\-separator \[dq]:\[dq]
+https://curl.se/?a=age:b=name
+.EE
 .SS \[en]quiet
 Suppress (some) notes and warnings.
 .SS \[en]redirect URL
 Redirect the URL to this new location.
 The redirection is performed on the base URL, so, if no base URL is
 specified, no redirection is performed.
+.PP
+Example:
+.IP
+.EX
+$ trurl \-\-url https://curl.se/we/are.html \-\-redirect ../here.html
+https://curl.se/here.html
+.EE
 .SS \[en]replace [data]
 Replaces a URL query.
 .PP
@@ -258,6 +328,8 @@ in a case insensitive alphabetical order.
 This helps making URLs identical that otherwise only had their query
 pairs in different orders.
 .SS \[en]trim [component]=[what]
+Deprecated: use \f[B]\[en]qtrim\f[R].
+.PP
 Trims data off a component.
 Currently this can only trim a query component.
 .PP
@@ -267,7 +339,7 @@ tuples from the query string that match the instruction.
 .PP
 To match a literal trailing asterisk instead of using a wildcard, escape
 it with a backslash in front of it.
-Like \f[CR]\[rs]*\f[R].
+Like \f[CR]\[rs]\[rs]*\f[R].
 .SS \[en]url URL
 Set the input URL to work with.
 The URL may be provided without a scheme, which then typically is not
@@ -288,6 +360,303 @@ Show version information and exit.
 When a URL is provided, return error immediately if it does not parse as
 a valid URL.
 In normal cases, trurl can forgive a bad URL input.
+.SH URL COMPONENTS
+.SS scheme
+This is the leading character sequence of a URL, excluding the
+\[lq]://\[rq] separator.
+It cannot be specified URL encoded.
+.PP
+A URL cannot exist without a scheme, but unless
+\f[B]\[en]no\-guess\-scheme\f[R] is used trurl guesses what scheme that
+was intended if none was provided.
+.PP
+Examples:
+.IP
+.EX
+$ trurl https://odd/ \-g \[aq]{scheme}\[aq]
+https
+
+$ trurl odd \-g \[aq]{scheme}\[aq]
+http
+
+$ trurl odd \-g \[aq]{scheme}\[aq] \-\-no\-guess\-scheme
+trurl note: Bad scheme [odd]
+.EE
+.SS user
+After the scheme separator, there can be a username provided.
+If it ends with a colon (\f[CR]:\f[R]), there is a password provided.
+If it ends with an at character (\f[CR]\[at]\f[R]) there is no password
+provided in the URL.
+.PP
+Example:
+.IP
+.EX
+$ trurl https://user%3a%40:secret\[at]odd/ \-g \[aq]{user}\[aq]
+user:\[at]
+.EE
+.SS password
+If the password ends with a semicolon (\f[CR];\f[R]) there is an options
+field following.
+This field is only accepted by trurl for URLs using the IMAP scheme.
+.PP
+Example:
+.IP
+.EX
+$ trurl https://user:secr%65t\[at]odd/ \-g \[aq]{password}\[aq]
+secret
+.EE
+.SS options
+This field can only end with an at character (\f[CR]\[at]\f[R]) that
+separates the options from the hostname.
+.IP
+.EX
+$ trurl \[aq]imap://user:pwd;giraffe\[at]odd\[aq] \-g \[aq]{options}\[aq]
+giraffe
+.EE
+.PP
+If the scheme is not IMAP, the \f[CR]giraffe\f[R] part is instead
+considered part of the password:
+.IP
+.EX
+$ trurl \[aq]sftp://user:pwd;giraffe\[at]odd\[aq] \-g \[aq]{password}\[aq]
+pwd;giraffe
+.EE
+.PP
+We strongly advice users to %\-encode \f[CR];\f[R], \f[CR]:\f[R] and
+\f[CR]\[at]\f[R] in URLs of course to reduce the risk for confusions.
+.SS host
+The host component is the hostname or a numerical IP address.
+If a hostname is provided, it can be an International Domain Name
+non\-ASCII characters.
+A hostname can be provided URL encoded.
+.PP
+trurl provides options for working with the IDN hostnames either as IDN
+or in its punycode version.
+.PP
+Example, convert an IDN name to punycode in the output:
+.IP
+.EX
+$ trurl http://åäö/ \-\-punycode
+http://xn\-\-4cab6c/
+.EE
+.PP
+Or the reverse, convert a punycode hostname into its IDN version:
+.IP
+.EX
+$ trurl http://xn\-\-4cab6c/ \-\-as\-idn
+http://åäö/
+.EE
+.PP
+If the URL\[cq]s hostname starts with an open bracket (\f[CR][\f[R]) it
+is a numerical IPv6 address that also must end with a closing bracket
+(\f[CR]]\f[R]).
+trurl normalizes IPv6 addreses.
+.PP
+Example:
+.IP
+.EX
+$ trurl \[aq]http://[2001:9b1:0:0:0:0:7b97:364b]/\[aq]
+http://[2001:9b1::7b97:364b]/
+.EE
+.PP
+A numerical IPV4 address can be specified using one, two, three or four
+numbers separated with dots and they can use decimal, octal or
+hexadecimal.
+trurl normalizes provided addresses and uses four dotted decimal numbers
+in its output.
+.PP
+Examples:
+.IP
+.EX
+$ trurl http://646464646/
+http://38.136.68.134/
+
+$ trurl http://246.646/
+http://246.0.2.134/
+
+$ trurl http://246.46.646/
+http://246.46.2.134/
+
+$ trurl http://0x14.0xb3022/
+http://20.11.48.34/
+.EE
+.SS zoneid
+If the provided host is an IPv6 address, it might contain a specific
+zoneid.
+A number or a network interface name normally.
+.PP
+Example:
+.IP
+.EX
+$ trurl \[aq]http://[2001:9b1::f358:1ba4:7b97:364b%enp3s0]/\[aq] \-g \[aq]{zoneid}\[aq]
+enp3s0
+.EE
+.SS port
+If the host ends with a colon (\f[CR]:\f[R]) then a port number follows.
+It is a 16 bit decimal number that may not be URL encoded.
+.PP
+trurl knows the default port number for many URL schemes so it can show
+port numbers for a URL even if none was explicitly used in the URL.
+With \f[B]\[en]default\-port\f[R] it can add the default port to a URL
+even when not provide.
+.PP
+Example:
+.IP
+.EX
+$ trurl http:/a \-\-default\-port
+http://a:80/
+.EE
+.PP
+Similarly, trurl normally hides the port number if the given number is
+the default.
+.PP
+Example:
+.IP
+.EX
+$ trurl http:/a:80
+http://a/
+.EE
+.PP
+But a user can make trurl keep the port even if it is the default, with
+\f[B]\[en]keep\-port\f[R].
+.PP
+Example:
+.IP
+.EX
+$ trurl http:/a:80 \-\-keep\-port
+http://a:80/
+.EE
+.SS path
+A URL path is assumed to always start with and contain at least a slash
+(\f[CR]/\f[R]), even if none is actually provided in the URL.
+.PP
+Example:
+.IP
+.EX
+$ trurl http://xn\-\-4cab6c \-g \[aq][path]\[aq]
+/
+.EE
+.PP
+When setting the path, trurl will inject a leading slash if none is
+provided:
+.IP
+.EX
+$ trurl http://hello \-s path=\[dq]pony\[dq]
+http://hello/pony
+
+$ trurl http://hello \-s path=\[dq]/pony\[dq]
+http://hello/pony
+.EE
+.PP
+If the input path contains dotdot or dot\-slash sequences, they are
+normalized away.
+.PP
+Example:
+.IP
+.EX
+$ trurl http://hej/one/../two/../three/./four
+http://hej/three/four
+.EE
+.PP
+You can append a new segment to an existing path with
+\f[B]\[en]append\f[R] like this:
+.IP
+.EX
+$ trurl http://twelve/three?hello \-\-append path=four
+http://twelve/three/four?hello
+.EE
+.SS query
+The query part does not include the leading question mark (\f[CR]?\f[R])
+separator when extracted with trurl.
+.PP
+Example:
+.IP
+.EX
+$ trurl http://horse?elephant \-g \[aq]{query}\[aq]
+elephant
+.EE
+.PP
+Example, if you set the query with a leading question mark:
+.IP
+.EX
+$ trurl http://horse?elephant \-s \[dq]query=?elephant\[dq]
+http://horse/?%3felephant
+.EE
+.PP
+Query parts are often made up of a series of name=value pairs separated
+with ampersands (\f[CR]&\f[R]), and trurl offers several ways to work
+with such.
+.PP
+Append a new name value pair to a URL with \f[B]\[en]append\f[R]:
+.IP
+.EX
+$ trurl http://host?name=hello \-\-append query=search=life
+http://host/?name=hello&search=life
+.EE
+.PP
+You cam \f[B]\[en]replace\f[R] the value of a specific existing name
+among the pairs:
+.IP
+.EX
+$ trurl \[aq]http://alpha?one=real&two=fake\[aq] \-\-replace two=alsoreal
+http://alpha/?one=real&two=alsoreal
+.EE
+.PP
+If the specific name you want to replace perhaps does not exist in the
+URL, you can opt to replace \f[I]or\f[R] append the pair:
+.IP
+.EX
+$ trurl \[aq]http://alpha?one=real&two=fake\[aq] \-\-replace\-append three=alsoreal
+http://alpha/?one=real&two=fake&three=alsoreal
+.EE
+.PP
+In order to perhaps compare two URLs using query name value pairs,
+sorting them first at least increases the chances of it working:
+.IP
+.EX
+$ trurl \[dq]http://alpha/?one=real&two=fake&three=alsoreal\[dq] \-\-sort\-query
+http://alpha/?one=real&three=alsoreal&two=fake
+.EE
+.PP
+Remove name/value pairs from the URL by specifying exact name or
+wildcard pattern with \f[B]\[en]qtrim\f[R]:
+.IP
+.EX
+$ trurl \[aq]https://example.com?a12=hej&a23=moo&b12=foo\[aq] \-\-qtrim a*\[aq]
+https://example.com/?b12=foo
+.EE
+.SS fragment
+The fragment part does not include the leading hash sign (\f[CR]#\f[R])
+separator when extracted with trurl.
+.PP
+Example:
+.IP
+.EX
+$ trurl http://horse#elephant \-g \[aq]{fragment}\[aq]
+elephant
+.EE
+.PP
+Example, if you set the fragment with a leading hash sign:
+.IP
+.EX
+$ trurl \[dq]http://horse#elephant\[dq] \-s \[dq]fragment=#zebra\[dq]
+http://horse/#%23zebra
+.EE
+.PP
+The fragment part of a URL is for local purposes only.
+The data in there is never actually sent over the network when a URL is
+used for transfers.
+.SS url
+trurl supports \f[B]url\f[R] as a named component for \f[B]\[en]get\f[R]
+to allow for more powerful outputs, but of course it is not actually a
+\[lq]component\[rq]; it is the full URL.
+.PP
+Example:
+.IP
+.EX
+$ trurl ftps://example.com:2021/p%61th \-g \[aq]{url}\[aq]
+ftps://example.com:2021/path
+.EE
 .SH JSON output format
 The \f[I]\[en]json\f[R] option outputs a JSON array with one or more
 objects.
@@ -435,7 +804,7 @@ $ trurl \[dq]https://fake.host/search?q=answers&user=me#frag\[dq] \-\-json
 .SS Remove tracking tuples from query
 .IP
 .EX
-$ trurl \[dq]https://curl.se?search=hey&utm_source=tracker\[dq] \-\-trim query=\[dq]utm_*\[dq]
+$ trurl \[dq]https://curl.se?search=hey&utm_source=tracker\[dq] \-\-qtrim \[dq]utm_*\[dq]
 https://curl.se/?search=hey
 .EE
 .SS Show a specific query key value
@@ -453,7 +822,7 @@ https://example.com?a=c&b=a&c=b
 .SS Work with a query that uses a semicolon separator
 .IP
 .EX
-$ trurl \[dq]https://curl.se?search=fool;page=5\[dq] \-\-trim query=\[dq]search\[dq] \-\-query\-separator \[dq];\[dq]
+$ trurl \[dq]https://curl.se?search=fool;page=5\[dq] \-\-qtrim \[dq]search\[dq] \-\-query\-separator \[dq];\[dq]
 https://curl.se?page=5
 .EE
 .SS Accept spaces in the URL path
@@ -487,7 +856,7 @@ Out of memory
 .SS 7
 Could not output a valid URL
 .SS 8
-A problem with \[en]trim
+A problem with \[en]qtrim
 .SS 9
 If \[en]verify is set and the input URL cannot parse.
 .SS 10
