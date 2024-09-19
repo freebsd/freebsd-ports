@@ -4,7 +4,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://remotebox.knobgoblin.org.uk/downloads/
 DISTNAME=	RemoteBox-${DISTVERSION}
 
-MAINTAINER=	eduardo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source VirtualBox Client with Remote Management
 WWW=		https://remotebox.knobgoblin.org.uk/
 
