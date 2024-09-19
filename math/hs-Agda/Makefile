@@ -1,5 +1,5 @@
 PORTNAME=	Agda
-DISTVERSION=	2.7.0
+DISTVERSION=	2.7.0.1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -21,7 +21,7 @@ USE_CABAL=	OneTuple-0.4.2 \
 		QuickCheck-2.15.0.1 \
 		STMonadTrans-0.4.8_1 \
 		StateVar-1.2.2 \
-		aeson-2.2.3.0_1 \
+		aeson-2.2.3.0_2 \
 		alex-3.5.1.0 \
 		ansi-terminal-1.1.1 \
 		ansi-terminal-types-1.1 \
@@ -72,7 +72,7 @@ USE_CABAL=	OneTuple-0.4.2 \
 		splitmix-0.1.0.5_1 \
 		strict-0.5.1_1 \
 		tagged-0.8.8_1 \
-		text-iso8601-0.1.1 \
+		text-iso8601-0.1.1_1 \
 		text-short-0.1.6_2 \
 		th-abstraction-0.7.0.0 \
 		th-compat-0.1.5_2 \

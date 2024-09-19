@@ -53,7 +53,6 @@ include/dns/keystore.h
 include/dns/keytable.h
 include/dns/keyvalues.h
 include/dns/librpz.h
-include/dns/log.h
 include/dns/master.h
 include/dns/masterdump.h
 include/dns/message.h
@@ -89,6 +88,7 @@ include/dns/rrl.h
 include/dns/sdlz.h
 include/dns/secalg.h
 include/dns/secproto.h
+include/dns/skr.h
 include/dns/soa.h
 include/dns/ssu.h
 include/dns/stats.h
@@ -221,13 +221,11 @@ include/isccfg/check.h
 include/isccfg/duration.h
 include/isccfg/grammar.h
 include/isccfg/kaspconf.h
-include/isccfg/log.h
 include/isccfg/namedconf.h
 include/ns/client.h
 include/ns/hooks.h
 include/ns/interfacemgr.h
 include/ns/listenlist.h
-include/ns/log.h
 include/ns/notify.h
 include/ns/query.h
 include/ns/server.h
@@ -238,15 +236,15 @@ include/ns/update.h
 include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
-lib/libdns-9.21.0.so
+lib/libdns-9.21.1.so
 lib/libdns.so
-lib/libisc-9.21.0.so
+lib/libisc-9.21.1.so
 lib/libisc.so
-lib/libisccc-9.21.0.so
+lib/libisccc-9.21.1.so
 lib/libisccc.so
-lib/libisccfg-9.21.0.so
+lib/libisccfg-9.21.1.so
 lib/libisccfg.so
-lib/libns-9.21.0.so
+lib/libns-9.21.1.so
 lib/libns.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
