@@ -16,7 +16,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe python
-USE_PYTHON=	allflavors autoplist concurrent distutils
+USE_PYTHON=	allflavors autoplist concurrent pep517
 
 CPE_VENDOR=	python
 
