@@ -1,5 +1,5 @@
 PORTNAME=	zarr
-DISTVERSION=	2.18.2
+DISTVERSION=	2.18.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}fsspec>0:devel/py-fsspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # 7 tests fail, see https://github.com/zarr-developers/zarr-python/issues/1819
+USE_PYTHON=	pep517 autoplist pytest # 32 tests fail, see https://github.com/zarr-developers/zarr-python/issues/1819#issuecomment-2359908101
 
 NO_ARCH=	yes
 
