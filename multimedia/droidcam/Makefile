@@ -1,12 +1,12 @@
 PORTNAME=	droidcam
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	nxjoseph@protonmail.com
 COMMENT=	GNU/Linux/nix client for DroidCam
-WWW=		https://github.com/dev47apps/droidcam
+WWW=		https://github.com/dev47apps/droidcam-linux-client
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -30,6 +30,7 @@ LIB_DEPENDS=	libappindicator3.so:devel/libappindicator \
 		libspeex.so:audio/speex \
 		libturbojpeg.so:graphics/libjpeg-turbo \
 		libusbmuxd-2.0.so:comms/libusbmuxd \
+		libwayland-client.so:graphics/wayland \
 		libX11.so:x11/libX11 \
 		libswscale.so:multimedia/ffmpeg
 RUN_DEPENDS=	adb:devel/android-tools \
@@ -40,6 +41,7 @@ RUN_DEPENDS=	adb:devel/android-tools \
 USES=		desktop-file-utils gettext-runtime gmake gnome pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	dev47apps
+GH_PROJECT=	droidcam-linux-client
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 pango
 USE_XORG=	x11
 
@@ -53,6 +55,10 @@ OPTIONS_SUB=	yes
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
+
+pre-configure:
+	${REINPLACE_CMD} -e 's,/opt/droidcam-icon.png,${PREFIX}/pixmaps/droidcam-icon.png,' \
+		${WRKSRC}/src/droidcam.c ${WRKSRC}/droidcam.desktop
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/droidcam \
