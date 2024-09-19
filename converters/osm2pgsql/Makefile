@@ -1,6 +1,5 @@
 PORTNAME=	osm2pgsql
-PORTVERSION=	1.11.0
-PORTREVISION=	2
+PORTVERSION=	2.0.0
 CATEGORIES=	converters geography
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -16,12 +15,12 @@ NOT_FOR_ARCHS=	armv7 i386 powerpc
 NOT_FOR_ARCHS_REASON=	needs a 64 bit architecture
 
 LIB_DEPENDS=	libproj.so:graphics/proj \
-		libboost_system.so:devel/boost-libs \
 		libexpat.so:textproc/expat2
 BUILD_DEPENDS=	${LOCALBASE}/include/osmium/version.hpp:astro/libosmium \
 		${LOCALBASE}/include/protozero/version.hpp:devel/protozero \
 		${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json \
-		${LOCALBASE}/include/CLI/Version.hpp:devel/cli11
+		${LOCALBASE}/include/CLI/Version.hpp:devel/cli11 \
+		${LOCALBASE}/include/boost/geometry.hpp:devel/boost-libs
 
 USES=		cmake compiler:c++17-lang pgsql python:run shebangfix
 USE_GITHUB=	yes
