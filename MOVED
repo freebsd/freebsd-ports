@@ -3479,3 +3479,4 @@ graphics/libsvg||2024-09-14|Has expired: Abandoned upstream, obsolete and fails 
 www/libresonic-standalone||2024-09-15|Has expired: Abandonware, repo deleted
 security/rubygem-ruby-saml115|security/rubygem-ruby-saml|2024-09-18|Has expired: Use security/rubygem-ruby-saml instead
 databases/ldb15||2024-09-18|Has expired: Outdated and not necessary for any supported version of Samba
+net/rubygem-kas-grpc|net/rubygem-gitlab-kas-grpc|2024-09-19|Renamed, use net/rubygem-gitlab-kas-grpc instead

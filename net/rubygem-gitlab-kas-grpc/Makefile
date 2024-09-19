@@ -1,6 +1,5 @@
-PORTNAME=	kas-grpc
-PORTVERSION=	0.6.0
-PORTEPOCH=	1
+PORTNAME=	gitlab-kas-grpc
+PORTVERSION=	17.4.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
