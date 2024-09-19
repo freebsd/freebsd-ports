@@ -66,7 +66,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		httparse-1.8.0 \
 		idna-0.5.0 \
 		is-docker-0.2.0 \
-		is-macro-0.3.5 \
+		is-macro-0.3.6 \
 		is-terminal-0.4.13 \
 		is-wsl-0.4.0 \
 		is_terminal_polyfill-1.70.0 \
@@ -83,15 +83,15 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lsp-types-0.94.1 \
 		memchr-2.7.2 \
 		miniz_oxide-0.7.2 \
-		mio-0.8.11 \
+		mio-1.0.2 \
 		nu-ansi-term-0.46.0 \
 		num-traits-0.2.19 \
-		num_cpus-1.16.0 \
 		object-0.32.2 \
 		once_cell-1.19.0 \
 		oorandom-11.1.4 \
-		open-5.1.2 \
+		open-5.3.0 \
 		option-ext-0.2.0 \
+		ordered-float-4.2.2 \
 		overload-0.1.1 \
 		parking_lot_core-0.9.10 \
 		paste-1.0.15 \
@@ -124,10 +124,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		serde-1.0.203 \
+		serde-1.0.209 \
 		serde-wasm-bindgen-0.6.5 \
-		serde_derive-1.0.203 \
-		serde_json-1.0.121 \
+		serde_derive-1.0.209 \
+		serde_json-1.0.128 \
 		serde_repr-0.1.19 \
 		sharded-slab-0.1.7 \
 		slab-0.4.9 \
@@ -141,8 +141,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.37.0 \
-		tokio-macros-2.2.0 \
+		tokio-1.40.0 \
+		tokio-macros-2.4.0 \
 		tokio-util-0.7.11 \
 		tower-0.4.13 \
 		tower-layer-0.3.2 \

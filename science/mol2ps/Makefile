@@ -1,6 +1,5 @@
 PORTNAME=	mol2ps
-PORTVERSION=	0.4b
-PORTREVISION=	14
+PORTVERSION=	0.4c
 CATEGORIES=	science
 MASTER_SITES=	https://homepage.univie.ac.at/norbert.haider/download/chemistry/mol2ps/
 DISTNAME=	${PORTNAME}
@@ -12,6 +11,8 @@ COMMENT=	Read molecular structure files and generate Postscript output
 WWW=		https://homepage.univie.ac.at/norbert.haider/cheminf/mol2ps.html
 
 LICENSE=	GPLv2+
+
+ONLY_FOR_ARCHS=	i386 amd64 aarch64
 
 NO_WRKSUBDIR=	yes
 

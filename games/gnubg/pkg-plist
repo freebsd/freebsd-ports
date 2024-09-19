@@ -156,6 +156,7 @@ bin/makeweights
 %%DATADIR%%/met/Rockwell-Kazaross.xml
 %%DATADIR%%/met/catalog.dtd
 %%DATADIR%%/met/catalog.xml
+%%DATADIR%%/met/cubeless.xml
 %%DATADIR%%/met/g11.xml
 %%DATADIR%%/met/jac050.xml
 %%DATADIR%%/met/jac100.xml

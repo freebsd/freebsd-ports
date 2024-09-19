@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Friendly Regular Expressions
 WWW=		https://github.com/kevinushey/rex
 

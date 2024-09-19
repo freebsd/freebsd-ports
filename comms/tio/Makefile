@@ -1,10 +1,7 @@
 PORTNAME=	tio
-DISTVERSION=	3.4
+DISTVERSION=	3.7
 CATEGORIES=	comms
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
-
-PATCH_SITES=	https://github.com/tio/tio/commit/
-PATCHFILES=	c5afd86b9ae9757ebc465d6066e348bb7164f3c2.patch:-p1
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Simple TTY terminal I/O application

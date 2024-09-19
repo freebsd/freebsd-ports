@@ -1,0 +1,3 @@
+Superfile works best if you use one of the Nerd Fonts as your terminal
+font.  Install x11-fonts/nerd-fonts on your client and set up one of
+these fonts if you encounter graphical glitches.

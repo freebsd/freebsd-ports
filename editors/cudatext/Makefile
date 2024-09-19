@@ -9,6 +9,8 @@ WWW=		https://uvviewsoft.com/
 
 LICENSE=	MPL20
 
+ONLY_FOR_ARCHS=	i386 amd64
+
 USES=		desktop-file-utils dos2unix fpc gnome lazarus:flavors python xorg
 USE_XORG=	x11
 USE_GITHUB=	yes

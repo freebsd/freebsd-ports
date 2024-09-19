@@ -1,7 +1,6 @@
 PORTNAME=	bhyvemgr
 DISTVERSIONPREFIX=	v
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -11,9 +10,7 @@ WWW=		https://github.com/alonsobsd/bhyvemgr
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	bhyve-firmware>0:sysutils/bhyve-firmware \
-		virt-viewer>0:net-mgmt/virt-viewer \
-		freerdp3>0:net/freerdp3 \
+RUN_DEPENDS=	virt-viewer>0:net-mgmt/virt-viewer \
 		sudo>0:security/sudo
 
 ONLY_FOR_ARCHS=	amd64
@@ -22,6 +19,23 @@ USES=		desktop-file-utils fpc lazarus:flavors xorg
 USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	alonsobsd
+
+OPTIONS_DEFINE=		FREERDP3
+
+FREERDP3_DESC=		Install freerdp3 to enable rdp connection option
+FREERDP3_RUN_DEPENDS=	freerdp3>0:net/freerdp3
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1500000)
+ONLY_FOR_ARCHS+=	aarch64
+.endif
+
+.if ${ARCH} == "aarch64"
+RUN_DEPENDS+=	u-boot-bhyve-arm64>0:sysutils/u-boot-bhyve-arm64
+.elif ${ARCH} == "amd64"
+RUN_DEPENDS+=	bhyve-firmware>0:sysutils/bhyve-firmware
+.endif
 
 LAZARUS_PROJECT_FILES=	bhyvemgr.lpi
 
@@ -48,4 +62,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "images" ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

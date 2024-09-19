@@ -1,6 +1,6 @@
 PORTNAME=	rio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.13
+DISTVERSION=	0.1.14
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	-terminal-emulator
 
@@ -49,6 +49,7 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		bitflags-2.6.0 \
 		block-0.1.6 \
 		block2-0.5.1 \
+		borsh-1.5.1 \
 		bumpalo-3.16.0 \
 		bytemuck-1.17.0 \
 		bytemuck_derive-1.7.1 \
@@ -298,7 +299,7 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		smallvec-1.13.2 \
 		smithay-client-toolkit-0.19.2 \
 		smithay-clipboard-0.7.2 \
-		smol_str-0.2.2 \
+		smol_str-0.3.1 \
 		softbuffer-0.4.5 \
 		spin-0.9.8 \
 		spirv-0.3.0+sdk-1.3.268.0 \

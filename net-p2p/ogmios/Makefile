@@ -1,5 +1,5 @@
 PORTNAME=	ogmios
-PORTVERSION=	6.6.1
+PORTVERSION=	6.7.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://input-output-hk.github.io/cardano-haskell-packages/package/:chap
@@ -105,7 +105,7 @@ USE_CABAL=	Cabal-3.12.0.0 \
 		cardano-crypto-praos-2.1.2.0:chap \
 		cardano-crypto-test-1.5.0.2:chap \
 		cardano-crypto-tests-2.1.2.0:chap \
-		cardano-crypto-wrapper-1.5.1.2:chap \
+		cardano-crypto-wrapper-1.5.1.3:chap \
 		cardano-data-1.2.3.0:chap \
 		cardano-git-rev-0.2.2.0:chap \
 		cardano-ledger-allegra-1.5.0.0:chap \
@@ -118,9 +118,9 @@ USE_CABAL=	Cabal-3.12.0.0 \
 		cardano-ledger-conway-test-1.2.1.7:chap \
 		cardano-ledger-core-1.13.2.0:chap \
 		cardano-ledger-mary-1.6.1.0:chap \
-		cardano-ledger-shelley-1.12.2.0:chap \
+		cardano-ledger-shelley-1.12.3.0:chap \
 		cardano-ledger-shelley-ma-test-1.2.2.2:chap \
-		cardano-ledger-shelley-test-1.4.0.2:chap \
+		cardano-ledger-shelley-test-1.4.0.3:chap \
 		cardano-prelude-0.2.0.0:chap \
 		cardano-prelude-test-0.1.0.3:chap \
 		cardano-protocol-tpraos-1.2.0.1:chap \
@@ -241,7 +241,7 @@ USE_CABAL=	Cabal-3.12.0.0 \
 		io-sim-1.5.0.0 \
 		io-streams-1.5.2.2_5 \
 		io-streams-haproxy-1.0.1.0_9 \
-		iohk-monitoring-0.1.11.4:chap \
+		iohk-monitoring-0.1.11.5:chap \
 		iproute-1.7.12 \
 		isomorphism-class-0.1.0.12 \
 		js-chart-2.9.4.1 \
@@ -270,14 +270,14 @@ USE_CABAL=	Cabal-3.12.0.0 \
 		monad-control-1.0.3.1 \
 		mono-traversable-1.0.17.0 \
 		monoidal-containers-0.6.5.0 \
-		monoidal-synchronisation-0.1.0.5:chap \
+		monoidal-synchronisation-0.1.0.6:chap \
 		mtl-compat-0.2.2 \
 		multiset-0.3.4.3_1 \
 		mwc-random-0.15.0.2_1 \
 		network-3.1.4.0_1 \
 		network-byte-order-0.1.7 \
 		network-control-0.1.0 \
-		network-mux-0.4.5.2:chap \
+		network-mux-0.4.5.3:chap \
 		network-uri-2.6.4.2_1 \
 		newtype-0.2.2.0_3 \
 		newtype-generics-0.6.2_4 \
@@ -296,7 +296,7 @@ USE_CABAL=	Cabal-3.12.0.0 \
 		ouroboros-network-0.16.1.1:chap \
 		ouroboros-network-api-0.7.3.0:chap \
 		ouroboros-network-framework-0.13.2.1:chap \
-		ouroboros-network-mock-0.1.1.1:chap \
+		ouroboros-network-mock-0.1.1.2:chap \
 		ouroboros-network-protocols-0.9.0.0:chap \
 		ouroboros-network-testing-0.6.2.0:chap \
 		parallel-3.2.2.0_8 \
@@ -325,7 +325,7 @@ USE_CABAL=	Cabal-3.12.0.0 \
 		psqueues-0.2.8.0_1 \
 		quickcheck-instances-0.3.31_2 \
 		quickcheck-io-0.2.0 \
-		quickcheck-monoids-0.1.0.0:chap \
+		quickcheck-monoids-0.1.0.1:chap \
 		quickcheck-state-machine-0.9.0 \
 		quickcheck-transformer-0.3.1.2 \
 		quiet-0.2 \

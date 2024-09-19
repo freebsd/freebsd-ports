@@ -480,6 +480,7 @@
     SUBDIR += fusefs-sqlfs
     SUBDIR += fusefs-squashfuse
     SUBDIR += fusefs-sshfs
+    SUBDIR += fusefs-ufs
     SUBDIR += fusefs-unionfs
     SUBDIR += fusefs-unreliablefs
     SUBDIR += fusefs-webdavfs
@@ -1720,6 +1721,7 @@
     SUBDIR += zpool-iostat-viz
     SUBDIR += zrep
     SUBDIR += zrepl
+    SUBDIR += zrepl-dsh2dsh
     SUBDIR += zsd
     SUBDIR += zsm
     SUBDIR += ztop

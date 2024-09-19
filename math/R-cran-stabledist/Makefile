@@ -1,10 +1,9 @@
 PORTNAME=	stabledist
-DISTVERSION=	0.7-1
-PORTREVISION=	5
+DISTVERSION=	0.7-2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Stable Distribution Functions
 WWW=		https://cran.r-project.org/web/packages/stabledist/
 

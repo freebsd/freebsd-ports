@@ -1487,6 +1487,7 @@ lib/wine/%%WINEARCH%%-unix/libnsi.a
 lib/wine/%%WINEARCH%%-unix/libntdll.a
 lib/wine/%%WINEARCH%%-unix/libntdsapi.a
 lib/wine/%%WINEARCH%%-unix/libntoskrnl.a
+lib/wine/%%WINEARCH%%-unix/libodbc32.a
 lib/wine/%%WINEARCH%%-unix/libodbccp32.a
 lib/wine/%%WINEARCH%%-unix/libole32.a
 lib/wine/%%WINEARCH%%-unix/liboleacc.a
@@ -1589,6 +1590,7 @@ lib/wine/%%WINEARCH%%-unix/msv1_0.so
 lib/wine/%%WINEARCH%%-unix/netapi32.so
 lib/wine/%%WINEARCH%%-unix/nsiproxy.so
 lib/wine/%%WINEARCH%%-unix/ntdll.so
+lib/wine/%%WINEARCH%%-unix/odbc32.so
 lib/wine/%%WINEARCH%%-unix/opengl32.so
 lib/wine/%%WINEARCH%%-unix/qcap.so
 lib/wine/%%WINEARCH%%-unix/secur32.so
@@ -1650,6 +1652,7 @@ lib/wine/%%WINEARCH%%-windows/clock.exe
 lib/wine/%%WINEARCH%%-windows/clusapi.dll
 lib/wine/%%WINEARCH%%-windows/cmd.exe
 lib/wine/%%WINEARCH%%-windows/cng.sys
+lib/wine/%%WINEARCH%%-windows/colorcnv.dll
 lib/wine/%%WINEARCH%%-windows/combase.dll
 lib/wine/%%WINEARCH%%-windows/comcat.dll
 lib/wine/%%WINEARCH%%-windows/comctl32.dll
@@ -1881,6 +1884,7 @@ lib/wine/%%WINEARCH%%-windows/ksproxy.ax
 lib/wine/%%WINEARCH%%-windows/ksuser.dll
 lib/wine/%%WINEARCH%%-windows/ktmw32.dll
 lib/wine/%%WINEARCH%%-windows/l3codeca.acm
+lib/wine/%%WINEARCH%%-windows/l3codecx.ax
 lib/wine/%%WINEARCH%%-windows/libaclui.a
 lib/wine/%%WINEARCH%%-windows/libactiveds.a
 lib/wine/%%WINEARCH%%-windows/libadsiid.a
@@ -2023,6 +2027,7 @@ lib/wine/%%WINEARCH%%-windows/libnsi.a
 lib/wine/%%WINEARCH%%-windows/libntdll.a
 lib/wine/%%WINEARCH%%-windows/libntdsapi.a
 lib/wine/%%WINEARCH%%-windows/libntoskrnl.a
+lib/wine/%%WINEARCH%%-windows/libodbc32.a
 lib/wine/%%WINEARCH%%-windows/libodbccp32.a
 lib/wine/%%WINEARCH%%-windows/libole32.a
 lib/wine/%%WINEARCH%%-windows/liboleacc.a
@@ -2134,8 +2139,11 @@ lib/wine/%%WINEARCH%%-windows/mciseq.dll
 lib/wine/%%WINEARCH%%-windows/mciwave.dll
 lib/wine/%%WINEARCH%%-windows/mf.dll
 lib/wine/%%WINEARCH%%-windows/mf3216.dll
+lib/wine/%%WINEARCH%%-windows/mfasfsrcsnk.dll
 lib/wine/%%WINEARCH%%-windows/mferror.dll
+lib/wine/%%WINEARCH%%-windows/mfh264enc.dll
 lib/wine/%%WINEARCH%%-windows/mfmediaengine.dll
+lib/wine/%%WINEARCH%%-windows/mfmp4srcsnk.dll
 lib/wine/%%WINEARCH%%-windows/mfplat.dll
 lib/wine/%%WINEARCH%%-windows/mfplay.dll
 lib/wine/%%WINEARCH%%-windows/mfreadwrite.dll
@@ -2235,6 +2243,7 @@ lib/wine/%%WINEARCH%%-windows/msvcrtd.dll
 lib/wine/%%WINEARCH%%-windows/msvfw32.dll
 lib/wine/%%WINEARCH%%-windows/msvidc32.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/msvideo.dll16
+lib/wine/%%WINEARCH%%-windows/msvproc.dll
 lib/wine/%%WINEARCH%%-windows/mswsock.dll
 lib/wine/%%WINEARCH%%-windows/msxml.dll
 lib/wine/%%WINEARCH%%-windows/msxml2.dll
@@ -2267,6 +2276,7 @@ lib/wine/%%WINEARCH%%-windows/ntdsapi.dll
 lib/wine/%%WINEARCH%%-windows/ntoskrnl.exe
 lib/wine/%%WINEARCH%%-windows/ntprint.dll
 lib/wine/%%WINEARCH%%-windows/objsel.dll
+lib/wine/%%WINEARCH%%-windows/odbc32.dll
 lib/wine/%%WINEARCH%%-windows/odbcbcp.dll
 lib/wine/%%WINEARCH%%-windows/odbccp32.dll
 lib/wine/%%WINEARCH%%-windows/odbccu32.dll
@@ -2327,6 +2337,7 @@ lib/wine/%%WINEARCH%%-windows/regedit.exe
 lib/wine/%%WINEARCH%%-windows/regini.exe
 lib/wine/%%WINEARCH%%-windows/regsvcs.exe
 lib/wine/%%WINEARCH%%-windows/regsvr32.exe
+lib/wine/%%WINEARCH%%-windows/resampledmo.dll
 lib/wine/%%WINEARCH%%-windows/resutils.dll
 lib/wine/%%WINEARCH%%-windows/riched20.dll
 lib/wine/%%WINEARCH%%-windows/riched32.dll
@@ -2550,6 +2561,8 @@ lib/wine/%%WINEARCH%%-windows/wlanapi.dll
 lib/wine/%%WINEARCH%%-windows/wlanui.dll
 lib/wine/%%WINEARCH%%-windows/wldap32.dll
 lib/wine/%%WINEARCH%%-windows/wldp.dll
+lib/wine/%%WINEARCH%%-windows/wmadmod.dll
+lib/wine/%%WINEARCH%%-windows/wmvdecod.dll
 lib/wine/%%WINEARCH%%-windows/wmasf.dll
 lib/wine/%%WINEARCH%%-windows/wmi.dll
 lib/wine/%%WINEARCH%%-windows/wmic.exe

@@ -1000,6 +1000,7 @@
     SUBDIR += py-ml-dtypes
     SUBDIR += py-mnnpy
     SUBDIR += py-moarchiving
+    SUBDIR += py-modin
     SUBDIR += py-mpmath
     SUBDIR += py-munkres
     SUBDIR += py-narwhals

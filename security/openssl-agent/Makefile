@@ -1,5 +1,5 @@
 PORTNAME=	openssl-agent
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 CATEGORIES=	security
 MASTER_SITES=	https://pkg.cppget.org/1/alpha/build2/
 
@@ -10,7 +10,7 @@ WWW=		https://git.build2.org/cgit/openssl-agent/tree/README
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	build2>=0:devel/build2
+BUILD_DEPENDS=	build2>=0.17.0:devel/build2
 LIB_DEPENDS=	libbutl.so:devel/build2
 
 PLIST_FILES=	bin/openssl-agent-pkcs11 \

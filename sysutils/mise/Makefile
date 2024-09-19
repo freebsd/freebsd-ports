@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.9.3
+DISTVERSION=	2024.9.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -43,6 +43,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		backtrace-0.3.71 \
 		base64-0.22.1 \
 		base64ct-1.6.0 \
+		bit-set-0.6.0 \
+		bit-vec-0.7.0 \
 		bitflags-1.3.2 \
 		bitflags-2.6.0 \
 		block-buffer-0.10.4 \
@@ -51,12 +53,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bumpalo-3.16.0 \
 		bytecount-0.6.8 \
 		byteorder-1.5.0 \
-		bytes-1.7.1 \
+		bytes-1.7.2 \
 		bzip2-0.4.4 \
 		bzip2-sys-0.1.11+1.0.8 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.1.18 \
+		cc-1.1.21 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.38 \
@@ -131,6 +133,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		fastrand-2.1.1 \
 		fiat-crypto-0.2.9 \
 		filetime-0.2.25 \
+		filetime_creation-0.2.0 \
 		fixedbitset-0.4.2 \
 		flate2-1.0.33 \
 		float-cmp-0.9.0 \
@@ -177,7 +180,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hyper-rustls-0.27.3 \
 		hyper-tls-0.6.0 \
 		hyper-util-0.1.8 \
-		iana-time-zone-0.1.60 \
+		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
 		ignore-0.4.23 \
@@ -212,6 +215,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lua-src-547.0.0 \
 		luajit-src-210.5.10+f725e44 \
 		lzma-rs-0.3.0 \
+		lzma-rust-0.1.7 \
 		lzma-sys-0.1.20 \
 		mac-0.1.1 \
 		markup5ever-0.12.1 \
@@ -234,6 +238,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		nix-0.29.0 \
 		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
+		nt-time-0.8.1 \
 		nu-ansi-term-0.46.0 \
 		num-conv-0.1.0 \
 		num-traits-0.2.19 \
@@ -286,7 +291,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		predicates-3.1.2 \
 		predicates-core-1.0.8 \
 		predicates-tree-1.0.11 \
-		pretty_assertions-1.4.0 \
+		pretty_assertions-1.4.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.86 \
@@ -341,6 +346,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		serde_spanned-0.6.7 \
 		serde_urlencoded-0.7.1 \
 		servo_arc-0.3.0 \
+		sevenz-rust-0.6.1 \
 		sha1-0.10.6 \
 		sha2-0.10.8 \
 		sharded-slab-0.1.7 \
@@ -404,7 +410,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-util-0.7.12 \
 		toml-0.8.19 \
 		toml_datetime-0.6.8 \
-		toml_edit-0.22.20 \
+		toml_edit-0.22.21 \
 		tower-0.4.13 \
 		tower-layer-0.3.3 \
 		tower-service-0.3.3 \
@@ -425,8 +431,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unic-ucd-version-0.9.0 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.13 \
-		unicode-normalization-0.1.23 \
-		unicode-segmentation-1.11.0 \
+		unicode-normalization-0.1.24 \
+		unicode-segmentation-1.12.0 \
 		unicode-width-0.1.11 \
 		untrusted-0.9.0 \
 		url-2.5.2 \
@@ -493,7 +499,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		xattr-1.3.1 \
 		xx-1.1.8 \
 		xz2-0.1.7 \
-		yansi-0.5.1 \
+		yansi-1.0.1 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35 \
 		zeroize-1.8.1 \

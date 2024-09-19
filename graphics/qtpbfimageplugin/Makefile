@@ -1,6 +1,6 @@
 PORTNAME=	qtpbfimageplugin
 PORTVERSION=	2.1
-PORTREVISION=	10
+PORTREVISION=	12
 CATEGORIES=	graphics
 
 MAINTAINER=	sikmir@gmail.com

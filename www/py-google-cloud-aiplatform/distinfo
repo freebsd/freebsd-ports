@@ -1,3 +1,3 @@
-TIMESTAMP = 1723345647
-SHA256 (google-cloud-aiplatform-1.61.0.tar.gz) = 648e3cd7bb75be706d3c31d852a3d4d8a2e616ad4db4cf520ef4430615cf8ad9
-SIZE (google-cloud-aiplatform-1.61.0.tar.gz) = 6141588
+TIMESTAMP = 1726633346
+SHA256 (google-cloud-aiplatform-1.67.0.tar.gz) = 4c9738d5a66d8baae01e1d0150fa972960481a1829c2ec2060b8a4fe16768901
+SIZE (google-cloud-aiplatform-1.67.0.tar.gz) = 6281951

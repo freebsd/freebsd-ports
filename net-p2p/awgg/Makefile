@@ -15,6 +15,8 @@ RUN_DEPENDS=	aria2c:www/aria2 \
 		curl:ftp/curl \
 		yt-dlp:www/yt-dlp
 
+ONLY_FOR_ARCHS=	i386 amd64
+
 gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5 ${PORTNAME}-qt6
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt6
 qt6_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt5

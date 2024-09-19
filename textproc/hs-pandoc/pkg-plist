@@ -82,6 +82,7 @@ share/man/man1/pandoc.1.gz
 %%NO_EMBED_DATA%%%%DATADIR%%/data/pptx/ppt/viewProps.xml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/affiliations.jats
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/article.jats_publishing
+%%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.ansi
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.asciidoc
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.biblatex
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.bibtex

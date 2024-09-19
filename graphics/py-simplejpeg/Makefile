@@ -1,0 +1,31 @@
+PORTNAME=	simplejpeg
+DISTVERSION=	1.7.6
+CATEGORIES=	graphics python
+MASTER_SITES=	PYPI
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Simple package for fast JPEG encoding and decoding
+WWW=		https://gitlab.com/jfolz/simplejpeg
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}cython3>0:lang/cython3@${PY_FLAVOR} \
+		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+
+USES=		cmake:indirect python
+USE_PYTHON=	pep517 autoplist pytest
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/test
+
+post-extract: # force cythonization because pre-cythonized _jpeg.c fails to compile
+	@${RM} ${WRKSRC}/simplejpeg/_jpeg.c
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/simplejpeg/_jpeg${PYTHON_EXT_SUFFIX}.so
+
+.include <bsd.port.mk>

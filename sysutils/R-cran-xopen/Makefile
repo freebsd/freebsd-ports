@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Open System Files, 'URLs', Anything
 WWW=		https://github.com/r-lib/xopen #readme
 

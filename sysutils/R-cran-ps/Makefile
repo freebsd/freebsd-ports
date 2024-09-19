@@ -3,7 +3,7 @@ DISTVERSION=	1.7.5
 CATEGORIES=	sysutils
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	List, Query, Manipulate System Processes
 WWW=		https://github.com/r-lib/ps#readme
 

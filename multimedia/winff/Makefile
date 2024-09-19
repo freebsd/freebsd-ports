@@ -14,6 +14,8 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg
 
+ONLY_FOR_ARCHS=	i386 amd64
+
 USES=		fpc lazarus:flavors xorg
 USE_XORG=	x11
 

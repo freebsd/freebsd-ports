@@ -1,7 +1,7 @@
 PORTNAME=	ticker
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.6.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -22,10 +22,7 @@ GH_TUPLE=	acarl005:stripansi:5a71ef0e047d:acarl005_stripansi/vendor/github.com/a
 		charmbracelet:bubbles:v0.10.3:charmbracelet_bubbles/vendor/github.com/charmbracelet/bubbles \
 		charmbracelet:bubbletea:v0.26.4:charmbracelet_bubbletea/vendor/github.com/charmbracelet/bubbletea \
 		charmbracelet:lipgloss:v0.5.0:charmbracelet_lipgloss/vendor/github.com/charmbracelet/lipgloss \
-		charmbracelet:x:ansi/v0.1.2:charmbracelet_x_ansi/vendor/github.com/charmbracelet/x \
-		charmbracelet:x:term/v0.1.1:charmbracelet_x_term \
-		charmbracelet:x:v0.1.0:charmbracelet_x_input/vendor/github.com/charmbracelet/x/input \
-		charmbracelet:x:v0.1.0:charmbracelet_x_windows/vendor/github.com/charmbracelet/x/windows \
+		charmbracelet:x:ansi/v0.2.3:charmbracelet_x_ansi/vendor/github.com/charmbracelet/x \
 		erikgeiser:coninput:1c3628e74d0f:erikgeiser_coninput/vendor/github.com/erikgeiser/coninput \
 		fsnotify:fsnotify:v1.5.1:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-ini:ini:v1.66.4:go_ini_ini/vendor/gopkg.in/ini.v1 \
@@ -76,10 +73,6 @@ PORTDOCS=	README.md \
 		docs/ticker-currency.png \
 		docs/ticker.gif
 OPTIONS_DEFINE=	DOCS
-
-post-extract:
-	@${RM} -r ${WRKSRC}/vendor/github.com/charmbracelet/x/term
-	@${RLN} ${WRKSRC_charmbracelet_x_term}/term ${WRKSRC}/vendor/github.com/charmbracelet/x/term
 
 do-install-DOCS-on:
 	@${ECHO_MSG} "====> Installing documentation"

@@ -1,5 +1,5 @@
 PORTNAME=	omniauth-saml
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,8 @@ WWW=		https://github.com/omniauth/omniauth-saml
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-omniauth>=2.0<3:security/rubygem-omniauth \
-		rubygem-ruby-saml>=1.12<2:security/rubygem-ruby-saml
+RUN_DEPENDS=	rubygem-omniauth>=2.1<3:security/rubygem-omniauth \
+		rubygem-ruby-saml>=1.17<2:security/rubygem-ruby-saml
 
 USES=		gem
 

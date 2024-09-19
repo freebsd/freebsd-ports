@@ -1,11 +1,11 @@
---- Makefile.in.orig	Fri Aug  8 04:33:51 2008
-+++ Makefile.in	Sun Aug 10 11:12:54 2008
-@@ -688,8 +688,6 @@
- 	cp control/ipmitool.spec $(distdir)
+--- Makefile.am.orig	2024-09-05 20:15:43 UTC
++++ Makefile.am
+@@ -80,8 +80,6 @@ install-data-local: install-pen-database
+ endif
  
- install-data-local:
+ install-data-local: install-pen-database
 -	mkdir -p $(DESTDIR)$(DOCDIR)
 -	$(INSTALL_DATA) $(DOCLIST) $(DESTDIR)$(DOCDIR)
  
- uninstall-local:
+ uninstall-local: uninstall-pen-database
  	-rm -rf $(DESTDIR)$(DOCDIR)

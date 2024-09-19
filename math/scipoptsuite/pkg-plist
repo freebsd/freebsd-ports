@@ -1,5 +1,6 @@
 bin/fscip
 bin/gcg
+bin/papilo
 bin/parascip
 bin/scip
 bin/soplex
@@ -1089,15 +1090,15 @@ lib/cmake/zimpl/zimpl-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/zimpl/zimpl-targets.cmake
 lib/libgcg.so
 lib/libgcg.so.3.6
-lib/libgcg.so.3.6.2.0
+lib/libgcg.so.3.6.3.0
 lib/libpapilo-core.a
 lib/libscip.so
 lib/libscip.so.9.1
-lib/libscip.so.9.1.0.0
+lib/libscip.so.9.1.1.0
 lib/libsoplex-pic.a
 lib/libsoplex.a
 lib/libsoplexshared.so
 lib/libsoplexshared.so.7.1
-lib/libsoplexshared.so.7.1.0.0
+lib/libsoplexshared.so.7.1.1.0
 lib/libzimpl-pic.a
 lib/libzimpl.a

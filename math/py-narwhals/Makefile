@@ -1,7 +1,8 @@
 PORTNAME=	narwhals
-PORTVERSION=	1.4.2
+PORTVERSION=	1.7.0
 CATEGORIES=	math python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/narwhals-dev/narwhals/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org

@@ -1,6 +1,6 @@
 PORTNAME=	checkmol
 PORTVERSION=	0.5
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	science
 MASTER_SITES=	https://homepage.univie.ac.at/norbert.haider/download/chemistry/checkmol/
 DISTFILES=	${PORTNAME}
@@ -11,6 +11,8 @@ COMMENT=	Analyze molecules for the presence of functional groups
 WWW=		https://homepage.univie.ac.at/norbert.haider/cheminf/cmmm.html
 
 LICENSE=	GPLv2+
+
+ONLY_FOR_ARCHS=	i386 amd64 aarch64
 
 NO_WRKSUBDIR=	yes
 

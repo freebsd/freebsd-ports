@@ -1,6 +1,6 @@
---- compiler/globals.pas	2023-10-27 23:30:38.797736000 -0500
-+++ compiler/globals.pas	2023-10-27 23:31:45.729414000 -0500
-@@ -1023,6 +1023,19 @@
+--- compiler/globals.pas	2024-09-11 20:40:10.000000000 +0000
++++ compiler/globals.pas	2024-09-13 07:28:37.270196000 +0000
+@@ -1042,6 +1042,19 @@
             FreeEnvPChar(envvalue);
           end;
  {$endif openbsd}
@@ -20,13 +20,13 @@
         var
           envstr: string;
           envvalue: pchar;
-@@ -1062,6 +1075,9 @@
+@@ -1081,6 +1094,9 @@
           Replace(s,'$OPENBSD_LOCALBASE',GetOpenBSDLocalBase);
           Replace(s,'$OPENBSD_X11BASE',GetOpenBSDX11Base);
  {$endif openbsd}
 +{$ifdef freebsd}
 +         Replace(s,'$FREEBSD_LOCALBASE',GetFreeBSDLocalBase);
 +{$endif freebsd}
-          if not substitute_env_variables then
-            exit;
-          { Replace environment variables between dollar signs }
+ {$ifdef xtensa}
+          if idf_version > 0 then
+            Replace(s,'$IDF_VERSION',idfversionstring(idf_version));

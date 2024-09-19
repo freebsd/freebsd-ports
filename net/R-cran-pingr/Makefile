@@ -1,12 +1,11 @@
 PORTNAME=	pingr
-DISTVERSION=	2.0.2
-PORTREVISION=	1
+DISTVERSION=	2.0.3
 CATEGORIES=	net
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Check if a Remote Computer is Up
-WWW=		https://github.com/r-lib/pingr#readme
+WWW=		https://cran.r-project.org/web/packages/pingr/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

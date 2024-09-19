@@ -3,7 +3,7 @@ DISTVERSION=	3.2.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Unit Testing for R
 WWW=		https://testthat.r-lib.org
 

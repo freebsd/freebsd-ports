@@ -203,7 +203,7 @@ LIB_DEPENDS+=	libffi.so:devel/libffi
 .endif
 
 .if ${COMPILER_TYPE} == clang
-MAKE_ENV+=	COMPILER_WARNINGS_FATAL=false USE_CLANG=true
+MAKE_ENV+=	USE_CLANG=true
 CONFIGURE_ENV+=	LIBCXX="-lc++"
 # clang 16 defaults to C++17, which no longer allows the 'register' keyword.
 # There is an upstream commit that removes all the individual 'register'

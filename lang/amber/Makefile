@@ -1,6 +1,5 @@
 PORTNAME=	amber
-DISTVERSION=	0.3.4-alpha
-PORTREVISION=	2
+DISTVERSION=	0.3.5-alpha
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
@@ -15,8 +14,7 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		cargo
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	Ph0enixKM
-GH_PROJECT=	Amber
+GH_ACCOUNT=	amber-lang
 
 CARGO_CRATES=	aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
@@ -32,7 +30,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		bitflags-2.6.0 \
 		bstr-1.9.1 \
 		bumpalo-3.16.0 \
-		capitalize-0.1.0 \
+		capitalize-0.3.4 \
 		cc-1.0.104 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
@@ -52,12 +50,14 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		float-cmp-0.9.0 \
 		glob-0.3.1 \
 		heck-0.5.0 \
-		heraclitus-compiler-1.5.8 \
+		heraclitus-compiler-1.7.8 \
 		httpdate-1.0.3 \
 		iana-time-zone-0.1.60 \
 		iana-time-zone-haiku-0.1.2 \
+		include_dir-0.7.4 \
+		include_dir_macros-0.7.4 \
 		is_terminal_polyfill-1.70.0 \
-		itertools-0.11.0 \
+		itertools-0.13.0 \
 		js-sys-0.3.69 \
 		lazy_static-1.5.0 \
 		libc-0.2.155 \
@@ -121,8 +121,5 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_msvc-0.52.5
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|"/bin/bash"|"${LOCALBASE}/bin/bash"|' ${WRKSRC}/src/compiler.rs
 
 .include <bsd.port.mk>

@@ -1,12 +1,11 @@
 PORTNAME=	crayon
-DISTVERSION=	1.5.2
-PORTREVISION=	1
+DISTVERSION=	1.5.3
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Colored Terminal Output
-WWW=		https://github.com/r-lib/crayon#readme
+WWW=		https://github.com/r-lib/crayon
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,7 +1,6 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.20.0
-PORTREVISION=	2
+DISTVERSION=	2.21.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +15,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	Canop
 
-CARGO_CRATES=	adler-1.0.2 \
+CARGO_CRATES=	adler2-2.0.0 \
 		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
@@ -26,10 +25,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		anstyle-parse-0.2.5 \
 		anstyle-query-1.1.1 \
 		anstyle-wincon-3.0.4 \
-		anyhow-1.0.86 \
+		anyhow-1.0.88 \
 		arc-swap-1.7.1 \
 		arrayvec-0.5.2 \
-		arrayvec-0.7.4 \
+		arrayvec-0.7.6 \
 		autocfg-1.3.0 \
 		bitflags-1.3.2 \
 		bitflags-2.6.0 \
@@ -38,16 +37,16 @@ CARGO_CRATES=	adler-1.0.2 \
 		bumpalo-3.16.0 \
 		bytes-1.7.1 \
 		bytesize-1.3.0 \
-		camino-1.1.7 \
+		camino-1.1.9 \
 		cargo-platform-0.1.8 \
 		cargo_metadata-0.18.1 \
-		cc-1.1.10 \
+		cc-1.1.18 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.38 \
-		clap-4.5.15 \
+		clap-4.5.17 \
 		clap-help-1.3.0 \
-		clap_builder-4.5.15 \
+		clap_builder-4.5.17 \
 		clap_derive-4.5.13 \
 		clap_lex-0.7.2 \
 		cli-log-2.0.0 \
@@ -76,34 +75,34 @@ CARGO_CRATES=	adler-1.0.2 \
 		equivalent-1.0.1 \
 		errno-0.3.9 \
 		faster-hex-0.9.0 \
-		fastrand-2.1.0 \
+		fastrand-2.1.1 \
 		file-size-1.0.3 \
-		filetime-0.2.24 \
-		flate2-1.0.31 \
+		filetime-0.2.25 \
+		flate2-1.0.33 \
 		form_urlencoded-1.2.1 \
 		fsevent-sys-4.1.0 \
 		getrandom-0.2.15 \
 		gix-0.58.0 \
 		gix-actor-0.30.0 \
 		gix-archive-0.9.0 \
-		gix-attributes-0.22.3 \
+		gix-attributes-0.22.5 \
 		gix-bitmap-0.2.11 \
 		gix-chunk-0.4.8 \
-		gix-command-0.3.8 \
+		gix-command-0.3.9 \
 		gix-commitgraph-0.24.3 \
 		gix-config-0.34.0 \
-		gix-config-value-0.14.7 \
-		gix-credentials-0.24.4 \
+		gix-config-value-0.14.8 \
+		gix-credentials-0.24.5 \
 		gix-date-0.8.7 \
 		gix-diff-0.40.0 \
 		gix-discover-0.29.0 \
 		gix-features-0.38.2 \
 		gix-filter-0.9.0 \
 		gix-fs-0.10.2 \
-		gix-glob-0.16.4 \
+		gix-glob-0.16.5 \
 		gix-hash-0.14.2 \
 		gix-hashtable-0.5.2 \
-		gix-ignore-0.11.3 \
+		gix-ignore-0.11.4 \
 		gix-index-0.29.0 \
 		gix-lock-13.1.1 \
 		gix-macros-0.1.5 \
@@ -112,22 +111,22 @@ CARGO_CRATES=	adler-1.0.2 \
 		gix-object-0.41.0 \
 		gix-odb-0.57.0 \
 		gix-pack-0.47.0 \
-		gix-packetline-blocking-0.17.4 \
-		gix-path-0.10.9 \
+		gix-packetline-blocking-0.17.5 \
+		gix-path-0.10.11 \
 		gix-pathspec-0.6.0 \
-		gix-prompt-0.8.6 \
+		gix-prompt-0.8.7 \
 		gix-quote-0.4.12 \
 		gix-ref-0.41.0 \
 		gix-refspec-0.22.0 \
 		gix-revision-0.26.0 \
 		gix-revwalk-0.12.0 \
-		gix-sec-0.10.7 \
+		gix-sec-0.10.8 \
 		gix-status-0.5.0 \
 		gix-submodule-0.8.0 \
 		gix-tempfile-13.1.1 \
-		gix-trace-0.1.9 \
+		gix-trace-0.1.10 \
 		gix-traverse-0.37.0 \
-		gix-url-0.27.4 \
+		gix-url-0.27.5 \
 		gix-utils-0.1.12 \
 		gix-validate-0.8.5 \
 		gix-worktree-0.30.0 \
@@ -142,28 +141,28 @@ CARGO_CRATES=	adler-1.0.2 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
 		imara-diff-0.1.7 \
-		indexmap-2.3.0 \
+		indexmap-2.5.0 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		io-close-0.3.7 \
 		is_terminal_polyfill-1.70.1 \
 		itoa-1.0.11 \
-		js-sys-0.3.69 \
+		js-sys-0.3.70 \
 		jwalk-0.8.1 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
 		kstring-2.0.2 \
-		lazy-regex-3.2.0 \
-		lazy-regex-proc_macros-3.2.0 \
-		libc-0.2.155 \
+		lazy-regex-3.3.0 \
+		lazy-regex-proc_macros-3.3.0 \
+		libc-0.2.158 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
 		memchr-2.7.4 \
-		memmap2-0.9.4 \
+		memmap2-0.9.5 \
 		minimad-0.13.1 \
-		miniz_oxide-0.7.4 \
+		miniz_oxide-0.8.0 \
 		mio-0.8.11 \
 		mio-1.0.2 \
 		nix-0.29.0 \
@@ -171,7 +170,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		num-conv-0.1.0 \
 		num-traits-0.2.19 \
 		num_threads-0.1.7 \
-		once_cell-1.19.0 \
+		once_cell-1.20.0 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		percent-encoding-2.3.1 \
@@ -179,25 +178,26 @@ CARGO_CRATES=	adler-1.0.2 \
 		proc-macro2-1.0.86 \
 		proc-status-0.1.1 \
 		prodash-28.0.0 \
-		quote-1.0.36 \
+		quote-1.0.37 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.5.3 \
-		redox_users-0.4.5 \
+		redox_syscall-0.5.4 \
+		redox_users-0.4.6 \
 		regex-1.10.6 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.8.4 \
-		rustix-0.38.34 \
+		rustix-0.38.37 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		semver-1.0.23 \
-		serde-1.0.206 \
-		serde_derive-1.0.206 \
-		serde_json-1.0.124 \
+		serde-1.0.210 \
+		serde_derive-1.0.210 \
+		serde_json-1.0.128 \
 		serde_spanned-0.6.7 \
 		sha1_smol-1.0.1 \
 		shell-words-1.1.0 \
+		shlex-1.3.0 \
 		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.4 \
 		signal-hook-registry-1.4.2 \
@@ -206,7 +206,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		strict-0.2.0 \
 		strsim-0.11.1 \
 		syn-1.0.109 \
-		syn-2.0.74 \
+		syn-2.0.77 \
 		tempfile-3.12.0 \
 		termimad-0.30.0 \
 		terminal-light-1.5.0 \
@@ -223,7 +223,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		uluru-3.1.0 \
 		unicode-bidi-0.3.15 \
 		unicode-bom-2.0.3 \
-		unicode-ident-1.0.12 \
+		unicode-ident-1.0.13 \
 		unicode-normalization-0.1.23 \
 		unicode-width-0.1.13 \
 		url-2.5.2 \
@@ -233,11 +233,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		vte_generate_state_changes-0.1.2 \
 		walkdir-2.5.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.92 \
-		wasm-bindgen-backend-0.2.92 \
-		wasm-bindgen-macro-0.2.92 \
-		wasm-bindgen-macro-support-0.2.92 \
-		wasm-bindgen-shared-0.2.92 \
+		wasm-bindgen-0.2.93 \
+		wasm-bindgen-backend-0.2.93 \
+		wasm-bindgen-macro-0.2.93 \
+		wasm-bindgen-macro-support-0.2.93 \
+		wasm-bindgen-shared-0.2.93 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \

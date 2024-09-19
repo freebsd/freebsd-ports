@@ -1,5 +1,5 @@
 PORTNAME=	dobutsu
-DISTVERSION=	5
+DISTVERSION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://fuz.su/pub/dobutsu/
 

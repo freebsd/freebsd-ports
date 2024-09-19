@@ -4,9 +4,9 @@ PORTREVISION=	1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Wrapper for the Gnu Scientific Library
-WWW=		https://github.com/RobinHankin/gsl
+WWW=		https://cran.r-project.org/web/packages/gsl/
 
 LICENSE=	GPLv3
 

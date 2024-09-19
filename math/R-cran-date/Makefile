@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Functions for Handling Dates
 WWW=		https://CRAN.R-project.org/package=date
 

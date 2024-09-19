@@ -950,7 +950,7 @@ lib/libagrum.so.%%VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/clg/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/clg/inference.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/clg/learning.py
-%%PYTHON%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/clg/notebook.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/clg/notebook.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/config.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/ctbn/CIM.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/ctbn/CTBN.py
@@ -971,6 +971,7 @@ lib/libagrum.so.%%VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/bn2scores.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/bn_vs_bn.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/cn2graph.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/discretizer.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/dynamicBN.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/explain.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/export.py

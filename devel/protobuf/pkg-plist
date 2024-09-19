@@ -127,8 +127,8 @@ include/google/protobuf/compiler/retention.h
 include/google/protobuf/compiler/ruby/ruby_generator.h
 include/google/protobuf/compiler/rust/accessors/accessor_case.h
 include/google/protobuf/compiler/rust/accessors/accessors.h
+include/google/protobuf/compiler/rust/accessors/default_value.h
 include/google/protobuf/compiler/rust/accessors/generator.h
-include/google/protobuf/compiler/rust/accessors/helpers.h
 include/google/protobuf/compiler/rust/context.h
 include/google/protobuf/compiler/rust/crate_mapping.h
 include/google/protobuf/compiler/rust/enum.h
@@ -289,6 +289,7 @@ include/upb/message/internal/accessors.h
 include/upb/message/internal/array.h
 include/upb/message/internal/compare_unknown.h
 include/upb/message/internal/extension.h
+include/upb/message/internal/iterator.h
 include/upb/message/internal/map.h
 include/upb/message/internal/map_entry.h
 include/upb/message/internal/map_sorter.h
@@ -297,6 +298,7 @@ include/upb/message/internal/tagged_ptr.h
 include/upb/message/internal/types.h
 include/upb/message/map.h
 include/upb/message/map_gencode_util.h
+include/upb/message/merge.h
 include/upb/message/message.h
 include/upb/message/tagged_ptr.h
 include/upb/message/value.h
@@ -360,6 +362,8 @@ include/upb/reflection/method_def.h
 include/upb/reflection/oneof_def.h
 include/upb/reflection/service_def.h
 include/upb/text/encode.h
+include/upb/text/internal/encode.h
+include/upb/text/options.h
 include/upb/util/def_to_proto.h
 include/upb/util/required_fields.h
 include/upb/wire/decode.h
@@ -388,8 +392,8 @@ lib/libprotobuf.so.%%PORTVERSION%%.0
 lib/libprotoc.so
 lib/libprotoc.so.%%PORTVERSION%%.0
 lib/libupb.a
-lib/libutf8_range.a
-lib/libutf8_validity.a
+lib/libutf8_range.so
+lib/libutf8_validity.so
 libdata/pkgconfig/protobuf-lite.pc
 libdata/pkgconfig/protobuf.pc
 libdata/pkgconfig/utf8_range.pc

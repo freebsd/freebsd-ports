@@ -12,6 +12,7 @@ WWW=		https://github.com/Z3Prover/z3
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../../../LICENSE.txt
 
+BROKEN=		Could not find libz3.so
 BROKEN_armv7=	fails to compile on 13.1 and 14: clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=268009
 BROKEN_riscv64=	fails to configure, see https://github.com/Z3Prover/z3/issues/6183
 

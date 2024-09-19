@@ -1,6 +1,6 @@
 PORTNAME=	librashader
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.3
+DISTVERSION=	0.4.2
 CATEGORIES=	devel
 
 MAINTAINER=	bsdcode@disroot.org

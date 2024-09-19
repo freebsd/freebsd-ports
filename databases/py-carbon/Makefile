@@ -32,7 +32,7 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} > 30900
-BROKEN=		Python-3.9 is not supported
+BROKEN=		Python-3.9 or later is not supported
 .endif
 
 post-patch:

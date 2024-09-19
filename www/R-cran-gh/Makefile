@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	'GitHub' 'API'
 WWW=		https://gh.r-lib.org/
 

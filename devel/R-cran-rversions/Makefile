@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Query 'R' Versions, Including 'r-release' and 'r-oldrel'
 WWW=		https://github.com/r-hub/rversions
 

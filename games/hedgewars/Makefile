@@ -15,6 +15,8 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libpng.so:graphics/png
 
+ONLY_FOR_ARCHS=	i386 amd64
+
 USES=		cmake:noninja desktop-file-utils fpc gl lua:51 pkgconfig qt:5 \
 		sdl tar:bzip2
 USE_SDL=	sdl2 mixer2 image2 ttf2 net2

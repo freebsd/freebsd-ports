@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_base_window.cc.orig	2024-08-12 10:09:34 UTC
+--- electron/shell/browser/api/electron_api_base_window.cc.orig	2024-09-11 03:18:31 UTC
 +++ electron/shell/browser/api/electron_api_base_window.cc
 @@ -40,7 +40,7 @@
  #include "shell/browser/ui/views/win_frame_view.h"
@@ -27,7 +27,7 @@
  void BaseWindow::SetTitleBarOverlay(const gin_helper::Dictionary& options,
                                      gin_helper::Arguments* args) {
    // Ensure WCO is already enabled on this window
-@@ -1301,7 +1301,7 @@ void BaseWindow::BuildPrototype(v8::Isolate* isolate,
+@@ -1300,7 +1300,7 @@ void BaseWindow::BuildPrototype(v8::Isolate* isolate,
        .SetMethod("setThumbnailToolTip", &BaseWindow::SetThumbnailToolTip)
        .SetMethod("setAppDetails", &BaseWindow::SetAppDetails)
  #endif

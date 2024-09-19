@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_crash_reporter.cc.orig	2023-06-07 10:09:25 UTC
+--- electron/shell/browser/api/electron_api_crash_reporter.cc.orig	2024-09-11 03:18:31 UTC
 +++ electron/shell/browser/api/electron_api_crash_reporter.cc
 @@ -31,7 +31,7 @@
  #include "shell/common/process_util.h"
@@ -9,7 +9,7 @@
  #include "components/crash/core/app/crashpad.h"  // nogncheck
  #include "components/crash/core/browser/crash_upload_list_crashpad.h"  // nogncheck
  #include "components/crash/core/common/crash_key.h"
-@@ -66,7 +66,7 @@ bool g_crash_reporter_initialized = false;
+@@ -66,7 +66,7 @@ namespace electron::api::crash_reporter {
  
  namespace electron::api::crash_reporter {
  
@@ -18,7 +18,7 @@
  namespace {
  
  void NoOp() {}
-@@ -133,7 +133,7 @@ void Start(const std::string& submit_url,
+@@ -137,7 +137,7 @@ void Start(const std::string& submit_url,
             const std::map<std::string, std::string>& extra,
             bool is_node_process) {
    TRACE_EVENT0("electron", "crash_reporter::Start");
@@ -27,7 +27,7 @@
    if (g_crash_reporter_initialized)
      return;
    g_crash_reporter_initialized = true;
-@@ -179,7 +179,7 @@ void Start(const std::string& submit_url,
+@@ -183,7 +183,7 @@ namespace {
  
  namespace {
  
@@ -36,7 +36,7 @@
  void GetUploadedReports(
      v8::Isolate* isolate,
      base::OnceCallback<void(v8::Local<v8::Value>)> callback) {
-@@ -235,13 +235,13 @@ v8::Local<v8::Value> GetUploadedReports(v8::Isolate* i
+@@ -239,13 +239,13 @@ void SetUploadToServer(bool upload) {
  #endif
  
  void SetUploadToServer(bool upload) {
@@ -52,7 +52,7 @@
    return false;
  #else
    return ElectronCrashReporterClient::Get()->GetCollectStatsConsent();
-@@ -250,7 +250,7 @@ bool GetUploadToServer() {
+@@ -254,7 +254,7 @@ v8::Local<v8::Value> GetParameters(v8::Isolate* isolat
  
  v8::Local<v8::Value> GetParameters(v8::Isolate* isolate) {
    std::map<std::string, std::string> keys;
@@ -61,7 +61,7 @@
    electron::crash_keys::GetCrashKeys(&keys);
  #endif
    return gin::ConvertToV8(isolate, keys);
-@@ -262,7 +262,7 @@ void Initialize(v8::Local<v8::Object> exports,
+@@ -266,7 +266,7 @@ void Initialize(v8::Local<v8::Object> exports,
                  void* priv) {
    gin_helper::Dictionary dict(context->GetIsolate(), exports);
    dict.SetMethod("start", &electron::api::crash_reporter::Start);

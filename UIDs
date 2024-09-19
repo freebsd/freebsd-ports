@@ -309,7 +309,7 @@ v2ray:*:360:360::0:0:V2Ray Daemon:/nonexistent:/usr/sbin/nologin
 httptunnel:*:361:361::0:0:httptunnel Daemon:/nonexistent:/usr/sbin/nologin
 readarr:*:362:362::0:0:Readarr Daemon:/nonexistent:/usr/sbin/nologin
 victoria-logs:*:363:363::0:0:VictoriaLogs Daemon:/nonexistent:/usr/sbin/nologin
-# free: 364
+elog:*:364:364::0:0:Elog server:/nonexistent:/usr/sbin/nologin
 # free: 365
 # free: 366
 # free: 367
@@ -427,7 +427,7 @@ prometheus:*:478:478::0:0:Prometheus Daemon:/var/tmp/prometheus:/usr/sbin/nologi
 alertmanager:*:479:479::0:0:Alertmanager Daemon:/var/tmp/alertmanager:/usr/sbin/nologin
 datadog:*:480:480::0:0:DataDog Agent:/var/db/datadog:/usr/sbin/nologin
 promxy:*:481:481::0:0:Promxy Daemon:/nonexistent:/usr/sbin/nologin
-# free: 482
+openbao:*:482:482:daemon:0:0:OpenBao Daemon:/nonexistent:/usr/sbin/nologin
 # free: 483
 # free: 484
 # free: 485

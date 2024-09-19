@@ -1,6 +1,6 @@
 PORTNAME=	mnn
 DISTVERSION=	2.9.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org

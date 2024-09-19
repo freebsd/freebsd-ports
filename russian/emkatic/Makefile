@@ -13,6 +13,8 @@ WWW=		https://sourceforge.net/projects/emkatic/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+ONLY_FOR_ARCHS=	i386 amd64
+
 USES=		fpc lazarus:flavors xorg
 USE_XORG=	x11
 

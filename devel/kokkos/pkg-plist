@@ -583,10 +583,10 @@ lib/cmake/Kokkos/KokkosTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Kokkos/KokkosTargets.cmake
 lib/libkokkoscontainers.so
 lib/libkokkoscontainers.so.4.4
-lib/libkokkoscontainers.so.4.4.0
+lib/libkokkoscontainers.so.4.4.1
 lib/libkokkoscore.so
 lib/libkokkoscore.so.4.4
-lib/libkokkoscore.so.4.4.0
+lib/libkokkoscore.so.4.4.1
 lib/libkokkossimd.so
 lib/libkokkossimd.so.4.4
-lib/libkokkossimd.so.4.4.0
+lib/libkokkossimd.so.4.4.1

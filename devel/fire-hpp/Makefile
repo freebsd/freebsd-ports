@@ -1,6 +1,6 @@
 PORTNAME=	fire-hpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2
+DISTVERSION=	1.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,6 +17,7 @@ USES=		cmake localbase:ldflags # localbase only for tests but localbase doesn't 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kongaskristjan
 
+CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17
 CMAKE_OFF=	FIRE_EXAMPLES FIRE_UNIT_TESTS
 
 NO_BUILD=	yes

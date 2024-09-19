@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-zh_CN
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.x86_64
 EXTRACT_SUFX=	.rpm
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete office suite with PDF editor
 WWW=		https://www.wps.cn/
 

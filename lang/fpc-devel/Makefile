@@ -1,5 +1,5 @@
 PORTNAME=	fpc
-PORTVERSION=	3.3.1.20240503
+PORTVERSION=	3.3.1.20240913
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/acm/freepascal/:bootstrap \
 		LOCAL/acm/freepascal/:man
@@ -14,13 +14,13 @@ CONFLICTS=	fpc
 
 RUN_DEPENDS=	${LOCALBASE}/bin/as:devel/binutils
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	i386 amd64 aarch64
 
 USES+=		gmake iconv
 USE_BINUTILS=	yes
-BOOTVER=	3.2.2
+BOOTVER?=	3.2.2
 FPCBASEVER=	3.3.1
-MANVER=		3.0.4
+MANVER=		3.2.2
 
 FPC_LDPATH?=	"${LOCALBASE}/bin/ld.bfd"
 
@@ -28,7 +28,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com/freepascal.org
 GL_ACCOUNT=	fpc
 GL_PROJECT=	source
-GL_TAGNAME=	edc1c79cbb2925e9f0d1b929d8da01348eeedc35
+GL_TAGNAME=	84da5e619c4adc3c72c5a6f2da80c56be2899a72
 
 FPCSRCDIR=	source-${GL_TAGNAME}
 
@@ -38,12 +38,22 @@ FPCSRCDIR=	source-${GL_TAGNAME}
 PPNAME=		ppc386
 FPC_ARCH=	i386
 PLIST_SUB+=	FPC_I386="" \
-		FPC_AMD64="@comment "
+		FPC_AMD64="@comment " \
+		FPC_AARCH64="@comment "
 .elif ${ARCH} == "amd64"
 PPNAME=		ppcx64
 FPC_ARCH=	x86_64
 PLIST_SUB+=	FPC_I386="@comment " \
-		FPC_AMD64=""
+		FPC_AMD64="" \
+		FPC_AARCH64="@comment "
+.elif ${ARCH} == "aarch64"
+PPNAME=		ppca64
+FPC_ARCH=	aarch64
+PLIST_SUB+=	FPC_I386="@comment " \
+		FPC_AMD64="@comment " \
+		FPC_AARCH64=""
+BOOTVER=	${FPCBASEVER}
+MAKE_ARGS+=	OVERRIDEVERSIONCHECK=yes
 .endif
 
 .if ${OPSYS} == FreeBSD
@@ -92,6 +102,7 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|900044|${OSVERSION}|g' \
 				-e 's|1201000|${OSVERSION}|g' \
 				-e 's|1200000|${OSVERSION}|g' \
+				-e 's|1302001|${OSVERSION}|g' \
 				-e 's|1400097|${OSVERSION}|g' \
 		${WRKSRC}/rtl/freebsd/${FPC_ARCH}/*.as \
 		${WRKSRC}/rtl/freebsd/${FPC_ARCH}/*.inc
@@ -143,7 +154,8 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/openal/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
-		${WRKSRC}/packages/opencl/fpmake.pp
+		-e 's|x86_64|x86_64,aarch64|g' \
+			${WRKSRC}/packages/opencl/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/proj4/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|os2|freebsd,os2|g' \

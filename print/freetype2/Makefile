@@ -1,5 +1,5 @@
 PORTNAME=	freetype2
-DISTVERSION=	2.13.2
+DISTVERSION=	2.13.3
 CATEGORIES=	print
 MASTER_SITES=	SAVANNAH/${PORTNAME:S/2//} \
 		SF/freetype/${PORTNAME}/${DISTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/
@@ -17,7 +17,6 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/docs/GPLv2.TXT
 LICENSE_PERMS_FTL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		cmake cpe localbase pathfix pkgconfig tar:xz
-
 CPE_PRODUCT=	freetype
 CPE_VENDOR=	freetype
 USE_LDCONFIG=	yes

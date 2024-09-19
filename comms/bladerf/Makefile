@@ -1,5 +1,5 @@
 PORTNAME=	bladeRF
-DISTVERSION=	2023.02
+DISTVERSION=	2024.05
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,15 +15,6 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	Nuand
 GH_TUPLE=	analogdevicesinc:no-OS:0bba46e:x/thirdparty/analogdevicesinc/no-OS
-
-PLIST_FILES=	bin/bladeRF-cli \
-		bin/bladeRF-fsk \
-		include/bladeRF1.h \
-		include/bladeRF2.h \
-		include/libbladeRF.h \
-		lib/libbladeRF.so \
-		lib/libbladeRF.so.2 \
-		libdata/pkgconfig/libbladeRF.pc
 
 .include <bsd.port.pre.mk>
 

@@ -51,10 +51,10 @@ FIREBIRD_DEFAULT?=	3.0
 # Possible values: gfortran
 FORTRAN_DEFAULT?=	gfortran
 # Possible values: 3.2.3, 3.3.1
-.  if !defined(WANT_FPC_DEVEL)
-FPC_DEFAULT?=		3.2.3
-.  else
+.  if (defined(WANT_FPC_DEVEL) && !empty(WANT_FPC_DEVEL)) || ${ARCH:Maarch64}
 FPC_DEFAULT?=		3.3.1
+.  else
+FPC_DEFAULT?=		3.2.3
 .  endif
 # Possible values: 10, 11, 12, 13, 14, 15
 # (Any other version is completely unsupported and not meant for general use.)
@@ -76,10 +76,10 @@ IMAGEMAGICK_DEFAULT?=	7
 # Possible values: 8, 11, 17, 18, 19, 20, 21
 JAVA_DEFAULT?=		8
 # Possible values: 3.4.0, 3.99
-.  if !defined(WANT_LAZARUS_DEVEL)
-LAZARUS_DEFAULT?=	3.4.0
-.  else
+.  if (defined(WANT_LAZARUS_DEVEL) && !empty(WANT_LAZARUS_DEVEL)) || ${ARCH:Maarch64}
 LAZARUS_DEFAULT?=	3.99
+.  else
+LAZARUS_DEFAULT?=	3.4.0
 .  endif
 # Possible values: rust, legacy
 .  if empty(ARCH:Naarch64:Namd64:Narmv7:Ni386:Npowerpc64:Npowerpc64le:Npowerpc:Nriscv64)

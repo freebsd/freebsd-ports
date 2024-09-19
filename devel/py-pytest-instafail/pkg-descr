@@ -1,0 +1,2 @@
+pytest-instafail is a plugin for pytest that shows failures and errors instantly
+instead of waiting until the end of test session.

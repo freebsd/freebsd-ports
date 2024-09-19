@@ -1,0 +1,17 @@
+Cross-platform ZFS replication tool written in Go that supports
+feature detection, bookmarks, and other new features.
+
+This is a fork with more features like
+
+  * support of shell patterns for datasets definitions
+  * new log formatters
+  * ability to log into a file
+  * ability to configure command piplines between `zfs send` and `zfs recv`
+  * Icinga/Nagios checks
+  * fast skip "keep all" pruning
+  * snapshots can be named using local time in timestamps
+  * configurable RPC timeout
+  * configurable path to zfs binary
+  * faster replication
+
+and so on.

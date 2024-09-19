@@ -1,9 +1,10 @@
 PORTNAME=	lua-resty-session
+PORTREVISION=	1
 DISTVERSIONPREFIX=v
 DISTVERSION=	4.0.5
 CATEGORIES=	www
 
-MAINTAINER=	netchild@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lua session library for OpenResty / ngx_lua
 WWW=		https://github.com/bungle/lua-resty-session
 
@@ -12,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	luajit-openresty>=2.1:lang/luajit-openresty
 # XXX: deps for filesystem, postgres, redis backends missing
+
+CONFLICTS_INSTALL=	lua-resty-session-3*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bungle

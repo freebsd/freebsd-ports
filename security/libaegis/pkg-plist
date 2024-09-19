@@ -1,0 +1,12 @@
+include/aegis.h
+include/aegis128l.h
+include/aegis128x2.h
+include/aegis128x4.h
+include/aegis256.h
+include/aegis256x2.h
+include/aegis256x4.h
+lib/libaegis.a
+lib/libaegis.so
+share/cmake/aegis/aegis-config.cmake
+share/cmake/aegis/aegis-targets-%%CMAKE_BUILD_TYPE%%.cmake
+share/cmake/aegis/aegis-targets.cmake

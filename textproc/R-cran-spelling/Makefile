@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for Spell Checking in R
 WWW=		https://docs.ropensci.org/spelling/
 

@@ -3,7 +3,7 @@ DISTVERSION=	3.32
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	App that corrects your previous console command
 WWW=		https://github.com/nvbn/thefuck
 

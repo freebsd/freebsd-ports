@@ -1,6 +1,7 @@
 PORTNAME=	gitaly
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${GITLAB_VERSION}
+PORTREVISION=	${GITLAB_PORTREVISION} # modify it in www/gitlab/Makefile.common
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org

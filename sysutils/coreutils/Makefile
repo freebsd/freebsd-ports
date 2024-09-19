@@ -29,11 +29,14 @@ CONFLICTS_INSTALL=	gdu geneweb gexpr rubygem-god # bin/gdu bin/gexpr bin/god bin
 
 INFO=		coreutils
 
-OPTIONS_DEFINE=	GMP NLS
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		GMP NLS
+OPTIONS_SUB=		yes
+
+GMP_USES=		localbase:ldflags
 GMP_LIB_DEPENDS=	libgmp.so:math/gmp
-GMP_CONFIGURE_WITH=	gmp
-NLS_USES=	gettext
+GMP_CONFIGURE_WITH=	libgmp
+
+NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 post-build:

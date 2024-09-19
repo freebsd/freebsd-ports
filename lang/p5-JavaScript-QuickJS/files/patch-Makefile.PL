@@ -1,23 +1,15 @@
 --- Makefile.PL.orig	2024-02-12 06:16:14 UTC
 +++ Makefile.PL
-@@ -13,24 +13,11 @@ use Cwd;
+@@ -13,7 +13,7 @@ use Cwd;
  use File::Which;
  use Cwd;
  
 -my $GMAKE_PATH = _find_gmake();
--
--if (!$GMAKE_PATH) {
--    die "GNU Make ($Config{'gmake'}) is required.\n";
--}
--elsif (!-x $GMAKE_PATH) {
--    if ($!) {
--        die "Failed to detect if GNU Make ($GMAKE_PATH) is executable: $!\n";
--    }
--
--    die "GNU Make ($GMAKE_PATH) is not executable.\n";
--}
--
- my $ATOMIC_ENV_KEY = 'JS_QUICKJS_LINK_LIBATOMIC';
++my $GMAKE_PATH = "/usr/bin/make";
+ 
+ if (!$GMAKE_PATH) {
+     die "GNU Make ($Config{'gmake'}) is required.\n";
+@@ -30,7 +30,7 @@ my $PERL_QJS_MAKEFILE_PATH = File::Spec->catfile( Cwd:
  
  my $PERL_QJS_MAKEFILE_PATH = File::Spec->catfile( Cwd::getcwd(), 'Makefile.quickjs');
  
@@ -26,7 +18,7 @@
  
  # quickjs needs these; pre-5.20 perls didn’t include libpthread.
  # Note that MSWin32, if given these, will try to compile them statically
-@@ -42,8 +29,6 @@ if (_need_librt()) {
+@@ -42,8 +42,6 @@ if (_need_librt()) {
      push @libs, '-lrt';
  }
  
@@ -35,7 +27,7 @@
  if (!_stdatomic_h_exists()) {
      _avoid_stdatomic_h();
  }
-@@ -54,13 +39,6 @@ mkdir( File::Spec->catdir( qw(quickjs .obj) ) );
+@@ -54,13 +52,6 @@ mkdir( File::Spec->catdir( qw(quickjs .obj) ) );
  #
  mkdir( File::Spec->catdir( qw(quickjs .obj) ) );
  
@@ -49,7 +41,7 @@
  WriteMakefile(
      NAME              => 'JavaScript::QuickJS',
      VERSION_FROM      => 'lib/JavaScript/QuickJS.pm', # finds $VERSION
-@@ -71,7 +49,7 @@ WriteMakefile(
+@@ -71,7 +62,7 @@ WriteMakefile(
          ],
        ) : ()
      ),
@@ -58,31 +50,11 @@
      LICENSE           => "perl_5",
  
      PMLIBDIRS => ['lib'],
-@@ -224,8 +202,6 @@ sub _should_link_libatomic {
-     my $needs_libatomic;
+@@ -325,7 +316,6 @@ $libpath:
+     return <<"MAKE_FRAG"
  
-     eval {
--        system $GMAKE_PATH, '-C', 'quickjs', '-f', $PERL_QJS_MAKEFILE_PATH, $rel_objpath;
--        die if $?;
-         my $objbin = File::Slurper::read_binary($objpath);
- 
-         $needs_libatomic = -1 != index($objbin, '__atomic_fetch_sub_');
-@@ -315,18 +291,5 @@ use Config;
- package MY;
- 
- use Config;
--
--sub postamble {
--
--    # QuickJS requires GNU make.
--    my $make = ($^O =~ m<bsd>i) ? $GMAKE_PATH : '$(MAKE)';
--
--    # The leading “+” is to ensure that parallel builds work properly.
--    return <<"MAKE_FRAG"
--
--$libpath:
+ $libpath:
 -\t+$make -C quickjs -f '$PERL_QJS_MAKEFILE_PATH' libquickjs.a
--MAKE_FRAG
--}
+ MAKE_FRAG
+ }
  
- 1;

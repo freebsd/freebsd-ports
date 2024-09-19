@@ -1,5 +1,5 @@
 PORTNAME=	fpc-devel
-PORTVERSION=	3.3.1.20240503
+PORTVERSION=	3.3.1.20240913
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-source
 DIST_SUBDIR=	freepascal
@@ -8,14 +8,14 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal compiler with Turbo and Delphi compatibility (source)
 WWW=		https://www.freepascal.org/
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	i386 amd64 aarch64
 NO_BUILD=	yes
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com/freepascal.org
 GL_ACCOUNT=	fpc
 GL_PROJECT=	source
-GL_TAGNAME=	edc1c79cbb2925e9f0d1b929d8da01348eeedc35
+GL_TAGNAME=	84da5e619c4adc3c72c5a6f2da80c56be2899a72
 
 PLIST=		${WRKDIR}/pkg-plist
 PATCHDIR=	${PORTSDIR}/lang/fpc-devel/files
@@ -29,6 +29,8 @@ FPCBASEVER=	3.3.1
 FPC_ARCH=	i386
 .elif ${ARCH} == "amd64"
 FPC_ARCH=	x86_64
+.elif ${ARCH} == "aarch64"
+FPC_ARCH=	aarch64
 .endif
 
 post-extract:
@@ -40,6 +42,7 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|900044|${OSVERSION}|g' \
 				-e 's|1201000|${OSVERSION}|g' \
 				-e 's|1200000|${OSVERSION}|g' \
+				-e 's|1302001|${OSVERSION}|g' \
 				-e 's|1400097|${OSVERSION}|g' \
 		${WRKSRC}/rtl/freebsd/${FPC_ARCH}/*.as \
 		${WRKSRC}/rtl/freebsd/${FPC_ARCH}/*.inc
@@ -90,7 +93,8 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/openal/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
-		${WRKSRC}/packages/opencl/fpmake.pp
+		-e 's|x86_64|x86_64,aarch64|g' \
+			${WRKSRC}/packages/opencl/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|linux|freebsd,linux|g' \
 		${WRKSRC}/packages/proj4/fpmake.pp
 	@${REINPLACE_CMD} -i "" -e 's|os2|freebsd,os2|g' \

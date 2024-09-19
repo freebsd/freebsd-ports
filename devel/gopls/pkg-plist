@@ -2,6 +2,7 @@ bin/gopls
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/advanced.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/analyzers.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/codelenses.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/command-line.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/commands.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/contributing.md
@@ -12,11 +13,15 @@ bin/gopls
 %%PORTDOCS%%%%DOCSDIR%%/doc/design/integrating.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/emacs.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/features.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/generate/generate.go
+%%PORTDOCS%%%%DOCSDIR%%/doc/generate/generate_test.go
 %%PORTDOCS%%%%DOCSDIR%%/doc/helix.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/inlayHints.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/inline-after.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/inline-before.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/refactor-inline.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/release/README
+%%PORTDOCS%%%%DOCSDIR%%/doc/release/v0.16.0.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/releases.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/semantictokens.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/settings.md
@@ -24,3 +29,4 @@ bin/gopls
 %%PORTDOCS%%%%DOCSDIR%%/doc/troubleshooting.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/vim.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/workspace.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/zeroconfig.png

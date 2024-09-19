@@ -44,16 +44,16 @@ IGNORE=	incompatible fpc ${FPC_CURRENT_VER} compiler, please install ${FPC_VER} 
 PPNAME=			ppc386
 .  elif ${ARCH} == "amd64"
 PPNAME=			ppcx64
+.  elif ${ARCH} == "aarch64"
+PPNAME=			ppca64
 .  else
 PPNAME=			ppc_not_yet_ported
-ONLY_FOR_ARCHS=		i386 amd64
-ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than i386 and amd64
 .  endif
 
-.  if !defined(WANT_FPC_DEVEL)
-FPC_DEVELSUFFIX=	#
-.  else
+.  if (defined(WANT_FPC_DEVEL) && !empty(WANT_FPC_DEVEL)) || ${ARCH:Maarch64}
 FPC_DEVELSUFFIX=	-devel
+.  else
+FPC_DEVELSUFFIX=	#
 .  endif
 
 BUILD_DEPENDS+=		${LOCALBASE}/bin/as:devel/binutils \

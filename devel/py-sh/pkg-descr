@@ -1,2 +1,7 @@
-sh (previously pbs) is a full-fledged subprocess replacement for Python
-2.6 - 3.4 that allows you to call any program as if it were a function.
+sh is a full-fledged subprocess replacement for Python 3.8 - 3.11, and PyPy that
+allows you to call any program as if it were a function.
+
+sh is not a collection of system commands implemented in Python.
+
+sh relies on various Unix system calls and only works on Unix-like operating
+systems - Linux, macOS, BSDs etc.

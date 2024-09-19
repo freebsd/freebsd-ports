@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	High-Performance Stemmer, Tokenizer, and Spell Checker
 WWW=		https://docs.ropensci.org/hunspell/
 

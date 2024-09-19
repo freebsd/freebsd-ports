@@ -1,6 +1,5 @@
 PORTNAME=	ptsort
-PORTVERSION=	1.20170904
-PORTREVISION=	1
+PORTVERSION=	1.20240913
 CATEGORIES=	misc
 MASTER_SITES=	https://github.com/dag-erling/${PORTNAME}/releases/download/${PORTVERSION}/
 

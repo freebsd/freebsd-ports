@@ -37,7 +37,7 @@ you update your ports collection, before attempting any port upgrades.
   Historically devel/binutils would implicitly use devel/elfutils when
   it discovers it previously installed. This resulted in it depending on,
   though not explicitly if previously found, elfutils when built manually.
-  This behvior has now changed. binutils will now disable any
+  This behavior has now changed. binutils will now disable any
   auto-dependency on elfutils. Users who build binutils manually and wish
   to have it depend on elfutls must now explicitly set the option when
   building binutils.

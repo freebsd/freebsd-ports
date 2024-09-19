@@ -1,5 +1,5 @@
 PORTNAME=	simplecov-html
-PORTVERSION=	0.12.3
+PORTVERSION=	0.13.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

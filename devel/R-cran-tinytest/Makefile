@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Lightweight and Feature Complete Unit Testing Framework
 WWW=		https://github.com/markvanderloo/tinytest
 

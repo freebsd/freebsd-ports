@@ -1,5 +1,5 @@
 PORTNAME=	ExtUtils-InstallPaths
-PORTVERSION=	0.013
+PORTVERSION=	0.014
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,7 +12,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-ExtUtils-Config>=0.002:devel/p5-ExtUtils-Config
+RUN_DEPENDS=	p5-ExtUtils-Config>=0.009:devel/p5-ExtUtils-Config
 
 USES=		perl5
 USE_PERL5=	configure

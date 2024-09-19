@@ -23,4 +23,6 @@ USE_PYTHON=	autoplist concurrent pep517
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 
+PORTSCOUT=	skipv:4.0.16
+
 .include <bsd.port.mk>

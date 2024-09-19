@@ -1,0 +1,5 @@
+Modin is a drop-in replacement for pandas. While pandas is single-threaded,
+Modin lets you instantly speed up your workflows by scaling pandas so it uses
+all of your cores. Modin works especially well on larger datasets, where pandas
+becomes painfully slow or runs out of memory. Also, Modin comes with the
+additional APIs to improve user experience.

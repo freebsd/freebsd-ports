@@ -1,0 +1,48 @@
+From bef0acaf212a71c782e0b8e8e6c772cc46040356 Mon Sep 17 00:00:00 2001
+From: Stefan Eissing <stefan@eissing.org>
+Date: Fri, 13 Sep 2024 09:58:16 +0200
+Subject: [PATCH] request: correctly reset the eos_sent flag
+
+Add test cases
+
+Bug: https://marc.info/?l=git&m=172620452502747&w=2
+Reported-by: Patrick Steinhardt
+Closes #14895
+---
+ lib/request.c                                 |   5 +
+ tests/http/clients/.gitignore                 |   3 +-
+ tests/http/clients/Makefile.inc               |   3 +-
+ .../clients/{h2-download.c => hx-download.c}  |   0
+ tests/http/clients/hx-upload.c                | 568 ++++++++++++++++++
+ tests/http/test_02_download.py                |  12 +-
+ tests/http/test_07_upload.py                  |  61 ++
+ tests/http/test_19_shutdown.py                |   2 +-
+ 8 files changed, 645 insertions(+), 9 deletions(-)
+ rename tests/http/clients/{h2-download.c => hx-download.c} (100%)
+ create mode 100644 tests/http/clients/hx-upload.c
+
+diff --git a/lib/request.c b/lib/request.c
+index 6b2784c3ff08e6..1ddbdc9d0f1680 100644
+--- lib/request.c
++++ lib/request.c
+@@ -52,7 +52,11 @@ CURLcode Curl_req_soft_reset(struct SingleRequest *req,
+ 
+   req->done = FALSE;
+   req->upload_done = FALSE;
++  req->upload_aborted = FALSE;
+   req->download_done = FALSE;
++  req->eos_written = FALSE;
++  req->eos_read = FALSE;
++  req->eos_sent = FALSE;
+   req->ignorebody = FALSE;
+   req->shutdown = FALSE;
+   req->bytecount = 0;
+@@ -146,6 +150,7 @@ void Curl_req_hard_reset(struct SingleRequest *req, struct Curl_easy *data)
+   req->download_done = FALSE;
+   req->eos_written = FALSE;
+   req->eos_read = FALSE;
++  req->eos_sent = FALSE;
+   req->upload_done = FALSE;
+   req->upload_aborted = FALSE;
+   req->ignorebody = FALSE;
+

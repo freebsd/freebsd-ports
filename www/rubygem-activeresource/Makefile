@@ -1,5 +1,5 @@
 PORTNAME=	activeresource
-PORTVERSION=	6.1.0
+PORTVERSION=	6.1.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,7 @@ WWW=		https://rubyonrails.org/ \
 		https://github.com/rails/activeresource
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-activemodel71>=6.0:databases/rubygem-activemodel71 \
 		rubygem-activemodel-serializers-xml>=1.0<2:databases/rubygem-activemodel-serializers-xml \

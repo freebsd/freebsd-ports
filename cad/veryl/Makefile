@@ -1,7 +1,6 @@
 PORTNAME=	veryl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0
-PORTREVISION=	2
+DISTVERSION=	0.13.0
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,20 +25,21 @@ WRKSRC_SUBDIR=	crates/veryl
 
 CARGO_CRATES=	addr2line-0.22.0 \
 		adler-1.0.2 \
+		adler2-2.0.0 \
 		adler32-1.2.0 \
 		ahash-0.8.11 \
 		aho-corasick-1.1.3 \
+		allocator-api2-0.2.18 \
 		ammonia-4.0.0 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
-		ansi_term-0.12.1 \
 		anstream-0.6.15 \
 		anstyle-1.0.8 \
 		anstyle-parse-0.2.5 \
 		anstyle-query-1.1.1 \
 		anstyle-wincon-3.0.4 \
-		anyhow-1.0.86 \
+		anyhow-1.0.88 \
 		arc-swap-1.7.1 \
 		arrayref-0.3.8 \
 		arrayvec-0.7.6 \
@@ -47,7 +47,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		async-channel-2.3.1 \
 		async-trait-0.1.81 \
 		atoi-2.0.0 \
-		atty-0.2.14 \
 		auto_impl-1.2.0 \
 		autocfg-1.3.0 \
 		backtrace-0.3.73 \
@@ -58,7 +57,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		bitflags-1.3.2 \
 		bitflags-2.6.0 \
 		bitvec-1.0.1 \
-		blake3-1.5.3 \
+		blake3-1.5.4 \
 		block-buffer-0.10.4 \
 		bstr-1.10.0 \
 		btoi-0.4.3 \
@@ -67,7 +66,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		byteorder-1.5.0 \
 		bytes-1.7.1 \
 		bytesize-1.3.0 \
-		camino-1.1.7 \
+		camino-1.1.9 \
 		cast-0.3.0 \
 		castaway-0.2.3 \
 		cc-1.1.13 \
@@ -76,16 +75,14 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-2.34.0 \
-		clap-4.5.16 \
-		clap_builder-4.5.15 \
-		clap_complete-4.5.18 \
+		clap-4.5.17 \
+		clap_builder-4.5.17 \
+		clap_complete-4.5.22 \
 		clap_derive-4.5.13 \
 		clap_lex-0.7.2 \
 		clru-0.6.2 \
 		codespan-reporting-0.11.1 \
 		colorchoice-1.0.2 \
-		combine-4.6.7 \
 		compact_str-0.6.1 \
 		concurrent-queue-2.5.0 \
 		console-0.15.8 \
@@ -112,14 +109,14 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		darling_macro-0.20.10 \
 		dary_heap-0.3.6 \
 		dashmap-5.5.3 \
-		dashmap-6.0.1 \
+		dashmap-6.1.0 \
 		data-encoding-2.6.0 \
 		dbus-0.9.7 \
 		debugid-0.8.0 \
 		deranged-0.3.11 \
-		derive_builder-0.20.0 \
-		derive_builder_core-0.20.0 \
-		derive_builder_macro-0.20.0 \
+		derive_builder-0.20.1 \
+		derive_builder_core-0.20.1 \
+		derive_builder_macro-0.20.1 \
 		difflib-0.4.0 \
 		digest-0.10.7 \
 		directories-5.0.1 \
@@ -134,7 +131,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		encoding_rs-0.8.34 \
 		enum-as-inner-0.6.0 \
 		env_filter-0.1.2 \
-		env_logger-0.9.3 \
 		env_logger-0.11.5 \
 		equivalent-1.0.1 \
 		errno-0.3.9 \
@@ -146,7 +142,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		filetime-0.2.24 \
 		findshlibs-0.10.2 \
 		fixedbitset-0.4.2 \
-		flate2-1.0.31 \
+		flate2-1.0.32 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.1 \
 		fs4-0.9.1 \
@@ -211,15 +207,13 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		h2-0.3.26 \
 		half-2.4.1 \
 		handlebars-5.1.2 \
-		handlebars-6.0.0 \
-		hashbrown-0.12.3 \
+		handlebars-6.1.0 \
 		hashbrown-0.13.2 \
 		hashbrown-0.14.5 \
 		headers-0.3.9 \
 		headers-core-0.2.0 \
 		heck-0.4.1 \
 		heck-0.5.0 \
-		hermit-abi-0.1.19 \
 		hermit-abi-0.3.9 \
 		hermit-abi-0.4.0 \
 		hex-0.4.3 \
@@ -247,7 +241,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		imara-diff-0.1.7 \
 		include-flate-0.3.0 \
 		include-flate-codegen-0.2.0 \
-		indexmap-1.9.3 \
 		indexmap-2.4.0 \
 		inferno-0.11.21 \
 		inotify-0.9.6 \
@@ -266,13 +259,12 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		jwalk-0.8.1 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
-		kstring-1.0.6 \
 		lalry-0.1.0 \
 		lazy_static-1.5.0 \
-		libc-0.2.157 \
+		libc-0.2.158 \
 		libdbus-sys-0.2.5 \
-		libflate-2.0.0 \
-		libflate_lz77-2.0.0 \
+		libflate-2.1.0 \
+		libflate_lz77-2.1.0 \
 		libredox-0.1.3 \
 		line-col-0.2.1 \
 		linked-hash-map-0.5.6 \
@@ -287,7 +279,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		match_cfg-0.1.0 \
 		maybe-async-0.2.10 \
 		mdbook-0.4.40 \
-		mdbook-wavedrom-0.10.0 \
 		memchr-2.7.4 \
 		memmap2-0.5.10 \
 		memmap2-0.9.4 \
@@ -298,6 +289,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		mime_guess-2.0.5 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.4 \
+		miniz_oxide-0.8.0 \
 		mio-0.8.11 \
 		mio-1.0.2 \
 		new_debug_unreachable-1.0.6 \
@@ -321,9 +313,9 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		parking-2.2.0 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
-		parol-0.31.0 \
-		parol-macros-0.2.0 \
-		parol_runtime-0.24.1 \
+		parol-1.0.0 \
+		parol-macros-1.0.0 \
+		parol_runtime-1.0.0 \
 		paste-1.0.15 \
 		pathdiff-0.2.1 \
 		percent-encoding-2.3.1 \
@@ -355,9 +347,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		predicates-tree-1.0.11 \
 		proc-macro2-1.0.86 \
 		prodash-23.1.2 \
-		pulldown-cmark-0.9.6 \
 		pulldown-cmark-0.10.3 \
-		pulldown-cmark-0.12.0 \
+		pulldown-cmark-0.12.1 \
 		pulldown-cmark-escape-0.10.1 \
 		pulldown-cmark-escape-0.11.0 \
 		quick-error-1.2.3 \
@@ -372,7 +363,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.5.3 \
-		redox_users-0.4.5 \
+		redox_users-0.4.6 \
 		regex-1.10.6 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.8.4 \
@@ -402,9 +393,9 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		semver-0.9.0 \
 		semver-1.0.23 \
 		semver-parser-0.7.0 \
-		serde-1.0.208 \
-		serde_derive-1.0.208 \
-		serde_json-1.0.125 \
+		serde-1.0.210 \
+		serde_derive-1.0.210 \
+		serde_json-1.0.128 \
 		serde_regex-1.1.0 \
 		serde_repr-0.1.19 \
 		serde_spanned-0.6.7 \
@@ -431,7 +422,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		string_cache-0.8.7 \
 		string_cache_codegen-0.5.2 \
 		strnum_bitwidth-0.1.2 \
-		strsim-0.8.0 \
 		strsim-0.11.1 \
 		supports-color-3.0.0 \
 		supports-hyperlinks-3.0.0 \
@@ -450,7 +440,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		termcolor-1.4.1 \
 		terminal_size-0.3.0 \
 		termtree-0.4.1 \
-		textwrap-0.11.0 \
 		textwrap-0.16.1 \
 		thiserror-1.0.63 \
 		thiserror-impl-1.0.63 \
@@ -460,15 +449,14 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.39.3 \
+		tokio-1.40.0 \
 		tokio-macros-2.4.0 \
 		tokio-rustls-0.24.1 \
 		tokio-tungstenite-0.21.0 \
-		tokio-util-0.7.11 \
+		tokio-util-0.7.12 \
 		toml-0.5.11 \
 		toml-0.8.19 \
 		toml_datetime-0.6.8 \
-		toml_edit-0.13.4 \
 		toml_edit-0.22.20 \
 		topological-sort-0.2.2 \
 		tower-0.4.13 \
@@ -500,7 +488,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.2 \
 		uuid-1.10.0 \
-		vec_map-0.8.2 \
 		version_check-0.9.5 \
 		wait-timeout-0.2.0 \
 		walkdir-2.5.0 \

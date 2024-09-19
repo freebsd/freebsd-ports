@@ -1,5 +1,5 @@
 PORTNAME=	openjph
-PORTVERSION=	0.15.0
+PORTVERSION=	0.16.0
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -30,6 +30,6 @@ CMAKE_ON+=	OJPH_DISABLE_SIMD
 .endif
 
 post-install:
-	${LN} -s libopenjph.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libopenjph.so.0
+	${LN} -s libopenjph.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libopenjph.so.${PORTVERSION:R:R}
 
 .include <bsd.port.mk>

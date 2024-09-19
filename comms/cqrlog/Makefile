@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libhamlib.so:comms/hamlib
 
+ONLY_FOR_ARCHS=	i386 amd64
+
 USES=		fpc gnome lazarus:flavors shebangfix ssl:run dos2unix \
 		mysql:server xorg
 

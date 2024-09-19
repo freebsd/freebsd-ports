@@ -1,6 +1,5 @@
 PORTNAME=	pandoc
-DISTVERSION=	3.3
-PORTREVISION=	1
+DISTVERSION=	3.4
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,13 +12,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING.md
 USES=		cabal
 
 USE_CABAL=	Glob-0.10.2_3 \
+		HUnit-1.6.2.0 \
 		JuicyPixels-3.3.9 \
 		OneTuple-0.4.2 \
 		Only-0.1_2 \
 		QuickCheck-2.15.0.1 \
 		SHA-1.6.4.4 \
 		StateVar-1.2.2 \
-		aeson-2.2.3.0_1 \
+		aeson-2.2.3.0_2 \
 		aeson-pretty-0.8.10 \
 		alex-3.5.1.0 \
 		ansi-terminal-1.1.1 \
@@ -29,11 +29,13 @@ USE_CABAL=	Glob-0.10.2_3 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
 		assoc-1.1.1 \
-		async-2.2.5_1 \
+		async-2.2.5_2 \
 		attoparsec-0.14.4_5 \
 		attoparsec-aeson-2.2.2.0 \
+		auto-update-0.2.1 \
 		base-compat-0.14.0 \
 		base-orphans-0.9.2 \
+		base-unicode-symbols-0.2.4.2 \
 		base16-bytestring-1.0.2.0_1 \
 		base64-bytestring-1.2.1.0_1 \
 		basement-0.0.16 \
@@ -42,8 +44,11 @@ USE_CABAL=	Glob-0.10.2_3 \
 		blaze-builder-0.4.2.3 \
 		blaze-html-0.9.2.0_1 \
 		blaze-markup-0.8.3.0_2 \
+		boring-0.2.2 \
+		bsb-http-chunked-0.0.0.4_4 \
 		byteorder-1.0.4 \
 		cabal-doctest-1.0.10 \
+		call-stack-0.4.0 \
 		case-insensitive-1.2.1.0 \
 		cassava-0.5.3.2 \
 		cborg-0.2.10.0_1 \
@@ -56,8 +61,9 @@ USE_CABAL=	Glob-0.10.2_3 \
 		commonmark-extensions-0.2.5.5 \
 		commonmark-pandoc-0.2.2.1 \
 		comonad-5.0.8_2 \
-		conduit-1.3.5 \
+		conduit-1.3.6 \
 		conduit-extra-1.3.6 \
+		constraints-0.14.2_1 \
 		contravariant-1.5.5 \
 		cookie-0.5.0 \
 		crypton-1.0.0 \
@@ -72,20 +78,23 @@ USE_CABAL=	Glob-0.10.2_3 \
 		data-default-instances-dlist-0.0.1 \
 		data-default-instances-old-locale-0.0.1 \
 		data-fix-0.3.4 \
+		dec-0.0.6 \
 		digest-0.0.2.1 \
 		distributive-0.6.2.1_1 \
 		djot-0.1.2.1 \
 		dlist-1.0_2 \
-		doclayout-0.4.0.1 \
-		doctemplates-0.11 \
+		doclayout-0.5 \
+		doctemplates-0.11.0.1 \
+		easy-file-0.2.5 \
 		emojis-0.1.4.1 \
+		fast-logger-3.2.3 \
 		file-embed-0.0.16.0 \
 		generically-0.1.1_3 \
 		gridtables-0.1.0.0_1 \
 		haddock-library-1.11.0_5 \
 		half-0.3.1_2 \
 		happy-1.20.1.1 \
-		hashable-1.4.7.0 \
+		hashable-1.5.0.0 \
 		haskell-lexer-1.1.1 \
 		hourglass-0.2.12_1 \
 		hsc2hs-0.68.10_2 \
@@ -96,19 +105,24 @@ USE_CABAL=	Glob-0.10.2_3 \
 		hslua-core-2.3.2 \
 		hslua-list-1.1.1 \
 		hslua-marshalling-2.3.1 \
-		hslua-module-doclayout-1.1.1.2 \
+		hslua-module-doclayout-1.1.1.2_1 \
 		hslua-module-path-1.1.1 \
 		hslua-module-system-1.1.2 \
 		hslua-module-text-1.1.1 \
 		hslua-module-version-1.1.1 \
-		hslua-module-zip-1.1.3 \
+		hslua-module-zip-1.1.3_1 \
 		hslua-objectorientation-2.3.1 \
 		hslua-packaging-2.3.1 \
 		hslua-repl-0.1.2 \
 		hslua-typing-0.1.1 \
+		http-api-data-0.6.1_1 \
 		http-client-0.7.17 \
 		http-client-tls-0.3.6.3 \
+		http-date-0.0.11 \
+		http-media-0.8.1.1_2 \
+		http-semantics-0.2.1 \
 		http-types-0.12.4 \
+		http2-5.3.4 \
 		indexed-traversable-0.1.4 \
 		indexed-traversable-instances-0.1.2 \
 		integer-conversion-0.1.1 \
@@ -120,40 +134,56 @@ USE_CABAL=	Glob-0.10.2_3 \
 		libyaml-0.1.4 \
 		libyaml-clib-0.2.5 \
 		lpeg-1.1.0 \
-		lua-2.3.2 \
+		lua-2.3.3 \
 		memory-0.18.0 \
 		mime-types-0.1.2.0 \
+		mmorph-1.2.0_3 \
+		monad-control-1.0.3.1 \
 		mono-traversable-1.0.17.0 \
-		network-3.2.1.0 \
+		network-3.2.3.0 \
+		network-byte-order-0.1.7 \
+		network-control-0.1.3 \
 		network-uri-2.6.4.2_1 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.4 \
+		optparse-applicative-0.18.1.0 \
 		ordered-containers-0.2.4 \
 		os-string-2.0.6 \
-		pandoc-3.3 \
-		pandoc-lua-engine-0.3.1 \
+		pandoc-3.4 \
+		pandoc-lua-engine-0.3.2 \
 		pandoc-lua-marshal-0.2.7.1 \
+		pandoc-server-0.1.0.8 \
 		pandoc-types-1.23.1_2 \
 		pem-0.2.4 \
 		pretty-show-1.10 \
 		prettyprinter-1.7.1 \
+		prettyprinter-ansi-terminal-1.1.3 \
 		primitive-0.9.0.0_1 \
+		psqueues-0.2.8.0_1 \
 		random-1.2.1.2 \
+		recv-0.1.0 \
 		regex-base-0.94.0.2_4 \
 		regex-tdfa-1.3.2.2_3 \
 		resourcet-1.3.0 \
 		safe-0.3.21_1 \
+		safe-exceptions-0.1.7.4_1 \
 		scientific-0.3.8.0_1 \
 		semialign-1.3.1_1 \
 		semigroupoids-6.0.1_1 \
 		serialise-0.2.6.1_3 \
-		skylighting-0.14.2 \
-		skylighting-core-0.14.2 \
+		servant-0.20.2 \
+		servant-server-0.20.2 \
+		simple-sendfile-0.2.32 \
+		singleton-bool-0.1.8 \
+		skylighting-0.14.3 \
+		skylighting-core-0.14.3 \
 		skylighting-format-ansi-0.1 \
 		skylighting-format-blaze-html-0.1.1.2 \
 		skylighting-format-context-0.1.0.2 \
 		skylighting-format-latex-0.1 \
 		socks-0.6.1 \
+		some-1.0.6_1 \
+		sop-core-0.5.0.2_4 \
 		split-0.2.5 \
 		splitmix-0.1.0.5_1 \
 		streaming-commons-0.2.2.6_1 \
@@ -162,9 +192,9 @@ USE_CABAL=	Glob-0.10.2_3 \
 		tagged-0.8.8_1 \
 		tagsoup-0.14.8 \
 		temporary-1.3 \
-		texmath-0.12.8.9 \
+		texmath-0.12.8.10 \
 		text-conversions-0.3.1.1 \
-		text-iso8601-0.1.1 \
+		text-iso8601-0.1.1_1 \
 		text-short-0.1.6_2 \
 		th-abstraction-0.7.0.0 \
 		th-compat-0.1.5_2 \
@@ -172,25 +202,37 @@ USE_CABAL=	Glob-0.10.2_3 \
 		th-lift-instances-0.1.20 \
 		these-1.2.1_1 \
 		time-compat-1.9.7_2 \
+		time-manager-0.1.0 \
 		tls-2.1.0 \
 		toml-parser-2.0.1.0 \
+		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
-		typed-process-0.2.11.1 \
-		typst-0.5.0.5 \
+		typed-process-0.2.12.0 \
+		typst-0.6 \
 		typst-symbols-0.1.6 \
 		unicode-collation-0.1.3.6_1 \
 		unicode-data-0.6.0_1 \
 		unicode-transforms-0.4.0.1_6 \
 		uniplate-1.6.13_1 \
+		unix-compat-0.7.2 \
 		unix-time-0.4.15 \
+		unliftio-0.2.25.0 \
 		unliftio-core-0.2.1.0_4 \
 		unordered-containers-0.2.20_3 \
 		utf8-string-1.0.2 \
 		uuid-types-1.0.6_1 \
+		vault-0.3.1.5_8 \
 		vector-0.13.1.0_1 \
 		vector-algorithms-0.9.0.2_1 \
 		vector-stream-0.1.0.1_1 \
+		wai-3.2.4 \
+		wai-app-static-3.1.9 \
+		wai-cors-0.2.7 \
+		wai-extra-3.1.15 \
+		wai-logger-2.4.1 \
+		warp-3.4.1_1 \
 		witherable-0.5_1 \
+		word8-0.1.3 \
 		xml-1.3.14_2 \
 		xml-conduit-1.9.1.3 \
 		xml-types-0.3.8 \
@@ -223,9 +265,9 @@ BUILD_ARGS+=	--disable-optimization
 .endif
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/man/pandoc.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/pandoc-lua.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/pandoc-server.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/pandoc.1 ${STAGEDIR}${MANDIRS}/man1
+	${INSTALL_MAN} ${WRKSRC}/man/pandoc-lua.1 ${STAGEDIR}${MANDIRS}/man1
+	${INSTALL_MAN} ${WRKSRC}/man/pandoc-server.1 ${STAGEDIR}${MANDIRS}/man1
 
 post-install-EMBED_DATA-off:
 	cd ${CABAL_DEPSDIR}/${PORTNAME}-${PORTVERSION} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR}

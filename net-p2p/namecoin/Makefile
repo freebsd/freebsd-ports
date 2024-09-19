@@ -1,18 +1,18 @@
 PORTNAME=	namecoin
 DISTVERSIONPREFIX=	nc
 DISTVERSION=	24.0
-PORTREVISION=	5
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	net-p2p dns
+MASTER_SITES+=	https://same.name/static/:icon
+DISTFILES+=	namecoin128.c99d628dd26b.png:icon
+EXTRACT_ONLY=	${DISTFILE_DEFAULT}
 
 MAINTAINER=	milios@ccsys.com
 COMMENT?=	Decentralized, open DNS and general purpose key/value store
 WWW=		https://namecoin.org/
 
 LICENSE=	MIT
-
-DEPRECATED=	Depends on expired graphics/svg2png
-EXPIRATION_DATE=2024-08-31
 
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libevent.so:devel/libevent
@@ -21,9 +21,7 @@ USES=		autoreconf compiler:c++17-lang gmake libtool pkgconfig ssl
 GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	indolering:graphics
-GH_PROJECT=	namecoin-core namecoin-graphics:graphics
-GH_TAGNAME=	a13a73b:graphics
+GH_PROJECT=	namecoin-core
 
 SLAVE_PORT?=	no
 
@@ -31,8 +29,7 @@ SLAVE_PORT?=	no
 USES+=		desktop-file-utils qt:5
 USE_QT=		core buildtools gui linguisttools:build network qmake:build xml widgets
 
-BUILD_DEPENDS+=	protoc:devel/protobuf \
-		svg2png:graphics/svg2png
+BUILD_DEPENDS+=	protoc:devel/protobuf
 LIB_DEPENDS+=	libprotobuf.so:devel/protobuf
 
 TESTS_USES=		qt:5
@@ -105,7 +102,7 @@ PLIST_FILES?=	bin/namecoin-qt share/applications/namecoin-qt.desktop \
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/namecoin-qt.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
-	${LOCALBASE}/bin/svg2png -w128 -h128 ${WRKSRC_graphics}/svg/namecoin-logo.svg \
+	${INSTALL_DATA} ${DISTDIR}/namecoin128.c99d628dd26b.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/namecoin128.png
 
 .endif

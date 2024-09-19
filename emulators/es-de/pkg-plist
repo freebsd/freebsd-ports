@@ -7,12 +7,14 @@ share/applications/org.es_de.frontend.desktop
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS.md
 %%PORTDOCS%%%%DOCSDIR%%/FAQ-ANDROID.md
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.md
+%%PORTDOCS%%%%DOCSDIR%%/HAIKU.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-DEV.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/ROADMAP.md
 %%PORTDOCS%%%%DOCSDIR%%/THEMES-DEV.md
 %%PORTDOCS%%%%DOCSDIR%%/THEMES.md
+%%PORTDOCS%%%%DOCSDIR%%/TRANSLATIONS.md
 %%PORTDOCS%%%%DOCSDIR%%/USERGUIDE-DEV.md
 %%PORTDOCS%%%%DOCSDIR%%/USERGUIDE.md
 %%DATADIR%%/LICENSE
@@ -27,6 +29,8 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/licenses/GLEW
 %%DATADIR%%/licenses/GLM
 %%DATADIR%%/licenses/GNUFreeFont
+%%DATADIR%%/licenses/HarfBuzz
+%%DATADIR%%/licenses/ICU
 %%DATADIR%%/licenses/LunaSVG
 %%DATADIR%%/licenses/MAME
 %%DATADIR%%/licenses/Nanum
@@ -38,6 +42,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/licenses/UTF8-CPP
 %%DATADIR%%/licenses/Vorbis
 %%DATADIR%%/licenses/libgit2
+%%DATADIR%%/licenses/libintl
 %%DATADIR%%/licenses/libvpx
 %%DATADIR%%/licenses/linear-es-de
 %%DATADIR%%/licenses/modern-es-de
@@ -206,6 +211,18 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/resources/graphics/textinput_focused.svg
 %%DATADIR%%/resources/graphics/white.png
 %%DATADIR%%/resources/graphics/window_icon_256.png
+%%NLS%%%%DATADIR%%/resources/locale/en_GB/LC_MESSAGES/en_GB.mo
+%%NLS%%%%DATADIR%%/resources/locale/en_US/LC_MESSAGES/en_US.mo
+%%NLS%%%%DATADIR%%/resources/locale/es_ES/LC_MESSAGES/es_ES.mo
+%%NLS%%%%DATADIR%%/resources/locale/fr_FR/LC_MESSAGES/fr_FR.mo
+%%NLS%%%%DATADIR%%/resources/locale/it_IT/LC_MESSAGES/it_IT.mo
+%%NLS%%%%DATADIR%%/resources/locale/ja_JP/LC_MESSAGES/ja_JP.mo
+%%NLS%%%%DATADIR%%/resources/locale/pl_PL/LC_MESSAGES/pl_PL.mo
+%%NLS%%%%DATADIR%%/resources/locale/pt_BR/LC_MESSAGES/pt_BR.mo
+%%NLS%%%%DATADIR%%/resources/locale/ro_RO/LC_MESSAGES/ro_RO.mo
+%%NLS%%%%DATADIR%%/resources/locale/ru_RU/LC_MESSAGES/ru_RU.mo
+%%NLS%%%%DATADIR%%/resources/locale/sv_SE/LC_MESSAGES/sv_SE.mo
+%%NLS%%%%DATADIR%%/resources/locale/zh_CN/LC_MESSAGES/zh_CN.mo
 %%DATADIR%%/resources/shaders/glsl/blur_horizontal.glsl
 %%DATADIR%%/resources/shaders/glsl/blur_vertical.glsl
 %%DATADIR%%/resources/shaders/glsl/core.glsl
@@ -223,6 +240,8 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/resources/sounds/systembrowse.wav
 %%DATADIR%%/resources/systems/android/es_find_rules.xml
 %%DATADIR%%/resources/systems/android/es_systems.xml
+%%DATADIR%%/resources/systems/haiku/es_find_rules.xml
+%%DATADIR%%/resources/systems/haiku/es_systems.xml
 %%DATADIR%%/resources/systems/linux/es_find_rules.xml
 %%DATADIR%%/resources/systems/linux/es_systems.xml
 %%DATADIR%%/resources/systems/macos/es_find_rules.xml
@@ -260,6 +279,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/capabilities.xml
 %%DATADIR%%/themes/linear-es-de/colors.xml
 %%DATADIR%%/themes/linear-es-de/custom-collections/theme.xml
+%%DATADIR%%/themes/linear-es-de/languages.xml
 %%DATADIR%%/themes/linear-es-de/system/logos/3do.svg
 %%DATADIR%%/themes/linear-es-de/system/logos/adam.svg
 %%DATADIR%%/themes/linear-es-de/system/logos/ags.svg
@@ -471,8 +491,11 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/amigacd32.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/amstradcpc.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/android.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata-custom/androidapps.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata-custom/androidgames.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/apple2.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/apple2gs.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata-custom/arcade.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/arcadia.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/archimedes.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/arduboy.xml
@@ -498,6 +521,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/channelf.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/coco.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/colecovision.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata-custom/consolearcade.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/cps.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/cps1.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/cps2.xml
@@ -505,12 +529,15 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/crvision.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/custom-collections.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/daphne.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata-custom/desktop.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/doom.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/dos.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/dragon32.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/dreamcast.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/easyrpg.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/electron.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata-custom/emulators.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata-custom/epic.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/famicom.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/fba.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/fbneo.xml
@@ -533,6 +560,8 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/intellivision.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/j2me.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/kodi.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata-custom/laserdisc.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata-custom/lcdgames.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/lowresnx.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/lutris.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/lutro.xml
@@ -576,6 +605,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/pc.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/pc88.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/pc98.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata-custom/pcarcade.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/pcengine.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/pcenginecd.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/pcfx.xml
@@ -583,6 +613,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/playdate.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/plus4.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/pokemini.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata-custom/ports.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/ps2.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/ps3.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/ps4.xml
@@ -608,6 +639,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/snesna.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/solarus.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/spectravideo.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata-custom/steam.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/stv.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/sufami.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata-custom/supergrafx.xml
@@ -658,6 +690,8 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/linear-es-de/system/metadata/amigacd32.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/amstradcpc.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/android.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata/androidapps.xml
+%%DATADIR%%/themes/linear-es-de/system/metadata/androidgames.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/apple2.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/apple2gs.xml
 %%DATADIR%%/themes/linear-es-de/system/metadata/arcade.xml
@@ -1515,6 +1549,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/modern-es-de/capabilities.xml
 %%DATADIR%%/themes/modern-es-de/colors.xml
 %%DATADIR%%/themes/modern-es-de/custom-collections/theme.xml
+%%DATADIR%%/themes/modern-es-de/languages.xml
 %%DATADIR%%/themes/modern-es-de/navigationsounds.xml
 %%DATADIR%%/themes/modern-es-de/theme.xml
 %%DATADIR%%/themes/slate-es-de/3do/colors.xml
@@ -1842,6 +1877,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/themes/slate-es-de/kodi/colors.xml
 %%DATADIR%%/themes/slate-es-de/kodi/images/logo.svg
 %%DATADIR%%/themes/slate-es-de/kodi/systeminfo.xml
+%%DATADIR%%/themes/slate-es-de/languages.xml
 %%DATADIR%%/themes/slate-es-de/laserdisc/colors.xml
 %%DATADIR%%/themes/slate-es-de/laserdisc/images/logo.svg
 %%DATADIR%%/themes/slate-es-de/laserdisc/systeminfo.xml

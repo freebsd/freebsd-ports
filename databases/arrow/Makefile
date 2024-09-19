@@ -1,6 +1,6 @@
 PORTNAME=	arrow
 DISTVERSION=	17.0.0
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${DISTVERSION} \
 		https://github.com/apache/orc/archive/rel/:orc

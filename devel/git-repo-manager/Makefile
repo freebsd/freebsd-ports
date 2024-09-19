@@ -1,7 +1,6 @@
 PORTNAME=	git-repo-manager
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.17
-PORTREVISION=	2
+DISTVERSION=	0.7.18
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +18,7 @@ USES=		cargo localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	hakoerber
 
-CARGO_CRATES=	adler-1.0.2 \
+CARGO_CRATES=	adler2-2.0.0 \
 		aho-corasick-1.1.3 \
 		anstream-0.6.15 \
 		anstyle-1.0.8 \
@@ -31,12 +30,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		bitflags-2.6.0 \
 		byteorder-1.5.0 \
 		bytes-1.7.1 \
-		cc-1.1.12 \
+		cc-1.1.14 \
 		cfg-if-1.0.0 \
-		clap-4.4.18 \
-		clap_builder-4.4.18 \
-		clap_derive-4.4.7 \
-		clap_lex-0.6.0 \
+		clap-4.5.16 \
+		clap_builder-4.5.15 \
+		clap_derive-4.5.13 \
+		clap_lex-0.7.2 \
 		colorchoice-1.0.2 \
 		comfy-table-7.1.1 \
 		console-0.15.8 \
@@ -47,30 +46,29 @@ CARGO_CRATES=	adler-1.0.2 \
 		dirs-sys-0.4.1 \
 		encode_unicode-0.3.6 \
 		equivalent-1.0.1 \
-		flate2-1.0.31 \
+		flate2-1.0.33 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.1 \
 		getrandom-0.2.15 \
 		git2-0.19.0 \
 		hashbrown-0.14.5 \
-		heck-0.4.1 \
 		heck-0.5.0 \
-		http-0.2.12 \
+		http-1.1.0 \
 		idna-0.5.0 \
 		indexmap-2.4.0 \
 		is_terminal_polyfill-1.70.1 \
 		itoa-1.0.11 \
 		jobserver-0.1.32 \
 		lazy_static-1.5.0 \
-		libc-0.2.155 \
+		libc-0.2.158 \
 		libgit2-sys-0.17.0+1.8.1 \
 		libredox-0.1.3 \
 		libssh2-sys-0.3.0 \
-		libz-sys-1.1.19 \
+		libz-sys-1.1.20 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
 		memchr-2.7.4 \
-		miniz_oxide-0.7.4 \
+		miniz_oxide-0.8.0 \
 		once_cell-1.19.0 \
 		openssl-probe-0.1.5 \
 		openssl-src-300.3.1+3.3.1 \
@@ -79,17 +77,17 @@ CARGO_CRATES=	adler-1.0.2 \
 		outdir-tempdir-0.2.0 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
-		parse_link_header-0.3.3 \
+		parse_link_header-0.4.0 \
 		percent-encoding-2.3.1 \
 		pkg-config-0.3.30 \
 		ppv-lite86-0.2.20 \
 		proc-macro2-1.0.86 \
-		quote-1.0.36 \
+		quote-1.0.37 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		redox_syscall-0.5.3 \
-		redox_users-0.4.5 \
+		redox_users-0.4.6 \
 		regex-1.10.6 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.8.4 \
@@ -100,20 +98,20 @@ CARGO_CRATES=	adler-1.0.2 \
 		rustversion-1.0.17 \
 		ryu-1.0.18 \
 		scopeguard-1.2.0 \
-		serde-1.0.207 \
-		serde_derive-1.0.207 \
-		serde_json-1.0.125 \
+		serde-1.0.209 \
+		serde_derive-1.0.209 \
+		serde_json-1.0.127 \
 		serde_spanned-0.6.7 \
 		serde_yaml-0.9.34+deprecated \
 		shellexpand-3.1.0 \
 		shlex-1.3.0 \
 		smallvec-1.13.2 \
 		spin-0.9.8 \
-		strsim-0.10.0 \
+		strsim-0.11.1 \
 		strum-0.26.3 \
 		strum_macros-0.26.4 \
 		subtle-2.6.1 \
-		syn-2.0.74 \
+		syn-2.0.76 \
 		thiserror-1.0.63 \
 		thiserror-impl-1.0.63 \
 		tinyvec-1.8.0 \

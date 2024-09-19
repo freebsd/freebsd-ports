@@ -3,7 +3,7 @@ DISTVERSION=	4030.106
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Financial Time Series Objects (Rmetrics)
 WWW=		https://r-forge.r-project.org/scm/viewvc.php/pkg/timeSeries/?root=rmetrics
 

@@ -1,7 +1,7 @@
 PORTNAME=	elinks
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.17.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	jailbird@fdf.net
@@ -54,8 +54,12 @@ BROTLI_LIB_DEPENDS=	libbrotlidec.so:archivers/brotli
 BROTLI_MESON_TRUE=	brotli
 
 CSS_LIB_DEPENDS=	libcss.so:textproc/libcss \
-			libdom.so:www/libdom
+			libdom.so:www/libdom \
+			libwapcaplet.so:textproc/libwapcaplet
 CSS_MESON_TRUE=		libcss
+# support libcss 0.9.2, libdom 0.4.2 for elinks 0.17.0
+CSS_PATCHFILES=		2fdb04a6ab5523b94c4bd5c0062b0701686e127f.patch:-p1
+CSS_PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
 
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_MESON_TRUE=	libcurl
@@ -92,7 +96,7 @@ LZMA_MESON_TRUE=	lzma
 
 MOUSE_MESON_TRUE=	mouse
 
-NLS_USES=		gettext
+NLS_USES=		gettext-runtime:build gettext-tools
 NLS_MESON_TRUE=		nls
 
 NNTP_MESON_TRUE=	nntp
@@ -103,17 +107,13 @@ SMB_USES=		samba # smbclient
 SMB_MESON_TRUE=		smb
 
 SPIDERMONKEY_USES=		compiler:c++17-lang sqlite
-SPIDERMONKEY_BUILD_DEPENDS=	${LOCALBASE}/lib/libmozjs-102.so:lang/spidermonkey102 \
-				${LOCALBASE}/lib/libxml++-5.0.so:textproc/libxml++
-SPIDERMONKEY_LIB_DEPENDS=	libnspr4.so:devel/nspr \
-				libxml++-5.0.so:textproc/libxml++
-SPIDERMONKEY_CFLAGS=		-I${LOCALBASE}/include/nspr \
-				-I${LOCALBASE}/include/js-102
-SPIDERMONKEY_CXXFLAGS=		-I${LOCALBASE}/include/nspr \
-				-I${LOCALBASE}/include/js-102
-SPIDERMONKEY_LDFLAGS=		-L${LOCALBASE}/lib -lnspr4 -lpthread -lm
+SPIDERMONKEY_BUILD_DEPENDS=	${LOCALBASE}/lib/libmozjs-102.so:lang/spidermonkey102
+SPIDERMONKEY_LIB_DEPENDS=	libmozjs-102.so:lang/spidermonkey102
+SPIDERMONKEY_CFLAGS=		-I${LOCALBASE}/include/js-102
+SPIDERMONKEY_CXXFLAGS=		-I${LOCALBASE}/include/js-102
+SPIDERMONKEY_LDFLAGS=		-L${LOCALBASE}/lib -lpthread -lm
 SPIDERMONKEY_MESON_ON=		-Dsm-scripting=true -Dspidermonkey=true
-SPIDERMONKEY_IMPLIES=		CURL
+SPIDERMONKEY_IMPLIES=		CSS CURL
 
 TRE_LIB_DEPENDS=	libtre.so:textproc/libtre
 TRE_MESON_TRUE=		tre

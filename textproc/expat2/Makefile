@@ -1,5 +1,5 @@
 PORTNAME=	expat
-DISTVERSION=	2.6.2
+DISTVERSION=	2.6.3
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/libexpat/libexpat/releases/download/R_${DISTVERSION:S|.|_|g}/
 
@@ -16,8 +16,8 @@ USES=		cpe libtool pathfix python:test tar:xz
 CPE_VENDOR=	libexpat_project
 CPE_PRODUCT=	libexpat
 USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check

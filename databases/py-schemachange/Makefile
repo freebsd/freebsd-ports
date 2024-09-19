@@ -23,6 +23,8 @@ TEST_DEPENDS=	${PY_DEPENDS} \
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
+NO_ARCH=	yes
+
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0<4:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=1.3:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0<7:devel/py-pyyaml@${PY_FLAVOR} \

@@ -2,10 +2,11 @@ PORTNAME=	w3m
 PORTVERSION=	0.5.3.${SNAPDATE}
 PORTREVISION=	1
 CATEGORIES+=	www
+MASTER_SITES=	https://git.sr.ht/~rkta/${PORTNAME}/archive/${COMMIT_HASH}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	Pager/text-based WWW browser
-WWW=		https://w3m.sourceforge.net/
+WWW=		https://git.sr.ht/~rkta/w3m
 
 LICENSE=	w3m
 LICENSE_NAME=	w3m
@@ -17,16 +18,13 @@ BROKEN_mips64=		fails to build: qemu: uncaught target signal 11 (Segmentation fa
 LIB_DEPENDS=	libgc.so:devel/boehm-gc
 
 USES=		cpe iconv pkgconfig perl5 ssl
-USE_GITHUB=	yes
 
 CPE_VENDOR=	w3m_project
 
-GH_ACCOUNT=	tats
-GH_PROJECT=	w3m
-GH_TAGNAME=	ee66aab
-
 MAKE_JOBS_UNSAFE=	yes
-SNAPDATE=	20230718
+SNAPDATE=	20240916
+COMMIT_HASH=	3601d308b98006da4240f1fd39282a9245e70264
+WRKSRC=		${WRKDIR}/${PORTNAME}-${COMMIT_HASH}
 
 CONFLICTS?=	ja-w3m-0.5.* ja-w3m-img-0.5.* w3m-img-0.5.*
 GNU_CONFIGURE=	yes

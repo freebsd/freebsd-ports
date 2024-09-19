@@ -1,0 +1,10 @@
+bin/bladeRF-cli
+bin/bladeRF-fsk
+include/bladeRF1.h
+include/bladeRF2.h
+include/libbladeRF.h
+lib/libbladeRF.so
+lib/libbladeRF.so.2
+libdata/pkgconfig/libbladeRF.pc
+share/cmake/bladeRF/bladeRFConfig.cmake
+share/cmake/bladeRF/bladeRFConfigVersion.cmake

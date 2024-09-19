@@ -252,6 +252,7 @@ lib/emscripten/src/library_sockfs.js
 lib/emscripten/src/library_stack_trace.js
 lib/emscripten/src/library_strings.js
 lib/emscripten/src/library_syscall.js
+lib/emscripten/src/library_time.js
 lib/emscripten/src/library_trace.js
 lib/emscripten/src/library_tty.js
 lib/emscripten/src/library_uuid.js
@@ -289,7 +290,6 @@ lib/emscripten/src/preamble_minimal.js
 lib/emscripten/src/proxyClient.js
 lib/emscripten/src/proxyWorker.js
 lib/emscripten/src/runtime_asan.js
-lib/emscripten/src/runtime_assertions.js
 lib/emscripten/src/runtime_debug.js
 lib/emscripten/src/runtime_exceptions.js
 lib/emscripten/src/runtime_init_memory.js

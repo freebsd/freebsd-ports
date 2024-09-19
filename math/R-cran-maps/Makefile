@@ -1,9 +1,9 @@
 PORTNAME=	maps
-DISTVERSION=	3.4.1.1
+DISTVERSION=	3.4.2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Draw Geographical Maps
 WWW=		https://CRAN.R-project.org/package=maps
 

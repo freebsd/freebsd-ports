@@ -1,0 +1,8 @@
+Lua session library for OpenResty / ngx_lua
+
+Features:
+ - Sessions are immutable (each save generates a new session), and lockless.
+ - Session data is AES-256-GCM encrypted with a key derived using HKDF-SHA256.
+ - Session has a fixed size header that is protected with HMAC-SHA256 MAC with a key derived using HKDF-SHA256.
+ - Session data can be stored in a stateless cookie or in various backend storages.
+ - A single session cookie can maintain multiple sessions across different audiences.

@@ -159,7 +159,6 @@
 %%DATADIR%%/Asia/Beirut
 %%DATADIR%%/Asia/Bishkek
 %%DATADIR%%/Asia/Chita
-%%DATADIR%%/Asia/Choibalsan
 %%DATADIR%%/Asia/Colombo
 %%DATADIR%%/Asia/Damascus
 %%DATADIR%%/Asia/Dhaka
@@ -239,11 +238,6 @@
 %%DATADIR%%/Australia/Melbourne
 %%DATADIR%%/Australia/Perth
 %%DATADIR%%/Australia/Sydney
-%%DATADIR%%/CET
-%%DATADIR%%/CST6CDT
-%%DATADIR%%/EET
-%%DATADIR%%/EST
-%%DATADIR%%/EST5EDT
 %%DATADIR%%/Etc/GMT
 %%DATADIR%%/Etc/GMT+1
 %%DATADIR%%/Etc/GMT+10
@@ -312,14 +306,9 @@
 %%DATADIR%%/Europe/Zurich
 %%DATADIR%%/Factory
 %%DATADIR%%/GMT
-%%DATADIR%%/HST
 %%DATADIR%%/Indian/Chagos
 %%DATADIR%%/Indian/Maldives
 %%DATADIR%%/Indian/Mauritius
-%%DATADIR%%/MET
-%%DATADIR%%/MST
-%%DATADIR%%/MST7MDT
-%%DATADIR%%/PST8PDT
 %%DATADIR%%/Pacific/Apia
 %%DATADIR%%/Pacific/Auckland
 %%DATADIR%%/Pacific/Bougainville
@@ -350,7 +339,6 @@
 %%DATADIR%%/Pacific/Tahiti
 %%DATADIR%%/Pacific/Tarawa
 %%DATADIR%%/Pacific/Tongatapu
-%%DATADIR%%/WET
 %%DATADIR%%/posixrules
 %%DATADIR%%/zone.tab
 %%DATADIR%%/zone1970.tab
@@ -447,6 +435,7 @@
 %%BACKWARD%%%%DATADIR%%/Asia/Bahrain
 %%BACKWARD%%%%DATADIR%%/Asia/Brunei
 %%BACKWARD%%%%DATADIR%%/Asia/Calcutta
+%%BACKWARD%%%%DATADIR%%/Asia/Choibalsan
 %%BACKWARD%%%%DATADIR%%/Asia/Chongqing
 %%BACKWARD%%%%DATADIR%%/Asia/Chungking
 %%BACKWARD%%%%DATADIR%%/Asia/Dacca
@@ -486,6 +475,8 @@
 %%BACKWARD%%%%DATADIR%%/Brazil/DeNoronha
 %%BACKWARD%%%%DATADIR%%/Brazil/East
 %%BACKWARD%%%%DATADIR%%/Brazil/West
+%%BACKWARD%%%%DATADIR%%/CET
+%%BACKWARD%%%%DATADIR%%/CST6CDT
 %%BACKWARD%%%%DATADIR%%/Canada/Atlantic
 %%BACKWARD%%%%DATADIR%%/Canada/Central
 %%BACKWARD%%%%DATADIR%%/Canada/Eastern
@@ -497,6 +488,9 @@
 %%BACKWARD%%%%DATADIR%%/Chile/Continental
 %%BACKWARD%%%%DATADIR%%/Chile/EasterIsland
 %%BACKWARD%%%%DATADIR%%/Cuba
+%%BACKWARD%%%%DATADIR%%/EET
+%%BACKWARD%%%%DATADIR%%/EST
+%%BACKWARD%%%%DATADIR%%/EST5EDT
 %%BACKWARD%%%%DATADIR%%/Egypt
 %%BACKWARD%%%%DATADIR%%/Eire
 %%BACKWARD%%%%DATADIR%%/Etc/GMT+0
@@ -538,6 +532,7 @@
 %%BACKWARD%%%%DATADIR%%/GMT-0
 %%BACKWARD%%%%DATADIR%%/GMT0
 %%BACKWARD%%%%DATADIR%%/Greenwich
+%%BACKWARD%%%%DATADIR%%/HST
 %%BACKWARD%%%%DATADIR%%/Hongkong
 %%BACKWARD%%%%DATADIR%%/Iceland
 %%BACKWARD%%%%DATADIR%%/Indian/Antananarivo
@@ -554,6 +549,9 @@
 %%BACKWARD%%%%DATADIR%%/Japan
 %%BACKWARD%%%%DATADIR%%/Kwajalein
 %%BACKWARD%%%%DATADIR%%/Libya
+%%BACKWARD%%%%DATADIR%%/MET
+%%BACKWARD%%%%DATADIR%%/MST
+%%BACKWARD%%%%DATADIR%%/MST7MDT
 %%BACKWARD%%%%DATADIR%%/Mexico/BajaNorte
 %%BACKWARD%%%%DATADIR%%/Mexico/BajaSur
 %%BACKWARD%%%%DATADIR%%/Mexico/General
@@ -561,6 +559,7 @@
 %%BACKWARD%%%%DATADIR%%/NZ-CHAT
 %%BACKWARD%%%%DATADIR%%/Navajo
 %%BACKWARD%%%%DATADIR%%/PRC
+%%BACKWARD%%%%DATADIR%%/PST8PDT
 %%BACKWARD%%%%DATADIR%%/Pacific/Chuuk
 %%BACKWARD%%%%DATADIR%%/Pacific/Enderbury
 %%BACKWARD%%%%DATADIR%%/Pacific/Funafuti
@@ -597,4 +596,5 @@
 %%BACKWARD%%%%DATADIR%%/UTC
 %%BACKWARD%%%%DATADIR%%/Universal
 %%BACKWARD%%%%DATADIR%%/W-SU
+%%BACKWARD%%%%DATADIR%%/WET
 %%BACKWARD%%%%DATADIR%%/Zulu

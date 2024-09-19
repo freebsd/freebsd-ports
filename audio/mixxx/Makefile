@@ -1,13 +1,15 @@
 PORTNAME=	mixxx
 DISTVERSION=	2.4.1
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	audio
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES=	4e4d4e866ef86bb4d196a1903778697552cca05a.patch:-p1 \
 		ed547fd2b0f9dee98740fcf32c1307a092470322.patch:-p1 \
 		c052808ca4b27050e99ce9fab9f0b53e90377eed.patch:-p1 \
-		c4b3a7e91c56cea7f9bd1c18c1fe01d9da705144.patch:-p1
+		c4b3a7e91c56cea7f9bd1c18c1fe01d9da705144.patch:-p1 \
+		ccc3e69b73bf98b4a909442760976d1786d38195.patch:-p1 \
+		cc0148fc768dd9cd3ad82c0746bb901bd37ad7d1.patch:-p1
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	DJ mixing application

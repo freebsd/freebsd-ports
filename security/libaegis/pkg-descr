@@ -1,0 +1,21 @@
+libaegis is a portable C implementations of the AEGIS family of high-performance
+authenticated ciphers (AEGIS-128L, AEGIS-128X2, AEGIS-128X4, AEGIS-256,
+AEGIS-256X2, AEGIS-256X4), with runtime CPU detection.
+
+Features:
+- AEGIS-128L with 16 and 32 bytes tags (software, AES-NI, ARM Crypto)
+- AEGIS-128X2 with 16 and 32 bytes tags (software, VAES + AVX2, AES-NI, ARM
+  Crypto)
+- AEGIS-128X4 with 16 and 32 bytes tags (software, AVX512, VAES + AVX2, AES-NI,
+  ARM Crypto)
+- AEGIS-256 with 16 and 32 bytes tags (software, AES-NI, ARM Crypto)
+- AEGIS-256X2 with 16 and 32 bytes tags (software, VAES + AVX2, AES-NI, ARM
+  Crypto)
+- AEGIS-256X4 with 16 and 32 bytes tags (software, AVX512, VAES + AVX2, AES-NI,
+  ARM Crypto)
+- All variants of AEGIS-MAC, supporting incremental updates.
+- Encryption and decryption with attached and detached tags
+- Incremental encryption and decryption.
+- Unauthenticated encryption and decryption (not recommended - only implemented
+  for specific protocols)
+- Deterministic pseudorandom stream generation.

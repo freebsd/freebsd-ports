@@ -1,6 +1,5 @@
 PORTNAME=	notebook
-PORTVERSION=	6.4.13
-PORTREVISION=	1
+DISTVERSION=	7.2.2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,27 +11,31 @@ WWW=		https://jupyter.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}argon2-cffi>=0:security/py-argon2-cffi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ipykernel>=0:devel/py-ipykernel@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ipython_genutils>=0:devel/py-ipython_genutils@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-client>=5.3.4:devel/py-jupyter-client@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-core>=4.6.1:devel/py-jupyter-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}nbconvert>=5:devel/py-nbconvert@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}nbformat>=0:devel/py-nbformat@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}nest-asyncio>=1.5:devel/py-nest-asyncio@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}prometheus-client>=0:net-mgmt/py-prometheus-client@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyzmq>=17:net/py-pyzmq@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}send2trash>=1.8.0:deskutils/py-send2trash@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}terminado>=0.8.3:net/py-terminado@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tornado>=6.1:www/py-tornado@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}traitlets>=4.2.1:devel/py-traitlets@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-jupyter-builder>0:devel/py-hatch-jupyter-builder@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>=1.11:devel/py-hatchling@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyterlab>=4.2.0:devel/py-jupyterlab@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter-server>=2.4.0:devel/py-jupyter-server@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyterlab>=4.2.0:devel/py-jupyterlab@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyterlab-server>=2.27.1:devel/py-jupyterlab-server@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}notebook-shim>=0.2:devel/py-notebook-shim@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tornado>=6.2.0:www/py-tornado@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipykernel>0:devel/py-ipykernel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nbval>0:devel/py-nbval@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-console-scripts>0:devel/py-pytest-console-scripts@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-timeout>0:devel/py-pytest-timeout@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-tornasync>0:devel/py-pytest-tornasync@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-server>=2.4.0:devel/py-jupyter-server@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyterlab-server>=2.27.1:devel/py-jupyterlab-server@${PY_FLAVOR}
 
 USES=		cpe desktop-file-utils python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	pep517 concurrent autoplist pytest # tests fail to run, see https://github.com/jupyter/notebook/issues/7451
 
 NO_ARCH=	yes
 
 CPE_VENDOR=	jupyter
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/tests
 
 .include <bsd.port.mk>
