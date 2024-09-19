@@ -10,6 +10,9 @@ WWW=		https://github.com/lostruins/koboldcpp
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN_armv7=	compilation fails, see https://github.com/LostRuins/koboldcpp/issues/1129
+BROKEN_i386=	compilation fails, see https://github.com/LostRuins/koboldcpp/issues/1129
+
 LIB_DEPENDS=	libopenblas.so:math/openblas \
 		libvulkan.so:graphics/vulkan-loader
 
