@@ -1,5 +1,5 @@
 PORTNAME=	oxidized
-PORTVERSION=	0.29.1
+PORTVERSION=	0.30.1
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,8 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	rubygem-asetus>=0.4<1:devel/rubygem-asetus \
 		rubygem-bcrypt_pbkdf>=1.0<2:security/rubygem-bcrypt_pbkdf \
 		rubygem-ed25519>=1.2<2:security/rubygem-ed25519 \
+		rubygem-net-ftp>=0.2:ftp/rubygem-net-ftp \
+		rubygem-net-scp>=4.0:security/rubygem-net-scp \
 		rubygem-net-ssh>=7.1,2<8,2:security/rubygem-net-ssh \
 		rubygem-net-telnet>=0.2<1:security/rubygem-net-telnet \
 		rubygem-psych3>=3.3<4:textproc/rubygem-psych3 \
