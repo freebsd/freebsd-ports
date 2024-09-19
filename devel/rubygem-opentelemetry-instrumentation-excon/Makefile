@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-excon
-PORTVERSION=	0.22.3
+PORTVERSION=	0.22.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
