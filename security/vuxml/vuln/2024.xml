@@ -2971,6 +2971,13 @@ All of these are related to the CometVisu add-on for openHAB - if you are a user
 	<name>openssh-portable</name>
 	<range><lt>9.7.p1_2,1</lt></range>
       </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>14.1</ge><lt>14.1_2</lt></range>
+	<range><ge>14.0</ge><lt>14.0_8</lt></range>
+	<range><ge>13.3</ge><lt>13.3_4</lt></range>
+	<range><ge>13.2</ge><lt>13.2_12</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -2983,11 +2990,12 @@ All of these are related to the CometVisu add-on for openHAB - if you are a user
     <references>
       <cvename>CVE-2024-6387</cvename>
       <url>https://www.openssh.com/security.html</url>
+      <freebsdsa>SA-24:04.openssh</freebsdsa>
     </references>
     <dates>
       <discovery>2024-07-01</discovery>
       <entry>2024-07-01</entry>
-      <modified>2024-07-03</modified>
+      <modified>2024-09-20</modified>
     </dates>
   </vuln>
 
