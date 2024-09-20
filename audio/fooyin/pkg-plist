@@ -8,6 +8,7 @@ lib/fooyin/plugins/fyplugin_gmeinput.so
 lib/fooyin/plugins/fyplugin_libarchive.so
 lib/fooyin/plugins/fyplugin_mpris.so
 lib/fooyin/plugins/fyplugin_rawaudio.so
+lib/fooyin/plugins/fyplugin_scrobbler.so
 lib/fooyin/plugins/fyplugin_sdl.so
 lib/fooyin/plugins/fyplugin_tageditor.so
 lib/fooyin/plugins/fyplugin_vgminput.so
@@ -17,6 +18,7 @@ share/applications/org.fooyin.fooyin.desktop
 %%DATADIR%%/translations/fooyin_de.qm
 %%DATADIR%%/translations/fooyin_en_US.qm
 %%DATADIR%%/translations/fooyin_es.qm
+%%DATADIR%%/translations/fooyin_fi.qm
 %%DATADIR%%/translations/fooyin_fr.qm
 %%DATADIR%%/translations/fooyin_id.qm
 %%DATADIR%%/translations/fooyin_ie.qm
