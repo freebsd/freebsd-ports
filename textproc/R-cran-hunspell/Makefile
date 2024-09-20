@@ -1,6 +1,5 @@
 PORTNAME=	hunspell
-DISTVERSION=	3.0.2
-PORTREVISION=	1
+DISTVERSION=	3.0.4
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,14 +10,16 @@ WWW=		https://docs.ropensci.org/hunspell/
 LICENSE=	GPLv2 LGPL21 MPL11
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	R-cran-knitr>0:print/R-cran-knitr
-RUN_DEPENDS=	R-cran-Rcpp>0:devel/R-cran-Rcpp \
-		R-cran-digest>0:security/R-cran-digest
-TEST_DEPENDS=	R-cran-testthat>0:devel/R-cran-testthat \
-		R-cran-knitr>0:print/R-cran-knitr \
+RUN_DEPENDS=	R-cran-digest>0:security/R-cran-digest \
+		R-cran-Rcpp>0:devel/R-cran-Rcpp
+TEST_DEPENDS=	R-cran-knitr>0:print/R-cran-knitr \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
-		R-cran-spelling>0:textproc/R-cran-spelling
+		R-cran-spelling>0:textproc/R-cran-spelling \
+		R-cran-testthat>0:devel/R-cran-testthat
 
 USES=		cran:auto-plist,compiles
+
+# Some test fails (missing R packages) but the examples in the manual work well.
+TESTING_UNSAFE=	yes
 
 .include <bsd.port.mk>
