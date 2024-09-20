@@ -1,5 +1,6 @@
 PORTNAME=	i3status
 PORTVERSION=	2.15
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://i3wm.org/i3status/
 
