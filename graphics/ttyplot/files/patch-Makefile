@@ -1,0 +1,12 @@
+--- Makefile.orig	2024-09-20 14:10:26 UTC
++++ Makefile
+@@ -2,8 +2,7 @@ CFLAGS += -Wall -Wextra
+ PREFIX    ?= /usr/local
+ MANPREFIX ?= $(PREFIX)/man
+ CFLAGS += -Wall -Wextra
+-CFLAGS += `pkg-config --cflags ncursesw`
+-LDLIBS += `pkg-config --libs ncursesw` -lm
++LDLIBS += -lcurses -lm
+ 
+ all: ttyplot stresstest
+ 
