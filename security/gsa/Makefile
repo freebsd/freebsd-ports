@@ -1,7 +1,6 @@
 PORTNAME=	gsa
 DISTVERSIONPREFIX=	v
-DISTVERSION=	23.0.0
-PORTREVISION=	1
+DISTVERSION=	23.3.0
 CATEGORIES=	security
 
 MAINTAINER=	acm@FreeBSD.org
@@ -33,6 +32,9 @@ DEPS_CACHE_DIR=		${WRKSRC}
 
 .if (${DEV_UPDATE_MODE} == "yes")
 NPM_ARGS=	install
+post-patch:
+	@${RM} ${WKRSRC}/package-lock.json
+
 post-build:
 	@cd ${DEPS_CACHE_DIR} && ${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-cache-${DISTVERSION}${EXTRACT_SUFX} node_modules
 	@${ECHO} "(!!!) Please upload the cache archive: ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-cache-${DISTVERSION}${EXTRACT_SUFX}"
@@ -59,7 +61,7 @@ post-install:
 	@${ECHO_CMD} "share/gvm/gsad/web/index.html" >> ${TMPPLIST}
 	@${ECHO_CMD} "share/gvm/gsad/web/robots.txt" >> ${TMPPLIST}
 	@cd ${WRKSRC}/build && \
-		${FIND} -s img locales static -not -type d \
+		${FIND} -s img locales assets -not -type d \
 			-exec ${ECHO_CMD} "share/gvm/gsad/web/{}" \; >> ${TMPPLIST}
 
 .include <bsd.port.mk>
