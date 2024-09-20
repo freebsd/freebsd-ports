@@ -1,5 +1,5 @@
 PORTNAME=	processx
-DISTVERSION=	3.8.2
+DISTVERSION=	3.8.4
 CATEGORIES=	sysutils
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -15,11 +15,17 @@ RUN_DEPENDS=	R-cran-R6>0:devel/R-cran-R6 \
 TEST_DEPENDS=	R-cran-callr>=3.7.3:devel/R-cran-callr \
 		R-cran-cli>=3.3.0:devel/R-cran-cli \
 		R-cran-covr>0:devel/R-cran-covr \
+		R-cran-curl>0:ftp/R-cran-curl \
 		R-cran-rlang>=1.0.2:devel/R-cran-rlang \
 		R-cran-testthat>=3.0.0:devel/R-cran-testthat \
-		R-cran-withr>0:devel/R-cran-withr \
-		R-cran-curl>0:ftp/R-cran-curl
+		R-cran-withr>0:devel/R-cran-withr
 
 USES=		cran:auto-plist,compiles
 
+TESTING_UNSAFE=	Fail because of wrong R-cran-ps (see PR280006)
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/R/library/processx/bin/px
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/R/library/processx/bin/sock
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/R/library/processx/bin/supervisor
 .include <bsd.port.mk>
