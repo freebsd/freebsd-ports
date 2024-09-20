@@ -1,5 +1,5 @@
 PORTNAME=	rsplib
-DISTVERSION=	3.4.7
+DISTVERSION=	3.4.9
 CATEGORIES=	net
 MASTER_SITES=	https://www.nntb.no/~dreibh/rserpool/download/
 
@@ -10,7 +10,7 @@ WWW=		https://www.nntb.no/~dreibh/rserpool/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lang qt:5 shebangfix tar:xz
+USES=		cmake qt:5 shebangfix tar:xz
 SHEBANG_FILES=	src/scriptingserviceexample
 USE_LDCONFIG=	yes
 USE_QT=		buildtools:build core gui qmake widgets xml
