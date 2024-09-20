@@ -1,6 +1,6 @@
 PORTNAME=	stockfish
 DISTVERSIONPREFIX=	sf_
-DISTVERSION=	16.1
+DISTVERSION=	17
 CATEGORIES=	games
 MASTER_SITES=	https://tests.stockfishchess.org/api/nn/:nnue1 \
 		https://tests.stockfishchess.org/api/nn/:nnue2
@@ -10,7 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	execve@gmail.com
 COMMENT=	Open source chess engine
-WWW=		https://www.stockfishchess.com/
+WWW=		https://www.stockfishchess.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../Copying.txt
@@ -27,8 +27,8 @@ MAKE_ARGS=	ARCH=${MYARCH} \
 		PREFIX=${PREFIX}
 ALL_TARGET=	build
 
-_NNUE1_VER=	b1a57edbea57
-_NNUE2_VER=	baff1ede1f90
+_NNUE1_VER=	1111cefa1111
+_NNUE2_VER=	37f18f62d772
 
 BINARY_ALIAS=	wget=true
 
