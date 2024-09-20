@@ -4843,6 +4843,7 @@
     SUBDIR += py-flask-babel
     SUBDIR += py-flatbuffers
     SUBDIR += py-flatdict
+    SUBDIR += py-flatland
     SUBDIR += py-flatten-dict
     SUBDIR += py-flex
     SUBDIR += py-flexmock
