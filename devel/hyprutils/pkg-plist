@@ -10,6 +10,7 @@ include/hyprutils/signal/Listener.hpp
 include/hyprutils/signal/Signal.hpp
 include/hyprutils/string/String.hpp
 include/hyprutils/string/VarList.hpp
+include/hyprutils/utils/ScopeGuard.hpp
 lib/libhyprutils.so
 lib/libhyprutils.so.1
 lib/libhyprutils.so.%%VERSION%%
