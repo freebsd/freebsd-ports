@@ -1,3 +1,87 @@
+  <vuln vid="93c12fe5-7716-11ef-9a62-002590c1f29c">
+    <topic>FreeBSD -- Integer overflow in libnv</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>14.1</ge><lt>14.1_5</lt></range>
+	<range><ge>14.0</ge><lt>14.0_11</lt></range>
+	<range><ge>13.4</ge><lt>13.4_1</lt></range>
+	<range><ge>13.3</ge><lt>13.3_7</lt></range>
+      </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>14.1</ge><lt>14.1_5</lt></range>
+	<range><ge>14.0</ge><lt>14.0_11</lt></range>
+	<range><ge>13.4</ge><lt>13.4_1</lt></range>
+	<range><ge>13.3</ge><lt>13.3_7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>A malicious value of size in a structure of packed libnv can
+	cause an integer overflow, leading to the allocation of a smaller
+	buffer than required for the parsed data.  The introduced check was
+	incorrect, as it took into account the size of the pointer, not the
+	structure.  This vulnerability affects both kernel and userland.</p>
+	<p>This issue was originally intended to be addressed as part of
+	FreeBSD-SA-24:09.libnv, but due to a logic issue, this issue was
+	not properly addressed.</p>
+	<h1>Impact:</h1>
+	<p>It is possible for an attacker to overwrite portions of memory
+	(in userland or the kernel) as the allocated buffer might be smaller
+	than the data received from a malicious process.  This vulnerability
+	could result in privilege escalation or cause a system panic.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-45287</cvename>
+      <freebsdsa>SA-24:16.libnv</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2024-09-19</discovery>
+      <entry>2024-09-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1febd09b-7716-11ef-9a62-002590c1f29c">
+    <topic>FreeBSD -- bhyve(8) out-of-bounds read access via XHCI emulation</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>14.1</ge><lt>14.1_5</lt></range>
+	<range><ge>14.0</ge><lt>14.0_11</lt></range>
+	<range><ge>13.4</ge><lt>13.4_1</lt></range>
+	<range><ge>13.3</ge><lt>13.3_7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>bhyve can be configured to emulate devices on a virtual USB
+	controller (XHCI), such as USB tablet devices.  An insufficient
+	boundary validation in the USB code could lead to an out-of-bounds read
+	on the heap, which could potentially lead to an arbitrary write and
+	remote code execution.</p>
+	<h1>Impact:</h1>
+	<p>A malicious, privileged software running in a guest VM can exploit
+	the vulnerability to crash the hypervisor process or potentially achieve
+	code execution on the host in the bhyve userspace process, which
+	typically runs as root.  Note that bhyve runs in a Capsicum sandbox, so
+	malicious code is constrained by the capabilities available to the bhyve
+	process.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-41721</cvename>
+      <freebsdsa>SA-24:15.bhyve</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2024-09-19</discovery>
+      <entry>2024-09-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3e738678-7582-11ef-bece-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
