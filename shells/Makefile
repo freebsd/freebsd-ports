@@ -36,6 +36,7 @@
     SUBDIR += nologinmsg
     SUBDIR += nsh
     SUBDIR += nu_plugin_formats
+    SUBDIR += nu_plugin_gstat
     SUBDIR += nu_plugin_inc
     SUBDIR += nu_plugin_polars
     SUBDIR += nu_plugin_query
