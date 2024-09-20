@@ -1,5 +1,5 @@
 PORTNAME=	ttyplot
-DISTVERSION=	1.4
+DISTVERSION=	1.7.0
 CATEGORIES=	graphics
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -13,11 +13,8 @@ USES=		ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	tenox7
 
-MAKE_ARGS=	CFLAGS="${CFLAGS}"
+MAKE_ARGS=	CFLAGS="${CFLAGS}" MANPREFIX="${PREFIX}/share/man"
 
-PLIST_FILES=	bin/${PORTNAME}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+PLIST_FILES=	bin/${PORTNAME} share/man/man1/ttyplot.1.gz
 
 .include <bsd.port.mk>
