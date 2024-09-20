@@ -35,6 +35,7 @@
     SUBDIR += murex
     SUBDIR += nologinmsg
     SUBDIR += nsh
+    SUBDIR += nu_plugin_polars
     SUBDIR += nushell
     SUBDIR += ohmyzsh
     SUBDIR += oksh
