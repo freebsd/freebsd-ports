@@ -1,3 +1,111 @@
+  <vuln vid="c02b8db5-771b-11ef-9a62-002590c1f29c">
+    <topic>FreeBSD -- NFS client accepts file names containing path separators</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>14.1</ge><lt>14.1_3</lt></range>
+	<range><ge>14.0</ge><lt>14.0_9</lt></range>
+	<range><ge>13.3</ge><lt>13.3_5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>When mounting a remote filesystem using NFS, the kernel did not
+	sanitize remotely provided filenames for the path separator character,
+	"/".  This allows readdir(3) and related functions to return
+	filesystem entries with names containing additional path components.</p>
+	<h1>Impact:</h1>
+	<p>The lack of validation described above gives rise to a confused
+	deputy problem.  For example, a program copying files from an NFS
+	mount could be tricked into copying from outside the intended source
+	directory, and/or to a location outside the intended destination
+	directory.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-6759</cvename>
+      <freebsdsa>SA-24:07.nfsclient</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2024-08-07</discovery>
+      <entry>2024-09-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8fb61d94-771b-11ef-9a62-002590c1f29c">
+    <topic>FreeBSD -- ktrace(2) fails to detach when executing a setuid binary</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>14.1</ge><lt>14.1_3</lt></range>
+	<range><ge>14.0</ge><lt>14.0_9</lt></range>
+	<range><ge>13.3</ge><lt>13.3_5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>A logic bug in the code which disables kernel tracing for setuid
+	programs meant that tracing was not disabled when it should have,
+	allowing unprivileged users to trace and inspect the behavior of
+	setuid programs.</p>
+	<h1>Impact:</h1>
+	<p>The bug may be used by an unprivileged user to read the contents
+	of files to which they would not otherwise have access, such as the
+	local password database.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-6760</cvename>
+      <freebsdsa>SA-24:06.ktrace</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2024-08-07</discovery>
+      <entry>2024-09-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f140cff0-771a-11ef-9a62-002590c1f29c">
+    <topic>FreeBSD -- pf incorrectly matches different ICMPv6 states in the state table</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>14.1</ge><lt>14.1_3</lt></range>
+	<range><ge>14.0</ge><lt>14.0_9</lt></range>
+	<range><ge>13.3</ge><lt>13.3_5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>In ICMPv6 Neighbor Discovery (ND), the ID is always 0.  When
+	pf is configured to allow ND and block incoming Echo Requests, a
+	crafted Echo Request packet after a Neighbor Solicitation (NS) can
+	trigger an Echo Reply.  The packet has to come from the same host
+	as the NS and have a zero as identifier to match the state created
+	by the Neighbor Discovery and allow replies to be generated.</p>
+	<h1>Impact:</h1>
+	<p>ICMPv6 packets with identifier value of zero bypass firewall
+	rules written on the assumption that the incoming packets are going
+	to create a state in the state table.</p>
+	<h1>Note:</h1>
+	<p>This advisory introduced additional issues that were addressed by
+	FreeBSD-EN-24:16.pf.  Please refer to that erratum for additional
+	fixes.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-6640</cvename>
+      <freebsdsa>SA-24:05.pf</freebsdsa>
+      <url>https://www.freebsd.org/security/advisories/FreeBSD-EN-24:16.pf.asc</url>
+    </references>
+    <dates>
+      <discovery>2024-08-07</discovery>
+      <entry>2024-09-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="93c12fe5-7716-11ef-9a62-002590c1f29c">
     <topic>FreeBSD -- Integer overflow in libnv</topic>
     <affects>
