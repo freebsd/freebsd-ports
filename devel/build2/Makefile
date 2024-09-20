@@ -1,5 +1,6 @@
 PORTNAME=	build2
 DISTVERSION=	0.17.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://download.build2.org/${DISTVERSION}/
 DISTNAME=	build2-toolchain-${DISTVERSION}
@@ -30,11 +31,13 @@ OPTIONS_DEFINE=	DOCS
 
 pre-build:
 # phase 1
-	@cd ${WRKSRC}/build2 && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} bootstrap.gmake ${_MAKE_JOBS}
+	@cd ${WRKSRC}/build2 && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} \
+		${MAKE_CMD} ${MAKE_FLAGS} bootstrap.gmake ${_MAKE_JOBS}
 
 do-build:
 # phase 2
-	@cd ${WRKSRC}/build2 && ${SETENV} ${MAKE_ENV} ./build2/b-boot \
+	@cd ${WRKSRC}/build2 && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} \
+		./build2/b-boot \
 		config.cxx=${CXX} \
 		config.cxx.coptions="${CXXFLAGS}" \
 		config.cxx.loptions="${LDFLAGS} -s" \
@@ -45,7 +48,8 @@ do-build:
 
 do-install:
 # "stage" (local installation)
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./build2/build2/b-boot configure \
+	@cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} \
+		./build2/build2/b-boot configure \
 		config.cxx=${CXX} \
 		config.cxx.coptions="${CXXFLAGS}" \
 		config.cxx.loptions="${LDFLAGS} -s" \
@@ -54,9 +58,11 @@ do-install:
 		config.bin.rpath=${PREFIX}/lib \
 		config.install.chroot=${STAGEDIR} \
 		config.install.root=${PREFIX}
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./build2/build2/b-boot install: build2/ bpkg/ bdep/ \
+	@cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} \
+		./build2/build2/b-boot install: build2/ bpkg/ bdep/ \
 		-V -j ${MAKE_JOBS_NUMBER} -J ${MAKE_JOBS_NUMBER}
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./build2/build2/b-boot install: '!config.install.scope=project' libbuild2-*/ \
+	@cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} \
+		./build2/build2/b-boot install: '!config.install.scope=project' libbuild2-*/ \
 		-V -j ${MAKE_JOBS_NUMBER} -J ${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.mk>
