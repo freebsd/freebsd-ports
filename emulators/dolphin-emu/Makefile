@@ -49,7 +49,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 USES=		cmake compiler:c++17-lang desktop-file-utils elfctl gl iconv \
 		pkgconfig qmake qt:6 sdl xorg
 
-ELF_FEATURES=	+noaslr:Binaries/dolphin-emu*
+ELF_FEATURES=	+noaslr:bin/dolphin-emu*
 
 # See: https://fr.dolphin-emu.org/download/?ref=btn
 # for latest beta version and associated commit
