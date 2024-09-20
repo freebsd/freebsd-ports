@@ -37,6 +37,7 @@
     SUBDIR += nsh
     SUBDIR += nu_plugin_formats
     SUBDIR += nu_plugin_polars
+    SUBDIR += nu_plugin_query
     SUBDIR += nushell
     SUBDIR += ohmyzsh
     SUBDIR += oksh
