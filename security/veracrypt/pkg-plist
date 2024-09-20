@@ -7,7 +7,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/Authenticity and Integrity.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Authors.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Avoid Third-Party File Extensions.html
-%%PORTDOCS%%%%DOCSDIR%%/html/BCH_Logo_48x30.png
+%%PORTDOCS%%%%DOCSDIR%%/html/BCH_Logo_30x30.png
 %%PORTDOCS%%%%DOCSDIR%%/html/BC_Logo_30x30.png
 %%PORTDOCS%%%%DOCSDIR%%/html/BLAKE2s-256.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Beginner's Tutorial.html
@@ -69,6 +69,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/CompilingGuidelines.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Contact.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Contributed Resources.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Conversion_Guide_VeraCrypt_1.26_and_Later.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Converting TrueCrypt volumes and partitions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Converting TrueCrypt volumes and partitions_truecrypt_convertion.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/Creating New Volumes.html
@@ -220,7 +221,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Authenticity and Integrity.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Authors.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Avoid Third-Party File Extensions.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ru/BCH_Logo_48x30.png
+%%PORTDOCS%%%%DOCSDIR%%/html/ru/BCH_Logo_30x30.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/BC_Logo_30x30.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/BLAKE2s-256.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Beginner's Tutorial.html
@@ -258,6 +259,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/CompilingGuidelines.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Contact.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Contributed Resources.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ru/Conversion_Guide_VeraCrypt_1.26_and_Later.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Converting TrueCrypt volumes and partitions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Converting TrueCrypt volumes and partitions_truecrypt_convertion.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Creating New Volumes.html
@@ -377,6 +379,8 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/VeraCrypt Background Task.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/VeraCrypt Hidden Operating System.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/VeraCrypt License.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ru/VeraCrypt Memory Protection.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ru/VeraCrypt RAM Encryption.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/VeraCrypt Rescue Disk.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/VeraCrypt System Files.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/VeraCrypt Volume Format Specification.html
