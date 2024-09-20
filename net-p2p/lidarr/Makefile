@@ -1,5 +1,5 @@
 PORTNAME=	lidarr
-DISTVERSION=	2.4.3.4248
+DISTVERSION=	2.5.3.4341
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/lidarr/Lidarr/releases/download/v${PORTVERSION}/
 DISTNAME=	Lidarr.master.${DISTVERSION}.freebsd-core-x64
