@@ -118,6 +118,12 @@
 	<name>openssh-portable</name>
 	<range><lt>9.8.p1_1,1</lt></range>
       </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>14.1</ge><lt>14.1_3</lt></range>
+	<range><ge>14.0</ge><lt>14.0_9</lt></range>
+	<range><ge>13.3</ge><lt>13.3_5</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -128,9 +134,8 @@
 	    signal-safe. The signal handler is invoked when a client does not
 	    authenticate within the LoginGraceTime seconds (120 by default).
 	    This signal handler executes in the context of the sshd(8)'s privileged
-	    code, which is not sandboxed and runs with full root privileges.
-
-	    This issue is another instance of the problem in CVE-2024-6387 addressed by
+	    code, which is not sandboxed and runs with full root privileges.</p>
+	    <p>This issue is another instance of the problem in CVE-2024-6387 addressed by
 	    FreeBSD-SA-24:04.openssh.  The faulty code in this case is from the
 	    integration of blacklistd in OpenSSH in FreeBSD.
 	  </p>
@@ -140,11 +145,12 @@
     <references>
       <cvename>CVE-2024-7589</cvename>
       <url>https://nvd.nist.gov/vuln/detail/CVE-2024-7589</url>
-      <url>https://www.freebsd.org/security/advisories/FreeBSD-SA-24:08.openssh.asc</url>
+      <freebsdsa>SA-24:08.openssh</freebsdsa>
     </references>
     <dates>
       <discovery>2024-08-06</discovery>
       <entry>2024-09-15</entry>
+      <modified>2024-09-20</modified>
     </dates>
   </vuln>
 
