@@ -14,5 +14,6 @@ for each job, so all it requires of the volunteer machines is that
 they be running the distccd daemon, and that they have an appropriate
 compiler installed.
 
-This package comes with a text-based monitor to inspect the load on
-the cluster, and how it is distributed among the various distcc nodes.
+This package contains the GTK-based monitor for distcc to inspect
+the load on the cluster, and how it is distributed among the various
+distcc nodes.
