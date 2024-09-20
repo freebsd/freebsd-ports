@@ -12,15 +12,16 @@ LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	doxygen>0:devel/doxygen
 LIB_DEPENDS=	libassuan.so:security/libassuan \
+		libcjson.so:devel/libcjson \
+		libgcrypt.so:security/libgcrypt \
+		libgnutls.so:security/gnutls \
 		libgpgme.so:security/gpgme \
 		libgpg-error.so:security/libgpg-error \
-		libgnutls.so:security/gnutls \
-		libuuid.so:misc/e2fsprogs-libuuid \
-		libssh.so:security/libssh \
 		libhiredis.so:databases/hiredis \
 		libnet.so:net/libnet \
-		libgcrypt.so:security/libgcrypt \
-		libpaho-mqtt3a.so:net/libpaho-mqtt3
+		libpaho-mqtt3a.so:net/libpaho-mqtt3 \
+		libssh.so:security/libssh \
+		libuuid.so:misc/e2fsprogs-libuuid
 RUN_DEPENDS=	doxygen>0:devel/doxygen
 
 USES=		cmake gnome pkgconfig
