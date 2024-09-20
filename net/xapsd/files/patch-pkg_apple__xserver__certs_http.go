@@ -1,20 +1,6 @@
-From 1c52af3a7cc168cec089a810c32e861ab988840c Mon Sep 17 00:00:00 2001
-From: Leon Klingele <git@leonklingele.de>
-Date: Wed, 13 Mar 2024 22:12:25 +0100
-Subject: [PATCH] fix(apple): ignore malformed HTTP headers
-
-See also https://github.com/golang/go/issues/21290.
-
-Fixes https://github.com/freswa/dovecot-xaps-daemon/issues/24.
----
- pkg/apple_xserver_certs/http.go | 51 ++++++++++++++++++++++++++++++---
- 1 file changed, 47 insertions(+), 4 deletions(-)
-
-diff --git a/pkg/apple_xserver_certs/http.go b/pkg/apple_xserver_certs/http.go
-index d39a6fc..939fcf0 100644
---- a/pkg/apple_xserver_certs/http.go
-+++ b/pkg/apple_xserver_certs/http.go
-@@ -1,11 +1,16 @@
+--- pkg/apple_xserver_certs/http.go.orig	2024-03-26 13:15:17 UTC
++++ pkg/apple_xserver_certs/http.go
+@@ -1,11 +1,17 @@
  package apple_xserver_certs
  
  import (
@@ -26,12 +12,13 @@ index d39a6fc..939fcf0 100644
 +	"io"
  	"io/ioutil"
  	"log"
++	"math"
  	"net/http"
 +	"time"
  )
  
  func NewCerts(username string, passwordhash string) *Certificates {
-@@ -50,7 +55,6 @@ func handleResponse(certs *Certificates, response []byte) *Certificates {
+@@ -50,7 +56,6 @@ func handleResponse(certs *Certificates, response []by
  }
  
  func sendRequest(reqBody []byte, newCerts bool) (respBody []byte) {
@@ -39,7 +26,7 @@ index d39a6fc..939fcf0 100644
  	r := bytes.NewReader(reqBody)
  	url := "https://identity.apple.com/pushcert/caservice/renew"
  	if newCerts {
-@@ -67,12 +71,51 @@ func sendRequest(reqBody []byte, newCerts bool) (respBody []byte) {
+@@ -67,12 +72,51 @@ func sendRequest(reqBody []byte, newCerts bool) (respB
  	req.Header.Set("Accept", "*/*")
  	req.Header.Set("Accept-Language", "en-us")
  
@@ -57,16 +44,17 @@ index d39a6fc..939fcf0 100644
  	if err != nil {
 -		log.Fatalln(err)
 +		log.Fatalln(err) // TODO: Handle error properly
-+	}
+ 	}
 +	defer func() {
 +		_ = conn.Close() //nolint:errcheck,gosec // Ignored on purpose
 +	}()
-+
+ 
+-	defer resp.Body.Close()
 +	if err := req.Write(conn); err != nil {
 +		log.Fatalln(err) // TODO: Handle error properly
 +	}
 +
-+	buf, err := io.ReadAll(io.LimitReader(conn, 1<<10))
++	buf, err := io.ReadAll(io.LimitReader(conn, math.MaxInt64))
 +	if err != nil {
 +		log.Fatalln(err) // TODO: Handle error properly
 +	}
@@ -85,15 +73,11 @@ index d39a6fc..939fcf0 100644
 +	resp, err := http.ReadResponse(bufio.NewReader(bytes.NewReader(buf)), req)
 +	if err != nil {
 +		log.Fatalln(err) // TODO: Handle error properly
- 	}
++	}
 +	defer func() {
 +		_ = resp.Body.Close() //nolint:errcheck,gosec // Ignored on purpose
 +	}()
- 
--	defer resp.Body.Close()
++
  	respBody, err = ioutil.ReadAll(resp.Body)
  	if err != nil {
  		log.Fatalln(err)
--- 
-2.34.1
-
