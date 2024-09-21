@@ -48,7 +48,7 @@ USE_GL=		egl
 USE_SDL=	sdl2
 USE_XORG=	ice x11 xcb xext xpm xrandr xrender
 USE_QT=		base tools
-ELF_FEATURES=	+wxneeded:bin/pcsx2-qt
+ELF_FEATURES=	+noprotmax,wxneeded:bin/pcsx2-qt
 
 # SSE 4.1 instructions are a hard requirement, if CPUTYPE is defined
 # use whatever is set and let the build fail if it falls below
