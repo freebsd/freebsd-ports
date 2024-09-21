@@ -63,7 +63,7 @@ _GCC_VER=	${GCC_DEFAULT:S/.//}
 
 CPE_VENDOR=	julialang
 
-ELF_FEATURES=	+wxneeded:usr/bin/julia
+ELF_FEATURES=	+noprotmax,wxneeded:bin/${PORTNAME}
 
 USE_LDCONFIG=	yes
 
