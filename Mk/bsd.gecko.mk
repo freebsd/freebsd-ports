@@ -60,8 +60,9 @@ MOZILLA?=	${PORTNAME}
 MOZILLA_VER?=	${PORTVERSION}
 MOZILLA_BIN?=	${PORTNAME}-bin
 MOZILLA_EXEC_NAME?=${MOZILLA}
-USES+=		compiler:c++17-lang cpe gl gmake gnome iconv llvm:min=17,noexport localbase \
-			pkgconfig python:build desktop-file-utils
+USES+=		compiler:c++17-lang cpe elfctl gl gmake gnome iconv \
+			llvm:min=17,noexport localbase pkgconfig python:build \
+			desktop-file-utils
 CPE_VENDOR?=mozilla
 USE_GL=		gl
 USE_GNOME=	cairo gdkpixbuf2 gtk30
