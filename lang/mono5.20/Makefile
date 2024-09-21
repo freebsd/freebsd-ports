@@ -49,7 +49,7 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	scripts/mono-heapviz scripts/mono-package-runtime \
 		mono/mini/genmdesc.py mono/tests/test_lldb.py
 BINARY_ALIAS=	python=${PYTHON_CMD}
-ELF_FEATURES=	+wxneeded:mono/mini/mono-sgen
+ELF_FEATURES=	+noprotmax,wxneeded:bin/mono-sgen
 
 CONFIGURE_ARGS=	--disable-dtrace --enable-btls
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -46,7 +46,7 @@ GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	scripts/mono-heapviz mono/mini/genmdesc.py mono/tests/test_lldb.py
 BINARY_ALIAS=	python=${PYTHON_CMD}
-ELF_FEATURES=	+wxneeded:mono/mini/mono-sgen
+ELF_FEATURES=	+noprotmax,wxneeded:bin/mono-sgen
 
 CONFIGURE_ARGS=	--disable-dtrace
 CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=no
