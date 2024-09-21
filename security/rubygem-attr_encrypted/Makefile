@@ -1,5 +1,5 @@
 PORTNAME=	attr_encrypted
-PORTVERSION=	4.1.0
+PORTVERSION=	4.1.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
