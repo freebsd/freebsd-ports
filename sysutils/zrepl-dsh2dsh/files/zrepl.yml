@@ -30,8 +30,6 @@ jobs:
       type: "periodic"
       interval: "1h"
       prefix: "zrepl_hourly_"
-      timestamp_format: "20060102_150405_MST"
-      timestamp_local: true
     pruning: &keep-all
 
   - name: "daily-snap"
@@ -41,8 +39,6 @@ jobs:
       type: "periodic"
       interval: "1d"
       prefix: "zrepl_daily_"
-      timestamp_format: "20060102_150405_MST"
-      timestamp_local: true
     pruning: *keep-all
 
   - name: "monthly-snap"
@@ -52,8 +48,6 @@ jobs:
       type: "periodic"
       interval: "30d"
       prefix: "zrepl_monthly_"
-      timestamp_format: "20060102_150405_MST"
-      timestamp_local: true
     pruning: *keep-all
 
   - name: "zdisk"
@@ -95,10 +89,6 @@ jobs:
       listener_name: "zdisk"
       client_identity: "localhost"
     filesystems: *filesystems
-    # send:
-    #   execpipe:
-    #     # zfs send | mbuffer
-    #     - [ "/usr/local/bin/mbuffer", "-q", "-s", "128k", "-m", "1G" ]
     replication: &replication
       # Send all intermediary snapshots as a stream package, instead of sending
       # them one by one.
@@ -112,8 +102,6 @@ jobs:
       type: "periodic"
       cron: "*/15 * * * *"
       prefix: "zrepl_frequently_"
-      timestamp_format: "20060102_150405_MST"
-      timestamp_local: true
     pruning:
       keep_sender:
         - type: "not_replicated"
