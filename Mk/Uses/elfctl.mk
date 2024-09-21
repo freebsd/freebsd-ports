@@ -17,10 +17,17 @@
 _INCLUDE_USES_ELFCTL_MK=	yes
 
 .  if ! empty(ELF_FEATURES)
-_USES_build+=	720:elfctl-post-build
-elfctl-post-build:
+_USES_stage+=	810:elfctl-post-stage
+elfctl-post-stage:
 .    for feat in ${ELF_FEATURES}
-	${ELFCTL} -i -e ${feat:C/:.*//} ${BUILD_WRKSRC}/${feat:C/.*://}
+	# XXX: need to save into temp variable,
+	# XXX: perms from first match if used as featurelist:bin/smth-*
+	${STAT} -f "%p" ${STAGEDIR}/${PREFIX}/${feat:C/.*://} | ${CUT} -c 3- | \
+		${TAIL} -n 1 > ${WRKDIR}/.elfctlmode
+	${CHMOD} 0755 ${STAGEDIR}/${PREFIX}/${feat:C/.*://}
+	${ELFCTL} -i -e ${feat:C/:.*//} ${STAGEDIR}/${PREFIX}/${feat:C/.*://}
+	${CHMOD} `${CAT} ${WRKDIR}/.elfctlmode` \
+		${STAGEDIR}/${PREFIX}/${feat:C/.*://}
 .    endfor
 .  endif
 
