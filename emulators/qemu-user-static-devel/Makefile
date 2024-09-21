@@ -49,7 +49,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --cc=${CC} \
 		--disable-capstone \
 		--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
 
-ELF_FEATURES=	+wxneeded:*-bsd-user/qemu-*
+ELF_FEATURES=	+noprotmax,wxneeded:bin/qemu*static
 
 TEST_TARGET=	check
 
