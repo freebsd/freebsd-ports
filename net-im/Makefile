@@ -4,6 +4,7 @@
     SUBDIR += biboumi
     SUBDIR += chatterino2
     SUBDIR += coccinella
+    SUBDIR += concord
     SUBDIR += conduit
     SUBDIR += convey
     SUBDIR += coyim
