@@ -6088,6 +6088,7 @@
     SUBDIR += py-xstatic-angular-gettext
     SUBDIR += py-xstatic-angular-lrdragndrop
     SUBDIR += py-xstatic-angular-schema-form
+    SUBDIR += py-xstatic-bootstrap
     SUBDIR += py-xstatic-bootstrap-datepicker
     SUBDIR += py-xstatic-bootstrap-scss
     SUBDIR += py-xstatic-bootswatch
