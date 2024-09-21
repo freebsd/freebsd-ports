@@ -1,7 +1,6 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	24.0.0
+PORTVERSION=	25.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	osa@FreeBSD.org
@@ -46,6 +45,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		autocfg-1.1.0 \
 		backtrace-0.3.73 \
 		base64-0.21.0 \
+		base64-0.22.1 \
 		bit-set-0.5.2 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
@@ -116,7 +116,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		filecheck-0.5.0 \
 		filetime-0.2.16 \
 		flagset-0.4.3 \
-		flate2-1.0.28 \
+		flate2-1.0.30 \
 		fnv-1.0.7 \
 		form_urlencoded-1.1.0 \
 		fs-set-times-0.20.1 \
@@ -136,7 +136,6 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		h2-0.4.4 \
 		half-1.8.2 \
 		hashbrown-0.12.3 \
-		hashbrown-0.13.2 \
 		hashbrown-0.14.3 \
 		heck-0.4.0 \
 		heck-0.5.0 \
@@ -159,6 +158,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		indicatif-0.13.0 \
 		instant-0.1.12 \
 		io-extras-0.18.1 \
+		io-lifetimes-1.0.11 \
 		io-lifetimes-2.0.3 \
 		ipnet-2.5.0 \
 		is-terminal-0.4.10 \
@@ -176,6 +176,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		libloading-0.8.1 \
 		libm-0.2.7 \
 		libtest-mimic-0.7.0 \
+		linux-raw-sys-0.3.8 \
 		linux-raw-sys-0.4.12 \
 		listenfd-1.0.0 \
 		log-0.4.17 \
@@ -229,7 +230,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		redox_syscall-0.2.13 \
 		redox_syscall-0.3.5 \
 		redox_users-0.4.3 \
-		regalloc2-0.9.3 \
+		regalloc2-0.10.2 \
 		regex-1.9.1 \
 		regex-automata-0.1.10 \
 		regex-automata-0.3.3 \
@@ -238,9 +239,11 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		region-2.2.0 \
 		ring-0.17.3 \
 		rustc-demangle-0.1.24 \
-		rustc-hash-1.1.0 \
+		rustc-hash-2.0.0 \
+		rustix-0.37.27 \
 		rustix-0.38.31 \
 		rustls-0.22.4 \
+		rustls-0.23.7 \
 		rustls-pki-types-1.3.1 \
 		rustls-webpki-0.102.2 \
 		rustversion-1.0.14 \
@@ -275,11 +278,12 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		syn-1.0.92 \
 		syn-2.0.60 \
 		system-interface-0.27.1 \
-		tar-0.4.40 \
+		tar-0.4.41 \
 		target-lexicon-0.12.16 \
 		tempfile-3.8.0 \
 		termcolor-1.4.1 \
 		terminal_size-0.1.17 \
+		terminal_size-0.2.6 \
 		test-log-0.2.11 \
 		thiserror-1.0.43 \
 		thiserror-impl-1.0.43 \
@@ -308,7 +312,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.3 \
 		untrusted-0.9.0 \
-		ureq-2.9.6 \
+		ureq-2.10.0 \
 		url-2.3.1 \
 		utf8parse-0.2.1 \
 		uuid-1.0.0 \
@@ -326,18 +330,21 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		wasm-bindgen-macro-support-0.2.87 \
 		wasm-bindgen-shared-0.2.87 \
 		wasm-encoder-0.215.0 \
+		wasm-encoder-0.217.0 \
 		wasm-metadata-0.215.0 \
-		wasm-mutate-0.215.0 \
-		wasm-smith-0.215.0 \
+		wasm-metadata-0.217.0 \
+		wasm-mutate-0.217.0 \
+		wasm-smith-0.217.0 \
 		wasmi-0.31.1 \
 		wasmi_arena-0.4.1 \
 		wasmi_core-0.13.0 \
 		wasmparser-0.215.0 \
+		wasmparser-0.217.0 \
 		wasmparser-nostd-0.100.1 \
-		wasmprinter-0.215.0 \
+		wasmprinter-0.217.0 \
 		wast-35.0.2 \
-		wast-215.0.0 \
-		wat-1.215.0 \
+		wast-217.0.0 \
+		wat-1.217.0 \
 		web-sys-0.3.57 \
 		webpki-roots-0.26.1 \
 		which-5.0.0 \
@@ -347,6 +354,8 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.52.0 \
 		windows-core-0.52.0 \
+		windows-implement-0.52.0 \
+		windows-interface-0.52.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-targets-0.48.5 \
@@ -367,15 +376,17 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		windows_x86_64_msvc-0.52.0 \
 		winnow-0.5.39 \
 		winx-0.36.3 \
-		wit-bindgen-0.29.0 \
-		wit-bindgen-core-0.29.0 \
-		wit-bindgen-rt-0.29.0 \
-		wit-bindgen-rust-0.29.0 \
-		wit-bindgen-rust-macro-0.29.0 \
+		wit-bindgen-0.30.0 \
+		wit-bindgen-core-0.30.0 \
+		wit-bindgen-rt-0.30.0 \
+		wit-bindgen-rust-0.30.0 \
+		wit-bindgen-rust-macro-0.30.0 \
 		wit-component-0.215.0 \
+		wit-component-0.217.0 \
 		wit-parser-0.215.0 \
+		wit-parser-0.217.0 \
 		witx-0.9.1 \
-		xattr-1.2.0 \
+		xattr-1.3.1 \
 		zerocopy-0.7.32 \
 		zerocopy-derive-0.7.32 \
 		zeroize-1.7.0 \
@@ -383,7 +394,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		zstd-safe-7.0.0 \
 		zstd-sys-2.0.9+zstd.1.5.5
 
-GH_TUPLE=	WebAssembly:testsuite:e053650:testsuite/tests/spec_testsuite \
+GH_TUPLE=	WebAssembly:testsuite:ae5a669:testsuite/tests/spec_testsuite \
 		WebAssembly:wasi-testsuite:2fec29e:wasi_testsuite/tests/wasi_testsuite/wasi-common \
 		WebAssembly:wasi-threads:e1893c0:wasi_threads/tests/wasi_testsuite/wasi-threads
 
