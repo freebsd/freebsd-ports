@@ -54,6 +54,7 @@
     SUBDIR += fasta
     SUBDIR += fasta3
     SUBDIR += fastahack
+    SUBDIR += fastani
     SUBDIR += fastdnaml
     SUBDIR += fastool
     SUBDIR += fastp
