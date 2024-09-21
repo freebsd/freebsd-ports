@@ -30,11 +30,15 @@ BUILD_DEPENDS=	binutils>=0:devel/binutils \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR}
 LIB_DEPENDS=	libicudata.so:devel/icu
 
-USES=		compiler:c++17-lang cpe gnome ninja pkgconfig python:build tar:xz
+USES=		compiler:c++17-lang cpe elfctl gnome ninja pkgconfig \
+		proccontrol python:build tar:xz
 USE_GNOME=	glib20
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+ELF_FEATURES=	+noprotmax,wxneeded:bin/*
 MAKE_ARGS=	-C out/Release
+PROCCONTROL_MODE=protmax:disable wxmap:enable
 USE_LDCONFIG=	yes
 
 SUB_FILES=	v8.pc v8_libbase.pc v8_libplatform.pc
