@@ -1,5 +1,5 @@
 PORTNAME=	magick
-DISTVERSION=	2.8.4
+DISTVERSION=	2.8.5
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -21,5 +21,7 @@ TEST_DEPENDS=	R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
 		R-cran-spelling>0:textproc/R-cran-spelling
 
 USES=		compiler:c++17-lang cran:auto-plist,compiles magick:run
+
+TESTING_UNSAFE=	Need 'gapminder'
 
 .include <bsd.port.mk>
