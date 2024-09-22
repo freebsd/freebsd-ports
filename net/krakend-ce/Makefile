@@ -1,6 +1,6 @@
 PORTNAME=	krakend-ce
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.0
+DISTVERSION=	2.7.1
 CATEGORIES=	net
 
 MAINTAINER=	alster@vinterdalen.se
@@ -10,6 +10,7 @@ WWW=		https://github.com/krakend/krakend-ce/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	vendor/github.com/krakendio/krakend-amqp/v2/consumer.go:47:20: cannot use math.MaxInt64 (untyped int constant 9223372036854775807) as int value in assignment (overflows)
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	Build failure: math.MaxInt64 overflow
 
