@@ -9,6 +9,7 @@
 # c++14-lang:	The port needs a compiler understanding C++14
 # c++17-lang:	The port needs a compiler understanding C++17
 # c++20-lang:	The port needs a compiler understanding C++20
+# c++23-lang:	The port needs a compiler understanding C++23
 # c++2b-lang:	The port needs a compiler understanding C++2b
 # gcc-c++11-lib:The port needs g++ compiler with a C++11 library
 # c++11-lib:	The port needs a compiler understanding C++11 and with a C++11 ready standard library
@@ -36,7 +37,7 @@ _INCLUDE_USES_COMPILER_MK=	yes
 compiler_ARGS=	env
 .  endif
 
-VALID_ARGS=	c++11-lib c++11-lang c++14-lang c++17-lang c++20-lang \
+VALID_ARGS=	c++11-lib c++11-lang c++14-lang c++17-lang c++20-lang c++23-lang \
 		c++2b-lang c11 c17 features env nestedfct c++0x gcc-c++11-lib
 
 _CC_hash:=	${CC:hash}
@@ -56,6 +57,8 @@ _COMPILER_ARGS+=	features c++14-lang
 _COMPILER_ARGS+=	features c++17-lang
 .  elif ${compiler_ARGS} == c++20-lang
 _COMPILER_ARGS+=	features c++20-lang
+.  elif ${compiler_ARGS} == c++23-lang
+_COMPILER_ARGS+=	features c++23-lang
 .  elif ${compiler_ARGS} == c++2b-lang
 _COMPILER_ARGS+=	features c++2b-lang
 .  elif ${compiler_ARGS} == c11
@@ -139,7 +142,7 @@ COMPILER_FEATURES=	libstdc++
 .    endif
 
 CSTD=	c89 c99 c11 c17 gnu89 gnu99 gnu11
-CXXSTD=	c++98 c++0x c++11 c++14 c++17 c++20 c++2b \
+CXXSTD=	c++98 c++0x c++11 c++14 c++17 c++20 c++23 c++2b \
 	gnu++98 gnu++11 gnu++14 gnu++17 gnu++20 gnu++2b
 
 .    for std in ${CSTD} ${CXXSTD}
@@ -171,6 +174,7 @@ CHOSEN_COMPILER_TYPE=	gcc
 .  endif
 
 .  if (${_COMPILER_ARGS:Mc++2b-lang} && !${COMPILER_FEATURES:Mc++2b}) || \
+(${_COMPILER_ARGS:Mc++23-lang} && !${COMPILER_FEATURES:Mc++23}) || \
 (${_COMPILER_ARGS:Mc++20-lang} && !${COMPILER_FEATURES:Mc++20}) || \
 (${_COMPILER_ARGS:Mc++17-lang} && !${COMPILER_FEATURES:Mc++17}) || \
 (${_COMPILER_ARGS:Mc++14-lang} && !${COMPILER_FEATURES:Mc++14}) || \
