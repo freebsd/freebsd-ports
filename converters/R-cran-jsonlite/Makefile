@@ -1,5 +1,5 @@
 PORTNAME=	jsonlite
-DISTVERSION=	1.8.8
+DISTVERSION=	1.8.9
 CATEGORIES=	converters
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -8,6 +8,14 @@ COMMENT=	Robust, High Performance JSON Parser and Generator for R
 WWW=		https://cran.r-project.org/web/packages/jsonlite/
 
 LICENSE=	MIT
+
+# More TEST_DEPENDS: R.rsp
+TEST_DEPENDS=	R-cran-httr>0:www/R-cran-httr \
+		R-cran-knitr>0:print/R-cran-knitr \
+		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
+		R-cran-sf>0:math/R-cran-sf \
+		R-cran-testthat>0:devel/R-cran-testthat \
+		R-cran-vctrs>0:devel/R-cran-vctrs
 
 USES=		cran:auto-plist,compiles
 
