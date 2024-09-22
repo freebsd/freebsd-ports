@@ -1,7 +1,7 @@
 PORTNAME=	meep
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.29.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -49,11 +49,15 @@ PYTHON_USES=			python
 PYTHON_BUILD_DEPENDS=		swig:devel/swig
 PYTHON_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}autograd>0:math/py-autograd@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}jax>0:math/py-jax@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}jupyter-rfb>0:devel/py-jupyter-rfb@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 				${PYNUMPY} \
 				${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR} \
-				${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
+				${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}scikit-image>0:graphics/py-scikit-image@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}vispy>0:graphics/py-vispy@${PY_FLAVOR}
 PYTHON_TEST_DEPENDS=		${PYTHON_PKGNAMEPREFIX}jax>0:math/py-jax@${PY_FLAVOR}
 
 # 2 python tests fail because the py-jaxlib test dependency is missing
