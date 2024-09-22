@@ -1,6 +1,5 @@
 PORTNAME=	FreeCAD
-DISTVERSION=	0.21.2
-PORTREVISION=	6
+DISTVERSION=	1.0rc1
 CATEGORIES=	cad
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -12,17 +11,20 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	doxygen:devel/doxygen \
 		pybind11-config:devel/py-pybind11@${PY_FLAVOR} \
-		pyside_tool.py:devel/pyside2-tools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyside6-tools>0:devel/pyside6-tools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_INCLUDEDIR}/CXX/Config.hxx:devel/py-cxx \
+		microsoft-gsl>0:devel/microsoft-gsl \
+		googletest>0:devel/googletest \
 		swig:devel/swig
+# the ffmpeg4 dependency is inherited via cad/opencascade
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libyaml-cpp.so:devel/yaml-cpp \
 		libfreetype.so:print/freetype2 \
 		libtbb.so:devel/onetbb \
 		${PY_BOOST} \
-		libpyside2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/pyside2@${PY_FLAVOR} \
+		libpyside6.abi3.so:devel/pyside6@${PY_FLAVOR} \
 		libCoin.so:graphics/Coin \
 		libfmt.so:devel/libfmt \
 		libpng.so:graphics/png \
@@ -33,24 +35,23 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libboost_thread.so:devel/boost-libs \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreeimage.so:graphics/freeimage \
-		libavutil.so:multimedia/ffmpeg4 \
+		libavutil.so.58:multimedia/ffmpeg \
+		libavformat.so.58:multimedia/ffmpeg4 \
 		libmed.so:french/med \
-		libshiboken2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/shiboken2@${PY_FLAVOR} \
+		libshiboken6.abi3.so:devel/shiboken6@${PY_FLAVOR} \
 		libhdf5.so:science/hdf5
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		dos2unix compiler:c++17-lang cmake cpe gl eigen:3 fortran gmake jpeg \
-		localbase:ldflags mpi:openmpi pkgconfig python localbase qt:5 xorg \
+		localbase:ldflags mpi:openmpi pkgconfig python localbase qt:6 xorg \
 		desktop-file-utils shared-mime-info shebangfix
 USE_GITHUB=	yes
-GH_TAGNAME=	8abd09398a010337c3b294e687e0666b60bceacf # PR #11909 Add support for OCCT 7.8.0
+GH_TAGNAME=	${DISTVERSION}
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
-USE_QT=		buildtools concurrent core declarative designer gui \
-		linguisttools location network opengl printsupport \
-		qmake:build svg webchannel widgets xml xmlpatterns
+USE_QT=		base declarative location svg tools webchannel
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	freecad_project
@@ -63,7 +64,7 @@ SHEBANG_FILES=	src/Tools/freecad-thumbnailer
 # our HDF5/CMake integration is messy, so workarounds are required below
 CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DOPENMPI_INCLUDE_DIRS="${LOCALBASE}/mpi/openmpi/include" \
-		-DBUILD_QT5="ON" \
+		-DFREECAD_QT_VERSION="6" \
 		-DPYTHON_LIBRARY="${PYTHONBASE}/lib/libpython${PYTHON_VER}${PYTHON_ABIVER}.so" \
 		-DPYTHON_INCLUDE_DIR="${PYTHON_INCLUDEDIR}" \
 		-DPYTHON_PACKAGES_PATH="${PYTHON_SITELIBDIR}" \
@@ -72,7 +73,10 @@ CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DBUILD_ASSEMBLY="OFF" \
 		-DBUILD_DESIGNER_PLUGIN="ON" \
 		-DBUILD_FLAT_MESH="ON" \
+		-DBUILD_TEST="OFF" \
+		-DENABLE_DEVELOPER_TESTS="OFF" \
 		-DBUILD_VR="OFF" \
+		-DFREECAD_LIBPACK_USE="OFF" \
 		-DFREECAD_USE_EXTERNAL_FMT="ON" \
 		-DFREECAD_CREATE_MAC_APP="OFF" \
 		-DFREECAD_FREECAD_LIBPACK_USE="OFF" \
@@ -80,6 +84,8 @@ CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DFREECAD_USE_EXTERNAL_SMESH="OFF" \
 		-DFREECAD_USE_FREETYPE="ON" \
 		-DFREECAD_USE_PYBIND11="ON" \
+		-DUSE_CUDA="OFF" \
+		-DUSE_OPENCV="OFF" \
 		-Dpybind11_DIR="${PYTHON_SITELIBDIR}/pybind11/share/cmake/pybind11" \
 		-DHDF5_CFLAGS="-I${LOCALBASE}/include" \
 		-DHDF5_FOUND=TRUE \
@@ -87,14 +93,10 @@ CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DHDF5_INCLUDE_DIRS="${LOCALBASE}/include/hdf5" \
 		-DHDF5_LIBRARIES="-L${LOCALBASE}/lib -lhdf5" \
 		-DHDF5_LIBRARY_DIRS="${LOCALBASE}/lib" \
-		-DPYSIDE2RCCBINARY="${RCC}" \
-		-DPYSIDE2UICBINARY="${UIC}" \
-		-DBUILD_ENABLE_CXX_STD=C++17
-
+		-DBUILD_ENABLE_CXX_STD=C++17 \
+		-DXDG_DATADIR="${PREFIX}/share"
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
-# Install XDG icons and files to the standard path
-CMAKE_ARGS+=	-DXDG_DATADIR="${PREFIX}/share"
 
 OPTIONS_DEFINE=	COLLADA
 
