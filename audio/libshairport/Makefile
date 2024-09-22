@@ -9,6 +9,9 @@ MAINTAINER=	manuel.creach@icloud.com
 COMMENT=	Airport Extreme Emulator
 WWW=		https://github.com/amejia1/libshairport
 
+DEPRECATED=	Abandonware, project removed upstream and hasn't seen development since 2011
+EXPIRATION_DATE=2024-10-31
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		autoreconf gmake libtool ssl
