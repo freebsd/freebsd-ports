@@ -8,6 +8,9 @@ WWW=		https://github.com/cloudflare/mod_cloudflare
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Deprecated upstream 20 Jul 2021, upstream recommends mod_remoteip
+EXPIRATION_DATE=2024-10-31
+
 CONFLICTS_INSTALL=	${PKGNAMEPREFIX}mod_remoteip
 
 USE_GITHUB=	yes
