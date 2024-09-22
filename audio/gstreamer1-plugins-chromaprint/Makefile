@@ -3,13 +3,13 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer audio fingerprint extracting plugin
 
-GST_PLUGIN=	chromaprint
+LIB_DEPENDS=	libchromaprint.so:audio/chromaprint
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS=  libchromaprint.so:audio/chromaprint
+GST_PLUGIN=	chromaprint
 
 .include "${MASTERDIR}/Makefile"

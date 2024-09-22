@@ -3,17 +3,17 @@ CATEGORIES=	multimedia
 
 COMMENT=	GStreamer resindvd DVD playback plugin
 
-GST_PLUGIN=	resindvd
-DIST=		bad
+BUILD_DEPENDS=	libdvdnav>=4.1.2:multimedia/libdvdnav
+LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
+RUN_DEPENDS=	libdvdnav>=4.1.2:multimedia/libdvdnav
 
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
+MESON_ARGS+=	-Dgpl=enabled
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
 
 PLIST=		${.CURDIR}/pkg-plist
 
-BUILD_DEPENDS+=	libdvdnav>=4.1.2:multimedia/libdvdnav
-LIB_DEPENDS+=	libdvdread.so:multimedia/libdvdread
-RUN_DEPENDS+=	libdvdnav>=4.1.2:multimedia/libdvdnav
+DIST=		bad
+GST_PLUGIN=	resindvd
 
 .include "${MASTERDIR}/Makefile"
-
-MESON_ARGS+=	-Dgpl=enabled

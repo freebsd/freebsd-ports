@@ -11,6 +11,8 @@ BASE_GST_ALL_PLUGINS+= \
 		audiotestsrc \
 		cdparanoia \
 		compositor \
+		debugutils \
+		dsd \
 		doc \
 		encoding \
 		examples \
@@ -53,21 +55,29 @@ BASE_GST_ENABLED_PLUGINS?=
 
 BAD_GST_ALL_PLUGINS+= \
 		accurip \
+		adaptivedemux \
 		adpcmdec \
 		adpcmenc \
 		aes \
 		aiff \
-		androidmedia \
+		aja \
+		amfcodec \
+		analytics \
+		analyticsoverlay \
+		androidmedia\
 		aom \
 		applemedia \
 		asfmux \
+		asio \
 		assrender \
+		audio \
 		audiobuffersplit \
 		audiofxbad \
 		audiolatency \
 		audiomixmatrix \
 		audiovisualizers \
 		autoconvert \
+		avtp \
 		basecamerabinsrc \
 		bayer \
 		bluez \
@@ -76,6 +86,7 @@ BAD_GST_ALL_PLUGINS+= \
 		camerabin2 \
 		chromaprint \
 		closedcaption \
+		codec2json \
 		codecalpha \
 		codecparsers \
 		codecs \
@@ -83,33 +94,51 @@ BAD_GST_ALL_PLUGINS+= \
 		coloreffects \
 		colormanagement \
 		curl \
+		curl-ssh2 \
+		d3d11 \
+		d3d11-hlsl-precompile \
+		d3d11-math \
+		d3d11-wgc \
+		d3d12 \
 		dash \
 		data \
 		dc1394 \
 		debugutils \
+		decklink \
 		directfb \
+		directshow \
 		directsound \
 		doc \
+		drm \
 		dtls \
 		dts \
 		dvb \
 		dvbsubenc \
 		dvbsuboverlay \
 		dvdspu \
+		dwrite \
+		dxva \
 		examples \
+		extra-checks \
 		faac \
 		faad \
 		faceoverlay \
+		fbdev \
+		fdkaac \
 		festival \
 		fieldanalysis \
 		flite \
+		fluidsynth \
 		freeverb \
 		frei0r \
 		gaudieffects \
 		gdp \
 		geometrictransform \
+		gl \
 		gme \
+		gs \
 		gsm \
+		gtk3 \
 		hls \
 		id3tag \
 		insertbin \
@@ -117,6 +146,8 @@ BAD_GST_ALL_PLUGINS+= \
 		interfaces \
 		interlace \
 		ipcpipeline \
+		iqa \
+		isac \
 		isoff \
 		ivfparse \
 		ivtc \
@@ -124,9 +155,15 @@ BAD_GST_ALL_PLUGINS+= \
 		jpegformat \
 		kms \
 		ladspa \
+		ladspa-rdf \
+		lc3 \
+		ldac \
 		libde265 \
 		librfb \
 		lv2 \
+		magicleap \
+		mediafoundation \
+		microdns \
 		midi \
 		modplug \
 		mpeg2enc \
@@ -137,30 +174,41 @@ BAD_GST_ALL_PLUGINS+= \
 		mpegtsmux \
 		mplex \
 		msdk \
+		mse \
+		musepack \
 		mxf \
 		neon \
 		netsim \
 		nls \
 		nvcodec \
+		onnx \
 		onvif \
 		openal \
+		openaptx \
 		opencv \
 		openexr \
 		openh264 \
 		openjpeg \
 		openmpt \
+		openni2 \
+		opensles \
 		opus \
+		orc \
 		pcapparse \
 		pkgconfig \
 		play \
 		player \
 		pnm \
 		proxy \
+		qroverlay \
+		qsv \
+		qt6d3d11 \
 		rawparse \
 		removesilence \
 		resindvd \
 		rist \
 		rsvg \
+		rtmp \
 		rtmp2 \
 		rtp \
 		sbc \
@@ -178,8 +226,10 @@ BAD_GST_ALL_PLUGINS+= \
 		srt \
 		srtp \
 		subenc \
+		svtav1 \
 		svthevcenc \
 		switchbin \
+		teletext \
 		tests \
 		timecode \
 		tinyalsa \
@@ -187,21 +237,30 @@ BAD_GST_ALL_PLUGINS+= \
 		transcode \
 		transcoder \
 		ttml \
+		udev \
+		unixfd \
 		uridownloader \
 		uvch264 \
+		uvcgadget \
 		v4l2codecs \
+		va \
 		videofilters \
 		videoframe_audiolevel \
 		videoparsers \
 		videosignal \
 		vmnc \
+		voaacenc \
+		voamrwbenc \
 		vulkan \
 		wasapi \
+		wasapi2 \
 		wayland \
 		webp \
 		webrtc \
 		webrtcdsp \
+		wic \
 		wildmidi \
+		win32ipc \
 		winks \
 		winscreencap \
 		x265 \
@@ -215,6 +274,8 @@ GOOD_GST_ALL_PLUGINS+= \
 		aalib \
 		adaptivedemux2 \
 		alpha \
+		amrnb \
+		amrwbdec \
 		apetag \
 		audiofx \
 		audioparsers \
@@ -263,6 +324,7 @@ GOOD_GST_ALL_PLUGINS+= \
 		png \
 		pulse \
 		qt5 \
+		qt6 \
 		replaygain \
 		rtp \
 		rtpmanager \
@@ -295,8 +357,6 @@ GOOD_GST_ENABLED_PLUGINS?=
 
 UGLY_GST_ALL_PLUGINS+= \
 		a52dec \
-		amrnb \
-		amrwbdec \
 		asfdemux \
 		cdio \
 		dvdlpcmdec \

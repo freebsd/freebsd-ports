@@ -1,0 +1,11 @@
+--- ext/sctp/meson.build.orig	2024-08-21 11:25:15 UTC
++++ ext/sctp/meson.build
+@@ -5,7 +5,7 @@ sctp_sources = [
+   'sctpassociation.c'
+ ]
+ 
+-sctp_option = get_option('sctp').enable_if(get_option('webrtc').enabled(), error_message: 'webrtc option is enabled')
++sctp_option = get_option('sctp')
+ if sctp_option.disabled()
+   subdir_done()
+ endif

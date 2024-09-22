@@ -4,13 +4,13 @@ PKGNAMESUFFIX=	1-plugins-png
 
 COMMENT=	GStreamer png plugin
 
-GST_PLUGIN=	png
+LIB_DEPENDS=	libpng.so:graphics/png
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		good
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS= libpng.so:graphics/png
+GST_PLUGIN=	png
 
 .include "${MASTERDIR}/Makefile"

@@ -3,13 +3,13 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer flite run-time speech synthesis engine plugin
 
-GST_PLUGIN=	flite
+LIB_DEPENDS=	libflite.so:audio/flite
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS=  libflite.so:audio/flite
+GST_PLUGIN=	flite
 
 .include "${MASTERDIR}/Makefile"

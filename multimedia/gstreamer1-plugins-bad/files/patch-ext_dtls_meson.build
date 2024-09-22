@@ -1,0 +1,11 @@
+--- ext/dtls/meson.build.orig	2024-08-21 11:25:15 UTC
++++ ext/dtls/meson.build
+@@ -12,7 +12,7 @@ dtls_sources = [
+   'gstdtlselement.c',
+ ]
+ 
+-dtls_option = get_option('dtls').enable_if(get_option('webrtc').enabled(), error_message: 'webrtc option is enabled')
++dtls_option = get_option('dtls')
+ openssl_dep = dependency('openssl', version: '>= 1.0.1', required: dtls_option)
+ libcrypto_dep = dependency('libcrypto', required: dtls_option)
+ 

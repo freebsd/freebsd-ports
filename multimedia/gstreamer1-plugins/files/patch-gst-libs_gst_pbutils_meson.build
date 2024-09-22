@@ -1,15 +1,12 @@
---- gst-libs/gst/pbutils/meson.build.orig	2022-09-06 20:58:54 UTC
+--- gst-libs/gst/pbutils/meson.build.orig	2024-08-21 11:25:15 UTC
 +++ gst-libs/gst/pbutils/meson.build
 @@ -1,3 +1,4 @@
 +if get_option('pbutils').enabled()
  pbutils_sources = files([
    'gstpluginsbaseversion.c',
    'pbutils.c',
-@@ -98,4 +99,5 @@ pbutils_dep = declare_dependency(link_with : pbutils,
-   dependencies : gstpbutils_deps,
+@@ -100,3 +101,4 @@ meson.override_dependency(pkg_name, pbutils_dep)
    sources : pbutils_gen_sources)
  
--meson.override_dependency(pkg_name, pbutils_dep)
-\ No newline at end of file
-+meson.override_dependency(pkg_name, pbutils_dep)
+ meson.override_dependency(pkg_name, pbutils_dep)
 +endif

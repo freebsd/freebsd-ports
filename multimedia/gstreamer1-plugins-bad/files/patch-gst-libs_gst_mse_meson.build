@@ -1,0 +1,12 @@
+--- gst-libs/gst/mse/meson.build.orig	2024-08-21 11:25:15 UTC
++++ gst-libs/gst/mse/meson.build
+@@ -1,3 +1,4 @@
++if get_option('mse').enabled()
+ gstmse_headers_private = files(
+   'gstappendpipeline-private.h',
+   'gstmediasourcesamplemap-private.h',
+@@ -148,3 +149,4 @@ meson.override_dependency(pkg_name, gstmse_dep)
+ )
+ install_headers(gstmse_headers_public, subdir: gstmse_header_dir)
+ meson.override_dependency(pkg_name, gstmse_dep)
++endif

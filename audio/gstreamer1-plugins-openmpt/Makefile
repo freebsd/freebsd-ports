@@ -3,13 +3,13 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer OpenMPT audio decoder plugin
 
-GST_PLUGIN=	openmpt
+LIB_DEPENDS=	libopenmpt.so:audio/libopenmpt
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS=  libopenmpt.so:audio/libopenmpt
+GST_PLUGIN=	openmpt
 
 .include "${MASTERDIR}/Makefile"

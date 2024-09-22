@@ -47,6 +47,7 @@ include/gstreamer-%%VERSION%%/gst/gstbuffer.h
 include/gstreamer-%%VERSION%%/gst/gstbufferlist.h
 include/gstreamer-%%VERSION%%/gst/gstbufferpool.h
 include/gstreamer-%%VERSION%%/gst/gstbus.h
+include/gstreamer-%%VERSION%%/gst/gstbytearrayinterface.h
 include/gstreamer-%%VERSION%%/gst/gstcaps.h
 include/gstreamer-%%VERSION%%/gst/gstcapsfeatures.h
 include/gstreamer-%%VERSION%%/gst/gstchildproxy.h
@@ -155,7 +156,7 @@ libdata/pkgconfig/gstreamer-net-%%VERSION%%.pc
 libexec/gstreamer-%%VERSION%%/gst-hotdoc-plugins-scanner
 libexec/gstreamer-%%VERSION%%/gst-plugin-scanner
 libexec/gstreamer-%%VERSION%%/gst-plugins-doc-cache-generator
-@(root,wheel,4755) libexec/gstreamer-%%VERSION%%/gst-ptp-helper
+%%PTP%%@(root,wheel,4755) libexec/gstreamer-%%VERSION%%/gst-ptp-helper
 share/man/man1/gst-inspect-%%VERSION%%.1.gz
 share/man/man1/gst-launch-%%VERSION%%.1.gz
 share/man/man1/gst-stats-%%VERSION%%.1.gz
@@ -198,6 +199,7 @@ share/gir-%%VERSION%%/GstNet-%%VERSION%%.gir
 %%NLS%%share/locale/ka/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/gstreamer-%%VERSION%%.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gstreamer-%%VERSION%%.mo

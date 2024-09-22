@@ -1,6 +1,6 @@
---- ext/cdparanoia/meson.build.orig	2023-01-23 19:29:34 UTC
+--- ext/cdparanoia/meson.build.orig	2024-08-21 11:25:15 UTC
 +++ ext/cdparanoia/meson.build
-@@ -42,7 +42,7 @@ if cdparanoia_found
+@@ -43,7 +43,7 @@ if cdparanoia_found
      ['gstcdparanoiasrc.c'],
      include_directories: [configinc, libsinc],
      c_args : gst_plugins_base_args + extra_args,

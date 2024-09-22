@@ -1,5 +1,5 @@
 PORTNAME=	gstreamer
-PORTVERSION=	1.22.10
+PORTVERSION=	${_GST_VERSION}
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gstreamer/
 PKGNAMESUFFIX=	1
@@ -11,38 +11,53 @@ WWW=		https://gstreamer.freedesktop.org/
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		bison libtool gnome meson ninja pkgconfig python:build shebangfix tar:xz
-USE_GNOME=	glib20 introspection:build
-
 LIB_DEPENDS=	libunwind.so:devel/libunwind
 
-CONFIGURE_ARGS=	-D tests=disabled \
-		-D examples=disabled \
-		-D dbghelp=disabled \
-		-D doc=disabled \
-		-D libdw=disabled
-PLIST_SUB=	VERSION=${GST10_VERSION} \
-		SOVERSION=0.2210.0
-
+USES=		bison libtool gnome gstreamer:_internal meson ninja \
+		pkgconfig python:build shebangfix tar:xz
+USE_GNOME=	glib20 introspection:build
+USE_GSTREAMER=	#
 USE_LDCONFIG=	yes
-GST10_VERSION=	1.0
+
+SHEBANG_FILES=	docs/gst-plugins-doc-cache-generator.py \
+		gst/parse/get_flex_version.py \
+		scripts/extract-release-date-from-doap-file.py \
+
+MESON_ARGS=	-D dbghelp=disabled \
+		-D doc=disabled \
+		-D examples=disabled \
+		-D libdw=disabled \
+		-D tests=disabled
 
 PORTSCOUT=	limitw:1,even
 
-OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	BASH NLS
-OPTIONS_DEFAULT=BASH
+PLIST_SUB=	SOVERSION=${_GST_SOVERSION} \
+		VERSION=${_GST_LIB_VER}
+
+OPTIONS_DEFINE=		BASH NLS
+OPTIONS_DEFAULT=	BASH
+# The PTP helper requires Rust since GStreamer 1.24.0, so only enable it on
+# platforms that have Rust support.
+.for arch in aarch64 amd64 armv7 i386 powerpc64 powerpc64le powerpc risc64
+OPTIONS_DEFINE_${arch}=	PTP
+OPTIONS_DEFAULT_${arch}=PTP
+.endfor
+OPTIONS_SUB=		yes
 
 BASH_BUILD_DEPENDS=	bash-completion>0:shells/bash-completion
 BASH_MESON_ENABLED=	bash-completion
 
-NLS_USES=	gettext
-NLS_MESON_ENABLED=      nls
+NLS_USES=		gettext
+NLS_MESON_ENABLED=	nls
 
-SHEBANG_FILES=  gst/parse/get_flex_version.py \
-	scripts/extract-release-date-from-doap-file.py \
-	docs/gst-plugins-doc-cache-generator.py
-python_OLD_CMD= "/usr/bin/env python3"
-python_CMD=     ${SETENV} ${PYTHON_VERSION}
+PTP_DESC=		Precision Time Protocol support
+PTP_BUILD_DEPENDS=	rustc:lang/rust
+PTP_MESON_ENABLED=	ptp-helper
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Naarch64:Namd64:Narmv7:Ni386:Npowerpc64:Npowerpc64le:Npowerpc:Nriscv64}
+MESON_ARGS+=	-D ptp-helper=disabled
+.endif
 
 .include <bsd.port.mk>

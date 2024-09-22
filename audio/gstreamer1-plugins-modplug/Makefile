@@ -3,13 +3,13 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer module decoder based on modplug egine plugin
 
-GST_PLUGIN=	modplug
+LIB_DEPENDS=	libmodplug.so:audio/libmodplug
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS=  libmodplug.so:audio/libmodplug
+GST_PLUGIN=	modplug
 
 .include "${MASTERDIR}/Makefile"

@@ -3,15 +3,15 @@ CATEGORIES=	multimedia
 
 COMMENT=	GStreamer DVD access plugin with libdvdread
 
-GST_PLUGIN=	dvdread
+LIB_DEPENDS=	libdvdread.so:multimedia/libdvdread
+
+MESON_ARGS+=	-Dgpl=enabled
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		ugly
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS=libdvdread.so:multimedia/libdvdread
+GST_PLUGIN=	dvdread
 
 .include "${MASTERDIR}/Makefile"
-
-MESON_ARGS+= -Dgpl=enabled

@@ -1,15 +1,15 @@
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	audio
 
 COMMENT=	GStreamer emulate gaming console sound processors plugin
 
-GST_PLUGIN=	gme
+LIB_DEPENDS=	libgme.so:audio/libgme
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS=  libgme.so:audio/libgme
+GST_PLUGIN=	gme
 
 .include "${MASTERDIR}/Makefile"

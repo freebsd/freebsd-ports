@@ -3,13 +3,13 @@ CATEGORIES=	multimedia
 
 COMMENT=	GStreamer (openh264) plugin
 
-GST_PLUGIN=	openh264
+LIB_DEPENDS=	libopenh264.so:multimedia/openh264
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS= libopenh264.so:multimedia/openh264
+GST_PLUGIN=	openh264
 
 .include "${MASTERDIR}/Makefile"

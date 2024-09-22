@@ -1,6 +1,6 @@
---- ext/gl/meson.build.orig	2022-06-15 22:36:22 UTC
+--- ext/gl/meson.build.orig	2024-08-21 11:25:15 UTC
 +++ ext/gl/meson.build
-@@ -116,10 +116,6 @@ if bcm_host_dep.found()
+@@ -114,10 +114,6 @@ endif
    optional_deps += bcm_host_dep
  endif
  
@@ -11,7 +11,7 @@
  if ['darwin', 'ios'].contains(host_system)
    if not have_objc
      error('No ObjC compiler found')
-@@ -146,7 +142,7 @@ gstopengl = library('gstopengl',
+@@ -144,7 +140,7 @@ gstopengl = library('gstopengl',
    objc_args : gst_plugins_base_args + gl_objc_args + extra_c_args,
    link_args : noseh_link_args,
    include_directories : [configinc],

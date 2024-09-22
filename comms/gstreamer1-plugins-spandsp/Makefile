@@ -3,13 +3,13 @@ CATEGORIES=	comms
 
 COMMENT=	GStreamer DSP library and software FAX machine plugin
 
-GST_PLUGIN=	spandsp
+LIB_DEPENDS=	libspandsp.so:comms/spandsp
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS=  libspandsp.so:comms/spandsp
+GST_PLUGIN=	spandsp
 
 .include "${MASTERDIR}/Makefile"

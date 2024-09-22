@@ -1,7 +1,7 @@
 PORTNAME=	gstreamer
 PORTVERSION?=	${BASE_PORTVERSION}
 # plug-in port instead, like ${category}/gstreamer1-plugin-${PLUGIN}.
-PORTREVISION?=	2
+PORTREVISION?=	0
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gst-plugins-base/:base \
 		https://gstreamer.freedesktop.org/src/gst-plugins-bad/:bad \
@@ -21,7 +21,22 @@ LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
 		liborc-0.4.so:devel/orc
 RUN_DEPENDS+=	iso-codes>=0:misc/iso-codes
 
+USES+=		meson cpe gettext gnome gstreamer libtool pathfix pkgconfig python:build tar:xz
+CPE_VENDOR=	gstreamer_project
+CPE_PRODUCT=	gstreamer
+USE_GNOME+=	glib20 introspection:build libxml2
+USE_LDCONFIG=	yes
+
+MESON_ARGS+=	--auto-features=auto # XXX bug 270361 workaround
+
+CFLAGS+=	-Wno-format
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-lpthread -L${LOCALBASE}/lib ${EXTRA_LIBS}
+
 PORTSCOUT=	limitw:1,even
+
+PLIST_SUB+=	SOVERSION="${_GST_SOVERSION}" \
+		VERSION="${_GST_LIB_VER}"
 
 BASE_PORTVERSION=	${_GST_VERSION}
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
@@ -35,38 +50,15 @@ GOOD_DISTFILE=		${GOOD_DISTNAME}${EXTRACT_SUFX}
 UGLY_PORTVERSION=	${_GST_VERSION}
 UGLY_DISTNAME=		gst-plugins-ugly-${UGLY_PORTVERSION}
 UGLY_DISTFILE=		${UGLY_DISTNAME}${EXTRACT_SUFX}
-DIST?=		base
-
-USES+=		meson cpe gettext gnome gstreamer libtool pathfix pkgconfig python:build tar:xz
-USE_GNOME+=	glib20 introspection:build libxml2
-GST_PLUGIN?=	base
-USE_LDCONFIG=	yes
-MESON_ARGS+=	--auto-features=auto # XXX bug 270361 workaround
-
-CPE_VENDOR=	gstreamer_project
-CPE_PRODUCT=	gstreamer
-
-CFLAGS+=	-Wno-format
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib ${EXTRA_LIBS}
-
 DEFAULT_AUDIOSINK?=	osssink
 DEFAULT_AUDIOSRC?=	osssrc
-
-.if ${DIST}==""
-IGNORE=		DIST not specified
-.endif
-
-VERSION=	1.0
-SOVERSION=	0.2210.0
-PLIST_SUB+=	VERSION="${VERSION}" \
-		SOVERSION="${SOVERSION}"
+DIST?=			base
+GST_PLUGIN?=		base
 
 # Include bsd.port.options.mk and not bsd.port.pre.mk to be able to use USES
 .include <bsd.port.options.mk>
 
 .if ${GST_PLUGIN} == "base"
-DIST=	base
 NO_GSTREAMER_COMMON=	yes
 
 BASE_GST_ENABLED_PLUGINS=	adder \
@@ -79,6 +71,8 @@ BASE_GST_ENABLED_PLUGINS=	adder \
 				audioresample \
 				audiotestsrc \
 				compositor \
+				debugutils \
+				dsd \
 				encoding \
 				fft \
 				gio \
@@ -105,45 +99,48 @@ BASE_GST_ENABLED_PLUGINS=	adder \
 				volume
 .endif
 
-.if ${DIST} == base || ${DIST} == ugly
-CONFIGURE_ARGS+= -Ddefaultaudiosink="${DEFAULT_AUDIOSINK}" \
+.if ${DIST} == "base" || ${DIST} == "ugly"
+MESON_ARGS+=	-Ddefaultaudiosink="${DEFAULT_AUDIOSINK}" \
 		-Ddefaultaudiosrc="${DEFAULT_AUDIOSRC}"
 .endif
 
 .include "${MASTERDIR}/Makefile.common"
 
-.if ${DIST}=="base"
-EXTRACT_ONLY=${BASE_DISTFILE}
-WRKSRC=${WRKDIR}/${BASE_DISTNAME}
+.if ${DIST} == "base"
+EXTRACT_ONLY=	${BASE_DISTFILE}
+WRKSRC=		${WRKDIR}/${BASE_DISTNAME}
 PORTVERSION=	${BASE_PORTVERSION}
 DISTFILES+=	${BASE_DISTFILE}:base
-PATCHDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins/files
-.elif ${DIST}=="bad"
-EXTRACT_ONLY=${BAD_DISTFILE}
-WRKSRC=${WRKDIR}/${BAD_DISTNAME}
+PATCHDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins/files
+.elif ${DIST} == "bad"
+EXTRACT_ONLY=	${BAD_DISTFILE}
+WRKSRC=		${WRKDIR}/${BAD_DISTNAME}
 PORTVERSION=	${BAD_PORTVERSION}
 DISTFILES+=	${BAD_DISTFILE}:bad
-PATCHDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins-bad/files
-.elif ${DIST}=="ugly"
-EXTRACT_ONLY=${UGLY_DISTFILE}
-WRKSRC=${WRKDIR}/${UGLY_DISTNAME}
+PATCHDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins-bad/files
+.elif ${DIST} == "ugly"
+EXTRACT_ONLY=	${UGLY_DISTFILE}
+WRKSRC=		${WRKDIR}/${UGLY_DISTNAME}
 PORTVERSION=	${UGLY_PORTVERSION}
 DISTFILES+=	${UGLY_DISTFILE}:ugly
-PATCHDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins-ugly/files
-.elif ${DIST}=="good"
-EXTRACT_ONLY=${GOOD_DISTFILE}
-WRKSRC=${WRKDIR}/${GOOD_DISTNAME}
+PATCHDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins-ugly/files
+.elif ${DIST} == "good"
+EXTRACT_ONLY=	${GOOD_DISTFILE}
+WRKSRC=		${WRKDIR}/${GOOD_DISTNAME}
 PORTVERSION=	${GOOD_PORTVERSION}
 DISTFILES+=	${GOOD_DISTFILE}:good
-PATCHDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins-good/files
-.elif ${DIST}=="makesum"
+PATCHDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins-good/files
+.elif ${DIST} == "makesum"
 DISTFILES+=	${BASE_DISTFILE}:base ${BAD_DISTFILE}:bad \
 		${UGLY_DISTFILE}:ugly ${GOOD_DISTFILE}:good
 .else
-BROKEN=		Unknown dist setting
+BROKEN=		unknown DIST setting
 .endif
 
 pre-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/gstreamer-${VERSION}
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/gstreamer-${_GST1_LIB_VER}
+
+makesum-gst1:
+	${MAKE} DIST=makesum makesum
 
 .include <bsd.port.mk>

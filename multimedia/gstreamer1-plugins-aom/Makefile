@@ -3,13 +3,13 @@ CATEGORIES=	multimedia
 
 COMMENT=	GStreamer (libaom) plugin
 
-GST_PLUGIN=	aom
+LIB_DEPENDS=	libaom.so:multimedia/aom
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS=   libaom.so:multimedia/aom
+GST_PLUGIN=	aom
 
 .include "${MASTERDIR}/Makefile"

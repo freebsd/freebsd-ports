@@ -3,13 +3,13 @@ CATEGORIES=	graphics
 
 COMMENT=	GStreamer libvisual plugin
 
-GST_PLUGIN=	libvisual
+LIB_DEPENDS=	libvisual-0.4.so:graphics/libvisual04
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		base
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS=  libvisual-0.4.so:graphics/libvisual04
+GST_PLUGIN=	libvisual
 
 .include "${MASTERDIR}/Makefile"

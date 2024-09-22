@@ -1,15 +1,15 @@
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	graphics
 
 COMMENT=	GStreamer jpeg encoder/decoder plugin
 
-GST_PLUGIN=	jpeg
+USES=		jpeg
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		good
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-USES=    jpeg
+GST_PLUGIN=	jpeg
 
 .include "${MASTERDIR}/Makefile"

@@ -3,14 +3,15 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer vorbis encoder/decoder plugin
 
-GST_PLUGIN=	vorbis
+LIB_DEPENDS=	libvorbis.so:audio/libvorbis
+
+USE_GSTREAMER=	ogg
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		base
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-USE_GSTREAMER= ogg
-LIB_DEPENDS= libvorbis.so:audio/libvorbis
+GST_PLUGIN=	vorbis
 
 .include "${MASTERDIR}/Makefile"
