@@ -1,0 +1,7 @@
+pykeepass_cache is a support library for pykeepass. It is a drop-in
+replacement for pykeepass.PyKeePass which caches databases in a
+background process to make database access faster.
+
+This is useful in situations where the program is terminated between
+invocations (e.g. CLI scripts). The background process will
+automatically shut down after 300 seconds.

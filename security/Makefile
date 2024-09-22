@@ -1021,6 +1021,7 @@
     SUBDIR += py-pyhanko
     SUBDIR += py-pyhanko-certvalidator
     SUBDIR += py-pykeepass
+    SUBDIR += py-pykeepass-cache
     SUBDIR += py-pylibacl
     SUBDIR += py-pymacaroons
     SUBDIR += py-pynacl
