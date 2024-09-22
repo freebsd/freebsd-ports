@@ -1000,6 +1000,7 @@
     SUBDIR += py-paramiko
     SUBDIR += py-pass-audit
     SUBDIR += py-pass-git-helper
+    SUBDIR += py-passhole
     SUBDIR += py-passlib
     SUBDIR += py-pbkdf2
     SUBDIR += py-pem
