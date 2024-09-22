@@ -432,6 +432,7 @@
     SUBDIR += frand
     SUBDIR += freebsd-bsdlabel
     SUBDIR += freebsd-fdisk
+    SUBDIR += freebsd-rustdate
     SUBDIR += freebsd-snapshot
     SUBDIR += freecolor
     SUBDIR += freedt
