@@ -1,7 +1,6 @@
 PORTNAME=	typstyle
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.32
-PORTREVISION=	2
+DISTVERSION=	0.11.34
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +22,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.6.14 \
-		anstyle-1.0.7 \
+		anstyle-1.0.8 \
 		anstyle-parse-0.2.4 \
 		anstyle-query-1.1.0 \
 		anstyle-wincon-3.0.3 \
@@ -66,9 +65,10 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
 		citationberg-0.3.1 \
-		clap-4.5.7 \
-		clap_builder-4.5.7 \
-		clap_derive-4.5.5 \
+		clap-4.5.18 \
+		clap_builder-4.5.18 \
+		clap_complete-4.5.29 \
+		clap_derive-4.5.18 \
 		clap_lex-0.7.1 \
 		cobs-0.2.3 \
 		codespan-reporting-0.11.1 \
