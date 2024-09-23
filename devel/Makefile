@@ -5026,6 +5026,7 @@
     SUBDIR += py-jaraco.text
     SUBDIR += py-jaraco.util
     SUBDIR += py-javaproperties
+    SUBDIR += py-jaxtyping
     SUBDIR += py-jdcal
     SUBDIR += py-jedi
     SUBDIR += py-jeepney
