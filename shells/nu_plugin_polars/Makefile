@@ -11,6 +11,8 @@ WWW=		https://www.nushell.sh/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: failed to resolve: use of undeclared crate or module alloc, see https://github.com/nushell/nushell/issues/13903
+
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo localbase
