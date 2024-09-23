@@ -11,7 +11,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libvirt.so:devel/libvirt
 
-USES=		gettext gmake gnome libtool meson pathfix pkgconfig \
+USES=		gettext gmake gnome meson pathfix pkgconfig \
 		python tar:xz
 
 OPTIONS_DEFINE=	DOCS VAPI
