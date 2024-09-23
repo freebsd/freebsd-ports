@@ -20,7 +20,8 @@ share/man/man1/splitshp.1.gz
 share/man/man1/textpack.1.gz
 share/man/man1/ucc.1.gz
 share/man/man6/exult.6.gz
-share/applications/exult.desktop
+share/applications/info.exult.exult.desktop
+%%STUDIO%%share/applications/info.exult.studio.desktop
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -69,4 +70,7 @@ share/applications/exult.desktop
 %%DATADIR%%/u7opcodes.data
 %%DATADIR%%/u7sibetaintrinsics.data
 %%DATADIR%%/u7siintrinsics.data
-share/pixmaps/exult.png
+share/pixmaps/info.exult.exult.png
+share/pixmaps/info.exult.exult.svg
+%%STUDIO%%share/pixmaps/info.exult.studio.png
+%%STUDIO%%share/pixmaps/info.exult.studio.svg
