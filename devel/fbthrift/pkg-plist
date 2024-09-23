@@ -311,6 +311,7 @@ include/thrift/lib/cpp2/gen/service_cpp.h
 include/thrift/lib/cpp2/gen/service_h.h
 include/thrift/lib/cpp2/gen/service_tcc.h
 include/thrift/lib/cpp2/hash/DeterministicHash.h
+include/thrift/lib/cpp2/op/AssignPatch.h
 include/thrift/lib/cpp2/op/Clear.h
 include/thrift/lib/cpp2/op/Compare.h
 include/thrift/lib/cpp2/op/Copy.h
@@ -327,7 +328,6 @@ include/thrift/lib/cpp2/op/StdSerializer.h
 include/thrift/lib/cpp2/op/Testing.h
 include/thrift/lib/cpp2/op/Xxh64Hasher.h
 include/thrift/lib/cpp2/op/detail/AnyOp.h
-include/thrift/lib/cpp2/op/detail/AssignPatch.h
 include/thrift/lib/cpp2/op/detail/BaseOp.h
 include/thrift/lib/cpp2/op/detail/BasePatch.h
 include/thrift/lib/cpp2/op/detail/Clear.h
@@ -386,15 +386,10 @@ include/thrift/lib/cpp2/protocol/detail/Object.h
 include/thrift/lib/cpp2/protocol/detail/ReservedId.h
 include/thrift/lib/cpp2/protocol/detail/index.h
 include/thrift/lib/cpp2/protocol/detail/protocol_methods.h
-include/thrift/lib/cpp2/reflection/debug.h
 include/thrift/lib/cpp2/reflection/demo/json_print.h
-include/thrift/lib/cpp2/reflection/diff.h
-include/thrift/lib/cpp2/reflection/folly_dynamic.h
 include/thrift/lib/cpp2/reflection/gmock_matching.h
 include/thrift/lib/cpp2/reflection/helpers.h
 include/thrift/lib/cpp2/reflection/indenter.h
-include/thrift/lib/cpp2/reflection/internal/folly_dynamic-inl-post.h
-include/thrift/lib/cpp2/reflection/internal/folly_dynamic-inl-pre.h
 include/thrift/lib/cpp2/reflection/internal/helpers-inl-pre.h
 include/thrift/lib/cpp2/reflection/internal/legacy_reflection-inl-post.h
 include/thrift/lib/cpp2/reflection/internal/legacy_reflection-inl-pre.h
@@ -535,6 +530,7 @@ include/thrift/lib/cpp2/transport/rocket/ChecksumGenerator.h
 include/thrift/lib/cpp2/transport/rocket/Compression.h
 include/thrift/lib/cpp2/transport/rocket/FdSocket.h
 include/thrift/lib/cpp2/transport/rocket/PayloadUtils.h
+include/thrift/lib/cpp2/transport/rocket/RequestPayload.h
 include/thrift/lib/cpp2/transport/rocket/RocketException.h
 include/thrift/lib/cpp2/transport/rocket/Types.h
 include/thrift/lib/cpp2/transport/rocket/client/KeepAliveWatcher.h
@@ -557,6 +553,10 @@ include/thrift/lib/cpp2/transport/rocket/framing/parser/FrameLengthParserStrateg
 include/thrift/lib/cpp2/transport/rocket/framing/parser/ParserStrategy.h
 include/thrift/lib/cpp2/transport/rocket/framing/parser/test/TestUtil.h
 include/thrift/lib/cpp2/transport/rocket/framing/test/Util.h
+include/thrift/lib/cpp2/transport/rocket/payload/DefaultPayloadSerializerStrategy.h
+include/thrift/lib/cpp2/transport/rocket/payload/LegacyPayloadSerializerStrategy.h
+include/thrift/lib/cpp2/transport/rocket/payload/PayloadSerializer.h
+include/thrift/lib/cpp2/transport/rocket/payload/PayloadSerializerStrategy.h
 include/thrift/lib/cpp2/transport/rocket/server/RocketRoutingHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/RocketServerConnection.h
 include/thrift/lib/cpp2/transport/rocket/server/RocketServerConnectionObserver.h
@@ -622,6 +622,7 @@ include/thrift/lib/cpp2/util/ScopedServerInterfaceThread-inl.h
 include/thrift/lib/cpp2/util/ScopedServerInterfaceThread.h
 include/thrift/lib/cpp2/util/ScopedServerThread.h
 include/thrift/lib/cpp2/util/TypeErasedRef.h
+include/thrift/lib/cpp2/util/TypeErasedTupleRef.h
 include/thrift/lib/cpp2/util/TypeErasedValue.h
 include/thrift/lib/cpp2/util/gtest/Matcher-inl.h
 include/thrift/lib/cpp2/util/gtest/Matcher.h
