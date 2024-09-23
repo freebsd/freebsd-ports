@@ -41,7 +41,7 @@ GROUPS=		gdm video
 
 PORTSCOUT=	limitw:1,even
 
-USES=		cpe gettext gnome libtool localbase:ldflags meson pathfix \
+USES=		cpe gettext gnome localbase:ldflags meson pathfix \
 		pkgconfig tar:xz xorg
 CPE_VENDOR=	gnome
 CPE_PRODUCT=	gnome_display_manager
