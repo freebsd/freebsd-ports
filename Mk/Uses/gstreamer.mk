@@ -52,7 +52,7 @@ _GST1_LIB_VER=		1.0
 _GST1_SOVERSION=	0.${_GST1_VERSION:R:E}${${_GST1_VERSION:E} > 9:?:0}${_GST1_VERSION:E}.0
 
 _GST1_CATEGORIES=	audio comms devel ftp graphics multimedia net security \
-			sysutils www x11 x11-toolkits
+			sysutils textproc www x11 x11-toolkits
 _GST1_PLUGINS_audio= 	a52dec amrnb amrwbdec bs2b cdparanoia chromaprint faac \
 			faad flac flite gme gsm jack ladspa lame lv2 modplug \
 			mpg123 ogg openmpt opus pulse shout2 sidplay \
