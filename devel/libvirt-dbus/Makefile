@@ -2,7 +2,7 @@ PORTNAME=	libvirt-dbus
 PORTVERSION=	1.4.1
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://libvirt.org/libvirt/dbus/
+MASTER_SITES=	https://download.libvirt.org/dbus/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Libvirt D-Bus API binding
