@@ -421,7 +421,6 @@ include/folly/experimental/ExecutionObserver.h
 include/folly/experimental/FlatCombiningPriorityQueue.h
 include/folly/experimental/FunctionScheduler.h
 include/folly/experimental/Instructions.h
-include/folly/experimental/JSONSchema.h
 include/folly/experimental/LockFreeRingBuffer.h
 include/folly/experimental/NestedCommandLineApp.h
 include/folly/experimental/PrimaryPtr.h
