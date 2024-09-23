@@ -19,8 +19,7 @@ RUN_DEPENDS=	hwdata>0:misc/hwdata
 USERS=		colord
 GROUPS=		colord
 
-USES=		gettext gnome libtool localbase meson pathfix pkgconfig sqlite \
-		tar:xz
+USES=		gettext gnome localbase meson pathfix pkgconfig sqlite tar:xz
 USE_GNOME=	glib20 intlhack introspection:build
 
 USE_LDCONFIG=	yes
