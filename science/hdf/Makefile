@@ -1,35 +1,47 @@
 PORTNAME=	hdf
-PORTVERSION=	4.2.15
-PORTREVISION=	4
+DISTVERSION=	4.3.0
 PORTEPOCH=	1
 CATEGORIES=	science archivers graphics
-MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF/releases/HDF${PORTVERSION}/src/ \
-		ftp://ftp.hdfgroup.org/HDF/releases/HDF${PORTVERSION}/src/
+MASTER_SITES=	https://github.com/HDFGroup/hdf4/releases/download/hdf${DISTVERSION}/
+DISTNAME=	hdf${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
-WWW=		https://www.hdfgroup.org/products/hdf4/
+WWW=		https://www.hdfgroup.org/solutions/hdf4/
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 NOT_FOR_ARCHS=		aarch64 armv6 armv7
 NOT_FOR_ARCHS_REASON=	fails to compile: no machine type has been defined
 
 LIB_DEPENDS=	libsz.so:science/libaec
 
-CONFLICTS_INSTALL=	netcdf-4.[0-9]*
-
 USES=		fortran jpeg libtool
+USE_LDCONFIG=	yes
+
+WRKSRC=		${WRKDIR}/hdfsrc
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --with-jpeg=${LOCALBASE} \
+CONFIGURE_ARGS=	--enable-shared \
+		--with-jpeg=${LOCALBASE} \
 		--with-szlib=${LOCALBASE}
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share/
-USE_LDCONFIG=	yes
+
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-PORTDATA=	*
-PORTEXAMPLES=	*
+OPTIONS_DEFINE=		JAVA
+OPTIONS_DEFAULT=	JAVA
+OPTIONS_SUB=		yes
 
-OPTIONS_DEFINE=	EXAMPLES
+JAVA_CONFIGURE_ENABLE=	java
+JAVA_USE=		JAVA=yes
+JAVA_VARS=		JAVA_VERSION=17 \
+			JAVA_BUILD=yes
+JAVA_CONFIGURE_ENV=	JAVA_HOME=${JAVA_HOME} \
+			PATH=${JAVA_HOME}/bin:${PATH}
+JAVA_MAKE_ENV=		PATH=${JAVA_HOME}/bin:${PATH}
 
 .include <bsd.port.pre.mk>
 
@@ -39,18 +51,6 @@ OPTIONS_DEFINE=	EXAMPLES
 FFLAGS+=	-fallow-argument-mismatch
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e '/PROD_/ s|=.*|=""|' ${WRKSRC}/config/freebsd
-	@${REINPLACE_CMD} -e 's/ || (__APPLE__.*//' \
-		${WRKSRC}/hdf/test/fortest.c
-
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/man/hdfunpac.1 \
-		${STAGEDIR}${PREFIX}/share/man/man1
-	# Allow to build on PowerPC
-	@${REINPLACE_CMD} -e '/if defined (__APPLE__)/ \
-		s,),) || defined(__powerpc__),' ${WRKSRC}/hdf/src/hdfi.h
-	${INSTALL_MAN} ${WRKSRC}/man/gr_chunk.3 \
-		${STAGEDIR}${PREFIX}/share/man/man3
+CONFLICTS_INSTALL=	netcdf-4.[0-9]*
 
 .include <bsd.port.post.mk>
