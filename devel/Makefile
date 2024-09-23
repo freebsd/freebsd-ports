@@ -7722,7 +7722,6 @@
     SUBDIR += rubygem-sidekiq-cron-rails70
     SUBDIR += rubygem-sidekiq-scheduler
     SUBDIR += rubygem-sidekiq-unique-jobs
-    SUBDIR += rubygem-sidekiq71
     SUBDIR += rubygem-sidekiq72
     SUBDIR += rubygem-sidetiq
     SUBDIR += rubygem-sigdump
