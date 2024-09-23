@@ -1,5 +1,5 @@
 PORTNAME=	fnt
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	x11-fonts sysutils
 
 MAINTAINER=	ehaupt@FreeBSD.org
