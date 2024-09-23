@@ -16,7 +16,7 @@ LIB_DEPENDS=	libvirt.so:devel/libvirt \
 RUN_DEPENDS=	dbus-daemon:devel/dbus
 BUILD_DEPENDS=	rst2man:textproc/py-docutils
 
-USES=		gettext-runtime gmake gnome libtool perl5 pkgconfig tar:xz meson
+USES=		gettext-runtime gmake gnome perl5 pkgconfig tar:xz meson
 USE_GNOME=	glib20
 USE_PERL5=	build
 
