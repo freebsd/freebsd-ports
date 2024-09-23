@@ -8251,7 +8251,7 @@
     SUBDIR += xpeviewer
     SUBDIR += xsd
     SUBDIR += xsimd
-    SUBDIR += xtensa-esp32-elf
+    SUBDIR += xtensa-esp-elf
     SUBDIR += xtl
     SUBDIR += xtl-quant-stack
     SUBDIR += xwpe
