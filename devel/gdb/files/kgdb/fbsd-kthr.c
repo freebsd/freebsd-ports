@@ -30,6 +30,7 @@
 
 #include "defs.h"
 #include "gdbcore.h"
+#include "inferior.h"
 #include "objfiles.h"
 #include "value.h"
 
@@ -70,7 +71,7 @@ kgdb_lookup(const char *sym)
 static bool
 cpu_stopped(int cpu)
 {
-	struct gdbarch *gdbarch = target_gdbarch ();
+	struct gdbarch *gdbarch = current_inferior ()->arch ();
 	CORE_ADDR addr;
 	ULONGEST mask;
 	int bit, long_bytes, word;
@@ -95,7 +96,7 @@ kgdb_thr_first(void)
 static void
 kgdb_thr_add_proc(CORE_ADDR paddr, CORE_ADDR (*cpu_pcb_addr) (u_int))
 {
-	struct gdbarch *gdbarch = target_gdbarch ();
+	struct gdbarch *gdbarch = current_inferior ()->arch ();
 	struct type *ptr_type = builtin_type (gdbarch)->builtin_data_ptr;
 	enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
 	struct kthr *kt;
@@ -149,7 +150,7 @@ kgdb_thr_add_proc(CORE_ADDR paddr, CORE_ADDR (*cpu_pcb_addr) (u_int))
 static void
 kgdb_thr_add_procs_hash(CORE_ADDR pidhashtbl, CORE_ADDR (*cpu_pcb_addr) (u_int))
 {
-	struct gdbarch *gdbarch = target_gdbarch ();
+	struct gdbarch *gdbarch = current_inferior ()->arch ();
 	struct type *ptr_type = builtin_type (gdbarch)->builtin_data_ptr;
 	enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
 	CORE_ADDR paddr, pnext;
@@ -179,7 +180,7 @@ kgdb_thr_add_procs_hash(CORE_ADDR pidhashtbl, CORE_ADDR (*cpu_pcb_addr) (u_int))
 static void
 kgdb_thr_add_procs_list(CORE_ADDR paddr, CORE_ADDR (*cpu_pcb_addr) (u_int))
 {
-	struct gdbarch *gdbarch = target_gdbarch ();
+	struct gdbarch *gdbarch = current_inferior ()->arch ();
 	struct type *ptr_type = builtin_type (gdbarch)->builtin_data_ptr;
 	enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
 	CORE_ADDR pnext;
@@ -199,7 +200,7 @@ kgdb_thr_add_procs_list(CORE_ADDR paddr, CORE_ADDR (*cpu_pcb_addr) (u_int))
 struct kthr *
 kgdb_thr_init(CORE_ADDR (*cpu_pcb_addr) (u_int))
 {
-	struct gdbarch *gdbarch = target_gdbarch ();
+	struct gdbarch *gdbarch = current_inferior ()->arch ();
 	struct type *ptr_type = builtin_type (gdbarch)->builtin_data_ptr;
 	struct kthr *kt;
 	CORE_ADDR addr, paddr;
@@ -249,7 +250,7 @@ kgdb_thr_init(CORE_ADDR (*cpu_pcb_addr) (u_int))
 		try {
 			struct symbol *proc_sym =
 			    lookup_symbol_in_language ("struct proc", NULL,
-				STRUCT_DOMAIN, language_c, NULL).symbol;
+				SEARCH_TYPE_DOMAIN, language_c, NULL).symbol;
 			if (proc_sym == NULL)
 				error (_("Unable to find struct proc symbol"));
 
@@ -268,7 +269,7 @@ kgdb_thr_init(CORE_ADDR (*cpu_pcb_addr) (u_int))
 
 			struct symbol *thread_sym =
 			    lookup_symbol_in_language ("struct thread", NULL,
-				STRUCT_DOMAIN, language_c, NULL).symbol;
+				SEARCH_TYPE_DOMAIN, language_c, NULL).symbol;
 			if (thread_sym == NULL)
 				error (_("Unable to find struct thread symbol"));
 
@@ -314,7 +315,7 @@ kgdb_thr_init(CORE_ADDR (*cpu_pcb_addr) (u_int))
 		try {
 			struct symbol *proc_sym =
 			    lookup_symbol_in_language ("struct proc", NULL,
-				STRUCT_DOMAIN, language_c, NULL).symbol;
+				SEARCH_TYPE_DOMAIN, language_c, NULL).symbol;
 			if (proc_sym == NULL)
 				error (_("Unable to find struct proc symbol"));
 

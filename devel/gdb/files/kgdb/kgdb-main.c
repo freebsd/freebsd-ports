@@ -25,11 +25,13 @@
  */
 
 #include "defs.h"
+#include "annotate.h"
 #include "interps.h"
 #include "main.h"
 #include "osabi.h"
 #include "run-on-main-thread.h"
 #include "serial.h"
+#include "solib.h"
 
 #include <err.h>
 #include <paths.h>

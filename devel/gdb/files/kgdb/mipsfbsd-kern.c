@@ -92,7 +92,7 @@ mipsfbsd_supply_pcb(struct regcache *regcache, CORE_ADDR pcb_addr)
 			  sizeof(buf)) != 0)
     return;
 
-  regcache->raw_supply_unsigned (MIPS_ZERO_REGNUM, 0);
+  regcache->raw_supply_zeroed (MIPS_ZERO_REGNUM);
   regcache->raw_supply (MIPS_S2_REGNUM - 2,
 			buf + (regsize * FBSD_PCB_REG_S0));
   regcache->raw_supply (MIPS_S2_REGNUM - 1,
@@ -124,7 +124,7 @@ mipsfbsd_supply_pcb(struct regcache *regcache, CORE_ADDR pcb_addr)
 }
 
 static struct trad_frame_cache *
-mipsfbsd_trapframe_cache (frame_info_ptr this_frame, void **this_cache)
+mipsfbsd_trapframe_cache (const frame_info_ptr &this_frame, void **this_cache)
 {
   struct gdbarch *gdbarch = get_frame_arch (this_frame);
   size_t regsize = mips_isa_regsize (gdbarch);
@@ -203,7 +203,7 @@ mipsfbsd_trapframe_cache (frame_info_ptr this_frame, void **this_cache)
 }
 
 static void
-mipsfbsd_trapframe_this_id (frame_info_ptr this_frame,
+mipsfbsd_trapframe_this_id (const frame_info_ptr &this_frame,
 			    void **this_cache, struct frame_id *this_id)
 {
   struct trad_frame_cache *cache =
@@ -213,7 +213,7 @@ mipsfbsd_trapframe_this_id (frame_info_ptr this_frame,
 }
 
 static struct value *
-mipsfbsd_trapframe_prev_register (frame_info_ptr this_frame,
+mipsfbsd_trapframe_prev_register (const frame_info_ptr &this_frame,
 				  void **this_cache, int regnum)
 {
   struct trad_frame_cache *cache =
@@ -224,7 +224,7 @@ mipsfbsd_trapframe_prev_register (frame_info_ptr this_frame,
 
 static int
 mipsfbsd_trapframe_sniffer (const struct frame_unwind *self,
-			    frame_info_ptr this_frame,
+			    const frame_info_ptr &this_frame,
 			    void **this_prologue_cache)
 {
   const char *name;
