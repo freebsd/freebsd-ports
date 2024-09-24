@@ -5,7 +5,7 @@ CATEGORIES=	devel
 # zip file's checksum. This does not play well with FreeBSD's conventions.
 # maintainer is backup hosting
 MASTER_SITES=	https://ftp.perforce.com/perforce/${P4VERSION}/bin.tools/p4source${EXTRACT_SUFX}?dummy=/ \
-		https://hesiod.org/distfiles/perforce-${MINOR}/p4source${EXTRACT_SUFX}?dummy=/
+		https://hesiod.org/distfiles/perforce/
 DISTNAME=	p4source-${MINOR}
 
 MAINTAINER=	antonfb@hesiod.org
@@ -35,8 +35,11 @@ do-build:
 	    LINKFLAGS="${LDFLAGS}" \
 	    OSVER=${OSVER} \
 	    SSL="yes" \
+	    SSLVER="1.1.1" \
 	    SSLPREFIX=${OPENSSLLIB} \
-	    ${JAM} -dx -sUSE_EXTENSIONS=0 -j${MAKE_JOBS_NUMBER} p4
+	    USE_EXTENSIONS=0 \
+	    USE_OPTIMIZED_ZLIB=0 \
+	    ${JAM} -dx -j${MAKE_JOBS_NUMBER} p4
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/p4-bin/p4 ${STAGEDIR}${PREFIX}/bin
