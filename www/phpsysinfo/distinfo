@@ -1,3 +1,7 @@
-TIMESTAMP = 1688312555
-SHA256 (phpsysinfo-phpsysinfo-v3.4.3_GH0.tar.gz) = ffa34cb88f85a440a41d04969e9f3dc8686feb89a31f99940c73ca146d05d99c
-SIZE (phpsysinfo-phpsysinfo-v3.4.3_GH0.tar.gz) = 1101922
+TIMESTAMP = 1727444780
+SHA256 (phpsysinfo-phpsysinfo-v3.4.4_GH0.tar.gz) = fab71f09a09881c7fab78f452b4da907e306a5f34069cdeb94f7d1adcbcfac0e
+SIZE (phpsysinfo-phpsysinfo-v3.4.4_GH0.tar.gz) = 1109842
+SHA256 (11a18f6a50482ac38c70639c913bd1cd46f7414d.diff) = 0f7a6021436c7fb85f5be94851a4e5a0581675344f9e28af0ea2b4b56deb3396
+SIZE (11a18f6a50482ac38c70639c913bd1cd46f7414d.diff) = 1540
+SHA256 (9f8962c851b39a1d1b0d771a0c8cb7d447639a4f.diff) = 831ae5cb31c0645c4f3256a70ff3b5f808e347745309f08d84334ab6c095ebbe
+SIZE (9f8962c851b39a1d1b0d771a0c8cb7d447639a4f.diff) = 1734
