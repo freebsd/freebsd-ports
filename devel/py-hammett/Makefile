@@ -1,5 +1,5 @@
 PORTNAME=	hammett
-DISTVERSION=	0.9.4
+DISTVERSION=	0.10.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astunparse>0:devel/py-astunparse@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist pytest
+USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
 
