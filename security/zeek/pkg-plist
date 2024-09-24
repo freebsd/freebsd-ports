@@ -819,6 +819,7 @@ include/zeek/analyzer/protocol/ntp/ntp.pac
 include/zeek/analyzer/protocol/ntp/types.bif.h
 include/zeek/analyzer/protocol/pia/PIA.h
 include/zeek/analyzer/protocol/pop3/POP3.h
+include/zeek/analyzer/protocol/pop3/consts.bif.h
 include/zeek/analyzer/protocol/pop3/events.bif.h
 include/zeek/analyzer/protocol/radius/RADIUS.h
 include/zeek/analyzer/protocol/radius/events.bif.h
@@ -1456,6 +1457,7 @@ share/man/man8/zeek.8.gz
 %%DATADIR%%/base/bif/plugins/Zeek_NetBIOS.functions.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_NoneWriter.none.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_PE.events.bif.zeek
+%%DATADIR%%/base/bif/plugins/Zeek_POP3.consts.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_POP3.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_RADIUS.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_RDP.events.bif.zeek
