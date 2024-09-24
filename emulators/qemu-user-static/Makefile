@@ -22,7 +22,7 @@ GH_TUPLE=	qemu-bsd-user:qemu-bsd-user:527096e0c8	\
 HAS_CONFIGURE=	yes
 USE_PERL5=	build
 MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
-ELF_FEATURES=	+wxneeded:*-bsd-user/qemu-*
+ELF_FEATURES=	+noprotmax,wxneeded:bin/qemu*static
 
 USE_RC_SUBR=	qemu_user_static
 SUB_LIST=	NAME=qemu_user_static

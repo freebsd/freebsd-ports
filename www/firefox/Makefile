@@ -33,6 +33,7 @@ CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
 # work around bindgen not finding ICU, e.g.
 # dist/include/mozilla/intl/ICU4CGlue.h:8:10: fatal error: 'unicode/uenum.h' file not found, err: true
 CONFIGURE_ENV+=	BINDGEN_CFLAGS="-I${LOCALBASE}/include"
+ELF_FEATURES=	+noprotmax,wxneeded:lib/${PORTNAME}/${PORTNAME}
 
 USES=		tar:xz
 # helpful when testing beta

@@ -18,7 +18,7 @@ USES=		ada elfctl ncurses:base
 USE_GITHUB=	yes
 GH_ACCOUNT=	jrmarino
 
-ELF_FEATURES=	+wxneeded:build/${PORTNAME}
+ELF_FEATURES=	+noprotmax,wxneeded:bin/${PORTNAME}
 
 GPR=		${LOCALBASE}/lib/gnat
 MAKE_ENV=	NCURSES_LINK=static

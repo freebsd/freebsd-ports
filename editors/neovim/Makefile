@@ -20,8 +20,8 @@ LIB_DEPENDS=	libluv.so:devel/luv \
 		libuv.so:devel/libuv \
 		libvterm.so:devel/libvterm
 
-USES=		cmake cpe gettext iconv lua:51,build luajit \
-		pathfix pkgconfig
+USES=		cmake cpe elfctl gettext iconv lua:51,build luajit \
+		pathfix pkgconfig proccontrol
 
 USE_GITHUB=	yes
 GH_TUPLE=	tree-sitter:tree-sitter-c:v0.21.0:treesitter_c \
@@ -35,6 +35,8 @@ CMAKE_ARGS=	-DLUA_PRG:FILEPATH="${LUA_CMD}" \
 		-DCMAKE_INSTALL_MANDIR:PATH="${PREFIX}/share/man" \
 		-DDEPS_PREFIX:PATH="${LOCALBASE}" \
 		-DCMAKE_LIBRARY_PATH:PATH="${LOCALBASE}/lib/lua/${LUA_VER}"
+ELF_FEATURES=	+noprotmax:bin/nvim
+PROCCONTROL_MODE=protmax:disable
 
 CFLAGS+=	-I${LOCALBASE}/include
 

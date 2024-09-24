@@ -138,7 +138,7 @@ USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
 
 USES+=		elfctl
-ELF_FEATURES=	+wxneeded:instdir/program/soffice.bin
+ELF_FEATURES=	+noprotmax,wxneeded:lib/${PORTNAME}/program/soffice.bin
 
 OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 GTK4 JAVA LTO MMEDIA PDFIUM PGSQL MARIADB SDK TEST WEBDAV
 OPTIONS_RADIO=	QT KDE

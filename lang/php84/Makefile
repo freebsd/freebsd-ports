@@ -107,16 +107,16 @@ WARNING+=	"!!! Consider switching to php-fpm and mod_proxy_fcgi as per Apache ht
 
 .if ${PORT_OPTIONS:NOASLR}
 .if ${PORT_OPTIONS:MCLI}
-ELF_FEATURES+=+noaslr:sapi/cli/php
+ELF_FEATURES+=+noaslr:bin/php
 .endif
 .if ${PORT_OPTIONS:MCGI}
-ELF_FEATURES+=+noaslr:sapi/cgi/php-cgi
+ELF_FEATURES+=+noaslr:bin/php-cgi
 .endif
 .if ${PORT_OPTIONS:MPHPDBG}
-ELF_FEATURES+=+noaslr:sapi/phpdbg/phpdbg
+ELF_FEATURES+=+noaslr:bin/phpdbg
 .endif
 .if ${PORT_OPTIONS:MFPM}
-ELF_FEATURES+=+noaslr:sapi/fpm/php-fpm
+ELF_FEATURES+=+noaslr:sbin/php-fpm
 .endif
 .endif
 

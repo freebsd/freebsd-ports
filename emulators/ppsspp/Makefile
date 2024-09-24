@@ -26,7 +26,7 @@ LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libminiupnpc.so:net/miniupnpc
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		cmake compiler:c++11-lib gl localbase:ldflags pkgconfig
+USES=		cmake compiler:c++11-lib elfctl gl localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrydgard
 GH_TUPLE?=	hrydgard:glslang:8.13.3743-948-gb34f619e:glslang/ext/glslang \
@@ -38,6 +38,7 @@ GH_TUPLE?=	hrydgard:glslang:8.13.3743-948-gb34f619e:glslang/ext/glslang \
 		Kingcom:filesystem:v1.3.2-12-g3f1c185:filesystem/ext/armips/ext/filesystem \
 		RetroAchievements:rcheevos:v11.0.0-26-ge7989c3:rcheevos/ext/rcheevos \
 		Tencent:rapidjson:v1.1.0-415-g73063f50:rapidjson/ext/rapidjson
+ELF_FEATURES=	+noprotmax,wxneeded:bin/${PORTNAME}
 EXCLUDE=	libzip zlib
 USE_GL=		glew opengl
 CMAKE_ON=	${FFMPEG LIBZIP MINIUPNPC SNAPPY ZSTD:L:S/^/USE_SYSTEM_/} USE_VULKAN_DISPLAY_KHR
@@ -68,16 +69,16 @@ LIBRETRO_CMAKE_BOOL=	LIBRETRO
 LIBRETRO_PLIST_FILES=	lib/libretro/${PORTNAME}_libretro.so
 LIBRETRO_VARS=		CONFLICTS_INSTALL= DESKTOP_ENTRIES= PLIST= PORTDATA= PKGMESSAGE= SUB_FILES=
 QT5_LIB_DEPENDS=	libpng.so:graphics/png
-QT5_USES=		desktop-file-utils elfctl qt:5 shared-mime-info sdl
+QT5_USES=		desktop-file-utils qt:5 shared-mime-info sdl
 QT5_USE=		QT=qmake:build,buildtools:build,linguisttools:build,core,gui,multimedia,opengl,widgets
 QT5_USE+=		SDL=sdl2 # audio, joystick
 QT5_CMAKE_BOOL=		USING_QT_UI
-QT5_VARS=		EXENAME=PPSSPPQt ELF_FEATURES=+wxneeded:PPSSPPQt
+QT5_VARS=		EXENAME=PPSSPPQt
 SDL_CATEGORIES=		wayland
 SDL_LIB_DEPENDS=	libpng.so:graphics/png
-SDL_USES=		elfctl shared-mime-info sdl
+SDL_USES=		shared-mime-info sdl
 SDL_USE=		SDL=sdl2
-SDL_VARS=		EXENAME=PPSSPPSDL ELF_FEATURES=+wxneeded:PPSSPPSDL
+SDL_VARS=		EXENAME=PPSSPPSDL
 VULKAN_RUN_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
 
 post-patch:

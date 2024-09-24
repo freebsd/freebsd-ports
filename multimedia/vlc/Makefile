@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=--enable-debug
 INSTALL_TARGET=	install-strip
 CFLAGS+=	-Wno-unreachable-code-generic-assoc
 CFLAGS_i386=	-fomit-frame-pointer
-ELF_FEATURES=	+noaslr:bin/.libs/vlc # See PR 270038
+ELF_FEATURES=	+noaslr:bin/${PORTNAME} # See PR 270038
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 
 PORTDATA=	*
