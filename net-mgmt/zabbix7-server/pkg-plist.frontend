@@ -86,6 +86,8 @@
 %%WWWDIR%%/app/controllers/CControllerHostGroupList.php
 %%WWWDIR%%/app/controllers/CControllerHostGroupUpdate.php
 %%WWWDIR%%/app/controllers/CControllerHostList.php
+%%WWWDIR%%/app/controllers/CControllerHostDisable.php
+%%WWWDIR%%/app/controllers/CControllerHostEnable.php
 %%WWWDIR%%/app/controllers/CControllerHostMacrosList.php
 %%WWWDIR%%/app/controllers/CControllerHostMassDelete.php
 %%WWWDIR%%/app/controllers/CControllerHostUpdate.php
@@ -1475,6 +1477,8 @@
 %%WWWDIR%%/local/README
 %%WWWDIR%%/locale/README
 %%WWWDIR%%/locale/add_new_language.sh
+%%WWWDIR%%/locale/ar/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/ar/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/bg/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/bg/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/ca/LC_MESSAGES/frontend.mo
