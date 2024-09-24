@@ -11,6 +11,9 @@ WWW=		https://github.com/glebm/i18n-tasks
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Ruby on Rails 6.1.x reaches EOL on 2024-10-01
+EXPIRATION_DATE=	2024-10-24
+
 RUN_DEPENDS=	rubygem-activesupport61>=4.0.2:devel/rubygem-activesupport61 \
 		rubygem-ast>=2.1.0:devel/rubygem-ast \
 		rubygem-better_html-rails61>=1.0<3.0:devel/rubygem-better_html-rails61 \
