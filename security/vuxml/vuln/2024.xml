@@ -3,7 +3,7 @@
     <affects>
       <package>
 	<name>zeek</name>
-	<range><ge>7.0.0</ge><lt>7.0.2</lt></range>
+	<range><lt>7.0.2</lt></range>
       </package>
     </affects>
     <description>
