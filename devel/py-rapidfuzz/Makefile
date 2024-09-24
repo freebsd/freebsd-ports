@@ -1,5 +1,5 @@
 PORTNAME=	rapidfuzz
-DISTVERSION=	3.9.7
+DISTVERSION=	3.10.0
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,13 +17,14 @@ BUILD_DEPENDS=	cmake:devel/cmake-core \
 		taskflow>0:devel/taskflow \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}rapidfuzz-capi==1.0.5:devel/py-rapidfuzz-capi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0.10.7:devel/py-scikit-build-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>=0.13.0:devel/py-scikit-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR}
 
 USES=		compiler:c++14-lang python
-USE_PYTHON=	distutils autoplist pytest # 1 test fails, see https://github.com/rapidfuzz/RapidFuzz/issues/372
+USE_PYTHON=	pep517 autoplist pytest # 1 test fails, see https://github.com/rapidfuzz/RapidFuzz/issues/372
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
