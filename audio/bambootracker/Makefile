@@ -1,7 +1,6 @@
 PORTNAME=	bambootracker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.3
-PORTREVISION=	1
+DISTVERSION=	0.6.4
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/BambooTracker/BambooTracker/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 DISTNAME=	BambooTracker-src-${DISTVERSIONPREFIX}${DISTVERSION}
@@ -22,6 +21,10 @@ USES=		compiler:c++14-lang desktop-file-utils gl qmake qt:5 \
 USE_GL=		gl
 USE_QT=		buildtools core gui multimedia network widgets \
 		linguisttools:build
+
+# Required since:
+# https://github.com/BambooTracker/BambooTracker/pull/509
+QMAKE_ARGS+=	CONFIG+="no_warnings_are_errors"
 
 DATADIR=	${PREFIX}/share/BambooTracker
 DOCSDIR=	${PREFIX}/share/doc/BambooTracker
