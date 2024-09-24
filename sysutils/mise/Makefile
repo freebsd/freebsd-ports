@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.9.6
+DISTVERSION=	2024.9.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -66,9 +66,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		chrono-tz-build-0.3.0 \
 		ci_info-0.14.14 \
 		cipher-0.4.4 \
-		clap-4.5.17 \
-		clap_builder-4.5.17 \
-		clap_derive-4.5.13 \
+		clap-4.5.18 \
+		clap_builder-4.5.18 \
+		clap_derive-4.5.18 \
 		clap_lex-0.7.2 \
 		clap_mangen-0.2.23 \
 		color-eyre-0.6.3 \
@@ -264,10 +264,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		path-dedot-3.1.1 \
 		pbkdf2-0.12.2 \
 		percent-encoding-2.3.1 \
-		pest-2.7.12 \
-		pest_derive-2.7.12 \
-		pest_generator-2.7.12 \
-		pest_meta-2.7.12 \
+		pest-2.7.13 \
+		pest_derive-2.7.13 \
+		pest_generator-2.7.13 \
+		pest_meta-2.7.13 \
 		petgraph-0.6.5 \
 		phf-0.10.1 \
 		phf-0.11.2 \
@@ -283,8 +283,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
 		pkcs8-0.10.2 \
-		pkg-config-0.3.30 \
-		portable-atomic-1.7.0 \
+		pkg-config-0.3.31 \
+		portable-atomic-1.8.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.20 \
 		precomputed-hash-0.1.1 \
@@ -333,7 +333,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		scopeguard-1.2.0 \
 		scraper-0.20.0 \
 		security-framework-2.11.1 \
-		security-framework-sys-2.11.1 \
+		security-framework-sys-2.12.0 \
 		selectors-0.25.0 \
 		self-replace-1.5.0 \
 		self_update-0.41.0 \
@@ -395,8 +395,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		test-case-macros-3.3.1 \
 		test-log-0.2.16 \
 		test-log-macros-0.2.16 \
-		thiserror-1.0.63 \
-		thiserror-impl-1.0.63 \
+		thiserror-1.0.64 \
+		thiserror-impl-1.0.64 \
 		thread_local-1.1.8 \
 		time-0.3.36 \
 		time-core-0.1.2 \
@@ -458,7 +458,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-support-0.2.93 \
 		wasm-bindgen-shared-0.2.93 \
 		web-sys-0.3.70 \
-		webpki-roots-0.26.5 \
+		webpki-roots-0.26.6 \
 		which-6.0.3 \
 		widestring-1.1.0 \
 		winapi-0.3.9 \
