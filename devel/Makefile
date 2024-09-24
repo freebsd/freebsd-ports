@@ -6090,6 +6090,7 @@
     SUBDIR += py-xstatic-angular-gettext
     SUBDIR += py-xstatic-angular-lrdragndrop
     SUBDIR += py-xstatic-angular-schema-form
+    SUBDIR += py-xstatic-autosize
     SUBDIR += py-xstatic-bootstrap
     SUBDIR += py-xstatic-bootstrap3
     SUBDIR += py-xstatic-bootstrap-datepicker
