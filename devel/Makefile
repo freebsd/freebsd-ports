@@ -6494,6 +6494,7 @@
     SUBDIR += rubygem-aws-sdk-devopsguru
     SUBDIR += rubygem-aws-sdk-directconnect
     SUBDIR += rubygem-aws-sdk-directoryservice
+    SUBDIR += rubygem-aws-sdk-directoryservicedata
     SUBDIR += rubygem-aws-sdk-dlm
     SUBDIR += rubygem-aws-sdk-docdb
     SUBDIR += rubygem-aws-sdk-docdbelastic
