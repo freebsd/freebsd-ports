@@ -11,6 +11,9 @@ WWW=		https://sourceforge.net/projects/synce/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
+DEPRECATED=	Latest version was released in 2013. There is no consumers in the ports tree
+EXPIRATION_DATE=2024-09-30
+
 USES=		libtool
 
 CONFIGURE_ARGS=	--disable-python-bindings
