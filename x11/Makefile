@@ -427,6 +427,7 @@
     SUBDIR += swayr
     SUBDIR += swayrbar
     SUBDIR += swaysettings
+    SUBDIR += swww
     SUBDIR += sxhkd
     SUBDIR += sxmo-wayout
     SUBDIR += sxpc

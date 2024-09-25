@@ -1,0 +1,18 @@
+Efficient animated wallpaper daemon for wayland, controlled at runtime.
+
+Features
+
+    - Display animated gifs on your desktop
+    - Display any image in the formats:
+        - jpeg
+        - png
+        - gif
+        - pnm
+        - tga
+        - tiff
+        - webp
+        - bmp
+        - farbfeld
+    - Clear the screen with an arbitrary rrggbb color
+    - Smooth transition effect when you switch images
+    - Do all of that without having to shutdown and reinitialize the daemon
