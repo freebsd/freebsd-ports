@@ -19,5 +19,7 @@ CONFIGURE_ARGS=	--enable-lib-only
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+TEST_TARGET=	check
+TEST_WRKSRC=	${WRKSRC}/tests
 
 .include <bsd.port.mk>
