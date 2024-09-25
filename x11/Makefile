@@ -356,6 +356,7 @@
     SUBDIR += py-python-xapp
     SUBDIR += py-pyvirtualdisplay
     SUBDIR += py-screeninfo
+    SUBDIR += py-waypaper
     SUBDIR += py-xcffib
     SUBDIR += py-xdot
     SUBDIR += qimageblitz
