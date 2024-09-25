@@ -29,6 +29,7 @@
     SUBDIR += c64bdf
     SUBDIR += cantarell-fonts
     SUBDIR += cascadia-code
+    SUBDIR += cascadia-next
     SUBDIR += charis
     SUBDIR += charis-compact
     SUBDIR += chomsky
