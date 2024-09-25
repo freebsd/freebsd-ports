@@ -1,6 +1,6 @@
 PORTNAME=	qmail-rblchk
 PORTVERSION=	2.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.morettoni.net/qmail/ \
 		LOCAL/ehaupt
@@ -8,6 +8,9 @@ MASTER_SITES=	http://www.morettoni.net/qmail/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qmail RBL filter
 WWW=		http://www.morettoni.net/qmail-rblchk.en.html
+
+# so says qmail-rblchk.c
+LICENSE=	BSD2CLAUSE
 
 USES=		groff qmail:run
 
