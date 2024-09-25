@@ -5019,6 +5019,7 @@
     SUBDIR += py-jaraco.collections
     SUBDIR += py-jaraco.context
     SUBDIR += py-jaraco.env
+    SUBDIR += py-jaraco.envs
     SUBDIR += py-jaraco.functools
     SUBDIR += py-jaraco.itertools
     SUBDIR += py-jaraco.logging
