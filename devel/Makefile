@@ -6097,6 +6097,7 @@
     SUBDIR += py-xstatic-bootstrap-scss
     SUBDIR += py-xstatic-bootstrap3
     SUBDIR += py-xstatic-bootswatch
+    SUBDIR += py-xstatic-ckeditor
     SUBDIR += py-xstatic-d3
     SUBDIR += py-xstatic-font-awesome
     SUBDIR += py-xstatic-hogan
