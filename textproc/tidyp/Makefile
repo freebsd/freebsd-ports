@@ -12,6 +12,9 @@ LICENSE_NAME=	HTML Tidy License
 LICENSE_FILE=	${WRKSRC}/htmldoc/license.html
 LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
+DEPRECATED=	The repository has been archived by upstream on Apr 14, 2019
+EXPIRATION_DATE=2024-09-30
+
 USES=		autoreconf libtool
 
 CONFIGURE_ARGS=	--enable-asian --enable-utf16
