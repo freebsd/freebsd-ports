@@ -1,8 +1,10 @@
 PORTNAME=	noto
-PORTVERSION=	2.013
+PORTVERSION=	2.014
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoSans-v${PORTVERSION}/fonts/ \
-		https://github.com/notofonts/notofonts.github.io/raw/NotoSans-v${PORTVERSION}/fonts/NotoSans/hinted/ttf/:fonts
+#MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoSans-v${PORTVERSION}/fonts/ \
+#		https://github.com/notofonts/notofonts.github.io/raw/NotoSans-v${PORTVERSION}/fonts/NotoSans/hinted/ttf/:fonts
+MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoSansKannada-v2.006/fonts/ \
+		https://github.com/notofonts/notofonts.github.io/raw/NotoSansKannada-v2.006/fonts/NotoSans/hinted/ttf/:fonts
 PKGNAMESUFFIX=	-sans
 DISTFILES=	LICENSE \
 		${FONTS:S|$|:fonts|}
