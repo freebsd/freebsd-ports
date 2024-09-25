@@ -1,5 +1,5 @@
 PORTNAME=	iconv
-PORTVERSION=	1.0.8
+PORTVERSION=	1.1.0
 CATEGORIES=	converters rubygems
 MASTER_SITES=	RG
 
