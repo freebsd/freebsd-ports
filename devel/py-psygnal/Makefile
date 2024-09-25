@@ -20,4 +20,11 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	PROXY PYDANTIC
+PROXY_DESC=	Evented proxy support
+PYDANTIC_DESC=	Evented model support
+
+PROXY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wrapt>=0:devel/py-wrapt@${PY_FLAVOR}
+PYDANTIC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydantic2>=0:devel/py-pydantic2@${PY_FLAVOR}
+
 .include <bsd.port.mk>
