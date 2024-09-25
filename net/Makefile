@@ -396,6 +396,7 @@
     SUBDIR += libnet
     SUBDIR += libnfs
     SUBDIR += libngtcp2
+    SUBDIR += libngtcp2-gnutls
     SUBDIR += libnids
     SUBDIR += libnpupnp
     SUBDIR += libnss-cache
