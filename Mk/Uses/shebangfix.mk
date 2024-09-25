@@ -57,6 +57,7 @@ python_CMD?=	${PYTHON_CMD}
 # been set already above with ?=.
 .  for lang in ${SHEBANG_LANG}
 ${lang}_CMD?= ${LOCALBASE}/bin/${lang}
+${lang}_OLD_CMD+= "/bin/env ${lang}"
 ${lang}_OLD_CMD+= "/usr/bin/env ${lang}"
 ${lang}_OLD_CMD+= /bin/${lang}
 ${lang}_OLD_CMD+= /usr/bin/${lang}
