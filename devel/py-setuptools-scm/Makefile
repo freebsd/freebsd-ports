@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Setuptools plugin to manage your versions by scm tags
-WWW=		https://github.com/pypa/setuptools_scm
+WWW=		https://setuptools-scm.readthedocs.io/en/latest/ \
+		https://github.com/pypa/setuptools-scm
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
