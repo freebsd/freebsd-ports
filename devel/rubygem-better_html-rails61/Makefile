@@ -11,6 +11,9 @@ WWW=		https://github.com/Shopify/better-html
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
+DEPRECATED=	Ruby on Rails 6.1.x reaches EOL on 2024-10-01
+EXPIRATION_DATE=	2024-10-25
+
 RUN_DEPENDS=	rubygem-actionview61>=6.0:devel/rubygem-actionview61 \
 		rubygem-activesupport61>=6.0:devel/rubygem-activesupport61 \
 		rubygem-ast>=2.0:devel/rubygem-ast \
