@@ -13,7 +13,6 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${PYNUMPY}	\
 		${PY_PILLOW}	\
-		${PYTHON_PKGNAMEPREFIX}cython>0:lang/cython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pint>0:devel/py-pint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mpmath>0:math/py-mpmath@${PY_FLAVOR} \
@@ -30,7 +29,6 @@ RUN_DEPENDS=	${PYNUMPY}	\
 		bash:shells/bash	\
 		${PYTHON_PKGNAMEPREFIX}py>0:devel/py-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cython>0:lang/cython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pint>0:devel/py-pint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR} \
@@ -68,7 +66,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 #GH_ACCOUNT=	${PORTNAME:tl}
 
 USES=		python shebangfix
-USE_PYTHON=	cython distutils noflavors
+USE_PYTHON=	cython cython_run distutils noflavors
 MAKE_ENV+=	USE_CYTHON=yes
 SHEBANG_GLOB=	*.py
 
