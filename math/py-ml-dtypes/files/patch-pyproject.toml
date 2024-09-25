@@ -1,24 +1,25 @@
---- pyproject.toml.orig	2024-04-01 15:41:58 UTC
+--- pyproject.toml.orig	2024-09-13 21:53:12 UTC
 +++ pyproject.toml
-@@ -17,10 +17,7 @@ dependencies = [
+@@ -17,11 +17,7 @@ dependencies = [
  # pip dependencies of the project
  dependencies = [
      # Ensure numpy release supports Python version.
--    "numpy>1.20",
+-    "numpy>=1.21",
 -    "numpy>=1.21.2; python_version>='3.10'",
 -    "numpy>=1.23.3; python_version>='3.11'",
 -    "numpy>=1.26.0; python_version>='3.12'",
-+    "numpy>=1.23.3",
+-    "numpy>=2.1.0; python_version>='3.13'",
++    "numpy>=1.26.0",
  ]
  
  [project.urls]
-@@ -49,8 +46,8 @@ requires = [
- [build-system]
+@@ -51,8 +47,8 @@ requires = [
  requires = [
-     # TODO(phawkins): update this to 2.0.0 after its release.
--    "numpy==2.0.0rc1",
--    "setuptools~=68.1.0",
-+    "numpy>=1.23.3",
+     # We build against the most recent supported NumPy 2.0 release;
+     # see https://github.com/numpy/numpy/issues/27265
+-    "numpy~=2.0",
+-    "setuptools~=73.0.1",
++    "numpy>=1.26.0",
 +    "setuptools",
  ]
  build-backend = "setuptools.build_meta"
