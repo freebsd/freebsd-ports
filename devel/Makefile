@@ -546,6 +546,7 @@
     SUBDIR += cxxopts
     SUBDIR += cxxtest
     SUBDIR += cxxtools
+    SUBDIR += cython-lint
     SUBDIR += d-feet
     SUBDIR += d-scanner
     SUBDIR += d-spy
