@@ -1,5 +1,5 @@
 PORTNAME=	exult
-DISTVERSION?=	1.10.0
+DISTVERSION?=	1.10.1
 PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	games
@@ -33,7 +33,6 @@ PLIST?=			${.CURDIR}/pkg-plist
 
 .if !defined(MASTERDIR)
 MASTER_SITES=	http://prdownloads.sourceforge.net/exult/
-NO_WRKSUBDIR=	yes
 .else
 USE_GITHUB=	yes
 .endif
