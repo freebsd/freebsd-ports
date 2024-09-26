@@ -4,13 +4,17 @@ DISTVERSION=	${ELECTRON_VER}
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 CATEGORIES=	devel
-MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/:chromium \
+MASTER_SITES=	https://github.com/tagattie/FreeBSD-Electron/releases/download/v32.1.2/:chromium \
 		https://freedesktop.org/software/pulseaudio/releases/:pulseaudio
 PKGNAMESUFFIX=	${ELECTRON_VER_MAJOR}
-DISTFILES=	chromium-${CHROMIUM_VER}${EXTRACT_SUFX}:chromium \
+DISTFILES=	chromium-${CHROMIUM_VER}${EXTRACT_SUFX}.0:chromium \
+		chromium-${CHROMIUM_VER}${EXTRACT_SUFX}.1:chromium \
+		chromium-${CHROMIUM_VER}${EXTRACT_SUFX}.2:chromium \
 		pulseaudio-${PULSEV}.tar.gz:pulseaudio \
 		electron-yarn-cache-${ELECTRON_VER}${EXTRACT_SUFX}:prefetch
 DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	chromium-${CHROMIUM_VER}${EXTRACT_SUFX} \
+		${DISTFILES:C/:[^:]+$//:C/chromium-${CHROMIUM_VER}${EXTRACT_SUFX}\.[0-9]//}
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Build cross-platform desktop apps with JavaScript, HTML, and CSS
@@ -216,7 +220,7 @@ SNDIO_VARS=		GN_ARGS+=use_sndio=true
 SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
 # See ${WRKSRC}/electron/DEPS for CHROMIUM_VER
-CHROMIUM_VER=			128.0.6613.137
+CHROMIUM_VER=			128.0.6613.162
 # See ${WRKSRC}/electron/DEPS for NODE_VER
 NODE_VER=			20.17.0
 # See ${WRKSRC}/electron/DEPS for NAN_VER
@@ -314,6 +318,12 @@ pre-fetch:
 		${TAR} cJf ${DISTDIR}/${DIST_SUBDIR}/electron-yarn-cache-${ELECTRON_VER}${EXTRACT_SUFX} \
 			@yarn-offline-cache.mtree; \
 		${RM} -r ${WRKDIR}; \
+	fi
+
+post-fetch:
+	@if [ ! -f ${DISTDIR}/${DIST_SUBDIR}/chromium-${CHROMIUM_VER}${EXTRACT_SUFX} ]; then \
+		${CAT} ${DISTDIR}/${DIST_SUBDIR}/chromium-${CHROMIUM_VER}${EXTRACT_SUFX}.? > \
+			${DISTDIR}/${DIST_SUBDIR}/chromium-${CHROMIUM_VER}${EXTRACT_SUFX}; \
 	fi
 
 post-extract:
