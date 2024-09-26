@@ -1,5 +1,6 @@
 PORTNAME=	gitlab-kas-grpc
-PORTVERSION=	17.4.0
+PORTVERSION=	${GITLAB_VERSION}
+PORTREVISION=	${GITLAB_PORTREVISION} # modify it in www/gitlab/Makefile.common
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -15,4 +16,5 @@ USES=		gem
 
 NO_ARCH=	yes
 
+.include "${.CURDIR}/../../www/gitlab/Makefile.common"
 .include <bsd.port.mk>

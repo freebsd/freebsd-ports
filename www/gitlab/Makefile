@@ -5,7 +5,6 @@ DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
 .endif
-PORTREVISION=	1
 CATEGORIES=	www devel
 
 # include patch to fix database migration
@@ -271,7 +270,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-ssh_data>=1.3<2:security/rubygem-ssh_data \
 	rubygem-spamcheck>=1.3.0<1.4:net/rubygem-spamcheck \
 	rubygem-gitaly>=17.4.0:net/rubygem-gitaly \
-	rubygem-gitlab-kas-grpc>=17.4.0<17.5:net/rubygem-gitlab-kas-grpc \
+	rubygem-gitlab-kas-grpc>=${GITLAB_VERSION}:net/rubygem-gitlab-kas-grpc \
 	rubygem-grpc>=1.63.0<2:net/rubygem-grpc \
 	rubygem-google-protobuf3>=3.25.3<4:devel/rubygem-google-protobuf3 \
 	rubygem-toml-rb>=2.2.0<3:www/rubygem-toml-rb \
@@ -540,6 +539,7 @@ makesum:
 	(cd ../../net/gitlab-agent && ${MAKE} makesum)
 	(cd ../../www/gitlab-pages && ${MAKE} makesum)
 	(cd ../../www/gitlab-workhorse && ${MAKE} makesum)
+	(cd ../../net/rubygem-gitlab-kas-grpc && ${MAKE} makesum)
 
 .endif
 
