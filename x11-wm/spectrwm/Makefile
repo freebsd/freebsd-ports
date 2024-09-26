@@ -4,7 +4,7 @@ DISTVERSION=	3_4_1
 PORTREVISION=	2
 CATEGORIES=	x11-wm
 
-MAINTAINER=	pyrus@bsdmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, dynamic tiling window manager for X11
 WWW=		https://github.com/conformal/spectrwm
 
