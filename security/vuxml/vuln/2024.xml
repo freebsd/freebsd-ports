@@ -1,3 +1,36 @@
+  <vuln vid="4b7ed61f-7bbf-11ef-9369-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.4.0</ge><lt>17.4.1</lt></range>
+	<range><ge>17.3.0</ge><lt>17.3.4</lt></range>
+	<range><ge>15.6.0</ge><lt>17.2.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/09/25/patch-release-gitlab-17-4-1-released/">
+	  <p>Maintainer can leak Dependency Proxy password by changing Dependency Proxy URL via crafted POST request</p>
+	  <p>AI feature reads unsanitized content, allowing for attacker to hide prompt injection</p>
+	  <p>Project reference can be exposed in system notes</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-4278</cvename>
+      <cvename>CVE-2024-4099</cvename>
+      <cvename>CVE-2024-8974</cvename>
+      <url>https://about.gitlab.com/releases/2024/09/25/patch-release-gitlab-17-4-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-09-25</discovery>
+      <entry>2024-09-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="802961eb-7a89-11ef-bdd7-a0423f48a938">
     <topic>frr - BGP</topic>
     <affects>
