@@ -198,12 +198,14 @@ include/Inventor/actions/SoGLRenderAction.h
 include/Inventor/actions/SoGetBoundingBoxAction.h
 include/Inventor/actions/SoGetMatrixAction.h
 include/Inventor/actions/SoGetPrimitiveCountAction.h
+include/Inventor/actions/SoGlobalSimplifyAction.h
 include/Inventor/actions/SoHandleEventAction.h
 include/Inventor/actions/SoLineHighlightRenderAction.h
 include/Inventor/actions/SoPickAction.h
 include/Inventor/actions/SoRayPickAction.h
 include/Inventor/actions/SoReorganizeAction.h
 include/Inventor/actions/SoSearchAction.h
+include/Inventor/actions/SoShapeSimplifyAction.h
 include/Inventor/actions/SoSimplifyAction.h
 include/Inventor/actions/SoSubAction.h
 include/Inventor/actions/SoToVRML2Action.h
@@ -290,6 +292,7 @@ include/Inventor/elements/SoBBoxModelMatrixElement.h
 include/Inventor/elements/SoBumpMapCoordinateElement.h
 include/Inventor/elements/SoBumpMapElement.h
 include/Inventor/elements/SoBumpMapMatrixElement.h
+include/Inventor/elements/SoBumpMappingPropertyElement.h
 include/Inventor/elements/SoCacheElement.h
 include/Inventor/elements/SoCacheHintElement.h
 include/Inventor/elements/SoClipPlaneElement.h
@@ -650,6 +653,7 @@ include/Inventor/nodes/SoBlinker.h
 include/Inventor/nodes/SoBumpMap.h
 include/Inventor/nodes/SoBumpMapCoordinate.h
 include/Inventor/nodes/SoBumpMapTransform.h
+include/Inventor/nodes/SoBumpMappingProperty.h
 include/Inventor/nodes/SoCacheHint.h
 include/Inventor/nodes/SoCallback.h
 include/Inventor/nodes/SoCamera.h
@@ -871,6 +875,10 @@ include/Inventor/tools/SbPimplPtr.h
 include/SoDebug.h
 include/SoWinEnterScope.h
 include/SoWinLeaveScope.h
+lib/cmake/Coin-4.0.3/coin-config-version.cmake
+lib/cmake/Coin-4.0.3/coin-config.cmake
+lib/cmake/Coin-4.0.3/coin-export-release.cmake
+lib/cmake/Coin-4.0.3/coin-export.cmake
 lib/libCoin.so
 lib/libCoin.so.80
 lib/libCoin.so.80.0.3
@@ -897,6 +905,7 @@ libdata/pkgconfig/Coin.pc
 %%DATADIR%%/draggerDefaults/transformerDragger.iv
 %%DATADIR%%/draggerDefaults/translate1Dragger.iv
 %%DATADIR%%/draggerDefaults/translate2Dragger.iv
+@dir %%DATADIR%%/profiler
 %%DATADIR%%/scxml/navigation/common.xml
 %%DATADIR%%/scxml/navigation/examiner.xml
 %%DATADIR%%/scxml/navigation/plane.xml
@@ -905,5 +914,3 @@ libdata/pkgconfig/Coin.pc
 %%DATADIR%%/shaders/lights/PointLight.glsl
 %%DATADIR%%/shaders/lights/SpotLight.glsl
 %%DATADIR%%/shaders/vsm/VsmLookup.glsl
-share/aclocal/coin.m4
-share/man/man1/coin-config.1.gz
