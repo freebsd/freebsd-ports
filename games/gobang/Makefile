@@ -1,6 +1,7 @@
 PORTNAME=	gobang
 DISTVERSION=	0.1
 CATEGORIES=	games
+PKGNAMESUFFIX=	-game
 
 MAINTAINER=	guoqiang_cn@126.com
 COMMENT=	This is a Gobang game that runs in the console
