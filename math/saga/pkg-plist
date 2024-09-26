@@ -226,6 +226,7 @@ share/pixmaps/saga.png
 %%DATADIR%%/helper/convert2utf-8.bat
 %%DATADIR%%/helper/convert2utf-8.py
 %%DATADIR%%/helper/create_archive.py
+%%DATADIR%%/helper/create_python_toolboxes.py
 %%DATADIR%%/helper/doxygen_saga_api_chm
 %%DATADIR%%/helper/doxygen_saga_api_html
 %%DATADIR%%/helper/make_arcsaga_toolboxes.bat
