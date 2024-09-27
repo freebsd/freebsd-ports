@@ -47,6 +47,7 @@ sbin/sudo_sendlog
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE.md
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/README.LDAP.md
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.ActiveDirectory
+%%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.IBM_LDAP
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.OpenLDAP
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.iPlanet
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.olcSudo
