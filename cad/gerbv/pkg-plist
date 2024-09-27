@@ -1,5 +1,5 @@
 bin/gerbv
-include/gerbv-%%VERSION%%/gerbv.h
+include/gerbv-/gerbv.h
 lib/libgerbv.a
 lib/libgerbv.so
 lib/libgerbv.so.1

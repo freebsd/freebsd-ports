@@ -3,13 +3,13 @@ CATEGORIES=	graphics
 
 COMMENT=	GStreamer ZBar barcode detector plugin
 
-GST_PLUGIN=	zbar
+LIB_DEPENDS=	libzbar.so:graphics/zbar
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS= libzbar.so:graphics/zbar
+GST_PLUGIN=	zbar
 
 .include "${MASTERDIR}/Makefile"

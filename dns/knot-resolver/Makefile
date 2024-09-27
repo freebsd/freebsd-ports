@@ -26,7 +26,7 @@ LIB_DEPENDS=	libdnssec.so:dns/knot3 \
 		libzscanner.so:dns/knot3
 RUN_DEPENDS=	lua51-cqueues>=20200726_1:devel/lua-cqueues@lua51
 
-USES=		compiler:c11 libedit libtool luajit meson ncurses ninja \
+USES=		compiler:c11 libedit luajit meson ncurses ninja \
 		pkgconfig python:build shebangfix tar:xz
 USE_CXXSTD=	c++11
 USE_RC_SUBR=	krescachegc kresd

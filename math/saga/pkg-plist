@@ -226,6 +226,7 @@ share/pixmaps/saga.png
 %%DATADIR%%/helper/convert2utf-8.bat
 %%DATADIR%%/helper/convert2utf-8.py
 %%DATADIR%%/helper/create_archive.py
+%%DATADIR%%/helper/create_python_toolboxes.py
 %%DATADIR%%/helper/doxygen_saga_api_chm
 %%DATADIR%%/helper/doxygen_saga_api_html
 %%DATADIR%%/helper/make_arcsaga_toolboxes.bat
@@ -247,7 +248,9 @@ share/pixmaps/saga.png
 %%DATADIR%%/saga.lng.txt
 %%DATADIR%%/saga.png
 %%DATADIR%%/saga.rus.txt
-%%DATADIR%%/saga_prj.srs
+%%DATADIR%%/saga.srs
+%%DATADIR%%/saga_preferences.srs
+%%DATADIR%%/saga_srs_preferences.txt
 %%DATADIR%%/saga_tip.txt
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/CMakeLists.txt
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/Makefile

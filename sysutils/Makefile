@@ -432,6 +432,7 @@
     SUBDIR += frand
     SUBDIR += freebsd-bsdlabel
     SUBDIR += freebsd-fdisk
+    SUBDIR += freebsd-rustdate
     SUBDIR += freebsd-snapshot
     SUBDIR += freecolor
     SUBDIR += freedt
@@ -876,7 +877,6 @@
     SUBDIR += openupsd
     SUBDIR += openzfs
     SUBDIR += openzfs-kmod
-    SUBDIR += orch
     SUBDIR += osinfo-db-tools
     SUBDIR += p5-App-Regather
     SUBDIR += p5-App-RunCron
@@ -1066,6 +1066,7 @@
     SUBDIR += polkit-gnome
     SUBDIR += polkit-qt-1
     SUBDIR += popeye
+    SUBDIR += porch
     SUBDIR += pot
     SUBDIR += potnet
     SUBDIR += poweralertd
@@ -1553,6 +1554,8 @@
     SUBDIR += u-boot-qemu-arm
     SUBDIR += u-boot-qemu-arm64
     SUBDIR += u-boot-qemu-riscv64
+    SUBDIR += u-boot-quartz64-a
+    SUBDIR += u-boot-quartz64-b
     SUBDIR += u-boot-riotboard
     SUBDIR += u-boot-rock-pi-4
     SUBDIR += u-boot-rock64

@@ -1,6 +1,5 @@
 PORTNAME=	e2tools
-DISTVERSION=	0.1.0
-PORTREVISION=	3
+DISTVERSION=	0.1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 

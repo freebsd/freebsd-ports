@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240927:
+  AFFECTS: users of databases/mongodb50
+  AUTHOR: ronald@FreeBSD.org
+
+  MongoDB version 5.0 is End of Life starting October 2024.
+  Please make sure you are running MongoDB version 6.0 or higher.
+  In-place upgrades are supported from version 5.0 to 6.0.
+  For an in-place upgrade it is important that the
+  'featureCompatibilityVersion' is set to 5.0.
+  See: https://www.mongodb.com/docs/v6.0/release-notes/6.0-upgrade-standalone/#feature-compatibility-version
+
+  TL;DR, run these commands in mongodb50 before upgrading:
+  $ mongo --port <portnr>
+  > db.adminCommand( { setFeatureCompatibilityVersion: "5.0" } )
+  > exit
+
 20240912:
   AFFECTS: security/clamav, security/clamav-lts
   AUTHOR: netchildFreeBSD.org

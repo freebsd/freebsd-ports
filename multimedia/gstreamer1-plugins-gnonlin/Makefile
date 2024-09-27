@@ -9,6 +9,10 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer library for writing non-linear audio and video
 WWW=		http://gstreamer.net
 
+# References need removed from Mk/Uses/gstreamer.mk, as well.
+DEPRECATED=		Deprecated upstream. Use the gstnle plugin from multimedia/gstreamer1-editing-services instead
+EXPIRATION_DATE=	2024-10-22
+
 USES=		gettext-runtime gnome gstreamer libtool pkgconfig python:build tar:xz
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes

@@ -3,13 +3,13 @@ CATEGORIES=	graphics
 
 COMMENT=	GStreamer webp image decoder plugin
 
-GST_PLUGIN=	webp
+LIB_DEPENDS=	libwebp.so:graphics/webp
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS= libwebp.so:graphics/webp
+GST_PLUGIN=	webp
 
 .include "${MASTERDIR}/Makefile"

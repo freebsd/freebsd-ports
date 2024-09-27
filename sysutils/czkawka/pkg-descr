@@ -5,30 +5,19 @@ Features:
 - Written in memory safe Rust
 - Amazingly fast - due to using more or less advanced algorithms and
   multithreading
-- Free, Open Source without ads
-- Multiplatform - works on Linux, Windows and macOS
 - Cache support - second and further scans should be a lot faster than
   the first one
-- CLI frontend - for easy automation
-- GUI frontend - uses modern GTK 3 and looks similar to FSlint
-- Rich search option - allows setting absolute included and excluded
-  directories, set of allowed file extensions or excluded items with
-  the * wildcard
+- CLI and GUI frontend - for easy automation
+- Rich search option
 - Multiple tools to use:
-  - Duplicates - Finds duplicates basing on file name, size, hash,
-    first 1 MB of hash
-  - Empty Folders - Finds empty folders with the help of an advanced
-    algorithm
-  - Big Files - Finds the provided number of the biggest files in
-    given location
+  - Duplicates - basing on file name, size, hash, first 1 MB of hash
+  - Empty Folders - Finds empty folders with the help of an advanced algorithm
+  - Big Files - Finds the provided number of the biggest files in given location
   - Empty Files - Looks for empty files across the drive
   - Temporary Files - Finds temporary files
   - Similar Images - Finds images which are not exactly the same
     (different resolution, watermarks)
-  - Zeroed Files - Finds files which are filled with zeros (usually
-    corrupted)
+  - Zeroed Files - Finds files which are filled with zeros (usually corrupted)
   - Same Music - Searches for music with same artist, album etc.
-  - Invalid Symbolic Links - Shows symbolic links which points to
-    non-existent files/directories
-  - Broken Files - Finds files with an invalid extension or that are
-    corrupted
+  - Invalid Symbolic Links
+  - Broken Files - Finds files with an invalid extension or that are corrupted

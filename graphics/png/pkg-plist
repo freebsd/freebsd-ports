@@ -8,6 +8,10 @@ include/libpng16/pnglibconf.h
 include/png.h
 include/pngconf.h
 include/pnglibconf.h
+lib/cmake/PNG/PNGConfig.cmake
+lib/cmake/PNG/PNGConfigVersion.cmake
+lib/cmake/PNG/PNGTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/PNG/PNGTargets.cmake
 lib/libpng.a
 lib/libpng.so
 lib/libpng/libpng16-%%CMAKE_BUILD_TYPE%%.cmake
@@ -15,7 +19,7 @@ lib/libpng/libpng16.cmake
 lib/libpng16.a
 lib/libpng16.so
 lib/libpng16.so.16
-lib/libpng16.so.16.43.0
+lib/libpng16.so.16.44.0
 libdata/pkgconfig/libpng.pc
 libdata/pkgconfig/libpng16.pc
 share/man/man3/libpng.3.gz

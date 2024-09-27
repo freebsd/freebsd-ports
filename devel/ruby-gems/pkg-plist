@@ -223,6 +223,9 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/vendor/optparse/lib/optparse/version.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/resolv/LICENSE.txt
 %%RUBY_SITELIBDIR%%/rubygems/vendor/resolv/lib/resolv.rb
+%%RUBY_SITELIBDIR%%/rubygems/vendor/securerandom/LICENSE.txt
+%%RUBY_SITELIBDIR%%/rubygems/vendor/securerandom/lib/random/formatter.rb
+%%RUBY_SITELIBDIR%%/rubygems/vendor/securerandom/lib/securerandom.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/timeout/LICENSE.txt
 %%RUBY_SITELIBDIR%%/rubygems/vendor/timeout/lib/timeout.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/tsort/LICENSE.txt
@@ -246,6 +249,7 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/vendored_molinillo.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendored_net_http.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendored_optparse.rb
+%%RUBY_SITELIBDIR%%/rubygems/vendored_securerandom.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendored_timeout.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendored_tsort.rb
 %%RUBY_SITELIBDIR%%/rubygems/version.rb

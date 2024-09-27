@@ -11,6 +11,9 @@ WWW=		https://github.com/devkral/devise_pam_authenticatable2
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
+DEPRECATED=	Ruby on Rails 6.1.x reaches EOL on 2024-10-01
+EXPIRATION_DATE=	2024-10-24
+
 RUN_DEPENDS=	rubygem-devise-rails61>=4.0.0:devel/rubygem-devise-rails61 \
 		rubygem-rpam2>=4.0:security/rubygem-rpam2
 

@@ -1,5 +1,5 @@
 PORTNAME=	vault
-DISTVERSION=	1.14.6
+DISTVERSION=	1.15.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://raw.githubusercontent.com/hashicorp/vault/${DISTVERSIONFULL}/ \
@@ -43,7 +43,7 @@ GROUPS=		vault
 
 PLIST_FILES=	bin/${PORTNAME}
 
-GITID=	aebe972bca09f8e474312b7355f35be457bda5a0
+GITID=	615cf6f1dce9aa91bc2035ce33b9f689952218f0
 
 .include <bsd.port.pre.mk>
 

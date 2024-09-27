@@ -1,6 +1,5 @@
 PORTNAME=	curl
-PORTVERSION=	8.10.0
-PORTREVISION=	1
+PORTVERSION=	8.10.1
 CATEGORIES=	ftp net www
 MASTER_SITES=	https://curl.se/download/ \
 		https://github.com/curl/curl/releases/download/curl-${PORTVERSION:S|.|_|g}/
@@ -65,6 +64,7 @@ LIBSSH_DESC=	SCP/SFTP support via libssh (requires OPENSSL)
 LIBSSH_IMPLIES=	OPENSSL
 LIBSSH2_DESC=	SCP/SFTP support via libssh2 (requires OPENSSL)
 LIBSSH2_IMPLIES=OPENSSL
+LIBUV_DESC=	Event-based tests
 MQTT_DESC=	MQTT support
 POP3_DESC=	POP3/POP3S support
 PROXY_IMPLIES=	HTTP

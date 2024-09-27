@@ -1,7 +1,7 @@
 PORTNAME=	scikit-image
 PORTVERSION=	0.19.3
-PORTREVISION=	3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	3
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pythran>0:devel/py-pythran@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pythran>0:devel/py-pythran@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}imageio>=2.4.1:graphics/py-imageio@${PY_FLAVOR} \
@@ -27,19 +29,11 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		compiler:c++11-lang python shebangfix
 USE_GITHUB=	yes
-USE_PYTHON=	autoplist concurrent distutils cython cython_run
+USE_PYTHON=	autoplist concurrent cython cython_run pep517
 
-PYDISTUTILS_BUILD_TARGET=	build build_ext
-PYDISTUTILS_BUILDARGS+=		saveopts
 SHEBANG_FILES=	skimage/scripts/skivi
 
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/skimage -name "*.so" -exec ${STRIP_CMD} {} \;
-
-do-test:
-	@cd ${WRKSRC} && \
-	${PYTHON_CMD} ${PYSETUP} build_ext -i && \
-	${PYTHON_CMD} selftest.py && \
-	${PYTHON_CMD} -m nose -vx Tests/test_*.py
 
 .include <bsd.port.mk>

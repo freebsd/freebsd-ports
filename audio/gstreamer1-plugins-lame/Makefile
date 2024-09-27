@@ -3,13 +3,13 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer High-quality free mp3 encode plugin
 
-GST_PLUGIN=	lame
+LIB_DEPENDS=	libmp3lame.so:audio/lame
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		good
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS= libmp3lame.so:audio/lame
+GST_PLUGIN=	lame
 
 .include "${MASTERDIR}/Makefile"

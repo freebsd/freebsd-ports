@@ -409,6 +409,7 @@
     SUBDIR += py-pymbd
     SUBDIR += py-pymol
     SUBDIR += py-pyosf
+    SUBDIR += py-pyphot
     SUBDIR += py-pyprecice
     SUBDIR += py-pyqubo
     SUBDIR += py-pysal

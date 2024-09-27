@@ -3,13 +3,13 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer wavpack encode/decode plugin
 
-GST_PLUGIN=	wavpack
+LIB_DEPENDS=	libwavpack.so:audio/wavpack
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		good
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS=  libwavpack.so:audio/wavpack
+GST_PLUGIN=	wavpack
 
 .include "${MASTERDIR}/Makefile"

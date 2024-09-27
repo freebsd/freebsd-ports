@@ -9,6 +9,7 @@ WWW=		https://socketry.github.io/io-event/ \
 		https://github.com/socketry/io-event
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/license.md
 
 USES=		gem
 

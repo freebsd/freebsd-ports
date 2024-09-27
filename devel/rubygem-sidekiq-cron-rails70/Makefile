@@ -1,6 +1,6 @@
 PORTNAME=	sidekiq-cron
 PORTVERSION=	1.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails70
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-fugit>=1.8<2:devel/rubygem-fugit \
 		rubygem-globalid-rails70>=1.0.1:databases/rubygem-globalid-rails70 \
-		rubygem-sidekiq71>=6:devel/rubygem-sidekiq71
+		rubygem-sidekiq72>=6:devel/rubygem-sidekiq72
 
 USES=		gem
 

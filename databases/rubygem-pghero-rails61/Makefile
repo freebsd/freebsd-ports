@@ -11,6 +11,9 @@ WWW=		https://github.com/ankane/pghero
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Ruby on Rails 6.1.x reaches EOL on 2024-10-01
+EXPIRATION_DATE=	2024-10-24
+
 RUN_DEPENDS=	rubygem-activerecord61>=5:databases/rubygem-activerecord61
 
 USES=		cpe gem

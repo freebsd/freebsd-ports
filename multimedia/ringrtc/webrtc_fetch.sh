@@ -1,9 +1,10 @@
 #!/bin/sh
 
-WEBRTC_REV=6478k
+WEBRTC_REV=6613a
 
 base_url="https://chromium.googlesource.com/chromium/src/base.git/+archive/"
 boringssl_url="https://boringssl.googlesource.com/boringssl.git/+archive/"
+build_url="https://chromium.googlesource.com/chromium/src/build.git/+archive/"
 buildtools_url="https://chromium.googlesource.com/chromium/src/buildtools.git/+archive/"
 catapult_url="https://chromium.googlesource.com/catapult.git/+archive/"
 icu_url="https://chromium.googlesource.com/chromium/deps/icu.git/+archive/"

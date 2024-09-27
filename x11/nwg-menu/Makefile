@@ -1,6 +1,6 @@
 PORTNAME=	nwg-menu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.4
+DISTVERSION=	0.1.6
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,9 +20,11 @@ GH_ACCOUNT=	nwg-piotr
 GH_TUPLE=	allan-simon:go-singleinstance:d0997106ab37:allan_simon_go_singleinstance/vendor/github.com/allan-simon/go-singleinstance \
 		dlasky:gotk3-layershell:5c5115f0d774:dlasky_gotk3_layershell/vendor/github.com/dlasky/gotk3-layershell \
 		golang:sync:v0.8.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.25.0:golang_sys/vendor/golang.org/x/sys \
 		gotk3:gotk3:ff349ae13f56:gotk3_gotk3/vendor/github.com/gotk3/gotk3 \
 		joshuarubin:go-sway:v1.2.0:joshuarubin_go_sway/vendor/github.com/joshuarubin/go-sway \
 		joshuarubin:lifecycle:v1.1.4:joshuarubin_lifecycle/vendor/github.com/joshuarubin/lifecycle \
+		sirupsen:logrus:v1.9.3:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		uber-go:multierr:v1.11.0:uber_go_multierr/vendor/go.uber.org/multierr
 CGO_LDFLAGS+=	-Wl,--as-needed # harfbuzz, freetype2
 PLIST_FILES=	bin/${PORTNAME}

@@ -3,15 +3,15 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer MPEG-2 and MPEG-4 AAC decoder plugin
 
-GST_PLUGIN=	faad
+LIB_DEPENDS=	libfaad.so:audio/faad
+
+MESON_ARGS+=	-Dgpl=enabled
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS= libfaad.so:audio/faad
-
-MESON_ARGS+= -Dgpl=enabled
+GST_PLUGIN=	faad
 
 .include "${MASTERDIR}/Makefile"

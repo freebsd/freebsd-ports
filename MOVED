@@ -3479,3 +3479,11 @@ graphics/libsvg||2024-09-14|Has expired: Abandoned upstream, obsolete and fails 
 www/libresonic-standalone||2024-09-15|Has expired: Abandonware, repo deleted
 security/rubygem-ruby-saml115|security/rubygem-ruby-saml|2024-09-18|Has expired: Use security/rubygem-ruby-saml instead
 databases/ldb15||2024-09-18|Has expired: Outdated and not necessary for any supported version of Samba
+net/rubygem-kas-grpc|net/rubygem-gitlab-kas-grpc|2024-09-19|Renamed, use net/rubygem-gitlab-kas-grpc instead
+databases/ldb20||2024-09-22|Has expired: Outdated and not necessary for any supported version of Samba
+databases/ldb21||2024-09-22|Has expired: Outdated and not necessary for any supported version of Samba
+graphics/gstreamer1-plugins-qt|x11-toolkits/gstreamer1-plugins-qt5|2024-09-22|Rename with versioned suffix and move to a more fitting category with the addition of its Qt6 counterpart
+devel/rubygem-sidekiq71|devel/rubygem-sidekiq72|2024-09-23|Has expired: use devel/rubygem-sidekiq72 instead
+devel/xtensa-esp32-elf|devel/xtensa-esp-elf|2024-09-23|Upstream was renamed
+sysutils/orch|sysutils/porch|2024-09-26|Upstream was renamed
+security/nextcloud-twofactor_nextcloud_notification||2024-09-27|Removed, bundled with Nextcloud 30

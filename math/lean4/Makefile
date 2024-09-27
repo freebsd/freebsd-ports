@@ -1,6 +1,7 @@
 PORTNAME=	lean4
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.11.0
+PORTREVISION=	1
 CATEGORIES=	math lang devel # lean4 is primarily a math theorem prover, but it is also a language and a development environment
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,6 +26,17 @@ CFLAGS+=	-fPIC
 CXXFLAGS+=	-fPIC
 
 BINARY_ALIAS=	make=${GMAKE} python=${PYTHON_CMD}
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Please note that build Lean requires /proc to be mounted."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  The usual way to do this is to add this line to /etc/fstab:"
+	@${ECHO_MSG} "  proc /proc procfs rw 0 0"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  and then run this command as root:"
+	@${ECHO_MSG} "  # mount /proc"
+	@${ECHO_MSG} ""
 
 post-install:
 	# remove empty dirs

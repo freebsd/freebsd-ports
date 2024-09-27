@@ -17,6 +17,5 @@ USES=		gem shebangfix
 NO_ARCH=	yes
 
 SHEBANG_FILES=	examples/examples_unicode.rb
-ruby_OLD_CMD=	"/bin/env ruby"
 
 .include <bsd.port.mk>

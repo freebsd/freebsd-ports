@@ -4,8 +4,10 @@ bin/gst-play-%%VERSION%%
 include/gstreamer-%%VERSION%%/gst/allocators/allocators-prelude.h
 include/gstreamer-%%VERSION%%/gst/allocators/allocators.h
 include/gstreamer-%%VERSION%%/gst/allocators/gstdmabuf.h
+include/gstreamer-%%VERSION%%/gst/allocators/gstdrmdumb.h
 include/gstreamer-%%VERSION%%/gst/allocators/gstfdmemory.h
 include/gstreamer-%%VERSION%%/gst/allocators/gstphysmemory.h
+include/gstreamer-%%VERSION%%/gst/allocators/gstshmallocator.h
 include/gstreamer-%%VERSION%%/gst/app/app-enumtypes.h
 include/gstreamer-%%VERSION%%/gst/app/app-prelude.h
 include/gstreamer-%%VERSION%%/gst/app/app.h
@@ -36,6 +38,8 @@ include/gstreamer-%%VERSION%%/gst/audio/gstaudioringbuffer.h
 include/gstreamer-%%VERSION%%/gst/audio/gstaudiosink.h
 include/gstreamer-%%VERSION%%/gst/audio/gstaudiosrc.h
 include/gstreamer-%%VERSION%%/gst/audio/gstaudiostreamalign.h
+include/gstreamer-%%VERSION%%/gst/audio/gstdsd.h
+include/gstreamer-%%VERSION%%/gst/audio/gstdsdformat.h
 include/gstreamer-%%VERSION%%/gst/audio/streamvolume.h
 include/gstreamer-%%VERSION%%/gst/fft/fft-prelude.h
 include/gstreamer-%%VERSION%%/gst/fft/fft.h
@@ -120,6 +124,7 @@ include/gstreamer-%%VERSION%%/gst/video/video-event.h
 include/gstreamer-%%VERSION%%/gst/video/video-format.h
 include/gstreamer-%%VERSION%%/gst/video/video-frame.h
 include/gstreamer-%%VERSION%%/gst/video/video-hdr.h
+include/gstreamer-%%VERSION%%/gst/video/video-info-dma.h
 include/gstreamer-%%VERSION%%/gst/video/video-info.h
 include/gstreamer-%%VERSION%%/gst/video/video-multiview.h
 include/gstreamer-%%VERSION%%/gst/video/video-overlay-composition.h
@@ -148,7 +153,9 @@ lib/gstreamer-%%VERSION%%/libgstaudiomixer.so
 lib/gstreamer-%%VERSION%%/libgstaudiorate.so
 lib/gstreamer-%%VERSION%%/libgstaudioresample.so
 lib/gstreamer-%%VERSION%%/libgstaudiotestsrc.so
+lib/gstreamer-%%VERSION%%/libgstbasedebug.so
 lib/gstreamer-%%VERSION%%/libgstcompositor.so
+lib/gstreamer-%%VERSION%%/libgstdsd.so
 lib/gstreamer-%%VERSION%%/libgstencoding.so
 lib/gstreamer-%%VERSION%%/libgstgio.so
 lib/gstreamer-%%VERSION%%/libgstoverlaycomposition.so
@@ -207,9 +214,6 @@ libdata/pkgconfig/gstreamer-rtsp-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-sdp-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-tag-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-video-%%VERSION%%.pc
-share/man/man1/gst-device-monitor-%%VERSION%%.1.gz
-share/man/man1/gst-discoverer-%%VERSION%%.1.gz
-share/man/man1/gst-play-%%VERSION%%.1.gz
 share/gir-%%VERSION%%/GstAllocators-%%VERSION%%.gir
 share/gir-%%VERSION%%/GstApp-%%VERSION%%.gir
 share/gir-%%VERSION%%/GstAudio-%%VERSION%%.gir
@@ -260,3 +264,6 @@ share/locale/tr/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
+share/man/man1/gst-device-monitor-%%VERSION%%.1.gz
+share/man/man1/gst-discoverer-%%VERSION%%.1.gz
+share/man/man1/gst-play-%%VERSION%%.1.gz

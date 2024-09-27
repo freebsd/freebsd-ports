@@ -1,6 +1,5 @@
 PORTNAME=	mp3fs
-PORTVERSION=	0.91
-PORTREVISION=	4
+PORTVERSION=	1.1.1
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	https://github.com/khenriks/${PORTNAME}/releases/download/v${PORTVERSION}/
@@ -15,12 +14,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libid3tag.so:audio/libid3tag \
-		libmp3lame.so:audio/lame
+		libmp3lame.so:audio/lame \
+		libvorbis.so:audio/libvorbis
 
-USES=		compiler:c11 fuse localbase pkgconfig
+USES=		fuse localbase pkgconfig
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 PLIST_FILES=	bin/mp3fs \
 		share/man/man1/mp3fs.1.gz
 
+CFLAGS+=	-D__XSI_VISIBLE
 .include <bsd.port.mk>

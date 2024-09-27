@@ -1,7 +1,7 @@
 PORTNAME=	haproxy
-DISTVERSION=	2.9.10
+DISTVERSION=	3.0.5
 CATEGORIES=	net www
-MASTER_SITES=	http://www.haproxy.org/download/2.9/src/
+MASTER_SITES=	http://www.haproxy.org/download/3.0/src/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Reliable, high performance TCP/HTTP load balancer
@@ -17,18 +17,19 @@ USES=		compiler:c++11-lang cpe gmake
 USE_RC_SUBR=	haproxy
 
 default_CONFLICTS_INSTALL=	haproxy-lua
-lua_CONFLICTS_INSTALL=		haproxy
+lua_CONFLICTS_INSTALL=		haproxy-devel
 lua_PKGNAMESUFFIX=		-lua
 
-CONFLICTS_INSTALL=	haproxy-devel haproxy17 haproxy18 haproxy20 haproxy22 haproxy23 haproxy24 haproxy25 haproxy26 haproxy27
+CONFLICTS_INSTALL=	haproxy haproxy17 haproxy18 haproxy20 haproxy22 haproxy23 haproxy24 haproxy25 haproxy26
 
 ALL_TARGET=	all admin/halog/halog
 MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS USE_GETADDRINFO=1 \
 		USE_ZLIB=1 USE_CPU_AFFINITY=1 USE_ACCEPT4=1 \
+		USE_TFO=1 USE_THREAD_DUMP=1 \
 		CC="${CC}" DEBUG_CFLAGS="" CPU_CFLAGS="${CFLAGS}" \
 		${MAKE_ARGS_${ARCH}}
 
-MAKE_ARGS_i386=	USE_LIBATOMIC=
+MAKE_ARGS_i386=		USE_LIBATOMIC=
 MAKE_ARGS_powerpc=	USE_LIBATOMIC=
 
 OPTIONS_DEFINE=		DOCS EXAMPLES LUA OPENSSL DEVICEATLAS PROMEX

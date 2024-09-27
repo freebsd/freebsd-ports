@@ -10,6 +10,10 @@ WWW=		https://github.com/algernon/libmongo-client
 
 LICENSE=	APACHE20
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandonware, upstream removed repo
+EXPIRATION_DATE=2024-10-31
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	algernon
 

@@ -35,12 +35,12 @@
  
  typedef struct _GdkDrmFormatInfo GdkDrmFormatInfo;
  
---- gsk/gpu/gskgpudownloadop.c.orig	2024-08-27 18:18:39 UTC
+--- gsk/gpu/gskgpudownloadop.c.orig	2024-09-13 14:11:36 UTC
 +++ gsk/gpu/gskgpudownloadop.c
-@@ -16,7 +16,7 @@
- #include "gdk/gdkglcontextprivate.h"
+@@ -22,7 +22,7 @@
  
  #ifdef HAVE_DMABUF
+ #include <glib-unix.h>
 -#include <linux/dma-buf.h>
 +#include "../../dma-buf-compat.h"
  #endif

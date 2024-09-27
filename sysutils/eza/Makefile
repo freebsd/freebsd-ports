@@ -1,6 +1,6 @@
 PORTNAME=	eza
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.3
+DISTVERSION=	0.20.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/eza-community/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/:man
 DISTFILES=	man-${DISTVERSION}.tar.gz:man
@@ -10,8 +10,10 @@ MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp
 COMMENT=	Modern, maintained replacement for ls
 WWW=		https://eza.rocks/
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENCE
+LICENSE=	EUPL-1.2
+LICENSE_NAME=	EUROPEAN UNION PUBLIC LICENCE v. 1.2
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 USES=		cargo
 USE_GITHUB=	yes

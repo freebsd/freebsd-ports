@@ -3,13 +3,13 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer gsm encoding/decoding plugin
 
-GST_PLUGIN=	gsm
+LIB_DEPENDS=	libgsm.so:audio/gsm
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS=  libgsm.so:audio/gsm
+GST_PLUGIN=	gsm
 
 .include "${MASTERDIR}/Makefile"

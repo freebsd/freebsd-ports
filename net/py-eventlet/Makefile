@@ -1,12 +1,12 @@
 PORTNAME=	eventlet
-PORTVERSION=	0.36.1
+PORTVERSION=	0.37.0
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Highly concurrent networking library
-WWW=		https://eventlet.net/ \
+WWW=		https://eventlet.readthedocs.io/en/latest/ \
 		https://github.com/eventlet/eventlet
 
 LICENSE=	MIT

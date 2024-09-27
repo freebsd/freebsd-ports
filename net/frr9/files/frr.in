@@ -6,16 +6,39 @@
 
 # Add the following line to /etc/rc.conf to enable frr:
 #  frr_enable="YES"
-#
+
+# FRR's daemon management concept:
+# - watchfrr is used to manage (start/monitor/restart) all frr deamons;
+# - vtysh used to daemons boot startup configuration;
+# - mgmtd is the management plane.
+# There are a minimum of 3 daemons running: watchfrr, zebra, mgmtd
+
+# Startup details with watchfrr enabled (default):
+# 1. "service frr start" calls "service frr start watchfrr"
+# 2. watchfrr once started calls "service frr restart all"
+# 3. "restart all" need to loop the list of $frr_daemons to start each
+#    of then
+# 4. vtysh -b is executed to load boot startup configuration
+
+# Startup detail with watchfrr disabled (deprecated mode):
+# 1. "service frr start" call "service frr start all" and need to loop $frr_daemons
+
+# To select a limited set of daemons to run, use the frr_daemons.
+# Order matters: keep mgmtd first, followed by zebra.
+# Example to start only staticd and bgpd:
+#  frr_daemons="mgmtd zebra staticd bgpd"
+
 # You may also wish to use the following variables to fine-tune startup:
-# Enable Integrated configuration mode (using the single configuration file
-# frr.conf in place of one file for each dameon)
-#  frr_vtysh_boot="YES"
-# Selecting limited set of daemons to run
-#  frr_daemons="zebra mgmtd babeld bfdd bgpd eigrpd fabricd isisd ospfd ospf6d ripd ripngd staticd"
+# To disable integrated configuration mode, to use one configuration file per
+# daemons.
+# This mode is deprecated and not compatible with watchfrr and mgmtd
+#  frr_vtysh_boot="NO"
+#  watchfrr_enable="NO"
+
 # Global tuning
 #  frr_flags=""
-# Per daemon tuning may be done with daemon_name_flags
+#  frr_default_profile="datacenter" (default: traditional)
+# Per daemon tuning may be done with daemon-name_flags
 #  zebra_flags="-P 0"
 #  bgpd_flags="-nrP 0" and so on
 # If you want to give the routing daemons a chance to catchup before
@@ -28,7 +51,10 @@
 # use the following variable to run ldconfig(8) in advance:
 #  frr_extralibs_path="/usr/local/lib ..."
 #
-# This RC script was adapted from the net/quagga port
+# This RC script was adapted from:
+# - FRR's tools/frrinit.sh.in (starting watchfrr)
+# - FRR's tools/frrcommon.sh.in (starting frr daemons)
+# - FRR's tools/etc/frr/daemons (default daemon flags)
 
 . /etc/rc.subr
 
@@ -36,39 +62,34 @@ name=frr
 rcvar=${name}_enable
 
 start_postcmd=start_postcmd
-stop_postcmd="rm -f $pidfile"
-configtest_cmd=check_config
-extra_commands=configtest
 command_args="-d"
 
 load_rc_config $name
 : ${frr_enable:="NO"}
 : ${frr_flags:=""}
-: ${frr_daemons:="zebra mgmtd babeld bfdd bgpd eigrpd fabricd isisd ospfd ospf6d ripd ripngd staticd"}
-: ${frr_vtysh_boot:="NO"}
+: ${watchfrr_enable:="YES"}
+: ${frr_daemons:="mgmtd zebra babeld bfdd bgpd eigrpd fabricd isisd ospfd ospf6d ripd ripngd staticd"}
+: ${watchfrr_flags:="-r /usr/sbin/servicebBfrrbBrestartbB%s -s /usr/sbin/servicebBfrrbBstartbB%s -k /usr/sbin/servicebBfrrbBstopbB%s -b bB -t 30"}
+: ${frr_default_profile:="traditional"}
+: ${frr_vtysh_boot:="YES"}
 : ${frr_wait_for:=""}
 : ${frr_wait_seconds:="90"}
+# Default daemons'flag restrict binding vty's to localhost
+: ${zebra_flags:="-A 127.0.0.1"}
+: ${mgmtd_flags:="-A 127.0.0.1"}
+: ${babeld_flags:="-A 127.0.0.1"}
+: ${bgpd_flags:="-A 127.0.0.1"}
+: ${eigrpd_flags:="-A 127.0.0.1"}
+: ${fabricd_flags:="-A 127.0.0.1"}
+: ${isisd_flags:="-A 127.0.0.1"}
+: ${ospfd_flags:="-A 127.0.0.1"}
+: ${ospf6d_flags:="-A ::1"}
+: ${ripd_flags:="-A 127.0.0.1"}
+: ${ripngd_flags:="-A ::1"}
+: ${staticd_flags:="-A 127.0.0.1"}
+frr_flags="${frr_flags} -F ${frr_default_profile}"
 
-check_config()
-{
-    echo "Checking $daemon.conf"
-	# pimd doesn't support -C
-	if [ "$daemon" = "pimd" -o "$daemon" = "staticd" ]; then
-		echo "confchk $daemon ignored"
-	else
-    	$command $daemon_flags -C
-    	result=$?
-    	if [ "$result" -eq "0" ]; then
-			echo "OK"
-    	else
-			echo "FAILED"
-			exit
-    	fi
-	fi
-}
-
-start_postcmd()
-{
+start_postcmd() {
 	local waited_for
 	waited_for=0
 	# Wait only when last daemon has started.
@@ -86,49 +107,60 @@ start_postcmd()
 	fi
 }
 
-do_cmd()
-{
+do_cmd() {
+	# Entering here, global var dmn contains the daemon name
+	# $1 the daemon name (must be uniq and cannot be all)
+	local ret
+	local cmd
+	local dmn
+	ret=0
+	dmn=$1
+	if [ -n "${dmn}" ] && [ "${dmn}" != "all" ]; then
+		command=%%PREFIX%%/sbin/${dmn}
+		pidfile=/var/run/frr/${dmn}.pid
+		eval flags=\$\{${dmn}_flags:-\"\"\}
+		flags="${flags} ${frr_flags}"
+		if [ "${dmn}" = "watchfrr" ]; then
+			# watchfrr is expecting all daemon names as flags
+			flags="${flags} ${watchfrr_daemons}"
+		fi
+		name=${dmn}
+		_rc_restart_done=false
+		stop_postcmd="rm -f $pidfile"
+		run_rc_command "${frr_cmd}" || ret=1
+	else
+		echo "Bug in do_cmd(): called without argument or with all"
+		ret=1
+	fi
+	return ${ret}
+}
+
+vtysh_b () {
 	local ret
 	ret=0
-	frr_cmd=$1
-	if checkyesno frr_vtysh_boot && ( [ ${frr_cmd} = "restart" ] || [ ${frr_cmd} = "start" ] ); then
-		echo "Checking intergrated config..."
-		daemon="vtysh"
-		daemon_flags=""
-		command=%%PREFIX%%/bin/${daemon}
-		if ! [ -f %%ETCDIR%%/vtysh.conf ]; then
-			touch %%ETCDIR%%/vtysh.conf
-		fi
-		check_config
+	if checkyesno frr_vtysh_boot; then
+		%%PREFIX%%/bin/vtysh -b || ret=1
 	fi
+	return ${ret}
+}
+
+loop_do_cmd() {
+	local ret
+	local daemon
+	ret=0
 	for daemon in ${frr_daemons}; do
-	    command=%%PREFIX%%/sbin/${daemon}
-	    pidfile=/var/run/frr/${daemon}.pid
-		if ! checkyesno frr_vtysh_boot; then
- 			required_files=%%ETCDIR%%/${daemon}.conf
-			if [ ${frr_cmd} = "restart" ] || [ ${frr_cmd} = "start" ]; then
- 				check_config
-			fi
-			if [ ${frr_cmd} = "start" ] && ! [ -f ${required_files} ]; then
-				continue
-			fi
-		fi
-	    if [ ${frr_cmd} = "stop" ] && [ -z "$(check_process ${command})" ]; then
-			continue
-	    fi
-	    eval flags=\$\{${daemon}_flags:-\"${frr_flags}\"\}
-	    name=${daemon}
-	    _rc_restart_done=false
-	    run_rc_command "$1" || ret=1
+		do_cmd ${daemon} || ret=1
 	done
-	if checkyesno frr_vtysh_boot && ( [ ${frr_cmd} = "restart" ] || [ ${frr_cmd} = "start" ] ); then
-	    echo "Booting for integrated-vtysh-config..."
-	    %%PREFIX%%/bin/vtysh -b
+	if ( [ ${frr_cmd} = "restart" ] || [ ${frr_cmd} = "start" ] ); then
+	    vtysh_b || ret=1
 	fi
 	return ${ret}
 }
 
 frr_cmd=$1
+
+# remove unsuported extra command
+# Example: "service frr fast start" is replaced by "service frr start"
 
 case "$1" in
     force*)
@@ -140,29 +172,75 @@ case "$1" in
 esac
 shift
 
-if [ $# -ge 1 -a "$1" != "all" ]; then
-	frr_daemons="$*"
+# If daemon specified, replace the full list by its name
+# or with watchfrr if not disabled
+# Example: extract "bgpd" from a "service frr start bgpd"
+if [ $# -ge 1 ]; then
+	if [ "$1" != "all" ]; then
+		frr_daemons=$1
+	fi
+else
+	if checkyesno watchfrr_enable; then
+		watchfrr_daemons=${frr_daemons}
+		frr_daemons=watchfrr
+	fi
 fi
 
 case "${frr_cmd}" in
     start|quietstart)
-		if [ -n "${frr_extralibs_path}" ]; then
-	    	/sbin/ldconfig -m ${frr_extralibs_path}
+		if checkyesno frr_enable; then
+			if [ -n "${frr_extralibs_path}" ]; then
+				/sbin/ldconfig -m ${frr_extralibs_path}
+			fi
+			if [ -x %%PREFIX%%/etc/rc.d/watchfrr ]; then
+				echo "WARNING: Old rc.d/watchfrr detected, this file must be deleted"
+			fi
+			if checkyesno frr_vtysh_boot; then
+				echo "Checking intergrated config..."
+				if ! [ -f %%ETCDIR%%/vtysh.conf ]; then
+					mkdir -p %%ETCDIR%%
+					echo "service integrated-vtysh-config" > %%ETCDIR%%/vtysh.conf
+				fi
+				if ! [ -f %%ETCDIR%%/frr.conf ]; then
+					echo "log syslog informational" > %%ETCDIR%%/frr.conf
+				fi
+				chown -R frr:frr %%ETCDIR%%
+			fi
+			loop_do_cmd
 		fi
-		# Why should I need to add this check ?
-		checkyesno frr_enable && do_cmd "start"
 		;;
     stop)
-		frr_daemons=$(reverse_list ${frr_daemons})
-		do_cmd "stop"
+		if checkyesno frr_enable; then
+			# watchfrr do not stop all daemons, so need to stop it first
+			# then continuing with all others daemons
+			if [ "${frr_daemons}" = "watchfrr" ]; then
+				loop_do_cmd
+				frr_daemons=${watchfrr_daemons}
+			fi
+			frr_daemons=$(reverse_list ${frr_daemons})
+			loop_do_cmd
+		fi
 		;;
     restart)
-		frr_daemons=$(reverse_list ${frr_daemons})
-		do_cmd "stop"
-		frr_daemons=$(reverse_list ${frr_daemons})
-		checkyesno frr_enable && do_cmd "start"
+		if checkyesno frr_enable; then
+			# watchfrr calls "service frr restart all" at startup
+			# to start all services
+			frr_daemons=$(reverse_list ${frr_daemons})
+			frr_cmd=stop
+			loop_do_cmd
+			frr_daemons=$(reverse_list ${frr_daemons})
+			frr_cmd=start
+			loop_do_cmd
+		fi
+		;;
+    reload)
+		if ! [ -x %%PREFIX%%/sbin/frr-reload.py ]; then
+			echo "Please install frr-pythontools package. Required for reload"
+			exit 0
+		fi
+		%%PREFIX%%/sbin/frr-reload.py --reload --confdir %%ETCDIR%% --rundir /var/run/frr %%ETCDIR%%/frr.conf
 		;;
     *)
-		do_cmd "${frr_cmd}"
+		loop_do_cmd
 		;;
 esac

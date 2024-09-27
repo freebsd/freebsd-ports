@@ -2,7 +2,7 @@ PORTNAME=	libvirt-dbus
 PORTVERSION=	1.4.1
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://libvirt.org/libvirt/dbus/
+MASTER_SITES=	https://download.libvirt.org/dbus/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Libvirt D-Bus API binding
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libvirt.so:devel/libvirt \
 RUN_DEPENDS=	dbus-daemon:devel/dbus
 BUILD_DEPENDS=	rst2man:textproc/py-docutils
 
-USES=		gettext-runtime gmake gnome libtool perl5 pkgconfig tar:xz meson
+USES=		gettext-runtime gmake gnome perl5 pkgconfig tar:xz meson
 USE_GNOME=	glib20
 USE_PERL5=	build
 

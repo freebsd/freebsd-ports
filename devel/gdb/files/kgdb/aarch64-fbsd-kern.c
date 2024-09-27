@@ -142,7 +142,8 @@ static const struct regcache_map_entry aarch64_fbsd13_trapframe_map[] =
   };
 
 static struct trad_frame_cache *
-aarch64_fbsd_trapframe_cache (frame_info_ptr this_frame, void **this_cache)
+aarch64_fbsd_trapframe_cache (const frame_info_ptr &this_frame,
+			      void **this_cache)
 {
   struct gdbarch *gdbarch = get_frame_arch (this_frame);
   enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
@@ -190,7 +191,7 @@ aarch64_fbsd_trapframe_cache (frame_info_ptr this_frame, void **this_cache)
 }
 
 static void
-aarch64_fbsd_trapframe_this_id (frame_info_ptr this_frame,
+aarch64_fbsd_trapframe_this_id (const frame_info_ptr &this_frame,
 				void **this_cache, struct frame_id *this_id)
 {
   struct trad_frame_cache *cache =
@@ -200,7 +201,7 @@ aarch64_fbsd_trapframe_this_id (frame_info_ptr this_frame,
 }
 
 static struct value *
-aarch64_fbsd_trapframe_prev_register (frame_info_ptr this_frame,
+aarch64_fbsd_trapframe_prev_register (const frame_info_ptr &this_frame,
 				      void **this_cache, int regnum)
 {
   struct trad_frame_cache *cache =
@@ -211,7 +212,7 @@ aarch64_fbsd_trapframe_prev_register (frame_info_ptr this_frame,
 
 static int
 aarch64_fbsd_trapframe_sniffer (const struct frame_unwind *self,
-				frame_info_ptr this_frame,
+				const frame_info_ptr &this_frame,
 				void **this_prologue_cache)
 {
   const char *name;

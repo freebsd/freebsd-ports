@@ -11,6 +11,9 @@ WWW=		https://github.com/mfung/hamlit-rails
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Ruby on Rails 6.1.x reaches EOL on 2024-10-01
+EXPIRATION_DATE=	2024-10-24
+
 RUN_DEPENDS=	rubygem-activesupport61>=0:devel/rubygem-activesupport61 \
 		rubygem-actionpack61>=0:www/rubygem-actionpack61 \
 		rubygem-hamlit>=1.2.0:www/rubygem-hamlit \

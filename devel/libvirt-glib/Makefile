@@ -1,7 +1,7 @@
 PORTNAME=	libvirt-glib
 PORTVERSION=	5.0.0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://libvirt.org/libvirt/glib/
+MASTER_SITES=	https://download.libvirt.org/glib/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Glib bindings for Libvirt virtualization API
@@ -11,7 +11,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libvirt.so:devel/libvirt
 
-USES=		gettext gmake gnome libtool meson pathfix pkgconfig \
+USES=		gettext gmake gnome meson pathfix pkgconfig \
 		python tar:xz
 
 OPTIONS_DEFINE=	DOCS VAPI

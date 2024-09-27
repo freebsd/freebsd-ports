@@ -9,6 +9,7 @@ WWW=		https://socketry.github.io/async-io/ \
 		https://github.com/socketry/async-io
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/license.md
 
 RUN_DEPENDS=	rubygem-async>=0:devel/rubygem-async
 

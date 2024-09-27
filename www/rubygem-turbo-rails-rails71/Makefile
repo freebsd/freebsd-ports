@@ -1,5 +1,5 @@
 PORTNAME=	turbo-rails
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.8
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails71
@@ -12,7 +12,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-actionpack71>=6.0.0:www/rubygem-actionpack71 \
-		rubygem-activejob71>=6.0.0:devel/rubygem-activejob71 \
 		rubygem-railties71>=6.0.0:www/rubygem-railties71
 
 USES=		gem

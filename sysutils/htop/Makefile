@@ -14,7 +14,7 @@ WWW=		https://htop.dev/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		desktop-file-utils ncurses tar:xz
+USES=		ncurses tar:xz
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-unicode

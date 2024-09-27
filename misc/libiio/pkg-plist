@@ -8,5 +8,5 @@ bin/iio_writedev
 include/iio.h
 lib/libiio.so
 lib/libiio.so.0
-lib/libiio.so.0.25
+lib/libiio.so.0.26
 libdata/pkgconfig/libiio.pc

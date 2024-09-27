@@ -24,7 +24,7 @@ CONFLICTS=	gnome-keyring-2.[0-9]*
 PORTSCOUT=	limitw:1,even
 
 USE_GNOME=	cairo gtk30 intlhack introspection:build
-USES=		desktop-file-utils gettext gmake gnome libtool meson pathfix \
+USES=		desktop-file-utils gettext gmake gnome meson pathfix \
 		pkgconfig python shared-mime-info tar:xz vala:build
 USE_LDCONFIG=	yes
 BINARY_ALIAS=	python3=${PYTHON_VERSION}

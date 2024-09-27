@@ -1,3 +1,4 @@
+bin/sonivoxrender
 include/sonivox/eas.h
 include/sonivox/eas_chorus.h
 include/sonivox/eas_reverb.h
@@ -9,6 +10,6 @@ lib/cmake/sonivox/sonivox-targets.cmake
 lib/libsonivox-static.a
 lib/libsonivox.so
 lib/libsonivox.so.3
-lib/libsonivox.so.3.6.12.0
+lib/libsonivox.so.3.6.13.0
 libdata/pkgconfig/sonivox-static.pc
 libdata/pkgconfig/sonivox.pc

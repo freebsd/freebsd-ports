@@ -3,13 +3,13 @@ CATEGORIES=	multimedia
 
 COMMENT=	GStreamer ttml subtitle plugin
 
-GST_PLUGIN=	ttml
+USE_GNOME=	cairo libxml2 pango
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-USE_GNOME= cairo libxml2 pango
+GST_PLUGIN=	ttml
 
 .include "${MASTERDIR}/Makefile"

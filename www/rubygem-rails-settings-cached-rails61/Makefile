@@ -11,6 +11,9 @@ WWW=		https://github.com/huacnlee/rails-settings-cached
 
 LICENSE=	MIT
 
+DEPRECATED=	Ruby on Rails 6.1.x reaches EOL on 2024-10-01
+EXPIRATION_DATE=	2024-10-24
+
 RUN_DEPENDS=	rubygem-rails61>=0:www/rubygem-rails61
 
 USES=		gem

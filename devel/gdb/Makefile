@@ -1,6 +1,5 @@
 PORTNAME=	gdb
-DISTVERSION=	14.1
-PORTREVISION=	2
+DISTVERSION=	15.1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libzstd.so:archivers/zstd
 TEST_DEPENDS=	runtest:misc/dejagnu
 
-USES=		compiler:c++11-lang cpe gmake libtool makeinfo pkgconfig tar:xz
+USES=		compiler:c++17-lang cpe gmake libtool makeinfo pkgconfig tar:xz
 USE_PYTHON=	flavors py3kplist
 
 TEST_TARGET=	check
@@ -103,7 +102,7 @@ USE_GITHUB=	nodefault
 
 GH_ACCOUNT=	bsdjhb:libcxx
 GH_PROJECT=	libcxx-gdbpy:libcxx
-GH_TAGNAME=	03d0d9b:libcxx
+GH_TAGNAME=	4bb8585:libcxx
 
 # Workaround USE_GITHUB preventing the default DISTFILES
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

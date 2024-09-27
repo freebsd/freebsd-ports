@@ -1,7 +1,11 @@
-TIMESTAMP = 1719128380
-SHA256 (grame-cncm-faust-2.74.6_GH0.tar.gz) = eab18951046c4be232c66f35fe0a41fa339d5fe9e048e376545e427a0a02efc9
-SIZE (grame-cncm-faust-2.74.6_GH0.tar.gz) = 68613832
-SHA256 (grame-cncm-faustlibraries-58f6796_GH0.tar.gz) = 35c105bef3629f27a9dd5c7cbc9ba81170728d32c5d4ba7fe8291fff9ab00ee5
-SIZE (grame-cncm-faustlibraries-58f6796_GH0.tar.gz) = 7892176
+TIMESTAMP = 1726895188
+SHA256 (grame-cncm-faust-2.75.7_GH0.tar.gz) = 7ef21d3e5af0113a7a872efd5886294dbd0085b2dc7c6f0b42e417dbf4490193
+SIZE (grame-cncm-faust-2.75.7_GH0.tar.gz) = 70182927
+SHA256 (grame-cncm-faustlibraries-3e74c39_GH0.tar.gz) = 1dd8b9ad189e1d4d892c4c5d8df7a4ba8636c175e5d732f2d7aa8221744bf618
+SIZE (grame-cncm-faustlibraries-3e74c39_GH0.tar.gz) = 7893902
 SHA256 (ccrma-faust2ck-db879cb_GH0.tar.gz) = 78a4ca3deef0940122c68cb4872b9423778177ddf02d113f8f01d0e37351f816
 SIZE (ccrma-faust2ck-db879cb_GH0.tar.gz) = 328939
+SHA256 (shakfu-py2max-3aaa8ca_GH0.tar.gz) = cfa77756965481a65baa265bef850b2dd0d557622ead2d895d557187d7e78bf7
+SIZE (shakfu-py2max-3aaa8ca_GH0.tar.gz) = 1805609
+SHA256 (yixuan-spectra-8c7242e_GH0.tar.gz) = 9007e20117a29a55ba63a79648970240a318b4d863d1a3a2141110f24c932ed7
+SIZE (yixuan-spectra-8c7242e_GH0.tar.gz) = 259968

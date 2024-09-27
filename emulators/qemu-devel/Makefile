@@ -10,7 +10,7 @@ WWW=		https://www.qemu.org/
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
 		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR} \

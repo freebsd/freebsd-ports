@@ -3,13 +3,13 @@ CATEGORIES=	net
 
 COMMENT=	GStreamer srtp plugin
 
-GST_PLUGIN=	srtp
+LIB_DEPENDS=	libsrtp2.so:net/libsrtp2
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS= libsrtp2.so:net/libsrtp2
+GST_PLUGIN=	srtp
 
 .include "${MASTERDIR}/Makefile"

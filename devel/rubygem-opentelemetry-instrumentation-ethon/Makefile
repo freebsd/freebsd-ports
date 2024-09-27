@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-ethon
-PORTVERSION=	0.21.7
+PORTVERSION=	0.21.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

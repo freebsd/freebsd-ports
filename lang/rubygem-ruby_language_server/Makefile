@@ -1,5 +1,6 @@
 PORTNAME=	ruby_language_server
 PORTVERSION=	0.3.18
+PORTREVISION=	1
 CATEGORIES=	lang rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/kwerle/ruby_language_server
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activerecord70>=7.0<8:databases/rubygem-activerecord70 \
+RUN_DEPENDS=	rubygem-activerecord72>=7.0<8:databases/rubygem-activerecord72 \
 		rubygem-amatch>=0:textproc/rubygem-amatch \
 		rubygem-bundler>=0,1:sysutils/rubygem-bundler \
 		rubygem-etc>=0:devel/rubygem-etc \

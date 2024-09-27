@@ -3,13 +3,13 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer Opus audio encoder/decoder plugin
 
-GST_PLUGIN=	opus
+LIB_DEPENDS=	libopus.so:audio/opus
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		base
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS= libopus.so:audio/opus
+GST_PLUGIN=	opus
 
 .include "${MASTERDIR}/Makefile"

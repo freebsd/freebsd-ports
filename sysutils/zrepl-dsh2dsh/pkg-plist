@@ -20,4 +20,3 @@ etc/periodic/weekly/500.zrepl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/source.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/source_ssh.yml
 @dir etc/newsyslog.conf.d
-@dir(root,wheel,0750) /var/run/zrepl

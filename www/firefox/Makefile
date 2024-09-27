@@ -1,5 +1,6 @@
 PORTNAME=	firefox
-DISTVERSION=	130.0.1
+DISTVERSION=	131.0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	www wayland
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}${DISTVERSIONSUFFIX}/source \
@@ -11,7 +12,7 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 WWW=		https://www.mozilla.com/firefox
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.103:security/nss \
+		nss>=3.104:security/nss \
 		icu>=73.1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=9.0.0:print/harfbuzz \
@@ -40,7 +41,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
-FIREFOX_DESKTOP=	${MOZSRC}/taskcluster/docker/${MOZILLA}-snap/${MOZILLA}.desktop
 MOZ_OPTIONS=	--enable-application=browser \
 		--enable-official-branding
 
@@ -57,15 +57,16 @@ BUILD_DEPENDS+=	${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc++abi.a:deve
 MOZ_OPTIONS+=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
 .endif
 
+post-extract:
+	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON:R}|;s|@MOZILLA@|${MOZILLA}|' \
+		<${FILESDIR}/firefox.desktop.in >${WRKDIR}/${MOZILLA_EXEC_NAME}.desktop
+
 post-patch:
-	@${REINPLACE_CMD} -e 's/%u/%U/' -e '/X-MultipleArgs/d' \
-		-e '/^Icon/s/=.*/=${FIREFOX_ICON:R}/' \
-		${FIREFOX_DESKTOP}
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/browser/app/nsBrowserApp.cpp
 
 post-install:
-	${INSTALL_DATA} ${FIREFOX_DESKTOP} ${STAGEDIR}${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKDIR}/${MOZILLA_EXEC_NAME}.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
 	${LN} -sf ${FIREFOX_ICON_SRC} ${STAGEDIR}${PREFIX}/share/pixmaps/${FIREFOX_ICON}
 

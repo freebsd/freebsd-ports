@@ -15,6 +15,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/connection-reuse.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/http_load_time.url
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/pool-debugging.txt
+%%PORTDOCS%%%%DOCSDIR%%/design-thoughts/ring-v2.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/thread-group.txt
 %%PORTDOCS%%%%DOCSDIR%%/gpl.txt
 %%PORTDOCS%%%%DOCSDIR%%/haproxy.1

@@ -1,17 +1,17 @@
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	multimedia
 
 COMMENT=	GStreamer libx265 based H265 plugin
 
-GST_PLUGIN=	x265
+LIB_DEPENDS=	libx265.so:multimedia/x265
+
+MESON_ARGS+=	-Dgpl=enabled
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		bad
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS= libx265.so:multimedia/x265
+GST_PLUGIN=	x265
 
 .include "${MASTERDIR}/Makefile"
-
-MESON_ARGS+= -Dgpl=enabled

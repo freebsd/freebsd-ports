@@ -403,7 +403,6 @@
     SUBDIR += nextcloud-end_to_end_encryption
     SUBDIR += nextcloud-passman
     SUBDIR += nextcloud-twofactor_admin
-    SUBDIR += nextcloud-twofactor_nextcloud_notification
     SUBDIR += nextcloud-twofactor_webauthn
     SUBDIR += nflib
     SUBDIR += ngrok
@@ -1002,6 +1001,7 @@
     SUBDIR += py-paramiko
     SUBDIR += py-pass-audit
     SUBDIR += py-pass-git-helper
+    SUBDIR += py-passhole
     SUBDIR += py-passlib
     SUBDIR += py-pbkdf2
     SUBDIR += py-pem
@@ -1022,6 +1022,8 @@
     SUBDIR += py-pyelliptic
     SUBDIR += py-pyhanko
     SUBDIR += py-pyhanko-certvalidator
+    SUBDIR += py-pykeepass
+    SUBDIR += py-pykeepass-cache
     SUBDIR += py-pylibacl
     SUBDIR += py-pymacaroons
     SUBDIR += py-pynacl

@@ -12,9 +12,9 @@ Avoid various systemd dependencies
  DesktopNames=pop:COSMIC
  X-GDM-SessionRegisters=false
 \ No newline at end of file
---- src/main.rs.orig	2024-01-29 00:48:40 UTC
+--- src/main.rs.orig	2024-09-23 09:13:21 UTC
 +++ src/main.rs
-@@ -35,6 +35,11 @@ fn main() -> Result<()> {
+@@ -87,6 +87,11 @@ fn main() -> Result<()> {
      logger::init_logger()?;
      info!("Cosmic starting up!");
  
@@ -23,6 +23,6 @@ Avoid various systemd dependencies
 +    // Mimic wlroots, used by https://github.com/qt/qtbase/commit/4b4870a12cd9
 +    std::env::set_var("XDG_SESSION_TYPE", "wayland");
 +
-     // init event loop
-     let mut event_loop = EventLoop::try_new().with_context(|| "Failed to initialize event loop")?;
-     // init wayland
+     #[cfg(feature = "profile-with-tracy")]
+     profiling::tracy_client::Client::start();
+     profiling::register_thread!("Main Thread");

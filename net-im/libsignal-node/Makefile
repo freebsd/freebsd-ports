@@ -1,7 +1,6 @@
 PORTNAME=	libsignal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.55.1
-PORTREVISION=	1
+DISTVERSION=	0.56.1
 CATEGORIES=	net-im
 PKGNAMESUFFIX=	-node
 DISTFILES=	libsignal-node-${DISTVERSION}-yarn-cache.tar.gz
@@ -70,7 +69,6 @@ pre-fetch:
 			-e 's:^\.:./yarn-offline-cache:' > yarn-offline-cache.mtree; \
 		${TAR} cJf ${DISTDIR}/libsignal-node-${DISTVERSION}-yarn-cache.tar.gz  \
 			@yarn-offline-cache.mtree; \
-		${RM} -r ${WRKDIR}; \
 	fi
 
 post-patch:
@@ -78,7 +76,7 @@ post-patch:
 		${WRKSRC}/node/binding.gyp
 
 # to get the hash:
-# fetch -o - https://raw.githubusercontent.com/signalapp/libsignal/v0.55.1/Cargo.lock | grep https://github.com/signalapp/boring
+# fetch -o - https://raw.githubusercontent.com/signalapp/libsignal/v0.56.1/Cargo.lock | grep https://github.com/signalapp/boring
 post-extract:
 	${MV} ${WRKDIR}/boringssl-44b3df6f03d85c901767250329c571db405122d5/* ${WRKDIR}/boring-signal-v4.9.0/boring-sys/deps/boringssl
 	${MV} ${WRKDIR}/boringssl-853ca1ea1168dff08011e5d42d94609cc0ca2e27/* ${WRKDIR}/boring-signal-v4.9.0/boring-sys/deps/boringssl-fips

@@ -1,5 +1,5 @@
 PORTNAME=	pdfminer.six
-DISTVERSION=	20220506
+DISTVERSION=	20240706
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,7 @@ WWW=		https://github.com/pdfminer/pdfminer.six
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-git-versioning<3:devel/py-setuptools-git-versioning@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}charset-normalizer>0:textproc/py-charset-normalizer@${PY_FLAVOR}
 
 USES=		python

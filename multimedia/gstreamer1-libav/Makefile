@@ -15,14 +15,14 @@ BUILD_DEPENDS=	orc>=0.4.16:devel/orc
 LIB_DEPENDS=	liborc-0.4.so:devel/orc \
 		libavcodec.so:multimedia/ffmpeg
 
-PORTSCOUT=	limitw:1,even
-
 USES=		bison gettext-runtime gnome gstreamer libtool localbase \
 		meson ninja pkgconfig python:build shebangfix tar:xz
 USE_GNOME=	glib20
-SHEBANG_FILES=	scripts/gen-changelog.py \
-		scripts/extract-release-date-from-doap-file.py
+SHEBANG_FILES=	scripts/extract-release-date-from-doap-file.py \
+		scripts/gen-changelog.py \
 
 MESON_ARGS=	-Ddoc=disabled
+
+PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.mk>

@@ -10,6 +10,10 @@ WWW=		http://libpqtypes.esilo.com/
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandonware, upstream is no longer around
+EXPIRATION_DATE=2024-10-31
+
 USES=		gmake libtool pgsql autoreconf
 
 GNU_CONFIGURE=	yes

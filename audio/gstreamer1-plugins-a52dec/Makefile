@@ -3,15 +3,15 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer ATSC A/52 stream aka AC-3 (dvd audio) plugin
 
-GST_PLUGIN=	a52dec
+LIB_DEPENDS=	liba52.so:audio/liba52
+
+MESON_ARGS+=	-Dgpl=enabled
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		ugly
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-MESON_ARGS+= -Dgpl=enabled
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS= liba52.so:audio/liba52
+GST_PLUGIN=	a52dec
 
 .include "${MASTERDIR}/Makefile"

@@ -3,8 +3,10 @@ include/heyoka/callback/angle_reducer.hpp
 include/heyoka/callbacks.hpp
 include/heyoka/config.hpp
 include/heyoka/continuous_output.hpp
+include/heyoka/detail/aligned_buffer.hpp
 include/heyoka/detail/binomial.hpp
 include/heyoka/detail/cm_utils.hpp
+include/heyoka/detail/debug.hpp
 include/heyoka/detail/dfloat.hpp
 include/heyoka/detail/div.hpp
 include/heyoka/detail/dtens_impl.hpp
@@ -50,6 +52,7 @@ include/heyoka/detail/num_identity.hpp
 include/heyoka/detail/num_utils.hpp
 include/heyoka/detail/optional_s11n.hpp
 include/heyoka/detail/real_helpers.hpp
+include/heyoka/detail/rng_to_vec.hpp
 include/heyoka/detail/simple_timer.hpp
 include/heyoka/detail/string_conv.hpp
 include/heyoka/detail/sub.hpp
@@ -100,9 +103,12 @@ include/heyoka/math/kepDE.hpp
 include/heyoka/math/kepE.hpp
 include/heyoka/math/kepF.hpp
 include/heyoka/math/log.hpp
+include/heyoka/math/logical.hpp
 include/heyoka/math/pow.hpp
 include/heyoka/math/prod.hpp
+include/heyoka/math/relational.hpp
 include/heyoka/math/relu.hpp
+include/heyoka/math/select.hpp
 include/heyoka/math/sigmoid.hpp
 include/heyoka/math/sin.hpp
 include/heyoka/math/sinh.hpp
@@ -123,6 +129,7 @@ include/heyoka/model/nbody.hpp
 include/heyoka/model/nrlmsise00_tn.hpp
 include/heyoka/model/pendulum.hpp
 include/heyoka/model/rotating.hpp
+include/heyoka/model/sgp4.hpp
 include/heyoka/model/vsop2013.hpp
 include/heyoka/models.hpp
 include/heyoka/number.hpp
@@ -138,5 +145,5 @@ lib/cmake/heyoka/heyoka-config.cmake
 lib/cmake/heyoka/heyoka_export-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/heyoka/heyoka_export.cmake
 lib/libheyoka.so
-lib/libheyoka.so.28
-lib/libheyoka.so.28.0
+lib/libheyoka.so.30
+lib/libheyoka.so.30.0

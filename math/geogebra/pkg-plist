@@ -4,8 +4,6 @@ share/icons/hicolor/32x32/apps/geogebra.png
 share/icons/hicolor/scalable/apps/geogebra.svg
 %%DATADIR%%/geogebra/OpenGeoProver.jar
 %%DATADIR%%/geogebra/carte-util.jar
-%%DATADIR%%/geogebra/commons-io.jar
-%%DATADIR%%/geogebra/commons-logging.jar
 %%DATADIR%%/geogebra/css4j-awt.jar
 %%DATADIR%%/geogebra/css4j.jar
 %%DATADIR%%/geogebra/echosvg-all.jar
@@ -49,13 +47,12 @@ share/icons/hicolor/scalable/apps/geogebra.svg
 %%DATADIR%%/geogebra/jogl-all-natives-linux-amd64.jar
 %%DATADIR%%/geogebra/jogl-all.jar
 %%DATADIR%%/geogebra/jsobject.jar
+%%DATADIR%%/geogebra/legacy-colors.jar
 %%DATADIR%%/geogebra/math-cross-platform.jar
 %%DATADIR%%/geogebra/rhino.jar
 %%DATADIR%%/geogebra/smil-api.jar
 %%DATADIR%%/geogebra/svgom-api.jar
 %%DATADIR%%/geogebra/tokenproducer.jar
-%%DATADIR%%/geogebra/xml-apis.jar
 %%DATADIR%%/geogebra/xml-dtd.jar
-%%DATADIR%%/geogebra/xmlgraphics-commons.jar
 share/mime/packages/geogebra-mime.xml
 @dir share/mime/packages

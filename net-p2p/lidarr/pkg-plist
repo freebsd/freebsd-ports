@@ -26,6 +26,7 @@
 %%DATADIR%%/bin/FluentMigrator.dll
 %%DATADIR%%/bin/FluentValidation.dll
 %%DATADIR%%/bin/ICSharpCode.SharpZipLib.dll
+%%DATADIR%%/bin/IPAddressRange.dll
 %%DATADIR%%/bin/Ical.Net.dll
 %%DATADIR%%/bin/ImpromptuInterface.dll
 %%DATADIR%%/bin/LICENSE.md
@@ -256,6 +257,7 @@
 %%DATADIR%%/bin/Mono.Posix.NETStandard.dll
 %%DATADIR%%/bin/MonoTorrent.dll
 %%DATADIR%%/bin/NLog.Extensions.Logging.dll
+%%DATADIR%%/bin/NLog.Layouts.ClefJsonLayout.dll
 %%DATADIR%%/bin/NLog.Targets.Syslog.dll
 %%DATADIR%%/bin/NLog.dll
 %%DATADIR%%/bin/Newtonsoft.Json.dll
@@ -446,13 +448,13 @@
 %%DATADIR%%/bin/System.Xml.dll
 %%DATADIR%%/bin/System.dll
 %%DATADIR%%/bin/TagLibSharp.dll
-%%DATADIR%%/bin/UI/637-838aea6d90fc78eeb50c.js
-%%DATADIR%%/bin/UI/637-838aea6d90fc78eeb50c.js.map
 %%DATADIR%%/bin/UI/727-d4f1d82f1f0d9a652dc7.js
 %%DATADIR%%/bin/UI/727-d4f1d82f1f0d9a652dc7.js.LICENSE.txt
 %%DATADIR%%/bin/UI/727-d4f1d82f1f0d9a652dc7.js.map
-%%DATADIR%%/bin/UI/Content/637-5cd88c70221b54010518.css
-%%DATADIR%%/bin/UI/Content/637-5cd88c70221b54010518.css.map
+%%DATADIR%%/bin/UI/90-94f1ae10734c838522cf.js
+%%DATADIR%%/bin/UI/90-94f1ae10734c838522cf.js.map
+%%DATADIR%%/bin/UI/Content/90-29fe47aa1fb8bdd22a33.css
+%%DATADIR%%/bin/UI/Content/90-29fe47aa1fb8bdd22a33.css.map
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.ttf
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.woff
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.woff2
@@ -493,8 +495,8 @@
 %%DATADIR%%/bin/UI/Content/robots.txt
 %%DATADIR%%/bin/UI/Content/styles.css
 %%DATADIR%%/bin/UI/Content/styles.css.map
-%%DATADIR%%/bin/UI/index-87301781c04c8fa39390.js
-%%DATADIR%%/bin/UI/index-87301781c04c8fa39390.js.map
+%%DATADIR%%/bin/UI/index-1ce5c1056fc566734c42.js
+%%DATADIR%%/bin/UI/index-1ce5c1056fc566734c42.js.map
 %%DATADIR%%/bin/UI/index.html
 %%DATADIR%%/bin/UI/login.html
 %%DATADIR%%/bin/UI/oauth.html

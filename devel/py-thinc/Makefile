@@ -1,7 +1,8 @@
 PORTNAME=	thinc
-PORTVERSION=	9.1.0
+PORTVERSION=	9.1.1
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/explosion/thinc/releases/download/release-v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org

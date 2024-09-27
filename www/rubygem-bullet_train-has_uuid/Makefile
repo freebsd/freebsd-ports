@@ -1,5 +1,5 @@
 PORTNAME=	bullet_train-has_uuid
-PORTVERSION=	1.7.21
+PORTVERSION=	1.7.22
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 

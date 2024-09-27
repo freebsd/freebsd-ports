@@ -3,13 +3,13 @@ CATEGORIES=	audio
 
 COMMENT=	GStreamer free lossless audio encoder/decoder plugin
 
-GST_PLUGIN=	flac
+LIB_DEPENDS=	libFLAC.so:audio/flac
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		good
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS= libFLAC.so:audio/flac
+GST_PLUGIN=	flac
 
 .include "${MASTERDIR}/Makefile"

@@ -2,7 +2,7 @@ PORTNAME=	virt-viewer
 PORTVERSION=	11.0
 PORTREVISION=	6
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://virt-manager.org/download/sources/${PORTNAME}/
+MASTER_SITES=	https://releases.pagure.org/${PORTNAME}/
 
 PATCH_SITES=	https://gitlab.com/${PORTNAME}/${PORTNAME}/-/commit/
 PATCHFILES+=	41cc016278e7.patch:-p1 # https://gitlab.com/virt-viewer/virt-viewer/-/merge_requests/117
@@ -14,7 +14,7 @@ WWW=		https://virt-manager.org/
 LICENSE=	GPLv2
 
 USES=		cpe desktop-file-utils gettext gettext-tools gmake gnome \
-		libtool meson perl5 pkgconfig python:build \
+		meson perl5 pkgconfig python:build \
 		shared-mime-info tar:xz xorg
 CPE_VENDOR=	redhat
 USE_GNOME=	gtk30 libxml2

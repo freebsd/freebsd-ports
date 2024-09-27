@@ -1,4 +1,0 @@
-The Espressif ESP32 toolchain to support Arduino and FreeRTOS projects.
-
-This version produces a gcc 5.2.0 based toolchain for use with v3.3
-of the esp-idf.

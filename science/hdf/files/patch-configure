@@ -1,6 +1,6 @@
---- configure.orig	2012-08-07 13:11:45.000000000 +0900
-+++ configure	2012-08-14 21:08:48.000000000 +0900
-@@ -5837,11 +5837,11 @@
+--- configure.orig	2024-02-29 16:34:09 UTC
++++ configure
+@@ -6537,11 +6537,11 @@ fi
      enable_shared="no"
  fi
  
@@ -15,5 +15,5 @@
 +#    fi
 +#fi
  
- 
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether ln -s works" >&5
+ ## ----------------------------------------------------------------------
+ ## Check if they would like the Java native interface (JNI) compiled

@@ -3,14 +3,14 @@ CATEGORIES=	graphics
 
 COMMENT=	GStreamer ASCII art videosink plugin
 
-GST_PLUGIN=	aalib
+LIB_DEPENDS=	libaa.so:graphics/aalib
+USES=		ncurses
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		good
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-LIB_DEPENDS=  libaa.so:graphics/aalib
-USES=   ncurses
+GST_PLUGIN=	aalib
 
 .include "${MASTERDIR}/Makefile"

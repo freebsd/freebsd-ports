@@ -23,6 +23,17 @@ pidfile="/var/run/${name}.pid"
 start_cmd="ntp_daemon_start"
 stop_cmd="ntp_daemon_stop"
 
+can_run_nonroot()
+{
+	# Try to set up the MAC ntpd policy so ntpd can run with reduced
+	# privileges.  Detect whether MAC is compiled into the kernel, load
+	# the policy module if not already present, then check whether the
+	# policy has been disabled via tunable or sysctl.
+	[ -n "$(sysctl -qn security.mac.version)" ] || return 1
+	sysctl -qn security.mac.ntpd >/dev/null || kldload -qn mac_ntpd || return 1
+	[ "$(sysctl -qn security.mac.ntpd.enabled)" == "1" ] || return 1
+}
+
 is_process_running()
 {
 	[ -f ${pidfile} ] && procstat $(cat ${pidfile}) >/dev/null 2>&1
@@ -30,9 +41,16 @@ is_process_running()
 
 ntp_daemon_start()
 {
+	# If we can run as a non-root user, switch uid to ntpd.
+	if can_run_nonroot; then
+		_user="ntpd"
+	else
+		_user="root"
+	fi
+
 	[ -d "${ntp_daemon_socket}" ] || /bin/mkdir "${ntp_daemon_socket}"
-	/usr/sbin/chown _ntp:_ntp "${ntp_daemon_socket}"
-	/usr/sbin/daemon -P ${pidfile} -r -f -o /var/log/ntp_daemon.log -H %%PREFIX%%/bin/ntp-daemon --config "${ntp_daemon_config}"
+	/usr/sbin/chown ${_user}:${_user} "${ntp_daemon_socket}"
+	/usr/sbin/daemon -P ${pidfile} -r -f -o /var/log/ntp_daemon.log -u ${_user} -H %%PREFIX%%/bin/ntp-daemon --config "${ntp_daemon_config}"
 
 	if is_process_running; then
 		echo "Started ntp-daemon (pid=$(cat ${pidfile}))"

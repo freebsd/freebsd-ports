@@ -1,16 +1,152 @@
---- src/sbin/xe-update-guest-attrs.orig	2014-07-07 15:45:10.000000000 +0200
-+++ src/sbin/xe-update-guest-attrs	2015-01-30 10:24:05.000000000 +0100
-@@ -173,10 +173,10 @@
- xenstore_write_cached "control/feature-balloon" "1"
+--- src/sbin/xe-update-guest-attrs.orig	2024-09-03 15:39:43.133537000 -0400
++++ src/sbin/xe-update-guest-attrs	2024-09-03 15:42:09.862675000 -0400
+@@ -39,7 +39,7 @@ XENSTORE=${XENSTORE:-/usr/local/bin/xenstore}
+ 
+ export PATH=/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/sbin
+ XENSTORE=${XENSTORE:-/usr/local/bin/xenstore}
+-
++CACHEROOT="/var/cache/xenstore"
+ XENSTORE_UPDATED=0
+ 
+ # parse command line opts
+@@ -54,7 +54,7 @@ xenstore_write_cached() {
+ 
+ xenstore_write_cached() {
+     key="$1" newval="$2"
+-    cache=/var/cache/xenstore/$key
++    cache=${CACHEROOT}/$key
+     if [ -f $cache ] ; then
+ 	# cache exists
+ 	oldval=$(cat "$cache")
+@@ -82,13 +82,13 @@ domid=$(/usr/local/bin/xenstore-read "domid")
+ 
+ # If we detect a domain change then delete our cache and force a refresh
+ domid=$(/usr/local/bin/xenstore-read "domid")
+-cache=/var/cache/xenstore/unique-domain-id
++cache=${CACHEROOT}/unique-domain-id
+ newval=$(/usr/local/bin/xenstore-read "/local/domain/${domid}/unique-domain-id")
+ if [ -e $cache ]; then
+     oldval=$(cat "$cache")
+     if [ "$oldval" != "$newval" ]; then
+ 	# domain changed
+-	rm -rf /var/cache/xenstore
++	rm -rf xenstore
+     fi
+ fi
+ mkdir -p $(dirname "$cache")
+@@ -96,7 +96,7 @@ xenstore_rm_cached() {
+ 
+ xenstore_rm_cached() {
+     key="$1"
+-    cache=/var/cache/xenstore/$key
++    cache=${CACHEROOT}/$key
+     if [ ! -e $cache ] ; then
+ 	return 1
+     fi
+@@ -109,21 +109,46 @@ xenstore_rm_cached() {
+     return 1
+ }
+ 
++# read cache, using xen-style integers (e.g., "0", "1")
++# return bsd names like xn0
+ xenstore_list_interfaces_cached() {
+-    topdir=/var/cache/xenstore/attr
++    topdir=${CACHEROOT}/attr
+     if [ -d $topdir ] ; then
+ 	cd $topdir 
+-	for dir in * ; do 
+-	    [ -f $dir/ip ] && echo $dir
++	# if a file named like vif/0/ipv4/0 exists, then xn0 is a valid interface
++	# sort -u to get only unique interfaces
++	iflist=$(ls vif/*/ipv?/* | cut -d / -f 2 | sort -u | xargs echo)
++	for n in $iflist
++	do
++		echo "xn${n}"
+ 	done
+     fi
+ }
+ 
++# XAPI expects things like attr/vif/0/ipv4/0 = 172.30.0.2
++# So this tries to map BSD names like xn0 to attr/vif/0
+ xe_ip_if() {
+-interfaces=$(/sbin/ifconfig -u | grep ': flags=' | grep xn | cut -d ':' -f1)
+-for if in $interfaces ; do
+-	echo $(echo $if | sed 's/xn/eth/g') "|" $(/sbin/ifconfig $if | grep 'inet ' | cut -d ' ' -f2)
+-done
++        interfaces=$(/sbin/ifconfig -u | grep ': flags=' | grep xn | cut -d ':' -f1)
++	n=0
++        for ifacename in $interfaces ; do
++                v4ips=$(/sbin/ifconfig $ifacename | grep 'inet ' | cut -d ' ' -f2)
++		# FreeBSD reports some IPv6 addrs like fe80:1234::abcd%xn0, the `cut` strips that off
++                v6ips=$(/sbin/ifconfig $ifacename | grep 'inet6 ' | cut -d ' ' -f2 | cut -d % -f 1 )
++		i=0
++		for v4ip in $v4ips
++		do
++			echo "vif/$n/ipv4/$i | $v4ip"
++			i=$(($i+1))
++		done
++
++		i=0
++		for v6ip in $v6ips
++		do
++			echo "vif/$n/ipv6/$i | $v6ip"
++			i=$(($i+1))
++		done
++		n=$(($n+1))
++        done
+ }
+ 
+ if [ $MEMORY_MODE -eq 1 ] ; then
+@@ -140,22 +165,33 @@ fi
+ 	xenstore_write_cached "data/meminfo_free" "$memavail"
+ fi
+ 
++# xe_ip_if | while read linea
++# do
++#   if=$(echo $linea | cut -d '|' -f1 | sed 's/ //g')
++#   inet=$(echo $linea | cut -d '|' -f2 | sed 's/^ //')
++#   xenstore_write_cached "attr/${if}/ip" "${inet}" 
++# done
++
++# This breaks apart a string like "vif/0/ipv4/0 | 172.16.0.8" into 2 arguments for
++# xenstore_write_cached
+ xe_ip_if | while read linea
+ do
+-  if=$(echo $linea | cut -d '|' -f1 | sed 's/ //g')
+-  inet=$(echo $linea | cut -d '|' -f2 | sed 's/^ //')
+-  xenstore_write_cached "attr/${if}/ip" "${inet}" 
++  if=$(echo $linea | cut -d '|' -f1 | tr -d ' ' )
++  inet=$(echo $linea | cut -d '|' -f2 | tr -d ' ' )
++  xenstore_write_cached "attr/${if}" "${inet}" 
+ done
+ 
+ # remove any interfaces that have been unplugged or downed
+-for at in $(xenstore_list_interfaces_cached) ; do
++for xn in $(xenstore_list_interfaces_cached) ; do
+ 	link=1
+-	xn=$(echo $at | sed 's/eth/xn/')
+-	iface=$(/sbin/ifconfig $xn | grep UP | cut -d ':' -f1)
++	iface=$(/sbin/ifconfig $xn | grep "UP," | cut -d ':' -f1)
+ 	[ "${iface}" = "${xn}" ] && link=0
+ 	
+ 	if [ "$link" -gt "0" ] ; then
+-		xenstore_rm_cached "attr/${at}"
++		# bsd-named interface is gone, remove attr from xenstore
++		vifnum=$(echo $xn | sed 's/xn//g')
++		echo "removing vif $vifnum"
++		xenstore_rm_cached "attr/vif/${vifnum}"
+ 	fi
+ done
+ 
+@@ -174,9 +210,9 @@ xenstore_write_cached "attr/PVAddons/MajorVersion" "6"
  
  # build time addons
--xenstore_write_cached "attr/PVAddons/MajorVersion" "6"
+ xenstore_write_cached "attr/PVAddons/MajorVersion" "6"
 -xenstore_write_cached "attr/PVAddons/MinorVersion" "0"
 -xenstore_write_cached "attr/PVAddons/MicroVersion" "2" 
 -xenstore_write_cached "attr/PVAddons/BuildVersion" "54078"
-+xenstore_write_cached "attr/PVAddons/MajorVersion" "6"
 +xenstore_write_cached "attr/PVAddons/MinorVersion" "2"
-+xenstore_write_cached "attr/PVAddons/MicroVersion" "0" 
++xenstore_write_cached "attr/PVAddons/MicroVersion" "1" 
 +xenstore_write_cached "attr/PVAddons/BuildVersion" "76888"
  xenstore_write_cached "attr/PVAddons/Installed" "1" 
  

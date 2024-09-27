@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 
-USES=		gettext gnome libtool localbase meson pathfix pkgconfig \
+USES=		gettext gnome localbase meson pathfix pkgconfig \
 		tar:xz
 USE_GNOME=	cairo gtk30 intlhack libxml2:build
 USE_LDCONFIG=	yes

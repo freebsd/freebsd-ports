@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-mysql2
-PORTVERSION=	0.27.2
+PORTVERSION=	0.28.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

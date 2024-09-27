@@ -1,22 +1,21 @@
 PORTREVISION=	0
 CATEGORIES=	x11
-PKGNAMESUFFIX=	1-plugins-ximagesrc
 
 COMMENT=	GStreamer X source plugin
 
-GST_PLUGIN=	ximagesrc
+USES=		xorg
+USE_XORG=	x11 xdamage xext xfixes
+
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
+
+PLIST=		${.CURDIR}/pkg-plist
+
 DIST=		good
+GST_PLUGIN=	ximagesrc
 
 GOOD_GST_ENABLED_PLUGINS=	ximagesrc \
-													ximagesrc-xshm \
-													ximagesrc-xfixes \
-													ximagesrc-xdamage
-
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-PLIST=  ${.CURDIR}/pkg-plist
-
-USES=   xorg
-USE_XORG=   x11 xfixes xdamage xext
+				ximagesrc-xdamage \
+				ximagesrc-xfixes \
+				ximagesrc-xshm
 
 .include "${MASTERDIR}/Makefile"

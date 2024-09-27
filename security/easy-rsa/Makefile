@@ -1,6 +1,7 @@
 PORTNAME=	easy-rsa
+DISTVERSION=	3.2.1
+PORTREVISION=	0
 PORTEPOCH=	1
-DISTVERSION=	3.1.7
 CATEGORIES=	security net-mgmt
 MASTER_SITES=	https://github.com/OpenVPN/easy-rsa/releases/download/v${DISTVERSION}/ \
 		LOCAL/mandree/
@@ -14,20 +15,21 @@ LICENSE=	GPLv2
 
 USES=		tar:tgz
 
-CONFLICTS_INSTALL=easy-rsa2
+PATCH_STRIP=	-p1
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
+
+SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}/EasyRSA-${DISTVERSION}
-
-OPTIONS_DEFINE=		DOCS EXAMPLES
 
 PORTDATA=	x509-types/
 _pd_files=	ChangeLog COPYING.md README.md README.quickstart.md mktemp.txt
 _pd_dirs=	doc/
-PORTDOCS=	${_pd_files} ${_pd_dirs}
-SUB_FILES=	pkg-message
+PORTDOCS=	${_pd_dirs} ${_pd_files}
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 		${MKDIR} ${STAGEDIR}${PREFIX}/bin

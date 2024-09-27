@@ -1,6 +1,6 @@
 PORTNAME=	duckdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
+DISTVERSION=	1.1.1
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake:testing compiler:c++11-lang ssl
 USE_GITHUB=	yes
 GH_TUPLE=	duckdb:duckdb_inet:eca867b2517af06eabc89ccd6234266e9a7d6d71:inet/extension/inet \
-		duckdb:duckdb_spatial:58e0fcd09f2306803da36c4b1e8a66bb1e263316:spatial/extension/spatial \
-		duckdb:substrait:800be4945807b831754f6b0d1a064a3d30f9cada:sqlsmith/extension/substrait \
+		duckdb:duckdb_spatial:bb9c829693965f029eb5a312aefed4c538fad781:spatial/extension/spatial \
+		duckdb:substrait:be71387cf0a484dc7b261a0cb21abec0d0e0ce5c:sqlsmith/extension/substrait \
 		duckdb:sqlite_scanner:315861963c8106397af36cbda10faebc8dae485a:sqlite/extension/sqlite_scanner \
-		duckdb:duckdb_sqlsmith:7b00307a0c00fbb85bef2010330946f11311ba4c:sqlsmith/extension/sqlsmith \
+		duckdb:duckdb_sqlsmith:f24be8b5b0cd0eeed7541e10cff42d7050771afc:sqlsmith/extension/sqlsmith \
 		duckdb:duckdb_vss:77739ea5382cce3220af83803ac0b1e98b3ab7d8:vss/extension/vss
 # the list of out-of-tree extensions is here: .github/config/out_of_tree_extensions.cmake
 

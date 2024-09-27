@@ -1,23 +1,31 @@
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	multimedia
 
 COMMENT=	GStreamer-plugins that need more quality, testing or documentation
 
-GST_PLUGIN=	bad
-GST_PLUGIN_SUFFIX=	-bad
+LIB_DEPENDS+=	libjson-glib-1.0.so:devel/json-glib
 
-USES+=	xorg
-USE_XORG+=x11
+USES+=		ssl xorg
+USE_GNOME+=	cairo glib20 pango
+USE_XORG+=	x11
 
-MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
 
-DIST=		bad
+PLIST=		${.CURDIR}/pkg-plist
+
+DIST=			bad
+GST_PLUGIN=		${DIST}
+GST_PLUGIN_SUFFIX=	-${DIST}
+NO_GSTREAMER_COMMON=	yes
+
 BAD_GST_ENABLED_PLUGINS=accurip \
 			adaptivedemux \
 			adpcmdec \
 			adpcmenc \
 			aes \
 			aiff \
+			analytics \
+			analyticsoverlay \
 			asfmux \
 			audio \
 			audiobuffersplit \
@@ -30,6 +38,7 @@ BAD_GST_ENABLED_PLUGINS=accurip \
 			bayer \
 			bz2 \
 			camerabin2 \
+			codec2json \
 			codecalpha \
 			codecparsers \
 			codecs \
@@ -40,6 +49,7 @@ BAD_GST_ENABLED_PLUGINS=accurip \
 			dvbsubenc \
 			dvbsuboverlay \
 			dvdspu \
+			dxva \
 			examples \
 			faceoverlay \
 			festival \
@@ -67,6 +77,7 @@ BAD_GST_ENABLED_PLUGINS=accurip \
 			mpegts \
 			mpegtsdemux \
 			mpegtsmux \
+			mse \
 			mxf \
 			netsim \
 			nls \
@@ -82,7 +93,6 @@ BAD_GST_ENABLED_PLUGINS=accurip \
 			rist \
 			rtmp2 \
 			rtp \
-			sctp \
 			sdp \
 			segmentclip \
 			shm \
@@ -94,25 +104,13 @@ BAD_GST_ENABLED_PLUGINS=accurip \
 			timecode \
 			transcode \
 			transcoder \
+			unixfd \
 			uridownloader \
 			videofilters \
 			videoframe_audiolevel \
 			videoparsers \
 			videosignal \
 			vmnc \
-			webrtc \
 			y4m
 
-NO_GSTREAMER_COMMON=	yes
-PLIST=		${.CURDIR}/pkg-plist
-
-USES+=ssl
-
 .include "${MASTERDIR}/Makefile"
-
-USE_GNOME+=	glib20 gtk30
-
-BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:multimedia/v4l_compat \
-	gtk3>=3.10:x11-toolkits/gtk30
-
-LIB_DEPENDS+=libnice.so:net-im/libnice

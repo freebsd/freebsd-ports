@@ -1,0 +1,2 @@
+Prawn-Rails provides prawn handler for Rails. It handles and registers pdf
+formats.

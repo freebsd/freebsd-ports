@@ -14,9 +14,20 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libtool pathfix pkgconfig tar:xz
 
-CONFIGURE_ARGS=	--enable-lib-only --with-jemalloc
+CONFIGURE_ARGS=	--enable-lib-only \
+		--with-jemalloc \
+		--without-boringssl \
+		--without-gnutls \
+		--without-libbrotlidec \
+		--without-libbrotlienc \
+		--without-libev \
+		--without-libnghttp3 \
+		--without-openssl \
+		--without-wolfssl
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+SLAVEDIRS=	net/libngtcp2-gnutls
 
 .include <bsd.port.mk>

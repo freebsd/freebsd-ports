@@ -1,5 +1,5 @@
-TIMESTAMP = 1717276389
-SHA256 (go/sysutils_terraform-docs/terraform-docs-v0.18.0/v0.18.0.mod) = 0d475f4c1ccc0b110da3b549164a451627d6317036177dcf73d5107b66d6384e
-SIZE (go/sysutils_terraform-docs/terraform-docs-v0.18.0/v0.18.0.mod) = 3090
-SHA256 (go/sysutils_terraform-docs/terraform-docs-v0.18.0/v0.18.0.zip) = 68732b0047ea8e59e2384cc3b153da984d829964b1fc82459c84097c35429543
-SIZE (go/sysutils_terraform-docs/terraform-docs-v0.18.0/v0.18.0.zip) = 452465
+TIMESTAMP = 1726889814
+SHA256 (go/sysutils_terraform-docs/terraform-docs-v0.19.0/v0.19.0.mod) = 14408563cdef74bb418cc752c9a51078c4ae24fe91039e35d2099702e190de2a
+SIZE (go/sysutils_terraform-docs/terraform-docs-v0.19.0/v0.19.0.mod) = 3126
+SHA256 (go/sysutils_terraform-docs/terraform-docs-v0.19.0/v0.19.0.zip) = 2eaff2506fed1de5f99048e305a226c3f9e27dc84e81255228ef1938a7facb77
+SIZE (go/sysutils_terraform-docs/terraform-docs-v0.19.0/v0.19.0.zip) = 452611

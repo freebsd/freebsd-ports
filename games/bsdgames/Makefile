@@ -1,7 +1,6 @@
 PORTNAME=	bsdgames
-PORTVERSION=	0.75
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+DISTVERSION=	0.76
 PORTEPOCH=	2
 CATEGORIES=	games
 
@@ -36,8 +35,10 @@ pre-install:
 post-install:
 # avoid conflict with games/bs and shells/fish
 .for prog in bs fish
-	${MV} ${STAGEDIR}${PREFIX}/bin/${prog} ${STAGEDIR}${PREFIX}/bin/${prog}-game
-	${MV} ${STAGEDIR}${PREFIX}/share/man/man6/${prog}.6.gz ${STAGEDIR}${PREFIX}/share/man/man6/${prog}-game.6.gz
+	${MV} ${STAGEDIR}${PREFIX}/bin/${prog} \
+		${STAGEDIR}${PREFIX}/bin/${prog}-game
+	${MV} ${STAGEDIR}${PREFIX}/share/man/man6/${prog}.6.gz \
+		${STAGEDIR}${PREFIX}/share/man/man6/${prog}-game.6.gz
 .endfor
 
 	@${TOUCH} ${STAGEDIR}/var/games/atc_score

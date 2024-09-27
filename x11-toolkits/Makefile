@@ -24,6 +24,8 @@
     SUBDIR += granite7
     SUBDIR += gstreamer1-plugins-gtk
     SUBDIR += gstreamer1-plugins-pango
+    SUBDIR += gstreamer1-plugins-qt5
+    SUBDIR += gstreamer1-plugins-qt6
     SUBDIR += gtk-layer-shell
     SUBDIR += gtk-session-lock
     SUBDIR += gtk-sharp-beans
@@ -172,6 +174,7 @@
     SUBDIR += py-easygui
     SUBDIR += py-fltk
     SUBDIR += py-guietta
+    SUBDIR += py-kivy
     SUBDIR += py-python-xlib
     SUBDIR += py-qt5-chart
     SUBDIR += py-qt6-chart

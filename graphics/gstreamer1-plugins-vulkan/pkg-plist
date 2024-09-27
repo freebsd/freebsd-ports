@@ -6,6 +6,7 @@ include/gstreamer-%%VERSION%%/gst/vulkan/gstvkcommandbuffer.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvkcommandpool.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvkconfig.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvkdebug.h
+include/gstreamer-%%VERSION%%/gst/vulkan/gstvkdecoder.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvkdescriptorcache.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvkdescriptorpool.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvkdescriptorset.h
@@ -22,12 +23,14 @@ include/gstreamer-%%VERSION%%/gst/vulkan/gstvkimagememory.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvkimageview.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvkinstance.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvkmemory.h
+include/gstreamer-%%VERSION%%/gst/vulkan/gstvkoperation.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvkphysicaldevice.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvkqueue.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvkswapper.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvktrash.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvkutils.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvkvideofilter.h
+include/gstreamer-%%VERSION%%/gst/vulkan/gstvkvideoutils.h
 include/gstreamer-%%VERSION%%/gst/vulkan/gstvkwindow.h
 include/gstreamer-%%VERSION%%/gst/vulkan/vulkan-enumtypes.h
 include/gstreamer-%%VERSION%%/gst/vulkan/vulkan-prelude.h
@@ -46,8 +49,11 @@ include/gstreamer-%%VERSION%%/gst/wayland/gstwlvideoformat.h
 include/gstreamer-%%VERSION%%/gst/wayland/gstwlwindow.h
 include/gstreamer-%%VERSION%%/gst/wayland/wayland-prelude.h
 include/gstreamer-%%VERSION%%/gst/wayland/wayland.h
+include/gstreamer-%%VERSION%%/gst/vulkan/xcb/gstvkdisplay_xcb.h
+include/gstreamer-%%VERSION%%/gst/vulkan/xcb/xcb.h
 lib/girepository-%%VERSION%%/GstVulkan-%%VERSION%%.typelib
 lib/girepository-%%VERSION%%/GstVulkanWayland-%%VERSION%%.typelib
+lib/girepository-%%VERSION%%/GstVulkanXCB-%%VERSION%%.typelib
 lib/gstreamer-%%VERSION%%/libgstvulkan.so
 lib/gstreamer-%%VERSION%%/libgstwaylandsink.so
 lib/libgstvulkan-%%VERSION%%.so
@@ -58,6 +64,8 @@ lib/libgstwayland-%%VERSION%%.so.0
 lib/libgstwayland-%%VERSION%%.so.%%SOVERSION%%
 libdata/pkgconfig/gstreamer-vulkan-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-vulkan-wayland-%%VERSION%%.pc
+libdata/pkgconfig/gstreamer-vulkan-xcb-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-wayland-%%VERSION%%.pc
 share/gir-%%VERSION%%/GstVulkan-%%VERSION%%.gir
 share/gir-%%VERSION%%/GstVulkanWayland-%%VERSION%%.gir
+share/gir-%%VERSION%%/GstVulkanXCB-%%VERSION%%.gir

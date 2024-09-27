@@ -1,4 +1,4 @@
---- config/meson.build.orig	2024-07-18 15:25:55 UTC
+--- config/meson.build.orig	2024-09-24 08:58:45 UTC
 +++ config/meson.build
 @@ -7,39 +7,17 @@ custom_target(
  custom_target(
@@ -42,5 +42,5 @@
 -endif
 +install_data('netatalk-dbus.conf', install_dir: dbus_sysconfpath)
  
- install_data('README', install_dir: localstatedir / 'netatalk')
- 
+ if (
+     fs.exists('/etc/ld.so.conf.d')

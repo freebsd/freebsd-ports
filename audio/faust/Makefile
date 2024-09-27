@@ -1,5 +1,5 @@
 PORTNAME=	faust
-DISTVERSION=	2.74.6
+DISTVERSION=	2.75.7
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,19 +11,25 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 BROKEN_armv7=	compilation broken: the faust executable SEGVs while compiling examples during build: faust -a lv2.cpp -cn amp -I examples examples/amp.dsp -o examples/amp.cpp
 
-LIB_DEPENDS=	libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION}
+LIB_DEPENDS=	libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION} \
+		libzstd.so:archivers/zstd
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++14-lang cmake llvm:min=15,lib ncurses python pkgconfig shebangfix # llvm: versions <11 lacked dump() function(s) that cause unresolved symbols in libfaust.so
+USES=		compiler:c++14-lang cmake localbase:ldflags llvm:min=15,lib ncurses python pkgconfig shebangfix # llvm: versions <11 lacked dump() function(s) that cause unresolved symbols in libfaust.so
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 GH_TUPLE=	\
-		grame-cncm:faustlibraries:58f6796:grame_cncm_faustlibraries/libraries \
-		ccrma:faust2ck:db879cb:faust2ck/tools/faust2ck
+		grame-cncm:faustlibraries:3e74c39:grame_cncm_faustlibraries/libraries \
+		ccrma:faust2ck:db879cb:faust2ck/tools/faust2ck \
+		shakfu:py2max:3aaa8ca:py2max/architecture/max-msp/py2max \
+		yixuan:spectra:8c7242e:spectra/tools/physicalModeling/mesh2faust/spectra
 
-SHEBANG_FILES=	tools/faust2appls/* tools/benchmark/faustbench tools/sound2faust/sound2reader
+SHEBANG_FILES=	tools/faust-config \
+		tools/faust2appls/* \
+		tools/benchmark/faustbench \
+		tools/sound2faust/sound2reader
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/build
 CMAKE_ON=	INCLUDE_DYNAMIC # only installs headers and not libs without INCLUDE_DYNAMIC or INCLUDE_STATIC: https://github.com/grame-cncm/faust/issues/553

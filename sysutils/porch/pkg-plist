@@ -1,0 +1,14 @@
+bin/porch
+%%LUA_MODLIBDIR%%/porch/core.so
+%%LUA_MODSHAREDIR%%/porch.lua
+%%LUA_MODSHAREDIR%%/porch/actions.lua
+%%LUA_MODSHAREDIR%%/porch/context.lua
+%%LUA_MODSHAREDIR%%/porch/direct.lua
+%%LUA_MODSHAREDIR%%/porch/matchers.lua
+%%LUA_MODSHAREDIR%%/porch/process.lua
+%%LUA_MODSHAREDIR%%/porch/scripter.lua
+%%EXAMPLES%%%%EXAMPLESDIR%%/cat.orch
+%%EXAMPLES%%%%EXAMPLESDIR%%/cat-multi.orch
+%%EXAMPLES%%%%EXAMPLESDIR%%/nc.orch
+%%MANPAGES%%share/man/man1/porch.1.gz
+%%MANPAGES%%share/man/man5/orch.5.gz

@@ -1,6 +1,7 @@
 PORTNAME=	mednafen
 DISTVERSION=	1.32.1
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	emulators games
 MASTER_SITES=	https://mednafen.github.io/releases/files/
 
@@ -13,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		liblzo2.so:archivers/lzo2 \
-		libmpcdec.so:audio/musepack \
 		libtrio.so:devel/trio \
 		libvorbisfile.so:audio/libvorbis \
 		libzstd.so:archivers/zstd
@@ -26,7 +26,6 @@ USE_SDL=	sdl2
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-external-libzstd \
 			--with-external-lzo \
-			--with-external-mpcdec \
 			--with-external-tremor \
 			--with-external-trio
 

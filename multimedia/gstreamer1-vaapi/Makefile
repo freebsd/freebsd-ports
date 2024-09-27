@@ -1,5 +1,5 @@
 PORTNAME=	gstreamer1-vaapi
-PORTVERSION=	1.22.4
+PORTVERSION=	${_GST_VERSION}
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gstreamer-vaapi/
 DISTNAME=	gstreamer-vaapi-${PORTVERSION}
@@ -14,11 +14,12 @@ LIB_DEPENDS=	libva.so:multimedia/libva
 
 USES=		bison compiler:c11 gettext-runtime gl gnome gstreamer libtool \
 		meson ninja pkgconfig python:build tar:xz xorg
-USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 USE_GSTREAMER=	bad
 USE_GL=		gl
+USE_LDCONFIG=	yes
 USE_XORG=	x11 xrandr xrender xorgproto
+
 MESON_ARGS=	-Ddoc=disabled -Dexamples=disabled
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}

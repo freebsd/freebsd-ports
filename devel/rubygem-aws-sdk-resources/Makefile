@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.206.0
+PORTVERSION=	3.207.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -124,6 +124,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-devopsguru>=1<2:devel/rubygem-aws-sdk-devopsguru \
 		rubygem-aws-sdk-directconnect>=1<2:devel/rubygem-aws-sdk-directconnect \
 		rubygem-aws-sdk-directoryservice>=1<2:devel/rubygem-aws-sdk-directoryservice \
+		rubygem-aws-sdk-directoryservicedata>=1<2:devel/rubygem-aws-sdk-directoryservicedata \
 		rubygem-aws-sdk-dlm>=1<2:devel/rubygem-aws-sdk-dlm \
 		rubygem-aws-sdk-docdb>=1<2:devel/rubygem-aws-sdk-docdb \
 		rubygem-aws-sdk-docdbelastic>=1<2:devel/rubygem-aws-sdk-docdbelastic \

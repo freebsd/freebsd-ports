@@ -159,6 +159,11 @@ libdata/pkgconfig/shumate-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-1.0/iface.Location.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/index.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/index.json
+%%PORTDOCS%%%%DOCSDIR%%-1.0/inspector-collision.png
+%%PORTDOCS%%%%DOCSDIR%%-1.0/inspector-overlay.png
+%%PORTDOCS%%%%DOCSDIR%%-1.0/inspector-tile-bounds.png
+%%PORTDOCS%%%%DOCSDIR%%-1.0/inspector.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/inspector.png
 %%PORTDOCS%%%%DOCSDIR%%-1.0/libshumate-1.0.devhelp2
 %%PORTDOCS%%%%DOCSDIR%%-1.0/libshumate-r.svg
 %%PORTDOCS%%%%DOCSDIR%%-1.0/main.js

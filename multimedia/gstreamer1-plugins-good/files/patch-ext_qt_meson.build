@@ -1,0 +1,11 @@
+--- ext/qt/meson.build.orig	2024-09-19 10:01:21 UTC
++++ ext/qt/meson.build
+@@ -105,7 +105,7 @@ qt5_egl = qt5_egl \
+ # EGL windowing for Embedded linux (e.g. i.MX6) with or without windowing
+ # support
+ qt5_egl = qt5_egl \
+-    .require(host_system == 'linux') \
++    .require(host_system == 'linux' or host_system == 'freebsd') \
+     .require(gstglegl_dep.found(), error_message: 'gstreamer-gl-egl-1.0 is required') \
+     .require(gst_gl_have_platform_egl, error_message: 'egl platform support in gstreamer-gl is required')
+ if qt5_egl.allowed()

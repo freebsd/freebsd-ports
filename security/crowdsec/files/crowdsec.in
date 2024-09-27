@@ -91,7 +91,7 @@ crowdsec_precmd() {
     # If the hub is empty, install the freebsd collection and the private ip whitelist.
     # We don't ship the whitelist in the collection because
     # there are legitimate use cases for banning private ip ranges.
-    if [ "$(cscli hub list -o raw | wc -l)" -le 1 ]; then
+    if [ "$(cs_cli hub list -o raw | wc -l)" -le 1 ]; then
         cs_cli parsers install crowdsecurity/whitelists --error || :
         cs_cli collections install crowdsecurity/freebsd --error || :
     fi

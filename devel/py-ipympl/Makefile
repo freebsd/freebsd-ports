@@ -1,6 +1,5 @@
 PORTNAME=	ipympl
-DISTVERSION=	0.9.3
-PORTREVISION=	2
+DISTVERSION=	0.9.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,28 +11,21 @@ WWW=		https://github.com/matplotlib/ipympl
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter-packaging>0:devel/py-jupyter-packaging@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipykernel>=4.7:devel/py-ipykernel@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ipywidgets>=7.6.0:devel/py-ipywidgets@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.0.0:math/py-matplotlib@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-jupyter-builder>=0.8.3:devel/py-hatch-jupyter-builder@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatch-nodejs-version>=0.3.2:devel/py-hatch-nodejs-version@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyterlab>=4.0.0:devel/py-jupyterlab@${PY_FLAVOR}
+RUN_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ipywidgets>0:devel/py-ipywidgets@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyterlab>=4.0.0:devel/py-jupyterlab@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.4.0:math/py-matplotlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}traitlets>0:devel/py-traitlets@${PY_FLAVOR}
 
-USES=		python
-USE_PYTHON=	autoplist distutils
+USES=		nodejs:build python
+USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
-
-post-install:
-# Enable extension for jupyter lab and notebook
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/jupyter/nbconfig/notebook.d && \
-	${INSTALL_DATA} ${WRKSRC}/jupyter-matplotlib.json \
-		${STAGEDIR}${PREFIX}/etc/jupyter/nbconfig/notebook.d/
-	${INSTALL_DATA}  ${WRKSRC}/ipympl/labextension/package.json \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/ipympl/nbextension/
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/jupyter/labextensions/ && \
-	${LN} -sf ${PYTHON_SITELIBDIR}/ipympl/labextension \
-		${STAGEDIR}${PREFIX}/share/jupyter/labextensions/jupyter-matplotlib
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/jupyter/nbextensions/ && \
-	${LN} -sf ${PYTHON_SITELIBDIR}/ipympl/nbextension \
-		${STAGEDIR}${PREFIX}/share/jupyter/nbextensions/jupyter-matplotlib
 
 .include <bsd.port.mk>

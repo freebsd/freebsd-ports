@@ -1,4 +1,4 @@
---- lavtools/liblavrec.c.orig
+--- lavtools/liblavrec.c.orig	2021-09-05 06:14:13 UTC
 +++ lavtools/liblavrec.c
 @@ -45,9 +45,14 @@
  #include <sys/time.h>
@@ -16,7 +16,7 @@
  #include <stdlib.h>
  
  /* Because of some really cool feature in video4linux1, also known as
-@@ -758,7 +763,11 @@
+@@ -758,7 +763,11 @@ static int lavrec_output_video_frame(lavrec_t *info, u
     {
  	   int fd = lav_fileno( settings->video_file );
  	   if( fd >= 0 )

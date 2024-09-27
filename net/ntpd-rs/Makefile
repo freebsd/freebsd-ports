@@ -1,7 +1,6 @@
 PORTNAME=	ntpd-rs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.2
-PORTREVISION=	2
+DISTVERSION=	1.3.0
 CATEGORIES=	net
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -22,8 +21,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pendulum-project
 
 USE_RC_SUBR=	ntp_daemon
-USERS=		_ntp
-GROUPS=		_ntp
 
 BINFILES=	ntp-ctl ntp-daemon ntp-metrics-exporter nts-pool-ke
 

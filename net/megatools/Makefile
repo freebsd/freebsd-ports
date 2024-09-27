@@ -13,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		compiler:c11 gettext-runtime gmake gnome libtool pathfix \
-		pkgconfig ssl meson
+USES=		compiler:c11 gettext-runtime gmake gnome pathfix pkgconfig \
+		ssl meson
 USE_GNOME=	glib20
 
 INSTALL_TARGET=	install-strip

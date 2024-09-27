@@ -1,6 +1,7 @@
 PORTNAME=	veryl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -544,5 +545,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		zerocopy-derive-0.7.35
 
 PLIST_FILES=	bin/${PORTNAME}
+
+WITHOUT_LTO=	yes # this fixes runaway build problem with rust-1.81.0 and eartier
 
 .include <bsd.port.mk>

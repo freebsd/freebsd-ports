@@ -1,5 +1,6 @@
 PORTNAME=	nushell
 DISTVERSION=	0.98.0
+PORTREVISION=	1
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -710,12 +711,6 @@ OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/nu
-
-OPTIONS_DEFINE=		DATAFRAME
-
-DATAFRAME_DESC=		Include the dataframe feature
-DATAFRAME_VARS=		CARGO_BUILD_ARGS+=--features=dataframe
-DATAFRAME_BROKEN=	see https://github.com/nushell/nushell/issues/7665
 
 .include <bsd.port.options.mk>
 
