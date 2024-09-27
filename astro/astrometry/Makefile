@@ -1,6 +1,5 @@
 PORTNAME=	astrometry
-PORTVERSION=	0.95
-PORTREVISION=	1
+PORTVERSION=	0.96
 CATEGORIES=	astro
 MASTER_SITES=	https://github.com/dstndstn/${PORTNAME}.net/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}.net-${PORTVERSION}
@@ -11,8 +10,8 @@ WWW=		https://astrometry.net/
 
 LICENSE=	GPLv3+
 
-BROKEN_armv6=		fails to link: os-features-test.c:10: undefined symbol 'canonicalize_file_name'
-BROKEN_armv7=		fails to link: os-features-test.c:10: undefined symbol 'canonicalize_file_name'
+BROKEN_armv6=	fails to link: os-features-test.c:10: undefined symbol 'canonicalize_file_name'
+BROKEN_armv7=	fails to link: os-features-test.c:10: undefined symbol 'canonicalize_file_name'
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYNUMPY}
