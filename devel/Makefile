@@ -5925,6 +5925,7 @@
     SUBDIR += py-testresources
     SUBDIR += py-testscenarios
     SUBDIR += py-testtools
+    SUBDIR += py-textualeffects
     SUBDIR += py-thefuzz
     SUBDIR += py-thinc
     SUBDIR += py-thinc8
