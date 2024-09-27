@@ -1,5 +1,6 @@
 PORTNAME=	Stikked
 DISTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,7 +12,7 @@ USES=		php:web
 USE_GITHUB=	yes
 GH_ACCOUNT=	claudehohl
 
-USE_PHP=	ctype filter gd pgsql session
+USE_PHP=	ctype filter gd session
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -26,12 +27,10 @@ MYSQL_DESC=	Include the PHP shared extension for MySQL
 PGSQL_DESC=	Include the PHP shared extension for PostgreSQL
 SQLITE_DESC=	Include the PHP shared extension for SQLite3
 
-MYSQL_BROKEN=	USE_PHP=mysql no longer supported, unclear if USE_PHP=mysqli works
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-#USE_PHP+=	mysql
+USE_PHP+=	mysqli
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
