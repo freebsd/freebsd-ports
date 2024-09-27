@@ -798,7 +798,6 @@
     SUBDIR += gengetopt
     SUBDIR += genht
     SUBDIR += genie
-    SUBDIR += genromfs
     SUBDIR += getoptions
     SUBDIR += gettext
     SUBDIR += gettext-lint
@@ -942,7 +941,6 @@
     SUBDIR += guile-lib
     SUBDIR += gum
     SUBDIR += gumbo
-    SUBDIR += gvfs
     SUBDIR += gvp
     SUBDIR += gwenhywfar
     SUBDIR += gwenhywfar-fox16
@@ -1210,7 +1208,6 @@
     SUBDIR += libayatana-indicator
     SUBDIR += libb2
     SUBDIR += libbacktrace
-    SUBDIR += libbde
     SUBDIR += libbegemot
     SUBDIR += libbfd
     SUBDIR += libbinio
@@ -1293,12 +1290,6 @@
     SUBDIR += libfort
     SUBDIR += libfortuna
     SUBDIR += libfreefare
-    SUBDIR += libfsapfs
-    SUBDIR += libfsext
-    SUBDIR += libfsfat
-    SUBDIR += libfshfs
-    SUBDIR += libfsntfs
-    SUBDIR += libfsxfs
     SUBDIR += libftdi
     SUBDIR += libftdi1
     SUBDIR += libfwnt
@@ -1360,7 +1351,6 @@
     SUBDIR += libmcfp
     SUBDIR += libmill
     SUBDIR += libmimedir
-    SUBDIR += libmodi
     SUBDIR += libmowgli
     SUBDIR += libmowgli2
     SUBDIR += libmpcbdm
@@ -4889,16 +4879,11 @@
     SUBDIR += py-frictionless-ckan-mapper
     SUBDIR += py-frozendict
     SUBDIR += py-frozenlist
-    SUBDIR += py-fs
-    SUBDIR += py-fs2
-    SUBDIR += py-fsspec
-    SUBDIR += py-fsspec-xrootd
     SUBDIR += py-fudge
     SUBDIR += py-funcparserlib
     SUBDIR += py-funcsigs
     SUBDIR += py-funcy
     SUBDIR += py-furl
-    SUBDIR += py-fusepy
     SUBDIR += py-future
     SUBDIR += py-futurist
     SUBDIR += py-fuzzywuzzy
@@ -4907,7 +4892,6 @@
     SUBDIR += py-game_sdl2
     SUBDIR += py-gapic-generator
     SUBDIR += py-gast
-    SUBDIR += py-gcsfs
     SUBDIR += py-gelidum
     SUBDIR += py-genson
     SUBDIR += py-genty
@@ -5148,7 +5132,6 @@
     SUBDIR += py-libusb1
     SUBDIR += py-libversion
     SUBDIR += py-libvirt
-    SUBDIR += py-libzfs
     SUBDIR += py-lief
     SUBDIR += py-line-profiler
     SUBDIR += py-linear-tsv
@@ -5157,7 +5140,6 @@
     SUBDIR += py-littleutils
     SUBDIR += py-livemark
     SUBDIR += py-lizard
-    SUBDIR += py-llfuse
     SUBDIR += py-llvmcpy
     SUBDIR += py-llvmlite
     SUBDIR += py-lml
@@ -5535,7 +5517,6 @@
     SUBDIR += py-pyee11
     SUBDIR += py-pyelftools
     SUBDIR += py-pyface
-    SUBDIR += py-pyfakefs
     SUBDIR += py-pyfcm
     SUBDIR += py-pyflakes
     SUBDIR += py-pyformance
@@ -5834,7 +5815,6 @@
     SUBDIR += py-rush
     SUBDIR += py-rx
     SUBDIR += py-rx1
-    SUBDIR += py-s3fs
     SUBDIR += py-saneyaml
     SUBDIR += py-sarge
     SUBDIR += py-sarif-om
@@ -6564,7 +6544,6 @@
     SUBDIR += rubygem-aws-sdk-ecr
     SUBDIR += rubygem-aws-sdk-ecrpublic
     SUBDIR += rubygem-aws-sdk-ecs
-    SUBDIR += rubygem-aws-sdk-efs
     SUBDIR += rubygem-aws-sdk-eks
     SUBDIR += rubygem-aws-sdk-eksauth
     SUBDIR += rubygem-aws-sdk-elasticache
@@ -8177,7 +8156,6 @@
     SUBDIR += tclreadline
     SUBDIR += tclthread
     SUBDIR += tcltls
-    SUBDIR += tclvfs
     SUBDIR += tclxml
     SUBDIR += tdl
     SUBDIR += template-glib

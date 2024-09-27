@@ -76,7 +76,6 @@
     SUBDIR += ccsrch
     SUBDIR += certmgr
     SUBDIR += certspotter
-    SUBDIR += cfs
     SUBDIR += cfssl
     SUBDIR += cfv
     SUBDIR += chaosreader
@@ -95,7 +94,6 @@
     SUBDIR += clamav-lts
     SUBDIR += clamav-unofficial-sigs
     SUBDIR += clamd-stream-client
-    SUBDIR += clamfs
     SUBDIR += clamsmtp
     SUBDIR += clamtk
     SUBDIR += cloak
@@ -927,7 +925,6 @@
     SUBDIR += py-cybox
     SUBDIR += py-detect-secrets
     SUBDIR += py-dfdatetime
-    SUBDIR += py-dfvfs
     SUBDIR += py-dfwinreg
     SUBDIR += py-dirhash
     SUBDIR += py-django-auth-kerberos

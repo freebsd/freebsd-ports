@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>1.5.2:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}boto3>=1.4.4:www/py-boto3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}fs2>=2.0.17:devel/py-fs2@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}fs2>=2.0.17:filesystems/py-fs2@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils

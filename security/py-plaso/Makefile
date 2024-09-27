@@ -31,7 +31,7 @@ RUN_DEPENDS=	libcaes>=a:security/libcaes \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}defusedxml>=0:devel/py-defusedxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dfdatetime>=0:security/py-dfdatetime@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dfvfs>=0:security/py-dfvfs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dfvfs>=0:filesystems/py-dfvfs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dfwinreg>=0:security/py-dfwinreg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dtfabric>=0:devel/py-dtfabric@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flor>=0:textproc/py-flor@${PY_FLAVOR} \

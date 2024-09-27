@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 CRAN_DEPENDS=	R-cran-cli>=3.3.0:devel/R-cran-cli \
 		R-cran-desc>=1.4.1:devel/R-cran-desc \
 		R-cran-ellipsis>=0.3.2:devel/R-cran-ellipsis \
-		R-cran-fs>=1.5.2:sysutils/R-cran-fs \
+		R-cran-fs>=1.5.2:filesystems/R-cran-fs \
 		R-cran-httr>=1.4.2:www/R-cran-httr \
 		R-cran-lifecycle>=1.0.1:devel/R-cran-lifecycle \
 		R-cran-memoise>=2.0.1:devel/R-cran-memoise \
