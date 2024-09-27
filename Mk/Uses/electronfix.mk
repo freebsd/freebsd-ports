@@ -21,7 +21,7 @@ _INCLUDE_USES_ELECTRONFIX_MK=	yes
 .    error USES=electronfix requires a version argument
 .  endif
 
-_ELECTRON_MAKEFILE_VERSION=	${.CURDIR}/../../devel/electron${electronfix_ARGS}/Makefile.version
+_ELECTRON_MAKEFILE_VERSION=	${PORTSDIR}/devel/electron${electronfix_ARGS}/Makefile.version
 
 .  if !exists(${_ELECTRON_MAKEFILE_VERSION})
 .    error Unknown Electron version in USES=electronfix:${electronfix_ARGS}
