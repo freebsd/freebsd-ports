@@ -1,7 +1,6 @@
 PORTNAME=	rclone
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.67.0
-PORTREVISION=	2
+DISTVERSION=	1.68.1
 CATEGORIES=	net
 
 MAINTAINER=	tremere@cainites.net
@@ -17,12 +16,10 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 USES=		cpe go:modules
 GO_MODULE=	github.com/rclone/rclone
 
-GO_BUILDFLAGS=	-ldflags -s
+GO_BUILDFLAGS=	-ldflags -s -tags cmount
 
 PLIST_FILES=	bin/rclone \
 		share/man/man1/rclone.1.gz
-
-GO_BUILDFLAGS+=	-tags cmount
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/rclone.1 ${STAGEDIR}${PREFIX}/share/man/man1
