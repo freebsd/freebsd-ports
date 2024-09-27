@@ -1,15 +1,11 @@
 PORTNAME=	audacious-plugins
-DISTVERSION=	4.4
-PORTREVISION=	6
+DISTVERSION=	4.4.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Plugins needed for audacious
 WWW=		https://audacious-media-player.org/
-
-PATCH_SITES=	https://github.com/audacious-media-player/audacious-plugins/commit/
-PATCHFILES=	0ffe6d8b4356c10e3d9d159d07dbe467b33629b9.patch:-p1
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
