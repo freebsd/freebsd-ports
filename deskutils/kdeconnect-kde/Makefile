@@ -17,7 +17,7 @@ BUILD_DEPENDS=	kpeoplevcard>0:net/kpeoplevcard \
 		wayland-protocols>=0:graphics/wayland-protocols \
 		kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
 RUN_DEPENDS=	sshpass:security/sshpass \
-		sshfs:sysutils/fusefs-sshfs \
+		sshfs:filesystems/sshfs \
 		kpeoplevcard>0:net/kpeoplevcard \
 		kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
 

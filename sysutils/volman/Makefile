@@ -28,7 +28,7 @@ PLIST_SUB+=	OPENBOX="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNTFS3G}
-RUN_DEPENDS+=	${LOCALBASE}/bin/ntfs-3g:sysutils/fusefs-ntfs
+RUN_DEPENDS+=	${LOCALBASE}/bin/ntfs-3g:filesystems/ntfs
 SUB_LIST+=	RCFUSEFS=" fusefs"
 .else
 SUB_LIST+=	RCFUSEFS=""

@@ -36,6 +36,7 @@ for native_category in ${dp_CATEGORIES}; do
 		education)	c="Education"				;;
 		emulators)	c="System Emulator"			;;
 		finance)	c="Office Finance"			;;
+                filesystems)    c="System Filesystem"                   ;;
 		ftp)		c="Network FileTransfer"		;;
 		games)		c="Game"				;;
 		geography)	c="Education Science Geography"		;;
