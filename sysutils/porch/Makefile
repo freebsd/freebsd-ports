@@ -1,14 +1,14 @@
-PORTNAME=	orch
-PORTVERSION=	0.2
+PORTNAME=	porch
+PORTVERSION=	0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.kevans.dev/kevans/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 
 PATCH_DIST_STRIP=	-p1
-PATCH_SITES=	https://git.kevans.dev/kevans/orch/commit/
+PATCH_SITES=	https://git.kevans.dev/kevans/porch/commit/
 
 MAINTAINER=	kevans@FreeBSD.org
 COMMENT=	Program orchestration tool scripted with lua
-WWW=		https://git.kevans.dev/kevans/orch
+WWW=		https://git.kevans.dev/kevans/porch
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -24,6 +24,6 @@ MANPAGES_CMAKE_BOOL=	MANPAGES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-TEST_TARGET=	check
+TEST_TARGET=	check-install
 
 .include <bsd.port.mk>

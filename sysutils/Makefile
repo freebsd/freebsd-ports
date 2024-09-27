@@ -877,7 +877,6 @@
     SUBDIR += openupsd
     SUBDIR += openzfs
     SUBDIR += openzfs-kmod
-    SUBDIR += orch
     SUBDIR += osinfo-db-tools
     SUBDIR += p5-App-Regather
     SUBDIR += p5-App-RunCron
@@ -1065,6 +1064,7 @@
     SUBDIR += polkit-gnome
     SUBDIR += polkit-qt-1
     SUBDIR += popeye
+    SUBDIR += porch
     SUBDIR += pot
     SUBDIR += potnet
     SUBDIR += poweralertd
