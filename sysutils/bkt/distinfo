@@ -1,4 +1,4 @@
-TIMESTAMP = 1706097563
+TIMESTAMP = 1727417093
 SHA256 (rust/crates/aho-corasick-1.1.2.crate) = b2969dcb958b36655471fc61f7e416fa76033bdd4bfed0678d8fee1e2d07a1f0
 SIZE (rust/crates/aho-corasick-1.1.2.crate) = 183136
 SHA256 (rust/crates/anstyle-1.0.4.crate) = 7079075b41f533b8c61d2a4d073c4676e1f8b249ff94a393b0595db304e0dd87
@@ -117,5 +117,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.48.5.crate) = ed94fce61571a4006852b738
 SIZE (rust/crates/windows_x86_64_msvc-0.48.5.crate) = 798412
 SHA256 (rust/crates/windows_x86_64_msvc-0.52.0.crate) = dff9641d1cd4be8d1a070daf9e3773c5f67e78b4d9d42263020c057706765c04
 SIZE (rust/crates/windows_x86_64_msvc-0.52.0.crate) = 821600
-SHA256 (dimo414-bkt-0.8.0_GH0.tar.gz) = c8b99f4540a3a083368db7d42d6947aa37217b32b443d97972e4536ed9404469
-SIZE (dimo414-bkt-0.8.0_GH0.tar.gz) = 36147
+SHA256 (dimo414-bkt-0.8.1_GH0.tar.gz) = c8c8cc6f03d0fd35c4ace0ad81e437c41c6bb7778f5caafb3dbb1904b2b0c4f5
+SIZE (dimo414-bkt-0.8.1_GH0.tar.gz) = 37267
