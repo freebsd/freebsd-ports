@@ -38,5 +38,6 @@
     SUBDIR += sshfs
     SUBDIR += ufs
     SUBDIR += unionfs
+    SUBDIR += unreliablefs
 
 .include <bsd.port.subdir.mk>

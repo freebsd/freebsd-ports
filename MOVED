@@ -3559,3 +3559,4 @@ sysutils/fusefs-squashfuse|fs/squashfuse|2024-09-29|Moved to new category fs
 sysutils/fusefs-sshfs|fs/sshfs|2024-09-29|Moved to new category fs
 sysutils/fusefs-ufs|fs/ufs|2024-09-29|Moved to new category fs
 sysutils/fusefs-unionfs|fs/unionfs|2024-09-29|Moved to new category fs
+sysutils/fusefs-unreliablefs|fs/unreliablefs|2024-09-29|Moved to new category fs
