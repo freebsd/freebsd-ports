@@ -10,6 +10,7 @@
     SUBDIR += ext2
     SUBDIR += funionfs
     SUBDIR += fusefs-libs
+    SUBDIR += fusefs-libs3
     SUBDIR += fusepak
     SUBDIR += gitfs
     SUBDIR += gphotofs
