@@ -29,5 +29,6 @@
     SUBDIR += rar2fs
     SUBDIR += s3backer
     SUBDIR += s3fs
+    SUBDIR += sandboxfs
 
 .include <bsd.port.subdir.mk>
