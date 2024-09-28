@@ -12,5 +12,6 @@
     SUBDIR += fusepak
     SUBDIR += gitfs
     SUBDIR += gphotofs
+    SUBDIR += hfsfuse
 
 .include <bsd.port.subdir.mk>

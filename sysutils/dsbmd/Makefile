@@ -34,7 +34,7 @@ PTP_DESC=	Picture Transfer Protocol support
 
 EXFAT_RUN_DEPENDS=	mount.exfat:fs/exfat
 EXT4_RUN_DEPENDS=	fuse-ext2:fs/ext2
-HFS_RUN_DEPENDS=	hfsfuse:sysutils/fusefs-hfsfuse
+HFS_RUN_DEPENDS=	hfsfuse:fs/hfsfuse
 LKL_RUN_DEPENDS=	lklfuse:sysutils/fusefs-lkl
 MTP_RUN_DEPENDS=	jmtpfs:sysutils/fusefs-jmtpfs
 NTFS_RUN_DEPENDS=	ntfs-3g:sysutils/fusefs-ntfs
