@@ -1,3 +1,3 @@
-TIMESTAMP = 1704652212
-SHA256 (tpm2-pkcs11-1.9.0.tar.gz) = 35bf06c30cfa76fc0eba2c5f503cf7dd0d34a66afb2d292fee896b90362f633b
-SIZE (tpm2-pkcs11-1.9.0.tar.gz) = 1396590
+TIMESTAMP = 1727533254
+SHA256 (tpm2-pkcs11-1.9.1.tar.gz) = ce24aa5ec2471545576e892b6f64fd873a424371bbf9be4ca3a0e689ea11c9b7
+SIZE (tpm2-pkcs11-1.9.1.tar.gz) = 1412372
