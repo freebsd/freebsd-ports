@@ -2046,7 +2046,7 @@ you update your ports collection, before attempting any port upgrades.
   then be deleted afterwards, if not empty.
 
 20220625:
-  AFFECTS: users of sysutils/fusefs-bindfs
+  AFFECTS: users of fs/bindfs
   AUTHOR: doralitze@chaotikum.org
 
   Bindfs defaults to use direct I/O since version 1.16. While this results
