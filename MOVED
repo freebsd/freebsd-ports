@@ -3524,3 +3524,4 @@ security/py-zope.password||2024-10-08|Has no value as standalone package
 graphics/fusefs-gphotofs|fs/gphotofs|2024-09-29|Moved to new category fs
 sysutils/fusefs-afuse|fs/afuse|2024-09-29|Moved to new category fs
 sysutils/fusefs-bindfs|fs/bindfs|2024-09-29|Moved to new category fs
+sysutils/fusefs-chironfs|fs/chironfs|2024-09-29|Moved to new category fs

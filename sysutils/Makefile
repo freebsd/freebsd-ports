@@ -438,7 +438,6 @@
     SUBDIR += fstyp
     SUBDIR += fswatch-mon
     SUBDIR += ftwin
-    SUBDIR += fusefs-chironfs
     SUBDIR += fusefs-cryptofs
     SUBDIR += fusefs-curlftpfs
     SUBDIR += fusefs-encfs
