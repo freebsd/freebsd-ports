@@ -39,5 +39,6 @@
     SUBDIR += ufs
     SUBDIR += unionfs
     SUBDIR += unreliablefs
+    SUBDIR += webdavfs
 
 .include <bsd.port.subdir.mk>

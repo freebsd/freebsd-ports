@@ -439,7 +439,6 @@
     SUBDIR += fswatch-mon
     SUBDIR += ftwin
     SUBDIR += fusefs-mergerfs
-    SUBDIR += fusefs-webdavfs
     SUBDIR += fusefs-xfuse
     SUBDIR += fusefs-zip
     SUBDIR += fvcool
