@@ -14,7 +14,6 @@ include/orc-0.4/orc/orccode.h
 include/orc-0.4/orc/orccompiler.h
 include/orc-0.4/orc/orcconstant.h
 include/orc-0.4/orc/orccpu.h
-include/orc-0.4/orc/orccpuinsn.h
 include/orc-0.4/orc/orcdebug.h
 include/orc-0.4/orc/orcemulateopcodes.h
 include/orc-0.4/orc/orcexecutor.h
@@ -45,7 +44,6 @@ lib/liborc-test-0.4.so.0
 lib/liborc-test-0.4.so.0.%%LIBMINORVER%%.0
 libdata/pkgconfig/orc-0.4.pc
 libdata/pkgconfig/orc-test-0.4.pc
-share/aclocal/orc.m4
 %%PORTDOCS%%share/gtk-doc/html/orc/ch01.html
 %%PORTDOCS%%share/gtk-doc/html/orc/ch02.html
 %%PORTDOCS%%share/gtk-doc/html/orc/ch03.html
