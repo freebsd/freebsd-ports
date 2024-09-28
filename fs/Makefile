@@ -33,5 +33,6 @@
     SUBDIR += securefs
     SUBDIR += simple-mtpfs
     SUBDIR += smbnetfs
+    SUBDIR += sqlfs
 
 .include <bsd.port.subdir.mk>
