@@ -24,5 +24,6 @@
     SUBDIR += mp3fs
     SUBDIR += nbt
     SUBDIR += ntfs
+    SUBDIR += ntfs-compression
 
 .include <bsd.port.subdir.mk>
