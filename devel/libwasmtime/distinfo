@@ -1,4 +1,4 @@
-TIMESTAMP = 1726936464
+TIMESTAMP = 1727482862
 SHA256 (rust/crates/addr2line-0.22.0.crate) = 6e4503c46a5c0c7844e948c9a4d6acd9f50cccb4de1c48eb9e291ea17470c678
 SIZE (rust/crates/addr2line-0.22.0.crate) = 39156
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -731,8 +731,8 @@ SHA256 (rust/crates/zstd-safe-7.0.0.crate) = 43747c7422e2924c11144d5229878b98180
 SIZE (rust/crates/zstd-safe-7.0.0.crate) = 20463
 SHA256 (rust/crates/zstd-sys-2.0.9+zstd.1.5.5.crate) = 9e16efa8a874a0481a574084d34cc26fdb3b99627480f785888deb6386506656
 SIZE (rust/crates/zstd-sys-2.0.9+zstd.1.5.5.crate) = 728791
-SHA256 (bytecodealliance-wasmtime-v25.0.0_GH0.tar.gz) = ec26abaf612843a93ea104e80614dc0d8db50a1de802c35e1a2014419b4761c5
-SIZE (bytecodealliance-wasmtime-v25.0.0_GH0.tar.gz) = 23643334
+SHA256 (bytecodealliance-wasmtime-v25.0.1_GH0.tar.gz) = 0e816ee247eda6c35fca20dfaeac50c2cbb0df60d305b722fa2be9eced5b95da
+SIZE (bytecodealliance-wasmtime-v25.0.1_GH0.tar.gz) = 23644361
 SHA256 (WebAssembly-testsuite-ae5a669_GH0.tar.gz) = b65bca4ecbcbafadc294b6eeabff9b1b3fd409e9fc27291c2386a037c44e6575
 SIZE (WebAssembly-testsuite-ae5a669_GH0.tar.gz) = 781340
 SHA256 (WebAssembly-wasi-testsuite-2fec29e_GH0.tar.gz) = d082050c523cab626328de0aa5c86b47319347d62c6b1a9852a2c3870af6b998
