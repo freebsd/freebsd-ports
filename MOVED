@@ -3535,3 +3535,4 @@ sysutils/fusefs-fusepak|fs/fusepak|2024-09-29|Moved to new category fs
 sysutils/fusefs-gitfs|fs/gitfs|2024-09-29|Moved to new category fs
 sysutils/fusefs-hfsfuse|fs/hfsfuse|2024-09-29|Moved to new category fs
 sysutils/fusefs-httpdirfs|fs/httpdirfs|2024-09-29|Moved to new category fs
+sysutils/fusefs-httpfs|fs/httpfs|2024-09-29|Moved to new category fs

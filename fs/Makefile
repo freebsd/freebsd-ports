@@ -14,5 +14,6 @@
     SUBDIR += gphotofs
     SUBDIR += hfsfuse
     SUBDIR += httpdirfs
+    SUBDIR += httpfs
 
 .include <bsd.port.subdir.mk>
