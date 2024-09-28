@@ -13,5 +13,6 @@
     SUBDIR += gitfs
     SUBDIR += gphotofs
     SUBDIR += hfsfuse
+    SUBDIR += httpdirfs
 
 .include <bsd.port.subdir.mk>
