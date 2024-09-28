@@ -1,5 +1,5 @@
 PORTNAME=	php84
-DISTVERSION=	8.4.0beta5
+DISTVERSION=	8.4.0RC1
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	https://downloads.php.net/~saki/ \
