@@ -1,7 +1,6 @@
 PORTNAME=	fblog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.10.0
-PORTREVISION=	3
+DISTVERSION=	4.12.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +19,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.6.14 \
-		anstyle-1.0.7 \
+		anstyle-1.0.8 \
 		anstyle-parse-0.2.4 \
 		anstyle-query-1.0.3 \
 		anstyle-wincon-3.0.3 \
@@ -32,10 +31,10 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		cc-1.0.98 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
-		clap-4.5.4 \
-		clap_builder-4.5.2 \
-		clap_complete-4.5.2 \
-		clap_derive-4.5.4 \
+		clap-4.5.16 \
+		clap_builder-4.5.15 \
+		clap_complete-4.5.24 \
+		clap_derive-4.5.13 \
 		clap_lex-0.7.0 \
 		colorchoice-1.0.1 \
 		core-foundation-sys-0.8.6 \
@@ -49,7 +48,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		errno-0.3.9 \
 		generic-array-0.14.7 \
 		getrandom-0.2.15 \
-		handlebars-5.1.2 \
+		handlebars-6.0.0 \
 		hashbrown-0.14.5 \
 		heck-0.5.0 \
 		home-0.5.9 \
@@ -59,7 +58,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		is_terminal_polyfill-1.70.0 \
 		itoa-1.0.11 \
 		js-sys-0.3.69 \
-		lazy_static-1.4.0 \
+		lazy_static-1.5.0 \
 		libc-0.2.155 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.14 \
@@ -67,8 +66,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		lua-src-546.0.2 \
 		luajit-src-210.5.8+5790d25 \
 		memchr-2.7.2 \
-		mlua-0.9.8 \
-		mlua-sys-0.6.0 \
+		mlua-0.9.9 \
+		mlua-sys-0.6.1 \
 		num-traits-0.2.19 \
 		once_cell-1.19.0 \
 		option-ext-0.2.0 \
@@ -80,24 +79,24 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		proc-macro2-1.0.83 \
 		quote-1.0.36 \
 		redox_users-0.4.5 \
-		regex-1.10.4 \
+		regex-1.10.6 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.8.3 \
-		rustc-hash-1.1.0 \
+		rustc-hash-2.0.0 \
 		rustix-0.38.34 \
 		ryu-1.0.18 \
-		serde-1.0.202 \
-		serde_derive-1.0.202 \
-		serde_json-1.0.117 \
-		serde_spanned-0.6.6 \
+		serde-1.0.209 \
+		serde_derive-1.0.209 \
+		serde_json-1.0.127 \
+		serde_spanned-0.6.7 \
 		sha2-0.10.8 \
 		strsim-0.11.1 \
 		syn-2.0.65 \
 		thiserror-1.0.61 \
 		thiserror-impl-1.0.61 \
-		toml-0.8.13 \
-		toml_datetime-0.6.6 \
-		toml_edit-0.22.13 \
+		toml-0.8.19 \
+		toml_datetime-0.6.8 \
+		toml_edit-0.22.20 \
 		typenum-1.17.0 \
 		ucd-trie-0.1.6 \
 		unicode-ident-1.0.12 \
@@ -130,7 +129,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows_x86_64_gnullvm-0.52.5 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.5 \
-		winnow-0.6.8 \
+		winnow-0.6.18 \
 		winsafe-0.0.19 \
 		yansi-1.0.1
 
