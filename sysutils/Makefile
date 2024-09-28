@@ -439,7 +439,6 @@
     SUBDIR += fswatch-mon
     SUBDIR += ftwin
     SUBDIR += fusefs-mergerfs
-    SUBDIR += fusefs-nbt
     SUBDIR += fusefs-ntfs
     SUBDIR += fusefs-ntfs-compression
     SUBDIR += fusefs-pod
