@@ -3522,3 +3522,4 @@ x11-toolkits/wlroots016||2024-10-07|No consumers in ports
 japanese/prn|japanese/prn-ps|2024-10-07|Allow cloning the repository on Windows
 security/py-zope.password||2024-10-08|Has no value as standalone package
 graphics/fusefs-gphotofs|fs/gphotofs|2024-09-29|Moved to new category fs
+sysutils/fusefs-afuse|fs/afuse|2024-09-29|Moved to new category fs
