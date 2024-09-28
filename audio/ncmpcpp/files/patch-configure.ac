@@ -1,0 +1,73 @@
+--- configure.ac.orig	2024-09-14 20:01:39 UTC
++++ configure.ac
+@@ -47,40 +47,40 @@ fi
+ fi
+ 
+ # -ftree-vectorize
+-AC_MSG_CHECKING([whether compiler supports -ftree-vectorize])
+-old_CXXFLAGS="$CXXFLAGS"
+-CXXFLAGS="-ftree-vectorize"
+-AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[ ]])],
+-  AC_MSG_RESULT([yes])
+-    tree_vectorize="-ftree-vectorize",
+-  AC_MSG_RESULT([no])
+-    tree_vectorize=""
+-)
+-CXXFLAGS="$old_CXXFLAGS $tree_vectorize"
++#AC_MSG_CHECKING([whether compiler supports -ftree-vectorize])
++#old_CXXFLAGS="$CXXFLAGS"
++#CXXFLAGS="-ftree-vectorize"
++#AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[ ]])],
++#  AC_MSG_RESULT([yes])
++#    tree_vectorize="-ftree-vectorize",
++#  AC_MSG_RESULT([no])
++#    tree_vectorize=""
++#)
++#CXXFLAGS="$old_CXXFLAGS $tree_vectorize"
+ 
+ # -ffast-math
+-AC_MSG_CHECKING([whether compiler supports -ffast-math])
+-old_CXXFLAGS="$CXXFLAGS"
+-CXXFLAGS="-ffast-math"
+-AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[ ]])],
+-  AC_MSG_RESULT([yes])
+-    fast_math="-ffast-math",
+-  AC_MSG_RESULT([no])
+-    fast_math=""
+-)
+-CXXFLAGS="$old_CXXFLAGS $fast_math"
++#AC_MSG_CHECKING([whether compiler supports -ffast-math])
++#old_CXXFLAGS="$CXXFLAGS"
++#CXXFLAGS="-ffast-math"
++#AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[ ]])],
++#  AC_MSG_RESULT([yes])
++#    fast_math="-ffast-math",
++#  AC_MSG_RESULT([no])
++#    fast_math=""
++#)
++#CXXFLAGS="$old_CXXFLAGS $fast_math"
+ 
+ # -std=c++20
+-AC_MSG_CHECKING([whether compiler supports -std=c++20])
+-old_CXXFLAGS="$CXXFLAGS"
+-CXXFLAGS="-std=c++20"
+-AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[ ]])],
+-	AC_MSG_RESULT([yes])
+-		std_cpp14="-std=c++20",
+-	AC_MSG_RESULT([no])
+-		AC_MSG_ERROR([[Your compiler doesn't seem to support C++20, please upgrade]])
+-)
+-CXXFLAGS="$old_CXXFLAGS $std_cpp14"
++#AC_MSG_CHECKING([whether compiler supports -std=c++20])
++#old_CXXFLAGS="$CXXFLAGS"
++#CXXFLAGS="-std=c++20"
++#AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[ ]])],
++#	AC_MSG_RESULT([yes])
++#		std_cpp14="-std=c++20",
++#	AC_MSG_RESULT([no])
++#		AC_MSG_ERROR([[Your compiler doesn't seem to support C++20, please upgrade]])
++#)
++CXXFLAGS="$old_CXXFLAGS -std=c++14"
+ 
+ # generic lambda expressions support
+ AC_MSG_CHECKING([whether compiler supports generic lambda expressions])
