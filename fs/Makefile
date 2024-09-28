@@ -5,6 +5,7 @@
     SUBDIR += chironfs
     SUBDIR += cryptofs
     SUBDIR += curlftpfs
+    SUBDIR += encfs
     SUBDIR += gphotofs
 
 .include <bsd.port.subdir.mk>

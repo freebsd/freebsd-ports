@@ -3527,3 +3527,4 @@ sysutils/fusefs-bindfs|fs/bindfs|2024-09-29|Moved to new category fs
 sysutils/fusefs-chironfs|fs/chironfs|2024-09-29|Moved to new category fs
 sysutils/fusefs-cryptofs|fs/cryptofs|2024-09-29|Moved to new category fs
 sysutils/fusefs-curlftpfs|fs/curlftpfs|2024-09-29|Moved to new category fs
+sysutils/fusefs-encfs|fs/encfs|2024-09-29|Moved to new category fs
