@@ -3555,3 +3555,4 @@ sysutils/fusefs-securefs|fs/securefs|2024-09-29|Moved to new category fs
 sysutils/fusefs-simple-mtpfs|fs/simple-mtpfs|2024-09-29|Moved to new category fs
 sysutils/fusefs-smbnetfs|fs/smbnetfs|2024-09-29|Moved to new category fs
 sysutils/fusefs-sqlfs|fs/sqlfs|2024-09-29|Moved to new category fs
+sysutils/fusefs-squashfuse|fs/squashfuse|2024-09-29|Moved to new category fs

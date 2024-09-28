@@ -34,5 +34,6 @@
     SUBDIR += simple-mtpfs
     SUBDIR += smbnetfs
     SUBDIR += sqlfs
+    SUBDIR += squashfuse
 
 .include <bsd.port.subdir.mk>
