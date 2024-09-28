@@ -9,6 +9,7 @@
     SUBDIR += exfat
     SUBDIR += ext2
     SUBDIR += funionfs
+    SUBDIR += fusefs-libs
     SUBDIR += fusepak
     SUBDIR += gitfs
     SUBDIR += gphotofs
