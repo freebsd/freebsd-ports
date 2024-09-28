@@ -1,6 +1,6 @@
 PORTNAME=	neocmakelsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.5
+DISTVERSION=	0.8.6
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,20 +24,20 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		anstyle-query-1.1.1 \
 		anstyle-wincon-3.0.4 \
 		anyhow-1.0.89 \
-		async-trait-0.1.82 \
+		async-trait-0.1.83 \
 		auto_impl-1.2.0 \
 		autocfg-1.3.0 \
 		backtrace-0.3.74 \
 		bitflags-1.3.2 \
 		bitflags-2.6.0 \
 		bstr-1.10.0 \
-		bytes-1.7.1 \
-		cc-1.1.18 \
+		bytes-1.7.2 \
+		cc-1.1.21 \
 		cfg-if-1.0.0 \
-		clap-4.5.17 \
-		clap_builder-4.5.17 \
-		clap_complete-4.5.26 \
-		clap_derive-4.5.13 \
+		clap-4.5.18 \
+		clap_builder-4.5.18 \
+		clap_complete-4.5.29 \
+		clap_derive-4.5.18 \
 		clap_lex-0.7.2 \
 		cli-table-0.4.9 \
 		cli-table-derive-0.4.6 \
@@ -78,7 +78,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		is_terminal_polyfill-1.70.1 \
 		itoa-1.0.11 \
 		lazy_static-1.5.0 \
-		libc-0.2.158 \
+		libc-0.2.159 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
@@ -88,7 +88,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		mio-1.0.2 \
 		nu-ansi-term-0.46.0 \
 		object-0.36.4 \
-		once_cell-1.20.0 \
+		once_cell-1.19.0 \
 		ordered-multimap-0.7.3 \
 		overload-0.1.1 \
 		parking_lot-0.12.3 \
@@ -102,7 +102,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		pin-utils-0.1.0 \
 		proc-macro2-1.0.86 \
 		quote-1.0.37 \
-		redox_syscall-0.5.4 \
+		redox_syscall-0.5.5 \
 		regex-1.10.6 \
 		regex-automata-0.4.7 \
 		regex-syntax-0.8.4 \
@@ -138,7 +138,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		tokio-util-0.7.12 \
 		toml-0.8.19 \
 		toml_datetime-0.6.8 \
-		toml_edit-0.22.20 \
+		toml_edit-0.22.22 \
 		tower-0.4.13 \
 		tower-0.5.1 \
 		tower-layer-0.3.3 \
@@ -157,8 +157,8 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		trim-in-place-0.1.7 \
 		unicode-bidi-0.3.15 \
 		unicode-ident-1.0.13 \
-		unicode-normalization-0.1.23 \
-		unicode-width-0.1.13 \
+		unicode-normalization-0.1.24 \
+		unicode-width-0.1.14 \
 		url-2.5.2 \
 		utf8parse-0.2.2 \
 		valuable-0.1.0 \
@@ -179,7 +179,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.18
+		winnow-0.6.19
 
 PLIST_FILES=	bin/${PORTNAME}
 
