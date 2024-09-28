@@ -1,6 +1,7 @@
 PORTNAME=	mesa
 DISTVERSION=	24.1-branchpoint-3782
 DISTVERSIONSUFFIX=	-gc8d64860ec7
+PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -113,7 +114,7 @@ OPENCL_RUN_DEPENDS=	libclc>0:devel/libclc
 OPENCL_SOVERSION=	${LLVM_VERSION}${${LLVM_VERSION}>=18:?.1:}
 OPENCL_CONFIGURE_ENV=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig"
 OPENCL_MESON_FALSE=	b_lundef # environ
-OPENCL_MESON_TRUE=	gallium-rusticl
+OPENCL_MESON_TRUE=	gallium-rusticl opencl-spirv
 OPENCL_MESON_ON=	-Dgallium-opencl=icd
 OPENCL_MESON_OFF=	-Dgallium-opencl=disabled
 OPENCL_VARS+=		COINST_RUN_DEPENDS+=clover>0:lang/clover # ICD
