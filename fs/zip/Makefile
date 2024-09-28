@@ -1,8 +1,10 @@
-PORTNAME=	fuse-zip
-PORTVERSION=	0.4.4
-PORTREVISION=	2
-CATEGORIES=	sysutils
+PORTNAME=	zip
+DISTVERSION=	0.4.4
+PORTREVISION=	3
+CATEGORIES=	fs sysutils
 MASTER_SITES=	https://bitbucket.org/agalanin/fuse-zip/downloads/
+PKGNAMEPREFIX=	fusefs-
+DISTNAME=	fuse-zip-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE filesystem to mount ZIP archives with write support

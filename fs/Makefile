@@ -41,5 +41,6 @@
     SUBDIR += unreliablefs
     SUBDIR += webdavfs
     SUBDIR += xfuse
+    SUBDIR += zip
 
 .include <bsd.port.subdir.mk>
