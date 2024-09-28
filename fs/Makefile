@@ -15,5 +15,6 @@
     SUBDIR += hfsfuse
     SUBDIR += httpdirfs
     SUBDIR += httpfs
+    SUBDIR += ifuse
 
 .include <bsd.port.subdir.mk>
