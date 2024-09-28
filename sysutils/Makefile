@@ -439,7 +439,6 @@
     SUBDIR += fswatch-mon
     SUBDIR += ftwin
     SUBDIR += fusefs-mergerfs
-    SUBDIR += fusefs-s3backer
     SUBDIR += fusefs-s3fs
     SUBDIR += fusefs-sandboxfs
     SUBDIR += fusefs-securefs

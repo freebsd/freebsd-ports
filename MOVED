@@ -3548,3 +3548,4 @@ sysutils/fusefs-ntfs|fs/ntfs|2024-09-29|Moved to new category fs
 sysutils/fusefs-ntfs-compression|fs/ntfs-compression|2024-09-29|Moved to new category fs
 sysutils/fusefs-pod|fs/pod|2024-09-29|Moved to new category fs
 sysutils/fusefs-rar2fs|fs/rar2fs|2024-09-29|Moved to new category fs
+sysutils/fusefs-s3backer|fs/s3backer|2024-09-29|Moved to new category fs

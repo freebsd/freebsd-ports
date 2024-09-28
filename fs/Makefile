@@ -27,5 +27,6 @@
     SUBDIR += ntfs-compression
     SUBDIR += pod
     SUBDIR += rar2fs
+    SUBDIR += s3backer
 
 .include <bsd.port.subdir.mk>
