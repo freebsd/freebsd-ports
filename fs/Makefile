@@ -23,5 +23,6 @@
     SUBDIR += mhddfs
     SUBDIR += mp3fs
     SUBDIR += nbt
+    SUBDIR += ntfs
 
 .include <bsd.port.subdir.mk>

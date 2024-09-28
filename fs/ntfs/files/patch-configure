@@ -14,7 +14,7 @@
  		with_fuse="external"
  		;;
 -	freebsd*)
--		as_fn_error $? "Please see FreeBSD support at http://www.freshports.org/sysutils/fusefs-ntfs" "$LINENO" 5
+-		as_fn_error $? "Please see FreeBSD support at http://www.freshports.org/fs/ntfs" "$LINENO" 5
 -		;;
  	*)
  		as_fn_error $? "ntfs-3g can be built for Linux, FreeBSD, Mac OS X, NetBSD, and Solaris only." "$LINENO" 5
