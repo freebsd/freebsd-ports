@@ -438,7 +438,6 @@
     SUBDIR += fstyp
     SUBDIR += fswatch-mon
     SUBDIR += ftwin
-    SUBDIR += fusefs-fusepak
     SUBDIR += fusefs-gitfs
     SUBDIR += fusefs-hfsfuse
     SUBDIR += fusefs-httpdirfs
