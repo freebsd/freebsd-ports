@@ -8,6 +8,7 @@
     SUBDIR += encfs
     SUBDIR += exfat
     SUBDIR += ext2
+    SUBDIR += funionfs
     SUBDIR += gphotofs
 
 .include <bsd.port.subdir.mk>
