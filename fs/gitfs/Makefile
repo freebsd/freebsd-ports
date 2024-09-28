@@ -1,7 +1,7 @@
 PORTNAME=	gitfs
 DISTVERSION=	0.5.2
 PORTREVISION=	2
-CATEGORIES=	sysutils devel
+CATEGORIES=	fs devel
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	ports@FreeBSD.org

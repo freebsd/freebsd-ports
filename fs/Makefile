@@ -10,6 +10,7 @@
     SUBDIR += ext2
     SUBDIR += funionfs
     SUBDIR += fusepak
+    SUBDIR += gitfs
     SUBDIR += gphotofs
 
 .include <bsd.port.subdir.mk>

@@ -3532,3 +3532,4 @@ sysutils/fusefs-exfat|fs/exfat|2024-09-29|Moved to new category fs
 sysutils/fusefs-ext2|fs/ext2|2024-09-29|Moved to new category fs
 sysutils/fusefs-funionfs|fs/funionfs|2024-09-29|Moved to new category fs
 sysutils/fusefs-fusepak|fs/fusepak|2024-09-29|Moved to new category fs
+sysutils/fusefs-gitfs|fs/gitfs|2024-09-29|Moved to new category fs
