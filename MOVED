@@ -3552,3 +3552,4 @@ sysutils/fusefs-s3backer|fs/s3backer|2024-09-29|Moved to new category fs
 sysutils/fusefs-s3fs|fs/s3fs|2024-09-29|Moved to new category fs
 sysutils/fusefs-sandboxfs|fs/sandboxfs|2024-09-29|Moved to new category fs
 sysutils/fusefs-securefs|fs/securefs|2024-09-29|Moved to new category fs
+sysutils/fusefs-simple-mtpfs|fs/simple-mtpfs|2024-09-29|Moved to new category fs

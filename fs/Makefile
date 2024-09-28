@@ -31,5 +31,6 @@
     SUBDIR += s3fs
     SUBDIR += sandboxfs
     SUBDIR += securefs
+    SUBDIR += simple-mtpfs
 
 .include <bsd.port.subdir.mk>
