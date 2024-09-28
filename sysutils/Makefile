@@ -438,7 +438,6 @@
     SUBDIR += fstyp
     SUBDIR += fswatch-mon
     SUBDIR += ftwin
-    SUBDIR += fusefs-lkl
     SUBDIR += fusefs-mergerfs
     SUBDIR += fusefs-mhddfs
     SUBDIR += fusefs-mp3fs

@@ -3540,3 +3540,4 @@ sysutils/fusefs-ifuse|fs/ifuse|2024-09-29|Moved to new category fs
 sysutils/fusefs-jmtpfs|fs/jmtpfs|2024-09-29|Moved to new category fs
 sysutils/fusefs-libs|fs/fusefs-libs|2024-09-29|Moved to new category fs
 sysutils/fusefs-libs3|fs/fusefs-libs3|2024-09-29|Moved to new category fs
+sysutils/fusefs-lkl|fs/lkl|2024-09-29|Moved to new category fs

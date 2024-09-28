@@ -19,5 +19,6 @@
     SUBDIR += httpfs
     SUBDIR += ifuse
     SUBDIR += jmtpfs
+    SUBDIR += lkl
 
 .include <bsd.port.subdir.mk>
