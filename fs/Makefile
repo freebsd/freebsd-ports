@@ -25,5 +25,6 @@
     SUBDIR += nbt
     SUBDIR += ntfs
     SUBDIR += ntfs-compression
+    SUBDIR += pod
 
 .include <bsd.port.subdir.mk>
