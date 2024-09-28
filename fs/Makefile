@@ -37,5 +37,6 @@
     SUBDIR += squashfuse
     SUBDIR += sshfs
     SUBDIR += ufs
+    SUBDIR += unionfs
 
 .include <bsd.port.subdir.mk>

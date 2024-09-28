@@ -439,7 +439,6 @@
     SUBDIR += fswatch-mon
     SUBDIR += ftwin
     SUBDIR += fusefs-mergerfs
-    SUBDIR += fusefs-unionfs
     SUBDIR += fusefs-unreliablefs
     SUBDIR += fusefs-webdavfs
     SUBDIR += fusefs-xfuse
