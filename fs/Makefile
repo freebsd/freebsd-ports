@@ -20,5 +20,6 @@
     SUBDIR += ifuse
     SUBDIR += jmtpfs
     SUBDIR += lkl
+    SUBDIR += mhddfs
 
 .include <bsd.port.subdir.mk>
