@@ -30,5 +30,6 @@
     SUBDIR += s3backer
     SUBDIR += s3fs
     SUBDIR += sandboxfs
+    SUBDIR += securefs
 
 .include <bsd.port.subdir.mk>
