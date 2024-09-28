@@ -26,5 +26,6 @@
     SUBDIR += ntfs
     SUBDIR += ntfs-compression
     SUBDIR += pod
+    SUBDIR += rar2fs
 
 .include <bsd.port.subdir.mk>
