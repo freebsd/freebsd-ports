@@ -6110,6 +6110,7 @@
     SUBDIR += py-xstatic-hogan
     SUBDIR += py-xstatic-jasmine
     SUBDIR += py-xstatic-jquery
+    SUBDIR += py-xstatic-jquery-file-upload
     SUBDIR += py-xstatic-jquery-migrate
     SUBDIR += py-xstatic-jquery-ui
     SUBDIR += py-xstatic-jquery.quicksearch
