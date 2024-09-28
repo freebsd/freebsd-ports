@@ -28,5 +28,6 @@
     SUBDIR += pod
     SUBDIR += rar2fs
     SUBDIR += s3backer
+    SUBDIR += s3fs
 
 .include <bsd.port.subdir.mk>
