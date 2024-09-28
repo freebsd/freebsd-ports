@@ -1,13 +1,13 @@
 PORTNAME=	cryptofs
 PORTVERSION=	0.6.0
 PORTREVISION=	7
-CATEGORIES=	sysutils
-MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/fusefs-cryptofs/
+CATEGORIES=	fs
+MASTER_SITES=	https://BSDforge.com/projects/source/fs/cryptofs/
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Encrypted filesystem for FUSE
-WWW=		https://BSDforge.com/projects/sysutils/fusefs-cryptofs/
+WWW=		https://BSDforge.com/projects/fs/cryptofs/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
