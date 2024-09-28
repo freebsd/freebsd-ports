@@ -6,6 +6,7 @@
     SUBDIR += cryptofs
     SUBDIR += curlftpfs
     SUBDIR += encfs
+    SUBDIR += exfat
     SUBDIR += gphotofs
 
 .include <bsd.port.subdir.mk>

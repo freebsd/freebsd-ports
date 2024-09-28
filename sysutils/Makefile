@@ -438,7 +438,6 @@
     SUBDIR += fstyp
     SUBDIR += fswatch-mon
     SUBDIR += ftwin
-    SUBDIR += fusefs-exfat
     SUBDIR += fusefs-ext2
     SUBDIR += fusefs-funionfs
     SUBDIR += fusefs-fusepak

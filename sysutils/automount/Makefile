@@ -23,7 +23,7 @@ EXT4_RUN_DEPENDS=	fusefs-lkl>=0:sysutils/fusefs-lkl
 HFS_DESC=		Support macOS HFS filesystem
 HFS_RUN_DEPENDS=	fusefs-hfsfuse>=0:sysutils/fusefs-hfsfuse
 EXFAT_DESC=		Support Microsoft exFAT filesystem
-EXFAT_RUN_DEPENDS=	fusefs-exfat>=0:sysutils/fusefs-exfat \
+EXFAT_RUN_DEPENDS=	fusefs-exfat>=0:fs/exfat \
 			exfat-utils>=0:sysutils/exfat-utils
 
 do-install:
