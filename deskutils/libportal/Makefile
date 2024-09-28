@@ -1,5 +1,5 @@
 PORTNAME=	libportal
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -26,7 +26,8 @@ VAPI_MESON_TRUE=	vapi
 VAPI_USES=		vala:build
 
 MESON_ARGS=	-Ddocs=false \
-		-Dbackend-gtk3=disabled -Dbackend-gtk4=disabled -Dbackend-qt5=disabled
+		-Dbackend-gtk3=disabled -Dbackend-gtk4=disabled \
+		-Dbackend-qt5=disabled -Dbackend-qt6=disabled
 OPTIONS_SUB=	yes
 
 .if defined(BACKEND)
