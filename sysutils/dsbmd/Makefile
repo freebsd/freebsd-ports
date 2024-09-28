@@ -38,6 +38,6 @@ HFS_RUN_DEPENDS=	hfsfuse:sysutils/fusefs-hfsfuse
 LKL_RUN_DEPENDS=	lklfuse:sysutils/fusefs-lkl
 MTP_RUN_DEPENDS=	jmtpfs:sysutils/fusefs-jmtpfs
 NTFS_RUN_DEPENDS=	ntfs-3g:sysutils/fusefs-ntfs
-PTP_RUN_DEPENDS=	gphotofs:graphics/fusefs-gphotofs
+PTP_RUN_DEPENDS=	gphotofs:fs/gphotofs
 
 .include <bsd.port.mk>
