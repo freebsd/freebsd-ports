@@ -10,6 +10,9 @@ WWW=		https://www.rpki-client.org/
 
 LICENSE=	ISCL
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	Does support broken OS with small time_t
+
 BUILD_DEPENDS=	rsync>0:net/rsync
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libtls.so:security/libretls
@@ -18,7 +21,6 @@ RUN_DEPENDS=	rsync>0:net/rsync
 USES=		libtool pkgconfig ssl
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-libtls=libtls
 
 USERS=		_rpki-client
