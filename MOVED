@@ -3561,3 +3561,4 @@ sysutils/fusefs-ufs|fs/ufs|2024-09-29|Moved to new category fs
 sysutils/fusefs-unionfs|fs/unionfs|2024-09-29|Moved to new category fs
 sysutils/fusefs-unreliablefs|fs/unreliablefs|2024-09-29|Moved to new category fs
 sysutils/fusefs-webdavfs|fs/webdavfs|2024-09-29|Moved to new category fs
+sysutils/fusefs-xfuse|fs/xfuse|2024-09-29|Moved to new category fs

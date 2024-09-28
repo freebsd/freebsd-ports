@@ -40,5 +40,6 @@
     SUBDIR += unionfs
     SUBDIR += unreliablefs
     SUBDIR += webdavfs
+    SUBDIR += xfuse
 
 .include <bsd.port.subdir.mk>
