@@ -105,6 +105,7 @@
     SUBDIR += webdavfs
     SUBDIR += wimlib
     SUBDIR += xfsm
+    SUBDIR += xfsprogs
     SUBDIR += xfuse
     SUBDIR += zip
 
