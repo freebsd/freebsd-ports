@@ -3,6 +3,7 @@
     SUBDIR += afuse
     SUBDIR += bindfs
     SUBDIR += chironfs
+    SUBDIR += clamfs
     SUBDIR += cryptofs
     SUBDIR += curlftpfs
     SUBDIR += encfs
