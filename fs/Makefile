@@ -71,6 +71,7 @@
     SUBDIR += openzfs-kmod
     SUBDIR += p5-Filesys-Statvfs
     SUBDIR += p5-Fuse
+    SUBDIR += pear-Horde_Vfs
     SUBDIR += pod
     SUBDIR += py-fs
     SUBDIR += py-fusepy

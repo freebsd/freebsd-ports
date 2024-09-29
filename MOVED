@@ -3620,3 +3620,4 @@ sysutils/openzfs|fs/openzfs|2024-09-29|Moved to new category fs
 sysutils/p5-Filesys-Statvfs|fs/p5-Filesys-Statvfs|2024-09-29|Moved to new category fs
 sysutils/p5-Fuse|fs/p5-Fuse|2024-09-29|Moved to new category fs
 sysutils/py-prometheus-zfs|fs/py-prometheus-zfs|2024-09-29|Moved to new category fs
+sysutils/pear-Horde_Vfs|fs/pear-Horde_Vfs|2024-09-29|Moved to new category fs
