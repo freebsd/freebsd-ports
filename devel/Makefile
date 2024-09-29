@@ -4875,7 +4875,6 @@
     SUBDIR += py-frictionless-ckan-mapper
     SUBDIR += py-frozendict
     SUBDIR += py-frozenlist
-    SUBDIR += py-fs
     SUBDIR += py-fs2
     SUBDIR += py-fsspec
     SUBDIR += py-fsspec-xrootd
