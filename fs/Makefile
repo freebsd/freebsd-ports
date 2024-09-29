@@ -44,6 +44,7 @@
     SUBDIR += py-pyfakefs
     SUBDIR += py-s3fs
     SUBDIR += rar2fs
+    SUBDIR += rubygem-aws-sdk-efs
     SUBDIR += s3backer
     SUBDIR += s3fs
     SUBDIR += sandboxfs
