@@ -114,6 +114,7 @@
     SUBDIR += zfs-snapshot-mgmt
     SUBDIR += zfs-stats
     SUBDIR += zfs-stats-lite
+    SUBDIR += zfsnap
     SUBDIR += zip
 
 .include <bsd.port.subdir.mk>
