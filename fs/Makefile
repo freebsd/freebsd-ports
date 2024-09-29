@@ -22,6 +22,7 @@
     SUBDIR += ifuse
     SUBDIR += jmtpfs
     SUBDIR += libbde
+    SUBDIR += libfsapfs
     SUBDIR += lkl
     SUBDIR += mhddfs
     SUBDIR += mp3fs
