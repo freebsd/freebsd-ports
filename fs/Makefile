@@ -69,6 +69,7 @@
     SUBDIR += ntfs2btrfs
     SUBDIR += openzfs
     SUBDIR += openzfs-kmod
+    SUBDIR += p5-Filesys-Statvfs
     SUBDIR += pod
     SUBDIR += py-fs
     SUBDIR += py-fusepy
