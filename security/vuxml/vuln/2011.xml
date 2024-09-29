@@ -1790,7 +1790,7 @@
   </vuln>
 
   <vuln vid="e55f948f-d729-11e0-abd1-0017f22d6707">
-    <topic>security/cfs -- buffer overflow</topic>
+    <topic>fs/cfs -- buffer overflow</topic>
     <affects>
       <package>
 	<name>cfs</name>
