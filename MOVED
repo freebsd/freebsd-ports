@@ -3647,3 +3647,4 @@ devel/py-fsspec|fs/py-fsspec|2024-09-29|Moved to new category fs
 devel/py-fsspec-xrootd|fs/py-fsspec-xrootd|2024-09-29|Moved to new category fs
 security/cfs|fs/cfs|2024-09-29|Moved to new category fs
 security/py-dfvfs|fs/py-dfvfs|2024-09-29|Moved to new category fs
+sysutils/zxfer|fs/zxfer|2024-09-29|Moved to new category fs
