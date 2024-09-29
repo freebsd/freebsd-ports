@@ -1612,7 +1612,6 @@
     SUBDIR += zetaback
     SUBDIR += zetaback-devel
     SUBDIR += zidrav
-    SUBDIR += zisofs-tools
     SUBDIR += znapzend
     SUBDIR += zogftw
     SUBDIR += zoxide

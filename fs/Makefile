@@ -118,5 +118,6 @@
     SUBDIR += zfsnap2
     SUBDIR += zfstools
     SUBDIR += zip
+    SUBDIR += zisofs-tools
 
 .include <bsd.port.subdir.mk>
