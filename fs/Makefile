@@ -98,6 +98,7 @@
     SUBDIR += sshfs
     SUBDIR += tclvfs
     SUBDIR += ufs
+    SUBDIR += ufs_copy
     SUBDIR += unionfs
     SUBDIR += unreliablefs
     SUBDIR += webdavfs
