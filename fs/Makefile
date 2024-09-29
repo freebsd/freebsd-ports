@@ -73,6 +73,7 @@
     SUBDIR += p5-Fuse
     SUBDIR += pear-Horde_Vfs
     SUBDIR += pod
+    SUBDIR += progsreiserfs
     SUBDIR += py-fs
     SUBDIR += py-fusepy
     SUBDIR += py-gcsfs

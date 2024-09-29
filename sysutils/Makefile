@@ -994,7 +994,6 @@
     SUBDIR += process-viewer
     SUBDIR += procmap
     SUBDIR += procs
-    SUBDIR += progsreiserfs
     SUBDIR += pslist
     SUBDIR += psmisc
     SUBDIR += pstack
