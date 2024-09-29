@@ -1,22 +1,22 @@
 PORTNAME=	frr
-PORTVERSION=	9.1.2
 DISTVERSIONPREFIX=	frr-
+DISTVERSION=	10.1.1
 CATEGORIES=	net
 .if defined(PYTHONTOOLS)
-PKGNAMESUFFIX=	9-pythontools
+PKGNAMESUFFIX=	10-pythontools
 .else
-PKGNAMESUFFIX=	9
+PKGNAMESUFFIX=	10
 .endif
 
 MAINTAINER=	olivier@FreeBSD.org
-COMMENT?=	IP routing protocol suite including BGP, IS-IS, OSPF, BABEL and RIP
+COMMENT?=	IP routing protocol suite
 WWW=		https://frrouting.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 .if defined(PYTHONTOOLS)
-RUN_DEPENDS=	frr-reload:net/frr9
+RUN_DEPENDS=	frr-reload:net/frr10
 
 USES=	python:run shebangfix
 
@@ -45,7 +45,7 @@ USES=		autoreconf bison compiler:c++11-lang gmake libtool makeinfo \
 
 BINARY_ALIAS=	python=${PYTHON_VERSION}
 
-CONFLICTS=	frr8 frr10 openbgpd openospfd quagga zebra
+CONFLICTS=	frr8 frr9 openbgpd openospfd quagga zebra
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
@@ -88,9 +88,6 @@ TCMALLOC_DESC=		Use tcmalloc
 USERS=	frr
 GROUPS=	frr frrvty
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 # PIMD and PBRD compile but doesn't work on FreeBSD
 CONFIGURE_ARGS=	--enable-user=frr \
 		--enable-group=frr \
@@ -108,7 +105,7 @@ CONFIGURE_ARGS=	--enable-user=frr \
 
 BACKTRACE_LIB_DEPENDS=		libunwind.so:devel/libunwind
 BACKTRACE_CONFIGURE_ENABLE=	backtrace
-CONFIGROLLBACKS_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+CONFIGROLLBACKS_USES=	sqlite
 CONFIGROLLBACKS_CONFIGURE_ENABLE=	config-rollbacks
 DATACENTER_CONFIGURE_ENABLE=	datacenter
 FPM_CONFIGURE_ENABLE=		fpm
@@ -135,7 +132,7 @@ SHEBANG_FILES=	yang/embedmodel.py
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/frr|${ETCDIR}|g' \
 		-e 's|/usr/lib/frr|${PREFIX}/sbin|g' \
-		-e 's|frr-pythontools|frr9-pythontools|g' \
+		-e 's|frr-pythontools|frr10-pythontools|g' \
 		${WRKSRC}/tools/frr-reload
 
 post-install:
