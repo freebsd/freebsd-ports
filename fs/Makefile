@@ -77,6 +77,7 @@
     SUBDIR += py-gcsfs
     SUBDIR += py-libzfs
     SUBDIR += py-llfuse
+    SUBDIR += py-prometheus-zfs
     SUBDIR += py-pyfakefs
     SUBDIR += py-s3fs
     SUBDIR += R-cran-fs
