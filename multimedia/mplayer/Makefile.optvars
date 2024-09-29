@@ -171,6 +171,3 @@ XVIDEO_USE=		XORG=xv
 XVIDEO_CONFIGURE_OFF=	--disable-xv
 XVIDEO_IMPLIES=		X11
 
-XVMC_USE=		XORG=xvmc
-XVMC_CONFIGURE_ON=	--enable-xvmc --with-xvmclib=XvMCW
-XVMC_IMPLIES=		X11
