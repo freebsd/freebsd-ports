@@ -601,6 +601,7 @@
     SUBDIR += picard
     SUBDIR += picard-plugins
     SUBDIR += pipewire-module-xrdp
+    SUBDIR += pipewire-spa-oss
     SUBDIR += pithos
     SUBDIR += plasma5-kpipewire
     SUBDIR += plasma5-oxygen-sounds
