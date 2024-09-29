@@ -107,6 +107,7 @@
     SUBDIR += xfsm
     SUBDIR += xfsprogs
     SUBDIR += xfuse
+    SUBDIR += zfs-periodic
     SUBDIR += zip
 
 .include <bsd.port.subdir.mk>
