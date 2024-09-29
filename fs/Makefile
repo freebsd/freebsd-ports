@@ -21,6 +21,7 @@
     SUBDIR += httpfs
     SUBDIR += ifuse
     SUBDIR += jmtpfs
+    SUBDIR += libbde
     SUBDIR += lkl
     SUBDIR += mhddfs
     SUBDIR += mp3fs

@@ -1206,7 +1206,6 @@
     SUBDIR += libayatana-indicator
     SUBDIR += libb2
     SUBDIR += libbacktrace
-    SUBDIR += libbde
     SUBDIR += libbegemot
     SUBDIR += libbfd
     SUBDIR += libbinio
