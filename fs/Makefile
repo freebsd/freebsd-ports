@@ -53,6 +53,7 @@
     SUBDIR += moosefs2-metalogger
     SUBDIR += moosefs2-netdump
     SUBDIR += moosefs3-cgi
+    SUBDIR += moosefs3-cgiserv
     SUBDIR += mp3fs
     SUBDIR += mtools
     SUBDIR += nbt
