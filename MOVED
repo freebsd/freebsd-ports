@@ -3611,3 +3611,4 @@ sysutils/moosefs3-chunkserver|fs/moosefs3-chunkserver|2024-09-29|Moved to new ca
 sysutils/moosefs3-cli|fs/moosefs3-cli|2024-09-29|Moved to new category fs
 sysutils/moosefs3-client|fs/moosefs3-client|2024-09-29|Moved to new category fs
 sysutils/moosefs3-master|fs/moosefs3-master|2024-09-29|Moved to new category fs
+sysutils/moosefs3-metalogger|fs/moosefs3-metalogger|2024-09-29|Moved to new category fs
