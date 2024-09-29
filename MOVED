@@ -3584,3 +3584,4 @@ devel/rubygem-aws-sdk-efs|fs/rubygem-aws-sdk-efs|2024-09-29|Moved to new categor
 devel/tclvfs|fs/tclvfs|2024-09-29|Moved to new category fs
 emulators/mtools|fs/mtools|2024-09-29|Moved to new category fs
 security/clamfs|fs/clamfs|2024-09-29|Moved to new category fs
+sysutils/R-cran-fs|fs/R-cran-fs|2024-09-29|Moved to new category fs
