@@ -3588,3 +3588,4 @@ sysutils/R-cran-fs|fs/R-cran-fs|2024-09-29|Moved to new category fs
 sysutils/acfgfs|fs/acfgfs|2024-09-29|Moved to new category fs
 sysutils/archivemount|fs/archivemount|2024-09-29|Moved to new category fs
 sysutils/avfs|fs/avfs|2024-09-29|Moved to new category fs
+sysutils/cramfs|fs/cramfs|2024-09-29|Moved to new category fs

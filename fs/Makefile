@@ -7,6 +7,7 @@
     SUBDIR += bindfs
     SUBDIR += chironfs
     SUBDIR += clamfs
+    SUBDIR += cramfs
     SUBDIR += cryptofs
     SUBDIR += curlftpfs
     SUBDIR += encfs
