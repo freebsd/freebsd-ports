@@ -3595,3 +3595,4 @@ sysutils/e2fsprogs|fs/e2fsprogs|2024-09-29|Moved to new category fs
 sysutils/e2tools|fs/e2tools|2024-09-29|Moved to new category fs
 sysutils/exfat-utils|fs/exfat-utils|2024-09-29|Moved to new category fs
 sysutils/kio-fuse|fs/kio-fuse|2024-09-29|Moved to new category fs
+sysutils/lizardfs|fs/lizardfs|2024-09-29|Moved to new category fs
