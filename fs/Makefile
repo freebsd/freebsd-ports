@@ -15,6 +15,7 @@
     SUBDIR += genromfs
     SUBDIR += gitfs
     SUBDIR += gphotofs
+    SUBDIR += gvfs
     SUBDIR += hfsfuse
     SUBDIR += httpdirfs
     SUBDIR += httpfs
