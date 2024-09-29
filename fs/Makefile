@@ -59,6 +59,7 @@
     SUBDIR += moosefs3-client
     SUBDIR += moosefs3-master
     SUBDIR += moosefs3-metalogger
+    SUBDIR += moosefs3-netdump
     SUBDIR += mp3fs
     SUBDIR += mtools
     SUBDIR += nbt
