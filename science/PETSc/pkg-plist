@@ -5518,6 +5518,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/snes/tutorials/output/ex40f90_1.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex42_1.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex42_2.out
+%%DATADIR%%/examples/src/snes/tutorials/output/ex42_ghosts.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex46_1.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex46_1_alt.out
 %%DATADIR%%/examples/src/snes/tutorials/output/ex46_1_alt_2.out
