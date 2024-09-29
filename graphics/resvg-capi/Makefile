@@ -1,7 +1,6 @@
 PORTNAME=	resvg-c-api
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.43.0
-PORTREVISION=	2
+DISTVERSION=	0.44.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,38 +19,38 @@ GH_PROJECT=	resvg
 
 WRKSRC_SUBDIR=	crates/c-api
 
-CARGO_CRATES=	adler-1.0.2 \
-		arrayref-0.3.8 \
-		arrayvec-0.7.4 \
+CARGO_CRATES=	adler2-2.0.0 \
+		arrayref-0.3.9 \
+		arrayvec-0.7.6 \
 		base64-0.22.1 \
 		bitflags-1.3.2 \
 		bitflags-2.6.0 \
-		bytemuck-1.16.3 \
+		bytemuck-1.18.0 \
 		byteorder-lite-0.1.0 \
 		cfg-if-1.0.0 \
 		color_quant-1.1.0 \
 		core_maths-0.1.0 \
 		crc32fast-1.4.2 \
 		data-url-0.3.1 \
-		fdeflate-0.3.4 \
-		flate2-1.0.31 \
+		fdeflate-0.3.5 \
+		flate2-1.0.34 \
 		float-cmp-0.9.0 \
 		fontconfig-parser-0.5.7 \
-		fontdb-0.21.0 \
+		fontdb-0.22.0 \
 		gif-0.13.1 \
 		image-webp-0.1.3 \
 		imagesize-0.13.0 \
-		kurbo-0.11.0 \
-		libc-0.2.155 \
+		kurbo-0.11.1 \
+		libc-0.2.159 \
 		libm-0.2.8 \
 		log-0.4.22 \
-		memmap2-0.9.4 \
-		miniz_oxide-0.7.4 \
+		memmap2-0.9.5 \
+		miniz_oxide-0.8.0 \
 		once_cell-1.19.0 \
 		pico-args-0.5.0 \
-		png-0.17.13 \
+		png-0.17.14 \
 		quick-error-2.0.1 \
-		rgb-0.8.48 \
+		rgb-0.8.50 \
 		roxmltree-0.20.0 \
 		rustybuzz-0.18.0 \
 		simd-adler32-0.3.7 \
@@ -60,7 +59,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		slotmap-1.0.7 \
 		smallvec-1.13.2 \
 		strict-num-0.1.1 \
-		svgtypes-0.15.1 \
+		svgtypes-0.15.2 \
 		tiny-skia-0.11.4 \
 		tiny-skia-path-0.11.4 \
 		tinyvec-1.8.0 \
@@ -69,8 +68,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicode-bidi-0.3.15 \
 		unicode-bidi-mirroring-0.3.0 \
 		unicode-ccc-0.3.0 \
-		unicode-properties-0.1.1 \
-		unicode-script-0.5.6 \
+		unicode-properties-0.1.2 \
+		unicode-script-0.5.7 \
 		unicode-vo-0.1.0 \
 		version_check-0.9.5 \
 		weezl-0.1.8 \
