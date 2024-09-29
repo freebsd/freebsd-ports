@@ -725,7 +725,6 @@
     SUBDIR += monit
     SUBDIR += monitord
     SUBDIR += monitorix
-    SUBDIR += moosefs3-master
     SUBDIR += moosefs3-metalogger
     SUBDIR += moosefs3-netdump
     SUBDIR += moreutils
