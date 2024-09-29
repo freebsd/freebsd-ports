@@ -101,6 +101,7 @@
     SUBDIR += ufs_copy
     SUBDIR += unionfs
     SUBDIR += unreliablefs
+    SUBDIR += vzvol
     SUBDIR += webdavfs
     SUBDIR += xfuse
     SUBDIR += zip

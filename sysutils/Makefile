@@ -1536,7 +1536,6 @@
     SUBDIR += volman
     SUBDIR += vpnc-scripts
     SUBDIR += vttest
-    SUBDIR += vzvol
     SUBDIR += wait_on
     SUBDIR += walk
     SUBDIR += watchfolder
