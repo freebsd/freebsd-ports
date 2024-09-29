@@ -40,6 +40,7 @@
     SUBDIR += py-fusepy
     SUBDIR += py-gcsfs
     SUBDIR += py-libzfs
+    SUBDIR += py-llfuse
     SUBDIR += rar2fs
     SUBDIR += s3backer
     SUBDIR += s3fs
