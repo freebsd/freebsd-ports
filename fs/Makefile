@@ -48,6 +48,7 @@
     SUBDIR += moosefs2-cgiserv
     SUBDIR += moosefs2-chunkserver
     SUBDIR += moosefs2-cli
+    SUBDIR += moosefs2-client
     SUBDIR += mp3fs
     SUBDIR += mtools
     SUBDIR += nbt
