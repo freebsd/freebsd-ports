@@ -284,7 +284,6 @@
     SUBDIR += hs-lhs2tex
     SUBDIR += hs-pandoc
     SUBDIR += hs-pandoc-crossref
-    SUBDIR += hs-pandoc32
     SUBDIR += hs-yaml
     SUBDIR += hsb-aspell
     SUBDIR += htdig

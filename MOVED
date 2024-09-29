@@ -3487,3 +3487,4 @@ devel/rubygem-sidekiq71|devel/rubygem-sidekiq72|2024-09-23|Has expired: use deve
 devel/xtensa-esp32-elf|devel/xtensa-esp-elf|2024-09-23|Upstream was renamed
 sysutils/orch|sysutils/porch|2024-09-26|Upstream was renamed
 security/nextcloud-twofactor_nextcloud_notification||2024-09-27|Removed, bundled with Nextcloud 30
+textproc/hs-pandoc32|textproc/hs-pandoc|2024-09-29|the only user changed to textproc/hs-pandoc
