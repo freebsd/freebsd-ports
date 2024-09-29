@@ -111,6 +111,7 @@
     SUBDIR += zfs-replicate
     SUBDIR += zfs-snap-diff
     SUBDIR += zfs-snapshot-clean
+    SUBDIR += zfs-snapshot-mgmt
     SUBDIR += zip
 
 .include <bsd.port.subdir.mk>
