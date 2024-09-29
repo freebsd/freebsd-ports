@@ -75,6 +75,7 @@
     SUBDIR += pod
     SUBDIR += progsreiserfs
     SUBDIR += py-fs
+    SUBDIR += py-fs2
     SUBDIR += py-fusepy
     SUBDIR += py-gcsfs
     SUBDIR += py-libzfs
