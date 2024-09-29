@@ -25,7 +25,7 @@ OPTIONS_GROUP=	FILESYSTEMS
 OPTIONS_GROUP_FILESYSTEMS=	EXT XFS
 OPTIONS_DEFAULT=	EXT PROGRESS VIRTUALBOX XFS
 
-EXT_RUN_DEPENDS=	mke2fs:sysutils/e2fsprogs-core
+EXT_RUN_DEPENDS=	mke2fs:fs/e2fsprogs-core
 PROGRESS_RUN_DEPENDS=	pv:sysutils/pv
 VIRTUALBOX_RUN_DEPENDS=	VBoxManage:emulators/virtualbox-ose
 XFS_RUN_DEPENDS=	mkfs.xfs:sysutils/xfsprogs
