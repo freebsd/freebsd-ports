@@ -24,7 +24,7 @@ RUN_DEPENDS=	libbde>=a:fs/libbde \
 		libfvde>=0:sysutils/libfvde \
 		libfwnt>=e:devel/libfwnt \
 		libluksde>=e:devel/libluksde \
-		libmodi>=e:devel/libmodi \
+		libmodi>=e:fs/libmodi \
 		libphdi>=e:devel/libphdi \
 		libqcow>=a:devel/libqcow \
 		libsigscan>=e:devel/libsigscan \

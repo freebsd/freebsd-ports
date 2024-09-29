@@ -28,6 +28,7 @@
     SUBDIR += libfshfs
     SUBDIR += libfsntfs
     SUBDIR += libfsxfs
+    SUBDIR += libmodi
     SUBDIR += lkl
     SUBDIR += mhddfs
     SUBDIR += mp3fs
