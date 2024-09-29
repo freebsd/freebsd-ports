@@ -66,6 +66,7 @@
     SUBDIR += nbt
     SUBDIR += ntfs
     SUBDIR += ntfs-compression
+    SUBDIR += ntfs2btrfs
     SUBDIR += pod
     SUBDIR += py-fs
     SUBDIR += py-fusepy
