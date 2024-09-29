@@ -1,10 +1,7 @@
 PORTNAME=	fooyin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.2
+DISTVERSION=	0.7.3
 CATEGORIES=	audio multimedia
-
-PATCH_SITES=	https://github.com/fooyin/fooyin/commit/
-PATCHFILES=	a96eacd6d75dc353557a1f2361b8f780455c9cf0.patch:-p1
 
 MAINTAINER=	diizzy@FreeBSD.org
 COMMENT=	foobar2000 inspired audio player
@@ -26,7 +23,7 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 USES=		cmake compiler:c++20-lang desktop-file-utils gl libarchive \
 		pkgconfig qt:6 sdl
 USE_GL=		opengl
-USE_QT=		base svg tools:build
+USE_QT=		base sqldriver-sqlite svg tools:build
 USE_SDL=	sdl2
 
 USE_GITHUB=	yes
