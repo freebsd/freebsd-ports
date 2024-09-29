@@ -725,7 +725,6 @@
     SUBDIR += monit
     SUBDIR += monitord
     SUBDIR += monitorix
-    SUBDIR += moosefs2-cgiserv
     SUBDIR += moosefs2-chunkserver
     SUBDIR += moosefs2-cli
     SUBDIR += moosefs2-client

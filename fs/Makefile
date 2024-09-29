@@ -45,6 +45,7 @@
     SUBDIR += ltfs
     SUBDIR += mhddfs
     SUBDIR += moosefs2-cgi
+    SUBDIR += moosefs2-cgiserv
     SUBDIR += mp3fs
     SUBDIR += mtools
     SUBDIR += nbt

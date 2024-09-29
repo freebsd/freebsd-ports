@@ -3598,3 +3598,4 @@ sysutils/kio-fuse|fs/kio-fuse|2024-09-29|Moved to new category fs
 sysutils/lizardfs|fs/lizardfs|2024-09-29|Moved to new category fs
 sysutils/ltfs|fs/ltfs|2024-09-29|Moved to new category fs
 sysutils/moosefs2-cgi|fs/moosefs2-cgi|2024-09-29|Moved to new category fs
+sysutils/moosefs2-cgiserv|fs/moosefs2-cgiserv|2024-09-29|Moved to new category fs
