@@ -103,6 +103,7 @@
     SUBDIR += unreliablefs
     SUBDIR += vzvol
     SUBDIR += webdavfs
+    SUBDIR += wimlib
     SUBDIR += xfuse
     SUBDIR += zip
 

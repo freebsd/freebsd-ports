@@ -3626,3 +3626,4 @@ sysutils/rubygem-winrm-fs|fs/rubygem-winrm-fs|2024-09-29|Moved to new category f
 sysutils/scan_ffs|fs/scan_ffs|2024-09-29|Moved to new category fs
 sysutils/ufs_copy|fs/ufs_copy|2024-09-29|Moved to new category fs
 sysutils/vzvol|fs/vzvol|2024-09-29|Moved to new category fs
+sysutils/wimlib|fs/wimlib|2024-09-29|Moved to new category fs
