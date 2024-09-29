@@ -42,6 +42,7 @@
     SUBDIR += libmodi
     SUBDIR += lizardfs
     SUBDIR += lkl
+    SUBDIR += ltfs
     SUBDIR += mhddfs
     SUBDIR += mp3fs
     SUBDIR += mtools

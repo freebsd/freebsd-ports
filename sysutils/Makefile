@@ -664,7 +664,6 @@
     SUBDIR += lsof
     SUBDIR += lsop
     SUBDIR += lsyncd
-    SUBDIR += ltfs
     SUBDIR += ltrace
     SUBDIR += lttng-ust
     SUBDIR += lua-puremagic
