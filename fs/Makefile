@@ -2,6 +2,7 @@
 
     SUBDIR += acfgfs
     SUBDIR += afuse
+    SUBDIR += archivemount
     SUBDIR += bindfs
     SUBDIR += chironfs
     SUBDIR += clamfs
