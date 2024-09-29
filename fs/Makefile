@@ -16,6 +16,7 @@
     SUBDIR += e2tools
     SUBDIR += encfs
     SUBDIR += exfat
+    SUBDIR += exfat-utils
     SUBDIR += ext2
     SUBDIR += funionfs
     SUBDIR += fusefs-libs

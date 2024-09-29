@@ -24,7 +24,7 @@ HFS_DESC=		Support macOS HFS filesystem
 HFS_RUN_DEPENDS=	fusefs-hfsfuse>=0:fs/hfsfuse
 EXFAT_DESC=		Support Microsoft exFAT filesystem
 EXFAT_RUN_DEPENDS=	fusefs-exfat>=0:fs/exfat \
-			exfat-utils>=0:sysutils/exfat-utils
+			exfat-utils>=0:fs/exfat-utils
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/automount ${STAGEDIR}${PREFIX}/sbin
