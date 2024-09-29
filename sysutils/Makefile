@@ -265,7 +265,6 @@
     SUBDIR += daggy
     SUBDIR += damager
     SUBDIR += dar
-    SUBDIR += darling-dmg
     SUBDIR += dateutils
     SUBDIR += dc3dd
     SUBDIR += dcfldd

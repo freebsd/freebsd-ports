@@ -10,6 +10,7 @@
     SUBDIR += cramfs
     SUBDIR += cryptofs
     SUBDIR += curlftpfs
+    SUBDIR += darling-dmg
     SUBDIR += encfs
     SUBDIR += exfat
     SUBDIR += ext2
