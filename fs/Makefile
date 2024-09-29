@@ -119,5 +119,6 @@
     SUBDIR += zfstools
     SUBDIR += zip
     SUBDIR += zisofs-tools
+    SUBDIR += zrepl
 
 .include <bsd.port.subdir.mk>
