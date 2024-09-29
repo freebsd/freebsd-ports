@@ -1611,7 +1611,6 @@
     SUBDIR += zeroer
     SUBDIR += zetaback
     SUBDIR += zetaback-devel
-    SUBDIR += zfstools
     SUBDIR += zidrav
     SUBDIR += zisofs-tools
     SUBDIR += znapzend
