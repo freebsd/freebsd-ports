@@ -44,6 +44,7 @@
     SUBDIR += lkl
     SUBDIR += ltfs
     SUBDIR += mhddfs
+    SUBDIR += moosefs2-cgi
     SUBDIR += mp3fs
     SUBDIR += mtools
     SUBDIR += nbt
