@@ -1,6 +1,6 @@
 PORTNAME=	git-cliff
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.0
+DISTVERSION=	2.6.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -296,8 +296,8 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		tera-1.20.0 \
 		termcolor-1.4.1 \
 		terminal_size-0.3.0 \
-		thiserror-1.0.63 \
-		thiserror-impl-1.0.63 \
+		thiserror-1.0.64 \
+		thiserror-impl-1.0.64 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
