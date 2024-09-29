@@ -797,7 +797,6 @@
     SUBDIR += opentofu
     SUBDIR += openupsd
     SUBDIR += openzfs
-    SUBDIR += openzfs-kmod
     SUBDIR += osinfo-db-tools
     SUBDIR += p5-App-Regather
     SUBDIR += p5-App-RunCron
