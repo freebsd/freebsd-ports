@@ -1,6 +1,6 @@
 PORTNAME=	zfs-stats
 DISTVERSION=	1.3.2
-CATEGORIES=	sysutils
+CATEGORIES=	fs sysutils
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Displays general ZFS information and human-readable statistics

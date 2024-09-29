@@ -3634,3 +3634,4 @@ sysutils/zfs-replicate|fs/zfs-replicate|2024-09-29|Moved to new category fs
 sysutils/zfs-snap-diff|fs/zfs-snap-diff|2024-09-29|Moved to new category fs
 sysutils/zfs-snapshot-clean|fs/zfs-snapshot-clean|2024-09-29|Moved to new category fs
 sysutils/zfs-snapshot-mgmt|fs/zfs-snapshot-mgmt|2024-09-29|Moved to new category fs
+sysutils/zfs-stats|fs/zfs-stats|2024-09-29|Moved to new category fs
