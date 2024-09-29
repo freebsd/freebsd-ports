@@ -77,6 +77,7 @@
     SUBDIR += py-fs
     SUBDIR += py-fs2
     SUBDIR += py-fsspec
+    SUBDIR += py-fsspec-xrootd
     SUBDIR += py-fusepy
     SUBDIR += py-gcsfs
     SUBDIR += py-libzfs

@@ -3644,3 +3644,4 @@ sysutils/zrepl|fs/zrepl|2024-09-29|Moved to new category fs
 sysutils/zrepl-dsh2dsh|fs/zrepl-dsh2dsh|2024-09-29|Moved to new category fs
 devel/py-fs2|fs/py-fs2|2024-09-29|Moved to new category fs
 devel/py-fsspec|fs/py-fsspec|2024-09-29|Moved to new category fs
+devel/py-fsspec-xrootd|fs/py-fsspec-xrootd|2024-09-29|Moved to new category fs
