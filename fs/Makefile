@@ -109,6 +109,7 @@
     SUBDIR += xfuse
     SUBDIR += zfs-periodic
     SUBDIR += zfs-replicate
+    SUBDIR += zfs-snap-diff
     SUBDIR += zip
 
 .include <bsd.port.subdir.mk>
