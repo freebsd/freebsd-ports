@@ -85,6 +85,7 @@
     SUBDIR += R-cran-fs
     SUBDIR += rar2fs
     SUBDIR += rubygem-aws-sdk-efs
+    SUBDIR += rubygem-winrm-fs
     SUBDIR += s3backer
     SUBDIR += s3fs
     SUBDIR += sandboxfs
