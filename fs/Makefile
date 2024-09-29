@@ -67,6 +67,7 @@
     SUBDIR += ntfs
     SUBDIR += ntfs-compression
     SUBDIR += ntfs2btrfs
+    SUBDIR += openzfs
     SUBDIR += openzfs-kmod
     SUBDIR += pod
     SUBDIR += py-fs
