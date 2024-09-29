@@ -18,7 +18,7 @@ RUN_DEPENDS=	libbde>=a:fs/libbde \
 		libfsapfs>=e:fs/libfsapfs \
 		libfsext>=e:fs/libfsext \
 		libfsfat>=e:fs/libfsfat \
-		libfshfs>=e:devel/libfshfs \
+		libfshfs>=e:fs/libfshfs \
 		libfsntfs>=e:devel/libfsntfs \
 		libfsxfs>=e:devel/libfsxfs \
 		libfvde>=0:sysutils/libfvde \

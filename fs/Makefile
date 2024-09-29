@@ -25,6 +25,7 @@
     SUBDIR += libfsapfs
     SUBDIR += libfsext
     SUBDIR += libfsfat
+    SUBDIR += libfshfs
     SUBDIR += lkl
     SUBDIR += mhddfs
     SUBDIR += mp3fs
