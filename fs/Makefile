@@ -11,6 +11,7 @@
     SUBDIR += cryptofs
     SUBDIR += curlftpfs
     SUBDIR += darling-dmg
+    SUBDIR += e2fsprogs
     SUBDIR += e2fsprogs-core
     SUBDIR += encfs
     SUBDIR += exfat

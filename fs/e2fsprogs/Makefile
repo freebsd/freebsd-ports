@@ -1,5 +1,5 @@
 PORTNAME=	e2fsprogs
-CATEGORIES=	sysutils
+CATEGORIES=	fs sysutils
 PORTVERSION=	1.47.1
 PORTREVISION=	0
 BUILD_DEPENDS=	e2fsprogs-core=${PORTVERSION}${${PORTREVISION} > 0:?_${PORTREVISION}:}:fs/e2fsprogs-core
