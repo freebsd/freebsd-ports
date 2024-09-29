@@ -104,6 +104,7 @@
     SUBDIR += vzvol
     SUBDIR += webdavfs
     SUBDIR += wimlib
+    SUBDIR += xfsm
     SUBDIR += xfuse
     SUBDIR += zip
 
