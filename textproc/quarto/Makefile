@@ -38,7 +38,7 @@ OPTIONS_DEFINE=	R
 R_DESC=		Install R dependency
 R_RUN_DEPENDS=	R:math/R \
 		R-cran-knitr>0:print/R-cran-knitr \
-		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown # conflicts with hs-pandoc32
+		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown
 
 post-patch:
 	# replace tokens in the quarto executable and in run-tests.sh
