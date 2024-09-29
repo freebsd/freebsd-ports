@@ -3563,3 +3563,4 @@ sysutils/fusefs-unreliablefs|fs/unreliablefs|2024-09-29|Moved to new category fs
 sysutils/fusefs-webdavfs|fs/webdavfs|2024-09-29|Moved to new category fs
 sysutils/fusefs-xfuse|fs/xfuse|2024-09-29|Moved to new category fs
 sysutils/fusefs-zip|fs/zip|2024-09-29|Moved to new category fs
+devel/genromfs|fs/genromfs|2024-09-29|Moved to new category fs

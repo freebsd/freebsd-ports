@@ -1,7 +1,7 @@
 PORTNAME=	genromfs
 PORTVERSION=	0.5.7
 PORTREVISION=	1
-CATEGORIES=	devel
+CATEGORIES=	fs
 
 MAINTAINER=	tomek@cedro.info
 COMMENT=	Mkfs equivalent for romfs filesystem
