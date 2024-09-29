@@ -925,7 +925,6 @@
     SUBDIR += py-cybox
     SUBDIR += py-detect-secrets
     SUBDIR += py-dfdatetime
-    SUBDIR += py-dfvfs
     SUBDIR += py-dfwinreg
     SUBDIR += py-dirhash
     SUBDIR += py-django-auth-kerberos
