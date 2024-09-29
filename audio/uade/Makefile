@@ -1,6 +1,5 @@
 PORTNAME=	uade
-PORTVERSION=	3.03
-PORTREVISION=	1
+DISTVERSION=	3.04
 CATEGORIES=	audio
 MASTER_SITES=	http://zakalwe.fi/uade/uade3/ \
 		LOCAL/ehaupt
@@ -45,6 +44,9 @@ TEXTSCOPE_CONFIGURE_WITH=	text-scope
 
 post-extract:
 	@${RM} -r ${WRKSRC}/players/S
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2 -g||' ${WRKSRC}/write_audio/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
