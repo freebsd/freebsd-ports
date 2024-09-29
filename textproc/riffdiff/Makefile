@@ -1,5 +1,5 @@
 PORTNAME=	riffdiff
-DISTVERSION=	3.3.1
+DISTVERSION=	3.3.2
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
