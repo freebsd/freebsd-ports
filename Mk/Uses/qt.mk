@@ -23,8 +23,8 @@ _QT_MK_INCLUDED=	qt.mk
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=		5 6
 QT5_VERSION?=		5.15.15
-QT6_VERSION?=		6.7.2
-PYSIDE6_VERSION?=	6.7.2
+QT6_VERSION?=		6.7.3
+PYSIDE6_VERSION?=	6.7.3
 
 # Support for intermediate Qt6 releases. This partially defines
 # _QT6_MASTER_SITE_SUBDIR and would probably be better in qt-dist.mk,
@@ -166,7 +166,7 @@ _USE_QT5_ONLY=		assistant buildtools concurrent core dbus \
 			uitools webglplugin websockets-qml \
 			widgets x11extras xml xmlpatterns
 
-_USE_QT6_ONLY=		5compat base coap graphs httpserver languageserver lottie pdf positioning \
+_USE_QT6_ONLY=		5compat base coap graphs grpc httpserver languageserver lottie pdf positioning \
 			quick3dphysics quickeffectmaker shadertools tools translations \
 			sqldriver-sqlite sqldriver-mysql sqldriver-psql sqldriver-odbc
 
@@ -234,6 +234,9 @@ qt-graphicaleffects_PATH=	${LOCALBASE}/${QT_QMLDIR_REL}/QtGraphicalEffects/qmldi
 
 qt-graphs_PORT=		x11-toolkits/${_QT_RELNAME}-graphs
 qt-graphs_LIB=		libQt${_QT_LIBVER}Graphs.so
+
+qt-grpc_PORT=		devel/${_QT_RELNAME}-grpc
+qt-grpc_LIB=		libQt${_QT_LIBVER}Grpc.so
 
 qt-gui_PORT=		x11-toolkits/${_QT_RELNAME}-gui
 qt-gui_LIB=		libQt${_QT_LIBVER}Gui.so

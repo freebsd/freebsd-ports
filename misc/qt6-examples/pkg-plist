@@ -1415,6 +1415,7 @@
 %%QT_EXAMPLEDIR%%/demos/lightningviewer/Info.plist
 %%QT_EXAMPLEDIR%%/demos/lightningviewer/LightningViewer/ActionsLayer.qml
 %%QT_EXAMPLEDIR%%/demos/lightningviewer/LightningViewer/CMakeLists.txt
+%%QT_EXAMPLEDIR%%/demos/lightningviewer/LightningViewer/Deployment.qml
 %%QT_EXAMPLEDIR%%/demos/lightningviewer/LightningViewer/DistanceTimeLayer.qml
 %%QT_EXAMPLEDIR%%/demos/lightningviewer/LightningViewer/LightningMapLayer.qml
 %%QT_EXAMPLEDIR%%/demos/lightningviewer/LightningViewer/LightningView.qml
@@ -2781,6 +2782,7 @@
 %%QT_EXAMPLEDIR%%/mqtt/websocketsubscription/websocketsubscription.pro
 %%QT_EXAMPLEDIR%%/multimedia/CMakeLists.txt
 %%QT_EXAMPLEDIR%%/multimedia/audiodevices/CMakeLists.txt
+%%QT_EXAMPLEDIR%%/multimedia/audiodevices/Info.plist.in
 %%QT_EXAMPLEDIR%%/multimedia/audiodevices/audiodevices.cpp
 %%QT_EXAMPLEDIR%%/multimedia/audiodevices/audiodevices.h
 %%QT_EXAMPLEDIR%%/multimedia/audiodevices/audiodevices.pro

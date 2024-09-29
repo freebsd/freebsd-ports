@@ -2622,6 +2622,7 @@ lib/cmake/Qt6/QtPrecompiledHeadersHelpers.cmake
 lib/cmake/Qt6/QtPriHelpers.cmake
 lib/cmake/Qt6/QtPrlHelpers.cmake
 lib/cmake/Qt6/QtProcessConfigureArgs.cmake
+lib/cmake/Qt6/QtProperties.cmake
 lib/cmake/Qt6/QtPublicAppleHelpers.cmake
 lib/cmake/Qt6/QtPublicCMakeHelpers.cmake
 lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake
