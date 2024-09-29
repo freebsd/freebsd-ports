@@ -341,7 +341,6 @@
     SUBDIR += dwatch-json
     SUBDIR += dwatch-pwsnoop
     SUBDIR += dynamic_motd
-    SUBDIR += e2tools
     SUBDIR += ebsnvme-id
     SUBDIR += ec2-scripts
     SUBDIR += eclat

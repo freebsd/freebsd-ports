@@ -13,6 +13,7 @@
     SUBDIR += darling-dmg
     SUBDIR += e2fsprogs
     SUBDIR += e2fsprogs-core
+    SUBDIR += e2tools
     SUBDIR += encfs
     SUBDIR += exfat
     SUBDIR += ext2

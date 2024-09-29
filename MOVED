@@ -3592,3 +3592,4 @@ sysutils/cramfs|fs/cramfs|2024-09-29|Moved to new category fs
 sysutils/darling-dmg|fs/darling-dmg|2024-09-29|Moved to new category fs
 sysutils/e2fsprogs-core|fs/e2fsprogs-core|2024-09-29|Moved to new category fs
 sysutils/e2fsprogs|fs/e2fsprogs|2024-09-29|Moved to new category fs
+sysutils/e2tools|fs/e2tools|2024-09-29|Moved to new category fs
