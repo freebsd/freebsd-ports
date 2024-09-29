@@ -1,6 +1,5 @@
 PORTNAME=	quarto
-DISTVERSION=	1.6.9
-PORTREVISION=	5
+DISTVERSION=	1.6.15
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/quarto-dev/quarto-cli/releases/download/v${DISTVERSION}/
 DISTFILES=	quarto-${DISTVERSION}-linux-amd64.tar.gz # same for all architectures
@@ -29,9 +28,9 @@ GH_TUPLE=	quarto-dev:quarto-cli:v${DISTVERSION}:repo/repo # only for tests
 
 XARCH!=		uname -m
 
-PLIST_SUB+=	XARCH=${XARCH}
-
 NO_BUILD=	yes
+
+PLIST_SUB+=	XARCH=${XARCH}
 
 OPTIONS_DEFINE=	R
 
@@ -49,7 +48,7 @@ post-patch:
 		-e 's|%%SCRIPT_PATH%%|${STAGEDIR}${DATADIR}/bin|; s|%%ARCH_DIR%%|${XARCH}|; s|%%REPO%%|${WRKSRC}/repo|; s|$$DENO_DIR|${LOCALBASE}/bin|' \
 		${WRKSRC}/repo/tests/run-tests.sh
 	# replace python3 with the real python executable path
-	${REINPLACE_CMD} -e 's|"python3"|"${PYTHON_CMD}"|' ${WRKSRC}/bin/quarto.js
+	${REINPLACE_CMD} -i '' -e 's|"python3"|"${PYTHON_CMD}"|' ${WRKSRC}/bin/quarto.js
 
 do-install:
 	# copy files from the tarball
