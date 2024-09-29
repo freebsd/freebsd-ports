@@ -3581,3 +3581,4 @@ devel/py-llfuse|fs/py-llfuse|2024-09-29|Moved to new category fs
 devel/py-pyfakefs|fs/py-pyfakefs|2024-09-29|Moved to new category fs
 devel/py-s3fs|fs/py-s3fs|2024-09-29|Moved to new category fs
 devel/rubygem-aws-sdk-efs|fs/rubygem-aws-sdk-efs|2024-09-29|Moved to new category fs
+devel/tclvfs|fs/tclvfs|2024-09-29|Moved to new category fs

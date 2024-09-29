@@ -54,6 +54,7 @@
     SUBDIR += sqlfs
     SUBDIR += squashfuse
     SUBDIR += sshfs
+    SUBDIR += tclvfs
     SUBDIR += ufs
     SUBDIR += unionfs
     SUBDIR += unreliablefs

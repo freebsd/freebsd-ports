@@ -8135,7 +8135,6 @@
     SUBDIR += tclreadline
     SUBDIR += tclthread
     SUBDIR += tcltls
-    SUBDIR += tclvfs
     SUBDIR += tclxml
     SUBDIR += tdl
     SUBDIR += template-glib
