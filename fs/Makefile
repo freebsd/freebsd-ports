@@ -37,6 +37,7 @@
     SUBDIR += ntfs-compression
     SUBDIR += pod
     SUBDIR += py-fs
+    SUBDIR += py-gcsfs
     SUBDIR += rar2fs
     SUBDIR += s3backer
     SUBDIR += s3fs
