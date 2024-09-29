@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.9.11
+DISTVERSION=	2024.9.12
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -282,7 +282,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pin-utils-0.1.0 \
 		pkcs8-0.10.2 \
 		pkg-config-0.3.31 \
-		portable-atomic-1.8.0 \
+		portable-atomic-1.9.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.20 \
 		precomputed-hash-0.1.1 \
@@ -382,7 +382,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tabled-0.16.0 \
 		tabled_derive-0.8.0 \
 		tar-0.4.42 \
-		tempfile-3.12.0 \
+		tempfile-3.13.0 \
 		tendril-0.4.3 \
 		tera-1.20.0 \
 		termcolor-1.4.1 \
@@ -433,7 +433,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		untrusted-0.9.0 \
 		url-2.5.2 \
 		urlencoding-2.1.3 \
-		usage-lib-0.7.4 \
+		usage-lib-0.8.3 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.2 \
 		valuable-0.1.0 \
