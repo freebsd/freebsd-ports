@@ -1,6 +1,6 @@
 PORTNAME=	symengine
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.0
+DISTVERSION=	0.13.0
 CATEGORIES=	math python
 #MASTER_SITES=	PYPI # latest release isn't compatible with math/symengine
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,6 @@ WWW=		https://symengine.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		incompatible with symengine-0.12.0, see https://github.com/symengine/symengine.py/issues/484
 
 LIB_DEPENDS=	libarb.so:math/arb \
 		libecm.so:math/gmp-ecm \
