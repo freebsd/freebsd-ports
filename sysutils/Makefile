@@ -1611,7 +1611,6 @@
     SUBDIR += zeroer
     SUBDIR += zetaback
     SUBDIR += zetaback-devel
-    SUBDIR += zfs-snapshot-clean
     SUBDIR += zfs-snapshot-mgmt
     SUBDIR += zfs-stats
     SUBDIR += zfs-stats-lite

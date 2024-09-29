@@ -110,6 +110,7 @@
     SUBDIR += zfs-periodic
     SUBDIR += zfs-replicate
     SUBDIR += zfs-snap-diff
+    SUBDIR += zfs-snapshot-clean
     SUBDIR += zip
 
 .include <bsd.port.subdir.mk>
