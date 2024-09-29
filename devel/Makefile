@@ -1289,7 +1289,6 @@
     SUBDIR += libfort
     SUBDIR += libfortuna
     SUBDIR += libfreefare
-    SUBDIR += libfsext
     SUBDIR += libfsfat
     SUBDIR += libfshfs
     SUBDIR += libfsntfs

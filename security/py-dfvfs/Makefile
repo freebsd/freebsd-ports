@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	libbde>=a:fs/libbde \
 		libewf>=0:devel/libewf \
 		libfsapfs>=e:fs/libfsapfs \
-		libfsext>=e:devel/libfsext \
+		libfsext>=e:fs/libfsext \
 		libfsfat>=e:devel/libfsfat \
 		libfshfs>=e:devel/libfshfs \
 		libfsntfs>=e:devel/libfsntfs \

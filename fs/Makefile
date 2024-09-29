@@ -23,6 +23,7 @@
     SUBDIR += jmtpfs
     SUBDIR += libbde
     SUBDIR += libfsapfs
+    SUBDIR += libfsext
     SUBDIR += lkl
     SUBDIR += mhddfs
     SUBDIR += mp3fs
