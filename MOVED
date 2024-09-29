@@ -3618,3 +3618,4 @@ sysutils/ntfs2btrfs|fs/ntfs2btrfs|2024-09-29|Moved to new category fs
 fs/openzfs-kmod|fs/openzfs-kmod|2024-09-29|Moved to new category fs
 sysutils/openzfs|fs/openzfs|2024-09-29|Moved to new category fs
 sysutils/p5-Filesys-Statvfs|fs/p5-Filesys-Statvfs|2024-09-29|Moved to new category fs
+sysutils/p5-Fuse|fs/p5-Fuse|2024-09-29|Moved to new category fs
