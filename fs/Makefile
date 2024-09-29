@@ -120,5 +120,6 @@
     SUBDIR += zip
     SUBDIR += zisofs-tools
     SUBDIR += zrepl
+    SUBDIR += zrepl-dsh2dsh
 
 .include <bsd.port.subdir.mk>
