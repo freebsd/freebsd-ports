@@ -1,0 +1,4 @@
+context.exec = [
+    { path = "%%WIREPLUMBER_CMD%%" args = ""
+      condition = [ { exec.session-manager = null } { exec.session-manager = true } ] }
+]

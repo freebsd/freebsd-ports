@@ -1,5 +1,6 @@
 PORTNAME=	wireplumber
 DISTVERSION=	0.5.6
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -43,5 +44,10 @@ PORTDOCS=	*
 post-patch:
 	${REINPLACE_CMD} -e "s|'python3'|'python${PYTHON_VER}'|" \
 		${WRKSRC}/docs/meson.build
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/pipewire/pipewire.conf.d
+	${SED} -e 's|%%WIREPLUMBER_CMD%%|${PREFIX}/bin/wireplumber|' \
+		${PATCHDIR}/10-wireplumber.in > ${STAGEDIR}${PREFIX}/share/pipewire/pipewire.conf.d/10-wireplumber.conf
 
 .include <bsd.port.mk>

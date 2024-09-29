@@ -115,6 +115,7 @@ libdata/pkgconfig/wireplumber-0.5.pc
 %%NLS%%share/locale/uk/LC_MESSAGES/wireplumber.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wireplumber.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wireplumber.mo
+share/pipewire/pipewire.conf.d/10-wireplumber.conf
 %%DATADIR%%/scripts/client/access-default.lua
 %%DATADIR%%/scripts/client/access-portal.lua
 %%DATADIR%%/scripts/client/access-snap.lua
