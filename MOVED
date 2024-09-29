@@ -3579,3 +3579,4 @@ devel/py-fusepy|fs/py-fusepy|2024-09-29|Moved to new category fs
 devel/py-libzfs|fs/py-libzfs|2024-09-29|Moved to new category fs
 devel/py-llfuse|fs/py-llfuse|2024-09-29|Moved to new category fs
 devel/py-pyfakefs|fs/py-pyfakefs|2024-09-29|Moved to new category fs
+devel/py-s3fs|fs/py-s3fs|2024-09-29|Moved to new category fs
