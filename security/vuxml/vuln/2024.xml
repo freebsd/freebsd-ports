@@ -1,3 +1,33 @@
+  <vuln vid="42ec2207-7e85-11ef-89a4-b42e991fc52e">
+    <topic>sqlite -- use-after-free bug in jsonparseaddnodearray</topic>
+    <affects>
+      <package>
+	<name>sqlite</name>
+	<range><lt>3.43.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secalert@redhat.com reports:</p>
+	<blockquote cite="https://access.redhat.com/security/cve/CVE-2024-0232">
+	  <p>A heap use-after-free issue has been identified in SQLite in the
+	jsonParseAddNodeArray() function in sqlite3.c.  This flaw allows a
+	local attacker to leverage a victim to pass specially crafted
+	malicious input to the application, potentially causing a crash and
+	leading to a denial of service.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-0232</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-0232</url>
+    </references>
+    <dates>
+      <discovery>2024-01-16</discovery>
+      <entry>2024-09-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="24375796-7cbc-11ef-a3a9-001cc0382b2f">
     <topic>cups-filters -- remote code execution</topic>
     <affects>
