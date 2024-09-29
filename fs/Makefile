@@ -89,6 +89,7 @@
     SUBDIR += s3backer
     SUBDIR += s3fs
     SUBDIR += sandboxfs
+    SUBDIR += scan_ffs
     SUBDIR += securefs
     SUBDIR += simple-mtpfs
     SUBDIR += smbnetfs
