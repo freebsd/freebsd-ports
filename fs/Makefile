@@ -1,5 +1,6 @@
     COMMENT = File systems and related utilities
 
+    SUBDIR += acfgfs
     SUBDIR += afuse
     SUBDIR += bindfs
     SUBDIR += chironfs
