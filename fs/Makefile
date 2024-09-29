@@ -32,6 +32,7 @@
     SUBDIR += lkl
     SUBDIR += mhddfs
     SUBDIR += mp3fs
+    SUBDIR += mtools
     SUBDIR += nbt
     SUBDIR += ntfs
     SUBDIR += ntfs-compression

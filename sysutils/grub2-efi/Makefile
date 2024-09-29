@@ -11,7 +11,7 @@ WWW=		https://www.gnu.org/software/grub/
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${LOCALBASE}/bin/mformat:emulators/mtools \
+RUN_DEPENDS=	${LOCALBASE}/bin/mformat:fs/mtools \
 		${LOCALBASE}/bin/grub-mkrescue:sysutils/grub2-pcbsd
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 		${LOCALBASE}/bin/bash:shells/bash \
