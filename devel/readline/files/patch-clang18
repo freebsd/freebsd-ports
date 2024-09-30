@@ -1,0 +1,28 @@
+--- readline.h.orig	2024-09-21 16:56:41 UTC
++++ readline.h
+@@ -407,7 +407,7 @@ extern int rl_message (const char *, ...)  __attribute
+ #if defined (USE_VARARGS) && defined (PREFER_STDARG)
+ extern int rl_message (const char *, ...)  __attribute__((__format__ (printf, 1, 2)));
+ #else
+-extern int rl_message ();
++extern int rl_message (void);
+ #endif
+ 
+ extern int rl_show_char (int);
+--- rltypedefs.h.orig	2021-01-22 15:04:18 UTC
++++ rltypedefs.h
+@@ -32,10 +32,10 @@ extern "C" {
+ #  define _FUNCTION_DEF
+ 
+ #if defined(__GNUC__) || defined(__clang__)
+-typedef int Function () __attribute__((deprecated));
+-typedef void VFunction () __attribute__((deprecated));
+-typedef char *CPFunction () __attribute__((deprecated));
+-typedef char **CPPFunction () __attribute__((deprecated));
++typedef int Function (void) __attribute__((deprecated));
++typedef void VFunction (void) __attribute__((deprecated));
++typedef char *CPFunction (void) __attribute__((deprecated));
++typedef char **CPPFunction (void) __attribute__((deprecated));
+ #else
+ typedef int Function ();
+ typedef void VFunction ();
