@@ -1,5 +1,5 @@
 PORTNAME=	anyio
-PORTVERSION=	4.4.0
+PORTVERSION=	4.6.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PY_EXCEPTIONGROUP} \
 		${PYTHON_PKGNAMEPREFIX}idna>=2.8:dns/py-idna@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sniffio>=1.1:devel/py-sniffio@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
@@ -26,7 +26,7 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	TRIO
 TRIO_DESC=	Use trio as backend
 
-TRIO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}trio>=0.23:net/py-trio@${PY_FLAVOR}
+TRIO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}trio>=0.26.1:net/py-trio@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 
