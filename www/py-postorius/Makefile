@@ -1,12 +1,13 @@
 PORTNAME=	postorius
-PORTVERSION=	1.3.12
+PORTVERSION=	1.3.13
 CATEGORIES=	www
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Web user interface for GNU Mailman
-WWW=		https://gitlab.com/mailman/postorius
+WWW=		https://docs.mailman3.org/projects/postorius/en/latest/ \
+		https://gitlab.com/mailman/postorius
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -21,7 +22,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=0:www/py-beautifulsoup@${PY_
 		${PYTHON_PKGNAMEPREFIX}django-requests-debug-toolbar>=0:www/py-django-requests-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isort>=0:devel/py-isort@${PY_FLAVOR}
 
-USES=		cpe python shebangfix
+USES=		cpe python:3.9+ shebangfix
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
