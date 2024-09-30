@@ -1,6 +1,6 @@
---- src/libstrongswan/plugins/openssl/openssl_plugin.c.orig	2018-12-14 15:48:24 UTC
+--- src/libstrongswan/plugins/openssl/openssl_plugin.c.orig	2024-02-21 15:54:00 UTC
 +++ src/libstrongswan/plugins/openssl/openssl_plugin.c
-@@ -810,7 +810,7 @@ plugin_t *openssl_plugin_create()
+@@ -814,7 +814,7 @@ plugin_t *openssl_plugin_create()
  		},
  	);
  
