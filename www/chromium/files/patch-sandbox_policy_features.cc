@@ -1,4 +1,4 @@
---- sandbox/policy/features.cc.orig	2024-08-26 12:06:38 UTC
+--- sandbox/policy/features.cc.orig	2024-09-30 07:45:04 UTC
 +++ sandbox/policy/features.cc
 @@ -20,7 +20,11 @@ namespace sandbox::policy::features {
  // (Only causes an effect when feature kNetworkServiceInProcess is disabled.)
@@ -12,8 +12,8 @@
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  // Enables a fine-grained seccomp-BPF syscall filter for the network service.
-@@ -147,7 +151,7 @@ BASE_FEATURE(kForceSpectreVariant2Mitigation,
-              base::FEATURE_DISABLED_BY_DEFAULT);
+@@ -140,7 +144,7 @@ BASE_FEATURE(kSpectreVariant2Mitigation,
+              base::FEATURE_ENABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

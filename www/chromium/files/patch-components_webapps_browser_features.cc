@@ -1,6 +1,6 @@
---- components/webapps/browser/features.cc.orig	2024-08-26 12:06:38 UTC
+--- components/webapps/browser/features.cc.orig	2024-09-30 07:45:04 UTC
 +++ components/webapps/browser/features.cc
-@@ -59,7 +59,7 @@ extern const base::FeatureParam<int> kBannerParamsDays
+@@ -43,7 +43,7 @@ extern const base::FeatureParam<int> kBannerParamsDays
  BASE_FEATURE(kWebAppsEnableMLModelForPromotion,
               "WebAppsEnableMLModelForPromotion",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

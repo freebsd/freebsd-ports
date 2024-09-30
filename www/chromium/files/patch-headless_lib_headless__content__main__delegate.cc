@@ -1,6 +1,6 @@
---- headless/lib/headless_content_main_delegate.cc.orig	2024-08-26 12:06:38 UTC
+--- headless/lib/headless_content_main_delegate.cc.orig	2024-09-30 07:45:04 UTC
 +++ headless/lib/headless_content_main_delegate.cc
-@@ -409,7 +409,7 @@ void HeadlessContentMainDelegate::InitCrashReporter(
+@@ -406,7 +406,7 @@ void HeadlessContentMainDelegate::InitCrashReporter(
    if (process_type != ::switches::kZygoteProcess) {
      g_headless_crash_client.Pointer()->set_crash_dumps_dir(
          command_line.GetSwitchValuePath(switches::kCrashDumpsDir));

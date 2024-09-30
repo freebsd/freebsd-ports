@@ -1,4 +1,4 @@
---- chrome/browser/profiles/profile_impl.cc.orig	2024-08-26 12:06:38 UTC
+--- chrome/browser/profiles/profile_impl.cc.orig	2024-09-30 07:45:04 UTC
 +++ chrome/browser/profiles/profile_impl.cc
 @@ -266,6 +266,10 @@
  #include "chrome/browser/spellchecker/spellcheck_service.h"
@@ -20,7 +20,7 @@
      ProfileManager* profile_manager = g_browser_process->profile_manager();
      ProfileAttributesEntry* entry =
          profile_manager->GetProfileAttributesStorage()
-@@ -901,7 +905,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
+@@ -903,7 +907,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
  }
  
  base::FilePath ProfileImpl::last_selected_directory() {

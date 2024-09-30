@@ -1,6 +1,6 @@
---- chrome/test/chromedriver/key_converter_unittest.cc.orig	2022-03-25 21:59:56 UTC
+--- chrome/test/chromedriver/key_converter_unittest.cc.orig	2024-09-30 07:45:04 UTC
 +++ chrome/test/chromedriver/key_converter_unittest.cc
-@@ -246,7 +246,7 @@ TEST(KeyConverter, ToggleModifiers) {
+@@ -251,7 +251,7 @@ TEST(KeyConverter, ToggleModifiers) {
    CheckEventsReleaseModifiers(keys, key_events);
  }
  
@@ -9,7 +9,7 @@
  // Fails on bots: crbug.com/174962
  #define MAYBE_AllEnglishKeyboardSymbols DISABLED_AllEnglishKeyboardSymbols
  #else
-@@ -303,7 +303,7 @@ TEST(KeyConverter, AllEnglishKeyboardTextChars) {
+@@ -308,7 +308,7 @@ TEST(KeyConverter, AllEnglishKeyboardTextChars) {
  TEST(KeyConverter, AllSpecialWebDriverKeysOnEnglishKeyboard) {
    ui::ScopedKeyboardLayout keyboard_layout(ui::KEYBOARD_LAYOUT_ENGLISH_US);
    const char kTextForKeys[] = {
