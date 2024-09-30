@@ -1,8 +1,9 @@
 PORTNAME=	scikit-base
-PORTVERSION=	0.7.5
+PORTVERSION=	0.10.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	scikit_base-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Base classes for sklearn-like parametric objects
