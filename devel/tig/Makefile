@@ -1,6 +1,5 @@
 PORTNAME=	tig
-DISTVERSION=	2.5.8
-PORTREVISION=	1
+DISTVERSION=	2.5.10
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/jonas/tig/releases/download/${DISTNAME}/
 
