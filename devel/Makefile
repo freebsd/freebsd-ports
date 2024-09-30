@@ -5420,6 +5420,7 @@
     SUBDIR += py-pox
     SUBDIR += py-poyo
     SUBDIR += py-ppft
+    SUBDIR += py-pprintpp
     SUBDIR += py-prance
     SUBDIR += py-pre-commit
     SUBDIR += py-pre-commit-hooks
