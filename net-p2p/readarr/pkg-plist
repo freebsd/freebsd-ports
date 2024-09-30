@@ -1,5 +1,6 @@
 %%DATADIR%%/bin/BouncyCastle.Crypto.dll
 %%DATADIR%%/bin/Dapper.dll
+%%DATADIR%%/bin/Diacritical.dll
 %%DATADIR%%/bin/DryIoc.Microsoft.DependencyInjection.dll
 %%DATADIR%%/bin/DryIoc.dll
 %%DATADIR%%/bin/Dynamitey.dll
@@ -451,10 +452,10 @@
 %%DATADIR%%/bin/UI/607-678d3c964d6dffc74c37.js
 %%DATADIR%%/bin/UI/607-678d3c964d6dffc74c37.js.LICENSE.txt
 %%DATADIR%%/bin/UI/607-678d3c964d6dffc74c37.js.map
-%%DATADIR%%/bin/UI/84-5542cf16daef4ed966d9.js
-%%DATADIR%%/bin/UI/84-5542cf16daef4ed966d9.js.map
-%%DATADIR%%/bin/UI/Content/84-38e6db6555e1e209cfec.css
-%%DATADIR%%/bin/UI/Content/84-38e6db6555e1e209cfec.css.map
+%%DATADIR%%/bin/UI/84-d2c50ab9a104a06d916e.js
+%%DATADIR%%/bin/UI/84-d2c50ab9a104a06d916e.js.map
+%%DATADIR%%/bin/UI/Content/84-126c893641011edca8a6.css
+%%DATADIR%%/bin/UI/Content/84-126c893641011edca8a6.css.map
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.ttf
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.woff
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.woff2
@@ -495,8 +496,8 @@
 %%DATADIR%%/bin/UI/Content/robots.txt
 %%DATADIR%%/bin/UI/Content/styles.css
 %%DATADIR%%/bin/UI/Content/styles.css.map
-%%DATADIR%%/bin/UI/index-e1abf90fc9f8d713905a.js
-%%DATADIR%%/bin/UI/index-e1abf90fc9f8d713905a.js.map
+%%DATADIR%%/bin/UI/index-02d7753bc6820a14eece.js
+%%DATADIR%%/bin/UI/index-02d7753bc6820a14eece.js.map
 %%DATADIR%%/bin/UI/index.html
 %%DATADIR%%/bin/UI/login.html
 %%DATADIR%%/bin/UI/oauth.html
