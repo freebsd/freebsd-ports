@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.9.12
+DISTVERSION=	2024.9.13
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -246,7 +246,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		num_threads-0.1.7 \
 		number_prefix-0.4.0 \
 		object-0.32.2 \
-		once_cell-1.19.0 \
+		once_cell-1.20.1 \
 		openssl-0.10.66 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
@@ -304,11 +304,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.5.6 \
-		regex-1.10.6 \
+		regex-1.11.0 \
 		regex-automata-0.1.10 \
-		regex-automata-0.4.7 \
+		regex-automata-0.4.8 \
 		regex-syntax-0.6.29 \
-		regex-syntax-0.8.4 \
+		regex-syntax-0.8.5 \
 		reqwest-0.12.7 \
 		ring-0.17.8 \
 		rmp-0.8.14 \
@@ -418,7 +418,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		try-lock-0.2.5 \
 		typeid-1.0.2 \
 		typenum-1.17.0 \
-		ucd-trie-0.1.6 \
+		ucd-trie-0.1.7 \
 		unic-char-property-0.9.0 \
 		unic-char-range-0.9.0 \
 		unic-common-0.9.0 \
@@ -433,7 +433,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		untrusted-0.9.0 \
 		url-2.5.2 \
 		urlencoding-2.1.3 \
-		usage-lib-0.8.3 \
+		usage-lib-0.8.4 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.2 \
 		valuable-0.1.0 \
