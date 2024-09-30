@@ -1,6 +1,15 @@
---- interp.c.orig	1995-11-07 02:17:26 UTC
+--- interp.c.orig
 +++ interp.c
-@@ -516,7 +516,7 @@ int mo, day, yr;
+@@ -33,7 +33,7 @@
+ #include <setjmp.h>
+ #include <ctype.h>
+ 
+-extern int errno;		/* set by math functions */
++#include <errno.h>
+ 
+ #include "sc.h"
+ 
+@@ -516,7 +516,7 @@
      mdays[1] = 28 + (yr%4 == 0);
  
      if (mo < 1 || mo > 12 || day < 1 || day > mdays[--mo] ||
