@@ -1,6 +1,5 @@
 PORTNAME=	songrec
-DISTVERSION=	0.4.2
-PORTREVISION=	6
+DISTVERSION=	0.4.3
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,11 +23,12 @@ GH_ACCOUNT=	marin-m
 GH_PROJECT=	SongRec
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
-		alsa-0.5.0 \
+		alsa-0.9.1 \
 		alsa-sys-0.3.1 \
 		ansi_term-0.11.0 \
 		anyhow-1.0.47 \
 		app_dirs-1.2.1 \
+		arrayvec-0.7.6 \
 		atk-0.9.0 \
 		atk-sys-0.10.0 \
 		atty-0.2.14 \
@@ -37,9 +37,11 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		base64-0.13.0 \
 		bindgen-0.56.0 \
 		bitflags-1.2.1 \
+		bitflags-2.6.0 \
 		block-0.1.6 \
 		bstr-0.2.17 \
 		bumpalo-3.8.0 \
+		bytemuck-1.18.0 \
 		byteorder-1.4.3 \
 		bytes-0.5.6 \
 		bytes-1.1.0 \
@@ -57,19 +59,15 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		claxon-0.4.3 \
 		combine-4.6.2 \
 		core-foundation-0.9.2 \
-		core-foundation-sys-0.6.2 \
 		core-foundation-sys-0.8.3 \
-		coreaudio-rs-0.10.0 \
+		coreaudio-rs-0.11.3 \
 		coreaudio-sys-0.2.8 \
-		cpal-0.13.3 \
+		cpal-0.15.3 \
 		crc32fast-1.2.1 \
 		csv-1.1.6 \
 		csv-core-0.1.10 \
-		darling-0.10.2 \
-		darling_core-0.10.2 \
-		darling_macro-0.10.2 \
+		dasp_sample-0.11.0 \
 		dbus-0.6.5 \
-		derivative-2.2.0 \
 		directories-4.0.1 \
 		dirs-3.0.2 \
 		dirs-sys-0.3.6 \
@@ -118,19 +116,16 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		httpdate-0.3.2 \
 		hyper-0.13.10 \
 		hyper-tls-0.4.3 \
-		ident_case-1.0.1 \
 		idna-0.2.3 \
 		indexmap-1.7.0 \
-		instant-0.1.12 \
 		iovec-0.1.4 \
 		ipnet-2.3.1 \
 		itertools-0.9.0 \
 		itoa-0.4.8 \
-		jni-0.18.0 \
-		jni-0.19.0 \
+		jni-0.21.1 \
 		jni-sys-0.3.0 \
 		jobserver-0.1.24 \
-		js-sys-0.3.55 \
+		js-sys-0.3.70 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
@@ -141,52 +136,43 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		libpulse-binding-2.26.0 \
 		libpulse-sys-1.19.2 \
 		locale_config-0.3.0 \
-		lock_api-0.4.5 \
 		log-0.4.14 \
-		mach-0.3.2 \
+		mach2-0.4.2 \
 		malloc_buf-0.0.6 \
 		matches-0.1.9 \
 		memchr-2.4.1 \
-		memoffset-0.6.4 \
 		mime-0.3.16 \
 		mime_guess-2.0.3 \
-		minimp3-0.5.1 \
-		minimp3-sys-0.3.2 \
 		mio-0.6.23 \
 		miow-0.2.2 \
 		mpris-player-0.6.1 \
 		native-tls-0.2.8 \
-		ndk-0.3.0 \
-		ndk-0.4.0 \
-		ndk-glue-0.3.0 \
-		ndk-glue-0.4.0 \
-		ndk-macro-0.2.0 \
-		ndk-sys-0.2.1 \
+		ndk-0.8.0 \
+		ndk-context-0.1.1 \
+		ndk-sys-0.5.0+25.2.9519653 \
 		net2-0.2.37 \
-		nix-0.20.2 \
 		nom-5.1.2 \
 		num-complex-0.4.0 \
 		num-derive-0.3.3 \
+		num-derive-0.4.2 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.0 \
-		num_enum-0.5.4 \
-		num_enum_derive-0.5.4 \
+		num_enum-0.7.3 \
+		num_enum_derive-0.7.3 \
 		objc-0.2.7 \
 		objc-foundation-0.1.1 \
 		objc_id-0.1.1 \
-		oboe-0.4.4 \
-		oboe-sys-0.4.4 \
+		oboe-0.6.1 \
+		oboe-sys-0.6.1 \
 		ogg-0.8.0 \
 		ole32-sys-0.2.0 \
-		once_cell-1.8.0 \
+		once_cell-1.19.0 \
 		openssl-0.10.38 \
 		openssl-probe-0.1.4 \
 		openssl-sys-0.9.71 \
 		pango-0.9.1 \
 		pango-sys-0.10.0 \
-		parking_lot-0.11.2 \
-		parking_lot_core-0.8.5 \
 		peeking_take_while-0.1.2 \
 		percent-encoding-2.1.0 \
 		pin-project-1.0.8 \
@@ -202,9 +188,9 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
 		proc-macro-nested-0.1.7 \
-		proc-macro2-1.0.32 \
+		proc-macro2-1.0.86 \
 		pulsectl-rs-0.3.2 \
-		quote-1.0.10 \
+		quote-1.0.37 \
 		rand-0.7.3 \
 		rand-0.8.4 \
 		rand_chacha-0.2.2 \
@@ -220,12 +206,11 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
 		reqwest-0.10.10 \
-		rodio-0.13.1 \
+		rodio-0.19.0 \
 		rustc-hash-1.1.0 \
 		ryu-1.0.5 \
 		same-file-1.0.6 \
 		schannel-0.1.19 \
-		scopeguard-1.1.0 \
 		security-framework-2.3.1 \
 		security-framework-sys-2.4.2 \
 		serde-1.0.130 \
@@ -235,20 +220,21 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		shell32-sys-0.1.2 \
 		shlex-0.1.1 \
 		slab-0.4.5 \
-		slice-deque-0.3.0 \
-		smallvec-1.7.0 \
 		socket2-0.3.19 \
-		stdweb-0.1.3 \
 		strsim-0.8.0 \
-		strsim-0.9.3 \
 		strum-0.18.0 \
 		strum_macros-0.18.0 \
+		symphonia-0.5.4 \
+		symphonia-bundle-mp3-0.5.4 \
+		symphonia-core-0.5.4 \
+		symphonia-metadata-0.5.4 \
 		syn-1.0.81 \
+		syn-2.0.77 \
 		system-deps-1.3.2 \
 		tempfile-3.2.0 \
 		textwrap-0.11.0 \
-		thiserror-1.0.30 \
-		thiserror-impl-1.0.30 \
+		thiserror-1.0.64 \
+		thiserror-impl-1.0.64 \
 		time-0.1.43 \
 		tinyvec-1.5.1 \
 		tinyvec_macros-0.1.0 \
@@ -264,6 +250,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		try-lock-0.2.3 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.7 \
+		unicode-ident-1.0.13 \
 		unicode-normalization-0.1.19 \
 		unicode-segmentation-1.8.0 \
 		unicode-width-0.1.9 \
@@ -278,12 +265,12 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		want-0.3.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.78 \
-		wasm-bindgen-backend-0.2.78 \
-		wasm-bindgen-futures-0.4.28 \
-		wasm-bindgen-macro-0.2.78 \
-		wasm-bindgen-macro-support-0.2.78 \
-		wasm-bindgen-shared-0.2.78 \
+		wasm-bindgen-0.2.93 \
+		wasm-bindgen-backend-0.2.93 \
+		wasm-bindgen-futures-0.4.43 \
+		wasm-bindgen-macro-0.2.93 \
+		wasm-bindgen-macro-support-0.2.93 \
+		wasm-bindgen-shared-0.2.93 \
 		web-sys-0.3.55 \
 		winapi-0.2.8 \
 		winapi-0.3.9 \
@@ -291,6 +278,27 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.54.0 \
+		windows-core-0.54.0 \
+		windows-result-0.1.2 \
+		windows-sys-0.45.0 \
+		windows-targets-0.42.2 \
+		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.52.6 \
+		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.52.6 \
 		winreg-0.7.0 \
 		ws2_32-sys-0.2.1 \
 		xdg-2.4.0
