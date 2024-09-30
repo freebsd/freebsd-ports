@@ -3499,3 +3499,8 @@ www/thundercache||2024-09-30|Has expired: Deprecated and outdated, product is st
 math/tablix||2024-09-30|Has expired: Abandonware, upstream is gone and source code is no longer available
 www/mod_amazon_proxy||2024-09-30|Has expired: Abandonware, last updated in 2010
 www/subsonic-standalone||2024-09-30|Has expired: Abandonware, no longer maintained upstream as of 2019
+sysutils/bacula9-client||2024-09-30|Has expired: Unsupported. Please migrate to bacula15-server
+sysutils/bacula9-client-static||2024-09-30|Has expired: Unsupported. Please migrate to bacula15-server
+sysutils/bacula9-docs||2024-09-30|Has expired: Unsupported. Please migrate to bacula15-server
+sysutils/bacula9-server||2024-09-30|Has expired: Unsupported. Please migrate to bacula15-server
+net-mgmt/nagios-check_bacula9||2024-09-30|Has expired: Unsupported. Please migrate to bacula15-server
