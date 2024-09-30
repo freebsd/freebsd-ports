@@ -11,6 +11,9 @@ WWW=		https://github.com/sckott/habanero
 
 LICENSE=	MIT
 
+DEPRECATED=	Depends on expired devel/py-codecov
+EXPIRATION_DATE=2024-12-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}codecov>0:devel/py-codecov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
