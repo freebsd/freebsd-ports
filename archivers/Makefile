@@ -231,6 +231,7 @@
     SUBDIR += rubygem-libarchive
     SUBDIR += rubygem-minitar
     SUBDIR += rubygem-minitar-cli
+    SUBDIR += rubygem-minitar-cli0
     SUBDIR += rubygem-minitar0
     SUBDIR += rubygem-ruby-xz
     SUBDIR += rubygem-rubyzip
