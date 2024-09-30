@@ -3494,3 +3494,4 @@ audio/py-tagpy||2024-09-30|Has expired: Abandonded upstream
 devel/libdsp||2024-09-30|Has expired: Abandonware, last release upstream in 2005 and unmaintained since 2015
 devel/libxs||2024-09-30|Has expired: Upstream is gone and repo is deleted
 games/adonthell-wastesedge||2024-09-30|Has expired: Depends on deprecated port games/adonthell
+games/adonthell||2024-09-30|Has expired: Unmaintained in tree and broken for months

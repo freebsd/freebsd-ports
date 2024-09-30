@@ -29,7 +29,6 @@
     SUBDIR += abuse_sdl
     SUBDIR += ace-of-penguins
     SUBDIR += adom
-    SUBDIR += adonthell
     SUBDIR += aestats
     SUBDIR += affenspiel
     SUBDIR += afternoonstalker
