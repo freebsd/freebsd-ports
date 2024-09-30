@@ -1,10 +1,8 @@
 PORTNAME=	edict
 PORTVERSION=	19990714
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese
-MASTER_SITES=	\
-		http://japanology.arts.kuleuven.ac.be/mirrors/monash/ \
-		http://ftp.edrdg.org/pub/Nihongo/
+MASTER_SITES=	http://ftp.edrdg.org/pub/Nihongo/
 DISTFILES=	${DICTFILES} ${SRCFILES} ${DOCFILES}
 DIST_SUBDIR=	edict
 EXTRACT_ONLY=	${SRCFILES}
