@@ -1,3 +1,42 @@
+  <vuln vid="2f82696c-adad-447b-9938-c99441805fa3">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>129.0.6668.70</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>129.0.6668.70</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/09/stable-channel-update-for-desktop_24.html">
+	 <p>This update includes 5 security fixes:</p>
+	 <ul>
+	    <li>[365254285] High CVE-2024-9120: Use after free in Dawn. Reported by Anonymous on 2024-09-08</li>
+	    <li>[363538434] High CVE-2024-9121: Inappropriate implementation in V8. Reported by Tashita Software Security on 2024-09-01</li>
+	    <li>[365802567] High CVE-2024-9122: Type Confusion in V8. Reported by Seunghyun Lee (@0x10n) on 2024-09-10</li>
+	    <li>[365884464] High CVE-2024-9123: Integer overflow in Skia. Reported by raven at KunLun lab on 2024-09-11</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-9120</cvename>
+      <cvename>CVE-2024-9121</cvename>
+      <cvename>CVE-2024-9122</cvename>
+      <cvename>CVE-2024-9123</cvename>
+      <url>https://chromereleases.googleblog.com/2024/09/stable-channel-update-for-desktop_24.html</url>
+    </references>
+    <dates>
+      <discovery>2024-09-24</discovery>
+      <entry>2024-09-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="42ec2207-7e85-11ef-89a4-b42e991fc52e">
     <topic>sqlite -- use-after-free bug in jsonparseaddnodearray</topic>
     <affects>
