@@ -1,6 +1,14 @@
---- leapsecs_read.c.orig	Thu May 24 20:07:04 2001
-+++ leapsecs_read.c	Thu May 24 20:12:33 2001
-@@ -18,7 +18,7 @@
+--- leapsecs_read.c.orig
++++ leapsecs_read.c
+@@ -2,7 +2,6 @@
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ #include <errno.h>
+-extern int errno;
+ #include "tai.h"
+ #include "leapsecs.h"
+ 
+@@ -18,7 +17,7 @@
    int i;
    struct tai u;
  
