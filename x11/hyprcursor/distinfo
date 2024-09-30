@@ -1,3 +1,5 @@
-TIMESTAMP = 1716576411
-SHA256 (hyprwm-hyprcursor-v0.1.9_GH0.tar.gz) = 313cd91436af343918e6dec4a666d4bf3666149ac3cac6f36c683b70304eada4
-SIZE (hyprwm-hyprcursor-v0.1.9_GH0.tar.gz) = 26111
+TIMESTAMP = 1727731502
+SHA256 (hyprwm-hyprcursor-v0.1.10_GH0.tar.gz) = 67e845404164fee4c5694209b3d5f93a31b6963dbb0bfd6ed2cd96c99b316a08
+SIZE (hyprwm-hyprcursor-v0.1.10_GH0.tar.gz) = 26654
+SHA256 (f8e8455e998e.patch) = b72cf7ab70b9c193c62ddcee45e70106ba4b5f26e9aded6fee8b41f7630876d2
+SIZE (f8e8455e998e.patch) = 1028
