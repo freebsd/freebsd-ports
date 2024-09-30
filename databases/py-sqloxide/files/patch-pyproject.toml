@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-09-13 16:10:59 UTC
++++ pyproject.toml
+@@ -13,7 +13,7 @@ classifiers = [
+ ]
+ 
+ [build-system]
+-requires = ["maturin>=0.13,<0.14"]
++requires = ["maturin>=0.13"]
+ build-backend = "maturin"
+ 
+ [project]
