@@ -16,4 +16,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.8.3:devel/py-poetry-core@${
 USES=		python
 USE_PYTHON=	autoplist pep517
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
