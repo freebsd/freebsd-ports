@@ -1,12 +1,14 @@
 --- compface/cmain.c.orig
 +++ compface/cmain.c
-@@ -13,77 +13,64 @@
+@@ -13,77 +13,63 @@
   *  to me, then an attempt will be made to fix them.
   */
  
 -#include <stdlib.h>
 -#include <unistd.h>
++#include <errno.h>
  #include <fcntl.h>
++#include <stdio.h>
  #include "compface.h"
  
 -#define  STRCAT        (void) strcat
@@ -33,11 +35,10 @@
 -/* Error handling definitions follow */
 +/* error handling definitions follow */
  
- extern int errno, sys_nerr;
- extern char *sys_errlist[];
- 
+-extern int errno, sys_nerr;
+-extern char *sys_errlist[];
 +extern void exit P((int)) ;
-+
+ 
  #define ERR         ((errno < sys_nerr) ? sys_errlist[errno] : "")
 -#define INITERR(s)  { \
 -                        STRCPY(fbuf, cmdname); \
@@ -106,7 +107,7 @@
              INITERR(inname)
              ADDERR(": ")
              ADDERR(ERR)
-@@ -91,10 +78,11 @@
+@@ -91,10 +77,11 @@
          }
      }
  
@@ -121,7 +122,7 @@
              INITERR(outname)
              ADDERR(": ")
              ADDERR(ERR)
-@@ -103,7 +91,8 @@
+@@ -103,7 +90,8 @@
      }
  
      (void) ReadBuf();
@@ -131,7 +132,7 @@
          case -2 : INITERR("internal error")
                    ERROR
          case -1 : INITERR(inname)
-@@ -123,13 +112,15 @@
+@@ -123,13 +111,15 @@
  int
  WriteBuf()
  {
@@ -151,7 +152,7 @@
              INITERR(outname)
              ADDERR(": ")
              ADDERR(ERR)
-@@ -137,27 +128,30 @@
+@@ -137,27 +127,30 @@
          }
          s += len;
      }
@@ -188,7 +189,7 @@
              INITWARN(inname)
              ADDWARN(" exceeds internal buffer size.  Data may be lost")
              WARN
-@@ -165,5 +159,5 @@
+@@ -165,5 +158,5 @@
          }
      }
      *t = '\0';

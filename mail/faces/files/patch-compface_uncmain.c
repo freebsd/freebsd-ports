@@ -1,12 +1,14 @@
 --- compface/uncmain.c.orig
 +++ compface/uncmain.c
-@@ -13,16 +13,12 @@
+@@ -13,16 +13,14 @@
   *  to me, then an attempt will be made to fix them.
   */
  
 -#include <stdlib.h>
 -#include <unistd.h>
++#include <errno.h>
  #include <fcntl.h>
++#include <stdio.h>
  #include "compface.h"
  
 -#define  STRCAT        (void) strcat
@@ -19,7 +21,7 @@
  #define FACEBUFLEN 2048
  char fbuf[FACEBUFLEN];
  
-@@ -32,56 +28,58 @@
+@@ -32,56 +30,55 @@
  int outfile   = 1;
  char *outname = "<stdout>";
  
@@ -30,11 +32,10 @@
 -/* Error handling definitions follow */
 +/* error handling definitions follow */
  
- extern int errno, sys_nerr;
- extern char *sys_errlist[];
- 
+-extern int errno, sys_nerr;
+-extern char *sys_errlist[];
 +extern void exit P((int)) ;
-+
+ 
  #define ERR         ((errno < sys_nerr) ? sys_errlist[errno] : "")
 -#define INITERR(s)  { \
 -                        STRCPY(fbuf, cmdname); \
@@ -108,7 +109,7 @@
              INITERR(inname)
              ADDERR(": ")
              ADDERR(ERR)
-@@ -89,10 +87,11 @@
+@@ -89,10 +86,11 @@
          }
      }
  
@@ -123,7 +124,7 @@
              INITERR(outname)
              ADDERR(": ")
              ADDERR(ERR)
-@@ -101,7 +100,8 @@
+@@ -101,7 +99,8 @@
      }
  
      (void) ReadBuf();
@@ -133,7 +134,7 @@
          case -2 : INITERR("internal error")
                    ERROR
          case -1 : INITERR(inname)
-@@ -121,13 +121,15 @@
+@@ -121,13 +120,15 @@
  int
  WriteBuf()
  {
@@ -153,7 +154,7 @@
              INITERR(outname)
              ADDERR(": ")
              ADDERR(ERR)
-@@ -135,27 +137,30 @@
+@@ -135,27 +136,30 @@
          }
          s += len;
      }
@@ -190,7 +191,7 @@
              INITWARN(inname)
              ADDWARN(" exceeds internal buffer size.  Data may be lost")
              WARN
-@@ -163,5 +168,5 @@
+@@ -163,5 +167,5 @@
          }
      }
      *t = '\0';
