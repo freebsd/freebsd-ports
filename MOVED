@@ -3496,3 +3496,4 @@ devel/libxs||2024-09-30|Has expired: Upstream is gone and repo is deleted
 games/adonthell-wastesedge||2024-09-30|Has expired: Depends on deprecated port games/adonthell
 games/adonthell||2024-09-30|Has expired: Unmaintained in tree and broken for months
 www/thundercache||2024-09-30|Has expired: Deprecated and outdated, product is still being maintained upstream
+math/tablix||2024-09-30|Has expired: Abandonware, upstream is gone and source code is no longer available
