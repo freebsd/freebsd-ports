@@ -2334,7 +2334,6 @@
     SUBDIR += samdruckerserver
     SUBDIR += sarg
     SUBDIR += scloader
-    SUBDIR += screego
     SUBDIR += script4rss
     SUBDIR += seahub
     SUBDIR += searx

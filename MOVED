@@ -3512,3 +3512,4 @@ net-mgmt/nagios-check_bacula11||2024-09-30|Has expired: Unsupported. Please migr
 sysutils/bhyve+||2024-09-30|Has expired: EOLed upstream
 www/sahi||2024-09-30|Has expired: Abandonware and outdated, newer versions requires users to purchase a license and current versions refers to Java 1.5
 www/template_||2024-09-30|Has expired: Abandonware, outdated and last version released upstream was released in 2015
+www/screego||2024-09-30|Has expired: Outdated, unmaintained in tree and marked broken over a year ago
