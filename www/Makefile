@@ -2386,7 +2386,6 @@
     SUBDIR += tclwebtest
     SUBDIR += tdiary
     SUBDIR += tdom
-    SUBDIR += template_
     SUBDIR += templatelite
     SUBDIR += tgpt
     SUBDIR += thirtybees

@@ -1,9 +1,0 @@
-%%DATADIR%%/tpl_plugin/function.returnHello.php
-%%DATADIR%%/tpl_plugin/functions.safe_mode.ini
-%%DATADIR%%/tpl_plugin/object.say.php
-%%DATADIR%%/tpl_plugin/postfilter.arrangeSpace.php
-%%DATADIR%%/tpl_plugin/postfilter.removeTmpCode.php
-%%DATADIR%%/tpl_plugin/prefilter.adjustPath.php
-%%DATADIR%%/tpl_plugin/prefilter.parseMySyntax.php
-%%DATADIR%%/Template_.class.php
-%%DATADIR%%/Template_.compiler.php
