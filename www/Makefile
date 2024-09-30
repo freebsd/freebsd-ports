@@ -2331,7 +2331,6 @@
     SUBDIR += rustypaste-cli
     SUBDIR += s
     SUBDIR += sabredav
-    SUBDIR += sahi
     SUBDIR += samdruckerserver
     SUBDIR += sarg
     SUBDIR += scloader
