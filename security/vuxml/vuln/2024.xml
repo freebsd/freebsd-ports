@@ -1,3 +1,33 @@
+  <vuln vid="f9cfdb00-7f43-11ef-9b27-592d55dd336d">
+    <topic>Slixmpp -- Lack of SSL Certificate hostname validation in XMLStream</topic>
+    <affects>
+      <package>
+	<name>py38-slixmpp</name>
+	<name>py39-slixmpp</name>
+	<name>py310-slixmpp</name>
+	<name>py311-slixmpp</name>
+	<range><lt>1.8.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NIST reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2022-45197">
+	  <p>Slixmpp before 1.8.3 lacks SSL Certificate hostname validation in XMLStream,
+	allowing an attacker to pose as any server in the eyes of Slixmpp.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2022-45197</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-45197</url>
+    </references>
+    <dates>
+      <discovery>2022-12-25</discovery>
+      <entry>2024-09-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2f82696c-adad-447b-9938-c99441805fa3">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
