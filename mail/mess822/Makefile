@@ -1,6 +1,6 @@
 PORTNAME=	mess822
 PORTVERSION=	0.58
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.jp.qmail.org/qmail/ \
