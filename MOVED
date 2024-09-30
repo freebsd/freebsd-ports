@@ -3493,3 +3493,4 @@ misc/raspberrypi-userland||2024-09-30|Has expired: Deprecated by the upstream
 audio/py-tagpy||2024-09-30|Has expired: Abandonded upstream
 devel/libdsp||2024-09-30|Has expired: Abandonware, last release upstream in 2005 and unmaintained since 2015
 devel/libxs||2024-09-30|Has expired: Upstream is gone and repo is deleted
+games/adonthell-wastesedge||2024-09-30|Has expired: Depends on deprecated port games/adonthell
