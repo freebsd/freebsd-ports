@@ -6302,7 +6302,6 @@
     SUBDIR += rpc2
     SUBDIR += rpclib
     SUBDIR += rsvndump
-    SUBDIR += rth
     SUBDIR += rttr
     SUBDIR += ruby-bsearch
     SUBDIR += ruby-build
