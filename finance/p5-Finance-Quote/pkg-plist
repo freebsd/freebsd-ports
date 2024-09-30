@@ -21,6 +21,7 @@
 %%SITE_PERL%%/Finance/Quote/DWS.pm
 %%SITE_PERL%%/Finance/Quote/Deka.pm
 %%SITE_PERL%%/Finance/Quote/FTfunds.pm
+%%SITE_PERL%%/Finance/Quote/FinanceAPI.pm
 %%SITE_PERL%%/Finance/Quote/Finanzpartner.pm
 %%SITE_PERL%%/Finance/Quote/Fondsweb.pm
 %%SITE_PERL%%/Finance/Quote/Fool.pm
@@ -80,6 +81,7 @@
 %%PERL5_MAN3%%/Finance::Quote::DWS.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Deka.3.gz
 %%PERL5_MAN3%%/Finance::Quote::FTfunds.3.gz
+%%PERL5_MAN3%%/Finance::Quote::FinanceAPI.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Finanzpartner.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Fondsweb.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Fool.3.gz
