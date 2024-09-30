@@ -17,4 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}terminaltexteffects>=0.11.0:devel/py-termina
 USES=		python
 USE_PYTHON=	autoplist pep517
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
