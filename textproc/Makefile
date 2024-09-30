@@ -1620,6 +1620,7 @@
     SUBDIR += py-sphinxcontrib-bitbucket
     SUBDIR += py-sphinxcontrib-blockdiag
     SUBDIR += py-sphinxcontrib-devhelp
+    SUBDIR += py-sphinxcontrib-django
     SUBDIR += py-sphinxcontrib-fulltoc
     SUBDIR += py-sphinxcontrib-htmlhelp
     SUBDIR += py-sphinxcontrib-httpdomain
