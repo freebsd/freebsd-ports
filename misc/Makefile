@@ -552,7 +552,6 @@
     SUBDIR += quary
     SUBDIR += randomx
     SUBDIR += raspberrypi-gpioshutdown
-    SUBDIR += raspberrypi-userland
     SUBDIR += raspbsd-led
     SUBDIR += ree
     SUBDIR += retry
