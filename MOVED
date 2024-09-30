@@ -3509,3 +3509,4 @@ sysutils/bacula11-client-static||2024-09-30|Has expired: Unsupported. Please mig
 sysutils/bacula11-docs||2024-09-30|Has expired: Unsupported. Please migrate to bacula15-server
 sysutils/bacula11-server||2024-09-30|Has expired: Unsupported. Please migrate to bacula15-server
 net-mgmt/nagios-check_bacula11||2024-09-30|Has expired: Unsupported. Please migrate to bacula15-server
+sysutils/bhyve+||2024-09-30|Has expired: EOLed upstream

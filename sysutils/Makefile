@@ -124,7 +124,6 @@
     SUBDIR += beats7
     SUBDIR += beats8
     SUBDIR += bfs
-    SUBDIR += bhyve+
     SUBDIR += bhyve-firmware
     SUBDIR += bhyve-rc
     SUBDIR += bhyvemgr
