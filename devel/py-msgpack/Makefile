@@ -1,5 +1,5 @@
 PORTNAME=	msgpack
-PORTVERSION=	1.1.0	# NOTE: check archivers/py-borgbackup* or consult its maintainer because borgbackup pins minor versions of msgpack. We may need to copy an additional version of msgpack in the ports tree.
+PORTVERSION=	1.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
