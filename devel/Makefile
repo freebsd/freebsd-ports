@@ -1258,7 +1258,6 @@
     SUBDIR += libdombey
     SUBDIR += libdparse
     SUBDIR += libds
-    SUBDIR += libdsp
     SUBDIR += libdwarf
     SUBDIR += libe
     SUBDIR += libedit
