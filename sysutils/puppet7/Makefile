@@ -1,5 +1,5 @@
 PORTNAME=	puppet
-PORTVERSION=	7.32.1
+PORTVERSION=	7.33.0
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
 PKGNAMESUFFIX=	7
@@ -19,8 +19,8 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>1.0:devel/rubygem-concurrent-ruby \
 		rubygem-multi_json>=1.10:devel/rubygem-multi_json \
 		rubygem-puppet-resource_api>=1.5:devel/rubygem-puppet-resource_api \
 		rubygem-ruby-augeas>=0:textproc/rubygem-ruby-augeas \
-		rubygem-scanf>=1:devel/rubygem-scanf \
-		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet
+		rubygem-scanf>=1.0:devel/rubygem-scanf \
+		rubygem-semantic_puppet>=1.0:devel/rubygem-semantic_puppet
 
 USES=		cpe ruby
 USE_GITHUB=	yes
