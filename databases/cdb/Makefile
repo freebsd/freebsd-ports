@@ -1,5 +1,6 @@
 PORTNAME=	cdb
 PORTVERSION=	0.75
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://cr.yp.to/cdb/
 
