@@ -1,6 +1,6 @@
 PORTNAME=	qmailanalog
 PORTVERSION=	0.70
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		http://www.emaillab.org/djb/qmailanalog/
