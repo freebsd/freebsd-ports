@@ -3490,3 +3490,4 @@ security/nextcloud-twofactor_nextcloud_notification||2024-09-27|Removed, bundled
 textproc/hs-pandoc32|textproc/hs-pandoc|2024-09-29|the only user changed to textproc/hs-pandoc
 archivers/librtfcomp||2024-09-30|Remove expired port. Latest version was released in 2013. There is no consumers in the ports tree
 misc/raspberrypi-userland||2024-09-30|Has expired: Deprecated by the upstream
+audio/py-tagpy||2024-09-30|Has expired: Abandonded upstream
