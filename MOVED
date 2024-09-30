@@ -3513,3 +3513,4 @@ sysutils/bhyve+||2024-09-30|Has expired: EOLed upstream
 www/sahi||2024-09-30|Has expired: Abandonware and outdated, newer versions requires users to purchase a license and current versions refers to Java 1.5
 www/template_||2024-09-30|Has expired: Abandonware, outdated and last version released upstream was released in 2015
 www/screego||2024-09-30|Has expired: Outdated, unmaintained in tree and marked broken over a year ago
+archivers/py-borgbackup11||2024-09-30|Has expired: No longer supported upstream, use borgbackup 1.2 (oldstable) or 1.4 (stable) instead
