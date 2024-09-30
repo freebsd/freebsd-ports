@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20240930:
+  AFFECTS: users of sysutils/nq
+  AUTHOR: 0mp@FreeBSD.org
+
+  The nq upstream renamed the fq utility to nqtail
+  and the tq utility to nqterm.
+
 20240927:
   AFFECTS: users of databases/mongodb50
   AUTHOR: ronald@FreeBSD.org
