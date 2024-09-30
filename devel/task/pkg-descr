@@ -1,0 +1,6 @@
+Task is a task runner / build tool that aims to be simpler and easier
+to use than, for example, GNU Make.
+
+Since it's written in Go, Task is just a single binary and has no
+other dependencies, which means you don't need to mess with any
+complicated install setups just to use a build tool.

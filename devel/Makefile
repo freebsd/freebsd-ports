@@ -8099,6 +8099,7 @@
     SUBDIR += tagref
     SUBDIR += tailor
     SUBDIR += talloc
+    SUBDIR += task
     SUBDIR += taskctl
     SUBDIR += taskflow
     SUBDIR += tass64
