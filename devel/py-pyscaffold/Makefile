@@ -1,9 +1,8 @@
 PORTNAME=	pyscaffold
-PORTVERSION=	4.5
+PORTVERSION=	4.6
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyScaffold-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Template tool for putting up the scaffold of a Python project
