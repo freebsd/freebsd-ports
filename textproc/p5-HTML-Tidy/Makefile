@@ -10,6 +10,9 @@ WWW=		https://metacpan.org/release/HTML-Tidy
 
 LICENSE=	ART20
 
+DEPRECATED=	Depends on expired textproc/tidyp
+EXPIRATION_DATE=2024-12-31
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww
 LIB_DEPENDS=	libtidyp.so:textproc/tidyp
