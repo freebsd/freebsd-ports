@@ -1,5 +1,6 @@
 PORTNAME=	ngtcp2
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/ngtcp2/ngtcp2/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	lib
@@ -29,5 +30,8 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 SLAVEDIRS=	net/libngtcp2-gnutls
+
+post-install:
+	cd ${WRKSRC}/crypto/includes/ngtcp2/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/ngtcp2
 
 .include <bsd.port.mk>
