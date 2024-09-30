@@ -2397,7 +2397,6 @@
     SUBDIR += threema-web
     SUBDIR += thttpd
     SUBDIR += thumbnail_index
-    SUBDIR += thundercache
     SUBDIR += tidy
     SUBDIR += tidy-html5
     SUBDIR += tikiwiki
