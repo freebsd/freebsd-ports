@@ -15,8 +15,8 @@ CARGO_CRATES=	ahash-0.3.8 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		clap-2.34.0 \
-		clap-4.5.17 \
-		clap_builder-4.5.17 \
+		clap-4.5.18 \
+		clap_builder-4.5.18 \
 		clap_lex-0.7.0 \
 		colorchoice-1.0.0 \
 		console-0.15.5 \
