@@ -223,6 +223,7 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lupa.lua
 %%DATADIR%%/lualib/plugins/dmarc.lua
 %%DATADIR%%/lualib/plugins/neural.lua
+%%DATADIR%%/lualib/plugins/ratelimit.lua
 %%DATADIR%%/lualib/plugins/rbl.lua
 %%DATADIR%%/lualib/plugins_stats.lua
 %%DATADIR%%/lualib/redis_scripts/bayes_cache_check.lua
@@ -255,6 +256,7 @@ share/man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/rspamadm/mime.lua
 %%DATADIR%%/lualib/rspamadm/neural_test.lua
 %%DATADIR%%/lualib/rspamadm/publicsuffix.lua
+%%DATADIR%%/lualib/rspamadm/secretbox.lua
 %%DATADIR%%/lualib/rspamadm/stat_convert.lua
 %%DATADIR%%/lualib/rspamadm/statistics_dump.lua
 %%DATADIR%%/lualib/rspamadm/template.lua
