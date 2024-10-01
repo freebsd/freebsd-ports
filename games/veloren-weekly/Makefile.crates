@@ -348,7 +348,7 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		lazy_static-1.5.0 \
 		leb128-0.2.5 \
 		levenshtein-1.0.5 \
-		libc-0.2.159 \
+		libc-0.2.162 \
 		libloading-0.7.4 \
 		libloading-0.8.5 \
 		libm-0.2.8 \

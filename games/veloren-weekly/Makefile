@@ -10,7 +10,6 @@ WWW=		https://veloren.net/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=	https://github.com/rust-lang/libc/issues/3217
 BROKEN_i386=	https://github.com/bytecodealliance/wasmtime/issues/7924
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	unsupported platform by https://github.com/wasmerio/wasmer
