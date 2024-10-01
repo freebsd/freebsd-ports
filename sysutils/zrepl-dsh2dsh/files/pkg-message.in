@@ -7,6 +7,9 @@ SETUP BEFORE FIRST USE:
 - Create the log file /var/log/zrepl.log:
   # service newsyslog restart
 - Modify the %%PREFIX%%/etc/zrepl/zrepl.yml configuration file
+- Create ZFS datasets like:
+  # zfs create -o mountpoint=none -o readonly=on zdisk/zrepl
+  # zfs create zdisk/zrepl/localhost
 - Enable the zrepl daemon to start automatically at boot:
   # sysrc zrepl_enable="YES"
 - Start the zrepl daemon:
