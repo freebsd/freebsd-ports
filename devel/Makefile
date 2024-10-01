@@ -7574,6 +7574,7 @@
     SUBDIR += rubygem-pry-remote-em
     SUBDIR += rubygem-pstore
     SUBDIR += rubygem-ptreloaded
+    SUBDIR += rubygem-puppet-modulebuilder
     SUBDIR += rubygem-puppet-resource_api
     SUBDIR += rubygem-pygments.rb
     SUBDIR += rubygem-que
