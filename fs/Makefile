@@ -19,6 +19,7 @@
     SUBDIR += exfat
     SUBDIR += exfat-utils
     SUBDIR += ext2
+    SUBDIR += fstyp
     SUBDIR += funionfs
     SUBDIR += fusefs-libs
     SUBDIR += fusefs-libs3
