@@ -499,7 +499,6 @@
     SUBDIR += hexpeek
     SUBDIR += hextools
     SUBDIR += hexyl
-    SUBDIR += hfsutils
     SUBDIR += hid-tools
     SUBDIR += highlnk
     SUBDIR += hilite
