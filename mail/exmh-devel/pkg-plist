@@ -192,6 +192,7 @@ lib/exmh-%%EXMH_VERSION%%/print.tcl
 lib/exmh-%%EXMH_VERSION%%/ps.tcl
 lib/exmh-%%EXMH_VERSION%%/quote.tcl
 lib/exmh-%%EXMH_VERSION%%/receipt.tcl
+lib/exmh-%%EXMH_VERSION%%/recoll.tcl
 lib/exmh-%%EXMH_VERSION%%/report.tcl
 lib/exmh-%%EXMH_VERSION%%/rich2tk.tcl
 lib/exmh-%%EXMH_VERSION%%/scan.tcl
