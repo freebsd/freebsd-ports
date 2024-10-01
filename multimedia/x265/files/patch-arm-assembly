@@ -1,0 +1,117 @@
+--- source/common/arm/blockcopy8.S	2024-09-30 08:38:43.172350000 +0200
++++ source/common/arm/blockcopy8.S	2024-09-30 09:13:08.635457000 +0200
+@@ -833,5 +833,5 @@
+     vmov.u32        r0, d0[0]
+     uasx            r0, r0, r0
+-    mov             r0, r0, lsr 16
++    lsr             r0, r0, #16
+     rsb             r0, #1024
+     bx              lr
+--- source/common/arm/asm.S	2024-04-04 11:39:50.000000000 +0200
++++ source/common/arm/asm.S	2024-09-30 19:45:33.295896000 +0200
+@@ -85,4 +85,9 @@
+ .endm
+ 
++.macro MYADRLSUB reg:req, label:req
++sub \reg, pc, #((. - \label) & 0xff00)
++sub \reg, \reg, #((. - \label) - ((. - \label) & 0xff00)) + 4
++.endm
++
+ .macro movrel rd, val
+ #if HAVE_ARMV6T2 && !defined(PIC)
+@@ -90,5 +95,5 @@
+         movt            \rd, #:upper16:\val
+ #else
+-        ldr             \rd, =\val
++        MYADRLSUB       \rd, \val
+ #endif
+ .endm
+--- source/common/arm/ipfilter8.S	2024-04-04 11:39:50.000000000 +0200
++++ source/common/arm/ipfilter8.S	2024-09-30 19:48:31.490019000 +0200
+@@ -26,5 +26,5 @@
+ #include "asm.S"
+ 
+-.section .rodata
++.text
+ .align 4
+ 
+@@ -43,7 +43,4 @@
+ .word -2, -2, 16, 16, 54, 54, -4 ,-4
+ .word -2, -2, 10, 10, 58, 58, -2, -2
+-
+-
+-.text
+ 
+ // filterPixelToShort(const pixel* src, intptr_t srcStride, int16_t* dst, intptr_t dstStride)
+--- source/common/arm/sad-a.S	2024-04-04 11:39:50.000000000 +0200
++++ source/common/arm/sad-a.S	2024-09-30 19:49:06.534263000 +0200
+@@ -26,11 +26,9 @@
+ #include "asm.S"
+ 
+-.section .rodata
++.text
+ 
+ .align 4
+ sad12_mask:
+ .byte 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 0
+-
+-.text
+ 
+ /* sad4x4(pixel* dst, intptr_t dstStride, const pixel* src, intptr_t srcStride)
+--- source/test/checkasm-arm.S	2024-04-04 11:39:50.000000000 +0200
++++ source/test/checkasm-arm.S	2024-10-01 02:51:29.815273000 +0200
+@@ -27,5 +27,5 @@
+ #include "../common/arm/asm.S"
+ 
+-.section .rodata
++.text
+ .align 4
+ register_init:
+@@ -41,6 +41,4 @@
+ error_message:
+ .asciz "failed to preserve register"
+-
+-.text
+ 
+ @ max number of args used by any x265 asm function.
+--- source/common/cpu.cpp	2024-04-04 11:39:50.000000000 +0200
++++ source/common/cpu.cpp	2024-10-01 02:56:32.094316000 +0200
+@@ -339,6 +339,6 @@
+ 
+ extern "C" {
+-void PFX(cpu_neon_test)(void);
+-int PFX(cpu_fast_neon_mrc_test)(void);
++void x265_cpu_neon_test(void);
++int x265_cpu_fast_neon_mrc_test(void);
+ }
+ 
+@@ -361,5 +361,5 @@
+ 
+     canjump = 1;
+-    PFX(cpu_neon_test)();
++    x265_cpu_neon_test();
+     canjump = 0;
+     signal(SIGILL, oldsig);
+@@ -377,5 +377,5 @@
+     // right now Apple does not seem to support performance counters for this test
+ #ifndef __MACH__
+-    flags |= PFX(cpu_fast_neon_mrc_test)() ? X265_CPU_FAST_NEON_MRC : 0;
++    flags |= x265_cpu_fast_neon_mrc_test() ? X265_CPU_FAST_NEON_MRC : 0;
+ #endif
+     // TODO: write dual issue test? currently it's A8 (dual issue) vs. A9 (fast mrc)
+--- source/test/testharness.h	2024-04-04 11:39:50.000000000 +0200
++++ source/test/testharness.h	2024-10-01 03:05:54.786008000 +0200
+@@ -83,9 +83,12 @@
+     asm volatile("rdtsc" : "=a" (a) ::"edx");
+ #elif X265_ARCH_ARM
++    struct timeval tv;
++    gettimeofday(&tv, nullptr);
++    return static_cast<int64_t>(tv.tv_sec) * 1000000 + tv.tv_usec;
+     // TOD-DO: verify following inline asm to get cpu Timestamp Counter for ARM arch
+     // asm volatile("mrc p15, 0, %0, c9, c13, 0" : "=r"(a));
+ 
+     // TO-DO: replace clock() function with appropriate ARM cpu instructions
+-    a = clock();
++    // a = clock();
+ #elif  X265_ARCH_ARM64
+     asm volatile("mrs %0, cntvct_el0" : "=r"(a));

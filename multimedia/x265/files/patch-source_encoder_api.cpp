@@ -1,4 +1,4 @@
-In svt-hevc 1.5.0, they payload-array (1024 bytes) is part of the structure,
+In svt-hevc 1.5.0, the payload-array (1024 bytes) is part of the structure,
 rather than a pointer to be allocated separately.
 
 This patch should allow compiling x265 against both older (1.4.x) and 1.5.x

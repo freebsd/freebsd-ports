@@ -1,6 +1,6 @@
---- source/encoder/entropy.cpp	2023-06-27 10:11:49.000000000 -0400
-+++ source/encoder/entropy.cpp	2023-10-22 21:00:30.522586000 -0400
-@@ -1362,5 +1362,7 @@ 
+--- source/encoder/entropy.cpp	2024-09-13 09:02:55.000000000 -0400
++++ source/encoder/entropy.cpp	2024-09-24 00:56:25.162151000 -0400
+@@ -1758,5 +1762,7 @@
      bool            bDenomCoded  = false;
      int             numRefDirs   = slice.m_sliceType == B_SLICE ? 2 : 1;
 +#if CHECKED_BUILD || _DEBUG
@@ -8,7 +8,7 @@
 +#endif
  
      if ((slice.m_sliceType == P_SLICE && slice.m_pps->bUseWeightPred) ||
-@@ -1384,5 +1386,7 @@ 
+@@ -1784,5 +1790,7 @@
                  }
                  WRITE_FLAG(!!wp[0].wtPresent, "luma_weight_lX_flag");
 +#if CHECKED_BUILD || _DEBUG
@@ -16,7 +16,7 @@
 +#endif
              }
  
-@@ -1393,5 +1397,7 @@ 
+@@ -1797,5 +1805,7 @@
                      wp = slice.m_weightPredTable[list][ref];
                      WRITE_FLAG(!!wp[1].wtPresent, "chroma_weight_lX_flag");
 +#if CHECKED_BUILD || _DEBUG
@@ -172,30 +172,171 @@
 -        dst_stride <<= 1;
  
      m_algorithmFlags = algorithmFlags;
---- source/encoder/ratecontrol.cpp	2023-08-24 07:11:18.000000000 -0400
-+++ source/encoder/ratecontrol.cpp	2023-10-22 22:12:33.546126000 -0400
-@@ -580,5 +580,4 @@ 
-             /* read stats */
-             p = statsIn;
--            double totalQpAq = 0;
-             for (int i = 0; i < m_numEntries; i++)
-             {
-@@ -645,5 +644,4 @@ 
-                 }
-                 rce->qScale = rce->newQScale = x265_qp2qScale(qpRc);
--                totalQpAq += qpAq;
-                 rce->qpNoVbv = qNoVbv;
-                 rce->qpaRc = qpRc;
-@@ -999,5 +997,5 @@ 
+--- source/encoder/ratecontrol.cpp	2024-09-13 09:02:55.000000000 -0400
++++ source/encoder/ratecontrol.cpp	2024-09-23 23:12:11.531124000 -0400
+@@ -661,5 +661,4 @@
+                 /* read stats */
+                 p = statsIn;
+-                double totalQpAq = 0;
+                 for (int i = 0; i < m_numEntries; i++)
+                 {
+@@ -726,5 +725,4 @@
+                     }
+                     rce->qScale = rce->newQScale = x265_qp2qScale(qpRc);
+-                    totalQpAq += qpAq;
+                     rce->qpNoVbv = qNoVbv;
+                     rce->qpaRc = qpRc;
+@@ -1105,5 +1103,5 @@
  bool RateControl::initPass2()
  {
 -    uint64_t allConstBits = 0, allCodedBits = 0;
 +    uint64_t allConstBits = 0;
      uint64_t allAvailableBits = uint64_t(m_param->rc.bitrate * 1000. * m_numEntries * m_frameDuration);
-     int startIndex, framesCount, endIndex;
-@@ -1010,5 +1008,4 @@ 
-     {
-         allConstBits += m_rce2Pass[endIndex].miscBits;
--        allCodedBits += m_rce2Pass[endIndex].coeffBits + m_rce2Pass[endIndex].mvBits;
-         if (m_param->rc.rateControlMode == X265_RC_CRF)
+     int startIndex, endIndex;
+@@ -1124,5 +1122,4 @@
          {
+             allConstBits += m_rce2Pass[endIndex].miscBits;
+-            allCodedBits += m_rce2Pass[endIndex].coeffBits + m_rce2Pass[endIndex].mvBits;
+         }
+ 
+@@ -1222,5 +1219,5 @@
+     double qScaleMin = x265_qp2qScale(m_param->rc.qpMin);
+     double qScaleMax = x265_qp2qScale(m_param->rc.qpMax);
+-    int iterations = 0 , adjMin, adjMax;
++    int adjMin, adjMax;
+     CHECKED_MALLOC(fills, double, m_numEntries + 1);
+     fills++;
+@@ -1229,5 +1226,4 @@
+     do
+     {
+-        iterations++;
+         prevBits = expectedBits;
+ 
+--- source/encoder/search.cpp	2024-09-13 09:02:55.000000000 -0400
++++ source/encoder/search.cpp	2024-09-23 23:37:29.009223000 -0400
+@@ -277,5 +277,4 @@
+     }
+ 
+-    uint32_t tuDepthC = tuDepth;
+     uint32_t log2TrSizeC = log2TrSize - m_hChromaShift;
+ 
+@@ -286,5 +285,4 @@
+             return;
+         log2TrSizeC = 2;
+-        tuDepthC--;
+     }
+ 
+@@ -5706,10 +5708,8 @@
+     uint32_t log2TrSizeC = log2TrSize - m_hChromaShift;
+     uint32_t codeChroma = (m_csp != X265_CSP_I400 && m_frame->m_fencPic->m_picCsp != X265_CSP_I400) ? 1 : 0;
+-    uint32_t tuDepthC = tuDepth;
+     if (log2TrSizeC < 2)
+     {
+         X265_CHECK(log2TrSize == 2 && m_csp != X265_CSP_I444 && tuDepth, "invalid tuDepth\n");
+         log2TrSizeC = 2;
+-        tuDepthC--;
+         codeChroma &= !(absPartIdx & 3);
+     }
+--- source/dynamicHDR10/json11/json11.cpp	2024-09-13 09:02:55.000000000 -0400
++++ source/dynamicHDR10/json11/json11.cpp	2024-09-23 23:43:58.447286000 -0400
+@@ -158,5 +158,5 @@
+     // Constructors
+     explicit Value(const T &value) : m_value(value) {}
+-    explicit Value(T &&value)      : m_value(move(value)) {}
++    explicit Value(T &&value)      : m_value(std::move(value)) {}
+ 
+     // Get type tag
+@@ -205,5 +205,5 @@
+ public:
+     explicit JsonString(const string &value) : Value(value) {}
+-    explicit JsonString(string &&value)      : Value(move(value)) {}
++    explicit JsonString(string &&value)      : Value(std::move(value)) {}
+ };
+ 
+@@ -213,5 +213,5 @@
+ public:
+     explicit JsonArray(const Json::array &value) : Value(value) {}
+-    explicit JsonArray(Json::array &&value)      : Value(move(value)) {}
++    explicit JsonArray(Json::array &&value)      : Value(std::move(value)) {}
+ };
+ 
+@@ -221,5 +221,5 @@
+ public:
+     explicit JsonObject(const Json::object &value) : Value(value) {}
+-    explicit JsonObject(Json::object &&value)      : Value(move(value)) {}
++    explicit JsonObject(Json::object &&value)      : Value(std::move(value)) {}
+ };
+ 
+@@ -263,10 +263,10 @@
+ Json::Json(bool value)                 : m_ptr(value ? statics().t : statics().f) {}
+ Json::Json(const string &value)        : m_ptr(make_shared<JsonString>(value)) {}
+-Json::Json(string &&value)             : m_ptr(make_shared<JsonString>(move(value))) {}
++Json::Json(string &&value)             : m_ptr(make_shared<JsonString>(std::move(value))) {}
+ Json::Json(const char * value)         : m_ptr(make_shared<JsonString>(value)) {}
+ Json::Json(const Json::array &values)  : m_ptr(make_shared<JsonArray>(values)) {}
+-Json::Json(Json::array &&values)       : m_ptr(make_shared<JsonArray>(move(values))) {}
++Json::Json(Json::array &&values)       : m_ptr(make_shared<JsonArray>(std::move(values))) {}
+ Json::Json(const Json::object &values) : m_ptr(make_shared<JsonObject>(values)) {}
+-Json::Json(Json::object &&values)      : m_ptr(make_shared<JsonObject>(move(values))) {}
++Json::Json(Json::object &&values)      : m_ptr(make_shared<JsonObject>(std::move(values))) {}
+ 
+ /* * * * * * * * * * * * * * * * * * * *
+@@ -362,5 +362,5 @@
+      */
+     Json fail(string &&msg) {
+-        return fail(move(msg), Json());
++        return fail(std::move(msg), Json());
+     }
+ 
+--- source/encoder/slicetype.cpp	2024-09-13 09:02:55.000000000 -0400
++++ source/encoder/slicetype.cpp	2024-09-23 23:46:16.350590000 -0400
+@@ -1455,5 +1455,4 @@
+     uint32_t variance;
+ 
+-    uint64_t blockXY = 0;
+     pixel* src = curFrame->m_fencPic->m_picOrg[0];
+ 
+@@ -1471,5 +1470,4 @@
+ 
+             rowVariance += variance;
+-            blockXY++;
+         }
+         picTotVariance += (uint16_t)(rowVariance / maxCol);
+@@ -1502,5 +1500,4 @@
+ 
+             rowVariance += variance;
+-            blockXY++;
+         }
+         picTotVariance += (uint16_t)(rowVariance / maxColChroma);
+@@ -1526,5 +1523,4 @@
+ 
+             rowVariance += variance;
+-            blockXY++;
+         }
+         picTotVariance += (uint16_t)(rowVariance / maxColChroma);
+--- source/common/param.cpp	2024-09-13 09:02:55.000000000 -0400
++++ source/common/param.cpp	2024-09-23 23:52:41.800395000 -0400
+@@ -871,10 +871,13 @@
+     bool bExtraParams = false;
+     char nameBuf[64];
+-    static int count;
+ 
+     if (!name)
+         return X265_PARAM_BAD_NAME;
+ 
++#ifdef SVT_HEVC
++    static int count;
+     count++;
++#endif
++
+     // skip -- prefix if provided
+     if (name[0] == '-' && name[1] == '-')
+--- source/common/cudata.cpp	2024-09-13 09:02:55.000000000 -0400
++++ source/common/cudata.cpp	2024-09-24 00:04:19.872724000 -0400
+@@ -74,5 +74,5 @@
+ inline bool isEqualRowOrCol(int addrA, int addrB)
+ {
+-    return isEqualCol(addrA, addrB) | isEqualRow(addrA, addrB);
++    return isEqualCol(addrA, addrB) || isEqualRow(addrA, addrB);
+ }
+ 
