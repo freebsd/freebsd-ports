@@ -3655,3 +3655,4 @@ sysutils/hfsutils|fs/hfsutils|2024-10-02|Moved to new category fs
 sysutils/linux-c7-dosfstools|fs/linux-c7-dosfstools|2024-10-02|Moved to new category fs
 sysutils/py-zfs-autobackup|fs/py-zfs-autobackup|2024-10-02|Moved to new category fs
 sysutils/squashfs-tools|fs/squashfs-tools|2024-10-02|Moved to new category fs
+sysutils/squashfs-tools-ng|fs/squashfs-tools-ng|2024-10-02|Moved to new category fs
