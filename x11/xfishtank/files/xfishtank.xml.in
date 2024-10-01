@@ -4,7 +4,7 @@
 
   <file id="bgfile" _label="Background image" arg="-p %"/>
 
-  <string id="bgcolor" _arg="-c %"
+  <string id="bgcolor" arg="-c %"
           _label="Background color (eg. red, MediumAquamarine, #ff0000)"/>
 
   <number id="nbubbles" _label="Number of bubbles" arg="-b %"
