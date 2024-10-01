@@ -6120,6 +6120,7 @@
     SUBDIR += py-xstatic-rickshaw
     SUBDIR += py-xstatic-roboto-fontface
     SUBDIR += py-xstatic-smart-table
+    SUBDIR += py-xstatic-svg-edit-moin
     SUBDIR += py-xstatic-spin
     SUBDIR += py-xstatic-term.js
     SUBDIR += py-xstatic-tv4
