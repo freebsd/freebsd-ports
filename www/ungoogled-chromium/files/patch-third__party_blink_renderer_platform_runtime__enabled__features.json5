@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2024-08-26 14:40:28 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2024-10-01 07:26:23 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -344,7 +344,7 @@
+@@ -364,7 +364,7 @@
        name: "AppTitle",
        status: "experimental",
        origin_trial_feature_name: "AppTitle",
@@ -9,7 +9,7 @@
        base_feature: "WebAppEnableAppTitle",
      },
      {
-@@ -1703,7 +1703,7 @@
+@@ -1801,7 +1801,7 @@
        base_feature: "none",
        public: true,
        origin_trial_feature_name: "FedCmMultipleIdentityProviders",
@@ -18,7 +18,7 @@
        origin_trial_allows_third_party: true,
      },
      {
-@@ -3114,7 +3114,7 @@
+@@ -3236,7 +3236,7 @@
        // Tracking bug for the implementation: https://crbug.com/1462930
        name: "PermissionElement",
        origin_trial_feature_name: "PermissionElement",
@@ -27,7 +27,7 @@
        status: "experimental",
        public: true,
        base_feature_status: "enabled",
-@@ -3241,7 +3241,7 @@
+@@ -3375,7 +3375,7 @@
      {
        name: "PrivateNetworkAccessPermissionPrompt",
        origin_trial_feature_name: "PrivateNetworkAccessPermissionPrompt",
@@ -36,7 +36,7 @@
        status: "stable",
        public: true,
        base_feature: "none",
-@@ -4204,7 +4204,7 @@
+@@ -4393,7 +4393,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -45,7 +45,7 @@
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -4373,7 +4373,7 @@
+@@ -4573,7 +4573,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",
@@ -54,7 +54,7 @@
        status: "experimental",
        base_feature: "none",
      },
-@@ -4416,7 +4416,7 @@
+@@ -4616,7 +4616,7 @@
        status: "experimental",
        base_feature: "none",
        origin_trial_feature_name: "WebAppUrlHandling",

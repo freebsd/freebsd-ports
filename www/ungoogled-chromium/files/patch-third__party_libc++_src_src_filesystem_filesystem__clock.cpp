@@ -1,11 +1,11 @@
---- third_party/libc++/src/src/filesystem/filesystem_clock.cpp.orig	2024-02-25 20:22:18 UTC
+--- third_party/libc++/src/src/filesystem/filesystem_clock.cpp.orig	2024-10-01 07:26:23 UTC
 +++ third_party/libc++/src/src/filesystem/filesystem_clock.cpp
-@@ -29,7 +29,7 @@
- #  include <sys/time.h> // for gettimeofday and timeval
+@@ -30,7 +30,7 @@
  #endif
  
--#if defined(__APPLE__) || defined(__gnu_hurd__) || (defined(_POSIX_TIMERS) && _POSIX_TIMERS > 0)
-+#if defined(__APPLE__) || defined(__gnu_hurd__) || (defined(_POSIX_TIMERS) && _POSIX_TIMERS > 0) || defined(__OpenBSD__) || defined(__FreeBSD__)
+ #if defined(__APPLE__) || defined(__gnu_hurd__) || defined(__AMDGPU__) || defined(__NVPTX__) ||                        \
+-    (defined(_POSIX_TIMERS) && _POSIX_TIMERS > 0)
++    (defined(_POSIX_TIMERS) && _POSIX_TIMERS > 0) || defined(__OpenBSD__) || defined(__FreeBSD__)
  #  define _LIBCPP_HAS_CLOCK_GETTIME
  #endif
  

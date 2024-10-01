@@ -1,6 +1,6 @@
---- media/audio/audio_input_device.cc.orig	2024-04-23 07:42:17 UTC
+--- media/audio/audio_input_device.cc.orig	2024-10-01 07:26:23 UTC
 +++ media/audio/audio_input_device.cc
-@@ -264,7 +264,7 @@ void AudioInputDevice::OnStreamCreated(
+@@ -269,7 +269,7 @@ void AudioInputDevice::OnStreamCreated(
  // here. See comments in AliveChecker and PowerObserverHelper for details and
  // todos.
    if (detect_dead_stream_ == DeadStreamDetection::kEnabled) {
