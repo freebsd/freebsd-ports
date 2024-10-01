@@ -105,6 +105,7 @@
     SUBDIR += simple-mtpfs
     SUBDIR += smbnetfs
     SUBDIR += sqlfs
+    SUBDIR += squashfs-tools
     SUBDIR += squashfuse
     SUBDIR += sshfs
     SUBDIR += tclvfs
