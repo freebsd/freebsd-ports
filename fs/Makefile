@@ -92,6 +92,7 @@
     SUBDIR += py-prometheus-zfs
     SUBDIR += py-pyfakefs
     SUBDIR += py-s3fs
+    SUBDIR += py-zfs-autobackup
     SUBDIR += R-cran-fs
     SUBDIR += rar2fs
     SUBDIR += rubygem-aws-sdk-efs

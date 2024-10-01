@@ -3653,3 +3653,4 @@ sysutils/fswatch-mon|fs/fswatch-mon|2024-10-02|Moved to new category fs
 sysutils/hfsexplorer|fs/hfsexplorer|2024-10-02|Moved to new category fs
 sysutils/hfsutils|fs/hfsutils|2024-10-02|Moved to new category fs
 sysutils/linux-c7-dosfstools|fs/linux-c7-dosfstools|2024-10-02|Moved to new category fs
+sysutils/py-zfs-autobackup|fs/py-zfs-autobackup|2024-10-02|Moved to new category fs
