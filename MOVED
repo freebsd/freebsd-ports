@@ -3649,3 +3649,4 @@ security/cfs|fs/cfs|2024-09-29|Moved to new category fs
 security/py-dfvfs|fs/py-dfvfs|2024-09-29|Moved to new category fs
 sysutils/zxfer|fs/zxfer|2024-09-29|Moved to new category fs
 sysutils/fstyp|fs/fstyp|2024-10-02|Moved to new category fs
+sysutils/fswatch-mon|fs/fswatch-mon|2024-10-02|Moved to new category fs

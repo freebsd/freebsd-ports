@@ -425,7 +425,6 @@
     SUBDIR += fsc
     SUBDIR += fsearch
     SUBDIR += fselect
-    SUBDIR += fswatch-mon
     SUBDIR += ftwin
     SUBDIR += fusefs-mergerfs
     SUBDIR += fvcool
