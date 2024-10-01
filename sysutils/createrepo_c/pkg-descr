@@ -1,0 +1,3 @@
+createrepo_c is a C implementation of the createrepo tool, which generates
+metadata for RPM package repositories. It is optimized for performance and
+provides new features compared to the original createrepo written in Python.
