@@ -13,6 +13,8 @@ WWW=		https://dakota.sandia.gov/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build with boost-1.85+
+
 BUILD_DEPENDS=	nanoflann>0:math/nanoflann
 LIB_DEPENDS=	libblas.so:math/blas \
 		libboost_system.so:devel/boost-libs \
