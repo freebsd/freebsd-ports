@@ -44,6 +44,7 @@ EXTRA_PATCHES=			\
 				${PATCHDIR}/0025-From-d9b748869a8f4018ebee302aae8246bf29f60309-Mon-Se.patch:-p1 \
 				${PATCHDIR}/0026-vfs-add-a-compatibility-option-to-the-vfs_streams_xa.patch:-p1 \
 				${PATCHDIR}/0027-Add-VFS-module-vfs_freebsd-that-implements-FreeBSD-s.patch:-p1 \
+				${PATCHDIR}/0028-Fix-rl_completion_func_t.patch:-p1 \
 				${PATCHDIR}/0100-Fix-pathref-handling-for-FreeBSD-13plus.patch
 
 SAMBA4_BASENAME=		samba
