@@ -1,5 +1,5 @@
 PORTNAME=	asmctl
-PORTVERSION=	2.0
+DISTVERSION=	2.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	naito.yuichiro@gmail.com
@@ -7,6 +7,7 @@ COMMENT=	Apple System Management Controller
 WWW=		https://github.com/yuichiro-naito/asmctl
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuichiro-naito
