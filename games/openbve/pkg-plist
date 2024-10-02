@@ -671,6 +671,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Menu/icon_library_protected.png
 %%DATADIR%%/Data/Menu/icon_mechanik.png
 %%DATADIR%%/Data/Menu/icon_mouse.png
+%%DATADIR%%/Data/Menu/icon_object.png
 %%DATADIR%%/Data/Menu/icon_parent.png
 %%DATADIR%%/Data/Menu/icon_route.png
 %%DATADIR%%/Data/Menu/icon_route_latestversion.png
@@ -683,6 +684,8 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Menu/icon_train_outdatedversion.png
 %%DATADIR%%/Data/Menu/icon_train_protected.png
 %%DATADIR%%/Data/Menu/icon_warning.png
+%%DATADIR%%/Data/Menu/icon_wavefront.png
+%%DATADIR%%/Data/Menu/icon_xobject.png
 %%DATADIR%%/Data/Menu/joystick.png
 %%DATADIR%%/Data/Menu/keyboard.png
 %%DATADIR%%/Data/Menu/loading.png
