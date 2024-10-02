@@ -11,9 +11,9 @@ be stabilized first.  It will be available in Rust 1.56.
 
 [1] https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=256581
 
---- src/tools/cargo/src/cargo/sources/git/source.rs.orig	2024-09-30 19:13:29 UTC
+--- src/tools/cargo/src/cargo/sources/git/source.rs.orig	2021-10-04 20:59:57 UTC
 +++ src/tools/cargo/src/cargo/sources/git/source.rs
-@@ -243,6 +243,9 @@ impl<'gctx> Source for GitSource<'gctx> {
+@@ -195,6 +195,9 @@ impl<'cfg> Source for GitSource<'cfg> {
          kind: QueryKind,
          f: &mut dyn FnMut(IndexSummary),
      ) -> Poll<CargoResult<()>> {
@@ -23,10 +23,10 @@ be stabilized first.  It will be available in Rust 1.56.
          if let Some(src) = self.path_source.as_mut() {
              src.query(dep, kind, f)
          } else {
-@@ -265,6 +268,10 @@ impl<'gctx> Source for GitSource<'gctx> {
+@@ -217,6 +220,10 @@ impl<'cfg> Source for GitSource<'cfg> {
      fn block_until_ready(&mut self) -> CargoResult<()> {
          if self.path_source.is_some() {
-             self.mark_used()?;
+             self.mark_used(None)?;
 +            return Ok(());
 +        }
 +

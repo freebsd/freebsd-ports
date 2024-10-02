@@ -1,4 +1,4 @@
---- src/cpp/core/system/PosixChildProcess.cpp.orig	2024-09-16 17:02:32 UTC
+--- src/cpp/core/system/PosixChildProcess.cpp.orig	2022-12-30 20:28:33 UTC
 +++ src/cpp/core/system/PosixChildProcess.cpp
 @@ -28,6 +28,11 @@
  #include <pty.h>
@@ -12,7 +12,7 @@
  #endif
  
  #include <sys/wait.h>
-@@ -812,7 +817,7 @@ Error ChildProcess::run()
+@@ -807,7 +812,7 @@ Error ChildProcess::run()
  
        if (options_.exitWithParent)
        {

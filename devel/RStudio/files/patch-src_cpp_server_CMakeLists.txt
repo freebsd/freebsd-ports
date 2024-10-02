@@ -1,6 +1,6 @@
---- src/cpp/server/CMakeLists.txt.orig	2024-06-04 21:19:10 UTC
+--- src/cpp/server/CMakeLists.txt.orig	2021-05-24 22:22:25 UTC
 +++ src/cpp/server/CMakeLists.txt
-@@ -146,6 +146,9 @@ add_stripped_executable(rserver ServerMain.cpp ${SERVE
+@@ -137,6 +137,9 @@ include_directories(
  # define executable
  add_stripped_executable(rserver ServerMain.cpp ${SERVER_SOURCE_FILES} ${SERVER_HEADER_FILES})
  
