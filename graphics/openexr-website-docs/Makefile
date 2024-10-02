@@ -23,6 +23,7 @@ DISTFILES+=	ScanLines/README.rst:website
 DISTFILES+=	ScanLines/Blobbies.exr:website
 DISTFILES+=	ScanLines/CandleGlass.exr:website
 DISTFILES+=	ScanLines/Cannon.exr:website
+DISTFILES+=	ScanLines/Carrots.exr:website
 DISTFILES+=	ScanLines/Desk.exr:website
 DISTFILES+=	ScanLines/MtTamWest.exr:website
 DISTFILES+=	ScanLines/PrismsLenses.exr:website
@@ -129,6 +130,7 @@ ALL_TARGET=	website
 MASTERDIR=	${.CURDIR}/../../graphics/openexr
 PATCHDIR=	${.CURDIR}/files
 PKGDIR=		${.CURDIR}
+WRKSRC=		${WRKDIR}/openexr-${PORTVERSION}
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 

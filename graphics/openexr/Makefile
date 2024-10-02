@@ -1,5 +1,5 @@
 PORTNAME?=	openexr
-PORTVERSION=	3.2.4
+PORTVERSION=	3.3.0
 PORTREVISION?=	0
 CATEGORIES=	graphics devel
 .if !defined(MASTERDIR)
@@ -26,8 +26,7 @@ DISTFILES+=	v2/LeftView/Balls.exr:testimages
 DISTFILES+=	v2/Stereo/Trunks.exr:testimages
 .endif
 DIST_SUBDIR=	openexr # hardcode - not using ${PORTNAME} - so we can share the distdir with openexr-website-docs, avoiding double download of ...
-EXTRACT_ONLY=	openexr-v${PORTVERSION}${EXTRACT_SUFX}
-NO_WRKSUBDIR=	yes
+EXTRACT_ONLY=	openexr-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	High dynamic-range (HDR) image file format
@@ -63,8 +62,8 @@ CPPFLAGS+=	-I.
 # must be linked with -l{thr|pthread} explicitly
 LDFLAGS+=	-lpthread
 
-_MAJORVER=	3_2
-_VER=		31
+_MAJORVER=	3_3
+_VER=		32
 _REL=		${PORTVERSION}
 PLIST_SUB+=	MAJORVER=${_MAJORVER} \
 		VER=${_VER} \
