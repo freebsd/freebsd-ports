@@ -1,5 +1,5 @@
 PORTNAME=	createrepo_c
-PORTVERSION=	1.1.4     # Replace with the correct version
+DISTVERSION=	1.1.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	ktk@netlabs.org
@@ -9,21 +9,21 @@ WWW=		http://rpm-software-management.github.io/createrepo_c/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
-		librpm.so:archivers/rpm4 \
-		libsqlite3.so:databases/sqlite3 \
+LIB_DEPENDS=	librpm.so:archivers/rpm4 \
 		libcurl.so:ftp/curl \
 		libmodulemd.so:misc/libmodulemd \
 		libzck.so:archivers/zchunk \
 		libzstd.so:archivers/zstd
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cmake pkgconfig shebangfix
+USES=		cmake pkgconfig shebangfix sqlite
+
+USE_GNOME=	libxml2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rpm-software-management
 
-CMAKE_ARGS=	-DENABLE_PYTHON:BOOL=false
+CMAKE_OFF=	ENABLE_PYTHON
 
 SHEBANG_FILES=	tests/run_tests.sh.in
 
