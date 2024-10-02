@@ -1,3 +1,51 @@
+  <vuln vid="8b20f21a-8113-11ef-b988-08002784c58d">
+    <topic>redis,valkey -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><ge>7.4.0</ge><lt>7.4.1</lt></range>
+      </package>
+      <package>
+	<name>redis72</name>
+	<range><ge>7.2.0</ge><lt>7.2.6</lt></range>
+      </package>
+      <package>
+	<name>redis62</name>
+	<range><ge>6.2.0</ge><lt>6.2.16</lt></range>
+      </package>
+      <package>
+	<name>valkey</name>
+	<range><ge>8,0,0</ge><lt>8.0.1</lt></range>
+	<range><ge>7.2.0</ge><lt>7.2.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redis core team reports:</p>
+	<blockquote cite="https://github.com/redis/redis/releases/tag/7.4.1">
+	  <dl>
+	    <dt>CVE-2024-31449</dt>
+	    <dd>Lua library commands may lead to stack overflow and potential RCE.</dd>
+	    <dt>CVE-2024-31227</dt>
+	    <dd>Potential Denial-of-service due to malformed ACL selectors.</dd>
+	    <dt>CVE-2024-31228</dt>
+	    <dd>Potential Denial-of-service due to unbounded pattern matching.</dd>
+	  </dl>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-31449</cvename>
+      <cvename>CVE-2024-31227</cvename>
+      <cvename>CVE-2024-31228</cvename>
+      <url>https://github.com/redis/redis/releases/tag/7.4.1</url>
+    </references>
+    <dates>
+      <discovery>2024-10-02</discovery>
+      <entry>2024-10-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fe5c1e7a-7eed-11ef-9533-f875a43e1796">
     <topic>php -- Multiple vulnerabilities</topic>
     <affects>
