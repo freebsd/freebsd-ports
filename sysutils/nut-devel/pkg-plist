@@ -295,15 +295,6 @@ sbin/upsd
 sbin/upsdrvctl
 sbin/upsmon
 sbin/upssched
-share/augeas/lenses/dist/%%NUT_USER%%hostsconf.aug
-share/augeas/lenses/dist/%%NUT_USER%%%%NUT_USER%%conf.aug
-share/augeas/lenses/dist/%%NUT_USER%%upsconf.aug
-share/augeas/lenses/dist/%%NUT_USER%%upsdconf.aug
-share/augeas/lenses/dist/%%NUT_USER%%upsdusers.aug
-share/augeas/lenses/dist/%%NUT_USER%%upsmonconf.aug
-share/augeas/lenses/dist/%%NUT_USER%%upsschedconf.aug
-share/augeas/lenses/dist/%%NUT_USER%%upssetconf.aug
-share/augeas/lenses/dist/tests/test_%%NUT_USER%%.aug
 @dir etc/syslog.d
 @dir(%%NUT_USER%%,%%NUT_GROUP%%,750) %%STATEDIR%%
 @dir libexec/nut
