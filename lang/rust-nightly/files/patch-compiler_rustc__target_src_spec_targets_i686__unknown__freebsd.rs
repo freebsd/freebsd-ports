@@ -1,4 +1,6 @@
---- compiler/rustc_target/src/spec/targets/i686_unknown_freebsd.rs.orig	2023-11-27 08:52:00 UTC
+i386 should be pentiumpro (no SSE2, no ...)
+
+--- compiler/rustc_target/src/spec/targets/i686_unknown_freebsd.rs.orig	2023-12-22 11:18:00 UTC
 +++ compiler/rustc_target/src/spec/targets/i686_unknown_freebsd.rs
 @@ -2,7 +2,7 @@ pub fn target() -> Target {
  

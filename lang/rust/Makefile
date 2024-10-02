@@ -66,7 +66,7 @@ SOURCES_VARS=		_COMPONENTS+=rust-src-${_PACKAGE_VERS} \
 WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown rust-std-${_PACKAGE_VERS}-wasm32-unknown-unknown" \
 			_RUST_TARGETS+=wasm32-unknown-unknown
 
-# See WRKSRC/src/stage0.json for the date and version values
+# See WRKSRC/src/stage0 for the date and version values
 BOOTSTRAPS_DATE?=		2024-08-08
 RUST_BOOTSTRAP_VERSION?=	1.80.0
 
@@ -139,7 +139,7 @@ DISTFILES:=	${DISTFILES:M*\:src} \
 post-patch:
 	@${REINPLACE_CMD} 's,gdb,${LOCALBASE}/bin/gdb,' ${WRKSRC}/src/etc/rust-gdb
 .if defined(NIGHTLY_DATE)
-	@${REINPLACE_CMD} 's/"rustfmt"/"nothx"/' ${WRKSRC}/src/stage0.json
+	@${REINPLACE_CMD} 's/rustfmt/nothx/' ${WRKSRC}/src/stage0
 .endif
 # Disable vendor checksums
 	@${REINPLACE_CMD} 's,"files":{[^}]*},"files":{},' \
@@ -193,6 +193,9 @@ do-configure:
 .endif
 	@${ECHO_CMD} 'remap-debuginfo=true' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[llvm]' >> ${WRKSRC}/config.toml
+.if defined(NIGHTLY_DATE)
+	@${ECHO_CMD} 'download-ci-llvm = false' >> ${WRKSRC}/config.toml
+.endif
 .if ${PORT_OPTIONS:MLTO}
 	@${ECHO_CMD} 'thin-lto=true' >> ${WRKSRC}/config.toml
 .endif
@@ -228,10 +231,6 @@ do-configure:
 .endfor
 	@${ECHO_CMD} '[dist]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'src-tarball=false' >> ${WRKSRC}/config.toml
-.if defined(NIGHTLY_DATE)
-# Don't abort if optional tools fail to build
-	@${ECHO_CMD} 'missing-tools=true' >> ${WRKSRC}/config.toml
-.endif
 
 do-build:
 	@cd ${WRKSRC} && \
