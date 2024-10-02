@@ -1,6 +1,6 @@
 PORTNAME=	ipmitool
 PORTVERSION=	1.8.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://codeberg.org/IPMITool/${PORTNAME}/archive/:ipmi \
 		LOCAL/zi/:iana
