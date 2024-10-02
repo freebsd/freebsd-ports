@@ -22,7 +22,7 @@ GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
-CFLAGS+=	-Wno-error=int-conversion
+CFLAGS+=	-Wno-error=int-conversion -Wno-error=incompatible-function-pointer-types
 .endif
 
 post-patch:
