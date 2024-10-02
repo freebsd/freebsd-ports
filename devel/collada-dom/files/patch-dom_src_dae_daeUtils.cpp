@@ -1,6 +1,15 @@
---- dom/src/dae/daeUtils.cpp.orig	2019-05-09 19:37:18 UTC
+--- dom/src/dae/daeUtils.cpp.orig	2017-10-21 05:05:24 UTC
 +++ dom/src/dae/daeUtils.cpp
-@@ -152,7 +152,7 @@ char cdom::getFileSeparator() {
+@@ -18,7 +18,7 @@
+ #endif
+ 
+ #ifndef NO_BOOST
+-#include <boost/filesystem/convenience.hpp>       // THIS WAS NOT COMMENTED.
++#include <boost/filesystem.hpp>       // THIS WAS NOT COMMENTED.
+ #endif
+ 
+ #include <cstdio> // for tmpnam
+@@ -152,7 +152,7 @@ const string& cdom::getSystemTmpDir() {
  const string& cdom::getSystemTmpDir() {
  #ifdef WIN32
      static string tmpDir = string(getenv("TMP")) + getFileSeparator();
