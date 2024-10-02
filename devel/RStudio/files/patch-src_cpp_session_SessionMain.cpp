@@ -1,6 +1,6 @@
---- src/cpp/session/SessionMain.cpp.orig	2022-12-03 07:38:59 UTC
+--- src/cpp/session/SessionMain.cpp.orig	2024-09-16 17:02:32 UTC
 +++ src/cpp/session/SessionMain.cpp
-@@ -1947,7 +1947,11 @@ int main(int argc, char * const argv[])
+@@ -2058,7 +2058,11 @@ int main(int argc, char * const argv[])
  
        // move to own process group
  #ifndef _WIN32

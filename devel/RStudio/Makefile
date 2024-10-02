@@ -3,14 +3,11 @@
 
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.12.0+353
-PORTREVISION=	6
+DISTVERSION=	2024.09.0+375
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools
 DISTFILES=	core-dictionaries.zip:dictionaries \
-		gin-${GIN_VERSION}.zip:buildtools \
-		gwt-${GWT_VERSION}.zip:buildtools \
 		mathjax-27.zip:buildtools
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -48,7 +45,8 @@ GH_PROJECT=	${PORTNAME:tl}
 GH_TUPLE=	rstudio:r2d3:v0.2.0:r2d3/dependencies/common/r2d3 \
 		rstudio:rmarkdown:aed26ac:rmarkdown/dependencies/common/rmarkdown \
 		rstudio:rsconnect:03c379b:rsconnect/dependencies/common/rsconnect \
-		trestletech:plumber:v0.4.6:plumber/dependencies/common/plumber
+		trestletech:plumber:v0.4.6:plumber/dependencies/common/plumber \
+		quarto-dev:quarto:v1.115.0-vsix:quarto/src/gwt/lib/quarto
 
 CMAKE_ARGS=	-DFREEBSD_RSTUDIO_VERSION:STRING=${PORTVERSION} \
 		-DFREEBSD_LIBDIR:STRING=${PREFIX}/lib
@@ -91,40 +89,40 @@ USE_RC_SUBR=	${PORTNAME:tl}-server
 OPTIONS_DEFINE=		WITH_QUARTO
 
 WITH_QUARTO_DESC=	Build with support for Quarto
-WITH_QUARTO_CMAKE_BOOL=	FREEBSD_QUARTO_ENABLED
+WITH_QUARTO_CMAKE_BOOL=	QUARTO_ENABLED
 WITH_QUARTO_BROKEN=	Quarto isn't yet ported
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/dependencies/dictionaries && ${MV} ${WRKDIR}/en_* ${WRKSRC}/dependencies/dictionaries/
 	@${MV} ${WRKDIR}/mathjax-* ${WRKSRC}/dependencies/
-	@${MKDIR} ${WRKSRC}/src/gwt/lib/gwt && ${MV} ${WRKDIR}/gwt-${GWT_VERSION} ${WRKSRC}/src/gwt/lib/gwt/${GWT_VERSION}
-	@${MKDIR} ${WRKSRC}/src/gwt/lib/gin/${GIN_VERSION} && ${MV} ${WRKDIR}/*.jar ${WRKSRC}/src/gwt/lib/gin/${GIN_VERSION}/
+	#@${MKDIR} ${WRKSRC}/src/gwt/lib/gwt && ${MV} ${WRKDIR}/gwt-${GWT_VERSION} ${WRKSRC}/src/gwt/lib/gwt/${GWT_VERSION}
+	#@${MKDIR} ${WRKSRC}/src/gwt/lib/gin/${GIN_VERSION} && ${MV} ${WRKDIR}/*.jar ${WRKSRC}/src/gwt/lib/gin/${GIN_VERSION}/
 
 post-patch:
-	@${REINPLACE_CMD} -e ' \
-		s|target_link_libraries(rstudio|target_link_libraries(rstudio procstat|; \
-		s|get_filename_component|#get_filename_component|; \
-		s|set(CMAKE_PREFIX_PATH "$${QT_BIN_DIR}//..//lib//cmake")|set(CMAKE_PREFIX_PATH "${LOCALBASE}/lib/cmake")|; \
-		s|/usr/share/|${PREFIX}/share/|g' \
-		${WRKSRC}/src/cpp/desktop/CMakeLists.txt
-	@${REINPLACE_CMD} -e ' \
-		s|</java>|<jvmarg value="-Duser.home=${WRKDIR}"/></java>|' \
-		${WRKSRC}/src/gwt/build.xml
+	#@${REINPLACE_CMD} -e ' \
+	#	s|target_link_libraries(rstudio|target_link_libraries(rstudio procstat|; \
+	#	s|get_filename_component|#get_filename_component|; \
+	#	s|set(CMAKE_PREFIX_PATH "$${QT_BIN_DIR}//..//lib//cmake")|set(CMAKE_PREFIX_PATH "${LOCALBASE}/lib/cmake")|; \
+	#	s|/usr/share/|${PREFIX}/share/|g' \
+	#	${WRKSRC}/src/cpp/desktop/CMakeLists.txt
+	#@${REINPLACE_CMD} -e ' \
+	#	s|</java>|<jvmarg value="-Duser.home=${WRKDIR}"/></java>|' \
+	#	${WRKSRC}/src/gwt/build.xml
 	@${REINPLACE_CMD} -e ' \
 		s|rHomePaths.push_back|//rHomePaths.push_back|; \
 		s|//rHomePaths.push_back(FilePath("/usr/local/lib/|rHomePaths.push_back(FilePath("${PREFIX}/lib/|' \
 		${WRKSRC}/src/cpp/core/r_util/RVersionsPosix.cpp
-	@${REINPLACE_CMD} -e ' \
-		s|<condition property="node.bin" value="../../../$${node.dir}/bin/node">|<condition property="node.bin" value="${LOCALBASE}/bin/node">|' \
-		${WRKSRC}/src/gwt/build.xml
+	#@${REINPLACE_CMD} -e ' \
+	#	s|<condition property="node.bin" value="../../../$${node.dir}/bin/node">|<condition property="node.bin" value="${LOCALBASE}/bin/node">|' \
+	#	${WRKSRC}/src/gwt/build.xml
 	# add $PREFIX/bin to PATH for the server daemon
 .if ${FLAVOR:U} == server
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/src/cpp/session/modules/SessionGit.cpp
 .endif
 
 pre-build:
-	@${CP} ${FILESDIR}/global-setenv.h ${WRKSRC}/src/cpp/desktop/
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/cpp/desktop/global-setenv.h
+	#@${CP} ${FILESDIR}/global-setenv.h ${WRKSRC}/src/cpp/desktop/
+	#@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/cpp/desktop/global-setenv.h
 
 post-install:
 	@(echo "#!/bin/sh"; \
