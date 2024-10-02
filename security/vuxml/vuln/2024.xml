@@ -1,3 +1,45 @@
+  <vuln vid="fe5c1e7a-7eed-11ef-9533-f875a43e1796">
+    <topic>php -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	      <name>php81</name>
+	      <range><lt>8.1.30</lt></range>
+      </package>
+      <package>
+	      <name>php82</name>
+	      <range><lt>8.2.24</lt></range>
+      </package>
+      <package>
+	      <name>php83</name>
+	      <range><lt>8.3.12</lt></range>
+      </package>
+    </affects>
+    <description>
+	    <body xmlns="http://www.w3.org/1999/xhtml">
+	      <p>php.net reports:</p>
+	      <blockquote cite="https://www.php.net/ChangeLog-8.php">
+					<ul>
+						<li>CVE-2024-8926: CGI: Fixed bug GHSA-9pqp-7h25-4f32 (Bypass of CVE-2024-4577, Parameter Injection Vulnerability).</li>
+						<li>CVE-2024-8927: CGI: Fixed bug GHSA-94p6-54jq-9mwp (cgi.force_redirect configuration is bypassable due to the environment variable collision).</li>
+						<li>CVE-2024-9026: FPM: Fixed bug GHSA-865w-9rf3-2wh5 (Logs from childrens may be altered).</li>
+						<li>CVE-2024-8925: SAPI: Fixed bug GHSA-9pqp-7h25-4f32 (Erroneous parsing of multipart form data).</li>
+					</ul>
+	      </blockquote>
+	    </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-8926</cvename>
+      <cvename>CVE-2024-8927</cvename>
+      <cvename>CVE-2024-9026</cvename>
+      <cvename>CVE-2024-8925</cvename>
+      <url>https://www.php.net/ChangeLog-8.php</url>
+    </references>
+    <dates>
+      <discovery>2024-09-26</discovery>
+      <entry>2024-09-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f9cfdb00-7f43-11ef-9b27-592d55dd336d">
     <topic>Slixmpp -- Lack of SSL Certificate hostname validation in XMLStream</topic>
     <affects>
