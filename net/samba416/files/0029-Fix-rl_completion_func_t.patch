@@ -1,0 +1,31 @@
+--- a/lib/replace/system/readline.h	2022-01-24 11:26:58.905306300 +0100
++++ b/lib/replace/system/readline.h	2024-10-02 12:48:20.110740000 +0200
+@@ -46,10 +46,10 @@
+ #endif
+ 
+ #ifdef HAVE_NEW_LIBREADLINE
+-#ifdef HAVE_CPPFUNCTION
++#if defined(HAVE_RL_COMPLETION_FUNC_T)
++#  define RL_COMPLETION_CAST (rl_completion_func_t *)
++#elif defined(HAVE_CPPFUNCTION)
+ #  define RL_COMPLETION_CAST (CPPFunction *)
+-#elif defined(HAVE_RL_COMPLETION_T)
+-#  define RL_COMPLETION_CAST (rl_completion_t *)
+ #else
+ #  define RL_COMPLETION_CAST
+ #endif
+--- a/libcli/smbreadline/wscript_configure	2022-01-24 11:26:58.973306700 +0100
++++ b/libcli/smbreadline/wscript_configure	2024-10-02 12:48:20.110969000 +0200
+@@ -51,10 +51,10 @@ conf.CHECK_CODE('''
+ #    endif
+ #  endif
+ #endif
+-int main(void) {rl_completion_t f; return 0;}
++int main(void) {rl_completion_func_t f; return 0;}
+ ''',
+ 'HAVE_RL_COMPLETION_FUNC_T', execute=False, addmain=False,
+-msg='Checking for rl_completion_t')
++msg='Checking for rl_completion_func_t')
+ 
+ conf.CHECK_CODE('''
+ #ifdef HAVE_READLINE_READLINE_H
