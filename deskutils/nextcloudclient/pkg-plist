@@ -11,12 +11,15 @@ include/nextcloudsync/mirall/syncengine.h
 include/nextcloudsync/mirall/syncfileitem.h
 include/nextcloudsync/mirall/syncresult.h
 lib/libnextcloud_csync.so
-lib/libnextcloud_csync.so.0
 lib/libnextcloud_csync.so.%%VERSION%%
+lib/libnextcloud_csync.so.0
+%%KDE%%lib/libnextclouddolphinpluginhelper.so
 lib/libnextcloudsync.so
-lib/libnextcloudsync.so.0
 lib/libnextcloudsync.so.%%VERSION%%
+lib/libnextcloudsync.so.0
 lib/nextcloudsync_vfs_suffix.so
+%%KDE%%%%QT_PLUGINDIR%%/kf6/kfileitemaction/nextclouddolphinactionplugin.so
+%%KDE%%%%QT_PLUGINDIR%%/kf6/overlayicon/nextclouddolphinoverlayplugin.so
 share/applications/com.nextcloud.desktopclient.nextcloud.desktop
 %%GNOME%%share/caja-python/extensions/syncstate-Nextcloud.py
 share/icons/hicolor/1024x1024/apps/Nextcloud.png
@@ -118,6 +121,7 @@ share/nextcloud/i18n/client_eu.qm
 share/nextcloud/i18n/client_fa.qm
 share/nextcloud/i18n/client_fi.qm
 share/nextcloud/i18n/client_fr.qm
+share/nextcloud/i18n/client_ga.qm
 share/nextcloud/i18n/client_gl.qm
 share/nextcloud/i18n/client_he.qm
 share/nextcloud/i18n/client_hr.qm

@@ -1,5 +1,5 @@
 PORTNAME=	squirrelmail
-DISTVERSION=	20230207
+DISTVERSION=	20240929
 CATEGORIES=	mail www
 MASTER_SITES=	http://snapshots.squirrelmail.org/ \
 		http://freebsd.uzsolt.hu/src/

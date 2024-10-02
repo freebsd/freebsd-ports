@@ -1,9 +1,9 @@
 PORTNAME=	sphinxcontrib-bibtex
-PORTVERSION=	2.6.2
-PORTREVISION=	2
+PORTVERSION=	2.6.3
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	sphinxcontrib_bibtex-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sphinx extension for BibTeX style citations
@@ -29,6 +29,10 @@ NO_ARCH=	yes
 
 .if ${PYTHON_REL} < 31000
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=3.6:devel/py-importlib-metadata@${PY_FLAVOR}
+.endif
+
+.if ${PYTHON_REL} >= 31200
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>

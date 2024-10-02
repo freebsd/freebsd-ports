@@ -1,5 +1,6 @@
 PORTNAME=	checkpassword
 PORTVERSION=	0.90
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://cr.yp.to/checkpwd/ \
 		GENTOO

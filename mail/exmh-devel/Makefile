@@ -2,7 +2,7 @@
 
 PORTNAME=	exmh
 PORTVERSION=	${COMMIT_DATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	mail tk
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=  -devel
@@ -15,7 +15,7 @@ WWW=		http://www.beedub.com/exmh/
 USE_GITHUB=     yes
 GH_ACCOUNT=     cschuber
 GH_PROJECT=     exmh
-GH_TAGNAME=     be4b011
+GH_TAGNAME=     8b183a
 COMMIT_DATE=    2022.09.28
 
 .if defined(JAPANESE_EXMH)

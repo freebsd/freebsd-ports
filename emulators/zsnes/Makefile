@@ -42,12 +42,6 @@ JMA_CONFIGURE_ENABLE=		jma
 OPENGL_CONFIGURE_ENABLE=	opengl
 X11_CONFIGURE_WITH=		x
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400000 && ${OSVERSION} < 1401000
-IGNORE=		does not build on FreeBSD 14.0 - zlib is too old
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|@CXX@ @CFLAGS@ -o|@CXX@ @CXXFLAGS@ @CPPFLAGS@ -o|g ; s|@CC@ @CFLAGS@ -o|@CC@ @CFLAGS@ @CPPFLAGS@ -o|g' \
 		${WRKSRC}/Makefile.in

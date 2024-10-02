@@ -12,7 +12,7 @@ WWW=		https://github.com/drakkan/sftpgo
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules tar:xz
+USES=		go:modules tar:xz
 USE_RC_SUBR=	${PORTNAME}
 
 NO_WRKSUBDIR=	yes

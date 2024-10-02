@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/certificate_manager/client_cert_sources.cc.orig	2024-08-26 12:06:38 UTC
+--- chrome/browser/ui/webui/certificate_manager/client_cert_sources.cc.orig	2024-09-30 07:45:04 UTC
 +++ chrome/browser/ui/webui/certificate_manager/client_cert_sources.cc
 @@ -36,7 +36,7 @@
  #include "net/ssl/client_cert_store_mac.h"
@@ -18,7 +18,7 @@
  // ClientCertStore implementation that always returns an empty list. The
  // CertificateProvisioningService implementation expects to wrap a platform
  // cert store, but here we only want to get results from the provisioning
-@@ -373,7 +373,7 @@ CreatePlatformClientCertSource() {
+@@ -393,7 +393,7 @@ CreatePlatformClientCertSource(
  #endif
  }
  

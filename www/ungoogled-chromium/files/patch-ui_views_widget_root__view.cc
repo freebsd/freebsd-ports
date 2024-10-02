@@ -1,6 +1,6 @@
---- ui/views/widget/root_view.cc.orig	2024-08-26 14:40:28 UTC
+--- ui/views/widget/root_view.cc.orig	2024-10-01 07:26:23 UTC
 +++ ui/views/widget/root_view.cc
-@@ -129,7 +129,7 @@ class AnnounceTextView : public View {
+@@ -135,7 +135,7 @@ class AnnounceTextView : public View {
  #if BUILDFLAG(IS_CHROMEOS)
      // On ChromeOS, kAlert role can invoke an unnecessary event on reparenting.
      node_data->role = ax::mojom::Role::kStaticText;

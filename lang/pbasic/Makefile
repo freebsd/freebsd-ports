@@ -1,6 +1,6 @@
 PORTNAME=	pbasic
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.berklix.org/pub/FreeBSD/ports/distfiles/ \
 		http://www.berklix.com/~jhs/ftp/distfiles/

@@ -3418,7 +3418,7 @@ audio/epos-devel||2024-08-04|Has expired: Abandonware, last release in 2006 and 
 audio/sidplay2|audio/sidplayfp|2024-08-04|Has expired: Abandonware and superseded by audio/sidplayfp
 audio/sidplay|audio/sidplayfp|2024-08-04|Has expired: Abandonware and superseded by audio/sidplayfp
 audio/optimfrog||2024-08-04|Has expired: Obsolete format that never gained traction, consider using audio/flac
-databases/mongodb44|database/mongodb50|2024-08-04|Has expired: EOL as of February 2024, https://www.mongodb.com/legal/support-policy/lifecycles
+databases/mongodb44|databases/mongodb50|2024-08-04|Has expired: EOL as of February 2024, https://www.mongodb.com/legal/support-policy/lifecycles
 graphics/svg2pdf||2024-08-04|Has expired: Depends on deprecated library graphics/libsvg-cairo, please consider using ImageMagick or librsvg
 audio/libsidplay2||2024-08-04|Has expired: Abandonware and superseded by audio/libsidplayfp
 www/py-imdbpy|www/py-cinemagoer|2024-08-04|Has expired: IMDbPY is now cinemagoer. Use www/py-cinemagoer instead
@@ -3487,3 +3487,32 @@ devel/rubygem-sidekiq71|devel/rubygem-sidekiq72|2024-09-23|Has expired: use deve
 devel/xtensa-esp32-elf|devel/xtensa-esp-elf|2024-09-23|Upstream was renamed
 sysutils/orch|sysutils/porch|2024-09-26|Upstream was renamed
 security/nextcloud-twofactor_nextcloud_notification||2024-09-27|Removed, bundled with Nextcloud 30
+textproc/hs-pandoc32|textproc/hs-pandoc|2024-09-29|the only user changed to textproc/hs-pandoc
+archivers/librtfcomp||2024-09-30|Remove expired port. Latest version was released in 2013. There is no consumers in the ports tree
+misc/raspberrypi-userland||2024-09-30|Has expired: Deprecated by the upstream
+audio/py-tagpy||2024-09-30|Has expired: Abandonded upstream
+devel/libdsp||2024-09-30|Has expired: Abandonware, last release upstream in 2005 and unmaintained since 2015
+devel/libxs||2024-09-30|Has expired: Upstream is gone and repo is deleted
+games/adonthell-wastesedge||2024-09-30|Has expired: Depends on deprecated port games/adonthell
+games/adonthell||2024-09-30|Has expired: Unmaintained in tree and broken for months
+www/thundercache||2024-09-30|Has expired: Deprecated and outdated, product is still being maintained upstream
+math/tablix||2024-09-30|Has expired: Abandonware, upstream is gone and source code is no longer available
+www/mod_amazon_proxy||2024-09-30|Has expired: Abandonware, last updated in 2010
+www/subsonic-standalone||2024-09-30|Has expired: Abandonware, no longer maintained upstream as of 2019
+sysutils/bacula9-client||2024-09-30|Has expired: Unsupported. Please migrate to bacula15-server
+sysutils/bacula9-client-static||2024-09-30|Has expired: Unsupported. Please migrate to bacula15-server
+sysutils/bacula9-docs||2024-09-30|Has expired: Unsupported. Please migrate to bacula15-server
+sysutils/bacula9-server||2024-09-30|Has expired: Unsupported. Please migrate to bacula15-server
+net-mgmt/nagios-check_bacula9||2024-09-30|Has expired: Unsupported. Please migrate to bacula15-server
+sysutils/bacula11-client||2024-09-30|Has expired: Unsupported. Please migrate to bacula15-server
+sysutils/bacula11-client-static||2024-09-30|Has expired: Unsupported. Please migrate to bacula15-server
+sysutils/bacula11-docs||2024-09-30|Has expired: Unsupported. Please migrate to bacula15-server
+sysutils/bacula11-server||2024-09-30|Has expired: Unsupported. Please migrate to bacula15-server
+net-mgmt/nagios-check_bacula11||2024-09-30|Has expired: Unsupported. Please migrate to bacula15-server
+sysutils/bhyve+||2024-09-30|Has expired: EOLed upstream
+www/sahi||2024-09-30|Has expired: Abandonware and outdated, newer versions requires users to purchase a license and current versions refers to Java 1.5
+www/template_||2024-09-30|Has expired: Abandonware, outdated and last version released upstream was released in 2015
+www/screego||2024-09-30|Has expired: Outdated, unmaintained in tree and marked broken over a year ago
+archivers/py-borgbackup11||2024-09-30|Has expired: No longer supported upstream, use borgbackup 1.2 (oldstable) or 1.4 (stable) instead
+devel/rth||2024-09-30|Has expired: Abandonware, Unmaintained upstream as of 2013
+devel/libegit2||2024-09-30|Has expired: No consumer in ports tree

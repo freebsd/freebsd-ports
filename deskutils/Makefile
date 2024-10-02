@@ -162,6 +162,7 @@
     SUBDIR += libportal-gtk3
     SUBDIR += libportal-gtk4
     SUBDIR += libportal-qt5
+    SUBDIR += libportal-qt6
     SUBDIR += ljclive
     SUBDIR += lumina-archiver
     SUBDIR += lumina-calculator

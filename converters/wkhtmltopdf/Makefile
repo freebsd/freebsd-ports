@@ -71,7 +71,7 @@ post-patch:
 	${ECHO} 'LIBS+= -lcrypto' >>${WRKSRC}/src/pdf/pdf.pro
 	${MKDIR} ${WRKSRC}/build/app ${WRKSRC}/build/qt \
 		${WRKSRC}/build/wkhtmltox
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 	@${FIND} ${PATCH_WRKSRC}/../qt-5db36ec -name "*.cpp" -o -name "*.h" | \
 		${XARGS} ${REINPLACE_CMD} -E 's|register ([a-zA-Z])|\1|g'
 .endif

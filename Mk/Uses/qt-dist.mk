@@ -28,7 +28,7 @@ _COMMON_DISTS=		3d base charts connectivity datavis3d declarative imageformats l
 _QT5_DISTS=		gamepad graphicaleffects quickcontrols \
 			quickcontrols2 script webglplugin \
 			x11extras xmlpatterns
-_QT6_DISTS=		5compat coap doc graphs httpserver languageserver lottie positioning \
+_QT6_DISTS=		5compat coap doc graphs grpc httpserver languageserver lottie positioning \
 			quick3dphysics quickeffectmaker shadertools
 
 _QT_DISTS=		${_COMMON_DISTS} \

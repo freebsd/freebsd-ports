@@ -1,10 +1,11 @@
---- src/Makefile.orig	2024-09-20 12:42:26 UTC
+--- src/Makefile.orig	2024-05-06 23:04:41 UTC
 +++ src/Makefile
 @@ -82,7 +82,7 @@ $(SOLIB): deps
  $(ARLIB): deps
-	$(AR) $(ARFLAGS) $@ $(OBJS) $(GENCODECS_OBJ) $(CORE_OBJS)
+ 	$(AR) $(ARFLAGS) $@ $(OBJS) $(GENCODECS_OBJ) $(CORE_OBJS)
  $(SOLIB): deps
 -	$(CC) -shared -lcurl -o $@ $(OBJS) $(GENCODECS_OBJ) $(CORE_OBJS)
 +	$(CC) -shared -L$(PREFIX)/lib -lcurl -o $@ $(OBJS) $(GENCODECS_OBJ) $(CORE_OBJS)
  $(DYLIB): deps
-	$(CC) -dynamiclib $(DYFLAGS) -o $@ $(OBJS) $(GENCODECS_OBJ) $(CORE_OBJS)
+ 	$(CC) -dynamiclib $(DYFLAGS) -o $@ $(OBJS) $(GENCODECS_OBJ) $(CORE_OBJS)
+ 

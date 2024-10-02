@@ -1,6 +1,6 @@
 PORTNAME=	quarto
-DISTVERSION=	1.6.9
-PORTREVISION=	5
+DISTVERSION=	1.6.15
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/quarto-dev/quarto-cli/releases/download/v${DISTVERSION}/
 DISTFILES=	quarto-${DISTVERSION}-linux-amd64.tar.gz # same for all architectures
@@ -10,35 +10,45 @@ COMMENT=	Scientific and technical publishing system
 WWW=		https://quarto.org/
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/repo/COPYRIGHT
+LICENSE_FILE=	${WRKSRC_repo}/COPYRIGHT
 
+# the recommended dependency versions are in the file 'configuration'
 RUN_DEPENDS=	bash:shells/bash \
 		deno:www/deno \
 		esbuild:devel/esbuild \
-		hs-pandoc32>0:textproc/hs-pandoc32 \
+		hs-pandoc>0:textproc/hs-pandoc \
 		typst:textproc/typst \
 		deno-dom>0:www/deno-dom \
 		tex-xetex>0:print/tex-xetex \
 		${LOCALBASE}/lib/ruby/gems/3.2/gems/dartsass-1.49.8/exe/linux/sass:textproc/rubygem-dartsass \
 		${PYTHON_PKGNAMEPREFIX}jupyter>0:devel/py-jupyter@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pipenv>0:devel/py-pipenv@${PY_FLAVOR} \
+		${JULIA_RUN_DEPENS} \
+		${R_RUN_DEPENDS}
 
 USES=		python
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	quarto-dev:quarto-cli:v${DISTVERSION}:repo/repo # only for tests
 
-XARCH!=		uname -m
+WRKSRC_repo=	${WRKSRC}/repo
 
-PLIST_SUB+=	XARCH=${XARCH}
+XARCH!=		uname -m
 
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=	R
+PLIST_SUB+=	XARCH=${XARCH}
 
-R_DESC=		Install R dependency
-R_RUN_DEPENDS=	R:math/R \
-		R-cran-knitr>0:print/R-cran-knitr
-		#R-cran-rmarkdown>0:textproc/R-cran-rmarkdown # conflicts with hs-pandoc32
+OPTIONS_GROUP=			DEPENDENCIES
+OPTIONS_GROUP_DEPENDENCIES=	JULIA R
+
+JULIA_DESC=			Install Julia dependency
+JULIA_RUN_DEPENS=		julia:lang/julia
+
+R_DESC=				Install R dependency
+R_RUN_DEPENDS=			R:math/R \
+				R-cran-knitr>0:print/R-cran-knitr \
+				R-cran-rmarkdown>0:textproc/R-cran-rmarkdown
 
 post-patch:
 	# replace tokens in the quarto executable and in run-tests.sh
@@ -46,10 +56,16 @@ post-patch:
 		-e 's|%%SCRIPT_PATH%%|${DATADIR}/bin|; s|%%ARCH_DIR%%|${XARCH}|' \
 		${WRKSRC}/bin/quarto
 	${REINPLACE_CMD} \
-		-e 's|%%SCRIPT_PATH%%|${STAGEDIR}${DATADIR}/bin|; s|%%ARCH_DIR%%|${XARCH}|; s|%%REPO%%|${WRKSRC}/repo|; s|$$DENO_DIR|${LOCALBASE}/bin|' \
+		-e ' \
+			s|%%SCRIPT_PATH%%|${STAGEDIR}${DATADIR}/bin|; \
+			s|%%ARCH_DIR%%|${XARCH}|; \
+			s|%%REPO%%|${WRKSRC}/repo|; \
+			s|$$DENO_DIR|${LOCALBASE}/bin|; \
+			s|export QUARTO_SHARE_PATH=.*|export QUARTO_SHARE_PATH=${WRKSRC_repo}/src/resources|; \
+		' \
 		${WRKSRC}/repo/tests/run-tests.sh
 	# replace python3 with the real python executable path
-	${REINPLACE_CMD} -e 's|"python3"|"${PYTHON_CMD}"|' ${WRKSRC}/bin/quarto.js
+	${REINPLACE_CMD} -i '' -e 's|"python3"|"${PYTHON_CMD}"|' ${WRKSRC}/bin/quarto.js
 
 do-install:
 	# copy files from the tarball
@@ -83,5 +99,10 @@ do-install:
 	${LN} -s \
 		${LOCALBASE}/lib/ruby/gems/3.2/gems/dartsass-1.49.8/exe/linux/sass \
 		${STAGEDIR}${DATADIR}/bin/tools/${XARCH}/dart-sass/sass
+
+do-test: # tests fail to run with: RuntimeError: Failed to lock Pipfile.lock!
+	@cd ${WRKSRC_repo}/tests && \
+		${SETENV} QUARTO_TESTS_FORCE_NO_PIPENV=yes \
+		./run-tests.sh smoke/extensions/extension-render-doc.test.ts
 
 .include <bsd.port.mk>

@@ -12,8 +12,8 @@ USE_PYTHON=	flavors py3kplist
 # There is bug in python bindings Makefile
 MAKE_JOBS_UNSAFE=yes
 
-PORTREVISION_LATEST=	4
-PORTREVISION_LTS=		2
+PORTREVISION_LATEST=	5
+PORTREVISION_LTS=		3
 
 SVN_BUILD_BINDINGS=	yes
 

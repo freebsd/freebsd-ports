@@ -59,11 +59,11 @@ SUB_LIST+=		GNUSTEP_LOCAL_TOOLS=${GNUSTEP_LOCAL_TOOLS} \
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-CPPFLAGS+=       -Wno-error=int-conversion
+.if ${OPSYS} == FreeBSD
+CPPFLAGS+=	-Wno-error=int-conversion
 .endif
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CPPFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 

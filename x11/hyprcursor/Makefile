@@ -1,7 +1,10 @@
 PORTNAME=	hyprcursor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.9
+DISTVERSION=	0.1.10
 CATEGORIES=	x11
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	f8e8455e998e.patch:-p1 # https://github.com/hyprwm/hyprcursor/pull/66
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Hyprland cursor format, library and utilities
@@ -20,11 +23,6 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo librsvg2
 GH_ACCOUNT=	hyprwm
 PLIST_SUB=	VERSION=${DISTVERSION:C/-.*//}
-
-# XXX Drop after FreeBSD 14.0 EOL around 2024-10-01
-.if exists(/usr/lib/libc++.so) && !exists(/usr/include/c++/v1/__format/write_escaped.h)
-CXXFLAGS+=	-fexperimental-library
-.endif
 
 post-patch:
 # Respect PREFIX for icons

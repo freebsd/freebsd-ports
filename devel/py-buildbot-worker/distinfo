@@ -1,3 +1,3 @@
-TIMESTAMP = 1723962756
-SHA256 (buildbot_worker-3.11.7.tar.gz) = 23a521af27dcc7d71c548ddef525ed695788a362e212364ab566e16148deea76
-SIZE (buildbot_worker-3.11.7.tar.gz) = 132744
+TIMESTAMP = 1727614894
+SHA256 (buildbot_worker-3.11.8.tar.gz) = a5525857ff3d1bfda6c72e8c960e30d8b3929a0a2f080631d2d0f04abc9214d4
+SIZE (buildbot_worker-3.11.8.tar.gz) = 133268

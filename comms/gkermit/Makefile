@@ -1,6 +1,6 @@
 PORTNAME=	gkermit
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.kermitproject.org/kermit/archives/
 DISTNAME=	gku100
@@ -15,6 +15,8 @@ ALL_TARGET=	posix
 MAKEFILE=	makefile
 
 OPTIONS_DEFINE=	DOCS
+
+CFLAGS+=	-DERRNO_H
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gkermit ${STAGEDIR}${PREFIX}/bin

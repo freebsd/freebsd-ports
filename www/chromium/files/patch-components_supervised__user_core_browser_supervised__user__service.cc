@@ -1,6 +1,6 @@
---- components/supervised_user/core/browser/supervised_user_service.cc.orig	2024-08-26 12:06:38 UTC
+--- components/supervised_user/core/browser/supervised_user_service.cc.orig	2024-09-30 07:45:04 UTC
 +++ components/supervised_user/core/browser/supervised_user_service.cc
-@@ -176,7 +176,7 @@ FirstTimeInterstitialBannerState SupervisedUserService
+@@ -173,7 +173,7 @@ FirstTimeInterstitialBannerState SupervisedUserService
      const FirstTimeInterstitialBannerState original_state) {
    FirstTimeInterstitialBannerState target_state = original_state;
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

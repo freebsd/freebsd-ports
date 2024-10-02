@@ -38,7 +38,7 @@
 #   			  is installed, bring in the default version. See
 #   			  ${_TCLTK_DEFAULT_VERSION} below.
 #
-# - 86, 87		- Depend on a specific version series of PORT. Multiple
+# - 86, 87, 90		- Depend on a specific version series of PORT. Multiple
 #   			  values are OK. The highest version available is
 #   			  picked.
 #
@@ -71,7 +71,7 @@ _INCLUDE_USES_TCL_MK=	yes
 #
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-_TCLTK_VALID_VERSIONS=	86 87
+_TCLTK_VALID_VERSIONS=	86 87 90
 
 #
 # Bring in the default and check that the specified version is in the list of
@@ -101,6 +101,9 @@ _TCLTK_WANTED_VERSIONS:=${_TCLTK_DEFAULT_VERSION}
 #
 .  if ${tcl_ARGS:M8[6-7]}
 _TCLTK_WANTED_VERSIONS:=${tcl_ARGS:M8[6-7]}
+.  endif
+.  if ${tcl_ARGS:M90}
+_TCLTK_WANTED_VERSIONS:=${tcl_ARGS:M90}
 .  endif
 
 #
@@ -155,14 +158,14 @@ _TCLTK_WANTED_VERSION:= ${_TCLTK_HIGHEST_VERSION}
 #
 # Exported variables
 #
-TCL_VER:=	${_TCLTK_WANTED_VERSION:S/8/8./}
+TCL_VER:=	${_TCLTK_WANTED_VERSION:S/8/8./:S/9/9./}
 TCL_SHLIB_VER:=	${_TCLTK_WANTED_VERSION}
 TCLSH:=		${LOCALBASE}/bin/tclsh${TCL_VER}
 TCL_LIBDIR:=	${LOCALBASE}/lib/tcl${TCL_VER}
 TCL_INCLUDEDIR:=${LOCALBASE}/include/tcl${TCL_VER}
 
 .  if ${_TCLTK_PORT} == "tk"
-TK_VER:=	${_TCLTK_WANTED_VERSION:S/8/8./}
+TK_VER:=	${_TCLTK_WANTED_VERSION:S/8/8./:S/9/9./}
 TK_SHLIB_VER:=	${_TCLTK_WANTED_VERSION}
 WISH:=		${LOCALBASE}/bin/wish${TCL_VER}
 TK_LIBDIR:=	${LOCALBASE}/lib/tk${TK_VER}

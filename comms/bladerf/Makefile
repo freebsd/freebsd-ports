@@ -18,8 +18,8 @@ GH_TUPLE=	analogdevicesinc:no-OS:0bba46e:x/thirdparty/analogdevicesinc/no-OS
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-CFLAGS+=       -Wno-error=unused-but-set-variable
+.if ${OPSYS} == FreeBSD
+CFLAGS+=	-Wno-error=unused-but-set-variable
 .endif
 
 .include <bsd.port.post.mk>

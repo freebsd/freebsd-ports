@@ -1,4 +1,4 @@
---- cmake/AddXdgHelpTarget.cmake.orig	2023-09-05 01:13:47 UTC
+--- cmake/AddXdgHelpTarget.cmake.orig	2024-09-22 23:25:40 UTC
 +++ cmake/AddXdgHelpTarget.cmake
 @@ -45,8 +45,8 @@ function (add_xdghelp_target targetbase lang entities 
        COMMAND ${CMAKE_COMMAND} -E make_directory "${BUILD_DIR}/figures"
@@ -14,13 +14,13 @@
 @@ -91,8 +91,8 @@ function (add_xdghelp_target targetbase lang entities 
  
      # Add links to make our documentation visible for KDE's help system
-     set(doc_install_dir_kde_base "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATADIR}/doc/HTML")
+     set(doc_install_dir_kde_base "\$ENV{DESTDIR}${CMAKE_INSTALL_DATADIR}/doc/HTML")
 -    install(CODE "execute_process (COMMAND ${CMAKE_COMMAND} -E make_directory \"${doc_install_dir_kde_base}\")"
 -        COMPONENT "xdghelp")
 -    install(CODE "execute_process (COMMAND ${CMAKE_COMMAND} -E create_symlink \"../../../${doc_install_dir_base}\" \"${doc_install_dir_kde_base}/${kde_lang}\")"
 -        COMPONENT "xdghelp")
 +    # install(CODE "execute_process (COMMAND ${CMAKE_COMMAND} -E make_directory \"${doc_install_dir_kde_base}\")"
-+    #    COMPONENT "xdghelp")
++    #     COMPONENT "xdghelp")
 +    # install(CODE "execute_process (COMMAND ${CMAKE_COMMAND} -E create_symlink \"../../../${doc_install_dir_base}\" \"${doc_install_dir_kde_base}/${kde_lang}\")"
-+    #    COMPONENT "xdghelp")
++    #     COMPONENT "xdghelp")
  endfunction()

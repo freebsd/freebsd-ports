@@ -509,6 +509,9 @@ share/help/de/gnucash-manual/figures/Busnss_Customer_Job.png
 share/help/de/gnucash-manual/figures/Busnss_Customer_New_1.png
 share/help/de/gnucash-manual/figures/Busnss_Customer_New_2.png
 share/help/de/gnucash-manual/figures/Busnss_Customer_New_3.png
+share/help/de/gnucash-manual/figures/Busnss_Employee_New_1.png
+share/help/de/gnucash-manual/figures/Busnss_Employee_New_2.png
+share/help/de/gnucash-manual/figures/Busnss_Employee_New_3.png
 share/help/de/gnucash-manual/figures/Busnss_Invoice_Edit.png
 share/help/de/gnucash-manual/figures/Busnss_Invoice_New.png
 share/help/de/gnucash-manual/figures/Busnss_Invoice_Payment.png
@@ -520,6 +523,8 @@ share/help/de/gnucash-manual/figures/Busnss_Terms_Organize.png
 share/help/de/gnucash-manual/figures/Busnss_Vendor_Job.png
 share/help/de/gnucash-manual/figures/Busnss_Vendor_New_1.png
 share/help/de/gnucash-manual/figures/Busnss_Vendor_New_2.png
+share/help/de/gnucash-manual/figures/Busnss_Voucher_Edit.png
+share/help/de/gnucash-manual/figures/Busnss_Voucher_New.png
 share/help/de/gnucash-manual/figures/CSV_Import_transactions_Preview.png
 share/help/de/gnucash-manual/figures/CSV_Transaction_Import_Assistant.png
 share/help/de/gnucash-manual/figures/Choose_Export_Settings.png
@@ -558,6 +563,7 @@ share/help/de/gnucash-manual/figures/Tools_CloseBook.png
 share/help/de/gnucash-manual/figures/Tools_Find_bsnss.png
 share/help/de/gnucash-manual/figures/Tools_Find_bsnss_result.png
 share/help/de/gnucash-manual/figures/Tools_Find_txn.png
+share/help/de/gnucash-manual/figures/Tools_LoanCalculator.png
 share/help/de/gnucash-manual/figures/Tools_PriceDatabase.png
 share/help/de/gnucash-manual/figures/Tools_PriceEditor_add.png
 share/help/de/gnucash-manual/figures/Tools_PriceEditor_del.png

@@ -1,6 +1,6 @@
 PORTNAME=	queue-fix
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.netmeridian.com/e-huss/ \
 		GENTOO

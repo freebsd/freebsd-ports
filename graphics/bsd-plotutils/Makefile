@@ -27,7 +27,7 @@ FORTRAN_USES=	fortran
 
 .include <bsd.port.pre.mk>
 
-.if defined(NO_PROFILE) || ( ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 )))
+.if defined(NO_PROFILE) || ${OPSYS} == FreeBSD
 PLIST_SUB+=	PROFILE="@comment "
 .else
 PLIST_SUB+=	PROFILE=""

@@ -1,0 +1,44 @@
+--- subversion/bindings/swig/python/libsvn_swig_py/swigutil_py.c.orig	2023-10-20 04:00:04 UTC
++++ subversion/bindings/swig/python/libsvn_swig_py/swigutil_py.c
+@@ -2321,8 +2321,6 @@ static svn_error_t *apply_textdelta(void *file_baton,
+      in Python.  */
+   if (result == Py_None)
+     {
+-      Py_DECREF(result);
+-
+       *handler = svn_delta_noop_window_handler;
+       *h_baton = NULL;
+     }
+@@ -2839,8 +2837,7 @@ parse_fn3_apply_textdelta(svn_txdelta_window_handler_t
+ {
+   PyObject *editor = NULL, *baton_item = NULL, *py_pool = NULL;
+   PyObject *ib = node_baton;
+-  apr_pool_t *pool;
+-  PyObject *result;
++  PyObject *result = NULL;
+   svn_error_t *err;
+ 
+   svn_swig_py_acquire_py_lock();
+@@ -2863,13 +2860,12 @@ parse_fn3_apply_textdelta(svn_txdelta_window_handler_t
+      in Python.  */
+   if (result == Py_None)
+     {
+-      Py_DECREF(result);
+-
+       *handler = svn_delta_noop_window_handler;
+       *handler_baton = NULL;
+     }
+   else
+     {
++      apr_pool_t *pool;
+       /* return the thunk for invoking the handler. the baton creates
+          new reference of our 'result' reference, which is the handler,
+          so we release it even if no error. */
+@@ -2890,6 +2886,7 @@ parse_fn3_apply_textdelta(svn_txdelta_window_handler_t
+   err = SVN_NO_ERROR;
+ 
+  finished:
++  Py_XDECREF(result);
+   svn_swig_py_release_py_lock();
+   return err;
+ }

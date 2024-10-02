@@ -1,6 +1,6 @@
 PORTNAME=	xspread
 PORTVERSION=	3.1.1c
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	http://archive.debian.org/%SUBDIR%/ \
 		http://mirror.safehostnet.com/debian-archive/%SUBDIR%/ \

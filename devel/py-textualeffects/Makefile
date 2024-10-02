@@ -1,5 +1,5 @@
 PORTNAME=	textualeffects
-DISTVERSION=	0.1.2
+DISTVERSION=	0.1.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,5 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}terminaltexteffects>=0.11.0:devel/py-termina
 
 USES=		python
 USE_PYTHON=	autoplist pep517
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

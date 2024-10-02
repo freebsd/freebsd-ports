@@ -5,6 +5,9 @@ include/libportal/dynamic-launcher.h
 include/libportal/email.h
 include/libportal/filechooser.h
 include/libportal/inhibit.h
+include/libportal/inputcapture-pointerbarrier.h
+include/libportal/inputcapture-zone.h
+include/libportal/inputcapture.h
 include/libportal/location.h
 include/libportal/notification.h
 include/libportal/openuri.h
@@ -15,6 +18,8 @@ include/libportal/portal.h
 include/libportal/print.h
 include/libportal/remote.h
 include/libportal/screenshot.h
+include/libportal/session.h
+include/libportal/settings.h
 include/libportal/spawn.h
 include/libportal/trash.h
 include/libportal/types.h

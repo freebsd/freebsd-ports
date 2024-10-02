@@ -9,7 +9,6 @@ share/applications/caneda.desktop
 %%DATADIR%%/images/align-vertical-center.png
 %%DATADIR%%/images/align-vertical-top.png
 %%DATADIR%%/images/application-exit.png
-%%DATADIR%%/images/application-x-caneda-layout.png
 %%DATADIR%%/images/application-x-caneda-schematic.png
 %%DATADIR%%/images/application-x-caneda-symbol.png
 %%DATADIR%%/images/application-x-spice-netlist.png
@@ -135,7 +134,10 @@ share/applications/caneda.desktop
 %%DATADIR%%/libraries/components/cmos/translations.xml
 %%DATADIR%%/libraries/components/cmos/xnor.xsym
 %%DATADIR%%/libraries/components/cmos/xor.xsym
-%%DATADIR%%/libraries/components/miscellaneous/ammeter.xsym
+%%DATADIR%%/libraries/components/measurement/ammeter.xsym
+%%DATADIR%%/libraries/components/measurement/translations.xml
+%%DATADIR%%/libraries/components/measurement/voltmeter.xsym
+%%DATADIR%%/libraries/components/measurement/voltmeterdifferential.xsym
 %%DATADIR%%/libraries/components/miscellaneous/directive.xsym
 %%DATADIR%%/libraries/components/miscellaneous/global.xsym
 %%DATADIR%%/libraries/components/miscellaneous/include.xsym
@@ -145,7 +147,6 @@ share/applications/caneda.desktop
 %%DATADIR%%/libraries/components/miscellaneous/parameter.xsym
 %%DATADIR%%/libraries/components/miscellaneous/temperature.xsym
 %%DATADIR%%/libraries/components/miscellaneous/translations.xml
-%%DATADIR%%/libraries/components/miscellaneous/voltmeter.xsym
 %%DATADIR%%/libraries/components/models/capacitormodel.xsym
 %%DATADIR%%/libraries/components/models/coupledmulticonductormodel.xsym
 %%DATADIR%%/libraries/components/models/currentswitchmodel.xsym

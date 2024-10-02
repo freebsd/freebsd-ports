@@ -1,14 +1,14 @@
---- content/browser/browser_child_process_host_impl.cc.orig	2024-08-26 12:06:38 UTC
+--- content/browser/browser_child_process_host_impl.cc.orig	2024-09-30 07:45:04 UTC
 +++ content/browser/browser_child_process_host_impl.cc
-@@ -324,6 +324,7 @@ void BrowserChildProcessHostImpl::LaunchWithoutExtraCo
-       switches::kMojoCoreLibraryPath,
+@@ -328,6 +328,7 @@ void BrowserChildProcessHostImpl::LaunchWithoutExtraCo
+       switches::kLogBestEffortTasks,
        switches::kPerfettoDisableInterning,
        switches::kTraceToConsole,
 +      switches::kDisableUnveil,
    };
    cmd_line->CopySwitchesFrom(browser_command_line, kForwardSwitches);
  
-@@ -655,7 +656,7 @@ void BrowserChildProcessHostImpl::OnProcessLaunched() 
+@@ -659,7 +660,7 @@ void BrowserChildProcessHostImpl::OnProcessLaunched() 
            ->child_process());
  #endif
  

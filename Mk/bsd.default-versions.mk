@@ -126,7 +126,7 @@ _PERL5_FROM_BIN!=	${LOCALBASE}/bin/perl -e 'printf "%vd\n", $$^V;'
 _EXPORTED_VARS+=	_PERL5_FROM_BIN
 PERL5_DEFAULT:=		${_PERL5_FROM_BIN:R}
 .  endif
-# Possible values: 12, 13, 14, 15, 16
+# Possible values: 12, 13, 14, 15, 16, 17
 PGSQL_DEFAULT?=		16
 # Possible values: 8.1, 8.2, 8.3, 8.4
 PHP_DEFAULT?=		8.2

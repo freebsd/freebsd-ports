@@ -1,5 +1,5 @@
 PORTNAME=	nextcloudclient
-PORTVERSION=	3.13.3
+PORTVERSION=	3.14.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -11,17 +11,16 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	inkscape:graphics/inkscape
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
-		libqt5keychain.so:security/qtkeychain@qt5
+		libqt6keychain.so:security/qtkeychain@qt6 \
+		libxkbcommon.so:x11/libxkbcommon
 
-USES=		cmake:noninja compiler:c++14-lang desktop-file-utils gmake \
-		gnome iconv kde:5 localbase:ldflags pkgconfig qt:5 shared-mime-info \
+USES=		cmake:noninja compiler:c++17-lang desktop-file-utils gl gmake \
+		gnome iconv kde:6 localbase:ldflags pkgconfig qt:6 shared-mime-info \
 		sqlite ssl
+USE_GL=		opengl
 USE_KDE=	archive
 USE_LDCONFIG=	yes
-USE_QT=		buildtools:build concurrent core dbus declarative graphicaleffects \
-		gui linguist:build network qmake:build quickcontrols \
-		quickcontrols2 sql svg websockets widgets xml
-
+USE_QT=		5compat base declarative svg websockets
 CMAKE_ARGS=	-DBUILD_UPDATER:BOOL=OFF \
 		-DWITH_STACK_PROTECTOR:BOOL=OFF
 
@@ -52,11 +51,11 @@ DOCS_VARS=		PORTDOCS=*
 GNOME_CMAKE_BOOL=	BUILD_SHELL_INTEGRATION_NAUTILUS
 
 KDE_USES=		xorg
-KDE_USE=		KDE=completion,config,coreaddons,ecm,jobwidgets,kio,service,solid,widgetsaddons,windowsystem \
+KDE_USE=		KDE=completion,config,coreaddons,ecm:build,guiaddons,jobwidgets,kio,service,solid,widgetsaddons,windowsystem \
 			XORG=x11
 KDE_CMAKE_BOOL=		BUILD_SHELL_INTEGRATION_DOLPHIN
 
-WEBENGINE_USE=		QT=webchannel,webengine,printsupport,location
+WEBENGINE_USE=		QT=location,webchannel,webengine
 WEBENGINE_CMAKE_BOOL=	BUILD_WITH_WEBENGINE
 
 .include <bsd.port.pre.mk>

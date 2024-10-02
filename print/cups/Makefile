@@ -1,6 +1,5 @@
 PORTNAME=	cups
-DISTVERSION=	2.4.10
-PORTREVISION=	1
+DISTVERSION=	2.4.11
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/OpenPrinting/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
@@ -9,10 +8,14 @@ MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Common UNIX Printing System
 WWW=		https://github.com/OpenPrinting/cups
 
-LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=		APACHE20 CUPS
+LICENSE_COMB=		multi
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE
+LICENSE_FILE_CUPS=	${WRKSRC}/NOTICE
+LICENSE_NAME_CUPS=	Apache License v2.0 with CUPS Exceptions
+LICENSE_PERMS_CUPS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		compiler:c++11-lang cpe gmake iconv localbase pkgconfig
+USES=		cpe gmake iconv localbase pkgconfig
 CPE_VENDOR=	linuxfoundation
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	cupsd

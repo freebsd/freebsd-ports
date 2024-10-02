@@ -1,8 +1,21 @@
 PORTNAME=	cups-filters
 PORTVERSION=	1.28.17
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/OpenPrinting/cups-filters/releases/download/${DISTVERSION}/
+
+PATCH_SITES=	https://github.com/OpenPrinting/cups-filters/commit/
+PATCHFILES=	9799398713b941557642d0b2bdbef360837ece0c.diff:-p1 \
+		93e60d3df358c0ae6f3dba79e1c9684657683d89.diff:-p1 \
+		d72184e725591f10e2b404b36fe3bf5bc304a299.diff:-p1 \
+		e25fd59a7daed00b6a9f235bd5818116fca28e30.diff:-p1 \
+		0cce0968980e8fdd9053cba436a66246b2303a84.diff:-p1 \
+		7b191cb1d4d0fc97ccbbd0fe43eec2544fe0c11e.diff:-p1 \
+		7992eb7c6e4abeffd766f54c98cbb2cbb45c5c04.diff:-p1 \
+		770ec883e68e505c1d1856a42b78f9323dc326a6.diff:-p1 \
+		2076627d33477212f21352ad39e9d305adb63af3.diff:-p1 \
+		10fb02eaaee52e0be9b16917b38aa8ec5bddd87f.diff:-p1 \
+		b7461ec2a8d1f2aa627b24e01e118ec4cca78ec0.diff:-p1
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Additional backends, filters and other software for CUPS
@@ -18,8 +31,8 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		compiler:c++11-lib cpe gmake gnome iconv libtool localbase \
-		pkgconfig shebangfix tar:xz
+USES=		autoreconf compiler:c++11-lib cpe gettext-tools gmake gnome \
+		iconv libtool localbase pkgconfig shebangfix tar:xz
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	cups_browsed
@@ -136,7 +149,7 @@ PSPOPPLER_DESC=			Poppler pdftops(1)
 
 .include <bsd.port.pre.mk>
 
-#.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+#.if ${OPSYS} == FreeBSD
 .if ${COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-error=dynamic-exception-spec
 .endif

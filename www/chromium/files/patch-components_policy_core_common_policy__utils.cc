@@ -1,6 +1,6 @@
---- components/policy/core/common/policy_utils.cc.orig	2024-01-30 07:53:34 UTC
+--- components/policy/core/common/policy_utils.cc.orig	2024-09-30 07:45:04 UTC
 +++ components/policy/core/common/policy_utils.cc
-@@ -28,7 +28,7 @@ bool IsPolicyTestingEnabled(PrefService* pref_service,
+@@ -22,7 +22,7 @@ bool IsPolicyTestingEnabled(PrefService* pref_service,
      return true;
    }
  

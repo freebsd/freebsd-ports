@@ -1,17 +1,15 @@
-*** compface/compface.1	Tue Jan 15 23:58:46 2002
---- /home/lkoeller/tmp/ports/mail/faces/work/faces/compface/compface.1	Sun Jan 19 19:35:35 2003
-***************
-*** 56,61 ****
---- 58,69 ----
-  .I compface
-  averages less than 200 characters.
-  The average number of output lines is three.
-+ .SH OPTIONS
-+ .TP 12
-+ .B \-X
-+ The same as
-+ .I uncompface
-+ | ikon2xbm. Usefull for exmh!
-  .SH DIAGNOSTICS
-  Exit status is normally 0.
-  Possible errors include IO errors when opening, reading or writing
+--- compface/compface.1.orig
++++ compface/compface.1
+@@ -56,6 +56,12 @@
+ .I compface
+ averages less than 200 characters.
+ The average number of output lines is three.
++.SH OPTIONS
++.TP 12
++.B \-X
++The same as
++.I uncompface
++| ikon2xbm. Usefull for exmh!
+ .SH DIAGNOSTICS
+ Exit status is normally 0.
+ Possible errors include IO errors when opening, reading or writing

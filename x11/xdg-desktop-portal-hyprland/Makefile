@@ -1,6 +1,6 @@
 PORTNAME=	xdg-desktop-portal-hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.5
+DISTVERSION=	1.3.6
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -34,10 +34,5 @@ PLIST_FILES=	bin/hyprland-share-picker \
 		libexec/${PORTNAME} \
 		share/dbus-1/services/org.freedesktop.impl.portal.desktop.hyprland.service \
 		share/xdg-desktop-portal/portals/hyprland.portal
-
-# XXX Drop after FreeBSD 14.0 EOL around 2024-10-01
-.if exists(/usr/lib/libc++.so) && !exists(/usr/include/c++/v1/__format/write_escaped.h)
-CXXFLAGS+=	-fexperimental-library
-.endif
 
 .include <bsd.port.mk>

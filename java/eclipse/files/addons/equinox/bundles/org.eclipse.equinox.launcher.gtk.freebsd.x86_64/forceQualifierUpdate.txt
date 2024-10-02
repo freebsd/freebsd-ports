@@ -1,3 +1,0 @@
-# To force a version qualifier update add the bug here
-Bug 403352 - Update all parent versions to match our build stream
-I20180131-2000 comparator error

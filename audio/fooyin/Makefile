@@ -1,6 +1,6 @@
 PORTNAME=	fooyin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
+DISTVERSION=	0.7.3
 CATEGORIES=	audio multimedia
 
 MAINTAINER=	diizzy@FreeBSD.org
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 USES=		cmake compiler:c++20-lang desktop-file-utils gl libarchive \
 		pkgconfig qt:6 sdl
 USE_GL=		opengl
-USE_QT=		base svg tools:build
+USE_QT=		base sqldriver-sqlite svg tools:build
 USE_SDL=	sdl2
 
 USE_GITHUB=	yes

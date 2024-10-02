@@ -25,7 +25,7 @@ PLIST_FILES=	lib/purple-2/libfetion.so
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=int-conversion -Wno-error=incompatible-function-pointer-types
 .endif
 

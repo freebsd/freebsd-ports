@@ -105,6 +105,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/bandcamp.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/bannedvideo.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/bbc.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/beacon.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/beatbump.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/beatport.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/beeg.py
@@ -331,6 +332,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/generic.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/genericembeds.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/genius.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/germanupa.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/getcourseru.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/gettr.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/giantbomb.py
@@ -431,6 +433,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/kick.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/kicker.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/kickstarter.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/kika.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/kinja.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/kinopoisk.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/kommunetv.py
@@ -469,7 +472,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/livejournal.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/livestream.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/livestreamfails.py
-%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lnkgo.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lnk.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/loom.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lovehomeporn.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/lrt.py
@@ -520,6 +523,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/mlb.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/mlssoccer.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/mocha.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/mojevideo.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/mojvideo.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/monstercat.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/motherless.py
@@ -749,10 +753,12 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/screencast.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/screencastify.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/screencastomatic.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/screenrec.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/scrippsnetworks.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/scrolller.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/scte.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/sejmpl.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/sen.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/senalcolombia.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/senategov.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/sendtonews.py
@@ -779,6 +785,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/slideslive.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/slutload.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/smotrim.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/snapchat.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/snotr.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/sohu.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/sonyliv.py
@@ -949,6 +956,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/videoken.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/videomore.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/videopress.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/vidflex.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/vidio.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/vidlii.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/vidly.py

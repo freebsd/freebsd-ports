@@ -22,9 +22,6 @@ _DRM_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 .  elif ${OSVERSION} >= 1400097 && (${ARCH} == i386 || ${ARCH} == aarch64)
 RUN_DEPENDS+=	${KMODDIR}/drm.ko:graphics/drm-510-kmod
 _DRM_ARCHS=	aarch64 i386
-.  elif ${OSVERSION} >= 1400097 && ${OSVERSION} < 1400508
-RUN_DEPENDS+=	${KMODDIR}/drm.ko:graphics/drm-515-kmod
-_DRM_ARCHS=	amd64 powerpc64 powerpc64le
 .  elif ${OSVERSION} >= 1400508
 RUN_DEPENDS+=	${KMODDIR}/drm.ko:graphics/drm-61-kmod
 _DRM_ARCHS=	amd64 powerpc64 powerpc64le

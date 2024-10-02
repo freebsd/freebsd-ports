@@ -1,10 +1,8 @@
 PORTNAME=	edict
 PORTVERSION=	19990714
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese
-MASTER_SITES=	\
-		http://japanology.arts.kuleuven.ac.be/mirrors/monash/ \
-		http://ftp.edrdg.org/pub/Nihongo/
+MASTER_SITES=	http://ftp.edrdg.org/pub/Nihongo/
 DISTFILES=	${DICTFILES} ${SRCFILES} ${DOCFILES}
 DIST_SUBDIR=	edict
 EXTRACT_ONLY=	${SRCFILES}
@@ -44,7 +42,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 

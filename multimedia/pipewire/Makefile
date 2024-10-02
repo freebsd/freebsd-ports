@@ -1,6 +1,5 @@
 PORTNAME=	pipewire
-DISTVERSION=	1.2.1
-PORTREVISION=	1
+DISTVERSION=	1.2.5
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libwebrtc_audio_processing.so:audio/webrtc-audio-processing0
 
 USES=		compiler:c11 gettext-tools gnome localbase:ldflags meson \
-		ncurses pkgconfig python:build shebangfix ssl
+		ncurses pkgconfig python:build readline shebangfix ssl
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
@@ -81,6 +80,7 @@ MESON_ARGS=	-D pw-cat=enabled \
 		-D sdl2=disabled \
 		-D selinux=disabled \
 		-D systemd=disabled \
+		-D logind=disabled \
 		-D pipewire-v4l2=disabled \
 		-D libmysofa=disabled \
 		-D libffado=disabled \

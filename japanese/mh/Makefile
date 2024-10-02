@@ -1,6 +1,6 @@
 PORTNAME=	mh
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	japanese mail
 MASTER_SITES=	ftp://ftp.laic.u-hyogo.ac.jp/pub/net/mh/
 DISTNAME=	${PORTNAME}-${VERSION}-JP-${JP_VERSION}
@@ -47,6 +47,9 @@ post-patch:
 		print; \
 	}' ${i}.rf > ${i}.tmp && ${MV} ${i}.tmp ${i}.rf)
 .endfor
+	${FIND} ${WRKSRC} -type f \! -name \*.orig | \
+	    xargs grep -l "extern[ 	]*int[ 	]*errno" | \
+	    xargs ${REINPLACE_CMD} -e "s/^extern[ 	]*int[ 	]*errno;/#include <errno.h>/"
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*

@@ -68,7 +68,6 @@
     SUBDIR += liblzxcomp
     SUBDIR += libmspack
     SUBDIR += libpar2
-    SUBDIR += librtfcomp
     SUBDIR += libunrar
     SUBDIR += libzip
     SUBDIR += libzippp
@@ -190,7 +189,6 @@
     SUBDIR += py-bitshuffle
     SUBDIR += py-blosc2
     SUBDIR += py-borgbackup
-    SUBDIR += py-borgbackup11
     SUBDIR += py-borgbackup12
     SUBDIR += py-brotli
     SUBDIR += py-brotlicffi
@@ -235,6 +233,8 @@
     SUBDIR += rubygem-libarchive
     SUBDIR += rubygem-minitar
     SUBDIR += rubygem-minitar-cli
+    SUBDIR += rubygem-minitar-cli0
+    SUBDIR += rubygem-minitar0
     SUBDIR += rubygem-ruby-xz
     SUBDIR += rubygem-rubyzip
     SUBDIR += rubygem-rubyzip13

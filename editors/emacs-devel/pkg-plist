@@ -476,6 +476,7 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/ins-changelog.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/jump-to.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/jump-to.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/kitchen-sink.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/last-page.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/last-page.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/left-arrow.pbm
@@ -852,7 +853,6 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/sk-refcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/sk-survival.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/survival.tex
-%%DATADIR%%/%%EMACS_VER%%/etc/refcards/vipcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/viperCard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/rgb.txt
 %%DATADIR%%/%%EMACS_VER%%/etc/schema/OpenDocument-schema-v1.3+libreoffice.rnc
@@ -3100,8 +3100,6 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/autoload.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/bruce.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/bruce.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cc-compat.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cc-compat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cl-compat.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cl-compat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cl.el.gz
@@ -3118,8 +3116,6 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/gulp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/html2text.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/html2text.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/info-edit.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/info-edit.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/inversion.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/inversion.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/iswitchb.el.gz
@@ -3134,8 +3130,6 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/makesum.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/mantemp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/mantemp.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/meese.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/meese.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/messcompat.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/metamail.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/metamail.elc
@@ -3145,8 +3139,6 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/netrc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/nnir.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/nnir.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/otodo-mode.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/otodo-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/pgg-def.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/pgg-def.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/pgg-gpg.el.gz
@@ -3163,8 +3155,6 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/ps-def.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/quickurl.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/quickurl.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/rcompile.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/rcompile.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/rfc2368.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/rfc2368.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/rlogin.el.gz
@@ -3173,10 +3163,6 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/sb-image.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/starttls.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/starttls.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/sup-mouse.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/sup-mouse.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/terminal.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/terminal.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/thumbs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/thumbs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tls.el.gz
@@ -3199,18 +3185,10 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-arch.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-mtn.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-mtn.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vi.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vi.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vip.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vip.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vt-control.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vt-control.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vt100-led.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vt100-led.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/ws-mode.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/ws-mode.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/yow.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/yow.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-C.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-C.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/ob-R.el.gz

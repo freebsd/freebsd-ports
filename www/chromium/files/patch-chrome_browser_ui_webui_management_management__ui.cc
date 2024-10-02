@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/management/management_ui.cc.orig	2024-07-30 11:12:21 UTC
+--- chrome/browser/ui/webui/management/management_ui.cc.orig	2024-09-30 07:45:04 UTC
 +++ chrome/browser/ui/webui/management/management_ui.cc
-@@ -100,11 +100,11 @@ content::WebUIDataSource* CreateAndAddManagementUIHtml
+@@ -105,11 +105,11 @@ content::WebUIDataSource* CreateAndAddManagementUIHtml
        {kManagementOnFileTransferVisibleData,
         IDS_MANAGEMENT_FILE_TRANSFER_VISIBLE_DATA},
  #endif  // BUILDFLAG(IS_CHROMEOS)

@@ -1,5 +1,5 @@
 PORTNAME=	car
-DISTVERSION=	3.1-2
+DISTVERSION=	3.1-3
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -9,6 +9,7 @@ WWW=		https://r-forge.r-project.org/projects/car/
 
 LICENSE=	GPLv2+
 
+BUILD_DEPENDS=	R-cran-Formula>=0:math/R-cran-Formula
 RUN_DEPENDS=	R-cran-maptools>0:astro/R-cran-maptools \
 		R-cran-abind>0:devel/R-cran-abind \
 		R-cran-carData>=3.0.0:math/R-cran-carData \

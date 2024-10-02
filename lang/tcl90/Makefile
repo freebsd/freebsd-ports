@@ -17,9 +17,9 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libtommath.so:math/libtommath
 
-USES=		compiler:c11 cpe localbase pathfix
+USES=		compiler:c11 cpe localbase
 
-OPTIONS_DEFINE=	TCLMAN TZDATA DEBUG
+OPTIONS_DEFINE=	TCLMAN TZDATA
 OPTIONS_DEFAULT=TCLMAN TZDATA
 OPTIONS_DEFINE_amd64=	DTRACE
 OPTIONS_DEFAULT_amd64=	DTRACE
@@ -35,45 +35,40 @@ OPTIONS_SUB=	yes
 OPTIONS_EXCLUDE+=	DTRACE
 .endif
 
-PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}${TCL_VERSION}
-WRKSRC=		${PATCH_WRKSRC}/unix
+WRKSRC=		${WRKDIR}/${PORTNAME}${TCL_VERSION}
+WRKSRC_SUBDIR=	unix
 
 ALL_TARGET=	binaries libraries doc
 TEST_TARGET=	test-tcl
-INSTALL_TARGET+=install-libraries \
+INSTALL_TARGET=	install-libraries \
 		install-msgs \
 		install-private-headers
 
 USE_LDCONFIG=	${PREFIX}/lib/tcl${TCL_VER}
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--enable-shared \
 		--enable-man-suffix=.${MAN_SUFFIX} \
 		--includedir=${PREFIX}/include/tcl${TCL_VER} \
-		--enable-symbols \
 		--with-system-libtommath
 LDFLAGS+=	-Wl,-z,muldefs
 
 TCL_VERSION=	9.0.0
-TCL_VER=	9.0
-TCL_RC=		rc0
+TCL_VER=	${TCL_VERSION:R}
+TCL_RC=
 SHORT_TCL_VER=	${TCL_VER:S/.//}
 MAN_SUFFIX=	${PKGBASE}
-
-MAKE_ENV=	SHORT_TCL_VER=${SHORT_TCL_VER} \
-		MAN_SUFFIX=.${MAN_SUFFIX} \
 
 PLIST_SUB=	TCL_VER=${TCL_VER} \
 		PKGNAMESUFFIX=${PKGNAMESUFFIX}
 
 TCLMAN_INSTALL_TARGET=	install-doc
 TZDATA_INSTALL_TARGET=	install-tzdata
-DEBUG_CONFIGURE_ENABLE=	symbols
 DTRACE_CONFIGURE_ENABLE=	dtrace
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDEBUG}
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--enable-symbols
 INSTALL_TARGET+=install
 .else
 INSTALL_TARGET+=install-strip
@@ -86,9 +81,16 @@ PLIST_SUB+=	DTRACE="@comment "
 .endif
 
 post-patch:
+	${REINPLACE_CMD} -e \
+	    's|@TCL_BUILD_LIB_SPEC@|@TCL_LIB_SPEC@|; \
+	     s|@TCL_BUILD_STUB_LIB_SPEC@|@TCL_STUB_LIB_SPEC@|; \
+	     s|@TCL_BUILD_STUB_LIB_PATH@|@TCL_STUB_LIB_PATH@|; \
+	     s|@TCL_SRC_DIR@|${PREFIX}/include/tcl${TCL_VER}|' \
+	     ${WRKSRC}/tclConfig.sh.in
 	${REINPLACE_CMD} \
 		-e 's|libtclstub.a|libtclstub${TCL_VER}.a|' \
 		-e 's|-ltclstub|-ltclstub${TCL_VER}|' \
+		-e 's|-O2||' \
 		${WRKSRC}/configure
 	${REINPLACE_CMD} \
 		-e '/^INSTALL_PACKAGE_TARGETS/d' \

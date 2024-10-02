@@ -8,7 +8,8 @@ DISTNAME=	sphinx_basic_ng-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Modern skeleton for Sphinx themes
-WWW=		https://github.com/pradyunsg/sphinx-basic-ng
+WWW=		https://sphinx-basic-ng.readthedocs.io/en/latest/ \
+		https://github.com/pradyunsg/sphinx-basic-ng
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

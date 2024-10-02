@@ -1,0 +1,14 @@
+The purpose of this tool is to take a given local module directory and compile
+it into a .tar file, known as the tarball, that can then be installed directly
+by Puppet on a target machine or uploaded onto the Puppet Forge so that it can
+be accessed publicly.
+
+As part of this process any non-deliverable aspects of the module, parts of it
+related to the modules development or testing for example, are stripped away
+leaving only the documentation and the puppet/ruby code that is needed for the
+module to function.
+
+The parts of the module to be excluded are defined in a .pdkignore, .pmtignore
+or .gitignore file with the first one to be found in this given order being
+used. Any directories or files that are listed in the ignore file are then
+excluded, allowing the user to customize what is and what is not excluded.

@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.9.10
+DISTVERSION=	2024.9.13
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,7 +39,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		assert_cmd-2.0.16 \
 		async-compression-0.4.12 \
 		atomic-waker-1.1.2 \
-		autocfg-1.3.0 \
+		autocfg-1.4.0 \
 		backtrace-0.3.71 \
 		base64-0.22.1 \
 		base64ct-1.6.0 \
@@ -58,7 +58,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bzip2-sys-0.1.11+1.0.8 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.1.21 \
+		cc-1.1.22 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.38 \
@@ -246,7 +246,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		num_threads-0.1.7 \
 		number_prefix-0.4.0 \
 		object-0.32.2 \
-		once_cell-1.19.0 \
+		once_cell-1.20.1 \
 		openssl-0.10.66 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
@@ -282,7 +282,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pin-utils-0.1.0 \
 		pkcs8-0.10.2 \
 		pkg-config-0.3.31 \
-		portable-atomic-1.8.0 \
+		portable-atomic-1.9.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.20 \
 		precomputed-hash-0.1.1 \
@@ -304,11 +304,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		redox_syscall-0.5.6 \
-		regex-1.10.6 \
+		regex-1.11.0 \
 		regex-automata-0.1.10 \
-		regex-automata-0.4.7 \
+		regex-automata-0.4.8 \
 		regex-syntax-0.6.29 \
-		regex-syntax-0.8.4 \
+		regex-syntax-0.8.5 \
 		reqwest-0.12.7 \
 		ring-0.17.8 \
 		rmp-0.8.14 \
@@ -322,7 +322,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustls-native-certs-0.7.3 \
 		rustls-native-certs-0.8.0 \
 		rustls-pemfile-2.1.3 \
-		rustls-pki-types-1.8.0 \
+		rustls-pki-types-1.9.0 \
 		rustls-webpki-0.102.8 \
 		rustversion-1.0.17 \
 		ryu-1.0.18 \
@@ -374,7 +374,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strum_macros-0.26.4 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
-		syn-2.0.77 \
+		syn-2.0.79 \
 		sync_wrapper-1.0.1 \
 		sys-info-0.9.1 \
 		system-configuration-0.6.1 \
@@ -382,7 +382,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tabled-0.16.0 \
 		tabled_derive-0.8.0 \
 		tar-0.4.42 \
-		tempfile-3.12.0 \
+		tempfile-3.13.0 \
 		tendril-0.4.3 \
 		tera-1.20.0 \
 		termcolor-1.4.1 \
@@ -418,7 +418,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		try-lock-0.2.5 \
 		typeid-1.0.2 \
 		typenum-1.17.0 \
-		ucd-trie-0.1.6 \
+		ucd-trie-0.1.7 \
 		unic-char-property-0.9.0 \
 		unic-char-range-0.9.0 \
 		unic-common-0.9.0 \
@@ -433,7 +433,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		untrusted-0.9.0 \
 		url-2.5.2 \
 		urlencoding-2.1.3 \
-		usage-lib-0.7.0-beta.1 \
+		usage-lib-0.8.4 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.2 \
 		valuable-0.1.0 \

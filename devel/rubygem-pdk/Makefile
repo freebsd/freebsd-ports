@@ -1,5 +1,6 @@
 PORTNAME=	pdk
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.0
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,20 +12,18 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-bundler>=2.1.0,1<3.0.0,1:sysutils/rubygem-bundler \
-		rubygem-childprocess41>=4.1.0:devel/rubygem-childprocess41 \
-		rubygem-concurrent-ruby11>=1.1.10<1.2:devel/rubygem-concurrent-ruby11 \
+		rubygem-childprocess>=5.0.0:devel/rubygem-childprocess \
 		rubygem-cri>=2.15.11<3:devel/rubygem-cri \
 		rubygem-deep_merge>=1.2.2<2:devel/rubygem-deep_merge \
 		rubygem-diff-lcs>=1.5.0:textproc/rubygem-diff-lcs \
 		rubygem-facter>=4.0.0<5.0.0:sysutils/rubygem-facter \
 		rubygem-ffi>=1.15.5<2.0.0:devel/rubygem-ffi \
 		rubygem-hitimes>=2.0.0:devel/rubygem-hitimes \
-		rubygem-httpclient>=2.8.3<2.9:www/rubygem-httpclient \
 		rubygem-json_pure>=2.6.3:devel/rubygem-json_pure \
 		rubygem-json-schema>=4.0:devel/rubygem-json-schema \
-		rubygem-locale>=2.1.0:devel/rubygem-locale \
-		rubygem-minitar>=0.8<1:archivers/rubygem-minitar \
+		rubygem-minitar0>=0.8<1:archivers/rubygem-minitar0 \
 		rubygem-pathspec>=1.1:devel/rubygem-pathspec \
+		rubygem-puppet-modulebuilder>=1.0,<2.0:devel/rubygem-puppet-modulebuilder \
 		rubygem-tty-prompt>=0.23<1:devel/rubygem-tty-prompt \
 		rubygem-tty-spinner>=0.9<1:devel/rubygem-tty-spinner \
 		rubygem-tty-which>=0.5<1:devel/rubygem-tty-which

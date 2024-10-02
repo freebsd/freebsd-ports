@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 22;
-my $micro = 1;
+my $micro = 2;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -171,7 +171,7 @@ my @varlist =  qw(
 	ALLFILES CHECKSUM_ALGORITHMS INSTALLS_ICONS GNU_CONFIGURE
 	CONFIGURE_ARGS MASTER_SITE_SUBDIR LICENSE LICENSE_COMB NO_STAGE
 	DEVELOPER SUB_FILES SHEBANG_LANG MASTER_SITES_SUBDIRS FLAVORS
-	USE_PYTHON LICENSE_PERMS USE_PYQT USE_GITHUB USE_GITLAB
+	USE_PYTHON LICENSE_PERMS USE_PYQT USE_GITHUB USE_GITLAB PREFIX
 );
 
 my %makevar;
@@ -364,6 +364,9 @@ if ($committer) {
 				"git files before committing the port.");
 
 			$File::Find::prune = 1;
+		} elsif (-f && -x) {
+			&perror("WARN", $fullname, -1, "this file is executable and likely ".
+				"does not need to be.");
 		} elsif (-f) {
 			my $fullpath = $makevar{'.CURDIR'}.'/'.$fullname;
 			my $result = `type git >/dev/null 2>&1 && git status --porcelain $fullpath`;
@@ -559,6 +562,7 @@ sub checkplist {
 	my $owner_seen = 0;
 	my $group_seen = 0;
 	my $found_so = 0;
+	my $found_prefix_so = 0;
 
 	# Variables that are allowed to be out-of-sync in the XXXDIR check.
 	# E.g., %%PORTDOCS%%%%RUBY_MODDOCDIR%% will be OK because there is
@@ -774,6 +778,8 @@ sub checkplist {
 			$makevar{USE_LDCONFIG} eq '') {
 			&perror("WARN", $file, $., "installing shared libraries, ".
 				"please define USE_LDCONFIG as appropriate");
+		} elsif ($_ =~ m|^lib/lib[^\/]+\.so[.\d]*$|) {
+			$found_prefix_so++;
 		} elsif ($_ =~ m|lib[^\/]+\.so[.\d]*$|) {
 			$found_so++;
 		}
@@ -908,9 +914,12 @@ sub checkplist {
 		&perror("WARN", $file, -1, "There are only $item_count items in the plist.  Consider using PLIST_FILES instead of pkg-plist when installing less than $numpitems items.");
 	}
 
-	if ($makevar{USE_LDCONFIG} ne '' && !$found_so) {
+	if ($makevar{USE_LDCONFIG} ne "$makevar{PREFIX}/lib" && !$found_so) {
 		&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
 			"port does not install any shared objects.");
+	} elsif ($makevar{USE_LDCONFIG} eq "$makevar{PREFIX}/lib" && !$found_prefix_so) {
+		&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
+			"port does not install any shared objects into \${PREFIX}/lib.");
 	}
 
 	close(IN);
@@ -2603,7 +2612,8 @@ xargs xmkmf
 		if (! -e "$masterdir/Makefile") {
 			&perror("WARN", "", -1, "unable to locate master port in $masterdir");
 		}
-		if ($whole !~ /^MASTERDIR=\s*\$\{\.CURDIR\}(?:\/\.\.){1,2}(?:\/[\w\@.+-]+){1,2}\s*$/m) {
+		if ($whole !~ /^MASTERDIR=\s*\$\{\.CURDIR\}(?:\/\.\.){1,2}(?:\/[\w\@.+-]+){1,2}\s*$/m &&
+			$whole !~ /^MASTERDIR=\s*\$\{\.CURDIR(:H){1,2}\}(?:\/[\w\@.+-]+){1,2}\s*$/m) {
 			&perror("WARN", $file, -1, "slave ports must define MASTERDIR=".
 				'${.CURDIR}/..(/../<category>)/<port>');
 		}

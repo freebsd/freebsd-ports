@@ -793,6 +793,7 @@
     SUBDIR += py-leveldb
     SUBDIR += py-litecli
     SUBDIR += py-lmdb
+    SUBDIR += py-mariadb
     SUBDIR += py-marshmallow-sqlalchemy
     SUBDIR += py-minidb
     SUBDIR += py-mongoengine
@@ -864,6 +865,7 @@
     SUBDIR += py-sqlite-utils
     SUBDIR += py-sqlite3
     SUBDIR += py-sqlobject
+    SUBDIR += py-sqloxide
     SUBDIR += py-sqlparse
     SUBDIR += py-sqlrelay
     SUBDIR += py-tableschema

@@ -1,4 +1,4 @@
---- chrome/browser/safe_browsing/cloud_content_scanning/deep_scanning_utils.cc.orig	2024-07-30 11:12:21 UTC
+--- chrome/browser/safe_browsing/cloud_content_scanning/deep_scanning_utils.cc.orig	2024-09-30 07:45:04 UTC
 +++ chrome/browser/safe_browsing/cloud_content_scanning/deep_scanning_utils.cc
 @@ -16,7 +16,7 @@
  #include "components/crash/core/common/crash_key.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/signin/enterprise_signin_prefs.h"
  #include "components/prefs/pref_service.h"
  #endif
-@@ -416,7 +416,7 @@ std::string GetProfileEmail(Profile* profile) {
+@@ -419,7 +419,7 @@ std::string GetProfileEmail(Profile* profile) {
    std::string email =
        GetProfileEmail(IdentityManagerFactory::GetForProfile(profile));
  

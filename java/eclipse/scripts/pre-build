@@ -1,7 +1,5 @@
 #!/bin/sh
 
-ARCHS="aarch64 amd64 powerpc64 powerpc64le"
-
 cd ${WRKSRC}
 
 # Create dummy repo for jgit

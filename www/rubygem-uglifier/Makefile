@@ -1,5 +1,5 @@
 PORTNAME=	uglifier
-PORTVERSION=	4.2.0
+PORTVERSION=	4.2.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/lautis/uglifier
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-execjs>=0.3.0:devel/rubygem-execjs
+RUN_DEPENDS=	rubygem-execjs>=0.3.0<3:devel/rubygem-execjs
 
 USES=		gem
 

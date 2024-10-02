@@ -1,17 +1,11 @@
-*** faces/Faces.ad.orig	Tue Dec 18 05:11:31 2001
---- faces/Faces.ad	Sun Mar 17 21:14:05 2002
-***************
-*** 12,17 ****
-  faces.button1clear:		false
-  faces.displayHostname:		false
-  
-! faces.audioSupport:		false
-! faces.audioCommand:		play
-  faces.bellAudioFile:
---- 12,17 ----
-  faces.button1clear:		false
-  faces.displayHostname:		false
-  
-! faces.audioSupport:		true
-! faces.audioCommand:		rplay
-  faces.bellAudioFile:
+--- faces/Faces.ad.orig
++++ faces/Faces.ad
+@@ -12,6 +12,6 @@
+ faces.button1clear:		false
+ faces.displayHostname:		false
+ 
+-faces.audioSupport:		false
+-faces.audioCommand:		play
++faces.audioSupport:		true
++faces.audioCommand:		rplay
+ faces.bellAudioFile:

@@ -1,5 +1,5 @@
 PORTNAME=	python-multipart
-PORTVERSION=	0.0.9
+PORTVERSION=	0.0.10
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,7 @@ DISTNAME=	python_multipart-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Streaming multipart parser for Python
-WWW=		https://kludex.github.io/python-multipart/ \
+WWW=		https://multipart.fastapiexpert.com/ \
 		https://github.com/Kludex/python-multipart
 
 LICENSE=	APACHE20

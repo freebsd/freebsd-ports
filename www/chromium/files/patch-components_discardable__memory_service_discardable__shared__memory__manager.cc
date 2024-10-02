@@ -1,6 +1,6 @@
---- components/discardable_memory/service/discardable_shared_memory_manager.cc.orig	2024-06-17 12:56:06 UTC
+--- components/discardable_memory/service/discardable_shared_memory_manager.cc.orig	2024-09-30 07:45:04 UTC
 +++ components/discardable_memory/service/discardable_shared_memory_manager.cc
-@@ -176,7 +176,7 @@ uint64_t GetDefaultMemoryLimit() {
+@@ -172,7 +172,7 @@ uint64_t GetDefaultMemoryLimit() {
    // Limits the number of FDs used to 32, assuming a 4MB allocation size.
    uint64_t max_default_memory_limit = 128 * kMegabyte;
  #else

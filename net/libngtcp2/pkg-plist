@@ -1,4 +1,10 @@
 include/ngtcp2/ngtcp2.h
+include/ngtcp2/ngtcp2_crypto.h
+include/ngtcp2/ngtcp2_crypto_boringssl.h
+include/ngtcp2/ngtcp2_crypto_gnutls.h
+include/ngtcp2/ngtcp2_crypto_picotls.h
+include/ngtcp2/ngtcp2_crypto_quictls.h
+include/ngtcp2/ngtcp2_crypto_wolfssl.h
 include/ngtcp2/version.h
 lib/libngtcp2.a
 lib/libngtcp2.so

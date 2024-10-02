@@ -1,7 +1,7 @@
 PORTNAME=	droidcam
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 
 MAINTAINER=	nxjoseph@protonmail.com
@@ -28,11 +28,11 @@ LIB_DEPENDS=	libappindicator3.so:devel/libappindicator \
 		libpango-1.0.so:x11-toolkits/pango \
 		libpangocairo-1.0.so:x11-toolkits/pango \
 		libspeex.so:audio/speex \
+		libswscale.so:multimedia/ffmpeg \
 		libturbojpeg.so:graphics/libjpeg-turbo \
 		libusbmuxd-2.0.so:comms/libusbmuxd \
 		libwayland-client.so:graphics/wayland \
-		libX11.so:x11/libX11 \
-		libswscale.so:multimedia/ffmpeg
+		libX11.so:x11/libX11
 RUN_DEPENDS=	adb:devel/android-tools \
 		ffmpeg:multimedia/ffmpeg \
 		usbmuxd:comms/usbmuxd \
@@ -45,10 +45,10 @@ GH_PROJECT=	droidcam-linux-client
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 pango
 USE_XORG=	x11
 
-PLIST_FILES=	bin/droidcam \
-		bin/droidcam-cli \
-		share/applications/droidcam.desktop \
-		share/pixmaps/droidcam-icon.png
+PLIST_FILES=	bin/${PORTNAME} \
+		bin/${PORTNAME}-cli \
+		share/applications/${PORTNAME}.desktop \
+		share/pixmaps/${PORTNAME}-icon.png
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
@@ -57,17 +57,21 @@ NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 pre-configure:
-	${REINPLACE_CMD} -e 's,/opt/droidcam-icon.png,${PREFIX}/pixmaps/droidcam-icon.png,' \
-		${WRKSRC}/src/droidcam.c ${WRKSRC}/droidcam.desktop
+	${REINPLACE_CMD} -e 's,/opt/${PORTNAME}-icon.png,${PREFIX}/share/pixmaps/${PORTNAME}-icon.png,' \
+		${WRKSRC}/src/${PORTNAME}.c \
+		${WRKSRC}/${PORTNAME}.desktop
+	${REINPLACE_CMD} -e 's,Exec=/usr/local/bin/${PORTNAME},${PREFIX}/bin/${PORTNAME},' \
+		-e 's,TryExec=/usr/local/bin/${PORTNAME},${PREFIX}/bin/${PORTNAME},' \
+		${WRKSRC}/${PORTNAME}.desktop
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/droidcam \
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/droidcam-cli \
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-cli \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/icon2.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/droidcam-icon.png
-	${INSTALL_DATA} ${WRKSRC}/droidcam.desktop \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}-icon.png
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 
 .include <bsd.port.mk>

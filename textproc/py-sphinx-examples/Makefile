@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight example directive to make it easy to demonstrate code/results
-WWW=		https://github.com/executablebooks/sphinx-examples
+WWW=		https://ebp-sphinx-examples.readthedocs.io/en/latest/ \
+		https://github.com/executablebooks/sphinx-examples
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

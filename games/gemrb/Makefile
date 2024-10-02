@@ -1,6 +1,7 @@
 PORTNAME=		gemrb
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.9.3
+PORTREVISION=		1
 CATEGORIES=		games emulators
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -10,8 +11,9 @@ WWW=		https://www.gemrb.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lang iconv python sdl shebangfix
+USES=		cmake compiler:c++14-lang iconv python sdl shebangfix
 SHEBANG_FILES=	admin/extend2da.py
+USE_GCC=	yes # https://github.com/gemrb/gemrb/issues/2074
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_SDL=	sdl2
@@ -26,7 +28,9 @@ CMAKE_OFF=	DISABLE_WERROR \
 		INSOURCEBUILD \
 		STATIC_LINK \
 		USE_LIBVLC \
-		USE_SDL_CONTROLLER_API
+		USE_SDL_CONTROLLER_API \
+		USE_TESTS \
+		USE_TRACY
 
 SUB_FILES=	pkg-message
 

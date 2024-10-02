@@ -4,7 +4,7 @@
  
  /* For nv_drm_gem_prime_force_fence_signal */
  #ifndef spin_is_locked
-+#if __FreeBSD_version < 1500018
++#if ((__FreeBSD_version >= 1500000) && (__FreeBSD_version < 1500018)) || (__FreeBSD_version < 1401501)
  #define spin_is_locked(lock) mtx_owned(lock.m)
 +#else
 +#define spin_is_locked(lock) mtx_owned(lock)

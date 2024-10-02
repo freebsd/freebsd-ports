@@ -1,5 +1,5 @@
 PORTNAME=	archive-tar-minitar
-PORTVERSION=	0.8
+PORTVERSION=	0.12
 CATEGORIES=	archivers rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,11 @@ WWW=		https://github.com/halostatue/minitar
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	rubygem-minitar>=${PORTVERSION}<1:archivers/rubygem-minitar \
-		rubygem-minitar-cli>=${PORTVERSION}<1:archivers/rubygem-minitar-cli
+DEPRECATED=	archive-tar-minitar has been deprecated. Use archivers/rubygem-minitar instead
+EXPIRATION_DATE=2024-10-31
+
+RUN_DEPENDS=	rubygem-minitar0>=${PORTVERSION}<1:archivers/rubygem-minitar0 \
+		rubygem-minitar-cli0>=${PORTVERSION}<1:archivers/rubygem-minitar-cli0
 
 USES=		gem
 

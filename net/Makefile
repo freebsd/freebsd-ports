@@ -170,6 +170,8 @@
     SUBDIR += freeswitch
     SUBDIR += freevrrpd
     SUBDIR += frp
+    SUBDIR += frr10
+    SUBDIR += frr10-pythontools
     SUBDIR += frr8
     SUBDIR += frr8-pythontools
     SUBDIR += frr9

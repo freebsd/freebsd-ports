@@ -3917,7 +3917,6 @@ lib/root/libvectorDict.so.%%SHLIB_SHVER%%
 lib/root/libvectorDict.so.%%SHLIB_VER%%
 %%NOT_INSTALLED_ON_AARCH64%%lib/root/modules.idx
 %%NOT_INSTALLED_ON_AARCH64%%lib/root/std.pcm
-%%ONLY_INSTALLED_ON_FBSD140%%%%NOT_INSTALLED_ON_AARCH64%%lib/root/std_config.pcm
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/DEVELOPMENT.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL

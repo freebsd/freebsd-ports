@@ -250,7 +250,7 @@ lib/tcl%%TCL_VER%%/tclooConfig.sh
 lib/tcl%%TCL_VER%%/tm.tcl
 lib/tcl%%TCL_VER%%/word.tcl
 lib/tcl%%TCL_VER%%/writefile.tcl
-lib/tcl9/%%TCL_VER%%/http-2.10b4.tm
+lib/tcl9/%%TCL_VER%%/http-2.10.0.tm
 lib/tcl9/%%TCL_VER%%/msgcat-1.7.1.tm
 lib/tcl9/%%TCL_VER%%/platform-1.0.19.tm
 lib/tcl9/%%TCL_VER%%/platform/shell-1.1.4.tm

@@ -1,3 +1,4 @@
+bin/cllayerinfo
 include/ocl_icd.h
 lib/libOpenCL.so
 lib/libOpenCL.so.1

@@ -59,6 +59,7 @@ bin/quarto
 %%DATADIR%%/bin/vendor/deno-land/x/cache@0-2-12/directories.ts
 %%DATADIR%%/bin/vendor/deno-land/x/puppeteer@9-0-2/mod.ts
 %%DATADIR%%/bin/vendor/deno-land/x/puppeteer@9-0-2/src/deno/BrowserFetcher.ts
+%%DATADIR%%/bin/vendor/deno-land/x/puppeteer@9-0-2/src/deno/BrowserFetcher.ts.orig
 %%DATADIR%%/bin/vendor/deno-land/x/puppeteer@9-0-2/src/deno/BrowserRunner.ts
 %%DATADIR%%/bin/vendor/deno-land/x/puppeteer@9-0-2/src/deno/LaunchOptions.ts
 %%DATADIR%%/bin/vendor/deno-land/x/puppeteer@9-0-2/src/deno/Launcher.ts
@@ -369,8 +370,8 @@ bin/quarto
 %%DATADIR%%/share/deno_std/cache/deps/https/deno.land/09977ff606053ea2763c50f037f946f6c1b085c44d467315211086451113a899.metadata.json
 %%DATADIR%%/share/deno_std/cache/deps/https/deno.land/09d520bcd080cd973515098a4097e278cd3a76501f1683853f0580b68581567c
 %%DATADIR%%/share/deno_std/cache/deps/https/deno.land/09d520bcd080cd973515098a4097e278cd3a76501f1683853f0580b68581567c.metadata.json
-%%DATADIR%%/share/deno_std/cache/deps/https/deno.land/0a15c236cad4497db954ed598706023d4007e93fe77925b97cc591311a644c81
-%%DATADIR%%/share/deno_std/cache/deps/https/deno.land/0a15c236cad4497db954ed598706023d4007e93fe77925b97cc591311a644c81.metadata.json
+%%DATADIR%%/share/deno_std/cache/deps/https/deno.land/0a15c236cad4497db954ed598706023d4007e93fe77925b97cc591%%PYTHON_SUFFIX%%a644c81
+%%DATADIR%%/share/deno_std/cache/deps/https/deno.land/0a15c236cad4497db954ed598706023d4007e93fe77925b97cc591%%PYTHON_SUFFIX%%a644c81.metadata.json
 %%DATADIR%%/share/deno_std/cache/deps/https/deno.land/0aaac2d3cda1e7c8eb827f67f91b0a27b8660a33a938460d4da024ea6d5c9a10
 %%DATADIR%%/share/deno_std/cache/deps/https/deno.land/0aaac2d3cda1e7c8eb827f67f91b0a27b8660a33a938460d4da024ea6d5c9a10.metadata.json
 %%DATADIR%%/share/deno_std/cache/deps/https/deno.land/0ce8d5cc096353f89b27eafa713cee13334f3b1947242436538da087789ccc7b
@@ -1151,8 +1152,8 @@ bin/quarto
 %%DATADIR%%/share/deno_std/cache/gen/https/deno.land/09977ff606053ea2763c50f037f946f6c1b085c44d467315211086451113a899.meta
 %%DATADIR%%/share/deno_std/cache/gen/https/deno.land/09d520bcd080cd973515098a4097e278cd3a76501f1683853f0580b68581567c.js
 %%DATADIR%%/share/deno_std/cache/gen/https/deno.land/09d520bcd080cd973515098a4097e278cd3a76501f1683853f0580b68581567c.meta
-%%DATADIR%%/share/deno_std/cache/gen/https/deno.land/0a15c236cad4497db954ed598706023d4007e93fe77925b97cc591311a644c81.js
-%%DATADIR%%/share/deno_std/cache/gen/https/deno.land/0a15c236cad4497db954ed598706023d4007e93fe77925b97cc591311a644c81.meta
+%%DATADIR%%/share/deno_std/cache/gen/https/deno.land/0a15c236cad4497db954ed598706023d4007e93fe77925b97cc591%%PYTHON_SUFFIX%%a644c81.js
+%%DATADIR%%/share/deno_std/cache/gen/https/deno.land/0a15c236cad4497db954ed598706023d4007e93fe77925b97cc591%%PYTHON_SUFFIX%%a644c81.meta
 %%DATADIR%%/share/deno_std/cache/gen/https/deno.land/0aaac2d3cda1e7c8eb827f67f91b0a27b8660a33a938460d4da024ea6d5c9a10.js
 %%DATADIR%%/share/deno_std/cache/gen/https/deno.land/0aaac2d3cda1e7c8eb827f67f91b0a27b8660a33a938460d4da024ea6d5c9a10.meta
 %%DATADIR%%/share/deno_std/cache/gen/https/deno.land/0ce8d5cc096353f89b27eafa713cee13334f3b1947242436538da087789ccc7b.js
@@ -2972,6 +2973,7 @@ bin/quarto
 %%DATADIR%%/share/lua-types/pandoc/global.lua
 %%DATADIR%%/share/lua-types/pandoc/inlines.lua
 %%DATADIR%%/share/lua-types/pandoc/layout.lua
+%%DATADIR%%/share/lua-types/pandoc/log.lua
 %%DATADIR%%/share/lua-types/pandoc/mediabag.lua
 %%DATADIR%%/share/lua-types/pandoc/meta.lua
 %%DATADIR%%/share/lua-types/pandoc/options.lua
@@ -3208,6 +3210,7 @@ bin/quarto
 %%DATADIR%%/share/schema/extension.yml
 %%DATADIR%%/share/schema/format-aliases.yml
 %%DATADIR%%/share/schema/groups.yml
+%%DATADIR%%/share/schema/json-schemas.json
 %%DATADIR%%/share/schema/project.yml
 %%DATADIR%%/share/schema/schema.yml
 %%DATADIR%%/share/scripts/check-usage.sh

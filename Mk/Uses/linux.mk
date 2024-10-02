@@ -218,6 +218,7 @@ MASTER_SITE_SUBDIR=	altarch/${LINUX_DIST_VER}/os/aarch64/Packages/:DEFAULT,aarch
 			centos/${LINUX_DIST_VER}/updates/Source/SPackages/:SOURCE
 .      endif
 DIST_SUBDIR?=		centos
+DEPRECATED=		CentOS Linux 7 reached end of life (EOL) on June 30, 2024
 .    elif ${linux_ARGS} == rl9
 .      ifndef MASTER_SITES
 MASTER_SITES=		${MASTER_SITE_ROCKY_LINUX}

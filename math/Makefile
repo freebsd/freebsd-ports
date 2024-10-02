@@ -1215,7 +1215,6 @@
     SUBDIR += symphony
     SUBDIR += sympol
     SUBDIR += sympow
-    SUBDIR += tablix
     SUBDIR += taucs
     SUBDIR += tblis
     SUBDIR += testu01

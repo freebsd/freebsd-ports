@@ -1,6 +1,6 @@
---- chrome/browser/browser_process_impl.cc.orig	2024-08-26 12:06:38 UTC
+--- chrome/browser/browser_process_impl.cc.orig	2024-09-30 07:45:04 UTC
 +++ chrome/browser/browser_process_impl.cc
-@@ -227,7 +227,7 @@
+@@ -228,7 +228,7 @@
  #include "chrome/browser/ui/profiles/profile_picker.h"
  #endif
  
@@ -18,7 +18,7 @@
    ChromeJsErrorReportProcessor::Create();
  #endif
  
-@@ -1615,7 +1615,7 @@ void BrowserProcessImpl::Unpin() {
+@@ -1614,7 +1614,7 @@ void BrowserProcessImpl::Unpin() {
  // Mac is currently not supported.
  // TODO(crbug.com/40118868): Revisit once build flag switch of lacros-chrome is
  // complete.

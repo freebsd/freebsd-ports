@@ -1,4 +1,4 @@
---- chrome/browser/sync/sync_service_factory.cc.orig	2024-08-26 12:06:38 UTC
+--- chrome/browser/sync/sync_service_factory.cc.orig	2024-09-30 07:45:04 UTC
 +++ chrome/browser/sync/sync_service_factory.cc
 @@ -85,7 +85,7 @@
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
@@ -18,7 +18,7 @@
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
    syncer::SyncPrefs prefs(profile->GetPrefs());
    local_sync_backend_enabled = prefs.IsLocalSyncEnabled();
-@@ -271,7 +271,7 @@ SyncServiceFactory::SyncServiceFactory()
+@@ -276,7 +276,7 @@ SyncServiceFactory::SyncServiceFactory()
    DependsOn(ProfilePasswordStoreFactory::GetInstance());
    DependsOn(PowerBookmarkServiceFactory::GetInstance());
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

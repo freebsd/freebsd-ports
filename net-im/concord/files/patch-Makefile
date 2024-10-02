@@ -1,0 +1,11 @@
+--- Makefile.orig	2024-05-06 23:04:41 UTC
++++ Makefile
+@@ -20,7 +20,7 @@ CFLAGS ?= -O2
+ 
+ CFLAGS ?= -O2
+ 
+-all: static
++all: shared static
+ 
+ static:
+ 	@ CFLAGS="$(CFLAGS)" $(MAKE) -C $(CORE_DIR)

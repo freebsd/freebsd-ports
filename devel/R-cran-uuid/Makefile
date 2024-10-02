@@ -1,10 +1,9 @@
 PORTNAME=	uuid
-DISTVERSION=	1.1-0
-PORTREVISION=	1
+DISTVERSION=	1.2-1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Tools for Generating and Handling of UUIDs
 WWW=		https://www.rforge.net/uuid
 

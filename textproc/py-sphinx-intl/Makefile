@@ -1,13 +1,14 @@
 PORTNAME=	sphinx-intl
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	sphinx_intl-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sphinx utility that make it easy to translate and to apply translation
-WWW=		https://github.com/sphinx-doc/sphinx-intl
+WWW=		https://sphinx-intl.readthedocs.io/en/master/ \
+		https://github.com/sphinx-doc/sphinx-intl
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

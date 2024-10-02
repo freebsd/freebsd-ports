@@ -46,7 +46,7 @@ ALL_TARGET=	freebsd_old
 LIB_DEPENDS+=	libsuperlu.so:math/superlu
 SUPERLU=	superlu
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 CPPFLAGS+=  -Dregister=
 .endif
 

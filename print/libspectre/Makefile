@@ -10,7 +10,7 @@ WWW=		https://www.freedesktop.org/wiki/Software/libspectre/
 
 LICENSE=	GPLv2
 
-USES=		ghostscript gnome libtool localbase pathfix pkgconfig
+USES=		ghostscript:lib gnome libtool localbase pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo
 GNU_CONFIGURE=	yes

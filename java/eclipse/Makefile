@@ -1,5 +1,5 @@
 PORTNAME=	eclipse
-DISTVERSION=	4.32
+DISTVERSION=	4.33
 CATEGORIES=	java devel
 ECLIPSE_TAG=	R${DISTVERSION:S|.|_|g}
 
@@ -11,7 +11,7 @@ WWW=		https://www.eclipse.org/
 
 LICENSE=	EPL
 
-ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64
 
 BUILD_DEPENDS=	git:devel/git \
 		mvn:devel/maven39 \
@@ -25,21 +25,20 @@ USES=		compiler:c++17-lang gmake pkgconfig gnome
 # The github repositories.  The repository under NorbertXYZ is for a predefined maven
 # download, so the build does not need to download while do-build is running
 USE_GITHUB=	yes
-GH_TUPLE=	eclipse-platform:eclipse.platform.releng.aggregator:${ECLIPSE_TAG} \
+GH_TUPLE=	chirontt:eclipse.platform.releng.aggregator:${ECLIPSE_TAG}_maintenance \
 		eclipse-jdt:eclipse.jdt:${ECLIPSE_TAG}:a/eclipse.jdt \
 		eclipse-jdt:eclipse.jdt.core:${ECLIPSE_TAG}:b/eclipse.jdt.core \
 		eclipse-jdt:eclipse.jdt.core.binaries:${ECLIPSE_TAG}:c/eclipse.jdt.core.binaries \
 		eclipse-jdt:eclipse.jdt.debug:${ECLIPSE_TAG}:d/eclipse.jdt.debug \
 		eclipse-jdt:eclipse.jdt.ui:${ECLIPSE_TAG}:e/eclipse.jdt.ui \
-		eclipse-pde:eclipse.pde:${ECLIPSE_TAG}:f/eclipse.pde \
-		eclipse-platform:eclipse.platform:${ECLIPSE_TAG}:g/eclipse.platform \
-		eclipse-platform:eclipse.platform.runtime:fd42b6e331:h/eclipse.platform.runtime \
-		eclipse-platform:eclipse.platform.swt:${ECLIPSE_TAG}:i/eclipse.platform.swt \
-		eclipse-platform:eclipse.platform.ui:${ECLIPSE_TAG}:j/eclipse.platform.ui \
-		eclipse-equinox:equinox:${ECLIPSE_TAG}:k/equinox \
-		eclipse-equinox:equinox.binaries:${ECLIPSE_TAG}:l/rt.equinox.binaries \
-		eclipse-equinox:p2:${ECLIPSE_TAG}:m/rt.equinox.p2 \
-		NorbertXYZ:eclipse-maven:${DISTVERSION}:n
+		chirontt:eclipse.pde:${ECLIPSE_TAG}_maintenance:f/eclipse.pde \
+		chirontt:eclipse.platform:${ECLIPSE_TAG}_maintenance:g/eclipse.platform \
+		chirontt:eclipse.platform.swt:${ECLIPSE_TAG}_maintenance:i/eclipse.platform.swt \
+		chirontt:eclipse.platform.ui:${ECLIPSE_TAG}_maintenance:j/eclipse.platform.ui \
+		chirontt:equinox:${ECLIPSE_TAG}_maintenance:k/equinox \
+		chirontt:equinox.binaries:${ECLIPSE_TAG}_maintenance:l/equinox.binaries \
+		chirontt:p2:${ECLIPSE_TAG}_maintenance:m/equinox.p2 \
+		NorbertXYZ:eclipse_maven:${DISTVERSION}:n
 USE_GNOME=	gtk30
 USE_JAVA=	17+
 
@@ -61,7 +60,7 @@ MAVEN_ENV=	MAVEN_OPTS=-Xmx2048m CC=${CC} CFLAGS="${CFLAGS}" JAVA_HOME=${JAVA_HOM
 MAVEN_ARCH=	${ARCH:S|amd64|x86_64|}
 
 MAVEN_PARAMS=	--offline \
-		-Dmaven.repo.local=${WRKDIR}/eclipse-maven-${DISTVERSION} \
+		-Dmaven.repo.local=${WRKDIR}/eclipse_maven-${DISTVERSION} \
 		-Dnative=gtk.freebsd.${MAVEN_ARCH} \
 		-DskipTests clean verify
 
@@ -70,22 +69,6 @@ ECLIPSE_RESULT=	eclipse.platform.releng.tychoeclipsebuilder/eclipse.platform.rep
 .if ${COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-deprecated-non-prototype
 .endif
-
-# Directories needed, but cannot be stored in git, because they are empty
-EMPTY_DIRS=	eclipse.platform/resources/bundles/org.eclipse.core.filesystem.freebsd.%%ARCH%%/os/freebsd/%%ARCH%% \
-		eclipse.platform/resources/bundles/org.eclipse.core.filesystem.freebsd.%%ARCH%%/target \
-		eclipse.platform/team/bundles/org.eclipse.core.net.freebsd/target \
-		rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/freebsd/%%ARCH%% \
-		rt.equinox.binaries/org.eclipse.equinox.launcher.gtk.freebsd.%%ARCH%%
-
-pre-patch:
-	${CP} -R ${FILESDIR}/addons/ ${WRKSRC}
-.for DIR in ${EMPTY_DIRS}
-. for _ARCH in aarch64 powerpc64 powerpc64le x86_64
-	${MKDIR} ${WRKSRC}/${DIR:S|%%ARCH%%|${_ARCH}|g}
-	${TOUCH} ${WRKSRC}/${DIR:S|%%ARCH%%|${_ARCH}|g}/.empty
-. endfor
-.endfor
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAVEN_ENV} mvn ${MAVEN_PARAMS}

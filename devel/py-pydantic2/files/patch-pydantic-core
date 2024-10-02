@@ -1,0 +1,244 @@
+Obtained:	https://github.com/pydantic/pydantic/commit/9b69920888054df4ef544ecbdc03e09b90646ac2
+
+--- pydantic/_internal/_config.py.orig	2020-02-02 00:00:00 UTC
++++ pydantic/_internal/_config.py
+@@ -18,7 +18,7 @@ from ..errors import PydanticUserError
+ from ..aliases import AliasGenerator
+ from ..config import ConfigDict, ExtraValues, JsonDict, JsonEncoder, JsonSchemaExtraCallable
+ from ..errors import PydanticUserError
+-from ..warnings import PydanticDeprecatedSince20
++from ..warnings import PydanticDeprecatedSince20, PydanticDeprecatedSince210
+ 
+ if not TYPE_CHECKING:
+     # See PyCharm issues https://youtrack.jetbrains.com/issue/PY-21915
+@@ -69,7 +69,7 @@ class ConfigWrapper:
+     strict: bool
+     # whether instances of models and dataclasses (including subclass instances) should re-validate, default 'never'
+     revalidate_instances: Literal['always', 'never', 'subclass-instances']
+-    ser_json_timedelta: Literal['iso8601', 'float']
++    ser_json_timedelta: Literal['iso8601', 'seconds_float', 'milliseconds_float']
+     ser_json_bytes: Literal['utf8', 'base64', 'hex']
+     val_json_bytes: Literal['utf8', 'base64', 'hex']
+     ser_json_inf_nan: Literal['null', 'constants', 'strings']
+@@ -168,6 +168,14 @@ class ConfigWrapper:
+             A `CoreConfig` object created from config.
+         """
+         config = self.config_dict
++
++        if config.get('ser_json_timedelta') == 'float':
++            warnings.warn(
++                'The `float` option for `ser_json_timedelta` has been deprecated in favor of `seconds_float`. Please use this setting instead.',
++                PydanticDeprecatedSince210,
++                stacklevel=2,
++            )
++            config['ser_json_timedelta'] = 'seconds_float'
+ 
+         core_config_values = {
+             'title': config.get('title') or (obj and obj.__name__),
+--- pydantic/config.py.orig	2020-02-02 00:00:00 UTC
++++ pydantic/config.py
+@@ -563,13 +563,15 @@ class ConfigDict(TypedDict, total=False):
+     3. Using `'never'` we would have gotten `user=SubUser(hobbies=['scuba diving'], sins=['lying'])`.
+     """
+ 
+-    ser_json_timedelta: Literal['iso8601', 'float']
++    ser_json_timedelta: Literal['iso8601', 'seconds_float', 'milliseconds_float']
+     """
+-    The format of JSON serialized timedeltas. Accepts the string values of `'iso8601'` and
+-    `'float'`. Defaults to `'iso8601'`.
++    The format of JSON serialized timedeltas. Accepts the string values of `'iso8601'`,
++    `'seconds_float'`, and `'milliseconds_float'`. Defaults to `'iso8601'`.
+ 
+     - `'iso8601'` will serialize timedeltas to ISO 8601 durations.
+-    - `'float'` will serialize timedeltas to the total number of seconds.
++    - `'seconds_float'` will serialize timedeltas to the total number of seconds.
++    - `'milliseconds_float'` will serialize timedeltas to the total number of milliseconds.
++        NOTE: `'float' is deprecated in v2.10 in favour of `'milliseconds_float'`
+     """
+ 
+     ser_json_bytes: Literal['utf8', 'base64', 'hex']
+--- pydantic/json_schema.py.orig	2020-02-02 00:00:00 UTC
++++ pydantic/json_schema.py
+@@ -720,7 +720,7 @@ class GenerateJsonSchema:
+         Returns:
+             The generated JSON schema.
+         """
+-        if self._config.ser_json_timedelta == 'float':
++        if self._config.ser_json_timedelta in {'milliseconds_float', 'seconds_float'}:
+             return {'type': 'number'}
+         return {'type': 'string', 'format': 'duration'}
+ 
+--- pydantic/warnings.py.orig	2020-02-02 00:00:00 UTC
++++ pydantic/warnings.py
+@@ -67,6 +67,13 @@ class PydanticDeprecatedSince29(PydanticDeprecationWar
+         super().__init__(message, *args, since=(2, 9), expected_removal=(3, 0))
+ 
+ 
++class PydanticDeprecatedSince210(PydanticDeprecationWarning):
++    """A specific `PydanticDeprecationWarning` subclass defining functionality deprecated since Pydantic 2.10."""
++
++    def __init__(self, message: str, *args: object) -> None:
++        super().__init__(message, *args, since=(2, 10), expected_removal=(3, 0))
++
++
+ class GenericBeforeBaseModelWarning(Warning):
+     pass
+ 
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -50,7 +50,7 @@ dependencies = [
+     'typing-extensions>=4.6.1; python_version < "3.13"',
+     'typing-extensions>=4.12.2; python_version >= "3.13"',
+     'annotated-types>=0.6.0',
+-    "pydantic-core==2.23.4",
++    "pydantic-core==2.24.0",
+ ]
+ dynamic = ['version', 'readme']
+ 
+--- tests/test_json_schema.py.orig	2020-02-02 00:00:00 UTC
++++ tests/test_json_schema.py
+@@ -108,6 +108,7 @@ from pydantic.types import (
+     conint,
+     constr,
+ )
++from pydantic.warnings import PydanticDeprecatedSince210
+ 
+ try:
+     import email_validator
+@@ -1777,11 +1778,15 @@ def test_model_default():
+ @pytest.mark.parametrize(
+     'ser_json_timedelta,properties',
+     [
+-        ('float', {'duration': {'default': 300.0, 'title': 'Duration', 'type': 'number'}}),
++        ('seconds_float', {'duration': {'default': 300.0, 'title': 'Duration', 'type': 'number'}}),
++        ('milliseconds_float', {'duration': {'default': 300000.0, 'title': 'Duration', 'type': 'number'}}),
+         ('iso8601', {'duration': {'default': 'PT5M', 'format': 'duration', 'title': 'Duration', 'type': 'string'}}),
+     ],
+ )
+-def test_model_default_timedelta(ser_json_timedelta: Literal['float', 'iso8601'], properties: typing.Dict[str, Any]):
++def test_model_default_timedelta(
++    ser_json_timedelta: Literal['iso8601', 'seconds_float', 'milliseconds_float'],
++    properties: typing.Dict[str, Any],
++):
+     class Model(BaseModel):
+         model_config = ConfigDict(ser_json_timedelta=ser_json_timedelta)
+ 
+@@ -1795,6 +1800,22 @@ def test_model_default_timedelta(ser_json_timedelta: L
+     }
+ 
+ 
++def test_model_default_timedelta():
++    with pytest.warns(PydanticDeprecatedSince210):
++
++        class Model(BaseModel):
++            model_config = ConfigDict(ser_json_timedelta='float')
++
++            duration: timedelta = timedelta(minutes=5)
++
++        # insert_assert(Model.model_json_schema(mode='serialization'))
++        assert Model.model_json_schema(mode='serialization') == {
++            'properties': {'duration': {'default': 300.0, 'title': 'Duration', 'type': 'number'}},
++            'title': 'Model',
++            'type': 'object',
++        }
++
++
+ @pytest.mark.parametrize(
+     'ser_json_bytes,properties',
+     [
+@@ -1819,12 +1840,14 @@ def test_model_default_bytes(ser_json_bytes: Literal['
+ @pytest.mark.parametrize(
+     'ser_json_timedelta,properties',
+     [
+-        ('float', {'duration': {'default': 300.0, 'title': 'Duration', 'type': 'number'}}),
++        ('seconds_float', {'duration': {'default': 300.0, 'title': 'Duration', 'type': 'number'}}),
++        ('milliseconds_float', {'duration': {'default': 300000.0, 'title': 'Duration', 'type': 'number'}}),
+         ('iso8601', {'duration': {'default': 'PT5M', 'format': 'duration', 'title': 'Duration', 'type': 'string'}}),
+     ],
+ )
+ def test_dataclass_default_timedelta(
+-    ser_json_timedelta: Literal['float', 'iso8601'], properties: typing.Dict[str, Any]
++    ser_json_timedelta: Literal['iso8601', 'milliseconds_float', 'seconds_float'],
++    properties: typing.Dict[str, Any],
+ ):
+     @dataclass(config=ConfigDict(ser_json_timedelta=ser_json_timedelta))
+     class Dataclass:
+@@ -1838,6 +1861,20 @@ def test_dataclass_default_timedelta(
+     }
+ 
+ 
++def test_dataclass_default_timedelta_float():
++    with pytest.warns(PydanticDeprecatedSince210):
++
++        @dataclass(config=ConfigDict(ser_json_timedelta='float'))
++        class Dataclass:
++            duration: timedelta = timedelta(minutes=5)
++
++        assert TypeAdapter(Dataclass).json_schema(mode='serialization') == {
++            'properties': {'duration': {'default': 300.0, 'title': 'Duration', 'type': 'number'}},
++            'title': 'Dataclass',
++            'type': 'object',
++        }
++
++
+ @pytest.mark.parametrize(
+     'ser_json_bytes,properties',
+     [
+@@ -1861,24 +1898,49 @@ def test_dataclass_default_bytes(ser_json_bytes: Liter
+ @pytest.mark.parametrize(
+     'ser_json_timedelta,properties',
+     [
+-        ('float', {'duration': {'default': 300.0, 'title': 'Duration', 'type': 'number'}}),
++        ('seconds_float', {'duration': {'default': 300.0, 'title': 'Duration', 'type': 'number'}}),
++        ('milliseconds_float', {'duration': {'default': 300000.0, 'title': 'Duration', 'type': 'number'}}),
+         ('iso8601', {'duration': {'default': 'PT5M', 'format': 'duration', 'title': 'Duration', 'type': 'string'}}),
+     ],
+ )
+ def test_typeddict_default_timedelta(
+-    ser_json_timedelta: Literal['float', 'iso8601'], properties: typing.Dict[str, Any]
++    ser_json_timedelta: Literal['iso8601', 'milliseconds_float', 'seconds_float'],
++    properties: typing.Dict[str, Any],
+ ):
+     class MyTypedDict(TypedDict):
+         __pydantic_config__ = ConfigDict(ser_json_timedelta=ser_json_timedelta)
+ 
+         duration: Annotated[timedelta, Field(timedelta(minutes=5))]
+ 
+-    # insert_assert(TypeAdapter(MyTypedDict).json_schema(mode='serialization'))
+-    assert TypeAdapter(MyTypedDict).json_schema(mode='serialization') == {
+-        'properties': properties,
+-        'title': 'MyTypedDict',
+-        'type': 'object',
+-    }
++    if ser_json_timedelta == 'float':
++        with pytest.warns(PydanticDeprecatedSince210):
++            # insert_assert(TypeAdapter(MyTypedDict).json_schema(mode='serialization'))
++            assert TypeAdapter(MyTypedDict).json_schema(mode='serialization') == {
++                'properties': properties,
++                'title': 'MyTypedDict',
++                'type': 'object',
++            }
++    else:
++        assert TypeAdapter(MyTypedDict).json_schema(mode='serialization') == {
++            'properties': properties,
++            'title': 'MyTypedDict',
++            'type': 'object',
++        }
++
++
++def test_typeddict_default_timedelta_float():
++    class MyTypedDict(TypedDict):
++        __pydantic_config__ = ConfigDict(ser_json_timedelta='float')
++
++        duration: Annotated[timedelta, Field(timedelta(minutes=5))]
++
++    with pytest.warns(PydanticDeprecatedSince210):
++        # insert_assert(TypeAdapter(MyTypedDict).json_schema(mode='serialization'))
++        assert TypeAdapter(MyTypedDict).json_schema(mode='serialization') == {
++            'properties': {'duration': {'default': 300.0, 'title': 'Duration', 'type': 'number'}},
++            'title': 'MyTypedDict',
++            'type': 'object',
++        }
+ 
+ 
+ @pytest.mark.parametrize(

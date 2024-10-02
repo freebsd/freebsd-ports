@@ -1,6 +1,6 @@
 PORTNAME=	dot-forward
 PORTVERSION=	0.71
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/
 

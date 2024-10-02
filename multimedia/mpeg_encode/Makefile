@@ -1,8 +1,9 @@
 PORTNAME=	mpeg_encode
 PORTVERSION=	1.5b
+DISTVERSIONSUFFIX=-src
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/ahze
-DISTNAME=	${PKGNAME}-src
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	UCB's MPEG-I video stream encoder

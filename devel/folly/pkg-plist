@@ -115,6 +115,7 @@ include/folly/algorithm/simd/Movemask.h
 include/folly/algorithm/simd/detail/SimdAnyOf.h
 include/folly/algorithm/simd/detail/SimdCharPlatform.h
 include/folly/algorithm/simd/detail/SimdForEach.h
+include/folly/algorithm/simd/detail/Traits.h
 include/folly/algorithm/simd/detail/UnrollUtils.h
 include/folly/base64.h
 include/folly/channels/Channel-fwd.h
@@ -146,7 +147,6 @@ include/folly/channels/Transform-inl.h
 include/folly/channels/Transform.h
 include/folly/channels/detail/AtomicQueue.h
 include/folly/channels/detail/ChannelBridge.h
-include/folly/channels/detail/FunctionTraits.h
 include/folly/channels/detail/IntrusivePtr.h
 include/folly/channels/detail/MultiplexerTraits.h
 include/folly/channels/detail/PointerVariant.h
@@ -597,7 +597,10 @@ include/folly/ext/test_ext.h
 include/folly/external/aor/asmdefs.h
 include/folly/external/farmhash/farmhash.h
 include/folly/external/fast-crc32/avx512_crc32c_v8s3x4.h
+include/folly/external/fast-crc32/neon_crc32c_v3s4x2e_v2.h
+include/folly/external/fast-crc32/neon_eor3_crc32c_v8s2x4_s3.h
 include/folly/external/fast-crc32/sse_crc32c_v8s3x3.h
+include/folly/external/nvidia/hash/detail/Crc32cCombineDetail.h
 include/folly/fibers/AddTasks-inl.h
 include/folly/fibers/AddTasks.h
 include/folly/fibers/AtomicBatchDispatcher-inl.h

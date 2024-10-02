@@ -1,9 +1,8 @@
 PORTNAME=	picard
-PORTVERSION=	2.12.3
+DISTVERSION=	2.12.3
 CATEGORIES=	audio python
-MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
-		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
-		http://ftp.osuosl.org/pub/musicbrainz/picard/
+MASTER_SITES=	https://github.com/metabrainz/${PORTNAME}/releases/download/release-${DISTVERSION}/ \
+		https://data.musicbrainz.org/pub/musicbrainz/${PORTNAME}/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Next generation MusicBrainz Tagger

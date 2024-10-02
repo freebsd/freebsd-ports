@@ -42,7 +42,7 @@ XINERAMA_ALL_TARGET=	euclid-wm
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} -e 's|^CFLAGS = |CFLAGS = -Wno-error=int-conversion |g' \
 		${WRKSRC}/Makefile
 .endif

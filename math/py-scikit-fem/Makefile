@@ -1,8 +1,9 @@
 PORTNAME=	scikit-fem
-PORTVERSION=	9.0.1
+PORTVERSION=	10.0.2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	scikit_fem-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple finite element assemblers

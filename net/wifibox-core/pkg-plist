@@ -1,6 +1,6 @@
 @sample etc/wifibox/bhyve.conf.sample
 @sample etc/wifibox/core.conf.sample
-@sample etc/devd/wifibox.conf.sample
+%%DEVD_FIX%%@sample etc/devd/wifibox.conf.sample
 etc/rc.d/wifibox
 sbin/wifibox
 share/man/man5/wifibox-guest.5.gz

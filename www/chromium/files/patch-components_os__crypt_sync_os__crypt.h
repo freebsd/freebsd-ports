@@ -1,4 +1,4 @@
---- components/os_crypt/sync/os_crypt.h.orig	2023-04-28 17:01:32 UTC
+--- components/os_crypt/sync/os_crypt.h.orig	2024-09-30 07:45:04 UTC
 +++ components/os_crypt/sync/os_crypt.h
 @@ -14,7 +14,7 @@
  #include "build/build_config.h"
@@ -11,7 +11,7 @@
  
 @@ -23,7 +23,7 @@ class PrefRegistrySimple;
  class PrefService;
- #endif
+ #endif  // BUILDFLAG(IS_WIN)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_APPLE)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_BSD)

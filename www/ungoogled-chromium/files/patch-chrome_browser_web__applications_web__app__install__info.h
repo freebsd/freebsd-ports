@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/web_app_install_info.h.orig	2024-07-31 14:19:23 UTC
+--- chrome/browser/web_applications/web_app_install_info.h.orig	2024-10-01 07:26:23 UTC
 +++ chrome/browser/web_applications/web_app_install_info.h
-@@ -38,7 +38,7 @@
+@@ -39,7 +39,7 @@
  #include "url/gurl.h"
  
  static_assert(BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
