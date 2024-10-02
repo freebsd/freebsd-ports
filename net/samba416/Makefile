@@ -45,6 +45,7 @@ EXTRA_PATCHES=			\
 				${PATCHDIR}/0026-vfs-add-a-compatibility-option-to-the-vfs_streams_xa.patch:-p1 \
 				${PATCHDIR}/0027-Add-VFS-module-vfs_freebsd-that-implements-FreeBSD-s.patch:-p1 \
 				${PATCHDIR}/0028-s3-lib-system-add-FreeBSD-proc_fd_pattern.patch:-p1 \
+				${PATCHDIR}/0029-Fix-rl_completion_func_t.patch:-p1 \
 				${PATCHDIR}/0099-s3-modules-zfsacl-fix-get-set-ACL-on-FreeBSD-13.patch:-p1 \
 				${PATCHDIR}/0099-s4-mitkdc-Add-support-for-MIT-Kerberos-1.20.patch:-p1
 
