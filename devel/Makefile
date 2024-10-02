@@ -6117,6 +6117,7 @@
     SUBDIR += py-xstatic-jsencrypt
     SUBDIR += py-xstatic-mdi
     SUBDIR += py-xstatic-objectpath
+    SUBDIR += py-xstatic-pygments
     SUBDIR += py-xstatic-rickshaw
     SUBDIR += py-xstatic-roboto-fontface
     SUBDIR += py-xstatic-smart-table
