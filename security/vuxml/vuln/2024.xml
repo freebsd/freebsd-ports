@@ -110,7 +110,11 @@
     <affects>
       <package>
 	<name>cups-filters</name>
-	<range><gt>0</gt></range>
+	<range><lt>1.28.17_6</lt></range>
+      </package>
+      <package>
+	<name>cups</name>
+	<range><lt>2.4.11</lt></range>
       </package>
     </affects>
     <description>
@@ -139,14 +143,14 @@
 	<p><code># service cups_browsed status<br />
 	  # service cups_browsed stop<br />
 	  # service cups_browsed disable</code></p>
-	<p>Attacks from the internet can be blocked by removing the "cups"
-	  protocol from the BrowseRemoteProtocols and BrowseProtocols
-	  directives in /usr/local/etc/cups/cups-browsed.conf. Attacks using
-	  mDNS can be blocked by removing the "dnssd" protocol as well. Access
-	  can be limited to specific IP addresses using BrowseAllow,
-	  BrowseDeny, and BrowseOrder directives as documented in
-	  cups-browsed.conf(5). Then restart the service with the following
-	  command:</p>
+	<p>If you choose to leave the service enabled, attacks from the
+	  internet can be blocked by removing the "cups" protocol from the
+	  BrowseRemoteProtocols and BrowseProtocols directives in
+	  /usr/local/etc/cups/cups-browsed.conf. Attacks using mDNS can be
+	  blocked by removing the "dnssd" protocol as well. Access can be
+	  limited to specific IP addresses using BrowseAllow, BrowseDeny, and
+	  BrowseOrder directives as documented in cups-browsed.conf(5). Then
+	  restart the service with the following command:</p>
 	<p><code># service cups_browsed restart</code></p>
 	</body>
     </description>
@@ -154,12 +158,12 @@
       <cvename>CVE-2024-47076</cvename>
       <cvename>CVE-2024-47175</cvename>
       <cvename>CVE-2024-47176</cvename>
-      <cvename>CVE-2024-47177</cvename>
       <url>https://github.com/OpenPrinting/cups-browsed/security/advisories/GHSA-rj88-6mr5-rcw8</url>
     </references>
     <dates>
       <discovery>2024-09-26</discovery>
       <entry>2024-09-27</entry>
+      <modified>2024-10-02</modified>
     </dates>
   </vuln>
 
