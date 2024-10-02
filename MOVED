@@ -3656,3 +3656,4 @@ sysutils/linux-c7-dosfstools|fs/linux-c7-dosfstools|2024-10-10|Moved to new cate
 sysutils/py-zfs-autobackup|fs/py-zfs-autobackup|2024-10-10|Moved to new category fs
 sysutils/squashfs-tools|fs/squashfs-tools|2024-10-10|Moved to new category fs
 sysutils/squashfs-tools-ng|fs/squashfs-tools-ng|2024-10-10|Moved to new category fs
+sysutils/fusefs-mergerfs|fs/mergerfs|2024-10-10|Moved to new category fs

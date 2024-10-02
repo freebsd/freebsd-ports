@@ -426,7 +426,6 @@
     SUBDIR += fsearch
     SUBDIR += fselect
     SUBDIR += ftwin
-    SUBDIR += fusefs-mergerfs
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += fx

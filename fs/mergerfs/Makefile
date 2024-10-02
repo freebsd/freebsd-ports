@@ -1,6 +1,6 @@
 PORTNAME=	mergerfs
 DISTVERSION=	2.40.2
-CATEGORIES=	sysutils
+CATEGORIES=	fs
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	ehaupt@FreeBSD.org
