@@ -13,6 +13,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING.GPL-3.0+
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LGPL-2.1+
 
+BROKEN=		fails to build with boost-1.85+
+
 BUILD_DEPENDS=	scdoc:textproc/scdoc \
 		notmuch>0:mail/notmuch
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
