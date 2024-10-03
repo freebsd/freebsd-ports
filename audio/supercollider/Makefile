@@ -11,6 +11,8 @@ WWW=		https://supercollider.github.io
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build with boost-1.85+
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libjack.so:audio/jack \
 		libsndfile.so:audio/libsndfile \
