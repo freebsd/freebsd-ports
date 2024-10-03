@@ -12,6 +12,9 @@ WWW=		https://github.com/pekingduck/emacs-sqlite3-api
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Emacs 29 and later support sqlite3 natively
+EXPIRATION_DATE=	2024-10-31
+
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 USES=		emacs gmake
