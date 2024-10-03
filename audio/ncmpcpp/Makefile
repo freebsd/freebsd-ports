@@ -1,5 +1,6 @@
 PORTNAME=	ncmpcpp
 DISTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	audio
 
 PATCH_SITES=	https://github.com/ncmpcpp/ncmpcpp/commit/

@@ -1,7 +1,7 @@
 PORTNAME=	mapnik
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 
 MAINTAINER=	hummeltech@sherpaguru.com
