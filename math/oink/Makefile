@@ -10,6 +10,8 @@ WWW=		https://github.com/trolando/oink
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build with boost-1.85+
+
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 
 USES=		cmake:testing
