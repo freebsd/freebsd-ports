@@ -1,7 +1,7 @@
 %%DATADIR%%/httpd-tt-rss.conf
 @sample %%EXAMPLESDIR%%/newsyslog.sample etc/newsyslog.conf.d/ttrssd.conf
 @group %%WWWGRP%%
-@mode ug=rx
+@mode ugo=rx
 %%WWWDIR%%/update.php
 %%WWWDIR%%/update_daemon2.php
 @group
