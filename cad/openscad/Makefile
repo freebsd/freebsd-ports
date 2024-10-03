@@ -10,6 +10,8 @@ WWW=		https://openscad.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build with boost-1.85+
+
 BUILD_DEPENDS=	cgal>0:math/cgal \
 		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	libzip.so:archivers/libzip \
