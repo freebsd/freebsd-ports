@@ -14,6 +14,8 @@ WWW=		https://galaxyhack.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build with boost-1.85+
+
 BUILD_DEPENDS=	winicontoppm:graphics/netpbm
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libfreetype.so:print/freetype2
