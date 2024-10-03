@@ -25,11 +25,11 @@ include/fio/cgroup.h
 include/fio/client.h
 include/fio/compiler/compiler.h
 include/fio/config-host.h
+include/fio/dataplacement.h
 include/fio/debug.h
 include/fio/dedupe.h
 include/fio/diskutil.h
 include/fio/err.h
-include/fio/fdp.h
 include/fio/fifo.h
 include/fio/file.h
 include/fio/filehash.h
@@ -117,6 +117,7 @@ share/man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/1mbs_clients.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/aio-read.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/aio-read.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/atomic-verify.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/backwards-read.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/backwards-read.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic-verify.fio
@@ -223,14 +224,6 @@ share/man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libiscsi.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libpmem.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libpmem.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/librpma_apm-client.fio
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/librpma_apm-client.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/librpma_apm-server.fio
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/librpma_apm-server.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/librpma_gpspm-client.fio
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/librpma_gpspm-client.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/librpma_gpspm-server.fio
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/librpma_gpspm-server.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libzbc-rand-write.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libzbc-rand-write.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libzbc-seq-read.fio
