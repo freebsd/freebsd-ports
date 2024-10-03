@@ -1,3 +1,39 @@
+  <vuln vid="3c6f8270-3210-4e2f-ba72-a9cdca7417a0">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.479</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.462.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2024-10-02/">
+	  <h1>Description</h1>
+	  <h5>(Medium) SECURITY-3451 / CVE-2024-47803</h5>
+	  <p>Exposure of multi-line secrets through error messages in Jenkins</p>
+	  <h1>Description</h1>
+	  <h5>(Medium) SECURITY-3448 / CVE-2024-47804</h5>
+	  <p>Item creation restriction bypass vulnerability in Jenkins</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-47803</cvename>
+      <cvename>CVE-2024-47804</cvename>
+      <url>https://www.jenkins.io/security/advisory/2024-10-02/</url>
+    </references>
+    <dates>
+      <discovery>2024-10-02</discovery>
+      <entry>2024-10-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8b20f21a-8113-11ef-b988-08002784c58d">
     <topic>redis,valkey -- Multiple vulnerabilities</topic>
     <affects>
