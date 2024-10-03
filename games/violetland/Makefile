@@ -12,6 +12,7 @@ LICENSE_COMB=	multi
 #LICENSE_FILE_GPLv3=		"${WRKSRC}/LICENSE (code)" # framework doesn't handle these properly
 #LICENSE_FILE_CC-BY-SA-3.0=	"${WRKSRC}/LICENSE (content)"
 
+BROKEN=		fails to build with boost-1.85+
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
 USE_GITHUB=	yes
