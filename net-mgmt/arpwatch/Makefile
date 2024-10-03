@@ -1,5 +1,5 @@
 PORTNAME=	arpwatch
-PORTVERSION=	3.6
+PORTVERSION=	3.7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://ee.lbl.gov/downloads/arpwatch/ \
 		LOCAL/leres/arpwatch
@@ -11,7 +11,9 @@ WWW=		https://ee.lbl.gov/downloads/arpwatch/
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pcap.h:net/libpcap
-RUN_DEPENDS=	${LOCALBASE}/include/pcap.h:net/libpcap
+RUN_DEPENDS=	${LOCALBASE}/bin/curl:ftp/curl \
+		ca_root_nss>=0:security/ca_root_nss \
+		${LOCALBASE}/include/pcap.h:net/libpcap
 
 USES=		python:run
 
