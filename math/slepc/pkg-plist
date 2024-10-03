@@ -35,7 +35,7 @@ include/slepcbv.mod
 include/slepcbvdef.mod
 include/slepcbvdefdummy.mod
 include/slepcconf.h
-include/slepccublas.h
+include/slepccupmblas.h
 include/slepcds.h
 include/slepcds.mod
 include/slepcdsdef.mod
@@ -87,10 +87,10 @@ include/slepcsysdef.mod
 include/slepcvec.h
 include/slepcversion.h
 lib/libslepc.so
-lib/libslepc.so.3.21
-lib/libslepc.so.3.21.2
+lib/libslepc.so.3.22
+lib/libslepc.so.3.22.0
 lib/slepc/conf/configure-hash
-lib/slepc/conf/modules/slepc/3.21.2
+lib/slepc/conf/modules/slepc/3.22.0
 lib/slepc/conf/slepc_common
 lib/slepc/conf/slepc_rules
 lib/slepc/conf/slepc_rules_doc.mk
