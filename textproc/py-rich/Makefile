@@ -1,5 +1,5 @@
 PORTNAME=	rich
-PORTVERSION=	13.8.1
+PORTVERSION=	13.9.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,7 +30,7 @@ BINARY_ALIAS=	git=false
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 30900
+.if ${PYTHON_REL} < 31100
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.0.0<5.0:devel/py-typing-extensions@${PY_FLAVOR}
 .endif
 
