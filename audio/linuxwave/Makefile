@@ -5,7 +5,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	bbb9a15b41ed.patch:-p1 # https://github.com/orhun/linuxwave/pull/28
+PATCHFILES+=	6120822d7c16.patch:-p1 # https://github.com/orhun/linuxwave/pull/28
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Generate music from the entropy of Linux
