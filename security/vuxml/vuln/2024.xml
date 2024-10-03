@@ -40,6 +40,7 @@
       <package>
 	<name>redis</name>
 	<range><ge>7.4.0</ge><lt>7.4.1</lt></range>
+	<range><ge>7.2.0</ge><lt>7.2.6</lt></range>
       </package>
       <package>
 	<name>redis72</name>
