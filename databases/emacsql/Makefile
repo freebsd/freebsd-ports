@@ -1,6 +1,7 @@
 PORTNAME=	emacsql
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.3
+PORTREVISION=	1
 CATEGORIES=	databases elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -11,11 +12,9 @@ WWW=		https://github.com/magit/emacsql
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE
 
-BUILD_DEPENDS=	emacs-sqlite3-api${EMACS_PKGNAMESUFFIX}>=0.18:databases/emacs-sqlite3-api@${EMACS_FLAVOR} \
-		pg.el${EMACS_PKGNAMESUFFIX}>=0.39:databases/pg.el@${EMACS_FLAVOR}
+BUILD_DEPENDS=	pg.el${EMACS_PKGNAMESUFFIX}>=0.39:databases/pg.el@${EMACS_FLAVOR}
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
-RUN_DEPENDS=	emacs-sqlite3-api${EMACS_PKGNAMESUFFIX}>=0.18:databases/emacs-sqlite3-api@${EMACS_FLAVOR} \
-		pg.el${EMACS_PKGNAMESUFFIX}>=0.39:databases/pg.el@${EMACS_FLAVOR}
+RUN_DEPENDS=	pg.el${EMACS_PKGNAMESUFFIX}>=0.39:databases/pg.el@${EMACS_FLAVOR}
 
 USES=		emacs gmake localbase:ldflags
 
