@@ -1,13 +1,12 @@
 PORTNAME=	Graphics-TIFF
-DISTVERSION=	20
-PORTREVISION=	1
+DISTVERSION=	21
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Perl extension for the libtiff library
-WWW=		https://metacpan.org/pod/Graphics::TIFF
+WWW=		https://metacpan.org/dist/Graphics-TIFF
 
 LICENSE=	ARTPERL10 GPLv1+
 LICENSE_COMB=	dual
