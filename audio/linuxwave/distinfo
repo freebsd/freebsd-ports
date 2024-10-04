@@ -3,5 +3,5 @@ SHA256 (orhun-linuxwave-v0.1.5_GH0.tar.gz) = c3cbbca353c1cbe837a55b28e35a26d963a
 SIZE (orhun-linuxwave-v0.1.5_GH0.tar.gz) = 372387
 SHA256 (Hejsil-zig-clap-0.8.0_GH0.tar.gz) = 82c43de5298c38e513220c9986ae48154817bc8a7abe525f5d5e26eb0086b3c1
 SIZE (Hejsil-zig-clap-0.8.0_GH0.tar.gz) = 22573
-SHA256 (bbb9a15b41ed.patch) = 6bf0b34cd1c24552e70c37e3660bceafaed2444985c639e6eec0445297abc823
-SIZE (bbb9a15b41ed.patch) = 20938
+SHA256 (6120822d7c16.patch) = 735573154723805660e660252bca851c2ffbcf5d540a1a3b8f5e53d69b09551c
+SIZE (6120822d7c16.patch) = 16703

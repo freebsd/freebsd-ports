@@ -1,6 +1,6 @@
 PORTNAME=	vera++
 PORTVERSION=	1.3.0
-PORTREVISION=	21
+PORTREVISION=	20
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/verateam/vera/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -12,6 +12,8 @@ WWW=		https://bitbucket.org/verateam/vera/wiki/Home
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
+
+BROKEN=		fails to build with boost-1.85+
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
 

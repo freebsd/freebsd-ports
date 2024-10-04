@@ -1,21 +1,28 @@
 PORTNAME=	sakisafe
-DISTVERSION=	2.2.1
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.5.1
 CATEGORIES=	net
-MASTER_SITES=	http://git.qorg11.net/sakisafe.git/snapshot/
 
 MAINTAINER=	teru-sama@riseup.net
 COMMENT=	Client for many file-sharing websites
+WWW=		https://github.com/rfc-2549/sakisafe
 
-LICENSE=	GPLv3
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
 		libcurl.so:ftp/curl \
 		libnghttp2.so:www/libnghttp2
 
 USES=		localbase ssl
+USE_GITHUB=	yes
+GH_ACCOUNT=	rfc-2549
 
 CFLAGS+=	-fPIC
+
+PLIST_FILES=	bin/sakisafecli \
+		share/man/man1/sakisafecli.1.gz \
+		share/man/man5/sakisafeclirc.5.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sakisafecli/sakisafecli ${STAGEDIR}${PREFIX}/bin/sakisafecli

@@ -9,6 +9,7 @@ bin/gptscript
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/describe-code.gpt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo.gpt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fac.gpt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gcp-assistant.gpt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/git-commit.gpt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gptreview-ghaction/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gptreview-ghaction/codereview.gpt
@@ -44,6 +45,7 @@ bin/gptscript
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sentiments.gpt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sqlite-download.gpt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/syntax-from-code.gpt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testkube.gpt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/time.gpt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/travel-agent.gpt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/treasure-hunt/Dockerfile

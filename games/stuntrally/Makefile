@@ -11,6 +11,8 @@ WWW=		https://stuntrally.tuxfamily.org/ \
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/License.txt
 
+BROKEN=		fails to build with boost-1.85+
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libOgreMain.so:graphics/ogre3d \
 		libBulletDynamics.so:devel/bullet \

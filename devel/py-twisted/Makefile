@@ -1,6 +1,5 @@
 PORTNAME=	twisted
-PORTVERSION=	23.8.0
-PORTREVISION=	1
+PORTVERSION=	24.7.0
 CATEGORIES=	devel net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,13 +14,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-fancy-pypi-readme>=22.5.0:devel/py-hatch-fancy-pypi-readme@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>=1.10.0:devel/py-hatchling@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}incremental>=21.3.0:devel/py-incremental@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}incremental>=24.7.0:devel/py-incremental@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=21.3.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Automat>=0.8.0:devel/py-Automat@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}constantly>=15.1:devel/py-constantly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hyperlink>=17.1.1:www/py-hyperlink@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}incremental>=21.3.0:devel/py-incremental@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.10.0:devel/py-typing-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}incremental>=24.7.0:devel/py-incremental@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.2.0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>=5:devel/py-zope.interface@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython-test-exception-raiser>=1.0.2<2:devel/py-cython-test-exception-raiser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hypothesis>=6.56:devel/py-hypothesis@${PY_FLAVOR} \
@@ -52,10 +52,6 @@ TLS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}idna>=2.4:dns/py-idna@${PY_FLAVOR} \
 # We need twisted.trial in PYTHONPATH
 # twisted.conch tests depend on finding certain scripts in PATH
 TEST_ENV=	PYTHONPATH=${WRKSRC}/src PATH=${STAGEDIR}/${PREFIX}/bin:$$PATH
-
-post-patch:
-	${GREP} -F -Rl TLS_METHOD ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
-		-e 's,TLS_METHOD,TLSv1_2_METHOD,'
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/ -name '*.so' -exec ${STRIP_CMD} {} +

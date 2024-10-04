@@ -1,3 +1,197 @@
+  <vuln vid="0417d41a-8175-11ef-a5dc-b42e991fc52e">
+    <topic>firefox -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>131.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.3.0,1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>128.3.0,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1872744%2C1897792%2C1911317%2C1913445%2C1914106%2C1914475%2C1914963%2C1915008%2C1916476">
+	<ul>
+	<li>CVE-2024-9392: A compromised content process could have
+	allowed for the arbitrary loading of cross-origin pages.</li>
+	<li>CVE-2024-9396: It is currently unknown if this issue is
+	exploitable but a condition may arise where the structured
+	clone of certain objects could lead to memory corruption.</li>
+	<li>CVE-2024-9400: A potential memory corruption vulnerability
+	could be triggered if an attacker had the ability to trigger
+	an OOM at a specific moment during JIT compilation.</li>
+	<li>CVE-2024-9401: Memory safety bugs present in Firefox 130,
+	Firefox ESR 115.15, Firefox ESR 128.2, and Thunderbird 128.2.
+	Some of these bugs showed evidence of memory corruption and we
+	presume that with enough effort some of these could have been
+	exploited to run arbitrary code.</li>
+	<li>CVE-2024-9402: Memory safety bugs present in Firefox 130,
+	Firefox ESR 128.2, and Thunderbird 128.2.  Some of these bugs
+	showed evidence of memory corruption and we presume that with
+	enough effort some of these could have been exploited to run
+	arbitrary code.</li>
+	<li>CVE-2024-9403: Memory safety bugs present in Firefox 130.
+	Some of these bugs showed evidence of memory corruption and we
+	presume that with enough effort some of these could have been
+	exploited to run arbitrary code.</li>
+	</ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-9392</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-9392</url>
+      <cvename>CVE-2024-9396</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-9396</url>
+      <cvename>CVE-2024-9400</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-9400</url>
+      <cvename>CVE-2024-9401</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-9401</url>
+      <cvename>CVE-2024-9402</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-9402</url>
+      <cvename>CVE-2024-9403</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-9403</url>
+    </references>
+    <dates>
+      <discovery>2024-10-01</discovery>
+      <entry>2024-10-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3c6f8270-3210-4e2f-ba72-a9cdca7417a0">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.479</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.462.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2024-10-02/">
+	  <h1>Description</h1>
+	  <h5>(Medium) SECURITY-3451 / CVE-2024-47803</h5>
+	  <p>Exposure of multi-line secrets through error messages in Jenkins</p>
+	  <h1>Description</h1>
+	  <h5>(Medium) SECURITY-3448 / CVE-2024-47804</h5>
+	  <p>Item creation restriction bypass vulnerability in Jenkins</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-47803</cvename>
+      <cvename>CVE-2024-47804</cvename>
+      <url>https://www.jenkins.io/security/advisory/2024-10-02/</url>
+    </references>
+    <dates>
+      <discovery>2024-10-02</discovery>
+      <entry>2024-10-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8b20f21a-8113-11ef-b988-08002784c58d">
+    <topic>redis,valkey -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><ge>7.4.0</ge><lt>7.4.1</lt></range>
+	<range><ge>7.2.0</ge><lt>7.2.6</lt></range>
+      </package>
+      <package>
+	<name>redis72</name>
+	<range><ge>7.2.0</ge><lt>7.2.6</lt></range>
+      </package>
+      <package>
+	<name>redis62</name>
+	<range><ge>6.2.0</ge><lt>6.2.16</lt></range>
+      </package>
+      <package>
+	<name>valkey</name>
+	<range><ge>8,0,0</ge><lt>8.0.1</lt></range>
+	<range><ge>7.2.0</ge><lt>7.2.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redis core team reports:</p>
+	<blockquote cite="https://github.com/redis/redis/releases/tag/7.4.1">
+	  <dl>
+	    <dt>CVE-2024-31449</dt>
+	    <dd>Lua library commands may lead to stack overflow and potential RCE.</dd>
+	    <dt>CVE-2024-31227</dt>
+	    <dd>Potential Denial-of-service due to malformed ACL selectors.</dd>
+	    <dt>CVE-2024-31228</dt>
+	    <dd>Potential Denial-of-service due to unbounded pattern matching.</dd>
+	  </dl>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-31449</cvename>
+      <cvename>CVE-2024-31227</cvename>
+      <cvename>CVE-2024-31228</cvename>
+      <url>https://github.com/redis/redis/releases/tag/7.4.1</url>
+    </references>
+    <dates>
+      <discovery>2024-10-02</discovery>
+      <entry>2024-10-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fe5c1e7a-7eed-11ef-9533-f875a43e1796">
+    <topic>php -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	      <name>php81</name>
+	      <range><lt>8.1.30</lt></range>
+      </package>
+      <package>
+	      <name>php82</name>
+	      <range><lt>8.2.24</lt></range>
+      </package>
+      <package>
+	      <name>php83</name>
+	      <range><lt>8.3.12</lt></range>
+      </package>
+    </affects>
+    <description>
+	    <body xmlns="http://www.w3.org/1999/xhtml">
+	      <p>php.net reports:</p>
+	      <blockquote cite="https://www.php.net/ChangeLog-8.php">
+					<ul>
+						<li>CVE-2024-8926: CGI: Fixed bug GHSA-9pqp-7h25-4f32 (Bypass of CVE-2024-4577, Parameter Injection Vulnerability).</li>
+						<li>CVE-2024-8927: CGI: Fixed bug GHSA-94p6-54jq-9mwp (cgi.force_redirect configuration is bypassable due to the environment variable collision).</li>
+						<li>CVE-2024-9026: FPM: Fixed bug GHSA-865w-9rf3-2wh5 (Logs from childrens may be altered).</li>
+						<li>CVE-2024-8925: SAPI: Fixed bug GHSA-9pqp-7h25-4f32 (Erroneous parsing of multipart form data).</li>
+					</ul>
+	      </blockquote>
+	    </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-8926</cvename>
+      <cvename>CVE-2024-8927</cvename>
+      <cvename>CVE-2024-9026</cvename>
+      <cvename>CVE-2024-8925</cvename>
+      <url>https://www.php.net/ChangeLog-8.php</url>
+    </references>
+    <dates>
+      <discovery>2024-09-26</discovery>
+      <entry>2024-09-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f9cfdb00-7f43-11ef-9b27-592d55dd336d">
     <topic>Slixmpp -- Lack of SSL Certificate hostname validation in XMLStream</topic>
     <affects>

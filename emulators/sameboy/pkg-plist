@@ -33,6 +33,7 @@ share/mime/packages/sameboy.xml
 %%DATADIR%%/Shaders/AAScale4x.fsh
 %%DATADIR%%/Shaders/Bilinear.fsh
 %%DATADIR%%/Shaders/CRT.fsh
+%%DATADIR%%/Shaders/FlatCRT.fsh
 %%DATADIR%%/Shaders/HQ2x.fsh
 %%DATADIR%%/Shaders/LCD.fsh
 %%DATADIR%%/Shaders/MasterShader.fsh

@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
 
+BROKEN=		fails to build with boost-1.85+
 BUILD_DEPENDS=	glm>0:math/glm
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libdouble-conversion.so:devel/double-conversion \

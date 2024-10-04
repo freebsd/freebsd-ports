@@ -29,7 +29,6 @@ lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_generated.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_html.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_jsonrpc.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_log.beam
-lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_log_file_h.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_logger.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ls.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_multipart.beam

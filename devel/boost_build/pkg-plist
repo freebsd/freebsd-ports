@@ -20,10 +20,6 @@ bin/b2
 %%DATADIR%%/src/contrib/modular.jam
 %%DATADIR%%/src/contrib/tntnet.jam
 %%DATADIR%%/src/contrib/wxFormBuilder.jam
-%%DATADIR%%/src/kernel/bootstrap.jam
-%%DATADIR%%/src/kernel/class.jam
-%%DATADIR%%/src/kernel/errors.jam
-%%DATADIR%%/src/kernel/modules.jam
 %%DATADIR%%/src/options/help.jam
 %%DATADIR%%/src/tools/acc.jam
 %%DATADIR%%/src/tools/asciidoctor.jam
@@ -222,8 +218,5 @@ bin/b2
 %%DATADIR%%/src/util/param.jam
 %%DATADIR%%/src/util/path.jam
 %%DATADIR%%/src/util/print.jam
-%%DATADIR%%/src/util/regex.jam
 %%DATADIR%%/src/util/sequence.jam
-%%DATADIR%%/src/util/set.jam
-%%DATADIR%%/src/util/string.jam
 %%DATADIR%%/src/util/utility.jam

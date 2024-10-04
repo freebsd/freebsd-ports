@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2024-01-31 00:58:01 UTC
+--- CMakeLists.txt.orig	2024-09-04 20:01:18 UTC
 +++ CMakeLists.txt
-@@ -145,7 +145,7 @@ set(CPU_INTEL OFF)
+@@ -181,7 +181,7 @@ set(CPU_INTEL OFF)
  set(CPU_AARCH64 OFF)
  set(CPU_INTEL OFF)
  
@@ -9,16 +9,16 @@
    set(CPU_INTEL ON)
  elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(aarch64|arm64)")
    set(CPU_AARCH64 ON)
-@@ -170,7 +170,7 @@ option(BUILD_DOCS "Build Caffe2 documentation" OFF)
- option(ATEN_NO_TEST "Do not build ATen test binaries" OFF)
+@@ -210,7 +210,7 @@ option(BUILD_CUSTOM_PROTOBUF
  option(BUILD_BINARY "Build C++ binaries" OFF)
  option(BUILD_DOCS "Build Caffe2 documentation" OFF)
--option(BUILD_CUSTOM_PROTOBUF "Build and use Caffe2's own protobuf under third_party" ON)
-+option(BUILD_CUSTOM_PROTOBUF "Build and use Caffe2's own protobuf under third_party" OFF)
+ option(BUILD_CUSTOM_PROTOBUF
+-       "Build and use Caffe2's own protobuf under third_party" ON)
++       "Build and use Caffe2's own protobuf under third_party" OFF)
  option(BUILD_PYTHON "Build Python binaries" ON)
- option(BUILD_CAFFE2 "Master flag to build Caffe2" OFF)
  option(BUILD_LITE_INTERPRETER "Master flag to build Lite Interpreter" OFF)
-@@ -405,15 +405,15 @@ option(USE_SYSTEM_CPUINFO "Use system-provided cpuinfo
+ option(BUILD_SHARED_LIBS "Build libcaffe2.so" ON)
+@@ -451,15 +451,15 @@ option(USE_SYSTEM_CPUINFO "Use system-provided cpuinfo
  # USE_SYSTEM_LIBS being "OFF".
  option(USE_SYSTEM_LIBS "Use all available system-provided libraries." OFF)
  option(USE_SYSTEM_CPUINFO "Use system-provided cpuinfo." OFF)
@@ -35,9 +35,9 @@
 -option(USE_SYSTEM_ONNX "Use system-provided onnx." OFF)
 +option(USE_SYSTEM_ONNX "Use system-provided onnx." ON)
  option(USE_SYSTEM_XNNPACK "Use system-provided xnnpack." OFF)
- option(USE_SYSTEM_ZSTD "Use system-provided zstd." OFF)
  option(USE_GOLD_LINKER "Use ld.gold to link" OFF)
-@@ -838,11 +838,11 @@ if(NOT MSVC)
+ if(USE_SYSTEM_LIBS)
+@@ -971,11 +971,11 @@ if(NOT MSVC)
    # Details at http://eigen.tuxfamily.org/bz/show_bug.cgi?id=1459
    string(APPEND CMAKE_CXX_FLAGS " -Wall")
    string(APPEND CMAKE_CXX_FLAGS " -Wextra")
@@ -52,5 +52,5 @@
 +  #append_cxx_flag_if_supported("-Werror=range-loop-construct" CMAKE_CXX_FLAGS)
 +  #append_cxx_flag_if_supported("-Werror=bool-operation" CMAKE_CXX_FLAGS)
    append_cxx_flag_if_supported("-Wnarrowing" CMAKE_CXX_FLAGS)
-   append_cxx_flag_if_supported("-Wno-missing-field-initializers" CMAKE_CXX_FLAGS)
-   append_cxx_flag_if_supported("-Wno-type-limits" CMAKE_CXX_FLAGS)
+   append_cxx_flag_if_supported("-Wno-missing-field-initializers"
+                                CMAKE_CXX_FLAGS)

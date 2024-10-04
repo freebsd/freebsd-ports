@@ -1,10 +1,13 @@
 PORTNAME=	phpsysinfo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.3
-PORTREVISION=	2
+DISTVERSION=	3.4.4
 CATEGORIES=	www
-PKGNAMESUFFIX=  ${PHP_PKGNAMESUFFIX}
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
+PATCH_SITES=	https://github.com/phpsysinfo/phpsysinfo/commit/
+PATCHFILES=	11a18f6a50482ac38c70639c913bd1cd46f7414d.diff:-p1 \
+		9f8962c851b39a1d1b0d771a0c8cb7d447639a4f.diff:-p1
+ 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	PHP script for displaying system information
 WWW=		https://phpsysinfo.github.io/phpsysinfo/

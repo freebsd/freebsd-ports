@@ -14,10 +14,11 @@ fetch -qo /tmp/channel-rust-nightly.toml https://static.rust-lang.org/dist/chann
 new_commit=$(</tmp/channel-rust-nightly.toml tomlq -r '.pkg.rustc.git_commit_hash')
 rm /tmp/channel-rust-nightly.toml
 
-fetch -qo - https://raw.githubusercontent.com/rust-lang/rust/${new_commit}/src/stage0.json | jq -r '
-	"BOOTSTRAPS_DATE=\(.compiler.date)",
-	"RUST_BOOTSTRAP_VERSION=\(.compiler.version)"
-' | portedit merge -i .
+fetch -qo /tmp/stage0 https://raw.githubusercontent.com/rust-lang/rust/${new_commit}/src/stage0
+BOOTSTRAPS_DATE=$(awk -F "=" /^compiler_date/'{print $2}' /tmp/stage0)
+RUST_BOOTSTRAP_VERSION=$(awk -F "=" /^compiler_version/'{print $2}' /tmp/stage0)
+echo "BOOTSTRAPS_DATE=${BOOTSTRAPS_DATE}" | portedit merge -i .
+echo "RUST_BOOTSTRAP_VERSION=${RUST_BOOTSTRAP_VERSION}" | portedit merge -i .
 
 make makesum
 echo "lang/rust-nightly: Update to $(make -V PORTVERSION)

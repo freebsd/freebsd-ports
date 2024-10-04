@@ -12,15 +12,18 @@ WWW=		https://www.knot-dns.cz/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gsed:textproc/gsed
+BUILD_DEPENDS=	gsed:textproc/gsed \
+		lmdb>=0.9.15:databases/lmdb
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		liblmdb.so:databases/lmdb
 
-USES=		alias libtool localbase pkgconfig tar:xz
+USES=		alias compiler:c11 libtool localbase pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-recvmmsg=no \
+CONFIGURE_ARGS=	--enable-cap-ng=no \
+		--enable-recvmmsg=no \
+		--enable-systemd=no \
 		--mandir=${PREFIX}/share/man \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
@@ -31,29 +34,26 @@ CONFLICTS=	knot-1.* knot1-[0-6].* knot2-[0-9].*
 DATADIR=	/var/db/${PORTNAME}
 RUNDIR=		/var/run/${PORTNAME}
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
-SUB_LIST=	DATADIR=${DATADIR} \
-		ETCDIR=${ETCDIR} \
-		GROUPS=${GROUPS} \
-		RUNDIR=${RUNDIR} \
+SUB_LIST=	GROUPS=${GROUPS} \
 		USERS=${USERS}
 
-USERS=		knot
-GROUPS=		knot
+USERS=		${PORTNAME}
+GROUPS=		${PORTNAME}
 
-PLIST_SUB=	DATADIR=${DATADIR} \
-		ETCDIR=${ETCDIR} \
+PLIST_SUB=	RUNDIR=${RUNDIR} \
 		GROUPS=${GROUPS} \
-		RUNDIR=${RUNDIR} \
 		USERS=${USERS}
 
 PORTDOCS=	COPYING NEWS
 
 OPTIONS_DEFINE=			DAEMON UTILS DOCS EXAMPLES
-OPTIONS_DEFAULT=		DAEMON UTILS FASTPARSER DOH DOQ IDN MODACL MODAUTH MODCOOKIES
-OPTIONS_DEFAULT+=		MODPROXY MODNOUDP MODPROBE MODRRL MODSIGN MODSTATS MODSYNTH MODWHOAMI
+OPTIONS_DEFAULT=		DAEMON FASTPARSER DOH DOQ IDN MODACL MODAUTH \
+				MODCOOKIES MODPROXY MODNOUDP MODPROBE MODRRL \
+				MODSIGN MODSTATS MODSYNTH MODWHOAMI UTILS
 OPTIONS_GROUP=			DAEMONGR UTILGR
-OPTIONS_GROUP_DAEMONGR=		DNSTAP FASTPARSER MODACL MODAUTH MODCOOKIES MODPROXY MODGEO
-OPTIONS_GROUP_DAEMONGR+=	MODNOUDP MODPROBE MODRRL MODSIGN MODSTATS MODSYNTH MODWHOAMI
+OPTIONS_GROUP_DAEMONGR=		DNSTAP FASTPARSER MODACL MODAUTH MODCOOKIES \
+				MODPROXY MODGEO MODNOUDP MODPROBE MODRRL \
+				MODSIGN MODSTATS MODSYNTH MODWHOAMI
 OPTIONS_GROUP_UTILGR=		DOH DOQ IDN
 NO_OPTIONS_SORT=		yes
 OPTIONS_SUB=			yes
@@ -83,10 +83,8 @@ UTILS_DESC=			Install utulities
 
 DAEMON_LIB_DEPENDS=		liburcu.so:sysutils/liburcu
 DAEMON_USES=			libedit
-DAEMON_CONFIGURE_ENABLE=	daemon
-DAEMON_CONFIGURE_ENABLE+=	modules
-DAEMON_CONFIGURE_WITH=		rundir=${RUNDIR}
-DAEMON_CONFIGURE_WITH+=		storage=${DATADIR}
+DAEMON_CONFIGURE_ENABLE=	daemon modules
+DAEMON_CONFIGURE_WITH=		rundir=${RUNDIR} storage=${DATADIR}
 DAEMON_SUB_FILES=		pkg-message
 DAEMON_VARS=			USE_RC_SUBR=${PORTNAME}
 
@@ -102,11 +100,15 @@ DNSTAP_CONFIGURE_WITH=		module-dnstap=yes
 # in higher line count.  Ideally this bug should be fixed upstream.
 DNSTAP_CPPFLAGS=		-I${LOCALBASE}/include
 
+DOCS_BUILD_DEPENDS=		sphinx-build:textproc/py-sphinx
 DOCS_CONFIGURE_ENABLE=		documentation
 
 DOH_LIB_DEPENDS=		libnghttp2.so:www/libnghttp2
 
-DOQ_LIB_DEPENDS=		libngtcp2.so:net/libngtcp2
+DOQ_LIB_DEPENDS=		libngtcp2.so:net/libngtcp2 \
+				libngtcp2_crypto_gnutls.so:net/libngtcp2-gnutls
+DOQ_CONFIGURE_ON=		--enable-quic=yes
+DOQ_CONFIGURE_OFF=		--enable-quic=no
 
 FASTPARSER_CONFIGURE_ENABLE=	fastparser
 
@@ -147,28 +149,28 @@ UTILS_CONFIGURE_ENABLE=		utilities
 USES+=		autoreconf
 .endif
 
-post-patch:
-.if ${PORT_OPTIONS:MDAEMON}
+post-patch-DAEMON-on:
 	@${REINPLACE_CMD} 's|$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|#$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|' \
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} 's|$$(INSTALL) -d $$(DESTDIR)/\@storage_dir\@|#$$(INSTALL) -d $$(DESTDIR)/\@storage_dir\@|' \
 		${WRKSRC}/src/Makefile.in
 	@${RM} -r ${WRKSRC}/src/zscanner/scanner.c
-.endif
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/man/*.5 ${STAGEDIR}${PREFIX}/share/man/man5
+	${INSTALL_MAN} ${WRKSRC}/doc/man/*.8 ${STAGEDIR}${PREFIX}/share/man/man8
+
+post-install-DAEMON-on:
+	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${RUNDIR}
 
 post-install:
-.if ${PORT_OPTIONS:MDAEMON}
-	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${RUNDIR}
-.endif
 .if ${PORT_OPTIONS:MDAEMON} && ${PORT_OPTIONS:MEXAMPLES}
 	${MV} ${STAGEDIR}${ETCDIR}/knot.sample.conf ${STAGEDIR}${ETCDIR}/knot.conf.sample
 .else
 	${RM} ${STAGEDIR}${ETCDIR}/knot.sample.conf
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include "knotdns.mk"

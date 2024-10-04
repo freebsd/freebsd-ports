@@ -11,6 +11,8 @@ WWW=		https://gource.io/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build with boost-1.85+
+
 BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpcre.so:devel/pcre \

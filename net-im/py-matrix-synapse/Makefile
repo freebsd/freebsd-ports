@@ -1,5 +1,5 @@
 PORTNAME=	matrix-synapse
-DISTVERSION=	1.115.0
+DISTVERSION=	1.116.0
 CATEGORIES=	net-im python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -53,8 +53,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=15.0:devel/py-virtualenv@${PY_F
 		${PYTHON_PKGNAMEPREFIX}authlib>=0.15.1:security/py-authlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}idna>=2.5:dns/py-idna@${PY_FLAVOR}
 
-USES=		cargo python
-USE_PYTHON=	autoplist cryptography distutils
+USES=		cargo python shebangfix
+USE_PYTHON=	autoplist cryptography pep517
 USE_RC_SUBR=	synapse
 WRKSRC=		${WRKDIR}/${PORTNAME:S/-/_/}-${DISTVERSION}
 CARGO_CONFIGURE=	yes
@@ -63,6 +63,7 @@ CARGO_TEST=	no
 CARGO_INSTALL=	no
 CARGO_CARGOTOML=	${WRKSRC}/rust/Cargo.toml
 
+SHEBANG_FILES=	synapse/_scripts/*.py
 SUB_FILES=	pkg-message log.config
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} DBDIR=${DBDIR} LOGDIR=${LOGDIR} PIDDIR=${PIDDIR} USERS=${USERS}
 
@@ -73,8 +74,8 @@ DBDIR?=		/var/db/${PORTNAME}
 LOGDIR?=	/var/log/${PORTNAME}
 PIDDIR?=	/var/run/${PORTNAME}
 
-PLIST_FILES=	"@sample ${ETCDIR}/log.config.sample" \
-		%%PYTHON_SITELIBDIR%%/synapse/synapse_rust.abi3.so
+PLIST_FILES=	"@sample ${ETCDIR}/log.config.sample"
+
 DOCS=		README.rst UPGRADE.rst CHANGES.md docs/postgres.md
 PORTDOCS=	${DOCS:T}
 

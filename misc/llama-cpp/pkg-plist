@@ -3,7 +3,6 @@ bin/llama-baby-llama
 bin/llama-batched
 bin/llama-batched-bench
 bin/llama-bench
-bin/llama-bench-matmult
 bin/llama-cli
 bin/llama-convert-llama2c-to-ggml
 bin/llama-cvector-generator

@@ -1,45 +1,45 @@
 PORTNAME=	yaws
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	www devel
-MASTER_SITES=	LOCAL/dch
-
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	erlyaws
-GH_PROJECT=	yaws
+MASTER_SITES=	https://codeload.github.com/erlyaws/yaws/tar.gz/refs/tags/${DISTNAME}?dummy=/
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Web server for dynamic content written in Erlang
-WWW=		http://yaws.hyber.org/
+WWW=		https://erlyaws.github.io/
 
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	erl:lang/erlang
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS_SUB=	yes
-PLIST_SUB=	VERSION="${PORTVERSION}"
-
 USES=		autoreconf cpe gmake libtool pathfix shebangfix
+
+USE_GITHUB=	nodefault
+GH_ACCOUNT=	erlyaws
+GH_PROJECT=	yaws
 
 SHEBANG_FILES=	www/cgi-bin/foo.py
 
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir=/var
+CONFIGURE_ENV=	wwwdir=${WWWDIR} \
+		yawsdir=${_APPDIR}
+
+INSTALL_TARGET=	install-strip
+PLIST_SUB=	VERSION="${PORTVERSION}"
+
 OPTIONS_DEFINE=	WWW
+OPTIONS_SUB=	yes
 
 WWW_DESC=	Install sample applications
 
-APPDIR=		${PREFIX}/lib/erlang/lib/yaws-${PORTVERSION}
-
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--localstatedir=/var
-CONFIGURE_ENV=	wwwdir=${WWWDIR} yawsdir=${APPDIR}
-INSTALL_TARGET=	install-strip
+_APPDIR=	${PREFIX}/lib/erlang/lib/yaws-${PORTVERSION}
 
 .include <bsd.port.options.mk>
 
 post-extract:
-	@${MV} ${WRKDIR}/yaws-yaws-* ${WRKDIR}/yaws-${PORTVERSION}
+	@${MV} ${WRKDIR}/yaws-yaws-* \
+		${WRKDIR}/yaws-${PORTVERSION}
 	@${FIND} ${WRKSRC} -name .empty -delete
 
 post-patch:
@@ -50,7 +50,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MWWW}
-	${MV} ${STAGEDIR}${PREFIX}/www/www/* ${STAGEDIR}${WWWDIR}
+	${MV} ${STAGEDIR}${PREFIX}/www/www/* \
+		${STAGEDIR}${WWWDIR}
 	${RMDIR} ${STAGEDIR}${PREFIX}/www/www
 .else
 	${RM} -r ${STAGEDIR}${PREFIX}/www

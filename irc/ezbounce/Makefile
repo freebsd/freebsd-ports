@@ -11,6 +11,8 @@ WWW=		https://sourceforge.net/projects/ezbounce/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build with boost-1.85+
+
 OPTIONS_DEFINE=	DOCS SSL COMPRESS
 OPTIONS_DEFAULT=SSL COMPRESS
 OPTIONS_SUB=	yes

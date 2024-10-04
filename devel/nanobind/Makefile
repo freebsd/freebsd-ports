@@ -1,6 +1,6 @@
 PORTNAME=	nanobind
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
+DISTVERSION=	2.2.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,7 +39,9 @@ do-install:
 
 do-test: # test fails because it doesn't create the PyInit_xx function
 	@cd ${WRKSRC} && \
-		${CXX} ${CXXFLAGS} ${LDFLAGS} -shared -o ${FILESDIR}/myext.cpp -o myext${PYTHON_EXT_SUFFIX}.so -L${LOCALBASE}/lib -lnanobind && \
+		${SETENV} ${MAKE_ENV} ${CXX} ${CXXFLAGS} \
+			${LDFLAGS} -shared -o ${FILESDIR}/myext.cpp -o myext${PYTHON_EXT_SUFFIX}.so \
+			-L${LOCALBASE}/lib -L${STAGEDIR}${PREFIX}/lib -lnanobind && \
 		${CP} ${FILESDIR}/test.py . && \
 		${PYTHON_CMD} ${FILESDIR}/test.py
 

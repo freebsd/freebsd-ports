@@ -1,6 +1,6 @@
 --- CMakeLists.txt.orig	2021-01-11 09:41:28 UTC
 +++ CMakeLists.txt
-@@ -64,6 +64,7 @@ find_package(Qt5Core             REQUIRED)
+@@ -64,6 +64,7 @@ find_package(Qt5Gui              REQUIRED)
  find_package(Qt5Concurrent       REQUIRED)
  find_package(Qt5Widgets          REQUIRED)
  find_package(Qt5Gui              REQUIRED)
@@ -8,12 +8,39 @@
  # QtWebEngine is preferred web engine because QtWebKit is deprecated since Qt 5.5:
  # https://wiki.qt.io/New-Features-in-Qt-5.5#Deprecated_Functionality. Unfortunately,
  # some Qt distributions still provide QtWebKit instead of QtWebEngine. So first we
-@@ -75,6 +76,8 @@ else()
-     find_package(Qt5WebKit           REQUIRED)
+@@ -76,6 +77,8 @@ endif()
      find_package(Qt5WebKitWidgets    REQUIRED)
      add_definitions(-DUSE_DEPRECATED_QTWEBKIT)
-+endif()
-+    add_definitions(-DWITH_HELPBROWSER)
  endif()
++    add_definitions(-DWITH_HELPBROWSER)
++endif()
  find_package(Qt5Xml              REQUIRED)
  find_package(Qt5Sql              REQUIRED)
+ find_package(Qt5Svg              REQUIRED)
+@@ -345,7 +348,6 @@ IF(APPLE)
+     FILE(COPY
+          ${CMAKE_SOURCE_DIR}/AUTHORS
+          ${CMAKE_SOURCE_DIR}/README.md
+-         ${CMAKE_SOURCE_DIR}/LICENSE
+          ${CMAKE_SOURCE_DIR}/Changelog
+          DESTINATION ${LHDR_OSX_EXECUTABLE_NAME}.app/Contents
+     )
+@@ -416,9 +418,8 @@ ELSEIF(UNIX)
+     INSTALL(FILES
+     ${CMAKE_SOURCE_DIR}/AUTHORS
+     ${CMAKE_SOURCE_DIR}/README.md
+-    ${CMAKE_SOURCE_DIR}/LICENSE
+     ${CMAKE_SOURCE_DIR}/Changelog
+-    DESTINATION share/luminance-hdr/doc) #info files
++    DESTINATION share/doc/luminance-hdr) #info files
+     INSTALL(DIRECTORY ${CMAKE_SOURCE_DIR}/help DESTINATION share/luminance-hdr) # help directory
+     INSTALL(DIRECTORY ${CMAKE_SOURCE_DIR}/hdrhtml DESTINATION share/luminance-hdr) # hdrhtml directory
+ # Microsoft Windows
+@@ -508,7 +509,6 @@ ELSEIF(WIN32)
+         INSTALL(FILES ${CMAKE_SOURCE_DIR}/program-icons/luminance-hdr.png DESTINATION ./icons/hicolor/48x48/apps) # icon
+         INSTALL(FILES ${CMAKE_SOURCE_DIR}/AUTHORS
+                       ${CMAKE_SOURCE_DIR}/README.md
+-                      ${CMAKE_SOURCE_DIR}/LICENSE
+                       ${CMAKE_SOURCE_DIR}/Changelog
+                       DESTINATION ./) #info files
+         INSTALL(DIRECTORY ${CMAKE_SOURCE_DIR}/icons DESTINATION ./) # icons directory
