@@ -72,6 +72,7 @@
     SUBDIR += p5-WWW-BitTorrent
     SUBDIR += phex
     SUBDIR += prowlarr
+    SUBDIR += pulsar-client-cpp
     SUBDIR += py-ed2k-tools
     SUBDIR += py-libtorrent-rasterbar
     SUBDIR += py-nicotine-plus
