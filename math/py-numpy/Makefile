@@ -1,6 +1,6 @@
 PORTNAME=	numpy
 PORTVERSION=	1.26.4
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI \
@@ -23,12 +23,13 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=6.2.5:devel/py-pytest@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.2.0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		compiler:c11 cpe fortran python:3.9+
-USE_PYTHON=	allflavors autoplist concurrent cython distutils
+USE_PYTHON=	allflavors autoplist concurrent cython pep517
+
+PEP517_BUILD_CMD=	${PYTHON_CMD} -m flit_core.wheel
+PEP517_BUILD_DEPEND=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.3:devel/py-flit-core@${PY_FLAVOR}
 
 GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so | ${SED} -e s/libgfortran.so//
 LDFLAGS+=	-s
-PYDISTUTILS_BUILDARGS=		--fcompiler=gnu95
-PYDISTUTILS_CONFIGUREARGS=	--fcompiler=gnu95
 
 PORTDOCS=	*
 
@@ -58,13 +59,11 @@ pre-configure-SUITESPARSE-off:
 	@${REINPLACE_CMD} -e 's|:%%LOCALBASE%%/include/suitesparse||' ${WRKSRC}/site.cfg
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|%%FC%%|${FC}|' ${WRKSRC}/numpy/distutils/fcompiler/gnu.py
 	@${CP} ${FILESDIR}/site.cfg ${WRKSRC}/site.cfg
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		-e 's|%%BLASLIBS%%|${BLASLIBS}|; s|%%BLASNAME%%|${BLASNAME}|' \
 		-e 's|%%LAPACKLIBS%%|${LAPACKLIBS}|; s|%%LIBRARIES%%|${LIBRARIES}|' \
 			${WRKSRC}/site.cfg
-	@${REINPLACE_CMD} -e "s|%%GCCLIBDIR%%|$$(${GCCLIBDIR_CMDS})|" ${WRKSRC}/site.cfg ${WRKSRC}/numpy/distutils/system_info.py
 
 do-configure:
 
