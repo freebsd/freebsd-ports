@@ -288,6 +288,7 @@
     SUBDIR += py-compreffor
     SUBDIR += py-cu2qu
     SUBDIR += py-defcon
+    SUBDIR += py-fclist-cffi
     SUBDIR += py-fontMath
     SUBDIR += py-fontfeatures
     SUBDIR += py-fontmake
