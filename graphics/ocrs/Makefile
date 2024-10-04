@@ -1,7 +1,6 @@
 PORTNAME=	ocrs
 DISTVERSIONPREFIX=	ocrs-cli-v
-DISTVERSION=	0.8.1
-PORTREVISION=	1
+DISTVERSION=	0.9.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,13 +18,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	robertknight
 
 CARGO_CRATES=	adler-1.0.2 \
-		anyhow-1.0.86 \
+		adler2-2.0.0 \
+		anyhow-1.0.89 \
 		autocfg-1.1.0 \
 		base64-0.22.1 \
 		bitflags-1.3.2 \
 		bumpalo-3.14.0 \
 		bytemuck-1.14.0 \
-		byteorder-1.5.0 \
 		byteorder-lite-0.1.0 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
@@ -34,7 +33,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		crossbeam-epoch-0.9.17 \
 		crossbeam-utils-0.8.18 \
 		either-1.9.0 \
-		fastrand-2.1.0 \
+		fastrand-2.1.1 \
 		fdeflate-0.3.3 \
 		flatbuffers-24.3.25 \
 		flate2-1.0.28 \
@@ -43,7 +42,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		hermit-abi-0.3.9 \
 		home-0.5.9 \
 		idna-0.5.0 \
-		image-0.25.1 \
+		image-0.25.2 \
 		image-webp-0.1.2 \
 		itoa-1.0.10 \
 		lexopt-0.3.0 \
@@ -52,11 +51,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		log-0.4.20 \
 		memchr-2.7.4 \
 		miniz_oxide-0.7.1 \
+		miniz_oxide-0.8.0 \
 		num-traits-0.2.17 \
 		num_cpus-1.16.0 \
 		once_cell-1.19.0 \
 		percent-encoding-2.3.1 \
-		png-0.17.13 \
+		png-0.17.14 \
 		proc-macro2-1.0.74 \
 		quote-1.0.35 \
 		rayon-1.10.0 \
@@ -69,14 +69,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		rten-vecmath-0.11.0 \
 		rustc-hash-2.0.0 \
 		rustc_version-0.4.0 \
-		rustls-0.22.4 \
-		rustls-pki-types-1.5.0 \
-		rustls-webpki-0.102.3 \
+		rustls-0.23.12 \
+		rustls-pki-types-1.8.0 \
+		rustls-webpki-0.102.7 \
 		ryu-1.0.16 \
 		semver-1.0.20 \
 		serde-1.0.194 \
 		serde_derive-1.0.194 \
-		serde_json-1.0.122 \
+		serde_json-1.0.127 \
 		simd-adler32-0.3.7 \
 		smallvec-1.11.2 \
 		spin-0.9.8 \
@@ -90,8 +90,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.22 \
 		untrusted-0.9.0 \
-		ureq-2.9.7 \
-		url-2.5.0 \
+		ureq-2.10.1 \
+		url-2.5.2 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.93 \
 		wasm-bindgen-backend-0.2.93 \
