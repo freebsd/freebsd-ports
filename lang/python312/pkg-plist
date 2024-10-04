@@ -4971,6 +4971,9 @@ lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_ssl.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_sslproto.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_sslproto.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_sslproto.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_staggered.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_staggered.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_staggered.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_streams.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_streams.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_streams.cpython-%%XY%%.pyc
@@ -5030,6 +5033,7 @@ lib/python%%XYDOT%%/test/test_asyncio/test_server.py
 lib/python%%XYDOT%%/test/test_asyncio/test_sock_lowlevel.py
 lib/python%%XYDOT%%/test/test_asyncio/test_ssl.py
 lib/python%%XYDOT%%/test/test_asyncio/test_sslproto.py
+lib/python%%XYDOT%%/test/test_asyncio/test_staggered.py
 lib/python%%XYDOT%%/test/test_asyncio/test_streams.py
 lib/python%%XYDOT%%/test/test_asyncio/test_subprocess.py
 lib/python%%XYDOT%%/test/test_asyncio/test_taskgroups.py
@@ -5119,6 +5123,9 @@ lib/python%%XYDOT%%/test/test_capi/__pycache__/test_mem.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_capi/__pycache__/test_misc.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_capi/__pycache__/test_misc.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_capi/__pycache__/test_misc.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_capi/__pycache__/test_number.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_capi/__pycache__/test_number.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_capi/__pycache__/test_number.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_capi/__pycache__/test_run.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_capi/__pycache__/test_run.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_capi/__pycache__/test_run.cpython-%%XY%%.pyc
@@ -5131,6 +5138,9 @@ lib/python%%XYDOT%%/test/test_capi/__pycache__/test_structmembers.cpython-%%XY%%
 lib/python%%XYDOT%%/test/test_capi/__pycache__/test_sys.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_capi/__pycache__/test_sys.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_capi/__pycache__/test_sys.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_capi/__pycache__/test_tuple.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_capi/__pycache__/test_tuple.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_capi/__pycache__/test_tuple.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_capi/__pycache__/test_unicode.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_capi/__pycache__/test_unicode.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_capi/__pycache__/test_unicode.cpython-%%XY%%.pyc
@@ -5153,10 +5163,12 @@ lib/python%%XYDOT%%/test/test_capi/test_list.py
 lib/python%%XYDOT%%/test/test_capi/test_long.py
 lib/python%%XYDOT%%/test/test_capi/test_mem.py
 lib/python%%XYDOT%%/test/test_capi/test_misc.py
+lib/python%%XYDOT%%/test/test_capi/test_number.py
 lib/python%%XYDOT%%/test/test_capi/test_run.py
 lib/python%%XYDOT%%/test/test_capi/test_set.py
 lib/python%%XYDOT%%/test/test_capi/test_structmembers.py
 lib/python%%XYDOT%%/test/test_capi/test_sys.py
+lib/python%%XYDOT%%/test/test_capi/test_tuple.py
 lib/python%%XYDOT%%/test/test_capi/test_unicode.py
 lib/python%%XYDOT%%/test/test_capi/test_watchers.py
 lib/python%%XYDOT%%/test/test_cgi.py
