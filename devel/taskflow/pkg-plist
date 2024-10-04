@@ -1,4 +1,3 @@
-include/taskflow/algorithm/critical.hpp
 include/taskflow/algorithm/data_pipeline.hpp
 include/taskflow/algorithm/find.hpp
 include/taskflow/algorithm/for_each.hpp
@@ -11,14 +10,15 @@ include/taskflow/algorithm/sort.hpp
 include/taskflow/algorithm/transform.hpp
 include/taskflow/core/async.hpp
 include/taskflow/core/async_task.hpp
+include/taskflow/core/atomic_notifier.hpp
 include/taskflow/core/declarations.hpp
 include/taskflow/core/environment.hpp
 include/taskflow/core/error.hpp
-include/taskflow/core/executor-module-opt.hpp
 include/taskflow/core/executor.hpp
 include/taskflow/core/flow_builder.hpp
+include/taskflow/core/freelist.hpp
 include/taskflow/core/graph.hpp
-include/taskflow/core/notifier.hpp
+include/taskflow/core/nonblocking_notifier.hpp
 include/taskflow/core/observer.hpp
 include/taskflow/core/semaphore.hpp
 include/taskflow/core/task.hpp
@@ -65,8 +65,10 @@ include/taskflow/sycl/sycl_task.hpp
 include/taskflow/sycl/syclflow.hpp
 include/taskflow/taskflow.hpp
 include/taskflow/utility/iterator.hpp
+include/taskflow/utility/latch.hpp
 include/taskflow/utility/macros.hpp
 include/taskflow/utility/math.hpp
+include/taskflow/utility/mpmc.hpp
 include/taskflow/utility/object_pool.hpp
 include/taskflow/utility/os.hpp
 include/taskflow/utility/serializer.hpp
