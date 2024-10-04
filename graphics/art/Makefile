@@ -1,5 +1,6 @@
 PORTNAME=	art
 DISTVERSION=	1.24
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/agriggio/art/downloads/
 PKGNAMESUFFIX=	-raw-image-editor
