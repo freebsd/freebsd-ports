@@ -76,6 +76,7 @@
     SUBDIR += py-ed2k-tools
     SUBDIR += py-libtorrent-rasterbar
     SUBDIR += py-nicotine-plus
+    SUBDIR += py-pulsar-client
     SUBDIR += py-transmission-rpc
     SUBDIR += py-tremc
     SUBDIR += pyln-bolt7
