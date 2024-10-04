@@ -1,4 +1,4 @@
-@sample %%ETCDIR%%/ngircd.conf.sample
+@sample(,ngircd,640) %%ETCDIR%%/ngircd.conf.sample
 sbin/ngircd
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.md
 %%PORTDOCS%%%%DOCSDIR%%/Bopm.txt
