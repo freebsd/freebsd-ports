@@ -1,6 +1,6 @@
 PORTNAME=	surrealdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.2
+DISTVERSION=	2.0.3
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -97,7 +97,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bcrypt-0.15.1 \
 		binascii-0.1.4 \
 		bincode-1.3.3 \
-		bindgen-0.65.1 \
 		bindgen-0.69.4 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
@@ -315,7 +314,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		libm-0.2.8 \
 		libmimalloc-sys-0.1.35 \
 		libredox-0.1.3 \
-		librocksdb-sys-0.11.0+8.1.1 \
+		librocksdb-sys-0.16.0+8.10.0 \
 		libz-sys-1.1.16 \
 		linfa-linalg-0.1.0 \
 		linux-raw-sys-0.4.13 \
@@ -325,7 +324,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		log-0.4.21 \
 		loom-0.5.6 \
 		lru-0.12.3 \
-		lz4-sys-1.9.4 \
+		lz4-sys-1.10.0 \
 		mac-0.1.1 \
 		maplit-1.0.2 \
 		markup5ever-0.12.1 \
@@ -388,7 +387,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pbkdf2-0.12.2 \
 		pear-0.2.9 \
 		pear_codegen-0.2.9 \
-		peeking_take_while-0.1.2 \
 		pem-3.0.3 \
 		percent-encoding-2.3.1 \
 		pest-2.7.11 \
@@ -456,7 +454,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
 		rcgen-0.11.3 \
-		reblessive-0.4.0 \
+		reblessive-0.4.1 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.5 \
 		ref-cast-1.0.22 \
@@ -487,7 +485,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rocket-0.5.1 \
 		rocket_codegen-0.5.1 \
 		rocket_http-0.5.1 \
-		rocksdb-0.21.0 \
+		rocksdb-0.22.0 \
 		rquickjs-0.6.2 \
 		rquickjs-core-0.6.2 \
 		rquickjs-macro-0.6.2 \
@@ -570,11 +568,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		strum-0.26.3 \
 		strum_macros-0.26.4 \
 		subtle-2.6.1 \
-		surrealcs-0.4.2 \
-		surrealcs-kernel-0.4.2 \
+		surrealcs-0.4.4 \
+		surrealcs-kernel-0.4.4 \
 		surrealdb-derive-0.12.0 \
 		surrealdb-tikv-client-0.3.0-surreal.1 \
-		surrealkv-0.3.6 \
+		surrealkv-0.3.7 \
 		surrealml-core-0.1.2 \
 		symbolic-common-12.8.0 \
 		symbolic-demangle-12.8.0 \
@@ -612,7 +610,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \
 		tokio-rustls-0.26.0 \
-		tokio-stream-0.1.15 \
+		tokio-stream-0.1.16 \
 		tokio-tungstenite-0.21.0 \
 		tokio-tungstenite-0.23.1 \
 		tokio-util-0.7.11 \
@@ -622,7 +620,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		toml_edit-0.21.1 \
 		toml_edit-0.22.9 \
 		tonic-0.10.2 \
-		tonic-0.12.1 \
+		tonic-0.12.3 \
 		tower-0.4.13 \
 		tower-http-0.5.2 \
 		tower-layer-0.3.2 \
@@ -661,7 +659,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		utf8parse-0.2.1 \
 		uuid-1.10.0 \
 		valuable-0.1.0 \
-		vart-0.4.0 \
+		vart-0.4.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		vswhom-0.1.0 \
