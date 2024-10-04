@@ -365,7 +365,7 @@
     <topic>expat -- multiple vulnerabilities</topic>
     <affects>
       <package>
-	<name>expat2</name>
+	<name>expat</name>
 	<range><lt>2.6.3</lt></range>
       </package>
     </affects>
