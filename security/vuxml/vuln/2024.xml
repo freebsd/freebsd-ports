@@ -1,3 +1,35 @@
+  <vuln vid="fe7031d3-3000-4b43-9fa6-52c2b624b8f9">
+    <topic>zeek -- potential DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>7.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v7.0.3">
+	  <p> Adding to the POP3 hardening in 7.0.2, the parser now
+	  simply discards too many pending commands, rather than
+	  any attempting to process them. Further, invalid server
+	  responses do not result in command completion anymore.
+	  Processing out-of-order commands or finishing commands
+	  based on invalid server responses could result in
+	  inconsistent analyzer state, potentially triggering null
+	  pointer references for crafted traffic. </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v7.0.3</url>
+    </references>
+    <dates>
+      <discovery>2024-10-05</discovery>
+      <entry>2024-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0417d41a-8175-11ef-a5dc-b42e991fc52e">
     <topic>firefox -- multiple vulnerabilities</topic>
     <affects>
