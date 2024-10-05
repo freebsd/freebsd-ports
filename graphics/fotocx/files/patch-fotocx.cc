@@ -1,4 +1,4 @@
---- fotocx.cc.orig	2024-07-01 07:25:41 UTC
+--- fotocx.cc.orig	2024-10-01 05:03:10 UTC
 +++ fotocx.cc
 @@ -335,7 +335,7 @@ int main(int argc, ch *argv[])                        
     //  delete fotocx temp files if owner process is no longer running
@@ -9,20 +9,12 @@
     fid = popen(buff,"r");
     if (fid) {
        pp = fgets_trim(buff,200,fid);
-@@ -464,13 +464,15 @@ int main(int argc, ch *argv[])                        
+@@ -466,7 +466,7 @@ int main(int argc, ch *argv[])                        
+    //  Cannot get P-core and E-core counts (methods vary by kernel release). 
+    //  Hyperthreads and E-cores have marginal value.
  
-    //  get SMP thread count
- 
--   NSMP = 0;                                                                     //  assume at least 4 threads
+-   NSMP = 12;                                                                    //  24.60
 +   NSMP = get_nprocs();
-+#if 0
-    fid = popen("lscpu | grep 'CPU(s):'","r");
-    if (fid) {
-       pp = fgets(buff,200,fid);                                                  //  get CPU threads supported
-       pclose(fid);
-       if (pp && strmatchN(pp,"CPU(s):",7)) NSMP = atoi(pp+8);                    //  P-cores + E-cores
-    }
-+#endif
-    if (NSMP < 1) {
-       Plog(1,"cannot get SMP thread count, assume 4 \n");
-       NSMP = 4;
+    Plog(1,"SMP thread count: %d \n",NSMP);
+ 
+    //  get locale specific name for /home/<user>/Desktop

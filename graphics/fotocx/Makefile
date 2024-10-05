@@ -1,5 +1,5 @@
 PORTNAME=	fotocx
-PORTVERSION=	24.50
+PORTVERSION=	24.60
 CATEGORIES=	graphics
 MASTER_SITES=	https://kornelix.net/downloads/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
