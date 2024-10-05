@@ -1,0 +1,7 @@
+CoverM aims to be a configurable, easy to use and fast DNA read coverage and
+relative abundance calculator focused on metagenomics applications.
+
+CoverM calculates coverage of genomes/MAGs `coverm genome` or individual
+contigs `coverm contig`. Calculating coverage by read mapping, its input can
+either be BAM files sorted by reference, or raw reads and reference genomes
+in various formats.
