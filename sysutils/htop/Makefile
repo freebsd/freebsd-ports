@@ -1,6 +1,6 @@
 PORTNAME=	htop
 DISTVERSION=	3.3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${PORTNAME}-dev/${PORTNAME}/releases/download/${DISTVERSION}/
 
