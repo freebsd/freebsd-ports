@@ -428,6 +428,7 @@
     SUBDIR += mod_wsgi4
     SUBDIR += mod_xsendfile
     SUBDIR += mohawk
+    SUBDIR += moin2
     SUBDIR += moinmoin
     SUBDIR += moinmoincli
     SUBDIR += mongoose
@@ -2557,5 +2558,4 @@
     SUBDIR += zerowait-httpd
     SUBDIR += zgrab2
     SUBDIR += zola
-
 .include <bsd.port.subdir.mk>
