@@ -1,3 +1,7 @@
+- this patch performs 2 functions:
+- 1. remove java/ from the PROJECT_SOURCE_DIR path
+- 2. add librocksdbjni-freebsd64.so symlink needed to run some dependencies
+
 --- CMakeLists.txt.orig	2024-08-27 20:39:35 UTC
 +++ CMakeLists.txt
 @@ -542,9 +542,9 @@ include_directories(${JNI_INCLUDE_DIRS})
@@ -50,3 +54,14 @@
          BYPRODUCTS ${CMAKE_CURRENT_BINARY_DIR}/${ROCKSDB_SOURCES_JAR}
          WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
  )
+@@ -877,8 +877,10 @@ add_custom_target(rocksdbjava ALL
+ 
+ add_custom_target(rocksdbjava ALL
+         COMMAND ${CMAKE_COMMAND} -E copy ${ROCKS_JAR_FILE} ${CMAKE_CURRENT_BINARY_DIR}/${ROCKSDB_JAR}
++	COMMAND ln -s librocksdbjni.so librocksdbjni-freebsd64.so
+         COMMAND ${Java_JAR_EXECUTABLE} -uf ${CMAKE_CURRENT_BINARY_DIR}/${ROCKSDB_JAR} -C $<TARGET_FILE_DIR:${ROCKSDBJNI_STATIC_LIB}> $<TARGET_FILE_NAME:${ROCKSDBJNI_STATIC_LIB}>
+         COMMAND ${Java_JAR_EXECUTABLE} -uf ${CMAKE_CURRENT_BINARY_DIR}/${ROCKSDB_JAR} -C ${CMAKE_CURRENT_SOURCE_DIR} HISTORY-JAVA.md
++        COMMAND ${Java_JAR_EXECUTABLE} -uf ${CMAKE_CURRENT_BINARY_DIR}/${ROCKSDB_JAR} -C $<TARGET_FILE_DIR:${ROCKSDBJNI_STATIC_LIB}> librocksdbjni-freebsd64.so
+         DEPENDS ${ROCKSDBJNI_STATIC_LIB} rocksdbjni_classes
+         BYPRODUCTS ${ROCKSDB_JAR}
+         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
