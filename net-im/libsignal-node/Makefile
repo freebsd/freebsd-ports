@@ -1,6 +1,6 @@
 PORTNAME=	libsignal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.56.1
+DISTVERSION=	0.58.0
 CATEGORIES=	net-im
 PKGNAMESUFFIX=	-node
 DISTFILES=	libsignal-node-${DISTVERSION}-yarn-cache.tar.gz
@@ -69,6 +69,7 @@ pre-fetch:
 			-e 's:^\.:./yarn-offline-cache:' > yarn-offline-cache.mtree; \
 		${TAR} cJf ${DISTDIR}/libsignal-node-${DISTVERSION}-yarn-cache.tar.gz  \
 			@yarn-offline-cache.mtree; \
+		${RM} -r ${WRKDIR}; \
 	fi
 
 post-patch:
