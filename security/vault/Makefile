@@ -1,5 +1,5 @@
 PORTNAME=	vault
-DISTVERSION=	1.16.3
+DISTVERSION=	1.17.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://raw.githubusercontent.com/hashicorp/vault/${DISTVERSIONFULL}/ \
@@ -20,8 +20,8 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 .if defined(MAINTAINER_MODE)
-EXTRACT_DEPENDS=npm-node18>0:www/npm-node18 \
-		yarn-node18>0:www/yarn-node18
+EXTRACT_DEPENDS=npm-node20>0:www/npm-node20 \
+		yarn-node20>0:www/yarn-node20
 .endif
 
 USES=		cpe go:modules
@@ -43,7 +43,7 @@ GROUPS=		vault
 
 PLIST_FILES=	bin/${PORTNAME}
 
-GITID=	e92d9a57018f43360e2e3717b3b6a7f650c88f4c
+GITID=	72850df1bc10581b74ba5f0f7b3736f31c034235
 
 .include <bsd.port.pre.mk>
 
