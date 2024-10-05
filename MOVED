@@ -3516,3 +3516,4 @@ www/screego||2024-09-30|Has expired: Outdated, unmaintained in tree and marked b
 archivers/py-borgbackup11||2024-09-30|Has expired: No longer supported upstream, use borgbackup 1.2 (oldstable) or 1.4 (stable) instead
 devel/rth||2024-09-30|Has expired: Abandonware, Unmaintained upstream as of 2013
 devel/libegit2||2024-09-30|Has expired: No consumer in ports tree
+audio/libechonest||2024-10-05|Removed, Abandonware and service no longer available

@@ -347,7 +347,6 @@
     SUBDIR += libdjinterop
     SUBDIR += libdssialsacompat
     SUBDIR += libebur128
-    SUBDIR += libechonest
     SUBDIR += libfilteraudio
     SUBDIR += libfishsound
     SUBDIR += libg722
