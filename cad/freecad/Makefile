@@ -1,6 +1,6 @@
 PORTNAME=	FreeCAD
 DISTVERSION=	1.0rc2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -49,7 +49,10 @@ USES=		dos2unix compiler:c++17-lang cmake cpe gl eigen:3 fortran gmake jpeg \
 		localbase:ldflags mpi:openmpi pkgconfig python localbase qt:6 xorg \
 		desktop-file-utils shared-mime-info shebangfix
 USE_GITHUB=	yes
-GH_TAGNAME=	${DISTVERSION}
+GH_ACCOUNT=	Ondsel-Development:ondselsolver
+GH_PROJECT=	OndselSolver:ondselsolver
+GH_TAGNAME=	91f70382beeb58b32432b5a82da3802e4c19199c:ondselsolver
+GH_SUBDIR=	src/3rdParty/OndselSolver:ondselsolver
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
 USE_QT=		base declarative location svg tools webchannel
@@ -71,7 +74,7 @@ CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DPYTHON_PACKAGES_PATH="${PYTHON_SITELIBDIR}" \
 		-DPYTHON_EXECUTABLE="${PYTHON_CMD}" \
 		-DPYCXX_INCLUDE_DIR="${PYTHON_INCLUDEDIR}" \
-		-DBUILD_ASSEMBLY="OFF" \
+		-DBUILD_ASSEMBLY="ON" \
 		-DBUILD_DESIGNER_PLUGIN="ON" \
 		-DBUILD_FLAT_MESH="ON" \
 		-DBUILD_TEST="OFF" \
