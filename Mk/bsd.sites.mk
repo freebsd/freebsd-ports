@@ -648,16 +648,10 @@ MASTER_SITE_HACKAGE+= \
 
 .if !defined(IGNORE_MASTER_SITE_IDSOFTWARE)
 MASTER_SITE_IDSOFTWARE+= \
-	ftp://ftp.gwdg.de/pub/misc2/ftp.idsoftware.com/idstuff/%SUBDIR%/ \
-	http://ftp4.de.freesbie.org/pub/misc/ftp.idsoftware.com/idstuff/%SUBDIR%/ \
-	ftp://ftp.fu-berlin.de/pc/games/idgames/idstuff/%SUBDIR%/ \
-	ftp://ftp.gamers.org/pub/idgames/idstuff/%SUBDIR%/ \
-	http://ftp.iinet.net.au/games/idstuff/%SUBDIR%/ \
-	ftp://ftp.mirror.nl/disk2/idsoftware/idstuff/%SUBDIR%/ \
-	ftp://freebsd.nsu.ru/mirrors/ftp.idsoftware.com/idstuff/%SUBDIR%/ \
-	ftp://ftp.ntua.gr/pub/vendors/idgames/idstuff/%SUBDIR%/ \
-	ftp://ftp.omen.net.au/games/idstuff/%SUBDIR%/ \
-	ftp://ftp.idsoftware.com/idstuff/%SUBDIR%/
+	https://ftp.gwdg.de/pub/misc/ftp.idsoftware.com/idstuff/%SUBDIR%/ \
+	https://ftp.fu-berlin.de/pc/games/idgames/idstuff/%SUBDIR%/ \
+	https://ftp.gamers.org/pub/idgames/idstuff/%SUBDIR%/ \
+	ftp://ftp.omen.net.au/games/idstuff/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_ISC)
