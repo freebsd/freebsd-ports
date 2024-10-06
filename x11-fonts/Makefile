@@ -278,6 +278,7 @@
     SUBDIR += proggy_fonts
     SUBDIR += proggy_fonts-ttf
     SUBDIR += psftools
+    SUBDIR += py-FindSystemFontsFilename
     SUBDIR += py-QtAwesome
     SUBDIR += py-afdko
     SUBDIR += py-axisregistry
