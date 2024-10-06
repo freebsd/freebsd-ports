@@ -1,5 +1,5 @@
 PORTNAME=	fotokilof
-PORTVERSION=	5.0.7
+PORTVERSION=	5.1.0
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,6 +14,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}ttkbootstrap>=1.10.1:devel/py-ttkbootstrap@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.40.0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fclist-cffi>=1.1.2:x11-fonts/py-fclist-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}FindSystemFontsFilename>=0.3.1:x11-fonts/py-FindSystemFontsFilename@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=9.5.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.3:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tkcolorpicker>=2.1.3:graphics/py-tkcolorpicker@${PY_FLAVOR} \
