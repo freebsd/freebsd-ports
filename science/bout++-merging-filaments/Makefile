@@ -9,6 +9,8 @@ WWW=		https://github.com/boutproject/merging-filaments
 
 LICENSE=	GPLv3 # based on the parent project BOUT++
 
+BROKEN=		build fails, see https://github.com/boutproject/merging-filaments/issues/6
+
 BUILD_DEPENDS=	gmake:devel/gmake
 LIB_DEPENDS=	libbout++.so:science/bout++ # also wronglfully linked with all dependencies of BOUT++, see https://github.com/boutproject/BOUT-dev/issues/2622
 
