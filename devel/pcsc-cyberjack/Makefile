@@ -1,11 +1,9 @@
 PORTNAME=	pcsc-cyberjack
-DISTVERSION=	3.99.5final.SP15
-PORTREVISION=	3
+DISTVERSION=	3.99.5final.SP16
 CATEGORIES=	devel security
-MASTER_SITES=	https://downloads.reiner-sct.de/LINUX/V3.99.5_SP15/
-DISTNAME=	${PORTNAME}_${DISTVERSION}
+MASTER_SITES=	https://support.reiner-sct.de/downloads/LINUX/V3.99.5_SP16/
 
-MAINTAINER=	tm@NetBSD.org
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Reiner SCT cyberJack card reader PCSC driver
 WWW=		https://www.reiner-sct.com/
 
@@ -21,7 +19,9 @@ USES=		autoreconf dos2unix libtool localbase pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release --with-usbdropdir=${PREFIX}/lib/pcsc/drivers
-DOS2UNIX_FILES=	cjeca32/Debug.cpp cjeca32/RSCTCriticalSection.cpp
+DOS2UNIX_FILES=	cjeca32/Debug.cpp \
+		cjeca32/RSCTCriticalSection.cpp \
+		cjeca32/RSCTCriticalSection.h
 INSTALL_TARGET=	install-strip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
