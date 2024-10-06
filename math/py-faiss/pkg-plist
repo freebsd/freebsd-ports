@@ -2,6 +2,7 @@
 %%PYTHON_SITELIBDIR%%/faiss/_swigfaiss.so
 %%PYTHON_SITELIBDIR%%/faiss/array_conversions.py
 %%PYTHON_SITELIBDIR%%/faiss/class_wrappers.py
+%%PYTHON_SITELIBDIR%%/faiss/contrib/README.md
 %%PYTHON_SITELIBDIR%%/faiss/contrib/__init__.py
 %%PYTHON_SITELIBDIR%%/faiss/contrib/big_batch_search.py
 %%PYTHON_SITELIBDIR%%/faiss/contrib/client_server.py
@@ -14,6 +15,10 @@
 %%PYTHON_SITELIBDIR%%/faiss/contrib/ivf_tools.py
 %%PYTHON_SITELIBDIR%%/faiss/contrib/ondisk.py
 %%PYTHON_SITELIBDIR%%/faiss/contrib/rpc.py
+%%PYTHON_SITELIBDIR%%/faiss/contrib/torch/README.md
+%%PYTHON_SITELIBDIR%%/faiss/contrib/torch/__init__.py
+%%PYTHON_SITELIBDIR%%/faiss/contrib/torch/clustering.py
+%%PYTHON_SITELIBDIR%%/faiss/contrib/torch/quantization.py
 %%PYTHON_SITELIBDIR%%/faiss/contrib/torch_utils.py
 %%PYTHON_SITELIBDIR%%/faiss/contrib/vecs_io.py
 %%PYTHON_SITELIBDIR%%/faiss/extra_wrappers.py
