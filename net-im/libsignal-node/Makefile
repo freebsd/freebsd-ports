@@ -69,7 +69,6 @@ pre-fetch:
 			-e 's:^\.:./yarn-offline-cache:' > yarn-offline-cache.mtree; \
 		${TAR} cJf ${DISTDIR}/libsignal-node-${DISTVERSION}-yarn-cache.tar.gz  \
 			@yarn-offline-cache.mtree; \
-		${RM} -r ${WRKDIR}; \
 	fi
 
 post-patch:
