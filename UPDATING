@@ -6,7 +6,7 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20241004:
-  AFFECTS:users of www/c-icap
+  AFFECTS: users of www/c-icap
   AUTHOR: rodrigo@FreeBSD.org
 
   The c-icap server version is moving from branch 5.X to 6.X.
