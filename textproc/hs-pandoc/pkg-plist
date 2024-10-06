@@ -81,9 +81,12 @@ share/man/man1/pandoc.1.gz
 %%NO_EMBED_DATA%%%%DATADIR%%/data/pptx/ppt/theme/theme2.xml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/pptx/ppt/viewProps.xml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/affiliations.jats
+%%NO_EMBED_DATA%%%%DATADIR%%/data/templates/after-header-includes.latex
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/article.jats_publishing
+%%NO_EMBED_DATA%%%%DATADIR%%/data/templates/common.latex
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.ansi
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.asciidoc
+%%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.beamer
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.biblatex
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.bibtex
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.chunkedhtml
@@ -129,6 +132,9 @@ share/man/man1/pandoc.1.gz
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.xwiki
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.zimwiki
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/definitions.typst
+%%NO_EMBED_DATA%%%%DATADIR%%/data/templates/fonts.latex
+%%NO_EMBED_DATA%%%%DATADIR%%/data/templates/hypersetup.latex
+%%NO_EMBED_DATA%%%%DATADIR%%/data/templates/passoptions.latex
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/styles.citations.html
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/styles.html
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/template.typst
