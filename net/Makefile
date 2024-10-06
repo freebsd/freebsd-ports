@@ -148,7 +148,6 @@
     SUBDIR += eventviews
     SUBDIR += exabgp4
     SUBDIR += fb303
-    SUBDIR += fbzmq
     SUBDIR += fiche
     SUBDIR += file2pcap
     SUBDIR += findmtu
