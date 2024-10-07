@@ -12,6 +12,9 @@ WWW=		https://software.frodo.looijaard.name/getopt/
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+DEPRECATED=	Use getopt from devel/util-linux instead
+EXPIRATION_DATE=2024-10-31
+
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
