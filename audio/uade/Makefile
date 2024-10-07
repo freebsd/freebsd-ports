@@ -1,5 +1,5 @@
 PORTNAME=	uade
-DISTVERSION=	3.04
+DISTVERSION=	3.05
 CATEGORIES=	audio
 MASTER_SITES=	http://zakalwe.fi/uade/uade3/ \
 		LOCAL/ehaupt
