@@ -195,6 +195,7 @@
     SUBDIR += api-sanity-autotest
     SUBDIR += apitrace
     SUBDIR += app-builder
+    SUBDIR += app-builder-devel
     SUBDIR += appstream
     SUBDIR += appstream-compose
     SUBDIR += appstream-glib
