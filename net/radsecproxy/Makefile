@@ -1,6 +1,5 @@
 PORTNAME=	radsecproxy
-DISTVERSION=	1.9.2
-PORTREVISION=	1
+DISTVERSION=	1.9.3
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -18,14 +17,13 @@ CPE_VENDOR=	uninett
 USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
-CFLAGS+=       -Wno-error=strict-prototypes
+CFLAGS+=	-Wno-error=strict-prototypes
 .endif
 
 post-install:
