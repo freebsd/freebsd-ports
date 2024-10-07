@@ -1,5 +1,5 @@
 PORTNAME=	data.table
-DISTVERSION=	1.15.4
+DISTVERSION=	1.16.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,6 +11,8 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cran:auto-plist,compiles pkgconfig
+
+TESTING_UNSAFE=	https://github.com/Rdatatable/data.table/issues/6559
 
 NO_ARCH_IGNORE=	data_table.so
 
