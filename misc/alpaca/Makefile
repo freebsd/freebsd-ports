@@ -1,5 +1,5 @@
 PORTNAME=	alpaca
-DISTVERSION=	2.0.6
+DISTVERSION=	2.5.0
 CATEGORIES=	misc
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -19,8 +19,9 @@ RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.3:www/py-requests@${PY_FLAVOR} \
 		ollama:misc/ollama
 
-USES=		desktop-file-utils gettext-runtime gettext-tools meson python
+USES=		desktop-file-utils gettext-runtime gettext-tools gnome meson python
 USE_GITHUB=	yes
+USE_GNOME=	vte3
 GH_ACCOUNT=	Jeffser
 GH_PROJECT=	Alpaca
 
