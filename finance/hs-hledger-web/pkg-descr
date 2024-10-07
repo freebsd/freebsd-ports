@@ -1,2 +1,24 @@
-Web interface for hledger, a computer program for easily tracking money, time,
-or other commodities.
+hledger-web - web interface and API for hledger
+
+hledger is...
+* free GPL-licensed accounting software that runs on unix, mac, windows, and
+  the web
+* based on readable, version-controllable, future-proof plain text files
+* good for tracking money, investments, time, or any countable commodity
+* good for learning more about double entry accounting
+* shipped with web, terminal, command line, JSON and Haskell interfaces
+* the most user friendly plain text accounting app
+* comparable to Ledger and Beancount
+* built with the powerful Haskell language
+* fast, lightweight, reliable (we pay $50 for regression reports or fixes)
+* free from vendor lock-in
+* local, not cloud-based; your private financial data remains under your
+  control
+* scripting-friendly and automatable
+* comfortable for technical users, but also usable by others. Knowing about
+  command lines, text editors and version control is helpful, but not
+  required (much)
+* good at importing CSV from banks and other financial institutions
+* actively developed and supported by Simon Michael and contributors since
+  2007
+* strengthened by your feedback, work and funding.
