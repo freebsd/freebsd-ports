@@ -3518,3 +3518,4 @@ devel/rth||2024-09-30|Has expired: Abandonware, Unmaintained upstream as of 2013
 devel/libegit2||2024-09-30|Has expired: No consumer in ports tree
 audio/libechonest||2024-10-05|Removed, Abandonware and service no longer available
 net/fbzmq||2024-10-05|Repository was archived by facebook and the last version doesn't build
+x11-toolkits/wlroots016||2024-10-07|No consumers in ports
