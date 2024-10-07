@@ -1,12 +1,13 @@
 PORTNAME=	isa-l
 PORTVERSION=	2.31.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/intel/isa-l/commit/
 PATCHFILES=	1b1ee1e18f5bb4d91e3839405a8557a64a3b2581.patch:-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Intel(R) Intelligent Storage Acceleration Libray
 WWW=		https://github.com/intel/isa-l
 
@@ -20,12 +21,10 @@ BUILD_DEPENDS=	nasm:devel/nasm # yasm fails to compiler asm modules, see https:/
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
 
-USES=		autoreconf gmake libtool:keepla
+USES=		autoreconf gmake libtool
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-USE_LDCONFIG=	yes
-
 INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
