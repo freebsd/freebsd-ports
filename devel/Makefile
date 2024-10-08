@@ -4601,6 +4601,7 @@
     SUBDIR += py-celery-progress
     SUBDIR += py-celery-singleton
     SUBDIR += py-cerberus
+    SUBDIR += py-cereslib
     SUBDIR += py-certsrv
     SUBDIR += py-cffi
     SUBDIR += py-cfgv
