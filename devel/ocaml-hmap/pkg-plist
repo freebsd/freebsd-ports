@@ -1,0 +1,10 @@
+%%OCAML_SITELIBDIR%%/hmap/META
+%%OCAML_SITELIBDIR%%/hmap/hmap.a
+%%OCAML_SITELIBDIR%%/hmap/hmap.cma
+%%OCAML_SITELIBDIR%%/hmap/hmap.cmi
+%%OCAML_SITELIBDIR%%/hmap/hmap.cmti
+%%OCAML_SITELIBDIR%%/hmap/hmap.cmx
+%%OCAML_SITELIBDIR%%/hmap/hmap.cmxa
+%%OCAML_SITELIBDIR%%/hmap/hmap.cmxs
+%%OCAML_SITELIBDIR%%/hmap/hmap.mli
+%%OCAML_SITELIBDIR%%/hmap/opam

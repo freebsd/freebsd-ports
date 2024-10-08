@@ -1,0 +1,4 @@
+This PPX deriver plugin allow the automatic generation of functions to
+serialize and deserialize values of a type definition, or of a type
+expression, to and from values of the `Yojson.t` type, of the Yojson
+JSON library for OCaml.

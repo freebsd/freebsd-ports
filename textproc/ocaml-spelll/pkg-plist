@@ -1,0 +1,13 @@
+%%OCAML_SITELIBDIR%%/spelll/META
+%%OCAML_SITELIBDIR%%/spelll/Spelll.ml
+%%OCAML_SITELIBDIR%%/spelll/Spelll.mli
+%%OCAML_SITELIBDIR%%/spelll/dune-package
+%%OCAML_SITELIBDIR%%/spelll/opam
+%%OCAML_SITELIBDIR%%/spelll/spelll.a
+%%OCAML_SITELIBDIR%%/spelll/spelll.cma
+%%OCAML_SITELIBDIR%%/spelll/spelll.cmi
+%%OCAML_SITELIBDIR%%/spelll/spelll.cmt
+%%OCAML_SITELIBDIR%%/spelll/spelll.cmti
+%%OCAML_SITELIBDIR%%/spelll/spelll.cmx
+%%OCAML_SITELIBDIR%%/spelll/spelll.cmxa
+%%OCAML_SITELIBDIR%%/spelll/spelll.cmxs

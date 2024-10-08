@@ -5,7 +5,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	freebsd@dev.thsi.be
 COMMENT=	Optimized manipulation of integers over the standard byte-array types of OCaml
-WWW=		https://github.com/janestreet/base
+WWW=		https://github.com/OCamlPro/ocplib-endian
 
 LICENSE=	LGPL21+ # with a special exception to clause 6
 

@@ -1,0 +1,3 @@
+Linol is an OCaml library that provides an object-oriented abstraction
+for writing servers, build as a wrapper on top of the OCaml-LSP
+library, and lwt/eio-aware JSONRPC implementation.

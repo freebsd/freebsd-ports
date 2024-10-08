@@ -1,0 +1,2 @@
+This PPX rewriter plugin permits to include a file
+in an OCaml source, as a string.

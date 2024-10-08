@@ -1,0 +1,13 @@
+The trace and the trace_ppx packages for OCaml allow to instrument a
+program by invoking span, message (event) or counter operations,
+explicitly by using the functions provided by the former package, or
+automatically by using the syntax extension provided by the later.
+
+There exist multiple OCaml libraries that provide a backend compatible
+with this package, under others:
+
+- trace-fushia (included): implementing the Fushia project's trace
+  format,
+- trace-tef (included): simple file output using the TEF/Catapult format,
+- tracy-client.trace,
+- ocaml-opentelemetry: OpenTelemetry support.
