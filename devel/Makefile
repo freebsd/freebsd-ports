@@ -4644,6 +4644,7 @@
     SUBDIR += py-clikit
     SUBDIR += py-clint
     SUBDIR += py-clldutils
+    SUBDIR += py-cloc
     SUBDIR += py-cloudpathlib
     SUBDIR += py-cloudpickle
     SUBDIR += py-cluster
