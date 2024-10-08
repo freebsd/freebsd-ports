@@ -1,3 +1,3 @@
-TIMESTAMP = 1709654335
-SHA256 (ocaml-ppx-ppxlib-0.32.0_GH0.tar.gz) = 2b6abac31c46a855c8ef34b4aaa433796b37ef64209f0a9b668d3de9702302fb
-SIZE (ocaml-ppx-ppxlib-0.32.0_GH0.tar.gz) = 585028
+TIMESTAMP = 1723408025
+SHA256 (ocaml-ppx-ppxlib-0.33.0_GH0.tar.gz) = 2834c8d58f433d80be8d17c116eb77ba54a4a7f21bb9e257e3f35dfd2aeb3ccc
+SIZE (ocaml-ppx-ppxlib-0.33.0_GH0.tar.gz) = 638136
