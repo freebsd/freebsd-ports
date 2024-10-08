@@ -9,6 +9,7 @@
     SUBDIR += feedbackd
     SUBDIR += gammastep
     SUBDIR += gammy
+    SUBDIR += hyprsunset
     SUBDIR += kdeaccessibility
     SUBDIR += kmag
     SUBDIR += kmousetool

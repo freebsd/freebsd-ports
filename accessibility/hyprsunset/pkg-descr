@@ -1,0 +1,5 @@
+hyprsunset is a small utility to provide a blue light filter for your
+system. This method is preferred to screen shaders as it will not be
+captured via recording / screenshots.
+
+Requires hyprland >= 0.45.0 for hyprland-ctm-control-v1 protocol.
