@@ -1,6 +1,5 @@
 PORTNAME=	wmbiff
-PORTVERSION=	0.4.36
-PORTREVISION=	3
+PORTVERSION=	0.4.37
 CATEGORIES=	mail windowmaker afterstep
 MASTER_SITES=	https://www.dockapps.net/download/
 
