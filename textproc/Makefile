@@ -1392,6 +1392,7 @@
     SUBDIR += py-grapheme
     SUBDIR += py-grep-ast
     SUBDIR += py-griffe
+    SUBDIR += py-grimoirelab-panels
     SUBDIR += py-guess-language
     SUBDIR += py-hashids
     SUBDIR += py-hexdump
