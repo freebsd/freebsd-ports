@@ -5376,6 +5376,7 @@
     SUBDIR += py-perceval
     SUBDIR += py-perceval-mozilla
     SUBDIR += py-perceval-opnfv
+    SUBDIR += py-perceval-puppet
     SUBDIR += py-period
     SUBDIR += py-persistent
     SUBDIR += py-petname
