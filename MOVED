@@ -3520,3 +3520,4 @@ audio/libechonest||2024-10-05|Removed, Abandonware and service no longer availab
 net/fbzmq||2024-10-05|Repository was archived by facebook and the last version doesn't build
 x11-toolkits/wlroots016||2024-10-07|No consumers in ports
 japanese/prn|japanese/prn-ps|2024-10-07|Allow cloning the repository on Windows
+security/py-zope.password||2024-10-08|Has no value as standalone package
