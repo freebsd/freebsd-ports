@@ -5373,6 +5373,7 @@
     SUBDIR += py-pep562
     SUBDIR += py-pep621
     SUBDIR += py-pep8-naming
+    SUBDIR += py-perceval
     SUBDIR += py-period
     SUBDIR += py-persistent
     SUBDIR += py-petname
