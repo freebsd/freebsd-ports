@@ -1,0 +1,11 @@
+--- configure.orig	2022-11-02 01:26:00 UTC
++++ configure
+@@ -7704,7 +7704,7 @@ if test "$Py_LTO" = 'true' ; then
+ 
+ if test "$Py_LTO" = 'true' ; then
+   case $CC in
+-    *clang*)
++    *clang*|cc)
+       LDFLAGS_NOLTO="-fno-lto"
+                   { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether C compiler accepts -flto=thin" >&5
+ $as_echo_n "checking whether C compiler accepts -flto=thin... " >&6; }

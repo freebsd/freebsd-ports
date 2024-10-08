@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+py%%PYTHON_SUFFIX%%-gdbm       databases/py-gdbm@py%%PYTHON_SUFFIX%%
+py%%PYTHON_SUFFIX%%-sqlite3    databases/py-sqlite3@py%%PYTHON_SUFFIX%%
+py%%PYTHON_SUFFIX%%-tkinter    x11-toolkits/py-tkinter@py%%PYTHON_SUFFIX%%
+EOM
+}
+]
