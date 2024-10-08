@@ -1,4 +1,4 @@
-bin/adwaita-1-demo
+%%PORTEXAMPLES%%bin/adwaita-1-demo
 include/libadwaita-1/adw-about-dialog.h
 include/libadwaita-1/adw-about-window.h
 include/libadwaita-1/adw-accent-color.h
@@ -84,7 +84,7 @@ lib/libadwaita-1-internal.so.0
 lib/libadwaita-1.so
 lib/libadwaita-1.so.0
 libdata/pkgconfig/libadwaita-1.pc
-share/applications/org.gnome.Adwaita1.Demo.desktop
+%%PORTEXAMPLES%%share/applications/org.gnome.Adwaita1.Demo.desktop
 %%PORTDOCS%%%%DOCSDIR%%-1/RedHatDisplay-Black.woff
 %%PORTDOCS%%%%DOCSDIR%%-1/RedHatDisplay-Black.woff2
 %%PORTDOCS%%%%DOCSDIR%%-1/RedHatDisplay-BlackItalic.woff
@@ -2126,6 +2126,6 @@ share/locale/uk/LC_MESSAGES/libadwaita.mo
 share/locale/vi/LC_MESSAGES/libadwaita.mo
 share/locale/zh_CN/LC_MESSAGES/libadwaita.mo
 share/locale/zh_TW/LC_MESSAGES/libadwaita.mo
-share/metainfo/org.gnome.Adwaita1.Demo.metainfo.xml
+%%PORTEXAMPLES%%share/metainfo/org.gnome.Adwaita1.Demo.metainfo.xml
 share/vala/vapi/libadwaita-1.deps
 share/vala/vapi/libadwaita-1.vapi
