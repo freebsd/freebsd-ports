@@ -119,7 +119,6 @@
 %%DOCS%%%%T%%/webapps/docs/architecture/startup/6_catalina_host_config.png
 %%DOCS%%%%T%%/webapps/docs/architecture/startup/7_catalina_context_config.plantuml
 %%DOCS%%%%T%%/webapps/docs/architecture/startup/7_catalina_context_config.png
-%%DOCS%%%%T%%/webapps/docs/architecture/startup/serverStartup.pdf
 %%DOCS%%%%T%%/webapps/docs/architecture/startup/serverStartup.txt
 %%DOCS%%%%T%%/webapps/docs/balancer-howto.html
 %%DOCS%%%%T%%/webapps/docs/building.html
