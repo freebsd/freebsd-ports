@@ -21,7 +21,6 @@ LIBEDIT_USES=	libedit
 LIBEDIT_USES_OFF=readline
 BUILD_DEPENDS+=	docbook-xml>0:textproc/docbook-xml \
 		docbook-xsl>=0:textproc/docbook-xsl \
-		fop:textproc/fop \
 		xmllint:textproc/libxml2 \
 		xsltproc:textproc/libxslt
 
