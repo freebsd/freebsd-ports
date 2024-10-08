@@ -48,6 +48,7 @@ BLACKLISTD_CONFIGURE_WITH=	blacklist
 .if ${BRANCH:U} == 2.8
 PLIST_SUB+=		SNAPSHOT=""
 .else
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-lib_innconf.c
 PLIST_SUB+=		SNAPSHOT="@comment "
 .endif
 
