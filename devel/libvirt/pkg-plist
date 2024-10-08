@@ -49,6 +49,7 @@ share/man/man8/virtvboxd.8.gz
 @sample %%ETCDIR%%/libvirt-admin.conf.sample
 @sample %%ETCDIR%%/libvirt.conf.sample
 @sample %%ETCDIR%%/libvirtd.conf.sample
+@sample %%ETCDIR%%/network.conf.sample
 %%BHYVE%%@sample %%ETCDIR%%/virtbhyved.conf.sample
 @sample %%ETCDIR%%/virtlockd.conf.sample
 @sample %%ETCDIR%%/virtlogd.conf.sample
@@ -115,12 +116,14 @@ sbin/virtlockd
 sbin/virtlogd
 share/augeas/lenses/libvirt_lockd.aug
 share/augeas/lenses/libvirtd.aug
+share/augeas/lenses/libvirtd_network.aug
 %%BHYVE%%share/augeas/lenses/libvirtd_bhyve.aug
 share/augeas/lenses/virtlockd.aug
 share/augeas/lenses/virtlogd.aug
 %%QEMU%%share/augeas/lenses/libvirtd_qemu.aug
 %%QEMU%%share/augeas/lenses/tests/test_libvirt_lockd.aug
 share/augeas/lenses/tests/test_libvirtd.aug
+share/augeas/lenses/tests/test_libvirtd_network.aug
 %%BHYVE%%share/augeas/lenses/tests/test_virtbhyved.aug
 share/augeas/lenses/tests/test_virtlockd.aug
 share/augeas/lenses/tests/test_virtlogd.aug
@@ -185,6 +188,7 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_EPYC-Milan.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Rome.xml
 %%DATADIR%%/cpu_map/x86_EPYC.xml
+%%DATADIR%%/cpu_map/x86_GraniteRapids.xml
 %%DATADIR%%/cpu_map/x86_Haswell-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Haswell-noTSX-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Haswell-noTSX.xml
@@ -206,6 +210,7 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_SandyBridge-IBRS.xml
 %%DATADIR%%/cpu_map/x86_SandyBridge.xml
 %%DATADIR%%/cpu_map/x86_SapphireRapids.xml
+%%DATADIR%%/cpu_map/x86_SierraForest.xml
 %%DATADIR%%/cpu_map/x86_Skylake-Client-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Skylake-Client-noTSX-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Skylake-Client.xml

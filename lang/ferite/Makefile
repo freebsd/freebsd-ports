@@ -11,6 +11,9 @@ WWW=		https://sourceforge.net/projects/ferite/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Abandonware and outdated, last release in 2009 (current version in 2005)
+EXPIRATION_DATE=2024-10-31
+
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libxml2.so:textproc/libxml2
 

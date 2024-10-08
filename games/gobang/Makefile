@@ -1,9 +1,9 @@
 PORTNAME=	gobang
-DISTVERSION=	0.1
+DISTVERSION=	0.1.1
 CATEGORIES=	games
 PKGNAMESUFFIX=	-game
 
-MAINTAINER=	guoqiang_cn@126.com
+MAINTAINER=	bigdragonsoft@gmail.com
 COMMENT=	This is a Gobang game that runs in the console
 WWW=		https://github.com/bigdragonsoft/gobang
 
@@ -15,12 +15,14 @@ GH_ACCOUNT=	bigdragonsoft
 
 CFLAGS+=	-std=c99
 
-PLIST_FILES=	bin/gobang
+PLIST_FILES=	bin/gobang \
+		share/man/man6/gobang.6.gz
 
 do-build:
 	${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} -o ${WRKSRC}/gobang ${WRKSRC}/gobang.c ${LIBS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gobang ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/gobang.6 ${STAGEDIR}${PREFIX}/share/man/man6/
 
 .include <bsd.port.mk>

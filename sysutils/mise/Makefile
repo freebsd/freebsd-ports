@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.10.0
+DISTVERSION=	2024.10.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -57,7 +57,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bzip2-sys-0.1.11+1.0.8 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
-		cc-1.1.24 \
+		cc-1.1.28 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.38 \
@@ -143,12 +143,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		fsio-0.4.0 \
 		fslock-0.2.1 \
 		futf-0.1.5 \
-		futures-channel-0.3.30 \
-		futures-core-0.3.30 \
-		futures-io-0.3.30 \
-		futures-sink-0.3.30 \
-		futures-task-0.3.30 \
-		futures-util-0.3.30 \
+		futures-channel-0.3.31 \
+		futures-core-0.3.31 \
+		futures-io-0.3.31 \
+		futures-sink-0.3.31 \
+		futures-task-0.3.31 \
+		futures-util-0.3.31 \
 		fxhash-0.2.1 \
 		generic-array-0.14.7 \
 		getopts-0.2.21 \
@@ -243,7 +243,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		num_threads-0.1.7 \
 		number_prefix-0.4.0 \
 		object-0.32.2 \
-		once_cell-1.20.1 \
+		once_cell-1.20.2 \
 		openssl-0.10.66 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
@@ -315,7 +315,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc-hash-2.0.0 \
 		rustc_version-0.4.1 \
 		rustix-0.38.37 \
-		rustls-0.23.13 \
+		rustls-0.23.14 \
 		rustls-native-certs-0.8.0 \
 		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.9.0 \
@@ -323,7 +323,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustversion-1.0.17 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
-		schannel-0.1.24 \
+		schannel-0.1.26 \
 		scopeguard-1.2.0 \
 		scraper-0.20.0 \
 		security-framework-2.11.1 \

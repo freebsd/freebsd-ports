@@ -1,0 +1,11 @@
+--- com.ubuntu.pkexec.lightdm-gtk-greeter-settings.policy.in.orig	2017-09-19 09:52:09 UTC
++++ com.ubuntu.pkexec.lightdm-gtk-greeter-settings.policy.in
+@@ -12,7 +12,7 @@
+       <allow_inactive>auth_admin</allow_inactive>
+       <allow_active>auth_admin</allow_active>
+     </defaults>
+-    <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/lightdm-gtk-greeter-settings</annotate>
++    <annotate key="org.freedesktop.policykit.exec.path">%%PREFIX%%/bin/lightdm-gtk-greeter-settings</annotate>
+     <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
+   </action>
+ 

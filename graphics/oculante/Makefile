@@ -1,5 +1,5 @@
 PORTNAME=	oculante
-DISTVERSION=	0.9.0
+DISTVERSION=	0.9.1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -784,6 +784,7 @@ CARGO_CRATES=	ab_glyph-0.2.28 \
 		xdg-home-1.3.0 \
 		xi-unicode-0.3.0 \
 		xml-rs-0.8.22 \
+		xmltree-0.11.0 \
 		xmlwriter-0.1.0 \
 		yuv-0.1.8 \
 		zbus-4.4.0 \

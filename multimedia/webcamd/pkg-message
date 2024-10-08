@@ -1,15 +1,15 @@
 [
 { type: install
   message: <<EOM
-1) add webcamd_enable="YES"
+1) To start webcamd(8) automatically at system startup:
 
-to your /etc/rc.conf
+	# sysrc webcamd_enable=YES
 
-2) Please restart devd to start webcamd
+2) Please restart devd(8) to start webcamd(8):
 
 	# service devd restart
 
-3) Optionally add a user to the "webcamd" group
+3) Users requiring webcamd must be members of the "webcamd" group:
 
 	# pw groupmod webcamd -m <username>
 

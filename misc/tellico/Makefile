@@ -1,6 +1,5 @@
 PORTNAME=	tellico
-DISTVERSION=	3.5.5
-PORTREVISION=	1
+DISTVERSION=	4.0.1
 CATEGORIES=	misc kde
 MASTER_SITES=	http://tellico-project.org/files/
 
@@ -35,7 +34,7 @@ USE_QT=		charts concurrent core dbus declarative gui location network \
 		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 
-SHEBANG_FILES=	src/fetch/scripts/dark_horse_comics.py \
-		src/fetch/scripts/fr.allocine.py
+SHEBANG_FILES=	src/fetch/scripts/dark_horse_comics.py
+CMAKE_OFF=	BUILD_WITH_QT6
 
 .include <bsd.port.mk>

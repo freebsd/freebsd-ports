@@ -1,9 +1,8 @@
 PORTNAME=	checkbashisms
-DISTVERSION=	2.22.2
-PORTREVISION=	1
+DISTVERSION=	2.24.1
 CATEGORIES=	devel perl5
 MASTER_SITES=	DEBIAN/pool/main/d/devscripts/
-DISTNAME=	devscripts_${PORTVERSION}
+DISTNAME=	devscripts_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Check for the presence of bashisms
@@ -20,14 +19,14 @@ SHEBANG_FILES=	scripts/checkbashisms.pl
 NO_ARCH=	yes
 NO_BUILD=	yes
 PORTSCOUT=	limit:^d\.d+\.d
-WRKSRC=		${WRKDIR}/devscripts-${PORTVERSION}
+WRKSRC=		${WRKDIR}/devscripts-${DISTVERSION}
 
 PLIST_FILES=	bin/checkbashisms \
 		etc/bash_completion.d/_checkbashisms.bash \
 		share/man/man1/checkbashisms.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|###VERSION###|${PORTVERSION}|' \
+	@${REINPLACE_CMD} -e 's|###VERSION###|${DISTVERSION}|' \
 		${WRKSRC}/scripts/checkbashisms.pl
 
 do-install:

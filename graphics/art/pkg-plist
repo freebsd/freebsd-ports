@@ -204,6 +204,7 @@ share/ART/iccprofiles/output/RTv2_sRGB.icc
 share/ART/iccprofiles/output/RTv4_ACES-AP0.icc
 share/ART/iccprofiles/output/RTv4_Large.icc
 share/ART/iccprofiles/output/RTv4_Linear_Rec2020.icc
+share/ART/iccprofiles/output/RTv4_Linear_Rec709.icc
 share/ART/iccprofiles/output/RTv4_Medium.icc
 share/ART/iccprofiles/output/RTv4_Rec2020.icc
 share/ART/iccprofiles/output/RTv4_Rec2100_PQ.icc

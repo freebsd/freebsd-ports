@@ -1,9 +1,9 @@
 bin/fotocx
 share/applications/fotocx.desktop
 %%DATADIR%%/data/CIE1931.jpg
-%%DATADIR%%/data/KB_shortcuts_G
-%%DATADIR%%/data/README_G
-%%DATADIR%%/data/capskeys_G
+%%DATADIR%%/data/KB_shortcuts_H
+%%DATADIR%%/data/README_H
+%%DATADIR%%/data/capskeys_H
 %%DATADIR%%/data/custom_kernel/blur5
 %%DATADIR%%/data/custom_kernel/brighten3
 %%DATADIR%%/data/custom_kernel/color lines 3
@@ -24,13 +24,14 @@ share/applications/fotocx.desktop
 %%DATADIR%%/data/custom_kernel/sketch3
 %%DATADIR%%/data/custom_kernel/sobel3 v+h
 %%DATADIR%%/data/custom_kernel/sobel5 v+h
-%%DATADIR%%/data/custom_menu_G
+%%DATADIR%%/data/custom_menu_H
 %%DATADIR%%/data/custom_scripts/brightness and white point
 %%DATADIR%%/data/custom_scripts/cartoon-emboss
 %%DATADIR%%/data/custom_scripts/ektar film process
-%%DATADIR%%/data/custom_scripts/emboss-test
-%%DATADIR%%/data/map_regions_G
-%%DATADIR%%/data/meta_picklist_G
+%%DATADIR%%/data/custom_scripts/emboss
+%%DATADIR%%/data/custom_scripts/voodoo
+%%DATADIR%%/data/map_regions_H
+%%DATADIR%%/data/meta_picklist_H
 %%DATADIR%%/data/palettes/Bears.gpl
 %%DATADIR%%/data/palettes/Bgold.gpl
 %%DATADIR%%/data/palettes/Blues.gpl
@@ -113,8 +114,8 @@ share/applications/fotocx.desktop
 %%DATADIR%%/data/patterns/wall-grey.jpg
 %%DATADIR%%/data/patterns/wet-turquoise.jpg
 %%DATADIR%%/data/patterns/wood.jpg
-%%DATADIR%%/data/plugins_G
-%%DATADIR%%/data/raw_commands_G
+%%DATADIR%%/data/plugins_H
+%%DATADIR%%/data/raw_commands_H
 %%DATADIR%%/data/slideshow-tone.oga
 %%DATADIR%%/data/tags_defined
 %%DATADIR%%/data/userguide
@@ -126,10 +127,9 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/HDR.jpg
 %%DATADIR%%/images/KB-shortcuts.png
 %%DATADIR%%/images/KB-shortcuts2.png
-%%DATADIR%%/images/RGB-dist.png
+%%DATADIR%%/images/RGB-hist.png
 %%DATADIR%%/images/add-meta-items.png
 %%DATADIR%%/images/add-motionblur1.jpg
-%%DATADIR%%/images/add-motionblur2.png
 %%DATADIR%%/images/add-noise.png
 %%DATADIR%%/images/add-subfolder.png
 %%DATADIR%%/images/adjust-HSL.png
@@ -138,6 +138,8 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/album-replace-file.png
 %%DATADIR%%/images/alien-colors1.png
 %%DATADIR%%/images/alien-colors2.png
+%%DATADIR%%/images/amplify-contrast.png
+%%DATADIR%%/images/amplify-contrast2.jpg
 %%DATADIR%%/images/anti-alias.png
 %%DATADIR%%/images/area-blend.png
 %%DATADIR%%/images/area-blend2.jpg
@@ -187,7 +189,7 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/crop-buttons.png
 %%DATADIR%%/images/crop.png
 %%DATADIR%%/images/custom-kernel.png
-%%DATADIR%%/images/custom-menu.jpg
+%%DATADIR%%/images/custom-menu.png
 %%DATADIR%%/images/custom-widgets.png
 %%DATADIR%%/images/custom.png
 %%DATADIR%%/images/dark-bright-pixels.png
@@ -204,7 +206,7 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/draw-text.jpg
 %%DATADIR%%/images/edit-any-metadata.png
 %%DATADIR%%/images/edit-bookmarks.png
-%%DATADIR%%/images/edit-dist.png
+%%DATADIR%%/images/edit-hist.png
 %%DATADIR%%/images/edit-meta.jpg
 %%DATADIR%%/images/edit.png
 %%DATADIR%%/images/effects.png
@@ -223,7 +225,6 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/first-index.png
 %%DATADIR%%/images/fix-motion-blur.png
 %%DATADIR%%/images/fix-motion-blur1.jpg
-%%DATADIR%%/images/flatten-histogram2.png
 %%DATADIR%%/images/flatten-photo1.png
 %%DATADIR%%/images/flatten-photo2.jpg
 %%DATADIR%%/images/flatten-photo3.jpg
@@ -241,8 +242,6 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/gallery.png
 %%DATADIR%%/images/global-retx.png
 %%DATADIR%%/images/global-retx2.png
-%%DATADIR%%/images/gradients.png
-%%DATADIR%%/images/gradients2.jpg
 %%DATADIR%%/images/greenball.png
 %%DATADIR%%/images/grid-lines.png
 %%DATADIR%%/images/help.png

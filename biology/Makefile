@@ -41,6 +41,7 @@
     SUBDIR += chip-seq
     SUBDIR += clustal-omega
     SUBDIR += clustalw
+    SUBDIR += coverm
     SUBDIR += cufflinks
     SUBDIR += cytoscape
     SUBDIR += ddocent

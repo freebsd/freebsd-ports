@@ -1,5 +1,5 @@
 PORTNAME=	libdeflate
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/ebiggers/${PORTNAME}/releases/download/v${PORTVERSION}/
 

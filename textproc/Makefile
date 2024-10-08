@@ -521,6 +521,7 @@
     SUBDIR += obsidian
     SUBDIR += ocaml-csv
     SUBDIR += ocaml-expat
+    SUBDIR += ocaml-spelll
     SUBDIR += ocaml-text
     SUBDIR += ocaml-yojson
     SUBDIR += odt2txt

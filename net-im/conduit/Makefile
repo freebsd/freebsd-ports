@@ -1,7 +1,6 @@
 PORTNAME=	conduit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
-PORTREVISION=	3
+DISTVERSION=	0.9.0
 CATEGORIES=	net-im
 PKGNAMEPREFIX=	matrix-
 
@@ -33,7 +32,7 @@ DBDIR=		/var/db/${PORTNAME}
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	famedly
-GL_TAGNAME=	7a5b8930134cf7ea5ff9880e6fa468b2b3e05c98
+GL_TAGNAME=	f8d7ef04e664580e882bac852877b68e7bd3ab1e
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/conduit.toml,${PREFIX}/etc/conduit.toml,' \

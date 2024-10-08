@@ -1,0 +1,13 @@
+--- data/org.defora.desktop-settings.desktop.orig	2024-09-02 14:56:54 UTC
++++ data/org.defora.desktop-settings.desktop
+@@ -1,8 +1,8 @@ Comment=Preferences for the desktop
+ [Desktop Entry]
+ Name=Desktop
+ Comment=Preferences for the desktop
+-TryExec=desktopctl
+-Exec=desktopctl -S
++TryExec=deforaos-desktopctl
++Exec=deforaos-desktopctl -S
+ Icon=gnome-settings-background
+ Type=Application
+ Categories=Settings;DesktopSettings;GTK;

@@ -17,10 +17,9 @@ RUN_DEPENDS=	opj_decompress:graphics/openjpeg
 USES=		gmake go:modules
 
 USE_GITHUB=	yes
-USE_GITLAB=	nodefault
-
 GH_ACCOUNT=	develar
-GH_TUPLE=	aclements:go-rabin:d0b643ea1a4c:aclements_go_rabin/vendor/github.com/aclements/go-rabin \
+GH_TUPLE=	\
+		aclements:go-rabin:d0b643ea1a4c:aclements_go_rabin/vendor/github.com/aclements/go-rabin \
 		alecthomas:kingpin:v2.2.6:alecthomas_kingpin/vendor/github.com/alecthomas/kingpin \
 		alecthomas:template:fb15b899a751:alecthomas_template/vendor/github.com/alecthomas/template \
 		alecthomas:units:c3de453c63f4:alecthomas_units/vendor/github.com/alecthomas/units \
@@ -62,10 +61,14 @@ GH_TUPLE=	aclements:go-rabin:d0b643ea1a4c:aclements_go_rabin/vendor/github.com/a
 		uber-go:zap:v1.10.0:uber_go_zap/vendor/go.uber.org/zap \
 		zieckey:goini:0da17d361d26:zieckey_goini/vendor/github.com/zieckey/goini
 
+USE_GITLAB=	nodefault
 GL_TUPLE=	https://gitlab.howett.net:go:plist:591f970eefbbeb04d7b37f334a0c4c3256e32876:go_plist/vendor/howett.net/plist
 
-PLIST_FILES=	bin/${PORTNAME}
+GO_BUILDFLAGS+=	-ldflags="-s -w"
 
+CONFLICTS_INSTALL=	${PORTNAME}-devel
+
+PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	readme.md
 
 OPTIONS_DEFINE=	DOCS
@@ -74,7 +77,7 @@ pre-build:
 	cd ${WRKSRC} && ${MAKE_CMD} assets
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

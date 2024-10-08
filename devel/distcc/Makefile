@@ -1,11 +1,11 @@
 PORTNAME=	distcc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.4
-PORTREVISION=	1
-CATEGORIES=	devel
+PORTREVISION=	2
+CATEGORIES=	devel python
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Distribute compilation of C(++) code across machines on a network
+MAINTAINER=	laurent.chardon@gmail.com
+COMMENT=	Distribute compilation of C(++) code across machines ${${FLAVOR}_COMMENT}
 WWW=		https://distcc.github.io/
 
 LICENSE=	GPLv2
@@ -13,6 +13,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libiberty.a:devel/gnulibiberty
 LIB_DEPENDS=	libpopt.so:devel/popt
+
+FLAVORS=	default gtk
+FLAVOR?=	${FLAVORS:[1]}
+default_COMMENT=	(text monitor)
+gtk_PKGNAMESUFFIX=	-gtk
+gtk_DESCR=	${.CURDIR}/pkg-descr.gtk
+gtk_COMMENT=	(gtk monitor)
 
 USES=		alias autoreconf cpe gmake libtool localbase pkgconfig
 USE_GITHUB=	yes
@@ -35,102 +42,58 @@ SUB_LIST=	DISTCCD_PIDFILE=/var/run/distccd.pid
 USERS=		distcc
 GROUPS=		distcc
 
-PLIST_FILES=	${_BIN_FILES:S|^|bin/|} \
-		${_CONFIG_FILES:S|^|${ETCDIR}/${PORTNAME}/|} \
-		${_DISTCC_COMPILERS:S|^|${CCLINKDIR}/|} \
-		${_MAN_FILES:S|^|share/man/man1/|:S|$|.gz|} \
-		${_SBIN_FILES:S|^|sbin/|} \
-		etc/default/distcc
-
-OPTIONS_DEFINE=		AVAHI CLANGLINK DOCS IPV6 LLVMLINK PUMP GUI
+OPTIONS_DEFINE=		AVAHI CLANGLINK DOCS IPV6 LLVMLINK PUMP
+OPTIONS_DEFAULT=	CLANGLINK PUMP
+OPTIONS_SUB=	yes
 
 CLANGLINK_DESC=	Create clang compiler links if clang is installed
-GUI_DESC=	Build GUI distcc monitor
 LLVMLINK_DESC=	Create llvm compiler links if llvm is installed
 PUMP_DESC=	Distribute compilation as well as preprocessing to distcc servers
 
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 AVAHI_CONFIGURE_WITH=	avahi
-DOCS_PLIST_FILES+=	${_DOC_FILES:S|^|${DOCSDIR_REL}/|} \
-			${_README_FILES:S|^|${DOCSDIR_REL}/|}
-GUI_USES=		gnome
-GUI_USE=		GNOME=gtk20
-GUI_CONFIGURE_WITH=	gtk
 IPV6_CONFIGURE_ENABLE=	rfc2553
+PUMP_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR}
 PUMP_USES=		python
+PUMP_USE_PYTHON=	flavors
 PUMP_CONFIGURE_ENABLE=	pump-mode
-PUMP_PLIST_FILES=	${PYTHON_SITELIBDIR}/include_server-${PORTVERSION}-py${PYTHON_VER}.egg-info \
-			${PYTHON_SITELIBDIR}/include_server/basics.py \
-			${PYTHON_SITELIBDIR}/include_server/basics_test.py \
-			${PYTHON_SITELIBDIR}/include_server/c_extensions_test.py \
-			${PYTHON_SITELIBDIR}/include_server/cache_basics.py \
-			${PYTHON_SITELIBDIR}/include_server/compiler_defaults.py \
-			${PYTHON_SITELIBDIR}/include_server/compress_files.py \
-			${PYTHON_SITELIBDIR}/include_server/distcc_pump_c_extensions.cpython-${PYTHON_SUFFIX}.so \
-			${PYTHON_SITELIBDIR}/include_server/include_analyzer.py \
-			${PYTHON_SITELIBDIR}/include_server/include_analyzer_memoizing_node.py \
-			${PYTHON_SITELIBDIR}/include_server/include_analyzer_memoizing_node_test.py \
-			${PYTHON_SITELIBDIR}/include_server/include_analyzer_test.py \
-			${PYTHON_SITELIBDIR}/include_server/include_server.py \
-			${PYTHON_SITELIBDIR}/include_server/include_server_test.py \
-			${PYTHON_SITELIBDIR}/include_server/macro_eval.py \
-			${PYTHON_SITELIBDIR}/include_server/macro_eval_test.py \
-			${PYTHON_SITELIBDIR}/include_server/mirror_path.py \
-			${PYTHON_SITELIBDIR}/include_server/mirror_path_test.py \
-			${PYTHON_SITELIBDIR}/include_server/parse_command.py \
-			${PYTHON_SITELIBDIR}/include_server/parse_command_test.py \
-			${PYTHON_SITELIBDIR}/include_server/parse_file.py \
-			${PYTHON_SITELIBDIR}/include_server/parse_file_test.py \
-			${PYTHON_SITELIBDIR}/include_server/run.py \
-			${PYTHON_SITELIBDIR}/include_server/setup.py \
-			${PYTHON_SITELIBDIR}/include_server/statistics.py
 
 # Leave CCLINKDIR without a leading underscore as it is a variable, which could
 # be set by the user.
 CCLINKDIR?=		libexec/distcc
 _DISTCC_COMPILERS=	CC c++ cc
 
-_CONFIG_FILES=	clients.allow commands.allow.sh hosts
-_BIN_FILES=	distcc distccmon-text lsdistcc
-_DOC_FILES=	protocol-1.txt protocol-2.txt protocol-3.txt \
-		protocol-3-impl.txt protocol-gssapi.txt reporting-bugs.txt \
-		status-1.txt survey.txt
-_MAN_FILES=	distcc.1 distccd.1 distccmon-text.1 include_server.1 lsdistcc.1 \
-		pump.1
-_README_FILES=	AUTHORS COPYING INSTALL NEWS README README.pump TODO
-_SBIN_FILES=	distccd
+GNU_COMPILERS=		10 11 12 13 14 15 6
+_DISTCC_COMPILERS+=	gcc g++ ${GNU_COMPILERS:S|^|g++|} \
+			${GNU_COMPILERS:S|^|gcc|} \
+			${EXTRA_COMPILERS}
 
 .include <bsd.port.options.mk>
 
+.if ${FLAVOR} == gtk
+USES+=		gnome
+USE_GNOME=	gtk30
+CONFIGURE_ARGS+=	--with-gtk
+PLIST_SUB+=	GTK=""
+.else
+PLIST_SUB+=	GTK="@comment "
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MPUMP}
+.if ${PYTHON_VER} != ${PYTHON_DEFAULT}
+PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
+.endif
+.endif
+
 .if ${PORT_OPTIONS:MCLANGLINK}
-CLANG_COMPILERS=	-devel 31 32 33 34 35 36 37 38 39
+CLANG_COMPILERS=	-devel 11 12 13 14 15 16 17 18 19
 _DISTCC_COMPILERS+=	clang++ clang ${CLANG_COMPILERS:S|^|clang++|} \
 			${CLANG_COMPILERS:S|^|clang|}
 .endif
-GNU_COMPILERS=		34 42 43 44 45 46 47 48 49 5
-_DISTCC_COMPILERS+=	gcc g++ ${GNU_COMPILERS:S|^|g++|} \
-			${GNU_COMPILERS:S|^|gcc|}
-.if ${ARCH} == "i386"
-_DISTCC_COMPILERS+=	icc icpc
-.endif
 .if ${PORT_OPTIONS:MLLVMLINK}
 _DISTCC_COMPILERS+=	llvm-c++ llvm-g++ llvm-gcc
-.endif
-_DISTCC_COMPILERS+=	${EXTRA_COMPILERS}
-
-.if ${PORT_OPTIONS:MGTUI}
-PKGNAMESUFFIX=	-gtk
-_BIN_FILES+=	distccmon-gnome
-PLIST_FILES+=	${DESKTOPDIR}/distccmon-gnome.desktop \
-		share/pixmaps/distccmon-gnome-icon.png
-.endif
-
-post-patch-GUI-on:
-	${REINPLACE_CMD} -e 's|PKGDATADIR "|"${PREFIX}/share/pixmaps|' \
-	    ${WRKSRC}/src/mon-gnome.c
-
-.if ${PORT_OPTIONS:MPUMP}
-_BIN_FILES+=	pump
 .endif
 
 post-install:
@@ -145,8 +108,4 @@ post-install:
 post-install-PUMP-on:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/include_server/distcc_pump_c_extensions.cpython-${PYTHON_SUFFIX}.so
 
-post-install-PUMP-off:
-	${RM} ${STAGEDIR}${PUMP_PLIST_FILES}
-	${RM} ${STAGEDIR}/bin/pump
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	pycharm-pro
-DISTVERSION=	2024.2.2
+DISTVERSION=	2024.2.3
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/
 DISTNAME=	pycharm-professional-${PORTVERSION}
@@ -13,13 +13,22 @@ LICENSE_NAME=	Subscription license agreement for business and organizations
 LICENSE_TEXT=	See: https://www.jetbrains.com/store/license.html
 LICENSE_PERMS=	no-dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
+ONLY_FOR_ARCH=	amd64
+
 BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		jetbrains-pty4j>=0.12.13:devel/jetbrains-pty4j \
 		jetbrains-restarter>=233.11799.241:devel/jetbrains-restarter \
 		jetbrains-sqlite>=232.8660.185:devel/jetbrains-sqlite
 
-USES=		cpe desktop-file-utils python:run
+USES=		cpe desktop-file-utils python:run shebangfix
+SHEBANG_FILES=	plugins/python-ce/helpers/pydev/pydevd_attach_to_process/linux_and_mac/compile_mac.sh \
+		plugins/python-ce/helpers/pydev/pydevd_attach_to_process/linux_and_mac/compile_linux.sh \
+		plugins/python-ce/helpers/pydev/pydevd_attach_to_process/linux_and_mac/compile_linux_aarch64.sh \
+		plugins/python-ce/helpers/pycodestyle.py \
+		plugins/python-ce/helpers/pycodestyle-2.10.0.py \
+		plugins/python-ce/helpers/typeshed/scripts/sync_s2clientprotocol_protobuf_stubs.sh \
+		plugins/python-ce/helpers/typeshed/scripts/sync_tensorflow_protobuf_stubs.sh
 
 CPE_VENDOR=	jetbrains
 USE_JAVA=	yes
@@ -42,7 +51,6 @@ EXTRACT_AFTER_ARGS=	--exclude pycharm-${PORTVERSION}/bin/*fsnotifier* \
 
 WRKSRC=		${WRKDIR}/pycharm-${PORTVERSION}
 
-NO_ARCH=	yes
 NO_BUILD=	yes
 
 .include "${.CURDIR}/../../java/intellij/common.mk"

@@ -92,6 +92,7 @@ include/faiss/utils/approx_topk/avx2-inl.h
 include/faiss/utils/approx_topk/generic.h
 include/faiss/utils/approx_topk/mode.h
 include/faiss/utils/approx_topk_hamming/approx_topk_hamming.h
+include/faiss/utils/bf16.h
 include/faiss/utils/distances.h
 include/faiss/utils/distances_fused/avx512.h
 include/faiss/utils/distances_fused/distances_fused.h

@@ -1,6 +1,6 @@
 PORTNAME=	hyprlang
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.2
+DISTVERSION=	0.5.3
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,7 +10,9 @@ WWW=		https://hyprland.org/hyprlang
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++11-lib
+LIB_DEPENDS=	libhyprutils.so:devel/hyprutils
+
+USES=		cmake:testing compiler:c++11-lib pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	hyprwm

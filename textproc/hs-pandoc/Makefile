@@ -1,5 +1,5 @@
 PORTNAME=	pandoc
-DISTVERSION=	3.4
+DISTVERSION=	3.5
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,7 +17,6 @@ USE_CABAL=	Glob-0.10.2_3 \
 		OneTuple-0.4.2 \
 		Only-0.1_2 \
 		QuickCheck-2.15.0.1 \
-		SHA-1.6.4.4 \
 		StateVar-1.2.2 \
 		aeson-2.2.3.0_2 \
 		aeson-pretty-0.8.10 \
@@ -57,9 +56,9 @@ USE_CABAL=	Glob-0.10.2_3 \
 		citeproc-0.8.1.1 \
 		cmdargs-0.10.22 \
 		colour-2.3.6 \
-		commonmark-0.2.6 \
+		commonmark-0.2.6.1 \
 		commonmark-extensions-0.2.5.5 \
-		commonmark-pandoc-0.2.2.1 \
+		commonmark-pandoc-0.2.2.2 \
 		comonad-5.0.8_2 \
 		conduit-1.3.6 \
 		conduit-extra-1.3.6 \
@@ -81,7 +80,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		dec-0.0.6 \
 		digest-0.0.2.1 \
 		distributive-0.6.2.1_1 \
-		djot-0.1.2.1 \
+		djot-0.1.2.2 \
 		dlist-1.0_2 \
 		doclayout-0.5 \
 		doctemplates-0.11.0.1 \
@@ -93,7 +92,8 @@ USE_CABAL=	Glob-0.10.2_3 \
 		gridtables-0.1.0.0_1 \
 		haddock-library-1.11.0_5 \
 		half-0.3.1_2 \
-		happy-1.20.1.1 \
+		happy-2.0.2 \
+		happy-lib-2.0.2 \
 		hashable-1.5.0.0 \
 		haskell-lexer-1.1.1 \
 		hourglass-0.2.12_1 \
@@ -103,9 +103,9 @@ USE_CABAL=	Glob-0.10.2_3 \
 		hslua-classes-2.3.1 \
 		hslua-cli-1.4.3 \
 		hslua-core-2.3.2 \
-		hslua-list-1.1.1 \
+		hslua-list-1.1.4 \
 		hslua-marshalling-2.3.1 \
-		hslua-module-doclayout-1.1.1.2_1 \
+		hslua-module-doclayout-1.2.0 \
 		hslua-module-path-1.1.1 \
 		hslua-module-system-1.1.2 \
 		hslua-module-text-1.1.1 \
@@ -139,8 +139,8 @@ USE_CABAL=	Glob-0.10.2_3 \
 		mime-types-0.1.2.0 \
 		mmorph-1.2.0_3 \
 		monad-control-1.0.3.1 \
-		mono-traversable-1.0.17.0 \
-		network-3.2.3.0 \
+		mono-traversable-1.0.20.0 \
+		network-3.2.4.0 \
 		network-byte-order-0.1.7 \
 		network-control-0.1.3 \
 		network-uri-2.6.4.2_1 \
@@ -149,10 +149,10 @@ USE_CABAL=	Glob-0.10.2_3 \
 		optparse-applicative-0.18.1.0 \
 		ordered-containers-0.2.4 \
 		os-string-2.0.6 \
-		pandoc-3.4 \
-		pandoc-lua-engine-0.3.2 \
-		pandoc-lua-marshal-0.2.7.1 \
-		pandoc-server-0.1.0.8 \
+		pandoc-3.5 \
+		pandoc-lua-engine-0.3.3 \
+		pandoc-lua-marshal-0.2.9 \
+		pandoc-server-0.1.0.9 \
 		pandoc-types-1.23.1_2 \
 		pem-0.2.4 \
 		pretty-show-1.10 \
@@ -192,7 +192,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		tagged-0.8.8_1 \
 		tagsoup-0.14.8 \
 		temporary-1.3 \
-		texmath-0.12.8.10 \
+		texmath-0.12.8.11 \
 		text-conversions-0.3.1.1 \
 		text-iso8601-0.1.1_1 \
 		text-short-0.1.6_2 \
@@ -230,7 +230,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		wai-cors-0.2.7 \
 		wai-extra-3.1.15 \
 		wai-logger-2.4.1 \
-		warp-3.4.1_1 \
+		warp-3.4.2 \
 		witherable-0.5_1 \
 		word8-0.1.3 \
 		xml-1.3.14_2 \

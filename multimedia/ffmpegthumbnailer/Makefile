@@ -1,7 +1,6 @@
 PORTNAME=	ffmpegthumbnailer
-DISTVERSION=	2.2.2.20240104
+DISTVERSION=	2.2.3
 CATEGORIES=	multimedia graphics
-#MASTER_SITES=	https://github.com/dirkvdb/${PORTNAME}/releases/download/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight video thumbnailer that can be used by file managers
@@ -10,18 +9,19 @@ WWW=		https://github.com/dirkvdb/ffmpegthumbnailer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:graphics/png \
-		libavformat.so:multimedia/ffmpeg
+LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
+		libpng.so:graphics/png
 
-USES=		cmake:testing compiler:c++11-lib gnome jpeg localbase pkgconfig tar:bz2
-USE_GITHUB=	yes
-GH_ACCOUNT=	dirkvdb
-GH_TAGNAME=	1b5a779
-
+USES=		cmake:testing compiler:c++11-lib gnome jpeg localbase pathfix \
+		pkgconfig tar:bz2
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	dirkvdb
+
 EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
+
 CMAKE_TESTING_ON=	ENABLE_TESTS
 
 CMAKE_OFF=	ENABLE_TESTS

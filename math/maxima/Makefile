@@ -1,10 +1,10 @@
 PORTNAME=	maxima
-PORTVERSION=	5.47.0
-PORTREVISION=	16
+DISTVERSION=	5.47.0
+PORTREVISION=	17
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Symbolic mathematics program
 WWW=		http://maxima.sourceforge.net/
 
@@ -121,6 +121,7 @@ post-build-MANPAGES-on:
 post-install:
 	for x in "" "-1" "-2" "-3"; do ${INSTALL_MAN} ${WRKSRC}/doc/info/maxima.info$$x ${STAGEDIR}${PREFIX}/${INFO_PATH}; done
 	${INSTALL_MAN} ${WRKSRC}/doc/info/maxima-index.lisp ${STAGEDIR}${PREFIX}/${INFO_PATH}
+	${INSTALL_DATA} ${WRKSRC}/doc/info/maxima-index-html.lisp ${STAGEDIR}${PREFIX}/${INFO_PATH}
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

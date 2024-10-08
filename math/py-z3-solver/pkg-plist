@@ -1,0 +1,11 @@
+%%PYTHON_SITELIBDIR%%/z3/__init__.py
+%%PYTHON_SITELIBDIR%%/z3/z3.py
+%%PYTHON_SITELIBDIR%%/z3/z3consts.py
+%%PYTHON_SITELIBDIR%%/z3/z3core.py
+%%PYTHON_SITELIBDIR%%/z3/z3num.py
+%%PYTHON_SITELIBDIR%%/z3/z3poly.py
+%%PYTHON_SITELIBDIR%%/z3/z3printer.py
+%%PYTHON_SITELIBDIR%%/z3/z3rcf.py
+%%PYTHON_SITELIBDIR%%/z3/z3test.py
+%%PYTHON_SITELIBDIR%%/z3/z3types.py
+%%PYTHON_SITELIBDIR%%/z3/z3util.py

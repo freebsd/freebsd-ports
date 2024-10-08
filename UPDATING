@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20241004:
+  AFFECTS: users of www/c-icap
+  AUTHOR: rodrigo@FreeBSD.org
+
+  The c-icap server version is moving from branch 5.X to 6.X.
+  An in-place upgrade may require some changes in your current
+  configuration.
+  For installation instructions please refer :
+  https://sourceforge.net/p/c-icap/wiki/configcicap
+  https://sourceforge.net/p/c-icap/wiki
+
 20240930:
   AFFECTS: users of sysutils/nq
   AUTHOR: 0mp@FreeBSD.org

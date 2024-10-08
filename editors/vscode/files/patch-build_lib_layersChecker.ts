@@ -1,6 +1,6 @@
---- build/lib/layersChecker.ts.orig	2024-09-04 12:53:09 UTC
+--- build/lib/layersChecker.ts.orig	2024-09-27 21:08:28 UTC
 +++ build/lib/layersChecker.ts
-@@ -363,7 +363,7 @@ function createProgram(tsconfigPath: string): ts.Progr
+@@ -382,7 +382,7 @@ function createProgram(tsconfigPath: string): ts.Progr
  function createProgram(tsconfigPath: string): ts.Program {
  	const tsConfig = ts.readConfigFile(tsconfigPath, ts.sys.readFile);
  

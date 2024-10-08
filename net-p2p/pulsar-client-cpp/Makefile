@@ -10,6 +10,8 @@ WWW=		https://pulsar.apache.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails due to overflow, see https://github.com/apache/pulsar-client-cpp/issues/449
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:devel/boost-libs
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libprotobuf.so:devel/protobuf \

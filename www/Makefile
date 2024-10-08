@@ -429,6 +429,7 @@
     SUBDIR += mod_wsgi4
     SUBDIR += mod_xsendfile
     SUBDIR += mohawk
+    SUBDIR += moin2
     SUBDIR += moinmoin
     SUBDIR += moinmoincli
     SUBDIR += mongoose
@@ -437,6 +438,7 @@
     SUBDIR += moodle42
     SUBDIR += moodle43
     SUBDIR += moodle44
+    SUBDIR += moodle45
     SUBDIR += morty
     SUBDIR += multisort
     SUBDIR += multiwatch
@@ -1473,6 +1475,7 @@
     SUBDIR += py-bjoern
     SUBDIR += py-bleach
     SUBDIR += py-bokeh
+    SUBDIR += py-bootstrap-flask
     SUBDIR += py-boto3
     SUBDIR += py-botocore-stubs
     SUBDIR += py-bottle

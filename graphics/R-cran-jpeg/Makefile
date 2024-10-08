@@ -11,6 +11,6 @@ WWW=		https://www.rforge.net/jpeg/
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=		cran:auto-plist,compiles
+USES=		cran:auto-plist,compiles jpeg
 
 .include <bsd.port.mk>

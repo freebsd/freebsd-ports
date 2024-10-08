@@ -1,6 +1,6 @@
---- Makefile.in.orig	2019-08-23 16:46:20 UTC
+--- Makefile.in.orig	2021-05-11 17:26:29 UTC
 +++ Makefile.in
-@@ -184,7 +184,7 @@ include_server_PY = \
+@@ -185,7 +185,7 @@ include_server_SRC = \
  include_server_SRC = \
  	include_server/c_extensions/distcc_pump_c_extensions_module.c
  
@@ -9,7 +9,7 @@
  
  # These are included in the distribution but not installed anywhere.
  dist_extra =							\
-@@ -415,13 +415,12 @@ popt_EXTRA = popt/README.popt popt/.stamp-conf.in
+@@ -416,13 +416,12 @@ bin_PROGRAMS = \
  
  bin_PROGRAMS = \
  	distcc@EXEEXT@ \

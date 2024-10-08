@@ -1,6 +1,5 @@
 PORTNAME=	cagebreak
-DISTVERSION=	2.3.1
-PORTREVISION=	1
+DISTVERSION=	2.4.0
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libudev.so:devel/libudev-devd \
 		libwayland-server.so:graphics/wayland \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libwlroots.so:x11-toolkits/wlroots017 \
+		libwlroots-0.18.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 

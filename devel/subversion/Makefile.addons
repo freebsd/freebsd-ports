@@ -23,4 +23,5 @@ MASTERDIR=		${.CURDIR}/../../devel/subversion-lts
 .include		"${MASTERDIR}/Makefile.common"
 .else
 BROKEN=			Wrong WITH_SUBVERSION_VER=${WITH_SUBVERSION_VER}, only latest (default) and LTS are supported
+.include <bsd.port.pre.mk>
 .endif

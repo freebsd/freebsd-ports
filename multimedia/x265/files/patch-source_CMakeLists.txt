@@ -1,14 +1,12 @@
 --- source/CMakeLists.txt	2023-10-22 22:08:10.704150000 -0400
 +++ source/CMakeLists.txt	2023-10-22 22:10:02.947579000 -0400
-@@ -43,7 +43,7 @@
- set(ARM_ALIASES armv6l armv7l aarch64)
+@@ -45,5 +45,5 @@
+ endif()
+ set(X86_ALIASES x86 i386 i686 x86_64 amd64)
+-set(ARM_ALIASES armv6l armv7l)
++set(ARM_ALIASES armv6l armv7l armv7)
+ set(ARM64_ALIASES arm64 arm64e aarch64)
  list(FIND X86_ALIASES "${SYSPROC}" X86MATCH)
- list(FIND ARM_ALIASES "${SYSPROC}" ARMMATCH)
--set(POWER_ALIASES ppc64 ppc64le)
-+set(POWER_ALIASES powerpc64 powerpc64le ppc64 ppc64le)
- list(FIND POWER_ALIASES "${SYSPROC}" POWERMATCH)
- if("${SYSPROC}" STREQUAL "" OR X86MATCH GREATER "-1")
-     set(X86 1)
 @@ -122,6 +122,7 @@
      option(ENABLE_LIBVMAF "Enable VMAF" OFF)
      if(ENABLE_LIBVMAF)

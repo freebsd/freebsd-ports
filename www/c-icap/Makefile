@@ -1,9 +1,12 @@
 PORTNAME=	c-icap
-PORTVERSION=	0.5.12
+PORTVERSION=	0.6.3
 PORTEPOCH=	2
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.5.x/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.6.x/
 DISTNAME=	c_icap-${PORTVERSION}
+
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}-server/commit/
+PATCHFILES+=	aa28041.patch:-p1 # https://github.com/c-icap/c-icap-server/pull/67
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	ICAP server implementation
@@ -20,9 +23,9 @@ CPE_VENDOR=	c-icap_project
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	c-icap
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var \
-		--sysconfdir="${PREFIX}/etc/c-icap"
+GNU_CONFIGURE=			yes
+CONFIGURE_ARGS=			--localstatedir=/var \
+				--sysconfdir="${PREFIX}/etc/c-icap"
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 INSTALL_TARGET=	install-strip

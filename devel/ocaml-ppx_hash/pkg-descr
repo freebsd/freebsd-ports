@@ -1,0 +1,5 @@
+This PPX rewriter plugin derives hash functions from OCaml type
+definitions and (anonymous) type annotations. The generated functions
+are usualy faster than their polymorphic equivalent from the OCaml
+standard library. It is also possible to ignore one or more member of
+a tuple or structure.

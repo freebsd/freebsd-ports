@@ -1,0 +1,30 @@
+ad (pronounced A.D.) is an attempt at combining a modal editing
+interface of likes of vi and kakoune with the approach to extensibility
+of Plan9's Acme.  Inside of ad text is something you can execute as
+well as edit.
+
+It is primarily intended as playground for experimenting with
+implementing various text editor features and currently is not at all
+optimised or feature complete enough for use as your main text editor.
+
+ad is aiming to be a hybrid of the pieces of various editors that I find
+most useful:
+
+ - vim style modal editing to allow for convenient key bindings
+ - convenient text navigation and selection from vim/kakoune
+ - mini-buffer based user defined minor modes from emacs
+ - sam/acme style editing commands for larger editing actions
+ - acme style extension through exposing editor state and functionality
+   for external client programs.
+ - support for mouse based navigation and selection but not requiring
+   that as the main way of using the editor like in acme.  That's fine
+   for desktop but most of the time I'm working with a laptop which
+   makes that far too clunky.
+
+ad is not trying to replace vim (or kakoune, or emacs) in terms of being
+a massively hackable editor.  Rather it is trying to follow the
+philosophy of acme in being an integrating development environment
+(rather than integrated).  By which I mean that the aim is to provide a
+comfortable editing environment to work in that supports direct
+interaction with external tools and programs from the outside rather
+than pulling everything in.

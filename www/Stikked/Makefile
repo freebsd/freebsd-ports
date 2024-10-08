@@ -1,11 +1,14 @@
 PORTNAME=	Stikked
 DISTVERSION=	0.14.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP-based Pastebin, with a simple and easy to use user interface
 WWW=		https://github.com/claudehohl/Stikked
+
+DEPRECATED=	Broken with PHP 8+ (see PR 281858)
+EXPIRATION_DATE=	2024-12-31
 
 USES=		php:web
 

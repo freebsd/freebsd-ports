@@ -294,6 +294,7 @@
     SUBDIR += ompl
     SUBDIR += ondir
     SUBDIR += onnx
+    SUBDIR += onnxruntime
     SUBDIR += ooo
     SUBDIR += opencyc
     SUBDIR += openhab

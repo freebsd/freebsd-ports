@@ -25,7 +25,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSES/MIT.txt
 LIB_DEPENDS=	libdwarf.so:devel/libdwarf \
 		libelf.so:devel/libelf
 
-FLAVORS=	qt5 qt6
+FLAVORS=	qt6 qt5
 FLAVOR?=	qt6
 
 qt5_PKGNAMESUFFIX=		-qt5

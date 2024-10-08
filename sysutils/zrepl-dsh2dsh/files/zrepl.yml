@@ -60,6 +60,22 @@ jobs:
       placeholder:
         encryption: "inherit"
     monitor: &monitor-snapshots
+      count:
+        - prefix: "zrepl_frequently_"
+          warning: 18
+          critical: 30
+        - prefix: "zrepl_hourly_"
+          warning: 32
+          critical: 50
+        - prefix: "zrepl_daily_"
+          warning: 92
+          critical: 100
+        - prefix: "zrepl_monthly_"
+          warning: 14
+          critical: 15
+        - prefix: ""            # everything else
+          warning: 2
+          critical: 10
       latest:
         - prefix: "zrepl_frequently_"
           critical: "48h"       # 2d
@@ -94,7 +110,6 @@ jobs:
       # them one by one.
       #one_step: true
       concurrency:
-        steps: 4
         size_estimates: 8
     conflict_resolution: &conflict_resolution
       initial_replication: "all"

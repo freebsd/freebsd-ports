@@ -1,7 +1,6 @@
 PORTNAME=	fend
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.2
-PORTREVISION=	0
+DISTVERSION=	1.5.3
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +19,7 @@ CARGO_CRATES=	base64-0.21.7 \
 		bitflags-2.6.0 \
 		bumpalo-3.16.0 \
 		byteorder-1.5.0 \
-		cc-1.1.18 \
+		cc-1.1.25 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.1.1 \
 		cfg_aliases-0.2.1 \
@@ -37,12 +36,12 @@ CARGO_CRATES=	base64-0.21.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		getrandom-0.2.15 \
-		hashbrown-0.14.5 \
+		hashbrown-0.15.0 \
 		home-0.5.9 \
-		indexmap-2.5.0 \
+		indexmap-2.6.0 \
 		instant-0.1.13 \
 		js-sys-0.3.70 \
-		libc-0.2.158 \
+		libc-0.2.159 \
 		linux-raw-sys-0.4.14 \
 		log-0.4.22 \
 		memchr-2.7.4 \
@@ -51,12 +50,12 @@ CARGO_CRATES=	base64-0.21.7 \
 		nibble_vec-0.1.0 \
 		nix-0.28.0 \
 		nix-0.29.0 \
-		once_cell-1.20.0 \
+		once_cell-1.20.2 \
 		openssl-0.10.66 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
 		openssl-sys-0.9.103 \
-		pkg-config-0.3.30 \
+		pkg-config-0.3.31 \
 		ppv-lite86-0.2.20 \
 		proc-macro2-1.0.86 \
 		quote-1.0.37 \
@@ -74,21 +73,21 @@ CARGO_CRATES=	base64-0.21.7 \
 		schannel-0.1.24 \
 		sct-0.7.1 \
 		security-framework-2.11.1 \
-		security-framework-sys-2.11.1 \
+		security-framework-sys-2.12.0 \
 		serde-1.0.210 \
 		serde_derive-1.0.210 \
-		serde_spanned-0.6.7 \
+		serde_spanned-0.6.8 \
 		shlex-1.3.0 \
 		smallvec-1.13.2 \
 		spin-0.9.8 \
-		syn-2.0.77 \
-		tempfile-3.12.0 \
+		syn-2.0.79 \
+		tempfile-3.13.0 \
 		toml-0.8.19 \
 		toml_datetime-0.6.8 \
-		toml_edit-0.22.20 \
+		toml_edit-0.22.22 \
 		unicode-ident-1.0.13 \
 		unicode-segmentation-1.12.0 \
-		unicode-width-0.1.13 \
+		unicode-width-0.1.14 \
 		untrusted-0.9.0 \
 		utf8parse-0.2.2 \
 		vcpkg-0.2.15 \
@@ -111,7 +110,7 @@ CARGO_CRATES=	base64-0.21.7 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.18 \
+		winnow-0.6.20 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35
 

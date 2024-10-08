@@ -1,6 +1,5 @@
 PORTNAME=	newsboat
-DISTVERSION=	2.36
-PORTREVISION=	2
+DISTVERSION=	2.36.1
 CATEGORIES=	www
 MASTER_SITES=	https://newsboat.org/releases/${DISTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -50,5 +49,8 @@ post-patch:
 		${WRKSRC}/config.sh
 	@${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB} -lcrypto ${NCURSESLIBS}|;s|-Werror||' \
 		${WRKSRC}/Makefile
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.mk>

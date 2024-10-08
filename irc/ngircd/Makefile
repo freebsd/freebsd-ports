@@ -1,5 +1,6 @@
 PORTNAME=	ngircd
 DISTVERSION=	27
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	irc
 MASTER_SITES=	https://ngircd.barton.de/pub/ngircd/ \

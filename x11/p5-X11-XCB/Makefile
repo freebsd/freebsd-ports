@@ -1,10 +1,10 @@
 PORTNAME=	X11-XCB
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	x11 perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pi@FreeBSD.org
+MAINTAINER=	zhmylove@narod.ru
 COMMENT=	Perl bindings for libxcb
 WWW=		https://metacpan.org/release/X11-XCB
 
@@ -24,7 +24,6 @@ BUILD_DEPENDS=	\
 		p5-XS-Object-Magic>=0:devel/p5-XS-Object-Magic
 RUN_DEPENDS=	\
 		p5-Mouse>=0:devel/p5-Mouse \
-		p5-MouseX-NativeTraits>=0:devel/p5-MouseX-NativeTraits \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-XS-Object-Magic>=0:devel/p5-XS-Object-Magic
 TEST_DEPENDS=	\

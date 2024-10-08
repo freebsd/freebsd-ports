@@ -1,5 +1,5 @@
 PORTNAME=	ndindex
-PORTVERSION=	1.9
+PORTVERSION=	1.9.2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI \
 		https://github.com/Quansight-Labs/ndindex/releases/download/${PORTVERSION}/

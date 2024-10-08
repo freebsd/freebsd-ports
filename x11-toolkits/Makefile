@@ -254,7 +254,6 @@
     SUBDIR += vte3
     SUBDIR += wlroots
     SUBDIR += wlroots015
-    SUBDIR += wlroots016
     SUBDIR += wlroots017
     SUBDIR += wmapp
     SUBDIR += wxgtk30

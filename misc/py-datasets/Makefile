@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyproject_hooks>0:devel/py-pyproject_hooks
 		${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dill>0.3.0<0.3.9:devel/py-dill@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dill>0.3.0:devel/py-dill@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>0:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fsspec>=2023.1.0:devel/py-fsspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}huggingface-hub>0.21.2:misc/py-huggingface-hub@${PY_FLAVOR} \
