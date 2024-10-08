@@ -1,6 +1,6 @@
-TIMESTAMP = 1727773643
-SHA256 (jellyfin-10.9.11-node-modules.tar.gz) = 7fabb49cb5ef986a505272639459a073c31d6700446d3082d07d24843bd9fe1d
-SIZE (jellyfin-10.9.11-node-modules.tar.gz) = 453969134
+TIMESTAMP = 1728398197
+SHA256 (jellyfin-10.9.11-node-modules.tar.gz) = 660d3b32fa6fdd730fd1819e01e9aa4db8954fc4dc623c28f63b5d9c9e7f3337
+SIZE (jellyfin-10.9.11-node-modules.tar.gz) = 453969162
 SHA256 (libSkiaSharp.so) = cce36fa7785736846899e5440d2dcd6aee1d6efb796e43ad7ff35b3426b0b124
 SIZE (libSkiaSharp.so) = 7253496
 SHA256 (nuget/asynckeyedlock.6.4.2.nupkg) = 114afbd0119719ccd53fa22ae6b0e924dc07881710edb2d2083af6f4dfd5f0dd
