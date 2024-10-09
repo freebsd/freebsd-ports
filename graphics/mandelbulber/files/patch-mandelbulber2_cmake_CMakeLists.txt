@@ -1,4 +1,4 @@
---- mandelbulber2/cmake/CMakeLists.txt.orig	2024-02-11 08:21:17 UTC
+--- mandelbulber2/cmake/CMakeLists.txt.orig	2024-08-23 15:11:23 UTC
 +++ mandelbulber2/cmake/CMakeLists.txt
 @@ -41,6 +41,7 @@ find_package(Qt5Concurrent REQUIRED)
  find_package(Qt5Test REQUIRED)
@@ -8,7 +8,7 @@
  
  # Find other required libraries.
  find_package(PNG REQUIRED)
-@@ -90,7 +90,7 @@ add_executable(mandelbulber2 WIN32
+@@ -90,7 +91,7 @@ add_executable(mandelbulber2 WIN32
  	${SOURCE_FILES} ${ADDITIONAL_EXECUTABLE} ${qt_UI_H})
  
  # Link qt libraries.
@@ -17,3 +17,12 @@
  
  # Link other required libraries.
  include_directories(${PNG_INCLUDE_DIR} ${GSL_INCLUDE_DIRS} ${LZO_INCLUDE_DIR})
+@@ -99,7 +100,7 @@ IF(TIFF_FOUND)
+ # Link other optional libraries and set corresponding flag definitions .
+ IF(TIFF_FOUND)
+ 	include_directories(${TIFF_INCLUDE_DIR})
+-	target_link_libraries(mandelbulber2 ${TIFF_LIBRARY})
++	target_link_libraries(mandelbulber2 TIFF::tiff)
+ 	add_definitions(-DUSE_TIFF)
+ ENDIF()
+ 
