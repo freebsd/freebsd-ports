@@ -1,6 +1,6 @@
 PORTNAME=	abella
 DISTVERSION=	2.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://abella-prover.org/distributions/
 
