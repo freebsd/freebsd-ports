@@ -1,3 +1,28 @@
+  <vuln vid="79b1f4ee-860a-11ef-b2dc-cbccbf25b7ea">
+    <topic>gitea -- token missing access control for packages</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.22.3</lt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+       <h1>Problem Description:</h1>
+       <ul>
+       <li>Fix bug when a token is given public only</li>
+       </ul>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/pull/32204</url>
+    </references>
+    <dates>
+      <discovery>2024-10-06</discovery>
+      <entry>2024-10-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8727b513-855b-11ef-9e50-6805ca2fa271">
     <topic>powerdns-recursor -- denial of service</topic>
     <affects>
@@ -24,6 +49,7 @@
       <entry>2024-10-09</entry>
     </dates>
   </vuln>
+
   <vuln vid="7217f6e8-3ff4-4387-845d-d1744bb7f95e">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
