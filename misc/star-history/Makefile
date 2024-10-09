@@ -1,6 +1,5 @@
 PORTNAME=	star-history
-DISTVERSION=	1.0.22
-PORTREVISION=	2
+DISTVERSION=	1.0.23
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,168 +16,159 @@ USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	dtolnay
 
-CARGO_CRATES=	addr2line-0.22.0 \
-		adler-1.0.2 \
+CARGO_CRATES=	addr2line-0.24.2 \
+		adler2-2.0.0 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anyhow-1.0.86 \
+		anyhow-1.0.89 \
 		atomic-waker-1.1.2 \
-		autocfg-1.3.0 \
-		backtrace-0.3.73 \
+		autocfg-1.4.0 \
+		backtrace-0.3.74 \
 		base64-0.22.1 \
-		bitflags-1.3.2 \
 		bitflags-2.6.0 \
-		bstr-1.9.1 \
+		bstr-1.10.0 \
 		bumpalo-3.16.0 \
-		bytes-1.6.1 \
-		cc-1.1.4 \
+		bytes-1.7.2 \
+		cc-1.1.28 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
 		core-foundation-0.9.4 \
-		core-foundation-sys-0.8.6 \
+		core-foundation-sys-0.8.7 \
 		dbus-0.9.7 \
 		encoding_rs-0.8.34 \
 		equivalent-1.0.1 \
 		errno-0.3.9 \
-		fastrand-2.1.0 \
+		fastrand-2.1.1 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.1 \
-		futures-channel-0.3.30 \
-		futures-core-0.3.30 \
-		futures-io-0.3.30 \
-		futures-sink-0.3.30 \
-		futures-task-0.3.30 \
-		futures-util-0.3.30 \
+		futures-channel-0.3.31 \
+		futures-core-0.3.31 \
+		futures-io-0.3.31 \
+		futures-sink-0.3.31 \
+		futures-task-0.3.31 \
+		futures-util-0.3.31 \
 		getrandom-0.2.15 \
-		gimli-0.29.0 \
-		h2-0.4.5 \
-		hashbrown-0.14.5 \
+		gimli-0.31.1 \
+		h2-0.4.6 \
+		hashbrown-0.15.0 \
+		hermit-abi-0.3.9 \
 		home-0.5.9 \
 		http-1.1.0 \
 		http-body-1.0.1 \
 		http-body-util-0.1.2 \
-		httparse-1.9.4 \
+		httparse-1.9.5 \
 		hyper-1.4.1 \
-		hyper-rustls-0.27.2 \
+		hyper-rustls-0.27.3 \
 		hyper-tls-0.6.0 \
-		hyper-util-0.1.6 \
-		iana-time-zone-0.1.60 \
+		hyper-util-0.1.9 \
+		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
-		indexmap-2.2.6 \
-		ipnet-2.9.0 \
+		indexmap-2.6.0 \
+		ipnet-2.10.1 \
 		itoa-1.0.11 \
-		js-sys-0.3.69 \
-		libc-0.2.155 \
+		js-sys-0.3.70 \
+		libc-0.2.159 \
 		libdbus-sys-0.2.5 \
 		linux-raw-sys-0.4.14 \
 		log-0.4.22 \
 		memchr-2.7.4 \
 		mime-0.3.17 \
-		miniz_oxide-0.7.4 \
-		mio-0.8.11 \
+		miniz_oxide-0.8.0 \
+		mio-1.0.2 \
 		native-tls-0.2.12 \
-		normpath-1.2.0 \
+		normpath-1.3.0 \
 		num-traits-0.2.19 \
-		object-0.36.1 \
-		once_cell-1.19.0 \
-		opener-0.7.1 \
-		openssl-0.10.64 \
+		object-0.36.5 \
+		once_cell-1.20.2 \
+		opener-0.7.2 \
+		openssl-0.10.66 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.102 \
+		openssl-sys-0.9.103 \
 		percent-encoding-2.3.1 \
-		pin-project-1.1.5 \
-		pin-project-internal-1.1.5 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
-		pkg-config-0.3.30 \
-		proc-macro2-1.0.86 \
-		quote-1.0.36 \
-		regex-automata-0.4.7 \
-		reqwest-0.12.5 \
+		pkg-config-0.3.31 \
+		proc-macro2-1.0.87 \
+		quote-1.0.37 \
+		regex-automata-0.4.8 \
+		reqwest-0.12.8 \
 		ring-0.17.8 \
 		rustc-demangle-0.1.24 \
-		rustix-0.38.34 \
-		rustls-0.23.11 \
-		rustls-pemfile-2.1.2 \
-		rustls-pki-types-1.7.0 \
-		rustls-webpki-0.102.5 \
+		rustix-0.38.37 \
+		rustls-0.23.14 \
+		rustls-pemfile-2.2.0 \
+		rustls-pki-types-1.9.0 \
+		rustls-webpki-0.102.8 \
 		ryu-1.0.18 \
-		schannel-0.1.23 \
+		schannel-0.1.26 \
 		security-framework-2.11.1 \
-		security-framework-sys-2.11.1 \
-		serde-1.0.204 \
-		serde_derive-1.0.204 \
-		serde_json-1.0.120 \
+		security-framework-sys-2.12.0 \
+		serde-1.0.210 \
+		serde_derive-1.0.210 \
+		serde_json-1.0.128 \
 		serde_urlencoded-0.7.1 \
 		serde_yaml-0.9.34+deprecated \
+		shlex-1.3.0 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
 		socket2-0.5.7 \
 		spin-0.9.8 \
 		subtle-2.6.1 \
-		syn-2.0.71 \
+		syn-2.0.79 \
 		sync_wrapper-1.0.1 \
-		system-configuration-0.5.1 \
-		system-configuration-sys-0.5.0 \
-		tempfile-3.10.1 \
-		thiserror-1.0.62 \
-		thiserror-impl-1.0.62 \
+		system-configuration-0.6.1 \
+		system-configuration-sys-0.6.0 \
+		tempfile-3.13.0 \
+		thiserror-1.0.64 \
+		thiserror-impl-1.0.64 \
 		tinyvec-1.8.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.38.0 \
+		tokio-1.40.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.0 \
-		tokio-util-0.7.11 \
-		tower-0.4.13 \
-		tower-layer-0.3.2 \
-		tower-service-0.3.2 \
+		tokio-util-0.7.12 \
+		tower-service-0.3.3 \
 		tracing-0.1.40 \
 		tracing-core-0.1.32 \
 		try-lock-0.2.5 \
-		unicode-bidi-0.3.15 \
-		unicode-ident-1.0.12 \
-		unicode-normalization-0.1.23 \
+		unicode-bidi-0.3.17 \
+		unicode-ident-1.0.13 \
+		unicode-normalization-0.1.24 \
 		unsafe-libyaml-0.2.11 \
 		untrusted-0.9.0 \
 		url-2.5.2 \
 		vcpkg-0.2.15 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.92 \
-		wasm-bindgen-backend-0.2.92 \
-		wasm-bindgen-futures-0.4.42 \
-		wasm-bindgen-macro-0.2.92 \
-		wasm-bindgen-macro-support-0.2.92 \
-		wasm-bindgen-shared-0.2.92 \
-		web-sys-0.3.69 \
+		wasm-bindgen-0.2.93 \
+		wasm-bindgen-backend-0.2.93 \
+		wasm-bindgen-futures-0.4.43 \
+		wasm-bindgen-macro-0.2.93 \
+		wasm-bindgen-macro-support-0.2.93 \
+		wasm-bindgen-shared-0.2.93 \
+		web-sys-0.3.70 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-core-0.52.0 \
-		windows-sys-0.48.0 \
+		windows-registry-0.2.0 \
+		windows-result-0.2.0 \
+		windows-strings-0.1.0 \
 		windows-sys-0.52.0 \
-		windows-targets-0.48.5 \
+		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
-		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
-		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		winreg-0.52.0 \
 		zeroize-1.8.1
 
 OPENSSLINC=	/usr/include
