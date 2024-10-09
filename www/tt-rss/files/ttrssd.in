@@ -7,6 +7,9 @@
 # Add the following lines to /etc/rc.conf to enable `ttrssd':
 #
 # ttrssd_enable="YES"
+#
+# Optional:
+#    ttrssd_run_as_user            The user to run as (default www)
 
 . /etc/rc.subr
 
@@ -18,6 +21,7 @@ rcvar=ttrssd_enable
 # read settings, set default values
 load_rc_config "${name}"
 : ${ttrssd_enable="NO"}
+: ${ttrssd_run_as_user="%%WWWOWN%%"}
 
 long_name="Tiny Tiny RSS updating feeds daemon."
 required_files="%%WWWDIR%%/config.php"
@@ -30,7 +34,7 @@ phpupd="%%WWWDIR%%/update_daemon2.php"
 ttrssd_log="/var/log/${name}.log"
 
 command="/usr/sbin/daemon"
-command_args="-rR 10 -H -u %%WWWOWN%% \
+command_args="-rR 10 -H -u $ttrssd_run_as_user \
 		-P $pidfile -p $cpidfile \
 		-o $ttrssd_log sh -c \
 		'$initdb_php --update-schema=force-yes; \
