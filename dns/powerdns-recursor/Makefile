@@ -1,6 +1,5 @@
 PORTNAME=	recursor
-DISTVERSION=	5.1.1
-PORTREVISION=	3
+DISTVERSION=	5.1.2
 CATEGORIES=	dns
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
@@ -27,10 +26,9 @@ USES=		autoreconf cargo compiler:c++11-lib cpe gmake libtool \
 		localbase:ldflags pkgconfig python:build ssl tar:bzip2
 
 CPE_VENDOR=	powerdns
-USE_RC_SUBR=	pdns-recursor
+USE_RC_SUBR=	pdns_recursor
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/pdns \
 		--with-libsodium=no \
 		--with-service-user=pdns \
