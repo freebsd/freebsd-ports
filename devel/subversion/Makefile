@@ -1,4 +1,4 @@
-PORTREVISION=	8
+PORTREVISION=	0
 
 MAINTAINER=	michaelo@apache.org
 COMMENT=	Version control system
