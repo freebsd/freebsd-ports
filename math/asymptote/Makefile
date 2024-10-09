@@ -1,12 +1,8 @@
 PORTNAME=	asymptote
-PORTVERSION=	2.81
-PORTREVISION=	6
+PORTVERSION=	2.92
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
-
-PATCH_SITES=	https://github.com/vectorgraphics/asymptote/commit/
-PATCHFILES+=	fa28442195bd99b9bac87e3ff752953ac57ee172.patch:-p1 # backport fix for https://github.com/vectorgraphics/asymptote/issues/328
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Powerful script-based vector graphics language
@@ -21,9 +17,10 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libsigsegv.so:devel/libsigsegv
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cson>=0.8:devel/py-cson@${PY_FLAVOR} \
-		${PY_PILLOW}
+		${PY_PILLOW} \
+		xdg-open:devel/xdg-utils
 
-USES=		compiler:c++14-lang gettext-runtime ghostscript gl gmake gnome ncurses perl5 python \
+USES=		bison compiler:c++14-lang gettext-runtime ghostscript gl gmake gnome ncurses perl5 python \
 		pyqt:5 shebangfix tar:tgz tex
 SHEBANG_FILES=	GUI/*.py
 USE_GL=		gl glu glut
