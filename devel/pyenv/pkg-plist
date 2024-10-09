@@ -120,9 +120,10 @@ libexec/pyenv-plugins/python-build/share/python-build/3.12.3
 libexec/pyenv-plugins/python-build/share/python-build/3.12.4
 libexec/pyenv-plugins/python-build/share/python-build/3.12.5
 libexec/pyenv-plugins/python-build/share/python-build/3.12.6
+libexec/pyenv-plugins/python-build/share/python-build/3.12.7
 libexec/pyenv-plugins/python-build/share/python-build/3.13-dev
-libexec/pyenv-plugins/python-build/share/python-build/3.13.0rc2
-libexec/pyenv-plugins/python-build/share/python-build/3.13.0rc2t
+libexec/pyenv-plugins/python-build/share/python-build/3.13.0rc3
+libexec/pyenv-plugins/python-build/share/python-build/3.13.0rc3t
 libexec/pyenv-plugins/python-build/share/python-build/3.13t-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.14-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.14t-dev
