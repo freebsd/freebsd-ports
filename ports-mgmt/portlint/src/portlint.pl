@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 22;
-my $micro = 2;
+my $micro = 3;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -914,12 +914,14 @@ sub checkplist {
 		&perror("WARN", $file, -1, "There are only $item_count items in the plist.  Consider using PLIST_FILES instead of pkg-plist when installing less than $numpitems items.");
 	}
 
-	if ($makevar{USE_LDCONFIG} ne "$makevar{PREFIX}/lib" && !$found_so) {
-		&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
-			"port does not install any shared objects.");
-	} elsif ($makevar{USE_LDCONFIG} eq "$makevar{PREFIX}/lib" && !$found_prefix_so) {
-		&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
-			"port does not install any shared objects into \${PREFIX}/lib.");
+	if ($makevar{USE_LDCONFIG}) {
+		if ($makevar{USE_LDCONFIG} && $makevar{USE_LDCONFIG} ne "$makevar{PREFIX}/lib" && !$found_so) {
+			&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
+				"port does not install any shared objects.");
+		} elsif ($makevar{USE_LDCONFIG} eq "$makevar{PREFIX}/lib" && !$found_prefix_so) {
+			&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
+				"port does not install any shared objects into \${PREFIX}/lib.");
+		}
 	}
 
 	close(IN);
