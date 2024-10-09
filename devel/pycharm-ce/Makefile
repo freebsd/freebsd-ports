@@ -1,5 +1,5 @@
 PORTNAME=	pycharm-ce
-DISTVERSION=	2024.2.1
+DISTVERSION=	2024.2.3
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
@@ -22,7 +22,8 @@ USE_JAVA=	yes
 JAVA_VERSION=	17+
 SHEBANG_FILES=	plugins/python-ce/helpers/pycodestyle-2.10.0.py \
 		plugins/python-ce/helpers/pycodestyle.py \
-		plugins/python-ce/helpers/typeshed/scripts/sync_tensorflow_protobuf_stubs.sh
+		plugins/python-ce/helpers/typeshed/scripts/sync_tensorflow_protobuf_stubs.sh \
+		plugins/python-ce/helpers/typeshed/scripts/sync_s2clientprotocol_protobuf_stubs.sh
 
 # Ignore:
 # - non-native binaries
