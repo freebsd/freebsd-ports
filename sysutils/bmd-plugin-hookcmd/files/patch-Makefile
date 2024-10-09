@@ -1,19 +1,9 @@
---- Makefile.orig	2023-09-15 03:21:14 UTC
+--- Makefile.orig	2024-07-23 08:00:58 UTC
 +++ Makefile
-@@ -1,11 +1,15 @@ MK_DEBUG_FILES=	no
- LOCALBASE?= 	/usr/local
+@@ -1,4 +1,6 @@
  MK_DEBUG_FILES=	no
 +BINOWN!=	id -u
 +BINGRP!=	id -g
-+SHAREOWN=	${BINOWN}
-+SHAREGRP=	${BINGRP}
  SHLIB=		bmdplugin_hookcmd
  SHLIB_MAJOR=	1
  CFLAGS+=	-I${LOCALBASE}/include -DLOCALBASE=\"${LOCALBASE}\"
- LIBDIR=		$(LOCALBASE)/libexec/bmd
- SRCS=		hookcmd.c
- MAN=		bmd-plugin-hookcmd.8
--MANDIR=		$(LOCALBASE)/man/man
-+MANDIR=		$(LOCALBASE)/share/man/man
- 
- .include <bsd.lib.mk>
