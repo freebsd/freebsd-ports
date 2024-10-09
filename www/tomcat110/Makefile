@@ -2,7 +2,7 @@ PORTNAME=	tomcat
 DISTVERSION=	11.0.0
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${DISTVERSION:C/([0-9]+)(.*)/\1/}/v${DISTVERSION}/bin
-PKGNAMESUFFIX=	-devel
+PKGNAMESUFFIX=	110
 DISTNAME=	apache-${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	vvd@FreeBSD.org
@@ -38,7 +38,7 @@ HOST_MANAGER_DESC=	Install Host Manager application
 MANAGER_DESC=		Install Manager web application
 ROOT_DESC=		Install default ROOT web application
 
-TOMCAT_SUBDIR?=	${DISTNAME:R}${PKGNAMESUFFIX}
+TOMCAT_SUBDIR?=	${DISTNAME:R}
 TOMCAT_HOME=	${PREFIX}/${TOMCAT_SUBDIR}
 
 post-patch:
