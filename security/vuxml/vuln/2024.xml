@@ -81,7 +81,7 @@
       </package>
       <package>
 	<name>thunderbird</name>
-	<range><lt>128.3.0,1</lt></range>
+	<range><lt>128.3.0</lt></range>
       </package>
     </affects>
     <description>
