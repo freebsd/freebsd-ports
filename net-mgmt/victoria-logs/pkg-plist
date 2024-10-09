@@ -1,4 +1,5 @@
 bin/victoria-logs
+bin/vlogscli
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.md
 %%PORTDOCS%%%%DOCSDIR%%/LogsQL.md
@@ -22,4 +23,7 @@ bin/victoria-logs
 %%PORTDOCS%%%%DOCSDIR%%/data-ingestion/opentelemetry.md
 %%PORTDOCS%%%%DOCSDIR%%/provision_datasources.webp
 %%PORTDOCS%%%%DOCSDIR%%/querying/_index.md
+%%PORTDOCS%%%%DOCSDIR%%/data-ingestion/Fluentd.md
+%%PORTDOCS%%%%DOCSDIR%%/ha-victorialogs-single-node.webp
+%%PORTDOCS%%%%DOCSDIR%%/querying/vlogscli.md
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%
