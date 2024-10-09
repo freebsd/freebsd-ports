@@ -4932,6 +4932,7 @@
     SUBDIR += py-googleapis-common-protos
     SUBDIR += py-gptscript
     SUBDIR += py-gpxpy
+    SUBDIR += py-graal
     SUBDIR += py-grab
     SUBDIR += py-graphene
     SUBDIR += py-graphene-django
