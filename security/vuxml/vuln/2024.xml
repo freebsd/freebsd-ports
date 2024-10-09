@@ -1,3 +1,29 @@
+  <vuln vid="8727b513-855b-11ef-9e50-6805ca2fa271">
+    <topic>powerdns-recursor -- denial of service</topic>
+    <affects>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><lt>5.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://blog.powerdns.com/2024/10/03/powerdns-recursor-4-9-9-5-0-9-5-1-2-released">
+	  <p>PowerDNS Security Advisory 2024-04: Crafted responses can lead to
+	   a denial of service due to cache inefficiencies in the Recursor</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-25590</cvename>
+      <url>https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2024-04.html</url>
+    </references>
+    <dates>
+      <discovery>2024-10-03</discovery>
+      <entry>2024-10-09</entry>
+    </dates>
+  </vuln>
   <vuln vid="7217f6e8-3ff4-4387-845d-d1744bb7f95e">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
