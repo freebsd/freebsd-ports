@@ -1,0 +1,10 @@
+--- Makefile.orig
++++ Makefile
+@@ -7,6 +7,7 @@
+ MANDIR	= $(PREFIX)/share/man
+ 
+ cbonsai: cbonsai.c
++	$(CC) $(CFLAGS) -o $@ $< $(LDLIBS)
+ 
+ cbonsai.1: cbonsai.scd
+ 	scdoc <$< >$@
