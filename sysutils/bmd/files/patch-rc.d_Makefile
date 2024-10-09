@@ -8,4 +8,4 @@
 +SCRIPTSGRP!=	id -g
 
  bmd:	bmd.in
-	sed 's|%%LOCALBASE%%|$(LOCALBASE)|' < bmd.in > bmd
+	sed 's|%%LOCALBASE%%|$(LOCALBASE)|' < ${.ALLSRC} > ${.TARGET}
