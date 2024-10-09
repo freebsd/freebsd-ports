@@ -31,6 +31,14 @@ required_files=${pdns_recursor_conf}
 actual_pdns_recursor_flags="${pdns_recursor_flags}"
 pdns_recursor_flags=""
 
+extra_commands="showyaml"
+showyaml_cmd="${name}_showyaml"
+
+pdns_recursor_showyaml()
+{
+	%%PREFIX%%/bin/rec_control show-yaml ${pdns_recursor_conf%%.*}.conf
+}
+
 pidfile="/var/run/${name}.pid"
 actual_command="%%PREFIX%%/sbin/${name}"
 command="/usr/sbin/daemon"
