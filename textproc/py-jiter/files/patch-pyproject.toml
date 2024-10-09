@@ -1,9 +1,0 @@
---- pyproject.toml.orig	2024-10-08 06:53:14 UTC
-+++ pyproject.toml
-@@ -37,5 +37,5 @@ bindings = "pyo3"
- [tool.maturin]
- module-name = "jiter"
- bindings = "pyo3"
--features = ["pyo3/extension-module", "pyo3/generate-import-lib"]
-+features = ["pyo3/extension-module"]
- manifest-path = "crates/jiter-python/Cargo.toml"
