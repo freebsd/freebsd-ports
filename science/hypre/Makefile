@@ -1,7 +1,6 @@
 PORTNAME=	hypre
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.31.0
-PORTREVISION=	1
+DISTVERSION=	2.32.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -56,5 +55,14 @@ post-install:
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} usr-manual ${STAGEDIR}${DOCSDIR}
+
+post-test: # run tests; unclear how to to run tests, see https://github.com/hypre-space/hypre/issues/502
+.for t in ij ij_assembly ij_mv maxwell_unscaled
+	@cd ${WRKSRC}/test && \
+		${ECHO} "==> running test ${t}" && \
+		${BUILD_WRKSRC}/test/${t}
+.endfor
+
+# the test ij_mv fails, see https://github.com/hypre-space/hypre/issues/1161
 
 .include <bsd.port.mk>
