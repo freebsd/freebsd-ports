@@ -5861,6 +5861,7 @@
     SUBDIR += py-setuptools_scm_git_archive
     SUBDIR += py-sexpdata
     SUBDIR += py-sgmllib3k
+    SUBDIR += py-sgqlc
     SUBDIR += py-sh
     SUBDIR += py-shapely
     SUBDIR += py-shellingham
