@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	https://dev.gentoo.org/~voyageur/distfiles/
 
-MAINTAINER=	mbeis@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp for monitoring memory and swap usage
 WWW=		https://windowmaker.org/dockapps/?name=wmmemload
 
