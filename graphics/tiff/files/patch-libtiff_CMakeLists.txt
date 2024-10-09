@@ -1,0 +1,11 @@
+--- libtiff/CMakeLists.txt.orig	2024-08-15 21:16:11 UTC
++++ libtiff/CMakeLists.txt
+@@ -202,7 +202,7 @@ if(HAVE_LD_VERSION_SCRIPT)
+ endif()
+ if(HAVE_LD_VERSION_SCRIPT)
+   set_target_properties(tiff PROPERTIES LINK_FLAGS
+-                        "-Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/libtiff.map")
++  "-Wl,--undefined-version -Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/libtiff.map")
+ endif()
+ 
+ if(tiff-install)
