@@ -18,7 +18,6 @@ PGDOCSDIR?=	${PREFIX}/${PGDOCSREL}
 
 BUILD_DEPENDS+=	docbook-xml>0:textproc/docbook-xml \
 		docbook-xsl>=0:textproc/docbook-xsl \
-		fop:textproc/fop \
 		xmllint:textproc/libxml2 \
 		xsltproc:textproc/libxslt
 
