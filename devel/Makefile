@@ -5883,6 +5883,7 @@
     SUBDIR += py-snakeviz
     SUBDIR += py-sniffio
     SUBDIR += py-sortedcontainers
+    SUBDIR += py-sortinghat
     SUBDIR += py-sourcemap
     SUBDIR += py-spark-parser
     SUBDIR += py-sparse
