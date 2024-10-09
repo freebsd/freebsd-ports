@@ -1,11 +1,12 @@
 bin/ncmpc
 %%LYRICS%%lib/ncmpc/lyrics/20-azlyrics.py
-%%LYRICS%%lib/ncmpc/lyrics/40-tekstowo.py
-%%LYRICS%%lib/ncmpc/lyrics/51-supermusic.py
-%%LYRICS%%lib/ncmpc/lyrics/60-google.py
+%%LYRICS%%lib/ncmpc/lyrics/25-musixmatch.py
 %%LYRICS%%lib/ncmpc/lyrics/30-karaoke_texty.py
+%%LYRICS%%lib/ncmpc/lyrics/40-tekstowo.py
 %%LYRICS%%lib/ncmpc/lyrics/50-genius.py
+%%LYRICS%%lib/ncmpc/lyrics/51-supermusic.py
 %%LYRICS%%lib/ncmpc/lyrics/52-zeneszoveg.py
+%%LYRICS%%lib/ncmpc/lyrics/60-google.py
 %%MANPAGES%%share/man/man1/ncmpc.1.gz
 %%NLS%%share/locale/cs/LC_MESSAGES/ncmpc.mo
 %%NLS%%share/locale/da/LC_MESSAGES/ncmpc.mo
