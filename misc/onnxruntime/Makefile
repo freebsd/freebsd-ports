@@ -36,7 +36,7 @@ CONFLICTS_BUILD=	abseil benchmark nsync googletest dlpack flatbuffers gsl mimall
 			nlohmann-json onnx protobuf psimd pthreadpool pybind11 re2
 
 dev-update-deps-in-makefiles: extract # this should be run when the port is updated
-	@${FILEDIR} ${DEPS_FILE}
+	@${FILEDIR}/convert-deps.sh ${DEPS_FILE}
 
 pre-configure:
 	@${REINPLACE_CMD} -E 's|;(https://.*)/([^/]+\.zip);|;file://${DISTDIR}/${DIST_SUBDIR}/\2;|' ${DEPS_FILE}
