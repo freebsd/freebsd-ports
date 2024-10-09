@@ -26,12 +26,16 @@
 %%SITE_PERL%%/URI/file/Unix.pm
 %%SITE_PERL%%/URI/file/Win32.pm
 %%SITE_PERL%%/URI/ftp.pm
+%%SITE_PERL%%/URI/ftpes.pm
+%%SITE_PERL%%/URI/ftps.pm
 %%SITE_PERL%%/URI/geo.pm
 %%SITE_PERL%%/URI/gopher.pm
 %%SITE_PERL%%/URI/http.pm
 %%SITE_PERL%%/URI/https.pm
 %%SITE_PERL%%/URI/icap.pm
 %%SITE_PERL%%/URI/icaps.pm
+%%SITE_PERL%%/URI/irc.pm
+%%SITE_PERL%%/URI/ircs.pm
 %%SITE_PERL%%/URI/ldap.pm
 %%SITE_PERL%%/URI/ldapi.pm
 %%SITE_PERL%%/URI/ldaps.pm
@@ -46,6 +50,7 @@
 %%SITE_PERL%%/URI/rsync.pm
 %%SITE_PERL%%/URI/rtsp.pm
 %%SITE_PERL%%/URI/rtspu.pm
+%%SITE_PERL%%/URI/scp.pm
 %%SITE_PERL%%/URI/sftp.pm
 %%SITE_PERL%%/URI/sip.pm
 %%SITE_PERL%%/URI/sips.pm
