@@ -1,6 +1,6 @@
---- configure.ac.orig	2018-07-18 08:34:29 UTC
+--- configure.ac.orig	2024-09-27 11:57:52 UTC
 +++ configure.ac
-@@ -23,7 +23,7 @@
+@@ -23,7 +23,7 @@ dnl Process this file with autoconf to produce a confi
  # DEALINGS IN THE SOFTWARE.
  
  dnl Process this file with autoconf to produce a configure script
