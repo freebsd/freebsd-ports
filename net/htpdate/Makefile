@@ -1,6 +1,5 @@
 PORTNAME=	htpdate
-PORTVERSION=	1.3.7
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.vervest.org/htp/archive/c/ \
 		http://twekkel.home.xs4all.nl/htp/
