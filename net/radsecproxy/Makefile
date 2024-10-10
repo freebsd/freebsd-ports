@@ -1,8 +1,9 @@
 PORTNAME=	radsecproxy
-DISTVERSION=	1.9.3
+DISTVERSION=	1.11.0
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
+# implicit-approval+: pi
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Generic RADIUS proxy
 WWW=		https://radsecproxy.github.io
