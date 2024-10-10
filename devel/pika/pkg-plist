@@ -109,6 +109,7 @@ include/pika/errors/try_catch_exception_ptr.hpp
 include/pika/exception.hpp
 include/pika/execution.hpp
 include/pika/execution/algorithms/bulk.hpp
+include/pika/execution/algorithms/continues_on.hpp
 include/pika/execution/algorithms/detail/helpers.hpp
 include/pika/execution/algorithms/detail/partial_algorithm.hpp
 include/pika/execution/algorithms/drop_operation_state.hpp
@@ -125,7 +126,6 @@ include/pika/execution/algorithms/split_tuple.hpp
 include/pika/execution/algorithms/start_detached.hpp
 include/pika/execution/algorithms/sync_wait.hpp
 include/pika/execution/algorithms/then.hpp
-include/pika/execution/algorithms/transfer.hpp
 include/pika/execution/algorithms/transfer_just.hpp
 include/pika/execution/algorithms/transfer_when_all.hpp
 include/pika/execution/algorithms/unpack.hpp
@@ -510,6 +510,7 @@ lib/cmake/pika/pika_utils.cmake
 lib/cmake/pika/scripts/pika_local_create_symbolic_link_directory.bat
 lib/cmake/pika/scripts/pika_local_create_symbolic_link_file.bat
 lib/cmake/pika/tests/c11_aligned_alloc.cpp
+lib/cmake/pika/tests/check_openmpi_continuations.cpp
 lib/cmake/pika/tests/cpuid.cpp
 lib/cmake/pika/tests/cxx11_std_atomic.cpp
 lib/cmake/pika/tests/cxx11_std_atomic_128bit.cpp
@@ -528,8 +529,9 @@ lib/cmake/pika/tests/cxx23_static_call_operator.cu
 lib/cmake/pika/tests/cxx23_static_call_operator.hip
 lib/cmake/pika/tests/cxx_lambda_capture_decltype.cpp
 lib/cmake/pika/tests/mm_prefetch.cpp
+lib/cmake/pika/tests/stdexec_continues_on.cpp
 lib/cmake/pika/tests/stdexec_sender_receiver_concepts.cpp
 lib/cmake/pika/tests/unistd_h.cpp
 lib/libpika.so
 lib/libpika.so.0
-lib/libpika.so.0.28.0
+lib/libpika.so.0.29.0
