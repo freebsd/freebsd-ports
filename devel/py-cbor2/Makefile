@@ -1,10 +1,10 @@
 PORTNAME=	cbor2
-PORTVERSION=	5.6.4
+PORTVERSION=	5.6.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dvl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure Python CBOR (de)serializer with extensive tag support
 WWW=		https://pypi.org/project/cbor2/
 
