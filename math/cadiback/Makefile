@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${NONEXISTENT}:math/cadical:patch
 LIB_DEPENDS=	libcadical.so:math/cadical
 
-USES=		compiler:c++0x gmake localbase:ldflags tar:xz
+USES=		gmake localbase:ldflags
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arminbiere
@@ -39,7 +39,6 @@ do-build:
 			-I `${MAKE} -V WRKSRC -C ${PORTSDIR}/math/cadical`/src \
 			-l cadical \
 			-o ${PORTNAME}
-#			-I ${WRKSRC_cadical}/src \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
