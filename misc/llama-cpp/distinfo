@@ -1,6 +1,6 @@
-TIMESTAMP = 1728434796
-SHA256 (ggerganov-llama.cpp-b3899_GH0.tar.gz) = 9b5b466c67ebc097c10e427a2c48f4a76e9a518f1148c7abfd73d363acab2381
-SIZE (ggerganov-llama.cpp-b3899_GH0.tar.gz) = 19153238
+TIMESTAMP = 1728531171
+SHA256 (ggerganov-llama.cpp-b3902_GH0.tar.gz) = 80e18d3aacd7e3bf23dd36e866f2cb88d7e66f3e2e46e98a107189f5340d113e
+SIZE (ggerganov-llama.cpp-b3902_GH0.tar.gz) = 19152967
 SHA256 (nomic-ai-kompute-4565194_GH0.tar.gz) = 95b52d2f0514c5201c7838348a9c3c9e60902ea3c6c9aa862193a212150b2bfc
 SIZE (nomic-ai-kompute-4565194_GH0.tar.gz) = 13540496
 SHA256 (121f915a09c1117d34aff6e8faf6d252aaf11027.patch) = 9a0c47ae3cb7dd51b6ce19187dafd48578210f69558f7c8044ee480471f1fd33
