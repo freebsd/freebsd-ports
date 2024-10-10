@@ -1,3 +1,46 @@
+  <vuln vid="cc1ac01e-86b0-11ef-9369-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.4.0</ge><lt>17.4.2</lt></range>
+	<range><ge>17.3.0</ge><lt>17.3.5</lt></range>
+	<range><ge>8.16</ge><lt>17.2.9</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/10/09/patch-release-gitlab-17-4-2-released/">
+	  <p>Run pipelines on arbitrary branches</p>
+	  <p>An attacker can impersonate arbitrary user</p>
+	  <p>SSRF in Analytics Dashboard</p>
+	  <p>Viewing diffs of MR with conflicts can be slow</p>
+	  <p>HTMLi in OAuth page</p>
+	  <p>Deploy Keys can push changes to an archived repository</p>
+	  <p>Guests can disclose project templates</p>
+	  <p>GitLab instance version disclosed to unauthorized users</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-9164</cvename>
+      <cvename>CVE-2024-8970</cvename>
+      <cvename>CVE-2024-8977</cvename>
+      <cvename>CVE-2024-9631</cvename>
+      <cvename>CVE-2024-6530</cvename>
+      <cvename>CVE-2024-9623</cvename>
+      <cvename>CVE-2024-5005</cvename>
+      <cvename>CVE-2024-9596</cvename>
+      <url>https://about.gitlab.com/releases/2024/10/09/patch-release-gitlab-17-4-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-10-09</discovery>
+      <entry>2024-10-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="79b1f4ee-860a-11ef-b2dc-cbccbf25b7ea">
     <topic>gitea -- token missing access control for packages</topic>
     <affects>
