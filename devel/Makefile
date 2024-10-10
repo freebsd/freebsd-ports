@@ -5878,6 +5878,7 @@
     SUBDIR += py-simpy
     SUBDIR += py-single-version
     SUBDIR += py-sip
+    SUBDIR += py-sirmordred
     SUBDIR += py-six
     SUBDIR += py-smmap
     SUBDIR += py-snakeviz
