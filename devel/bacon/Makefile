@@ -1,6 +1,6 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.21.0
+DISTVERSION=	3.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,29 +25,29 @@ CARGO_CRATES=	adler2-2.0.0 \
 		anstyle-parse-0.2.5 \
 		anstyle-query-1.1.1 \
 		anstyle-wincon-3.0.4 \
-		anyhow-1.0.88 \
+		anyhow-1.0.89 \
 		arc-swap-1.7.1 \
 		arrayvec-0.5.2 \
 		arrayvec-0.7.6 \
-		autocfg-1.3.0 \
+		autocfg-1.4.0 \
 		bitflags-1.3.2 \
 		bitflags-2.6.0 \
 		bstr-1.10.0 \
 		btoi-0.4.3 \
 		bumpalo-3.16.0 \
-		bytes-1.7.1 \
+		bytes-1.7.2 \
 		bytesize-1.3.0 \
 		camino-1.1.9 \
 		cargo-platform-0.1.8 \
 		cargo_metadata-0.18.1 \
-		cc-1.1.18 \
+		cc-1.1.28 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.38 \
-		clap-4.5.17 \
+		clap-4.5.20 \
 		clap-help-1.3.0 \
-		clap_builder-4.5.17 \
-		clap_derive-4.5.13 \
+		clap_builder-4.5.20 \
+		clap_derive-4.5.18 \
 		clap_lex-0.7.2 \
 		cli-log-2.0.0 \
 		clru-0.6.2 \
@@ -78,7 +78,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		fastrand-2.1.1 \
 		file-size-1.0.3 \
 		filetime-0.2.25 \
-		flate2-1.0.33 \
+		flate2-1.0.34 \
 		form_urlencoded-1.2.1 \
 		fsevent-sys-4.1.0 \
 		getrandom-0.2.15 \
@@ -133,15 +133,16 @@ CARGO_CRATES=	adler2-2.0.0 \
 		gix-worktree-state-0.7.0 \
 		gix-worktree-stream-0.9.0 \
 		hashbrown-0.14.5 \
+		hashbrown-0.15.0 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		home-0.5.9 \
 		human_format-1.1.0 \
-		iana-time-zone-0.1.60 \
+		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.5.0 \
 		imara-diff-0.1.7 \
-		indexmap-2.5.0 \
+		indexmap-2.6.0 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		io-close-0.3.7 \
@@ -154,7 +155,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		kstring-2.0.2 \
 		lazy-regex-3.3.0 \
 		lazy-regex-proc_macros-3.3.0 \
-		libc-0.2.158 \
+		libc-0.2.159 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \
@@ -170,22 +171,23 @@ CARGO_CRATES=	adler2-2.0.0 \
 		num-conv-0.1.0 \
 		num-traits-0.2.19 \
 		num_threads-0.1.7 \
-		once_cell-1.20.0 \
+		once_cell-1.20.2 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		percent-encoding-2.3.1 \
 		powerfmt-0.2.0 \
-		proc-macro2-1.0.86 \
+		proc-macro2-1.0.87 \
 		proc-status-0.1.1 \
 		prodash-28.0.0 \
 		quote-1.0.37 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.5.4 \
+		redox_syscall-0.5.7 \
 		redox_users-0.4.6 \
-		regex-1.10.6 \
-		regex-automata-0.4.7 \
-		regex-syntax-0.8.4 \
+		regex-1.11.0 \
+		regex-automata-0.4.8 \
+		regex-syntax-0.8.5 \
+		rustc-hash-2.0.0 \
 		rustix-0.38.37 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
@@ -194,7 +196,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		serde-1.0.210 \
 		serde_derive-1.0.210 \
 		serde_json-1.0.128 \
-		serde_spanned-0.6.7 \
+		serde_spanned-0.6.8 \
 		sha1_smol-1.0.1 \
 		shell-words-1.1.0 \
 		shlex-1.3.0 \
@@ -206,12 +208,12 @@ CARGO_CRATES=	adler2-2.0.0 \
 		strict-0.2.0 \
 		strsim-0.11.1 \
 		syn-1.0.109 \
-		syn-2.0.77 \
-		tempfile-3.12.0 \
+		syn-2.0.79 \
+		tempfile-3.13.0 \
 		termimad-0.30.0 \
 		terminal-light-1.5.0 \
-		thiserror-1.0.63 \
-		thiserror-impl-1.0.63 \
+		thiserror-1.0.64 \
+		thiserror-impl-1.0.64 \
 		time-0.3.36 \
 		time-core-0.1.2 \
 		time-macros-0.2.18 \
@@ -219,13 +221,13 @@ CARGO_CRATES=	adler2-2.0.0 \
 		tinyvec_macros-0.1.1 \
 		toml-0.8.19 \
 		toml_datetime-0.6.8 \
-		toml_edit-0.22.20 \
+		toml_edit-0.22.22 \
 		uluru-3.1.0 \
-		unicode-bidi-0.3.15 \
+		unicode-bidi-0.3.17 \
 		unicode-bom-2.0.3 \
 		unicode-ident-1.0.13 \
-		unicode-normalization-0.1.23 \
-		unicode-width-0.1.13 \
+		unicode-normalization-0.1.24 \
+		unicode-width-0.1.14 \
 		url-2.5.2 \
 		utf8parse-0.2.2 \
 		version_check-0.9.5 \
@@ -264,7 +266,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		winnow-0.5.40 \
-		winnow-0.6.18 \
+		winnow-0.6.20 \
 		xterm-query-0.4.1 \
 		zerocopy-0.7.35 \
 		zerocopy-derive-0.7.35
