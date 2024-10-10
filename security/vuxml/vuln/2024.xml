@@ -3,7 +3,7 @@
     <affects>
       <package>
 	<name>firefox</name>
-	<range><lt>131.0,2</lt></range>
+	<range><lt>131.0.2,2</lt></range>
       </package>
       <package>
 	<name>firefox-esr</name>
