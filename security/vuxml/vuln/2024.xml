@@ -1,3 +1,36 @@
+  <vuln vid="2fb13238-872d-11ef-bd1e-b42e991fc52e">
+    <topic>firefox -- use-after-free code execution</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>131.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.3.1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1923344">
+	  <p>An attacker was able to achieve code execution in the
+	content process by exploiting a use-after-free in Animation
+	timelines. We have had reports of this vulnerability being
+	exploited in the wild.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-9680</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-9680</url>
+    </references>
+    <dates>
+      <discovery>2024-10-09</discovery>
+      <entry>2024-10-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cc1ac01e-86b0-11ef-9369-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
