@@ -1,6 +1,6 @@
 PORTNAME=	re
 PORTVERSION=	1.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
@@ -9,9 +9,6 @@ COMMENT=	Pure OCaml regular expressions
 WWW=		https://github.com/ocaml/ocaml-re
 
 LICENSE=	LGPL21
-
-BUILD_DEPENDS=	${SA_DIR}/seq/META:devel/ocaml-seq
-RUN_DEPENDS=	${SA_DIR}/seq/META:devel/ocaml-seq
 
 USES=		ocaml:dune
 USE_GITHUB=	yes
@@ -23,8 +20,6 @@ DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	CHANGES.md LICENSE.md README.md
 
 OPTIONS_DEFINE=	DOCS
-
-SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
 
 post-patch:
 	${REINPLACE_CMD} \

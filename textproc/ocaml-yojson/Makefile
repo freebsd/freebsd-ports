@@ -1,5 +1,6 @@
 PORTNAME=	yojson
 DISTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 PKGNAMEPREFIX=	ocaml-
 
@@ -10,9 +11,7 @@ WWW=		https://github.com/ocaml-community/yojson/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	${SA_DIR}/seq/META:devel/ocaml-seq \
-		cppo:devel/ocaml-cppo
-RUN_DEPENDS=	${SA_DIR}/seq/META:devel/ocaml-seq
+BUILD_DEPENDS=	cppo:devel/ocaml-cppo
 
 USES=		ocaml:dune
 USE_GITHUB=	yes
@@ -26,7 +25,6 @@ PORTDOCS=	CHANGES.md LICENSE.md README.md odoc-pages/index.mld
 OPTIONS_DEFINE=	DOCS
 
 DUNE_INSTALL_TARGETS=	${OCAML_PACKAGES}
-SA_DIR=			${LOCALBASE}/${OCAML_SITELIBDIR}
 
 post-install:
 	@${STRIP_CMD} \
