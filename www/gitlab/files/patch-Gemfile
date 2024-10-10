@@ -1,4 +1,4 @@
---- Gemfile.orig	2024-09-18 10:07:13 UTC
+--- Gemfile.orig	2024-10-09 10:29:44 UTC
 +++ Gemfile
 @@ -156,7 +156,7 @@ gem 'graphql', '~> 2.3.14', feature_category: :api
  
@@ -27,18 +27,6 @@
  gem 'google-cloud-artifact_registry-v1', '~> 0.11.0', feature_category: :shared
  gem 'google-cloud-compute-v1', '~> 2.6.0', feature_category: :shared
  
-@@ -231,9 +231,9 @@ gem 'elasticsearch-api', '7.17.11', feature_category: 
- gem 'elasticsearch-model', '~> 7.2', feature_category: :global_search
- gem 'elasticsearch-rails', '~> 7.2', require: 'elasticsearch/rails/instrumentation', feature_category: :global_search
- gem 'elasticsearch-api', '7.17.11', feature_category: :global_search
--gem 'aws-sdk-core', '~> 3.202.0' # rubocop:todo Gemfile/MissingFeatureCategory
-+gem 'aws-sdk-core', '~> 3.202' # rubocop:todo Gemfile/MissingFeatureCategory
- gem 'aws-sdk-cloudformation', '~> 1' # rubocop:todo Gemfile/MissingFeatureCategory
--gem 'aws-sdk-s3', '~> 1.159.0' # rubocop:todo Gemfile/MissingFeatureCategory
-+gem 'aws-sdk-s3', '~> 1.159' # rubocop:todo Gemfile/MissingFeatureCategory
- gem 'faraday-typhoeus', '~> 1.1', feature_category: :global_search
- gem 'faraday_middleware-aws-sigv4', '~> 1.0.1', feature_category: :global_search
- # Used with Elasticsearch to support http keep-alive connections
 @@ -271,7 +271,7 @@ group :puma do
  gem 'rack-timeout', '~> 0.7.0', require: 'rack/timeout/base' # rubocop:todo Gemfile/MissingFeatureCategory
  
