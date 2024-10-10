@@ -554,5 +554,5 @@ bin/alt-ergo
 %%OCAML_SITELIBDIR%%/alt-ergo-parsers/AltErgoParsers.cmxs
 %%DATADIR%%/preludes/fpa-theory-2017-01-04-16h00.ae
 %%DATADIR%%/preludes/fpa-theory-2019-06-14-11h00.ae
-%%DATADIR%%/alt-ergo/preludes/fpa-theory-2019-10-08-19h00.ae
+%%DATADIR%%/preludes/fpa-theory-2019-10-08-19h00.ae
 %%MANPAGES%%share/man/man1/alt-ergo.1.gz
