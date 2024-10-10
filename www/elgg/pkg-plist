@@ -1435,6 +1435,7 @@
 %%WWWDIR%%/vendor/cakephp/core/ConventionsTrait.php
 %%WWWDIR%%/vendor/cakephp/core/Exception/CakeException.php
 %%WWWDIR%%/vendor/cakephp/core/Exception/MissingPluginException.php
+%%WWWDIR%%/vendor/cakephp/core/EventAwareApplicationInterface.php
 %%WWWDIR%%/vendor/cakephp/core/HttpApplicationInterface.php
 %%WWWDIR%%/vendor/cakephp/core/InstanceConfigTrait.php
 %%WWWDIR%%/vendor/cakephp/core/LICENSE.txt
@@ -1442,6 +1443,7 @@
 %%WWWDIR%%/vendor/cakephp/core/Plugin.php
 %%WWWDIR%%/vendor/cakephp/core/PluginApplicationInterface.php
 %%WWWDIR%%/vendor/cakephp/core/PluginCollection.php
+%%WWWDIR%%/vendor/cakephp/core/PluginConfig.php
 %%WWWDIR%%/vendor/cakephp/core/PluginInterface.php
 %%WWWDIR%%/vendor/cakephp/core/README.md
 %%WWWDIR%%/vendor/cakephp/core/Retry/CommandRetry.php
@@ -1467,6 +1469,7 @@
 %%WWWDIR%%/vendor/cakephp/database/Exception/MissingDriverException.php
 %%WWWDIR%%/vendor/cakephp/database/Exception/MissingExtensionException.php
 %%WWWDIR%%/vendor/cakephp/database/Exception/NestedTransactionRollbackException.php
+%%WWWDIR%%/vendor/cakephp/database/Exception/QueryException.php
 %%WWWDIR%%/vendor/cakephp/database/Expression/AggregateExpression.php
 %%WWWDIR%%/vendor/cakephp/database/Expression/BetweenExpression.php
 %%WWWDIR%%/vendor/cakephp/database/Expression/CaseExpressionTrait.php
@@ -1517,7 +1520,6 @@
 %%WWWDIR%%/vendor/cakephp/database/Schema/TableSchema.php
 %%WWWDIR%%/vendor/cakephp/database/Schema/TableSchemaInterface.php
 %%WWWDIR%%/vendor/cakephp/database/SchemaCache.php
-%%WWWDIR%%/vendor/cakephp/database/SqliteCompiler.php
 %%WWWDIR%%/vendor/cakephp/database/SqlserverCompiler.php
 %%WWWDIR%%/vendor/cakephp/database/Statement/SqliteStatement.php
 %%WWWDIR%%/vendor/cakephp/database/Statement/SqlserverStatement.php
@@ -15902,11 +15904,6 @@
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/bootstrap.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/bootstrap80.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/composer.json
-%%WWWDIR%%/vendor/symfony/polyfill-php72/LICENSE
-%%WWWDIR%%/vendor/symfony/polyfill-php72/Php72.php
-%%WWWDIR%%/vendor/symfony/polyfill-php72/README.md
-%%WWWDIR%%/vendor/symfony/polyfill-php72/bootstrap.php
-%%WWWDIR%%/vendor/symfony/polyfill-php72/composer.json
 %%WWWDIR%%/vendor/symfony/polyfill-php83/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-php83/Php83.php
 %%WWWDIR%%/vendor/symfony/polyfill-php83/README.md
