@@ -208,6 +208,7 @@
     SUBDIR += bsdnt
     SUBDIR += btor2tools
     SUBDIR += cadabra2
+    SUBDIR += cadiback
     SUBDIR += cadical
     SUBDIR += cado-nfs
     SUBDIR += calc
