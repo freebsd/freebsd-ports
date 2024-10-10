@@ -1,3 +1,3 @@
-TIMESTAMP = 1549285491
-SHA256 (freedesktop-libfprint-fprintd-V_0_8_1_GH0.tar.gz) = 7370e500ad9228194c575f915e215668d5d42958decc0485024f8dbfd646d21a
-SIZE (freedesktop-libfprint-fprintd-V_0_8_1_GH0.tar.gz) = 92276
+TIMESTAMP = 1725709555
+SHA256 (fprintd-v1.94.4.tar.bz2) = dfcd6c748e95773fbfcbe07e8cb145b6e31868e9a360d48a13eb34739bf23560
+SIZE (fprintd-v1.94.4.tar.bz2) = 664460
