@@ -1715,6 +1715,7 @@
     SUBDIR += py-grafana-dashboard-manager
     SUBDIR += py-graphite-api
     SUBDIR += py-grequests
+    SUBDIR += py-grimoirelab
     SUBDIR += py-grip
     SUBDIR += py-gunicorn
     SUBDIR += py-h2
