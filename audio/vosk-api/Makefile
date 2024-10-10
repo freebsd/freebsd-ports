@@ -1,6 +1,7 @@
 PORTNAME=	vosk-api
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.50
+PORTREVISION=	1
 CATEGORIES=	audio # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
