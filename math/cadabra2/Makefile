@@ -1,6 +1,5 @@
 PORTNAME=	cadabra2
-DISTVERSION=	2.5.4
-PORTREVISION=	2
+DISTVERSION=	2.5.6
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +23,7 @@ LIB_DEPENDS=	${PY_BOOST} \
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sympy/__init__.py:math/py-sympy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		compiler:c++14-lang cmake:noninja dos2unix gettext-runtime gnome localbase:ldflags pkgconfig python sqlite tex # USES=python picks random python versions
+USES=		compiler:c++17-lang cmake:noninja dos2unix gettext-runtime gnome localbase:ldflags pkgconfig python sqlite tex # USES=python picks random python versions
 USE_GNOME=	glib20 glibmm libsigc++20
 USE_TEX=	base latex texhash
 
