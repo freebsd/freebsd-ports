@@ -1,0 +1,6 @@
+This package is for reading file backward line by line as unicode in a
+memory efficient manner for both Python 2.7 and Python 3.
+
+It currently supports ascii, latin-1, and utf-8 encodings.
+
+It supports "\r", "\r\n", and "\n" as new lines.

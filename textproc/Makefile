@@ -1380,6 +1380,7 @@
     SUBDIR += py-fasttext-predict
     SUBDIR += py-faust-cchardet
     SUBDIR += py-feedparser
+    SUBDIR += py-file-read-backwards
     SUBDIR += py-fingerprints
     SUBDIR += py-flor
     SUBDIR += py-fluent.syntax
