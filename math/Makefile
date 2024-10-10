@@ -969,6 +969,7 @@
     SUBDIR += py-hepstats
     SUBDIR += py-heyoka
     SUBDIR += py-hmmlearn
+    SUBDIR += py-hypernetx
     SUBDIR += py-igraph
     SUBDIR += py-iminuit
     SUBDIR += py-intspan
