@@ -1,3 +1,31 @@
+  <vuln vid="64e299b6-d12b-4a7a-a94f-ab133703925a">
+    <topic>vscode -- Visual Studio Code for Linux Remote Code Execution Vulnerability</topic>
+    <affects>
+      <package>
+	<name>vscode</name>
+	<range><lt>1.94.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>VSCode developers report:</p>
+	<blockquote cite="https://github.com/microsoft/vscode/security/advisories/GHSA-g56j-w527-8x6f">
+	  <p>Visual Studio Code for Linux Remote Code Execution Vulnerability</p>
+	  <p>A remote code execution vulnerability exists in VS Code 1.94.0 and earlier versions in the elevated save flow.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-43601</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-43601</url>
+      <url>https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-43601</url>
+    </references>
+    <dates>
+      <discovery>2024-10-08</discovery>
+      <entry>2024-10-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2fb13238-872d-11ef-bd1e-b42e991fc52e">
     <topic>firefox -- use-after-free code execution</topic>
     <affects>
