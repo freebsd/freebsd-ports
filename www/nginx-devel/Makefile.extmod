@@ -45,7 +45,7 @@ ECHO_VARS=		DSO_EXTMODS+=echo
 DRIZZLE_LIB_DEPENDS=	libdrizzle.so:databases/libdrizzle
 DRIZZLE_CONFIGURE_ENV=	LIBDRIZZLE_INC=${LOCALBASE}/include \
 			LIBDRIZZLE_LIB=${LOCALBASE}/lib
-DRIZZLE_GH_TUPLE=	openresty:drizzle-nginx-module:3504fc6:drizzle
+DRIZZLE_GH_TUPLE=	openresty:drizzle-nginx-module:c631276:drizzle
 DRIZZLE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config
 DRIZZLE_VARS=		DSO_EXTMODS+=drizzle
 

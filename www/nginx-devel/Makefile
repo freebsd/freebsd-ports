@@ -1,6 +1,5 @@
 PORTNAME?=	nginx
-PORTVERSION=	1.27.1
-PORTREVISION=	5
+PORTVERSION=	1.27.2
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -262,6 +261,10 @@ NJS_CONFIGURE_ARGS+=	--no-libxml2
 . endif
 .endif
 
+.if ${PORT_OPTIONS:MCT}
+IGNORE=	patching is required for the CT third-party module
+.endif
+
 pre-everything::
 	@${ECHO_MSG}
 .if ${PORT_OPTIONS:MHTTP_UPSTREAM_FAIR}
@@ -275,9 +278,6 @@ pre-everything::
 post-extract-NAXSI-on:
 	@${RMDIR} ${WRKSRC_naxsi}/naxsi_src/libinjection
 	@${LN} -s ${WRKSRC_libinjection} ${WRKSRC_naxsi}/naxsi_src/libinjection
-
-pre-patch-HTTPV3-on:
-	@${MV} ${WRKSRC}/README ${WRKSRC}/README.1st
 
 post-patch:
 	@${REINPLACE_CMD} 's!%%HTTP_PORT%%!${HTTP_PORT}!; \
