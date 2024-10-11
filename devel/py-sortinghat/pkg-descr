@@ -1,0 +1,20 @@
+Sorting Hat maintains an SQL database of unique identities of
+communities members across (potentially) many different sources.
+Identities corresponding to the same real person can be merged in the
+same individual, with a unique uuid. For each individual, a profile can
+be defined, with the name and other data shown for the corresponding
+person by default.
+
+In addition, each individual can be related to one or more affiliations,
+for different time periods. This will usually correspond to different
+organizations in which the person was employed during those time periods.
+
+Sorting Hat is a part of the GrimoireLab toolset, which provides Python
+modules and scripts to analyze data sources with information about
+software development, and allows the production of interactive
+dashboards to visualize that information.
+
+In the context of GrimoireLab, Sorting Hat is usually run after data is
+retrieved with Perceval, to store the identities obtained into its
+database, and later merge them into individuals (and maybe affiliate
+them).

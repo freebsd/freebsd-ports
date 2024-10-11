@@ -1,6 +1,7 @@
 PORTNAME=	dcmtk
 DISTVERSIONPREFIX=	${PORTNAME:tu}-
 DISTVERSION=	3.6.8
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 
 PATCH_SITES=	https://github.com/DCMTK/${PORTNAME}/commit/
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		compiler:c++11-lang cmake cpe gnome jpeg ssl
+USES=		compiler:c++11-lang cmake cpe gnome jpeg pathfix ssl
 CPE_VENDOR=	offis
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}

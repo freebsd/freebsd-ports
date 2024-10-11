@@ -1,4 +1,4 @@
-TIMESTAMP = 1725595477
+TIMESTAMP = 1728533361
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
 SIZE (rust/crates/adler-1.0.2.crate) = 12778
 SHA256 (rust/crates/aho-corasick-0.7.20.crate) = cc936419f96fa211c1b9166887b38e5e40b19958e5b895be7c1f93adec7071ac
@@ -269,5 +269,5 @@ SHA256 (rust/crates/xml-rs-0.8.14.crate) = 52839dc911083a8ef63efa4d039d1f58b5e40
 SIZE (rust/crates/xml-rs-0.8.14.crate) = 51905
 SHA256 (rust/crates/yaml-rust-0.4.5.crate) = 56c1936c4cc7a1c9ab21a1ebb602eb942ba868cbd44a99cb7cdc5892335e1c85
 SIZE (rust/crates/yaml-rust-0.4.5.crate) = 47783
-SHA256 (kivikakk-comrak-v0.28.0_GH0.tar.gz) = 7e1ef40ebf2a27faaad7c2068e32d2109726f6daf42ba64705e7a250a9b0a162
-SIZE (kivikakk-comrak-v0.28.0_GH0.tar.gz) = 334696
+SHA256 (kivikakk-comrak-v0.29.0_GH0.tar.gz) = 3929895c2c3e42d0d1a6efddd66a3c62282b81b62dd74229f6c8f31ac1dcb333
+SIZE (kivikakk-comrak-v0.29.0_GH0.tar.gz) = 335250

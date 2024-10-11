@@ -1,6 +1,6 @@
 PORTNAME=	fprintd
-DISTVERSIONPREFIX=	V_
-DISTVERSION=	0_8_1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.94.4
 CATEGORIES=	security
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -10,35 +10,19 @@ WWW=		https://www.freedesktop.org/wiki/Software/fprint/fprintd/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfprint.so:security/libfprint \
-		libdbus-1.so:devel/dbus \
-		libdbus-glib-1.so:devel/dbus-glib \
+LIB_DEPENDS=	libbasu.so:devel/basu \
+		libfprint-2.so:security/libfprint \
 		libpolkit-gobject-1.so:sysutils/polkit
 
-USES=		autoreconf:build gettext gmake gnome libtool pkgconfig
-USE_GNOME=	intltool glib20
+USES=		gettext gnome libtool meson pkgconfig
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.freedesktop.org
+GL_ACCOUNT=	libfprint
+USE_GNOME=	glib20 intltool
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	freedesktop
-GH_PROJECT=	libfprint-${PORTNAME}
+MESON_ARGS=	-Dlibsystemd=basu \
+		-Dsystemd=false
 
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 INSTALL_TARGET=	install-strip
-MAKE_ARGS=	sysconfdir="${ETCDIR}/"
-
-OPTIONS_DEFINE=	NLS PAM
-OPTIONS_SUB=	yes
-
-NLS_CONFIGURE_ENABLE=	nls
-PAM_CONFIGURE_ENABLE=	pam
-
-# Remove doc build ;  Doesn't install with/without
-# Also less deps needed
-pre-configure:
-	${REINPLACE_CMD} -e '/pushd/d ; /docize/d ; /popd/d' ${WRKSRC}/autogen.sh
-	${REINPLACE_CMD} -e '73,81d' ${WRKSRC}/doc/Makefile.am
-	${REINPLACE_CMD} -e '/DOC_CHECK/d' ${WRKSRC}/configure.ac
-	(cd ${WRKSRC} && ${SETENV} NOCONFIGURE=1 ${SH} autogen.sh)
 
 .include <bsd.port.mk>

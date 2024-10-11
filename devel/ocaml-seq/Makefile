@@ -11,6 +11,9 @@ WWW=		https://github.com/c-cube/seq
 
 LICENSE=	LGPL21
 
+DEPRECATED=	Seq is provided by lang/ocaml.
+EXPIRATION_DATE=	2024-12-10
+
 USES=		ocaml:dune
 USE_GITHUB=	yes
 GH_ACCOUNT=	c-cube

@@ -208,6 +208,7 @@
     SUBDIR += bsdnt
     SUBDIR += btor2tools
     SUBDIR += cadabra2
+    SUBDIR += cadiback
     SUBDIR += cadical
     SUBDIR += cado-nfs
     SUBDIR += calc
@@ -339,6 +340,7 @@
     SUBDIR += flann
     SUBDIR += flexfloat
     SUBDIR += flexiblas
+    SUBDIR += flint
     SUBDIR += flint2
     SUBDIR += flintqs
     SUBDIR += flopc++
@@ -969,6 +971,7 @@
     SUBDIR += py-hepstats
     SUBDIR += py-heyoka
     SUBDIR += py-hmmlearn
+    SUBDIR += py-hypernetx
     SUBDIR += py-igraph
     SUBDIR += py-iminuit
     SUBDIR += py-intspan

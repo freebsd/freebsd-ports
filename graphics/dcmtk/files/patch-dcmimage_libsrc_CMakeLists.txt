@@ -1,0 +1,8 @@
+--- dcmimage/libsrc/CMakeLists.txt.orig	2024-09-22 09:00:50 UTC
++++ dcmimage/libsrc/CMakeLists.txt
+@@ -25,4 +25,4 @@ DCMTK_TARGET_LINK_MODULES(dcmimage oflog dcmdata dcmim
+ )
+ 
+ DCMTK_TARGET_LINK_MODULES(dcmimage oflog dcmdata dcmimgle)
+-DCMTK_TARGET_LINK_LIBRARIES(dcmimage ${LIBTIFF_LIBS} ${LIBPNG_LIBS})
++DCMTK_TARGET_LINK_LIBRARIES(dcmimage TIFF::tiff ${LIBPNG_LIBS})

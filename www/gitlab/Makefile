@@ -5,7 +5,6 @@ DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
 .endif
-PORTREVISION=	1
 CATEGORIES=	www devel
 
 # include patch to fix database migration
@@ -135,9 +134,9 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-elasticsearch-model713>=7.2<8:textproc/rubygem-elasticsearch-model713 \
 	rubygem-elasticsearch-rails7>=7.2<8:textproc/rubygem-elasticsearch-rails7 \
 	rubygem-elasticsearch-api7>=7.17.11<7.18:textproc/rubygem-elasticsearch-api7 \
-	rubygem-aws-sdk-core>=3.202.0<4:devel/rubygem-aws-sdk-core \
-	rubygem-aws-sdk-cloudformation>=1<2:devel/rubygem-aws-sdk-cloudformation \
-	rubygem-aws-sdk-s3>=1.159.0<2:devel/rubygem-aws-sdk-s3 \
+	rubygem-aws-sdk-core-gitlab>=3.202.0<3.203:devel/rubygem-aws-sdk-core-gitlab \
+	rubygem-aws-sdk-cloudformation-gitlab>=1<2:devel/rubygem-aws-sdk-cloudformation-gitlab \
+	rubygem-aws-sdk-s3-gitlab>=1.159.0<1.160:devel/rubygem-aws-sdk-s3-gitlab \
 	rubygem-faraday-typhoeus>=1.1<2:www/rubygem-faraday-typhoeus \
 	rubygem-faraday_middleware-aws-sigv4>=1.0.1<1.1:devel/rubygem-faraday_middleware-aws-sigv4 \
 	rubygem-typhoeus>=1.4.0<1.5:www/rubygem-typhoeus \

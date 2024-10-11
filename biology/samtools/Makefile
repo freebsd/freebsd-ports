@@ -1,6 +1,5 @@
 PORTNAME=	samtools
-DISTVERSION=	1.17
-PORTREVISION=	1
+DISTVERSION=	1.21
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,6 +9,7 @@ WWW=		https://www.htslib.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	htslib>=1.21:biology/htslib
 LIB_DEPENDS=	libhts.so:biology/htslib
 TEST_DEPENDS=	bash:shells/bash
 

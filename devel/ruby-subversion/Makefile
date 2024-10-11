@@ -6,8 +6,8 @@ WWW=		https://subversion.apache.org/
 
 USES+=		compiler:c11 ruby
 
-PORTREVISION_LATEST=	2
-PORTREVISION_LTS=		2
+PORTREVISION_LATEST=	0
+PORTREVISION_LTS=		0
 
 SVN_BUILD_BINDINGS=	yes
 

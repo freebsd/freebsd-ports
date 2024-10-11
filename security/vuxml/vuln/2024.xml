@@ -1,3 +1,231 @@
+  <vuln vid="64e299b6-d12b-4a7a-a94f-ab133703925a">
+    <topic>vscode -- Visual Studio Code for Linux Remote Code Execution Vulnerability</topic>
+    <affects>
+      <package>
+	<name>vscode</name>
+	<range><lt>1.94.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>VSCode developers report:</p>
+	<blockquote cite="https://github.com/microsoft/vscode/security/advisories/GHSA-g56j-w527-8x6f">
+	  <p>Visual Studio Code for Linux Remote Code Execution Vulnerability</p>
+	  <p>A remote code execution vulnerability exists in VS Code 1.94.0 and earlier versions in the elevated save flow.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-43601</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-43601</url>
+      <url>https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-43601</url>
+    </references>
+    <dates>
+      <discovery>2024-10-08</discovery>
+      <entry>2024-10-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2fb13238-872d-11ef-bd1e-b42e991fc52e">
+    <topic>firefox -- use-after-free code execution</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>131.0.2,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>128.3.1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@mozilla.org reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1923344">
+	  <p>An attacker was able to achieve code execution in the
+	content process by exploiting a use-after-free in Animation
+	timelines. We have had reports of this vulnerability being
+	exploited in the wild.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-9680</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2024-9680</url>
+    </references>
+    <dates>
+      <discovery>2024-10-09</discovery>
+      <entry>2024-10-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cc1ac01e-86b0-11ef-9369-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>17.4.0</ge><lt>17.4.2</lt></range>
+	<range><ge>17.3.0</ge><lt>17.3.5</lt></range>
+	<range><ge>8.16</ge><lt>17.2.9</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2024/10/09/patch-release-gitlab-17-4-2-released/">
+	  <p>Run pipelines on arbitrary branches</p>
+	  <p>An attacker can impersonate arbitrary user</p>
+	  <p>SSRF in Analytics Dashboard</p>
+	  <p>Viewing diffs of MR with conflicts can be slow</p>
+	  <p>HTMLi in OAuth page</p>
+	  <p>Deploy Keys can push changes to an archived repository</p>
+	  <p>Guests can disclose project templates</p>
+	  <p>GitLab instance version disclosed to unauthorized users</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-9164</cvename>
+      <cvename>CVE-2024-8970</cvename>
+      <cvename>CVE-2024-8977</cvename>
+      <cvename>CVE-2024-9631</cvename>
+      <cvename>CVE-2024-6530</cvename>
+      <cvename>CVE-2024-9623</cvename>
+      <cvename>CVE-2024-5005</cvename>
+      <cvename>CVE-2024-9596</cvename>
+      <url>https://about.gitlab.com/releases/2024/10/09/patch-release-gitlab-17-4-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2024-10-09</discovery>
+      <entry>2024-10-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="79b1f4ee-860a-11ef-b2dc-cbccbf25b7ea">
+    <topic>gitea -- token missing access control for packages</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.22.3</lt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+       <h1>Problem Description:</h1>
+       <ul>
+       <li>Fix bug when a token is given public only</li>
+       </ul>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/pull/32204</url>
+    </references>
+    <dates>
+      <discovery>2024-10-06</discovery>
+      <entry>2024-10-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8727b513-855b-11ef-9e50-6805ca2fa271">
+    <topic>powerdns-recursor -- denial of service</topic>
+    <affects>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><lt>5.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://blog.powerdns.com/2024/10/03/powerdns-recursor-4-9-9-5-0-9-5-1-2-released">
+	  <p>PowerDNS Security Advisory 2024-04: Crafted responses can lead to
+	   a denial of service due to cache inefficiencies in the Recursor</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-25590</cvename>
+      <url>https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2024-04.html</url>
+    </references>
+    <dates>
+      <discovery>2024-10-03</discovery>
+      <entry>2024-10-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7217f6e8-3ff4-4387-845d-d1744bb7f95e">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>129.0.6668.100</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>129.0.6668.100</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/10/stable-channel-update-for-desktop_8.html">
+	 <p>This update includes 3 security fixes:</p>
+	 <ul>
+	    <li>[368241697] High CVE-2024-9602: Type Confusion in V8. Reported by Seunghyun Lee (@0x10n) on 2024-09-20</li>
+	    <li>[367818758] High CVE-2024-9603: Type Confusion in V8. Reported by @WeShotTheMoon and @Nguyen Hoang Thach of starlabs on 2024-09-18</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-9602</cvename>
+      <cvename>CVE-2024-9603</cvename>
+      <url>https://chromereleases.googleblog.com/2024/10/stable-channel-update-for-desktop_8.html</url>
+    </references>
+    <dates>
+      <discovery>2024-10-08</discovery>
+      <entry>2024-10-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="83117378-f773-4617-bf74-477d569dcd74">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>129.0.6668.89</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>129.0.6668.89</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2024/10/stable-channel-update-for-desktop.html">
+	 <p>This update includes 4 security fixes:</p>
+	 <ul>
+	    <li>[367764861] High CVE-2024-7025: Integer overflow in Layout. Reported by Tashita Software Security on 2024-09-18</li>
+	    <li>[368208152] High CVE-2024-9369: Insufficient data validation in Mojo. Reported by Xiantong Hou and Pisanbao of Wuheng Lab on 2024-09-19</li>
+	    <li>[368311899] High CVE-2024-9370: Inappropriate implementation in V8. Reported by Nguyễn Hoàng Thạch, Đỗ Minh Tuấn, and Wu JinLin of STAR Labs SG Pte. Ltd. on 2024-09-19</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-7025</cvename>
+      <cvename>CVE-2024-9369</cvename>
+      <cvename>CVE-2024-9370</cvename>
+      <url>https://chromereleases.googleblog.com/2024/10/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2024-10-01</discovery>
+      <entry>2024-10-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2368755b-83f6-11ef-8d2e-a04a5edf46d9">
     <topic>Unbound -- Denial of service attack</topic>
     <affects>
@@ -81,7 +309,7 @@
       </package>
       <package>
 	<name>thunderbird</name>
-	<range><lt>128.3.0,1</lt></range>
+	<range><lt>128.3.0</lt></range>
       </package>
     </affects>
     <description>

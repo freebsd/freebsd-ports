@@ -1,10 +1,10 @@
 PORTNAME=	temperature.app
-PORTVERSION=	1.5
+DISTVERSION=	1.5
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	https://www.dockapps.net/download/
-DISTNAME=	Temperature.app-${PORTVERSION}
+DISTNAME=	Temperature.app-${DISTVERSION}
 
-MAINTAINER=	mbeis@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockable WindowMaker applet which displays the local temperature
 WWW=		https://www.dockapps.net/temperatureapp
 
@@ -16,8 +16,8 @@ RUN_DEPENDS=	wget:ftp/wget
 USES=		xorg
 USE_XORG=	x11 xpm
 
-PORTDOCS=	README
 PLIST_FILES=	bin/Temperature.app
+PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 

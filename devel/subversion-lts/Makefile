@@ -1,4 +1,4 @@
-PORTREVISION=	4
+PORTREVISION=	0
 PKGNAMESUFFIX=	-lts
 
 MAINTAINER=	michaelo@apache.org

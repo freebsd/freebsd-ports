@@ -77,9 +77,9 @@ IMAGEMAGICK_DEFAULT?=	7
 JAVA_DEFAULT?=		8
 # Possible values: 3.4.0, 3.99
 .  if (defined(WANT_LAZARUS_DEVEL) && !empty(WANT_LAZARUS_DEVEL)) || ${ARCH:Maarch64}
-LAZARUS_DEFAULT?=	3.99
+LAZARUS_DEFAULT?=	4.99
 .  else
-LAZARUS_DEFAULT?=	3.4.0
+LAZARUS_DEFAULT?=	3.6.0
 .  endif
 # Possible values: rust, legacy
 .  if empty(ARCH:Naarch64:Namd64:Narmv7:Ni386:Npowerpc64:Npowerpc64le:Npowerpc:Nriscv64)

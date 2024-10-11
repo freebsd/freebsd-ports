@@ -1,21 +1,26 @@
 PORTNAME=	mixer.app
-PORTVERSION=	1.8.0
-PORTREVISION=	2
+DISTVERSION=	1.8.0
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	mbeis@xs4all.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another mixer intended for the windowmaker dockapp
 
-PLIST_FILES=	bin/Mixer.app
-WRKSRC=		${WRKDIR}/Mixer.app-${PORTVERSION}
-CXXFLAGS+=	-fno-rtti -fno-exceptions -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lXpm -lXext -lX11
-MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}"
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		xorg
-USE_XORG=	xpm xext x11
+USE_XORG=	x11 xext xpm
+
+MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}"
+CXXFLAGS+=	-fno-rtti -fno-exceptions -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lXpm -lXext -lX11
+
+WRKSRC=		${WRKDIR}/Mixer.app-${PORTVERSION}
+
+PLIST_FILES=	bin/Mixer.app
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Mixer.app ${STAGEDIR}${PREFIX}/bin

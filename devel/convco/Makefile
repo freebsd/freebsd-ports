@@ -1,7 +1,6 @@
 PORTNAME=	convco
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
-PORTREVISION=	1
+DISTVERSION=	0.6.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +21,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
-		anyhow-1.0.86 \
+		anyhow-1.0.89 \
 		backtrace-0.3.69 \
 		bitflags-1.3.2 \
 		bitflags-2.4.1 \
@@ -30,10 +29,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
-		clap-4.5.17 \
-		clap_builder-4.5.17 \
-		clap_complete-4.5.25 \
-		clap_derive-4.5.13 \
+		clap-4.5.20 \
+		clap_builder-4.5.20 \
+		clap_complete-4.5.32 \
+		clap_derive-4.5.18 \
 		clap_lex-0.7.0 \
 		cmake-0.1.50 \
 		colorchoice-1.0.0 \
@@ -53,7 +52,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		generic-array-0.14.7 \
 		gimli-0.28.1 \
 		git2-0.19.0 \
-		handlebars-6.0.0 \
+		handlebars-6.1.0 \
 		hashbrown-0.14.3 \
 		heck-0.5.0 \
 		idna-0.5.0 \
@@ -84,16 +83,16 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		proc-macro2-1.0.76 \
 		quote-1.0.35 \
 		redox_syscall-0.4.1 \
-		regex-1.10.6 \
-		regex-automata-0.4.6 \
-		regex-syntax-0.8.2 \
+		regex-1.11.0 \
+		regex-automata-0.4.8 \
+		regex-syntax-0.8.5 \
 		rustc-demangle-0.1.23 \
 		rustix-0.38.28 \
 		ryu-1.0.16 \
 		same-file-1.0.6 \
 		semver-1.0.23 \
-		serde-1.0.209 \
-		serde_derive-1.0.209 \
+		serde-1.0.210 \
+		serde_derive-1.0.210 \
 		serde_json-1.0.111 \
 		serde_yaml-0.9.32 \
 		sha2-0.10.8 \
@@ -101,8 +100,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strsim-0.11.0 \
 		syn-2.0.48 \
 		tempfile-3.9.0 \
-		thiserror-1.0.63 \
-		thiserror-impl-1.0.63 \
+		thiserror-1.0.64 \
+		thiserror-impl-1.0.64 \
 		thread_local-1.1.8 \
 		time-0.3.36 \
 		time-core-0.1.2 \

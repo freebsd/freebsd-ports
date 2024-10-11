@@ -1,5 +1,6 @@
 bin/sfcgal-config
 include/SFCGAL/Coordinate.h
+include/SFCGAL/Cylinder.h
 include/SFCGAL/Envelope.h
 include/SFCGAL/Exception.h
 include/SFCGAL/Geometry.h
@@ -16,6 +17,7 @@ include/SFCGAL/Polygon.h
 include/SFCGAL/PolyhedralSurface.h
 include/SFCGAL/PreparedGeometry.h
 include/SFCGAL/Solid.h
+include/SFCGAL/Sphere.h
 include/SFCGAL/Surface.h
 include/SFCGAL/Transform.h
 include/SFCGAL/Triangle.h
@@ -25,6 +27,7 @@ include/SFCGAL/algorithm/BoundaryVisitor.h
 include/SFCGAL/algorithm/ConsistentOrientationBuilder.h
 include/SFCGAL/algorithm/alphaShapes.h
 include/SFCGAL/algorithm/area.h
+include/SFCGAL/algorithm/buffer3D.h
 include/SFCGAL/algorithm/collect.h
 include/SFCGAL/algorithm/collectionExtract.h
 include/SFCGAL/algorithm/collectionHomogenize.h
@@ -45,11 +48,14 @@ include/SFCGAL/algorithm/isValid.h
 include/SFCGAL/algorithm/length.h
 include/SFCGAL/algorithm/lineSubstring.h
 include/SFCGAL/algorithm/minkowskiSum.h
+include/SFCGAL/algorithm/minkowskiSum3D.h
 include/SFCGAL/algorithm/normal.h
 include/SFCGAL/algorithm/offset.h
 include/SFCGAL/algorithm/orientation.h
 include/SFCGAL/algorithm/partition_2.h
 include/SFCGAL/algorithm/plane.h
+include/SFCGAL/algorithm/rotate.h
+include/SFCGAL/algorithm/scale.h
 include/SFCGAL/algorithm/straightSkeleton.h
 include/SFCGAL/algorithm/tesselate.h
 include/SFCGAL/algorithm/translate.h
@@ -101,6 +107,7 @@ include/SFCGAL/detail/triangulate/triangulateInGeometrySet.h
 include/SFCGAL/detail/ublas.h
 include/SFCGAL/export.h
 include/SFCGAL/io/GeometryStreams.h
+include/SFCGAL/io/OBJ.h
 include/SFCGAL/io/ewkt.h
 include/SFCGAL/io/osg.h
 include/SFCGAL/io/vtk.h

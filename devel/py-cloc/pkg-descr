@@ -1,0 +1,10 @@
+Command line framework for making simple and complex command line
+applications.
+
+- Easily create stand alone commands or nested groups of commands
+- Define and connect commands with class objects
+- Inherit and create viewsets of commands to be able to reuse large
+  nested groups in other cli applications
+- Use mixin commands to quickly add pre defined commands to your cli
+- Groups of commands can be found from any class that has defined a
+  cloc.core.BaseCmd

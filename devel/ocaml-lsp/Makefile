@@ -1,5 +1,6 @@
 PORTNAME=	ocaml-lsp
 DISTVERSION=	1.19.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	freebsd@dev.thsi.be

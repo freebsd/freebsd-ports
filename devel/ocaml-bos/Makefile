@@ -1,6 +1,6 @@
 PORTNAME=	bos
 PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://erratique.ch/software/bos/releases/
 PKGNAMEPREFIX=	ocaml-

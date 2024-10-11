@@ -1,6 +1,6 @@
 PORTNAME=	bouncycastle
 PORTVERSION=	1.45
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java security
 MASTER_SITES=	http://downloads.bouncycastle.org/java/ \
 		http://polydistortion.net/bc/download/ \
@@ -10,6 +10,9 @@ DISTNAME=	crypto-${JARVERSION}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Cleanroom build of Java Cryptography Extensions
 WWW=		https://www.bouncycastle.org/
+
+DEPRECATED=	Outdated and unsupported upstream, please use java/bouncycastle15 instead
+EXPIRATION_DATE=2024-12-31
 
 BUILD_DEPENDS=	${JAVALIBDIR}/mail.jar:java/javamail \
 		${JAVALIBDIR}/junit.jar:java/junit

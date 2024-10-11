@@ -1,5 +1,8 @@
 bin/harminv
 include/harminv.h
 lib/libharminv.a
+lib/libharminv.so
+lib/libharminv.so.3
+lib/libharminv.so.3.0.1
 libdata/pkgconfig/harminv.pc
 share/man/man1/harminv.1.gz

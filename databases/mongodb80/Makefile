@@ -1,6 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	8.0.0
+DISTVERSION=	8.0.1
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -128,7 +128,7 @@ MOZJS_ARCH=	${ARCH}
 .endif
 
 pre-configure:
-	# Verify we downloaded the proper mozjs git tag.
+# Verify we downloaded the proper mozjs git tag.
 	${SH} -c "test \"X`grep -E '^LIB_GIT_REVISION=' ${WRKSRC}/src/third_party/mozjs/get-sources.sh`\" = \"XLIB_GIT_REVISION=${MOZJS_TAG}\""
 
 do-configure:

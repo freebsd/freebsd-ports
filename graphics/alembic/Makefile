@@ -1,5 +1,5 @@
 PORTNAME=	alembic
-PORTVERSION=	1.8.6
+PORTVERSION=	1.8.7
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org

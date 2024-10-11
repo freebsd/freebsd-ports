@@ -212,6 +212,7 @@ libexec/git-core/mergetools/smerge
 libexec/git-core/mergetools/tkdiff
 libexec/git-core/mergetools/tortoisemerge
 libexec/git-core/mergetools/vimdiff
+libexec/git-core/mergetools/vscode
 libexec/git-core/mergetools/winmerge
 libexec/git-core/mergetools/xxdiff
 libexec/git-core/scalar
@@ -853,6 +854,7 @@ share/man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.46.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.46.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.46.2.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.47.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt

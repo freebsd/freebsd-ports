@@ -1,5 +1,5 @@
 PORTNAME=	bemenu
-DISTVERSION=	0.6.21
+DISTVERSION=	0.6.23
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/Cloudef/${PORTNAME}/releases/download/${DISTVERSION}/
 

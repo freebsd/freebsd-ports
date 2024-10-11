@@ -914,6 +914,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/cnetdb.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/fpsock.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/fpsock.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/fpsock.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/fpsockets.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/fpsockets.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/netdb.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/netdb.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/resolve.o
@@ -2452,6 +2454,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/fmtbcd.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/fmtbcd.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/fpmonitor.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/fpmonitor.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/nullable.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/nullable.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/rtti.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/rtti.ppu
@@ -2475,6 +2478,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/system.uiconsts.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/system.uiconsts.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/system.uitypes.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/system.uitypes.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/tuples.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/tuples.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/variants.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/variants.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-objpas/variants.rsj
