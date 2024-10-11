@@ -18,6 +18,8 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	sharkdp
 
+RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
+
 CARGO_CRATES=	aho-corasick-1.1.3 \
 		anes-0.1.6 \
 		anstream-0.6.14 \
