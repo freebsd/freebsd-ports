@@ -1,5 +1,5 @@
---- cargo-crates/v8-0.105.0/v8/src/base/platform/platform-posix.cc.orig	2020-06-26 16:28:04 UTC
-+++ cargo-crates/v8-0.105.0/v8/src/base/platform/platform-posix.cc
+--- cargo-crates/v8-0.106.0/v8/src/base/platform/platform-posix.cc.orig	2020-06-26 16:28:04 UTC
++++ cargo-crates/v8-0.106.0/v8/src/base/platform/platform-posix.cc
 @@ -54,7 +54,7 @@
  #if V8_OS_DARWIN
  #include <mach/mach.h>

@@ -1,10 +1,10 @@
---- runtime/Cargo.toml.orig	2024-08-23 11:15:01 UTC
+--- runtime/Cargo.toml.orig	2024-10-11 15:31:50 UTC
 +++ runtime/Cargo.toml
-@@ -123,6 +123,7 @@ which.workspace = true
+@@ -125,6 +125,7 @@ which.workspace = true
  twox-hash.workspace = true
  uuid.workspace = true
  which.workspace = true
-+sysinfo = "0.31.2"
++sysinfo = "0.32.0"
  
  [target.'cfg(windows)'.dependencies]
  winapi = { workspace = true, features = ["commapi", "knownfolders", "mswsock", "objbase", "psapi", "shlobj", "tlhelp32", "winbase", "winerror", "winuser", "winsock2"] }
