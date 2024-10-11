@@ -45,7 +45,6 @@ pre-configure:
 
 # NOTE there should be an EXTRACT_ONLY statement
 # NOTE shared libs can't be enabled because the build would fail, see discussion in this issue: https://github.com/microsoft/onnxruntime/issues/22331
-# 1 test fails, see https://github.com/microsoft/onnxruntime/issues/22353
 
 .include <Makefile.MASTER_SITES>
 .include <Makefile.DISTFILES>
