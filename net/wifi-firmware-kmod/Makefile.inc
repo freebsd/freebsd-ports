@@ -49,16 +49,13 @@ LICENSE_PERMS_whence=	${LICENSE_PERMS}
 .if "${DISTFILES_${FLAVOR}_lic}"
 .for _n in ${DISTFILES_${FLAVOR}_lic:range}
 LICENSE+=			extra${_n}
-LICENSE_FILE_extra${_n}=	${WRKSRC}/fw/${DISTFILES_${FLAVOR}_lic:[${_n}]:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,/,_,g}
+LICENSE_FILE_extra${_n}=	${WRKSRC}/lic/${DISTFILES_${FLAVOR}_lic:[${_n}]:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,/,_,g}
 LICENSE_NAME_extra${_n}=	${LICENSE_NAME} (extra fw license)
 LICENSE_PERMS_extra${_n}=	${LICENSE_PERMS}
 .endfor
 .endif
 
-# Add firmware files to plist.
-.for _f in ${DISTFILES_${FLAVOR}}
-PLIST_FILES+=	${KMODDIR}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,.,_,g:S,-,_,g:S,/,_,g}.ko
-.endfor
+PLIST=		${WRKDIR}/PLIST
 
 # Split things into the full package (driver name) and more specific flavors.
 FLAVORS=	${FWDRV} \
@@ -82,17 +79,48 @@ EXTRACT_ONLY=
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	LinuxKPI driver only available for these architectures
 
-USES=		kmod uidfix
+USES=		uidfix
+# We do not need that anymore for the modern build but making it conditional on
+# OSVERSION seems to not add the _USES_install bits from kmod.mk.
+USES+=		kmod
 
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} >= 1500014) || (${OSVERSION} < 1500000 && ${OSVERSION} >= 1402000)
+# src.git main 479905a1ed26c54ef29cdff65cf25f7feade654b (stable/14 2ca7b03d6275)
+# allows direct loading of firmware files.  For anything before that we still need
+# to create kernel modules.  We need to write a PLIST file so we can then simply use
+# COPYTREE_SHARE with adjusted permissions to copy the files over.
+BOOTFWDIR?=	/boot/firmware
+_SHAREMODE=	0444
+NO_BUILD=	yes
+.else
 MAKE_ENV+=	FWSRCDIR=${WRKSRC}/fw
+.endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/fw
+	@${MKDIR} ${WRKSRC}/lic
 	# Deal with supplementary licenses files.
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${LICENSE_FILE}${DISTURL_SUFFIX} ${WRKSRC}/${LICENSE_FILE}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/WHENCE${DISTURL_SUFFIX} ${WRKSRC}/WHENCE.in
 	@${SED} -e "s@%%XXX%%@${WHENCE_REGEX:Q}@g" ${FILESDIR}/WHENCE.awk.in > ${WRKSRC}/WHENCE.awk
 	@${AWK} -f ${WRKSRC}/WHENCE.awk ${WRKSRC}/WHENCE.in > ${WRKSRC}/WHENCE
+################################################################################
+.if (${OSVERSION} >= 1500014) || (${OSVERSION} < 1500000 && ${OSVERSION} >= 1402000)
+.for _f in ${DISTFILES_${FLAVOR}}
+	# Create firmware source directory and copy in distfile.
+	@${MKDIR} ${WRKSRC}/fw/${_f:H}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${_f} ${WRKSRC}/fw/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@}
+	@${ECHO_CMD} ${BOOTFWDIR}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@} >> ${PLIST}.tmp
+.endfor
+	(cd ${WRKSRC}/fw/ && ${FIND} . -type d -mindepth 1 | \
+	    ${AWK} -vB="${BOOTFWDIR}/" '{ sub("^./", "@dir "B); print; }') >> ${PLIST}.tmp
+	# Remove possibly duplicate @dir entries
+	@${SORT} -u ${PLIST}.tmp > ${PLIST}
+.else
+################################################################################
+# Build kernel modules.
 	# Prepare toplevel Makefile and Makefile.inc.
 	@${ECHO_CMD} "SUBDIR=" > ${WRKSRC}/Makefile
 	@${SED} -e "s@%%FWDRV%%@${FWDRV}@g" \
@@ -114,11 +142,19 @@ post-extract:
 	# Create firmware source directory and copy in distfile.
 	@${MKDIR} ${WRKSRC}/fw/${_f:H}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${_f} ${WRKSRC}/fw/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@}
+	@${ECHO_CMD} ${KMODDIR}/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,.,_,g:S,-,_,g:S,/,_,g}.ko >> ${PLIST}
 .endfor
 	@${ECHO_CMD} '.include <bsd.subdir.mk>' >> ${WRKSRC}/Makefile
+################################################################################
+.endif
 	# Copy in additional licenses files.
 .for _f in ${DISTFILES_${FLAVOR}_lic}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${_f} ${WRKSRC}/fw/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,/,_,g}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${_f} ${WRKSRC}/lic/${_f:C@(^[^?]*)${DISTURL_SUFFIX:Q}@\1@:S,/,_,g}
 .endfor
 
-.include <bsd.port.mk>
+.if (${OSVERSION} >= 1500014) || (${OSVERSION} < 1500000 && ${OSVERSION} >= 1402000)
+do-install:
+	(cd ${WRKSRC}/fw/ && ${COPYTREE_SHARE} . ${STAGEDIR}/${BOOTFWDIR})
+.endif
+
+.include <bsd.port.post.mk>
