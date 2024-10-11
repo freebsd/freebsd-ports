@@ -18,6 +18,8 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	nick42d
 
+RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
+
 CARGO_CRATES=	addr2line-0.22.0 \
 		adler-1.0.2 \
 		aes-0.8.4 \
@@ -471,7 +473,7 @@ do-install:
 	find ${WRKDIR}/target
 	echo "<< find"
 	${INSTALL_PROGRAM} \
-		${WRKDIR}/target/*/release/${PORTNAME} \
+		${WRKDIR}/target/release/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
