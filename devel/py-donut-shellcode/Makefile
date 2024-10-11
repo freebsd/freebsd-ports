@@ -11,6 +11,9 @@ WWW=		https://github.com/TheWover/donut
 
 LICENSE=	BSD3CLAUSE
 
+ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	ships precompiled libraries for these two only
+
 USES=		dos2unix python
 USE_PYTHON=	distutils autoplist
 
