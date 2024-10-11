@@ -11,6 +11,8 @@ WWW=		https://github.com/facebook/fbthrift
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	compilation fails, see https://github.com/facebook/fbthrift/issues/623
+
 BUILD_DEPENDS=	range-v3>0:devel/range-v3
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libbzip2.so:misc/vxl \
