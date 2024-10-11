@@ -17,6 +17,8 @@ USES=		cargo localbase:ldflags ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	killercup
 
+RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
+
 CARGO_CRATES=	addr2line-0.24.1 \
 		adler2-2.0.0 \
 		aho-corasick-1.1.3 \
