@@ -1,7 +1,6 @@
 PORTNAME=	tgpt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.1
-PORTREVISION=	1
+DISTVERSION=	2.8.2
 CATEGORIES=	www
 
 MAINTAINER=	nxjoseph@protonmail.com
@@ -25,9 +24,8 @@ GH_TUPLE=	andybalholm:brotli:v1.1.0:andybalholm_brotli/vendor/github.com/andybal
 		charmbracelet:bubbletea:v0.27.0:charmbracelet_bubbletea/vendor/github.com/charmbracelet/bubbletea \
 		charmbracelet:lipgloss:v0.12.1:charmbracelet_lipgloss/vendor/github.com/charmbracelet/lipgloss \
 		charmbracelet:x:ansi/v0.1.4:charmbracelet_x_ansi/vendor/github.com/charmbracelet/x \
+		charmbracelet:x:input/v0.1.0:charmbracelet_x_input/vendor/github.com/charmbracelet/x/input \
 		charmbracelet:x:term/v0.1.1:charmbracelet_x_term \
-		charmbracelet:x:v0.1.0:charmbracelet_x_input/vendor/github.com/charmbracelet/x/input \
-		charmbracelet:x:v0.1.0:charmbracelet_x_windows/vendor/github.com/charmbracelet/x/windows \
 		cloudflare:circl:v1.3.6:cloudflare_circl/vendor/github.com/cloudflare/circl \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		erikgeiser:coninput:1c3628e74d0f:erikgeiser_coninput/vendor/github.com/erikgeiser/coninput \
