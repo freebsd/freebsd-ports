@@ -185,8 +185,8 @@ USE_CABAL=	Cabal-3.10.3.0 \
 		formatting-7.2.0 \
 		foundation-0.0.30 \
 		free-5.2_5 \
-		fs-api-0.2.0.1_2:chap \
-		fs-sim-0.2.1.1_2:chap \
+		fs-api-0.2.0.1_4:chap \
+		fs-sim-0.2.1.1_5:chap \
 		generic-lens-2.2.2.0_1 \
 		generic-lens-core-2.2.1.0_2 \
 		generic-optics-2.2.1.0_2 \
