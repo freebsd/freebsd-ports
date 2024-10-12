@@ -1,7 +1,7 @@
---- bugzilla/_cli.py.orig	2020-07-04 17:39:54 UTC
+--- bugzilla/_cli.py.orig	2024-09-23 07:35:49 UTC
 +++ bugzilla/_cli.py
-@@ -31,7 +31,7 @@ from bugzilla._compatimports import Fault, ProtocolErr
- from bugzilla._util import to_encoding
+@@ -29,7 +29,7 @@ import bugzilla
+ import bugzilla
  
  
 -DEFAULT_BZ = 'https://bugzilla.redhat.com'
