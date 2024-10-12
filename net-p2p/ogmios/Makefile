@@ -297,7 +297,7 @@ USE_CABAL=	Cabal-3.12.1.0 \
 		ouroboros-consensus-0.20.1.0:chap \
 		ouroboros-consensus-cardano-0.19.0.0:chap \
 		ouroboros-consensus-diffusion-0.17.1.0:chap \
-		ouroboros-consensus-protocol-0.9.0.1_1:chap \
+		ouroboros-consensus-protocol-0.9.0.1_2:chap \
 		ouroboros-network-0.17.1.1:chap \
 		ouroboros-network-api-0.9.0.1:chap \
 		ouroboros-network-framework-0.13.2.4:chap \
