@@ -1,5 +1,5 @@
 PORTNAME=	emscripten
-DISTVERSION=	3.1.67
+DISTVERSION=	3.1.69
 CATEGORIES=	devel www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,10 +13,15 @@ RUN_DEPENDS=	bash:shells/bash \
 		binaryen>0:devel/binaryen
 		# the upstream requires to use either the latest llvm version, or their own llvm fork called emscripten-fastcomp
 
-USES=		nodejs:run llvm:19 python shebangfix
+USES=		nodejs:run python shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	emscripten-core
+
+# USES doesn't support llvm:devel, so we add this
+BUILD_DEPENDS=	llvm-devel>0:devel/llvm-devel
+RUN_DEPENDS=	llvm-devel>0:devel/llvm-devel
+LLVM_VERSION=	-devel
 
 SHEBANG_FILES=	${PYSCRIPTS} emcmake system/bin/sdl-config system/bin/sdl2-config
 SHEBANG_GLOB=	*.py *.sh

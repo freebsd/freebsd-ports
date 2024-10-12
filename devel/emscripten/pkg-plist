@@ -4341,6 +4341,7 @@ lib/emscripten/tools/maint/create_release.py
 lib/emscripten/tools/maint/find_unused_test_files.py
 lib/emscripten/tools/maint/gen_sig_info.py
 lib/emscripten/tools/maint/gen_struct_info.py
+lib/emscripten/tools/maint/post-checkout
 lib/emscripten/tools/maint/run_python.ps1
 lib/emscripten/tools/maint/run_python.sh
 lib/emscripten/tools/maint/run_python_compiler.ps1
