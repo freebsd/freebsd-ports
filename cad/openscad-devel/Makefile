@@ -1,6 +1,5 @@
 PORTNAME=	openscad
-PORTVERSION=	2022.12.20
-PORTREVISION=	2
+PORTVERSION=	2024.10.11
 #PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
@@ -16,7 +15,10 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	cgal>0:math/cgal \
-		evdev-proto>0:devel/evdev-proto
+		evdev-proto>0:devel/evdev-proto \
+		${LOCALBASE}/include/glm/glm.hpp:math/glm \
+		${LOCALBASE}/include/clipper2/clipper.h:cad/Clipper2 \
+		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libhidapi.so:comms/hidapi \
 		libboost_regex.so:devel/boost-libs \
@@ -27,32 +29,30 @@ LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libdouble-conversion.so:devel/double-conversion
+		libdouble-conversion.so:devel/double-conversion \
+		libasound_module_pcm_oss.so:audio/alsa-plugins \
+		libtbb.so:devel/onetbb
 
 CONFLICTS=	openscad
 
 USES=		bison cmake compiler:c++14-lang cpe desktop-file-utils eigen:3 gettext \
-		gl gnome pkgconfig qt:5 shared-mime-info xorg
+		gl gnome pkgconfig python qt:5 shared-mime-info xorg
 USE_GITHUB=	yes
 USE_GL=		gl glu glew
 USE_GNOME=	cairo glib20 libxml2
-USE_QT=		buildtools:build core concurrent:build dbus gui multimedia qmake:build svg widgets
+USE_QT=		buildtools:build core concurrent:build dbus gui multimedia qmake svg widgets
 USE_XORG=	x11
-GH_ACCOUNT=	microsoft:mimalloc
-GH_PROJECT=	MCAD:mcad mimalloc:mimalloc
-GH_TAGNAME=	b621fa6d3d2d2d795b30d1b6aade6ff1b3c8ba29 bd0a7ba3f042bfbced5ca1894b236cea08904e26:mcad v2.0.3:mimalloc
-GH_SUBDIR=	libraries/MCAD:mcad submodules/mimalloc:mimalloc
-#QMAKE_ARGS=	CONFIG+="experimental" VERSION=${PORTVERSION}
+GH_ACCOUNT=	microsoft:mimalloc elalish:manifold arsenm:sanitizerscmake openscad:opencsg
+GH_PROJECT=	MCAD:mcad mimalloc:mimalloc manifold:manifold sanitizers-cmake:sanitizerscmake OpenCSG:opencsg
+GH_TAGNAME=	19a4d67 bd0a7ba3f042bfbced5ca1894b236cea08904e26:mcad \
+		fe61be8:mimalloc 22c6605:manifold c3dc841:sanitizerscmake 059a173:opencsg
+GH_SUBDIR=	libraries/MCAD:mcad submodules/mimalloc:mimalloc submodules/manifold:manifold \
+		submodules/sanitizers-cmake:sanitizerscmake submodules/OpenCSG:opencsg
 # Avoid overlinking: kvm, procstat, boost(thread, system), Qt5(concurrent, network, printsupport)
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-Wl,--as-needed -L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
-
-#post-patch:
-#	@${REINPLACE_CMD} 's/-libusb//' ${WRKSRC}/features/hidapi.prf
-#	@${REINPLACE_CMD} -e 's,share/man,man,' \
-#		${WRKSRC}/openscad.pro
 
 do-install:
 	${CMAKE_BIN} --install ${BUILD_WRKSRC} --prefix ${STAGEDIR}${PREFIX}
