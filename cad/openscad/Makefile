@@ -1,19 +1,23 @@
 PORTNAME=	openscad
-DISTVERSION=	2021.01.01-20221206
-PORTREVISION=	5
+PORTVERSION=	2024.10.11
+#PORTREVISION=	1
 CATEGORIES=	cad
+
+#PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+#PATCHFILES+=	cc49ad8dac24.patch:-p1
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Programmer's solid 3D CAD modeller #'
-WWW=		https://openscad.org/
+WWW=		https://www.openscad.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build with boost-1.85+
-
 BUILD_DEPENDS=	cgal>0:math/cgal \
-		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
+		evdev-proto>0:devel/evdev-proto \
+		${LOCALBASE}/include/glm/glm.hpp:math/glm \
+		${LOCALBASE}/include/clipper2/clipper.h:cad/Clipper2 \
+		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libhidapi.so:comms/hidapi \
 		libboost_regex.so:devel/boost-libs \
@@ -24,25 +28,32 @@ LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libdouble-conversion.so:devel/double-conversion
+		libdouble-conversion.so:devel/double-conversion \
+		libasound_module_pcm_oss.so:audio/alsa-plugins \
+		libtbb.so:devel/onetbb
+
+CONFLICTS=	openscad-devel
 
 USES=		bison cmake compiler:c++14-lang cpe desktop-file-utils eigen:3 gettext \
-		gl gnome localbase:ldflags pkgconfig qt:5 shared-mime-info xorg
+		gl gnome pkgconfig python qt:5 shared-mime-info xorg
+USE_GITHUB=	yes
 USE_GL=		gl glu glew
 USE_GNOME=	cairo glib20 libxml2
-USE_QT=		buildtools:build core concurrent:build dbus gui multimedia network svg widgets qmake:build
+USE_QT=		buildtools:build core concurrent:build dbus gui multimedia qmake svg widgets
 USE_XORG=	x11
-QMAKE_ARGS=	CONFIG+="experimental" VERSION=${PORTVERSION}
+GH_ACCOUNT=	microsoft:mimalloc elalish:manifold arsenm:sanitizerscmake openscad:opencsg
+GH_PROJECT=	MCAD:mcad mimalloc:mimalloc manifold:manifold sanitizers-cmake:sanitizerscmake OpenCSG:opencsg
+GH_TAGNAME=	19a4d67 bd0a7ba3f042bfbced5ca1894b236cea08904e26:mcad \
+		fe61be8:mimalloc 22c6605:manifold c3dc841:sanitizerscmake 059a173:opencsg
+GH_SUBDIR=	libraries/MCAD:mcad submodules/mimalloc:mimalloc submodules/manifold:manifold \
+		submodules/sanitizers-cmake:sanitizerscmake submodules/OpenCSG:opencsg
 # Avoid overlinking: kvm, procstat, boost(thread, system), Qt5(concurrent, network, printsupport)
-LDFLAGS+=	-Wl,--as-needed
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-Wl,--as-needed -L${LOCALBASE}/lib
 
-USE_GITHUB=	yes
-GH_TAGNAME=	972d184
-GH_TUPLE=	openscad:MCAD:1ea4022:MCAD/libraries/MCAD \
-		microsoft:mimalloc:fe61be8:mimalloc/submodules/mimalloc
+.include <bsd.port.pre.mk>
 
-CMAKE_ARGS=	-DQT5QSCINTILLA_LIBRARY=/usr/local/lib/qt5/libqscintilla2_qt5.so
+do-install:
+	${CMAKE_BIN} --install ${BUILD_WRKSRC} --prefix ${STAGEDIR}${PREFIX}
 
-CONFLICTS_INSTALL=	openscad-devel # bin/openscad
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
