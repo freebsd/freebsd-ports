@@ -1,0 +1,8 @@
+--- src/lib/ounit2/advanced/dune.orig	2024-10-11 22:19:46 UTC
++++ src/lib/ounit2/advanced/dune
+@@ -11,4 +11,4 @@
+  (name oUnitAdvanced)
+  (public_name ounit2.advanced)
+  (wrapped false)
+- (libraries unix seq stdlib-shims))
++ (libraries unix))
