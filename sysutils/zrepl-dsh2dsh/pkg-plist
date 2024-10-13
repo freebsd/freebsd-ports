@@ -1,6 +1,7 @@
 bin/zrepl
 etc/periodic/daily/zrepl
 etc/periodic/weekly/500.zrepl
+etc/rc.d/zrepl
 @sample %%ETCDIR%%/zrepl.yml.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bandwidth_limit.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grafana-prometheus-zrepl.json

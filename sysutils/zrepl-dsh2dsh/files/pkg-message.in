@@ -24,6 +24,11 @@ For any ZFS snapshot that you want to keep, at least one rule must match.
 This also applies to snapshots taken by means other than zrepl
 (e.g. snapshots taken manually or via boot environment tools).
 
+For monitoring zrepl daemon health and snapshots add this line to
+/etc/periodic.conf:
+
+    daily_zrepl_enable="YES"
+
 In order to automatically warn the operator of impending certificate
 expiration, add this line to /etc/periodic.conf:
 

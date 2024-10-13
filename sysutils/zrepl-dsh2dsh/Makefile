@@ -1,6 +1,6 @@
 PORTNAME=	zrepl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.4
+DISTVERSION=	0.8.5
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-dsh2dsh
 
@@ -12,30 +12,42 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:1.23,modules ncurses
-USE_RC_SUBR=	${PORTNAME}
 
 GO_MODULE=	github.com/dsh2dsh/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "${STRIP} -w -X github.com/dsh2dsh/${PORTNAME}/version.${PORTNAME}Version=${DISTVERSIONFULL}"
 
 CONFLICTS_INSTALL=	${PORTNAME}
 
-SUB_FILES=	pkg-message 500.${PORTNAME} ${PORTNAME}.daily
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	EXAMPLES
 
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's|/usr/local/etc/${PORTNAME}|${ETCDIR}|g' \
+		-e 's|/usr/local|${PREFIX}|g' \
+		${WRKSRC}/dist/freebsd/etc/periodic/daily/${PORTNAME} \
+		${WRKSRC}/dist/freebsd/etc/periodic/weekly/500.${PORTNAME} \
+		${WRKSRC}/dist/freebsd/etc/rc.d/${PORTNAME}
+
 post-install:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR} \
-		${STAGEDIR}${ETCDIR} \
-		${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
-	${INSTALL_DATA} ${FILESDIR}/newsyslog.conf \
-		${STAGEDIR}${EXAMPLESDIR}/newsyslog.conf
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.yml \
-		${STAGEDIR}${ETCDIR}/${PORTNAME}.yml.sample
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily \
+	${MKDIR} ${STAGEDIR}${ETCDIR} \
+		${STAGEDIR}${EXAMPLESDIR} \
+		${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d \
+		${STAGEDIR}${PREFIX}/etc/periodic/daily \
 		${STAGEDIR}${PREFIX}/etc/periodic/weekly
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.daily \
+	${INSTALL_SCRIPT} ${WRKSRC}/dist/freebsd/etc/rc.d/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/etc/rc.d
+	${INSTALL_DATA} \
+		${WRKSRC}/dist/freebsd/etc/newsyslog.conf.d/${PORTNAME}.conf \
+		${STAGEDIR}${EXAMPLESDIR}/newsyslog.conf
+	${INSTALL_DATA} ${WRKSRC}/dist/freebsd/etc/${PORTNAME}/${PORTNAME}.yml \
+		${STAGEDIR}${ETCDIR}/${PORTNAME}.yml.sample
+	${INSTALL_SCRIPT} \
+		${WRKSRC}/dist/freebsd/etc/periodic/daily/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/etc/periodic/daily/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKDIR}/500.${PORTNAME} \
+	${INSTALL_SCRIPT} \
+		${WRKSRC}/dist/freebsd/etc/periodic/weekly/500.${PORTNAME} \
 		${STAGEDIR}${PREFIX}/etc/periodic/weekly/500.${PORTNAME}
 
 post-install-EXAMPLES-on:
