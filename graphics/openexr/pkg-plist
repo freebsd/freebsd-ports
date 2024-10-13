@@ -188,6 +188,7 @@ libdata/pkgconfig/OpenEXR.pc
 %%DOCS%%share/man/man1/exrmakepreview.1.gz
 %%DOCS%%share/man/man1/exrmaketiled.1.gz
 %%DOCS%%share/man/man1/exrmanifest.1.gz
+%%DOCS%%share/man/man1/exrmetrics.1.gz
 %%DOCS%%share/man/man1/exrmultipart.1.gz
 %%DOCS%%share/man/man1/exrmultiview.1.gz
 %%DOCS%%share/man/man1/exrstdattr.1.gz
