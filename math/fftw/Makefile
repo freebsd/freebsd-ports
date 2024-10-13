@@ -2,11 +2,8 @@ PORTNAME=	fftw
 PORTVERSION=	2.1.5
 PORTREVISION?=	23
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/		\
-		ftp://ftp.fftw.org/pub/fftw/old/	\
-		ftp://theory.lcs.mit.edu/pub/fftw/	\
-		ftp://pm.cse.rmit.edu.au/pub/dsp/fftw/
-
+MASTER_SITES=	http://ftp.fftw.org/ \
+		ftp://ftp.fftw.org/pub/fftw/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
 WWW=		https://www.fftw.org/
