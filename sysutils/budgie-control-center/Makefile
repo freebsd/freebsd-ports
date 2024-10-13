@@ -1,6 +1,6 @@
 PORTNAME=	budgie-control-center
 DISTVERSION=	1.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils budgie
 MASTER_SITES=	BUDGIE
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libhandy-1.so:x11-toolkits/libhandy \
 		libpulse.so:audio/pulseaudio \
 		libupower-glib.so:sysutils/upower \
 		libepoxy.so:graphics/libepoxy \
-		libgcr-base-3.so:security/gcr \
+		libgcr-base-3.so:security/gcr3 \
 		libgudev-1.0.so:devel/libgudev \
 		libpwquality.so:security/libpwquality \
 		libpolkit-gobject-1.so:sysutils/polkit \

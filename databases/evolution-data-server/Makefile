@@ -1,6 +1,6 @@
 PORTNAME=	evolution-data-server
 DISTVERSION=	3.44.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libfribidi.so:converters/fribidi \
-		libgcr-base-3.so:security/gcr \
+		libgcr-base-3.so:security/gcr3 \
 		libgoa-1.0.so:net/gnome-online-accounts \
 		libgdata.so:devel/libgdata \
 		libharfbuzz.so:print/harfbuzz \

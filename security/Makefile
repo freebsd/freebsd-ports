@@ -170,6 +170,7 @@
     SUBDIR += fwknop
     SUBDIR += fwlogwatch
     SUBDIR += gcr
+    SUBDIR += gcr3
     SUBDIR += gef
     SUBDIR += git-credential-azure
     SUBDIR += git-credential-gopass

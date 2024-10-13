@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libdbus-1.so:devel/dbus \
-		libgcr-base-3.so:security/gcr \
+		libgcr-base-3.so:security/gcr3 \
 		libsoup-3.0.so:devel/libsoup3 \
 		libgudev-1.0.so:devel/libgudev \
 		libudisks2.so:sysutils/libudisks \

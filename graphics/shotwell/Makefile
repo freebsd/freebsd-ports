@@ -1,5 +1,6 @@
 PORTNAME=	shotwell
 PORTVERSION=	0.32.10
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 
@@ -23,7 +24,7 @@ LIB_DEPENDS=	libportal.so:deskutils/libportal \
 		libgphoto2.so:graphics/libgphoto2 \
 		libraw.so:graphics/libraw \
 		libwebp.so:graphics/webp \
-		libgcr-ui-3.so:security/gcr \
+		libgcr-ui-3.so:security/gcr3 \
 		libsecret-1.so:security/libsecret \
 		libxml2.so:textproc/libxml2
 

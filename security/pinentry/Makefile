@@ -1,6 +1,6 @@
 PORTNAME=	pinentry
 PORTVERSION=	1.3.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/pinentry
 
@@ -102,7 +102,7 @@ LIBSECRET_USE=		GNOME=glib20
 
 .if ${PINENTRY_GUI} == "gnome"
 OPTIONS_SLAVE=	LIBSECRET
-LIB_DEPENDS+=	libgcr-base-3.so:security/gcr
+LIB_DEPENDS+=	libgcr-base-3.so:security/gcr3
 PLIST_FILES=	bin/pinentry-gnome3
 .else
 CONFIGURE_ARGS+=--disable-pinentry-gnome3

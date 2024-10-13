@@ -1,18 +1,18 @@
 PORTNAME=	folks
 PORTVERSION=	0.15.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Library to aggregates people from multiple sources
+COMMENT=	Library to aggregate people from multiple sources
 WWW=		https://wiki.gnome.org/Projects/Folks
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
-		libgcr-base-3.so:security/gcr \
+		libgcr-base-3.so:security/gcr3 \
 		libzeitgeist-2.0.so:sysutils/zeitgeist \
 		libtelepathy-glib.so:net-im/telepathy-glib \
 		libnspr4.so:devel/nspr \
