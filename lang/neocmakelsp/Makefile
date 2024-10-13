@@ -1,6 +1,6 @@
 PORTNAME=	neocmakelsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.6
+DISTVERSION=	0.8.11
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	Decodetalkers
 
-CARGO_CRATES=	addr2line-0.24.1 \
+CARGO_CRATES=	addr2line-0.24.2 \
 		adler2-2.0.0 \
 		aho-corasick-1.1.3 \
 		anstream-0.6.15 \
@@ -26,17 +26,17 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		anyhow-1.0.89 \
 		async-trait-0.1.83 \
 		auto_impl-1.2.0 \
-		autocfg-1.3.0 \
+		autocfg-1.4.0 \
 		backtrace-0.3.74 \
 		bitflags-1.3.2 \
 		bitflags-2.6.0 \
 		bstr-1.10.0 \
 		bytes-1.7.2 \
-		cc-1.1.21 \
+		cc-1.1.28 \
 		cfg-if-1.0.0 \
-		clap-4.5.18 \
-		clap_builder-4.5.18 \
-		clap_complete-4.5.29 \
+		clap-4.5.20 \
+		clap_builder-4.5.20 \
+		clap_complete-4.5.33 \
 		clap_derive-4.5.18 \
 		clap_lex-0.7.2 \
 		cli-table-0.4.9 \
@@ -56,25 +56,26 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		errno-0.3.9 \
 		fastrand-2.1.1 \
 		form_urlencoded-1.2.1 \
-		futures-0.3.30 \
-		futures-channel-0.3.30 \
-		futures-core-0.3.30 \
-		futures-io-0.3.30 \
-		futures-macro-0.3.30 \
-		futures-sink-0.3.30 \
-		futures-task-0.3.30 \
-		futures-util-0.3.30 \
+		futures-0.3.31 \
+		futures-channel-0.3.31 \
+		futures-core-0.3.31 \
+		futures-io-0.3.31 \
+		futures-macro-0.3.31 \
+		futures-sink-0.3.31 \
+		futures-task-0.3.31 \
+		futures-util-0.3.31 \
 		getrandom-0.2.15 \
-		gimli-0.31.0 \
+		gimli-0.31.1 \
 		glob-0.3.1 \
 		globset-0.4.15 \
 		hashbrown-0.14.5 \
+		hashbrown-0.15.0 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
-		httparse-1.9.4 \
+		httparse-1.9.5 \
 		idna-0.5.0 \
 		ignore-0.4.23 \
-		indexmap-2.5.0 \
+		indexmap-2.6.0 \
 		is_terminal_polyfill-1.70.1 \
 		itoa-1.0.11 \
 		lazy_static-1.5.0 \
@@ -87,8 +88,8 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		miniz_oxide-0.8.0 \
 		mio-1.0.2 \
 		nu-ansi-term-0.46.0 \
-		object-0.36.4 \
-		once_cell-1.19.0 \
+		object-0.36.5 \
+		once_cell-1.20.2 \
 		ordered-multimap-0.7.3 \
 		overload-0.1.1 \
 		parking_lot-0.12.3 \
@@ -96,16 +97,16 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		path-absolutize-3.1.1 \
 		path-dedot-3.1.1 \
 		percent-encoding-2.3.1 \
-		pin-project-1.1.5 \
-		pin-project-internal-1.1.5 \
+		pin-project-1.1.6 \
+		pin-project-internal-1.1.6 \
 		pin-project-lite-0.2.14 \
 		pin-utils-0.1.0 \
-		proc-macro2-1.0.86 \
+		proc-macro2-1.0.87 \
 		quote-1.0.37 \
-		redox_syscall-0.5.5 \
-		regex-1.10.6 \
-		regex-automata-0.4.7 \
-		regex-syntax-0.8.4 \
+		redox_syscall-0.5.7 \
+		regex-1.11.0 \
+		regex-automata-0.4.8 \
+		regex-syntax-0.8.5 \
 		rust-ini-0.21.1 \
 		rustc-demangle-0.1.24 \
 		rustix-0.38.37 \
@@ -116,18 +117,19 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		serde_derive-1.0.210 \
 		serde_json-1.0.128 \
 		serde_repr-0.1.19 \
-		serde_spanned-0.6.7 \
+		serde_spanned-0.6.8 \
 		sharded-slab-0.1.7 \
 		shlex-1.3.0 \
 		signal-hook-registry-1.4.2 \
 		slab-0.4.9 \
 		smallvec-1.13.2 \
 		socket2-0.5.7 \
+		streaming-iterator-0.1.9 \
 		strsim-0.11.1 \
 		syn-1.0.109 \
-		syn-2.0.77 \
+		syn-2.0.79 \
 		sync_wrapper-0.1.2 \
-		tempfile-3.12.0 \
+		tempfile-3.13.0 \
 		termcolor-1.4.1 \
 		thread_local-1.1.8 \
 		tiny-keccak-2.0.2 \
@@ -150,12 +152,12 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		tracing-core-0.1.32 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.18 \
-		tree-sitter-0.23.0 \
+		tree-sitter-0.24.3 \
 		tree-sitter-cmake-0.5.0 \
-		tree-sitter-language-0.1.0 \
+		tree-sitter-language-0.1.2 \
 		treesitter_kind_collector-0.2.0 \
 		trim-in-place-0.1.7 \
-		unicode-bidi-0.3.15 \
+		unicode-bidi-0.3.17 \
 		unicode-ident-1.0.13 \
 		unicode-normalization-0.1.24 \
 		unicode-width-0.1.14 \
@@ -179,7 +181,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-0.6.19
+		winnow-0.6.20
 
 PLIST_FILES=	bin/${PORTNAME}
 
