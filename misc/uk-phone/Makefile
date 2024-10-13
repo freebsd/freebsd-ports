@@ -8,6 +8,9 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	United Kingdom phone codes
 
+DEPRECATED=	Obsolete, 20+ year old data
+EXPIRATION_DATE=2024-10-31
+
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=	# None
