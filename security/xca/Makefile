@@ -1,7 +1,7 @@
 PORTNAME=	xca
-PORTVERSION=	2.7.0
+PORTVERSION=	2.8.0
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/xca/releases/download/RELEASE.${PORTVERSION}/
+MASTER_SITES=	https://github.com/chris2511/xca/releases/download/RELEASE.${PORTVERSION}/
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Graphical certification authority
@@ -20,7 +20,6 @@ qt6_CONFLICTS_INSTALL=	${PORTNAME}
 
 USES=		cmake compiler:c++17-lang desktop-file-utils localbase \
 		pkgconfig shared-mime-info ssl
-GH_ACCOUNT=	chris2511
 USE_LOCALE=	en_US.UTF-8
 
 .if ${FLAVOR} == qt5

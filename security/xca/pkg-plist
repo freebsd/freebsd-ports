@@ -1,5 +1,5 @@
 bin/xca
-share/applications/xca.desktop
+share/applications/de.hohnstaedt.xca.desktop
 share/bash-completion/completions/xca
 %%PORTDOCS%%%%DOCSDIR%%/_sources/arguments.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/certificate-input.rst.txt
@@ -8,6 +8,12 @@ share/bash-completion/completions/xca
 %%PORTDOCS%%%%DOCSDIR%%/_sources/commandline.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/common-actions.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/database.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/export-key-clp.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/export-key.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/export-request.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/export-revocation.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/export-x509-clp.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/export-x509.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/index.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/introduction.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/miscellaneous.rst.txt
@@ -44,6 +50,12 @@ share/bash-completion/completions/xca
 %%PORTDOCS%%%%DOCSDIR%%/commandline.html
 %%PORTDOCS%%%%DOCSDIR%%/common-actions.html
 %%PORTDOCS%%%%DOCSDIR%%/database.html
+%%PORTDOCS%%%%DOCSDIR%%/export-key-clp.html
+%%PORTDOCS%%%%DOCSDIR%%/export-key.html
+%%PORTDOCS%%%%DOCSDIR%%/export-request.html
+%%PORTDOCS%%%%DOCSDIR%%/export-revocation.html
+%%PORTDOCS%%%%DOCSDIR%%/export-x509-clp.html
+%%PORTDOCS%%%%DOCSDIR%%/export-x509.html
 %%PORTDOCS%%%%DOCSDIR%%/genindex.html
 %%PORTDOCS%%%%DOCSDIR%%/html/certificate-input.html
 %%PORTDOCS%%%%DOCSDIR%%/html/certificates.html
@@ -98,7 +110,6 @@ share/icons/hicolor/256x256/apps/de.hohnstaedt.xca.png
 share/icons/hicolor/256x256/mimetypes/x-xca-database.png
 share/icons/hicolor/256x256/mimetypes/x-xca-template.png
 share/metainfo/de.hohnstaedt.xca.metainfo.xml
-share/pixmaps/xca-32x32.xpm
 %%DATADIR%%/CA.xca
 %%DATADIR%%/TLS_client.xca
 %%DATADIR%%/TLS_server.xca
@@ -107,6 +118,7 @@ share/pixmaps/xca-32x32.xpm
 %%QT6%%%%DATADIR%%/i18n/xca.qm
 %%DATADIR%%/i18n/xca_bg.qm
 %%DATADIR%%/i18n/xca_de.qm
+%%DATADIR%%/i18n/xca_en.qm
 %%DATADIR%%/i18n/xca_es.qm
 %%DATADIR%%/i18n/xca_fa.qm
 %%DATADIR%%/i18n/xca_fr.qm
@@ -114,6 +126,7 @@ share/pixmaps/xca-32x32.xpm
 %%DATADIR%%/i18n/xca_id.qm
 %%DATADIR%%/i18n/xca_it.qm
 %%DATADIR%%/i18n/xca_ja.qm
+%%DATADIR%%/i18n/xca_ko.qm
 %%DATADIR%%/i18n/xca_nl.qm
 %%DATADIR%%/i18n/xca_pl.qm
 %%DATADIR%%/i18n/xca_pt_BR.qm
