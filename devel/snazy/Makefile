@@ -1,5 +1,5 @@
 PORTNAME=	snazy
-DISTVERSION=	0.53.0
+DISTVERSION=	0.54.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,15 +21,15 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		anstyle-parse-0.2.5 \
 		anstyle-query-1.1.1 \
 		anstyle-wincon-3.0.4 \
-		autocfg-1.3.0 \
+		autocfg-1.4.0 \
 		bitflags-2.6.0 \
 		bumpalo-3.16.0 \
-		cc-1.1.21 \
+		cc-1.1.24 \
 		cfg-if-1.0.0 \
 		chrono-0.4.38 \
-		clap-4.5.18 \
-		clap_builder-4.5.18 \
-		clap_complete-4.5.29 \
+		clap-4.5.19 \
+		clap_builder-4.5.19 \
+		clap_complete-4.5.32 \
 		clap_derive-4.5.18 \
 		clap_lex-0.7.2 \
 		color-print-0.3.6 \
@@ -46,19 +46,20 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		is_terminal_polyfill-1.70.1 \
 		itoa-1.0.11 \
 		js-sys-0.3.70 \
-		libc-0.2.158 \
+		libc-0.2.159 \
 		linux-raw-sys-0.4.14 \
 		log-0.4.22 \
 		memchr-2.7.4 \
 		minimal-lexical-0.2.1 \
 		nom-7.1.3 \
 		num-traits-0.2.19 \
-		once_cell-1.19.0 \
+		once_cell-1.20.1 \
+		portable-atomic-1.9.0 \
 		proc-macro2-1.0.86 \
 		quote-1.0.37 \
-		regex-1.10.6 \
-		regex-automata-0.4.7 \
-		regex-syntax-0.8.4 \
+		regex-1.11.0 \
+		regex-automata-0.4.8 \
+		regex-syntax-0.8.5 \
 		rustix-0.38.37 \
 		ryu-1.0.18 \
 		serde-1.0.210 \
@@ -66,8 +67,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		serde_json-1.0.128 \
 		shlex-1.3.0 \
 		strsim-0.11.1 \
-		syn-2.0.77 \
-		tempfile-3.12.0 \
+		syn-2.0.79 \
+		tempfile-3.13.0 \
 		unicode-ident-1.0.13 \
 		utf8parse-0.2.2 \
 		wasm-bindgen-0.2.93 \
