@@ -1,0 +1,71 @@
+PORTNAME=	gotify-server
+PORTVERSION=	2.5.0
+DISTVERSIONPREFIX=	v
+CATEGORIES=	net
+MASTER_SITES=	https://github.com/mfechner/freebsd-net-gotify-server/raw/refs/heads/main/:yarn_cache
+DISTNAME=	server
+DISTFILES=	${PORTNAME}-yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache
+
+MAINTAINER=	mfechner@FreeBSD.org
+COMMENT=	Simple server for sending and receiving messages
+WWW=		https://github.com/gotify/server
+
+LICENSE=	MIT
+
+BUILD_DEPENDS=	yarn${NODEJS_SUFFIX}>=1.10.0:www/yarn${NODEJS_SUFFIX} \
+		
+USES=		go:modules,1.22 nodejs:build
+GO_MODULE=	github.com/gotify/server/v2
+
+_BUILD_DATE=	$$(date -u "+%Y-%m-%d-%H%M UTC")
+#GO_TARGET=     ./
+GO_BUILDFLAGS=	-buildmode=pie -modcacherw \
+		-ldflags=" \
+		-X 'main.Version=${PORTVERSION}' \
+		-X 'main.Commit=${GL_TAGNAME:C/^(........).*/\1/}' \
+		-X 'main.BuildDate=${_BUILD_DATE}' \
+		-X 'main.Mode=prod'"
+
+USE_RC_SUBR=	gotify_server
+
+USERS=		gotify
+GROUPS=		gotify
+
+PLIST_FILES=	bin/gotify-server
+
+post-patch:
+	# setup yarnrc for offline node_modules installatio
+	@${ECHO_CMD} 'yarn-offline-mirror "${WRKDIR}/yarn-offline-cache"' >> ${WRKSRC}/ui/.yarnrc
+	
+pre-build:
+	@cd ${WRKSRC}/ui && ${SETENV} ${MAKE_ENV} HOME=${WRKDIR} PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true yarn install --offline
+	@cd ${WRKSRC}/ui && NODE_OPTIONS=--openssl-legacy-provider yarn build
+	#${RM} -r ${STAGEDIR}${PREFIX}/share/.cache
+
+
+pre-install:
+	@${RM} ${WRKSRC}/.yarnrc
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKDIR}/bin/gotify-server ${STAGEDIR}${PREFIX}/bin/gotify-server
+	@${MV} ${WRKSRC}/config.example.yml ${WRKSRC}/config.yml.sample
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+.for x in config.yml.sample
+	@${CP} ${WRKSRC}/${x} ${STAGEDIR}${ETCDIR}/${x}
+.endfor
+	@${MKDIR} ${STAGEDIR}/var/db/gotify
+
+post-install:
+	@${ECHO} "@sample ${ETCDIR}/config.yml.sample" >> ${TMPPLIST}
+	@${ECHO_CMD} "@owner gotify" >> ${TMPPLIST}
+	@${ECHO_CMD} "@group gotify" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir /var/db/gotify" >> ${TMPPLIST}
+	#@${ECHO_CMD} "@dir /var/db/gotify/certs" >> ${TMPPLIST}
+
+make-yarn-cache: patch
+	${RM} -r ${WRKDIR}/yarn-offline-cache
+	cd ${WRKSRC}/ui && ${SETENV} ${MAKE_ENV} PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true yarn --frozen-lockfile --ignore-scripts
+	cd ${WRKDIR} && ${TAR} -czf ${PORTNAME}-yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX} yarn-offline-cache
+	@${ECHO_CMD} upload ${PORTNAME}-yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}
+
+.include <bsd.port.mk>

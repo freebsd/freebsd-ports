@@ -209,6 +209,7 @@
     SUBDIR += gopher
     SUBDIR += goreplay
     SUBDIR += gorss
+    SUBDIR += gotify-server
     SUBDIR += gotthard
     SUBDIR += graphpath
     SUBDIR += grilo
