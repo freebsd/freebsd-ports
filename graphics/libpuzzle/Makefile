@@ -2,7 +2,8 @@ PORTNAME=	libpuzzle
 PORTVERSION=	0.11
 PORTREVISION=	12
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/libpuzzle/releases/
+MASTER_SITES=	https://ftp.pureftpd.org/pub/${PORTNAME}/releases/ \
+		ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/${PORTNAME}/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to find similar pictures
