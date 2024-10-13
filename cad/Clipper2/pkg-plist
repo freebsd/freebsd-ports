@@ -10,7 +10,11 @@ lib/cmake/clipper2/Clipper2Config.cmake
 lib/cmake/clipper2/Clipper2ConfigVersion.cmake
 lib/cmake/clipper2/Clipper2Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/clipper2/Clipper2Targets.cmake
-lib/libClipper2.a
-lib/libClipper2Z.a
+lib/libClipper2.so
+lib/libClipper2.so.1
+lib/libClipper2.so.1.4.0
+lib/libClipper2Z.so
+lib/libClipper2Z.so.1
+lib/libClipper2Z.so.1.4.0
 libdata/pkgconfig/Clipper2.pc
 libdata/pkgconfig/Clipper2Z.pc
