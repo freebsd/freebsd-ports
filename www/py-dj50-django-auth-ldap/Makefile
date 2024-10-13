@@ -1,8 +1,9 @@
 PORTNAME=	django-auth-ldap
-PORTVERSION=	4.8.0
+PORTVERSION=	5.0.0
 CATEGORIES=	www security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj50-
+DISTNAME=	django_auth_ldap-${PORTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	LDAP integration for django.contrib.auth
