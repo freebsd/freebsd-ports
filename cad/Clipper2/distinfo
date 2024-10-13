@@ -1,5 +1,3 @@
-TIMESTAMP = 1728687615
-SHA256 (AngusJohnson-Clipper2-1.4.0-2b665ac_GH0.tar.gz) = bf1553e085ebcfc501884a56087580b2a5b2ffa14826700b67489bcc3af79c19
-SIZE (AngusJohnson-Clipper2-1.4.0-2b665ac_GH0.tar.gz) = 619495
-SHA256 (google-googletest-71815bb_GH0.tar.gz) = 386281d4eddb10c6cf5f93ee02d56793fb075138cb584ca31b1e70ab38c7678c
-SIZE (google-googletest-71815bb_GH0.tar.gz) = 873787
+TIMESTAMP = 1728819583
+SHA256 (Clipper2_1.4.0.zip) = c327d65a9bc4970f5793cc5460756fc6a51d9233ad1941a303435d154f80accb
+SIZE (Clipper2_1.4.0.zip) = 1144261
