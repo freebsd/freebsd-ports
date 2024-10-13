@@ -1,6 +1,5 @@
 PORTNAME=	testrepository
-DISTVERSION=	0.0.20
-PORTREVISION=	1
+DISTVERSION=	0.0.21
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,13 +13,15 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=		${WRKSRC}/Apache-2.0
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/BSD
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatch-vcs>0:devel/py-hatch-vcs@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fixtures>0:devel/py-fixtures@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-subunit>=0.0.18:devel/py-python-subunit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}testtools>=0.9.30:devel/py-testtools@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}iso8601>0:devel/py-iso8601@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-subunit>=1.0.0:devel/py-python-subunit@${PY_FLAVOR}
 
-USES=		python shebangfix
-USE_PYTHON=	distutils concurrent autoplist
-SHEBANG_FILES=	testr
+USES=		python
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
