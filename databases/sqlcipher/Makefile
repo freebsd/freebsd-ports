@@ -1,6 +1,6 @@
 PORTNAME=	sqlcipher
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.5.6
+DISTVERSION=	4.6.1
 CATEGORIES=	databases
 
 MAINTAINER=	jharris@widomaker.com
@@ -20,6 +20,8 @@ CONFIGURE_ARGS+=--enable-tempstore=yes --disable-tcl --disable-readline
 CPPFLAGS+=	-DSQLITE_HAS_CODEC
 LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
 CFLAGS+=	-I${LOCALBASE}/include -I${OPENSSLINC}
+
+TEST_TARGET=	test # tests fail to run, see https://github.com/sqlcipher/sqlcipher/issues/527
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so ${STAGEDIR}${PREFIX}/bin/*
