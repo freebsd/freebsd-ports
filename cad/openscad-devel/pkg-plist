@@ -22,10 +22,12 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/color-schemes/readme.txt
 %%DATADIR%%/color-schemes/render/beforedawn.json
 %%DATADIR%%/color-schemes/render/clearsky.json
+%%DATADIR%%/color-schemes/render/daylight-gem.json
 %%DATADIR%%/color-schemes/render/deepocean.json
 %%DATADIR%%/color-schemes/render/metallic.json
 %%DATADIR%%/color-schemes/render/monotone.json
 %%DATADIR%%/color-schemes/render/nature.json
+%%DATADIR%%/color-schemes/render/nocturnal-gem.json
 %%DATADIR%%/color-schemes/render/solarized.json
 %%DATADIR%%/color-schemes/render/starnight.json
 %%DATADIR%%/color-schemes/render/sunset.json
@@ -169,6 +171,7 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/locale/es/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/fr/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/hy/LC_MESSAGES/openscad.mo
+%%DATADIR%%/locale/ka/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/pl/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/ru/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/tr/LC_MESSAGES/openscad.mo
