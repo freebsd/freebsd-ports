@@ -1,5 +1,5 @@
 PORTNAME=	qogir-icon-themes
-DISTVERSION=	2021-10-14
+DISTVERSION=	2023-06-05
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -10,6 +10,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash>0:shells/bash \
+		gcp:sysutils/coreutils \
 		gsed:textproc/gsed
 
 USES=		shebangfix
@@ -18,7 +19,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	vinceliuice
 GH_PROJECT=	Qogir-icon-theme
 SHEBANG_FILES=	install.sh
-BINARY_ALIAS=	gtk-update-icon-cache=${TRUE}
+
+BINARY_ALIAS+=	cp=gcp gtk-update-icon-cache=${TRUE} sed=gsed
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 
