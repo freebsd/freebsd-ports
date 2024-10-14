@@ -1,7 +1,6 @@
 PORTNAME=	libdatadog
-PORTVERSION=	11.0.0
+PORTVERSION=	12.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo llvm
 
-CARGO_FEATURES=	cbindgen,datadog-profiling-ffi/ddtelemetry-ffi
+CARGO_FEATURES=	cbindgen,crashtracker-ffi,cbindgen,datadog-profiling-ffi/ddtelemetry-ffi
 MAKE_ENV=	LIBCLANG_PATH=${LLVM_PREFIX}/lib
 
 USE_GITHUB=	yes
@@ -23,8 +22,8 @@ NATIVE_STATIC_LIBS=	-lpthread -lrt -lexecinfo -lutil -lc -lm
 
 post-patch:
 	@${SED} -e 's|@Datadog_VERSION@|${PORTVERSION}|' ${WRKSRC}/profiling-ffi/datadog_profiling.pc.in > ${WRKSRC}/datadog_profiling.pc
-	@${SED} -e 's|@DDog_VERSION@|${PORTVERSION}|' ${WRKSRC}/profiling-ffi/datadog_profiling_with_rpath.pc.in > ${WRKSRC}/datadog_profiling_with_rpath.pc
-	@${SED} -e 's|@DDog_VERSION@|${PORTVERSION}|; s|@Datadog_LIBRARIES@|${NATIVE_STATIC_LIBS}|' ${WRKSRC}/profiling-ffi/datadog_profiling-static.pc.in > ${WRKSRC}/datadog_profiling-static.pc
+	@${SED} -e 's|@Datadog_VERSION@|${PORTVERSION}|' ${WRKSRC}/profiling-ffi/datadog_profiling_with_rpath.pc.in > ${WRKSRC}/datadog_profiling_with_rpath.pc
+	@${SED} -e 's|@Datadog_VERSION@|${PORTVERSION}|; s|@Datadog_LIBRARIES@|${NATIVE_STATIC_LIBS}|' ${WRKSRC}/profiling-ffi/datadog_profiling-static.pc.in > ${WRKSRC}/datadog_profiling-static.pc
 	@${SED} -e 's|@Datadog_LIBRARIES@|${NATIVE_STATIC_LIBS}|' ${WRKSRC}/cmake/DatadogConfig.cmake.in > ${WRKSRC}/DatadogConfig.cmake
 	@${SED} -e 's|@Datadog_LIBRARIES@|${NATIVE_STATIC_LIBS}|' ${WRKSRC}/cmake/DataPipelineConfig.cmake.in > ${WRKSRC}/DataPipelineConfig.cmake
 # Fix sys-info-0.9.1 on 32-bit architectures, see also https://github.com/FillZpp/sys-info-rs/issues/80
@@ -33,6 +32,7 @@ post-patch:
 post-build:
 	@${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/dedup_headers \
 		${CARGO_TARGET_DIR}/include/datadog/common.h \
+		${CARGO_TARGET_DIR}/include/datadog/crashtracker.h \
 		${CARGO_TARGET_DIR}/include/datadog/profiling.h \
 		${CARGO_TARGET_DIR}/include/datadog/telemetry.h \
 		${CARGO_TARGET_DIR}/include/datadog/data-pipeline.h

@@ -1,6 +1,7 @@
 bin/libdatadog-crashtracking-receiver
 include/datadog/blazesym.h
 include/datadog/common.h
+include/datadog/crashtracker.h
 include/datadog/data-pipeline.h
 include/datadog/profiling.h
 include/datadog/telemetry.h
