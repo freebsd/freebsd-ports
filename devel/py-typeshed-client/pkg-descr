@@ -1,0 +1,12 @@
+typeshed-client provides a way to retrieve information from typeshed and from
+PEP 561 stub packages.
+
+Example use cases:
+- Find the path to the stub file for a particular module.
+- Find the names defined in a stub.
+- Find the AST node that defines a particular name in a stub.
+
+Projects for which typeshed_client could be useful include:
+- Static analyzers that want to access typeshed annotations.
+- Tools that check stubs for correctness.
+- Tools that use typeshed for runtime introspection.
