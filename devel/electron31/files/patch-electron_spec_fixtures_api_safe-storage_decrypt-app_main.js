@@ -1,6 +1,6 @@
---- electron/spec/fixtures/api/safe-storage/decrypt-app/main.js.orig	2023-08-12 11:44:47 UTC
+--- electron/spec/fixtures/api/safe-storage/decrypt-app/main.js.orig	2024-10-09 13:53:12 UTC
 +++ electron/spec/fixtures/api/safe-storage/decrypt-app/main.js
-@@ -6,7 +6,7 @@ const pathToEncryptedString = path.resolve(__dirname, 
+@@ -7,7 +7,7 @@ app.whenReady().then(async () => {
  const readFile = fs.readFile;
  
  app.whenReady().then(async () => {

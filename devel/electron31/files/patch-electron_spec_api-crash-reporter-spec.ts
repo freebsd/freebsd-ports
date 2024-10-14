@@ -1,7 +1,7 @@
---- electron/spec/api-crash-reporter-spec.ts.orig	2024-01-23 19:02:02 UTC
+--- electron/spec/api-crash-reporter-spec.ts.orig	2024-10-09 13:53:12 UTC
 +++ electron/spec/api-crash-reporter-spec.ts
-@@ -11,7 +11,7 @@ const isWindowsOnArm = process.platform === 'win32' &&
- import { setTimeout } from 'node:timers/promises';
+@@ -14,7 +14,7 @@ const isWindowsOnArm = process.platform === 'win32' &&
+ import { ifdescribe, ifit, defer, startRemoteControlApp, repeatedly, listen } from './lib/spec-helpers';
  
  const isWindowsOnArm = process.platform === 'win32' && process.arch === 'arm64';
 -const isLinuxOnArm = process.platform === 'linux' && process.arch.includes('arm');
@@ -9,7 +9,7 @@
  
  type CrashInfo = {
    prod: string
-@@ -44,7 +44,7 @@ function checkCrash (expectedProcessType: string, fiel
+@@ -47,7 +47,7 @@ function checkCrash (expectedProcessType: string, fiel
  
    // TODO(nornagon): minidumps are sometimes (not always) turning up empty on
    // 32-bit Linux.  Figure out why.
@@ -18,7 +18,7 @@
      expect(fields.upload_file_minidump.length).to.be.greaterThan(0);
    }
  }
-@@ -181,7 +181,7 @@ ifdescribe(!isLinuxOnArm && !process.mas && !process.e
+@@ -184,7 +184,7 @@ ifdescribe(!isLinuxOnArm && !process.mas && !process.e
  
      // Ensures that passing in crashpadHandlerPID flag for Linx child processes
      // does not affect child proocess args.
@@ -27,16 +27,16 @@
        const { port, waitForCrash } = await startServer();
        let exitCode: number | null = null;
        const appPath = path.join(__dirname, 'fixtures', 'apps', 'crash');
-@@ -530,7 +530,7 @@ ifdescribe(!isLinuxOnArm && !process.mas && !process.e
+@@ -533,7 +533,7 @@ ifdescribe(!isLinuxOnArm && !process.mas && !process.e
        }
      }
  
--    const processList = process.platform === 'linux' ? ['main', 'renderer', 'sandboxed-renderer']
-+    const processList = (process.platform === 'linux' || process.platform === 'freebsd') ? ['main', 'renderer', 'sandboxed-renderer']
+-    const processList = process.platform === 'linux'
++    const processList = (process.platform === 'linux' || process.platform === 'freebsd')
+       ? ['main', 'renderer', 'sandboxed-renderer']
        : ['main', 'renderer', 'sandboxed-renderer', 'node'];
      for (const crashingProcess of processList) {
-       describe(`when ${crashingProcess} crashes`, () => {
-@@ -542,7 +542,7 @@ ifdescribe(!isLinuxOnArm && !process.mas && !process.e
+@@ -546,7 +546,7 @@ ifdescribe(!isLinuxOnArm && !process.mas && !process.e
              return app.getPath('crashDumps');
            });
            let reportsDir = crashesDir;
@@ -45,7 +45,7 @@
              reportsDir = path.join(crashesDir, 'completed');
            } else if (process.platform === 'win32') {
              reportsDir = path.join(crashesDir, 'reports');
-@@ -566,7 +566,7 @@ ifdescribe(!isLinuxOnArm && !process.mas && !process.e
+@@ -570,7 +570,7 @@ ifdescribe(!isLinuxOnArm && !process.mas && !process.e
            expect(remoteCrashesDir).to.equal(crashesDir);
  
            let reportsDir = crashesDir;

@@ -1,6 +1,6 @@
---- electron/lib/browser/init.ts.orig	2024-04-16 14:29:17 UTC
+--- electron/lib/browser/init.ts.orig	2024-10-09 13:53:12 UTC
 +++ electron/lib/browser/init.ts
-@@ -161,7 +161,7 @@ function currentPlatformSupportsAppIndicator () {
+@@ -162,7 +162,7 @@ function currentPlatformSupportsAppIndicator () {
  const KNOWN_XDG_DESKTOP_VALUES = new Set(['Pantheon', 'Unity:Unity7', 'pop:GNOME']);
  
  function currentPlatformSupportsAppIndicator () {

@@ -1,6 +1,6 @@
---- electron/spec/api-content-tracing-spec.ts.orig	2023-09-16 04:46:51 UTC
+--- electron/spec/api-content-tracing-spec.ts.orig	2024-10-09 13:53:12 UTC
 +++ electron/spec/api-content-tracing-spec.ts
-@@ -6,7 +6,7 @@ import { setTimeout } from 'timers/promises';
+@@ -9,7 +9,7 @@ import { ifdescribe } from './lib/spec-helpers';
  import { ifdescribe } from './lib/spec-helpers';
  
  // FIXME: The tests are skipped on linux arm/arm64
