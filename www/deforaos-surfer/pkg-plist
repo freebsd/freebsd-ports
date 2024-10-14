@@ -9,9 +9,9 @@ share/applications/org.defora.htmlapp.desktop
 share/applications/org.defora.surfer.desktop
 share/icons/hicolor/16x16/apps/surfer-view-html-source.png
 share/icons/hicolor/24x24/apps/surfer-view-html-source.png
-share/doc/Surfer/COPYING
-share/doc/Surfer/README.md
-share/locale/de/LC_MESSAGES/Surfer.mo
-share/locale/es/LC_MESSAGES/Surfer.mo
-share/locale/fr/LC_MESSAGES/Surfer.mo
-share/locale/it/LC_MESSAGES/Surfer.mo
+%%PORTDOCS%%share/doc/Surfer/COPYING
+%%PORTDOCS%%share/doc/Surfer/README.md
+%%NLS%%share/locale/de/LC_MESSAGES/Surfer.mo
+%%NLS%%share/locale/es/LC_MESSAGES/Surfer.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/Surfer.mo
+%%NLS%%share/locale/it/LC_MESSAGES/Surfer.mo
