@@ -5,11 +5,12 @@ share/Alpaca/alpaca/available_models.json
 share/Alpaca/alpaca/available_models_descriptions.py
 share/Alpaca/alpaca/connection_handler.py
 share/Alpaca/alpaca/custom_widgets/chat_widget.py
+share/Alpaca/alpaca/custom_widgets/dialog_widget.py
 share/Alpaca/alpaca/custom_widgets/message_widget.py
 share/Alpaca/alpaca/custom_widgets/model_widget.py
 share/Alpaca/alpaca/custom_widgets/table_widget.py
 share/Alpaca/alpaca/custom_widgets/terminal_widget.py
-share/Alpaca/alpaca/dialogs.py
+share/Alpaca/alpaca/generic_actions.py
 share/Alpaca/alpaca/internal.py
 share/Alpaca/alpaca/main.py
 share/Alpaca/alpaca/window.py
