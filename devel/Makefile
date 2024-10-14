@@ -6662,6 +6662,7 @@
     SUBDIR += rubygem-aws-sdk-marketplacedeployment
     SUBDIR += rubygem-aws-sdk-marketplaceentitlementservice
     SUBDIR += rubygem-aws-sdk-marketplacemetering
+    SUBDIR += rubygem-aws-sdk-marketplacereporting
     SUBDIR += rubygem-aws-sdk-mediaconnect
     SUBDIR += rubygem-aws-sdk-mediaconvert
     SUBDIR += rubygem-aws-sdk-medialive
