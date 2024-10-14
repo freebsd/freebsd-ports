@@ -5,6 +5,7 @@ DISTVERSIONPREFIX=	v
 .if ${FLAVOR:U} == ee
 DISTVERSIONSUFFIX=	-ee
 .endif
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 # include patch to fix database migration
@@ -265,7 +266,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-oauth2>=2.0<3:net/rubygem-oauth2 \
 	rubygem-health_check-rails70>=3.0<4:devel/rubygem-health_check-rails70 \
 	rubygem-vmstat>=2.3.0<2.4.0:sysutils/rubygem-vmstat \
-	rubygem-sys-filesystem>=1.4.3<1.5:sysutils/rubygem-sys-filesystem \
+	rubygem-sys-filesystem14>=1.4.3<1.5:sysutils/rubygem-sys-filesystem14 \
 	rubygem-net-ntp>0:net/rubygem-net-ntp \
 	rubygem-ssh_data>=1.3<2:security/rubygem-ssh_data \
 	rubygem-spamcheck>=1.3.0<1.4:net/rubygem-spamcheck \
