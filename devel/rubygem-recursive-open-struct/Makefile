@@ -1,5 +1,5 @@
 PORTNAME=	recursive-open-struct
-PORTVERSION=	1.1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,8 @@ WWW=		https://github.com/aetherknight/recursive-open-struct
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+RUN_DEPENDS=	rubygem-ostruct>=0:devel/rubygem-ostruct
 
 USES=		gem
 
