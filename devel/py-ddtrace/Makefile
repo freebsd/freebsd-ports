@@ -1,5 +1,5 @@
 PORTNAME=	ddtrace
-PORTVERSION=	2.13.0
+PORTVERSION=	2.14.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/abseil/abseil-cpp/releases/download/${ABSEIL_VERSION}/:abseil
@@ -53,7 +53,7 @@ OPENAI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tiktoken>=0:textproc/py-tiktoken@${PY
 OPENTRACING_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}opentracing>=2.0.0:devel/py-opentracing@${PY_FLAVOR}
 
 post-patch:
-	${MV} ${WRKDIR}/abseil-cpp-${ABSEIL_VERSION}/ ${WRKSRC}/ddtrace/appsec/_iast/_taint_tracking/_deps/
+	${MV} ${WRKDIR}/abseil-cpp-${ABSEIL_VERSION}/ ${WRKSRC}/ddtrace/appsec/_iast/_taint_tracking/absl/
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
