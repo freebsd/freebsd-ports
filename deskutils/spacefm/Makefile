@@ -43,19 +43,19 @@ OPTIONS_GROUP_OPT_DEPS=	CURLFTPFS IFUSE JMTPFS LSOF PHOTOFS
 PORTDOCS=	*
 
 CURLFTPFS_DESC=		Mount FTP shares
-CURLFTPFS_RUN_DEPENDS=	fusefs-curlftpfs>0:sysutils/fusefs-curlftpfs
+CURLFTPFS_RUN_DEPENDS=	fusefs-curlftpfs>0:fs/curlftpfs
 
 IFUSE_DESC=		Mount your iPhone/iPod Touch
-IFUSE_RUN_DEPENDS=	fusefs-ifuse>0:sysutils/fusefs-ifuse
+IFUSE_RUN_DEPENDS=	fusefs-ifuse>0:fs/ifuse
 
 JMTPFS_DESC=		Mount MTP devices
-JMTPFS_RUN_DEPENDS=	fusefs-jmtpfs>0:sysutils/fusefs-jmtpfs
+JMTPFS_RUN_DEPENDS=	fusefs-jmtpfs>0:fs/jmtpfs
 
 LSOF_DESC=		Device processes
 LSOF_RUN_DEPENDS=	lsof:sysutils/lsof
 
 PHOTOFS_DESC=		Mount cameras
-PHOTOFS_RUN_DEPENDS=	fusefs-gphotofs>0:graphics/fusefs-gphotofs
+PHOTOFS_RUN_DEPENDS=	fusefs-gphotofs>0:fs/gphotofs
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|' \

@@ -4329,7 +4329,7 @@
   </vuln>
 
   <vuln vid="2ed7e8db-e234-11ea-9392-002590bc43be">
-    <topic>sysutils/openzfs-kmod -- critical permissions issues</topic>
+    <topic>fs/openzfs-kmod -- critical permissions issues</topic>
     <affects>
       <package>
 	<name>openzfs-kmod</name>
