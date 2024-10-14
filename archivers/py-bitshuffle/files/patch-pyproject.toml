@@ -1,10 +1,10 @@
---- pyproject.toml.orig	2022-11-26 00:17:16 UTC
+--- pyproject.toml.orig	2024-09-26 18:05:42 UTC
 +++ pyproject.toml
 @@ -3,7 +3,7 @@ requires = [
  requires = [
-     "setuptools>=0.7",
+     "setuptools",
      "Cython>=0.19",
--    "oldest-supported-numpy",
+-    "numpy>=2.0.0rc1",
 +    "numpy",
      "h5py>=2.4.0",
  ]
