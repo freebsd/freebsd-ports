@@ -62,12 +62,11 @@
 %%DATADIR%%/Report/Html/Renderer/Template/file_item_branch.html.dist
 %%DATADIR%%/Report/Html/Renderer/Template/icons/file-code.svg
 %%DATADIR%%/Report/Html/Renderer/Template/icons/file-directory.svg
-%%DATADIR%%/Report/Html/Renderer/Template/js/bootstrap.min.js
+%%DATADIR%%/Report/Html/Renderer/Template/js/bootstrap.bundle.min.js
 %%DATADIR%%/Report/Html/Renderer/Template/js/d3.min.js
 %%DATADIR%%/Report/Html/Renderer/Template/js/file.js
 %%DATADIR%%/Report/Html/Renderer/Template/js/jquery.min.js
 %%DATADIR%%/Report/Html/Renderer/Template/js/nv.d3.min.js
-%%DATADIR%%/Report/Html/Renderer/Template/js/popper.min.js
 %%DATADIR%%/Report/Html/Renderer/Template/line.html.dist
 %%DATADIR%%/Report/Html/Renderer/Template/lines.html.dist
 %%DATADIR%%/Report/Html/Renderer/Template/method_item.html.dist
