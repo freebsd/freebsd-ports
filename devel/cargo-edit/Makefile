@@ -1,6 +1,7 @@
 PORTNAME=	cargo-edit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -341,9 +342,12 @@ CARGO_CRATES=	addr2line-0.24.1 \
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
-PLIST_FILES=	bin/cargo-add \
-		bin/cargo-rm \
-		bin/cargo-set-version \
+PLIST_FILES=	bin/cargo-set-version \
 		bin/cargo-upgrade
+
+post-install: # these 2 were merged into cargo
+	@${RM} \
+		${STAGEDIR}${PREFIX}/bin/cargo-add \
+		${STAGEDIR}${PREFIX}/bin/cargo-rm
 
 .include <bsd.port.mk>
