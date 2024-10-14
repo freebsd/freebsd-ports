@@ -1,5 +1,5 @@
 PORTNAME=	mime-types
-PORTVERSION=	3.5.2
+PORTVERSION=	3.6.0
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/mime-types/ruby-mime-types
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/Licence.md
 
-RUN_DEPENDS=	rubygem-mime-types-data>=3.2015<4:misc/rubygem-mime-types-data
+RUN_DEPENDS=	rubygem-logger>=0:devel/rubygem-logger \
+		rubygem-mime-types-data>=3.2015<4:misc/rubygem-mime-types-data
 
 USES=		gem
 
