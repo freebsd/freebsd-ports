@@ -1,7 +1,8 @@
 PORTNAME=	sh
-PORTVERSION=	2.0.7
+PORTVERSION=	2.1.0
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/amoffat/sh/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
