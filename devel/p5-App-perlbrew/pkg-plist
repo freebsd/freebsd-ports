@@ -4,6 +4,7 @@ bin/perlbrew
 %%SITE_PERL%%/App/Perlbrew/Path/Installation.pm
 %%SITE_PERL%%/App/Perlbrew/Path/Installations.pm
 %%SITE_PERL%%/App/Perlbrew/Path/Root.pm
+%%SITE_PERL%%/App/Perlbrew/Sys.pm
 %%SITE_PERL%%/App/Perlbrew/Util.pm
 %%SITE_PERL%%/App/perlbrew.pm
 %%PERL5_MAN1%%/perlbrew.1.gz
