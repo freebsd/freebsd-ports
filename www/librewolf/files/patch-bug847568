@@ -1,8 +1,10 @@
-# Allow building against system-wide graphite2/harfbuzz.
+Allow building against system-wide graphite2/harfbuzz
 
---- config/system-headers.mozbuild.orig	2024-07-25 20:34:40 UTC
+diff --git config/system-headers.mozbuild config/system-headers.mozbuild
+index af44c89057fc..c0ac271917fb 100644
+--- config/system-headers.mozbuild
 +++ config/system-headers.mozbuild
-@@ -1305,6 +1305,19 @@ if CONFIG["MOZ_ENABLE_LIBPROXY"]:
+@@ -1304,6 +1304,19 @@ if CONFIG["MOZ_ENABLE_LIBPROXY"]:
          "proxy.h",
      ]
  
@@ -22,9 +24,11 @@
  if CONFIG["MOZ_SYSTEM_ICU"]:
      system_headers += [
          "unicode/calendar.h",
---- dom/base/moz.build.orig	2024-07-25 20:34:40 UTC
+diff --git dom/base/moz.build dom/base/moz.build
+index 170d19f09aa9..a47fc8b1193c 100644
+--- dom/base/moz.build
 +++ dom/base/moz.build
-@@ -616,6 +616,9 @@ if CONFIG["MOZ_WIDGET_TOOLKIT"] == "gtk":
+@@ -620,6 +620,9 @@ FINAL_LIBRARY = "xul"
  if CONFIG["MOZ_WIDGET_TOOLKIT"] == "gtk":
      CXXFLAGS += CONFIG["MOZ_GTK3_CFLAGS"]
  
@@ -34,7 +38,10 @@
  GeneratedFile(
      "UseCounterList.h",
      script="gen-usecounters.py",
---- gfx/graphite2/geckoextra/moz.build.orig	2024-08-13 19:48:57 UTC
+diff --git gfx/graphite2/geckoextra/moz.build gfx/graphite2/geckoextra/moz.build
+new file mode 100644
+index 000000000000..ed0323eba9d5
+--- /dev/null
 +++ gfx/graphite2/geckoextra/moz.build
 @@ -0,0 +1,21 @@
 +# -*- Mode: python; indent-tabs-mode: nil; tab-width: 40 -*-
@@ -58,16 +65,21 @@
 +AllowCompilerWarnings()
 +
 +FINAL_LIBRARY = 'xul'
---- gfx/harfbuzz/README-mozilla.fbsd.orig	2024-08-13 19:48:57 UTC
+diff --git gfx/harfbuzz/README-mozilla.fbsd gfx/harfbuzz/README-mozilla.fbsd
+new file mode 100644
+index 000000000000..2a10eb1e2b42
+--- /dev/null
 +++ gfx/harfbuzz/README-mozilla.fbsd
 @@ -0,0 +1,4 @@
 +The in-tree copy may be omitted during build by --with-system-harfbuzz.
 +Make sure to keep pkg-config version check within toolkit/moz.configure in sync
 +with checkout version or increment latest tag by one if it's not based
 +on upstream release.
---- gfx/moz.build.orig	2024-07-25 20:34:43 UTC
+diff --git gfx/moz.build gfx/moz.build
+index 56ea317bedfc..07dd7f66f1bc 100644
+--- gfx/moz.build
 +++ gfx/moz.build
-@@ -10,6 +10,14 @@ with Files("wr/**"):
+@@ -10,6 +10,14 @@ with Files("**"):
  with Files("wr/**"):
      BUG_COMPONENT = ("Core", "Graphics: WebRender")
  
@@ -91,7 +103,9 @@
      "ots/src",
      "thebes",
      "ipc",
---- gfx/skia/generate_mozbuild.py.orig	2024-07-25 20:34:42 UTC
+diff --git gfx/skia/generate_mozbuild.py gfx/skia/generate_mozbuild.py
+index b589efde1c5c..47f49e10df70 100755
+--- gfx/skia/generate_mozbuild.py
 +++ gfx/skia/generate_mozbuild.py
 @@ -95,6 +95,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
          '-Wno-unused-private-field',
@@ -103,7 +117,9 @@
  if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk', 'android'):
      LOCAL_INCLUDES += [
          "/gfx/cairo/cairo/src",
---- gfx/skia/moz.build.orig	2024-07-25 20:34:42 UTC
+diff --git gfx/skia/moz.build gfx/skia/moz.build
+index 7fee54534878..ba1a4038e4a0 100644
+--- gfx/skia/moz.build
 +++ gfx/skia/moz.build
 @@ -623,6 +623,9 @@ if CONFIG['CC_TYPE'] in ('clang', 'clang-cl'):
          '-Wno-unused-private-field',
@@ -115,9 +131,11 @@
  if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('gtk', 'android'):
      LOCAL_INCLUDES += [
          "/gfx/cairo/cairo/src",
---- gfx/thebes/moz.build.orig	2024-07-25 20:34:42 UTC
+diff --git gfx/thebes/moz.build gfx/thebes/moz.build
+index 48f2849e2025..7d0a161a91b4 100644
+--- gfx/thebes/moz.build
 +++ gfx/thebes/moz.build
-@@ -295,7 +295,13 @@ LOCAL_INCLUDES += CONFIG["SKIA_INCLUDES"]
+@@ -295,7 +295,13 @@ if CONFIG["MOZ_WAYLAND"]:
  
  LOCAL_INCLUDES += CONFIG["SKIA_INCLUDES"]
  
@@ -132,7 +150,9 @@
  
  CXXFLAGS += ["-Werror=switch"]
  
---- intl/unicharutil/util/moz.build.orig	2024-07-25 20:34:43 UTC
+diff --git intl/unicharutil/util/moz.build intl/unicharutil/util/moz.build
+index 2396210428ee..092baac6f79c 100644
+--- intl/unicharutil/util/moz.build
 +++ intl/unicharutil/util/moz.build
 @@ -24,6 +24,9 @@ UNIFIED_SOURCES += [
      "nsUnicodeProperties.cpp",
@@ -144,9 +164,11 @@
  include("/ipc/chromium/chromium-config.mozbuild")
  
  GeneratedFile(
---- netwerk/dns/moz.build.orig	2024-07-25 20:34:48 UTC
+diff --git netwerk/dns/moz.build netwerk/dns/moz.build
+index 1bb0430f01aa..0360e0f468c0 100644
+--- netwerk/dns/moz.build
 +++ netwerk/dns/moz.build
-@@ -112,6 +112,9 @@ GeneratedFile(
+@@ -111,6 +111,9 @@ GeneratedFile(
      "etld_data.inc", script="prepare_tlds.py", inputs=["effective_tld_names.dat"]
  )
  
@@ -156,12 +178,15 @@
  # need to include etld_data.inc
  LOCAL_INCLUDES += [
      "/netwerk/base",
---- old-configure.in.orig	2024-07-25 20:34:49 UTC
+diff --git old-configure.in old-configure.in
+index 1af75c496b15..f1c7d7c48d28 100644
+--- old-configure.in
 +++ old-configure.in
-@@ -704,6 +704,27 @@ dnl ==================================================
+@@ -167,6 +167,27 @@ fi
+ AC_DEFINE_UNQUOTED(MOZ_MACBUNDLE_ID,$MOZ_MACBUNDLE_ID)
  AC_SUBST(MOZ_MACBUNDLE_ID)
  
- dnl ========================================================
++dnl ========================================================
 +dnl Check for graphite2
 +dnl ========================================================
 +if test -n "$MOZ_SYSTEM_GRAPHITE2"; then
@@ -182,13 +207,27 @@
 +    CFLAGS=$_SAVE_CFLAGS
 +fi
 +
-+dnl ========================================================
+ dnl ========================================================
  dnl = Child Process Name for IPC
  dnl ========================================================
- if test "$MOZ_WIDGET_TOOLKIT" != "android"; then
---- toolkit/library/moz.build.orig	2024-07-25 20:34:58 UTC
+diff --git security/rlbox/moz.build security/rlbox/moz.build
+index 7ad8d076f0f1..835b9d905e03 100644
+--- security/rlbox/moz.build
++++ security/rlbox/moz.build
+@@ -47,6 +47,8 @@ if CONFIG["MOZ_WASM_SANDBOXING_GRAPHITE"]:
+     for k, v in graphite_defines:
+         WASM_DEFINES[k] = v
+     LOCAL_INCLUDES += ["/gfx/graphite2/src"]
++    if CONFIG["MOZ_SYSTEM_GRAPHITE2"]:
++      WASM_CXXFLAGS += CONFIG["MOZ_GRAPHITE2_CFLAGS"]
+ 
+ if CONFIG["MOZ_WASM_SANDBOXING_OGG"]:
+     include("/media/libogg/sources.mozbuild")
+diff --git toolkit/library/moz.build toolkit/library/moz.build
+index ee6051567c8e..c24a5a513bbc 100644
+--- toolkit/library/moz.build
 +++ toolkit/library/moz.build
-@@ -297,6 +297,12 @@ if CONFIG["MOZ_SYSTEM_WEBP"]:
+@@ -298,6 +298,12 @@ if CONFIG["MOZ_SYSTEM_PNG"]:
  if CONFIG["MOZ_SYSTEM_WEBP"]:
      OS_LIBS += CONFIG["MOZ_WEBP_LIBS"]
  
@@ -201,9 +240,11 @@
  if CONFIG["MOZ_SYSTEM_LIBEVENT"]:
      OS_LIBS += CONFIG["MOZ_LIBEVENT_LIBS"]
  
---- toolkit/moz.configure.orig	2024-08-02 23:23:42 UTC
+diff --git toolkit/moz.configure toolkit/moz.configure
+index 1f85d2831f2f..04ce56e2cc0b 100644
+--- toolkit/moz.configure
 +++ toolkit/moz.configure
-@@ -1279,6 +1279,26 @@ set_config("CAIRO_FT_CFLAGS", ft2_info.cflags, when=en
+@@ -1397,6 +1397,26 @@ def enable_cairo_ft(target, tree_freetype, freetype2_info):
  set_config("MOZ_ENABLE_CAIRO_FT", True, when=enable_cairo_ft)
  set_config("CAIRO_FT_CFLAGS", ft2_info.cflags, when=enable_cairo_ft)
  
