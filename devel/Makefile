@@ -4700,6 +4700,7 @@
     SUBDIR += py-crcmod
     SUBDIR += py-crick
     SUBDIR += py-crontab
+    SUBDIR += py-crosshair-tool
     SUBDIR += py-cson
     SUBDIR += py-csv23
     SUBDIR += py-ctags
