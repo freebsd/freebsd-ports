@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-instrumentation-que
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
