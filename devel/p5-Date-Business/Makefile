@@ -6,12 +6,14 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fast calendar and business date calculations
-WWW=	https://metacpan.org/pod/Date::Business
+WWW=		https://metacpan.org/dist/Date-Business
 
-LICENSE=	ART10
+LICENSE=	ARTPERL10
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
