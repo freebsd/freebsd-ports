@@ -11,13 +11,16 @@ include/quic/api/QuicAsyncUDPSocket.h
 include/quic/api/QuicAsyncUDPSocketImpl.h
 include/quic/api/QuicBatchWriter.h
 include/quic/api/QuicBatchWriterFactory.h
+include/quic/api/QuicCallbacks.h
 include/quic/api/QuicEventBase.h
 include/quic/api/QuicGsoBatchWriters.h
 include/quic/api/QuicPacketScheduler.h
 include/quic/api/QuicSocket.h
+include/quic/api/QuicSocketLite.h
 include/quic/api/QuicStreamAsyncTransport.h
 include/quic/api/QuicTimer.h
 include/quic/api/QuicTransportBase.h
+include/quic/api/QuicTransportBaseLite.h
 include/quic/api/QuicTransportFunctions.h
 include/quic/api/test/MockQuicSocket.h
 include/quic/api/test/Mocks.h
@@ -163,6 +166,7 @@ include/quic/server/third-party/siphash.h
 include/quic/state/AckEvent.h
 include/quic/state/AckHandlers.h
 include/quic/state/AckStates.h
+include/quic/state/AckedPacketIterator.h
 include/quic/state/ClonedPacketIdentifier.h
 include/quic/state/DatagramHandlers.h
 include/quic/state/LossState.h
