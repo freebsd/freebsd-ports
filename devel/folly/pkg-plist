@@ -110,11 +110,14 @@ include/folly/Uri.h
 include/folly/Utility.h
 include/folly/Varint.h
 include/folly/VirtualExecutor.h
+include/folly/algorithm/simd/Contains.h
 include/folly/algorithm/simd/FindFixed.h
+include/folly/algorithm/simd/Ignore.h
 include/folly/algorithm/simd/Movemask.h
+include/folly/algorithm/simd/detail/ContainsImpl.h
 include/folly/algorithm/simd/detail/SimdAnyOf.h
-include/folly/algorithm/simd/detail/SimdCharPlatform.h
 include/folly/algorithm/simd/detail/SimdForEach.h
+include/folly/algorithm/simd/detail/SimdPlatform.h
 include/folly/algorithm/simd/detail/Traits.h
 include/folly/algorithm/simd/detail/UnrollUtils.h
 include/folly/base64.h
@@ -211,6 +214,7 @@ include/folly/container/IntrusiveList.h
 include/folly/container/Iterator.h
 include/folly/container/MapUtil.h
 include/folly/container/Merge.h
+include/folly/container/RegexMatchCache.h
 include/folly/container/Reserve.h
 include/folly/container/SparseByteSet.h
 include/folly/container/View.h
@@ -409,7 +413,6 @@ include/folly/executors/thread_factory/NamedThreadFactory.h
 include/folly/executors/thread_factory/PriorityThreadFactory.h
 include/folly/executors/thread_factory/ThreadFactory.h
 include/folly/experimental/AutoTimer.h
-include/folly/experimental/BitVectorCoding.h
 include/folly/experimental/Bits.h
 include/folly/experimental/Cleanup.h
 include/folly/experimental/CodingDetail.h
@@ -430,7 +433,6 @@ include/folly/experimental/QuotientMultiSet.h
 include/folly/experimental/ReadMostlySharedPtr.h
 include/folly/experimental/RelaxedConcurrentPriorityQueue.h
 include/folly/experimental/STTimerFDTimeoutManager.h
-include/folly/experimental/Select64.h
 include/folly/experimental/SingleWriterFixedHashMap.h
 include/folly/experimental/SingletonRelaxedCounter.h
 include/folly/experimental/TLRefCount.h
@@ -805,6 +807,7 @@ include/folly/io/async/test/Util.h
 include/folly/io/coro/ServerSocket.h
 include/folly/io/coro/Transport.h
 include/folly/io/coro/TransportCallbackBase.h
+include/folly/io/coro/TransportCallbacks.h
 include/folly/json.h
 include/folly/json/DynamicConverter.h
 include/folly/json/DynamicParser-inl.h
