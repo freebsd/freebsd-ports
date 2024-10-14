@@ -1,6 +1,5 @@
 PORTNAME=	gvfs
-PORTVERSION=	1.50.2
-PORTREVISION=	4
+DISTVERSION=	1.56.0
 CATEGORIES=	filesystems devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libdbus-1.so:devel/dbus \
-		libgcr-base-3.so:security/gcr3 \
+		libgcr-4.so:security/gcr \
 		libsoup-3.0.so:devel/libsoup3 \
 		libgudev-1.0.so:devel/libgudev \
 		libudisks2.so:sysutils/libudisks \
@@ -25,9 +24,8 @@ RUN_DEPENDS=	bsdisks>0:sysutils/bsdisks \
 PORTSCOUT=	limitw:1,even
 
 USES=		cpe gettext gnome libarchive localbase meson \
-		pkgconfig python:build shebangfix tar:xz
+		pkgconfig python:build tar:xz
 USE_GNOME=	glib20 libxml2 libxslt:build
-SHEBANG_FILES=	meson_post_install.py
 MESON_ARGS=	-Dsystemduserunitdir=no \
 		-Dtmpfilesdir=no \
 		-Dadmin=false \
@@ -62,11 +60,12 @@ AFC_LIB_DEPENDS=	libimobiledevice-1.0.so:comms/libimobiledevice \
 			libplist-2.0.so:devel/libplist
 AFC_MESON_TRUE=		afc
 
-GOA_LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts
-GOA_MESON_TRUE=		goa
+GOA_LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts \
+			libmsgraph-0.so:net/msgraph
+GOA_MESON_TRUE=		goa onedrive
 
 SMB_USES=		samba:lib
-SMB_MESON_TRUE=	smb
+SMB_MESON_TRUE=		smb
 SMB_VARS=		GLIB_SCHEMAS+=org.gnome.system.smb.gschema.xml
 
 CDDA_LIB_DEPENDS=	libcdio_paranoia.so:sysutils/libcdio-paranoia \
