@@ -1,5 +1,6 @@
 PORTNAME=	build
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=19.1:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyproject_hooks>=0:devel/py-pyproject_hooks@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyproject-hooks>=0:devel/py-pyproject-hooks@${PY_FLAVOR} \
 		${PY_TOMLI}
 
 USES=		python

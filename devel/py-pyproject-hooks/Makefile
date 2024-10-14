@@ -1,9 +1,10 @@
-PORTNAME=	pyproject_hooks
+PORTNAME=	pyproject-hooks
 PORTVERSION=	1.1.0
 PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pyproject_hooks-${PORTVERSION}
 
 PATCH_SITES=	https://github.com/pypa/pyproject-hooks/commit/
 PATCHFILES=	282b8735e59df938a210e46b8cd5cd1d99344816.patch:-p1 # https://github.com/pypa/pyproject-hooks/pull/199

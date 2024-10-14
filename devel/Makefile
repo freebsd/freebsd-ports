@@ -5581,8 +5581,8 @@
     SUBDIR += py-pyproject-flake8
     SUBDIR += py-pyproject-fmt
     SUBDIR += py-pyproject-fmt-rust
+    SUBDIR += py-pyproject-hooks
     SUBDIR += py-pyproject-metadata
-    SUBDIR += py-pyproject_hooks
     SUBDIR += py-pypugjs
     SUBDIR += py-pyqtree
     SUBDIR += py-pyquery
