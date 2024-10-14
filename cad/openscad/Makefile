@@ -1,6 +1,6 @@
 PORTNAME=	openscad
 PORTVERSION=	2024.10.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 
 #PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -18,7 +18,8 @@ BUILD_DEPENDS=	cgal>0:math/cgal \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		${LOCALBASE}/include/clipper2/clipper.h:cad/Clipper2 \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
-LIB_DEPENDS=	libzip.so:archivers/libzip \
+LIB_DEPENDS=	libasound_module_pcm_oss.so:audio/alsa-plugins \
+		libzip.so:archivers/libzip \
 		libhidapi.so:comms/hidapi \
 		libboost_regex.so:devel/boost-libs \
 		libqscintilla2_qt5.so:devel/qscintilla2-qt5 \
