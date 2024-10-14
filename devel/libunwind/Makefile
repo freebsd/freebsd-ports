@@ -1,5 +1,6 @@
 PORTNAME=	libunwind
 PORTVERSION=	20240221	# This is the release date on https://github.com/libunwind/libunwind/releases
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libunwind/libunwind/releases/download/v${LIBUNWIND_VERSION}/
 DISTNAME=	libunwind-${LIBUNWIND_VERSION}
@@ -37,14 +38,7 @@ PLIST_SUB+=	COREDUMP="@comment "
 PLIST_SUB+=	COREDUMP=""
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400052
-PLIST_FILES=	include/unwind.h
-.endif
-
 post-install:
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400052
-	${INSTALL_DATA} ${FILESDIR}/unwind.h ${STAGEDIR}${PREFIX}/include
-.endif
 	cd ${STAGEDIR}${PREFIX}/ && ${FIND} libexec/libunwind -type f >> ${TMPPLIST}
 
 .include <bsd.port.mk>
