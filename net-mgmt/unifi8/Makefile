@@ -1,5 +1,5 @@
 PORTNAME=	unifi8
-PORTVERSION=	8.4.62
+PORTVERSION=	8.5.6
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
 		https://repo1.maven.org/maven2/%SUBDIR%/:jax
@@ -64,14 +64,16 @@ EXTERNALDB_VARS_OFF=	RUN_DEPENDS+=mongodb60>0:databases/mongodb60
 _DIR_LIST=	conf data logs run work
 _JAX_DISTNAME=	javax.activation-api
 _JAX_VERSION=	1.2.0
+_SNAPPY_VERSION=	1.1.10.5
 
 post-extract:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${_JAX_DISTNAME}-${_JAX_VERSION}.jar \
 		${WRKSRC}/usr/lib/unifi/lib/
 
 post-patch:
-	(cd ${WRKSRC}/usr/lib/unifi/lib && \
-		${LN} -f -s ${JAVAJARDIR}/snappy-java.jar snappy-java-*.jar)
+	(cd ${WRKSRC}/usr/lib/unifi/lib/local && \
+		${RM} snappy-java-${_SNAPPY_VERSION}.jar && \
+		${LN} -f -s ${JAVAJARDIR}/snappy-java.jar snappy-java-${_SNAPPY_VERSION}.jar)
 	${RM} -r ${WRKSRC}/usr/lib/unifi/lib/native
 
 do-install:
