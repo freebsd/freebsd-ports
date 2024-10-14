@@ -11,6 +11,8 @@ WWW=		https://fricas.sourceforge.net/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license/LICENSE.AXIOM
 
+BROKEN_i386=	fails to configure: mmap: Cannot allocate memory
+
 BUILD_DEPENDS=	sbcl:lang/sbcl
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 RUN_DEPENDS=	rlwrap:devel/rlwrap
