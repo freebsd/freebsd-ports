@@ -11,7 +11,7 @@ WWW=		https://www.gnu.org/software/guile/
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-NOT_FOR_ARCHS=	armv7 i386
+NOT_FOR_ARCHS?=	armv7 i386
 NOT_FOR_ARCHS_REASON=	Does not build on armv7 and i386
 
 USES=		tar:lz
