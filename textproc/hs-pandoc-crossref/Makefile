@@ -1,6 +1,5 @@
 PORTNAME=	pandoc-crossref
-PORTVERSION=	0.3.17.1
-PORTREVISION=	1
+DISTVERSION=	0.3.18.0
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,18 +11,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cabal
 
-PLIST_FILES=	bin/pandoc-crossref \
-		share/man/man1/pandoc-crossref.1.gz
-
 USE_CABAL=	pandoc-cli-${PANDOC_VER}
 USE_CABAL+=	Glob-0.10.2_3 \
 		JuicyPixels-3.3.9 \
 		OneTuple-0.4.2 \
 		Only-0.1_2 \
 		QuickCheck-2.15.0.1 \
-		SHA-1.6.4.4 \
 		StateVar-1.2.2 \
-		aeson-2.2.3.0_1 \
+		aeson-2.2.3.0_2 \
 		aeson-pretty-0.8.10 \
 		alex-3.5.1.0 \
 		ansi-terminal-1.1.1 \
@@ -33,7 +28,7 @@ USE_CABAL+=	Glob-0.10.2_3 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
 		assoc-1.1.1 \
-		async-2.2.5_1 \
+		async-2.2.5_2 \
 		attoparsec-0.14.4_5 \
 		attoparsec-aeson-2.2.2.0 \
 		base-compat-0.14.0 \
@@ -56,11 +51,11 @@ USE_CABAL+=	Glob-0.10.2_3 \
 		citeproc-0.8.1.1 \
 		cmdargs-0.10.22 \
 		colour-2.3.6 \
-		commonmark-0.2.6 \
+		commonmark-0.2.6.1 \
 		commonmark-extensions-0.2.5.5 \
-		commonmark-pandoc-0.2.2.1 \
+		commonmark-pandoc-0.2.2.2 \
 		comonad-5.0.8_2 \
-		conduit-1.3.5 \
+		conduit-1.3.6 \
 		conduit-extra-1.3.6 \
 		contravariant-1.5.5 \
 		cookie-0.5.0 \
@@ -70,18 +65,18 @@ USE_CABAL+=	Glob-0.10.2_3 \
 		crypton-x509-store-1.6.9 \
 		crypton-x509-system-1.6.7 \
 		crypton-x509-validation-1.6.12 \
-		data-default-0.7.1.1 \
-		data-default-class-0.1.2.0 \
-		data-default-instances-containers-0.0.1 \
-		data-default-instances-dlist-0.0.1 \
-		data-default-instances-old-locale-0.0.1 \
+		data-default-0.7.1.2 \
+		data-default-class-0.1.2.1 \
+		data-default-instances-containers-0.1.0.2 \
+		data-default-instances-dlist-0.0.1.1 \
+		data-default-instances-old-locale-0.0.1.1 \
 		data-fix-0.3.4 \
 		digest-0.0.2.1 \
 		distributive-0.6.2.1_1 \
-		djot-0.1.2.1 \
+		djot-0.1.2.2 \
 		dlist-1.0_2 \
-		doclayout-0.4.0.1 \
-		doctemplates-0.11 \
+		doclayout-0.5 \
+		doctemplates-0.11.0.1 \
 		emojis-0.1.4.1 \
 		file-embed-0.0.16.0 \
 		generically-0.1.1_3 \
@@ -89,8 +84,9 @@ USE_CABAL+=	Glob-0.10.2_3 \
 		gridtables-0.1.0.0_1 \
 		haddock-library-1.11.0_5 \
 		half-0.3.1_2 \
-		happy-1.20.1.1 \
-		hashable-1.4.7.0 \
+		happy-2.0.2 \
+		happy-lib-2.0.2 \
+		hashable-1.5.0.0 \
 		haskell-lexer-1.1.1 \
 		hourglass-0.2.12_1 \
 		hsc2hs-0.68.10_2 \
@@ -112,8 +108,8 @@ USE_CABAL+=	Glob-0.10.2_3 \
 		microlens-mtl-0.2.0.3_1 \
 		microlens-th-0.4.3.15 \
 		mime-types-0.1.2.0 \
-		mono-traversable-1.0.17.0 \
-		network-3.2.1.0 \
+		mono-traversable-1.0.20.0 \
+		network-3.2.4.0 \
 		network-uri-2.6.4.2_1 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.4 \
@@ -121,7 +117,7 @@ USE_CABAL+=	Glob-0.10.2_3 \
 		optparse-applicative-0.18.1.0 \
 		ordered-containers-0.2.4 \
 		os-string-2.0.6 \
-		pandoc-${PANDOC_VER} \
+		pandoc-3.5 \
 		pandoc-types-1.23.1_2 \
 		pem-0.2.4 \
 		pretty-show-1.10 \
@@ -137,8 +133,8 @@ USE_CABAL+=	Glob-0.10.2_3 \
 		semialign-1.3.1_1 \
 		semigroupoids-6.0.1_1 \
 		serialise-0.2.6.1_3 \
-		skylighting-0.14.2 \
-		skylighting-core-0.14.2 \
+		skylighting-0.14.3 \
+		skylighting-core-0.14.3 \
 		skylighting-format-ansi-0.1 \
 		skylighting-format-blaze-html-0.1.1.2 \
 		skylighting-format-context-0.1.0.2 \
@@ -152,9 +148,9 @@ USE_CABAL+=	Glob-0.10.2_3 \
 		tagged-0.8.8_1 \
 		tagsoup-0.14.8 \
 		temporary-1.3 \
-		texmath-0.12.8.9 \
+		texmath-0.12.8.11 \
 		text-conversions-0.3.1.1 \
-		text-iso8601-0.1.1 \
+		text-iso8601-0.1.1_1 \
 		text-short-0.1.6_2 \
 		th-abstraction-0.7.0.0 \
 		th-compat-0.1.5_2 \
@@ -165,8 +161,8 @@ USE_CABAL+=	Glob-0.10.2_3 \
 		tls-2.1.0 \
 		toml-parser-2.0.1.0 \
 		transformers-compat-0.7.2 \
-		typed-process-0.2.11.1 \
-		typst-0.5.0.5 \
+		typed-process-0.2.12.0 \
+		typst-0.6 \
 		typst-symbols-0.1.6 \
 		unicode-collation-0.1.3.6_1 \
 		unicode-data-0.6.0_1 \
@@ -189,11 +185,14 @@ USE_CABAL+=	Glob-0.10.2_3 \
 		zip-archive-0.4.3.2_1 \
 		zlib-0.7.1.0_1
 
-CABAL_EXECUTABLES=	pandoc-crossref pandoc
-CABAL_REVISION=		2
+CABAL_EXECUTABLES=	pandoc pandoc-crossref
+CABAL_REVISION=		1
 SKIP_CABAL_PLIST=	yes
 
-PANDOC_VER=		3.3
+PLIST_FILES=	bin/pandoc-crossref \
+		share/man/man1/pandoc-crossref.1.gz
+
+PANDOC_VER=	3.5
 
 post-build:
 	${SETENV} pandoc_datadir=${WRKSRC}/_cabal_deps/pandoc-${PANDOC_VER} \
@@ -201,6 +200,6 @@ post-build:
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/pandoc
-	${INSTALL_MAN} ${WRKSRC}/docs/pandoc-crossref.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/pandoc-crossref.1 ${STAGEDIR}${MANDIRS}/man1
 
 .include <bsd.port.mk>
