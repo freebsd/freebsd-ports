@@ -1,6 +1,5 @@
 PORTNAME=	pyproj
-PORTVERSION=	3.6.1
-PORTREVISION=	2
+PORTVERSION=	3.7.0
 CATEGORIES=	graphics geography python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,13 +12,13 @@ WWW=		https://pyproj4.github.io/pyproj/stable/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	proj>=9.0.0,1:graphics/proj \
+BUILD_DEPENDS=	proj>=9.2.0,1:graphics/proj \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=61.0.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libproj.so:graphics/proj
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR}
 
-USES=		python:3.9+
+USES=		python:3.10+
 USE_PYTHON=	autoplist concurrent cython pep517
 
 MAKE_ENV=	PROJ_DIR=${LOCALBASE}
