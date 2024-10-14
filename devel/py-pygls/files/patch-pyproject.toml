@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-03-26 18:43:55 UTC
++++ pyproject.toml
+@@ -20,7 +20,7 @@ cattrs = ">=23.1.2"
+ [tool.poetry.dependencies]
+ python = ">=3.8"
+ cattrs = ">=23.1.2"
+-lsprotocol = "2023.0.1"
++lsprotocol = ">=2023.0.1"
+ websockets = { version = ">=11.0.3", optional = true }
+ 
+ [tool.poetry.extras]
