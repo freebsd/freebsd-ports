@@ -1,4 +1,4 @@
-TIMESTAMP = 1728745739
+TIMESTAMP = 1728879416
 SHA256 (rust/crates/aho-corasick-1.1.3.crate) = 8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916
 SIZE (rust/crates/aho-corasick-1.1.3.crate) = 183311
 SHA256 (rust/crates/alinio-0.2.1.crate) = 66e562e228ad1df7eba72a66d8fa2215b8264bc1bff74a1b34b20d12aaae3b95
@@ -193,5 +193,5 @@ SHA256 (rust/crates/zerocopy-0.7.35.crate) = 1b9b4fd18abc82b8136838da5d50bae7bde
 SIZE (rust/crates/zerocopy-0.7.35.crate) = 152645
 SHA256 (rust/crates/zerocopy-derive-0.7.35.crate) = fa4f8080344d4671fb4e831a13ad1e68092748387dfc4f55e356242fae12ce3e
 SIZE (rust/crates/zerocopy-derive-0.7.35.crate) = 37829
-SHA256 (curlpipe-ox-0.6.5_GH0.tar.gz) = 410dc77ea2fcb9e73b8cba5121c3cf41215d4cf8cd219015d5f8e0caea4e42d7
-SIZE (curlpipe-ox-0.6.5_GH0.tar.gz) = 131972
+SHA256 (curlpipe-ox-0.6.6_GH0.tar.gz) = 1142d07846ccf5e9f12cada485da949783ab83076af2af6c62b1606df5b55d9a
+SIZE (curlpipe-ox-0.6.6_GH0.tar.gz) = 136515
