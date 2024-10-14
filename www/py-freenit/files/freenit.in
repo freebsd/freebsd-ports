@@ -16,21 +16,17 @@ load_rc_config $name
 : ${freenit_host:="0.0.0.0"}
 : ${freenit_port:="8000"}
 : ${freenit_module:="main:app"}
+: ${freenit_user:="www"}
 
 pidfile="/var/run/${name}.pid"
 start_cmd="${name}_start"
 procname="%%PREFIX%%/bin/python%%PYTHON_VER%%"
 
 freenit_start() {
-  echo -n "Starting ${name} ... "
+  startmsg -n "Starting ${name}"
   cd "${freenit_project_root}"
-  /usr/sbin/daemon -p "${pidfile}" -S "%%PREFIX%%/bin/uvicorn" --host "${freenit_host}" --port "${freenit_port}" --workers "${freenit_workers}" "${freenit_module}"
-  status=$?
-  if [ "${status}" = "0" ]; then
-    echo "done"
-  else
-    echo "failed!"
-  fi
+  /usr/sbin/daemon -u "${freenit_user}" -p "${pidfile}" -S "%%PREFIX%%/bin/uvicorn" --host "${freenit_host}" --port "${freenit_port}" --workers "${freenit_workers}" "${freenit_module}"
+  startmsg "."
 }
 
 run_rc_command $*
