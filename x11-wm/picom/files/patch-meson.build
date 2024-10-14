@@ -1,5 +1,5 @@
 # Configure PICOM_VERSION and PICOM_FULL_VERSION
---- meson.build.orig	2024-10-10 12:00:52 UTC
+--- meson.build.orig	2024-10-14 15:45:15 UTC
 +++ meson.build
 @@ -3,33 +3,8 @@ cc = meson.get_compiler('c')
  
@@ -32,8 +32,8 @@
 -else
 -	add_global_arguments('-DPICOM_FULL_VERSION="v'+meson.project_version()+'"', language: 'c')
 -endif
-+add_global_arguments('-DPICOM_VERSION="v12.2"', language: 'c')
-+add_global_arguments('-DPICOM_FULL_VERSION="v12.2"', language: 'c')
++add_global_arguments('-DPICOM_VERSION="v12.3"', language: 'c')
++add_global_arguments('-DPICOM_FULL_VERSION="v12.3"', language: 'c')
  
  if get_option('buildtype') == 'release'
  	add_global_arguments('-DNDEBUG', language: 'c')
