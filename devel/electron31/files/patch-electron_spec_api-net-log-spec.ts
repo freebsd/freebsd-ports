@@ -1,6 +1,6 @@
---- electron/spec/api-net-log-spec.ts.orig	2023-05-31 14:28:29 UTC
+--- electron/spec/api-net-log-spec.ts.orig	2024-10-09 13:53:12 UTC
 +++ electron/spec/api-net-log-spec.ts
-@@ -118,7 +118,7 @@ describe('netLog module', () => {
+@@ -121,7 +121,7 @@ describe('netLog module', () => {
      expect(JSON.parse(dump).events.some((x: any) => x.params && x.params.bytes && Buffer.from(x.params.bytes, 'base64').includes(unique))).to.be.true('uuid present in dump');
    });
  
@@ -9,7 +9,7 @@
      const appProcess = ChildProcess.spawn(process.execPath,
        [appPath], {
          env: {
-@@ -131,7 +131,7 @@ describe('netLog module', () => {
+@@ -134,7 +134,7 @@ describe('netLog module', () => {
      expect(fs.existsSync(dumpFile)).to.be.true('dump file exists');
    });
  
@@ -18,7 +18,7 @@
      const appProcess = ChildProcess.spawn(process.execPath,
        [appPath], {
          env: {
-@@ -147,7 +147,7 @@ describe('netLog module', () => {
+@@ -150,7 +150,7 @@ describe('netLog module', () => {
      expect(fs.existsSync(dumpFileDynamic)).to.be.true('dynamic dump file exists');
    });
  

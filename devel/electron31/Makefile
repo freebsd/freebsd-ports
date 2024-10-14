@@ -216,7 +216,7 @@ CHROMIUM_VER=			126.0.6478.234
 # See ${WRKSRC}/third_party/node/node_modules.tar.gz.sha1 for CHROMIUM_NODE_MODULES_HASH
 CHROMIUM_NODE_MODULES_HASH=	97a0b3c4c39cf05de1eafb6ffdec0fddd643f0a2
 # See ${WRKSRC}/electron/DEPS for NODE_VER
-NODE_VER=			20.17.0
+NODE_VER=			20.18.0
 # See ${WRKSRC}/electron/DEPS for NAN_VER
 NAN_VER=			e14bdcd1f72d62bca1d541b66da43130384ec213
 # See ${WRKSRC}/electron/DEPS for SQUIRREL_MAC_VER
