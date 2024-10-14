@@ -1,5 +1,5 @@
 PORTNAME=	activeresource
-PORTVERSION=	6.1.1
+PORTVERSION=	6.1.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,9 +11,9 @@ WWW=		https://rubyonrails.org/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-activemodel71>=6.0:databases/rubygem-activemodel71 \
+RUN_DEPENDS=	rubygem-activemodel72>=6.0:databases/rubygem-activemodel72 \
 		rubygem-activemodel-serializers-xml>=1.0<2:databases/rubygem-activemodel-serializers-xml \
-		rubygem-activesupport71>=6.0:devel/rubygem-activesupport71
+		rubygem-activesupport72>=6.0:devel/rubygem-activesupport72
 
 USES=		cpe gem
 
