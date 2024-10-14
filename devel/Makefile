@@ -4593,6 +4593,7 @@
     SUBDIR += py-castellan
     SUBDIR += py-catalogue
     SUBDIR += py-cattrs
+    SUBDIR += py-cattrs23
     SUBDIR += py-cbor
     SUBDIR += py-cbor2
     SUBDIR += py-cclib
