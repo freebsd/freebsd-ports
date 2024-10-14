@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.207.0
+PORTVERSION=	3.209.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -242,6 +242,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-marketplacedeployment>=1<2:devel/rubygem-aws-sdk-marketplacedeployment \
 		rubygem-aws-sdk-marketplaceentitlementservice>=1<2:devel/rubygem-aws-sdk-marketplaceentitlementservice \
 		rubygem-aws-sdk-marketplacemetering>=1<2:devel/rubygem-aws-sdk-marketplacemetering \
+		rubygem-aws-sdk-marketplacereporting>=1<2:devel/rubygem-aws-sdk-marketplacereporting \
 		rubygem-aws-sdk-mediaconnect>=1<2:devel/rubygem-aws-sdk-mediaconnect \
 		rubygem-aws-sdk-mediaconvert>=1<2:devel/rubygem-aws-sdk-mediaconvert \
 		rubygem-aws-sdk-medialive>=1<2:devel/rubygem-aws-sdk-medialive \
@@ -355,6 +356,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-snowball>=1<2:devel/rubygem-aws-sdk-snowball \
 		rubygem-aws-sdk-snowdevicemanagement>=1<2:devel/rubygem-aws-sdk-snowdevicemanagement \
 		rubygem-aws-sdk-sns>=1<2:devel/rubygem-aws-sdk-sns \
+		rubygem-aws-sdk-socialmessaging>=1<2:devel/rubygem-aws-sdk-socialmessaging \
 		rubygem-aws-sdk-sqs>=1<2:devel/rubygem-aws-sdk-sqs \
 		rubygem-aws-sdk-ssm>=1<2:devel/rubygem-aws-sdk-ssm \
 		rubygem-aws-sdk-ssmcontacts>=1<2:devel/rubygem-aws-sdk-ssmcontacts \
