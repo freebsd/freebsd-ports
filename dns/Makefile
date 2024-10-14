@@ -46,6 +46,7 @@
     SUBDIR += dnstable-convert
     SUBDIR += dnstop
     SUBDIR += dnstracer
+    SUBDIR += dnstracer-rs
     SUBDIR += dnsutl
     SUBDIR += dnsviz
     SUBDIR += dnswalk
