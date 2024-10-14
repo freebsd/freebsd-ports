@@ -1,6 +1,5 @@
 PORTNAME=	ngtcp2
-PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/ngtcp2/ngtcp2/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	lib
