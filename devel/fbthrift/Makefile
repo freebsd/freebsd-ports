@@ -1,7 +1,6 @@
 PORTNAME=	fbthrift
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2024.09.30.00
-PORTREVISION=	1
+DISTVERSION=	2024.10.14.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,6 +29,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libsodium.so:security/libsodium \
 		libunwind.so:devel/libunwind \
 		libwangle.so:net/wangle \
+		libxxhash.so:devel/xxhash \
 		libzstd.so:archivers/zstd
 
 USES=		bison cmake:testing compiler:c++17-lang ssl
