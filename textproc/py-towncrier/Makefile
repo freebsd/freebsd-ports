@@ -32,9 +32,4 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=7.1.0:devel/py-importli
 		${PYTHON_PKGNAMEPREFIX}importlib-resources>=6.4.0:devel/py-importlib-resources@${PY_FLAVOR}
 .endif
 
-.if defined(PYTHON_VER) && ${PYTHON_VER} < 3.11
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=2.0.1:textproc/py-tomli@${PY_FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=2.0.1:textproc/py-tomli@${PY_FLAVOR}
-.endif
-
 .include <bsd.port.post.mk>
