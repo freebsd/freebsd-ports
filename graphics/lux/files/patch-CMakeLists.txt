@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-02-09 16:33:06 UTC
+--- CMakeLists.txt.orig	2024-04-22 10:18:21 UTC
 +++ CMakeLists.txt
-@@ -139,8 +139,8 @@ message(STATUS "***** => LUX DATA DIRECTORY ${DataDir}
+@@ -140,8 +140,8 @@ if (     ${CMAKE_SYSTEM_PROCESSOR} STREQUAL x86_64
  message(STATUS "***** SYSTEM PROCESSOR ${CMAKE_SYSTEM_PROCESSOR}")
  
  if (     ${CMAKE_SYSTEM_PROCESSOR} STREQUAL x86_64
@@ -11,7 +11,7 @@
    set(i86 TRUE)
    message(STATUS "***** setting i86 TRUE for an intel/AMD target")
  else()
-@@ -351,7 +351,7 @@ set(AVX2_FLAGS "${RENDERING_FLAGS} \
+@@ -383,7 +383,7 @@ set(AVX512f_FLAGS "${RENDERING_FLAGS} \
  # about it and I don't have an AVX512 machine.
  
  set(AVX512f_FLAGS "${RENDERING_FLAGS} \
@@ -20,16 +20,16 @@
    -D hn=hn_avx512 -D PV_ARCH=PV_AVX512f \
    -D PV_ARCHNAME=\\\"avx512f\\\" \
    -D PV_PRIORITY=0 -D PV_VIABILITY=has_avx512f -D FLV_AVX512f")
-@@ -651,12 +651,6 @@ endif()
+@@ -727,12 +727,6 @@ install(TARGETS ${_project_name} DESTINATION bin)
+ # install the binary
  
  install(TARGETS ${_project_name} DESTINATION bin)
- 
+-
 -# Copy the NotoSans-Regular font and the readme (as required by the license)
 -# to the platform-specific font directory
 -
 -install(FILES NotoSans-Regular.ttf noto_font_license.txt DESTINATION
 - "${DataDir}/fonts")
--
+ 
  # The next section could do with sone tidying up. It deals with packaging
  # lux for distribution. This is used for some distribution channles, e.g.
- # to make .deb packages for ubuntu and debian, but packaging for windows
