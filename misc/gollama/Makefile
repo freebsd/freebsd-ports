@@ -1,6 +1,6 @@
 PORTNAME=	gollama
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.27.4
+DISTVERSION=	1.27.12
 CATEGORIES=	misc # machine learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/sammcj/gollama
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23-devel,modules
+USES=		go:1.22,modules
 
 GO_MODULE=	github.com/sammcj/gollama
 
