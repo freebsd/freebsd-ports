@@ -1,0 +1,11 @@
+TIMESTAMP = 1771001320
+SHA256 (dzaima-CBQN-v0.11.0_GH0.tar.gz) = b8b680b9c4a26f67a3949f28f58604ae1c52ef8d5d5d97d521393c528c36b178
+SIZE (dzaima-CBQN-v0.11.0_GH0.tar.gz) = 616036
+SHA256 (dzaima-replxx-5e3bd870699007b9536d29f60e3a2b0a68ce0a7a_GH0.tar.gz) = 7c5bee7bdd241a7050d3cc172c2bd119deeda8b2f4fd9f1a0e9f2eaa355d14d8
+SIZE (dzaima-replxx-5e3bd870699007b9536d29f60e3a2b0a68ce0a7a_GH0.tar.gz) = 100179
+SHA256 (dzaima-cbqnBytecode-156b47caf895f6706811c5c34bbbbaf192b8018b_GH0.tar.gz) = 050acbe9a8d0a104c1739addeaa23a4b9b0bef9bb4dcd48ca613790fb30048d7
+SIZE (dzaima-cbqnBytecode-156b47caf895f6706811c5c34bbbbaf192b8018b_GH0.tar.gz) = 70656
+SHA256 (mlochbaum-Singeli-2936c66b061b9df61cafc1f8d07a7ed53bf10bee_GH0.tar.gz) = feda6ea0c30c47984f2d2705201a044af9ca319b50f7125722f2c2395da561f5
+SIZE (mlochbaum-Singeli-2936c66b061b9df61cafc1f8d07a7ed53bf10bee_GH0.tar.gz) = 143621
+SHA256 (mlochbaum-BQN-0ffb828ca19fe6f53463068fd92a0eb3776d62a4_GH0.tar.gz) = 89757bef1f7a5208b88db280c54ecb5028047a217f6661e3a427eec522ebfcb3
+SIZE (mlochbaum-BQN-0ffb828ca19fe6f53463068fd92a0eb3776d62a4_GH0.tar.gz) = 3369569

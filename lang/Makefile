@@ -19,6 +19,7 @@
     SUBDIR += c
     SUBDIR += cairo
     SUBDIR += cbmbasic
+    SUBDIR += cbqn
     SUBDIR += ccl
     SUBDIR += ceylon
     SUBDIR += cfortran
