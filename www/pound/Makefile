@@ -1,6 +1,5 @@
 PORTNAME=	pound
-PORTVERSION=	4.13
-PORTREVISION=	1
+PORTVERSION=	4.14
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/graygnuorg/pound/releases/download/v${PORTVERSION}/
 
