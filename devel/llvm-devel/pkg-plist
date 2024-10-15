@@ -110,6 +110,7 @@ bin/sancov-devel
 %%FLANG%%bin/bbc-devel
 %%FLANG%%bin/f18-parse-demo-devel
 %%FLANG%%bin/fir-opt-devel
+%%FLANG%%bin/flang-devel
 %%FLANG%%bin/flang-new-devel
 %%FLANG%%bin/tco-devel
 %%LLD%%bin/ld.lld-devel
@@ -132,6 +133,7 @@ bin/sancov-devel
 %%MLIR%%bin/mlir-pdll-lsp-server-devel
 %%MLIR%%bin/mlir-query-devel
 %%MLIR%%bin/mlir-reduce-devel
+%%MLIR%%bin/mlir-rewrite-devel
 %%MLIR%%bin/mlir-tblgen-devel
 %%MLIR%%bin/mlir-transform-opt-devel
 %%MLIR%%bin/mlir-translate-devel
@@ -202,6 +204,8 @@ llvm-devel/bin/dsymutil
 %%FLANG%%llvm-devel/bin/f18-parse-demo
 %%EXTRAS%%llvm-devel/bin/find-all-symbols
 %%FLANG%%llvm-devel/bin/fir-opt
+%%FLANG%%llvm-devel/bin/flang
+%%FLANG%%llvm-devel/bin/flang-%%LLVM_MAJOR%%
 %%FLANG%%llvm-devel/bin/flang-new
 %%CLANG%%llvm-devel/bin/git-clang-format
 %%CLANG%%llvm-devel/bin/hmaptool
@@ -299,6 +303,7 @@ llvm-devel/bin/llvm-xray
 %%MLIR%%llvm-devel/bin/mlir-pdll-lsp-server
 %%MLIR%%llvm-devel/bin/mlir-query
 %%MLIR%%llvm-devel/bin/mlir-reduce
+%%MLIR%%llvm-devel/bin/mlir-rewrite
 %%MLIR%%llvm-devel/bin/mlir-tblgen
 %%MLIR%%llvm-devel/bin/mlir-transform-opt
 %%MLIR%%llvm-devel/bin/mlir-translate
@@ -391,6 +396,7 @@ llvm-devel/bin/verify-uselistorder
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/AssertSideEffectCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/AssignmentInIfConditionCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/BadSignalToKillThreadCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/BitwisePointerCastCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/BoolPointerImplicitConversionCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/BranchCloneCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/CastingThroughVoidCheck.h
@@ -456,6 +462,7 @@ llvm-devel/bin/verify-uselistorder
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/SuspiciousStringviewDataUsageCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/SwappedArgumentsCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/SwitchMissingDefaultCaseCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/TaggedUnionMemberCountCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/TerminatingContinueCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/ThrowKeywordMissingCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/TooSmallLoopVariableCheck.h
@@ -660,6 +667,7 @@ llvm-devel/bin/verify-uselistorder
 %%EXTRAS%%llvm-devel/include/clang-tidy/portability/RestrictSystemIncludesCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/portability/SIMDIntrinsicsCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/portability/StdAllocatorConstCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/portability/TemplateVirtualMemberFunctionCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/AvoidConstParamsInDecls.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/AvoidNestedConditionalOperatorCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/AvoidReturnWithVoidValueCheck.h
@@ -1162,7 +1170,9 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/Basic/riscv_vector_builtin_cg.inc
 %%CLANG%%llvm-devel/include/clang/Basic/riscv_vector_builtin_sema.inc
 %%CLANG%%llvm-devel/include/clang/Basic/riscv_vector_builtins.inc
+%%CLANG%%llvm-devel/include/clang/CIR/CIRGenerator.h
 %%CLANG%%llvm-devel/include/clang/CIR/Dialect/IR/CIRDialect.h
+%%CLANG%%llvm-devel/include/clang/CIR/FrontendAction/CIRGenAction.h
 %%CLANG%%llvm-devel/include/clang/CodeGen/BackendUtil.h
 %%CLANG%%llvm-devel/include/clang/CodeGen/CGFunctionInfo.h
 %%CLANG%%llvm-devel/include/clang/CodeGen/CodeGenABITypes.h
@@ -1460,10 +1470,12 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Frontend/CheckerRegistry.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Frontend/FrontendActions.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Frontend/ModelConsumer.h
+%%CLANG%%llvm-devel/include/clang/Support/Compiler.h
 %%CLANG%%llvm-devel/include/clang/Support/RISCVVIntrinsicUtils.h
 %%CLANG%%llvm-devel/include/clang/Testing/CommandLineArgs.h
 %%CLANG%%llvm-devel/include/clang/Testing/TestAST.h
 %%CLANG%%llvm-devel/include/clang/Testing/TestClangConfig.h
+%%CLANG%%llvm-devel/include/clang/Testing/TestLanguage.def
 %%CLANG%%llvm-devel/include/clang/Tooling/ASTDiff/ASTDiff.h
 %%CLANG%%llvm-devel/include/clang/Tooling/ASTDiff/ASTDiffInternal.h
 %%CLANG%%llvm-devel/include/clang/Tooling/AllTUsExecution.h
@@ -1547,6 +1559,7 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Common/default-kinds.h
 %%FLANG%%llvm-devel/include/flang/Common/enum-class.h
 %%FLANG%%llvm-devel/include/flang/Common/enum-set.h
+%%FLANG%%llvm-devel/include/flang/Common/erfc-scaled.h
 %%FLANG%%llvm-devel/include/flang/Common/fast-int-set.h
 %%FLANG%%llvm-devel/include/flang/Common/float128.h
 %%FLANG%%llvm-devel/include/flang/Common/float80.h
@@ -1847,6 +1860,7 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Semantics/expression.h
 %%FLANG%%llvm-devel/include/flang/Semantics/module-dependences.h
 %%FLANG%%llvm-devel/include/flang/Semantics/openmp-directive-sets.h
+%%FLANG%%llvm-devel/include/flang/Semantics/program-tree.h
 %%FLANG%%llvm-devel/include/flang/Semantics/runtime-type-info.h
 %%FLANG%%llvm-devel/include/flang/Semantics/scope.h
 %%FLANG%%llvm-devel/include/flang/Semantics/semantics.h
@@ -2379,6 +2393,7 @@ llvm-devel/bin/verify-uselistorder
 %%LLDB%%llvm-devel/include/lldb/Utility/DataEncoder.h
 %%LLDB%%llvm-devel/include/lldb/Utility/DataExtractor.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Diagnostics.h
+%%LLDB%%llvm-devel/include/lldb/Utility/DiagnosticsRendering.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Endian.h
 %%LLDB%%llvm-devel/include/lldb/Utility/Environment.h
 %%LLDB%%llvm-devel/include/lldb/Utility/ErrorMessages.h
@@ -3004,6 +3019,7 @@ llvm-devel/include/llvm/CodeGen/ShadowStackGCLowering.h
 llvm-devel/include/llvm/CodeGen/SjLjEHPrepare.h
 llvm-devel/include/llvm/CodeGen/SlotIndexes.h
 llvm-devel/include/llvm/CodeGen/Spiller.h
+llvm-devel/include/llvm/CodeGen/StackColoring.h
 llvm-devel/include/llvm/CodeGen/StackMaps.h
 llvm-devel/include/llvm/CodeGen/StackProtector.h
 llvm-devel/include/llvm/CodeGen/SwiftErrorValueTracking.h
@@ -3396,8 +3412,10 @@ llvm-devel/include/llvm/ExecutionEngine/Orc/EPCIndirectionUtils.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/ExecutionUtils.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/ExecutorProcessControl.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/IRCompileLayer.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/IRPartitionLayer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/IRTransformLayer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/IndirectionUtils.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/JITLinkRedirectableSymbolManager.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/JITTargetMachineBuilder.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/LLJIT.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Layer.h
@@ -3415,6 +3433,8 @@ llvm-devel/include/llvm/ExecutionEngine/Orc/ObjectLinkingLayer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/ObjectTransformLayer.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/OrcABISupport.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/RTDyldObjectLinkingLayer.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/ReOptimizeLayer.h
+llvm-devel/include/llvm/ExecutionEngine/Orc/RedirectionManager.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/SectCreate.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Shared/AllocationActions.h
 llvm-devel/include/llvm/ExecutionEngine/Orc/Shared/ExecutorAddress.h
@@ -3450,6 +3470,7 @@ llvm-devel/include/llvm/ExecutionEngine/RuntimeDyld.h
 llvm-devel/include/llvm/ExecutionEngine/RuntimeDyldChecker.h
 llvm-devel/include/llvm/ExecutionEngine/SectionMemoryManager.h
 llvm-devel/include/llvm/FileCheck/FileCheck.h
+llvm-devel/include/llvm/Frontend/Atomic/Atomic.h
 llvm-devel/include/llvm/Frontend/Debug/Options.h
 llvm-devel/include/llvm/Frontend/Directive/DirectiveBase.td
 llvm-devel/include/llvm/Frontend/Driver/CodeGenOptions.h
@@ -3904,16 +3925,24 @@ llvm-devel/include/llvm/Remarks/RemarkSerializer.h
 llvm-devel/include/llvm/Remarks/RemarkStreamer.h
 llvm-devel/include/llvm/Remarks/RemarkStringTable.h
 llvm-devel/include/llvm/Remarks/YAMLRemarkSerializer.h
+llvm-devel/include/llvm/SandboxIR/Argument.h
+llvm-devel/include/llvm/SandboxIR/BasicBlock.h
+llvm-devel/include/llvm/SandboxIR/Constant.h
 llvm-devel/include/llvm/SandboxIR/Context.h
+llvm-devel/include/llvm/SandboxIR/Function.h
+llvm-devel/include/llvm/SandboxIR/Instruction.h
+llvm-devel/include/llvm/SandboxIR/IntrinsicInst.h
 llvm-devel/include/llvm/SandboxIR/Module.h
 llvm-devel/include/llvm/SandboxIR/Pass.h
 llvm-devel/include/llvm/SandboxIR/PassManager.h
-llvm-devel/include/llvm/SandboxIR/SandboxIR.h
-llvm-devel/include/llvm/SandboxIR/SandboxIRValues.def
+llvm-devel/include/llvm/SandboxIR/Region.h
 llvm-devel/include/llvm/SandboxIR/Tracker.h
 llvm-devel/include/llvm/SandboxIR/Type.h
 llvm-devel/include/llvm/SandboxIR/Use.h
+llvm-devel/include/llvm/SandboxIR/User.h
 llvm-devel/include/llvm/SandboxIR/Utils.h
+llvm-devel/include/llvm/SandboxIR/Value.h
+llvm-devel/include/llvm/SandboxIR/Values.def
 llvm-devel/include/llvm/Support/AMDGPUAddrSpace.h
 llvm-devel/include/llvm/Support/AMDGPUMetadata.h
 llvm-devel/include/llvm/Support/AMDHSAKernelDescriptor.h
@@ -4127,6 +4156,7 @@ llvm-devel/include/llvm/TableGen/SearchableTable.td
 llvm-devel/include/llvm/TableGen/SetTheory.h
 llvm-devel/include/llvm/TableGen/StringMatcher.h
 llvm-devel/include/llvm/TableGen/StringToOffsetTable.h
+llvm-devel/include/llvm/TableGen/TGTimer.h
 llvm-devel/include/llvm/TableGen/TableGenBackend.h
 llvm-devel/include/llvm/Target/CGPassBuilderOption.h
 llvm-devel/include/llvm/Target/CodeGenCWrappers.h
@@ -4196,12 +4226,18 @@ llvm-devel/include/llvm/ToolDrivers/llvm-dlltool/DlltoolDriver.h
 llvm-devel/include/llvm/ToolDrivers/llvm-lib/LibDriver.h
 llvm-devel/include/llvm/Transforms/AggressiveInstCombine/AggressiveInstCombine.h
 llvm-devel/include/llvm/Transforms/CFGuard.h
+llvm-devel/include/llvm/Transforms/Coroutines/ABI.h
 llvm-devel/include/llvm/Transforms/Coroutines/CoroAnnotationElide.h
 llvm-devel/include/llvm/Transforms/Coroutines/CoroCleanup.h
 llvm-devel/include/llvm/Transforms/Coroutines/CoroConditionalWrapper.h
 llvm-devel/include/llvm/Transforms/Coroutines/CoroEarly.h
 llvm-devel/include/llvm/Transforms/Coroutines/CoroElide.h
+llvm-devel/include/llvm/Transforms/Coroutines/CoroInstr.h
+llvm-devel/include/llvm/Transforms/Coroutines/CoroShape.h
 llvm-devel/include/llvm/Transforms/Coroutines/CoroSplit.h
+llvm-devel/include/llvm/Transforms/Coroutines/MaterializationUtils.h
+llvm-devel/include/llvm/Transforms/Coroutines/SpillUtils.h
+llvm-devel/include/llvm/Transforms/Coroutines/SuspendCrossingInfo.h
 llvm-devel/include/llvm/Transforms/HipStdPar/HipStdPar.h
 llvm-devel/include/llvm/Transforms/IPO.h
 llvm-devel/include/llvm/Transforms/IPO/AlwaysInliner.h
@@ -4447,11 +4483,12 @@ llvm-devel/include/llvm/Transforms/Vectorize/LoopVectorizationLegality.h
 llvm-devel/include/llvm/Transforms/Vectorize/LoopVectorize.h
 llvm-devel/include/llvm/Transforms/Vectorize/SLPVectorizer.h
 llvm-devel/include/llvm/Transforms/Vectorize/SandboxVectorizer/DependencyGraph.h
-llvm-devel/include/llvm/Transforms/Vectorize/SandboxVectorizer/InstrInterval.h
+llvm-devel/include/llvm/Transforms/Vectorize/SandboxVectorizer/Interval.h
 llvm-devel/include/llvm/Transforms/Vectorize/SandboxVectorizer/Legality.h
 llvm-devel/include/llvm/Transforms/Vectorize/SandboxVectorizer/Passes/BottomUpVec.h
-llvm-devel/include/llvm/Transforms/Vectorize/SandboxVectorizer/Region.h
+llvm-devel/include/llvm/Transforms/Vectorize/SandboxVectorizer/Passes/NullPass.h
 llvm-devel/include/llvm/Transforms/Vectorize/SandboxVectorizer/SandboxVectorizer.h
+llvm-devel/include/llvm/Transforms/Vectorize/SandboxVectorizer/SeedCollector.h
 llvm-devel/include/llvm/Transforms/Vectorize/VectorCombine.h
 llvm-devel/include/llvm/WindowsDriver/MSVCPaths.h
 llvm-devel/include/llvm/WindowsDriver/MSVCSetupApi.h
@@ -6474,6 +6511,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/rdpruintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/rdseedintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/riscv_bitmanip.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/riscv_corev_alu.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/riscv_crypto.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/riscv_ntlh.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/riscv_vector.h
@@ -6686,6 +6724,7 @@ llvm-devel/lib/libLLVM.so.%%LLVM_MAJOR_MINOR%%git
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMExegesisX86.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMExtensions.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMFileCheck.a
+%%STATIC_LIBS%%llvm-devel/lib/libLLVMFrontendAtomic.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMFrontendDriver.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMFrontendHLSL.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMFrontendOffloading.a
