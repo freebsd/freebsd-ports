@@ -1,7 +1,6 @@
 PORTNAME=	esptool
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.7.0
-PORTREVISION=	1
+DISTVERSION=	4.8.1
 CATEGORIES=	comms python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -46,8 +45,8 @@ do-test:
 		test/test_modules.py; \
 		do ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest $${test}; done
 	@cd ${TEST_WRKSRC} && for chip in \
-		esp32 esp32c2 esp32c3 esp32s2 esp32s3 esp32s3beta2 esp32h2beta1 esp32c6 \
-		esp32h2 esp32p4; \
+		esp32 esp32c2 esp32c3 esp32c5 esp32c5beta3 esp32c6 esp32c61 \
+		esp32h2 esp32h2beta1 esp32p4 esp32s2 esp32s3 esp32s3beta2; \
 		do ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest \
 		test/test_espefuse.py --chip $${chip}; done
 .if exists(${ESPTOOL_SERIALPORT})
