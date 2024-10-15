@@ -1,6 +1,7 @@
 PORTNAME=	radare2
-DISTVERSION=	5.9.4
+DISTVERSION=	5.9.6
 CATEGORIES=	devel
+MASTER_SITES=	https://github.com/radareorg/radare2/releases/download/${DISTVERSION}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tools to disasm, debug, analyze, and manipulate binary files
@@ -14,15 +15,9 @@ NOT_FOR_ARCHS_REASON=	does not build: Unsupported BSD architecture
 
 LIB_DEPENDS=	libcapstone.so:devel/capstone
 
-USES=		cpe gmake localbase pathfix pkgconfig
+USES=		cpe gmake localbase pathfix pkgconfig tar:xz
 CPE_VENDOR=	radare
 PATHFIX_MAKEFILEIN=	Makefile
-USE_GITHUB=	yes
-GH_ACCOUNT=	radareorg
-GH_PROJECT=	vector35-arch-arm64:arm64 vector35-arch-armv7:armv7
-GH_SUBDIR=	libr/arch/p/arm/v35/arch-arm64:arm64 \
-		libr/arch/p/arm/v35/arch-armv7:armv7
-GH_TAGNAME=	55d73c6:arm64 f270a6c:armv7
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-syscapstone

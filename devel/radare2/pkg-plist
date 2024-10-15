@@ -31,9 +31,11 @@ include/libr/r_codemeta.h
 include/libr/r_config.h
 include/libr/r_cons.h
 include/libr/r_core.h
+include/libr/r_core_priv.h
 include/libr/r_crypto.h
 include/libr/r_crypto/r_aes.h
 include/libr/r_crypto/r_des.h
+include/libr/r_crypto/r_ed25519.h
 include/libr/r_crypto/r_sm4.h
 include/libr/r_debug.h
 include/libr/r_drx.h
@@ -384,6 +386,7 @@ share/man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/cons/gb
 %%DATADIR%%/%%PORTVERSION%%/cons/gentoo
 %%DATADIR%%/%%PORTVERSION%%/cons/greepy
+%%DATADIR%%/%%PORTVERSION%%/cons/gruvbox
 %%DATADIR%%/%%PORTVERSION%%/cons/iaito
 %%DATADIR%%/%%PORTVERSION%%/cons/lima
 %%DATADIR%%/%%PORTVERSION%%/cons/matrix
@@ -601,6 +604,7 @@ share/man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/magic/cafebabe
 %%DATADIR%%/%%PORTVERSION%%/magic/code
 %%DATADIR%%/%%PORTVERSION%%/magic/compressed
+%%DATADIR%%/%%PORTVERSION%%/magic/crc
 %%DATADIR%%/%%PORTVERSION%%/magic/database
 %%DATADIR%%/%%PORTVERSION%%/magic/dis
 %%DATADIR%%/%%PORTVERSION%%/magic/elf
