@@ -1,9 +1,9 @@
---- freebsd.c.orig	2018-07-17 13:22:11 UTC
+--- freebsd.c.orig	2017-04-29 08:27:51 UTC
 +++ freebsd.c
-@@ -327,9 +327,8 @@ SP_PRIV enum sp_return list_ports(struct sp_port ***li
+@@ -326,9 +326,8 @@ SP_PRIV enum sp_return list_ports(struct sp_port ***li
+ {
  	DIR *dir;
- 	struct dirent entry;
- 	struct dirent *result;
+ 	struct dirent *entry;
 -	struct termios tios;
  	char name[PATH_MAX];
 -	int fd, ret;
@@ -11,7 +11,7 @@
  
  	DEBUG("Enumerating tty devices");
  	if (!(dir = opendir("/dev")))
-@@ -353,21 +352,10 @@ SP_PRIV enum sp_return list_ports(struct sp_port ***li
+@@ -352,21 +351,10 @@ SP_PRIV enum sp_return list_ports(struct sp_port ***li
  		DEBUG_FMT("Found device %s", name);
  
  		/* Check that we can open tty/cua device in rw mode - we need that. */
@@ -34,4 +34,4 @@
 -			continue;
  
  		DEBUG_FMT("Found port %s", name);
- 		DBG("%s: %s\n", __func__, entry.d_name);
+ 		DBG("%s: %s\n", __func__, entry->d_name);

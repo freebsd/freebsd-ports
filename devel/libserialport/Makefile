@@ -1,6 +1,5 @@
 PORTNAME=	libserialport
-PORTVERSION=	0.1.1
-PORTREVISION=	1
+DISTVERSION=	0.1.2
 CATEGORIES=	devel
 MASTER_SITES=	http://sigrok.org/download/source/libserialport/
 
@@ -10,11 +9,12 @@ WWW=		https://sigrok.org/
 
 LICENSE=	LGPL3
 
-USE_LDCONFIG=	yes
 USES=		libtool pathfix pkgconfig
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
+
 MAKE_JOBS_UNSAFE=	yes
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
