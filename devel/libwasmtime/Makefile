@@ -1,5 +1,5 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	25.0.1
+PORTVERSION=	25.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -394,7 +394,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		zstd-safe-7.0.0 \
 		zstd-sys-2.0.9+zstd.1.5.5
 
-GH_TUPLE=	WebAssembly:testsuite:ae5a669:testsuite/tests/spec_testsuite \
+GH_TUPLE=	WebAssembly:testsuite:cbde6d5:testsuite/tests/spec_testsuite \
 		WebAssembly:wasi-testsuite:2fec29e:wasi_testsuite/tests/wasi_testsuite/wasi-common \
 		WebAssembly:wasi-threads:e1893c0:wasi_threads/tests/wasi_testsuite/wasi-threads
 
