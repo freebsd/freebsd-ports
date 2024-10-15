@@ -1,5 +1,5 @@
 PORTNAME=	wifi-firmware-kmod
-PORTVERSION=	20241001
+PORTVERSION=	20241017
 CATEGORIES=	net
 
 MAINTAINER=	bz@FreeBSD.org
@@ -17,6 +17,7 @@ RUN_DEPENDS=	\
 	wifi-firmware-iwlwifi-kmod-ax210>0:net/wifi-firmware-iwlwifi-kmod@ax210 \
 	wifi-firmware-iwlwifi-kmod-bz>0:net/wifi-firmware-iwlwifi-kmod@bz \
 	\
+	wifi-firmware-rtw88-kmod-rtw8703b>0:net/wifi-firmware-rtw88-kmod@rtw8703b \
 	wifi-firmware-rtw88-kmod-rtw8723d>0:net/wifi-firmware-rtw88-kmod@rtw8723d \
 	wifi-firmware-rtw88-kmod-rtw8821c>0:net/wifi-firmware-rtw88-kmod@rtw8821c \
 	wifi-firmware-rtw88-kmod-rtw8822b>0:net/wifi-firmware-rtw88-kmod@rtw8822b \
