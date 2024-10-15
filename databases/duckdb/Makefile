@@ -1,6 +1,7 @@
 PORTNAME=	duckdb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,7 +34,7 @@ BINARY_ALIAS=	git=false
 OPTIONS_DEFINE=			TPCE
 OPTIONS_DEFAULT=		TPCE
 OPTIONS_GROUP=			EXTENSIONS
-OPTIONS_GROUP_EXTENSIONS=	AUTOCOMPLETE FTS HTTPFS ICU INET JEMALLOC JSON PARQUET SQLSMITH TPCDS TPCH \
+OPTIONS_GROUP_EXTENSIONS=	AUTOCOMPLETE FTS HTTPFS ICU INET JSON PARQUET SQLSMITH TPCDS TPCH \
 				SQLITE_SCANNER
 
 EXTENSIONS_DESC=		Extensions:
@@ -43,19 +44,23 @@ EXTENSIONS_DESC=		Extensions:
 OPTIONS_DEFAULT+=	${opt}
 .  endif
 ${opt}_DESC=		Build the ${opt} extension
-DUCKDB_EXTENSIONS+=	;${opt:tl}
-${opt}_PLIST_FILES=	lib/lib${opt:tl}_extension.a
+DUCKDB_EXTENSIONS+=	${PORT_OPTIONS:M${opt}:S/${opt}/;${opt:tl}/}
+${opt}_PLIST_FILES=	${PORT_OPTIONS:M${opt}:S/${opt}/lib\/lib${opt:tl}_extension.a/}
 .endfor
 
 CMAKE_ARGS+=	-DBUILD_EXTENSIONS="${DUCKDB_EXTENSIONS:tW:S/ //g:S/^;//}" \
 		-DDUCKDB_MAJOR_VERSION=${PORTVERSION:R:R} \
 		-DDUCKDB_MINOR_VERSION=${PORTVERSION:R:E} \
 		-DDUCKDB_PATCH_VERSION=${PORTVERSION:E}
+CMAKE_ARGS+=	-DSKIP_EXTENSIONS=jemalloc # temporary? see https://github.com/duckdb/duckdb/issues/14363#issuecomment-2412095766
 
 SQLITE_SCANNER_CXXFLAGS=	-I${WRKSRC}/extension/sqlite_scanner/src/include # workaround for the header not being found
 
 TPCE_DESC=			Enable building of the TPC-E tool
 TPCE_CMAKE_BOOL=		BUILD_TPCE
+
+post-extract: # remove the jemalloc extension directory just in case
+	@${RM} -r ${WRKSRC}/extension/jemalloc
 
 post-test: # run tests
 	@cd ${TEST_WRKSRC} && test/unittest
