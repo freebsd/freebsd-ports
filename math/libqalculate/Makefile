@@ -1,5 +1,5 @@
 PORTNAME=	libqalculate
-PORTVERSION=	5.2.0
+PORTVERSION=	5.3.0
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Qalculate/${PORTNAME}/releases/download/v${PORTVERSION}/
 
@@ -21,7 +21,6 @@ USE_GNOME=	intltool libxml2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	NLS
