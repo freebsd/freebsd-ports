@@ -39,7 +39,7 @@ post-patch:
 	
 pre-build:
 	@cd ${WRKSRC}/ui && ${SETENV} ${MAKE_ENV} HOME=${WRKDIR} PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true yarn install --offline
-	@cd ${WRKSRC}/ui && NODE_OPTIONS=--openssl-legacy-provider yarn build
+	@cd ${WRKSRC}/ui && ${SETENV} ${MAKE_ENV} NODE_OPTIONS=--openssl-legacy-provider yarn build
 	#${RM} -r ${STAGEDIR}${PREFIX}/share/.cache
 
 
