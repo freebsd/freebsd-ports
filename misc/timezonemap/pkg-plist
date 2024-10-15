@@ -3,6 +3,7 @@ include/timezonemap/timezonemap/cc-timezone-map.h
 include/timezonemap/timezonemap/timezone-completion.h
 include/timezonemap/timezonemap/tz.h
 lib/girepository-1.0/TimezoneMap-1.0.typelib
+lib/libtimezonemap.a
 lib/libtimezonemap.so
 lib/libtimezonemap.so.1
 lib/libtimezonemap.so.1.0.0
