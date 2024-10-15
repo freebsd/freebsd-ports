@@ -1,7 +1,6 @@
 PORTNAME=	cliphist
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
-PORTREVISION=	7
+DISTVERSION=	0.6.1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,10 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	sentriz
-GH_TUPLE=	etcd-io:bbolt:v1.3.7:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
-		golang:image:v0.11.0:golang_image/vendor/golang.org/x/image \
-		golang:sys:v0.11.0:golang_sys/vendor/golang.org/x/sys \
-		rogpeppe:go-internal:v1.10.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal
+GH_TUPLE=	etcd-io:bbolt:v1.3.9:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
+		golang:image:v0.21.0:golang_image/vendor/golang.org/x/image \
+		golang:sys:v0.26.0:golang_sys/vendor/golang.org/x/sys \
+		golang:tools:v0.24.0:golang_tools/vendor/golang.org/x/tools \
+		rogpeppe:go-internal:v1.12.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
+		sentriz:flagconf:v0.1.9:sentriz_flagconf/vendor/go.senan.xyz/flagconf
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	FZF
