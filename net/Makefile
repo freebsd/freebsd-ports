@@ -209,6 +209,7 @@
     SUBDIR += gopher
     SUBDIR += goreplay
     SUBDIR += gorss
+    SUBDIR += gotify-cli
     SUBDIR += gotify-server
     SUBDIR += gotthard
     SUBDIR += graphpath

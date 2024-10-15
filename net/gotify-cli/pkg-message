@@ -1,0 +1,13 @@
+[
+{
+  message: <<EOM
+Gotify CLI was installed.
+
+To connect it to a server execute and follow instructions:
+gotify init
+
+EOM
+  type: install
+}
+]
+
