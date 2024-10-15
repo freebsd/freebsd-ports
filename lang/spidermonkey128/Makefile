@@ -1,0 +1,73 @@
+PORTNAME=	spidermonkey
+DISTVERSION=	128.3.1
+CATEGORIES=	lang
+MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source
+PKGNAMESUFFIX=	${SP_VER}
+DISTNAME=	firefox-${DISTVERSION}esr.source
+
+MAINTAINER=	vishwin@FreeBSD.org
+COMMENT=	Standalone JavaScript based from Mozilla 128-esr
+WWW=		https://spidermonkey.dev/
+
+LICENSE=	MPL20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${RUST_DEFAULT}>=1.81:lang/${RUST_DEFAULT} \
+		autoconf2.13:devel/autoconf2.13 \
+		rust-cbindgen>=0.26.0:devel/rust-cbindgen
+LIB_DEPENDS=	libicudata.so:devel/icu \
+		libnspr4.so:devel/nspr
+
+USES=		compiler:c++17-lang gmake llvm:noexport localbase pathfix pkgconfig \
+		python:build tar:xz
+USE_LDCONFIG=	yes
+SP_VER=		128
+HAS_CONFIGURE=	yes
+
+WRKSRC=			${WRKDIR}/firefox-${DISTVERSION}/
+PATCH_WRKSRC=		${WRKDIR}/firefox-${DISTVERSION}/
+CONFIGURE_OUTSOURCE=	yes
+
+CONFIGURE_ARGS=	--enable-application=js \
+		--disable-debug \
+		--disable-debug-symbols \
+		--disable-jemalloc \
+		--disable-tests \
+		--enable-optimize \
+		--enable-readline \
+		--enable-shared-js \
+		--prefix=${PREFIX:Q} \
+		--target=${CONFIGURE_TARGET} \
+		--with-intl-api \
+		--with-system-icu \
+		--with-system-nspr \
+		--with-system-zlib
+
+CONFIGURE_ENV=	HOST_CC=${CC} \
+		HOST_CXX=${CXX}
+
+BINARY_ALIAS=	python3=${PYTHON_CMD}
+PLIST_SUB=	SP_VER=${SP_VER}
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
+.endif
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+CONFIGURE_ENV+=	LLVM_CONFIG=${LLVM_CONFIG} \
+		LLVM_OBJDUMP=llvm-objdump${LLVM_VERSION}
+BUILD_DEPENDS+=	${LOCALBASE}/bin/llvm-objdump${LLVM_VERSION}:${LLVM_PORT}
+USE_GCC=	yes
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/js/moz.configure
+
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/lib/libjs_static.ajs
+	${LN} -fs libmozjs-${SP_VER}.so ${STAGEDIR}${PREFIX}/lib/libmozjs-${SP_VER}.so.1
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmozjs-${SP_VER}.*
+
+.include <bsd.port.post.mk>
