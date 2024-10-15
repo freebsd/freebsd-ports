@@ -2665,6 +2665,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/invpcidintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/iso646.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/keylockerintrin.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/limits.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/lwpintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/lzcntintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/mm3dnow.h
@@ -2705,6 +2706,13 @@ llvm%%LLVM_SUFFIX%%/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/sgxintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/shaintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/smmintrin.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/stdalign.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/stdarg.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/stdatomic.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/stdbool.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/stddef.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/stdint.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/stdnoreturn.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/tbmintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/tgmath.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/tmmintrin.h
@@ -2713,6 +2721,7 @@ llvm%%LLVM_SUFFIX%%/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/unwind.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/vadefs.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/vaesintrin.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/varargs.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/vecintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/vpclmulqdqintrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/waitpkgintrin.h
