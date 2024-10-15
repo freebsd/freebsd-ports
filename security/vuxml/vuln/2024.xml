@@ -1,3 +1,36 @@
+  <vuln vid="851ce3e4-8b03-11ef-84e9-901b0e9408dc">
+    <topic>element-web -- Potential exposure of access token via authenticated media</topic>
+    <affects>
+      <package>
+	<name>element-web</name>
+	<range><ge>1.11.70</ge><lt>1.11.81</lt>
+	</range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Element team reports:</p>
+	<blockquote cite="https://github.com/element-hq/element-web/security/advisories/GHSA-3jm3-x98c-r34x">
+	  <p>Element Web versions 1.11.70 through 1.11.80 contain a
+	  vulnerability which can, under specially crafted conditions,
+	  lead to the access token becoming exposed to third
+	  parties. At least one vector has been identified internally,
+	  involving malicious widgets, but other vectors may
+	  exist. Users are strongly advised to upgrade to version
+	  1.11.81 to remediate the issue.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-47779</cvename>
+      <url>https://github.com/element-hq/element-web/security/advisories/GHSA-3jm3-x98c-r34x</url>
+    </references>
+    <dates>
+      <discovery>2024-10-15</discovery>
+      <entry>2024-10-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="64e299b6-d12b-4a7a-a94f-ab133703925a">
     <topic>vscode -- Visual Studio Code for Linux Remote Code Execution Vulnerability</topic>
     <affects>
