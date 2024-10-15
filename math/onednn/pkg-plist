@@ -40,10 +40,11 @@ include/oneapi/dnnl/dnnl_ukernel.h
 include/oneapi/dnnl/dnnl_ukernel.hpp
 include/oneapi/dnnl/dnnl_ukernel_types.h
 include/oneapi/dnnl/dnnl_version.h
+include/oneapi/dnnl/dnnl_version_hash.h
 lib/cmake/dnnl/dnnl-config-version.cmake
 lib/cmake/dnnl/dnnl-config.cmake
 lib/cmake/dnnl/dnnl-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/dnnl/dnnl-targets.cmake
 lib/libdnnl.so
 lib/libdnnl.so.3
-lib/libdnnl.so.3.5
+lib/libdnnl.so.3.6
