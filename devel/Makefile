@@ -8100,6 +8100,7 @@
     SUBDIR += spread-sheet-widget
     SUBDIR += spyder
     SUBDIR += srecord
+    SUBDIR += sse2neon
     SUBDIR += st
     SUBDIR += stack
     SUBDIR += staf
