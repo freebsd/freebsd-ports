@@ -1,5 +1,5 @@
 PORTNAME=	qalculate-qt
-PORTVERSION=	5.2.0
+PORTVERSION=	5.3.0
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Qalculate/${PORTNAME}/releases/download/v${PORTVERSION}/
 
@@ -16,8 +16,6 @@ RUN_DEPENDS=	gnuplot:math/gnuplot
 USES=		compiler:c++17-lang gl pkgconfig qmake qt:6
 USE_GL=		opengl
 USE_QT=		base tools:build
-
-CONFLICTS_INSTALL=	qalculate-qt5 qalculate-qt6
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
