@@ -1,6 +1,6 @@
 PORTNAME=	images
 PORTVERSION=	5.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	ocaml-
@@ -13,6 +13,7 @@ WWW=		http://pauillac.inria.fr/camlimages/
 LICENSE=	LGPL21
 
 BUILD_DEPENDS=	cppo:devel/ocaml-cppo \
+		${SA_DIR}/findlib/META:devel/ocaml-findlib \
 		${SA_DIR}/stdio/META:devel/ocaml-stdio
 
 USES=		ocaml:dune
