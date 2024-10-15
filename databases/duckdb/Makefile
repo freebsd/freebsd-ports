@@ -1,7 +1,6 @@
 PORTNAME=	duckdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.1
-PORTREVISION=	1
+DISTVERSION=	1.1.2
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,11 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake:testing compiler:c++11-lang ssl
 USE_GITHUB=	yes
 GH_TUPLE=	duckdb:duckdb_inet:eca867b2517af06eabc89ccd6234266e9a7d6d71:inet/extension/inet \
-		duckdb:duckdb_spatial:bb9c829693965f029eb5a312aefed4c538fad781:spatial/extension/spatial \
+		duckdb:duckdb_spatial:3f94d52aa9f7d67b1a30e6cea642bbb790c04aa2:spatial/extension/spatial \
 		duckdb:substrait:be71387cf0a484dc7b261a0cb21abec0d0e0ce5c:sqlsmith/extension/substrait \
-		duckdb:sqlite_scanner:315861963c8106397af36cbda10faebc8dae485a:sqlite/extension/sqlite_scanner \
-		duckdb:duckdb_sqlsmith:f24be8b5b0cd0eeed7541e10cff42d7050771afc:sqlsmith/extension/sqlsmith \
-		duckdb:duckdb_vss:77739ea5382cce3220af83803ac0b1e98b3ab7d8:vss/extension/vss
+		duckdb:sqlite_scanner:d5d62657702d33cb44a46cddc7ffc4b67bf7e961:sqlite/extension/sqlite_scanner \
+		duckdb:duckdb_sqlsmith:d6d62c1cba6b1369ba79db4bff3c67f24aaa95c2:sqlsmith/extension/sqlsmith \
+		duckdb:duckdb_vss:dd880d6121c0f3dff27131e54e057c9db0f1c710:vss/extension/vss
 # the list of out-of-tree extensions is here: .github/config/out_of_tree_extensions.cmake
 
 CXXFLAGS+=	-I${WRKSRC}/extension/inet/src/include \
@@ -35,7 +34,7 @@ OPTIONS_DEFINE=			TPCE
 OPTIONS_DEFAULT=		TPCE
 OPTIONS_GROUP=			EXTENSIONS
 OPTIONS_GROUP_EXTENSIONS=	AUTOCOMPLETE FTS HTTPFS ICU INET JSON PARQUET SQLSMITH TPCDS TPCH \
-				SQLITE_SCANNER
+				SQLITE_SCANNER VSS
 
 EXTENSIONS_DESC=		Extensions:
 
@@ -59,10 +58,14 @@ SQLITE_SCANNER_CXXFLAGS=	-I${WRKSRC}/extension/sqlite_scanner/src/include # work
 TPCE_DESC=			Enable building of the TPC-E tool
 TPCE_CMAKE_BOOL=		BUILD_TPCE
 
+VSS_CXXFLAGS=			-I${WRKSRC}/extension/vss/src/include # workaround for the header not being found
+
 post-extract: # remove the jemalloc extension directory just in case
 	@${RM} -r ${WRKSRC}/extension/jemalloc
 
 post-test: # run tests
 	@cd ${TEST_WRKSRC} && test/unittest
+
+# 1 test fails, see https://github.com/duckdb/duckdb/issues/14365
 
 .include <bsd.port.mk>
