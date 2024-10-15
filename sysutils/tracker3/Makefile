@@ -12,16 +12,14 @@ WWW=		https://wiki.gnome.org/Projects/Tracker
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPL
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libicutu.so:devel/icu \
 		libjson-glib-1.0.so:devel/json-glib \
 		libuuid.so:misc/e2fsprogs-libuuid
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
 
 USES=		compiler:c++11-lib gettext gnome localbase:ldflags meson \
 		pkgconfig python:build sqlite tar:xz vala:build
-USE_GNOME=	glib20 libxml2 introspection:build
+USE_GNOME=	glib20 libxml2 introspection:build pygobject3
 USE_LDCONFIG=	yes
 
 MESON_ARGS=	-Dbash_completion=true \
