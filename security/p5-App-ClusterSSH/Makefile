@@ -1,7 +1,8 @@
-PORTNAME=	clusterssh
-DISTVERSIONPREFIX=	v
-DISTVERSION=	4.16
-CATEGORIES=	security net
+PORTNAME=	App-ClusterSSH
+DISTVERSION=	4.17
+CATEGORIES=	security perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Controls multiple hosts simultaneously via xterms and ssh
@@ -36,8 +37,6 @@ TEST_DEPENDS=	p5-CPAN-Changes>=0:devel/p5-CPAN-Changes \
 		p5-Test-PerlTidy>=0:devel/p5-Test-PerlTidy
 
 USES=		perl5
-USE_GITHUB=	yes
-GH_ACCOUNT=	duncs
 USE_PERL5=	modbuild
 
 NO_ARCH=	yes
@@ -45,12 +44,12 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	BASH
 OPTIONS_SUB=	yes
 
-post-install-BASH-off:
-	@${RM} ${STAGEDIR}${PREFIX}/bin/clusterssh_bash_completion.dist
-
 post-install-BASH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${MV} ${STAGEDIR}${PREFIX}/bin/clusterssh_bash_completion.dist \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/clusterssh
+
+post-install-BASH-off:
+	@${RM} ${STAGEDIR}${PREFIX}/bin/clusterssh_bash_completion.dist
 
 .include <bsd.port.mk>

@@ -3522,3 +3522,4 @@ x11-toolkits/wlroots016||2024-10-07|No consumers in ports
 japanese/prn|japanese/prn-ps|2024-10-07|Allow cloning the repository on Windows
 security/py-zope.password||2024-10-08|Has no value as standalone package
 devel/py-pyproject_hooks|devel/py-pyproject-hooks|2024-10-14|Move devel/py-pyproject_hooks to devel/py-pyproject-hooks
+security/clusterssh|security/p5-App-ClusterSSH|2024-10-16|Renamed to match upstream naming, please use security/p5-App-ClusterSSH instead
