@@ -12,6 +12,13 @@
 #
 # TCL_INCLUDEDIR	- Path where the Tcl C headers can be found
 #
+# TCL_PKG_LIB_PREFIX    - Library prefix, as per TIP595. This is tcl9 when
+#			  when building against Tcl 9.0, and empty otherwise
+#
+# TCL_PKG_STUB_POSTFIX  - Stub library postfix. This is empty when building
+#			  against Tcl 9.0, and DISTVERSION otherwise.
+#			  See https://core.tcl-lang.org/tclconfig/info/381985d331b96ba9
+#
 #
 # TK_VER		- Major.Minor version of Tk
 #
@@ -216,7 +223,15 @@ LIB_DEPENDS+=	${_TCLTK_LIB_LINE}
 .  if ${tcl_ARGS:Mtea}
 GNU_CONFIGURE=	yes
 TCL_PKG?=	${PORTNAME:C/^tcl(-?)//:C/(-?)tcl\$//}${PORTVERSION}
-PLIST_SUB+=	TCL_PKG=${TCL_PKG}
+.    if ${TCL_VER} == "9.0"
+TCL_PKG_LIB_PREFIX=	tcl9
+TCL_PKG_STUB_POSTFIX=	
+.    else
+TCL_PKG_LIB_PREFIX=	
+TCL_PKG_STUB_POSTFIX=	${DISTVERSION}
+.    endif
+PLIST_SUB+=	TCL_PKG=${TCL_PKG} TCL_PKG_LIB_PREFIX=${TCL_PKG_LIB_PREFIX} \
+		TCL_PKG_STUB_POSTFIX=${TCL_PKG_STUB_POSTFIX}
 CONFIGURE_ARGS+=--exec-prefix=${PREFIX} \
 		--with-tcl=${TCL_LIBDIR} \
 		--with-tclinclude=${TCL_INCLUDEDIR}
