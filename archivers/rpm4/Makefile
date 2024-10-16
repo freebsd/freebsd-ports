@@ -1,6 +1,6 @@
 PORTNAME=	rpm
 PORTVERSION=	4.18.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://ftp.rpm.org/releases/rpm-${PORTVERSION:R}.x/
 PKGNAMESUFFIX=	4
@@ -24,26 +24,34 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libelf.so:devel/elfutils \
 		bash:shells/bash \
 		gxargs:misc/findutils
 
+FLAVORS=		default noopenmp
+FLAVOR?=		${FLAVORS:[1]}
+noopenmp_PKGNAMESUFFIX=	4-noopenmp
+
 USES=		alias bdb cpe gmake iconv libarchive libtool lua pathfix \
 		pkgconfig readline shebangfix sqlite tar:bzip2
 USE_LDCONFIG=	yes
 
-SHEBANG_FILES=	scripts/brp-compress scripts/check-prereqs \
-		scripts/check-rpaths-worker scripts/find-lang.sh \
-		scripts/fontconfig.prov scripts/ocamldeps.sh scripts/perl.prov \
-		scripts/perl.req scripts/pkgconfigdeps.sh \
-		scripts/rpm_macros_provides.sh
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--enable-sqlite=yes \
-		--localstatedir=/var \
-		--sysconfdir=${PREFIX}/etc \
-		--with-popt-prefix="${LOCALBASE}" \
-		--without-javaglue \
-		am_cv_python_version=${PYTHON_VER}${PYTHON_ABIVER}
-CONFIGURE_ENV=	LUA_CFLAGS=-I${LUA_INCDIR} \
-		LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER} -lm"
-INSTALL_TARGET=	install-strip
+SHEBANG_FILES=			scripts/brp-compress scripts/check-prereqs \
+				scripts/check-rpaths-worker \
+				scripts/find-lang.sh scripts/fontconfig.prov \
+				scripts/ocamldeps.sh scripts/perl.prov \
+				scripts/perl.req scripts/pkgconfigdeps.sh \
+				scripts/rpm_macros_provides.sh
+GNU_CONFIGURE=			yes
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+CONFIGURE_ARGS=			--enable-sqlite=yes \
+				--localstatedir=/var \
+				--sysconfdir=${PREFIX}/etc \
+				--with-popt-prefix="${LOCALBASE}" \
+				--without-javaglue \
+				am_cv_python_version=${PYTHON_VER}${PYTHON_ABIVER}
+.if ${FLAVOR} == noopenmp
+CONFIGURE_ARGS+=		--disable-openmp
+.endif
+CONFIGURE_ENV=			LUA_CFLAGS=-I${LUA_INCDIR} \
+				LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER} -lm"
+INSTALL_TARGET=			install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/nspr \
 		-I${LOCALBASE}/include/nss/nss -I${BDB_INCLUDE_DIR} \
@@ -51,7 +59,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/nspr \
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/nss -L${BDB_LIB_DIR} \
 		-L${LUA_LIBDIR}
 
-CONFLICTS_INSTALL=	rpm2cpio # bin/rpm2cpio
+CONFLICTS_INSTALL=	rpm2cpio rpm4 rpm4-noopenmp
 
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 
