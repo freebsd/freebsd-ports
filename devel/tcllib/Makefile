@@ -1,6 +1,5 @@
 PORTNAME=	tcllib
-PORTVERSION=	1.21
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	devel tcl
 MASTER_SITES=	https://core.tcl.tk/tcllib/uv/
 
@@ -59,7 +58,9 @@ post-patch:
 #	Ensure the detailed output of vendors' self-tests is
 #	available in addition to the pretty progress report:
 #
-	${REINPLACE_CMD} -e 's,test run,test run -l testlog,' \
+	${REINPLACE_CMD} \
+		-e 's,test run,test run -l testlog,' \
+		-e '/test run/s,$$, || ${TRUE},' \
 		-e 's,$$(libdir)/@PACKAGE@@VERSION@,$$(libdir)/@PACKAGE@,' \
 		${WRKSRC}/Makefile.in
 	${FIND} ${WRKSRC}/apps -type f ! -name "*.man" | ${XARGS} \

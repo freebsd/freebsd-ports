@@ -10,15 +10,11 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	critcl:devel/critcl
 RUN_DEPENDS=	${LOCALBASE}/lib/tcllib/pkgIndex.tcl:devel/tcllib
 
-USES=		bison
 MASTERDIR=	${.CURDIR}/../tcllib
 TMPPLIST=	${WRKDIR}/PLIST
 DESCR=		${.CURDIR}/pkg-descr
 ALL_TARGET=	critcl
 OPTIONS_DEFINE=
-
-pre-build:
-	cd ${WRKSRC}/modules/json/c && ${LOCALBASE}/bin/bison -b json json.y
 
 do-install:
 	${RM} ${WRKSRC}/modules/tcllibc/license.terms
